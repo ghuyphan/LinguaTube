@@ -14,41 +14,41 @@
 import { handleOptions } from '../utils/utils.js';
 
 const APP_VERSION_DATA = {
-    version: '1.1.31',
+    version: '1.1.33',
     minSupportedVersion: '1.0.0',
-    buildDate: '2026-09-12',
+    buildDate: '2026-09-13',
     forceUpdate: false,
     maintenance: false,
     highlights: {
         en: [
-            'Streamlined Study Launcher: Removed redundant tabs, sub-headings, and language pickers for a clean, distraction-free flashcard practice experience',
-            'Centralized Review Indicators: Integrated next-review timing badges directly into your vocabulary notebook in Dictionary, unifying all saved word management',
-            'Toast Streak Celebrations: Converted streak continuation into a smooth, non-intrusive toast notification upon session completion',
-            'Standardized Card Spacing & Gaps: Harmonized card padding and vertical content gaps across Study panels and sidebars to match explore and dictionary layouts'
+            'AI Dual Subtitle Layout Stabilization: Pre-allocated two-line bounding heights and smooth opacity transitions eliminate vertical layout shifts across inline, fullscreen, and transcript list views when AI translations load',
+            'Refined Minimalist AI Design: Replaced the wand icon and purple/pink glowing gradient with a modern, brand-consistent coral accent ring and clean sparkles aesthetic',
+            'Instant Subtitle Availability Discovery: Subtitle presence checks for videos without native transcripts now short-circuit in < 20ms using global negative caching and D1 registries, eliminating 15s upstream timeouts',
+            'Natural Speech Utterance Splitting: AI transcription turns and long monologue blocks are split into natural, readable 1–2 line cues at sentence and clause punctuation boundaries'
         ],
         vi: [
-            'Tinh Gọn Giao Diện Ôn Tập: Loại bỏ các tab và tiêu đề phụ dư thừa, mang lại trải nghiệm luyện tập thẻ ghi nhớ trực quan và tức thì',
-            'Đồng Bộ Lịch Ôn Tập Vào Sổ Từ: Tích hợp huy hiệu thời gian ôn tiếp theo trực tiếp vào sổ từ vựng tại Từ điển, tập trung toàn bộ quản lý từ đã lưu tại một nơi',
-            'Thông Báo Chuỗi Học Dạng Toast: Chuyển đổi thông báo nối dài chuỗi ngày sang dạng toast thông minh, tinh gọn màn hình hoàn thành buổi học',
-            'Chuẩn Hóa Khoảng Cách Thẻ: Đồng bộ khoảng cách đệm (padding) và khoảng cách nội dung (gap) trên màn hình Ôn tập chuẩn theo thiết kế toàn ứng dụng'
+            'Ổn Định Bố Cục Phụ Đề Song Ngữ AI: Thiết lập vùng đệm 2 dòng cố định và hiệu ứng mờ dần mượt mà, triệt tiêu hoàn toàn hiện tượng chữ bị giật nảy khi tải bản dịch AI trên cả chế độ khung, toàn màn hình và danh sách câu',
+            'Thiết Kế AI Tinh Tế & Đồng Bộ: Thay thế biểu tượng đũa phép và dải màu tím phát sáng bằng vòng quay màu san hô thương hiệu sang trọng cùng biểu tượng ánh sao tối giản',
+            'Phát Hiện Phụ Đề Tức Thì: Kiểm tra tính sẵn sàng của phụ đề cho các video không có phụ đề gốc giờ đây hoàn tất trong < 20ms nhờ bộ nhớ đệm phủ định toàn cục và D1, loại bỏ hoàn toàn độ trễ 15 giây',
+            'Tách Câu Hội Thoại Tự Nhiên: Các đoạn nói dài từ AI transcription được tách thông minh thành các câu phụ đề 1–2 dòng vừa mắt tại các dấu ngắt câu và mệnh đề'
         ],
         ja: [
-            '洗練された復習画面: 不要なタブや見出しを整理し、迷わずすぐにフラッシュカード練習を開始できるシンプルなUIを実現',
-            '復習スケジュールの統合表示: 辞書画面の単語帳カードに次回復習バッジを直接統合し、保存した単語の管理を1箇所に集約',
-            '連続学習記録のトースト化: 学習完了時のストリーク通知をコンパクトなトースト表示に移行し、完了画面をすっきりと整理',
-            'カード余白・ギャップの統一: 学習パネルとサイドバーのパディングとコンテンツ間隔をアプリ全体のデザイン基準に合わせて最適化'
+            'AI二重字幕レイアウトの安定化: 2行分の表示高を事前確保しスムーズなフェード効果を採用することで、AI翻訳読み込み時に発生していた字幕テキストの上下ジャンプを完全に解消',
+            '洗練されたミニマルなAIデザイン: 魔法の杖アイコンや紫/ピンクのグラデーション発光を廃止し、ブランド統一のコーラルアクセントリングと星アイコンによる上品な装いに刷新',
+            '字幕有無の即時判定: 字幕が存在しない動画の確認がグローバルネガティブキャッシュとD1により20ms未満で高速完了し、15秒のタイムアウト待機を完全に解消',
+            '自然な発話単位での字幕分割: AI音声認識の長文や会話ターンを、句読点や節の境界で読みやすい1〜2行の自然な字幕キューへとインテリジェントに自動分割'
         ],
         ko: [
-            '간결해진 복습 런처: 불필요한 탭과 중복 제목을 정리하여 방해 없이 즉시 플래시카드 학습을 시작할 수 있는 최적화된 UI 제공',
-            '복습 일정 단어장 통합: 사전의 단어장 카드에 다음 복습 예정일 배지를 직접 표시하여 저장된 모든 단어 관리를 한곳으로 통합',
-            '토스트형 연속 학습 알림: 세션 완료 시 스트릭 연장 축하를 깔끔한 토스트 알림으로 전환하여 완료 화면을 더욱 직관적으로 개선',
-            '카드 패딩 및 여백 표준화: 학습 화면과 사이드바의 카드 여백 및 요소 간 간격을 앱 전반의 표준 디자인에 맞춰 깔끔하게 정돈'
+            'AI 이중 자막 레이아웃 안정화: 2줄 높이를 사전 확보하고 부드러운 페이드 전환을 적용하여 AI 번역 로드 시 인라인, 전체화면 및 자막 목록에서 텍스트가 흔들리는 현상 완전 근절',
+            '세련되고 미니멀한 AI 비주얼 디자인: 요술봉 아이콘과 보라/분홍빛 그라데이션을 걷어내고 브랜드 고유의 코랄 액센트 링과 깔끔한 스파클 아이콘으로 현대적인 감각 완성',
+            '자막 가용성 즉시 감지: 자막이 없는 비디오의 가용성 확인이 전역 네거티브 캐시 및 D1을 통해 20ms 미만으로 단축되어 15초의 업스트림 대기 시간을 완전 제거',
+            '자연스러운 발화 단위 분할: AI 전사로 생성된 긴 단락 및 대화 발화를 문장 부호와 절 경계에 맞춰 가독성 높은 1~2줄 자막으로 지능형 분할'
         ],
         zh: [
-            '精简复习启动面板: 移除冗余的队列标签页和次级标题，打造专注无干扰的即时抽认卡背单词体验',
-            '集中式复习排期展示: 将下一次复习时间徽章直接集成至词典的单词本列表中，统一管理所有已收藏单词',
-            '连胜庆祝转为轻量提示: 学习完成时的连续打卡提示升级为优雅的Toast轻量浮窗，保持结算界面清爽简洁',
-            '标准化卡片内边距与间距: 全面统一背单词页面与侧边栏的卡片内边距和垂直内容间距，深度对齐全局设计语言'
+            'AI双语字幕布局稳定性优化: 预设双行基准高度并引入平滑淡入效果，彻底杜绝AI译文加载时在主面板、全屏模式以及字幕列表中引发的字句垂直跳动',
+            '简约精致的AI视觉重塑: 移除魔杖图标与紫粉色炫光渐变，全面升级为品牌珊瑚色转圈指示环与极简星光微章',
+            '即时字幕存在性探测: 针对无原生字幕的视频，依托全局否定缓存与D1注册表在20ms内快速响应，彻底消除长达15秒的上游抓取超时等待',
+            '自然发音句断句拆分: 智能对齐标点符号与从句分界，将AI听写的大段连贯语句平滑拆分为1至2行舒适自然的字幕小句'
         ]
     }
 };

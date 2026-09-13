@@ -165,7 +165,7 @@ $transition-fast: 0.15s ease;
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 2.75rem;
+    min-height: 3.8rem;
     box-sizing: border-box;
 }
 
@@ -281,10 +281,21 @@ $transition-fast: 0.15s ease;
 
 .fs-subtitle-translation-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     margin-top: 0.2rem;
-    min-height: calc(0.875rem * 1.3 + 0.25rem + 1px);
+    /* Strict reserved 2-line height for dual translation - eliminates vertical shift */
+    min-height: calc(0.875rem * 2.6 + 0.25rem + 1px);
+
+    .fullscreen-subtitle.fs-small & {
+        min-height: calc(0.75rem * 2.5 + 0.25rem + 1px);
+    }
+
+    .fullscreen-subtitle.fs-large & {
+        min-height: calc(1rem * 2.7 + 0.25rem + 1px);
+    }
 }
 
 .fs-subtitle-translation {
@@ -314,6 +325,13 @@ $transition-fast: 0.15s ease;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &--empty {
+        min-height: inherit;
+        border-top: 1px solid transparent !important;
+        background: transparent !important;
+        pointer-events: none;
     }
 
     .fs-dual-sub-dots {

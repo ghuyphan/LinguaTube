@@ -85,10 +85,24 @@ export class DictionaryPanelComponent implements OnDestroy {
       setTimeout(() => this.search(savedQuery), 0);
     }
 
-    // Effect: when learning language changes, reload recent searches
+    // Effect: when learning language changes, reload recent searches and reset search state
+    let lastHandledLang = '';
     effect(() => {
       const lang = this.settings.settings().language;
       this.dictionary.loadRecentSearches(lang);
+
+      if (lastHandledLang && lastHandledLang !== lang) {
+        this.lookupSubscription?.unsubscribe();
+        this.lookupSubscription = null;
+        this.searchQuery = '';
+        this.lastQuery = '';
+        this.entries.set([]);
+        this.grammarMatches.set([]);
+        this.hasSearched.set(false);
+        this.lookupError.set(null);
+        this.dictionary.clearScreenState();
+      }
+      lastHandledLang = lang;
     });
 
     // Effect: preload audio into RAM when currentEntry changes for 0ms playback

@@ -27,7 +27,11 @@
                     [class.is-looping]="isLoopEnabled()">
                     @if (viewTokens().length === 0) {
                     <span class="subtitle-content">
+                        @if (showReadingAnnotation()) {
+                        <span class="word word--static"><ruby>{{ cue.text }}<rt class="rt-empty">&#160;</rt></ruby></span>
+                        } @else {
                         <span class="word word--static">{{ cue.text }}</span>
+                        }
                     </span>
                     } @else {
                     <span class="subtitle-content" @subtitleFade>
@@ -114,7 +118,7 @@
                     <div class="state-item state-generating">
                         <div class="ai-spinner">
                             <div class="ai-spinner-ring"></div>
-                            <app-icon name="wand" [size]="18" class="ai-wand" />
+                            <app-icon name="sparkles" [size]="18" class="ai-sparkles" />
                         </div>
                         <div class="ai-text">
                             <span class="ai-title">{{ transcript.isResumingPendingJob() ?
@@ -138,7 +142,7 @@
                     <!-- Error -->
                     <div class="state-item state-error">
                         <div class="error-icon-box" [class.ai-icon-box]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)">
-                            <app-icon [name]="((transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)) ? 'wand' : 'alert-circle'" [size]="20" [class.ai-icon]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)" class="error-icon" />
+                            <app-icon [name]="((transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)) ? 'sparkles' : 'alert-circle'" [size]="20" [class.ai-icon]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)" class="error-icon" />
                         </div>
                         <div class="error-text">
                             @if (transcript.error() === 'VIDEO_TOO_LONG') {
@@ -268,9 +272,13 @@
                 <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
                 <div class="cue-body">
                     <span class="cue-text" [attr.title]="cue.text">{{ cue.text }}</span>
-                    @if (settings.settings().showDualSubtitles && cueTranslations().get(cue.id); as translation) {
+                    @if (settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())) {
+                    @if (cueTranslations().get(cue.id); as translation) {
                     @if (translation.trim() !== cue.text.trim()) {
                     <span class="cue-translation-text" [attr.title]="translation">{{ translation }}</span>
+                    }
+                    } @else if (subtitles.isDualSubLoading() || isTranslatingDual()) {
+                    <span class="cue-translation-skeleton"></span>
                     }
                     }
                 </div>

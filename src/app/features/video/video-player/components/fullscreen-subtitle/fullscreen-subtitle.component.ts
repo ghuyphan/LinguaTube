@@ -56,7 +56,11 @@ import { VocabularyService } from '../../../../vocabulary';
             <div class="fs-subtitle-text" [class]="'text-' + language()">
               <!-- Direct text display when tokens are empty or loading -->
               @if (viewTokens().length === 0) {
-                <span class="fs-word">{{ cue.text }}</span>
+                @if (showReadingAnnotation()) {
+                  <span class="fs-word"><ruby>{{ cue.text }}<rt class="rt-empty">&#160;</rt></ruby></span>
+                } @else {
+                  <span class="fs-word">{{ cue.text }}</span>
+                }
               } @else { 
                 <!-- Interactive token display -->
                 @for (vt of viewTokens(); track vt.surface + '-' + vt.index) {
@@ -109,6 +113,8 @@ import { VocabularyService } from '../../../../vocabulary';
                   <div class="fs-subtitle-translation">
                     {{ currentTranslation() }}
                   </div>
+                } @else {
+                  <div class="fs-subtitle-translation fs-subtitle-translation--empty"></div>
                 }
               </div>
             }

@@ -70,8 +70,8 @@ Negative cache preventing repeated failed fetches for videos confirmed to lack n
 ```sql
 CREATE TABLE IF NOT EXISTS no_transcript_cache (
     video_id TEXT NOT NULL,
-    language TEXT NOT NULL,
-    source TEXT NOT NULL,  -- 'youtube' or 'ai'
+    language TEXT NOT NULL,  -- ISO code (e.g. 'ja', 'zh') or '*' for videos confirmed to have 0 captions globally
+    source TEXT NOT NULL,    -- 'native' or 'ai'
     created_at INTEGER DEFAULT (strftime('%s', 'now')),
     PRIMARY KEY (video_id, language, source)
 );
@@ -79,6 +79,8 @@ CREATE TABLE IF NOT EXISTS no_transcript_cache (
 CREATE INDEX IF NOT EXISTS idx_no_transcript_video ON no_transcript_cache(video_id);
 CREATE INDEX IF NOT EXISTS idx_no_transcript_created ON no_transcript_cache(created_at);
 ```
+> [!NOTE]
+> When upstream Supadata confirms a video has no native captions in any language, `language = '*'` is inserted alongside the requested language code, and `video_languages.available_languages` is set to `'[]'`. Subsequent checks for any language match `(language = ? OR language = '*')` and return immediately in < 20ms.
 
 ### 2.3. Table: `video_meta` (`db/schema.sql` & `db/add-video-meta.sql`)
 Index recording available languages and sources per video for quick lookup without reading full transcripts:

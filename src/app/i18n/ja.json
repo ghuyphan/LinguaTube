@@ -344,6 +344,7 @@
     "signInGoogle": "Google で続行",
     "syncVocab": "デバイス間で単語帳を同期",
     "learningLanguage": "学習言語",
+    "switchedToLanguage": "学習言語を{lang}に切り替えました",
     "targetLanguage": "対訳字幕の言語",
     "japanese": "日本語",
     "chinese": "中国語",

@@ -229,13 +229,41 @@ export async function onRequestPost(context) {
         if (!preferAI) {
             if (forceRefresh) {
                 deleteNoTranscript(db, cleanVideoId, lang, 'native').catch(() => {});
-            } else if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
-                // Negative cache hit, but maybe AI fallback exists
-                return jsonResponse({
-                    success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                    errorCode: 'NO_NATIVE', error: 'No native captions.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
-                    ...diamondInfo, timing: elapsed()
-                }, 200, { 'X-Cache': 'NEG' });
+            } else {
+                // 1. Negative cache hit (specific lang or global '*')
+                if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
+                    return jsonResponse({
+                        success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
+                        errorCode: 'NO_NATIVE', error: 'No native captions.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
+                        ...diamondInfo, timing: elapsed()
+                    }, 200, { 'X-Cache': 'NEG' });
+                }
+
+                // 2. Video known to have 0 native languages globally in D1 (persisted from previous check)
+                if (knownInfo && Array.isArray(knownInfo.availableLanguages) && knownInfo.availableLanguages.length === 0 && (knownInfo.title || knownInfo.durationSeconds)) {
+                    return jsonResponse({
+                        success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
+                        errorCode: 'NO_NATIVE', error: 'No native captions found. AI available.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
+                        ...diamondInfo, timing: elapsed()
+                    }, 200, { 'X-Cache': 'KNOWN_NO_LANGS' });
+                }
+
+                // 3. Video known to have native captions, but requested language is not among them (e.g. video has en/ja, user asked for zh)
+                if (knownInfo && Array.isArray(knownInfo.availableLanguages) && knownInfo.availableLanguages.length > 0) {
+                    const normLang = lang.split('-')[0].toLowerCase();
+                    const hasLang = knownInfo.availableLanguages.some(l => l.split('-')[0].toLowerCase() === normLang);
+                    if (!hasLang) {
+                        return jsonResponse({
+                            success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
+                            languageMismatch: true,
+                            availableLanguages: { native: knownInfo.availableLanguages, ai: [] },
+                            subLanguages: knownInfo.subLanguages || [],
+                            whisperAvailable: diamondStatus.diamonds > 0,
+                            errorCode: 'NO_NATIVE', error: 'No native captions in requested language.',
+                            ...diamondInfo, timing: elapsed()
+                        }, 200, { 'X-Cache': 'LANG_MISMATCH' });
+                    }
+                }
             }
 
             const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang, {

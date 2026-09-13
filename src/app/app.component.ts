@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, inject, PLATFORM_ID, computed, Injector, afterNextRender, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID, computed, Injector, afterNextRender, OnDestroy } from '@angular/core';
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -1127,6 +1127,22 @@ export class AppComponent implements OnDestroy {
   constructor() {
     this.initViewportSizing();
     this.initKeyboardShortcuts();
+
+    // Ensure all app-level dialogs/sheets are dismissed if learning language changes
+    let prevLang = '';
+    effect(() => {
+      const currentLang = this.settings.settings().language;
+      if (prevLang && prevLang !== currentLang) {
+        this.showSettingsSheet.set(false);
+        this.showMoreSheet.set(false);
+        this.showStreakSheet.set(false);
+        this.showAiCreditsSheet.set(false);
+        this.showAchievementsSheet.set(false);
+        this.showProUpgradeSheet.set(false);
+        this.showCommandPalette.set(false);
+      }
+      prevLang = currentLang;
+    });
   }
 
   ngOnDestroy(): void {

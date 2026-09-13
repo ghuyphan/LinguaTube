@@ -4,14 +4,14 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../../shared/components/icon/icon.component';
-import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
+import { OptionPickerComponent } from '../../shared/components/option-picker/option-picker.component';
 import { SettingsService, AuthService, I18nService, AppUpdateService } from '../../core/services';
-import { YoutubeService, SubtitleService, TranscriptService, PlayerViewService } from '../../features/video';
+import { YoutubeService, TranscriptService, PlayerViewService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { PlaylistService } from '../../features/playlist/playlist.service';
 import { StreakService } from '../../services/streak.service';
+import { LearningLanguageService } from '../../services/learning-language.service';
 import { GamificationService } from '../../core/services/gamification.service';
-import { SUPPORTED_LANGUAGES } from '../../models';
 import { VideoRecommendationService } from '../../core/services/video-recommendation.service';
 
 @Component({
@@ -28,7 +28,6 @@ export class SidebarComponent {
     settings = inject(SettingsService);
     vocab = inject(VocabularyService);
     youtube = inject(YoutubeService);
-    subtitles = inject(SubtitleService);
     auth = inject(AuthService);
     i18n = inject(I18nService);
     transcript = inject(TranscriptService);
@@ -37,6 +36,7 @@ export class SidebarComponent {
     gamification = inject(GamificationService);
     appUpdate = inject(AppUpdateService);
     videoRecommendation = inject(VideoRecommendationService);
+    learningLanguage = inject(LearningLanguageService);
 
     private currentUrl = toSignal(
         this.router.events.pipe(
@@ -115,34 +115,16 @@ export class SidebarComponent {
     openProUpgrade = output<void>();
     showLangPicker = signal(false);
 
-    // Learning language options with display info
-    readonly learningLanguages = SUPPORTED_LANGUAGES;
-
-    // Computed for current learning language display
-    currentLang = computed(() => {
-        const code = this.settings.settings().language;
-        return this.learningLanguages.find(l => l.code === code) || this.learningLanguages[0];
-    });
-
-    // Computed options for OptionPicker
-    learningLangOptions = computed<OptionItem[]>(() =>
-        this.learningLanguages.map(l => ({
-            value: l.code,
-            label: l.name,
-            iconUrl: l.flag
-        }))
-    );
+    readonly currentLang = this.learningLanguage.currentLanguage;
+    readonly learningLangOptions = this.learningLanguage.languageOptions;
 
     toggleCollapse(): void {
         this.settings.setSidebarCollapsed(!this.isCollapsed());
     }
 
     setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
-        if (this.settings.settings().language === lang) return;
-        this.subtitles.clear();
-        this.transcript.reset();
-        this.settings.setLanguage(lang);
         this.showLangPicker.set(false);
+        this.learningLanguage.switchLanguage(lang);
     }
 
     onLangSelected(value: string): void {

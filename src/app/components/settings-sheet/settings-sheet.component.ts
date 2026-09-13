@@ -5,11 +5,12 @@ import { BottomSheetComponent } from '../../shared/components/bottom-sheet/botto
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
-import { ReadingDisplayMode, SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
+import { ReadingDisplayMode, SupportedLearningLanguage } from '../../models';
 
 import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService, AppUpdateService } from '../../core/services';
-import { SubtitleService, TranscriptService } from '../../features/video';
+import { TranscriptService } from '../../features/video';
 import { StreakService } from '../../services/streak.service';
+import { LearningLanguageService } from '../../services/learning-language.service';
 
 @Component({
   selector: 'app-settings-sheet',
@@ -23,12 +24,12 @@ export class SettingsSheetComponent {
   settings = inject(SettingsService);
   auth = inject(AuthService);
   toast = inject(ToastService);
-  subtitles = inject(SubtitleService);
   i18n = inject(I18nService);
   transcript = inject(TranscriptService);
   streak = inject(StreakService);
   gamification = inject(GamificationService);
   appUpdate = inject(AppUpdateService);
+  learningLanguage = inject(LearningLanguageService);
 
   readonly sheet = viewChild(BottomSheetComponent);
 
@@ -45,14 +46,8 @@ export class SettingsSheetComponent {
   showReadingModePicker = signal(false);
   showReleaseNotes = signal(false);
 
-  // Learning language options with display info
-  readonly learningLanguages = SUPPORTED_LANGUAGES;
-
-  // Computed for current learning language display
-  currentLearningLang = computed(() => {
-    const code = this.settings.settings().language;
-    return this.learningLanguages.find(l => l.code === code) || this.learningLanguages[0];
-  });
+  readonly currentLearningLang = this.learningLanguage.currentLanguage;
+  readonly learningLangOptions = this.learningLanguage.languageOptions;
 
   // Computed for current UI language display
   currentUILang = computed(() => {
@@ -67,15 +62,6 @@ export class SettingsSheetComponent {
     const language = this.settings.settings().language;
     return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
   });
-
-  // Computed options for OptionPicker
-  learningLangOptions = computed<OptionItem[]>(() =>
-    this.learningLanguages.map(l => ({
-      value: l.code,
-      label: l.name,
-      iconUrl: l.flag
-    }))
-  );
 
   uiLangOptions = computed<OptionItem[]>(() =>
     this.i18n.availableLanguages.map(l => ({
@@ -111,15 +97,13 @@ export class SettingsSheetComponent {
   }
 
   setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
-    if (this.settings.settings().language === lang) return;
-    this.subtitles.clear();
-    this.transcript.reset();
-    this.settings.setLanguage(lang);
+    this.showLearningLangPicker.set(false);
+    this.sheet()?.close();
+    this.learningLanguage.switchLanguage(lang);
   }
 
   onLearningLangSelected(value: string): void {
     this.setLanguage(value as 'ja' | 'zh' | 'ko' | 'en');
-    this.showLearningLangPicker.set(false);
   }
 
   setUILanguage(lang: UILanguage): void {

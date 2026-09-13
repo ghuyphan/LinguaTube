@@ -344,6 +344,7 @@
     "signInGoogle": "Continue with Google",
     "syncVocab": "Sync vocabulary across devices",
     "learningLanguage": "Learning Language",
+    "switchedToLanguage": "Switched learning language to {lang}",
     "targetLanguage": "Subtitle Language",
     "japanese": "Japanese",
     "chinese": "Chinese",

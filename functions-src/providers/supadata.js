@@ -5,7 +5,7 @@
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
-const SUPADATA_TIMEOUT_MS = 7000; // 7 seconds is plenty for native caption availability checks
+const SUPADATA_TIMEOUT_MS = 4000; // 4 seconds is plenty for native caption availability checks
 
 export class SupadataProvider {
     /**
@@ -63,6 +63,10 @@ export class SupadataProvider {
                 } else if (isTimeout) {
                     // Timeout -> 60 seconds cooldown to allow failover to alternative key
                     await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 60);
+                    // On timeout during native caption check, cap failover to prevent long freezes
+                    if (attempt >= 1) {
+                        return { notFound: true, segments: [], availableLangs: [] };
+                    }
                 }
                 // Try next unattempted key in subsequent loop iteration
             }

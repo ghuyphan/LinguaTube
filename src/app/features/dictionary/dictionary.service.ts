@@ -32,6 +32,15 @@ export class DictionaryService {
   readonly screenEntries = signal<DictionaryEntry[]>([]);
   readonly screenError = signal<string | null>(null);
 
+  /**
+   * Clear active screen query and search entries (e.g. upon language switch).
+   */
+  clearScreenState(): void {
+    this.screenQuery.set('');
+    this.screenEntries.set([]);
+    this.screenError.set(null);
+  }
+
   // Unified API endpoint
   private readonly UNIFIED_DICT_API = environment.api.dict;
 

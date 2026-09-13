@@ -834,3 +834,43 @@ test('TTS Fallback: Google TTS URL and language mapping format correctly', () =>
   const zhUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent('你好')}&tl=${tlMap['zh']}&client=tw-ob`;
   assert.equal(zhUrl, 'https://translate.google.com/translate_tts?ie=UTF-8&q=%E4%BD%A0%E5%A5%BD&tl=zh-CN&client=tw-ob');
 });
+
+test('splitRunOnSegments: splits long CJK and Latin speech segments at punctuation boundaries', async () => {
+  const { splitRunOnSegments, cleanTranscriptSegments } = await import('../functions-src/utils/transcript-utils.js');
+
+  // Short cue is preserved
+  const shortSeg = [{ text: 'こんにちは', start: 1.0, duration: 2.0 }];
+  const shortResult = splitRunOnSegments(shortSeg);
+  assert.equal(shortResult.length, 1);
+  assert.equal(shortResult[0].text, 'こんにちは');
+
+  // Long CJK cue with period and comma
+  const longCJK = [{
+    text: '今日はとても良い天気ですね。散歩に行きましょう、楽しい一日になりますよ！',
+    start: 0.0,
+    duration: 8.0
+  }];
+  const cjkResult = splitRunOnSegments(longCJK);
+  assert.ok(cjkResult.length >= 2, 'Must split into multiple cues');
+  assert.equal(cjkResult[0].start, 0.0);
+  assert.ok(cjkResult[0].duration > 0);
+  assert.ok(cjkResult[1].start > cjkResult[0].start);
+
+  // Long English cue with period and comma
+  const longEn = [{
+    text: 'Welcome to this complete guide for language learners. In this video, we will explore the best techniques to master vocabulary naturally.',
+    start: 5.0,
+    duration: 10.0
+  }];
+  const enResult = splitRunOnSegments(longEn);
+  assert.ok(enResult.length >= 2, 'Must split into multiple cues');
+  assert.equal(enResult[0].start, 5.0);
+
+  // Integrated cleanTranscriptSegments applies splitting and sticky timing with MAX_CUE_DURATION = 5.0
+  const cleaned = cleanTranscriptSegments(longCJK);
+  assert.ok(cleaned.length >= 2);
+  for (const c of cleaned) {
+    assert.ok(c.duration <= 5.0, `Duration ${c.duration} should not exceed MAX_CUE_DURATION`);
+  }
+});
+

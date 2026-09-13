@@ -344,6 +344,7 @@
     "signInGoogle": "Google로 계속하기",
     "syncVocab": "기기 간 단어장 동기화",
     "learningLanguage": "학습 언어",
+    "switchedToLanguage": "학습 언어를 {lang}(으)로 전환했습니다",
     "targetLanguage": "자막 언어",
     "japanese": "일본어",
     "chinese": "중국어",

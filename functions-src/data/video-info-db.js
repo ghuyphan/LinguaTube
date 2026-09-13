@@ -374,7 +374,7 @@ export async function isNoTranscript(db, kv, videoId, lang, source) {
     try {
         const row = await db.prepare(`
             SELECT 1 FROM no_transcript_cache
-            WHERE video_id = ? AND language = ? AND source = ?
+            WHERE video_id = ? AND (language = ? OR language = '*') AND source = ?
         `).bind(videoId, lang, source).first();
 
         return Boolean(row);
@@ -418,12 +418,12 @@ export async function deleteNoTranscript(db, videoId, lang = null, source = null
         if (lang && source) {
             await db.prepare(`
                 DELETE FROM no_transcript_cache 
-                WHERE video_id = ? AND language = ? AND source = ?
+                WHERE video_id = ? AND (language = ? OR language = '*') AND source = ?
             `).bind(videoId, lang, source).run();
         } else if (lang) {
             await db.prepare(`
                 DELETE FROM no_transcript_cache 
-                WHERE video_id = ? AND language = ?
+                WHERE video_id = ? AND (language = ? OR language = '*')
             `).bind(videoId, lang).run();
         } else {
             await db.prepare(`

@@ -212,6 +212,16 @@ graph TD
   - The `.current-subtitle` container maintains a rock-solid, stable height (`9.5rem` on desktop, `11.5rem` with dual subtitles; `8.5rem` / `10.5rem` on mobile) eliminating vertical layout jitter as dialogue shifts between 1-line and multi-line cues.
   - Inner container `.current-subtitle__inner` uses `flex: 1; min-height: 0; overflow-y: auto` with modern floating pill scrollbars.
   - Bulletproof vertical centering via `margin: auto 0` on `.subtitle-center-wrapper`: short cues center automatically, while long cues naturally anchor to the top and scroll downward with zero top-clipping.
+  - **Dual Subtitle Layout Stabilization (Zero-CLS Architecture)**:
+    - Pre-allocates a fixed two-line bounding box for `.subtitle-translation-wrapper` (`calc(font-size * 2.8 + 6px)`) across normal, small, large, and xlarge font sizes.
+    - Whether translations are loading (dots), 1 line, 2 lines, or empty, the bounding height remains strictly immutable, preventing the primary learning subtitle above from jumping up and down.
+    - Transitions use a clean opacity fade (`translationFade`) rather than vertical translate transforms (`translateY`), eliminating visual jump sensation.
+    - In the transcript list (`.subtitle-list`), `.cue-translation-skeleton` preserves row heights while batch translations are in flight, completely eliminating list scroll jumps.
+    - In `FullscreenSubtitleComponent`, `.fs-subtitle-translation-wrapper` locks to a 2-line minimum height with an empty placeholder fallback, ensuring fullscreen cards never jump upward.
+- **Refined Minimalist AI Design System**:
+  - Replaced legacy wand icons and purple/pink rotating conic gradients with Voca's signature coral accent tokens (`--accent-primary`, `rgba(var(--accent-primary-rgb), ...)`).
+  - The AI transcription state features a sleek, high-precision circular accent spinner and minimal `sparkles` glyph.
+  - Subtitle panel in AI mode uses a soft, ambient coral border glow rather than distracting pulsating corner animations.
 - **Apple Music / Spotify Style Transcript List with Continuous Fluid Centering**:
   - The `.subtitle-list` displays upcoming and past dialogue with comfortable `14rem` height (`12rem` on mobile), Apple Music-inspired smooth dissolve fade masks at top and bottom edges (`mask-image`), and clean hidden scrollbars (`scrollbar-width: none;`).
   - Active cues feature a refined, calm "spotlight" highlight: soft ambient accent wash (`rgba(var(--accent-primary-rgb), 0.07)`), an elegant 3px vertical accent indicator bar, crisp high-contrast typography, and a clean monospace timestamp without heavy colored pill borders or drop shadows.
@@ -397,7 +407,19 @@ Located at `src/app/core/services/payment.service.ts`:
   - Automatic celebration on success: triggers `ToastService.success()`, clears the order state, and re-fetches user diamonds and tier.
   - Exposes `cancelOrder()` for user cancellation or cleanup on dialog close.
 
-### 4.5. HTTP Interceptor Pipeline (`src/app/interceptors/`)
+### 4.5. Unified Course Context Switching (`LearningLanguageService`)
+Located at `src/app/services/learning-language.service.ts`:
+- **Centralized Orchestration**: Treats switching learning language as a full course context change rather than a superficial setting:
+  - **Immediate Overlay Teardown**: Calls `BottomSheetService.closeAll()` to dismiss any open settings sheet, option picker, command palette, or more menu.
+  - **Cross-Domain State Reset**:
+    - Video: Resets player (`YoutubeService.reset()`), clears subtitles (`SubtitleService.clear()`), flushes active transcripts (`TranscriptService.reset()`), resets CEFR/JLPT difficulty assessment (`VideoLevelService.reset()`), active playlist (`PlaylistService.clearCurrentPlaylist()`), and resets player view (`PlayerViewService.reset()`).
+    - Study (SRS): Halts in-progress card sessions via `VocabularyService.requestStudyReset()`.
+    - Dictionary: Clears active search queries and entries via `DictionaryService.clearScreenState()` and `DictionaryPanelComponent`'s reactive language effect.
+  - **Navigation & Feed Loading**: Navigates to `/video` with query parameters cleared when `navigateHome: true`, directly presenting fresh recommendations for the target language.
+  - **In-Video Mismatch Adoption**: Supports `navigateHome: false` for video language mismatch dialogs, updating the target language while retaining the active video to reload matching authentic captions.
+  - **Visual Feedback**: Fires an immediate, localized HUD notification (`settings.switchedToLanguage`) via `ToastService`.
+
+### 4.6. HTTP Interceptor Pipeline (`src/app/interceptors/`)
 Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
 - **`authInterceptor`**:
   - Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.

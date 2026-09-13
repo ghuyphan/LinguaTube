@@ -163,11 +163,28 @@ export class TranscriptService {
         // Only cache failure if the provider explicitly confirmed captions do NOT exist (404/notFound).
         // Never poison the negative cache on transient network failures, timeouts, or exhausted keys!
         if (nativeResult?.notFound && env.SUPADATA_API_KEY) {
-            const markNegativeCache = markNoTranscript(db, cache, videoId, lang, 'native');
+            const negativeOps = [
+                markNoTranscript(db, cache, videoId, lang, 'native'),
+                markNoTranscript(db, cache, videoId, '*', 'native')
+            ];
+            if (options.title || options.channel || options.duration) {
+                negativeOps.push(saveVideoLanguages(
+                    db,
+                    videoId,
+                    [],
+                    options.duration || null,
+                    options.title || null,
+                    options.channel || null,
+                    false,
+                    null,
+                    options.channelAvatar || null
+                ));
+            }
+            const runOps = Promise.allSettled(negativeOps);
             if (waitUntil) {
-                waitUntil(markNegativeCache.catch(() => {}));
+                waitUntil(runOps);
             } else {
-                await markNegativeCache;
+                await runOps;
             }
         }
 

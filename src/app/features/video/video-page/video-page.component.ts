@@ -23,6 +23,7 @@ import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dia
 import { PlaylistService } from '../../playlist/playlist.service';
 import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo, getLanguageFlagUrl } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
+import { LearningLanguageService } from '../../../services/learning-language.service';
 import { formatTime } from '../../../core/utils';
 
 export type FeedItem =
@@ -68,6 +69,7 @@ export class VideoPageComponent implements OnInit {
   i18n = inject(I18nService);
   private seo = inject(SeoService);
   toast = inject(ToastService);
+  private learningLanguage = inject(LearningLanguageService);
 
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
@@ -646,16 +648,6 @@ export class VideoPageComponent implements OnInit {
             this.videoLevel.reset();
             this.fetchCaptions(currentVideo.id);
           }
-        } else {
-          // User changed their target learning language in sidebar / settings while watching a video!
-          // Clear current video and return to Home feed for the newly chosen learning language
-          this.savedFeedScrollY = 0;
-          this.videoLevel.reset();
-          this.playlistService.clearCurrentPlaylist();
-          this.youtube.reset();
-          this.subtitles.clear();
-          this.transcript.reset();
-          void this.router.navigate(['/video'], { queryParams: {} });
         }
       }
     });
@@ -926,7 +918,7 @@ export class VideoPageComponent implements OnInit {
     const validLangs: SupportedLearningLanguage[] = ['ja', 'zh', 'ko', 'en'];
     if (validLangs.includes(lang as SupportedLearningLanguage)) {
       this.skipNextMismatchDialog = true;
-      this.settings.setLanguage(lang as SupportedLearningLanguage);
+      this.learningLanguage.switchLanguage(lang as SupportedLearningLanguage, { navigateHome: false });
     }
   }
 
@@ -1127,6 +1119,13 @@ export class VideoPageComponent implements OnInit {
   private checkLanguageMismatch(): void {
     // Handle NO_NATIVE case where other languages might be available
     if (this.transcript.error() === 'NO_NATIVE' && !this.skipNextMismatchDialog) {
+      // If the user has diamonds available to transcribe in their chosen language,
+      // let the subtitle panel display the prominent AI button without popping up an intrusive switch modal
+      if (this.transcript.diamonds() > 0) {
+        this.skipNextMismatchDialog = false;
+        return;
+      }
+
       const availableNative = this.transcript.availableLanguages().native;
 
       if (availableNative && availableNative.length > 0) {
@@ -1251,7 +1250,7 @@ export class VideoPageComponent implements OnInit {
     if (detected) {
       // Skip the dialog for the upcoming refetch triggered by language change
       this.skipNextMismatchDialog = true;
-      this.settings.setLanguage(detected as 'ja' | 'zh' | 'ko' | 'en');
+      this.learningLanguage.switchLanguage(detected as SupportedLearningLanguage, { navigateHome: false });
     }
     this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);

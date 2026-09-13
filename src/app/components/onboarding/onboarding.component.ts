@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, inject, signal, output } from '@ang
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { SettingsService, I18nService } from '../../core/services';
-import { SupportedLearningLanguage } from '../../models';
+import { SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
 
 @Component({
     selector: 'app-onboarding',
@@ -24,12 +24,12 @@ export class OnboardingComponent {
         this.settings.settings().language || 'ja'
     );
 
-    readonly learningLanguages = [
-        { code: 'ja' as const, name: 'Japanese', nativeName: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-        { code: 'zh' as const, name: 'Chinese', nativeName: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-        { code: 'ko' as const, name: 'Korean', nativeName: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-        { code: 'en' as const, name: 'English', nativeName: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
-    ];
+    readonly learningLanguages = SUPPORTED_LANGUAGES;
+
+    getLanguageName(code: string): string {
+        const map: Record<string, string> = { ja: 'japanese', zh: 'chinese', ko: 'korean', en: 'english' };
+        return this.i18n.t(`settings.${map[code]}`) || code;
+    }
 
     selectLanguage(code: 'ja' | 'zh' | 'ko' | 'en'): void {
         this.selectedLang.set(code);

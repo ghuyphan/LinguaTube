@@ -7,8 +7,8 @@
 const MIN_CUE_GAP = 0.5;
 // Minimum duration for a cue (in seconds)
 const MIN_CUE_DURATION = 0.5;
-// Maximum duration for a single cue (prevents overly long subtitles)
-const MAX_CUE_DURATION = 10;
+// Maximum duration for a single cue (prevents overly long subtitles, standard 5s)
+const MAX_CUE_DURATION = 5.0;
 
 /**
  * Clean transcript segments:
@@ -16,7 +16,8 @@ const MAX_CUE_DURATION = 10;
  * 2. Remove duplicates at same timestamp
  * 3. Merge overlapping/similar segments
  * 4. Remove very short/empty segments
- * 5. Apply proper timing
+ * 5. Split overly long run-on segments at sentence and clause boundaries
+ * 6. Apply proper timing
  * 
  * @param {Array<{text: string, start: number, duration: number}>} segments - Raw transcript segments
  * @returns {Array<{text: string, start: number, duration: number}>} Cleaned segments
@@ -39,8 +40,11 @@ export function cleanTranscriptSegments(segments) {
         // removed duration check as some valid words can be short in CJK
     );
 
-    // Step 5: Apply sticky timing with caps
-    return applyTiming(filtered);
+    // Step 5: Split run-on speech segments into natural subtitle chunks
+    const splitSegments = splitRunOnSegments(filtered);
+
+    // Step 6: Apply sticky timing with caps
+    return applyTiming(splitSegments);
 }
 
 /**
@@ -98,6 +102,89 @@ function mergeGroups(groups) {
 
 // NOTE: shouldMerge, mergeText, textSimilarity were removed as dead code
 // They were not called by any function after the refactoring to group-based deduplication
+
+/**
+ * Intelligently split overly long run-on speech segments into natural sentence cues
+ * @param {Array<{text: string, start: number, duration: number}>} segments
+ * @returns {Array<{text: string, start: number, duration: number}>}
+ */
+export function splitRunOnSegments(segments) {
+    if (!segments?.length) return [];
+
+    const result = [];
+    for (const segment of segments) {
+        const text = segment.text?.trim() || '';
+        if (!text) continue;
+
+        const isCJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\uac00-\ud7af]/.test(text);
+        const maxLen = isCJK ? 22 : 48;
+
+        // If short enough and duration reasonable, keep as-is
+        if (text.length <= maxLen && segment.duration <= 4.5) {
+            result.push({
+                ...segment,
+                text
+            });
+            continue;
+        }
+
+        // Step 1: Try splitting by major sentence boundaries (including newline)
+        const majorParts = isCJK
+            ? text.split(/(?<=[。！？!?\n])\s*/).map(p => p.trim()).filter(Boolean)
+            : text.split(/(?<=[.!?\n])\s+/).map(p => p.trim()).filter(Boolean);
+
+        // Step 2: If any part is still too long, split further by commas / clause boundaries
+        const refinedParts = [];
+        for (const p of (majorParts.length > 0 ? majorParts : [text])) {
+            if (p.length > maxLen) {
+                const subParts = isCJK
+                    ? p.split(/(?<=[、，,;；:：])\s*/).map(s => s.trim()).filter(Boolean)
+                    : p.split(/(?<=[,;:])\s+/).map(s => s.trim()).filter(Boolean);
+                if (subParts.length > 1) {
+                    refinedParts.push(...subParts);
+                } else {
+                    refinedParts.push(p);
+                }
+            } else {
+                refinedParts.push(p);
+            }
+        }
+
+        if (refinedParts.length <= 1) {
+            result.push({
+                ...segment,
+                text
+            });
+            continue;
+        }
+
+        // Step 3: Proportionally interpolate timestamps based on character count
+        const totalChars = refinedParts.reduce((sum, p) => sum + p.length, 0);
+        if (totalChars === 0) {
+            result.push(segment);
+            continue;
+        }
+
+        let currentStart = segment.start;
+        const totalDuration = segment.duration || (MIN_CUE_DURATION * refinedParts.length);
+
+        for (let i = 0; i < refinedParts.length; i++) {
+            const part = refinedParts[i];
+            const partRatio = part.length / totalChars;
+            const partDuration = Math.max(MIN_CUE_DURATION, Math.round((totalDuration * partRatio) * 100) / 100);
+
+            result.push({
+                text: part,
+                start: Math.round(currentStart * 100) / 100,
+                duration: Math.min(partDuration, MAX_CUE_DURATION)
+            });
+
+            currentStart += partDuration;
+        }
+    }
+
+    return result;
+}
 
 /**
  * Apply sticky timing with duration caps

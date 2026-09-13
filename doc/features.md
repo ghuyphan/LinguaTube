@@ -18,9 +18,13 @@ Voca accepts arbitrary YouTube video URLs:
 - Custom UI overlay replaces default YouTube player chrome, eliminating clutter and visual distractions.
 - **Auto-Pause on Hover / Click**:
   When a user hovers over or clicks an interactive subtitle word to inspect its definition, video playback pauses automatically to prevent the learner from falling behind.
-- **Smart Target Language Switch & Session Reset**:
-  - When a user changes their target learning language (via sidebar or settings sheet) while watching a video, `VideoPageComponent` automatically halts video playback, clears the player, subtitles, and transcript state, and smoothly navigates back to the Home Feed (`/video`) loaded with recommended playlists and videos for the newly chosen language.
-  - Conversely, when a video language mismatch is detected and the user explicitly clicks "Switch to video language" inside the prompt dialog (`skipNextMismatchDialog: true`), the player stays on the video and immediately re-fetches captions matching the video's authentic spoken language.
+- **Unified Course Context Switching (`LearningLanguageService`)**:
+  - Modeled after top language learning applications (Duolingo, LingoDeer, Babbel), switching learning language acts as a full **Course Context Switch** rather than a passive settings toggle.
+  - **Instant Overlay Dismissal**: Automatically closes open bottom sheets (`BottomSheetService.closeAll()`), settings drawers, sub-option pickers, and modal dialogs with zero manual taps.
+  - **Multi-Domain State Teardown**: Completely purges in-progress flashcard reviews (`VocabularyService.requestStudyReset()`), resets the YouTube player, subtitles, and transcripts (`YoutubeService.reset()`, `SubtitleService.clear()`, `TranscriptService.reset()`, `VideoLevelService.reset()`, `PlayerViewService.reset()`), and clears stale dictionary queries/entries (`DictionaryService.clearScreenState()`).
+  - **Home Navigation & Feed Refresh**: Automatically redirects to the Home video feed (`/video`) loaded with recommended videos and playlists tailored for the newly selected language.
+  - **In-Video Mismatch Adoption**: When a video language mismatch prompt is confirmed (`skipNextMismatchDialog: true`), the player smoothly adapts to the video's authentic spoken language without navigating away, immediately re-fetching matching captions.
+  - **Localized Toast Feedback**: Displays an instant confirmation toast (`settings.switchedToLanguage`) localized in the learner's active UI language.
 
 ### 1.3. Controls & Interaction Matrix
 | Action | Desktop Shortcut | Mobile Gesture | UI Element |
@@ -201,8 +205,11 @@ graph TD
   - **Tier 2 (Cloudflare R2 Edge)**: Checks server/R2 cache (`onlyCache: true`) without requiring segment payloads. If present, returns full bilingual transcript in ~50ms.
   - **Tier 3 (JIT Rolling Window Stream with Seek Preemption)**: On cache miss or fallback from on-device translation, immediately translates upcoming cues in batches of 60 with a 40-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) with interactive seek preemption. If the user skips or seeks in the video, non-essential background requests are cancelled immediately to deliver instantaneous translations for the new playhead.
   - **100% Full-Transcript Background Streaming**: Instead of stalling after the initial window, `SubtitleService` continuously streams and translates remaining cues across the entire video in gentle, staggered background batches (600ms stagger) until 100% of the video's transcript is translated and stored in local IndexedDB and Cloudflare R2 crowd-cache.
-  - **Run-On Utterance Splitting**: Captions with excessively long durations (>4.5s) and dense characters (>40 CJK or >75 Western chars) are automatically decomposed at natural punctuation delimiters into well-proportioned sub-cues with mathematically interpolated timestamps.
-  - **Adaptive Subtitle Container Display**: Responsive subtitle boxes dynamically scale their height from 11rem to 16rem with `word-break: break-word` and smooth scrolling to accommodate multi-line ruby annotations and dual translation text without clipping.
+  - **Adaptive Subtitle Container Display & Zero-Shift Stabilization**:
+    - Responsive subtitle boxes dynamically scale their height from 11.5rem (`has-dual-subtitles`) with `word-break: break-word` and smooth scrolling to accommodate multi-line ruby annotations and dual translation text without clipping.
+    - Pre-allocates a fixed two-line bounding box for `.subtitle-translation-wrapper` (`calc(font-size * 2.8 + 6px)`) across all font sizes, ensuring translation loading (dots), 1-line translations, and 2-line translations occupy the exact same vertical space, preventing the learning subtitle above from jumping up and down.
+    - Subtitle list rows utilize `.cue-translation-skeleton` to pre-allocate height while translations are fetching, eliminating transcript list scroll jumping.
+    - Fullscreen subtitles utilize bottom-anchored upward expansion with a locked 2-line translation wrapper and empty fallback placeholder, ensuring zero text displacement during playback.
 - **Dual Subtitle Self-Healing & Fuzzy Proximity Alignment**:
   - Cues are mapped to cached bilingual segments via timestamp proximity ($\pm 0.8$s) and text equality rather than brittle array index positions.
   - If a cached dual subtitle transcript has partial coverage ($<80\%$) or contains missing cues, the client automatically triggers background translation of missing lines during playback without causing infinite loading spinners.

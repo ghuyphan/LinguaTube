@@ -76,9 +76,10 @@ export type TranscriptState =
 const DEBUG = false;
 const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', ...args);
 
-// Timing constants
+// Minimum duration for a cue (in seconds)
 const MIN_CUE_DURATION = 0.5;
-const MAX_CUE_DURATION = 10;
+// Maximum duration for a single cue (prevents overly long subtitles, standard 5s)
+const MAX_CUE_DURATION = 5.0;
 
 @Injectable({
   providedIn: 'root'
@@ -605,47 +606,58 @@ export class TranscriptService {
    */
   private splitRunOnSegment(segment: TranscriptSegment): TranscriptSegment[] {
     const text = segment.text?.trim() || '';
-    if (!text || segment.duration < 4.5) {
-      return [segment];
-    }
+    if (!text) return [];
 
-    // Check if text is long enough to warrant splitting (CJK threshold 40, Latin/other 75)
     const isCJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\uac00-\ud7af]/.test(text);
-    const threshold = isCJK ? 40 : 75;
-    if (text.length <= threshold) {
+    const maxLen = isCJK ? 22 : 48;
+
+    if (text.length <= maxLen && segment.duration <= 4.5) {
       return [segment];
     }
 
-    // Attempt sentence boundary split
-    let parts: string[] = [];
-    if (isCJK) {
-      // Split on Japanese/Chinese full stops, exclamations, question marks, and newlines
-      parts = text.split(/(?<=[。！？!?\n])\s*/).map(p => p.trim()).filter(Boolean);
-    } else {
-      // Split on English sentence terminators followed by whitespace or newlines
-      parts = text.split(/(?<=[.!?\n])\s+/).map(p => p.trim()).filter(Boolean);
+    // Step 1: Split on major sentence terminators
+    const majorParts = isCJK
+      ? text.split(/(?<=[。！？!?\n])\s*/).map(p => p.trim()).filter(Boolean)
+      : text.split(/(?<=[.!?\n])\s+/).map(p => p.trim()).filter(Boolean);
+
+    // Step 2: If any part is still too long, split further by commas / clause boundaries
+    const refinedParts: string[] = [];
+    for (const p of (majorParts.length > 0 ? majorParts : [text])) {
+      if (p.length > maxLen) {
+        const subParts = isCJK
+          ? p.split(/(?<=[、，,;；:：])\s*/).map(s => s.trim()).filter(Boolean)
+          : p.split(/(?<=[,;:])\s+/).map(s => s.trim()).filter(Boolean);
+        if (subParts.length > 1) {
+          refinedParts.push(...subParts);
+        } else {
+          refinedParts.push(p);
+        }
+      } else {
+        refinedParts.push(p);
+      }
     }
 
-    if (parts.length <= 1) {
+    if (refinedParts.length <= 1) {
       return [segment];
     }
 
     // Calculate proportional duration for each sub-cue based on character length
-    const totalChars = parts.reduce((sum, p) => sum + p.length, 0);
+    const totalChars = refinedParts.reduce((sum, p) => sum + p.length, 0);
     if (totalChars === 0) return [segment];
 
     const results: TranscriptSegment[] = [];
     let currentStart = segment.start;
+    const totalDuration = segment.duration || (MIN_CUE_DURATION * refinedParts.length);
 
-    for (let i = 0; i < parts.length; i++) {
-      const part = parts[i];
+    for (let i = 0; i < refinedParts.length; i++) {
+      const part = refinedParts[i];
       const partRatio = part.length / totalChars;
-      const partDuration = Math.max(MIN_CUE_DURATION, Math.round((segment.duration * partRatio) * 100) / 100);
+      const partDuration = Math.max(MIN_CUE_DURATION, Math.round((totalDuration * partRatio) * 100) / 100);
 
       results.push({
         text: part,
-        start: currentStart,
-        duration: partDuration
+        start: Math.round(currentStart * 100) / 100,
+        duration: Math.min(partDuration, MAX_CUE_DURATION)
       });
 
       currentStart += partDuration;

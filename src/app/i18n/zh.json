@@ -344,6 +344,7 @@
     "signInGoogle": "使用 Google 账号登录",
     "syncVocab": "跨设备同步词汇",
     "learningLanguage": "学习语言",
+    "switchedToLanguage": "已切换学习语言为 {lang}",
     "targetLanguage": "字幕语言",
     "japanese": "日语",
     "chinese": "中文",
