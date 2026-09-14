@@ -909,7 +909,7 @@ export class VideoPageComponent implements OnInit {
 
     // If the failure was an AI timeout or AI service error, re-open AI dialog to retry
     if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED') {
-      this.openAiConfirmDialog();
+      this.showAiConfirmDialog.set(true);
       return;
     }
 

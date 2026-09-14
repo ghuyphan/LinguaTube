@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { BottomSheetComponent } from './bottom-sheet.component';
 import { BottomSheetService } from '../../../services/bottom-sheet.service';
 import { I18nService } from '../../../core/services/i18n.service';
@@ -9,24 +9,24 @@ import { I18nService } from '../../../core/services/i18n.service';
   imports: [BottomSheetComponent],
   template: `
     <app-bottom-sheet
-      [isOpen]="isOpen"
-      [title]="title"
-      [showCloseButton]="showCloseButton"
-      [showDragHandle]="showDragHandle"
+      [isOpen]="isOpen()"
+      [title]="title()"
+      [showCloseButton]="showCloseButton()"
+      [showDragHandle]="showDragHandle()"
       (closed)="onClosed()"
     >
-      <div class="test-content" [style.height.px]="contentHeight">
+      <div class="test-content" [style.height.px]="contentHeight()">
         <p>Test content line</p>
       </div>
     </app-bottom-sheet>
   `
 })
 class TestHostComponent {
-  isOpen = false;
-  title = 'Test Modal';
-  showCloseButton = true;
-  showDragHandle = true;
-  contentHeight = 100;
+  isOpen = signal(false);
+  title = signal('Test Modal');
+  showCloseButton = signal(true);
+  showDragHandle = signal(true);
+  contentHeight = signal(100);
   closedCalled = false;
 
   onClosed(): void {
@@ -62,7 +62,7 @@ describe('BottomSheetComponent', () => {
   });
 
   it('should render modal dialog with inner content container when isOpen is true', () => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
 
     const hostEl = fixture.nativeElement as HTMLElement;
@@ -80,7 +80,7 @@ describe('BottomSheetComponent', () => {
   });
 
   it('should apply desktop-modal styling when on desktop viewport', () => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
 
     const sheet = fixture.nativeElement.querySelector('.sheet') as HTMLElement;
@@ -91,7 +91,7 @@ describe('BottomSheetComponent', () => {
   });
 
   it('should emit closed output and unregister when close button is clicked', fakeAsync(() => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
 
     const closeBtn = fixture.nativeElement.querySelector('.sheet-close-btn') as HTMLElement;
@@ -109,7 +109,7 @@ describe('BottomSheetComponent', () => {
   }));
 
   it('should close when backdrop is clicked if allowBackdropClose is true', fakeAsync(() => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
 
     const overlay = fixture.nativeElement.querySelector('.sheet-overlay') as HTMLElement;
@@ -125,7 +125,7 @@ describe('BottomSheetComponent', () => {
   }));
 
   it('should close on Escape key press via BottomSheetService', fakeAsync(() => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
 
     const escapeEvent = new KeyboardEvent('keydown', { key: 'Escape' });
@@ -139,7 +139,7 @@ describe('BottomSheetComponent', () => {
   }));
 
   it('should handle clean teardown when component is destroyed while open', () => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
 
     expect(bottomSheetService.hasOpenSheets).toBeTrue();
@@ -149,7 +149,7 @@ describe('BottomSheetComponent', () => {
   });
 
   it('should trigger height animation on content resize', fakeAsync(() => {
-    host.isOpen = true;
+    host.isOpen.set(true);
     fixture.detectChanges();
     tick(350); // wait for entrance animation
 
@@ -157,10 +157,10 @@ describe('BottomSheetComponent', () => {
     expect(sheet).toBeTruthy();
 
     // Change content height
-    host.contentHeight = 250;
+    host.contentHeight.set(250);
     fixture.detectChanges();
     tick(50);
 
-    expect(host.isOpen).toBeTrue();
+    expect(host.isOpen()).toBeTrue();
   }));
 });
