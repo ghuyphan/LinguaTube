@@ -73,18 +73,14 @@ When modifying this repository, you **MUST** adhere to the following rules:
   6. **Agent Rules & Guidance**: Any change to `AGENTS.md` MUST also be mirrored in `doc/agents.md`.
 - **Never defer documentation updates**: Treat documentation as a first-class build artifact. Do not wait for the user to ask for documentation updates.
 
-### ⚠️ RULE 8: Versioning & Changelog Mandate (Update Release Highlights on Commits)
-- **Whenever an agent prepares to commit and push code that introduces user-facing features, UX improvements, bug fixes, or notable backend changes, the agent MUST update the version and changelog metadata before committing.**
-- **The Synchronized Version & Changelog Locations**:
-  1. `src/app/data/changelog.data.ts`: Contains `CURRENT_RELEASE_INFO` with `version`, `buildDate`, and localized `highlights` across all 5 languages (`en`, `vi`, `ja`, `ko`, `zh`).
-  2. `functions-src/api/version.js`: Contains `APP_VERSION_DATA` mirroring `version`, `buildDate`, and `highlights` for Cloudflare edge verification.
-  3. `server/server.js`: Mirrors the `/api/version` handler for local development.
-  4. `package.json`: Contains `"version": "x.y.z"`.
-- **Workflow Requirements**:
-  - Summarize the new changes into 3–5 user-friendly, high-impact bullet points.
-  - Translate the bullets into all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
-  - Bump the patch or minor version if appropriate (e.g. `1.0.0` $\rightarrow$ `1.0.1`), or update `buildDate` to current date (`YYYY-MM-DD`).
-  - Always run `npm run build:functions` so that the generated `functions/api/version.js` includes the updated version metadata.
+### ⚠️ RULE 8: CI/CD Build Preservation & Controlled Versioning (NO Autonomous Bumping or Build Churn)
+- **Zero Autonomous Version Bumping**: Agents **MUST NOT** bump version numbers, update release dates, or edit changelog/highlights files (`src/app/data/version-info.json`, `package.json`, etc.) unless the USER **explicitly** requests a version bump or release (e.g., "prepare release v1.2.0", "bump version", "update changelog"). Routine tasks, feature additions, and bug fixes MUST leave versioning untouched.
+- **Mandatory `[skip ci]` for Non-Deployable Commits**: Any commit that only modifies documentation (`doc/**`, `*.md`), tests (`tests/**`), database schemas/scripts (`db/**`), or agent rules MUST include `[skip ci]` in the commit title or description. This prevents triggering redundant GitHub Actions CI jobs and preserves Cloudflare Pages monthly build quotas.
+- **Batch Commits**: Avoid pushing multiple small, incremental commits for a single task. Consolidate changes into a single, clean commit to minimize CI/CD pipeline triggers.
+- **Selective Local Builds**:
+  - Run `npm run build:functions` **ONLY IF** files in `functions-src/` were actually created or edited.
+  - Do NOT run `npm run build:functions` or `npm run build` for frontend-only, documentation-only, or test-only changes.
+- **Single Source of Truth**: When an explicit release IS requested by the user, version metadata is managed centrally in `src/app/data/version-info.json` and updated via `npm run release [patch|minor|major|<version>]`.
 
 ---
 
@@ -306,30 +302,29 @@ Whenever your task touches any feature, API, database schema, or workflow:
 2. Review all edited files and update relevant diagrams, tables, and code snippets.
 3. If new user-facing strings were added, ensure all 5 translation files (`en.json`, `vi.json`, `ja.json`, `ko.json`, `zh.json`) are updated.
 
-### Workflow 6: Version Bumping & Changelog Generation for Commits
-When finishing a feature, refactor, or bug fix that is ready to commit and push:
-1. Determine if a version bump is appropriate (e.g. patch `1.0.0` $\rightarrow$ `1.0.1` for bug fixes/enhancements, or minor `1.1.0` for major features).
-2. Draft 3–5 concise, impactful bullet points highlighting what is new, fixed, or improved.
-3. Localize the bullet points into all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
-4. Update `package.json` (`"version"`).
-5. Update `src/app/data/changelog.data.ts` (`CURRENT_RELEASE_INFO`).
-6. Update `functions-src/api/version.js` (`APP_VERSION_DATA`).
-7. Update `server/server.js` (`/api/version` handler).
-8. Re-bundle functions via `npm run build:functions`.
-9. Verify with `npm run lint` and `npm run test:backend`.
+### Workflow 6: Controlled Release & Version Management (Explicit User Request Only)
+This workflow is ONLY performed when the user explicitly instructs: "prepare release", "bump version", or "update changelog".
+1. Update localized release highlights in `src/app/data/version-info.json` under `highlights` (`en`, `vi`, `ja`, `ko`, `zh`) if there are new user-facing features.
+2. Run the release script:
+   ```bash
+   npm run release patch   # or minor, major, or explicit version like 1.2.0
+   ```
+   This automatically updates `package.json`, stamps `version-info.json` with the new version and current date (`buildDate`), and bundles the updated version into `functions/api/version.js`.
+3. Verify with `npm run test:backend` and `npm run lint`.
+4. Commit the release changes with a clear release message, e.g. `chore(release): v1.2.0`.
 
 ---
 
 ## 6. Verification & Quality Assurance Checklist
 
 Before declaring any task complete, verify:
-- [ ] `npm run build:functions` exits with code 0 (all routes bundled without syntax/dependency errors).
 - [ ] `npm run lint` passes without any ESLint warnings or errors.
 - [ ] `npm run test:backend` executes and all assertions pass.
+- [ ] If `functions-src/` was modified, `npm run build:functions` was executed and exits with code 0.
 - [ ] No changes were made directly to `functions/` (only `functions-src/`).
 - [ ] Any new strings added to the UI have corresponding translations in all 5 supported languages: `en.json`, `vi.json`, `ja.json`, `ko.json`, and `zh.json`.
 - [ ] SSRF security guards and protocol validators remain intact.
-- [ ] **Changelog & Version synchronized**: Release version, build date, and localized highlights updated in `src/app/data/changelog.data.ts`, `functions-src/api/version.js`, `server/server.js`, and `package.json` across all 5 languages before committing.
+- [ ] **Build & Version Hygiene**: Version and changelog files remain untouched unless an explicit release was requested. Commits affecting only docs, tests, or non-code include `[skip ci]`.
 - [ ] **Documentation is synchronized**: All relevant `.md` files in `doc/`, `README.md`, and `AGENTS.md` reflect all code, schema, and API changes.
 
 ---
@@ -341,6 +336,7 @@ Before declaring any task complete, verify:
 | `npm run dev` | Starts local Express server (port 3001) + Angular CLI (`http://localhost:4200`) |
 | `npm run build:functions` | Bundles `functions-src/` into `functions/` with esbuild |
 | `npm run build` | Full production build: compiles functions and Angular client into `dist/` |
+| `npm run release` | Controlled semver bumper: `npm run release [patch\|minor\|major\|<version>]` |
 | `npm run test:backend` | Runs Node.js test runner for security checks and validators |
 | `npm run lint` | Runs ESLint across `src/**/*.{ts,html}` |
 | `npm run lint:fix` | Automatically fixes autofixable ESLint issues |

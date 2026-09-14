@@ -104,6 +104,7 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 | `start` | `npm run start` | Runs Angular CLI with `proxy.conf.json` proxy |
 | `server` | `npm run server` | Starts local Express server (`server/server.js`) |
 | `dev` | `npm run dev` | Runs both `server` and `start` concurrently |
+| `release` | `npm run release` | Controlled semver bumper (`patch`, `minor`, `major`, or `<version>`) |
 | `build:functions` | `npm run build:functions` | Bundles `functions-src/` into `functions/` using esbuild |
 | `build` | `npm run build` | Runs `build:functions` and `ng build` for production |
 | `lint` | `npm run lint` | Lints TypeScript and HTML templates with ESLint 9 |
@@ -112,7 +113,12 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 | `test:ci` | `npm run test:ci` | Runs both backend tests and Angular Karma CI tests |
 | `test` | `npm run test` | Runs Angular unit test suite in Karma |
 
-### 4.1. Data Pipelines (`scripts/`)
+### 4.1. Versioning & Release Pipeline
+- **Single Source of Truth**: `src/app/data/version-info.json` holds all version metadata (`version`, `buildDate`, and 5-language `highlights`). Client, dev server, and edge functions all import this file directly.
+- **Controlled Release**: Run `npm run release patch` (or `minor`, `major`, or an explicit version) to update version files and bundle edge functions in a single, controlled step.
+- **CI/CD Optimization**: Non-deployable commits (docs, tests, config) ignore CI via GitHub Actions path-filtering and `[skip ci]` commit messages, saving Cloudflare Pages and GitHub Actions build minutes.
+
+### 4.2. Data Pipelines (`scripts/`)
 - `node scripts/merge-translations.js [ja|ko|zh|en|all]`:
   Merges JSON grammar translation chunks from `scripts/grammar-chunks/output/` into TypeScript files in `src/app/data/translations/`.
 - `node scripts/generate-translations.js`:

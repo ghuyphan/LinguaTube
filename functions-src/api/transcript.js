@@ -359,8 +359,20 @@ export async function onRequestPost(context) {
             return jsonResponse({ success: true, ...aiJobRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
 
         } catch (aiErr) {
-            const errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
-            const status = (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS') ? 400 : 500;
+            let errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
+            let status = 500;
+            if (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS') {
+                status = 400;
+            } else if (aiErr.message.includes('402') || aiErr.message.includes('quota')) {
+                errorCode = 'AI_QUOTA_EXCEEDED';
+                status = 402;
+            } else if (aiErr.message.includes('429')) {
+                errorCode = 'AI_RATE_LIMITED';
+                status = 429;
+            } else if (aiErr.message.includes('400')) {
+                errorCode = 'AI_INVALID_REQUEST';
+                status = 400;
+            }
             return jsonResponse({
                 success: false, videoId: cleanVideoId, requestedLanguage: lang, errorCode,
                 error: aiErr.message, availableLanguages, ...diamondInfo, timing: elapsed()

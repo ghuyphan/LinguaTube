@@ -12,46 +12,8 @@
  */
 
 import { handleOptions } from '../utils/utils.js';
+import APP_VERSION_DATA from '../../src/app/data/version-info.json';
 
-const APP_VERSION_DATA = {
-    version: '1.1.37',
-    minSupportedVersion: '1.0.0',
-    buildDate: '2026-09-14',
-    forceUpdate: false,
-    maintenance: false,
-    highlights: {
-        en: [
-            'AI Subtitle Waveform Icon: Added a dedicated speech-to-text audio waveform icon (subtitles-ai) that cleanly distinguishes Whisper AI transcription from native YouTube captions, with diamond-accented player indicators.',
-            'Zero-Flash Video Resume & Zone Optimization: Video playback now resumes instantly at the saved timestamp without initial audio/visual glitch at 0:00, with player time-tracking running smoothly outside Angular Zone.',
-            'Robust Playback & Tab-Switch State Recovery: Fixed race conditions during play/pause toggling and tab switching, ensuring video pause locks and intended states persist accurately.',
-            'Design Consistency & Unified Tokens: Streamlined border variables, diamond balance icons, and responsive sidebar heights across desktop and mobile layouts.'
-        ],
-        vi: [
-            'Biểu Tượng Sóng Âm Phụ Đề AI: Bổ sung biểu tượng sóng âm nhận dạng giọng nói chuyên dụng (subtitles-ai), phân biệt rõ ràng phụ đề chuyển giọng nói Whisper AI với phụ đề gốc YouTube kèm dải màu kim cương nổi bật.',
-            'Khôi Phục Video Không Giật & Tối Ưu Zone: Video tiếp tục phát ngay lập tức tại mốc thời gian đã lưu mà không bị chớp giật hay phát âm thanh ở 0:00, vòng lặp theo dõi thời gian chạy mượt mà ngoài Angular Zone.',
-            'Ổn Định Phát Video & Trạng Thái Chuyển Tab: Khắc phục triệt để hiện tượng xung đột trạng thái khi bấm phát/dừng và chuyển đổi tab, đảm bảo khóa tạm dừng khi tra từ hoạt động chính xác.',
-            'Đồng Bộ Thiết Kế & Hệ Thống Biến Giao Diện: Chuẩn hóa viền sáng/tối, biểu tượng số dư kim cương và chiều cao thanh bên co giãn tối ưu trên mọi kích thước màn hình.'
-        ],
-        ja: [
-            'AI字幕専用の音声波形アイコン: 汎用的なキラキラを廃止し、Whisper AI音声認識字幕をYouTube公式CCと明確に識別できる音声波形アイコン（subtitles-ai）とダイヤ色インジケーターを導入。',
-            'フラッシュなしの再生再開とZone最適化: 保存された再生位置から0:00の音飛び・映像チラつきなしで瞬時に再開。Angular Zone外での追跡ループによりCPU負荷を大幅削減。',
-            '再生・一時停止とタブ切替の安定化: 再生・一時停止の連打やブラウザタブ切替時の競合を解消し、単語検索時の一時停止ロックと意図した再生状態を確実に保持。',
-            'デザインシステムとトークンの統一: ライト・ダークモードの境界線やダイヤ残高アイコン、レスポンシブなサイドバー高さを統一し、視覚的一貫性を向上。'
-        ],
-        ko: [
-            'AI 자막 전용 음성 파형 아이콘: 일반 반짝임 아이콘 대신 Whisper AI 음성인식 자막을 유튜브 공식 CC와 명확하게 구분해주는 음성 파형 아이콘(subtitles-ai) 및 다이아몬드 포인트 인디케이터를 적용했습니다.',
-            '깜빡임 없는 이어보기 및 Zone 최적화: 0:00 오디오/화면 튐 없이 저장된 시점에서 즉시 비디오가 재개되며, Angular Zone 외부에서 타이머 루프를 실행하여 렌더링 부하를 대폭 줄였습니다.',
-            '재생·일시정지 및 탭 전환 안정화: 빠른 재생 전환이나 브라우저 탭 이동 시 발생하던 상태 꼬임을 해결하고 단어 검색 일시정지 락을 정확하게 유지합니다.',
-            '디자인 일관성 및 스타일 토큰 통합: 라이트/다크 테마의 테두리 색상, 다이아몬드 잔액 아이콘, 유연한 사이드바 높이를 표준 CSS 변수로 통일했습니다.'
-        ],
-        zh: [
-            'AI 语音波形字幕图标: 新增专用语音转录波形字幕图标（subtitles-ai），替代繁复的星光图标，清晰区分 Whisper AI 语音识别字幕与 YouTube 原生 CC 字幕，搭配钻石主题指示条。',
-            '无闪烁即时续播与 Zone 性能优化: 消除播放恢复时 0:00 处的音频杂音与画面闪烁，将时间追踪循环移至 Angular Zone 之外运行，大幅降低 CPU 占用。',
-            '播放暂停协调与切台状态恢复: 彻底解决频繁点击播放/暂停及切换浏览器标签时的状态竞态问题，保障查词暂停锁与意图播放状态精确一致。',
-            '视觉规范统一与设计令牌重构: 统一明暗主题下的边框色彩变量、钻石代币图标与响应式侧边栏最大高度，强化全屏一致感。'
-        ]
-    }
-};
 
 // In-memory isolate state with 60-second KV check interval
 let currentVersionData = APP_VERSION_DATA;

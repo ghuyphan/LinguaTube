@@ -4,7 +4,30 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'doc/**'
+      - '**.md'
+      - '.gitignore'
+      - 'LICENSE'
+      - 'streaks.pb.js'
+      - 'db/**'
+      - 'scripts/**'
+      - '!scripts/build-functions.js'
   pull_request:
+    paths-ignore:
+      - 'doc/**'
+      - '**.md'
+      - '.gitignore'
+      - 'LICENSE'
+      - 'streaks.pb.js'
+      - 'db/**'
+      - 'scripts/**'
+      - '!scripts/build-functions.js'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint-and-build:

@@ -31,14 +31,15 @@ export class GladiaProvider {
             },
             body: JSON.stringify({
                 audio_url: youtubeUrl,
-                sentences: true,
-                subtitles: true
+                sentences: true
             }),
             signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
         });
 
         if (!submitResponse.ok) {
-            throw new Error(`Gladia submit failed: ${submitResponse.status}`);
+            const errBody = await submitResponse.text().catch(() => '');
+            console.error(`[Gladia] Submit failed (${submitResponse.status}):`, errBody);
+            throw new Error(`Gladia submit failed (${submitResponse.status}): ${errBody.slice(0, 150)}`);
         }
 
         const submitData = await submitResponse.json();

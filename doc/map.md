@@ -466,7 +466,7 @@ sequenceDiagram
 | `src/app/features/quiz` | Assessment | Fill-in-the-blank and interactive vocabulary testing inputs |
 | `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying XP progression, rank titles, 19 achievement badges, and Global Leaderboard podium & rankings |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
-| `src/app/data` | Static Data | Large CJK grammar rules, release & changelog metadata (`changelog.data.ts`) |
+| `src/app/data` | Static Data | Large CJK grammar rules, single-source version & release metadata (`version-info.json`, `changelog.data.ts`) |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
 | `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
@@ -475,5 +475,6 @@ sequenceDiagram
 | `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, Edge TTS, tokenizers, payment mock |
 | `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
+| `scripts/release.js` | Release Pipeline | Controlled semver version bumper and metadata synchronizer |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |
 | `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, PocketBase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |

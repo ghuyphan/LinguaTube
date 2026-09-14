@@ -14,6 +14,7 @@
     "test:backend": "node --test tests/*.test.mjs",
     "test:ci": "npm run test:backend && ng test lingua-tube --configuration=ci",
     "watch": "ng build --watch --configuration development",
+    "release": "node scripts/release.js",
     "test": "ng test lingua-tube"
   },
   "private": true,
