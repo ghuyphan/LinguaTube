@@ -766,14 +766,17 @@ export class GrammarService {
         if (matchedTerms.length === 0) return [];
 
         const cleanWord = (s: string) => s.toLowerCase().replace(/[^a-z0-9'’]/g, '');
+        const isSpacerToken = (t: Token) => t.isPunctuation || !t.surface.trim() || cleanWord(t.surface) === '';
 
-        for (let i = 0; i <= tokens.length - matchedTerms.length; i++) {
+        for (let i = 0; i < tokens.length; i++) {
+            if (isSpacerToken(tokens[i])) continue;
+
             let match = true;
             let tIdx = i;
             const matchedIndices: number[] = [];
 
             for (let m = 0; m < matchedTerms.length; m++) {
-                while (tIdx < tokens.length && tokens[tIdx].isPunctuation) {
+                while (tIdx < tokens.length && isSpacerToken(tokens[tIdx])) {
                     tIdx++;
                 }
                 if (tIdx >= tokens.length) {

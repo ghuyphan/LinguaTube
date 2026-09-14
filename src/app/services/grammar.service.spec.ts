@@ -93,7 +93,6 @@ describe('GrammarService', () => {
       { surface: ' ' },
       { surface: 'helped' }
     ];
-
     const matches = service.detectPatterns(tokens, 'en');
     expect(matches.length).toBeGreaterThan(0);
     const notOnlyMatch = matches.find(m => m.pattern.id === 'en_c1_02');
@@ -185,18 +184,28 @@ describe('GrammarService', () => {
     expect(auxMatches.some(m => m.pattern.id === 'ko_으수있다eulsuitdaCando_9')).toBeTrue();
   });
 
-  it('should detect English contractions and high-frequency articles', async () => {
-    await service.searchPatterns('not', 'en');
+  it('should not false-positive on high-frequency articles and should detect modal contractions', async () => {
+    await service.searchPatterns('should', 'en');
 
-    const tokens: Token[] = [
+    // High frequency articles should NOT be flagged as grammar matches
+    const articleTokens: Token[] = [
       { surface: 'I' },
       { surface: 'saw' },
       { surface: 'a' },
       { surface: 'cat' }
     ];
+    const articleMatches = service.detectPatterns(articleTokens, 'en');
+    expect(articleMatches.length).toBe(0);
 
-    const matches = service.detectPatterns(tokens, 'en');
-    expect(matches.length).toBeGreaterThan(0);
-    expect(matches.some(m => m.pattern.id === 'en_a1_05')).toBeTrue();
+    // Modal contractions like should've told -> en_b2_05
+    const contractionTokens: Token[] = [
+      { surface: 'You' },
+      { surface: "should've" },
+      { surface: 'told' },
+      { surface: 'me' }
+    ];
+    const contractionMatches = service.detectPatterns(contractionTokens, 'en');
+    expect(contractionMatches.length).toBeGreaterThan(0);
+    expect(contractionMatches.some(m => m.pattern.id === 'en_b2_05')).toBeTrue();
   });
 });
