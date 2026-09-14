@@ -19,7 +19,7 @@ import { verifySvixSignature, verifyDerivedWebhookToken } from '../utils/svix-ve
 import { completeAiJob, atomicFailAndRefundAiJob } from '../data/transcript-db.js';
 import { saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { addSubLanguage, saveVideoLanguages } from '../data/video-info-db.js';
-import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
 import { GladiaProvider } from '../providers/gladia.js';
 import { DiamondService } from '../services/diamond.service.js';
 import { CacheManager } from '../utils/cache-manager.js';
@@ -155,34 +155,24 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
         return;
     }
 
-    // Handle success event
-    let sentences = payload.payload?.result?.transcription?.sentences ||
-                    payload.result?.transcription?.sentences ||
-                    payload.payload?.result?.sentences || [];
+    // Handle success event: extract segments using unified extractor
+    let rawSegments = extractGladiaSegments(payload);
 
-    // If sentences are not embedded in webhook body, fetch them using Gladia API
+    // If segments are not embedded in webhook body, fetch them using Gladia API
     const gladiaJobId = payload.payload?.id || payload.id;
-    if ((!sentences || sentences.length === 0) && gladiaJobId && env.GLADIA_API_KEY) {
+    let remoteJob = null;
+    if ((!rawSegments || rawSegments.length === 0) && gladiaJobId && env.GLADIA_API_KEY) {
         try {
             const gladia = new GladiaProvider(env.GLADIA_API_KEY);
-            const remoteJob = await gladia.checkJobStatusById(gladiaJobId);
-            sentences = remoteJob.result?.transcription?.sentences || [];
+            remoteJob = await gladia.checkJobStatusById(gladiaJobId);
+            rawSegments = extractGladiaSegments(remoteJob);
         } catch (fetchErr) {
             console.error(`[Gladia Webhook] Failed to fetch full transcript for Gladia ID ${gladiaJobId}:`, fetchErr.message);
         }
     }
 
-    const segments = (sentences || []).map((item, index) => ({
-        id: index,
-        text: item.text?.trim() || '',
-        start: item.start || 0,
-        duration: Math.max(0, (item.end || 0) - (item.start || 0))
-    })).filter(s => s.text);
-
-    const cleanedSegments = cleanTranscriptSegments(segments);
-    const rawDetectedLang = payload.payload?.result?.transcription?.languages?.[0] ||
-                            payload.result?.transcription?.languages?.[0] || lang;
-    const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
+    const cleanedSegments = cleanTranscriptSegments(rawSegments);
+    const detectedLang = extractGladiaDetectedLanguage(remoteJob || payload, lang);
 
     if (cleanedSegments.length === 0) {
         console.warn(`[Gladia Webhook] No speech segments extracted for video ${videoId}, job ${jobId}`);

@@ -30,7 +30,7 @@ import {
     saveTranscriptToR2
 } from '../data/transcript-r2.js';
 
-import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
 import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
@@ -409,18 +409,9 @@ export class TranscriptService {
                 const statusCheck = await this.gladiaProvider.checkJobStatusById(job.gladia_job_id);
 
                 if (statusCheck.status === 'done') {
-                    const sentences = statusCheck.result?.transcription?.sentences ||
-                                     statusCheck.result?.transcription?.utterances || [];
-                    const segments = sentences.map((item, index) => ({
-                        id: index,
-                        text: item.text?.trim() || '',
-                        start: item.start || 0,
-                        duration: Math.max(0, (item.end || 0) - (item.start || 0))
-                    })).filter(s => s.text);
-
-                    const cleanedSegments = cleanTranscriptSegments(segments);
-                    const rawDetectedLang = statusCheck.result?.transcription?.languages?.[0] || job.language;
-                    const detectedLang = normalizeLanguageCode(rawDetectedLang) || job.language;
+                    const rawSegments = extractGladiaSegments(statusCheck);
+                    const cleanedSegments = cleanTranscriptSegments(rawSegments);
+                    const detectedLang = extractGladiaDetectedLanguage(statusCheck, job.language);
 
                     if (cleanedSegments.length > 0) {
                         await saveTranscriptToR2(r2, targetVideoId, detectedLang, cleanedSegments, 'ai');

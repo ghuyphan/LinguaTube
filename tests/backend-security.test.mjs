@@ -1047,4 +1047,94 @@ test('D1 AI Transcription Jobs State Machine: atomic refund guard is strictly id
   assert.equal(refund2.shouldRefund, false, 'Second refund attempt must be prevented by atomic guard');
 });
 
+test('Gladia v2 Schema Parser: extracts sentences, utterances, and detects languages correctly', async () => {
+  const { extractGladiaSegments, extractGladiaDetectedLanguage, normalizeLanguageCode } = await import('../functions-src/utils/transcript-utils.js');
+
+  // Case 1: Gladia V2 with semantic sentences (item.sentence)
+  const gladiaSentencePayload = {
+    result: {
+      transcription: {
+        sentences: [
+          { sentence: "大家好，欢迎来到我的频道！", start: 0.5, end: 3.2 },
+          { sentence: "今天我们来练习中文口语。", start: 3.5, end: 6.8 }
+        ],
+        languages: ["cmn"]
+      }
+    }
+  };
+
+  const segments1 = extractGladiaSegments(gladiaSentencePayload);
+  assert.equal(segments1.length, 2);
+  assert.equal(segments1[0].text, "大家好，欢迎来到我的频道！");
+  assert.equal(segments1[0].start, 0.5);
+  assert.equal(segments1[0].duration, 2.7);
+  assert.equal(segments1[1].text, "今天我们来练习中文口语。");
+
+  const lang1 = extractGladiaDetectedLanguage(gladiaSentencePayload, 'zh');
+  assert.equal(lang1, 'zh', 'cmn should normalize to zh');
+
+  // Case 2: Gladia with utterances (item.text)
+  const gladiaUtterancePayload = {
+    result: {
+      transcription: {
+        utterances: [
+          { text: "Hello everyone and welcome back.", start: 1.0, end: 4.0 }
+        ],
+        languages: ["english"]
+      }
+    }
+  };
+
+  const segments2 = extractGladiaSegments(gladiaUtterancePayload);
+  assert.equal(segments2.length, 1);
+  assert.equal(segments2[0].text, "Hello everyone and welcome back.");
+  assert.equal(segments2[0].duration, 3.0);
+
+  const lang2 = extractGladiaDetectedLanguage(gladiaUtterancePayload, 'en');
+  assert.equal(lang2, 'en', 'english should normalize to en');
+
+  // Case 3: Gladia nested structure (result.sentences.results)
+  const nestedPayload = {
+    payload: {
+      result: {
+        sentences: {
+          results: [
+            { sentence: "初めまして、よろしくお願いします。", start: 0.0, end: 2.5 }
+          ]
+        },
+        languages: ["jpn"]
+      }
+    }
+  };
+
+  const segments3 = extractGladiaSegments(nestedPayload);
+  assert.equal(segments3.length, 1);
+  assert.equal(segments3[0].text, "初めまして、よろしくお願いします。");
+
+  const lang3 = extractGladiaDetectedLanguage(nestedPayload, 'ja');
+  assert.equal(lang3, 'ja', 'jpn should normalize to ja');
+
+  // Case 4: Completely silent / empty
+  const emptyPayload = {
+    result: {
+      transcription: {
+        sentences: [],
+        utterances: []
+      }
+    }
+  };
+  const segments4 = extractGladiaSegments(emptyPayload);
+  assert.equal(segments4.length, 0);
+
+  // Case 5: normalizeLanguageCode variants
+  assert.equal(normalizeLanguageCode('cmn'), 'zh');
+  assert.equal(normalizeLanguageCode('mandarin'), 'zh');
+  assert.equal(normalizeLanguageCode('yue'), 'zh');
+  assert.equal(normalizeLanguageCode('zh-CN'), 'zh');
+  assert.equal(normalizeLanguageCode('ja-JP'), 'ja');
+  assert.equal(normalizeLanguageCode('ko-KR'), 'ko');
+  assert.equal(normalizeLanguageCode('en-US'), 'en');
+});
+
+
 

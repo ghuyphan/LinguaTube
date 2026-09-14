@@ -356,9 +356,95 @@ function applyTiming(segments) {
 export function normalizeLanguageCode(lang) {
     if (!lang || typeof lang !== 'string') return '';
     const clean = lang.trim().toLowerCase().split('-')[0].split('_')[0];
-    if (clean === 'ja' || clean === 'japanese') return 'ja';
-    if (clean === 'ko' || clean === 'korean') return 'ko';
-    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue') return 'zh';
-    if (clean === 'en' || clean === 'english') return 'en';
+    if (clean === 'ja' || clean === 'japanese' || clean === 'jpn') return 'ja';
+    if (clean === 'ko' || clean === 'korean' || clean === 'kor') return 'ko';
+    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue' || clean === 'zho' || clean === 'chi') return 'zh';
+    if (clean === 'en' || clean === 'english' || clean === 'eng') return 'en';
     return clean;
 }
+
+/**
+ * Robustly extract segments from Gladia v2 response schemas.
+ * Gladia V2 returns `item.sentence` for semantic sentences (not `item.text`),
+ * and `item.text` for standard utterances.
+ * 
+ * Handles result.transcription.sentences, result.sentences,
+ * result.sentences.results, result.transcription.utterances,
+ * result.utterances, and subtitles.
+ * 
+ * @param {Object} resultData - Raw Gladia response or webhook payload
+ * @returns {Array<{id: number, text: string, start: number, duration: number}>}
+ */
+export function extractGladiaSegments(resultData) {
+    if (!resultData) return [];
+
+    const res = resultData.result || resultData.payload?.result || resultData;
+    const transcription = res.transcription || {};
+
+    let rawItems = [];
+
+    if (Array.isArray(transcription.sentences) && transcription.sentences.length > 0) {
+        rawItems = transcription.sentences;
+    } else if (Array.isArray(res.sentences) && res.sentences.length > 0) {
+        rawItems = res.sentences;
+    } else if (Array.isArray(res.sentences?.results) && res.sentences.results.length > 0) {
+        rawItems = res.sentences.results;
+    } else if (Array.isArray(transcription.utterances) && transcription.utterances.length > 0) {
+        rawItems = transcription.utterances;
+    } else if (Array.isArray(res.utterances) && res.utterances.length > 0) {
+        rawItems = res.utterances;
+    } else if (Array.isArray(transcription.subtitles) && transcription.subtitles.length > 0) {
+        rawItems = transcription.subtitles;
+    } else if (Array.isArray(res.subtitles) && res.subtitles.length > 0) {
+        rawItems = res.subtitles;
+    }
+
+    if (!Array.isArray(rawItems) || rawItems.length === 0) {
+        const fullText = transcription.full_transcript || res.full_transcript;
+        if (typeof fullText === 'string' && fullText.trim()) {
+            return [{
+                id: 0,
+                text: fullText.trim(),
+                start: 0,
+                duration: 5.0
+            }];
+        }
+        return [];
+    }
+
+    return rawItems.map((item, index) => {
+        // Gladia sentences use item.sentence; utterances use item.text; fallback to item.transcript
+        const text = (item.sentence || item.text || item.transcript || '').trim();
+        const start = typeof item.start === 'number' ? item.start : (parseFloat(item.start) || 0);
+        const end = typeof item.end === 'number' ? item.end : (parseFloat(item.end) || (start + (parseFloat(item.duration) || 2)));
+        const duration = Math.max(0.5, end - start);
+
+        return {
+            id: index,
+            text,
+            start: Math.round(start * 100) / 100,
+            duration: Math.round(duration * 100) / 100
+        };
+    }).filter(s => s.text.length > 0);
+}
+
+/**
+ * Extract detected language code from Gladia v2 response
+ * @param {Object} resultData 
+ * @param {string} defaultLang 
+ * @returns {string}
+ */
+export function extractGladiaDetectedLanguage(resultData, defaultLang = 'ja') {
+    if (!resultData) return defaultLang;
+    const res = resultData.result || resultData.payload?.result || resultData;
+    const transcription = res.transcription || {};
+
+    const rawLang = transcription.languages?.[0] ||
+                    res.languages?.[0] ||
+                    transcription.language ||
+                    res.language ||
+                    defaultLang;
+
+    return normalizeLanguageCode(rawLang) || defaultLang;
+}
+

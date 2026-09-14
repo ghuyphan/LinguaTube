@@ -132,7 +132,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Immediately validates signature/token and responds with HTTP 200 `{ success: true, message: "Webhook acknowledged" }` in $<40$ms, satisfying Gladia's delivery timeout requirements.
 - **`context.waitUntil()` Background Processing**:
   - Edge Worker isolates continue background execution after the HTTP response is sent.
-  - On `transcription.success`: Fetches full transcript payload from Gladia, extracts clean sentence segments, commits permanently to Cloudflare R2 (`transcripts/{videoId}/{lang}.json`), updates D1 `video_languages`, and marks D1 `ai_transcription_jobs` as `'completed'`.
+  - On `transcription.success`: Robustly parses transcript payload via `extractGladiaSegments` (supporting Gladia v2 `item.sentence` semantic sentences, `item.text` utterances, and nested formats), normalizes language codes (including ISO 639-2/3 like `cmn`/`jpn`/`kor`), commits permanently to Cloudflare R2 (`transcripts/{videoId}/{lang}.json`), updates D1 `video_languages`, and marks D1 `ai_transcription_jobs` as `'completed'`.
   - On `transcription.failure`: Calls `atomicFailAndRefundAiJob()`, transitions status to `'failed'`, records error diagnostics, and refunds the user's deducted Diamonds via PocketHost API.
 
 ---
