@@ -86,8 +86,8 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
      `generateDeterministicRecordId([userId, word.toLowerCase(), language])`.
 
 7. ASYNC TWO-PHASE POLLING & BACKGROUND RESUMPTION:
-   - Gladia AI ASR: If POST /api/transcript returns `{ status: "processing", resultUrl: "..." }`, poll POST /api/transcript with `{ videoId, lang, resultUrl }` every 2.5–3 seconds until `success: true` or 60s timeout.
-   - Edge Auto-Resumption: If the app was backgrounded, killed, or refreshed, subsequent calls to POST /api/transcript with `{ videoId, lang }` automatically detect active jobs in D1 and return `{ status: "processing", resultUrl }` without double-deducting diamonds.
+   - Gladia AI ASR: If POST /api/transcript returns `{ status: "processing", jobId: "..." }`, poll POST /api/transcript with `{ videoId, lang, jobId }` every 4–6 seconds until `success: true` or 180s timeout (legacy `resultUrl` remains supported for backward compatibility).
+   - Edge Auto-Resumption: If the app was backgrounded, killed, or refreshed, subsequent calls to POST /api/transcript with `{ videoId, lang }` automatically detect active jobs in D1 `ai_transcription_jobs` and return `{ status: "processing", jobId }` without double-deducting diamonds.
    - VietQR payOS: After calling POST /api/payment/create-order, poll GET /api/payment/check-status?orderCode={orderCode} every 3 seconds until `status === "PAID"`.
 
 8. TWO-TIER DUAL SUBTITLE STREAMING (< 200ms SEEK LATENCY):
@@ -150,7 +150,8 @@ Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}
     "lang": "ja",                       // Required: "ja" | "zh" | "ko" | "en"
     "preferAI": false,                  // Optional: true to trigger Gladia ASR
     "forceRefresh": false,              // Optional: bypass R2 cache
-    "resultUrl": null,                  // Optional: polling URL returned from pending AI job
+    "jobId": "job_1726325987000_abc123", // Optional: opaque job ID returned from pending AI job
+    "resultUrl": null,                  // Optional (legacy): polling URL
     "turnstileToken": "0x4AAA...",      // Required if starting a new AI job
     "duration": 212                     // Optional: video duration in seconds
   }

@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS video_meta (
 
 CREATE INDEX IF NOT EXISTS idx_video_meta_video ON video_meta(video_id);
 
--- pending_jobs table for active Gladia AI transcription background jobs
+-- pending_jobs table for active Gladia AI transcription background jobs (legacy)
 CREATE TABLE IF NOT EXISTS pending_jobs (
   video_id TEXT NOT NULL,
   language TEXT NOT NULL,
@@ -56,6 +56,36 @@ CREATE TABLE IF NOT EXISTS pending_jobs (
 );
 
 CREATE INDEX IF NOT EXISTS idx_pending_jobs_created ON pending_jobs(created_at);
+
+-- ai_transcription_jobs table for resilient asynchronous lifecycle tracking
+CREATE TABLE IF NOT EXISTS ai_transcription_jobs (
+  id TEXT PRIMARY KEY,
+  video_id TEXT NOT NULL,
+  language TEXT NOT NULL,
+  detected_language TEXT,
+  user_id TEXT,
+  client_id TEXT NOT NULL,
+  user_tier TEXT NOT NULL DEFAULT 'free',
+  diamonds_charged INTEGER NOT NULL DEFAULT 1,
+  diamonds_refunded INTEGER NOT NULL DEFAULT 0,
+  gladia_job_id TEXT,
+  status TEXT NOT NULL DEFAULT 'queued',
+  error_code TEXT,
+  error_message TEXT,
+  attempts INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL DEFAULT (strftime('%s', 'now')),
+  updated_at INTEGER NOT NULL DEFAULT (strftime('%s', 'now')),
+  completed_at INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_ai_jobs_active_unique 
+  ON ai_transcription_jobs(video_id, language) 
+  WHERE status IN ('queued', 'processing');
+
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_video_status ON ai_transcription_jobs(video_id, status);
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_gladia_id ON ai_transcription_jobs(gladia_job_id);
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_client_created ON ai_transcription_jobs(client_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_stale ON ai_transcription_jobs(status, created_at) WHERE status IN ('queued', 'processing');
 
 -- translation_meta table for dual-subtitles batch caching
 CREATE TABLE IF NOT EXISTS translation_meta (

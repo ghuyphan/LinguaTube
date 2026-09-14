@@ -87,16 +87,17 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     "lang": "ja",
     "preferAI": false,
     "forceRefresh": false,
-    "resultUrl": null,
+    "jobId": "job_1726325987000_abc123",
     "turnstileToken": "0.XXXXX",
     "duration": 240,
-    "title": "Video Title"
+    "title": "Video Title",
+    "channel": "Channel Name"
   }
   ```
 - **Lifecycle & Fallback Chain**:
   1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages (in both `subLanguages` and `nativeLanguages`) in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
-  2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages` and `no_transcript_cache` before touching upstream APIs:
-     - **Active Pending Job Short-Circuit**: Checks D1 `pending_jobs` (`getPendingJob`) first. If an AI transcription job was previously submitted and is still pending (e.g. user refreshed the page or switched tabs), it immediately returns `{ status: 'processing', resultUrl }`, seamlessly resuming client polling without double-deducting diamonds or returning `NO_NATIVE`.
+  2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages`, `ai_transcription_jobs`, and `no_transcript_cache` before touching upstream APIs:
+     - **Active AI Job Short-Circuit**: Checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI transcription job was previously submitted and is still pending or processing (e.g. user refreshed the page, switched tabs, or backgrounded the browser), it immediately returns `{ status: 'processing', jobId }`, seamlessly connecting the client to the existing job without double-deducting diamonds or returning `NO_NATIVE`.
      - **D1 Short-Circuit (< 20ms)**: If `video_languages` records `available_languages = '[]'` (video confirmed to have 0 native tracks) or if the requested language is not in the list (e.g. video has only `['en']` and user requested `zh`), returns immediately with `NO_NATIVE` or `languageMismatch: true`, completely bypassing upstream network latency.
      - **Supadata Fast-Check**: Queries Supadata with a tight 4.0-second timeout. If the video has no captions (HTTP 206/404 or `transcript-unavailable`), the provider halts further key rotation and only marks that specific language as unavailable (avoiding negative cache poisoning on transient timeouts).
   3. **Global Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` supports both per-language and global wildcard (`*`) scopes. When a transcript is successfully fetched or requested with `forceRefresh: true`, both specific language and wildcard entries are automatically purged (`deleteNoTranscript`).
@@ -105,25 +106,38 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
      - **Sentence Boundary Splitting**: Splits on standard punctuation (`。！？!?\n`).
      - **CJK Discourse Markers & Particles**: For unpunctuated Chinese/Japanese monologues, splits cleanly at discourse transitions (`而且|但是|所以|然后|因为|就是|可是|不过|虽然|那么` / `は|が|を|に|で|へと|から|まで`) while maintaining duration ($\ge 1.0$s) and readability.
      - **Soft Length Clamping**: Enforces natural reading bounds (20–22 CJK characters, 60 Latin characters) with `MAX_CUE_DURATION = 5.0s`.
-  5. **AI Generation (Gladia V2 Pre-Recorded) - Non-Blocking Client-Driven Polling**:
+  5. **AI Generation (Gladia V2 Pre-Recorded) - Asynchronous Webhook-Driven Pipeline**:
      - Verifies Turnstile token (`verifyTurnstileToken`).
      - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
      - **Pre-check R2**: Ensures no transcript already exists in R2 before consuming diamonds.
-     - **Pre-check Pending Jobs**: If an active job for the video is already running in Gladia, reuses `result_url` without re-submitting or double-charging.
-     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` using a 26-second timeout budget and automatic retry with backoff for transient submission failures.
-     - **In-Memory Job Routing**: Stores job mapping in warm Worker isolate memory and D1 `pending_jobs` without burning Cloudflare KV write quotas (Rule 2).
-     - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
-  6. **Fast Client-Driven Polling & Failure Auto-Refund**:
-     - Subsequent client poll requests pass `resultUrl` and validated `videoId` every 2.5 seconds.
-     - **Multi-Isolate Job Verification (`pollAIJob`)**: Polling requests are cross-checked against D1 `pending_jobs` and isolate memory (`memJobMap`). If regional D1 replication lag occurs between isolates, it safely falls back to the client-verified `params.videoId` to prevent premature failure.
-     - **Resilient Client Polling**: The client tolerates transient HTTP glitches (504 gateway timeouts, 500, network blips) with exponential backoff up to 5 consecutive attempts before failing, preserving the pending job in `localStorage`.
-     - Server polls Gladia status with a 10-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms. Prioritizes Gladia `sentences` over raw `utterances`.
-     - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, synchronously awaits write to R2, and deletes the pending job.
-     - **Automated Diamond Refund**: If Gladia reports job error, times out, or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
+     - **Atomic Lock Reservation (`reserveAiJob`)**: Inserts a new job record with `status: 'queued'` into D1 `ai_transcription_jobs`. The SQLite Partial Unique Index (`WHERE status IN ('queued', 'processing')`) guarantees strict atomic deduplication across concurrent requests from multiple browser tabs or devices.
+     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` and a registered callback URL: `https://{host}/api/gladia-webhook?token={derivedToken}&jobId={jobId}&videoId={videoId}&lang={lang}`.
+     - Once upstream Gladia acknowledges job creation, activates job in D1 (`activateAiJob`) with `gladia_id` and transitions status to `'processing'`.
+     - Returns `{ status: 'processing', jobId }` immediately ($\sim 1.0\text{--}1.5$s response), entirely eliminating raw Gladia URLs (`resultUrl`) from the client and preventing edge connection timeouts (524).
+  6. **Opaque Job Status Polling & Server-Side Self-Healing (`pollAiJobStatus`)**:
+     - Client polls status using the opaque `jobId` every 4–8 seconds (managed by root `AiJobManagerService`).
+     - **Edge D1 Read (< 15ms)**: Polling requests check D1 `ai_transcription_jobs` by `jobId`. If the job is `completed`, the server loads the segments directly from R2 and responds with HTTP 200 `{ success: true, segments, source: 'ai' }`.
+     - **Server-Side Self-Healing Fallback**: If Gladia's webhook delivery is dropped or delayed beyond 15 seconds, the edge worker directly checks Gladia's API status using server-held credentials (`GLADIA_API_KEY`) without exposing vendor endpoints. If Gladia reports completion, the worker ingests the transcript, writes to R2, updates D1 to `'completed'`, and returns the subtitles to the client.
+     - **Automated Idempotent Diamond Refund**: If Gladia reports failure or rejects the audio, `atomicFailAndRefundAiJob` atomically transitions the job to `'failed'` in D1 and triggers `refundDiamond()` via PocketHost API to restore the user's credits. Double-refunds are mathematically prevented by single-transaction state checks.
 
 ---
 
-### 3.2. Unified Dictionary API
+### 3.2. Gladia Asynchronous Webhook Receiver
+- **Route**: `POST /api/gladia-webhook`
+- **Source**: `functions-src/api/gladia-webhook.js`
+- **Dual-Authentication Security**:
+  1. **Svix HMAC-SHA256 Verification (Primary)**: Validates standard webhook headers (`svix-id`, `svix-timestamp`, `svix-signature`) against `GLADIA_WEBHOOK_SECRET` using Web Crypto API (`crypto.subtle`). Enforces a strict 5-minute replay tolerance window.
+  2. **Derived HMAC-SHA256 Token (Zero-Downtime Fallback)**: If Svix headers are missing or `GLADIA_WEBHOOK_SECRET` is not yet provisioned, validates `?token=...` calculated as `HMAC-SHA256(GLADIA_API_KEY, jobId:videoId:lang)`. Constant-time comparison prevents timing attacks.
+- **Sub-40ms Acknowledgment**:
+  - Immediately validates signature/token and responds with HTTP 200 `{ success: true, message: "Webhook acknowledged" }` in $<40$ms, satisfying Gladia's delivery timeout requirements.
+- **`context.waitUntil()` Background Processing**:
+  - Edge Worker isolates continue background execution after the HTTP response is sent.
+  - On `transcription.success`: Fetches full transcript payload from Gladia, extracts clean sentence segments, commits permanently to Cloudflare R2 (`transcripts/{videoId}/{lang}.json`), updates D1 `video_languages`, and marks D1 `ai_transcription_jobs` as `'completed'`.
+  - On `transcription.failure`: Calls `atomicFailAndRefundAiJob()`, transitions status to `'failed'`, records error diagnostics, and refunds the user's deducted Diamonds via PocketHost API.
+
+---
+
+### 3.3. Unified Dictionary API
 - **Route**: `GET /api/dict?word={word}&from={learningLang}&to={uiLang}`
 - **Source**: `functions-src/api/dict.js`
 - **Supported `from` languages**: `ja`, `zh`, `ko`, `en`
@@ -164,7 +178,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.3. Dual Subtitles API
+### 3.4. Dual Subtitles API
 - **Route**: `GET /api/dual-subtitles` (Fast CDN/browser cache lookup) & `POST /api/dual-subtitles` (Live translation & save-back)
 - **Source**: `functions-src/api/dual-subtitles.js`
 - **GET Request**:
@@ -203,7 +217,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.4. Single Text Translation API
+### 3.5. Single Text Translation API
 - **Route**: `GET /api/translate/[[path]]`
 - **Source**: `functions-src/api/translate/[[path]].js`
 - **Format**: `/api/translate/{source}/{target}/{text}`
@@ -213,7 +227,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.5. Batch Translation API
+### 3.6. Batch Translation API
 - **Route**: `POST /api/translate/batch`
 - **Source**: `functions-src/api/translate/batch.js`
 - **Payload**:
@@ -235,7 +249,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.6. Tokenization Endpoints
+### 3.7. Tokenization Endpoints
 - **Routes**:
   - `POST /api/tokenize/:lang` (Single text block)
   - `POST /api/tokenize-batch/:lang` (Array of up to 800 texts for bulk subtitle tokenization under 10ms CPU)
@@ -258,7 +272,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.7. Video Info Discovery API
+### 3.8. Video Info Discovery API
 - **Route**: `GET /api/video-info?videoId={videoId}`
 - **Source**: `functions-src/api/video-info.js`
 - **Response**: `{ videoId, title, duration, availableLanguages, subLanguages, hasAutoCaptions, channel, channelAvatar, levels }`
@@ -270,7 +284,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.8. Diamond Credits API
+### 3.9. Diamond Credits API
 - **Route**: `GET /api/diamonds`
 - **Source**: `functions-src/api/diamonds.js`
 - **Response**:
@@ -303,7 +317,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.9. Recommended Videos API (Verified Database Transcripts)
+### 3.10. Recommended Videos API (Verified Database Transcripts)
 - **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}&offset={offset}`
 - **Source**: `functions-src/api/recommended-videos.js`
 - **Query Parameters**:
@@ -355,7 +369,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.10. Safe Reverse Proxy
+### 3.11. Safe Reverse Proxy
 - **Route**: `ALL /proxy/[service]/[[path]]`
 - **Source**: `functions-src/proxy/[service]/[[path]].js`
 - **SSRF & Abuse Protections**:
@@ -369,7 +383,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.11. Payment & Webhook APIs (payOS VietQR)
+### 3.12. Payment & Webhook APIs (payOS VietQR)
 - **Routes**:
   - `POST /api/payment/create-order`
   - `POST /api/payment/webhook`
@@ -382,7 +396,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.12. Video Level Classification API
+### 3.13. Video Level Classification API
 - **Routes**:
   - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`, `confidence`, `method`).
   - `GET /api/video-info`: Includes `levels: Record<string, string>` map (e.g. `{"ja": "JLPT N4", "en": "CEFR B1"}`) with fast-path metadata regex detection across native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`).
@@ -397,7 +411,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.13. Global Leaderboard API
+### 3.14. Global Leaderboard API
 - **Routes**:
   - `GET /api/leaderboard`: Fetch top 50 learners (optionally filtered by target language `lang=ja|ko|zh|en`, period `period=weekly|all_time`) and calculate exact rank for requesting `userId`.
   - `POST /api/leaderboard`: Synchronize learner score (XP, weekly XP, level, streak, badges count, target language).
@@ -418,7 +432,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.14. App Version & Changelog API
+### 3.15. App Version & Changelog API
 - **Routes**: `GET /api/version`
 - **Source**: `functions-src/api/version.js` (Cloudflare Pages Function) & `server/server.js` (Local Dev)
 - **Response Format**:
@@ -474,7 +488,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.15. Edge Neural Text-to-Speech API
+### 3.16. Edge Neural Text-to-Speech API
 - **Routes**: `GET /api/tts?text={text}&lang={ja|zh|ko|en}&voice={optionalVoice}` and `POST /api/tts`
 - **Source**: `functions-src/api/tts.js` (Cloudflare Pages Function) & `server/server.js` (Local Dev)
 - **Engine**: `functions-src/utils/edge-tts.js`

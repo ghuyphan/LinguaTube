@@ -23,7 +23,7 @@ import {
 } from '../data/video-info-db.js';
 
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
-import { getPendingJob } from '../data/transcript-db.js';
+import { getPendingJob, getActiveAiJob } from '../data/transcript-db.js';
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
@@ -68,7 +68,7 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
-        const { videoId, lang, preferAI, forceRefresh, resultUrl, turnstileToken, duration } = body;
+        const { videoId, lang, preferAI, forceRefresh, jobId, resultUrl, turnstileToken, duration } = body;
 
         const cleanVideoId = sanitizeVideoId(videoId);
         if (!cleanVideoId) {
@@ -89,9 +89,11 @@ export async function onRequestPost(context) {
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
 
+        const isPolling = Boolean(jobId || resultUrl);
+
         // Validation (Tier duration limits: Free/Anonymous <= 10m, Pro <= 20m, Premium <= 45m)
         // Skip heavy YouTube scraping on recurring poll requests
-        if (!resultUrl) {
+        if (!isPolling) {
             const validationError = await validateVideoRequest(
                 cleanVideoId,
                 lang,
@@ -114,7 +116,7 @@ export async function onRequestPost(context) {
             }
         }
 
-        // Security: Early validation of resultUrl if provided
+        // Security: Early validation of resultUrl if provided (legacy)
         if (resultUrl) {
             try {
                 const parsed = new URL(resultUrl);
@@ -145,7 +147,7 @@ export async function onRequestPost(context) {
         const _cacheManager = new CacheManager(cache);
 
         // Rate Limiting (enforced on ALL operations including AI polling and creation)
-        const rateLimitConfig = getTieredConfig(resultUrl ? POLL_RATE_LIMIT : TRANSCRIPT_RATE_LIMIT, tier);
+        const rateLimitConfig = getTieredConfig(isPolling ? POLL_RATE_LIMIT : TRANSCRIPT_RATE_LIMIT, tier);
         const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig);
         if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
 
@@ -187,15 +189,18 @@ export async function onRequestPost(context) {
             requiredDiamonds = 2;
         }
 
-        const orchestratorParams = { videoId: cleanVideoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration, requiredDiamonds };
+        const orchestratorParams = { videoId: cleanVideoId, lang, jobId, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration, requiredDiamonds };
 
         // -------------------------------------------------------------
-        // Polling existing AI
+        // Polling existing AI (Opaque jobId or legacy resultUrl)
         // -------------------------------------------------------------
-        if (resultUrl) {
-            const aiRes = await transcriptService.pollAIJob(serviceContext, orchestratorParams);
+        if (jobId || resultUrl) {
+            const aiRes = jobId
+                ? await transcriptService.pollAiJobStatus(serviceContext, orchestratorParams)
+                : await transcriptService.pollAIJob(serviceContext, orchestratorParams);
+
             if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiRes });
-            if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', ...diamondInfo, timing: elapsed() }, 400);
+            if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: aiRes.errorCode || 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', ...diamondInfo, timing: elapsed() }, 400);
             return jsonResponse({ success: true, ...aiRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
         }
 
@@ -243,7 +248,21 @@ export async function onRequestPost(context) {
         // Step 2: Native (or resume active pending AI job)
         // -------------------------------------------------------------
         if (!preferAI) {
-            // Check if there is an active pending AI job for this video
+            // Check if there is an active AI job for this video
+            const activeJob = await getActiveAiJob(db, cleanVideoId, lang);
+            if (activeJob) {
+                return jsonResponse({
+                    success: false,
+                    status: 'processing',
+                    jobId: activeJob.id,
+                    videoId: cleanVideoId,
+                    availableLanguages,
+                    whisperAvailable: true,
+                    ...diamondInfo,
+                    timing: elapsed()
+                });
+            }
+
             const pendingJob = await getPendingJob(db, cleanVideoId);
             if (pendingJob?.result_url) {
                 return jsonResponse({
@@ -336,7 +355,7 @@ export async function onRequestPost(context) {
         }
 
         // Verify Turnstile CAPTCHA for new AI generation jobs (prevent bot abuse of Gladia credits)
-        if (!resultUrl) {
+        if (!isPolling) {
             const clientIP = request.headers.get('cf-connecting-ip') || '';
             const captchaCheck = await verifyTurnstileToken(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIP, env.ENVIRONMENT);
             if (!captchaCheck.valid) {
@@ -355,7 +374,7 @@ export async function onRequestPost(context) {
         try {
             const aiJobRes = await transcriptService.startAIJob(serviceContext, orchestratorParams);
 
-            if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiJobRes });
+            if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiJobRes }, 202);
             return jsonResponse({ success: true, ...aiJobRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
 
         } catch (aiErr) {

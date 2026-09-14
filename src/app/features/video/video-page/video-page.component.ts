@@ -13,10 +13,10 @@ import { OptionPickerComponent, OptionItem } from '../../../shared/components/op
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
-import { TranscriptService, getStoredPendingJob } from '../transcript.service';
+import { TranscriptService } from '../transcript.service';
 import { PlayerViewService } from '../services/player-view.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService } from '../../../core/services';
+import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService, AiJobManagerService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
@@ -72,6 +72,7 @@ export class VideoPageComponent implements OnInit {
   private seo = inject(SeoService);
   toast = inject(ToastService);
   private learningLanguage = inject(LearningLanguageService);
+  protected aiJobManager = inject(AiJobManagerService);
 
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
@@ -525,6 +526,12 @@ export class VideoPageComponent implements OnInit {
       this.videoLevel.reset();
     });
 
+    this.aiJobManager.jobCompleted$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ videoId, language, cues }) => {
+      if (this.youtube.currentVideo()?.id === videoId) {
+        this.handleCaptionsSuccess(cues, language);
+      }
+    });
+
     // Automatically fetch server-side recommended playlists and videos when active language or difficulty tier changes
     let previousRecommendLang = '';
     let previousRecommendTier = '';
@@ -892,23 +899,16 @@ export class VideoPageComponent implements OnInit {
     if (!currentVideo) return;
 
     const currentError = this.transcript.error();
-    const storedJob = getStoredPendingJob(currentVideo.id);
+    const hasActiveJob = this.aiJobManager.hasActiveJob(currentVideo.id);
 
-    // If an active AI job is pending in localStorage, resume polling it directly
-    if (storedJob?.resultUrl) {
-      const lang = this.settings.settings().language;
-      this.transcript.generateWithAI(currentVideo.id, storedJob.lang || lang, storedJob.resultUrl).subscribe({
-        next: (cues) => {
-          if (cues.length > 0) {
-            this.handleCaptionsSuccess(cues, lang);
-          }
-        }
-      });
+    // If an active AI job is already tracking in background, trigger immediate check
+    if (hasActiveJob) {
+      this.aiJobManager.reconcileActiveJobs();
       return;
     }
 
-    // If the failure was an AI timeout or AI service error, re-open AI dialog to retry
-    if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED') {
+    // If the failure was an AI timeout, service error, or quota, re-open AI dialog to retry
+    if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED' || currentError === 'NO_SPEECH_DETECTED') {
       this.showAiConfirmDialog.set(true);
       return;
     }

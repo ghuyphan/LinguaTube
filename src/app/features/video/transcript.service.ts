@@ -1,123 +1,27 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay, timer, takeUntil } from 'rxjs';
-import { SubtitleCue } from '../../models';
+import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay } from 'rxjs';
+import {
+  SubtitleCue,
+  TranscriptResponse,
+  TranscriptSegment,
+  DiamondStatusResponse,
+  TranscriptState
+} from '../../models';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
 import { AuthService } from '../../core/services/auth.service';
 import { VideoRecommendationService } from '../../core/services/video-recommendation.service';
+import { AiJobManagerService } from '../../core/services/ai-job-manager.service';
 import { environment } from '../../../environments/environment';
-
-// ============================================================================
-// Types
-// ============================================================================
-
-interface TranscriptSegment {
-  id?: number;
-  text: string;
-  start: number;
-  duration: number;
-}
-
-interface TranscriptResponse {
-  success: boolean;
-  videoId: string;
-  language: string;
-  requestedLanguage: string;
-  segments: TranscriptSegment[];
-  source: 'cache' | 'native' | 'ai' | 'none';
-  sourceDetail?: string;
-  availableLanguages: {
-    native: string[];
-    ai: string[];
-  };
-  subLanguages?: string[];
-  levels?: Record<string, string>;
-  whisperAvailable: boolean;
-  // Diamond system
-  diamonds?: number;
-  maxDiamonds?: number;
-  nextRegenAt?: number | null;
-  regenIntervalMs?: number;
-  // Other
-  warning?: string;
-  error?: string;
-  errorCode?: string;
-  retryAfter?: number;
-  status?: 'processing';
-  resultUrl?: string;
-  timing: number;
-}
-
-export interface DiamondStatusResponse {
-  success: boolean;
-  diamonds: number;
-  maxDiamonds: number;
-  nextRegenAt: number | null;
-  regenIntervalMs?: number;
-  tier?: 'free' | 'pro' | 'premium';
-  maxVideoDurationSec?: number;
-}
 
 interface RateLimitErrorResponse {
   error: string;
   retryAfter?: number;
 }
 
-/**
- * Transcript state machine - single source of truth for UI
- */
-export type TranscriptState =
-  | { status: 'idle' }
-  | { status: 'loading' }
-  | { status: 'generating_ai'; resultUrl?: string; isResuming?: boolean }
-  | { status: 'complete'; language: string; source: 'native' | 'ai'; cues: SubtitleCue[] }
-  | { status: 'error'; code: string; whisperAvailable: boolean; retryAfter?: number };
-
 const DEBUG = false;
 const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', ...args);
-
-// Minimum duration for a cue (in seconds)
 const MIN_CUE_DURATION = 0.5;
-
-const PENDING_AI_STORAGE_KEY = 'voca_pending_ai_jobs';
-
-export interface StoredPendingJob {
-  resultUrl: string;
-  lang: string;
-  startedAt: number;
-}
-
-export function getStoredPendingJob(videoId: string): StoredPendingJob | null {
-  try {
-    const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
-    if (!raw) return null;
-    const map = JSON.parse(raw);
-    const job = map[videoId];
-    if (job && Date.now() - job.startedAt < 3600 * 1000) {
-      return job;
-    }
-  } catch {}
-  return null;
-}
-
-function saveStoredPendingJob(videoId: string, resultUrl: string, lang: string): void {
-  try {
-    const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
-    const map = raw ? JSON.parse(raw) : {};
-    map[videoId] = { resultUrl, lang, startedAt: Date.now() };
-    localStorage.setItem(PENDING_AI_STORAGE_KEY, JSON.stringify(map));
-  } catch {}
-}
-
-function clearStoredPendingJob(videoId: string): void {
-  try {
-    const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
-    if (!raw) return;
-    const map = JSON.parse(raw);
-    delete map[videoId];
-    localStorage.setItem(PENDING_AI_STORAGE_KEY, JSON.stringify(map));
-  } catch {}
-}
 
 @Injectable({
   providedIn: 'root'
@@ -127,6 +31,7 @@ export class TranscriptService {
   private persistentCache = inject(TranscriptCacheService);
   private auth = inject(AuthService);
   private videoRecommendation = inject(VideoRecommendationService);
+  private aiJobManager = inject(AiJobManagerService);
 
   // ============================================================================
   // State (Simplified - single state signal)
@@ -207,14 +112,43 @@ export class TranscriptService {
   private readonly transcriptCache = new Map<string, SubtitleCue[]>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
   private cancelSubject = new Subject<void>();
-  private consecutivePollErrors = 0;
+  private currentVideoId: string | null = null;
 
   constructor() {
     this.refreshDiamonds();
     this.auth.loginEvent.subscribe(() => this.refreshDiamonds());
     this.auth.logoutEvent.subscribe(() => this.refreshDiamonds());
 
-    // Listen for online reconnect to recover from transient network failures
+    // Listen for AI transcription completions from root AiJobManagerService
+    this.aiJobManager.jobCompleted$.subscribe(({ videoId, language, cues, source }) => {
+      log('Received AI completion from AiJobManager:', { videoId, language, cueCount: cues.length });
+      const cacheKey = `${videoId}:${language}`;
+      this.transcriptCache.set(cacheKey, cues);
+      this.persistentCache.set(videoId, language, cues, source).catch(() => {});
+      this.videoRecommendation.clearCache();
+
+      if (this.currentVideoId === videoId) {
+        this.state.set({
+          status: 'complete',
+          language,
+          source,
+          cues
+        });
+      }
+    });
+
+    // Listen for AI transcription failures
+    this.aiJobManager.jobFailed$.subscribe(({ videoId, errorCode }) => {
+      if (this.currentVideoId === videoId) {
+        this.state.set({
+          status: 'error',
+          code: errorCode || 'AI_JOB_FAILED',
+          whisperAvailable: true
+        });
+      }
+    });
+
+    // Network recovery listener
     if (typeof window !== 'undefined') {
       window.addEventListener('online', () => {
         log('Network restored, checking transcript state...');
@@ -277,11 +211,6 @@ export class TranscriptService {
   /**
    * Fetch transcript for a video - main entry point
    * Uses the unified /api/transcript endpoint
-   * 
-   * Cache strategy:
-   * 1. Check in-memory cache (current session)
-   * 2. Check IndexedDB (persistent across sessions)
-   * 3. Fetch from API (network)
    */
   fetchTranscript(
     videoId: string,
@@ -291,15 +220,19 @@ export class TranscriptService {
     channel?: string,
     forceRefresh = false
   ): Observable<SubtitleCue[]> {
+    this.currentVideoId = videoId;
     const cacheKey = `${videoId}:${lang}`;
 
-    // 0. Auto-resume ongoing AI transcription job if user refreshed or navigated away
-    if (!forceRefresh) {
-      const storedJob = getStoredPendingJob(videoId);
-      if (storedJob?.resultUrl) {
-        log('Auto-resuming pending AI job from localStorage:', { videoId, resultUrl: storedJob.resultUrl });
-        return this.generateWithAI(videoId, storedJob.lang || lang, storedJob.resultUrl, undefined, duration, title, channel);
-      }
+    // 0. If there is already an active AI background job for this video, reflect it immediately
+    if (!forceRefresh && this.aiJobManager.hasActiveJob(videoId)) {
+      const active = this.aiJobManager.getJob(videoId);
+      log('Active AI job already running for video:', { videoId, jobId: active?.jobId });
+      this.state.set({
+        status: 'generating_ai',
+        jobId: active?.jobId,
+        isResuming: true
+      });
+      return of([]);
     }
 
     // 1. Check client-side memory cache first (fastest) - only if not forceRefresh
@@ -333,7 +266,6 @@ export class TranscriptService {
         const isDevMock = cachedData?.cues?.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
         if (cachedData && (!isDevMock || videoId === 'demo' || videoId === 'test')) {
           log('IndexedDB cache hit:', { videoId, lang, cues: cachedData.cues.length });
-          // Populate memory cache too
           this.transcriptCache.set(cacheKey, cachedData.cues);
           this.state.set({
             status: 'complete',
@@ -353,18 +285,14 @@ export class TranscriptService {
         this.fallbackInfo.set(null);
 
         return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration, title, channel, forceRefresh).pipe(
-          takeUntil(this.cancelSubject),
           tap(cues => {
             if (cues.length > 0) {
-              // Save to memory cache (using detected language, not requested)
               const detectedLang = this.detectedLanguage() || lang;
               const actualCacheKey = `${videoId}:${detectedLang}`;
               this.transcriptCache.set(actualCacheKey, cues);
-              // Save to IndexedDB with actual detected language (fire-and-forget)
               const source = this.captionSource() || 'native';
               this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
             } else if (!forceRefresh) {
-              // Negative caching: remember this video has no native transcripts
               this.transcriptCache.set(cacheKey, []);
             }
           }),
@@ -375,50 +303,46 @@ export class TranscriptService {
   }
 
   /**
-   * Generate transcript using AI (Whisper/Gladia)
+   * Generate transcript using AI (Gladia)
    */
   generateWithAI(
     videoId: string,
     lang: string = 'ja',
-    resultUrl?: string,
+    jobIdOrResultUrl?: string,
     turnstileToken?: string,
     duration?: number,
     title?: string,
     channel?: string
   ): Observable<SubtitleCue[]> {
+    this.currentVideoId = videoId;
     const cacheKey = `${videoId}:${lang}`;
 
-    if (resultUrl) {
-      saveStoredPendingJob(videoId, resultUrl, lang);
-    }
+    const isUrl = jobIdOrResultUrl && jobIdOrResultUrl.startsWith('http');
+    const jobId = isUrl ? undefined : jobIdOrResultUrl;
+    const resultUrl = isUrl ? jobIdOrResultUrl : undefined;
 
-    // If we're polling (resultUrl exists), mark as resuming
     this.state.set({
       status: 'generating_ai',
-      resultUrl,
-      isResuming: !!resultUrl
+      jobId,
+      isResuming: Boolean(jobId || resultUrl)
     });
     this.fallbackInfo.set(null);
 
-    return this.callTranscriptAPI(videoId, lang, true, resultUrl, turnstileToken, duration, title, channel).pipe(
-      takeUntil(this.cancelSubject),
+    return this.callTranscriptAPI(videoId, lang, true, jobId, resultUrl, turnstileToken, duration, title, channel).pipe(
       tap(cues => {
         if (cues.length > 0) {
           const detectedLang = this.detectedLanguage() || lang;
-          // Save to memory cache for both requested and detected languages
           this.transcriptCache.set(cacheKey, cues);
           if (detectedLang !== lang) {
             this.transcriptCache.set(`${videoId}:${detectedLang}`, cues);
           }
-          // Save to IndexedDB with AI source
           this.persistentCache.set(videoId, lang, cues, 'ai').catch(() => { });
           if (detectedLang !== lang) {
             this.persistentCache.set(videoId, detectedLang, cues, 'ai').catch(() => { });
           }
-          this.consecutivePollErrors = 0;
         }
       }),
-      catchError(err => this.handleHttpError(err, false, videoId, lang, resultUrl, duration, title, channel))
+      catchError(err => this.handleHttpError(err, false, videoId))
     );
   }
 
@@ -427,13 +351,13 @@ export class TranscriptService {
    */
   reset(): void {
     this.cancelSubject.next();
-    this.consecutivePollErrors = 0;
     this.state.set({ status: 'idle' });
     this.availableLanguages.set({ native: [], ai: [] });
     this.subLanguages.set([]);
     this.serverLevels.set({});
     this.fallbackInfo.set(null);
     this.pendingRequests.clear();
+    this.currentVideoId = null;
   }
 
   /**
@@ -446,11 +370,9 @@ export class TranscriptService {
           this.transcriptCache.delete(key);
         }
       }
-      // Also clear from IndexedDB
       this.persistentCache.clearVideo(videoId).catch(() => { });
     } else {
       this.transcriptCache.clear();
-      // Note: Don't clear all IndexedDB here - use pruneExpired() for maintenance
     }
   }
 
@@ -465,61 +387,29 @@ export class TranscriptService {
   // Private Methods
   // ============================================================================
 
-  /**
-   * Handle HTTP errors with specific handling for rate limits and polling retries
-   */
   private handleHttpError(
     err: unknown,
     whisperAvailable = true,
-    videoId?: string,
-    lang?: string,
-    resultUrl?: string,
-    duration?: number,
-    title?: string,
-    channel?: string
+    _videoId?: string
   ): Observable<SubtitleCue[]> {
     console.error('[TranscriptService] Error:', err);
 
-    // If we were polling an active AI job and hit a transient HTTP error (504 timeout, 502/503/500, network drop)
-    if (resultUrl && videoId) {
-      const isHttpErr = err instanceof HttpErrorResponse;
-      const status = isHttpErr ? err.status : 0;
-      const isTransient = status === 0 || status === 408 || status === 500 || status === 502 || status === 503 || status === 504;
-
-      if (isTransient) {
-        this.consecutivePollErrors++;
-        if (this.consecutivePollErrors < 5) {
-          const delay = Math.min(2500 * Math.pow(1.5, this.consecutivePollErrors - 1), 10000);
-          console.warn(`[TranscriptService] Polling HTTP glitch (${this.consecutivePollErrors}/5), retrying in ${Math.round(delay)}ms...`);
-          return timer(delay).pipe(
-            takeUntil(this.cancelSubject),
-            switchMap(() => this.generateWithAI(videoId, lang || 'ja', resultUrl, undefined, duration, title, channel))
-          );
-        }
-      }
-
-      this.consecutivePollErrors = 0;
-      clearStoredPendingJob(videoId);
-    }
-
     if (err instanceof HttpErrorResponse) {
-      // Handle rate limiting (429)
+      // Rate limit (429)
       if (err.status === 429) {
         const body = err.error as RateLimitErrorResponse;
         const retryAfter = body?.retryAfter ?? this.extractRetryAfter(err);
 
-        log('Rate limited, retry after:', retryAfter);
-
         this.state.set({
           status: 'error',
           code: 'RATE_LIMITED',
-          whisperAvailable: false, // Don't show AI button if rate limited
+          whisperAvailable: false,
           retryAfter
         });
         return of([]);
       }
 
-      // Handle server, gateway, and client errors (400-599)
+      // Server, gateway, and client errors (400-599)
       if (err.status >= 400) {
         const body = err.error as Partial<TranscriptResponse> | null;
         const errorCode = body?.errorCode || (err.status >= 500 ? 'SERVER_ERROR' : 'REQUEST_ERROR');
@@ -533,7 +423,6 @@ export class TranscriptService {
       }
     }
 
-    // Generic network error
     this.state.set({
       status: 'error',
       code: 'NETWORK_ERROR',
@@ -542,9 +431,6 @@ export class TranscriptService {
     return of([]);
   }
 
-  /**
-   * Extract retry-after from response headers
-   */
   private extractRetryAfter(err: HttpErrorResponse): number | undefined {
     const retryHeader = err.headers?.get('Retry-After');
     if (retryHeader) {
@@ -554,13 +440,11 @@ export class TranscriptService {
     return undefined;
   }
 
-  /**
-   * Call the unified transcript API
-   */
   private callTranscriptAPI(
     videoId: string,
     lang: string,
     preferAI: boolean,
+    jobId?: string,
     resultUrl?: string,
     turnstileToken?: string,
     duration?: number,
@@ -568,54 +452,54 @@ export class TranscriptService {
     channel?: string,
     forceRefresh?: boolean
   ): Observable<SubtitleCue[]> {
-
-    // Dedup ongoing requests (except for polling)
+    const isPolling = Boolean(jobId || resultUrl);
     const requestKey = `${videoId}:${lang}:${preferAI}:${forceRefresh ? 'refresh' : 'normal'}`;
-    if (!resultUrl && this.pendingRequests.has(requestKey)) {
+
+    if (!isPolling && this.pendingRequests.has(requestKey)) {
       return this.pendingRequests.get(requestKey)!;
     }
 
-    const request$ = this.http.post<TranscriptResponse>(environment.api.transcript, {
+    const payload: Record<string, unknown> = {
       videoId,
       lang,
-      preferAI,
-      ...(forceRefresh && { forceRefresh: true }),
-      ...(duration !== undefined && duration > 0 && { duration }),
-      ...(title && { title }),
-      ...(channel && { channel }),
-      ...(resultUrl && { resultUrl }),
-      ...(turnstileToken && { turnstileToken })
-    }).pipe(
-      switchMap(response => this.handleResponse(response, videoId, lang, preferAI, duration, title, channel, resultUrl)),
+      preferAI
+    };
+
+    if (forceRefresh) payload['forceRefresh'] = true;
+    if (duration !== undefined && duration > 0) payload['duration'] = duration;
+    if (title) payload['title'] = title;
+    if (channel) payload['channel'] = channel;
+    if (jobId) payload['jobId'] = jobId;
+    if (resultUrl) payload['resultUrl'] = resultUrl;
+    if (turnstileToken) payload['turnstileToken'] = turnstileToken;
+
+    const request$ = this.http.post<TranscriptResponse>(environment.api.transcript, payload).pipe(
+      switchMap(response => this.handleResponse(response, videoId, lang, preferAI, title, channel)),
       finalize(() => this.pendingRequests.delete(requestKey)),
       shareReplay(1)
     );
 
-    if (!resultUrl) {
+    if (!isPolling) {
       this.pendingRequests.set(requestKey, request$);
     }
 
     return request$;
   }
 
-  /**
-   * Handle API response and update state
-   */
   private handleResponse(
     response: TranscriptResponse,
     videoId: string,
     lang: string,
-    _preferAI: boolean,
-    duration?: number,
+    preferAI: boolean,
     title?: string,
-    channel?: string,
-    resultUrl?: string
+    channel?: string
   ): Observable<SubtitleCue[]> {
-
     log('API Response:', response);
 
     // Update available languages
-    this.availableLanguages.set(response.availableLanguages);
+    if (response.availableLanguages) {
+      this.availableLanguages.set(response.availableLanguages);
+    }
 
     // Update verified server subtitle languages
     if (response.subLanguages && Array.isArray(response.subLanguages) && response.subLanguages.length > 0) {
@@ -643,30 +527,34 @@ export class TranscriptService {
       this.regenIntervalMs.set(response.regenIntervalMs);
     }
 
-    // Handle processing state (AI job still running)
-    if (response.status === 'processing' && response.resultUrl) {
-      log('AI processing, polling in 2.5s...');
-      this.consecutivePollErrors = 0;
-      saveStoredPendingJob(videoId, response.resultUrl, lang);
-      this.state.set({ status: 'generating_ai', resultUrl: response.resultUrl });
+    // Scenario A: Job is processing asynchronously in the cloud
+    if (response.status === 'processing') {
+      const assignedJobId = response.jobId || 'job_' + Date.now();
+      log('Job is processing. Registering with AiJobManagerService:', assignedJobId);
 
-      return timer(2500).pipe(
-        takeUntil(this.cancelSubject),
-        switchMap(() => this.generateWithAI(videoId, lang, response.resultUrl, undefined, duration, title, channel))
-      );
+      this.aiJobManager.registerJob({
+        jobId: assignedJobId,
+        videoId,
+        language: lang,
+        title,
+        channel
+      });
+
+      this.state.set({
+        status: 'generating_ai',
+        jobId: assignedJobId
+      });
+
+      return of([]);
     }
 
-    // Handle success
+    // Scenario B: Completed successfully
     if (response.success && response.segments?.length > 0) {
-      this.consecutivePollErrors = 0;
-      clearStoredPendingJob(videoId);
       const cues = this.convertToSubtitleCues(response.segments);
       const source: 'native' | 'ai' = response.source === 'ai' ? 'ai' : 'native';
 
-      // Clear recommendation cache so newly transcribed videos immediately reflect in the feed
       this.videoRecommendation.clearCache();
 
-      // Track fallback
       if (response.requestedLanguage !== response.language) {
         this.fallbackInfo.set({
           requested: response.requestedLanguage,
@@ -684,22 +572,7 @@ export class TranscriptService {
       return of(cues);
     }
 
-    // If we were polling an AI job and received a non-success response (e.g. transient 500 or timeout)
-    if (resultUrl) {
-      this.consecutivePollErrors++;
-      if (this.consecutivePollErrors < 5) {
-        const delay = Math.min(2500 * Math.pow(1.5, this.consecutivePollErrors - 1), 10000);
-        console.warn(`[TranscriptService] AI poll response error (${this.consecutivePollErrors}/5), retrying in ${Math.round(delay)}ms...`);
-        return timer(delay).pipe(
-          takeUntil(this.cancelSubject),
-          switchMap(() => this.generateWithAI(videoId, lang, resultUrl, undefined, duration, title, channel))
-        );
-      }
-      this.consecutivePollErrors = 0;
-    }
-
-    // Handle error / no content
-    clearStoredPendingJob(videoId);
+    // Scenario C: Native captions not found (AI available)
     const errorCode = response.errorCode || 'NO_SUBTITLES';
     this.state.set({
       status: 'error',
@@ -710,9 +583,6 @@ export class TranscriptService {
     return of([]);
   }
 
-  /**
-   * Convert segments to SubtitleCue (backend has already split run-ons and applied caps)
-   */
   private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
     return segments.map((segment) => {
       const startTime = segment.start || 0;

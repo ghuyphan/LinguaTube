@@ -113,17 +113,40 @@ CREATE TABLE IF NOT EXISTS transcripts (
 CREATE INDEX IF NOT EXISTS idx_transcript_video ON transcripts(video_id);
 ```
 
-### 2.5. Table: `pending_jobs` (Edge Helper Schema)
-Tracks in-progress Gladia AI speech-to-text generation jobs:
+### 2.5. Table: `ai_transcription_jobs` (`db/create-ai-transcription-jobs.sql` & `db/schema.sql`)
+Replaces legacy `pending_jobs` with a full relational state machine supporting edge-isolated workers, asynchronous webhooks, server-side status checks, and atomic refund guarantees:
 ```sql
-CREATE TABLE IF NOT EXISTS pending_jobs (
+CREATE TABLE IF NOT EXISTS ai_transcription_jobs (
+    id TEXT PRIMARY KEY,
     video_id TEXT NOT NULL,
     language TEXT NOT NULL,
-    result_url TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'queued',   -- 'queued' | 'processing' | 'completed' | 'failed'
+    gladia_id TEXT,
+    diamond_cost INTEGER NOT NULL DEFAULT 1,
+    user_id TEXT,
+    error_message TEXT,
+    webhook_received_at INTEGER,
     created_at INTEGER DEFAULT (strftime('%s', 'now')),
-    PRIMARY KEY (video_id, language)
+    updated_at INTEGER DEFAULT (strftime('%s', 'now'))
 );
+
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_video_lang ON ai_transcription_jobs(video_id, language);
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_status ON ai_transcription_jobs(status);
+CREATE INDEX IF NOT EXISTS idx_ai_jobs_created ON ai_transcription_jobs(created_at);
+
+-- Partial Unique Index: Strictly prevents duplicate active jobs for the same video/language
+-- while allowing historical records ('completed', 'failed') to persist for audits and retries.
+CREATE UNIQUE INDEX IF NOT EXISTS uq_active_job_video_lang
+    ON ai_transcription_jobs(video_id, language)
+    WHERE status IN ('queued', 'processing');
 ```
+- **Concurrency & Atomic Locks (`reserveAiJob`)**: Inserting a job with `status: 'queued'` atomically reserves a processing lock. If another tab or client attempts to initiate AI transcription for the same video/language concurrently, SQLite rejects the second insertion with a unique constraint violation, returning the existing active job without double-deducting user diamonds.
+- **State Machine**:
+  - `queued`: Lock acquired, awaiting confirmation from Gladia audio submission API.
+  - `processing`: Gladia accepted audio stream, assigned `gladia_id`, and registered webhook callback URL.
+  - `completed`: Gladia webhook or self-healing fallback downloaded transcript, cleaned cue text, saved to R2, and updated `video_languages`.
+  - `failed`: Gladia rejected audio or reported transcription error. Triggered `atomicFailAndRefundAiJob` to refund diamonds idempotently.
+- **Zombie Auto-Expiry**: Queries for active jobs (`getActiveAiJob`) automatically disregard entries older than 15 minutes, ensuring stale isolate crashes never permanently lock a video from being retried.
 
 ### 2.6. Table: `leaderboard` (`db/add-leaderboard.sql`)
 Stores global learner rankings, levels, streaks, and experience points (XP):
@@ -333,6 +356,7 @@ Executed server-side on PocketBase:
 | `lingua-tube-last-video` | `YoutubeService` | `string` (videoId) | Video ID for resuming last session |
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
+| `voca_active_ai_jobs` | `AiJobManagerService` | `Record<string, ActiveAiJob>` | Client-side tracking of background AI transcription jobs (auto-expires in 1hr) |
 | `pocketbase_auth` | `PocketBaseService` | `{ token: string, model: User }` | User auth session token and profile |
 
 ### 6.3. Storage Quota Eviction Policy (`StorageService`)

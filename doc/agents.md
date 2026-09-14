@@ -122,6 +122,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │
     ├── Endpoints:
     │     POST /api/transcript          -> Transcript Orchestrator (R2 -> Supadata -> Gladia)
+    │     POST /api/gladia-webhook      -> Gladia Webhook Receiver (Svix/derived token, sub-40ms)
     │     GET  /api/dict                -> Unified Multi-Source Dictionary Engine
     │     POST /api/dual-subtitles      -> Batch Translation & Multi-Sub Caching
     │     POST /api/tokenize/:lang      -> Single-text Kuromoji / Intl Segmentation
@@ -139,7 +140,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │     ALL  /proxy/:service/*        -> Safe Whitelisted SSRF-Protected Proxy
     │
     └── Cloud Infrastructure:
-          ├── Cloudflare D1             -> SQLite Tables: transcripts, video_meta, video_languages, no_transcript_cache
+          ├── Cloudflare D1             -> SQLite Tables: ai_transcription_jobs, transcripts, video_meta, video_languages, no_transcript_cache
           ├── Cloudflare R2             -> transcripts/{videoId}/{lang}.json & translations/{videoId}/{source}_{target}.json
           ├── Cloudflare KV             -> Rate limits, short-lived tokens, video-info, batch translation cache
           ├── PocketBase                -> Cloud user records, vocabulary, streaks
@@ -175,7 +176,8 @@ lingua-tube/
 │   └── mobile-api-integration.md # Complete mobile API reference & PocketBase sync guide
 │
 ├── db/                        # Cloudflare D1 SQL Schema & Migrations
-│   ├── schema.sql             # Base schema (transcripts, vocabulary)
+│   ├── schema.sql             # Base schema (transcripts, vocabulary, ai_transcription_jobs)
+│   ├── create-ai-transcription-jobs.sql # ai_transcription_jobs table with partial unique index
 │   ├── add-video-meta.sql     # video_meta table
 │   ├── add-pending-columns.sql# Gladia pending job status columns
 │   └── add-video-languages.sql# video_languages & no_transcript_cache tables
@@ -193,6 +195,7 @@ lingua-tube/
 │   │   ├── diamonds.js        # Diamond credits check & regen
 │   │   ├── dict.js            # Unified dictionary lookup
 │   │   ├── dual-subtitles.js  # Dual-language subtitle generator
+│   │   ├── gladia-webhook.js  # Dual-auth webhook receiver with sub-40ms ack & waitUntil
 │   │   ├── leaderboard.js     # Gamification XP leaderboard
 │   │   ├── payment/           # Payment processing (create-order, webhook, check-status)
 │   │   ├── recommended-videos.js # Target language video recommendations
@@ -207,7 +210,7 @@ lingua-tube/
 │   ├── providers/             # gladia.js, supadata.js, lingva.js, dictionary-apis.js, payos.js
 │   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, turnstile.service.js
 │   ├── data/                  # transcript-db.js, transcript-r2.js, video-info-db.js
-│   └── utils/                 # tokenizer.js, japanese-romaji.js, cache-manager.js, api-key-rotator.js, utils.js
+│   └── utils/                 # svix-verifier.js, tokenizer.js, japanese-romaji.js, cache-manager.js, api-key-rotator.js, utils.js
 │
 ├── functions/                 # COMPILED FUNCTIONS (DO NOT EDIT DIRECTLY)
 │

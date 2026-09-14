@@ -163,26 +163,50 @@ When a YouTube video lacks native captions in the learner's target language:
 graph TD
     A[Native Captions Missing] --> B[Display 'Generate with AI' Button]
     B --> C[User Solves Cloudflare Turnstile CAPTCHA]
-    C --> D[System Checks Diamond Credit Balance >= 1]
-    D --> E[Server submits YouTube URL to Gladia API v2]
-    E --> F[Deduct Diamond Credit & Store Pending Job in D1]
-    F --> G[Client Polls /api/transcript every 4s]
-    G --> H{Gladia Status?}
-    H -->|processing| G
-    H -->|done| I[Convert Utterances to SubtitleCue Segments]
-    H -->|error / failed| R[Auto-Refund Diamond Credit via PocketBase]
-    I --> J[Save to Cloudflare R2 Bucket]
-    J --> K[Render Interactive Subtitles on Player]
+    C --> D[Verify Diamond Credit Balance & Tier Duration]
+    D --> E[Reserve Atomic Lock in D1 'ai_transcription_jobs']
+    E --> F[Server Submits Audio to Gladia v2 with Callback URL]
+    F --> G[Return Opaque jobId to Client < 1.5s]
+    
+    subgraph PrimaryChannel["Primary Ingestion Channel (Webhook)"]
+        F -.->|Async Audio Processing| GW[Gladia Finishes Transcription]
+        GW -->|POST /api/gladia-webhook| WH[Edge Webhook Handler]
+        WH -->|Sub-40ms HTTP 200| GA[Acknowledge Delivery]
+        WH -->|context.waitUntil| BG[Parse Cues, Commit to R2, Mark D1 Completed]
+    end
+    
+    subgraph FallbackChannel["Client Lifecycle & Self-Healing Channel"]
+        G --> AJ[AiJobManagerService Background Tracker]
+        AJ -->|Progressive 4s-8s Poll| DB[Query D1 by jobId]
+        DB -->|Completed in R2?| RENDER[Apply Interactive Subtitles]
+        DB -->|Webhook Delayed > 15s| SH[Worker Self-Heals Directly via Gladia API]
+        SH --> RENDER
+    end
+
+    BG -.->|State: failed| REFUND[Atomic Diamond Refund via PocketBase]
+    SH -.->|State: failed| REFUND
 ```
 
-- **SSRF Hardening**: The polling endpoint validates that all `result_url` inputs match `https://api.gladia.io/` strictly.
-- **Duration Limits**: Enforced by tier: 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
-- **Bypass Redundant Scrapes**: When duration and video title are provided by the client, unauthenticated YouTube HTML scraping and duplicate oEmbed calls are bypassed, eliminating up to 8s of blocking network timeouts on Cloudflare Workers.
-- **Edge Multi-Isolate Resilience**: Client polls `/api/transcript` every 2.5s with validated `videoId`. The backend cross-checks D1 `pending_jobs` and isolate memory, with client videoId fallback to handle cross-isolate replication lag without throwing premature "Unknown or expired transcription job" errors.
-- **Synchronous R2 Persistence**: Transcripts converted from Gladia utterances are synchronously written and committed to Cloudflare R2 before HTTP 200 is dispatched, eliminating race conditions during immediate client rendering.
-- **Dual-Language Caching on Language Mismatch**: Generated subtitles are cached locally and in R2 under both the user's requested language and the model's detected language. When the user accepts the language mismatch prompt, subtitles are seamlessly preserved without clearing the display or triggering a failing refetch.
-- **Automated Failure Refund**: If Gladia job execution fails or errors out during transcription, the server immediately triggers `refundDiamond()`, returning the deducted Diamond credit back to the user without manual support intervention.
-- **Cost Scaling**:
+- **Zero-URL Client Exposure**: The client interacts strictly via opaque `jobId` handles (`job_1726325987000_abc123`). Upstream Gladia endpoints, API keys, and internal results are never leaked to client browsers.
+- **Dual-Authentication Webhook (`/api/gladia-webhook`)**:
+  - **Svix HMAC-SHA256**: Validates official Gladia webhook headers (`svix-id`, `svix-timestamp`, `svix-signature`) using `GLADIA_WEBHOOK_SECRET` with 5-minute replay tolerance.
+  - **Derived HMAC Token Fallback**: Supports `?token=...` query token calculated from `GLADIA_API_KEY` for zero-downtime operation.
+  - **Sub-40ms Acknowledgment**: Acknowledges delivery immediately and processes JSON parsing and Cloudflare R2 uploads asynchronously within `context.waitUntil()`.
+- **Mobile Screen Sleep & Tab Switch Resilience (`AiJobManagerService`)**:
+  - Mobile browsers (iOS Safari, Android Chrome) pause JS timers when screens lock or apps switch to background.
+  - Voca attaches `document.visibilitychange` and `window.addEventListener('online')` listeners to instantly resume status verification the millisecond the screen is unlocked or network reconnected.
+- **Non-Blocking User Experience**:
+  - Learners can freely navigate away to browse other videos, practice vocabulary flashcards, or look up words while transcription proceeds in the cloud.
+  - Upon completion, a route-aware toast notification alerts the user ("Subtitles ready for [Video Title]! Tap to apply") with an instant 1-tap navigation CTA.
+- **Atomic Lock Reservation & Anti-Double-Billing**:
+  - Cloudflare D1 `ai_transcription_jobs` implements a SQLite partial unique index (`WHERE status IN ('queued', 'processing')`).
+  - Concurrent requests from multiple tabs or duplicate button taps are atomically deduplicated at the database layer, completely eliminating double-charging.
+- **Automated Idempotent Diamond Refund**:
+  - If Gladia fails, times out, or reports no detectable speech, `atomicFailAndRefundAiJob` atomically marks the job as `failed` and triggers `refundDiamond()` via PocketHost API. The transaction guard ensures diamonds can never be refunded more than once.
+- **Duration Limits & Cost Scaling**:
+  - Free/Guest: Max 10 minutes (600s)
+  - Pro: Max 20 minutes (1,200s)
+  - Premium: Max 45 minutes (2,700s)
   - $\le 10$ minutes: **1 Diamond credit**
   - $> 10$ to $20$ minutes: **2 Diamond credits**
   - $> 20$ to $35$ minutes: **3 Diamond credits**

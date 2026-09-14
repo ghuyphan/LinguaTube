@@ -21,6 +21,7 @@ graph TB
         MW_Auth[PocketBase JWT Validator]
         
         API_Transcript["/api/transcript"]
+        API_GladiaWebhook["/api/gladia-webhook"]
         API_Dict["/api/dict"]
         API_TTS["/api/tts (Edge Neural)"]
         API_Tokens["/api/tokenize/:lang"]
@@ -40,7 +41,7 @@ graph TB
     end
 
     subgraph CloudflareData["Cloudflare Infrastructure"]
-        D1[(Cloudflare D1 SQLite: video_languages, leaderboard, no_transcript_cache, video_meta)]
+        D1[(Cloudflare D1 SQLite: ai_transcription_jobs, video_languages, leaderboard, no_transcript_cache, video_meta)]
         R2[(Cloudflare R2: transcripts/ & translations/)]
         KV[(Cloudflare KV: ratelimit, tokens, video-info, trbatch, pay_orders)]
     end
@@ -171,7 +172,9 @@ sequenceDiagram
     actor User
     participant Player as VideoPageComponent
     participant TS as TranscriptService (Client)
+    participant AiMgr as AiJobManagerService
     participant Edge as /api/transcript (Edge)
+    participant Webhook as /api/gladia-webhook
     participant R2 as Cloudflare R2
     participant D1 as Cloudflare D1
     participant Supa as Supadata Provider
@@ -204,17 +207,27 @@ sequenceDiagram
                 User->>Player: Click "Generate with AI" (Solve Turnstile)
                 Player->>TS: generateWithAI(videoId, lang, token)
                 TS->>Edge: POST /api/transcript { videoId, lang, preferAI: true, turnstileToken }
-                Edge->>Edge: Verify Turnstile CAPTCHA & Deduct Diamond
-                Edge->>Gladia: Submit Audio URL (https://youtube.com/watch?v=...)
-                Gladia-->>Edge: Return result_url (Async Job)
-                Edge-->>TS: 200 OK { status: 'processing', resultUrl }
-                loop Every 4 seconds
-                    TS->>Edge: POST /api/transcript { resultUrl }
-                    Edge->>Gladia: Poll result_url
+                Edge->>Edge: Verify Turnstile CAPTCHA & Check Diamonds
+                Edge->>D1: reserveAiJob (Insert queued job with partial unique index)
+                Edge->>Gladia: Submit Audio with Webhook Callback URL
+                Edge->>D1: activateAiJob (Set processing & gladia_id)
+                Edge-->>TS: 200 OK { status: 'processing', jobId }
+                TS->>AiMgr: registerJob(jobId, videoId, lang)
+                par Asynchronous Webhook (Primary Ingestion)
+                    Gladia->>Webhook: POST /api/gladia-webhook (Svix / derived token)
+                    Webhook-->>Gladia: 200 OK (< 40ms)
+                    Webhook->>R2: context.waitUntil: Ingest & Commit to R2
+                    Webhook->>D1: completeAiJob & update video_languages
+                and Client Tracking & Self-Healing (Fallback)
+                    AiMgr->>Edge: Progressive Poll POST /api/transcript { jobId }
+                    Edge->>D1: Check job status in D1 (< 15ms)
+                    opt Webhook Delayed > 15s
+                        Edge->>Gladia: Self-healing status check directly
+                    end
                 end
-                Gladia-->>Edge: Transcription Done
-                Edge->>R2: Save AI Transcript to R2
-                Edge-->>TS: 200 OK (Source: ai, segments)
+                Edge-->>AiMgr: 200 OK (Source: ai, segments)
+                AiMgr-->>TS: jobCompleted$ notification
+                TS-->>Player: Render Cues in SubtitleDisplayComponent
             end
         end
         TS-->>Player: Render Cues in SubtitleDisplayComponent

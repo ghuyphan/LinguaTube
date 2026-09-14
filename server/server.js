@@ -1797,20 +1797,140 @@ const DEV_DUAL_TRANSLATIONS = {
  * Unified Transcript API for dev mode
  * 1. Checks local disk cache (server/transcripts_cache)
  * 2. Fetches native YouTube subtitles via Innertube
+// In-memory registry for dev AI transcription jobs
+const localAiJobs = new Map();
+
+function pollDevGladiaJob(jobId, resultUrl, videoId, lang, gladiaKey) {
+    let attempts = 0;
+    const interval = setInterval(async () => {
+        attempts++;
+        if (attempts > 60) {
+            clearInterval(interval);
+            const job = localAiJobs.get(jobId);
+            if (job) {
+                job.status = 'failed';
+                job.error = 'Transcription timed out after 3 minutes';
+            }
+            return;
+        }
+
+        try {
+            const gladiaRes = await fetch(resultUrl, {
+                headers: { 'x-gladia-key': gladiaKey },
+                signal: AbortSignal.timeout(10000)
+            });
+
+            if (!gladiaRes.ok) return;
+
+            const resultData = await gladiaRes.json();
+            if (resultData.status === 'done') {
+                clearInterval(interval);
+                const sentences = resultData.result?.transcription?.sentences || resultData.result?.transcription?.utterances || [];
+                const segments = sentences.map((utt, index) => ({
+                    id: index,
+                    text: utt.text?.trim() || '',
+                    start: utt.start || 0,
+                    duration: Math.max(0, (utt.end || 0) - (utt.start || 0))
+                })).filter(s => s.text);
+                const cleaned = cleanTranscriptSegments(segments);
+                const detectedLang = resultData.result?.transcription?.languages?.[0] || lang;
+
+                if (cleaned.length > 0) {
+                    saveCachedTranscript(videoId, detectedLang, {
+                        videoId,
+                        language: detectedLang,
+                        source: 'ai',
+                        segments: cleaned
+                    });
+                }
+
+                const job = localAiJobs.get(jobId);
+                if (job) {
+                    job.status = 'completed';
+                    job.detectedLanguage = detectedLang;
+                }
+            } else if (resultData.status === 'error') {
+                clearInterval(interval);
+                const job = localAiJobs.get(jobId);
+                if (job) {
+                    job.status = 'failed';
+                    job.error = resultData.error_message || 'Gladia transcription failed';
+                }
+            }
+        } catch {
+            // Non-blocking transient error
+        }
+    }, 4000);
+}
+
+/**
+ * Unified Transcript Endpoint for Local Dev
+ * 1. Checks local file cache first (transcripts_cache/)
+ * 2. Fetches from YouTube using Innertube with language fallback
  * 3. Supports Gladia AI speech-to-text generation for videos without native CC
  */
 app.post('/api/transcript', async (req, res) => {
-    const { videoId, lang = 'ja', preferAI, resultUrl, forceRefresh } = req.body;
+    const { videoId, lang = 'ja', preferAI, jobId, resultUrl, forceRefresh } = req.body;
 
-    if (!videoId && !resultUrl) {
-        return res.status(400).json({ success: false, error: 'videoId or resultUrl is required' });
+    if (!videoId && !jobId && !resultUrl) {
+        return res.status(400).json({ success: false, error: 'videoId, jobId, or resultUrl is required' });
     }
 
     const normalizedLang = (lang || 'ja').split('-')[0].toLowerCase();
     const gladiaKey = process.env.GLADIA_API_KEY;
 
     // -------------------------------------------------------------
-    // Scenario 1: Polling an existing Gladia AI job
+    // Scenario 1: Polling an existing AI job by jobId
+    // -------------------------------------------------------------
+    if (jobId) {
+        const localJob = localAiJobs.get(jobId);
+        if (!localJob) {
+            return res.status(404).json({ success: false, errorCode: 'JOB_NOT_FOUND', error: 'AI transcription job not found or expired' });
+        }
+
+        if (localJob.status === 'completed') {
+            const cached = getCachedTranscript(localJob.videoId, localJob.detectedLanguage || localJob.language);
+            return res.json({
+                success: true,
+                videoId: localJob.videoId,
+                language: localJob.detectedLanguage || localJob.language,
+                requestedLanguage: localJob.language,
+                segments: cached?.segments || [],
+                source: 'ai',
+                sourceDetail: 'gladia',
+                availableLanguages: { native: [], ai: [localJob.detectedLanguage || localJob.language] },
+                subLanguages: [localJob.detectedLanguage || localJob.language],
+                whisperAvailable: true,
+                diamonds: devDiamonds,
+                maxDiamonds: 3,
+                nextRegenAt: null,
+                timing: 30
+            });
+        }
+
+        if (localJob.status === 'failed') {
+            return res.status(400).json({
+                success: false,
+                errorCode: 'AI_JOB_FAILED',
+                error: localJob.error || 'Gladia transcription failed'
+            });
+        }
+
+        return res.json({
+            success: false,
+            status: 'processing',
+            jobId,
+            videoId: localJob.videoId,
+            whisperAvailable: true,
+            diamonds: devDiamonds,
+            maxDiamonds: 3,
+            nextRegenAt: null,
+            timing: 20
+        });
+    }
+
+    // -------------------------------------------------------------
+    // Legacy Polling by resultUrl
     // -------------------------------------------------------------
     if (resultUrl) {
         try {
@@ -1989,7 +2109,7 @@ app.post('/api/transcript', async (req, res) => {
                         'x-gladia-key': gladiaKey,
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ audio_url: youtubeUrl, sentences: true }),
+                    body: JSON.stringify({ audio_url: youtubeUrl, sentences: true, subtitles: false }),
                     signal: AbortSignal.timeout(24000)
                 });
 
@@ -2020,14 +2140,26 @@ app.post('/api/transcript', async (req, res) => {
             });
         }
 
-        const jobResultUrl = submitData.result_url;
-        console.log(`[Dev Server] Gladia job submitted: ${jobResultUrl}`);
+        const devJobId = 'dev_job_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+        localAiJobs.set(devJobId, {
+            id: devJobId,
+            videoId,
+            language: normalizedLang,
+            status: 'processing',
+            resultUrl: submitData.result_url,
+            createdAt: Date.now()
+        });
 
-        // Return processing immediately so client polling takes over smoothly
-        return res.json({
+        // Launch background event-loop poller in Node
+        pollDevGladiaJob(devJobId, submitData.result_url, videoId, normalizedLang, gladiaKey);
+
+        console.log(`[Dev Server] Gladia job created with ID: ${devJobId}`);
+
+        return res.status(202).json({
             success: false,
             status: 'processing',
-            resultUrl: jobResultUrl,
+            jobId: devJobId,
+            videoId,
             whisperAvailable: true,
             diamonds: devDiamonds,
             maxDiamonds: 3,

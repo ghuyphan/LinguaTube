@@ -432,9 +432,26 @@ Located at `src/app/services/learning-language.service.ts`:
     - Dictionary: Clears active search queries and entries via `DictionaryService.clearScreenState()` and `DictionaryPanelComponent`'s reactive language effect.
   - **Navigation & Feed Loading**: Navigates to `/video` with query parameters cleared when `navigateHome: true`, directly presenting fresh recommendations for the target language.
   - **In-Video Mismatch Adoption**: Supports `navigateHome: false` for video language mismatch dialogs, updating the target language while retaining the active video to reload matching authentic captions.
-  - **Visual Feedback**: Fires an immediate, localized HUD notification (`settings.switchedToLanguage`) via `ToastService`.
+### 4.6. Background AI Job Lifecycle & Mobile Resilience (`AiJobManagerService`)
+Located at `src/app/core/services/ai-job-manager.service.ts`:
+- **Centralized Singleton State**:
+  - `activeJobs`: Reactive signal holding active background transcription jobs (`Record<string, ActiveAiJob>`).
+  - `activeJobCount`: Computed signal reflecting the number of currently active jobs.
+  - `jobCompleted$`: RxJS Subject emitting completed jobs `{ jobId, videoId, language, cues }` across all components and tabs.
+- **Mobile Screen Sleep & Tab Visibility Resilience**:
+  - Mobile browsers (iOS Safari, Android Chrome) suspend JavaScript timers when the screen locks or tabs switch to background.
+  - Listens to `document.visibilitychange`: When `document.visibilityState === 'visible'`, immediately wakes up polling loops and executes an instantaneous status check for all active jobs.
+  - Listens to `window.addEventListener('online')`: Immediately checks job status upon network reconnection.
+- **Adaptive Progressive Backoff**:
+  - Polls `/api/transcript` with opaque `jobId` handles (zero client-exposed vendor URLs) using progressive delays: $4\text{s} \rightarrow 6\text{s} \rightarrow 8\text{s}$ (with an absolute 180-second safety timeout), preventing edge quota exhaustion.
+- **Route-Aware Completion Notifications**:
+  - Compares the completed job's `videoId` with the active route (`Router.url` / `YoutubeService.currentVideoId()`).
+  - If user remains on the video page: Subtitles are automatically injected into `SubtitleService` and applied to the player seamlessly.
+  - If user navigated away (e.g. browsing Home, Dictionary, or watching another video): Dispatches an accessible HUD toast via `ToastService` ("Subtitles ready for [Title]") with an interactive action button that smoothly navigates the user back and loads the completed captions.
+- **Local Persistence & Zombie Purging**:
+  - Serializes active jobs to LocalStorage key `voca_active_ai_jobs`. Automatically purges entries older than 1 hour upon initialization to prevent zombie state.
 
-### 4.6. HTTP Interceptor Pipeline (`src/app/interceptors/`)
+### 4.7. HTTP Interceptor Pipeline (`src/app/interceptors/`)
 Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
 - **`authInterceptor`**:
   - Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.

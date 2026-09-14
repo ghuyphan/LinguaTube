@@ -14,11 +14,15 @@ import {
 } from '../data/video-info-db.js';
 
 import {
-    savePendingJob,
-    getPendingJob,
-    getPendingJobByResultUrl,
     deletePendingJob,
-    cleanupStaleJobs
+    cleanupStaleJobs,
+    reserveAiJob,
+    activateAiJob,
+    getAiJobById,
+    getActiveAiJob,
+    completeAiJob,
+    atomicFailAndRefundAiJob,
+    deleteAiJob
 } from '../data/transcript-db.js';
 
 import {
@@ -27,21 +31,11 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode } from '../utils/transcript-utils.js';
-import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar, getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
+import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
+import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
 
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
-
-// In-memory job map across warm Worker isolates to avoid touching Cloudflare KV writes (Rule 2)
-const memJobMap = new Map();
-const memPollErrors = new Map();
-function setMemJob(resultUrl, videoId) {
-    if (memJobMap.size > 200) {
-        const firstKey = memJobMap.keys().next().value;
-        if (firstKey) memJobMap.delete(firstKey);
-    }
-    memJobMap.set(resultUrl, videoId);
-}
 
 export class TranscriptService {
     /**
@@ -256,18 +250,8 @@ export class TranscriptService {
             };
         }
 
-        // 3. Check for existing pending job
-        const existingJob = await getPendingJob(db, videoId);
-        if (existingJob?.result_url) {
-            return await this.pollAIJob(context, { ...params, resultUrl: existingJob.result_url });
-        }
-
-        // 3. Scaled diamond cost based on video length:
-        // <= 10 min: 1 diamond
-        // 10 to 20 min: 2 diamonds
-        // 20 to 35 min: 3 diamonds
-        // > 35 min (up to 45 min): 4 diamonds
-        let requiredDiamonds = 1;
+        // 3. Scaled diamond cost based on video length
+        let requiredDiamonds = params.requiredDiamonds || 1;
         if (duration) {
             if (duration > 35 * 60) {
                 requiredDiamonds = 4;
@@ -278,9 +262,47 @@ export class TranscriptService {
             }
         }
 
-        // 4. Consume diamond(s)
+        // 4. Check for active job in D1
+        const activeJob = await getActiveAiJob(db, videoId, lang);
+        if (activeJob) {
+            return {
+                status: 'processing',
+                jobId: activeJob.id,
+                videoId,
+                availableLanguages,
+                diamondInfo
+            };
+        }
+
+        // 5. Atomic Lock Reservation Pattern:
+        // Reserve job slot in D1. If another request just reserved it, isNew will be false.
+        const reservation = await reserveAiJob(db, {
+            videoId,
+            language: lang,
+            userId: user?.id || null,
+            clientId,
+            userTier: tier,
+            diamondsCharged: requiredDiamonds
+        });
+
+        if (!reservation.isNew) {
+            // Concurrent request acquired the lock first -> piggyback with 0 diamonds charged!
+            return {
+                status: 'processing',
+                jobId: reservation.job.id,
+                videoId,
+                availableLanguages,
+                diamondInfo
+            };
+        }
+
+        const jobId = reservation.job.id;
+
+        // 6. Consume diamond(s)
         const consumeResult = await this.diamondService.consumeDiamond(clientId, context, env, user, requiredDiamonds);
         if (!consumeResult.success) {
+            // Cancel the reservation row so user can retry later
+            await deleteAiJob(db, jobId);
             if (consumeResult.reason === 'insufficient_diamonds') {
                 throw new Error(`INSUFFICIENT_DIAMONDS: Requires ${consumeResult.requiredDiamonds} AI diamonds (you have ${consumeResult.diamonds}).`);
             }
@@ -293,30 +315,33 @@ export class TranscriptService {
             nextRegenAt: consumeResult.nextRegenAt
         };
 
-        // 4. Submit to Gladia
+        // 7. Construct secure webhook callback URL with derived HMAC token
+        const derivedToken = await generateDerivedWebhookToken(env.GLADIA_API_KEY || '', jobId, videoId, lang);
+        const origin = env.PUBLIC_ORIGIN || env.APP_URL || 'https://voca.study';
+        const callbackUrl = `${origin}/api/gladia-webhook?token=${derivedToken}&jobId=${jobId}&videoId=${videoId}&lang=${encodeURIComponent(lang)}`;
+
+        // 8. Submit to Gladia
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        let resultUrl;
+        let gladiaResponse;
         try {
-            resultUrl = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl);
+            gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl);
         } catch (gladiaError) {
-            // Refund consumed diamond on submission failure
+            // Delete reservation row and refund consumed diamond on submission failure
+            await deleteAiJob(db, jobId);
             await this.diamondService.refundDiamond(clientId, context, env, user, requiredDiamonds);
             throw gladiaError;
         }
 
-        // 5. Save pending job state (In-memory + D1, preserving KV quota Rule 2)
-        setMemJob(resultUrl, videoId);
-        await savePendingJob(db, videoId, lang, resultUrl);
+        // 9. Activate job in D1
+        await activateAiJob(db, jobId, gladiaResponse.id);
 
         if (waitUntil) {
             waitUntil(cleanupStaleJobs(db).catch(() => {}));
         }
 
-        // 6. Return processing status immediately so client polling takes over smoothly
-        // without keeping long-lived edge connections open and hitting gateway timeouts
         return {
             status: 'processing',
-            resultUrl,
+            jobId,
             videoId,
             availableLanguages,
             diamondInfo: updatedDiamondInfo
@@ -324,62 +349,164 @@ export class TranscriptService {
     }
 
     /**
-     * Poll Gladia provider for results (fast, non-blocking check for client polling loop)
+     * Poll AI transcription job status by opaque jobId
+     * Features self-healing fallback if webhook is delayed (>15s)
+     * @param {Object} context
+     * @param {Object} params
+     * @returns {Promise<Object>}
      */
-    async pollAIJob(context, params) {
-        const { db, r2, cache, waitUntil, env } = context;
-        let { videoId, lang, resultUrl, availableLanguages, diamondInfo } = params;
+    async pollAiJobStatus(context, params) {
+        const { db, r2, waitUntil, env } = context;
+        const { jobId, videoId, availableLanguages, diamondInfo, user, clientId } = params;
 
-        if (resultUrl) {
-            let mappedVideoId = memJobMap.get(resultUrl) || null;
-            if (!mappedVideoId && db && videoId) {
-                try {
-                    const pending = await getPendingJob(db, videoId);
-                    if (pending && pending.result_url === resultUrl) {
-                        mappedVideoId = videoId;
-                    }
-                } catch { }
-            }
-            if (!mappedVideoId && db) {
-                try {
-                    const pending = await getPendingJobByResultUrl(db, resultUrl);
-                    if (pending && pending.video_id) {
-                        mappedVideoId = pending.video_id;
-                    }
-                } catch { }
-            }
-            if (!mappedVideoId && cache) {
-                try { mappedVideoId = await cache.get(`job_map:${resultUrl}`); } catch { }
-            }
-
-            // Fallback gracefully to verified client videoId if memory/D1 lookup missed across different Worker isolates
-            if (!mappedVideoId && videoId) {
-                mappedVideoId = videoId;
-            }
-
-            if (!mappedVideoId) {
-                return { status: 'error', error: 'Unknown or expired transcription job' };
-            }
-            if (videoId && videoId !== mappedVideoId) {
-                return { status: 'error', error: 'Result URL does not match requested video' };
-            }
-            videoId = mappedVideoId;
+        if (!jobId) {
+            return { status: 'error', error: 'Missing jobId for status check' };
         }
 
-        try {
-            let resultData;
-            try {
-                resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
-            } catch (pollErr) {
-                if (pollErr.status && pollErr.status >= 400 && pollErr.status < 500) {
-                    console.error('[TranscriptService] Non-retryable Gladia error:', pollErr.status, pollErr.message);
-                    return { status: 'error', error: pollErr.message };
-                }
-                // Short 1s retry on transient network error
-                await new Promise(r => setTimeout(r, 1000));
-                resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
-            }
+        const job = await getAiJobById(db, jobId);
+        if (!job) {
+            return { status: 'error', error: 'Transcription job not found or expired' };
+        }
 
+        const targetVideoId = job.video_id || videoId;
+        const targetLang = job.detected_language || job.language;
+
+        // 1. Completed: Read transcript from R2
+        if (job.status === 'completed') {
+            const r2Transcript = await getTranscriptFromR2(r2, targetVideoId, targetLang);
+            if (r2Transcript?.segments?.length > 0) {
+                return {
+                    status: 'done',
+                    videoInfo: {
+                        videoId: targetVideoId,
+                        language: targetLang,
+                        requestedLanguage: job.language,
+                        segments: r2Transcript.segments,
+                        source: 'ai',
+                        sourceDetail: 'gladia',
+                        availableLanguages,
+                        subLanguages: [targetLang]
+                    }
+                };
+            }
+        }
+
+        // 2. Failed: Return error
+        if (job.status === 'failed') {
+            return {
+                status: 'error',
+                errorCode: job.error_code || 'AI_JOB_FAILED',
+                error: job.error_message || 'AI transcription failed'
+            };
+        }
+
+        // 3. Queued or processing: Self-healing check if job is > 15s old and has gladia_job_id
+        const nowSec = Math.floor(Date.now() / 1000);
+        const jobAge = nowSec - (job.created_at || nowSec);
+
+        if (jobAge > 15 && job.gladia_job_id && env.GLADIA_API_KEY) {
+            try {
+                const statusCheck = await this.gladiaProvider.checkJobStatusById(job.gladia_job_id);
+
+                if (statusCheck.status === 'done') {
+                    const sentences = statusCheck.result?.transcription?.sentences ||
+                                     statusCheck.result?.transcription?.utterances || [];
+                    const segments = sentences.map((item, index) => ({
+                        id: index,
+                        text: item.text?.trim() || '',
+                        start: item.start || 0,
+                        duration: Math.max(0, (item.end || 0) - (item.start || 0))
+                    })).filter(s => s.text);
+
+                    const cleanedSegments = cleanTranscriptSegments(segments);
+                    const rawDetectedLang = statusCheck.result?.transcription?.languages?.[0] || job.language;
+                    const detectedLang = normalizeLanguageCode(rawDetectedLang) || job.language;
+
+                    if (cleanedSegments.length > 0) {
+                        await saveTranscriptToR2(r2, targetVideoId, detectedLang, cleanedSegments, 'ai');
+                        await completeAiJob(db, jobId, detectedLang);
+                        if (db) {
+                            const bgOps = [
+                                addSubLanguage(db, targetVideoId, detectedLang),
+                                saveVideoLanguages(db, targetVideoId, [detectedLang, job.language], null, null, null, false, null, null, [detectedLang])
+                            ];
+                            if (waitUntil) waitUntil(Promise.allSettled(bgOps));
+                            else await Promise.allSettled(bgOps);
+                        }
+
+                        return {
+                            status: 'done',
+                            videoInfo: {
+                                videoId: targetVideoId,
+                                language: detectedLang,
+                                requestedLanguage: job.language,
+                                segments: cleanedSegments,
+                                source: 'ai',
+                                sourceDetail: 'gladia',
+                                availableLanguages,
+                                subLanguages: [detectedLang]
+                            }
+                        };
+                    } else {
+                        // Empty speech
+                        const refundResult = await atomicFailAndRefundAiJob(db, jobId, 'NO_SPEECH_DETECTED', 'Audio contains no detectable speech');
+                        if (refundResult.shouldRefund && this.diamondService) {
+                            const refundPromise = this.diamondService.refundDiamond(job.client_id || clientId, context, env, user, job.diamonds_charged);
+                            if (waitUntil) waitUntil(refundPromise.catch(() => {}));
+                            else await refundPromise.catch(() => {});
+                        }
+                        return {
+                            status: 'error',
+                            errorCode: 'NO_SPEECH_DETECTED',
+                            error: 'Audio contains no detectable speech'
+                        };
+                    }
+                } else if (statusCheck.status === 'error') {
+                    const errMsg = statusCheck.error_message || 'Gladia transcription failed';
+                    const refundResult = await atomicFailAndRefundAiJob(db, jobId, 'GLADIA_ERROR', errMsg);
+                    if (refundResult.shouldRefund && this.diamondService) {
+                        const refundPromise = this.diamondService.refundDiamond(job.client_id || clientId, context, env, user, job.diamonds_charged);
+                        if (waitUntil) waitUntil(refundPromise.catch(() => {}));
+                        else await refundPromise.catch(() => {});
+                    }
+                    return {
+                        status: 'error',
+                        errorCode: 'AI_JOB_FAILED',
+                        error: errMsg
+                    };
+                }
+            } catch (healErr) {
+                console.warn('[TranscriptService] Self-healing poll check warning:', healErr.message);
+            }
+        }
+
+        return {
+            status: 'processing',
+            jobId,
+            videoId: targetVideoId,
+            availableLanguages,
+            diamondInfo
+        };
+    }
+
+    /**
+     * Legacy pollAIJob (backwards-compatibility shim for older clients or resultUrl)
+     */
+    async pollAIJob(context, params) {
+        if (params.jobId) {
+            return await this.pollAiJobStatus(context, params);
+        }
+
+        const { resultUrl } = params;
+        if (!resultUrl) {
+            return { status: 'error', error: 'Missing jobId or resultUrl' };
+        }
+
+        const { db, r2, waitUntil } = context;
+        let { videoId, lang, availableLanguages, diamondInfo } = params;
+
+        try {
+            const resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
             if (resultData.status === 'done') {
                 const sentences = resultData.result?.transcription?.sentences || [];
                 const utterances = resultData.result?.transcription?.utterances || [];
@@ -397,61 +524,18 @@ export class TranscriptService {
                 const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
 
                 if (videoId && cleanedSegments.length > 0) {
-                    let title = params.body?.title || null;
-                    let channel = params.body?.channel || null;
-                    let duration = params.body?.duration || null;
-                    let channelAvatar = params.body?.channelAvatar || null;
-
-                    const saveLanguages = async () => {
-                        // If title or channel is missing, retrieve from D1 or YouTube oEmbed
-                        if ((!title || !channel) && db) {
-                            try {
-                                const existing = await getVideoLanguages(db, videoId);
-                                if (existing?.title) title = title || existing.title;
-                                if (existing?.channel) channel = channel || existing.channel;
-                                if (existing?.channelAvatar) channelAvatar = channelAvatar || existing.channelAvatar;
-                                if (existing?.durationSeconds) duration = duration || existing.durationSeconds;
-                            } catch { }
-                        }
-                        if ((!title || !channel) || !channelAvatar) {
-                            try {
-                                const meta = await getVideoMetadata(videoId);
-                                if (meta?.title) title = title || meta.title;
-                                if (meta?.author_name) channel = channel || meta.author_name;
-                                if (!channelAvatar && meta?.author_url) {
-                                    channelAvatar = await fetchChannelAvatar(meta.author_url);
-                                }
-                            } catch { }
-                        }
-                        if (!channelAvatar && db) {
-                            try { channelAvatar = await resolveVideoChannelAvatar(videoId); } catch { }
-                        }
-
-                        // Index under BOTH detected language and user requested language
-                        const saveLangs = Array.from(new Set([detectedLang, lang].filter(Boolean)));
-                        await saveVideoLanguages(db, videoId, saveLangs, duration, title, channel, false, null, channelAvatar, [detectedLang]);
-                    };
-
-                    // Await R2 save directly so the transcript is available for immediate subsequent lookups
                     await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
-
-                    const bgOps = [
-                        addSubLanguage(db, videoId, detectedLang),
-                        saveLanguages(),
-                        deletePendingJob(db, videoId)
-                    ];
-
-                    if (waitUntil) {
-                        waitUntil(Promise.allSettled(bgOps));
-                    } else {
-                        await Promise.allSettled(bgOps);
+                    if (db) {
+                        const bgOps = [
+                            addSubLanguage(db, videoId, detectedLang),
+                            saveVideoLanguages(db, videoId, [detectedLang, lang], null, null, null, false, null, null, [detectedLang]),
+                            deletePendingJob(db, videoId)
+                        ];
+                        if (waitUntil) waitUntil(Promise.allSettled(bgOps));
+                        else await Promise.allSettled(bgOps);
                     }
                 }
 
-                if (resultUrl) {
-                    memJobMap.delete(resultUrl);
-                    memPollErrors.delete(resultUrl);
-                }
                 return {
                     status: 'done',
                     videoInfo: {
@@ -468,29 +552,9 @@ export class TranscriptService {
             }
 
             if (resultData.status === 'error') {
-                if (resultUrl) {
-                    memJobMap.delete(resultUrl);
-                    memPollErrors.delete(resultUrl);
-                }
-                if (videoId && db) {
-                    deletePendingJob(db, videoId).catch(() => {});
-                }
-                const clientId = params.clientId;
-                if (clientId && this.diamondService) {
-                    const user = params.user || null;
-                    const refundAmount = params.requiredDiamonds || 1;
-                    const refundPromise = this.diamondService.refundDiamond(clientId, context, env, user, refundAmount);
-                    if (waitUntil) {
-                        waitUntil(refundPromise.catch(err => console.error('[TranscriptService] Failed to refund diamonds on Gladia error:', err.message)));
-                    } else {
-                        await refundPromise.catch(() => {});
-                    }
-                }
+                if (videoId && db) deletePendingJob(db, videoId).catch(() => {});
                 return { status: 'error', error: `Gladia error: ${resultData.error_message || 'Transcription failed'}` };
             }
-
-            // Still processing - clear any transient poll error count
-            if (resultUrl) memPollErrors.delete(resultUrl);
 
             return {
                 status: 'processing',
@@ -499,38 +563,7 @@ export class TranscriptService {
                 availableLanguages,
                 diamondInfo
             };
-
-        } catch (error) {
-            console.error('[TranscriptService] Gladia poll exception:', error.message);
-            const errCount = (memPollErrors.get(resultUrl) || 0) + 1;
-            memPollErrors.set(resultUrl, errCount);
-
-            // After 5 consecutive poll errors, fail fast and refund to prevent infinite loop
-            if (errCount >= 5) {
-                if (resultUrl) {
-                    memJobMap.delete(resultUrl);
-                    memPollErrors.delete(resultUrl);
-                }
-                if (videoId && db) {
-                    deletePendingJob(db, videoId).catch(() => {});
-                }
-                const clientId = params.clientId;
-                if (clientId && this.diamondService) {
-                    const user = params.user || null;
-                    const refundAmount = params.requiredDiamonds || 1;
-                    const refundPromise = this.diamondService.refundDiamond(clientId, context, env, user, refundAmount);
-                    if (waitUntil) {
-                        waitUntil(refundPromise.catch(() => {}));
-                    } else {
-                        await refundPromise.catch(() => {});
-                    }
-                }
-                return {
-                    status: 'error',
-                    error: `Gladia polling failed after ${errCount} attempts: ${error.message}`
-                };
-            }
-
+        } catch {
             return {
                 status: 'processing',
                 resultUrl,

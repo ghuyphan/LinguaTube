@@ -5,6 +5,7 @@ export * from './playlist.model';
 export * from './language.constants';
 export * from './video-level.model';
 export * from './gamification.model';
+export * from './transcript.model';
 
 export interface SubtitleCue {
   id: string;

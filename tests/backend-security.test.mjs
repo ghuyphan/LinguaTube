@@ -911,3 +911,140 @@ test('splitRunOnSegments: splits long CJK and Latin speech segments at punctuati
   }
 });
 
+test('Svix Verifier & Derived Token: validates authentic webhooks and rejects replays/tampering', async () => {
+  const {
+    verifySvixSignature,
+    generateDerivedWebhookToken,
+    verifyDerivedWebhookToken
+  } = await import('../functions-src/utils/svix-verifier.js');
+
+  const secret = 'whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw';
+  const payload = JSON.stringify({ event: 'transcription.success', payload: { id: 'test-job-1' } });
+  const msgId = 'msg_p5jXN8AQM9LWM0D4lo6Blflg';
+  const now = Math.floor(Date.now() / 1000);
+
+  // Generate valid Svix signature using Web Crypto HMAC
+  const encoder = new TextEncoder();
+  const secretKeyBytes = Uint8Array.from(atob('MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw'), c => c.charCodeAt(0));
+  const cryptoKey = await crypto.subtle.importKey(
+    'raw',
+    secretKeyBytes,
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  const toSign = `${msgId}.${now}.${payload}`;
+  const sigBuffer = await crypto.subtle.sign('HMAC', cryptoKey, encoder.encode(toSign));
+  const validSig = btoa(String.fromCharCode(...new Uint8Array(sigBuffer)));
+
+  // Test 1: Valid signature passes
+  const validCheck = await verifySvixSignature(payload, {
+    id: msgId,
+    timestamp: String(now),
+    signature: `v1,${validSig}`
+  }, secret);
+  assert.equal(validCheck.valid, true);
+
+  // Test 2: Expired timestamp (>300s) is rejected
+  const oldTimestamp = now - 350;
+  const expiredCheck = await verifySvixSignature(payload, {
+    id: msgId,
+    timestamp: String(oldTimestamp),
+    signature: `v1,${validSig}`
+  }, secret);
+  assert.equal(expiredCheck.valid, false);
+  assert.equal(expiredCheck.reason, 'Timestamp outside tolerance window');
+
+  // Test 3: Tampered body is rejected
+  const tamperedCheck = await verifySvixSignature(payload + 'evil', {
+    id: msgId,
+    timestamp: String(now),
+    signature: `v1,${validSig}`
+  }, secret);
+  assert.equal(tamperedCheck.valid, false);
+  assert.equal(tamperedCheck.reason, 'Signature mismatch');
+
+  // Test 4: Derived HMAC token verification
+  const apiKey = 'test_gladia_api_key_12345';
+  const jobId = 'job_9876543210';
+  const videoId = 'dQw4w9WgXcQ';
+  const lang = 'ja';
+
+  const derivedToken = await generateDerivedWebhookToken(apiKey, jobId, videoId, lang);
+  assert.ok(derivedToken && derivedToken.length === 64, 'Token must be a 64-char hex string');
+
+  const validTokenCheck = await verifyDerivedWebhookToken(apiKey, jobId, videoId, lang, derivedToken);
+  assert.equal(validTokenCheck, true);
+
+  // Tampered videoId or token fails
+  const invalidTokenCheck = await verifyDerivedWebhookToken(apiKey, jobId, 'evilVideo', lang, derivedToken);
+  assert.equal(invalidTokenCheck, false);
+});
+
+test('D1 AI Transcription Jobs State Machine: atomic refund guard is strictly idempotent', async () => {
+  const { atomicFailAndRefundAiJob, reserveAiJob } = await import('../functions-src/data/transcript-db.js');
+
+  // Mock D1 Database
+  let table = [];
+  const mockDb = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async run() {
+              if (sql.includes('INSERT INTO ai_transcription_jobs')) {
+                const [id, video_id, language, user_id, client_id, user_tier, diamonds_charged] = args;
+                table.push({
+                  id, video_id, language, user_id, client_id, user_tier,
+                  diamonds_charged, diamonds_refunded: 0, status: 'queued'
+                });
+                return { meta: { changes: 1 } };
+              }
+              if (sql.includes('diamonds_refunded = 1')) {
+                const [errCode, errMsg, jobId] = args;
+                const row = table.find(r => r.id === jobId && r.diamonds_refunded === 0);
+                if (row) {
+                  row.status = 'failed';
+                  row.error_code = errCode;
+                  row.error_message = errMsg;
+                  row.diamonds_refunded = 1;
+                  return { meta: { changes: 1 }, changes: 1 };
+                }
+                return { meta: { changes: 0 }, changes: 0 };
+              }
+              return { meta: { changes: 0 } };
+            },
+            async first() {
+              if (sql.includes('SELECT * FROM ai_transcription_jobs WHERE id = ?')) {
+                return table.find(r => r.id === args[0]) || null;
+              }
+              return null;
+            }
+          };
+        }
+      };
+    }
+  };
+
+  // 1. Reserve job
+  const reservation = await reserveAiJob(mockDb, {
+    videoId: 'test_vid_1',
+    language: 'zh',
+    clientId: 'client_abc',
+    diamondsCharged: 2
+  });
+  assert.equal(reservation.isNew, true);
+  const jobId = reservation.job.id;
+
+  // 2. First failure & refund trigger: shouldRefund === true
+  const refund1 = await atomicFailAndRefundAiJob(mockDb, jobId, 'GLADIA_ERROR', 'Remote error');
+  assert.equal(refund1.shouldRefund, true);
+  assert.equal(refund1.job.status, 'failed');
+  assert.equal(refund1.job.diamonds_refunded, 1);
+
+  // 3. Second concurrent failure trigger (e.g. timeout + webhook collision): shouldRefund === false!
+  const refund2 = await atomicFailAndRefundAiJob(mockDb, jobId, 'TIMEOUT_EXPIRED', 'Timeout');
+  assert.equal(refund2.shouldRefund, false, 'Second refund attempt must be prevented by atomic guard');
+});
+
+

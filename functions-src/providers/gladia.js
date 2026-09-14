@@ -17,10 +17,11 @@ export class GladiaProvider {
     /**
      * Submit a Youtube video URL to Gladia for transcription with retry budget
      * @param {string} youtubeUrl 
+     * @param {string} [callbackUrl] Optional webhook callback URL
      * @param {number} maxRetries 
-     * @returns {Promise<string>} The result URL to poll
+     * @returns {Promise<{id: string, resultUrl: string}>} The job ID and result URL
      */
-    async submitTranscriptionJob(youtubeUrl, maxRetries = 2) {
+    async submitTranscriptionJob(youtubeUrl, callbackUrl = null, maxRetries = 2) {
         if (!this.apiKey) {
             throw new Error('Gladia API key not configured');
         }
@@ -28,6 +29,15 @@ export class GladiaProvider {
         const TOTAL_BUDGET_MS = 26000;
         const startTime = Date.now();
         let lastError = null;
+
+        const bodyPayload = {
+            audio_url: youtubeUrl,
+            sentences: true,
+            subtitles: false
+        };
+        if (callbackUrl) {
+            bodyPayload.callback_url = callbackUrl;
+        }
 
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
             const timeRemaining = TOTAL_BUDGET_MS - (Date.now() - startTime);
@@ -42,10 +52,7 @@ export class GladiaProvider {
                         'x-gladia-key': this.apiKey,
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({
-                        audio_url: youtubeUrl,
-                        sentences: true
-                    }),
+                    body: JSON.stringify(bodyPayload),
                     signal: AbortSignal.timeout(timeoutMs)
                 });
 
@@ -66,7 +73,12 @@ export class GladiaProvider {
                     throw new Error('No result_url returned from Gladia');
                 }
 
-                return submitData.result_url;
+                const id = submitData.id || submitData.result_url.split('/').pop();
+                return {
+                    id,
+                    resultUrl: submitData.result_url,
+                    toString() { return submitData.result_url; }
+                };
             } catch (err) {
                 lastError = err;
                 // Don't retry non-retryable 4xx client errors
@@ -83,6 +95,18 @@ export class GladiaProvider {
         }
 
         throw lastError || new Error('Gladia submission failed after retries');
+    }
+
+    /**
+     * Hit the Gladia API status endpoint by ID
+     * @param {string} gladiaId 
+     * @returns {Promise<{status: 'processing' | 'done' | 'error', result?: any, error_message?: string}>}
+     */
+    async checkJobStatusById(gladiaId) {
+        if (!gladiaId || typeof gladiaId !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(gladiaId)) {
+            throw new Error('Invalid gladiaId format');
+        }
+        return await this.checkJobStatus(`${GLADIA_API_URL}/${gladiaId}`);
     }
 
     /**
