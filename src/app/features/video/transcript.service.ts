@@ -284,7 +284,7 @@ export class TranscriptService {
         this.state.set({ status: 'loading' });
         this.fallbackInfo.set(null);
 
-        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, duration, title, channel, forceRefresh).pipe(
+        return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, undefined, duration, title, channel, forceRefresh).pipe(
           tap(cues => {
             if (cues.length > 0) {
               const detectedLang = this.detectedLanguage() || lang;

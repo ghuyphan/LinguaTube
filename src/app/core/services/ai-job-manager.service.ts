@@ -224,7 +224,7 @@ export class AiJobManagerService {
     const resolvedLang = response.language || job.language;
 
     // Cache locally in IndexedDB / Memory
-    this.cacheService.set(job.videoId, resolvedLang, cues);
+    this.cacheService.set(job.videoId, resolvedLang, cues, 'ai');
 
     // Remove from active tracking
     this.activeJobs.update(jobs => {
