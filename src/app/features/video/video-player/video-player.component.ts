@@ -222,6 +222,8 @@ export class VideoPlayerComponent implements OnDestroy {
   playlistPrev = output<void>();
   videoEnded = output<void>();
   minimizeVideo = output<void>();
+  selectTrack = output<string>();
+  triggerAI = output<void>();
 
   videoUrl = '';
   isLoading = signal(false);
@@ -450,10 +452,14 @@ export class VideoPlayerComponent implements OnDestroy {
     });
 
 
-    // Sync volume when player is ready
+    // Sync volume and restore saved playback speed when player is ready
     effect(() => {
       if (this.youtube.isReady()) {
         this.volume.set(this.youtube.getVolume());
+        const speed = this.settings.settings().playbackSpeed;
+        if (speed && speed !== 1) {
+          this.youtube.setPlaybackRate(speed);
+        }
         this.startBufferedTracking();
       }
     });

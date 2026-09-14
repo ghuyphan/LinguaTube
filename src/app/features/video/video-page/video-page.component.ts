@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, ElementRef, NgZone } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -25,6 +25,7 @@ import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, Subtitl
 import { VideoLevelService } from '../../../core/services/video-level.service';
 import { LearningLanguageService } from '../../../services/learning-language.service';
 import { formatTime } from '../../../core/utils';
+import { normalizeLanguageCode } from '../../../shared/utils/language.utils';
 
 export type FeedItem =
   | { kind: 'video'; video: RecommendedVideo }
@@ -40,13 +41,13 @@ export type FeedItem =
     SubtitleDisplayComponent,
     VocabularyListComponent,
     PlaylistPanelComponent,
-    AddToPlaylistDialogComponent,
     WordPopupComponent,
     ConfirmDialogComponent,
-    IconComponent,
     BottomSheetComponent,
     TurnstileComponent,
-    OptionPickerComponent
+    OptionPickerComponent,
+    IconComponent,
+    AddToPlaylistDialogComponent
   ],
   templateUrl: './video-page.component.html',
   styleUrls: ['./video-page.component.scss']
@@ -56,6 +57,7 @@ export class VideoPageComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private platformId = inject(PLATFORM_ID);
   private destroyRef = inject(DestroyRef);
+  private ngZone = inject(NgZone);
   protected youtube = inject(YoutubeService);
   private subtitles = inject(SubtitleService);
   protected transcript = inject(TranscriptService);
@@ -94,6 +96,7 @@ export class VideoPageComponent implements OnInit {
   // Video level filter state for recommended videos
   videoLevelFilter = signal<string>('all');
   showLevelFilter = signal<boolean>(false);
+  readonly isLevelSwitching = signal<boolean>(false);
 
   readonly levelFilterOptions = computed<OptionItem[]>(() => {
     const lang = this.settings.settings().language;
@@ -147,7 +150,13 @@ export class VideoPageComponent implements OnInit {
   }
 
   onLevelFilterChange(level: string): void {
-    this.videoLevelFilter.set(level);
+    if (level !== this.videoLevelFilter()) {
+      const lang = this.settings.settings().language;
+      if (!this.videoRecommendation.hasCache(lang, level)) {
+        this.isLevelSwitching.set(true);
+      }
+      this.videoLevelFilter.set(level);
+    }
     this.showLevelFilter.set(false);
   }
 
@@ -163,34 +172,13 @@ export class VideoPageComponent implements OnInit {
     return !!this.playlistService.currentPlaylist() || !!this.activePlaylistId();
   });
 
-  // On mobile, only display the in-flow playlist card if the playlist has multiple videos
-  readonly hasMultiplePlaylistVideos = computed(() => {
-    const playlist = this.playlistService.currentPlaylist();
-    return !!playlist && playlist.videos.length > 1;
-  });
-
   readonly showMobilePlaylistCard = computed(() => {
     // Temporarily show on mobile even when there's 1 video per user testing request
     return this.hasPlaylist();
   });
 
-  // Playlist navigation helpers (disabled when playlist has only 1 video)
-  canPlayPrev = computed(() => {
-    const playlist = this.playlistService.currentPlaylist();
-    if (!playlist || playlist.videos.length <= 1) return false;
-    return this.playlistService.currentIndex() > 0 || this.playlistService.isLooping();
-  });
-  canPlayNext = computed(() => {
-    const playlist = this.playlistService.currentPlaylist();
-    if (!playlist || playlist.videos.length <= 1) return false;
-    return this.playlistService.currentIndex() < playlist.videos.length - 1 || this.playlistService.isLooping();
-  });
-
   showLearnHome = computed(() =>
     (!this.youtube.currentVideo() && !this.youtube.pendingVideoId()) || this.playerView.isMiniplayer()
-  );
-  readonly hasActiveVideo = computed(() =>
-    !!this.youtube.currentVideo() || !!this.youtube.pendingVideoId()
   );
   currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
   featuredPlaylists = this.playlistService.recommendedPlaylists;
@@ -219,8 +207,8 @@ export class VideoPageComponent implements OnInit {
    * or shows strictly playlists when the 'playlists' chip is selected.
    */
   readonly feedItems = computed<FeedItem[]>(() => {
-    // Only return empty during initial cold load when absolutely no videos are available yet
-    if (this.isFeedLoading() && this.filteredRecommendedVideos().length === 0) {
+    // Return empty while feed is loading to render skeleton grid cleanly without layout shifts
+    if (this.isFeedLoading()) {
       return [];
     }
 
@@ -261,18 +249,17 @@ export class VideoPageComponent implements OnInit {
   });
 
   readonly isFeedLoading = computed(() => {
+    // Suppress full skeleton grid during pull-to-refresh to preserve inline pull spinner
+    if (this.isRefreshing()) {
+      return false;
+    }
+
     if (this.homeTab() === 'playlists') {
       return this.isFeaturedLoading() && this.filteredFeaturedPlaylists().length === 0;
     }
 
-    // Best Practice: If videos are already in memory, NEVER show skeleton cards over them!
-    // Skeletons are strictly for initial cold loading before any data arrives.
-    const hasVideos = this.filteredRecommendedVideos().length > 0;
-    if (hasVideos) {
-      return false;
-    }
-
-    return this.isVideosLoading();
+    // Videos tab: show skeleton whenever fetching videos from server or switching uncached levels
+    return this.isVideosLoading() || this.isLevelSwitching();
   });
 
   readonly getFlagUrl = getLanguageFlagUrl;
@@ -285,6 +272,7 @@ export class VideoPageComponent implements OnInit {
   isVideoFullscreen = signal(false);
 
   onSidebarWordSelect(token: Token): void {
+    this.youtube.acquirePauseLock('word-lookup');
     this.selectedWord.set(token);
     this.currentSentence.set(token.surface);
   }
@@ -298,7 +286,6 @@ export class VideoPageComponent implements OnInit {
       queryParams: { id: video.videoId, v: null },
       queryParamsHandling: 'merge'
     });
-    void this.loadVideoFromUrl(video.videoId);
   }
 
   showAddToPlaylistDialog = signal(false);
@@ -347,13 +334,6 @@ export class VideoPageComponent implements OnInit {
   readonly pullRotation = computed(() => {
     return Math.min(this.pullDistance() * 3.5, 180);
   });
-
-  @HostListener('window:scroll')
-  onWindowScroll(): void {
-    if (isPlatformBrowser(this.platformId) && this.showLearnHome() && !this.isNavigatingToWatch && !this.isRestoringFeedScroll) {
-      this.savedFeedScrollY = window.scrollY;
-    }
-  }
 
   saveScrollPosition(): void {
     if (isPlatformBrowser(this.platformId) && this.showLearnHome() && !this.isNavigatingToWatch && !this.isRestoringFeedScroll) {
@@ -445,43 +425,6 @@ export class VideoPageComponent implements OnInit {
     }
   }
 
-  /**
-   * Returns normalized, deduplicated languages filtered strictly to supported learning languages (ja, zh, ko, en)
-   * with the active learning language prioritized first.
-   */
-  getVideoLanguages(video: RecommendedVideo | null | undefined): string[] {
-    if (!video?.languages || !Array.isArray(video.languages) || video.languages.length === 0) {
-      return [];
-    }
-    const currentLang = (this.settings.settings().language || '').toLowerCase().trim();
-    const supportedCodes = new Set(['ja', 'zh', 'ko', 'en']);
-    const normalized = Array.from(new Set(
-      video.languages
-        .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
-        .filter(l => supportedCodes.has(l))
-    ));
-    if (normalized.length === 0) {
-      return [];
-    }
-    if (normalized.length <= 1) return normalized;
-
-    return normalized.sort((a, b) => {
-      if (a === currentLang) return -1;
-      if (b === currentLang) return 1;
-      return 0;
-    });
-  }
-
-  getLanguagesTooltip(langs: string[]): string {
-    if (!langs || langs.length === 0) return '';
-    return langs.map(l => this.getLanguageName(l)).join(', ');
-  }
-
-  formatLanguagesBadge(langs: string[]): string {
-    if (!langs || langs.length === 0) return '';
-    return langs.map(l => l.toUpperCase()).join(' / ');
-  }
-
   readonly failedAvatars = signal<Set<string>>(new Set());
 
   getChannelInitial(name: string | null | undefined): string {
@@ -504,7 +447,6 @@ export class VideoPageComponent implements OnInit {
   }
 
   private lastLang = '';
-  private wasPlayingBeforeWordLookup = false;
   private skipNextMismatchDialog = false;
 
   constructor() {
@@ -615,7 +557,9 @@ export class VideoPageComponent implements OnInit {
         void Promise.all([
           this.playlistService.loadRecommendedPlaylists(currentLang, tierParam),
           this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam)
-        ]);
+        ]).finally(() => {
+          this.isLevelSwitching.set(false);
+        });
       }
     });
 
@@ -687,7 +631,11 @@ export class VideoPageComponent implements OnInit {
         return;
       }
       this.homeTab.set('videos');
-      if (level !== undefined) {
+      if (level !== undefined && level !== this.videoLevelFilter()) {
+        const lang = this.settings.settings().language;
+        if (!this.videoRecommendation.hasCache(lang, level)) {
+          this.isLevelSwitching.set(true);
+        }
         this.videoLevelFilter.set(level);
       }
     } else {
@@ -743,6 +691,19 @@ export class VideoPageComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      // Passive scroll listener outside NgZone to avoid change detection on every pixel
+      this.ngZone.runOutsideAngular(() => {
+        const onScroll = () => {
+          if (this.showLearnHome() && !this.isNavigatingToWatch && !this.isRestoringFeedScroll) {
+            this.savedFeedScrollY = window.scrollY;
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        this.destroyRef.onDestroy(() => {
+          window.removeEventListener('scroll', onScroll);
+        });
+      });
+
       // Listen for feed refresh requests (e.g. from bottom nav tab double-tap)
       this.videoRecommendation.refreshRequested$
         .pipe(takeUntilDestroyed(this.destroyRef))
@@ -845,6 +806,8 @@ export class VideoPageComponent implements OnInit {
   private async loadVideoFromUrl(videoId: string): Promise<void> {
     this.playerView.expand();
     this.saveScrollPosition();
+    this.selectedWord.set(null);
+    this.currentSentence.set('');
     try {
       this.videoLevel.reset();
       const lang = this.settings.settings().language;
@@ -852,26 +815,28 @@ export class VideoPageComponent implements OnInit {
       if (cached) {
         this.videoLevel.currentLevel.set(cached);
       }
-      this.youtube.pendingVideoId.set(videoId);
-      await this.waitForElement('youtube-player');
-      await this.youtube.initPlayer('youtube-player', videoId);
 
-      // Resume from saved progress or 't' query param if available
+      // Compute resume time from 't' query param or watch history before player init
+      let resumeSeconds = 0;
       const urlTime = this.route.snapshot.queryParamMap.get('t');
       if (urlTime) {
         const parsedTime = parseInt(urlTime, 10);
         if (!isNaN(parsedTime) && parsedTime > 0) {
-          this.youtube.seekTo(parsedTime);
+          resumeSeconds = parsedTime;
         }
       } else {
         const historyItem = this.historyService.getByVideoId(videoId);
         if (historyItem && historyItem.progress > 0 && historyItem.progress < 95 && historyItem.duration) {
-          const resumeSeconds = Math.floor((historyItem.duration * historyItem.progress) / 100);
-          if (resumeSeconds > 3) {
-            this.youtube.seekTo(resumeSeconds);
+          const calculated = Math.floor((historyItem.duration * historyItem.progress) / 100);
+          if (calculated > 3) {
+            resumeSeconds = calculated;
           }
         }
       }
+
+      this.youtube.pendingVideoId.set(videoId);
+      await this.waitForElement('youtube-player');
+      await this.youtube.initPlayer('youtube-player', videoId, resumeSeconds);
 
       this.fetchCaptions(videoId);
     } catch (err) {
@@ -1160,9 +1125,13 @@ export class VideoPageComponent implements OnInit {
     this.subtitles.currentCueIndex.set(-1);
     this.subtitles.subtitles.set(cues);
 
+    // Immediately synchronize the active cue with the current player playback time
+    // (Crucial for resuming video at an existing timestamp where captions arrive after seek)
+    this.subtitles.updateCurrentCue(this.youtube.currentTime());
+
     // Detect actual language returned by backend
     const detectedFull = this.transcript.detectedLanguage();
-    const detected = detectedFull?.split('-')[0]?.toLowerCase(); // Handle en-US, ja-JP
+    const detected = normalizeLanguageCode(detectedFull);
     const validLangs = ['ja', 'zh', 'ko', 'en'];
 
     // Enrich history with verified server subtitle languages (sub_languages)
@@ -1183,7 +1152,7 @@ export class VideoPageComponent implements OnInit {
 
       // Check for mismatch: requested language differs from detected
       // Only show dialog if this is NOT from a user-initiated language switch
-      const reqNorm = requestedLang?.split('-')[0]?.toLowerCase();
+      const reqNorm = normalizeLanguageCode(requestedLang);
       if (reqNorm && reqNorm !== targetLang && !this.skipNextMismatchDialog) {
         this.mismatchDetectedLang.set(targetLang);
         this.showLanguageMismatchDialog.set(true);
@@ -1257,33 +1226,56 @@ export class VideoPageComponent implements OnInit {
   }
 
   onMismatchCancel() {
-    // User explicitly chose to keep current language despite mismatch
-    // Don't pester them again for this video/session
+    // User explicitly chose to keep target learning language despite mismatch
     this.skipNextMismatchDialog = true;
     this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);
+
+    // Clear mismatched subtitles from the player
+    this.subtitles.subtitles.set([]);
+    this.subtitles.currentCueIndex.set(-1);
+
+    // Prompt user to generate subtitles in their target language via AI
+    this.onManualAITrigger();
+  }
+
+  onSelectTrack(lang: string): void {
+    const currentVid = this.youtube.currentVideo();
+    if (!currentVid) return;
+    const duration = Math.round(this.youtube.duration()) || undefined;
+    this.skipNextMismatchDialog = true;
+
+    // If selecting a supported learning language, switch active learning language
+    const norm = normalizeLanguageCode(lang);
+    if (['ja', 'zh', 'ko', 'en'].includes(norm)) {
+      this.learningLanguage.switchLanguage(norm as SupportedLearningLanguage, { navigateHome: false });
+    }
+
+    this.transcript.fetchTranscript(currentVid.id, lang, duration, currentVid.title, currentVid.channel, false)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (cues) => {
+          if (cues.length > 0) {
+            this.handleCaptionsSuccess(cues, lang);
+          }
+        },
+        error: (err) => {
+          console.error('Failed to load selected track:', err);
+        }
+      });
   }
 
   onWordClicked(event: { token: Token; sentence: string }): void {
-    // Pause video on mobile when looking up a word for better UX
-    if (window.innerWidth <= 768) {
-      this.wasPlayingBeforeWordLookup = this.youtube.isPlaying();
-      if (this.wasPlayingBeforeWordLookup) {
-        this.youtube.pause();
-      }
-    }
+    // Acquire pause lock for word lookup so video stays paused across all screen sizes
+    this.youtube.acquirePauseLock('word-lookup');
     this.selectedWord.set(event.token);
     this.currentSentence.set(event.sentence);
   }
 
   onWordPopupClosed(): void {
     this.selectedWord.set(null);
-
-    // Resume video if it was playing before lookup
-    if (window.innerWidth <= 768 && this.wasPlayingBeforeWordLookup) {
-      this.youtube.play();
-      this.wasPlayingBeforeWordLookup = false;
-    }
+    // Release pause lock so video resumes smoothly if it was playing before
+    this.youtube.releasePauseLock('word-lookup');
   }
 
   // Playlist Methods

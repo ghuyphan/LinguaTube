@@ -127,6 +127,11 @@ export class WordPopupComponent implements OnDestroy {
             void this.audio.preloadWord(word.surface, lang);
           }
         });
+      } else {
+        this.isVisible.set(false);
+        this.lookupSubscription?.unsubscribe();
+        this.lookupSubscription = null;
+        this.cancelAllTranslations();
       }
     });
   }
@@ -177,19 +182,6 @@ export class WordPopupComponent implements OnDestroy {
     }
   }
 
-  updateLevel(event: Event): void {
-    const word = this.selectedWord();
-    if (!word) return;
-
-    const select = event.target as HTMLSelectElement;
-    const level = select.value as 'new' | 'learning' | 'known' | 'ignored';
-    const item = this.vocab.findWord(word.surface);
-
-    if (item) {
-      this.vocab.updateLevel(item.id, level);
-    }
-  }
-
   onLangSelected(value: string): void {
     this.targetLang.set(value);
     this.langPickerOpen.set(false);
@@ -206,11 +198,6 @@ export class WordPopupComponent implements OnDestroy {
       this.vocab.updateLevel(item.id, level);
     }
     this.levelPickerOpen.set(false);
-  }
-
-  getSelectedLangFlag(): string {
-    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === this.targetLang());
-    return lang ? lang.flag : '🌐';
   }
 
   getSelectedLangFlagUrl(): string {
@@ -296,11 +283,6 @@ export class WordPopupComponent implements OnDestroy {
     return this.translatedDefinitions().get(index)?.lang || this.targetLang();
   }
 
-  getFlag(code: string): string {
-    const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
-    return lang ? lang.flag : '🌐';
-  }
-
   getFlagUrl(code: string): string {
     const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
     return lang?.flagUrl || 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
@@ -318,10 +300,6 @@ export class WordPopupComponent implements OnDestroy {
     this.isVisible.set(false);
     this.entry.set(null);
     this.closed.emit();
-  }
-
-  close(): void {
-    this.onSheetClosed();
   }
 
   ngOnDestroy(): void {

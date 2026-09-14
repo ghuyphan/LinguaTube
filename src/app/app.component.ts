@@ -45,18 +45,16 @@ import { VideoRecommendationService } from './core/services/video-recommendation
   template: `
     <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
       
-      <!-- Desktop Sidebar (lazy loaded) -->
-      @defer (on idle) {
-          <app-sidebar 
-            class="desktop-sidebar"
-            (openSettings)="showSettingsSheet.set(true)"
-            (openCommandPalette)="showCommandPalette.set(true)"
-            (openStreak)="showStreakSheet.set(true)"
-            (openAiCredits)="showAiCreditsSheet.set(true)"
-            (openAchievements)="showAchievementsSheet.set(true)"
-            (openProUpgrade)="showProUpgradeSheet.set(true)"
-          />
-        }
+      <!-- Desktop Sidebar -->
+      <app-sidebar 
+        class="desktop-sidebar"
+        (openSettings)="showSettingsSheet.set(true)"
+        (openCommandPalette)="showCommandPalette.set(true)"
+        (openStreak)="showStreakSheet.set(true)"
+        (openAiCredits)="showAiCreditsSheet.set(true)"
+        (openAchievements)="showAchievementsSheet.set(true)"
+        (openProUpgrade)="showProUpgradeSheet.set(true)"
+      />
 
         <div class="app__content">
           <main class="main" [class.video-active]="hasVideo()">
@@ -73,11 +71,11 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               class="bottom-nav__item"
               routerLink="/video"
               (click)="onLearnNavClick($event)"
-              [class.active]="!anySheetOpen() && isRouteActive('/video')"
-              [attr.aria-current]="(!anySheetOpen() && isRouteActive('/video')) ? 'page' : null"
+              [class.active]="isVideoActive()"
+              [attr.aria-current]="isVideoActive() ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="(!anySheetOpen() && isRouteActive('/video')) ? 'play-circle-filled' : 'play-circle'" [size]="22" />
+                <app-icon [name]="isVideoActive() ? 'play-circle-filled' : 'play-circle'" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.watch') }}</span>
             </a>
@@ -85,11 +83,11 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               class="bottom-nav__item"
               routerLink="/study"
               (click)="onStudyNavClick($event)"
-              [class.active]="!anySheetOpen() && isRouteActive('/study')"
-              [attr.aria-current]="(!anySheetOpen() && isRouteActive('/study')) ? 'page' : null"
+              [class.active]="isStudyActive()"
+              [attr.aria-current]="isStudyActive() ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="(!anySheetOpen() && isRouteActive('/study')) ? 'graduation-cap-filled' : 'graduation-cap'" [size]="22" />
+                <app-icon [name]="isStudyActive() ? 'graduation-cap-filled' : 'graduation-cap'" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.review') }}</span>
             </a>
@@ -107,25 +105,25 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             <a
               class="bottom-nav__item"
               routerLink="/dictionary"
-              [class.active]="!anySheetOpen() && isRouteActive('/dictionary')"
-              [attr.aria-current]="(!anySheetOpen() && isRouteActive('/dictionary')) ? 'page' : null"
+              [class.active]="isDictionaryActive()"
+              [attr.aria-current]="isDictionaryActive() ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="(!anySheetOpen() && isRouteActive('/dictionary')) ? 'book-open-filled' : 'book-open'" [size]="22" />
+                <app-icon [name]="isDictionaryActive() ? 'book-open-filled' : 'book-open'" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.vocab') }}</span>
             </a>
             <button
               class="bottom-nav__item"
               type="button"
-              [class.active]="showMoreSheet() || isRouteActive('/history') || isRouteActive('/explore') || isRouteActive('/playlists')"
+              [class.active]="isMoreActive()"
               (click)="toggleMoreSheet()"
               aria-haspopup="dialog"
               [attr.aria-expanded]="showMoreSheet()"
               [attr.aria-label]="i18n.t('nav.more') || 'More'"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="(showMoreSheet() || isRouteActive('/history') || isRouteActive('/explore') || isRouteActive('/playlists')) ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
+                <app-icon [name]="isMoreActive() ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.more') }}</span>
             </button>
@@ -1228,6 +1226,15 @@ export class AppComponent implements OnDestroy {
   );
 
   // Check if current route matches
+  readonly isVideoActive = computed(() => !this.anySheetOpen() && (this.currentUrl()?.startsWith('/video') ?? false));
+  readonly isStudyActive = computed(() => !this.anySheetOpen() && (this.currentUrl()?.startsWith('/study') ?? false));
+  readonly isDictionaryActive = computed(() => !this.anySheetOpen() && (this.currentUrl()?.startsWith('/dictionary') ?? false));
+  readonly isMoreActive = computed(() => {
+    if (this.showMoreSheet()) return true;
+    const url = this.currentUrl();
+    return !!url && (url.startsWith('/history') || url.startsWith('/explore') || url.startsWith('/playlists'));
+  });
+
   isRouteActive(route: string): boolean {
     return this.currentUrl()?.startsWith(route) ?? false;
   }
@@ -1319,55 +1326,55 @@ export class AppComponent implements OnDestroy {
   openStreakFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    setTimeout(() => this.showStreakSheet.set(true), 50);
+    this.showStreakSheet.set(true);
   }
 
   openAiCreditsFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    setTimeout(() => this.showAiCreditsSheet.set(true), 50);
+    this.showAiCreditsSheet.set(true);
   }
 
   openAchievementsFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    setTimeout(() => this.showAchievementsSheet.set(true), 50);
+    this.showAchievementsSheet.set(true);
   }
 
   openStreakFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
-    setTimeout(() => this.showStreakSheet.set(true), 50);
+    this.showStreakSheet.set(true);
   }
 
   openAchievementsFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
-    setTimeout(() => this.showAchievementsSheet.set(true), 50);
+    this.showAchievementsSheet.set(true);
   }
 
   openAiCreditsFromSettings(): void {
     this.sheetService.skipNextHistoryPop();
     this.showSettingsSheet.set(false);
-    setTimeout(() => this.showAiCreditsSheet.set(true), 50);
+    this.showAiCreditsSheet.set(true);
   }
 
   openProUpgradeFromAiCredits(): void {
     this.sheetService.skipNextHistoryPop();
     this.showAiCreditsSheet.set(false);
-    setTimeout(() => this.showProUpgradeSheet.set(true), 50);
+    this.showProUpgradeSheet.set(true);
   }
 
   openNewVideo(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    setTimeout(() => this.showCommandPalette.set(true), 50);
+    this.showCommandPalette.set(true);
   }
 
   openSettingsFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    setTimeout(() => this.showSettingsSheet.set(true), 50);
+    this.showSettingsSheet.set(true);
   }
 
   navigateFromMore(route: string): void {
@@ -1390,6 +1397,6 @@ export class AppComponent implements OnDestroy {
   openUpdateFromMore(): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    setTimeout(() => this.appUpdate.promptUpdate(), 50);
+    this.appUpdate.promptUpdate();
   }
 }

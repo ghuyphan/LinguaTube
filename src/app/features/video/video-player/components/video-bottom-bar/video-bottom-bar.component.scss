@@ -176,6 +176,14 @@
         }
     }
 
+    &.is-ai {
+        &.is-active {
+            .cc-indicator {
+                background: var(--color-diamond, #818cf8);
+            }
+        }
+    }
+
     .cc-indicator {
         position: absolute;
         bottom: 3px;

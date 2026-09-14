@@ -228,6 +228,8 @@
     background: transparent;
     border: 1px solid transparent;
     cursor: pointer;
+    content-visibility: auto;
+    contain-intrinsic-size: 52px;
     animation: listItemIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) backwards;
     animation-delay: calc(min(var(--item-index, 0), 6) * 25ms);
     transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);

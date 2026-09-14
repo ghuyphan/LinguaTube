@@ -82,17 +82,7 @@ export class PaymentService {
     return this.http.get<PaymentStatus>(`/api/payment/check-status?orderCode=${orderCode}`);
   }
 
-  simulateTransfer(orderCode: number): void {
-    this.http.post<{ success: boolean }>('/api/payment/simulate-transfer', { orderCode }).subscribe({
-      next: () => {
-        this.isPaid.set(true);
-        this.toast.success(this.i18n.t('pro.paymentSuccess'));
-        this.transcript.refreshDiamonds();
-        this.auth.refreshUser();
-      },
-      error: () => {}
-    });
-  }
+
 
   private pollOrderStatus(orderCode: number): void {
     this.pollingSub?.unsubscribe();

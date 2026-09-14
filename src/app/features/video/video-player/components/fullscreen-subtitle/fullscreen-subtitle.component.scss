@@ -122,9 +122,9 @@ $transition-fast: 0.15s ease;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 3px 8px 2px 8px;
+    padding: 8px 12px;
     margin: 0;
-    min-height: 12px;
+    min-height: 24px;
     cursor: grab;
     touch-action: none;
     -webkit-tap-highlight-color: transparent;
@@ -134,8 +134,8 @@ $transition-fast: 0.15s ease;
     }
 
     @media (pointer: coarse) {
-        padding: 4px 12px 3px 12px;
-        min-height: 14px;
+        padding: 10px 16px;
+        min-height: 28px;
     }
 }
 
@@ -166,6 +166,7 @@ $transition-fast: 0.15s ease;
     justify-content: center;
     width: 100%;
     min-height: 3.8rem;
+    margin-top: 4px;
     box-sizing: border-box;
 }
 

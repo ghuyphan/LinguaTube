@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, output, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, computed, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
 import { getVolumeIcon } from '../../../../../core/utils';
@@ -11,7 +11,7 @@ import { getVolumeIcon } from '../../../../../core/utils';
   styleUrl: './video-bottom-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VideoBottomBarComponent {
+export class VideoBottomBarComponent implements OnDestroy {
   // Playback state
   isPlaying = input<boolean>(false);
   currentTime = input<string>('0:00');
@@ -28,6 +28,7 @@ export class VideoBottomBarComponent {
   currentSpeed = input<number>(1);
   showDualSubtitles = input<boolean>(false);
   isCJKLanguage = input<boolean>(false);
+  isAISubtitle = input<boolean>(false);
 
   // UI States managed locally or passed down
   isVolumeSliderVisible = input<boolean>(false);
@@ -55,6 +56,8 @@ export class VideoBottomBarComponent {
 
   readonly volumeIcon = computed<IconName>(() => getVolumeIcon(this.volume(), this.isMuted()));
 
+  private activeDragCleanup: (() => void) | null = null;
+
   onVolumeSliderMouseDown(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
@@ -71,13 +74,37 @@ export class VideoBottomBarComponent {
     updateVolume(event);
 
     const onMove = (e: MouseEvent) => updateVolume(e);
-    const onUp = () => {
+    const cleanup = () => {
       document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseup', onUp);
+      document.removeEventListener('mouseup', cleanup);
+      window.removeEventListener('blur', cleanup);
+      this.activeDragCleanup = null;
     };
 
+    this.activeDragCleanup = cleanup;
     document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onUp);
+    document.addEventListener('mouseup', cleanup);
+    window.addEventListener('blur', cleanup);
+  }
+
+  onVolumeKeyDown(event: KeyboardEvent): void {
+    let delta = 0;
+    if (event.key === 'ArrowUp' || event.key === 'ArrowRight') delta = 5;
+    else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') delta = -5;
+    else if (event.key === 'PageUp') delta = 20;
+    else if (event.key === 'PageDown') delta = -20;
+    else if (event.key === 'Home') delta = -100;
+    else if (event.key === 'End') delta = 100;
+    else return;
+
+    event.preventDefault();
+    const current = this.isMuted() ? 0 : this.volume();
+    const newVolume = Math.max(0, Math.min(100, current + delta));
+    this.volumeChange.emit(newVolume);
+  }
+
+  ngOnDestroy(): void {
+    this.activeDragCleanup?.();
   }
 
   onDualSubContextMenu(event: MouseEvent): void {

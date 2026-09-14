@@ -16,6 +16,14 @@
         </div>
     </div>
     <div class="video-actions">
+        @if (availableTracks().hasAny) {
+        <button type="button" class="btn-icon btn-header-action" (click)="openTracksSheet($event)"
+            [class.is-ai]="isAIGenerated()"
+            [attr.aria-label]="i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks'"
+            [title]="i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks'">
+            <app-icon [name]="isAIGenerated() ? 'subtitles-ai' : 'subtitles'" [size]="15" />
+        </button>
+        }
         <button type="button" class="btn-icon btn-header-action" (click)="shareVideo.emit()"
             [attr.aria-label]="i18n.t('player.share') || 'Share video'"
             [title]="i18n.t('player.share') || 'Share video'">
@@ -53,4 +61,106 @@
     <app-video-level-dialog [levelInfo]="lvl" (dismissed)="showLevelSheet.set(false)" />
 </app-bottom-sheet>
 }
+}
+
+@defer (when showTracksSheet()) {
+<app-bottom-sheet
+    [isOpen]="showTracksSheet()"
+    [title]="i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks'"
+    [showCloseButton]="true"
+    maxWidth="420px"
+    (closed)="showTracksSheet.set(false)"
+>
+    <div class="tracks-sheet-content">
+        <!-- Sheet Header with Icon & Description (reserves padding for close button) -->
+        <div class="tracks-sheet-header">
+            <div class="tracks-sheet-header__title-box">
+                <div class="tracks-sheet-header__icon-wrap" [class.is-ai]="isAIGenerated()">
+                    <app-icon [name]="isAIGenerated() ? 'subtitles-ai' : 'subtitles'" [size]="18" />
+                </div>
+                <div class="tracks-sheet-header__texts">
+                    <h2 class="tracks-sheet-header__title">{{ i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks' }}</h2>
+                    <p class="tracks-sheet-header__subtitle">
+                        {{ availableTracks().hasAny ? (i18n.t('subtitle.tracksSubtitleDesc') || 'Switch subtitle tracks or generate AI captions') : (i18n.t('subtitle.noTracksFound') || 'No subtitles found for this video') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty state when no native or AI tracks are present -->
+        @if (!availableTracks().hasAny) {
+        <div class="tracks-empty-state">
+            <div class="tracks-empty-state__icon-wrap">
+                <app-icon name="file-text" [size]="22" />
+            </div>
+            <div class="tracks-empty-state__content">
+                <p class="tracks-empty-state__title">{{ i18n.t('subtitle.noCaptionsAvailable') || 'No subtitles available' }}</p>
+                <p class="tracks-empty-state__desc">
+                    {{ targetLanguageLabel() ? (i18n.t('subtitle.noTracksFoundDesc', { language: targetLanguageLabel() }) || 'You can transcribe authentic audio using AI.') : (i18n.t('subtitle.aiUnavailable') || 'You can transcribe audio using AI.') }}
+                </p>
+            </div>
+        </div>
+        }
+
+        <!-- Native Tracks Section -->
+        @if (availableTracks().native.length > 0) {
+        <div class="tracks-section">
+            <div class="tracks-section-title">{{ i18n.t('subtitle.nativeTracks') || 'Native Subtitles' }}</div>
+            <div class="tracks-list">
+                @for (track of availableTracks().native; track track.code) {
+                <button type="button" class="track-item" [class.is-active]="track.isActive" (click)="onSelectTrack(track.code)">
+                    <div class="track-info">
+                        <app-icon name="subtitles" [size]="16" class="track-icon" />
+                        <span class="track-name">{{ track.label }} ({{ track.code }})</span>
+                    </div>
+                    @if (track.isActive) {
+                    <span class="track-badge active">{{ i18n.t('subtitle.activeTrack') || 'Active' }}</span>
+                    }
+                </button>
+                }
+            </div>
+        </div>
+        }
+
+        <!-- AI Tracks Section -->
+        @if (availableTracks().ai.length > 0) {
+        <div class="tracks-section">
+            <div class="tracks-section-title">{{ i18n.t('subtitle.aiTracks') || 'AI Generated Subtitles' }}</div>
+            <div class="tracks-list">
+                @for (track of availableTracks().ai; track track.code) {
+                <button type="button" class="track-item track-item--ai" [class.is-active]="track.isActive" (click)="onSelectTrack(track.code)">
+                    <div class="track-info">
+                        <app-icon name="subtitles-ai" [size]="16" class="track-icon track-icon--ai" />
+                        <span class="track-name">{{ track.label }}</span>
+                        <span class="ai-track-pill">AI</span>
+                    </div>
+                    @if (track.isActive) {
+                    <span class="track-badge active">{{ i18n.t('subtitle.activeTrack') || 'Active' }}</span>
+                    }
+                </button>
+                }
+            </div>
+        </div>
+        }
+
+        <!-- Target Language AI Generation Action -->
+        @if (canGenerateTargetAI()) {
+        <div class="tracks-section tracks-section--ai-action" [class.has-divider]="availableTracks().hasAny">
+            <button type="button" class="btn btn-primary track-generate-btn" (click)="onGenerateAI()">
+                <app-icon name="subtitles-ai" [size]="16" />
+                <span>
+                    {{ i18n.t('subtitle.transcribeWithAI') || 'Generate AI Subtitles' }}
+                    @if (targetLanguageLabel()) {
+                    ({{ targetLanguageLabel() }})
+                    }
+                </span>
+            </button>
+            <div class="track-generate-hint">
+                <app-icon name="info" [size]="12" />
+                <span>{{ i18n.t('subtitle.whisperAi') || 'Powered by Whisper AI' }}</span>
+            </div>
+        </div>
+        }
+    </div>
+</app-bottom-sheet>
 }

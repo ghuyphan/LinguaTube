@@ -84,8 +84,17 @@
 
       <!-- History List -->
       <div class="history-content">
-        <!-- Resume In-Progress Video Banner -->
-        @if (filter() === 'all' && selectedLanguage() === 'all' && inProgressVideo(); as resume) {
+        <!-- Resume In-Progress Video Banner (or Skeleton during initial load) -->
+        @if (isLoading() && historyItems().length === 0 && filter() === 'all' && selectedLanguage() === 'all') {
+          <div class="resume-hero resume-hero--skeleton" aria-hidden="true">
+            <div class="resume-hero__thumb skeleton-pulse"></div>
+            <div class="resume-hero__content">
+              <div class="skeleton-line skeleton-badge skeleton-pulse"></div>
+              <div class="skeleton-line skeleton-title skeleton-pulse"></div>
+            </div>
+          </div>
+        } @else if (filter() === 'all' && selectedLanguage() === 'all') {
+          @if (inProgressVideo(); as resume) {
           <div class="resume-hero" (click)="resumeVideo(resume.video_id)">
             <div class="resume-hero__thumb">
               <img [src]="resume.thumbnail || getThumbnail(resume.video_id)" [alt]="resume.title" loading="lazy" />
@@ -114,6 +123,7 @@
               <span>{{ i18n.t('history.resume') || 'Resume' }}</span>
             </button>
           </div>
+          }
         }
 
         <app-history-list

@@ -250,30 +250,6 @@ export class VocabularyListComponent implements OnDestroy {
     this.deleteRequest.emit(id);
   }
 
-  // Export methods (called by parent via ViewChild or service)
-  exportJSON(): void {
-    this.vocab.exportAsFile('json');
-  }
-
-  exportAnki(): void {
-    this.vocab.exportAsFile('anki');
-  }
-
-  importJSON(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    const file = input.files?.[0];
-    if (!file) return;
-
-    this.vocab.importFromFile(file)
-      .then(() => {
-        this.toast.success(this.i18n.t('vocab.importSuccess') || 'Vocabulary imported successfully!');
-      })
-      .catch(() => {
-        this.toast.error(this.i18n.t('vocab.importError') || 'Failed to import. Check file format.');
-      });
-    input.value = '';
-  }
-
   isItemDue(item: VocabularyItem): boolean {
     if (item.level === 'ignored') return false;
     if (!item.nextReviewDate) return true;

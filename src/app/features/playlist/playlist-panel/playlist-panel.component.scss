@@ -229,7 +229,7 @@
                 &:hover {
                     background: var(--bg-hover);
                     color: var(--text-primary);
-                    border-color: rgba(255, 255, 255, 0.15);
+                    border-color: var(--border-color-hover, var(--border-color));
                 }
             }
 
@@ -260,6 +260,8 @@
     flex: 1;
     min-height: 0; // Required for scrolling to work in flex container
     overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
     background: transparent;
     padding: var(--space-xs) 0;
     display: flex;

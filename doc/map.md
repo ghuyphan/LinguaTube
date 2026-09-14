@@ -144,7 +144,8 @@ graph TD
     end
 
     subgraph VideoPlayerChildren["Video Player Subcomponents"]
-        VideoPlayer --> VideoHeader[VideoHeaderComponent]
+        VideoHeader[VideoHeaderComponent - Proficiency Level & Subtitle Tracks Picker]
+        VideoPlayer --> VideoHeader
         VideoPlayer --> CenterControls[CenterControlsComponent]
         VideoPlayer --> ProgressBar[ProgressBarComponent]
         VideoPlayer --> BottomBar[VideoBottomBarComponent]

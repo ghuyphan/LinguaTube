@@ -55,6 +55,9 @@ export class PlaylistService {
     /** In-memory cache for recommended playlists per language */
     private readonly recommendedCache = new Map<string, Playlist[]>();
 
+    /** Monotonically increasing request sequence to discard stale responses on rapid switching */
+    private activeRecommendedRequestId = 0;
+
     /** Currently active playlist for playback */
     readonly currentPlaylist = signal<PlaylistWithVideos | null>(null);
 
@@ -835,6 +838,7 @@ export class PlaylistService {
     async loadRecommendedPlaylists(language: string, tier?: string, limit = 3, forceRefresh = false): Promise<Playlist[]> {
         if (!language) return [];
 
+        const requestId = ++this.activeRecommendedRequestId;
         const targetTier = tier && tier !== 'all' ? tier : undefined;
         const cacheKey = `${language}_${targetTier || 'all'}_${limit}`;
 
@@ -873,6 +877,11 @@ export class PlaylistService {
 
                 const finalPlaylists = matching.slice(0, limit);
                 this.recommendedCache.set(cacheKey, finalPlaylists);
+
+                if (requestId !== this.activeRecommendedRequestId) {
+                    return [];
+                }
+
                 this.recommendedPlaylists.set(finalPlaylists);
                 return finalPlaylists;
             }
@@ -905,14 +914,23 @@ export class PlaylistService {
 
             const playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
             this.recommendedCache.set(cacheKey, playlists);
+
+            if (requestId !== this.activeRecommendedRequestId) {
+                return [];
+            }
+
             this.recommendedPlaylists.set(playlists);
             return playlists;
         } catch (error) {
-            console.error('[Playlist] Failed to load recommended playlists from server:', error);
-            this.recommendedPlaylists.set([]);
+            if (requestId === this.activeRecommendedRequestId) {
+                console.error('[Playlist] Failed to load recommended playlists from server:', error);
+                this.recommendedPlaylists.set([]);
+            }
             return [];
         } finally {
-            this.isRecommendedLoading.set(false);
+            if (requestId === this.activeRecommendedRequestId) {
+                this.isRecommendedLoading.set(false);
+            }
         }
     }
 

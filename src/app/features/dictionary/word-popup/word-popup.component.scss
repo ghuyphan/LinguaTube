@@ -17,15 +17,18 @@
     justify-content: center;
     gap: var(--space-sm);
     max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .popup-word {
-    font-size: 2rem;
+    font-size: clamp(1.35rem, 6vw, 2rem);
     font-weight: 600;
     color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
     text-align: center;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .popup-audio-btn {
@@ -59,8 +62,17 @@
     &.playing {
         color: var(--accent-primary);
         border-color: var(--accent-primary);
-        background: rgba(var(--accent-primary-rgb, 59, 130, 246), 0.12);
-        animation: pulse-subtle 1.2s infinite ease-in-out;
+        background: var(--accent-primary-soft, rgba(var(--accent-primary-rgb), 0.12));
+        animation: pulseAudio 1.2s infinite ease-in-out;
+    }
+}
+
+@keyframes pulseAudio {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
     }
 }
 
@@ -478,19 +490,19 @@
 
 /* Level color variants */
 .level--new .level-dot {
-    background: var(--error, #ff4b4b);
+    background: var(--word-new-text, #DF3D5B);
 }
 
 .level--learning .level-dot {
-    background: var(--warning, #ffc800);
+    background: var(--word-learning-text, #A66B04);
 }
 
 .level--known .level-dot {
-    background: var(--success, #1cb0f6);
+    background: var(--word-known-text, #1B78DE);
 }
 
 .level--ignored .level-dot {
-    background: var(--text-muted);
+    background: var(--word-ignored-text, #7C8297);
 }
 
 /* fadeIn animation */

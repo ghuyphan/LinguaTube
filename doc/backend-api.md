@@ -96,24 +96,29 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Lifecycle & Fallback Chain**:
   1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages (in both `subLanguages` and `nativeLanguages`) in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
   2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages` and `no_transcript_cache` before touching upstream APIs:
+     - **Active Pending Job Short-Circuit**: Checks D1 `pending_jobs` (`getPendingJob`) first. If an AI transcription job was previously submitted and is still pending (e.g. user refreshed the page or switched tabs), it immediately returns `{ status: 'processing', resultUrl }`, seamlessly resuming client polling without double-deducting diamonds or returning `NO_NATIVE`.
      - **D1 Short-Circuit (< 20ms)**: If `video_languages` records `available_languages = '[]'` (video confirmed to have 0 native tracks) or if the requested language is not in the list (e.g. video has only `['en']` and user requested `zh`), returns immediately with `NO_NATIVE` or `languageMismatch: true`, completely bypassing upstream network latency.
-     - **Supadata Fast-Check**: Queries Supadata with a tight 4.0-second timeout. If the video has no captions (HTTP 206/404 or `transcript-unavailable`), the provider halts further key rotation, marks both `lang` and wildcard `'*'` in `no_transcript_cache`, and writes `available_languages = '[]'` to D1.
+     - **Supadata Fast-Check**: Queries Supadata with a tight 4.0-second timeout. If the video has no captions (HTTP 206/404 or `transcript-unavailable`), the provider halts further key rotation and only marks that specific language as unavailable (avoiding negative cache poisoning on transient timeouts).
   3. **Global Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` supports both per-language and global wildcard (`*`) scopes. When a transcript is successfully fetched or requested with `forceRefresh: true`, both specific language and wildcard entries are automatically purged (`deleteNoTranscript`).
-  4. **Natural Speech Chunking (`splitRunOnSegments`)**: Utterances from Gladia AI or long monologue segments are split into clean 1–2 line cues at sentence (`。！？!?\n`) and clause (`、，,;；:`) boundaries with proportional timestamp interpolation and a strict `MAX_CUE_DURATION` of 5.0s, completely eliminating awkward multi-line text walls.
-  4. **AI Generation (Gladia V2 Pre-Recorded) - Non-Blocking Client-Driven Polling**:
+  4. **3-Tier Intelligent Speech Chunking & HTML Cleaning (`splitRunOnSegments` & `cleanCueText`)**:
+     - Strips HTML/VTT tags, decodes XML/HTML entities (`&quot;`, `&#39;`, `&amp;`), and eliminates sound effect noise (`[Music]`, `♪`).
+     - **Sentence Boundary Splitting**: Splits on standard punctuation (`。！？!?\n`).
+     - **CJK Discourse Markers & Particles**: For unpunctuated Chinese/Japanese monologues, splits cleanly at discourse transitions (`而且|但是|所以|然后|因为|就是|可是|不过|虽然|那么` / `は|が|を|に|で|へと|から|まで`) while maintaining duration ($\ge 1.0$s) and readability.
+     - **Soft Length Clamping**: Enforces natural reading bounds (20–22 CJK characters, 60 Latin characters) with `MAX_CUE_DURATION = 5.0s`.
+  5. **AI Generation (Gladia V2 Pre-Recorded) - Non-Blocking Client-Driven Polling**:
      - Verifies Turnstile token (`verifyTurnstileToken`).
      - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
      - **Pre-check R2**: Ensures no transcript already exists in R2 before consuming diamonds.
      - **Pre-check Pending Jobs**: If an active job for the video is already running in Gladia, reuses `result_url` without re-submitting or double-charging.
-     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` endpoint.
+     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` and `subtitles: true`.
      - **In-Memory Job Routing**: Stores job mapping in warm Worker isolate memory and D1 `pending_jobs` without burning Cloudflare KV write quotas (Rule 2).
      - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
-  5. **Fast Client-Driven Polling & Failure Auto-Refund**:
+  6. **Fast Client-Driven Polling & Failure Auto-Refund**:
      - Subsequent client poll requests pass `resultUrl` and validated `videoId` every 2.5 seconds.
      - **Multi-Isolate Job Verification (`pollAIJob`)**: Polling requests are cross-checked against D1 `pending_jobs` and isolate memory (`memJobMap`). If regional D1 replication lag occurs between isolates, it safely falls back to the client-verified `params.videoId` to prevent premature failure.
-     - Server polls Gladia status with a 15-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms.
+     - Server polls Gladia status with a 15-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms. Prioritizes Gladia `sentences` over raw `utterances`.
      - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, synchronously awaits write to R2, and deletes the pending job.
-     - **Automated Diamond Refund**: If Gladia reports job error or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
+     - **Automated Diamond Refund**: If Gladia reports job error, times out, or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
 
 ---
 

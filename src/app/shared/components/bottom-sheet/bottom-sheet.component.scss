@@ -47,7 +47,7 @@
     --max-height: 85vh;
     --max-width: 440px;
 
-    max-height: var(--max-height);
+    max-height: min(var(--max-height, 85vh), calc(var(--app-height, 100dvh) - 16px));
 
     // Apply drag offset transform
     transform: translateY(var(--drag-offset));
@@ -58,26 +58,19 @@
     position: relative;
     z-index: 1;
     will-change: height, transform, opacity;
+}
 
-    // Hide scrollbars by default for both bottom-sheets and desktop modals
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+.sheet-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35) transparent;
 
     &::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
+        width: 5px;
+        display: block;
     }
-
-    * {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-            width: 0;
-            height: 0;
-        }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35);
+        border-radius: 9999px;
     }
 }
 
@@ -229,7 +222,7 @@
     width: 100%;
 }
 
-// Safe area padding for mobile - minimal base padding, components add more as needed
+// Safe area padding for mobile
 .sheet:not(.desktop-modal) .sheet-content {
     padding-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -247,7 +240,7 @@
 }
 
 // Landscape phones & compact viewports: bottom sheet with proportional width
-@media (max-height: 600px) and (orientation: landscape), (max-height: 500px) {
+@media (orientation: landscape) and (max-height: 600px) {
     .sheet-overlay {
         padding: 0;
         align-items: flex-end;

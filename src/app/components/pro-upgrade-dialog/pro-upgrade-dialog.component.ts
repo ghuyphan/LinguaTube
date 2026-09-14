@@ -196,9 +196,7 @@ export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
         } catch { }
     }
 
-    simulateTransfer(orderCode: number): void {
-        this.payment.simulateTransfer(orderCode);
-    }
+
 
     openCheckoutUrl(url?: string): void {
         if (!url) return;

@@ -1,7 +1,7 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DictionaryEntry } from '../../models';
-import { Observable, of, catchError, map } from 'rxjs';
+import { Observable, of, catchError, map, throwError } from 'rxjs';
 import { I18nService, SettingsService, UILanguage, GamificationService } from '../../core/services';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
@@ -217,7 +217,10 @@ export class DictionaryService {
         this.isLoading.set(false);
         console.log(`Unified dict lookup failed (${from}->${to}):`, err.message);
         const fallback = this.getLocalFallback(trimmed, from);
-        return of(fallback ? [fallback] : []);
+        if (fallback) {
+          return of([fallback]);
+        }
+        return throwError(() => err);
       })
     );
   }

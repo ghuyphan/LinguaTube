@@ -516,11 +516,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
     this.isUserScrolledAway.set(false);
   }
 
-  getTokens(cue: SubtitleCue): Token[] {
-    const lang = this.effectiveLanguage();
-    return this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
-  }
-
   onWordClick(token: Token, sentence: string): void {
     this.wordClicked.emit({ token, sentence });
   }

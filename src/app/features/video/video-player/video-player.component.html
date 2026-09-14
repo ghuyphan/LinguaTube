@@ -86,6 +86,28 @@
     </div>
     }
 
+    <!-- Player Embed Error Overlay -->
+    @if (youtube.error()) {
+    <div class="player-error-overlay" role="alert">
+      <div class="player-error-card">
+        <app-icon name="alert-circle" [size]="28" class="player-error-icon" />
+        <div class="player-error-title">{{ youtube.error() }}</div>
+        <p class="player-error-desc">{{ i18n.t('player.embedErrorHelp') || 'This video cannot be played embedded. It may be restricted by the owner or unavailable.' }}</p>
+        <div class="player-error-actions">
+          @if (youtube.currentVideo()?.id) {
+          <a [href]="'https://www.youtube.com/watch?v=' + youtube.currentVideo()?.id" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <app-icon name="external-link" [size]="14" />
+            <span>{{ i18n.t('player.watchOnYouTube') || 'Watch on YouTube' }}</span>
+          </a>
+          }
+          <button type="button" class="btn btn-primary btn-sm" (click)="closeVideo()">
+            <span>{{ i18n.t('common.close') || 'Close' }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+
     @if (!isMiniplayer()) {
     <!-- Seek Feedback - positioned at container level -->
     <div class="seek-feedback seek-feedback--left" [class.animate]="rewindFeedback()"
@@ -136,7 +158,7 @@
     <div class="player-vignette" [class.visible]="areControlsVisible()"></div>
 
     <!-- Center Controls -->
-    <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.intendedPlayingState()"
+    <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.isPlaying()"
       [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible()"
       [hasPlaylist]="hasPlaylist()" [canPlayPrev]="canPlayPrev()" [canPlayNext]="canPlayNext()"
       [playPauseFeedback]="playPauseFeedback()" [playPauseFeedbackIcon]="playPauseFeedbackIcon()"
@@ -658,12 +680,13 @@
       <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
       </app-progress-bar>
 
-      <app-video-bottom-bar [isPlaying]="youtube.intendedPlayingState()" [currentTime]="formattedCurrentTime()"
+      <app-video-bottom-bar [isPlaying]="youtube.isPlaying()" [currentTime]="formattedCurrentTime()"
         [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
         [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [subtitlesVisible]="subtitles.subtitlesVisible()"
         [currentSpeed]="currentSpeed()" [isVolumeSliderVisible]="isVolumeSliderVisible()"
         [showDualSubtitles]="settings.settings().showDualSubtitles" 
         [isCJKLanguage]="isCJKLanguage()"
+        [isAISubtitle]="transcript.isAIGenerated()"
         [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
@@ -719,7 +742,8 @@
   <!-- Video Info -->
   @if (!isFullscreen() && !isMiniplayer()) {
   <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
-    (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()" />
+    (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()"
+    (selectTrack)="selectTrack.emit($event)" (triggerAI)="triggerAI.emit()" />
   }
   }
 </div>

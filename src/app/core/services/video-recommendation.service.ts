@@ -63,6 +63,20 @@ export class VideoRecommendationService {
     /** In-memory cache per language code and tier (preserves instant back-navigation within the session) */
     private readonly cache = new Map<string, RecommendedVideo[]>();
 
+    /** Monotonically increasing request sequence to discard stale responses on rapid switching */
+    private activeRequestId = 0;
+
+    /**
+     * Check whether recommended videos for given language and tier are present in cache
+     */
+    hasCache(language: string, tier?: string, limit = 16): boolean {
+        if (!language) return false;
+        const activeTier = tier && tier !== 'all' ? tier : undefined;
+        const cacheKey = `${language}_${activeTier || 'all'}_${limit}`;
+        const cached = this.cache.get(cacheKey);
+        return !!cached && cached.length > 0 && !cached.some(v => !v.channelAvatar);
+    }
+
     /**
      * Load recommended videos with verified database transcripts for a given language and optional difficulty tier
      * @param language Language code ('ja', 'ko', 'zh', 'en')
@@ -73,6 +87,7 @@ export class VideoRecommendationService {
     async loadRecommendedVideos(language: string, tier?: string, limit = 16, forceRefresh = false): Promise<RecommendedVideo[]> {
         if (!language) return [];
 
+        const requestId = ++this.activeRequestId;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
         const cacheKey = `${language}_${activeTier || 'all'}_${limit}`;
 
@@ -115,21 +130,30 @@ export class VideoRecommendationService {
             const hydratedVideos = this.hydrateVideos(rawVideos, language, activeTier);
             const rankedVideos = this.rankRecommendedVideos(hydratedVideos, language, activeTier);
             const hasMoreFlag = response?.hasMore ?? (rawVideos.length >= limit);
-            this.hasMore.set(hasMoreFlag);
 
             if (rankedVideos.length > 0) {
                 this.cache.set(cacheKey, rankedVideos);
             }
 
+            // Discard stale response if a newer request was triggered while in flight
+            if (requestId !== this.activeRequestId) {
+                return [];
+            }
+
+            this.hasMore.set(hasMoreFlag);
             this.recommendedVideos.set(rankedVideos);
             return rankedVideos;
         } catch (err) {
-            console.warn('[VideoRecommendation] Failed to load remote recommended videos:', err);
-            this.recommendedVideos.set([]);
-            this.hasMore.set(false);
+            if (requestId === this.activeRequestId) {
+                console.warn('[VideoRecommendation] Failed to load remote recommended videos:', err);
+                this.recommendedVideos.set([]);
+                this.hasMore.set(false);
+            }
             return [];
         } finally {
-            this.isLoading.set(false);
+            if (requestId === this.activeRequestId) {
+                this.isLoading.set(false);
+            }
         }
     }
 

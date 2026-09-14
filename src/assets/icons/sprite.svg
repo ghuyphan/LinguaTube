@@ -80,6 +80,16 @@
     <path d="M10.25 9.5H8a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2.25"></path>
     <path d="M17.75 9.5h-2.25a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2.25"></path>
   </symbol>
+
+  <symbol id="subtitles-ai" viewBox="0 0 24 24">
+    <rect x="2.5" y="4.5" width="19" height="15" rx="3"></rect>
+    <path d="M7.5 10v4M10.5 7.5v9M13.5 10v4M16.5 8.5v7"></path>
+  </symbol>
+
+  <symbol id="captions-ai" viewBox="0 0 24 24">
+    <rect x="2.5" y="4.5" width="19" height="15" rx="3"></rect>
+    <path d="M7.5 10v4M10.5 7.5v9M13.5 10v4M16.5 8.5v7"></path>
+  </symbol>
   
   <symbol id="video" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8Z"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></symbol>
   

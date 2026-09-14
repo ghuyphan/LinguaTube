@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, computed, inject, NgZone } from '@angular/core';
 import { Subject } from 'rxjs';
 import { VideoInfo } from '../../models';
 import { getYouTubeThumbnail } from '../../core/utils';
@@ -17,7 +17,7 @@ interface YTPlayer {
   isMuted(): boolean;
   setPlaybackRate(rate: number): void;
   getPlaybackRate(): number;
-  loadVideoById(videoId: string): void;
+  loadVideoById(options: string | { videoId: string; startSeconds?: number; endSeconds?: number }): void;
   unloadModule(module: string): void;
   setOption?(module: string, option: string, value: unknown): void;
   getOption?(module: string, option: string): unknown;
@@ -80,11 +80,13 @@ declare global {
   providedIn: 'root'
 })
 export class YoutubeService {
+  private ngZone = inject(NgZone);
   private player: YTPlayer | null = null;
   private apiReady = signal(false);
   private apiReadyPromise: Promise<void>;
   private resolveApiReady!: () => void;
   private timeUpdateInterval: number | null = null;
+  private bgTimer: ReturnType<typeof setTimeout> | null = null;
 
   /** Guard to prevent concurrent initPlayer calls */
   private pendingInit: Promise<void> | null = null;
@@ -113,6 +115,34 @@ export class YoutubeService {
   private wasPausedOnLeave = false;
   private isSeeking = false;
   private seekingTimeout: ReturnType<typeof setTimeout> | null = null;
+  private lastEmitTime = 0;
+
+  // Tokenized Pause Coordinator (manages non-colliding playback locks across modals/lookups)
+  private readonly pauseLocks = signal<Set<string>>(new Set());
+  readonly isPauseLocked = computed(() => this.pauseLocks().size > 0);
+  private resumedStateMap = new Map<string, boolean>();
+
+  acquirePauseLock(reason: string): void {
+    const wasPlaying = this.isPlaying() || this.intendedPlayingState();
+    this.pauseLocks.update(locks => new Set(locks).add(reason));
+    if (wasPlaying) {
+      this.resumedStateMap.set(reason, true);
+      this.pause();
+    }
+  }
+
+  releasePauseLock(reason: string): void {
+    const shouldResume = this.resumedStateMap.get(reason);
+    this.resumedStateMap.delete(reason);
+    this.pauseLocks.update(locks => {
+      const next = new Set(locks);
+      next.delete(reason);
+      return next;
+    });
+    if (shouldResume && this.pauseLocks().size === 0) {
+      this.play();
+    }
+  }
 
   constructor() {
     this.apiReadyPromise = new Promise(resolve => {
@@ -133,6 +163,8 @@ export class YoutubeService {
       }
 
       if (document.visibilityState === 'visible' && this.player) {
+        // Reset wasPausedOnLeave so returning to the tab never self-pauses on subsequent user play
+        this.wasPausedOnLeave = false;
         // Re-sync state when becoming visible, but don't force pause
         // Let the background playback continue if it was playing
         try {
@@ -258,7 +290,7 @@ export class YoutubeService {
     return null;
   }
 
-  async initPlayer(elementId: string, videoId: string): Promise<void> {
+  async initPlayer(elementId: string, videoId: string, startSeconds: number = 0): Promise<void> {
     // Guard against concurrent initialization - wait for pending init to complete
     if (this.pendingInit) {
       console.log('[YoutubeService] Waiting for pending initialization to complete...');
@@ -296,8 +328,13 @@ export class YoutubeService {
         try {
           const metadataPromise = this.fetchVideoMetadata(videoId);
 
-          // Load the new video
-          player.loadVideoById(videoId);
+          // Load the new video directly starting at resume position to eliminate 0:00 flash
+          if (startSeconds > 0) {
+            player.loadVideoById({ videoId, startSeconds });
+            this.currentTime.set(startSeconds);
+          } else {
+            player.loadVideoById(videoId);
+          }
 
           // Disable YouTube's built-in captions (we use our own)
           this.disableNativeCaptions(player);
@@ -359,7 +396,8 @@ export class YoutubeService {
               disablekb: 0,
               showinfo: 0,
               origin: window.location.origin,
-              enablejsapi: 1
+              enablejsapi: 1,
+              ...(startSeconds > 0 ? { start: Math.floor(startSeconds) } : {})
             },
             events: {
               onReady: async (event: YTEvent) => {
@@ -371,6 +409,13 @@ export class YoutubeService {
 
                 // Disable YouTube's built-in captions (we use our own)
                 this.disableNativeCaptions(event.target);
+
+                if (startSeconds > 0) {
+                  try {
+                    event.target.seekTo(startSeconds, true);
+                    this.currentTime.set(startSeconds);
+                  } catch { }
+                }
 
                 if (this.desiredPlaybackRate !== 1) {
                   try {
@@ -412,7 +457,6 @@ export class YoutubeService {
                 // Don't set isPlaying to false when buffering (user pressed play, waiting for buffer)
                 if (isPlaying && !this.isPlaying()) {
                   this.isPlaying.set(true);
-                  this.intendedPlayingState.set(true);
                   this.startTimeTracking();
 
                   this.disableNativeCaptions(event.target);
@@ -440,6 +484,10 @@ export class YoutubeService {
                     cancelAnimationFrame(this.timeUpdateInterval);
                     this.timeUpdateInterval = null;
                   }
+                  if (this.bgTimer !== null) {
+                    clearTimeout(this.bgTimer);
+                    this.bgTimer = null;
+                  }
                 }
 
                 this.isEnded.set(state === window.YT.PlayerState.ENDED);
@@ -465,6 +513,16 @@ export class YoutubeService {
                 const code = typeof event.data === 'number' ? event.data : -1;
                 const msg = errorMessages[code] || 'Unknown error';
                 this.error.set(msg);
+                this.isPlaying.set(false);
+                this.intendedPlayingState.set(false);
+                if (this.timeUpdateInterval !== null) {
+                  cancelAnimationFrame(this.timeUpdateInterval);
+                  this.timeUpdateInterval = null;
+                }
+                if (this.bgTimer !== null) {
+                  clearTimeout(this.bgTimer);
+                  this.bgTimer = null;
+                }
                 reject(new Error(msg));
               }
             }
@@ -517,8 +575,13 @@ export class YoutubeService {
       if (!this.isSeeking && this.player && typeof this.player.getCurrentTime === 'function') {
         try {
           const time = this.player.getCurrentTime() || 0;
-          if (time !== this.currentTime()) {
-            this.currentTime.set(time);
+          const current = this.currentTime();
+          // Throttle time signal updates to ~150ms steps during linear playback to prevent 60-120fps CD storm
+          if (time !== current && (Math.abs(time - this.lastEmitTime) >= 0.15 || time === 0)) {
+            this.lastEmitTime = time;
+            this.ngZone.run(() => {
+              this.currentTime.set(time);
+            });
           }
         } catch {
           // Player might be destroyed
@@ -526,7 +589,11 @@ export class YoutubeService {
       }
 
       if (this.isPlaying()) {
-        this.timeUpdateInterval = requestAnimationFrame(track);
+        if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+          this.bgTimer = setTimeout(track, 250);
+        } else {
+          this.timeUpdateInterval = requestAnimationFrame(track);
+        }
       }
     };
 
@@ -534,7 +601,19 @@ export class YoutubeService {
       cancelAnimationFrame(this.timeUpdateInterval);
       this.timeUpdateInterval = null;
     }
-    this.timeUpdateInterval = requestAnimationFrame(track);
+    if (this.bgTimer !== null) {
+      clearTimeout(this.bgTimer);
+      this.bgTimer = null;
+    }
+
+    // Run animation frame loop outside Angular zone to prevent 60-120Hz macro-task storm
+    this.ngZone.runOutsideAngular(() => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+        this.bgTimer = setTimeout(track, 250);
+      } else {
+        this.timeUpdateInterval = requestAnimationFrame(track);
+      }
+    });
   }
 
   play(): void {
@@ -562,6 +641,7 @@ export class YoutubeService {
 
   seekTo(seconds: number): void {
     const clampedTime = Math.max(0, Math.min(seconds, this.duration() || seconds));
+    this.lastEmitTime = clampedTime;
     this.currentTime.set(clampedTime);
 
     this.isSeeking = true;
@@ -652,6 +732,10 @@ export class YoutubeService {
     if (this.timeUpdateInterval) {
       cancelAnimationFrame(this.timeUpdateInterval);
       this.timeUpdateInterval = null;
+    }
+    if (this.bgTimer) {
+      clearTimeout(this.bgTimer);
+      this.bgTimer = null;
     }
 
     const playerToDestroy = this.player;

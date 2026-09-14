@@ -52,6 +52,7 @@ export class DictionaryPanelComponent implements OnDestroy {
 
   // Active query subscription to cancel in-flight requests
   private lookupSubscription: Subscription | null = null;
+  private currentSearchId = 0;
 
   // Reactive check against vocabulary service
   isSaved = computed(() => {
@@ -133,6 +134,7 @@ export class DictionaryPanelComponent implements OnDestroy {
 
     // Cancel any previous in-flight lookup to prevent race conditions
     this.lookupSubscription?.unsubscribe();
+    const searchId = ++this.currentSearchId;
 
     // Update isolated screen query
     this.dictionary.screenQuery.set(query);
@@ -158,8 +160,16 @@ export class DictionaryPanelComponent implements OnDestroy {
 
     // 2. Search Grammar Patterns in parallel
     this.grammar.searchPatterns(query, lang as SupportedGrammarLang)
-      .then(matches => this.grammarMatches.set(matches))
-      .catch(() => this.grammarMatches.set([]));
+      .then(matches => {
+        if (this.currentSearchId === searchId) {
+          this.grammarMatches.set(matches);
+        }
+      })
+      .catch(() => {
+        if (this.currentSearchId === searchId) {
+          this.grammarMatches.set([]);
+        }
+      });
   }
 
   selectEntry(index: number): void {
@@ -168,6 +178,7 @@ export class DictionaryPanelComponent implements OnDestroy {
   }
 
   clearSearch(): void {
+    this.currentSearchId++;
     this.lookupSubscription?.unsubscribe();
     this.stopAudio();
     this.searchQuery = '';

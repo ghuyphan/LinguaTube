@@ -10,9 +10,12 @@ import {
   viewChild,
   PLATFORM_ID,
   OnDestroy,
-  computed
+  computed,
+  DestroyRef
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { fromEvent } from 'rxjs';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetService } from '../../../services/bottom-sheet.service';
 import { generateRandomId } from '../../../core/utils';
@@ -92,11 +95,13 @@ export class BottomSheetComponent implements OnDestroy {
   // Computed z-index based on stack position (or manual override)
   computedZIndex = computed(() => this.zIndex() ?? this.sheetService.getZIndex(this.sheetId));
 
-  // Check if mobile
-  get isMobile(): boolean {
-    if (!isPlatformBrowser(this.platformId)) return false;
-    return window.innerWidth <= 768 || window.innerHeight <= 500;
-  }
+  // Computed whether this sheet is topmost in stack (for inert background modal trap defense)
+  readonly isTopmost = computed(() => this.sheetService.isTopmost(this.sheetId));
+
+  // Check if mobile (reactive signal updating on resize/orientation)
+  readonly isMobile = signal(false);
+  private closeTimeoutId: ReturnType<typeof setTimeout> | null = null;
+  private readonly destroyRef = inject(DestroyRef);
 
   private previouslyFocusedElement: HTMLElement | null = null;
   private keydownListener: ((e: KeyboardEvent) => void) | null = null;
@@ -106,13 +111,27 @@ export class BottomSheetComponent implements OnDestroy {
     duration: 220,
     easing: 'cubic-bezier(0.32, 0.72, 0, 1)',
     animatingClass: 'animating-height',
-    isReady: () => this.isOpen() && this.hasAnimated() && !this.isClosing() && !this.isDragClosing() && !this.isDragging()
+    isReady: () => this.isOpen() && !this.isClosing() && !this.isDragClosing() && !this.isDragging()
   });
   private animationSafetyTimer: ReturnType<typeof setTimeout> | null = null;
 
   constructor() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile.set(window.innerWidth <= 768 || window.innerHeight <= 500);
+      fromEvent(window, 'resize', { passive: true })
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          this.isMobile.set(window.innerWidth <= 768 || window.innerHeight <= 500);
+        });
+    }
+
     effect(() => {
       if (this.isOpen()) {
+        if (this.closeTimeoutId) {
+          clearTimeout(this.closeTimeoutId);
+          this.closeTimeoutId = null;
+        }
+
         if (isPlatformBrowser(this.platformId) && document.activeElement instanceof HTMLElement) {
           this.previouslyFocusedElement = document.activeElement;
         }
@@ -211,13 +230,18 @@ export class BottomSheetComponent implements OnDestroy {
    * This should NOT manipulate history (service handles that)
    */
   private onServiceClose(): void {
+    this.unregisterFn = null;
     this.heightAnimator.detach();
     // Trigger the closing animation and emit
     this.isClosing.set(true);
     this.isDragging.set(false);
     this.dragOffset.set(0);
 
-    setTimeout(() => {
+    if (this.closeTimeoutId) {
+      clearTimeout(this.closeTimeoutId);
+    }
+    this.closeTimeoutId = setTimeout(() => {
+      this.closeTimeoutId = null;
       this.isClosing.set(false);
       this.closed.emit();
     }, this.ANIMATION_DURATION);
@@ -238,7 +262,7 @@ export class BottomSheetComponent implements OnDestroy {
   private dragStartedInHandle = false;
 
   onTouchStart(event: TouchEvent): void {
-    if (!this.isMobile) return;
+    if (!this.isMobile()) return;
     this.heightAnimator.cancel();
 
     const touch = event.touches[0];
@@ -360,7 +384,11 @@ export class BottomSheetComponent implements OnDestroy {
       this.unregisterFn = null;
     }
 
-    setTimeout(() => {
+    if (this.closeTimeoutId) {
+      clearTimeout(this.closeTimeoutId);
+    }
+    this.closeTimeoutId = setTimeout(() => {
+      this.closeTimeoutId = null;
       this.isClosing.set(false);
       this.closed.emit();
     }, this.ANIMATION_DURATION);
@@ -385,7 +413,11 @@ export class BottomSheetComponent implements OnDestroy {
     }
 
     // Clean up after animation
-    setTimeout(() => {
+    if (this.closeTimeoutId) {
+      clearTimeout(this.closeTimeoutId);
+    }
+    this.closeTimeoutId = setTimeout(() => {
+      this.closeTimeoutId = null;
       this.isClosing.set(false);
       this.isDragClosing.set(false);
       this.dragOffset.set(0);
@@ -448,7 +480,13 @@ export class BottomSheetComponent implements OnDestroy {
     this.removeFocusTrap();
     if (this.previouslyFocusedElement && typeof this.previouslyFocusedElement.focus === 'function') {
       try {
-        this.previouslyFocusedElement.focus();
+        if (this.previouslyFocusedElement.isConnected) {
+          this.previouslyFocusedElement.focus();
+        } else {
+          // Resilient fallback: focus active cue, subtitle panel, or main element
+          const fallback = document.querySelector<HTMLElement>('.cue-item--active, .subtitle-panel, main, [role="main"]');
+          fallback?.focus?.();
+        }
       } catch { }
       this.previouslyFocusedElement = null;
     }
@@ -459,6 +497,10 @@ export class BottomSheetComponent implements OnDestroy {
     if (this.animationSafetyTimer) {
       clearTimeout(this.animationSafetyTimer);
       this.animationSafetyTimer = null;
+    }
+    if (this.closeTimeoutId) {
+      clearTimeout(this.closeTimeoutId);
+      this.closeTimeoutId = null;
     }
     this.restoreFocus();
     // Clean up - unregister if still open

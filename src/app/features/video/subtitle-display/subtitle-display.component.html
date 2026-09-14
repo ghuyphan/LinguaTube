@@ -5,7 +5,7 @@
         [class.current-subtitle--large]="settings.settings().fontSize === 'large'"
         [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
         [class.is-generating]="transcript.isGeneratingAI()"
-        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage()) && subtitles.subtitles().length > 0"
+        [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())"
         [class.has-overflow-top]="hasOverflowTop()"
         [class.has-overflow-bottom]="hasOverflowBottom()"
         [class.is-quiz-active]="quiz.isActive()">
@@ -23,7 +23,7 @@
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->
             <div class="subtitle-center-wrapper">
-                <div class="subtitle-text" [ngClass]="'text-' + effectiveLanguage()"
+                <div class="subtitle-text" [ngClass]="'text-' + effectiveLanguage()" [attr.lang]="effectiveLanguage()"
                     [class.is-looping]="isLoopEnabled()">
                     @if (viewTokens().length === 0) {
                     <span class="subtitle-content">
@@ -118,7 +118,7 @@
                     <div class="state-item state-generating">
                         <div class="ai-spinner">
                             <div class="ai-spinner-ring"></div>
-                            <app-icon name="sparkles" [size]="18" class="ai-sparkles" />
+                            <app-icon name="subtitles-ai" [size]="18" class="ai-waveform" />
                         </div>
                         <div class="ai-text">
                             <span class="ai-title">{{ transcript.isResumingPendingJob() ?
@@ -142,7 +142,7 @@
                     <!-- Error -->
                     <div class="state-item state-error">
                         <div class="error-icon-box" [class.ai-icon-box]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)">
-                            <app-icon [name]="((transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)) ? 'sparkles' : 'alert-circle'" [size]="20" [class.ai-icon]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)" class="error-icon" />
+                            <app-icon [name]="((transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)) ? 'subtitles-ai' : 'alert-circle'" [size]="20" [class.ai-icon]="(transcript.error() === 'NO_NATIVE' && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)" class="error-icon" />
                         </div>
                         <div class="error-text">
                             @if (transcript.error() === 'VIDEO_TOO_LONG') {
@@ -301,6 +301,7 @@
     <div class="subtitle-controls">
         <!-- Loop Button -->
         <button type="button" class="ctrl-btn" [class.active]="isLoopEnabled()" (click)="toggleLoop()"
+            [attr.aria-pressed]="isLoopEnabled()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('subtitle.loop') + ' (L)'">
             <app-icon name="repeat" [size]="15" />
@@ -321,6 +322,7 @@
 
         <!-- Quiz Mode Toggle (Graduation Cap Icon) -->
         <button type="button" class="ctrl-btn" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
+            [attr.aria-pressed]="quiz.isActive()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('quiz.mode')">
             <app-icon name="graduation-cap" [size]="15" />
@@ -347,6 +349,7 @@
         <!-- Reading Mode Toggle (Desktop only, Script glyph: あ/拼/한) -->
         @if (supportsReadingDisplay()) {
         <button type="button" class="ctrl-btn desktop-only" [class.active]="showReading()" (click)="toggleReading()"
+            [attr.aria-pressed]="showReading()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="'Toggle ' + readingLabel()">
             <span class="reading-badge-icon">{{ getReadingScriptIcon() }}</span>
@@ -356,6 +359,7 @@
 
         <!-- Grammar Mode Toggle (Desktop only) -->
         <button type="button" class="ctrl-btn desktop-only" [class.active]="grammar.grammarModeEnabled()" (click)="toggleGrammarMode()"
+            [attr.aria-pressed]="grammar.grammarModeEnabled()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('grammar.mode')">
             <app-icon name="book-open" [size]="16" />

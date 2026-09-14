@@ -288,6 +288,28 @@
     flex-shrink: 0;
   }
 
+  &--skeleton {
+    cursor: default;
+    pointer-events: none;
+
+    .skeleton-pulse {
+      background: var(--bg-tertiary);
+      border-radius: var(--border-radius-md);
+      animation: resumeSkeletonPulse 1.5s ease-in-out infinite;
+    }
+
+    .skeleton-badge {
+      width: 120px;
+      height: 14px;
+      margin-bottom: 6px;
+    }
+
+    .skeleton-title {
+      width: 65%;
+      height: 18px;
+    }
+  }
+
   @media (max-width: 600px) {
     gap: var(--space-sm);
     padding: var(--space-xs);
@@ -300,6 +322,11 @@
       display: none;
     }
   }
+}
+
+@keyframes resumeSkeletonPulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.85; }
 }
 
 // -------------------------

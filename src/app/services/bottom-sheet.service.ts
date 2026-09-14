@@ -98,6 +98,12 @@ export class BottomSheetService {
      * @param popHistory Whether to pop the browser history state if this sheet pushed it
      */
     private unregister(id: string, popHistory = false): void {
+        const currentStack = this.sheetStack();
+        const exists = currentStack.some(s => s.id === id);
+        if (!exists) {
+            return; // Idempotent guard: prevents duplicate unregistration and double scroll unlock
+        }
+
         this.sheetStack.update(stack => stack.filter(s => s.id !== id));
 
         // Unlock scroll
@@ -214,6 +220,14 @@ export class BottomSheetService {
                 }
             }
         }
+    }
+
+    /**
+     * Check if a specific sheet is the topmost sheet in the stack
+     */
+    isTopmost(sheetId: string): boolean {
+        const stack = this.sheetStack();
+        return stack.length === 0 || stack[stack.length - 1].id === sheetId;
     }
 
     /**

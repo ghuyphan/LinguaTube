@@ -1,6 +1,7 @@
 @if (isLoading() && items().length === 0) {
     <!-- Skeleton loading state -->
-    <div class="yt-video-grid skeleton-container" role="status" aria-busy="true" aria-hidden="true">
+    <div class="yt-video-grid skeleton-container" role="status" aria-busy="true">
+        <span class="sr-only">{{ i18n.t('common.loading') || 'Loading...' }}</span>
         @for (_ of [1, 2, 3, 4, 5, 6]; track $index) {
         <div class="yt-video-card yt-video-card--skeleton">
             <div class="yt-video-card__thumbnail"></div>

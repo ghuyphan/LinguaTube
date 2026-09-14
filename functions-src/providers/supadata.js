@@ -63,9 +63,9 @@ export class SupadataProvider {
                 } else if (isTimeout) {
                     // Timeout -> 60 seconds cooldown to allow failover to alternative key
                     await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 60);
-                    // On timeout during native caption check, cap failover to prevent long freezes
+                    // On timeout, cap failover to prevent worker execution timeouts, but NEVER return notFound: true
                     if (attempt >= 1) {
-                        return { notFound: true, segments: [], availableLangs: [] };
+                        return null;
                     }
                 }
                 // Try next unattempted key in subsequent loop iteration

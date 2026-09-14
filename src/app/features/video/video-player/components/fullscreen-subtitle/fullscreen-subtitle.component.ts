@@ -42,6 +42,7 @@ import { VocabularyService } from '../../../../vocabulary';
           <!-- Centered Horizontal Drag Handle Bar -->
           <div class="fs-drag-handle-bar"
             (pointerdown)="onHandlePointerDown($event)"
+            (touchstart)="$event.stopPropagation()"
             (click)="$event.stopPropagation()"
             role="button"
             tabindex="0"
@@ -207,7 +208,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     });
 
     onHandlePointerDown(event: PointerEvent): void {
-        if (event.button !== 0) return;
+        if (event.button !== 0 && event.pointerType === 'mouse') return;
         event.stopPropagation();
         event.preventDefault();
         this.startDrag(event);

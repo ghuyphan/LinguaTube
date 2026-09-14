@@ -104,6 +104,10 @@ import { IconComponent, IconName } from '../icon/icon.component';
             grid-template-columns: 1fr 1fr;
             gap: var(--space-sm);
             width: 100%;
+
+            @media (max-width: 420px) {
+                grid-template-columns: 1fr;
+            }
         }
 
         .confirm-dialog__actions:has(> :only-child) {
@@ -112,10 +116,8 @@ import { IconComponent, IconName } from '../icon/icon.component';
 
         .confirm-dialog__btn {
             width: 100%;
-            height: 2.75rem;
             min-height: 2.75rem;
-            max-height: 2.75rem;
-            padding: 0 var(--space-sm);
+            padding: 0.5rem var(--space-sm);
             border-radius: var(--border-radius-md);
             font-size: 0.9375rem;
             font-weight: 600;
@@ -125,9 +127,6 @@ import { IconComponent, IconName } from '../icon/icon.component';
             align-items: center;
             justify-content: center;
             gap: 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             box-sizing: border-box;
             transition: all var(--transition-fast);
 
@@ -138,9 +137,9 @@ import { IconComponent, IconName } from '../icon/icon.component';
         }
 
         .confirm-dialog__btn-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            white-space: normal;
+            line-height: 1.25;
+            text-align: center;
             display: inline-block;
         }
 

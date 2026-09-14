@@ -3,8 +3,8 @@
     <div class="controls-left">
         <!-- Play/Pause Button - Desktop only -->
         <button class="control-btn desktop-only" (click)="playPauseClicked.emit($event)"
-            [attr.aria-label]="t()('player.playPause') || (isPlaying() ? 'Pause' : 'Play')"
-            [title]="t()('player.playPause') || (isPlaying() ? 'Pause (k)' : 'Play (k)')">
+            [attr.aria-label]="isPlaying() ? (t()('player.pause') || 'Pause') : (t()('player.play') || 'Play')"
+            [title]="isPlaying() ? (t()('player.pause') || 'Pause (k)') : (t()('player.play') || 'Play (k)')">
             <app-icon [name]="isPlaying() ? 'pause' : 'play'" [size]="20" />
         </button>
 
@@ -17,7 +17,16 @@
                 <app-icon [name]="volumeIcon()" [size]="18" />
             </button>
             <div class="volume-slider-container desktop-only" [class.visible]="isVolumeSliderVisible()">
-                <div class="volume-slider-track" (mousedown)="onVolumeSliderMouseDown($event)"
+                <div class="volume-slider-track"
+                    role="slider"
+                    tabindex="0"
+                    [attr.aria-valuenow]="isMuted() ? 0 : volume()"
+                    [attr.aria-valuemin]="0"
+                    [attr.aria-valuemax]="100"
+                    [attr.aria-label]="t()('player.volume') || 'Volume'"
+                    [attr.aria-valuetext]="isMuted() ? (t()('player.muted') || 'Muted') : volume() + '%'"
+                    (keydown)="onVolumeKeyDown($event)"
+                    (mousedown)="onVolumeSliderMouseDown($event)"
                     [style.--volume-percent]="volumePercent() + '%'">
                     <div class="volume-slider-fill"></div>
                     <div class="volume-slider-handle"></div>
@@ -40,10 +49,12 @@
             <!-- Subtitles / CC Toggle (YouTube style) - Shown only in fullscreen -->
             @if (isFullscreen()) {
             <button class="control-btn cc-btn" [class.is-active]="subtitlesVisible()"
+                [class.is-ai]="isAISubtitle()"
+                [attr.aria-pressed]="subtitlesVisible()"
                 (click)="toggleSubtitles.emit()"
-                [attr.aria-label]="t()('player.subtitles') || 'Subtitles/closed captions (c)'"
-                [title]="t()('player.subtitles') || 'Subtitles/closed captions (c)'">
-                <app-icon name="subtitles" [size]="18" />
+                [attr.aria-label]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (c)') : (t()('player.subtitles') || 'Subtitles/closed captions (c)')"
+                [title]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (c)') : (t()('player.subtitles') || 'Subtitles/closed captions (c)')">
+                <app-icon [name]="isAISubtitle() ? 'subtitles-ai' : 'subtitles'" [size]="18" />
                 <span class="cc-indicator" [class.visible]="subtitlesVisible()"></span>
             </button>
             }
@@ -51,6 +62,7 @@
             <!-- Dual Subtitles Toggle (Outside) -->
             @if (isCJKLanguage()) {
             <button class="control-btn dual-sub-btn" [class.is-active]="showDualSubtitles()"
+                [attr.aria-pressed]="showDualSubtitles()"
                 (click)="toggleDualSubs.emit()"
                 (contextmenu)="onDualSubContextMenu($event)"
                 [attr.aria-label]="t()('subtitle.dualSubs') || 'Dual Subtitles'"

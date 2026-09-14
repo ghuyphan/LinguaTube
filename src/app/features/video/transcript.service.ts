@@ -78,8 +78,46 @@ const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', 
 
 // Minimum duration for a cue (in seconds)
 const MIN_CUE_DURATION = 0.5;
-// Maximum duration for a single cue (prevents overly long subtitles, standard 5s)
-const MAX_CUE_DURATION = 5.0;
+
+const PENDING_AI_STORAGE_KEY = 'voca_pending_ai_jobs';
+
+interface StoredPendingJob {
+  resultUrl: string;
+  lang: string;
+  startedAt: number;
+}
+
+function getStoredPendingJob(videoId: string): StoredPendingJob | null {
+  try {
+    const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
+    if (!raw) return null;
+    const map = JSON.parse(raw);
+    const job = map[videoId];
+    if (job && Date.now() - job.startedAt < 3600 * 1000) {
+      return job;
+    }
+  } catch {}
+  return null;
+}
+
+function saveStoredPendingJob(videoId: string, resultUrl: string, lang: string): void {
+  try {
+    const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
+    const map = raw ? JSON.parse(raw) : {};
+    map[videoId] = { resultUrl, lang, startedAt: Date.now() };
+    localStorage.setItem(PENDING_AI_STORAGE_KEY, JSON.stringify(map));
+  } catch {}
+}
+
+function clearStoredPendingJob(videoId: string): void {
+  try {
+    const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
+    if (!raw) return;
+    const map = JSON.parse(raw);
+    delete map[videoId];
+    localStorage.setItem(PENDING_AI_STORAGE_KEY, JSON.stringify(map));
+  } catch {}
+}
 
 @Injectable({
   providedIn: 'root'
@@ -140,6 +178,8 @@ export class TranscriptService {
     return s.status === 'complete' ? s.source : null;
   });
 
+  readonly isAIGenerated = computed(() => this.captionSource() === 'ai');
+
   readonly detectedLanguage = computed(() => {
     const s = this.state();
     return s.status === 'complete' ? s.language : null;
@@ -172,6 +212,17 @@ export class TranscriptService {
     this.refreshDiamonds();
     this.auth.loginEvent.subscribe(() => this.refreshDiamonds());
     this.auth.logoutEvent.subscribe(() => this.refreshDiamonds());
+
+    // Listen for online reconnect to recover from transient network failures
+    if (typeof window !== 'undefined') {
+      window.addEventListener('online', () => {
+        log('Network restored, checking transcript state...');
+        const s = this.state();
+        if (s.status === 'error' && s.code === 'NETWORK_ERROR') {
+          this.state.set({ status: 'idle' });
+        }
+      });
+    }
   }
 
   /**
@@ -240,6 +291,15 @@ export class TranscriptService {
     forceRefresh = false
   ): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
+
+    // 0. Auto-resume ongoing AI transcription job if user refreshed or navigated away
+    if (!forceRefresh) {
+      const storedJob = getStoredPendingJob(videoId);
+      if (storedJob?.resultUrl) {
+        log('Auto-resuming pending AI job from localStorage:', { videoId, resultUrl: storedJob.resultUrl });
+        return this.generateWithAI(videoId, storedJob.lang || lang, storedJob.resultUrl, undefined, duration, title, channel);
+      }
+    }
 
     // 1. Check client-side memory cache first (fastest) - only if not forceRefresh
     if (!forceRefresh && this.transcriptCache.has(cacheKey)) {
@@ -326,6 +386,10 @@ export class TranscriptService {
     channel?: string
   ): Observable<SubtitleCue[]> {
     const cacheKey = `${videoId}:${lang}`;
+
+    if (resultUrl) {
+      saveStoredPendingJob(videoId, resultUrl, lang);
+    }
 
     // If we're polling (resultUrl exists), mark as resuming
     this.state.set({
@@ -556,6 +620,7 @@ export class TranscriptService {
     // Handle processing state (AI job still running)
     if (response.status === 'processing' && response.resultUrl) {
       log('AI processing, polling in 2.5s...');
+      saveStoredPendingJob(videoId, response.resultUrl, lang);
       this.state.set({ status: 'generating_ai', resultUrl: response.resultUrl });
 
       return timer(2500).pipe(
@@ -566,6 +631,7 @@ export class TranscriptService {
 
     // Handle success
     if (response.success && response.segments?.length > 0) {
+      clearStoredPendingJob(videoId);
       const cues = this.convertToSubtitleCues(response.segments);
       const source: 'native' | 'ai' = response.source === 'ai' ? 'ai' : 'native';
 
@@ -591,6 +657,7 @@ export class TranscriptService {
     }
 
     // Handle error / no content
+    clearStoredPendingJob(videoId);
     const errorCode = response.errorCode || 'NO_SUBTITLES';
     this.state.set({
       status: 'error',
@@ -602,99 +669,16 @@ export class TranscriptService {
   }
 
   /**
-   * Intelligently split overly long run-on speech segments into natural sentence cues
-   */
-  private splitRunOnSegment(segment: TranscriptSegment): TranscriptSegment[] {
-    const text = segment.text?.trim() || '';
-    if (!text) return [];
-
-    const isCJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\uac00-\ud7af]/.test(text);
-    const maxLen = isCJK ? 22 : 48;
-
-    if (text.length <= maxLen && segment.duration <= 4.5) {
-      return [segment];
-    }
-
-    // Step 1: Split on major sentence terminators
-    const majorParts = isCJK
-      ? text.split(/(?<=[。！？!?\n])\s*/).map(p => p.trim()).filter(Boolean)
-      : text.split(/(?<=[.!?\n])\s+/).map(p => p.trim()).filter(Boolean);
-
-    // Step 2: If any part is still too long, split further by commas / clause boundaries
-    const refinedParts: string[] = [];
-    for (const p of (majorParts.length > 0 ? majorParts : [text])) {
-      if (p.length > maxLen) {
-        const subParts = isCJK
-          ? p.split(/(?<=[、，,;；:：])\s*/).map(s => s.trim()).filter(Boolean)
-          : p.split(/(?<=[,;:])\s+/).map(s => s.trim()).filter(Boolean);
-        if (subParts.length > 1) {
-          refinedParts.push(...subParts);
-        } else {
-          refinedParts.push(p);
-        }
-      } else {
-        refinedParts.push(p);
-      }
-    }
-
-    if (refinedParts.length <= 1) {
-      return [segment];
-    }
-
-    // Calculate proportional duration for each sub-cue based on character length
-    const totalChars = refinedParts.reduce((sum, p) => sum + p.length, 0);
-    if (totalChars === 0) return [segment];
-
-    const results: TranscriptSegment[] = [];
-    let currentStart = segment.start;
-    const totalDuration = segment.duration || (MIN_CUE_DURATION * refinedParts.length);
-
-    for (let i = 0; i < refinedParts.length; i++) {
-      const part = refinedParts[i];
-      const partRatio = part.length / totalChars;
-      const partDuration = Math.max(MIN_CUE_DURATION, Math.round((totalDuration * partRatio) * 100) / 100);
-
-      results.push({
-        text: part,
-        start: Math.round(currentStart * 100) / 100,
-        duration: Math.min(partDuration, MAX_CUE_DURATION)
-      });
-
-      currentStart += partDuration;
-    }
-
-    return results;
-  }
-
-  /**
-   * Convert segments to SubtitleCue with sticky timing and sentence boundary handling
+   * Convert segments to SubtitleCue (backend has already split run-ons and applied caps)
    */
   private convertToSubtitleCues(segments: TranscriptSegment[]): SubtitleCue[] {
-    // Flatten segments by splitting run-on sentences if any exist
-    const normalizedSegments: TranscriptSegment[] = [];
-    for (const seg of segments) {
-      normalizedSegments.push(...this.splitRunOnSegment(seg));
-    }
-
-    return normalizedSegments.map((segment, index) => {
-      let endTime: number;
-
-      if (index < normalizedSegments.length - 1) {
-        const nextStart = normalizedSegments[index + 1].start;
-        const maxEnd = segment.start + MAX_CUE_DURATION;
-        endTime = Math.min(nextStart, maxEnd);
-      } else {
-        endTime = segment.start + Math.min(segment.duration, MAX_CUE_DURATION);
-      }
-
-      if (endTime - segment.start < MIN_CUE_DURATION) {
-        endTime = segment.start + MIN_CUE_DURATION;
-      }
-
+    return segments.map((segment) => {
+      const startTime = segment.start || 0;
+      const duration = segment.duration || MIN_CUE_DURATION;
       return {
         id: crypto.randomUUID(),
-        startTime: segment.start,
-        endTime,
+        startTime,
+        endTime: Math.round((startTime + duration) * 100) / 100,
         text: segment.text.trim()
       };
     });

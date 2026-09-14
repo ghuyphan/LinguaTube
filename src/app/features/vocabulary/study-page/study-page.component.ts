@@ -122,6 +122,10 @@ import { StreakService } from '../../../services/streak.service';
       display: flex;
       flex-direction: column;
       gap: var(--space-sm);
+
+      .panel-header {
+        margin-bottom: 0;
+      }
     }
 
     /* Daily Habit Card */
@@ -136,7 +140,7 @@ import { StreakService } from '../../../services/streak.service';
       display: flex;
       flex-direction: column;
       gap: 6px;
-      padding: var(--space-xs) 0 0;
+      padding: 0;
     }
 
     .sidebar-goal-box__header {

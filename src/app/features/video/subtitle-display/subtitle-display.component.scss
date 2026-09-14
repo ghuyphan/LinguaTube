@@ -85,11 +85,11 @@
     }
 
     &.has-overflow-top::before {
-        opacity: 0.9;
+        opacity: 0.35;
     }
 
     &.has-overflow-bottom::after {
-        opacity: 0.9;
+        opacity: 0.35;
     }
 }
 
@@ -534,7 +534,8 @@
     animation: spin 1.2s linear infinite;
 }
 
-.ai-sparkles {
+.ai-sparkles,
+.ai-waveform {
     color: var(--accent-primary);
     width: 18px !important;
     height: 18px !important;
@@ -853,74 +854,6 @@
     }
 }
 
-.subtitle-waiting {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-}
-
-/* ============================================
-   SHARED ANIMATIONS
-   ============================================ */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
-/* ============================================
-   TOKEN LOADING SHIMMER
-   ============================================ */
-.token-loading {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
-}
-
-.token-shimmer {
-    display: inline-block;
-    height: 1.5em;
-    border-radius: 6px;
-    background: linear-gradient(90deg,
-            rgba(var(--text-secondary-rgb), 0.08) 25%,
-            rgba(var(--text-secondary-rgb), 0.16) 50%,
-            rgba(var(--text-secondary-rgb), 0.08) 75%);
-    background-size: 200% 100%;
-    animation: skeleton-pulse 1.5s ease-in-out infinite;
-    width: 60px;
-
-    &:nth-child(2n) {
-        width: 80px;
-    }
-
-    &:nth-child(3n) {
-        width: 50px;
-    }
-
-    &:nth-child(5n) {
-        width: 90px;
-    }
-
-    &:nth-child(7n) {
-        width: 40px;
-    }
-}
 
 /* Punctuation */
 .punctuation {
@@ -953,6 +886,8 @@
     box-sizing: border-box;
     position: relative;
     line-height: inherit;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 :host-context([data-theme="dark"]) .word {
@@ -1063,6 +998,7 @@ ruby rt {
     font-family: var(--font-jp, inherit);
     letter-spacing: 0;
     word-spacing: 0;
+    line-break: strict;
 }
 
 .text-ja .word {
@@ -1090,6 +1026,7 @@ ruby rt {
 .text-zh {
     font-family: var(--font-cn, inherit);
     letter-spacing: 0.02em;
+    line-break: strict;
 }
 
 .text-zh .word {
@@ -1117,6 +1054,8 @@ ruby rt {
 .text-ko {
     font-family: var(--font-ko, inherit);
     word-spacing: 0.1em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .text-ko .word {
@@ -1406,6 +1345,8 @@ ruby rt {
     height: auto;
     position: relative;
     box-sizing: border-box;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 56px;
 
     /* Subtle left indicator track bar (Voca accent) */
     &::before {
@@ -1623,20 +1564,12 @@ ruby rt {
     position: relative;
     user-select: none;
 
-    &.ctrl-btn--icon-only {
-        width: 34px;
-        min-width: 34px;
-        padding: 0;
-        flex-shrink: 0;
-    }
-
     &.active {
         background: var(--accent-primary);
         color: #ffffff;
         border-color: var(--accent-primary);
         box-shadow: 0 2px 6px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25);
 
-        .ctrl-badge,
         .ctrl-badge-inline {
             background: #ffffff;
             color: var(--accent-primary);
@@ -1674,22 +1607,6 @@ ruby rt {
     display: inline-block;
     font-size: 0.8125rem;
     font-weight: 500;
-}
-
-.ctrl-badge {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    min-width: 18px;
-    height: 18px;
-    padding: 0 5px;
-    font-size: 0.6875rem;
-    border-radius: 9px;
-    background: var(--accent-primary);
-    color: white;
-    font-weight: 600;
-    line-height: 18px;
-    text-align: center;
 }
 
 .ctrl-badge-inline {
@@ -1756,10 +1673,6 @@ ruby rt {
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1;
-
-    &--sm {
-        font-size: 0.8125rem;
-    }
 }
 
 /* Responsive visibility utilities */
@@ -2151,7 +2064,8 @@ ruby rt {
         height: 2rem;
     }
 
-    .ai-sparkles {
+    .ai-sparkles,
+    .ai-waveform {
         width: 14px !important;
         height: 14px !important;
     }

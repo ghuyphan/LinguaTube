@@ -1,15 +1,11 @@
 /**
  * Language Utilities
  * 
- * Consolidated language detection and text analysis functions
- * Previously duplicated across:
- * - dictionary.service.ts (detectLanguage)
- * - subtitle.service.ts (getCharType, isPunctuation)
- * - innertube.js (verifyLanguage)
+ * Consolidated language detection, normalization, and text analysis functions.
  */
 
 // Unicode ranges for language detection
-const UNICODE_RANGES = {
+export const UNICODE_RANGES = {
     // Japanese
     hiragana: /[\u3040-\u309F]/,
     katakana: /[\u30A0-\u30FF]/,
@@ -20,7 +16,7 @@ const UNICODE_RANGES = {
     hangulJamo: /[\u1100-\u11FF\u3130-\u318F]/,
     korean: /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/,
 
-    // Chinese (CJK Unified Ideographs)
+    // Chinese / Kanji (CJK Unified Ideographs)
     hanzi: /[\u4E00-\u9FFF]/,
 
     // Basic Latin
@@ -28,14 +24,29 @@ const UNICODE_RANGES = {
 } as const;
 
 // Comprehensive punctuation pattern for CJK + Western
-const PUNCTUATION_REGEX = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
+export const PUNCTUATION_REGEX = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
 
 export type SupportedLanguage = 'ja' | 'zh' | 'ko' | 'en';
 
 /**
- * Detect language from text based on character types
+ * Normalize language codes from YouTube, Gladia, or external providers to canonical 2-letter codes.
+ * Handles null/undefined safely, splits on '-' and '_', and maps STT aliases (cmn, mandarin, yue -> zh).
  */
-export function detectLanguage(text: string): SupportedLanguage {
+export function normalizeLanguageCode(lang?: string | null): string {
+    if (!lang || typeof lang !== 'string') return '';
+    const clean = lang.trim().toLowerCase().split('-')[0].split('_')[0];
+    if (clean === 'ja' || clean === 'japanese') return 'ja';
+    if (clean === 'ko' || clean === 'korean') return 'ko';
+    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue') return 'zh';
+    if (clean === 'en' || clean === 'english') return 'en';
+    return clean;
+}
+
+/**
+ * Detect language from text based on character types.
+ * Context-aware: When pure Hanzi/Kanji is encountered, checks activeLanguage to distinguish Japanese Kanji from Chinese.
+ */
+export function detectLanguage(text: string, contextLanguage?: string): SupportedLanguage {
     if (!text || text.trim().length === 0) return 'en';
 
     // Check for Korean (Hangul)
@@ -43,28 +54,38 @@ export function detectLanguage(text: string): SupportedLanguage {
         return 'ko';
     }
 
-    // Check for Japanese-specific characters (Hiragana/Katakana)
+    // Check for Japanese-specific kana (Hiragana/Katakana)
     if (UNICODE_RANGES.hiragana.test(text) || UNICODE_RANGES.katakana.test(text)) {
         return 'ja';
     }
 
-    // Check for CJK ideographs (Chinese)
+    // Check for CJK ideographs (Kanji/Hanzi)
     if (UNICODE_RANGES.hanzi.test(text)) {
+        const normContext = normalizeLanguageCode(contextLanguage);
+        if (normContext === 'ja' || normContext === 'zh') {
+            return normContext as SupportedLanguage;
+        }
         return 'zh';
     }
 
-    // Default to English for Latin characters
+    // Default to English
     return 'en';
 }
 
 /**
- * Detect language of a subtitle cue list by sampling non-empty cues
+ * Detect language of a subtitle cue list by sampling non-empty cues.
  */
-export function detectSubtitleLanguage(cues: { text: string }[]): SupportedLanguage {
-    if (!cues || cues.length === 0) return 'en';
+export function detectSubtitleLanguage(cues: { text: string }[], preferredLang?: string): SupportedLanguage {
+    if (!cues || cues.length === 0) {
+        const norm = normalizeLanguageCode(preferredLang);
+        return (norm === 'ja' || norm === 'zh' || norm === 'ko' || norm === 'en') ? (norm as SupportedLanguage) : 'en';
+    }
     const sample = cues.slice(0, 15).map(c => c.text).filter(Boolean).join(' ');
-    if (!sample.trim()) return 'en';
-    return detectLanguage(sample);
+    if (!sample.trim()) {
+        const norm = normalizeLanguageCode(preferredLang);
+        return (norm === 'ja' || norm === 'zh' || norm === 'ko' || norm === 'en') ? (norm as SupportedLanguage) : 'en';
+    }
+    return detectLanguage(sample, preferredLang);
 }
 
 /**
@@ -83,59 +104,4 @@ export function getCharType(char: string): string {
 export function isPunctuation(text: string): boolean {
     if (!text) return false;
     return PUNCTUATION_REGEX.test(text);
-}
-
-/**
- * Verify that text matches expected language
- * Used to detect when APIs silently return wrong language
- */
-export function verifyLanguage(text: string, expectedLang: SupportedLanguage): boolean {
-    if (!text || text.length < 50) return true; // Too short to verify
-
-    const sample = text.slice(0, 1000);
-
-    switch (expectedLang) {
-        case 'ja': {
-            // Japanese should have hiragana/katakana
-            const kanaCount = (sample.match(UNICODE_RANGES.japanese) || []).length;
-            return kanaCount > 5;
-        }
-
-        case 'ko': {
-            // Korean should have Hangul, not dominated by Japanese
-            const hangulCount = (sample.match(UNICODE_RANGES.hangul) || []).length;
-            const kanaCount = (sample.match(UNICODE_RANGES.japanese) || []).length;
-            if (kanaCount > hangulCount * 2) return false;
-            return hangulCount > 5;
-        }
-
-        case 'zh': {
-            // Chinese should have Hanzi but no/minimal kana/hangul
-            const hanziCount = (sample.match(UNICODE_RANGES.hanzi) || []).length;
-            const kanaCount = (sample.match(UNICODE_RANGES.japanese) || []).length;
-            const hangulCount = (sample.match(UNICODE_RANGES.hangul) || []).length;
-            return hanziCount > 10 && kanaCount < 5 && hangulCount < 5;
-        }
-
-        default:
-            return true;
-    }
-}
-
-/**
- * Check if language is a supported CJK language
- */
-export function isCJKLanguage(lang: string): boolean {
-    return ['ja', 'zh', 'ko'].includes(lang);
-}
-
-/**
- * Normalize language code (handle variants like zh-CN, ja-JP)
- */
-export function normalizeLanguageCode(lang: string): SupportedLanguage {
-    const base = lang.split('-')[0].toLowerCase();
-    if (['ja', 'zh', 'ko', 'en'].includes(base)) {
-        return base as SupportedLanguage;
-    }
-    return 'en';
 }

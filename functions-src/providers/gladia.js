@@ -29,7 +29,11 @@ export class GladiaProvider {
                 'x-gladia-key': this.apiKey,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ audio_url: youtubeUrl }),
+            body: JSON.stringify({
+                audio_url: youtubeUrl,
+                sentences: true,
+                subtitles: true
+            }),
             signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
         });
 

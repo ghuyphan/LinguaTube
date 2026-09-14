@@ -2,7 +2,7 @@
 
 **Target Audience:** Mobile Engineers (Flutter/Dart, Swift/iOS, Kotlin/Android, React Native) & AI Coding Agents (Cursor, Claude Code, Antigravity)  
 **Backend Architecture:** Cloudflare Pages Functions (Edge Serverless Workers) + Cloudflare D1 (SQLite) + Cloudflare R2 (S3 Storage) + Cloudflare KV + PocketBase BaaS (`https://voca.pockethost.io`)  
-**Specification Version:** `v5.0.0` (Production Hardened & Grammar Engine Complete)  
+**Specification Version:** `v5.1.0` (Low-Latency Dual-Sub Streaming, 3-Tier CJK Speech Chunking & Resilient ASR Polling)  
 
 ---
 
@@ -20,7 +20,7 @@ Voca operates as a distributed, high-performance edge application. Mobile applic
                    ▼                                   ▼
    ┌───────────────────────────────┐   ┌───────────────────────────────┐
    │    Cloudflare Edge API        │   │        PocketBase BaaS        │
-   │    https://voca.study    │   │    https://voca.pockethost.io │
+   │    https://voca.study         │   │    https://voca.pockethost.io │
    │                               │   │                               │
    │  • Subtitles (Native & Gladia)│   │  • User Authentication (JWT)  │
    │  • Dual Subtitles (R2 Cache)  │   │  • Vocabulary SRS Flashcards  │
@@ -85,9 +85,27 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
    - Offline flashcards and gamification records MUST use Cyrb53 Base36 hashing:
      `generateDeterministicRecordId([userId, word.toLowerCase(), language])`.
 
-7. ASYNC TWO-PHASE POLLING:
-   - Gladia AI ASR: If POST /api/transcript returns `{ status: "processing", resultUrl: "..." }`, poll POST /api/transcript with `{ videoId, lang, resultUrl }` every 3 seconds until `success: true` or 60s timeout.
+7. ASYNC TWO-PHASE POLLING & BACKGROUND RESUMPTION:
+   - Gladia AI ASR: If POST /api/transcript returns `{ status: "processing", resultUrl: "..." }`, poll POST /api/transcript with `{ videoId, lang, resultUrl }` every 2.5–3 seconds until `success: true` or 60s timeout.
+   - Edge Auto-Resumption: If the app was backgrounded, killed, or refreshed, subsequent calls to POST /api/transcript with `{ videoId, lang }` automatically detect active jobs in D1 and return `{ status: "processing", resultUrl }` without double-deducting diamonds.
    - VietQR payOS: After calling POST /api/payment/create-order, poll GET /api/payment/check-status?orderCode={orderCode} every 3 seconds until `status === "PAID"`.
+
+8. TWO-TIER DUAL SUBTITLE STREAMING (< 200ms SEEK LATENCY):
+   - When the user seeks or starts playback, DO NOT block the UI waiting for whole-video translations.
+   - Fire an immediate urgent micro-batch translating the active cue and upcoming 2 cues (`cues[i..i+2]`) with high priority (< 200ms latency).
+   - Stream background batches (40–60 cues) with exponential backoff on HTTP 429 rate limits.
+
+9. 3-TIER CJK/LATIN SPEECH SEGMENTATION & CLEANING:
+   - Edge API returns pre-cleaned, pre-split cues: HTML entities decoded (`&quot;`, `&#39;`), tags stripped, sound annotations (`[Music]`, `♪`) filtered.
+   - Unpunctuated monologues (Chinese, Japanese, Korean) are automatically split into natural 1–2 line cues using:
+     1) sentence punctuation (`。！？!?\n`),
+     2) CJK discourse markers & particles (`而且|但是|所以|然后` / `は|が|を|に|で`),
+     3) soft character length limits (20–22 CJK chars, 60 Latin chars; min 0.5s, max 5.0s).
+
+10. SUBTITLE TRACK SELECTION & LANGUAGE MISMATCH HANDLING:
+   - Response contains `availableLanguages: { native: string[], ai: string[] }`.
+   - Provide a Subtitle Track Picker sheet allowing users to switch between native tracks or generate AI captions in their target learning language.
+   - If `languageMismatch === true` (video has captions only in a foreign language), let user choose between switching to that track or generating AI subtitles in their target learning language.
 ```
 
 ---
@@ -96,14 +114,14 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 
 | # | Method | Full Edge Endpoint URL | Auth? | Rate Limit | Purpose |
 |:---:|:---:|:---|:---:|:---:|:---|
-| 1 | `POST` | `https://voca.study/api/transcript` | Opt | 20–80/hr | Fetch native/cached transcripts or queue Gladia ASR |
+| 1 | `POST` | `https://voca.study/api/transcript` | Opt | 20–80/hr | Fetch native/cached transcripts or queue/resume Gladia ASR |
 | 2 | `GET` | `https://voca.study/api/transcript` | No | None | Serverless edge health & storage status check |
 | 3 | `POST` | `https://voca.study/api/dual-subtitles` | Opt | 5–60/hr | Fetch or generate synchronized dual-language subtitles |
 | 4 | `GET` | `https://voca.study/api/dict` | No | 100/hr | Multi-source dictionary lookup (`?word=&from=&to=`) |
 | 5 | `POST` | `https://voca.study/api/tokenize/{lang}` | No | 100/hr | Single-phrase morphological segmentation (`ja,zh,ko,en`) |
 | 6 | `POST` | `https://voca.study/api/tokenize-batch/{lang}` | Opt | 60–1500/hr | Batch tokenize up to 800 subtitle cues (`videoId` req.) |
 | 7 | `GET` | `https://voca.study/api/translate/{src}/{tgt}/{text}` | No | 100/hr | Single phrase translation proxy |
-| 8 | `POST` | `https://voca.study/api/translate/batch` | No | 100/hr | Batch translation for up to 50 items with KV cache |
+| 8 | `POST` | `https://voca.study/api/translate/batch` | No | 100/hr | Urgent seek micro-batch (< 200ms) & background stream |
 | 9 | `GET` | `https://voca.study/api/video-info` | No | None | Video title, duration, languages, avatar & level map |
 | 10 | `GET` | `https://voca.study/api/recommended-videos` | No | None | Pre-cached videos (`?lang=&tier=&limit=&offset=`) |
 | 11 | `POST` | `https://voca.study/api/video-level` | No | 60/hr | Submit computed JLPT / HSK / TOPIK / CEFR difficulty |
@@ -112,7 +130,7 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 | 14 | `POST` | `https://voca.study/api/leaderboard` | Opt | 30/hr | Synchronize user XP, streak, and badges |
 | 15 | `POST` | `https://voca.study/api/payment/create-order` | **Req** | 10/10m | Generate VietQR payOS open banking checkout info |
 | 16 | `GET` | `https://voca.study/api/payment/check-status` | No | 60/min | Poll payment confirmation status (`?orderCode=`) |
-| 17 | `GET` | `https://voca.study/api/version` | No | None | App version, forceUpdate, maintenance & release notes |
+| 17 | `GET` | `https://voca.study/api/version` | No | None | App version (1.1.35), forceUpdate, maintenance & notes |
 | 18 | `ALL` | `https://voca.study/proxy/{service}/{path}` | No | 100/hr | SSRF-safe reverse proxy (`jisho`, `jotoba`, etc.) |
 
 ---
@@ -144,8 +162,13 @@ Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}
     "success": true,
     "videoId": "dQw4w9WgXcQ",
     "language": "ja",
+    "requestedLanguage": "ja",
     "source": "cache",                  // "cache" | "native" | "ai"
-    "sourceDetail": "youtube",
+    "sourceDetail": "youtube",          // "youtube" | "gladia" | "whisper"
+    "languageMismatch": false,          // True if returned captions differ from requested language
+    "levels": {
+      "ja": "JLPT N4"
+    },
     "segments": [
       {
         "start": 0.45,                  // Start offset in seconds
@@ -154,9 +177,10 @@ Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}
       }
     ],
     "availableLanguages": {
-      "native": ["ja", "en"],
-      "ai": []
+      "native": ["ja", "en"],           // Native YouTube caption tracks
+      "ai": []                          // Verified Gladia AI tracks available in R2
     },
+    "subLanguages": ["ja", "en"],
     "diamonds": 5,
     "maxDiamonds": 5,
     "nextRegenAt": 1725805000000,
@@ -165,25 +189,75 @@ Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}
   }
   ```
 
-- **Pending Response (Gladia AI Queued - 200 OK):**
+- **Language Mismatch Response (Native Track in Other Language - 200 OK):**
+  ```json
+  {
+    "success": false,
+    "videoId": "dQw4w9WgXcQ",
+    "requestedLanguage": "ja",
+    "languageMismatch": true,
+    "source": "none",
+    "errorCode": "NO_NATIVE",
+    "error": "No native captions in requested language.",
+    "availableLanguages": {
+      "native": ["en", "ko"],
+      "ai": []
+    },
+    "subLanguages": ["en", "ko"],
+    "whisperAvailable": true,
+    "diamonds": 5,
+    "maxDiamonds": 5,
+    "nextRegenAt": 1725805000000,
+    "timing": 28
+  }
+  ```
+  *Mobile UX Handling:* When `languageMismatch === true`, the video has captions, but not in the user's selected study language. Present the Subtitle Track Picker sheet offering two actions:
+  1. *Switch Target Language*: View captions in one of the `availableLanguages.native` tracks (e.g. English).
+  2. *Generate with AI*: Trigger Gladia ASR with `preferAI: true` and a Turnstile CAPTCHA token to transcribe the audio into the requested language (`ja`).
+
+- **Pending Response (Gladia AI Queued or Auto-Resumed - 200 OK):**
   ```json
   {
     "success": false,
     "status": "processing",
     "resultUrl": "https://api.gladia.io/v2/pre-recorded/result/550e8400-e29b-41d4-a716-446655440000",
+    "videoId": "dQw4w9WgXcQ",
+    "availableLanguages": {
+      "native": ["en"],
+      "ai": []
+    },
     "whisperAvailable": true,
     "diamonds": 4,
     "maxDiamonds": 5
   }
   ```
-  *Mobile Polling Flow:* If `status === "processing"`, start a timer every 3 seconds calling `POST /api/transcript` with `{ "videoId": "...", "lang": "ja", "resultUrl": "..." }` until `success: true` or 60s timeout.
+
+#### Gladia AI Polling & Background Auto-Resumption Flow
+1. **Initial Submission:** Call `POST /api/transcript` with `{ videoId, lang, preferAI: true, turnstileToken, duration }`. If accepted, backend deducts 1–4 diamonds (based on length) and returns `{ status: "processing", resultUrl }`.
+2. **Foreground Polling Loop:** Poll `POST /api/transcript` every 2.5–3 seconds with `{ videoId, lang, resultUrl }` until `success: true` or 60s timeout.
+3. **Edge Auto-Resumption (Lifecycle Safety):**
+   - If the mobile app is paused, minimized, or terminated by OS during transcription, the active job remains safely registered in Cloudflare D1 (`pending_jobs`).
+   - On app reopen or video reload, simply invoke the normal `POST /api/transcript` with `{ videoId, lang }` (without `preferAI: true` and without re-charging diamonds!).
+   - Step 2 on the Edge automatically intercepts the active job and returns `{ status: "processing", resultUrl }`, allowing the mobile client to seamlessly resume polling without double-spending diamond credits!
+
+#### Pre-Cleaned 3-Tier Speech Chunking (Edge-Processed)
+The edge API automatically cleans and segments all transcript lines before returning them to mobile clients:
+- **Tier 1 (Hygiene & Formatting):** Decodes HTML entities (`&quot;` $\rightarrow$ `"`, `&#39;` $\rightarrow$ `'`, `&amp;` $\rightarrow$ `&`), strips all formatting markup (`<font>`, `<b>`, `<i>`), and discards non-speech bracketed annotations (`[Music]`, `♪`, `(Laughter)`).
+- **Tier 2 (Sentence Punctuation):** Segments long cues on natural sentence terminators (`。！？!?\n`) and recalculates linear start offsets and durations.
+- **Tier 3 (CJK & Latin Monologue Splitting):**
+  - Handles unpunctuated ASR runs (especially common in YouTube auto-generated captions for Japanese, Chinese, and Korean).
+  - Splits at natural grammatical boundaries and discourse connectors:
+    - *Chinese:* `而且`, `但是`, `所以`, `然后`, `因为`, `如果`, `不过`, `虽然`, `那么`
+    - *Japanese:* `は`, `が`, `を`, `に`, `で`, `から`, `ので`, `けど`, `しかし`
+    - *Korean:* `은`, `는`, `이`, `가`, `을`, `를`, `에서`, `하지만`, `그래서`
+  - Restricts cues to soft character limits (20–22 CJK chars, 60 Latin chars) and clamps durations to 0.5s–5.0s, guaranteeing that mobile screens never suffer vertical layout overflows or unreadable 30-second blocks.
 
 ---
 
-### 4.2. Dual Subtitles
+### 4.2. Dual Subtitles & Low-Latency Translation
 
 #### `POST /api/dual-subtitles`
-Generates or retrieves dual-language synchronized subtitles cached in Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`).
+Generates or retrieves whole-video dual-language synchronized subtitles cached in Cloudflare R2 (`translations/{videoId}/{sourceLang}_{targetLang}.json`). Best for full script downloads, exports, or offline storage.
 
 - **URL:** `https://voca.study/api/dual-subtitles`
 - **Request Body:**
@@ -219,6 +293,56 @@ Generates or retrieves dual-language synchronized subtitles cached in Cloudflare
     ]
   }
   ```
+
+#### `POST /api/translate/batch`
+Low-latency phrase and subtitle translation with edge LRU in-memory and KV caching. Used for **Two-Tier Dual Subtitle Streaming** and instant seek translations.
+
+- **URL:** `https://voca.study/api/translate/batch`
+- **Rate Limit:** 3,000–100,000 unique texts/hour (tiered)
+- **Request Body:**
+  ```json
+  {
+    "texts": [
+      "こんにちは",
+      "今日はいい天気ですね",
+      "散歩に行きましょう"
+    ],
+    "source": "ja",                     // "ja" | "zh" | "ko" | "en" | "vi"
+    "target": "vi"                      // "ja" | "zh" | "ko" | "en" | "vi"
+  }
+  ```
+
+- **Success Response (200 OK):**
+  ```json
+  {
+    "translations": [
+      "Xin chào",
+      "Hôm nay thời tiết đẹp nhỉ",
+      "Chúng ta cùng đi dạo nhé"
+    ]
+  }
+  ```
+
+#### Two-Tier Dual Subtitle Streaming Architecture (< 200ms Seek Latency)
+Translating an entire 400-line video at once introduces a 3–6 second network delay, causing blank secondary subtitles when users scrub the video player. Mobile apps MUST implement the two-tier streaming pattern:
+
+```
+                  ┌───────────────────────────────────────────────────────────┐
+                  │                    USER SEEKS TO T=45.0s                  │
+                  └─────────────────────────────┬─────────────────────────────┘
+                                                │
+                 ┌──────────────────────────────┴──────────────────────────────┐
+                 ▼                                                             ▼
+  [ TIER 1: URGENT SEEK MICRO-BATCH ]                         [ TIER 2: PROGRESSIVE BACKGROUND STREAM ]
+  • Extract active cue + 2 lookahead cues                      • Concurrently dispatch remaining cues
+    cues.sublist(i, min(i + 3, cues.length))                     in batches of 40–60 items
+  • POST /api/translate/batch                                  • POST /api/translate/batch
+  • Edge Memory Cache Hit: < 50ms                              • Edge KV Cache Hit: < 150ms
+  • Fresh Upstream Translation: < 200ms                        • Exponential backoff on HTTP 429
+                 │                                                             │
+                 ▼                                                             ▼
+    Immediate Bilingual Subtitle Display                         Progressive Transcript Hydration
+```
 
 ---
 
@@ -445,17 +569,42 @@ Used on mobile app launch to check for updates, breaking changes, or maintenance
 - **Response:**
   ```json
   {
-    "version": "1.1.1",
+    "version": "1.1.35",
     "minSupportedVersion": "1.0.0",
-    "buildDate": "2026-09-09",
+    "buildDate": "2026-09-14",
     "forceUpdate": false,
     "maintenance": false,
     "highlights": {
-      "en": ["NLP-Powered English Tokenization", "Zero False Positives", "CEFR Grammar Patterns"],
-      "vi": ["Phân tích ngữ pháp tiếng Anh bằng NLP", "Loại bỏ hoàn toàn nhận diện nhầm"],
-      "ja": ["NLPによる高精度な英語形態素解析"],
-      "ko": ["NLP 기반 영어 형태소 분석 도입"],
-      "zh": ["引入NLP驱动的英语形态分词"]
+      "en": [
+        "Responsive Modal & Bottom-Sheet Viewport Resiliency: Eliminates dual safe-area padding stacking, enforces strict viewport height clamping on virtual keyboards, preserves thin accessible scrollbars, and makes sheet dismissals idempotent and race-free.",
+        "Universal Playback Pause Coordination: Introduces tokenized pause lock coordination across all screen sizes for seamless word lookups, throttles time tracking to 150ms intervals, and cleans up document listeners on volume sliders.",
+        "CJK Typography & Layout Shift Elimination (Zero CLS): Implements native CJK line breaking (keep-all for Korean, strict for Japanese/Chinese), pre-allocates dual-subtitle and history hero slots, and virtualizes cue items with content-visibility.",
+        "Accessible Controls & Embed Error Recovery: Full ARIA slider and pressed states across player/subtitle controls, screen-reader compliant skeleton loading, and interactive error banners with direct YouTube fallback links."
+      ],
+      "vi": [
+        "Tối Ưu Bottom-Sheet & Khung Nhìn Di Động: Loại bỏ cộng dồn khoảng đệm safe-area, giới hạn chiều cao chính xác khi bật bàn phím ảo, phục hồi thanh cuộn mảnh thanh thoát và triệt tiêu lỗi chạm đóng kép.",
+        "Điều Phối Tạm Dừng Video Thông Minh: Tự động giữ trạng thái tạm dừng video khi tra từ trên mọi thiết bị bằng khóa token, giãn nhịp cập nhật thời gian xuống 150ms và dọn dẹp bộ lắng nghe sự kiện trên thanh âm lượng.",
+        "Nâng Cấp Kiểu Chữ CJK & Triệt Tiêu Giật Bố Cục (Zero-CLS): Áp dụng ngắt dòng tự nhiên cho tiếng Hàn, Nhật, Trung; phân bổ trước không gian cho phụ đề song ngữ và thẻ xem tiếp; ảo hóa danh sách phụ đề với content-visibility.",
+        "Tiếp Cận Toàn Diện (a11y) & Khôi Phục Lỗi Nhúng: Bổ sung đầy đủ thuộc tính ARIA cho các thanh trượt và nút chuyển đổi, chuẩn hóa khung xương tải trang cho trình đọc màn hình, và hiển thị bảng thông báo kèm liên kết YouTube khi video bị chặn nhúng."
+      ],
+      "ja": [
+        "ボトムシートとモバイル表示領域の最適化: セーフエリア余白の二重加算を解消し、仮想キーボード表示時の高さを厳密に制御。視認性の高いスクロールバーを維持し、シート終了時の競合を完全防止。",
+        "再生・一時停止の統合トークン制御: デスクトップ・モバイルを問わず単語検索時の一時停止ロックを導入し、再生進捗追跡を150ms間隔に最適化。音量スライダーのイベントリスナー漏れも完全解消。",
+        "CJKタイポグラフィとレイアウトシフト（CLS）の根絶: 韓国語（keep-all）や日本語・中国語（厳格な禁則処理）の自然な改行に対応。二重字幕や履歴カードの高さを事前確保し、content-visibilityで描画を軽量化。",
+        "アクセシビリティ向上と埋め込みエラー復旧: プレーヤーや字幕操作ボタンにARIA属性を完全実装。スクリーンリーダー対応のスケルトン表示と、埋め込み制限動画向けYouTube直接遷移バナーを新設。"
+      ],
+      "ko": [
+        "바텀 시트 및 모바일 뷰포트 반응성 최적화: 안전 영역(Safe Area) 패딩 중복 적용을 제거하고 가상 키보드 실행 시 화면 높이를 정밀 제어하며 슬림 스크롤바 유지 및 시트 닫힘 충돌을 완전 방지.",
+        "스마트 비디오 일시정지 조율 시스템: 모든 화면 크기에서 단어 검색 시 재생 상태를 토큰 락으로 안전하게 일시정지하고, 150ms 단위 재생 추적으로 렌더링 부하를 줄이며 볼륨 슬라이더 리스너 누수를 제거.",
+        "한중일 타이포그래피 및 레이아웃 이동(Zero-CLS) 차단: 한국어 단어 단위 줄바꿈(keep-all) 및 일본어·중국어 금칙 처리를 적용하고 이중 자막과 이어보기 영역 공간을 사전 할당하며 자막 목록 렌더링을 최적화.",
+        "웹 접근성(a11y) 강화 및 임베드 오류 복구: 모든 플레이어 및 자막 토글 버튼에 ARIA 상태를 추가하고 스크린 리더 표준 로딩 스켈레톤을 적용하며 임베드 제한 시 YouTube 바로가기 복구 배너를 지원."
+      ],
+      "zh": [
+        "抽屉弹窗与移动视口适配升级: 消除安全区域内边距的双重叠加，精准限制虚拟键盘弹出时的视口最大高度，保留纤细滚动条并杜绝弹窗关闭时出现的竞态冲突。",
+        "全端智能暂停协调器: 无论桌面还是移动端，查词时均通过令牌锁保持视频精准暂停与恢复，将播放时间追踪节流至150毫秒，并清理音量条全局监听泄露。",
+        "中日韩排版优化与零布局偏移 (Zero-CLS): 引入韩文自然断词 (keep-all) 及中日文严格避头尾排版规范，提前锁定双语字幕与历史续播占位高度，并借助 content-visibility 提升长字幕流畅度。",
+        "无障碍增强与嵌入错误恢复: 为播放器及字幕工具栏全量补齐 ARIA 滑块与按下状态，规范骨架屏屏幕朗读器支持，并针对禁止外链播放的视频提供直达 YouTube 的快捷恢复卡片。"
+      ]
     }
   }
   ```
@@ -749,6 +898,99 @@ class SubtitleCue {
   }
 }
 
+class AvailableLanguages {
+  final List<String> native;
+  final List<String> ai;
+
+  AvailableLanguages({
+    this.native = const [],
+    this.ai = const [],
+  });
+
+  factory AvailableLanguages.fromJson(Map<String, dynamic>? json) {
+    if (json == null) return AvailableLanguages();
+    return AvailableLanguages(
+      native: (json['native'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
+      ai: (json['ai'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
+    );
+  }
+
+  Map<String, dynamic> toJson() => {'native': native, 'ai': ai};
+}
+
+class TranscriptResponse {
+  final bool success;
+  final String videoId;
+  final String? language;
+  final String? requestedLanguage;
+  final String? status; // 'processing' during Gladia ASR
+  final String? resultUrl;
+  final String? source; // 'cache' | 'native' | 'ai' | 'none'
+  final String? sourceDetail;
+  final bool languageMismatch;
+  final List<SubtitleCue> segments;
+  final AvailableLanguages availableLanguages;
+  final List<String> subLanguages;
+  final Map<String, String> levels;
+  final bool whisperAvailable;
+  final int diamonds;
+  final int maxDiamonds;
+  final int? nextRegenAt;
+  final String? errorCode;
+  final String? error;
+
+  TranscriptResponse({
+    required this.success,
+    required this.videoId,
+    this.language,
+    this.requestedLanguage,
+    this.status,
+    this.resultUrl,
+    this.source,
+    this.sourceDetail,
+    this.languageMismatch = false,
+    this.segments = const [],
+    required this.availableLanguages,
+    this.subLanguages = const [],
+    this.levels = const {},
+    this.whisperAvailable = false,
+    this.diamonds = 0,
+    this.maxDiamonds = 5,
+    this.nextRegenAt,
+    this.errorCode,
+    this.error,
+  });
+
+  bool get isProcessing => status == 'processing' && resultUrl != null;
+
+  factory TranscriptResponse.fromJson(Map<String, dynamic> json) {
+    return TranscriptResponse(
+      success: json['success'] as bool? ?? false,
+      videoId: json['videoId'] as String? ?? '',
+      language: json['language'] as String?,
+      requestedLanguage: json['requestedLanguage'] as String?,
+      status: json['status'] as String?,
+      resultUrl: json['resultUrl'] as String?,
+      source: json['source'] as String?,
+      sourceDetail: json['sourceDetail'] as String?,
+      languageMismatch: json['languageMismatch'] as bool? ?? false,
+      segments: (json['segments'] as List<dynamic>?)
+              ?.map((s) => SubtitleCue.fromJson(s as Map<String, dynamic>))
+              .toList() ??
+          [],
+      availableLanguages: AvailableLanguages.fromJson(json['availableLanguages'] as Map<String, dynamic>?),
+      subLanguages: (json['subLanguages'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
+      levels: (json['levels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v.toString())) ?? {},
+      whisperAvailable: json['whisperAvailable'] as bool? ?? false,
+      diamonds: json['diamonds'] as int? ?? 0,
+      maxDiamonds: json['maxDiamonds'] as int? ?? 5,
+      nextRegenAt: json['nextRegenAt'] as int?,
+      errorCode: json['errorCode'] as String?,
+      error: json['error'] as String?,
+    );
+  }
+}
+
 class GrammarPattern {
   final String id;
   final String language;
@@ -934,39 +1176,37 @@ class VocaApiClient {
     ));
   }
 
-  /// 1. Fetch transcript with Gladia ASR auto-polling support
-  Future<List<SubtitleCue>> getTranscript({
+  /// 1. Fetch transcript with Gladia ASR auto-polling & background auto-resumption support
+  Future<TranscriptResponse> getTranscript({
     required String videoId,
     required String lang,
     bool preferAI = false,
+    bool forceRefresh = false,
     String? turnstileToken,
+    int? duration,
     Function(String status)? onProgress,
   }) async {
     final response = await _dio.post('/api/transcript', data: {
       'videoId': videoId,
       'lang': lang,
       'preferAI': preferAI,
+      'forceRefresh': forceRefresh,
       if (turnstileToken != null) 'turnstileToken': turnstileToken,
+      if (duration != null) 'duration': duration,
     });
 
-    final data = response.data;
+    final res = TranscriptResponse.fromJson(response.data as Map<String, dynamic>);
 
-    // Handle Gladia AI queued polling
-    if (data['status'] == 'processing' && data['resultUrl'] != null) {
-      onProgress?.call('Transcribing audio with AI...');
-      return _pollGladiaResult(videoId, lang, data['resultUrl'] as String, onProgress);
+    // Handle Gladia AI queued polling (newly started OR auto-resumed from pending D1 state)
+    if (res.isProcessing && res.resultUrl != null) {
+      onProgress?.call('Transcribing audio with Gladia AI...');
+      return _pollGladiaResult(videoId, lang, res.resultUrl!, onProgress);
     }
 
-    if (data['success'] == true && data['segments'] != null) {
-      return (data['segments'] as List)
-          .map((s) => SubtitleCue.fromJson(s as Map<String, dynamic>))
-          .toList();
-    }
-
-    throw Exception(data['error'] ?? 'Failed to load transcript');
+    return res;
   }
 
-  Future<List<SubtitleCue>> _pollGladiaResult(
+  Future<TranscriptResponse> _pollGladiaResult(
     String videoId,
     String lang,
     String resultUrl,
@@ -974,7 +1214,7 @@ class VocaApiClient {
   ) async {
     const int maxRetries = 20; // 60 seconds max
     for (int i = 0; i < maxRetries; i++) {
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(milliseconds: 2800));
       onProgress?.call('AI transcription in progress (${(i + 1) * 3}s)...');
 
       final pollRes = await _dio.post('/api/transcript', data: {
@@ -983,13 +1223,15 @@ class VocaApiClient {
         'resultUrl': resultUrl,
       });
 
-      if (pollRes.data['success'] == true && pollRes.data['segments'] != null) {
-        return (pollRes.data['segments'] as List)
-            .map((s) => SubtitleCue.fromJson(s as Map<String, dynamic>))
-            .toList();
+      final parsed = TranscriptResponse.fromJson(pollRes.data as Map<String, dynamic>);
+      if (parsed.success) {
+        return parsed;
+      }
+      if (parsed.errorCode != null && parsed.errorCode != 'AI_PROCESSING') {
+        throw Exception(parsed.error ?? 'AI transcription failed');
       }
     }
-    throw Exception('Gladia transcription timed out');
+    throw Exception('Gladia transcription timed out after 60s');
   }
 
   /// 2. Batch tokenize subtitle cues (videoId is REQUIRED)
@@ -1027,7 +1269,51 @@ class VocaApiClient {
     return DictionaryResult.fromJson(response.data as Map<String, dynamic>);
   }
 
-  /// 4. Synchronized dual subtitles
+  /// 4. Urgent seek micro-batch (< 200ms) for immediate bilingual cue display
+  Future<void> translateUrgentSeek({
+    required List<SubtitleCue> cues,
+    required int activeIndex,
+    required String sourceLang,
+    required String targetLang,
+  }) async {
+    if (activeIndex < 0 || activeIndex >= cues.length) return;
+    final end = (activeIndex + 3).clamp(0, cues.length);
+    final slice = cues.sublist(activeIndex, end);
+    final missing = slice.where((c) => c.translation == null || c.translation!.isEmpty).toList();
+    if (missing.isEmpty) return;
+
+    final translations = await translateBatch(
+      texts: missing.map((c) => c.text).toList(),
+      sourceLang: sourceLang,
+      targetLang: targetLang,
+    );
+
+    for (int i = 0; i < missing.length && i < translations.length; i++) {
+      missing[i].translation = translations[i];
+    }
+  }
+
+  /// 5. Low-latency batch translation (Edge LRU in-memory + KV cache)
+  Future<List<String>> translateBatch({
+    required List<String> texts,
+    required String sourceLang,
+    required String targetLang,
+  }) async {
+    if (texts.isEmpty) return [];
+    final response = await _dio.post(
+      '/api/translate/batch',
+      data: {
+        'texts': texts,
+        'source': sourceLang,
+        'target': targetLang,
+      },
+    );
+
+    final list = response.data['translations'] as List<dynamic>?;
+    return list?.map((e) => e.toString()).toList() ?? [];
+  }
+
+  /// 6. Synchronized whole-video dual subtitles (Cloudflare R2 cached)
   Future<List<SubtitleCue>> getDualSubtitles({
     required String videoId,
     required String sourceLang,
@@ -1371,14 +1657,15 @@ class InteractiveSubtitleView extends StatelessWidget {
 
 ---
 
-## 8. Mobile Subtitle Lifecycle & Sticky Display Rule
+## 8. Mobile Subtitle Lifecycle & Production Player Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ 1. VIDEO LOAD                                               │
+│ 1. VIDEO LOAD / SWITCH                                      │
 │    VocaApiClient.getTranscript(videoId, lang)               │
-│    VocaApiClient.tokenizeBatch(videoId, lang, texts)        │
-│    GrammarEngine.detectPatterns(cue.tokens, lang)           │
+│    • Success: load cues, tokenize, detect grammar           │
+│    • Mismatch (languageMismatch: true): open Track Picker   │
+│    • Processing: resume polling loop with resultUrl         │
 └──────────────────────────────┬──────────────────────────────┘
                                │
                                ▼
@@ -1386,18 +1673,77 @@ class InteractiveSubtitleView extends StatelessWidget {
 │ 2. PLAYER TICKER LOOP (100ms interval)                      │
 │    Listen to YouTube Player currentTime                     │
 │    Find active cue using Sticky Subtitle Rule               │
+│    On seek: trigger Urgent Micro-Batch (< 200ms)            │
 └──────────────────────────────┬──────────────────────────────┘
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 3. INTERACTION                                              │
+│ 3. ZERO-CLS DISPLAY & INTERACTION                           │
+│    Top-anchored subtitle overlay (no vertical layout shift) │
 │    Tap Token   -> Open Dictionary BottomSheet & Add to SRS  │
 │    Tap Grammar -> Open Grammar BottomSheet & Formations     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### The Sticky Subtitle Display Rule
-Raw YouTube timed text contains 0.2s–0.8s gaps between phrases. If subtitles are hidden strictly when `currentTime > cue.start + cue.duration`, the subtitles flicker on and off.  
+### 8.1. AppLifecycleState Integration (Resilient ASR Polling & Backgrounding)
+When mobile users minimize the app or lock their phone while Gladia AI is transcribing, HTTP sockets may disconnect or the OS may suspend timers.
+Mobile apps must implement `WidgetsBindingObserver` to persist active polling jobs:
+
+```dart
+class VideoPlayerState extends State<VideoPlayerPage> with WidgetsBindingObserver {
+  String? _activeResultUrl;
+  String? _currentVideoId;
+  String? _currentLang;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && _activeResultUrl != null) {
+      // Resume polling when returning to foreground
+      _pollActiveGladiaJob();
+    }
+  }
+
+  Future<void> _pollActiveGladiaJob() async {
+    if (_currentVideoId == null || _currentLang == null) return;
+    try {
+      final res = await vocaApi.getTranscript(
+        videoId: _currentVideoId!,
+        lang: _currentLang!,
+      );
+      if (res.success) {
+        setState(() {
+          _activeResultUrl = null;
+          _cues = res.segments;
+        });
+      }
+    } catch (e) {
+      print('Failed to resume Gladia polling: $e');
+    }
+  }
+}
+```
+*Edge Invariant:* Even if `_activeResultUrl` is lost from memory (e.g. process terminated), calling `getTranscript(videoId, lang)` automatically detects the active job in Cloudflare D1 and returns `{ status: "processing", resultUrl }`!
+
+### 8.2. Two-Tier Dual Subtitle Streaming & Seek Coordination
+When scrubbing the video timeline:
+1. Immediately trigger `vocaApi.translateUrgentSeek(cues, activeIndex, sourceLang, targetLang)`.
+2. This translates `cues[activeIndex..activeIndex+2]` in < 200ms.
+3. Once the active cue is translated, queue the remaining video cues in background batches of 40–60 items without starving the player frame rate.
+
+### 8.3. The Sticky Subtitle Display Rule
+Raw YouTube timed text contains 0.2s–0.8s gaps between phrases. If subtitles are hidden strictly when `currentTime > cue.start + cue.duration`, the subtitles flicker on and off.
 
 **Flutter Controller Logic:**
 ```dart
@@ -1422,17 +1768,49 @@ SubtitleCue? getActiveCue(double currentTime, List<SubtitleCue> cues) {
 }
 ```
 
+### 8.4. Zero-CLS Top-Anchored Subtitle Layout
+Dual-language subtitles alternate between 1-line and 2-line states depending on translation availability and screen width. Bottom-aligned overlays bounce up and down (Cumulative Layout Shift).  
+To ensure **Zero-CLS**:
+1. Anchor the subtitle container from the top of the subtitle area or enforce a minimum container height (`constraints: BoxConstraints(minHeight: 76)`).
+2. Align content with `MainAxisSize.min` and center alignment.
+3. Pre-allocate the secondary translation line slot with invisible padding if empty.
+
+### 8.5. Subtitle Track Selection & Language Mismatch Sheet Flow
+When `res.languageMismatch == true`, the video only contains native captions in a foreign language (e.g. English for a Japanese study session).
+Show a Modal Bottom Sheet with two options:
+1. **Switch Study Track**:
+   ```dart
+   ElevatedButton(
+     onPressed: () => loadTranscript(videoId, availableLanguages.native.first),
+     child: Text('Switch to ${availableLanguages.native.first} native captions'),
+   );
+   ```
+2. **Transcribe with Gladia AI**:
+   ```dart
+   ElevatedButton(
+     onPressed: () async {
+       final token = await TurnstileDialog.show(context);
+       if (token != null) {
+         loadTranscript(videoId, targetStudyLang, preferAI: true, turnstileToken: token);
+       }
+     },
+     child: Text('Transcribe $targetStudyLang with AI (1-4 Diamonds)'),
+   );
+   ```
+
 ---
 
 ## 9. Error Handling & Retry Policies
 
 | HTTP Status | Error Code / Trigger | Client Action | Retry Policy |
 | :---: | :--- | :--- | :--- |
-| `200` | `status: "processing"` | Gladia AI audio speech-to-text queued | Poll `POST /api/transcript` with `resultUrl` every 3s (max 60s) |
+| `200` | `status: "processing"` | Gladia AI audio speech-to-text queued | Poll `POST /api/transcript` with `resultUrl` every 2.5–3s (max 60s) |
+| `200` | `languageMismatch: true` | Foreign-language native subtitles found | Show Subtitle Track Picker sheet (Switch Language vs Gladia AI) |
 | `400` | `INVALID_VIDEO_ID` | Video ID does not match `^[a-zA-Z0-9_-]{11}$` | Show invalid video URL prompt | Do not retry |
 | `400` | `VIDEO_TOO_LONG` | Video length exceeds account tier cap | Show Pro/Premium upgrade sheet | Do not retry |
 | `401` | `UNAUTHORIZED` | Expired PocketBase JWT token | Call `pb.collection('users').authRefresh()` and retry |
 | `403` | `BOT_DETECTED` | Missing or default `User-Agent` | Set descriptive `User-Agent: VocaMobile/1.0.0` |
+| `403` | `CAPTCHA_FAILED` | Turnstile verification failed | Show Turnstile CAPTCHA dialog and retry |
 | `403` | `NO_DIAMONDS` | 0 Diamond credits and video not cached | Show Diamond balance modal with next regen time |
 | `404` | `NO_NATIVE` | No native captions available | Prompt user: "Transcribe with Gladia AI?" |
 | `429` | `RATE_LIMITED` | Rate limit window exceeded | Read `Retry-After` header and show countdown toast |
@@ -1442,10 +1820,14 @@ SubtitleCue? getActiveCue(double currentTime, List<SubtitleCue> cues) {
 ## 10. Verification & QA Testing Checklist
 
 - [ ] **Anti-Bot User-Agent Header**: Verify that all outgoing Dio requests include `User-Agent: VocaMobile/1.0.0 (...)` and that requests do NOT default to `Dart/<version>`.
+- [ ] **Low-Latency Seek Micro-Batch (< 200ms)**: Scrub the player timeline and verify that `translateUrgentSeek` delivers translations for the active cue and next 2 cues in < 200ms without blocking UI.
 - [ ] **Batch Tokenization**: Verify that `POST /api/tokenize-batch/:lang` includes both `videoId` and `texts`, returning matching tokens with `reading`, `romanization`, `pinyin`, `baseForm`, and `partOfSpeech`.
+- [ ] **Pre-Cleaned 3-Tier Speech Chunking**: Verify that auto-generated Chinese/Japanese transcripts are clean: no HTML entities, no `[Music]` tags, and long monologues split at natural particle/discourse boundaries into 1–2 line cues.
+- [ ] **Gladia AI Auto-Resumption**: Start Gladia transcription, kill the mobile app or minimize it, then reopen the video; verify calling `getTranscript(videoId, lang)` automatically recovers the pending job without charging diamonds again.
+- [ ] **Language Mismatch Handling**: Open a video with only English captions while learning Japanese; verify the Subtitle Track Picker sheet appears offering track switching or Gladia AI generation.
+- [ ] **Zero-CLS Subtitles**: Verify that when secondary translations appear or disappear, the primary subtitle does not jump vertically on screen.
 - [ ] **Grammar Matching**: Test Japanese subtitle (`日本語を勉強している`) and verify that `ている` triggers a GrammarMatch with level `JLPT N5`.
 - [ ] **Chinese Correlatives**: Test `虽然天气冷但是很开心` and verify that `虽然...但是` triggers a split GrammarMatch.
-- [ ] **Gladia AI Polling**: Test a video with no native captions; verify polling loops every 3s and completes gracefully when Gladia finishes.
 - [ ] **PocketBase Double Quotes**: Verify all PocketBase query filters use double quotes: `filter: 'user = "' + userId + '"'`.
 - [ ] **Offline Card Creation**: Save flashcards in Airplane Mode; verify IDs match `generateDeterministicRecordId([userId, word, lang])` and sync without 409 conflict errors.
 - [ ] **VietQR Intent**: Verify clicking "Pay with Mobile Banking" successfully triggers bank app deep links with valid payload descriptions (`VOCA{orderCode}`).

@@ -2,7 +2,8 @@
     <div class="layout-main">
         <app-video-player (fullscreenWordClicked)="onWordClicked($event)"
             (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
-            (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()" />
+            (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()"
+            (selectTrack)="onSelectTrack($event)" (triggerAI)="onManualAITrigger()" />
 
         <!-- Mobile Playlist Bar (Compact, zero-layout-shift YouTube Mobile style) -->
         @if (showMobilePlaylistCard() && !playerView.isMiniplayer()) {
@@ -123,9 +124,9 @@
             </div>
 
             @if (isFeedLoading()) {
-            <div class="yt-video-grid skeleton-container">
+            <div class="yt-video-grid skeleton-container" role="status" [attr.aria-label]="i18n.t('common.loading') || 'Loading'">
                 @for (_ of [1, 2, 3, 4, 5, 6, 7, 8]; track $index) {
-                <div class="yt-video-card yt-video-card--skeleton">
+                <div class="yt-video-card yt-video-card--skeleton" aria-hidden="true">
                     <div class="yt-video-card__thumbnail"></div>
                     <div class="yt-video-card__details">
                         <div class="yt-skeleton-avatar"></div>
@@ -143,7 +144,7 @@
             <div class="yt-video-grid">
                 @for (item of feedItems(); track item.kind === 'video' ? item.video.videoId : item.playlist.id; let i = $index) {
                     @if (item.kind === 'video') {
-                    <article class="yt-video-card" (click)="onPlayRecommendedVideo(item.video)">
+                    <article class="yt-video-card" role="button" tabindex="0" (click)="onPlayRecommendedVideo(item.video)" (keydown.enter)="onPlayRecommendedVideo(item.video)">
                         <div class="yt-video-card__thumbnail">
                             <img [src]="item.video.thumbnail" [alt]="item.video.title" loading="lazy" />
                             @if (item.video.duration) {
@@ -198,7 +199,7 @@
                         </div>
                     </article>
                     } @else {
-                    <article class="yt-video-card yt-video-card--playlist" (click)="startPlaylist(item.playlist)">
+                    <article class="yt-video-card yt-video-card--playlist" role="button" tabindex="0" (click)="startPlaylist(item.playlist)" (keydown.enter)="startPlaylist(item.playlist)">
                         <div class="yt-video-card__thumbnail">
                             @if (item.playlist.thumbnail) {
                             <img [src]="item.playlist.thumbnail" [alt]="item.playlist.title" loading="lazy" />
@@ -287,7 +288,7 @@
                     <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
                     <p class="empty-state__description">{{ i18n.t('level.noVideos') }}</p>
                 </div>
-                <button type="button" class="btn btn-secondary btn-sm" (click)="videoLevelFilter.set('all')">
+                <button type="button" class="btn btn-secondary btn-sm" (click)="selectFeedTab('videos', 'all')">
                     {{ i18n.t('level.allLevels') || 'All Levels' }}
                 </button>
             </div>
@@ -317,8 +318,8 @@
         <div class="card unified-sidebar">
             @if (hasPlaylist()) {
             <!-- Segmented Control Tab Switcher -->
-            <div class="sidebar-segmented-bar">
-                <button class="segmented-tab" [class.active]="sidebarTab() === 'playlist'"
+            <div class="sidebar-segmented-bar" role="tablist">
+                <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'playlist'" [class.active]="sidebarTab() === 'playlist'"
                     (click)="sidebarTab.set('playlist')">
                     <app-icon name="list-video" [size]="15" />
                     <span>{{ i18n.t('playlist.playlist') }}</span>
@@ -326,7 +327,7 @@
                     <span class="tab-count-pill">{{ pl.videos.length }}</span>
                     }
                 </button>
-                <button class="segmented-tab" [class.active]="sidebarTab() === 'vocab'"
+                <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'vocab'" [class.active]="sidebarTab() === 'vocab'"
                     (click)="sidebarTab.set('vocab')">
                     <app-icon name="book-open" [size]="15" />
                     <span>{{ i18n.t('vocab.vocabulary') }}</span>
@@ -531,7 +532,7 @@
     <div class="dialog-content ai-confirm-modal">
         <div class="dialog-header">
             <div class="dialog-header__title-box">
-                <app-icon name="sparkles" [size]="20" class="dialog-header__icon" />
+                <app-icon name="subtitles-ai" [size]="20" class="dialog-header__icon" />
                 <h2 class="dialog-title">{{ i18n.t('subtitle.generateAi') || 'Generate AI Subtitles' }}</h2>
             </div>
             <p class="dialog-subtitle">
@@ -590,7 +591,7 @@
                 <app-icon name="loader" [size]="16" class="spin-icon" />
                 <span>{{ i18n.t('common.loading') || 'Generating...' }}</span>
                 } @else {
-                <app-icon name="sparkles" [size]="16" />
+                <app-icon name="subtitles-ai" [size]="16" />
                 <span>{{ i18n.t('subtitle.generate') || 'Generate' }}</span>
                 }
             </button>

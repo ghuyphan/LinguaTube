@@ -227,8 +227,8 @@ app.post('/api/translate/batch', async (req, res) => {
         if (!Array.isArray(texts)) {
             return res.status(400).json({ error: 'texts must be an array' });
         }
-        if (texts.length > 100) {
-            return res.status(400).json({ error: 'Batch size exceeds maximum limit of 100' });
+        if (texts.length > 80) {
+            return res.status(400).json({ error: 'Batch size exceeds maximum limit of 80' });
         }
         for (const t of texts) {
             if (typeof t === 'string' && t.length > 1500) {
@@ -954,17 +954,7 @@ app.get('/api/payment/check-status', (req, res) => {
     });
 });
 
-app.post('/api/payment/simulate-transfer', (req, res) => {
-    const { orderCode } = req.body || {};
-    const code = parseInt(orderCode, 10);
-    const order = code ? devOrders.get(code) : null;
-    const grantedDiamonds = order?.diamonds || 25;
-    if (code && order) {
-        devOrders.set(code, { ...order, status: 'PAID' });
-    }
-    devDiamonds = grantedDiamonds;
-    res.json({ success: true, status: 'PAID' });
-});
+
 
 app.post('/api/payment/webhook', (req, res) => {
     const data = req.body?.data || req.body || {};
@@ -1096,13 +1086,7 @@ app.post('/api/leaderboard', (req, res) => {
     res.json({ success: true, updated: true, userId, xp, weeklyXp, level });
 });
 
-// Health check
-app.get('/api/health', (req, res) => {
-    res.json({
-        status: 'ok',
-        hasGladiaKey: !!process.env.GLADIA_API_KEY
-    });
-});
+
 
 const TRANSCRIPTS_CACHE_DIR = path.join(__dirname, 'transcripts_cache');
 if (!fs.existsSync(TRANSCRIPTS_CACHE_DIR)) {
@@ -1150,6 +1134,95 @@ const MIN_CUE_GAP = 0.5;
 const MIN_CUE_DURATION = 0.5;
 const MAX_CUE_DURATION = 5.0;
 
+function cleanCueText(rawText) {
+    if (!rawText || typeof rawText !== 'string') return '';
+    return rawText
+        .replace(/<[^>]+>/g, '') // Strip HTML/VTT tags
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;|&apos;/g, "'")
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
+        .replace(/\[(?:Music|音楽|Applause|Laughter|Musique|Música)\]/gi, '')
+        .replace(/[♪♫♬♩]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+const CJK_REGEX = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\uac00-\ud7af]/;
+const CJK_MAJOR_PUNCT_REGEX = /(?<=[。！？!?\n])\s*/;
+const LATIN_MAJOR_PUNCT_REGEX = /(?<=[.!?\n])\s+/;
+const CJK_MINOR_PUNCT_REGEX = /(?<=[、，,;；:：])\s*/;
+const LATIN_MINOR_PUNCT_REGEX = /(?<=[,;:])\s+/;
+const CJK_DISCOURSE_REGEX = /(?=(?:而且|但是|所以|然后|如果|因为|就是|可是|不过|虽然|那么|首先|第二|就算|终于|这样子|对我来说|另外|其实|总之|只要|比如|けど|から|ので|のに|そして|しかし|また|だから|ただし))/;
+const JA_PARTICLE_REGEX = /(?<=[はがをにでへとからまで])(?=[^\s])/;
+
+function chunkUnpunctuatedText(text, isCJK, maxLen) {
+    if (!text || text.length <= maxLen) return [text];
+
+    if (isCJK) {
+        const discourseParts = text.split(CJK_DISCOURSE_REGEX).map(p => p.trim()).filter(Boolean);
+        if (discourseParts.length > 1) {
+            const parts = [];
+            let buf = '';
+            for (const dp of discourseParts) {
+                if (buf && (buf.length + dp.length > maxLen)) {
+                    parts.push(buf);
+                    buf = dp;
+                } else {
+                    buf += dp;
+                }
+            }
+            if (buf) parts.push(buf);
+            if (parts.length > 1) return parts;
+        }
+
+        const particleParts = text.split(JA_PARTICLE_REGEX).map(p => p.trim()).filter(Boolean);
+        if (particleParts.length > 1) {
+            const parts = [];
+            let buf = '';
+            for (const pp of particleParts) {
+                if (buf && (buf.length + pp.length > maxLen)) {
+                    parts.push(buf);
+                    buf = pp;
+                } else {
+                    buf += pp;
+                }
+            }
+            if (buf) parts.push(buf);
+            if (parts.length > 1) return parts;
+        }
+
+        const targetLen = Math.min(maxLen, 22);
+        let rem = text;
+        const chunks = [];
+        while (rem.length > targetLen) {
+            const spaceIdx = rem.lastIndexOf(' ', targetLen);
+            const cutIdx = spaceIdx > 12 ? spaceIdx : targetLen;
+            chunks.push(rem.slice(0, cutIdx).trim());
+            rem = rem.slice(cutIdx).trim();
+        }
+        if (rem.length > 0) chunks.push(rem);
+        return chunks.length > 0 ? chunks : [text];
+    } else {
+        const words = text.split(/\s+/);
+        let buf = '';
+        const chunks = [];
+        for (const w of words) {
+            if (buf && (buf.length + 1 + w.length > maxLen)) {
+                chunks.push(buf);
+                buf = w;
+            } else {
+                buf = buf ? `${buf} ${w}` : w;
+            }
+        }
+        if (buf) chunks.push(buf);
+        return chunks.length > 0 ? chunks : [text];
+    }
+}
+
 function splitRunOnSegments(segments) {
     if (!segments?.length) return [];
 
@@ -1158,7 +1231,7 @@ function splitRunOnSegments(segments) {
         const text = segment.text?.trim() || '';
         if (!text) continue;
 
-        const isCJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\uac00-\ud7af]/.test(text);
+        const isCJK = CJK_REGEX.test(text);
         const maxLen = isCJK ? 22 : 48;
 
         if (text.length <= maxLen && segment.duration <= 4.5) {
@@ -1167,15 +1240,15 @@ function splitRunOnSegments(segments) {
         }
 
         const majorParts = isCJK
-            ? text.split(/(?<=[。！？!?\n])\s*/).map(p => p.trim()).filter(Boolean)
-            : text.split(/(?<=[.!?\n])\s+/).map(p => p.trim()).filter(Boolean);
+            ? text.split(CJK_MAJOR_PUNCT_REGEX).map(p => p.trim()).filter(Boolean)
+            : text.split(LATIN_MAJOR_PUNCT_REGEX).map(p => p.trim()).filter(Boolean);
 
         const refinedParts = [];
         for (const p of (majorParts.length > 0 ? majorParts : [text])) {
             if (p.length > maxLen) {
                 const subParts = isCJK
-                    ? p.split(/(?<=[、，,;；:：])\s*/).map(s => s.trim()).filter(Boolean)
-                    : p.split(/(?<=[,;:])\s+/).map(s => s.trim()).filter(Boolean);
+                    ? p.split(CJK_MINOR_PUNCT_REGEX).map(s => s.trim()).filter(Boolean)
+                    : p.split(LATIN_MINOR_PUNCT_REGEX).map(s => s.trim()).filter(Boolean);
                 if (subParts.length > 1) {
                     refinedParts.push(...subParts);
                 } else {
@@ -1186,22 +1259,31 @@ function splitRunOnSegments(segments) {
             }
         }
 
-        if (refinedParts.length <= 1) {
-            result.push({ ...segment, text });
+        const finalParts = [];
+        for (const part of (refinedParts.length > 0 ? refinedParts : [text])) {
+            if (part.length > maxLen) {
+                finalParts.push(...chunkUnpunctuatedText(part, isCJK, maxLen));
+            } else {
+                finalParts.push(part);
+            }
+        }
+
+        if (finalParts.length <= 1) {
+            result.push({ ...segment, text: finalParts[0] || text });
             continue;
         }
 
-        const totalChars = refinedParts.reduce((sum, p) => sum + p.length, 0);
+        const totalChars = finalParts.reduce((sum, p) => sum + p.length, 0);
         if (totalChars === 0) {
             result.push(segment);
             continue;
         }
 
         let currentStart = segment.start;
-        const totalDuration = segment.duration || (MIN_CUE_DURATION * refinedParts.length);
+        const totalDuration = segment.duration || (MIN_CUE_DURATION * finalParts.length);
 
-        for (let i = 0; i < refinedParts.length; i++) {
-            const part = refinedParts[i];
+        for (let i = 0; i < finalParts.length; i++) {
+            const part = finalParts[i];
             const partRatio = part.length / totalChars;
             const partDuration = Math.max(MIN_CUE_DURATION, Math.round((totalDuration * partRatio) * 100) / 100);
 
@@ -1220,7 +1302,12 @@ function splitRunOnSegments(segments) {
 
 function cleanTranscriptSegments(segments) {
     if (!segments?.length) return [];
-    const sorted = [...segments].sort((a, b) => a.start - b.start);
+    const textCleaned = segments.map(seg => ({
+        ...seg,
+        text: cleanCueText(seg.text)
+    })).filter(seg => seg.text.length > 0);
+
+    const sorted = [...textCleaned].sort((a, b) => a.start - b.start);
     const groups = [];
     let currentGroup = [];
     let groupStart = -1;
@@ -1259,11 +1346,24 @@ function cleanTranscriptSegments(segments) {
         if (index < splitSegments.length - 1) {
             const nextStart = splitSegments[index + 1].start;
             const gap = nextStart - segment.start;
-            duration = Math.min(gap, MAX_CUE_DURATION);
+            if (gap > 0) {
+                duration = Math.min(gap, MAX_CUE_DURATION);
+            } else {
+                duration = MIN_CUE_DURATION;
+            }
         } else {
             duration = Math.min(segment.duration, MAX_CUE_DURATION);
         }
-        if (duration < MIN_CUE_DURATION) duration = MIN_CUE_DURATION;
+
+        if (index < splitSegments.length - 1) {
+            const nextStart = splitSegments[index + 1].start;
+            const gap = nextStart - segment.start;
+            if (gap > 0 && duration > gap) {
+                duration = gap;
+            }
+        }
+
+        if (duration < 0.3) duration = 0.3;
         return {
             id: index,
             text: segment.text.trim(),
@@ -2293,45 +2393,45 @@ app.get('/api/version', (req, res) => {
     // Allow testing forced update & maintenance locally via query params (?mock_maintenance=true, ?mock_force=true, ?mock_version=1.1.0)
     const mockMaintenance = req.query.mock_maintenance === 'true';
     const mockForce = req.query.mock_force === 'true';
-    const mockVersion = req.query.mock_version || '1.1.33';
+    const mockVersion = req.query.mock_version || '1.1.37';
 
     res.json({
         version: mockVersion,
-        minSupportedVersion: mockForce ? '1.1.33' : '1.0.0',
-        buildDate: '2026-09-13',
+        minSupportedVersion: mockForce ? '1.1.37' : '1.0.0',
+        buildDate: '2026-09-14',
         forceUpdate: mockForce,
         maintenance: mockMaintenance,
         maintenanceMessage: mockMaintenance ? 'Development mock maintenance mode active.' : '',
         highlights: {
             en: [
-                'AI Dual Subtitle Layout Stabilization: Pre-allocated two-line bounding heights and smooth opacity transitions eliminate vertical layout shifts across inline, fullscreen, and transcript list views when AI translations load',
-                'Refined Minimalist AI Design: Replaced the wand icon and purple/pink glowing gradient with a modern, brand-consistent coral accent ring and clean sparkles aesthetic',
-                'Instant Subtitle Availability Discovery: Subtitle presence checks for videos without native transcripts now short-circuit in < 20ms using global negative caching and D1 registries, eliminating 15s upstream timeouts',
-                'Natural Speech Utterance Splitting: AI transcription turns and long monologue blocks are split into natural, readable 1–2 line cues at sentence and clause punctuation boundaries'
+                'AI Subtitle Waveform Icon: Added a dedicated speech-to-text audio waveform icon (subtitles-ai) that cleanly distinguishes Whisper AI transcription from native YouTube captions, with diamond-accented player indicators.',
+                'Zero-Flash Video Resume & Zone Optimization: Video playback now resumes instantly at the saved timestamp without initial audio/visual glitch at 0:00, with player time-tracking running smoothly outside Angular Zone.',
+                'Robust Playback & Tab-Switch State Recovery: Fixed race conditions during play/pause toggling and tab switching, ensuring video pause locks and intended states persist accurately.',
+                'Design Consistency & Unified Tokens: Streamlined border variables, diamond balance icons, and responsive sidebar heights across desktop and mobile layouts.'
             ],
             vi: [
-                'Ổn Định Bố Cục Phụ Đề Song Ngữ AI: Thiết lập vùng đệm 2 dòng cố định và hiệu ứng mờ dần mượt mà, triệt tiêu hoàn toàn hiện tượng chữ bị giật nảy khi tải bản dịch AI trên cả chế độ khung, toàn màn hình và danh sách câu',
-                'Thiết Kế AI Tinh Tế & Đồng Bộ: Thay thế biểu tượng đũa phép và dải màu tím phát sáng bằng vòng quay màu san hô thương hiệu sang trọng cùng biểu tượng ánh sao tối giản',
-                'Phát Hiện Phụ Đề Tức Thì: Kiểm tra tính sẵn sàng của phụ đề cho các video không có phụ đề gốc giờ đây hoàn tất trong < 20ms nhờ bộ nhớ đệm phủ định toàn cục và D1, loại bỏ hoàn toàn độ trễ 15 giây',
-                'Tách Câu Hội Thoại Tự Nhiên: Các đoạn nói dài từ AI transcription được tách thông minh thành các câu phụ đề 1–2 dòng vừa mắt tại các dấu ngắt câu và mệnh đề'
+                'Biểu Tượng Sóng Âm Phụ Đề AI: Bổ sung biểu tượng sóng âm nhận dạng giọng nói chuyên dụng (subtitles-ai), phân biệt rõ ràng phụ đề chuyển giọng nói Whisper AI với phụ đề gốc YouTube kèm dải màu kim cương nổi bật.',
+                'Khôi Phục Video Không Giật & Tối Ưu Zone: Video tiếp tục phát ngay lập tức tại mốc thời gian đã lưu mà không bị chớp giật hay phát âm thanh ở 0:00, vòng lặp theo dõi thời gian chạy mượt mà ngoài Angular Zone.',
+                'Ổn Định Phát Video & Trạng Thái Chuyển Tab: Khắc phục triệt để hiện tượng xung đột trạng thái khi bấm phát/dừng và chuyển đổi tab, đảm bảo khóa tạm dừng khi tra từ hoạt động chính xác.',
+                'Đồng Bộ Thiết Kế & Hệ Thống Biến Giao Diện: Chuẩn hóa viền sáng/tối, biểu tượng số dư kim cương và chiều cao thanh bên co giãn tối ưu trên mọi kích thước màn hình.'
             ],
             ja: [
-                'AI二重字幕レイアウトの安定化: 2行分の表示高を事前確保しスムーズなフェード効果を採用することで、AI翻訳読み込み時に発生していた字幕テキストの上下ジャンプを完全に解消',
-                '洗練されたミニマルなAIデザイン: 魔法の杖アイコンや紫/ピンクのグラデーション発光を廃止し、ブランド統一のコーラルアクセントリングと星アイコンによる上品な装いに刷新',
-                '字幕有無の即時判定: 字幕が存在しない動画の確認がグローバルネガティブキャッシュとD1により20ms未満で高速完了し、15秒のタイムアウト待機を完全に解消',
-                '自然な発話単位での字幕分割: AI音声認識の長文や会話ターンを、句読点や節の境界で読みやすい1〜2行の自然な字幕キューへとインテリジェントに自動分割'
+                'AI字幕専用の音声波形アイコン: 汎用的なキラキラを廃止し、Whisper AI音声認識字幕をYouTube公式CCと明確に識別できる音声波形アイコン（subtitles-ai）とダイヤ色インジケーターを導入。',
+                'フラッシュなしの再生再開とZone最適化: 保存された再生位置から0:00の音飛び・映像チラつきなしで瞬時に再開。Angular Zone外での追跡ループによりCPU負荷を大幅削減。',
+                '再生・一時停止とタブ切替の安定化: 再生・一時停止の連打やブラウザタブ切替時の競合を解消し、単語検索時の一時停止ロックと意図した再生状態を確実に保持。',
+                'デザインシステムとトークンの統一: ライト・ダークモードの境界線やダイヤ残高アイコン、レスポンシブなサイドバー高さを統一し、視覚的一貫性を向上。'
             ],
             ko: [
-                'AI 이중 자막 레이아웃 안정화: 2줄 높이를 사전 확보하고 부드러운 페이드 전환을 적용하여 AI 번역 로드 시 인라인, 전체화면 및 자막 목록에서 텍스트가 흔들리는 현상 완전 근절',
-                '세련되고 미니멀한 AI 비주얼 디자인: 요술봉 아이콘과 보라/분홍빛 그라데이션을 걷어내고 브랜드 고유의 코랄 액센트 링과 깔끔한 스파클 아이콘으로 현대적인 감각 완성',
-                '자막 가용성 즉시 감지: 자막이 없는 비디오의 가용성 확인이 전역 네거티브 캐시 및 D1을 통해 20ms 미만으로 단축되어 15초의 업스트림 대기 시간을 완전 제거',
-                '자연스러운 발화 단위 분할: AI 전사로 생성된 긴 단락 및 대화 발화를 문장 부호와 절 경계에 맞춰 가독성 높은 1~2줄 자막으로 지능형 분할'
+                'AI 자막 전용 음성 파형 아이콘: 일반 반짝임 아이콘 대신 Whisper AI 음성인식 자막을 유튜브 공식 CC와 명확하게 구분해주는 음성 파형 아이콘(subtitles-ai) 및 다이아몬드 포인트 인디케이터를 적용했습니다.',
+                '깜빡임 없는 이어보기 및 Zone 최적화: 0:00 오디오/화면 튐 없이 저장된 시점에서 즉시 비디오가 재개되며, Angular Zone 외부에서 타이머 루프를 실행하여 렌더링 부하를 대폭 줄였습니다.',
+                '재생·일시정지 및 탭 전환 안정화: 빠른 재생 전환이나 브라우저 탭 이동 시 발생하던 상태 꼬임을 해결하고 단어 검색 일시정지 락을 정확하게 유지합니다.',
+                '디자인 일관성 및 스타일 토큰 통합: 라이트/다크 테마의 테두리 색상, 다이아몬드 잔액 아이콘, 유연한 사이드바 높이를 표준 CSS 변수로 통일했습니다.'
             ],
             zh: [
-                'AI双语字幕布局稳定性优化: 预设双行基准高度并引入平滑淡入效果，彻底杜绝AI译文加载时在主面板、全屏模式以及字幕列表中引发的字句垂直跳动',
-                '简约精致的AI视觉重塑: 移除魔杖图标与紫粉色炫光渐变，全面升级为品牌珊瑚色转圈指示环与极简星光微章',
-                '即时字幕存在性探测: 针对无原生字幕的视频，依托全局否定缓存与D1注册表在20ms内快速响应，彻底消除长达15秒的上游抓取超时等待',
-                '自然发音句断句拆分: 智能对齐标点符号与从句分界，将AI听写的大段连贯语句平滑拆分为1至2行舒适自然的字幕小句'
+                'AI 语音波形字幕图标: 新增专用语音转录波形字幕图标（subtitles-ai），替代繁复的星光图标，清晰区分 Whisper AI 语音识别字幕与 YouTube 原生 CC 字幕，搭配钻石主题指示条。',
+                '无闪烁即时续播与 Zone 性能优化: 消除播放恢复时 0:00 处的音频杂音与画面闪烁，将时间追踪循环移至 Angular Zone 之外运行，大幅降低 CPU 占用。',
+                '播放暂停协调与切台状态恢复: 彻底解决频繁点击播放/暂停及切换浏览器标签时的状态竞态问题，保障查词暂停锁与意图播放状态精确一致。',
+                '视觉规范统一与设计令牌重构: 统一明暗主题下的边框色彩变量、钻石代币图标与响应式侧边栏最大高度，强化全屏一致感。'
             ]
         }
     });

@@ -23,6 +23,7 @@ import {
 } from '../data/video-info-db.js';
 
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
+import { getPendingJob } from '../data/transcript-db.js';
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
@@ -39,7 +40,7 @@ function timer() { const start = Date.now(); return () => Date.now() - start; }
 
 // Rate limiting for transcript requests and polling
 const TRANSCRIPT_RATE_LIMIT = { max: { anonymous: 20, free: 40, pro: 80, premium: 100 }, windowSeconds: 3600, keyPrefix: 'transcript' };
-const POLL_RATE_LIMIT = { max: { anonymous: 60, free: 120, pro: 240, premium: 300 }, windowSeconds: 3600, keyPrefix: 'transcript_poll' };
+const POLL_RATE_LIMIT = { max: { anonymous: 180, free: 240, pro: 360, premium: 480 }, windowSeconds: 3600, keyPrefix: 'transcript_poll' };
 const CACHE_CONTROL = {
     R2_HIT: 'public, max-age=86400, stale-while-revalidate=86400',
     NATIVE: 'public, max-age=604800, stale-while-revalidate=86400',
@@ -176,7 +177,17 @@ export async function onRequestPost(context) {
             regenIntervalMs: diamondStatus.regenIntervalMs
         };
 
-        const orchestratorParams = { videoId: cleanVideoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration };
+        let requiredDiamonds = 1;
+        const dur = duration || knownInfo?.durationSeconds || body?.duration || 0;
+        if (dur > 35 * 60) {
+            requiredDiamonds = 4;
+        } else if (dur > 20 * 60) {
+            requiredDiamonds = 3;
+        } else if (dur > 10 * 60) {
+            requiredDiamonds = 2;
+        }
+
+        const orchestratorParams = { videoId: cleanVideoId, lang, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration, requiredDiamonds };
 
         // -------------------------------------------------------------
         // Polling existing AI
@@ -214,9 +225,14 @@ export async function onRequestPost(context) {
             }
 
             if (cached?.segments?.length > 0) {
+                const normReq = (lang || '').split('-')[0].toLowerCase();
+                const normRes = (responseLang || '').split('-')[0].toLowerCase();
+                const isMismatch = normReq !== normRes;
+
                 return jsonResponse({
                     success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
                     source: 'cache', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [responseLang], whisperAvailable: diamondInfo.diamonds > 0,
+                    languageMismatch: isMismatch,
                     levels: knownInfo?.levels || {},
                     ...diamondInfo, timing: elapsed()
                 }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
@@ -224,9 +240,24 @@ export async function onRequestPost(context) {
         }
 
         // -------------------------------------------------------------
-        // Step 2: Native
+        // Step 2: Native (or resume active pending AI job)
         // -------------------------------------------------------------
         if (!preferAI) {
+            // Check if there is an active pending AI job for this video
+            const pendingJob = await getPendingJob(db, cleanVideoId);
+            if (pendingJob?.result_url) {
+                return jsonResponse({
+                    success: false,
+                    status: 'processing',
+                    resultUrl: pendingJob.result_url,
+                    videoId: cleanVideoId,
+                    availableLanguages,
+                    whisperAvailable: true,
+                    ...diamondInfo,
+                    timing: elapsed()
+                });
+            }
+
             if (forceRefresh) {
                 deleteNoTranscript(db, cleanVideoId, lang, 'native').catch(() => {});
             } else {

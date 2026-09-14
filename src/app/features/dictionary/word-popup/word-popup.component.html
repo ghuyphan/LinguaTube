@@ -50,7 +50,8 @@
         <div class="popup-body">
             @if (dictionary.isLoading()) {
             <!-- Shimmer skeleton loading -->
-            <div class="popup-shimmer" role="status" aria-busy="true" aria-hidden="true">
+            <div class="popup-shimmer" role="status" aria-busy="true">
+                <span class="sr-only">{{ i18n.t('common.loading') || 'Loading...' }}</span>
                 <div class="shimmer-line">
                     <div class="shimmer-num"></div>
                     <div class="shimmer-text"></div>
@@ -66,10 +67,10 @@
             </div>
             } @else if (lookupError()) {
             <!-- Lookup error state -->
-            <div class="popup-error">
+            <div class="popup-error" role="alert">
                 <app-icon name="alert-circle" [size]="24" />
                 <span class="popup-error-text">{{ i18n.t('subtitle.networkErrorHint') }}</span>
-                <button class="popup-retry-btn" (click)="retryLookup()">
+                <button class="popup-retry-btn" (click)="retryLookup()" [attr.aria-label]="i18n.t('quiz.retry') || 'Retry'">
                     <app-icon name="refresh-cw" [size]="14" />
                     <span>{{ i18n.t('quiz.retry') }}</span>
                 </button>
@@ -98,7 +99,7 @@
 
                         <!-- Translated Text -->
                         @if (getTranslation($index); as translatedText) {
-                        <div class="translation-result">
+                        <div class="translation-result" aria-live="polite">
                             <img [src]="getFlagUrl(getTranslationLang($index))" class="translation-flag-img" alt="" />
                             <span>{{ translatedText }}</span>
                         </div>
@@ -144,6 +145,7 @@
                 {{ i18n.t('popup.saved') }}
             </button>
             <button class="level-select-btn" [class]="'level--' + currentLevel()" (click)="levelPickerOpen.set(true)">
+                <span class="level-dot"></span>
                 <span class="level-text">{{ i18n.t('vocab.' + currentLevel()) }}</span>
                 <app-icon name="chevron-down" [size]="12" />
             </button>

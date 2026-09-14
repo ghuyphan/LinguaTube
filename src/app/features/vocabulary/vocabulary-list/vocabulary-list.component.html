@@ -78,7 +78,8 @@
     <div class="word-list">
         <!-- Show loading only if syncing and list is empty -->
         @if (vocab.isSyncing() && vocab.vocabulary().length === 0 && auth.isLoggedIn()) {
-        <div class="vocab-items skeleton-container" role="status" aria-busy="true" aria-hidden="true">
+        <div class="vocab-items skeleton-container" role="status" aria-busy="true">
+            <span class="sr-only">{{ i18n.t('common.loading') || 'Loading...' }}</span>
             @for (i of [1, 2, 3, 4]; track i) {
             <div class="vocab-item vocab-item--skeleton">
                 <div class="vocab-item__content">

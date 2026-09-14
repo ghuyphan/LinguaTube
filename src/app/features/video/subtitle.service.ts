@@ -129,6 +129,17 @@ export class SubtitleService {
         });
       }
     });
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('online', () => {
+        this.consecutiveBatchFailures = 0;
+        this.lastBatchFailureTime = 0;
+        const currentIdx = this.currentCueIndex();
+        if (currentIdx >= 0 && this.settings.settings().showDualSubtitles) {
+          this.lazyLoadUpcomingCuesIfNeeded(currentIdx);
+        }
+      });
+    }
   }
 
   // NOTE: ngOnDestroy is intentionally not implemented because SubtitleService is provided in 'root'
@@ -747,14 +758,28 @@ export class SubtitleService {
       return;
     }
 
-    this.lastLazyLoadedIndex = endIdx;
+    // Two-tier prioritization: If the immediate active cue (or next 2 cues) are untranslated,
+    // translate only this tiny micro-batch (1-3 cues) first with 'high' priority.
+    // This resolves seek/jump latency in < 200ms instead of waiting for a full 60-cue batch.
+    const urgentEndIdx = Math.min(endIdx, startIdx + 2);
+    const urgentCues = cuesToTranslate.filter(c => {
+      const idx = cues.findIndex(cue => cue.id === c.id);
+      return idx >= startIdx && idx <= urgentEndIdx;
+    });
+
+    const targetCuesToTranslate = (urgentCues.length > 0 && cuesToTranslate.length > 3)
+      ? urgentCues
+      : cuesToTranslate;
+
+    const actualEndIdx = startIdx + targetCuesToTranslate.length - 1;
+    this.lastLazyLoadedIndex = actualEndIdx;
     this.pendingBatchStartIdx = startIdx;
-    this.pendingBatchEndIdx = endIdx;
+    this.pendingBatchEndIdx = actualEndIdx;
     this.isLazyLoadPending = true;
     this.isTranslatingDual.set(true);
     this.isDualSubLoading.set(true);
 
-    const texts = cuesToTranslate.map(c => c.text);
+    const texts = targetCuesToTranslate.map(c => c.text);
     const sessionId = this.currentDualSessionId;
     const currentVideoId = this.youtube.currentVideo()?.id;
 
@@ -775,7 +800,7 @@ export class SubtitleService {
         const newMap = new Map(this.cueTranslations());
 
         translations.forEach((trans, i) => {
-          const cue = cuesToTranslate[i];
+          const cue = targetCuesToTranslate[i];
           if (!cue) return;
           const trimmedTrans = trans?.trim();
           if (trimmedTrans && (sourceLang === targetLang || trimmedTrans !== cue.text.trim())) {
@@ -805,8 +830,10 @@ export class SubtitleService {
         this.lastBatchFailureTime = Date.now();
         this.consecutiveBatchFailures++;
         this.dualSubError.set('Translation failed');
-        // Soft retry in background
-        this.scheduleBackgroundStreamer(3000);
+        // Soft retry in background with exponential backoff if not in fatal rate limit
+        if (this.consecutiveBatchFailures < 4) {
+          this.scheduleBackgroundStreamer(3000 * Math.pow(2, this.consecutiveBatchFailures - 1));
+        }
       }
     });
   }
@@ -842,6 +869,14 @@ export class SubtitleService {
     const showDual = this.settings.settings().showDualSubtitles;
     if (!showDual || this.isLazyLoadPending || this.isBackgroundStreaming) {
       return;
+    }
+
+    // Circuit breaker: halt background streaming if consecutive failures exceeded or in cooldown
+    if (this.consecutiveBatchFailures >= 3) {
+      const cooldownMs = Math.min(15000 * Math.pow(2, Math.max(0, this.consecutiveBatchFailures - 1)), 60000);
+      if (Date.now() - this.lastBatchFailureTime < cooldownMs) {
+        return;
+      }
     }
 
     const cues = this.subtitles();
@@ -916,6 +951,8 @@ export class SubtitleService {
           this.isBackgroundStreaming = false;
           if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== currentVideoId || this.dualSubtitleTargetLang() !== targetLang) return;
 
+          this.lastBatchFailureTime = 0;
+          this.consecutiveBatchFailures = 0;
           const newMap = new Map(this.cueTranslations());
           translations.forEach((trans, i) => {
             const cue = cuesToTranslate[i];
@@ -935,8 +972,13 @@ export class SubtitleService {
         error: (err) => {
           this.isBackgroundStreaming = false;
           if (sessionId !== this.currentDualSessionId || !this.settings.settings().showDualSubtitles || this.youtube.currentVideo()?.id !== currentVideoId) return;
-          console.warn('[SubtitleService] Background dual stream chunk failed, retrying in 3s:', err?.message || err);
-          this.scheduleBackgroundStreamer(3000);
+          console.warn('[SubtitleService] Background dual stream chunk failed:', err?.message || err);
+          this.lastBatchFailureTime = Date.now();
+          this.consecutiveBatchFailures++;
+          const backoffDelay = Math.min(3000 * Math.pow(2, Math.max(0, this.consecutiveBatchFailures - 1)), 60000);
+          if (this.consecutiveBatchFailures < 4) {
+            this.scheduleBackgroundStreamer(backoffDelay);
+          }
         }
       });
   }

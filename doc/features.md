@@ -16,8 +16,12 @@ Voca accepts arbitrary YouTube video URLs:
 ### 1.2. Playback Architecture
 - Powered by `YoutubeService`, wrapping the official YouTube IFrame Player API.
 - Custom UI overlay replaces default YouTube player chrome, eliminating clutter and visual distractions.
-- **Auto-Pause on Hover / Click**:
-  When a user hovers over or clicks an interactive subtitle word to inspect its definition, video playback pauses automatically to prevent the learner from falling behind.
+- **Outside-Angular-Zone Time-Tracking**:
+  `requestAnimationFrame(track)` runs outside the Angular Zone via `NgZone.runOutsideAngular(...)`, throttling signal emissions to ~6Hz and eliminating 60–120Hz macro-task churn.
+- **Zero-Flash Resume**:
+  Player initialization precomputes `startSeconds` and seeds `playerVars.start` and `player.loadVideoById({ videoId, startSeconds })`, eliminating the audible/visual 0:00 audio flash on player reuse.
+- **Auto-Pause & Pause Locks (`acquirePauseLock`)**:
+  When inspecting subtitle words or searching definitions, tokenized pause locks prevent YouTube IFrame state events from resurrecting playback. Background visibility changes reset leave flags so tab-switches don't cause persistent pause state.
 - **Unified Course Context Switching (`LearningLanguageService`)**:
   - Modeled after top language learning applications (Duolingo, LingoDeer, Babbel), switching learning language acts as a full **Course Context Switch** rather than a passive settings toggle.
   - **Instant Overlay Dismissal**: Automatically closes open bottom sheets (`BottomSheetService.closeAll()`), settings drawers, sub-option pickers, and modal dialogs with zero manual taps.
@@ -203,13 +207,28 @@ graph TD
   - **Tier 0 (On-Device Hardware Translation)**: If the client browser supports Chrome Built-in AI / W3C `Translator` API (`self.Translator`, `self.translation`, or `self.ai.translator`), translations run entirely on-device with zero network latency, instant bilingual cue availability, and complete user privacy.
   - **Tier 1 (IndexedDB Local)**: Checks client IndexedDB (`lingua-tube-cache`) first for instant 0ms offline-ready bilingual subtitles.
   - **Tier 2 (Cloudflare R2 Edge)**: Checks server/R2 cache (`onlyCache: true`) without requiring segment payloads. If present, returns full bilingual transcript in ~50ms.
-  - **Tier 3 (JIT Rolling Window Stream with Seek Preemption)**: On cache miss or fallback from on-device translation, immediately translates upcoming cues in batches of 60 with a 40-cue lookahead buffer via direct edge Google GTX (~150ms-1.5s vs 7s+ on dead proxies) with interactive seek preemption. If the user skips or seeks in the video, non-essential background requests are cancelled immediately to deliver instantaneous translations for the new playhead.
-  - **100% Full-Transcript Background Streaming**: Instead of stalling after the initial window, `SubtitleService` continuously streams and translates remaining cues across the entire video in gentle, staggered background batches (600ms stagger) until 100% of the video's transcript is translated and stored in local IndexedDB and Cloudflare R2 crowd-cache.
-  - **Adaptive Subtitle Container Display & Zero-Shift Stabilization**:
+  - **Tier 3 (Two-Tier JIT Streaming with Immediate Micro-Batching < 200ms)**: On cache miss, immediately translates the active cue and 2 lookahead cues in an ultra-fast urgent micro-batch (`high` priority, ~100–200ms) to provide instantaneous translations without stalling playback. The remainder of the rolling window is streamed in batches of 40–60 cues. If the user skips or seeks in the video, in-flight background requests are preempted immediately to deliver instantaneous translations for the new playhead.
+  - **100% Full-Transcript Background Streaming with Circuit Breaker**: Instead of stalling after the initial window, `SubtitleService` continuously streams and translates remaining cues across the entire video in gentle, staggered background batches (600ms stagger) with exponential backoff and circuit-breaking on rate limits (429/503), until 100% of the video's transcript is translated and stored in local IndexedDB and Cloudflare R2 crowd-cache.
+  - **Adaptive Subtitle Container Display & Zero-Shift Stabilization (Zero-CLS Architecture)**:
     - Responsive subtitle boxes dynamically scale their height from 11.5rem (`has-dual-subtitles`) with `word-break: break-word` and smooth scrolling to accommodate multi-line ruby annotations and dual translation text without clipping.
+    - Top-anchored layout (`margin: 0 auto; justify-content: flex-start;`) strictly eliminates Cumulative Layout Shift (CLS) as asynchronous translations stream in below the primary cue.
     - Pre-allocates a fixed two-line bounding box for `.subtitle-translation-wrapper` (`calc(font-size * 2.8 + 6px)`) across all font sizes, ensuring translation loading (dots), 1-line translations, and 2-line translations occupy the exact same vertical space, preventing the learning subtitle above from jumping up and down.
     - Subtitle list rows utilize `.cue-translation-skeleton` to pre-allocate height while translations are fetching, eliminating transcript list scroll jumping.
     - Fullscreen subtitles utilize bottom-anchored upward expansion with a locked 2-line translation wrapper and empty fallback placeholder, ensuring zero text displacement during playback.
+- **3-Tier Intelligent Speech Segmentation for CJK & Latin**:
+  - Raw ASR output from Gladia or auto-generated YouTube captions frequently lacks punctuation, producing monolithic 15–30s cues that overwhelm learners.
+  - **Tier 1 (Sentence Boundary Splitting)**: Detects standard terminal sentence punctuation (`。！？.!?`) with lookahead whitespace and quotation handling.
+  - **Tier 2 (CJK Discourse Markers & Grammatical Particles)**: In unpunctuated Chinese and Japanese speech, splits at conjunctions and discourse particles (`而且|但是|所以|然后|因为|就是|可是|不过|虽然|那么` / `は|が|を|に|で|へと|から|まで`) while enforcing minimum duration ($\ge 1.0$s) and character lengths.
+  - **Tier 3 (Soft Length Clamping)**: If a segment exceeds natural reading length (20–22 CJK characters or 60 Latin characters), cleanly segments at word boundaries or natural phrase pauses.
+- **Subtitle Track Picker & On-Demand AI Target Generation**:
+  - The video header provides a subtitle track selector button and bottom sheet displaying all available native caption tracks and AI-generated tracks.
+  - **Speech-to-Text Waveform Caption Icon (`subtitles-ai`)**: Distinguishes AI-generated transcripts from native YouTube captions (`subtitles`) using a speech-recognition audio waveform icon rather than generic sparkle symbols.
+  - When an AI track is actively playing, the header track button and player bottom-bar CC toggle dynamically render the `subtitles-ai` icon with a diamond-accented active bar indicator (`var(--color-diamond)`).
+  - Inside the Subtitle Tracks sheet, native tracks display `[CC]` (`subtitles`), while AI-transcribed tracks display `[Waveform]` (`subtitles-ai`) and an `AI` pill badge.
+  - If the user's active learning language has no existing subtitles, a prominent "Generate AI Subtitles" action allows transcribing in their target language without leaving the player.
+- **AI Job State Resiliency & Offline Reconnect**:
+  - In-flight AI transcription jobs are persisted in `localStorage` (`voca_pending_ai_jobs`) and indexed in Cloudflare D1 `pending_jobs`.
+  - Refreshing the page, switching tabs, or temporarily losing network connectivity automatically resumes polling without double-spending Diamond credits or abandoning processing jobs.
 - **Dual Subtitle Self-Healing & Fuzzy Proximity Alignment**:
   - Cues are mapped to cached bilingual segments via timestamp proximity ($\pm 0.8$s) and text equality rather than brittle array index positions.
   - If a cached dual subtitle transcript has partial coverage ($<80\%$) or contains missing cues, the client automatically triggers background translation of missing lines during playback without causing infinite loading spinners.

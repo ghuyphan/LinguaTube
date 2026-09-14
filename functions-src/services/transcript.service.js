@@ -34,6 +34,7 @@ const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling 
 
 // In-memory job map across warm Worker isolates to avoid touching Cloudflare KV writes (Rule 2)
 const memJobMap = new Map();
+const memPollErrors = new Map();
 function setMemJob(resultUrl, videoId) {
     if (memJobMap.size > 200) {
         const firstKey = memJobMap.keys().next().value;
@@ -164,21 +165,24 @@ export class TranscriptService {
         // Never poison the negative cache on transient network failures, timeouts, or exhausted keys!
         if (nativeResult?.notFound && env.SUPADATA_API_KEY) {
             const negativeOps = [
-                markNoTranscript(db, cache, videoId, lang, 'native'),
-                markNoTranscript(db, cache, videoId, '*', 'native')
+                markNoTranscript(db, cache, videoId, lang, 'native')
             ];
-            if (options.title || options.channel || options.duration) {
-                negativeOps.push(saveVideoLanguages(
-                    db,
-                    videoId,
-                    [],
-                    options.duration || null,
-                    options.title || null,
-                    options.channel || null,
-                    false,
-                    null,
-                    options.channelAvatar || null
-                ));
+            // Only mark global wildcard if the entire video was confirmed to have 0 caption tracks
+            if (!lang || lang === '*' || nativeResult.allTracksEmpty) {
+                negativeOps.push(markNoTranscript(db, cache, videoId, '*', 'native'));
+                if (options.title || options.channel || options.duration) {
+                    negativeOps.push(saveVideoLanguages(
+                        db,
+                        videoId,
+                        [],
+                        options.duration || null,
+                        options.title || null,
+                        options.channel || null,
+                        false,
+                        null,
+                        options.channelAvatar || null
+                    ));
+                }
             }
             const runOps = Promise.allSettled(negativeOps);
             if (waitUntil) {
@@ -377,12 +381,15 @@ export class TranscriptService {
             }
 
             if (resultData.status === 'done') {
+                const sentences = resultData.result?.transcription?.sentences || [];
                 const utterances = resultData.result?.transcription?.utterances || [];
-                const segments = utterances.map((utt, index) => ({
+                const sourceList = sentences.length > 0 ? sentences : utterances;
+
+                const segments = sourceList.map((item, index) => ({
                     id: index,
-                    text: utt.text?.trim() || '',
-                    start: utt.start || 0,
-                    duration: (utt.end || 0) - (utt.start || 0)
+                    text: item.text?.trim() || '',
+                    start: item.start || 0,
+                    duration: (item.end || 0) - (item.start || 0)
                 })).filter(s => s.text);
 
                 const cleanedSegments = cleanTranscriptSegments(segments);
@@ -441,7 +448,10 @@ export class TranscriptService {
                     }
                 }
 
-                if (resultUrl) memJobMap.delete(resultUrl);
+                if (resultUrl) {
+                    memJobMap.delete(resultUrl);
+                    memPollErrors.delete(resultUrl);
+                }
                 return {
                     status: 'done',
                     videoInfo: {
@@ -458,7 +468,10 @@ export class TranscriptService {
             }
 
             if (resultData.status === 'error') {
-                if (resultUrl) memJobMap.delete(resultUrl);
+                if (resultUrl) {
+                    memJobMap.delete(resultUrl);
+                    memPollErrors.delete(resultUrl);
+                }
                 if (videoId && db) {
                     deletePendingJob(db, videoId).catch(() => {});
                 }
@@ -466,14 +479,19 @@ export class TranscriptService {
                 if (clientId && this.diamondService) {
                     const user = params.user || null;
                     const refundAmount = params.requiredDiamonds || 1;
-                    this.diamondService.refundDiamond(clientId, context, env, user, refundAmount).catch(err => {
-                        console.error('[TranscriptService] Failed to refund diamonds on Gladia error:', err.message);
-                    });
+                    const refundPromise = this.diamondService.refundDiamond(clientId, context, env, user, refundAmount);
+                    if (waitUntil) {
+                        waitUntil(refundPromise.catch(err => console.error('[TranscriptService] Failed to refund diamonds on Gladia error:', err.message)));
+                    } else {
+                        await refundPromise.catch(() => {});
+                    }
                 }
                 return { status: 'error', error: `Gladia error: ${resultData.error_message || 'Transcription failed'}` };
             }
 
-            // Still processing - return immediately to let client-side timer poll
+            // Still processing - clear any transient poll error count
+            if (resultUrl) memPollErrors.delete(resultUrl);
+
             return {
                 status: 'processing',
                 resultUrl,
@@ -484,6 +502,35 @@ export class TranscriptService {
 
         } catch (error) {
             console.error('[TranscriptService] Gladia poll exception:', error.message);
+            const errCount = (memPollErrors.get(resultUrl) || 0) + 1;
+            memPollErrors.set(resultUrl, errCount);
+
+            // After 5 consecutive poll errors, fail fast and refund to prevent infinite loop
+            if (errCount >= 5) {
+                if (resultUrl) {
+                    memJobMap.delete(resultUrl);
+                    memPollErrors.delete(resultUrl);
+                }
+                if (videoId && db) {
+                    deletePendingJob(db, videoId).catch(() => {});
+                }
+                const clientId = params.clientId;
+                if (clientId && this.diamondService) {
+                    const user = params.user || null;
+                    const refundAmount = params.requiredDiamonds || 1;
+                    const refundPromise = this.diamondService.refundDiamond(clientId, context, env, user, refundAmount);
+                    if (waitUntil) {
+                        waitUntil(refundPromise.catch(() => {}));
+                    } else {
+                        await refundPromise.catch(() => {});
+                    }
+                }
+                return {
+                    status: 'error',
+                    error: `Gladia polling failed after ${errCount} attempts: ${error.message}`
+                };
+            }
+
             return {
                 status: 'processing',
                 resultUrl,

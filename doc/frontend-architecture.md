@@ -65,9 +65,11 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 
 ## 3. Accessibility, Focus Management & Mobile Stability
 
-### 3.1. Modal Focus Traps & Smooth Dynamic Height Transitions (`BottomSheetComponent` & `VideoPlayerComponent`)
-- **Focus Cycling**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet modal container.
-- **Focus Restoration**: Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element upon dismissal, ensuring full WCAG 2.1 compliance for screen readers and keyboard users.
+### 3.1. Modal Focus Traps, Stacking & Dynamic Height Transitions (`BottomSheetComponent` & `VideoPlayerComponent`)
+- **Focus Cycling & Restoration**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet container. Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element (with fallbacks to `.cue-item--active, .subtitle-panel, main`) upon dismissal.
+- **Multi-Sheet Stacking & Accessibility Isolation**: When sheets stack (e.g. Settings Sheet -> Streak Dialog -> Upgrade Sheet), `BottomSheetService.isTopmost(sheetId)` coordinates stacking order. Non-topmost background sheets receive `[attr.inert]=""` and `[attr.aria-hidden]="true"`, completely preventing background tab navigation and screen-reader leakage without tearing down modal state.
+- **Race-Free Idempotent Dismissal**: Dismissal calls (`close()`, backdrop click, drag dismiss) track an explicit timeout ID (`closeTimeoutId`), cancelling pending timers and guarding `unregister(id)` against duplicate execution.
+- **Safe Area & Virtual Keyboard Clamping**: Max height is strictly clamped via `min(var(--max-height, 85vh), calc(var(--app-height, 100dvh) - 16px))`, preventing virtual keyboards from pushing sheet action headers off-screen. Bottom padding on `.sheet-content` is zeroed when the inner content wrapper supplies safe-area insets, eliminating unsightly 68px double-padding stacking on iOS devices.
 - **Unified `SmoothHeightAnimator` (`src/app/shared/utils/smooth-height.animator.ts`)**:
   - Encapsulates dynamic height animation across both `BottomSheetComponent` (mobile sheets & desktop dialogs) and `VideoPlayerComponent` (desktop settings popups), eliminating duplicate animation code.
   - **ResizeObserver Driven**: Watches intrinsic content size updates via an unconstrained `.sheet-content-inner` wrapper in `BottomSheetComponent` and `#settingsPopupInner` in `VideoPlayerComponent` using native `ResizeObserver`.
@@ -78,17 +80,24 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
   - **Scrollbar Flicker Suppression**: Applies `.animating-height` class during transitions with `overflow-y: hidden` on `.sheet-content` to prevent horizontal text reflow and unsightly scrollbar flashing.
   - **Gesture & Lifecycle Coordination**: Automatically bypasses height transitions during entrance animations (`mobileSlideUp`/`scaleIn`), cancels cleanly on drag-to-dismiss touch start (`onTouchStart`), suppresses animations during window resizing/orientation shifts, and respects user accessibility preferences (`prefers-reduced-motion: reduce`).
 
+### 3.2. WAI-ARIA Slider Navigation & Interactive State Controls
+- **Accessible Progress Bar (`ProgressBarComponent`)**: Configured with `role="slider"`, `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="duration()"`, and formatted `[attr.aria-valuetext]`. Supports `ArrowLeft`/`ArrowRight` (5s seek) and `Home`/`End` (0s / end seek).
+- **Accessible Volume Slider (`VideoBottomBarComponent`)**: Fully compliant `role="slider"` with `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="100"`, and `[attr.aria-label]`. Global `document` mouse/touch dragging listeners are cleanly torn down via dedicated cleanup callbacks to prevent memory leaks and listener accumulation.
+- **Button Toggle States (`SubtitleDisplayComponent`)**: Subtitle utility buttons (`Loop Cue`, `Quiz Mode`, `Reading Mode`, `Grammar Highlights`) implement `[attr.aria-pressed]` reflecting active signal state to assistive tech.
+- **Screen Reader Skeletons (`role="status"`)**: Skeleton containers maintain `role="status"` and `aria-busy="true"` with visually-hidden fallback text (`<span class="sr-only">`), avoiding conflicting `aria-hidden="true"` attributes that would otherwise silence loading state announcements.
+- **Player Embed Error Fallback (`VideoPlayerComponent`)**: When videos restrict third-party embeds (YouTube error codes 101/150), an accessible alert banner (`role="alert"`) displays with informative guidance and an explicit "Watch on YouTube" action link, preventing silent video stall.
 
-### 3.2. WAI-ARIA Slider Navigation (`ProgressBarComponent`)
-- **Semantic Role**: Configured with `role="slider"`, `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="duration()"`, and formatted `[attr.aria-valuetext]`.
-- **Keyboard Navigation**:
-  - `ArrowLeft` / `ArrowRight`: Steps playback backward or forward by 5 seconds.
-  - `Home` / `End`: Seeks instantly to video start (`0s`) or end (`duration`).
-
-### 3.3. Viewport Stability & Mobile Polish
-- **PWA Root Overscroll Lockout (`overscroll-behavior-y: none`)**: Set globally on `html, body` to suppress native mobile Chrome and Safari pull-to-refresh gestures. This prevents accidental page reloads that wipe video playback state or interrupt user scrolling, while custom touch pull gestures are strictly scoped to the Home Feed.
-- **Subtitle Display Fixed-Height Scroll Stabilization (Zero CLS)**: `.current-subtitle` enforces strict, immutable height locks (`9.5rem` / `11.5rem` dual on desktop; `8.5rem` / `10.5rem` on mobile) with `overflow: hidden`. Inner container `.current-subtitle__inner` uses `flex: 1 1 0%; min-height: 0; max-height: 100%; overflow-y: auto` with custom floating pill scrollbars. Centering is achieved via `margin: auto 0; min-height: min-content;` on `.subtitle-center-wrapper` (without `min-height: 100%`), allowing short dialogue to center vertically and multi-line dialogue to cleanly anchor at `top: 0` and scroll smoothly downward with zero negative-space text clipping.
-- **iOS Safari Auto-Zoom Fix**: All mobile inputs (notably `.spotlight-input` in `VideoPlayerComponent`) enforce `font-size: 1rem` (16px), eliminating WebKit's automatic zoom on focus.
+### 3.3. Viewport Stability, CJK Typography & Zero-CLS Architecture
+- **PWA Root Overscroll Lockout (`overscroll-behavior-y: none`)**: Set globally on `html, body` to suppress native mobile Chrome and Safari pull-to-refresh gestures.
+- **Tokenized Playback Pause Lock Coordinator (`YoutubeService`)**: Provides an idempotent token-based pause lock (`acquirePauseLock(token)` / `releasePauseLock(token)`). When a learner clicks or hovers over a word to inspect its definition, the video reliably holds the paused state across both mobile and desktop, automatically resuming only when all registered locks (e.g. `'word-lookup'`) are freed.
+- **Passive Scroll & Throttled Time Tracking Outside NgZone**: Window scroll handlers are detached from Angular's zone (`ngZone.runOutsideAngular()`) to avoid hundreds of redundant change detection ticks during user scrolling. Video playback time tracking is throttled to 150ms intervals, balancing smooth subtitle highlighting with minimal CPU and battery consumption.
+- **Native CJK Multi-Script Typography**:
+  - **Japanese & Chinese (`.text-ja`, `.text-zh`)**: `line-break: strict;` enforces strict East Asian typesetting line-breaking rules, preventing small kana (っ, ょ) and punctuation (。、) from appearing at line starts.
+  - **Korean (`.text-ko`)**: `word-break: keep-all; overflow-wrap: break-word;` preserves whole Hangul words across lines without mid-word character splits, wrapping cleanly on word boundaries.
+  - **Word Tokens (`.word`)**: `max-width: 100%; overflow-wrap: break-word;` prevents long compound words or phonetic annotations from overflowing parent containers on narrow mobile viewports.
+- **Pre-Allocated Subtitle Container Height (Zero CLS)**: Subtitle container height (`11.5rem` desktop / `10.5rem` mobile) is pre-allocated synchronously whenever dual subtitles are active in settings, eliminating the jarring 6rem layout shift when the transcript arrives. Cue list items employ `content-visibility: auto; contain-intrinsic-size: auto 56px;` to virtualize off-screen DOM rendering.
+- **Resume Hero Skeletons & Navigation Guard**: The History page features a synchronized `.resume-hero--skeleton` placeholder matching the exact 90px height and border-radius of the resume card, eliminating CLS upon async history load. `SidebarComponent` renders synchronously on desktop without `@defer (on idle)`, eradicating initial 252px content shifts. Landscape phone bottom-nav hiding is strictly scoped to active video playback (`.video-active`, `.is-fullscreen`), preventing landscape page navigation blackouts.
+- **iOS Safari Auto-Zoom Fix**: All mobile inputs (notably `.spotlight-input` in `VideoPlayerComponent` and `CommandPaletteComponent`) enforce `font-size: 1rem` (16px !important), eliminating WebKit's automatic zoom on focus.
 - **Notch & Safe Area Protection**: Container gutters use `max(var(--space-md), env(safe-area-inset-left))` to prevent UI clipping by device camera cutouts in landscape.
 - **Dynamic HTML Language Attribute**: `I18nService` runs a reactive signal effect syncing `document.documentElement.lang = lang`, ensuring screen readers and phonetic engines correctly parse active language phonemes.
 
@@ -141,7 +150,7 @@ graph TD
   - **Coordinated Feed Loading & Zero Layout Shift (CLS = 0)**: Video and playlist recommendation streams are strictly synchronized; 8 YouTube-style shimmer skeleton cards (`.yt-video-card--skeleton`) with dual title lines (`skeleton-line--title` and `skeleton-line--title-short`) and `skeletonWave` linear-gradient shimmer keep the grid completely filled and eliminate layout shift when actual videos load.
   - **Persistent Feed State & Precision Double-RAF Scroll Restoration**:
     - The Home Dashboard (`.home-dashboard`) preserves its loaded video cards in memory across miniplayer toggles, while seamlessly toggling `.hidden` (`display: none !important`) when in full watch mode to eliminate any background bleed, gaps, or ghost scrolling.
-    - **Zero Layout Shifts & Skeleton Elimination**: Feed items are never wiped from memory (`feedItems` retains active cards), and `isFeedLoading` returns `false` as long as videos exist in memory, preventing skeletons from flashing over loaded content.
+    - **Zero Layout Shifts & Level Switching Skeletons**: Feed items are retained in memory when returning from playback to prevent layout shifts. When switching to an uncached difficulty tier or performing a cold load, `isFeedLoading` cleanly displays the 8-card skeleton placeholder grid while server-side recommendations are in flight, transitioning smoothly to the newly loaded videos without stale card flashes or layout jumps. Cached levels swap instantaneously with zero loading latency.
     - **Double-RAF Scroll Restoration**: Uses `@HostListener('window:scroll')` to passively track feed scroll positions while browsing. When minimizing or closing a video, a double `requestAnimationFrame` loop atomically restores `window.scrollTo` to the exact scroll position with sub-pixel accuracy, guarded by navigation flags to prevent race conditions.
     - **Atomic Video Teardown & Flicker Elimination**: Calling `closeVideo()` resets playback state atomically before player view mode, ensuring `showLearnHome` transitions cleanly without intermediate state flickers. Recommendations `effect()` reactions are decoupled via `untracked()`, preventing redundant playlist fetches on player minimize/expand.
   - **YouTube-Style Touch Pull-to-Refresh (`.yt-pull-refresh`)**:
@@ -172,13 +181,16 @@ graph TD
 #### VideoPlayerComponent (`video-player/`)
 - Encapsulates the official YouTube IFrame API via `YoutubeService`.
 - **Custom Player Controls Overlay**:
-  - `VideoHeaderComponent`: Video title, channel info, proficiency level badge, and header action buttons (`Share Video`, `Save to Playlist`, `Minimize Video`). Clicking the proficiency level badge opens the dedicated `VideoLevelDialogComponent` sheet/modal.
+  - `VideoHeaderComponent`: Video title, channel info, proficiency level badge, and header action buttons (`Subtitle Tracks`, `Share Video`, `Save to Playlist`, `Minimize Video`).
+    - Clicking the proficiency level badge opens the dedicated `VideoLevelDialogComponent` sheet/modal.
+    - Clicking the Subtitle Tracks button opens the `Subtitle Tracks` bottom sheet, listing available native tracks, AI-generated tracks, and a one-click action to generate AI subtitles in the active target learning language.
+    - **Speech Waveform Icon (`subtitles-ai`)**: Dynamically switches the header tracks button and player CC toggle to the `subtitles-ai` speech waveform caption box whenever an AI-generated track is currently playing, with a diamond-accented active indicator (`var(--color-diamond)`). Inside the sheet, native tracks display `[CC]` (`subtitles`), while AI-transcribed tracks display `[Waveform]` (`subtitles-ai`) and an `AI` pill badge.
   - `CenterControlsComponent`: Play/pause toggle, $\pm 5$s seek buttons with smooth animation.
   - `ProgressBarComponent`: Custom slider with buffered progress indicator, hover time preview, and cue segment markers.
   - `VideoBottomBarComponent`: Time display, playback speed selector (desktop), dual-subtitles toggle, audio volume hover slider (desktop-only), settings trigger, and fullscreen trigger.
-    - **Desktop Hierarchy**: Left edge features Play/Pause, volume control with expandable hover slider, and time display (`[Play] [Volume] [0:00 / 4:13]`). Right edge features CC, Dual Subtitles, Speed pill (`1x`), Settings gear, and Fullscreen.
+    - **Desktop Hierarchy**: Left edge features Play/Pause, volume control with expandable hover slider, and time display (`[Play] [Volume] [0:00 / 4:13]`). Right edge features CC (with dynamic `subtitles-ai` waveform icon and diamond bar indicator when an AI track is active), Dual Subtitles, Speed pill (`1x`), Settings gear, and Fullscreen.
     - **Portrait Mobile Optimization**: Mobile portrait viewports ($\le 768\text{px}$) hide the software volume button (relying on device hardware keys) and hide the redundant CC button (since the dedicated interactive subtitle panel is directly underneath). This leaves a clean, spacious bar with Time on the left and Dual Subtitles, Settings, and Fullscreen on the right.
-    - **Fullscreen & Landscape Adaptation**: In fullscreen and landscape mode, the CC button is visible on the bottom bar for immediate subtitle toggling.
+    - **Fullscreen & Landscape Adaptation**: In fullscreen and landscape mode, the CC button is visible on the bottom bar for immediate subtitle toggling, reflecting `subtitles-ai` and diamond indicator when AI-generated.
     - **Normalized Optical Icon Sizing & Indicators**: Normalized SVG icons (`languages`, `settings`, `maximize`) to uniform `stroke-width: 1.5`, aligned `.time-display` to 36px height matching control buttons, and refined active Dual-Sub indicator pill with non-colliding spacing.
     - **Deeper Bottom Scrim Gradient**: Enhanced linear gradient overlay to ensure high-contrast button readability and occlude YouTube iframe watermarks.
   - `PlayerSettings`: Shared YouTube-style menu template projected into `.player-settings-popup` on desktop and `<app-bottom-sheet>` on mobile:
@@ -253,15 +265,18 @@ graph TD
   - `isDualCached = signal<boolean>(false)`: Indicates full dual transcript availability in R2 or local cache.
   - `isTranslatingDual = signal<boolean>(false)`: Indicates active translation batch processing.
   - `dualSubError = signal<string | null>(null)`: Captures translation errors for user feedback.
-- **Cache-First Fast Start (`initDualSubtitles`)**:
+- **Cache-First Fast Start with Two-Tier Urgent Micro-Batching (`initDualSubtitles`)**:
   - Queries `/api/dual-subtitles?onlyCache=true`. If pre-translated transcripts exist in R2, populates the entire map instantaneously (`isDualCached: true`).
-  - If a cache miss occurs, avoids blocking playback by immediately requesting on-demand translation of only the first batch (cues 0–35), unlocking immediate playback start.
+  - If a cache miss occurs, immediately triggers an urgent micro-batch translating only the active cue and 2 lookahead cues with `high` priority (< 200ms latency), completely eliminating playback freeze and user waiting.
+  - Subsequently launches background streaming for the remainder of the rolling window without blocking playback.
 - **Sliding-Window Lazy Translation & Auto-Persistence (`lazyLoadUpcomingCuesIfNeeded`)**:
   - As playback advances, `updateCurrentCue` checks the current cue position.
-  - Automatically fetches the next batch of cues in the background before the user reaches them, minimizing latency and eliminating duplicate API calls.
-  - **Auto-Persistence to R2**: Once translated cue coverage reaches $\ge 80\%$, `SubtitleService` automatically invokes `saveDualSubtitles()` to commit the complete transcript into Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. Future views of the video load the dual subtitles instantaneously (<50ms) from R2 cache with \$0 translation cost.
+  - Automatically fetches upcoming batches in the background before the user reaches them, minimizing latency and eliminating duplicate API calls.
+  - **Circuit-Breaker & Exponential Backoff**: Prevents tight 3s retry loops upon encountering upstream rate limits (429/503), backing off progressively (5s $\rightarrow$ 10s $\rightarrow$ 30s) and self-healing when connectivity recovers.
+  - **Auto-Persistence to R2**: Once translated cue coverage reaches $\ge 80\%$, `SubtitleService` automatically invokes `saveDualSubtitles()` to commit the complete transcript into Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. Future views of the video load the dual subtitles instantaneously (<50ms) from R2 cache with $0 translation cost.
 - **Lifecycle & Cleanup**:
   - Exposes `cancelDualSubtitles()`, `toggleDualSubtitles()`, `setDualSubtitleTargetLang()`, and cleanly clears in-flight requests and maps on video change or unload via `clear()`.
+  - Automatically listens to window `online` events to immediately resume paused background streams once the device reconnects.
 
 ---
 
@@ -493,6 +508,7 @@ To eliminate stacking collisions and guarantee that toasts, modals, and navigati
 | `--z-dropdown` | `500` | In-page dropdown selectors, speed menus, option pickers |
 | `--z-popover` | `600` | Context menus (`.playlist-dropdown-menu`, `.dropdown-backdrop`) |
 | `--z-tooltip` | `700` | Progress seek tooltips, action hover tooltips |
+| `--z-miniplayer` | `950` | Floating miniplayer (`.video-container.is-miniplayer`), cleanly beneath global nav and sheets |
 | `--z-nav` | `1000` | Global application navigation: Desktop Sidebar (`app-sidebar :host`) & Mobile Bottom Nav (`.bottom-nav`) |
 | `--z-fullscreen` | `1100` | In-app CSS fullscreen video player (`.video-container.is-fullscreen`). Covers page nav, yet sits cleanly *below* modals |
 | `--z-modal-backdrop` | `1150` | Scrim backdrop for modals and bottom-sheets |

@@ -10,7 +10,7 @@ export type IconName =
     | 'upload' | 'download' | 'file-text' | 'book-open'
     | 'settings' | 'chevron-down' | 'external-link'
     | 'loader' | 'alert-circle' | 'info' | 'bookmark' | 'bookmark-plus' | 'bookmark-filled'
-    | 'repeat' | 'languages' | 'subtitles' | 'captions'
+    | 'repeat' | 'languages' | 'subtitles' | 'captions' | 'subtitles-ai' | 'captions-ai'
     | 'video' | 'graduation-cap' | 'rotate-ccw' | 'shuffle' | 'refresh-cw'
     | 'chevron-left' | 'chevron-right' | 'chevron-up' | 'chevrons-up' | 'chevrons-down' | 'arrow-left' | 'arrow-right' | 'layers'
     | 'sparkles' | 'wand' | 'play-circle' | 'play-circle-filled' | 'eye' | 'eye-off'

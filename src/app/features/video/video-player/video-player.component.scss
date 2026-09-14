@@ -5,37 +5,6 @@
 // ============================================
 // DESIGN TOKENS
 // ============================================
-
-// === BUTTON SIZES ===
-$btn-size-xs: 1.75rem; // 28px - tiny controls
-$btn-size-sm: 2rem; // 32px - standard controls
-$btn-size-md: 2.5rem; // 40px - nav buttons desktop
-$btn-size-lg: 3.5rem; // 56px - big play button
-$btn-size-xl: 4rem; // 64px - big play button desktop
-
-// === BUTTON BACKGROUNDS ===
-$btn-bg: rgba(0, 0, 0, 0.5);
-$btn-bg-hover: rgba(0, 0, 0, 0.7);
-$btn-bg-active: rgba(255, 255, 255, 0.15);
-
-// === ICON SIZES (relative to button) ===
-$icon-size-sm: 1rem; // 16px
-$icon-size-md: 1.125rem; // 18px
-$icon-size-lg: 1.5rem; // 24px
-$icon-size-xl: 2rem; // 32px
-$icon-size-2xl: 2.75rem; // 44px
-
-// === PROGRESS BAR ===
-$progress-height: 4px;
-$progress-height-hover: 6px;
-$progress-height-mobile: 4px;
-$progress-handle-size: 14px;
-$progress-handle-size-mobile: 16px;
-
-// === FEEDBACK ELEMENTS ===
-$feedback-size: 4.5rem;
-$ripple-size: 4.5rem;
-
 // === Z-INDEX LAYERS ===
 $z-youtube-player: 1;
 $z-player-overlay: 10;
@@ -47,6 +16,9 @@ $z-mini-progress: 25;
 $z-seek-tooltip: 30;
 $z-fs-popup: 50;
 $z-speed-menu: 100;
+
+// === FEEDBACK ELEMENTS ===
+$ripple-size: 4.5rem;
 
 // === BREAKPOINTS ===
 $breakpoint-sm: 480px;
@@ -413,6 +385,64 @@ $transition-normal: 0.25s ease;
   app-icon {
     animation: spin 1s linear infinite;
   }
+}
+
+.player-error-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 20;
+}
+
+.player-error-card {
+  max-width: 440px;
+  width: 100%;
+  background: var(--bg-card, #1c202a);
+  border: 1px solid rgba(var(--error-rgb, 239, 68, 68), 0.35);
+  border-radius: var(--border-radius-lg, 16px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  gap: 0.75rem;
+  animation: errorSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.player-error-icon {
+  color: var(--error, #ef4444);
+  background: rgba(var(--error-rgb, 239, 68, 68), 0.12);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.player-error-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+}
+
+.player-error-desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #94a3b8);
+  margin: 0;
+}
+
+.player-error-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 // ============================================
@@ -1327,13 +1357,6 @@ $transition-normal: 0.25s ease;
 
     .option-label {
       flex: 1;
-
-      .lang-flag {
-        margin-right: 0.35rem;
-        font-size: 1.05rem;
-        display: inline-block;
-        vertical-align: -1px;
-      }
     }
 
     .option-with-icon {
@@ -1551,7 +1574,7 @@ $transition-normal: 0.25s ease;
 
 .video-container.is-miniplayer {
   position: fixed !important;
-  z-index: 1000 !important;
+  z-index: var(--z-miniplayer, 950) !important;
   overflow: hidden !important;
   cursor: pointer;
   user-select: none;

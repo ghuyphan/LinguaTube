@@ -514,6 +514,11 @@ body::-webkit-scrollbar {
         transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1),
                     color 0.2s cubic-bezier(0.2, 0, 0, 1);
 
+        @media (max-width: 360px) {
+            width: 44px;
+            height: 30px;
+        }
+
         /* M3 Pill Blooming State Layer */
         &::before {
             content: '';
@@ -651,9 +656,10 @@ body::-webkit-scrollbar {
     }
 }
 
-/* Landscape phones: hide bottom navigation to maximize video and subtitle view */
+/* Landscape phones: hide bottom navigation only during active video playback or fullscreen */
 @media (max-height: 500px) and (orientation: landscape) {
-    .bottom-nav {
+    .app:has(.main.video-active) .bottom-nav,
+    .app:has(.is-fullscreen) .bottom-nav {
         display: none !important;
     }
 }

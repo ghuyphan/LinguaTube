@@ -2,11 +2,12 @@
 <div class="sheet-overlay" [class.closing]="isClosing()" [style.z-index]="computedZIndex()"
     (click)="onBackdropClick($event)" (touchend)="onBackdropTouch($event)">
     <div class="sheet" #sheetEl [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
-        [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile"
+        [class.dragging]="isDragging()" [class.animated]="hasAnimated()" [class.desktop-modal]="!isMobile()"
         [class.square-corners]="squareCorners()" [style.--drag-offset]="dragOffset() + 'px'"
         [style.--max-height]="maxHeight()" [style.--max-width]="maxWidth()" (click)="$event.stopPropagation()" (animationend)="onAnimationEnd($event)"
         (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)"
-        role="dialog" aria-modal="true" [attr.aria-label]="effectiveAriaLabel()">
+        role="dialog" aria-modal="true" [attr.aria-label]="effectiveAriaLabel()"
+        [attr.inert]="!isTopmost() ? '' : null" [attr.aria-hidden]="!isTopmost() ? 'true' : null">
 
         <!-- Drag Handle - visible on mobile -->
         @if (showDragHandle()) {
