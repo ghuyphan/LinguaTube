@@ -181,6 +181,15 @@
                                     <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
                                 </button>
                             </div>
+                            } @else if (transcript.error() === 'AI_TIMEOUT') {
+                            <span class="empty-title">{{ i18n.t('subtitle.aiTimeoutTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.aiTimeoutHint') }}</span>
+                            <div class="empty-actions">
+                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
+                                    <app-icon name="refresh-cw" [size]="14" />
+                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
+                                </button>
+                            </div>
                             } @else if (hasNativeInOtherLanguage()) {
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.captionsAvailableIn', { language: getLanguageDisplayName(firstAvailableNativeLanguage() || '') }) || ('Captions are available in ' + getLanguageDisplayName(firstAvailableNativeLanguage() || '')) }}</span>

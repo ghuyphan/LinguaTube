@@ -163,6 +163,8 @@
     "networkErrorHint": "Check your internet connection and try again",
     "serverErrorTitle": "Something went wrong",
     "serverErrorHint": "We're having trouble connecting to our servers. Please try again later.",
+    "aiTimeoutTitle": "AI connection timed out",
+    "aiTimeoutHint": "Connecting to the video audio stream took longer than expected. Please try again.",
     "moreOptions": "More options",
     "noCaptionsInLanguage": "No {{language}} captions",
     "transcriptAvailableIn": "This video has {{language}} captions available",

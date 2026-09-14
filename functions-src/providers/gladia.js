@@ -3,7 +3,10 @@
  */
 
 const GLADIA_API_URL = 'https://api.gladia.io/v2/pre-recorded';
-const FETCH_TIMEOUT_MS = 15000;
+// 28 seconds: allows Gladia ample time to negotiate YouTube audio streams within Cloudflare's ~30s wall-clock limit
+const SUBMIT_TIMEOUT_MS = 28000;
+// 10 seconds: fast non-blocking status check for polling
+const POLL_TIMEOUT_MS = 10000;
 
 export class GladiaProvider {
     /**
@@ -33,7 +36,7 @@ export class GladiaProvider {
                 audio_url: youtubeUrl,
                 sentences: true
             }),
-            signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+            signal: AbortSignal.timeout(SUBMIT_TIMEOUT_MS)
         });
 
         if (!submitResponse.ok) {
@@ -76,7 +79,7 @@ export class GladiaProvider {
         const resultResponse = await fetch(resultUrl, {
             headers: { 'x-gladia-key': this.apiKey },
             redirect: 'error',
-            signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+            signal: AbortSignal.timeout(POLL_TIMEOUT_MS)
         });
 
         if (!resultResponse.ok) {

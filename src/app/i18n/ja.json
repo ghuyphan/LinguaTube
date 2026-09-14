@@ -173,6 +173,8 @@
     "networkErrorHint": "インターネット接続を確認して再試行してください",
     "serverErrorTitle": "問題が発生しました",
     "serverErrorHint": "サーバーエラーが発生しました。しばらく待ってから再度お試しください。",
+    "aiTimeoutTitle": "AI接続がタイムアウトしました",
+    "aiTimeoutHint": "動画音声ストリームへの接続に時間がかかりすぎました。再度お試しください。",
     "moreOptions": "その他のオプション",
     "noCaptionsInLanguage": "{{language}}の字幕がありません",
     "transcriptAvailableIn": "この動画には{{language}}字幕があります",

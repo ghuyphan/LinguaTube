@@ -171,6 +171,8 @@
     "networkErrorHint": "请检查网络连接后重试",
     "serverErrorTitle": "服务器异常",
     "serverErrorHint": "服务器响应异常，请稍后重试",
+    "aiTimeoutTitle": "AI 转录连接超时",
+    "aiTimeoutHint": "连接并获取视频音频流耗时超过预期，请重试。",
     "moreOptions": "更多选项",
     "noCaptionsInLanguage": "没有{{language}}字幕",
     "transcriptAvailableIn": "此视频有{{language}}字幕可用",

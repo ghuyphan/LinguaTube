@@ -163,6 +163,8 @@
     "networkErrorHint": "Kiểm tra kết nối internet và thử lại",
     "serverErrorTitle": "Đã xảy ra lỗi",
     "serverErrorHint": "Máy chủ đang gặp sự cố. Vui lòng thử lại sau",
+    "aiTimeoutTitle": "Quá thời gian kết nối AI",
+    "aiTimeoutHint": "Kết nối và nạp luồng âm thanh video mất nhiều thời gian hơn dự kiến. Vui lòng thử lại.",
     "moreOptions": "Thêm tùy chọn",
     "noCaptionsInLanguage": "Không có phụ đề {{language}}",
     "transcriptAvailableIn": "Video này có phụ đề {{language}}",

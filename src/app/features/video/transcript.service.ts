@@ -485,24 +485,15 @@ export class TranscriptService {
         return of([]);
       }
 
-      // Handle server errors
-      if (err.status >= 500) {
-        this.state.set({
-          status: 'error',
-          code: 'SERVER_ERROR',
-          whisperAvailable
-        });
-        return of([]);
-      }
-
-      // Handle client errors (400-499)
+      // Handle server, gateway, and client errors (400-599)
       if (err.status >= 400) {
-        const errorCode = err.error?.errorCode || 'REQUEST_ERROR';
+        const body = err.error as Partial<TranscriptResponse> | null;
+        const errorCode = body?.errorCode || (err.status >= 500 ? 'SERVER_ERROR' : 'REQUEST_ERROR');
         const isAIBlocked = errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS';
         this.state.set({
           status: 'error',
           code: errorCode,
-          whisperAvailable: isAIBlocked ? false : (err.error?.whisperAvailable ?? whisperAvailable)
+          whisperAvailable: isAIBlocked ? false : (body?.whisperAvailable ?? whisperAvailable)
         });
         return of([]);
       }

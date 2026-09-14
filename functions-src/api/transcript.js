@@ -369,6 +369,9 @@ export async function onRequestPost(context) {
             } else if (aiErr.message.includes('429')) {
                 errorCode = 'AI_RATE_LIMITED';
                 status = 429;
+            } else if (aiErr.name === 'TimeoutError' || aiErr.message.includes('timeout') || aiErr.message.includes('aborted')) {
+                errorCode = 'AI_TIMEOUT';
+                status = 504;
             } else if (aiErr.message.includes('400')) {
                 errorCode = 'AI_INVALID_REQUEST';
                 status = 400;
