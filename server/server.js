@@ -1945,17 +1945,20 @@ app.post('/api/transcript', async (req, res) => {
         }
 
         if (localJob.status === 'completed') {
-            const cached = getCachedTranscript(localJob.videoId, localJob.detectedLanguage || localJob.language);
+            const detectedLang = localJob.detectedLanguage || localJob.language;
+            const isMismatch = normalizeLanguageCode(detectedLang) !== normalizeLanguageCode(localJob.language);
+            const cached = getCachedTranscript(localJob.videoId, detectedLang);
             return res.json({
                 success: true,
                 videoId: localJob.videoId,
-                language: localJob.detectedLanguage || localJob.language,
+                language: detectedLang,
                 requestedLanguage: localJob.language,
+                languageMismatch: isMismatch,
                 segments: cached?.segments || [],
                 source: 'ai',
                 sourceDetail: 'gladia',
-                availableLanguages: { native: [], ai: [localJob.detectedLanguage || localJob.language] },
-                subLanguages: [localJob.detectedLanguage || localJob.language],
+                availableLanguages: { native: [], ai: [detectedLang] },
+                subLanguages: [detectedLang],
                 whisperAvailable: true,
                 diamonds: devDiamonds,
                 maxDiamonds: 3,

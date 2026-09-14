@@ -526,9 +526,9 @@ export class VideoPageComponent implements OnInit {
       this.videoLevel.reset();
     });
 
-    this.aiJobManager.jobCompleted$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ videoId, language, cues }) => {
+    this.aiJobManager.jobCompleted$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ videoId, language, requestedLanguage, cues }) => {
       if (this.youtube.currentVideo()?.id === videoId) {
-        this.handleCaptionsSuccess(cues, language);
+        this.handleCaptionsSuccess(cues, requestedLanguage || language, language);
       }
     });
 
@@ -1142,7 +1142,7 @@ export class VideoPageComponent implements OnInit {
     this.skipNextMismatchDialog = false;
   }
 
-  private handleCaptionsSuccess(cues: SubtitleCue[], requestedLang: string) {
+  private handleCaptionsSuccess(cues: SubtitleCue[], requestedLang: string, detectedLangOverride?: string) {
     // Reset index first to prevent showing old cue during transition
     this.subtitles.currentCueIndex.set(-1);
     this.subtitles.subtitles.set(cues);
@@ -1151,8 +1151,8 @@ export class VideoPageComponent implements OnInit {
     // (Crucial for resuming video at an existing timestamp where captions arrive after seek)
     this.subtitles.updateCurrentCue(this.youtube.currentTime());
 
-    // Detect actual language returned by backend
-    const detectedFull = this.transcript.detectedLanguage();
+    // Detect actual language returned by backend (or explicit override from async job)
+    const detectedFull = detectedLangOverride || this.transcript.detectedLanguage();
     const detected = normalizeLanguageCode(detectedFull);
     const validLangs = ['ja', 'zh', 'ko', 'en'];
 
@@ -1251,14 +1251,17 @@ export class VideoPageComponent implements OnInit {
     // User explicitly chose to keep target learning language despite mismatch
     this.skipNextMismatchDialog = true;
     this.showLanguageMismatchDialog.set(false);
+    const wasAi = this.transcript.isAIGenerated();
     this.mismatchDetectedLang.set(null);
 
     // Clear mismatched subtitles from the player
     this.subtitles.subtitles.set([]);
     this.subtitles.currentCueIndex.set(-1);
 
-    // Prompt user to generate subtitles in their target language via AI
-    this.onManualAITrigger();
+    // Prompt user to generate subtitles in their target language via AI only if not already AI generated
+    if (!wasAi) {
+      this.onManualAITrigger();
+    }
   }
 
   onSelectTrack(lang: string): void {

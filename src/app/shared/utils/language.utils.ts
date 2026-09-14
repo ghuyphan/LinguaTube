@@ -35,10 +35,10 @@ export type SupportedLanguage = 'ja' | 'zh' | 'ko' | 'en';
 export function normalizeLanguageCode(lang?: string | null): string {
     if (!lang || typeof lang !== 'string') return '';
     const clean = lang.trim().toLowerCase().split('-')[0].split('_')[0];
-    if (clean === 'ja' || clean === 'japanese') return 'ja';
-    if (clean === 'ko' || clean === 'korean') return 'ko';
-    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue') return 'zh';
-    if (clean === 'en' || clean === 'english') return 'en';
+    if (clean === 'ja' || clean === 'japanese' || clean === 'jpn') return 'ja';
+    if (clean === 'ko' || clean === 'korean' || clean === 'kor') return 'ko';
+    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue' || clean === 'zho' || clean === 'chi') return 'zh';
+    if (clean === 'en' || clean === 'english' || clean === 'eng') return 'en';
     return clean;
 }
 

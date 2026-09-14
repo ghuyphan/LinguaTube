@@ -356,7 +356,10 @@ export class TranscriptService {
      * @returns {Promise<Object>}
      */
     async pollAiJobStatus(context, params) {
-        const { db, r2, waitUntil, env } = context;
+        const db = context.db || context.env?.VOCAB_DB;
+        const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
+        const waitUntil = context.waitUntil;
+        const env = context.env || {};
         const { jobId, videoId, availableLanguages, diamondInfo, user, clientId } = params;
 
         if (!jobId) {
@@ -370,6 +373,7 @@ export class TranscriptService {
 
         const targetVideoId = job.video_id || videoId;
         const targetLang = job.detected_language || job.language;
+        const isMismatch = normalizeLanguageCode(targetLang) !== normalizeLanguageCode(job.language);
 
         // 1. Completed: Read transcript from R2
         if (job.status === 'completed') {
@@ -381,6 +385,7 @@ export class TranscriptService {
                         videoId: targetVideoId,
                         language: targetLang,
                         requestedLanguage: job.language,
+                        languageMismatch: isMismatch,
                         segments: r2Transcript.segments,
                         source: 'ai',
                         sourceDetail: 'gladia',
@@ -412,6 +417,7 @@ export class TranscriptService {
                     const rawSegments = extractGladiaSegments(statusCheck);
                     const cleanedSegments = cleanTranscriptSegments(rawSegments);
                     const detectedLang = extractGladiaDetectedLanguage(statusCheck, job.language);
+                    const selfHealMismatch = normalizeLanguageCode(detectedLang) !== normalizeLanguageCode(job.language);
 
                     if (cleanedSegments.length > 0) {
                         await saveTranscriptToR2(r2, targetVideoId, detectedLang, cleanedSegments, 'ai');
@@ -431,6 +437,7 @@ export class TranscriptService {
                                 videoId: targetVideoId,
                                 language: detectedLang,
                                 requestedLanguage: job.language,
+                                languageMismatch: selfHealMismatch,
                                 segments: cleanedSegments,
                                 source: 'ai',
                                 sourceDetail: 'gladia',

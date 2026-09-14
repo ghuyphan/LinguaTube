@@ -120,10 +120,17 @@ export class TranscriptService {
     this.auth.logoutEvent.subscribe(() => this.refreshDiamonds());
 
     // Listen for AI transcription completions from root AiJobManagerService
-    this.aiJobManager.jobCompleted$.subscribe(({ videoId, language, cues, source }) => {
-      log('Received AI completion from AiJobManager:', { videoId, language, cueCount: cues.length });
+    this.aiJobManager.jobCompleted$.subscribe(({ videoId, language, requestedLanguage, languageMismatch, cues, source }) => {
+      log('Received AI completion from AiJobManager:', { videoId, language, requestedLanguage, languageMismatch, cueCount: cues.length });
       const cacheKey = `${videoId}:${language}`;
       this.transcriptCache.set(cacheKey, cues);
+      if (requestedLanguage && requestedLanguage !== language) {
+        this.transcriptCache.set(`${videoId}:${requestedLanguage}`, cues);
+        this.fallbackInfo.set({
+          requested: requestedLanguage,
+          returned: language
+        });
+      }
       this.persistentCache.set(videoId, language, cues, source).catch(() => {});
       this.videoRecommendation.clearCache();
 
@@ -131,6 +138,8 @@ export class TranscriptService {
         this.state.set({
           status: 'complete',
           language,
+          requestedLanguage,
+          languageMismatch,
           source,
           cues
         });
@@ -565,6 +574,8 @@ export class TranscriptService {
       this.state.set({
         status: 'complete',
         language: response.language,
+        requestedLanguage: response.requestedLanguage,
+        languageMismatch: response.languageMismatch ?? (response.requestedLanguage !== response.language),
         source,
         cues
       });

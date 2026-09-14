@@ -32,6 +32,8 @@ export class AiJobManagerService {
   readonly jobCompleted$ = new Subject<{
     videoId: string;
     language: string;
+    requestedLanguage: string;
+    languageMismatch: boolean;
     cues: SubtitleCue[];
     source: 'ai';
   }>();
@@ -222,9 +224,17 @@ export class AiJobManagerService {
     }));
 
     const resolvedLang = response.language || job.language;
+    const requestedLang = response.requestedLanguage || job.language;
+    const isMismatch = response.languageMismatch ?? (
+      resolvedLang.split('-')[0].toLowerCase() !== requestedLang.split('-')[0].toLowerCase()
+    );
 
     // Cache locally in IndexedDB / Memory
     this.cacheService.set(job.videoId, resolvedLang, cues, 'ai');
+    if (isMismatch) {
+      // Also cache under requested language to prevent redundant refetches
+      this.cacheService.set(job.videoId, requestedLang, cues, 'ai');
+    }
 
     // Remove from active tracking
     this.activeJobs.update(jobs => {
@@ -241,13 +251,16 @@ export class AiJobManagerService {
       this.jobCompleted$.next({
         videoId: job.videoId,
         language: resolvedLang,
+        requestedLanguage: requestedLang,
+        languageMismatch: isMismatch,
         cues,
         source: 'ai'
       });
     } else {
       // Route-aware actionable toast alert
       const titleSnippet = job.title ? `"${job.title.slice(0, 32)}..."` : 'video';
-      this.toastService.show(`AI Subtitles ready for ${titleSnippet}!`, {
+      const langSuffix = isMismatch ? ` (${resolvedLang.toUpperCase()})` : '';
+      this.toastService.show(`AI Subtitles ready${langSuffix} for ${titleSnippet}!`, {
         type: 'success',
         icon: 'sparkles',
         duration: 6000,

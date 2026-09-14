@@ -234,25 +234,21 @@
 
 .subtitle-center-wrapper {
     width: 100%;
-    /* CRITICAL FIX: Do NOT use min-height: 100%!
-       Without min-height: 100%, margin: auto 0 perfectly centers short cues
-       when free space > 0, and cleanly clamps margin to 0 when free space <= 0,
-       anchoring multi-line cues to the top with ZERO negative space clipping! */
+    /* margin: auto 0 perfectly centers the combined cue+translation block inside the fixed container */
     margin: auto 0;
     min-height: min-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-xs) 0;
-    gap: 4px;
+    padding: var(--space-2xs) 0;
+    gap: 6px;
     box-sizing: border-box;
 }
 
-/* FIX: Stabilized vertical layout - min-height eliminates cue-to-cue layout shifts */
 .subtitle-text {
     font-size: 1.125rem;
-    line-height: 2.1;
-    min-height: 4.8rem;
+    line-height: 1.65;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -260,7 +256,7 @@
     word-break: break-word;
     overflow-wrap: break-word;
     border-radius: var(--border-radius-lg);
-    padding: var(--space-xs) var(--space-md);
+    padding: 0 var(--space-md);
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -271,13 +267,13 @@
 
 .subtitle-translation {
     font-size: 0.84375rem;
-    line-height: 1.4;
-    min-height: calc(0.84375rem * 1.4 + 6px);
+    line-height: 1.35;
+    min-height: auto;
     box-sizing: border-box;
     color: var(--text-secondary);
     text-align: center;
     max-width: 95%;
-    padding: 3px var(--space-sm);
+    padding: 0 var(--space-sm);
     opacity: 0.85;
     position: relative;
     z-index: 3;
@@ -357,9 +353,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* Strict reserved space for 2 lines of translation - completely eliminates vertical CLS */
-    min-height: calc(0.84375rem * 2.8 + 6px);
-    margin-top: 2px;
+    min-height: calc(0.84375rem * 1.35);
+    margin-top: 0;
 }
 
 .subtitle-translation--empty {
@@ -368,9 +363,9 @@
     border: 1px solid transparent !important;
     box-shadow: none !important;
     pointer-events: none;
-    min-height: calc(0.84375rem * 2.8 + 6px);
+    min-height: calc(0.84375rem * 1.35);
     box-sizing: border-box;
-    padding: 3px var(--space-sm);
+    padding: 0 var(--space-sm);
 }
 
 /* Loop styling - transitions only apply when looping is active */
@@ -395,36 +390,36 @@
 
 .current-subtitle--small .subtitle-text {
     font-size: 1rem;
-    line-height: 2.0;
-    min-height: 4.2rem;
+    line-height: 1.55;
+    min-height: auto;
 }
 
 .current-subtitle--small .subtitle-translation {
     font-size: 0.75rem;
-    min-height: calc(0.75rem * 1.4 + 6px);
+    min-height: auto;
 }
 
 .current-subtitle--small .subtitle-translation-wrapper,
 .current-subtitle--small .subtitle-translation--empty,
 .current-subtitle--small .subtitle-translation--loading {
-    min-height: calc(0.75rem * 2.8 + 6px);
+    min-height: calc(0.75rem * 1.35);
 }
 
 .current-subtitle--large .subtitle-text {
     font-size: 1.3125rem;
-    line-height: 2.1;
-    min-height: 5.6rem;
+    line-height: 1.7;
+    min-height: auto;
 }
 
 .current-subtitle--large .subtitle-translation {
     font-size: 0.875rem;
-    min-height: calc(0.875rem * 1.4 + 6px);
+    min-height: auto;
 }
 
 .current-subtitle--large .subtitle-translation-wrapper,
 .current-subtitle--large .subtitle-translation--empty,
 .current-subtitle--large .subtitle-translation--loading {
-    min-height: calc(0.875rem * 2.8 + 6px);
+    min-height: calc(0.875rem * 1.35);
 }
 
 .current-subtitle--large.has-dual-subtitles {
@@ -435,19 +430,19 @@
 
 .current-subtitle--xlarge .subtitle-text {
     font-size: 1.5625rem;
-    line-height: 2.2;
-    min-height: 6.8rem;
+    line-height: 1.75;
+    min-height: auto;
 }
 
 .current-subtitle--xlarge .subtitle-translation {
     font-size: 1rem;
-    min-height: calc(1rem * 1.4 + 6px);
+    min-height: auto;
 }
 
 .current-subtitle--xlarge .subtitle-translation-wrapper,
 .current-subtitle--xlarge .subtitle-translation--empty,
 .current-subtitle--xlarge .subtitle-translation--loading {
-    min-height: calc(1rem * 2.8 + 6px);
+    min-height: calc(1rem * 1.35);
 }
 
 .current-subtitle--xlarge.has-dual-subtitles {
@@ -513,50 +508,79 @@
     position: relative;
     width: 2.5rem;
     height: 2.5rem;
-    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.1);
+    border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .ai-spinner-ring {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: -3px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg,
-            transparent 0deg,
-            transparent 90deg,
-            rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25) 180deg,
-            var(--accent-primary) 360deg);
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff calc(100% - 2px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff calc(100% - 2px));
-    animation: spin 1.2s linear infinite;
+    border: 2px solid transparent;
+    border-top-color: var(--accent-primary);
+    border-right-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.35);
+    animation: spin 1s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
 }
 
 .ai-sparkles,
 .ai-waveform {
     color: var(--accent-primary);
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
     opacity: 0.95;
 }
 
 .ai-text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
+    min-width: 0;
 }
 
 .ai-title {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-primary);
     font-size: 0.9375rem;
+    line-height: 1.3;
 }
 
 .ai-hint {
     font-size: 0.8125rem;
     color: var(--text-muted);
+    line-height: 1.35;
+}
+
+.ai-progress-track {
+    width: 120px;
+    height: 2px;
+    border-radius: 9999px;
+    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.18);
+    overflow: hidden;
+    margin-top: 4px;
+    position: relative;
+}
+
+.ai-progress-bar {
+    width: 35%;
+    height: 100%;
+    background: var(--accent-primary);
+    border-radius: 9999px;
+    position: absolute;
+    animation: aiProgressSlide 1.8s ease-in-out infinite;
+}
+
+@keyframes aiProgressSlide {
+    0% {
+        left: -35%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 /* ============================================
@@ -2062,6 +2086,10 @@ ruby rt {
     .ai-spinner {
         width: 2rem;
         height: 2rem;
+    }
+
+    .ai-progress-track {
+        width: 96px;
     }
 
     .ai-sparkles,

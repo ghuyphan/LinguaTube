@@ -30,6 +30,7 @@ export interface TranscriptResponse {
   error?: string;
   errorCode?: string;
   retryAfter?: number;
+  languageMismatch?: boolean;
   status?: 'processing';
   jobId?: string;
   resultUrl?: string; // Optional legacy fallback
@@ -63,5 +64,5 @@ export type TranscriptState =
   | { status: 'idle' }
   | { status: 'loading' }
   | { status: 'generating_ai'; jobId?: string; isResuming?: boolean }
-  | { status: 'complete'; language: string; source: 'native' | 'ai'; cues: SubtitleCue[] }
+  | { status: 'complete'; language: string; requestedLanguage?: string; languageMismatch?: boolean; source: 'native' | 'ai'; cues: SubtitleCue[] }
   | { status: 'error'; code: string; whisperAvailable: boolean; retryAfter?: number };

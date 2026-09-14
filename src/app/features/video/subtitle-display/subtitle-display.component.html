@@ -118,7 +118,7 @@
                     <div class="state-item state-generating">
                         <div class="ai-spinner">
                             <div class="ai-spinner-ring"></div>
-                            <app-icon name="subtitles-ai" [size]="18" class="ai-waveform" />
+                            <app-icon name="subtitles-ai" [size]="16" class="ai-waveform" />
                         </div>
                         <div class="ai-text">
                             <span class="ai-title">{{ transcript.isResumingPendingJob() ?
@@ -127,6 +127,9 @@
                             <span class="ai-hint">{{ transcript.isResumingPendingJob() ? i18n.t('subtitle.resumingHint')
                                 :
                                 i18n.t('subtitle.usingWhisperAI') }}</span>
+                            <div class="ai-progress-track">
+                                <div class="ai-progress-bar"></div>
+                            </div>
                         </div>
                     </div>
 

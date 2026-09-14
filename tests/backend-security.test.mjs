@@ -1136,5 +1136,74 @@ test('Gladia v2 Schema Parser: extracts sentences, utterances, and detects langu
   assert.equal(normalizeLanguageCode('en-US'), 'en');
 });
 
+test('pollAiJobStatus: accurately identifies languageMismatch flag', async () => {
+  const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
+
+  const mockDb = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async first() {
+              if (String(args[0]).trim() === 'job_mismatch') {
+                return {
+                  id: 'job_mismatch',
+                  video_id: 'vid123',
+                  language: 'ja',
+                  detected_language: 'zh',
+                  status: 'completed'
+                };
+              }
+              if (String(args[0]).trim() === 'job_match') {
+                return {
+                  id: 'job_match',
+                  video_id: 'vid456',
+                  language: 'zh',
+                  detected_language: 'zh',
+                  status: 'completed'
+                };
+              }
+              return null;
+            }
+          };
+        }
+      };
+    }
+  };
+
+  const mockR2 = {
+    async get() {
+      return {
+        async json() {
+          return { segments: [{ start: 0, duration: 2, text: '你好' }] };
+        }
+      };
+    }
+  };
+
+  const service = new TranscriptService({}, {}, {}, {});
+  const context = {
+    env: {
+      VOCAB_DB: mockDb,
+      TRANSCRIPT_STORAGE: mockR2
+    }
+  };
+
+  // Case 1: Mismatch (requested ja, detected zh)
+  const res1 = await service.pollAiJobStatus(context, { jobId: 'job_mismatch', videoId: 'vid123' });
+  assert.equal(res1.status, 'done');
+  assert.equal(res1.videoInfo.language, 'zh');
+  assert.equal(res1.videoInfo.requestedLanguage, 'ja');
+  assert.equal(res1.videoInfo.languageMismatch, true);
+
+  // Case 2: Match (requested zh, detected zh)
+  const res2 = await service.pollAiJobStatus(context, { jobId: 'job_match', videoId: 'vid456' });
+  assert.equal(res2.status, 'done');
+  assert.equal(res2.videoInfo.language, 'zh');
+  assert.equal(res2.videoInfo.requestedLanguage, 'zh');
+  assert.equal(res2.videoInfo.languageMismatch, false);
+});
+
+
 
 
