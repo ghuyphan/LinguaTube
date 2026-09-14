@@ -53,11 +53,12 @@ describe('BottomSheetComponent', () => {
   afterEach(() => {
     fixture.destroy();
     bottomSheetService.closeAll();
+    document.querySelectorAll('app-bottom-sheet').forEach(el => el.remove());
   });
 
   it('should not render DOM when isOpen is false', () => {
     fixture.detectChanges();
-    const overlay = fixture.nativeElement.querySelector('.sheet-overlay');
+    const overlay = document.querySelector('.sheet-overlay');
     expect(overlay).toBeNull();
   });
 
@@ -65,11 +66,10 @@ describe('BottomSheetComponent', () => {
     host.isOpen.set(true);
     fixture.detectChanges();
 
-    const hostEl = fixture.nativeElement as HTMLElement;
-    const overlay = hostEl.querySelector('.sheet-overlay') as HTMLElement;
-    const sheet = hostEl.querySelector('.sheet') as HTMLElement;
-    const innerWrapper = hostEl.querySelector('.sheet-content-inner') as HTMLElement;
-    const closeBtn = hostEl.querySelector('.sheet-close-btn') as HTMLElement;
+    const overlay = document.querySelector('.sheet-overlay') as HTMLElement;
+    const sheet = document.querySelector('.sheet') as HTMLElement;
+    const innerWrapper = document.querySelector('.sheet-content-inner') as HTMLElement;
+    const closeBtn = document.querySelector('.sheet-close-btn') as HTMLElement;
 
     expect(overlay).toBeTruthy();
     expect(sheet).toBeTruthy();
@@ -83,7 +83,7 @@ describe('BottomSheetComponent', () => {
     host.isOpen.set(true);
     fixture.detectChanges();
 
-    const sheet = fixture.nativeElement.querySelector('.sheet') as HTMLElement;
+    const sheet = document.querySelector('.sheet') as HTMLElement;
     // In typical test browser window (width > 768), desktop-modal is applied
     if (window.innerWidth > 768 && window.innerHeight > 500) {
       expect(sheet.classList.contains('desktop-modal')).toBeTrue();
@@ -94,7 +94,7 @@ describe('BottomSheetComponent', () => {
     host.isOpen.set(true);
     fixture.detectChanges();
 
-    const closeBtn = fixture.nativeElement.querySelector('.sheet-close-btn') as HTMLElement;
+    const closeBtn = document.querySelector('.sheet-close-btn') as HTMLElement;
     expect(closeBtn).toBeTruthy();
 
     closeBtn.click();
@@ -112,7 +112,7 @@ describe('BottomSheetComponent', () => {
     host.isOpen.set(true);
     fixture.detectChanges();
 
-    const overlay = fixture.nativeElement.querySelector('.sheet-overlay') as HTMLElement;
+    const overlay = document.querySelector('.sheet-overlay') as HTMLElement;
     expect(overlay).toBeTruthy();
 
     overlay.dispatchEvent(new MouseEvent('click', { bubbles: true }));
@@ -153,7 +153,7 @@ describe('BottomSheetComponent', () => {
     fixture.detectChanges();
     tick(350); // wait for entrance animation
 
-    const sheet = fixture.nativeElement.querySelector('.sheet') as HTMLElement;
+    const sheet = document.querySelector('.sheet') as HTMLElement;
     expect(sheet).toBeTruthy();
 
     // Change content height
