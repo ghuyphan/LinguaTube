@@ -81,13 +81,13 @@ const MIN_CUE_DURATION = 0.5;
 
 const PENDING_AI_STORAGE_KEY = 'voca_pending_ai_jobs';
 
-interface StoredPendingJob {
+export interface StoredPendingJob {
   resultUrl: string;
   lang: string;
   startedAt: number;
 }
 
-function getStoredPendingJob(videoId: string): StoredPendingJob | null {
+export function getStoredPendingJob(videoId: string): StoredPendingJob | null {
   try {
     const raw = localStorage.getItem(PENDING_AI_STORAGE_KEY);
     if (!raw) return null;
@@ -207,6 +207,7 @@ export class TranscriptService {
   private readonly transcriptCache = new Map<string, SubtitleCue[]>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
   private cancelSubject = new Subject<void>();
+  private consecutivePollErrors = 0;
 
   constructor() {
     this.refreshDiamonds();
@@ -414,9 +415,10 @@ export class TranscriptService {
           if (detectedLang !== lang) {
             this.persistentCache.set(videoId, detectedLang, cues, 'ai').catch(() => { });
           }
+          this.consecutivePollErrors = 0;
         }
       }),
-      catchError(err => this.handleHttpError(err, false))
+      catchError(err => this.handleHttpError(err, false, videoId, lang, resultUrl, duration, title, channel))
     );
   }
 
@@ -425,6 +427,7 @@ export class TranscriptService {
    */
   reset(): void {
     this.cancelSubject.next();
+    this.consecutivePollErrors = 0;
     this.state.set({ status: 'idle' });
     this.availableLanguages.set({ native: [], ai: [] });
     this.subLanguages.set([]);
@@ -463,10 +466,41 @@ export class TranscriptService {
   // ============================================================================
 
   /**
-   * Handle HTTP errors with specific handling for rate limits
+   * Handle HTTP errors with specific handling for rate limits and polling retries
    */
-  private handleHttpError(err: unknown, whisperAvailable = true): Observable<SubtitleCue[]> {
+  private handleHttpError(
+    err: unknown,
+    whisperAvailable = true,
+    videoId?: string,
+    lang?: string,
+    resultUrl?: string,
+    duration?: number,
+    title?: string,
+    channel?: string
+  ): Observable<SubtitleCue[]> {
     console.error('[TranscriptService] Error:', err);
+
+    // If we were polling an active AI job and hit a transient HTTP error (504 timeout, 502/503/500, network drop)
+    if (resultUrl && videoId) {
+      const isHttpErr = err instanceof HttpErrorResponse;
+      const status = isHttpErr ? err.status : 0;
+      const isTransient = status === 0 || status === 408 || status === 500 || status === 502 || status === 503 || status === 504;
+
+      if (isTransient) {
+        this.consecutivePollErrors++;
+        if (this.consecutivePollErrors < 5) {
+          const delay = Math.min(2500 * Math.pow(1.5, this.consecutivePollErrors - 1), 10000);
+          console.warn(`[TranscriptService] Polling HTTP glitch (${this.consecutivePollErrors}/5), retrying in ${Math.round(delay)}ms...`);
+          return timer(delay).pipe(
+            takeUntil(this.cancelSubject),
+            switchMap(() => this.generateWithAI(videoId, lang || 'ja', resultUrl, undefined, duration, title, channel))
+          );
+        }
+      }
+
+      this.consecutivePollErrors = 0;
+      clearStoredPendingJob(videoId);
+    }
 
     if (err instanceof HttpErrorResponse) {
       // Handle rate limiting (429)
@@ -552,7 +586,7 @@ export class TranscriptService {
       ...(resultUrl && { resultUrl }),
       ...(turnstileToken && { turnstileToken })
     }).pipe(
-      switchMap(response => this.handleResponse(response, videoId, lang, preferAI, duration, title, channel)),
+      switchMap(response => this.handleResponse(response, videoId, lang, preferAI, duration, title, channel, resultUrl)),
       finalize(() => this.pendingRequests.delete(requestKey)),
       shareReplay(1)
     );
@@ -574,7 +608,8 @@ export class TranscriptService {
     _preferAI: boolean,
     duration?: number,
     title?: string,
-    channel?: string
+    channel?: string,
+    resultUrl?: string
   ): Observable<SubtitleCue[]> {
 
     log('API Response:', response);
@@ -611,6 +646,7 @@ export class TranscriptService {
     // Handle processing state (AI job still running)
     if (response.status === 'processing' && response.resultUrl) {
       log('AI processing, polling in 2.5s...');
+      this.consecutivePollErrors = 0;
       saveStoredPendingJob(videoId, response.resultUrl, lang);
       this.state.set({ status: 'generating_ai', resultUrl: response.resultUrl });
 
@@ -622,6 +658,7 @@ export class TranscriptService {
 
     // Handle success
     if (response.success && response.segments?.length > 0) {
+      this.consecutivePollErrors = 0;
       clearStoredPendingJob(videoId);
       const cues = this.convertToSubtitleCues(response.segments);
       const source: 'native' | 'ai' = response.source === 'ai' ? 'ai' : 'native';
@@ -645,6 +682,20 @@ export class TranscriptService {
       });
 
       return of(cues);
+    }
+
+    // If we were polling an AI job and received a non-success response (e.g. transient 500 or timeout)
+    if (resultUrl) {
+      this.consecutivePollErrors++;
+      if (this.consecutivePollErrors < 5) {
+        const delay = Math.min(2500 * Math.pow(1.5, this.consecutivePollErrors - 1), 10000);
+        console.warn(`[TranscriptService] AI poll response error (${this.consecutivePollErrors}/5), retrying in ${Math.round(delay)}ms...`);
+        return timer(delay).pipe(
+          takeUntil(this.cancelSubject),
+          switchMap(() => this.generateWithAI(videoId, lang, resultUrl, undefined, duration, title, channel))
+        );
+      }
+      this.consecutivePollErrors = 0;
     }
 
     // Handle error / no content

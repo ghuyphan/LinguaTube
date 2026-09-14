@@ -1976,49 +1976,61 @@ app.post('/api/transcript', async (req, res) => {
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
         console.log(`[Dev Server] Submitting AI transcription to Gladia for ${youtubeUrl}`);
 
-        try {
-            const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
-                method: 'POST',
-                headers: {
-                    'x-gladia-key': gladiaKey,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ audio_url: youtubeUrl }),
-                signal: AbortSignal.timeout(15000)
-            });
+        let submitData = null;
+        let lastErr = null;
+        for (let attempt = 1; attempt <= 2; attempt++) {
+            try {
+                const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
+                    method: 'POST',
+                    headers: {
+                        'x-gladia-key': gladiaKey,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ audio_url: youtubeUrl, sentences: true }),
+                    signal: AbortSignal.timeout(24000)
+                });
 
-            if (!submitResponse.ok) {
-                const errData = await submitResponse.json().catch(() => ({}));
-                throw new Error(`Gladia submission failed (${submitResponse.status}): ${JSON.stringify(errData)}`);
+                if (!submitResponse.ok) {
+                    const errData = await submitResponse.json().catch(() => ({}));
+                    throw new Error(`Gladia submission failed (${submitResponse.status}): ${JSON.stringify(errData)}`);
+                }
+
+                submitData = await submitResponse.json();
+                break;
+            } catch (err) {
+                lastErr = err;
+                console.warn(`[Dev Server] Gladia submit attempt ${attempt}/2 failed: ${err.message}`);
+                if (attempt < 2) await new Promise(r => setTimeout(r, 1000));
             }
+        }
 
-            const submitData = await submitResponse.json();
-            const jobResultUrl = submitData.result_url;
-            console.log(`[Dev Server] Gladia job submitted: ${jobResultUrl}`);
-
-            // Return processing immediately so client polling takes over smoothly
-            return res.json({
-                success: false,
-                status: 'processing',
-                resultUrl: jobResultUrl,
-                whisperAvailable: true,
-                diamonds: devDiamonds,
-                maxDiamonds: 3,
-                nextRegenAt: null,
-                timing: 50
-            });
-        } catch (err) {
-            console.error('[Dev Server] Gladia AI error:', err.message);
+        if (!submitData?.result_url) {
+            console.error('[Dev Server] Gladia AI error:', lastErr?.message);
             return res.status(500).json({
                 success: false,
                 errorCode: 'AI_TRANSCRIPTION_ERROR',
-                error: err.message,
+                error: lastErr?.message || 'Gladia submission failed',
                 whisperAvailable: true,
                 diamonds: devDiamonds,
                 maxDiamonds: 3,
                 nextRegenAt: null
             });
         }
+
+        const jobResultUrl = submitData.result_url;
+        console.log(`[Dev Server] Gladia job submitted: ${jobResultUrl}`);
+
+        // Return processing immediately so client polling takes over smoothly
+        return res.json({
+            success: false,
+            status: 'processing',
+            resultUrl: jobResultUrl,
+            whisperAvailable: true,
+            diamonds: devDiamonds,
+            maxDiamonds: 3,
+            nextRegenAt: null,
+            timing: 50
+        });
     }
 
     // -------------------------------------------------------------

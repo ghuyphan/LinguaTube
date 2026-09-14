@@ -3,8 +3,6 @@
  */
 
 const GLADIA_API_URL = 'https://api.gladia.io/v2/pre-recorded';
-// 28 seconds: allows Gladia ample time to negotiate YouTube audio streams within Cloudflare's ~30s wall-clock limit
-const SUBMIT_TIMEOUT_MS = 28000;
 // 10 seconds: fast non-blocking status check for polling
 const POLL_TIMEOUT_MS = 10000;
 
@@ -17,41 +15,74 @@ export class GladiaProvider {
     }
 
     /**
-     * Submit a Youtube video URL to Gladia for transcription
+     * Submit a Youtube video URL to Gladia for transcription with retry budget
      * @param {string} youtubeUrl 
+     * @param {number} maxRetries 
      * @returns {Promise<string>} The result URL to poll
      */
-    async submitTranscriptionJob(youtubeUrl) {
+    async submitTranscriptionJob(youtubeUrl, maxRetries = 2) {
         if (!this.apiKey) {
             throw new Error('Gladia API key not configured');
         }
 
-        const submitResponse = await fetch(GLADIA_API_URL, {
-            method: 'POST',
-            headers: {
-                'x-gladia-key': this.apiKey,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                audio_url: youtubeUrl,
-                sentences: true
-            }),
-            signal: AbortSignal.timeout(SUBMIT_TIMEOUT_MS)
-        });
+        const TOTAL_BUDGET_MS = 26000;
+        const startTime = Date.now();
+        let lastError = null;
 
-        if (!submitResponse.ok) {
-            const errBody = await submitResponse.text().catch(() => '');
-            console.error(`[Gladia] Submit failed (${submitResponse.status}):`, errBody);
-            throw new Error(`Gladia submit failed (${submitResponse.status}): ${errBody.slice(0, 150)}`);
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            const timeRemaining = TOTAL_BUDGET_MS - (Date.now() - startTime);
+            if (timeRemaining < 3000) break;
+
+            const timeoutMs = Math.min(timeRemaining, 24000);
+
+            try {
+                const submitResponse = await fetch(GLADIA_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'x-gladia-key': this.apiKey,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        audio_url: youtubeUrl,
+                        sentences: true
+                    }),
+                    signal: AbortSignal.timeout(timeoutMs)
+                });
+
+                if (!submitResponse.ok) {
+                    const errBody = await submitResponse.text().catch(() => '');
+                    console.error(`[Gladia] Submit attempt ${attempt} failed (${submitResponse.status}):`, errBody);
+
+                    // Non-retryable client errors (400, 401, 403, 422 except 429)
+                    if (submitResponse.status >= 400 && submitResponse.status < 500 && submitResponse.status !== 429) {
+                        throw new Error(`Gladia submit failed (${submitResponse.status}): ${errBody.slice(0, 150)}`);
+                    }
+                    throw new Error(`Gladia submit error (${submitResponse.status}): ${errBody.slice(0, 150)}`);
+                }
+
+                const submitData = await submitResponse.json();
+
+                if (!submitData.result_url) {
+                    throw new Error('No result_url returned from Gladia');
+                }
+
+                return submitData.result_url;
+            } catch (err) {
+                lastError = err;
+                // Don't retry non-retryable 4xx client errors
+                if (err.message?.startsWith('Gladia submit failed (4')) {
+                    throw err;
+                }
+
+                console.warn(`[Gladia] Submit attempt ${attempt}/${maxRetries} error: ${err.message}`);
+                const remaining = TOTAL_BUDGET_MS - (Date.now() - startTime);
+                if (attempt < maxRetries && remaining > 4000) {
+                    await new Promise(r => setTimeout(r, 1000));
+                }
+            }
         }
 
-        const submitData = await submitResponse.json();
-
-        if (!submitData.result_url) {
-            throw new Error('No result_url returned from Gladia');
-        }
-
-        return submitData.result_url;
+        throw lastError || new Error('Gladia submission failed after retries');
     }
 
     /**

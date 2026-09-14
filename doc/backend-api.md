@@ -110,13 +110,14 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
      - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
      - **Pre-check R2**: Ensures no transcript already exists in R2 before consuming diamonds.
      - **Pre-check Pending Jobs**: If an active job for the video is already running in Gladia, reuses `result_url` without re-submitting or double-charging.
-     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` and `subtitles: true`.
+     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` using a 26-second timeout budget and automatic retry with backoff for transient submission failures.
      - **In-Memory Job Routing**: Stores job mapping in warm Worker isolate memory and D1 `pending_jobs` without burning Cloudflare KV write quotas (Rule 2).
      - Returns `{ status: 'processing', resultUrl }` immediately ($\sim 1.5$s response) to avoid long-lived edge connection drops (524 gateway timeouts).
   6. **Fast Client-Driven Polling & Failure Auto-Refund**:
      - Subsequent client poll requests pass `resultUrl` and validated `videoId` every 2.5 seconds.
      - **Multi-Isolate Job Verification (`pollAIJob`)**: Polling requests are cross-checked against D1 `pending_jobs` and isolate memory (`memJobMap`). If regional D1 replication lag occurs between isolates, it safely falls back to the client-verified `params.videoId` to prevent premature failure.
-     - Server polls Gladia status with a 15-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms. Prioritizes Gladia `sentences` over raw `utterances`.
+     - **Resilient Client Polling**: The client tolerates transient HTTP glitches (504 gateway timeouts, 500, network blips) with exponential backoff up to 5 consecutive attempts before failing, preserving the pending job in `localStorage`.
+     - Server polls Gladia status with a 10-second safety timeout, completing each poll check in $\sim 200\text{--}300$ms. Prioritizes Gladia `sentences` over raw `utterances`.
      - When `status: 'done'`, server resolves metadata/avatar via D1/oEmbed, indexes under both detected and study languages in D1, synchronously awaits write to R2, and deletes the pending job.
      - **Automated Diamond Refund**: If Gladia reports job error, times out, or submission fails, the backend triggers `refundDiamond()` via PocketHost API to restore the user's credit balance automatically.
 

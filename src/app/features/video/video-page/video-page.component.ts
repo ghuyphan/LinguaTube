@@ -13,7 +13,7 @@ import { OptionPickerComponent, OptionItem } from '../../../shared/components/op
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
-import { TranscriptService } from '../transcript.service';
+import { TranscriptService, getStoredPendingJob } from '../transcript.service';
 import { PlayerViewService } from '../services/player-view.service';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService } from '../../../core/services';
@@ -889,13 +889,35 @@ export class VideoPageComponent implements OnInit {
 
   onRetryCaptions(): void {
     const currentVideo = this.youtube.currentVideo();
-    if (currentVideo) {
-      this.subtitles.clear();
-      this.transcript.clearCache(currentVideo.id);
-      this.transcript.reset();
-      this.videoLevel.reset();
-      this.fetchCaptions(currentVideo.id, true);
+    if (!currentVideo) return;
+
+    const currentError = this.transcript.error();
+    const storedJob = getStoredPendingJob(currentVideo.id);
+
+    // If an active AI job is pending in localStorage, resume polling it directly
+    if (storedJob?.resultUrl) {
+      const lang = this.settings.settings().language;
+      this.transcript.generateWithAI(currentVideo.id, storedJob.lang || lang, storedJob.resultUrl).subscribe({
+        next: (cues) => {
+          if (cues.length > 0) {
+            this.handleCaptionsSuccess(cues, lang);
+          }
+        }
+      });
+      return;
     }
+
+    // If the failure was an AI timeout or AI service error, re-open AI dialog to retry
+    if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED') {
+      this.openAiConfirmDialog();
+      return;
+    }
+
+    this.subtitles.clear();
+    this.transcript.clearCache(currentVideo.id);
+    this.transcript.reset();
+    this.videoLevel.reset();
+    this.fetchCaptions(currentVideo.id, true);
   }
 
   onCaptchaResolved(token: string): void {
