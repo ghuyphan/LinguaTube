@@ -105,8 +105,11 @@ export async function fetchChannelAvatar(authorUrl) {
                         'Accept': 'text/html'
                     },
                     signal: AbortSignal.timeout(3000),
-                    redirect: 'error'
+                    redirect: 'manual'
                 });
+                if (targetRes.status >= 300 && targetRes.status < 400) {
+                    return null;
+                }
             } else {
                 return null;
             }

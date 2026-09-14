@@ -58,6 +58,43 @@ test('Gladia resultUrl security validation prevents SSRF & exfiltration', () => 
   assert.equal(isValidGladiaUrl('https://api.gladia.io/v1/billing/keys'), false); // billing endpoint traversal
 });
 
+test('GladiaProvider: checkJobStatus uses edge-compatible redirect mode and rejects 3xx redirects', async () => {
+  const { GladiaProvider } = await import('../functions-src/providers/gladia.js');
+  const provider = new GladiaProvider('test-api-key');
+
+  const origFetch = globalThis.fetch;
+  try {
+    let capturedOptions = null;
+    globalThis.fetch = async (url, options) => {
+      capturedOptions = options;
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({ status: 'done', result: { sentences: [] } })
+      };
+    };
+
+    const res = await provider.checkJobStatus('https://api.gladia.io/v2/pre-recorded/result/123');
+    assert.equal(res.status, 'done');
+    assert.equal(capturedOptions.redirect, 'manual');
+    assert.notEqual(capturedOptions.redirect, 'error');
+
+    // Reject 3xx redirects
+    globalThis.fetch = async () => ({
+      ok: false,
+      status: 302,
+      headers: new Headers({ location: 'https://evil.com' })
+    });
+
+    await assert.rejects(
+      async () => provider.checkJobStatus('https://api.gladia.io/v2/pre-recorded/result/123'),
+      /Gladia poll unexpected redirect: 302/
+    );
+  } finally {
+    globalThis.fetch = origFetch;
+  }
+});
+
 test('sanitizeVideoId & validateVideoRequest: prevents path traversal and malformed video IDs', async () => {
   const { validateVideoRequest } = await import('../functions-src/middlewares/video-validator.js');
   const { sanitizeVideoId } = await import('../functions-src/utils/utils.js');

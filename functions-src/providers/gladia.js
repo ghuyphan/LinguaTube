@@ -109,9 +109,13 @@ export class GladiaProvider {
 
         const resultResponse = await fetch(resultUrl, {
             headers: { 'x-gladia-key': this.apiKey },
-            redirect: 'error',
+            redirect: 'manual',
             signal: AbortSignal.timeout(POLL_TIMEOUT_MS)
         });
+
+        if (resultResponse.status >= 300 && resultResponse.status < 400) {
+            throw new Error(`Gladia poll unexpected redirect: ${resultResponse.status}`);
+        }
 
         if (!resultResponse.ok) {
             const err = new Error(`Gladia poll failed: ${resultResponse.status}`);

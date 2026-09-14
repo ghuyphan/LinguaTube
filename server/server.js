@@ -114,7 +114,7 @@ app.all('/proxy/:service/*path', async (req, res) => {
         const fetchOptions = {
             method: req.method,
             headers,
-            redirect: 'error'
+            redirect: 'manual'
         };
 
         if (req.method === 'POST') {
@@ -122,6 +122,9 @@ app.all('/proxy/:service/*path', async (req, res) => {
         }
 
         const response = await fetch(targetUrl, fetchOptions);
+        if (response.status >= 300 && response.status < 400) {
+            return res.status(502).json({ error: 'Upstream redirect not permitted' });
+        }
         const data = await response.text();
 
         res.status(response.status);

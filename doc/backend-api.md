@@ -364,7 +364,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - **Path Sanitization**: Filters out directory traversal sequences (`..`), slashes, and hidden dot files (`.`).
   - **Network Perimeter Guards**: Blocks private, loopback, link-local, carrier-grade NAT, IPv6 ULA, and metadata endpoints (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `169.254.0.0/16`, `100.64.0.0/10`, `fc00::/7`, `fe80::/10`, `::1`, `localhost`).
   - **CORS Protection**: Enforces origin check against trusted domains (`lingua-tube.pages.dev`, `voca.pages.dev`, `localhost`) rather than reflecting arbitrary caller origins.
-  - **Redirect Policy**: Enforces `redirect: 'error'` preventing redirect-based open proxy smuggling.
+  - **Redirect Policy**: Enforces `redirect: 'manual'` (with rejection of 3xx upstream status codes) preventing redirect-based open proxy smuggling while remaining fully compatible with edge runtimes.
   - **Timeout & Payload Limits**: Strict 8-second request timeout (`AbortSignal.timeout(8000)`) and maximum 64KB upstream body cap to prevent memory exhaustion.
 
 ---

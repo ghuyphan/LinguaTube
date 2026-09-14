@@ -185,7 +185,7 @@ export async function onRequest(context) {
             method: request.method,
             headers,
             signal: AbortSignal.timeout(8000),
-            redirect: 'error'
+            redirect: 'manual'
         };
 
         // Forward body for POST requests (cap payload at 64KB)
@@ -198,6 +198,9 @@ export async function onRequest(context) {
         }
 
         const response = await fetch(targetUrl, fetchOptions);
+        if (response.status >= 300 && response.status < 400) {
+            return jsonResponse({ error: 'Upstream redirect not permitted' }, 502);
+        }
         const data = await response.text();
 
         const responseHeaders = {
