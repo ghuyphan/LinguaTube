@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "minSupportedVersion": "1.0.0",
   "buildDate": "2026-09-15",
   "forceUpdate": false,
@@ -7,34 +7,29 @@
   "maintenanceMessage": "",
   "highlights": {
     "en": [
-      "Client Bundle Debloating: Isolated English NLP into an on-demand chunk, saving ~280KB from the initial bundle for Japanese, Korean, and Chinese learners.",
-      "Server-Only Video Difficulty Leveling: Language proficiency levels (JLPT, HSK, TOPIK, CEFR) are now assessed directly on Cloudflare edge metadata for instant 0ms resolution.",
-      "Dead Code & Attack Surface Cleanup: Fully retired legacy reverse proxy endpoints in favor of direct, unified dictionary and subtitle APIs.",
-      "Edge Webhook & Resilience Hardening: Upgraded Gladia and payOS webhook handlers with automated fail-closed retries, diamond refund guarantees, and SSML sanitization."
+      "Modern Onboarding Revamp: Introduced an immersive 3-step setup flow with true edge-to-edge fullscreen on mobile and an elegant floating card on desktop.",
+      "Difficulty Level Personalization: Starting proficiency level (JLPT, HSK, TOPIK, CEFR) directly calibrates recommended video feeds upon setup.",
+      "Fluid Segmented Progress: Added liquid animated progress capsules indicating remaining setup steps without visual clutter."
     ],
     "vi": [
-      "Tối Ưu Dung Lượng Tải Ứng Dụng: Tách thư viện xử lý ngữ pháp tiếng Anh thành gói tải theo yêu cầu, giảm ngay ~280KB dung lượng tải ban đầu cho người học tiếng Nhật, Hàn, Trung.",
-      "Đánh Giá Cấp Độ Video Nhanh Tức Thì: Phân loại độ khó theo chuẩn JLPT, HSK, TOPIK, CEFR được lưu sẵn trên Cloudflare D1, hiển thị ngay 0ms không cần quét phụ đề.",
-      "Thu Gọn & Tối Giản Hệ Thống: Loại bỏ hoàn toàn các cổng proxy trung gian cũ, chuẩn hóa 100% qua API từ điển và phụ đề trực tiếp.",
-      "Bảo Mật Webhook & Độ Tin Cậy Edge: Hoàn thiện xử lý webhook Gladia và payOS với cơ chế tự động hoàn kim cương khi lỗi, thử lại thanh toán và chống tấn công SSML."
+      "Giao Diện Giới Thiệu Hiện Đại: Trải nghiệm onboarding 3 bước hoàn toàn mới, tràn viền toàn màn hình trên điện thoại và modal tinh tế trên máy tính.",
+      "Cá Nhân Hóa Trình Độ Học Tập: Lựa chọn trình độ ban đầu (JLPT, HSK, TOPIK, CEFR) tự động tối ưu hóa danh sách video gợi ý ngay khi hoàn tất.",
+      "Thanh Tiến Trình Phân Đoạn Mượt Mà: Hiệu ứng chuyển động mượt mà giữa các bước giúp theo dõi tiến độ học tập trực quan."
     ],
     "ja": [
-      "クライアントバンドルの軽量化: 英語NLPライブラリをオンデマンド読み込みに移行し、日本語・韓国語・中国語学習者の初期ロードサイズを約280KB削減。",
-      "動画難易度判定の高速化（0ms表示）: JLPT/HSK/TOPIK/CEFRのレベル判定をCloudflare D1エッジメタデータに統合し、再生時の即時表示を実現。",
-      "レガシープロキシの完全削除: 不要な中間プロキシを廃止し、辞書・字幕APIを統一されたセキュアなエンドポイントに集約。",
-      "エッジWebhookとセキュリティ強化: Gladia音声認識およびpayOSのWebhook耐障害性を強化し、失敗時のダイヤ自動返還やSSMLインジェクション対策を完了。"
+      "モダンなオンボーディング体験: モバイルでの完全全画面表示とデスクトップでの洗練されたモーダルカードによる、新しい3ステップセットアップフローを導入。",
+      "レベルに応じた動画パーソナライズ: 開始時の習熟度レベル（JLPT、HSK、TOPIK、CEFR）がおすすめ動画フィードに即時反映されます。",
+      "滑らかなセグメント進捗バー: 流れるようなアニメーションで残りステップを直感的に把握できます。"
     ],
     "ko": [
-      "클라이언트 번들 최적화: 영어 NLP 모듈을 지연 로딩으로 전환하여 일본어, 한국어, 중국어 학습자의 초기 로딩 용량을 약 280KB 절감했습니다.",
-      "비디오 난이도 즉시 판별 (0ms): JLPT/HSK/TOPIK/CEFR 레벨을 Cloudflare D1 엣지 메타데이터로 캐싱하여 자막 순회 없이 즉시 표시합니다.",
-      "레거시 프록시 및 불필요 코드 제거: 구형 프록시 계층을 완전히 정리하고 통합 사전/자막 API로 단순화했습니다.",
-      "엣지 웹훅 및 보안 내구성 강화: Gladia AI 음성인식 및 payOS 결제 웹훅에 다이아몬드 자동 환불 복구, 결제 재시도, SSML 주입 방어 로직을 적용했습니다."
+      "모던 온보딩 전면 개편: 모바일 풀스크린 및 데스크톱 모달 카드로 구현된 몰입형 3단계 설정 플로우를 도입했습니다.",
+      "난이도 맞춤형 비디오 추천: 시작 숙련도 레벨(JLPT, HSK, TOPIK, CEFR)이 홈 추천 영상 피드에 즉시 반영됩니다.",
+      "부드러운 세그먼트 진행률 표시: 유려한 애니메이션 캡슐로 남은 설정 단계를 한눈에 확인할 수 있습니다."
     ],
     "zh": [
-      "客户端体积深度精简: 将英语 NLP 模块改造为按需动态加载，为日语、韩语和中文学习者节省约 280KB 首屏加载体积。",
-      "视频难度等级秒开判定 (0ms): JLPT/HSK/TOPIK/CEFR 等级直接由 Cloudflare D1 边缘元数据缓存提供，彻底消除前端字幕遍历计算。",
-      "废弃代理与攻击面全面清理: 彻底移除旧版反向代理层，全面收归至统一高效的原生字典与双语字幕接口。",
-      "边缘 Webhook 与接口韧性加固: 升级 Gladia 转录与 payOS 支付回调处理机制，完善失败钻石退款兜底、支付重试与 SSML 注入防护。"
+      "全新现代化入门引导: 引入沉浸式 3 步设置流程，在移动端实现真正全屏体验，在桌面端呈现精致居中卡片。",
+      "难度等级个性化推荐: 初始语言水平（JLPT、HSK、TOPIK、CEFR）在设置完成后直接为首页推荐视频定级。",
+      "流畅分段进度胶囊: 采用平滑流体动效展示设置进度，告别认知负担。"
     ]
   }
 }

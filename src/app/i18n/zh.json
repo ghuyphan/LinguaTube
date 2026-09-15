@@ -668,9 +668,30 @@
     "uiLanguageSubtitle": "您可以在设置中随时更改",
     "learningLanguageTitle": "我想学习...",
     "learningLanguageSubtitle": "选择您的目标语言以开始",
+    "translateSubtitlesTo": "字幕翻译为",
+    "translateSubtitlesSubtitle": "视频将显示翻译为此语言的双语字幕",
+    "chooseLevel": "选择您的水平",
+    "levelSubtitle": "我们将根据您的水平推荐适合的视频",
     "startLearning": "开始学习",
+    "langFeatures": {
+      "ja": "假名注音・动漫・日常对话",
+      "zh": "拼音・播客・HSK备考",
+      "ko": "韩剧・Vlog・TOPIK备考",
+      "en": "CEFR等级・播客・地道口语"
+    },
     "tapToTry": "点击任意词语试试！",
-    "skip": "先去逛逛",
+    "skip": "跳过",
+    "continue": "继续",
+    "back": "返回",
+    "stepProgress": "第 {{current}} 步（共 {{total}} 步）",
+    "subtitleCoachmark": "轻按任意单词查词典并保存至单词本",
+    "demoSave": "+ 保存单词",
+    "demoSaved": "已保存至单词本！",
+    "levels": {
+      "beginnerDesc": "基础短语与清晰发音",
+      "intermediateDesc": "自然日常对话与Vlog",
+      "advancedDesc": "原汁原味新闻、播客与深度访谈"
+    },
     "changeUiLang": "界面语言",
     "features": {
       "subtitles": "双语字幕助您更好理解",

@@ -768,24 +768,26 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
 
 ---
 
-## 14. Welcoming Onboarding & First-Run Experience
+## 14. Modern Language Learning App Onboarding & First-Run Experience
 
-To ensure an inviting, frictionless introduction for new learners, Voca provides a clean, focused, non-intrusive welcome sheet.
+To ensure an inviting, frictionless introduction matching top modern language learning apps (Duolingo, Busuu, Babbel), Voca provides an immersive 3-step onboarding flow designed specifically for mobile and desktop.
 
 ### 14.1. Core Principles & Flow
-- **Non-Blocking Immediate Rendering**:
-  - The application shell, desktop sidebar, routes, and video players load immediately underneath. Deep links (e.g. shared video URLs `/video?v=...`) are never obstructed by a blank loading screen or mandatory interrogation.
-  - Onboarding renders within Voca's responsive `BottomSheetComponent`, presenting as a centered modal with frosted blur on desktop (`maxWidth="440px"`) and an ergonomic slide-up sheet on mobile.
-- **Streamlined Value Highlights (`features-card`)**:
-  - Highlights Voca's three core superpowers in a clean, unified card:
-    1. 🎬 **Dual Subtitles & Furigana**: Real-time reading annotations and bilingual subtitles.
-    2. 📖 **Instant Tap-to-Translate**: Morphological dictionary lookups.
-    3. 🧠 **Spaced Repetition Flashcards**: SM-2 vocabulary memorization.
-- **Target Language Selection**:
-  - Clean 2x2 grid for selecting between Japanese, Chinese, Korean, and English with circular flags, native script, subtle glow, and checkmark badges.
-- **Friction-Free Exit Hatches**:
-  - **Start Learning**: Instantly saves the chosen learning language and marks onboarding complete.
-  - **Explore First / Skip**: Immediately closes the sheet and lets learners explore with sensible defaults without forcing decisions.
-  - Backdrop click and Escape key provide standard accessible dismiss paths without cluttered floating close buttons.
+- **Responsive Immersive Presentation**:
+  - **Mobile (`≤ 768px`)**: Renders as an edge-to-edge, native **fullscreen** experience (`100dvh`) with native top and bottom safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), eliminating bottom-sheet clipping and drawer handles.
+  - **Desktop (`> 768px`)**: Renders as an elegant centered modal card (`max-width: 520px`, `height: 640px`) with smooth backdrop blur (`backdrop-filter: blur(8px)`).
+- **Step 1: Target Learning Language**:
+  - Four spacious language cards (Japanese 🇯🇵, Chinese 🇨🇳, Korean 🇰🇷, English 🇬🇧) featuring circular flags, native script, localized feature taglines (e.g. furigana, pinyin, K-drama dialogues), and animated checkmark radios.
+- **Step 2: Starting Level Calibration**:
+  - Three calibrated proficiency tiers (Beginner 🌱, Intermediate 🌿, Advanced 🌳) displaying real official exam badges (JLPT `N5-N4`–`N1`, HSK `1-2`–`6`, TOPIK `1`–`6`, CEFR `A1-A2`–`C2`) and clear audience descriptions.
+  - Persists directly into `settings.preferredLevel` and immediately filters video recommendations (`videoLevelFilter`).
+- **Step 3: Subtitle Translation (Native Language)**:
+  - Five clean cards for configuring dual subtitles into the learner's native tongue (English, Tiếng Việt, 日本語, 한국어, 中文), auto-detected from browser UI locale.
+- **Navigation & Sticky Action Bar**:
+  - **Top Bar**: Back button (when step > 1), animated progress bar (33% → 66% → 100%), and unobtrusive "Skip / Explore First" button.
+  - **Sticky Bottom Action Bar**: Big full-width 52px button ("Continue →" on steps 1–2, "Start Learning ✨" on step 3) anchored in the thumb zone with safe-area padding.
+- **Progressive In-Player Coachmark**:
+  - Floating pill above subtitle line on first video playback (*"💡 Tap any word to translate & save to flashcards"*), permanently dismissed upon first word interaction.
+
 
 

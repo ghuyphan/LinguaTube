@@ -138,6 +138,19 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   showAddedSheet = signal(false);
   showSubtitleOptionsSheet = signal(false);
+
+  readonly showCoachmark = computed(() => {
+    return !this.settings.settings().hasSeenSubtitleCoachmark &&
+      !!this.subtitles.currentCue() &&
+      !this.quiz.isActive();
+  });
+
+  dismissCoachmark(e?: Event): void {
+    if (e) {
+      e.stopPropagation();
+    }
+    this.settings.markSubtitleCoachmarkSeen();
+  }
   recentCount = computed(() => {
     const lang = this.settings.settings().language;
     return this.vocab.getByLanguage(lang).length;
@@ -517,6 +530,9 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   onWordClick(token: Token, sentence: string): void {
+    if (!this.settings.settings().hasSeenSubtitleCoachmark) {
+      this.settings.markSubtitleCoachmarkSeen();
+    }
     this.wordClicked.emit({ token, sentence });
   }
 

@@ -668,9 +668,30 @@
     "uiLanguageSubtitle": "設定でいつでも変更できます",
     "learningLanguageTitle": "学習したい言語は...",
     "learningLanguageSubtitle": "学習ターゲットを選択してください",
+    "translateSubtitlesTo": "字幕の翻訳言語",
+    "translateSubtitlesSubtitle": "動画はこの言語に翻訳された二重字幕を表示します",
+    "chooseLevel": "現在のレベルを選択",
+    "levelSubtitle": "おすすめ動画をあなたのレベルに合わせて調整します",
     "startLearning": "学習を開始",
+    "langFeatures": {
+      "ja": "ふりがな・アニメ・日常会話",
+      "zh": "ピンイン・ポッドキャスト・HSK対策",
+      "ko": "K-POP・ドラマ・TOPIK対策",
+      "en": "CEFR基準・ポッドキャスト・自然な会話"
+    },
     "tapToTry": "単語をタップしてみよう！",
-    "skip": "まずは探索する",
+    "skip": "スキップ",
+    "continue": "次へ",
+    "back": "戻る",
+    "stepProgress": "ステップ {{current}} / {{total}}",
+    "subtitleCoachmark": "単語をタップして辞書検索＆単語帳に保存",
+    "demoSave": "+ 単語を保存",
+    "demoSaved": "単語帳に保存しました！",
+    "levels": {
+      "beginnerDesc": "基礎フレーズと聴き取りやすい発音",
+      "intermediateDesc": "自然な日常会話やVlog",
+      "advancedDesc": "ニュース、ポッドキャスト、解説動画"
+    },
     "changeUiLang": "表示言語",
     "features": {
       "subtitles": "理解を深める二言語字幕",

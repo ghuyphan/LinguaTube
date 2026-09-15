@@ -95,7 +95,11 @@ export class VideoPageComponent implements OnInit {
   );
 
   // Video level filter state for recommended videos
-  videoLevelFilter = signal<string>('all');
+  videoLevelFilter = signal<string>(
+    (this.settings.settings().preferredLevel && this.settings.settings().preferredLevel !== 'all')
+      ? this.settings.settings().preferredLevel!
+      : 'all'
+  );
   showLevelFilter = signal<boolean>(false);
   readonly isLevelSwitching = signal<boolean>(false);
 
@@ -549,7 +553,8 @@ export class VideoPageComponent implements OnInit {
 
       if (langChanged) {
         untracked(() => {
-          this.videoLevelFilter.set('all');
+          const prefLevel = this.settings.settings().preferredLevel;
+          this.videoLevelFilter.set(prefLevel && prefLevel !== 'all' ? prefLevel : 'all');
           this.savedFeedScrollY = 0;
         });
       }

@@ -295,17 +295,11 @@ import { VideoRecommendationService } from './core/services/video-recommendation
           />
         }
 
-        <!-- Onboarding Welcome Sheet (lazy loaded when not completed) -->
+        <!-- Onboarding Welcome Flow (lazy loaded when not completed) -->
         @defer (when showOnboardingSheet(); prefetch on idle) {
-          <app-bottom-sheet
-            [isOpen]="showOnboardingSheet()"
-            [showCloseButton]="false"
-            [allowBackdropClose]="true"
-            maxWidth="440px"
-            (closed)="dismissOnboarding()"
-          >
+          @if (showOnboardingSheet()) {
             <app-onboarding (dismissed)="dismissOnboarding()" />
-          </app-bottom-sheet>
+          }
         }
 
       <!-- Update Available Sheet (always available, even during onboarding) -->

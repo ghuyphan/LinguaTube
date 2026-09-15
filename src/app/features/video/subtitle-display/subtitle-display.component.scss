@@ -93,6 +93,68 @@
     }
 }
 
+/* Progressive Onboarding Subtitle Coachmark */
+.subtitle-coachmark {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 10px;
+    background: var(--bg-card);
+    border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.35);
+    border-radius: var(--border-radius-pill);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.12);
+    cursor: pointer;
+    animation: coachmarkSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+
+    &__content {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    &__sparkle {
+        color: var(--accent-primary);
+    }
+
+    &__close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        color: var(--text-muted);
+        transition: color var(--transition-fast), background-color var(--transition-fast);
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--text-primary);
+                background: var(--bg-hover);
+            }
+        }
+    }
+}
+
+@keyframes coachmarkSlideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -6px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
 .subtitle-off-placeholder {
     display: flex;
     align-items: center;

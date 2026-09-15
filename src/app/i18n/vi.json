@@ -668,9 +668,30 @@
     "uiLanguageSubtitle": "Bạn có thể thay đổi sau trong cài đặt",
     "learningLanguageTitle": "Tôi muốn học...",
     "learningLanguageSubtitle": "Chọn ngôn ngữ mục tiêu để bắt đầu",
+    "translateSubtitlesTo": "Dịch phụ đề sang",
+    "translateSubtitlesSubtitle": "Video sẽ hiển thị phụ đề song ngữ dịch sang ngôn ngữ này",
+    "chooseLevel": "Chọn trình độ của bạn",
+    "levelSubtitle": "Đề xuất video sẽ được tối ưu theo trình độ của bạn",
     "startLearning": "Bắt đầu học",
-    "tapToTry": "Nhấn vào bất kỳ từ nào để thử!",
-    "skip": "Khám phá trước",
+    "langFeatures": {
+      "ja": "Furigana, anime & đàm thoại hàng ngày",
+      "zh": "Pinyin, podcast & luyện thi HSK",
+      "ko": "K-drama, vlogs & luyện thi TOPIK",
+      "en": "Trình độ CEFR, podcast & phát âm tự nhiên"
+    },
+    "tapToTry": "Chạm vào từ bất kỳ để thử!",
+    "skip": "Bỏ qua",
+    "continue": "Tiếp tục",
+    "back": "Quay lại",
+    "stepProgress": "Bước {{current}} / {{total}}",
+    "subtitleCoachmark": "Chạm vào từ bất kỳ để tra nghĩa & lưu vào sổ từ",
+    "demoSave": "+ Lưu từ vựng",
+    "demoSaved": "Đã lưu vào sổ từ!",
+    "levels": {
+      "beginnerDesc": "Cụm từ đơn giản & phát âm rõ ràng",
+      "intermediateDesc": "Hội thoại đời thường & vlogs",
+      "advancedDesc": "Tin tức, podcast & phỏng vấn bản xứ"
+    },
     "changeUiLang": "Giao diện",
     "features": {
       "subtitles": "Phụ đề song ngữ giúp hiểu rõ hơn",

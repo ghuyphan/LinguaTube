@@ -735,15 +735,19 @@ To maintain complete visual, structural, and functional harmony across all prima
 - **Sidebar Header Stats Bar (`SidebarComponent`) & Mobile More Menu / Settings Sheet (`AppComponent`, `SettingsSheetComponent`)**:
   - Level badge button displaying current user level and trophy icon, with click handler opening the Achievements & Leaderboard bottom sheet on both desktop and mobile.
 
-### 8.5. Welcoming Onboarding Modal & Sheet (`OnboardingComponent`)
-- **Non-Blocking Architecture**:
-  - Eliminates full-page blocking gates; the application shell, desktop sidebar, routes, and video players render immediately underneath.
-  - Hosted inside standard `BottomSheetComponent` (`maxWidth="440px"`) with frosted backdrop blur on desktop and native slide-up sheet on mobile.
-- **Visual Design & Value Proposition**:
-  - Hero header with sparkling glow (`var(--accent-primary)`), warm welcome typography, and a unified feature card (Dual Subtitles, Instant Dictionary, and Spaced Repetition).
-  - Target language grid for Japanese, Chinese, Korean, and English with circular flags, native script, subtle glow, and checkmark badges.
-- **Friction-Free Escape Hatches**:
-  - Provides a primary "Start Learning" CTA, a secondary "Explore First" ghost button, and backdrop/Escape key dismissal, avoiding intrusive floating close buttons.
+### 8.5. Modern Fullscreen Onboarding Flow (`OnboardingComponent`)
+- **Fullscreen Mobile & Floating Desktop Architecture**:
+  - **Mobile (`≤ 768px`)**: Uncoupled from `BottomSheetComponent` to render as a dedicated edge-to-edge native fullscreen view (`100dvh`) with native top and bottom safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), eliminating sheet clipping and drawer handles.
+  - **Desktop (`> 768px`)**: Centered floating modal (`max-width: 520px`, `height: 640px`) with smooth backdrop blur (`backdrop-filter: blur(8px)`) and entrance animations (`modalPop`).
+- **Three-Step Flow (One Question per Screen)**:
+  - **Step 1 (Target Language)**: 4 spacious option cards with circular flags, native titles, localized taglines, and animated checkmark radio rings.
+  - **Step 2 (Proficiency Level)**: 3 difficulty cards (Beginner 🌱, Intermediate 🌿, Advanced 🌳) with official exam badges (JLPT, HSK, TOPIK, CEFR) and descriptions, persisting directly into `settings.preferredLevel` and `videoLevelFilter`.
+  - **Step 3 (Dual Subtitle Translation)**: 5 native language cards (English, Tiếng Việt, 日本語, 한국어, 中文) synchronizing `dualSubtitleTargetLang`.
+- **Progressive In-Player Coachmark**:
+  - A 1-time floating tooltip over the player's subtitle area guiding first-time viewers: *"💡 Tap any word to translate & save to flashcards"*, permanently dismissed on first word interaction.
+- **Top Bar & Thumb-Zone Action Button**:
+  - Top navigation bar featuring an animated progress bar (33% → 66% → 100%), Back button (on steps 2 & 3), and "Explore First" skip button.
+  - Sticky bottom action bar with a 52px primary action button ("Continue →" for steps 1–2, "Start Learning ✨" for step 3).
 
 ---
 

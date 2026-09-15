@@ -19,6 +19,17 @@
             <kbd class="shortcut-kbd">c</kbd>
         </div>
         } @else {
+        @if (showCoachmark()) {
+        <div class="subtitle-coachmark" (click)="dismissCoachmark($event)">
+            <div class="subtitle-coachmark__content">
+                <app-icon name="sparkles" [size]="13" class="subtitle-coachmark__sparkle" />
+                <span>{{ i18n.t('onboarding.subtitleCoachmark') || 'Tap any word to translate & save' }}</span>
+            </div>
+            <button type="button" class="subtitle-coachmark__close" (click)="dismissCoachmark($event)" [attr.aria-label]="i18n.t('common.close') || 'Close'">
+                <app-icon name="x" [size]="12" />
+            </button>
+        </div>
+        }
         <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()" (wheel)="onCurrentSubtitleScroll()" (touchmove)="onCurrentSubtitleScroll()">
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->

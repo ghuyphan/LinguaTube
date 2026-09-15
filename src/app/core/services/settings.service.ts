@@ -19,6 +19,8 @@ const DEFAULT_SETTINGS: UserSettings = {
   showDualSubtitles: true,
   dualSubtitleTargetLang: 'en',
   hasCompletedOnboarding: false,
+  preferredLevel: 'all',
+  hasSeenSubtitleCoachmark: false,
   fullscreenSubtitleYPercent: 94
 };
 
@@ -228,8 +230,20 @@ export class SettingsService implements OnDestroy {
     this.updateSettings({ dualSubtitleTargetLang: lang });
   }
 
-  completeOnboarding(): void {
-    this.updateSettings({ hasCompletedOnboarding: true });
+  completeOnboarding(params?: {
+    language?: SupportedLearningLanguage;
+    dualSubtitleTargetLang?: string;
+    preferredLevel?: string;
+  }): void {
+    const updates: Partial<UserSettings> = { hasCompletedOnboarding: true };
+    if (params?.language) updates.language = params.language;
+    if (params?.dualSubtitleTargetLang) updates.dualSubtitleTargetLang = params.dualSubtitleTargetLang;
+    if (params?.preferredLevel) updates.preferredLevel = params.preferredLevel;
+    this.updateSettings(updates);
+  }
+
+  markSubtitleCoachmarkSeen(): void {
+    this.updateSettings({ hasSeenSubtitleCoachmark: true });
   }
 
   resetToDefaults(): void {

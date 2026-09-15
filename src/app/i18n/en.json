@@ -668,9 +668,30 @@
     "uiLanguageSubtitle": "You can change this anytime in settings",
     "learningLanguageTitle": "I want to learn...",
     "learningLanguageSubtitle": "Choose your target language to get started",
+    "translateSubtitlesTo": "Translate subtitles to",
+    "translateSubtitlesSubtitle": "Videos will display dual subtitles translated into this language",
+    "chooseLevel": "Choose your level",
+    "levelSubtitle": "We'll tailor your recommended video feed",
     "startLearning": "Start Learning",
+    "langFeatures": {
+      "ja": "Furigana, anime & daily conversation",
+      "zh": "Pinyin, podcasts & HSK preparation",
+      "ko": "K-drama, vlogs & TOPIK preparation",
+      "en": "CEFR levels, podcasts & native speech"
+    },
     "tapToTry": "Tap any word to try it out!",
-    "skip": "Explore First",
+    "skip": "Skip",
+    "continue": "Continue",
+    "back": "Back",
+    "stepProgress": "Step {{current}} of {{total}}",
+    "subtitleCoachmark": "Tap any word to translate & save to flashcards",
+    "demoSave": "+ Save word",
+    "demoSaved": "Saved to Flashcards!",
+    "levels": {
+      "beginnerDesc": "Simple phrases & clear speech",
+      "intermediateDesc": "Natural conversations & vlogs",
+      "advancedDesc": "Native news, podcasts & interviews"
+    },
     "changeUiLang": "Interface",
     "features": {
       "subtitles": "Dual subtitles for better understanding",
