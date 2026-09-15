@@ -726,7 +726,8 @@ export class VideoPageComponent implements OnInit {
         });
 
       this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
-        const videoId = params.get('id') || params.get('v');
+        const rawId = params.get('id') || params.get('v');
+        const videoId = rawId && /^[a-zA-Z0-9_-]{11}$/.test(rawId) ? rawId : null;
         const playlistId = params.get('playlist');
         this.activePlaylistId.set(playlistId);
         const currentLang = this.settings.settings().language;
@@ -941,6 +942,9 @@ export class VideoPageComponent implements OnInit {
     const token = this.aiCaptchaToken();
 
     if (!currentVideo || !token || this.isSubmittingAi() || this.isVideoTooLongForAI() || this.transcript.diamonds() < this.aiDiamondCost()) return;
+
+    // Immediately invalidate single-use Turnstile token to prevent replay
+    this.aiCaptchaToken.set(null);
 
     this.isSubmittingAi.set(true);
     this.showAiConfirmDialog.set(false);

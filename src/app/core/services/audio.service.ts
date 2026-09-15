@@ -228,6 +228,11 @@ export class AudioService {
           }
           audio.onended = null;
           audio.onerror = null;
+          try {
+            audio.pause();
+            audio.removeAttribute('src');
+            audio.load();
+          } catch {}
           if (this.activeAudio === audio) {
             this.activeAudio = null;
           }
@@ -237,8 +242,6 @@ export class AudioService {
       // Failsafe timeout: if audio fails to play or load within 2000ms, abort and fall back
       timeoutId = setTimeout(() => {
         cleanup();
-        audio.pause();
-        audio.removeAttribute('src');
         reject(new Error('Audio playback timed out after 2000ms'));
       }, 2000);
 

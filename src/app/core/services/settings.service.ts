@@ -168,11 +168,11 @@ export class SettingsService implements OnDestroy {
   ): string | null {
     if (language === 'ja') {
       const kana = source.reading || (isJapaneseKanaText(source.surface) ? source.surface : undefined);
-      const romaji = source.romanization || getJapaneseRomaji(kana, source.surface);
-
-      return this.prefersRomanizedReading(language)
-        ? romaji || kana || null
-        : kana || romaji || null;
+      if (this.prefersRomanizedReading(language)) {
+        const romaji = source.romanization || getJapaneseRomaji(kana, source.surface);
+        return romaji || kana || null;
+      }
+      return kana || source.romanization || getJapaneseRomaji(kana, source.surface) || null;
     }
 
     if (language === 'zh') {

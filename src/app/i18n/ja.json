@@ -194,6 +194,7 @@
     "translationFailed": "翻訳に失敗しました。もう一度お試しください。",
     "readingHint": "文字の上に読み仮名・発音ガイドを表示",
     "grammarHint": "文法構造とパターンをハイライト",
+    "dualSubs": "対訳字幕",
     "dualSubsHint": "対訳字幕を表示",
     "translating": "字幕を翻訳中...",
     "reading": "読み方"
@@ -546,6 +547,7 @@
     "createNew": "新しいプレイリストを作成",
     "save": "保存",
     "videoCount": "{{count}}本の動画",
+    "playlistCount": "{{count}}個の再生リスト",
     "updated": "{{date}}に更新",
     "playAll": "すべて再生",
     "videos": "動画",

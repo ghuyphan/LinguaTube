@@ -199,7 +199,8 @@ export class SmoothHeightAnimator {
     if (this.currentAnimation) {
       // Sample in-flight rendered height to seamlessly handle rapid interruptions
       oldHeight = this.container.getBoundingClientRect().height;
-      this.cancel();
+      this.currentAnimation.cancel();
+      this.currentAnimation = null;
     }
 
     this.lastContentHeight = contentHeight;

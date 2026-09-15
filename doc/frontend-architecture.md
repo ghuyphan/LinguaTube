@@ -481,6 +481,7 @@ Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
 The application styling is organized using modular SCSS located in `src/styles/`:
 
 - **`_variables.scss`**: Design tokens, font stacks (system, Noto Sans JP/KR/SC), color palette, spacing, z-index layers. Standardizes `--success` to `#22c55e` across light/dark themes, provides gamification RGB tokens (`--color-fire-rgb`, `--color-diamond-rgb`), tier gradients (`--gradient-pro`, `--gradient-premium`), and radius tokens (`--border-radius-xs: 8px`, `--sidebar-width: 15.75rem`).
+- **`_mixins.scss`**: Standardized responsive media queries (`@mixin respond-to($bp)` supporting `mobile-sm`, `mobile`, `tablet`, `desktop`, `desktop-lg`), reusable backdrop glassmorphism (`@mixin glass`), and scrollbar concealment (`@mixin hide-scrollbar`).
 - **`_base.scss` & `_utilities.scss`**: CSS reset, root typography, `@mixin no-scrollbar` / `.no-scrollbar` utility, mobile tap-highlight resets.
 - **`_layout.scss`**: Main grid, sidebar layouts, topbar header, safe area padding (`--bottom-nav-safe-area`, `env(safe-area-inset-bottom)`).
 - **`_components.scss`**: Badges, modals, dialog backdrops, pill tags, buttons.

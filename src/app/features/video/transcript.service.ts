@@ -109,10 +109,19 @@ export class TranscriptService {
   // Private State
   // ============================================================================
 
+  private static readonly MAX_IN_MEMORY_TRANSCRIPTS = 15;
   private readonly transcriptCache = new Map<string, SubtitleCue[]>();
   private readonly pendingRequests = new Map<string, Observable<SubtitleCue[]>>();
   private cancelSubject = new Subject<void>();
   private currentVideoId: string | null = null;
+
+  private setTranscriptCache(key: string, cues: SubtitleCue[]): void {
+    if (this.transcriptCache.size >= TranscriptService.MAX_IN_MEMORY_TRANSCRIPTS && !this.transcriptCache.has(key)) {
+      const oldestKey = this.transcriptCache.keys().next().value;
+      if (oldestKey) this.transcriptCache.delete(oldestKey);
+    }
+    this.transcriptCache.set(key, cues);
+  }
 
   constructor() {
     this.refreshDiamonds();
@@ -123,9 +132,9 @@ export class TranscriptService {
     this.aiJobManager.jobCompleted$.subscribe(({ videoId, language, requestedLanguage, languageMismatch, cues, source }) => {
       log('Received AI completion from AiJobManager:', { videoId, language, requestedLanguage, languageMismatch, cueCount: cues.length });
       const cacheKey = `${videoId}:${language}`;
-      this.transcriptCache.set(cacheKey, cues);
+      this.setTranscriptCache(cacheKey, cues);
       if (requestedLanguage && requestedLanguage !== language) {
-        this.transcriptCache.set(`${videoId}:${requestedLanguage}`, cues);
+        this.setTranscriptCache(`${videoId}:${requestedLanguage}`, cues);
         this.fallbackInfo.set({
           requested: requestedLanguage,
           returned: language
@@ -275,7 +284,7 @@ export class TranscriptService {
         const isDevMock = cachedData?.cues?.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
         if (cachedData && (!isDevMock || videoId === 'demo' || videoId === 'test')) {
           log('IndexedDB cache hit:', { videoId, lang, cues: cachedData.cues.length });
-          this.transcriptCache.set(cacheKey, cachedData.cues);
+          this.setTranscriptCache(cacheKey, cachedData.cues);
           this.state.set({
             status: 'complete',
             language: cachedData.language,
@@ -298,11 +307,11 @@ export class TranscriptService {
             if (cues.length > 0) {
               const detectedLang = this.detectedLanguage() || lang;
               const actualCacheKey = `${videoId}:${detectedLang}`;
-              this.transcriptCache.set(actualCacheKey, cues);
+              this.setTranscriptCache(actualCacheKey, cues);
               const source = this.captionSource() || 'native';
               this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
             } else if (!forceRefresh) {
-              this.transcriptCache.set(cacheKey, []);
+              this.setTranscriptCache(cacheKey, []);
             }
           }),
           catchError(err => this.handleHttpError(err))
@@ -341,9 +350,9 @@ export class TranscriptService {
       tap(cues => {
         if (cues.length > 0) {
           const detectedLang = this.detectedLanguage() || lang;
-          this.transcriptCache.set(cacheKey, cues);
+          this.setTranscriptCache(cacheKey, cues);
           if (detectedLang !== lang) {
-            this.transcriptCache.set(`${videoId}:${detectedLang}`, cues);
+            this.setTranscriptCache(`${videoId}:${detectedLang}`, cues);
           }
           this.persistentCache.set(videoId, lang, cues, 'ai').catch(() => { });
           if (detectedLang !== lang) {

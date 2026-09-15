@@ -372,15 +372,15 @@ export class OfflineHistoryRepository implements IHistoryRepository {
                 }
             }
 
-            // 2. Fetch all history from server
-            const result = await client.collection('history').getList(1, 100, {
+            // 2. Fetch all history from server (getFullList avoids 100-item truncation)
+            const records = await client.collection('history').getFullList({
                 filter: `user="${sanitizeFilterValue(userId)}"`,
                 sort: '-watched_at',
                 requestKey: null
             });
 
             const activeTombstones = new Set(this.getDeletionTombstones());
-            const remoteItems = result.items
+            const remoteItems = records
                 .map(r => this.recordToHistoryItem(r as unknown as HistoryRecord))
                 .filter(r => !activeTombstones.has(r.video_id));
 

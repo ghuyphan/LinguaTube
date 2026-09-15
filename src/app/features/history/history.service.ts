@@ -3,7 +3,9 @@ import { isPlatformBrowser } from '@angular/common';
 import { HistoryItem, VideoInfo } from '../../models';
 import { YoutubeService } from '../video';
 import { OfflineHistoryRepository } from '../../core/repositories';
-import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
+import { AuthService } from '../../core/services';
+import { getYouTubeThumbnail } from '../../core/utils';
+import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 import { GamificationService } from '../../core/services/gamification.service';
 import { StreakService } from '../../services/streak.service';
 
@@ -20,6 +22,7 @@ export class HistoryService {
     private repo = inject(OfflineHistoryRepository);
     private gamification = inject(GamificationService);
     private streak = inject(StreakService);
+    private auth = inject(AuthService);
 
     private completedVideos = new Set<string>();
 
@@ -139,7 +142,7 @@ export class HistoryService {
             : (existingItem ? existingItem.progress : 0);
 
         const historyItem: HistoryItem = {
-            id: existingItem ? existingItem.id : generateRandomId(),
+            id: existingItem ? existingItem.id : generateDeterministicRecordId('hist', this.auth.getUserId() || 'guest', video.id),
             video_id: video.id,
             title: video.title || existingItem?.title || 'YouTube Video',
             thumbnail: video.thumbnail || existingItem?.thumbnail || getYouTubeThumbnail(video.id),

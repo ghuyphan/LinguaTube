@@ -163,7 +163,7 @@
                             </span>
                         </div>
                         <div class="settings-item-right">
-                            <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" />
+                            <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" [label]="isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode')" />
                         </div>
                     </div>
                 </div>

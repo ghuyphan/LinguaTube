@@ -79,6 +79,15 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         );
     });
 
+    // O(1) indexed lookup map for rapid token level checks during subtitle playback
+    readonly vocabWordMap = computed<Map<string, VocabularyItem>>(() => {
+        const map = new Map<string, VocabularyItem>();
+        for (const item of this.vocabulary()) {
+            map.set(item.word, item);
+        }
+        return map;
+    });
+
     private saveTimeout: ReturnType<typeof setTimeout> | null = null;
     private syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
     private lastPushedHash = '';
@@ -95,11 +104,13 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     findWord(word: string): VocabularyItem | undefined {
-        return this.vocabulary().find(item => item.word === word);
+        if (!word) return undefined;
+        return this.vocabWordMap().get(word);
     }
 
     hasWord(word: string): boolean {
-        return this.vocabulary().some(item => item.word === word);
+        if (!word) return false;
+        return this.vocabWordMap().has(word);
     }
 
     getStats() {

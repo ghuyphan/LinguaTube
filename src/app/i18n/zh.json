@@ -194,6 +194,7 @@
     "translationFailed": "翻译失败，请重试。",
     "readingHint": "在字符上方显示注音标注（拼音/假名）",
     "grammarHint": "高亮显示重点语法句型与结构",
+    "dualSubs": "双语字幕",
     "dualSubsHint": "显示双语翻译字幕",
     "translating": "正在翻译字幕...",
     "reading": "注音"
@@ -546,6 +547,7 @@
     "createNew": "创建新播放列表",
     "save": "保存",
     "videoCount": "{{count}} 个视频",
+    "playlistCount": "{{count}}个播放列表",
     "updated": "更新于 {{date}}",
     "playAll": "全部播放",
     "videos": "视频",

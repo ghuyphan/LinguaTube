@@ -31,13 +31,14 @@ export class FontLoaderService {
         const url = this.fontUrls[lang];
         if (!url) return;
 
+        // Mark as registered synchronously to prevent concurrent duplicate link injection
+        this.loadedFonts.add(lang);
+
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = url;
-        link.onload = () => {
-            this.loadedFonts.add(lang);
-        };
         link.onerror = () => {
+            this.loadedFonts.delete(lang);
             console.warn(`[FontLoader] Failed to load font for ${lang}`);
         };
 

@@ -59,7 +59,7 @@
                 </div>
                 } @else {
                 <input #inputField type="text" [(ngModel)]="inputValue" (keydown.enter)="onSubmit()"
-                    [placeholder]="getPlaceholder()" [disabled]="quiz.questionState() === 'success'" class="quiz-input"
+                    [placeholder]="getPlaceholder()" [attr.aria-label]="getPlaceholder()" [disabled]="quiz.questionState() === 'success'" class="quiz-input"
                     [class.is-success]="quiz.questionState() === 'success'"
                     [class.is-error]="quiz.questionState() === 'failed'" autocomplete="off" spellcheck="false" />
                 }
@@ -70,13 +70,13 @@
 
     <!-- Controls: Floating overlay -->
     <div class="quiz-controls">
-        <button type="button" class="btn-icon" (click)="quiz.replaySegment()"
+        <button type="button" class="btn-icon" (click)="onReplay()"
             [title]="i18n.t('quiz.replay') + ' (R)'"
             [attr.aria-label]="i18n.t('quiz.replay')">
             <app-icon name="rotate-ccw" [size]="20" />
         </button>
 
-        <button type="button" class="btn-icon" (click)="quiz.skipQuestion()"
+        <button type="button" class="btn-icon" (click)="onSkip()"
             [title]="i18n.t('quiz.skip')"
             [attr.aria-label]="i18n.t('quiz.skip')">
             <app-icon name="skip-forward" [size]="20" />

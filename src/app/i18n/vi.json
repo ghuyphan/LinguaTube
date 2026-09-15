@@ -194,6 +194,7 @@
     "orUseAI": "hoặc dùng AI",
     "readingHint": "Hiển thị phiên âm đọc (Furigana/Pinyin/Romaji) trên chữ",
     "grammarHint": "Làm nổi bật cấu trúc và mẫu ngữ pháp",
+    "dualSubs": "Phụ đề song ngữ",
     "dualSubsHint": "Hiển thị phụ đề dịch song ngữ",
     "translating": "Đang dịch phụ đề...",
     "reading": "Phiên âm"
@@ -546,7 +547,8 @@
     "createNew": "Tạo danh sách mới",
     "save": "Lưu",
     "videoCount": "{{count}} video",
-    "updated": "Cập nhật {{date}}",
+    "playlistCount": "{{count}} danh sách phát",
+    "updated": "Đã cập nhật {{date}}",
     "playAll": "Phát tất cả",
     "videos": "Video",
     "emptyVideo": "Chưa có video nào trong danh sách này.",

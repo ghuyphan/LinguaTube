@@ -200,6 +200,16 @@ export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
 
     openCheckoutUrl(url?: string): void {
         if (!url) return;
-        window.open(url, '_blank', 'noopener,noreferrer');
+        try {
+            const parsed = new URL(url);
+            const allowedHosts = ['pay.payos.vn', 'checkout.payos.vn'];
+            if (parsed.protocol === 'https:' && allowedHosts.includes(parsed.hostname)) {
+                window.open(parsed.href, '_blank', 'noopener,noreferrer');
+            } else {
+                console.warn('[Security] Untrusted checkout URL blocked:', url);
+            }
+        } catch {
+            console.warn('[Security] Invalid checkout URL format:', url);
+        }
     }
 }

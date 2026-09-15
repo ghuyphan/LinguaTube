@@ -11,7 +11,10 @@ import { SupportedLearningLanguage, SUPPORTED_LANGUAGES } from '../../models';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, IconComponent],
     templateUrl: './onboarding.component.html',
-    styleUrls: ['./onboarding.component.scss']
+    styleUrls: ['./onboarding.component.scss'],
+    host: {
+        '(document:keydown.escape)': 'skip()'
+    }
 })
 export class OnboardingComponent {
     private settings = inject(SettingsService);

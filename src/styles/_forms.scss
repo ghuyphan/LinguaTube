@@ -41,16 +41,13 @@ textarea {
     resize: vertical;
 }
 
-input:not(.search-input):not(.spotlight__input):not(.spotlight-input):focus,
-textarea:focus,
-select:focus {
+:where(input:not([type="checkbox"]):not([type="radio"]):not(.search-input):not(.spotlight__input):not(.spotlight-input):focus, textarea:focus, select:focus) {
     outline: none;
     border-color: var(--accent-primary);
     box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.15);
 }
 
-input::placeholder,
-textarea::placeholder {
+:where(input, textarea)::placeholder {
     color: var(--text-muted);
 }
 

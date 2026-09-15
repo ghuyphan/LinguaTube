@@ -84,18 +84,10 @@ export class PlaylistPageComponent {
 
     playlistSubtitle = computed(() => {
         const count = this.totalPlaylistsCount();
-        const lang = this.i18n.currentLanguage();
-        switch (lang) {
-            case 'vi': return `${count} danh sách phát`;
-            case 'ja': return `${count}個の再生リスト`;
-            case 'ko': return `재생목록 ${count}개`;
-            case 'zh': return `${count}个播放列表`;
-            default: {
-                const singular = this.i18n.t('playlist.playlist')?.toLowerCase() || 'playlist';
-                const plural = this.i18n.t('playlist.title')?.toLowerCase() || 'playlists';
-                return `${count} ${count === 1 ? singular : plural}`;
-            }
-        }
+        const template = this.i18n.t('playlist.playlistCount') || '{{count}} playlists';
+        return template
+            .replace('{{count}}', count.toString())
+            .replace('{{plural}}', count === 1 ? '' : 's');
     });
 
     totalVideosCount = computed(() => {

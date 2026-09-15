@@ -28,7 +28,8 @@
 
             <!-- Language Target Selector + Translate All -->
             <div class="translation-controls">
-                <button class="lang-select-btn" (click)="langPickerOpen.set(true)">
+                <button class="lang-select-btn" (click)="langPickerOpen.set(true)"
+                    [attr.aria-label]="i18n.t('popup.translationLang') || 'Select translation language'">
                     <img [src]="getSelectedLangFlagUrl()" class="lang-flag-img" alt="" />
                     <app-icon name="chevron-down" [size]="12" />
                 </button>

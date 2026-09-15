@@ -1,4 +1,4 @@
-<div class="onboarding-overlay" (click)="skip()">
+<div class="onboarding-overlay" (click)="skip()" role="dialog" aria-modal="true" [attr.aria-label]="i18n.t('onboarding.welcomeTitle') || 'Welcome to Voca'">
     <div class="onboarding-container" (click)="$event.stopPropagation()">
 
         <!-- Top Navigation Header -->

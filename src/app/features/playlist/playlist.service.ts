@@ -14,8 +14,8 @@ import { PocketBaseService } from '../../core/services/pocketbase.service';
 import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
 import { VideoLevelService } from '../../core/services/video-level.service';
-import { generateRandomId, getYouTubeThumbnail } from '../../core/utils';
-import { sanitizeFilterValue } from '../../shared/utils/sync.utils';
+import { getYouTubeThumbnail } from '../../core/utils';
+import { sanitizeFilterValue, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 
 /**
  * Playlist Service
@@ -151,9 +151,10 @@ export class PlaylistService {
      * Create a new playlist
      */
     async createPlaylist(input: CreatePlaylistInput): Promise<Playlist> {
+        const userId = this.auth.getUserId() || 'local';
         const playlist: Playlist = {
-            id: generateRandomId(),
-            userId: this.auth.getUserId() || 'local',
+            id: generateDeterministicRecordId('pl', userId, input.title.trim().toLowerCase()),
+            userId,
             title: input.title,
             description: input.description,
             visibility: input.visibility || 'unlisted',

@@ -52,6 +52,7 @@ export class PocketBaseService {
      * Schedule proactive token refresh every 10 minutes
      */
     private startTokenRefreshScheduler(): void {
+        if (this.refreshTimer) return;
         // Check and refresh token every 10 minutes
         this.refreshTimer = setInterval(() => {
             this.refreshAuthIfNeeded();
@@ -154,6 +155,9 @@ export class PocketBaseService {
         // Listen for auth state changes
         this.pb.authStore.onChange((token, model) => {
             this.model.set(model);
+            if (model && !this.refreshTimer) {
+                this.startTokenRefreshScheduler();
+            }
         });
 
         return this.pb;

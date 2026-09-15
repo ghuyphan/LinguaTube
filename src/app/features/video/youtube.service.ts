@@ -579,9 +579,7 @@ export class YoutubeService {
           // Throttle time signal updates to ~150ms steps during linear playback to prevent 60-120fps CD storm
           if (time !== current && (Math.abs(time - this.lastEmitTime) >= 0.15 || time === 0)) {
             this.lastEmitTime = time;
-            this.ngZone.run(() => {
-              this.currentTime.set(time);
-            });
+            this.currentTime.set(time);
           }
         } catch {
           // Player might be destroyed

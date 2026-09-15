@@ -194,6 +194,7 @@
     "translationFailed": "번역에 실패했습니다. 다시 시도해 주세요.",
     "readingHint": "글자 위에 발음 표기(후리가나/병음/로마자) 표시",
     "grammarHint": "문장 속 문법 패턴 및 핵심 구조 강조",
+    "dualSubs": "이중 자막",
     "dualSubsHint": "보조 번역 자막 표시",
     "translating": "자막 번역 중...",
     "reading": "발음"
@@ -546,7 +547,8 @@
     "createNew": "새 재생목록 만들기",
     "save": "저장",
     "videoCount": "동영상 {{count}}개",
-    "updated": "{{date}} 업데이트",
+    "playlistCount": "재생목록 {{count}}개",
+    "updated": "{{date}} 업데이트됨",
     "playAll": "모두 재생",
     "videos": "동영상",
     "emptyVideo": "이 재생목록에는 아직 동영상이 없습니다.",

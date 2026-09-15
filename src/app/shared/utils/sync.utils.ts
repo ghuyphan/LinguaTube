@@ -31,11 +31,14 @@ export function mergeByTimestamp<T>(
             // Remote item doesn't exist locally - add it
             merged.set(key, item);
         } else {
-            // Both exist - compare timestamps
+            // Both exist - compare timestamps safely with NaN guards
             const remoteTime = getTimestamp(item);
             const localTime = getTimestamp(existing);
 
-            if (remoteTime > localTime) {
+            const isRemoteValid = !isNaN(remoteTime);
+            const isLocalValid = !isNaN(localTime);
+
+            if (isRemoteValid && (!isLocalValid || remoteTime > localTime)) {
                 merged.set(key, item);
             }
         }

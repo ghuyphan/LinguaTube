@@ -202,38 +202,18 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   // ============================================
   // FIX 1: Stable token caching to prevent flicker
-  // ============================================
-  private tokenCache = new Map<string, Token[]>();
-  private lastCueId: string | null = null;
-  private lastVocabChangeTime = 0;
-
   currentTokens = computed(() => {
     const cue = this.subtitles.currentCue();
-    if (!cue) {
-      this.lastCueId = null;
-      return [];
-    }
+    if (!cue) return [];
 
     const lang = this.effectiveLanguage();
-    const cacheKey = `${cue.id}-${lang}`;
-
-    // Check if vocab has been updated (simple time-based check)
-    const vocabChangeTime = this.vocab.lastModified?.() ?? 0;
-    const vocabChanged = vocabChangeTime !== this.lastVocabChangeTime;
-
-    // Return cached if same cue, vocab unchanged, and cache is not stale fallback
-    const hasServerTokens = (cue.tokens?.length ?? 0) > 0;
-    const cachedEntry = this.tokenCache.get(cacheKey);
-    const cacheStale = cachedEntry && hasServerTokens && cachedEntry.length !== cue.tokens!.length;
-
-    if (this.lastCueId === cue.id && !vocabChanged && cachedEntry && !cacheStale) {
-      return cachedEntry;
-    }
+    // Track vocab modifications reactively so level badges update immediately
+    this.vocab.lastModified?.();
 
     const tokens = this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
 
     // Only create new objects when level actually differs from token's existing level
-    const result = tokens.map(token => {
+    return tokens.map(token => {
       if (token.isPunctuation) return token;
 
       const level = this.vocab.getWordLevel(token.surface) || undefined;
@@ -242,19 +222,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
       return { ...token, level };
     });
-
-    // Update cache
-    this.tokenCache.set(cacheKey, result);
-    this.lastCueId = cue.id;
-    this.lastVocabChangeTime = vocabChangeTime;
-
-    // Keep cache small (last 10 cues)
-    if (this.tokenCache.size > 10) {
-      const firstKey = this.tokenCache.keys().next().value;
-      if (firstKey) this.tokenCache.delete(firstKey);
-    }
-
-    return result;
   });
 
   // Grammar detection (reacts to loadedLanguages so first cue highlights immediately upon lazy load)
@@ -326,9 +293,11 @@ export class SubtitleDisplayComponent implements OnDestroy {
   private isProgrammaticScrolling = false;
   private programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
 
+  private scrollCheckRaf: number | null = null;
+
   onSubtitleListScroll(): void {
     if (this.isProgrammaticScrolling) return;
-    this.checkIfScrolledAway();
+    this.scheduleScrollCheck();
   }
 
   onUserManualScroll(): void {
@@ -338,7 +307,15 @@ export class SubtitleDisplayComponent implements OnDestroy {
       this.programmaticScrollTimer = null;
     }
     this.lastListUserScrollTime = Date.now();
-    this.checkIfScrolledAway();
+    this.scheduleScrollCheck();
+  }
+
+  private scheduleScrollCheck(): void {
+    if (this.scrollCheckRaf !== null) return;
+    this.scrollCheckRaf = requestAnimationFrame(() => {
+      this.scrollCheckRaf = null;
+      this.checkIfScrolledAway();
+    });
   }
 
   private checkIfScrolledAway(): void {
@@ -743,6 +720,10 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this.scrollCheckRaf !== null) {
+      cancelAnimationFrame(this.scrollCheckRaf);
+      this.scrollCheckRaf = null;
+    }
     if (this.loopTimeoutId) {
       clearTimeout(this.loopTimeoutId);
       this.loopTimeoutId = null;

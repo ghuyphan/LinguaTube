@@ -140,7 +140,7 @@
                                 <div class="yt-video-card__channel-row">
                                     <span class="yt-channel-name">{{ view() === 'my' ? i18n.t('playlist.myPlaylist') : (playlist.userName || i18n.t('playlist.community')) }}</span>
                                     <span class="meta-dot">•</span>
-                                    <span class="meta-count">{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
+                                    <span class="meta-count">{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
                                 </div>
                                 <div class="yt-video-card__sub-row">
                                     @if (getPlaylistLevel(playlist); as lvl) {
@@ -225,7 +225,7 @@
                     }
                     <div class="video-count-badge">
                         <app-icon name="list-video" [size]="12" />
-                        <span>{{ playlist.videoIds.length }} {{ playlist.videoIds.length === 1 ? 'video' : 'videos' }}</span>
+                        <span>{{ getVideoCountLabel(playlist.videoIds.length) }}</span>
                     </div>
                 </div>
 

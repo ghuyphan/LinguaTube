@@ -194,6 +194,7 @@
     "orUseAI": "or use AI",
     "readingHint": "Show pronunciation guide above characters",
     "grammarHint": "Highlight grammar structures and patterns",
+    "dualSubs": "Dual Subtitles",
     "dualSubsHint": "Show secondary translated subtitles",
     "translating": "Translating subtitle...",
     "reading": "Reading"
@@ -546,6 +547,7 @@
     "createNew": "Create new playlist",
     "save": "Save",
     "videoCount": "{{count}} video{{plural}}",
+    "playlistCount": "{{count}} playlist{{plural}}",
     "updated": "Updated {{date}}",
     "playAll": "Play All",
     "videos": "Videos",

@@ -46,7 +46,11 @@ export class AuthService {
             if (model) {
                 this.user.set(this.modelToProfile(model as RecordModel));
             } else if (this.isInitialized()) {
+                const hadUser = this.user() !== null;
                 this.user.set(null);
+                if (hadUser && !this.isLoggingOut()) {
+                    this.logoutEvent.next();
+                }
             }
         });
     }
@@ -62,6 +66,7 @@ export class AuthService {
         if (model) {
             const profile = this.modelToProfile(model as RecordModel);
             this.user.set(profile);
+            this.loginEvent.next(profile);
         }
         this.isInitialized.set(true);
     }
@@ -256,68 +261,50 @@ export class AuthService {
 
         if (popup && !url) {
             try {
-                popup.document.write(`<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Connecting to Google...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: #0b0f19;
-      color: #f1f5f9;
-      text-align: center;
-      padding: 24px;
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 320px;
-    }
-    .spinner-ring {
-      width: 44px;
-      height: 44px;
-      border: 3px solid rgba(255, 255, 255, 0.12);
-      border-top-color: #3b82f6;
-      border-radius: 50%;
-      animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      margin-bottom: 20px;
-    }
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-    }
-    .subtitle {
-      font-size: 13px;
-      color: #94a3b8;
-      line-height: 1.4;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="spinner-ring"></div>
-    <div class="title">Connecting to Google...</div>
-    <div class="subtitle">Please choose your account in the window.</div>
-  </div>
-</body>
-</html>`);
-                popup.document.close();
+                const doc = popup.document;
+                if (doc) {
+                    doc.title = 'Connecting to Google...';
+                    const style = doc.createElement('style');
+                    style.textContent = `
+                        * { box-sizing: border-box; margin: 0; padding: 0; }
+                        body {
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                            display: flex; flex-direction: column; align-items: center; justify-content: center;
+                            min-height: 100vh; background: #0b0f19; color: #f1f5f9; text-align: center; padding: 24px;
+                        }
+                        .card { display: flex; flex-direction: column; align-items: center; max-width: 320px; }
+                        .spinner-ring {
+                            width: 44px; height: 44px; border: 3px solid rgba(255, 255, 255, 0.12);
+                            border-top-color: #3b82f6; border-radius: 50%;
+                            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin-bottom: 20px;
+                        }
+                        .title { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+                        .subtitle { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+                        @keyframes spin { to { transform: rotate(360deg); } }
+                    `;
+                    doc.head?.appendChild(style);
+
+                    const card = doc.createElement('div');
+                    card.className = 'card';
+
+                    const spinner = doc.createElement('div');
+                    spinner.className = 'spinner-ring';
+
+                    const title = doc.createElement('div');
+                    title.className = 'title';
+                    title.textContent = 'Connecting to Google...';
+
+                    const subtitle = doc.createElement('div');
+                    subtitle.className = 'subtitle';
+                    subtitle.textContent = 'Please choose your account in the window.';
+
+                    card.appendChild(spinner);
+                    card.appendChild(title);
+                    card.appendChild(subtitle);
+                    doc.body?.appendChild(card);
+                }
             } catch {
-                // Ignore if security restrictions prevent document.write
+                // Ignore if security restrictions prevent popup document access
             }
         }
 
