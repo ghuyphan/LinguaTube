@@ -84,6 +84,35 @@ async function getPocketBaseAdminToken(env) {
     return cachedAdminToken;
 }
 
+/**
+ * Fetch fresh user record from PocketBase using admin credentials
+ */
+async function fetchPocketBaseUser(env, userId) {
+    if (!userId || !env) return null;
+    const pbUrl = env?.PB_URL || env?.POCKETHOST_URL || 'https://voca.pockethost.io';
+    const token = await getPocketBaseAdminToken(env);
+    if (!token) return null;
+    try {
+        const res = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
+            headers: { 'Authorization': token },
+            signal: AbortSignal.timeout(5000)
+        });
+        if (res.ok) {
+            const data = await res.json();
+            return {
+                id: data.id,
+                diamonds: data.diamonds,
+                last_diamond_regen: data.last_diamond_regen,
+                subscriptionTier: data.subscription_tier,
+                subscriptionExpires: data.subscription_expires
+            };
+        }
+    } catch (e) {
+        console.error(`[DiamondService] Error fetching PB user ${userId}:`, e.message);
+    }
+    return null;
+}
+
 export class DiamondService {
     /**
      * @param {Object} cacheManager - Instance of CacheManager (wrapper for KV)
@@ -117,6 +146,14 @@ export class DiamondService {
      * @returns {Promise<{ diamonds: number, nextRegenAt: number | null, maxDiamonds: number, regenIntervalMs: number, tier: string, maxVideoDurationSec: number }>}
      */
     async getDiamonds(clientId, user = null, env = null, context = null) {
+        // If user object has an ID but lacks diamonds count (e.g. from async webhook), fetch full record
+        if (user?.id && (user.diamonds === undefined || user.diamonds === null) && env) {
+            const remoteUser = await fetchPocketBaseUser(env, user.id);
+            if (remoteUser) {
+                user = { ...user, ...remoteUser };
+            }
+        }
+
         const tier = this.resolveTier(user);
         const config = getTierDiamondConfig(tier);
 
@@ -327,10 +364,10 @@ export class DiamondService {
      */
     async refundDiamond(clientId, context, env, user = null, amount = 1) {
         try {
-            const currentData = await this.getDiamonds(clientId, user);
+            const currentData = await this.getDiamonds(clientId, user, env, context);
             const newDiamondCount = Math.min(currentData.maxDiamonds, currentData.diamonds + amount);
 
-            if (user) {
+            if (user?.id) {
                 const updateTask = this._updatePocketBaseUser(
                     env,
                     user.id,

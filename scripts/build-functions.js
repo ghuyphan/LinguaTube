@@ -35,9 +35,9 @@ async function build() {
     fs.mkdirSync(outDir);
 
     // In Cloudflare Pages Functions, every file in functions/ is treated as a public HTTP route.
-    // Therefore, only route handlers (in api/ and proxy/) must be bundled as entry points.
+    // Therefore, only route handlers (in api/) must be bundled as entry points.
     // Internal modules (data, middlewares, providers, services, utils) are bundled into entry points by esbuild.
-    const routeDirs = ['api', 'proxy'];
+    const routeDirs = ['api'];
     const entryPoints = routeDirs.flatMap(dir => findJsFiles(path.join(srcDir, dir)));
     console.log(`Bundling ${entryPoints.length} route functions (skipping internal modules)...\n`);
 

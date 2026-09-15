@@ -1204,6 +1204,100 @@ test('pollAiJobStatus: accurately identifies languageMismatch flag', async () =>
   assert.equal(res2.videoInfo.languageMismatch, false);
 });
 
+test('api/_middleware: allows gladia-webhook and payOS webhook to bypass bot defense', async () => {
+  const { onRequest } = await import('../functions-src/api/_middleware.js');
+
+  // Test Gladia webhook bypass
+  let nextCalled = false;
+  const gladiaContext = {
+    request: new Request('https://voca.app/api/gladia-webhook', {
+      headers: { 'user-agent': 'curl/7.68.0' } // Bad UA that would normally be blocked
+    }),
+    next: async () => {
+      nextCalled = true;
+      return new Response('ok');
+    }
+  };
+  await onRequest(gladiaContext);
+  assert.equal(nextCalled, true, 'Gladia webhook must bypass bot defense');
+
+  // Test payment webhook bypass
+  nextCalled = false;
+  const paymentContext = {
+    request: new Request('https://voca.app/api/payment/webhook', {
+      headers: { 'user-agent': 'python-requests/2.25.1' }
+    }),
+    next: async () => {
+      nextCalled = true;
+      return new Response('ok');
+    }
+  };
+  await onRequest(paymentContext);
+  assert.equal(nextCalled, true, 'Payment webhook must bypass bot defense');
+
+  // Test normal API endpoint blocked for bot UA
+  nextCalled = false;
+  const normalContext = {
+    request: new Request('https://voca.app/api/transcript', {
+      headers: { 'user-agent': 'python-requests/2.25.1' }
+    }),
+    next: async () => {
+      nextCalled = true;
+      return new Response('ok');
+    }
+  };
+  const blockedRes = await onRequest(normalContext);
+  assert.equal(nextCalled, false, 'Normal API with scraper UA must be blocked');
+  assert.equal(blockedRes.status, 403);
+});
+
+test('normalizeVoiceName & escapeXml: prevents SSML / XML injection in TTS', async () => {
+  const { normalizeVoiceName, escapeXml } = await import('../functions-src/utils/edge-tts.js');
+
+  // Normal valid voices
+  assert.equal(
+    normalizeVoiceName('ja-JP-NanamiNeural', 'ja'),
+    'Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)'
+  );
+  assert.equal(
+    normalizeVoiceName('Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)', 'ko'),
+    'Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)'
+  );
+
+  // Malicious SSML injection attempts -> fallback to safe default
+  const defaultJa = 'Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)';
+  assert.equal(normalizeVoiceName("ja-JP-NanamiNeural'><break time='5s'/>", 'ja'), defaultJa);
+  assert.equal(normalizeVoiceName('<script>alert(1)</script>', 'ja'), defaultJa);
+  assert.equal(normalizeVoiceName('voice" onfocus="evil()"', 'ja'), defaultJa);
+  assert.equal(normalizeVoiceName('voice&evil=1', 'ja'), defaultJa);
+
+  // escapeXml properly escapes entities
+  assert.equal(escapeXml('Hello & World <foo> "bar" \'baz\''), 'Hello &amp; World &lt;foo&gt; &quot;bar&quot; &apos;baz&apos;');
+});
+
+test('saveTranscriptToR2: returns boolean success flag and handles errors gracefully', async () => {
+  const { saveTranscriptToR2 } = await import('../functions-src/data/transcript-r2.js');
+
+  // Missing bucket
+  assert.equal(await saveTranscriptToR2(null, 'vid123', 'ja', [{ text: 'hi' }]), false);
+
+  // Empty segments
+  const mockBucket = {
+    async put() { return {}; }
+  };
+  assert.equal(await saveTranscriptToR2(mockBucket, 'vid123', 'ja', []), false);
+
+  // Successful write
+  assert.equal(await saveTranscriptToR2(mockBucket, 'vid123', 'ja', [{ text: 'hi' }]), true);
+
+  // Failed write
+  const failingBucket = {
+    async put() { throw new Error('R2 Quota Exceeded'); }
+  };
+  assert.equal(await saveTranscriptToR2(failingBucket, 'vid123', 'ja', [{ text: 'hi' }]), false);
+});
+
+
 
 
 

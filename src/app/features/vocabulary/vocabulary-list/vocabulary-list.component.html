@@ -140,14 +140,6 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
-                    <!-- Next Review Schedule Pill (SRS) -->
-                    @if (item.level !== 'ignored') {
-                    <span class="vocab-schedule-pill" [class.due]="isItemDue(item)" [title]="(i18n.t('study.nextReview') || 'Next review') + ': ' + formatNextReview(item)">
-                        <app-icon name="clock" [size]="11" />
-                        <span>{{ formatNextReview(item) }}</span>
-                    </span>
-                    }
-
                     <!-- Level Pill Badge: Instant 1-click cycle, right-click opens full picker -->
                     <button type="button" 
                             class="level-badge-btn" 

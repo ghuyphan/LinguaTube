@@ -27,7 +27,7 @@ Voca uses a dual backend model to maximize both developer productivity and produ
 ### Local Dev Server Highlights (`server/server.js`)
 - **Innertube Client**: Uses `youtubei.js` to fetch real YouTube timed-text tracks directly in local development without needing Cloudflare bindings.
 - **Local Disk Cache with Traversal Defense**: Automatically persists discovered YouTube transcripts to `server/transcripts_cache/{videoId}_{lang}.json` sanitized against path traversal attacks.
-- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/tts` (Microsoft Edge Neural Azure synthesis), `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/recommended-videos`, `/api/diamonds`, and `/proxy/:service/*` (matching the production SSRF-protected proxy).
+- **Dev Mocks & Proxies**: Provides local handlers for `/api/dict`, `/api/tts` (Microsoft Edge Neural Azure synthesis), `/api/dual-subtitles`, `/api/tokenize/:lang` (unified `ja`, `zh`, `ko`, `en`), `/api/tokenize-batch/:lang`, `/api/translate/:source/:target/*` (with wildcard slug support), `/api/translate/batch` (GTX fallback), `/api/recommended-videos`, and `/api/diamonds`.
 
 ---
 
@@ -40,6 +40,7 @@ Every incoming request passes through a multi-tier defense and rate-limiting pip
 - **User-Agent Blacklist**: Blocks automated scrapers and headless clients (e.g. `curl`, `python-requests`, `aiohttp`, `scrapy`, `axios`, `postmanruntime`, `gptbot`, `claudebot`, `bytespider`).
 - **Cloudflare Threat Score**: If `request.cf.threatScore > 40`, request is rejected with `403 BOT_DETECTED`.
 - **Preflight Bypass**: Automatically lets `OPTIONS` requests pass through.
+- **Trusted Webhook Bypass**: Server-to-server webhook callbacks (`/api/payment/webhook` from payOS and `/api/gladia-webhook` from Gladia) bypass the User-Agent check and use cryptographic HMAC-SHA256 signatures for authentication instead.
 
 ### 2.2. Distributed In-Memory + KV Rate Limiter (`rate-limiter.js`)
 To protect against DDoS and API credit depletion while strictly preserving Cloudflare KV's **1,000 writes/day free limit**:
@@ -369,17 +370,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.11. Safe Reverse Proxy
-- **Route**: `ALL /proxy/[service]/[[path]]`
-- **Source**: `functions-src/proxy/[service]/[[path]].js`
-- **SSRF & Abuse Protections**:
-  - **Bot Defense**: Integrated with `checkBot` middleware on proxy requests.
-  - **Whitelisted Services Only**: `invidious1` (`yewtu.be`), `jisho` (`jisho.org`), `jotoba` (`jotoba.de`), `piped1` (`pipedapi.kavin.rocks`).
-  - **Path Sanitization**: Filters out directory traversal sequences (`..`), slashes, and hidden dot files (`.`).
-  - **Network Perimeter Guards**: Blocks private, loopback, link-local, carrier-grade NAT, IPv6 ULA, and metadata endpoints (`127.0.0.0/8`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `169.254.0.0/16`, `100.64.0.0/10`, `fc00::/7`, `fe80::/10`, `::1`, `localhost`).
-  - **CORS Protection**: Enforces origin check against trusted domains (`lingua-tube.pages.dev`, `voca.pages.dev`, `localhost`) rather than reflecting arbitrary caller origins.
-  - **Redirect Policy**: Enforces `redirect: 'manual'` (with rejection of 3xx upstream status codes) preventing redirect-based open proxy smuggling while remaining fully compatible with edge runtimes.
-  - **Timeout & Payload Limits**: Strict 8-second request timeout (`AbortSignal.timeout(8000)`) and maximum 64KB upstream body cap to prevent memory exhaustion.
+### 3.11. Legacy Reverse Proxy (Sunset / Retired)
+- **Status**: **Retired & Purged**.
+- **Rationale**: The Angular client routes 100% of dictionary queries through `/api/dict` and video data through `/api/transcript` / YouTube oEmbed. The legacy `/proxy/[service]/[[path]]` routes have been completely removed to debloat serverless functions, eliminate redundant code, and eliminate potential SSRF attack surface.
 
 ---
 
@@ -405,9 +398,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Rate limiting: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX`).
   - Confidence threshold: Client submissions must have `confidence >= 0.65` to be persisted.
   - Non-destructive updates: Submissions cannot overwrite an existing verified level if the existing level has higher confidence.
-- **Storage Strategy**:
-  - Persisted strictly to Cloudflare D1 `video_languages.levels` column as a JSON map (Zero KV writes - Rule 2).
+- **Storage Strategy & Ingestion-Time Assessment**:
+  - Automatically evaluated at ingestion time in `saveVideoLanguages()` via `detectLevelFromMetadata()` and persisted strictly to Cloudflare D1 `video_languages.levels` column as a JSON map (Zero KV writes - Rule 2).
   - Normalizes return objects so clients always receive clean language-to-level string mappings (`{ ja: "JLPT N4" }`).
+  - **Client Fast-Path**: The Angular client checks `serverLevels` first, achieving instant 0ms level resolution upon video open without requiring cue loops or client-side linguistic scans.
 
 ---
 

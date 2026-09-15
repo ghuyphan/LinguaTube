@@ -11,6 +11,7 @@ import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 
 // In-memory cache across warm Worker isolate requests (short 30s TTL to absorb double-clicks while keeping feed fresh)
 const memCache = new Map();
+const MAX_MEM_CACHE_ENTRIES = 50;
 const MEM_CACHE_TTL_MS = 30 * 1000;
 const VALID_TIERS = new Set(['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced']);
 
@@ -92,6 +93,10 @@ export async function onRequestGet(context) {
 
     // Save to isolate memory cache only if non-empty
     if (videos.length > 0) {
+        if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
+            const oldestKey = memCache.keys().next().value;
+            if (oldestKey) memCache.delete(oldestKey);
+        }
         memCache.set(cacheKey, {
             videos,
             hasMore,

@@ -420,7 +420,18 @@ export class TranscriptService {
                     const selfHealMismatch = normalizeLanguageCode(detectedLang) !== normalizeLanguageCode(job.language);
 
                     if (cleanedSegments.length > 0) {
-                        await saveTranscriptToR2(r2, targetVideoId, detectedLang, cleanedSegments, 'ai');
+                        const saved = await saveTranscriptToR2(r2, targetVideoId, detectedLang, cleanedSegments, 'ai');
+                        if (!saved && r2) {
+                            console.error(`[TranscriptService] Failed to persist transcript to R2 for ${targetVideoId}`);
+                            return {
+                                status: 'processing',
+                                videoInfo: {
+                                    videoId: targetVideoId,
+                                    jobId,
+                                    message: 'Transcribed speech successfully, persisting to storage...'
+                                }
+                            };
+                        }
                         await completeAiJob(db, jobId, detectedLang);
                         if (db) {
                             const bgOps = [
@@ -522,7 +533,18 @@ export class TranscriptService {
                 const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
 
                 if (videoId && cleanedSegments.length > 0) {
-                    await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+                    const saved = await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+                    if (!saved && r2) {
+                        console.error(`[TranscriptService] Failed to persist transcript to R2 for ${videoId}`);
+                        return {
+                            status: 'processing',
+                            videoInfo: {
+                                videoId,
+                                resultUrl,
+                                message: 'Transcribed speech successfully, persisting to storage...'
+                            }
+                        };
+                    }
                     if (db) {
                         const bgOps = [
                             addSubLanguage(db, videoId, detectedLang),

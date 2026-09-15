@@ -1,7 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { GrammarPattern, GrammarMatch, GrammarTranslation, SupportedGrammarLang } from '../models/grammar.model';
 import { Token } from '../models';
-import nlp from 'compromise';
 
 interface SplitPatternRule {
     start: string;
@@ -143,6 +142,9 @@ export class GrammarService {
     private patternPromises = new Map<SupportedGrammarLang, Promise<GrammarPattern[]>>();
     private translationPromises = new Map<string, Promise<Record<string, GrammarTranslation>>>();
 
+    // Lazy-loaded Compromise NLP module for English grammar pattern matching
+    private nlpModule: ((text: string) => { match: (rule: string) => { found: boolean } }) | null = null;
+
     // Common Japanese grammar endings to detect (longest match first)
     private readonly jaEndingPatterns = [
         'ている', 'ていた', 'ています', 'ていました',
@@ -209,6 +211,13 @@ export class GrammarService {
                 patterns = await loader();
                 this.patternsCache.set(lang, patterns);
                 this.indicesCache.set(lang, this.buildIndex(patterns));
+            }
+
+            // Lazy-load compromise NLP exclusively when English patterns are requested
+            if (lang === 'en' && !this.nlpModule) {
+                const mod = await import('compromise');
+                const rawModule = (mod as unknown as { default?: (text: string) => { match: (rule: string) => { found: boolean } } });
+                this.nlpModule = (rawModule.default || mod) as (text: string) => { match: (rule: string) => { found: boolean } };
             }
 
             this.loadedLanguages.update(set => new Set(set).add(lang));
@@ -671,7 +680,7 @@ export class GrammarService {
         if (tokens.length === 0) return [];
 
         const patterns = this.getPatterns('en');
-        if (patterns.length === 0) {
+        if (patterns.length === 0 || !this.nlpModule) {
             this.loadPatterns('en');
             return [];
         }
@@ -685,7 +694,7 @@ export class GrammarService {
         }).join('');
         if (!fullText.trim()) return [];
 
-        const doc = nlp(fullText);
+        const doc = this.nlpModule(fullText);
         const matches: GrammarMatch[] = [];
 
         for (const rule of EN_NLP_RULES) {

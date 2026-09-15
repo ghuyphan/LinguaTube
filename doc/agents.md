@@ -52,9 +52,9 @@ When modifying this repository, you **MUST** adhere to the following rules:
 - Use the timestamp-based merge strategy (`mergeByTimestamp` from `src/app/shared/utils/sync.utils.ts`).
 
 ### ⚠️ RULE 5: SSRF Defense & API Security
-- Any external URL passed into backend functions (e.g., `resultUrl` in `/api/transcript`, proxied paths in `/proxy/[service]`) MUST be strictly validated.
+- Any external URL passed into backend functions (e.g., `resultUrl` in `/api/transcript`) MUST be strictly validated.
 - Reject non-HTTPS protocols, local/private IP ranges (`127.0.0.1`, `10.0.0.0/8`, `192.168.0.0/16`, `172.16.0.0/12`, `localhost`), and untrusted hostnames.
-- Whitelist upstream hosts (`api.gladia.io`, `yewtu.be`, `jisho.org`, `jotoba.de`, `pipedapi.kavin.rocks`).
+- Whitelist upstream hosts (`api.gladia.io`, `jisho.org`, `jotoba.de`).
 
 ### ⚠️ RULE 6: Turnstile CAPTCHA & Diamond Credits Protection
 - AI transcription via Gladia costs real API credits.
@@ -65,7 +65,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
 ### ⚠️ RULE 7: Documentation Synchronization Mandate (Auto-Update Docs on Significant Changes)
 - **Whenever an agent makes a significant update to the codebase, the agent MUST automatically update all corresponding documentation files in `doc/`, `README.md`, and `AGENTS.md` before concluding the task.**
 - **What constitutes a "Significant Change"?**
-  1. **Backend & API Changes**: Adding or altering endpoints in `functions-src/api/` or `functions-src/proxy/`, modifying rate limits, security middleware, or external providers $\rightarrow$ Update `doc/backend-api.md` and `doc/map.md`.
+  1. **Backend & API Changes**: Adding or altering endpoints in `functions-src/api/`, modifying rate limits, security middleware, or external providers $\rightarrow$ Update `doc/backend-api.md` and `doc/map.md`.
   2. **Database & Storage Changes**: Altering D1 SQL schemas in `db/`, R2 bucket structures, KV namespace keys, LocalStorage keys, or PocketBase collections $\rightarrow$ Update `doc/database-and-storage.md` and `doc/map.md`.
   3. **Frontend & UI Architecture**: Adding or modifying components, signals, routes in `app.routes.ts`, player controls, sheets, or design tokens $\rightarrow$ Update `doc/frontend-architecture.md`, `doc/features.md`, and `doc/map.md`.
   4. **Linguistics & NLP Features**: Changing tokenizers (`@patdx/kuromoji`, `compromise`, `Intl.Segmenter`), romanization engines, grammar patterns (`src/app/data/grammar-*.ts`), translation scripts, or dictionary scrapers $\rightarrow$ Update `doc/features.md` and `doc/tech.md`.
@@ -111,7 +111,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     └── State / Repos: Offline-First Repositories (LocalStorage + IndexedDB lingua-tube-cache)
                        PocketBase Client (Auth, Sync, Users, Playlists)
           │
-          │ HTTP / REST API (via /api/* and /proxy/*)
+          │ HTTP / REST API (via /api/*)
           ▼
  [ BACKEND: Cloudflare Pages Functions / Local Express Server ]
     │
@@ -137,7 +137,6 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │     POST /api/payment/create-order-> PayOS Checkout Link Generator
     │     POST /api/payment/webhook     -> PayOS Payment Confirmation & Diamond Grant
     │     GET  /api/payment/check-status-> Polling Order Payment Status
-    │     ALL  /proxy/:service/*        -> Safe Whitelisted SSRF-Protected Proxy
     │
     └── Cloud Infrastructure:
           ├── Cloudflare D1             -> SQLite Tables: ai_transcription_jobs, transcripts, video_meta, video_languages, no_transcript_cache
@@ -205,7 +204,6 @@ lingua-tube/
 │   │   ├── translate/         # Translation endpoints ([[path]].js, batch.js)
 │   │   ├── video-info.js      # Video metadata & language discovery
 │   │   └── video-level.js     # CEFR/JLPT/HSK/TOPIK level detection
-│   ├── proxy/                 # Safe proxy routes ([service]/[[path]].js)
 │   ├── middlewares/           # auth.js, bot-defense.js, rate-limiter.js, video-validator.js
 │   ├── providers/             # gladia.js, supadata.js, lingva.js, dictionary-apis.js, payos.js
 │   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, turnstile.service.js
@@ -249,7 +247,7 @@ lingua-tube/
 ### Workflow 1: Adding or Modifying a Backend API Endpoint
 1. Edit or add files in `functions-src/api/` or `functions-src/services/`.
 2. Ensure you import security middleware (`checkBot`, `consumeRateLimit`, `validateAuthToken`).
-3. If creating a new route file, make sure it is in `functions-src/api/` or `functions-src/proxy/` (these are picked up as entry points by esbuild).
+3. If creating a new route file, make sure it is in `functions-src/api/` (these are picked up as entry points by esbuild).
 4. Run the bundle script:
    ```bash
    npm run build:functions

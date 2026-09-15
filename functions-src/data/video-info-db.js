@@ -81,6 +81,12 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
         const existing = await getVideoLanguages(db, videoId);
         if (levels === null) {
             existingLevels = existing?.levels || {};
+            if (Object.keys(existingLevels).length === 0) {
+                const autoDetected = detectLevelFromMetadata(title || existing?.title || '', channel || existing?.channel || '');
+                if (autoDetected) {
+                    existingLevels = { [autoDetected.lang]: autoDetected.level };
+                }
+            }
         } else {
             existingLevels = levels;
         }

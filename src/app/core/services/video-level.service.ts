@@ -214,7 +214,7 @@ export class VideoLevelService {
             return cached;
         }
 
-        // 1. Check server-provided level
+        // 1. Instant Fast-Path: Server-verified level from Cloudflare D1 / API (0ms resolution)
         if (serverLevels?.[lang]) {
             const serverLevel = serverLevels[lang];
             const info = this.buildInfoFromLabel(serverLevel, 'server');
@@ -223,7 +223,7 @@ export class VideoLevelService {
             return info;
         }
 
-        // 2. Fast-path: Title/Channel regex
+        // 2. Fast-Path: Title/Channel metadata regex (<1ms resolution)
         const titleDetected = this.detectFromMetadata(title, channel, lang);
         if (titleDetected) {
             const info = this.buildInfoFromLabel(titleDetected, 'title');
@@ -233,7 +233,7 @@ export class VideoLevelService {
             return info;
         }
 
-        // 3. Deep linguistic analysis if cues are available
+        // 3. Fallback: Deep linguistic analysis only if server level and title metadata were missing
         if (cues.length > 0 && this.isSupportedGrammarLang(lang)) {
             this.isAnalyzing.set(true);
             try {

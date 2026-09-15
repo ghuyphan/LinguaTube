@@ -23,11 +23,15 @@ const RATE_WINDOW_MS = 60 * 60 * 1000;
 
 function checkInMemoryRateLimit(clientIp) {
   const now = Date.now();
-  if (memTtsRateLimits.size > MAX_MEM_ENTRIES) {
+  if (memTtsRateLimits.size >= MAX_MEM_ENTRIES) {
     for (const [ip, record] of memTtsRateLimits.entries()) {
       if (now > record.resetAt) {
         memTtsRateLimits.delete(ip);
       }
+    }
+    if (memTtsRateLimits.size >= MAX_MEM_ENTRIES) {
+      const oldestKey = memTtsRateLimits.keys().next().value;
+      if (oldestKey) memTtsRateLimits.delete(oldestKey);
     }
   }
 

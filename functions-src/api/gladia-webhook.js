@@ -139,11 +139,12 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
                 try {
                     const cacheManager = new CacheManager(env.TRANSCRIPT_CACHE);
                     const diamondService = new DiamondService(cacheManager);
+                    const userObj = refundResult.job.user_id ? { id: refundResult.job.user_id } : null;
                     await diamondService.refundDiamond(
                         refundResult.job.client_id,
                         context,
                         env,
-                        null,
+                        userObj,
                         refundResult.job.diamonds_charged || 1
                     );
                     console.log(`[Gladia Webhook] Refunded ${refundResult.job.diamonds_charged} diamonds for job ${jobId}`);
@@ -181,11 +182,12 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
             if (refundResult.shouldRefund && refundResult.job) {
                 const cacheManager = new CacheManager(env.TRANSCRIPT_CACHE);
                 const diamondService = new DiamondService(cacheManager);
+                const userObj = refundResult.job.user_id ? { id: refundResult.job.user_id } : null;
                 await diamondService.refundDiamond(
                     refundResult.job.client_id,
                     context,
                     env,
-                    null,
+                    userObj,
                     refundResult.job.diamonds_charged || 1
                 );
             }
@@ -194,8 +196,14 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
     }
 
     // 1. Save permanent transcript to R2
+    let r2Saved = true;
     if (r2 && videoId) {
-        await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+        r2Saved = await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+    }
+
+    if (!r2Saved && r2) {
+        console.error(`[Gladia Webhook] Failed to save transcript to R2 for video ${videoId}, job ${jobId}`);
+        return;
     }
 
     // 2. Update D1 state machine

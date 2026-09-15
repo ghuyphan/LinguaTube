@@ -332,45 +332,6 @@
     }
 }
 
-// Compact SRS Next-Review Schedule Pill
-.vocab-schedule-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    padding: 2px 7px;
-    height: 24px;
-    border-radius: var(--border-radius-pill);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    background: var(--bg-surface);
-    color: var(--text-muted);
-    border: 1px solid var(--border-color);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-    flex-shrink: 0;
-
-    app-icon {
-        color: var(--text-muted);
-        opacity: 0.8;
-    }
-
-    &.due {
-        background: rgba(var(--warning-rgb, 255, 200, 0), 0.15);
-        color: #b45309;
-        border-color: rgba(245, 158, 11, 0.4);
-
-        app-icon {
-            color: #f59e0b;
-        }
-
-        [data-theme="dark"] & {
-            background: rgba(245, 158, 11, 0.2);
-            color: #fbbf24;
-            border-color: rgba(251, 191, 36, 0.4);
-        }
-    }
-}
-
 // Stable, fixed-width level badge button (prevents layout shift on status change)
 .level-badge-btn {
     min-width: 72px;
@@ -608,12 +569,6 @@
 
         &__actions {
             gap: 4px;
-        }
-
-        .vocab-schedule-pill {
-            padding: 2px 5px;
-            height: 22px;
-            font-size: 0.625rem;
         }
 
         .level-badge-btn {

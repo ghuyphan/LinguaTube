@@ -7,9 +7,8 @@ Allow: /study
 Allow: /explore
 Allow: /history
 
-# Disallow internal backend APIs and serverless proxies
+# Disallow internal backend APIs
 Disallow: /api/
-Disallow: /proxy/
 
 # Sitemap location
 Sitemap: https://voca.study/sitemap.xml

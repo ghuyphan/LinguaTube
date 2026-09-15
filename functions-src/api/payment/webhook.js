@@ -101,52 +101,62 @@ export async function onRequestPost(context) {
         const adminEmail = env.PB_ADMIN_EMAIL;
         const adminPassword = env.PB_ADMIN_PASSWORD;
 
-            if (adminEmail && adminPassword) {
-                // 1. Admin login to PocketBase (try /api/admins first, fallback to /api/collections/_superusers)
-                let authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
-                    signal: AbortSignal.timeout(5000)
-                }).catch(() => null);
+        if (!adminEmail || !adminPassword) {
+            console.error('[payOS Webhook] Missing PB_ADMIN_EMAIL or PB_ADMIN_PASSWORD in environment');
+            if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
+            return errorResponse('Server configuration error', 500);
+        }
 
-                if (!authRes || authRes.status === 404) {
-                    authRes = await fetch(`${pbUrl}/api/collections/_superusers/auth-with-password`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
-                        signal: AbortSignal.timeout(5000)
-                    }).catch(() => null);
-                }
+        // 1. Admin login to PocketBase (try /api/admins first, fallback to /api/collections/_superusers)
+        let authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
+            signal: AbortSignal.timeout(5000)
+        }).catch(() => null);
 
-                if (authRes.ok) {
-                    const authData = await authRes.json();
-                    const adminToken = authData.token;
+        if (!authRes || authRes.status === 404) {
+            authRes = await fetch(`${pbUrl}/api/collections/_superusers/auth-with-password`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
+                signal: AbortSignal.timeout(5000)
+            }).catch(() => null);
+        }
 
-                    const expiresAt = new Date(Date.now() + durationDays * 24 * 60 * 60 * 1000).toISOString();
+        if (!authRes || !authRes.ok) {
+            console.error(`[payOS Webhook] Admin login failed: ${authRes?.status}`);
+            if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
+            return errorResponse('Failed to authenticate with user service', 500);
+        }
 
-                    // 2. Upgrade user record to target tier ('pro' or 'premium')
-                    const updateRes = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
-                        method: 'PATCH',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': adminToken
-                        },
-                        body: JSON.stringify({
-                            subscription_tier: targetTier,
-                            subscription_expires: expiresAt,
-                            diamonds: grantedDiamonds,
-                            last_diamond_regen: new Date().toISOString()
-                        })
-                    });
+        const authData = await authRes.json();
+        const adminToken = authData.token;
+        const expiresAt = new Date(Date.now() + durationDays * 24 * 60 * 60 * 1000).toISOString();
 
-                    if (updateRes.ok) {
-                        console.log(`[payOS Webhook] Successfully upgraded user ${userId} to ${targetTier} until ${expiresAt}`);
-                    } else {
-                        console.error(`[payOS Webhook] Failed to update user ${userId}: ${updateRes.status}`);
-                    }
-                }
-            }
+        // 2. Upgrade user record to target tier ('pro' or 'premium')
+        const updateRes = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': adminToken
+            },
+            body: JSON.stringify({
+                subscription_tier: targetTier,
+                subscription_expires: expiresAt,
+                diamonds: grantedDiamonds,
+                last_diamond_regen: new Date().toISOString()
+            }),
+            signal: AbortSignal.timeout(5000)
+        }).catch(() => null);
+
+        if (!updateRes || !updateRes.ok) {
+            console.error(`[payOS Webhook] Failed to update user ${userId}: ${updateRes?.status}`);
+            if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
+            return errorResponse('Failed to update user subscription', 500);
+        }
+
+        console.log(`[payOS Webhook] Successfully upgraded user ${userId} to ${targetTier} until ${expiresAt}`);
 
         // Mark as processed (retained for 90 days)
         if (kv) {

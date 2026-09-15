@@ -322,7 +322,6 @@ graph TD
   - **Compact Due Alert**: When cards are due today, displays an alert banner with clock icon, due count, and a 1-click "Review Due Now" button.
   - **Minimalist 3-Deck Cards**: Elevated deck selector cards (**New**, **Learning**, **Known**) with clean badges, active checkmark circles, and large counts, positioned directly for immediate selection.
   - **Unified Settings Card**: Consolidated study configuration containing session size pills (`5`, `10`, `20`, `all`) and a balanced 2x2 grid of preference toggles (**Due Only**, **Reverse Mode**, **Auto-Play Audio**, **Cloze Mode**).
-  - **Centralized SRS Schedule Indicators**: Next-review schedule pills (`🕒 38d`, `Due`) are integrated into `VocabularyListComponent` in the Dictionary screen, maintaining a single unified catalog for browsing words and tracking review intervals.
   - **Distraction-Free Flashcard Mode**: Clean rating buttons with real-time SM-2 interval previews (`<10m`, `1d`, `3d`, `6d`), smooth swipe gestures, audio and video scene actions, and zero layout shift.
   - **Intuitive Completion Flow**: Confetti celebration, streak celebration, and a primary **"Done" (Hoàn tất)** action calling `endSession()` to return to the overview.
 

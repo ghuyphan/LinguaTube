@@ -58,7 +58,7 @@ export async function getTranscriptFromR2(bucket, videoId, lang) {
  * @param {string} source - Source of transcript (youtube, supadata, ai, etc.)
  */
 export async function saveTranscriptToR2(bucket, videoId, lang, segments, source) {
-    if (!bucket || !videoId || !segments?.length) return;
+    if (!bucket || !videoId || !segments?.length) return false;
 
     const key = `transcripts/${videoId}/${lang}.json`;
 
@@ -83,8 +83,9 @@ export async function saveTranscriptToR2(bucket, videoId, lang, segments, source
         });
 
         log('R2 save success:', key, `(${segments.length} segments)`);
-
+        return true;
     } catch (err) {
         console.error('[R2 Transcripts] Write error:', err.message);
+        return false;
     }
 }

@@ -13,7 +13,7 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 | **Reactive Streams** | RxJS | `~7.8.0` | Async operations, HTTP event pipelines, debounce/retry logic |
 | **Component Kit** | Angular CDK | `^19.2.19` | UI utilities, overlays, responsive layout breakpoints |
 | **PWA / Service Worker** | `@angular/service-worker` | `^19.0.0` | Offline asset caching, background updates, Web App Manifest |
-| **Serverless Runtime** | Cloudflare Pages Functions | `ES2022 / Worker` | Global edge serverless API routes (`/api/*`, `/proxy/*`) |
+| **Serverless Runtime** | Cloudflare Pages Functions | `ES2022 / Worker` | Global edge serverless API routes (`/api/*`) |
 | **Local Dev Server** | Express | `^5.2.1` | Local backend mock with CORS, dotenv, and Innertube |
 | **YouTube Client (Dev)**| `youtubei.js` | `^18.0.0` | Innertube client for real YouTube native caption extraction locally |
 | **Bundler (Backend)** | esbuild | `^0.27.2` | Bundling `functions-src/` route handlers to ESM format |

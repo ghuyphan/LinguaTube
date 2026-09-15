@@ -4,7 +4,7 @@
  * Route: POST /api/dual-subtitles
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId } from '../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -43,10 +43,13 @@ export async function onRequestGet(context) {
     try {
         const url = new URL(request.url);
         const videoId = url.searchParams.get('videoId');
-        const sourceLang = url.searchParams.get('sourceLang') || url.searchParams.get('source');
-        const targetLang = url.searchParams.get('targetLang') || url.searchParams.get('target');
+        const rawSourceLang = url.searchParams.get('sourceLang') || url.searchParams.get('source');
+        const rawTargetLang = url.searchParams.get('targetLang') || url.searchParams.get('target');
 
         const cleanVideoId = sanitizeVideoId(videoId);
+        const sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
+        const targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi']);
+
         if (!cleanVideoId || !sourceLang || !targetLang) {
             return jsonResponse({ error: 'Missing or invalid parameters' }, 400);
         }
@@ -101,10 +104,13 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid request', details: validation.errors }, 400);
         }
 
-        const { videoId, sourceLang, targetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
+        const { videoId, sourceLang: rawSourceLang, targetLang: rawTargetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
         const cleanVideoId = sanitizeVideoId(videoId);
-        if (!cleanVideoId) {
-            return jsonResponse({ error: 'Invalid video ID format' }, 400);
+        const sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
+        const targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi']);
+
+        if (!cleanVideoId || !sourceLang || !targetLang) {
+            return jsonResponse({ error: 'Invalid video ID or language format' }, 400);
         }
 
         const r2 = env.TRANSCRIPT_STORAGE;

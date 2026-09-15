@@ -9,9 +9,9 @@ import { jsonResponse } from '../utils/utils.js';
 export async function onRequest(context) {
     const { request, next } = context;
 
-    // Fast-path bypass for payment webhook endpoints (payOS server-to-server notifications)
+    // Fast-path bypass for trusted external server-to-server webhook callbacks (payOS, Gladia)
     const url = new URL(request.url);
-    if (url.pathname.startsWith('/api/payment/webhook')) {
+    if (url.pathname.startsWith('/api/payment/webhook') || url.pathname.startsWith('/api/gladia-webhook')) {
         return next();
     }
 

@@ -505,7 +505,7 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
   - Embeds Schema.org JSON-LD structured data for `WebApplication` and `EducationalApplication`, enumerating supported languages, interactive subtitle capabilities, and free tier offers.
   - Canonical URL `<link rel="canonical">` points to `https://voca.study`.
 - **Search Engine Discovery Assets**:
-  - `public/robots.txt`: Explicitly permits search crawlers on learning routes (`/video`, `/dictionary`, `/study`, `/explore`, `/history`) while restricting internal serverless functions (`/api/`, `/proxy/`).
+  - `public/robots.txt`: Explicitly permits search crawlers on learning routes (`/video`, `/dictionary`, `/study`, `/explore`, `/history`) while restricting internal serverless functions (`/api/`).
   - `public/sitemap.xml`: Declares priority and change frequencies for all public views, with `xhtml:link` multi-language `hreflang` alternates (`en`, `vi`, `ja`, `ko`, `zh`, and `x-default`).
   - `public/og-image.png`: High-resolution 1200x630 Apple-inspired chill pastel social share card with dreamy gradient atmosphere, pillowy Kikyou Kamon icon, clean Avenir/SF typography, and frosted glass language capsule.
 - **Dynamic Angular `SeoService` (`src/app/core/services/seo.service.ts`)**:

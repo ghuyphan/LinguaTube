@@ -37,7 +37,6 @@ graph TB
         API_PayOrder["/api/payment/create-order"]
         API_PayStatus["/api/payment/check-status"]
         API_PayWebhook["/api/payment/webhook"]
-        API_Proxy["/proxy/[service]"]
     end
 
     subgraph CloudflareData["Cloudflare Infrastructure"]

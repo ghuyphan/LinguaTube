@@ -1197,21 +1197,25 @@ export class VideoPageComponent implements OnInit {
     const serverLevels = this.transcript.serverLevels();
 
     const runAssessment = () => {
-      if (currentVideo && !this.videoLevel.currentLevel()) {
-        const currentCues = this.subtitles.subtitles();
-        const evalCues = (currentCues && currentCues.length > 0) ? currentCues : cues;
-        void this.videoLevel.assessLevel(
-          currentVideo.id,
-          activeLang,
-          currentVideo.title,
-          currentVideo.channel,
-          evalCues,
-          serverLevels
-        ).then(levelInfo => {
-          if (levelInfo) {
-            void this.historyService.updateLevel(currentVideo.id, levelInfo.level);
-          }
-        });
+      const activeVideo = this.youtube.currentVideo();
+      if (activeVideo && currentVideo && activeVideo.id === currentVideo.id) {
+        const current = this.videoLevel.currentLevel();
+        if (!current) {
+          const currentCues = this.subtitles.subtitles();
+          const evalCues = (currentCues && currentCues.length > 0) ? currentCues : cues;
+          void this.videoLevel.assessLevel(
+            activeVideo.id,
+            activeLang,
+            activeVideo.title,
+            activeVideo.channel,
+            evalCues,
+            serverLevels
+          ).then(levelInfo => {
+            if (levelInfo) {
+              void this.historyService.updateLevel(activeVideo.id, levelInfo.level);
+            }
+          });
+        }
       }
     };
 

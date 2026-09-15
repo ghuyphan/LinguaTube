@@ -21,6 +21,8 @@ export const DEFAULT_VOICES = {
   en: 'Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)',
 };
 
+const VOICE_NAME_REGEX = /^[a-zA-Z0-9_\-\s(),]+$/;
+
 /**
  * Normalizes short voice identifiers (e.g. "ja-JP-NanamiNeural")
  * into the full Edge TTS voice identifier.
@@ -31,6 +33,11 @@ export function normalizeVoiceName(voice, lang = 'ja') {
   }
 
   const trimmed = voice.trim();
+  // Validate against SSML injection characters
+  if (!VOICE_NAME_REGEX.test(trimmed)) {
+    return DEFAULT_VOICES[lang] || DEFAULT_VOICES.ja;
+  }
+
   if (trimmed.startsWith('Microsoft Server Speech Text to Speech Voice')) {
     return trimmed;
   }
@@ -143,7 +150,7 @@ async function openWebSocket(url, headers) {
 
 // In-memory audio LRU cache across warm Worker isolate requests (Rule 2: In-Memory First, 0 KV ops)
 const memAudioTtsCache = new Map();
-const MAX_MEM_AUDIO = 500;
+const MAX_MEM_AUDIO = 50;
 
 export function getCachedAudio(key) {
   return memAudioTtsCache.get(key) || null;
@@ -230,7 +237,8 @@ export async function synthesizeEdgeTts(text, options = {}) {
 
       const requestId = makeConnectionId();
       const escaped = escapeXml(clean);
-      const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='${voiceName}'><prosody pitch='+0Hz' rate='+0%' volume='+0%'>${escaped}</prosody></voice></speak>`;
+      const escapedVoice = escapeXml(voiceName);
+      const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='${escapedVoice}'><prosody pitch='+0Hz' rate='+0%' volume='+0%'>${escaped}</prosody></voice></speak>`;
       const ssmlMsg = `X-RequestId:${requestId}\r\nContent-Type:application/ssml+xml\r\nX-Timestamp:${timestamp}Z\r\nPath:ssml\r\n\r\n${ssml}`;
 
       ws.send(configMsg);

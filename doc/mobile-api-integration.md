@@ -131,7 +131,6 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 | 15 | `POST` | `https://voca.study/api/payment/create-order` | **Req** | 10/10m | Generate VietQR payOS open banking checkout info |
 | 16 | `GET` | `https://voca.study/api/payment/check-status` | No | 60/min | Poll payment confirmation status (`?orderCode=`) |
 | 17 | `GET` | `https://voca.study/api/version` | No | None | App version (1.1.35), forceUpdate, maintenance & notes |
-| 18 | `ALL` | `https://voca.study/proxy/{service}/{path}` | No | 100/hr | SSRF-safe reverse proxy (`jisho`, `jotoba`, etc.) |
 
 ---
 
