@@ -92,7 +92,16 @@ export class VideoHeaderComponent {
   closeVideo = output<void>();
   shareVideo = output<void>();
   selectTrack = output<string>();
-  triggerAI = output<void>();
+  triggerAI = output<string | undefined>();
+
+  readonly subtitleButtonTitle = computed(() =>
+    this.i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks'
+  );
+
+  onSubtitleButtonClick(event: MouseEvent): void {
+    event.stopPropagation();
+    this.openTracksSheet(event);
+  }
 
   openLevelSheet(event?: Event): void {
     event?.stopPropagation();
@@ -108,11 +117,11 @@ export class VideoHeaderComponent {
     const langs = this.transcript.availableLanguages();
     const items: OptionItem[] = [];
 
-    // Subtitles Off option (if subtitles are currently on and cues exist)
-    if (this.subtitlesService.subtitlesVisible() && this.subtitlesService.subtitles().length > 0) {
+    // Subtitles Off option (available whenever subtitle cues exist)
+    if (this.subtitlesService.subtitles().length > 0) {
       items.push({
         value: '__subtitles_off__',
-        label: this.i18n.t('subtitle.turnOffSubtitles') || this.i18n.t('player.subtitlesOff') || 'Turn subtitles off',
+        label: this.i18n.t('player.subtitlesOff') || this.i18n.t('player.off') || 'Off',
         description: this.i18n.t('subtitle.hideCaptions') || this.i18n.t('player.hideCaptions') || 'Hide subtitles display',
         icon: 'subtitles'
       });
@@ -142,18 +151,29 @@ export class VideoHeaderComponent {
       });
     }
 
-    // Target Language AI generation option (available even if native captions exist)
-    if (this.canGenerateTargetAI()) {
-      const targetLabel = this.targetLanguageLabel();
-      const targetLang = normalizeLanguageCode(this.learningLanguage.currentLanguage()?.code || '');
-      const hasNativeTarget = (langs.native || []).some(c => normalizeLanguageCode(c) === targetLang);
+    // AI generation options for all supported learning languages that do not already have an AI track
+    const currentTargetLang = normalizeLanguageCode(this.learningLanguage.currentLanguage()?.code || '');
+    const candidateAiLangs = [...SUPPORTED_LANGUAGES].sort((a, b) => {
+      if (a === currentTargetLang) return -1;
+      if (b === currentTargetLang) return 1;
+      return 0;
+    });
+
+    for (const code of candidateAiLangs) {
+      const hasAI = (langs.ai || []).some(c => normalizeLanguageCode(c) === code);
+      if (hasAI) continue;
+
+      const hasNative = (langs.native || []).some(c => normalizeLanguageCode(c) === code);
+      const langLabel = this.getLanguageLabel(code);
+      const label = hasNative
+        ? (this.i18n.t('subtitle.retranscribeWithAI') || 'Transcribe with AI (High Accuracy)') + ` (${langLabel})`
+        : (this.i18n.t('subtitle.transcribeWithAI') || 'Generate AI Subtitles') + ` (${langLabel})`;
+
       items.push({
-        value: '__generate_ai__',
-        label: hasNativeTarget
-          ? (this.i18n.t('subtitle.retranscribeWithAI') || 'Transcribe with AI (High Accuracy)') + (targetLabel ? ` (${targetLabel})` : '')
-          : (this.i18n.t('subtitle.transcribeWithAI') || 'Generate AI Subtitles') + (targetLabel ? ` (${targetLabel})` : ''),
-        description: this.i18n.t('subtitle.whisperAi') || 'Powered by Whisper AI',
-        icon: 'subtitles-ai',
+        value: `__generate_ai:${code}__`,
+        label,
+        description: `${code.toUpperCase()} • ${this.i18n.t('subtitle.whisperAi') || 'Whisper AI'}`,
+        iconUrl: getLanguageFlagUrl(code),
         badge: 'AI',
         color: 'ai'
       });
@@ -195,16 +215,19 @@ export class VideoHeaderComponent {
   onTrackOptionSelected(val: string): void {
     this.showTracksSheet.set(false);
     if (!val) return;
-    if (val === '__generate_ai__') {
-      this.triggerAI.emit();
+    if (val.startsWith('__generate_ai:')) {
+      const langCode = val.replace('__generate_ai:', '').replace('__', '');
+      this.triggerAI.emit(langCode);
+    } else if (val === '__generate_ai__') {
+      this.triggerAI.emit(this.learningLanguage.currentLanguage()?.code);
     } else {
       this.selectTrack.emit(val);
     }
   }
 
-  onGenerateAI(): void {
+  onGenerateAI(langCode?: string): void {
     this.showTracksSheet.set(false);
-    this.triggerAI.emit();
+    this.triggerAI.emit(langCode || this.learningLanguage.currentLanguage()?.code);
   }
 
   getLanguageLabel(code: unknown): string {

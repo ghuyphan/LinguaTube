@@ -231,6 +231,10 @@ export class SubtitleService {
     return newState;
   }
 
+  setSubtitlesVisible(visible: boolean): void {
+    this.subtitlesVisible.set(visible);
+  }
+
   /**
    * Batch tokenize subtitle cues.
    * Tokenizes all cues for the video on load in full batches (up to 800 cues each).

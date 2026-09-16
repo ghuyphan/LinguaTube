@@ -223,7 +223,7 @@ export class VideoPlayerComponent implements OnDestroy {
   videoEnded = output<void>();
   minimizeVideo = output<void>();
   selectTrack = output<string>();
-  triggerAI = output<void>();
+  triggerAI = output<string | undefined>();
 
   videoUrl = '';
   isLoading = signal(false);

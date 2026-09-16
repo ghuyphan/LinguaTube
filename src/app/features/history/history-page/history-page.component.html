@@ -97,7 +97,7 @@
           @if (inProgressVideo(); as resume) {
           <div class="resume-hero" (click)="resumeVideo(resume.video_id)">
             <div class="resume-hero__thumb">
-              <img [src]="resume.thumbnail || getThumbnail(resume.video_id)" [alt]="resume.title" loading="lazy" />
+              <img [src]="resume.thumbnail || getThumbnail(resume.video_id)" [alt]="resume.title" loading="lazy" referrerpolicy="no-referrer" />
               <div class="card-play-overlay">
                 <div class="play-icon-circle">
                   <app-icon name="play" [size]="15" />

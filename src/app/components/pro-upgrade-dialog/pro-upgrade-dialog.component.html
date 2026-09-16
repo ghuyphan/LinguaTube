@@ -227,7 +227,7 @@
             @if (isLoggedIn()) {
                 <div class="account-status-bar">
                     @if (user()?.picture) {
-                        <img [src]="user()?.picture" [alt]="user()?.name" class="account-avatar" />
+                        <img [src]="user()?.picture" [alt]="user()?.name" class="account-avatar" referrerpolicy="no-referrer" />
                     } @else {
                         <div class="account-avatar-placeholder">
                             <app-icon name="user" [size]="14" />

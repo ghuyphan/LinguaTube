@@ -743,7 +743,7 @@
   @if (!isFullscreen() && !isMiniplayer()) {
   <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
     (closeVideo)="closeVideo()" (shareVideo)="shareCurrentVideo()"
-    (selectTrack)="selectTrack.emit($event)" (triggerAI)="triggerAI.emit()" />
+    (selectTrack)="selectTrack.emit($event)" (triggerAI)="triggerAI.emit($event)" />
   }
   }
 </div>

@@ -17,10 +17,10 @@
     </div>
     <div class="video-actions">
         @if (availableTracks().hasAny) {
-        <button type="button" class="btn-icon btn-header-action" (click)="openTracksSheet($event)"
-            [class.is-ai]="isAIGenerated()"
-            [attr.aria-label]="i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks'"
-            [title]="i18n.t('subtitle.tracksTitle') || 'Subtitle Tracks'">
+        <button type="button" class="btn-icon btn-header-action"
+            (click)="onSubtitleButtonClick($event)"
+            [attr.aria-label]="subtitleButtonTitle()"
+            [title]="subtitleButtonTitle()">
             <app-icon [name]="isAIGenerated() ? 'subtitles-ai' : 'subtitles'" [size]="15" />
         </button>
         }

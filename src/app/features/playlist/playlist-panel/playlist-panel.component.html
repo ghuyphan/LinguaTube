@@ -78,7 +78,7 @@
             <!-- Custom Drag Preview (Optional, makes it look cleaner while dragging) -->
             <div *cdkDragPreview class="playlist-item drag-preview">
                 <div class="item-thumbnail">
-                    <img [src]="video.thumbnail" [alt]="video.title">
+                    <img [src]="video.thumbnail" [alt]="video.title" referrerpolicy="no-referrer">
                 </div>
                 <div class="item-info">
                     <div class="item-title">{{ video.title }}</div>
@@ -113,7 +113,7 @@
             </div>
 
             <div class="item-thumbnail">
-                <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
+                <img [src]="video.thumbnail" [alt]="video.title" loading="lazy" referrerpolicy="no-referrer">
                 @if (i === playlistService.currentIndex()) {
                 <div class="playing-overlay"></div>
                 }

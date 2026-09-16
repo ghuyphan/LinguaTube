@@ -212,11 +212,6 @@
     &:active {
         transform: scale(0.94);
     }
-
-    &.is-ai {
-        color: var(--color-diamond, #818cf8);
-        border-color: rgba(129, 140, 248, 0.35);
-    }
 }
 
 .btn-close-video {

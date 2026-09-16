@@ -77,6 +77,13 @@ export class VideoPageComponent implements OnInit {
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
   isSubmittingAi = signal(false);
+  selectedAiLanguage = signal<SupportedLearningLanguage>('ja');
+  readonly supportedAiLanguages = this.learningLanguage.supportedLanguages;
+
+  getAiLanguageLabel(code: string): string {
+    const lang = this.supportedAiLanguages.find(l => l.code === code);
+    return lang ? lang.name : code.toUpperCase();
+  }
 
   // Home Dashboard tabs: single transcribed videos vs curated playlists
   homeTab = signal<'videos' | 'playlists'>('videos');
@@ -447,6 +454,19 @@ export class VideoPageComponent implements OnInit {
     });
   }
 
+  onThumbnailError(event: Event, videoId: string): void {
+    const img = event.target as HTMLImageElement;
+    if (!img || !videoId) return;
+    const step = img.dataset['fallbackStep'];
+    if (!step) {
+      img.dataset['fallbackStep'] = '1';
+      img.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    } else if (step === '1') {
+      img.dataset['fallbackStep'] = '2';
+      img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+    }
+  }
+
   hasAvatarFailed(videoId: string): boolean {
     return this.failedAvatars().has(videoId);
   }
@@ -533,7 +553,11 @@ export class VideoPageComponent implements OnInit {
 
     this.aiJobManager.jobCompleted$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ videoId, language, requestedLanguage, cues }) => {
       if (this.youtube.currentVideo()?.id === videoId) {
-        this.handleCaptionsSuccess(cues, requestedLanguage || language, language);
+        const activeLang = (requestedLanguage || language) as SupportedLearningLanguage;
+        if (['ja', 'zh', 'ko', 'en'].includes(activeLang)) {
+          this.learningLanguage.switchLanguage(activeLang, { navigateHome: false });
+        }
+        this.handleCaptionsSuccess(cues, activeLang, language);
       }
     });
 
@@ -890,10 +914,16 @@ export class VideoPageComponent implements OnInit {
   /**
    * Manual AI generation trigger - opens human verification dialog
    */
-  onManualAITrigger(): void {
+  onManualAITrigger(lang?: string): void {
     const currentVideo = this.youtube.currentVideo();
     if (!currentVideo) return;
 
+    const targetLang = lang ? normalizeLanguageCode(lang) : normalizeLanguageCode(this.settings.settings().language);
+    const validLang: SupportedLearningLanguage = ['ja', 'zh', 'ko', 'en'].includes(targetLang)
+      ? (targetLang as SupportedLearningLanguage)
+      : (normalizeLanguageCode(this.settings.settings().language) as SupportedLearningLanguage) || 'ja';
+
+    this.selectedAiLanguage.set(validLang);
     this.aiCaptchaToken.set(null);
     this.isSubmittingAi.set(false);
     this.showAiConfirmDialog.set(true);
@@ -945,7 +975,7 @@ export class VideoPageComponent implements OnInit {
 
   confirmGenerateAI(): void {
     const currentVideo = this.youtube.currentVideo();
-    const lang = this.settings.settings().language;
+    const lang = this.selectedAiLanguage();
     const token = this.aiCaptchaToken();
 
     if (!currentVideo || !token || this.isSubmittingAi() || this.isVideoTooLongForAI() || this.transcript.diamonds() < this.aiDiamondCost()) return;
@@ -965,6 +995,7 @@ export class VideoPageComponent implements OnInit {
         next: (cues) => {
           this.isSubmittingAi.set(false);
           if (cues.length > 0) {
+            this.learningLanguage.switchLanguage(lang, { navigateHome: false });
             this.handleCaptionsSuccess(cues, lang);
           }
         },

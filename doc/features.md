@@ -214,6 +214,11 @@ graph TD
   - $> 10$ to $20$ minutes: **2 Diamond credits**
   - $> 20$ to $35$ minutes: **3 Diamond credits**
   - $> 35$ to $45$ minutes: **4 Diamond credits**
+- **Multi-Language AI Transcription & Seamless Context Switching**:
+  - Learners can choose to transcribe any video into any supported learning language (Japanese `ja`, Chinese `zh`, Korean `ko`, or English `en`), even if YouTube native captions exist in another language or if the app's default learning language differs from the video's actual speech.
+  - Available directly from the video header Subtitle Tracks menu (`__generate_ai:${code}__`) with national flag icons and language labels.
+  - The AI Generation confirmation dialog provides an interactive 4-language chip selector to confirm or change the transcription language before spending Diamond credits.
+  - Once transcription completes, the app automatically switches the active learning language context (`learningLanguage.switchLanguage(lang, { navigateHome: false })`) without navigating away, immediately activating appropriate tokenizers, furigana/pinyin/hangul romaji, grammar rules, and dictionaries.
 
 ---
 

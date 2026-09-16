@@ -50,7 +50,7 @@
 
             <!-- Thumbnail (16:9) -->
             <div class="yt-video-card__thumbnail">
-                <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy" decoding="async" />
+                <img [src]="item.thumbnail || getThumbnail(item.video_id)" [alt]="item.title" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
 
                 <!-- Play Overlay on Hover -->
                 <div class="yt-card-hover-overlay">
@@ -77,9 +77,9 @@
                 <div class="yt-video-card__avatar">
                     @let langs = item.languages || [];
                     @if (langs.length > 0) {
-                        <img [src]="getFlagUrl(langs[0])" class="circle-flag" [alt]="langs[0]" [title]="getLanguagesTooltip(langs)" loading="lazy" />
+                        <img [src]="getFlagUrl(langs[0])" class="circle-flag" [alt]="langs[0]" [title]="getLanguagesTooltip(langs)" loading="lazy" referrerpolicy="no-referrer" />
                     } @else if (item.language) {
-                        <img [src]="getFlagUrl(item.language)" class="circle-flag" [alt]="item.language" [title]="item.language.toUpperCase()" loading="lazy" />
+                        <img [src]="getFlagUrl(item.language)" class="circle-flag" [alt]="item.language" [title]="item.language.toUpperCase()" loading="lazy" referrerpolicy="no-referrer" />
                     } @else {
                         <div class="avatar-placeholder">
                             <app-icon name="play-circle" [size]="16" />
