@@ -146,7 +146,7 @@
                     @if (item.kind === 'video') {
                     <article class="yt-video-card" role="button" tabindex="0" (click)="onPlayRecommendedVideo(item.video)" (keydown.enter)="onPlayRecommendedVideo(item.video)">
                         <div class="yt-video-card__thumbnail">
-                            <img [src]="item.video.thumbnail" [alt]="item.video.title" loading="lazy" referrerpolicy="no-referrer" (error)="onThumbnailError($event, item.video.videoId)" />
+                            <img [src]="item.video.thumbnail" [alt]="item.video.title || item.video.channel || 'Video'" loading="lazy" (error)="onThumbnailError($event, item.video.videoId)" />
                             @if (item.video.duration) {
                             <span class="yt-duration-badge">{{ formatVideoTime(item.video.duration) }}</span>
                             }
@@ -168,7 +168,6 @@
                                      class="channel-avatar"
                                      [alt]="item.video.channel || ''"
                                      loading="lazy"
-                                     referrerpolicy="no-referrer"
                                      (error)="onAvatarError(item.video.videoId)" />
                                 } @else if (item.video.channel) {
                                 <div class="channel-placeholder" [title]="item.video.channel">
@@ -181,7 +180,7 @@
                                 }
                             </div>
                             <div class="yt-video-card__meta">
-                                <h4 class="yt-video-card__title" [title]="item.video.title">{{ item.video.title }}</h4>
+                                <h4 class="yt-video-card__title" [title]="item.video.title || ''">{{ item.video.title || item.video.channel || i18n.t('playlist.videoSingular') || 'Video' }}</h4>
                                 <div class="yt-video-card__channel-row">
                                     <span class="yt-channel-name">{{ item.video.channel || i18n.t('playlist.curated') }}</span>
                                 </div>
@@ -203,7 +202,7 @@
                     <article class="yt-video-card yt-video-card--playlist" role="button" tabindex="0" (click)="startPlaylist(item.playlist)" (keydown.enter)="startPlaylist(item.playlist)">
                         <div class="yt-video-card__thumbnail">
                             @if (item.playlist.thumbnail) {
-                            <img [src]="item.playlist.thumbnail" [alt]="item.playlist.title" loading="lazy" referrerpolicy="no-referrer" />
+                            <img [src]="item.playlist.thumbnail" [alt]="item.playlist.title" loading="lazy" />
                             } @else {
                             <div class="placeholder-icon">
                                 <app-icon name="list-video" [size]="32" />
@@ -225,7 +224,7 @@
                         <div class="yt-video-card__details">
                             <div class="yt-video-card__avatar">
                                 @if (item.playlist.language) {
-                                <img [src]="getFlagUrl(item.playlist.language)" class="circle-flag" [alt]="item.playlist.language" [title]="item.playlist.language.toUpperCase()" loading="lazy" referrerpolicy="no-referrer" />
+                                <img [src]="getFlagUrl(item.playlist.language)" class="circle-flag" [alt]="item.playlist.language" [title]="item.playlist.language.toUpperCase()" loading="lazy" />
                                 } @else {
                                 <div class="avatar-placeholder">
                                     <app-icon name="list-video" [size]="16" />

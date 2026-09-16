@@ -253,7 +253,7 @@
                                 <div class="podium-avatar podium-avatar--silver">
                                     {{ silver.avatar ? '' : silver.name.charAt(0).toUpperCase() }}
                                     @if (silver.avatar) {
-                                        <img [src]="silver.avatar" [alt]="silver.name" class="avatar-img" referrerpolicy="no-referrer" />
+                                        <img [src]="silver.avatar" [alt]="silver.name" class="avatar-img" />
                                     }
                                 </div>
                             </div>
@@ -274,7 +274,7 @@
                                 <div class="podium-avatar podium-avatar--gold">
                                     {{ gold.avatar ? '' : gold.name.charAt(0).toUpperCase() }}
                                     @if (gold.avatar) {
-                                        <img [src]="gold.avatar" [alt]="gold.name" class="avatar-img" referrerpolicy="no-referrer" />
+                                        <img [src]="gold.avatar" [alt]="gold.name" class="avatar-img" />
                                     }
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
                                 <div class="podium-avatar podium-avatar--bronze">
                                     {{ bronze.avatar ? '' : bronze.name.charAt(0).toUpperCase() }}
                                     @if (bronze.avatar) {
-                                        <img [src]="bronze.avatar" [alt]="bronze.name" class="avatar-img" referrerpolicy="no-referrer" />
+                                        <img [src]="bronze.avatar" [alt]="bronze.name" class="avatar-img" />
                                     }
                                 </div>
                             </div>
@@ -318,7 +318,7 @@
                         <div class="learner-avatar">
                             {{ learner.avatar ? '' : learner.name.charAt(0).toUpperCase() }}
                             @if (learner.avatar) {
-                                <img [src]="learner.avatar" [alt]="learner.name" class="avatar-img" referrerpolicy="no-referrer" />
+                                <img [src]="learner.avatar" [alt]="learner.name" class="avatar-img" />
                             }
                         </div>
                         <div class="learner-info">
@@ -351,7 +351,7 @@
                         <div class="my-avatar">
                             {{ me.avatar ? '' : (me.name ? me.name.charAt(0).toUpperCase() : 'Y') }}
                             @if (me.avatar) {
-                                <img [src]="me.avatar" [alt]="me.name" class="avatar-img" referrerpolicy="no-referrer" />
+                                <img [src]="me.avatar" [alt]="me.name" class="avatar-img" />
                             }
                         </div>
                         <div class="my-details">

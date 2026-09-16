@@ -199,7 +199,7 @@
                 <button class="footer-btn user-settings-row" (click)="openSettings.emit()"
                     [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.subscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
                     <div class="avatar-ring" [class]="'avatar-ring--' + auth.subscriptionTier()">
-                        <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" referrerpolicy="no-referrer" />
+                        <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
                         @if (isCollapsed() && appUpdate.updateAvailable()) {
                             <span class="sidebar-update-dot sidebar-update-dot--collapsed"></span>
                         }

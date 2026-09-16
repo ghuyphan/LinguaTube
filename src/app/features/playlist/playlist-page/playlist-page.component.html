@@ -99,7 +99,7 @@
                         <!-- Thumbnail (16:9) -->
                         <div class="yt-video-card__thumbnail">
                             @if (playlist.thumbnail) {
-                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                            <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" decoding="async">
                             } @else {
                             <div class="placeholder-icon">
                                 <app-icon name="list-video" [size]="28" />
@@ -127,7 +127,7 @@
                         <div class="yt-video-card__details">
                             <div class="yt-video-card__avatar">
                                 @if (playlist.language) {
-                                <img [src]="getFlagUrl(playlist.language)" class="circle-flag" [alt]="playlist.language" [title]="playlist.language.toUpperCase()" loading="lazy" referrerpolicy="no-referrer" />
+                                <img [src]="getFlagUrl(playlist.language)" class="circle-flag" [alt]="playlist.language" [title]="playlist.language.toUpperCase()" loading="lazy" />
                                 } @else {
                                 <div class="avatar-placeholder">
                                     <app-icon name="list-video" [size]="16" />
@@ -217,7 +217,7 @@
             <div class="detail-hero">
                 <div class="detail-hero__thumb">
                     @if (playlist.thumbnail) {
-                    <img [src]="playlist.thumbnail" [alt]="playlist.title" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                    <img [src]="playlist.thumbnail" [alt]="playlist.title">
                     } @else {
                     <div class="thumb-placeholder">
                         <app-icon name="list-video" [size]="48" />
@@ -239,7 +239,7 @@
                     }
                     <div class="detail-meta-row">
                         @if (playlist.language) {
-                        <img [src]="getFlagUrl(playlist.language)" class="lang-flag" alt="" referrerpolicy="no-referrer">
+                        <img [src]="getFlagUrl(playlist.language)" class="lang-flag" alt="">
                         }
                         <span class="author-label">{{ (view() === 'my') ? i18n.t('playlist.you') : (playlist.userName || i18n.t('playlist.community')) }}</span>
                         <span class="meta-dot">•</span>
@@ -298,7 +298,7 @@
                             }
                         </div>
                         <div class="track-thumb">
-                            <img [src]="video.thumbnail" [alt]="video.title" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                            <img [src]="video.thumbnail" [alt]="video.title" loading="lazy">
                             <div class="track-play-scrim">
                                 <app-icon name="play" [size]="16" />
                             </div>
