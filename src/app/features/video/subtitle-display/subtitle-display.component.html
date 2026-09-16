@@ -6,6 +6,7 @@
         [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
         [class.is-generating]="transcript.isGeneratingAI()"
         [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())"
+        [class.has-coachmark]="showCoachmark()"
         [class.has-overflow-top]="hasOverflowTop()"
         [class.has-overflow-bottom]="hasOverflowBottom()"
         [class.is-quiz-active]="quiz.isActive()">

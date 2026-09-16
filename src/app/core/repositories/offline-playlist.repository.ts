@@ -2,9 +2,9 @@ import { Injectable, inject, signal, Signal } from '@angular/core';
 import { IPlaylistRepository } from './playlist.repository';
 import { Playlist, mapRecordToPlaylist } from '../../models';
 import { StorageService } from '../services/storage.service';
-import { PocketBaseService } from '../services/pocketbase.service';
+import { SupabaseService } from '../services/supabase.service';
 import { AuthService } from '../services/auth.service';
-import { mergeByTimestamp, sanitizeFilterValue } from '../../shared/utils/sync.utils';
+import { mergeByTimestamp } from '../../shared/utils/sync.utils';
 
 const PLAYLISTS_STORAGE_KEY = 'linguatube_playlists';
 const PLAYLISTS_TOMBSTONES_KEY = 'linguatube_deleted_playlist_ids';
@@ -14,7 +14,7 @@ const MAX_LOCAL_PLAYLISTS = 50;
     providedIn: 'root'
 })
 export class OfflinePlaylistRepository implements IPlaylistRepository {
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
     private auth = inject(AuthService);
     private storage = inject(StorageService);
 
@@ -34,7 +34,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         this.auth.loginEvent.subscribe(() => {
             this.syncWithRemote();
         });
-        this.pb.reconnectEvent.subscribe(() => {
+        this.supabase.reconnectEvent.subscribe(() => {
             if (this.auth.isLoggedIn()) {
                 this.syncWithRemote();
             }
@@ -54,12 +54,18 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         const local = this.playlists().find(p => p.id === id);
         if (local) return local;
 
-        // Try fetching public/unlisted playlist from server
+        // Try fetching public/unlisted playlist from Supabase
         if (this.auth.isLoggedIn()) {
             try {
-                const client = await this.pb.getClient();
-                const record = await client.collection('playlists').getOne(id, { requestKey: null });
-                return mapRecordToPlaylist(record as unknown as Record<string, unknown>);
+                const { data, error } = await this.supabase.client
+                    .from('playlists')
+                    .select('*')
+                    .eq('id', id)
+                    .maybeSingle();
+
+                if (data && !error) {
+                    return mapRecordToPlaylist(data as unknown as Record<string, unknown>);
+                }
             } catch {
                 return null;
             }
@@ -77,32 +83,40 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         // 2. Remote Sync
         if (this.auth.isLoggedIn()) {
             try {
-                const client = await this.pb.getClient();
-                const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
-                await client.collection('playlists').create({
+                const userId = this.auth.getUserId();
+                if (!userId) return;
+
+                const payload = {
                     id: playlist.id,
-                    user: userId,
+                    user_id: userId,
                     title: playlist.title,
                     description: playlist.description || '',
                     visibility: playlist.visibility,
                     language: playlist.language,
-                    level: playlist.level || undefined,
-                    tags: playlist.tags,
-                    video_ids: playlist.videoIds,
-                    video_count: playlist.videoCount,
+                    level: playlist.level || null,
+                    tags: playlist.tags || [],
+                    video_ids: playlist.videoIds || [],
+                    video_count: playlist.videoCount || 0,
                     thumbnail: playlist.thumbnail || '',
                     save_count: 0,
-                    is_featured: false
-                }, { requestKey: null });
+                    is_featured: false,
+                    updated_at: new Date().toISOString()
+                };
 
-                // Mark as synced on success
-                const latest = this.playlists();
-                const index = latest.findIndex(p => p.id === playlist.id);
-                if (index !== -1) {
-                    const newPlaylists = [...latest];
-                    newPlaylists[index] = { ...newPlaylists[index], synced: true };
-                    this.playlists.set(newPlaylists);
-                    this.saveToStorage(newPlaylists);
+                const { error } = await this.supabase.client
+                    .from('playlists')
+                    .upsert(payload, { onConflict: 'id' });
+
+                if (!error) {
+                    // Mark as synced on success
+                    const latest = this.playlists();
+                    const index = latest.findIndex(p => p.id === playlist.id);
+                    if (index !== -1) {
+                        const newPlaylists = [...latest];
+                        newPlaylists[index] = { ...newPlaylists[index], synced: true };
+                        this.playlists.set(newPlaylists);
+                        this.saveToStorage(newPlaylists);
+                    }
                 }
             } catch (error) {
                 console.error('[PlaylistRepo] Failed to create on server (offline):', error);
@@ -126,27 +140,33 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         // 2. Remote Sync
         if (this.auth.isLoggedIn()) {
             try {
-                const client = await this.pb.getClient();
-                await client.collection('playlists').update(id, {
-                    title: updated.title,
-                    description: updated.description,
-                    visibility: updated.visibility,
-                    language: updated.language,
-                    level: updated.level || undefined,
-                    tags: updated.tags,
-                    video_ids: updated.videoIds,
-                    video_count: updated.videoCount,
-                    thumbnail: updated.thumbnail
-                }, { requestKey: null });
+                const payload: Record<string, unknown> = {
+                    updated_at: new Date().toISOString()
+                };
+                if (updated.title !== undefined) payload['title'] = updated.title;
+                if (updated.description !== undefined) payload['description'] = updated.description;
+                if (updated.visibility !== undefined) payload['visibility'] = updated.visibility;
+                if (updated.language !== undefined) payload['language'] = updated.language;
+                if (updated.level !== undefined) payload['level'] = updated.level || null;
+                if (updated.tags !== undefined) payload['tags'] = updated.tags;
+                if (updated.videoIds !== undefined) payload['video_ids'] = updated.videoIds;
+                if (updated.videoCount !== undefined) payload['video_count'] = updated.videoCount;
+                if (updated.thumbnail !== undefined) payload['thumbnail'] = updated.thumbnail;
 
-                // Mark synced on success
-                const latest = this.playlists();
-                const latestIdx = latest.findIndex(p => p.id === id);
-                if (latestIdx !== -1) {
-                    const syncedList = [...latest];
-                    syncedList[latestIdx] = { ...syncedList[latestIdx], synced: true };
-                    this.playlists.set(syncedList);
-                    this.saveToStorage(syncedList);
+                const { error } = await this.supabase.client
+                    .from('playlists')
+                    .update(payload)
+                    .eq('id', id);
+
+                if (!error) {
+                    const latest = this.playlists();
+                    const latestIdx = latest.findIndex(p => p.id === id);
+                    if (latestIdx !== -1) {
+                        const syncedList = [...latest];
+                        syncedList[latestIdx] = { ...syncedList[latestIdx], synced: true };
+                        this.playlists.set(syncedList);
+                        this.saveToStorage(syncedList);
+                    }
                 }
             } catch (error) {
                 console.warn('[PlaylistRepo] Failed to update on server (offline):', error);
@@ -167,8 +187,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         // 2. Remote Sync
         if (this.auth.isLoggedIn()) {
             try {
-                const client = await this.pb.getClient();
-                await client.collection('playlists').delete(id, { requestKey: null });
+                await this.supabase.client.from('playlists').delete().eq('id', id);
                 this.removeDeletionTombstone(id);
             } catch (error) {
                 console.warn('[PlaylistRepo] Failed to delete on server (offline):', error);
@@ -206,21 +225,21 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         this.isLoading.set(true);
 
         try {
-            const client = await this.pb.getClient();
-            const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
+            const userId = this.auth.getUserId();
             if (!userId) {
                 return;
             }
 
             // 0. Process pending deletion tombstones
             const tombstones = this.getDeletionTombstones();
-            for (const tId of tombstones) {
-                try {
-                    await client.collection('playlists').delete(tId, { requestKey: null });
-                    this.removeDeletionTombstone(tId);
-                } catch {
-                    // Item may already be deleted on remote
-                    this.removeDeletionTombstone(tId);
+            if (tombstones.length > 0) {
+                for (const tId of tombstones) {
+                    try {
+                        await this.supabase.client.from('playlists').delete().eq('id', tId);
+                        this.removeDeletionTombstone(tId);
+                    } catch {
+                        this.removeDeletionTombstone(tId);
+                    }
                 }
             }
 
@@ -228,51 +247,41 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             const unsynced = this.playlists().filter(p => !p.synced);
             for (const p of unsynced) {
                 try {
-                    await client.collection('playlists').create({
+                    await this.supabase.client.from('playlists').upsert({
                         id: p.id,
-                        user: userId,
+                        user_id: userId,
                         title: p.title,
                         description: p.description || '',
                         visibility: p.visibility,
                         language: p.language,
-                        level: p.level || undefined,
-                        tags: p.tags,
-                        video_ids: p.videoIds,
-                        video_count: p.videoCount,
+                        level: p.level || null,
+                        tags: p.tags || [],
+                        video_ids: p.videoIds || [],
+                        video_count: p.videoCount || 0,
                         thumbnail: p.thumbnail || '',
                         save_count: 0,
-                        is_featured: false
-                    }, { requestKey: null });
-                    console.debug('[PlaylistRepo] Pushed unsynced playlist:', p.id);
-                } catch {
-                    // Try update if create failed due to unique/existing ID
-                    try {
-                        await client.collection('playlists').update(p.id, {
-                            title: p.title,
-                            description: p.description,
-                            visibility: p.visibility,
-                            language: p.language,
-                            level: p.level || undefined,
-                            tags: p.tags,
-                            video_ids: p.videoIds,
-                            video_count: p.videoCount,
-                            thumbnail: p.thumbnail || ''
-                        }, { requestKey: null });
-                    } catch {
-                        // ignore
-                    }
+                        is_featured: false,
+                        updated_at: new Date().toISOString()
+                    }, { onConflict: 'id' });
+                } catch (e) {
+                    console.warn('[PlaylistRepo] Push error:', e);
                 }
             }
 
-            // 2. Fetch full list of playlists from server (no 50-item truncation)
-            const owned = await client.collection('playlists').getFullList({
-                filter: `user="${sanitizeFilterValue(userId)}"`,
-                sort: '-updated',
-                requestKey: null
-            });
+            // 2. Fetch full list of playlists from server
+            const { data: owned, error } = await this.supabase.client
+                .from('playlists')
+                .select('*')
+                .eq('user_id', userId)
+                .order('updated_at', { ascending: false });
+
+            if (error) {
+                console.warn('[PlaylistRepo] Fetch playlists error:', error);
+                return;
+            }
 
             const activeTombstones = new Set(this.getDeletionTombstones());
-            const remotePlaylists = owned
+            const remotePlaylists = (owned || [])
                 .map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>))
                 .filter(p => !activeTombstones.has(p.id));
 
@@ -288,11 +297,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             this.saveToStorage(combined);
             console.debug('[PlaylistRepo] Synced with remote:', remotePlaylists.length, 'remote, combined:', combined.length);
         } catch (error) {
-            if ((error as { isAbort?: boolean })?.isAbort) {
-                console.debug('[PlaylistRepo] Remote sync request was aborted');
-            } else {
-                console.error('[PlaylistRepo] Remote sync failed:', error);
-            }
+            console.error('[PlaylistRepo] Remote sync failed:', error);
         } finally {
             this.isSyncing = false;
             this.isLoading.set(false);

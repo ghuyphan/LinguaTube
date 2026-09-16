@@ -44,7 +44,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Authentic Video Scene Replay & Cloze Practice**: Jump directly from any flashcard back into the exact video scene (`[▶ Watch Scene]`), or practice active recall with Cloze sentence masking.
 - **Gamified Streaks & Freeze Inventory**: Track daily study streaks with streak freeze protections (up to 2 freezes) and milestone rewards.
 - **Playlists & History with Level Filtering**: Organize videos into custom playlists, filter playlists and watch history by proficiency levels, explore curated community channels, and resume progress automatically.
-- **Offline-First Persistence & Clean Session Isolation**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to PocketBase. Features full session teardown (`AuthService.logoutEvent`) across all repositories to prevent cross-account data leakage, deterministic ID normalization, and automatic 401 token refresh/sign-out.
+- **Offline-First Persistence & Clean Session Isolation**: Operates seamlessly offline with IndexedDB (`lingua-tube-cache`) and LocalStorage, with two-way cloud synchronization to Supabase. Features full session teardown (`AuthService.logoutEvent`) across all repositories to prevent cross-account data leakage, deterministic ID normalization, and automatic 401 token refresh/sign-out.
 - **Diamond Credits & Tier Upgrades**: Sustainable multi-tier quota system (`free` default with 5 credits, 15m regen, 10m video cap; `pro` with 10 credits, 10m regen, 20m video cap; `premium` with 25 credits, 4m regen, 45m video cap) with instant VietQR open banking upgrades via payOS.
 
 ---

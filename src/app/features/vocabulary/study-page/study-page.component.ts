@@ -5,6 +5,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
+import { GamificationService } from '../../../core/services/gamification.service';
 
 @Component({
   selector: 'app-study-page',
@@ -107,6 +108,35 @@ import { StreakService } from '../../../services/streak.service';
                 <span class="sidebar-goal-box__complete">{{ i18n.t('study.goalComplete') }} 🎉</span>
               }
             </div>
+
+            @if (srsMission(); as m) {
+              <div class="sidebar-mission-card">
+                <div class="sidebar-mission-header">
+                  <div class="sidebar-mission-title-wrap">
+                    <app-icon name="zap" [size]="13" class="mission-zap-icon" />
+                    <span class="sidebar-mission-title">{{ i18n.t(m.titleKey) || 'Memory Workout' }}</span>
+                  </div>
+                  <span class="sidebar-mission-count">{{ m.progress }}/{{ m.target }}</span>
+                </div>
+                <div class="sidebar-goal-box__bar">
+                  <div class="sidebar-goal-box__fill" [style.width.%]="(m.progress / m.target) * 100"></div>
+                </div>
+                <div class="sidebar-mission-footer">
+                  @if (m.claimed) {
+                    <span class="mission-claimed-label">
+                      <app-icon name="check" [size]="12" />
+                      {{ i18n.t('missions.claimed') || 'Claimed' }} (+{{ m.xpReward }} XP)
+                    </span>
+                  } @else if (m.completed) {
+                    <button type="button" class="btn-mission-claim-inline" (click)="gamification.claimMission(m.id)">
+                      {{ i18n.t('missions.claim') || 'Claim' }} +{{ m.xpReward }} XP
+                    </button>
+                  } @else {
+                    <span class="mission-reward-label">+{{ m.xpReward }} XP</span>
+                  }
+                </div>
+              </div>
+            }
           </div>
         </aside>
     </div>
@@ -183,6 +213,91 @@ import { StreakService } from '../../../services/streak.service';
       color: var(--success);
       text-align: center;
       margin-top: 2px;
+    }
+
+    .sidebar-mission-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0.625rem 0.75rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      margin-top: var(--space-xs);
+    }
+
+    .sidebar-mission-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .sidebar-mission-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .mission-zap-icon {
+      color: #f59e0b;
+      flex-shrink: 0;
+    }
+
+    .sidebar-mission-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sidebar-mission-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    .sidebar-mission-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 2px;
+    }
+
+    .mission-claimed-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--color-success, #10b981);
+    }
+
+    .mission-reward-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+    }
+
+    .btn-mission-claim-inline {
+      padding: 2px 10px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent-primary);
+      border: none;
+      border-radius: var(--border-radius-pill, 9999px);
+      cursor: pointer;
+      transition: opacity var(--transition-fast);
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
 
     /* Mastery Section (Donut + Breakdown) */
@@ -324,11 +439,16 @@ import { StreakService } from '../../../services/streak.service';
 })
 export class StudyPageComponent {
   private vocab = inject(VocabularyService);
+  gamification = inject(GamificationService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
   streak = inject(StreakService);
 
   studyMode = viewChild(StudyModeComponent);
+
+  srsMission = computed(() => {
+    return this.gamification.dailyMissions().find(m => m.type === 'srs_review') || null;
+  });
 
   currentLanguage = computed(() => this.settings.settings().language);
   stats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));

@@ -572,6 +572,26 @@
     flex-shrink: 0;
 }
 
+.stat-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-claim-dot {
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-primary, #f45b74);
+    box-shadow: 0 0 0 1.5px var(--bg-secondary);
+    pointer-events: none;
+}
+
 .stats-bar__val {
     font-size: 0.875rem;
     font-weight: 700;

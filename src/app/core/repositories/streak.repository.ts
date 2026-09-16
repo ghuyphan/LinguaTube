@@ -17,4 +17,5 @@ export interface IStreakRepository {
     recordActivity(): Promise<ActivityResult | null>;
     getWeekActivity(): boolean[];
     syncWithRemote(): Promise<void>;
+    replenishFreeze(newCount: number): Promise<void>;
 }

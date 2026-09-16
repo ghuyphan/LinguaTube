@@ -189,6 +189,57 @@ test('Auth: getUserTier and hasPaidAccess correctly identify pro and premium use
   assert.equal(hasPaidAccess(null), false);
 });
 
+test('Auth: validateAuthToken rejects forged tokens and missing headers', async () => {
+  const { validateAuthToken, decodeJwtPayload } = await import('../functions-src/middlewares/auth.js');
+
+  // 1. Missing Authorization header
+  const reqNoAuth = new Request('https://voca.study/api/diamonds');
+  const resNoAuth = await validateAuthToken(reqNoAuth, {});
+  assert.equal(resNoAuth.valid, false);
+  assert.equal(resNoAuth.error, 'Missing Authorization header');
+
+  // 2. Malformed / non-Bearer header
+  const reqBadHeader = new Request('https://voca.study/api/diamonds', {
+    headers: { 'Authorization': 'Basic 12345' }
+  });
+  const resBadHeader = await validateAuthToken(reqBadHeader, {});
+  assert.equal(resBadHeader.valid, false);
+
+  // 3. Forged JWT with invalid signature
+  // Payload: {"sub":"test-user-id","exp":2524608000}
+  const forgedToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMTExMTExMS0xMTExLTExMTEtMTExMS0xMTExMTExMTExMTEiLCJleHAiOjI1MjQ2MDgwMDB9.invalid_signature_here';
+  const reqForged = new Request('https://voca.study/api/diamonds', {
+    headers: { 'Authorization': `Bearer ${forgedToken}` }
+  });
+  const resForged = await validateAuthToken(reqForged, {
+    SUPABASE_URL: 'https://edbkvzviqeulwzcnrrlb.supabase.co',
+    SUPABASE_ANON_KEY: 'test_anon_key'
+  });
+  assert.equal(resForged.valid, false);
+});
+
+test('DiamondService: consumeDiamond fails closed when SUPABASE_SERVICE_ROLE_KEY is missing for DB updates', async () => {
+  const { DiamondService } = await import('../functions-src/services/diamond.service.js');
+  const service = new DiamondService(null);
+
+  const mockUser = {
+    id: 'test-user-uuid',
+    diamonds: 5,
+    subscriptionTier: 'free',
+    last_diamond_regen: new Date().toISOString()
+  };
+
+  // Missing service role key in env
+  const envNoKey = {
+    SUPABASE_URL: 'https://edbkvzviqeulwzcnrrlb.supabase.co'
+  };
+
+  const result = await service.consumeDiamond('client-123', 1, mockUser, envNoKey);
+  assert.equal(result.success, false);
+  assert.equal(result.reason, 'database_update_failed');
+  assert.equal(result.diamonds, 5); // Balance unchanged
+});
+
 test('payOS: HMAC-SHA256 signature calculation and webhook verification', async () => {
   const { buildPayOsSignatureData, computeHmacSha256, verifyWebhookSignature } = await import('../functions-src/providers/payos.js');
 

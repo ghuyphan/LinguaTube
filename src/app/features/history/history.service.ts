@@ -3,7 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { HistoryItem, VideoInfo } from '../../models';
 import { YoutubeService } from '../video';
 import { OfflineHistoryRepository } from '../../core/repositories';
-import { AuthService } from '../../core/services';
+import { AuthService, ToastService, I18nService } from '../../core/services';
 import { getYouTubeThumbnail } from '../../core/utils';
 import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 import { GamificationService } from '../../core/services/gamification.service';
@@ -23,6 +23,8 @@ export class HistoryService {
     private gamification = inject(GamificationService);
     private streak = inject(StreakService);
     private auth = inject(AuthService);
+    private toast = inject(ToastService);
+    private i18n = inject(I18nService);
 
     private completedVideos = new Set<string>();
 
@@ -176,6 +178,12 @@ export class HistoryService {
                 this.completedVideos.add(videoId);
                 this.gamification.recordVideoCompleted();
                 this.streak.recordActivity();
+                const title = this.i18n.t('player.videoCompleted') || 'Video Completed';
+                this.toast.show(`🎬 ${title} (+25 XP)`, {
+                    type: 'success',
+                    icon: 'sparkles',
+                    duration: 4000
+                });
             }
         }
     }

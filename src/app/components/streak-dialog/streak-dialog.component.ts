@@ -1,8 +1,16 @@
-import { Component, inject, computed, ChangeDetectionStrategy, output } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy, output, input, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { StreakService } from '../../services/streak.service';
-import { I18nService } from '../../core/services';
+import { I18nService, ToastService } from '../../core/services';
+import { GamificationService } from '../../core/services/gamification.service';
+
+export interface WeekDayItem {
+    day: string;
+    active: boolean;
+    isToday: boolean;
+    isFuture: boolean;
+}
 
 @Component({
     selector: 'app-streak-dialog',
@@ -13,46 +21,76 @@ import { I18nService } from '../../core/services';
     styleUrls: ['./streak-dialog.component.scss']
 })
 export class StreakDialogComponent {
-    streak = inject(StreakService);
-    i18n = inject(I18nService);
+    readonly streak = inject(StreakService);
+    readonly gamification = inject(GamificationService);
+    readonly i18n = inject(I18nService);
+    readonly toast = inject(ToastService);
 
+    isOpen = input<boolean>(true);
     dismissed = output<void>();
 
-    weekDays = computed(() => {
-        const lang = this.i18n.currentLanguage();
-        const today = new Date();
-        const activity = this.streak.getWeekActivity(); // Array of last 7 days [Today, Yesterday, ...]
+    replenishFreeze(): void {
+        const res = this.streak.replenishFreeze();
+        if (res.success) {
+            const msg = `❄️ ${this.i18n.t('streak.freezeRestored') || 'Streak Freeze restored!'}`;
+            this.toast.show(msg, { type: 'success', icon: 'snowflake', duration: 3500 });
+        } else if (res.reason === 'insufficient_xp') {
+            const msg = `⚠️ ${this.i18n.t('streak.insufficientXp') || 'Need 150 XP to replenish freeze'}`;
+            this.toast.show(msg, { type: 'warning', icon: 'zap', duration: 3500 });
+        }
+    }
 
-        // Calculate start of current week (Monday)
-        // Day 0 is Sunday, 1 is Monday...
-        const currentDay = today.getDay(); // 0-6
-        const diff = today.getDate() - currentDay + (currentDay === 0 ? -6 : 1); // Adjust when Sunday
-        const monday = new Date(today);
-        monday.setDate(diff);
-
-        const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
-
-        // Helper to check if a specific date was active
-        const checkActivityForDate = (checkDate: Date): boolean => {
-            const startOfCheck = new Date(checkDate.getFullYear(), checkDate.getMonth(), checkDate.getDate()).getTime();
-            if (startOfCheck > startOfToday) return false;
-
-            const diffDays = Math.round((startOfToday - startOfCheck) / (1000 * 60 * 60 * 24));
-            if (diffDays < 7 && diffDays >= 0) {
-                return activity[diffDays];
+    constructor() {
+        // When modal is opened, trigger a background sync to refresh streak data
+        effect(() => {
+            if (this.isOpen()) {
+                this.streak.syncWithRemote();
             }
-            return false;
-        };
+        });
+    }
+
+    readonly weekDays = computed<WeekDayItem[]>(() => {
+        // Establish reactive signal dependencies
+        void this.isOpen();
+        const lang = this.i18n.currentLanguage();
+        const streakData = this.streak.streakData();
+        const historyList = this.streak.activityHistory();
+        const historySet = new Set(historyList);
+
+        const now = new Date();
+        const todayYear = now.getFullYear();
+        const todayMonth = now.getMonth();
+        const todayDate = now.getDate();
+        const today = new Date(todayYear, todayMonth, todayDate);
+        const todayTime = today.getTime();
+
+        // Calculate Monday of the current week
+        // getDay(): 0 is Sunday, 1 is Monday, ..., 6 is Saturday
+        const dayOfWeek = today.getDay();
+        const daysSinceMonday = (dayOfWeek + 6) % 7; // Monday = 0, ..., Sunday = 6
+        const mondayDate = todayDate - daysSinceMonday;
 
         const fallbackDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
         return Array.from({ length: 7 }, (_, index) => {
-            const date = new Date(monday);
-            date.setDate(monday.getDate() + index);
+            const date = new Date(todayYear, todayMonth, mondayDate + index);
+            const dateTime = date.getTime();
+            const isToday = dateTime === todayTime;
+            const isFuture = dateTime > todayTime;
 
-            const isToday = date.toDateString() === today.toDateString();
-            const isActive = checkActivityForDate(date);
-            const isFuture = date.getTime() > today.getTime();
+            const localKey = this.toLocalDateKey(date);
+            const utcKey = this.toUtcDateKey(date);
+
+            const lastActivityMatch = streakData.lastActivity
+                ? this.toLocalDateKey(new Date(streakData.lastActivity)) === localKey
+                : false;
+
+            const isActive = isFuture
+                ? false
+                : (isToday && streakData.practicedToday) ||
+                  historySet.has(localKey) ||
+                  historySet.has(utcKey) ||
+                  lastActivityMatch;
 
             let dayLabel = '';
             try {
@@ -69,4 +107,18 @@ export class StreakDialogComponent {
             };
         });
     });
+
+    private toLocalDateKey(date: Date): string {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    private toUtcDateKey(date: Date): string {
+        const year = date.getUTCFullYear();
+        const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(date.getUTCDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
 }

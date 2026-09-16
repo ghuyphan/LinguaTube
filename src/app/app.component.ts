@@ -124,6 +124,9 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             >
               <div class="bottom-nav__icon-wrap">
                 <app-icon [name]="isMoreActive() ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
+                @if (gamification.hasClaimableRewards()) {
+                  <span class="bottom-nav__dot"></span>
+                }
               </div>
               <span>{{ i18n.t('nav.more') }}</span>
             </button>
@@ -149,7 +152,12 @@ import { VideoRecommendationService } from './core/services/video-recommendation
                 </div>
               </button>
               <button class="more-stat-card" (click)="openAchievementsFromMore()">
-                <app-icon name="trophy" [size]="20" class="stat-icon--trophy" />
+                <div class="more-stat-icon-wrap">
+                  <app-icon name="trophy" [size]="20" class="stat-icon--trophy" />
+                  @if (gamification.hasClaimableRewards()) {
+                    <span class="more-stat-dot"></span>
+                  }
+                </div>
                 <div class="more-stat-info">
                   <span class="more-stat-val">{{ gamification.userLevel() }}</span>
                   <span class="more-stat-lbl">{{ i18n.t('gamification.level') || 'Level' }}</span>
@@ -245,7 +253,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             [showCloseButton]="true"
             (closed)="showStreakSheet.set(false)"
           >
-            <app-streak-dialog (dismissed)="sheetService.closeTop()" />
+            <app-streak-dialog [isOpen]="showStreakSheet()" (dismissed)="sheetService.closeTop()" />
           </app-bottom-sheet>
         }
 
@@ -848,6 +856,26 @@ import { VideoRecommendationService } from './core/services/video-recommendation
     .stat-icon--trophy {
       color: #f59e0b;
       flex-shrink: 0;
+    }
+
+    .more-stat-icon-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .more-stat-dot {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-primary, #f45b74);
+      box-shadow: 0 0 0 1.5px var(--bg-secondary);
+      pointer-events: none;
     }
 
     .more-stat-info {

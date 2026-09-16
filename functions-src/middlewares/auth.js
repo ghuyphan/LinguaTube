@@ -1,10 +1,10 @@
 /**
- * PocketBase JWT Authentication Module for Cloudflare Functions
- * Validates PocketBase auth tokens for API authorization
- * 
- * NOTE: With vocab sync moved to PocketBase, this is primarily used for
- * future subscription-gated features via Cloudflare Workers.
+ * Supabase JWT Authentication Module for Cloudflare Functions
+ * Validates Supabase auth tokens for API authorization
  */
+
+const DEFAULT_SUPABASE_URL = 'https://edbkvzviqeulwzcnrrlb.supabase.co';
+const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg';
 
 /**
  * Base64URL decode
@@ -18,7 +18,7 @@ function base64UrlDecode(str) {
 /**
  * Decode JWT payload without verification
  */
-function decodeJwtPayload(token) {
+export function decodeJwtPayload(token) {
     try {
         const parts = token.split('.');
         if (parts.length !== 3) return null;
@@ -28,72 +28,90 @@ function decodeJwtPayload(token) {
     }
 }
 
-/**
- * Verify PocketBase token by calling PocketHost API
- * 
- * NOTE: Token Refresh Side Effect
- * ===============================
- * This function calls /auth-refresh which EXTENDS the token lifetime on every validation.
- * This is intentional behavior to keep active users logged in without requiring re-authentication.
- * 
- * If you need read-only verification without refresh:
- * 1. Decode the JWT payload locally
- * 2. Check the `exp` claim against current time
- * 3. Optionally call a non-refreshing endpoint like /api/collections/users/auth/get-current
- * 
- * We keep the refresh behavior because:
- * - It provides seamless user experience for active users
- * - Token lifetime extension is capped by PocketBase server settings
- * - Inactive users' tokens still expire naturally
- */
 // In-memory token cache to avoid making outbound HTTP requests on every single subrequest
 const memTokenCache = new Map();
 const TOKEN_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
-async function verifyPocketBaseToken(token, env) {
-    const pocketbaseUrl = env.POCKETHOST_URL || env.PB_URL || 'https://voca.pockethost.io';
+/**
+ * Verify Supabase JWT token and load user profile
+ */
+async function verifySupabaseToken(token, env) {
+    const supabaseUrl = env.SUPABASE_URL || DEFAULT_SUPABASE_URL;
+    const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY || DEFAULT_SUPABASE_ANON_KEY;
     const now = Date.now();
+
+    if (!token || typeof token !== 'string') {
+        return { valid: false, error: 'Missing token' };
+    }
 
     const cached = memTokenCache.get(token);
     if (cached && now < cached.expiresAt) {
         return cached.result;
     }
 
+    const payload = decodeJwtPayload(token);
+    if (!payload || !payload.sub) {
+        return { valid: false, error: 'Invalid token payload' };
+    }
+
+    // Expiration check (exp is in seconds)
+    if (payload.exp && payload.exp < Math.floor(now / 1000)) {
+        return { valid: false, error: 'Token expired' };
+    }
+
     try {
-        const response = await fetch(`${pocketbaseUrl}/api/collections/users/auth-refresh`, {
-            method: 'POST',
+        // 1. Cryptographically verify token signature via Supabase Auth API (/auth/v1/user)
+        const userRes = await fetch(`${supabaseUrl}/auth/v1/user`, {
+            method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${token}`
             },
-            signal: AbortSignal.timeout(5000)
+            signal: AbortSignal.timeout(4000)
         });
 
-        if (!response.ok) {
-            return { valid: false, error: 'Token expired or invalid' };
+        if (!userRes.ok) {
+            return { valid: false, error: 'Invalid or forged authentication token' };
         }
 
-        const data = await response.json();
+        const authUser = await userRes.json().catch(() => null);
+        if (!authUser || authUser.id !== payload.sub) {
+            return { valid: false, error: 'Token user identity mismatch' };
+        }
 
-        // Defensive validation: ensure response structure is valid
-        if (!data.record?.id || typeof data.record.id !== 'string') {
-            console.error('[Auth] Invalid response structure: missing or invalid record.id');
-            return { valid: false, error: 'Invalid authentication response' };
+        // 2. Query user profile directly from Supabase REST API
+        const profileKey = env.SUPABASE_SERVICE_ROLE_KEY || supabaseKey;
+        const profileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${authUser.id}&select=*`, {
+            method: 'GET',
+            headers: {
+                'apikey': profileKey,
+                'Authorization': `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY || token}`,
+                'Accept': 'application/json'
+            },
+            signal: AbortSignal.timeout(4000)
+        });
+
+        let profile = null;
+        if (profileRes.ok) {
+            const profiles = await profileRes.json();
+            if (Array.isArray(profiles) && profiles.length > 0) {
+                profile = profiles[0];
+            }
         }
 
         const result = {
             valid: true,
-            userId: data.record.id,
+            userId: authUser.id,
             user: {
-                id: data.record.id,
-                email: data.record?.email,
-                name: data.record?.name,
-                subscriptionTier: data.record?.subscription_tier || 'free',
-                subscriptionExpires: data.record?.subscription_expires,
+                id: authUser.id,
+                email: profile?.email || authUser.email || payload.email || '',
+                name: profile?.name || payload.user_metadata?.full_name || payload.user_metadata?.name || authUser.email || 'User',
+                subscriptionTier: profile?.subscription_tier || 'free',
+                subscriptionExpires: profile?.subscription_expires || null,
                 // Diamond system fields
-                diamonds: data.record?.diamonds,
-                last_diamond_regen: data.record?.last_diamond_regen || data.record?.diamonds_updated_at || null,
-                diamondsUpdatedAt: data.record?.last_diamond_regen || data.record?.diamonds_updated_at || null
+                diamonds: profile?.diamonds ?? 5,
+                last_diamond_regen: profile?.diamonds_updated_at || null,
+                diamondsUpdatedAt: profile?.diamonds_updated_at || null
             }
         };
 
@@ -106,8 +124,7 @@ async function verifyPocketBaseToken(token, env) {
 
         return result;
     } catch (error) {
-        // FAIL CLOSED - do not trust unverified tokens
-        console.error('[Auth] PocketBase verification failed:', error.message);
+        console.error('[Auth] Supabase verification error:', error.message);
         return { valid: false, error: 'Authentication service unavailable' };
     }
 }
@@ -134,19 +151,7 @@ export async function validateAuthToken(request, env) {
     }
 
     const token = authHeader.substring(7);
-    const payload = decodeJwtPayload(token);
-
-    if (!payload) {
-        return { valid: false, error: 'Invalid token format' };
-    }
-
-    // Check expiration
-    if (payload.exp && payload.exp < Math.floor(Date.now() / 1000)) {
-        return { valid: false, error: 'Token expired' };
-    }
-
-    // Verify with PocketHost
-    return await verifyPocketBaseToken(token, env);
+    return await verifySupabaseToken(token, env);
 }
 
 /**
@@ -158,6 +163,8 @@ export function unauthorizedResponse(message = 'Unauthorized') {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
             'WWW-Authenticate': 'Bearer'
         }
     });

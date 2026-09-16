@@ -2,11 +2,10 @@ import { Injectable, inject, signal, Signal } from '@angular/core';
 import { IHistoryRepository } from './history.repository';
 import { HistoryItem, HistoryRecord } from '../../models';
 import { StorageService } from '../services/storage.service';
-import { PocketBaseService } from '../services/pocketbase.service';
+import { SupabaseService } from '../services/supabase.service';
 import { AuthService } from '../services/auth.service';
 import { getYouTubeThumbnail } from '../utils';
-import { sanitizeFilterValue, generateDeterministicRecordId, mergeByTimestamp } from '../../shared/utils/sync.utils';
-import type PocketBase from 'pocketbase';
+import { generateDeterministicRecordId, mergeByTimestamp } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_history';
 const MAX_LOCAL_HISTORY = 50;
@@ -31,7 +30,6 @@ function sanitizeLangs(langs?: string[] | null, fallback: SupportedHistoryLang =
         unique.splice(unique.indexOf(fallback), 1);
         unique.unshift(fallback);
     }
-    // PocketBase history collection supports up to 4 languages
     const sliced = unique.slice(0, maxSelect);
     return sliced.length > 0 ? sliced : [fallback];
 }
@@ -74,7 +72,7 @@ function sanitizeWatchedAt(date?: Date | string | null): string {
 })
 export class OfflineHistoryRepository implements IHistoryRepository {
     private storage = inject(StorageService);
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
     private auth = inject(AuthService);
 
     // Source of truth signal
@@ -84,13 +82,18 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     constructor() {
         this.loadFromStorage();
 
+        // Initial sync on startup if already authenticated
+        if (this.auth.isLoggedIn()) {
+            this.syncWithRemote();
+        }
+
         // Auto-sync when user logs in
         this.auth.loginEvent.subscribe(() => {
             this.syncWithRemote();
         });
 
         // Auto-sync when network reconnects
-        this.pb.reconnectEvent.subscribe(() => {
+        this.supabase.reconnectEvent.subscribe(() => {
             if (this.auth.isLoggedIn()) {
                 this.syncWithRemote();
             }
@@ -100,54 +103,63 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.auth.logoutEvent.subscribe(() => {
             this.history.set([]);
             this.storage.remove(STORAGE_KEY);
-            for (const timer of this.remoteSyncTimers.values()) {
-                clearTimeout(timer);
-            }
+            this.storage.remove('linguatube_deleted_history_video_ids');
+            this.remoteSyncTimers.forEach(t => clearTimeout(t));
             this.remoteSyncTimers.clear();
         });
-
-        // Sync on startup if already logged in
-        if (this.auth.isLoggedIn()) {
-            this.syncWithRemote();
-        }
     }
 
     getHistory(): Signal<HistoryItem[]> {
         return this.history.asReadonly();
     }
 
+    async getHistoryItem(id: string): Promise<HistoryItem | null> {
+        return this.history().find(i => i.id === id) || null;
+    }
+
     async addToHistory(item: HistoryItem): Promise<void> {
-        // 1. Optimistic Update (Local)
+        // 1. Optimistic Update (Local first)
         const current = this.history();
         const existingIndex = current.findIndex(i => i.video_id === item.video_id);
 
-        let newHistory = [...current];
-        if (existingIndex >= 0) {
+        let newHistory: HistoryItem[];
+
+        if (existingIndex !== -1) {
             // Update existing
-            newHistory[existingIndex] = { ...item, synced: false };
+            const existing = current[existingIndex];
+            const updated: HistoryItem = {
+                ...existing,
+                ...item,
+                id: existing.id,
+                watched_at: item.watched_at || new Date(),
+                progress: Math.max(existing.progress, item.progress),
+                synced: false
+            };
+            newHistory = [
+                updated,
+                ...current.slice(0, existingIndex),
+                ...current.slice(existingIndex + 1)
+            ];
         } else {
             // Add new
-            newHistory.unshift({ ...item, synced: false });
+            newHistory = [{ ...item, synced: false }, ...current];
         }
 
-        // Enforce max limit for local storage
-        if (newHistory.length > MAX_LOCAL_HISTORY && !this.auth.isLoggedIn()) {
+        // Limit size
+        if (newHistory.length > MAX_LOCAL_HISTORY) {
             newHistory = newHistory.slice(0, MAX_LOCAL_HISTORY);
         }
-
-        // Sort by watched_at descending
-        newHistory.sort((a, b) => new Date(b.watched_at).getTime() - new Date(a.watched_at).getTime());
 
         this.history.set(newHistory);
         this.saveToStorage(newHistory);
 
-        // 2. Schedule debounced remote sync
-        this.scheduleRemoteItemPush(item);
+        // 2. Debounced Remote Push
+        this.triggerRemotePush(item);
     }
 
     private remoteSyncTimers = new Map<string, ReturnType<typeof setTimeout>>();
 
-    private scheduleRemoteItemPush(item: HistoryItem): void {
+    private triggerRemotePush(item: HistoryItem): void {
         if (!this.auth.isLoggedIn()) return;
 
         const existingTimer = this.remoteSyncTimers.get(item.video_id);
@@ -167,8 +179,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         if (!this.auth.isLoggedIn()) return;
 
         try {
-            const client = await this.pb.getClient();
-            await this.upsertItemRemote(client, item);
+            await this.upsertItemRemote(item);
 
             // Mark as synced
             const updatedCurrent = this.history();
@@ -181,15 +192,12 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             }
 
         } catch (error) {
-            const errData = (error && typeof error === 'object' && 'data' in error)
-                ? JSON.stringify((error as { data: unknown }).data)
-                : '';
-            console.error('[HistoryRepo] Failed to sync item:', item.video_id, error, 'Validation details:', errData);
+            console.error('[HistoryRepo] Failed to sync item:', item.video_id, error);
         }
     }
 
-    private async upsertItemRemote(client: PocketBase, item: HistoryItem): Promise<void> {
-        const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
+    private async upsertItemRemote(item: HistoryItem): Promise<void> {
+        const userId = this.auth.getUserId();
         if (!userId) {
             console.warn('[HistoryRepo] Cannot push history item without authenticated user ID');
             return;
@@ -205,8 +213,10 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         const duration = sanitizeDuration(item.duration);
         const is_favorite = Boolean(item.is_favorite);
 
+        const recordId = generateDeterministicRecordId('hist', userId, item.video_id);
         const payload = {
-            user: userId,
+            id: recordId,
+            user_id: userId,
             video_id: item.video_id,
             title,
             thumbnail,
@@ -216,34 +226,16 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             languages,
             watched_at: watchedAtIso,
             progress,
-            is_favorite
+            is_favorite,
+            updated_at: new Date().toISOString()
         };
 
-        const recordId = generateDeterministicRecordId('hist', userId, item.video_id);
-        const payloadWithId = {
-            id: recordId,
-            ...payload
-        };
+        const { error } = await this.supabase.client
+            .from('history')
+            .upsert(payload, { onConflict: 'id' });
 
-        try {
-            await client.collection('history').create(payloadWithId, { requestKey: null });
-        } catch (err: unknown) {
-            const status = (err && typeof err === 'object' && 'status' in err) ? (err as { status: number }).status : 0;
-            if (status === 400 || status === 409) {
-                await client.collection('history').update(recordId, {
-                    watched_at: watchedAtIso,
-                    progress,
-                    is_favorite,
-                    language,
-                    languages,
-                    title,
-                    thumbnail,
-                    channel,
-                    duration
-                }, { requestKey: null });
-            } else {
-                throw err;
-            }
+        if (error) {
+            throw error;
         }
     }
 
@@ -263,14 +255,13 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         // 2. Remote Sync
         if (this.auth.isLoggedIn()) {
             try {
-                const client = await this.pb.getClient();
-                const existing = await client.collection('history').getList(1, 1, {
-                    filter: `user="${sanitizeFilterValue(this.auth.getUserId() || '')}" && video_id="${sanitizeFilterValue(itemToRemove.video_id)}"`,
-                    requestKey: null
-                });
-
-                if (existing.items.length > 0) {
-                    await client.collection('history').delete(existing.items[0].id, { requestKey: null });
+                const userId = this.auth.getUserId();
+                if (userId) {
+                    await this.supabase.client
+                        .from('history')
+                        .delete()
+                        .eq('user_id', userId)
+                        .eq('video_id', itemToRemove.video_id);
                     this.removeDeletionTombstone(itemToRemove.video_id);
                 }
             } catch (error) {
@@ -290,15 +281,14 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
         if (this.auth.isLoggedIn()) {
             try {
-                const client = await this.pb.getClient();
-                const all = await client.collection('history').getFullList({
-                    filter: `user="${sanitizeFilterValue(this.auth.getUserId() || '')}"`,
-                    requestKey: null
-                });
-                for (const rec of all) {
-                    await client.collection('history').delete(rec.id, { requestKey: null });
+                const userId = this.auth.getUserId();
+                if (userId) {
+                    await this.supabase.client
+                        .from('history')
+                        .delete()
+                        .eq('user_id', userId);
+                    this.storage.remove('linguatube_deleted_history_video_ids');
                 }
-                this.storage.remove('linguatube_deleted_history_video_ids');
             } catch (error) {
                 console.warn('[HistoryRepo] Clear history on server failed:', error);
             }
@@ -333,8 +323,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
         this.isLoading.set(true);
         try {
-            const client = await this.pb.getClient();
-            const userId = this.auth.getUserId() || client.authStore.record?.id || (client.authStore.model as { id?: string } | null)?.id;
+            const userId = this.auth.getUserId();
             if (!userId) {
                 console.warn('[HistoryRepo] Cannot sync history without authenticated user ID');
                 return;
@@ -344,13 +333,11 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             const tombstones = this.getDeletionTombstones();
             for (const videoId of tombstones) {
                 try {
-                    const existing = await client.collection('history').getList(1, 1, {
-                        filter: `user="${sanitizeFilterValue(userId)}" && video_id="${sanitizeFilterValue(videoId)}"`,
-                        requestKey: null
-                    });
-                    if (existing.items.length > 0) {
-                        await client.collection('history').delete(existing.items[0].id, { requestKey: null });
-                    }
+                    await this.supabase.client
+                        .from('history')
+                        .delete()
+                        .eq('user_id', userId)
+                        .eq('video_id', videoId);
                     this.removeDeletionTombstone(videoId);
                 } catch {
                     // Retry next sync
@@ -361,26 +348,29 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             const unsynced = this.history().filter(h => !h.synced);
             for (const item of unsynced) {
                 try {
-                    await this.upsertItemRemote(client, item);
+                    await this.upsertItemRemote(item);
                     item.synced = true;
                     console.debug('[HistoryRepo] Pushed unsynced item:', item.video_id);
                 } catch (err: unknown) {
-                    const errData = (err && typeof err === 'object' && 'data' in err)
-                        ? JSON.stringify((err as { data: unknown }).data)
-                        : '';
-                    console.error('[HistoryRepo] Failed to push item:', item.video_id, err, 'Validation details:', errData);
+                    console.error('[HistoryRepo] Failed to push item:', item.video_id, err);
                 }
             }
 
-            // 2. Fetch all history from server (getFullList avoids 100-item truncation)
-            const records = await client.collection('history').getFullList({
-                filter: `user="${sanitizeFilterValue(userId)}"`,
-                sort: '-watched_at',
-                requestKey: null
-            });
+            // 2. Fetch all history from server
+            const { data: records, error } = await this.supabase.client
+                .from('history')
+                .select('*')
+                .eq('user_id', userId)
+                .order('watched_at', { ascending: false })
+                .limit(MAX_LOCAL_HISTORY);
+
+            if (error) {
+                console.warn('[HistoryRepo] Remote fetch failed:', error);
+                return;
+            }
 
             const activeTombstones = new Set(this.getDeletionTombstones());
-            const remoteItems = records
+            const remoteItems = (records || [])
                 .map(r => this.recordToHistoryItem(r as unknown as HistoryRecord))
                 .filter(r => !activeTombstones.has(r.video_id));
 

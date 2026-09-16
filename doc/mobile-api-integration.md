@@ -1,7 +1,7 @@
 # Voca Mobile API Integration & Flutter Development Guide (with Cursor AI)
 
 **Target Audience:** Mobile Engineers (Flutter/Dart, Swift/iOS, Kotlin/Android, React Native) & AI Coding Agents (Cursor, Claude Code, Antigravity)  
-**Backend Architecture:** Cloudflare Pages Functions (Edge Serverless Workers) + Cloudflare D1 (SQLite) + Cloudflare R2 (S3 Storage) + Cloudflare KV + PocketBase BaaS (`https://voca.pockethost.io`)  
+**Backend Architecture:** Cloudflare Pages Functions (Edge Serverless Workers) + Cloudflare D1 (SQLite) + Cloudflare R2 (S3 Storage) + Cloudflare KV + Supabase BaaS (`https://edbkvzviqeulwzcnrrlb.supabase.co`)  
 **Specification Version:** `v5.1.0` (Low-Latency Dual-Sub Streaming, 3-Tier CJK Speech Chunking & Resilient ASR Polling)  
 
 ---
@@ -16,15 +16,15 @@ Voca operates as a distributed, high-performance edge application. Mobile applic
 │         (YouTube IFrame / Video Player, Subtitles, Dict, Grammar)       │
 └──────────────────┬───────────────────────────────────┬──────────────────┘
                    │                                   │
-                   │ HTTP REST (Dio Client)            │ PocketBase SDK / REST
+                   │ HTTP REST (Dio Client)            │ Supabase SDK / REST
                    ▼                                   ▼
    ┌───────────────────────────────┐   ┌───────────────────────────────┐
-   │    Cloudflare Edge API        │   │        PocketBase BaaS        │
-   │    https://voca.study         │   │    https://voca.pockethost.io │
-   │                               │   │                               │
+   │    Cloudflare Edge API        │   │        Supabase BaaS          │
+   │    https://voca.study         │   │  https://edbkvzviqeulwzcnrrlb │
+   │                               │   │  .supabase.co                 │
    │  • Subtitles (Native & Gladia)│   │  • User Authentication (JWT)  │
    │  • Dual Subtitles (R2 Cache)  │   │  • Vocabulary SRS Flashcards  │
-   │  • Kuromoji/NLP Tokenization  │   │  • Daily Streaks & Freezes    │
+   │  • Kuromoji/NLP Tokenization  │   │  • Daily Streaks (RPC)        │
    │  • Multi-Source Dictionaries  │   │  • Custom Video Playlists     │
    │  • Video Discovery & Levels   │   │  • Watch History & Favorites  │
    │  • Diamond Credits & PayOS    │   │  • Gamification (XP & Badges) │
@@ -33,10 +33,10 @@ Voca operates as a distributed, high-performance edge application. Mobile applic
 
 ### Environment Base URLs
 
-| Environment | Edge API Base URL | PocketBase BaaS URL | Purpose |
+| Environment | Edge API Base URL | Supabase BaaS URL | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Production** | `https://voca.study` | `https://voca.pockethost.io` | Live Cloudflare Pages edge network & cloud DB |
-| **Local Dev** | `http://<DEV_IP>:3001` | `https://voca.pockethost.io` | Local Express dev server with live Innertube caption scraper |
+| **Production** | `https://voca.study` | `https://edbkvzviqeulwzcnrrlb.supabase.co` | Live Cloudflare Pages edge network & cloud DB |
+| **Local Dev** | `http://<DEV_IP>:3001` | `https://edbkvzviqeulwzcnrrlb.supabase.co` | Local Express dev server with live Innertube caption scraper |
 
 ---
 
@@ -51,7 +51,7 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 
 1. DUAL BACKEND ARCHITECTURE:
    - All public edge operations (transcripts, tokenization, dictionaries, video metadata, diamonds, payments, version) MUST route to the Cloudflare Edge API: `https://voca.study`.
-   - All user data persistence (auth, vocabulary cards, playlists, streaks, history, gamification) MUST route to PocketBase: `https://voca.pockethost.io`.
+   - All user data persistence (auth, vocabulary cards, playlists, streaks, history, gamification) MUST route to Supabase: `https://edbkvzviqeulwzcnrrlb.supabase.co`.
 
 2. MANDATORY USER-AGENT HEADER (ANTI-BOT BYPASS):
    - The Cloudflare Edge rejects scrapers (curl, python, axios, dart default).
@@ -75,14 +75,14 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
    - Support Japanese (JLPT N5-N1), Chinese (HSK 1-6), Korean (1-6), and English (CEFR A1-C2).
    - Tapping a grammar token highlights the pattern span and opens the Grammar BottomSheet with formation, explanations, and bilingual examples.
 
-5. POCKETBASE FILTER SYNTAX:
-   - String literals inside filters MUST use DOUBLE QUOTES (`"value"`), never single quotes.
-   - Logical operators MUST be `&&` and `||` (never SQL `AND` / `OR`).
-   - Example: `filter: 'user = "' + userId + '" && language = "ja"'`.
+5. SUPABASE QUERY & FILTER SYNTAX:
+   - Use PostgREST filtering via the Supabase Flutter/Dart SDK:
+     `supabase.from('vocabulary').select().eq('user_id', userId).eq('language', 'ja')`.
+   - For atomic streak updates, call the Postgres RPC:
+     `supabase.rpc('record_streak_activity', params: {'p_user_id': userId, 'p_activity_date': dateStr})`.
 
 6. DETERMINISTIC OFFLINE RECORD IDS:
-   - PocketBase IDs must match regex `^[a-z0-9]{15}$`.
-   - Offline flashcards and gamification records MUST use Cyrb53 Base36 hashing:
+   - Offline flashcards and history records use deterministic hashing to prevent duplicate inserts:
      `generateDeterministicRecordId([userId, word.toLowerCase(), language])`.
 
 7. ASYNC TWO-PHASE POLLING & BACKGROUND RESUMPTION:
@@ -737,51 +737,77 @@ export interface GrammarMatch {
 
 ---
 
-## 6. Direct PocketBase BaaS Integration
+## 6. Direct Supabase BaaS Integration
 
-For offline-first user data, mobile apps communicate with PocketBase at `https://voca.pockethost.io`.
+For offline-first user data, mobile apps communicate with Supabase at `https://edbkvzviqeulwzcnrrlb.supabase.co` using `@supabase/supabase-js` or `supabase_flutter`.
 
-### 6.1. Core Collections Schema
+### 6.1. Core PostgreSQL Tables Schema
 
-#### Collection: `vocabulary` (Flashcards & SRS)
-| Field | Type | Invariant / Constraint |
+#### Table: `profiles` (User Tier & Diamonds)
+| Column | Type | Description |
 | :--- | :--- | :--- |
-| `id` | `TEXT (15)` | **Deterministic ID**: `^[a-z0-9]{15}$` via Cyrb53 Base36 |
-| `user` | `RELATION` | PocketBase User ID |
+| `id` | `UUID (PK)` | References `auth.users(id)` |
+| `email` | `TEXT` | User email address |
+| `display_name` | `TEXT` | Display name / nickname |
+| `avatar_url` | `TEXT` | Profile avatar URL |
+| `subscription_tier` | `TEXT` | `'free'` \| `'pro'` \| `'premium'` |
+| `subscription_expires` | `TIMESTAMPTZ` | Subscription expiry timestamp |
+| `diamonds` | `INTEGER` | Current AI credits (auto-regenerates) |
+| `diamonds_updated_at` | `TIMESTAMPTZ` | Timestamp of last credit update |
+
+#### Table: `vocabulary` (Flashcards & SRS)
+| Column | Type | Invariant / Constraint |
+| :--- | :--- | :--- |
+| `id` | `TEXT (PK)` | **Deterministic ID**: `base64(userId|word|lang)` |
+| `user_id` | `UUID (FK)` | References `auth.users(id)` |
 | `word` | `TEXT` | Word surface form |
 | `reading` | `TEXT` | Kana / Pinyin / Hangul reading |
+| `pinyin` | `TEXT` | Pinyin with tone marks for Chinese |
+| `romanization` | `TEXT` | Hepburn / Revised Romanization |
 | `meaning` | `TEXT` | Native/translated definition |
 | `language` | `TEXT` | `'ja'` \| `'zh'` \| `'ko'` \| `'en'` |
-| `level` | `TEXT` | `'new'` \| `'learning'` \| `'known'` \| `'mastered'` |
-| `reviewCount` | `NUMBER` | Total reviews |
-| `easeFactor` | `NUMBER` | SM-2 multiplier (default `2.5`, floor `1.3`) |
-| `interval` | `NUMBER` | Days until next review |
-| `repetitions` | `NUMBER` | Consecutive correct answers |
-| `nextReview` | `DATE` | ISO 8601 timestamp |
+| `level` | `TEXT` | `'new'` \| `'learning'` \| `'known'` \| `'ignored'` |
+| `examples` | `JSONB` | Array of example sentences |
+| `srs_interval` | `INTEGER` | Days until next review |
+| `srs_repetition` | `INTEGER` | Consecutive correct answers |
+| `srs_ease_factor` | `REAL` | SM-2 multiplier (default `2.5`, floor `1.3`) |
+| `srs_next_review_at`| `TIMESTAMPTZ` | Timestamp for next scheduled review |
+| `srs_last_reviewed_at`| `TIMESTAMPTZ` | Timestamp of last review |
 
-#### Collection: `streaks` (Daily Practice & Shield)
-| Field | Type | Description |
+#### Table: `streaks` (Daily Practice & Shield)
+| Column | Type | Description |
 | :--- | :--- | :--- |
-| `user` | `RELATION` | PocketBase User ID |
-| `current_streak` | `NUMBER` | Consecutive active days |
-| `longest_streak` | `NUMBER` | Highest streak recorded |
-| `freezes_remaining` | `NUMBER` | Available streak shield items (max 2) |
-| `last_activity` | `DATE` | Timestamp of last practice |
-| `activity_log` | `JSON` | Array of active date strings (`["2026-09-08", "2026-09-09"]`) |
+| `user_id` | `UUID (PK, FK)` | References `auth.users(id)` |
+| `current_streak` | `INTEGER` | Consecutive active days |
+| `longest_streak` | `INTEGER` | Highest streak recorded |
+| `freezes_remaining` | `INTEGER` | Available streak shield items (max 2) |
+| `last_activity` | `TIMESTAMPTZ` | Timestamp of last practice |
+| `last_freeze_used` | `TIMESTAMPTZ` | Timestamp when a shield was consumed |
+| `activity_log` | `JSONB` | Array of active date strings (`["2026-09-08", "2026-09-09"]`) |
 
-*Server Streak Hook Endpoints:*
-- `GET https://voca.pockethost.io/api/streaks/me`: Returns streak stats.
-- `POST https://voca.pockethost.io/api/streaks/record-activity`: Automatically calculates streak increments, freeze consumption, and badges.
+*Server Streak RPC Stored Procedure:*
+Call the atomic stored procedure via Supabase client:
+```dart
+final res = await supabase.rpc('record_streak_activity', params: {
+  'p_user_id': userId,
+  'p_activity_date': DateFormat('yyyy-MM-dd').format(DateTime.now()),
+});
+// res returns: { current_streak, longest_streak, freezes_remaining, awarded_freeze }
+```
 
-#### Collection: `playlists` (Custom & Level Playlists)
-- Fields: `user` (Relation), `title` (Text), `language` (Text), `level` (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`, `all`), `video_ids` (JSON array of strings), `thumbnail` (Text).
+#### Table: `playlists` & `playlist_saves` (Custom & Level Playlists)
+- `playlists`: `id` (Text PK), `user_id` (UUID FK), `title` (Text), `description` (Text), `visibility` (`'public' | 'unlisted' | 'private'`), `language` (Text), `tags` (JSONB), `video_ids` (JSONB), `video_count` (Integer), `thumbnail` (Text), `save_count` (Integer).
+- `playlist_saves`: `user_id` (UUID FK), `playlist_id` (Text FK).
 
-#### Collection: `history` (Watch Progress & Resume)
-- Fields: `user` (Relation), `video_id` (Text), `last_position` (Number), `duration` (Number), `language` (Text), `title` (Text), `channel` (Text), `thumbnail` (Text), `is_favorite` (Bool).
+#### Table: `history` (Watch Progress & Resume)
+- Fields: `id` (Text PK), `user_id` (UUID FK), `video_id` (Text), `title` (Text), `thumbnail` (Text), `channel` (Text), `duration` (Integer), `language` (Text), `languages` (JSONB), `progress` (Real), `is_favorite` (Boolean), `watched_at` (TIMESTAMPTZ).
+
+#### Table: `gamification` (XP, Levels & Badges)
+- Fields: `id` (Text PK), `user_id` (UUID FK), `xp` (Integer), `level` (Integer), `total_videos_watched` (Integer), `total_quizzes_completed` (Integer), `unlocked_achievements` (JSONB), `notified_achievements` (JSONB).
 
 ### 6.2. Cyrb53 Base36 Deterministic ID Generation (Dart)
 
-PocketBase requires 15-character alphanumeric record IDs (`^[a-z0-9]{15}$`). Use this Cyrb53 Base36 hash to prevent duplicate records when syncing offline flashcards:
+Use this deterministic hashing function to prevent duplicate records when creating flashcards or history entries offline:
 
 ```dart
 String generateDeterministicRecordId(List<String> keys) {
@@ -1808,7 +1834,7 @@ Show a Modal Bottom Sheet with two options:
 | `200` | `languageMismatch: true` | Foreign-language native subtitles found | Show Subtitle Track Picker sheet (Switch Language vs Gladia AI) |
 | `400` | `INVALID_VIDEO_ID` | Video ID does not match `^[a-zA-Z0-9_-]{11}$` | Show invalid video URL prompt | Do not retry |
 | `400` | `VIDEO_TOO_LONG` | Video length exceeds account tier cap | Show Pro/Premium upgrade sheet | Do not retry |
-| `401` | `UNAUTHORIZED` | Expired PocketBase JWT token | Call `pb.collection('users').authRefresh()` and retry |
+| `401` | `UNAUTHORIZED` | Expired Supabase JWT token | Call `supabase.auth.refreshSession()` and retry |
 | `403` | `BOT_DETECTED` | Missing or default `User-Agent` | Set descriptive `User-Agent: VocaMobile/1.0.0` |
 | `403` | `CAPTCHA_FAILED` | Turnstile verification failed | Show Turnstile CAPTCHA dialog and retry |
 | `403` | `NO_DIAMONDS` | 0 Diamond credits and video not cached | Show Diamond balance modal with next regen time |
@@ -1828,6 +1854,6 @@ Show a Modal Bottom Sheet with two options:
 - [ ] **Zero-CLS Subtitles**: Verify that when secondary translations appear or disappear, the primary subtitle does not jump vertically on screen.
 - [ ] **Grammar Matching**: Test Japanese subtitle (`日本語を勉強している`) and verify that `ている` triggers a GrammarMatch with level `JLPT N5`.
 - [ ] **Chinese Correlatives**: Test `虽然天气冷但是很开心` and verify that `虽然...但是` triggers a split GrammarMatch.
-- [ ] **PocketBase Double Quotes**: Verify all PocketBase query filters use double quotes: `filter: 'user = "' + userId + '"'`.
+- [ ] **Supabase Row Level Security**: Verify all user queries include authenticated bearer token and adhere to RLS policies.
 - [ ] **Offline Card Creation**: Save flashcards in Airplane Mode; verify IDs match `generateDeterministicRecordId([userId, word, lang])` and sync without 409 conflict errors.
 - [ ] **VietQR Intent**: Verify clicking "Pay with Mobile Banking" successfully triggers bank app deep links with valid payload descriptions (`VOCA{orderCode}`).

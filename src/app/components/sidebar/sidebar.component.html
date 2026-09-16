@@ -108,7 +108,12 @@
                 <div class="stats-bar__divider"></div>
                 <button class="stats-bar__item" (click)="openAchievements.emit()" 
                     [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
-                    <app-icon name="trophy" [size]="16" class="stat-icon stat-icon--trophy" />
+                    <div class="stat-icon-wrap">
+                        <app-icon name="trophy" [size]="16" class="stat-icon stat-icon--trophy" />
+                        @if (gamification.hasClaimableRewards()) {
+                            <span class="stat-claim-dot"></span>
+                        }
+                    </div>
                     <span class="stats-bar__val">{{ gamification.userLevel() }}</span>
                 </button>
                 <div class="stats-bar__divider"></div>
@@ -128,7 +133,12 @@
                 </button>
                 <button class="collapsed-stat-btn" (click)="openAchievements.emit()" 
                     [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel()">
-                    <app-icon name="trophy" [size]="16" class="stat-icon--trophy" />
+                    <div class="stat-icon-wrap">
+                        <app-icon name="trophy" [size]="16" class="stat-icon--trophy" />
+                        @if (gamification.hasClaimableRewards()) {
+                            <span class="stat-claim-dot"></span>
+                        }
+                    </div>
                     <span>{{ gamification.userLevel() }}</span>
                 </button>
                 <button class="collapsed-stat-btn" (click)="openAiCredits.emit()" 

@@ -1,7 +1,7 @@
 /**
  * payOS Webhook Endpoint
  * POST /api/payment/webhook
- * Receives bank payment confirmation and automatically upgrades PocketBase user account.
+ * Receives bank payment confirmation and automatically upgrades Supabase user account.
  */
 
 import { verifyWebhookSignature } from '../../providers/payos.js';
@@ -22,18 +22,16 @@ export async function onRequestPost(context) {
 
         const checksumKey = env.PAYOS_CHECKSUM_KEY;
 
-        // In production, enforce HMAC-SHA256 signature verification (fail closed)
-        if (checksumKey) {
-            const isValid = await verifyWebhookSignature(body, checksumKey);
-            if (!isValid) {
-                console.error('[payOS Webhook] Signature verification failed');
-                return jsonResponse({ success: false, error: 'Invalid signature' }, 400);
-            }
-        } else if (env.ENVIRONMENT === 'development') {
-            console.warn('[payOS Webhook] PAYOS_CHECKSUM_KEY not configured, processing in permissive dev mode');
-        } else {
-            console.error('[payOS Webhook] PAYOS_CHECKSUM_KEY not configured in production');
+        // Enforce HMAC-SHA256 signature verification in all environments (Fail Closed)
+        if (!checksumKey) {
+            console.error('[payOS Webhook] PAYOS_CHECKSUM_KEY unconfigured');
             return jsonResponse({ success: false, error: 'Webhook verification key unconfigured' }, 500);
+        }
+
+        const isValid = await verifyWebhookSignature(body, checksumKey);
+        if (!isValid) {
+            console.error('[payOS Webhook] Signature verification failed');
+            return jsonResponse({ success: false, error: 'Invalid signature' }, 400);
         }
 
         const data = body.data || body;
@@ -97,55 +95,29 @@ export async function onRequestPost(context) {
         const defaultDiamonds = targetTier === 'premium' ? 25 : 10;
         const grantedDiamonds = orderMeta?.diamonds || defaultDiamonds;
 
-        const pbUrl = env.PB_URL || env.POCKETHOST_URL || 'https://voca.pockethost.io';
-        const adminEmail = env.PB_ADMIN_EMAIL;
-        const adminPassword = env.PB_ADMIN_PASSWORD;
-
-        if (!adminEmail || !adminPassword) {
-            console.error('[payOS Webhook] Missing PB_ADMIN_EMAIL or PB_ADMIN_PASSWORD in environment');
+        const supabaseUrl = env.SUPABASE_URL || 'https://edbkvzviqeulwzcnrrlb.supabase.co';
+        const serviceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
+        if (!serviceRoleKey) {
+            console.error('[payOS Webhook] SUPABASE_SERVICE_ROLE_KEY unconfigured; cannot upgrade profile');
             if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
-            return errorResponse('Server configuration error', 500);
+            return jsonResponse({ success: false, error: 'Database service key unconfigured' }, 500);
         }
-
-        // 1. Admin login to PocketBase (try /api/admins first, fallback to /api/collections/_superusers)
-        let authRes = await fetch(`${pbUrl}/api/admins/auth-with-password`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
-            signal: AbortSignal.timeout(5000)
-        }).catch(() => null);
-
-        if (!authRes || authRes.status === 404) {
-            authRes = await fetch(`${pbUrl}/api/collections/_superusers/auth-with-password`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ identity: adminEmail, password: adminPassword }),
-                signal: AbortSignal.timeout(5000)
-            }).catch(() => null);
-        }
-
-        if (!authRes || !authRes.ok) {
-            console.error(`[payOS Webhook] Admin login failed: ${authRes?.status}`);
-            if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
-            return errorResponse('Failed to authenticate with user service', 500);
-        }
-
-        const authData = await authRes.json();
-        const adminToken = authData.token;
         const expiresAt = new Date(Date.now() + durationDays * 24 * 60 * 60 * 1000).toISOString();
 
-        // 2. Upgrade user record to target tier ('pro' or 'premium')
-        const updateRes = await fetch(`${pbUrl}/api/collections/users/records/${userId}`, {
+        // Upgrade user record to target tier ('pro' or 'premium') in Supabase
+        const updateRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': adminToken
+                'apikey': serviceRoleKey,
+                'Authorization': `Bearer ${serviceRoleKey}`
             },
             body: JSON.stringify({
                 subscription_tier: targetTier,
                 subscription_expires: expiresAt,
                 diamonds: grantedDiamonds,
-                last_diamond_regen: new Date().toISOString()
+                diamonds_updated_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
             }),
             signal: AbortSignal.timeout(5000)
         }).catch(() => null);

@@ -104,6 +104,7 @@
     "sleepTimerActiveToast": "Sleep timer set for {{time}}",
     "hint": "Paste a YouTube URL to start learning. Subtitles will load automatically.",
     "nowPlaying": "Now playing",
+    "videoCompleted": "Video Completed",
     "embedErrorHelp": "This video cannot be played embedded. It may be restricted by the owner or unavailable.",
     "watchOnYouTube": "Watch on YouTube"
   },
@@ -505,7 +506,10 @@
     "reached": "You reached",
     "days": "days!",
     "saved": "Streak Saved! ❄️",
-    "daysReached": "You've reached {{count}} days!"
+    "daysReached": "You've reached {{count}} days!",
+    "replenish": "Restore",
+    "freezeRestored": "Streak Freeze restored!",
+    "insufficientXp": "Need 150 XP to replenish freeze"
   },
   "history": {
     "title": "History",
@@ -686,7 +690,7 @@
     "continue": "Continue",
     "back": "Back",
     "stepProgress": "Step {{current}} of {{total}}",
-    "subtitleCoachmark": "Tap any word to translate & save to flashcards",
+    "subtitleCoachmark": "Tap any word to translate & save",
     "demoSave": "+ Save word",
     "demoSaved": "Saved to Flashcards!",
     "levels": {
@@ -865,6 +869,8 @@
     "claimed": "Claimed",
     "claimedReward": "Mission Reward Claimed",
     "dailyChestClaimed": "Daily Chest Claimed",
+    "missionCompleted": "Daily Mission Complete!",
+    "autoClaimed": "Yesterday's unclaimed quest rewards were auto-collected",
     "watch1": {
       "title": "Active Immersion",
       "desc": "Watch 1 video with subtitles"

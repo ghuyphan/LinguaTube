@@ -677,6 +677,9 @@ export class SubtitleDisplayComponent implements OnDestroy {
   private wasPlayingBeforeGrammarLookup = false;
 
   onGrammarClick(index: number, event: Event): void {
+    if (!this.settings.settings().hasSeenSubtitleCoachmark) {
+      this.settings.markSubtitleCoachmarkSeen();
+    }
     event.stopPropagation();
     const match = this.getGrammarMatchForToken(index);
     if (match) {

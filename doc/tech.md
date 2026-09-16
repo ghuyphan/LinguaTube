@@ -17,7 +17,7 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 | **Local Dev Server** | Express | `^5.2.1` | Local backend mock with CORS, dotenv, and Innertube |
 | **YouTube Client (Dev)**| `youtubei.js` | `^18.0.0` | Innertube client for real YouTube native caption extraction locally |
 | **Bundler (Backend)** | esbuild | `^0.27.2` | Bundling `functions-src/` route handlers to ESM format |
-| **Backend as a Service** | PocketBase | `^0.26.5` | Authentication, user profiles, vocabulary/streak/playlist sync |
+| **Backend as a Service** | `@supabase/supabase-js` | `^2.116.0` | Supabase PostgreSQL, GoTrue OAuth/JWT authentication, RLS, user profiles, vocabulary/streak/playlist/history/gamification sync |
 | **Payment Gateway** | PayOS VietQR | API / Webhook | Automated VietQR payment processing, webhook HMAC verification & auto-upgrades |
 | **Edge Database** | Cloudflare D1 | `SQLite` | Serverless relational edge database for metadata & negative caching |
 | **Edge Object Storage** | Cloudflare R2 | `S3-compatible` | Transcript file store (`transcripts/`) & translations store (`translations/`) |
@@ -138,9 +138,9 @@ Correct segmentation and pronunciation generation are central to Voca:
   - Fast video info: `video-info:{videoId}`
   - Dictionary cache: `dict:v4:{from}:{to}:{word}`
 
-### 4.5. PocketBase (`https://voca.pockethost.io`)
-- Open-source Go/SQLite backend hosting user authentication and synchronized collections (`users`, `vocabulary`, `streaks`, `playlists`).
-- Server hooks (`streaks.pb.js`) execute automated streak calculations and daily maintenance.
+### 4.5. Supabase (`https://edbkvzviqeulwzcnrrlb.supabase.co`)
+- Cloud PostgreSQL backend hosting user authentication (GoTrue) and synchronized tables (`profiles`, `vocabulary`, `streaks`, `history`, `playlists`, `playlist_saves`, `gamification`, `legacy_pb_users`).
+- Row Level Security (RLS) protects user private data, and stored procedures (`record_streak_activity`) provide atomic daily streak evaluations.
 
 ---
 

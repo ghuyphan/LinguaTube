@@ -2,7 +2,8 @@ import { Injectable, inject, computed, effect, untracked } from '@angular/core';
 import {
     Achievement,
     AchievementCategory,
-    AchievementTier
+    AchievementTier,
+    Mission
 } from '../../models/gamification.model';
 import { IconName } from '../../shared/components/icon/icon.component';
 import { OfflineVocabularyRepository } from '../repositories/offline-vocabulary.repository';
@@ -85,6 +86,18 @@ export class GamificationService {
         !this.dailyBonusClaimed()
     );
 
+    readonly hasClaimableRewards = computed(() => {
+        const missions = this.dailyMissions();
+        const hasUnclaimed = missions.some(m => m.completed && !m.claimed);
+        return hasUnclaimed || this.canClaimDailyBonus();
+    });
+
+    readonly claimableCount = computed(() => {
+        const missions = this.dailyMissions();
+        const unclaimed = missions.filter(m => m.completed && !m.claimed).length;
+        return unclaimed + (this.canClaimDailyBonus() ? 1 : 0);
+    });
+
     /**
      * Level calculation: Level = floor(sqrt(XP / 100)) + 1
      * Level 1: 0 - 99 XP
@@ -166,6 +179,16 @@ export class GamificationService {
         effect(() => {
             this.evaluateMilestones();
         });
+
+        // Check if there was any rollover XP harvested from yesterday
+        const rollover = this.repo.pendingRolloverXp();
+        if (rollover > 0) {
+            setTimeout(() => {
+                const msg = `🎁 ${this.i18n.t('missions.autoClaimed') || "Yesterday's unclaimed rewards were auto-collected"}: +${rollover} XP!`;
+                this.toast.show(msg, { type: 'success', icon: 'gift', duration: 4500 });
+                this.repo.pendingRolloverXp.set(0);
+            }, 800);
+        }
     }
 
     /**
@@ -186,38 +209,59 @@ export class GamificationService {
     }
 
     /**
+     * Deduct XP from the user (e.g. for restoring a streak freeze)
+     */
+    deductXP(amount: number): boolean {
+        return this.repo.deductXP(amount);
+    }
+
+    /**
      * Record video completion (>= 80% watched)
      */
     recordVideoCompleted(): void {
-        this.repo.recordVideoCompleted();
+        const completed = this.repo.recordVideoCompleted();
+        this.notifyCompletedMissions(completed);
     }
 
     /**
      * Record subtitle quiz completion
      */
     recordQuizCompleted(): void {
-        this.repo.recordQuizCompleted();
+        const completed = this.repo.recordQuizCompleted();
+        this.notifyCompletedMissions(completed);
     }
 
     /**
      * Record word saved to notebook
      */
     recordWordSaved(): void {
-        this.repo.trackMissionProgress('save_word', 1);
+        const completed = this.repo.trackMissionProgress('save_word', 1);
+        this.notifyCompletedMissions(completed);
     }
 
     /**
      * Record flashcard SRS review
      */
     recordSRSReview(): void {
-        this.repo.trackMissionProgress('srs_review', 1);
+        const completed = this.repo.trackMissionProgress('srs_review', 1);
+        this.notifyCompletedMissions(completed);
     }
 
     /**
      * Record dictionary word lookup
      */
     recordDictLookup(): void {
-        this.repo.trackMissionProgress('look_up_dict', 1);
+        const completed = this.repo.trackMissionProgress('look_up_dict', 1);
+        this.notifyCompletedMissions(completed);
+    }
+
+    private notifyCompletedMissions(missions: Mission[]): void {
+        if (!missions || missions.length === 0) return;
+        for (const m of missions) {
+            const title = this.i18n.t(m.titleKey) || m.id;
+            const msg = `🎯 ${this.i18n.t('missions.missionCompleted') || 'Daily Mission Complete!'}: ${title} (+${m.xpReward} XP)`;
+            this.toast.show(msg, { type: 'success', icon: 'target', duration: 4000 });
+        }
     }
 
     /**

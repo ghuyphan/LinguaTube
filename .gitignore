@@ -42,3 +42,8 @@ yarn-error.log*
 # Lighthouse reports
 lighthouse*.json
 
+# Database backups & migration dumps
+*.db
+scripts/*.sql
+scripts/seed_data.sql
+

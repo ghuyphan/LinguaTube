@@ -38,16 +38,32 @@
             </div>
             <div class="stat-info">
                 <span class="stat-label">{{ i18n.t('streak.longestStreak') || 'Best Streak' }}</span>
-                <span class="stat-value">{{ streak.longestStreak() }}</span>
+                <div class="stat-value-row">
+                    <span class="stat-value">{{ streak.longestStreak() }}</span>
+                </div>
             </div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card stat-card--freeze">
             <div class="stat-icon-wrap stat-icon-wrap--freeze">
                 <app-icon name="snowflake" [size]="18" />
             </div>
             <div class="stat-info">
                 <span class="stat-label">{{ i18n.t('streak.freezesRemaining') || 'Streak Freezes' }}</span>
-                <span class="stat-value">{{ streak.freezesRemaining() }}</span>
+                <div class="stat-value-row">
+                    <span class="stat-value">{{ streak.freezesRemaining() }}/2</span>
+                    @if (streak.freezesRemaining() < 2) {
+                        <button
+                            type="button"
+                            class="btn-replenish-freeze"
+                            (click)="replenishFreeze()"
+                            [disabled]="gamification.totalXP() < 150"
+                            [attr.title]="gamification.totalXP() < 150 ? (i18n.t('streak.insufficientXp') || 'Need 150 XP') : ((i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)')"
+                            [attr.aria-label]="(i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)'"
+                        >
+                            +1 ❄️ 150
+                        </button>
+                    }
+                </div>
             </div>
         </div>
     </div>

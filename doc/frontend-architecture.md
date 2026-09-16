@@ -14,7 +14,7 @@ This document outlines the frontend design principles, Angular 19 Signal state a
  [ 1. Fine-Grained Reactivity ]       [ 2. Offline-First Data Layer ]
    • Angular Signals (signal, computed)  • Repository Pattern (IVocabularyRepo, etc.)
    • ChangeDetectionStrategy.OnPush      • LocalStorage + IndexedDB (lingua-tube-cache)
-   • Zero Zone.js manual triggers        • PocketBase Two-Way Cloud Synchronization
+   • Zero Zone.js manual triggers        • Supabase Two-Way Cloud Synchronization
 
  [ 3. Standalone Component Tree ]     [ 4. Cross-Platform Responsive UI ]
    • Zero NgModules                       • Mobile-First Responsive SCSS Layouts
@@ -166,7 +166,7 @@ graph TD
   - **Infinite Scrolling Discovery & Seamless Prefetching**: Powered by an `IntersectionObserver` sentinel element (`.feed-sentinel`) with 600px root margin for frictionless YouTube-style prefetching and `VideoRecommendationService.loadMoreRecommendedVideos(...)`, automatically appending 12-video batches as the user scrolls. Employs a centered `.spinner.spinner--lg` indicator during pagination with zero animation delay on appended cards to eliminate layout jumps.
   - **Unified Global Spinner Component (`.spinner`)**: Standardized CSS spinner design token in `_components.scss` with multiple size (`--sm`, `--md`, `--lg`, `--xl`) and theme (`--white`, `--current`) variants, animated with smooth `spin` keyframes and respecting `prefers-reduced-motion`.
   - **Modern Video Iconography**: Unified on sleek `play-circle` and `list-video` icons across tabs, cards, and empty states.
-  - Powered by `VideoRecommendationService` and `PlaylistService` retrieving genuine transcribed videos and multi-video playlists directly from Cloudflare D1/R2 and PocketBase.
+  - Powered by `VideoRecommendationService` and `PlaylistService` retrieving genuine transcribed videos and multi-video playlists directly from Cloudflare D1/R2 and Supabase.
 - **Reactive Target Language Switch Effect**:
   - Distinguishes between explicit mismatch modal confirmations (`skipNextMismatchDialog: true`, which keeps the player active and refetches subtitles in the detected language) and user-initiated learning language changes in the sidebar/settings.
   - When the user changes target learning language while watching a video, the effect resets the player, clears current subtitles/transcripts, clears the active playlist, and navigates to `/video` to present the Home Feed recommendations for the newly selected language.
@@ -369,7 +369,7 @@ classDiagram
     class OfflineVocabularyRepository {
         -vocabulary: Signal~VocabularyItem[]~
         -storage: StorageService
-        -pb: PocketBaseService
+        -supabase: SupabaseService
         -auth: AuthService
         +addWord(...)
         +markReviewed(...)
@@ -380,7 +380,7 @@ classDiagram
 ```
 
 ### Deterministic ID Generation & Login Normalization
-To ensure zero duplicate records when syncing between local browser storage and PocketBase:
+To ensure zero duplicate records when syncing between local browser storage and Supabase:
 ```typescript
 private generateVocabId(userId: string, word: string, language: string): string {
     const raw = `${userId}|${word}|${language}`;
@@ -390,7 +390,7 @@ private generateVocabId(userId: string, word: string, language: string): string 
         .slice(0, 15);
 }
 ```
-- **Login Normalization**: When a user signs in, `OfflineVocabularyRepository` automatically scans cached items created anonymously under the `'local'` pseudo-user ID and deterministically remaps them to `${userId}` IDs prior to remote synchronization. This prevents duplicate records in PocketBase while ensuring seamless offline-to-online transition.
+- **Login Normalization**: When a user signs in, `OfflineVocabularyRepository` automatically scans cached items created anonymously under the `'local'` pseudo-user ID and deterministically remaps them to `${userId}` IDs prior to remote synchronization. This prevents duplicate records in Supabase while ensuring seamless offline-to-online transition.
 
 ### 4.2. Clean Session Teardown & Cross-Account Isolation
 To eliminate cross-user data leakage when switching accounts or signing out on shared devices:
@@ -453,8 +453,8 @@ Located at `src/app/core/services/ai-job-manager.service.ts`:
 ### 4.7. HTTP Interceptor Pipeline (`src/app/interceptors/`)
 Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
 - **`authInterceptor`**:
-  - Automatically attaches PocketBase Bearer token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.
-  - **401 Unauthorized Interception**: Intercepts `401 Unauthorized` responses from backend APIs, automatically clearing stale tokens via `PocketBaseService.clear()` and triggering `AuthService.signOut()` to gracefully reset application state and prompt re-authentication.
+  - Automatically attaches Supabase Bearer JWT token (`Authorization: Bearer <token>`) to all internal `/api/*` endpoints whenever a valid user session exists, while strictly isolating external URLs from token exposure.
+  - **401 Unauthorized Interception**: Intercepts `401 Unauthorized` responses from backend APIs, automatically clearing stale tokens and calling `AuthService.signOut()` to gracefully reset application state and prompt re-authentication.
 - **`timeoutInterceptor`**: Guards against hung connections with a 30s default timeout (and 120s extended timeout for heavy AI transcription tasks like `/api/transcript` and `/api/dual-subtitles`).
 - **`cacheInterceptor`**: Caches dictionary lookups (5-minute TTL) and deduplicates concurrent in-flight HTTP requests.
 
@@ -697,14 +697,20 @@ To maintain complete visual, structural, and functional harmony across all prima
   - `readonly progressPercent = computed(...)`: Linear $0$–$100\%$ progress towards next level.
   - `readonly achievements = computed(...)`: Full portfolio of 19 achievement records with live unlocked states.
   - `readonly unlockedCount = computed(...)`: Number of completed milestones.
+  - `readonly hasClaimableRewards = computed(...)`: Boolean signal indicating whether any completed daily missions or the completion chest are ready to claim.
+  - `readonly claimableCount = computed(...)`: Exact count of unclaimed completed missions + chest.
 - **Action Triggers & XP Gains**:
   - `recordVideoCompleted()`: Awards $+25$ XP, advances immersion counters, evaluates milestone achievements.
   - `recordWordSaved()`: Awards $+5$ XP, increments vocab count.
   - `recordFlashcardReviewed()`: Awards $+10$ XP, increments SRS review count.
   - `recordQuizCompleted()`: Awards $+15$ XP, increments quiz count.
   - `recordStreakUpdated(streak)`: Synchronizes streak count and unlocks streak milestones.
+  - `deductXP(amount: number): boolean`: Safely decrements XP balance (e.g., 150 XP for purchasing a streak freeze) if sufficient balance exists.
+- **Midnight Roll-Over Auto-Harvesting**:
+  - Unclaimed mission rewards and completed chests from yesterday are automatically harvested during `ensureFreshPeriod()`.
+  - Welcome toast displays greeting with total rolled-over XP on first load of the new day.
 - **Offline-First Persistence**: Optimistically written to `linguatube_gamification` in LocalStorage on every mutation.
-- **Celebration Feedback**: Triggers `ToastService.show({ message, type: 'achievement' })` upon earning new badges or leveling up.
+- **Celebration Feedback**: Triggers `ToastService.show({ message, type: 'achievement' })` upon earning new badges, leveling up, completing in-flow videos, or finishing daily missions.
 
 ### 8.2. `VideoLevelService` (`src/app/core/services/video-level.service.ts`)
 - **Signal & Cache Store**: Maintains in-memory cache and persists to LocalStorage (`linguatube_video_levels`).
@@ -733,8 +739,11 @@ To maintain complete visual, structural, and functional harmony across all prima
   - Interactive evaluation sheet/modal (`VideoLevelDialogComponent`) hosted in `<app-bottom-sheet>` detailing framework (JLPT/HSK/TOPIK/CEFR), grammar complexity count with breakdown tags, speech pace (CPM/WPM), evaluation pillars explanation, and personalized immersion tips.
 - **History Cards (`HistoryListComponent`)**:
   - Pill badge (`.level-badge--pill`) visually demarcating difficulty directly on thumbnails and list cards.
-- **Sidebar Header Stats Bar (`SidebarComponent`) & Mobile More Menu / Settings Sheet (`AppComponent`, `SettingsSheetComponent`)**:
+- **Sidebar Header Stats Bar (`SidebarComponent`) & Mobile More Menu (`AppComponent`)**:
   - Level badge button displaying current user level and trophy icon, with click handler opening the Achievements & Leaderboard bottom sheet on both desktop and mobile.
+  - **Static Claimable Notification Dots**: Clean, static 6px solid dots (`.stat-claim-dot` in expanded/collapsed desktop sidebar, `.bottom-nav__dot` on mobile More button, and `.more-stat-dot` in More sheet) indicate available unclaimed mission rewards or completed chests without disruptive motion or pulsing effects.
+- **Study Mode Quest Card (`StudyPageComponent`)**:
+  - Direct sidebar integration of daily SRS quest progress (`.sidebar-mission-card`) with an inline claim button for immediate completion feedback.
 
 ### 8.5. Modern Fullscreen Onboarding Flow (`OnboardingComponent`)
 - **Fullscreen Mobile & Floating Desktop Architecture**:
@@ -745,7 +754,7 @@ To maintain complete visual, structural, and functional harmony across all prima
   - **Step 2 (Proficiency Level)**: 3 difficulty cards (Beginner 🌱, Intermediate 🌿, Advanced 🌳) with official exam badges (JLPT, HSK, TOPIK, CEFR) and descriptions, persisting directly into `settings.preferredLevel` and `videoLevelFilter`.
   - **Step 3 (Dual Subtitle Translation)**: 5 native language cards (English, Tiếng Việt, 日本語, 한국어, 中文) synchronizing `dualSubtitleTargetLang`.
 - **Progressive In-Player Coachmark**:
-  - A 1-time floating tooltip over the player's subtitle area guiding first-time viewers: *"💡 Tap any word to translate & save to flashcards"*, permanently dismissed on first word interaction.
+  - A 1-time floating tooltip over the player's subtitle area guiding first-time viewers: *"💡 Tap any word to translate & save"*, with dynamic headroom padding (`.has-coachmark`) on `.current-subtitle` to prevent token/furigana collision, permanently dismissed on first word or grammar interaction.
 - **Top Bar & Thumb-Zone Action Button**:
   - Top navigation bar featuring an animated progress bar (33% → 66% → 100%), Back button (on steps 2 & 3), and "Explore First" skip button.
   - Sticky bottom action bar with a 52px primary action button ("Continue →" for steps 1–2, "Start Learning ✨" for step 3).

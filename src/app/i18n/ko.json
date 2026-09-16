@@ -104,6 +104,7 @@
     "sleepTimerActiveToast": "{{time}} 후 수면 타이머가 설정되었습니다",
     "hint": "YouTube URL을 입력해 학습을 시작해 보세요. 자막을 자동으로 불러옵니다.",
     "nowPlaying": "현재 재생 중",
+    "videoCompleted": "동영상 시청 완료",
     "embedErrorHelp": "이 동영상은 임베드 재생할 수 없습니다. 소유자가 제한했거나 사용할 수 없는 동영상입니다.",
     "watchOnYouTube": "YouTube에서 시청"
   },
@@ -505,7 +506,10 @@
     "reached": "도달했습니다",
     "days": "일!",
     "saved": "연속 학습 보호됨! ❄️",
-    "daysReached": "{{count}}일 연속 달성!"
+    "daysReached": "{{count}}일 연속 달성!",
+    "replenish": "복구",
+    "freezeRestored": "연속 학습 보호가 복구되었습니다!",
+    "insufficientXp": "보호를 복구하려면 150 XP가 필요합니다"
   },
   "history": {
     "title": "시청 기록",
@@ -686,7 +690,7 @@
     "continue": "다음",
     "back": "뒤로",
     "stepProgress": "{{total}}단계 중 {{current}}단계",
-    "subtitleCoachmark": "단어를 탭하여 사전 검색 및 단어장에 저장",
+    "subtitleCoachmark": "단어를 탭하여 번역 및 저장",
     "demoSave": "+ 단어 저장",
     "demoSaved": "단어장에 저장되었습니다!",
     "levels": {
@@ -865,6 +869,8 @@
     "claimed": "수령 완료",
     "claimedReward": "미션 보상을 획득했습니다",
     "dailyChestClaimed": "일일 상자를 열었습니다",
+    "missionCompleted": "일일 퀘스트 달성!",
+    "autoClaimed": "어제 받지 않은 퀘스트 보상이 자동 수령되었습니다",
     "watch1": {
       "title": "몰입 시청",
       "desc": "자막과 함께 동영상 1개 시청하기"

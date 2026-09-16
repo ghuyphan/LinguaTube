@@ -57,7 +57,7 @@ const MEM_LEADERBOARD_TTL_MS = 60 * 1000;
  * always remains populated, vibrant, and competitive across all target languages.
  * Real users always take absolute precedence.
  * 
- * @param {Array} realUsers - Real users fetched from D1 or PocketBase
+ * @param {Array} realUsers - Real users fetched from D1 or Supabase
  * @param {string|null} lang - Target language filter ('ja', 'ko', 'zh', 'en', or null/all)
  * @param {number} limit - Maximum number of top learners to return (default 50)
  * @param {string} period - 'weekly' or 'all_time'
@@ -217,30 +217,31 @@ export async function onRequestGet(context) {
                 }
             }
 
-            // If D1 returned no rows, query PocketHost gamification collection
+            // If D1 returned no rows, query Supabase gamification & profiles
             if (rawRealUsers.length === 0) {
-                const pocketbaseUrl = env.POCKETHOST_URL || env.PB_URL || 'https://voca.pockethost.io';
+                const supabaseUrl = env.SUPABASE_URL || 'https://edbkvzviqeulwzcnrrlb.supabase.co';
+                const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg';
                 try {
-                    const authHeader = request.headers.get('Authorization');
-                    const reqHeaders = { 'Accept': 'application/json' };
-                    if (authHeader) reqHeaders['Authorization'] = authHeader;
-
-                    const sortParam = period === 'weekly' ? '-weekly_xp,-xp' : '-xp';
-                    const pbRes = await fetch(`${pocketbaseUrl}/api/collections/gamification/records?sort=${sortParam}&perPage=${limit}&expand=user`, {
-                        headers: reqHeaders,
+                    const orderParam = period === 'weekly' ? 'weekly_xp.desc,xp.desc' : 'xp.desc';
+                    const supaRes = await fetch(`${supabaseUrl}/rest/v1/gamification?select=*,profiles:user_id(id,name,avatar_url)&order=${orderParam}&limit=${limit}`, {
+                        headers: {
+                            'apikey': supabaseKey,
+                            'Authorization': `Bearer ${supabaseKey}`,
+                            'Accept': 'application/json'
+                        },
                         signal: AbortSignal.timeout(4000)
                     });
 
-                    if (pbRes.ok) {
-                        const pbData = await pbRes.json();
-                        if (Array.isArray(pbData.items) && pbData.items.length > 0) {
-                            rawRealUsers = pbData.items.map(row => {
-                                const u = row.expand?.user || {};
-                                const name = u.name || u.username || 'Learner';
-                                const avatar = u.avatar ? `${pocketbaseUrl}/api/files/_pb_users_auth_/${u.id}/${u.avatar}` : (u.picture || '');
+                    if (supaRes.ok) {
+                        const supaData = await supaRes.json();
+                        if (Array.isArray(supaData) && supaData.length > 0) {
+                            rawRealUsers = supaData.map(row => {
+                                const profile = row.profiles || {};
+                                const name = profile.name || 'Learner';
+                                const avatar = profile.avatar_url || '';
                                 const badgesCount = row.unlocked_achievements ? Object.keys(row.unlocked_achievements).length : 0;
                                 return {
-                                    userId: row.user || row.id,
+                                    userId: row.user_id || row.id,
                                     name,
                                     avatar,
                                     xp: row.xp || 0,
@@ -255,8 +256,8 @@ export async function onRequestGet(context) {
                             memLeaderboardCache.set(cacheKey, { data: rawRealUsers, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
                         }
                     }
-                } catch (pbErr) {
-                    console.warn('[Leaderboard API] PocketHost query failed:', pbErr.message);
+                } catch (supaErr) {
+                    console.warn('[Leaderboard API] Supabase query failed:', supaErr.message);
                 }
             }
         }
@@ -393,7 +394,26 @@ export async function onRequestPost(context) {
         const weeklyXp = Math.max(0, Math.min(100000, parseInt(body.weekly_xp, 10) || 0));
         // Canonical level derived from XP: level = floor(sqrt(xp / 100)) + 1
         const level = Math.max(1, Math.min(100, Math.floor(Math.sqrt(xp / 100)) + 1));
-        const streak = Math.max(0, Math.min(10000, parseInt(body.streak, 10) || 0));
+        // Validate streak against server-authoritative Supabase streaks table
+        let streak = Math.max(0, Math.min(100, parseInt(body.streak, 10) || 0));
+        try {
+            const supabaseUrl = env.SUPABASE_URL || 'https://edbkvzviqeulwzcnrrlb.supabase.co';
+            const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY;
+            if (supabaseKey) {
+                const supaStreakRes = await fetch(`${supabaseUrl}/rest/v1/streaks?user_id=eq.${userId}&select=current_streak`, {
+                    headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` },
+                    signal: AbortSignal.timeout(2000)
+                });
+                if (supaStreakRes.ok) {
+                    const streakRows = await supaStreakRes.json();
+                    if (streakRows?.length > 0 && typeof streakRows[0].current_streak === 'number') {
+                        streak = streakRows[0].current_streak;
+                    }
+                }
+            }
+        } catch {
+            // Keep bounded fallback
+        }
         const badgesCount = Math.max(0, Math.min(100, parseInt(body.badges_count, 10) || 0));
         const targetLang = ['ja', 'ko', 'zh', 'en'].includes(body.target_lang) ? body.target_lang : 'ja';
         const country = typeof body.country === 'string' ? body.country.slice(0, 8) : '';

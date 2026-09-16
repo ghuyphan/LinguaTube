@@ -28,10 +28,11 @@ This document specifies the database schemas, object storage hierarchies, distri
                                  • Tokenization hash cache (30-day TTL)
                                  • Fast video info cache (24-hour TTL)
 
- [ 4. Backend-as-a-Service ] ──► PocketBase (voca.pockethost.io)
-                                 • User authentication & JWT sessions
-                                 • Cloud sync for vocabulary, streaks, playlists
-                                 • Server-side hook automation (streaks.pb.js)
+ [ 4. Backend-as-a-Service ] ──► Supabase (PostgreSQL & GoTrue Auth)
+                                 • Google OAuth & JWT user sessions
+                                 • Row Level Security (RLS) policies
+                                 • Cloud sync for vocabulary, streaks, playlists, gamification
+                                 • Atomic stored procedure (record_streak_activity)
 
  [ 5. Client Persistence ] ────► Browser IndexedDB & LocalStorage
                                  • IndexedDB (lingua-tube-cache): Subtitle cache with TTL
@@ -240,83 +241,243 @@ Namespace binding: `TRANSCRIPT_CACHE`
 
 ---
 
-## 5. PocketBase Collections & Server Hooks
+## 5. Supabase Database Schemas, RLS & Server Functions
 
-Hosted at `https://voca.pockethost.io`.
+Hosted at `https://edbkvzviqeulwzcnrrlb.supabase.co` (PostgreSQL with Supabase Auth / GoTrue).
 
-### 5.1. Collection: `users`
-- Standard PocketBase auth collection with custom fields:
-  - `subscription_tier`: `'free' | 'pro' | 'premium'`
-  - `subscription_expires`: DateTime
-  - `diamonds`: Integer (current AI credits)
-  - `diamonds_updated_at`: DateTime
+### 5.1. Table: `public.profiles`
+Extends `auth.users` with application-specific learning profile and subscription tier data:
+```sql
+CREATE TABLE public.profiles (
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  email TEXT,
+  display_name TEXT,
+  avatar_url TEXT,
+  subscription_tier TEXT DEFAULT 'free' CHECK (subscription_tier IN ('free', 'pro', 'premium')),
+  subscription_expires TIMESTAMPTZ,
+  diamonds INTEGER DEFAULT 10,
+  diamonds_updated_at TIMESTAMPTZ DEFAULT NOW(),
+  legacy_pb_id TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
 
-### 5.2. Collection: `vocabulary`
-- Synchronized user vocabulary notebook:
-  - `id`: 15-character deterministic hash (`base64(userId|word|lang)`)
-  - `user`: Relation $\rightarrow$ `users.id`
-  - `word`: String (headword)
-  - `reading`: String (hiragana / pinyin)
-  - `pinyin`: String
-  - `romanization`: String (hepburn / revised romanization)
-  - `meaning`: String (definition)
-  - `language`: `'ja' | 'zh' | 'ko' | 'en'`
-  - `level`: `'new' | 'learning' | 'known' | 'ignored'`
-  - `examples`: JSON Array of strings
+### 5.2. Table: `public.legacy_pb_users`
+Maintains historical user mappings, subscription states, and initial diamond balances migrated from PocketBase:
+```sql
+CREATE TABLE public.legacy_pb_users (
+  id TEXT PRIMARY KEY,
+  email TEXT UNIQUE,
+  subscription_tier TEXT DEFAULT 'free',
+  diamonds INTEGER DEFAULT 10,
+  migrated_at TIMESTAMPTZ DEFAULT NOW(),
+  claimed_at TIMESTAMPTZ,
+  claimed_by UUID REFERENCES auth.users(id)
+);
+```
 
-### 5.3. Collection: `streaks`
-- Gamified learning continuity:
-  - `user`: Relation $\rightarrow$ `users.id`
-  - `current_streak`: Integer
-  - `longest_streak`: Integer
-  - `freezes_remaining`: Integer (0 to 2)
-  - `last_activity`: DateTime
-  - `last_freeze_used`: DateTime
-  - `activity_log`: JSON Array of ISO date strings (`YYYY-MM-DD`)
+### 5.3. Table: `public.vocabulary`
+Synchronized vocabulary notebook with SM-2 Spaced Repetition System (SRS) metrics:
+```sql
+CREATE TABLE public.vocabulary (
+  id TEXT PRIMARY KEY, -- Deterministic base64 hash or 15-char alphanumeric key
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  word TEXT NOT NULL,
+  reading TEXT,
+  pinyin TEXT,
+  romanization TEXT,
+  meaning TEXT,
+  language TEXT NOT NULL CHECK (language IN ('ja', 'zh', 'ko', 'en')),
+  level TEXT DEFAULT 'new' CHECK (level IN ('new', 'learning', 'known', 'ignored')),
+  examples JSONB DEFAULT '[]'::jsonb,
+  srs_interval INTEGER DEFAULT 0,
+  srs_repetition INTEGER DEFAULT 0,
+  srs_ease_factor REAL DEFAULT 2.5,
+  srs_next_review_at TIMESTAMPTZ,
+  srs_last_reviewed_at TIMESTAMPTZ,
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
 
-### 5.4. Collection: `history`
-- Synchronized video watch history:
-  - `id`: 15-character deterministic hash (`generateDeterministicRecordId('hist', userId, video_id)`) to prevent duplicate records upon concurrent sync
-  - `user`: Relation $\rightarrow$ `users.id` (Single, Nonempty)
-  - `video_id`: String (YouTube video ID, Nonempty)
-  - `title`: String (Video title, Nonempty)
-  - `thumbnail`: URL string
-  - `channel`: String (Channel name)
-  - `duration`: Number (Seconds)
-  - `language`: Select (`ja | zh | ko | en`, Single, Nonempty)
-  - `languages`: Select (`ja | zh | ko | en`, Multiple, Max Select: 4)
-  - `progress`: Number (Percentage `0` to `100`)
-  - `is_favorite`: Boolean
-  - `watched_at`: DateTime (Nonempty)
+### 5.4. Table: `public.streaks`
+Gamified daily learning continuity and streak freeze inventories:
+```sql
+CREATE TABLE public.streaks (
+  id TEXT PRIMARY KEY, -- Deterministic 15-char key or UUID
+  user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
+  current_streak INTEGER DEFAULT 0,
+  longest_streak INTEGER DEFAULT 0,
+  freezes_remaining INTEGER DEFAULT 2,
+  last_activity TIMESTAMPTZ,
+  last_freeze_used TIMESTAMPTZ,
+  activity_log JSONB DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
 
-### 5.5. Collection: `playlists`
-- Synchronized user playlists:
-  - `user`: Relation $\rightarrow$ `users.id`
-  - `title`: String
-  - `description`: String
-  - `visibility`: `'public' | 'unlisted' | 'private'`
-  - `language`: `'ja' | 'zh' | 'ko' | 'en' | 'all'`
-  - `tags`: JSON Array of strings
-  - `video_ids`: JSON Array of strings
-  - `video_count`: Integer
-  - `thumbnail`: URL string
-  - `save_count`: Integer
-### 5.6. Collection: `gamification`
-- Synchronized user XP, level, video & quiz counts, and unlocked achievements:
-  - `id`: 15-character deterministic hash (`btoa(userId + ':gamification').slice(0, 15)`)
-  - `user`: Relation $\rightarrow$ `users.id` (Single, Nonempty)
-  - `xp`: Integer (Total accumulated experience points)
-  - `level`: Integer (Current level calculated from XP)
-  - `total_videos_watched`: Integer (Completed video lessons)
-  - `total_quizzes_completed`: Integer (Completed vocabulary quizzes)
-  - `unlocked_achievements`: JSON Object mapping achievement badge IDs to `{ id, unlockedAt }`
-  - `notified_achievements`: JSON Array of badge IDs already shown to user in toasts
+### 5.5. Table: `public.history`
+Synchronized video watch progress, favorite status, and history timestamps:
+```sql
+CREATE TABLE public.history (
+  id TEXT PRIMARY KEY, -- Deterministic generateDeterministicRecordId('hist', userId, videoId)
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  video_id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  thumbnail TEXT,
+  channel TEXT,
+  duration INTEGER DEFAULT 0,
+  language TEXT NOT NULL,
+  languages JSONB DEFAULT '[]'::jsonb,
+  progress REAL DEFAULT 0,
+  is_favorite BOOLEAN DEFAULT FALSE,
+  watched_at TIMESTAMPTZ DEFAULT NOW(),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
 
-### 5.7. PocketBase Server Hooks (`streaks.pb.js`)
-Executed server-side on PocketBase:
-- `POST /api/streaks/record-activity`: Records daily user practice, awards freeze items at milestones (7, 30, 100 days), and increments streaks.
-- `GET /api/streaks/me`: Retrieves current streak status and activity calendar.
-- `GET /api/streaks/daily-maintenance`: Automated midnight cron maintenance that detects missed days and consumes freeze items or resets streaks.
+### 5.6. Table: `public.playlists` & `public.playlist_saves`
+Community and user playlists with visibility controls:
+```sql
+CREATE TABLE public.playlists (
+  id TEXT PRIMARY KEY,
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  description TEXT,
+  visibility TEXT DEFAULT 'private' CHECK (visibility IN ('public', 'unlisted', 'private')),
+  language TEXT DEFAULT 'all',
+  tags JSONB DEFAULT '[]'::jsonb,
+  video_ids JSONB DEFAULT '[]'::jsonb,
+  video_count INTEGER DEFAULT 0,
+  thumbnail TEXT,
+  save_count INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE public.playlist_saves (
+  id TEXT PRIMARY KEY,
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  playlist_id TEXT NOT NULL REFERENCES public.playlists(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id, playlist_id)
+);
+```
+
+### 5.7. Table: `public.gamification`
+XP leaderboard points, levels, and unlocked achievement badges:
+```sql
+CREATE TABLE public.gamification (
+  id TEXT PRIMARY KEY,
+  user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
+  xp INTEGER DEFAULT 0,
+  level INTEGER DEFAULT 1,
+  total_videos_watched INTEGER DEFAULT 0,
+  total_quizzes_completed INTEGER DEFAULT 0,
+  unlocked_achievements JSONB DEFAULT '{}'::jsonb,
+  notified_achievements JSONB DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+### 5.8. Row Level Security (RLS) Policies
+All 8 public tables enforce strict RLS:
+- **Private Data (`vocabulary`, `streaks`, `history`, `gamification`)**: Authenticated users can only `SELECT`, `INSERT`, `UPDATE`, and `DELETE` rows where `user_id = auth.uid()`. Direct writes to `gamification` are guarded by trigger against artificial XP inflation.
+- **User Profiles (`profiles`)**: Users can read their own profile (`id = auth.uid()`) and update basic cosmetic fields (`display_name`, `avatar_url`). Sensitive columns (`subscription_tier`, `diamonds`, `email`) are locked down by `protect_profile_fields()`. Cloudflare Pages edge functions use the `SUPABASE_SERVICE_ROLE_KEY` to update diamond balances and subscription tiers.
+- **Playlists (`playlists`)**: Public and unlisted playlists (`visibility IN ('published', 'unlisted')`) are readable by anyone. Private playlists are restricted to `user_id = auth.uid()`. Client modification of `is_featured` and `save_count` is blocked by server triggers.
+- **Playlist Saves (`playlist_saves`)**: Users can only manage their own bookmarks (`user_id = auth.uid()`). Bookmark counters are synchronized server-side.
+- **Legacy PB Users (`legacy_pb_users`)**: RLS enabled with zero public policies. Accessible strictly via `service_role` and internal security triggers.
+
+### 5.9. Server-Side Triggers & Stored Procedures
+
+#### Trigger: `on_auth_user_created` & `on_auth_user_email_confirmed` (`handle_new_user()`)
+Automatically provisions a `profiles` record when a user registers via Google OAuth or Email. To strictly prevent pre-authentication account takeover of legacy records:
+- Only links and restores legacy PB data (tier, diamonds) if the email is confirmed (`NEW.email_confirmed_at IS NOT NULL`) or authenticated via a verified OAuth provider (`google`, `apple`, `github`).
+- Unconfirmed signups receive default free accounts with 10 diamonds. Once email confirmation occurs, `on_auth_user_email_confirmed` updates the profile and links the legacy account.
+- Marks `claimed_at = NOW()` and `claimed_by = NEW.id` in `legacy_pb_users` to prevent replay.
+
+```sql
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS trigger AS $$
+DECLARE
+  v_legacy public.legacy_pb_users%ROWTYPE;
+  v_provider text;
+  v_is_email_confirmed boolean;
+BEGIN
+  v_provider := COALESCE(new.raw_app_meta_data->>'provider', 'email');
+  v_is_email_confirmed := (new.email_confirmed_at IS NOT NULL) OR (v_provider IN ('google', 'apple', 'github'));
+
+  IF v_is_email_confirmed THEN
+    SELECT * INTO v_legacy FROM public.legacy_pb_users
+    WHERE email = new.email AND claimed_at IS NULL
+    LIMIT 1;
+  END IF;
+
+  INSERT INTO public.profiles (
+    id, email, display_name, avatar_url,
+    subscription_tier, diamonds, legacy_pb_id
+  ) VALUES (
+    new.id,
+    new.email,
+    COALESCE(new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'name', split_part(new.email, '@', 1)),
+    COALESCE(new.raw_user_meta_data->>'avatar_url', new.raw_user_meta_data->>'picture'),
+    COALESCE(v_legacy.subscription_tier, 'free'),
+    COALESCE(v_legacy.diamonds, 10),
+    v_legacy.id
+  ) ON CONFLICT (id) DO UPDATE SET
+    subscription_tier = COALESCE(EXCLUDED.subscription_tier, profiles.subscription_tier),
+    diamonds = GREATEST(profiles.diamonds, EXCLUDED.diamonds),
+    legacy_pb_id = COALESCE(EXCLUDED.legacy_pb_id, profiles.legacy_pb_id);
+
+  IF v_legacy.id IS NOT NULL THEN
+    UPDATE public.legacy_pb_users
+    SET claimed_at = NOW(), claimed_by = new.id
+    WHERE id = v_legacy.id;
+  END IF;
+
+  RETURN new;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
+```
+
+#### Stored Procedure: `record_streak_activity(p_user_id, p_activity_date)`
+Atomic, thread-safe daily streak evaluator called via Supabase RPC (`supabase.rpc('record_streak_activity', ...)`):
+- Employs `SELECT ... FOR UPDATE` row-level lock on `public.streaks` to guarantee thread safety and eliminate race conditions under concurrent client requests.
+- Identifies consecutive practice days, missed days, and freezes.
+- Automatically consumes freeze items if available when a single day is missed.
+- Awards milestone freeze items (at 7, 30, and 100-day streaks).
+- Returns the updated `current_streak`, `longest_streak`, `freezes_remaining`, and `awarded_freeze`.
+
+#### Trigger: `tr_protect_profile_fields` (`protect_profile_fields()`)
+Enforces server-side integrity on `public.profiles`. Prevents authenticated client sessions from tampering with sensitive columns via the Supabase REST API:
+- Configured as `SECURITY INVOKER` with explicit `search_path = public`.
+- Execution permissions revoked from `PUBLIC`, `anon`, and `authenticated` roles.
+- Blocks direct client mutation of `email`, `subscription_tier`, `subscription_expires`, `diamonds`, `diamonds_updated_at`, `legacy_pb_id`, and `id`.
+- Only `service_role` (used by Cloudflare Pages Functions and payment webhooks) or Postgres background jobs can modify subscription levels and diamond balances.
+- Any unauthorized direct update raises a PostgreSQL exception: `Cannot modify subscription_tier directly from client`.
+
+#### Trigger: `tr_protect_gamification_fields` (`protect_gamification_fields()`)
+Server-authoritative guard on `public.gamification`:
+- Forbids XP decrement (monotonically non-decreasing: `NEW.xp >= OLD.xp`).
+- Caps maximum XP increase per single client mutation to $+5,000$ XP, preventing client-side console injection of millions of XP.
+- Calculates canonical user level on the server (`1 + floor(sqrt(NEW.xp / 100))`), discarding any forged client-sent `level`.
+
+#### Trigger: `tr_protect_playlist_fields` & `tr_sync_playlist_save_count`
+- `protect_playlist_fields()` prevents authenticated users from toggling administrative flags (`is_featured`) or forging `save_count`.
+- `sync_playlist_save_count()` automatically increments/decrements `playlists.save_count` when users bookmark or unbookmark playlists via `playlist_saves`.
+
+### 5.10. PostgreSQL Scheduled Repeat Jobs (`pg_cron`)
+The Supabase instance utilizes the `pg_cron` extension to manage automated server-side background tasks without requiring 24/7 external polling workers:
+
+| Job Name | Schedule | Purpose | Command |
+| :--- | :--- | :--- | :--- |
+| `downgrade-expired-subscriptions` | `5 * * * *` (Hourly) | Automatically downgrades expired Pro/Premium accounts to `free` in `public.profiles`. | `UPDATE public.profiles SET subscription_tier = 'free', updated_at = NOW() WHERE subscription_expires IS NOT NULL AND subscription_expires < NOW() AND subscription_tier != 'free';` |
+| `reset-weekly-leaderboard-xp` | `0 0 * * 1` (Mondays 00:00 UTC) | Resets `weekly_xp = 0` and advances `current_week_key` across all users simultaneously for fair global rankings. | `UPDATE public.gamification SET weekly_xp = 0, current_week_key = to_char(now(), 'IYYY-"W"IW'), updated_at = NOW();` |
+| `evaluate-inactive-streaks` | `0 1 * * *` (Daily 01:00 UTC) | Resets `current_streak = 0` for users who have been inactive for $>2$ days with 0 freezes remaining. | `UPDATE public.streaks SET current_streak = 0, updated_at = NOW() WHERE last_activity IS NOT NULL AND (CURRENT_DATE - (last_activity AT TIME ZONE 'UTC')::date) > 2 AND freezes_remaining = 0 AND current_streak > 0;` |
 
 ---
 
@@ -356,8 +517,7 @@ Executed server-side on PocketBase:
 | `lingua-tube-last-video` | `YoutubeService` | `string` (videoId) | Video ID for resuming last session |
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
-| `voca_active_ai_jobs` | `AiJobManagerService` | `Record<string, ActiveAiJob>` | Client-side tracking of background AI transcription jobs (auto-expires in 1hr) |
-| `pocketbase_auth` | `PocketBaseService` | `{ token: string, model: User }` | User auth session token and profile |
+| `sb-edbkvzviqeulwzcnrrlb-auth-token` | `SupabaseService` | `{ access_token, refresh_token, user }` | Supabase GoTrue authentication session and JWT |
 
 ### 6.3. Storage Quota Eviction Policy (`StorageService`)
 When client-side `localStorage` approaches browser quota thresholds and throws a `QuotaExceededError`:

@@ -104,6 +104,7 @@
     "sleepTimerActiveToast": "{{time}}後にスリープタイマーを設定しました",
     "hint": "YouTube URLを貼り付けて学習を始めましょう。字幕を自動で取得します。",
     "nowPlaying": "再生中",
+    "videoCompleted": "動画を完了しました",
     "embedErrorHelp": "この動画は埋め込み再生できません。所有者によって制限されているか、利用できない可能性があります。",
     "watchOnYouTube": "YouTubeで視聴"
   },
@@ -505,7 +506,10 @@
     "reached": "達成しました",
     "days": "日！",
     "saved": "連続記録を保護しました！❄️",
-    "daysReached": "{{count}}日連続達成！"
+    "daysReached": "{{count}}日連続達成！",
+    "replenish": "回復",
+    "freezeRestored": "連続学習フリーズを回復しました！",
+    "insufficientXp": "フリーズ回復には150 XPが必要です"
   },
   "history": {
     "title": "履歴",
@@ -686,7 +690,7 @@
     "continue": "次へ",
     "back": "戻る",
     "stepProgress": "ステップ {{current}} / {{total}}",
-    "subtitleCoachmark": "単語をタップして辞書検索＆単語帳に保存",
+    "subtitleCoachmark": "単語をタップして検索＆保存",
     "demoSave": "+ 単語を保存",
     "demoSaved": "単語帳に保存しました！",
     "levels": {
@@ -865,6 +869,8 @@
     "claimed": "受取済",
     "claimedReward": "ミッション報酬を獲得しました",
     "dailyChestClaimed": "デイリーチェストを開封しました",
+    "missionCompleted": "デイリーミッション達成！",
+    "autoClaimed": "昨日の未受取リワードを自動獲得しました",
     "watch1": {
       "title": "集中視聴",
       "desc": "字幕付き動画を1本視聴する"

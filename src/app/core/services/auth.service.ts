@@ -1,7 +1,7 @@
 import { Injectable, signal, computed, inject, effect } from '@angular/core';
 import { Subject } from 'rxjs';
-import { PocketBaseService } from './pocketbase.service';
-import type { RecordModel } from 'pocketbase';
+import { SupabaseService } from './supabase.service';
+import type { User, Session } from '@supabase/supabase-js';
 
 export interface UserProfile {
     id: string;
@@ -10,27 +10,40 @@ export interface UserProfile {
     picture: string;
     subscriptionTier?: 'free' | 'pro' | 'premium';
     subscriptionExpires?: Date;
+    diamonds?: number;
 }
 
 type OAuthPopup = Window | null;
 
+const PROFILE_CACHE_KEY = 'voca_user_profile';
+
 /**
  * Auth Service
- * Handles authentication via PocketBase with Google OAuth
+ * Handles authentication via Supabase Auth with Google OAuth
  */
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
 
-    readonly user = signal<UserProfile | null>(null);
+    private initialProfile = this.getInitialProfile();
+
+    readonly user = signal<UserProfile | null>(this.initialProfile);
     readonly isLoggedIn = computed(() => this.user() !== null);
-    readonly subscriptionTier = computed<'free' | 'pro' | 'premium'>(() => this.user()?.subscriptionTier || 'free');
-    readonly isInitialized = signal(false);
+    readonly subscriptionTier = computed<'free' | 'pro' | 'premium'>(() => {
+        const u = this.user();
+        if (!u) return 'free';
+        if (u.subscriptionExpires && new Date(u.subscriptionExpires).getTime() < Date.now()) {
+            return 'free';
+        }
+        return u.subscriptionTier || 'free';
+    });
+    readonly isInitialized = signal(this.initialProfile !== null || !this.supabase.hasStoredSession());
     readonly isLoggingIn = signal(false);
     readonly isLoggingOut = signal(false);
     readonly authError = signal<string | null>(null);
+    private activeUserId: string | null = this.initialProfile?.id ?? null;
 
     /** Emits when user successfully logs in */
     readonly loginEvent = new Subject<UserProfile>();
@@ -40,13 +53,26 @@ export class AuthService {
     constructor() {
         this.initializeAuth();
 
-        // Reactively sync user when PocketBase model changes
+        // Reactively sync user when Supabase session changes
         effect(() => {
-            const model = this.pb.model();
-            if (model) {
-                this.user.set(this.modelToProfile(model as RecordModel));
+            const session = this.supabase.session();
+            const newUserId = session?.user?.id ?? null;
+
+            if (newUserId && this.activeUserId && this.activeUserId !== newUserId) {
+                // Different account detected without explicit logout: force cleanup of previous user data
+                this.clearStoredProfile();
+                this.logoutEvent.next();
+            }
+
+            if (session?.user) {
+                const isNewLogin = !this.activeUserId;
+                this.activeUserId = newUserId;
+                const shouldEmitLogin = isNewLogin && !this.initialProfile;
+                void this.syncProfileFromSession(session, shouldEmitLogin);
             } else if (this.isInitialized()) {
                 const hadUser = this.user() !== null;
+                this.activeUserId = null;
+                this.clearStoredProfile();
                 this.user.set(null);
                 if (hadUser && !this.isLoggingOut()) {
                     this.logoutEvent.next();
@@ -56,83 +82,160 @@ export class AuthService {
     }
 
     /**
-     * Initialize auth state from PocketBase authStore
+     * Synchronously load initial user profile from localStorage or Supabase session
      */
-    private async initializeAuth(): Promise<void> {
-        // Wait for PocketBase to be ready (no polling - uses promise)
-        await this.pb.waitForReady();
-
-        const model = this.pb.model();
-        if (model) {
-            const profile = this.modelToProfile(model as RecordModel);
-            this.user.set(profile);
-            this.loginEvent.next(profile);
+    private getInitialProfile(): UserProfile | null {
+        if (typeof window === 'undefined' || !window.localStorage) return null;
+        try {
+            const raw = localStorage.getItem(PROFILE_CACHE_KEY);
+            if (raw) {
+                const cached = JSON.parse(raw) as UserProfile;
+                const sessionUserId = this.supabase.userId;
+                if (!sessionUserId || cached.id === sessionUserId) {
+                    if (cached.subscriptionExpires) {
+                        cached.subscriptionExpires = new Date(cached.subscriptionExpires);
+                    }
+                    return cached;
+                }
+            }
+        } catch {
+            // Ignore parse errors
         }
-        this.isInitialized.set(true);
+
+        // Fallback: construct baseline profile from synchronous Supabase user if session exists
+        const user = this.supabase.user();
+        if (user) {
+            const meta = user.user_metadata || {};
+            return {
+                id: user.id,
+                email: user.email || '',
+                name: (meta['full_name'] as string) || (meta['name'] as string) || user.email || 'User',
+                picture: (meta['avatar_url'] as string) || (meta['picture'] as string) || '',
+                subscriptionTier: 'free',
+                diamonds: 5
+            };
+        }
+
+        return null;
+    }
+
+    private saveStoredProfile(profile: UserProfile): void {
+        try {
+            if (typeof window !== 'undefined' && window.localStorage) {
+                localStorage.setItem(PROFILE_CACHE_KEY, JSON.stringify(profile));
+            }
+        } catch {
+            // Ignore storage write issues
+        }
+    }
+
+    private clearStoredProfile(): void {
+        try {
+            if (typeof window !== 'undefined' && window.localStorage) {
+                localStorage.removeItem(PROFILE_CACHE_KEY);
+            }
+        } catch {
+            // Ignore storage issues
+        }
     }
 
     /**
-     * Convert PocketBase model to UserProfile
+     * Initialize auth state from Supabase session
      */
-    private modelToProfile(model: RecordModel): UserProfile {
-        const client = this.pb.client;
+    private async initializeAuth(): Promise<void> {
+        try {
+            await this.supabase.waitForReady();
+            const session = this.supabase.session();
+            if (session?.user) {
+                await this.syncProfileFromSession(session, false);
+            }
+        } catch (err) {
+            console.error('[AuthService] Initialization error:', err);
+        } finally {
+            this.isInitialized.set(true);
+        }
+    }
+
+    /**
+     * Sync and load profile from Supabase profiles table
+     */
+    private async syncProfileFromSession(session: Session, emitLoginEvent = false): Promise<void> {
+        const user = session.user;
+        const profile = await this.fetchProfile(user);
+        this.user.set(profile);
+        this.saveStoredProfile(profile);
+
+        if (emitLoginEvent) {
+            this.loginEvent.next(profile);
+        }
+    }
+
+    /**
+     * Fetch profile record from public.profiles table or fallback to auth metadata
+     */
+    private async fetchProfile(user: User): Promise<UserProfile> {
+        try {
+            const { data, error } = await this.supabase.client
+                .from('profiles')
+                .select('*')
+                .eq('id', user.id)
+                .maybeSingle();
+
+            if (data && !error) {
+                return {
+                    id: data.id,
+                    email: data.email || user.email || '',
+                    name: data.name || user.user_metadata?.['full_name'] || user.user_metadata?.['name'] || data.email || 'User',
+                    picture: data.avatar_url || user.user_metadata?.['avatar_url'] || user.user_metadata?.['picture'] || '',
+                    subscriptionTier: (data.subscription_tier as 'free' | 'pro' | 'premium') || 'free',
+                    subscriptionExpires: data.subscription_expires ? new Date(data.subscription_expires) : undefined,
+                    diamonds: data.diamonds ?? 5
+                };
+            }
+        } catch (err) {
+            console.warn('[AuthService] Error fetching profile row from Supabase:', err);
+        }
+
+        // Fallback to session user metadata if profiles table row isn't readable yet
+        const meta = user.user_metadata || {};
         return {
-            id: model.id,
-            email: model['email'] || '',
-            name: model['name'] || model['email'] || '',
-            picture: model['avatar'] && client
-                ? client.files.getURL(model, model['avatar'])
-                : '',
-            subscriptionTier: model['subscription_tier'] || 'free',
-            subscriptionExpires: model['subscription_expires']
-                ? new Date(model['subscription_expires'])
-                : undefined
+            id: user.id,
+            email: user.email || '',
+            name: (meta['full_name'] as string) || (meta['name'] as string) || user.email || 'User',
+            picture: (meta['avatar_url'] as string) || (meta['picture'] as string) || '',
+            subscriptionTier: 'free',
+            diamonds: 5
         };
     }
 
     /**
-     * Login with Google OAuth
-     * Opens a popup for Google authentication
+     * Login with Google OAuth via Supabase
      */
-    async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
+    async loginWithGoogle(_preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
         if (this.isLoggingIn()) return null;
         this.isLoggingIn.set(true);
         this.authError.set(null);
-        let oauthPopup = preopenedPopup || this.openOAuthPopup();
 
         try {
-            const client = await this.pb.getClient();
-            const authData = await client.collection('users').authWithOAuth2({
+            const { error } = await this.supabase.client.auth.signInWithOAuth({
                 provider: 'google',
-                scopes: ['email', 'profile'],
-                urlCallback: (url: string) => {
-                    let targetUrl = url;
-                    try {
-                        const parsed = new URL(url);
-                        // Force Google to display the Account Chooser screen so user can choose their account
-                        parsed.searchParams.set('prompt', 'select_account');
-                        targetUrl = parsed.toString();
-                    } catch {
-                        targetUrl = url.includes('?') ? `${url}&prompt=select_account` : `${url}?prompt=select_account`;
+                options: {
+                    redirectTo: window.location.href,
+                    queryParams: {
+                        prompt: 'select_account'
                     }
-                    oauthPopup = this.openOrReuseOAuthPopup(targetUrl, oauthPopup);
                 }
             });
 
-            const profile = this.modelToProfile(authData.record);
-            this.user.set(profile);
-            this.loginEvent.next(profile);
+            if (error) {
+                throw error;
+            }
 
-            return profile;
+            return null; // Will redirect to Google
         } catch (error: unknown) {
             const err = error as Error;
-            // Check if user dismissed the popup or aborted
-            if (err?.name === 'ClientResponseError' && (err as { isAbort?: boolean }).isAbort) {
-                console.log('[Auth] Google login cancelled by user');
-                return null;
-            }
             if (err?.message?.includes('closed') || err?.message?.includes('cancelled')) {
-                console.log('[Auth] Google login window closed');
+                console.log('[Auth] Google login cancelled');
                 return null;
             }
 
@@ -141,22 +244,19 @@ export class AuthService {
             throw error;
         } finally {
             this.isLoggingIn.set(false);
-            if (oauthPopup && !oauthPopup.closed) {
-                oauthPopup.close();
-            }
         }
     }
 
     /**
-     * Sign out - clears PocketBase auth store and emits logoutEvent with loading state
+     * Sign out - clears Supabase auth session and emits logoutEvent
      */
     async signOut(): Promise<void> {
         if (this.isLoggingOut()) return;
         this.isLoggingOut.set(true);
         try {
-            // Smooth delay (250ms) with spinner active before session wipe
-            await new Promise(resolve => setTimeout(resolve, 250));
-            this.pb.clearAuth();
+            await new Promise(resolve => setTimeout(resolve, 200));
+            this.clearStoredProfile();
+            await this.supabase.clearAuth();
             this.user.set(null);
             this.logoutEvent.next();
         } finally {
@@ -168,29 +268,28 @@ export class AuthService {
      * Get user ID for API calls
      */
     getUserId(): string | null {
-        return this.user()?.id ?? null;
+        return this.user()?.id ?? this.supabase.userId;
     }
 
     /**
-     * Check if auth is enabled (PocketBase is configured)
+     * Check if auth is enabled
      */
     isAuthEnabled(): boolean {
-        return this.pb.isReady();
+        return this.supabase.isReady();
     }
 
     /**
      * Get the current auth token for API calls
-     * PocketBase handles refresh automatically
      */
     getToken(): string | null {
-        return this.pb.getToken();
+        return this.supabase.getToken();
     }
 
     /**
      * Check if user is authenticated with a valid token
      */
     hasValidToken(): boolean {
-        return this.pb.isAuthenticated();
+        return this.supabase.isAuthenticated();
     }
 
     /**
@@ -201,113 +300,18 @@ export class AuthService {
     }
 
     /**
-     * Refresh user profile and subscription tier from PocketBase
+     * Refresh user profile and subscription tier from Supabase
      */
     async refreshUser(): Promise<void> {
+        const user = this.supabase.user();
+        if (!user) return;
+
         try {
-            await this.pb.refreshAuth();
-            const model = this.pb.model();
-            if (model) {
-                this.user.set(this.modelToProfile(model as RecordModel));
-            }
+            const profile = await this.fetchProfile(user);
+            this.user.set(profile);
+            this.saveStoredProfile(profile);
         } catch (e) {
             console.warn('[AuthService] Failed to refresh user profile:', e);
         }
-    }
-
-    private openOrReuseOAuthPopup(url: string, popup: OAuthPopup): Window {
-        const target = popup && !popup.closed ? popup : this.openOAuthPopup(url);
-
-        if (!target) {
-            throw new Error('Unable to open Google sign-in window. Please allow popups and try again.');
-        }
-
-        try {
-            target.location.href = url;
-        } catch {
-            const fallbackPopup = this.openOAuthPopup(url);
-            if (!fallbackPopup) {
-                throw new Error('Unable to open Google sign-in window. Please allow popups and try again.');
-            }
-            fallbackPopup.focus();
-            return fallbackPopup;
-        }
-
-        target.focus();
-        return target;
-    }
-
-    private openOAuthPopup(url = ''): OAuthPopup {
-        if (typeof window === 'undefined' || typeof window.open !== 'function') {
-            return null;
-        }
-
-        const width = Math.min(520, window.innerWidth || 520);
-        const height = Math.min(640, window.innerHeight || 640);
-
-        const screenLeft = window.screenLeft ?? window.screenX ?? 0;
-        const screenTop = window.screenTop ?? window.screenY ?? 0;
-        const screenWidth = window.innerWidth || document.documentElement?.clientWidth || screen.width;
-        const screenHeight = window.innerHeight || document.documentElement?.clientHeight || screen.height;
-
-        const left = screenLeft + Math.max(0, (screenWidth - width) / 2);
-        const top = screenTop + Math.max(0, (screenHeight - height) / 2);
-
-        const popup = window.open(
-            url,
-            'google_oauth_popup',
-            `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no,menubar=no`
-        );
-
-        if (popup && !url) {
-            try {
-                const doc = popup.document;
-                if (doc) {
-                    doc.title = 'Connecting to Google...';
-                    const style = doc.createElement('style');
-                    style.textContent = `
-                        * { box-sizing: border-box; margin: 0; padding: 0; }
-                        body {
-                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                            display: flex; flex-direction: column; align-items: center; justify-content: center;
-                            min-height: 100vh; background: #0b0f19; color: #f1f5f9; text-align: center; padding: 24px;
-                        }
-                        .card { display: flex; flex-direction: column; align-items: center; max-width: 320px; }
-                        .spinner-ring {
-                            width: 44px; height: 44px; border: 3px solid rgba(255, 255, 255, 0.12);
-                            border-top-color: #3b82f6; border-radius: 50%;
-                            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin-bottom: 20px;
-                        }
-                        .title { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
-                        .subtitle { font-size: 13px; color: #94a3b8; line-height: 1.4; }
-                        @keyframes spin { to { transform: rotate(360deg); } }
-                    `;
-                    doc.head?.appendChild(style);
-
-                    const card = doc.createElement('div');
-                    card.className = 'card';
-
-                    const spinner = doc.createElement('div');
-                    spinner.className = 'spinner-ring';
-
-                    const title = doc.createElement('div');
-                    title.className = 'title';
-                    title.textContent = 'Connecting to Google...';
-
-                    const subtitle = doc.createElement('div');
-                    subtitle.className = 'subtitle';
-                    subtitle.textContent = 'Please choose your account in the window.';
-
-                    card.appendChild(spinner);
-                    card.appendChild(title);
-                    card.appendChild(subtitle);
-                    doc.body?.appendChild(card);
-                }
-            } catch {
-                // Ignore if security restrictions prevent popup document access
-            }
-        }
-
-        return popup;
     }
 }

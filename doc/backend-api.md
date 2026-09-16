@@ -58,11 +58,11 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   | **Pro** | 60 | 50 | 100 | 100 | 25,000 |
   | **Premium** | 120 | 100 | 100 | 100 | 100,000 |
 
-### 2.3. PocketBase JWT Authentication (`auth.js`)
-- Validates `Authorization: Bearer <token>` header.
-- Decodes JWT payload locally to verify signature and expiration (`exp`).
-- **Warm-Isolate Token Cache**: Maintains an in-memory `memTokenCache` with a 5-minute TTL per edge worker isolate to eliminate redundant upstream PocketBase auth-refresh HTTP calls.
-- Calls PocketHost API (`/api/collections/users/auth-refresh`) on cache miss to verify validity and obtain user profile (`id`, `subscriptionTier`, `diamonds`).
+### 2.3. Supabase JWT Authentication (`auth.js`)
+- Validates `Authorization: Bearer <token>` header with strict format and structure checks.
+- **Cryptographic Verification**: Verifies tokens against the Supabase GoTrue Auth endpoint (`/auth/v1/user`) using the user's bearer token. Forged, tampered, or expired tokens are rejected immediately (fail-closed).
+- **Warm-Isolate Profile Cache**: Validated sessions are cached in an in-memory `memTokenCache` (keyed by token hash) with a 5-minute TTL per edge worker isolate to eliminate redundant upstream auth round-trips.
+- Queries Supabase REST API (`/rest/v1/profiles`) using `SUPABASE_SERVICE_ROLE_KEY` on cache miss to retrieve the user's verified `subscription_tier` and `diamonds`. If profile retrieval fails, the user is safely scoped with valid authentication but defaults to the free tier rather than granting elevated privileges.
 
 ### 2.4. Video Validator & Path Sanitization (`video-validator.js` & `utils.js`)
 - **Strict Video ID Validation**: Rejects any `videoId` that fails `/^[a-zA-Z0-9_-]{11}$/`.
@@ -119,7 +119,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
      - Client polls status using the opaque `jobId` every 4–8 seconds (managed by root `AiJobManagerService`).
      - **Edge D1 Read (< 15ms)**: Polling requests check D1 `ai_transcription_jobs` by `jobId`. If the job is `completed`, the server loads the segments directly from R2 and responds with HTTP 200 `{ success: true, segments, source: 'ai' }`.
      - **Server-Side Self-Healing Fallback**: If Gladia's webhook delivery is dropped or delayed beyond 15 seconds, the edge worker directly checks Gladia's API status using server-held credentials (`GLADIA_API_KEY`) without exposing vendor endpoints. If Gladia reports completion, the worker ingests the transcript, writes to R2, updates D1 to `'completed'`, and returns the subtitles to the client.
-     - **Automated Idempotent Diamond Refund**: If Gladia reports failure or rejects the audio, `atomicFailAndRefundAiJob` atomically transitions the job to `'failed'` in D1 and triggers `refundDiamond()` via PocketHost API to restore the user's credits. Double-refunds are mathematically prevented by single-transaction state checks.
+      - **Automated Idempotent Diamond Refund**: If Gladia reports failure or rejects the audio, `atomicFailAndRefundAiJob` atomically transitions the job to `'failed'` in D1 and triggers `refundDiamond()` via Supabase REST API (using `SUPABASE_SERVICE_ROLE_KEY`) to restore the user's credits. Double-refunds are mathematically prevented by single-transaction state checks.
 
 ---
 
@@ -134,7 +134,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **`context.waitUntil()` Background Processing**:
   - Edge Worker isolates continue background execution after the HTTP response is sent.
   - On `transcription.success`: Robustly parses transcript payload via `extractGladiaSegments` (supporting Gladia v2 `item.sentence` semantic sentences, `item.text` utterances, and nested formats), normalizes language codes (including ISO 639-2/3 like `cmn`/`jpn`/`kor`), commits permanently to Cloudflare R2 (`transcripts/{videoId}/{lang}.json`), updates D1 `video_languages`, and marks D1 `ai_transcription_jobs` as `'completed'`.
-  - On `transcription.failure`: Calls `atomicFailAndRefundAiJob()`, transitions status to `'failed'`, records error diagnostics, and refunds the user's deducted Diamonds via PocketHost API.
+  - On `transcription.failure`: Calls `atomicFailAndRefundAiJob()`, transitions status to `'failed'`, records error diagnostics, and refunds the user's deducted Diamonds via Supabase REST API.
 
 ---
 
@@ -265,7 +265,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Free (Signed-in): 150 req/hr
   - Pro: 1,500 req/hr
   - Premium: 2,000 req/hr
-- **Frontend Integration**: `SubtitleService` tokenizes all cues up front on video load (1 request per video for up to 800 cues), passes the PocketBase bearer token, and activates an automatic client-side circuit breaker upon receiving HTTP 429. Zero network requests occur during video playback.
+- **Frontend Integration**: `SubtitleService` tokenizes all cues up front on video load (1 request per video for up to 800 cues), passes the Supabase bearer token, and activates an automatic client-side circuit breaker upon receiving HTTP 429. Zero network requests occur during video playback.
 - **Edge Cold-Start & Startup CPU Optimization**:
   - Heavy NLP modules (`compromise`, `pinyin-pro`, `hangul-romanization`) are loaded dynamically on demand (`await import(...)`) rather than statically at module import.
   - This completely eliminates top-level synchronous module initialization at Worker startup, staying well within Cloudflare's strict CPU time limits (avoiding `Script startup exceeded CPU time limit`).
@@ -314,7 +314,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - $35$–$45$ minutes: **4 Diamond credits**
 - **Quotas & Performance Optimization**:
   - **Memory-first caching**: Warm edge isolates cache anonymous user diamond status in `memDiamondsCache` with 60s TTL, throttling KV writes to preserve the 1,000 writes/day free limit.
-  - **Admin Token Memoization**: PocketBase admin authentication is memoized in memory for 45 minutes, reducing admin auth requests by 99%.
+  - **In-Memory Profile Caching**: Authenticated user profiles are cached in memory for 5 minutes, eliminating redundant database calls.
 
 ---
 
@@ -384,7 +384,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
 - **Process & Security**:
   1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Enforces strict destination URL validation (`isValidRedirectUrl`) on `returnUrl` and `cancelUrl` against trusted application domains to eliminate open redirect vectors. Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV. All error outputs are sanitized to avoid leaking internal provider details.
-  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time XOR comparison to protect against timing attacks. Enforces fail-closed verification in production, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's PocketBase record to `subscription_tier` (`'pro'` or `'premium'`), sets `subscription_expires` (+30 days or +365 days), and allocates initial diamonds (10 for Pro, 25 for Premium; supporting PocketBase v0.23+ `_superusers` authentication).
+  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time comparison across all environments (development bypass eliminated). Enforces fail-closed verification, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's `profiles` record in Supabase to `subscription_tier` (`'pro'` or `'premium'`), sets `subscription_expires` (+30 days or +365 days), and allocates initial diamonds (10 for Pro, 25 for Premium) via direct Supabase REST using `SUPABASE_SERVICE_ROLE_KEY`.
   3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`. All unexpected exceptions return sanitized error payloads.
 
 ---
@@ -419,6 +419,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Rate-limited submission: Max 15 score updates per 10 minutes per client.
   - Strict input sanitization: Name HTML tags stripped, XP clamped (0–1,000,000), weekly XP clamped (0–100,000), level clamped (1–100), streak clamped (0–10,000).
   - Monotonic XP progression: Upsert enforces `xp = MAX(leaderboard.xp, excluded.xp)` and updates `weekly_xp` to prevent downgrades or race condition rollbacks.
+  - **Server-Authoritative Streak Verification**: Verifies submitted streaks against the authoritative `streaks` record in Supabase (or existing D1 record) to prevent client-side streak fabrication on public rankings.
 - **Storage & Caching**:
   - Persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `weekly_xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
   - Cache Directive: `Cache-Control: private, no-cache, no-store, must-revalidate` ensures user-specific rankings and refresh operations deliver real-time XP without stale CDN caching.

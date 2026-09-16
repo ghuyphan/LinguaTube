@@ -16,7 +16,7 @@ This document provides essential instructions, architectural design, codebase ma
   - **Cloudflare D1** (SQLite at the edge) for video metadata, language discovery registries, and negative caching
   - **Cloudflare R2** (S3-compatible bucket) for permanent transcript storage (`transcripts/{videoId}/{lang}.json`) and dual-language translations
   - **Cloudflare KV** for transient caching, tokenization hashes, and distributed rate limiting
-  - **PocketBase** (`https://voca.pockethost.io`) for user authentication, cloud sync (vocabulary, streaks, playlists, gamification)
+  - **Supabase** (`https://edbkvzviqeulwzcnrrlb.supabase.co`) for PostgreSQL user authentication (Google OAuth), cloud sync (vocabulary, SRS flashcards, streaks, playlists, history, gamification), and Row Level Security (RLS)
   - **IndexedDB (`lingua-tube-cache`) & LocalStorage** for client-side offline-first persistence
 
 ---
@@ -66,7 +66,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
 - **Whenever an agent makes a significant update to the codebase, the agent MUST automatically update all corresponding documentation files in `doc/`, `README.md`, and `AGENTS.md` before concluding the task.**
 - **What constitutes a "Significant Change"?**
   1. **Backend & API Changes**: Adding or altering endpoints in `functions-src/api/`, modifying rate limits, security middleware, or external providers $\rightarrow$ Update `doc/backend-api.md` and `doc/map.md`.
-  2. **Database & Storage Changes**: Altering D1 SQL schemas in `db/`, R2 bucket structures, KV namespace keys, LocalStorage keys, or PocketBase collections $\rightarrow$ Update `doc/database-and-storage.md` and `doc/map.md`.
+  2. **Database & Storage Changes**: Altering D1 SQL schemas in `db/`, R2 bucket structures, KV namespace keys, LocalStorage keys, or Supabase PostgreSQL tables $\rightarrow$ Update `doc/database-and-storage.md` and `doc/map.md`.
   3. **Frontend & UI Architecture**: Adding or modifying components, signals, routes in `app.routes.ts`, player controls, sheets, or design tokens $\rightarrow$ Update `doc/frontend-architecture.md`, `doc/features.md`, and `doc/map.md`.
   4. **Linguistics & NLP Features**: Changing tokenizers (`@patdx/kuromoji`, `compromise`, `Intl.Segmenter`), romanization engines, grammar patterns (`src/app/data/grammar-*.ts`), translation scripts, or dictionary scrapers $\rightarrow$ Update `doc/features.md` and `doc/tech.md`.
   5. **Tooling, Scripts & Configuration**: Adding dependencies to `package.json`, adding build scripts in `scripts/`, updating `wrangler.toml`, `.dev.vars`, or environment files $\rightarrow$ Update `doc/tech.md`, `doc/development-guide.md`, and `README.md`.
@@ -109,7 +109,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │                  PlaylistService & HistoryService
     │
     └── State / Repos: Offline-First Repositories (LocalStorage + IndexedDB lingua-tube-cache)
-                       PocketBase Client (Auth, Sync, Users, Playlists)
+                       Supabase Client (Auth, Sync, Profiles, Playlists, History, Streaks)
           │
           │ HTTP / REST API (via /api/*)
           ▼
@@ -117,7 +117,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │
     ├── API Middleware: Bot Defense (Scraper User-Agents & CF Threat Score)
     │                   Distributed Rate Limiter (In-Memory + KV)
-    │                   PocketBase JWT Auth Verification
+    │                   Supabase JWT Auth Verification (0ms local decode & profiles)
     │                   Video Duration & Language Validator
     │
     ├── Endpoints:
@@ -142,7 +142,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
           ├── Cloudflare D1             -> SQLite Tables: ai_transcription_jobs, transcripts, video_meta, video_languages, no_transcript_cache
           ├── Cloudflare R2             -> transcripts/{videoId}/{lang}.json & translations/{videoId}/{source}_{target}.json
           ├── Cloudflare KV             -> Rate limits, short-lived tokens, video-info, batch translation cache
-          ├── PocketBase                -> Cloud user records, vocabulary, streaks
+          ├── Supabase (PostgreSQL)     -> Cloud user records (profiles), vocabulary, streaks, history, playlists, gamification
           └── External APIs             -> Gladia (ASR), Supadata, Lingva, Naver, Jotoba, PayOS, Innertube (dev)
 ```
 
@@ -160,7 +160,6 @@ lingua-tube/
 ├── proxy.conf.json            # Angular CLI dev proxy mappings to localhost:3001
 ├── eslint.config.js           # Modern ESLint flat config with typescript-eslint
 ├── karma.conf.js              # Unit testing harness with Chrome headless
-├── streaks.pb.js              # PocketBase server hook script for streak automation
 │
 ├── doc/                       # Comprehensive documentation suite
 │   ├── README.md              # Documentation index & portal
@@ -170,9 +169,9 @@ lingua-tube/
 │   ├── backend-api.md         # API routes, middlewares, services & providers
 │   ├── frontend-architecture.md # Angular 19, Signals, components & design system
 │   ├── features.md            # Features deep dive (Subtitles, AI, Dict, SRS, etc.)
-│   ├── database-and-storage.md# D1, R2, KV, PocketBase, IndexedDB schemas
+│   ├── database-and-storage.md# D1, R2, KV, Supabase, IndexedDB schemas
 │   ├── development-guide.md   # Developer setup, commands, testing & debugging
-│   └── mobile-api-integration.md # Complete mobile API reference & PocketBase sync guide
+│   └── mobile-api-integration.md # Complete mobile API reference & Supabase sync guide
 │
 ├── db/                        # Cloudflare D1 SQL Schema & Migrations
 │   ├── schema.sql             # Base schema (transcripts, vocabulary, ai_transcription_jobs)
@@ -294,7 +293,7 @@ lingua-tube/
 Whenever your task touches any feature, API, database schema, or workflow:
 1. **Consult the Documentation Mapping Matrix**:
    - Backend routes/services $\rightarrow$ `doc/backend-api.md`, `doc/map.md`
-   - Database schemas, D1, R2, KV, LocalStorage, PocketBase $\rightarrow$ `doc/database-and-storage.md`, `doc/map.md`
+   - Database schemas, D1, R2, KV, LocalStorage, Supabase $\rightarrow$ `doc/database-and-storage.md`, `doc/map.md`
    - Frontend components, signals, routes, UI system $\rightarrow$ `doc/frontend-architecture.md`, `doc/features.md`
    - Linguistics, NLP, tokenizers, translation $\rightarrow$ `doc/features.md`, `doc/tech.md`
    - Scripts, build commands, environment config, dev server $\rightarrow$ `doc/development-guide.md`, `doc/tech.md`

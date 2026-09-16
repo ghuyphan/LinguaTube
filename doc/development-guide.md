@@ -50,8 +50,10 @@ SUPADATA_API_KEY="your_primary_key"
 SUPADATA_API_KEY_2="your_secondary_key"
 SUPADATA_API_KEY_3="your_tertiary_key"
 
-# PocketBase backend instance URL
-POCKETHOST_URL="https://voca.pockethost.io"
+# Supabase Configuration (Authentication, Cloud Sync, RLS)
+SUPABASE_URL="https://edbkvzviqeulwzcnrrlb.supabase.co"
+SUPABASE_ANON_KEY="your_supabase_anon_key"
+SUPABASE_SERVICE_ROLE_KEY="your_supabase_service_role_key"
 
 # Google OAuth Client ID (for web authentication)
 GOOGLE_CLIENT_ID="your_google_client_id.apps.googleusercontent.com"
@@ -63,7 +65,8 @@ YOUTUBE_COOKIE=""
 ### 2.2. Frontend Environment Configuration
 Located in `src/environments/environment.ts`:
 - `turnstileSiteKey`: Turnstile public site key.
-- `pocketbaseUrl`: `https://voca.pockethost.io`
+- `supabaseUrl`: `https://edbkvzviqeulwzcnrrlb.supabase.co`
+- `supabaseAnonKey`: Supabase public anonymous API key.
 - `api`: Centralized dictionary, translation, and transcript endpoint mappings.
 
 ---
@@ -174,7 +177,9 @@ Under **Settings $\rightarrow$ Environment Variables**:
 - `TURNSTILE_SECRET_KEY`: Production secret key from Cloudflare Turnstile.
 - `SUPADATA_API_KEY`, `SUPADATA_API_KEY_2`, `SUPADATA_API_KEY_3`: Production keys for Supadata.
 - `GOOGLE_CLIENT_ID`: Google OAuth Web Client ID.
-- `POCKETHOST_URL`: `https://voca.pockethost.io`
+- `SUPABASE_URL`: `https://edbkvzviqeulwzcnrrlb.supabase.co`
+- `SUPABASE_ANON_KEY`: Supabase public anonymous key.
+- `SUPABASE_SERVICE_ROLE_KEY`: Supabase secret service role key (for serverless edge functions).
 
 ---
 

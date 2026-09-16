@@ -185,7 +185,7 @@ export class QuizService {
             correct: s.correct + 1,
             streak: s.streak + 1
         }));
-        this.gamification.recordQuizCompleted();
+        this.gamification.addXP(5, 'quiz_question');
 
         // Auto-advance after delay (tracked for cleanup)
         this.clearPlaybackTimeout();
@@ -227,6 +227,7 @@ export class QuizService {
 
     private finishQuiz(): void {
         this.state.set('completed');
+        this.gamification.recordQuizCompleted();
     }
 
     private normalize(text: string): string {

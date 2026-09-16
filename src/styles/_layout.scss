@@ -534,6 +534,23 @@ body::-webkit-scrollbar {
             pointer-events: none;
             z-index: 0;
         }
+
+        .bottom-nav__dot {
+            position: absolute;
+            top: 4px;
+            right: 14px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-primary, #f45b74);
+            box-shadow: 0 0 0 1.5px var(--bg-surface);
+            pointer-events: none;
+            z-index: 2;
+
+            @media (max-width: 360px) {
+                right: 8px;
+            }
+        }
     }
 
     app-icon {

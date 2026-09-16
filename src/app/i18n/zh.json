@@ -104,6 +104,7 @@
     "sleepTimerActiveToast": "已设置{{time}}后关闭",
     "hint": "粘贴 YouTube 链接开始学习，系统将自动解析字幕。",
     "nowPlaying": "正在播放",
+    "videoCompleted": "已完成视频观看",
     "embedErrorHelp": "该视频无法嵌入播放，可能已被创作者限制或不可用。",
     "watchOnYouTube": "在 YouTube 上观看"
   },
@@ -505,7 +506,10 @@
     "reached": "你已达成",
     "days": "天！",
     "saved": "连续记录已保护！❄️",
-    "daysReached": "你已达成连续 {{count}} 天！"
+    "daysReached": "你已达成连续 {{count}} 天！",
+    "replenish": "恢复",
+    "freezeRestored": "已恢复连胜冻结保护！",
+    "insufficientXp": "需要 150 XP 才能恢复冻结保护"
   },
   "history": {
     "title": "观看历史",
@@ -686,7 +690,7 @@
     "continue": "继续",
     "back": "返回",
     "stepProgress": "第 {{current}} 步（共 {{total}} 步）",
-    "subtitleCoachmark": "轻按任意单词查词典并保存至单词本",
+    "subtitleCoachmark": "轻按任意词语翻译与保存",
     "demoSave": "+ 保存单词",
     "demoSaved": "已保存至单词本！",
     "levels": {
@@ -865,6 +869,8 @@
     "claimed": "已领取",
     "claimedReward": "已领取任务奖励",
     "dailyChestClaimed": "已开启每日宝箱",
+    "missionCompleted": "每日任务达成！",
+    "autoClaimed": "已自动领取昨日未领取的任务奖励",
     "watch1": {
       "title": "沉浸学习",
       "desc": "观看1部带字幕的视频"

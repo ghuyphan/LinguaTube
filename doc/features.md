@@ -141,7 +141,7 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **Bulk Batch Tokenization & Zero Playback Overhead**:
   - `SubtitleService` processes subtitle cues in bulk batches of up to 800 texts on initial video load. For virtually all videos ($\le 800$ cues), the entire video requires **only 1 API call**.
   - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.
-  - Forward's the user's PocketBase auth token to access higher rate limit tiers (150–2,000 req/hr).
+  - Forward's the user's Supabase auth token to access higher rate limit tiers (150–2,000 req/hr).
 - **Client Fallback Tokenizer & 429 Circuit Breaker**:
   - If network requests to backend tokenization endpoints fail, hit a 429 rate limit, or operate offline, `SubtitleService` immediately triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter('zh')` and `Intl.Segmenter('ko')` or Japanese character splitting.
   - The circuit breaker prevents cascading 429 errors in the console by suppressing subsequent backend calls for the duration of the `Retry-After` window.
@@ -183,7 +183,7 @@ graph TD
         SH --> RENDER
     end
 
-    BG -.->|State: failed| REFUND[Atomic Diamond Refund via PocketBase]
+    BG -.->|State: failed| REFUND[Atomic Diamond Refund via Supabase (profiles)]
     SH -.->|State: failed| REFUND
 ```
 
@@ -202,7 +202,7 @@ graph TD
   - Cloudflare D1 `ai_transcription_jobs` implements a SQLite partial unique index (`WHERE status IN ('queued', 'processing')`).
   - Concurrent requests from multiple tabs or duplicate button taps are atomically deduplicated at the database layer, completely eliminating double-charging.
 - **Automated Idempotent Diamond Refund**:
-  - If Gladia fails, times out, or reports no detectable speech, `atomicFailAndRefundAiJob` atomically marks the job as `failed` and triggers `refundDiamond()` via PocketHost API. The transaction guard ensures diamonds can never be refunded more than once.
+  - If Gladia fails, times out, or reports no detectable speech, `atomicFailAndRefundAiJob` atomically marks the job as `failed` and triggers `refundDiamond()` via Supabase REST API (using `SUPABASE_SERVICE_ROLE_KEY`). The transaction guard ensures diamonds can never be refunded more than once.
 - **Duration Limits & Cost Scaling**:
   - Free/Guest: Max 10 minutes (600s)
   - Pro: Max 20 minutes (1,200s)
@@ -445,18 +445,24 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 ## 8. Gamified Streaks & Freeze Inventory
 
 - **Daily Tracking**: Practicing (watching videos, completing flashcard reviews) records an activity entry for the current UTC date.
-- **Streak Freezes**:
+- **Streak Freezes & Freeze Economy**:
   - Users have an inventory of up to 2 Streak Freezes.
   - If a user misses exactly 1 day, a freeze is consumed automatically to protect their streak.
   - Milestones at 7, 30, and 100 days reward an extra streak freeze.
-- **PocketBase Server Cron (`streaks.pb.js`)**:
-  A server-side webhook checks active streaks daily, consuming freezes or resetting streaks if inactive for $>1$ day.
+  - **XP Freeze Replenishment**: Users can purchase +1 Streak Freeze (up to the cap of 2) for **150 XP** directly within `StreakDialogComponent`. The XP is deducted via `GamificationService.deductXP(150)` and synchronized with Supabase via `StreakRepository.replenishFreeze()`.
+- **Server-Side Streak Evaluation (`record_streak_activity`)**:
+  An atomic PostgreSQL stored procedure evaluated via Supabase RPC checks active streaks daily, consuming freezes or resetting streaks if inactive for $>1$ day.
+- **Streak Dialog & Week Strip Reactivity**:
+  - `StreakDialogComponent` renders inside a responsive bottom sheet modal (`<app-bottom-sheet>`).
+  - Displays the current week (Monday–Sunday) with localized day labels (`weekday: 'narrow'`).
+  - Powered by Angular Signals (`streakData`, `activityHistory`, `isOpen`), auto-refreshing via background sync on modal open.
+  - Guarantees accurate checkmarks across all timezones by preserving both local calendar and UTC date keys and merging remote history without data loss.
 
 ---
 
 ## 9. Playlist & Study Queue Architecture
 
-- **Multi-Source Playlists**: Supports user-created custom playlists, curated Community Playlists (e.g., JLPT/TOPIK/HSK listening collections), and PocketBase cloud sync.
+- **Multi-Source Playlists**: Supports user-created custom playlists, curated Community Playlists (e.g., JLPT/TOPIK/HSK listening collections), and Supabase cloud sync.
 - **Responsive Video Screen Presentation**:
   - **Desktop Unified Sidebar (`.unified-sidebar`)**: Houses a segmented control tab switcher toggling between `Playlist (N)` and `Vocabulary (N)`. Uses `.hidden` styling instead of template recreation to eliminate layout shifts when switching tabs. When a playlist has only 1 video, the playlist tab is retained on desktop to allow playlist management (editing, sharing, closing, or navigating).
   - **Mobile Playlist Bar (`.mobile-playlist-card`) & YouTube-Style Bottom Sheet**:
@@ -490,7 +496,7 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
   - **Unified Caption & Language Sub-Badges**: Subtitle languages are merged with the closed caption indicator into a single compact, unified badge (e.g. `[CC 🇯🇵 JA]`, `[CC 🇯🇵 JA / 🇬🇧 EN]`, or `[CC 🇯🇵 JA +3]`). Eliminates duplicate CC icons and oversized pill clutter. Active learning languages are prioritized first, accompanied by circular flags (`.circle-flag--xs`) and an informative hover tooltip listing all supported languages. Watch history and playlists also reflect verified server subtitles (`sub_languages`).
   - **1-Click Play**: Clicking any video immediately updates the URL query parameter (`?v=videoId`), mounts the player, and loads synchronized cues.
 - **Server-Side Playlist Recommendation Engine**:
-  - Automatically queries PocketBase with targeted server-side filtering (`visibility="published" && language="${lang}" && video_count >= 2`).
+  - Automatically queries Supabase with targeted server-side filtering (`visibility = 'public' AND language = '${lang}' AND video_count >= 2`).
   - Supports proficiency tier filtering across published community playlists, matching playlist levels, tags, and titles directly against user-selected difficulty tiers.
   - Ranked on the server by `-is_featured, -save_count, -updated` to prioritize curated and popular community content while filtering out single-video test spam.
   - Automatically re-fetches when learning language or difficulty tier changes and caches results in memory per language and tier.
@@ -539,9 +545,9 @@ Voca features a multi-tiered credit and quota management system designed to bala
 | Tier | Trigger / Qualification | Max Credits | Regen Rate | Max AI Video Length | Daily KV Sync Policy |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`anonymous`** | Unauthenticated guest IP | 3 Diamonds | 1 credit / 20 min | $\le 10$ minutes | In-memory cached; throttled KV sync |
-| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 15 min | $\le 10$ minutes | PocketBase record + in-memory cache |
-| **`pro`** | Active Pro subscriber | 10 Diamonds | 1 credit / 10 min | $\le 20$ minutes | PocketBase record + instant sync |
-| **`premium`** | Active Premium subscriber | 25 Diamonds | 1 credit / 4 min | $\le 45$ minutes | PocketBase record + instant sync |
+| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 15 min | $\le 10$ minutes | Supabase profiles record + in-memory cache |
+| **`pro`** | Active Pro subscriber | 10 Diamonds | 1 credit / 10 min | $\le 20$ minutes | Supabase profiles record + instant sync |
+| **`premium`** | Active Premium subscriber | 25 Diamonds | 1 credit / 4 min | $\le 45$ minutes | Supabase profiles record + instant sync |
 
 - **Defaulting to Free**: New registered users always default to the `free` tier (awarding 5 diamonds as an onboarding reward). Upgrades to `pro` or `premium` occur exclusively via verified payment or administrative grant.
 - **Dynamic Cost Scaling**:
@@ -554,7 +560,7 @@ Voca features a multi-tiered credit and quota management system designed to bala
 
 ### 11.2. Edge Rate Quota & Free KV Optimization (Rule 2)
 - **Edge In-Memory Caching (`memDiamondsCache`)**: Cloudflare Workers maintain an in-memory cache with a 60-second TTL and a 500-entry LRU cap. Repeated credit checks do not touch Cloudflare KV, preserving free-tier write quotas (1,000 writes/day).
-- **Admin Token Memoization**: PocketBase admin authentication tokens are memoized across Worker invocations with a 45-minute lifecycle, reducing redundant authentication requests by $>99\%$.
+- **In-Memory Profile Caching**: Authenticated user profiles are cached in memory for 5 minutes, eliminating redundant database calls.
 
 ### 11.3. payOS VietQR Open Banking & Pro / Premium Upgrade
 - **Why payOS?**: Zero gateway subscription fees (compared to ApiPay's 100k-150k VND/month fee), official VietQR bank transfer rails, and zero storage of raw banking credentials.
@@ -573,7 +579,7 @@ Voca features a multi-tiered credit and quota management system designed to bala
   5. Frontend displays a responsive VietQR card featuring the generated QR image, mobile checkout deep link, copyable account details, and active polling via `PaymentService`.
   6. User scans with any Vietnamese banking app (Vietcombank, MBBank, Techcombank, etc.).
   7. Upon transfer settlement, payOS fires a secure webhook to `/api/payment/webhook`.
-  8. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in PocketBase (`subscription_tier = targetTier`, `diamonds = grantedDiamonds` [10 for Pro, 25 for Premium]), and sets expiry timestamp.
+  8. Server verifies webhook HMAC signature, checks idempotency via Cloudflare KV (`order_processed:{orderCode}`), upgrades the user's subscription in Supabase (`public.profiles`: `subscription_tier = targetTier`, `diamonds = grantedDiamonds` [10 for Pro, 25 for Premium]), and sets expiry timestamp.
   9. Polling or next user action detects the new tier, refreshes user auth state, celebrates with confetti/toast, and unlocks Pro/Premium quotas immediately.
 
 ---
@@ -650,7 +656,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
 - **Playlist Page Integration (`PlaylistPageComponent`)**:
   - Playlist cards and individual tracklist rows display level pills (`level-badge--pill`) styled with tier-specific hues.
   - **Level Filter Dropdown**: Filter playlists by proficiency level (`All Levels`, `Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
-  - **Server-Side Community Query**: Reloads community playlists from PocketBase with language and level parameters.
+  - **Server-Side Community Query**: Reloads community playlists from Supabase with language and level parameters.
   - **Create Playlist Dialog**: Allows specifying target difficulty level upon playlist creation.
 - **History Page Integration (`HistoryPageComponent`)**:
   - **Level Filter Dropdown**: Quickly isolate watch history by difficulty tier.
@@ -717,19 +723,30 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
 - **Daily Completion Chest**:
   - Completing all 3 daily quests unlocks the sparkling **Daily Completion Chest**.
   - Opening the chest grants a **+50 XP bounty**, reinforcing consistency and building positive dopamine feedback loops.
-- **Dynamic Midnight Countdown**:
+- **Dynamic Midnight Countdown & Roll-Over Auto-Claim**:
   - Displays a live countdown timer until the next mission reset (`resetsIn: hh:mm:ss`), automatically refreshing stale missions upon crossing midnight.
+  - **Midnight Auto-Harvest**: If a user finishes missions or completes the chest but forgets to claim them before midnight, `ensureFreshPeriod()` automatically harvests all unclaimed XP upon roll-over (`pendingRolloverXp`), credits them immediately to total and weekly XP, and welcomes the user in the morning with a clean greeting toast (`🎁 +X XP auto-claimed`).
+- **Contextual Study Page Quest Card (`StudyPageComponent`)**:
+  - The SRS Study Mode sidebar directly integrates the current session's daily mission (`srs_10` / `Memory Workout`).
+  - Displays real-time progress (`m.progress / m.target`) and an inline one-tap `Claim +25 XP` button when completed, removing the need to navigate away from study mode.
 
 ### 13.4. Achievements & Missions Dialog (`AchievementsDialogComponent`)
 - **Tri-Segmented Tab Bar**:
   - **Missions**: Live daily quests with individual claim buttons, progress bars, and the animated Daily Completion Chest.
   - **Achievements**: Category-filtered badges (Immersion, Vocabulary, Streaks, SRS, Quizzes) with unlocked count pills.
   - **Leaderboard**: Global learner rankings with weekly and all-time toggle views.
+- **Clean Notification Dots (Zero "AI Slop")**:
+  - Non-intrusive, static 6px indicator dots (`.stat-claim-dot`, `.bottom-nav__dot`, `.more-stat-dot`) alert the learner when claimable mission rewards are waiting.
+  - Displayed on the Trophy button in the desktop expanded stats bar, the collapsed sidebar trophy icon, the mobile bottom navigation "More" button, and inside the More bottom sheet level stat card.
+  - Strictly follows a clean, minimalist design (no pulsing animations, glows, or floating badges).
 - **Hero Level Banner**: Displays user's current level title (Novice, Apprentice, Explorer, Scholar, Polyglot, Sage, Master, Grandmaster), total accumulated XP, weekly XP, and an animated radial/linear level progress bar.
 - **Visual Badge States**:
   - Unlocked: Vibrant tier gradient (Emerald, Blue, Purple, Gold), unlock timestamp, and gold trophy icon.
   - Locked: High-contrast dark surface, grayscale icon, and real-time numerical progress bar (`current / target`).
 - **Real-Time Celebration**: Unlocking any achievement, claiming a mission, or opening the chest triggers immediate celebratory toasts and live XP updates.
+- **In-Flow Milestone Toasts**:
+  - Completing $\ge 80\%$ of a video duration displays a celebratory toast: `🎬 [Title] (+25 XP)`.
+  - Answering quiz questions correctly awards $+5$ XP in real time, while full quiz completion triggers `recordQuizCompleted()`.
 
 ### 13.5. Weekly & All-Time Global Ranking System (`LeaderboardService`)
 - **Period Filter Pills**:
@@ -744,12 +761,12 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
 - **Offline-First & Community Baseline Integration**:
   - `mergeWithSeedLeaderboard` merges registered real users with 28 realistic community learners across Japanese, Korean, Chinese, and English, guaranteeing that the Top 3 podium (Gold 👑, Silver 🥈, Bronze 🥉) and leaderboard stream are always active and competitive.
   - Dynamically calculates exact rank based on relative XP distribution rather than showing isolated single-user states.
-  - Generates deterministic persistent guest IDs for learners browsing without PocketBase accounts.
+  - Generates deterministic persistent guest IDs for learners browsing without Supabase accounts.
   - Automatically syncs XP upon login or level-up events, with cache-busting real-time refresh support.
 
-### 13.6. Offline-First PocketBase Persistence (`OfflineGamificationRepository`)
+### 13.6. Offline-First Supabase Persistence (`OfflineGamificationRepository`)
 - **Deterministic Entity IDs**:
-  - Gamification records use a deterministic ID (`btoa(userId + ':gamification').slice(0, 15)`) adhering to PocketBase's 15-character alphanumeric ID constraint.
+  - Gamification records use a deterministic ID (`btoa(userId + ':gamification').slice(0, 15)`) adhering to Supabase table identifier conventions.
   - Guarantees zero duplicate records across multiple browser tabs, client restarts, or concurrent login sessions.
 - **Bi-Directional Timestamp Merge Strategy**:
   - When merging local and remote gamification states, the repository computes:
@@ -760,8 +777,8 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
     - Notified achievements: Union of all acknowledged notification IDs.
 - **Debounced Remote Sync & Offline Tolerance**:
   - Local state is updated instantaneously via Angular signals and persisted to `localStorage`.
-  - Remote synchronization is debounced (3 seconds) to prevent hammering PocketBase on rapid actions (e.g. rapid flashcard clicks).
-  - Graceful degradation: If the `gamification` collection does not exist yet in PocketBase (HTTP 404), requests fail silently and safely while keeping local progress 100% functional.
+  - Remote synchronization is debounced (3 seconds) to prevent hammering Supabase on rapid actions (e.g. rapid flashcard clicks).
+  - Graceful degradation: If network is offline or table is temporarily unreachable, requests fail silently and safely while keeping local progress 100% functional.
 - **Session Teardown & Clean Logout**:
   - Progress is safely isolated per user account.
   - On logout, user state transitions smoothly without destructive data loss.
@@ -787,7 +804,7 @@ To ensure an inviting, frictionless introduction matching top modern language le
   - **Top Bar**: Back button (when step > 1), animated progress bar (33% → 66% → 100%), and unobtrusive "Skip / Explore First" button.
   - **Sticky Bottom Action Bar**: Big full-width 52px button ("Continue →" on steps 1–2, "Start Learning ✨" on step 3) anchored in the thumb zone with safe-area padding.
 - **Progressive In-Player Coachmark**:
-  - Floating pill above subtitle line on first video playback (*"💡 Tap any word to translate & save to flashcards"*), permanently dismissed upon first word interaction.
+  - Floating pill above subtitle line on first video playback (*"💡 Tap any word to translate & save"*), with responsive sizing and dynamic container headroom (`.has-coachmark`) to prevent token clipping. Permanently dismissed upon word or grammar interaction, or manual close.
 
 
 

@@ -25,7 +25,6 @@ binding = "TRANSCRIPT_STORAGE"
 bucket_name = "linguatube-transcripts"
 
 [vars]
-# GLADIA_API_KEY and GOOGLE_CLIENT_ID should be set in Cloudflare Dashboard
-# PocketHost URL for auth token verification
-POCKETHOST_URL = "https://voca.pockethost.io"
+# GLADIA_API_KEY, SUPADATA_API_KEY, PAYOS keys, and SUPABASE_SERVICE_ROLE_KEY should be set in Cloudflare Dashboard
+SUPABASE_URL = "https://edbkvzviqeulwzcnrrlb.supabase.co"
 

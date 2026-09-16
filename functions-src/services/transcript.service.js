@@ -298,8 +298,8 @@ export class TranscriptService {
 
         const jobId = reservation.job.id;
 
-        // 6. Consume diamond(s)
-        const consumeResult = await this.diamondService.consumeDiamond(clientId, context, env, user, requiredDiamonds);
+        // 6. Consume diamond(s) with correct parameter order: (clientId, cost, user, env, context)
+        const consumeResult = await this.diamondService.consumeDiamond(clientId, requiredDiamonds, user, env, context);
         if (!consumeResult.success) {
             // Cancel the reservation row so user can retry later
             await deleteAiJob(db, jobId);

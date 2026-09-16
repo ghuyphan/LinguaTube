@@ -104,6 +104,7 @@
     "sleepTimerActiveToast": "Đã hẹn giờ ngủ sau {{time}}",
     "hint": "Dán link YouTube để bắt đầu học. Phụ đề sẽ được tự động tải về.",
     "nowPlaying": "Đang phát",
+    "videoCompleted": "Đã hoàn thành video",
     "embedErrorHelp": "Không thể phát video này ở chế độ nhúng. Video có thể đã bị tác giả hạn chế hoặc không khả dụng.",
     "watchOnYouTube": "Xem trên YouTube"
   },
@@ -505,7 +506,10 @@
     "reached": "Bạn đã đạt",
     "days": "ngày!",
     "saved": "Chuỗi đã được bảo vệ! ❄️",
-    "daysReached": "Bạn đã đạt chuỗi {{count}} ngày!"
+    "daysReached": "Bạn đã đạt chuỗi {{count}} ngày!",
+    "replenish": "Khôi phục",
+    "freezeRestored": "Đã khôi phục bảo vệ chuỗi!",
+    "insufficientXp": "Cần 150 XP để khôi phục bảo vệ"
   },
   "history": {
     "title": "Lịch sử xem",
@@ -686,7 +690,7 @@
     "continue": "Tiếp tục",
     "back": "Quay lại",
     "stepProgress": "Bước {{current}} / {{total}}",
-    "subtitleCoachmark": "Chạm vào từ bất kỳ để tra nghĩa & lưu vào sổ từ",
+    "subtitleCoachmark": "Chạm vào từ để tra nghĩa & lưu",
     "demoSave": "+ Lưu từ vựng",
     "demoSaved": "Đã lưu vào sổ từ!",
     "levels": {
@@ -865,6 +869,8 @@
     "claimed": "Đã nhận",
     "claimedReward": "Đã nhận thưởng nhiệm vụ",
     "dailyChestClaimed": "Đã mở rương ngày",
+    "missionCompleted": "Nhiệm vụ hàng ngày hoàn thành!",
+    "autoClaimed": "Đã tự động nhận phần thưởng nhiệm vụ chưa nhận hôm qua",
     "watch1": {
       "title": "Xem đắm chìm",
       "desc": "Xem 1 video học tập kèm phụ đề"

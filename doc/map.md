@@ -18,7 +18,7 @@ graph TB
     subgraph Edge["Cloudflare Pages Functions (Edge Workers)"]
         MW_Bot[Bot Defense Middleware]
         MW_Rate[Distributed Rate Limiter]
-        MW_Auth[PocketBase JWT Validator]
+        MW_Auth[Supabase JWT Validator]
         
         API_Transcript["/api/transcript"]
         API_GladiaWebhook["/api/gladia-webhook"]
@@ -50,7 +50,7 @@ graph TB
         Supadata[Supadata Native Captions]
         Gladia[Gladia AI Transcription]
         Turnstile[Cloudflare Turnstile CAPTCHA]
-        PocketHost[PocketBase Server voca.pockethost.io]
+        Supabase[Supabase PostgreSQL & Auth edbkvzviqeulwzcnrrlb]
         DictAPIs[Jotoba / Mazii / Naver / MDBG / Glosbe]
         Lingva[Lingva Translate API]
         GoogleGTX[Google Translate GTX]
@@ -66,7 +66,7 @@ graph TB
     UI --> State
     State --> Repos
     Repos <--> IDB
-    Repos <--> PocketHost
+    Repos <--> Supabase
     
     UI --> Edge
     UI -.->|Local Dev Proxy via proxy.conf.json| DevServer
@@ -103,7 +103,7 @@ graph TB
     API_PayStatus --> KV
     API_PayStatus --> PayOS
     API_PayWebhook --> KV
-    API_PayWebhook --> PocketHost
+    API_PayWebhook --> Supabase
     PayOS -.->|Webhook Notification| API_PayWebhook
 ```
 
@@ -292,7 +292,7 @@ sequenceDiagram
     participant Popup as WordPopupComponent
     participant Repo as OfflineVocabularyRepository
     participant Storage as LocalStorage / StorageService
-    participant PB as PocketBaseService (voca.pockethost.io)
+    participant SB as SupabaseService (edbkvzviqeulwzcnrrlb)
 
     User->>Popup: Click "+ Add to Vocabulary"
     Popup->>Repo: addWord(word, meaning, lang, reading, sentence)
@@ -300,8 +300,8 @@ sequenceDiagram
     Repo->>Storage: Persist to LocalStorage linguatube_vocabulary (Instant, optimistic)
     Repo->>Repo: Update vocabulary$ Signal & recalculate stats
     alt User is Logged In & Online
-        Repo->>PB: Push single item / Background Sync
-        PB-->>Repo: Saved successfully
+        Repo->>SB: Upsert to public.vocabulary
+        SB-->>Repo: Saved successfully
     else Offline
         Note over Repo,Storage: Queued locally. Syncs on next login or online event
     end
@@ -328,7 +328,7 @@ sequenceDiagram
     participant StatusAPI as /api/payment/check-status
     participant WebhookAPI as /api/payment/webhook
     participant KV as Cloudflare KV
-    participant PB as PocketBase Server
+    participant SB as Supabase Database (profiles)
 
     User->>Dialog: Select Plan (Pro or Premium) & Click "Upgrade"
     Dialog->>PayService: createOrder(planId: 'pro_1m' | 'premium_1m' | ...)
@@ -344,7 +344,7 @@ sequenceDiagram
         PayOS->>WebhookAPI: POST /api/payment/webhook (HMAC Signature)
         WebhookAPI->>WebhookAPI: Verify HMAC-SHA256 Signature
         WebhookAPI->>KV: Check Idempotency (order_processed:orderCode)
-        WebhookAPI->>PB: Upgrade User (subscription_tier=tier, diamonds=10 or 25)
+        WebhookAPI->>SB: Upgrade User profiles (subscription_tier=tier, diamonds=10 or 25)
         WebhookAPI->>KV: Mark order_processed & update order status to PAID
     and Client Polling
         loop Every 3s (up to 5 min)
@@ -467,7 +467,7 @@ sequenceDiagram
 
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
-| `src/app/core/services` | Core / Shared | Auth (`PocketBase`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Video Recommendation (`VideoRecommendationService`), Global Leaderboard (`LeaderboardService`), PWA updates (`AppUpdateService`), PWA installation (`PwaService`), Error handler |
+| `src/app/core/services` | Core / Shared | Auth (`Supabase GoTrue`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Video Recommendation (`VideoRecommendationService`), Global Leaderboard (`LeaderboardService`), PWA updates (`AppUpdateService`), PWA installation (`PwaService`), Error handler |
 | `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History |
 | `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls, video header level badge |
@@ -481,7 +481,7 @@ sequenceDiagram
 | `src/app/data` | Static Data | Large CJK grammar rules, single-source version & release metadata (`version-info.json`, `changelog.data.ts`) |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
 | `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
-| `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, PocketBase token verification, video validator |
+| `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, Supabase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |
 | `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, Edge TTS, tokenizers, payment mock |
@@ -489,4 +489,4 @@ sequenceDiagram
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
 | `scripts/release.js` | Release Pipeline | Controlled semver version bumper and metadata synchronizer |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |
-| `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, PocketBase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |
+| `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, Supabase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |

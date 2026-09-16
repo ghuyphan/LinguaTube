@@ -1,8 +1,8 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { IGamificationRepository } from './gamification.repository';
-import { UserGamificationState, PocketBaseGamificationRecord, Mission, DailyMissionsState, MissionType } from '../../models/gamification.model';
-import { AuthService, StorageService, PocketBaseService } from '../services';
-import { generateDeterministicRecordId, sanitizeFilterValue } from '../../shared/utils/sync.utils';
+import { UserGamificationState, Mission, DailyMissionsState, MissionType } from '../../models/gamification.model';
+import { AuthService, StorageService, SupabaseService } from '../services';
+import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_gamification';
 const SYNC_DEBOUNCE_MS = 3000;
@@ -142,7 +142,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
 export class OfflineGamificationRepository implements IGamificationRepository {
     private auth = inject(AuthService);
     private storage = inject(StorageService);
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
 
     readonly state = signal<UserGamificationState>({
         xp: 0,
@@ -157,6 +157,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
     });
 
     readonly isLoading = signal<boolean>(false);
+    readonly pendingRolloverXp = signal<number>(0);
 
     private syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
     private hasPendingRemotePush = false;
@@ -185,21 +186,47 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         }
 
         let dailyMissions = prev.dailyMissions;
+        let rolloverXp = 0;
         if (!dailyMissions || dailyMissions.date !== today) {
+            // Harvest completed but unclaimed quest rewards from previous day
+            if (dailyMissions && Array.isArray(dailyMissions.missions)) {
+                for (const m of dailyMissions.missions) {
+                    if (m.completed && !m.claimed) {
+                        rolloverXp += (m.xpReward || 0);
+                    }
+                }
+                const allDone = dailyMissions.missions.length > 0 && dailyMissions.missions.every(m => m.completed);
+                if (allDone && !dailyMissions.allCompletedBonusClaimed) {
+                    rolloverXp += (dailyMissions.bonusXp || 50);
+                }
+            }
             dailyMissions = createDailyMissionsForDate(today);
             updated = true;
         }
 
+        if (rolloverXp > 0) {
+            this.pendingRolloverXp.set(rolloverXp);
+        }
+
         if (updated) {
+            const nextXp = prev.xp + rolloverXp;
+            const nextWeeklyXp = weeklyXp + rolloverXp;
+            const nextLevel = Math.max(1, Math.floor(Math.sqrt(nextXp / 100)) + 1);
+
             const nextState: UserGamificationState = {
                 ...prev,
-                weeklyXp,
+                xp: nextXp,
+                weeklyXp: nextWeeklyXp,
+                level: nextLevel,
                 currentWeekKey,
                 dailyMissions,
                 updatedAt: new Date().toISOString()
             };
             this.state.set(nextState);
             this.saveToStorage(nextState);
+            if (rolloverXp > 0) {
+                this.scheduleRemotePush();
+            }
             return nextState;
         }
 
@@ -228,7 +255,32 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         this.scheduleRemotePush();
     }
 
-    recordVideoCompleted(): void {
+    deductXP(amount: number): boolean {
+        if (amount <= 0) return false;
+        this.ensureFreshPeriod();
+        const current = this.state();
+        if (current.xp < amount) return false;
+
+        this.state.update(prev => {
+            const newXP = Math.max(0, prev.xp - amount);
+            const newWeeklyXp = Math.max(0, (prev.weeklyXp || 0) - amount);
+            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+            const updated: UserGamificationState = {
+                ...prev,
+                xp: newXP,
+                weeklyXp: newWeeklyXp,
+                level: newLevel,
+                updatedAt: new Date().toISOString()
+            };
+            this.saveToStorage(updated);
+            return updated;
+        });
+
+        this.scheduleRemotePush();
+        return true;
+    }
+
+    recordVideoCompleted(): Mission[] {
         this.ensureFreshPeriod();
         this.state.update(prev => {
             const updated: UserGamificationState = {
@@ -239,11 +291,12 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             this.saveToStorage(updated);
             return updated;
         });
-        this.trackMissionProgress('watch_video', 1);
+        const completed = this.trackMissionProgress('watch_video', 1);
         this.addXP(25);
+        return completed;
     }
 
-    recordQuizCompleted(): void {
+    recordQuizCompleted(): Mission[] {
         this.ensureFreshPeriod();
         this.state.update(prev => {
             const updated: UserGamificationState = {
@@ -254,14 +307,17 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             this.saveToStorage(updated);
             return updated;
         });
-        this.trackMissionProgress('complete_quiz', 1);
-        this.addXP(15);
+        const completed = this.trackMissionProgress('complete_quiz', 1);
+        this.addXP(20);
+        return completed;
     }
 
-    trackMissionProgress(type: MissionType, amount = 1): void {
-        if (amount <= 0) return;
+    trackMissionProgress(type: MissionType, amount = 1): Mission[] {
+        if (amount <= 0) return [];
 
         this.ensureFreshPeriod();
+        const newlyCompleted: Mission[] = [];
+
         this.state.update(prev => {
             if (!prev.dailyMissions) return prev;
 
@@ -271,10 +327,18 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                     const newProg = Math.min(m.target, m.progress + amount);
                     if (newProg !== m.progress) {
                         hasChange = true;
+                        const isNowCompleted = newProg >= m.target;
+                        if (isNowCompleted) {
+                            newlyCompleted.push({
+                                ...m,
+                                progress: newProg,
+                                completed: true
+                            });
+                        }
                         return {
                             ...m,
                             progress: newProg,
-                            completed: newProg >= m.target
+                            completed: isNowCompleted
                         };
                     }
                 }
@@ -296,6 +360,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         });
 
         this.scheduleRemotePush();
+        return newlyCompleted;
     }
 
     claimMissionReward(missionId: string): number {
@@ -431,31 +496,16 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         this.isLoading.set(true);
 
         try {
-            const client = await this.pb.getClient();
             const deterministicId = generateGamificationId(user.id);
-            let remoteRecord: PocketBaseGamificationRecord | null = null;
-
-            try {
-                remoteRecord = await client.collection('gamification').getOne<PocketBaseGamificationRecord>(deterministicId);
-            } catch (err: unknown) {
-                if ((err as { status?: number })?.status === 404) {
-                    // Try fallback query by user relation
-                    try {
-                        const list = await client.collection('gamification').getList<PocketBaseGamificationRecord>(1, 1, {
-                            filter: `user = "${sanitizeFilterValue(user.id)}"`
-                        });
-                        if (list.items.length > 0) {
-                            remoteRecord = list.items[0];
-                        }
-                    } catch {
-                        // PocketBase collection might not be created yet; continue in local mode
-                    }
-                }
-            }
+            const { data: remoteRecord, error } = await this.supabase.client
+                .from('gamification')
+                .select('*')
+                .eq('user_id', user.id)
+                .maybeSingle();
 
             const local = this.ensureFreshPeriod();
 
-            if (remoteRecord) {
+            if (remoteRecord && !error) {
                 // Merge strategy: Monotonic XP, earlier badge timestamps, union of notified badges
                 const mergedXP = Math.max(local.xp, remoteRecord.xp || 0);
                 const mergedLevel = Math.max(1, Math.floor(Math.sqrt(mergedXP / 100)) + 1);
@@ -500,13 +550,13 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                 this.state.set(mergedState);
                 this.saveToStorage(mergedState);
 
-                // If local had higher/newer stats, push merged state back to PocketBase
+                // If local had higher/newer stats, push merged state back to Supabase
                 if (mergedXP > (remoteRecord.xp || 0) ||
                     mergedWeeklyXp > (remoteRecord.weekly_xp || 0) ||
                     Object.keys(mergedUnlocked).length > Object.keys(remoteRecord.unlocked_achievements || {}).length ||
                     mergedVideos > (remoteRecord.total_videos_watched || 0) ||
                     mergedQuizzes > (remoteRecord.total_quizzes_completed || 0)) {
-                    await client.collection('gamification').update(remoteRecord.id, {
+                    await this.supabase.client.from('gamification').update({
                         xp: mergedXP,
                         level: mergedLevel,
                         weekly_xp: mergedWeeklyXp,
@@ -514,15 +564,16 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                         total_videos_watched: mergedVideos,
                         total_quizzes_completed: mergedQuizzes,
                         unlocked_achievements: mergedUnlocked,
-                        notified_achievements: mergedNotified
-                    }).catch(() => {});
+                        notified_achievements: mergedNotified,
+                        updated_at: new Date().toISOString()
+                    }).eq('id', remoteRecord.id);
                 }
             } else {
                 // Record doesn't exist yet on remote, try creating it with deterministic ID
                 try {
-                    await client.collection('gamification').create({
+                    await this.supabase.client.from('gamification').upsert({
                         id: deterministicId,
-                        user: user.id,
+                        user_id: user.id,
                         xp: local.xp,
                         level: local.level,
                         weekly_xp: local.weeklyXp || 0,
@@ -530,14 +581,15 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                         total_videos_watched: local.totalVideosWatched,
                         total_quizzes_completed: local.totalQuizzesCompleted,
                         unlocked_achievements: local.unlockedAchievements,
-                        notified_achievements: local.notifiedAchievements
-                    });
+                        notified_achievements: local.notifiedAchievements,
+                        updated_at: new Date().toISOString()
+                    }, { onConflict: 'id' });
                 } catch {
-                    // PocketBase collection might not be created yet by admin; local state remains intact
+                    // Local state remains intact
                 }
             }
         } catch (err) {
-            console.warn('[GamificationRepo] Remote sync skipped (offline or collection pending):', err);
+            console.warn('[GamificationRepo] Remote sync skipped:', err);
         } finally {
             this.isLoading.set(false);
             this.hasPendingRemotePush = false;
@@ -555,7 +607,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             void this.syncWithRemote();
         });
 
-        this.pb.reconnectEvent.subscribe(() => {
+        this.supabase.reconnectEvent.subscribe(() => {
             if (this.auth.isLoggedIn()) {
                 void this.syncWithRemote();
             }
@@ -608,37 +660,22 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         const deterministicId = generateGamificationId(user.id);
 
         try {
-            const client = await this.pb.getClient();
-            try {
-                await client.collection('gamification').update(deterministicId, {
-                    xp: current.xp,
-                    level: current.level,
-                    weekly_xp: current.weeklyXp || 0,
-                    current_week_key: current.currentWeekKey || getIsoWeekKey(),
-                    total_videos_watched: current.totalVideosWatched,
-                    total_quizzes_completed: current.totalQuizzesCompleted,
-                    unlocked_achievements: current.unlockedAchievements,
-                    notified_achievements: current.notifiedAchievements
-                });
-            } catch (updateErr: unknown) {
-                if ((updateErr as { status?: number })?.status === 404) {
-                    await client.collection('gamification').create({
-                        id: deterministicId,
-                        user: user.id,
-                        xp: current.xp,
-                        level: current.level,
-                        weekly_xp: current.weeklyXp || 0,
-                        current_week_key: current.currentWeekKey || getIsoWeekKey(),
-                        total_videos_watched: current.totalVideosWatched,
-                        total_quizzes_completed: current.totalQuizzesCompleted,
-                        unlocked_achievements: current.unlockedAchievements,
-                        notified_achievements: current.notifiedAchievements
-                    });
-                }
-            }
+            await this.supabase.client.from('gamification').upsert({
+                id: deterministicId,
+                user_id: user.id,
+                xp: current.xp,
+                level: current.level,
+                weekly_xp: current.weeklyXp || 0,
+                current_week_key: current.currentWeekKey || getIsoWeekKey(),
+                total_videos_watched: current.totalVideosWatched,
+                total_quizzes_completed: current.totalQuizzesCompleted,
+                unlocked_achievements: current.unlockedAchievements,
+                notified_achievements: current.notifiedAchievements,
+                updated_at: new Date().toISOString()
+            }, { onConflict: 'id' });
             this.hasPendingRemotePush = false;
         } catch {
-            // Silently retain local state if PocketBase is unreachable or collection is pending
+            // Silently retain local state if Supabase is unreachable
         }
     }
 

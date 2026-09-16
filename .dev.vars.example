@@ -25,7 +25,6 @@ PAYOS_CLIENT_ID=""
 PAYOS_API_KEY=""
 PAYOS_CHECKSUM_KEY=""
 
-# PocketBase Admin Credentials (for server-side webhook credit updates)
-POCKETHOST_URL="https://voca.pockethost.io"
-PB_ADMIN_EMAIL=""
-PB_ADMIN_PASSWORD=""
+# Supabase Credentials (for edge function server-side operations)
+SUPABASE_URL="https://edbkvzviqeulwzcnrrlb.supabase.co"
+SUPABASE_SERVICE_ROLE_KEY=""

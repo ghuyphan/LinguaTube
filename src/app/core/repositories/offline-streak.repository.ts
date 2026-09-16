@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { IStreakRepository, StreakData, ActivityResult } from './streak.repository';
-import { AuthService, StorageService, PocketBaseService } from '../services';
+import { AuthService, StorageService, SupabaseService } from '../services';
 
 const STORAGE_KEY = 'linguatube_streak';
 const HISTORY_KEY = 'linguatube_activity_log';
@@ -11,7 +11,7 @@ const HISTORY_KEY = 'linguatube_activity_log';
 export class OfflineStreakRepository implements IStreakRepository {
     private auth = inject(AuthService);
     private storage = inject(StorageService);
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
 
     readonly streakData = signal<StreakData>({
         currentStreak: 0,
@@ -21,6 +21,7 @@ export class OfflineStreakRepository implements IStreakRepository {
         practicedToday: false
     });
 
+    readonly activityHistory = signal<string[]>([]);
     readonly isLoading = signal(false);
 
     constructor() {
@@ -54,19 +55,43 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     getWeekActivity(): boolean[] {
-        const history = this.storage.get<string[]>(HISTORY_KEY) || [];
+        const historySet = new Set(this.activityHistory());
         const week: boolean[] = [];
-        const today = this.startOfDay(new Date());
+        const now = new Date();
+        const practicedToday = this.streakData().practicedToday;
 
         for (let i = 0; i < 7; i++) {
-            const date = new Date(today);
-            date.setDate(date.getDate() - i);
+            const date = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+            if (i === 0 && practicedToday) {
+                week.push(true);
+                continue;
+            }
             const localKey = this.toLocalDateKey(date);
-            const utcKey = date.toISOString().split('T')[0];
-            week.push(history.includes(localKey) || history.includes(utcKey));
+            const utcKey = this.toUtcDateKey(date);
+            week.push(historySet.has(localKey) || historySet.has(utcKey));
         }
 
         return week;
+    }
+
+    async replenishFreeze(newCount: number): Promise<void> {
+        this.updateLocal({
+            ...this.streakData(),
+            freezesRemaining: Math.min(2, Math.max(0, newCount))
+        });
+        if (this.auth.isLoggedIn()) {
+            const user = this.auth.user();
+            if (user) {
+                try {
+                    await this.supabase.client.from('streaks').update({
+                        freezes_remaining: Math.min(2, Math.max(0, newCount)),
+                        updated_at: new Date().toISOString()
+                    }).eq('user_id', user.id);
+                } catch (err) {
+                    console.warn('[StreakRepo] Failed to update freezes_remaining on server:', err);
+                }
+            }
+        }
     }
 
     async syncWithRemote(): Promise<void> {
@@ -74,22 +99,27 @@ export class OfflineStreakRepository implements IStreakRepository {
 
         this.isLoading.set(true);
         try {
-            const client = await this.pb.getClient();
-            const response = await fetch(`${client.baseURL}/api/streaks/me`, {
-                headers: { 'Authorization': `Bearer ${this.pb.getToken()}` }
-            });
+            const userId = this.auth.getUserId();
+            if (!userId) return;
 
-            if (!response.ok) return;
+            const { data: serverData, error } = await this.supabase.client
+                .from('streaks')
+                .select('*')
+                .eq('user_id', userId)
+                .maybeSingle();
 
-            const serverData = await response.json();
+            if (error || !serverData) return;
+
             const localData = this.streakData();
-
             const localTime = localData.lastActivity ? new Date(localData.lastActivity).getTime() : 0;
             const serverTime = serverData.last_activity ? new Date(serverData.last_activity).getTime() : 0;
 
+            const serverLastActivity = serverData.last_activity ? new Date(serverData.last_activity) : null;
+            const serverPracticedToday = serverLastActivity ? this.isSameDay(new Date(), serverLastActivity) : false;
+
             if (localTime > serverTime) {
                 // Local is ahead, push if practiced today
-                if (localData.practicedToday && !serverData.practiced_today) {
+                if (localData.practicedToday && !serverPracticedToday) {
                     await this.recordActivityOnServer();
                 }
             } else {
@@ -99,14 +129,22 @@ export class OfflineStreakRepository implements IStreakRepository {
                     longestStreak: serverData.longest_streak || 0,
                     freezesRemaining: serverData.freezes_remaining ?? 2,
                     lastActivity: serverData.last_activity,
-                    practicedToday: serverData.practiced_today || false
+                    practicedToday: serverPracticedToday
                 });
+            }
 
-                // Sync history log
-                if (serverData.activity_log && Array.isArray(serverData.activity_log)) {
-                    this.saveLocalHistory(serverData.activity_log);
+            // Always merge history log with server records so no device history is lost
+            const mergedHistory = new Set(this.activityHistory());
+            if (serverData.activity_log && Array.isArray(serverData.activity_log)) {
+                for (const item of serverData.activity_log) {
+                    if (typeof item === 'string') mergedHistory.add(item);
                 }
             }
+            if (serverLastActivity) {
+                mergedHistory.add(this.toLocalDateKey(serverLastActivity));
+                mergedHistory.add(this.toUtcDateKey(serverLastActivity));
+            }
+            this.saveLocalHistory(Array.from(mergedHistory));
         } catch (error) {
             console.error('[StreakRepo] Sync failed:', error);
         } finally {
@@ -121,7 +159,7 @@ export class OfflineStreakRepository implements IStreakRepository {
             this.syncWithRemote();
         }
         this.auth.loginEvent.subscribe(() => this.syncWithRemote());
-        this.pb.reconnectEvent.subscribe(() => {
+        this.supabase.reconnectEvent.subscribe(() => {
             if (this.auth.isLoggedIn()) {
                 this.syncWithRemote();
             }
@@ -134,6 +172,7 @@ export class OfflineStreakRepository implements IStreakRepository {
                 lastActivity: null,
                 practicedToday: false
             });
+            this.activityHistory.set([]);
             this.storage.remove(STORAGE_KEY);
             this.storage.remove(HISTORY_KEY);
         });
@@ -146,6 +185,7 @@ export class OfflineStreakRepository implements IStreakRepository {
             const practicedToday = lastActivity ? this.isSameDay(new Date(), lastActivity) : false;
             this.streakData.set({ ...data, practicedToday });
         }
+        this.activityHistory.set(this.storage.get<string[]>(HISTORY_KEY) || []);
     }
 
     private updateLocal(data: StreakData) {
@@ -154,8 +194,9 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     private saveLocalHistory(history: string[]) {
-        const trimmed = history.slice(-365);
+        const trimmed = Array.from(new Set(history)).slice(-365);
         this.storage.set(HISTORY_KEY, trimmed);
+        this.activityHistory.set(trimmed);
     }
 
     private toLocalDateKey(date: Date): string {
@@ -165,13 +206,20 @@ export class OfflineStreakRepository implements IStreakRepository {
         return `${year}-${month}-${day}`;
     }
 
+    private toUtcDateKey(date: Date): string {
+        const year = date.getUTCFullYear();
+        const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(date.getUTCDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
     private addToLocalHistory(date: Date) {
-        const dateStr = this.toLocalDateKey(date);
-        const history = this.storage.get<string[]>(HISTORY_KEY) || [];
-        if (!history.includes(dateStr)) {
-            history.push(dateStr);
-            this.saveLocalHistory(history);
-        }
+        const localKey = this.toLocalDateKey(date);
+        const utcKey = this.toUtcDateKey(date);
+        const nextSet = new Set(this.activityHistory());
+        nextSet.add(localKey);
+        nextSet.add(utcKey);
+        this.saveLocalHistory(Array.from(nextSet));
     }
 
     private recordActivityLocally(): ActivityResult | null {
@@ -220,22 +268,14 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     private async recordActivityOnServer(): Promise<ActivityResult | null> {
-        const client = await this.pb.getClient();
-        const now = new Date();
-        const clientDate = this.toLocalDateKey(now);
-        const tzOffset = now.getTimezoneOffset();
-        const response = await fetch(`${client.baseURL}/api/streaks/record-activity`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${this.pb.getToken()}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ client_date: clientDate, tz_offset: tzOffset })
-        });
+        const { data, error } = await this.supabase.client.rpc('record_streak_activity');
 
-        if (response.ok) {
-            const data = await response.json();
+        if (error) {
+            console.error('[StreakRepo] RPC record_streak_activity error:', error);
+            throw error;
+        }
 
+        if (data) {
             // Update local from server response
             this.updateLocal({
                 currentStreak: data.current_streak || 0,
@@ -245,13 +285,16 @@ export class OfflineStreakRepository implements IStreakRepository {
                 practicedToday: true
             });
 
-            if (data.activity_log) this.saveLocalHistory(data.activity_log);
+            if (data.activity_log && Array.isArray(data.activity_log)) {
+                const merged = Array.from(new Set([...this.activityHistory(), ...data.activity_log]));
+                this.saveLocalHistory(merged);
+            }
 
             const milestones = [7, 30, 100, 365];
             const currentMilestone = milestones.find(m => data.current_streak === m);
 
             return {
-                freezeUsed: data.freeze_used || false,
+                freezeUsed: data.status === 'freeze_used',
                 isNewRecord: data.is_new_record || false,
                 milestone: currentMilestone
             };

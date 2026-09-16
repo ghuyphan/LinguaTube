@@ -43,6 +43,23 @@
         max-height: 11.5rem;
     }
 
+    // Provide comfortable headroom when onboarding coachmark is displayed
+    &.has-coachmark {
+        height: 11.25rem;
+        min-height: 11.25rem;
+        max-height: 11.25rem;
+
+        &.has-dual-subtitles {
+            height: 13.25rem;
+            min-height: 13.25rem;
+            max-height: 13.25rem;
+        }
+
+        .current-subtitle__inner {
+            padding-top: 2.75rem;
+        }
+    }
+
     // Quiz Mode - Fixed height to prevent layout shift
     &.is-quiz-active {
         height: 9.5rem;
@@ -103,43 +120,58 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 3px 10px;
+    padding: 4px 10px 4px 12px;
     background: var(--bg-card);
-    border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.35);
-    border-radius: var(--border-radius-pill);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.12);
+    border: 1px solid rgba(var(--accent-primary-rgb, 255, 107, 107), 0.35);
+    border-radius: var(--border-radius-pill, 9999px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
     cursor: pointer;
     animation: coachmarkSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
+    max-width: calc(100% - 24px);
+    box-sizing: border-box;
 
     &__content {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
         font-size: 0.75rem;
         font-weight: 600;
         color: var(--text-primary);
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__sparkle {
         color: var(--accent-primary);
+        flex-shrink: 0;
     }
 
     &__close {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
         border-radius: 50%;
+        border: none;
+        background: transparent;
         color: var(--text-muted);
-        transition: color var(--transition-fast), background-color var(--transition-fast);
+        cursor: pointer;
+        padding: 0;
+        flex-shrink: 0;
+        transition: color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 
         @media (hover: hover) {
             &:hover {
                 color: var(--text-primary);
                 background: var(--bg-hover);
             }
+        }
+
+        &:active {
+            transform: scale(0.92);
         }
     }
 }
@@ -1984,6 +2016,22 @@ ruby rt {
             max-height: 10.5rem;
         }
 
+        &.has-coachmark {
+            height: 10.25rem;
+            min-height: 10.25rem;
+            max-height: 10.25rem;
+
+            &.has-dual-subtitles {
+                height: 12.25rem;
+                min-height: 12.25rem;
+                max-height: 12.25rem;
+            }
+
+            .current-subtitle__inner {
+                padding-top: 2.5rem;
+            }
+        }
+
         &.is-quiz-active {
             height: 8.5rem;
             min-height: 8.5rem;
@@ -2215,10 +2263,43 @@ ruby rt {
             max-height: 10rem;
         }
 
+        &.has-coachmark {
+            height: 9.75rem;
+            min-height: 9.75rem;
+            max-height: 9.75rem;
+
+            &.has-dual-subtitles {
+                height: 11.75rem;
+                min-height: 11.75rem;
+                max-height: 11.75rem;
+            }
+
+            .current-subtitle__inner {
+                padding-top: 2.25rem;
+            }
+        }
+
         &.is-quiz-active {
             height: 8rem;
             min-height: 8rem;
             max-height: 8rem;
+        }
+    }
+
+    .subtitle-coachmark {
+        top: 6px;
+        padding: 3px 8px 3px 10px;
+        gap: 6px;
+        max-width: calc(100% - 16px);
+
+        &__content {
+            font-size: 0.6875rem;
+            gap: 4px;
+        }
+
+        &__close {
+            width: 16px;
+            height: 16px;
         }
     }
 

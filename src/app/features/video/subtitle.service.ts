@@ -6,7 +6,7 @@ import { SettingsService } from '../../core/services/settings.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { TranslationService } from '../../services/translation.service';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
-import { PocketBaseService } from '../../core/services/pocketbase.service';
+import { SupabaseService } from '../../core/services/supabase.service';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../../shared/utils/japanese-romaji';
 import { getCharType, isPunctuation, detectSubtitleLanguage } from '../../shared/utils/language.utils';
@@ -38,7 +38,7 @@ export class SubtitleService {
   private i18n = inject(I18nService);
   private translation = inject(TranslationService);
   private transcriptCache = inject(TranscriptCacheService);
-  private pocketbase = inject(PocketBaseService);
+  private supabase = inject(SupabaseService);
 
   // Rate limiting circuit breaker
   private rateLimitedUntil = 0;
@@ -1061,8 +1061,8 @@ export class SubtitleService {
           'Content-Type': 'application/json'
         };
 
-        // Attach PocketBase auth token if available to elevate user's rate limit tier
-        const authToken = this.pocketbase.getToken();
+        // Attach Supabase auth token if available to elevate user's rate limit tier
+        const authToken = this.supabase.getToken();
         if (authToken) {
           headers['Authorization'] = `Bearer ${authToken}`;
         }

@@ -1,9 +1,8 @@
 import { Injectable, inject, signal, effect, untracked, computed } from '@angular/core';
-import type PocketBase from 'pocketbase';
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats } from '../../models';
-import { AuthService, StorageService, PocketBaseService } from '../services';
-import { calculateHash, mergeByTimestamp, processBatch, sanitizeFilterValue, withRetry, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
+import { AuthService, StorageService, SupabaseService } from '../services';
+import { calculateHash, mergeByTimestamp, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 import { generateRandomId, calculateNextSRSState } from '../utils';
 
@@ -43,13 +42,37 @@ interface SyncItem {
     sourceTimestamp?: number;
 }
 
+interface VocabularyDbRow {
+    id: string;
+    word: string;
+    reading?: string;
+    pinyin?: string;
+    romanization?: string;
+    meaning: string;
+    language: 'ja' | 'zh' | 'ko' | 'en';
+    level: WordLevel;
+    examples?: string[];
+    created_at?: string;
+    updated_at?: string;
+    ease_factor?: number;
+    interval?: number;
+    repetitions?: number;
+    review_count?: number;
+    last_reviewed_at?: string;
+    next_review_date?: string;
+    source_sentence?: string;
+    source_video_id?: string;
+    source_timestamp?: number;
+    audio?: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export class OfflineVocabularyRepository implements IVocabularyRepository {
     private auth = inject(AuthService);
     private storage = inject(StorageService);
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
 
     // State
     readonly vocabulary = signal<VocabularyItem[]>([]);
@@ -336,7 +359,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             }
 
             // 1. Fetch Remote
-            const remoteItems = await this.fetchFromPocketBase();
+            const remoteItems = await this.fetchFromRemote();
             console.log(`[VocabRepo] Fetched ${remoteItems.length} items from server`);
 
             // 2. Handle deletion tombstones (prevent zombie resurrection)
@@ -379,7 +402,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
             if (dirtyItems.length > 0) {
                 console.log(`[VocabRepo] Pushing ${dirtyItems.length} modified items to server`);
-                await this.pushToPocketBase(dirtyItems);
+                await this.pushToRemote(dirtyItems);
             }
 
             this.lastPushedHash = calculateHash(this.vocabulary(), i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`);
@@ -403,7 +426,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         this.auth.loginEvent.subscribe(() => this.syncWithRemote());
 
         // Sync on network reconnection
-        this.pb.reconnectEvent.subscribe(() => {
+        this.supabase.reconnectEvent.subscribe(() => {
             if (this.auth.isLoggedIn()) {
                 void this.syncWithRemote();
             }
@@ -559,60 +582,53 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         this.updateLocal(vocabItems);
     }
 
-    private async fetchFromPocketBase(): Promise<SyncItem[]> {
-        const client = await this.pb.getClient();
-        const userId = client.authStore.model?.id;
+    private async fetchFromRemote(): Promise<SyncItem[]> {
+        const userId = this.auth.getUserId();
         if (!userId) return [];
 
-        const records = await client.collection('vocabulary').getFullList({
-            filter: `user = "${userId}"`,
-            sort: '-updated',
-            requestKey: null
-        });
+        const { data, error } = await this.supabase.client
+            .from('vocabulary')
+            .select('*')
+            .eq('user_id', userId)
+            .order('updated_at', { ascending: false });
 
-        return records.map(record => ({
+        if (error || !data) {
+            console.warn('[VocabRepo] Fetch error from Supabase:', error);
+            return [];
+        }
+
+        return data.map((record: VocabularyDbRow) => ({
             id: record.id,
-            word: record['word'],
-            reading: record['reading'],
-            pinyin: record['pinyin'],
-            romanization: record['romanization'],
-            meaning: record['meaning'],
-            language: record['language'] as 'ja' | 'zh' | 'ko' | 'en',
-            level: record['level'] as WordLevel,
-            examples: record['examples'],
-            created: record['created'],
-            updated: record['updated'],
-            easeFactor: record['ease_factor'] ?? record['easeFactor'],
-            interval: record['interval'],
-            repetitions: record['repetitions'],
-            reviewCount: record['review_count'] ?? record['reviewCount'],
-            lastReviewedAt: record['last_reviewed_at'] ?? record['lastReviewedAt'],
-            nextReviewDate: record['next_review_date'] ?? record['nextReviewDate'],
-            sourceSentence: record['source_sentence'] ?? record['sourceSentence']
+            word: record.word,
+            reading: record.reading,
+            pinyin: record.pinyin,
+            romanization: record.romanization,
+            meaning: record.meaning,
+            language: record.language as 'ja' | 'zh' | 'ko' | 'en',
+            level: record.level as WordLevel,
+            examples: record.examples || [],
+            created: record.created_at,
+            updated: record.updated_at,
+            easeFactor: record.ease_factor,
+            interval: record.interval,
+            repetitions: record.repetitions,
+            reviewCount: record.review_count,
+            lastReviewedAt: record.last_reviewed_at,
+            nextReviewDate: record.next_review_date,
+            sourceSentence: record.source_sentence,
+            sourceVideoId: record.source_video_id,
+            sourceTimestamp: record.source_timestamp,
+            audio: record.audio
         }));
     }
 
-    private async pushToPocketBase(items: SyncItem[]): Promise<void> {
-        const client = await this.pb.getClient();
-        const userId = client.authStore.model?.id;
-        if (!userId) return;
+    private async pushToRemote(items: SyncItem[]): Promise<void> {
+        const userId = this.auth.getUserId();
+        if (!userId || items.length === 0) return;
 
-        await processBatch(items, async (item) => {
-            await withRetry(() => this.syncItem(client, userId, item));
-        });
-    }
-
-    private async pushSingleItem(item: VocabularyItem): Promise<void> {
-        const client = await this.pb.getClient();
-        const userId = client.authStore.model?.id;
-        if (!userId) return;
-
-        const syncItem = this.convertToSyncItems([item])[0];
-        await withRetry(() => this.syncItem(client, userId, syncItem));
-    }
-
-    private async syncItem(client: PocketBase, userId: string, item: SyncItem): Promise<void> {
-        const data: Record<string, unknown> = {
+        const rows = items.map(item => ({
+            id: item.id,
+            user_id: userId,
             word: item.word,
             reading: item.reading || '',
             pinyin: item.pinyin || '',
@@ -620,41 +636,49 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             meaning: item.meaning,
             language: item.language,
             level: item.level,
-            examples: item.examples,
-            user: userId,
+            examples: item.examples || [],
             ease_factor: item.easeFactor ?? 2.5,
             interval: item.interval ?? 0,
             repetitions: item.repetitions ?? 0,
             review_count: item.reviewCount ?? 0,
             last_reviewed_at: item.lastReviewedAt || null,
             next_review_date: item.nextReviewDate || null,
-            source_sentence: item.sourceSentence || ''
-        };
+            source_sentence: item.sourceSentence || '',
+            source_video_id: item.sourceVideoId || '',
+            source_timestamp: item.sourceTimestamp || 0,
+            audio: item.audio || '',
+            updated_at: new Date().toISOString()
+        }));
 
-        try {
-            await client.collection('vocabulary').create({ ...data, id: item.id }, { requestKey: null });
-        } catch (err: unknown) {
-            const status = (err && typeof err === 'object' && 'status' in err) ? (err as { status: number }).status : undefined;
-            if (status === 400 || status === 404) {
-                await client.collection('vocabulary').update(item.id, data, { requestKey: null });
-            } else {
-                throw err;
+        for (let i = 0; i < rows.length; i += 50) {
+            const batch = rows.slice(i, i + 50);
+            const { error } = await this.supabase.client
+                .from('vocabulary')
+                .upsert(batch, { onConflict: 'id' });
+            if (error) {
+                console.error('[VocabRepo] Upsert error into Supabase:', error);
             }
         }
     }
 
+    private async pushSingleItem(item: VocabularyItem): Promise<void> {
+        const syncItem = this.convertToSyncItems([item])[0];
+        await this.pushToRemote([syncItem]);
+    }
+
     private async deleteFromServer(word: string, language: string): Promise<void> {
-        const client = await this.pb.getClient();
-        const userId = client.authStore.model?.id;
+        const userId = this.auth.getUserId();
         if (!userId) return;
 
-        const records = await client.collection('vocabulary').getFullList({
-            filter: `user = "${userId}" && word = "${sanitizeFilterValue(word)}" && language = "${sanitizeFilterValue(language)}"`,
-            requestKey: null
-        });
+        const { error } = await this.supabase.client
+            .from('vocabulary')
+            .delete()
+            .eq('user_id', userId)
+            .eq('word', word)
+            .eq('language', language);
 
-        for (const record of records) {
-            await client.collection('vocabulary').delete(record.id, { requestKey: null });
+        if (error) {
+            console.warn('[VocabRepo] Delete error from Supabase:', error);
         }
     }
 

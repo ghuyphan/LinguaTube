@@ -10,16 +10,16 @@ import {
     VideoInfo
 } from '../../models';
 import { AuthService, SettingsService } from '../../core/services';
-import { PocketBaseService } from '../../core/services/pocketbase.service';
+import { SupabaseService } from '../../core/services/supabase.service';
 import { YoutubeService } from '../video';
 import { OfflinePlaylistRepository } from '../../core/repositories';
 import { VideoLevelService } from '../../core/services/video-level.service';
 import { getYouTubeThumbnail } from '../../core/utils';
-import { sanitizeFilterValue, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
+import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 
 /**
  * Playlist Service
- * Manages playlists for both guest (localStorage) and logged-in (PocketBase) users
+ * Manages playlists for both guest (localStorage) and logged-in (Supabase) users
  */
 @Injectable({
     providedIn: 'root'
@@ -27,7 +27,7 @@ import { sanitizeFilterValue, generateDeterministicRecordId } from '../../shared
 export class PlaylistService {
     private auth = inject(AuthService);
     private settings = inject(SettingsService);
-    private pb = inject(PocketBaseService);
+    private supabase = inject(SupabaseService);
     private youtube = inject(YoutubeService);
     private repo = inject(OfflinePlaylistRepository);
     private videoLevel = inject(VideoLevelService);
@@ -152,8 +152,11 @@ export class PlaylistService {
      */
     async createPlaylist(input: CreatePlaylistInput): Promise<Playlist> {
         const userId = this.auth.getUserId() || 'local';
+        const uniqueId = typeof crypto !== 'undefined' && crypto.randomUUID 
+            ? crypto.randomUUID() 
+            : generateDeterministicRecordId('pl', userId, Date.now().toString(36), Math.random().toString(36).slice(2, 8));
         const playlist: Playlist = {
-            id: generateDeterministicRecordId('pl', userId, input.title.trim().toLowerCase()),
+            id: uniqueId,
             userId,
             title: input.title,
             description: input.description,
@@ -449,14 +452,19 @@ export class PlaylistService {
                 playlist = this.savedPlaylists().find(p => p.id === playlistId) || null;
             }
 
-            // If not found locally and logged in, try to fetch from PocketBase
+            // If not found locally and logged in, try to fetch from Supabase
             if (!playlist && this.auth.isLoggedIn()) {
                 try {
-                    const client = await this.pb.getClient();
-                    const record = await client.collection('playlists').getOne(playlistId, { requestKey: null });
-                    playlist = mapRecordToPlaylist(record as unknown as Record<string, unknown>);
+                    const { data, error } = await this.supabase.client
+                        .from('playlists')
+                        .select('*')
+                        .eq('id', playlistId)
+                        .maybeSingle();
+                    if (data && !error) {
+                        playlist = mapRecordToPlaylist(data as unknown as Record<string, unknown>);
+                    }
                 } catch (error) {
-                    console.error('[Playlist] Failed to fetch from PocketBase:', error);
+                    console.error('[Playlist] Failed to fetch from Supabase:', error);
                 }
             }
 
@@ -497,18 +505,23 @@ export class PlaylistService {
      */
     async fetchPublicPlaylist(playlistId: string): Promise<Playlist | null> {
         try {
-            const client = await this.pb.getClient();
-            const record = await client.collection('playlists').getOne(playlistId, { requestKey: null });
+            const { data, error } = await this.supabase.client
+                .from('playlists')
+                .select('*')
+                .eq('id', playlistId)
+                .maybeSingle();
+
+            if (error || !data) return null;
 
             // Only allow access to public or unlisted playlists
-            if (record['visibility'] === 'private') {
+            if (data['visibility'] === 'private') {
                 const currentUserId = this.auth.getUserId();
-                if (record['user'] !== currentUserId) {
+                if (data['user_id'] !== currentUserId) {
                     return null;
                 }
             }
 
-            return mapRecordToPlaylist(record as unknown as Record<string, unknown>);
+            return mapRecordToPlaylist(data as unknown as Record<string, unknown>);
         } catch (error) {
             console.error('[Playlist] Failed to fetch public playlist:', error);
             return null;
@@ -707,13 +720,16 @@ export class PlaylistService {
         }
 
         try {
-            const client = await this.pb.getClient();
+            const userId = this.auth.getUserId();
+            if (!userId) return;
 
-            // Create save record
-            await client.collection('playlist_saves').create({
-                user: this.auth.getUserId(),
-                playlist: playlistId
-            }, { requestKey: null });
+            const saveId = `psave_${userId.slice(0, 8)}_${playlistId.slice(0, 8)}`;
+            await this.supabase.client.from('playlist_saves').upsert({
+                id: saveId,
+                user_id: userId,
+                playlist_id: playlistId,
+                saved_at: new Date().toISOString()
+            }, { onConflict: 'id' });
 
             // Increment save count on playlist
             const playlist = await this.fetchPublicPlaylist(playlistId);
@@ -733,17 +749,14 @@ export class PlaylistService {
         if (!this.auth.isLoggedIn()) return;
 
         try {
-            const client = await this.pb.getClient();
+            const userId = this.auth.getUserId();
+            if (!userId) return;
 
-            // Find and delete the save record
-            const saves = await client.collection('playlist_saves').getList(1, 1, {
-                filter: `user="${sanitizeFilterValue(this.auth.getUserId() || '')}" && playlist="${sanitizeFilterValue(playlistId)}"`,
-                requestKey: null
-            });
-
-            if (saves.items.length > 0) {
-                await client.collection('playlist_saves').delete(saves.items[0].id, { requestKey: null });
-            }
+            await this.supabase.client
+                .from('playlist_saves')
+                .delete()
+                .eq('user_id', userId)
+                .eq('playlist_id', playlistId);
 
             this.savedPlaylists.set(
                 this.savedPlaylists().filter(p => p.id !== playlistId)
@@ -757,7 +770,7 @@ export class PlaylistService {
     // ==================== Data Loading ====================
 
     /**
-     * Load user's playlists from PocketBase
+     * Load user's playlists from Supabase
      */
     async loadUserPlaylists(): Promise<void> {
         this.isUserPlaylistsLoading.set(true);
@@ -785,29 +798,26 @@ export class PlaylistService {
         }
 
         try {
-            const client = await this.pb.getClient();
             const targetLang = language && language !== 'all' ? language : null;
             const targetTier = tier && tier !== 'all' ? tier : null;
 
-            let filter = 'visibility="published"';
+            let query = this.supabase.client
+                .from('playlists')
+                .select('*')
+                .eq('visibility', 'published')
+                .order('updated_at', { ascending: false })
+                .limit(50);
+
             if (targetLang) {
-                filter += ` && language="${targetLang}"`;
+                query = query.eq('language', targetLang);
             }
 
-            // Load published playlists with user name expanded with a 5s safety timeout
-            const fetchPromise = client.collection('playlists').getList(1, 50, {
-                filter,
-                sort: '-updated',
-                expand: 'user',
-                requestKey: null
-            });
+            const { data, error } = await query;
+            if (error) {
+                throw error;
+            }
 
-            const timeoutPromise = new Promise<never>((_, reject) =>
-                setTimeout(() => reject(new Error('Community playlists request timeout')), 5000)
-            );
-
-            const result = await Promise.race([fetchPromise, timeoutPromise]);
-            let playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
+            let playlists = (data || []).map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
 
             if (targetTier) {
                 playlists = playlists.filter(p => {
@@ -828,13 +838,6 @@ export class PlaylistService {
 
     /**
      * Load recommended playlists for a target learning language directly from server.
-     * Supports optional difficulty tier filtering ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced').
-     * Enforces server-side quality gates:
-     * - visibility = "published"
-     * - language = target language
-     * - video_count >= 2 (multi-video playlist)
-     * - Sorted by -is_featured, -save_count, -updated
-     * Falls back to video_count >= 1 if no playlists meet the >= 2 threshold.
      */
     async loadRecommendedPlaylists(language: string, tier?: string, limit = 3, forceRefresh = false): Promise<Playlist[]> {
         if (!language) return [];
@@ -853,75 +856,39 @@ export class PlaylistService {
 
         this.isRecommendedLoading.set(true);
         try {
-            const client = await this.pb.getClient();
+            const query = this.supabase.client
+                .from('playlists')
+                .select('*')
+                .eq('visibility', 'published')
+                .eq('language', language)
+                .order('is_featured', { ascending: false })
+                .order('save_count', { ascending: false })
+                .order('updated_at', { ascending: false })
+                .limit(targetTier ? 30 : limit);
 
+            const { data, error } = await query;
+            if (error) throw error;
+
+            const allPlaylists = (data || []).map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
+
+            let finalPlaylists: Playlist[];
             if (targetTier) {
-                // When tier is requested, query a larger batch of published playlists for this language to match the tier
-                const fetchPromise = client.collection('playlists').getList(1, 30, {
-                    filter: `visibility="published" && language="${sanitizeFilterValue(language)}"`,
-                    sort: '-is_featured,-save_count,-updated',
-                    expand: 'user',
-                    requestKey: null
-                });
-
-                const timeoutPromise = new Promise<never>((_, reject) =>
-                    setTimeout(() => reject(new Error('Recommended playlists request timeout')), 3500)
-                );
-
-                const result = await Promise.race([fetchPromise, timeoutPromise]);
-                const allPlaylists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
-
-                const matching = allPlaylists.filter(p => {
+                finalPlaylists = allPlaylists.filter(p => {
                     const resolved = this.videoLevel.resolvePlaylistLevel(p);
                     return resolved?.tier === targetTier;
-                });
-
-                const finalPlaylists = matching.slice(0, limit);
-                this.recommendedCache.set(cacheKey, finalPlaylists);
-
-                if (requestId !== this.activeRecommendedRequestId) {
-                    return [];
-                }
-
-                this.recommendedPlaylists.set(finalPlaylists);
-                return finalPlaylists;
+                }).slice(0, limit);
+            } else {
+                finalPlaylists = allPlaylists.slice(0, limit);
             }
 
-            // 1. Primary server-side query: published, matching language, at least 2 videos
-            const primaryFilter = `visibility="published" && language="${sanitizeFilterValue(language)}" && video_count >= 2`;
-            const fetchPromise = client.collection('playlists').getList(1, limit, {
-                filter: primaryFilter,
-                sort: '-is_featured,-save_count,-updated',
-                expand: 'user',
-                requestKey: null
-            });
-
-            const timeoutPromise = new Promise<never>((_, reject) =>
-                setTimeout(() => reject(new Error('Recommended playlists request timeout')), 3500)
-            );
-
-            let result = await Promise.race([fetchPromise, timeoutPromise]);
-
-            // 2. Fallback: If no playlists have >= 2 videos for this language, allow video_count >= 1
-            if (result.items.length === 0) {
-                const fallbackPromise = client.collection('playlists').getList(1, limit, {
-                    filter: `visibility="published" && language="${sanitizeFilterValue(language)}"`,
-                    sort: '-is_featured,-save_count,-updated',
-                    expand: 'user',
-                    requestKey: null
-                });
-                result = await Promise.race([fallbackPromise, timeoutPromise]);
-            }
-
-            const playlists = result.items.map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>));
-            this.recommendedCache.set(cacheKey, playlists);
+            this.recommendedCache.set(cacheKey, finalPlaylists);
 
             if (requestId !== this.activeRecommendedRequestId) {
                 return [];
             }
 
-            this.recommendedPlaylists.set(playlists);
-            return playlists;
+            this.recommendedPlaylists.set(finalPlaylists);
+            return finalPlaylists;
         } catch (error) {
             if (requestId === this.activeRecommendedRequestId) {
                 console.error('[Playlist] Failed to load recommended playlists from server:', error);
