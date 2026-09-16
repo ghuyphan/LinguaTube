@@ -6,7 +6,8 @@ import {
     tokenizeKoreanChinese,
     isPunctuation,
     hasKanji,
-    katakanaToHiragana
+    katakanaToHiragana,
+    segmentJapaneseRuby
 } from '../functions-src/utils/tokenizer.js';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../functions-src/utils/japanese-romaji.js';
 
@@ -134,6 +135,47 @@ test('Tokenizer [EN]: English segmentation, POS tagging, and lemmatization', asy
     const exclamation = tokens.find(t => t.surface === '!');
     assert.ok(exclamation);
     assert.equal(exclamation.isPunctuation, true);
+});
+
+test('Tokenizer [EN]: Handles contractions without desynchronizing subsequent tokens', async () => {
+    const text = "Don't give up on your dreams.";
+    const tokens = await tokenizeEnglish(text);
+
+    const dontToken = tokens.find(t => t.surface.toLowerCase() === "don't");
+    assert.ok(dontToken);
+    assert.equal(dontToken.partOfSpeech, 'Verb');
+
+    const giveToken = tokens.find(t => t.surface === 'give');
+    assert.ok(giveToken);
+    assert.equal(giveToken.partOfSpeech, 'Verb');
+    assert.equal(giveToken.baseForm, undefined); // 'give' is already infinitive/base form
+
+    const dreamsToken = tokens.find(t => t.surface === 'dreams');
+    assert.ok(dreamsToken);
+    assert.equal(dreamsToken.partOfSpeech, 'Noun');
+    assert.equal(dreamsToken.baseForm, 'dream');
+});
+
+test('Tokenizer [JA]: segmentJapaneseRuby segments okurigana from kanji stems', () => {
+    // 食べる -> 食(た) + べる
+    const taberu = segmentJapaneseRuby('食べる', 'たべる');
+    assert.deepEqual(taberu, [
+        { text: '食', reading: 'た' },
+        { text: 'べる' }
+    ]);
+
+    // 美しい -> 美(うつく) + しい
+    const utsukushii = segmentJapaneseRuby('美しい', 'うつくしい');
+    assert.deepEqual(utsukushii, [
+        { text: '美', reading: 'うつく' },
+        { text: 'しい' }
+    ]);
+
+    // 日本語 -> 日本語(にほんご)
+    const nihongo = segmentJapaneseRuby('日本語', 'にほんご');
+    assert.deepEqual(nihongo, [
+        { text: '日本語', reading: 'にほんご' }
+    ]);
 });
 
 // ============================================================================

@@ -70,13 +70,12 @@ export class AuthService {
                 const shouldEmitLogin = isNewLogin && !this.initialProfile;
                 void this.syncProfileFromSession(session, shouldEmitLogin);
             } else if (this.isInitialized()) {
-                const hadUser = this.user() !== null;
                 this.activeUserId = null;
                 this.clearStoredProfile();
                 this.user.set(null);
-                if (hadUser && !this.isLoggingOut()) {
-                    this.logoutEvent.next();
-                }
+                // NOTE: Do NOT emit logoutEvent here on session expiration/network drop.
+                // logoutEvent purges all local offline repositories. It must only fire on explicit
+                // user-initiated signOut() or when switching to a different account.
             }
         });
     }

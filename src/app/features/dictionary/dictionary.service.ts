@@ -506,17 +506,45 @@ export class DictionaryService {
   }
 
   // ─────────────────────────────────────────────────────────────
-  // Cache helpers (localStorage with LRU eviction)
+  // Cache helpers (In-Memory Map with Debounced LocalStorage Persistence)
   // ─────────────────────────────────────────────────────────────
+
+  private inMemoryCache: Map<string, { data: DictionaryEntry[]; accessTime: number }> | null = null;
+  private saveDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+
+  private getCache(): Map<string, { data: DictionaryEntry[]; accessTime: number }> {
+    if (this.inMemoryCache) {
+      return this.inMemoryCache;
+    }
+
+    this.inMemoryCache = new Map();
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const stored = localStorage.getItem(this.CACHE_KEY);
+        if (stored) {
+          const parsed = JSON.parse(stored) as Record<string, { data: DictionaryEntry | DictionaryEntry[]; accessTime: number }>;
+          for (const [k, v] of Object.entries(parsed)) {
+            const data = Array.isArray(v.data) ? v.data : [v.data];
+            this.inMemoryCache.set(k, { data, accessTime: v.accessTime || Date.now() });
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('[Dictionary] Failed to load initial cache from storage:', e);
+    }
+    return this.inMemoryCache;
+  }
 
   private getFromCacheWithKey(key: string): DictionaryEntry[] | null {
     try {
-      const cache = this.loadCache();
-      const entry = cache[key];
+      const cache = this.getCache();
+      const entry = cache.get(key);
       if (entry) {
         entry.accessTime = Date.now();
-        this.saveCache(cache);
-        return Array.isArray(entry.data) ? entry.data : [entry.data];
+        // Re-insert to maintain LRU access order
+        cache.delete(key);
+        cache.set(key, entry);
+        return entry.data;
       }
     } catch (e) {
       console.warn('[Dictionary] Cache read error:', e);
@@ -526,34 +554,41 @@ export class DictionaryService {
 
   private saveToCacheWithKey(key: string, data: DictionaryEntry[]): void {
     try {
-      const cache = this.loadCache();
-      cache[key] = { data, accessTime: Date.now() };
+      const cache = this.getCache();
+      cache.set(key, { data, accessTime: Date.now() });
 
-      const keys = Object.keys(cache);
-      if (keys.length > this.MAX_CACHE_SIZE) {
-        const sorted = keys.sort((a, b) => cache[a].accessTime - cache[b].accessTime);
-        sorted.slice(0, keys.length - this.MAX_CACHE_SIZE).forEach(k => delete cache[k]);
+      // Fast LRU eviction from Map (insertion order)
+      while (cache.size > this.MAX_CACHE_SIZE) {
+        const oldestKey = cache.keys().next().value;
+        if (oldestKey) {
+          cache.delete(oldestKey);
+        } else {
+          break;
+        }
       }
 
-      this.saveCache(cache);
+      this.schedulePersistCache();
     } catch (e) {
       console.warn('[Dictionary] Cache write error:', e);
     }
   }
 
-  private loadCache(): Record<string, { data: DictionaryEntry | DictionaryEntry[]; accessTime: number }> {
-    try {
-      const stored = localStorage.getItem(this.CACHE_KEY);
-      return stored ? JSON.parse(stored) : {};
-    } catch {
-      return {};
-    }
-  }
-
-  private saveCache(cache: Record<string, { data: DictionaryEntry | DictionaryEntry[]; accessTime: number }>): void {
-    try {
-      localStorage.setItem(this.CACHE_KEY, JSON.stringify(cache));
-    } catch { }
+  private schedulePersistCache(): void {
+    if (this.saveDebounceTimer) return;
+    this.saveDebounceTimer = setTimeout(() => {
+      this.saveDebounceTimer = null;
+      try {
+        if (typeof window !== 'undefined' && window.localStorage && this.inMemoryCache) {
+          const obj: Record<string, { data: DictionaryEntry[]; accessTime: number }> = {};
+          for (const [k, v] of this.inMemoryCache.entries()) {
+            obj[k] = v;
+          }
+          localStorage.setItem(this.CACHE_KEY, JSON.stringify(obj));
+        }
+      } catch (e) {
+        console.warn('[Dictionary] Failed to persist dictionary cache to localStorage:', e);
+      }
+    }, 2000);
   }
 }
 

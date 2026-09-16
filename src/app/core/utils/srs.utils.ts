@@ -41,14 +41,14 @@ export function calculateNextSRSState(
     } else if (quality === 3) {
         // Quality 3 = Hard (recalled with significant effort)
         repetitions++;
-        interval = repetitions <= 1 ? 1 : Math.max(1, Math.round(interval * 1.2));
+        interval = repetitions <= 1 ? 1 : Math.max(interval + 1, Math.round(interval * 1.2));
         easeFactor = Math.max(1.3, easeFactor - 0.15);
 
         if (item.level === 'new') {
             newLevel = 'learning';
-        } else if (item.level === 'learning' && repetitions >= 3) {
-            newLevel = 'known';
         }
+        // NOTE: Hard reviews indicate struggle; do NOT promote to 'known'.
+        // Promotion to 'known' requires 'Good' (quality 4) or 'Easy' (quality 5).
     } else if (quality === 4) {
         // Quality 4 = Good (standard SM-2 successful recall)
         repetitions++;

@@ -505,14 +505,14 @@ export class TranslationService implements OnDestroy {
         targetLang: string,
         segments: { text: string; start: number; duration: number; translation?: string }[]
     ): Observable<boolean> {
-        return this.http.post<{ success?: boolean; cached?: boolean }>(environment.api.dualSubtitles, {
+        return this.http.post<{ success?: boolean; saved?: boolean; cached?: boolean }>(environment.api.dualSubtitles, {
             videoId,
             sourceLang,
             targetLang,
             segments,
             saveOnly: true
         }).pipe(
-            map(res => Boolean(res.success || res.cached)),
+            map(res => Boolean(res.success || res.saved || res.cached)),
             catchError(err => {
                 console.warn('[Translation] Save dual subtitles to cache failed:', err);
                 return of(false);

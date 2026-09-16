@@ -134,7 +134,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **`context.waitUntil()` Background Processing**:
   - Edge Worker isolates continue background execution after the HTTP response is sent.
   - On `transcription.success`: Robustly parses transcript payload via `extractGladiaSegments` (supporting Gladia v2 `item.sentence` semantic sentences, `item.text` utterances, and nested formats), normalizes language codes (including ISO 639-2/3 like `cmn`/`jpn`/`kor`), commits permanently to Cloudflare R2 (`transcripts/{videoId}/{lang}.json`), updates D1 `video_languages`, and marks D1 `ai_transcription_jobs` as `'completed'`.
-  - On `transcription.failure`: Calls `atomicFailAndRefundAiJob()`, transitions status to `'failed'`, records error diagnostics, and refunds the user's deducted Diamonds via Supabase REST API.
+  - On `transcription.failure`: Calls `atomicFailAndRefundAiJob()`, transitions status to `'failed'`, records error diagnostics, and refunds the user's deducted Diamonds via Supabase RPC (`refund_user_diamonds`) with atomic row-level locks (`FOR UPDATE`).
+  - **Zombie Job Auto-Expiration & Refund**: If an AI transcription job remains in `'pending'` or `'processing'` for longer than 15 minutes without progress, `getActiveAiJob()` automatically marks the job as `'failed'` (`timeout_expired`) and issues a diamond refund to prevent user credit forfeiture.
 
 ---
 
@@ -202,8 +203,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Cache-First Fast Lookup (`onlyCache: true` or `?onlyCache=true`)**:
   - Checks Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) or local disk cache (`server/transcripts_cache/`).
   - Does not require a `segments` payload on cache checks, eliminating unnecessary payload overhead.
-  - If cached transcript exists: Returns `{ segments: [...], cached: true }`.
-  - If not cached: Returns `{ segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
+  - If cached transcript exists: Returns `{ success: true, segments: [...], cached: true }`.
+  - If not cached: Returns `{ success: true, segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
 - **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
   - **Authenticated Sessions Enforced**: To prevent malicious callers from poisoning crowd-sourced translations in R2/D1, `saveOnly: true` strictly requires an authenticated user session (`authResult.valid`). Unauthenticated write-backs are rejected with HTTP 401.
   - **Incremental Crowd-Cache Merging & Self-Healing**: When the client translates cues during playback, it saves checkpoints (after $\ge 10$ newly translated cues or on video pause/switch), as well as a final save upon reaching $\ge 80\%$ coverage (`QUALITY_THRESHOLD`).
@@ -214,6 +215,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.
   - **Worker Timeout Protection**: Live translation requests in `/api/dual-subtitles` are capped at 40 segments (`BATCH_SIZE`) to prevent Cloudflare Worker 30-second execution timeouts. Larger transcripts stream upcoming cues via `/api/translate/batch` and commit via `saveOnly: true`.
   - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback.
+  - **Fault-Tolerant XML Tag Extraction**: `decodeTaggedTranslations` tolerates machine-translated formatting anomalies, including unicode and curly quotation marks (`“`, `”`, `‘`, `’`, `«`, `»`), spacing irregularities, and out-of-order responses without crashing or dropping cues.
 - **Rate Limiting**: Tiered hourly quota (anonymous: 5, free: 15, pro: 60, premium: 120 requests/hr).
 
 ---
@@ -313,8 +315,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - $20$–$35$ minutes: **3 Diamond credits**
   - $35$–$45$ minutes: **4 Diamond credits**
 - **Quotas & Performance Optimization**:
-  - **Memory-first caching**: Warm edge isolates cache anonymous user diamond status in `memDiamondsCache` with 60s TTL, throttling KV writes to preserve the 1,000 writes/day free limit.
-  - **In-Memory Profile Caching**: Authenticated user profiles are cached in memory for 5 minutes, eliminating redundant database calls.
+  - **Atomic Supabase RPC Functions (`consume_user_diamonds`, `refund_user_diamonds`)**: Deductions and refunds use PostgreSQL stored functions executing `SELECT diamonds FROM profiles WHERE id = target_user_id FOR UPDATE`, preventing race conditions and double-spending across concurrent requests. If balance is insufficient, the transaction fails closed.
+  - **Bounded LRU Memory Cache**: Authenticated user diamond state is cached in memory with a hard ceiling (`MAX_MEM_DIAMONDS_CACHE = 1,000`), automatically evicting oldest entries to prevent Worker isolate memory bloat.
+  - **Anonymous Tier Caching**: Warm edge isolates cache anonymous user diamond status in `memDiamondsCache` with 60s TTL, throttling KV writes to preserve the 1,000 writes/day free limit.
 
 ---
 
@@ -331,6 +334,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Queries Cloudflare D1 `video_languages` table for verified transcripts stored on our server (`sub_languages LIKE '%"lang"%'`), with fallback to `available_languages` only if `sub_languages` is unpopulated.
   - Multi-Language Support: Videos can store multiple verified transcript languages in `sub_languages` (e.g. `["ja", "en"]`), returned in `languages` for accurate multi-lingual badges (`JA / EN`).
   - Strict Server Verification: Verifies that transcript files (`transcripts/{videoId}/{lang}.json`) actually exist on our server (Cloudflare R2 storage / dev cache) before recommending, eliminating phantom recommendations and un-transcribed language badges.
+  - **Subrequest Quota Safety (`MAX_R2_HEAD_CHECKS = 10`)**: R2 object existence checks are strictly budgeted to a maximum of 10 HEAD requests per invocation, ensuring the function never violates Cloudflare Workers' 50 subrequest limit while populating recommendations.
   - Supports `offset` pagination directly against D1 candidates (`LIMIT ? OFFSET ?`), enabling seamless infinite scroll without duplicate entries.
   - When `tier` is requested or `refresh=true` is passed, queries a larger candidate pool from D1, performs uniform Fisher-Yates candidate shuffling, and filters rows matching the target tier (`labelToTier`).
   - **Recent Candidate Pinning**: When shuffling candidates on refresh, the top 3 most recently updated / newly transcribed videos remain pinned at the front of the list, ensuring that newly generated user transcripts are never buried or lost upon clicking refresh.
@@ -384,7 +388,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
 - **Process & Security**:
   1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Enforces strict destination URL validation (`isValidRedirectUrl`) on `returnUrl` and `cancelUrl` against trusted application domains to eliminate open redirect vectors. Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV. All error outputs are sanitized to avoid leaking internal provider details.
-  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time comparison across all environments (development bypass eliminated). Enforces fail-closed verification, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's `profiles` record in Supabase to `subscription_tier` (`'pro'` or `'premium'`), sets `subscription_expires` (+30 days or +365 days), and allocates initial diamonds (10 for Pro, 25 for Premium) via direct Supabase REST using `SUPABASE_SERVICE_ROLE_KEY`.
+  2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time comparison across all environments (development bypass eliminated). Enforces fail-closed verification, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically upgrades the user's `profiles` record in Supabase to `subscription_tier` (`'pro'` or `'premium'`), calculates extended subscription expiration from `Math.max(Date.now(), currentExpires) + durationDays` (preserving remaining days on active plans instead of resetting from now), and allocates initial diamonds (10 for Pro, 25 for Premium) via direct Supabase REST using `SUPABASE_SERVICE_ROLE_KEY`.
   3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`. All unexpected exceptions return sanitized error payloads.
 
 ---

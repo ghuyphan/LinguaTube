@@ -179,6 +179,7 @@ export async function onRequestPost(context) {
                 }
 
                 return jsonResponse({
+                    success: true,
                     videoId: cleanVideoId,
                     sourceLang,
                     targetLang,

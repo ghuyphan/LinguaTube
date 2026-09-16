@@ -2,6 +2,7 @@ import { Component, input, output, inject, signal, computed, ChangeDetectionStra
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { OptionPickerComponent, OptionItem } from '../../../../../shared/components/option-picker/option-picker.component';
 import { VideoLevelDialogComponent } from '../../../../../components/video-level-dialog/video-level-dialog.component';
 import { I18nService } from '../../../../../core/services/i18n.service';
 import { VideoLevelService } from '../../../../../core/services/video-level.service';
@@ -9,12 +10,13 @@ import { TranscriptService } from '../../../transcript.service';
 
 import { LearningLanguageService } from '../../../../../services/learning-language.service';
 import { normalizeLanguageCode } from '../../../../../shared/utils/language.utils';
+import { getLanguageFlagUrl } from '../../../../../models';
 
 @Component({
   selector: 'app-video-header',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent, VideoLevelDialogComponent],
+  imports: [CommonModule, IconComponent, BottomSheetComponent, VideoLevelDialogComponent, OptionPickerComponent],
   templateUrl: './video-header.component.html',
   styleUrl: './video-header.component.scss'
 })
@@ -45,6 +47,7 @@ export class VideoHeaderComponent {
       code,
       normalized: normalizeLanguageCode(code),
       label: this.getLanguageLabel(code),
+      flagUrl: getLanguageFlagUrl(code),
       isAI: false,
       isActive: !isAI && normalizeLanguageCode(code) === activeLang
     }));
@@ -53,6 +56,7 @@ export class VideoHeaderComponent {
       code,
       normalized: normalizeLanguageCode(code),
       label: this.getLanguageLabel(code),
+      flagUrl: getLanguageFlagUrl(code),
       isAI: true,
       isActive: isAI && normalizeLanguageCode(code) === activeLang
     }));
@@ -95,9 +99,85 @@ export class VideoHeaderComponent {
     this.showTracksSheet.set(true);
   }
 
+  readonly trackOptions = computed<OptionItem[]>(() => {
+    const langs = this.transcript.availableLanguages();
+    const items: OptionItem[] = [];
+
+    // Native tracks
+    for (const code of (langs.native || [])) {
+      items.push({
+        value: code,
+        label: this.getLanguageLabel(code),
+        description: `${code.toUpperCase()} • ${this.i18n.t('subtitle.nativeTracks') || 'Native Subtitles'}`,
+        iconUrl: getLanguageFlagUrl(code)
+      });
+    }
+
+    // AI tracks
+    for (const code of (langs.ai || [])) {
+      items.push({
+        value: `ai:${code}`,
+        label: this.getLanguageLabel(code),
+        description: `${code.toUpperCase()} • ${this.i18n.t('subtitle.whisperAi') || 'Whisper AI'}`,
+        iconUrl: getLanguageFlagUrl(code),
+        badge: 'AI',
+        color: 'ai'
+      });
+    }
+
+    // Target Language AI generation option
+    if (this.canGenerateTargetAI()) {
+      const targetLabel = this.targetLanguageLabel();
+      items.push({
+        value: '__generate_ai__',
+        label: (this.i18n.t('subtitle.transcribeWithAI') || 'Generate AI Subtitles') + (targetLabel ? ` (${targetLabel})` : ''),
+        description: this.i18n.t('subtitle.whisperAi') || 'Powered by Whisper AI',
+        icon: 'subtitles-ai',
+        badge: 'AI',
+        color: 'ai'
+      });
+    }
+
+    if (items.length === 0) {
+      items.push({
+        value: '',
+        label: this.i18n.t('subtitle.noCaptionsAvailable') || 'No subtitles available',
+        description: this.i18n.t('subtitle.noTracksFound') || 'No subtitles found for this video',
+        icon: 'subtitles'
+      });
+    }
+
+    return items;
+  });
+
+  readonly activeTrackValue = computed<string>(() => {
+    const activeLang = normalizeLanguageCode(this.transcript.detectedLanguage());
+    const isAI = this.transcript.isAIGenerated();
+    const langs = this.transcript.availableLanguages();
+    if (isAI) {
+      const match = (langs.ai || []).find(c => normalizeLanguageCode(c) === activeLang);
+      return match ? `ai:${match}` : `ai:${activeLang}`;
+    } else {
+      const match = (langs.native || []).find(c => normalizeLanguageCode(c) === activeLang);
+      return match || activeLang;
+    }
+  });
+
   onSelectTrack(code: string): void {
     this.showTracksSheet.set(false);
     this.selectTrack.emit(code);
+  }
+
+  onTrackOptionSelected(val: string): void {
+    this.showTracksSheet.set(false);
+    if (!val) return;
+    if (val === '__generate_ai__') {
+      this.triggerAI.emit();
+    } else if (val.startsWith('ai:')) {
+      this.selectTrack.emit(val.slice(3));
+    } else {
+      this.selectTrack.emit(val);
+    }
   }
 
   onGenerateAI(): void {
@@ -123,4 +203,9 @@ export class VideoHeaderComponent {
       default: return codeStr.toUpperCase();
     }
   }
+
+  getTrackFlag(code: string): string {
+    return getLanguageFlagUrl(code);
+  }
 }
+

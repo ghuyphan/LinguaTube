@@ -85,7 +85,15 @@ import { VocabularyService } from '../../../../vocabulary';
                       (click)="onWordClick(vt.token, cue.text, vt.index, $event)">
                       
                       @if (showReadingAnnotation()) {
-                        @if (vt.reading) {
+                        @if (vt.rubyParts && vt.rubyParts.length > 0) {
+                          @for (part of vt.rubyParts; track $index) {
+                            @if (part.reading) {
+                              <ruby>{{ part.text }}<rt>{{ part.reading }}</rt></ruby>
+                            } @else {
+                              <ruby>{{ part.text }}<rt class="rt-empty">&#160;</rt></ruby>
+                            }
+                          }
+                        } @else if (vt.reading) {
                           <ruby>{{ vt.surface }}<rt>{{ vt.reading }}</rt></ruby>
                         } @else {
                           <ruby>{{ vt.surface }}<rt class="rt-empty">&#160;</rt></ruby>
@@ -202,7 +210,8 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                 isSaved,
                 wordLevel,
                 reading,
-                displayText
+                displayText,
+                rubyParts: token.rubyParts
             };
         });
     });

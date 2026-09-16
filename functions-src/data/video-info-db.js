@@ -534,6 +534,8 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                 const channelCounts = new Map();
                 const deferredRows = [];
                 const maxPerChannel = Math.max(2, Math.floor(safeLimit / 4));
+                let r2HeadChecks = 0;
+                const MAX_R2_HEAD_CHECKS = 10;
 
                 const processRow = async (row) => {
                     if (videoMap.has(row.video_id)) return;
@@ -548,9 +550,10 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     } catch { }
                     if (!Array.isArray(subLangs)) subLangs = [];
 
-                    // Verification: If sub_languages doesn't explicitly have lang, verify against R2
+                    // Verification: If sub_languages doesn't explicitly have lang, verify against R2 (capped to preserve CF subrequests)
                     if (!subLangs.includes(lang)) {
-                        if (r2) {
+                        if (r2 && r2HeadChecks < MAX_R2_HEAD_CHECKS) {
+                            r2HeadChecks++;
                             try {
                                 const key = `transcripts/${row.video_id}/${lang}.json`;
                                 const head = await r2.head(key);
@@ -564,8 +567,8 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                             } catch {
                                 return;
                             }
-                        } else if (subLangs.length > 0) {
-                            // r2 not provided and sub_languages exists but does not include target lang
+                        } else {
+                            // Subrequest limit reached or r2 not available, skip unverified candidate
                             return;
                         }
                     }

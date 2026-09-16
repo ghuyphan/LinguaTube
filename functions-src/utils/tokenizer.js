@@ -92,6 +92,38 @@ export async function getKuromojiTokenizer() {
 export { katakanaToHiragana };
 
 /**
+ * Segments kanji stem and okurigana for ruby annotations (e.g. 食べる -> 食(た) + べる)
+ */
+export function segmentJapaneseRuby(surface, reading) {
+    if (!surface || !reading || !hasKanji(surface)) {
+        return null;
+    }
+    let trailLen = 0;
+    while (
+        trailLen < surface.length &&
+        trailLen < reading.length &&
+        surface[surface.length - 1 - trailLen] === reading[reading.length - 1 - trailLen] &&
+        isJapaneseKanaText(surface[surface.length - 1 - trailLen])
+    ) {
+        trailLen++;
+    }
+
+    if (trailLen > 0) {
+        const stemSurface = surface.slice(0, surface.length - trailLen);
+        const stemReading = reading.slice(0, reading.length - trailLen);
+        const okurigana = surface.slice(surface.length - trailLen);
+        if (stemSurface && stemReading) {
+            return [
+                { text: stemSurface, reading: stemReading },
+                { text: okurigana }
+            ];
+        }
+    }
+
+    return [{ text: surface, reading }];
+}
+
+/**
  * Tokenize Japanese text with kuromoji
  * Only adds reading (furigana) for tokens containing kanji
  */
@@ -118,6 +150,10 @@ export async function tokenizeJapanese(text) {
         // Only add reading for tokens containing kanji (skip punctuation)
         if (kanaReading && hasKanji(t.surface_form)) {
             token.reading = kanaReading;
+            const parts = segmentJapaneseRuby(t.surface_form, kanaReading);
+            if (parts && parts.length > 0) {
+                token.rubyParts = parts;
+            }
         }
 
         if (kanaReading) {
@@ -214,7 +250,24 @@ export async function tokenizeEnglish(text) {
 
             if (termIndex < terms.length) {
                 const term = terms[termIndex];
-                termIndex++;
+                const cleanSeg = seg.segment.toLowerCase().replace(/[^a-z0-9]/gi, '');
+
+                // Advance termIndex past all terms that belong to this segment (e.g. contractions like "don't" -> "do" + "not")
+                let combinedTermText = (term.text || '').toLowerCase().replace(/[^a-z0-9]/gi, '');
+                let consumedTerms = 1;
+                while (
+                    cleanSeg.length > combinedTermText.length &&
+                    termIndex + consumedTerms < terms.length
+                ) {
+                    const nextTermText = (terms[termIndex + consumedTerms].text || '').toLowerCase().replace(/[^a-z0-9]/gi, '');
+                    if (cleanSeg.startsWith(combinedTermText + nextTermText) || (combinedTermText + nextTermText).startsWith(cleanSeg)) {
+                        combinedTermText += nextTermText;
+                        consumedTerms++;
+                    } else {
+                        break;
+                    }
+                }
+                termIndex += consumedTerms;
 
                 if (term.tags && term.tags.length > 0) {
                     token.partOfSpeech = term.tags[0];

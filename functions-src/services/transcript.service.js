@@ -263,7 +263,7 @@ export class TranscriptService {
         }
 
         // 4. Check for active job in D1
-        const activeJob = await getActiveAiJob(db, videoId, lang);
+        const activeJob = await getActiveAiJob(db, videoId, lang, this.diamondService, env, context);
         if (activeJob) {
             return {
                 status: 'processing',

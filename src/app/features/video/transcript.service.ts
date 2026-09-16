@@ -567,13 +567,14 @@ export class TranscriptService {
     }
 
     // Scenario B: Completed successfully
-    if (response.success && response.segments?.length > 0) {
-      const cues = this.convertToSubtitleCues(response.segments);
+    const segments = response.segments;
+    if (response.success && segments && segments.length > 0) {
+      const cues = this.convertToSubtitleCues(segments);
       const source: 'native' | 'ai' = response.source === 'ai' ? 'ai' : 'native';
 
       this.videoRecommendation.clearCache();
 
-      if (response.requestedLanguage !== response.language) {
+      if (response.requestedLanguage && response.language && response.requestedLanguage !== response.language) {
         this.fallbackInfo.set({
           requested: response.requestedLanguage,
           returned: response.language
@@ -582,7 +583,7 @@ export class TranscriptService {
 
       this.state.set({
         status: 'complete',
-        language: response.language,
+        language: response.language || '',
         requestedLanguage: response.requestedLanguage,
         languageMismatch: response.languageMismatch ?? (response.requestedLanguage !== response.language),
         source,
@@ -597,7 +598,7 @@ export class TranscriptService {
     this.state.set({
       status: 'error',
       code: errorCode,
-      whisperAvailable: response.whisperAvailable
+      whisperAvailable: response.whisperAvailable ?? true
     });
 
     return of([]);

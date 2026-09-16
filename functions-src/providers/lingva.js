@@ -163,7 +163,7 @@ export function decodeTaggedTranslations(translatedText, expectedCount) {
     const map = new Map();
     if (!translatedText) return map;
 
-    const regex = /<[\s]*t[\s]+id[\s]*=[\s]*["']?(\d+)["']?[\s]*>([\s\S]*?)<\/[\s]*t[\s]*>/gi;
+    const regex = /<[\s]*t[\s]+id[\s]*=[\s]*["'“”‘’«»]?(\d+)["'“”‘’«»]?[\s]*>([\s\S]*?)<\/[\s]*t[\s]*>/gi;
     let match;
     while ((match = regex.exec(translatedText)) !== null) {
         const id = parseInt(match[1], 10);
@@ -272,32 +272,41 @@ export async function translateBatch(texts, source, target) {
                                 }
                             }
                         } else {
-                            // Targeted fallback: only request the missing items
-                            for (const missingIdx of missingIndices) {
-                                try {
-                                    const singleRes = await translateText(
-                                        chunk.texts[missingIdx],
-                                        source,
-                                        target
-                                    );
-                                    results[chunk.indices[missingIdx]] = singleRes || (source === target ? chunk.texts[missingIdx] : null);
-                                } catch {
-                                    results[chunk.indices[missingIdx]] = source === target ? chunk.texts[missingIdx] : null;
-                                }
+                            // Targeted fallback: request missing items in bounded batches of 5 to prevent timeouts
+                            const FALLBACK_BATCH = 5;
+                            for (let m = 0; m < missingIndices.length; m += FALLBACK_BATCH) {
+                                const slice = missingIndices.slice(m, m + FALLBACK_BATCH);
+                                await Promise.all(slice.map(async (missingIdx) => {
+                                    try {
+                                        const singleRes = await translateText(
+                                            chunk.texts[missingIdx],
+                                            source,
+                                            target
+                                        );
+                                        results[chunk.indices[missingIdx]] = singleRes || (source === target ? chunk.texts[missingIdx] : null);
+                                    } catch {
+                                        results[chunk.indices[missingIdx]] = source === target ? chunk.texts[missingIdx] : null;
+                                    }
+                                }));
                             }
                         }
                     }
                 }
             } catch (error) {
                 console.warn(`[Lingva] Tagged batch chunk failed: ${error.message}`);
-                // Fallback: recover individual items for this failed chunk
-                for (let j = 0; j < chunk.texts.length; j++) {
-                    try {
-                        const singleRes = await translateText(chunk.texts[j], source, target);
-                        results[chunk.indices[j]] = singleRes || (source === target ? chunk.texts[j] : null);
-                    } catch {
-                        results[chunk.indices[j]] = source === target ? chunk.texts[j] : null;
-                    }
+                // Fallback: recover individual items for this failed chunk in bounded batches of 5
+                const FALLBACK_BATCH = 5;
+                for (let j = 0; j < chunk.texts.length; j += FALLBACK_BATCH) {
+                    const slice = chunk.texts.slice(j, j + FALLBACK_BATCH);
+                    await Promise.all(slice.map(async (text, offset) => {
+                        const idx = j + offset;
+                        try {
+                            const singleRes = await translateText(text, source, target);
+                            results[chunk.indices[idx]] = singleRes || (source === target ? text : null);
+                        } catch {
+                            results[chunk.indices[idx]] = source === target ? text : null;
+                        }
+                    }));
                 }
             }
 

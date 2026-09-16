@@ -64,6 +64,19 @@ describe('srs.utils', () => {
             expect(result.newLevel).toBe('known');
         });
 
+        it('guarantees interval advancement on Hard when interval is 1 and preserves learning level', () => {
+            const item: Pick<VocabularyItem, 'level' | 'easeFactor' | 'interval' | 'repetitions'> = {
+                level: 'learning',
+                easeFactor: 2.5,
+                interval: 1,
+                repetitions: 2
+            };
+            const result = calculateNextSRSState(item, 3);
+            expect(result.repetitions).toBe(3);
+            expect(result.interval).toBe(2); // Math.max(1 + 1, Math.round(1 * 1.2)) = 2
+            expect(result.newLevel).toBe('learning'); // Must not promote to known on Hard
+        });
+
         it('handles Easy (quality 5) with bonus interval and increased ease', () => {
             const item: Pick<VocabularyItem, 'level' | 'easeFactor' | 'interval' | 'repetitions'> = {
                 level: 'learning',

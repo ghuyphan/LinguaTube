@@ -16,11 +16,17 @@ export interface SubtitleCue {
   translation?: string;
 }
 
+export interface RubyPart {
+  text: string;
+  reading?: string;
+}
+
 export interface Token {
   surface: string;        // The word as it appears
   reading?: string;       // Hiragana reading (Japanese)
   pinyin?: string;        // Pinyin (Chinese)
   romanization?: string;  // Romanization (Japanese/Korean)
+  rubyParts?: RubyPart[]; // Segmented ruby parts (kanji stem vs okurigana)
   baseForm?: string;      // Dictionary form
   partOfSpeech?: string;  // Noun, verb, etc.
   hasKanji?: boolean;     // Whether token contains kanji (Japanese)

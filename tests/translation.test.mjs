@@ -47,6 +47,16 @@ test('decodeTaggedTranslations: handles partial tag failure without throwing', (
     assert.equal(map.get(2), 'Third');
 });
 
+test('decodeTaggedTranslations: handles curly and unicode quotes in tags', () => {
+    const mockTranslated = '<t id=“0”>First line</t>\n<t id=‘1’>Second line</t>\n<t id=«2»>Third line</t>';
+    const map = decodeTaggedTranslations(mockTranslated, 3);
+
+    assert.equal(map.size, 3);
+    assert.equal(map.get(0), 'First line');
+    assert.equal(map.get(1), 'Second line');
+    assert.equal(map.get(2), 'Third line');
+});
+
 test('dual subtitle quality threshold: calculates coverage accurately', () => {
     const segments = [
         { text: 'A', translation: 'Trans A' },

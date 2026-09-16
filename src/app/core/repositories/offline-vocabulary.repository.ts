@@ -8,6 +8,8 @@ import { generateRandomId, calculateNextSRSState } from '../utils';
 
 const STORAGE_KEY = 'linguatube_vocabulary';
 const TOMBSTONES_KEY = 'linguatube_deleted_vocab_tombstones';
+const SYNCED_REMOTE_IDS_KEY = 'linguatube_vocab_synced_ids';
+const TOMBSTONE_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days retention
 const SAVE_DEBOUNCE_MS = 300;
 
 interface DeletionTombstone {
@@ -293,7 +295,6 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
         if (this.auth.isLoggedIn()) {
             this.deleteFromServer(item.word, item.language)
-                .then(() => this.removeDeletionTombstone(item.id))
                 .catch(err => console.error('[VocabRepo] Failed to delete on server:', err));
         }
     }
@@ -368,7 +369,6 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 for (const t of tombstones) {
                     try {
                         await this.deleteFromServer(t.word, t.language);
-                        this.removeDeletionTombstone(t.id);
                     } catch (err) {
                         console.warn('[VocabRepo] Retry tombstone delete failed:', err);
                     }
@@ -376,9 +376,30 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             }
             const activeRemote = remoteItems.filter(r => !tombstones.some(t => t.id === r.id));
 
-            // 3. Local State
+            // Detect items deleted remotely on another device:
+            // If an item was previously tracked in SYNCED_REMOTE_IDS_KEY but is no longer in remoteItems,
+            // it was deleted on another device. Record tombstone and purge locally.
+            const previouslySyncedIds = new Set(this.storage.get<string[]>(SYNCED_REMOTE_IDS_KEY) || []);
+            const currentRemoteIdSet = new Set(remoteItems.map(r => r.id));
+            const tombstoneIdSet = new Set(tombstones.map(t => t.id));
+
             const localItems = this.vocabulary();
-            const localSyncItems = this.convertToSyncItems(localItems);
+            const survivingLocalItems = localItems.filter(item => {
+                if (tombstoneIdSet.has(item.id)) return false;
+                // If this item was previously synced from server, but server no longer has it:
+                if (previouslySyncedIds.has(item.id) && !currentRemoteIdSet.has(item.id)) {
+                    this.addDeletionTombstone(item.id, item.word, item.language);
+                    return false;
+                }
+                return true;
+            });
+
+            if (survivingLocalItems.length !== localItems.length) {
+                this.updateLocal(survivingLocalItems);
+            }
+
+            // 3. Local State
+            const localSyncItems = this.convertToSyncItems(survivingLocalItems);
 
             // 4. Merge (Safe strategy)
             const mergedSyncItems = mergeByTimestamp(
@@ -394,8 +415,12 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             // 6. Push ONLY modified/new items to Server (prevents O(N) request storms)
             const remoteMap = new Map(remoteItems.map(r => [r.id, r]));
             const dirtyItems = mergedSyncItems.filter(localItem => {
+                if (tombstoneIdSet.has(localItem.id)) return false;
                 const remote = remoteMap.get(localItem.id);
-                if (!remote) return true; // New local item
+                if (!remote) {
+                    // Truly new local item (was never synced before and not deleted)
+                    return !previouslySyncedIds.has(localItem.id);
+                }
                 if (!localItem.updated || !remote.updated) return true;
                 return new Date(localItem.updated).getTime() > new Date(remote.updated).getTime();
             });
@@ -404,6 +429,10 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 console.log(`[VocabRepo] Pushing ${dirtyItems.length} modified items to server`);
                 await this.pushToRemote(dirtyItems);
             }
+
+            // Save the new set of synced remote IDs
+            const allSyncedIds = Array.from(new Set([...remoteItems.map(r => r.id), ...dirtyItems.map(d => d.id)]));
+            this.storage.set(SYNCED_REMOTE_IDS_KEY, allSyncedIds);
 
             this.lastPushedHash = calculateHash(this.vocabulary(), i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`);
             console.log('[VocabRepo] Sync complete.');
@@ -437,6 +466,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             this.vocabulary.set([]);
             this.storage.remove(STORAGE_KEY);
             this.storage.remove(TOMBSTONES_KEY);
+            this.storage.remove(SYNCED_REMOTE_IDS_KEY);
             this.lastPushedHash = '';
         });
 
@@ -479,7 +509,13 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     // ==================== Deletion Tombstones ====================
 
     private getDeletionTombstones(): DeletionTombstone[] {
-        return this.storage.get<DeletionTombstone[]>(TOMBSTONES_KEY) || [];
+        const list = this.storage.get<DeletionTombstone[]>(TOMBSTONES_KEY) || [];
+        const now = Date.now();
+        const valid = list.filter(t => now - t.deletedAt < TOMBSTONE_TTL_MS);
+        if (valid.length !== list.length) {
+            this.storage.set(TOMBSTONES_KEY, valid);
+        }
+        return valid;
     }
 
     private addDeletionTombstone(id: string, word: string, language: string): void {

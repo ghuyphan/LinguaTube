@@ -112,14 +112,16 @@ The video player settings popover (`video-player.component.html`) provides dedic
 ### 2.1. Sticky Subtitle Synchronization Algorithm
 Standard subtitle displays flicker or disappear during small natural pauses in speech. Voca implements a **Sticky Subtitle** algorithm:
 1. Performs an $O(\log n)$ binary search (`findActiveCue`) to find the cue matching `currentTime`.
-2. If no active cue matches (e.g. speech gap), `findStickyCue` locates the most recent ended cue within a $0.1$s tolerance window.
-3. The cue remains visible until the next subtitle segment begins or playback advances beyond a maximum threshold.
+2. If no active cue matches (e.g. natural brief speech pause), `findStickyCue` locates the most recent ended cue within a $0.1$s tolerance window.
+3. **Silent Scene & Musical Interlude Guard**: To prevent subtitles from freezing on screen during long instrumental breaks, scene transitions, or silent pauses, `findStickyCue` enforces a strict $2.0$s gap threshold (`time - subs[result].endTime > 2.0`). If the gap exceeds 2.0 seconds, the sticky cue clears automatically.
+4. The cue remains visible until the next subtitle segment begins or playback advances beyond the 2.0s threshold.
 
 ### 2.2. Morphological Tokenization & Phonetics
 Subtitles are segmented into interactive tokens using language-specific NLP:
 - **Japanese (`ja`)**:
   - Analyzed by `@patdx/kuromoji` using IPAdic dictionaries loaded on demand via CDN.
   - Generates token surface forms, base dictionary forms, parts of speech, and Hiragana readings.
+  - **Okurigana Ruby Segmentation (`segmentJapaneseRuby`)**: Multi-kanji words with trailing okurigana (e.g. `食べる` with reading `たべる`, `美しい` with reading `うつくしい`) are segmented into distinct stem and kana parts (`{ text: '食', reading: 'た' }, { text: 'べる' }`). Kanji stems receive their authentic phonetic ruby annotations while trailing okurigana are rendered with an empty spacer `<rt class="rt-empty">&#160;</rt>`, preventing ruby text from stretching across kana endings.
   - **5 Reading Display Modes**:
     1. `native`: Clean Japanese script.
     2. `annotated`: Ruby Furigana (`<ruby>漢<rt>かん</rt></ruby>`).
@@ -136,6 +138,7 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **English (`en`)**:
   - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')` and enhanced with `compromise` NLP.
   - Morphological tagging provides Part-of-Speech (`partOfSpeech`) and root lemmatization (`baseForm`), aligning English tokens with Japanese and Korean morphological capabilities.
+  - **Contraction & Offset Synchronization**: Handles English contractions (`"don't"`, `"we'll"`, `"I'm"`) via character span and surface offset matching rather than naive 1-to-1 term mapping, preventing token offset desynchronization and ensuring subsequent tokens align accurately with original sentence text.
   - Everyday words, pronouns, articles, and contractions (`I`, `the`, `a`, `don't`) are strictly protected from grammar false positives, keeping words cleanly clickable for dictionary lookups and flashcard saving.
   - CEFR grammar patterns (compound tenses, modal perfects, phrasal modals, correlatives) detected with clean token ranges excluding spaces and punctuation, highlighted with vibrant mint teal accents and underlines (`.word--grammar`).
 - **Bulk Batch Tokenization & Zero Playback Overhead**:
@@ -337,6 +340,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
 - **Integrated Grammar Detection**: Searching words or grammatical stems also queries `GrammarService` to surface relevant grammar patterns, formation rules, and example sentences directly beneath definitions.
 - **Word Popup UI (`WordPopupComponent`) & Smooth Height Transitions**: Hosted within `BottomSheetComponent`. When the popup opens, an initial shimmer skeleton renders instantly. As soon as dictionary definitions, translations, or example sentences resolve, the bottom sheet animates its height smoothly with the Web Animations API, eliminating jarring layout jumps.
 - **Negative Caching**: Empty results are cached in an in-memory `Set` to prevent hammering external dictionary APIs.
+- **In-Memory Cache with Debounced Persistence**: `DictionaryService` stores cached entries in a fast in-memory `Map<string, DictionaryEntry[]>` for synchronous zero-latency lookups during video playback. Cache updates are debounced by 2000ms before flushing to `localStorage`, eliminating repeated synchronous JSON serialization and disk I/O bottlenecks during rapid word browsing.
 - **Persistence**: Results cached in Cloudflare KV for 7 days, with language-scoped local search history (`linguatube_recent_searches_${lang}`).
 
 ---
@@ -380,14 +384,15 @@ When a user reviews a flashcard and provides a recall quality score $q \in [0, 5
 
 1. **Repetitions & Interval ($I$)**:
    $$\text{If } q < 3: \quad \text{repetitions} = 0, \quad I = 0 \text{ days} \ (\text{immediate recycle}), \quad \text{status} = \text{new}$$
-   $$\text{If } q \ge 3: \quad \begin{cases} I_1 = 1 \text{ day} & \text{if repetitions} = 0 \\ I_2 = 6 \text{ days} & \text{if repetitions} = 1 \\ I_n = \lceil I_{n-1} \times EF \rceil & \text{if repetitions} \ge 2 \end{cases}$$
+   $$\text{If } q = 3 \ (\text{Hard}): \quad I = \max(I + 1, \; \lfloor I \times 1.2 \rfloor), \quad \text{status remains } \text{learning}$$
+   $$\text{If } q > 3 \ (\text{Good/Easy}): \quad \begin{cases} I_1 = 1 \text{ day} & \text{if repetitions} = 0 \\ I_2 = 6 \text{ days} & \text{if repetitions} = 1 \\ I_n = \lceil I_{n-1} \times EF \rceil & \text{if repetitions} \ge 2 \end{cases}$$
 
 2. **Ease Factor ($EF$)**:
    $$EF' = \max(1.3, \; EF + (0.1 - (5 - q) \times (0.08 + (5 - q) \times 0.02)))$$
 
 3. **Status Transitions**:
    - `new` $\rightarrow$ `learning` on first successful recall ($q \ge 3$).
-   - `learning` $\rightarrow$ `known` once `repetitions >= 3`.
+   - `learning` $\rightarrow$ `known` once `repetitions >= 3` and recall quality was confident ($q \ge 4$). Hard ratings ($q = 3$) preserve the `learning` stage to ensure sufficient reinforcement before graduation.
 
 4. **Interval Preview Badges on Buttons**:
    - Using `calculateSRSPreview()`, answer buttons preview their exact calculated schedule in real time:

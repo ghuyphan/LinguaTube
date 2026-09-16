@@ -1030,14 +1030,16 @@ export class SubtitleService {
       // 1. Save to local IndexedDB for immediate offline availability
       void this.transcriptCache.setDual(videoId, sourceLang, targetLang, segments);
 
-      // 2. Persist to Cloudflare R2 crowd-cache (Zero KV writes - Rule 2)
-      this.translation.saveDualSubtitles(videoId, sourceLang, targetLang, segments).subscribe({
-        next: (saved) => {
-          if (saved && coverage >= 0.8) {
-            this.isDualCached.set(true);
+      // 2. Persist to Cloudflare R2 crowd-cache only if authenticated (prevents 401s for guests - Rule 2)
+      if (this.supabase.isAuthenticated()) {
+        this.translation.saveDualSubtitles(videoId, sourceLang, targetLang, segments).subscribe({
+          next: (saved) => {
+            if (saved && coverage >= 0.8) {
+              this.isDualCached.set(true);
+            }
           }
-        }
-      });
+        });
+      }
     }
   }
 
@@ -1254,8 +1256,11 @@ export class SubtitleService {
       }
     }
 
-    // Verify the next cue hasn't started yet (gap check)
+    // Verify the next cue hasn't started yet and gap does not exceed 2.0s threshold
     if (result !== -1) {
+      if (time - subs[result].endTime > 2.0) {
+        return -1; // Gap exceeds maximum sticky threshold (prevents freezing on musical/silent scenes)
+      }
       const next = subs[result + 1];
       if (next && time >= next.startTime) {
         return -1; // We're inside the next cue, not in a gap

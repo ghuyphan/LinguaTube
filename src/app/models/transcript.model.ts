@@ -9,19 +9,19 @@ export interface TranscriptSegment {
 
 export interface TranscriptResponse {
   success: boolean;
-  videoId: string;
-  language: string;
-  requestedLanguage: string;
-  segments: TranscriptSegment[];
-  source: 'cache' | 'native' | 'ai' | 'none';
+  videoId?: string;
+  language?: string;
+  requestedLanguage?: string;
+  segments?: TranscriptSegment[];
+  source?: 'cache' | 'native' | 'ai' | 'none';
   sourceDetail?: string;
-  availableLanguages: {
+  availableLanguages?: {
     native: string[];
     ai: string[];
   };
   subLanguages?: string[];
   levels?: Record<string, string>;
-  whisperAvailable: boolean;
+  whisperAvailable?: boolean;
   diamonds?: number;
   maxDiamonds?: number;
   nextRegenAt?: number | null;
@@ -34,7 +34,7 @@ export interface TranscriptResponse {
   status?: 'processing';
   jobId?: string;
   resultUrl?: string; // Optional legacy fallback
-  timing: number;
+  timing?: number;
 }
 
 export interface DiamondStatusResponse {

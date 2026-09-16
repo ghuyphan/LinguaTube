@@ -452,6 +452,12 @@ Atomic, thread-safe daily streak evaluator called via Supabase RPC (`supabase.rp
 - Awards milestone freeze items (at 7, 30, and 100-day streaks).
 - Returns the updated `current_streak`, `longest_streak`, `freezes_remaining`, and `awarded_freeze`.
 
+#### Stored Procedures: `consume_user_diamonds` & `refund_user_diamonds`
+Atomic credit deduction and refund procedures called by Cloudflare Pages Functions (`diamond.service.js`):
+- Executes `SELECT diamonds FROM public.profiles WHERE id = target_user_id FOR UPDATE` to serialize concurrent requests and eliminate race conditions or double-spending.
+- `consume_user_diamonds(target_user_id, diamond_count)`: Verifies `current_diamonds >= diamond_count`. If sufficient, decrements `diamonds`, records `diamonds_updated_at = NOW()`, and returns `{ success: true, remaining: ... }`. If insufficient, returns `{ success: false, remaining: ... }` fail-closed.
+- `refund_user_diamonds(target_user_id, diamond_count)`: Increments `diamonds`, records `diamonds_updated_at = NOW()`, and returns `{ success: true, remaining: ... }`.
+
 #### Trigger: `tr_protect_profile_fields` (`protect_profile_fields()`)
 Enforces server-side integrity on `public.profiles`. Prevents authenticated client sessions from tampering with sensitive columns via the Supabase REST API:
 - Configured as `SECURITY INVOKER` with explicit `search_path = public`.
@@ -502,7 +508,8 @@ The Supabase instance utilizes the `pg_cron` extension to manage automated serve
 | Key | Service / Repository | Type / Schema | Purpose |
 | :--- | :--- | :--- | :--- |
 | `linguatube_vocabulary` | `OfflineVocabularyRepository` | `VocabularyItem[]` | Offline vocabulary notebook items |
-| `linguatube_deleted_vocab_tombstones` | `OfflineVocabularyRepository` | `Record<string, number>` | Remote sync deletion tombstones (ID -> timestamp) |
+| `linguatube_deleted_vocab_tombstones` | `OfflineVocabularyRepository` | `Record<string, number>` | Remote sync deletion tombstones (ID -> timestamp, retained for 30-day TTL) |
+| `linguatube_synced_remote_ids` | `OfflineVocabularyRepository` | `Record<string, boolean>` | Tracks synchronized remote IDs to detect multi-device deletions without zombie resurrection |
 | `linguatube_playlists` | `OfflinePlaylistRepository` | `Playlist[]` | User-created and bookmarked playlists |
 | `linguatube_deleted_playlist_ids` | `OfflinePlaylistRepository` | `string[]` | Deletion tombstones for syncing playlist removals |
 | `linguatube_history` | `OfflineHistoryRepository` | `HistoryEntry[]` | Video watch progress and timestamps |

@@ -102,7 +102,30 @@ export async function onRequestPost(context) {
             if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
             return jsonResponse({ success: false, error: 'Database service key unconfigured' }, 500);
         }
-        const expiresAt = new Date(Date.now() + durationDays * 24 * 60 * 60 * 1000).toISOString();
+        let baseTime = Date.now();
+        try {
+            const profileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}&select=subscription_expires,subscription_tier`, {
+                headers: {
+                    'apikey': serviceRoleKey,
+                    'Authorization': `Bearer ${serviceRoleKey}`,
+                    'Accept': 'application/json'
+                },
+                signal: AbortSignal.timeout(4000)
+            });
+            if (profileRes.ok) {
+                const profiles = await profileRes.json();
+                if (profiles && profiles[0]?.subscription_expires) {
+                    const currentExp = new Date(profiles[0].subscription_expires).getTime();
+                    if (!isNaN(currentExp) && currentExp > baseTime) {
+                        baseTime = currentExp;
+                    }
+                }
+            }
+        } catch (e) {
+            console.warn('[payOS Webhook] Error fetching current subscription expiration, defaulting to now:', e.message);
+        }
+
+        const expiresAt = new Date(baseTime + durationDays * 24 * 60 * 60 * 1000).toISOString();
 
         // Upgrade user record to target tier ('pro' or 'premium') in Supabase
         const updateRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}`, {

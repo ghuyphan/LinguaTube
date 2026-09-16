@@ -249,7 +249,7 @@ export async function onRequestPost(context) {
         // -------------------------------------------------------------
         if (!preferAI) {
             // Check if there is an active AI job for this video
-            const activeJob = await getActiveAiJob(db, cleanVideoId, lang);
+            const activeJob = await getActiveAiJob(db, cleanVideoId, lang, diamondService, env, context);
             if (activeJob) {
                 return jsonResponse({
                     success: false,

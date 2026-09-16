@@ -1,35 +1,35 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "minSupportedVersion": "1.0.0",
-  "buildDate": "2026-09-15",
+  "buildDate": "2026-09-16",
   "forceUpdate": false,
   "maintenance": false,
   "maintenanceMessage": "",
   "highlights": {
     "en": [
-      "Modern Onboarding Revamp: Introduced an immersive 3-step setup flow with true edge-to-edge fullscreen on mobile and an elegant floating card on desktop.",
-      "Difficulty Level Personalization: Starting proficiency level (JLPT, HSK, TOPIK, CEFR) directly calibrates recommended video feeds upon setup.",
-      "Fluid Segmented Progress: Added liquid animated progress capsules indicating remaining setup steps without visual clutter."
+      "Okurigana Ruby Precision: Separated kanji stems from trailing kana in Japanese subtitles for clean furigana alignment.",
+      "Linguistic & Subtitle Polish: Refined English contraction alignments and added intelligent 2s auto-clear during silent video scenes.",
+      "Performance & Sync Hardening: Faster dictionary lookups with debounced memory caching and robust multi-device offline sync."
     ],
     "vi": [
-      "Giao Diện Giới Thiệu Hiện Đại: Trải nghiệm onboarding 3 bước hoàn toàn mới, tràn viền toàn màn hình trên điện thoại và modal tinh tế trên máy tính.",
-      "Cá Nhân Hóa Trình Độ Học Tập: Lựa chọn trình độ ban đầu (JLPT, HSK, TOPIK, CEFR) tự động tối ưu hóa danh sách video gợi ý ngay khi hoàn tất.",
-      "Thanh Tiến Trình Phân Đoạn Mượt Mà: Hiệu ứng chuyển động mượt mà giữa các bước giúp theo dõi tiến độ học tập trực quan."
+      "Tách Okurigana & Furigana Chuẩn Xác: Tách biệt thân chữ Hán và đuôi Kana trong phụ đề tiếng Nhật giúp căn chỉnh Furigana chuẩn xác.",
+      "Tối Ưu Ngôn Ngữ & Phụ Đề: Cải thiện nhận diện từ viết tắt tiếng Anh và tự động ẩn phụ đề sau 2s khi cảnh quay im lặng/nhạc dạo.",
+      "Nâng Cao Hiệu Năng & Đồng Bộ: Tra cứu từ điển tức thì với bộ nhớ đệm thông minh và bảo vệ đồng bộ đa thiết bị an toàn."
     ],
     "ja": [
-      "モダンなオンボーディング体験: モバイルでの完全全画面表示とデスクトップでの洗練されたモーダルカードによる、新しい3ステップセットアップフローを導入。",
-      "レベルに応じた動画パーソナライズ: 開始時の習熟度レベル（JLPT、HSK、TOPIK、CEFR）がおすすめ動画フィードに即時反映されます。",
-      "滑らかなセグメント進捗バー: 流れるようなアニメーションで残りステップを直感的に把握できます。"
+      "送り仮名ルビの精密表示: 日本語字幕において漢字語幹と送り仮名を正確に分離し、フリガナの配置を美しく整えました。",
+      "字幕同期と英語短縮形の改善: 英語の短縮形の位置ずれを解消し、無音シーンや間奏での2秒自動クリアを追加しました。",
+      "パフォーマンスと同期の強化: メモリキャッシュによる辞書検索の高速化と、複数端末での安全なオフライン同期を実現。"
     ],
     "ko": [
-      "모던 온보딩 전면 개편: 모바일 풀스크린 및 데스크톱 모달 카드로 구현된 몰입형 3단계 설정 플로우를 도입했습니다.",
-      "난이도 맞춤형 비디오 추천: 시작 숙련도 레벨(JLPT, HSK, TOPIK, CEFR)이 홈 추천 영상 피드에 즉시 반영됩니다.",
-      "부드러운 세그먼트 진행률 표시: 유려한 애니메이션 캡슐로 남은 설정 단계를 한눈에 확인할 수 있습니다."
+      "정밀한 후리가나 루비 정렬: 일본어 자막에서 한자 어간과 오쿠리가나를 깔끔하게 분리하여 후리가나 배치를 최적화했습니다.",
+      "언어 분석 및 자막 동기화 개선: 영어 축약형 오프셋 정렬을 개선하고 무음/간주 구간 2초 자동 숨김을 추가했습니다.",
+      "성능 및 오프라인 동기화 강화: 메모리 캐싱을 통한 즉각적인 사전 검색과 멀티 디바이스 오프라인 동기화 안정성을 확보했습니다."
     ],
     "zh": [
-      "全新现代化入门引导: 引入沉浸式 3 步设置流程，在移动端实现真正全屏体验，在桌面端呈现精致居中卡片。",
-      "难度等级个性化推荐: 初始语言水平（JLPT、HSK、TOPIK、CEFR）在设置完成后直接为首页推荐视频定级。",
-      "流畅分段进度胶囊: 采用平滑流体动效展示设置进度，告别认知负担。"
+      "精准假名注音分离: 日语字幕中精确区分汉字词干与送假名，呈现工整优雅的振假名排版。",
+      "语言分析与字幕对齐优化: 修复英语缩写词字符偏移，并在长静音或伴奏场景下智能于 2 秒后自动隐藏停滞字幕。",
+      "性能提升与多端同步加固: 引入去抖内存字典缓存实现秒开释义，并加强离线多设备同步防止误删数据。"
     ]
   }
 }

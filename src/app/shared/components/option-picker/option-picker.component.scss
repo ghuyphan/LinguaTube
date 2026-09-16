@@ -141,6 +141,12 @@
         color: var(--word-ignored-text);
         border: none;
     }
+
+    &.icon-box--ai {
+        background: rgba(129, 140, 248, 0.12);
+        color: var(--color-diamond, #818cf8);
+        border: 1px solid rgba(129, 140, 248, 0.25);
+    }
 }
 
 .option-picker-item__glyph {
@@ -204,6 +210,12 @@
     &.badge--ignored {
         background: var(--word-ignored);
         color: var(--word-ignored-text);
+    }
+
+    &.badge--ai {
+        background: rgba(129, 140, 248, 0.15);
+        color: var(--color-diamond, #818cf8);
+        border: 1px solid rgba(129, 140, 248, 0.3);
     }
 }
 

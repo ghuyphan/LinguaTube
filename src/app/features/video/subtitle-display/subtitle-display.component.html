@@ -68,7 +68,15 @@
                             (keydown.space)="$event.preventDefault(); token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)"
                             (click)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">
                             @if (showReadingAnnotation()) {
-                                @if (token.readingText) {
+                                @if (token.rubyParts && token.rubyParts.length > 0) {
+                                    @for (part of token.rubyParts; track $index) {
+                                        @if (part.reading) {
+                                        <ruby>{{ part.text }}<rt>{{ part.reading }}</rt></ruby>
+                                        } @else {
+                                        <ruby>{{ part.text }}<rt class="rt-empty">&#160;</rt></ruby>
+                                        }
+                                    }
+                                } @else if (token.readingText) {
                                 <ruby>{{ token.surface }}<rt>{{ token.readingText }}</rt></ruby>
                                 } @else {
                                 <ruby>{{ token.surface }}<rt class="rt-empty">&#160;</rt></ruby>

@@ -109,7 +109,14 @@ export class SupabaseService {
      * Get current JWT access token for API calls
      */
     getToken(): string | null {
-        return this.session()?.access_token || null;
+        const sess = this.session();
+        if (!sess?.access_token) return null;
+        // If session is expired, trigger background refresh and return null
+        if (sess.expires_at && sess.expires_at * 1000 < Date.now()) {
+            void this.refreshAuth();
+            return null;
+        }
+        return sess.access_token;
     }
 
     /**
@@ -133,22 +140,32 @@ export class SupabaseService {
         }
     }
 
+    private refreshPromise: Promise<boolean> | null = null;
+
     /**
-     * Refresh auth session
+     * Refresh auth session with mutex deduplication to prevent GoTrue token reuse revocation
      */
     async refreshAuth(): Promise<boolean> {
-        try {
-            const { data, error } = await this.supabaseClient.auth.refreshSession();
-            if (error || !data.session) {
-                return false;
-            }
-            this.session.set(data.session);
-            this.user.set(data.session.user);
-            return true;
-        } catch (err) {
-            console.warn('[SupabaseService] Session refresh failed:', err);
-            return false;
+        if (this.refreshPromise) {
+            return this.refreshPromise;
         }
+        this.refreshPromise = (async () => {
+            try {
+                const { data, error } = await this.supabaseClient.auth.refreshSession();
+                if (error || !data.session) {
+                    return false;
+                }
+                this.session.set(data.session);
+                this.user.set(data.session.user);
+                return true;
+            } catch (err) {
+                console.warn('[SupabaseService] Session refresh failed:', err);
+                return false;
+            } finally {
+                this.refreshPromise = null;
+            }
+        })();
+        return this.refreshPromise;
     }
 
     /**

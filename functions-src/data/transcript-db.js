@@ -110,7 +110,7 @@ export async function getAiJobById(db, jobId) {
  * @param {string} language
  * @returns {Promise<object | null>}
  */
-export async function getActiveAiJob(db, videoId, language) {
+export async function getActiveAiJob(db, videoId, language, diamondService = null, env = null, context = null) {
     if (!db || !videoId || !language) return null;
     try {
         const job = await db.prepare(`
@@ -125,7 +125,13 @@ export async function getActiveAiJob(db, videoId, language) {
         const nowSec = Math.floor(Date.now() / 1000);
         if (job.created_at && (nowSec - job.created_at) > 900) {
             console.warn(`[D1] Auto-expiring zombie job ${job.id} for video ${videoId} (age: ${nowSec - job.created_at}s)`);
-            await atomicFailAndRefundAiJob(db, job.id, 'TIMEOUT_EXPIRED', 'Transcription job timed out after 15 minutes');
+            const refundInfo = await atomicFailAndRefundAiJob(db, job.id, 'TIMEOUT_EXPIRED', 'Transcription job timed out after 15 minutes');
+            if (refundInfo?.shouldRefund && diamondService && env) {
+                const userObj = job.user_id ? { id: job.user_id } : null;
+                const charged = job.diamonds_charged || 1;
+                diamondService.refundDiamond(job.client_id, context, env, userObj, charged)
+                    .catch(e => console.error(`[D1] Failed to refund diamonds on zombie job ${job.id}:`, e.message));
+            }
             return null;
         }
 
