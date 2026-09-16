@@ -89,6 +89,8 @@
     "rewind": "快退 10 秒 (←)",
     "forward": "快进 10 秒 (→)",
     "mute": "静音 (M)",
+    "volume": "音量",
+    "muted": "已静音",
     "playbackSpeed": "播放速度",
     "speed": "播放速度",
     "settings": "设置",

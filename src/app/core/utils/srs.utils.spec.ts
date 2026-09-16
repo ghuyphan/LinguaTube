@@ -147,7 +147,7 @@ describe('srs.utils', () => {
 
             const preview = calculateSRSPreview(item);
             expect(preview.again).toBe('<10m');
-            expect(preview.hard).toBe('1d');
+            expect(preview.hard).toBe('2d');
             expect(preview.good).toBe('6d');
             expect(preview.easy).toBeDefined();
         });

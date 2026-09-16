@@ -89,6 +89,8 @@
     "rewind": "Tua lại 10 giây (←)",
     "forward": "Tua tới 10 giây (→)",
     "mute": "Tắt tiếng (M)",
+    "volume": "Âm lượng",
+    "muted": "Đã tắt tiếng",
     "playbackSpeed": "Tốc độ phát",
     "speed": "Tốc độ phát",
     "settings": "Cài đặt",

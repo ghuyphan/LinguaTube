@@ -156,6 +156,7 @@ info(`Scanning ${sourceFiles.length} source templates and components for transla
 const keyRegexes = [
     /\bi18n\.t\(\s*['"]([a-zA-Z0-9_.-]+)['"]/g,
     /\bt\(\s*['"]([a-zA-Z0-9_.-]+)['"]/g,
+    /\bt\(\)\(\s*['"]([a-zA-Z0-9_.-]+)['"]/g,
     /\[(?:i18n|t)\]\s*=\s*['"]'([a-zA-Z0-9_.-]+)'['"]/g
 ];
 

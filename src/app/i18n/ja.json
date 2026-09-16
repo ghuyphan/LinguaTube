@@ -89,6 +89,8 @@
     "rewind": "10秒戻る（←）",
     "forward": "10秒進む（→）",
     "mute": "ミュート（M）",
+    "volume": "音量",
+    "muted": "消音",
     "playbackSpeed": "再生速度",
     "speed": "再生速度",
     "settings": "設定",

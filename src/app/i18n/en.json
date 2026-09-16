@@ -89,6 +89,8 @@
     "rewind": "Rewind 10s (←)",
     "forward": "Forward 10s (→)",
     "mute": "Mute (M)",
+    "volume": "Volume",
+    "muted": "Muted",
     "playbackSpeed": "Playback Speed",
     "speed": "Playback speed",
     "settings": "Settings",

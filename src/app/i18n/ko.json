@@ -89,6 +89,8 @@
     "rewind": "10초 뒤로 (←)",
     "forward": "10초 앞으로 (→)",
     "mute": "음소거 (M)",
+    "volume": "음량",
+    "muted": "음소거됨",
     "playbackSpeed": "재생 속도",
     "speed": "재생 속도",
     "settings": "설정",
