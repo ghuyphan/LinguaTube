@@ -60,6 +60,8 @@
   
   <symbol id="repeat" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path></symbol>
   
+  <symbol id="repeat-1" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4zm-4-2V9h-1l-2 1v1h1.5v4H13z"></path></symbol>
+  
   <symbol id="languages" viewBox="0 0 24 24">
     <path d="m5 8 6 6"></path>
     <path d="m4 14 6-6 2-3"></path>

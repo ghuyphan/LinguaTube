@@ -170,7 +170,10 @@ export async function onRequestPost(context) {
 
         const knownInfo = await getVideoLanguages(db, cleanVideoId);
         const nativeLanguages = knownInfo?.availableLanguages || [];
-        const availableLanguages = { native: nativeLanguages, ai: [] };
+        const subLanguages = knownInfo?.subLanguages || [];
+        const normNative = nativeLanguages.map(n => n.split('-')[0].toLowerCase());
+        const aiLanguages = subLanguages.filter(l => !normNative.includes(l.split('-')[0].toLowerCase()));
+        const availableLanguages = { native: nativeLanguages, ai: aiLanguages };
 
         const diamondInfo = {
             diamonds: diamondStatus.diamonds,
@@ -211,36 +214,51 @@ export async function onRequestPost(context) {
             let cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
             let responseLang = lang;
 
-            // Fallback: If requested language not in R2, check other available languages in R2 in parallel
-            // Combine both YouTube nativeLanguages AND verified server subLanguages (including AI-transcribed tracks)
-            const allCandidateLangs = Array.from(new Set([
-                ...(nativeLanguages || []),
-                ...(knownInfo?.subLanguages || [])
-            ])).filter(a => a !== lang);
-
-            if (!cached?.segments?.length && allCandidateLangs.length > 0) {
-                const altResults = await Promise.all(
-                    allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
-                );
-                const found = altResults.find(item => item.res?.segments?.length > 0);
-                if (found) {
-                    cached = found.res;
-                    responseLang = found.altLang;
+            // If user explicitly requests AI, only return an existing AI transcript for this exact language from R2.
+            // Never fall back to other languages in R2 or return native transcripts when preferAI is true!
+            if (preferAI) {
+                if (cached?.segments?.length > 0 && cached.source === 'ai') {
+                    return jsonResponse({
+                        success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
+                        source: 'ai', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [lang], whisperAvailable: diamondInfo.diamonds > 0,
+                        languageMismatch: false,
+                        levels: knownInfo?.levels || {},
+                        ...diamondInfo, timing: elapsed()
+                    }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.AI });
                 }
-            }
+                // If not in R2 as AI, bypass Step 1 and proceed to Step 3 (Gladia AI)
+            } else {
+                // Fallback: If requested language not in R2 and user did NOT request AI,
+                // check other available languages in R2 in parallel
+                const allCandidateLangs = Array.from(new Set([
+                    ...(nativeLanguages || []),
+                    ...(knownInfo?.subLanguages || [])
+                ])).filter(a => a !== lang);
 
-            if (cached?.segments?.length > 0) {
-                const normReq = (lang || '').split('-')[0].toLowerCase();
-                const normRes = (responseLang || '').split('-')[0].toLowerCase();
-                const isMismatch = normReq !== normRes;
+                if (!cached?.segments?.length && allCandidateLangs.length > 0) {
+                    const altResults = await Promise.all(
+                        allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
+                    );
+                    const found = altResults.find(item => item.res?.segments?.length > 0);
+                    if (found) {
+                        cached = found.res;
+                        responseLang = found.altLang;
+                    }
+                }
 
-                return jsonResponse({
-                    success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
-                    source: 'cache', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [responseLang], whisperAvailable: diamondInfo.diamonds > 0,
-                    languageMismatch: isMismatch,
-                    levels: knownInfo?.levels || {},
-                    ...diamondInfo, timing: elapsed()
-                }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
+                if (cached?.segments?.length > 0) {
+                    const normReq = (lang || '').split('-')[0].toLowerCase();
+                    const normRes = (responseLang || '').split('-')[0].toLowerCase();
+                    const isMismatch = normReq !== normRes;
+
+                    return jsonResponse({
+                        success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
+                        source: 'cache', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [responseLang], whisperAvailable: diamondInfo.diamonds > 0,
+                        languageMismatch: isMismatch,
+                        levels: knownInfo?.levels || {},
+                        ...diamondInfo, timing: elapsed()
+                    }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
+                }
             }
         }
 
@@ -306,7 +324,7 @@ export async function onRequestPost(context) {
                         return jsonResponse({
                             success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
                             languageMismatch: true,
-                            availableLanguages: { native: knownInfo.availableLanguages, ai: [] },
+                            availableLanguages,
                             subLanguages: knownInfo.subLanguages || [],
                             whisperAvailable: diamondStatus.diamonds > 0,
                             errorCode: 'NO_NATIVE', error: 'No native captions in requested language.',

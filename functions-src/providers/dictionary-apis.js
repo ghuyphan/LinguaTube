@@ -4,7 +4,7 @@
 
 import {
     parseNaver, parseJotoba, parseMazii, parseFreeDictionary,
-    parseMdbg, parseGlosbe, parseJisho, parseKrdict
+    parseDatamuse, parseMdbg, parseGlosbe, parseJisho, parseKrdict
 } from '../utils/dict-parsers.js';
 
 const PRIMARY_TIMEOUT_MS = 5000;
@@ -18,34 +18,56 @@ const BROWSER_HEADERS = {
 };
 
 const DICT_SOURCES = {
+    // Korean sources
     'ko-en': [{ url: 'https://en.dict.naver.com/api3/enko/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' }],
     'ko-vi': [
         { url: 'https://ko.dict.naver.com/api3/kovi/search', method: 'GET', parser: 'naver', referer: 'https://ko.dict.naver.com/' },
         { url: 'https://krdict.korean.go.kr/vie/dicMarinerSearch/search', method: 'GET', parser: 'krdict', referer: 'https://krdict.korean.go.kr/' },
-        { url: 'https://glosbe.com/ko/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/' }
+        { url: 'https://glosbe.com/ko/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'ko' }
     ],
     'ko-ja': [{ url: 'https://ja.dict.naver.com/api3/koja/search', method: 'GET', parser: 'naver', referer: 'https://ja.dict.naver.com/' }],
     'ko-zh': [{ url: 'https://zh.dict.naver.com/api3/kozh/search', method: 'GET', parser: 'naver', referer: 'https://zh.dict.naver.com/' }],
     'ko-ko': [{ url: 'https://ko.dict.naver.com/api3/koko/search', method: 'GET', parser: 'naver', referer: 'https://ko.dict.naver.com/' }],
 
+    // Japanese sources
     'ja-en': [
         { url: 'https://jotoba.de/api/search/words', method: 'POST', parser: 'jotoba', contentType: 'application/json', referer: 'https://jotoba.de/' },
         { url: 'https://jisho.org/api/v1/search/words', method: 'GET', parser: 'jisho', referer: 'https://jisho.org/' }
     ],
-    'ja-vi': [{ url: 'https://mazii.net/api/search', method: 'POST', parser: 'mazii', contentType: 'application/json', referer: 'https://mazii.net/' }],
+    'ja-vi': [{ url: 'https://mazii.net/api/search', method: 'POST', parser: 'mazii', contentType: 'application/json', referer: 'https://mazii.net/', dictCode: 'javi' }],
     'ja-ko': [{ url: 'https://ko.dict.naver.com/api3/jako/search', method: 'GET', parser: 'naver', referer: 'https://ko.dict.naver.com/' }],
-    'ja-zh': [{ url: 'https://zh.dict.naver.com/api3/jazh/search', method: 'GET', parser: 'naver', referer: 'https://zh.dict.naver.com/' }],
+    'ja-zh': [
+        { url: 'https://mazii.net/api/search', method: 'POST', parser: 'mazii', contentType: 'application/json', referer: 'https://mazii.net/', dictCode: 'jacn' }
+    ],
     'ja-ja': [{ url: 'https://jisho.org/api/v1/search/words', method: 'GET', parser: 'jisho', referer: 'https://jisho.org/' }],
 
+    // Chinese sources
     'zh-en': [{ url: 'https://www.mdbg.net/chinese/dictionary', method: 'GET', parser: 'mdbg', referer: 'https://www.mdbg.net/' }],
-    'zh-vi': [{ url: 'https://glosbe.com/zh/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/' }],
+    'zh-vi': [{ url: 'https://glosbe.com/zh/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'zh' }],
     'zh-ko': [{ url: 'https://ko.dict.naver.com/api3/zhko/search', method: 'GET', parser: 'naver', referer: 'https://ko.dict.naver.com/' }],
-    'zh-ja': [{ url: 'https://ja.dict.naver.com/api3/zhja/search', method: 'GET', parser: 'naver', referer: 'https://ja.dict.naver.com/' }],
+    'zh-ja': [{ url: 'https://glosbe.com/zh/ja/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'zh' }],
+    'zh-zh': [{ url: 'https://www.mdbg.net/chinese/dictionary', method: 'GET', parser: 'mdbg', referer: 'https://www.mdbg.net/' }],
 
-    'en-en': [{ url: 'https://api.dictionaryapi.dev/api/v2/entries/en/', method: 'GET', parser: 'freedict' }],
-    'en-vi': [{ url: 'https://glosbe.com/en/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/' }],
-    'en-ja': [{ url: 'https://jisho.org/api/v1/search/words', method: 'GET', parser: 'jisho', referer: 'https://jisho.org/' }],
-    'en-ko': [{ url: 'https://glosbe.com/en/ko/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/' }]
+    // English sources
+    'en-en': [
+        { url: 'https://en.dict.naver.com/api3/enen/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
+        { url: 'https://api.datamuse.com/words', method: 'GET', parser: 'datamuse' },
+        { url: 'https://api.dictionaryapi.dev/api/v2/entries/en/', method: 'GET', parser: 'freedict' }
+    ],
+    'en-vi': [
+        { url: 'https://en.dict.naver.com/api3/envi/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
+        { url: 'https://glosbe.com/en/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'en' }
+    ],
+    'en-ja': [
+        { url: 'https://en.dict.naver.com/api3/enja/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
+        { url: 'https://jisho.org/api/v1/search/words', method: 'GET', parser: 'jisho', referer: 'https://jisho.org/' }
+    ],
+    'en-ko': [{ url: 'https://en.dict.naver.com/api3/enko/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' }],
+    'en-zh': [
+        { url: 'https://en.dict.naver.com/api3/enzh/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
+        { url: 'https://www.mdbg.net/chinese/dictionary', method: 'GET', parser: 'mdbg', referer: 'https://www.mdbg.net/' },
+        { url: 'https://glosbe.com/en/zh/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'en' }
+    ]
 };
 
 export class DictionaryProvider {
@@ -102,7 +124,7 @@ export class DictionaryProvider {
                     body = JSON.stringify({ query: word, language: 'English', no_english: false });
                     break;
                 case 'mazii':
-                    body = JSON.stringify({ dict: 'javi', type: 'word', query: word, page: 1 });
+                    body = JSON.stringify({ dict: source.dictCode || 'javi', type: 'word', query: word, page: 1 });
                     break;
                 case 'mdbg':
                     url = `${source.url}?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0`;
@@ -112,6 +134,9 @@ export class DictionaryProvider {
                     break;
                 case 'freedict':
                     url = `${source.url}${encodeURIComponent(word)}`;
+                    break;
+                case 'datamuse':
+                    url = `${source.url}?sp=${encodeURIComponent(word)}&md=dp&max=3`;
                     break;
                 case 'jisho':
                     url = `${source.url}?keyword=${encodeURIComponent(word)}`;
@@ -139,8 +164,9 @@ export class DictionaryProvider {
                 case 'jotoba': return parseJotoba(await response.json());
                 case 'mazii': return parseMazii(await response.json());
                 case 'freedict': return parseFreeDictionary(await response.json());
+                case 'datamuse': return parseDatamuse(await response.json());
                 case 'mdbg': return await parseMdbg(response);
-                case 'glosbe': return await parseGlosbe(response, word);
+                case 'glosbe': return await parseGlosbe(response, word, source.from || '');
                 case 'jisho': return parseJisho(await response.json());
                 case 'krdict': return await parseKrdict(response);
                 default: return [];

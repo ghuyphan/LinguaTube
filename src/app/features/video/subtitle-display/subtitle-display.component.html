@@ -336,7 +336,7 @@
             [attr.aria-pressed]="isLoopEnabled()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('subtitle.loop') + ' (L)'">
-            <app-icon name="repeat" [size]="15" />
+            <app-icon name="repeat-1" [size]="15" />
             <span class="ctrl-label">{{ i18n.t('subtitle.loop') }}</span>
             @if (isLoopEnabled() && loopCount() > 0) {
             <span class="ctrl-badge-inline">{{ loopCount() }}/{{ maxLoops() }}</span>

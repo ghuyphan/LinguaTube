@@ -3,7 +3,6 @@
  */
 
 import {
-    getVideoLanguages,
     saveVideoLanguages,
     addVideoLanguage,
     addVideoLanguages,
@@ -217,33 +216,17 @@ export class TranscriptService {
             throw new Error(`VIDEO_TOO_LONG: Video (${Math.round(duration / 60)} min) exceeds the ${Math.round(maxDurationSec / 60)} minute limit for ${tier.toUpperCase()} tier.`);
         }
 
-        // 2. Check if a transcript already exists in R2 (avoid duplicate diamond charges)
-        let existingR2 = await getTranscriptFromR2(r2, videoId, lang);
-        let existingLang = lang;
-        if (!existingR2?.segments?.length) {
-            const known = await getVideoLanguages(db, videoId);
-            if (known?.availableLanguages?.length > 0) {
-                for (const altLang of known.availableLanguages) {
-                    if (altLang === lang) continue;
-                    const alt = await getTranscriptFromR2(r2, videoId, altLang);
-                    if (alt?.segments?.length > 0) {
-                        existingR2 = alt;
-                        existingLang = altLang;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (existingR2?.segments?.length > 0) {
+        // 2. Check if an AI transcript already exists in R2 for this language (avoid duplicate diamond charges)
+        const existingR2 = await getTranscriptFromR2(r2, videoId, lang);
+        if (existingR2?.segments?.length > 0 && existingR2.source === 'ai') {
             return {
                 status: 'done',
                 videoInfo: {
                     videoId,
-                    language: existingLang,
+                    language: lang,
                     requestedLanguage: lang,
                     segments: existingR2.segments,
-                    source: 'cache',
+                    source: 'ai',
                     sourceDetail: existingR2.source,
                     availableLanguages: params.availableLanguages
                 }

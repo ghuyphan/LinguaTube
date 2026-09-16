@@ -46,7 +46,7 @@
     <div class="controls-right">
         <!-- Unified right controls group -->
         <div class="controls-right-group">
-            <!-- Subtitles / CC Toggle (YouTube style) - Shown only in fullscreen -->
+            <!-- Subtitles / CC Toggle - Fullscreen only (c) -->
             @if (isFullscreen()) {
             <button class="control-btn cc-btn" [class.is-active]="subtitlesVisible()"
                 [class.is-ai]="isAISubtitle()"
@@ -71,13 +71,6 @@
                 <span class="cc-indicator" [class.visible]="showDualSubtitles()"></span>
             </button>
             }
-
-            <!-- Playback Speed Pill - Desktop only: shows speed & 1-click opens speed menu -->
-            <button class="control-btn speed-btn desktop-only" (click)="speedClick.emit($event)"
-                [attr.aria-label]="(t()('player.playbackSpeed') || 'Playback speed') + ': ' + (currentSpeed() === 1 ? (t()('player.normal') || 'Normal') : currentSpeed() + 'x')"
-                [title]="(t()('player.playbackSpeed') || 'Playback speed') + ': ' + (currentSpeed() === 1 ? (t()('player.normal') || 'Normal') : currentSpeed() + 'x')">
-                <span class="speed-pill-label">{{ currentSpeed() === 1 ? '1x' : currentSpeed() + 'x' }}</span>
-            </button>
 
             <!-- Player Settings (YouTube style gear) -->
             <button class="control-btn settings-btn" (click)="openSettings.emit($event)"

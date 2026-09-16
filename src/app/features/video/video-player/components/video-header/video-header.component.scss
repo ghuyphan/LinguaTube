@@ -60,11 +60,13 @@
 }
 
 .level-badge {
+    position: relative;
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
     white-space: nowrap;
-    padding: 1px 7px;
+    padding: 2px 8px;
+    min-height: 22px;
     font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -72,6 +74,19 @@
     cursor: pointer;
     user-select: none;
     transition: transform var(--transition-fast, 0.15s ease), opacity 0.15s ease;
+
+    // Expand touch slop to 44x44px for touch accessibility
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 44px;
+        min-height: 44px;
+        width: 100%;
+        height: 100%;
+    }
 
     @media (hover: hover) {
         &:hover {
@@ -155,13 +170,14 @@
 
 .btn-header-action,
 .btn-close-video {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    min-height: 30px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     padding: 0;
     border-radius: 50%;
     border: 1px solid var(--border-color);
@@ -170,6 +186,19 @@
     cursor: pointer;
     box-sizing: border-box;
     transition: all var(--transition-fast, 0.15s ease);
+
+    // Expand touch target to 44x44px minimum for Apple HIG / WCAG 2.2 AA
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 44px;
+        min-height: 44px;
+        width: 100%;
+        height: 100%;
+    }
 
     @media (hover: hover) {
         &:hover {
@@ -187,6 +216,19 @@
     &.is-ai {
         color: var(--color-diamond, #818cf8);
         border-color: rgba(129, 140, 248, 0.35);
+    }
+}
+
+.btn-close-video {
+    margin-left: 4px;
+    border-color: rgba(239, 68, 68, 0.25);
+
+    @media (hover: hover) {
+        &:hover {
+            color: #ef4444;
+            border-color: rgba(239, 68, 68, 0.45);
+            background: rgba(239, 68, 68, 0.08);
+        }
     }
 }
 

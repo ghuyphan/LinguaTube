@@ -90,6 +90,11 @@ export class TranscriptService {
     return s.status === 'complete' ? s.language : null;
   });
 
+  readonly languageMismatch = computed(() => {
+    const s = this.state();
+    return s.status === 'complete' ? Boolean(s.languageMismatch) : false;
+  });
+
   readonly error = computed(() => {
     const s = this.state();
     return s.status === 'error' ? s.code : null;
@@ -306,12 +311,14 @@ export class TranscriptService {
           tap(cues => {
             if (cues.length > 0) {
               const detectedLang = this.detectedLanguage() || lang;
+              const isMismatch = this.languageMismatch();
+              if (!isMismatch && detectedLang === lang) {
+                this.setTranscriptCache(cacheKey, cues);
+              }
               const actualCacheKey = `${videoId}:${detectedLang}`;
               this.setTranscriptCache(actualCacheKey, cues);
               const source = this.captionSource() || 'native';
               this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
-            } else if (!forceRefresh) {
-              this.setTranscriptCache(cacheKey, []);
             }
           }),
           catchError(err => this.handleHttpError(err))
@@ -350,12 +357,12 @@ export class TranscriptService {
       tap(cues => {
         if (cues.length > 0) {
           const detectedLang = this.detectedLanguage() || lang;
-          this.setTranscriptCache(cacheKey, cues);
-          if (detectedLang !== lang) {
+          const isMismatch = this.languageMismatch();
+          if (!isMismatch && detectedLang === lang) {
+            this.setTranscriptCache(cacheKey, cues);
+            this.persistentCache.set(videoId, lang, cues, 'ai').catch(() => { });
+          } else {
             this.setTranscriptCache(`${videoId}:${detectedLang}`, cues);
-          }
-          this.persistentCache.set(videoId, lang, cues, 'ai').catch(() => { });
-          if (detectedLang !== lang) {
             this.persistentCache.set(videoId, detectedLang, cues, 'ai').catch(() => { });
           }
         }

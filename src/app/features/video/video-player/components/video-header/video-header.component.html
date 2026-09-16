@@ -1,7 +1,7 @@
 <div class="video-info">
     @if (title() && channel()) {
     <div class="video-text">
-        <h2 class="video-title">{{ title() }}</h2>
+        <h2 class="video-title" [attr.title]="title()">{{ title() }}</h2>
         <div class="video-meta-row">
             <span class="video-channel" [attr.title]="channel()">{{ channel() }}</span>
             @if (levelInfo(); as lvl) {
@@ -28,11 +28,6 @@
             [attr.aria-label]="i18n.t('player.share') || 'Share video'"
             [title]="i18n.t('player.share') || 'Share video'">
             <app-icon name="share" [size]="15" />
-        </button>
-        <button type="button" class="btn-icon btn-header-action" (click)="savePlaylist.emit()"
-            [attr.aria-label]="i18n.t('playlist.saveToPlaylist') || 'Save to playlist'"
-            [title]="i18n.t('playlist.saveToPlaylist') || 'Save to playlist'">
-            <app-icon name="list-plus" [size]="15" />
         </button>
         <button type="button" class="btn-icon btn-header-action btn-close-video" (click)="closeVideo.emit()"
             [attr.aria-label]="i18n.t('player.closeVideo') || 'Close'"

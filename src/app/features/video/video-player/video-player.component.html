@@ -358,7 +358,7 @@
             @if (supportsReadingDisplay()) {
             <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('reading')">
               <div class="menu-item-left">
-                <span class="menu-item-reading-icon">{{ readingScriptIcon() }}</span>
+                <app-icon name="type" [size]="18" />
                 <span class="menu-item-label">{{ readingModeName() }}</span>
               </div>
               <div class="menu-item-right">
@@ -392,20 +392,20 @@
               </div>
             </button>
 
+            <!-- Add to Playlist -->
+            <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
+              <div class="menu-item-left">
+                <app-icon name="list-plus" [size]="18" />
+                <span class="menu-item-label">{{ i18n.t('playlist.saveToPlaylist') || 'Save to playlist' }}</span>
+              </div>
+            </button>
+
             @if (isFullscreen()) {
             <!-- Share Video (Fullscreen only) -->
             <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); shareCurrentVideo()">
               <div class="menu-item-left">
                 <app-icon name="share" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('player.share') || 'Share video' }}</span>
-              </div>
-            </button>
-
-            <!-- Add to Playlist (Fullscreen only) -->
-            <button type="button" class="settings-menu-item" (click)="closePlayerSettings(); onSaveClick()">
-              <div class="menu-item-left">
-                <app-icon name="list-plus" [size]="18" />
-                <span class="menu-item-label">{{ i18n.t('playlist.saveToPlaylist') || 'Save to playlist' }}</span>
               </div>
             </button>
             }
@@ -692,7 +692,7 @@
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
         (toggleDualSubs)="toggleDualSubtitles()"
         (openDualSubMenu)="openDualSubMenu($event)"
-        (speedClick)="openSpeedMenu($event)" (openSettings)="openPlayerSettings($event)"
+        (openSettings)="openPlayerSettings($event)"
         (toggleMiniplayer)="toggleMiniplayer()"
         (toggleFullscreen)="toggleFullscreen()" (showVolumeSlider)="showVolumeSlider()"
         (hideVolumeSlider)="hideVolumeSlider()" />
@@ -742,7 +742,7 @@
   <!-- Video Info -->
   @if (!isFullscreen() && !isMiniplayer()) {
   <app-video-header [title]="youtube.currentVideo()?.title" [channel]="youtube.currentVideo()?.channel"
-    (closeVideo)="closeVideo()" (savePlaylist)="onSaveClick()" (shareVideo)="shareCurrentVideo()"
+    (closeVideo)="closeVideo()" (shareVideo)="shareCurrentVideo()"
     (selectTrack)="selectTrack.emit($event)" (triggerAI)="triggerAI.emit()" />
   }
   }

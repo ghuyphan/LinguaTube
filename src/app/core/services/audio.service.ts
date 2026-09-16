@@ -153,6 +153,18 @@ export class AudioService {
 
     if (!isCurrent()) return;
 
+    // --- TIER 0: Authentic Dictionary Audio (if provided from dictionary entry) ---
+    if (_providedAudioUrl && _providedAudioUrl.startsWith('http')) {
+      try {
+        await this.playAudioUrl(_providedAudioUrl, cleanWord, currentId);
+        return;
+      } catch (err) {
+        console.info(`[AudioService] Native dictionary audio failed for "${cleanWord}", falling back to Neural TTS:`, (err as Error)?.message || err);
+      }
+    }
+
+    if (!isCurrent()) return;
+
     // --- TIER 1: Unified Neural TTS (/api/tts) ---
     const ttsUrl = `/api/tts?lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
     try {

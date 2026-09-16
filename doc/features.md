@@ -248,11 +248,14 @@ graph TD
   - **Tier 2 (CJK Discourse Markers & Grammatical Particles)**: In unpunctuated Chinese and Japanese speech, splits at conjunctions and discourse particles (`而且|但是|所以|然后|因为|就是|可是|不过|虽然|那么` / `は|が|を|に|で|へと|から|まで`) while enforcing minimum duration ($\ge 1.0$s) and character lengths.
   - **Tier 3 (Soft Length Clamping)**: If a segment exceeds natural reading length (20–22 CJK characters or 60 Latin characters), cleanly segments at word boundaries or natural phrase pauses.
 - **Subtitle Track Picker & On-Demand AI Target Generation**:
-  - The video header provides a subtitle track selector button and bottom sheet displaying all available native caption tracks and AI-generated tracks.
+  - The video header provides a subtitle track selector button and bottom sheet displaying available native caption tracks and AI-generated tracks.
+  - **Strict 4-Language Filtering (`ja`, `zh`, `ko`, `en`)**: Only Voca's supported learning languages are displayed in the track picker and empty-state recommendations. Unsupported YouTube caption tracks (Spanish, Russian, Vietnamese, German, etc.) are strictly filtered out to prevent HTTP 400 rejection and subtitle desynchronization.
   - **Speech-to-Text Waveform Caption Icon (`subtitles-ai`)**: Distinguishes AI-generated transcripts from native YouTube captions (`subtitles`) using a speech-recognition audio waveform icon rather than generic sparkle symbols.
   - When an AI track is actively playing, the header track button and player bottom-bar CC toggle dynamically render the `subtitles-ai` icon with a diamond-accented active bar indicator (`var(--color-diamond)`).
   - Inside the Subtitle Tracks sheet, native tracks display `[CC]` (`subtitles`), while AI-transcribed tracks display `[Waveform]` (`subtitles-ai`) and an `AI` pill badge.
-  - If the user's active learning language has no existing subtitles, a prominent "Generate AI Subtitles" action allows transcribing in their target language without leaving the player.
+  - **Native Subtitle Override & AI Re-transcription**: Even if a video already has native captions in the target learning language, users can choose "Transcribe with AI (High Accuracy)" to generate Whisper AI captions, cleanly replacing inaccurate or auto-generated YouTube captions without infinite dialog loops or cache poisoning.
+  - **Subtitle Off Toggle**: The track picker includes a clean "Turn subtitles off" option, and the player bottom bar exposes the CC toggle in standard view (not just fullscreen) for rapid caption visibility toggling.
+  - **Mobile Touch Ergonomics & Responsive Header**: Action buttons on mobile feature 44×44px touch targets (Apple HIG compliant) with touch slop padding, titles wrap up to 2 lines on small screens (< 640px) to prevent 15-character truncation, the playback speed pill is accessible on mobile in 1 tap, and subtitle cue looping utilizes the distinct `repeat-1` icon to avoid confusion with playlist looping (`repeat`).
 - **AI Job State Resiliency & Offline Reconnect**:
   - In-flight AI transcription jobs are persisted in `localStorage` (`voca_pending_ai_jobs`) and indexed in Cloudflare D1 `pending_jobs`.
   - Refreshing the page, switching tabs, or temporarily losing network connectivity automatically resumes polling without double-spending Diamond credits or abandoning processing jobs.
@@ -316,9 +319,9 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
       ┌──────────────────────────┼──────────────────────────┐
       ▼                          ▼                          ▼
  [ JAPANESE ]               [ CHINESE ]                [ KOREAN ]
- Jotoba API (primary)       MDBG Scraper               Naver Dict EnKo / KoVi
- Jisho.org (fallback)       Glosbe Chinese-Vietnamese  KRDict (National Inst)
- Mazii (Vietnamese)
+ Jotoba API (JLPT+POS)      MDBG (Pinyin)              Naver Dict (EnKo/KoVi/KoJa/KoZh/KoKo)
+ Mazii (Vi / Zh 'jacn')     Glosbe (Vi / Ja)           KRDict (National Inst)
+ Jisho.org (Monolingual)    Naver Chinese-Korean       Glosbe (Fallback)
       │                          │                          │
       └──────────────────────────┼──────────────────────────┘
                                  │
@@ -329,9 +332,10 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
                      Normalized DictionaryEntry
 ```
 
-- **Streamlined 2-Tier Resilient Pronunciation Audio**: Audio playback uses a robust 2-tier pipeline via `AudioService`:
-  - **Tier 1 (Online Primary)**: Studio-grade Unified Neural TTS (`/api/tts`) streaming Azure Neural voices (`Nanami`, `Xiaoxiao`, `SunHi`, `Jenny`) with 0 KV operations, persistent warm WebSocket connection pooling (~180–250ms response time), bounded in-memory LRU caching (<0.1ms replay), client-side Blob URL caching, proactive preloading, and automatic server-side Google TTS failover (>99.5% reliability with zero client CORS issues).
-  - **Tier 2 (Offline Fallback)**: Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when disconnected or in airplane mode.
+- **Resilient 3-Tier Pronunciation Audio Architecture**: Audio playback uses a hierarchical 3-tier pipeline via `AudioService`:
+  - **Tier 0 (Authentic Native Audio)**: Prioritizes authentic human MP3 recordings returned by dictionary APIs (Naver, Jotoba, Mazii, KRDict) with `referrerpolicy="no-referrer"` to bypass CDN hotlinking restrictions.
+  - **Tier 1 (Online Neural TTS)**: Studio-grade Unified Neural TTS (`/api/tts`) streaming Azure Neural voices (`Nanami`, `Xiaoxiao`, `SunHi`, `Jenny`) with 0 KV operations, persistent warm WebSocket connection pooling (~180–250ms response time), bounded in-memory LRU caching (<0.1ms replay), client-side Blob URL caching, proactive preloading, and automatic server-side Google TTS failover (>99.5% reliability with zero client CORS issues).
+  - **Tier 2 (Offline Web Speech Fallback)**: Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when disconnected or in airplane mode.
   - **Fast Failover**: Tight 3,500ms failsafe timeout guarantees instant, seamless degradation without user-perceptible freezing.
 - **Word Popup & Dictionary Pronunciation**: Interactive subtitle taps open `WordPopupComponent`, featuring a native one-touch audio pronunciation button with animated soundwave indicators. Audio is proactively pre-fetched in the background the moment the popup opens, providing instantaneous (0ms) playback on tap. Similarly, all dictionary search cards feature one-touch audio pronunciation.
 - **Context-Aware CJK Kanji Detection**: When inspecting pure ideographs (`\u4E00-\u9FFF` without Kana or Hangul), `DictionaryService.detectLanguage()` checks the user's active learning language (`settings.language`) so Japanese learners query Japanese dictionaries (Jotoba/Mazii) rather than erroneously defaulting to Chinese dictionaries.
@@ -341,7 +345,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
 - **Word Popup UI (`WordPopupComponent`) & Smooth Height Transitions**: Hosted within `BottomSheetComponent`. When the popup opens, an initial shimmer skeleton renders instantly. As soon as dictionary definitions, translations, or example sentences resolve, the bottom sheet animates its height smoothly with the Web Animations API, eliminating jarring layout jumps.
 - **Negative Caching**: Empty results are cached in an in-memory `Set` to prevent hammering external dictionary APIs.
 - **In-Memory Cache with Debounced Persistence**: `DictionaryService` stores cached entries in a fast in-memory `Map<string, DictionaryEntry[]>` for synchronous zero-latency lookups during video playback. Cache updates are debounced by 2000ms before flushing to `localStorage`, eliminating repeated synchronous JSON serialization and disk I/O bottlenecks during rapid word browsing.
-- **Persistence**: Results cached in Cloudflare KV for 7 days, with language-scoped local search history (`linguatube_recent_searches_${lang}`).
+- **Persistence**: Positive results cached at Cloudflare Edge CDN (`s-maxage=604800`) and client-side, with language-scoped local search history (`linguatube_recent_searches_${lang}`).
 
 ---
 
@@ -538,7 +542,7 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
   - **Update Persistence & Badges**: If an update is deferred, a persistent pulsating dot appears on the desktop sidebar and mobile "More" menu Settings entries.
   - **Settings Integration & Instant 60fps Performance**: Users can view the current app version, open the "What's New" sheet, and check for updates. Child pickers and dialogs are lazy-rendered on demand with idle prefetching, ensuring instant 60fps opening without layout lag.
   - **Corrupted Cache Recovery**: Listens to `swUpdate.unrecoverable` to prompt the user safely rather than abruptly reloading the active page, purging corrupted cache stores upon user confirmation.
-  - **Cloudflare Edge Headers**: Configured in `public/_headers` with `no-cache, no-store, must-revalidate` for `ngsw.json` and `index.html`, and `immutable` for hashed JavaScript and CSS bundles.
+  - **Cloudflare Edge Headers & Content Security Policy (CSP)**: Configured in `public/_headers` with `no-cache, no-store, must-revalidate` for `ngsw.json` and `index.html`, and `immutable` for hashed JavaScript and CSS bundles. Enforces a strict Content Security Policy allowing YouTube IFrame player scripts (`https://s.ytimg.com`, `https://*.youtube.com`, `https://*.ytimg.com`), creator/user avatars (`https://*.ggpht.com`, `https://*.googleusercontent.com`), video thumbnails (`https://*.ytimg.com`, `https://*.youtube.com`), payment QR codes (`https://img.vietqr.io`, `https://api.qrserver.com`), and Supabase WebSockets (`wss://*.supabase.co`).
 
 ---
 

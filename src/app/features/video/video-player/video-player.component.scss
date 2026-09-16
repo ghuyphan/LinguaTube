@@ -1488,6 +1488,7 @@ $transition-normal: 0.25s ease;
       gap: 0.75rem;
       color: var(--text-primary);
       app-icon { color: var(--text-secondary); }
+      .menu-item-reading-icon { color: var(--text-secondary); }
     }
 
     .menu-item-right {
@@ -1523,6 +1524,10 @@ $transition-normal: 0.25s ease;
 
       .option-icon {
         color: var(--text-secondary);
+      }
+
+      .option-reading-glyph {
+        color: var(--text-primary);
       }
     }
   }

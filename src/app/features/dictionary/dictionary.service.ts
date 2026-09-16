@@ -1,6 +1,6 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DictionaryEntry } from '../../models';
+import { DictionaryEntry, DictionaryMeaning } from '../../models';
 import { Observable, of, catchError, map, throwError } from 'rxjs';
 import { I18nService, SettingsService, UILanguage, GamificationService } from '../../core/services';
 import { environment } from '../../../environments/environment';
@@ -12,6 +12,7 @@ interface UnifiedDictEntry {
   romanization?: string;
   audio?: string;
   definitions?: string[];
+  meanings?: DictionaryMeaning[];
   partOfSpeech?: string;
   level?: number;
 }
@@ -116,20 +117,75 @@ export class DictionaryService {
    * Helper to map a raw backend entry to a normalized DictionaryEntry
    */
   private mapRawEntry(entry: UnifiedDictEntry, word: string, from: 'ja' | 'zh' | 'ko' | 'en'): DictionaryEntry {
+    const seenMeanings = new Set<string>();
+    const meanings: DictionaryMeaning[] = [];
+
+    // Deduplicate top-level examples if provided
+    const topLevelExamples = Array.isArray((entry as unknown as { examples?: string[] }).examples)
+      ? (entry as unknown as { examples?: string[] }).examples!
+      : [];
+
+    const seenTopExamples = new Set<string>();
+    const cleanedTopExamples = topLevelExamples
+      .map(ex => (ex || '').trim())
+      .filter(ex => {
+        const k = ex.toLowerCase();
+        if (ex && !seenTopExamples.has(k)) {
+          seenTopExamples.add(k);
+          return true;
+        }
+        return false;
+      });
+
+    if (Array.isArray(entry.meanings) && entry.meanings.length > 0) {
+      for (const m of entry.meanings) {
+        const def = (m.definition || '').trim();
+        const key = def.toLowerCase();
+        if (def && !seenMeanings.has(key)) {
+          seenMeanings.add(key);
+          const seenEx = new Set<string>();
+          const dedupedExamples = (m.examples || [])
+            .map((ex: string) => (ex || '').trim())
+            .filter((ex: string) => {
+              const k = ex.toLowerCase();
+              if (ex && !seenEx.has(k)) {
+                seenEx.add(k);
+                return true;
+              }
+              return false;
+            });
+          meanings.push({
+            definition: def,
+            examples: dedupedExamples,
+            tags: m.tags ? [...new Set(m.tags.filter(Boolean))] : undefined
+          });
+        }
+      }
+    } else if (Array.isArray(entry.definitions)) {
+      for (let i = 0; i < entry.definitions.length; i++) {
+        const trimmed = (entry.definitions[i] || '').trim();
+        const key = trimmed.toLowerCase();
+        if (trimmed && !seenMeanings.has(key)) {
+          seenMeanings.add(key);
+          meanings.push({
+            definition: trimmed,
+            examples: i === 0 ? cleanedTopExamples : []
+          });
+        }
+      }
+    }
+
     return {
       word: entry.word || word,
-      reading: from === 'ja' || from === 'en' ? (entry.reading || '') : undefined,
+      reading: from === 'ja' || from === 'en' || from === 'ko' ? (entry.reading || '') : undefined,
       pinyin: from === 'zh' ? (entry.reading || '') : undefined,
       romanization: from === 'ja'
         ? (entry.romanization || getJapaneseRomaji(entry.reading || '', entry.word || word))
         : from === 'ko'
-          ? (entry.romanization || entry.reading || '')
+          ? (entry.romanization || undefined)
           : undefined,
       audio: entry.audio || undefined,
-      meanings: entry.definitions?.map((def: string) => ({
-        definition: def,
-        examples: []
-      })) || [],
+      meanings,
       partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : [],
       jlptLevel: from === 'ja' && entry.level ? `N${entry.level}` : undefined,
       hskLevel: from === 'zh' ? entry.level : undefined,

@@ -1348,6 +1348,136 @@ test('saveTranscriptToR2: returns boolean success flag and handles errors gracef
   assert.equal(await saveTranscriptToR2(failingBucket, 'vid123', 'ja', [{ text: 'hi' }]), false);
 });
 
+test('Dictionary Parsers: parseNaver correctly extracts reading, audio, pos, and strips homonym numbers', async () => {
+  const { parseNaver } = await import('../functions-src/utils/dict-parsers.js');
+
+  const mockData = {
+    searchResultMap: {
+      searchResultListMap: {
+        WORD: {
+          items: [
+            {
+              expEntry: '<strong>사랑</strong>',
+              expEntrySuperscript: '1',
+              searchPhoneticSymbolList: [
+                { symbolValue: '<strong>사랑</strong>', symbolFile: 'https://example.com/female.mp3|https://example.com/male.mp3' }
+              ],
+              meansCollector: [
+                {
+                  partOfSpeech2: 'Danh từ',
+                  partOfSpeech: '명사',
+                  means: [{ value: 'tình yêu' }]
+                }
+              ]
+            },
+            {
+              expEntry: '<strong>학교</strong>',
+              expEntrySuperscript: '',
+              searchPhoneticSymbolList: [
+                { symbolValue: '학꾜', symbolFile: '' }
+              ],
+              meansCollector: [
+                {
+                  partOfSpeech2: 'Danh từ',
+                  means: [{ value: 'trường học' }]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  };
+
+  const results = parseNaver(mockData);
+  assert.equal(results.length, 2);
+
+  // 사랑 - word cleaned, no homonym 1 in reading, audio extracted
+  assert.equal(results[0].word, '사랑');
+  assert.equal(results[0].reading, ''); // identical to word, not redundant
+  assert.equal(results[0].partOfSpeech, 'Danh từ');
+  assert.equal(results[0].audio, 'https://example.com/female.mp3');
+  assert.deepEqual(results[0].definitions, ['tình yêu']);
+
+  // 학교 - phonetic pronunciation extracted
+  assert.equal(results[1].word, '학교');
+  assert.equal(results[1].reading, '[학꾜]');
+  assert.equal(results[1].partOfSpeech, 'Danh từ');
+  assert.deepEqual(results[1].definitions, ['trường học']);
+});
+
+test('Dictionary Parsers: parseJotoba correctly formats object POS, kanji JLPT, and audio', async () => {
+  const { parseJotoba } = await import('../functions-src/utils/dict-parsers.js');
+
+  const mockData = {
+    kanji: [{ jlpt: 5 }],
+    words: [
+      {
+        reading: { kanji: '食べる', kana: 'たべる' },
+        senses: [
+          {
+            glosses: ['to eat'],
+            pos: [{ Verb: 'Ichidan' }, { Verb: 'Transitive' }]
+          }
+        ],
+        audio: '/resource/audio/123.mp3'
+      }
+    ]
+  };
+
+  const results = parseJotoba(mockData);
+  assert.equal(results.length, 1);
+  assert.equal(results[0].word, '食べる');
+  assert.equal(results[0].reading, 'たべる');
+  assert.equal(results[0].partOfSpeech, 'Verb (Ichidan), Verb (Transitive)');
+  assert.equal(results[0].level, 5);
+  assert.equal(results[0].audio, 'https://jotoba.de/resource/audio/123.mp3');
+  assert.deepEqual(results[0].definitions, ['to eat']);
+});
+
+test('Dictionary Parsers: parseMazii handles array levels and cleans definitions', async () => {
+  const { parseMazii } = await import('../functions-src/utils/dict-parsers.js');
+
+  const mockData = {
+    data: [
+      {
+        word: '食べる',
+        phonetic: 'たべる',
+        level: ['N5'],
+        means: [
+          { mean: 'ăn.', kind: 'v1, vt' }
+        ]
+      }
+    ]
+  };
+
+  const results = parseMazii(mockData);
+  assert.equal(results.length, 1);
+  assert.equal(results[0].word, '食べる');
+  assert.equal(results[0].reading, 'たべる');
+  assert.equal(results[0].level, 5);
+  assert.equal(results[0].partOfSpeech, 'v1, vt');
+  assert.deepEqual(results[0].definitions, ['ăn.']);
+});
+
+test('Dictionary Parsers: parseDatamuse extracts definitions and parts of speech', async () => {
+  const { parseDatamuse } = await import('../functions-src/utils/dict-parsers.js');
+
+  const mockData = [
+    {
+      word: 'hello',
+      defs: ['n\tan expression of greeting', 'v\tto greet']
+    }
+  ];
+
+  const results = parseDatamuse(mockData);
+  assert.equal(results.length, 1);
+  assert.equal(results[0].word, 'hello');
+  assert.deepEqual(results[0].definitions, ['an expression of greeting', 'to greet']);
+  assert.equal(results[0].partOfSpeech, 'n, v');
+});
+
+
 
 
 

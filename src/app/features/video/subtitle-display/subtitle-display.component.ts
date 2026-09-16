@@ -16,6 +16,7 @@ import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { formatTime } from '../../../core/utils';
+import { normalizeLanguageCode } from '../../../shared/utils/language.utils';
 
 @Component({
   selector: 'app-subtitle-display',
@@ -86,26 +87,28 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   readonly hasNativeInOtherLanguage = computed(() => {
-    const nativeLangs = this.transcript.availableLanguages().native;
+    const firstLang = this.firstAvailableNativeLanguage();
     const requestedLang = this.settings.settings().language;
-    return nativeLangs.length > 0 && !nativeLangs.includes(requestedLang);
+    return Boolean(firstLang && normalizeLanguageCode(firstLang) !== normalizeLanguageCode(requestedLang));
   });
 
   readonly firstAvailableNativeLanguage = computed(() => {
-    const nativeLangs = this.transcript.availableLanguages().native;
+    const nativeLangs = this.transcript.availableLanguages().native || [];
     const preferred = ['ja', 'zh', 'ko', 'en'];
-    for (const lang of preferred) {
-      if (nativeLangs.includes(lang)) return lang;
+    for (const p of preferred) {
+      const match = nativeLangs.find(l => normalizeLanguageCode(l) === p);
+      if (match) return normalizeLanguageCode(match);
     }
-    return nativeLangs[0] || null;
+    return null;
   });
 
   getLanguageDisplayName(lang: string): string {
-    switch (lang) {
-      case 'ja': return this.i18n.t('settings.japanese');
-      case 'zh': return this.i18n.t('settings.chinese');
-      case 'ko': return this.i18n.t('settings.korean');
-      case 'en': return this.i18n.t('settings.english');
+    const norm = normalizeLanguageCode(lang);
+    switch (norm) {
+      case 'ja': return this.i18n.t('settings.japanese') || 'Japanese';
+      case 'zh': return this.i18n.t('settings.chinese') || 'Chinese';
+      case 'ko': return this.i18n.t('settings.korean') || 'Korean';
+      case 'en': return this.i18n.t('settings.english') || 'English';
       default: return lang.toUpperCase();
     }
   }

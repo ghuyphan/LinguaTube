@@ -117,7 +117,7 @@
 
                         @if (meaning.tags && meaning.tags.length > 0) {
                         <div class="meaning-tags">
-                            @for (tag of meaning.tags; track tag) {
+                            @for (tag of meaning.tags; track $index) {
                             <span class="tag">{{ tag }}</span>
                             }
                         </div>

@@ -45,7 +45,6 @@ export class VideoBottomBarComponent implements OnDestroy {
   toggleSubtitles = output<void>();
   toggleDualSubs = output<void>();
   openDualSubMenu = output<MouseEvent>();
-  speedClick = output<MouseEvent>();
   openSettings = output<MouseEvent>();
   toggleMiniplayer = output<void>();
   toggleFullscreen = output<void>();

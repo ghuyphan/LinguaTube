@@ -95,8 +95,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     "channel": "Channel Name"
   }
   ```
-- **Lifecycle & Fallback Chain**:
-  1. **R2 Multi-Language Cache Check**: Checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known languages (in both `subLanguages` and `nativeLanguages`) in R2 for that video as fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant Gladia submissions and saving user diamonds. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
+  1. **R2 Multi-Language Cache Check & AI Isolation**:
+     - When `preferAI: true`, the backend strictly isolates the requested language: it checks R2 **only** for an existing AI transcript of the exact requested language (`cleanVideoId, lang`). It never falls back to other candidate languages in R2, ensuring user requests for AI generation are never hijacked by pre-cached transcripts in other languages.
+     - When `preferAI: false`, checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known candidate languages (in both `subLanguages` and `nativeLanguages`) in R2 as a fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant API submissions. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
+     - The response payload returns `availableLanguages: { native: string[], ai: string[] }`, where `ai` tracks are derived from server-verified `subLanguages` (transcripts confirmed in R2) excluding native YouTube captions.
   2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages`, `ai_transcription_jobs`, and `no_transcript_cache` before touching upstream APIs:
      - **Active AI Job Short-Circuit**: Checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI transcription job was previously submitted and is still pending or processing (e.g. user refreshed the page, switched tabs, or backgrounded the browser), it immediately returns `{ status: 'processing', jobId }`, seamlessly connecting the client to the existing job without double-deducting diamonds or returning `NO_NATIVE`.
      - **D1 Short-Circuit (< 20ms)**: If `video_languages` records `available_languages = '[]'` (video confirmed to have 0 native tracks) or if the requested language is not in the list (e.g. video has only `['en']` and user requested `zh`), returns immediately with `NO_NATIVE` or `languageMismatch: true`, completely bypassing upstream network latency.
@@ -164,14 +166,27 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
     "timestamp": 1725513600000
   }
   ```
-- **Provider Routing Matrix**:
-  - `ja -> en`: Jotoba (primary) $\rightarrow$ Jisho (fallback)
-  - `ja -> vi`: Mazii API (Vietnamese-Japanese dictionary)
-  - `zh -> en`: MDBG HTML scraper
-  - `zh -> vi`: Glosbe Chinese-Vietnamese dictionary
-  - `ko -> en`: Naver EnKo API
-  - `ko -> vi`: Naver KoVi API $\rightarrow$ National Institute of Korean Language (KRDict)
-  - `en -> en`: Datamuse API $\rightarrow$ Free Dictionary API
+- **Provider Routing Matrix (Verified 100% End-to-End Coverage)**:
+  - `ja -> en`: Jotoba (primary with JLPT & POS objects) $\rightarrow$ Jisho.org (fallback)
+  - `ja -> vi`: Mazii API (`javi`)
+  - `ja -> ko`: Naver Japanese-Korean (`jako`) with native Japanese audio
+  - `ja -> zh`: Mazii Japanese-Chinese (`jacn`)
+  - `ja -> ja`: Jisho.org Japanese monolingual
+  - `zh -> en`: MDBG HTML parser with clean Pinyin
+  - `zh -> vi`: Glosbe Chinese-Vietnamese with automated Pinyin
+  - `zh -> ko`: Naver Chinese-Korean (`zhko`) with authentic Pinyin
+  - `zh -> ja`: Glosbe Chinese-Japanese
+  - `zh -> zh`: MDBG Chinese dictionary
+  - `ko -> en`: Naver Korean-English (`enko`)
+  - `ko -> vi`: Naver Korean-Vietnamese (`kovi`) $\rightarrow$ KRDict (National Institute of Korean Language) $\rightarrow$ Glosbe
+  - `ko -> ja`: Naver Korean-Japanese (`koja`)
+  - `ko -> zh`: Naver Korean-Chinese (`kozh`)
+  - `ko -> ko`: Naver Korean Monolingual Standard Dictionary (`koko`)
+  - `en -> en`: Naver Oxford English (`enen`) $\rightarrow$ Datamuse API $\rightarrow$ Free Dictionary API
+  - `en -> vi`: Naver English-Vietnamese (`envi`) $\rightarrow$ Glosbe
+  - `en -> ja`: Naver English-Japanese (`enja`) $\rightarrow$ Jisho.org
+  - `en -> ko`: Naver Oxford English-Korean (`enko`)
+  - `en -> zh`: Naver English-Chinese (`enzh`) $\rightarrow$ MDBG $\rightarrow$ Glosbe
 - **Dual In-Memory + Edge Caching**:
   - **In-Memory LRU Cache (`memPosDictCache`)**: Warm Worker isolates maintain up to 1,000 positive dictionary lookup entries with a 1-hour TTL. Frequently recurring words (particles, high-frequency verbs) return in $<0.1$ms with zero KV reads or writes (`X-Cache: HIT-MEMORY`).
   - **In-Memory Negative Cache (`memNegDictCache`)**: Missing words are cached in an isolate `Set` to prevent repeated upstream scraping calls.

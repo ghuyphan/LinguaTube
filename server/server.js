@@ -199,193 +199,304 @@ async function translateWithGtx(text, source, target) {
     return null;
 }
 
+function parseNaverLocalItem(item) {
+    const word = (item.expEntry || '')
+        .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '')
+        .replace(/<[^>]+>/g, '')
+        .trim();
+
+    const phoneticObj = item.searchPhoneticSymbolList?.find(s => s?.symbolValue)
+        || item.searchPhoneticSymbolList?.[0];
+    const rawPhonetic = (phoneticObj?.symbolValue || item.phoneticSigns?.[0]?.sign || '')
+        .replace(/<[^>]+>/g, '')
+        .trim();
+
+    let reading = '';
+    if (rawPhonetic && rawPhonetic !== word) {
+        if (/[a-zA-Z]/.test(rawPhonetic) || rawPhonetic.startsWith('/') || rawPhonetic.startsWith('[')) {
+            reading = rawPhonetic;
+        } else {
+            reading = `[${rawPhonetic}]`;
+        }
+    }
+
+    const definitions = [];
+    const examples = [];
+    let primaryPos = '';
+    (item.meansCollector || []).forEach(collector => {
+        if (!primaryPos && (collector.partOfSpeech2 || collector.partOfSpeech)) {
+            primaryPos = (collector.partOfSpeech2 || collector.partOfSpeech)
+                .replace(/<[^>]+>/g, '')
+                .trim();
+        }
+        (collector.means || []).forEach(mean => {
+            const def = (mean.value || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            if (def && !definitions.some(d => d.toLowerCase() === def.toLowerCase())) {
+                definitions.push(def);
+            }
+            const exOri = (mean.exampleOri || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            const exTrans = (mean.exampleTrans || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            if (exOri) {
+                const formatted = exTrans ? `${exOri} (${exTrans})` : exOri;
+                if (!examples.some(e => e.toLowerCase() === formatted.toLowerCase())) {
+                    examples.push(formatted);
+                }
+            }
+        });
+    });
+
+    const partOfSpeech = primaryPos || (item.partsOfSpeech ? item.partsOfSpeech.join(', ') : '');
+
+    const audioObj = item.searchPhoneticSymbolList?.find(s => s?.symbolFile?.startsWith('http'))
+        || item.searchPhoneticSymbolList?.[0];
+    const rawSymbolFile = audioObj?.symbolFile || '';
+    const symbolAudio = rawSymbolFile.startsWith('http') ? rawSymbolFile.split('|')[0].trim() : '';
+
+    const audio = symbolAudio
+        || item.searchSearchResultAudioList?.[0]?.url
+        || item.searchSearchResultAudioList?.[0]?.audioUrl
+        || item.phoneticSigns?.[0]?.signFile
+        || item.pronFile
+        || item.audioUrl
+        || '';
+
+    return {
+        word,
+        reading,
+        definitions,
+        ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
+        partOfSpeech,
+        ...(audio ? { audio } : {})
+    };
+}
+
 async function fetchDictLocal(word, from, to) {
     const pair = `${from}-${to}`;
     let entries = [];
     let source = 'none';
 
     try {
-        if (pair === 'ja-en') {
-            const res = await fetch('https://jotoba.de/api/search/words', {
-                method: 'POST',
-                headers: { ...BROWSER_HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://jotoba.de/' },
-                body: JSON.stringify({ query: word, language: 'English', no_english: false }),
-                signal: AbortSignal.timeout(5000)
-            });
-            if (res.ok) {
-                const data = await res.json();
-                entries = (data.words || []).slice(0, 5).map(e => {
-                    const audio = e.audio?.url || (typeof e.audio === 'string' ? e.audio : '') || e.pitch?.audio || '';
-                    return {
-                        word: e.reading?.kanji || e.reading?.kana || word,
-                        reading: e.reading?.kana || '',
-                        definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
-                        partOfSpeech: (e.senses?.[0]?.pos || []).map(p => typeof p === 'string' ? p : p.Pretty || '').filter(Boolean).join(', '),
-                        level: e.common?.jlpt ? parseInt(e.common.jlpt) : null,
-                        ...(audio ? { audio } : {})
-                    };
-                }).filter(e => e.word && e.definitions.length > 0);
-                if (entries.length > 0) source = 'jotoba';
-            }
-        } else if (pair === 'ja-vi') {
-            const res = await fetch('https://mazii.net/api/search', {
-                method: 'POST',
-                headers: { ...BROWSER_HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://mazii.net/' },
-                body: JSON.stringify({ dict: 'javi', type: 'word', query: word, page: 1 }),
-                signal: AbortSignal.timeout(5000)
-            });
-            if (res.ok) {
-                const data = await res.json();
-                const results = data.data || data.results || [];
-                entries = results.slice(0, 5).map(e => {
-                    const defs = [];
-                    if (Array.isArray(e.means)) {
-                        e.means.forEach(m => {
-                            if (m.mean) {
-                                const clean = m.mean.replace(/<[^>]+>/g, '').trim();
-                                if (clean) defs.push(clean);
-                            }
-                        });
-                    }
-                    if (defs.length === 0 && e.short_mean) defs.push(e.short_mean);
-                    let audio = e.audio || e.phonetic_audio || '';
-                    if (audio && !audio.startsWith('http')) {
-                        audio = '';
-                    }
-                    return {
-                        word: e.word || word,
-                        reading: e.phonetic || '',
-                        definitions: defs,
-                        partOfSpeech: e.means?.[0]?.kind || '',
-                        level: e.level ? parseInt(String(e.level).replace('N', '')) : null,
-                        ...(audio ? { audio } : {})
-                    };
-                }).filter(e => e.word && e.definitions.length > 0);
-                if (entries.length > 0) source = 'mazii';
-            }
-        } else if (pair === 'ko-vi') {
-            const url = `https://ko.dict.naver.com/api3/kovi/search?query=${encodeURIComponent(word)}&m=pc&range=all`;
-            const res = await fetch(url, { headers: { ...BROWSER_HEADERS, 'Referer': 'https://ko.dict.naver.com/' }, signal: AbortSignal.timeout(5000) });
-            if (res.ok) {
-                const data = await res.json();
-                const items = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
-                entries = items.slice(0, 5).map(item => {
-                    const w = (item.expEntry || '').replace(/<[^>]+>/g, '');
-                    const reading = (item.expEntrySuperscript || item.phoneticSigns?.[0]?.sign || '').replace(/<[^>]+>/g, '');
-                    const definitions = [];
-                    (item.meansCollector || []).forEach(c => {
-                        (c.means || []).forEach(m => {
-                            const def = (m.value || '').replace(/<[^>]+>/g, '').trim();
-                            if (def) definitions.push(def);
-                        });
-                    });
-                    const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
-                    const audio = item.searchPhoneticSymbolList?.[0]?.phoneticSymbolAudioList?.[0]?.url
-                        || item.searchSearchResultAudioList?.[0]?.url
-                        || item.searchSearchResultAudioList?.[0]?.audioUrl
-                        || item.phoneticSigns?.[0]?.signFile
-                        || item.pronFile
-                        || item.audioUrl
-                        || '';
-                    return { word: w, reading, definitions, partOfSpeech, ...(audio ? { audio } : {}) };
-                }).filter(e => e.word && e.definitions.length > 0);
-                if (entries.length > 0) source = 'naver';
-            }
-        } else if (pair.startsWith('ko-') || pair.endsWith('-ko')) {
-            const naverMap = {
-                'ko-en': 'https://en.dict.naver.com/api3/enko/search',
-                'ko-ja': 'https://ja.dict.naver.com/api3/koja/search',
-                'ko-zh': 'https://zh.dict.naver.com/api3/kozh/search',
-                'ko-ko': 'https://ko.dict.naver.com/api3/koko/search',
-                'ja-ko': 'https://ko.dict.naver.com/api3/jako/search',
-                'zh-ko': 'https://ko.dict.naver.com/api3/zhko/search'
-            };
-            const endpoint = naverMap[pair];
-            if (endpoint) {
-                const res = await fetch(`${endpoint}?query=${encodeURIComponent(word)}&m=pc&range=all`, {
-                    headers: { ...BROWSER_HEADERS, 'Referer': endpoint },
+        // 1. Naver official bilingual & Oxford monolingual dictionaries
+        const naverMap = {
+            'ko-en': 'https://en.dict.naver.com/api3/enko/search',
+            'ko-vi': 'https://ko.dict.naver.com/api3/kovi/search',
+            'ko-ja': 'https://ja.dict.naver.com/api3/koja/search',
+            'ko-zh': 'https://zh.dict.naver.com/api3/kozh/search',
+            'ko-ko': 'https://ko.dict.naver.com/api3/koko/search',
+            'ja-ko': 'https://ko.dict.naver.com/api3/jako/search',
+            'zh-ko': 'https://ko.dict.naver.com/api3/zhko/search',
+            'en-en': 'https://en.dict.naver.com/api3/enen/search',
+            'en-vi': 'https://en.dict.naver.com/api3/envi/search',
+            'en-ja': 'https://en.dict.naver.com/api3/enja/search',
+            'en-ko': 'https://en.dict.naver.com/api3/enko/search',
+            'en-zh': 'https://en.dict.naver.com/api3/enzh/search'
+        };
+
+        const naverEndpoint = naverMap[pair];
+        if (naverEndpoint) {
+            try {
+                const referer = naverEndpoint.startsWith('https://en.') ? 'https://en.dict.naver.com/' : naverEndpoint;
+                const res = await fetch(`${naverEndpoint}?query=${encodeURIComponent(word)}&m=pc&range=all`, {
+                    headers: { ...BROWSER_HEADERS, 'Referer': referer },
                     signal: AbortSignal.timeout(5000)
                 });
                 if (res.ok) {
                     const data = await res.json();
                     const items = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
-                    entries = items.slice(0, 5).map(item => {
-                        const w = (item.expEntry || '').replace(/<[^>]+>/g, '');
-                        const reading = (item.expEntrySuperscript || item.phoneticSigns?.[0]?.sign || '').replace(/<[^>]+>/g, '');
-                        const definitions = [];
-                        (item.meansCollector || []).forEach(c => {
-                            (c.means || []).forEach(m => {
-                                const def = (m.value || '').replace(/<[^>]+>/g, '').trim();
-                                if (def) definitions.push(def);
-                            });
-                        });
-                        const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
-                        const audio = item.searchPhoneticSymbolList?.[0]?.phoneticSymbolAudioList?.[0]?.url
-                            || item.searchSearchResultAudioList?.[0]?.url
-                            || item.searchSearchResultAudioList?.[0]?.audioUrl
-                            || item.phoneticSigns?.[0]?.signFile
-                            || item.pronFile
-                            || item.audioUrl
-                            || '';
-                        return { word: w, reading, definitions, partOfSpeech, ...(audio ? { audio } : {}) };
-                    }).filter(e => e.word && e.definitions.length > 0);
+                    entries = items.slice(0, 5).map(parseNaverLocalItem).filter(e => e.word && e.definitions.length > 0);
                     if (entries.length > 0) source = 'naver';
                 }
+            } catch (e) { }
+        }
+
+        // 2. Japanese -> English (Jotoba + Jisho)
+        if (entries.length === 0 && (pair === 'ja-en' || pair === 'ja-ja')) {
+            if (pair === 'ja-en') {
+                try {
+                    const res = await fetch('https://jotoba.de/api/search/words', {
+                        method: 'POST',
+                        headers: { ...BROWSER_HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://jotoba.de/' },
+                        body: JSON.stringify({ query: word, language: 'English', no_english: false }),
+                        signal: AbortSignal.timeout(5000)
+                    });
+                    if (res.ok) {
+                        const data = await res.json();
+                        const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
+                        entries = (data.words || []).slice(0, 5).map(e => {
+                            let audio = e.audio?.url || (typeof e.audio === 'string' ? e.audio : '') || e.pitch?.audio || '';
+                            if (audio && audio.startsWith('/')) audio = `https://jotoba.de${audio}`;
+                            const partOfSpeech = (e.senses?.[0]?.pos || []).map(p => {
+                                if (typeof p === 'string') return p;
+                                if (p && typeof p === 'object') return Object.entries(p).map(([cat, sub]) => (sub ? `${cat} (${sub})` : cat)).join(', ');
+                                return '';
+                            }).filter(Boolean).join(', ');
+                            const level = e.jlpt ? parseInt(String(e.jlpt).replace(/\D/g, '')) : (kanjiJlpt ? parseInt(String(kanjiJlpt).replace(/\D/g, '')) : null);
+                            return {
+                                word: e.reading?.kanji || e.reading?.kana || word,
+                                reading: e.reading?.kana || '',
+                                definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
+                                partOfSpeech,
+                                level,
+                                ...(audio ? { audio } : {})
+                            };
+                        }).filter(e => e.word && e.definitions.length > 0);
+                        if (entries.length > 0) source = 'jotoba';
+                    }
+                } catch (e) { }
             }
-        } else if (pair === 'zh-en') {
-            const url = `https://www.mdbg.net/chinese/dictionary?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0`;
-            const res = await fetch(url, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(5000) });
-            if (res.ok) {
-                const html = await res.text();
-                const rowSplits = html.split('<tr class="row">');
-                for (let i = 1; i < rowSplits.length && entries.length < 5; i++) {
-                    const rowFragment = rowSplits[i].split('</tr>')[0];
-                    const otxtMatch = rowFragment.match(/<td[^>]*class="[^"]*otxtbot[^"]*"[^>]*>([\s\S]*?)<\/td>/);
-                    const hanziMatch = rowFragment.match(/<div class="hanzi">([\s\S]*?)<\/div>/);
-                    let w = '';
-                    if (otxtMatch && otxtMatch[1].replace(/<[^>]+>/g, '').trim()) {
-                        w = otxtMatch[1].replace(/<[^>]+>/g, '').trim();
-                    } else if (hanziMatch) {
-                        w = [...hanziMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)].map(m => m[1].trim()).join('');
+
+            if (entries.length === 0) {
+                try {
+                    const jishoRes = await fetch(`https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(word)}`, {
+                        headers: { ...BROWSER_HEADERS, 'Referer': 'https://jisho.org/' },
+                        signal: AbortSignal.timeout(5000)
+                    });
+                    if (jishoRes.ok) {
+                        const data = await jishoRes.json();
+                        entries = (data.data || []).slice(0, 5).map(entry => {
+                            const japanese = entry.japanese?.[0] || {};
+                            const w = japanese.word || japanese.reading || '';
+                            const reading = japanese.reading || '';
+                            const defs = [];
+                            (entry.senses || []).forEach(s => { if (s.english_definitions) defs.push(s.english_definitions.join(', ')); });
+                            const jlptTag = entry.jlpt?.find(t => t.startsWith('jlpt-n'));
+                            const level = jlptTag ? parseInt(jlptTag.replace('jlpt-n', '')) : null;
+                            return { word: w, reading, definitions: defs.slice(0, 5), partOfSpeech: '', level };
+                        }).filter(e => e.word && e.definitions.length > 0);
+                        if (entries.length > 0) source = 'jisho';
                     }
-                    if (!w) continue;
-                    const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>([\s\S]*?)<\/div>/);
-                    const rd = pinyinMatch ? [...pinyinMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)].map(m => m[1].trim()).join(' ') : '';
-                    const defsMatch = rowFragment.match(/<div class="defs">([\s\S]*?)<\/div>/);
-                    let defs = [];
-                    if (defsMatch) {
-                        defs = defsMatch[1].replace(/<[^>]+>/g, '/').split('/').map(d => d.trim()).filter(d => d && d !== '&nbsp;');
-                    }
-                    const hskMatch = rowFragment.match(/HSK\s*(\d+)/);
-                    const level = hskMatch ? parseInt(hskMatch[1]) : null;
-                    if (defs.length > 0) {
-                        entries.push({ word: w, reading: rd, definitions: defs, partOfSpeech: '', level });
-                    }
-                }
-                if (entries.length > 0) source = 'mdbg';
+                } catch (e) { }
             }
-        } else if (pair === 'zh-vi') {
-            const url = `https://glosbe.com/zh/vi/${encodeURIComponent(word)}`;
-            const res = await fetch(url, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(5000) });
-            if (res.ok) {
-                const html = await res.text();
-                const h3Matches = [...html.matchAll(/<h3[^>]*class="[^"]*translation__item__(?:pharse|phrase)[^"]*"[^>]*>([\s\S]*?)<\/h3>/g)];
-                const seenDefs = new Set();
-                const py = pinyin(word, { toneType: 'symbol' });
-                for (const match of h3Matches) {
-                    const def = match[1].replace(/<[^>]+>/g, '').trim();
-                    if (def && !seenDefs.has(def.toLowerCase())) {
-                        seenDefs.add(def.toLowerCase());
-                        entries.push({ word, reading: py, definitions: [def], partOfSpeech: '' });
-                        if (entries.length >= 5) break;
-                    }
-                }
-                if (entries.length > 0) source = 'glosbe';
-            }
-        } else if (pair === 'en-en') {
-            // Try fast Datamuse API first, then Free Dictionary API
+        }
+
+        // 3. Japanese -> Vietnamese (Mazii javi) & Japanese -> Chinese (Mazii jacn)
+        if (entries.length === 0 && (pair === 'ja-vi' || pair === 'ja-zh')) {
+            const dictCode = pair === 'ja-zh' ? 'jacn' : 'javi';
             try {
-                const dmRes = await fetch(`https://api.datamuse.com/words?sp=${encodeURIComponent(word)}&md=d&max=1`, { signal: AbortSignal.timeout(3000) });
+                const res = await fetch('https://mazii.net/api/search', {
+                    method: 'POST',
+                    headers: { ...BROWSER_HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://mazii.net/' },
+                    body: JSON.stringify({ dict: dictCode, type: 'word', query: word, page: 1 }),
+                    signal: AbortSignal.timeout(5000)
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    const results = data.data || data.results || [];
+                    entries = results.slice(0, 5).map(e => {
+                        const defs = [];
+                        const examples = [];
+                        const seenDefs = new Set();
+                        const seenEx = new Set();
+                        if (Array.isArray(e.means)) {
+                            e.means.forEach(m => {
+                                if (m.mean) {
+                                    const clean = m.mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                                    const k = clean.toLowerCase();
+                                    if (clean && !seenDefs.has(k)) {
+                                        seenDefs.add(k);
+                                        defs.push(clean);
+                                    }
+                                }
+                                if (Array.isArray(m.examples)) {
+                                    m.examples.forEach(ex => {
+                                        const c = (ex.content || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                                        const mn = (ex.mean || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                                        if (c) {
+                                            const formatted = mn ? `${c} (${mn})` : c;
+                                            const exK = formatted.toLowerCase();
+                                            if (!seenEx.has(exK)) {
+                                                seenEx.add(exK);
+                                                examples.push(formatted);
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                        if (defs.length === 0 && e.short_mean) defs.push(e.short_mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+                        let audio = e.audio || e.phonetic_audio || '';
+                        if (audio && !audio.startsWith('http')) audio = '';
+                        const rawLevel = Array.isArray(e.level) ? e.level[0] : e.level;
+                        const level = rawLevel ? parseInt(String(rawLevel).replace(/\D/g, '')) : null;
+                        return {
+                            word: e.word || word,
+                            reading: e.phonetic || '',
+                            definitions: defs,
+                            ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
+                            partOfSpeech: e.means?.[0]?.kind || '',
+                            level,
+                            ...(audio ? { audio } : {})
+                        };
+                    }).filter(e => e.word && e.definitions.length > 0);
+                    if (entries.length > 0) source = 'mazii';
+                }
+            } catch (e) { }
+        }
+
+        // 4. Chinese -> English (MDBG)
+        if (entries.length === 0 && (pair === 'zh-en' || pair === 'zh-zh')) {
+            try {
+                const url = `https://www.mdbg.net/chinese/dictionary?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0`;
+                const res = await fetch(url, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(5000) });
+                if (res.ok) {
+                    const html = await res.text();
+                    const rowSplits = html.split('<tr class="row">');
+                    for (let i = 1; i < rowSplits.length && entries.length < 5; i++) {
+                        const rowFragment = rowSplits[i].split('</tr>')[0];
+                        const otxtMatch = rowFragment.match(/<td[^>]*class="[^"]*otxtbot[^"]*"[^>]*>([\s\S]*?)<\/td>/);
+                        const hanziMatch = rowFragment.match(/<div class="hanzi">([\s\S]*?)<\/div>/);
+                        let w = '';
+                        if (otxtMatch && otxtMatch[1].replace(/<[^>]+>/g, '').trim()) {
+                            w = otxtMatch[1].replace(/<[^>]+>/g, '').trim();
+                        } else if (hanziMatch) {
+                            w = [...hanziMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)].map(m => m[1].trim()).join('');
+                        }
+                        if (!w) continue;
+                        const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>([\s\S]*?)<\/div>/);
+                        const rd = pinyinMatch ? [...pinyinMatch[1].replace(/&#8203;|<wbr\s*\/?>/gi, '').matchAll(/<span[^>]*>([^<]+)<\/span>/g)].map(m => m[1].trim()).join(' ') : '';
+                        const defsMatch = rowFragment.match(/<div class="defs">([\s\S]*?)<\/div>/);
+                        let defs = [];
+                        if (defsMatch) {
+                            defs = defsMatch[1].replace(/<[^>]+>/g, '/').split('/').map(d => d.trim()).filter(d => d && d !== '&nbsp;');
+                        }
+                        const hskMatch = rowFragment.match(/HSK\s*(\d+)/i);
+                        const level = hskMatch ? parseInt(hskMatch[1]) : null;
+                        if (defs.length > 0) {
+                            entries.push({ word: w, reading: rd, definitions: defs, partOfSpeech: '', level });
+                        }
+                    }
+                    if (entries.length > 0) source = 'mdbg';
+                }
+            } catch (e) { }
+        }
+
+        // 5. Glosbe (zh-vi, zh-ja, en-vi, en-ko, ko-vi)
+        if (entries.length === 0 && (pair === 'zh-vi' || pair === 'zh-ja' || pair === 'en-vi' || pair === 'en-ko')) {
+            try {
+                const url = `https://glosbe.com/${from}/${to}/${encodeURIComponent(word)}`;
+                const res = await fetch(url, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(5000) });
+                if (res.ok) {
+                    const html = await res.text();
+                    const h3Matches = [...html.matchAll(/<h3[^>]*class="[^"]*translation__item__(?:pharse|phrase)[^"]*"[^>]*>([\s\S]*?)<\/h3>/g)];
+                    const seenDefs = new Set();
+                    const py = from === 'zh' ? pinyin(word, { toneType: 'symbol' }) : '';
+                    for (const match of h3Matches) {
+                        const def = match[1].replace(/<[^>]+>/g, '').trim();
+                        if (def && !seenDefs.has(def.toLowerCase())) {
+                            seenDefs.add(def.toLowerCase());
+                            entries.push({ word, reading: py, definitions: [def], partOfSpeech: '' });
+                            if (entries.length >= 5) break;
+                        }
+                    }
+                    if (entries.length > 0) source = 'glosbe';
+                }
+            } catch (e) { }
+        }
+
+        // 6. English monolingual fallback (Datamuse -> Free Dictionary API)
+        if (entries.length === 0 && pair === 'en-en') {
+            try {
+                const dmRes = await fetch(`https://api.datamuse.com/words?sp=${encodeURIComponent(word)}&md=dp&max=3`, { signal: AbortSignal.timeout(3000) });
                 if (dmRes.ok) {
                     const dmData = await dmRes.json();
                     if (dmData[0]?.defs && dmData[0].defs.length > 0) {

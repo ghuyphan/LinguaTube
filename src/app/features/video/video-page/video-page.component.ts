@@ -453,6 +453,7 @@ export class VideoPageComponent implements OnInit {
 
   private lastLang = '';
   private skipNextMismatchDialog = false;
+  private isSwitchingTrack = false;
 
   constructor() {
     // Reset SEO title when video changes or is cleared
@@ -591,6 +592,12 @@ export class VideoPageComponent implements OnInit {
         // Close any open mismatch dialog
         this.showLanguageMismatchDialog.set(false);
         this.mismatchDetectedLang.set(null);
+
+        if (this.isSwitchingTrack) {
+          // If we are actively switching tracks, do NOT re-tokenize existing cues!
+          // The in-flight fetchTranscript will deliver fresh cues for the new track.
+          return;
+        }
 
         if (this.skipNextMismatchDialog) {
           // User explicitly confirmed switching to the video's authentic language
@@ -948,6 +955,7 @@ export class VideoPageComponent implements OnInit {
 
     this.isSubmittingAi.set(true);
     this.showAiConfirmDialog.set(false);
+    this.skipNextMismatchDialog = true;
 
     const duration = Math.round(this.youtube.duration()) || undefined;
 
@@ -1252,9 +1260,12 @@ export class VideoPageComponent implements OnInit {
     // Switch to detected language
     const detected = this.mismatchDetectedLang();
     if (detected) {
-      // Skip the dialog for the upcoming refetch triggered by language change
-      this.skipNextMismatchDialog = true;
-      this.learningLanguage.switchLanguage(detected as SupportedLearningLanguage, { navigateHome: false });
+      const norm = normalizeLanguageCode(detected);
+      if (['ja', 'zh', 'ko', 'en'].includes(norm)) {
+        // Skip the dialog for the upcoming refetch triggered by language change
+        this.skipNextMismatchDialog = true;
+        this.learningLanguage.switchLanguage(norm as SupportedLearningLanguage, { navigateHome: false });
+      }
     }
     this.showLanguageMismatchDialog.set(false);
     this.mismatchDetectedLang.set(null);
@@ -1264,40 +1275,60 @@ export class VideoPageComponent implements OnInit {
     // User explicitly chose to keep target learning language despite mismatch
     this.skipNextMismatchDialog = true;
     this.showLanguageMismatchDialog.set(false);
-    const wasAi = this.transcript.isAIGenerated();
     this.mismatchDetectedLang.set(null);
 
     // Clear mismatched subtitles from the player
     this.subtitles.subtitles.set([]);
     this.subtitles.currentCueIndex.set(-1);
 
-    // Prompt user to generate subtitles in their target language via AI only if not already AI generated
-    if (!wasAi) {
-      this.onManualAITrigger();
-    }
+    // Note: Do not automatically re-open the AI modal here.
+    // The subtitle display cleanly offers the "Generate AI Subtitles" action in the empty state,
+    // avoiding an inescapable modal loop.
   }
 
-  onSelectTrack(lang: string): void {
+  onSelectTrack(trackStr: string): void {
     const currentVid = this.youtube.currentVideo();
-    if (!currentVid) return;
-    const duration = Math.round(this.youtube.duration()) || undefined;
-    this.skipNextMismatchDialog = true;
+    if (!currentVid || !trackStr) return;
 
-    // If selecting a supported learning language, switch active learning language
-    const norm = normalizeLanguageCode(lang);
-    if (['ja', 'zh', 'ko', 'en'].includes(norm)) {
-      this.learningLanguage.switchLanguage(norm as SupportedLearningLanguage, { navigateHome: false });
+    if (trackStr === '__subtitles_off__') {
+      if (this.subtitles.subtitlesVisible()) {
+        this.subtitles.toggleSubtitlesVisible();
+      }
+      return;
     }
 
-    this.transcript.fetchTranscript(currentVid.id, lang, duration, currentVid.title, currentVid.channel, false)
+    const isAI = trackStr.startsWith('ai:');
+    const rawLang = isAI ? trackStr.slice(3) : trackStr;
+    const norm = normalizeLanguageCode(rawLang);
+
+    if (!['ja', 'zh', 'ko', 'en'].includes(norm)) {
+      console.warn('[VideoPage] Unsupported track language selected:', rawLang);
+      return;
+    }
+
+    const duration = Math.round(this.youtube.duration()) || undefined;
+    this.isSwitchingTrack = true;
+    this.skipNextMismatchDialog = true;
+
+    // Switch active learning language without navigating home
+    this.learningLanguage.switchLanguage(norm as SupportedLearningLanguage, { navigateHome: false });
+
+    // Make sure subtitles are visible when a track is explicitly selected
+    if (!this.subtitles.subtitlesVisible()) {
+      this.subtitles.toggleSubtitlesVisible();
+    }
+
+    this.transcript.fetchTranscript(currentVid.id, norm, duration, currentVid.title, currentVid.channel, false)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {
+          this.isSwitchingTrack = false;
           if (cues.length > 0) {
-            this.handleCaptionsSuccess(cues, lang);
+            this.handleCaptionsSuccess(cues, norm);
           }
         },
         error: (err) => {
+          this.isSwitchingTrack = false;
           console.error('Failed to load selected track:', err);
         }
       });

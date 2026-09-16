@@ -19,7 +19,7 @@ import { getJapaneseRomaji } from './japanese-romaji.js';
 
 /**
  * Parse Naver Korean dictionary API response
- * Used for: ko-en, ko-vi, ko-ja, ko-zh, ko-ko
+ * Used for: ko-en, ko-vi, ko-ja, ko-zh, ko-ko, ja-ko, zh-ko, en-en, en-ko, en-vi, en-ja, en-zh
  * @param {Object} data - Raw API response
  * @returns {DictEntry[]}
  */
@@ -27,30 +27,74 @@ export function parseNaver(data) {
     const wordResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
 
     return wordResults.slice(0, 5).map(item => {
-        // Extract word (handle HTML entities)
-        const word = (item.expEntry || '').replace(/<[^>]+>/g, '');
+        // 1. Extract word (strip <sup> tags first to remove homonym numbers like 사랑1)
+        const word = (item.expEntry || '')
+            .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '')
+            .replace(/<[^>]+>/g, '')
+            .trim();
 
-        // Extract romanization/pronunciation
-        const reading = (item.expEntrySuperscript || item.phoneticSigns?.[0]?.sign || '').replace(/<[^>]+>/g, '');
+        // 2. Extract phonetic pronunciation (searchPhoneticSymbolList holds IPA, Pinyin, or Hangul pronunciation)
+        const phoneticObj = item.searchPhoneticSymbolList?.find(s => s?.symbolValue)
+            || item.searchPhoneticSymbolList?.[0];
+        const rawPhonetic = (phoneticObj?.symbolValue || item.phoneticSigns?.[0]?.sign || '')
+            .replace(/<[^>]+>/g, '')
+            .trim();
 
-        // Extract definitions from meansCollector
+        let reading = '';
+        if (rawPhonetic && rawPhonetic !== word) {
+            // For Chinese pinyin or IPA with latin characters, keep clean without brackets
+            if (/[a-zA-Z]/.test(rawPhonetic) || rawPhonetic.startsWith('/') || rawPhonetic.startsWith('[')) {
+                reading = rawPhonetic;
+            } else {
+                // Korean pronunciation change like 학교 -> [학꾜]
+                reading = `[${rawPhonetic}]`;
+            }
+        }
+
+        // 3. Extract definitions and examples from meansCollector
         const definitions = [];
+        const examples = [];
+        let primaryPos = '';
         if (item.meansCollector) {
             item.meansCollector.forEach(collector => {
+                if (!primaryPos && (collector.partOfSpeech2 || collector.partOfSpeech)) {
+                    primaryPos = (collector.partOfSpeech2 || collector.partOfSpeech)
+                        .replace(/<[^>]+>/g, '')
+                        .trim();
+                }
                 if (collector.means) {
                     collector.means.forEach(mean => {
-                        const def = (mean.value || '').replace(/<[^>]+>/g, '').trim();
-                        if (def) definitions.push(def);
+                        const def = (mean.value || '')
+                            .replace(/<[^>]+>/g, '')
+                            .replace(/\s+/g, ' ')
+                            .trim();
+                        if (def && !definitions.some(d => d.toLowerCase() === def.toLowerCase())) {
+                            definitions.push(def);
+                        }
+
+                        const exOri = (mean.exampleOri || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                        const exTrans = (mean.exampleTrans || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                        if (exOri) {
+                            const formatted = exTrans ? `${exOri} (${exTrans})` : exOri;
+                            if (!examples.some(e => e.toLowerCase() === formatted.toLowerCase())) {
+                                examples.push(formatted);
+                            }
+                        }
                     });
                 }
             });
         }
 
-        // Extract part of speech
-        const partOfSpeech = (item.sourceDictnameKo || '').replace(/<[^>]+>/g, '');
+        // 4. Fallback part of speech
+        const partOfSpeech = primaryPos || (item.partsOfSpeech ? item.partsOfSpeech.join(', ') : '');
 
-        // Extract authentic audio URL from Naver
-        const audio = item.searchPhoneticSymbolList?.[0]?.phoneticSymbolAudioList?.[0]?.url
+        // 5. Extract authentic audio URL (symbolFile contains pipe-delimited female|male MP3s)
+        const audioObj = item.searchPhoneticSymbolList?.find(s => s?.symbolFile?.startsWith('http'))
+            || item.searchPhoneticSymbolList?.[0];
+        const rawSymbolFile = audioObj?.symbolFile || '';
+        const symbolAudio = rawSymbolFile.startsWith('http') ? rawSymbolFile.split('|')[0].trim() : '';
+
+        const audio = symbolAudio
             || item.searchSearchResultAudioList?.[0]?.url
             || item.searchSearchResultAudioList?.[0]?.audioUrl
             || item.phoneticSigns?.[0]?.signFile
@@ -58,7 +102,14 @@ export function parseNaver(data) {
             || item.audioUrl
             || '';
 
-        return { word, reading, definitions, partOfSpeech, ...(audio ? { audio } : {}) };
+        return {
+            word,
+            reading,
+            definitions,
+            ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
+            partOfSpeech,
+            ...(audio ? { audio } : {})
+        };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -73,6 +124,9 @@ export function parseJotoba(data) {
         return [];
     }
 
+    // Extract kanji JLPT level if available in the response
+    const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
+
     return data.words.slice(0, 5).map(entry => {
         const word = entry.reading?.kanji || entry.reading?.kana || '';
         const reading = entry.reading?.kana || '';
@@ -85,13 +139,26 @@ export function parseJotoba(data) {
             }
         });
 
+        // Parse POS from object structure [{ Verb: "Ichidan" }, ...] or string
         const partOfSpeech = entry.senses?.[0]?.pos
-            ?.map(p => (typeof p === 'string' ? p : p.Pretty || p.Short || ''))
+            ?.map(p => {
+                if (typeof p === 'string') return p;
+                if (p && typeof p === 'object') {
+                    return Object.entries(p).map(([cat, sub]) => (sub ? `${cat} (${sub})` : cat)).join(', ');
+                }
+                return '';
+            })
             .filter(Boolean)
             .join(', ') || '';
 
-        const level = entry.common?.jlpt ? parseInt(entry.common.jlpt) : null;
-        const audio = entry.audio?.url || (typeof entry.audio === 'string' ? entry.audio : '') || entry.pitch?.audio || '';
+        const level = entry.jlpt
+            ? parseInt(String(entry.jlpt).replace(/\D/g, ''))
+            : (kanjiJlpt ? parseInt(String(kanjiJlpt).replace(/\D/g, '')) : null);
+
+        let audio = entry.audio?.url || (typeof entry.audio === 'string' ? entry.audio : '') || entry.pitch?.audio || '';
+        if (audio && audio.startsWith('/')) {
+            audio = `https://jotoba.de${audio}`;
+        }
 
         return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };
     }).filter(e => e.word && e.definitions.length > 0);
@@ -99,15 +166,14 @@ export function parseJotoba(data) {
 
 
 /**
- * Parse Mazii Japanese-Vietnamese dictionary API response
- * Used for: ja-vi
- * API: POST https://mazii.net/api/search with { dict: 'javi', type: 'word', query: word, page: 1 }
+ * Parse Mazii Japanese-Vietnamese / Japanese-Chinese dictionary API response
+ * Used for: ja-vi, ja-zh (jacn)
+ * API: POST https://mazii.net/api/search with { dict: 'javi' | 'jacn', type: 'word', query: word, page: 1 }
  * Response structure: { status, found, data: [{ word, phonetic, short_mean, means: [{ mean, kind, examples }] }] }
  * @param {Object} response - Raw API response from Mazii
  * @returns {DictEntry[]}
  */
 export function parseMazii(response) {
-    // Mazii returns data in 'data' field, not 'results'
     const results = response.data || response.results || [];
     if (!results || results.length === 0) {
         return [];
@@ -118,41 +184,71 @@ export function parseMazii(response) {
         const reading = entry.phonetic || entry.reading || '';
         const romanization = getJapaneseRomaji(reading, word);
 
-        // Extract definitions from means array or short_mean
+        // Extract definitions and examples from means array or short_mean
         const definitions = [];
+        const examples = [];
+        const seenDefs = new Set();
+        const seenExamples = new Set();
 
-        // Primary: means array with nested mean field
+        // Primary: means array with nested mean field and examples
         if (entry.means && Array.isArray(entry.means)) {
             entry.means.forEach(m => {
                 if (m.mean) {
-                    // Clean up HTML and split by semicolons/newlines
-                    const cleanMean = m.mean.replace(/<[^>]+>/g, '').trim();
-                    if (cleanMean) definitions.push(cleanMean);
+                    const cleanMean = m.mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                    const key = cleanMean.toLowerCase();
+                    if (cleanMean && !seenDefs.has(key)) {
+                        seenDefs.add(key);
+                        definitions.push(cleanMean);
+                    }
+                }
+                if (m.examples && Array.isArray(m.examples)) {
+                    m.examples.forEach(ex => {
+                        const content = (ex.content || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                        const mean = (ex.mean || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                        if (content) {
+                            const formatted = mean ? `${content} (${mean})` : content;
+                            const exKey = formatted.toLowerCase();
+                            if (!seenExamples.has(exKey)) {
+                                seenExamples.add(exKey);
+                                examples.push(formatted);
+                            }
+                        }
+                    });
                 }
             });
         }
 
         // Fallback: short_mean field
         if (definitions.length === 0 && entry.short_mean) {
-            definitions.push(entry.short_mean);
+            definitions.push(entry.short_mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
         }
 
         // Legacy fallback: entry.mean (old format)
         if (definitions.length === 0 && entry.mean) {
-            const means = entry.mean.split(/[;\n]/).map(m => m.trim()).filter(Boolean);
+            const means = entry.mean.split(/[;\n]/).map(m => m.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean);
             definitions.push(...means);
         }
 
         // Extract part of speech from means[0].kind or entry.type
         const partOfSpeech = entry.means?.[0]?.kind || entry.type || '';
-        const level = entry.level ? parseInt(String(entry.level).replace('N', '')) : null;
+        const rawLevel = Array.isArray(entry.level) ? entry.level[0] : entry.level;
+        const level = rawLevel ? parseInt(String(rawLevel).replace(/\D/g, '')) : null;
 
         let audio = entry.audio || entry.phonetic_audio || '';
         if (audio && !audio.startsWith('http')) {
             audio = '';
         }
 
-        return { word, reading, romanization, definitions, partOfSpeech, level, ...(audio ? { audio } : {}) };
+        return {
+            word,
+            reading,
+            romanization,
+            definitions,
+            ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
+            partOfSpeech,
+            level,
+            ...(audio ? { audio } : {})
+        };
     }).filter(e => e.word && e.definitions.length > 0);
 }
 
@@ -198,6 +294,33 @@ export function parseFreeDictionary(data) {
 }
 
 /**
+ * Parse Datamuse API response (English definitions and synonyms)
+ * Used for: en-en
+ * @param {Array} data - Raw Datamuse JSON response
+ * @returns {DictEntry[]}
+ */
+export function parseDatamuse(data) {
+    if (!Array.isArray(data) || data.length === 0) {
+        return [];
+    }
+
+    const item = data[0];
+    if (!item || !item.defs || item.defs.length === 0) {
+        return [];
+    }
+
+    const defs = item.defs.map(d => d.replace(/^[a-z]+\t/, '').trim()).filter(Boolean);
+    const pos = item.defs.map(d => d.match(/^([a-z]+)\t/)?.[1]).filter(Boolean);
+
+    return [{
+        word: item.word || '',
+        reading: '',
+        definitions: defs.slice(0, 5),
+        partOfSpeech: [...new Set(pos)].join(', ')
+    }];
+}
+
+/**
  * Parse MDBG Chinese dictionary HTML response
  * Used for: zh-en
  * Extracts complete headword (all characters), space-separated pinyin, clean definitions, and HSK level
@@ -226,10 +349,10 @@ export async function parseMdbg(response) {
             }
             if (!word) continue;
 
-            // 2. Extract pinyin syllables (joined with spaces for readability)
+            // 2. Extract pinyin syllables (strip zero-width spaces and clean up)
             const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>([\s\S]*?)<\/div>/);
             const reading = pinyinMatch
-                ? [...pinyinMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)]
+                ? [...pinyinMatch[1].replace(/&#8203;|<wbr\s*\/?>/gi, '').matchAll(/<span[^>]*>([^<]+)<\/span>/g)]
                     .map(m => m[1].trim())
                     .join(' ')
                 : '';
@@ -246,7 +369,7 @@ export async function parseMdbg(response) {
             }
 
             // 4. Extract HSK level
-            const hskMatch = rowFragment.match(/HSK\s*(\d+)/);
+            const hskMatch = rowFragment.match(/HSK\s*(\d+)/i);
             const level = hskMatch ? parseInt(hskMatch[1]) : null;
 
             if (definitions.length > 0) {
@@ -269,12 +392,13 @@ export async function parseMdbg(response) {
 
 /**
  * Parse Glosbe dictionary HTML response
- * Used for: zh-vi, ko-vi fallback, en-vi, en-ko
+ * Used for: zh-vi, zh-ja, ko-vi fallback, en-vi, en-ko, en-zh
  * @param {Response} response - Fetch response from Glosbe
  * @param {string} [targetWord=''] - The word that was queried
+ * @param {string} [from=''] - Source language
  * @returns {Promise<DictEntry[]>}
  */
-export async function parseGlosbe(response, targetWord = '') {
+export async function parseGlosbe(response, targetWord = '', from = '') {
     try {
         const html = await response.text();
         const entries = [];
@@ -318,8 +442,9 @@ export async function parseGlosbe(response, targetWord = '') {
             }
         }
 
-        // 3. If targetWord has Chinese characters and reading is empty, compute pinyin
-        if (targetWord && /[\u4E00-\u9FFF]/.test(targetWord)) {
+        // 3. Only if source is Chinese, compute pinyin
+        const isChinese = from === 'zh' || (!from && targetWord && /[\u4E00-\u9FFF]/.test(targetWord) && !/[\u3040-\u30FF]/.test(targetWord));
+        if (isChinese && targetWord && /[\u4E00-\u9FFF]/.test(targetWord)) {
             const { pinyin } = await import('pinyin-pro');
             const py = pinyin(targetWord, { toneType: 'symbol' });
             for (const e of entries) {
@@ -396,19 +521,22 @@ export async function parseKrdict(response) {
             if (entries.length >= 5) break;
             const dlContent = dl.split('</dl>')[0];
 
-            // 1. Extract word from <dt>
+            // 1. Extract word from <dt> (strip <sup> homonym tags and collapse whitespace)
             const wordMatch = dlContent.match(/<span class="word_type[^"]*">([\s\S]*?)<\/span>/)
                 || dlContent.match(/<dt[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/);
-            const word = wordMatch ? wordMatch[1].replace(/<[^>]+>/g, '').trim() : '';
+            const word = wordMatch
+                ? wordMatch[1].replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+                : '';
             if (!word) continue;
 
             // 2. Extract pronunciation and authentic audio
             const pronMatch = dlContent.match(/<span class="search_sub">([\s\S]*?)<\/span>/);
-            const reading = pronMatch
-                ? pronMatch[1].replace(/<[^>]+>/g, '').replace(/듣기/g, '').replace(/\[|\]/g, '').trim()
+            const rawPron = pronMatch
+                ? pronMatch[1].replace(/<[^>]+>/g, '').replace(/듣기/g, '').replace(/\[|\]/g, '').replace(/\s+/g, ' ').trim()
                 : '';
+            const reading = rawPron ? `[${rawPron}]` : '';
 
-            const audioMatch = dlContent.match(/fnSound\('([^']+)'\)/)
+            const audioMatch = dlContent.match(/fnSound(?:Play)?\('([^']+)'\)/)
                 || dlContent.match(/playAudio\('([^']+)'\)/)
                 || dlContent.match(/href="([^"]+\.mp3)"/);
             let audio = audioMatch ? audioMatch[1] : '';
@@ -419,13 +547,17 @@ export async function parseKrdict(response) {
             // 3. Extract part of speech (e.g. "Danh từ" or "명사")
             const posMatch = dlContent.match(/<span class="word_att_type1">[\s\S]*?<span class="manyLang2">([\s\S]*?)<\/span>/)
                 || dlContent.match(/「([^」]+)」/);
-            const partOfSpeech = posMatch ? posMatch[1].trim() : '';
+            const partOfSpeech = posMatch ? posMatch[1].replace(/\s+/g, ' ').trim() : '';
 
             // 4. Extract Vietnamese definitions
             const defs = [];
             const ddMatches = [...dlContent.matchAll(/<dd[^>]*class="[^"]*manyLang2[^"]*"[^>]*>([\s\S]*?)<\/dd>/g)];
             for (const dd of ddMatches) {
-                const defText = dd[1].replace(/<[^>]+>/g, '').trim();
+                const defText = dd[1]
+                    .replace(/<[^>]+>/g, '')
+                    .replace(/^\s*\d+\s*\.?\s*/, '')
+                    .replace(/\s+/g, ' ')
+                    .trim();
                 if (defText && !defs.includes(defText)) {
                     defs.push(defText);
                 }
