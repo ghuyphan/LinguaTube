@@ -1137,7 +1137,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   getTargetLangFlagUrl(code: string): string {
     const lang = this.translation.getSupportedTargetLanguages().find(l => l.code === code);
-    return lang?.flagUrl || 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
+    return lang?.flagUrl || '/flags/gb.svg';
   }
 
   getTargetLangName(code: string): string {

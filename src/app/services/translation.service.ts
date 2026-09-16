@@ -28,11 +28,11 @@ export interface LanguageOption {
 }
 
 export const SUPPORTED_TARGET_LANGUAGES: ReadonlyArray<LanguageOption> = [
-    { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-    { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-    { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-    { code: 'en', name: 'English', flag: '🇬🇧', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' },
-    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: 'https://hatscripts.github.io/circle-flags/flags/vn.svg' }
+    { code: 'ja', name: '日本語', flag: '🇯🇵', flagUrl: '/flags/jp.svg' },
+    { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: '/flags/cn.svg' },
+    { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: '/flags/kr.svg' },
+    { code: 'en', name: 'English', flag: '🇬🇧', flagUrl: '/flags/gb.svg' },
+    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: '/flags/vn.svg' }
 ] as const;
 
 interface BatchResponse {

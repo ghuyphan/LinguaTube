@@ -6,26 +6,26 @@ export interface SupportedLanguage {
 }
 
 export const SUPPORTED_LANGUAGES: readonly SupportedLanguage[] = [
-  { code: 'ja', name: '日本語', nativeName: '日本語', flag: 'https://hatscripts.github.io/circle-flags/flags/jp.svg' },
-  { code: 'zh', name: '中文', nativeName: '中文', flag: 'https://hatscripts.github.io/circle-flags/flags/cn.svg' },
-  { code: 'ko', name: '한국어', nativeName: '한국어', flag: 'https://hatscripts.github.io/circle-flags/flags/kr.svg' },
-  { code: 'en', name: 'English', nativeName: 'English', flag: 'https://hatscripts.github.io/circle-flags/flags/gb.svg' }
+  { code: 'ja', name: '日本語', nativeName: '日本語', flag: '/flags/jp.svg' },
+  { code: 'zh', name: '中文', nativeName: '中文', flag: '/flags/cn.svg' },
+  { code: 'ko', name: '한국어', nativeName: '한국어', flag: '/flags/kr.svg' },
+  { code: 'en', name: 'English', nativeName: 'English', flag: '/flags/gb.svg' }
 ] as const;
 
 export const LANGUAGE_FLAGS: Record<string, string> = {
-  ja: 'https://hatscripts.github.io/circle-flags/flags/jp.svg',
-  zh: 'https://hatscripts.github.io/circle-flags/flags/cn.svg',
-  ko: 'https://hatscripts.github.io/circle-flags/flags/kr.svg',
-  en: 'https://hatscripts.github.io/circle-flags/flags/gb.svg',
-  vi: 'https://hatscripts.github.io/circle-flags/flags/vn.svg',
-  es: 'https://hatscripts.github.io/circle-flags/flags/es.svg',
-  fr: 'https://hatscripts.github.io/circle-flags/flags/fr.svg',
-  de: 'https://hatscripts.github.io/circle-flags/flags/de.svg',
-  it: 'https://hatscripts.github.io/circle-flags/flags/it.svg',
-  ru: 'https://hatscripts.github.io/circle-flags/flags/ru.svg',
-  pt: 'https://hatscripts.github.io/circle-flags/flags/pt.svg',
-  th: 'https://hatscripts.github.io/circle-flags/flags/th.svg',
-  id: 'https://hatscripts.github.io/circle-flags/flags/id.svg',
+  ja: '/flags/jp.svg',
+  zh: '/flags/cn.svg',
+  ko: '/flags/kr.svg',
+  en: '/flags/gb.svg',
+  vi: '/flags/vn.svg',
+  es: '/flags/es.svg',
+  fr: '/flags/fr.svg',
+  de: '/flags/de.svg',
+  it: '/flags/it.svg',
+  ru: '/flags/ru.svg',
+  pt: '/flags/pt.svg',
+  th: '/flags/th.svg',
+  id: '/flags/id.svg',
 };
 
 /**
