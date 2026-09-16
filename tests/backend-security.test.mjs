@@ -1477,6 +1477,47 @@ test('Dictionary Parsers: parseDatamuse extracts definitions and parts of speech
   assert.equal(results[0].partOfSpeech, 'n, v');
 });
 
+test('CSP Headers: connect-src allows all external origins used by fonts, thumbnails, and avatars for Service Worker compliance', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const headersPath = path.resolve(process.cwd(), 'public/_headers');
+  const content = fs.readFileSync(headersPath, 'utf8');
+
+  // Parse CSP line
+  const cspMatch = content.match(/Content-Security-Policy:\s*([^\n\r]+)/);
+  assert.ok(cspMatch, 'Content-Security-Policy header must exist in public/_headers');
+
+  const cspDirectives = {};
+  cspMatch[1].split(';').forEach(part => {
+    const trimmed = part.trim();
+    if (!trimmed) return;
+    const [directive, ...sources] = trimmed.split(/\s+/);
+    cspDirectives[directive] = sources;
+  });
+
+  const connectSrc = cspDirectives['connect-src'] || [];
+  assert.ok(connectSrc.length > 0, 'connect-src directive must be present');
+
+  // Essential origins that the Angular service worker fetches on behalf of the page
+  const requiredConnectOrigins = [
+    'https://fonts.googleapis.com',
+    'https://fonts.gstatic.com',
+    'https://i.ytimg.com',
+    'https://*.ytimg.com',
+    'https://img.youtube.com',
+    'https://*.googleusercontent.com',
+    'https://yt3.googleusercontent.com'
+  ];
+
+  for (const origin of requiredConnectOrigins) {
+    assert.ok(
+      connectSrc.includes(origin),
+      `connect-src must include ${origin} so Service Worker fetches do not violate CSP`
+    );
+  }
+});
+
+
 
 
 
