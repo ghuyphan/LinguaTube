@@ -3,8 +3,33 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Voca - Learn Japanese, Chinese, Korean & English from YouTube</title>
   <base href="/">
+
+  <!-- Supabase OAuth Popup Fast Callback Handshake -->
+  <script>
+    (function() {
+      try {
+        if (window.opener && window.opener !== window) {
+          var hash = window.location.hash || '';
+          var search = window.location.search || '';
+          var isAuth = (hash.indexOf('access_token') !== -1 || hash.indexOf('error') !== -1 ||
+                        search.indexOf('code=') !== -1 || search.indexOf('error=') !== -1);
+          if (isAuth) {
+            window.opener.postMessage({
+              type: 'SUPABASE_AUTH_CALLBACK',
+              hash: hash,
+              search: search,
+              url: window.location.href
+            }, window.location.origin);
+            setTimeout(function() {
+              window.close();
+            }, 50);
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description"
     content="Learn Japanese, Chinese, Korean, and English by watching YouTube videos with interactive subtitles, real-time tokenization, furigana, pinyin, dictionary lookups, and SM-2 spaced repetition.">
@@ -66,9 +91,9 @@
       "Interactive synchronized subtitles",
       "Morphological tokenization with Furigana (JA) and Pinyin (ZH)",
       "Instant multi-source dictionary lookup (Jotoba, Mazii, Naver, MDBG)",
-      "SM-2 Spaced Repetition vocabulary flashcards",
+      "Spaced repetition vocabulary flashcards",
       "Dual subtitle translation",
-      "Gladia AI audio transcription"
+      "AI-powered audio transcription"
     ]
   }
   </script>

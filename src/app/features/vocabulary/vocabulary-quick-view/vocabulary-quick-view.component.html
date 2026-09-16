@@ -9,7 +9,7 @@
         </div>
 
         @if (recentWords().length === 0) {
-        <div class="empty-state empty-state--centered">
+        <div class="empty-state empty-state--centered empty-state--animate">
             <div class="empty-state__icon-box">
                 <app-icon name="book-open" [size]="28" />
             </div>
@@ -17,6 +17,10 @@
                 <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                 <p class="empty-state__description">{{ i18n.t('study.tapWordsHint') }}</p>
             </div>
+            <button type="button" class="btn btn-primary btn-sm" (click)="openDictionary()">
+                <app-icon name="book-open" [size]="14" />
+                <span>{{ i18n.t('nav.dictionary') }}</span>
+            </button>
         </div>
         } @else {
         <div class="quick-view-modal__card">
@@ -39,6 +43,12 @@
                         }
                     </div>
                     <div class="quick-view-item__actions">
+                        <button type="button" class="audio-btn--sm"
+                            [class.playing]="audio.isPlaying(word.word)"
+                            (click)="playAudio(word, $event)"
+                            [attr.aria-label]="i18n.t('dictionary.playPronunciation') || 'Play pronunciation'">
+                            <app-icon [name]="audio.isPlaying(word.word) ? 'volume-2' : 'volume-1'" [size]="13" />
+                        </button>
                         <button type="button" class="level-badge-btn" [class]="'badge--' + word.level" (click)="openLevelPicker(word.id)">
                             <span class="level-text">{{ i18n.t('vocab.' + word.level) }}</span>
                             <app-icon name="chevron-down" [size]="10" class="level-badge-chevron" />

@@ -185,3 +185,11 @@ graph LR
 - Utilizes modern ESLint flat config format.
 - Combines `@eslint/js`, `typescript-eslint`, and `angular-eslint`.
 - Enforces strict typing, component selector prefixes (`app`), and template accessibility rules.
+
+### 6.3. i18n & Translation Validator (`scripts/check-i18n.mjs`)
+- Runs via `npm run check:i18n`, and is wired into `npm run lint`, `npm run build`, and `npm run test:ci`.
+- Validates:
+  - 100% key parity across all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
+  - No empty or corrupt translation values.
+  - Statically scans all `.html` and `.ts` files to ensure all referenced `t(...)` keys exist.
+  - Verifies interpolation placeholder tokens (`{{count}}`, etc.) across translations.

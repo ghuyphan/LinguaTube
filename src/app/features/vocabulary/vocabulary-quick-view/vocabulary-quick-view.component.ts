@@ -1,10 +1,12 @@
 import { Component, inject, input, output, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService } from '../../../core/services';
+import { VocabularyItem } from '../../../models';
 
 @Component({
   selector: 'app-vocabulary-quick-view',
@@ -18,9 +20,21 @@ export class VocabularyQuickViewComponent {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+  readonly audio = inject(AudioService);
+  private router = inject(Router);
 
   isOpen = input<boolean>(false);
   closed = output<void>();
+
+  playAudio(item: VocabularyItem, event: Event): void {
+    event.stopPropagation();
+    void this.audio.playWord(item.word, item.language, item.audio);
+  }
+
+  openDictionary(): void {
+    this.closed.emit();
+    this.router.navigate(['/dictionary']);
+  }
 
   recentWords = computed(() => {
     const lang = this.settings.settings().language;

@@ -4,6 +4,7 @@ import {
   input,
   output,
   signal,
+  computed,
   inject,
   ElementRef,
   viewChild,
@@ -13,10 +14,20 @@ import {
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IconComponent } from '../icon/icon.component';
-import { I18nService } from '../../../core/services';
+import { Router } from '@angular/router';
+import { IconComponent, IconName } from '../icon/icon.component';
+import { I18nService, SettingsService } from '../../../core/services';
 import { BodyScrollService } from '../../../services';
 import { YoutubeService } from '../../../features/video/youtube.service';
+
+export interface PaletteItem {
+  id: string;
+  icon: IconName;
+  title: string;
+  category: string;
+  badge?: string;
+  run: () => void;
+}
 
 @Component({
   selector: 'app-command-palette',
@@ -30,6 +41,8 @@ export class CommandPaletteComponent implements OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private youtube = inject(YoutubeService);
   private bodyScroll = inject(BodyScrollService);
+  private router = inject(Router);
+  private settings = inject(SettingsService);
   i18n = inject(I18nService);
 
   isOpen = input<boolean>(false);
@@ -41,6 +54,76 @@ export class CommandPaletteComponent implements OnDestroy {
   hasError = signal(false);
   shakeError = signal(false);
   isClosing = signal(false);
+  selectedIndex = signal(0);
+
+  allItems = computed<PaletteItem[]>(() => [
+    {
+      id: 'watch',
+      icon: 'play',
+      title: this.i18n.t('commandPalette.watchVideo') || 'Watch YouTube Videos',
+      category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
+      run: () => this.navigate('/video')
+    },
+    {
+      id: 'study',
+      icon: 'graduation-cap',
+      title: this.i18n.t('commandPalette.reviewVocab') || 'Review Flashcards (SRS)',
+      category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
+      run: () => this.navigate('/study')
+    },
+    {
+      id: 'dict',
+      icon: 'book-open',
+      title: this.i18n.t('commandPalette.openDictionary') || 'Dictionary & Grammar',
+      category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
+      run: () => this.navigate('/dictionary')
+    },
+    {
+      id: 'playlists',
+      icon: 'list-video',
+      title: this.i18n.t('commandPalette.browsePlaylists') || 'Curated Playlists',
+      category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
+      run: () => this.navigate('/playlist')
+    },
+    {
+      id: 'history',
+      icon: 'clock',
+      title: this.i18n.t('commandPalette.viewHistory') || 'Watch History',
+      category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
+      run: () => this.navigate('/history')
+    },
+    {
+      id: 'theme',
+      icon: this.settings.getEffectiveTheme() === 'dark' ? 'sun' : 'moon',
+      title: this.i18n.t('commandPalette.toggleTheme') || 'Toggle Theme',
+      category: this.i18n.t('commandPalette.quickActions') || 'Actions',
+      run: () => this.toggleTheme()
+    }
+  ]);
+
+  filteredItems = computed<PaletteItem[]>(() => {
+    const q = this.url().trim().toLowerCase();
+    const items = this.allItems();
+    if (!q) return items;
+
+    // Check if query matches a YouTube video URL or ID
+    const videoId = this.youtube.extractVideoId(q);
+    if (videoId) {
+      return [{
+        id: 'youtube',
+        icon: 'play-circle',
+        title: `${this.i18n.t('commandPalette.load') || 'Open'}: ${videoId}`,
+        category: 'YouTube',
+        badge: 'Enter ↵',
+        run: () => this.submit()
+      }];
+    }
+
+    return items.filter((item: PaletteItem) =>
+      item.title.toLowerCase().includes(q) ||
+      item.id.toLowerCase().includes(q)
+    );
+  });
 
   private urlInputRef = viewChild<ElementRef<HTMLInputElement>>('urlInput');
   private shakeTimeoutId?: ReturnType<typeof setTimeout>;
@@ -112,7 +195,49 @@ export class CommandPaletteComponent implements OnDestroy {
     }
   }
 
+  private navigate(path: string): void {
+    this.close();
+    void this.router.navigate([path]);
+  }
+
+  private toggleTheme(): void {
+    const effectiveTheme = this.settings.getEffectiveTheme();
+    const next = effectiveTheme === 'dark' ? 'light' : 'dark';
+    this.settings.setTheme(next);
+    this.close();
+  }
+
+  onKeyDown(event: KeyboardEvent): void {
+    const items = this.filteredItems();
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      this.selectedIndex.update(i => (i + 1) % Math.max(1, items.length));
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      this.selectedIndex.update(i => (i - 1 + items.length) % Math.max(1, items.length));
+    } else if (event.key === 'Enter') {
+      event.preventDefault();
+      const current = items[this.selectedIndex()];
+      if (current) {
+        current.run();
+      } else {
+        this.submit();
+      }
+    }
+  }
+
+  executeItem(item: PaletteItem): void {
+    item.run();
+  }
+
+  onItemMouseEnter(idx: number): void {
+    if (isPlatformBrowser(this.platformId) && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      this.selectedIndex.set(idx);
+    }
+  }
+
   onInputChange(): void {
+    this.selectedIndex.set(0);
     if (this.hasError() || this.error()) {
       this.resetError();
     }

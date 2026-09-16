@@ -333,11 +333,17 @@
                     }
                 </div>
                 } @else {
-                <div class="empty-state empty-state--centered">
+                <div class="empty-state empty-state--centered empty-state--animate">
                     <div class="empty-state__icon-box">
                         <app-icon name="video" [size]="28" />
                     </div>
-                    <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
+                    <div class="empty-state__text">
+                        <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="onExploreVideos()">
+                        <app-icon name="globe" [size]="14" />
+                        <span>{{ i18n.t('playlist.discoverVideos') }}</span>
+                    </button>
                 </div>
                 }
             </div>

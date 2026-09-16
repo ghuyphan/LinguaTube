@@ -556,7 +556,7 @@ export class TranscriptService {
 
             if (resultData.status === 'error') {
                 if (videoId && db) deletePendingJob(db, videoId).catch(() => {});
-                return { status: 'error', error: `Gladia error: ${resultData.error_message || 'Transcription failed'}` };
+                return { status: 'error', error: `AI transcription failed: ${resultData.error_message || 'Please try again'}` };
             }
 
             return {

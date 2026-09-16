@@ -22,10 +22,9 @@
         </button>
       </div>
       } @else {
-      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard (⌘V)'" [attr.aria-label]="i18n.t('player.paste') || 'Paste'">
+      <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard'" [attr.aria-label]="i18n.t('player.paste') || 'Paste'">
         <app-icon name="clipboard-check" [size]="15" />
         <span class="paste-label">{{ i18n.t('player.paste') || 'Paste' }}</span>
-        <kbd class="paste-kbd">⌘V</kbd>
       </button>
       }
     </div>
@@ -201,103 +200,6 @@
     <app-grammar-popup [pattern]="fsSelectedGrammarPattern()" [isOpen]="fsGrammarPopupVisible()" (closed)="closeFsGrammarPopup()" />
     }
 
-    <!-- Keyboard Shortcuts Cheat Sheet Modal (YouTube '?') -->
-    <app-bottom-sheet [isOpen]="showShortcutsDialog()" [title]="i18n.t('shortcuts.title') || 'Keyboard shortcuts'" [maxWidth]="'680px'" [showCloseButton]="true" (closed)="closeShortcutsDialog()">
-      <div class="shortcuts-dialog-content">
-        <div class="shortcuts-dialog-header">
-          <div class="shortcuts-header-icon">
-            <app-icon name="keyboard" [size]="20" />
-          </div>
-          <h3 class="shortcuts-dialog-title">{{ i18n.t('shortcuts.title') || 'Keyboard shortcuts' }}</h3>
-        </div>
-
-        <div class="shortcuts-grid">
-          <div class="shortcuts-section">
-            <h4 class="shortcuts-section-title">{{ i18n.t('shortcuts.playback') || 'Playback' }}</h4>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.togglePlay') || 'Toggle play / pause' }}</span>
-              <span class="shortcut-keys"><kbd>k</kbd> {{ i18n.t('common.or') }} <kbd>Space</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.seek10') || 'Rewind 10s / Forward 10s' }}</span>
-              <span class="shortcut-keys"><kbd>j</kbd> / <kbd>l</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.seek5') || 'Fine seek 5s' }}</span>
-              <span class="shortcut-keys"><kbd>←</kbd> / <kbd>→</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.frameStep') || 'Prev / Next frame (paused)' }}</span>
-              <span class="shortcut-keys"><kbd>,</kbd> / <kbd>.</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.seekPercent') || 'Seek to % of video' }}</span>
-              <span class="shortcut-keys"><kbd>0</kbd>.. <kbd>9</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.seekEdges') || 'Seek to start / end' }}</span>
-              <span class="shortcut-keys"><kbd>Home</kbd> / <kbd>End</kbd></span>
-            </div>
-          </div>
-
-          <div class="shortcuts-section">
-            <h4 class="shortcuts-section-title">{{ i18n.t('shortcuts.audioSubtitles') || 'Audio & Subtitles' }}</h4>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.volume') || 'Volume up / down (5%)' }}</span>
-              <span class="shortcut-keys"><kbd>↑</kbd> / <kbd>↓</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.mute') || 'Mute / unmute' }}</span>
-              <span class="shortcut-keys"><kbd>m</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.toggleSubtitles') || 'Toggle subtitles (CC)' }}</span>
-              <span class="shortcut-keys"><kbd>c</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.speed') || 'Speed down / up' }}</span>
-              <span class="shortcut-keys"><kbd>&lt;</kbd> / <kbd>&gt;</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.moveSubtitle') || 'Move subtitle top / bottom' }}</span>
-              <span class="shortcut-keys"><kbd>v</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.nudgeSubtitle') || 'Nudge subtitle up / down' }}</span>
-              <span class="shortcut-keys"><kbd>[</kbd> / <kbd>]</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.cycleFontSize') || 'Cycle subtitle size' }}</span>
-              <span class="shortcut-keys"><kbd>Shift</kbd>+<kbd>S</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.toggleDual') || 'Toggle dual subtitles' }}</span>
-              <span class="shortcut-keys"><kbd>d</kbd></span>
-            </div>
-          </div>
-
-          <div class="shortcuts-section">
-            <h4 class="shortcuts-section-title">{{ i18n.t('shortcuts.general') || 'General & Playlists' }}</h4>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.fullscreen') || 'Toggle full screen' }}</span>
-              <span class="shortcut-keys"><kbd>f</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.exitModal') || 'Exit full screen / Close modal' }}</span>
-              <span class="shortcut-keys"><kbd>Esc</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.playlistNav') || 'Prev / Next in playlist' }}</span>
-              <span class="shortcut-keys"><kbd>Shift</kbd>+<kbd>P</kbd> / <kbd>Shift</kbd>+<kbd>N</kbd></span>
-            </div>
-            <div class="shortcut-row">
-              <span class="shortcut-desc">{{ i18n.t('shortcuts.help') || 'Keyboard shortcuts help' }}</span>
-              <span class="shortcut-keys"><kbd>?</kbd></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </app-bottom-sheet>
 
     <!-- Settings Menu Content Template (Shared by Desktop Popup & Mobile Sheet) -->
     <ng-template #playerSettingsTemplate>
@@ -410,19 +312,6 @@
             </button>
             }
 
-            @if (!isFullscreen()) {
-            <!-- Keyboard Shortcuts helper -->
-            <button type="button" class="settings-menu-item desktop-only-item" (click)="closePlayerSettings(); openShortcutsDialog()">
-              <div class="menu-item-left">
-                <app-icon name="keyboard" [size]="18" />
-                <span class="menu-item-label">{{ i18n.t('player.keyboardShortcuts') || 'Keyboard shortcuts' }}</span>
-              </div>
-              <div class="menu-item-right">
-                <span class="menu-item-value"><kbd>?</kbd></span>
-                <app-icon name="chevron-right" [size]="16" />
-              </div>
-            </button>
-            }
           </div>
         </div>
         }

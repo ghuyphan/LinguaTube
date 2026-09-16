@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AuthService, AudioService, ToastService } from '../../../core/services';
@@ -14,7 +15,7 @@ import { VocabularyItem, WordLevel, Token } from '../../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -35,6 +36,32 @@ export class VocabularyListComponent implements OnDestroy {
   menuRequest = output<void>();
   wordSelect = output<Token>();
   addWordRequest = output<string | void>();
+
+  // Vocab Options Menu Sheet state
+  readonly vocabMenuOpen = signal(false);
+
+  openMenuSheet(): void {
+    this.vocabMenuOpen.set(true);
+  }
+
+  exportVocabJSON(): void {
+    this.vocab.exportAsFile('json');
+  }
+
+  exportVocabAnki(): void {
+    this.vocab.exportAsFile('anki');
+  }
+
+  importVocabJSON(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    void this.vocab.importFromFile(file).catch(err => {
+      console.error('Import failed', err);
+    });
+    input.value = '';
+  }
 
   // Level filter signal
   selectedLevel = signal<WordLevel | 'all'>('all');

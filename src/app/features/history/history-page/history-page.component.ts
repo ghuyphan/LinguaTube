@@ -176,6 +176,18 @@ export class HistoryPageComponent implements OnInit {
     return items;
   });
 
+  hasActiveFilters = computed(() =>
+    this.selectedLanguage() !== 'all' ||
+    this.selectedLevel() !== 'all' ||
+    this.searchQuery().trim().length > 0
+  );
+
+  clearAllFilters(): void {
+    this.selectedLanguage.set('all');
+    this.selectedLevel.set('all');
+    this.searchQuery.set('');
+  }
+
   pageSize = 24;
   visibleCount = signal<number>(24);
 

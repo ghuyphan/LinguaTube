@@ -31,7 +31,7 @@
       "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
     },
     {
-      "name": "Flashcards (SRS)",
+      "name": "Smart Flashcards",
       "short_name": "Study",
       "description": "Practice vocabulary with spaced repetition",
       "url": "./study",

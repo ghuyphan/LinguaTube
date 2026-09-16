@@ -1,11 +1,11 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, output } from '@angular/core';
+import { Component, inject, signal, computed, effect, ChangeDetectionStrategy, output, HostListener } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { OptionPickerComponent } from '../../shared/components/option-picker/option-picker.component';
-import { SettingsService, AuthService, I18nService, AppUpdateService } from '../../core/services';
+import { SettingsService, AuthService, I18nService, AppUpdateService, ToastService } from '../../core/services';
 import { YoutubeService, TranscriptService, PlayerViewService } from '../../features/video';
 import { VocabularyService } from '../../features/vocabulary';
 import { PlaylistService } from '../../features/playlist/playlist.service';
@@ -37,6 +37,7 @@ export class SidebarComponent {
     appUpdate = inject(AppUpdateService);
     videoRecommendation = inject(VideoRecommendationService);
     learningLanguage = inject(LearningLanguageService);
+    toast = inject(ToastService);
 
     private currentUrl = toSignal(
         this.router.events.pipe(
@@ -52,6 +53,26 @@ export class SidebarComponent {
         if (tier === 'pro') return 'Pro';
         return this.i18n.t('app.title') || 'Voca';
     });
+
+    avatarImgFailed = signal(false);
+
+    userInitials = computed(() => {
+        const name = this.auth.user()?.name || this.auth.user()?.email || '';
+        if (!name) return 'U';
+        const parts = name.trim().split(/\s+/);
+        if (parts.length >= 2) {
+            return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+        }
+        return name.slice(0, 2).toUpperCase();
+    });
+
+    constructor() {
+        effect(() => {
+            // Reset image error state when user changes
+            this.auth.user();
+            this.avatarImgFailed.set(false);
+        });
+    }
 
     hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !(this.currentUrl()?.startsWith('/video') ?? false));
 
@@ -118,6 +139,8 @@ export class SidebarComponent {
     readonly currentLang = this.learningLanguage.currentLanguage;
     readonly learningLangOptions = this.learningLanguage.languageOptions;
 
+    showStatsPopover = signal(false);
+
     toggleCollapse(): void {
         this.settings.setSidebarCollapsed(!this.isCollapsed());
     }
@@ -129,6 +152,77 @@ export class SidebarComponent {
 
     onLangSelected(value: string): void {
         this.setLanguage(value as 'ja' | 'zh' | 'ko' | 'en');
+    }
+
+    onFooterUserClick(): void {
+        if (this.isCollapsed()) {
+            this.toggleStatsPopover();
+        } else {
+            this.openSettings.emit();
+        }
+    }
+
+    toggleStatsPopover(event?: MouseEvent): void {
+        if (event) {
+            event.stopPropagation();
+        }
+        this.showStatsPopover.update(v => !v);
+    }
+
+    closeStatsPopover(): void {
+        this.showStatsPopover.set(false);
+    }
+
+    onPopoverStreakClick(): void {
+        this.closeStatsPopover();
+        this.openStreak.emit();
+    }
+
+    onPopoverAchievementsClick(): void {
+        this.closeStatsPopover();
+        this.openAchievements.emit();
+    }
+
+    onPopoverAiCreditsClick(): void {
+        this.closeStatsPopover();
+        this.openAiCredits.emit();
+    }
+
+    onPopoverSettingsClick(): void {
+        this.closeStatsPopover();
+        this.openSettings.emit();
+    }
+
+    onPopoverUpgradeClick(): void {
+        this.closeStatsPopover();
+        this.openProUpgrade.emit();
+    }
+
+    onPopoverLoginClick(): void {
+        this.closeStatsPopover();
+        this.loginWithGoogle();
+    }
+
+    onPopoverSignOutClick(): void {
+        this.closeStatsPopover();
+        void this.auth.signOut();
+    }
+
+    @HostListener('document:keydown.escape')
+    onEscape(): void {
+        if (this.showStatsPopover()) {
+            this.closeStatsPopover();
+        }
+    }
+
+    loginWithGoogle(): void {
+        this.auth.loginWithGoogle().then(profile => {
+            if (profile) {
+                this.toast.show(this.i18n.t('auth.signedInAs', { name: profile.name }) || `Signed in as ${profile.name}`, { type: 'success', icon: 'check-circle' });
+            }
+        }).catch(() => {
+            this.toast.show(this.i18n.t('auth.signInFailed') || 'Sign in failed. Please try again.', { type: 'error', icon: 'alert-circle' });
+        });
     }
 
     toggleTheme(): void {

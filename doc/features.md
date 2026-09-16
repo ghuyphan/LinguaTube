@@ -101,7 +101,6 @@ The video player settings popover (`video-player.component.html`) provides dedic
 - **Reading Display (Furigana / Pinyin / Romanization)**: Dedicated sub-panel allowing instant switching between Native (Off), Annotated Reading (Furigana for JA, Pinyin for ZH, Romanization for KO), and Romaji (for JA) with active checkmarks and typographic script glyph badges.
 - **Grammar Highlights**: Dedicated sub-panel allowing clean On / Off toggling with active checkmarks.
 - **Fullscreen Context Adaptation**:
-  - Keyboard shortcuts row is intelligently hidden when the player is in fullscreen mode (`!isFullscreen()`), avoiding modal overlay confusion.
   - Quick actions like "Share video" and "Save to playlist" are automatically omitted in standard non-fullscreen view (where external action buttons already exist in the video header) and cleanly rendered inside the settings menu exclusively when in fullscreen mode.
 - **Ergonomic Submenu Transitions**: All sub-panels share consistent back header buttons (`chevron-left`), sub-panel routing (`playerSettingsView`), and dynamically animated container heights via `SmoothHeightAnimator`.
 
@@ -675,6 +674,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
 - **History Page Integration (`HistoryPageComponent`)**:
   - **Level Filter Dropdown**: Quickly isolate watch history by difficulty tier.
   - **Dynamic Level Fallback**: `HistoryListComponent` automatically detects and renders level badges via `VideoLevelService.resolveLevel()` even for legacy history items lacking explicit database levels.
+  - **Contextual Empty States & Action Deduplication**: Empty states clearly distinguish between an empty library (prompting video discovery) and filtered results returning zero matches (with instant 1-tap filter reset). Redundant clear actions on desktop overview cards are removed in favor of unified, non-confusing toolbar controls.
 
 ---
 

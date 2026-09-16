@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, startWith, Subject, takeUntil, fromEvent } from 'rxjs';
+import { filter, map, startWith, Subject, takeUntil } from 'rxjs';
 import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -14,7 +14,7 @@ import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-cred
 import { AchievementsDialogComponent } from './components/achievements-dialog/achievements-dialog.component';
 import { ProUpgradeDialogComponent } from './components/pro-upgrade-dialog/pro-upgrade-dialog.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
-import { I18nService, SettingsService, SeoService, PwaService, GamificationService, AppUpdateService } from './core/services';
+import { I18nService, SettingsService, SeoService, PwaService, GamificationService, AppUpdateService, KeyboardShortcutService } from './core/services';
 import { YoutubeService, TranscriptService, PlayerViewService } from './features/video';
 import { StreakService } from './services/streak.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
@@ -341,7 +341,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
                 <span>{{ i18n.t('app.whatsNew') || "What's New" }}</span>
               </div>
               <ul class="update-sheet__changelog-list">
-                @for (item of appUpdate.incomingHighlights(); track item) {
+                @for (item of appUpdate.incomingHighlights(); track $index) {
                   <li class="update-sheet__changelog-item">
                     <span class="update-sheet__bullet">•</span>
                     <span>{{ item }}</span>
@@ -1140,6 +1140,7 @@ export class AppComponent implements OnDestroy {
   protected playerView = inject(PlayerViewService);
   private seo = inject(SeoService);
   pwa = inject(PwaService);
+  private keyboardShortcuts = inject(KeyboardShortcutService);
 
   private destroy$ = new Subject<void>();
   private cleanupFns: Array<() => void> = [];
@@ -1269,17 +1270,15 @@ export class AppComponent implements OnDestroy {
   }
 
   /**
-   * Initialize keyboard shortcuts (Cmd/Ctrl + K for command palette)
+   * Initialize keyboard shortcuts (Cmd/Ctrl + K for command palette via centralized service)
    */
   private initKeyboardShortcuts(): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    fromEvent<KeyboardEvent>(this.document, 'keydown')
+    this.keyboardShortcuts.events$
       .pipe(takeUntil(this.destroy$))
       .subscribe(event => {
-        // Cmd/Ctrl + K to open command palette
-        if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-          event.preventDefault();
+        if (event.type === 'open-command-palette') {
           this.showCommandPalette.set(true);
         }
       });

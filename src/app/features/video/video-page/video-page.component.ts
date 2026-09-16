@@ -89,6 +89,7 @@ export class VideoPageComponent implements OnInit {
   homeTab = signal<'videos' | 'playlists'>('videos');
   recommendedVideos = this.videoRecommendation.recommendedVideos;
   isVideosLoading = this.videoRecommendation.isLoading;
+  readonly isVideosError = this.videoRecommendation.hasError;
   readonly isLoadingMore = this.videoRecommendation.isLoadingMore;
   readonly hasMoreVideos = this.videoRecommendation.hasMore;
   readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
@@ -312,11 +313,6 @@ export class VideoPageComponent implements OnInit {
   menuVideoId = signal('');
   mobilePlaylistSheetOpen = signal(false);
   isShareCopied = signal(false);
-
-  // Vocab State
-  vocabDeleteOpen = signal(false);
-  vocabDeleteId = signal<string | null>(null);
-  vocabMenuOpen = signal(false);
 
   // ============================================
   // PULL-TO-REFRESH & SCROLL RETENTION (YouTube-style)
@@ -1094,40 +1090,6 @@ export class VideoPageComponent implements OnInit {
 
     await this.playlistService.removeVideo(playlist.id, videoId);
     this.videoMenuOpen.set(false);
-  }
-
-  // Vocab Actions
-  onVocabDeleteRequest(id: string): void {
-    this.vocabDeleteId.set(id);
-    this.vocabDeleteOpen.set(true);
-  }
-
-  confirmVocabDelete(): void {
-    const id = this.vocabDeleteId();
-    if (id) {
-      this.vocab.deleteWord(id);
-    }
-    this.vocabDeleteOpen.set(false);
-    this.vocabDeleteId.set(null);
-  }
-
-  exportVocabJSON(): void {
-    this.vocab.exportAsFile('json');
-  }
-
-  exportVocabAnki(): void {
-    this.vocab.exportAsFile('anki');
-  }
-
-  importVocabJSON(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    const file = input.files?.[0];
-    if (!file) return;
-
-    void this.vocab.importFromFile(file).catch(err => {
-      console.error('Import failed', err);
-    });
-    input.value = '';
   }
 
   private fetchCaptions(videoId: string, forceRefresh = false): void {

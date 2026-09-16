@@ -505,4 +505,8 @@ export class PlaylistPageComponent {
             void this.playlistService.loadCommunityPlaylists(lang, this.levelFilter());
         }
     }
+
+    onExploreVideos(): void {
+        this.router.navigate(['/video']);
+    }
 }

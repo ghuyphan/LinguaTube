@@ -132,6 +132,8 @@
           [isLoading]="isLoading()"
           [hasMore]="hasMore()"
           [totalCount]="filteredItems().length"
+          [hasActiveFilters]="hasActiveFilters()"
+          (clearFilters)="clearAllFilters()"
           (loadMore)="loadMore()"
           (itemRemoved)="onItemRemoved($event)" />
       </div>
@@ -156,12 +158,6 @@
             <app-icon name="layers" [size]="18" class="panel-header__icon" />
             <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('history.overview') || 'Overview' }}</h3>
           </div>
-          @if (historyItems().length > 0) {
-            <button type="button" class="panel-header__link panel-header__link--danger" (click)="confirmClear()">
-              <app-icon name="trash-2" [size]="13" />
-              <span>{{ i18n.t('history.clearAll') }}</span>
-            </button>
-          }
         </div>
       </div>
 

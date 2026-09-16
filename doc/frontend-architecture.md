@@ -105,8 +105,10 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 
 ## 3. Component Architecture & Domain Modules
 
-### 3.1. Shell & Global Components (`src/app/components/`)
-- **`SidebarComponent`**: Collapsible main navigation supporting compact icon mode and expanded text mode. Features dynamic brand title typography ('Pro', 'Premium', or 'Voca') matching the user's active tier, a 3-bar animated sound equalizer now-playing indicator for active video sessions, and a motivation stats bar featuring daily streak counter, gamification rank level (with trophy icon opening Achievements), and diamond credit badge.
+- **`SidebarComponent`**: Collapsible main navigation supporting compact icon mode and expanded text mode. Features dynamic brand title typography ('Pro', 'Premium', or 'Voca') matching the user's active tier, and a 3-bar animated sound equalizer now-playing indicator for active video sessions.
+  - **Motivation Stats Bar (`stats-bar`) & Collapsed Popover Card (`stats-popover-card`)**: Available to both guest and authenticated users in alignment with Voca's offline-first architecture (`🔥 Streak`, `🏆 Level` with Achievements modal trigger, and `💎 AI Credits`). In expanded mode, renders as a single horizontal pill (`.stats-bar`). In collapsed mode, the rail remains purely iconic (40×40px items: Flag and Avatar with a neatly docked flame badge `🔥`), while clicking the avatar smoothly opens a floating card (`.stats-popover-card`) anchored to the bottom-left displaying the user profile, hero streak banner, XP overview, AI diamonds, settings, and sign-out actions. Harmonized with the sidebar and main content using `var(--bg-card)` for the card container and `var(--bg-primary)` for internal widget tiles to eliminate muddy contrast in both Light and Dark themes.
+  - **Authenticated State (`auth.isLoggedIn()`)**: Displays Pro/Premium upgrade button (if eligible) and user profile row with subscription tier ring and settings trigger.
+  - **Guest State (`!auth.isLoggedIn()`)**: Omits premature 👑 Pro upsell button. In expanded mode, displays the learning language picker, a welcoming Google sign-in card with vocabulary sync prompt, and settings button. In collapsed mode, displays the learning language flag and clean guest avatar, with cloud sync CTA in the popover card.
 - **`SettingsSheetComponent`**: Slide-over sheet for adjusting learning languages, Furigana/Pinyin toggles, Romaji display modes, font size, playback speed, and theme. Includes mobile-responsive motivation stats pills (`Streak`, `Level`, `AI Credits`).
 - **`MoreMenuSheet` (in `AppComponent`)**: Mobile personal library & settings sheet accessible via the bottom navigation bar. Features a 3-column top quick stats bar (`🔥 Streak`, `🏆 Level`, `💎 AI Credits` - tapping Level opens the Achievements modal) alongside personal library and settings action rows (`Playlists`, `History`, `Install App`, `Settings`).
 - **Mobile Bottom Navigation (`.bottom-nav`)**: 5-item mobile navigation bar featuring `Xem` (Watch), `Ôn tập` (SRS Review), an elevated central `(+)` squircle CTA button with Voca's signature coral accent gradient (`linear-gradient(135deg, var(--accent-primary), #e04848)`) for instantaneous YouTube video URL entry, `Từ vựng` (Dictionary), and `Thêm` (More).
@@ -115,7 +117,7 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 - **`AiCreditsDialogComponent`**: Interactive diamond quota modal showcasing current credit balance, dynamic tier badge (`Anonymous`, `Free`, `Pro`), dynamic regen timer (5m / 15m / 20m), video duration pricing breakdown ($\le 10$m = 1 credit, $10$–$20$m = 2 credits, $> 20$m Pro-only), and a dedicated Pro teaser card linking directly to `ProUpgradeDialogComponent`.
 - **`ProUpgradeDialogComponent`**: Dedicated subscription upgrade bottom sheet designed with consistent modal styling. Features a monthly/annual plan selector with discount badge, feature comparison showcase, responsive VietQR payment card with raw EMVCo parsing, copyable bank details, live payment polling via `PaymentService`, and automatic tier activation upon settlement.
 - **`OnboardingComponent`**: First-time user walkthrough guiding video selection, language choices, and subtitle interactions.
-- **`CommandPaletteComponent`**: Power-user modal (`Cmd+K` / `Ctrl+K`) for instant navigation, video loading, and action dispatching.
+- **`CommandPaletteComponent`**: Modern Spotlight navigation hub (`Cmd+K` / `Ctrl+K`) for instant app navigation, quick action dispatching (Watch, Study, Dictionary, Playlists, History, Theme Toggle), keyboard arrow navigation (`↑`/`↓`/`Enter`), and YouTube URL / video ID loading.
 - **`ToastComponent`**: Root-mounted adaptive status capsule (`ToastService`), displaying bottom/top HUD notifications with spring physics, thumb-zone mobile ergonomics, semantic status icons, and interactive action/undo buttons without frosted glass.
 
 ---
@@ -173,6 +175,10 @@ graph TD
 - **Unified Desktop Sidebar (`.unified-sidebar`)**:
   - Encapsulates `PlaylistPanelComponent` and `VocabularyListComponent` inside a single card container with segmented tab switcher (`[Playlist (N)]` / `[Vocabulary (N)]`).
   - Retains playlist tab on desktop even for single-video playlists (`hasPlaylist`), allowing playlist management without cluttering the page.
+  - **Encapsulated Vocabulary Management**: `VocabularyListComponent` manages its own vocabulary options menu (JSON/Anki export, JSON import) and deletion confirmation with animated exit and instant undo toast, removing ~140 lines of duplicate menu templates and dialog logic previously scattered across `VideoPageComponent` and `DictionaryPageComponent`.
+- **Feed Error Recovery & Resilience**:
+  - `VideoRecommendationService` tracks network/API failures with a reactive `hasError` signal.
+  - `VideoPageComponent` renders an accessible, interactive error empty-state card with a "Retry" CTA (`refreshRecommendations()`), allowing seamless recovery from transient network issues.
 - **Responsive Mobile Queue (`.mobile-playlist-card`)**:
   - In-flow expandable playlist bar positioned directly below the player.
   - **Single-Video Optimization**: Hidden when `videos.length <= 1` (`showMobilePlaylistCard`), freeing up 54px vertical space for subtitles.
@@ -211,7 +217,7 @@ graph TD
     - **Cinematic Immersion & Subtle Grammar Accents**: Words render cleanly on the translucent backdrop. Grammar tokens in fullscreen use a subtle, faint dotted underline without any background box or solid borders, preserving cinematic reading flow while remaining interactive.
 - **Interaction Services**:
   - `GestureHandlerService`: Handles mobile touch gestures (single tap for controls toggle with zero-latency dismissal when controls are showing, double-tap left/right wings for $\pm 10$s seek with feedback pill & ripple, horizontal swipe for scrubbing preview, and long-press for $2\times$ playback speed).
-  - `VideoKeyboardShortcutService`: Desktop hotkeys (`Space`, `k`, `Left`/`Right`, `j`/`l`, `Up`/`Down`, `f`, `m`, `c`, `d`, `v`, `[`/`]`, `Shift+s`).
+  - `KeyboardShortcutService`: Centralized, mobile-gated hotkey event dispatcher running outside `NgZone` (`NgZone.runOutsideAngular`) with zero listeners on touch/mobile devices (`(pointer: coarse) and (hover: none)` or viewport width $\le 768\text{px}$). Dispatches global hotkeys (`Cmd/Ctrl+K` for command palette), video playback controls (`Space`, `k`, `j`/`l` $\pm 10$s seek, `Left`/`Right` $\pm 5$s fine seek, `Up`/`Down` volume, `f` fullscreen, `m` mute, `c` subtitles, `d` dual subtitles, `v` subtitle position, `[`/`]` subtitle font size, `Shift+s` playback speed), and `Shift+L` cue looping (disambiguated from Seek +10s). `VideoKeyboardShortcutService` re-exports it for backward compatibility.
 
 #### SubtitleDisplayComponent (`subtitle-display/`)
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).
@@ -344,6 +350,8 @@ graph TD
 - **`AddToPlaylistDialogComponent`**: Modal sheet to bookmark current video into existing or new playlists.
 - **`HistoryPageComponent` & `HistoryListComponent`**:
   - Displays watch history, percentage watched, resume timestamps, and options to clear history.
+  - **Contextual Empty States**: Intelligently differentiates between zero watch history (with a direct "Browse videos" CTA navigating to `/video`) and active filters yielding zero matches (with a 1-tap "Clear filters" action resetting search, language, and level filters).
+  - **Deduplicated Clear History Actions**: Removed redundant "Clear all" buttons in desktop overview cards, consolidating clear history into the single contextual toolbar action.
   - **History Search Bar & Filters**: Real-time toolbar search filtering items by video title or channel name, alongside language and proficiency level filtering.
   - Features an in-progress **"Continue Learning" (Resume Hero Banner)** for one-tap resumption of unfinished study sessions.
   - Provides multi-language filtering pills (`All`, `JA`, `ZH`, `KO`, `EN`) and level picker via `OptionPickerComponent`.
@@ -406,10 +414,11 @@ To eliminate cross-user data leakage when switching accounts or signing out on s
   - `TranscriptService`: Auto-refreshes diamond credit quotas and resets tier back to anonymous defaults.
 
 ### 4.3. Google OAuth Account Selection & Popup Loading UX
-To give users full control over account switching rather than automatically authenticating into the browser's active Google session:
+To give users full control over account switching and maintain seamless, in-page playback without full-page navigation:
 - **Forced Account Chooser (`prompt=select_account`)**: In `AuthService.loginWithGoogle`, the Google OAuth authorization URL is enriched with `prompt=select_account`. This instructs Google's identity server to always display the account picker screen ("Choose an account"), allowing users to easily choose between accounts or sign in with another account.
-- **Initial Popup Loading State**: When the OAuth popup initially opens synchronously to avoid popup blockers, it renders an immediate dark-themed loading placeholder ("Connecting to Google... Preparing account selection...") until the OAuth redirect finishes, eliminating blank white window flashes.
-- **Interactive UI Feedback**: The settings sheet displays an active button spinner and an informative guidance banner (`chooseAccountPrompt`) directing the user to complete their account selection in the popup window.
+- **Initial Popup Loading State**: When the OAuth popup initially opens synchronously to avoid popup blockers, it renders an immediate dark-themed loading placeholder ("Connecting to Google... Please choose your Google account in the popup window.") until the OAuth redirect finishes, eliminating blank white window flashes.
+- **Fast PostMessage Callback Handshake**: An inline script in `<head>` of `index.html` intercepts the OAuth return inside `window.opener` context, posts `SUPABASE_AUTH_CALLBACK` (with PKCE code / access tokens) back to the parent window, and automatically closes the popup. The parent page exchanges the token, syncs offline guest data (streaks, vocabulary, XP) to the cloud via `loginEvent`, and maintains uninterrupted video playback and UI state without full-page reloads.
+- **Interactive UI Feedback**: The sidebar, settings sheet, and upgrade modals display an active button spinner and guidance directing the user to complete their account selection in the popup window.
 
 ### 4.4. Payment & Subscription Management (`PaymentService`)
 Located at `src/app/core/services/payment.service.ts`:

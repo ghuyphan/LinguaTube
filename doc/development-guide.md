@@ -109,11 +109,12 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 | `dev` | `npm run dev` | Runs both `server` and `start` concurrently |
 | `release` | `npm run release` | Controlled semver bumper (`patch`, `minor`, `major`, or `<version>`) |
 | `build:functions` | `npm run build:functions` | Bundles `functions-src/` into `functions/` using esbuild |
-| `build` | `npm run build` | Runs `build:functions` and `ng build` for production |
-| `lint` | `npm run lint` | Lints TypeScript and HTML templates with ESLint 9 |
-| `lint:fix` | `npm run lint:fix` | Automatically fixes autofixable ESLint errors |
+| `check:i18n` | `npm run check:i18n` | Validates i18n key parity across 5 locales & scans codebase for missing keys |
+| `build` | `npm run build` | Runs `check:i18n`, `build:functions`, and `ng build` for production |
+| `lint` | `npm run lint` | Runs `check:i18n` and lints TypeScript/HTML templates with ESLint 9 |
+| `lint:fix` | `npm run lint:fix` | Runs `check:i18n` and automatically fixes autofixable ESLint errors |
 | `test:backend` | `npm run test:backend` | Runs backend security & validation tests via `node --test` |
-| `test:ci` | `npm run test:ci` | Runs both backend tests and Angular Karma CI tests |
+| `test:ci` | `npm run test:ci` | Runs `check:i18n`, backend tests, and Angular Karma CI tests |
 | `test` | `npm run test` | Runs Angular unit test suite in Karma |
 
 ### 4.1. Versioning & Release Pipeline
@@ -121,7 +122,9 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 - **Controlled Release**: Run `npm run release patch` (or `minor`, `major`, or an explicit version) to update version files and bundle edge functions in a single, controlled step.
 - **CI/CD Optimization**: Non-deployable commits (docs, tests, config) ignore CI via GitHub Actions path-filtering and `[skip ci]` commit messages, saving Cloudflare Pages and GitHub Actions build minutes.
 
-### 4.2. Data Pipelines (`scripts/`)
+### 4.2. Data Pipelines & Validation (`scripts/`)
+- `node scripts/check-i18n.mjs`:
+  Scans all 5 locale files (`en.json`, `vi.json`, `ja.json`, `ko.json`, `zh.json`), enforces 100% key parity, detects empty strings, scans all `.html` and `.ts` files for missing translation references, and validates interpolation placeholders.
 - `node scripts/merge-translations.js [ja|ko|zh|en|all]`:
   Merges JSON grammar translation chunks from `scripts/grammar-chunks/output/` into TypeScript files in `src/app/data/translations/`.
 - `node scripts/generate-translations.js`:

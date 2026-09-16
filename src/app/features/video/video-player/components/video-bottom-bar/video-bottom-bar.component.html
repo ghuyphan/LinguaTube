@@ -4,6 +4,7 @@
         <!-- Play/Pause Button - Desktop only -->
         <button class="control-btn desktop-only" (click)="playPauseClicked.emit($event)"
             [attr.aria-label]="isPlaying() ? (t()('player.pause') || 'Pause') : (t()('player.play') || 'Play')"
+            [attr.aria-keyshortcuts]="'k'"
             [title]="isPlaying() ? (t()('player.pause') || 'Pause (k)') : (t()('player.play') || 'Play (k)')">
             <app-icon [name]="isPlaying() ? 'pause' : 'play'" [size]="20" />
         </button>
@@ -12,8 +13,9 @@
         <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider.emit()"
             (mouseleave)="hideVolumeSlider.emit()">
             <button class="control-btn volume-btn" (click)="toggleMute.emit()"
-                [attr.aria-label]="t()('player.mute') || 'Mute (m)'"
-                [title]="t()('player.mute') || 'Mute (m)'">
+                [attr.aria-label]="t()('player.mute') || 'Mute'"
+                [attr.aria-keyshortcuts]="'m'"
+                [title]="(t()('player.mute') || 'Mute') + ' (m)'">
                 <app-icon [name]="volumeIcon()" [size]="18" />
             </button>
             <div class="volume-slider-container desktop-only" [class.visible]="isVolumeSliderVisible()">
@@ -52,8 +54,9 @@
                 [class.is-ai]="isAISubtitle()"
                 [attr.aria-pressed]="subtitlesVisible()"
                 (click)="toggleSubtitles.emit()"
-                [attr.aria-label]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (c)') : (t()('player.subtitles') || 'Subtitles/closed captions (c)')"
-                [title]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (c)') : (t()('player.subtitles') || 'Subtitles/closed captions (c)')">
+                [attr.aria-label]="isAISubtitle() ? (t()('subtitle.aiCaptions') || 'AI Captions') : (t()('player.subtitles') || 'Subtitles/closed captions')"
+                [attr.aria-keyshortcuts]="'c'"
+                [title]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (c)') : ((t()('player.subtitles') || 'Subtitles/closed captions') + ' (c)')">
                 <app-icon [name]="isAISubtitle() ? 'subtitles-ai' : 'subtitles'" [size]="18" />
                 <span class="cc-indicator" [class.visible]="subtitlesVisible()"></span>
             </button>
@@ -66,7 +69,8 @@
                 (click)="toggleDualSubs.emit()"
                 (contextmenu)="onDualSubContextMenu($event)"
                 [attr.aria-label]="t()('subtitle.dualSubs') || 'Dual Subtitles'"
-                [title]="t()('subtitle.dualSubs') || 'Dual Subtitles'">
+                [attr.aria-keyshortcuts]="'d'"
+                [title]="(t()('subtitle.dualSubs') || 'Dual Subtitles') + ' (d)'">
                 <app-icon name="languages" [size]="18" />
                 <span class="cc-indicator" [class.visible]="showDualSubtitles()"></span>
             </button>
@@ -82,15 +86,17 @@
             <!-- Miniplayer (Desktop & mobile - hidden in fullscreen) -->
             @if (!isFullscreen()) {
             <button class="control-btn" (click)="toggleMiniplayer.emit()"
-                [attr.aria-label]="t()('player.miniplayer') || 'Miniplayer (i)'"
-                [title]="t()('player.miniplayer') || 'Miniplayer (i)'">
+                [attr.aria-label]="t()('player.miniplayer') || 'Miniplayer'"
+                [attr.aria-keyshortcuts]="'i'"
+                [title]="(t()('player.miniplayer') || 'Miniplayer') + ' (i)'">
                 <app-icon name="miniplayer" [size]="18" />
             </button>
             }
 
             <!-- Fullscreen -->
             <button class="control-btn" (click)="toggleFullscreen.emit()"
-                [attr.aria-label]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen (f)' : 'Fullscreen (f)')"
+                [attr.aria-label]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen' : 'Fullscreen')"
+                [attr.aria-keyshortcuts]="'f'"
                 [title]="t()('player.fullscreen') || (isFullscreen() ? 'Exit fullscreen (f)' : 'Fullscreen (f)')">
                 <app-icon [name]="isFullscreen() ? 'fullscreen-exit' : 'fullscreen'" [size]="18" />
             </button>

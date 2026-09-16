@@ -158,7 +158,7 @@ export class AuthService {
     /**
      * Sync and load profile from Supabase profiles table
      */
-    private async syncProfileFromSession(session: Session, emitLoginEvent = false): Promise<void> {
+    private async syncProfileFromSession(session: Session, emitLoginEvent = false): Promise<UserProfile> {
         const user = session.user;
         const profile = await this.fetchProfile(user);
         this.user.set(profile);
@@ -167,6 +167,7 @@ export class AuthService {
         if (emitLoginEvent) {
             this.loginEvent.next(profile);
         }
+        return profile;
     }
 
     /**
@@ -208,33 +209,217 @@ export class AuthService {
     }
 
     /**
-     * Login with Google OAuth via Supabase
+     * Open a centered OAuth popup window synchronously in the user click event
      */
-    async loginWithGoogle(_preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
+    private openOAuthPopup(url = 'about:blank'): OAuthPopup {
+        if (typeof window === 'undefined' || typeof window.open !== 'function') {
+            return null;
+        }
+
+        const width = Math.min(520, window.innerWidth || 520);
+        const height = Math.min(640, window.innerHeight || 640);
+
+        const screenLeft = window.screenLeft ?? window.screenX ?? 0;
+        const screenTop = window.screenTop ?? window.screenY ?? 0;
+        const screenWidth = window.innerWidth || document.documentElement?.clientWidth || screen.width;
+        const screenHeight = window.innerHeight || document.documentElement?.clientHeight || screen.height;
+
+        const left = screenLeft + Math.max(0, (screenWidth - width) / 2);
+        const top = screenTop + Math.max(0, (screenHeight - height) / 2);
+
+        const popup = window.open(
+            url,
+            'google_oauth_popup',
+            `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no,menubar=no`
+        );
+
+        if (popup && url === 'about:blank') {
+            try {
+                const doc = popup.document;
+                if (doc) {
+                    doc.title = 'Connecting to Google...';
+                    const style = doc.createElement('style');
+                    style.textContent = `
+                        * { box-sizing: border-box; margin: 0; padding: 0; }
+                        body {
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                            display: flex; flex-direction: column; align-items: center; justify-content: center;
+                            min-height: 100vh; background: #0f172a; color: #f8fafc; text-align: center; padding: 24px;
+                        }
+                        .spinner {
+                            width: 36px; height: 36px; border: 3px solid rgba(255, 255, 255, 0.12);
+                            border-top-color: #3b82f6; border-radius: 50%;
+                            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin-bottom: 16px;
+                        }
+                        .title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+                        .subtitle { font-size: 13px; color: #94a3b8; }
+                        @keyframes spin { to { transform: rotate(360deg); } }
+                    `;
+                    doc.head?.appendChild(style);
+
+                    const spinner = doc.createElement('div');
+                    spinner.className = 'spinner';
+                    const title = doc.createElement('div');
+                    title.className = 'title';
+                    title.textContent = 'Connecting to Google...';
+                    const subtitle = doc.createElement('div');
+                    subtitle.className = 'subtitle';
+                    subtitle.textContent = 'Please choose your Google account in the popup window.';
+
+                    doc.body?.appendChild(spinner);
+                    doc.body?.appendChild(title);
+                    doc.body?.appendChild(subtitle);
+                }
+            } catch {
+                // Ignore cross-origin / security restriction if document cannot be modified
+            }
+        }
+
+        return popup;
+    }
+
+    /**
+     * Wait for authentication completion in the popup window via postMessage, storage, or close detection
+     */
+    private waitForPopupAuth(popup: Window): Promise<Session | null> {
+        return new Promise((resolve, reject) => {
+            let pollTimer: ReturnType<typeof setInterval> | null = null;
+            let isDone = false;
+
+            const cleanup = () => {
+                if (isDone) return;
+                isDone = true;
+                if (typeof window !== 'undefined') {
+                    window.removeEventListener('message', onMessage);
+                    window.removeEventListener('storage', onStorage);
+                }
+                if (pollTimer) clearInterval(pollTimer);
+            };
+
+            const onMessage = async (event: MessageEvent) => {
+                if (event.origin !== window.location.origin) return;
+                if (event.data?.type !== 'SUPABASE_AUTH_CALLBACK') return;
+
+                cleanup();
+
+                try {
+                    const { hash, search } = event.data;
+                    if ((search && search.includes('error=')) || (hash && hash.includes('error='))) {
+                        reject(new Error('Google sign-in was cancelled or denied'));
+                        return;
+                    }
+
+                    // Handle PKCE code flow (?code=...)
+                    if (search && search.includes('code=')) {
+                        const params = new URLSearchParams(search);
+                        const code = params.get('code');
+                        if (code) {
+                            const { data, error } = await this.supabase.client.auth.exchangeCodeForSession(code);
+                            if (error) throw error;
+                            resolve(data.session);
+                            return;
+                        }
+                    }
+
+                    // Handle Implicit token flow (#access_token=...&refresh_token=...)
+                    if (hash && hash.includes('access_token=')) {
+                        const cleanHash = hash.startsWith('#') ? hash.slice(1) : hash;
+                        const params = new URLSearchParams(cleanHash);
+                        const accessToken = params.get('access_token');
+                        const refreshToken = params.get('refresh_token');
+                        if (accessToken && refreshToken) {
+                            const { data, error } = await this.supabase.client.auth.setSession({
+                                access_token: accessToken,
+                                refresh_token: refreshToken
+                            });
+                            if (error) throw error;
+                            resolve(data.session);
+                            return;
+                        }
+                    }
+
+                    // Fallback to active session
+                    const { data } = await this.supabase.client.auth.getSession();
+                    resolve(data.session);
+                } catch (err) {
+                    reject(err);
+                }
+            };
+
+            const onStorage = async (event: StorageEvent) => {
+                if (event.key && event.key.startsWith('sb-') && event.key.endsWith('-auth-token')) {
+                    const { data } = await this.supabase.client.auth.getSession();
+                    if (data?.session) {
+                        cleanup();
+                        resolve(data.session);
+                    }
+                }
+            };
+
+            if (typeof window !== 'undefined') {
+                window.addEventListener('message', onMessage);
+                window.addEventListener('storage', onStorage);
+            }
+
+            pollTimer = setInterval(() => {
+                if (popup.closed) {
+                    cleanup();
+                    // Short grace period in case storage or session just synced
+                    setTimeout(async () => {
+                        const { data } = await this.supabase.client.auth.getSession();
+                        resolve(data?.session ?? null);
+                    }, 300);
+                }
+            }, 500);
+        });
+    }
+
+    /**
+     * Login with Google OAuth via Supabase using a centered popup window
+     */
+    async loginWithGoogle(preopenedPopup: OAuthPopup = null): Promise<UserProfile | null> {
         if (this.isLoggingIn()) return null;
         this.isLoggingIn.set(true);
         this.authError.set(null);
 
+        // Open popup synchronously in the user gesture context to avoid popup blockers
+        const popup = preopenedPopup || this.openOAuthPopup();
+        if (!popup) {
+            this.isLoggingIn.set(false);
+            this.authError.set('Popup was blocked by your browser. Please allow popups for this site.');
+            throw new Error('Popup blocked');
+        }
+
         try {
-            const { error } = await this.supabase.client.auth.signInWithOAuth({
+            const { data, error } = await this.supabase.client.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
                     redirectTo: window.location.href,
+                    skipBrowserRedirect: true,
                     queryParams: {
                         prompt: 'select_account'
                     }
                 }
             });
 
-            if (error) {
-                throw error;
+            if (error || !data?.url) {
+                try { popup.close(); } catch { /* ignore */ }
+                throw error || new Error('Failed to obtain Google sign-in URL');
             }
 
-            return null; // Will redirect to Google
+            // Redirect popup to Google's sign-in page
+            popup.location.href = data.url;
+
+            // Wait for authentication in popup window
+            const session = await this.waitForPopupAuth(popup);
+            if (session) {
+                return await this.syncProfileFromSession(session, true);
+            }
+            return null;
         } catch (error: unknown) {
             const err = error as Error;
             if (err?.message?.includes('closed') || err?.message?.includes('cancelled')) {
-                console.log('[Auth] Google login cancelled');
+                console.log('[Auth] Google login window closed or cancelled');
                 return null;
             }
 
@@ -243,6 +428,9 @@ export class AuthService {
             throw error;
         } finally {
             this.isLoggingIn.set(false);
+            if (popup && !popup.closed) {
+                try { popup.close(); } catch { /* ignore */ }
+            }
         }
     }
 

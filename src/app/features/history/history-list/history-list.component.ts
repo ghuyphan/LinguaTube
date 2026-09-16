@@ -41,11 +41,13 @@ export class HistoryListComponent {
     isLoading = input<boolean>(false);
     hasMore = input<boolean>(false);
     totalCount = input<number>(0);
+    hasActiveFilters = input<boolean>(false);
 
     // Outputs
     itemRemoved = output<HistoryItem>();
     favoriteAdded = output<HistoryItem>();
     loadMore = output<void>();
+    clearFilters = output<void>();
 
     // Animation states
     deletingItems = signal<Set<string>>(new Set());
@@ -204,5 +206,9 @@ export class HistoryListComponent {
             en: this.i18n.t('settings.english') || 'English',
         };
         return langs.map(l => names[l] || l.toUpperCase()).join(', ');
+    }
+
+    onBrowseVideos(): void {
+        this.router.navigate(['/video']);
     }
 }

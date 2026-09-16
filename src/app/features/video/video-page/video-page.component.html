@@ -292,6 +292,20 @@
                     {{ i18n.t('level.allLevels') || 'All Levels' }}
                 </button>
             </div>
+            } @else if (isVideosError()) {
+            <div class="empty-state empty-state--centered empty-state--animate">
+                <div class="empty-state__icon-box">
+                    <app-icon name="alert-circle" [size]="28" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('playlist.empty.feedErrorTitle') }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.empty.feedErrorHint') }}</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" (click)="refreshRecommendations()">
+                    <app-icon name="refresh-cw" [size]="14" />
+                    <span>{{ i18n.t('common.retry') }}</span>
+                </button>
+            </div>
             } @else {
             <div class="empty-state empty-state--centered">
                 <div class="empty-state__icon-box">
@@ -346,7 +360,6 @@
                 <app-vocabulary-list class="sidebar-pane" [class.hidden]="sidebarTab() !== 'vocab'"
                     [embedded]="true"
                     [showHeader]="false"
-                    (deleteRequest)="onVocabDeleteRequest($event)"
                     (wordSelect)="onSidebarWordSelect($event)" />
             </div>
             } @else {
@@ -355,7 +368,7 @@
                 <app-vocabulary-list class="sidebar-pane"
                     [embedded]="true"
                     [showHeader]="true"
-                    (deleteRequest)="onVocabDeleteRequest($event)"
+                    [showMenu]="true"
                     (wordSelect)="onSidebarWordSelect($event)" />
             </div>
             }
@@ -390,34 +403,6 @@
 <app-bottom-sheet [isOpen]="mobilePlaylistSheetOpen()" [title]="playlist.title" [maxHeight]="'72vh'" [maxWidth]="'540px'" [showCloseButton]="true"
     (closed)="closeMobilePlaylistSheet()">
     <div class="mobile-playlist-sheet">
-        <div class="mobile-playlist-sheet-header">
-            <div class="mobile-playlist-sheet-info">
-                <h3 class="mobile-playlist-sheet-title">{{ playlist.title }}</h3>
-                <span class="mobile-playlist-sheet-sub">
-                    {{ playlist.userName || (playlist.userId === 'local' ? i18n.t('playlist.you') : i18n.t('playlist.curated')) }} • {{ playlistService.currentIndex() + 1 }} / {{ playlist.videos.length }}
-                </span>
-            </div>
-            <div class="mobile-playlist-sheet-actions">
-                <button class="action-btn" [class.active]="isShareCopied()" [class.btn-copied]="isShareCopied()"
-                    (click)="onShareMobile(playlist)" [title]="isShareCopied() ? (i18n.t('playlist.linkCopied') || 'Link copied!') : i18n.t('playlist.sharePlaylist')"
-                    [attr.aria-label]="i18n.t('playlist.sharePlaylist')">
-                    <app-icon [name]="isShareCopied() ? 'check' : 'share'" [size]="15"
-                        [class.text-success]="isShareCopied()"></app-icon>
-                </button>
-                <button class="action-btn" [class.active]="playlistService.isLooping()"
-                    (click)="playlistService.toggleLoop()"
-                    [title]="playlistService.isLooping() ? i18n.t('playlist.loopOn') : i18n.t('playlist.loopPlaylist')"
-                    [attr.aria-label]="i18n.t('playlist.loopPlaylist')">
-                    <app-icon name="repeat" [size]="15"></app-icon>
-                </button>
-                <button class="action-btn" [class.active]="playlistService.isShuffled()"
-                    (click)="playlistService.toggleShuffle()"
-                    [title]="playlistService.isShuffled() ? i18n.t('playlist.shuffleOn') : i18n.t('playlist.shufflePlaylist')"
-                    [attr.aria-label]="i18n.t('playlist.shufflePlaylist')">
-                    <app-icon name="shuffle" [size]="15"></app-icon>
-                </button>
-            </div>
-        </div>
         <div class="mobile-playlist-sheet-body">
             <app-playlist-panel [isMobile]="true" [shouldScrollIntoView]="mobilePlaylistSheetOpen()"
                 (videoSelect)="onPlaylistVideoSelect($event)" (openMenu)="onOpenPlaylistMenu($event)"
@@ -480,50 +465,6 @@
     </div>
 </app-bottom-sheet>
 }
-
-<!-- Vocab Delete Confirmation -->
-<app-confirm-dialog [isOpen]="vocabDeleteOpen()" [title]="i18n.t('vocab.deleteWord')"
-    [message]="i18n.t('vocab.deleteConfirm')" [confirmText]="i18n.t('vocab.delete')"
-    [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" (confirmed)="confirmVocabDelete()"
-    (cancelled)="vocabDeleteOpen.set(false)" />
-
-<!-- Vocab Menu Sheet -->
-<app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
-    <div class="menu-sheet">
-        <div class="menu-sheet__header">
-            <div class="menu-sheet__title-box">
-                <app-icon name="book-open" [size]="20" class="menu-sheet__header-icon" />
-                <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
-            </div>
-        </div>
-        <div class="menu-sheet__card">
-            <div class="menu-sheet__options">
-                <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
-                    <div class="menu-option__icon-box">
-                        <app-icon name="download" [size]="18" />
-                    </div>
-                    <span class="menu-option__label">{{ i18n.t('vocab.exportJson') }}</span>
-                </button>
-                <div class="menu-divider"></div>
-                <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
-                    <div class="menu-option__icon-box">
-                        <app-icon name="download" [size]="18" />
-                    </div>
-                    <span class="menu-option__label">{{ i18n.t('vocab.exportAnki') }}</span>
-                </button>
-                <div class="menu-divider"></div>
-                <label class="menu-option">
-                    <div class="menu-option__icon-box">
-                        <app-icon name="upload" [size]="18" />
-                    </div>
-                    <span class="menu-option__label">{{ i18n.t('vocab.import') }}</span>
-                    <input type="file" accept=".json" class="hidden-input"
-                        (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
-                </label>
-            </div>
-        </div>
-    </div>
-</app-bottom-sheet>
 
 <!-- AI Subtitle Generation & Turnstile Verification Modal -->
 @if (showAiConfirmDialog() && youtube.currentVideo(); as video) {

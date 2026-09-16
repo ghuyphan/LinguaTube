@@ -97,7 +97,7 @@
             </button>
             }
 
-            <!-- Unified Motivation & Credits Bar -->
+            <!-- Unified Motivation & Credits Bar (Expanded Only) -->
             @if (!isCollapsed()) {
             <div class="stats-bar">
                 <button class="stats-bar__item" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
@@ -123,63 +123,42 @@
                     <span class="stats-bar__val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </button>
             </div>
-            } @else {
-            <!-- Collapsed Quick Badges -->
-            <div class="collapsed-stats-stack">
-                <button class="collapsed-stat-btn" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
-                    [attr.title]="(i18n.t('streak.dayStreak') || 'Streak') + ': ' + streak.currentStreak()">
-                    <app-icon name="fire" [size]="16" class="stat-icon--fire" />
-                    <span>{{ streak.currentStreak() }}</span>
-                </button>
-                <button class="collapsed-stat-btn" (click)="openAchievements.emit()" 
-                    [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel()">
-                    <div class="stat-icon-wrap">
-                        <app-icon name="trophy" [size]="16" class="stat-icon--trophy" />
-                        @if (gamification.hasClaimableRewards()) {
-                            <span class="stat-claim-dot"></span>
-                        }
-                    </div>
-                    <span>{{ gamification.userLevel() }}</span>
-                </button>
-                <button class="collapsed-stat-btn" (click)="openAiCredits.emit()" 
-                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
-                    <app-icon name="diamond" [size]="16" class="stat-icon--diamond" />
-                    <span>{{ transcript.diamonds() }}</span>
-                </button>
-            </div>
             }
-            <!-- Upgrade Teaser (Free or Pro users) -->
-            @if (auth.subscriptionTier() === 'pro') {
-                @if (!isCollapsed()) {
-                <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
-                    <div class="pro-btn-content">
-                        <div class="pro-btn-icon">
-                            <app-icon name="sparkles" [size]="14" />
+
+            <!-- Upgrade Teaser (ONLY for Logged-In users) -->
+            @if (auth.isLoggedIn()) {
+                @if (auth.subscriptionTier() === 'pro') {
+                    @if (!isCollapsed()) {
+                    <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
+                        <div class="pro-btn-content">
+                            <div class="pro-btn-icon">
+                                <app-icon name="sparkles" [size]="14" />
+                            </div>
+                            <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
+                            <span class="pro-btn-badge">25💎</span>
                         </div>
-                        <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
-                        <span class="pro-btn-badge">25💎</span>
-                    </div>
-                </button>
-                } @else {
-                <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
-                    <app-icon name="sparkles" [size]="16" />
-                </button>
-                }
-            } @else if (auth.subscriptionTier() !== 'premium') {
-                @if (!isCollapsed()) {
-                <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
-                    <div class="pro-btn-content">
-                        <div class="pro-btn-icon">
-                            <app-icon name="crown" [size]="14" />
+                    </button>
+                    } @else {
+                    <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
+                        <app-icon name="sparkles" [size]="16" />
+                    </button>
+                    }
+                } @else if (auth.subscriptionTier() !== 'premium') {
+                    @if (!isCollapsed()) {
+                    <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
+                        <div class="pro-btn-content">
+                            <div class="pro-btn-icon">
+                                <app-icon name="crown" [size]="14" />
+                            </div>
+                            <span class="pro-btn-label">{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
+                            <span class="pro-btn-badge">10💎</span>
                         </div>
-                        <span class="pro-btn-label">{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
-                        <span class="pro-btn-badge">10💎</span>
-                    </div>
-                </button>
-                } @else {
-                <button class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
-                    <app-icon name="crown" [size]="16" />
-                </button>
+                    </button>
+                    } @else {
+                    <button class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
+                        <app-icon name="crown" [size]="16" />
+                    </button>
+                    }
                 }
             }
 
@@ -196,10 +175,22 @@
                     }
                 </div>
                 } @else if (auth.isLoggedIn()) {
-                <button class="footer-btn user-settings-row" (click)="openSettings.emit()"
+                <button class="footer-btn user-settings-row" (click)="onFooterUserClick()"
                     [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.subscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
                     <div class="avatar-ring" [class]="'avatar-ring--' + auth.subscriptionTier()">
-                        <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="user-avatar" />
+                        @if (auth.user()?.picture && !avatarImgFailed()) {
+                            <img [src]="auth.user()?.picture" [alt]="auth.user()?.name || 'User'" referrerpolicy="no-referrer" (error)="avatarImgFailed.set(true)" class="user-avatar" />
+                        } @else {
+                            <div class="user-avatar-initials">
+                                <span>{{ userInitials() }}</span>
+                            </div>
+                        }
+                        @if (isCollapsed()) {
+                            <div class="avatar-streak-badge" [class.active]="streak.practicedToday()" [attr.title]="streak.currentStreak() + ' ' + (i18n.t('streak.dayStreak') || 'day streak')">
+                                <app-icon name="fire" [size]="10" />
+                                <span class="avatar-streak-badge__count">{{ streak.currentStreak() }}</span>
+                            </div>
+                        }
                         @if (isCollapsed() && appUpdate.updateAvailable()) {
                             <span class="sidebar-update-dot sidebar-update-dot--collapsed"></span>
                         }
@@ -220,33 +211,163 @@
                     }
                 </button>
                 } @else {
-                <button class="footer-btn user-settings-row" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
-                    <div class="avatar-ring avatar-ring--guest">
-                        <div class="guest-avatar-box">
-                            <app-icon name="user" [size]="16" />
+                <!-- Unauthenticated / Guest View -->
+                @if (!isCollapsed()) {
+                    @if (auth.isAuthEnabled()) {
+                    <div class="sidebar__guest-card">
+                        <div class="guest-card-header">
+                            <app-icon name="cloud" [size]="16" class="guest-card-icon" />
+                            <span class="guest-card-title">{{ i18n.t('settings.syncVocab') }}</span>
                         </div>
-                        @if (isCollapsed() && appUpdate.updateAvailable()) {
-                            <span class="sidebar-update-dot sidebar-update-dot--collapsed"></span>
-                        }
+                        <button class="btn btn-google sidebar-guest-login-btn" [class.is-loading]="auth.isLoggingIn()" (click)="loginWithGoogle()" [disabled]="auth.isLoggingIn()">
+                            @if (auth.isLoggingIn()) {
+                                <div class="login-spinner login-spinner--sm"></div>
+                                <span>{{ i18n.t('auth.signingIn') || 'Signing in...' }}</span>
+                            } @else {
+                                <app-icon name="google" [size]="16" />
+                                <span>{{ i18n.t('auth.continueWithGoogle') }}</span>
+                            }
+                        </button>
                     </div>
-                    @if (!isCollapsed()) {
-                    <div class="user-info-stack">
-                        <span class="user-name">{{ i18n.t('nav.settings') }}</span>
-                        <span class="badge badge--sm badge--free">{{ auth.isAuthEnabled() ? (i18n.t('header.signIn') || 'GUEST') : 'OFFLINE' }}</span>
-                    </div>
-                    <div class="settings-icon-wrapper">
-                        <app-icon name="settings" [size]="16" class="settings-icon" />
+                    }
+                    <button class="footer-btn user-settings-row guest-settings-row" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+                        <div class="guest-avatar-box">
+                            <app-icon name="settings" [size]="16" />
+                        </div>
+                        <div class="user-info-stack">
+                            <span class="user-name">{{ i18n.t('nav.settings') }}</span>
+                        </div>
                         @if (appUpdate.updateAvailable()) {
                             <span class="sidebar-update-dot"></span>
                         }
-                    </div>
-                    }
-                </button>
+                    </button>
+                } @else {
+                    <!-- Collapsed Guest View -->
+                    <button class="footer-btn user-settings-row" (click)="onFooterUserClick()"
+                        [attr.title]="(i18n.t('header.signIn') || 'Sign In') + ' / ' + i18n.t('nav.settings')"
+                        [attr.aria-label]="(i18n.t('header.signIn') || 'Sign In') + ' / ' + i18n.t('nav.settings')">
+                        <div class="avatar-ring avatar-ring--guest">
+                            <div class="guest-avatar-box">
+                                <app-icon name="user" [size]="16" />
+                            </div>
+                            @if (isCollapsed()) {
+                                <div class="avatar-streak-badge" [class.active]="streak.practicedToday()" [attr.title]="streak.currentStreak() + ' ' + (i18n.t('streak.dayStreak') || 'day streak')">
+                                    <app-icon name="fire" [size]="10" />
+                                    <span class="avatar-streak-badge__count">{{ streak.currentStreak() }}</span>
+                                </div>
+                            }
+                            @if (appUpdate.updateAvailable()) {
+                                <span class="sidebar-update-dot sidebar-update-dot--collapsed"></span>
+                            }
+                        </div>
+                    </button>
+                }
                 }
             </div>
         </div>
     </div>
 </aside>
+
+<!-- Floating Profile & Stats Popover (Collapsed Mode) -->
+@if (isCollapsed() && showStatsPopover()) {
+    <div class="stats-popover-backdrop" (click)="closeStatsPopover()"></div>
+
+    <div class="stats-popover-card" role="dialog" aria-modal="true">
+        <!-- Header: User info -->
+        <div class="stats-popover__header">
+            <div class="avatar-ring" [class]="'avatar-ring--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'guest')">
+                @if (auth.isLoggedIn() && auth.user()?.picture && !avatarImgFailed()) {
+                    <img [src]="auth.user()?.picture" [alt]="auth.user()?.name || 'User'" referrerpolicy="no-referrer" class="user-avatar" />
+                } @else if (auth.isLoggedIn()) {
+                    <div class="user-avatar-initials">
+                        <span>{{ userInitials() }}</span>
+                    </div>
+                } @else {
+                    <div class="guest-avatar-box">
+                        <app-icon name="user" [size]="16" />
+                    </div>
+                }
+            </div>
+            <div class="stats-popover__user">
+                <div class="popover-user-name">{{ auth.isLoggedIn() ? auth.user()?.name : (i18n.t('auth.guestUser') || 'Guest') }}</div>
+                <div class="popover-user-badge">
+                    <span class="badge badge--sm" [class]="'badge--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'free')">
+                        {{ (auth.isLoggedIn() ? auth.subscriptionTier() : 'guest') | uppercase }}
+                    </span>
+                    <span class="popover-level-tag">🏆 {{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Streak Widget -->
+        <button class="stats-popover__streak-banner" (click)="onPopoverStreakClick()">
+            <div class="streak-flame-box" [class.active]="streak.practicedToday()">
+                <app-icon name="fire" [size]="22" />
+            </div>
+            <div class="streak-text-box">
+                <div class="streak-title">{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') || 'Day Streak' }}</div>
+                <div class="streak-sub">{{ streak.practicedToday() ? (i18n.t('streak.practicedToday') || 'Practiced today! Keep it going!') : (i18n.t('streak.practiceToMaintain') || 'Practice today to maintain') }}</div>
+            </div>
+            <app-icon name="chevron-right" [size]="16" class="popover-arrow" />
+        </button>
+
+        <!-- Stats Overview 2-Column Grid -->
+        <div class="stats-popover__metrics">
+            <button class="metric-pill" (click)="onPopoverAchievementsClick()">
+                <div class="metric-icon-box metric-icon-box--trophy">
+                    <app-icon name="trophy" [size]="16" />
+                </div>
+                <div class="metric-info">
+                    <span class="metric-label">{{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
+                    <span class="metric-val">{{ gamification.totalXP() | number }} XP</span>
+                </div>
+                @if (gamification.hasClaimableRewards()) {
+                    <span class="stat-claim-dot"></span>
+                }
+            </button>
+
+            <button class="metric-pill" (click)="onPopoverAiCreditsClick()">
+                <div class="metric-icon-box metric-icon-box--diamond">
+                    <app-icon name="diamond" [size]="16" />
+                </div>
+                <div class="metric-info">
+                    <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>
+                    <span class="metric-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
+                </div>
+            </button>
+        </div>
+
+        <!-- Pro Upgrade CTA (Logged in non-premium) or Guest Google Login -->
+        @if (auth.isLoggedIn()) {
+            @if (auth.subscriptionTier() !== 'premium') {
+            <button class="stats-popover__upgrade-btn" (click)="onPopoverUpgradeClick()">
+                <app-icon name="crown" [size]="14" />
+                <span>{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
+                <span class="upgrade-badge">10💎</span>
+            </button>
+            }
+        } @else {
+            <button class="btn btn-google stats-popover__login-btn" (click)="onPopoverLoginClick()">
+                <app-icon name="google" [size]="16" />
+                <span>{{ i18n.t('auth.continueWithGoogle') }}</span>
+            </button>
+        }
+
+        <!-- Footer Actions -->
+        <div class="stats-popover__footer">
+            <button class="popover-footer-action" (click)="onPopoverSettingsClick()">
+                <app-icon name="settings" [size]="14" />
+                <span>{{ i18n.t('nav.settings') }}</span>
+            </button>
+            @if (auth.isLoggedIn()) {
+            <button class="popover-footer-action popover-footer-action--danger" (click)="onPopoverSignOutClick()">
+                <app-icon name="log-out" [size]="14" />
+                <span>{{ i18n.t('header.signOut') || 'Sign Out' }}</span>
+            </button>
+            }
+        </div>
+    </div>
+}
 
 <!-- Learning Language Picker -->
 <app-option-picker [options]="learningLangOptions()" [value]="settings.settings().language" [isOpen]="showLangPicker()"

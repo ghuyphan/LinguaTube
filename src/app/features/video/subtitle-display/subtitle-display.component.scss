@@ -196,16 +196,6 @@
     color: var(--text-muted);
     font-size: var(--text-sm);
     gap: var(--space-xs);
-
-    .shortcut-kbd {
-        padding: 1px 6px;
-        font-size: var(--text-xs);
-        font-family: inherit;
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-sm);
-        background: var(--bg-card);
-        color: var(--text-secondary);
-    }
 }
 
 .current-subtitle__inner {

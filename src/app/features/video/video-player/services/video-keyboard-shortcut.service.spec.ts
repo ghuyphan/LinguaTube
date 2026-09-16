@@ -183,12 +183,20 @@ describe('VideoKeyboardShortcutService', () => {
     // Shift+KeyS cycles font size
     service.handleKeyDown(new KeyboardEvent('keydown', { code: 'KeyS', shiftKey: true }), false, false);
 
+    // Shift+KeyL toggles subtitle cue loop
+    service.handleKeyDown(new KeyboardEvent('keydown', { code: 'KeyL', shiftKey: true }), false, false);
+
+    // Cmd/Ctrl + K opens command palette
+    service.handleKeyDown(new KeyboardEvent('keydown', { key: 'k', metaKey: true }), false, false);
+
     expect(emitted).toEqual([
       { type: 'toggle-subtitle-position' },
       { type: 'nudge-subtitle-position', data: { direction: 'up' } },
       { type: 'nudge-subtitle-position', data: { direction: 'down' } },
       { type: 'toggle-dual-subtitles' },
-      { type: 'cycle-font-size' }
+      { type: 'cycle-font-size' },
+      { type: 'toggle-cue-loop' },
+      { type: 'open-command-palette' }
     ]);
   });
 });

@@ -29,7 +29,7 @@
         </div>
 
         @if (showMenu()) {
-        <button class="btn btn-icon btn-ghost menu-btn" (click)="menuRequest.emit()">
+        <button class="btn btn-icon btn-ghost menu-btn" (click)="openMenuSheet(); menuRequest.emit()" [attr.aria-label]="i18n.t('vocab.options') || 'Options'">
             <app-icon name="more-vertical" [size]="18" />
         </button>
         }
@@ -185,3 +185,41 @@
     (selected)="onLevelSelected($event)"
     (closed)="levelPickerOpen.set(false); editingItem.set(null)"
 />
+
+<!-- Vocab Menu Sheet -->
+<app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
+    <div class="menu-sheet">
+        <div class="menu-sheet__header">
+            <div class="menu-sheet__title-box">
+                <app-icon name="book-open" [size]="20" class="menu-sheet__header-icon" />
+                <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
+            </div>
+        </div>
+        <div class="menu-sheet__card">
+            <div class="menu-sheet__options">
+                <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="download" [size]="18" />
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('vocab.exportJson') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="download" [size]="18" />
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('vocab.exportAnki') }}</span>
+                </button>
+                <div class="menu-divider"></div>
+                <label class="menu-option">
+                    <div class="menu-option__icon-box">
+                        <app-icon name="upload" [size]="18" />
+                    </div>
+                    <span class="menu-option__label">{{ i18n.t('vocab.import') }}</span>
+                    <input type="file" accept=".json" class="hidden-input"
+                        (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
+                </label>
+            </div>
+        </div>
+    </div>
+</app-bottom-sheet>

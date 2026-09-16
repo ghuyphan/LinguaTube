@@ -54,6 +54,9 @@ export class VideoRecommendationService {
     /** Initial Loading state */
     readonly isLoading = signal<boolean>(false);
 
+    /** Network/load error state */
+    readonly hasError = signal<boolean>(false);
+
     /** Infinite scroll loading more state */
     readonly isLoadingMore = signal<boolean>(false);
 
@@ -110,6 +113,7 @@ export class VideoRecommendationService {
         }
 
         this.isLoading.set(true);
+        this.hasError.set(false);
 
         try {
             const endpoint = environment.api.recommendedVideos;
@@ -148,6 +152,7 @@ export class VideoRecommendationService {
                 console.warn('[VideoRecommendation] Failed to load remote recommended videos:', err);
                 this.recommendedVideos.set([]);
                 this.hasMore.set(false);
+                this.hasError.set(true);
             }
             return [];
         } finally {

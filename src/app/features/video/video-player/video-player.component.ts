@@ -51,7 +51,7 @@ import {
   ScreenOrientationWithLock
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
-import { VideoKeyboardShortcutService } from './services/video-keyboard-shortcut.service';
+import { KeyboardShortcutService, KeyboardShortcutEvent } from '../../../core/services';
 import { ProgressBarComponent } from './components/progress-bar';
 import { CenterControlsComponent } from './components/center-controls';
 import { FullscreenSubtitleComponent } from './components/fullscreen-subtitle';
@@ -86,7 +86,7 @@ export class VideoPlayerComponent implements OnDestroy {
   protected playlistService = inject(PlaylistService);
   translation = inject(TranslationService); // Made public for template
   private gestures = inject(GestureHandlerService);
-  private keyboardShortcuts = inject(VideoKeyboardShortcutService);
+  private keyboardShortcuts = inject(KeyboardShortcutService);
   playerView = inject(PlayerViewService);
   private toast = inject(ToastService);
 
@@ -359,8 +359,6 @@ export class VideoPlayerComponent implements OnDestroy {
   captionFeedbackText = signal('');
   private captionFeedbackTimeout: ReturnType<typeof setTimeout> | null = null;
 
-  // Shortcuts cheat sheet dialog
-  showShortcutsDialog = signal(false);
 
   leftRipple = signal(false);
   rightRipple = signal(false);
@@ -522,6 +520,7 @@ export class VideoPlayerComponent implements OnDestroy {
     });
 
     // Wire up keyboard shortcuts
+    this.keyboardShortcuts.setFsPopupVisibleCallback(() => this.fsPopupVisible());
     this.keyboardShortcuts.events$.pipe(takeUntilDestroyed()).subscribe(event => {
       this.ngZone.run(() => {
         this.handleKeyboardEvent(event);
@@ -616,28 +615,14 @@ export class VideoPlayerComponent implements OnDestroy {
     }
   }
 
-  @HostListener('document:keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    if (this.isPlayerSettingsOpen() && event.code === 'Escape') {
-      event.preventDefault();
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    if (this.isPlayerSettingsOpen()) {
       this.closePlayerSettings();
-      return;
     }
-
-    if (this.showShortcutsDialog() && event.code === 'Escape') {
-      event.preventDefault();
-      this.closeShortcutsDialog();
-      return;
-    }
-
-    // Delegate to service. It returns true if it handled a command.
-    const isFsPopupVisible = untracked(() => this.fsPopupVisible());
-    const isFullscreen = untracked(() => this.isFullscreen());
-
-    this.keyboardShortcuts.handleKeyDown(event, isFsPopupVisible, isFullscreen);
   }
 
-  private handleKeyboardEvent(event: import('./services/video-keyboard-shortcut.service').KeyboardShortcutEvent) {
+  private handleKeyboardEvent(event: KeyboardShortcutEvent) {
     switch (event.type) {
       case 'toggle-play':
         this.togglePlay();
@@ -683,9 +668,6 @@ export class VideoPlayerComponent implements OnDestroy {
       case 'step-frame':
         this.seekRelative(event.data.seconds);
         break;
-      case 'toggle-shortcuts-dialog':
-        this.showShortcutsDialog.update(v => !v);
-        break;
       case 'toggle-subtitle-position':
         this.toggleFullscreenSubtitlePosition();
         break;
@@ -727,9 +709,6 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fullscreenChanged.emit(isFs);
     if (!isFs && this.fsPopupVisible()) {
       this.closeFsPopup();
-    }
-    if (isFs && this.showShortcutsDialog()) {
-      this.closeShortcutsDialog();
     }
   }
 
@@ -825,15 +804,6 @@ export class VideoPlayerComponent implements OnDestroy {
     const next = this.subtitles.toggleSubtitlesVisible();
     this.showCaptionFeedback(next);
     this.showControls();
-  }
-
-  openShortcutsDialog() {
-    this.showShortcutsDialog.set(true);
-    this.showControls();
-  }
-
-  closeShortcutsDialog() {
-    this.showShortcutsDialog.set(false);
   }
 
   seekRelative(seconds: number) {

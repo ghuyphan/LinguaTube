@@ -2626,10 +2626,18 @@ app.get('/api/version', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
+const serverInstance = app.listen(PORT, () => {
     console.log(`[Server] Gladia transcription server running on port ${PORT}`);
     if (!process.env.GLADIA_API_KEY) {
         console.warn('[Server] WARNING: GLADIA_API_KEY not set!');
         console.warn('[Server] Get your free key at: https://gladia.io');
+    }
+});
+
+serverInstance.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.warn(`[Server] Port ${PORT} is already in use. Assuming server is already active.`);
+    } else {
+        console.error('[Server] Server error:', err);
     }
 });

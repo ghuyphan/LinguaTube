@@ -1,4 +1,4 @@
-import { Component, OnDestroy, inject, effect, output, signal, computed, viewChild, ElementRef, ChangeDetectionStrategy, HostListener, input } from '@angular/core';
+import { Component, OnDestroy, inject, effect, output, signal, computed, viewChild, ElementRef, ChangeDetectionStrategy, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -8,7 +8,8 @@ import { SubtitleService } from '../subtitle.service';
 import { YoutubeService } from '../youtube.service';
 import { TranscriptService } from '../transcript.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, KeyboardShortcutService } from '../../../core/services';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { GrammarService } from '../../../services';
 import { SubtitleCue, Token, GrammarMatch, GrammarPattern, ReadingDisplayMode, SupportedLearningLanguage, SupportedGrammarLang } from '../../../models';
 import { QuizService } from '../quiz.service';
@@ -60,6 +61,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
   quiz = inject(QuizService);
+  private keyboardShortcuts = inject(KeyboardShortcutService);
 
   readonly whisperAvailable = computed(() => {
     const error = this.transcript.error();
@@ -171,19 +173,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
   private loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
   private lastLoopTime = 0;
 
-  @HostListener('document:keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    if (this.subtitles.subtitles().length === 0) return;
-
-    const target = event.target as HTMLElement;
-    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
-      return;
-    }
-
-    if (event.code === 'KeyL') {
-      this.toggleLoop();
-    }
-  }
 
   effectiveLanguage = computed(() => this.subtitles.activeLanguage());
 
@@ -374,6 +363,12 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   constructor() {
+    this.keyboardShortcuts.events$.pipe(takeUntilDestroyed()).subscribe(event => {
+      if (event.type === 'toggle-cue-loop') {
+        this.toggleLoop();
+      }
+    });
+
     // Proactively preload grammar patterns for the active learning language once subtitles are present
     effect(() => {
       const lang = this.effectiveLanguage();

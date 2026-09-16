@@ -288,7 +288,7 @@
                     <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
                 </div>
                 <ul class="release-notes-list">
-                    @for (item of appUpdate.currentHighlights(); track item) {
+                    @for (item of appUpdate.currentHighlights(); track $index) {
                         <li class="release-notes-item">
                             <span class="release-notes-bullet">•</span>
                             <span>{{ item }}</span>

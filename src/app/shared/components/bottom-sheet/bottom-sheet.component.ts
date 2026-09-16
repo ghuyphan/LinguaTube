@@ -372,7 +372,16 @@ export class BottomSheetComponent implements OnDestroy {
     this.animatedClose();
   }
 
+  private blurFocusedDescendant(): void {
+    if (isPlatformBrowser(this.platformId) && document.activeElement instanceof HTMLElement) {
+      if (this.sheetEl()?.nativeElement?.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
+    }
+  }
+
   private animatedClose(): void {
+    this.blurFocusedDescendant();
     this.heightAnimator.detach();
     this.isClosing.set(true);
     this.isDragging.set(false);
@@ -390,6 +399,7 @@ export class BottomSheetComponent implements OnDestroy {
     this.closeTimeoutId = setTimeout(() => {
       this.closeTimeoutId = null;
       this.isClosing.set(false);
+      this.restoreFocus();
       this.closed.emit();
     }, this.ANIMATION_DURATION);
   }
@@ -399,6 +409,7 @@ export class BottomSheetComponent implements OnDestroy {
    * Sheet animates via inline styles, we just handle backdrop and cleanup
    */
   private animatedCloseFromDrag(): void {
+    this.blurFocusedDescendant();
     this.heightAnimator.detach();
     // Set drag closing to use inline transition instead of CSS animation
     this.isDragClosing.set(true);

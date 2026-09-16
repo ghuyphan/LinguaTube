@@ -24,7 +24,7 @@
           [placeholder]="i18n.t('commandPalette.placeholder')"
           [(ngModel)]="url"
           (ngModelChange)="onInputChange()"
-          (keydown.enter)="submit()"
+          (keydown)="onKeyDown($event)"
           (keydown.escape)="close()"
           autocomplete="off"
           autocorrect="off"
@@ -53,7 +53,6 @@
             </button>
           </div>
         } @else {
-          <kbd class="spotlight__esc-badge">esc</kbd>
           <button 
             class="btn-icon spotlight__paste-btn" 
             (click)="pasteFromClipboard()" 
@@ -79,6 +78,34 @@
       <div class="spotlight__error-pill" role="alert">
         <app-icon name="alert-circle" [size]="14" />
         <span>{{ error() }}</span>
+      </div>
+    } @else if (filteredItems().length > 0) {
+      <div class="spotlight-results" role="listbox">
+        <div class="spotlight-results__header">
+          {{ url() ? (i18n.t('common.search') || 'Results') : (i18n.t('commandPalette.quickActions') || 'Quick Navigation') }}
+        </div>
+        <ul class="spotlight-results__list">
+          @for (item of filteredItems(); track item.id; let idx = $index) {
+            <li 
+              class="spotlight-results__item" 
+              [class.selected]="selectedIndex() === idx"
+              (click)="executeItem(item)"
+              (mouseenter)="onItemMouseEnter(idx)"
+              role="option"
+              [attr.aria-selected]="selectedIndex() === idx"
+            >
+              <div class="spotlight-results__icon-box">
+                <app-icon [name]="item.icon" [size]="15" />
+              </div>
+              <div class="spotlight-results__content">
+                <span class="spotlight-results__title">{{ item.title }}</span>
+              </div>
+              @if (item.badge) {
+                <span class="spotlight-results__shortcut">{{ item.badge }}</span>
+              }
+            </li>
+          }
+        </ul>
       </div>
     }
   </div>

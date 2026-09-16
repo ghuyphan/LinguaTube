@@ -4,12 +4,10 @@ import { RouterLink, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DictionaryPanelComponent } from '../dictionary-panel/dictionary-panel.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
-import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
-import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { DictionaryService } from '../dictionary.service';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService } from '../../../core/services';
+import { SettingsService, I18nService, AuthService } from '../../../core/services';
 
 @Component({
   selector: 'app-dictionary-page',
@@ -20,9 +18,7 @@ import { SettingsService, I18nService } from '../../../core/services';
     RouterLink,
     DictionaryPanelComponent,
     VocabularyListComponent,
-    IconComponent,
-    BottomSheetComponent,
-    ConfirmDialogComponent
+    IconComponent
   ],
   template: `
     <div class="page-layout">
@@ -77,50 +73,66 @@ import { SettingsService, I18nService } from '../../../core/services';
               [showMenu]="true"
               [embedded]="true"
               (wordSelect)="onVocabWordSelect($event.surface)"
-              (deleteRequest)="onVocabDeleteRequest($event)"
-              (menuRequest)="vocabMenuOpen.set(true)"
               (addWordRequest)="onAddWordRequest($event)"
             />
           }
         </div>
       </div>
 
-      <!-- Desktop sidebar with stats -->
+      <!-- Desktop sidebar with stats & learning resources -->
       <aside class="page-layout__sidebar desktop-only">
-        @if (stats().total > 0) {
-          <div class="card sidebar-card">
-            <div class="panel-header">
-              <div class="panel-header__row">
-                <div class="panel-header__left">
-                  <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
-                  <h3 class="panel-header__title">{{ i18n.t('study.title') }}</h3>
-                </div>
-                <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
+        <!-- Study & Notebook Card: Always visible -->
+        <div class="card sidebar-card">
+          <div class="panel-header">
+            <div class="panel-header__row">
+              <div class="panel-header__left">
+                <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
+                <h3 class="panel-header__title">{{ i18n.t('study.title') }}</h3>
               </div>
+              <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
             </div>
+          </div>
 
-            <div class="stats-grid">
-              <div class="stat-item">
-                <span class="stat-value stat-new">{{ stats().new }}</span>
-                <span class="stat-label">{{ i18n.t('study.new') }}</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value stat-learning">{{ stats().learning }}</span>
-                <span class="stat-label">{{ i18n.t('study.learning') }}</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value stat-known">{{ stats().known }}</span>
-                <span class="stat-label">{{ i18n.t('study.known') }}</span>
-              </div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value stat-new">{{ stats().new }}</span>
+              <span class="stat-label">{{ i18n.t('study.new') }}</span>
             </div>
+            <div class="stat-item">
+              <span class="stat-value stat-learning">{{ stats().learning }}</span>
+              <span class="stat-label">{{ i18n.t('study.learning') }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value stat-known">{{ stats().known }}</span>
+              <span class="stat-label">{{ i18n.t('study.known') }}</span>
+            </div>
+          </div>
 
+          @if (stats().total > 0) {
             <a routerLink="/study" class="btn btn-primary sidebar-action-btn">
               <app-icon name="play" [size]="16" />
               <span>{{ i18n.t('study.start') }}</span>
             </a>
-          </div>
-        }
+          } @else {
+            <div class="sidebar-empty-box">
+              <p class="sidebar-empty-desc">{{ i18n.t('dictionary.emptyNotebookHint') }}</p>
+              <a routerLink="/video" class="btn btn-secondary btn-sm sidebar-action-btn">
+                <app-icon name="video" [size]="14" />
+                <span>{{ i18n.t('dictionary.exploreVideos') }}</span>
+              </a>
+            </div>
+          }
 
+          <!-- Sync hint for guest users -->
+          @if (auth.isInitialized() && !auth.isLoggedIn()) {
+            <div class="sync-hint">
+              <app-icon name="cloud" [size]="16" />
+              <span>{{ i18n.t('vocab.syncHint') }}</span>
+            </div>
+          }
+        </div>
+
+        <!-- Recent Searches Card (when searches exist) -->
         @if (recentSearches().length > 0) {
           <div class="card sidebar-card">
             <div class="panel-header">
@@ -153,49 +165,6 @@ import { SettingsService, I18nService } from '../../../core/services';
           </div>
         }
       </aside>
-
-    <!-- Vocab Delete Confirmation -->
-    <app-confirm-dialog [isOpen]="vocabDeleteOpen()" [title]="i18n.t('vocab.deleteWord')"
-      [message]="i18n.t('vocab.deleteConfirm')" [confirmText]="i18n.t('vocab.delete')"
-      [cancelText]="i18n.t('vocab.cancel')" variant="danger" icon="trash-2" (confirmed)="confirmVocabDelete()"
-      (cancelled)="vocabDeleteOpen.set(false)" />
-
-    <!-- Vocab Menu Sheet -->
-    <app-bottom-sheet [isOpen]="vocabMenuOpen()" [title]="i18n.t('vocab.options') || 'Vocabulary Options'" [showCloseButton]="true" (closed)="vocabMenuOpen.set(false)">
-      <div class="menu-sheet">
-        <div class="menu-sheet__header">
-          <div class="menu-sheet__title-box">
-            <app-icon name="book-open" [size]="20" class="menu-sheet__header-icon" />
-            <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
-          </div>
-        </div>
-        <div class="menu-sheet__card">
-          <div class="menu-sheet__options">
-            <button type="button" class="menu-option" (click)="exportVocabJSON(); vocabMenuOpen.set(false)">
-              <div class="menu-option__icon-box">
-                <app-icon name="download" [size]="18" />
-              </div>
-              <span class="menu-option__label">{{ i18n.t('vocab.exportJson') }}</span>
-            </button>
-            <div class="menu-divider"></div>
-            <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
-              <div class="menu-option__icon-box">
-                <app-icon name="download" [size]="18" />
-              </div>
-              <span class="menu-option__label">{{ i18n.t('vocab.exportAnki') }}</span>
-            </button>
-            <div class="menu-divider"></div>
-            <label class="menu-option">
-              <div class="menu-option__icon-box">
-                <app-icon name="upload" [size]="18" />
-              </div>
-              <span class="menu-option__label">{{ i18n.t('vocab.import') }}</span>
-              <input type="file" accept=".json" class="hidden-input" (change)="importVocabJSON($event); vocabMenuOpen.set(false)" />
-            </label>
-          </div>
-        </div>
-      </div>
-    </app-bottom-sheet>
     </div>
   `,
   styles: [`
@@ -336,113 +305,41 @@ import { SettingsService, I18nService } from '../../../core/services';
       }
     }
 
-    /* Hidden file input for import */
-    .hidden-input {
-        display: none;
+    .sidebar-empty-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-xs) 0;
+      gap: var(--space-sm);
     }
 
-    /* Menu Sheet Styles */
-    .menu-sheet {
-        padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
-        max-width: 440px;
-        margin: 0 auto;
+    .sidebar-empty-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
     }
 
-    .menu-sheet__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: var(--space-md);
-        padding-bottom: var(--space-xs);
-        padding-right: 2.5rem; /* clearance for sheet-close-btn */
-    }
+    .sync-hint {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-xs) var(--space-sm);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-sm);
+      margin-top: var(--space-2xs);
+      line-height: 1.4;
 
-    .menu-sheet__title-box {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .menu-sheet__header-icon {
-        color: var(--accent-primary);
-    }
-
-    .menu-sheet__title {
-        font-size: 1.125rem;
-        font-weight: 800;
-        color: var(--text-primary);
-        margin: 0;
-        letter-spacing: -0.01em;
-    }
-
-    .menu-sheet__card {
-        background: var(--bg-surface);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-lg);
-        overflow: hidden;
-    }
-
-    .menu-sheet__options {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu-option {
-        display: flex;
-        align-items: center;
-        gap: var(--space-md);
-        padding: 12px 16px;
-        min-height: 52px;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        font-size: 0.9375rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        cursor: pointer;
-        transition: background-color var(--transition-fast), transform var(--transition-fast);
-        text-align: left;
-        width: 100%;
-        user-select: none;
-    }
-
-    @media (hover: hover) {
-        .menu-option:hover:not(:disabled) {
-            background: var(--bg-hover);
-        }
-    }
-
-    .menu-option:active:not(:disabled) {
-        background: var(--bg-secondary);
-    }
-
-    .menu-option__icon-box {
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: var(--border-radius-md);
-        background: var(--bg-hover);
-        border: 1px solid var(--border-color);
-        color: var(--text-secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      app-icon {
         flex-shrink: 0;
-        transition: all var(--transition-fast);
+        color: var(--text-secondary);
+      }
     }
 
-    .menu-option__label {
-        flex: 1;
-        min-width: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
 
-    .menu-divider {
-        height: 1px;
-        background: var(--border-color);
-        margin: 0 16px;
-    }
 
     /* Unified Main Panel, Toolbar & Tabs (Matches playlist-panel/toolbar & history-panel/toolbar) */
     .dict-panel {
@@ -568,15 +465,6 @@ import { SettingsService, I18nService } from '../../../core/services';
                 }
             }
         }
-
-        .menu-sheet {
-            padding: var(--space-sm) var(--space-sm) calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
-        }
-
-        .menu-action-btn {
-            padding: 12px 14px;
-            min-height: 52px;
-        }
     }
   `]
 })
@@ -588,6 +476,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
+  auth = inject(AuthService);
 
   activeTab = signal<'dictionary' | 'vocab'>('dictionary');
   private routeSub?: Subscription;
@@ -672,44 +561,5 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
         }, 50);
       }
     }
-  }
-
-  // Vocab State
-  vocabDeleteOpen = signal(false);
-  vocabDeleteId = signal<string | null>(null);
-  vocabMenuOpen = signal(false);
-
-  // Vocab Actions
-  onVocabDeleteRequest(id: string): void {
-    this.vocabDeleteId.set(id);
-    this.vocabDeleteOpen.set(true);
-  }
-
-  confirmVocabDelete(): void {
-    const id = this.vocabDeleteId();
-    if (id) {
-      this.vocab.deleteWord(id);
-    }
-    this.vocabDeleteOpen.set(false);
-    this.vocabDeleteId.set(null);
-  }
-
-  exportVocabJSON(): void {
-    this.vocab.exportAsFile('json');
-  }
-
-  exportVocabAnki(): void {
-    this.vocab.exportAsFile('anki');
-  }
-
-  importVocabJSON(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    const file = input.files?.[0];
-    if (!file) return;
-
-    void this.vocab.importFromFile(file).catch(err => {
-      console.error('Import failed', err);
-    });
-    input.value = '';
   }
 }

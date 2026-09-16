@@ -18,7 +18,21 @@
     </div>
 } @else if (items().length === 0) {
     <!-- Empty states -->
-    @if (filter() === 'favorites') {
+    @if (hasActiveFilters()) {
+        <div class="empty-state empty-state--centered empty-state--animate">
+            <div class="empty-state__icon-box">
+                <app-icon name="search" [size]="28" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') }}</p>
+                <p class="empty-state__description">{{ i18n.t('history.noMatchesHint') }}</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="clearFilters.emit()">
+                <app-icon name="x" [size]="14" />
+                <span>{{ i18n.t('history.clearFilters') }}</span>
+            </button>
+        </div>
+    } @else if (filter() === 'favorites') {
         <div class="empty-state empty-state--centered empty-state--animate">
             <div class="empty-state__icon-box">
                 <app-icon name="heart" [size]="28" />
@@ -37,6 +51,10 @@
                 <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
                 <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') }}</p>
             </div>
+            <button type="button" class="btn btn-primary btn-sm" (click)="onBrowseVideos()">
+                <app-icon name="globe" [size]="14" />
+                <span>{{ i18n.t('history.exploreVideos') }}</span>
+            </button>
         </div>
     }
 } @else {

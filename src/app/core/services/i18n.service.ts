@@ -10,6 +10,21 @@ import zh from '../../i18n/zh.json';
 
 export type UILanguage = 'en' | 'vi' | 'ja' | 'ko' | 'zh';
 
+type Prev = [never, 0, 1, 2, 3, 4, 5];
+type Join<K, P> = K extends string | number
+    ? P extends string | number
+        ? `${K}${'' extends P ? '' : '.'}${P}`
+        : never
+    : never;
+
+export type NestedKeyOf<T, D extends number = 4> = [D] extends [never]
+    ? never
+    : T extends object
+    ? { [K in keyof T]-?: Join<K, NestedKeyOf<T[K], Prev[D]>> }[keyof T]
+    : '';
+
+export type TranslationKey = NestedKeyOf<typeof en> | (string & {});
+
 interface TranslationData {
     [key: string]: string | TranslationData;
 }
@@ -53,12 +68,9 @@ export class I18nService {
 
     /**
      * Get a translated string by key path (e.g., 'nav.video', 'player.load')
-     */
-    /**
-     * Get a translated string by key path (e.g., 'nav.video', 'player.load')
      * Supports interpolation: t('key', { count: 5 }) -> "You have 5 items"
      */
-    t(key: string, params?: Record<string, string | number | boolean | null | undefined>): string {
+    t(key: TranslationKey, params?: Record<string, string | number | boolean | null | undefined>): string {
         const resolveKey = (data: TranslationData | string | undefined): string | null => {
             if (!data) return null;
             const parts = key.split('.');
