@@ -658,8 +658,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
     return this.grammarMatches().find(m => m.tokenIndices.includes(index));
   }
 
-  private wasPlayingBeforeGrammarLookup = false;
-
   onGrammarClick(index: number, event: Event): void {
     if (!this.settings.settings().hasSeenSubtitleCoachmark) {
       this.settings.markSubtitleCoachmarkSeen();
@@ -669,12 +667,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
     if (match) {
       this.selectedGrammarPattern.set(match.pattern);
 
-      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-        this.wasPlayingBeforeGrammarLookup = this.youtube.isPlaying();
-        if (this.wasPlayingBeforeGrammarLookup) {
-          this.youtube.pause();
-        }
-      }
+      // Pause playback while reading grammar explanation across all screen sizes
+      this.youtube.acquirePauseLock('grammar-lookup');
 
       this.grammarPopupOpen.set(true);
     }
@@ -684,10 +678,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
     this.grammarPopupOpen.set(false);
     this.selectedGrammarPattern.set(null);
 
-    if (typeof window !== 'undefined' && window.innerWidth <= 768 && this.wasPlayingBeforeGrammarLookup) {
-      this.youtube.play();
-      this.wasPlayingBeforeGrammarLookup = false;
-    }
+    // Release pause lock so video resumes smoothly if it was playing before
+    this.youtube.releasePauseLock('grammar-lookup');
   }
 
   toggleGrammarMode(): void {

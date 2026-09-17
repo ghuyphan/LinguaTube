@@ -341,7 +341,6 @@ export class VideoPlayerComponent implements OnDestroy {
   // Fullscreen grammar popup state
   fsGrammarPopupVisible = signal(false);
   fsSelectedGrammarPattern = signal<GrammarPattern | null>(null);
-  private wasPlayingBeforeFsGrammar = false;
 
   // Feedback animations
   rewindFeedback = signal(false);
@@ -1302,10 +1301,7 @@ export class VideoPlayerComponent implements OnDestroy {
     event.stopPropagation();
     const match = this.getFsGrammarMatchForToken(index);
     if (match) {
-      this.wasPlayingBeforeFsGrammar = this.youtube.isPlaying();
-      if (this.wasPlayingBeforeFsGrammar) {
-        this.youtube.pause();
-      }
+      this.youtube.acquirePauseLock('fs-grammar-lookup');
       this.fsSelectedGrammarPattern.set(match.pattern);
       this.fsGrammarPopupVisible.set(true);
       this.showControls();
@@ -1315,10 +1311,7 @@ export class VideoPlayerComponent implements OnDestroy {
   closeFsGrammarPopup(): void {
     this.fsGrammarPopupVisible.set(false);
     this.fsSelectedGrammarPattern.set(null);
-    if (this.wasPlayingBeforeFsGrammar) {
-      this.youtube.play();
-      this.wasPlayingBeforeFsGrammar = false;
-    }
+    this.youtube.releasePauseLock('fs-grammar-lookup');
   }
 
   onFullscreenComponentWordClick(event: { token: Token; context: string; event: MouseEvent }): void {
