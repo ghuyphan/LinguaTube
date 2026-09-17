@@ -147,12 +147,13 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **Cross-Language Lemmatized Word Lookup & Saved Badges**:
   - Subtitle word chips reactively check both `token.surface` and `token.baseForm` against the user's vocabulary notebook. Saving an inflected word (e.g. `食べた` or `went`) registers the root lemma (`食べる` or `go`), and all inflections across all subtitles immediately display the pink saved badge and SRS mastery border (`word--new`, `word--learning`, `word--known`).
   - Word Popup displays both the inflected surface and root lemma (e.g. `went (go)`), searching the dictionary by root lemma with automatic fallback to surface.
-- **Bulk Batch Tokenization & Zero Playback Overhead**:
-  - `SubtitleService` processes subtitle cues in bulk batches of up to 800 texts on initial video load. For virtually all videos ($\le 800$ cues), the entire video requires **only 1 API call**.
-  - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.
-  - Forwards the user's Supabase auth token to access higher rate limit tiers (150–2,000 req/hr).
+- **Pre-Baked Rich Subtitles in Cloudflare R2 (0ms Tokenization & Zero API Calls)**:
+  - When native YouTube captions or Gladia AI transcripts are ingested, the server enriches all segments with morphological tokens (`tokens: Token[]`), character-level ruby parts, Pinyin, and lemmas (`enrichSegmentsWithTokens`) before persisting to Cloudflare R2.
+  - When any user opens a video, `POST /api/transcript` returns ready-to-render tokens. `SubtitleService.tokenizeAllCues()` detects that all cues already have tokens (`cues.every(cue => cue.tokens?.length > 0)`) and skips the `/api/tokenize-batch` call entirely.
+  - **Zero Playback Overhead & Zero Visual Flicker**: Subtitles display Furigana and Pinyin immediately upon video load with 0ms delay, eliminating plain-text-to-ruby visual transitions and cutting Cloudflare Worker invocations per video in half.
+  - **Self-Healing Legacy Upgrade**: Older transcripts in R2 lacking tokens are enriched on first fetch and upgraded in R2 asynchronously in the background via `context.waitUntil(saveTranscriptToR2(...))`.
 - **Client Fallback Tokenizer & 429 Circuit Breaker**:
-  - If network requests to backend tokenization endpoints fail, hit a 429 rate limit, or operate offline, `SubtitleService` immediately triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter` across Japanese (`'ja'`), Chinese (`'zh'`), and Korean (`'ko'`), with whitespace-neutralized word matching for English.
+  - If network requests fail, hit a 429 rate limit, or operate in offline/airplane mode, `SubtitleService` triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter` across Japanese (`'ja'`), Chinese (`'zh'`), and Korean (`'ko'`), with whitespace-neutralized word matching for English.
   - The circuit breaker prevents cascading 429 errors in the console by suppressing subsequent backend calls for the duration of the `Retry-After` window.
 
 ### 2.3. Subtitle Customization & Vocabulary Highlighting

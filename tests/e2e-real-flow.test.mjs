@@ -56,6 +56,9 @@ async function main() {
   }
 
   try {
+    // Reset dev diamonds to ensure sufficient credits for test execution
+    await fetch(`${BASE_URL}/api/diamonds?reset=1`).catch(() => {});
+
     // -------------------------------------------------------------
     // Step 0: Ensure cache is cleared so we test the REAL initial video load with 0 captions
     // -------------------------------------------------------------

@@ -465,3 +465,66 @@ export async function tokenize(text, lang) {
 
     return tokenizeKoreanChinese(text, lang);
 }
+
+/**
+ * Enrich an array of transcript segments with morphological tokens.
+ * - Leaves non-empty segment.tokens untouched (idempotent).
+ * - Only tokenizes supported languages (ja, zh, ko, en).
+ * - Safe against null/undefined segments or empty texts.
+ *
+ * @param {Array<{id?: number|string, text: string, start: number, duration: number, tokens?: Array}>} segments
+ * @param {string} lang - Target language code
+ * @returns {Promise<Array>} Enriched segments
+ */
+export async function enrichSegmentsWithTokens(segments, lang) {
+    if (!Array.isArray(segments) || segments.length === 0) {
+        return [];
+    }
+
+    const normLang = (lang || '').split('-')[0].toLowerCase();
+    if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) {
+        return segments;
+    }
+
+    // Check if every segment already has valid tokens
+    const allHaveTokens = segments.every(s => s && Array.isArray(s.tokens) && s.tokens.length > 0);
+    if (allHaveTokens) {
+        return segments;
+    }
+
+    // Pre-initialize tokenizer modules for performance before the map loop
+    if (normLang === 'ja') await getKuromojiTokenizer().catch(() => null);
+    if (normLang === 'zh') await getPinyin().catch(() => null);
+    if (normLang === 'ko') await getRomanizeKorean().catch(() => null);
+    if (normLang === 'en') await getNlp().catch(() => null);
+
+    const enriched = await Promise.all(
+        segments.map(async (segment) => {
+            if (!segment) return segment;
+            if (Array.isArray(segment.tokens) && segment.tokens.length > 0) {
+                return segment;
+            }
+
+            const text = segment.text || '';
+            if (!text.trim()) {
+                return { ...segment, tokens: [] };
+            }
+
+            try {
+                const tokens = await tokenize(text, normLang);
+                return {
+                    ...segment,
+                    tokens: Array.isArray(tokens) ? tokens : []
+                };
+            } catch (err) {
+                console.warn(`[Tokenizer] Segment tokenization failed for "${text}":`, err?.message);
+                return {
+                    ...segment,
+                    tokens: []
+                };
+            }
+        })
+    );
+
+    return enriched;
+}

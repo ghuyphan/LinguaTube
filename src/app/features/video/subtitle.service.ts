@@ -248,7 +248,7 @@ export class SubtitleService {
     // Skip if already tokenized (all cues have tokens)
     const allTokenized = cues.every(cue => cue.tokens && cue.tokens.length > 0);
     if (allTokenized) {
-      console.log('[SubtitleService] Cues already tokenized, skipping');
+      console.log('[SubtitleService] Pre-baked rich tokens detected. Skipped batch tokenization.');
       return;
     }
 

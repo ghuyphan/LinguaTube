@@ -624,7 +624,8 @@ export class TranscriptService {
         id: crypto.randomUUID(),
         startTime,
         endTime: Math.round((startTime + duration) * 100) / 100,
-        text: segment.text.trim()
+        text: segment.text.trim(),
+        tokens: segment.tokens && segment.tokens.length > 0 ? segment.tokens : undefined
       };
     });
   }

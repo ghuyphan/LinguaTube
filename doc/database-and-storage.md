@@ -182,7 +182,7 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
 ### 3.1. Transcript Object Format
 - **Key**: `transcripts/{videoId}/{lang}.json`
 - **Content-Type**: `application/json`
-- **JSON Structure**:
+- **JSON Structure (Pre-Baked Rich Subtitles)**:
   ```json
   {
     "videoId": "abc123xyz",
@@ -194,7 +194,22 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
         "id": 0,
         "start": 1.25,
         "duration": 2.4,
-        "text": "こんにちは皆さん"
+        "text": "思い出した！",
+        "tokens": [
+          {
+            "surface": "思い出した",
+            "baseForm": "思い出す",
+            "reading": "おもいだした",
+            "rubyParts": [
+              { "text": "思", "reading": "おも" },
+              { "text": "い" },
+              { "text": "出", "reading": "だ" },
+              { "text": "した" }
+            ],
+            "romanization": "omoidashita",
+            "hasKanji": true
+          }
+        ]
       }
     ]
   }

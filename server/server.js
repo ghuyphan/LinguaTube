@@ -907,6 +907,10 @@ const DEV_REGEN_INTERVAL_MS = 20 * 60 * 1000;
 
 app.get('/api/diamonds', (req, res) => {
     try {
+        if (req.query.reset === '1' || req.query.reset === 'true') {
+            devDiamonds = 3;
+            devLastRegen = Date.now();
+        }
         res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
         res.json({
             success: true,
@@ -1121,16 +1125,33 @@ function getCachedTranscript(videoId, lang) {
     try {
         if (!isValidVideoId(videoId)) return null;
         const normLang = (lang || '').replace(/[^a-zA-Z0-9_-]/g, '').split('-')[0].toLowerCase();
+        let cached = null;
+        let resolvedLang = normLang;
         if (normLang) {
             const file = path.join(TRANSCRIPTS_CACHE_DIR, `${videoId}_${normLang}.json`);
             if (fs.existsSync(file)) {
-                return JSON.parse(fs.readFileSync(file, 'utf-8'));
+                cached = JSON.parse(fs.readFileSync(file, 'utf-8'));
             }
         }
-        const files = fs.readdirSync(TRANSCRIPTS_CACHE_DIR).filter(f => f.startsWith(`${videoId}_`) && f.endsWith('.json'));
-        if (files.length > 0) {
-            return JSON.parse(fs.readFileSync(path.join(TRANSCRIPTS_CACHE_DIR, files[0]), 'utf-8'));
+        if (!cached) {
+            const files = fs.readdirSync(TRANSCRIPTS_CACHE_DIR).filter(f => f.startsWith(`${videoId}_`) && f.endsWith('.json'));
+            if (files.length > 0) {
+                const match = files[0].match(/_([a-zA-Z0-9_-]+)\.json$/);
+                if (match) resolvedLang = match[1];
+                cached = JSON.parse(fs.readFileSync(path.join(TRANSCRIPTS_CACHE_DIR, files[0]), 'utf-8'));
+            }
         }
+
+        // Self-heal: if cached transcript has no tokens, enrich and save back
+        if (cached && Array.isArray(cached.segments) && cached.segments.length > 0) {
+            const targetLang = (resolvedLang || cached.language || 'ja').split('-')[0].toLowerCase();
+            if (!cached.segments[0].tokens || cached.segments[0].tokens.length === 0) {
+                cached.segments = enrichSegmentsWithTokensDev(cached.segments, targetLang);
+                saveCachedTranscript(videoId, targetLang, cached);
+            }
+        }
+
+        return cached;
     } catch (e) {
         console.error('[Transcript Cache] Read error:', e.message);
     }
@@ -1141,6 +1162,9 @@ function saveCachedTranscript(videoId, lang, data) {
     try {
         if (!isValidVideoId(videoId)) return;
         const normLang = (lang || 'ja').replace(/[^a-zA-Z0-9_-]/g, '').split('-')[0].toLowerCase();
+        if (data && Array.isArray(data.segments)) {
+            data.segments = enrichSegmentsWithTokensDev(data.segments, normLang);
+        }
         const file = path.join(TRANSCRIPTS_CACHE_DIR, `${videoId}_${normLang}.json`);
         fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8');
     } catch (e) {
@@ -2305,11 +2329,12 @@ app.post('/api/transcript', async (req, res) => {
                             const languageMismatch = actualLang !== normalizedLang && !actualLang.startsWith(normalizedLang);
                             console.log(`[Dev Server] Retrieved ${cleaned.length} real Innertube YouTube captions for video ${videoId} (${track.language_code}, actual: ${actualLang})`);
 
+                            const enriched = enrichSegmentsWithTokensDev(cleaned, actualLang);
                             saveCachedTranscript(videoId, actualLang, {
                                 videoId,
                                 language: actualLang,
                                 source: 'native',
-                                segments: cleaned
+                                segments: enriched
                             });
 
                             return res.json({
@@ -2317,7 +2342,7 @@ app.post('/api/transcript', async (req, res) => {
                                 videoId,
                                 language: actualLang,
                                 requestedLanguage: normalizedLang,
-                                segments: cleaned,
+                                segments: enriched,
                                 source: 'native',
                                 sourceDetail: 'innertube',
                                 availableLanguages: {
@@ -2667,6 +2692,28 @@ function tokenizeTextDev(text, lang) {
     }
 
     return text.split(/\s+/).filter(Boolean).map(word => buildDevToken(word, true, lang));
+}
+
+function enrichSegmentsWithTokensDev(segments, lang) {
+    if (!Array.isArray(segments) || segments.length === 0) return [];
+    const normLang = (lang || '').split('-')[0].toLowerCase();
+    if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) return segments;
+
+    const allHaveTokens = segments.every(s => s && Array.isArray(s.tokens) && s.tokens.length > 0);
+    if (allHaveTokens) return segments;
+
+    return segments.map(seg => {
+        if (!seg) return seg;
+        if (Array.isArray(seg.tokens) && seg.tokens.length > 0) return seg;
+        const text = seg.text || '';
+        if (!text.trim()) return { ...seg, tokens: [] };
+        try {
+            const tokens = tokenizeTextDev(text, normLang);
+            return { ...seg, tokens: Array.isArray(tokens) ? tokens : [] };
+        } catch {
+            return { ...seg, tokens: [] };
+        }
+    });
 }
 
 /**

@@ -8,7 +8,8 @@ import {
     hasKanji,
     katakanaToHiragana,
     segmentJapaneseRuby,
-    detachKoreanParticle
+    detachKoreanParticle,
+    enrichSegmentsWithTokens
 } from '../functions-src/utils/tokenizer.js';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../functions-src/utils/japanese-romaji.js';
 
@@ -444,4 +445,55 @@ test('Batch Tokenize Limits: Server and Client limits are aligned', async () => 
         `Batch size mismatch detected! Client sends ${clientBatchSize} items, but server rejects batches > ${serverBatchSize}.`
     );
     assert.equal(serverBatchSize >= 500, true, 'Server MAX_BATCH_SIZE should be at least 500 to support full video batches');
+});
+
+test('enrichSegmentsWithTokens: pre-bakes rich tokens onto segments across all 4 languages', async () => {
+    // 1. Japanese
+    const jaSegments = [
+        { id: 0, text: '思い出した！', start: 1.0, duration: 2.0 },
+        { id: 1, text: 'お茶を飲む。', start: 3.0, duration: 2.0 }
+    ];
+    const enrichedJa = await enrichSegmentsWithTokens(jaSegments, 'ja');
+    assert.equal(enrichedJa.length, 2);
+    assert.equal(enrichedJa[0].id, 0);
+    assert.equal(enrichedJa[0].text, '思い出した！');
+    assert.ok(Array.isArray(enrichedJa[0].tokens) && enrichedJa[0].tokens.length > 0);
+    const omoi = enrichedJa[0].tokens.find(t => t.surface.includes('思い'));
+    assert.ok(omoi, 'Should find verb token');
+
+    // 2. Chinese (context pinyin + rubyParts)
+    const zhSegments = [
+        { id: 0, text: '银行在什么地方？', start: 0.5, duration: 2.5 }
+    ];
+    const enrichedZh = await enrichSegmentsWithTokens(zhSegments, 'zh');
+    assert.equal(enrichedZh.length, 1);
+    const bank = enrichedZh[0].tokens.find(t => t.surface === '银行');
+    assert.ok(bank);
+    assert.equal(bank.pinyin, 'yín háng');
+    assert.ok(bank.rubyParts?.length === 2);
+
+    // 3. Korean (particle detachment)
+    const koSegments = [
+        { id: 0, text: '한국어를 배웁니다.', start: 0.0, duration: 2.0 }
+    ];
+    const enrichedKo = await enrichSegmentsWithTokens(koSegments, 'ko');
+    assert.equal(enrichedKo.length, 1);
+    const hangugeo = enrichedKo[0].tokens.find(t => t.surface === '한국어를');
+    assert.ok(hangugeo);
+    assert.equal(hangugeo.baseForm, '한국어');
+    assert.equal(hangugeo.particle, '를');
+
+    // 4. English (lemmatization)
+    const enSegments = [
+        { id: 0, text: 'They went to the store.', start: 0.0, duration: 2.0 }
+    ];
+    const enrichedEn = await enrichSegmentsWithTokens(enSegments, 'en');
+    assert.equal(enrichedEn.length, 1);
+    const went = enrichedEn[0].tokens.find(t => t.surface === 'went');
+    assert.ok(went);
+    assert.equal(went.baseForm, 'go');
+
+    // 5. Idempotent: already enriched segments returned unchanged
+    const doubleEnriched = await enrichSegmentsWithTokens(enrichedEn, 'en');
+    assert.strictEqual(doubleEnriched, enrichedEn);
 });

@@ -1503,6 +1503,46 @@ test('saveTranscriptToR2: returns boolean success flag and handles errors gracef
   assert.equal(await saveTranscriptToR2(failingBucket, 'vid123', 'ja', [{ text: 'hi' }]), false);
 });
 
+test('saveTranscriptToR2 & getTranscriptFromR2: preserves pre-baked tokens in rich format', async () => {
+  const { saveTranscriptToR2, getTranscriptFromR2 } = await import('../functions-src/data/transcript-r2.js');
+
+  let storedData = null;
+  const mockBucket = {
+    async put(key, jsonStr) {
+      storedData = JSON.parse(jsonStr);
+      return {};
+    },
+    async get(key) {
+      if (!storedData) return null;
+      return {
+        async json() { return storedData; },
+        customMetadata: { source: 'native' }
+      };
+    }
+  };
+
+  const richSegments = [
+    {
+      id: 0,
+      text: '思い出した',
+      start: 1.0,
+      duration: 2.0,
+      tokens: [
+        { surface: '思い出した', baseForm: '思い出す', reading: 'おもいだした' }
+      ]
+    }
+  ];
+
+  const saved = await saveTranscriptToR2(mockBucket, 'vid_rich', 'ja', richSegments, 'native');
+  assert.equal(saved, true);
+
+  const loaded = await getTranscriptFromR2(mockBucket, 'vid_rich', 'ja');
+  assert.ok(loaded);
+  assert.equal(loaded.segments.length, 1);
+  assert.ok(Array.isArray(loaded.segments[0].tokens));
+  assert.equal(loaded.segments[0].tokens[0].baseForm, '思い出す');
+});
+
 test('Dictionary Parsers: parseNaver correctly extracts reading, audio, pos, and strips homonym numbers', async () => {
   const { parseNaver } = await import('../functions-src/utils/dict-parsers.js');
 

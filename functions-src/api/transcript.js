@@ -22,9 +22,10 @@ import {
     deleteNoTranscript
 } from '../data/video-info-db.js';
 
-import { getTranscriptFromR2 } from '../data/transcript-r2.js';
+import { getTranscriptFromR2, saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { getActiveAiJob } from '../data/transcript-db.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
@@ -219,6 +220,15 @@ export async function onRequestPost(context) {
             // Never fall back to other languages in R2 or return native transcripts when preferAI is true!
             if (preferAI) {
                 if (cached?.segments?.length > 0 && cached.source === 'ai') {
+                    // Self-healing: if cached R2 transcript lacks pre-baked tokens, enrich it
+                    const targetNormLang = (lang || '').split('-')[0].toLowerCase();
+                    if (['ja', 'zh', 'ko', 'en'].includes(targetNormLang) && (!cached.segments[0].tokens || cached.segments[0].tokens.length === 0)) {
+                        cached.segments = await enrichSegmentsWithTokens(cached.segments, targetNormLang);
+                        if (waitUntil && r2) {
+                            waitUntil(saveTranscriptToR2(r2, cleanVideoId, lang, cached.segments, 'ai').catch(() => {}));
+                        }
+                    }
+
                     return jsonResponse({
                         success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
                         source: 'ai', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [lang], whisperAvailable: diamondInfo.diamonds > 0,
@@ -251,6 +261,15 @@ export async function onRequestPost(context) {
                     const normReq = normalizeLanguageCode(lang);
                     const normRes = normalizeLanguageCode(responseLang);
                     const isMismatch = Boolean(normReq && normRes && normReq !== normRes);
+
+                    // Self-healing: if cached R2 transcript lacks pre-baked tokens, enrich it
+                    const targetNormLang = (normRes || responseLang || '').split('-')[0].toLowerCase();
+                    if (['ja', 'zh', 'ko', 'en'].includes(targetNormLang) && (!cached.segments[0].tokens || cached.segments[0].tokens.length === 0)) {
+                        cached.segments = await enrichSegmentsWithTokens(cached.segments, targetNormLang);
+                        if (waitUntil && r2) {
+                            waitUntil(saveTranscriptToR2(r2, cleanVideoId, responseLang, cached.segments, cached.source || 'cache').catch(() => {}));
+                        }
+                    }
 
                     return jsonResponse({
                         success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,

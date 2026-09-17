@@ -24,6 +24,7 @@ import { GladiaProvider } from '../providers/gladia.js';
 import { DiamondService } from '../services/diamond.service.js';
 import { CacheManager } from '../utils/cache-manager.js';
 import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
+import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
 
 export function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
@@ -195,10 +196,11 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
         return;
     }
 
-    // 1. Save permanent transcript to R2
+    // 1. Save permanent transcript to R2 (enriched with tokens)
     let r2Saved = true;
     if (r2 && videoId) {
-        r2Saved = await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+        const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
+        r2Saved = await saveTranscriptToR2(r2, videoId, detectedLang, enrichedSegments, 'ai');
     }
 
     if (!r2Saved && r2) {

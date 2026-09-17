@@ -1,10 +1,11 @@
-import { SubtitleCue } from './index';
+import { SubtitleCue, Token } from './index';
 
 export interface TranscriptSegment {
   id?: number;
   text: string;
   start: number;
   duration: number;
+  tokens?: Token[];
 }
 
 export interface TranscriptResponse {

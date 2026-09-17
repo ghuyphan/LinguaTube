@@ -31,6 +31,7 @@ import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, 
 import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
+import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
 
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
 
@@ -61,9 +62,11 @@ export class TranscriptService {
         if (nativeResult?.segments?.length > 0) {
             const actualLang = normalizeLanguageCode(nativeResult.detectedLang) || normalizeLanguageCode(lang) || lang;
             const cleanedSegments = cleanTranscriptSegments(nativeResult.segments);
+            const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, actualLang);
+            nativeResult.segments = enrichedSegments;
             // Found native captions -> Save to R2 & DB under actualLang and clear any stale negative cache
             const savePromises = [
-                saveTranscriptToR2(r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata'),
+                saveTranscriptToR2(r2, videoId, actualLang, enrichedSegments, nativeResult.source || 'supadata'),
                 addSubLanguage(db, videoId, actualLang),
                 deleteNoTranscript(db, videoId, actualLang, 'native')
             ];
@@ -433,7 +436,8 @@ export class TranscriptService {
                     const selfHealMismatch = normalizeLanguageCode(detectedLang) !== normalizeLanguageCode(job.language);
 
                     if (cleanedSegments.length > 0) {
-                        const saved = await saveTranscriptToR2(r2, targetVideoId, detectedLang, cleanedSegments, 'ai');
+                        const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
+                        const saved = await saveTranscriptToR2(r2, targetVideoId, detectedLang, enrichedSegments, 'ai');
                         if (!saved && r2) {
                             console.error(`[TranscriptService] Failed to persist transcript to R2 for ${targetVideoId}`);
                             return {
@@ -462,7 +466,7 @@ export class TranscriptService {
                                 language: detectedLang,
                                 requestedLanguage: job.language,
                                 languageMismatch: selfHealMismatch,
-                                segments: cleanedSegments,
+                                segments: enrichedSegments,
                                 source: 'ai',
                                 sourceDetail: 'gladia',
                                 availableLanguages,
@@ -535,7 +539,8 @@ export class TranscriptService {
                 const detectedLang = extractGladiaDetectedLanguage(resultData, lang);
 
                 if (videoId && cleanedSegments.length > 0) {
-                    const saved = await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
+                    const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
+                    const saved = await saveTranscriptToR2(r2, videoId, detectedLang, enrichedSegments, 'ai');
                     if (!saved && r2) {
                         console.error(`[TranscriptService] Failed to persist transcript to R2 for ${videoId}`);
                         return {
@@ -555,21 +560,21 @@ export class TranscriptService {
                         if (waitUntil) waitUntil(Promise.allSettled(bgOps));
                         else await Promise.allSettled(bgOps);
                     }
-                }
 
-                return {
-                    status: 'done',
-                    videoInfo: {
-                        videoId,
-                        language: detectedLang,
-                        requestedLanguage: lang,
-                        segments: cleanedSegments,
-                        source: 'ai',
-                        sourceDetail: 'gladia',
-                        availableLanguages,
-                        subLanguages: [detectedLang || lang]
-                    }
-                };
+                    return {
+                        status: 'done',
+                        videoInfo: {
+                            videoId,
+                            language: detectedLang,
+                            requestedLanguage: lang,
+                            segments: enrichedSegments,
+                            source: 'ai',
+                            sourceDetail: 'gladia',
+                            availableLanguages,
+                            subLanguages: [detectedLang || lang]
+                        }
+                    };
+                }
             }
 
             if (resultData.status === 'error') {
