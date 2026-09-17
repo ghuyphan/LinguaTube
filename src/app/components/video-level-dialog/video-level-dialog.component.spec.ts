@@ -80,4 +80,53 @@ describe('VideoLevelDialogComponent', () => {
     expect(pace?.cpm).toBe(161); // 837 / 5.2
     expect(pace?.paceClass).toBe('pace-normal');
   });
+
+  it('should tailor immersion tip to fast native speech', () => {
+    fixture.componentRef.setInput('levelInfo', {
+      ...mockLevelInfo,
+      speechRateCpm: 320 // Fast native speech
+    });
+    fixture.detectChanges();
+
+    const tip = component.immersionTipText();
+    expect(tip).toContain('0.75x');
+    expect(tip).toContain('Auto-Pause');
+  });
+
+  it('should tailor immersion tip to advanced videos with normal speech pace', () => {
+    fixture.componentRef.setInput('levelInfo', {
+      ...mockLevelInfo,
+      tier: 'advanced',
+      speechRateCpm: 240
+    });
+    fixture.detectChanges();
+
+    const tip = component.immersionTipText();
+    expect(tip).toContain('Complex grammar');
+  });
+
+  it('should tailor immersion tip to beginner videos with normal speech pace', () => {
+    fixture.componentRef.setInput('levelInfo', {
+      ...mockLevelInfo,
+      tier: 'beginner',
+      speechRateCpm: 200
+    });
+    fixture.detectChanges();
+
+    const tip = component.immersionTipText();
+    expect(tip).toContain('Clear and accessible');
+  });
+
+  it('should fallback to general 0.75x speed tip for intermediate normal pace videos', () => {
+    fixture.componentRef.setInput('levelInfo', {
+      ...mockLevelInfo,
+      tier: 'intermediate',
+      speechRateCpm: 220
+    });
+    fixture.detectChanges();
+
+    const tip = component.immersionTipText();
+    expect(tip).toContain('0.75x');
+    expect(tip).toContain('dual subtitles');
+  });
 });

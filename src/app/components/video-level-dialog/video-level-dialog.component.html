@@ -84,7 +84,7 @@
         <app-icon name="type" [size]="16" />
       </div>
       <div class="info-content">
-        <strong>{{ i18n.t('level.howVocabTitle') || 'Vocabulary & Kanji' }}</strong>
+        <strong>{{ i18n.t('level.howVocabTitle') || 'Vocabulary & Expressions' }}</strong>
         <p>{{ i18n.t('level.howVocabDesc') || 'Idioms and expressions suited for this stage of immersion.' }}</p>
       </div>
     </div>
@@ -107,7 +107,7 @@
     </div>
     <div class="tip-content">
       <strong>{{ i18n.t('level.immersionTipTitle') || 'Immersion Tip' }}</strong>
-      <p>{{ i18n.t('level.immersionTipPace') || 'If the speech feels too fast, slow playback to 0.85x or turn on dual subtitles.' }}</p>
+      <p>{{ immersionTipText() }}</p>
     </div>
   </div>
 

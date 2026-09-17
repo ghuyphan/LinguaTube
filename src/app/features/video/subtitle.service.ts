@@ -1143,14 +1143,21 @@ export class SubtitleService {
         }));
       }
       case 'en':
-        // Match words (letters, numbers, apostrophes, hyphens) OR non-word sequences
-        // allowing us to preserve punctuation/spaces
-        return (text.match(/[\w'-]+|[^\w'-]+/g) || []).map(str => ({
+        // Match words (letters, numbers, apostrophes, hyphens) OR non-whitespace punctuation
+        // Filtering out pure whitespace tokens guarantees layout parity with server tokenizer
+        return (text.match(/[\w'-]+|[^\w\s'-]+/g) || []).map(str => ({
           surface: str,
-          // Consider it punctuation if it doesn't contain any letters/numbers
           isPunctuation: !/[a-zA-Z0-9]/.test(str)
         }));
-      case 'ja':
+      case 'ja': {
+        if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
+          const segmenter = new Intl.Segmenter('ja', { granularity: 'word' });
+          return Array.from(segmenter.segment(text))
+            .filter(seg => seg.isWordLike || seg.segment.trim())
+            .map(seg => this.buildFallbackJapaneseToken(seg.segment));
+        }
+        return this.tokenizeByCharType(text);
+      }
       default:
         return this.tokenizeByCharType(text);
     }

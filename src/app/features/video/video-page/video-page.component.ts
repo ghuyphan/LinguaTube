@@ -542,9 +542,7 @@ export class VideoPageComponent implements OnInit {
         this.sentinelObserver = null;
       }
       this.seo.resetVideoSeo();
-      this.transcript.reset();
-      this.subtitles.clear();
-      this.videoLevel.reset();
+      this.resetSubtitleAndTranscriptState();
     });
 
     this.aiJobManager.jobCompleted$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ videoId, language, requestedLanguage, cues }) => {
@@ -626,9 +624,7 @@ export class VideoPageComponent implements OnInit {
           if (existingCues && existingCues.length > 0) {
             this.handleCaptionsSuccess(existingCues, currentLang);
           } else {
-            this.subtitles.clear();
-            this.transcript.reset();
-            this.videoLevel.reset();
+            this.resetSubtitleAndTranscriptState();
             this.fetchCaptions(currentVideo.id);
           }
         }
@@ -772,9 +768,7 @@ export class VideoPageComponent implements OnInit {
 
                 // Safeguard: Ensure video is loaded if it matches the requested ID to prevent sync issues
                 if (videoId && this.youtube.currentVideo()?.id !== videoId && this.youtube.pendingVideoId() !== videoId) {
-                  this.subtitles.clear();
-                  this.transcript.reset();
-                  this.videoLevel.reset();
+                  this.resetSubtitleAndTranscriptState();
                   this.loadVideoFromUrl(videoId);
                 }
               } else if (playlist.videos.length > 0) {
@@ -807,17 +801,13 @@ export class VideoPageComponent implements OnInit {
 
           // If coming from playlist, we might already have the video set, check ID
           if (!currentVideo || currentVideo.id !== videoId) {
-            this.subtitles.clear();
-            this.transcript.reset();
-            this.videoLevel.reset();
+            this.resetSubtitleAndTranscriptState();
             this.lastLang = currentLang;
             this.loadVideoFromUrl(videoId);
           } else {
             // Check if we need to refetch (no subtitles loaded)
             if (this.subtitles.subtitles().length === 0) {
-              this.subtitles.clear();
-              this.transcript.reset();
-              this.videoLevel.reset();
+              this.resetSubtitleAndTranscriptState();
               this.lastLang = currentLang;
               this.fetchCaptions(videoId);
             } else {
@@ -835,12 +825,16 @@ export class VideoPageComponent implements OnInit {
           if (this.youtube.currentVideo() || this.youtube.pendingVideoId()) {
             this.youtube.reset();
           }
-          this.subtitles.clear();
-          this.transcript.reset();
-          this.videoLevel.reset();
+          this.resetSubtitleAndTranscriptState();
         }
       });
     }
+  }
+
+  private resetSubtitleAndTranscriptState(): void {
+    this.subtitles.clear();
+    this.transcript.reset();
+    this.videoLevel.reset();
   }
 
   private async loadVideoFromUrl(videoId: string): Promise<void> {
@@ -938,24 +932,23 @@ export class VideoPageComponent implements OnInit {
     if (!currentVideo) return;
 
     const currentError = this.transcript.error();
-    const hasActiveJob = this.aiJobManager.hasActiveJob(currentVideo.id);
 
+    // If the failure was an AI timeout, service error, or quota, cancel old job and re-open AI dialog to retry
+    if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED' || currentError === 'AI_FAILED' || currentError === 'AI_QUOTA_EXCEEDED' || currentError === 'NO_SPEECH_DETECTED') {
+      this.aiJobManager.cancelJob(currentVideo.id);
+      this.showAiConfirmDialog.set(true);
+      return;
+    }
+
+    const hasActiveJob = this.aiJobManager.hasActiveJob(currentVideo.id);
     // If an active AI job is already tracking in background, trigger immediate check
     if (hasActiveJob) {
       this.aiJobManager.reconcileActiveJobs();
       return;
     }
 
-    // If the failure was an AI timeout, service error, or quota, re-open AI dialog to retry
-    if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED' || currentError === 'NO_SPEECH_DETECTED') {
-      this.showAiConfirmDialog.set(true);
-      return;
-    }
-
-    this.subtitles.clear();
+    this.resetSubtitleAndTranscriptState();
     this.transcript.clearCache(currentVideo.id);
-    this.transcript.reset();
-    this.videoLevel.reset();
     this.fetchCaptions(currentVideo.id, true);
   }
 
@@ -983,9 +976,12 @@ export class VideoPageComponent implements OnInit {
     this.showAiConfirmDialog.set(false);
     this.skipNextMismatchDialog = true;
 
+    // Clean up any existing stale/aborted job in aiJobManager for this video
+    this.aiJobManager.cancelJob(currentVideo.id);
+
     const duration = Math.round(this.youtube.duration()) || undefined;
 
-    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration, currentVideo.title, currentVideo.channel)
+    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration, currentVideo.title, currentVideo.channel, true)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {

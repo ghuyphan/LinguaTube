@@ -70,4 +70,35 @@ export class VideoLevelDialogComponent {
       paceClass
     };
   });
+
+  readonly immersionTipText = computed(() => {
+    const pace = this.speechPaceInfo();
+    const tier = this.levelInfo().tier;
+
+    if (pace?.paceClass === 'pace-fast') {
+      return (
+        this.i18n.t('level.immersionTipFast') ||
+        'Fast native pace detected. Try slowing playback to 0.75x or turn on Auto-Pause (P) to absorb each sentence.'
+      );
+    }
+
+    if (tier === 'advanced' || tier === 'upper_intermediate') {
+      return (
+        this.i18n.t('level.immersionTipAdvanced') ||
+        'Complex grammar & rich vocabulary. Tap unfamiliar words for instant dictionary breakdowns, or enable Dual Subtitles (D).'
+      );
+    }
+
+    if (tier === 'beginner' || tier === 'elementary') {
+      return (
+        this.i18n.t('level.immersionTipBeginner') ||
+        'Clear and accessible! Try listening without dual subtitles to challenge your ear, and tap new words to save to flashcards.'
+      );
+    }
+
+    return (
+      this.i18n.t('level.immersionTipPace') ||
+      'If the speech feels too fast, slow playback to 0.75x or turn on dual subtitles. Tap any word to view its definition.'
+    );
+  });
 }

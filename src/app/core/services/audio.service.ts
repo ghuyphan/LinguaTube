@@ -93,6 +93,7 @@ export class AudioService {
     ++this.playRequestId;
     if (this.activeAudio) {
       this.activeAudio.pause();
+      this.activeAudio.onplay = null;
       this.activeAudio.onended = null;
       this.activeAudio.onerror = null;
       this.activeAudio.removeAttribute('src');
@@ -100,20 +101,15 @@ export class AudioService {
       this.activeAudio = null;
     }
     if (isPlatformBrowser(this.platformId) && typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
+      try { window.speechSynthesis.cancel(); } catch {}
     }
     this.activeUtterance = null;
     this.currentPlayingWord.set(null);
   }
 
   /**
-   * Robust 2-Tier Pronunciation Playback:
-   * Tier 1 (Online): Unified Neural TTS (/api/tts)
-   *   - Microsoft Edge Neural TTS primary (Azure 24kHz natural voices)
-   *   - Server-side Google Translate TTS failover (ensures >99.5% reliability with zero client CORS issues)
-   *   - Cloudflare 30-day global edge CDN caching + Client RAM Blob URL caching (<0.1ms replay)
-   * Tier 2 (Offline): Browser Web Speech API (speechSynthesis)
-   *   - Guaranteed fallback when device is offline or network is disconnected
+   * Play word pronunciation exactly 1 time.
+   * Tiers: 1) RAM Blob Cache -> 2) Dictionary MP3 -> 3) Neural /api/tts -> 4) SpeechSynthesis
    */
   async playWord(
     word: string,
@@ -124,7 +120,7 @@ export class AudioService {
     const cleanWord = word?.trim();
     if (!cleanWord) return;
 
-    // Toggle off if currently playing the exact same word
+    // Toggle off if already playing this exact word
     if (this.isPlaying(cleanWord)) {
       this.stopAudio();
       return;
@@ -137,43 +133,35 @@ export class AudioService {
     const isCurrent = () => this.playRequestId === currentId;
     const cacheKey = `${language}:${cleanWord}`;
 
-    // Instant check: In-memory Blob URL cache (< 1ms, 0 network)
-    const cachedBlobUrl = this.audioBlobUrlCache.get(cacheKey);
-    if (cachedBlobUrl) {
-      try {
-        await this.playAudioUrl(cachedBlobUrl, cleanWord, currentId);
-        return;
-      } catch {
-        this.audioBlobUrlCache.delete(cacheKey);
-        try { URL.revokeObjectURL(cachedBlobUrl); } catch {
-          // Ignored
+    try {
+      // 1. Instant RAM Blob URL Cache (<1ms)
+      const cachedBlob = this.audioBlobUrlCache.get(cacheKey);
+      if (cachedBlob) {
+        try {
+          if (await this.playAudioUrl(cachedBlob, cleanWord, currentId)) return;
+        } catch {
+          this.audioBlobUrlCache.delete(cacheKey);
         }
       }
-    }
 
-    if (!isCurrent()) return;
+      if (!isCurrent()) return;
 
-    // --- TIER 0: Authentic Dictionary Audio (if provided from dictionary entry) ---
-    if (_providedAudioUrl && _providedAudioUrl.startsWith('http')) {
-      try {
-        await this.playAudioUrl(_providedAudioUrl, cleanWord, currentId);
-        return;
-      } catch (err) {
-        console.info(`[AudioService] Native dictionary audio failed for "${cleanWord}", falling back to Neural TTS:`, (err as Error)?.message || err);
+      // 2. Authentic native dictionary audio URL
+      if (_providedAudioUrl && _providedAudioUrl.startsWith('http')) {
+        try {
+          if (await this.playAudioUrl(_providedAudioUrl, cleanWord, currentId)) return;
+        } catch {}
       }
-    }
 
-    if (!isCurrent()) return;
+      if (!isCurrent()) return;
 
-    // --- TIER 1: Unified Neural TTS (/api/tts) ---
-    const ttsUrl = `/api/tts?lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
-    try {
-      const fetchController = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      const fetchTimer = setTimeout(() => fetchController?.abort(), 3500);
-
+      // 3. Online Unified Neural TTS (/api/tts)
+      const ttsUrl = `/api/tts?lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
       try {
+        const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        const fetchTimer = setTimeout(() => controller?.abort(), 3500);
         const resp = await fetch(ttsUrl, {
-          signal: fetchController?.signal,
+          signal: controller?.signal,
           headers: { Accept: 'audio/mpeg' },
         });
         clearTimeout(fetchTimer);
@@ -183,96 +171,68 @@ export class AudioService {
           if (blob && blob.size > 100) {
             const objectUrl = URL.createObjectURL(blob);
             this.setCachedAudioBlob(cacheKey, objectUrl);
-            if (isCurrent()) {
-              await this.playAudioUrl(objectUrl, cleanWord, currentId);
-              return;
-            }
+            if (isCurrent() && await this.playAudioUrl(objectUrl, cleanWord, currentId)) return;
           }
         }
-      } catch {
-        clearTimeout(fetchTimer);
-      }
+      } catch {}
 
       if (!isCurrent()) return;
 
-      // Direct fallback if fetch was blocked or failed
-      await this.playAudioUrl(ttsUrl, cleanWord, currentId);
-      if (isCurrent()) {
-        this.setCachedAudioUrl(cacheKey, ttsUrl);
-        return;
-      }
-    } catch (err) {
-      console.info(`[AudioService] Unified TTS failed for "${cleanWord}", falling back to SpeechSynthesis:`, (err as Error)?.message || err);
-    }
-
-    if (!isCurrent()) return;
-
-    // --- TIER 2: Browser Web Speech API (speechSynthesis) ---
-    try {
+      // 4. Offline Fallback: Browser Web Speech API (speechSynthesis)
       await this.playSpeechSynthesis(cleanWord, language, currentId);
-      return;
-    } catch (err) {
-      console.warn(`[AudioService] All audio playback methods failed for "${cleanWord}":`, (err as Error)?.message || err);
-    }
-
-    if (isCurrent()) {
-      this.currentPlayingWord.set(null);
+    } finally {
+      if (isCurrent() && !this.activeAudio && !this.activeUtterance) {
+        this.currentPlayingWord.set(null);
+      }
     }
   }
 
-  private playAudioUrl(url: string, word: string, requestId: number): Promise<void> {
+  private playAudioUrl(url: string, word: string, requestId: number): Promise<boolean> {
     return new Promise((resolve, reject) => {
       const audio = new Audio();
-      // Enforce no-referrer so cross-origin media endpoints do not reject based on Referer headers
       audio.setAttribute('referrerpolicy', 'no-referrer');
-      (audio as unknown as { referrerPolicy?: string }).referrerPolicy = 'no-referrer';
       this.activeAudio = audio;
 
-      let settled = false;
-      let timeoutId: ReturnType<typeof setTimeout> | null = null;
+      let timer: ReturnType<typeof setTimeout> | null = null;
 
       const cleanup = () => {
-        if (!settled) {
-          settled = true;
-          if (timeoutId) {
-            clearTimeout(timeoutId);
-            timeoutId = null;
-          }
-          audio.onended = null;
-          audio.onerror = null;
-          try {
-            audio.pause();
-            audio.removeAttribute('src');
-            audio.load();
-          } catch {}
-          if (this.activeAudio === audio) {
-            this.activeAudio = null;
-          }
-        }
+        if (timer) { clearTimeout(timer); timer = null; }
+        audio.onplay = null;
+        audio.onended = null;
+        audio.onerror = null;
+        try { audio.pause(); audio.removeAttribute('src'); audio.load(); } catch {}
+        if (this.activeAudio === audio) this.activeAudio = null;
       };
 
-      // Failsafe timeout: if audio fails to play or load within 2000ms, abort and fall back
-      timeoutId = setTimeout(() => {
+      // 4s load timeout before sound starts
+      timer = setTimeout(() => {
         cleanup();
-        reject(new Error('Audio playback timed out after 2000ms'));
-      }, 2000);
+        reject(new Error('Audio load timeout'));
+      }, 4000);
+
+      // Once playing starts, replace load timeout with a generous 10s playback watchdog
+      audio.onplay = () => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          cleanup();
+          if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
+            this.currentPlayingWord.set(null);
+          }
+          resolve(true);
+        }, 10000);
+      };
 
       audio.onended = () => {
         cleanup();
         if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
           this.currentPlayingWord.set(null);
         }
-        resolve();
+        resolve(true);
       };
 
-      audio.onerror = (e) => {
+      audio.onerror = () => {
         cleanup();
-        // Do NOT reset currentPlayingWord here so subsequent fallback tiers continue seamlessly
-        const mediaErr = audio.error;
-        const msg = mediaErr
-          ? `MediaError ${mediaErr.code} (${this.getMediaErrorMessage(mediaErr.code)}): ${mediaErr.message || 'load failed'}`
-          : (e instanceof Error ? e.message : 'Media element error');
-        reject(new Error(msg));
+        reject(new Error('Audio error'));
       };
 
       audio.src = url;
@@ -284,89 +244,55 @@ export class AudioService {
   }
 
   private playSpeechSynthesis(word: string, language: SupportedLearningLanguage, requestId: number): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-        reject(new Error('SpeechSynthesis is not supported in this environment'));
+        this.stopAudio();
+        resolve();
         return;
       }
 
-      try {
-        window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(word);
+      this.activeUtterance = utterance;
 
-        const utterance = new SpeechSynthesisUtterance(word);
-        this.activeUtterance = utterance;
+      const langMap: Record<SupportedLearningLanguage, string> = {
+        ja: 'ja-JP', zh: 'zh-CN', ko: 'ko-KR', en: 'en-US'
+      };
+      utterance.lang = langMap[language] || 'ja-JP';
+      utterance.rate = 0.95;
 
-        const langMap: Record<SupportedLearningLanguage, string> = {
-          ja: 'ja-JP',
-          zh: 'zh-CN',
-          ko: 'ko-KR',
-          en: 'en-US'
-        };
-        const bcp47 = langMap[language] || 'ja-JP';
-        utterance.lang = bcp47;
-        utterance.rate = 0.95;
-        utterance.pitch = 1.0;
+      const voices = window.speechSynthesis.getVoices();
+      if (voices?.length > 0) {
+        const langPrefix = language === 'zh' ? 'zh' : language;
+        const matching = voices.filter(v => v.lang.toLowerCase().replace('_', '-').startsWith(langPrefix));
+        const best = matching.find(v => /natural|enhanced|premium|google/i.test(v.name)) || matching[0];
+        if (best) utterance.voice = best;
+      }
 
-        const voices = window.speechSynthesis.getVoices();
-        if (voices?.length > 0) {
-          const langPrefix = language === 'zh' ? 'zh' : language;
-          const matchingVoices = voices.filter(v =>
-            v.lang.toLowerCase().replace('_', '-').startsWith(langPrefix)
-          );
-          if (matchingVoices.length > 0) {
-            const bestVoice = matchingVoices.find(v =>
-              /natural|enhanced|premium|siri|google/i.test(v.name)
-            ) || matchingVoices.find(v => v.default) || matchingVoices[0];
-            if (bestVoice) {
-              utterance.voice = bestVoice;
-            }
-          }
-        }
-
-        let settled = false;
-        const cleanup = () => {
-          if (!settled) {
-            settled = true;
-            if (this.activeUtterance === utterance) {
-              this.activeUtterance = null;
-            }
-          }
-        };
-
-        utterance.onend = () => {
-          cleanup();
+      let done = false;
+      const finish = () => {
+        if (!done) {
+          done = true;
+          if (watchdog) clearTimeout(watchdog);
+          if (this.activeUtterance === utterance) this.activeUtterance = null;
           if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
             this.currentPlayingWord.set(null);
           }
           resolve();
-        };
+        }
+      };
 
-        utterance.onerror = (e) => {
-          cleanup();
-          if (this.playRequestId === requestId && this.currentPlayingWord() === word) {
-            this.currentPlayingWord.set(null);
-          }
-          if (e.error === 'canceled' || e.error === 'interrupted') {
-            resolve();
-          } else {
-            reject(new Error(`SpeechSynthesis error: ${e.error}`));
-          }
-        };
+      // Watchdog guarantees UI resets even if browser drops onend
+      const watchdog = setTimeout(finish, Math.min(8000, Math.max(3000, word.length * 300)));
+      utterance.onend = finish;
+      utterance.onerror = finish;
 
+      try {
+        if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+        if (window.speechSynthesis.paused) window.speechSynthesis.resume();
         window.speechSynthesis.speak(utterance);
-      } catch (err) {
-        reject(err);
+      } catch {
+        finish();
       }
     });
-  }
-
-  private getMediaErrorMessage(code: number): string {
-    switch (code) {
-      case 1: return 'MEDIA_ERR_ABORTED';
-      case 2: return 'MEDIA_ERR_NETWORK';
-      case 3: return 'MEDIA_ERR_DECODE';
-      case 4: return 'MEDIA_ERR_SRC_NOT_SUPPORTED';
-      default: return 'MEDIA_ERR_UNKNOWN';
-    }
   }
 }

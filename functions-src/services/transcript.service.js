@@ -13,8 +13,6 @@ import {
 } from '../data/video-info-db.js';
 
 import {
-    deletePendingJob,
-    cleanupStaleJobs,
     reserveAiJob,
     activateAiJob,
     getAiJobById,
@@ -192,13 +190,15 @@ export class TranscriptService {
      * Start an AI Transcription Job using Gladia
      */
     async startAIJob(context, params) {
-        const { db, r2, waitUntil, env } = context;
+        const db = context.db || context.env?.VOCAB_DB;
+        const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
+        const env = context.env || {};
         const { videoId, lang, body, clientId, user, diamondInfo, availableLanguages } = params;
 
         // 1. Validate video length against user tier limit (prioritize client duration or D1)
         let duration = await getVideoDuration(db, videoId);
-        if (!duration && body.duration) {
-            duration = body.duration;
+        if (!duration && (body?.duration || params?.duration)) {
+            duration = body?.duration || params?.duration;
         }
         if (!duration) {
             const ytDetails = await fetchYouTubeVideoDetails(videoId);
@@ -245,16 +245,25 @@ export class TranscriptService {
             }
         }
 
-        // 4. Check for active job in D1
-        const activeJob = await getActiveAiJob(db, videoId, lang, this.diamondService, env, context);
-        if (activeJob) {
-            return {
-                status: 'processing',
-                jobId: activeJob.id,
-                videoId,
-                availableLanguages,
-                diamondInfo
-            };
+        // 4. Check for active job in D1 (unless forceRefresh is explicitly requested)
+        if (params.forceRefresh) {
+            // User requested a fresh generation/retry: clear any stale/zombie active job from D1
+            const existing = await getActiveAiJob(db, videoId, lang);
+            if (existing) {
+                console.warn(`[startAIJob] forceRefresh requested for ${videoId}:${lang}. Superseding existing active job ${existing.id}`);
+                await deleteAiJob(db, existing.id);
+            }
+        } else {
+            const activeJob = await getActiveAiJob(db, videoId, lang, this.diamondService, env, context);
+            if (activeJob) {
+                return {
+                    status: 'processing',
+                    jobId: activeJob.id,
+                    videoId,
+                    availableLanguages,
+                    diamondInfo
+                };
+            }
         }
 
         // 5. Atomic Lock Reservation Pattern:
@@ -318,10 +327,6 @@ export class TranscriptService {
         // 9. Activate job in D1
         await activateAiJob(db, jobId, gladiaResponse.id);
 
-        if (waitUntil) {
-            waitUntil(cleanupStaleJobs(db).catch(() => {}));
-        }
-
         return {
             status: 'processing',
             jobId,
@@ -351,6 +356,31 @@ export class TranscriptService {
 
         const job = await getAiJobById(db, jobId);
         if (!job) {
+            // Self-healing fallback: Check if R2 already contains completed transcript for (videoId, lang)
+            const fallbackVideoId = videoId || params?.cleanVideoId;
+            const fallbackLang = params?.lang || 'ja';
+            if (fallbackVideoId) {
+                const r2Transcript = await getTranscriptFromR2(r2, fallbackVideoId, fallbackLang);
+                if (r2Transcript?.segments?.length > 0) {
+                    const resolvedLang = r2Transcript.language || fallbackLang;
+                    const isMismatch = normalizeLanguageCode(resolvedLang) !== normalizeLanguageCode(fallbackLang);
+                    return {
+                        status: 'done',
+                        videoInfo: {
+                            videoId: fallbackVideoId,
+                            language: resolvedLang,
+                            requestedLanguage: fallbackLang,
+                            languageMismatch: isMismatch,
+                            segments: r2Transcript.segments,
+                            source: 'ai',
+                            sourceDetail: r2Transcript.source || 'gladia',
+                            availableLanguages,
+                            subLanguages: [resolvedLang],
+                            whisperAvailable: Boolean(diamondInfo?.diamonds > 0)
+                        }
+                    };
+                }
+            }
             return { status: 'error', error: 'Transcription job not found or expired' };
         }
 
@@ -500,20 +530,9 @@ export class TranscriptService {
         try {
             const resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
             if (resultData.status === 'done') {
-                const sentences = resultData.result?.transcription?.sentences || [];
-                const utterances = resultData.result?.transcription?.utterances || [];
-                const sourceList = sentences.length > 0 ? sentences : utterances;
-
-                const segments = sourceList.map((item, index) => ({
-                    id: index,
-                    text: item.text?.trim() || '',
-                    start: item.start || 0,
-                    duration: (item.end || 0) - (item.start || 0)
-                })).filter(s => s.text);
-
-                const cleanedSegments = cleanTranscriptSegments(segments);
-                const rawDetectedLang = resultData.result?.transcription?.languages?.[0] || lang;
-                const detectedLang = normalizeLanguageCode(rawDetectedLang) || lang;
+                const rawSegments = extractGladiaSegments(resultData);
+                const cleanedSegments = cleanTranscriptSegments(rawSegments);
+                const detectedLang = extractGladiaDetectedLanguage(resultData, lang);
 
                 if (videoId && cleanedSegments.length > 0) {
                     const saved = await saveTranscriptToR2(r2, videoId, detectedLang, cleanedSegments, 'ai');
@@ -531,8 +550,7 @@ export class TranscriptService {
                     if (db) {
                         const bgOps = [
                             addSubLanguage(db, videoId, detectedLang),
-                            saveVideoLanguages(db, videoId, [detectedLang, lang], null, null, null, false, null, null, [detectedLang]),
-                            deletePendingJob(db, videoId)
+                            saveVideoLanguages(db, videoId, [detectedLang, lang], null, null, null, false, null, null, [detectedLang])
                         ];
                         if (waitUntil) waitUntil(Promise.allSettled(bgOps));
                         else await Promise.allSettled(bgOps);
@@ -555,7 +573,6 @@ export class TranscriptService {
             }
 
             if (resultData.status === 'error') {
-                if (videoId && db) deletePendingJob(db, videoId).catch(() => {});
                 return { status: 'error', error: `AI transcription failed: ${resultData.error_message || 'Please try again'}` };
             }
 

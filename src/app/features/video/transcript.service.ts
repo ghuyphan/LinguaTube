@@ -128,6 +128,26 @@ export class TranscriptService {
     this.transcriptCache.set(key, cues);
   }
 
+  private cacheTranscriptCues(
+    videoId: string,
+    requestedLang: string,
+    cues: SubtitleCue[],
+    defaultSource: 'native' | 'ai' = 'native'
+  ): void {
+    if (cues.length === 0) return;
+    const detectedLang = this.detectedLanguage() || requestedLang;
+    const isMismatch = this.languageMismatch();
+    const source = this.captionSource() || defaultSource;
+
+    if (!isMismatch && detectedLang === requestedLang) {
+      this.setTranscriptCache(`${videoId}:${requestedLang}`, cues);
+      this.persistentCache.set(videoId, requestedLang, cues, source).catch(() => {});
+    }
+    const actualCacheKey = `${videoId}:${detectedLang}`;
+    this.setTranscriptCache(actualCacheKey, cues);
+    this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => {});
+  }
+
   constructor() {
     this.refreshDiamonds();
     this.auth.loginEvent.subscribe(() => this.refreshDiamonds());
@@ -246,7 +266,31 @@ export class TranscriptService {
     this.currentVideoId = videoId;
     const cacheKey = `${videoId}:${lang}`;
 
-    // 0. If there is already an active AI background job for this video, reflect it immediately
+    // 1. Check client-side memory cache first (fastest) - only if not forceRefresh
+    if (!forceRefresh && this.transcriptCache.has(cacheKey)) {
+      const cached = this.transcriptCache.get(cacheKey)!;
+      const isDevMock = cached.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
+      if (isDevMock && videoId !== 'demo' && videoId !== 'test') {
+        this.transcriptCache.delete(cacheKey);
+      } else if (cached.length > 0) {
+        log('Memory cache hit:', { videoId, lang, cues: cached.length });
+        if (this.aiJobManager.hasActiveJob(videoId)) {
+          this.aiJobManager.cancelJob(videoId);
+        }
+        this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
+        return of(cached);
+      } else {
+        log('Memory cache hit (empty):', { videoId, lang });
+        this.state.set({
+          status: 'error',
+          code: 'NO_SUBTITLES',
+          whisperAvailable: this.whisperAvailable()
+        });
+        return of([]);
+      }
+    }
+
+    // 2. If there is already an active AI background job for this video, reflect it immediately
     if (!forceRefresh && this.aiJobManager.hasActiveJob(videoId)) {
       const active = this.aiJobManager.getJob(videoId);
       log('Active AI job already running for video:', { videoId, jobId: active?.jobId });
@@ -258,28 +302,7 @@ export class TranscriptService {
       return of([]);
     }
 
-    // 1. Check client-side memory cache first (fastest) - only if not forceRefresh
-    if (!forceRefresh && this.transcriptCache.has(cacheKey)) {
-      const cached = this.transcriptCache.get(cacheKey)!;
-      const isDevMock = cached.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
-      if (isDevMock && videoId !== 'demo' && videoId !== 'test') {
-        this.transcriptCache.delete(cacheKey);
-      } else {
-        log('Memory cache hit:', { videoId, lang, cues: cached.length });
-        if (cached.length === 0) {
-          this.state.set({
-            status: 'error',
-            code: 'NO_SUBTITLES',
-            whisperAvailable: this.whisperAvailable()
-          });
-          return of([]);
-        }
-        this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
-        return of(cached);
-      }
-    }
-
-    // 2. Check IndexedDB persistent cache - only if not forceRefresh
+    // 3. Check IndexedDB persistent cache - only if not forceRefresh
     const persistentCheck$ = forceRefresh
       ? of(null)
       : from(this.persistentCache.get(videoId, lang));
@@ -308,19 +331,7 @@ export class TranscriptService {
         this.fallbackInfo.set(null);
 
         return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, undefined, duration, title, channel, forceRefresh).pipe(
-          tap(cues => {
-            if (cues.length > 0) {
-              const detectedLang = this.detectedLanguage() || lang;
-              const isMismatch = this.languageMismatch();
-              if (!isMismatch && detectedLang === lang) {
-                this.setTranscriptCache(cacheKey, cues);
-              }
-              const actualCacheKey = `${videoId}:${detectedLang}`;
-              this.setTranscriptCache(actualCacheKey, cues);
-              const source = this.captionSource() || 'native';
-              this.persistentCache.set(videoId, detectedLang, cues, source).catch(() => { });
-            }
-          }),
+          tap(cues => this.cacheTranscriptCues(videoId, lang, cues, 'native')),
           catchError(err => this.handleHttpError(err))
         );
       })
@@ -337,10 +348,16 @@ export class TranscriptService {
     turnstileToken?: string,
     duration?: number,
     title?: string,
-    channel?: string
+    channel?: string,
+    forceRefresh = false
   ): Observable<SubtitleCue[]> {
     this.currentVideoId = videoId;
-    const cacheKey = `${videoId}:${lang}`;
+
+    if (forceRefresh) {
+      this.aiJobManager.cancelJob(videoId);
+      this.clearCache(videoId);
+      jobIdOrResultUrl = undefined;
+    }
 
     const isUrl = jobIdOrResultUrl && jobIdOrResultUrl.startsWith('http');
     const jobId = isUrl ? undefined : jobIdOrResultUrl;
@@ -349,24 +366,12 @@ export class TranscriptService {
     this.state.set({
       status: 'generating_ai',
       jobId,
-      isResuming: Boolean(jobId || resultUrl)
+      isResuming: Boolean(!forceRefresh && (jobId || resultUrl))
     });
     this.fallbackInfo.set(null);
 
-    return this.callTranscriptAPI(videoId, lang, true, jobId, resultUrl, turnstileToken, duration, title, channel).pipe(
-      tap(cues => {
-        if (cues.length > 0) {
-          const detectedLang = this.detectedLanguage() || lang;
-          const isMismatch = this.languageMismatch();
-          if (!isMismatch && detectedLang === lang) {
-            this.setTranscriptCache(cacheKey, cues);
-            this.persistentCache.set(videoId, lang, cues, 'ai').catch(() => { });
-          } else {
-            this.setTranscriptCache(`${videoId}:${detectedLang}`, cues);
-            this.persistentCache.set(videoId, detectedLang, cues, 'ai').catch(() => { });
-          }
-        }
-      }),
+    return this.callTranscriptAPI(videoId, lang, true, jobId, resultUrl, turnstileToken, duration, title, channel, forceRefresh).pipe(
+      tap(cues => this.cacheTranscriptCues(videoId, lang, cues, 'ai')),
       catchError(err => this.handleHttpError(err, false, videoId))
     );
   }

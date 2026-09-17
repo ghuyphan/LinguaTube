@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('study.recentlyAdded') || 'Recently Added'" [showCloseButton]="true" (closed)="closed.emit()">
+<app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('study.recentlyAdded') || 'Recently Added'" [showCloseButton]="true" (closed)="onClose()">
     <div class="quick-view-modal">
         <div class="quick-view-modal__header">
             <div class="quick-view-modal__title-box">

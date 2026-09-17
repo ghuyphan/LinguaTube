@@ -58,7 +58,7 @@ import { VocabularyService } from '../../../../vocabulary';
               <!-- Direct text display when tokens are empty or loading -->
               @if (viewTokens().length === 0) {
                 @if (showReadingAnnotation()) {
-                  <span class="fs-word"><ruby>{{ cue.text }}<rt class="rt-empty">&#160;</rt></ruby></span>
+                  <span class="fs-word"><ruby>{{ cue.text }}<rt aria-hidden="true" class="rt-empty">&#160;</rt></ruby></span>
                 } @else {
                   <span class="fs-word">{{ cue.text }}</span>
                 }
@@ -68,7 +68,7 @@ import { VocabularyService } from '../../../../vocabulary';
                   @if (vt.isPunctuation) {
                     <span class="fs-word fs-word--punctuation" (click)="$event.stopPropagation()">
                       @if (showReadingAnnotation()) {
-                        <ruby>{{ vt.surface }}<rt class="rt-empty">&#160;</rt></ruby>
+                        <ruby>{{ vt.surface }}<rt aria-hidden="true" class="rt-empty">&#160;</rt></ruby>
                       } @else {
                         {{ vt.surface }}
                       }
@@ -88,15 +88,15 @@ import { VocabularyService } from '../../../../vocabulary';
                         @if (vt.rubyParts && vt.rubyParts.length > 0) {
                           @for (part of vt.rubyParts; track $index) {
                             @if (part.reading) {
-                              <ruby>{{ part.text }}<rt>{{ part.reading }}</rt></ruby>
+                              <ruby>{{ part.text }}<rt aria-hidden="true">{{ part.reading }}</rt></ruby>
                             } @else {
-                              <ruby>{{ part.text }}<rt class="rt-empty">&#160;</rt></ruby>
+                              <ruby>{{ part.text }}<rt aria-hidden="true" class="rt-empty">&#160;</rt></ruby>
                             }
                           }
                         } @else if (vt.reading) {
-                          <ruby>{{ vt.surface }}<rt>{{ vt.reading }}</rt></ruby>
+                          <ruby>{{ vt.surface }}<rt aria-hidden="true">{{ vt.reading }}</rt></ruby>
                         } @else {
-                          <ruby>{{ vt.surface }}<rt class="rt-empty">&#160;</rt></ruby>
+                          <ruby>{{ vt.surface }}<rt aria-hidden="true" class="rt-empty">&#160;</rt></ruby>
                         }
                       } @else {
                         {{ vt.displayText }}
@@ -196,8 +196,11 @@ export class FullscreenSubtitleComponent implements OnDestroy {
 
         return tokens.map((token, index) => {
             const isGrammar = grammarIndices.has(index);
-            const wordLevel = this.vocab.getWordLevel(token.surface);
-            const isSaved = wordLevel !== null;
+            const wordLevel = this.vocab.getWordLevel(token.surface)
+                || (token.baseForm ? this.vocab.getWordLevel(token.baseForm) : null);
+            const isSaved = wordLevel !== null
+                || this.vocab.hasWord(token.surface)
+                || (token.baseForm ? this.vocab.hasWord(token.baseForm) : false);
             const reading = this.settings.getReadingText(lang, token) || undefined;
             const displayText = readingOnly && reading ? reading : token.surface;
 

@@ -1,4 +1,4 @@
-import { Component, inject, input, output, computed, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, input, output, computed, signal, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -16,7 +16,7 @@ import { VocabularyItem } from '../../../models';
   templateUrl: './vocabulary-quick-view.component.html',
   styleUrl: './vocabulary-quick-view.component.scss'
 })
-export class VocabularyQuickViewComponent {
+export class VocabularyQuickViewComponent implements OnDestroy {
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
@@ -26,13 +26,22 @@ export class VocabularyQuickViewComponent {
   isOpen = input<boolean>(false);
   closed = output<void>();
 
+  onClose(): void {
+    this.audio.stopAudio();
+    this.closed.emit();
+  }
+
+  ngOnDestroy(): void {
+    this.audio.stopAudio();
+  }
+
   playAudio(item: VocabularyItem, event: Event): void {
     event.stopPropagation();
     void this.audio.playWord(item.word, item.language, item.audio);
   }
 
   openDictionary(): void {
-    this.closed.emit();
+    this.onClose();
     this.router.navigate(['/dictionary']);
   }
 

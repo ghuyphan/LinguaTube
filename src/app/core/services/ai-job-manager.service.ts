@@ -7,8 +7,7 @@ import { TranscriptCacheService } from '../../services/transcript-cache.service'
 import { ToastService } from './toast.service';
 
 const ACTIVE_JOBS_KEY = 'voca_active_ai_jobs';
-const LEGACY_JOBS_KEY = 'voca_pending_ai_jobs';
-const MAX_PATIENCE_MS = 180000; // 3 minutes maximum patience
+const MAX_PATIENCE_MS = 900000; // 15 minutes patience (aligned with backend lease timeout)
 const ONE_HOUR_MS = 3600 * 1000;
 
 @Injectable({
@@ -52,7 +51,6 @@ export class AiJobManagerService {
   private isOffline = false;
 
   constructor() {
-    this.migrateLegacyJobs();
     this.loadActiveJobs();
     this.setupLifecycleHooks();
     this.resumeActiveJobs();
@@ -76,6 +74,7 @@ export class AiJobManagerService {
       title: job.title,
       channel: job.channel,
       pollAttempts: 0,
+      consecutiveErrors: 0,
       status: 'processing'
     };
 
@@ -145,13 +144,8 @@ export class AiJobManagerService {
     const job = this.activeJobs()[videoId];
     if (!job || job.status !== 'processing') return;
 
-    // Check 3-minute patience timeout
-    const elapsed = Date.now() - job.startedAt;
-    if (elapsed > MAX_PATIENCE_MS) {
-      console.warn(`[AiJobManager] Job for video ${videoId} exceeded 3-minute timeout`);
-      this.handleJobFailure(job, 'AI_TIMEOUT', 'Transcription is taking longer than usual. Please check back in a few minutes.');
-      return;
-    }
+    // Prevent redundant overlapping polls if one is already in flight
+    if (this.activeHttpSubs.has(videoId)) return;
 
     const payload = {
       videoId: job.videoId,
@@ -163,17 +157,32 @@ export class AiJobManagerService {
       next: (response) => {
         this.activeHttpSubs.delete(videoId);
 
-        // Scenario 1: Job completed successfully
+        // Scenario 1: Job completed successfully with valid subtitle segments
         if (response.success && response.segments && response.segments.length > 0) {
           this.handleJobSuccess(job, response);
           return;
         }
 
-        // Scenario 2: Still processing
+        // Scenario 2: Completed but zero speech detected
+        if (response.success && (!response.segments || response.segments.length === 0)) {
+          this.handleJobFailure(job, 'NO_SPEECH_DETECTED', 'No detectable speech found in the audio.');
+          return;
+        }
+
+        // Scenario 3: Still processing
         if (response.status === 'processing') {
+          // Check patience timeout (15 minutes maximum lease)
+          const elapsed = Date.now() - job.startedAt;
+          if (elapsed > MAX_PATIENCE_MS) {
+            console.warn(`[AiJobManager] Job for video ${videoId} exceeded timeout (${Math.round(elapsed / 1000)}s)`);
+            this.handleJobFailure(job, 'AI_TIMEOUT', 'Transcription is taking longer than usual. Please check back in a few minutes.');
+            return;
+          }
+
           const updatedJob: ActiveAiJob = {
             ...job,
-            pollAttempts: (job.pollAttempts || 0) + 1
+            pollAttempts: (job.pollAttempts || 0) + 1,
+            consecutiveErrors: 0 // Reset on successful server response
           };
 
           this.activeJobs.update(jobs => ({
@@ -186,23 +195,63 @@ export class AiJobManagerService {
           return;
         }
 
-        // Scenario 3: Unexpected error payload with success: false
+        // Scenario 4: Server returned an explicit failure payload
         if (!response.success && response.error) {
+          const fatalCodes = ['NO_SPEECH_DETECTED', 'VIDEO_TOO_LONG', 'INSUFFICIENT_DIAMONDS', 'LIVESTREAM_NOT_SUPPORTED'];
+          if (fatalCodes.includes(response.errorCode || '')) {
+            this.handleJobFailure(job, response.errorCode || 'AI_JOB_FAILED', response.error);
+            return;
+          }
+
+          // Non-fatal response payload (e.g. transient internal server state): back off and retry up to 5 times
+          const currentErrors = (job.consecutiveErrors || 0) + 1;
+          if (currentErrors < 6) {
+            console.warn(`[AiJobManager] Non-fatal poll response for ${videoId} (${response.errorCode || response.error}). Retrying (${currentErrors}/5)...`);
+            const updatedJob: ActiveAiJob = { ...job, consecutiveErrors: currentErrors };
+            this.activeJobs.update(jobs => ({ ...jobs, [videoId]: updatedJob }));
+            this.scheduleNextPoll(updatedJob, 6000 + currentErrors * 2000);
+            return;
+          }
+
           this.handleJobFailure(job, response.errorCode || 'AI_JOB_FAILED', response.error);
         }
       },
       error: (err: HttpErrorResponse) => {
         this.activeHttpSubs.delete(videoId);
 
-        // Network error (status 0) or transient 502/503/504 gateway glitches
-        const isTransient = err.status === 0 || (err.status >= 502 && err.status <= 504);
-        if (isTransient) {
-          console.warn(`[AiJobManager] Transient poll glitch (${err.status}) for video ${videoId}. Retrying in 6s...`);
-          this.scheduleNextPoll(job, 6000);
+        const currentErrors = (job.consecutiveErrors || 0) + 1;
+
+        // 1. Rate limiting (429): Back off without terminating the user's transcription!
+        if (err.status === 429) {
+          console.warn(`[AiJobManager] Rate limited (429) for video ${videoId}. Backing off for 12s (attempt ${currentErrors}/8)...`);
+          if (currentErrors < 8) {
+            const updatedJob: ActiveAiJob = { ...job, consecutiveErrors: currentErrors };
+            this.activeJobs.update(jobs => ({ ...jobs, [videoId]: updatedJob }));
+            this.scheduleNextPoll(updatedJob, 12000);
+            return;
+          }
+        }
+
+        // 2. Transient network errors (0, 408, 500-599, Cloudflare 520-526)
+        const isTransient = err.status === 0 || err.status === 408 || (err.status >= 500 && err.status <= 599);
+        if (isTransient && currentErrors < 6) {
+          console.warn(`[AiJobManager] Transient poll glitch (${err.status}) for video ${videoId} (attempt ${currentErrors}/6). Retrying...`);
+          const updatedJob: ActiveAiJob = { ...job, consecutiveErrors: currentErrors };
+          this.activeJobs.update(jobs => ({ ...jobs, [videoId]: updatedJob }));
+          this.scheduleNextPoll(updatedJob, 6000 + currentErrors * 2000);
           return;
         }
 
-        // Terminal error (e.g. 400 Bad Request, 404 Expired, 402 Quota)
+        // 3. Transient 404 (read replica sync lag or edge route warming): allow up to 3 retries
+        if (err.status === 404 && currentErrors < 4) {
+          console.warn(`[AiJobManager] Job not found on server yet (404) for video ${videoId} (attempt ${currentErrors}/3). Retrying...`);
+          const updatedJob: ActiveAiJob = { ...job, consecutiveErrors: currentErrors };
+          this.activeJobs.update(jobs => ({ ...jobs, [videoId]: updatedJob }));
+          this.scheduleNextPoll(updatedJob, 5000);
+          return;
+        }
+
+        // Terminal unrecoverable error
         const errorMsg = err.error?.error || err.message || 'AI transcription failed';
         const errorCode = err.error?.errorCode || 'AI_JOB_FAILED';
         this.handleJobFailure(job, errorCode, errorMsg);
@@ -244,19 +293,19 @@ export class AiJobManagerService {
     });
     this.saveActiveJobs();
 
-    // Check if user is currently watching the completed video
+    // ALWAYS emit jobCompleted$ so TranscriptService and active listeners receive the result
+    this.jobCompleted$.next({
+      videoId: job.videoId,
+      language: resolvedLang,
+      requestedLanguage: requestedLang,
+      languageMismatch: isMismatch,
+      cues,
+      source: 'ai'
+    });
+
+    // Check if user is currently watching another video or navigated away
     const currentVideoId = this.getCurrentVideoId();
-    if (currentVideoId === job.videoId) {
-      // Direct in-player application
-      this.jobCompleted$.next({
-        videoId: job.videoId,
-        language: resolvedLang,
-        requestedLanguage: requestedLang,
-        languageMismatch: isMismatch,
-        cues,
-        source: 'ai'
-      });
-    } else {
+    if (currentVideoId && currentVideoId !== job.videoId) {
       // Route-aware actionable toast alert
       const titleSnippet = job.title ? `"${job.title.slice(0, 32)}..."` : 'video';
       const langSuffix = isMismatch ? ` (${resolvedLang.toUpperCase()})` : '';
@@ -375,7 +424,7 @@ export class AiJobManagerService {
   private getCurrentVideoId(): string | null {
     try {
       const urlTree = this.router.parseUrl(this.router.url);
-      return urlTree.queryParams['id'] || null;
+      return urlTree.queryParams['id'] || urlTree.queryParams['v'] || null;
     } catch {
       return null;
     }
@@ -405,12 +454,6 @@ export class AiJobManagerService {
   private saveActiveJobs(): void {
     try {
       localStorage.setItem(ACTIVE_JOBS_KEY, JSON.stringify(this.activeJobs()));
-    } catch {}
-  }
-
-  private migrateLegacyJobs(): void {
-    try {
-      localStorage.removeItem(LEGACY_JOBS_KEY);
     } catch {}
   }
 }

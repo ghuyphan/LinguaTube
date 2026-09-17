@@ -561,14 +561,24 @@ $transition-fast: 0.15s ease;
 .text-ja {
     font-family: var(--font-jp, 'Noto Sans JP', sans-serif);
     letter-spacing: 0.02em;
+    line-break: strict;
 }
 
 .text-zh {
     font-family: var(--font-cn, 'Noto Sans SC', sans-serif);
     letter-spacing: 0.04em;
+    line-break: strict;
 }
 
 .text-ko {
     font-family: var(--font-ko, 'Noto Sans KR', sans-serif);
     letter-spacing: 0.01em;
+}
+
+.text-en {
+    .fs-word + .fs-word--punctuation {
+        margin-left: -3px;
+        padding-left: 0;
+        margin-right: 2px;
+    }
 }

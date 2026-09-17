@@ -55,6 +55,7 @@ export interface ActiveAiJob {
   title?: string;
   channel?: string;
   pollAttempts?: number;
+  consecutiveErrors?: number;
   status: 'queued' | 'processing' | 'done' | 'error';
   error?: string;
   errorCode?: string;

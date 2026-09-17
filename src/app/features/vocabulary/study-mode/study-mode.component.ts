@@ -240,6 +240,7 @@ export class StudyModeComponent implements OnDestroy {
 
     ngOnDestroy(): void {
         this.stopTimer();
+        this.audioService.stopAudio();
         if (this.confettiTimeout) {
             clearTimeout(this.confettiTimeout);
             this.confettiTimeout = null;
@@ -403,6 +404,7 @@ export class StudyModeComponent implements OnDestroy {
         }
 
         this.swipeOffset.set(0);
+        this.audioService.stopAudio();
 
         // Next card or complete
         if (this.currentIndex() < this.studyCards().length - 1) {
@@ -466,6 +468,7 @@ export class StudyModeComponent implements OnDestroy {
 
     endSession(): void {
         this.stopTimer();
+        this.audioService.stopAudio();
         this.isStudying.set(false);
         this.isComplete.set(false);
         this.showConfetti.set(false);

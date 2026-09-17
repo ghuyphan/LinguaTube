@@ -29,6 +29,13 @@
     text-align: center;
     overflow-wrap: anywhere;
     word-break: break-word;
+
+    .popup-baseform {
+        font-size: 0.65em;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-left: 6px;
+    }
 }
 
 .popup-audio-btn {

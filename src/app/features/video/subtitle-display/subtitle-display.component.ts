@@ -63,19 +63,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
   quiz = inject(QuizService);
   private keyboardShortcuts = inject(KeyboardShortcutService);
 
-  readonly whisperAvailable = computed(() => {
-    const error = this.transcript.error();
-    const availableAI = this.transcript.availableLanguages().ai;
-
-    if (error === 'NO_NATIVE' && availableAI.length > 0) {
-      return false;
-    }
-
-    return this.transcript.whisperAvailable();
-  });
-
-  readonly isGeneratingAI = this.transcript.isGeneratingAI;
-
   readonly subtitleList = viewChild<ElementRef<HTMLDivElement>>('subtitleList');
   readonly currentSubtitleInner = viewChild<ElementRef<HTMLDivElement>>('currentSubtitleInner');
 
@@ -83,10 +70,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
   manualAITrigger = output<void>();
   switchLanguage = output<string>();
   retryRequested = output<void>();
-
-  triggerManualAI(): void {
-    this.manualAITrigger.emit();
-  }
 
   readonly hasNativeInOtherLanguage = computed(() => {
     const firstLang = this.firstAvailableNativeLanguage();
@@ -208,7 +191,9 @@ export class SubtitleDisplayComponent implements OnDestroy {
     return tokens.map(token => {
       if (token.isPunctuation) return token;
 
-      const level = this.vocab.getWordLevel(token.surface) || undefined;
+      const level = this.vocab.getWordLevel(token.surface)
+        || (token.baseForm ? this.vocab.getWordLevel(token.baseForm) : undefined)
+        || undefined;
       // Reuse same object if level unchanged
       if (token.level === level) return token;
 
@@ -259,6 +244,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
         readingText,
         displayText,
         isSaved: this.vocab.hasWord(token.surface)
+          || (token.baseForm ? this.vocab.hasWord(token.baseForm) : false)
       };
     });
   });

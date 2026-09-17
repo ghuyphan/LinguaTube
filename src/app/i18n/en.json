@@ -856,7 +856,10 @@
     "howCadenceTitle": "Conversational Pace",
     "howCadenceDesc": "Natural speaking pace measured directly from video dialogue.",
     "immersionTipTitle": "Immersion Tip",
-    "immersionTipPace": "If the speech feels too fast, slow playback to 0.85x or turn on dual subtitles.",
+    "immersionTipPace": "If the speech feels too fast, slow playback to 0.75x or turn on dual subtitles. Tap any word to view its definition.",
+    "immersionTipFast": "Fast native pace detected. Try slowing playback to 0.75x or turn on Auto-Pause (P) to absorb each sentence.",
+    "immersionTipAdvanced": "Complex grammar & rich vocabulary. Tap unfamiliar words for instant dictionary breakdowns, or enable Dual Subtitles (D).",
+    "immersionTipBeginner": "Clear and accessible! Try listening without dual subtitles to challenge your ear, and tap new words to save to flashcards.",
     "confidenceScore": "Confidence"
   },
   "gamification": {

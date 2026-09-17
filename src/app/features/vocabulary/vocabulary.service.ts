@@ -164,6 +164,13 @@ export class VocabularyService {
         this.repo.updateLevel(id, level);
     }
 
+    setWordLevel(word: string, level: WordLevel): void {
+        const item = this.findWord(word);
+        if (item) {
+            this.updateLevel(item.id, level);
+        }
+    }
+
     markReviewed(id: string, correct: boolean): void {
         this.gamification.addXP(correct ? 10 : 5, 'flashcard_review');
         this.gamification.recordSRSReview();

@@ -5,6 +5,9 @@
             <div class="popup-word-row">
                 <h2 class="popup-word" [class]="'text-' + settings.settings().language">
                     {{ selectedWord()?.surface }}
+                    @if (selectedWord()?.baseForm && selectedWord()!.baseForm!.trim().toLowerCase() !== selectedWord()!.surface.trim().toLowerCase()) {
+                    <span class="popup-baseform">({{ selectedWord()?.baseForm }})</span>
+                    }
                 </h2>
                 <button type="button" class="popup-audio-btn" (click)="playAudio($event)"
                     [class.playing]="isPlayingAudio()"

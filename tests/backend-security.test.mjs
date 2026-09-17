@@ -1255,6 +1255,161 @@ test('pollAiJobStatus: accurately identifies languageMismatch flag', async () =>
   assert.equal(res2.videoInfo.languageMismatch, false);
 });
 
+test('pollAiJobStatus: self-heals by querying R2 if jobId is missing/expired in DB', async () => {
+  const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
+
+  const mockDb = {
+    prepare() {
+      return {
+        bind() {
+          return {
+            async first() { return null; } // Job not in DB
+          };
+        }
+      };
+    }
+  };
+
+  const mockR2 = {
+    async get(key) {
+      if (key === 'transcripts/test_vid/ja.json') {
+        return {
+          async json() {
+            return {
+              language: 'ja',
+              source: 'ai',
+              segments: [{ start: 0, duration: 2.5, text: 'こんにちは' }]
+            };
+          }
+        };
+      }
+      return null;
+    }
+  };
+
+  const service = new TranscriptService({}, {}, {}, {});
+  const context = {
+    env: {
+      VOCAB_DB: mockDb,
+      TRANSCRIPT_STORAGE: mockR2
+    }
+  };
+
+  const res = await service.pollAiJobStatus(context, {
+    jobId: 'expired_or_lost_job_id',
+    videoId: 'test_vid',
+    lang: 'ja',
+    diamondInfo: { diamonds: 3 }
+  });
+
+  assert.equal(res.status, 'done');
+  assert.equal(res.videoInfo.videoId, 'test_vid');
+  assert.equal(res.videoInfo.language, 'ja');
+  assert.equal(res.videoInfo.segments.length, 1);
+  assert.equal(res.videoInfo.segments[0].text, 'こんにちは');
+});
+
+test('startAIJob: forceRefresh supersedes existing active job and deletes it instead of reusing', async () => {
+  const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
+
+  let deletedJobId = null;
+  let insertedJobId = null;
+
+  const mockDb = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async first() {
+              if (sql.includes('SELECT duration_seconds FROM video_languages')) {
+                return { duration_seconds: 120 };
+              }
+              if (sql.includes('FROM ai_transcription_jobs') && sql.includes('WHERE video_id = ?')) {
+                // Return an old active job
+                return {
+                  id: 'old_stale_job_123',
+                  video_id: 'vid_regen',
+                  language: 'ja',
+                  status: 'processing',
+                  created_at: Math.floor(Date.now() / 1000) - 100
+                };
+              }
+              if (sql.includes('FROM ai_transcription_jobs') && sql.includes('WHERE id = ?')) {
+                return {
+                  id: args[0],
+                  video_id: 'vid_regen',
+                  language: 'ja',
+                  status: 'queued'
+                };
+              }
+              return null;
+            },
+            async run() {
+              if (sql.includes('DELETE FROM ai_transcription_jobs')) {
+                deletedJobId = args[0];
+              }
+              if (sql.includes('INSERT INTO ai_transcription_jobs')) {
+                insertedJobId = args[0];
+              }
+              return { success: true };
+            }
+          };
+        }
+      };
+    }
+  };
+
+  const mockGladia = {
+    async submitTranscriptionJob() {
+      return { id: 'gladia_new_task_456' };
+    }
+  };
+
+  const mockDiamond = {
+    async consumeDiamond() {
+      return { success: true, diamonds: 2, nextRegenAt: null };
+    },
+    resolveTier() {
+      return 'free';
+    }
+  };
+
+  const service = new TranscriptService({}, mockGladia, mockDiamond, {});
+  const context = {
+    env: {
+      VOCAB_DB: mockDb,
+      GLADIA_API_KEY: 'test-gladia-key',
+      PUBLIC_ORIGIN: 'https://voca.study'
+    }
+  };
+
+  // Case 1: Without forceRefresh -> returns existing old job
+  const resWithoutForce = await service.startAIJob(context, {
+    videoId: 'vid_regen',
+    lang: 'ja',
+    duration: 120,
+    body: { duration: 120 },
+    forceRefresh: false,
+    diamondInfo: { diamonds: 3 }
+  });
+  assert.equal(resWithoutForce.status, 'processing');
+  assert.equal(resWithoutForce.jobId, 'old_stale_job_123');
+  assert.equal(deletedJobId, null);
+
+  // Case 2: With forceRefresh -> deletes old job and starts fresh session
+  const resWithForce = await service.startAIJob(context, {
+    videoId: 'vid_regen',
+    lang: 'ja',
+    duration: 120,
+    body: { duration: 120 },
+    forceRefresh: true,
+    diamondInfo: { diamonds: 3 }
+  });
+  assert.equal(resWithForce.status, 'processing');
+  assert.equal(deletedJobId, 'old_stale_job_123'); // Old stale job was deleted!
+  assert.notEqual(resWithForce.jobId, 'old_stale_job_123'); // A brand new jobId was generated!
+});
+
 test('api/_middleware: allows gladia-webhook and payOS webhook to bypass bot defense', async () => {
   const { onRequest } = await import('../functions-src/api/_middleware.js');
 

@@ -5,7 +5,6 @@
  * Tables:
  * - video_meta: Records which transcripts exist (video_id, language, source)
  * - ai_transcription_jobs: Durable state machine for asynchronous Gladia jobs
- * - pending_jobs: (Legacy fallback table for older client polling)
  */
 
 export function generateJobId() {
@@ -211,71 +210,5 @@ export async function deleteAiJob(db, jobId) {
         `).bind(jobId).run();
     } catch (err) {
         console.error('[D1] deleteAiJob error:', err.message);
-    }
-}
-
-// ============================================================================
-// Legacy Pending Jobs (for backwards compatibility with older client versions)
-// ============================================================================
-
-export async function savePendingJob(db, videoId, language, resultUrl) {
-    if (!db || !videoId || !resultUrl) return;
-    try {
-        await db.prepare(`
-            INSERT OR REPLACE INTO pending_jobs 
-            (video_id, language, result_url, created_at)
-            VALUES (?, ?, ?, strftime('%s', 'now'))
-        `).bind(videoId, language, resultUrl).run();
-    } catch (err) {
-        console.error('[D1] savePendingJob error:', err.message);
-    }
-}
-
-export async function getPendingJob(db, videoId) {
-    if (!db) return null;
-    try {
-        return await db.prepare(`
-            SELECT result_url, language FROM pending_jobs 
-            WHERE video_id = ? AND created_at > strftime('%s', 'now') - 3600
-        `).bind(videoId).first();
-    } catch (err) {
-        console.error('[D1] getPendingJob error:', err.message);
-        return null;
-    }
-}
-
-export async function getPendingJobByResultUrl(db, resultUrl) {
-    if (!db || !resultUrl) return null;
-    try {
-        return await db.prepare(`
-            SELECT video_id, language FROM pending_jobs 
-            WHERE result_url = ? AND created_at > strftime('%s', 'now') - 3600
-        `).bind(resultUrl).first();
-    } catch (err) {
-        console.error('[D1] getPendingJobByResultUrl error:', err.message);
-        return null;
-    }
-}
-
-export async function deletePendingJob(db, videoId) {
-    if (!db) return;
-    try {
-        await db.prepare(`
-            DELETE FROM pending_jobs WHERE video_id = ?
-        `).bind(videoId).run();
-    } catch (err) {
-        console.error('[D1] deletePendingJob error:', err.message);
-    }
-}
-
-export async function cleanupStaleJobs(db) {
-    if (!db) return;
-    try {
-        await db.prepare(`
-            DELETE FROM pending_jobs 
-            WHERE created_at < strftime('%s', 'now') - 3600
-        `).run();
-    } catch {
-        // Non-blocking
     }
 }

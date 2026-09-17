@@ -23,7 +23,8 @@ import {
 } from '../data/video-info-db.js';
 
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
-import { getPendingJob, getActiveAiJob } from '../data/transcript-db.js';
+import { getActiveAiJob } from '../data/transcript-db.js';
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
@@ -192,7 +193,7 @@ export async function onRequestPost(context) {
             requiredDiamonds = 2;
         }
 
-        const orchestratorParams = { videoId: cleanVideoId, lang, jobId, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration, requiredDiamonds };
+        const orchestratorParams = { videoId: cleanVideoId, lang, jobId, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration, requiredDiamonds, forceRefresh: Boolean(forceRefresh) };
 
         // -------------------------------------------------------------
         // Polling existing AI (Opaque jobId or legacy resultUrl)
@@ -202,7 +203,7 @@ export async function onRequestPost(context) {
                 ? await transcriptService.pollAiJobStatus(serviceContext, orchestratorParams)
                 : await transcriptService.pollAIJob(serviceContext, orchestratorParams);
 
-            if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiRes });
+            if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiRes }, 202);
             if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: aiRes.errorCode || 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', ...diamondInfo, timing: elapsed() }, 400);
             return jsonResponse({ success: true, ...aiRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
         }
@@ -247,9 +248,9 @@ export async function onRequestPost(context) {
                 }
 
                 if (cached?.segments?.length > 0) {
-                    const normReq = (lang || '').split('-')[0].toLowerCase();
-                    const normRes = (responseLang || '').split('-')[0].toLowerCase();
-                    const isMismatch = normReq !== normRes;
+                    const normReq = normalizeLanguageCode(lang);
+                    const normRes = normalizeLanguageCode(responseLang);
+                    const isMismatch = Boolean(normReq && normRes && normReq !== normRes);
 
                     return jsonResponse({
                         success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
@@ -278,21 +279,7 @@ export async function onRequestPost(context) {
                     whisperAvailable: true,
                     ...diamondInfo,
                     timing: elapsed()
-                });
-            }
-
-            const pendingJob = await getPendingJob(db, cleanVideoId);
-            if (pendingJob?.result_url) {
-                return jsonResponse({
-                    success: false,
-                    status: 'processing',
-                    resultUrl: pendingJob.result_url,
-                    videoId: cleanVideoId,
-                    availableLanguages,
-                    whisperAvailable: true,
-                    ...diamondInfo,
-                    timing: elapsed()
-                });
+                }, 202);
             }
 
             if (forceRefresh) {

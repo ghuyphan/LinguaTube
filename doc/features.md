@@ -120,32 +120,39 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **Japanese (`ja`)**:
   - Analyzed by `@patdx/kuromoji` using IPAdic dictionaries loaded on demand via CDN.
   - Generates token surface forms, base dictionary forms, parts of speech, and Hiragana readings.
-  - **Okurigana Ruby Segmentation (`segmentJapaneseRuby`)**: Multi-kanji words with trailing okurigana (e.g. `食べる` with reading `たべる`, `美しい` with reading `うつくしい`) are segmented into distinct stem and kana parts (`{ text: '食', reading: 'た' }, { text: 'べる' }`). Kanji stems receive their authentic phonetic ruby annotations while trailing okurigana are rendered with an empty spacer `<rt class="rt-empty">&#160;</rt>`, preventing ruby text from stretching across kana endings.
+  - **Spoken Particle Phonetics**: Grammatical particles `は` and `へ` (pos: `助詞`) automatically receive their spoken phonetic kana readings (`わ` and `え`) and Hepburn romaji (`wa` and `e`), teaching authentic pronunciation.
+  - **Okurigana Ruby Segmentation (`segmentJapaneseRuby`)**: Multi-kanji words with trailing okurigana (e.g. `食べる` with reading `たべる`, `美しい` with reading `うつくしい`), leading prefixes (`お茶`), and compound verbs with interior okurigana (`思い出す`, `行き交う`, `乗り換える`, `受け取る`) are segmented into distinct stem and kana parts (`{ text: '思', reading: 'おも' }, { text: 'い' }, { text: '出', reading: 'だ' }, { text: 'す' }`). Kanji stems receive their authentic phonetic ruby annotations while okurigana parts are rendered with an empty spacer `<rt aria-hidden="true" class="rt-empty">&#160;</rt>`, preventing ruby text from stretching across kana endings.
+  - **Romaji Engine**: Fully compliant Modified Hepburn converter supporting sokuon (`っ`), chōonpu (`ー`), hatsuon (`ん`), and precomposed `ゔ` digraphs (`ゔぁ: va`, `ゔぃ: vi`, `ゔぇ: ve`, `ゔぉ: vo`, `ゔゅ: vyu`).
   - **5 Reading Display Modes**:
     1. `native`: Clean Japanese script.
     2. `annotated`: Ruby Furigana (`<ruby>漢<rt>かん</rt></ruby>`).
     3. `reading`: Kana reading only.
     4. `annotatedRomanized`: Kanji with Hepburn Romaji annotations.
     5. `romanized`: Hepburn Romaji only.
-  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, non-kanji words AND punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` with an invisible spacer `<rt class="rt-empty">&#160;</rt>`. Both active readings and empty spacers have their height strictly locked to `height: 1.15em; line-height: 1.15;` alongside standardized `vertical-align: baseline` and 1px transparent borders. This guarantees 100% identical token heights, mathematically consistent line-boxes, and uniform baseline alignment across all words and punctuation, eliminating vertical misalignment and jagged baseline jumps across Japanese, Chinese, Korean, and English. Top-anchoring in `.subtitle-center-wrapper` additionally prevents vertical jitter when switching between 1-line and 2-line cues.
+  - **Height & Baseline Alignment (Zero-Shift Ruby)**: When reading annotations are enabled, non-kanji words AND punctuation tokens (`、`, `。`, `,`, `.`, `...`) are wrapped in `<ruby>` with an invisible spacer `<rt aria-hidden="true" class="rt-empty">&#160;</rt>`. Both active readings and empty spacers have their height strictly locked to `height: 1.15em; line-height: 1.15;` alongside standardized `vertical-align: baseline` and 1px transparent borders. This guarantees 100% identical token heights, mathematically consistent line-boxes, and uniform baseline alignment across all words and punctuation, eliminating vertical misalignment and jagged baseline jumps across Japanese, Chinese, Korean, and English. Top-anchoring in `.subtitle-center-wrapper` additionally prevents vertical jitter when switching between 1-line and 2-line cues.
 - **Chinese (`zh`)**:
   - Segmented using `Intl.Segmenter('zh', { granularity: 'word' })`.
-  - Pinyin annotations generated via `pinyin-pro` with tone diacritics (e.g. `nǐ hǎo`).
+  - **Context-Aware Pinyin Disambiguation**: Passes the full sentence to `pinyin-pro` to capture n-gram grammatical context, accurately resolving polyphonic characters (多音字 *duōyīnzì* like `跑得快` $\rightarrow$ *de*, `银行` $\rightarrow$ *háng*, `睡着了` $\rightarrow$ *zháo*, `高兴地笑了` $\rightarrow$ *de*).
+  - **Mono-Ruby Alignment**: Generates character-level `rubyParts` so each Hanzi character receives its own distinct `<rt>` syllable (e.g. `<ruby>什<rt>shén</rt>么<rt>me</rt></ruby>`), eliminating Latin stretch distortion over multi-character compounds.
 - **Korean (`ko`)**:
   - Space-delimited and segment-analyzed via `Intl.Segmenter('ko')`.
+  - **Particle Detachment & Lemmatization**: Heuristically extracts grammatical particles (조사 *josa*, such as `은/는`, `이/가`, `을/를`, `에/에서`, `하고`, `으로`, `의`, `도`, `만`) into `token.baseForm` and `token.particle`. While the subtitle displays natural inflected text (`한국어를`), dictionary lookups and SRS flashcard additions resolve to the canonical noun (`한국어`), unifying vocabulary tracking and preventing duplicate flashcards.
   - Romanization computed using `hangul-romanization`.
 - **English (`en`)**:
   - Segmented into word tokens and punctuation boundaries via `Intl.Segmenter('en')` and enhanced with `compromise` NLP.
-  - Morphological tagging provides Part-of-Speech (`partOfSpeech`) and root lemmatization (`baseForm`), aligning English tokens with Japanese and Korean morphological capabilities.
-  - **Contraction & Offset Synchronization**: Handles English contractions (`"don't"`, `"we'll"`, `"I'm"`) via character span and surface offset matching rather than naive 1-to-1 term mapping, preventing token offset desynchronization and ensuring subsequent tokens align accurately with original sentence text.
+  - Morphological tagging provides Part-of-Speech (`partOfSpeech`) and root lemmatization (`baseForm`) for verbs, nouns, and comparative/superlative adjectives (`better` $\rightarrow$ `good`, `fastest` $\rightarrow$ `fast`).
+  - **Contraction & Hyphenated Compound Synchronization**: Bidirectional term alignment handles English contractions (`"don't"`, `"we'll"`, `"I'm"`) and hyphenated adjectives (`"state-of-the-art"`) without desynchronizing subsequent words in the sentence.
   - Everyday words, pronouns, articles, and contractions (`I`, `the`, `a`, `don't`) are strictly protected from grammar false positives, keeping words cleanly clickable for dictionary lookups and flashcard saving.
   - CEFR grammar patterns (compound tenses, modal perfects, phrasal modals, correlatives) detected with clean token ranges excluding spaces and punctuation, highlighted with vibrant mint teal accents and underlines (`.word--grammar`).
+- **Cross-Language Lemmatized Word Lookup & Saved Badges**:
+  - Subtitle word chips reactively check both `token.surface` and `token.baseForm` against the user's vocabulary notebook. Saving an inflected word (e.g. `食べた` or `went`) registers the root lemma (`食べる` or `go`), and all inflections across all subtitles immediately display the pink saved badge and SRS mastery border (`word--new`, `word--learning`, `word--known`).
+  - Word Popup displays both the inflected surface and root lemma (e.g. `went (go)`), searching the dictionary by root lemma with automatic fallback to surface.
 - **Bulk Batch Tokenization & Zero Playback Overhead**:
   - `SubtitleService` processes subtitle cues in bulk batches of up to 800 texts on initial video load. For virtually all videos ($\le 800$ cues), the entire video requires **only 1 API call**.
   - No network requests are made during video playback; time updates use $O(\log n)$ binary search over cached cues.
-  - Forward's the user's Supabase auth token to access higher rate limit tiers (150–2,000 req/hr).
+  - Forwards the user's Supabase auth token to access higher rate limit tiers (150–2,000 req/hr).
 - **Client Fallback Tokenizer & 429 Circuit Breaker**:
-  - If network requests to backend tokenization endpoints fail, hit a 429 rate limit, or operate offline, `SubtitleService` immediately triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter('zh')` and `Intl.Segmenter('ko')` or Japanese character splitting.
+  - If network requests to backend tokenization endpoints fail, hit a 429 rate limit, or operate offline, `SubtitleService` immediately triggers a circuit breaker and falls back to client-side tokenization powered by native ECMAScript `Intl.Segmenter` across Japanese (`'ja'`), Chinese (`'zh'`), and Korean (`'ko'`), with whitespace-neutralized word matching for English.
   - The circuit breaker prevents cascading 429 errors in the console by suppressing subsequent backend calls for the duration of the `Retry-After` window.
 
 ### 2.3. Subtitle Customization & Vocabulary Highlighting
@@ -218,6 +225,20 @@ graph TD
   - Available directly from the video header Subtitle Tracks menu (`__generate_ai:${code}__`) with national flag icons and language labels.
   - The AI Generation confirmation dialog provides an interactive 4-language chip selector to confirm or change the transcription language before spending Diamond credits.
   - Once transcription completes, the app automatically switches the active learning language context (`learningLanguage.switchLanguage(lang, { navigateHome: false })`) without navigating away, immediately activating appropriate tokenizers, furigana/pinyin/hangul romaji, grammar rules, and dictionaries.
+- **Clean Native Spinner Animation**:
+  - In-player generating animation redesigned with Voca's conical mask spinner (`2.25rem` desktop, `1.75rem` mobile), matching the app's unified loading rings.
+  - Visual clutter eliminated (removed pseudo-waveform bars and sliding gradient bars).
+  - Background CSS animations automatically set `animation-play-state: paused` when not actively generating, eliminating idle GPU/battery drain during normal video playback.
+- **Session Freshness & Regeneration Guard (`forceRefresh`)**:
+  - When users retry captions or generate AI subtitles, `forceRefresh: true` is transmitted and local active jobs in `AiJobManagerService` are cleanly cancelled.
+  - The backend server (`startAIJob`) checks `params.forceRefresh` and supersedes any existing queued/processing D1 records (`ai_transcription_jobs`), preventing the system from reusing stale/failed sessions.
+  - `MAX_PATIENCE_MS` patience window expanded to 15 minutes (900s) matching the backend D1 lease timeout. The timeout check is deferred until after querying the server, ensuring returning users never encounter premature timeouts on already-completed transcripts.
+- **Fault-Tolerant AI Polling Resilience**:
+  - `AiJobManagerService` tolerates transient network hiccups (0, 408, 500-599, Cloudflare edge drops 520-526) with exponential backoff and up to 6 consecutive retry attempts rather than aborting active jobs.
+  - HTTP 429 Rate Limits trigger progressive 12s backoffs without cancelling the transcription.
+  - Re-focusing tabs or switching views safely deduplicates in-flight polling calls (`activeHttpSubs` lock) to conserve rate limits.
+- **Storage-Level Self-Healing Polling**:
+  - If a client polls with an expired or missing `jobId`, `pollAiJobStatus` queries Cloudflare R2 for completed `transcripts/{videoId}/{lang}.json`. If present, it self-heals and returns `status: 'done'` with full cues rather than throwing a 404/400 error.
 
 ---
 
@@ -261,7 +282,7 @@ graph TD
   - **Subtitle Off Toggle**: The track picker includes a clean "Turn subtitles off" option, and the player bottom bar exposes the CC toggle in standard view (not just fullscreen) for rapid caption visibility toggling.
   - **Mobile Touch Ergonomics & Responsive Header**: Action buttons on mobile feature 44×44px touch targets (Apple HIG compliant) with touch slop padding, titles wrap up to 2 lines on small screens (< 640px) to prevent 15-character truncation, the playback speed pill is accessible on mobile in 1 tap, and subtitle cue looping utilizes the distinct `repeat-1` icon to avoid confusion with playlist looping (`repeat`).
 - **AI Job State Resiliency & Offline Reconnect**:
-  - In-flight AI transcription jobs are persisted in `localStorage` (`voca_pending_ai_jobs`) and indexed in Cloudflare D1 `pending_jobs`.
+  - In-flight AI transcription jobs are persisted in `localStorage` (`voca_active_ai_jobs`) and indexed in Cloudflare D1 `ai_transcription_jobs`.
   - Refreshing the page, switching tabs, or temporarily losing network connectivity automatically resumes polling without double-spending Diamond credits or abandoning processing jobs.
 - **Dual Subtitle Self-Healing & Fuzzy Proximity Alignment**:
   - Cues are mapped to cached bilingual segments via timestamp proximity ($\pm 0.8$s) and text equality rather than brittle array index positions.
@@ -336,11 +357,11 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
                      Normalized DictionaryEntry
 ```
 
-- **Resilient 3-Tier Pronunciation Audio Architecture**: Audio playback uses a hierarchical 3-tier pipeline via `AudioService`:
+- **Resilient 3-Tier Pronunciation Audio Architecture with Strict Single-Play Guarantee**: Audio playback uses a hierarchical 3-tier pipeline via `AudioService` with strict single-play semantics (audio plays exactly 1 time per user tap, never loops or repeats):
   - **Tier 0 (Authentic Native Audio)**: Prioritizes authentic human MP3 recordings returned by dictionary APIs (Naver, Jotoba, Mazii, KRDict) with `referrerpolicy="no-referrer"` to bypass CDN hotlinking restrictions.
   - **Tier 1 (Online Neural TTS)**: Studio-grade Unified Neural TTS (`/api/tts`) streaming Azure Neural voices (`Nanami`, `Xiaoxiao`, `SunHi`, `Jenny`) with 0 KV operations, persistent warm WebSocket connection pooling (~180–250ms response time), bounded in-memory LRU caching (<0.1ms replay), client-side Blob URL caching, proactive preloading, and automatic server-side Google TTS failover (>99.5% reliability with zero client CORS issues).
-  - **Tier 2 (Offline Web Speech Fallback)**: Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when disconnected or in airplane mode.
-  - **Fast Failover**: Tight 3,500ms failsafe timeout guarantees instant, seamless degradation without user-perceptible freezing.
+  - **Tier 2 (Offline Web Speech Fallback)**: Native Web Speech API (`speechSynthesis`) offline fallback ensuring 100% pronunciation reliability even when disconnected or in airplane mode, protected by safety duration watchdogs and microtask boundaries to prevent Chromium/WebKit hang bugs.
+  - **Single-Play Invariant & Dual-Stage Watchdog**: A 4,000ms connection timeout guards against offline/unreachable servers before sound begins; the moment playback starts (`onplay`/`onplaying`), the connection timeout is cleared and a dynamic duration-based watchdog (`audio.duration + 2s`, max 12s) prevents frozen streams. Once an audio tier begins playing sound, it commits to that tier and never cascades into subsequent tiers, preventing repetitive multi-speech loops.
 - **Word Popup & Dictionary Pronunciation**: Interactive subtitle taps open `WordPopupComponent`, featuring a native one-touch audio pronunciation button with animated soundwave indicators. Audio is proactively pre-fetched in the background the moment the popup opens, providing instantaneous (0ms) playback on tap. Similarly, all dictionary search cards feature one-touch audio pronunciation.
 - **Context-Aware CJK Kanji Detection**: When inspecting pure ideographs (`\u4E00-\u9FFF` without Kana or Hangul), `DictionaryService.detectLanguage()` checks the user's active learning language (`settings.language`) so Japanese learners query Japanese dictionaries (Jotoba/Mazii) rather than erroneously defaulting to Chinese dictionaries.
 - **Isolated Screen State**: Standalone dictionary searches are decoupled from in-video subtitle clicks, ensuring subtitle queries never leak into or overwrite standalone search history or panels.
@@ -659,7 +680,7 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
   - Number of advanced grammar patterns detected with individual breakdown tags (e.g. N5, N4, N3).
   - Speech pace and velocity (e.g. `278 cpm` or `142 wpm`) with category tags (Clear/Slow, Natural, Fast Native).
   - Transparent 3-pillar breakdown explaining how Voca analyzes grammar morphology, vocabulary & kanji complexity, and spoken cadence.
-  - Contextual immersion tip for learners (e.g. slowing playback to 0.85x or enabling bilingual subtitles).
+  - Contextual immersion tip dynamically tailored to video pace and difficulty tier (recommending 0.75x speed or Auto-Pause mode for fast speech, pure listening for beginners, or dual subtitles and dictionary breakdown for advanced content).
 - **Learn Home Dashboard Integration (`VideoPageComponent`)**:
   - **YouTube-Style Home Discovery Feed**: Native YouTube-style video discovery grid featuring 16:9 responsive thumbnails, channel avatars, duration badges, and proficiency level indicators.
   - **Interleaved Recommended Playlists**: YouTube-style interleaving of community and curated playlists directly into the video feed (1 playlist every 4 videos) with stacked-shadow card styling.

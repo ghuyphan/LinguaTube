@@ -1811,6 +1811,7 @@ const DEV_DUAL_TRANSLATIONS = {
  * Unified Transcript API for dev mode
  * 1. Checks local disk cache (server/transcripts_cache)
  * 2. Fetches native YouTube subtitles via Innertube
+ */
 // In-memory registry for dev AI transcription jobs
 const localAiJobs = new Map();
 
@@ -1955,6 +1956,30 @@ app.post('/api/transcript', async (req, res) => {
     if (jobId) {
         const localJob = localAiJobs.get(jobId);
         if (!localJob) {
+            // Self-healing: check disk cache if job expired or dev server was restarted
+            if (videoId) {
+                const cached = getCachedTranscript(videoId, normalizedLang);
+                if (cached && cached.segments && cached.segments.length > 0) {
+                    const detectedLang = cached.language || normalizedLang;
+                    return res.json({
+                        success: true,
+                        videoId,
+                        language: detectedLang,
+                        requestedLanguage: normalizedLang,
+                        languageMismatch: false,
+                        segments: cached.segments,
+                        source: 'ai',
+                        sourceDetail: 'gladia_cache',
+                        availableLanguages: { native: [], ai: [detectedLang] },
+                        subLanguages: [detectedLang],
+                        whisperAvailable: true,
+                        diamonds: devDiamonds,
+                        maxDiamonds: 3,
+                        nextRegenAt: null,
+                        timing: 30
+                    });
+                }
+            }
             return res.status(404).json({ success: false, errorCode: 'JOB_NOT_FOUND', error: 'AI transcription job not found or expired' });
         }
 
@@ -2054,13 +2079,7 @@ app.post('/api/transcript', async (req, res) => {
             }
 
             if (resultData.status === 'done') {
-                const utterances = resultData.result?.transcription?.utterances || [];
-                const segments = utterances.map((utt, index) => ({
-                    id: index,
-                    text: utt.text?.trim() || '',
-                    start: utt.start || 0,
-                    duration: (utt.end || 0) - (utt.start || 0)
-                }));
+                const segments = extractGladiaSegments(resultData);
                 const cleaned = cleanTranscriptSegments(segments);
                 const detectedLang = resultData.result?.transcription?.languages?.[0] || normalizedLang;
 
@@ -2149,6 +2168,14 @@ app.post('/api/transcript', async (req, res) => {
     // Scenario 3: AI transcription requested (preferAI: true)
     // -------------------------------------------------------------
     if (preferAI) {
+        if (forceRefresh && videoId) {
+            for (const [jId, job] of localAiJobs.entries()) {
+                if (job.videoId === videoId) {
+                    localAiJobs.delete(jId);
+                }
+            }
+        }
+
         if (!gladiaKey) {
             return res.status(500).json({
                 success: false,
@@ -2521,6 +2548,61 @@ function isPunctuation(text) {
     return PUNCTUATION_REGEX.test(text);
 }
 
+function hasHangulBatchim(char) {
+    const code = char.charCodeAt(0);
+    if (code < 0xAC00 || code > 0xD7AF) return false;
+    return (code - 0xAC00) % 28 !== 0;
+}
+
+function detachKoreanParticle(word) {
+    if (!word || typeof word !== 'string' || word.length < 2) return null;
+    for (let i = 0; i < word.length; i++) {
+        const code = word.charCodeAt(i);
+        if (code < 0xAC00 || code > 0xD7AF) return null;
+    }
+
+    const particles3 = ['에서는', '에서도', '에게는', '에게도', '께서는'];
+    for (const p of particles3) {
+        if (word.endsWith(p) && word.length > 3) {
+            return { stem: word.slice(0, -3), particle: p };
+        }
+    }
+
+    const particles2 = ['에서', '에게', '한테', '부터', '까지', '하고', '처럼', '보다', '마저', '조차', '께서', '께도'];
+    for (const p of particles2) {
+        if (word.endsWith(p) && word.length > 2) {
+            return { stem: word.slice(0, -2), particle: p };
+        }
+    }
+
+    if (word.endsWith('으로') && word.length > 2) {
+        const prev = word[word.length - 3];
+        if (hasHangulBatchim(prev)) {
+            return { stem: word.slice(0, -2), particle: '으로' };
+        }
+    }
+
+    const last = word[word.length - 1];
+    const prev = word[word.length - 2];
+    const prevBatchim = hasHangulBatchim(prev);
+
+    if (last === '는' && !prevBatchim) return { stem: word.slice(0, -1), particle: '는' };
+    if (last === '은' && prevBatchim) return { stem: word.slice(0, -1), particle: '은' };
+    if (last === '를' && !prevBatchim) return { stem: word.slice(0, -1), particle: '를' };
+    if (last === '을' && prevBatchim) return { stem: word.slice(0, -1), particle: '을' };
+    if (last === '가' && !prevBatchim) return { stem: word.slice(0, -1), particle: '가' };
+    if (last === '이' && prevBatchim) return { stem: word.slice(0, -1), particle: '이' };
+    if (last === '와' && !prevBatchim) return { stem: word.slice(0, -1), particle: '와' };
+    if (last === '과' && prevBatchim) return { stem: word.slice(0, -1), particle: '과' };
+    if (last === '로' && !prevBatchim) return { stem: word.slice(0, -1), particle: '로' };
+
+    if (word.length >= 3 && (last === '의' || last === '도' || last === '만' || last === '에')) {
+        return { stem: word.slice(0, -1), particle: last };
+    }
+
+    return null;
+}
+
 function buildDevToken(surface, isWordLike, lang) {
     const isPunc = isPunctuation(surface) || (!isWordLike && lang === 'en');
     const token = { surface };
@@ -2542,6 +2624,51 @@ function buildDevToken(surface, isWordLike, lang) {
     return token;
 }
 
+function tokenizeTextDev(text, lang) {
+    if (!text || typeof text !== 'string') return [];
+    const segmenter = segmenters[lang];
+    let pinyinList = null;
+    if (lang === 'zh') {
+        try {
+            pinyinList = pinyin(text, { toneType: 'symbol', type: 'all' });
+        } catch (e) {}
+    }
+
+    if (segmenter) {
+        const segs = [...segmenter.segment(text)];
+        return segs
+            .filter(s => s.isWordLike || s.segment.trim())
+            .map(s => {
+                const token = buildDevToken(s.segment, s.isWordLike, lang);
+                if (token.isPunctuation) return token;
+
+                if (lang === 'zh' && pinyinList && pinyinList.length >= s.index + s.segment.length) {
+                    const slice = pinyinList.slice(s.index, s.index + s.segment.length);
+                    const py = slice.map(item => item.pinyin || item.origin).filter(Boolean).join(' ');
+                    if (py && py !== token.surface) {
+                        token.pinyin = py;
+                    }
+                    if (slice.length > 0 && slice.some(item => item.pinyin)) {
+                        token.rubyParts = slice.map(item => ({
+                            text: item.origin,
+                            reading: item.pinyin || undefined
+                        }));
+                    }
+                } else if (lang === 'ko') {
+                    const detached = detachKoreanParticle(token.surface);
+                    if (detached) {
+                        token.baseForm = detached.stem;
+                        token.particle = detached.particle;
+                    }
+                }
+
+                return token;
+            });
+    }
+
+    return text.split(/\s+/).filter(Boolean).map(word => buildDevToken(word, true, lang));
+}
+
 /**
  * POST /api/tokenize-batch/:lang
  * Batch tokenization for subtitles in local dev
@@ -2555,18 +2682,7 @@ app.post('/api/tokenize-batch/:lang', (req, res) => {
     }
 
     try {
-        const segmenter = segmenters[lang];
-        const tokens = texts.map(text => {
-            if (!text || typeof text !== 'string') return [];
-            if (segmenter) {
-                const segs = [...segmenter.segment(text)];
-                return segs
-                    .filter(s => s.isWordLike || s.segment.trim())
-                    .map(s => buildDevToken(s.segment, s.isWordLike, lang));
-            }
-            return text.split(/\s+/).filter(Boolean).map(word => buildDevToken(word, true, lang));
-        });
-
+        const tokens = texts.map(text => tokenizeTextDev(text, lang));
         res.json({ tokens });
     } catch (error) {
         console.error('[Tokenize Batch] Error:', error.message);
@@ -2587,16 +2703,7 @@ app.post('/api/tokenize/:lang', (req, res) => {
     }
 
     try {
-        const segmenter = segmenters[lang];
-        if (segmenter) {
-            const segments = [...segmenter.segment(text)];
-            const tokens = segments
-                .filter(seg => seg.isWordLike || seg.segment.trim())
-                .map(seg => buildDevToken(seg.segment, seg.isWordLike, lang));
-            return res.json({ tokens });
-        }
-
-        const tokens = text.split(/\s+/).filter(Boolean).map(word => buildDevToken(word, true, lang));
+        const tokens = tokenizeTextDev(text, lang);
         res.json({ tokens });
     } catch (error) {
         console.error(`[Tokenize ${lang}] Error:`, error.message);

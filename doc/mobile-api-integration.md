@@ -236,7 +236,7 @@ Fetches pre-cached transcripts from Cloudflare R2 (`transcripts/{videoId}/{lang}
 1. **Initial Submission:** Call `POST /api/transcript` with `{ videoId, lang, preferAI: true, turnstileToken, duration }`. If accepted, backend deducts 1–4 diamonds (based on length) and returns `{ status: "processing", resultUrl }`.
 2. **Foreground Polling Loop:** Poll `POST /api/transcript` every 2.5–3 seconds with `{ videoId, lang, resultUrl }` until `success: true` or 60s timeout.
 3. **Edge Auto-Resumption (Lifecycle Safety):**
-   - If the mobile app is paused, minimized, or terminated by OS during transcription, the active job remains safely registered in Cloudflare D1 (`pending_jobs`).
+   - If the mobile app is paused, minimized, or terminated by OS during transcription, the active job remains safely registered in Cloudflare D1 (`ai_transcription_jobs`).
    - On app reopen or video reload, simply invoke the normal `POST /api/transcript` with `{ videoId, lang }` (without `preferAI: true` and without re-charging diamonds!).
    - Step 2 on the Edge automatically intercepts the active job and returns `{ status: "processing", resultUrl }`, allowing the mobile client to seamlessly resume polling without double-spending diamond credits!
 

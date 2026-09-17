@@ -10,7 +10,7 @@ import { VocabularyService } from '../../vocabulary';
 import { SubtitleService, YoutubeService } from '../../video';
 import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { TranslationService } from '../../../services';
-import { Token, DictionaryEntry, SupportedLearningLanguage } from '../../../models';
+import { Token, DictionaryEntry, SupportedLearningLanguage, WordLevel } from '../../../models';
 
 @Component({
   selector: 'app-word-popup',
@@ -40,7 +40,9 @@ export class WordPopupComponent implements OnDestroy {
   isVisible = signal(false);
   readonly isSaved = computed(() => {
     const word = this.selectedWord();
-    return word ? this.vocab.hasWord(word.surface) : false;
+    return word
+      ? (this.vocab.hasWord(word.surface) || (word.baseForm ? this.vocab.hasWord(word.baseForm) : false))
+      : false;
   });
 
   readonly isPlayingAudio = computed(() => {
@@ -92,7 +94,9 @@ export class WordPopupComponent implements OnDestroy {
   currentLevel = computed(() => {
     const word = this.selectedWord();
     if (!word) return 'new';
-    return this.vocab.getWordLevel(word.surface) || 'new';
+    return this.vocab.getWordLevel(word.surface)
+      || (word.baseForm ? this.vocab.getWordLevel(word.baseForm) : null)
+      || 'new';
   });
 
   // Translate loading state
@@ -121,10 +125,12 @@ export class WordPopupComponent implements OnDestroy {
         this.translationErrors.set(new Set());
         this.lookupError.set(null);
         untracked(() => {
-          this.lookupWord(word.surface);
+          const primaryWord = (word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface;
+          const fallbackWord = (primaryWord.toLowerCase() !== word.surface.toLowerCase()) ? word.surface : undefined;
+          this.lookupWord(primaryWord, fallbackWord);
           if (isPlatformBrowser(this.platformId)) {
             const lang = (this.subtitles.loadedLanguage() || this.settings.settings().language) as SupportedLearningLanguage;
-            void this.audio.preloadWord(word.surface, lang);
+            void this.audio.preloadWord(primaryWord, lang);
           }
         });
       } else {
@@ -141,7 +147,7 @@ export class WordPopupComponent implements OnDestroy {
     this.translationSubscriptions.clear();
   }
 
-  lookupWord(word: string): void {
+  lookupWord(word: string, fallbackWord?: string): void {
     // Cancel any in-flight lookup
     this.lookupSubscription?.unsubscribe();
     this.lookupError.set(null);
@@ -149,9 +155,17 @@ export class WordPopupComponent implements OnDestroy {
     const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
     this.lookupSubscription = this.dictionary.lookup(word, lang).subscribe({
       next: result => {
+        if (!result && fallbackWord && fallbackWord !== word) {
+          this.lookupWord(fallbackWord);
+          return;
+        }
         this.entry.set(result);
       },
       error: () => {
+        if (fallbackWord && fallbackWord !== word) {
+          this.lookupWord(fallbackWord);
+          return;
+        }
         this.lookupError.set('LOOKUP_FAILED');
         this.entry.set(null);
       }
@@ -161,7 +175,9 @@ export class WordPopupComponent implements OnDestroy {
   retryLookup(): void {
     const word = this.selectedWord();
     if (word) {
-      this.lookupWord(word.surface);
+      const primaryWord = (word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface;
+      const fallbackWord = (primaryWord.toLowerCase() !== word.surface.toLowerCase()) ? word.surface : undefined;
+      this.lookupWord(primaryWord, fallbackWord);
     }
   }
 
@@ -178,7 +194,8 @@ export class WordPopupComponent implements OnDestroy {
     if (entryData) {
       this.vocab.addFromDictionary(entryData, lang, sentence, videoId, timestamp);
     } else {
-      this.vocab.addWord(word.surface, '', lang, word.reading, word.pinyin, word.romanization, sentence, undefined, videoId, timestamp);
+      const saveSurface = (word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface;
+      this.vocab.addWord(saveSurface, '', lang, word.reading, word.pinyin, word.romanization, sentence, undefined, videoId, timestamp);
     }
   }
 
@@ -189,13 +206,13 @@ export class WordPopupComponent implements OnDestroy {
 
   onLevelSelected(value: string): void {
     const word = this.selectedWord();
-    if (!word) return;
-
-    const level = value as 'new' | 'learning' | 'known' | 'ignored';
-    const item = this.vocab.findWord(word.surface);
-
-    if (item) {
-      this.vocab.updateLevel(item.id, level);
+    if (word) {
+      const targetWord = (word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface;
+      const level = value as WordLevel;
+      this.vocab.setWordLevel(targetWord, level);
+      if (targetWord !== word.surface) {
+        this.vocab.setWordLevel(word.surface, level);
+      }
     }
     this.levelPickerOpen.set(false);
   }

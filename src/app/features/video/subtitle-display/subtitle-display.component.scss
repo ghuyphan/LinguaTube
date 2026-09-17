@@ -590,39 +590,46 @@
    ============================================ */
 .ai-spinner {
     position: relative;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.1);
-    border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25);
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
 .ai-spinner-ring {
     position: absolute;
-    inset: -3px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    border: 2px solid transparent;
-    border-top-color: var(--accent-primary);
-    border-right-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.35);
-    animation: spin 1s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 90deg,
+            var(--accent-primary) 180deg,
+            transparent 270deg,
+            transparent 360deg);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 1.5px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #fff calc(100% - 1.5px));
+    animation: spin 1.2s linear infinite;
+    animation-play-state: paused;
 }
 
-.ai-sparkles,
-.ai-waveform {
+.state--generating .ai-spinner-ring {
+    animation-play-state: running;
+}
+
+.ai-icon {
     color: var(--accent-primary);
-    width: 16px !important;
-    height: 16px !important;
-    opacity: 0.95;
+    opacity: 0.85;
+    width: 15px !important;
+    height: 15px !important;
 }
 
 .ai-text {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
     min-width: 0;
 }
 
@@ -637,34 +644,6 @@
     font-size: 0.8125rem;
     color: var(--text-muted);
     line-height: 1.35;
-}
-
-.ai-progress-track {
-    width: 120px;
-    height: 2px;
-    border-radius: 9999px;
-    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.18);
-    overflow: hidden;
-    margin-top: 4px;
-    position: relative;
-}
-
-.ai-progress-bar {
-    width: 35%;
-    height: 100%;
-    background: var(--accent-primary);
-    border-radius: 9999px;
-    position: absolute;
-    animation: aiProgressSlide 1.8s ease-in-out infinite;
-}
-
-@keyframes aiProgressSlide {
-    0% {
-        left: -35%;
-    }
-    100% {
-        left: 100%;
-    }
 }
 
 /* ============================================
@@ -2184,18 +2163,13 @@ ruby rt {
     }
 
     .ai-spinner {
-        width: 2rem;
-        height: 2rem;
+        width: 1.75rem;
+        height: 1.75rem;
     }
 
-    .ai-progress-track {
-        width: 96px;
-    }
-
-    .ai-sparkles,
-    .ai-waveform {
-        width: 14px !important;
-        height: 14px !important;
+    .ai-icon {
+        width: 12px !important;
+        height: 12px !important;
     }
 
     .loading-spinner {

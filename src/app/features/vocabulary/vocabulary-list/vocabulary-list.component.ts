@@ -278,6 +278,7 @@ export class VocabularyListComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.audio.stopAudio();
     if (this.searchTimeout) {
       clearTimeout(this.searchTimeout);
       this.searchTimeout = null;

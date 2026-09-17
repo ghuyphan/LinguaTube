@@ -856,7 +856,10 @@
     "howCadenceTitle": "自然对话语速",
     "howCadenceDesc": "基于音频真实发音节奏计算的语速水平。",
     "immersionTipTitle": "学习提示",
-    "immersionTipPace": "若语速较快，可将倍速调为 0.85x 或开启双语字幕辅助理解。",
+    "immersionTipPace": "若语速较快，可将倍速调为 0.75x 或开启双语字幕辅助理解。轻触单词即可随时查词。",
+    "immersionTipFast": "检测到母语者较快语速。可将倍速调为 0.75x，或开启自动暂停（P）逐句消化吸收。",
+    "immersionTipAdvanced": "包含较多进阶语法与丰富词汇。点击生词即可快速查词或存入词卡库，亦可开启双语字幕（D）对照。",
+    "immersionTipBeginner": "语速清晰易懂！建议尝试关闭双语字幕挑战纯听力，遇到生词轻触即可保存到词卡库。",
     "confidenceScore": "评估可信度"
   },
   "gamification": {

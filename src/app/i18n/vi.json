@@ -856,7 +856,10 @@
     "howCadenceTitle": "Tốc độ nói tự nhiên",
     "howCadenceDesc": "Tốc độ nói được phân tích trực tiếp từ lời thoại trong video.",
     "immersionTipTitle": "Mẹo học tập",
-    "immersionTipPace": "Nếu thấy nói quá nhanh, hãy thử giảm tốc độ phát xuống 0.85x hoặc bật phụ đề song ngữ.",
+    "immersionTipPace": "Nếu thấy nói quá nhanh, hãy thử giảm tốc độ phát xuống 0.75x hoặc bật phụ đề song ngữ. Chạm từ bất kỳ để tra nghĩa.",
+    "immersionTipFast": "Tốc độ nói nhanh của người bản xứ. Hãy thử giảm tốc độ phát xuống 0.75x hoặc bật Tự động tạm dừng (P) để theo kịp lời thoại.",
+    "immersionTipAdvanced": "Ngữ pháp phức tạp & từ vựng phong phú. Chạm vào bất kỳ từ nào để tra từ điển hoặc bật Phụ đề song ngữ (D).",
+    "immersionTipBeginner": "Lời thoại rõ ràng, dễ tiếp cận! Thử tắt phụ đề song ngữ để luyện phản xạ nghe và chạm từ mới để lưu vào bộ thẻ flashcard.",
     "confidenceScore": "Độ tin cậy"
   },
   "gamification": {

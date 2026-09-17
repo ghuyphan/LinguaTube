@@ -7,7 +7,8 @@ import {
     isPunctuation,
     hasKanji,
     katakanaToHiragana,
-    segmentJapaneseRuby
+    segmentJapaneseRuby,
+    detachKoreanParticle
 } from '../functions-src/utils/tokenizer.js';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../functions-src/utils/japanese-romaji.js';
 
@@ -176,6 +177,90 @@ test('Tokenizer [JA]: segmentJapaneseRuby segments okurigana from kanji stems', 
     assert.deepEqual(nihongo, [
         { text: '日本語', reading: 'にほんご' }
     ]);
+
+    // 思い出す -> 思(おも) + い + 出(だ) + す (interior okurigana)
+    const omoidasu = segmentJapaneseRuby('思い出す', 'おもいだす');
+    assert.deepEqual(omoidasu, [
+        { text: '思', reading: 'おも' },
+        { text: 'い' },
+        { text: '出', reading: 'だ' },
+        { text: 'す' }
+    ]);
+
+    // 行き交う -> 行(い) + き + 交(か) + う
+    const ikikau = segmentJapaneseRuby('行き交う', 'いきかう');
+    assert.deepEqual(ikikau, [
+        { text: '行', reading: 'い' },
+        { text: 'き' },
+        { text: '交', reading: 'か' },
+        { text: 'う' }
+    ]);
+
+    // お茶 -> お + 茶(ちゃ) (leading prefix)
+    const ocha = segmentJapaneseRuby('お茶', 'おちゃ');
+    assert.deepEqual(ocha, [
+        { text: 'お' },
+        { text: '茶', reading: 'ちゃ' }
+    ]);
+});
+
+test('Tokenizer [JA]: Romaji correctly converts ヴ (vu/va/vi/ve/vo) digraphs', () => {
+    assert.equal(getJapaneseRomaji('ゔぁいおりん', 'ヴァイオリン'), 'vaiorin');
+    assert.equal(getJapaneseRomaji('ゔぃーなす', 'ヴィーナス'), 'viinasu');
+});
+
+test('Tokenizer [ZH]: Chinese contextual Pinyin and character-level rubyParts', async () => {
+    const text = '跑得快，银行行不行？';
+    const tokens = await tokenizeKoreanChinese(text, 'zh');
+
+    // Verify 银行 is recognized with háng
+    const yinhang = tokens.find(t => t.surface === '银行');
+    assert.ok(yinhang);
+    assert.equal(yinhang.pinyin, 'yín háng');
+    assert.deepEqual(yinhang.rubyParts, [
+        { text: '银', reading: 'yín' },
+        { text: '行', reading: 'háng' }
+    ]);
+});
+
+test('Tokenizer [KO]: Korean particle detachment attaches baseForm and particle', async () => {
+    assert.deepEqual(detachKoreanParticle('한국어를'), { stem: '한국어', particle: '를' });
+    assert.deepEqual(detachKoreanParticle('나는'), { stem: '나', particle: '는' });
+    assert.deepEqual(detachKoreanParticle('선생님께서는'), { stem: '선생님', particle: '께서는' });
+    assert.deepEqual(detachKoreanParticle('집에서'), { stem: '집', particle: '에서' });
+    assert.deepEqual(detachKoreanParticle('책을'), { stem: '책', particle: '을' });
+    assert.equal(detachKoreanParticle('아이'), null); // Should not strip regular root
+
+    const text = '나는 한국어를 배웁니다.';
+    const tokens = await tokenizeKoreanChinese(text, 'ko');
+
+    const hangugeo = tokens.find(t => t.surface === '한국어를');
+    assert.ok(hangugeo);
+    assert.equal(hangugeo.baseForm, '한국어');
+    assert.equal(hangugeo.particle, '를');
+
+    const naneun = tokens.find(t => t.surface === '나는');
+    assert.ok(naneun);
+    assert.equal(naneun.baseForm, '나');
+    assert.equal(naneun.particle, '는');
+});
+
+test('Tokenizer [EN]: Adjective lemmatization and hyphenated compound synchronization', async () => {
+    const text = 'This is a state-of-the-art system with better results.';
+    const tokens = await tokenizeEnglish(text);
+
+    const betterToken = tokens.find(t => t.surface === 'better');
+    assert.ok(betterToken);
+    assert.equal(betterToken.baseForm, 'good');
+
+    const resultsToken = tokens.find(t => t.surface === 'results');
+    assert.ok(resultsToken);
+    assert.equal(resultsToken.baseForm, 'result');
+    assert.equal(resultsToken.partOfSpeech, 'Noun');
+
+    const systemToken = tokens.find(t => t.surface === 'system');
+    assert.ok(systemToken);
+    assert.equal(systemToken.partOfSpeech, 'Noun');
 });
 
 // ============================================================================
