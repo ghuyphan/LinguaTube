@@ -293,7 +293,7 @@ body::-webkit-scrollbar {
 }
 
 .text-accent {
-    color: var(--accent-primary);
+    color: var(--accent-primary-text, var(--accent-primary));
 }
 
 .text-success {
@@ -449,14 +449,15 @@ body::-webkit-scrollbar {
     right: 0;
     width: 100%;
     height: var(--bottom-nav-total-height);
-    background: rgba(var(--bg-card-rgb), 0.88);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: var(--bg-surface);
     padding: 0;
     padding-bottom: var(--bottom-nav-safe-area);
     z-index: var(--z-nav);
-    border-top: 1px solid var(--border-color);
-    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04), 0 -4px 16px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04), 0 -4px 16px rgba(0, 0, 0, 0.03);
+
+    [data-theme="dark"] & {
+        box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.28), 0 -4px 16px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .bottom-nav__items {
@@ -475,7 +476,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     gap: 4px;
-    padding: 4px 0;
+    padding: 10px 0 14px 0;
     margin: 0;
     background: none;
     border: none;
@@ -492,7 +493,7 @@ body::-webkit-scrollbar {
         font-size: 0.75rem;
         line-height: 1.2;
         font-weight: 500;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.015em;
         color: var(--text-muted);
         transition: color var(--transition-fast), font-weight var(--transition-fast);
         white-space: nowrap;
@@ -501,35 +502,33 @@ body::-webkit-scrollbar {
         max-width: 100%;
     }
 
-    /* Material 3 Active Indicator Pill */
+    /* Material 3 Active Indicator Pill (64dp × 32dp capsule) */
     .bottom-nav__icon-wrap {
         position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 56px;
+        width: 64px;
         height: 32px;
         border-radius: var(--border-radius-pill, 9999px);
-        color: var(--text-muted);
-        transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1),
-                    color 0.2s cubic-bezier(0.2, 0, 0, 1);
+        color: var(--text-secondary);
+        transition: color 0.2s cubic-bezier(0.2, 0, 0, 1);
 
         @media (max-width: 360px) {
-            width: 44px;
-            height: 30px;
+            width: 52px;
         }
 
-        /* M3 Pill Blooming State Layer */
+        /* M3 Active Container Pill Layer */
         &::before {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: var(--border-radius-pill, 9999px);
-            background: rgba(var(--accent-primary-rgb), 0.16);
-            transform: scaleX(0.32) scaleY(0.7);
+            background: rgba(var(--accent-primary-rgb), 0.14);
+            transform: scaleX(0.4);
             opacity: 0;
-            transition: transform 0.3s cubic-bezier(0.05, 0.7, 0.1, 1),
-                        opacity 0.2s cubic-bezier(0.05, 0.7, 0.1, 1),
+            transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+                        opacity 0.2s cubic-bezier(0.2, 0, 0, 1),
                         background-color 0.2s ease;
             pointer-events: none;
             z-index: 0;
@@ -538,17 +537,17 @@ body::-webkit-scrollbar {
         .bottom-nav__dot {
             position: absolute;
             top: 4px;
-            right: 14px;
+            right: 18px;
             width: 6px;
             height: 6px;
             border-radius: 50%;
             background: var(--accent-primary, #f45b74);
-            box-shadow: 0 0 0 1.5px var(--bg-surface);
+            box-shadow: 0 0 0 2px var(--bg-surface);
             pointer-events: none;
             z-index: 2;
 
             @media (max-width: 360px) {
-                right: 8px;
+                right: 12px;
             }
         }
     }
@@ -559,7 +558,7 @@ body::-webkit-scrollbar {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.3s cubic-bezier(0.05, 0.7, 0.1, 1),
+        transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
                     color 0.2s cubic-bezier(0.2, 0, 0, 1);
     }
 
@@ -567,7 +566,7 @@ body::-webkit-scrollbar {
         &:hover:not(.active) {
             .bottom-nav__icon-wrap::before {
                 opacity: 0.5;
-                transform: scaleX(0.8) scaleY(0.85);
+                transform: scaleX(0.85);
                 background: rgba(var(--accent-primary-rgb), 0.08);
             }
             .bottom-nav__icon-wrap {
@@ -579,41 +578,41 @@ body::-webkit-scrollbar {
         }
     }
 
-    /* Touch feedback focused on the icon pill */
-    &:active {
-        .bottom-nav__icon-wrap {
-            transform: scale(0.92);
+    /* M3 Touch State Layer */
+    &:active:not(.active) {
+        .bottom-nav__icon-wrap::before {
+            opacity: 0.6;
+            transform: scaleX(0.9);
+            background: rgba(var(--accent-primary-rgb), 0.12);
             transition-duration: 0.1s;
         }
     }
 
-    /* Active Tab (Material 3 State) */
+    /* Active Tab (Material 3 State: high-contrast label + accent container pill + filled icon) */
     &.active {
-        color: var(--accent-primary);
-
         .bottom-nav__icon-wrap {
             color: var(--accent-primary);
 
             &::before {
-                transform: scale(1);
+                transform: scaleX(1);
                 opacity: 1;
                 background: rgba(var(--accent-primary-rgb), 0.16);
             }
 
             app-icon {
                 color: var(--accent-primary);
-                transform: scale(1.04);
+                transform: scale(1.02);
             }
         }
 
         span {
             font-weight: 700;
-            color: var(--accent-primary);
+            color: var(--text-primary);
         }
     }
 }
 
-/* Center Action Button (Elevated Voca Squircle CTA) */
+/* Center Action Button (M3 Elevated Action Container) */
 .bottom-nav__item--create {
     display: flex;
     align-items: center;
@@ -631,16 +630,16 @@ body::-webkit-scrollbar {
 
     .create-btn-core {
         position: relative;
-        width: 46px;
-        height: 32px;
-        border-radius: 10px;
+        width: 52px;
+        height: 38px;
+        border-radius: 14px;
         background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-text, #e04848) 100%);
         color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 3px 12px rgba(var(--accent-primary-rgb), 0.38);
-        transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s ease;
+        box-shadow: 0 3px 10px rgba(var(--accent-primary-rgb), 0.35), 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease;
 
         app-icon {
             color: #ffffff;
@@ -649,20 +648,20 @@ body::-webkit-scrollbar {
             justify-content: center;
 
             .icon {
-                stroke-width: 2.4;
+                stroke-width: 2.5;
             }
         }
     }
 
     &:active .create-btn-core {
-        transform: scale(0.92);
-        box-shadow: 0 1px 6px rgba(var(--accent-primary-rgb), 0.25);
+        transform: scale(0.95);
+        box-shadow: 0 1px 4px rgba(var(--accent-primary-rgb), 0.25);
     }
 
     @media (hover: hover) {
         &:hover .create-btn-core {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 16px rgba(var(--accent-primary-rgb), 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(var(--accent-primary-rgb), 0.45);
         }
     }
 }

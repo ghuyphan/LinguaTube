@@ -1,7 +1,8 @@
-import { Injectable, signal, inject, NgZone } from '@angular/core';
+import { Injectable, signal, inject, NgZone, DestroyRef } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Subject, Subscription } from 'rxjs';
+import { Subject, Subscription, fromEvent } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActiveAiJob, SubtitleCue, TranscriptResponse } from '../../models';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
 import { ToastService } from './toast.service';
@@ -19,6 +20,7 @@ export class AiJobManagerService {
   private toastService = inject(ToastService);
   private cacheService = inject(TranscriptCacheService);
   private ngZone = inject(NgZone);
+  private destroyRef = inject(DestroyRef);
 
   /**
    * Reactive signal dictionary of currently active background AI transcription jobs
@@ -269,7 +271,8 @@ export class AiJobManagerService {
       id: `ai_${job.videoId}_${idx}`,
       startTime: seg.start,
       endTime: Math.max(seg.start + 0.5, seg.start + seg.duration),
-      text: seg.text
+      text: seg.text,
+      tokens: seg.tokens && seg.tokens.length > 0 ? seg.tokens : undefined
     }));
 
     const resolvedLang = response.language || job.language;
@@ -311,7 +314,7 @@ export class AiJobManagerService {
       const langSuffix = isMismatch ? ` (${resolvedLang.toUpperCase()})` : '';
       this.toastService.show(`AI Subtitles ready${langSuffix} for ${titleSnippet}!`, {
         type: 'success',
-        icon: 'sparkles',
+        icon: 'captions-ai',
         duration: 6000,
         action: {
           label: 'Watch',
@@ -347,6 +350,12 @@ export class AiJobManagerService {
       errorCode,
       error: friendlyMessage
     });
+
+    const currentVideoId = this.getCurrentVideoId();
+    if (!currentVideoId || currentVideoId !== job.videoId) {
+      const titleSnippet = job.title ? `"${job.title.slice(0, 32)}..."` : 'video';
+      this.toastService.error(`AI transcription failed for ${titleSnippet}: ${friendlyMessage}`);
+    }
   }
 
   /**
@@ -357,23 +366,29 @@ export class AiJobManagerService {
    */
   private setupLifecycleHooks(): void {
     if (typeof document !== 'undefined') {
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-          this.ngZone.run(() => this.reconcileActiveJobs());
-        }
-      });
+      fromEvent(document, 'visibilitychange')
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          if (document.visibilityState === 'visible') {
+            this.ngZone.run(() => this.reconcileActiveJobs());
+          }
+        });
     }
 
     if (typeof window !== 'undefined') {
-      window.addEventListener('online', () => {
-        this.isOffline = false;
-        this.ngZone.run(() => this.reconcileActiveJobs());
-      });
+      fromEvent(window, 'online')
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          this.isOffline = false;
+          this.ngZone.run(() => this.reconcileActiveJobs());
+        });
 
-      window.addEventListener('offline', () => {
-        this.isOffline = true;
-        this.pauseAllTimers();
-      });
+      fromEvent(window, 'offline')
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          this.isOffline = true;
+          this.pauseAllTimers();
+        });
     }
   }
 

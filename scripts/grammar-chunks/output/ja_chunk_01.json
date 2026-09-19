@@ -1,6 +1,6 @@
 {
   "vi": {
-    "ja_A_0": {
+    "ja_n5_A_0": {
       "title": "A が いちばん～ (A ga ichiban～)",
       "shortExplanation": "Biểu thị mức độ cao nhất (so sánh nhất); 'nhất', '...nhất trong số'.",
       "longExplanation": "Mẫu ngữ pháp 'A が いちばん～' được dùng để diễn tả cấp so sánh nhất hoặc mức độ cao nhất của một tính chất, đặc điểm trong một phạm vi xác định. Cấu trúc này thường kết hợp với tính từ hoặc động từ để nhấn mạnh A là đối tượng vượt trội nhất so với các đối tượng còn lại.",
@@ -20,7 +20,7 @@
         }
       ]
     },
-    "ja_AけれどもB_1": {
+    "ja_n5_AけれどもB_1": {
       "title": "A。けれども、～B。(A. Keredomo,~ B.)",
       "shortExplanation": "Dùng để biểu thị sự tương phản giữa hai câu hoặc mệnh đề; 'nhưng', 'tuy nhiên'.",
       "longExplanation": "Mẫu câu 'A。けれども、～B。' dùng để diễn tả mối quan hệ đối lập hoặc tương phản giữa sự việc A và sự việc B. 'けれども' là liên từ đặt ở đầu câu sau nhằm chỉ ra rằng nội dung câu B đi ngược lại với dự đoán hoặc trái ngược với thực tế được nêu ở câu A.",
@@ -40,7 +40,7 @@
         }
       ]
     },
-    "ja_AしかしB_2": {
+    "ja_n5_AしかしB_2": {
       "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
       "shortExplanation": "Biểu thị sự đối lập, tương phản rõ rệt giữa hai câu; 'tuy nhiên', 'nhưng'.",
       "longExplanation": "Mẫu câu 'A。しかし、～B。' sử dụng liên từ 'しかし' đặt ở đầu câu thứ hai để diễn tả sự đối lập hoặc chuyển ý mạnh mẽ so với câu thứ nhất. Mẫu này mang sắc thái trang trọng, lịch sự, thường xuất hiện trong văn viết hoặc các bài phát biểu chỉn chu.",
@@ -60,7 +60,7 @@
         }
       ]
     },
-    "ja_AじゃB_3": {
+    "ja_n5_AじゃB_3": {
       "title": "A。じゃ、～B。(A. Ja, ~B.)",
       "shortExplanation": "Đưa ra quyết định, gợi ý hoặc chuyển ý dựa trên tình huống trước đó; 'vậy thì', 'thế thì'.",
       "longExplanation": "Mẫu câu 'A。じゃ、～B。' dùng phổ biến trong khẩu ngữ thân mật hàng ngày để đưa ra phán đoán, quyết định hoặc đề xuất tiếp theo dựa trên bối cảnh đã nêu ở câu A. 'じゃ' là dạng nói ngắn gọn, thân mật của 'では' hoặc 'それじゃ'.",
@@ -80,7 +80,7 @@
         }
       ]
     },
-    "ja_AそれじゃB_4": {
+    "ja_n5_AそれじゃB_4": {
       "title": "A。それじゃ、～B。(A. Soreja,~B.)",
       "shortExplanation": "Nối hai câu để đưa ra phản ứng hoặc đề xuất tương ứng với tình huống; 'thế thì', 'vậy thì trong trường hợp đó'.",
       "longExplanation": "Mẫu câu 'A。それじゃ、～B。' dùng để liên kết hai câu hoặc hai ý, trong đó câu A nêu ra bối cảnh, tiền đề, còn câu B thể hiện hành động tiếp nối hoặc phản ứng tương ứng. 'それじゃ' là cách nói rút gọn tự nhiên trong hội thoại của 'それでは'.",
@@ -100,7 +100,7 @@
         }
       ]
     },
-    "ja_AそれではB_5": {
+    "ja_n5_AそれではB_5": {
       "title": "A。それでは、～B。(A. Soredewa,~B.)",
       "shortExplanation": "Chuyển ý hoặc đưa ra hành động tiếp theo dựa trên tình huống trước đó; 'vậy thì', 'nếu vậy thì'.",
       "longExplanation": "Mẫu câu 'A。それでは、～B。' sử dụng liên từ lịch sự 'それでは' để chuyển tiếp hoặc dẫn dắt sang một hành động, quyết định mới dựa trên thông tin đã nêu ở câu A. Mẫu này mang sắc thái trang nhã, lịch thiệp hơn so với 'じゃ' hay 'それじゃ'.",
@@ -120,7 +120,7 @@
         }
       ]
     },
-    "ja_A_6": {
+    "ja_n5_A_6": {
       "title": "A では、～B (A dewa, ~B)",
       "shortExplanation": "Giới hạn phạm vi hoặc chủ đề để đưa ra nhận xét, so sánh; 'trong số A thì...', 'xét về A thì...'.",
       "longExplanation": "Mẫu ngữ pháp 'A では、～B' dùng để nêu ra một phạm vi, thể loại hoặc lĩnh vực A (đóng vai trò là chủ đề bàn luận), sau đó đưa ra phán đoán, sở thích hoặc sự so sánh nổi bật ở mệnh đề B ('Trong số A thì...', 'Xét về A thì...').",
@@ -140,7 +140,7 @@
         }
       ]
     },
-    "ja_AでもB_7": {
+    "ja_n5_AでもB_7": {
       "title": "A。でも、～B。(A. Demo, ~B)",
       "shortExplanation": "Diễn tả sự tương phản hoặc nội dung trái ngược giữa hai câu; 'nhưng', 'tuy nhiên'.",
       "longExplanation": "Mẫu câu 'A。でも、～B。' dùng liên từ 'でも' ở đầu câu thứ hai để diễn tả sự đối lập hoặc diễn biến bất ngờ so với những gì được nói ở câu A. Đây là liên từ khẩu ngữ rất thông dụng và tự nhiên trong đời sống hàng ngày.",
@@ -160,7 +160,7 @@
         }
       ]
     },
-    "ja_Aと_8": {
+    "ja_n5_Aと_8": {
       "title": "Aと Bと どちら～ (A to B to dochira~)",
       "shortExplanation": "Hỏi lựa chọn hoặc so sánh giữa hai đối tượng A và B; 'giữa A và B thì bên nào/cái nào... hơn?'.",
       "longExplanation": "Mẫu ngữ pháp 'Aと Bと どちら～' dùng để so sánh hai sự vật, đối tượng hoặc phương án (A và B), sau đó hỏi đối phương xem cái nào hơn, thích cái nào hơn hoặc lựa chọn bên nào. 'どちら' là đại từ nghi vấn lịch sự mang nghĩa 'bên nào / cái nào'.",
@@ -180,7 +180,7 @@
         }
       ]
     },
-    "ja_AとBと_9": {
+    "ja_n5_AとBと_9": {
       "title": "AとBと どっち〜 (A to B to docchi〜)",
       "shortExplanation": "Dùng trong giao tiếp thân mật để hỏi lựa chọn giữa hai đối tượng A và B; 'A hay B', 'cái nào hơn?'.",
       "longExplanation": "Mẫu câu 'AとBと どっち〜' là cách nói khẩu ngữ thân mật của 'AとBとどちら', thường dùng giữa bạn bè, người thân để hỏi xem đối phương lựa chọn hoặc yêu thích phương án nào giữa hai đối tượng A và B. Mẫu này cũng có thể dùng ở dạng 'AかBか どっち〜'.",
@@ -200,7 +200,7 @@
         }
       ]
     },
-    "ja_A_10": {
+    "ja_n5_A_10": {
       "title": "A は B が〜 (A wa B ga〜)",
       "shortExplanation": "Nêu chủ đề A và miêu tả đặc điểm, thuộc tính hoặc khả năng B của đối tượng đó; 'A thì B...'.",
       "longExplanation": "Cấu trúc 'A は B が〜' là mẫu câu vị ngữ miêu tả đặc trưng cơ bản trong tiếng Nhật. Trợ từ 'は' đưa ra chủ đề lớn A của câu, còn trợ từ 'が' xác định đặc điểm, bộ phận, khả năng hoặc đối tượng tiếp nhận cảm xúc B, theo sau là tính từ hoặc động từ miêu tả tính chất đó.",
@@ -220,7 +220,7 @@
         }
       ]
     },
-    "ja_A_11": {
+    "ja_n5_A_11": {
       "title": "A は B より～ (A wa B yori～)",
       "shortExplanation": "So sánh hơn giữa hai đối tượng; 'A ... hơn B'.",
       "longExplanation": "Mẫu ngữ pháp 'A は B より～' được dùng để so sánh hai sự vật, hiện tượng hoặc người (A và B). Trong đó, A là chủ thể được đánh giá có mức độ tính chất cao hơn so với tiêu chuẩn so sánh B đi kèm với trợ từ 'より'. Theo sau thường là một tính từ biểu thị phẩm chất so sánh.",
@@ -240,7 +240,7 @@
         }
       ]
     },
-    "ja_A_12": {
+    "ja_n5_A_12": {
       "title": "A より B のほうが～ (A yori B no hou ga ～)",
       "shortExplanation": "So sánh giữa hai đối tượng, nhấn mạnh phía B hơn phía A; 'so với A thì B ... hơn'.",
       "longExplanation": "Mẫu ngữ pháp 'A より B のほうが～' dùng để so sánh hai sự vật hoặc phương án. 'A より' đóng vai trò là tiêu chuẩn so sánh ('so với A'), còn 'B のほうが' nhấn mạnh rằng chính phía B mới là bên có tính chất vượt trội hơn. Cấu trúc kết hợp được với cả tính từ đuôi い và tính từ đuôi な.",
@@ -260,7 +260,7 @@
         }
       ]
     },
-    "ja_いAdjective_13": {
+    "ja_n5_いAdjective_13": {
       "title": "Tính từ đuôi い + く + Động từ (i-Keiyoushi ku + Doushi)",
       "shortExplanation": "Biến tính từ đuôi い thành phó từ để bổ nghĩa cho động từ đứng sau; 'làm gì một cách...'.",
       "longExplanation": "Cấu trúc biến đổi tính từ đuôi い sang dạng liên dụng bằng cách bỏ đuôi 'い' và thêm 'く'. Hình thức này đóng vai trò như một phó từ để bổ nghĩa cho động từ đi liền sau đó, miêu tả trạng thái, cách thức hoặc mức độ diễn ra của hành động (tương tự như 'làm một cách nhanh chóng', 'ngon lành', v.v.).",
@@ -280,7 +280,7 @@
         }
       ]
     },
-    "ja_いAdjective_14": {
+    "ja_n5_いAdjective_14": {
       "title": "Tính từ đuôi い + くします (i-Keiyoushi ku shimasu)",
       "shortExplanation": "Biểu thị việc tác động có chủ ý để biến đổi trạng thái của đối tượng; 'làm cho... trở nên'.",
       "longExplanation": "Mẫu ngữ pháp kết hợp dạng liên dụng của tính từ đuôi い (bỏ 'い' thêm 'く') với động từ 'します' (làm). Cấu trúc này diễn tả việc tác động có chủ đích lên đối tượng nhằm làm cho đối tượng đó biến đổi sang trạng thái mới theo tính chất của tính từ. Khác với 'なります' (tự biến đổi tự nhiên), 'します' nhấn mạnh sự tác động từ con người.",
@@ -302,7 +302,7 @@
     }
   },
   "zh": {
-    "ja_A_0": {
+    "ja_n5_A_0": {
       "title": "A が いちばん～ (A ga ichiban～)",
       "shortExplanation": "表示在某个范围内处于最高程度（最高级）；'最……'、'居于首位'。",
       "longExplanation": "句型'A が いちばん～'用于在特定的范围或群体中表达最高程度或等级，相当于汉语中的'最……'。通常后接形容词或动词，通过与其他事物或人的比较，凸显出A在该性质或动作上程度最高。",
@@ -322,7 +322,7 @@
         }
       ]
     },
-    "ja_AけれどもB_1": {
+    "ja_n5_AけれどもB_1": {
       "title": "A。けれども、～B。(A. Keredomo,~ B.)",
       "shortExplanation": "用于表示前后两个句子之间的转折或对照；'但是'、'然而'。",
       "longExplanation": "句型'A。けれども、～B。'用于表达句子A与句子B之间的转折、对照或矛盾关系，相当于汉语中的'但是'、'可是'或'然而'。'けれども'作为接续词置于后句句首，引出与前句内容相反或出乎意料的陈述。",
@@ -342,7 +342,7 @@
         }
       ]
     },
-    "ja_AしかしB_2": {
+    "ja_n5_AしかしB_2": {
       "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
       "shortExplanation": "表示前后两句之间的鲜明对比或对立转折；'但是'、'然而'。",
       "longExplanation": "句型'A。然而、～B。'（A。しかし、～B。）通过在第二句句首使用接续词'しかし'，来表达后句内容与前句形成鲜明的对立或转折。相较于'でも'，'しかし'语气更为严肃、正式，广泛应用于书面语、正式演讲或郑重的对话中。",
@@ -362,7 +362,7 @@
         }
       ]
     },
-    "ja_AじゃB_3": {
+    "ja_n5_AじゃB_3": {
       "title": "A。じゃ、～B。(A. Ja, ~B.)",
       "shortExplanation": "根据前述情况做出决定、提议或转换话题；'那么'、'既然如此'。",
       "longExplanation": "句型'A。じゃ、～B。'常用于日常口语会话中，表示根据前句A提及的情况或信息，在后句B做出判断、决定、提议或采取后续行动，相当于汉语中的'那么'、'那'或'既然这样'。'じゃ'是接续词'では'或'それじゃ'的口语随和形式。",
@@ -382,7 +382,7 @@
         }
       ]
     },
-    "ja_AそれじゃB_4": {
+    "ja_n5_AそれじゃB_4": {
       "title": "A。それじゃ、～B。(A. Soreja,~B.)",
       "shortExplanation": "连接前后两句，根据前句情况提出相应对策或建议；'那么'、'既然那样'。",
       "longExplanation": "句型'A。それじゃ、～B。'用于连接两个句子，前句A陈述某种情境或前提，后句B则针对该情境提出相应的反应、对策或结论。'それじゃ'是'それでは'在日常口语对话中的简略形式，口吻自然亲切。",
@@ -402,7 +402,7 @@
         }
       ]
     },
-    "ja_AそれではB_5": {
+    "ja_n5_AそれではB_5": {
       "title": "A。それでは、～B。(A. Soredewa,~B.)",
       "shortExplanation": "承接前文情况引出后续行动、结论或转换；'那么'、'既然如此'。",
       "longExplanation": "句型'A。それでは、～B。'使用较郑重的接续词'それでは'将两句话顺畅连接。根据前句A提及的事实或情况，在后句B引出相应的判断、后续行动或提议。相比于日常口语中的'じゃ'或'それじゃ'，'それでは'显得更为规范礼貌。",
@@ -422,7 +422,7 @@
         }
       ]
     },
-    "ja_A_6": {
+    "ja_n5_A_6": {
       "title": "A では、～B (A dewa, ~B)",
       "shortExplanation": "限定范围或话题并提出评价、比较；'在A中'、'就A而言'。",
       "longExplanation": "句型'A では、～B'将名词A设定为特定的话题、领域或比较范围，并在后半部分B中阐明在该范围内的最爱、突出特征或判断，相当于汉语中的'在A当中……'或'就A来说……'。",
@@ -442,7 +442,7 @@
         }
       ]
     },
-    "ja_AでもB_7": {
+    "ja_n5_AでもB_7": {
       "title": "A。でも、～B。(A. Demo, ~B)",
       "shortExplanation": "表示两个句子之间的转折或对照；'但是'、'可是'。",
       "longExplanation": "句型'A。でも、～B。'通过在后句句首使用接续词'でも'，来表达与前句A相反、对照或出乎意料的内容，相当于汉语中的'但是'、'可是'。这是日常会话中最常用的转折接续词之一，语气自然亲切。",
@@ -462,7 +462,7 @@
         }
       ]
     },
-    "ja_Aと_8": {
+    "ja_n5_Aと_8": {
       "title": "Aと Bと どちら～ (A to B to dochira~)",
       "shortExplanation": "用于在A和B两者之间进行比较并询问偏好或选择；'A和B哪一个……'。",
       "longExplanation": "句型'Aと Bと どちら～'用于在两个选项A与B之间进行对比，询问对方更偏好哪一个、哪一个更合适或哪一个程度更高。'どちら'为表示两选一的礼貌疑问词，相当于汉语中的'哪一方'或'哪一个'。",
@@ -482,7 +482,7 @@
         }
       ]
     },
-    "ja_AとBと_9": {
+    "ja_n5_AとBと_9": {
       "title": "AとBと どっち〜 (A to B to docchi〜)",
       "shortExplanation": "口语中用于在二者之间询问选择；'A和B哪一个'、'A还是B'。",
       "longExplanation": "句型'AとBと どっち〜'是'AとBとどちら'的口语随意表达，常用于朋友、家人之间的随和交流，询问在两个选项A与B之中更倾向于哪一个。亦可简化表达为'AかBか どっち〜'。",
@@ -502,7 +502,7 @@
         }
       ]
     },
-    "ja_A_10": {
+    "ja_n5_A_10": {
       "title": "A は B が〜 (A wa B ga〜)",
       "shortExplanation": "以A为大主题，描写其具体特征、属性或能力B；'A的B很……'、'A在B方面……'。",
       "longExplanation": "句型'A は B が〜'是日语中极具代表性的主谓谓语句结构。助词'は'引出整个句子的大主题A，助词'が'则提示A的具体部分、属性、能力或喜好B，后接形容词或动词加以描述。常用于描写人或事物的外貌、特征、能力以及情感对象。",
@@ -522,7 +522,7 @@
         }
       ]
     },
-    "ja_A_11": {
+    "ja_n5_A_11": {
       "title": "A は B より～ (A wa B yori～)",
       "shortExplanation": "表示两项之间的比较；'A比B更……'。",
       "longExplanation": "句型'A は B より～'用于在两者（A与B）之间进行比较。助词'より'接在作为比较基准的事物B之后，表示主体A在某种性质或动作程度上超过B，相当于汉语中的'A比B更……'。",
@@ -542,7 +542,7 @@
         }
       ]
     },
-    "ja_A_12": {
+    "ja_n5_A_12": {
       "title": "A より B のほうが～ (A yori B no hou ga ～)",
       "shortExplanation": "比较两项，强调B比A程度更深；'比起A，B更加……'。",
       "longExplanation": "句型'A より B のほうが～'用于比较两个事物或情境。'A より'表示比较的基准（比起A），'B のほうが'则强调B这一方在性质或程度上更加突出，相当于汉语中的'比起A，B更……'。后续接各类形容词。",
@@ -562,7 +562,7 @@
         }
       ]
     },
-    "ja_いAdjective_13": {
+    "ja_n5_いAdjective_13": {
       "title": "い形容词连用形（〜く）+ 动词 (i-keiyoushi ku + doushi)",
       "shortExplanation": "将い形容词转化为副词形态以修饰后续动词；'……地（做某事）'。",
       "longExplanation": "该语法点将い形容词的词尾'い'变为'く'，使其连用形发挥副词的作用，用来修饰后面的动词，描述动作进行的方式、状态或性质，相当于汉语中的'……地（做某事）'（如'飞快地'、'温柔地'等）。",
@@ -582,7 +582,7 @@
         }
       ]
     },
-    "ja_いAdjective_14": {
+    "ja_n5_いAdjective_14": {
       "title": "い形容词 + くします (i-keiyoushi ku shimasu)",
       "shortExplanation": "表示通过人为作用使事物转变为某种状态；'使……变得……'、'把……弄成……'。",
       "longExplanation": "将い形容词的词尾'い'变为'く'后接续动词'します'，用于表达人为、有意识地对某对象施加影响，使其变成该形容词所描述的状态或性质。相当于汉语中的'把……弄得/做得……'或'使……变得……'。与表示自然变化的'〜くなります'相对，本句型强调主观意图与人为行动。",
@@ -604,7 +604,7 @@
     }
   },
   "ko": {
-    "ja_A_0": {
+    "ja_n5_A_0": {
       "title": "A が いちばん～ (A ga ichiban～)",
       "shortExplanation": "최상급을 나타내며, '가장', '제일'이라는 뜻입니다.",
       "longExplanation": "'A が いちばん～' 문형은 특정 범위나 집단 내에서 최고 수준이나 으뜸임을 나타내는 최상급 표현으로, 한국어의 '가장 ~하다', '제일 ~하다'에 해당합니다. 다양한 형용사나 동사와 함께 쓰여 다른 대상들과 비교할 때 A가 으뜸임을 강조합니다.",
@@ -624,7 +624,7 @@
         }
       ]
     },
-    "ja_AけれどもB_1": {
+    "ja_n5_AけれどもB_1": {
       "title": "A。けれども、～B。(A. Keredomo,~ B.)",
       "shortExplanation": "두 문장 사이의 역접이나 대조를 나타내며, '하지만', '그렇지만'이라는 뜻입니다.",
       "longExplanation": "'A。けれども、～B。' 문형은 앞 문장 A와 뒤 문장 B의 내용이 서로 상반되거나 대조적일 때 사용하는 접속 표현으로, 한국어의 '하지만', '그렇지만', '그러나'에 해당합니다. 'けれども'가 뒷문장의 맨 앞에 쓰여 앞선 내용과 반대되는 결과를 이끕니다.",
@@ -644,7 +644,7 @@
         }
       ]
     },
-    "ja_AしかしB_2": {
+    "ja_n5_AしかしB_2": {
       "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
       "shortExplanation": "앞뒤 두 문장의 대조나 역접을 나타내며, '그러나', '하지만'이라는 뜻입니다.",
       "longExplanation": "'A。しかし、～B。' 문형은 두 번째 문장 처음에 접속사 'しかし'를 사용하여 앞 문장의 내용과 대립되거나 모순되는 내용을 이어받을 때 사용합니다. 'でも'보다 격식 있고 정중한 뉘앙스를 지니며, 문어체나 공적인 담화에서 자주 쓰입니다.",
@@ -664,7 +664,7 @@
         }
       ]
     },
-    "ja_AじゃB_3": {
+    "ja_n5_AじゃB_3": {
       "title": "A。じゃ、～B。(A. Ja, ~B.)",
       "shortExplanation": "앞선 상황을 바탕으로 판단, 제안, 결정을 내릴 때 쓰이며, '그럼', '그렇다면'이라는 뜻입니다.",
       "longExplanation": "'A。じゃ、～B。' 문형은 회화체에서 앞 문장 A에서 제시된 상황이나 조건에 따라 뒤 문장 B에서 새로운 판단, 제안, 행동을 취할 때 사용합니다. '그럼', '그러면'에 해당하며, 'では'나 'それじゃ'의 구어적이고 친근한 축약 표현입니다.",
@@ -684,7 +684,7 @@
         }
       ]
     },
-    "ja_AそれじゃB_4": {
+    "ja_n5_AそれじゃB_4": {
       "title": "A。それじゃ、～B。(A. Soreja,~B.)",
       "shortExplanation": "두 문장을 연결하여 앞선 상황에 따른 대응이나 제안을 나타내며, '그렇다면', '그럼'이라는 뜻입니다.",
       "longExplanation": "'A。それじゃ、～B。' 문형은 앞 문장 A에서 상황이나 배경을 제시하고, 뒤 문장 B에서 그에 따른 행동이나 결정을 이어받을 때 사용합니다. 'それでは'의 구어체 표현으로 일상 대화에서 자연스럽게 자주 쓰입니다.",
@@ -704,7 +704,7 @@
         }
       ]
     },
-    "ja_AそれではB_5": {
+    "ja_n5_AそれではB_5": {
       "title": "A。それでは、～B。(A. Soredewa,~B.)",
       "shortExplanation": "앞선 상황을 바탕으로 전환하거나 다음 행동을 나타내며, '그렇다면', '그러면'이라는 뜻입니다.",
       "longExplanation": "'A。それでは、～B。' 문형은 앞 문장 A의 상황이나 사실을 이어받아 뒤 문장 B에서 적절한 판단, 제안, 전환된 행동을 나타낼 때 쓰는 정중한 접속 표현입니다. 구어적 표현인 'じゃ'나 'それじゃ'에 비해 격식을 차린 점잖은 어조를 띱니다.",
@@ -724,7 +724,7 @@
         }
       ]
     },
-    "ja_A_6": {
+    "ja_n5_A_6": {
       "title": "A では、～B (A dewa, ~B)",
       "shortExplanation": "범위나 화제를 한정하여 비교나 평가를 나타내며, '~에서는', '~에 있어서는'이라는 뜻입니다.",
       "longExplanation": "'A では、～B' 문형은 명사 A를 화제나 특정 범위, 분야로 한정한 뒤, 그 범위 안에서의 선호, 특징, 비교 등을 뒷부분 B에서 서술할 때 쓰입니다. 한국어의 '~에서는', '~에 있어서는'에 해당합니다.",
@@ -744,7 +744,7 @@
         }
       ]
     },
-    "ja_AでもB_7": {
+    "ja_n5_AでもB_7": {
       "title": "A。でも、～B。(A. Demo, ~B)",
       "shortExplanation": "두 문장의 상반되는 내용이나 대조를 나타내며, '하지만', '그렇지만'이라는 뜻입니다.",
       "longExplanation": "'A。でも、～B。' 문형은 뒷문장 시작 부분에 접속사 'でも'를 사용하여 앞 문장 A와 대립되거나 예상 밖의 내용을 연결할 때 사용합니다. 일상 구어체에서 가장 흔하게 쓰이는 자연스러운 역접 접속 표현입니다.",
@@ -764,7 +764,7 @@
         }
       ]
     },
-    "ja_Aと_8": {
+    "ja_n5_Aと_8": {
       "title": "Aと Bと どちら～ (A to B to dochira~)",
       "shortExplanation": "A와 B 두 가지 대상을 비교하여 어느 쪽을 선호하는지 물을 때 쓰이며, 'A와 B 중 어느 쪽이 ~합니까?'라는 뜻입니다.",
       "longExplanation": "'Aと Bと どちら～' 문형은 두 개의 선택지 A와 B를 두고, 어느 쪽이 더 좋거나 적합한지 상대방의 선택이나 의견을 물어볼 때 사용하는 정중한 비교 의문 표현입니다. 'どちら'는 둘 중 하나를 가리키는 정중한 의문사입니다.",
@@ -784,7 +784,7 @@
         }
       ]
     },
-    "ja_AとBと_9": {
+    "ja_n5_AとBと_9": {
       "title": "AとBと どっち〜 (A to B to docchi〜)",
       "shortExplanation": "친근한 일상 대화에서 두 가지 중 어느 쪽인지 물을 때 쓰이며, 'A랑 B 중 어느 쪽/어떤 거'라는 뜻입니다.",
       "longExplanation": "'AとBと どっち〜' 문형은 'AとBとどちら'의 반말 및 친근한 구어체 표현으로, 친구나 가까운 사이에서 둘 중 어느 쪽을 고를지 가볍게 물을 때 사용합니다. 'AかBか どっち〜' 형태로도 자주 쓰입니다.",
@@ -804,7 +804,7 @@
         }
       ]
     },
-    "ja_A_10": {
+    "ja_n5_A_10": {
       "title": "A は B が〜 (A wa B ga〜)",
       "shortExplanation": "주제 A를 제시하고 그에 속한 특징, 부분, 능력인 B를 묘사하며, 'A는 B가 ~하다'라는 뜻입니다.",
       "longExplanation": "'A は B が〜' 문형은 일본어의 대표적인 이중주어(대주어-소주어) 구조입니다. 조사 'は'로 문장 전체의 화제나 대상 A를 제시하고, 조사 'が'로 A의 구체적인 신체 부위, 속성, 기호, 능력인 B를 지정하여 형용사나 동사로 서술합니다.",
@@ -824,7 +824,7 @@
         }
       ]
     },
-    "ja_A_11": {
+    "ja_n5_A_11": {
       "title": "A は B より～ (A wa B yori～)",
       "shortExplanation": "두 대상을 비교하여 우위를 나타내며, 'A는 B보다 ~하다'라는 뜻입니다.",
       "longExplanation": "'A は B 보다～' 문형은 두 대상 A와 B를 비교할 때 사용하는 기본 비교 구문입니다. 비교 기준이 되는 대상 B 뒤에 조사 'より(~보다)'를 붙여, 주어인 A가 B보다 성질이나 상태, 동작의 정도가 더 큼을 나타냅니다.",
@@ -844,7 +844,7 @@
         }
       ]
     },
-    "ja_A_12": {
+    "ja_n5_A_12": {
       "title": "A より B のほうが～ (A yori B no hou ga ～)",
       "shortExplanation": "두 대상을 비교하여 B 쪽이 더 우세함을 강조하며, 'A보다 B 쪽이 더 ~하다'라는 뜻입니다.",
       "longExplanation": "'A より B のほうが～' 문형은 두 개의 대상이나 상태를 비교할 때 사용합니다. 'A 보다'를 비교 기준으로 삼고, 'B のほうが'로 B 쪽이 해당 성질이나 상태에서 더 두드러짐을 강조합니다. 한국어의 'A보다 B 쪽이 더 ~하다'에 해당합니다.",
@@ -864,7 +864,7 @@
         }
       ]
     },
-    "ja_いAdjective_13": {
+    "ja_n5_いAdjective_13": {
       "title": "い형용사 연용형(〜く) + 동사 (i-keiyoushi ku + doushi)",
       "shortExplanation": "い형용사를 부사형으로 바꾸어 뒤에 오는 동사를 수식하며, '~게 (동사하다)'라는 뜻입니다.",
       "longExplanation": "이 문형은 い형용사의 어미 'い'를 'く'로 바꾸어 부사적인 용법(연용형)으로 활용하는 방법입니다. 뒤에 오는 동사를 수식하여 동작이 어떠한 상태나 방식으로 행해지는지를 나타내며, 한국어의 '~게', '~히'에 해당합니다.",
@@ -884,7 +884,7 @@
         }
       ]
     },
-    "ja_いAdjective_14": {
+    "ja_n5_いAdjective_14": {
       "title": "い형용사 + く합니다/くします (i-keiyoushi ku shimasu)",
       "shortExplanation": "인위적인 작용을 가해 대상을 어떤 상태로 변화시킴을 나타내며, '~게 하다', '~게 만들다'라는 뜻입니다.",
       "longExplanation": "이 문형은 い형용사의 어미 'い'를 'く'로 바꾼 뒤 타동사 'します(하다)'를 연결하여, 의도적으로 어떤 대상에 작용을 가해 그 형용사의 상태로 변화시키는 것을 나타냅니다. 자연스러운 변화를 나타내는 '~くなります'와 대조되며, 한국어의 '~게 하다', '~게 만들다'에 해당합니다.",
@@ -906,7 +906,7 @@
     }
   },
   "ja": {
-    "ja_A_0": {
+    "ja_n5_A_0": {
       "title": "A が いちばん～ (A ga ichiban～)",
       "shortExplanation": "ある範囲の中で最も程度が高いこと（最上級）を表し、「一番〜」「もっとも〜」という意味を表します。",
       "longExplanation": "「A が いちばん～」は、ある特定の範囲や集団の中で、Aが最もその性質や状態、動作の度合いが高いこと（最上級）を表す文法表現です。様々な形容詞や動詞とともに用いられ、他のものと比較して最高位であることを示します。",
@@ -926,7 +926,7 @@
         }
       ]
     },
-    "ja_AけれどもB_1": {
+    "ja_n5_AけれどもB_1": {
       "title": "A。けれども、～B。(A. Keredomo,~ B.)",
       "shortExplanation": "前後の文の逆接・対比を表し、「しかし」「だが」「けれども」という意味を表します。",
       "longExplanation": "「A。けれども、～B。」は、文Aの事実や前提に対して、予想されることとは反対の内容や対立する内容を文Bで述べる逆接の接続表現です。「けれども」は文頭に置かれ、口語からやや改まった場面まで幅広く使われます。",
@@ -946,7 +946,7 @@
         }
       ]
     },
-    "ja_AしかしB_2": {
+    "ja_n5_AしかしB_2": {
       "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
       "shortExplanation": "前文と対立・矛盾する内容を後文で述べる逆接の表現で、「しかし」「だが」という意味を表します。",
       "longExplanation": "「A。しかし、～B。」は、文Aの述べる内容に対して、反対の事実や予想外の展開を文Bで述べる逆接の接続詞「しかし」を用いた表現です。「でも」に比べて改まった硬い響きがあり、文章語や改まった会話でもよく用いられます。",
@@ -966,7 +966,7 @@
         }
       ]
     },
-    "ja_AじゃB_3": {
+    "ja_n5_AじゃB_3": {
       "title": "A。じゃ、～B。(A. Ja, ~B.)",
       "shortExplanation": "前述の状況を受けて判断・提案・行動を表す口語表現で、「それなら」「では」という意味を表します。",
       "longExplanation": "「A。じゃ、～B。」は、文Aで提示された状況や情報をもとに、文Bで次の行動の決定や提案、話題の転換を行う際に用いる日常会話のくだけた表現です。「では」や「それじゃ」のくだけた口語形にあたります。",
@@ -986,7 +986,7 @@
         }
       ]
     },
-    "ja_AそれじゃB_4": {
+    "ja_n5_AそれじゃB_4": {
       "title": "A。それじゃ、～B。(A. Soreja,~B.)",
       "shortExplanation": "前文の状況を受けて、それに応じた判断や提案を述べる接続表現で、「それなら」「それでは」という意味を表します。",
       "longExplanation": "「A。それじゃ、～B。」は、先行する文Aで述べられた状況や条件を受けて、文Bでそれに対応する判断、提案、結論を述べる接続表現です。「それでは」の日常会話における口語的な形です。",
@@ -1006,7 +1006,7 @@
         }
       ]
     },
-    "ja_AそれではB_5": {
+    "ja_n5_AそれではB_5": {
       "title": "A。それでは、～B。(A. Soredewa,~B.)",
       "shortExplanation": "前文の状況を受けて次の行動や結論、場面の転換を導く表現で、「それでは」「それなら」という意味を表します。",
       "longExplanation": "「A。それでは、～B。」は、先行する発言や状況Aを前提として受け止め、後続の文Bで新たな行動の開始、判断、提案を導き出す接続表現です。「じゃ」「それじゃ」よりも丁寧で改まった語感があり、丁寧な会話や改まった席でも用いられます。",
@@ -1026,7 +1026,7 @@
         }
       ]
     },
-    "ja_A_6": {
+    "ja_n5_A_6": {
       "title": "A では、～B (A dewa, ~B)",
       "shortExplanation": "ある範囲や基準、話題を限定して比較や評価を述べる表現で、「〜においては」「〜の中では」という意味を表します。",
       "longExplanation": "「A では、～B」は、名詞Aを比較の基準や枠組み、特定の分野・範囲として提示し、その中における特徴、評価、最上級の事実などを文Bで述べる文法表現です。「〜の中では」「〜の点では」という意味合いを表します。",
@@ -1046,7 +1046,7 @@
         }
       ]
     },
-    "ja_AでもB_7": {
+    "ja_n5_AでもB_7": {
       "title": "A。でも、～B。(A. Demo, ~B)",
       "shortExplanation": "前文の内容と反対・対照的な事柄を後文で述べる日常的な逆接表現で、「でも」「しかし」という意味を表します。",
       "longExplanation": "「A。でも、～B。」は、文Aの事実や前提に対して、それに反する事柄や予想外の展開を文Bで述べる逆接の表現です。「でも」は日常会話で最も頻繁に用いられるくだけた接続詞で、自然な対話に適しています。",
@@ -1066,7 +1066,7 @@
         }
       ]
     },
-    "ja_Aと_8": {
+    "ja_n5_Aと_8": {
       "title": "Aと Bと どちら～ (A to B to dochira~)",
       "shortExplanation": "2つの選択肢（AとB）を比較して、どちらが良いか・好きかを尋ねる表現で、「AとBとどちらが〜ですか」という意味を表します。",
       "longExplanation": "「Aと Bと どちら～」は、二つの物事や選択肢AとBを並列し、どちらがより優れているか、どちらを好むかなどを尋ねる丁寧な比較疑問表現です。「どちら」は二者択一を表す丁寧な疑問詞です。",
@@ -1086,7 +1086,7 @@
         }
       ]
     },
-    "ja_AとBと_9": {
+    "ja_n5_AとBと_9": {
       "title": "AとBと どっち〜 (A to B to docchi〜)",
       "shortExplanation": "二者択一を親しい相手に尋ねる日常会話のくだけた表現で、「AとBとどっちが〜」という意味を表します。",
       "longExplanation": "「AとBと どっち〜」は、「AとBとどちら〜」のくだけた口語形（話し言葉）です。友人や家族など親しい間柄で、二つの選択肢の中からどちらを選ぶか、どちらが好みかを気軽に尋ねる際に用いられます。「AかBか どっち〜」と言われることもあります。",
@@ -1106,7 +1106,7 @@
         }
       ]
     },
-    "ja_A_10": {
+    "ja_n5_A_10": {
       "title": "A は B が〜 (A wa B ga〜)",
       "shortExplanation": "主題Aを提示し、その部分や性質・能力・特徴であるBを説明・描写する構文で、「AはBが〜だ」という意味を表します。",
       "longExplanation": "「A は B が〜」は、文全体の主題（大主語）を「Aは」で提示し、その対象の身体の一部分や属性、能力、嗜好などの具体的な特徴（小主語）を「Bが」で示して形容詞や動詞で描写する日本語の基本構文です（有題文・いわゆる象の鼻構文）。",
@@ -1126,7 +1126,7 @@
         }
       ]
     },
-    "ja_A_11": {
+    "ja_n5_A_11": {
       "title": "A は B より～ (A wa B yori～)",
       "shortExplanation": "2つの事物を比較し、AがBよりも程度が高いことを表す表現で、「AはBより〜だ」という意味を表します。",
       "longExplanation": "「A は B より～」は、二つの事物AとBを比較する際の基本的な文型です。比較の基準となる対象Bに助詞「より」を付け、主語であるAの方がBよりもその性質や状態の度合いが上であることを表します。",
@@ -1146,7 +1146,7 @@
         }
       ]
     },
-    "ja_A_12": {
+    "ja_n5_A_12": {
       "title": "A より B のほうが～ (A yori B no hou ga ～)",
       "shortExplanation": "2つのものを比較し、Bの方が程度が上であることを強調する表現で、「AよりBのほうが〜だ」という意味を表します。",
       "longExplanation": "「A より B のほうが～」は、二者間で比較を行い、Aを基準（〜より）として、Bの方（〜のほうが）がよりその形容詞の表す性質や状態の度合いが勝っていることを際立たせる文法表現です。い形容詞・な形容詞のどちらにも接続します。",
@@ -1166,7 +1166,7 @@
         }
       ]
     },
-    "ja_いAdjective_13": {
+    "ja_n5_いAdjective_13": {
       "title": "い形容詞連用形（〜く）＋ 動詞 (i-keiyoushi ku + doushi)",
       "shortExplanation": "い形容詞を副詞的に用いて後続の動詞を修飾し、動作の様子や状態を表す表現です。",
       "longExplanation": "い形容詞の語尾「い」を「く」に変えた連用形を用いて、後ろに続く動詞を修飾する用法です。動作がどのような状態・様子で行われるか（様態）を説明します。",
@@ -1186,7 +1186,7 @@
         }
       ]
     },
-    "ja_いAdjective_14": {
+    "ja_n5_いAdjective_14": {
       "title": "い形容詞連用形（〜く）＋ します (i-keiyoushi ku shimasu)",
       "shortExplanation": "人為的な働きかけによって対象をある状態に変化させることを表し、「〜くする」「〜く変える」という意味を表します。",
       "longExplanation": "い形容詞の語尾「い」を「く」に変えた連用形に動詞「します」を接続させることで、意志や人為的な働きかけによって対象の状態をその形容詞の性質に変化させる（他動的な変化）ことを表します。自然な変化を表す「〜くなります」と対比されます。",

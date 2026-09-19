@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_が_75",
+    "id": "ja_n5_が_75",
     "language": "ja",
     "pattern": "～が",
     "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_けど_76",
+    "id": "ja_n5_けど_76",
     "language": "ja",
     "pattern": "～けど、～",
     "title": "～けど、～ (〜kedo、～)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_けれど_77",
+    "id": "ja_n5_けれど_77",
     "language": "ja",
     "pattern": "～けれど、～",
     "title": "～けれど、～ (〜keredo、～)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_こちら_78",
+    "id": "ja_n5_こちら_78",
     "language": "ja",
     "pattern": "こちら～",
     "title": "こちら～ (kochira～)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_さっき_79",
+    "id": "ja_n5_さっき_79",
     "language": "ja",
     "pattern": "さっき～",
     "title": "さっき～ (sakki～)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_すぐに_80",
+    "id": "ja_n5_すぐに_80",
     "language": "ja",
     "pattern": "すぐに～",
     "title": "すぐに～ (sugu ni～)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ぜんぜん_81",
+    "id": "ja_n5_ぜんぜん_81",
     "language": "ja",
     "pattern": "ぜんぜん～",
     "title": "ぜんぜん～ (zenzen～)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_そして_82",
+    "id": "ja_n5_そして_82",
     "language": "ja",
     "pattern": "そして、～",
     "title": "そして、～ (soshite、～)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_そちら_83",
+    "id": "ja_n5_そちら_83",
     "language": "ja",
     "pattern": "そちら～",
     "title": "そちら～ (sochira～)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_それから_84",
+    "id": "ja_n5_それから_84",
     "language": "ja",
     "pattern": "それから、～",
     "title": "それから、～ (sorekara、～)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_だいたい_85",
+    "id": "ja_n5_だいたい_85",
     "language": "ja",
     "pattern": "だいたい〜",
     "title": "だいたい〜 (daitai〜)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_たいてい_86",
+    "id": "ja_n5_たいてい_86",
     "language": "ja",
     "pattern": "たいてい～",
     "title": "たいてい～ (taitei～)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_だから_87",
+    "id": "ja_n5_だから_87",
     "language": "ja",
     "pattern": "だから、～",
     "title": "だから、～ (dakara、～)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_たりたり_88",
+    "id": "ja_n5_たりたり_88",
     "language": "ja",
     "pattern": "～たり、～たり",
     "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_だれ_89",
+    "id": "ja_n5_だれ_89",
     "language": "ja",
     "pattern": "だれ～",
     "title": "だれ～ (dare～)",

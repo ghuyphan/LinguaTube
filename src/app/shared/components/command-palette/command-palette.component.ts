@@ -16,7 +16,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent, IconName } from '../icon/icon.component';
-import { I18nService, SettingsService } from '../../../core/services';
+import { I18nService, SettingsService, ToastService } from '../../../core/services';
 import { BodyScrollService } from '../../../services';
 import { YoutubeService } from '../../../features/video/youtube.service';
 
@@ -43,6 +43,7 @@ export class CommandPaletteComponent implements OnDestroy {
   private bodyScroll = inject(BodyScrollService);
   private router = inject(Router);
   private settings = inject(SettingsService);
+  private toast = inject(ToastService);
   i18n = inject(I18nService);
 
   isOpen = input<boolean>(false);
@@ -50,7 +51,6 @@ export class CommandPaletteComponent implements OnDestroy {
   closed = output<void>();
 
   url = signal('');
-  error = signal('');
   hasError = signal(false);
   shakeError = signal(false);
   isClosing = signal(false);
@@ -83,11 +83,11 @@ export class CommandPaletteComponent implements OnDestroy {
       icon: 'list-video',
       title: this.i18n.t('commandPalette.browsePlaylists') || 'Curated Playlists',
       category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
-      run: () => this.navigate('/playlist')
+      run: () => this.navigate('/explore')
     },
     {
       id: 'history',
-      icon: 'clock',
+      icon: 'history',
       title: this.i18n.t('commandPalette.viewHistory') || 'Watch History',
       category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
       run: () => this.navigate('/history')
@@ -238,7 +238,7 @@ export class CommandPaletteComponent implements OnDestroy {
 
   onInputChange(): void {
     this.selectedIndex.set(0);
-    if (this.hasError() || this.error()) {
+    if (this.hasError()) {
       this.resetError();
     }
   }
@@ -249,7 +249,7 @@ export class CommandPaletteComponent implements OnDestroy {
 
     const videoId = this.youtube.extractVideoId(urlValue);
     if (!videoId) {
-      this.triggerError(this.i18n.t('commandPalette.invalid'));
+      this.triggerError(this.i18n.t('commandPalette.invalid') || 'Enter a valid YouTube link');
       return;
     }
 
@@ -264,7 +264,7 @@ export class CommandPaletteComponent implements OnDestroy {
   }
 
   private triggerError(message: string): void {
-    this.error.set(message);
+    this.toast.error(message);
     this.hasError.set(true);
     this.shakeError.set(true);
 
@@ -273,11 +273,11 @@ export class CommandPaletteComponent implements OnDestroy {
     }
     this.shakeTimeoutId = setTimeout(() => {
       this.shakeError.set(false);
+      this.hasError.set(false);
     }, 450);
   }
 
   private resetError(): void {
-    this.error.set('');
     this.hasError.set(false);
     this.shakeError.set(false);
     if (this.shakeTimeoutId) {

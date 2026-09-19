@@ -57,6 +57,8 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   | **Free** | 30 | 10 | 100 | 100 | 5,000 |
   | **Pro** | 60 | 50 | 100 | 100 | 25,000 |
   | **Premium** | 120 | 100 | 100 | 100 | 100,000 |
+- **CORS & Preflight Compatibility**: `rateLimitResponse()` returns full standard CORS headers (`Access-Control-Allow-Origin`, `Access-Control-Allow-Methods`, `Access-Control-Allow-Headers`) alongside `Retry-After`. This ensures browser clients receive well-formed JSON 429 errors instead of opaque network CORS failures.
+
 
 ### 2.3. Supabase JWT Authentication (`auth.js`)
 - Validates `Authorization: Bearer <token>` header with strict format and structure checks.
@@ -69,10 +71,19 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Path Traversal Defense**: `sanitizeVideoId` strips invalid characters and rejects strings with directory traversal patterns (`..`, `/`, `\`).
 - **Duration Enforcement & Livestream Blocking**: Rejects requests for videos exceeding maximum durations:
   - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
-  - Whisper / Gladia AI transcription: Duration is verified against client parameters and metadata hints (Free: $\le 600$s, Pro: $\le 1,200$s, Premium: $\le 2,700$s). If duration is supplied by the client, unauthenticated YouTube HTML scraping is skipped, avoiding 4s worker timeouts. Live broadcasts (`isLive: true`) are rejected immediately.
+  - Whisper / Gladia AI transcription: Duration is verified against client parameters and metadata hints (Free: $\le 600$s, Pro: $\le 1,200$s, Premium: $\le 2,700$s). To prevent billing spoofing attacks where a malicious client passes a fake short duration, the backend enforces `effectiveDuration = Math.max(clientDuration || 0, ytDetails.duration)` whenever upstream details are fetched, while fast-pathing trusted metadata hints to avoid unauthenticated YouTube HTML scraping timeouts. Live broadcasts (`isLive: true`) are rejected immediately.
   - AI transcription (`gladia`): Max 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
 - Validates language whitelist: `['ja', 'ko', 'zh', 'en']`.
 - Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages) using title hints from the request to bypass redundant oEmbed network calls.
+
+### 2.5. SSRF Defense & Upstream URL Whitelisting
+To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
+- **Upstream Host Whitelist**: All outgoing proxy or fetch requests are restricted to strict, verified hostnames (e.g. `api.gladia.io`, `jisho.org`, `jotoba.de`, `dict.naver.com`, `glosbe.com`). Requests to loopback (`127.0.0.1`, `localhost`), private RFC 1918 subnets (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), or link-local cloud metadata endpoints (`169.254.169.254`) are rejected immediately.
+- **Strict Gladia Result URL Validation**: In `/api/transcript` (and `server/server.js`), when a client provides a legacy `resultUrl`, the URL is parsed via `new URL(resultUrl)` and verified against:
+  1. Protocol: strictly `https:`.
+  2. Hostname: strictly `api.gladia.io`.
+  3. Pathname: strictly matches regex `/^\/v2\/(transcription|pre-recorded)(\/[a-zA-Z0-9_/-]+)?$/`.
+  Any deviation rejects the request with HTTP 400 `INVALID_RESULT_URL`.
 
 ---
 
@@ -235,7 +246,9 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - **Worker Timeout Protection**: Live translation requests in `/api/dual-subtitles` are capped at 40 segments (`BATCH_SIZE`) to prevent Cloudflare Worker 30-second execution timeouts. Larger transcripts stream upcoming cues via `/api/translate/batch` and commit via `saveOnly: true`.
   - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback.
   - **Fault-Tolerant XML Tag Extraction**: `decodeTaggedTranslations` tolerates machine-translated formatting anomalies, including unicode and curly quotation marks (`“`, `”`, `‘`, `’`, `«`, `»`), spacing irregularities, and out-of-order responses without crashing or dropping cues.
-- **Rate Limiting**: Tiered hourly quota (anonymous: 5, free: 15, pro: 60, premium: 120 requests/hr).
+- **Rate Limiting**: 
+  - Live Translation Quota: Tiered hourly quota (anonymous: 5, free: 15, pro: 60, premium: 120 requests/hr).
+  - Checkpoint Save Quota (`saveOnly: true`): High-capacity `RATE_LIMIT_SAVE_CONFIG` (anonymous: 30, free: 120, pro: 300, premium: 600 requests/hr) dedicated specifically to write-backs. This ensures progressive playback saves never exhaust the live translation rate limit.
 
 ---
 
@@ -261,6 +274,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   }
   ```
 - **Max Batch Size**: 80 texts per request (optimized for Workers Paid).
+- **Supported Languages**: Validates source against `['auto', 'en', 'ja', 'zh', 'ko', 'vi', ...]` and target against supported learning/display languages. Source `'auto'` triggers automatic language detection in the upstream translation provider.
 - **Rate Limiting**: Tiered hourly quota based on subscription (anonymous: 3,000, free: 8,000, pro: 35,000, premium: 100,000 texts/hr).
 - **Process & KV Quota Preservation (Rule 2)**:
   - Deduplicates texts before rate-limit unit deduction.
@@ -341,13 +355,14 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 ---
 
 ### 3.10. Recommended Videos API (Verified Database Transcripts)
-- **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}&offset={offset}`
+- **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}&offset={offset}&q={query}`
 - **Source**: `functions-src/api/recommended-videos.js`
 - **Query Parameters**:
   - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
   - `tier`: Optional proficiency tier (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`).
   - `limit`: Maximum items to return (1-50, default `12`).
   - `offset`: Optional pagination offset (default `0`) for infinite scrolling feeds.
+  - `q`: Optional search keyword (up to 100 characters). Queries Cloudflare D1 `video_languages` table matching `title LIKE %q% OR channel LIKE %q%`, disabling random shuffling to rank the most relevant and recent videos first.
   - `refresh`: Optional boolean (`true`). When enabled, bypasses memory and CDN caches, forces `Cache-Control: no-cache, no-store, must-revalidate`, and applies Fisher-Yates uniform candidate shuffling for fresh video discovery.
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for verified transcripts stored on our server (`sub_languages LIKE '%"lang"%'`), with fallback to `available_languages` only if `sub_languages` is unpopulated.
@@ -428,12 +443,16 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 
 ---
 
-### 3.14. Global Leaderboard API
-- **Routes**:
+### 3.14. Global Leaderboard Architecture & APIs
+- **Client Primary Route**: Direct Supabase Stored Procedure RPC `public.get_leaderboard(p_lang, p_period, p_limit)`
+  - Query executed directly via `@supabase/supabase-js` in `LeaderboardService`: `this.supabase.client.rpc('get_leaderboard', { p_lang, p_period, p_limit })`.
+  - Joins `public.profiles`, `public.gamification`, and `public.streaks` in a single query with dynamic window ranking `ROW_NUMBER() OVER (...)`.
+  - Client utilizes a 1-minute in-memory cache and `voca_leaderboard_cache_{lang}_{period}` offline fallback via `StorageService`.
+  - Completely eliminates edge Worker invocation, reducing latency from ~350ms to ~80ms while maintaining zero Cloudflare KV/D1 write operations.
+- **Edge Fallback Endpoints** (`functions-src/api/leaderboard.js`):
   - `GET /api/leaderboard`: Fetch top 50 learners (optionally filtered by target language `lang=ja|ko|zh|en`, period `period=weekly|all_time`) and calculate exact rank for requesting `userId`.
   - `POST /api/leaderboard`: Synchronize learner score (XP, weekly XP, level, streak, badges count, target language).
-- **Source**: `functions-src/api/leaderboard.js`
-- **Query Parameters**:
+- **Query Parameters (Edge API)**:
   - `lang`: Target language filter (`ja`, `ko`, `zh`, `en`, or omit for all languages).
   - `period`: Ranking time window (`weekly` [default for active races] or `all_time`).
   - `userId`: Optional user ID to compute accurate rank and return learner position.
@@ -444,9 +463,10 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   - Monotonic XP progression: Upsert enforces `xp = MAX(leaderboard.xp, excluded.xp)` and updates `weekly_xp` to prevent downgrades or race condition rollbacks.
   - **Server-Authoritative Streak Verification**: Verifies submitted streaks against the authoritative `streaks` record in Supabase (or existing D1 record) to prevent client-side streak fabrication on public rankings.
 - **Storage & Caching**:
-  - Persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `weekly_xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
+  - Edge fallback persisted in Cloudflare D1 `leaderboard` table (`user_id`, `name`, `avatar`, `xp`, `weekly_xp`, `level`, `streak`, `badges_count`, `target_lang`, `country`, `updated_at`).
   - Cache Directive: `Cache-Control: private, no-cache, no-store, must-revalidate` ensures user-specific rankings and refresh operations deliver real-time XP without stale CDN caching.
   - Baseline Community Seeds (`mergeWithSeedLeaderboard`): Merges real registered learners with 28 realistic baseline community learners (7 per language: JA, KO, ZH, EN) sorted by weekly XP or total XP descending depending on `period`. Real learners always take absolute priority, ensuring the Top 3 podium (Gold, Silver, Bronze) and list are always populated, lively, and competitive.
+
 
 ---
 

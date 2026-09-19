@@ -5064,7 +5064,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__79",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)나",
     "title": "~(으)나 [(eu)na] (But, however)",
     "shortExplanation": "Used to express contradiction or opposition; 'but', 'however'.",
     "longExplanation": "'~(으)나 [(eu)na]' is a conjunction used in Korean to indicate a contrast or contradiction between two clauses or sentences. It delivers a meaning similar to 'but' or 'however' in English, and is often used when presenting a surprising or opposing fact.",
@@ -5096,7 +5096,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__80",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ까요?",
     "title": "~(으)ㄹ까요? [(eu)lkka yo?] (Shall we?)",
     "shortExplanation": "Used to make a suggestion or proposal to do something together.",
     "longExplanation": "'~(으)ㄹ까요?' is a Korean sentence ending used when the speaker proposes doing something together. With verbs ending in a vowel, 'ㄹ까요?' is added, while those ending in a consonant take '을까요?'. It corresponds to 'Shall we...?' or 'Should we...?' in English.",
@@ -5128,7 +5128,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__81",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ래요",
     "title": "~(으)ㄹ래요 [(eu)llae yo] (I will)",
     "shortExplanation": "This grammar point is used when the speaker is suggesting doing something or explaining his/her intention.",
     "longExplanation": "'~(으)ㄹ래요 [(eu)llae yo]' is a Korean grammar structure used to express the speaker's intention or decision to perform an action. It can also indicate a suggestion, inviting others to join or agree. It is typically used in informal or polite-casual situations among friends, family, and people who are about the same age or younger.",
@@ -5160,7 +5160,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__82",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)면서",
     "title": "~(으)면서 [(eu)myeonseo] (While)",
     "shortExplanation": "Used to express 'while' or 'at the same time' in Korean.",
     "longExplanation": "'~(으)면서 [(eu)myeonseo]' is used in Korean to denote simultaneous actions or states. It is similar to 'while' in English, indicating that two or more actions are happening at the same time. It can also be used to express contradictions between two clauses, akin to 'but' or 'however', especially when the two clauses seem unexpected together.",
@@ -5192,7 +5192,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__83",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)로",
     "title": "~(으)로 [(eu)ro] (Towards, by means of)",
     "shortExplanation": "This particle is used to express direction, means or method, or the purpose of an action.",
     "longExplanation": "'~(으)로 [(eu)ro]' is a particle in Korean that can express: (1) the direction towards which an action is made, (2) the means or method by which an action is carried out, or (3) the intended result or purpose of an action. Depending on context, it can correspond to English prepositions like 'to', 'by', 'with', 'as', or 'for'.",
@@ -5224,7 +5224,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__84",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)로서",
     "title": "~(으)로서 [(eu)roseo] (As)",
     "shortExplanation": "Used to mean 'as' or 'in the capacity of'.",
     "longExplanation": "The Korean grammar point '~(으)로서 [(eu)roseo]' is used to express the concept of doing or existing in the capacity or status of something or someone. This is akin to the English preposition 'as'. If the noun ends with a consonant, use 으로서; if the noun ends with a vowel, use 로서.",
@@ -5256,7 +5256,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__85",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)로써",
     "title": "~(으)로써 [(eu)rosseo] (By, as)",
     "shortExplanation": "Used to express the means or method of something; similar to 'by', 'as', or 'via' in English.",
     "longExplanation": "'~(으)로써 [(eu)rosseo]' is used in Korean to indicate the method or means by which something is accomplished, or the capacity in which someone is acting. It emphasizes 'by means of', 'with', 'as', or 'via'. In everyday speech, '~(으)로써' is somewhat formal/literary, while '(으)로' often suffices. But '(으)로써' more explicitly stresses the means or instrument.",
@@ -5288,7 +5288,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__86",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)려고 하다",
     "title": "~(으)려고 하다 [(eu)ryeogo hada] (To try to)",
     "shortExplanation": "This structure is used to express 'trying to do' something or 'intending to do' something.",
     "longExplanation": "'~(으)려고 하다 [(eu)ryeogo hada]' is a useful grammar pattern in Korean that indicates an intention or a plan to perform an action in the future. It corresponds to English expressions like 'I’m going to…' or 'I intend to…'. It can also show that someone is actively making an effort to achieve a goal.",
@@ -5320,7 +5320,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__87",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)리라",
     "title": "~(으)리라 [(eu)rira] (Probably)",
     "shortExplanation": "This grammar form is used to express a supposition or assumption by the speaker, similar to 'probably' in English.",
     "longExplanation": "'~(으)리라 [(eu)rira]' is a somewhat formal or literary form in Korean used when the speaker is making a supposition or assumption about something, much like 'probably' in English. If the verb stem ends in a consonant, add '으리라'; if it ends in a vowel, simply use '리라.' It can appear in both daily speech and writing, although it has a slightly more elevated nuance.",
@@ -5352,7 +5352,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__88",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)실 거예요",
     "title": "~(으)실 거예요 [(eu)sil geoyeyo] (You will probably)",
     "shortExplanation": "This grammar point is used to express an educated guess or assumption about a future action, typically regarding a third person or in polite speech.",
     "longExplanation": "'~(으)실 거예요 [(eu)sil geoyeyo]' is a future tense form that expresses a polite assumption about someone's future action or state. The speaker is making an educated guess based on available information. It can also convey someone’s future plan in an honorific/polite way.",
@@ -5384,7 +5384,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__89",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)면 좋겠다",
     "title": "~(으)면 좋겠다 [(eu)myeon jokgetda] (It would be good if)",
     "shortExplanation": "Used to express a hope or wish for something to occur in the future.",
     "longExplanation": "'~(으)면 좋겠다 [(eu)myeon jokgetda]' is a structure used in Korean to articulate a hope, wish, or desire for a future event or situation. It is similar to saying 'It would be nice if...' or 'I wish...' in English.",
@@ -5416,7 +5416,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__90",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)면서도",
     "title": "~(으)면서도 [(eu)myeonseodo] (While, although)",
     "shortExplanation": "Used to express 'while' or 'although', indicating a situation or action that happens concurrently with another, or contrary to expectation.",
     "longExplanation": "The grammar point '~(으)면서도' is used in Korean to indicate that an event or situation is happening while another is also taking place, or when something is contrary to expectation. It can be translated as 'while' or 'although'. This form can be used with both action verbs and descriptive verbs. You can express the continuation of two situations at the same time, or describe a contrasting situation that defies expectation.",
@@ -5448,7 +5448,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__91",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)니까",
     "title": "~(으)니까 [(eu)nikka] (Because, Since)",
     "shortExplanation": "Used to express cause and effect, or to provide a reason or explanation.",
     "longExplanation": "'~(으)니까' is a conjunction used in Korean to express the relationship of cause and effect between two clauses, similar to 'because' or 'since' in English. It attaches to the verb (or adjective) stem, stating the reason why something is or will be in a certain state, or explaining the cause of an action or situation.",
@@ -5480,7 +5480,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__92",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)다 보니",
     "title": "~(으)다 보니 [(eu)da boni] (Seeing that, as)",
     "shortExplanation": "Used to show the reason or cause of a certain result or situation based on a continuous action or state.",
     "longExplanation": "'~(으)다 보니' is a grammatical construct in Korean that expresses a result or realization that naturally occurred through ongoing action or state. It's similar to the English expressions 'seeing that' or 'as a result of (continuing to do something)'. It shows that one thing led naturally or inevitably to another.",
@@ -5512,7 +5512,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__93",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)다가",
     "title": "~(으)다가 [(eu)daga] (And then, but)",
     "shortExplanation": "Expresses a sequence of actions or represents a contrast in situations.",
     "longExplanation": "'~(으)다가' is a common Korean grammar point that can mean 'and then' (one action followed by another) or show a shift from one action/situation to a different or contrasting one. It may translate to 'while doing something, then...' or 'but suddenly...' in English, depending on context.",
@@ -5544,7 +5544,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__94",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)던",
     "title": "~(으)던 [(eu)deon] (Who used to)",
     "shortExplanation": "This is used to describe an action or state that used to exist in the past but does not exist now.",
     "longExplanation": "'~(으)던' is used when referring back to a past action or state that has since ended or changed. It corresponds to 'who used to' or 'that used to' in English. It often implies something was habitual or continuous, or it was once true but is no longer so.",
@@ -5576,7 +5576,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__95",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)려면",
     "title": "~(으)려면 [(eu)ryeomyeon] (In order to)",
     "shortExplanation": "Used to express the condition or criteria needed to realize a certain goal or result; 'in order to', 'if one wants to'.",
     "longExplanation": "'~(으)려면' is used in Korean to present the conditions required to achieve a particular outcome or goal. It can be translated as 'in order to' or 'if you want to'. It emphasizes that certain conditions must be met for the intended result to happen.",
@@ -5608,7 +5608,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__96",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 수록",
     "title": "~(으)ㄹ 수록 [(eu)l surok] (The more)",
     "shortExplanation": "Used to express an increase in degree, intensity, or extent; 'the more... the more...'.",
     "longExplanation": "'~(으)ㄹ수록' is a pattern used to show that one action or state increasingly affects another, similar to 'the more... the more...' in English. It indicates that as one element increases (or decreases), another is affected proportionally.",
@@ -5640,7 +5640,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__97",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄴ/는 중",
     "title": "~(으)ㄴ/는 중 [(eu)n/neun jung] (In the middle of)",
     "shortExplanation": "Used to indicate 'in the process' or 'in the middle of' certain actions or states.",
     "longExplanation": "'~(으)ㄴ/는 중' is used in Korean to express ongoing actions or states, similar to continuous/progressive forms in English. It suggests that the speaker (or subject) is 'in the middle of' doing something right now, or is currently in some state. The form depends on whether the verb ends in a vowel or consonant.",
@@ -5672,7 +5672,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__98",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄴ/는 탓에",
     "title": "~(으)ㄴ/는 탓에 [(eu)n/neun tase] (Because of)",
     "shortExplanation": "Used to express the cause of a negative result or situation; 'because of'.",
     "longExplanation": "'~(으)ㄴ/는 탓에' is a grammar point in Korean used to express that a particular cause led to a negative or undesirable outcome. It is akin to 'because of' in English when something unfortunate happens due to a specified reason.",
@@ -5704,7 +5704,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__99",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄴ/는데다가",
     "title": "~(으)ㄴ/는데다가 [(eu)n/neundedaga] (Moreover, additionally)",
     "shortExplanation": "Used to add more information, similar to 'moreover' or 'additionally' in English.",
     "longExplanation": "'~(으)ㄴ/는데다가' is a compound grammar form in Korean used to add an extra piece of information on top of what was already mentioned, similar to 'moreover', 'besides', or 'furthermore' in English. It can attach to verbs, adjectives, or nouns (with the right connectors), providing an additional detail or characteristic that reinforces what came before.",
@@ -5736,7 +5736,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__100",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄴ/는데도 불구하고",
     "title": "~(으)ㄴ/는데도 불구하고 [(eu)n/neundedo bulguhago] (Despite, in spite of)",
     "shortExplanation": "Used to express 'despite' or 'in spite of'.",
     "longExplanation": "'~(으)ㄴ/는데도 불구하고' is a longer conjunction in Korean that indicates a counter-expected result. It means 'despite' or 'in spite of' the first clause, the second (often unexpected) result still happened. It emphasizes that the outcome defies the expectation one might have based on the first clause.",
@@ -5768,7 +5768,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__101",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄴ/는지 모르겠다",
     "title": "~(으)ㄴ/는지 모르겠다 [(eu)n/neunji moreugessda] (I'm not sure if)",
     "shortExplanation": "Used to express uncertainty or lack of confidence about something; 'I'm not sure if'.",
     "longExplanation": "'~(으)ㄴ/는지 모르겠다' is used in Korean when the speaker is not certain about some fact or situation. It often corresponds to 'I don't know if...' or 'I'm not sure whether...' in English. You attach ~(으)ㄴ/는지 to the verb or adjective stem, then add 모르겠다 (or 모른다, 모르겠어요, etc.) to indicate uncertainty.",
@@ -5800,7 +5800,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__102",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)려는 참이다",
     "title": "~(으)려는 참이다 [(eu)ryeoneun chamida] (I really want to)",
     "shortExplanation": "Used to express a strong desire or intention to do something, often implying frustration at not being able to do it.",
     "longExplanation": "'~(으)려는 참이다' emphasizes a strong intent or desire toward an action, sometimes accompanied by a sense of frustration or impatience. It can be translated as 'I was just about to...' or 'I really want to...' in English. It's commonly used when you feel you have been holding yourself back but are on the verge of acting.",
@@ -5832,7 +5832,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__103",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 것 같다",
     "title": "~(으)ㄹ 것 같다 [(eu)l geot gatda] (It seems like)",
     "shortExplanation": "Used to express a guess, assumption, or prediction.",
     "longExplanation": "'~(으)ㄹ 것 같다' is used to say that something seems like it will happen, or that you assume/predict something based on what you know. Whether you use '으' depends on whether the verb/adjective stem ends in a consonant or vowel. In casual speech, you’ll often hear it as '것 같아(요).'",
@@ -5864,7 +5864,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__104",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 것이다",
     "title": "~(으)ㄹ 것이다 [(eu)l geosida] (Will likely)",
     "shortExplanation": "Used to express probability, anticipation, or plan for the future; 'will likely', 'will', 'is going to'.",
     "longExplanation": "'~(으)ㄹ 것이다' is used in Korean to indicate a prediction, expectation, or plan regarding the future, akin to 'will' in English. It implies the speaker’s belief or intention about what will happen or what they (or someone else) will do.",
@@ -5896,7 +5896,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__105",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 뿐만 아니라",
     "title": "~(으)ㄹ 뿐만 아니라 [(eu)l ppunman anira] (Not only... but also...)",
     "shortExplanation": "Used to express 'not only..., but also...'.",
     "longExplanation": "'~(으)ㄹ 뿐만 아니라' is used in Korean to emphasize two or more statements are true. The second part adds new information that supports or expands upon the first part, akin to 'not only…but also…' in English.",
@@ -5928,7 +5928,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__106",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 뿐이다",
     "title": "~(으)ㄹ 뿐이다 [(eu)l ppunida] (Only, just)",
     "shortExplanation": "Used to express 'only' or 'just', emphasizing a sole action or state.",
     "longExplanation": "'~(으)ㄹ 뿐이다' emphasizes that there is nothing more or different beyond what’s stated. It’s similar to saying 'I only do X' or 'It’s just that…' in English. The form depends on whether the verb stem ends in a vowel (ㄹ 뿐이다) or consonant (을 뿐이다).",
@@ -5960,7 +5960,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__107",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ게요",
     "title": "~(으)ㄹ게요 [(eu)lgeyo] (I will, in the future)",
     "shortExplanation": "Used to express an intention or promise about the future, often showing the speaker’s determination.",
     "longExplanation": "'~(으)ㄹ게요' is a polite way in Korean to show the speaker’s intention or promise to do something soon. It also conveys the speaker’s will to carry out the action. Which form (을게요 or ㄹ게요) you use depends on the final sound of the verb stem.",
@@ -5992,7 +5992,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__108",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ게",
     "title": "~(으)ㄹ게 [(eu)lge] (I will, in the future)",
     "shortExplanation": "A casual way to indicate the speaker will do something in the future, often reflecting one’s decision or promise.",
     "longExplanation": "'~(으)ㄹ게' is the casual version of '~(으)ㄹ게요', used among friends or people of the same age. It expresses the speaker’s intention or promise to do something soon. As with '~(으)ㄹ게요', the form depends on the final sound of the verb stem.",
@@ -6024,7 +6024,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__109",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ래",
     "title": "~(으)ㄹ래 [(eu)llae] (I want to)",
     "shortExplanation": "Used to express that the speaker wants or intends to do something, usually in casual speech.",
     "longExplanation": "'~(으)ㄹ래' is used in casual Korean to indicate the speaker’s desire or plan to do something. It can translate to 'I want to…' or 'Shall we…?' depending on context. It is more informal than '~(으)ㄹ게요.'",
@@ -6056,7 +6056,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__110",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ라고",
     "title": "~(으)ㄹ라고 [(eu)llago] (Intend to)",
     "shortExplanation": "Used to express someone's intention or plan to do something (colloquial).",
     "longExplanation": "'~(으)ㄹ라고' is a somewhat colloquial form in Korean for expressing plans or intentions. It can be attached to a verb stem to indicate what someone is determined or plans to do. If the verb stem ends in a vowel or 'ㄹ', use 'ㄹ라고'; otherwise use '을라고'.",
@@ -6088,7 +6088,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__111",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 테니까",
     "title": "~(으)ㄹ 테니까 [(eu)l tenikka] (Since I assume)",
     "shortExplanation": "Used when the speaker makes a guess or assumption, then provides advice or a suggestion based on that assumption.",
     "longExplanation": "'~(으)ㄹ 테니까' indicates a future assumption or strong belief about a situation, followed by advice or a suggestion. It shows that the speaker is giving guidance or instructions that hinge on this assumption.",
@@ -6120,7 +6120,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__112",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ지라도",
     "title": "~(으)ㄹ지라도 [(eu)ljirado] (Even if)",
     "shortExplanation": "Used to express 'even if', emphasizing that a certain action or decision remains unchanged regardless of the situation.",
     "longExplanation": "'~(으)ㄹ지라도' is a complex suffix used in Korean to signify 'even if' or 'although'. It is commonly used for mentioning a hypothetical or difficult scenario, yet affirming that one’s stance or decision does not change. It emphasizes the speaker’s firm determination or resolution in spite of possible negative outcomes.",
@@ -6152,7 +6152,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__113",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)면서도",
     "title": "~(으)면서도 [(eu)myeonseodo] (While, although)",
     "shortExplanation": "Used to express contrast or contradiction; 'while', 'although'.",
     "longExplanation": "'~(으)면서도' is used in Korean to show that two actions or states occur simultaneously, yet they are somewhat contradictory or unexpected when considered together. It is akin to saying 'while' or 'even though' in English.",
@@ -6184,7 +6184,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__114",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)시면",
     "title": "~(으)시면 [(eu)simyeon] (If you)",
     "shortExplanation": "Used to express a polite conditional, translating to 'if you' or 'when you' in English.",
     "longExplanation": "'~(으)시면' is a polite conditional form used to say 'if you...' or 'when you...' in a respectful way. It is often directed at someone of equal or higher status, indicating a formal or polite tone.",
@@ -6216,7 +6216,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__115",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)시겠어요",
     "title": "~(으)시겠어요 [(eu)sigesseoyo] (You will probably)",
     "shortExplanation": "Used to express probability or an assumption about the listener’s action or state, in a polite way.",
     "longExplanation": "'~(으)시겠어요' is a polite form in Korean used to express the speaker’s assumption or expectation about the listener’s future condition or action. It conveys respect and is often used in formal or semi-formal conversation.",
@@ -6248,7 +6248,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__116",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㅂ시다",
     "title": "~(으)ㅂ시다 [(eu)bshida] (Let's)",
     "shortExplanation": "Used to propose or suggest an activity together; 'Let's'.",
     "longExplanation": "'~(으)ㅂ시다' is the standard form in Korean used to suggest doing something together, equivalent to 'Let's' in English. The form depends on whether the verb stem ends in a vowel (ㅂ시다) or consonant (읍시다).",
@@ -6280,7 +6280,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__117",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)십시오",
     "title": "~(으)십시오 [(eu)sipsio] (Please)",
     "shortExplanation": "Used to express polite requests or commands; roughly 'please do ~'.",
     "longExplanation": "'~(으)십시오' is one of the most formal imperative endings in Korean, used to give commands or requests politely. It corresponds to 'please do ~' in English. Whether you use '십시오' or '으십시오' depends on whether the verb stem ends in a vowel or a consonant.",
@@ -6312,7 +6312,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__0",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)나마",
     "title": "~(으)나마 [(eu)nama] (At least, even if only)",
     "shortExplanation": "Used to express the modest amount of what you can do or accept.",
     "longExplanation": "'~(으)나마 [(eu)nama]' is a grammar point used in Korean to express that even if the quantity or degree is modest, it is at least that much. It can have a sense of consolation or slight regret, but also a feeling that one can be satisfied with that small amount in a given situation.",
@@ -6344,7 +6344,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__1",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)니까",
     "title": "~(으)니까 [(eu)nikka] (Because, so)",
     "shortExplanation": "Used to indicate the cause or reason; 'Because', 'So'.",
     "longExplanation": "'~(으)니까 [(eu)nikka]' is a conjunction used in Korean to indicate the cause or reason why something happens or a certain situation exists. It is similar to 'because' or 'so' in English. It is most often used in casual conversations and can be used both for positive and negative statements.",
@@ -6376,7 +6376,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__2",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)려다가",
     "title": "~(으)려다가 [(eu)ryeodaga] (Was about to, tried to)",
     "shortExplanation": "This grammar point is used to express an action that was about to happen but did not take place due to some intervening cause.",
     "longExplanation": "'~(으)려다가' is used when you want to express an action that was on the verge of happening or one that you intended to do, but for some reason did not happen, or another event intervened. Depending on the context, it can be translated as 'was about to', 'tried to', 'was going to', or 'intended to'.",
@@ -6408,7 +6408,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__3",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)니",
     "title": "~(으)니 [(eu)ni] (Because, as one would expect)",
     "shortExplanation": "Used to indicate that given the circumstances, the result is natural or to be expected.",
     "longExplanation": "'~(으)니 [(eu)ni]' is often used in Korean to mean 'because' or 'since,' emphasizing a cause-and-effect relationship or a natural/expected result. It can sound slightly more formal or written than '~(으)니까', and is also common in narratives to show that something is an obvious conclusion based on a certain action or condition.",
@@ -6440,7 +6440,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__4",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)면 ~(으)ㄹ수록",
     "title": "~(으)면 ~(으)ㄹ수록 [(eu)myeon ~(eu)lsurok] (The more... the more...)",
     "shortExplanation": "Used to express the idea that the more one situation or action occurs, the more another result follows.",
     "longExplanation": "'~(으)면 ~(으)ㄹ수록' is used to show a relationship of proportion, much like the English pattern 'the more..., the more...'. The first clause describes a certain action or condition increasing, and the second clause describes the corresponding change or result that likewise increases or intensifies.",
@@ -6472,7 +6472,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__5",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)면서는",
     "title": "~(으)면서는 [(eu)myeonseoneun] (While, whereas)",
     "shortExplanation": "Used to connect two conflicting or contrasting situations or actions, often to criticize or show surprise.",
     "longExplanation": "The grammar point '~(으)면서는' is used to connect two contrasting or unexpected situations in Korean. It can be translated as 'while' or 'whereas,' but it has a nuance of slight criticism or emphasis on the contradiction. It often conveys the speaker's surprise, disappointment, or disapproval about the two coexisting states.",
@@ -6504,7 +6504,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__6",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)시거나",
     "title": "~(으)시거나 [(eu)sigeona] (Either... or... [honorific])",
     "shortExplanation": "Used to present two or more possibilities or choices in a respectful manner (honorific).",
     "longExplanation": "'~(으)시거나' is the honorific form of '~거나' (meaning 'or'), used when speaking about or to elders, superiors, or in polite/formal situations. It gives multiple alternatives, allowing the subject (respected person) to choose.",
@@ -6536,7 +6536,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__7",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)시든지",
     "title": "~(으)시든지 [(eu)sideunji] (Whether... or... [honorific])",
     "shortExplanation": "Used to list two or more possibilities in a respectful manner.",
     "longExplanation": "The grammar point '~(으)시든지' is the honorific counterpart of '~든지', which means 'whether... or...' and presents multiple possibilities or conditions politely. It allows freedom of choice for the respected person, without asserting which option is preferred.",
@@ -6568,7 +6568,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__8",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 데가 없다",
     "title": "~(으)ㄹ 데가 없다 [(eu)l dega eopda] (There's no way to...)",
     "shortExplanation": "Used to express 'there's absolutely no way/place/opportunity to...' do something.",
     "longExplanation": "The phrase '~(으)ㄹ 데가 없다' literally means 'there is no place/way to do X' and emphasizes that, given the conditions, there is no possibility or option for the action. It can sound somewhat figurative, referring to both physical 'place' or a 'method/means' of doing something.",
@@ -6600,7 +6600,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__9",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 수밖에 없다",
     "title": "~(으)ㄹ 수밖에 없다 [(eu)l subakke eopda] (Have no choice but to)",
     "shortExplanation": "Used to express that one has 'no choice but to' do something.",
     "longExplanation": "'~(으)ㄹ 수밖에 없다' emphasizes that a certain action or situation is unavoidable or inevitable. It is equivalent to the English phrase 'have no choice but to.'",
@@ -6632,7 +6632,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__10",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ지라도",
     "title": "~(으)ㄹ지라도 [(eu)ljirado] (Even if)",
     "shortExplanation": "This grammar point is used to express 'even if' or 'no matter how'.",
     "longExplanation": "'~(으)ㄹ지라도 [(eu)ljirado]' is a conditional ending in Korean used to convey that, even if the situation in the first clause is true, it does not affect or change the action or stance in the following clause. It often translates to 'no matter how' or 'even if'. It can also express an unlikely supposition or a scenario beyond one's control.",
@@ -6664,7 +6664,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__11",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)려나",
     "title": "~(으)려나 [(eu)ryeona] (I wonder if...)",
     "shortExplanation": "This grammar point is used when the speaker is wondering or pondering about a future possibility or outcome.",
     "longExplanation": "'~(으)려나 [(eu)ryeona]' is used in Korean to express doubt, curiosity, or speculation about a situation in the future. It is similar to the English expression 'I wonder if'. If the verb stem ends in a vowel, '려나' is used; if it ends in a consonant, '으려나' is used.",
@@ -9832,7 +9832,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__110",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 때",
     "title": "~(으)ㄹ 때 [eul ttae] (When, while)",
     "shortExplanation": "Used to indicate a specific time or situation for an action; 'when', 'while'.",
     "longExplanation": "'~(으)ㄹ 때 [eul ttae]' is a common Korean grammar structure meaning 'when' or 'while'. It attaches to the verb stem or adjective stem to show that an action/event takes place under those circumstances or at that time.",
@@ -10344,7 +10344,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__126",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ지",
     "title": "~(으)ㄹ지 (Maybe, perhaps)",
     "shortExplanation": "Used to express uncertainty, doubt, or speculation; 'might', 'maybe', 'I'm not sure if...'.",
     "longExplanation": "The grammar pattern '~(으)ㄹ지' is used with verbs or adjectives to convey uncertainty or speculation. It often appears with expressions like '모르겠다 (I don't know)', forming '~(으)ㄹ지 모르겠다' to mean 'I’m not sure if...' or 'maybe...'. It's similar to 'perhaps' or 'might' in English.",
@@ -10408,7 +10408,7 @@ export const GRAMMAR_KO: GrammarPattern[] = [
   {
     "id": "ko__128",
     "language": "ko",
-    "pattern": "~",
+    "pattern": "~(으)ㄹ 테니까",
     "title": "~(으)ㄹ 테니까 [tenikka] (So, therefore)",
     "shortExplanation": "Indicates an assumption or reason, leading to a suggestion or conclusion; 'because it will be...', 'so'.",
     "longExplanation": "'~(으)ㄹ 테니까' expresses the speaker’s assumption or strong guess about a future or present state, providing a reason for the following statement. For example, '배가 고플 테니까 (you must be hungry), so let's eat.' This form combines the future/assumed ending '~(으)ㄹ 테다' with '~니까 (because)'.",

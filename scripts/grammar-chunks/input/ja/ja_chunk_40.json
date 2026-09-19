@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_A_2",
+    "id": "ja_n1_A_2",
     "language": "ja",
     "pattern": "A",
     "title": "A かたわら B (A katawara B)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_A_3",
+    "id": "ja_n1_A_3",
     "language": "ja",
     "pattern": "A",
     "title": "A かれ B かれ (A kare B kare)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_A_4",
+    "id": "ja_n1_A_4",
     "language": "ja",
     "pattern": "A",
     "title": "A だの B だの (A dano B dano)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_A_5",
+    "id": "ja_n1_A_5",
     "language": "ja",
     "pattern": "A",
     "title": "A であれ B であれ (A deare B deare)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_A_6",
+    "id": "ja_n1_A_6",
     "language": "ja",
     "pattern": "A",
     "title": "A というか B というか (A to iu ka B to iu ka)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_A_7",
+    "id": "ja_n1_A_7",
     "language": "ja",
     "pattern": "A",
     "title": "A とも B とも (A tomo B tomo)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_A_8",
+    "id": "ja_n1_A_8",
     "language": "ja",
     "pattern": "A",
     "title": "A にしろ B にしろ (A nishiro B nishiro)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_A_9",
+    "id": "ja_n1_A_9",
     "language": "ja",
     "pattern": "A",
     "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_A_10",
+    "id": "ja_n1_A_10",
     "language": "ja",
     "pattern": "A",
     "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_A_11",
+    "id": "ja_n1_A_11",
     "language": "ja",
     "pattern": "A",
     "title": "A のやら B のやら (A no yara B no yara)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun1_12",
+    "id": "ja_n1_Noun1_12",
     "language": "ja",
     "pattern": "Noun1",
     "title": "Noun1 が Noun1 なら、 Noun2 も Noun2 だ (A ga A nara, B mo B da)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun1_13",
+    "id": "ja_n1_Noun1_13",
     "language": "ja",
     "pattern": "Noun1",
     "title": "Noun1 も Noun1 なら、Noun2 も Noun2 だ (A mo A nara, B mo B da)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_14",
+    "id": "ja_n1_Noun_14",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + あっての + Noun (A atte no B)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_15",
+    "id": "ja_n1_Noun_15",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun かたがた (Noun kata gata)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_16",
+    "id": "ja_n1_Noun_16",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun がてら (Noun gatera)",

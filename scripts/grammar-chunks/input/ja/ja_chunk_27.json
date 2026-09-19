@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_最中に_130",
+    "id": "ja_n3_最中に_130",
     "language": "ja",
     "pattern": "～最中に",
     "title": "～最中に (～saichuu ni)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_決してない_131",
+    "id": "ja_n3_決してない_131",
     "language": "ja",
     "pattern": "決して～ない",
     "title": "決して～ない (kesshite ~ nai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n2_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A あるいは B (A aruiwa B)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Aおまけに_1",
+    "id": "ja_n2_Aおまけに_1",
     "language": "ja",
     "pattern": "A。おまけに",
     "title": "A。おまけに B。(~omake ni)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Aさて_2",
+    "id": "ja_n2_Aさて_2",
     "language": "ja",
     "pattern": "A。さて",
     "title": "A。さて B。(A. Sate B.)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Aしかも_3",
+    "id": "ja_n2_Aしかも_3",
     "language": "ja",
     "pattern": "A。しかも",
     "title": "A。しかも B。(A. Shikamo B.)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Aしたがって_4",
+    "id": "ja_n2_Aしたがって_4",
     "language": "ja",
     "pattern": "A。したがって",
     "title": "A。したがって B。(A. Shitagatte B.)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_A_5",
+    "id": "ja_n2_A_5",
     "language": "ja",
     "pattern": "A",
     "title": "A すなわち B。 (A sunawachi B)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Aすると_6",
+    "id": "ja_n2_Aすると_6",
     "language": "ja",
     "pattern": "A。すると",
     "title": "A。すると B。(~suruto)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Aそういえば_7",
+    "id": "ja_n2_Aそういえば_7",
     "language": "ja",
     "pattern": "A。そういえば",
     "title": "A。そういえば B。(~souieba)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Aそこで_8",
+    "id": "ja_n2_Aそこで_8",
     "language": "ja",
     "pattern": "A。そこで",
     "title": "A。そこで B。(~sokode)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_AそれがB_9",
+    "id": "ja_n2_AそれがB_9",
     "language": "ja",
     "pattern": "A。それがB。",
     "title": "A。それがB。(~sorega)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Aそれで_10",
+    "id": "ja_n2_Aそれで_10",
     "language": "ja",
     "pattern": "A。それで",
     "title": "A。それで B。 (~sore de)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Aそれでも_11",
+    "id": "ja_n2_Aそれでも_11",
     "language": "ja",
     "pattern": "A。それでも",
     "title": "A。それでも B。(~sore demo)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Aそれなのに_12",
+    "id": "ja_n2_Aそれなのに_12",
     "language": "ja",
     "pattern": "A。それなのに",
     "title": "A。それなのに B。(~sorenanoni)",

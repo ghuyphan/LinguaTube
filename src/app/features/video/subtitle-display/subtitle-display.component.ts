@@ -1,6 +1,5 @@
 import { Component, OnDestroy, inject, effect, output, signal, computed, viewChild, ElementRef, ChangeDetectionStrategy, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyQuickViewComponent } from '../../vocabulary/vocabulary-quick-view/vocabulary-quick-view.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
@@ -33,26 +32,10 @@ import { normalizeLanguageCode } from '../../../shared/utils/language.utils';
     SwitchComponent
   ],
   templateUrl: './subtitle-display.component.html',
-  styleUrl: './subtitle-display.component.scss',
-  animations: [
-    trigger('subtitleFade', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('150ms ease-out', style({ opacity: 1 }))
-      ])
-    ]),
-    trigger('fadeSlide', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(8px)' }),
-        animate('200ms cubic-bezier(0.16, 1, 0.3, 1)', style({ opacity: 1, transform: 'translateY(0)' }))
-      ]),
-      transition(':leave', [
-        animate('150ms cubic-bezier(0.16, 1, 0.3, 1)', style({ opacity: 0, transform: 'translateY(-4px)' }))
-      ])
-    ])
-  ]
+  styleUrl: './subtitle-display.component.scss'
 })
 export class SubtitleDisplayComponent implements OnDestroy {
+  readonly activeCueId = computed(() => this.subtitles.currentCue()?.id ?? null);
   subtitles = inject(SubtitleService);
   youtube = inject(YoutubeService);
   vocab = inject(VocabularyService);
@@ -159,6 +142,14 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   effectiveLanguage = computed(() => this.subtitles.activeLanguage());
 
+  readonly isDualSubSupportedLang = computed(() =>
+    ['ja', 'zh', 'ko', 'en'].includes(this.effectiveLanguage())
+  );
+
+  readonly showDualSubs = computed(() =>
+    this.settings.settings().showDualSubtitles && this.isDualSubSupportedLang()
+  );
+
   readingDisplayMode = computed(() =>
     this.settings.getReadingDisplayMode(this.effectiveLanguage() as SupportedLearningLanguage)
   );
@@ -227,6 +218,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
   });
 
   viewTokens = computed(() => {
+    this.vocab.lastModified?.();
     const tokens = this.currentTokens();
     const grammarIndices = this.grammarTokenIndices();
     const lang = this.effectiveLanguage();
@@ -238,13 +230,24 @@ export class SubtitleDisplayComponent implements OnDestroy {
         ? readingText
         : token.surface;
 
+      const level = this.vocab.getWordLevel(token.surface)
+        || (token.baseForm ? this.vocab.getWordLevel(token.baseForm) : null)
+        || (token.reading ? this.vocab.getWordLevel(token.reading) : null)
+        || token.level
+        || undefined;
+
+      const isSaved = !!level
+        || this.vocab.hasWord(token.surface)
+        || (token.baseForm ? this.vocab.hasWord(token.baseForm) : false)
+        || (token.reading ? this.vocab.hasWord(token.reading) : false);
+
       return {
         ...token,
+        level,
         isGrammar: grammarIndices.has(index),
         readingText,
         displayText,
-        isSaved: this.vocab.hasWord(token.surface)
-          || (token.baseForm ? this.vocab.hasWord(token.baseForm) : false)
+        isSaved
       };
     });
   });

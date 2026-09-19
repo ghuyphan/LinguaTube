@@ -32,10 +32,17 @@ export class VocabularyListComponent implements OnDestroy {
   embedded = input<boolean>(false);
   showHeader = input<boolean>(true);
   showMenu = input<boolean>(false);
+  showToolbar = input<boolean>(true);
+  externalSearch = input<string>('');
+  externalLevel = input<WordLevel | 'all' | null>(null);
   deleteRequest = output<string>();
   menuRequest = output<void>();
   wordSelect = output<Token>();
   addWordRequest = output<string | void>();
+
+  effectiveSearchQuery = computed(() => {
+    return (this.showToolbar() ? this.searchQuery : this.externalSearch()).trim();
+  });
 
   // Vocab Options Menu Sheet state
   readonly vocabMenuOpen = signal(false);
@@ -104,9 +111,9 @@ export class VocabularyListComponent implements OnDestroy {
 
   readonly levelOptions = computed<OptionItem[]>(() => [
     { value: 'new', label: this.i18n.t('vocab.new') || 'New', icon: 'plus-circle', color: 'new' },
-    { value: 'learning', label: this.i18n.t('vocab.learning') || 'Learning', icon: 'clock', color: 'learning' },
+    { value: 'learning', label: this.i18n.t('vocab.learning') || 'Learning', icon: 'brain', color: 'learning' },
     { value: 'known', label: this.i18n.t('vocab.known') || 'Known', icon: 'check-circle', color: 'known' },
-    { value: 'ignored', label: this.i18n.t('vocab.ignored') || 'Ignored', icon: 'slash', color: 'ignored' },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') || 'Ignored', icon: 'eye-off', color: 'ignored' },
   ]);
 
   playAudio(item: VocabularyItem, event: Event): void {
@@ -129,14 +136,6 @@ export class VocabularyListComponent implements OnDestroy {
     this.editingItem.set(null);
   }
 
-  cycleLevel(item: VocabularyItem, event: Event): void {
-    event.stopPropagation();
-    const cycleOrder: WordLevel[] = ['new', 'learning', 'known', 'ignored'];
-    const currentIndex = cycleOrder.indexOf(item.level);
-    const nextLevel = cycleOrder[(currentIndex + 1) % cycleOrder.length];
-    this.vocab.updateLevel(item.id, nextLevel);
-  }
-
   openDictionary(): void {
     this.router.navigate(['/dictionary']);
   }
@@ -153,12 +152,6 @@ export class VocabularyListComponent implements OnDestroy {
       baseForm: item.word,
       level: item.level
     });
-  }
-
-  onLevelContextMenu(item: VocabularyItem, event: MouseEvent): void {
-    event.preventDefault();
-    event.stopPropagation();
-    this.openLevelPicker(item, event);
   }
 
   deleteWordDirect(item: VocabularyItem, event: Event): void {
@@ -241,13 +234,14 @@ export class VocabularyListComponent implements OnDestroy {
     items = items.filter(item => item.language === currentLang);
 
     // Filter by selected level
-    const level = this.selectedLevel();
+    const level = this.showToolbar() ? this.selectedLevel() : (this.externalLevel() ?? 'all');
     if (level !== 'all') {
       items = items.filter(item => item.level === level);
     }
 
-    // Use debounced search value
-    const query = this.debouncedSearch().toLowerCase();
+    // Use debounced search value or external search value
+    const rawQuery = this.showToolbar() ? this.debouncedSearch() : this.externalSearch();
+    const query = (rawQuery || '').toLowerCase().trim();
     if (query) {
       items = items.filter(item =>
         item.word.toLowerCase().includes(query) ||

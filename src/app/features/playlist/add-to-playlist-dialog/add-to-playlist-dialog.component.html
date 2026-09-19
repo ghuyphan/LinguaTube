@@ -10,11 +10,11 @@
         <div class="playlists-card">
             <div class="playlists-list" role="listbox" [attr.aria-label]="i18n.t('playlist.saveToPlaylist') || 'Save to Playlist'">
                 @for (playlist of playlists(); track playlist.id; let isLast = $last) {
-                <button type="button" class="playlist-item" [class.saved]="isInPlaylist(playlist)"
-                    role="option" [attr.aria-selected]="isInPlaylist(playlist)"
+                <button type="button" class="playlist-item" [class.saved]="savedPlaylistIds().has(playlist.id)"
+                    role="option" [attr.aria-selected]="savedPlaylistIds().has(playlist.id)"
                     (click)="onTogglePlaylist(playlist)">
-                    <div class="playlist-icon" [class.playlist-icon--saved]="isInPlaylist(playlist)">
-                        @if (isInPlaylist(playlist)) {
+                    <div class="playlist-icon" [class.playlist-icon--saved]="savedPlaylistIds().has(playlist.id)">
+                        @if (savedPlaylistIds().has(playlist.id)) {
                         <app-icon name="check" [size]="18"></app-icon>
                         } @else {
                         <app-icon name="list-video" [size]="18"></app-icon>
@@ -24,7 +24,7 @@
                         <span class="playlist-name">{{ playlist.title }}</span>
                         <span class="playlist-meta">{{ playlist.videoIds.length }} {{ i18n.t('playlist.videos') || 'videos' }}</span>
                     </div>
-                    @if (isInPlaylist(playlist)) {
+                    @if (savedPlaylistIds().has(playlist.id)) {
                     <div class="playlist-check-badge" aria-hidden="true">
                         <app-icon name="check" [size]="14" />
                     </div>

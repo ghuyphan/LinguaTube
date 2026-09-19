@@ -31,6 +31,7 @@ This document provides a comprehensive breakdown of the languages, frameworks, l
 | **Korean NLP** | `hangul-romanization` | `^1.0.1` | Hangul to Revised Romanization conversion |
 | **English NLP** | `compromise` | `^14.16.0` | Morphological tokenizer, POS tagging, lemmatization & CEFR syntax parsing |
 | **Word Segmentation** | `Intl.Segmenter` | Built-in ECMAScript | Zero-dependency word boundary segmentation for ZH, KO, EN |
+| **Icon System** | `@mingcute/icons` | `^3.0.2` | Unified MingCute icon standard; compiled into `sprite.svg` via `scripts/build-icons.mjs` |
 | **Visual Assets** | Circle Flags | SVG CDN | Consistent cross-platform SVG national flag badges |
 | **Linter** | ESLint + angular-eslint | `^9.39.4` | Code style, accessibility, and TypeScript linting |
 | **Testing** | Node.js Test Runner / Karma | `Node 20+ / Karma 6.4` | Automated backend security tests & sync utility test runner (`node --test tests/*.test.mjs`) |

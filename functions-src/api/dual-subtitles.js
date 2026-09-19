@@ -22,6 +22,13 @@ const RATE_LIMIT_CONFIG = {
     windowSeconds: 3600,
     keyPrefix: 'dual-subs'
 };
+
+// High-capacity rate limit for saving client-translated subtitles (checkpoints)
+const RATE_LIMIT_SAVE_CONFIG = {
+    max: { anonymous: 10, free: 120, pro: 300, premium: 600 },
+    windowSeconds: 3600,
+    keyPrefix: 'dual-subs-save'
+};
 // Batch size optimized for Lingva/GTX chunking with Workers Paid CPU headroom
 const BATCH_SIZE = 40;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
@@ -143,13 +150,15 @@ export async function onRequestPost(context) {
             }, 200, { 'Cache-Control': 'no-store' });
         }
 
-        // 2. Auth & Rate Limit (applies to both saveOnly and live translation generation)
+        // 2. Auth & Rate Limit
         const authResult = await validateAuthToken(request, env);
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
-        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+        const isSave = Boolean(saveOnly || onlySave);
+        const baseConfig = isSave ? RATE_LIMIT_SAVE_CONFIG : RATE_LIMIT_CONFIG;
+        const rateLimitConfig = getTieredConfig(baseConfig, tier);
 
         const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig);
+        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, waitUntil);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

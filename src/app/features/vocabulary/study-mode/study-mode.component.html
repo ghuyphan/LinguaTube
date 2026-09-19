@@ -338,9 +338,11 @@
 
                             <button type="button" 
                                     class="action-btn action-btn--audio card-speaker-btn card-action-interactive" 
-                                    [title]="i18n.t('study.listen')"
+                                    [title]="(i18n.t('study.listen') || 'Listen') + ' (R)'"
+                                    [attr.aria-label]="(i18n.t('study.listen') || 'Listen') + ' (R)'"
                                     (click)="playAudio(vm.primaryText, vm.item.language, $event, vm.item.audio)">
                                 <app-icon name="volume-2" [size]="16" />
+                                <kbd class="study-kbd-pill study-kbd-pill--audio desktop-only">R</kbd>
                             </button>
                         </div>
                     </div>
@@ -386,6 +388,7 @@
                     (click)="flipCard()">
                 <app-icon name="rotate-ccw" [size]="16" />
                 <span class="reveal-action-btn__text">{{ i18n.t('study.showAnswer') || i18n.t('study.tapToReveal') }}</span>
+                <kbd class="study-kbd-pill desktop-only">Space</kbd>
             </button>
             } @else {
             <div class="answer-buttons">
@@ -393,6 +396,7 @@
                     <div class="answer-btn__main">
                         <app-icon name="x" [size]="16" />
                         <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
+                        <kbd class="study-kbd-pill desktop-only">1</kbd>
                     </div>
                     <div class="answer-btn__meta">
                         <span class="answer-time">{{ intervalPreviews().again }}</span>
@@ -402,6 +406,7 @@
                     <div class="answer-btn__main">
                         <app-icon name="rotate-ccw" [size]="16" />
                         <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
+                        <kbd class="study-kbd-pill desktop-only">2</kbd>
                     </div>
                     <div class="answer-btn__meta">
                         <span class="answer-time">{{ intervalPreviews().hard }}</span>
@@ -411,6 +416,7 @@
                     <div class="answer-btn__main">
                         <app-icon name="check" [size]="16" />
                         <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
+                        <kbd class="study-kbd-pill desktop-only">3</kbd>
                     </div>
                     <div class="answer-btn__meta">
                         <span class="answer-time">{{ intervalPreviews().good }}</span>
@@ -420,6 +426,7 @@
                     <div class="answer-btn__main">
                         <app-icon name="chevron-right" [size]="16" />
                         <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
+                        <kbd class="study-kbd-pill desktop-only">4</kbd>
                     </div>
                     <div class="answer-btn__meta">
                         <span class="answer-time">{{ intervalPreviews().easy }}</span>

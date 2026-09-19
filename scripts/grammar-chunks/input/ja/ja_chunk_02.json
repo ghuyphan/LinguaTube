@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_いAdjective_15",
+    "id": "ja_n5_いAdjective_15",
     "language": "ja",
     "pattern": "い-Adjective:",
     "title": "い-Adjective: Negative Polite Form",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_いAdjective_16",
+    "id": "ja_n5_いAdjective_16",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective て (i-Adjective + te~)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_なAdjective_17",
+    "id": "ja_n5_なAdjective_17",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective に + Verb",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_なAdjective_18",
+    "id": "ja_n5_なAdjective_18",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective で～ (na-Adjective de~)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_なAdjective_19",
+    "id": "ja_n5_なAdjective_19",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective に します (na-Adjective ni shimasu)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_なAdjective_20",
+    "id": "ja_n5_なAdjective_20",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective に なります (na-Adjective ni narimasu)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_21",
+    "id": "ja_n5_Noun_21",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun か Noun か～ (Noun ka Noun ka～)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_22",
+    "id": "ja_n5_Noun_22",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun が できます (Noun ga dekimasu)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_23",
+    "id": "ja_n5_Noun_23",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun がほしいです (〜ga hoshii desu)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_24",
+    "id": "ja_n5_Noun_24",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun から Noun まで (Noun kara Noun made)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_25",
+    "id": "ja_n5_Noun_25",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun くらい～ (Noun kurai～)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_26",
+    "id": "ja_n5_Noun_26",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ぐらい～ (Noun gurai～)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_27",
+    "id": "ja_n5_Noun_27",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ごろ～ (Noun + goro～)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_28",
+    "id": "ja_n5_Noun_28",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun だけ〜 (〜dake)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Nounで_29",
+    "id": "ja_n5_Nounで_29",
     "language": "ja",
     "pattern": "Nounで～",
     "title": "Nounで～ (Noun de ~)",

@@ -8,7 +8,7 @@
 
     <div class="sidebar__inner">
         <!-- Logo / Brand -->
-        <div class="sidebar__brand" (click)="onLearnClick($event)" role="button" tabindex="0" [attr.title]="brandTitle()" [attr.aria-label]="brandTitle()" style="cursor: pointer;">
+        <div class="sidebar__brand" (click)="onLearnClick($event)" (keydown.enter)="onLearnClick($event)" (keydown.space)="onLearnClick($event)" role="button" tabindex="0" [attr.title]="brandTitle()" [attr.aria-label]="brandTitle()" style="cursor: pointer;">
             <div class="sidebar__logo" aria-hidden="true">
                 <svg class="logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -75,7 +75,7 @@
                 }
             </a>
             <a class="nav-item" routerLink="/history" routerLinkActive="active" [attr.title]="i18n.t('history.title')">
-                <app-icon name="clock" [size]="18" />
+                <app-icon name="history" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('history.title') }}</span>
                 }
@@ -118,7 +118,7 @@
                 </button>
                 <div class="stats-bar__divider"></div>
                 <button class="stats-bar__item" (click)="openAiCredits.emit()" 
-                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
+                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'Audio Sync Passes') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                     <app-icon name="diamond" [size]="16" class="stat-icon stat-icon--diamond" />
                     <span class="stats-bar__val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </button>
@@ -132,7 +132,7 @@
                     <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
                         <div class="pro-btn-content">
                             <div class="pro-btn-icon">
-                                <app-icon name="sparkles" [size]="14" />
+                                <app-icon name="diamond" [size]="14" />
                             </div>
                             <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
                             <span class="pro-btn-badge">25💎</span>
@@ -140,7 +140,7 @@
                     </button>
                     } @else {
                     <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
-                        <app-icon name="sparkles" [size]="16" />
+                        <app-icon name="diamond" [size]="16" />
                     </button>
                     }
                 } @else if (auth.subscriptionTier() !== 'premium') {
@@ -331,7 +331,7 @@
                     <app-icon name="diamond" [size]="16" />
                 </div>
                 <div class="metric-info">
-                    <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>
+                    <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'Audio Sync Passes' }}</span>
                     <span class="metric-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </div>
             </button>

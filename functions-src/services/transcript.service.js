@@ -198,17 +198,21 @@ export class TranscriptService {
         const env = context.env || {};
         const { videoId, lang, body, clientId, user, diamondInfo, availableLanguages } = params;
 
-        // 1. Validate video length against user tier limit (prioritize client duration or D1)
+        // 1. Validate video length against user tier limit (server-authoritative: D1 first, then YouTube scraping)
         let duration = await getVideoDuration(db, videoId);
-        if (!duration && (body?.duration || params?.duration)) {
-            duration = body?.duration || params?.duration;
-        }
         if (!duration) {
             const ytDetails = await fetchYouTubeVideoDetails(videoId);
             if (ytDetails.isLive) {
                 throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
             }
             duration = ytDetails.duration;
+            if (duration && db && context.waitUntil) {
+                context.waitUntil(saveVideoLanguages(db, videoId, [], duration).catch(() => {}));
+            }
+        }
+        if (body?.duration || params?.duration) {
+            const clientDuration = body?.duration || params?.duration;
+            duration = Math.max(duration || 0, clientDuration);
         }
 
         const tier = params.tier || this.diamondService.resolveTier(user);

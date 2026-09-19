@@ -109,6 +109,7 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 | `dev` | `npm run dev` | Runs both `server` and `start` concurrently |
 | `release` | `npm run release` | Controlled semver bumper (`patch`, `minor`, `major`, or `<version>`) |
 | `build:functions` | `npm run build:functions` | Bundles `functions-src/` into `functions/` using esbuild |
+| `build:icons` | `npm run build:icons` | Generates pure vector SVG sprite (`src/assets/icons/sprite.svg`) from MingCute icons |
 | `check:i18n` | `npm run check:i18n` | Validates i18n key parity across 5 locales & scans codebase for missing keys |
 | `build` | `npm run build` | Runs `check:i18n`, `build:functions`, and `ng build` for production |
 | `lint` | `npm run lint` | Runs `check:i18n` and lints TypeScript/HTML templates with ESLint 9 |
@@ -145,6 +146,7 @@ Verifies:
 - Strict 11-character YouTube video ID regex and path traversal sanitization.
 - Turnstile verification mode (production enforcement vs dev token bypass).
 - Offline synchronization utilities (`mergeByTimestamp`, PocketBase filter sanitization, batch processor, change detection hashes).
+- **Live E2E Flow Testing**: Live Gladia transcription testing in `tests/e2e-real-flow.test.mjs` is safely skipped by default to protect API quotas. Run `RUN_E2E=1 npm run test:backend` to trigger full upstream testing against live Gladia endpoints.
 
 ### 5.2. Linting
 ```bash

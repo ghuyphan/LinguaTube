@@ -50,7 +50,7 @@ const CACHE_CONTROL = {
     NO_CACHE: 'no-store'
 };
 
-export function onRequestOptions() { return handleOptions(['POST', 'OPTIONS']); }
+export function onRequestOptions() { return handleOptions(['GET', 'POST', 'OPTIONS']); }
 
 export async function onRequestGet({ env }) {
     return jsonResponse({
@@ -122,12 +122,12 @@ export async function onRequestPost(context) {
         if (resultUrl) {
             try {
                 const parsed = new URL(resultUrl);
-                if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
+                if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io' || !/^\/v2\/(transcription|pre-recorded)(\/[a-zA-Z0-9_/-]+)?$/.test(parsed.pathname)) {
                     return jsonResponse({
                         success: false,
                         videoId: cleanVideoId,
                         errorCode: 'INVALID_RESULT_URL',
-                        error: 'Invalid resultUrl: must be a gladia.io URL',
+                        error: 'Invalid resultUrl: must be a gladia.io transcription URL',
                         timing: elapsed()
                     }, 400);
                 }

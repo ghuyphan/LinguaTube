@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_92",
+    "id": "ja_n1_Noun_92",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun もさることながら Noun も (A mo saru koto nagara B mo)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_93",
+    "id": "ja_n1_Noun_93",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun も兼ねて (~mo kanete)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_94",
+    "id": "ja_n1_Noun_94",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun も相まって (~mo aimatte)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_95",
+    "id": "ja_n1_Noun_95",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を おいて他に Verb ない (〜wo oite hoka ni〜nai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_96",
+    "id": "ja_n1_Noun_96",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun をもって (~wo motte)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_97",
+    "id": "ja_n1_Noun_97",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun をものともせずに (Noun wo mono tomo sezu ni)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_98",
+    "id": "ja_n1_Noun_98",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun をよそに (~wo yoso ni)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_99",
+    "id": "ja_n1_Noun_99",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を余儀なくされる (Noun wo yogi naku sareru)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_100",
+    "id": "ja_n1_Noun_100",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を前提として (Noun wo zentei toshite)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_101",
+    "id": "ja_n1_Noun_101",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を前提にして (Noun wo zentei ni shite)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_102",
+    "id": "ja_n1_Noun_102",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を境にして (Noun wo sakai ni shite)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_103",
+    "id": "ja_n1_Noun_103",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を機にして (~wo ki ni shite)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_104",
+    "id": "ja_n1_Noun_104",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を皮切りに / を皮切りにして (Noun wo kawakiri ni / wo kawakiri ni shite)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_105",
+    "id": "ja_n1_Noun_105",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を皮切りにして (Noun wo kawakiri ni shite)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_106",
+    "id": "ja_n1_Noun_106",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を禁じ得ない (〜wo kinjienai)",

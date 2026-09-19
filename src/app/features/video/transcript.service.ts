@@ -38,7 +38,13 @@ export class TranscriptService {
   // ============================================================================
 
   /** Main state signal - single source of truth */
-  readonly state = signal<TranscriptState>({ status: 'idle' });
+  private _state = signal<TranscriptState>({ status: 'idle' });
+  readonly state = this._state.asReadonly();
+
+  /** State mutator for internal/testing transitions */
+  setState(state: TranscriptState): void {
+    this._state.set(state);
+  }
 
   /** Available languages from server */
   readonly availableLanguages = signal<{ native: string[]; ai: string[] }>({ native: [], ai: [] });
@@ -169,7 +175,7 @@ export class TranscriptService {
       this.videoRecommendation.clearCache();
 
       if (this.currentVideoId === videoId) {
-        this.state.set({
+        this._state.set({
           status: 'complete',
           language,
           requestedLanguage,
@@ -183,7 +189,7 @@ export class TranscriptService {
     // Listen for AI transcription failures
     this.aiJobManager.jobFailed$.subscribe(({ videoId, errorCode }) => {
       if (this.currentVideoId === videoId) {
-        this.state.set({
+        this._state.set({
           status: 'error',
           code: errorCode || 'AI_JOB_FAILED',
           whisperAvailable: true
@@ -197,7 +203,7 @@ export class TranscriptService {
         log('Network restored, checking transcript state...');
         const s = this.state();
         if (s.status === 'error' && s.code === 'NETWORK_ERROR') {
-          this.state.set({ status: 'idle' });
+          this._state.set({ status: 'idle' });
         }
       });
     }
@@ -277,11 +283,11 @@ export class TranscriptService {
         if (this.aiJobManager.hasActiveJob(videoId)) {
           this.aiJobManager.cancelJob(videoId);
         }
-        this.state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
+        this._state.set({ status: 'complete', language: lang, source: 'native', cues: cached });
         return of(cached);
       } else {
         log('Memory cache hit (empty):', { videoId, lang });
-        this.state.set({
+        this._state.set({
           status: 'error',
           code: 'NO_SUBTITLES',
           whisperAvailable: this.whisperAvailable()
@@ -294,7 +300,7 @@ export class TranscriptService {
     if (!forceRefresh && this.aiJobManager.hasActiveJob(videoId)) {
       const active = this.aiJobManager.getJob(videoId);
       log('Active AI job already running for video:', { videoId, jobId: active?.jobId });
-      this.state.set({
+      this._state.set({
         status: 'generating_ai',
         jobId: active?.jobId,
         isResuming: true
@@ -313,7 +319,7 @@ export class TranscriptService {
         if (cachedData && (!isDevMock || videoId === 'demo' || videoId === 'test')) {
           log('IndexedDB cache hit:', { videoId, lang, cues: cachedData.cues.length });
           this.setTranscriptCache(cacheKey, cachedData.cues);
-          this.state.set({
+          this._state.set({
             status: 'complete',
             language: cachedData.language,
             source: cachedData.source,
@@ -327,7 +333,7 @@ export class TranscriptService {
 
         // 3. Fetch from API
         log('Cache miss, fetching from API:', { videoId, lang, forceRefresh });
-        this.state.set({ status: 'loading' });
+        this._state.set({ status: 'loading' });
         this.fallbackInfo.set(null);
 
         return this.callTranscriptAPI(videoId, lang, false, undefined, undefined, undefined, duration, title, channel, forceRefresh).pipe(
@@ -363,7 +369,7 @@ export class TranscriptService {
     const jobId = isUrl ? undefined : jobIdOrResultUrl;
     const resultUrl = isUrl ? jobIdOrResultUrl : undefined;
 
-    this.state.set({
+    this._state.set({
       status: 'generating_ai',
       jobId,
       isResuming: Boolean(!forceRefresh && (jobId || resultUrl))
@@ -381,7 +387,7 @@ export class TranscriptService {
    */
   reset(): void {
     this.cancelSubject.next();
-    this.state.set({ status: 'idle' });
+    this._state.set({ status: 'idle' });
     this.availableLanguages.set({ native: [], ai: [] });
     this.subLanguages.set([]);
     this.serverLevels.set({});
@@ -430,7 +436,7 @@ export class TranscriptService {
         const body = err.error as RateLimitErrorResponse;
         const retryAfter = body?.retryAfter ?? this.extractRetryAfter(err);
 
-        this.state.set({
+        this._state.set({
           status: 'error',
           code: 'RATE_LIMITED',
           whisperAvailable: false,
@@ -444,7 +450,7 @@ export class TranscriptService {
         const body = err.error as Partial<TranscriptResponse> | null;
         const errorCode = body?.errorCode || (err.status >= 500 ? 'SERVER_ERROR' : 'REQUEST_ERROR');
         const isAIBlocked = errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS';
-        this.state.set({
+        this._state.set({
           status: 'error',
           code: errorCode,
           whisperAvailable: isAIBlocked ? false : (body?.whisperAvailable ?? whisperAvailable)
@@ -453,7 +459,7 @@ export class TranscriptService {
       }
     }
 
-    this.state.set({
+    this._state.set({
       status: 'error',
       code: 'NETWORK_ERROR',
       whisperAvailable
@@ -570,7 +576,7 @@ export class TranscriptService {
         channel
       });
 
-      this.state.set({
+      this._state.set({
         status: 'generating_ai',
         jobId: assignedJobId
       });
@@ -593,7 +599,7 @@ export class TranscriptService {
         });
       }
 
-      this.state.set({
+      this._state.set({
         status: 'complete',
         language: response.language || '',
         requestedLanguage: response.requestedLanguage,
@@ -607,7 +613,7 @@ export class TranscriptService {
 
     // Scenario C: Native captions not found (AI available)
     const errorCode = response.errorCode || 'NO_SUBTITLES';
-    this.state.set({
+    this._state.set({
       status: 'error',
       code: errorCode,
       whisperAvailable: response.whisperAvailable ?? true

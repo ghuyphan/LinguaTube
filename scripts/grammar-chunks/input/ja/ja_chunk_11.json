@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Nounをくださる_14",
+    "id": "ja_n4_Nounをくださる_14",
     "language": "ja",
     "pattern": "Nounをくださる",
     "title": "Nounをくださる",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_15",
+    "id": "ja_n4_Noun_15",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を くれる (Noun wo kureru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_16",
+    "id": "ja_n4_Noun_16",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を さしあげる (Noun wo sashiageru)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_17",
+    "id": "ja_n4_Noun_17",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun もらう (Noun wo morau)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_18",
+    "id": "ja_n4_Noun_18",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + 中 (Noun + ちゅう)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verb_19",
+    "id": "ja_n4_Verb_19",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb させられる (Verb-saserareru)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_20",
+    "id": "ja_n4_Verb_20",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb させる (Verb-saseru)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_21",
+    "id": "ja_n4_Verb_21",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た ことがある (Verb ta koto ga aru)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_22",
+    "id": "ja_n4_Verb_22",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た ときに (Verb た ときに)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_23",
+    "id": "ja_n4_Verb_23",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た ところ (Verb ta tokoro)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_24",
+    "id": "ja_n4_Verb_24",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たほうがいい (〜ta hou ga ii)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_25",
+    "id": "ja_n4_Verb_25",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ために (tame ni)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_26",
+    "id": "ja_n4_Verb_26",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb つもり (〜tsumori)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_27",
+    "id": "ja_n4_Verb_27",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てあげる (Verb te ageru)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_28",
+    "id": "ja_n4_Verb_28",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て ある (Verb-te aru)",

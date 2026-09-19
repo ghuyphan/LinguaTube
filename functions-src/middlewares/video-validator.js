@@ -228,8 +228,8 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     const maxDuration = maxDurationOverride || MAX_DURATION[endpoint];
     let effectiveDuration = duration;
 
-    // Only scrape duration from YouTube page if not supplied by the client
-    if (!effectiveDuration && endpoint === 'whisper') {
+    // For whisper/AI, ALWAYS verify via YouTube page details, never trust client-supplied duration
+    if (endpoint === 'whisper') {
         const ytDetails = await fetchYouTubeVideoDetails(videoId);
         if (ytDetails.isLive) {
             return {
@@ -238,7 +238,7 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
             };
         }
         if (ytDetails.duration) {
-            effectiveDuration = ytDetails.duration;
+            effectiveDuration = Math.max(effectiveDuration || 0, ytDetails.duration);
         }
     }
 

@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_ごとく_182",
+    "id": "ja_n1_ごとく_182",
     "language": "ja",
     "pattern": "～ごとく",
     "title": "～ごとく (〜gotoku)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_こととて_183",
+    "id": "ja_n1_こととて_183",
     "language": "ja",
     "pattern": "～こととて",
     "title": "～こととて (〜koto tote)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_ずにすんだ_184",
+    "id": "ja_n1_ずにすんだ_184",
     "language": "ja",
     "pattern": "～ずにすんだ",
     "title": "～ずにすんだ (〜zuni sunda)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_だろうとなかろうと_185",
+    "id": "ja_n1_だろうとなかろうと_185",
     "language": "ja",
     "pattern": "～だろうとなかろうと",
     "title": "～だろうとなかろうと (〜darou to nakarou to)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_つもりだ_186",
+    "id": "ja_n1_つもりだ_186",
     "language": "ja",
     "pattern": "～つもりだ",
     "title": "～つもりだ (〜tsumori da)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_つもりで_187",
+    "id": "ja_n1_つもりで_187",
     "language": "ja",
     "pattern": "～つもりで",
     "title": "～つもりで (〜tsumori de)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ではすまない_188",
+    "id": "ja_n1_ではすまない_188",
     "language": "ja",
     "pattern": "～ではすまない",
     "title": "～ではすまない (〜dewa sumanai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_とあって_189",
+    "id": "ja_n1_とあって_189",
     "language": "ja",
     "pattern": "～とあって",
     "title": "～とあって (〜to atte)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_とあれば_190",
+    "id": "ja_n1_とあれば_190",
     "language": "ja",
     "pattern": "～とあれば",
     "title": "～とあれば (〜to areba)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_といえども_191",
+    "id": "ja_n1_といえども_191",
     "language": "ja",
     "pattern": "～といえども",
     "title": "～といえども (〜to iedomo)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_といったらありはしない_192",
+    "id": "ja_n1_といったらありはしない_192",
     "language": "ja",
     "pattern": "～といったらありはしない",
     "title": "～といったらありはしない (〜to ittara ari wa shinai)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_といったらありゃしない_193",
+    "id": "ja_n1_といったらありゃしない_193",
     "language": "ja",
     "pattern": "～といったらありゃしない",
     "title": "～といったらありゃしない (〜to ittara arya shinai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_といったらない_194",
+    "id": "ja_n1_といったらない_194",
     "language": "ja",
     "pattern": "～といったらない",
     "title": "～といったらない (〜to ittara nai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_ときている_195",
+    "id": "ja_n1_ときている_195",
     "language": "ja",
     "pattern": "～ときている",
     "title": "～ときている (〜to kite iru)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ところを_196",
+    "id": "ja_n1_ところを_196",
     "language": "ja",
     "pattern": "～ところを",
     "title": "～ところを (〜tokoro wo)",

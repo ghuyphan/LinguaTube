@@ -69,8 +69,8 @@ export class QuizService {
                 const time = this.youtubeService.currentTime();
                 const cue = this.currentCue()!;
 
-                // Allow a small buffer (0.1s)
-                if (time >= cue.endTime - 0.1) {
+                // Only evaluate end time once playback has reached the cue's starting window
+                if (time >= cue.startTime && time >= cue.endTime - 0.1) {
                     this.pauseAndPrompt();
                 }
             }
@@ -124,9 +124,9 @@ export class QuizService {
         const cue = this.currentCue();
         if (!cue) return;
 
-        this.questionState.set('listening');
         this.youtubeService.seekTo(cue.startTime);
         this.youtubeService.play();
+        this.questionState.set('listening');
     }
 
     replaySegment(): void {

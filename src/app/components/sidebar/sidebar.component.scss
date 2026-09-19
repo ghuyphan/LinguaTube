@@ -210,6 +210,13 @@
     &:active {
         transform: scale(0.95);
     }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -10px;
+        cursor: pointer;
+    }
 }
 
 /* Inner Scrollable Wrapper */

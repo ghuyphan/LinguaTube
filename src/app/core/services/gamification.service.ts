@@ -48,7 +48,7 @@ const ACHIEVEMENT_CATALOG: AchievementDefinition[] = [
     // Study & Flashcards
     { id: 'srs_10', titleKey: 'achievements.srs10.title', descriptionKey: 'achievements.srs10.desc', category: 'srs', tier: 'bronze', icon: 'graduation-cap', target: 10, xpReward: 50 },
     { id: 'srs_50', titleKey: 'achievements.srs50.title', descriptionKey: 'achievements.srs50.desc', category: 'srs', tier: 'silver', icon: 'lightbulb', target: 50, xpReward: 150 },
-    { id: 'srs_200', titleKey: 'achievements.srs200.title', descriptionKey: 'achievements.srs200.desc', category: 'srs', tier: 'gold', icon: 'sparkles', target: 200, xpReward: 500 },
+    { id: 'srs_200', titleKey: 'achievements.srs200.title', descriptionKey: 'achievements.srs200.desc', category: 'srs', tier: 'gold', icon: 'trophy', target: 200, xpReward: 500 },
 
     // Quizzes
     { id: 'quiz_1', titleKey: 'achievements.quiz1.title', descriptionKey: 'achievements.quiz1.desc', category: 'quiz', tier: 'bronze', icon: 'clipboard-check', target: 1, xpReward: 20 },
@@ -204,7 +204,7 @@ export class GamificationService {
         // Level-up celebration
         if (newLevel > prevLevel) {
             const levelUpMsg = `${this.i18n.t('gamification.levelUp') || 'Level Up!'} 🎉 ${this.i18n.t('gamification.reachedLevel') || 'You reached Level'} ${newLevel}!`;
-            this.toast.show(levelUpMsg, { type: 'success', icon: 'sparkles', duration: 4500 });
+            this.toast.show(levelUpMsg, { type: 'success', icon: 'trophy', duration: 4500 });
         }
     }
 

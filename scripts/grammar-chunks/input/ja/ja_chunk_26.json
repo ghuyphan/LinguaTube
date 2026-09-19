@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_ようになった_115",
+    "id": "ja_n3_ようになった_115",
     "language": "ja",
     "pattern": "～ようになった",
     "title": "～ようになった (〜you ni natta)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_ように言う_116",
+    "id": "ja_n3_ように言う_116",
     "language": "ja",
     "pattern": "～ように言う",
     "title": "～ように言う (〜you ni iu)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_らしい_117",
+    "id": "ja_n3_らしい_117",
     "language": "ja",
     "pattern": "～らしい",
     "title": "～らしい (〜rashii)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_られた_118",
+    "id": "ja_n3_られた_118",
     "language": "ja",
     "pattern": "～られた",
     "title": "～られた (〜rareta)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_ている_119",
+    "id": "ja_n3_ている_119",
     "language": "ja",
     "pattern": "～ている",
     "title": "～ている (〜te iru)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_わけがない_120",
+    "id": "ja_n3_わけがない_120",
     "language": "ja",
     "pattern": "～わけがない",
     "title": "～わけがない (〜wake ga nai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_わけだ_121",
+    "id": "ja_n3_わけだ_121",
     "language": "ja",
     "pattern": "～わけだ",
     "title": "～わけだ (〜wake da)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_わけではない_122",
+    "id": "ja_n3_わけではない_122",
     "language": "ja",
     "pattern": "～わけではない",
     "title": "～わけではない (〜wake dewa nai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_わけにはいかない_123",
+    "id": "ja_n3_わけにはいかない_123",
     "language": "ja",
     "pattern": "～わけにはいかない",
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_わりには_124",
+    "id": "ja_n3_わりには_124",
     "language": "ja",
     "pattern": "～わりには",
     "title": "～わりには (〜wari ni wa)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_んだって_125",
+    "id": "ja_n3_んだって_125",
     "language": "ja",
     "pattern": "～んだって",
     "title": "～んだって (〜n datte)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_んだもん_126",
+    "id": "ja_n3_んだもん_126",
     "language": "ja",
     "pattern": "～んだもん",
     "title": "～んだもん (〜nda mon)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_上げる_127",
+    "id": "ja_n3_上げる_127",
     "language": "ja",
     "pattern": "～上げる",
     "title": "～上げる (〜ageru)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_切れない_128",
+    "id": "ja_n3_切れない_128",
     "language": "ja",
     "pattern": "～切れない",
     "title": "～切れない (～kirenai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_必ずしもとは限らない_129",
+    "id": "ja_n3_必ずしもとは限らない_129",
     "language": "ja",
     "pattern": "必ずしも～とは限らない",
     "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",

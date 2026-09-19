@@ -10,19 +10,20 @@
     </div>
     }
 
-    <!-- Search / Filters -->
-    <div class="dict-filters">
+    <!-- Search / Filters (Rendered only in standalone mode; embedded mode uses page toolbar) -->
+    @if (!embedded()) {
+    <form role="search" class="dict-filters" (submit)="search(); $event.preventDefault()">
         <div class="app-search-box dict-search-box">
             <app-icon name="search" [size]="14" class="search-icon" />
-            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
-                class="search-input" (keyup.enter)="search()" [attr.aria-label]="i18n.t('dictionary.search')" autocomplete="off" spellcheck="false" />
+            <input type="search" enterkeyhint="search" [(ngModel)]="searchQuery" [placeholder]="i18n.t('dictionary.typeWord')"
+                class="search-input" [attr.aria-label]="i18n.t('dictionary.search')" autocomplete="off" spellcheck="false" name="dictSearch" />
             @if (searchQuery) {
             <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear')">
                 <app-icon name="x" [size]="12" />
             </button>
             }
         </div>
-        <button class="btn btn-primary search-btn" (click)="search()" [disabled]="!searchQuery.trim() || isLoading()">
+        <button type="submit" class="btn btn-primary search-btn" [disabled]="!searchQuery.trim() || isLoading()">
             @if (isLoading()) {
             <app-icon name="loader" [size]="16" class="loading-spinner" />
             <span class="sr-only">{{ i18n.t('dictionary.searching') }}</span>
@@ -30,7 +31,8 @@
             {{ i18n.t('dictionary.search') }}
             }
         </button>
-    </div>
+    </form>
+    }
 
     <!-- Results -->
     <div class="dict-results" aria-live="polite">
@@ -89,10 +91,10 @@
                 <!-- Quick Action: Save / Change Level directly in header -->
                 <div class="result-header__action">
                     @if (isSaved()) {
-                    <button type="button" class="btn btn-sm save-badge-btn" [class]="'badge--' + (savedWordLevel() || 'learning')"
-                        (click)="openLevelPicker($event)" [title]="'Level: ' + (savedWordLevel() || 'learning') + ' • Click to change'">
-                        <app-icon name="check" [size]="14" />
-                        <span>{{ i18n.t('vocab.' + (savedWordLevel() || 'learning')) || savedWordLevel() }}</span>
+                    <button type="button" class="level-badge-btn save-badge-btn" [class]="'badge--' + (savedWordLevel() || 'new')"
+                        (click)="openLevelPicker($event)" [title]="'Level: ' + (savedWordLevel() || 'new') + ' • Click to change'">
+                        <span class="level-badge-btn__text">{{ i18n.t('vocab.' + (savedWordLevel() || 'new')) || savedWordLevel() }}</span>
+                        <app-icon name="chevron-down" [size]="10" class="level-badge-chevron" />
                     </button>
                     } @else {
                     <button type="button" class="btn btn-primary btn-sm" (click)="saveWord()" [disabled]="isLoading()">
@@ -258,7 +260,7 @@
     [isOpen]="levelPickerOpen()"
     [title]="i18n.t('vocab.changeLevel') || 'Change level'"
     [options]="levelOptions()"
-    [value]="savedWordLevel() || 'learning'"
+    [value]="savedWordLevel() || 'new'"
     (selected)="onLevelSelected($event)"
     (closed)="levelPickerOpen.set(false)"
 />

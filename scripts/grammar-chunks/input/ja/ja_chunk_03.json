@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_30",
+    "id": "ja_n5_Noun_30",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun と～ (Noun to～)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_31",
+    "id": "ja_n5_Noun_31",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に～ (Noun ni～)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_32",
+    "id": "ja_n5_Noun_32",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 帰ります (Noun ni kaerimasu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_33",
+    "id": "ja_n5_Noun_33",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に します (Noun ni shimasu)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_34",
+    "id": "ja_n5_Noun_34",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に なります (Noun ni narimasu)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_35",
+    "id": "ja_n5_Noun_35",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 来ます (Noun ni kimasu)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_36",
+    "id": "ja_n5_Noun_36",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 行きます (Noun ni ikimasu)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_37",
+    "id": "ja_n5_Noun_37",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の あとで (Noun no atode)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_38",
+    "id": "ja_n5_Noun_38",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 前に (Noun no mae ni)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_39",
+    "id": "ja_n5_Noun_39",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun は～ (Noun wa〜)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_40",
+    "id": "ja_n5_Noun_40",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun も〜 (Noun mo~)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_41",
+    "id": "ja_n5_Noun_41",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun や Noun など～ (Noun ya Noun nado)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_42",
+    "id": "ja_n5_Noun_42",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を〜 (Noun wo〜)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_43",
+    "id": "ja_n5_Verb_43",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た あとで (ta ato de)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_44",
+    "id": "ja_n5_Verb_44",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たいです (taidesu)",

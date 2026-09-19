@@ -378,17 +378,17 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
 ## 6. Grammar Pattern Detection Engine
 
 `GrammarService` continuously inspects tokenized sentences to identify grammatical constructions using a multi-strategy morphological and syntactic matching pipeline:
-- **Language Coverage**:
-  - **Japanese**: 828 patterns across JLPT N5 through N1 (`grammar-ja.ts`).
-  - **Korean**: 744 patterns across Korean levels 1 through 6 (`grammar-ko.ts`).
+- **Language Coverage & Data Integrity**:
+  - **Japanese**: 828 patterns across JLPT N5 through N1 (`grammar-ja.ts`). All patterns are uniquely namespaced with their JLPT level prefix (`ja_{level}_{patternId}`, e.g. `ja_n5_A_0`, `ja_n1_A_0`), eliminating cross-level translation collisions where higher-level cards could overwrite beginner cards.
+  - **Korean**: 744 patterns across Korean levels 1 through 6 (`grammar-ko.ts`). All 54 previously corrupt patterns (where pattern had collapsed to `"~"`) have their authentic grammatical affixes extracted and indexed.
   - **Chinese**: 691 patterns across HSK 1 through 6 (`grammar-zh.ts`).
-  - **English**: 143 patterns across CEFR A1 through C2 (`grammar-en.ts`).
+  - **English**: 143 patterns across CEFR A1 through C2 (`grammar-en.ts`), with pedagogical and non-English translation artifacts thoroughly purged.
 - **Multi-Strategy Detection Pipeline**:
   - **Strategy 1: Exact Token Sequences**: Scans n-gram token windows (1 to 5 tokens for CJK, up to 8 tokens for EN).
   - **Strategy 1b: Korean Sequence Suffixes**: Matches attached verb-noun auxiliary sequences (e.g. `읽는 김에` $\rightarrow$ `~는 김에`, `도착했기 때문에` $\rightarrow$ `~기 때문에`, `할 리가 없다` $\rightarrow$ `~ㄹ 리가 없다`).
   - **Strategy 2: Morphological Suffix Matching (JA & KO)**:
     - **Japanese**: Checks `jaEndingPatterns` (sorted longest-first) and base forms (`baseForm`) for verbs/adjectives.
-    - **Korean**: Checks `koEndingPatterns` (sorted longest-first) for attached particles (`이/가`, `은/는`, `을/를`, `에`, `에서`, `(으)로`, `(이)랑`) and conjugated verb endings (`-고`, `-아/어서`, `-면`, `-아/어요`, `-ㅂ니다/습니다`, `-네요`, `-지요`).
+    - **Korean**: Checks `koEndingPatterns` (sorted longest-first) for attached particles (`이/가`, `은/는`, `을/를`, `에`, `에서`, `(으)로`, `(이)랑`) and conjugated verb endings (`-고`, `-아/어서`, `-면`, `-아/어요`, `-ㅂ니다/습니다`, `-네요`, `-지요`). Particle detachment protects 2-syllable nouns ending in `가` and supports `-(으)로` on `ㄹ`-batchim nouns.
   - **Strategy 3: Korean Compound Auxiliary Verbs**:
     - Uses Hangul syllable math (`(charCode - 0xAC00) % 28 === 8` for final consonant `ㄹ`) to detect potential structures `(으)ㄹ 수 있다/없다` across multi-token spans.
     - Accurately detects `~고 있다` (progressive), `~고 싶다` (desire), `~지 않다` (negation), `~아/어야 하다` (obligation), and `~아/어 보다` (attempt).
@@ -396,11 +396,11 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
     - **Chinese**: `虽然...但是`, `因为...所以`, `如果...就`, `越...越`, `一边...一边`, `不但...而且`, `除了...以外`, `是...的`, `既然...就`, `只要...就`, `只有...才`, `即使...也`, `哪怕...也`, `与其...不如`, `既...又`, `不仅...而且`.
     - **English**: `not only...but also`, `neither...nor`, `either...or`, `both...and`, `so...that`, `such...that`, `as...as`, `too...to`, `no sooner...than`, `hardly...when`.
 - **Intelligent Normalization & Indexing**:
-  - Automatically strips pedagogical Latin placeholders (`N`, `V`, `M`, `Adj`, `A`, `B`, `AGE`) from Chinese, Japanese, and Korean rules.
+  - Automatically strips pedagogical Latin placeholders (`N`, `V`, `M`, `Adj`, `A`, `B`, `AGE`) from Chinese, Japanese, and Korean rules using word-boundary matching prior to whitespace elimination.
   - Normalizes ASCII and CJK tildes (`~`, `～`, `〜`), expanding parentheses and slash alternatives.
-  - Indexes English contractions (`isn't`, `aren't`, `don't`, `doesn't`, `I'm`, `you're`) and core grammatical words.
+  - Indexes English contractions (`isn't`, `aren't`, `don't`, `doesn't`, `I'm`, `you're`) while preserving single quotes so contractions don't fail dictionary lookups.
 - **Dynamic Translation Packs**:
-  Grammar definitions are translated across 16 combinations (JA, KO, ZH, EN into VI, ZH, KO, JA) plus native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
+  Grammar definitions are translated across 16 combinations (JA, KO, ZH, EN into VI, ZH, KO, JA) plus native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`), fully synchronized and compiled into lazy chunks.
 - **Grammar Popup UI (`GrammarPopupComponent`)**: Hosted inside `BottomSheetComponent` with smooth dynamic height transitions as users explore formation rules, alternative explanations, or translated example sentences.
 
 ---
@@ -418,7 +418,8 @@ When a user reviews a flashcard and provides a recall quality score $q \in [0, 5
    $$\text{If } q > 3 \ (\text{Good/Easy}): \quad \begin{cases} I_1 = 1 \text{ day} & \text{if repetitions} = 0 \\ I_2 = 6 \text{ days} & \text{if repetitions} = 1 \\ I_n = \lceil I_{n-1} \times EF \rceil & \text{if repetitions} \ge 2 \end{cases}$$
 
 2. **Ease Factor ($EF$)**:
-   $$EF' = \max(1.3, \; EF + (0.1 - (5 - q) \times (0.08 + (5 - q) \times 0.02)))$$
+   $$EF' = \text{clamp}(1.3, \; 3.0, \; \text{round}_2(EF + (0.1 - (5 - q) \times (0.08 + (5 - q) \times 0.02))))$$
+   - Capped between $1.3$ and $3.0$ and rounded to 2 decimal places to prevent floating point drift and runaway review schedules. Interval strings format cleanly (e.g. 345+ days format as `1y` instead of `12mo`).
 
 3. **Status Transitions**:
    - `new` $\rightarrow$ `learning` on first successful recall ($q \ge 3$).

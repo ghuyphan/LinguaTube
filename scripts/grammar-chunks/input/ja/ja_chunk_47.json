@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_107",
+    "id": "ja_n1_Noun_107",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を経て (〜wo hete)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_108",
+    "id": "ja_n1_Noun_108",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を踏まえて (〜wo fumaete)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_109",
+    "id": "ja_n1_Noun_109",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を限りに (Noun wo kagiri ni)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_110",
+    "id": "ja_n1_Noun_110",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun 並み (~nami)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_111",
+    "id": "ja_n1_Noun_111",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + 前提で (Noun + zentei de)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_112",
+    "id": "ja_n1_Verbる_112",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる / Noun(である) + 限り(は) (kagiri (wa))",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_113",
+    "id": "ja_n1_Verb_113",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb がてら (~ gatera)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_114",
+    "id": "ja_n1_Verb_114",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb こそすれ (~koso sure)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_115",
+    "id": "ja_n1_Verb_115",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb させられる (~saserareru)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_116",
+    "id": "ja_n1_Verb_116",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ざるを得ない (~ zaru wo enai)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_117",
+    "id": "ja_n1_Verb_117",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずじまい (~zu jimai)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_118",
+    "id": "ja_n1_Verb_118",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずとも (〜zu tomo)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_119",
+    "id": "ja_n1_Verb_119",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずにはおかない (~zuni wa okanai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_120",
+    "id": "ja_n1_Verb_120",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずにはすまない (Verb zuni wa sumanai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_121",
+    "id": "ja_n1_Verb_121",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb そうにない (Verb sou ni nai)",

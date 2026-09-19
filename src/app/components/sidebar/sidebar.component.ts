@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, effect, ChangeDetectionStrategy, output, HostListener } from '@angular/core';
+import { Component, inject, signal, computed, linkedSignal, ChangeDetectionStrategy, output, HostListener } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/router';
@@ -54,7 +54,10 @@ export class SidebarComponent {
         return this.i18n.t('app.title') || 'Voca';
     });
 
-    avatarImgFailed = signal(false);
+    readonly avatarImgFailed = linkedSignal({
+        source: () => this.auth.user(),
+        computation: () => false
+    });
 
     userInitials = computed(() => {
         const name = this.auth.user()?.name || this.auth.user()?.email || '';
@@ -66,22 +69,14 @@ export class SidebarComponent {
         return name.slice(0, 2).toUpperCase();
     });
 
-    constructor() {
-        effect(() => {
-            // Reset image error state when user changes
-            this.auth.user();
-            this.avatarImgFailed.set(false);
-        });
-    }
-
     hasActiveVideoSession = computed(() => !!this.youtube.currentVideo() && !(this.currentUrl()?.startsWith('/video') ?? false));
 
-    onLearnClick(event: MouseEvent): void {
+    onLearnClick(event: Event): void {
         const isOnVideoPage = this.router.url.startsWith('/video');
         const activeVideo = this.youtube.currentVideo();
 
         if (isOnVideoPage) {
-            event.preventDefault();
+            event?.preventDefault();
             if (!activeVideo) {
                 // Already on Home Feed: scroll to top and refresh feed!
                 const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
@@ -105,7 +100,7 @@ export class SidebarComponent {
             }
         } else if (activeVideo) {
             // Navigating back from another page while video is active: Resume current video
-            event.preventDefault();
+            event?.preventDefault();
             this.playerView.expand();
             const playlistId = this.playlistService.currentPlaylist()?.id;
             void this.router.navigate(['/video'], {

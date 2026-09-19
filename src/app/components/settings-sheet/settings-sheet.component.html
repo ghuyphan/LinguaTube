@@ -22,7 +22,7 @@
                             </span>
                             @if (auth.subscriptionTier() === 'pro') {
                                 <button class="account-upgrade-pill account-upgrade-pill--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium'">
-                                    <app-icon name="sparkles" [size]="12" />
+                                    <app-icon name="diamond" [size]="12" />
                                     <span>{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
                                 </button>
                             } @else if (auth.subscriptionTier() !== 'premium') {
@@ -184,7 +184,7 @@
                         <div class="settings-item-right settings-item-right--version">
                             <span class="settings-item-value settings-item-value--version">v{{ appUpdate.currentVersion() }}</span>
                             <button class="settings-whats-new-btn" (click)="showReleaseNotes.set(true)" type="button">
-                                <app-icon name="sparkles" [size]="14" />
+                                <app-icon name="star" [size]="14" />
                                 <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
                             </button>
                         </div>
@@ -284,7 +284,7 @@
 
             <div class="release-notes-content">
                 <div class="release-notes-section-title">
-                    <app-icon name="sparkles" [size]="16" />
+                    <app-icon name="star" [size]="16" />
                     <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
                 </div>
                 <ul class="release-notes-list">

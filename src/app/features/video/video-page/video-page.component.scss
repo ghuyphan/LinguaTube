@@ -102,8 +102,8 @@
       }
 
       &.active .tab-count-pill {
-        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
-        border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.25);
+        background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.12);
+        border-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25);
         color: var(--accent-primary);
       }
     }
@@ -207,9 +207,32 @@
       .panel-header {
         flex-shrink: 0;
         margin-bottom: var(--space-xs);
+
+        .search-clear-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          padding: 3px 8px;
+          margin-left: 8px;
+          font-size: 0.75rem;
+          font-weight: 500;
+          color: var(--text-muted);
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-color);
+          border-radius: var(--border-radius-pill);
+          cursor: pointer;
+          transition: background-color var(--transition-fast), color var(--transition-fast);
+
+          @media (hover: hover) {
+            &:hover {
+              background: var(--bg-hover);
+              color: var(--text-primary);
+            }
+          }
+        }
       }
 
-    /* YouTube-style Horizontal Chips Bar (Sticky flush to top, internal padding provides clearance) */
+    /* YouTube-style Horizontal Chips Bar (Contained cleanly within card) */
     .yt-chips-bar {
       position: sticky;
       top: 0;
@@ -220,12 +243,25 @@
       justify-content: space-between;
       gap: var(--space-sm);
       margin-bottom: var(--space-xs);
-      padding: 10px 0 8px;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 6px 0 8px;
+      width: 100%;
+      box-sizing: border-box;
+      border-bottom: none;
+      box-shadow: none;
 
       @media (max-width: 768px) {
         top: 0;
-        padding-top: max(10px, env(safe-area-inset-top, 10px));
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: max(6px, env(safe-area-inset-top, 6px));
         padding-bottom: 8px;
+        width: 100%;
+        border-bottom: none;
+        box-shadow: none;
       }
     }
 
@@ -852,7 +888,7 @@
       width: 32px;
       height: 32px;
       border-radius: var(--border-radius-sm);
-      background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.1);
+      background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -928,8 +964,8 @@
         }
 
         &.active {
-          background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
-          border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
+          background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.12);
+          border-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.3);
           color: var(--accent-primary);
 
           &::after {
@@ -1044,8 +1080,8 @@
           }
 
           &.active {
-            background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.12);
-            border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
+            background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.12);
+            border-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.3);
             color: var(--accent-primary);
 
             &::after {
@@ -1452,13 +1488,13 @@
         }
 
         .btn-primary {
-            background: var(--btn-primary-bg, var(--accent-primary, #FF6B6B));
+            background: var(--btn-primary-bg, var(--accent-primary, #F45B74));
             color: #ffffff;
             border: 1px solid transparent;
 
             @media (hover: hover) {
                 &:hover:not(:disabled) {
-                    background: var(--btn-primary-hover, var(--accent-primary-hover, #e85555));
+                    background: var(--btn-primary-hover, var(--accent-primary-hover, #E04863));
                 }
             }
 
@@ -1517,7 +1553,7 @@
 .layout.miniplayer-active {
     @media (max-width: 768px) {
         .layout-main {
-            padding-bottom: calc(var(--bottom-nav-total-height, 4rem) + 76px) !important;
+            padding-bottom: calc(var(--bottom-nav-total-height, 5rem) + 76px) !important;
         }
     }
 }

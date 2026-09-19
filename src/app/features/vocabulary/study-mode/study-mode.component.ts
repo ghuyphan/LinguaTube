@@ -1,11 +1,12 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, PLATFORM_ID, effect } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService, ToastService, KeyboardShortcutService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
 import { calculateSRSPreview, formatTime, SRSIntervalPreview } from '../../../core/utils';
@@ -35,6 +36,7 @@ export class StudyModeComponent implements OnDestroy {
     streak = inject(StreakService);
     audioService = inject(AudioService);
     toast = inject(ToastService);
+    keyboardService = inject(KeyboardShortcutService);
 
     // Options (reactive signals)
     includeNew = signal(true);
@@ -235,10 +237,35 @@ export class StudyModeComponent implements OnDestroy {
             if (storedCloze !== null) {
                 this.clozeMode.set(storedCloze === 'true');
             }
+
+            // Register study mode active check with centralized KeyboardShortcutService
+            this.keyboardService.setStudyActiveCallback(() => this.isStudying() && !this.isComplete());
+
+            // Handle study keyboard shortcuts (Space, 1-4, R)
+            this.keyboardService.events$
+                .pipe(takeUntilDestroyed())
+                .subscribe(event => {
+                    if (!this.isStudying() || this.isComplete()) return;
+                    if (event.type === 'study-flip') {
+                        if (!this.isAnswerRevealed()) {
+                            this.flipCard();
+                        }
+                    } else if (event.type === 'study-rate') {
+                        if (this.isAnswerRevealed()) {
+                            this.markAnswer(event.data.rating);
+                        }
+                    } else if (event.type === 'study-audio') {
+                        const vm = this.cardViewModel();
+                        if (vm) {
+                            this.playAudio(vm.primaryText, vm.item.language, undefined, vm.item.audio);
+                        }
+                    }
+                });
         }
     }
 
     ngOnDestroy(): void {
+        this.keyboardService.setStudyActiveCallback(null);
         this.stopTimer();
         this.audioService.stopAudio();
         if (this.confettiTimeout) {

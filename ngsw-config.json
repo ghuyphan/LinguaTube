@@ -39,18 +39,6 @@
   ],
   "dataGroups": [
     {
-      "name": "api-transcripts",
-      "urls": [
-        "/api/transcript"
-      ],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 50,
-        "maxAge": "7d",
-        "timeout": "10s"
-      }
-    },
-    {
       "name": "api-dictionary",
       "urls": [
         "/api/dict*"
@@ -64,7 +52,7 @@
     {
       "name": "api-video-info",
       "urls": [
-        "/api/video-info"
+        "/api/video-info*"
       ],
       "cacheConfig": {
         "strategy": "performance",
@@ -73,14 +61,14 @@
       }
     },
     {
-      "name": "api-dual-subtitles",
+      "name": "api-recommendations",
       "urls": [
-        "/api/dual-subtitles*"
+        "/api/recommended-videos*"
       ],
       "cacheConfig": {
         "strategy": "performance",
-        "maxSize": 50,
-        "maxAge": "7d"
+        "maxSize": 20,
+        "maxAge": "6h"
       }
     }
   ]

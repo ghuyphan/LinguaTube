@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_29",
+    "id": "ja_n4_Verb_29",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いく (Verb-te iku)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verb_30",
+    "id": "ja_n4_Verb_30",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ていただきたい (te itadakitai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verb_31",
+    "id": "ja_n4_Verb_31",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ていただく (〜te itadaku)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verb_32",
+    "id": "ja_n4_Verb_32",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いただけませんか (Verb te itadakemasen ka)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verb_33",
+    "id": "ja_n4_Verb_33",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いる (Verb-te iru)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verb_34",
+    "id": "ja_n4_Verb_34",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いる ところ (Verb te iru tokoro)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_35",
+    "id": "ja_n4_Verb_35",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ている間に (te iru aida ni)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_36",
+    "id": "ja_n4_Verb_36",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ておく (〜te oku)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_37",
+    "id": "ja_n4_Verb_37",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くださいませんか (Verb-te kudasaimasen ka)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_38",
+    "id": "ja_n4_Verb_38",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くださる (Verb-te kudasaru)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_39",
+    "id": "ja_n4_Verb_39",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くる (Verb te kuru)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_40",
+    "id": "ja_n4_Verb_40",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てくれませんか (〜te kuremasen ka)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_41",
+    "id": "ja_n4_Verb_41",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くれる (Verb-te kureru)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_42",
+    "id": "ja_n4_Verb_42",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て + さしあげる (Verb TE sashiageru)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_43",
+    "id": "ja_n4_Verb_43",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てしまう (〜te shimau)",

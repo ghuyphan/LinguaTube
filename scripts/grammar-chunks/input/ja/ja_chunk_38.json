@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_わけではない_163",
+    "id": "ja_n2_わけではない_163",
     "language": "ja",
     "pattern": "～わけではない",
     "title": "～わけではない (〜wake dewa nai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_わけにはいかない_164",
+    "id": "ja_n2_わけにはいかない_164",
     "language": "ja",
     "pattern": "～わけにはいかない",
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_をきっかけに_165",
+    "id": "ja_n2_をきっかけに_165",
     "language": "ja",
     "pattern": "～をきっかけに",
     "title": "～をきっかけに (〜wo kikkake ni)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_をとして_166",
+    "id": "ja_n2_をとして_166",
     "language": "ja",
     "pattern": "～を～として",
     "title": "～を～として (〜wo〜toshite)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_を中心に_167",
+    "id": "ja_n2_を中心に_167",
     "language": "ja",
     "pattern": "～を中心に",
     "title": "～を中心に (〜wo chuushin ni)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_を問わず_168",
+    "id": "ja_n2_を問わず_168",
     "language": "ja",
     "pattern": "～を問わず",
     "title": "～を問わず (〜wo towazu)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_を込めて_169",
+    "id": "ja_n2_を込めて_169",
     "language": "ja",
     "pattern": "～を込めて",
     "title": "～を込めて (〜wo komete)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_を通じて_170",
+    "id": "ja_n2_を通じて_170",
     "language": "ja",
     "pattern": "～を通じて",
     "title": "～を通じて (〜wo tsuujite)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_を頼りに_171",
+    "id": "ja_n2_を頼りに_171",
     "language": "ja",
     "pattern": "～を頼りに",
     "title": "～を頼りに (〜wo tayori ni)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_一方_172",
+    "id": "ja_n2_一方_172",
     "language": "ja",
     "pattern": "～一方",
     "title": "～一方 (〜ippou)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_一方だ_173",
+    "id": "ja_n2_一方だ_173",
     "language": "ja",
     "pattern": "～一方だ",
     "title": "～一方だ (〜ippou da)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_上で_174",
+    "id": "ja_n2_上で_174",
     "language": "ja",
     "pattern": "～上で",
     "title": "～上で (〜ue de)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_上に_175",
+    "id": "ja_n2_上に_175",
     "language": "ja",
     "pattern": "～上に",
     "title": "～上に (〜ue ni)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_上は_176",
+    "id": "ja_n2_上は_176",
     "language": "ja",
     "pattern": "～上は",
     "title": "～上は (～ue wa)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_以上_177",
+    "id": "ja_n2_以上_177",
     "language": "ja",
     "pattern": "～以上",
     "title": "～以上 (〜ijou)",

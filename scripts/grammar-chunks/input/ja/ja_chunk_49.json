@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_137",
+    "id": "ja_n1_Verb_137",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないではおかない (~ nai de wa okanai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verb_138",
+    "id": "ja_n1_Verb_138",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないではすまない (Verb nai dewa sumanai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verb_139",
+    "id": "ja_n1_Verb_139",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないまでも (Verb nai made mo)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verb_140",
+    "id": "ja_n1_Verb_140",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないものだろうか (Verb nai mono darou ka)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verb_141",
+    "id": "ja_n1_Verb_141",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないものでもない (Verb nai mono demo nai)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verb_142",
+    "id": "ja_n1_Verb_142",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb の ない Noun (~ no nai ~)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_143",
+    "id": "ja_n1_Verb_143",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ば きりがない (〜ba kiri ga nai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_144",
+    "id": "ja_n1_Verb_144",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb もしないで (~ mo shinai de)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_145",
+    "id": "ja_n1_Verb_145",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb やしない (~ yashinai)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_146",
+    "id": "ja_n1_Verb_146",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb よう (~ you / ~ you ni)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_147",
+    "id": "ja_n1_Verb_147",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようか Verbるまいか (Verb you ka Verb ru mai ka)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_148",
+    "id": "ja_n1_Verb_148",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようが Verb るまいが (Verb you ga Verb ru mai ga)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_149",
+    "id": "ja_n1_Verb_149",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようがない (〜you ga nai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_150",
+    "id": "ja_n1_Verb_150",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようと Verbる まいと (Verb you to Verb ru mai to)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_151",
+    "id": "ja_n1_Verb_151",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようにも (〜you ni mo)",

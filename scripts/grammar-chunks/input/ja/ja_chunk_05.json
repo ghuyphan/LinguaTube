@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_60",
+    "id": "ja_n5_Verb_60",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る 前に (ru mae ni)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_あまりありません_61",
+    "id": "ja_n5_あまりありません_61",
     "language": "ja",
     "pattern": "あまり～ありません",
     "title": "あまり～ありません (amari ~ arimasen)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_あまりないです_62",
+    "id": "ja_n5_あまりないです_62",
     "language": "ja",
     "pattern": "あまり～ないです",
     "title": "あまり～ないです (amari ~ nai desu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_あります_63",
+    "id": "ja_n5_あります_63",
     "language": "ja",
     "pattern": "～あります",
     "title": "～あります (〜arimasu)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_いかがですか_64",
+    "id": "ja_n5_いかがですか_64",
     "language": "ja",
     "pattern": "～いかがですか。",
     "title": "～いかがですか。 (〜ikaga desu ka.)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_いくつ_65",
+    "id": "ja_n5_いくつ_65",
     "language": "ja",
     "pattern": "いくつ～",
     "title": "いくつ～ (ikutsu~)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_いつか_66",
+    "id": "ja_n5_いつか_66",
     "language": "ja",
     "pattern": "いつか～",
     "title": "いつか～ (itsuka～)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_いつでも_67",
+    "id": "ja_n5_いつでも_67",
     "language": "ja",
     "pattern": "いつでも～",
     "title": "いつでも～ (itsudemo～)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_いつも_68",
+    "id": "ja_n5_いつも_68",
     "language": "ja",
     "pattern": "いつも～",
     "title": "いつも～ (itsumo～)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_て_69",
+    "id": "ja_n5_て_69",
     "language": "ja",
     "pattern": "～て",
     "title": "～て います (～te imasu)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_が_70",
+    "id": "ja_n5_が_70",
     "language": "ja",
     "pattern": "～が",
     "title": "～が (〜ga)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_が_71",
+    "id": "ja_n5_が_71",
     "language": "ja",
     "pattern": "～が、～",
     "title": "～が、～ (〜ga, 〜)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_から_72",
+    "id": "ja_n5_から_72",
     "language": "ja",
     "pattern": "～から、～",
     "title": "～から、～ (〜kara、～)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_からです_73",
+    "id": "ja_n5_からです_73",
     "language": "ja",
     "pattern": "～からです",
     "title": "～からです (〜kara desu)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_から_74",
+    "id": "ja_n5_から_74",
     "language": "ja",
     "pattern": "～から",
     "title": "～から もらいます (〜kara moraimasu)",

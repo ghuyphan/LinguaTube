@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, viewChild, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudyModeComponent } from '../study-mode/study-mode.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
@@ -19,7 +19,7 @@ import { GamificationService } from '../../../core/services/gamification.service
   template: `
     <div class="page-layout">
       <div class="page-layout__main">
-        <app-study-mode #studyModeRef />
+        <app-study-mode />
       </div>
 
       <!-- Desktop sidebar with stable height & context -->
@@ -443,8 +443,6 @@ export class StudyPageComponent {
   settings = inject(SettingsService);
   i18n = inject(I18nService);
   streak = inject(StreakService);
-
-  studyMode = viewChild(StudyModeComponent);
 
   srsMission = computed(() => {
     return this.gamification.dailyMissions().find(m => m.type === 'srs_review') || null;

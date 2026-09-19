@@ -1,4 +1,4 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
 import { timeout, catchError, throwError } from 'rxjs';
 
 /**
@@ -23,7 +23,12 @@ export const timeoutInterceptor: HttpInterceptorFn = (req, next) => {
         catchError(err => {
             if (err.name === 'TimeoutError') {
                 console.error(`[HTTP] Request timeout after ${timeoutMs}ms:`, req.url);
-                return throwError(() => new Error(`Request timeout: ${req.url}`));
+                return throwError(() => new HttpErrorResponse({
+                    error: `Request timeout after ${timeoutMs}ms: ${req.url}`,
+                    status: 408,
+                    statusText: 'Request Timeout',
+                    url: req.url
+                }));
             }
             return throwError(() => err);
         })

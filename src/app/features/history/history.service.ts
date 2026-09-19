@@ -181,7 +181,7 @@ export class HistoryService {
                 const title = this.i18n.t('player.videoCompleted') || 'Video Completed';
                 this.toast.show(`🎬 ${title} (+25 XP)`, {
                     type: 'success',
-                    icon: 'sparkles',
+                    icon: 'trophy',
                     duration: 4000
                 });
             }

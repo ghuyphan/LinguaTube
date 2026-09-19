@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_152",
+    "id": "ja_n1_Verb_152",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようにも Verb れない (〜you ni mo 〜renai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verb_153",
+    "id": "ja_n1_Verb_153",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようもない (~you mo nai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_154",
+    "id": "ja_n1_Verbる_154",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる がままに (〜ga mama ni)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_155",
+    "id": "ja_n1_Verbる_155",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる が早いか (verb-ru ga hayai ka)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_156",
+    "id": "ja_n1_Verbる_156",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる くらいなら (〜ru kurai nara)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_157",
+    "id": "ja_n1_Verbる_157",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる こと なし に (Verb-ru koto nashi ni)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_158",
+    "id": "ja_n1_Verbる_158",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ことのないように (Verb-ru koto no nai you ni)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_159",
+    "id": "ja_n1_Verbる_159",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ときりがない (verb-ru to kiri ga nai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_160",
+    "id": "ja_n1_Verbる_160",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ともなく Verb (Verb-ru tomonaku Verb)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_161",
+    "id": "ja_n1_Verbる_161",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ともなしに Verb (Verb-ru tomonashi ni Verb)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_162",
+    "id": "ja_n1_Verbる_162",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる なり (Verb-ru nari)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_163",
+    "id": "ja_n1_Verbる_163",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_164",
+    "id": "ja_n1_Verbる_164",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にはあたらない (Verb-ru ni wa ataranai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_165",
+    "id": "ja_n1_Verbる_165",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にも (Verb-ru ni mo)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_166",
+    "id": "ja_n1_Verbる_166",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にも Verb れない (Verb-ru ni mo Verb-re nai)",

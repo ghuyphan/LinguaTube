@@ -60,8 +60,8 @@ export class VocabularyQuickViewComponent implements OnDestroy {
 
   // Options for level picker
   levelOptions = computed<OptionItem[]>(() => [
-    { value: 'new', label: this.i18n.t('vocab.new'), icon: 'sparkles', color: 'new' },
-    { value: 'learning', label: this.i18n.t('vocab.learning'), icon: 'book-open', color: 'learning' },
+    { value: 'new', label: this.i18n.t('vocab.new'), icon: 'plus-circle', color: 'new' },
+    { value: 'learning', label: this.i18n.t('vocab.learning'), icon: 'brain', color: 'learning' },
     { value: 'known', label: this.i18n.t('vocab.known'), icon: 'check-circle', color: 'known' },
     { value: 'ignored', label: this.i18n.t('vocab.ignored'), icon: 'eye-off', color: 'ignored' }
   ]);

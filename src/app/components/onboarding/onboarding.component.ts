@@ -62,7 +62,7 @@ export class OnboardingComponent {
         tier: 'beginner' | 'intermediate' | 'advanced';
         icon: IconName;
     }> = [
-        { id: 'beginner', tier: 'beginner', icon: 'sparkles' },
+        { id: 'beginner', tier: 'beginner', icon: 'leaf' },
         { id: 'intermediate', tier: 'intermediate', icon: 'book-open' },
         { id: 'advanced', tier: 'advanced', icon: 'zap' }
     ];

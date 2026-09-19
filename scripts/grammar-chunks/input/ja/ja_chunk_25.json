@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_まるでよう_100",
+    "id": "ja_n3_まるでよう_100",
     "language": "ja",
     "pattern": "まるで～よう",
     "title": "まるで～よう (maru de ~ you)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_てみる_101",
+    "id": "ja_n3_てみる_101",
     "language": "ja",
     "pattern": "～てみる",
     "title": "～てみる (〜te miru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_みたいだ_102",
+    "id": "ja_n3_みたいだ_102",
     "language": "ja",
     "pattern": "～みたいだ",
     "title": "～みたいだ (〜mitai da)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_めったにない_103",
+    "id": "ja_n3_めったにない_103",
     "language": "ja",
     "pattern": "～めったに～ない",
     "title": "～めったに～ない (〜metta ni 〜nai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_めったにない_104",
+    "id": "ja_n3_めったにない_104",
     "language": "ja",
     "pattern": "～めったにない",
     "title": "～めったにない (〜metta ni nai)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_もしかするとかもしれない_105",
+    "id": "ja_n3_もしかするとかもしれない_105",
     "language": "ja",
     "pattern": "もしかすると〜かもしれない",
     "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_もしたなら_106",
+    "id": "ja_n3_もしたなら_106",
     "language": "ja",
     "pattern": "もし～たなら",
     "title": "もし～たなら (moshi ~ tanara)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_もしても_107",
+    "id": "ja_n3_もしても_107",
     "language": "ja",
     "pattern": "もし～ても",
     "title": "もし～ても (moshi ~ temo)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_もしもなら_108",
+    "id": "ja_n3_もしもなら_108",
     "language": "ja",
     "pattern": "もしも～なら",
     "title": "もしも～なら (moshimo ~ nara)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_ようとしない_109",
+    "id": "ja_n3_ようとしない_109",
     "language": "ja",
     "pattern": "～ようとしない",
     "title": "～ようとしない (〜you to shinai)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_ようと思う_110",
+    "id": "ja_n3_ようと思う_110",
     "language": "ja",
     "pattern": "～ようと思う",
     "title": "～ようと思う (〜you to omou)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_ように_111",
+    "id": "ja_n3_ように_111",
     "language": "ja",
     "pattern": "～ように",
     "title": "～ように (〜you ni)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_ように_112",
+    "id": "ja_n3_ように_112",
     "language": "ja",
     "pattern": "～ように",
     "title": "～ように (〜you ni)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_ように_113",
+    "id": "ja_n3_ように_113",
     "language": "ja",
     "pattern": "～ように",
     "title": "～ように (〜you ni)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ようにしましょう_114",
+    "id": "ja_n3_ようにしましょう_114",
     "language": "ja",
     "pattern": "～ようにしましょう",
     "title": "～ようにしましょう (〜you ni shimashou)",

@@ -120,7 +120,9 @@ async function verifySupabaseToken(token, env) {
             const oldestKey = memTokenCache.keys().next().value;
             memTokenCache.delete(oldestKey);
         }
-        memTokenCache.set(token, { result, expiresAt: now + TOKEN_CACHE_TTL_MS });
+        const expMs = payload.exp ? payload.exp * 1000 : now + TOKEN_CACHE_TTL_MS;
+        const cacheExpiresAt = Math.min(now + TOKEN_CACHE_TTL_MS, expMs);
+        memTokenCache.set(token, { result, expiresAt: cacheExpiresAt });
 
         return result;
     } catch (error) {

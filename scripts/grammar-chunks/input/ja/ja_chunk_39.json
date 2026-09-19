@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_以来_178",
+    "id": "ja_n2_以来_178",
     "language": "ja",
     "pattern": "～以来",
     "title": "～以来 (〜irai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_切る_179",
+    "id": "ja_n2_切る_179",
     "language": "ja",
     "pattern": "～切る",
     "title": "～切る (〜kiru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_反面_180",
+    "id": "ja_n2_反面_180",
     "language": "ja",
     "pattern": "～反面",
     "title": "～反面 (〜hanmen)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_向け_181",
+    "id": "ja_n2_向け_181",
     "language": "ja",
     "pattern": "～向け",
     "title": "～向け (〜muke)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_恐れがある_182",
+    "id": "ja_n2_恐れがある_182",
     "language": "ja",
     "pattern": "～恐れがある",
     "title": "～恐れがある (〜osore ga aru)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_折には_183",
+    "id": "ja_n2_折には_183",
     "language": "ja",
     "pattern": "～折には",
     "title": "～折には (〜ori ni wa)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_末_184",
+    "id": "ja_n2_末_184",
     "language": "ja",
     "pattern": "～末",
     "title": "～末 (～sue)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_次第_185",
+    "id": "ja_n2_次第_185",
     "language": "ja",
     "pattern": "～次第",
     "title": "～次第 (〜shidai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_次第で_186",
+    "id": "ja_n2_次第で_186",
     "language": "ja",
     "pattern": "～次第で",
     "title": "～次第で (〜shidai de)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_次第です_187",
+    "id": "ja_n2_次第です_187",
     "language": "ja",
     "pattern": "～次第です",
     "title": "～次第です (〜shidai desu)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_気味_188",
+    "id": "ja_n2_気味_188",
     "language": "ja",
     "pattern": "～気味",
     "title": "～気味 (〜gimi)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_限り_189",
+    "id": "ja_n2_限り_189",
     "language": "ja",
     "pattern": "～限り",
     "title": "～限り (〜kagiri)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_際に_190",
+    "id": "ja_n2_際に_190",
     "language": "ja",
     "pattern": "～際に",
     "title": "～際に (〜sai ni)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n1_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A うが B うが (A uga B uga)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_A_1",
+    "id": "ja_n1_A_1",
     "language": "ja",
     "pattern": "A",
     "title": "A うと B うと (A uto B uto)",

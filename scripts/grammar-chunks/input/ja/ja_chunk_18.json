@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_んです_119",
+    "id": "ja_n4_んです_119",
     "language": "ja",
     "pattern": "～んです",
     "title": "～んです (〜n desu)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_文Aそのうえ_120",
+    "id": "ja_n4_文Aそのうえ_120",
     "language": "ja",
     "pattern": "文A。そのうえ",
     "title": "文A。そのうえ 文B。",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_文Aそれで_121",
+    "id": "ja_n4_文Aそれで_121",
     "language": "ja",
     "pattern": "文A。それで",
     "title": "文A。それで 文B (Bun A. Sorede Bun B)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_文Aそれに_122",
+    "id": "ja_n4_文Aそれに_122",
     "language": "ja",
     "pattern": "文A。それに",
     "title": "文A。それに 文B (Bun A. Soreni Bun B)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_文Aだから_123",
+    "id": "ja_n4_文Aだから_123",
     "language": "ja",
     "pattern": "文A。だから",
     "title": "文A。だから 文B (Bun A. Dakara Bun B)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n3_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A その上 B (A sono ue B)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_うちに_1",
+    "id": "ja_n3_うちに_1",
     "language": "ja",
     "pattern": "～うちに",
     "title": "～うちに (〜uchi ni)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_うとした_2",
+    "id": "ja_n3_うとした_2",
     "language": "ja",
     "pattern": "～うとした",
     "title": "～うとした (〜uto shita)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_おかげで_3",
+    "id": "ja_n3_おかげで_3",
     "language": "ja",
     "pattern": "～おかげで",
     "title": "～おかげで (〜okagede)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_かけ_4",
+    "id": "ja_n3_かけ_4",
     "language": "ja",
     "pattern": "～かけ",
     "title": "～かけ (〜kake)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_かなあ_5",
+    "id": "ja_n3_かなあ_5",
     "language": "ja",
     "pattern": "～かなあ",
     "title": "～かなあ (〜kanaa)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_ないで_6",
+    "id": "ja_n3_ないで_6",
     "language": "ja",
     "pattern": "～ないで",
     "title": "～ないで (〜naide)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_からにかけて_7",
+    "id": "ja_n3_からにかけて_7",
     "language": "ja",
     "pattern": "～から～にかけて",
     "title": "～から～にかけて (〜kara 〜ni kakete)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_かわりに_8",
+    "id": "ja_n3_かわりに_8",
     "language": "ja",
     "pattern": "～かわりに",
     "title": "～かわりに (〜kawari ni)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_きり_9",
+    "id": "ja_n3_きり_9",
     "language": "ja",
     "pattern": "～きり",
     "title": "～きり (〜kiri)",

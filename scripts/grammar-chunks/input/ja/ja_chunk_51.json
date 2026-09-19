@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verbる_167",
+    "id": "ja_n1_Verbる_167",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べからざる Noun (Verb-ru bekara zaru Noun)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_168",
+    "id": "ja_n1_Verbる_168",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べからず (〜ru bekara zu)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_169",
+    "id": "ja_n1_Verbる_169",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べく (Verb-ru beku)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_170",
+    "id": "ja_n1_Verbる_170",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べくもない (Verb-ru beku mo nai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_171",
+    "id": "ja_n1_Verbる_171",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる までもない (〜ru made mo nai)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_172",
+    "id": "ja_n1_Verbる_172",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ものとする (〜ru mono to suru)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_173",
+    "id": "ja_n1_Verbる_173",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる や否や (Verb-ru ya ina ya)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_174",
+    "id": "ja_n1_Verbる_174",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる 始末だ (〜ru shimatsu da)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verbる_175",
+    "id": "ja_n1_Verbる_175",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる 嫌いがある (～ru kirai ga aru)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_いつまでのやら_176",
+    "id": "ja_n1_いつまでのやら_176",
     "language": "ja",
     "pattern": "いつまで～のやら",
     "title": "いつまで～のやら (itsumade ~ no yara)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_が_177",
+    "id": "ja_n1_が_177",
     "language": "ja",
     "pattern": "～が",
     "title": "～が Verb られる (〜ga Verb rareru)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_かと思いきや_178",
+    "id": "ja_n1_かと思いきや_178",
     "language": "ja",
     "pattern": "～かと思いきや",
     "title": "～かと思いきや (〜ka to omoikiya)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_がゆえに_179",
+    "id": "ja_n1_がゆえに_179",
     "language": "ja",
     "pattern": "～がゆえに",
     "title": "～がゆえに (～ga yue ni)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_がゆえの_180",
+    "id": "ja_n1_がゆえの_180",
     "language": "ja",
     "pattern": "～がゆえの",
     "title": "～がゆえの Noun (〜ga yue no Noun)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_から_181",
+    "id": "ja_n1_から_181",
     "language": "ja",
     "pattern": "～から",
     "title": "～から Noun に 至る まで (〜kara 〜ni itaru made)",

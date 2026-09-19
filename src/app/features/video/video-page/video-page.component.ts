@@ -140,7 +140,7 @@ export class VideoPageComponent implements OnInit {
     }
 
     return [
-      { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels', icon: 'sparkles' },
+      { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels', icon: 'chart-bar' },
       { value: 'beginner', label: this.i18n.t('level.beginner') || 'Beginner', badge: beginnerBadge },
       { value: 'elementary', label: this.i18n.t('level.elementary') || 'Elementary', badge: elemBadge },
       { value: 'intermediate', label: this.i18n.t('level.intermediate') || 'Intermediate', badge: interBadge },
@@ -149,11 +149,57 @@ export class VideoPageComponent implements OnInit {
     ];
   });
 
+  readonly videoPlayer = viewChild<VideoPlayerComponent>('videoPlayer');
+  readonly searchQuery = signal<string>('');
+
+  onSearchQueryChange(query: string): void {
+    const trimmed = query || '';
+    this.searchQuery.set(trimmed);
+    if (!trimmed && this.videoRecommendation.activeSearchQuery()) {
+      // Bar was cleared while a server query was active -> restore home feed
+      const lang = this.settings.settings().language;
+      const tier = this.videoLevelFilter();
+      void this.videoRecommendation.clearSearch(lang, tier);
+    }
+  }
+
+  async onSearchSubmit(query: string): Promise<void> {
+    const trimmed = (query || '').trim();
+    this.searchQuery.set(trimmed);
+    if (!trimmed) {
+      this.clearSearch();
+      return;
+    }
+    const lang = this.settings.settings().language;
+    const tier = this.videoLevelFilter();
+    await this.videoRecommendation.loadRecommendedVideos(lang, tier, 16, true, trimmed);
+  }
+
+  clearSearch(): void {
+    this.searchQuery.set('');
+    this.videoPlayer()?.clearUrl();
+    const lang = this.settings.settings().language;
+    const tier = this.videoLevelFilter();
+    void this.videoRecommendation.clearSearch(lang, tier);
+  }
+
   readonly filteredRecommendedVideos = computed(() => {
-    const videos = this.recommendedVideos();
+    let videos = this.recommendedVideos();
     const filter = this.videoLevelFilter();
-    if (!filter || filter === 'all') return videos;
-    return videos.filter(v => v.tier === filter);
+    if (filter && filter !== 'all') {
+      videos = videos.filter(v => v.tier === filter);
+    }
+    const q = this.searchQuery().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    if (!q) return videos;
+
+    return videos.filter(v => {
+      const title = v.title?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() || '';
+      const channel = v.channel?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() || '';
+      const level = v.level?.toLowerCase() || '';
+      if (title.includes(q) || channel.includes(q) || level.includes(q)) return true;
+      if (v.matchedWords?.some(w => w.toLowerCase().includes(q))) return true;
+      return false;
+    });
   });
 
   getLevelFilterLabel(): string {
@@ -206,12 +252,22 @@ export class VideoPageComponent implements OnInit {
   }
 
   readonly filteredFeaturedPlaylists = computed(() => {
-    const playlists = this.featuredPlaylists();
+    let playlists = this.featuredPlaylists();
     const filter = this.videoLevelFilter();
-    if (!filter || filter === 'all') return playlists;
+    if (filter && filter !== 'all') {
+      playlists = playlists.filter(p => {
+        const lvl = this.getPlaylistLevel(p);
+        return lvl?.tier === filter;
+      });
+    }
+    const q = this.searchQuery().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    if (!q) return playlists;
+
     return playlists.filter(p => {
-      const lvl = this.getPlaylistLevel(p);
-      return lvl?.tier === filter;
+      const title = p.title?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() || '';
+      const desc = p.description?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() || '';
+      const author = p.userName?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() || '';
+      return title.includes(q) || desc.includes(q) || author.includes(q);
     });
   });
 

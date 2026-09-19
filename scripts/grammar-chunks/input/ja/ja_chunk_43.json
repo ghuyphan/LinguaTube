@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_47",
+    "id": "ja_n1_Noun_47",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なくして～はない (Noun nakushite ~ wa nai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_48",
+    "id": "ja_n1_Noun_48",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なしでは～ない (Noun nashi de wa ~nai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_49",
+    "id": "ja_n1_Noun_49",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なしには～ない (Noun nashi ni wa ~nai)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_50",
+    "id": "ja_n1_Noun_50",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ならいざ知らず (~nara izashirazu)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_51",
+    "id": "ja_n1_Noun_51",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ならでは (~nara de wa)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_52",
+    "id": "ja_n1_Noun_52",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なり Noun なり (A nari B nari)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_53",
+    "id": "ja_n1_Noun_53",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なりとも (~nari tomo)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_54",
+    "id": "ja_n1_Noun_54",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に Noun を重ねて (A ni B wo kasanete)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_55",
+    "id": "ja_n1_Noun_55",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にあっては (Noun ni atte ha)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_56",
+    "id": "ja_n1_Noun_56",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にあるまじき Noun (Noun ni aru majiki Noun)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_57",
+    "id": "ja_n1_Noun_57",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にして (Noun ni shite)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_58",
+    "id": "ja_n1_Noun_58",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にして初めて (Noun nishite hajimete)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_59",
+    "id": "ja_n1_Noun_59",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にすら (〜ni sura)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_60",
+    "id": "ja_n1_Noun_60",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にとどまらず～も (~ ni todomarazu ~ mo)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_61",
+    "id": "ja_n1_Noun_61",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にひきかえ Noun は (~ni hikikae ~ wa)",

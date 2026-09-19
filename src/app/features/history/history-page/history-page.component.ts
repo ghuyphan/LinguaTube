@@ -109,7 +109,7 @@ export class HistoryPageComponent implements OnInit {
   });
 
   levelFilterOptions = computed<OptionItem[]>(() => [
-    { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels', icon: 'medal' },
+    { value: 'all', label: this.i18n.t('level.allLevels') || 'All Levels', icon: 'chart-bar' },
     { value: 'beginner', label: this.i18n.t('level.beginner') || 'Beginner' },
     { value: 'elementary', label: this.i18n.t('level.elementary') || 'Elementary' },
     { value: 'intermediate', label: this.i18n.t('level.intermediate') || 'Intermediate' },

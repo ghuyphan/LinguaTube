@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_場所にがあります_135",
+    "id": "ja_n5_場所にがあります_135",
     "language": "ja",
     "pattern": "～（場所）に～があります",
     "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n4_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A とか B とか",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_A_1",
+    "id": "ja_n4_A_1",
     "language": "ja",
     "pattern": "A",
     "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_A_2",
+    "id": "ja_n4_A_2",
     "language": "ja",
     "pattern": "A",
     "title": "A は B ほど～ない (A wa B hodo ~ nai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_A_3",
+    "id": "ja_n4_A_3",
     "language": "ja",
     "pattern": "A",
     "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_いAdjective_4",
+    "id": "ja_n4_いAdjective_4",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective く する/なる (i-Adjective kusuru/naru)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_なadjective_5",
+    "id": "ja_n4_なadjective_5",
     "language": "ja",
     "pattern": "な-adjective",
     "title": "な-adjective に する/なる",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_6",
+    "id": "ja_n4_Noun_6",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun しか～ない (Noun shika~nai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_7",
+    "id": "ja_n4_Noun_7",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に する (Noun ni suru)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_8",
+    "id": "ja_n4_Noun_8",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に なる (Noun ni naru)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_のために_9",
+    "id": "ja_n4_のために_9",
     "language": "ja",
     "pattern": "のために",
     "title": "のために (no tame ni)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_10",
+    "id": "ja_n4_Noun_10",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 間に (〜no aida ni)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_11",
+    "id": "ja_n4_Noun_11",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ばかり (〜bakari)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_12",
+    "id": "ja_n4_Noun_12",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を あげる (Noun wo ageru)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Nounをいただく_13",
+    "id": "ja_n4_Nounをいただく_13",
     "language": "ja",
     "pattern": "Nounをいただく",
     "title": "Nounをいただく (Noun wo itadaku)",

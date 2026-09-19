@@ -297,21 +297,19 @@
 }
 
 .save-badge-btn {
-    border: 1px solid currentColor;
-    background: transparent;
     cursor: pointer;
     transition: all var(--transition-fast);
 
     @media (hover: hover) {
         &:hover {
             transform: translateY(-1px);
-            opacity: 0.85;
+            opacity: 0.9;
         }
     }
 
     &:active {
         transform: translateY(0);
-        opacity: 0.7;
+        opacity: 0.75;
     }
 }
 

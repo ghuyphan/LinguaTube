@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_28",
+    "id": "ja_n2_Noun_28",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を はじめ (Noun wo hajime)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_29",
+    "id": "ja_n2_Noun_29",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を はじめとして (Noun wo hajime to shite)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_30",
+    "id": "ja_n2_Noun_30",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を はじめとする Noun (Noun o hajime to suru Noun)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_31",
+    "id": "ja_n2_Noun_31",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を めぐって (Noun wo megutte)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_32",
+    "id": "ja_n2_Noun_32",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を めぐる Noun (Noun o meguru Noun)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_33",
+    "id": "ja_n2_Noun_33",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を もとに (Noun o moto ni)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_34",
+    "id": "ja_n2_Noun_34",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を もとにして (Noun wo moto ni shite)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_35",
+    "id": "ja_n2_Verb_35",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ことなく (~kotonaku)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_36",
+    "id": "ja_n2_Verb_36",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないことには Verb ない (~nai koto ni wa ~ nai)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_あげく_37",
+    "id": "ja_n2_あげく_37",
     "language": "ja",
     "pattern": "～あげく",
     "title": "～あげく (~ageku)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_あまり_38",
+    "id": "ja_n2_あまり_38",
     "language": "ja",
     "pattern": "～あまり",
     "title": "～あまり (〜amari)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_うちに_39",
+    "id": "ja_n2_うちに_39",
     "language": "ja",
     "pattern": "～うちに",
     "title": "～うちに (〜uchi ni)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_がい_40",
+    "id": "ja_n2_がい_40",
     "language": "ja",
     "pattern": "～がい",
     "title": "～がい (〜gai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_かいがあって_41",
+    "id": "ja_n2_かいがあって_41",
     "language": "ja",
     "pattern": "～かいがあって",
     "title": "～かいがあって (〜kaiga atte)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_かいもなく_42",
+    "id": "ja_n2_かいもなく_42",
     "language": "ja",
     "pattern": "～かいもなく",
     "title": "～かいもなく (〜kai mo naku)",

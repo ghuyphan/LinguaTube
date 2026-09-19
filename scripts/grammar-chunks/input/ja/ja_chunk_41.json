@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_17",
+    "id": "ja_n1_Noun_17",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun からある (〜kara aru)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_18",
+    "id": "ja_n1_Noun_18",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun からする (Noun kara suru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_19",
+    "id": "ja_n1_Noun_19",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun からの (~kara no)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_20",
+    "id": "ja_n1_Noun_20",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun から言わせれば (~kara iwasereba)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_21",
+    "id": "ja_n1_Noun_21",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ぐるみ (〜gurumi)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_22",
+    "id": "ja_n1_Noun_22",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun こそあれ (~koso are)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_23",
+    "id": "ja_n1_Noun_23",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun こそ～が (~koso~ga)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_24",
+    "id": "ja_n1_Noun_24",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun こそすれ (~koso sure)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_25",
+    "id": "ja_n1_Noun_25",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ごとき / Noun ごとく (〜gotoki/〜gotoku)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_26",
+    "id": "ja_n1_Noun_26",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun じゃあるまいし (~ja aru mai shi)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_27",
+    "id": "ja_n1_Noun_27",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ずくめ (~zukume)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_28",
+    "id": "ja_n1_Noun_28",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun だけではすまない (Noun dake dewa sumanai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_29",
+    "id": "ja_n1_Noun_29",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun たりとも～ない (~tari tomo ~nai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_30",
+    "id": "ja_n1_Noun_30",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun たる Noun (~taru~)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_31",
+    "id": "ja_n1_Noun_31",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ですら (~desura)",

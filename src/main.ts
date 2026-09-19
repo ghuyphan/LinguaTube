@@ -1,5 +1,4 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideRouter, withInMemoryScrolling, withPreloading, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app/app.component';
@@ -16,7 +15,6 @@ if (!isDevMode()) {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
-    provideAnimationsAsync(),
     provideHttpClient(withInterceptors([authInterceptor, timeoutInterceptor, cacheInterceptor])),
     provideRouter(
       routes,

@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_せいで_25",
+    "id": "ja_n3_せいで_25",
     "language": "ja",
     "pattern": "～せいで",
     "title": "～せいで (〜sei de)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_せてください_26",
+    "id": "ja_n3_せてください_26",
     "language": "ja",
     "pattern": "～せてください",
     "title": "～せてください (〜sete kudasai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_そのために_27",
+    "id": "ja_n3_そのために_27",
     "language": "ja",
     "pattern": "～そのために",
     "title": "～そのために (〜sono tame ni)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_その結果_28",
+    "id": "ja_n3_その結果_28",
     "language": "ja",
     "pattern": "～その結果",
     "title": "～その結果 (〜sono kekka)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_それと_29",
+    "id": "ja_n3_それと_29",
     "language": "ja",
     "pattern": "～それと～",
     "title": "～それと～ (〜sore to〜)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_それとも_30",
+    "id": "ja_n3_それとも_30",
     "language": "ja",
     "pattern": "～？それとも～？",
     "title": "～？それとも～？ (～? sore tomo ～?)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_だけしか_31",
+    "id": "ja_n3_だけしか_31",
     "language": "ja",
     "pattern": "～だけしか",
     "title": "～だけしか (～dake shika)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_だけど_32",
+    "id": "ja_n3_だけど_32",
     "language": "ja",
     "pattern": "だけど",
     "title": "だけど (dakedo)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_たて_33",
+    "id": "ja_n3_たて_33",
     "language": "ja",
     "pattern": "～たて",
     "title": "～たて (～tate)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_たとえても_34",
+    "id": "ja_n3_たとえても_34",
     "language": "ja",
     "pattern": "～たとえ～ても",
     "title": "～たとえ～ても (〜tatoe〜temo)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_たところ_35",
+    "id": "ja_n3_たところ_35",
     "language": "ja",
     "pattern": "～たところ",
     "title": "～たところ (〜ta tokoro)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_たとたん_36",
+    "id": "ja_n3_たとたん_36",
     "language": "ja",
     "pattern": "～たとたん",
     "title": "～たとたん (〜ta totan)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_たびに_37",
+    "id": "ja_n3_たびに_37",
     "language": "ja",
     "pattern": "～たびに",
     "title": "～たびに (〜tabi ni)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_だものだ_38",
+    "id": "ja_n3_だものだ_38",
     "language": "ja",
     "pattern": "～だものだ",
     "title": "～だものだ (〜da mono da)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ちゃった_39",
+    "id": "ja_n3_ちゃった_39",
     "language": "ja",
     "pattern": "～ちゃった",
     "title": "～ちゃった (〜chatta)",

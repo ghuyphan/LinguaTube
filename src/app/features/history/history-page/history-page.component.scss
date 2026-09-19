@@ -15,144 +15,10 @@
 }
 
 // -------------------------
-// History Toolbar (Matches playlist-toolbar in playlist-page)
+// Panel Toolbar & Controls:
+// Fully inherited from global LinguaTube design system in src/styles/_components.scss
+// (.panel-toolbar, .segmented-control, .action-icon-btn, .filter-scroll-strip, .panel-search-wrapper)
 // -------------------------
-.history-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-sticky, 100);
-  background: var(--bg-card);
-  padding: var(--space-xs) 0;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
-
-  .toolbar-nav-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .toolbar-filter-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    width: 100%;
-    flex-wrap: wrap;
-
-    .history-search-box {
-      flex: 1 1 200px;
-      min-width: 160px;
-      max-width: 100%;
-      height: 36px;
-      transition: border-color var(--transition-fast), background-color var(--transition-fast);
-    }
-
-    .filter-chips-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      flex-wrap: wrap;
-    }
-  }
-
-  .filter-chip {
-    height: 36px;
-    min-height: 36px;
-    max-height: 36px;
-    box-sizing: border-box;
-    padding: 0 14px;
-    font-size: 0.8125rem;
-    border-radius: var(--border-radius-pill);
-    border: 1px solid var(--border-color);
-    background: var(--bg-surface);
-    color: var(--text-secondary);
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-    user-select: none;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
-
-    app-icon {
-      color: var(--text-muted);
-    }
-
-    @media (hover: hover) {
-      &:hover:not(.active) {
-        background: var(--bg-hover);
-        color: var(--text-primary);
-        border-color: var(--border-color-hover, var(--text-muted));
-
-        app-icon {
-          color: var(--text-primary);
-        }
-      }
-    }
-
-    &.active {
-      background: rgba(var(--accent-primary-rgb), 0.15);
-      color: var(--accent-primary);
-      border-color: var(--accent-primary);
-      font-weight: 600;
-      box-shadow: none;
-
-      app-icon {
-        color: var(--accent-primary);
-      }
-    }
-  }
-}
-
-.view-tabs {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.filter-chip--lang,
-.filter-chip--level {
-  height: 36px;
-  padding: 0 12px;
-  font-size: 0.8125rem;
-  border-radius: var(--border-radius-pill);
-  border: 1px solid var(--border-color);
-  background: var(--bg-surface);
-  color: var(--text-primary);
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all var(--transition-fast);
-
-  .lang-chevron {
-    color: var(--text-muted);
-    transition: transform var(--transition-fast);
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      background: var(--bg-hover);
-      border-color: var(--border-color-hover, var(--text-muted));
-
-      app-icon,
-      .lang-chevron {
-        color: var(--text-primary);
-      }
-    }
-  }
-}
 
 .clear-all-btn {
   height: 36px;
@@ -482,81 +348,6 @@
   .sync-hint-mobile {
     display: flex;
   }
-
-  .history-toolbar {
-    gap: var(--space-sm);
-    padding: var(--space-2xs) 0 var(--space-xs);
-
-    .toolbar-nav-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-
-      .view-tabs {
-        flex: 1 1 auto;
-        min-width: 0;
-        display: flex;
-        gap: 6px;
-
-        .filter-chip {
-          flex: 1 1 0px;
-          min-width: 0;
-          justify-content: center;
-          padding: 0 8px;
-          white-space: nowrap;
-
-          .chip-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        }
-      }
-
-      .clear-all-btn {
-        padding: 0 10px;
-        flex-shrink: 0;
-
-        @media (max-width: 480px) {
-          .chip-text {
-            display: none;
-          }
-        }
-      }
-    }
-
-    .toolbar-filter-row {
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-
-      .history-search-box {
-        width: 100% !important;
-        max-width: 100% !important;
-        flex: 1 1 100% !important;
-        height: 36px;
-      }
-
-      .filter-chips-group {
-        width: 100%;
-        display: flex;
-        gap: var(--space-xs);
-
-        .filter-chip {
-          flex: 1 1 0px;
-          min-width: 0;
-          justify-content: center;
-          padding: 0 8px;
-          white-space: nowrap;
-
-          .chip-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        }
-      }
-    }
-  }
 }
 
 .history-metric-row {
@@ -590,5 +381,52 @@
       color: var(--text-muted);
       margin-top: 2px;
     }
+  }
+}
+
+.history-mobile-metrics {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-xs) var(--space-sm);
+  margin-bottom: var(--space-md);
+
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+
+  .history-metric-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .history-metric-val {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+
+    &.stat-favorite {
+      color: var(--accent-primary);
+    }
+  }
+
+  .history-metric-lbl {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .history-metric-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--border-color);
   }
 }

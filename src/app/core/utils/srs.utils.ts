@@ -88,6 +88,8 @@ export function calculateNextSRSState(
         }
     }
 
+    easeFactor = Math.round(Math.min(3.0, Math.max(1.3, easeFactor)) * 100) / 100;
+
     const nextReviewDate = new Date();
     nextReviewDate.setDate(nextReviewDate.getDate() + interval);
 
@@ -113,6 +115,7 @@ export function formatSRSInterval(days: number): string {
     }
     if (days < 365) {
         const months = Math.round(days / 30);
+        if (months >= 12) return '1y';
         return `${months}mo`;
     }
     const years = (days / 365).toFixed(1).replace(/\.0$/, '');

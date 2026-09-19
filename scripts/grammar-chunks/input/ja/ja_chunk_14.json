@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_59",
+    "id": "ja_n4_Verb_59",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようにする (Verb ~you ni suru)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verb_60",
+    "id": "ja_n4_Verb_60",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようになる (〜you ni naru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verb_61",
+    "id": "ja_n4_Verb_61",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ように言う (Verb-you ni iu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verb_62",
+    "id": "ja_n4_Verb_62",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb られる (〜rareru)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verb_63",
+    "id": "ja_n4_Verb_63",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る ことがある (〜ru koto ga aru)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verb_64",
+    "id": "ja_n4_Verb_64",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ることができる (〜ru koto ga dekiru)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_65",
+    "id": "ja_n4_Verb_65",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ることにする (〜ru koto ni suru)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_66",
+    "id": "ja_n4_Verb_66",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る ことになる (〜ru koto ni naru)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_67",
+    "id": "ja_n4_Verb_67",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb るときに (〜ru toki ni)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_68",
+    "id": "ja_n4_Verb_68",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る ところ (Verb-ru tokoro)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_69",
+    "id": "ja_n4_Verb_69",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb 出す (~dasu)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_70",
+    "id": "ja_n4_Verb_70",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb 方 (〜hou)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_71",
+    "id": "ja_n4_Verb_71",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb 終わる (〜owaru)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_72",
+    "id": "ja_n4_Verb_72",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb + 続ける (つづける, tsuzukeru)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_かしら_73",
+    "id": "ja_n4_かしら_73",
     "language": "ja",
     "pattern": "～かしら",
     "title": "～かしら (〜kashira)",

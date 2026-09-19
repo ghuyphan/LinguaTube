@@ -10,7 +10,8 @@
         </button>
 
         <!-- Volume control (Desktop: hover slider) -->
-        <div class="volume-control desktop-only" (mouseenter)="showVolumeSlider.emit()"
+        <div class="volume-control desktop-only"
+            (mouseenter)="showVolumeSlider.emit()"
             (mouseleave)="hideVolumeSlider.emit()">
             <button class="control-btn volume-btn" (click)="toggleMute.emit()"
                 [attr.aria-label]="t()('player.mute') || 'Mute'"
@@ -20,15 +21,15 @@
             </button>
             <div class="volume-slider-container desktop-only" [class.visible]="isVolumeSliderVisible()">
                 <div class="volume-slider-track"
-                    role="slider"
+                    (mousedown)="onVolumeSliderMouseDown($event)"
+                    (keydown)="onVolumeKeyDown($event)"
                     tabindex="0"
+                    role="slider"
+                    [attr.aria-label]="t()('player.volume') || 'Volume'"
                     [attr.aria-valuenow]="isMuted() ? 0 : volume()"
                     [attr.aria-valuemin]="0"
                     [attr.aria-valuemax]="100"
-                    [attr.aria-label]="t()('player.volume') || 'Volume'"
                     [attr.aria-valuetext]="isMuted() ? (t()('player.muted') || 'Muted') : volume() + '%'"
-                    (keydown)="onVolumeKeyDown($event)"
-                    (mousedown)="onVolumeSliderMouseDown($event)"
                     [style.--volume-percent]="volumePercent() + '%'">
                     <div class="volume-slider-fill"></div>
                     <div class="volume-slider-handle"></div>

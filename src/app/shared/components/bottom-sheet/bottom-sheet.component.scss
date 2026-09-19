@@ -152,6 +152,12 @@
     color: var(--text-muted);
     cursor: pointer;
     transition: all var(--transition-fast);
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -6px; /* Expands 32px to 44px minimum touch target */
+    }
 }
 
 @media (hover: hover) {

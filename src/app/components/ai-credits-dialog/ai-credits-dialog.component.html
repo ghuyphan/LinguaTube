@@ -5,7 +5,7 @@
             <app-icon name="diamond" [size]="34" class="hero-diamond" />
         </div>
         <div class="title-group">
-            <h2>{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</h2>
+            <h2>{{ i18n.t('subtitle.aiCredits') || 'Audio Sync Passes' }}</h2>
             <div class="credits-count-row">
                 <span class="credits-num">{{ transcript.diamonds() }}</span>
                 <span class="credits-sep">/</span>
@@ -24,7 +24,7 @@
         @if (transcript.diamonds() === 0) {
         <div class="depleted-banner">
             <app-icon name="alert-circle" [size]="16" class="depleted-icon" />
-            <span>{{ i18n.t('subtitle.depletedNotice', { max: transcript.maxDiamonds() }) || "You've used all AI credits. Videos with existing YouTube captions remain 100% free!" }}</span>
+            <span>{{ i18n.t('subtitle.depletedNotice', { max: transcript.maxDiamonds() }) || "You've used all audio sync passes. Videos with existing YouTube captions remain 100% free!" }}</span>
         </div>
         }
     </div>
@@ -37,17 +37,17 @@
             </div>
             <div class="usage-card__body">
                 <strong>{{ i18n.t('subtitle.nativeCaptionsTitle') || 'Videos with Captions' }}</strong>
-                <p>{{ i18n.t('subtitle.nativeCaptionsDesc') || 'Always 100% free and unlimited. Never consumes AI credits.' }}</p>
+                <p>{{ i18n.t('subtitle.nativeCaptionsDesc') || 'Always 100% free and unlimited. Never consumes sync passes.' }}</p>
             </div>
         </div>
 
         <div class="usage-card">
             <div class="usage-card__icon usage-card__icon--ai">
-                <app-icon name="sparkles" [size]="18" />
+                <app-icon name="subtitles-ai" [size]="18" />
             </div>
             <div class="usage-card__body">
-                <strong>{{ i18n.t('subtitle.aiTranscriptionTitle') || 'AI Audio Transcription' }}</strong>
-                <p>{{ i18n.t('subtitle.aiTranscriptionDesc') || 'Used for videos lacking captions (1–2 credits). Recharges automatically over time.' }}</p>
+                <strong>{{ i18n.t('subtitle.aiTranscriptionTitle') || 'Audio Speech Transcription' }}</strong>
+                <p>{{ i18n.t('subtitle.aiTranscriptionDesc') || 'Used for videos lacking captions (1–2 passes). Recharges automatically over time.' }}</p>
             </div>
         </div>
     </div>
@@ -57,15 +57,15 @@
         <div class="pro-promo-card" (click)="openProUpgrade.emit()" role="button" tabindex="0">
             <div class="pro-promo-left">
                 <div class="pro-promo-badge">
-                    <app-icon name="sparkles" [size]="18" />
+                    <app-icon name="diamond" [size]="18" />
                 </div>
                 <div class="pro-promo-text">
                     <span class="pro-promo-title">{{ i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium' }}</span>
-                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHintPremium') || 'Unlock 25 credits, 4-min refill & 45-min podcasts with Premium.' }}</span>
+                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHintPremium') || 'Unlock 25 passes, 4-min refill & 45-min podcasts with Premium.' }}</span>
                 </div>
             </div>
             <button class="btn btn-pro-sm" type="button">
-                <app-icon name="sparkles" [size]="14" />
+                <app-icon name="diamond" [size]="14" />
                 <span>{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
             </button>
         </div>
@@ -77,8 +77,8 @@
                     <app-icon name="crown" [size]="18" />
                 </div>
                 <div class="pro-promo-text">
-                    <span class="pro-promo-title">{{ i18n.t('pro.needMoreCredits') || 'Need more AI credits?' }}</span>
-                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHint') || 'Get up to 25 daily credits, priority queue & cloud sync with Pro or Premium.' }}</span>
+                    <span class="pro-promo-title">{{ i18n.t('pro.needMoreCredits') || 'Need more sync passes?' }}</span>
+                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHint') || 'Get up to 25 daily passes, priority queue & cloud sync with Pro or Premium.' }}</span>
                 </div>
             </div>
             <button class="btn btn-pro-sm" type="button">

@@ -22,10 +22,10 @@ function loadExistingTranslations(learningLang, targetLang) {
     if (jsonStart !== -1 && jsonEnd !== -1) {
       return JSON.parse(content.substring(jsonStart, jsonEnd + 1));
     }
+    throw new Error('Could not locate JSON payload');
   } catch (e) {
-    console.warn(`Could not parse ${filePath}:`, e.message);
+    throw new Error(`Failed to parse existing translations from ${filePath}: ${e.message}`);
   }
-  return {};
 }
 
 function saveTranslations(learningLang, targetLang, data) {
@@ -66,7 +66,7 @@ function mergeAllChunks(learningLang = 'ja') {
 
   const targets = TARGET_LANGS[learningLang] || ['vi', 'zh', 'ko', 'ja'];
   for (const targetLang of targets) {
-    const existing = loadExistingTranslations(learningLang, targetLang);
+    const existing = learningLang === 'ja' ? {} : loadExistingTranslations(learningLang, targetLang);
     const combined = { ...existing, ...merged[targetLang] };
     if (Object.keys(combined).length > 0) {
       saveTranslations(learningLang, targetLang, combined);

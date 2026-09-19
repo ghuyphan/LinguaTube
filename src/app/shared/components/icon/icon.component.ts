@@ -16,7 +16,7 @@ export type IconName =
     | 'sparkles' | 'wand' | 'play-circle' | 'play-circle-filled' | 'eye' | 'eye-off'
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'miniplayer' | 'expand' | 'fullscreen' | 'fullscreen-exit' | 'globe'
     | 'user' | 'google' | 'log-in'
-    | 'clock' | 'heart' | 'heart-filled' | 'cloud'
+    | 'clock' | 'history' | 'heart' | 'heart-filled' | 'cloud'
     // Gamification & cute icons
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond' | 'crown'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-horizontal-filled' | 'more-vertical'
@@ -24,7 +24,9 @@ export type IconName =
     | 'headphones' | 'clipboard-check' | 'coffee'
     | 'graduation-cap-filled' | 'book-open-filled'
     // Audio & utility icons
-    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'slash' | 'lightbulb' | 'leaf' | 'box' | 'droplet' | 'copy';
+    | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'slash' | 'lightbulb' | 'leaf' | 'box' | 'droplet' | 'copy'
+    // Purpose-built modern Voca icons
+    | 'speedometer' | 'timer' | 'ruby-text' | 'sparkle-text' | 'chart-bar' | 'brain' | 'cards' | 'share-ios';
 
 @Component({
     selector: 'app-icon',

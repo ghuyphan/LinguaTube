@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID, computed, Injector, afterNextRender, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID, computed, Injector, afterNextRender, OnDestroy, NgZone, untracked } from '@angular/core';
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -75,7 +75,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               [attr.aria-current]="isVideoActive() ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="isVideoActive() ? 'play-circle-filled' : 'play-circle'" [size]="22" />
+                <app-icon name="play-circle" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.watch') }}</span>
             </a>
@@ -87,7 +87,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               [attr.aria-current]="isStudyActive() ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="isStudyActive() ? 'graduation-cap-filled' : 'graduation-cap'" [size]="22" />
+                <app-icon name="graduation-cap" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.review') }}</span>
             </a>
@@ -109,7 +109,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               [attr.aria-current]="isDictionaryActive() ? 'page' : null"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="isDictionaryActive() ? 'book-open-filled' : 'book-open'" [size]="22" />
+                <app-icon name="book-open" [size]="22" />
               </div>
               <span>{{ i18n.t('nav.vocab') }}</span>
             </a>
@@ -123,7 +123,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               [attr.aria-label]="i18n.t('nav.more') || 'More'"
             >
               <div class="bottom-nav__icon-wrap">
-                <app-icon [name]="isMoreActive() ? 'more-horizontal-filled' : 'more-horizontal'" [size]="22" />
+                <app-icon name="more-horizontal" [size]="22" />
                 @if (gamification.hasClaimableRewards()) {
                   <span class="bottom-nav__dot"></span>
                 }
@@ -185,7 +185,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
 
             <button class="more-menu__item" (click)="navigateFromMore('/history')">
               <div class="more-menu__item-icon">
-                <app-icon name="clock" [size]="18" />
+                <app-icon name="history" [size]="18" />
               </div>
               <div class="more-menu__item-text">
                 <span class="more-menu__item-title">{{ i18n.t('history.title') }}</span>
@@ -260,11 +260,13 @@ import { VideoRecommendationService } from './core/services/video-recommendation
         @defer (when showAiCreditsSheet(); prefetch on idle) {
           <app-bottom-sheet
             [isOpen]="showAiCreditsSheet()"
-            [title]="i18n.t('subtitle.aiCredits') || 'AI Credits'"
+            [title]="i18n.t('subtitle.aiCredits') || 'Audio Sync Passes'"
             [showCloseButton]="true"
             (closed)="showAiCreditsSheet.set(false)"
           >
-            <app-ai-credits-dialog (dismissed)="sheetService.closeTop()" (openProUpgrade)="openProUpgradeFromAiCredits()" />
+            @if (showAiCreditsSheet()) {
+              <app-ai-credits-dialog (dismissed)="sheetService.closeTop()" (openProUpgrade)="openProUpgradeFromAiCredits()" />
+            }
           </app-bottom-sheet>
         }
 
@@ -276,7 +278,9 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             maxWidth="500px"
             (closed)="showAchievementsSheet.set(false)"
           >
-            <app-achievements-dialog (dismissed)="sheetService.closeTop()" />
+            @if (showAchievementsSheet()) {
+              <app-achievements-dialog (dismissed)="sheetService.closeTop()" />
+            }
           </app-bottom-sheet>
         }
 
@@ -337,7 +341,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
           @if (appUpdate.incomingHighlights().length > 0) {
             <div class="update-sheet__changelog">
               <div class="update-sheet__changelog-title">
-                <app-icon name="sparkles" [size]="15" />
+                <app-icon name="star" [size]="15" />
                 <span>{{ i18n.t('app.whatsNew') || "What's New" }}</span>
               </div>
               <ul class="update-sheet__changelog-list">
@@ -400,7 +404,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               <div class="ios-step-text">
                 <span>{{ i18n.t('pwa.iosStep1') }}</span>
                 <span class="ios-step-hint">
-                  <app-icon name="share" [size]="16" />
+                  <app-icon name="share-ios" [size]="16" />
                 </span>
               </div>
             </div>
@@ -1123,6 +1127,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
 })
 export class AppComponent implements OnDestroy {
   private platformId = inject(PLATFORM_ID);
+  private ngZone = inject(NgZone);
   private youtube = inject(YoutubeService);
   private router = inject(Router);
   private injector = inject(Injector);
@@ -1154,13 +1159,15 @@ export class AppComponent implements OnDestroy {
     effect(() => {
       const currentLang = this.settings.settings().language;
       if (prevLang && prevLang !== currentLang) {
-        this.showSettingsSheet.set(false);
-        this.showMoreSheet.set(false);
-        this.showStreakSheet.set(false);
-        this.showAiCreditsSheet.set(false);
-        this.showAchievementsSheet.set(false);
-        this.showProUpgradeSheet.set(false);
-        this.showCommandPalette.set(false);
+        untracked(() => {
+          this.showSettingsSheet.set(false);
+          this.showMoreSheet.set(false);
+          this.showStreakSheet.set(false);
+          this.showAiCreditsSheet.set(false);
+          this.showAchievementsSheet.set(false);
+          this.showProUpgradeSheet.set(false);
+          this.showCommandPalette.set(false);
+        });
       }
       prevLang = currentLang;
     });
@@ -1194,25 +1201,27 @@ export class AppComponent implements OnDestroy {
 
       const handleResize = () => updateViewportState();
 
-      window.addEventListener('resize', handleResize, { passive: true });
-      window.addEventListener('orientationchange', handleResize);
-      this.cleanupFns.push(() => {
-        window.removeEventListener('resize', handleResize);
-        window.removeEventListener('orientationchange', handleResize);
+      this.ngZone.runOutsideAngular(() => {
+        window.addEventListener('resize', handleResize, { passive: true });
+        window.addEventListener('orientationchange', handleResize);
+        this.cleanupFns.push(() => {
+          window.removeEventListener('resize', handleResize);
+          window.removeEventListener('orientationchange', handleResize);
+        });
+
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener('resize', handleResize);
+          this.cleanupFns.push(() => window.visualViewport?.removeEventListener('resize', handleResize));
+        }
+
+        if (typeof standaloneQuery.addEventListener === 'function') {
+          standaloneQuery.addEventListener('change', handleResize);
+          this.cleanupFns.push(() => standaloneQuery.removeEventListener('change', handleResize));
+        } else {
+          standaloneQuery.addListener(handleResize);
+          this.cleanupFns.push(() => standaloneQuery.removeListener(handleResize));
+        }
       });
-
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', handleResize);
-        this.cleanupFns.push(() => window.visualViewport?.removeEventListener('resize', handleResize));
-      }
-
-      if (typeof standaloneQuery.addEventListener === 'function') {
-        standaloneQuery.addEventListener('change', handleResize);
-        this.cleanupFns.push(() => standaloneQuery.removeEventListener('change', handleResize));
-      } else {
-        standaloneQuery.addListener(handleResize);
-        this.cleanupFns.push(() => standaloneQuery.removeListener(handleResize));
-      }
     }, { injector: this.injector });
   }
 
@@ -1401,7 +1410,7 @@ export class AppComponent implements OnDestroy {
   navigateFromMore(route: string): void {
     this.sheetService.skipNextHistoryPop();
     this.showMoreSheet.set(false);
-    void this.router.navigate([route], { replaceUrl: true });
+    void this.router.navigate([route]);
   }
 
   async installAppFromMore(): Promise<void> {

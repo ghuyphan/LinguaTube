@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Aそれなら_13",
+    "id": "ja_n2_Aそれなら_13",
     "language": "ja",
     "pattern": "A。それなら",
     "title": "A。それなら B。(A. Sore nara B.)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_A_14",
+    "id": "ja_n2_A_14",
     "language": "ja",
     "pattern": "A",
     "title": "A それはそうと B。 (A Sore wa sou to B)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Aだが_15",
+    "id": "ja_n2_Aだが_15",
     "language": "ja",
     "pattern": "A。だが",
     "title": "A。だが B。(~daga)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_AただB_16",
+    "id": "ja_n2_AただB_16",
     "language": "ja",
     "pattern": "A。ただB。",
     "title": "A。ただB。(~tada)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_AただしB_17",
+    "id": "ja_n2_AただしB_17",
     "language": "ja",
     "pattern": "A。ただしB。",
     "title": "A。ただしB。 (A. Tadashi B)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Aだって_18",
+    "id": "ja_n2_Aだって_18",
     "language": "ja",
     "pattern": "A。だって",
     "title": "A。だって B。(Datte~)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Aちなみに_19",
+    "id": "ja_n2_Aちなみに_19",
     "language": "ja",
     "pattern": "A。ちなみに",
     "title": "A。ちなみに B。(A. Chinamini B.)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Aということは_20",
+    "id": "ja_n2_Aということは_20",
     "language": "ja",
     "pattern": "A。ということは",
     "title": "A。ということは B。 (A. To iu koto wa B.)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Aというのは_21",
+    "id": "ja_n2_Aというのは_21",
     "language": "ja",
     "pattern": "A。というのは",
     "title": "A。というのは B。(Toiu no wa~)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_AなおB_22",
+    "id": "ja_n2_AなおB_22",
     "language": "ja",
     "pattern": "A。なおB。",
     "title": "A。なおB。(A. Nao B.)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Aもっとも_23",
+    "id": "ja_n2_Aもっとも_23",
     "language": "ja",
     "pattern": "A。もっとも",
     "title": "A。もっとも B。(Motto mo ~)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_A要するに_24",
+    "id": "ja_n2_A要するに_24",
     "language": "ja",
     "pattern": "A。要するに",
     "title": "A。要するに B。(A. Yousuru ni B.)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_25",
+    "id": "ja_n2_Noun_25",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun につき (〜ni tsuki)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_26",
+    "id": "ja_n2_Noun_26",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にて (Noun nite)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_27",
+    "id": "ja_n2_Noun_27",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の ことだから (Noun no koto dakara)",

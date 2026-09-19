@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_かどうか_74",
+    "id": "ja_n4_かどうか_74",
     "language": "ja",
     "pattern": "～かどうか",
     "title": "～かどうか (〜ka dou ka)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_かなあ_75",
+    "id": "ja_n4_かなあ_75",
     "language": "ja",
     "pattern": "～かなあ",
     "title": "～かなあ (〜kanaa)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_かもしれない_76",
+    "id": "ja_n4_かもしれない_76",
     "language": "ja",
     "pattern": "～かもしれない",
     "title": "～かもしれない (〜kamoshirenai)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_から_77",
+    "id": "ja_n4_から_77",
     "language": "ja",
     "pattern": "～から",
     "title": "～から (〜kara)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_けれど_78",
+    "id": "ja_n4_けれど_78",
     "language": "ja",
     "pattern": "～けれど",
     "title": "～けれど (〜keredo)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_させてください_79",
+    "id": "ja_n4_させてください_79",
     "language": "ja",
     "pattern": "～させてください",
     "title": "～させてください (〜sasete kudasai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_しし_80",
+    "id": "ja_n4_しし_80",
     "language": "ja",
     "pattern": "～し、～し、～",
     "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_すぎる_81",
+    "id": "ja_n4_すぎる_81",
     "language": "ja",
     "pattern": "～すぎる",
     "title": "～すぎる (〜sugiru)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ずつ_82",
+    "id": "ja_n4_ずつ_82",
     "language": "ja",
     "pattern": "～ずつ",
     "title": "～ずつ (〜zutsu)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_そうだ_83",
+    "id": "ja_n4_そうだ_83",
     "language": "ja",
     "pattern": "～そうだ",
     "title": "～そうだ (〜sou da)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_そんな_84",
+    "id": "ja_n4_そんな_84",
     "language": "ja",
     "pattern": "そんな",
     "title": "そんな (sonna) + Noun",
@@ -342,7 +342,7 @@
     ]
   },
   {
-    "id": "ja_そんなに_85",
+    "id": "ja_n4_そんなに_85",
     "language": "ja",
     "pattern": "そんなに～",
     "title": "そんなに～ (sonna ni〜)",
@@ -374,7 +374,7 @@
     ]
   },
   {
-    "id": "ja_たらいい_86",
+    "id": "ja_n4_たらいい_86",
     "language": "ja",
     "pattern": "～たらいい",
     "title": "～たらいい (〜tara ii)",
@@ -406,7 +406,7 @@
     ]
   },
   {
-    "id": "ja_たら_87",
+    "id": "ja_n4_たら_87",
     "language": "ja",
     "pattern": "～たら",
     "title": "～たら いかがですか (〜tara ikaga desu ka)",
@@ -438,7 +438,7 @@
     ]
   },
   {
-    "id": "ja_たら_88",
+    "id": "ja_n4_たら_88",
     "language": "ja",
     "pattern": "～たら",
     "title": "～たら どうですか (〜tara doudesuka)",

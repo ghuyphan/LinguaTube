@@ -2,7 +2,7 @@
     <!-- Header Section -->
     <div class="header-section">
         <div class="pro-hero-icon" [class.is-premium]="selectedTier() === 'premium'">
-            <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="32" />
+            <app-icon [name]="selectedTier() === 'premium' ? 'diamond' : 'crown'" [size]="32" />
         </div>
         <div class="title-group">
             <h2 [class.is-premium]="selectedTier() === 'premium'">{{ selectedTier() === 'premium' ? (i18n.t('pro.titlePremium') || 'Voca Premium') : (i18n.t('pro.title') || 'Voca Pro') }}</h2>
@@ -35,7 +35,7 @@
                 {{ i18n.t('pro.enjoyingBenefits') || 'You have unlocked Pro immersion features, 10 daily AI diamonds, and priority speech transcription.' }}
             </p>
             <button class="btn btn-upgrade-cta btn-premium-cta btn-full" type="button" (click)="setTier('premium')">
-                <app-icon name="sparkles" [size]="16" />
+                <app-icon name="diamond" [size]="16" />
                 <span>{{ i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium' }}</span>
             </button>
             <button class="btn btn-ghost btn-full" (click)="dismissed.emit()">
@@ -184,7 +184,7 @@
                     [class.is-active]="selectedTier() === 'premium'"
                     (click)="setTier('premium')"
                 >
-                    <app-icon name="sparkles" [size]="15" />
+                    <app-icon name="diamond" [size]="15" />
                     <span>{{ i18n.t('pro.tabPremium') || 'Voca Premium' }}</span>
                     <span class="tab-badge">{{ i18n.t('pro.premiumBadge') || 'VIP' }}</span>
                 </button>
@@ -255,7 +255,7 @@
                             <app-icon name="diamond" [size]="15" class="icon-diamond" />
                         </div>
                         <div class="benefit-text">
-                            <strong>{{ i18n.t('pro.featureDiamondsTitle') || '10 Daily AI Credits' }}</strong>
+                            <strong>{{ i18n.t('pro.featureDiamondsTitle') || '10 Daily Audio Passes' }}</strong>
                             <span>{{ i18n.t('pro.featureDiamondsDesc') || 'Refills +1 every 10 minutes for everyday practice' }}</span>
                         </div>
                     </div>
@@ -305,7 +305,7 @@
                             <app-icon name="diamond" [size]="15" class="icon-diamond-premium" />
                         </div>
                         <div class="benefit-text">
-                            <strong>{{ i18n.t('pro.featurePremiumDiamondsTitle') || '25 Daily AI Credits' }}</strong>
+                            <strong>{{ i18n.t('pro.featurePremiumDiamondsTitle') || '25 Daily Audio Passes' }}</strong>
                             <span>{{ i18n.t('pro.featurePremiumDiamondsDesc') || 'Rapid refill (+1 every 4 mins) for deep immersion' }}</span>
                         </div>
                     </div>
@@ -332,7 +332,7 @@
 
                     <div class="benefit-item">
                         <div class="benefit-icon benefit-icon--premium">
-                            <app-icon name="sparkles" [size]="15" class="icon-sparkles-premium" />
+                            <app-icon name="languages" [size]="15" class="icon-sparkles-premium" />
                         </div>
                         <div class="benefit-text">
                             <strong>{{ i18n.t('pro.featurePremiumLimitsTitle') || 'Unlimited Subtitles & Translations' }}</strong>
@@ -366,7 +366,7 @@
                     <span class="spinner-dot"></span>
                     <span>{{ isLoggingIn() ? (i18n.t('auth.signingIn') || 'Signing in...') : (i18n.t('pro.generatingQR') || 'Generating QR...') }}</span>
                 } @else {
-                    <app-icon [name]="selectedTier() === 'premium' ? 'sparkles' : 'crown'" [size]="18" />
+                    <app-icon [name]="selectedTier() === 'premium' ? 'diamond' : 'crown'" [size]="18" />
                     <span>{{ i18n.t('pro.upgradeBtn', { price: activePlan().priceFormatted }) || ('Upgrade - ' + activePlan().priceFormatted) }}</span>
                 }
             </button>

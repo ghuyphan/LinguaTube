@@ -152,9 +152,9 @@ export class PlaylistService {
      */
     async createPlaylist(input: CreatePlaylistInput): Promise<Playlist> {
         const userId = this.auth.getUserId() || 'local';
-        const uniqueId = typeof crypto !== 'undefined' && crypto.randomUUID 
+        const uniqueId = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
             ? crypto.randomUUID() 
-            : generateDeterministicRecordId('pl', userId, Date.now().toString(36), Math.random().toString(36).slice(2, 8));
+            : generateDeterministicRecordId('pl', userId, input.title.trim().toLowerCase(), Date.now().toString(36));
         const playlist: Playlist = {
             id: uniqueId,
             userId,

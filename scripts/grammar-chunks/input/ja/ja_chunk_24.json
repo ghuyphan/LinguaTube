@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_の_85",
+    "id": "ja_n3_の_85",
     "language": "ja",
     "pattern": "～の～",
     "title": "～の～ (〜no 〜)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_ばかり_86",
+    "id": "ja_n3_ばかり_86",
     "language": "ja",
     "pattern": "～ばかり",
     "title": "～ばかり (〜bakari)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_ばかりか_87",
+    "id": "ja_n3_ばかりか_87",
     "language": "ja",
     "pattern": "～ばかりか",
     "title": "～ばかりか (〜bakarika) ～も (mo)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_はずだ_88",
+    "id": "ja_n3_はずだ_88",
     "language": "ja",
     "pattern": "～はずだ",
     "title": "～はずだ (〜hazu da)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_ばのに_89",
+    "id": "ja_n3_ばのに_89",
     "language": "ja",
     "pattern": "～ば～のに",
     "title": "～ば～のに (〜ba 〜noni)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ばほど_90",
+    "id": "ja_n3_ばほど_90",
     "language": "ja",
     "pattern": "～ば～ほど",
     "title": "～ば～ほど (〜ba 〜hodo)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_はもちろんも_91",
+    "id": "ja_n3_はもちろんも_91",
     "language": "ja",
     "pattern": "～はもちろん～も",
     "title": "～はもちろん～も (〜wa mochiron 〜mo)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_ばよかった_92",
+    "id": "ja_n3_ばよかった_92",
     "language": "ja",
     "pattern": "～ばよかった",
     "title": "～ばよかった (〜ba yokatta)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ふりをする_93",
+    "id": "ja_n3_ふりをする_93",
     "language": "ja",
     "pattern": "～ふりをする",
     "title": "～ふりをする (〜furi wo suru)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_べきだ_94",
+    "id": "ja_n3_べきだ_94",
     "language": "ja",
     "pattern": "～べきだ",
     "title": "～べきだ (〜beki da)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_ほど_95",
+    "id": "ja_n3_ほど_95",
     "language": "ja",
     "pattern": "～ほど～",
     "title": "～ほど～ (〜hodo〜)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_ますように_96",
+    "id": "ja_n3_ますように_96",
     "language": "ja",
     "pattern": "～ますように",
     "title": "～ますように (〜masu you ni)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_まったくない_97",
+    "id": "ja_n3_まったくない_97",
     "language": "ja",
     "pattern": "まったく～ない",
     "title": "まったく～ない (mattaku ~nai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_まで_98",
+    "id": "ja_n3_まで_98",
     "language": "ja",
     "pattern": "～まで",
     "title": "～まで (〜made)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_まま_99",
+    "id": "ja_n3_まま_99",
     "language": "ja",
     "pattern": "～まま",
     "title": "～まま (〜mama)",

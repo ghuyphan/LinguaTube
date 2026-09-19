@@ -336,7 +336,7 @@ const zhPatterns = loadTSData('grammar-zh.ts');
 console.log('Processing English grammar translations...');
 const enPatterns = loadTSData('grammar-en.ts');
 
-['vi', 'ja', 'ko'].forEach(targetLang => {
+['vi', 'zh', 'ja', 'ko'].forEach(targetLang => {
   const trans = {};
   enPatterns.forEach(p => {
     trans[p.id] = {

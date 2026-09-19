@@ -51,6 +51,9 @@ export class VideoRecommendationService {
     /** Recommended videos for the active learning language */
     readonly recommendedVideos = signal<RecommendedVideo[]>([]);
 
+    /** Active catalog search query (empty string when viewing default recommendations) */
+    readonly activeSearchQuery = signal<string>('');
+
     /** Initial Loading state */
     readonly isLoading = signal<boolean>(false);
 
@@ -72,10 +75,11 @@ export class VideoRecommendationService {
     /**
      * Check whether recommended videos for given language and tier are present in cache
      */
-    hasCache(language: string, tier?: string, limit = 16): boolean {
+    hasCache(language: string, tier?: string, limit = 16, query = ''): boolean {
         if (!language) return false;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
-        const cacheKey = `${language}_${activeTier || 'all'}_${limit}`;
+        const cleanQuery = query ? query.trim() : '';
+        const cacheKey = `${language}_${activeTier || 'all'}_${limit}_${cleanQuery}`;
         const cached = this.cache.get(cacheKey);
         return !!cached && cached.length > 0 && !cached.some(v => !v.channelAvatar);
     }
@@ -86,13 +90,17 @@ export class VideoRecommendationService {
      * @param tier Optional proficiency tier ('beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced')
      * @param limit Number of videos to fetch (default 16 for rich responsive grid)
      * @param forceRefresh Force fresh reload from backend, bypassing and evicting in-memory cache
+     * @param query Optional search term across titles and channels
      */
-    async loadRecommendedVideos(language: string, tier?: string, limit = 16, forceRefresh = false): Promise<RecommendedVideo[]> {
+    async loadRecommendedVideos(language: string, tier?: string, limit = 16, forceRefresh = false, query?: string): Promise<RecommendedVideo[]> {
         if (!language) return [];
 
         const requestId = ++this.activeRequestId;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
-        const cacheKey = `${language}_${activeTier || 'all'}_${limit}`;
+        const cleanQuery = typeof query === 'string' ? query.trim() : this.activeSearchQuery();
+        this.activeSearchQuery.set(cleanQuery);
+
+        const cacheKey = `${language}_${activeTier || 'all'}_${limit}_${cleanQuery}`;
 
         if (forceRefresh) {
             this.cache.delete(cacheKey);
@@ -120,6 +128,9 @@ export class VideoRecommendationService {
             let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=0`;
             if (activeTier) {
                 url += `&tier=${encodeURIComponent(activeTier)}`;
+            }
+            if (cleanQuery) {
+                url += `&q=${encodeURIComponent(cleanQuery)}`;
             }
             if (forceRefresh) {
                 url += `&refresh=true&_t=${Date.now()}`;
@@ -163,6 +174,14 @@ export class VideoRecommendationService {
     }
 
     /**
+     * Clear search filter and restore default home recommendations
+     */
+    clearSearch(language: string, tier?: string, limit = 16): Promise<RecommendedVideo[]> {
+        this.activeSearchQuery.set('');
+        return this.loadRecommendedVideos(language, tier, limit, false, '');
+    }
+
+    /**
      * Load more recommended videos (infinite scrolling pagination)
      * Appends unique videos to the existing recommendedVideos signal
      */
@@ -174,6 +193,7 @@ export class VideoRecommendationService {
         const currentList = this.recommendedVideos();
         const offset = currentList.length;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
+        const cleanQuery = this.activeSearchQuery();
 
         this.isLoadingMore.set(true);
 
@@ -182,6 +202,9 @@ export class VideoRecommendationService {
             let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=${offset}`;
             if (activeTier) {
                 url += `&tier=${encodeURIComponent(activeTier)}`;
+            }
+            if (cleanQuery) {
+                url += `&q=${encodeURIComponent(cleanQuery)}`;
             }
 
             const response = await firstValueFrom(

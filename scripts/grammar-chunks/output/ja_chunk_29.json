@@ -1,6 +1,6 @@
 {
   "vi": {
-    "ja_Noun_28": {
+    "ja_n2_Noun_28": {
       "title": "Danh từ + をはじめ (Noun wo hajime)",
       "shortExplanation": "Đưa ra một ví dụ tiêu biểu, đại diện nhất trước tiên rồi kéo theo các đối tượng khác cùng loại; mang nghĩa 'trước tiên phải kể đến...', 'tiêu biểu là...', 'từ... cho đến...'.",
       "longExplanation": "Mẫu ngữ pháp '～をはじめ' (bắt nguồn từ động từ 始める - bắt đầu) được dùng để nêu ra một sự vật, đối tượng tiêu biểu hoặc đại diện nổi bật nhất của một nhóm hoặc tập hợp, sau đó liệt kê hoặc ngụ ý đến nhiều đối tượng tương tự khác. Thường được dịch là 'trước hết phải kể đến...', 'đầu tiên là...', 'tiêu biểu là...'. Cấu trúc này thường dùng trong văn phong tương đối trang trọng, bài thuyết trình, phóng sự hoặc văn viết.",
@@ -20,7 +20,7 @@
         }
       ]
     },
-    "ja_Noun_29": {
+    "ja_n2_Noun_29": {
       "title": "Danh từ + をはじめとして (Noun wo hajime to shite)",
       "shortExplanation": "Nêu ra đối tượng đại diện, điển hình hàng đầu để mở rộng ra các sự vật khác; mang nghĩa 'tiêu biểu là...', 'trước hết phải kể đến...', 'khởi đầu là...'.",
       "longExplanation": "Mẫu câu '～をはじめとして' là dạng biến thể liên kết nhấn mạnh của '～をはじめ'. Cấu trúc này đặt một danh từ mang tính đại diện, nổi bật nhất lên đầu để làm minh chứng điển hình, qua đó nhấn mạnh rằng còn có rất nhiều đối tượng tương tự khác cũng được bao hàm trong phạm vi đó. Thường dùng trong các phát biểu chính thức, tin tức hoặc văn bản hành chính, học thuật.",
@@ -40,7 +40,7 @@
         }
       ]
     },
-    "ja_Noun_30": {
+    "ja_n2_Noun_30": {
       "title": "Danh từ 1 + をはじめとする + Danh từ 2 (Noun o hajime to suru Noun)",
       "shortExplanation": "Dùng để bổ nghĩa cho danh từ đứng sau, nêu ra đối tượng điển hình ở Danh từ 1 đại diện cho tập hợp ở Danh từ 2; 'Danh từ 2 tiêu biểu như Danh từ 1'.",
       "longExplanation": "Dạng liên kết định ngữ '～をはじめとする + Danh từ' dùng để bổ nghĩa trực tiếp cho danh từ đứng sau. Trong đó, Danh từ 1 đóng vai trò là ví dụ tiêu biểu, đại diện xuất sắc nhất, còn Danh từ 2 là danh từ mang tính khái quát hoặc chỉ toàn thể nhóm đối tượng đó (như các nghệ sĩ nổi tiếng, các ngoại ngữ, các loại sách...). Mang ý nghĩa 'các Danh từ 2 mà tiêu biểu nhất là Danh từ 1'.",
@@ -60,7 +60,7 @@
         }
       ]
     },
-    "ja_Noun_31": {
+    "ja_n2_Noun_31": {
       "title": "Danh từ + をめぐって (Noun wo megutte)",
       "shortExplanation": "Diễn tả việc nảy sinh các cuộc tranh luận, đối đầu hoặc nhiều luồng ý kiến xoay quanh một vấn đề trung tâm; 'xoay quanh...', 'về vấn đề...'.",
       "longExplanation": "Mẫu ngữ pháp '～をめぐって' (bắt nguồn từ động từ 巡る - đi vòng quanh, xoay quanh) được dùng khi một sự việc, vấn đề hoặc mâu thuẫn trở thành tâm điểm chú ý, khiến nhiều người, nhiều bên liên quan cùng tranh luận, đối lập ý kiến hoặc hành động đối kháng lẫn nhau. Đi cùng các động từ biểu thị tranh cãi, thảo luận như 議論する (tranh luận), 対立する (đối lập), 争う (tranh giành), 話し合う (bàn bạc). Thường dùng trong tin tức, thời sự, chính trị, xã hội.",
@@ -80,7 +80,7 @@
         }
       ]
     },
-    "ja_Noun_32": {
+    "ja_n2_Noun_32": {
       "title": "Danh từ 1 + をめぐる + Danh từ 2 (Noun o meguru Noun)",
       "shortExplanation": "Dùng để bổ nghĩa cho danh từ phía sau, diễn tả các tranh cãi, tin đồn, hành động xoay quanh Danh từ 1; 'Danh từ 2 xoay quanh Danh từ 1'.",
       "longExplanation": "Dạng định ngữ '～をめぐる + Danh từ' kết hợp trực tiếp với danh từ đứng sau (như cuộc tranh luận, tin đồn, hội nghị, mâu thuẫn...). Cấu trúc này biểu thị rằng các sự việc, hoạt động hoặc trạng thái ở Danh từ 2 đều lấy Danh từ 1 làm trọng tâm, chủ đề cốt lõi để nảy sinh và diễn biến. Thường gặp nhiều trong các bài báo, phóng sự, văn bản phân tích chính trị - xã hội.",
@@ -100,7 +100,7 @@
         }
       ]
     },
-    "ja_Noun_33": {
+    "ja_n2_Noun_33": {
       "title": "Danh từ + をもとに (Noun o moto ni)",
       "shortExplanation": "Lấy một sự vật, thông tin hoặc dữ liệu làm cơ sở, tài liệu gốc, chất liệu để sáng tạo hoặc phán đoán; 'dựa trên...', 'căn cứ vào...'.",
       "longExplanation": "Mẫu ngữ pháp '～をもとに' (viết theo Hán tự là 基に - căn cứ, nền tảng) dùng để chỉ ra tài liệu, kinh nghiệm, số liệu, ý tưởng hoặc câu chuyện thực tế làm nền tảng, cơ sở xuất phát điểm để từ đó chế tác, sáng tạo ra một sản phẩm mới, xây dựng kế hoạch hoặc đưa ra nhận định. Khác với '～を原料に' (chỉ nguyên liệu vật chất cụ thể), 'をもとに' mang tính chất liệu nền tảng vô hình, dữ liệu, nguồn cảm hứng.",
@@ -120,7 +120,7 @@
         }
       ]
     },
-    "ja_Noun_34": {
+    "ja_n2_Noun_34": {
       "title": "Danh từ + をもとにして (Noun wo moto ni shite)",
       "shortExplanation": "Dùng một chất liệu, tư liệu hoặc tiền lệ cụ thể làm xuất phát điểm để tạo ra hay tiến hành việc gì; 'dựa trên cơ sở...', 'căn cứ vào...'.",
       "longExplanation": "Cấu trúc '～をもとにして' là dạng liên từ nhấn mạnh của '～をもとに', có ý nghĩa tương đương. Nó diễn tả việc người thực hiện chủ động lấy một sự thật, số liệu, tài liệu tham khảo, ý kiến hay kinh nghiệm làm chất liệu nền móng để từ đó biên soạn, viết sách, thiết kế, sửa đổi kế hoạch hoặc triển khai hành động. Mang ý nghĩa rõ ràng về phương thức và cách thức vận dụng tài liệu nền.",
@@ -140,7 +140,7 @@
         }
       ]
     },
-    "ja_Verb_35": {
+    "ja_n2_Verb_35": {
       "title": "Động từ thể từ điển + ことなく (~kotonaku)",
       "shortExplanation": "Diễn tả một hành động tiếp diễn liên tục mà hoàn toàn không thực hiện hoặc không để xảy ra việc gì đó; mang nghĩa 'mà không...', 'không hề...'.",
       "longExplanation": "Mẫu câu '～ことなく' là hình thức trang trọng, mang tính văn viết của '～ないで' hoặc '～ずに'. Cấu trúc này kết hợp trực tiếp với thể từ điển (thể nguyên mẫu) của động từ để chỉ rằng một hành động hoặc trạng thái diễn ra một cách trơn tru, liên tục mà không hề bị gián đoạn hay không hề làm một hành vi nào đó đi kèm. Thường dùng trong văn học, bài phát biểu hoặc các văn bản trang trọng.",
@@ -160,7 +160,7 @@
         }
       ]
     },
-    "ja_Verb_36": {
+    "ja_n2_Verb_36": {
       "title": "Động từ thể ない + ことには (~nai koto ni wa ~ nai)",
       "shortExplanation": "Biểu thị điều kiện bắt buộc; nếu không làm vế trước thì tuyệt đối không thể thực hiện hay đạt được vế sau; 'nếu không... thì không thể...'.",
       "longExplanation": "Cấu trúc '～ないことには' được dùng để nêu lên một điều kiện kiên quyết, bắt buộc phải có để một kết quả mong muốn có thể xảy ra. Vế trước chia ở thể phủ định 'Động từ thể ない + ことには', và vế sau hầu như luôn luôn là một cách diễn đạt mang tính phủ định hoặc bất khả thi (như ～ない, ～できない, ～わけにはいかない). Tương đương với cách nói 'chừng nào chưa làm xong việc trước thì sẽ không thể làm việc sau' hoặc 'nếu không có A thì chẳng thể nào đạt được B' trong tiếng Việt.",
@@ -180,7 +180,7 @@
         }
       ]
     },
-    "ja_あげく_37": {
+    "ja_n2_あげく_37": {
       "title": "～あげく (~ageku)",
       "shortExplanation": "Diễn tả sau một thời gian dài trải qua nhiều gian nan, trăn trở hoặc nỗ lực thì rốt cuộc dẫn đến một kết quả (thường là tiêu cực, đáng tiếc); 'sau một hồi...', 'kết cục là...'.",
       "longExplanation": "Mẫu ngữ pháp '～あげく' (hoặc '～あげくに / ～あげくの + Danh từ') diễn tả kết cục đạt được sau một quá trình dài trải qua nhiều khó khăn, thử thách, loay hoay hoặc tranh cãi. Kết quả ở vế sau đa phần là một sự việc đáng tiếc, lãng phí thời gian, thất bại hoặc một quyết định bất đắc dĩ không như mong đợi ban đầu. Thường đi sau động từ thể quá khứ (thể た) hoặc danh từ có kèm 'の'.",
@@ -200,7 +200,7 @@
         }
       ]
     },
-    "ja_あまり_38": {
+    "ja_n2_あまり_38": {
       "title": "～あまり (〜amari)",
       "shortExplanation": "Vì mức độ tình cảm, cảm xúc hoặc trạng thái quá mãnh liệt dẫn đến một kết quả khác thường, không kìm nén được; 'vì quá... nên...'.",
       "longExplanation": "Mẫu ngữ pháp '～あまり' (hoặc '～あまりに / ～あまりの + Danh từ + に / で') dùng để diễn tả rằng do một trạng thái, cảm xúc tâm lý (vui sướng, đau khổ, tức giận, lo âu, mệt mỏi...) vượt quá mức thông thường, dẫn tới một hành vi bột phát hoặc một kết quả bất thường, cực đoan ngoài tầm kiểm soát. Thường đi với các từ chỉ cảm xúc hoặc trạng thái tinh thần.",
@@ -220,7 +220,7 @@
         }
       ]
     },
-    "ja_うちに_39": {
+    "ja_n2_うちに_39": {
       "title": "～うちに (〜uchi ni)",
       "shortExplanation": "Tranh thủ làm việc gì đó trong khi điều kiện, trạng thái thuận lợi vẫn còn duy trì trước khi thay đổi; 'trong khi còn...', 'nhân lúc...', 'trước khi...'.",
       "longExplanation": "Mẫu ngữ pháp '～うちに' diễn tả ý định tranh thủ thực hiện một hành động nào đó trong khoảng thời gian mà trạng thái hiện tại vẫn chưa biến chuyển, bởi nếu để lâu thì tình hình sẽ thay đổi và khó thực hiện được nữa (như khi còn trẻ, khi trời chưa mưa, khi thức ăn còn nóng). Vế sau thường là hành động có chủ ý, mang tính rủ rê, khuyên bảo hoặc dự định.",
@@ -240,7 +240,7 @@
         }
       ]
     },
-    "ja_がい_40": {
+    "ja_n2_がい_40": {
       "title": "～がい (〜gai)",
       "shortExplanation": "Hậu tố gắn vào động từ để diễn tả giá trị, ý nghĩa hoặc sự thỏa mãn xứng đáng để làm việc gì; 'đáng để...', 'bõ công...'.",
       "longExplanation": "Hậu tố '～がい' (dạng biến âm liên thanh của danh từ 甲斐 - giá trị, ý nghĩa) được gắn trực tiếp vào thân động từ thể ます (bỏ ます) để tạo thành một danh từ biểu thị rằng hành động đó mang lại giá trị tinh thần, sự đền đáp xứng đáng cho thời gian và công sức đã bỏ ra. Các dạng thường gặp gồm: '～がいがある' (đáng để làm/bõ công), '～がいのない' (không bõ công), '～がいのある + Danh từ' (một công việc/mục tiêu bõ công theo đuổi). Ví dụ điển hình: やりがい (đáng làm), 生きがい (lẽ sống), 働きがい (ý nghĩa lao động).",
@@ -260,7 +260,7 @@
         }
       ]
     },
-    "ja_かいがあって_41": {
+    "ja_n2_かいがあって_41": {
       "title": "～かいがあって (〜kaiga atte)",
       "shortExplanation": "Diễn tả nỗ lực, cố gắng đã được đền đáp xứng đáng bằng một kết quả tốt đẹp; 'bõ công...', 'thật không uổng công...'.",
       "longExplanation": "Mẫu câu '～かいがあって' (dạng liên kết của 甲斐がある) biểu thị rằng hành vi, sự nỗ lực bền bỉ, thời gian hoặc sự kiên nhẫn đã bỏ ra ở vế trước hoàn toàn xứng đáng vì đã mang lại một kết quả thành công, thuận lợi hoặc mỹ mãn ở vế sau. Tương đương với các cách nói 'thật không uổng công đã...', 'nhờ bõ công... mà đã...' trong tiếng Việt.",
@@ -280,7 +280,7 @@
         }
       ]
     },
-    "ja_かいもなく_42": {
+    "ja_n2_かいもなく_42": {
       "title": "～かいもなく (〜kai mo naku)",
       "shortExplanation": "Diễn tả sự uổng phí công sức, mặc dù đã rất nỗ lực, cố gắng nhưng không thu được kết quả mong đợi; 'uổng công...', 'mặc dù đã... nhưng công cốc'.",
       "longExplanation": "Mẫu câu '～かいもなく' (dạng liên kết phủ định của 甲斐がある) diễn tả sự tiếc nuối và thất vọng sâu sắc khi bao nhiêu công sức, sự cố gắng, thời gian hay chi phí bỏ ra ở vế trước rốt cuộc không mang lại bất kỳ kết quả hay hiệu quả nào ở vế sau. Kết quả vế sau luôn luôn là sự thất bại, vô ích hoặc tình trạng tồi tệ không cải thiện được. Tương đương với 'mặc dù đã bõ bao công sức nhưng rốt cuộc hoài công vô ích' trong tiếng Việt.",
@@ -302,7 +302,7 @@
     }
   },
   "zh": {
-    "ja_Noun_28": {
+    "ja_n2_Noun_28": {
       "title": "名词 + をはじめ (Noun wo hajime)",
       "shortExplanation": "列举出最具代表性的首要事物，进而引出同类的其他事物；意为“以……为代表”、“首推……”、“以……为首”。",
       "longExplanation": "句型“～をはじめ”源于动词“始める”（开始），用于在列举同类事物时，首先提出其中最具知名度、最典型或居于首位的人或事物作为代表，然后再涉及其他同类项。多用于公开发言、新闻报道或较为庄重的书面语中。常译为“以……为代表”、“以……为首”、“首先是……”。",
@@ -322,7 +322,7 @@
         }
       ]
     },
-    "ja_Noun_29": {
+    "ja_n2_Noun_29": {
       "title": "名词 + をはじめとして (Noun wo hajime to shite)",
       "shortExplanation": "用于列举最主要的典型代表以涵盖同类整体事物；意为“以……为首”、“以……为代表”。",
       "longExplanation": "句型“～をはじめとして”是“～をはじめ”的加强及副词化形式，语气更为正式庄重。它首先明确指出某一群体中最具代表性的典型范例，由此向外延伸并暗示该群体中还涵盖了众多其他相关事物。常用于书面语、新闻解说、官方致辞等正式场合。",
@@ -342,7 +342,7 @@
         }
       ]
     },
-    "ja_Noun_30": {
+    "ja_n2_Noun_30": {
       "title": "名词1 + をはじめとする + 名词2 (Noun o hajime to suru Noun)",
       "shortExplanation": "作为定语修饰后续名词2，指出以名词1为典型代表的同类群体；意为“以……为首的（名词2）”。",
       "longExplanation": "连体修饰句型“名词1 + をはじめとする + 名词2”用于直接修饰后续的名词2。在此结构中，名词1是代表性、首要的典型代表，而名词2则是该群体或集合体的概括性统称（如艺术家、外国语、图书等）。相当于汉语中的“以……为代表的……”、“以……为首的……”。",
@@ -362,7 +362,7 @@
         }
       ]
     },
-    "ja_Noun_31": {
+    "ja_n2_Noun_31": {
       "title": "名词 + をめぐって (Noun wo megutte)",
       "shortExplanation": "表示以某一问题或争端为中心，引发多方激烈的讨论、对立或纷争；意为“围绕着……”、“就……问题”。",
       "longExplanation": "句型“～をめぐって”源自表示环绕、回旋的动词“巡る”，用于表示某项议题、事件或利益焦点引发了各方当事人的争辩、对抗、对立或交涉。后项常伴随表示争论、对立、商讨的动词（如“議論する”、“争う”、“対立する”等），且主体通常是复数的人或多个群体。多见于时事新闻、政治评论和学术探讨。",
@@ -382,7 +382,7 @@
         }
       ]
     },
-    "ja_Noun_32": {
+    "ja_n2_Noun_32": {
       "title": "名词1 + をめぐる + 名词2 (Noun o meguru Noun)",
       "shortExplanation": "作定语修饰后续名词2，表示围绕着名词1而展开的争论、风波或行动；“围绕……的（名词2）”。",
       "longExplanation": "定语形式“～をめぐる + 名词”直接修饰后续名词（如讨论、争端、传闻、会议等）。它表明后项名词所指代的事件、行动或现象，是把前项名词作为核心焦点或争论诱因逐步展开的。常见于新闻报道、官方公告及深度评论分析中。",
@@ -402,7 +402,7 @@
         }
       ]
     },
-    "ja_Noun_33": {
+    "ja_n2_Noun_33": {
       "title": "名词 + をもとに (Noun o moto ni)",
       "shortExplanation": "以某事物为依据、素材、基础或参考来源进行创造或判断；意为“以……为基础”、“根据……”。",
       "longExplanation": "句型“～をもとに”（汉字写作“基に”）表示将某种事实、经验、原始数据、构想或生活原型作为依据或灵感素材，从而创造出新的事物、规划新方案或得出结论。与表示物理原料的“～を原料に”不同，“をもとに”侧重于无形的信息素材、参考依据和设计基础。",
@@ -422,7 +422,7 @@
         }
       ]
     },
-    "ja_Noun_34": {
+    "ja_n2_Noun_34": {
       "title": "名词 + をもとにして (Noun wo moto ni shite)",
       "shortExplanation": "以某材料、经验或前例作为基本素材加以运用或加工；意为“在……的基础上”、“以……为依据”。",
       "longExplanation": "句型“～をもとにして”是“～をもとに”的接续助词强调形式，含义基本相同。它强调动作主体以某一具体事实、资料、经验或成例作为基础和参照物，主动开展写作、设计、修改规划等行为。多用于描述研究报告撰写、方案制定或文艺创作等情境。",
@@ -442,7 +442,7 @@
         }
       ]
     },
-    "ja_Verb_35": {
+    "ja_n2_Verb_35": {
       "title": "动词辞书形 + ことなく (~kotonaku)",
       "shortExplanation": "表示在完全不做某事、不发生某情况的状态下持续进行某动作；意为“不……就……”、“毫不……”。",
       "longExplanation": "句型“～ことなく”是口语中“～ないで”或“～ずに”的郑重书面表达形式。接在动词辞书形（原形）之后，表示某一主体在没有发生前项动作或未出现某一事态的情况下，顺畅、连续地完成或持续进行后项动作。具有庄重高雅的文体色彩，常用于正式演讲、叙事长文或报道之中。",
@@ -462,7 +462,7 @@
         }
       ]
     },
-    "ja_Verb_36": {
+    "ja_n2_Verb_36": {
       "title": "动词未然形（ない形） + ことには (~nai koto ni wa ~ nai)",
       "shortExplanation": "表示必要前提条件，若不先完成前项，后项的事情就绝对无法达成；意为“如果不……就无法……”。",
       "longExplanation": "句型“～ないことには”用于表明某种绝对必要的前提条件。若前项动作不发生或条件不具备，则后项期待的结果或动作就无法成立。后项必定与表示否定、不可能的表达（如“～ない”、“～できない”、“～わけにはいかない”）相呼应。相当于汉语中的“若不……就不能……”。",
@@ -482,7 +482,7 @@
         }
       ]
     },
-    "ja_あげく_37": {
+    "ja_n2_あげく_37": {
       "title": "～あげく (~ageku)",
       "shortExplanation": "表示经过长时间的纠结、努力或波折之后，最终导致了某种（多为消极遗憾的）结果；意为“到头来……”、“结果却……”。",
       "longExplanation": "句型“～あげく”（常见接续形式为“～あげくに”或“～あげくの + 名词”）表示某人在经过长期的努力、尝试、烦恼、波折或争执之后，最终迎来的结局。后项所导致的结果绝大多数是不尽如人意、令人惋惜甚至失败的结局，往往带有说话人“白白耗费了精力却落得如此下场”的遗憾口吻。接动词过去式（た形）或“名词 + の”。",
@@ -502,7 +502,7 @@
         }
       ]
     },
-    "ja_あまり_38": {
+    "ja_n2_あまり_38": {
       "title": "～あまり (〜amari)",
       "shortExplanation": "因某种感情、情绪或状态过度强烈，从而导致了异乎寻常的极端行为或结果；意为“因过于……而……”。",
       "longExplanation": "句型“～あまり”（或“～あまりに”、“～あまりの + 名词 + に/で”）表示某种情感（如喜悦、悲伤、紧张、愤怒等）或身体、精神状态达到了极高的程度，以至于超过了正常限度，进而引发了出人意料的举动或消极、反常的后续事态。常与表心情、精神状态的词汇搭配使用。",
@@ -522,7 +522,7 @@
         }
       ]
     },
-    "ja_うちに_39": {
+    "ja_n2_うちに_39": {
       "title": "～うちに (〜uchi ni)",
       "shortExplanation": "趁着当前的良好条件或状态尚未发生改变，抓紧时间做某事；意为“趁着……的时候”、“在……之前”。",
       "longExplanation": "句型“～うちに”表示趁着当前某种状态仍在维系、情势尚未恶化或改变的有限时间内，抓紧行动以防错失良机。后项通常是带有说话人主观意志的动作、建议或劝诱表达（如“趁着年轻好好学习”、“趁热吃”）。若错过该时期，动作将变得困难或无法实行。",
@@ -542,7 +542,7 @@
         }
       ]
     },
-    "ja_がい_40": {
+    "ja_n2_がい_40": {
       "title": "～がい (〜gai)",
       "shortExplanation": "接在动词连用形后，表示付出心血或时间做某事非常具有价值或精神回报；意为“值得……的价值”。",
       "longExplanation": "接尾词“～がい”（由名词“甲斐”连浊发生浊音化而成）接在动词连用形（ます形去掉ます）后，表示付出某种劳力、心血或时间所换来的精神满足感与价值回馈。常用形式有“～がいがある”（很值得做）、“～がいがない”（不值得做）、“～がいのある + 名词”（值得从事的工作/目标等）。典型例词包括“やりがい”（有做的价值）、“生きがい”（生存的意义）、“働きがい”（工作价值）。",
@@ -562,7 +562,7 @@
         }
       ]
     },
-    "ja_かいがあって_41": {
+    "ja_n2_かいがあって_41": {
       "title": "～かいがあって (〜kaiga atte)",
       "shortExplanation": "表示付出努力或辛劳得到了应有的回报，迎来了令人满意的良好成果；意为“不枉费……”、“功夫不负有心人”。",
       "longExplanation": "句型“～かいがあって”（连词形式，源于“甲斐がある”）表示此前所付出的艰苦努力、心力、漫长时间或代价没有白费，最终顺理成章地换来了如愿以偿、令人欣喜的丰硕成果。相当于汉语中的“没白费……”、“功夫不负有心人，终于……”。",
@@ -582,7 +582,7 @@
         }
       ]
     },
-    "ja_かいもなく_42": {
+    "ja_n2_かいもなく_42": {
       "title": "～かいもなく (〜kai mo naku)",
       "shortExplanation": "表示虽然付出了很多努力或心血，但最终徒劳无功、未见成效；意为“白费了一番心血”、“徒劳无功”。",
       "longExplanation": "句型“～かいもなく”（源自“甲斐がある”的否定连接形式）表达了说话人深沉的懊恼与遗憾。它表示前项虽然付出了巨大的努力、牺牲、祈愿或高昂成本，但所有付出均未能如愿以偿，后项最终归于徒劳无功或遭遇失败挫折。常用于描写无可奈何的惋惜结局。",
@@ -604,7 +604,7 @@
     }
   },
   "ko": {
-    "ja_Noun_28": {
+    "ja_n2_Noun_28": {
       "title": "명사 + をはじめ (Noun wo hajime)",
       "shortExplanation": "동종의 여러 사물 중에서 가장 대표적인 것을 먼저 제시하여 다른 것들까지 아우르는 표현으로, '~을 비롯하여', '~을 위시하여'라는 뜻입니다.",
       "longExplanation": "문형 '～をはじめ'는 동사 '始める'(시작하다)에서 유래한 표현으로, 어떤 그룹이나 영역을 이루는 여러 대상 가운데 가장 두드러지거나 대표적인 대상을 먼저 첫머리에 꼽고, 뒤이어 유사한 대상들을 열거하거나 암시할 때 사용됩니다. 공식적인 연설, 보고서, 안내문 등 격식 있는 문맥에서 자주 쓰이며, 한국어의 '~을 비롯하여', '~을 필두로'에 해당합니다.",
@@ -624,7 +624,7 @@
         }
       ]
     },
-    "ja_Noun_29": {
+    "ja_n2_Noun_29": {
       "title": "명사 + をはじめとして (Noun wo hajime to shite)",
       "shortExplanation": "가장 대표적인 대상을 앞세워 그와 관련된 다른 대상들까지 포괄함을 나타내며, '~을 비롯하여', '~을 필두로 하여'라는 뜻입니다.",
       "longExplanation": "문형 '～をはじめとして'는 '～をはじめ'를 더욱 강조한 부사적 연결 형태로, 대표적인 본보기를 내세워 뒤따르는 여러 대상이 동일한 범주에 속해 있음을 명확히 보여줍니다. 강연, 뉴스 보도, 비즈니스 문서 등 공적이고 공식적인 자리에서 주로 사용됩니다.",
@@ -644,7 +644,7 @@
         }
       ]
     },
-    "ja_Noun_30": {
+    "ja_n2_Noun_30": {
       "title": "명사1 + をはじめとする + 명사2 (Noun o hajime to suru Noun)",
       "shortExplanation": "뒤따르는 명사2를 수식하여 명사1을 대표적인 예로 둔 그룹 전체를 가리키며, '명사1을 비롯한 명사2'라는 뜻입니다.",
       "longExplanation": "연체 수식 형태인 '명사1 + をはじめとする + 명사2'는 뒤에 오는 명사2를 직접 수식하는 역할을 합니다. 명사1에는 그 집단에서 가장 전형적이고 대표적인 개별 대상이 오며, 명사2에는 그 집단 전체를 포괄하는 상위 개념의 명사(인기 아티스트, 외국어, 도서 등)가 위치합니다. 한국어의 '~을 비롯한 ...'에 대응합니다.",
@@ -664,7 +664,7 @@
         }
       ]
     },
-    "ja_Noun_31": {
+    "ja_n2_Noun_31": {
       "title": "명사 + をめぐって (Noun wo megutte)",
       "shortExplanation": "어떤 문제나 쟁점을 중심에 두고 여러 사람이나 집단이 대립, 논쟁, 교섭함을 나타내며, '~을 둘러싸고', '~에 관하여'라는 뜻입니다.",
       "longExplanation": "문형 '～をめぐって'는 '빙빙 둘러싸다'를 뜻하는 동사 '巡る'에서 비롯된 표현으로, 어떤 쟁점, 사건, 이권 등이 중심 화제가 되어 그 주변에 있는 여러 관계자들 사이에 대립, 논쟁, 갈등, 혹은 협의가 벌어질 때 쓰입니다. 서술어로는 주로 '議論する'(논의하다), '争う'(다투다), '対立する'(대립하다)와 같이 복수의 주체가 관여하는 동사가 뒤따릅니다.",
@@ -684,7 +684,7 @@
         }
       ]
     },
-    "ja_Noun_32": {
+    "ja_n2_Noun_32": {
       "title": "명사1 + をめぐる + 명사2 (Noun o meguru Noun)",
       "shortExplanation": "뒤따르는 명사2를 수식하여, 명사1을 둘러싸고 일어나는 논의나 사건 등을 나타내며 '명사1을 둘러싼 명사2'라는 뜻입니다.",
       "longExplanation": "연체형 '～をめぐる + 명사'는 뒤에 오는 명사(논쟁, 소문, 국제회의, 대립 등)를 꾸며 줍니다. 이는 앞선 명사1이 사건이나 활동의 핵심 원인이나 논쟁의 씨앗이 되고 있음을 드러내며, 신문 기사나 시사 해설, 학술 보고서 등 정중하고 객관적인 문체에서 빈번하게 활용됩니다.",
@@ -704,7 +704,7 @@
         }
       ]
     },
-    "ja_Noun_33": {
+    "ja_n2_Noun_33": {
       "title": "명사 + をもとに (Noun o moto ni)",
       "shortExplanation": "어떤 사실, 데이터, 경험 등을 기초 소재나 출발점으로 삼아 무언가를 만들어 내거나 판단함을 나타내며, '~을 바탕으로', '~을 토대로'라는 뜻입니다.",
       "longExplanation": "문형 '～をもとに'(한자로는 '基に')는 어떤 사실이나 자료, 경험, 데이터, 실화 등을 기초적인 발상이나 창작의 원천으로 삼아 새로운 창작물이나 기획을 구축할 때 쓰입니다. 물질적인 물리적 재료를 가리키는 '～を原料に'와 달리, 'をもとに'는 무형의 아이디어, 정보, 데이터, 모티브 등에 널리 활용됩니다.",
@@ -724,7 +724,7 @@
         }
       ]
     },
-    "ja_Noun_34": {
+    "ja_n2_Noun_34": {
       "title": "명사 + をもとにして (Noun wo moto ni shite)",
       "shortExplanation": "어떤 자료나 선례를 근거 소재로 삼아 구체적인 작업을 진행함을 나타내며, '~을 기초로 하여', '~을 토대로 삼아'라는 뜻입니다.",
       "longExplanation": "문형 '～をもとにして'는 '～をもとに'에 접속조사 'て'가 붙어 수단 및 근거성을 더욱 뚜렷하게 부각한 형태입니다. 어떤 의견, 사실, 기초 자료, 과거의 성공 사례 등을 출발점으로 삼아 적극적으로 계획을 변경하거나 보고서를 작성하고 새로운 프로젝트를 추진하는 등의 맥락에 잘 어울립니다.",
@@ -744,7 +744,7 @@
         }
       ]
     },
-    "ja_Verb_35": {
+    "ja_n2_Verb_35": {
       "title": "동사 기본형 + ことなく (~kotonaku)",
       "shortExplanation": "어떤 행위를 전혀 하지 않거나 특정한 상황이 발생하지 않은 채로 동작을 지속함을 나타내며, '~하지 않고', '~함 없이'라는 뜻입니다.",
       "longExplanation": "문형 '～ことなく'는 일상 회화에서 자주 쓰이는 '～ないで'나 '～ずに'의 격식 있는 문어적 표현입니다. 동사 기본형(사전형)에 접속하여, 앞선 동작이나 방해 요인이 개입되지 않고 매끄럽게 뒤의 행동이 이루어지거나 오랜 기간 상태가 지속됨을 단정하고 차분한 어조로 진술할 때 쓰입니다.",
@@ -764,7 +764,7 @@
         }
       ]
     },
-    "ja_Verb_36": {
+    "ja_n2_Verb_36": {
       "title": "동사 부정형(ない형) + ことには (~nai koto ni wa ~ nai)",
       "shortExplanation": "필수적인 전제 조건을 나타내며, 앞의 조건이 충족되지 않으면 뒤의 일도 결코 성립할 수 없음을 뜻합니다. '~하지 않고서는 (~할 수 없다)'.",
       "longExplanation": "문형 '～ないこと에는'는 뒤 문장의 실현을 위해 반드시 선행되어야 하는 절대적인 필수 조건을 제시할 때 쓰입니다. 앞 절에는 동사의 부정형(ない형)이 오고, 뒤 절에는 반드시 불가능이나 부정을 나타내는 표현('～ない', '～できない', '～わけにはいかない' 등)이 호응하여 '앞선 조건을 실행에 옮기지 않는 한 결코 뒤의 결과를 얻을 수 없다'는 완강한 인과관계를 강조합니다.",
@@ -784,7 +784,7 @@
         }
       ]
     },
-    "ja_あげく_37": {
+    "ja_n2_あげく_37": {
       "title": "～あげく (~ageku)",
       "shortExplanation": "오랜 시간 고민, 노력, 실랑이를 거듭한 끝에 결국 유감스럽거나 부정적인 결말에 이르렀음을 나타내며, '결국 ~한 끝에', '~한 끝에 결국'이라는 뜻입니다.",
       "longExplanation": "문형 '～あげく'(주로 '～あげくに' 또는 '～あげくの + 명사'의 형태로도 쓰임)는 오랜 시간 동안 우여곡절, 방황, 갈등, 고민 등을 겪은 뒤 도달한 궁극적인 결과를 나타냅니다. 뒷문장에는 화자의 기대에 어긋나는 유감스러운 결말, 실패, 혹은 지친 끝에 내린 힘겨운 결정 등 주로 부정적이거나 아쉬운 사태가 오는 경우가 많습니다. 동사 과거형(た형)이나 '명사 + の'에 접속합니다.",
@@ -804,7 +804,7 @@
         }
       ]
     },
-    "ja_あまり_38": {
+    "ja_n2_あまり_38": {
       "title": "～あまり (〜amari)",
       "shortExplanation": "어떤 감정이나 상태가 지나치게 격해진 나머지 뜻밖의 극단적인 행동이나 결과로 이어졌음을 나타내며, '너무 ~한 나머지', '~가 지나친 나머지'라는 뜻입니다.",
       "longExplanation": "문형 '～あまり'(또는 '～あまりに', '～あまりの + 명사 + に/で')는 기쁨, 슬픔, 피로, 긴장, 불안과 같은 심리적 감정이나 신체적 상태가 상식적인 수준을 뛰어넘을 만큼 지나쳐서, 그로 인해 통제하기 힘든 행동이 돌발적으로 튀어나오거나 이례적인 결과가 빚어졌음을 나타냅니다.",
@@ -824,7 +824,7 @@
         }
       ]
     },
-    "ja_うちに_39": {
+    "ja_n2_うちに_39": {
       "title": "～うちに (〜uchi ni)",
       "shortExplanation": "상황이나 좋은 조건이 달라지기 전에 그 상태가 유지되는 동안 기회를 놓치지 않고 무언가를 행함을 나타내며, '~하는 동안에', '~하기 전에'라는 뜻입니다.",
       "longExplanation": "문형 '～うちに'는 현재의 조건이나 여건(건강, 젊음, 따뜻한 온도 등)이 지속되고 있는 한정된 시간 동안에 적극적으로 어떤 행동을 해 두어야 함을 나타냅니다. 만약 그 상태가 변해 버리면 행동하기 어려워지거나 실익이 사라지므로, 뒷문장에는 주로 권유, 희망, 의지 등의 능동적 표현이 잘 어울립니다.",
@@ -844,7 +844,7 @@
         }
       ]
     },
-    "ja_がい_40": {
+    "ja_n2_がい_40": {
       "title": "～がい (〜gai)",
       "shortExplanation": "동사 연용형 뒤에 붙어 보람이나 충분한 가치, 행할 만한 의의를 지니고 있음을 나타내며, '~할 보람', '~할 만한 가치'라는 뜻입니다.",
       "longExplanation": "접미사 '～がい'(명사 '甲斐'가 연탁되어 탁음화된 형태)는 동사 ます형 어간(연용형)에 직접 결합하여, 시간이나 노력을 투입했을 때 얻어지는 정신적 만족감이나 보람찬 가치를 뜻하는 복합명사를 형성합니다. '～がいがある'(~할 보람이 있다), '～がいがない'(~할 보람이 없다), '～がいのある + 명사'(보람찬 ~) 등의 형태로 주로 쓰이며, 대표적으로 'やりがい'(하는 보람), '生きがい'(삶의 보람), '働きがい'(일하는 보람) 등이 있습니다.",
@@ -864,7 +864,7 @@
         }
       ]
     },
-    "ja_かいがあって_41": {
+    "ja_n2_かいがあって_41": {
       "title": "～かいがあって (〜kaiga atte)",
       "shortExplanation": "노력이나 정성을 쏟은 보람이 있어 만족스럽고 훌륭한 성과를 거두었음을 나타내며, '~한 보람이 있어', '~한 덕분에'라는 뜻입니다.",
       "longExplanation": "문형 '～かいがあって'('甲斐がある'의 연결형)는 앞서 기울인 끈기 있는 노력, 훈련, 인내, 헌신 등이 결코 헛되지 않고 값진 보상을 받아, 뒤이어 바라고 원하던 성공적인 결과나 흡족한 결실로 이어졌을 때 사용하는 표현입니다. 한국어의 '~한 보람이 있어서', '애쓴 덕분에'에 해당합니다.",
@@ -884,7 +884,7 @@
         }
       ]
     },
-    "ja_かいもなく_42": {
+    "ja_n2_かいもなく_42": {
       "title": "～かいもなく (〜kai mo naku)",
       "shortExplanation": "정성이나 큰 노력을 기울였음에도 불구하고 아무런 보람 없이 수포로 돌아갔음을 나타내며, '~한 보람도 없이', '~했건만 헛되이'라는 뜻입니다.",
       "longExplanation": "문형 '～かいもなく'('甲斐がある'의 부정 연결형)는 화자의 깊은 탄식과 허탈감을 담아내는 문형입니다. 앞서 온갖 정성과 고생, 막대한 시간이나 비용을 쏟아부었음에도 불구하고, 그 어떤 유의미한 결실도 맺지 못한 채 허망한 실패나 부정적인 결과로 귀결되었을 때 쓰입니다. 한국어의 '~한 보람도 없이', '~한 보람도 헛되게'에 해당합니다.",
@@ -906,7 +906,7 @@
     }
   },
   "ja": {
-    "ja_Noun_28": {
+    "ja_n2_Noun_28": {
       "title": "名詞 ＋ をはじめ (Noun wo hajime)",
       "shortExplanation": "同類の事柄の中から最も代表的なものを第一に挙げ、それに限らず他にも多く存在することを示す表現です。「〜をはじめ」「〜を代表として」。",
       "longExplanation": "文法項目「～をはじめ」は、動詞「始める」に由来し、ある集団やグループの中で最も知名度が高く典型的なものを代表例としてまず1つ提示し、他にも同様の事柄が多くあることを表します。スピーチ、報道、公的な文章などの改まった場面で頻繁に用いられます。",
@@ -926,7 +926,7 @@
         }
       ]
     },
-    "ja_Noun_29": {
+    "ja_n2_Noun_29": {
       "title": "名詞 ＋ をはじめとして (Noun wo hajime to shite)",
       "shortExplanation": "集団の中で最も際立った代表例を提示し、それを含めた全体を包括的に述べる表現です。「〜をはじめとして」「〜を筆頭に」。",
       "longExplanation": "「～をはじめとして」は「～をはじめ」の強調的・副詞的な形式であり、より硬く改まった語感を持ちます。ある分野や集団において一番の典型例・代表例を筆頭に掲げ、それと同類あるいは関連するものが広く存在することを印象づけます。公式発表や公的文書、解説文などで好まれます。",
@@ -946,7 +946,7 @@
         }
       ]
     },
-    "ja_Noun_30": {
+    "ja_n2_Noun_30": {
       "title": "名詞1 ＋ をはじめとする ＋ 名詞2 (Noun o hajime to suru Noun)",
       "shortExplanation": "名詞1を代表的な一例として挙げ、後ろの名詞2（全体グループ）を直接修飾する連体修飾表現です。「名詞1をはじめとする名詞2」。",
       "longExplanation": "連体修飾の形「名詞1 ＋ をはじめとする ＋ 名詞2」は、後続する名詞2を修飾します。名詞1には最も典型的・代表的な個別具体例が入り、名詞2にはそのカテゴリー全体を総称する包括的な名詞（人気アーティスト、外国語、書籍など）が来ます。「名詞1を筆頭とするような名詞2の数々」という意味を表します。",
@@ -966,7 +966,7 @@
         }
       ]
     },
-    "ja_Noun_31": {
+    "ja_n2_Noun_31": {
       "title": "名詞 ＋ をめぐって (Noun wo megutte)",
       "shortExplanation": "ある問題や対立点を中心にして、複数の人々や勢力が議論、対立、争いなどを繰り広げることを表します。「〜をめぐって」「〜に関して」。",
       "longExplanation": "「～をめぐって」は動詞「巡る」から派生した表現で、ある争点、事件、関心事などが中心にあり、その周囲にいる複数の関係者・当事者の間で意見の対立、議論、奪い合い、交渉などが展開される状況を表します。後続する述語には「議論する」「争う」「対立する」「話し合う」など、複数の主体が関与する動詞が用いられます。",
@@ -986,7 +986,7 @@
         }
       ]
     },
-    "ja_Noun_32": {
+    "ja_n2_Noun_32": {
       "title": "名詞1 ＋ をめぐる ＋ 名詞2 (Noun o meguru Noun)",
       "shortExplanation": "名詞1を中心課題や発端として生じる議論、騒動、会議などの名詞2を直接修飾する表現です。「名詞1をめぐる名詞2」。",
       "longExplanation": "連体修飾表現「～をめぐる ＋ 名詞」は、後続する名詞（議論、対立、噂、国際会議など）を直接修飾します。前項の名詞1が中心的な焦点・発端となって、後項の出来事や活動が巻き起こっていることを表します。ニュース報道や社会評論などの客観的・公式な文脈で頻出します。",
@@ -1006,7 +1006,7 @@
         }
       ]
     },
-    "ja_Noun_33": {
+    "ja_n2_Noun_33": {
       "title": "名詞 ＋ をもとに (Noun o moto ni)",
       "shortExplanation": "ある事実、データ、経験、原案などを基礎的な素材や手がかりとして、新たなものを創作・判断することを表します。「〜をもとに」「〜に基づいて」。",
       "longExplanation": "文法表現「～をもとに」（漢字では「基に」）は、ある事実、実際の出来事、経験、収集したデータ、アイデアなどを土台・出発点とし、そこから新しい作品を作ったり、判断・分析・企画を行ったりする際に用いられます。物理的な原材料を表す「～を原料に」とは異なり、無形の情報、データ、モチーフ、参考事例などに広く使われます。",
@@ -1026,7 +1026,7 @@
         }
       ]
     },
-    "ja_Noun_34": {
+    "ja_n2_Noun_34": {
       "title": "名詞 ＋ をもとにして (Noun wo moto ni shite)",
       "shortExplanation": "ある資料や先例などを基礎・根拠として具体的な作業や計画を進めることを表します。「〜をもとにして」「〜を基礎として」。",
       "longExplanation": "「～をもとにして」は「～をもとに」に接続助詞「て」が付いた形であり、ある特定のデータ、意見、資料、過去の成功例などを素材・手がかりとして活用し、計画の変更、執筆、レポート作成などの行為を積極的に進めることを表します。作業や創作の根拠・手法としてのニュアンスが明確に表現されます。",
@@ -1046,7 +1046,7 @@
         }
       ]
     },
-    "ja_Verb_35": {
+    "ja_n2_Verb_35": {
       "title": "動詞辞書形 ＋ ことなく (~kotonaku)",
       "shortExplanation": "ある行為をまったく行わない状態、あるいはある事態が生じない状態のまま、動作や状態が継続することを表します。「〜しないで」「〜することなしに」。",
       "longExplanation": "文法項目「～ことなく」は、話し言葉の「〜ないで」「〜ずに」に相当する改まった書き言葉の表現です。動詞の辞書形（基本形）に接続し、途中でその動作を挟んだり事態に妨げられたりすることなく、物事が円滑に、または継続して進む様子を表します。改まった談話、公のスピーチ、文章などで好んで使われます。",
@@ -1066,7 +1066,7 @@
         }
       ]
     },
-    "ja_Verb_36": {
+    "ja_n2_Verb_36": {
       "title": "動詞ない形 ＋ ことには (~nai koto ni wa ~ nai)",
       "shortExplanation": "ある条件が成立しなければ、望ましい結果や後続の事態も決して実現し得ないという不可欠な前提条件を表します。「〜しなければ（〜できない）」。",
       "longExplanation": "「～ないことには」は、後ろに続く事態を実現させるために、前項の動作や条件が絶対に不可欠であることを表す文型です。前節は動詞の否定形「ない形」を取り、後節には必ず「〜ない」「〜できない」「〜わけにはいかない」といった不可能・否定を表す表現が呼応して、「前項を済ませない限り、後ろの事態は決して成立しない」という強い前提関係を明示します。",
@@ -1086,7 +1086,7 @@
         }
       ]
     },
-    "ja_あげく_37": {
+    "ja_n2_あげく_37": {
       "title": "～あげく (~ageku)",
       "shortExplanation": "長い時間あれこれ悩んだり苦労を重ねたりした末に、結局残念な結果や好ましくない結末に至ったことを表します。「〜した末に」「結果として」。",
       "longExplanation": "「～あげく」（「～あげくに」「～あげくの＋名詞」の形も用いられる）は、長い時間にわたって試行錯誤、苦労、葛藤、迷いなどを繰り返した果てに、最終的に望ましくない結果、失敗、あるいは苦渋の決断などに至ってしまったことを表します。話し手の「あんなに苦労したのに、結局こうなってしまった」という落胆や残念な気持ちが含まれることが多い表現です。動詞た形や「名詞＋の」に接続します。",
@@ -1106,7 +1106,7 @@
         }
       ]
     },
-    "ja_あまり_38": {
+    "ja_n2_あまり_38": {
       "title": "～あまり (〜amari)",
       "shortExplanation": "感情や状態の度合いが極度に強すぎたために、普通ではない極端な行動や好ましくない結果を引き起こすことを表します。「〜のあまり」「あまりに〜すぎて」。",
       "longExplanation": "「～あまり」（「～あまりに」「～あまりの＋名詞＋に／で」）は、ある感情（喜び、悲しみ、怒り、緊張、不安など）や状態が通常の限度を超えて高ぶった結果、自分でも抑制できないような極端な行動を取ってしまったり、予期せぬ異常な事態が生じてしまったりすることを表します。主として心情・精神状態を表す語句に伴って用いられます。",
@@ -1126,7 +1126,7 @@
         }
       ]
     },
-    "ja_うちに_39": {
+    "ja_n2_うちに_39": {
       "title": "～うちに (〜uchi ni)",
       "shortExplanation": "状態が変わってしまう前の、有利な状況が保たれている限られた時間を利用して何かを行うことを表します。「〜の間に」「〜する前に」。",
       "longExplanation": "「～うちに」は、現在の状況や好条件（若さ、健康、天候、温かさなど）が変化してしまわないうちに、好機を逃さず何かをしておくべきだという意図を表します。時間が経って状況が変わってしまうと実行が難しくなるため、後続節には話し手の意志的な行為、勧誘、助言などの表現がよく続きます。",
@@ -1146,7 +1146,7 @@
         }
       ]
     },
-    "ja_がい_40": {
+    "ja_n2_がい_40": {
       "title": "～がい (〜gai)",
       "shortExplanation": "動詞のます形語幹に付き、その行為を行うに値する価値、やりがい、手応えがあることを表します。「〜する甲斐」「〜する価値」。",
       "longExplanation": "接尾辞「～がい」（名詞「甲斐（かい）」が連濁して濁音化したもの）は、動詞の連用形（ます形の「ます」を取った形）に接続して、時間や労力を費やすだけの十分な価値や精神的な手応え・満足感があることを示す複合名詞を作ります。「～がいがある」「～がいがない」「～がいのある＋名詞」などの形で多用されます。代表例として「やりがい」「生きがい」「働きがい」などがあります。",
@@ -1166,7 +1166,7 @@
         }
       ]
     },
-    "ja_かいがあって_41": {
+    "ja_n2_かいがあって_41": {
       "title": "～かいがあって (〜kaiga atte)",
       "shortExplanation": "費やした努力や苦労が報われて、期待通りの望ましい良い結果が得られたことを表します。「〜した甲斐があって」「努力が実って」。",
       "longExplanation": "「～かいがあって」（「甲斐がある」の接続表現）は、前もって注ぎ込んだ努力、訓練、苦労、忍耐、時間などが無駄にならず、その相応の素晴らしい成果や満足のいく結果がもたらされたことを表します。「一生懸命頑張った成果が出て本当によかった」という充足感を表す表現です。動詞た形や「名詞＋の」に接続します。",
@@ -1186,7 +1186,7 @@
         }
       ]
     },
-    "ja_かいもなく_42": {
+    "ja_n2_かいもなく_42": {
       "title": "～かいもなく (〜kai mo naku)",
       "shortExplanation": "せっかく尽くした努力や苦労がまったく実を結ばず、無駄に終わってしまった落胆を表します。「〜した甲斐もなく」「努力の甲斐なく」。",
       "longExplanation": "「～かいもなく」（「甲斐がある」の否定接続表現）は、前項でどれほど大きな努力、期待、苦労、時間などを費やしたにもかかわらず、それが何ひとつ報われず、失敗や残念な結果に終わってしまったことに対する強い無念や落胆の気持ちを表します。後続節には不首尾や期待外れの結果が来ます。",

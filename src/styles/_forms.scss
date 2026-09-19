@@ -114,6 +114,13 @@ select {
     padding: 0;
     border-radius: var(--border-radius-round);
     transition: all var(--transition-fast);
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        cursor: pointer;
+    }
 }
 
 @media (hover: hover) {

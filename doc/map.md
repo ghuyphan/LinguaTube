@@ -50,7 +50,7 @@ graph TB
         Supadata[Supadata Native Captions]
         Gladia[Gladia AI Transcription]
         Turnstile[Cloudflare Turnstile CAPTCHA]
-        Supabase[Supabase PostgreSQL & Auth edbkvzviqeulwzcnrrlb]
+        Supabase[Supabase PostgreSQL & Auth: profiles, vocabulary, streaks, gamification, video_levels, orders, get_leaderboard RPC]
         DictAPIs[Jotoba / Mazii / Naver / MDBG / Glosbe]
         Lingva[Lingva Translate API]
         GoogleGTX[Google Translate GTX]
@@ -151,6 +151,11 @@ graph TD
         VideoPlayer --> BottomBar[VideoBottomBarComponent]
         VideoPlayer --> FullscreenSubtitle[FullscreenSubtitleComponent - Draggable Bar]
         VideoPlayer --> PlayerSettings[PlayerSettings Overlay / DualSub Menu]
+    end
+
+    subgraph DictPageChildren["Dictionary Page Domain"]
+        DictPage --> DictPanel[DictionaryPanelComponent]
+        DictPage --> DictVocabList["VocabularyListComponent (embedded: true)"]
     end
 
     subgraph StudyPageChildren["Study Page Domain"]
@@ -447,11 +452,16 @@ sequenceDiagram
     Leaderboard->>Storage: Read Cached Top 50 (Instant Render)
     Storage-->>Leaderboard: Cached Learner Records
     Leaderboard-->>Dialog: Display Top 3 Podium & Rankings
-    Leaderboard->>Edge: GET /api/leaderboard?lang=...&userId=...&period=weekly|all_time
-    Edge->>D1: Query Top 50 by weekly_xp/xp DESC + User Rank
-    D1-->>Edge: Top Learners + User Position
-    Edge-->>Leaderboard: Fresh Leaderboard Data
-    Leaderboard->>Storage: Cache Updated Ranks
+    alt Primary Flow: Direct Supabase Stored Procedure
+        Leaderboard->>Supabase: rpc('get_leaderboard', { p_lang, p_period, p_limit })
+        Supabase-->>Leaderboard: Dynamic Window Ranked Learners
+    else Edge Fallback (Network / Offline Fallback)
+        Leaderboard->>Edge: GET /api/leaderboard?lang=...&userId=...&period=weekly|all_time
+        Edge->>D1: Query Top 50 by weekly_xp/xp DESC + User Rank
+        D1-->>Edge: Top Learners + User Position
+        Edge-->>Leaderboard: Fresh Leaderboard Data
+    end
+    Leaderboard->>Storage: Cache Updated Ranks (voca_leaderboard_cache_...)
     Leaderboard-->>Dialog: Update Podium & Sticky User Rank Bar
     opt Background Score Sync (Debounced 30s)
         Gamification->>Leaderboard: On Level-Up / Significant XP Gain
@@ -484,9 +494,9 @@ sequenceDiagram
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, Supabase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |
-| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, Edge TTS, tokenizers, payment mock |
+| `server/server.js` | Dev Environment | Local Express mock backend providing Innertube captions, unified dict lookup, Edge TTS, local Kuromoji + CJK/EN tokenizers, payment mock |
 | `server/transcripts_cache/` | Dev Cache | Local disk persistence for fetched YouTube transcripts during development |
-| `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via esbuild |
+| `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via parallelized esbuild |
 | `scripts/release.js` | Release Pipeline | Controlled semver version bumper and metadata synchronizer |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |
 | `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, Supabase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |

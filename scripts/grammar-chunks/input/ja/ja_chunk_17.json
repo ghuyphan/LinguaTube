@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_なくちゃいけない_104",
+    "id": "ja_n4_なくちゃいけない_104",
     "language": "ja",
     "pattern": "～なくちゃいけない",
     "title": "～なくちゃいけない (〜naku cha ikenai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_なくてはいけない_105",
+    "id": "ja_n4_なくてはいけない_105",
     "language": "ja",
     "pattern": "～なくてはいけない",
     "title": "～なくてはいけない (〜nakute wa ikenai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_なくてもいい_106",
+    "id": "ja_n4_なくてもいい_106",
     "language": "ja",
     "pattern": "～なくてもいい",
     "title": "～なくてもいい (〜nakutemo ii)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_なければ_107",
+    "id": "ja_n4_なければ_107",
     "language": "ja",
     "pattern": "～なければ",
     "title": "～なければ ならない (〜nakereba naranai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_に_108",
+    "id": "ja_n4_に_108",
     "language": "ja",
     "pattern": "～に",
     "title": "～に (〜ni)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ので_109",
+    "id": "ja_n4_ので_109",
     "language": "ja",
     "pattern": "～ので",
     "title": "～ので (〜node)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_のです_110",
+    "id": "ja_n4_のです_110",
     "language": "ja",
     "pattern": "～のです",
     "title": "～のです (〜no desu)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_のに_111",
+    "id": "ja_n4_のに_111",
     "language": "ja",
     "pattern": "～のに",
     "title": "～のに (〜no ni)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ばいい_112",
+    "id": "ja_n4_ばいい_112",
     "language": "ja",
     "pattern": "～ばいい",
     "title": "～ばいい (〜ba ii)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_まで_113",
+    "id": "ja_n4_まで_113",
     "language": "ja",
     "pattern": "～まで",
     "title": "～まで (〜made)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_までに_114",
+    "id": "ja_n4_までに_114",
     "language": "ja",
     "pattern": "～までに",
     "title": "～までに (〜made ni)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_まま_115",
+    "id": "ja_n4_まま_115",
     "language": "ja",
     "pattern": "～まま",
     "title": "～まま (〜mama)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_みたいだ_116",
+    "id": "ja_n4_みたいだ_116",
     "language": "ja",
     "pattern": "～みたいだ",
     "title": "～みたいだ (〜mitai da)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_も_117",
+    "id": "ja_n4_も_117",
     "language": "ja",
     "pattern": "～も",
     "title": "～も (〜mo)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ようだ_118",
+    "id": "ja_n4_ようだ_118",
     "language": "ja",
     "pattern": "～ようだ",
     "title": "～ようだ (〜you da)",

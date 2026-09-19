@@ -1,6 +1,6 @@
 {
   "vi": {
-    "ja_Aそれなら_13": {
+    "ja_n2_Aそれなら_13": {
       "title": "A。それなら B。(A. Sore nara B.)",
       "shortExplanation": "Dùng để tiếp nhận thông tin hoặc tình huống ở vế A rồi đưa ra phán đoán, quyết định hoặc hành động ở vế B; 'nếu vậy thì...', 'thế thì...', 'trong trường hợp đó thì...'.",
       "longExplanation": "Liên từ 'それなら' (dạng khẩu ngữ của 'それならば') được đặt ở đầu câu B để tiếp nhận tình huống, sự việc hoặc điều kiện vừa được nhắc đến ở câu A trước đó, từ đó đưa ra kết luận logic, quyết định, gợi ý hoặc hướng xử lý tiếp theo của người nói. Cấu trúc này tương đương với 'nếu là như thế thì...', 'thế thì...', 'vậy thì...' trong tiếng Việt.",
@@ -20,7 +20,7 @@
         }
       ]
     },
-    "ja_A_14": {
+    "ja_n2_A_14": {
       "title": "A それはそうと B。 (A Sore wa sou to B)",
       "shortExplanation": "Dùng để gác lại chủ đề đang nói ở vế A và chuyển sang một chủ đề hoàn toàn mới ở vế B; 'chuyện đó thì hãy gác lại đã...', 'tiện đây thì...', 'nói chuyện đó mới nhớ...'.",
       "longExplanation": "Liên từ 'それはそうと' được dùng trong giao tiếp khi người nói muốn cắt ngang hoặc tạm gác lại đề tài đang bàn luận ở câu A để nhanh chóng chuyển hướng cuộc trò chuyện sang một chủ đề mới, khác biệt ở câu B. Tương đương với các cách nói 'chuyện đó tạm thời để sau, còn chuyện này...', 'nói chuyện đó mới nhớ...', 'tiện thể thì...' trong tiếng Việt.",
@@ -40,7 +40,7 @@
         }
       ]
     },
-    "ja_Aだが_15": {
+    "ja_n2_Aだが_15": {
       "title": "A。だが B。(~daga)",
       "shortExplanation": "Liên từ biểu thị quan hệ tương phản, đối lập giữa hai câu; mang nghĩa 'nhưng', 'tuy nhiên', 'thế nhưng'.",
       "longExplanation": "Liên từ 'だが' (là dạng rút gọn của 'であるが') dùng để nối hai câu văn hoàn chỉnh có ý nghĩa trái ngược hoặc mang tính tương phản nhau. Vế A nêu ra một sự việc, và vế B đưa ra một điều đối lập hoặc hạn chế so với vế A. Cấu trúc này thường mang sắc thái văn viết hoặc phong cách nói ngắn gọn, dứt khoát, trang trọng hơn so với 'でも'.",
@@ -60,7 +60,7 @@
         }
       ]
     },
-    "ja_AただB_16": {
+    "ja_n2_AただB_16": {
       "title": "A。ただB。(~tada)",
       "shortExplanation": "Dùng để bổ sung thêm một điểm ngoại lệ, hạn chế hoặc mặt còn lại của sự việc so với vế A; 'chỉ có điều là...', 'có điều...', 'tuy nhiên...'.",
       "longExplanation": "Liên từ 'ただ' được đặt ở đầu câu B nhằm thừa nhận và công nhận toàn bộ nội dung ở câu A, nhưng bổ sung thêm một chi tiết nhỏ, một sự thật hạn chế, một khuyết điểm hoặc góc nhìn đối lập mang tính ngoại lệ ở câu B. Khác với sự đối lập hoàn toàn của 'しかし', 'ただ' mang sắc thái 'nhìn chung là ổn/đúng, chỉ có điều là còn một điểm này nữa'.",
@@ -80,7 +80,7 @@
         }
       ]
     },
-    "ja_AただしB_17": {
+    "ja_n2_AただしB_17": {
       "title": "A。ただしB。 (A. Tadashi B)",
       "shortExplanation": "Dùng để bổ sung thêm điều kiện ràng buộc, lưu ý hoặc trường hợp ngoại lệ cho sự việc vừa nêu ở câu A; 'tuy nhiên', 'nhưng với điều kiện là...', 'chỉ có điều là...'.",
       "longExplanation": "Liên từ 'ただし' được đặt ở đầu câu B nhằm đưa ra một điều kiện tiên quyết, một sự giới hạn, ngoại lệ hoặc điều khoản ràng buộc bắt buộc đối với tuyên bố ở câu A. Cấu trúc này thường xuất hiện trong các thông báo, quy định, hợp đồng, chỉ dẫn chính thức hoặc lời dặn dò có tính nguyên tắc.",
@@ -100,7 +100,7 @@
         }
       ]
     },
-    "ja_Aだって_18": {
+    "ja_n2_Aだって_18": {
       "title": "A。だって B。(Datte~)",
       "shortExplanation": "Dùng trong văn nói thân mật để đưa ra lý do, lời giải thích hoặc trần tình một cách tự nhiên; 'bởi vì...', 'tại vì... mà', 'thì là vì...'.",
       "longExplanation": "Trong khẩu ngữ thân mật hàng ngày, 'だって' được sử dụng để nêu lên nguyên nhân, lý do, viện cớ hoặc giải thích cho hành động, đề xuất ở vế sau ('bởi vì...', 'tại là...'). Cấu trúc này thường dùng khi trò chuyện thân thiết với bạn bè, người thân để bày tỏ cảm xúc phân bua, giãi bày hoặc nhấn mạnh căn cứ cho lời rủ rê, khuyên nhủ.",
@@ -120,7 +120,7 @@
         }
       ]
     },
-    "ja_Aちなみに_19": {
+    "ja_n2_Aちなみに_19": {
       "title": "A。ちなみに B。(A. Chinamini B.)",
       "shortExplanation": "Dùng để bổ sung thêm thông tin phụ, thông tin tham khảo liên quan đến chủ đề vừa nhắc ở câu A; 'nhân tiện', 'tiện đây xin nói thêm', 'nói thêm là...'.",
       "longExplanation": "Liên từ 'ちなみに' (dạng Hán tự: 因みに) được sử dụng khi người nói muốn nhân thể bổ sung thêm một thông tin liên quan, một chi tiết tham khảo hoặc kiến thức bên lề nhằm làm rõ và mở rộng thêm cho chủ đề vừa đề cập ở câu A. Khác với 'それはそうと' (chuyển hẳn sang đề tài mới), 'ちなみに' vẫn xoay quanh chủ đề trước đó nhưng cung cấp thêm góc nhìn hữu ích.",
@@ -140,7 +140,7 @@
         }
       ]
     },
-    "ja_Aということは_20": {
+    "ja_n2_Aということは_20": {
       "title": "A。ということは B。 (A. To iu koto wa B.)",
       "shortExplanation": "Dựa vào sự thực ở vế A để rút ra suy luận logic hoặc kết luận tất yếu ở vế B; 'điều đó có nghĩa là...', 'như thế tức là...', 'nói vậy nghĩa là...'.",
       "longExplanation": "Mẫu câu liên kết 'ということは' được sử dụng khi người nói tiếp nhận một hiện tượng, thông tin hoặc chứng cứ quan sát được ở câu A, từ đó suy đoán, diễn giải logic hoặc rút ra kết luận mang tính tất yếu ở câu B. Vế B thường đi kèm với các cách diễn đạt phỏng đoán, suy luận như '～に違いない' (chắc chắn là), '～かもしれない' (có thể là), '～ということだ' (tức là).",
@@ -160,7 +160,7 @@
         }
       ]
     },
-    "ja_Aというのは_21": {
+    "ja_n2_Aというのは_21": {
       "title": "A。というのは B。(Toiu no wa~)",
       "shortExplanation": "Dùng để giải thích lý do, nguyên nhân hoặc làm rõ chi tiết cho nhận định vừa đưa ra ở câu A; 'lý do là vì...', 'đó là bởi vì...', 'sở dĩ như vậy là vì...'.",
       "longExplanation": "Liên từ 'というのは' được đặt ở đầu câu B nhằm giải thích cặn kẽ nguyên nhân, động cơ hoặc định nghĩa cụ thể cho điều đã nêu ở câu A trước đó. Cấu trúc này thường đi kèm với các hình thức biểu thị nguyên nhân ở cuối câu như '～からだ', '～ためだ' ('lý do là bởi vì...'), giúp câu văn mang tính logic và giải thích rõ ràng.",
@@ -180,7 +180,7 @@
         }
       ]
     },
-    "ja_AなおB_22": {
+    "ja_n2_AなおB_22": {
       "title": "A。なおB。(A. Nao B.)",
       "shortExplanation": "Dùng để bổ sung thêm thông tin, thông báo hoặc giải thích thêm bên cạnh điều đã nêu ở câu A; 'ngoài ra', 'hơn nữa', 'thêm vào đó'.",
       "longExplanation": "Liên từ 'なお' (dạng Hán tự: 尚) được dùng để kết nối hai câu, trong đó câu B cung cấp thêm thông tin đồng loại, chi tiết bổ sung hoặc lưu ý cần thiết sau khi câu A đã hoàn tất. Cấu trúc này thường mang sắc thái trang trọng, khách quan, được sử dụng rất phổ biến trong các thông báo hành chính, văn bản hướng dẫn, tin tức và thư từ công việc.",
@@ -200,7 +200,7 @@
         }
       ]
     },
-    "ja_Aもっとも_23": {
+    "ja_n2_Aもっとも_23": {
       "title": "A。もっとも B。(Motto mo ~)",
       "shortExplanation": "Dùng để đưa ra lời bổ sung, đính chính hoặc điều chỉnh nhẹ sau khi khẳng định vế A; 'tuy nhiên', 'nói thế chứ...', 'dù vậy thì...'.",
       "longExplanation": "Liên từ 'もっとも' (dạng Hán tự: 尤も) được sử dụng khi người nói sau khi đưa ra nhận định hoặc khẳng định chung ở câu A, bèn cảm thấy cần thêm một điều chỉnh, một điều kiện ngoại lệ hoặc một mặt hạn chế ở câu B để câu nói không trở nên phiến diện hay tuyệt đối hóa quá mức. Mang sắc thái 'nói thế thôi chứ thực ra...', 'tuy vậy thì cũng phải nói thêm rằng...' trong tiếng Việt.",
@@ -220,7 +220,7 @@
         }
       ]
     },
-    "ja_A要するに_24": {
+    "ja_n2_A要するに_24": {
       "title": "A。要するに B。(A. Yousuru ni B.)",
       "shortExplanation": "Dùng để tóm lược, khái quát lại những điều chi tiết hoặc dài dòng ở câu A thành một kết luận ngắn gọn, súc tích ở câu B; 'tóm lại là...', 'nói tóm lại...', 'nói một cách đơn giản là...'.",
       "longExplanation": "Liên từ '要するに' (dạng Hán tự: 要するに) được sử dụng khi người nói muốn đúc kết, cô đọng nội dung vừa phân tích hoặc giải thích dài dòng ở vế A thành một ý cốt lõi, trọng tâm nhất ở vế B. Tương đương với các cách diễn đạt 'tóm lại', 'nói tóm lại là', 'nói chung quy là' trong tiếng Việt.",
@@ -240,7 +240,7 @@
         }
       ]
     },
-    "ja_Noun_25": {
+    "ja_n2_Noun_25": {
       "title": "Danh từ + につき (〜ni tsuki)",
       "shortExplanation": "Biểu thị nguyên nhân, lý do trang trọng trong thông báo, biển báo ('do...', 'vì...'); hoặc biểu thị tỷ lệ, đơn vị tương ứng ('mỗi...', 'cứ mỗi...').",
       "longExplanation": "Mẫu ngữ pháp '～につき' có hai cách dùng chính rất quan trọng: (1) Biểu thị lý do, nguyên nhân mang tính trang trọng, văn viết, chuyên dùng trong các biển hiệu, thông báo công cộng, văn bản hành chính (ví dụ: 工事中につき - vì đang thi công, 清掃中につき - vì đang dọn dẹp); (2) Đứng sau số từ hoặc danh từ để biểu thị tỷ lệ, phân bổ theo từng đơn vị (tương đương với 'mỗi...', 'cứ mỗi đơn vị...').",
@@ -260,7 +260,7 @@
         }
       ]
     },
-    "ja_Noun_26": {
+    "ja_n2_Noun_26": {
       "title": "Danh từ + にて (Noun nite)",
       "shortExplanation": "Dạng trang trọng, lịch sự của trợ từ で; dùng để biểu thị địa điểm diễn ra sự kiện ('tại...'), hoặc phương tiện, phương thức ('bằng...', 'qua...').",
       "longExplanation": "Trợ từ 'にて' có chức năng ngữ pháp tương đương với trợ từ 'で', nhưng mang sắc thái cổ kính, trang trọng và lịch sự hơn nhiều. Cấu trúc này thường được sử dụng trong văn phong viết, thông báo chính thức, thiệp mời, thư từ thương mại hoặc các bài phát biểu nghi thức để chỉ nơi chốn diễn ra sự kiện, hoạt động ('tại nơi nào'), hoặc chỉ phương tiện, phương thức thực hiện ('bằng cách nào', 'thông qua phương tiện nào').",
@@ -280,7 +280,7 @@
         }
       ]
     },
-    "ja_Noun_27": {
+    "ja_n2_Noun_27": {
       "title": "Danh từ + のことだから (Noun no koto dakara)",
       "shortExplanation": "Dựa vào tính cách, thói quen hoặc đặc trưng vốn có của người hoặc sự vật để đưa ra phán đoán mang tính quy luật; 'chính vì là...', 'vì tính cách của... nên chắc là...'.",
       "longExplanation": "Cấu trúc '～のことだから' thường đi liền sau một danh từ chỉ người (hoặc đôi khi là sự vật, tổ chức) mà người nói nắm rất rõ tính nết, thói quen hoặc bản chất đặc trưng. Người nói dùng sự hiểu biết đó làm căn cứ vững chắc để suy đoán hành vi, kết quả sắp tới ('vì đã là anh ấy thì kiểu gì cũng...'). Vế sau thường kết thúc bằng các phỏng đoán như '～だろう', '～はずだ', '～かもしれない'.",
@@ -302,7 +302,7 @@
     }
   },
   "zh": {
-    "ja_Aそれなら_13": {
+    "ja_n2_Aそれなら_13": {
       "title": "A。それなら B。(A. Sore nara B.)",
       "shortExplanation": "承接前文A所述的情况或事实，进而引出后文B的判断、决定或建议；“要是那样的话……”、“既然如此……”。",
       "longExplanation": "连接词“それなら”（为“それならば”的口语缩略形式）用于承接前一句话A所陈述的事实、情报或状况，并在后一句话B中顺理成章地提出说话人的应对措施、主观决定、判断或建议，相当于汉语中的“要是那样的话”、“既然那样”、“那么”。",
@@ -322,7 +322,7 @@
         }
       ]
     },
-    "ja_A_14": {
+    "ja_n2_A_14": {
       "title": "A それはそうと B。 (A Sore wa sou to B)",
       "shortExplanation": "用于在会话中转换话题，将前文A的话题搁置一边而引出全新的话题B；“话说回来”、“顺便提一下”、“且不说那个”。",
       "longExplanation": "连接词“それはそうと”常用于口语会话中，用来打断或告一段落正在进行的话题A，从而巧妙地把谈话转向一个无关或全新的话题B。相当于汉语中的“话说回来”、“先不谈那个”、“顺便问一下”。",
@@ -342,7 +342,7 @@
         }
       ]
     },
-    "ja_Aだが_15": {
+    "ja_n2_Aだが_15": {
       "title": "A。だが B。(~daga)",
       "shortExplanation": "表示转折关系的连接词，用于连接具有对立、对照关系的两个句子；“但是”、“然而”、“不过”。",
       "longExplanation": "连接词“だが”（源自“であるが”的略语）用于承接前文A，引出与之相反、对立或带有转折性质的事实或评价B。相比于口语中的“でも”，“だが”语气更加果断、书面化，常用于书面语、议论文、新闻报道或严肃稳重的会话中。",
@@ -362,7 +362,7 @@
         }
       ]
     },
-    "ja_AただB_16": {
+    "ja_n2_AただB_16": {
       "title": "A。ただB。(~tada)",
       "shortExplanation": "在基本肯定前文A的前提下，引出轻微的转折、附加说明、不足之处或例外条件；“只是”、“不过”、“唯独”。",
       "longExplanation": "连接词“ただ”用于在认可前句A的事实或大体情况的同时，在后句B中补充说明某一相反的情况、小缺陷、补充条件或不尽如人意之处。与表示强烈转折的“しかし”不同，“ただ”偏向于“基本认可，只是有一点需要提一下”的语感。",
@@ -382,7 +382,7 @@
         }
       ]
     },
-    "ja_AただしB_17": {
+    "ja_n2_AただしB_17": {
       "title": "A。ただしB。 (A. Tadashi B)",
       "shortExplanation": "用于在前文A的陈述、许可或承诺之后，附加补充限制条件、例外情况或注意事项；“但是”、“不过”、“前提是……”。",
       "longExplanation": "连接词“ただし”（但し）用于在陈述了前句A的内容之后，立即在后句B中补充指出必须遵守的附加条件、例外规定或注意事项。多用于公文公告、规章制度、合同契约、操作说明等规范性语境中，语气客观而严谨。",
@@ -402,7 +402,7 @@
         }
       ]
     },
-    "ja_Aだって_18": {
+    "ja_n2_Aだって_18": {
       "title": "A。だって B。(Datte~)",
       "shortExplanation": "在日常口语中用于陈述理由、原因或进行解释、辩解；“因为……嘛”、“可那是由于……”、“说是……”。",
       "longExplanation": "在日常亲近朋友或家人的口语会话中，“だって”常用于随口提出理由、因由，或是为后项的行为、建议进行辩解或解释说明。语气亲切、随和，带有一种向对方撒娇、辩白或随性陈述原因的语感。",
@@ -422,7 +422,7 @@
         }
       ]
     },
-    "ja_Aちなみに_19": {
+    "ja_n2_Aちなみに_19": {
       "title": "A。ちなみに B。(A. Chinamini B.)",
       "shortExplanation": "用于在谈论话题A之后，顺带补充相关的参考信息或背景细节；“顺便提一句”、“顺带说明”、“顺便说一下”。",
       "longExplanation": "连接词“ちなみに”（汉字写作“因みに”）用于在陈述了前文A的主题后，作为旁注或参考资料，顺带附加上与之相关的背景知识、衍生信息或有用情报。与完全跳出话题的“それはそうと”不同，“ちなみに”后接的B内容与A紧密关联，属于延伸补充性质。",
@@ -442,7 +442,7 @@
         }
       ]
     },
-    "ja_Aということは_20": {
+    "ja_n2_Aということは_20": {
       "title": "A。ということは B。 (A. To iu koto wa B.)",
       "shortExplanation": "根据前文A所见或所得的事实，逻辑推导或推测出后文B的结论；“也就是说……”、“这就意味着……”。",
       "longExplanation": "句型“ということは”用于承接前面句子A所展现的事实、状况或情报，由此推导或合乎逻辑地得出结论B。说话人通过这种表达对既有信息进行解读与推断，后项B常与表示推测的语气句式（如“～に違いない”、“～かもしれない”等）搭配使用。",
@@ -462,7 +462,7 @@
         }
       ]
     },
-    "ja_Aというのは_21": {
+    "ja_n2_Aというのは_21": {
       "title": "A。というのは B。(Toiu no wa~)",
       "shortExplanation": "用于在前文A陈述结果或判断后，在后文B解释其原因、理由或进行具体阐述；“之所以这么说是因为……”、“那是因为……”。",
       "longExplanation": "连接词“というのは”用于对前一句A提出的结论、结果、主张或事实进行深入说明，详细解释其背后的原因或具体内容。后项B通常与表原因的结句“～からだ”（因为……）或“～ためだ”（由于……）相呼应，构成严密的因果解释结构。",
@@ -482,7 +482,7 @@
         }
       ]
     },
-    "ja_AなおB_22": {
+    "ja_n2_AなおB_22": {
       "title": "A。なおB。(A. Nao B.)",
       "shortExplanation": "用于在陈述完前文A之后，公事公办或客观地追加补充相关信息、通知或注意事项；“另外”、“此外”、“附带说明”。",
       "longExplanation": "连接词“なお”（汉字写作“尚”）多用于正式的书面通知、官方公告、商务信函以及庄重的公开发言中，用于在完成主要陈述A之后，客观追加相关的说明事项、补充信息或注意事项B。语气郑重平实。",
@@ -502,7 +502,7 @@
         }
       ]
     },
-    "ja_Aもっとも_23": {
+    "ja_n2_Aもっとも_23": {
       "title": "A。もっとも B。(Motto mo ~)",
       "shortExplanation": "在前文A做出概括性叙述后，在后文B补充修正、限制或例外，使表述更加严谨客观；“不过”、“话虽如此”、“当然……”。",
       "longExplanation": "连接词“もっとも”（尤も）用于在句A陈述了一个整体性观点或评价之后，说话人意识到该说法可能过于绝对，因而在句B中主动补充说明限制条件、附带事实或相反倾向，以保持言论的客观与平衡。相当于汉语的“不过”、“话虽如此”、“话是这么说”。",
@@ -522,7 +522,7 @@
         }
       ]
     },
-    "ja_A要するに_24": {
+    "ja_n2_A要するに_24": {
       "title": "A。要するに B。(A. Yousuru ni B.)",
       "shortExplanation": "用于将前文A的详细叙述或繁琐说明加以归纳提炼，在后文B引出简明扼要的核心结论；“总而言之”、“简而言之”、“归根结底”。",
       "longExplanation": "连接词“要するに”（汉字写作“要するに”）用于承接前文A冗长或具体的细节描述，将其提炼为后文B最核心的实质内容或概括性结论。相当于汉语中的“总而言之”、“简言之”、“一句话概括”。",
@@ -542,7 +542,7 @@
         }
       ]
     },
-    "ja_Noun_25": {
+    "ja_n2_Noun_25": {
       "title": "名词 + につき (〜ni tsuki)",
       "shortExplanation": "常用于公文、公告中正式表示客观原因或理由（“由于……”、“因……”）；亦可接在数量词后表示分配比例（“每……”）。",
       "longExplanation": "句型“～につき”主要有两种典型用法：一是用于告示、公告、公文等正式庄重的书面语中，表明客观的原因或理由，相当于“因……（故……）”、“由于……”（如“工事中につき”意为“因施工中……”）；二是接在数量词或表示单位的名词之后，表示比率、平均分配的标准，相当于汉语中的“每……”、“按每……计算”。",
@@ -562,7 +562,7 @@
         }
       ]
     },
-    "ja_Noun_26": {
+    "ja_n2_Noun_26": {
       "title": "名词 + にて (Noun nite)",
       "shortExplanation": "格助词“で”的郑重书面表达形式；用于表示动作发生的场所（“在……”、“于……”）或手段、方式（“以……”、“通过……”）。",
       "longExplanation": "格助词“にて”与“で”用法相当，但语气更为庄重典雅、书面化，广泛运用于公文通知、商务通信、请柬公告、新闻报道以及正式演讲中。主要用法包括：①表示事件、动作进行的具体场所（相当于“在……举行”）；②表示手段、方法或媒介（相当于“通过……”、“以……方式”）。",
@@ -582,7 +582,7 @@
         }
       ]
     },
-    "ja_Noun_27": {
+    "ja_n2_Noun_27": {
       "title": "名词 + のことだから (Noun no koto dakara)",
       "shortExplanation": "根据某人一贯的性格、习惯或某事物的固有特征，合乎情理地推断其未来的行为或结果；“凭某人的为人……”、“正因为是……”。",
       "longExplanation": "句型“～のことだから”主要接在表示人物（有时也可接事物或团体）的名词之后。说话人基于对该对象平时性格、习性、作风或典型特征的充分了解，理所当然地对其将要采取的行为或可能产生的结果做出合乎逻辑的推断。后半句常呼应“～だろう”、“～に違いない”、“～はずだ”等推测句式。",
@@ -604,7 +604,7 @@
     }
   },
   "ko": {
-    "ja_Aそれなら_13": {
+    "ja_n2_Aそれなら_13": {
       "title": "A。それなら B。(A. Sore nara B.)",
       "shortExplanation": "앞 문장 A에서 제시된 상황이나 사실을 받아들여 그에 따른 판단, 결정, 제안 등을 뒤 문장 B로 이끌어낼 때 쓰이며, '그렇다면', '그러면'이라는 뜻입니다.",
       "longExplanation": "접속사 'それなら'('それならば'의 구어적 표현)는 앞 문장 A에서 언급된 상황이나 상대방의 말을 조건으로 삼아, '그 말이 사실이라면', '그런 상황이라면'이라는 전제하에 화자의 판단이나 앞으로 취할 행동, 결정, 권유 등을 B에서 진술할 때 사용됩니다. 한국어의 '그렇다면', '그러면'에 해당합니다.",
@@ -624,7 +624,7 @@
         }
       ]
     },
-    "ja_A_14": {
+    "ja_n2_A_14": {
       "title": "A それはそうと B。 (A Sore wa sou to B)",
       "shortExplanation": "이야기의 화제를 전환할 때 쓰이며, 앞서 말하던 화제 A를 일단 접어두고 새로운 화제 B를 꺼낼 때 쓰입니다. '그건 그렇고', '그런데'.",
       "longExplanation": "접속사 'それはそうと'는 대화 도중에 지금까지 이어오던 이야기나 화제 A를 일단락짓고, 전혀 다른 새로운 화제 B로 대화의 초점을 자연스럽게 전환할 때 사용되는 회화적 표현입니다. 한국어의 '그건 그렇고', '그건 그렇다 치고', '그런데 말이야'에 해당합니다.",
@@ -644,7 +644,7 @@
         }
       ]
     },
-    "ja_Aだが_15": {
+    "ja_n2_Aだが_15": {
       "title": "A。だが B。(~daga)",
       "shortExplanation": "앞 문장과 상반되거나 대조되는 내용을 연결할 때 쓰는 역접의 접속사로, '하지만', '그러나', '그렇지만'이라는 뜻입니다.",
       "longExplanation": "접속사 'だが'('であるが'의 준말)는 앞 문장 A에서 제시한 내용과 대립하거나 상반되는 사실, 혹은 예상 밖의 결과를 뒤 문장 B에서 이어받을 때 사용됩니다. 구어체에서 자주 쓰이는 'でも'에 비해 문어적이고 단호하며 객관적인 어조를 띠므로, 글말이나 공식적인 담화 등에서 자주 활용됩니다.",
@@ -664,7 +664,7 @@
         }
       ]
     },
-    "ja_AただB_16": {
+    "ja_n2_AただB_16": {
       "title": "A。ただB。(~tada)",
       "shortExplanation": "앞 문장 A의 내용을 대체로 긍정하거나 인정한 상태에서, 약간의 아쉬운 점이나 부가적인 조건·예외를 뒤 문장 B에서 덧붙일 때 쓰이며, '다만', '단지', '그렇지만'이라는 뜻입니다.",
       "longExplanation": "접속사 'ただ'는 앞 문장 A에서 기술된 전반적인 사실이나 상황을 긍정하면서도, 뒤 문장 B에서 작은 결점, 단서 조건, 혹은 미처 다루지 못한 상반된 측면을 보충할 때 쓰입니다. 전면적인 대립을 나타내는 'しかし'에 비해 '다 좋은데 단지 이 점이 걸린다'라는 가벼운 단서 보충의 뉘앙스를 지닙니다.",
@@ -684,7 +684,7 @@
         }
       ]
     },
-    "ja_AただしB_17": {
+    "ja_n2_AただしB_17": {
       "title": "A。ただしB。 (A. Tadashi B)",
       "shortExplanation": "앞 문장 A에서 진술한 내용이나 허가 사항에 대해, 뒤 문장 B에서 단서 조건, 제한, 예외 사항을 명시할 때 쓰이며, '단', '다만'이라는 뜻입니다.",
       "longExplanation": "접속사 'ただし'(但し)는 앞선 문장 A의 전반적인 진술이나 방침, 허가 내용을 제시한 직후, 반드시 지켜야 할 조건이나 예외 규칙, 주의사항을 뒤 문장 B에 명시할 때 쓰입니다. 안내문, 규칙서, 계약서 등 공식적이고 규정적인 문맥에서 매우 빈번하게 사용됩니다.",
@@ -704,7 +704,7 @@
         }
       ]
     },
-    "ja_Aだって_18": {
+    "ja_n2_Aだって_18": {
       "title": "A。だって B。(Datte~)",
       "shortExplanation": "친근한 일상 회화에서 이유나 원인, 핑계를 대거나 상황을 설명할 때 쓰이며, '그야 ~인걸', '왜냐하면 ~니까', '~라니까'라는 뜻입니다.",
       "longExplanation": "'だって'는 친한 사이의 편안한 대화에서 이유나 까닭을 대거나, 뒤따르는 권유·판단·변명의 근거를 자연스럽게 털어놓을 때 쓰이는 구어 표현입니다. 때로는 '그야 ~하니까', 때로는 전해 들은 이유나 사정을 가볍게 언급하며 '상황이 이러하니까 ~하자'라고 제안할 때 사용됩니다.",
@@ -724,7 +724,7 @@
         }
       ]
     },
-    "ja_Aちなみに_19": {
+    "ja_n2_Aちなみに_19": {
       "title": "A。ちなみに B。(A. Chinamini B.)",
       "shortExplanation": "앞 문장 A에서 언급된 내용과 관련된 참고 정보나 부가적인 설명을 덧붙일 때 쓰이며, '참고로', '덧붙여 말하자면'이라는 뜻입니다.",
       "longExplanation": "접속사 'ちなみに'(因みに)는 앞서 기술한 화제 A에 연관된 부가 정보나 참고할 만한 사안을 자연스럽게 덧붙일 때 쓰입니다. 화제를 완전히 바꾸는 'それはそうと'와는 달리, 기존 화제의 연장선상에서 상대방에게 유익하거나 흥미로운 세부 정보를 추가로 제공하는 뉘앙스를 지닙니다.",
@@ -744,7 +744,7 @@
         }
       ]
     },
-    "ja_Aということは_20": {
+    "ja_n2_Aということは_20": {
       "title": "A。ということは B。 (A. To iu koto wa B.)",
       "shortExplanation": "앞 문장 A의 사실이나 현상을 바탕으로 논리적인 귀결이나 추론을 뒤 문장 B로 이끌어낼 때 쓰이며, '그 말은 즉 ~', '그렇다는 것은 ~라는 뜻이다'입니다.",
       "longExplanation": "접속 표현 'ということは'는 눈앞에 나타난 현상이나 전해 들은 사실 A를 단서로 삼아, '그 사실로부터 미루어 볼 때 결국 B라는 결론에 이른다'고 논리적으로 연역하거나 추측할 때 쓰입니다. 문장 B의 끝에는 종종 '～に違いない'(틀림없다), '～かもしれない'(~일지도 모른다) 등의 추측 표현이 호응합니다.",
@@ -764,7 +764,7 @@
         }
       ]
     },
-    "ja_Aというのは_21": {
+    "ja_n2_Aというのは_21": {
       "title": "A。というのは B。(Toiu no wa~)",
       "shortExplanation": "앞 문장 A에서 제시한 결과나 판단에 대해 그 까닭, 배경, 구체적인 내용을 뒤 문장 B에서 설명할 때 쓰이며, '왜냐하면 ~이기 때문이다', '그 이유는 ~'입니다.",
       "longExplanation": "'というのは'는 앞 문장 A에서 밝힌 사실이나 주장을 뒷받침하기 위해 구체적인 원인, 이유, 혹은 내용을 B에서 상세히 풀어 설명하는 연결 표현입니다. 보통 문장 B의 끝에 이유를 나타내는 '～からだ'(~때문이다)나 '～ためだ'(~탓이다)가 함께 쓰여 인과관계를 명확히 밝힙니다.",
@@ -784,7 +784,7 @@
         }
       ]
     },
-    "ja_AなおB_22": {
+    "ja_n2_AなおB_22": {
       "title": "A。なおB。(A. Nao B.)",
       "shortExplanation": "앞 문장 A의 기술에 이어 관련된 정보를 덧붙이거나 알림·주의사항을 공식적으로 추가할 때 쓰이며, '또한', '아울러', '덧붙여'라는 뜻입니다.",
       "longExplanation": "접속사 'なお'(尚)는 문장 A에서 주된 사실이나 공지 사항을 전한 뒤, 이와 관련된 추가 정보, 보충 사항, 주의점을 문장 B에 격식 있게 덧붙일 때 쓰입니다. 공지문, 안내문, 뉴스, 비즈니스 서신 등 격식 있는 문맥에서 매우 정중하고 객관적으로 사용됩니다.",
@@ -804,7 +804,7 @@
         }
       ]
     },
-    "ja_Aもっとも_23": {
+    "ja_n2_Aもっとも_23": {
       "title": "A。もっとも B。(Motto mo ~)",
       "shortExplanation": "앞 문장 A에서 전반적인 판단을 내린 뒤, 그것이 지나치게 단정적이 되지 않도록 뒤 문장 B에서 조건이나 예외를 덧붙여 수정할 때 쓰입니다. '하긴', '다만 그렇다고는 해도'.",
       "longExplanation": "접속사 'もっとも'(尤も)는 앞선 문장 A의 일반적인 진술이나 평가를 인정한 후, 자칫 말이 치우치거나 극단화되는 것을 방지하기 위해 '물론 그렇기는 하지만', '하지만 다른 한편으로는'이라는 뉘앙스로 사정이나 예외를 덧붙여 스스로 보정할 때 쓰입니다.",
@@ -824,7 +824,7 @@
         }
       ]
     },
-    "ja_A要するに_24": {
+    "ja_n2_A要するに_24": {
       "title": "A。要するに B。(A. Yousuru ni B.)",
       "shortExplanation": "앞 문장 A에서 길게 설명하거나 열거한 내용을 뒤 문장 B에서 핵심만 간추려 요약·정리할 때 쓰이며, '요컨대', '결국', '간단히 말해서'라는 뜻입니다.",
       "longExplanation": "접속사 '要するに'(ようするに)는 앞서 서술한 복잡하거나 구체적인 사실 A를 간결하게 요약하여 그 본질이나 핵심 결론을 B에서 집약해 나타낼 때 쓰입니다. 한국어의 '요컨대', '한마디로 말하면', '결국'에 해당합니다.",
@@ -844,7 +844,7 @@
         }
       ]
     },
-    "ja_Noun_25": {
+    "ja_n2_Noun_25": {
       "title": "명사 + につき (〜ni tsuki)",
       "shortExplanation": "공식적인 안내문·게시문 등에서 정중한 원인·이유를 나타내거나('~이므로', '~로 인하여'), 수량 단위당 비율('~당', '~마다')을 나타냅니다.",
       "longExplanation": "문형 '～につき'는 두 가지 주요 용법을 가집니다. 첫째, 공공장소의 안내 표지판, 게시문, 통지서 등에서 정중하고 격식 있게 사유나 원인을 밝힐 때 쓰이며(~로 인하여, ~인 까닭에), 둘째, 수량이나 단위를 나타내는 명사 뒤에 붙어 할당이나 계산의 기준 단위를 나타낼 때 쓰입니다(~당, ~개마다).",
@@ -864,7 +864,7 @@
         }
       ]
     },
-    "ja_Noun_26": {
+    "ja_n2_Noun_26": {
       "title": "명사 + にて (Noun nite)",
       "shortExplanation": "격조사 'で'의 격식 있고 정중한 문어체 표현으로, 동작이 일어나는 장소('~에서')나 수단·방법('~로', '~을 통해')을 나타냅니다.",
       "longExplanation": "조사 'にて'는 일상적으로 쓰이는 격조사 'で'와 동일한 기능을 수행하지만, 훨씬 격식 있고 고풍스러운 문어적 어감을 띱니다. 공식 공지문, 청첩장이나 안내장, 비즈니스 서신, 뉴스 보도 등에서 사건이 개최되는 장소(~에서)나 수단·매체(~을 통하여)를 정중하게 명시할 때 널리 쓰입니다.",
@@ -884,7 +884,7 @@
         }
       ]
     },
-    "ja_Noun_27": {
+    "ja_n2_Noun_27": {
       "title": "명사 + のことだから (Noun no koto dakara)",
       "shortExplanation": "어떤 인물의 평소 성격, 습관, 특징을 근거로 삼아 뒤의 행동이나 상황을 강하게 추측할 때 쓰이며, '그 ~이니까', '~의 성격상 분명'이라는 뜻입니다.",
       "longExplanation": "'～のことだから'는 화자가 상대방의 인품, 평소 버릇, 성격이나 해당 사물의 본질적인 특성을 익히 잘 알고 있을 때 사용됩니다. '그 사람의 평소 행실로 보아 틀림없이 이렇게 행동할 것이다'라고 합리적으로 추측하거나 단정할 때 쓰이며, 뒷부분에는 '～だろう'(~겠지), '～はずだ'(~할 터이다), '～かもしれない'(~일지도 모른다) 등의 추측 표현이 뒤따릅니다.",
@@ -906,7 +906,7 @@
     }
   },
   "ja": {
-    "ja_Aそれなら_13": {
+    "ja_n2_Aそれなら_13": {
       "title": "A。それなら B。(A. Sore nara B.)",
       "shortExplanation": "前文Aで述べられた状況や相手の発言を受けて、「もしそうであるなら」とその事実を前提とし、それに伴う判断、行動、提案などを後文Bで導く接続詞です。「それなら」「それでは」。",
       "longExplanation": "接続詞「それなら」（「それならば」のくだけた口語形）は、先行する文Aで示された事態や情報を受け止め、それを条件・前提として話し手の判断、決断、提案、意志などを後続の文Bで述べる際に用いられます。「その通りの状況であるならば、次にこのような行動をとろう」という論理的な帰結を表します。",
@@ -926,7 +926,7 @@
         }
       ]
     },
-    "ja_A_14": {
+    "ja_n2_A_14": {
       "title": "A それはそうと B。 (A Sore wa sou to B)",
       "shortExplanation": "それまでの話題Aを一度脇に置き、新しい別の話題Bへと転換する際に用いる接続詞です。「それはさておき」「ところで」。",
       "longExplanation": "接続表現「それはそうと」は、会話の流れの中でこれまでの話の内容Aを承認しつつも一旦打ち切り、話の焦点を新しい別の話題Bへと切り替えるときに用いられる口語表現です。「それはそれとして」「ところで」と似た働きを持ち、話題をスムーズに転換する際に役立ちます。",
@@ -946,7 +946,7 @@
         }
       ]
     },
-    "ja_Aだが_15": {
+    "ja_n2_Aだが_15": {
       "title": "A。だが B。(~daga)",
       "shortExplanation": "前文Aの内容に対して、それと対立・矛盾・対比する内容を後文Bで述べる逆接の接続詞です。「しかし」「けれども」。",
       "longExplanation": "接続詞「だが」（「であるが」の縮約形）は、前文Aで述べた事実や前提とは相反する事実、あるいは対照的な評価・意見を後文Bで導く表現です。日常会話で多用される「でも」に比べて硬く引き締まった文体であり、書き言葉や論説文、改まった談話などで好んで用いられます。",
@@ -966,7 +966,7 @@
         }
       ]
     },
-    "ja_AただB_16": {
+    "ja_n2_AただB_16": {
       "title": "A。ただB。(~tada)",
       "shortExplanation": "前文Aの内容を基本的に認めつつ、それに対する軽い留保、条件、例外、不満な点などを後文Bで補足する接続詞です。「ただ」「単にそれだけは」。",
       "longExplanation": "接続詞「ただ」は、先行文Aの内容をおおむね肯定・承認した上で、「ただしこれだけは補足しておくが」というニュアンスで、小さな例外や条件、わずかな欠点・懸念点などを後続文Bで付け加える際に用いられます。「しかし」ほど強い全面的な対立ではなく、部分的な補足や限定のニュアンスを含みます。",
@@ -986,7 +986,7 @@
         }
       ]
     },
-    "ja_AただしB_17": {
+    "ja_n2_AただしB_17": {
       "title": "A。ただしB。 (A. Tadashi B)",
       "shortExplanation": "前文Aで述べた原則的な内容や許可事項に対して、後文Bで補足的な制限、例外、付帯条件などを明確に付け加える接続詞です。「ただし」「但し」。",
       "longExplanation": "接続詞「ただし」（但し）は、前文Aで全体的な方針や許可・権利などを提示した上で、それに伴う守るべき条件、例外規定、注意事項などを後文Bで補足する際に用いられます。規約、契約書、公的な案内文、ビジネス文書などの改まった場面で非常に頻繁に使用される厳格な表現です。",
@@ -1006,7 +1006,7 @@
         }
       ]
     },
-    "ja_Aだって_18": {
+    "ja_n2_Aだって_18": {
       "title": "A。だって B。(Datte~)",
       "shortExplanation": "親しい間柄のくだけた日常会話で、理由や原因、言い訳を述べたり、後続の提案や行動の根拠を提示する表現です。「だって〜だもの」「〜だっていうから」。",
       "longExplanation": "「だって」は、親しい友人や家族との口語会話において、自分の主張や行動、提案に対する理由や言い訳を感情を込めて提示する際に用いられます。「〜という理由だから」「だって〜なんだから」と相手に甘えたり、理由を親しみやすく伝えたりする親密なニュアンスを帯びます。",
@@ -1026,7 +1026,7 @@
         }
       ]
     },
-    "ja_Aちなみに_19": {
+    "ja_n2_Aちなみに_19": {
       "title": "A。ちなみに B。(A. Chinamini B.)",
       "shortExplanation": "前文Aで取り上げた話題に関連して、参考情報や補足的な事柄をついでに付け加える接続詞です。「ついでに言うと」「参考までに」。",
       "longExplanation": "接続詞「ちなみに」（漢字表記「因みに」）は、先行文Aで言及した主題に関連付けて、付け足しの情報、背景知識、参考となる豆知識などを後続文Bで軽く補足する際に用いられます。話題を別のものへと完全に切り替える「それはそうと」とは異なり、同一テーマの補足・関連事項を付け加える役割を果たします。",
@@ -1046,7 +1046,7 @@
         }
       ]
     },
-    "ja_Aということは_20": {
+    "ja_n2_Aということは_20": {
       "title": "A。ということは B。 (A. To iu koto wa B.)",
       "shortExplanation": "前文Aの事実や状況を根拠として、論理的な推論や結論を後文Bで導き出す表現です。「つまり〜ということだ」「そのことから判断すると〜」。",
       "longExplanation": "「ということは」は、前文Aで述べられた観察事実や情報を受け止め、「その事実が意味するところは〜だ」と論理的に帰結・推測される内容を後文Bで導く接続表現です。後続の文末には、「〜に違いない」「〜かもしれない」「〜だろう」といった推量・確信の表現が頻繁に伴います。",
@@ -1066,7 +1066,7 @@
         }
       ]
     },
-    "ja_Aというのは_21": {
+    "ja_n2_Aというのは_21": {
       "title": "A。というのは B。(Toiu no wa~)",
       "shortExplanation": "前文Aで述べた結論や判断に対して、その理由、原因、または具体的な内容を後文Bで詳しく説明する表現です。「なぜなら〜だからだ」「そのわけは〜」。",
       "longExplanation": "「というのは」は、先行する文Aで示した事実・判断・結果を受けて、「その理由は何かというと〜」「具体的に説明すると〜」と後続文Bでその因果関係や背景を明かす接続表現です。後文の結びには、理由を明示する「〜からだ」「〜ためだ」などが呼応することが非常に一般的です。",
@@ -1086,7 +1086,7 @@
         }
       ]
     },
-    "ja_AなおB_22": {
+    "ja_n2_AなおB_22": {
       "title": "A。なおB。(A. Nao B.)",
       "shortExplanation": "前文Aの事柄を述べ終えた後に、関連する補足事項、連絡事項、追加情報を改まって付け加える接続詞です。「さらに」「また」「付け加えて」。",
       "longExplanation": "接続詞「なお」（漢字表記「尚」）は、先行文Aで主要な連絡や説明を完了した上で、それに付随する追加情報、例外事項、留意点などを後続文Bで客観的・公式に補足する際に用いられます。公的な通知文書、案内板、ビジネスメール、報道などで頻繁に用いられる改まった表現です。",
@@ -1106,7 +1106,7 @@
         }
       ]
     },
-    "ja_Aもっとも_23": {
+    "ja_n2_Aもっとも_23": {
       "title": "A。もっとも B。(Motto mo ~)",
       "shortExplanation": "前文Aで述べた一般的・全体的な主張に対して、言葉足らずや断定を避けるために、後文Bで但し書きや例外、留保条件を自ら補足する接続詞です。「そうは言っても」「ただし」。",
       "longExplanation": "接続詞「もっとも」（漢字表記「尤も」）は、先行文Aで一つの事実や判断を言い切った後、その表現があまりに一方的・絶対的になることを和らげるため、「もっとも、〜という一面もあるが」「とはいえ〜」と補足・限定のニュアンスを後続文Bで付け加える際に使われます。自らの言明を客観的に補正・調整する働きを持ちます。",
@@ -1126,7 +1126,7 @@
         }
       ]
     },
-    "ja_A要するに_24": {
+    "ja_n2_A要するに_24": {
       "title": "A。要するに B。(A. Yousuru ni B.)",
       "shortExplanation": "前文Aで詳しく述べた内容や具体例を、後文Bで手短に要約・集約して結論を述べる接続詞です。「要約すると」「つまり」「一言で言えば」。",
       "longExplanation": "接続詞「要するに」は、先行文Aで展開された事情や長めの説明を、最も本質的なポイントに絞って後続文Bで簡潔にまとめる際に用いられます。「端的に言えば」「結局のところ何が言いたいかというと」という論理的な要約の働きをします。",
@@ -1146,7 +1146,7 @@
         }
       ]
     },
-    "ja_Noun_25": {
+    "ja_n2_Noun_25": {
       "title": "名詞 ＋ につき (〜ni tsuki)",
       "shortExplanation": "掲示や公的文書などで改まった理由・原因を表す用法（「〜のため」「〜につき」）と、数量・単位ごとの割合を表す用法（「〜あたり」「〜ごとに」）を持ちます。",
       "longExplanation": "「～につき」には大きく分けて二つの用法があります。①【理由・原因】看板、張り紙、告知文などの改まった書き言葉において、客観的な事由を簡潔に提示する際に用いられます（例：工事中につき立入禁止、改装中につき休業）。②【割合・基準】数量詞や単位名詞の後ろに付き、「〜あたり」「〜ごとに」という分配・対応の基準を示します。",
@@ -1166,7 +1166,7 @@
         }
       ]
     },
-    "ja_Noun_26": {
+    "ja_n2_Noun_26": {
       "title": "名詞 ＋ にて (Noun nite)",
       "shortExplanation": "格助詞「で」に相当する改まった格調高い文語的表現で、動作・催しが行われる場所（「〜で」「〜において」）や手段・方法（「〜によって」）を表します。",
       "longExplanation": "格助詞「にて」は、現代語の「で」と同様に場所、手段、方法、材料などを表しますが、非常に改まったフォーマルな語感を持ちます。公的な案内通知、招待状、ビジネスメール、報道発表などの文章語において、催し物や会議が開催される場所を明示したり（例：会場にて）、伝達・調査の手段を示したり（例：書面にて、メールにて）する際によく用いられます。",
@@ -1186,7 +1186,7 @@
         }
       ]
     },
-    "ja_Noun_27": {
+    "ja_n2_Noun_27": {
       "title": "名詞 ＋ のことだから (Noun no koto dakara)",
       "shortExplanation": "その人の性格や普段の行動パターン、あるいはそのものの固有の性質を根拠にして、「あの人ならきっと〜だろう」と強く推測する表現です。「〜のことだから」「〜の性格から考えて」。",
       "longExplanation": "「～のことだから」は、話し手がよく知っている人物（場合によっては組織や事物）の名詞に付き、その人物の普段の性格、信条、習慣などを拠り所として、「あの人であれば当然このように振る舞うに違いない」と確信を持って推測・判断する際に用います。文末には「〜だろう」「〜に違いない」「〜はずだ」「〜かもしれない」といった推量の表現が伴います。",

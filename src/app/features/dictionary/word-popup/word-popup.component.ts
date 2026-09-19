@@ -8,7 +8,7 @@ import { OptionPickerComponent, OptionItem } from '../../../shared/components/op
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
 import { SubtitleService, YoutubeService } from '../../video';
-import { SettingsService, I18nService, AudioService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
 import { TranslationService } from '../../../services';
 import { Token, DictionaryEntry, SupportedLearningLanguage, WordLevel } from '../../../models';
 
@@ -26,6 +26,7 @@ export class WordPopupComponent implements OnDestroy {
   dictionary = inject(DictionaryService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
+  toast = inject(ToastService);
   translation = inject(TranslationService);
   i18n = inject(I18nService);
   subtitles = inject(SubtitleService);
@@ -85,8 +86,8 @@ export class WordPopupComponent implements OnDestroy {
   );
 
   levelOptions = computed<OptionItem[]>(() => [
-    { value: 'new', label: this.i18n.t('vocab.new'), icon: 'sparkles', color: 'new' },
-    { value: 'learning', label: this.i18n.t('vocab.learning'), icon: 'book-open', color: 'learning' },
+    { value: 'new', label: this.i18n.t('vocab.new'), icon: 'plus-circle', color: 'new' },
+    { value: 'learning', label: this.i18n.t('vocab.learning'), icon: 'brain', color: 'learning' },
     { value: 'known', label: this.i18n.t('vocab.known'), icon: 'check-circle', color: 'known' },
     { value: 'ignored', label: this.i18n.t('vocab.ignored'), icon: 'eye-off', color: 'ignored' }
   ]);
@@ -197,6 +198,10 @@ export class WordPopupComponent implements OnDestroy {
       const saveSurface = (word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface;
       this.vocab.addWord(saveSurface, '', lang, word.reading, word.pinyin, word.romanization, sentence, undefined, videoId, timestamp);
     }
+
+    const displayWord = entryData?.word || ((word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface);
+    const msg = this.i18n.t('vocab.saveSuccess', { word: displayWord }) || `Added "${displayWord}" to vocabulary`;
+    this.toast.success(msg);
   }
 
   onLangSelected(value: string): void {

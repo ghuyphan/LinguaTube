@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_77",
+    "id": "ja_n1_Noun_77",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんによっては (Noun no ikan ni yotte wa)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_78",
+    "id": "ja_n1_Noun_78",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんによらず (~ no ikan ni yorazu)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_79",
+    "id": "ja_n1_Noun_79",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のごとき Noun (A no gotoki B)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_80",
+    "id": "ja_n1_Noun_80",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のことだから (〜no koto dakara)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_81",
+    "id": "ja_n1_Noun_81",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 嫌いがある (Noun no kirai ga aru)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_82",
+    "id": "ja_n1_Noun_82",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の手前 (~no temae)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_83",
+    "id": "ja_n1_Noun_83",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の極み (〜no kiwami)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_84",
+    "id": "ja_n1_Noun_84",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 至り (~no itari)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_85",
+    "id": "ja_n1_Noun_85",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はいざ知らず (~ wa iza shirazu)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_86",
+    "id": "ja_n1_Noun_86",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はおろか～すら (Noun wa oroka ～sura)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_87",
+    "id": "ja_n1_Noun_87",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はおろか～まで (~wa oroka ~made)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_88",
+    "id": "ja_n1_Noun_88",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はおろか～も (Noun wa oroka ～ mo)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_89",
+    "id": "ja_n1_Noun_89",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はさておき (~ wa sateoki)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_90",
+    "id": "ja_n1_Noun_90",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + はどうであれ (~ wa dou de are)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_91",
+    "id": "ja_n1_Noun_91",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun まみれ (~mamire)",

@@ -224,18 +224,23 @@ export class VideoPlayerComponent implements OnDestroy {
   minimizeVideo = output<void>();
   selectTrack = output<string>();
   triggerAI = output<string | undefined>();
+  searchQueryChange = output<string>();
+  searchSubmit = output<string>();
 
   videoUrl = '';
+  videoUrlInput = signal('');
+  isYoutubeUrl = computed(() => !!this.youtube.extractVideoId(this.videoUrlInput().trim()));
   isLoading = signal(false);
-  error = signal<string | null>(null);
 
   // UI State
   areControlsVisible = signal(true);
   isFullscreen = signal(false);
-  isVolumeSliderVisible = signal(false);
   isPlayerSettingsOpen = signal(false);
+  isVolumeSliderVisible = signal(false);
+  private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
   playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' | 'reading' | 'grammar' | 'sleepTimer'>('main');
-  isMobile = signal<boolean>(typeof window !== 'undefined' ? (window.innerWidth <= 768 || window.innerHeight <= 500) : false);
+  private mobileQuery = typeof window !== 'undefined' ? window.matchMedia('(max-width: 768px), (max-height: 500px)') : null;
+  isMobile = signal<boolean>(this.mobileQuery ? this.mobileQuery.matches : false);
   readonly fontSizes = FONT_SIZES;
   readonly sleepTimerMinutesList = ['10', '15', '30', '45', '60'] as const;
   sleepTimerOption = signal<'off' | '10' | '15' | '30' | '45' | '60' | 'end'>('off');
@@ -286,6 +291,10 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Computed values
   displayTime = computed(() => {
+    const pb = this.progressBarComponent();
+    if (pb && pb.isDragging()) {
+      return pb.displayTime();
+    }
     return this.youtube.currentTime();
   });
 
@@ -380,7 +389,6 @@ export class VideoPlayerComponent implements OnDestroy {
   private previousHasVideo: boolean | null = null;
 
   private controlsTimeout: ReturnType<typeof setTimeout> | null = null;
-  private volumeSliderTimeout: ReturnType<typeof setTimeout> | null = null;
   private doubleTapTimeout: ReturnType<typeof setTimeout> | null = null;
   private waitForElementTimeout: ReturnType<typeof setTimeout> | null = null;
   private isDestroyed = false;
@@ -404,6 +412,14 @@ export class VideoPlayerComponent implements OnDestroy {
   private lastControlsShowTime = 0;
 
   constructor() {
+    if (this.mobileQuery) {
+      const handler = (e: MediaQueryListEvent) => {
+        this.isMobile.set(e.matches);
+      };
+      this.mobileQuery.addEventListener('change', handler);
+      this.eventCleanupFns.push(() => this.mobileQuery?.removeEventListener('change', handler));
+    }
+
     // Smooth dynamic height animation for desktop settings popup
     effect(() => {
       const popup = this.settingsPopup()?.nativeElement;
@@ -602,17 +618,6 @@ export class VideoPlayerComponent implements OnDestroy {
   // ============================================
   // KEYBOARD CONTROLS
   // ============================================
-
-  clearUrl() {
-    this.videoUrl = '';
-  }
-
-  @HostListener('window:resize')
-  onWindowResize(): void {
-    if (typeof window !== 'undefined') {
-      this.isMobile.set(window.innerWidth <= 768 || window.innerHeight <= 500);
-    }
-  }
 
   @HostListener('document:keydown.escape')
   onEscape() {
@@ -920,11 +925,8 @@ export class VideoPlayerComponent implements OnDestroy {
       this.doubleTapTimeout = null;
     }
 
-    this.doubleTapTimeout = setTimeout(() => {
-      this.togglePlay();
-      this.showPlayPauseFeedback();
-      this.doubleTapTimeout = null;
-    }, 220);
+    this.togglePlay();
+    this.showPlayPauseFeedback();
   }
 
   onOverlayDblClick(event: MouseEvent) {
@@ -1244,6 +1246,15 @@ export class VideoPlayerComponent implements OnDestroy {
         }
         try { (screen.orientation as ScreenOrientationWithLock | undefined)?.unlock?.(); } catch { }
       } else {
+        const canNativeFs = typeof elem.requestFullscreen === 'function' || typeof elem.webkitRequestFullscreen === 'function';
+        if (!canNativeFs) {
+          // Fallback to pseudo-fullscreen on iOS Safari where Fullscreen API is unavailable on div
+          const newState = !this.isFullscreen();
+          this.isFullscreen.set(newState);
+          this.fullscreenChanged.emit(newState);
+          return;
+        }
+
         if (elem.requestFullscreen) {
           await elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) {
@@ -1262,15 +1273,9 @@ export class VideoPlayerComponent implements OnDestroy {
   // FULLSCREEN WORD POPUP
   // ============================================
 
-  private wasPlayingBeforeFsWord = false;
-
   onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
     event.stopPropagation();
-
-    this.wasPlayingBeforeFsWord = this.youtube.intendedPlayingState();
-    if (this.wasPlayingBeforeFsWord) {
-      this.youtube.pause();
-    }
+    this.youtube.acquirePauseLock('fs-word-lookup');
 
     if (!this.isFullscreen()) {
       this.fullscreenWordClicked.emit({ token, sentence });
@@ -1287,10 +1292,7 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsPopupVisible.set(false);
     this.fsSelectedWord.set(null);
     this.fsSelectedSentence.set('');
-    if (this.wasPlayingBeforeFsWord) {
-      this.youtube.play();
-      this.wasPlayingBeforeFsWord = false;
-    }
+    this.youtube.releasePauseLock('fs-word-lookup');
   }
 
   getFsGrammarMatchForToken(index: number): GrammarMatch | undefined {
@@ -1407,7 +1409,7 @@ export class VideoPlayerComponent implements OnDestroy {
   // PROGRESS BAR
   // ============================================
 
-  startSeeking(event: MouseEvent | TouchEvent) {
+  startSeeking(event: PointerEvent) {
     this.progressBarComponent()?.startSeeking(event);
   }
 
@@ -1437,22 +1439,62 @@ export class VideoPlayerComponent implements OnDestroy {
   // VIDEO LOADING
   // ============================================
 
-  loadVideo(): void {
-    const url = this.videoUrl.trim();
-    if (!url) {
-      this.error.set('Please enter a YouTube URL');
-      return;
+  onUrlOrSearchChange(val: string): void {
+    this.videoUrl = val || '';
+    this.videoUrlInput.set(this.videoUrl);
+    const trimmed = this.videoUrl.trim();
+    const videoId = this.youtube.extractVideoId(trimmed);
+    if (videoId) {
+      this.searchQueryChange.emit('');
+    } else {
+      this.searchQueryChange.emit(trimmed);
     }
+  }
 
-    const videoId = this.youtube.extractVideoId(url);
-    if (!videoId) {
-      this.error.set('Invalid YouTube URL');
-      return;
-    }
-
-    this.playerView.expand();
-    this.router.navigate(['/video'], { queryParams: { id: videoId } });
+  clearUrl(): void {
     this.videoUrl = '';
+    this.videoUrlInput.set('');
+    this.searchQueryChange.emit('');
+  }
+
+  onSubmit(): void {
+    const trimmed = this.videoUrl.trim();
+    if (!trimmed) {
+      this.searchQueryChange.emit('');
+      return;
+    }
+
+    const videoId = this.youtube.extractVideoId(trimmed);
+    if (videoId) {
+      this.playerView.expand();
+      this.router.navigate(['/video'], { queryParams: { id: videoId } });
+      this.videoUrl = '';
+      this.videoUrlInput.set('');
+      this.searchQueryChange.emit('');
+    } else {
+      // If user clearly entered a URL (starts with protocol/www or domain pattern without spaces), treat as invalid YouTube link
+      const isLikelyUrl = /^(https?:\/\/|www\.)/i.test(trimmed) || 
+        (!trimmed.includes(' ') && (trimmed.includes('youtu.be') || trimmed.includes('youtube.com') || trimmed.includes('.com/') || trimmed.includes('.be/')));
+      
+      if (isLikelyUrl) {
+        this.toast.error(this.i18n.t('player.invalidUrl') || 'Please enter a valid YouTube link');
+        return;
+      }
+
+      // Keyword search: emit submit for deep server search, blur mobile input, and scroll to feed
+      this.searchSubmit.emit(trimmed);
+      if (typeof document !== 'undefined') {
+        (document.activeElement as HTMLElement)?.blur?.();
+        const feedEl = document.querySelector('.home-dashboard');
+        if (feedEl) {
+          feedEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  }
+
+  loadVideo(): void {
+    this.onSubmit();
   }
 
   async pasteFromClipboard(): Promise<void> {
@@ -1460,8 +1502,7 @@ export class VideoPlayerComponent implements OnDestroy {
       if (typeof navigator !== 'undefined' && navigator.clipboard?.readText) {
         const text = await navigator.clipboard.readText();
         if (text) {
-          this.videoUrl = text.trim();
-          this.error.set(null);
+          this.onUrlOrSearchChange(text.trim());
         }
       }
     } catch {

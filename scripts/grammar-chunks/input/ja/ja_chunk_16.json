@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_たりたり_89",
+    "id": "ja_n4_たりたり_89",
     "language": "ja",
     "pattern": "～たり～たり",
     "title": "～たり～たり (〜tari 〜tari)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_だろう_90",
+    "id": "ja_n4_だろう_90",
     "language": "ja",
     "pattern": "～だろう",
     "title": "～だろう (〜darou)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_っていう_91",
+    "id": "ja_n4_っていう_91",
     "language": "ja",
     "pattern": "～っていう",
     "title": "～っていう (〜tte iu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_で_92",
+    "id": "ja_n4_で_92",
     "language": "ja",
     "pattern": "～で",
     "title": "～で (〜de)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_でしょう_93",
+    "id": "ja_n4_でしょう_93",
     "language": "ja",
     "pattern": "～でしょう",
     "title": "～でしょう (〜deshou)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_てはいけない_94",
+    "id": "ja_n4_てはいけない_94",
     "language": "ja",
     "pattern": "～てはいけない",
     "title": "～てはいけない (〜te wa ikenai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_てもいい_95",
+    "id": "ja_n4_てもいい_95",
     "language": "ja",
     "pattern": "～てもいい",
     "title": "～てもいい (〜temo ii)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_てもでも_96",
+    "id": "ja_n4_てもでも_96",
     "language": "ja",
     "pattern": "～ても/でも",
     "title": "～ても/でも (〜te mo/demo)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_といい_97",
+    "id": "ja_n4_といい_97",
     "language": "ja",
     "pattern": "～といい",
     "title": "～といい (〜to ii)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_という_98",
+    "id": "ja_n4_という_98",
     "language": "ja",
     "pattern": "～という",
     "title": "～という (〜to iu) Noun",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_どういう_99",
+    "id": "ja_n4_どういう_99",
     "language": "ja",
     "pattern": "どういう",
     "title": "どういう Noun (dou iu Noun)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_と思う_100",
+    "id": "ja_n4_と思う_100",
     "language": "ja",
     "pattern": "～と思う",
     "title": "～と思う (〜to omou)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_という_101",
+    "id": "ja_n4_という_101",
     "language": "ja",
     "pattern": "～という",
     "title": "～という (〜to iu)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_ないといけない_102",
+    "id": "ja_n4_ないといけない_102",
     "language": "ja",
     "pattern": "～ないといけない",
     "title": "～ないといけない (〜nai to ikenai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_なきゃいけない_103",
+    "id": "ja_n4_なきゃいけない_103",
     "language": "ja",
     "pattern": "～なきゃいけない",
     "title": "～なきゃいけない (〜nakya ikenai)",

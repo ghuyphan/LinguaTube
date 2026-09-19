@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_ないと_70",
+    "id": "ja_n3_ないと_70",
     "language": "ja",
     "pattern": "～ないと",
     "title": "～ないと (〜nai to)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_なぜなら_71",
+    "id": "ja_n3_なぜなら_71",
     "language": "ja",
     "pattern": "～なぜなら",
     "title": "～なぜなら (〜nazenara)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_など_72",
+    "id": "ja_n3_など_72",
     "language": "ja",
     "pattern": "～など",
     "title": "～など (〜nado)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_なんか_73",
+    "id": "ja_n3_なんか_73",
     "language": "ja",
     "pattern": "～なんか",
     "title": "～なんか (〜nanka)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_において_74",
+    "id": "ja_n3_において_74",
     "language": "ja",
     "pattern": "～において",
     "title": "～において (〜ni oite)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_にかわって_75",
+    "id": "ja_n3_にかわって_75",
     "language": "ja",
     "pattern": "～にかわって",
     "title": "～にかわって (〜ni kawatte)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_にしては_76",
+    "id": "ja_n3_にしては_76",
     "language": "ja",
     "pattern": "～にしては",
     "title": "～にしては (〜ni shite wa)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_にしても_77",
+    "id": "ja_n3_にしても_77",
     "language": "ja",
     "pattern": "～にしても",
     "title": "～にしても (〜ni shitemo)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_について_78",
+    "id": "ja_n3_について_78",
     "language": "ja",
     "pattern": "～について",
     "title": "～について (〜ni tsuite)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_にとって_79",
+    "id": "ja_n3_にとって_79",
     "language": "ja",
     "pattern": "～にとって",
     "title": "～にとって (〜ni totte)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_によって_80",
+    "id": "ja_n3_によって_80",
     "language": "ja",
     "pattern": "～によって",
     "title": "～によって (〜ni yotte)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_によれば_81",
+    "id": "ja_n3_によれば_81",
     "language": "ja",
     "pattern": "～によれば",
     "title": "～によれば (〜ni yoreba)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_に対して_82",
+    "id": "ja_n3_に対して_82",
     "language": "ja",
     "pattern": "～に対して",
     "title": "～に対して (～ni taishite)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_に比べて_83",
+    "id": "ja_n3_に比べて_83",
     "language": "ja",
     "pattern": "～に比べて",
     "title": "～に比べて (〜ni kurabete)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_に関して_84",
+    "id": "ja_n3_に関して_84",
     "language": "ja",
     "pattern": "～に関して",
     "title": "～に関して (〜ni kanshite)",

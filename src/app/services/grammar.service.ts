@@ -53,7 +53,6 @@ const EN_NLP_RULES: EnglishNlpRule[] = [
     // Habit, Preference & Familiarity
     { id: 'en_b2_20', match: '(#Copula|get|gets|got|getting) used to (#Gerund|#Noun)' },
     { id: 'en_b1_21', match: 'used to #Infinitive' },
-    { id: 'en_b1_21', match: "(would|'d) rather #Verb" },
 
     // Necessity & Obligation
     { id: 'en_a2_13', match: '(have|has|had|having) to #Verb' },
@@ -351,22 +350,24 @@ export class GrammarService {
      */
     private normalizePattern(pattern: string, lang?: SupportedGrammarLang, stripPlaceholders = true): string {
         if (!pattern) return '';
-        let norm = pattern
-            .replace(/[~～〜。、・….\s?？！!,，:：;；"'"'“”‘’()（）\u005B\u005D【】]/g, '')
-            .toLowerCase();
+        let text = pattern;
 
-        // For non-English languages, strip pedagogical placeholders (N, V, M, Adj, A, B, AGE, etc.)
+        // For non-English languages, strip pedagogical placeholders with word boundaries before removing whitespace
         if (stripPlaceholders && lang && lang !== 'en') {
-            const withoutPlaceholders = norm
-                .replace(/\b(adj|noun|verb)\b/gi, '')
-                .replace(/(adjective|adverb)/gi, '')
-                .replace(/[nvabm](\d)?/gi, '')
-                .replace(/age/gi, '');
-            if (withoutPlaceholders.length >= 1) {
-                norm = withoutPlaceholders;
+            const stripped = text
+                .replace(/\b(adjective|adverb|adj|noun|verb)\b/gi, '')
+                .replace(/\b[nvabm](\d)?\b/gi, '')
+                .replace(/\bage\b/gi, '');
+            if (stripped.trim().length >= 1) {
+                text = stripped;
             }
         }
-        return norm;
+
+        const norm = text
+            .replace(/[~～〜。、・….\s?？！!,，:：;；+＋"'"'“”‘’()（）\u005B\u005D【】]/g, '')
+            .toLowerCase();
+
+        return norm || pattern.replace(/[\s~～〜]/g, '').toLowerCase();
     }
 
     /**

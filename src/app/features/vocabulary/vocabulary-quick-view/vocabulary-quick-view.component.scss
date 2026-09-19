@@ -1,5 +1,5 @@
 .quick-view-modal {
-    padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    padding: var(--space-md) var(--space-md) var(--space-lg);
     max-width: 480px;
     margin: 0 auto;
 }
@@ -208,7 +208,7 @@
 /* Mobile adjustments */
 @media (max-width: 640px) {
     .quick-view-modal {
-        padding: var(--space-sm) var(--space-sm) calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
+        padding: var(--space-sm) var(--space-sm) var(--space-md);
     }
 
     .quick-view-item {

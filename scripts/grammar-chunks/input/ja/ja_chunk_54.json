@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_ながらに_212",
+    "id": "ja_n1_ながらに_212",
     "language": "ja",
     "pattern": "～ながらに",
     "title": "～ながらに (～nagara ni)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_ながらの_213",
+    "id": "ja_n1_ながらの_213",
     "language": "ja",
     "pattern": "～ながらの",
     "title": "～ながらの Noun (〜nagara no Noun)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_ながらも_214",
+    "id": "ja_n1_ながらも_214",
     "language": "ja",
     "pattern": "～ながらも",
     "title": "～ながらも (〜nagara mo)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_なくはない_215",
+    "id": "ja_n1_なくはない_215",
     "language": "ja",
     "pattern": "～なくはない",
     "title": "～なくはない (〜naku wa nai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_なくもない_216",
+    "id": "ja_n1_なくもない_216",
     "language": "ja",
     "pattern": "～なくもない",
     "title": "～なくもない (〜naku mo nai)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ならなりに_217",
+    "id": "ja_n1_ならなりに_217",
     "language": "ja",
     "pattern": "～なら～なりに",
     "title": "～なら～なりに",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_には及ばない_218",
+    "id": "ja_n1_には及ばない_218",
     "language": "ja",
     "pattern": "～には及ばない",
     "title": "～には及ばない (〜ni wa oyobanai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_に堪えない_219",
+    "id": "ja_n1_に堪えない_219",
     "language": "ja",
     "pattern": "～に堪えない",
     "title": "～に堪えない (～ni taenai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_に堪える_220",
+    "id": "ja_n1_に堪える_220",
     "language": "ja",
     "pattern": "～に堪える",
     "title": "～に堪える (～ni taeru)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_に耐える_221",
+    "id": "ja_n1_に耐える_221",
     "language": "ja",
     "pattern": "～に耐える",
     "title": "～に耐える (～ni taeru)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_に至った_222",
+    "id": "ja_n1_に至った_222",
     "language": "ja",
     "pattern": "～に至った",
     "title": "～に至った (〜ni itatta)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_に越したことはない_223",
+    "id": "ja_n1_に越したことはない_223",
     "language": "ja",
     "pattern": "～に越したことはない",
     "title": "～に越したことはない (〜ni koshita koto wa nai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_に難くない_224",
+    "id": "ja_n1_に難くない_224",
     "language": "ja",
     "pattern": "～に難くない",
     "title": "～に難くない (～ni katakunai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_のは_225",
+    "id": "ja_n1_のは_225",
     "language": "ja",
     "pattern": "～のは",
     "title": "～のは Noun ぐらいのものだ (〜no wa Noun gurai no mono da)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ばものを_226",
+    "id": "ja_n1_ばものを_226",
     "language": "ja",
     "pattern": "～ば～ものを",
     "title": "～ば～ものを (～ba～mono o)",

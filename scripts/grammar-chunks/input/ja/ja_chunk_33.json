@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_てまで_88",
+    "id": "ja_n2_てまで_88",
     "language": "ja",
     "pattern": "～てまで",
     "title": "～てまで (〜te made)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_て当然だ_89",
+    "id": "ja_n2_て当然だ_89",
     "language": "ja",
     "pattern": "～て当然だ",
     "title": "～て当然だ (〜te tōzen da)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_というものだ_90",
+    "id": "ja_n2_というものだ_90",
     "language": "ja",
     "pattern": "～というものだ",
     "title": "～というものだ (〜to iu mono da)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_どうにかないものか_91",
+    "id": "ja_n2_どうにかないものか_91",
     "language": "ja",
     "pattern": "どうにか～ないものか",
     "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_とおり_92",
+    "id": "ja_n2_とおり_92",
     "language": "ja",
     "pattern": "～とおり",
     "title": "～とおり (〜toori)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_とか_93",
+    "id": "ja_n2_とか_93",
     "language": "ja",
     "pattern": "～とか",
     "title": "～とか (〜to ka)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ところ_94",
+    "id": "ja_n2_ところ_94",
     "language": "ja",
     "pattern": "～ところ",
     "title": "～ところ (〜tokoro)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_どころか_95",
+    "id": "ja_n2_どころか_95",
     "language": "ja",
     "pattern": "～どころか",
     "title": "～どころか (〜dokoro ka)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_どころではない_96",
+    "id": "ja_n2_どころではない_96",
     "language": "ja",
     "pattern": "～どころではない",
     "title": "～どころではない (〜dokoro de wa nai)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_としたら_97",
+    "id": "ja_n2_としたら_97",
     "language": "ja",
     "pattern": "～としたら",
     "title": "～としたら (〜to shitara)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_としても_98",
+    "id": "ja_n2_としても_98",
     "language": "ja",
     "pattern": "～としても",
     "title": "～としても (〜to shite mo)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_とともに_99",
+    "id": "ja_n2_とともに_99",
     "language": "ja",
     "pattern": "～と～ともに",
     "title": "～と～ともに (〜to 〜tomoni)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_とは限らない_100",
+    "id": "ja_n2_とは限らない_100",
     "language": "ja",
     "pattern": "～とは限らない",
     "title": "～とは限らない (〜to wa kagiranai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_ないことはない_101",
+    "id": "ja_n2_ないことはない_101",
     "language": "ja",
     "pattern": "～ないことはない",
     "title": "～ないことはない (〜nai koto wa nai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ないこともない_102",
+    "id": "ja_n2_ないこともない_102",
     "language": "ja",
     "pattern": "～ないこともない",
     "title": "～ないこともない (〜nai koto mo nai)",

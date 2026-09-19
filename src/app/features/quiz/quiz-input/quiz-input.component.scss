@@ -361,3 +361,28 @@
 .spacer {
     display: none;
 }
+
+.quiz-fade-in {
+    animation: quizFadeIn 200ms ease-out forwards;
+}
+
+@keyframes quizFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-wrapper.is-shake {
+    animation: quizShake 0.4s ease-in-out both;
+}
+
+@keyframes quizShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}

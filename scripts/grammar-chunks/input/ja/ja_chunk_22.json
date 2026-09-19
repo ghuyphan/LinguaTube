@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_というと_55",
+    "id": "ja_n3_というと_55",
     "language": "ja",
     "pattern": "～というと",
     "title": "～というと (〜to iu to)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_というの_56",
+    "id": "ja_n3_というの_56",
     "language": "ja",
     "pattern": "～というの～",
     "title": "～というの～ (〜to iu no〜)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_というのは_57",
+    "id": "ja_n3_というのは_57",
     "language": "ja",
     "pattern": "～というのは",
     "title": "～というのは (〜to iu no wa)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_というより_58",
+    "id": "ja_n3_というより_58",
     "language": "ja",
     "pattern": "～というより",
     "title": "～というより (〜to iu yori)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_といっても_59",
+    "id": "ja_n3_といっても_59",
     "language": "ja",
     "pattern": "～といっても",
     "title": "～といっても (〜to ittemo)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_とおり_60",
+    "id": "ja_n3_とおり_60",
     "language": "ja",
     "pattern": "～とおり",
     "title": "～とおり (〜toori)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_とく_61",
+    "id": "ja_n3_とく_61",
     "language": "ja",
     "pattern": "～とく",
     "title": "～とく (〜toku)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_ところが_62",
+    "id": "ja_n3_ところが_62",
     "language": "ja",
     "pattern": "～ところが",
     "title": "～ところが (〜tokoro ga)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ところだった_63",
+    "id": "ja_n3_ところだった_63",
     "language": "ja",
     "pattern": "～ところだった",
     "title": "～ところだった (〜tokoro datta)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_ところで_64",
+    "id": "ja_n3_ところで_64",
     "language": "ja",
     "pattern": "ところで",
     "title": "ところで (tokorode)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_としたら_65",
+    "id": "ja_n3_としたら_65",
     "language": "ja",
     "pattern": "～としたら",
     "title": "～としたら (〜to shitara)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_として_66",
+    "id": "ja_n3_として_66",
     "language": "ja",
     "pattern": "～として",
     "title": "～として (〜to shite)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_どんなにことか_67",
+    "id": "ja_n3_どんなにことか_67",
     "language": "ja",
     "pattern": "～どんなに～ことか",
     "title": "～どんなに～ことか (〜donna ni〜koto ka)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_どんなにても_68",
+    "id": "ja_n3_どんなにても_68",
     "language": "ja",
     "pattern": "どんなに～ても",
     "title": "どんなに～ても (donna ni ~ temo)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ないことはない_69",
+    "id": "ja_n3_ないことはない_69",
     "language": "ja",
     "pattern": "～ないことはない",
     "title": "～ないことはない (〜nai koto wa nai)",

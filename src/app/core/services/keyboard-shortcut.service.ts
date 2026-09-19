@@ -22,7 +22,10 @@ export type KeyboardShortcutEvent =
     | { type: 'cycle-font-size' }
     | { type: 'toggle-dual-subtitles' }
     | { type: 'toggle-miniplayer' }
-    | { type: 'toggle-cue-loop' };
+    | { type: 'toggle-cue-loop' }
+    | { type: 'study-flip' }
+    | { type: 'study-rate'; data: { rating: 'wrong' | 'hard' | 'good' | 'easy' } }
+    | { type: 'study-audio' };
 
 @Injectable({
     providedIn: 'root'
@@ -42,6 +45,7 @@ export class KeyboardShortcutService implements OnDestroy {
 
     // Optional context providers
     private fsPopupVisibleCheck: (() => boolean) | null = null;
+    private studyActiveCheck: (() => boolean) | null = null;
 
     constructor() {
         if (!isPlatformBrowser(this.platformId)) return;
@@ -50,6 +54,13 @@ export class KeyboardShortcutService implements OnDestroy {
 
     ngOnDestroy(): void {
         this.teardownListeners();
+    }
+
+    /**
+     * Set a callback to check if flashcard study mode is currently active
+     */
+    setStudyActiveCallback(fn: (() => boolean) | null): void {
+        this.studyActiveCheck = fn;
     }
 
     /**
@@ -158,6 +169,40 @@ export class KeyboardShortcutService implements OnDestroy {
                 return true;
             }
             return false;
+        }
+
+        // 4.5 Study Mode Shortcuts (Active when reviewing flashcards)
+        if (this.studyActiveCheck && this.studyActiveCheck()) {
+            if (event.code === 'Space' || event.code === 'Enter') {
+                event.preventDefault();
+                this.emitEvent({ type: 'study-flip' });
+                return true;
+            }
+            if (event.code === 'KeyR') {
+                event.preventDefault();
+                this.emitEvent({ type: 'study-audio' });
+                return true;
+            }
+            if (event.key === '1' || event.code === 'Digit1' || event.code === 'Numpad1') {
+                event.preventDefault();
+                this.emitEvent({ type: 'study-rate', data: { rating: 'wrong' } });
+                return true;
+            }
+            if (event.key === '2' || event.code === 'Digit2' || event.code === 'Numpad2') {
+                event.preventDefault();
+                this.emitEvent({ type: 'study-rate', data: { rating: 'hard' } });
+                return true;
+            }
+            if (event.key === '3' || event.code === 'Digit3' || event.code === 'Numpad3') {
+                event.preventDefault();
+                this.emitEvent({ type: 'study-rate', data: { rating: 'good' } });
+                return true;
+            }
+            if (event.key === '4' || event.code === 'Digit4' || event.code === 'Numpad4') {
+                event.preventDefault();
+                this.emitEvent({ type: 'study-rate', data: { rating: 'easy' } });
+                return true;
+            }
         }
 
         // 5. Video Playback Shortcuts (requires active video)

@@ -22,6 +22,9 @@ export class VideoBottomBarComponent implements OnDestroy {
   isMuted = input<boolean>(false);
   volumePercent = input<number>(100);
 
+  // UI States managed locally or passed down
+  isVolumeSliderVisible = input<boolean>(false);
+
   // Feature states
   isFullscreen = input<boolean>(false);
   subtitlesVisible = input<boolean>(true);
@@ -30,9 +33,6 @@ export class VideoBottomBarComponent implements OnDestroy {
   isCJKLanguage = input<boolean>(false);
   isAISubtitle = input<boolean>(false);
 
-  // UI States managed locally or passed down
-  isVolumeSliderVisible = input<boolean>(false);
-
   // Translation function
   t = input<(key: string) => string>((k) => k);
 
@@ -40,6 +40,8 @@ export class VideoBottomBarComponent implements OnDestroy {
   playPauseClicked = output<MouseEvent>();
   toggleMute = output<void>();
   volumeChange = output<number>();
+  showVolumeSlider = output<void>();
+  hideVolumeSlider = output<void>();
 
   // Outputs for Right Controls
   toggleSubtitles = output<void>();
@@ -48,10 +50,6 @@ export class VideoBottomBarComponent implements OnDestroy {
   openSettings = output<MouseEvent>();
   toggleMiniplayer = output<void>();
   toggleFullscreen = output<void>();
-
-  // Mouse event outputs for volume slider
-  showVolumeSlider = output<void>();
-  hideVolumeSlider = output<void>();
 
   readonly volumeIcon = computed<IconName>(() => getVolumeIcon(this.volume(), this.isMuted()));
 
@@ -62,8 +60,8 @@ export class VideoBottomBarComponent implements OnDestroy {
     event.preventDefault();
 
     const track = event.currentTarget as HTMLElement;
+    const rect = track.getBoundingClientRect(); // Cached once!
     const updateVolume = (e: MouseEvent) => {
-      const rect = track.getBoundingClientRect();
       const fraction = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
       const value = Math.round(fraction * 100);
       this.volumeChange.emit(value);

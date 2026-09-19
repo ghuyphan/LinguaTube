@@ -1,20 +1,35 @@
 import { Injectable, inject, signal, effect } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
 import { AuthService } from './auth.service';
 import { SettingsService } from './settings.service';
 import { GamificationService } from './gamification.service';
 import { OfflineStreakRepository } from '../repositories/offline-streak.repository';
+import { SupabaseService } from './supabase.service';
+import { StorageService } from './storage.service';
 import { LeaderboardEntry } from '../../models/gamification.model';
 
-const STORAGE_KEY = 'linguatube_leaderboard_cache';
-const GUEST_ID_KEY = 'linguatube_guest_id';
+const STORAGE_KEY = 'voca_leaderboard_cache';
+const GUEST_ID_KEY = 'voca_guest_id';
+
+interface LeaderboardRpcRow {
+    rank: number;
+    user_id: string;
+    name: string | null;
+    avatar: string | null;
+    xp: number;
+    weekly_xp: number;
+    level: number;
+    streak: number;
+    badges_count: number;
+    target_lang: string | null;
+    country: string | null;
+}
 
 @Injectable({
     providedIn: 'root'
 })
 export class LeaderboardService {
-    private http = inject(HttpClient);
+    private supabase = inject(SupabaseService);
+    private storage = inject(StorageService);
     private auth = inject(AuthService);
     private settings = inject(SettingsService);
     private gamification = inject(GamificationService);
@@ -32,14 +47,14 @@ export class LeaderboardService {
     constructor() {
         this.loadFromStorage();
         // Load initial leaderboard
-        this.loadLeaderboard('all');
+        void this.loadLeaderboard('all');
 
-        // Automatically sync score when user logs in or levels up
+        // Automatically sync profile target_lang when user logs in or levels up
         effect(() => {
             const xp = this.gamification.totalXP();
             const level = this.gamification.userLevel();
             if (xp > 0 || level > 1) {
-                this.syncMyScore();
+                void this.syncMyScore();
             }
         });
     }
@@ -49,10 +64,10 @@ export class LeaderboardService {
      */
     getGuestId(): string {
         try {
-            let guestId = localStorage.getItem(GUEST_ID_KEY);
+            let guestId = this.storage.get<string>(GUEST_ID_KEY);
             if (!guestId) {
                 guestId = `guest_${Math.random().toString(36).substring(2, 10)}${Date.now().toString(36)}`;
-                localStorage.setItem(GUEST_ID_KEY, guestId);
+                this.storage.set(GUEST_ID_KEY, guestId);
             }
             return guestId;
         } catch {
@@ -61,48 +76,58 @@ export class LeaderboardService {
     }
 
     /**
-     * Current user identifier (PocketBase user ID or guest ID)
+     * Current user identifier (Supabase user ID or guest ID)
      */
     getCurrentUserId(): string {
         return this.auth.user()?.id || this.getGuestId();
     }
 
     /**
-     * Fetch global leaderboard
+     * Fetch global leaderboard directly from Supabase RPC
      */
     async loadLeaderboard(
         lang: string = this.selectedLang(),
-        force = false,
+        _force = false,
         period: 'weekly' | 'all_time' = this.selectedPeriod()
     ): Promise<void> {
         this.selectedLang.set(lang);
         this.selectedPeriod.set(period);
         this.isLoading.set(true);
 
-        const currentUserId = this.getCurrentUserId();
-        const langQuery = lang && lang !== 'all' ? `&lang=${encodeURIComponent(lang)}` : '';
-        const periodQuery = `&period=${encodeURIComponent(period)}`;
-        const bustQuery = force ? `&refresh=true&_t=${Date.now()}` : '';
-
         try {
-            const res = await firstValueFrom(this.http.get<{
-                success: boolean;
-                topLearners: LeaderboardEntry[];
-                userRank: LeaderboardEntry | null;
-            }>(`/api/leaderboard?userId=${encodeURIComponent(currentUserId)}${langQuery}${periodQuery}${bustQuery}`));
+            const { data, error } = await this.supabase.client.rpc('get_leaderboard', {
+                p_lang: lang === 'all' ? null : lang,
+                p_period: period,
+                p_limit: 50
+            });
 
-            if (res && res.success && Array.isArray(res.topLearners)) {
-                this.topLearners.set(res.topLearners);
-                if (res.userRank) {
-                    this.userRank.set(res.userRank);
-                } else {
-                    this.computeClientUserRank(res.topLearners);
-                }
-                this.saveToStorage(res.topLearners);
+            if (error) {
+                throw error;
+            }
+
+            if (Array.isArray(data) && data.length > 0) {
+                const learners: LeaderboardEntry[] = (data as LeaderboardRpcRow[]).map(row => ({
+                    rank: Number(row.rank),
+                    userId: row.user_id,
+                    name: row.name || 'Learner',
+                    avatar: row.avatar || '',
+                    xp: row.xp ?? 0,
+                    weeklyXp: row.weekly_xp ?? 0,
+                    level: row.level ?? 1,
+                    streak: row.streak ?? 0,
+                    badgesCount: Number(row.badges_count ?? 0),
+                    targetLang: row.target_lang || 'all',
+                    country: row.country || ''
+                }));
+
+                this.topLearners.set(learners);
+                this.computeClientUserRank(learners);
+                this.saveToStorage(learners);
+            } else {
+                this.computeClientUserRank(this.topLearners());
             }
         } catch (err) {
-            console.warn('[LeaderboardService] Failed to fetch leaderboard, using cached/seed:', err);
-            // Fallback to local computation
+            console.warn('[LeaderboardService] Failed to fetch leaderboard from Supabase, using cache:', err);
             this.computeClientUserRank(this.topLearners());
         } finally {
             this.isLoading.set(false);
@@ -110,38 +135,26 @@ export class LeaderboardService {
     }
 
     /**
-     * Sync user's latest XP, Level and Streak to the global leaderboard
+     * Sync user's latest target language to Supabase profile
      */
     async syncMyScore(force = false): Promise<void> {
         const now = Date.now();
-        // Client-side debounce/throttle: at most once every 30 seconds unless forced
         if (!force && now - this.lastSyncTime < 30000) return;
         this.lastSyncTime = now;
 
-        const isAuth = this.auth.isLoggedIn();
         const user = this.auth.user();
-        const guestId = isAuth ? undefined : this.getGuestId();
+        if (!user) return;
 
         const userLang = this.settings.settings().language || 'ja';
         const targetLang = ['ja', 'ko', 'zh', 'en'].includes(userLang) ? userLang : 'ja';
 
-        const payload = {
-            guest_id: guestId,
-            xp: this.gamification.totalXP(),
-            weekly_xp: this.gamification.weeklyXP(),
-            level: this.gamification.userLevel(),
-            streak: this.streakRepo.streakData().currentStreak,
-            badges_count: Object.keys(this.gamification.rawState().unlockedAchievements).length,
-            target_lang: targetLang,
-            name: user?.name || 'Learner',
-            avatar: user?.picture || ''
-        };
-
         try {
-            await firstValueFrom(this.http.post('/api/leaderboard', payload));
+            await this.supabase.client
+                .from('profiles')
+                .update({ target_lang: targetLang })
+                .eq('id', user.id);
         } catch (err) {
-            // Silently ignore sync failures (offline or network fluctuation)
-            console.warn('[LeaderboardService] Score sync skipped:', err);
+            console.warn('[LeaderboardService] Profile target_lang sync skipped:', err);
         }
     }
 
@@ -191,13 +204,10 @@ export class LeaderboardService {
 
     private loadFromStorage(): void {
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            if (raw) {
-                const parsed = JSON.parse(raw);
-                if (Array.isArray(parsed) && parsed.length >= 3) {
-                    this.topLearners.set(parsed);
-                    this.computeClientUserRank(parsed);
-                }
+            const parsed = this.storage.get<LeaderboardEntry[]>(STORAGE_KEY);
+            if (Array.isArray(parsed) && parsed.length >= 3) {
+                this.topLearners.set(parsed);
+                this.computeClientUserRank(parsed);
             }
         } catch { }
     }
@@ -205,7 +215,7 @@ export class LeaderboardService {
     private saveToStorage(entries: LeaderboardEntry[]): void {
         try {
             if (Array.isArray(entries) && entries.length >= 3) {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+                this.storage.set(STORAGE_KEY, entries);
             }
         } catch { }
     }

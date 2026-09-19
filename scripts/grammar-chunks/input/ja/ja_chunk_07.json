@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_だれか_90",
+    "id": "ja_n5_だれか_90",
     "language": "ja",
     "pattern": "だれか〜",
     "title": "だれか〜 (dareka〜)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_だれでも_91",
+    "id": "ja_n5_だれでも_91",
     "language": "ja",
     "pattern": "だれでも～",
     "title": "だれでも～ (dare demo～)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_だれもないです_92",
+    "id": "ja_n5_だれもないです_92",
     "language": "ja",
     "pattern": "だれも～ないです",
     "title": "だれも～ないです (dare mo ~ nai desu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_だれもません_93",
+    "id": "ja_n5_だれもません_93",
     "language": "ja",
     "pattern": "だれも～ません",
     "title": "だれも～ません (daremo ~masen)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_どう_94",
+    "id": "ja_n5_どう_94",
     "language": "ja",
     "pattern": "～どう",
     "title": "～どう しますか。 (～dou shimasu ka.)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_どうですか_95",
+    "id": "ja_n5_どうですか_95",
     "language": "ja",
     "pattern": "～どうですか。",
     "title": "～どうですか。 (〜dou desu ka.)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_どうやって_96",
+    "id": "ja_n5_どうやって_96",
     "language": "ja",
     "pattern": "どうやって～",
     "title": "どうやって～ (douyatte～)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_どう_97",
+    "id": "ja_n5_どう_97",
     "language": "ja",
     "pattern": "～どう",
     "title": "～どう 言いますか。 (〜dou iimasu ka.)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_とき_98",
+    "id": "ja_n5_とき_98",
     "language": "ja",
     "pattern": "～とき",
     "title": "～とき (〜toki)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_ときどき_99",
+    "id": "ja_n5_ときどき_99",
     "language": "ja",
     "pattern": "ときどき～",
     "title": "ときどき～ (tokidoki～)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_どこ_100",
+    "id": "ja_n5_どこ_100",
     "language": "ja",
     "pattern": "どこ～",
     "title": "どこ～ (doko～)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_どこか_101",
+    "id": "ja_n5_どこか_101",
     "language": "ja",
     "pattern": "どこか～",
     "title": "どこか～ (dokoka～)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_どこでも_102",
+    "id": "ja_n5_どこでも_102",
     "language": "ja",
     "pattern": "どこでも～",
     "title": "どこでも～ (dokodemo～)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_どこにも_103",
+    "id": "ja_n5_どこにも_103",
     "language": "ja",
     "pattern": "どこにも",
     "title": "どこにも + Verb + ないです (doko ni mo + Verb + nai desu)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_どこにも_104",
+    "id": "ja_n5_どこにも_104",
     "language": "ja",
     "pattern": "どこにも",
     "title": "どこにも + Verb + ません (doko ni mo + Verb + masen)",

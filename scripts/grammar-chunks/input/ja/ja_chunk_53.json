@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_とされる_197",
+    "id": "ja_n1_とされる_197",
     "language": "ja",
     "pattern": "～とされる",
     "title": "～とされる (〜to sareru)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_としたところで_198",
+    "id": "ja_n1_としたところで_198",
     "language": "ja",
     "pattern": "～としたところで",
     "title": "～としたところで (〜to shita tokoro de)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_とすると_199",
+    "id": "ja_n1_とすると_199",
     "language": "ja",
     "pattern": "～とすると",
     "title": "～とすると (〜to suru to)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_とすれば_200",
+    "id": "ja_n1_とすれば_200",
     "language": "ja",
     "pattern": "～とすれば",
     "title": "～とすれば (～to sureba)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_となったら_201",
+    "id": "ja_n1_となったら_201",
     "language": "ja",
     "pattern": "～となったら",
     "title": "～となったら (〜to nattara)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_となると_202",
+    "id": "ja_n1_となると_202",
     "language": "ja",
     "pattern": "～となると",
     "title": "～となると (〜to naru to)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_となれば_203",
+    "id": "ja_n1_となれば_203",
     "language": "ja",
     "pattern": "～となれば",
     "title": "～となれば (〜to nareba)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_とのことだ_204",
+    "id": "ja_n1_とのことだ_204",
     "language": "ja",
     "pattern": "～とのことだ",
     "title": "～とのことだ (〜to no koto da)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_とはいえ_205",
+    "id": "ja_n1_とはいえ_205",
     "language": "ja",
     "pattern": "～とはいえ",
     "title": "～とはいえ (～to wa ie)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_とみえて_206",
+    "id": "ja_n1_とみえて_206",
     "language": "ja",
     "pattern": "～とみえて",
     "title": "～とみえて (〜to miete)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_とみられる_207",
+    "id": "ja_n1_とみられる_207",
     "language": "ja",
     "pattern": "～とみられる",
     "title": "～とみられる (～to mirareru)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_とみると_208",
+    "id": "ja_n1_とみると_208",
     "language": "ja",
     "pattern": "～とみると",
     "title": "～とみると (〜to miru to)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_どんなにうが_209",
+    "id": "ja_n1_どんなにうが_209",
     "language": "ja",
     "pattern": "どんなに～うが",
     "title": "どんなに～うが (donna ni ～ u ga)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_と言わんばかりに_210",
+    "id": "ja_n1_と言わんばかりに_210",
     "language": "ja",
     "pattern": "～と言わんばかりに",
     "title": "～と言わんばかりに (〜to iwan bakari ni)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_と言わんばかりの_211",
+    "id": "ja_n1_と言わんばかりの_211",
     "language": "ja",
     "pattern": "～と言わんばかりの",
     "title": "～と言わんばかりの Noun (～to iwan bakari no Noun)",

@@ -58,6 +58,11 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     {
+        path: 'playlist',
+        redirectTo: 'explore',
+        pathMatch: 'full'
+    },
+    {
         path: 'vocabulary',
         redirectTo: 'dictionary',
         pathMatch: 'full'

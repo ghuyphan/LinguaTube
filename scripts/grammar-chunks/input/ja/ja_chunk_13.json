@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_44",
+    "id": "ja_n4_Verb_44",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て ほしい (Verb-te hoshii)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verb_45",
+    "id": "ja_n4_Verb_45",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てみる (〜te miru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verb_46",
+    "id": "ja_n4_Verb_46",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てもらいたい (～te moraitai)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verb_47",
+    "id": "ja_n4_Verb_47",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て もらう (Verb-te morau)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verb_48",
+    "id": "ja_n4_Verb_48",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てもらえませんか (～te moraemasen ka)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verb_49",
+    "id": "ja_n4_Verb_49",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ない ことがある (Verb-nai koto ga aru)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_50",
+    "id": "ja_n4_Verb_50",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ない + ことにする (Verb nai koto ni suru)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_51",
+    "id": "ja_n4_Verb_51",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ない ことになる (Verb nai koto ni naru)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_52",
+    "id": "ja_n4_Verb_52",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないほうがいい (Verb nai hou ga ii)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_53",
+    "id": "ja_n4_Verb_53",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ながら (〜nagara)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_54",
+    "id": "ja_n4_Verb_54",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb なさい (〜nasai)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_55",
+    "id": "ja_n4_Verb_55",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb にくい (〜nikui)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_56",
+    "id": "ja_n4_Verb_56",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb やすい (〜yasui)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_57",
+    "id": "ja_n4_Verb_57",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようと思う (Verb-you to omou)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_58",
+    "id": "ja_n4_Verb_58",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ように (〜you ni)",

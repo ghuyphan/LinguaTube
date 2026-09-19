@@ -6,7 +6,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
-import { SettingsService, I18nService, AudioService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
 import { GrammarService } from '../../../services';
 import { DictionaryEntry, WordLevel, SupportedLearningLanguage } from '../../../models';
 import { GrammarPattern, SupportedGrammarLang } from '../../../models/grammar.model';
@@ -25,6 +25,7 @@ export class DictionaryPanelComponent implements OnDestroy {
   dictionary = inject(DictionaryService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
+  toast = inject(ToastService);
   i18n = inject(I18nService);
   grammar = inject(GrammarService);
   audioService = inject(AudioService);
@@ -57,12 +58,17 @@ export class DictionaryPanelComponent implements OnDestroy {
   // Reactive check against vocabulary service
   isSaved = computed(() => {
     const entry = this.currentEntry();
-    return entry ? this.vocab.hasWord(entry.word) : false;
+    if (!entry) return false;
+    return this.vocab.hasWord(entry.word)
+      || (entry.reading ? this.vocab.hasWord(entry.reading) : false);
   });
 
   savedWordLevel = computed(() => {
     const entry = this.currentEntry();
-    return entry ? this.vocab.getWordLevel(entry.word) : null;
+    if (!entry) return null;
+    return this.vocab.getWordLevel(entry.word)
+      || (entry.reading ? this.vocab.getWordLevel(entry.reading) : null)
+      || 'new';
   });
 
   recentSearches = this.dictionary.recentSearches;
@@ -201,6 +207,8 @@ export class DictionaryPanelComponent implements OnDestroy {
 
     const lang = this.settings.settings().language;
     this.vocab.addFromDictionary(entry, lang);
+    const msg = this.i18n.t('vocab.saveSuccess', { word: entry.word }) || `Added "${entry.word}" to vocabulary`;
+    this.toast.success(msg);
   }
 
   // Level picker state
@@ -208,9 +216,9 @@ export class DictionaryPanelComponent implements OnDestroy {
 
   readonly levelOptions = computed<OptionItem[]>(() => [
     { value: 'new', label: this.i18n.t('vocab.new') || 'New', icon: 'plus-circle', color: 'new' },
-    { value: 'learning', label: this.i18n.t('vocab.learning') || 'Learning', icon: 'clock', color: 'learning' },
+    { value: 'learning', label: this.i18n.t('vocab.learning') || 'Learning', icon: 'brain', color: 'learning' },
     { value: 'known', label: this.i18n.t('vocab.known') || 'Known', icon: 'check-circle', color: 'known' },
-    { value: 'ignored', label: this.i18n.t('vocab.ignored') || 'Ignored', icon: 'slash', color: 'ignored' },
+    { value: 'ignored', label: this.i18n.t('vocab.ignored') || 'Ignored', icon: 'eye-off', color: 'ignored' },
   ]);
 
   openLevelPicker(event?: Event): void {
@@ -227,27 +235,6 @@ export class DictionaryPanelComponent implements OnDestroy {
       }
     }
     this.levelPickerOpen.set(false);
-  }
-
-  cycleLevel(event?: Event): void {
-    event?.stopPropagation();
-    const entry = this.currentEntry();
-    if (!entry) return;
-
-    const currentLevel = this.savedWordLevel();
-    if (!currentLevel) {
-      this.saveWord();
-      return;
-    }
-
-    const cycleOrder: WordLevel[] = ['new', 'learning', 'known', 'ignored'];
-    const nextIndex = (cycleOrder.indexOf(currentLevel) + 1) % cycleOrder.length;
-    const nextLevel = cycleOrder[nextIndex];
-
-    const wordItem = this.vocab.findWord(entry.word);
-    if (wordItem) {
-      this.vocab.updateLevel(wordItem.id, nextLevel);
-    }
   }
 
   playAudio(entry?: DictionaryEntry | null, event?: Event): void {

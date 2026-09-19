@@ -31,6 +31,7 @@ import { VocabularyService } from '../../../../vocabulary';
       [class.controls-visible]="areControlsVisible()" 
       [class.is-top]="isTop()"
       [class.is-near-bottom]="isNearBottom()"
+      [class.is-user-placed]="isUserPlaced()"
       [class.is-dragging]="isDragging()"
       [ngClass]="fontSizeClass()"
       [class.popup-open]="fsPopupVisible()" 
@@ -167,6 +168,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
 
     // Drag State
     isDragging = signal(false);
+    isUserPlaced = signal(false);
     private dragStartY = 0;
     private hasMoved = false;
     private cleanupDragListeners: (() => void) | null = null;
@@ -189,6 +191,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     });
 
     readonly viewTokens = computed(() => {
+        this.vocab.lastModified?.();
         const tokens = this.tokens();
         const grammarIndices = this.grammarTokenIndices();
         const lang = this.language();
@@ -197,10 +200,12 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         return tokens.map((token, index) => {
             const isGrammar = grammarIndices.has(index);
             const wordLevel = this.vocab.getWordLevel(token.surface)
-                || (token.baseForm ? this.vocab.getWordLevel(token.baseForm) : null);
+                || (token.baseForm ? this.vocab.getWordLevel(token.baseForm) : null)
+                || (token.reading ? this.vocab.getWordLevel(token.reading) : null);
             const isSaved = wordLevel !== null
                 || this.vocab.hasWord(token.surface)
-                || (token.baseForm ? this.vocab.hasWord(token.baseForm) : false);
+                || (token.baseForm ? this.vocab.hasWord(token.baseForm) : false)
+                || (token.reading ? this.vocab.hasWord(token.reading) : false);
             const reading = this.settings.getReadingText(lang, token) || undefined;
             const displayText = readingOnly && reading ? reading : token.surface;
 
@@ -290,9 +295,11 @@ export class FullscreenSubtitleComponent implements OnDestroy {
 
                 if (!this.hasMoved) {
                     // Tap or click on handle: toggle between Top (18%) and Bottom (94%)
+                    this.isUserPlaced.set(false);
                     this.togglePosition.emit();
                 } else {
                     // Continuous free drag: commit exact percentage with full give
+                    this.isUserPlaced.set(true);
                     const deltaPercent = (latestDeltaY / containerHeight) * 100;
                     const targetPercent = Math.max(16, Math.min(95, Math.round(startYPercent + deltaPercent)));
                     this.positionCommitted.emit(targetPercent);

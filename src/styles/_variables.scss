@@ -61,31 +61,31 @@
     --info: #1cb0f6;
     --info-rgb: 28, 176, 246;
 
-    /* Chill Pastel Word Levels (Light Mode) */
+    /* Chill Pastel Word Levels (Light Mode - WCAG 2.2 AA >= 4.5:1 compliant) */
     --word-new: #FFEBF0;
-    --word-new-text: #DF3D5B;
-    --word-new-border: rgba(223, 61, 91, 0.18);
+    --word-new-text: #C42B47;
+    --word-new-border: rgba(196, 43, 71, 0.18);
     --word-learning: #FEF4DA;
-    --word-learning-text: #A66B04;
-    --word-learning-border: rgba(166, 107, 4, 0.18);
+    --word-learning-text: #8B5700;
+    --word-learning-border: rgba(139, 87, 0, 0.18);
     --word-known: #E7F3FF;
-    --word-known-text: #1B78DE;
-    --word-known-border: rgba(27, 120, 222, 0.18);
+    --word-known-text: #1060B8;
+    --word-known-border: rgba(16, 96, 184, 0.18);
     --word-ignored: #EFECE8;
-    --word-ignored-text: #7C8297;
-    --word-ignored-border: rgba(124, 130, 151, 0.16);
+    --word-ignored-text: #585D77;
+    --word-ignored-border: rgba(88, 93, 119, 0.16);
 
-    /* Chill Pastel Grammar Levels (Light Mode) */
+    /* Chill Pastel Grammar Levels (Light Mode - WCAG 2.2 AA >= 4.5:1 compliant) */
     --level-beginner: #E7F3FF;
-    --level-beginner-text: #1B78DE;
+    --level-beginner-text: #1060B8;
     --level-elementary: #E2F6F9;
-    --level-elementary-text: #0A8B9C;
+    --level-elementary-text: #087382;
     --level-intermediate: #FEF4DA;
-    --level-intermediate-text: #A66B04;
+    --level-intermediate-text: #8B5700;
     --level-upper: #FFF0E5;
-    --level-upper-text: #C45700;
+    --level-upper-text: #A74A00;
     --level-advanced: #FFEBF0;
-    --level-advanced-text: #DF3D5B;
+    --level-advanced-text: #C42B47;
 
     /* Grammar highlight color (crisp mint / emerald green) */
     --color-grammar: #10b981;
@@ -110,7 +110,9 @@
     --space-2xs: 0.25rem;
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
+    --space-base: 1rem;
     --space-md: 1.25rem;
+    --space-lg-sm: 1.5rem;
     --space-lg: 2rem;
     --space-xl: 3rem;
     --space-2xl: 4rem;
@@ -161,11 +163,14 @@
     --icon-size-lg: 32px;
     --icon-size-xl: 40px;
 
-    /* Transitions */
+    /* Transitions & Motion Curves */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-slow: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
     /* Sizing - Buttons */
     --btn-height-xs: 28px;
@@ -191,7 +196,7 @@
     --safe-area-left: env(safe-area-inset-left, 0px);
     --safe-area-right: env(safe-area-inset-right, 0px);
     --app-height: 100dvh;
-    --bottom-nav-height: 4rem;
+    --bottom-nav-height: 5rem; /* Material 3 Navigation Bar spec: 80dp */
     --bottom-nav-safe-area: var(--safe-area-bottom);
     --bottom-nav-total-height: calc(var(--bottom-nav-height) + var(--bottom-nav-safe-area));
 
@@ -210,6 +215,7 @@
     --z-tooltip: 700;          /* Seek & action hover tooltips */
     --z-miniplayer: 950;       /* Floating miniplayer above page content but below navigation */
     --z-nav: 1000;             /* Global navigation: Desktop Sidebar & Mobile Bottom Nav */
+    --z-popover-elevated: 1050;/* Floating sidebar stats popover & elevated overlays */
     --z-fullscreen: 1100;      /* In-app CSS fullscreen video player */
     --z-modal-backdrop: 1150;  /* Backdrop scrim for modals and sheets */
     --z-modal: 1200;           /* Bottom-sheets, modals, dialogs, word popups */
@@ -237,9 +243,9 @@
     --text-primary-rgb: 240, 242, 248;
     --text-secondary: #A0A8BF;
     --text-secondary-rgb: 160, 168, 191;
-    --text-muted: #737B96;
-    --text-muted-rgb: 115, 123, 150;
-    --text-tertiary: #525970;
+    --text-muted: #8E96AF;
+    --text-muted-rgb: 142, 150, 175;
+    --text-tertiary: #6E7690;
     --text-inverse: #0D1017;
 
     /* Radiant Coral Accent (Dark Mode) */

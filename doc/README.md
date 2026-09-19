@@ -16,9 +16,9 @@ This documentation suite serves as the definitive technical reference for human 
 | **[3. Backend API & Serverless Edge](backend-api.md)** | Cloudflare Pages Functions, local dev server (Innertube), endpoints, middlewares & providers | Backend & Cloud Engineers |
 | **[4. Frontend Architecture](frontend-architecture.md)** | Angular 19 Signals, Standalone Components, offline-first repositories, UI system & design tokens | Frontend Engineers, UI/UX |
 | **[5. Feature Specifications](features.md)** | In-depth logic for sticky subtitles, AI transcription, hybrid dictionaries, grammar engine & SM-2 SRS | Product, Developers, QA |
-| **[6. Database & Storage Architecture](database-and-storage.md)** | D1 SQLite schemas, R2 bucket layout, KV keys, PocketBase collections & IndexedDB persistence | Database & Data Engineers |
+| **[6. Database & Storage Architecture](database-and-storage.md)** | D1 SQLite schemas, R2 bucket layout, KV keys, Supabase PostgreSQL tables & IndexedDB persistence | Database & Data Engineers |
 | **[7. Developer & Operations Guide](development-guide.md)** | Local environment setup, dev server, test runners, linting, deployment & troubleshooting | Contributors, Maintainers |
-| **[8. Mobile API Integration Guide](mobile-api-integration.md)** | Complete REST API reference, PocketBase sync, Tokens, Multi-source Dict, Grammar Engine, and Flutter/Cursor AI playbooks | Mobile Engineers (Flutter/Dart, iOS, Android) & AI Agents |
+| **[8. Mobile API Integration Guide](mobile-api-integration.md)** | Complete REST API reference, Supabase sync, Tokens, Multi-source Dict, Grammar Engine, and Flutter/Cursor AI playbooks | Mobile Engineers (Flutter/Dart, iOS, Android) & AI Agents |
 
 ---
 
@@ -34,7 +34,7 @@ This documentation suite serves as the definitive technical reference for human 
            ▼                         ▼                         ▼
    🎬 Video & Subtitles       🧠 Smart Linguistics      📚 Study & Retention
    • YouTube IFrame API       • Japanese Kuromoji       • SM-2 Spaced Repetition
-   • Sticky Subtitle Cues     • Chinese / Korean Intl   • Cloud Sync (PocketBase)
+   • Sticky Subtitle Cues     • Chinese / Korean Intl   • Cloud Sync (Supabase)
    • Gladia AI Transcription  • Multi-Source Dicts      • Daily Streak Gamification
    • Draggable Fullscreen Sub • Grammar Rule Engine     • Custom Playlists & History
    • Dual Subtitle Sync       • Romaji & Pinyin Guides  • Sentence Context Mining

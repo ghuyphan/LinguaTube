@@ -21,7 +21,7 @@
         @if (showCoachmark()) {
         <div class="subtitle-coachmark" (click)="dismissCoachmark($event)">
             <div class="subtitle-coachmark__content">
-                <app-icon name="sparkles" [size]="13" class="subtitle-coachmark__sparkle" />
+                <app-icon name="lightbulb" [size]="13" class="subtitle-coachmark__sparkle" />
                 <span>{{ i18n.t('onboarding.subtitleCoachmark') || 'Tap any word to translate & save' }}</span>
             </div>
             <button type="button" class="subtitle-coachmark__close" (click)="dismissCoachmark($event)" [attr.aria-label]="i18n.t('common.close') || 'Close'">
@@ -44,7 +44,7 @@
                         }
                     </span>
                     } @else {
-                    <span class="subtitle-content" @subtitleFade>
+                    <span class="subtitle-content subtitle-fade-in">
                         @for (token of viewTokens(); track token.surface + '-' + $index) {
                         @if (token.isPunctuation) {
                         <span class="punctuation">
@@ -55,15 +55,11 @@
                             }
                         </span>
                         } @else {
-                        <span class="word" [class.word--new]="token.level === 'new'"
+                        <button type="button" class="word" [class.word--new]="token.level === 'new'"
                             [class.word--learning]="token.level === 'learning'"
                             [class.word--known]="token.level === 'known'" [class.word--saved]="token.isSaved"
                             [class.word--grammar]="token.isGrammar"
-                            role="button"
-                            tabindex="0"
                             [attr.aria-label]="(token.isGrammar ? 'Grammar pattern: ' : 'Look up word: ') + token.surface"
-                            (keydown.enter)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)"
-                            (keydown.space)="$event.preventDefault(); token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)"
                             (click)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">
                             @if (showReadingAnnotation()) {
                                 @if (token.rubyParts && token.rubyParts.length > 0) {
@@ -82,7 +78,7 @@
                             } @else {
                             {{ token.displayText }}
                             }
-                        </span>
+                        </button>
                         }
                         }
                     </span>
@@ -103,14 +99,14 @@
                     } @else {
                     @if (cueTranslations().get(cue.id); as translation) {
                     @if (translation.trim() !== cue.text.trim()) {
-                    <div class="subtitle-translation" @subtitleFade>
+                    <div class="subtitle-translation subtitle-fade-in">
                         {{ translation }}
                     </div>
                     } @else {
                     <div class="subtitle-translation subtitle-translation--empty"></div>
                     }
                     } @else if (toastType() === 'error' && toastMessage()) {
-                    <div class="subtitle-translation subtitle-translation--error" @subtitleFade>
+                    <div class="subtitle-translation subtitle-translation--error subtitle-fade-in">
                         <app-icon name="alert-circle" [size]="14" />
                         <span>{{ toastMessage() || i18n.t('subtitle.translationFailed') || 'Translation failed'
                             }}</span>
@@ -292,14 +288,14 @@
             (touchstart)="onUserManualScroll()"
             (touchmove)="onUserManualScroll()">
             @for (cue of subtitles.subtitles(); track cue.id; let i = $index) {
-            <button type="button" class="cue-item" [class.cue-item--active]="i === subtitles.currentCueIndex()"
+            <button type="button" class="cue-item" [class.cue-item--active]="cue.id === activeCueId()"
                 [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
-                [attr.aria-current]="i === subtitles.currentCueIndex() ? 'true' : null"
+                [attr.aria-current]="cue.id === activeCueId() ? 'true' : null"
                 (click)="seekToCue(cue)">
                 <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
                 <div class="cue-body">
                     <span class="cue-text" [attr.title]="cue.text">{{ cue.text }}</span>
-                    @if (settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())) {
+                    @if (showDualSubs()) {
                     @if (cueTranslations().get(cue.id); as translation) {
                     @if (translation.trim() !== cue.text.trim()) {
                     <span class="cue-translation-text" [attr.title]="translation">{{ translation }}</span>
@@ -315,7 +311,7 @@
 
         @if (isUserScrolledAway() && subtitles.currentCue(); as activeCue) {
         <div class="sync-current-container">
-            <button type="button" class="sync-current-btn" (click)="resumeTranscriptSync()" @fadeSlide>
+            <button type="button" class="sync-current-btn sync-current-btn--fade-in" (click)="resumeTranscriptSync()">
                 <app-icon name="clock" [size]="13" />
                 <span>{{ i18n.t('subtitle.jumpToCurrent') || 'Jump to current' }} ({{ formatTime(activeCue.startTime) }})</span>
             </button>

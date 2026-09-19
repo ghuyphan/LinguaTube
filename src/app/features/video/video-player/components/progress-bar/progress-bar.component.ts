@@ -57,10 +57,9 @@ export interface SeekPreview {
       
       <!-- Hit area for better touch/click target -->
       <div class="progress-hit-area"
-           (mousedown)="startSeeking($event)"
-           (touchstart)="startSeeking($event)"
-           (mousemove)="updateSeekPreview($event)"
-           (mouseleave)="hideSeekPreview()"></div>
+           (pointerdown)="startSeeking($event)"
+           (pointermove)="updateSeekPreview($event)"
+           (pointerleave)="hideSeekPreview()"></div>
       
       <!-- Buffered indicator -->
       <div class="progress-buffered" aria-hidden="true"></div>
@@ -138,6 +137,8 @@ export class ProgressBarComponent implements OnDestroy {
 
     private bufferedInterval: ReturnType<typeof setInterval> | null = null;
     private seekRafId: number | null = null;
+    private cachedRect: DOMRect | null = null;
+    private capturedTarget: HTMLElement | null = null;
 
     // Bound event handlers for document-level listeners
     private readonly boundOnSeekMove = this.onSeekMove.bind(this);
@@ -220,22 +221,30 @@ export class ProgressBarComponent implements OnDestroy {
     }
 
     /**
-     * Start seeking (mousedown/touchstart)
+     * Start seeking (pointerdown)
      */
-    startSeeking(event: MouseEvent | TouchEvent): void {
-        this.ngZone.run(() => {
-            if (!this.youtube.duration()) return;
-            event.preventDefault();
+    startSeeking(event: PointerEvent): void {
+        if (event.button !== 0 && event.pointerType === 'mouse') return;
+        if (!this.youtube.duration()) return;
 
+        event.preventDefault();
+        const target = event.currentTarget as HTMLElement;
+        try {
+            target.setPointerCapture(event.pointerId);
+            this.capturedTarget = target;
+        } catch {}
+
+        const progressBar = this.progressBar().nativeElement;
+        this.cachedRect = progressBar ? progressBar.getBoundingClientRect() : null;
+
+        this.ngZone.run(() => {
             this.isDragging.set(true);
             this.calculateSeekTime(event);
             this.seekStarted.emit();
 
-            // Add document listeners for drag
-            document.addEventListener('mousemove', this.boundOnSeekMove);
-            document.addEventListener('mouseup', this.boundOnSeekUp);
-            document.addEventListener('touchmove', this.boundOnSeekMove, { passive: false });
-            document.addEventListener('touchend', this.boundOnSeekUp);
+            window.addEventListener('pointermove', this.boundOnSeekMove);
+            window.addEventListener('pointerup', this.boundOnSeekUp);
+            window.addEventListener('pointercancel', this.boundOnSeekUp);
         });
     }
 
@@ -272,13 +281,11 @@ export class ProgressBarComponent implements OnDestroy {
     // PRIVATE METHODS
     // ========================================
 
-    private calculateSeekTime(event: MouseEvent | TouchEvent): void {
-        const progressBar = this.progressBar().nativeElement;
-        if (!progressBar) return;
+    private calculateSeekTime(event: PointerEvent | MouseEvent): void {
+        const rect = this.cachedRect || this.progressBar()?.nativeElement?.getBoundingClientRect();
+        if (!rect || !this.youtube.duration()) return;
 
-        const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
-        const rect = progressBar.getBoundingClientRect();
-        const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
+        const offsetX = Math.max(0, Math.min(event.clientX - rect.left, rect.width));
         const percentage = offsetX / rect.width;
         const time = percentage * this.youtube.duration();
 
@@ -290,9 +297,9 @@ export class ProgressBarComponent implements OnDestroy {
         });
     }
 
-    private onSeekMove(event: MouseEvent | TouchEvent): void {
+    private onSeekMove(event: PointerEvent): void {
         event.preventDefault();
-        const clientX = 'touches' in event ? event.touches[0].clientX : (event as MouseEvent).clientX;
+        const clientX = event.clientX;
 
         if (this.seekRafId !== null) {
             cancelAnimationFrame(this.seekRafId);
@@ -301,10 +308,9 @@ export class ProgressBarComponent implements OnDestroy {
         this.seekRafId = requestAnimationFrame(() => {
             this.seekRafId = null;
             this.ngZone.run(() => {
-                const progressBar = this.progressBar()?.nativeElement;
-                if (!progressBar) return;
+                const rect = this.cachedRect || this.progressBar()?.nativeElement?.getBoundingClientRect();
+                if (!rect || !this.youtube.duration()) return;
 
-                const rect = progressBar.getBoundingClientRect();
                 const offsetX = Math.max(0, Math.min(clientX - rect.left, rect.width));
                 const percentage = offsetX / rect.width;
                 const time = percentage * this.youtube.duration();
@@ -319,11 +325,19 @@ export class ProgressBarComponent implements OnDestroy {
         });
     }
 
-    private onSeekUp(): void {
+    private onSeekUp(event?: PointerEvent): void {
         if (this.seekRafId !== null) {
             cancelAnimationFrame(this.seekRafId);
             this.seekRafId = null;
         }
+
+        if (event && this.capturedTarget) {
+            try {
+                this.capturedTarget.releasePointerCapture(event.pointerId);
+            } catch {}
+        }
+        this.capturedTarget = null;
+        this.cachedRect = null;
 
         this.ngZone.run(() => {
             this.isDragging.set(false);
@@ -333,10 +347,9 @@ export class ProgressBarComponent implements OnDestroy {
             this.youtube.seekTo(time);
             this.seekEnded.emit(time);
 
-            document.removeEventListener('mousemove', this.boundOnSeekMove);
-            document.removeEventListener('mouseup', this.boundOnSeekUp);
-            document.removeEventListener('touchmove', this.boundOnSeekMove);
-            document.removeEventListener('touchend', this.boundOnSeekUp);
+            window.removeEventListener('pointermove', this.boundOnSeekMove);
+            window.removeEventListener('pointerup', this.boundOnSeekUp);
+            window.removeEventListener('pointercancel', this.boundOnSeekUp);
         });
     }
 
@@ -356,9 +369,8 @@ export class ProgressBarComponent implements OnDestroy {
             this.seekRafId = null;
         }
         this.stopBufferedTracking();
-        document.removeEventListener('mousemove', this.boundOnSeekMove);
-        document.removeEventListener('mouseup', this.boundOnSeekUp);
-        document.removeEventListener('touchmove', this.boundOnSeekMove);
-        document.removeEventListener('touchend', this.boundOnSeekUp);
+        window.removeEventListener('pointermove', this.boundOnSeekMove);
+        window.removeEventListener('pointerup', this.boundOnSeekUp);
+        window.removeEventListener('pointercancel', this.boundOnSeekUp);
     }
 }

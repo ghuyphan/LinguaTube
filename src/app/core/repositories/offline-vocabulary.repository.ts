@@ -2,7 +2,7 @@ import { Injectable, inject, signal, effect, untracked, computed } from '@angula
 import { IVocabularyRepository } from './vocabulary.repository';
 import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats } from '../../models';
 import { AuthService, StorageService, SupabaseService } from '../services';
-import { calculateHash, mergeByTimestamp, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
+import { mergeByTimestamp, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 import { generateRandomId, calculateNextSRSState } from '../utils';
 
@@ -77,7 +77,8 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     private supabase = inject(SupabaseService);
 
     // State
-    readonly vocabulary = signal<VocabularyItem[]>([]);
+    private _vocabulary = signal<VocabularyItem[]>([]);
+    readonly vocabulary = this._vocabulary.asReadonly();
     readonly isSyncing = signal(false);
 
     // Initial empty stats
@@ -363,25 +364,36 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             const remoteItems = await this.fetchFromRemote();
             console.log(`[VocabRepo] Fetched ${remoteItems.length} items from server`);
 
-            // 2. Handle deletion tombstones (prevent zombie resurrection)
+            // 2. Handle deletion tombstones (prevent zombie resurrection & obsolete lockouts)
             const tombstones = this.getDeletionTombstones();
+            const validTombstones: DeletionTombstone[] = [];
             if (tombstones.length > 0) {
                 for (const t of tombstones) {
+                    const remote = remoteItems.find(r => r.id === t.id);
+                    const remoteTime = remote?.updated ? new Date(remote.updated).getTime() : 0;
+                    if (remote && remoteTime > t.deletedAt) {
+                        // Word was re-added or updated on remote after deletion; tombstone is obsolete
+                        continue;
+                    }
+                    validTombstones.push(t);
                     try {
                         await this.deleteFromServer(t.word, t.language);
                     } catch (err) {
                         console.warn('[VocabRepo] Retry tombstone delete failed:', err);
                     }
                 }
+                if (validTombstones.length !== tombstones.length) {
+                    this.storage.set(TOMBSTONES_KEY, validTombstones);
+                }
             }
-            const activeRemote = remoteItems.filter(r => !tombstones.some(t => t.id === r.id));
+            const activeRemote = remoteItems.filter(r => !validTombstones.some(t => t.id === r.id));
 
             // Detect items deleted remotely on another device:
             // If an item was previously tracked in SYNCED_REMOTE_IDS_KEY but is no longer in remoteItems,
             // it was deleted on another device. Record tombstone and purge locally.
             const previouslySyncedIds = new Set(this.storage.get<string[]>(SYNCED_REMOTE_IDS_KEY) || []);
             const currentRemoteIdSet = new Set(remoteItems.map(r => r.id));
-            const tombstoneIdSet = new Set(tombstones.map(t => t.id));
+            const tombstoneIdSet = new Set(validTombstones.map(t => t.id));
 
             const localItems = this.vocabulary();
             const survivingLocalItems = localItems.filter(item => {
@@ -425,16 +437,16 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 return new Date(localItem.updated).getTime() > new Date(remote.updated).getTime();
             });
 
+            let pushedIds: string[] = [];
             if (dirtyItems.length > 0) {
                 console.log(`[VocabRepo] Pushing ${dirtyItems.length} modified items to server`);
-                await this.pushToRemote(dirtyItems);
+                pushedIds = await this.pushToRemote(dirtyItems);
             }
 
-            // Save the new set of synced remote IDs
-            const allSyncedIds = Array.from(new Set([...remoteItems.map(r => r.id), ...dirtyItems.map(d => d.id)]));
+            // Save the new set of synced remote IDs - only include successfully confirmed items
+            const allSyncedIds = Array.from(new Set([...remoteItems.map(r => r.id), ...pushedIds]));
             this.storage.set(SYNCED_REMOTE_IDS_KEY, allSyncedIds);
 
-            this.lastPushedHash = calculateHash(this.vocabulary(), i => `${i.word}:${i.language}:${i.level}:${i.updatedAt || i.addedAt}`);
             console.log('[VocabRepo] Sync complete.');
         } catch (error) {
             console.error('[VocabRepo] Sync failed:', error);
@@ -463,7 +475,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
         // Teardown and reset on logout to prevent cross-account leak
         this.auth.logoutEvent.subscribe(() => {
-            this.vocabulary.set([]);
+            this._vocabulary.set([]);
             this.storage.remove(STORAGE_KEY);
             this.storage.remove(TOMBSTONES_KEY);
             this.storage.remove(SYNCED_REMOTE_IDS_KEY);
@@ -491,7 +503,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             }
         }
         const normalizedItems = uniqueItems.map(item => this.normalizeVocabularyItem(item));
-        this.vocabulary.set(normalizedItems);
+        this._vocabulary.set(normalizedItems);
     }
 
     private triggerSyncDebounced() {
@@ -658,9 +670,9 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         }));
     }
 
-    private async pushToRemote(items: SyncItem[]): Promise<void> {
+    private async pushToRemote(items: SyncItem[]): Promise<string[]> {
         const userId = this.auth.getUserId();
-        if (!userId || items.length === 0) return;
+        if (!userId || items.length === 0) return [];
 
         const rows = items.map(item => ({
             id: item.id,
@@ -686,6 +698,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             updated_at: new Date().toISOString()
         }));
 
+        const successfulIds: string[] = [];
         for (let i = 0; i < rows.length; i += 50) {
             const batch = rows.slice(i, i + 50);
             const { error } = await this.supabase.client
@@ -693,8 +706,11 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 .upsert(batch, { onConflict: 'id' });
             if (error) {
                 console.error('[VocabRepo] Upsert error into Supabase:', error);
+                throw error;
             }
+            successfulIds.push(...batch.map(b => b.id));
         }
+        return successfulIds;
     }
 
     private async pushSingleItem(item: VocabularyItem): Promise<void> {

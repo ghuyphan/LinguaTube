@@ -99,7 +99,10 @@ export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.payment.clearOrder();
+        this.payment.stopPolling();
+        if (!this.payment.isPaid()) {
+            this.payment.clearOrder();
+        }
     }
 
     setTier(tier: PlanTier): void {

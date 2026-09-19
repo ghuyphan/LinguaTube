@@ -4,33 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { QuizService } from '../../video/quiz.service';
 import { I18nService } from '../../../core/services/i18n.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
-import { trigger, transition, style, animate, keyframes } from '@angular/animations';
 
 @Component({
     selector: 'app-quiz-input',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, FormsModule, IconComponent],
-    animations: [
-        trigger('shake', [
-            transition('* => true', [
-                animate('0.4s ease-in-out', keyframes([
-                    style({ transform: 'translateX(0)', offset: 0 }),
-                    style({ transform: 'translateX(-10px)', offset: 0.2 }),
-                    style({ transform: 'translateX(10px)', offset: 0.4 }),
-                    style({ transform: 'translateX(-10px)', offset: 0.6 }),
-                    style({ transform: 'translateX(10px)', offset: 0.8 }),
-                    style({ transform: 'translateX(0)', offset: 1.0 })
-                ]))
-            ])
-        ]),
-        trigger('fadeIn', [
-            transition(':enter', [
-                style({ opacity: 0, transform: 'translateY(10px)' }),
-                animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-            ])
-        ])
-    ],
     templateUrl: './quiz-input.component.html',
     styleUrl: './quiz-input.component.scss'
 })

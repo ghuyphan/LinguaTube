@@ -47,6 +47,25 @@
             </div>
             }
         </div>
+
+        <!-- Footer Actions -->
+        <div class="popup-footer">
+            @if (isSaved()) {
+            <button class="btn btn-secondary saved-btn" disabled>
+                <app-icon name="check" [size]="14" />
+                <span>{{ i18n.t('popup.saved') || 'Saved' }}</span>
+            </button>
+            } @else {
+            <button class="btn btn-primary" (click)="saveToVocabulary()">
+                <app-icon name="plus" [size]="14" />
+                <span>{{ i18n.t('popup.saveWord') || 'Save Pattern' }}</span>
+            </button>
+            }
+            <button class="btn btn-secondary" (click)="lookupInDictionary()" [title]="i18n.t('commandPalette.openDictionary') || 'Open Dictionary'">
+                <app-icon name="book-open" [size]="14" />
+                <span>{{ i18n.t('dictionary.title') || 'Dictionary' }}</span>
+            </button>
+        </div>
         }
     </div>
 </app-bottom-sheet>

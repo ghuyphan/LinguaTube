@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy, viewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy, viewChild, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DictionaryPanelComponent } from '../dictionary-panel/dictionary-panel.component';
@@ -8,6 +9,7 @@ import { DictionaryService } from '../dictionary.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, AuthService } from '../../../core/services';
+import { WordLevel } from '../../../models';
 
 @Component({
   selector: 'app-dictionary-page',
@@ -15,6 +17,7 @@ import { SettingsService, I18nService, AuthService } from '../../../core/service
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
+    FormsModule,
     RouterLink,
     DictionaryPanelComponent,
     VocabularyListComponent,
@@ -30,51 +33,172 @@ import { SettingsService, I18nService, AuthService } from '../../../core/service
             <div class="panel-header__row">
               <div class="panel-header__left">
                 <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : 'layers'" [size]="20" class="panel-header__icon" />
-                <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : i18n.t('vocab.title') }}</h2>
+                <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : (i18n.t('vocab.title') || 'Từ vựng') }}</h2>
               </div>
             </div>
           </div>
 
-          <!-- Segmented View Tabs (Unified toolbar inside card, matches playlist & history) -->
-          <div class="dict-toolbar">
-            <div class="view-tabs">
-              <button 
-                type="button" 
-                class="filter-chip" 
-                [class.active]="activeTab() === 'dictionary'"
-                (click)="activeTab.set('dictionary')"
-                [attr.aria-label]="i18n.t('dictionary.title')"
-              >
-                <app-icon name="book-open" [size]="14" />
-                <span class="chip-text">{{ i18n.t('dictionary.title') }}</span>
-              </button>
-              <button 
-                type="button" 
-                class="filter-chip" 
-                [class.active]="activeTab() === 'vocab'"
-                (click)="activeTab.set('vocab')"
-                [attr.aria-label]="i18n.t('vocab.title')"
-              >
-                <app-icon name="layers" [size]="14" />
-                <span class="chip-text">{{ i18n.t('vocab.title') }}</span>
-                @if (stats().total > 0) {
-                  <span class="tab-badge">{{ stats().total }}</span>
+          <!-- Segmented View Tabs & Search Toolbar (Unified toolbar inside card, matches playlist & history) -->
+          <div class="panel-toolbar">
+            <div class="panel-toolbar__top">
+              <div class="segmented-control" style="--tab-count: 2;" [style.--active-index]="activeTab() === 'dictionary' ? 0 : 1" role="tablist">
+                <button 
+                  type="button" 
+                  class="segmented-control__item" 
+                  [class.active]="activeTab() === 'dictionary'"
+                  (click)="activeTab.set('dictionary')"
+                  role="tab"
+                  [attr.aria-selected]="activeTab() === 'dictionary'"
+                  [attr.aria-label]="i18n.t('dictionary.search')"
+                  [title]="i18n.t('dictionary.search')"
+                >
+                  <app-icon name="search" [size]="14" />
+                  <span>{{ i18n.t('dictionary.search') }}</span>
+                </button>
+                <button 
+                  type="button" 
+                  class="segmented-control__item" 
+                  [class.active]="activeTab() === 'vocab'"
+                  (click)="activeTab.set('vocab')"
+                  role="tab"
+                  [attr.aria-selected]="activeTab() === 'vocab'"
+                  [attr.aria-label]="i18n.t('vocab.title')"
+                  [title]="i18n.t('vocab.title')"
+                >
+                  <app-icon name="layers" [size]="14" />
+                  <span>{{ i18n.t('vocab.title') }}</span>
+                </button>
+              </div>
+
+              <div class="panel-toolbar__actions">
+                @if (activeTab() === 'vocab') {
+                  <button
+                    type="button"
+                    class="action-icon-btn"
+                    (click)="openVocabMenu()"
+                    [attr.aria-label]="i18n.t('vocab.options') || 'Options'"
+                    [title]="i18n.t('vocab.options') || 'Options'">
+                    <app-icon name="more-vertical" [size]="16" />
+                  </button>
                 }
-              </button>
+              </div>
+            </div>
+
+            <!-- Row 2: Search & Filter Row (Unified across Dictionary and Vocab tabs) -->
+            <div class="panel-toolbar__filters">
+              @if (activeTab() === 'dictionary') {
+                <div class="panel-search-wrapper">
+                  <div class="app-search-box">
+                    <button
+                      type="button"
+                      class="search-icon-btn"
+                      (click)="triggerDictSearch()"
+                      [disabled]="!dictSearchQuery.trim() || panel()?.isLoading()"
+                      [attr.aria-label]="i18n.t('dictionary.search')"
+                      [title]="i18n.t('dictionary.search')">
+                      @if (panel()?.isLoading()) {
+                        <app-icon name="loader" [size]="14" class="loading-spinner" />
+                      } @else {
+                        <app-icon name="search" [size]="14" class="search-icon" />
+                      }
+                    </button>
+                    <input
+                      type="text"
+                      [(ngModel)]="dictSearchQuery"
+                      (keyup.enter)="triggerDictSearch()"
+                      [placeholder]="i18n.t('dictionary.typeWord')"
+                      class="search-input"
+                      autocomplete="off"
+                      spellcheck="false"
+                    />
+                    @if (dictSearchQuery) {
+                      <button type="button" class="clear-btn" (click)="clearDictSearch()" [attr.aria-label]="i18n.t('common.clear')">
+                        <app-icon name="x" [size]="12" />
+                      </button>
+                    }
+                  </div>
+                </div>
+              } @else {
+                <div class="panel-search-wrapper">
+                  <div class="app-search-box">
+                    <app-icon name="search" [size]="14" class="search-icon" />
+                    <input
+                      type="text"
+                      [ngModel]="vocabSearchQuery()"
+                      (ngModelChange)="vocabSearchQuery.set($event)"
+                      [placeholder]="i18n.t('vocab.search') || i18n.t('common.search') || 'Search...'"
+                      class="search-input"
+                      spellcheck="false"
+                      autocomplete="off"
+                    />
+                    @if (vocabSearchQuery()) {
+                      <button type="button" class="clear-btn" (click)="vocabSearchQuery.set('')" [attr.aria-label]="i18n.t('common.clear')">
+                        <app-icon name="x" [size]="12" />
+                      </button>
+                    }
+                  </div>
+                </div>
+
+                <div class="filter-scroll-strip">
+                  <button type="button" 
+                          class="filter-chip" 
+                          [class.active]="selectedVocabLevel() === 'all'"
+                          (click)="selectedVocabLevel.set('all')">
+                      <span>{{ i18n.t('history.all') || 'All' }}</span>
+                      <span class="chip-count">{{ vocabLevelCounts().all }}</span>
+                  </button>
+                  <button type="button" 
+                          class="filter-chip" 
+                          [class.active]="selectedVocabLevel() === 'new'"
+                          (click)="selectedVocabLevel.set('new')">
+                      <span>{{ i18n.t('vocab.new') || 'New' }}</span>
+                      <span class="chip-count">{{ vocabLevelCounts().new }}</span>
+                  </button>
+                  <button type="button" 
+                          class="filter-chip" 
+                          [class.active]="selectedVocabLevel() === 'learning'"
+                          (click)="selectedVocabLevel.set('learning')">
+                      <span>{{ i18n.t('vocab.learning') || 'Learning' }}</span>
+                      <span class="chip-count">{{ vocabLevelCounts().learning }}</span>
+                  </button>
+                  <button type="button" 
+                          class="filter-chip" 
+                          [class.active]="selectedVocabLevel() === 'known'"
+                          (click)="selectedVocabLevel.set('known')">
+                      <span>{{ i18n.t('vocab.known') || 'Known' }}</span>
+                      <span class="chip-count">{{ vocabLevelCounts().known }}</span>
+                  </button>
+                  <button type="button" 
+                          class="filter-chip" 
+                          [class.active]="selectedVocabLevel() === 'ignored'"
+                          (click)="selectedVocabLevel.set('ignored')">
+                      <span>{{ i18n.t('vocab.ignored') || 'Ignored' }}</span>
+                      <span class="chip-count">{{ vocabLevelCounts().ignored }}</span>
+                  </button>
+                </div>
+              }
             </div>
           </div>
 
           <!-- Main View Content -->
           @if (activeTab() === 'dictionary') {
-            <app-dictionary-panel #panel [embedded]="true" />
+            <div class="tab-content-enter">
+              <app-dictionary-panel #panel [embedded]="true" />
+            </div>
           } @else {
-            <app-vocabulary-list 
-              [showHeader]="false"
-              [showMenu]="true"
-              [embedded]="true"
-              (wordSelect)="onVocabWordSelect($event.surface)"
-              (addWordRequest)="onAddWordRequest($event)"
-            />
+            <div class="tab-content-enter">
+              <app-vocabulary-list 
+                #vocabList
+                [showHeader]="false"
+                [showMenu]="true"
+                [embedded]="true"
+                [showToolbar]="false"
+                [externalSearch]="vocabSearchQuery()"
+                [externalLevel]="selectedVocabLevel()"
+                (wordSelect)="onVocabWordSelect($event.surface)"
+                (addWordRequest)="onAddWordRequest($event)"
+              />
+            </div>
           }
         </div>
       </div>
@@ -138,7 +262,7 @@ import { SettingsService, I18nService, AuthService } from '../../../core/service
             <div class="panel-header">
               <div class="panel-header__row">
                 <div class="panel-header__left">
-                  <app-icon name="clock" [size]="18" class="panel-header__icon" />
+                  <app-icon name="history" [size]="18" class="panel-header__icon" />
                   <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('dictionary.recentSearches') }}</h3>
                 </div>
                 <button class="panel-header__link" (click)="clearAllRecentSearches()">
@@ -348,7 +472,6 @@ import { SettingsService, I18nService, AuthService } from '../../../core/service
       overflow: visible;
       height: auto;
       min-height: 0;
-      padding-bottom: var(--space-lg);
 
       .panel-header__row {
         flex-wrap: wrap;
@@ -356,120 +479,12 @@ import { SettingsService, I18nService, AuthService } from '../../../core/service
       }
     }
 
-    .dict-toolbar {
-      position: sticky;
-      top: 0;
-      z-index: var(--z-sticky, 100);
-      background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: var(--space-xs) 0 0;
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-sm);
-      flex-wrap: wrap;
-    }
 
-    .view-tabs {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-
-      .filter-chip {
-        height: 36px;
-        min-height: 36px;
-        max-height: 36px;
-        box-sizing: border-box;
-        padding: 0 14px;
-        font-size: 0.8125rem;
-        border-radius: var(--border-radius-pill);
-        border: 1px solid var(--border-color);
-        background: var(--bg-surface);
-        color: var(--text-secondary);
-        font-weight: 600;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        white-space: nowrap;
-        user-select: none;
-        transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
-
-        app-icon {
-          color: var(--text-muted);
-        }
-
-        @media (hover: hover) {
-          &:hover:not(.active) {
-            background: var(--bg-hover);
-            color: var(--text-primary);
-            border-color: var(--border-color-hover, var(--text-muted));
-
-            app-icon {
-              color: var(--text-primary);
-            }
-          }
-        }
-
-        &.active {
-          background: rgba(var(--accent-primary-rgb), 0.15);
-          color: var(--accent-primary);
-          border-color: var(--accent-primary);
-          font-weight: 600;
-          box-shadow: none;
-
-          app-icon {
-            color: var(--accent-primary);
-          }
-        }
-      }
-
-      .tab-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1px 6px;
-        border-radius: var(--border-radius-pill);
-        font-size: 0.6875rem;
-        font-weight: 700;
-        background: var(--bg-secondary);
-        color: var(--text-muted);
-        line-height: 1;
-        margin-left: 2px;
-      }
-
-      .filter-chip.active .tab-badge {
-        background: rgba(var(--accent-primary-rgb), 0.2);
-        color: var(--accent-primary);
-      }
-    }
-
-    @media (max-width: 768px) {
-        .dict-toolbar {
-            width: 100%;
-            padding: var(--space-2xs) 0 0;
-            margin-bottom: var(--space-sm);
-
-            .view-tabs {
-                width: 100%;
-                display: flex;
-                gap: 6px;
-
-                .filter-chip {
-                    flex: 1 1 0px;
-                    min-width: 0;
-                    justify-content: center;
-                    padding: 0 10px;
-                }
-            }
-        }
-    }
   `]
 })
 export class DictionaryPageComponent implements OnInit, OnDestroy {
   readonly panel = viewChild(DictionaryPanelComponent);
+  readonly vocabList = viewChild(VocabularyListComponent);
 
   private vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
@@ -480,6 +495,45 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
 
   activeTab = signal<'dictionary' | 'vocab'>('dictionary');
   private routeSub?: Subscription;
+
+  dictSearchQuery = '';
+
+  vocabSearchQuery = signal('');
+  selectedVocabLevel = signal<WordLevel | 'all'>('all');
+
+  openVocabMenu(): void {
+    this.vocabList()?.openMenuSheet();
+  }
+
+  vocabLevelCounts = computed(() => {
+    const lang = this.settings.settings().language;
+    const items = this.vocab.vocabulary().filter(w => w.language === lang);
+    return {
+      all: items.length,
+      new: items.filter(w => w.level === 'new').length,
+      learning: items.filter(w => w.level === 'learning').length,
+      known: items.filter(w => w.level === 'known').length,
+      ignored: items.filter(w => w.level === 'ignored').length,
+    };
+  });
+
+  constructor() {
+    effect(() => {
+      const q = this.dictionary.screenQuery();
+      this.dictSearchQuery = q || '';
+    });
+  }
+
+  triggerDictSearch(): void {
+    const q = this.dictSearchQuery.trim();
+    if (!q) return;
+    this.searchTerm(q);
+  }
+
+  clearDictSearch(): void {
+    this.dictSearchQuery = '';
+    this.panel()?.clearSearch();
+  }
 
   stats = computed(() => {
     return this.vocab.getStatsByLanguage(this.settings.settings().language);

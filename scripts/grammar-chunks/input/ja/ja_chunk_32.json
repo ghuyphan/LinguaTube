@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_っこない_73",
+    "id": "ja_n2_っこない_73",
     "language": "ja",
     "pattern": "～っこない",
     "title": "～っこない (〜kkonai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_つつ_74",
+    "id": "ja_n2_つつ_74",
     "language": "ja",
     "pattern": "～つつ",
     "title": "～つつ (〜tsutsu)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_つつある_75",
+    "id": "ja_n2_つつある_75",
     "language": "ja",
     "pattern": "～つつある",
     "title": "～つつある (〜tsutsu aru)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_っぱなし_76",
+    "id": "ja_n2_っぱなし_76",
     "language": "ja",
     "pattern": "～っぱなし",
     "title": "～っぱなし (〜ppanashi)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_っぽい_77",
+    "id": "ja_n2_っぽい_77",
     "language": "ja",
     "pattern": "～っぽい",
     "title": "～っぽい (〜ppoi)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ていられない_78",
+    "id": "ja_n2_ていられない_78",
     "language": "ja",
     "pattern": "～ていられない",
     "title": "～ていられない (〜te irarenai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_てかなわない_79",
+    "id": "ja_n2_てかなわない_79",
     "language": "ja",
     "pattern": "～てかなわない",
     "title": "～てかなわない (〜te kanawanai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_てからでないと_80",
+    "id": "ja_n2_てからでないと_80",
     "language": "ja",
     "pattern": "～てからでないと",
     "title": "～てからでないと (〜te kara denai to)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_てこそ_81",
+    "id": "ja_n2_てこそ_81",
     "language": "ja",
     "pattern": "～てこそ",
     "title": "～てこそ (〜te koso)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_でしょうがない_82",
+    "id": "ja_n2_でしょうがない_82",
     "language": "ja",
     "pattern": "～でしょうがない",
     "title": "～でしょうがない (〜deshou ga nai)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_でたまらない_83",
+    "id": "ja_n2_でたまらない_83",
     "language": "ja",
     "pattern": "～でたまらない",
     "title": "～でたまらない (〜de tamaranai)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_でならない_84",
+    "id": "ja_n2_でならない_84",
     "language": "ja",
     "pattern": "～でならない",
     "title": "～でならない (〜de naranai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_でばかりはいられない_85",
+    "id": "ja_n2_でばかりはいられない_85",
     "language": "ja",
     "pattern": "～でばかりはいられない",
     "title": "～でばかりはいられない (〜de bakari wa irarenai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_ではないか_86",
+    "id": "ja_n2_ではないか_86",
     "language": "ja",
     "pattern": "～ではないか",
     "title": "～ではないか (〜de wa nai ka)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_てはならない_87",
+    "id": "ja_n2_てはならない_87",
     "language": "ja",
     "pattern": "～てはならない",
     "title": "～てはならない (〜te wa naranai)",

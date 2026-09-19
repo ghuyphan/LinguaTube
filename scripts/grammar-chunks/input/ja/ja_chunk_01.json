@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_A_0",
+    "id": "ja_n5_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A が いちばん～ (A ga ichiban～)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_AけれどもB_1",
+    "id": "ja_n5_AけれどもB_1",
     "language": "ja",
     "pattern": "A。けれども、～B。",
     "title": "A。けれども、～B。(A. Keredomo,~ B.)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_AしかしB_2",
+    "id": "ja_n5_AしかしB_2",
     "language": "ja",
     "pattern": "A。しかし、～B。",
     "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_AじゃB_3",
+    "id": "ja_n5_AじゃB_3",
     "language": "ja",
     "pattern": "A。じゃ、～B。",
     "title": "A。じゃ、～B。(A. Ja, ~B.)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_AそれじゃB_4",
+    "id": "ja_n5_AそれじゃB_4",
     "language": "ja",
     "pattern": "A。それじゃ、～B。",
     "title": "A。それじゃ、～B。(A. Soreja,~B.)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_AそれではB_5",
+    "id": "ja_n5_AそれではB_5",
     "language": "ja",
     "pattern": "A。それでは、～B。",
     "title": "A。それでは、～B。(A. Soredewa,~B.)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_A_6",
+    "id": "ja_n5_A_6",
     "language": "ja",
     "pattern": "A。",
     "title": "A。 では、～B。 (A. Dewa, ~B)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_AでもB_7",
+    "id": "ja_n5_AでもB_7",
     "language": "ja",
     "pattern": "A。でも、～B。",
     "title": "A。でも、～B。(A. Demo, ~B)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Aと_8",
+    "id": "ja_n5_Aと_8",
     "language": "ja",
     "pattern": "Aと",
     "title": "Aと Bと どちら～ (A to B to dochira~)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_AとBと_9",
+    "id": "ja_n5_AとBと_9",
     "language": "ja",
     "pattern": "AとBと",
     "title": "AとBと どっち〜 (A to B to docchi〜)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_A_10",
+    "id": "ja_n5_A_10",
     "language": "ja",
     "pattern": "A",
     "title": "A は B が〜 (A wa B ga〜)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_A_11",
+    "id": "ja_n5_A_11",
     "language": "ja",
     "pattern": "A",
     "title": "A は B より～ (A wa B yori～)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_A_12",
+    "id": "ja_n5_A_12",
     "language": "ja",
     "pattern": "A",
     "title": "A より B のほうが～ (A yori B no hou ga ～)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_いAdjective_13",
+    "id": "ja_n5_いAdjective_13",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective く + Verb (i-Adjective + ku + Verb)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_いAdjective_14",
+    "id": "ja_n5_いAdjective_14",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective く します (i-Adjective ku shimasu)",

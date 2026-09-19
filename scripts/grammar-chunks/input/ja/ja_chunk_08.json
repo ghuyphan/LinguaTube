@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_どこへも_105",
+    "id": "ja_n5_どこへも_105",
     "language": "ja",
     "pattern": "どこへも",
     "title": "どこへも Verb ないです (doko e mo + Verb + nai desu)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_どこへも_106",
+    "id": "ja_n5_どこへも_106",
     "language": "ja",
     "pattern": "どこへも",
     "title": "どこへも Verb ません (doko e mo + Verb + masen)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_どこも_107",
+    "id": "ja_n5_どこも_107",
     "language": "ja",
     "pattern": "どこも",
     "title": "どこも Verb ないです (dokomo + Verb + naidesu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_どこも_108",
+    "id": "ja_n5_どこも_108",
     "language": "ja",
     "pattern": "どこも",
     "title": "どこも Verb ません (dokomo + Verb + masen)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_どちら_109",
+    "id": "ja_n5_どちら_109",
     "language": "ja",
     "pattern": "どちら～",
     "title": "どちら～ (dochira～)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_どなた_110",
+    "id": "ja_n5_どなた_110",
     "language": "ja",
     "pattern": "どなた～",
     "title": "どなた～ (donata～)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_どの_111",
+    "id": "ja_n5_どの_111",
     "language": "ja",
     "pattern": "どの",
     "title": "どの Noun (dono Noun)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_どれでも_112",
+    "id": "ja_n5_どれでも_112",
     "language": "ja",
     "pattern": "どれでも～",
     "title": "どれでも～ (dore demo～)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_どんな_113",
+    "id": "ja_n5_どんな_113",
     "language": "ja",
     "pattern": "どんな",
     "title": "どんな Noun (donna)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_なに_114",
+    "id": "ja_n5_なに_114",
     "language": "ja",
     "pattern": "なに～",
     "title": "なに～ (nani~)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_なにか_115",
+    "id": "ja_n5_なにか_115",
     "language": "ja",
     "pattern": "なにか～",
     "title": "なにか～ (nanika～)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_なにもないです_116",
+    "id": "ja_n5_なにもないです_116",
     "language": "ja",
     "pattern": "なにも～ないです",
     "title": "なにも～ないです (nani mo~nai desu)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_なにもません_117",
+    "id": "ja_n5_なにもません_117",
     "language": "ja",
     "pattern": "なにも～ません",
     "title": "なにも～ません (nanimo~masen)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_なん_118",
+    "id": "ja_n5_なん_118",
     "language": "ja",
     "pattern": "なん～",
     "title": "なん～ (nan~)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_なんで_119",
+    "id": "ja_n5_なんで_119",
     "language": "ja",
     "pattern": "なんで～",
     "title": "なんで～ (nande～)",

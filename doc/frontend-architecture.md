@@ -217,7 +217,7 @@ graph TD
     - **Cinematic Immersion & Subtle Grammar Accents**: Words render cleanly on the translucent backdrop. Grammar tokens in fullscreen use a subtle, faint dotted underline without any background box or solid borders, preserving cinematic reading flow while remaining interactive.
 - **Interaction Services**:
   - `GestureHandlerService`: Handles mobile touch gestures (single tap for controls toggle with zero-latency dismissal when controls are showing, double-tap left/right wings for $\pm 10$s seek with feedback pill & ripple, horizontal swipe for scrubbing preview, and long-press for $2\times$ playback speed).
-  - `KeyboardShortcutService`: Centralized, mobile-gated hotkey event dispatcher running outside `NgZone` (`NgZone.runOutsideAngular`) with zero listeners on touch/mobile devices (`(pointer: coarse) and (hover: none)` or viewport width $\le 768\text{px}$). Dispatches global hotkeys (`Cmd/Ctrl+K` for command palette), video playback controls (`Space`, `k`, `j`/`l` $\pm 10$s seek, `Left`/`Right` $\pm 5$s fine seek, `Up`/`Down` volume, `f` fullscreen, `m` mute, `c` subtitles, `d` dual subtitles, `v` subtitle position, `[`/`]` subtitle font size, `Shift+s` playback speed), and `Shift+L` cue looping (disambiguated from Seek +10s). `VideoKeyboardShortcutService` re-exports it for backward compatibility.
+  - `KeyboardShortcutService`: Centralized, mobile-gated hotkey event dispatcher running outside `NgZone` (`NgZone.runOutsideAngular`) with zero listeners on touch/mobile devices (`(pointer: coarse) and (hover: none)` or viewport width $\le 768\text{px}$). Dispatches global hotkeys (`Cmd/Ctrl+K` for command palette), video playback controls (`Space`, `k`, `j`/`l` $\pm 10$s seek, `Left`/`Right` $\pm 5$s fine seek, `Up`/`Down` volume, `f` fullscreen, `m` mute, `c` subtitles, `d` dual subtitles, `v` subtitle position, `[`/`]` subtitle font size, `Shift+s` playback speed), `Shift+L` cue looping, and flashcard review hotkeys (`Space`/`Enter` to flip card, `1`–`4` for SRS rating, `R` to replay audio pronunciation). `VideoKeyboardShortcutService` re-exports it for backward compatibility.
 
 #### SubtitleDisplayComponent (`subtitle-display/`)
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).
@@ -548,6 +548,40 @@ To eliminate stacking collisions and guarantee that toasts, modals, and navigati
 ### 6.2. Card & Panel Design Conventions
 - **Clean Surface Architecture & Single-Document Scrolling**: All cards (`.card`, `.sidebar-card`, `.vocab-panel`, `.dict-panel`, `.playlist-panel`, `.history-panel`) share unified surface tokens: `background: var(--bg-card);`, `border: 1px solid var(--border-color);`, and `border-radius: var(--border-radius-lg);`. Cards wrap their contents naturally when items are few (avoiding artificial empty-space stretching or `min-height` voids).
 - **Single-Document vs Bounded Scrolling Best Practice**: Standalone pages (`/playlist`, `/history`, and full-screen dictionary/vocabulary views) avoid arbitrary `max-height: calc(100vh - 260px)` container scrolling. Instead, toolbars (`.playlist-toolbar`, `.history-toolbar`, `.vocab-toolbar`) are configured as `position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px)`, while the list items flow naturally within the single page document. This prevents nested scroll traps, preserves native mobile touch momentum, and guarantees URL bar collapse behavior. Viewport-bounded scrolling (`overflow-y: auto`) is reserved strictly for embedded panels (`:host-context(.sidebar-pane)` in `VocabularyListComponent` or multi-pane sidebars) where list length must not expand the outer player layout.
+
+### 6.3. SVG Icon System & Design Doctrine (MingCute Icons)
+
+Voca uses a centralized SVG sprite system (`src/assets/icons/sprite.svg`) rendered via `<app-icon>` (`IconComponent`). To ensure visual consistency and banish generic "icon slop", all 122 UI icons have been unified under the **MingCute Icons** design standard (Apache 2.0):
+
+1. **Geometry & Keylines**:
+   - Master ViewBox: Standardized `0 0 24 24` coordinate space for all 122 symbols.
+   - Active Canvas: $20 \times 20\text{px}$ interior with a 2px padding safe zone ($x \in [2, 22], y \in [2, 22]$).
+   - Centroid Balance: Asymmetric glyphs (e.g. `play` triangle, `skip-forward`) are optically balanced on the 24x24 grid.
+2. **Stroke Standards & Terminals**:
+   - Master Stroke: Standard **2.0px stroke weight** (`stroke-width="2"`), providing crisp high-DPI rendering and balanced visual weight.
+   - Caps & Joins: Standard `stroke-linecap="round"` and `stroke-linejoin="round"`.
+3. **Pure Vector Hygiene (Zero Clipart, Zero System Fonts, Zero Nested `<use>`)**:
+   - Self-Contained Symbols: Every symbol in `sprite.svg` contains pure vector markup (`<path>`, `<rect>`, `<circle>`, `<line>`, `<polygon>`)—strictly prohibiting nested `<use href="#...">` or `<defs>` tags that fail across shadow-DOM boundaries.
+   - Seek Controls (`rewind`, `fast-forward`): MingCute vectorized numeral '10' paths inside circular arrows, eliminating system-font `<text>` tags and cross-platform clipping.
+   - Navigation Dots (`more-horizontal`, `more-vertical`, `grip-vertical`): Standard MingCute solid disc dots, eliminating hollow donut rendering artifacts.
+   - Gamification Suite (`fire`, `trophy`, `medal`, `diamond`, `snowflake`): Multi-color 3D clipart and downscaled pixel-art have been completely replaced by sleek, tokenized MingCute flat vectors styled via CSS `currentColor` and animation classes (`.fire-flame`).
+4. **Dual-State Outlined vs. Filled System**:
+   - Outline variants (`heart`, `star`, `bookmark`, `play-circle`, `graduation-cap`, `book-open`, `list-video`, `more-horizontal`) use `fill="none"` and `stroke="currentColor"`.
+   - Filled variants (`heart-filled`, `star-filled`, `bookmark-filled`, `play-circle-filled`, `chart-bar`, etc.) use single-path `fill="currentColor"` and `stroke="none"`.
+5. **Purpose-Built Domain Icons (100% Official MingCute)**:
+   - **`clock`**: MingCute `time` circular clock face with hands at 12:00 and 3:00 for durations, review due intervals, and credit timers.
+   - **`history`**: MingCute `history` counter-clockwise rewind clock with arrow for Watch History and Recent Searches navigation.
+   - **`sparkles`**: MingCute `ai` four-point AI star with accent star (replaces weather precipitation arcs).
+   - **`speedometer`**: MingCute `dashboard` speed gauge for video playback rate.
+   - **`timer`**: MingCute `stopwatch` for playback sleep timer.
+   - **`ruby-text`**: MingCute `translate` for phonetic Furigana/Pinyin/Romaji display toggle.
+   - **`sparkle-text`**: MingCute `book-6-ai` for grammar detection indicator.
+   - **`chart-bar`**: MingCute `chart-bar-2` solid stepped level indicator for CEFR/JLPT/HSK/TOPIK filters.
+   - **`brain`**: MingCute `brain` icon for vocabulary "Learning" status.
+   - **`cards`**: MingCute `documents` overlapping cards icon for SRS Flashcards decks.
+   - **`share-ios`**: MingCute `upload-2` tray icon for the iOS Safari PWA installation sheet.
+   - **Contextual Icon Accuracy**: Contexts where generic sparkles were previously overloaded now use semantically accurate MingCute icons: `diamond` for Voca Premium and Diamond currency, `plus-circle` for unstudied "New" vocabulary items, `star` for "For You" video recommendations, release highlights, and curated playlists, `languages` for bilingual subtitle translation benefits, and `trophy` for XP milestones and level-up celebrations.
+
 - **Page Layout Grid System (`.page-layout`) & Tablet Ergonomics**: Main pages (Playlists, History, Dictionary, and Study) utilize a responsive grid layout (`1fr minmax(340px, 25vw)` on wide desktop, `1fr 280px` up to 1200px). On tablet viewports and below (`@media (max-width: 1024px)`), `.page-layout` collapses to a single column (`grid-template-columns: 1fr`) and hides the secondary right sidebar (`.page-layout__sidebar { display: none !important }`). This eliminates 3-column squeeze on tablets (e.g. iPad Air 820px) where the 252px navigation sidebar is expanded. Panel headers (`.panel-header__row`) enforce `flex-wrap: wrap; row-gap: var(--space-2xs)` and text truncation (`overflow: hidden; text-overflow: ellipsis`) to prevent badge and title collisions.
 - **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
 - **Unified App Search Bar (`.app-search-box`)**: 36px fixed-height pill input (`border-radius: var(--border-radius-pill)`) with integrated search icon, clear button (`.clear-btn`), and iOS Safari auto-zoom prevention (`font-size: 16px` under `@media (max-width: 480px)`). Shared identically across Dictionary, Vocabulary, History, and Playlist screens.
@@ -575,21 +609,32 @@ All asynchronous loading states (History, Playlist, Vocabulary, and Dictionary W
 All modals and sheets throughout Voca (both desktop centered modals and mobile bottom sheets) adhere strictly to unified ergonomics:
 - **Header Structure & Clearance**: Left-aligned header with accent-colored icon inside a title group (`gap: 0.5rem`). Title typography is `1.125rem`, `font-weight: 800`, `letter-spacing: -0.01em`. All modal headers feature dedicated right clearance (`padding-right: 2.5rem`, or `2.75rem` for centered popups) preventing any collision with the top-right `sheet-close-btn`.
 - **Card Containers & Item Lists**: Interactive options and lists are enclosed in `.card` (`background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); overflow: hidden;`) with `1px solid var(--border-color)` inner dividers.
-- **Touch Target Ergonomics**: All interactive rows have minimum `48px` - `52px` height with subtle active transform feedback (`transform: scale(0.99)`). Action buttons have `min-height: 2.75rem`, `font-weight: 600`, and `border-radius: var(--border-radius-md)`.
-- **Safe Area Insets**: Modal content containers enforce dynamic safe area bottom padding: `calc(var(--space-lg) + env(safe-area-inset-bottom, 0px))` with standard `max-width: 440px` (or `480px`) centered via `margin: 0 auto`.
+- **Touch Target Ergonomics & 44px Hit Area**: All interactive rows have minimum `48px` - `52px` height with subtle active transform feedback (`transform: scale(0.99)`). Compact icon buttons (e.g. `.sheet-close-btn`, `.subtitle-coachmark__close`, `.audio-btn--sm`, `.delete-btn`) utilize invisible `::after` pseudo-element expansion (`position: absolute; inset: -8px` or `-12px`) to meet the strict 44px x 44px WCAG / iOS touch ergonomics standard without inflating compact visual sizing. Action buttons have `min-height: 2.75rem`, `font-weight: 600`, and `border-radius: var(--border-radius-md)`.
+- **Single-Point Safe Area Bottom Inset**: Bottom safe area padding (`env(safe-area-inset-bottom, 0px)`) is managed strictly and exclusively at the host container root (`BottomSheetComponent.sheet-content`). Child components rendered inside a sheet (such as `SettingsSheetComponent`, `StreakDialogComponent`, `AiCreditsDialogComponent`, `AchievementsDialogComponent`, `VocabularyQuickViewComponent`, `OptionPickerComponent`, and `VideoLevelDialogComponent`) MUST NOT re-declare `env(safe-area-inset-bottom)` or `var(--safe-area-bottom)`. This eliminates double-padding bugs that produce $\sim 68\text{px}$ empty voids on iOS devices with home indicators.
+- **CSS Architecture & Deprecation of `:host-context`**: The legacy CSS `:host-context([data-theme="dark"])` pseudo-class is strictly prohibited across the codebase due to lack of support in modern Safari and Firefox and web standard deprecation. Dark mode component overrides must strictly use `[data-theme="dark"] &` (or `.parent-class &` for contextual ancestor scoping).
+- **Design Token Integrity & Accent Color Normalization**: All UI components strictly reference tokenized SCSS variables from `src/styles/_variables.scss` (including `--space-base: 1rem;` for unified rem-based spacing). Legacy hardcoded coral hex values (`#FF6B6B` / `rgb(255, 107, 107)`) have been eliminated in favor of tokenized `--accent-primary` (`#F45B74` / `rgba(244, 91, 116, ...)`).
+
+### Reactive State & Signal Encapsulation Pattern
+To enforce strict unidirectional data flow and prevent rogue state mutations across feature boundaries:
+- **Private Signal Encapsulation**: Services and offline-first repositories (`OfflineVocabularyRepository`, `OfflineStreakRepository`, `OfflineGamificationRepository`, `TranscriptService`) encapsulate mutable state inside private signals (e.g. `private readonly _state = signal<State>(initialState);` or `private readonly _vocabulary = signal<VocabularyItem[]>([]);`).
+- **Readonly Public Signal Exposure**: State is exposed publicly via `readonly state = this._state.asReadonly();` (or `readonly vocabulary = this._vocabulary.asReadonly();`).
+- **Intent-Driven Mutations**: Outside consumers cannot invoke `.set()` or `.update()` directly on repository signals. All state transitions must occur through explicit, testable public methods (e.g. `addWord()`, `recordActivity()`, `updateXp()`, `loadTranscript()`). Test harnesses use dedicated test helpers (e.g. `service.setState(mockState)`) rather than direct signal manipulation.
+
 
 ### Material Design 3 Mobile Navigation Bar (`.bottom-nav`)
-- **Structure & Ergonomics**: A 5-tab responsive navigation bar constrained to `max-width: 32rem` (`margin: 0 auto`) with `--bottom-nav-height: 4rem` (64px) + full iOS/Android safe area padding (`--bottom-nav-safe-area: var(--safe-area-bottom)`).
-- **M3 Blooming Pill Indicator**: Uses a capsule active indicator (`.bottom-nav__icon-wrap::before`, `width: 56px`, `height: 32px`, `border-radius: 9999px`) that expands horizontally using the official M3 Emphasized Decelerate curve (`cubic-bezier(0.05, 0.7, 0.1, 1)`) from `scaleX(0.32)` to `scale(1)` with `opacity: 1` in brand tint `rgba(var(--accent-primary-rgb), 0.16)`.
-- **Outline vs. Solid Icon Duality**: Navigation tabs display outline icons when inactive (`play-circle`, `graduation-cap`, `book-open`, `list-video`, `more-horizontal`) and dynamically switch to solid filled variants when active (`play-circle-filled`, `graduation-cap-filled`, etc.).
-- **Frosted Glass Surface**: Container uses `rgba(var(--bg-card-rgb), 0.88)` with `backdrop-filter: blur(20px) saturate(180%)` to provide a native frosted-glass blur over scrolling page content.
-- **Landscape Phone Optimization**: On compact landscape viewports (`max-height: 500px`), the bottom navigation bar is automatically hidden (`display: none !important`), freeing up ~20% vertical space for video playback and synchronized subtitles.
+- **Structure & Ergonomics**: A 5-tab responsive navigation bar constrained to `max-width: 32rem` (`margin: 0 auto`) with `--bottom-nav-height: 5rem` (80px matching the official Material Design 3 Navigation Bar spec) + full iOS/Android safe area padding (`--bottom-nav-safe-area: var(--safe-area-bottom)`).
+- **M3 Blooming Pill Indicator**: Uses a standard `64px × 32px` capsule active indicator (`.bottom-nav__icon-wrap::before`, `border-radius: 9999px`) that expands horizontally using the M3 Emphasized Decelerate curve (`cubic-bezier(0.2, 0, 0, 1)`) from `scaleX(0.4)` to `scaleX(1)` with `opacity: 1` in brand tint `rgba(var(--accent-primary-rgb), 0.16)`.
+- **M3 Color & Typography Semantics**: Inactive tabs render with `label-medium` typography (`0.75rem`, 500 weight, `var(--text-muted)` on-surface-variant); active tabs render with bold high-contrast labels (`var(--text-primary)` on-surface), allowing the indicator pill and accent tint to carry the active state cleanly.
+- **Center Action Button (`.bottom-nav__item--create`)**: An elevated M3 CTA container (`52px × 38px`, `border-radius: 14px`) with Voca's signature coral accent gradient (`linear-gradient(135deg, var(--accent-primary), #e04848)`) and M3 level-2 elevation shadow for instant YouTube video URL input.
+- **Crisp Outline Stroke Icons**: Navigation tabs utilize clean, consistent stroke outline icons (`play-circle`, `graduation-cap`, `book-open`, `more-horizontal`), avoiding heavy filled silhouettes and allowing the M3 active capsule pill to provide the primary visual feedback.
+- **Tonal Surface Elevation**: Container uses opaque `var(--bg-surface)` with smooth M3 elevation shadow (`box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04), 0 -4px 16px rgba(0, 0, 0, 0.03)`), eliminating non-Material hairline border dividers.
+- **Landscape Phone Optimization**: On compact landscape viewports (`max-height: 500px`), the bottom navigation bar is automatically hidden during active video playback (`display: none !important`), freeing up vertical space for video playback and synchronized subtitles.
 - **Safe Session Handling**: Tapping the active "Watch" tab while watching a video preserves the current playback state and smoothly scrolls to top rather than resetting the active session.
 
 ### Adaptive Status Capsule Toast System (`.toast`)
 All transient notification feedback (link copying, playlist changes, deletion with Undo, vocabulary imports, payment confirmations, and network errors) is rendered through the centralized `.toast` status capsule:
 - **Ergonomic Bottom-First Placement**: By default, toasts float smoothly near the bottom of the viewport (`bottom: 2rem; left: 50%; transform: translateX(-50%)`), completely avoiding covering YouTube video playback, search bars, or top dialog headers.
-- **Mobile Thumb-Zone Clearance**: On mobile viewports ($\le 768$px), toasts dynamically float just above the Material 3 navigation bar (`bottom: calc(var(--bottom-nav-total-height, 4rem) + 12px)`), making one-tap "Undo" buttons immediately accessible within the natural thumb zone. In compact landscape phone mode, it adapts to safe area insets (`bottom: calc(env(safe-area-inset-bottom, 0px) + 12px)`).
+- **Mobile Thumb-Zone Clearance**: On mobile viewports ($\le 768$px), toasts dynamically float just above the Material 3 navigation bar (`bottom: calc(var(--bottom-nav-total-height, 5rem) + 12px)`), making one-tap "Undo" buttons immediately accessible within the natural thumb zone. In compact landscape phone mode, it adapts to safe area insets (`bottom: calc(env(safe-area-inset-bottom, 0px) + 12px)`).
 - **Theme-Adaptive Frosted Glass Surface**: Uses hardware-accelerated `backdrop-filter: blur(20px) saturate(180%)`. Adapts dynamically between a warm frosted card surface in Light Mode (`rgba(255, 255, 255, 0.90)` with soft ambient elevation) and a sleek translucent obsidian HUD in Dark Mode or Fullscreen Video (`rgba(18, 24, 35, 0.90)` with specular inner highlight `inset 0 1px 0 rgba(255, 255, 255, 0.12)`).
 - **Native Swipe-to-Dismiss Physics**: Touch drag tracking allows users to flick or drag toasts vertically (downwards for bottom toasts, upwards for top toasts) with elastic damping and a 35px dismissal threshold.
 - **Timer Ergonomics (Hover & Press Pause)**: Hovering on desktop (`mouseenter`) or pressing/holding on mobile (`touchstart`) automatically pauses the auto-dismiss timer so users can read or interact without rushing; timer resumes seamlessly on release.
@@ -601,28 +646,33 @@ All transient notification feedback (link copying, playlist changes, deletion wi
 
 ### Unified Card Headers, Toolbars, Badges & Action Buttons
 To maintain complete visual, structural, and functional harmony across all primary views (`Playlist`, `History`, `Dictionary` / `Vocabulary`, `Study` / `Flashcards`, and `Video Dashboard`), all panel cards, subcards, and toolbars share standardized design tokens in `src/styles/_components.scss`:
-- **Panel Header Standard (`.panel-header`)**:
-  - Structured with `.panel-header__row` (enforcing `display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs);`).
-  - Contains `.panel-header__left` (`display: flex; align-items: center; gap: var(--space-xs);`) with accent-colored icon (`.panel-header__icon`, 20px / 18px) and card title (`.panel-header__title`, 1.0625rem / 0.9375rem).
-  - Contains `.panel-badges` aligned to the right (`margin-left: auto; display: flex; align-items: center; gap: var(--space-xs);`):
-    - Primary count/metric badge: `<span class="badge badge--primary">...</span>` (e.g. total items, due cards).
-    - Secondary metadata badges: `<span class="badge badge--accent">...</span>` (language, readings) and `<span class="badge badge--warning">...</span>` (study streaks).
-    - Action/navigation links: `<a class="panel-header__link">...</a>` aligned cleanly alongside badges.
-  - Subtitle line (`.panel-header__subtitle`, 0.8125rem muted) standardized across all views in all 5 supported languages (`en`, `vi`, `ja`, `ko`, `zh`).
-- **Surface Integrity & Dark-Box Inset Prevention**:
-  - Sticky toolbars positioned inside `.card` containers (`.history-toolbar`, `.playlist-toolbar`, `.dict-toolbar`, and embedded `.vocab-toolbar`) MUST use `background: var(--bg-card); backdrop-filter: blur(12px);` rather than `var(--bg-primary)`.
-  - This prevents the dark inset cutout bug in dark mode where child toolbars with `#0f1117` background clashed with parent card containers (`#212121`).
-- **Segmented View Tabs & Badges (`.filter-chip`)**:
-  - Full-width mobile distribution: View tabs on narrow screens enforce `flex: 1 1 0px; min-width: 0; text-align: center;` so tabs distribute evenly across the toolbar width without awkward right-side gaps.
-  - Standardized tab counter badges: both `.chip-count` and `.tab-badge` share unified pill dimensions, `font-size: 0.6875rem`, `font-weight: 700`, and seamless color transitions.
-- **Unified Card Action Buttons (`.action-btn`)**:
-  - Consistent dimensions: circular 32px $\times$ 32px (`border-radius: var(--border-radius-round)`), centered flexbox, transparent border and background by default.
-  - Tactile states: smooth hover tint (`background: var(--bg-hover); color: var(--text-primary)`), active depression (`transform: scale(0.92)`).
-  - Modifiers:
-    - `.action-btn--surface`: Subtle card surface background with border (used in panel toolbar action buttons).
-    - `.action-btn--favorite`: Heart toggle with accent glow and playful spring pop animation (`@keyframes heartPop`).
-    - `.action-btn--delete`: Trash removal with soft error red hover background (`rgba(var(--error-rgb), 0.12)`) and color.
-    - `.action-btn--audio`: Pronunciation speaker button with accent tint and rhythmic audio wave pulse animation (`@keyframes pulseAudio`), standardized across Dictionary search results, Vocabulary list items, and Study flashcards.
+- **Global Panel Toolbar System (`.panel-toolbar`)**:
+  - Unified two-tier layout across all library views (`history-page`, `playlist-page`, `dictionary-page`):
+    - **Top Row (`.panel-toolbar__top`)**: Flex container (`align-items: center; justify-content: space-between; gap: var(--space-xs);`) housing the primary card title / `.segmented-control` on the left and utility actions (`.panel-toolbar__actions`) on the right.
+    - **Bottom Filter Row (`.panel-toolbar__filters`)**: Contains the responsive search wrapper (`.panel-search-wrapper`) and horizontal filter strip (`.filter-scroll-strip` or action triggers). All four primary search surfaces (`History`, `Playlist`, `Dictionary Search`, and `Vocabulary`) share identical 38px desktop & mobile height matching `--btn-height-md: 38px`, auto-expanding search wrapper (`max-width: 440px`, or up to `600px` when alone via `:only-child`), identical vertical gaps (`gap: var(--space-xs); margin-bottom: var(--space-md);`), and zero divider bars (`border-bottom: none`) for seamless card integration.
+  - **Card-Edge Bleed & Seamless Masking (`.panel-toolbar` & `.yt-chips-bar`)**:
+    - Sticky toolbars positioned inside `.card` containers bleed edge-to-edge across the card by cancelling the parent card's horizontal padding: `margin-left: calc(-1 * var(--space-md)); margin-right: calc(-1 * var(--space-md)); width: calc(100% + 2 * var(--space-md)); padding-left: var(--space-md); padding-right: var(--space-md);`.
+    - Guarantees the solid `var(--bg-card)` background spans all the way from the card's left inner border to its right inner border. As video cards scroll underneath, they are completely masked with zero content leakage in the side padding gutters, while inner toolbar items retain perfect vertical alignment with the card content.
+  - **Surface Integrity & Dark-Box Inset Prevention**:
+    - Sticky toolbars positioned inside `.card` containers use `background: var(--bg-card);` rather than `var(--bg-primary)`.
+    - Prevents the dark inset cutout bug in dark mode where child toolbars with `#0f1117` background clashed with parent card containers (`#161c27`).
+- **Unified 38px Global Height Baseline (Single Source of Truth in `src/styles/_components.scss`)**:
+  - **Desktop ($\ge 769\text{px}$)**: All toolbar elements share exact 38px height: `.segmented-control` (38px), `.action-icon-btn` (38px), `.create-playlist-btn` (38px), `.app-search-box` (38px), and `.filter-chip` (38px). Completely eliminates 2–8px vertical baseline jumping.
+  - **Mobile ($\le 768\text{px}$)**: Compact 2-row layout with full 38px touch targets: Row 1 houses the segmented switcher (`.segmented-control`, 38px) and action button (38px); Row 2 pairs the search input (`.app-search-box`, 38px, font 14px) and horizontal filter strip (`.filter-scroll-strip`, chips 38px) side-by-side.
+  - **Zero Component Overrides**: Every screen (Dictionary, Playlist, History, Vocab) inherits toolbar styling strictly from global CSS in `_components.scss`. Component SCSS files contain zero custom toolbar overrides.
+  - **Segmented Controls & Hardware-Accelerated Sliding Tab Pill (`.segmented-control`)**:
+    - Built with a 100% pure CSS, compositor-thread sliding pill indicator using pseudo-element `::before`, avoiding runtime JS measuring, `getBoundingClientRect()`, or DOM-injection directives.
+    - Uses CSS grid (`grid-auto-flow: column; grid-auto-columns: 1fr;`) parameterized with `--tab-count` and `--active-index` CSS custom properties:
+      `width: calc((100% - var(--seg-pad) * 2) / var(--tab-count)); transform: translate3d(calc(100% * var(--active-index)), 0, 0);`
+    - Spring physics easing (`transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)`), running at 60/120fps with zero layout reflow.
+    - Symmetrical, perfectly balanced tab items without noisy numerical count badges (`.segment-badge` removed from tab buttons), preventing horizontal and vertical alignment jitter.
+    - Solves dark mode "sunken tab" inversion with recessed track background (`rgba(0, 0, 0, 0.35)`) and elevated pill surface (`#252D3D` in dark mode, `#FFFFFF` in light mode with crisp shadow).
+    - Zero press-in shrink/scale (`:active` scale transforms removed across all segmented buttons).
+  - **Action Buttons (`.action-icon-btn`, `.create-playlist-btn`)**: 38px universal circular/pill buttons with invisible `&::after` touch target expansion (up to 44×44px Apple HIG compliance). In dark mode, active toggle states feature a luminous accent tint (`rgba(var(--accent-primary-rgb), 0.18)`) and border glow. Danger states (`.action-icon-btn--danger`) provide soft red alert cues on hover.
+  - **Filter Chips (`.filter-chip`) & Horizontal Strip (`.filter-scroll-strip`)**: Normalized to 38px height across all views. Clean swipeable overflow with hidden scrollbars, momentum scrolling (`-webkit-overflow-scrolling: touch`), and high-contrast active state (`background: var(--accent-primary); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.3)`).
+- **Dictionary & Vocabulary Harmonization**:
+  - `DictionaryPageComponent`: Merged search input and filter chips directly into a single top card toolbar, eliminating duplicate titles, double-stacked toolbars, and divider lines.
+  - `VocabularyListComponent`: Supports `showToolbar: false` when embedded in `DictionaryPageComponent` to eliminate duplicate toolbars while keeping the standalone video player sidebar in `VideoPageComponent` (`showToolbar: true`) completely untouched.
 - **Standardized Card Play Overlay (`.card-play-overlay`)**:
   - Centered over 16:9 thumbnails (`inset: 0; background: rgba(0, 0, 0, 0.35);`).
   - Standardized 32px circular play icon (`.play-icon-circle`, `background: var(--accent-primary); color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);`).

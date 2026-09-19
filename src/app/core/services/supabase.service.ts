@@ -120,6 +120,19 @@ export class SupabaseService {
     }
 
     /**
+     * Get validated JWT access token, awaiting proactive refresh if expired or near expiry
+     */
+    async getValidToken(): Promise<string | null> {
+        const sess = this.session();
+        if (!sess?.access_token) return null;
+        if (sess.expires_at && (sess.expires_at * 1000 - Date.now() < 30000)) {
+            const ok = await this.refreshAuth();
+            if (!ok) return null;
+        }
+        return this.session()?.access_token ?? null;
+    }
+
+    /**
      * Check if user is authenticated with a valid session
      */
     isAuthenticated(): boolean {

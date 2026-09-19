@@ -25,14 +25,14 @@
     <div class="quiz-inner">
         <div class="quiz-input-area">
             @if (quiz.questionState() === 'listening') {
-            <div class="listening-state" @fadeIn>
+            <div class="listening-state quiz-fade-in">
                 <div class="listening-indicator">
                     <app-icon name="mic" [size]="15" class="listening-mic-icon" />
                     <span>{{ i18n.t('quiz.listening') }}</span>
                 </div>
             </div>
             } @else {
-            <div class="input-wrapper" [@shake]="isShake()" @fadeIn>
+            <div class="input-wrapper quiz-fade-in" [class.is-shake]="isShake()">
                 @if (quiz.questionState() === 'failed') {
                 <!-- Clean two-section comparison -->
                 <div class="comparison-display">

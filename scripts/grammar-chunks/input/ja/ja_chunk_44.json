@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_62",
+    "id": "ja_n1_Noun_62",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にもまして (〜ni mo mashite)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_63",
+    "id": "ja_n1_Noun_63",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun によらず (～ni yorazu)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_64",
+    "id": "ja_n1_Noun_64",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に先駆けて (〜ni saki gakete)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_65",
+    "id": "ja_n1_Noun_65",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に即した Noun (A ni sokushita B)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_66",
+    "id": "ja_n1_Noun_66",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に即して Verb (〜ni soku shite ~)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_67",
+    "id": "ja_n1_Noun_67",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に言わせれば (Noun ni iwasereba)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_68",
+    "id": "ja_n1_Noun_68",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に限ったことではない (〜ni kagitta koto dewa nai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_69",
+    "id": "ja_n1_Noun_69",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に限ったことでもない (~ni kagitta koto demo nai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_70",
+    "id": "ja_n1_Noun_70",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に限る (~ni kagiru)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_71",
+    "id": "ja_n1_Noun_71",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ぬいた Noun (A nuita B)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_72",
+    "id": "ja_n1_Noun_72",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ぬいて（~nuite)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_ぬくnuku_73",
+    "id": "ja_n1_ぬくnuku_73",
     "language": "ja",
     "pattern": " ～ぬく (~nuku)",
     "title": " ～ぬく (~nuku)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Nounのいかんだ_74",
+    "id": "ja_n1_Nounのいかんだ_74",
     "language": "ja",
     "pattern": "Noun+のいかんだ",
     "title": "Noun+のいかんだ (Noun no ikan da)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_75",
+    "id": "ja_n1_Noun_75",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんでは (Noun no ikan de wa)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_76",
+    "id": "ja_n1_Noun_76",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんにかかわらず (Noun no ikan ni kakawarazu)",

@@ -1,25 +1,65 @@
 import { Component, inject, input, output, computed, effect, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
-import { GrammarPattern } from '../../../models';
-import { I18nService } from '../../../core/services';
+import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { GrammarPattern, SupportedLearningLanguage } from '../../../models';
+import { I18nService, ToastService } from '../../../core/services';
 import { GrammarService } from '../../../services';
+import { VocabularyService } from '../../vocabulary';
 
 @Component({
     selector: 'app-grammar-popup',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, BottomSheetComponent],
+    imports: [CommonModule, BottomSheetComponent, IconComponent],
     templateUrl: './grammar-popup.component.html',
     styleUrl: './grammar-popup.component.scss'
 })
 export class GrammarPopupComponent {
+    private router = inject(Router);
+    private vocab = inject(VocabularyService);
+    private toast = inject(ToastService);
     i18n = inject(I18nService);
     grammar = inject(GrammarService);
 
     pattern = input<GrammarPattern | null>(null);
     isOpen = input<boolean>(false);
     closed = output<void>();
+
+    readonly isSaved = computed(() => {
+        const p = this.displayPattern();
+        return p ? this.vocab.hasWord(p.pattern) : false;
+    });
+
+    saveToVocabulary(): void {
+        const p = this.displayPattern();
+        if (!p) return;
+
+        const lang = p.language as SupportedLearningLanguage;
+        const sentence = p.examples?.[0]?.sentence;
+        const meaning = p.shortExplanation || p.title;
+
+        this.vocab.addWord(
+            p.pattern,
+            meaning,
+            lang,
+            undefined,
+            undefined,
+            undefined,
+            sentence
+        );
+
+        const msg = this.i18n.t('vocab.saveSuccess', { word: p.pattern }) || `Added "${p.pattern}" to vocabulary`;
+        this.toast.success(msg);
+    }
+
+    lookupInDictionary(): void {
+        const p = this.displayPattern();
+        if (!p) return;
+        this.closed.emit();
+        this.router.navigate(['/dictionary'], { queryParams: { q: p.pattern } });
+    }
 
     constructor() {
         // Trigger translation lazy loading when popup is open for a non-English UI language

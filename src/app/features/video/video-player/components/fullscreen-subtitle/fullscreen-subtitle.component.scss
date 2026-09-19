@@ -29,7 +29,7 @@ $transition-fast: 0.15s ease;
     padding-left: max(0.5rem, env(safe-area-inset-left));
     padding-right: max(0.5rem, env(safe-area-inset-right));
 
-    &.controls-visible.is-near-bottom:not(.is-dragging) {
+    &.controls-visible.is-near-bottom:not(.is-dragging):not(.is-user-placed) {
         // Smoothly lift subtitle to maintain clear distance from player controls bottom bar
         transform: translate(-50%, calc(-100% - 3.25rem));
 
@@ -49,14 +49,14 @@ $transition-fast: 0.15s ease;
         }
 
         .fs-subtitle-card {
-            border-color: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.45);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.3);
+            border-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.45);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.3);
         }
 
         .fs-drag-pill {
             background: var(--accent-primary);
             width: 44px;
-            box-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.6);
+            box-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.6);
         }
     }
 
@@ -458,15 +458,15 @@ $transition-fast: 0.15s ease;
     }
 
     &--saved {
-        background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.28);
+        background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.28);
         color: var(--accent-primary-text, #ff8585);
-        border: 1px solid rgba(var(--accent-primary-rgb, 255, 107, 107), 0.5);
-        text-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 255, 107, 107), 0.4);
+        border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.5);
+        text-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.4);
         font-weight: 600;
 
         @media (hover: hover) {
             &:hover {
-                background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.42);
+                background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.42);
             }
         }
     }

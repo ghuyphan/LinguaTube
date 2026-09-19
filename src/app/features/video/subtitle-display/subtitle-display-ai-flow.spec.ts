@@ -65,7 +65,7 @@ describe('SubtitleDisplayComponent & AI Transcript Entire Flow', () => {
   });
 
   it('Step 1: Displays AI prompt and does NOT show server error when video has NO_NATIVE captions', () => {
-    transcriptService.state.set({
+    transcriptService.setState({
       status: 'error',
       code: 'NO_NATIVE',
       whisperAvailable: true
@@ -87,7 +87,7 @@ describe('SubtitleDisplayComponent & AI Transcript Entire Flow', () => {
   });
 
   it('Step 2: Clicking try-ai-btn emits manualAITrigger', () => {
-    transcriptService.state.set({
+    transcriptService.setState({
       status: 'error',
       code: 'NO_NATIVE',
       whisperAvailable: true
@@ -106,7 +106,7 @@ describe('SubtitleDisplayComponent & AI Transcript Entire Flow', () => {
   });
 
   it('Step 3: Switches cleanly to native spinner in generating_ai state without visual clutter', () => {
-    transcriptService.state.set({
+    transcriptService.setState({
       status: 'generating_ai',
       jobId: 'dev_job_test_123',
       isResuming: false
@@ -141,7 +141,7 @@ describe('SubtitleDisplayComponent & AI Transcript Entire Flow', () => {
 
     subtitleService.subtitles.set(realChineseSegments);
     subtitleService.currentCueIndex.set(0);
-    transcriptService.state.set({
+    transcriptService.setState({
       status: 'complete',
       language: 'zh',
       requestedLanguage: 'zh',
@@ -226,7 +226,7 @@ describe('SubtitleDisplayComponent & AI Transcript Entire Flow', () => {
     // 3. Complete the job and verify cue display
     subtitleService.subtitles.set(realChineseSegments);
     subtitleService.currentCueIndex.set(0);
-    transcriptService.state.set({
+    transcriptService.setState({
       status: 'complete',
       language: 'zh',
       requestedLanguage: 'zh',

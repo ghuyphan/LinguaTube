@@ -1,6 +1,9 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GrammarService } from '../../services/grammar.service';
+import { StorageService } from './storage.service';
+import { SupabaseService } from './supabase.service';
+import { AuthService } from './auth.service';
 import {
     SubtitleCue,
     VideoLevelInfo,
@@ -9,7 +12,7 @@ import {
     Playlist
 } from '../../models';
 
-const STORAGE_KEY = 'linguatube_video_levels';
+const STORAGE_KEY = 'voca_video_levels';
 
 @Injectable({
     providedIn: 'root'
@@ -17,6 +20,9 @@ const STORAGE_KEY = 'linguatube_video_levels';
 export class VideoLevelService {
     private http = inject(HttpClient);
     private grammar = inject(GrammarService);
+    private storage = inject(StorageService);
+    private supabase = inject(SupabaseService);
+    private auth = inject(AuthService);
 
     // Reactive state
     readonly currentLevel = signal<VideoLevelInfo | null>(null);
@@ -606,16 +612,25 @@ export class VideoLevelService {
         return ['ja', 'zh', 'ko', 'en'].includes(lang);
     }
 
+    private saveDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+
     private setCache(key: string, info: VideoLevelInfo): void {
         this.levelCache.set(key, info);
-        this.saveCacheToStorage();
+        this.scheduleSaveCache();
+    }
+
+    private scheduleSaveCache(): void {
+        if (this.saveDebounceTimer) return;
+        this.saveDebounceTimer = setTimeout(() => {
+            this.saveDebounceTimer = null;
+            this.saveCacheToStorage();
+        }, 2000);
     }
 
     private loadCacheFromStorage(): void {
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            if (raw) {
-                const data = JSON.parse(raw);
+            const data = this.storage.get<Record<string, VideoLevelInfo>>(STORAGE_KEY);
+            if (data) {
                 for (const [k, v] of Object.entries(data)) {
                     this.levelCache.set(k, v as VideoLevelInfo);
                 }
@@ -631,15 +646,29 @@ export class VideoLevelService {
             for (const [k, v] of entries) {
                 obj[k] = v;
             }
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+            this.storage.set(STORAGE_KEY, obj);
         } catch { }
     }
 
-    private saveToServer(videoId: string, language: string, level: string, confidence = 0.85, method = 'linguistics'): void {
-        // Fire and forget POST to /api/video-level (Zero KV writes - Rule 2)
-        this.http.post('/api/video-level', { videoId, language, level, confidence, method }).subscribe({
-            next: () => {},
-            error: () => {} // Non-blocking if fails/offline
-        });
+    private async saveToServer(videoId: string, language: string, level: string, confidence = 0.85, method = 'linguistics'): Promise<void> {
+        try {
+            const user = this.auth.user();
+            if (user) {
+                await this.supabase.client.from('video_levels').insert({
+                    video_id: videoId,
+                    language,
+                    level,
+                    confidence,
+                    method,
+                    user_id: user.id
+                });
+                return;
+            }
+        } catch { }
+
+        // Fallback to edge endpoint
+        void this.http.post('/api/video-level', { videoId, language, level, confidence, method })
+            .toPromise()
+            .catch(() => {});
     }
 }

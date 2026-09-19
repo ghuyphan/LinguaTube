@@ -407,9 +407,8 @@ export class SubtitleService {
     let index = this.findActiveCue(subs, currentTime);
 
     // Sticky: show last ended cue if no active one
-    // Added 0.2s tolerance to findStickyCue to prevent flickering at boundaries
     if (index === -1 && currentTime > 0) {
-      index = this.findStickyCue(subs, currentTime + 0.1);
+      index = this.findStickyCue(subs, currentTime);
     }
 
     // Only update if we found a valid index or if we genuinely want to clear it (index -1)
@@ -557,13 +556,13 @@ export class SubtitleService {
         }
       }
 
-      // 3. Search by exact text match for segments with translation
+      // 3. Search by exact text match for segments with translation (bounded by 15s drift)
       if (!matchedSeg) {
         for (let i = 0; i < segments.length; i++) {
           if (usedSegmentIndices.has(i)) continue;
           const s = segments[i];
           if (!s || !s.translation?.trim()) continue;
-          if (s.text?.trim() === cue.text.trim()) {
+          if (s.text?.trim() === cue.text.trim() && Math.abs(s.start - cue.startTime) <= 15.0) {
             matchedSeg = s;
             matchedIdx = i;
             break;
@@ -1224,24 +1223,30 @@ export class SubtitleService {
 
     let left = 0;
     let right = subs.length - 1;
-    let result = -1;
+    let candidate = -1;
 
     while (left <= right) {
       const mid = Math.floor((left + right) / 2);
-      const cue = subs[mid];
-
-      if (time >= cue.startTime && time < cue.endTime) {
-        // Found a match, but check if there's a later overlapping cue
-        result = mid;
+      if (subs[mid].startTime <= time) {
+        candidate = mid;
         left = mid + 1;
-      } else if (time < cue.startTime) {
-        right = mid - 1;
       } else {
-        left = mid + 1;
+        right = mid - 1;
       }
     }
 
-    return result;
+    if (candidate === -1) return -1;
+
+    // Scan backwards from candidate to find the latest overlapping active cue
+    const startScan = Math.max(0, candidate - 6);
+    for (let i = candidate; i >= startScan; i--) {
+      const c = subs[i];
+      if (time >= c.startTime && time < c.endTime) {
+        return i;
+      }
+    }
+
+    return -1;
   }
 
   /**

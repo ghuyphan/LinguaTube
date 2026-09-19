@@ -108,10 +108,17 @@ export class PaymentService {
     });
   }
 
+  stopPolling(): void {
+    if (this.pollingSub) {
+      this.pollingSub.unsubscribe();
+      this.pollingSub = null;
+    }
+  }
+
   clearOrder(): void {
-    this.pollingSub?.unsubscribe();
-    this.pollingSub = null;
+    this.stopPolling();
     this.currentOrder.set(null);
     this.isPaid.set(false);
   }
 }
+

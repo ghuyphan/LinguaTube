@@ -22,6 +22,7 @@ export class AiCreditsDialogComponent implements OnInit, OnDestroy {
 
     readonly regenCountdown = signal<string>('');
     private timerId: ReturnType<typeof setInterval> | null = null;
+    private refreshTimeoutId: ReturnType<typeof setTimeout> | null = null;
     private isRefreshing = false;
 
     ngOnInit(): void {
@@ -43,6 +44,10 @@ export class AiCreditsDialogComponent implements OnInit, OnDestroy {
             clearInterval(this.timerId);
             this.timerId = null;
         }
+        if (this.refreshTimeoutId) {
+            clearTimeout(this.refreshTimeoutId);
+            this.refreshTimeoutId = null;
+        }
     }
 
     private updateCountdown(): void {
@@ -58,7 +63,10 @@ export class AiCreditsDialogComponent implements OnInit, OnDestroy {
             if (!this.isRefreshing && !this.transcript.isDiamondLoading()) {
                 this.isRefreshing = true;
                 this.transcript.refreshDiamonds();
-                setTimeout(() => { this.isRefreshing = false; }, 10000);
+                this.refreshTimeoutId = setTimeout(() => {
+                    this.isRefreshing = false;
+                    this.refreshTimeoutId = null;
+                }, 10000);
             }
             return;
         }

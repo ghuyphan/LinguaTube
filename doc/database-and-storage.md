@@ -258,7 +258,7 @@ Namespace binding: `TRANSCRIPT_CACHE`
 
 ## 5. Supabase Database Schemas, RLS & Server Functions
 
-Hosted at `https://edbkvzviqeulwzcnrrlb.supabase.co` (PostgreSQL with Supabase Auth / GoTrue).
+Hosted at `https://edbkvzviqeulwzcnrrlb.supabase.co` (PostgreSQL with Supabase Auth / GoTrue). Migration SQL scripts reside in `db/migrations/` (e.g. `db/migrations/20260918_leaderboard_video_levels_orders.sql`).
 
 ### 5.1. Table: `public.profiles`
 Extends `auth.users` with application-specific learning profile and subscription tier data:
@@ -272,6 +272,8 @@ CREATE TABLE public.profiles (
   subscription_expires TIMESTAMPTZ,
   diamonds INTEGER DEFAULT 10,
   diamonds_updated_at TIMESTAMPTZ DEFAULT NOW(),
+  target_lang TEXT,
+  country TEXT,
   legacy_pb_id TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
@@ -399,15 +401,56 @@ CREATE TABLE public.gamification (
 );
 ```
 
-### 5.8. Row Level Security (RLS) Policies
-All 8 public tables enforce strict RLS:
-- **Private Data (`vocabulary`, `streaks`, `history`, `gamification`)**: Authenticated users can only `SELECT`, `INSERT`, `UPDATE`, and `DELETE` rows where `user_id = auth.uid()`. Direct writes to `gamification` are guarded by trigger against artificial XP inflation.
-- **User Profiles (`profiles`)**: Users can read their own profile (`id = auth.uid()`) and update basic cosmetic fields (`display_name`, `avatar_url`). Sensitive columns (`subscription_tier`, `diamonds`, `email`) are locked down by `protect_profile_fields()`. Cloudflare Pages edge functions use the `SUPABASE_SERVICE_ROLE_KEY` to update diamond balances and subscription tiers.
+### 5.8. Table: `public.video_levels` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
+Crowdsourced and linguistic-derived CEFR / JLPT / HSK / TOPIK difficulty ratings per video:
+```sql
+CREATE TABLE public.video_levels (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  video_id TEXT NOT NULL,
+  language TEXT NOT NULL,
+  level TEXT NOT NULL,
+  confidence REAL DEFAULT 0.8,
+  method TEXT DEFAULT 'linguistics',
+  user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX idx_video_levels_vid_lang ON public.video_levels(video_id, language);
+```
+
+### 5.9. Table: `public.orders` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
+payOS VietQR order checkout links, payment status, and idempotency tracking:
+```sql
+CREATE TABLE public.orders (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  order_code BIGINT UNIQUE NOT NULL,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  plan_id TEXT NOT NULL,
+  tier TEXT NOT NULL,
+  amount INTEGER NOT NULL,
+  status TEXT NOT NULL DEFAULT 'PENDING',
+  payment_link_id TEXT,
+  checkout_url TEXT,
+  qr_code TEXT,
+  paid_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX idx_orders_user_id ON public.orders(user_id);
+CREATE INDEX idx_orders_order_code ON public.orders(order_code);
+```
+
+### 5.10. Row Level Security (RLS) Policies
+All 10 public tables enforce strict RLS:
+- **Private Data (`vocabulary`, `streaks`, `history`, `gamification`, `orders`)**: Authenticated users can only `SELECT`, `INSERT`, `UPDATE`, and `DELETE` rows where `user_id = auth.uid()`. Direct writes to `gamification` are guarded by trigger against artificial XP inflation. Direct reads on `orders` are restricted to the owner (`(SELECT auth.uid()) = user_id`).
+- **User Profiles (`profiles`)**: Users can read their own profile (`id = auth.uid()`) and update basic cosmetic fields (`display_name`, `avatar_url`, `target_lang`, `country`). Sensitive columns (`subscription_tier`, `diamonds`, `email`) are locked down by `protect_profile_fields()`. Cloudflare Pages edge functions use the `SUPABASE_SERVICE_ROLE_KEY` to update diamond balances and subscription tiers.
 - **Playlists (`playlists`)**: Public and unlisted playlists (`visibility IN ('published', 'unlisted')`) are readable by anyone. Private playlists are restricted to `user_id = auth.uid()`. Client modification of `is_featured` and `save_count` is blocked by server triggers.
 - **Playlist Saves (`playlist_saves`)**: Users can only manage their own bookmarks (`user_id = auth.uid()`). Bookmark counters are synchronized server-side.
+- **Video Levels (`video_levels`)**: Readable by all users (`anon` and `authenticated`) for community difficulty browsing (`video_levels_select` policy). Authenticated users can submit difficulty evaluations (`(SELECT auth.uid()) = user_id`).
 - **Legacy PB Users (`legacy_pb_users`)**: RLS enabled with zero public policies. Accessible strictly via `service_role` and internal security triggers.
 
-### 5.9. Server-Side Triggers & Stored Procedures
+### 5.11. Server-Side Triggers & Stored Procedures
 
 #### Trigger: `on_auth_user_created` & `on_auth_user_email_confirmed` (`handle_new_user()`)
 Automatically provisions a `profiles` record when a user registers via Google OAuth or Email. To strictly prevent pre-authentication account takeover of legacy records:
@@ -472,6 +515,15 @@ Atomic credit deduction and refund procedures called by Cloudflare Pages Functio
 - Executes `SELECT diamonds FROM public.profiles WHERE id = target_user_id FOR UPDATE` to serialize concurrent requests and eliminate race conditions or double-spending.
 - `consume_user_diamonds(target_user_id, diamond_count)`: Verifies `current_diamonds >= diamond_count`. If sufficient, decrements `diamonds`, records `diamonds_updated_at = NOW()`, and returns `{ success: true, remaining: ... }`. If insufficient, returns `{ success: false, remaining: ... }` fail-closed.
 - `refund_user_diamonds(target_user_id, diamond_count)`: Increments `diamonds`, records `diamonds_updated_at = NOW()`, and returns `{ success: true, remaining: ... }`.
+
+#### Stored Procedure: `get_leaderboard(p_lang, p_period, p_limit)` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
+High-performance dynamic leaderboard query executing directly inside Supabase PostgreSQL:
+- Combines `public.profiles`, `public.gamification`, and `public.streaks` in a single query.
+- Computes window ranking `ROW_NUMBER() OVER (...)` dynamically based on `p_period` (`'weekly'` vs `'all_time'`), eliminating D1 schema mismatch and duplicate storage overhead.
+- Dynamically counts unlocked achievement badges from JSONB.
+- Callable by public and authenticated roles: `GRANT EXECUTE ON FUNCTION public.get_leaderboard(text, text, int) TO anon, authenticated;`.
+- Integrated directly by `LeaderboardService` via `supabase.client.rpc('get_leaderboard', ...)`.
+
 
 #### Trigger: `tr_protect_profile_fields` (`protect_profile_fields()`)
 Enforces server-side integrity on `public.profiles`. Prevents authenticated client sessions from tampering with sensitive columns via the Supabase REST API:
@@ -539,6 +591,9 @@ The Supabase instance utilizes the `pg_cron` extension to manage automated serve
 | `lingua-tube-last-video` | `YoutubeService` | `string` (videoId) | Video ID for resuming last session |
 | `linguatube_daily_study_progress` | `StudyPageComponent` | `{ count: number, date: string }` | Daily reviewed flashcard counter |
 | `linguatube_daily_study_goal` | `StudyPageComponent` | `number` | Daily study target (default 20 cards) |
+| `voca_gamification_dirty` | `OfflineGamificationRepository` | `boolean` | Flag indicating unpushed local gamification state to sync on reconnect/logout |
+| `voca_pending_streak_dates` | `OfflineStreakRepository` | `string[]` | Queue of offline activity dates waiting to sync with Supabase |
+| `voca_video_levels_cache` | `VideoLevelService` | `Record<string, VideoLevel>` | Debounced local cache of video CEFR/JLPT difficulty levels |
 | `sb-edbkvzviqeulwzcnrrlb-auth-token` | `SupabaseService` | `{ access_token, refresh_token, user }` | Supabase GoTrue authentication session and JWT |
 
 ### 6.3. Storage Quota Eviction Policy (`StorageService`)

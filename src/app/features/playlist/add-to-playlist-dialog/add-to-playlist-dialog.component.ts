@@ -1,11 +1,11 @@
-import { Component, ChangeDetectionStrategy, input, output, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { PlaylistService } from '../playlist.service';
 import { Playlist } from '../../../models';
-import { I18nService } from '../../../core/services';
+import { I18nService, ToastService } from '../../../core/services';
 
 @Component({
     selector: 'app-add-to-playlist-dialog',
@@ -18,6 +18,7 @@ import { I18nService } from '../../../core/services';
 export class AddToPlaylistDialogComponent {
     playlistService = inject(PlaylistService);
     i18n = inject(I18nService);
+    toast = inject(ToastService);
 
     // Inputs
     isOpen = input<boolean>(false);
@@ -32,9 +33,20 @@ export class AddToPlaylistDialogComponent {
     // Computed
     playlists = this.playlistService.myPlaylists;
 
+    readonly savedPlaylistIds = computed(() => {
+        const vid = this.videoId();
+        const set = new Set<string>();
+        for (const pl of this.playlists()) {
+            if (pl.videoIds.includes(vid)) {
+                set.add(pl.id);
+            }
+        }
+        return set;
+    });
+
     // Helper to check if video is in playlist
     isInPlaylist(playlist: Playlist): boolean {
-        return playlist.videoIds.includes(this.videoId());
+        return this.savedPlaylistIds().has(playlist.id);
     }
 
     onTogglePlaylist(playlist: Playlist): void {
@@ -43,8 +55,10 @@ export class AddToPlaylistDialogComponent {
 
         if (isCurrentlyInPlaylist) {
             this.playlistService.removeVideo(playlist.id, videoId);
+            this.toast.info(this.i18n.t('playlist.removedSuccess', { title: playlist.title }) || `Removed from ${playlist.title}`);
         } else {
             this.playlistService.addVideo(playlist.id, videoId);
+            this.toast.success(this.i18n.t('playlist.addedSuccess', { title: playlist.title }) || `Added to ${playlist.title}`);
         }
     }
 

@@ -1,27 +1,27 @@
 import { GrammarTranslation } from '../../../models/grammar.model';
 
 export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
-  "ja_A_0": {
-    "title": "A うが B うが (A uga B uga)",
-    "shortExplanation": "Diễn tả sự bất biến: dù rơi vào trường hợp A hay trường hợp B đi chăng nữa thì kết quả hay phán đoán ở vế sau vẫn không có gì thay đổi; 'cho dù A hay B', 'dù là... hay... thì cũng...'.",
-    "longExplanation": "Mẫu ngữ pháp JLPT N1 'Aうが Bうが' (hoặc 'Aうと Bうと') kết hợp với dạng ý chí của động từ, dạng '-かろうが' của tính từ đuôi い hoặc 'であろうが' của danh từ/tính từ đuôi な. Cấu trúc này đưa ra hai trường hợp đối lập, tương phản (hoặc hai khả năng khẳng định - phủ định như 'しようがしまいが') để khẳng định mạnh mẽ rằng cho dù rơi vào trường hợp nào đi chăng nữa thì kết quả, trạng thái hoặc thái độ ở vế sau vẫn hoàn toàn không bị chi phối hay thay đổi.",
-    "formation": "Động từ thể ý chí + が + Động từ thể ý chí / thể まい + が | Tính từ đuôi い (-かろう) + が + Tính từ đuôi い (-かろう) + が | Tính từ đuôi な / Danh từ + であろうが",
+  "ja_n5_A_0": {
+    "title": "A が いちばん～ (A ga ichiban～)",
+    "shortExplanation": "Biểu thị mức độ cao nhất (so sánh nhất); 'nhất', '...nhất trong số'.",
+    "longExplanation": "Mẫu ngữ pháp 'A が いちばん～' được dùng để diễn tả cấp so sánh nhất hoặc mức độ cao nhất của một tính chất, đặc điểm trong một phạm vi xác định. Cấu trúc này thường kết hợp với tính từ hoặc động từ để nhấn mạnh A là đối tượng vượt trội nhất so với các đối tượng còn lại.",
+    "formation": "Danh từ + が + いちばん + Tính từ/Động từ",
     "examples": [
       {
-        "translation": "Dù là sáng sớm hay đêm muộn thì xe buýt lúc nào cũng đến trễ."
+        "translation": "Trong số này, tôi thích sushi nhất."
       },
       {
-        "translation": "Cho dù tôi có nói hay không nói với anh ta thì kết quả cũng chẳng thay đổi."
+        "translation": "Cô ấy bơi nhanh nhất trong lớp."
       },
       {
-        "translation": "Dù có làm hay không làm công việc này thì tiền lương vẫn như nhau cả thôi."
+        "translation": "Ở thị trấn này, công viên này là đẹp nhất."
       },
       {
-        "translation": "Dù có nói hay không nói với người đó thì tôi cũng không nghĩ họ sẽ thấu hiểu."
+        "translation": "Trong các loại đồ uống, tôi thích hồng trà nhất."
       }
     ]
   },
-  "ja_AけれどもB_1": {
+  "ja_n5_AけれどもB_1": {
     "title": "A。けれども、～B。(A. Keredomo,~ B.)",
     "shortExplanation": "Dùng để biểu thị sự tương phản giữa hai câu hoặc mệnh đề; 'nhưng', 'tuy nhiên'.",
     "longExplanation": "Mẫu câu 'A。けれども、～B。' dùng để diễn tả mối quan hệ đối lập hoặc tương phản giữa sự việc A và sự việc B. 'けれども' là liên từ đặt ở đầu câu sau nhằm chỉ ra rằng nội dung câu B đi ngược lại với dự đoán hoặc trái ngược với thực tế được nêu ở câu A.",
@@ -41,7 +41,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AしかしB_2": {
+  "ja_n5_AしかしB_2": {
     "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
     "shortExplanation": "Biểu thị sự đối lập, tương phản rõ rệt giữa hai câu; 'tuy nhiên', 'nhưng'.",
     "longExplanation": "Mẫu câu 'A。しかし、～B。' sử dụng liên từ 'しかし' đặt ở đầu câu thứ hai để diễn tả sự đối lập hoặc chuyển ý mạnh mẽ so với câu thứ nhất. Mẫu này mang sắc thái trang trọng, lịch sự, thường xuất hiện trong văn viết hoặc các bài phát biểu chỉn chu.",
@@ -61,7 +61,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AじゃB_3": {
+  "ja_n5_AじゃB_3": {
     "title": "A。じゃ、～B。(A. Ja, ~B.)",
     "shortExplanation": "Đưa ra quyết định, gợi ý hoặc chuyển ý dựa trên tình huống trước đó; 'vậy thì', 'thế thì'.",
     "longExplanation": "Mẫu câu 'A。じゃ、～B。' dùng phổ biến trong khẩu ngữ thân mật hàng ngày để đưa ra phán đoán, quyết định hoặc đề xuất tiếp theo dựa trên bối cảnh đã nêu ở câu A. 'じゃ' là dạng nói ngắn gọn, thân mật của 'では' hoặc 'それじゃ'.",
@@ -81,7 +81,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AそれじゃB_4": {
+  "ja_n5_AそれじゃB_4": {
     "title": "A。それじゃ、～B。(A. Soreja,~B.)",
     "shortExplanation": "Nối hai câu để đưa ra phản ứng hoặc đề xuất tương ứng với tình huống; 'thế thì', 'vậy thì trong trường hợp đó'.",
     "longExplanation": "Mẫu câu 'A。それじゃ、～B。' dùng để liên kết hai câu hoặc hai ý, trong đó câu A nêu ra bối cảnh, tiền đề, còn câu B thể hiện hành động tiếp nối hoặc phản ứng tương ứng. 'それじゃ' là cách nói rút gọn tự nhiên trong hội thoại của 'それでは'.",
@@ -101,7 +101,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AそれではB_5": {
+  "ja_n5_AそれではB_5": {
     "title": "A。それでは、～B。(A. Soredewa,~B.)",
     "shortExplanation": "Chuyển ý hoặc đưa ra hành động tiếp theo dựa trên tình huống trước đó; 'vậy thì', 'nếu vậy thì'.",
     "longExplanation": "Mẫu câu 'A。それでは、～B。' sử dụng liên từ lịch sự 'それでは' để chuyển tiếp hoặc dẫn dắt sang một hành động, quyết định mới dựa trên thông tin đã nêu ở câu A. Mẫu này mang sắc thái trang nhã, lịch thiệp hơn so với 'じゃ' hay 'それじゃ'.",
@@ -121,27 +121,27 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_6": {
-    "title": "A というか B というか (A to iu ka B to iu ka)",
-    "shortExplanation": "Diễn tả sự phân vân khi tìm từ ngữ thích hợp để mô tả sự việc; 'nói là A hay nói là B...', 'chẳng biết nên gọi là A hay B'.",
-    "longExplanation": "Mẫu ngữ pháp 'A というか B というか' được dùng khi người nói cảm thấy băn khoăn, do dự không biết nên dùng từ ngữ nào (A hay B) để miêu tả chính xác trạng thái, tính chất hoặc cảm xúc của mình về sự vật, sự việc ('nói là A hay là B đây...', 'chẳng biết nên gọi là A hay B'). Vế sau thường kết luận bằng một nhận định mang tính khái quát hoặc đánh giá tổng thể (thường đi với とにかく, いずれにせよ).",
-    "formation": "Từ/Mệnh đề A + というか + Từ/Mệnh đề B + というか (kết hợp với Danh từ, Tính từ, Động từ thể thông thường)",
+  "ja_n5_A_6": {
+    "title": "A では、～B (A dewa, ~B)",
+    "shortExplanation": "Giới hạn phạm vi hoặc chủ đề để đưa ra nhận xét, so sánh; 'trong số A thì...', 'xét về A thì...'.",
+    "longExplanation": "Mẫu ngữ pháp 'A では、～B' dùng để nêu ra một phạm vi, thể loại hoặc lĩnh vực A (đóng vai trò là chủ đề bàn luận), sau đó đưa ra phán đoán, sở thích hoặc sự so sánh nổi bật ở mệnh đề B ('Trong số A thì...', 'Xét về A thì...').",
+    "formation": "Danh từ A + では、 + Chủ ngữ + Vị ngữ B",
     "examples": [
       {
-        "translation": "Anh ấy nói là vô lễ cũng đúng, mà nói là thẳng thắn cũng được, tóm lại là tính cách rất rõ ràng."
+        "translation": "Trong các loại hoa quả, tôi thích táo nhất."
       },
       {
-        "translation": "Bộ phim này nói là thú vị hay kỳ lạ đây, tóm lại là nó mang một bầu không khí rất huyền bí."
+        "translation": "Trong các môn thể thao, bóng đá là môn được yêu thích nhất."
       },
       {
-        "translation": "Những bức tranh của anh ấy nói là tuyệt vời hay đáng kinh ngạc đây, thực sự rất đáng để xem."
+        "translation": "Theo như thời tiết hôm nay, có vẻ trời sắp mưa."
       },
       {
-        "translation": "Bộ trang phục của cô ấy nói là dễ thương hay sặc sỡ đây, tóm lại là rất thu hút ánh nhìn của mọi người."
+        "translation": "Về nấu nướng, tôi nấu món Nhật giỏi nhất."
       }
     ]
   },
-  "ja_AでもB_7": {
+  "ja_n5_AでもB_7": {
     "title": "A。でも、～B。(A. Demo, ~B)",
     "shortExplanation": "Diễn tả sự tương phản hoặc nội dung trái ngược giữa hai câu; 'nhưng', 'tuy nhiên'.",
     "longExplanation": "Mẫu câu 'A。でも、～B。' dùng liên từ 'でも' ở đầu câu thứ hai để diễn tả sự đối lập hoặc diễn biến bất ngờ so với những gì được nói ở câu A. Đây là liên từ khẩu ngữ rất thông dụng và tự nhiên trong đời sống hàng ngày.",
@@ -161,7 +161,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aと_8": {
+  "ja_n5_Aと_8": {
     "title": "Aと Bと どちら～ (A to B to dochira~)",
     "shortExplanation": "Hỏi lựa chọn hoặc so sánh giữa hai đối tượng A và B; 'giữa A và B thì bên nào/cái nào... hơn?'.",
     "longExplanation": "Mẫu ngữ pháp 'Aと Bと どちら～' dùng để so sánh hai sự vật, đối tượng hoặc phương án (A và B), sau đó hỏi đối phương xem cái nào hơn, thích cái nào hơn hoặc lựa chọn bên nào. 'どちら' là đại từ nghi vấn lịch sự mang nghĩa 'bên nào / cái nào'.",
@@ -181,7 +181,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AとBと_9": {
+  "ja_n5_AとBと_9": {
     "title": "AとBと どっち〜 (A to B to docchi〜)",
     "shortExplanation": "Dùng trong giao tiếp thân mật để hỏi lựa chọn giữa hai đối tượng A và B; 'A hay B', 'cái nào hơn?'.",
     "longExplanation": "Mẫu câu 'AとBと どっち〜' là cách nói khẩu ngữ thân mật của 'AとBとどちら', thường dùng giữa bạn bè, người thân để hỏi xem đối phương lựa chọn hoặc yêu thích phương án nào giữa hai đối tượng A và B. Mẫu này cũng có thể dùng ở dạng 'AかBか どっち〜'.",
@@ -201,47 +201,47 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_10": {
-    "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
-    "shortExplanation": "Diễn tả ý dù trong hoàn cảnh hay trạng thái A hay B thì cũng đều xảy ra tình trạng đó; 'dù... hay...', 'khi... cũng như khi...'.",
-    "longExplanation": "Mẫu ngữ pháp '～AにつけBにつけ' ghép đôi hai từ hoặc mệnh đề mang ý nghĩa tương phản (thường là cảm xúc như vui/buồn, hành động như cười/khóc, thời điểm như ngày/đêm) để diễn tả rằng dù trong trường hợp A hay trường hợp B thì cảm xúc, trạng thái hay hành động phía sau đều luôn luôn như vậy ('dù là lúc... hay lúc...', 'khi vui cũng như khi buồn'). Mẫu câu này mang âm hưởng trang trọng và gợi nhiều cảm xúc.",
-    "formation": "Động từ thể từ điển + につけ + Động từ thể từ điển + につけ | Tính từ đuôi い + につけ + Tính từ đuôi い + につけ | Danh từ + につけ + Danh từ + につけ",
+  "ja_n5_A_10": {
+    "title": "A は B が〜 (A wa B ga〜)",
+    "shortExplanation": "Nêu chủ đề A và miêu tả đặc điểm, thuộc tính hoặc khả năng B của đối tượng đó; 'A thì B...'.",
+    "longExplanation": "Cấu trúc 'A は B が〜' là mẫu câu vị ngữ miêu tả đặc trưng cơ bản trong tiếng Nhật. Trợ từ 'は' đưa ra chủ đề lớn A của câu, còn trợ từ 'が' xác định đặc điểm, bộ phận, khả năng hoặc đối tượng tiếp nhận cảm xúc B, theo sau là tính từ hoặc động từ miêu tả tính chất đó.",
+    "formation": "A は (Chủ đề) + B が (Bộ phận/Thuộc tính/Đối tượng) + Tính từ/Động từ",
     "examples": [
       {
-        "translation": "Ở anh ấy, dù là lúc cười hay lúc khóc cũng đều vô cùng quyến rũ."
+        "translation": "Cô ấy có mái tóc dài."
       },
       {
-        "translation": "Dù là lúc vui hay lúc buồn, anh ấy đều luôn luôn lắng nghe âm nhạc."
+        "translation": "Nhà hàng này có bầu không khí rất tuyệt."
       },
       {
-        "translation": "Dù là vào ban ngày hay ban đêm, phong cảnh nơi này đều tuyệt đẹp."
+        "translation": "Tôi thích bữa sáng nhất."
       },
       {
-        "translation": "Dù khi vui sướng hay lúc đau buồn, cô ấy vẫn luôn ở bên động viên nâng đỡ tôi."
+        "translation": "Anh ấy rất giỏi tiếng Anh."
       }
     ]
   },
-  "ja_A_11": {
-    "title": "A のやら B のやら (A no yara B no yara)",
-    "shortExplanation": "Diễn tả sự hoang mang, băn khoăn khi không thể biết rõ là rơi vào trường hợp A hay B; 'chẳng biết là A hay B', 'không biết là... hay...'.",
-    "longExplanation": "Mẫu ngữ pháp 'A のやら B のやら' (kết hợp của trợ từ の và trợ từ nghi vấn thể hiện sự mập mờ やら) được dùng khi người nói rơi vào trạng thái bối rối, không thể phán đoán hay xác định rõ ràng sự thực là A hay là B ('chẳng biết là... hay là...', 'không rõ là... hay...'). Vế sau hầu như luôn đi kèm các từ biểu thị sự không rõ ràng hoặc băn khoăn như 'わからない', 'はっきりしない', '気になって仕方がない'.",
-    "formation": "Động từ/Tính từ thể thông thường + のやら + Động từ/Tính từ thể thông thường + のやら | Tính từ đuôi な + なのやら | Danh từ + なのやら (hoặc のやら)",
+  "ja_n5_A_11": {
+    "title": "A は B より～ (A wa B yori～)",
+    "shortExplanation": "So sánh hơn giữa hai đối tượng; 'A ... hơn B'.",
+    "longExplanation": "Mẫu ngữ pháp 'A は B より～' được dùng để so sánh hai sự vật, hiện tượng hoặc người (A và B). Trong đó, A là chủ thể được đánh giá có mức độ tính chất cao hơn so với tiêu chuẩn so sánh B đi kèm với trợ từ 'より'. Theo sau thường là một tính từ biểu thị phẩm chất so sánh.",
+    "formation": "A は + B より + Tính từ/Động từ",
     "examples": [
       {
-        "translation": "Tôi chẳng thể hiểu nổi là anh ấy đang tức giận hay đang buồn rầu nữa."
+        "translation": "Nước trái cây này ngọt hơn nước trái cây kia."
       },
       {
-        "translation": "Tôi bồn chồn đứng ngồi không yên vì chẳng biết kết quả thi là tốt hay xấu."
+        "translation": "Mùa hè nóng hơn mùa đông."
       },
       {
-        "translation": "Tôi chẳng biết được rốt cuộc là cô ấy thích tôi hay ghét tôi nữa."
+        "translation": "Cô ấy chạy nhanh hơn tôi."
       },
       {
-        "translation": "Vẫn chưa rõ ràng là anh ấy có thực sự đi hay là không đi."
+        "translation": "Siêu thị rẻ hơn cửa hàng tiện lợi."
       }
     ]
   },
-  "ja_A_12": {
+  "ja_n5_A_12": {
     "title": "A より B のほうが～ (A yori B no hou ga ～)",
     "shortExplanation": "So sánh giữa hai đối tượng, nhấn mạnh phía B hơn phía A; 'so với A thì B ... hơn'.",
     "longExplanation": "Mẫu ngữ pháp 'A より B のほうが～' dùng để so sánh hai sự vật hoặc phương án. 'A より' đóng vai trò là tiêu chuẩn so sánh ('so với A'), còn 'B のほうが' nhấn mạnh rằng chính phía B mới là bên có tính chất vượt trội hơn. Cấu trúc kết hợp được với cả tính từ đuôi い và tính từ đuôi な.",
@@ -261,7 +261,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いAdjective_13": {
+  "ja_n5_いAdjective_13": {
     "title": "Tính từ đuôi い + く + Động từ (i-Keiyoushi ku + Doushi)",
     "shortExplanation": "Biến tính từ đuôi い thành phó từ để bổ nghĩa cho động từ đứng sau; 'làm gì một cách...'.",
     "longExplanation": "Cấu trúc biến đổi tính từ đuôi い sang dạng liên dụng bằng cách bỏ đuôi 'い' và thêm 'く'. Hình thức này đóng vai trò như một phó từ để bổ nghĩa cho động từ đi liền sau đó, miêu tả trạng thái, cách thức hoặc mức độ diễn ra của hành động (tương tự như 'làm một cách nhanh chóng', 'ngon lành', v.v.).",
@@ -281,7 +281,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いAdjective_14": {
+  "ja_n5_いAdjective_14": {
     "title": "Tính từ đuôi い + くします (i-Keiyoushi ku shimasu)",
     "shortExplanation": "Biểu thị việc tác động có chủ ý để biến đổi trạng thái của đối tượng; 'làm cho... trở nên'.",
     "longExplanation": "Mẫu ngữ pháp kết hợp dạng liên dụng của tính từ đuôi い (bỏ 'い' thêm 'く') với động từ 'します' (làm). Cấu trúc này diễn tả việc tác động có chủ đích lên đối tượng nhằm làm cho đối tượng đó biến đổi sang trạng thái mới theo tính chất của tính từ. Khác với 'なります' (tự biến đổi tự nhiên), 'します' nhấn mạnh sự tác động từ con người.",
@@ -301,7 +301,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いAdjective_15": {
+  "ja_n5_いAdjective_15": {
     "title": "Tính từ đuôi い: Thể phủ định lịch sự (～くないです / ～くありません)",
     "shortExplanation": "Dạng phủ định lịch sự của tính từ đuôi い, bỏ い thêm くないです (hoặc くありません); mang nghĩa 'không...'.",
     "longExplanation": "Để chuyển tính từ đuôi い sang thể phủ định lịch sự, ta bỏ đuôi い và thêm くないです. Trong các tình huống trang trọng hơn, có thể dùng dạng くありません. Ví dụ: 美味しい (ngon) → 美味しくないです / 美味しくありません (không ngon). Lưu ý trường hợp đặc biệt: いい (tốt) → よくないです / よくありません.",
@@ -321,7 +321,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いAdjective_16": {
+  "ja_n5_いAdjective_16": {
     "title": "Tính từ đuôi い: Thể て (～くて)",
     "shortExplanation": "Dùng để liên kết hai hay nhiều tính từ chỉ đặc điểm, tính chất; mang nghĩa 'vừa... vừa...', 'và', 'vì... nên...'.",
     "longExplanation": "Thể て của tính từ đuôi い được tạo thành bằng cách bỏ đuôi い và thay bằng くて. Mẫu ngữ pháp này dùng để nối hai hay nhiều tính từ nhằm liệt kê các đặc điểm song song của người hoặc sự vật ('vừa... vừa...'), hoặc diễn tả mối quan hệ nguyên nhân - kết quả ('vì... nên...'). Chú ý trường hợp bất quy tắc: いい (tốt) → よくて.",
@@ -341,7 +341,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なAdjective_17": {
+  "ja_n5_なAdjective_17": {
     "title": "Tính từ đuôi な + に + Động từ (Phó từ hóa)",
     "shortExplanation": "Bỏ な thêm に vào sau tính từ đuôi な để biến thành phó từ bổ nghĩa cho động từ đi sau; 'một cách...'.",
     "longExplanation": "Để tính từ đuôi な bổ nghĩa cho động từ, ta bỏ đuôi な và thêm trợ từ に. Cấu trúc này dùng để miêu tả phương thức, trạng thái hoặc cách thức mà một hành động được thực hiện. Ví dụ: 静か（な） → 静かに (nói chuyện một cách yên tĩnh/nhỏ nhẹ), 親切（な） → 親切に (giải thích một cách tận tình).",
@@ -361,7 +361,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なAdjective_18": {
+  "ja_n5_なAdjective_18": {
     "title": "Tính từ đuôi な: Thể で (～で)",
     "shortExplanation": "Dùng để liên kết tính từ đuôi な với một tính từ, động từ hoặc mệnh đề khác; mang nghĩa 'vừa... vừa...', 'và', 'vì... nên...'.",
     "longExplanation": "Tính từ đuôi な khi liên kết với từ khác sẽ dùng dạng で (bỏ đuôi な và thay bằng で). Mẫu câu này dùng để liệt kê nhiều đặc điểm, trạng thái song song của người hoặc sự vật ('vừa... vừa...'), hoặc biểu thị nguyên nhân, lý do nhẹ nhàng dẫn đến vế câu phía sau ('vì... nên...').",
@@ -381,7 +381,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なAdjective_19": {
+  "ja_n5_なAdjective_19": {
     "title": "Tính từ đuôi な + に します (Tác động làm thay đổi / Quyết định)",
     "shortExplanation": "Diễn tả hành động có chủ ý làm biến đổi trạng thái của đối tượng ('làm cho...'), hoặc đưa ra lựa chọn, quyết định ('chọn...').",
     "longExplanation": "Cấu trúc 'Tính từ đuôi な + に します' biểu thị ý chí của người nói tác động làm thay đổi trạng thái của sự vật (nghĩa là 'làm cho... trở nên...'). Ngoài ra, mẫu câu này còn được dùng để biểu thị sự lựa chọn hoặc quyết định một phương án cụ thể (nghĩa là 'tôi chọn/quyết định...').",
@@ -401,7 +401,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なAdjective_20": {
+  "ja_n5_なAdjective_20": {
     "title": "Tính từ đuôi な + に なります (Biến đổi trạng thái tự nhiên)",
     "shortExplanation": "Diễn tả sự thay đổi hoặc chuyển biến tự nhiên sang một trạng thái mới; 'trở nên...', 'trở thành...'.",
     "longExplanation": "Mẫu câu 'Tính từ đuôi な + に なります' diễn đạt sự thay đổi tự nhiên về trạng thái, đặc tính của người hoặc sự vật theo thời gian hoặc hoàn cảnh khách quan mà không nhấn mạnh vào sự can thiệp có chủ ý của con người. Tương đương với 'trở nên...', 'trở thành...' trong tiếng Việt.",
@@ -421,167 +421,167 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_21": {
-    "title": "Danh từ + ぐるみ (gurumi)",
-    "shortExplanation": "Đi cùng danh từ chỉ tập thể để diễn tả toàn thể thành viên cùng tham gia vào một việc; 'cùng toàn thể...', 'toàn bộ...'.",
-    "longExplanation": "Hậu tố ngữ pháp '～ぐるみ' (thường gặp dưới dạng '～ぐるみで') gắn vào sau danh từ chỉ tổ chức, tập thể (như gia đình, lớp học, công ty, thị trấn...) để diễn đạt ý tất cả mọi thành viên trong tập thể đó đều cùng tham gia hoặc cùng bị cuốn vào một sự việc ('toàn bộ...', 'cùng với toàn thể...', 'cả...'). Mang tính bao quát toàn diện không bỏ sót ai.",
-    "formation": "Danh từ (chỉ tập thể/tổ chức) + ぐるみ (thường dùng: Danh từ + ぐるみで)",
+  "ja_n5_Noun_21": {
+    "title": "Danh từ 1 + か + Danh từ 2 (か) (Lựa chọn phương án: hoặc, hay là)",
+    "shortExplanation": "Dùng để đưa ra hai hoặc nhiều phương án lựa chọn thay thế nhau; 'hoặc', 'hay là'.",
+    "longExplanation": "Trợ từ liên kết か đặt giữa các danh từ (hoặc mệnh đề) dùng để liệt kê các phương án lựa chọn loại trừ nhau, tương đương với 'hoặc', 'hay là' trong tiếng Việt. Có thể dùng cấu trúc 'A か B' hoặc lặp lại 'A か B か' để nhấn mạnh sự lựa chọn hay phân vân giữa các phương án.",
+    "formation": "Danh từ 1 + か + Danh từ 2 (+ か)",
     "examples": [
       {
-        "translation": "Cả gia đình chúng tôi đã cùng nhau đi du lịch."
+        "translation": "Hôm nay bạn chọn xem phim hay đi dạo bộ?"
       },
       {
-        "translation": "Toàn thể lớp học đã cùng tham gia chuyến đi dã ngoại."
+        "translation": "Xin hãy chỉ chọn một loại thôi, cà phê hoặc trà."
       },
       {
-        "translation": "Đất nước này toàn thể người dân đều đồng lòng ủng hộ dự luật đó."
+        "translation": "Tôi dự định đi học bằng tàu điện hoặc xe buýt."
       },
       {
-        "translation": "Anh ấy đã cùng với toàn bộ nhóm bạn của mình tham gia vào câu lạc bộ đó."
+        "translation": "Cuối tuần này tôi vẫn chưa quyết định là sẽ đi leo núi hay đi biển."
       }
     ]
   },
-  "ja_Noun_22": {
-    "title": "Danh từ + こそあれ (koso are)",
-    "shortExplanation": "Thừa nhận vế trước tuy có tồn tại (thường là mặt hạn chế, rủi ro) nhưng vế sau vẫn diễn ra tích cực; 'tuy có... nhưng...', 'dẫu có... đi chăng nữa thì...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + こそあれ' (chữ 'あれ' là thể mệnh lệnh/liên từ cổ của động từ 'ある') là lối diễn đạt trang trọng trong văn viết, dùng để thừa nhận một sự thật hoặc khuyết điểm nào đó ở vế trước ('tuy có...', 'dẫu tồn tại...'), nhưng ngay lập tức khẳng định vế sau không hề bị ảnh hưởng tiêu cực mà vẫn diễn biến tốt đẹp hoặc có giá trị lớn ('tuy có... nhưng...').",
-    "formation": "Danh từ + こそあれ | Tính từ đuôi な (thân từ) + でこそあれ",
+  "ja_n5_Noun_22": {
+    "title": "Danh từ + が できます (Khả năng, năng lực)",
+    "shortExplanation": "Diễn tả khả năng hoặc năng lực thực hiện một hành động, kỹ năng, ngoại ngữ; 'biết', 'có thể làm'.",
+    "longExplanation": "Mẫu câu 'Danh từ + が できます' dùng để biểu thị việc người nói hoặc chủ ngữ có khả năng, kỹ năng thực hiện một hoạt động nào đó. Danh từ đứng trước trợ từ が thường là danh từ chỉ hành động (như 料理 - nấu ăn, 泳ぎ - bơi lội), ngôn ngữ (như 英語 - tiếng Anh), hoặc nhạc cụ, môn thể thao. Tương đương với 'biết...', 'có thể làm...' trong tiếng Việt.",
+    "formation": "Danh từ + が + できます",
     "examples": [
       {
-        "translation": "Tuy có một số vấn đề, nhưng dự án vẫn đang tiến triển hết sức thuận lợi."
+        "translation": "Tôi có thể nói (biết) tiếng Anh."
       },
       {
-        "translation": "Dẫu có đôi chút rủi ro, nhưng việc này hoàn toàn xứng đáng để dấn thân thử thách."
+        "translation": "Tôi biết nấu ăn."
       },
       {
-        "translation": "Tuy có khuyết điểm, nhưng đề xuất của anh ấy rất thú vị và đáng quan tâm."
+        "translation": "Anh ấy biết bơi."
       },
       {
-        "translation": "Dẫu trong lòng vẫn có lo âu, nhưng bây giờ chính là thời điểm phải hành động."
+        "translation": "Cô ấy biết chơi đàn piano."
       }
     ]
   },
-  "ja_Noun_23": {
-    "title": "Danh từ + こそ～が (koso ~ ga)",
-    "shortExplanation": "Nhấn mạnh sự công nhận đối với danh từ đó là đúng hoặc quan trọng, nhưng vế sau nêu lên một khía cạnh đối lập khác; 'chính... thì quả là vậy thật, nhưng...', 'đúng là... nhưng...'.",
-    "longExplanation": "Cấu trúc 'Danh từ + こそ + (mệnh đề khẳng định) + が' dùng trợ từ nhấn mạnh 'こそ' để trước hết khẳng định tính quan trọng hoặc đúng đắn của danh từ đó, sau đó dùng liên từ 'が' để đưa ra một sự thật khác có tính chất tương phản hoặc bổ sung ('đúng là A thì thật sự quan trọng đấy, nhưng...', 'chính A thì đúng là như vậy, thế nhưng...').",
-    "formation": "Danh từ + こそ + Vị ngữ (Động từ / Tính từ) + が",
+  "ja_n5_Noun_23": {
+    "title": "Danh từ + が ほしいです (Mong muốn sở hữu đồ vật)",
+    "shortExplanation": "Bày tỏ ước muốn có được hoặc sở hữu một đồ vật, sự vật nào đó; 'muốn có...', 'muốn...'.",
+    "longExplanation": "Mẫu câu 'Danh từ + が ほしいです' dùng để thể hiện mong muốn sở hữu một món đồ hoặc mong muốn có được đối tượng nào đó (như bạn bè, thời gian). Khác với '～たいです' (dùng sau động từ chỉ mong muốn thực hiện hành động), 'ほしい' đi trực tiếp với danh từ chỉ đối tượng mong muốn qua trợ từ が. Cấu trúc này thường dùng cho ngôi thứ nhất. Với ngôi thứ ba, người ta thường dùng '～をほしがっています'.",
+    "formation": "Danh từ + が + ほしいです",
     "examples": [
       {
-        "translation": "Tiền bạc đúng là rất cần thiết thật đấy, nhưng đó không phải là tất cả trong cuộc đời."
+        "translation": "Tôi muốn có một chiếc ô tô mới."
       },
       {
-        "translation": "Nỗ lực quả thật là điều vô cùng quan trọng, nhưng kết quả cũng không thể bỏ qua."
+        "translation": "Tôi muốn có cà phê (cho tôi xin cà phê)."
       },
       {
-        "translation": "Sức khỏe đúng là tài sản quý giá nhất, nhưng đôi khi người ta vẫn buộc phải ưu tiên công việc."
+        "translation": "Cô ấy muốn có hoa."
       },
       {
-        "translation": "Tình yêu đúng là một sức mạnh lớn lao thật, nhưng việc biểu đạt nó ra lại chẳng hề dễ dàng."
+        "translation": "Tôi muốn có bạn bè."
       }
     ]
   },
-  "ja_Noun_24": {
-    "title": "Danh từ + こそすれ (koso sure)",
-    "shortExplanation": "Nhấn mạnh chỉ có khả năng vế trước xảy ra, tuyệt đối không có chuyện vế sau; 'chỉ có... chứ tuyệt đối không...', 'họa may có... chứ quyết không...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + こそすれ' (kết hợp giữa trợ từ nhấn mạnh 'こそ' và thể liên từ 'すれ' của động từ 'する') dùng để nhấn mạnh sự đối lập cực đoan giữa hai vế: vế trước (X) có thể xảy ra hoặc có khả năng xảy ra, nhưng vế sau (Y) mang tính phủ định tuyệt đối thì dứt khoát không bao giờ có chuyện đó ('chỉ có thể là X chứ quyết không đời nào có chuyện Y'). Đi sau danh từ hành động (danh từ する) hoặc thân từ động từ.",
-    "formation": "Danh từ (động danh từ) + こそすれ + Vế phủ định (～ない / ～できない) | Động từ thể ます bỏ ます + こそすれ + Vế phủ định",
+  "ja_n5_Noun_24": {
+    "title": "Danh từ 1 + から + Danh từ 2 + まで (Từ... đến...)",
+    "shortExplanation": "Biểu thị điểm xuất phát và điểm kết thúc của thời gian, không gian hoặc phạm vi; 'từ... đến...'.",
+    "longExplanation": "Mẫu câu '～から ～まで' dùng để xác định phạm vi giữa hai mốc danh từ, trong đó から chỉ điểm bắt đầu (thời gian bắt đầu, nơi xuất phát) và まで chỉ điểm kết thúc (thời gian kết thúc, điểm đến). Tương đương với 'từ... đến...' trong tiếng Việt. Cả hai trợ từ có thể đi cặp với nhau hoặc dùng riêng lẻ.",
+    "formation": "Danh từ 1 (điểm bắt đầu) + から + Danh từ 2 (điểm kết thúc) + まで",
     "examples": [
       {
-        "translation": "Tôi chỉ có biết ơn chứ tuyệt đối không thể nào buông lời trách móc được."
+        "translation": "Tôi làm việc từ 9 giờ sáng đến 5 giờ chiều."
       },
       {
-        "translation": "Bận rộn thì có bận thật đấy, chứ tuyệt đối chẳng bao giờ có chuyện buồn chán."
+        "translation": "Tôi đi tàu điện từ Tokyo đến Osaka."
       },
       {
-        "translation": "Tôi chỉ có ôm niềm ân hận chứ quyết không thể nào quên được chuyện đó."
+        "translation": "Tàu điện ngầm hoạt động từ 6 giờ sáng đến nửa đêm."
       },
       {
-        "translation": "Tôi chỉ có nghi ngờ chứ dứt khoát không thể nào tán thành được."
+        "translation": "Tôi đi học từ thứ Hai đến thứ Sáu."
       }
     ]
   },
-  "ja_Noun_25": {
-    "title": "Danh từ + ごとき / ごとく (gotoki / gotoku)",
-    "shortExplanation": "Văn phong văn chương cổ dùng để so sánh ví von; 'như...', 'giống như...'. (ごとき bổ nghĩa cho danh từ, ごとく bổ nghĩa cho động từ, tính từ).",
-    "longExplanation": "Cấu trúc so sánh ví von mang phong cách văn chương cổ điển '～ごとき／～ごとく' (dạng liên thể là 'ごとき' đứng trước danh từ, dạng liên dụng là 'ごとく' đứng trước động từ hoặc tính từ) mang ý nghĩa 'như là...', 'giống hệt như...'. So với 'ようだ' hay 'みたいだ', cấu trúc này mang âm hưởng trang trọng, kịch tính và giàu hình tượng văn học hơn hẳn. (Ngoài ra, ごとき còn có thể dùng để hạ thấp hoặc khiêm nhường).",
-    "formation": "Danh từ + ごとき + Danh từ | Danh từ + ごとく + Động từ / Tính từ",
+  "ja_n5_Noun_25": {
+    "title": "Danh từ + くらい (Khoảng, chừng, ước lượng)",
+    "shortExplanation": "Đứng sau lượng từ hoặc danh từ để biểu thị sự ước lượng đại khái về số lượng, thời gian, mức độ; 'khoảng', 'chừng'.",
+    "longExplanation": "Trợ từ phó từ くらい đứng sau số từ, lượng từ hoặc danh từ để đưa ra con số ước chừng hoặc mức độ ước lượng đại khái. Tương đương với 'khoảng', 'chừng', 'tầm' trong tiếng Việt. Trong tiếng Nhật hiện đại, くらい và dạng âm đục ぐらい có ý nghĩa tương đương và thường có thể dùng thay thế cho nhau.",
+    "formation": "Danh từ / Lượng từ + くらい",
     "examples": [
       {
-        "translation": "Tâm hồn anh ấy thuần khiết hệt như một thiên thần."
+        "translation": "Cuốn sách này có khoảng 300 trang."
       },
       {
-        "translation": "Đừng có làm những hành vi độc ác như loài ác quỷ vậy!"
+        "translation": "Đi bộ đến nhà anh ấy mất khoảng 20 phút."
       },
       {
-        "translation": "Cô ấy sở hữu một làn da trắng ngần như tuyết."
+        "translation": "Ngày mai trời sẽ nóng, khoảng 30 độ."
       },
       {
-        "translation": "Anh ấy đã rời đi nhanh thoăn thoắt như một cơn gió."
+        "translation": "Để nấu món ăn này, cần khoảng 500 yên tiền nguyên liệu."
       }
     ]
   },
-  "ja_Noun_26": {
-    "title": "Danh từ + じゃあるまいし (ja aru mai shi)",
-    "shortExplanation": "Cách nói khẩu ngữ dùng để phê phán, khuyên nhủ hoặc thanh minh; 'đâu phải là... đâu mà...', 'có phải là... đâu cơ chứ'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + じゃあるまいし' (là dạng khẩu ngữ thân mật của '～ではあるまいし') dùng để bác bỏ một lý do hay giả định vô lý, với ngụ ý 'đâu phải là... đâu mà làm thế', 'có phải là... đâu cơ chứ!'. Thường đi kèm với lời khuyên bảo, trách móc, châm biếm hoặc khẳng định rằng thái độ/hành vi đó là hoàn toàn không tương xứng hay không cần thiết.",
-    "formation": "Danh từ + じゃあるまいし (hoặc ではあるまいし)",
+  "ja_n5_Noun_26": {
+    "title": "Danh từ + ぐらい (Khoảng, tầm, chừng)",
+    "shortExplanation": "Đứng sau từ chỉ số lượng hoặc thời gian để chỉ mức độ xấp xỉ; 'khoảng', 'chừng', 'tầm'.",
+    "longExplanation": "Trợ từ ぐらい (dạng âm đục của くらい) đi sau danh từ, từ chỉ số lượng hoặc thời gian nhằm diễn đạt mức độ ước chừng, xấp xỉ. Tương đương với 'khoảng', 'chừng', 'tầm' trong tiếng Việt. Đây là cách nói rất phổ biến và tự nhiên trong giao tiếp hàng ngày.",
+    "formation": "Danh từ / Lượng từ + ぐらい",
     "examples": [
       {
-        "translation": "Cậu ấy đâu còn là trẻ con nữa đâu, phải tự mình giải quyết cho ổn thỏa vấn đề đó đi chứ."
+        "translation": "Vì học cả ngày nên tôi đã học khoảng 10 tiếng đồng hồ."
       },
       {
-        "translation": "Không cần phải vội thế đâu, đâu phải là sắp hết giờ đến nơi rồi đâu mà."
+        "translation": "Cuốn sách này có khoảng 100 trang."
       },
       {
-        "translation": "Cậu có phải là huấn luyện viên đâu mà cứ phải lo lắng về kết quả trận đấu làm gì."
+        "translation": "Anh ấy đã ăn khoảng 5 quả trái cây."
       },
       {
-        "translation": "Đâu phải là kẹo cứng đâu, cứ thế nuốt luôn cũng chẳng sao đâu."
+        "translation": "Từ nhà ga đi bộ về nhà mất khoảng 20 phút."
       }
     ]
   },
-  "ja_Noun_27": {
-    "title": "Danh từ + ずくめ (zukume)",
-    "shortExplanation": "Diễn tả toàn bộ sự vật, hoàn cảnh bị bao trùm hoặc chỉ toàn là một thứ gì đó; 'toàn là...', 'ngập tràn...', 'chỉ rặt...'.",
-    "longExplanation": "Hậu tố ngữ pháp 'Danh từ + ずくめ' dùng để nhấn mạnh trạng thái mà xung quanh hoặc trong một khoảng thời gian chỉ ngập tràn, toàn bộ bao phủ bởi danh từ đó mà không có thứ gì khác xen vào ('toàn là...', 'chỉ rặt những...', 'toàn bộ là...'). Có thể dùng cho cả điều tốt (như 結構ずくめ, 幸せずくめ) lẫn điều xấu (như 失敗ずくめ, 嘘ずくめ) hoặc trạng thái màu sắc, ngoại cảnh (như 黒ずくめ).",
-    "formation": "Danh từ + ずくめ (hoặc ずくめの + Danh từ / ずくめだ)",
+  "ja_n5_Noun_27": {
+    "title": "Danh từ chỉ thời gian + ごろ (Vào khoảng / Tầm mấy giờ)",
+    "shortExplanation": "Đi sau mốc thời gian hoặc độ tuổi để chỉ thời điểm ước chừng; 'vào khoảng', 'tầm'.",
+    "longExplanation": "Trợ từ tiếp vĩ ngữ ごろ (khoảng, tầm) đứng sau các danh từ chỉ mốc thời điểm (giờ giấc, buổi trong ngày) hoặc độ tuổi để diễn tả một mốc thời gian ước lượng đại khái. Cần phân biệt với くらい/ぐらい (chỉ độ dài thời gian hoặc số lượng): ごろ chỉ mốc thời điểm (như 3 giờ chiều), còn くらい/ぐらい chỉ lượng thời gian (như 3 tiếng đồng hồ).",
+    "formation": "Danh từ chỉ thời điểm / Độ tuổi + ごろ (+ に)",
     "examples": [
       {
-        "translation": "Dạo gần đây anh ấy liên tiếp toàn gặp phải thất bại."
+        "translation": "Xin hãy gọi điện cho tôi vào khoảng buổi trưa."
       },
       {
-        "translation": "Mùa đông năm nay tuyết rơi liên miên ngập tràn nên thật là vất vả."
+        "translation": "Anh ấy đã đến Nhật Bản vào khoảng năm 10 tuổi."
       },
       {
-        "translation": "Câu chuyện của anh ta chỉ rặt toàn là những lời dối trá."
+        "translation": "Chúng ta hãy gặp nhau vào tầm 3 giờ chiều nhé."
       },
       {
-        "translation": "Công việc hôm nay chỉ toàn là những chuỗi bận rộn không ngơi nghỉ."
+        "translation": "Tối hôm qua tôi đã về nhà vào khoảng 8 giờ."
       }
     ]
   },
-  "ja_Noun_28": {
-    "title": "Danh từ + だけではすまない (dake dewa sumanai)",
-    "shortExplanation": "Diễn tả ý không thể giải quyết hay dàn xếp ổn thỏa một vấn đề chỉ bằng riêng danh từ đó; 'chỉ... thôi thì không xong đâu', 'không chỉ đơn thuần là... là xong'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + だけではすまない' (dạng phủ định của động từ '済む' - kết thúc, giải quyết xong thỏa đáng) biểu thị rằng tình huống, trách nhiệm hoặc mục tiêu phức tạp đến mức không thể chỉ dựa vào một hành động, sự đền bù hay điều kiện đơn lẻ nào đó mà giải quyết êm thấm được ('chỉ... thôi thì không đủ giải quyết', 'không thể chỉ dừng lại ở... là xong chuyện').",
-    "formation": "Danh từ + だけではすまない (hoặc Động từ thể từ điển / thể て + だけではすまない)",
+  "ja_n5_Noun_28": {
+    "title": "Danh từ / Động từ + だけ (Chỉ, duy chỉ)",
+    "shortExplanation": "Biểu thị sự giới hạn phạm vi, mang nghĩa 'chỉ', 'chỉ duy nhất'.",
+    "longExplanation": "Trợ từ phó từ だけ dùng để giới hạn phạm vi của sự vật, hành động, biểu thị rằng chỉ có đối tượng đó mà không có cái nào khác. Tương đương với 'chỉ', 'chỉ có', 'chỉ mỗi' trong tiếng Việt. Ngoài danh từ, だけ còn có thể đi sau động từ thể thông thường, tính từ đuôi い hoặc tính từ đuôi な (な + だけ). Cấu trúc '～だけでなく' mang nghĩa 'không chỉ... mà còn...'.",
+    "formation": "Danh từ + だけ / Động từ thể thông thường + だけ / Tính từ đuôi い + だけ / Tính từ đuôi な + な + だけ",
     "examples": [
       {
-        "translation": "Vấn đề nghiêm trọng này chỉ xin lỗi thôi thì không thể giải quyết xong đâu."
+        "translation": "Tôi chỉ uống cà phê rồi về nhà."
       },
       {
-        "translation": "Cô ấy đang giận dỗi đấy, chỉ tặng mỗi bánh kẹo thôi thì không êm chuyện được đâu."
+        "translation": "Tôi mới chỉ đọc hai mươi trang của cuốn sách này."
       },
       {
-        "translation": "Sự thành công của dự án này không thể chỉ dựa vào sự nỗ lực đơn thuần là xong."
+        "translation": "Cô ấy rất nhanh nhẹn, không chỉ chạy nhanh mà suy nghĩ cũng rất nhanh."
       },
       {
-        "translation": "Không thể chỉ dừng lại ở việc huy động vốn là xong, mà còn cần có kế hoạch kinh doanh thực tế nữa."
+        "translation": "Căn phòng này là nơi chỉ để ngủ thôi."
       }
     ]
   },
-  "ja_Nounで_29": {
+  "ja_n5_Nounで_29": {
     "title": "Danh từ + で (Nơi chốn của hành động / Phương tiện, cách thức)",
     "shortExplanation": "Chỉ địa điểm diễn ra hành động ('ở, tại'), hoặc phương tiện, công cụ, ngôn ngữ thực hiện hành động ('bằng').",
     "longExplanation": "Trợ từ で đứng sau danh từ để biểu thị: ① Địa điểm diễn ra hành động (khác với に chỉ nơi tồn tại); ② Phương tiện giao thông, công cụ, ngôn ngữ hoặc cách thức thực hiện hành động. Tùy ngữ cảnh mà dịch là 'ở, tại' (nơi chốn) hoặc 'bằng, với' (phương tiện, công cụ).",
@@ -601,627 +601,627 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_30": {
-    "title": "Danh từ 1 + たる + Danh từ 2 (taru)",
-    "shortExplanation": "Văn phong trang trọng dùng để nhấn mạnh tư cách, thân phận hoặc bổn phận xứng đáng của người ở cương vị đó; 'đã là... thì...', 'với tư cách là...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + たる + Danh từ 2' (chữ 'たる' là dạng liên thể của trợ động từ khẳng định cổ 'たり', bắt nguồn từ 'とあり') là cách diễn đạt rất trang trọng trong văn viết hoặc diễn thuyết. Mẫu này dùng để khẳng định cương vị, thân phận hoặc chức trách cao cả của Danh từ 1 (thường là người lãnh đạo, giáo viên, bác sĩ, bậc cha mẹ...), từ đó đưa ra yêu cầu hoặc tiêu chuẩn đạo đức mà đối tượng Danh từ 2 (thường đi với 者 - người mang tư cách đó) phải noi theo và gánh vác xứng đáng ('đã là người làm... thì phải...', 'xứng danh là...').",
-    "formation": "Danh từ 1 (chỉ thân phận/nghề nghiệp/cương vị) + たる + Danh từ 2 (thường là 者)",
+  "ja_n5_Noun_30": {
+    "title": "Danh từ + と～ (to)",
+    "shortExplanation": "Dùng để nối các danh từ mang nghĩa 'và' (liệt kê toàn bộ) hoặc biểu thị 'cùng với' ai đó.",
+    "longExplanation": "Trợ từ 'と' được đặt sau danh từ để thực hiện hai chức năng chính: thứ nhất là liệt kê đầy đủ tất cả các đối tượng ('và', 'với'), khác với 'や' chỉ liệt kê mang tính đại diện; thứ hai là chỉ đối tượng cùng thực hiện hành động ('cùng với', thường đi kèm '一緒に').",
+    "formation": "Danh từ 1 + と + Danh từ 2 / Danh từ (người/đối tượng) + と (一緒に)",
     "examples": [
       {
-        "translation": "Đã là một người lãnh đạo thì luôn phải biết nhìn xa trông rộng và hành động tương xứng."
+        "translation": "Tôi đã mua táo và chuối."
       },
       {
-        "translation": "Đã ở cương vị người thầy thì phải làm tấm gương sáng cho học sinh noi theo."
+        "translation": "Tôi sẽ đi xem phim cùng với bạn."
       },
       {
-        "translation": "Đã là một người mẹ thì việc yêu thương gia đình là điều hết sức đương nhiên."
+        "translation": "Tôi đã đi du lịch cùng với bố và mẹ."
       },
       {
-        "translation": "Đã mang danh người thầy thuốc thì phải đặt sự an toàn của bệnh nhân lên vị trí ưu tiên hàng đầu."
+        "translation": "Anh ấy và cô ấy đã kết hôn."
       }
     ]
   },
-  "ja_Noun_31": {
-    "title": "Danh từ + ですら (desura)",
-    "shortExplanation": "Văn phong trang trọng dùng để nhấn mạnh một trường hợp cực đoan để suy ra những điều khác; 'ngay cả... cũng...', 'ngay đến... cũng...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + ですら' là dạng kết hợp giữa trợ động từ phán đoán khẳng định 'で' và phó trợ từ nhấn mạnh 'すら', mang tính chất văn viết trang trọng và nhấn mạnh mạnh mẽ hơn so với 'さえ' hay 'すら' thông thường. Cấu trúc này đưa ra một ví dụ cực đoan, điển hình hoặc hiển nhiên nhất ('ngay cả...', 'ngay đến... mà còn...') để ngụ ý rằng những trường hợp thông thường khác thì khỏi phải nói.",
-    "formation": "Danh từ + ですら",
+  "ja_n5_Noun_31": {
+    "title": "Danh từ + に～ (ni)",
+    "shortExplanation": "Biểu thị đích đến, thời gian xác định, đối tượng hướng tới hoặc mục đích của hành động; 'vào lúc', 'đến', 'cho'.",
+    "longExplanation": "Trợ từ 'に' là một trong những trợ từ quan trọng và đa dụng nhất trong tiếng Nhật. Khi đứng sau danh từ, 'に' biểu thị điểm đến của sự di chuyển (đi đến đâu), thời điểm diễn ra hành động (vào lúc mấy giờ, ngày nào có con số cụ thể), hoặc đối tượng tiếp nhận hành động (tặng cho ai, viết thư cho ai).",
+    "formation": "Danh từ (thời gian / địa điểm / đối tượng) + に",
     "examples": [
       {
-        "translation": "Ngày mai có bài thi rồi vậy mà ngay cả sách giáo khoa cậu ấy cũng chẳng buồn đọc."
+        "translation": "Tôi đã tặng một món quà cho cô ấy."
       },
       {
-        "translation": "Vấn đề hóc búa này ngay cả các chuyên gia hàng đầu cũng không giải quyết nổi."
+        "translation": "Tôi sẽ đi Nhật Bản."
       },
       {
-        "translation": "Cô ấy đã bật khóc nức nở, ngay đến cả trong bài phát biểu cuối cùng."
+        "translation": "Chúng ta hãy tập hợp lúc 6 giờ nhé."
       },
       {
-        "translation": "Anh ấy học hành chăm chỉ mỗi ngày, thế nhưng ngay đến cả chữ Hán cơ bản cũng chẳng thể nhớ nổi."
+        "translation": "Tôi sẽ viết một lá thư cho bạn."
       }
     ]
   },
-  "ja_Noun_32": {
-    "title": "Danh từ + でなくてなんだろう (〜de nakute nandarou)",
-    "shortExplanation": "Câu hỏi tu từ mang tính khẳng định mạnh mẽ; 'nếu không phải là... thì là gì nữa', 'chính là... chứ còn gì nữa'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + でなくてなんだろう' là một câu hỏi tu từ mang sắc thái cảm thán và khẳng định cực kỳ mạnh mẽ của người nói ('nếu đây không phải là... thì là cái gì nữa?'). Người nói bày tỏ niềm tin tuyệt đối rằng sự việc, hiện tượng đó chắc chắn chính là danh từ được nhắc đến mà không thể là điều gì khác. Thường kết hợp với các danh từ trừu tượng mang tính cảm xúc cao như tình yêu (愛), sự thật (真実), kỳ tích (奇跡), số phận (運命).",
-    "formation": "Danh từ + でなくてなんだろう (hoặc でなくて何だろうか)",
+  "ja_n5_Noun_32": {
+    "title": "Danh từ + に帰ります (ni kaerimasu)",
+    "shortExplanation": "Diễn tả việc trở về một nơi chốn quen thuộc, nơi vốn dĩ thuộc về mình; 'trở về / về (nhà, quê, nước...)'.",
+    "longExplanation": "Mẫu câu 'Danh từ + に帰ります' dùng để diễn tả hành động trở về một địa điểm mà người nói vốn dĩ thuộc về hoặc là nơi chốn cố định của họ (như nhà '家', quê hương/nhà bố mẹ đẻ '実家', đất nước của mình '国', trường học '学校'). Trợ từ 'に' ở đây dùng để chỉ đích đến của hành vi trở về.",
+    "formation": "Danh từ (địa điểm / quê hương / nhà) + に + 帰ります",
     "examples": [
       {
-        "translation": "Nếu đây không phải là sự thật thì là gì nữa chứ."
+        "translation": "Khi kỳ nghỉ hè kết thúc, tôi sẽ quay trở lại trường."
       },
       {
-        "translation": "Anh ấy không phải là người lãnh đạo thì còn ai vào đây nữa."
+        "translation": "Mua sắm xong, tôi sẽ về nhà."
       },
       {
-        "translation": "Nếu đây không phải là tình yêu thì còn là gì nữa."
+        "translation": "Cuối tuần này, tôi sẽ về nhà bố mẹ đẻ (quê nhà)."
       },
       {
-        "translation": "Đây không phải là nhà hàng tuyệt vời nhất thì còn là gì nữa chứ."
+        "translation": "Sau khi đi du lịch cùng bạn bè, tôi sẽ trở về Tokyo."
       }
     ]
   },
-  "ja_Noun_33": {
-    "title": "Danh từ + ではあるまいし (~dewa aru maishi)",
-    "shortExplanation": "Diễn tả ý phủ định một lý do hay tình huống không có thực để đưa ra lời khuyên, phê phán; 'có phải là... đâu mà', 'đâu còn là... nữa'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + ではあるまいし' được dùng để bác bỏ một giả định, lý do hoặc tình huống không có thực ('đâu phải là... đâu mà'), từ đó đưa ra nhận định, lời khuyên giải, sự nhắc nhở hoặc phê phán đối phương ở vế sau ('không cần phải...', 'đừng có... như vậy'). Đây là cách nói trang trọng, mang tính văn viết hơn so với dạng khẩu ngữ thông dụng là '～じゃあるまいし'.",
-    "formation": "Danh từ + ではあるまいし (khẩu ngữ: じゃあるまいし)",
+  "ja_n5_Noun_33": {
+    "title": "Danh từ + にします (ni shimasu)",
+    "shortExplanation": "Biểu thị sự lựa chọn hoặc quyết định chọn một cái gì đó; 'chọn...', 'quyết định lấy...'.",
+    "longExplanation": "Cấu trúc 'Danh từ + にします' được sử dụng phổ biến trong sinh hoạt hàng ngày khi đưa ra quyết định hoặc lựa chọn từ nhiều khả năng, ví dụ như gọi món tại nhà hàng, chọn mua một món đồ hay quyết định kế hoạch. Nó nhấn mạnh ý chí chủ quan của người nói khi chọn phương án đó.",
+    "formation": "Danh từ + に します",
     "examples": [
       {
-        "translation": "Cô ấy đâu phải là ca sĩ chuyên nghiệp đâu mà, đòi hỏi sự hoàn hảo thì quả là quá khắt khe."
+        "translation": "Bữa trưa hôm nay tôi chọn ăn sushi."
       },
       {
-        "translation": "Cậu ấy đâu còn là trẻ con nữa đâu mà ăn toàn sô-cô-la như thế, tôi thấy thật chẳng nên chút nào."
+        "translation": "Tôi đang phân vân có nên mua đôi giày này không, nhưng tôi quyết định chọn đôi màu đỏ."
       },
       {
-        "translation": "Anh ta đâu phải là bác sĩ đâu mà, không cần thiết phải tọc mạch soi mói tình trạng sức khỏe của bạn."
+        "translation": "Tôi đã quyết định sẽ làm gì vào ngày nghỉ rồi. Tôi quyết định sẽ đi đến rạp chiếu phim."
       },
       {
-        "translation": "Chiếc nhẫn này đâu phải là đồ đắt tiền gì đâu mà, dẫu có làm rơi cũng chẳng sao cả."
+        "translation": "Tôi đã phân vân giữa việc học tiếng Pháp hay tiếng Tây Ban Nha, nhưng cuối cùng tôi chọn tiếng Pháp."
       }
     ]
   },
-  "ja_Noun_34": {
-    "title": "Danh từ 1 + と + Danh từ 2 + を兼ねて (Noun to Noun o kanete)",
-    "shortExplanation": "Biểu thị một người hoặc một vật đảm nhiệm đồng thời cả hai vai trò, chức năng hoặc mục đích; 'kiêm cả... lẫn...', 'vừa là... vừa là...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + と + Danh từ 2 + を兼ねて' (hoặc dạng vị ngữ là を兼ねる / を兼ねている) xuất phát từ động từ 兼ねる (kiêm nhiệm, gộp làm một), dùng để diễn đạt rằng một đối tượng, sự vật hoặc hành động đảm đương đồng thời cả hai chức vụ, vai trò hoặc mục đích khác nhau ('kiêm cả A lẫn B', 'vừa là A vừa là B'). Thường áp dụng cho chức vụ nghề nghiệp, công năng sử dụng của đồ vật, không gian hoặc các mục đích hành động song hành.",
-    "formation": "Danh từ 1 + と + Danh từ 2 + を兼ねて (hoặc を兼ねる / を兼ねている)",
+  "ja_n5_Noun_34": {
+    "title": "Danh từ + になります (ni narimasu)",
+    "shortExplanation": "Diễn tả sự biến đổi tự nhiên hoặc sự thay đổi trạng thái thành một cái gì đó; 'trở thành', 'trở nên', 'biến thành'.",
+    "longExplanation": "Cấu trúc 'Danh từ + になります' dùng để diễn tả sự thay đổi về thân phận, nghề nghiệp, thời gian hoặc trạng thái, biểu thị kết quả của một quá trình biến đổi tự nhiên hoặc khách quan mà không nhấn mạnh vào sự can thiệp của ý chí (khác với 'にします' vốn là lựa chọn có chủ ý).",
+    "formation": "Danh từ + に + なります",
     "examples": [
       {
-        "translation": "Bố tôi kiêm nhiệm cả chức giám đốc lẫn trưởng phòng kế toán."
+        "translation": "Anh ấy sẽ trở thành bác sĩ."
       },
       {
-        "translation": "Cô ấy vừa là giáo viên âm nhạc vừa kiêm luôn nghệ sĩ dương cầm."
+        "translation": "Những chiếc lá màu nâu này sẽ chuyển sang màu đỏ."
       },
       {
-        "translation": "Căn phòng này kiêm luôn cả phòng ngủ lẫn phòng làm việc."
+        "translation": "Khi món ăn nguội đi thì sẽ không còn ngon nữa."
       },
       {
-        "translation": "Anh ấy vừa làm cha vừa làm mẹ để chăm sóc cho các con."
+        "translation": "Sang năm sẽ là Thế vận hội Tokyo."
       }
     ]
   },
-  "ja_Noun_35": {
-    "title": "Danh từ 1 + といい + Danh từ 2 + といい (〜to ii〜to ii)",
-    "shortExplanation": "Đưa ra hai sự vật tiêu biểu cùng loại để đánh giá, khen ngợi hoặc phàn nàn về tổng thể; 'dù là A hay B thì...', 'cả A lẫn B đều...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + といい + Danh từ 2 + といい' được dùng để nêu ra hai ví dụ tiêu biểu, đại diện trong cùng một nhóm chủ đề nhằm đưa ra lời nhận xét, đánh giá chung về toàn thể đối tượng ('nhìn vào A hay nhìn vào B cũng đều...', 'cả A lẫn B đều...'). Vế sau luôn đi kèm nhận định đánh giá của người nói, có thể là khen ngợi tán thưởng (như 素晴らしい, 完璧だ) hoặc phàn nàn chê trách (như 困ったものだ, 最悪だ).",
-    "formation": "Danh từ 1 + といい + Danh từ 2 + といい + [Đánh giá / Nhận xét]",
+  "ja_n5_Noun_35": {
+    "title": "Danh từ + に来ます (ni kimasu)",
+    "shortExplanation": "Biểu thị hành động di chuyển đến một địa điểm (hướng về phía người nói); 'đến / tới (nơi nào đó)'.",
+    "longExplanation": "Mẫu câu 'Danh từ + に来ます' dùng để chỉ hành động của người hoặc vật di chuyển hướng về phía vị trí của người nói hoặc điểm quy chiếu hiện tại. Danh từ đứng trước trợ từ 'に' là đích đến của hành động đến.",
+    "formation": "Danh từ (địa điểm) + に + 来ます",
     "examples": [
       {
-        "translation": "Dù là món ăn hay các địa điểm du lịch của Nhật Bản thì tất cả đều vô cùng tuyệt vời."
+        "translation": "Bạn tôi sẽ đến nhà tôi chơi."
       },
       {
-        "translation": "Dù là lòng tốt hay thể lực, anh ấy thực sự là một người bạn đời lý tưởng."
+        "translation": "Tối nay, bố sẽ đến ga đón tôi."
       },
       {
-        "translation": "Cả rạp chiếu phim lẫn công viên của thị trấn này, già trẻ gái trai ai nấy đều có thể tận hưởng."
+        "translation": "Ngày mai thầy giáo sẽ đến trường."
       },
       {
-        "translation": "Cả giọng hát lẫn kỹ năng vũ đạo của anh ấy đều hoàn hảo."
+        "translation": "Một ca sĩ nổi tiếng sẽ đến thành phố này."
       }
     ]
   },
-  "ja_Noun_36": {
-    "title": "Danh từ 1 + という + Danh từ 2 (~to iu~)",
-    "shortExplanation": "Dùng để gọi tên, định danh hoặc giải thích Danh từ 2 bằng tên gọi Danh từ 1; 'có tên là...', 'gọi là...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + という + Danh từ 2' dùng để xác định, định danh hoặc gọi tên một đối tượng cụ thể. Danh từ 1 là tên riêng, danh xưng hoặc nội dung định nghĩa, còn Danh từ 2 là danh từ chung chỉ chủng loại (người, sách, thành phố, công ty...). Cấu trúc này dịch là 'người/vật có tên gọi là...', 'cái gọi là...'. Thường dùng khi người nói muốn giới thiệu hoặc làm rõ một cái tên mà đối phương có thể chưa biết rõ.",
-    "formation": "Danh từ 1 (tên gọi / danh xưng) + という + Danh từ 2 (chủng loại)",
+  "ja_n5_Noun_36": {
+    "title": "Danh từ + に行きます (ni ikimasu)",
+    "shortExplanation": "Biểu thị hành động di chuyển rời xa vị trí hiện tại để đi đến một địa điểm; 'đi đến / tới (nơi nào đó)'.",
+    "longExplanation": "Cấu trúc 'Danh từ + に行きます' dùng để diễn tả hành động đi đến một địa điểm hoặc đích đến nhất định, hướng ra xa khỏi vị trí của người nói. Danh từ chỉ nơi chốn đứng trước trợ từ 'に' đóng vai trò là đích đến của sự di chuyển.",
+    "formation": "Danh từ (địa điểm / nơi chốn) + に + 行きます",
     "examples": [
       {
-        "translation": "Người có tên là Hayao Miyazaki là một đạo diễn phim hoạt hình nổi tiếng."
+        "translation": "Tôi đi đến trường."
       },
       {
-        "translation": "Người phụ nữ được gọi là bạn gái đó đối xử với anh ấy rất nghiêm khắc."
+        "translation": "Ngày mai tôi sẽ đi siêu thị."
       },
       {
-        "translation": "Thành phố tên là Tokyo về đêm cũng vô cùng náo nhiệt."
+        "translation": "Cuối tuần tôi sẽ đi rạp chiếu phim."
       },
       {
-        "translation": "Tôi rất thích cuốn sách có tựa đề là 'Harry Potter'."
+        "translation": "Vào kỳ nghỉ hè, tôi sẽ đi biển."
       }
     ]
   },
-  "ja_Noun_37": {
-    "title": "Danh từ + というところだ (Noun to iu tokoro da)",
-    "shortExplanation": "Đưa ra ước lượng hoặc đánh giá đại khái về mức độ, tỷ lệ; 'khoảng chừng...', 'đại khái vào tầm...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + というところだ' (kết câu cũng có thể dùng というところだろう hoặc というところです) được dùng khi người nói muốn ước lượng hoặc đưa ra một đánh giá, phán đoán đại khái về một con số, mức độ, tỷ lệ hoặc tiến độ ('khoảng chừng...', 'đại khái là...', 'vào tầm...'). Thường đi kèm với các từ chỉ số lượng, phần trăm, phân số hoặc mức độ tương đối.",
-    "formation": "Danh từ (chỉ số lượng / mức độ / tỷ lệ) + というところだ (hoặc というところだろう / というところです)",
+  "ja_n5_Noun_37": {
+    "title": "Danh từ + のあとで (no ato de)",
+    "shortExplanation": "Diễn tả thứ tự trước sau của hành động; 'sau khi...', 'sau...'.",
+    "longExplanation": "Mẫu câu 'Danh từ + のあとで' dùng để chỉ một sự việc hoặc hành động diễn ra sau một sự kiện, mốc thời gian hoặc hành vi do danh từ đó biểu thị. Danh từ kết hợp thường là danh từ chỉ hành động/sự kiện (như bữa ăn, cuộc họp, buổi xem phim). Trợ từ 'の' được dùng để liên kết danh từ với 'あとで'.",
+    "formation": "Danh từ (sự kiện / hành vi) + の + あとで",
     "examples": [
       {
-        "translation": "Số thí sinh thi đỗ trong kỳ thi lần này ước chừng khoảng một nửa."
+        "translation": "Sau bữa ăn sáng, tôi đánh răng."
       },
       {
-        "translation": "Thực lực của anh ấy đại khái vào tầm 80%."
+        "translation": "Sau buổi xem phim, chúng tôi đã ăn tối tại nhà hàng."
       },
       {
-        "translation": "Số người tán thành kế hoạch này khoảng chừng 70%."
+        "translation": "Sau cuộc họp, tôi sẽ trao đổi với cấp trên."
       },
       {
-        "translation": "Đối với ý kiến của trưởng phòng, cá nhân tôi đồng tình vào khoảng 90%."
+        "translation": "Sau bữa tối, tôi đã đi dạo bộ."
       }
     ]
   },
-  "ja_Noun_38": {
-    "title": "Danh từ + というもの (~ to iu mono)",
-    "shortExplanation": "Đề cập đến bản chất chung, đặc tính vốn có hoặc chân lý phổ quát của một đối tượng; 'cái gọi là...', 'bản chất của... là...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + というもの' (thường dùng ở dạng chủ đề というものは) được dùng khi muốn nói về bản chất chung, quy luật tất yếu hoặc đặc tính phổ quát của đối tượng, sự vật hay nhóm đối tượng được nhắc đến ('cái gọi là...', 'đã là... thì bản chất là...'). Mẫu câu này thường dùng để đúc kết những chiêm nghiệm, chân lý hoặc định nghĩa chung mang tính khái quát cao.",
-    "formation": "Danh từ + というもの (thường dùng: Danh từ + というものは)",
+  "ja_n5_Noun_38": {
+    "title": "Danh từ + の前に (no mae ni)",
+    "shortExplanation": "Dùng để biểu thị vị trí không gian ở 'phía trước / trước mặt' của một đối tượng hoặc địa điểm.",
+    "longExplanation": "Mẫu câu 'Danh từ + の前に' trong ngữ cảnh không gian được dùng để chỉ vị trí nằm ở ngay phía trước hoặc mặt tiền của một sự vật, địa điểm hoặc con người. Danh từ liên kết với danh từ chỉ phương hướng '前' thông qua trợ từ 'の', và 'に' biểu thị điểm định vị trong không gian.",
+    "formation": "Danh từ (địa điểm / người / vật thể) + の + 前に",
     "examples": [
       {
-        "translation": "Đã là trẻ con thì ngày nào cũng chơi đùa rất nhiều."
+        "translation": "Ở trước nhà ga có một cửa hàng tiện lợi."
       },
       {
-        "translation": "Sinh viên đại học thường dành rất nhiều thời gian cho việc nghiên cứu."
+        "translation": "Xin vui lòng đỗ xe ở trước nhà."
       },
       {
-        "translation": "Bản chất văn hóa Nhật Bản là sự pha trộn giữa nét truyền thống và điều mới mẻ."
+        "translation": "Anh ấy đã đứng ở ngay phía trước tôi."
       },
       {
-        "translation": "Cái gọi là chia ly thì bao giờ cũng là điều đau buồn."
+        "translation": "Một chiếc taxi đã đến trước khách sạn."
       }
     ]
   },
-  "ja_Noun_39": {
-    "title": "Danh từ + といったところだ (Noun to itta tokoro da)",
-    "shortExplanation": "Đánh giá mức độ, số lượng tối đa chỉ đạt tới một giới hạn nhất định; 'nhiều nhất cũng chỉ...', 'cùng lắm cũng chỉ vào khoảng...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + といったところだ' được dùng để ước lượng và chỉ ra mức trần, giới hạn cao nhất của một sự vật, hiện tượng ('nhiều nhất cũng chỉ tầm...', 'cùng lắm cũng chỉ...', 'ở mức... là cùng'). Người nói có sắc thái cho rằng con số hay mức độ đó không phải là quá nhiều, không vượt qua ngưỡng được đề cập. Thường đi kèm với các phó từ như せいぜい (cùng lắm), 多くても (nhiều nhất cũng chỉ).",
-    "formation": "Danh từ (số lượng / mức độ) + といったところだ (hoặc といったところです)",
+  "ja_n5_Noun_39": {
+    "title": "Danh từ + は～ (wa)",
+    "shortExplanation": "Trợ từ chỉ chủ đề của câu; nêu ra đề tài được nói đến; 'về phần...', 'còn... thì'.",
+    "longExplanation": "Trợ từ 'は' (đọc là 'wa') là trợ từ chỉ chủ đề cơ bản nhất trong tiếng Nhật. Nó đứng sau danh từ để đưa danh từ đó lên làm chủ đề hoặc đề tài thảo luận của câu ('nói về X thì...'). 'は' khác với trợ từ chủ ngữ 'が' ở chỗ: 'は' nhấn mạnh phần vị ngữ đằng sau để thuyết minh về chủ đề, trong khi 'が' nhấn mạnh chính bản thân chủ ngữ đứng trước nó.",
+    "formation": "Danh từ + は",
     "examples": [
       {
-        "translation": "Trình độ tiếng Anh của anh ấy cùng lắm cũng chỉ ở mức sơ cấp."
+        "translation": "Tôi thích các món ăn Nhật Bản."
       },
       {
-        "translation": "Vốn từ vựng tiếng Nhật của tôi nhiều nhất cũng chỉ vào khoảng 1.000 từ."
+        "translation": "Anh ấy rất giỏi tiếng Anh."
       },
       {
-        "translation": "Quãng đường anh ấy có thể chạy bộ mỗi ngày nhiều nhất cũng chỉ khoảng 5 cây số."
+        "translation": "Quyển sách này thú vị thật đấy."
       },
       {
-        "translation": "Số lượng nhân viên của công ty đó cùng lắm cũng chỉ rơi vào khoảng 20 người."
+        "translation": "Hôm nay trời nóng quá nhỉ."
       }
     ]
   },
-  "ja_Noun_40": {
-    "title": "Danh từ 1 + といわず + Danh từ 2 + といわず (A to iwazu B to iwazu)",
-    "shortExplanation": "Biểu thị sự việc diễn ra trên toàn bộ mọi trường hợp mà không phân biệt giữa A và B; 'bất kể là A hay B', 'không kể... hay...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + といわず + Danh từ 2 + といわず' bắt nguồn từ việc 'không chỉ nói riêng A hay riêng B', dùng để nhấn mạnh rằng một sự việc, hành động hay trạng thái áp dụng trên phạm vi toàn diện, triệt để mà không có sự phân biệt nào giữa hai đối tượng tương phản hoặc liên quan ('bất kể là A hay B', 'chẳng kể... hay...', 'bất luận ngày hay đêm'). Thường kết hợp với các cặp từ đối lập như ngày/đêm, đông/hè, già/trẻ, hoặc các bộ phận cơ thể (tay/chân).",
-    "formation": "Danh từ 1 + といわず + Danh từ 2 + といわず + [Vế câu diễn tả sự bao quát/toàn bộ]",
+  "ja_n5_Noun_40": {
+    "title": "Danh từ + も～ (mo)",
+    "shortExplanation": "Biểu thị sự đồng nhất về tính chất hoặc hành động với đối tượng đã nêu trước đó; 'cũng', 'cả... lẫn...'.",
+    "longExplanation": "Trợ từ 'も' đứng sau danh từ để biểu thị sự đồng nhất hoặc thêm vào, tương đương với 'cũng' trong tiếng Việt. Khi dùng 'も', nó sẽ thay thế cho các trợ từ như 'は' hoặc 'が'. Ngoài ra, cấu trúc lặp lại 'Danh từ 1 + も + Danh từ 2 + も' được dùng để diễn tả ý nghĩa 'cả A lẫn B đều...'.",
+    "formation": "Danh từ + も / Danh từ 1 + も + Danh từ 2 + も",
     "examples": [
       {
-        "translation": "Bất kể là mùa đông hay mùa hè, anh ấy lúc nào cũng ăn kem."
+        "translation": "Tôi cũng đang học tiếng Nhật."
       },
       {
-        "translation": "Không phân biệt già hay trẻ, tất cả mọi người đều có thể tận hưởng sự kiện đó."
+        "translation": "Anh ấy cũng thích bánh ngọt."
       },
       {
-        "translation": "Bất kể là đàn ông hay phụ nữ, bất kỳ ai cũng sẽ yêu thích bộ phim này."
+        "translation": "Cả Tokyo lẫn Osaka đều có rất nhiều điểm du lịch."
       },
       {
-        "translation": "Bất kể thứ Hai hay thứ Ba, cửa hàng đó ngày nào cũng đông khách."
+        "translation": "Cả bộ phim này lẫn bộ phim kia đều rất hay."
       }
     ]
   },
-  "ja_Noun_41": {
-    "title": "Danh từ + ときたら (〜tokitara)",
-    "shortExplanation": "Đưa ra một chủ đề để bày tỏ cảm xúc mạnh mẽ (thường là phàn nàn, ngán ngẩm hoặc tấm tắc khen ngợi); 'nhắc đến...', 'nói về... thì...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + ときたら' được dùng để nêu bật một đối tượng, sự vật làm chủ đề bàn luận nhằm bộc lộ cảm xúc mạnh mẽ của người nói đối với đối tượng đó ('nhắc đến... thì thật là...', 'nói về... thì...'). Đa số trường hợp dùng để bày tỏ sự bất mãn, phàn nàn, ngán ngẩm hoặc chê trách trước những thói xấu hay điều bất tiện (như thái độ, hành vi). Đôi khi cấu trúc này cũng dùng để biểu thị sự tấm tắc khen ngợi trước một điều vượt trội.",
-    "formation": "Danh từ + ときたら + [Nhận xét mang sắc thái cảm xúc mạnh mẽ]",
+  "ja_n5_Noun_41": {
+    "title": "Danh từ 1 + や + Danh từ 2 + など～ (ya ... nado)",
+    "shortExplanation": "Liệt kê không đầy đủ một vài ví dụ tiêu biểu; 'như là... và... chẳng hạn / vân vân'.",
+    "longExplanation": "Cấu trúc 'Danh từ 1 + や + Danh từ 2 + など' dùng để liệt kê mang tính đại diện một vài sự vật, sự việc cùng loại mà không liệt kê hết toàn bộ (khác với 'と' là liệt kê triệt để tất cả). 'や' có nghĩa là 'và... chẳng hạn', còn 'など' mang nghĩa là 'vân vân', 'những thứ như là'.",
+    "formation": "Danh từ 1 + や + Danh từ 2 (+ など)",
     "examples": [
       {
-        "translation": "Cứ nhắc đến món sushi là anh ấy lại chẳng ăn được món nào cả."
+        "translation": "Anh ấy thích ăn những món như rau củ và hoa quả."
       },
       {
-        "translation": "Hễ cứ gặp phải bài toán là cô ấy lại luôn lúng túng chịu thua."
+        "translation": "Tôi muốn đến các thành phố của Nhật Bản như Tokyo, Osaka chẳng hạn."
       },
       {
-        "translation": "Nói về món burger của quán đó thì thực sự ngon tuyệt vời."
+        "translation": "Cô ấy thích các loài động vật như mèo và chó."
       },
       {
-        "translation": "Cái thái độ thường ngày của anh ta thì thật là khiến người ta ngán ngẩm hết chỗ nói."
+        "translation": "Ở hiệu sách này có bán rất nhiều loại sách như truyện tranh và tiểu thuyết."
       }
     ]
   },
-  "ja_Noun_42": {
-    "title": "Danh từ + とは比べものにならない (~to wa kurabemono ni naranai)",
-    "shortExplanation": "Nhấn mạnh sự chênh lệch quá lớn về trình độ, quy mô hoặc tính chất; 'không thể so sánh với...', 'vượt trội hơn hẳn so với...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + とは比べものにならない' (hoặc dạng định ngữ bổ nghĩa cho danh từ là 比べものにならないほど / 比べものにならない + Danh từ) được dùng để nhấn mạnh khoảng cách hoặc sự chênh lệch quá xa giữa hai đối tượng, đến mức không thể nào đặt lên bàn cân để so sánh được ('hoàn toàn không thể so sánh được với...', 'vượt trội hơn hẳn so với...'). Thường dùng khi một bên áp đảo hoàn toàn về mặt chất lượng, tốc độ, quy mô, trình độ.",
-    "formation": "Danh từ + とは比べものにならない (dạng bổ nghĩa: とは比べものにならないほど + Tính từ/Động từ)",
+  "ja_n5_Noun_42": {
+    "title": "Danh từ + を～ (o/wo)",
+    "shortExplanation": "Trợ từ chỉ tân ngữ trực tiếp của ngoại động từ; biểu thị đối tượng chịu tác động của hành động.",
+    "longExplanation": "Trợ từ 'を' (viết là wo nhưng phát âm là 'o') là trợ từ cách cơ bản được đặt sau danh từ để đánh dấu danh từ đó là tân ngữ trực tiếp chịu tác động của tha động từ (ngoại động từ) đi sau (ví dụ: ăn cơm, đọc sách, uống cà phê).",
+    "formation": "Danh từ (tân ngữ) + を + Tha động từ",
     "examples": [
       {
-        "translation": "Tốc độ của chiếc xe mới hoàn toàn không thể so sánh được với chiếc xe cũ."
+        "translation": "Tôi đọc sách."
       },
       {
-        "translation": "Trình độ tiếng Anh siêu việt của anh ấy thì tôi chẳng thể nào so bì được."
+        "translation": "Anh ấy đã ăn bánh ngọt."
       },
       {
-        "translation": "Công nghệ của Nhật Bản vượt trội đến mức các quốc gia khác không thể nào sánh kịp."
+        "translation": "Mẹ tôi thích uống cà phê."
       },
       {
-        "translation": "Thiệt hại của trận động đất lần này lớn đến mức không thể so sánh được với lần trước."
+        "translation": "Bạn tôi đã dùng bút của tôi."
       }
     ]
   },
-  "ja_Verb_43": {
-    "title": "～てしまう (～te shimau)",
-    "shortExplanation": "Diễn tả hành động đã hoàn thành trọn vẹn (xong xuôi) hoặc sự việc lỡ xảy ra ngoài ý muốn gây tiếc nuối; 'lỡ...', 'làm... mất rồi', 'xong xuôi'.",
-    "longExplanation": "Mẫu ngữ pháp ～てしまう kết hợp động từ thể て với trợ động từ しまう mang hai ý nghĩa chính: (1) Diễn tả sự tiếc nuối, hối hận hoặc bất ngờ trước một hành động, sự việc lỡ xảy ra ngoài ý muốn của người nói (nghĩa là 'lỡ làm...', 'trót làm... mất rồi'); (2) Diễn tả việc hoàn thành triệt để, trọn vẹn toàn bộ một hành động (nghĩa là 'làm xong hết', 'ăn sạch hết'). Trong văn nói thân mật hàng ngày, ～てしまう thường được biến âm thành ～ちゃう, và ～でしまう thành ～じゃう.",
-    "formation": "Động từ thể て + しまう (lịch sự: ～てしまいました; văn nói thân mật: ～ちゃう / ～じゃう)",
+  "ja_n5_Verb_43": {
+    "title": "Động từ thể た + あとで (ta ato de)",
+    "shortExplanation": "Diễn tả sau khi hoàn thành một hành động nào đó thì mới thực hiện hành động tiếp theo; 'sau khi làm...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Động từ thể た + あとで' dùng để diễn tả trật tự thời gian giữa hai hành động, trong đó hành động đứng trước (chia ở thể た) phải được hoàn thành trọn vẹn rồi mới tiến hành hành động ở vế sau. Cấu trúc này nhấn mạnh rõ sự kết thúc của hành động thứ nhất.",
+    "formation": "Động từ thể た + あとで",
     "examples": [
       {
-        "translation": "Tôi lỡ ăn sạch hết cả chiếc bánh kem mất rồi."
+        "translation": "Sau khi làm xong bài tập về nhà, tôi đã xem ti vi."
       },
       {
-        "translation": "Tôi đã để quên bài tập về nhà mất rồi."
+        "translation": "Sau khi ăn bữa sáng xong, tôi đánh răng."
       },
       {
-        "translation": "Tôi đã lỡ miệng nói cho anh ấy biết bí mật mất rồi."
+        "translation": "Sau khi công việc kết thúc, tôi dự định sẽ đi đến phòng tập gym."
       },
       {
-        "translation": "Tôi đã lỡ mua chiếc áo đắt tiền mà không hề nhìn bảng giá."
+        "translation": "Sau khi xem phim xong, tôi đã uống cà phê ở một quán cà phê."
       }
     ]
   },
-  "ja_Verb_44": {
-    "title": "～てほしい (～te hoshii)",
-    "shortExplanation": "Diễn tả mong muốn hoặc yêu cầu người khác làm việc gì cho mình hoặc vì lợi ích chung; 'muốn (ai đó) làm gì'.",
-    "longExplanation": "Mẫu ngữ pháp ～てほしい kết hợp động từ thể て với tính từ đuôi い ほしい (mang nghĩa mong muốn). Khác với ～たい (dùng khi bản thân người nói muốn tự làm gì), ～てほしい dùng để diễn đạt mong muốn người khác (ngôi thứ hai hoặc ngôi thứ ba) thực hiện một hành động nào đó. Đối tượng được mong đợi thực hiện hành động thường được đánh dấu bằng trợ từ に (hoặc có thể lược bỏ trong hội thoại thân mật). Dạng phủ định có hai cách nói: ～ないでほしい (mong ai đó đừng làm...) mang tính tự nhiên và phổ biến hơn, hoặc ～てほしくない (không muốn ai đó làm...). Vì thể hiện trực tiếp ý muốn cá nhân nên không nên dùng trực tiếp với người bề trên hoặc đối tác kinh doanh (thay vào đó nên dùng ～ていただきたい hoặc ～ていただけますか).",
-    "formation": "Động từ thể て + ほしい / Phủ định: Động từ thể ない + でほしい (hoặc thể て + ほしくない)",
+  "ja_n5_Verb_44": {
+    "title": "Động từ thể ます bỏ ます + たいです (taidesu)",
+    "shortExplanation": "Diễn tả mong muốn hoặc nguyện vọng làm một việc gì đó của người nói; 'muốn làm...'.",
+    "longExplanation": "Đuôi trợ động từ '～たい' được gắn vào sau thân động từ (thể ます bỏ ます) để thể hiện nguyện vọng hoặc mong muốn chủ quan của người nói ('tôi muốn...'). Khi dùng ở dạng lịch sự, ta thêm 'です' thành '～たいです'. Trợ từ chỉ tân ngữ của động từ có thể dùng cả 'を' lẫn 'が' (ví dụ: 水を飲みたい / 水が飲みたい). Khi nói về nguyện vọng của người thứ ba, người Nhật thường dùng dạng '～たがっている' thay vì '～たいです'.",
+    "formation": "Động từ thể ます bỏ ます + たいです (Động từ nhóm 1: đổi đuôi sang cột い + たいです; Động từ nhóm 2: bỏ る + たいです; Động từ nhóm 3: する → したいです, くる → きたいです)",
     "examples": [
       {
-        "translation": "Tôi muốn con mình học hành chăm chỉ hơn."
+        "translation": "Tôi muốn ăn sushi."
       },
       {
-        "translation": "Tôi muốn anh ấy đến sớm hơn."
+        "translation": "Anh ấy muốn đi Nhật Bản."
       },
       {
-        "translation": "Tôi muốn bạn tôi đọc cuốn sách đó."
+        "translation": "Cô ấy muốn học tiếng Anh."
       },
       {
-        "translation": "Tôi muốn giáo viên trả lời câu hỏi."
+        "translation": "Lũ trẻ muốn được vui chơi."
       }
     ]
   },
-  "ja_Verb_45": {
-    "title": "～てみる (～te miru)",
-    "shortExplanation": "Diễn tả hành động làm thử một việc gì đó để xem kết quả, trải nghiệm ra sao; 'thử làm... xem sao'.",
-    "longExplanation": "Mẫu ngữ pháp ～てみる kết hợp động từ thể て với trợ động từ みる (bắt nguồn từ động từ 見る nhưng thường viết bằng chữ hiragana). Cấu trúc này biểu thị việc thực hiện một hành vi với tâm thế thử nghiệm, trải nghiệm lần đầu để xem kết quả ra sao hoặc để thăm dò tình hình. Trợ động từ みる sau đó có thể chia tiếp theo các thì và thể ngữ pháp khác, chẳng hạn như ～てみます (lịch sự), ～てみてください (xin hãy làm thử), ～てみたい (muốn làm thử), ～てみよう (hãy cùng thử làm).",
-    "formation": "Động từ thể て + みる",
+  "ja_n5_Verb_45": {
+    "title": "～て (～te)",
+    "shortExplanation": "Dùng để nối các hành động hoặc trạng thái theo trình tự thời gian; 'làm... rồi làm...', 'sau khi làm...'.",
+    "longExplanation": "Thể て của động từ là dạng biến đổi cơ bản và quan trọng nhất trong tiếng Nhật, dùng để liên kết các hành động hoặc trạng thái diễn ra nối tiếp nhau theo thời gian (hành động trước hoàn tất rồi đến hành động sau). Ngoài ra, thể て còn là nền tảng để kết hợp với các trợ động từ tạo nên nhiều mẫu ngữ pháp khác như ～てください (yêu cầu lịch sự), ～ています (thì tiếp diễn/trạng thái). Thời của toàn bộ câu do động từ cuối câu quyết định.",
+    "formation": "Nhóm 1 (Động từ ngũ đoạn): Đổi đuôi sang thể て (く→いて, ぐ→いで, す→して, む/ぶ/ぬ→んで, つ/る/う→って, Ngoại lệ: 行く→行って) | Nhóm 2 (Động từ nhất đoạn): Bỏ る + て | Nhóm 3 (Bất quy tắc): する→して, くる→きて",
     "examples": [
       {
-        "translation": "Tôi sẽ thử làm món ăn này xem sao."
+        "translation": "Sau khi uống cà phê xong, tôi sẽ đi ra ngoài."
       },
       {
-        "translation": "Xin hãy mặc thử bộ quần áo đó xem."
+        "translation": "Đi mua sắm xong rồi chúng ta cùng về nhà nhé."
       },
       {
-        "translation": "Chúng ta cùng thử đến nhà hàng mới xem sao nhé."
+        "translation": "Làm bài tập về nhà xong tôi sẽ đi ngủ."
       },
       {
-        "translation": "Tôi muốn xem thử bộ phim này."
+        "translation": "Tôi sẽ đợi bạn rồi cùng nhau đi xem phim."
       }
     ]
   },
-  "ja_Verb_46": {
-    "title": "～てもらいたい (～te moraitai)",
-    "shortExplanation": "Bày tỏ nguyện vọng muốn được ai đó làm giúp việc gì cho mình; 'muốn được (ai đó) làm giúp', 'mong nhận được sự giúp đỡ'.",
-    "longExplanation": "Mẫu ngữ pháp ～てもらいたい kết hợp động từ thể て với もらいたい (thể mong muốn của trợ động từ もらう - nhận ơn huệ). Cấu trúc này dùng để diễn đạt mong muốn của người nói (hoặc người phe mình) được người khác thực hiện một hành động mang lại lợi ích cho mình. Người thực hiện hành động được đánh dấu bằng trợ từ に. So với ～てほしい (chỉ đơn thuần là muốn ai làm gì), ～てもらいたい nhấn mạnh hơn vào việc người nói là bên đón nhận ân huệ hay sự trợ giúp. Cấu trúc này thường dùng với bạn bè, đồng nghiệp hoặc người dưới; trong giao tiếp lịch sự với cấp trên hoặc khách hàng, người ta sử dụng thể khiêm nhường ～ていただきたい.",
-    "formation": "Động từ thể て + もらいたい (lịch sự: ～てもらいたいです / ～てもらいたいんですが)",
+  "ja_n5_Verb_46": {
+    "title": "～て います (～te imasu)",
+    "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc trạng thái đang tiếp diễn; 'đang làm...'.",
+    "longExplanation": "Mẫu ngữ pháp ～ています kết hợp động từ thể て với trợ động từ います để diễn tả một hành động đang trong quá trình diễn ra tại thời điểm nói (tương đương thì hiện tại tiếp diễn). Ngoài ra, đối với các động từ chỉ sự biến đổi trạng thái (như 結婚する, 住む, 知る), mẫu câu này diễn tả trạng thái là kết quả của hành động vẫn đang tiếp diễn. Ở dạng lịch sự dùng います, dạng thông thường dùng いる.",
+    "formation": "Động từ thể て + います",
     "examples": [
       {
-        "translation": "Tôi muốn được bạn khiêng giúp hành lý này."
+        "translation": "Bây giờ cô ấy đang chơi đàn piano."
       },
       {
-        "translation": "Tôi muốn anh ấy báo tin đó cho tôi."
+        "translation": "Chúng tôi đang học tiếng Nhật."
       },
       {
-        "translation": "Tôi muốn bạn dạy tiếng Nhật cho tôi."
+        "translation": "Anh ấy đang xem phim."
       },
       {
-        "translation": "Tôi muốn nhân viên hướng dẫn cách làm thủ tục nhận phòng."
+        "translation": "Bên trong đang có người, xin vui lòng đợi một chút."
       }
     ]
   },
-  "ja_Verb_47": {
-    "title": "～てもらう (～te morau)",
-    "shortExplanation": "Diễn tả việc người nói (hoặc người phe mình) nhận được hành động giúp đỡ, ân huệ từ người khác; 'được (ai đó) làm giúp', 'nhờ (ai đó) làm cho'.",
-    "longExplanation": "Mẫu ngữ pháp ～てもらう kết hợp động từ thể て với trợ động từ chỉ quan hệ cho nhận もらう (nhận). Cấu trúc này diễn tả việc chủ ngữ (thường là người nói hoặc người thuộc phe người nói) đón nhận một hành động mang lại lợi ích từ đối phương với tâm lý biết ơn. Trong câu, người đón nhận lợi ích là chủ ngữ (đi với は hoặc が), còn người thực hiện hành động được đánh dấu bằng trợ từ に. Dạng lịch sự là ～てもらいます / ～てもらいました. Mẫu câu này dùng trong quan hệ bạn bè, người thân hoặc người dưới; khi người làm ơn là bề trên thì chuyển sang dạng khiêm nhường ～ていただく.",
-    "formation": "Động từ thể て + もらう (lịch sự: ～てもらいます / ～てもらいました)",
+  "ja_n5_Verb_47": {
+    "title": "～てから (～te kara)",
+    "shortExplanation": "Diễn tả trình tự hành động: sau khi làm xong việc A thì mới làm việc B; 'sau khi...'.",
+    "longExplanation": "Mẫu câu ～てから dùng để nhấn mạnh rằng một hành động hoặc sự việc nào đó chỉ xảy ra sau khi hành động đứng trước đã được hoàn thành. So với việc dùng thể て nối câu thông thường, ～てから làm nổi bật rõ nét thứ tự trước - sau và điều kiện tiên quyết của hai hành động. Thời của toàn câu được quyết định bởi động từ ở cuối câu.",
+    "formation": "Động từ thể て + から",
     "examples": [
       {
-        "translation": "Tôi đã nhờ bạn giúp làm bài tập về nhà."
+        "translation": "Sau khi làm xong bài tập, tôi đã xem ti vi."
       },
       {
-        "translation": "Tôi đã được mẹ dọn phòng giúp."
+        "translation": "Ăn xong rồi chúng ta hãy đánh răng nhé."
       },
       {
-        "translation": "Tôi muốn nhờ anh ấy xách hành lý giúp."
+        "translation": "Sau khi công việc kết thúc, tôi sẽ đi uống nước với bạn bè."
       },
       {
-        "translation": "Thầy cô có thể giải đáp thắc mắc giúp em được không ạ?"
+        "translation": "Sau khi tan học, tôi sẽ học bài ở thư viện."
       }
     ]
   },
-  "ja_Verb_48": {
-    "title": "～てもらえませんか (～te moraemasen ka)",
-    "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách lịch sự, nhã nhặn; 'anh/chị có thể làm ơn... giúp tôi được không?'.",
-    "longExplanation": "Mẫu câu ～てもらえませんか kết hợp động từ thể て với thể khả năng phủ định lịch sự nghi vấn của もらう (là もらえません + か). Nghĩa đen là 'Liệu tôi có thể nhận được hành động làm giúp... từ anh/chị không?'. Cấu trúc này dùng để đưa ra lời thỉnh cầu, nhờ vả một cách gián tiếp và lịch sự, tạo cơ hội cho đối phương dễ dàng từ chối nếu bất tiện. Mẫu này lịch sự hơn ～てください hay ～てくれませんか, thích hợp dùng với đồng nghiệp, người quen hoặc người ngoài. Khi muốn nhờ vả cấp trên hoặc đối tác kinh doanh với mức độ tôn kính cao nhất, người Nhật sẽ dùng ～ていただけませんか hoặc ～ていただけないでしょうか.",
-    "formation": "Động từ thể て + もらえませんか",
+  "ja_n5_Verb_48": {
+    "title": "～てください (～te kudasai)",
+    "shortExplanation": "Dùng để yêu cầu, nhờ vả hoặc đề nghị ai đó làm gì một cách lịch sự; 'xin vui lòng...', 'hãy...'.",
+    "longExplanation": "Mẫu câu ～てください được sử dụng khi người nói muốn đưa ra lời yêu cầu, nhờ vả hoặc hướng dẫn đối phương thực hiện một hành động với thái độ lịch sự, nhã nhặn. Tuy lịch sự trong giao tiếp thông thường, mẫu câu này vẫn thể hiện ý muốn của người nói đối với người nghe, do đó không nên dùng với cấp trên hoặc người có địa vị cao hơn trong bối cảnh trang trọng (khi đó nên dùng kính ngữ như ～ていただけますか).",
+    "formation": "Động từ thể て + ください",
     "examples": [
       {
-        "translation": "Anh/chị có thể xem giúp tôi lá thư này được không ạ?"
+        "translation": "Xin vui lòng mở cửa giúp tôi."
       },
       {
-        "translation": "Anh/chị có thể xách giúp tôi hành lý được không ạ?"
+        "translation": "Xin hãy cho tôi biết số điện thoại của bạn."
       },
       {
-        "translation": "Bạn có thể dọn dẹp phòng giúp tôi được không?"
+        "translation": "Xin vui lòng nói chậm lại một chút."
       },
       {
-        "translation": "Anh/chị có thể tham gia cuộc họp ngày mai giúp tôi được không ạ?"
+        "translation": "Làm ơn mang cho tôi một cốc cà phê."
       }
     ]
   },
-  "ja_Verb_49": {
-    "title": "～ないことがある (～nai koto ga aru)",
-    "shortExplanation": "Diễn tả rằng thỉnh thoảng, đôi khi có những lúc một hành động hay sự việc không diễn ra; 'có khi không...', 'thỉnh thoảng không...'.",
-    "longExplanation": "Mẫu ngữ pháp ～ないことがある kết hợp động từ thể phủ định (thể ない) với danh từ こと và trợ từ が theo sau bởi động từ ある. Cấu trúc này dùng để diễn đạt tính bất thường hoặc tần suất không tuyệt đối của một sự việc: nhìn chung thì sự việc đó thường xảy ra hoặc theo thói quen là có, nhưng đôi khi, có những trường hợp cá biệt lại không xảy ra. Thường hay đi kèm với các phó từ chỉ tần suất như ときどき (thỉnh thoảng), たまに (hiếm khi, đôi khi). Cần phân biệt với ～たことがない (chưa từng làm gì trong quá khứ).",
-    "formation": "Động từ thể ない + ことがある (lịch sự: ～ないことがあります)",
+  "ja_n5_Verb_49": {
+    "title": "～ないでください (～naide kudasai)",
+    "shortExplanation": "Dùng để yêu cầu, khuyên bảo hoặc nhắc nhở ai đó không làm điều gì một cách lịch sự; 'xin đừng...', 'vui lòng không...'.",
+    "longExplanation": "Mẫu câu ～ないでください được dùng để yêu cầu, nhắc nhở hoặc khuyên đối phương không thực hiện một hành động nào đó với thái độ lịch sự. Cấu trúc được tạo thành bằng cách lấy động từ ở thể phủ định ngắn (thể ない) kết hợp với trợ từ で và ください. Thường xuất hiện trong các biển báo, thông báo công cộng hoặc trong giao tiếp hàng ngày khi cần ngăn cản nhã nhặn.",
+    "formation": "Động từ thể ない + で ください",
     "examples": [
       {
-        "translation": "Có đôi khi anh ấy không tham dự cuộc họp."
+        "translation": "Xin vui lòng không hút thuốc."
       },
       {
-        "translation": "Chuyến tàu này thỉnh thoảng không đến đúng giờ."
+        "translation": "Xin đừng chạy ở đây."
       },
       {
-        "translation": "Có những bữa sáng tôi không ăn gì."
+        "translation": "Xin vui lòng không nói chuyện to tiếng."
       },
       {
-        "translation": "Thỉnh thoảng cô ấy không nghe điện thoại."
+        "translation": "Xin vui lòng không chụp ảnh."
       }
     ]
   },
-  "ja_Noun_50": {
-    "title": "Danh từ + ならいざ知らず (nara iza shirazu)",
-    "shortExplanation": "Diễn tả ý 'nếu là... thì còn chấp nhận được, đằng này lại...', biểu thị sự ngạc nhiên, bất mãn hoặc bất khả thi ở vế sau.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + ならいざ知らず、Danh từ 2...' (hoặc dạng đầy đủ '～ならいざしらず') dùng để đối chiếu hai mức độ khác nhau: 'Nếu là A thì tôi không nói làm gì / có thể châm chước được, nhưng đối với B thì hoàn toàn không thể / không thể chấp nhận nổi'. Vế sau thường đi kèm với các từ ngữ biểu thị sự phủ định, chê trách, ngạc nhiên hoặc khó khăn cùng cực (như 全然わからない, 走れません, 考えたこともない).",
-    "formation": "Danh từ 1 + ならいざ知らず ＋ Danh từ 2 / Vế câu [Đánh giá / Phủ định]",
+  "ja_n5_Noun_50": {
+    "title": "～に戻ります (～ni modorimasu)",
+    "shortExplanation": "Diễn tả hành động quay trở lại trạng thái, vị trí hoặc công việc ban đầu; 'quay lại...', 'trở về...'.",
+    "longExplanation": "Cấu trúc Danh từ + に + 戻ります được dùng để diễn tả sự quay trở về một trạng thái, vị trí, địa điểm hoặc công việc ban đầu sau khi đã trải qua một sự thay đổi hoặc giai đoạn gián đoạn. Động từ 戻る (quay về/trở lại) kết hợp với trợ từ に chỉ hướng đích hoặc kết quả của sự hoàn nguyên.",
+    "formation": "Danh từ + に + 戻ります",
     "examples": [
       {
-        "translation": "Nếu là môn toán thì còn đỡ, chứ vật lý thì tôi hoàn toàn chẳng hiểu gì cả."
+        "translation": "Khi cho vào tủ lạnh, kem bị tan sẽ trở lại trạng thái thể rắn."
       },
       {
-        "translation": "Nếu là 5 cây số thì may ra, chứ 10 cây số thì tôi chịu không thể chạy nổi."
+        "translation": "Kỳ nghỉ kết thúc thì tôi sẽ quay lại với công việc."
       },
       {
-        "translation": "Tiếng Nhật thì không nói làm gì, chứ tiếng Trung thì tôi hoàn toàn không nói được."
+        "translation": "Sau khi đợt làm việc từ xa kết thúc, chúng tôi sẽ quay lại văn phòng cũ."
       },
       {
-        "translation": "Nếu là nước mát thì không sao, chứ bơi trong nước nóng thì tôi chưa từng nghĩ tới bao giờ."
+        "translation": "Sau khi du học ở nước ngoài, tôi sẽ trở về Nhật Bản."
       }
     ]
   },
-  "ja_Verb_51": {
-    "title": "～ないことになる (～nai koto ni naru)",
-    "shortExplanation": "Diễn tả một sự việc, quy định hoặc kết quả được ấn định là sẽ không diễn ra do hoàn cảnh khách quan hoặc quyết định của tập thể; 'được quyết định là không...', 'hóa ra là không...'.",
-    "longExplanation": "Mẫu ngữ pháp ～ないことになる kết hợp động từ thể phủ định (thể ない) với danh từ こと, trợ từ に và động từ なる (trở thành). Cấu trúc này diễn tả rằng một hành động sẽ không được thực hiện do ngoại cảnh, quyết định của tổ chức/người khác hoặc như một hệ quả tất yếu từ điều kiện nào đó, không phụ thuộc hoàn toàn vào ý chí cá nhân của người nói. Khi sự việc đã được quyết định hoặc trở thành quy ước, ta dùng ～ないことになった (được quyết định là không...). Khác với ～ないことにする (quyết định chủ quan của bản thân).",
-    "formation": "Động từ thể ない + ことになる (quá khứ / quy định: ～ないことになった / ～ないことになっています)",
+  "ja_n5_Verb_51": {
+    "title": "～に来ます (～ni kimasu)",
+    "shortExplanation": "Diễn tả mục đích của việc đến một địa điểm nào đó; 'đến để làm...'.",
+    "longExplanation": "Mẫu câu Động từ (thân ます) + に + 来ます dùng để biểu thị mục đích di chuyển đến nơi mà người nói đang có mặt. Động từ chỉ hành động bỏ đuôi ます, sau đó kết hợp với trợ từ chỉ mục đích 'に' và động từ di chuyển '来ます' (đến). Thường đi cùng danh từ chỉ nơi chốn kèm trợ từ へ hoặc に (Địa điểm + へ/に + V(bỏ ます) + に来ます).",
+    "formation": "Động từ (thân ます) + に + 来ます",
     "examples": [
       {
-        "translation": "Nếu hôm nay anh ấy không đến thì kế hoạch của chúng tôi sẽ coi như bị hủy bỏ."
+        "translation": "Tôi đã đến để gặp bạn bè."
       },
       {
-        "translation": "Nếu dự án này không được triển khai tiếp thì đồng nghĩa với việc doanh thu sẽ sụt giảm."
+        "translation": "Tôi đến đây để xem phim."
       },
       {
-        "translation": "Nếu cô ấy không vượt qua kỳ thi thì việc tốt nghiệp sẽ bị hoãn lại."
+        "translation": "Tôi đến để hỏi thầy cô giáo."
       },
       {
-        "translation": "Nếu trời mưa thì buổi dã ngoại sẽ không được tổ chức."
+        "translation": "Tôi đến để mua sắm."
       }
     ]
   },
-  "ja_Verb_52": {
-    "title": "～ないほうがいい (～nai hou ga ii)",
-    "shortExplanation": "Đưa ra lời khuyên hoặc gợi ý đối phương không nên làm một việc gì đó; 'không nên...', 'tốt hơn là không nên...'.",
-    "longExplanation": "Mẫu ngữ pháp ～ないほうがいい kết hợp động từ thể phủ định ngắn (thể ない) với danh từ ほう (phương hướng, phía) và tính từ いい (tốt). Cấu trúc này dùng để khuyên bảo, khuyến cáo hoặc gợi ý cho đối phương rằng tốt nhất là không nên thực hiện một hành động nào đó vì có thể dẫn đến kết quả bất lợi hoặc không mong muốn. Dạng lịch sự thường dùng là ～ないほうがいいです. Trái ngược với mẫu câu khuyên nên làm gì là ～たほうがいい (động từ thể た + ほうがいい; lưu ý rằng khi khuyên nên làm thì dùng thể た, còn khuyên không nên làm thì dùng thể ない).",
-    "formation": "Động từ thể ない + ほうがいい (lịch sự: ～ないほうがいいです)",
+  "ja_n5_Verb_52": {
+    "title": "～に行きます (～ni ikimasu)",
+    "shortExplanation": "Diễn tả mục đích của việc đi đến một nơi nào đó; 'đi để làm...'.",
+    "longExplanation": "Mẫu câu Động từ (thân ます) + に + 行きます dùng để biểu thị mục đích di chuyển từ vị trí hiện tại đến một địa điểm khác nhằm thực hiện một hành động cụ thể. Động từ chỉ hành động bỏ đuôi ます rồi thêm trợ từ chỉ mục đích 'に', theo sau là động từ di chuyển '行きます' (đi). Thường đi kèm cụm chỉ nơi chốn: Địa điểm + へ/に + V(bỏ ます) + に行きます.",
+    "formation": "Động từ (thân ます) + に + 行きます",
     "examples": [
       {
-        "translation": "Bạn không nên uống loại thuốc này."
+        "translation": "Tôi đi đến công viên để chơi."
       },
       {
-        "translation": "Khi đang vội thì tốt hơn là không nên chạy."
+        "translation": "Tôi đi đến thư viện để học bài."
       },
       {
-        "translation": "Nếu không muốn anh ấy biết bí mật thì tốt nhất đừng nói ra."
+        "translation": "Tôi đi siêu thị để mua sắm."
       },
       {
-        "translation": "Vào ngày mưa thì không nên đi ra ngoài."
+        "translation": "Tôi đi đến rạp chiếu phim để xem phim."
       }
     ]
   },
-  "ja_Verb_53": {
-    "title": "～ながら (～nagara)",
-    "shortExplanation": "Diễn tả một chủ thể thực hiện đồng thời hai hành động cùng một lúc; 'vừa... vừa...'.",
-    "longExplanation": "Trợ từ liên kết ～ながら gắn vào thân động từ (thể ます bỏ ます) để biểu thị hai hành động diễn ra song song cùng một thời điểm. Quy tắc quan trọng của mẫu câu này gồm: (1) Cả hai hành động phải do cùng một chủ ngữ thực hiện; (2) Hành động đứng sau ながら là hành động chính (trọng tâm), còn hành động đứng trước ながら là hành động phụ, mang tính bổ trợ. Thì của cả câu do động từ chính ở cuối quyết định. Ngoài ra, ながら còn có cách dùng biểu thị ý nghĩa tương phản, nhượng bộ (tuy... nhưng...), nhưng cách dùng đồng thời là phổ biến nhất ở cấp độ sơ trung cấp.",
-    "formation": "Động từ thể ます (bỏ ます) + ながら",
+  "ja_n5_Verb_53": {
+    "title": "～ましょう (～mashou)",
+    "shortExplanation": "Dùng để rủ rê, đề nghị cùng làm gì hoặc biểu thị ý chí chủ động; 'chúng ta cùng... nhé', 'hãy cùng... nào'.",
+    "longExplanation": "Mẫu câu ～ましょう gắn vào thân động từ thể ます (bỏ đuôi ます) để rủ rê, kêu gọi người nghe cùng thực hiện một hành vi nào đó với thái độ lịch sự, vui vẻ và tích cực. Ngoài ra, người nói cũng có thể dùng ～ましょう khi muốn tự mình chủ động bắt tay vào làm một việc gì đó. Thường kết hợp với phó từ 一緒に (cùng nhau) để nhấn mạnh tinh thần đồng hành.",
+    "formation": "Động từ (thân ます) + ましょう",
     "examples": [
       {
-        "translation": "Tôi vừa xem tivi vừa làm bài tập về nhà."
+        "translation": "Chúng ta hãy cùng nhau xem phim nhé."
       },
       {
-        "translation": "Tôi vừa nghe nhạc vừa nấu ăn."
+        "translation": "Chúng ta cùng đi dạo nào."
       },
       {
-        "translation": "Vừa đi bộ vừa nhìn điện thoại thông minh là rất nguy hiểm."
+        "translation": "Tối nay chúng ta cùng đi ăn nhé."
       },
       {
-        "translation": "Anh ấy vừa nói chuyện vừa cười."
+        "translation": "Ngày mai chúng ta hãy học bài nhé."
       }
     ]
   },
-  "ja_Verb_54": {
-    "title": "～なさい (～nasai)",
-    "shortExplanation": "Mẫu câu mệnh lệnh nhẹ nhàng dùng khi người bề trên (cha mẹ, thầy cô) yêu cầu, chỉ thị cho người bề dưới thực hiện hành động; 'hãy...', 'mau... đi'.",
-    "longExplanation": "Đuôi mệnh lệnh ～なさい gắn vào thân động từ (thể ます bỏ ます) để đưa ra mệnh lệnh, yêu cầu hoặc chỉ thị trực tiếp. Về mặt ngữ pháp, nó bắt nguồn từ tôn kính ngữ なさい (dạng mệnh lệnh của なさる), do đó có âm hưởng lịch sự, chuẩn mực nhưng về bản chất vẫn là một mệnh lệnh mang tính áp đặt từ trên xuống dưới. Thường được sử dụng bởi: cha mẹ nhắc nhở con cái, giáo viên chỉ đạo học sinh, hoặc trong các đề thi, bài kiểm tra (hướng dẫn làm bài). Tuyệt đối không dùng đối với người bề trên, người ngang hàng hoặc đối tác.",
-    "formation": "Động từ thể ます (bỏ ます) + なさい",
+  "ja_n5_Verb_54": {
+    "title": "～ましょうか (～mashou ka)",
+    "shortExplanation": "Dùng để thăm dò ý kiến đối phương về lời rủ rê hoặc ngỏ ý muốn giúp đỡ ai đó; 'chúng ta... nhé?', 'để tôi... giúp bạn nhé?'.",
+    "longExplanation": "Mẫu câu ～ましょうか có hai công dụng chính trong giao tiếp: 1. Đưa ra lời đề nghị hoặc gợi ý cùng làm gì đó và thăm dò ý kiến của đối phương ('Chúng mình cùng làm... nhé?'). 2. Chủ động ngỏ ý muốn giúp đỡ người nghe khi thấy đối phương cần sự trợ giúp ('Để tôi làm... giúp bạn nhé?'). Cấu trúc được tạo thành bằng cách gắn trợ từ nghi vấn か vào sau ～ましょう.",
+    "formation": "Động từ (thân ます) + ましょうか",
     "examples": [
       {
-        "translation": "Hãy dọn phòng đi!"
+        "translation": "Chúng ta cùng đi xem phim nhé?"
       },
       {
-        "translation": "Học bài đi!"
+        "translation": "Chúng ta uống thêm một cốc cà phê nữa nhé?"
       },
       {
-        "translation": "Mau dậy sớm đi!"
+        "translation": "Để tôi xách hành lý giúp bạn nhé?"
       },
       {
-        "translation": "Làm bài tập về nhà đi!"
+        "translation": "Để tôi mở cửa sổ giúp bạn nhé?"
       }
     ]
   },
-  "ja_Verb_55": {
-    "title": "～にくい (～nikui)",
-    "shortExplanation": "Gắn vào thân động từ để diễn tả một hành động khó thực hiện hoặc một trạng thái khó xảy ra; 'khó...'.",
-    "longExplanation": "Hậu tố tính từ ～にくい gắn vào thân động từ (thể ます bỏ ます) để tạo thành một tính từ đuôi い phức hợp, mang nghĩa hành động đó khó thực hiện, đòi hỏi nhiều công sức, gây cảm giác bất tiện hoặc khó khăn về mặt vật lý, kỹ thuật hay tâm lý. Cụm từ sau khi kết hợp sẽ được chia như một tính từ đuôi い thông thường (ví dụ: 読みにくかった, 読みにくくない). Khác với ～づらい (thường nhấn mạnh vào cảm giác đau đớn, khó chịu về mặt cảm xúc hoặc cơ thể của người nói), ～にくい mang tính khách quan và phổ biến hơn, dùng cho cả đặc tính vật lý của sự vật lẫn hành vi con người.",
-    "formation": "Động từ thể ます (bỏ ます) + にくい",
+  "ja_n5_Verb_55": {
+    "title": "～ませんか (～masen ka)",
+    "shortExplanation": "Dùng để mời hoặc rủ rê ai đó làm gì một cách rất lịch sự và tế nhị; 'bạn có muốn... cùng tôi không?', 'cùng... nhé?'.",
+    "longExplanation": "Mẫu câu ～ませんか dùng để đưa ra lời mời hoặc lời rủ rê đối phương cùng làm một việc gì đó với thái độ lịch sự, nhã nhặn và rất tôn trọng ý muốn của người nghe. Bằng cách dùng hình thức câu hỏi phủ định, người nói không đặt áp lực lên đối phương, giúp người nghe thoải mái từ chối nếu không thuận tiện. So với ～ましょう, mẫu câu này mang tính thận trọng và lịch sự hơn nhiều.",
+    "formation": "Động từ (thân ます) + ませんか",
     "examples": [
       {
-        "translation": "Chữ này rất khó đọc."
+        "translation": "Bạn có muốn cùng đi xem phim với tôi không?"
       },
       {
-        "translation": "Cánh cửa này rất khó mở."
+        "translation": "Bạn có muốn tham gia bữa tiệc ngày mai không?"
       },
       {
-        "translation": "Chữ viết của anh ấy rất khó đọc."
+        "translation": "Cuối tuần này bạn có muốn đi dã ngoại cùng chúng tôi không?"
       },
       {
-        "translation": "Món ăn này rất khó làm."
+        "translation": "Bạn có muốn học cùng nhau không?"
       }
     ]
   },
-  "ja_Verb_56": {
-    "title": "～やすい (～yasui)",
-    "shortExplanation": "Gắn vào thân động từ để diễn tả một hành động dễ thực hiện hoặc một sự việc, trạng thái dễ xảy ra; 'dễ...'.",
-    "longExplanation": "Hậu tố tính từ ～やすい gắn vào thân động từ (thể ます bỏ ます) để tạo thành một tính từ đuôi い phức hợp, mang hai ý nghĩa chính: (1) Một hành động nào đó rất dễ dàng, thuận tiện để thực hiện nhờ vào đặc tính tốt của sự vật (ví dụ: sách dễ đọc, áo dễ mặc); (2) Một khuynh hướng, xu hướng dễ xảy ra sự biến đổi hoặc hiện tượng nào đó (thường là xu hướng tiêu cực như dễ bị hỏng, dễ bị cảm cúm). Sau khi kết hợp, từ này được chia như một tính từ đuôi い bình thường (ví dụ: 読みやすかった, 読みやすくない). Là cấu trúc trái nghĩa trực tiếp với ～にくい.",
-    "formation": "Động từ thể ます (bỏ ます) + やすい",
+  "ja_n5_Verb_56": {
+    "title": "～こと (～koto)",
+    "shortExplanation": "Dùng để danh từ hóa động từ, biến hành động thành một khái niệm hoặc sự việc; 'việc...', 'sự...'.",
+    "longExplanation": "Mẫu ngữ pháp ～こと gắn trực tiếp vào sau động từ thể từ điển (thể nguyên mẫu) để biến toàn bộ hành động đó thành một cụm danh từ. Nhờ quá trình danh từ hóa này, hành động có thể đóng vai trò làm chủ ngữ, vị ngữ hoặc tân ngữ trong câu và kết hợp được với các trợ từ như が, は, を (ví dụ: việc học thì vui, thích việc bơi lội). Thường dùng cho các khái niệm trừu tượng, thói quen hoặc sở thích.",
+    "formation": "Động từ thể từ điển + こと",
     "examples": [
       {
-        "translation": "Cuốn sách này rất dễ đọc."
+        "translation": "Tôi rất thích việc bơi lội."
       },
       {
-        "translation": "Chiếc áo sơ mi này mặc rất dễ chịu (dễ mặc)."
+        "translation": "Việc học tiếng Nhật rất vui."
       },
       {
-        "translation": "Anh ấy là một người rất dễ gần, dễ bắt chuyện."
+        "translation": "Nói chuyện với bạn bè giúp giảm bớt căng thẳng."
       },
       {
-        "translation": "Món ăn này rất dễ nấu."
+        "translation": "Anh ấy rất giỏi việc ca hát."
       }
     ]
   },
-  "ja_Verb_57": {
-    "title": "～ようと思う (～you to omou)",
-    "shortExplanation": "Bày tỏ ý định, dự định hoặc quyết tâm thực hiện một hành động nào đó trong tương lai; 'tôi định...', 'tôi nghĩ là tôi sẽ...'.",
-    "longExplanation": "Mẫu ngữ pháp ～ようと思う kết hợp thể ý chí (ý hướng hình) của động từ với trợ từ と và động từ suy nghĩ 思う. Cấu trúc này dùng để diễn đạt dự định, ý muốn làm một việc gì đó của người nói. Cần chú ý sự khác biệt giữa hai dạng: (1) ～ようと思う diễn đạt ý định vừa mới nảy sinh tại thời điểm nói hoặc quyết tâm tức thời; (2) ～ようと思っている (dùng thể tiếp diễn) diễn đạt ý định đã được nung nấu từ trước và vẫn đang tiếp tục duy trì đến hiện tại. Dạng này có mức độ chắc chắn thấp hơn ～つもりだ và không dùng để nói về kế hoạch đã được ấn định chính thức (được thể hiện bằng ～予定だ).",
-    "formation": "Động từ thể ý chí (thể ý hướng) + と思う (hoặc と思っている / と思います)",
+  "ja_n5_Verb_57": {
+    "title": "～ことができます (～koto ga dekimasu)",
+    "shortExplanation": "Diễn tả khả năng, năng lực làm được việc gì hoặc tính khả thi trong một hoàn cảnh; 'có thể làm...'.",
+    "longExplanation": "Mẫu câu Động từ thể từ điển + ことができます là cách thông dụng và chuẩn mực nhất để diễn tả thể khả năng ở dạng lịch sự trong tiếng Nhật. Mẫu câu biểu thị hai trường hợp chính: 1. Năng lực, sở trường hoặc kỹ năng của một người (như biết chơi đàn piano, biết nói ngoại ngữ). 2. Tính khả thi khi điều kiện, hoàn cảnh hoặc quy định cho phép thực hiện hành động. Dạng phủ định là ～ことができません (không thể làm...).",
+    "formation": "Động từ thể từ điển + ことができます",
     "examples": [
       {
-        "translation": "Ngày mai tôi định sẽ xem phim."
+        "translation": "Tôi có thể giải quyết được vấn đề này."
       },
       {
-        "translation": "Cuối tuần này tôi dự định sẽ đi chơi với bạn bè."
+        "translation": "Anh ấy có thể nói được tiếng Anh."
       },
       {
-        "translation": "Tôi nghĩ mình sẽ cố gắng học hành chăm chỉ hơn."
+        "translation": "Tôi không thể trèo lên những chỗ cao được."
       },
       {
-        "translation": "Năm tới tôi đang dự định đi du lịch nước ngoài."
+        "translation": "Cô ấy có thể chơi được đàn piano."
       }
     ]
   },
-  "ja_Verb_58": {
-    "title": "～ように (～you ni)",
-    "shortExplanation": "Diễn tả mục đích để đạt được một trạng thái mong muốn ('để...', 'để sao cho...') hoặc diễn tả sự so sánh, ví von ('như...', 'giống như...').",
-    "longExplanation": "Mẫu ngữ pháp ～ように là một cấu trúc đa chức năng trong tiếng Nhật với hai cách dùng phổ biến nhất: (1) Biểu thị mục đích (để...): Đứng trước ように thường là động từ không có ý chí (động từ chỉ khả năng, động từ chỉ trạng thái như 見える, 分かる, hoặc động từ thể phủ định ない), diễn tả hành động ở mệnh đề sau nhằm mục đích đạt được hoặc tránh khỏi trạng thái ở mệnh đề trước (khác với ～ために đi kèm động từ có ý chí); (2) Biểu thị sự ví von, so sánh (như..., giống như...): Đi cùng danh từ (Danh từ + のように) hoặc mệnh đề để so sánh đặc điểm, dáng vẻ của đối tượng với một hình ảnh khác. Ngoài ra, cuối câu ～ように(願う/祈る) còn dùng để cầu chúc hoặc diễn đạt mệnh lệnh gián tiếp.",
-    "formation": "Mục đích: Động từ thể từ điển / thể ない + ように | Ví von: Danh từ + のように / Động từ thể thông thường + ように",
+  "ja_n5_Verb_58": {
+    "title": "～ことができる (～koto ga dekiru)",
+    "shortExplanation": "Dạng thông thường (nguyên thể) diễn tả khả năng, năng lực hoặc tính khả thi; 'có thể làm...'.",
+    "longExplanation": "Mẫu câu Động từ thể từ điển + ることができる là dạng thông thường (thể ngắn/nguyên thể) của ～ことができます. Được sử dụng phổ biến trong văn nói thân mật hàng ngày, trong văn viết học thuật hoặc khi đóng vai trò làm mệnh đề phụ bổ nghĩa cho danh từ hay liên kết vế câu (như ～ことができて, ～ことができる人). Thể hiện năng lực của bản thân hoặc tính khả thi của sự việc.",
+    "formation": "Động từ thể từ điển + ことができる",
     "examples": [
       {
-        "translation": "Cô ấy nhảy múa nhẹ nhàng uyển chuyển như một chú chim."
+        "translation": "Cậu có thể giải được bài toán này không?"
       },
       {
-        "translation": "Để không quên những điều đã học, chúng ta hãy ôn tập mỗi ngày nhé."
+        "translation": "Anh ấy có thể bơi lội."
       },
       {
-        "translation": "Để có thể trở thành ca sĩ, tôi luyện hát mỗi ngày."
+        "translation": "Tôi rất vui vì có thể đến Nhật Bản."
       },
       {
-        "translation": "Khi qua đường, hãy quan sát kỹ để tránh không có xe lao tới."
+        "translation": "Cô ấy có thể chơi đàn piano."
       }
     ]
   },
-  "ja_Verb_59": {
-    "title": "～ようにする (～you ni suru)",
-    "shortExplanation": "Diễn tả sự nỗ lực, cố gắng thực hiện hoặc duy trì một thói quen, hành động; 'cố gắng...', 'chú ý làm sao để...'.",
-    "longExplanation": "Mẫu ngữ pháp '～ようにする' được dùng để diễn tả việc người nói đang nỗ lực, cố gắng hoặc để tâm thực hiện (hay không thực hiện) một hành vi nào đó để tạo thành thói quen hoặc đạt được mục tiêu. Dạng '～ようにしている' nhấn mạnh thói quen đang được duy trì đều đặn trong cuộc sống hàng ngày. Dạng '～ようにしてください' được dùng để khuyên bảo, nhắc nhở hoặc yêu cầu đối phương cố gắng thực hiện một việc gì đó.",
-    "formation": "Động từ thể từ điển / thể ない + ようにする",
+  "ja_n5_Verb_59": {
+    "title": "～の (～no)",
+    "shortExplanation": "Dùng trong văn nói thân mật để giải thích lý do, tình huống hoặc danh từ hóa hành động; '...đấy', '...mà'.",
+    "longExplanation": "Trợ từ の đi sau động từ thể từ điển (thể thông thường) trong hội thoại thân mật có hai chức năng ngữ pháp cơ bản: 1. Đặt ở cuối câu để trần thuật, giải thích lý do, hoàn cảnh một cách nhẹ nhàng, gần gũi (dạng rút gọn của のだ/のです). Thường được nữ giới và trẻ em sử dụng nhiều; khi lên giọng ở cuối câu sẽ trở thành câu hỏi lý do thân mật. 2. Đóng vai trò danh từ hóa động từ trong câu tương tự như こと (ví dụ: 走るのが好き - thích việc chạy bộ).",
+    "formation": "Động từ thể từ điển + の (văn nói thân mật)",
     "examples": [
       {
-        "translation": "Tôi cố gắng tập thể dục mỗi ngày."
+        "translation": "Để đi mua sắm, mình đi rút tiền ở ngân hàng đấy."
       },
       {
-        "translation": "Xin hãy cố gắng đi ngủ sớm nhé."
+        "translation": "Vì sẽ tặng quà cho bạn nên mình nướng bánh kem đấy."
       },
       {
-        "translation": "Tôi sẽ cố gắng giữ đúng lời hứa."
+        "translation": "Vì bắt đầu ăn kiêng nên mình đăng ký tập gym đấy."
       },
       {
-        "translation": "Tôi sẽ cố gắng không gặp anh ấy."
+        "translation": "Vì muốn ăn một bữa nhẹ bụng nên mình làm món salad đấy."
       }
     ]
   },
-  "ja_Verb_60": {
-    "title": "～ようになる (～you ni naru)",
-    "shortExplanation": "Diễn tả sự biến đổi về năng lực, trạng thái hoặc thói quen theo thời gian; 'trở nên có thể...', 'bắt đầu...'.",
-    "longExplanation": "Mẫu ngữ pháp '～ようになる' biểu thị sự biến đổi, chuyển biến dần dần từ trạng thái chưa thể sang đã có thể làm được một việc gì đó (thường kết hợp với động từ thể khả năng), hoặc sự hình thành một thói quen, nhận thức mới theo thời gian mà trước đây chưa có. Cấu trúc này thường được dịch là 'đã có thể...', 'trở nên...', hoặc 'dần bắt đầu...'.",
-    "formation": "Động từ thể khả năng / Động từ thể từ điển / Động từ thể ない + ようになる",
+  "ja_n5_Verb_60": {
+    "title": "Động từ thể từ điển + 前に (ru mae ni)",
+    "shortExplanation": "Dùng để diễn tả hành động xảy ra trước một hành động hoặc sự kiện khác; 'trước khi làm gì'.",
+    "longExplanation": "Mẫu ngữ pháp '～前に' (mae ni) kết hợp với động từ ở thể từ điển (thể nguyên dạng) để diễn tả rằng một hành động cần được thực hiện hoặc xảy ra trước khi một hành động hay sự việc khác bắt đầu. Lưu ý rằng động từ đứng ngay trước '前に' luôn luôn ở thể từ điển (thể hiện tại), không phụ thuộc vào thì của mệnh đề chính ở cuối câu.",
+    "formation": "Động từ thể từ điển + 前に",
     "examples": [
       {
-        "translation": "Tôi đã có thể nói được tiếng Nhật rồi."
+        "translation": "Trước khi ra ngoài, hãy dọn dẹp phòng nhé."
       },
       {
-        "translation": "Dạo gần đây tôi đã bắt đầu đi ngủ sớm."
+        "translation": "Trước khi đi ngủ, tôi đánh răng."
       },
       {
-        "translation": "Anh ấy đã có thể chơi được đàn piano rồi."
+        "translation": "Hãy thu quần áo vào trước khi trời mưa."
       },
       {
-        "translation": "Kể từ khi bắt đầu công việc này, tôi dần cảm thấy mỗi ngày đều bận rộn."
+        "translation": "Chúng ta hãy chuẩn bị tài liệu trước khi cuộc họp bắt đầu nhé."
       }
     ]
   },
-  "ja_あまりありません_61": {
+  "ja_n5_あまりありません_61": {
     "title": "あまり～ありません (amari ~ arimasen)",
     "shortExplanation": "Phó từ đi kèm với dạng phủ định lịch sự để diễn tả mức độ không cao; 'không... lắm', 'không... cho lắm'.",
     "longExplanation": "Phó từ 'あまり' (amari) khi đi kèm với vị ngữ ở dạng phủ định lịch sự ('～ありません' / '～じゃありません') biểu thị mức độ của hành động hoặc trạng thái ở mức thấp, tương đương với 'không... lắm' hoặc 'không nhiều lắm'. Cách diễn đạt này giúp làm giảm sắc thái khẳng định tiêu cực, khiến lời nói trở nên nhẹ nhàng, lịch sự và khiêm nhường hơn.",
@@ -1241,7 +1241,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_あまりないです_62": {
+  "ja_n5_あまりないです_62": {
     "title": "あまり～ないです (amari ~ nai desu)",
     "shortExplanation": "Phủ định một phần trong khẩu ngữ lịch sự, nhẹ nhàng; 'không... lắm', 'không... cho lắm'.",
     "longExplanation": "'あまり～ないです' là sự kết hợp giữa phó từ 'あまり' với thể phủ định thông thường (thể ない) kèm thêm 'です', rất phổ biến trong giao tiếp hàng ngày. Cấu trúc này giúp người nói biểu đạt sự phủ định một cách nhẹ nhàng, khiêm tốn và thân mật mà vẫn giữ được phép lịch sự.",
@@ -1261,7 +1261,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_あります_63": {
+  "ja_n5_あります_63": {
     "title": "～あります (〜arimasu)",
     "shortExplanation": "Diễn tả sự hiện diện, tồn tại hoặc sở hữu của đồ vật vô tri hoặc thực vật; 'có...', 'ở...'.",
     "longExplanation": "'あります' (arimasu) là động từ chỉ sự tồn tại hoặc sở hữu dành cho các sự vật, đồ vật, thực vật hoặc hiện tượng trừu tượng không có khả năng tự vận động. Trợ từ 'が' đi kèm để biểu thị sự vật tồn tại, và trợ từ 'に' dùng để xác định vị trí tồn tại. Cần phân biệt rõ với 'います' (chỉ dùng cho người và động vật có tri giác).",
@@ -1281,7 +1281,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いかがですか_64": {
+  "ja_n5_いかがですか_64": {
     "title": "～いかがですか (〜ikaga desu ka)",
     "shortExplanation": "Cách nói kính ngữ lịch sự dùng để mời mọc, gợi ý hoặc hỏi ý kiến; '...thế nào ạ?', 'dùng... nhé?'.",
     "longExplanation": "'～いかがですか' là thể lịch sự (kính ngữ) của 'どうですか', được dùng khi mời đối phương dùng đồ ăn, thức uống (Danh từ + は), nhẹ nhàng đề xuất một hành động (Động từ thể て + は), hoặc hỏi thăm ý kiến, tình hình của người nghe. Mẫu câu này rất thông dụng trong văn hóa tiếp khách, dịch vụ chăm sóc khách hàng và giao tiếp trang trọng.",
@@ -1301,7 +1301,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いくつ_65": {
+  "ja_n5_いくつ_65": {
     "title": "いくつ～ (ikutsu~)",
     "shortExplanation": "Từ nghi vấn hỏi số lượng 'mấy cái / bao nhiêu', hoặc kết hợp thành 'いくつか' mang nghĩa 'một vài / một số'.",
     "longExplanation": "'いくつ' (ikutsu) là từ để hỏi số lượng đồ vật chung (thường theo cách đếm thuần Nhật: ひとつ, ふたつ,...), mang nghĩa 'mấy cái', 'bao nhiêu cái', đồng thời cũng là cách hỏi tuổi lịch sự. Khi kết hợp với trợ từ nghi vấn 'か' thành 'いくつか' (hoặc 'いくつかの + Danh từ'), từ này biểu thị một số lượng nhỏ không xác định, mang nghĩa 'một vài', 'một số'.",
@@ -1321,7 +1321,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いつか_66": {
+  "ja_n5_いつか_66": {
     "title": "いつか～ (itsuka～)",
     "shortExplanation": "Chỉ một thời điểm không xác định trong tương lai hoặc quá khứ; 'một ngày nào đó', 'lúc nào đó'.",
     "longExplanation": "'いつか' (itsuka) là phó từ được kết hợp từ từ để hỏi thời gian 'いつ' (khi nào) và trợ từ 'か', dùng để biểu thị một thời điểm chưa rõ ràng hoặc chưa xác định. Từ này đặc biệt hay xuất hiện khi nói về tương lai, thể hiện ước mơ, nguyện vọng, triển vọng hoặc hy vọng ('một ngày nào đó', 'rồi có lúc').",
@@ -1341,7 +1341,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いつでも_67": {
+  "ja_n5_いつでも_67": {
     "title": "いつでも～ (itsudemo～)",
     "shortExplanation": "Biểu thị sự không giới hạn về thời gian; 'bất cứ lúc nào', 'bất kể khi nào', 'lúc nào cũng'.",
     "longExplanation": "'いつでも' (itsudemo) là sự kết hợp giữa từ nghi vấn 'いつ' và trợ từ toàn thể 'でも', mang ý nghĩa thời gian không có bất kỳ hạn chế hay điều kiện nào. Được dùng khi cho phép, mời mọc hoặc nói về khả năng ('bất cứ khi nào cũng được'), hoặc để miêu tả một trạng thái diễn ra thường trực ('lúc nào cũng...').",
@@ -1361,7 +1361,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いつも_68": {
+  "ja_n5_いつも_68": {
     "title": "いつも～ (itsumo～)",
     "shortExplanation": "Phó từ tần suất diễn tả hành động lặp đi lặp lại thành thói quen hoặc trạng thái thường xuyên; 'luôn luôn', 'lúc nào cũng'.",
     "longExplanation": "'いつも' (itsumo) là phó từ chỉ tần suất rất phổ biến, dùng để chỉ một hành động diễn ra đều đặn, tạo thành thói quen hàng ngày, hoặc một tình trạng, sở thích nhất quán không đổi theo thời gian. Tương đương với 'luôn luôn', 'lúc nào cũng', 'thường lệ' trong tiếng Việt.",
@@ -1381,7 +1381,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_て_69": {
+  "ja_n5_て_69": {
     "title": "～て います (～te imasu)",
     "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc trạng thái đang tiếp diễn; 'đang làm...'.",
     "longExplanation": "Mẫu ngữ pháp ～ています dùng để diễn tả một hành động đang diễn ra tại thời điểm nói, tương đương với 'đang (làm gì)' trong tiếng Việt. Tùy theo nhóm động từ (động từ nhóm 1, nhóm 2 hay động từ bất quy tắc) mà cách biến đổi sang thể て sẽ khác nhau, nhưng đều kết hợp theo cấu trúc: Động từ thể て + います.",
@@ -1401,7 +1401,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_が_70": {
+  "ja_n5_が_70": {
     "title": "～が (〜ga)",
     "shortExplanation": "Trợ từ biểu thị chủ ngữ ngữ pháp của câu hoặc liên từ nối biểu thị sự tương phản mang nghĩa 'nhưng'.",
     "longExplanation": "Trợ từ 'が' (ga) là một trợ từ cơ bản có hai chức năng ngữ pháp cốt lõi:\n1. Cách dùng làm trợ từ cách: Biểu thị chủ ngữ ngữ pháp của câu, thường dùng để nhấn mạnh chủ thể được nhắc đến, đưa ra thông tin mới, hoặc miêu tả hiện tượng khách quan.\n2. Cách dùng làm trợ từ liên kết: Nối hai vế câu có quan hệ đối lập, tương phản mang nghĩa 'nhưng', 'tuy nhiên', hoặc dùng làm lời mở đầu, dẫn dắt câu chuyện.",
@@ -1421,7 +1421,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_が_71": {
+  "ja_n5_が_71": {
     "title": "～が、～ (〜ga, 〜)",
     "shortExplanation": "Liên từ nối biểu thị mối quan hệ tương phản, đối lập giữa hai mệnh đề; 'tuy... nhưng...', 'nhưng...'.",
     "longExplanation": "Mẫu câu '～が、～' sử dụng trợ từ liên kết 'が' đặt ở cuối vế câu thứ nhất để nối hai vế có ý nghĩa tương phản, mâu thuẫn hoặc đối lập nhau, tương đương với 'tuy... nhưng...' hoặc 'nhưng...' trong tiếng Việt. So với '～けど' (thường dùng trong văn nói thân mật), '～が' mang sắc thái trang trọng, lịch sự và thường được dùng trong văn viết hoặc các bối cảnh giao tiếp chuẩn mực.",
@@ -1441,7 +1441,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_から_72": {
+  "ja_n5_から_72": {
     "title": "～から、～ (〜kara, 〜)",
     "shortExplanation": "Liên từ biểu thị nguyên nhân, lý do dẫn đến kết quả hoặc hành động ở vế sau; 'vì... nên...', 'do...'.",
     "longExplanation": "'～から' (kara) là liên từ nối dùng để diễn tả nguyên nhân, lý do chủ quan của người nói, dẫn đến kết quả, phán đoán, yêu cầu hay mệnh lệnh ở vế tiếp theo ('Vì... nên...'). Vế trước nêu nguyên nhân, vế sau nêu hành động hoặc kết luận. Kết hợp với thể thông thường của động từ và tính từ đuôi い; đối với tính từ đuôi な và danh từ thì cần thêm 'だ' trước 'から' thành '～だから'.",
@@ -1461,7 +1461,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からです_73": {
+  "ja_n5_からです_73": {
     "title": "～からです (〜kara desu)",
     "shortExplanation": "Đứng ở cuối câu để giải thích nguyên nhân, lý do một cách lịch sự; 'là vì...', 'bởi vì...'.",
     "longExplanation": "'～からです' đặt ở cuối câu để giải thích lý do, nguyên nhân cho một hành động hay trạng thái đã được nhắc đến trước đó, hoặc dùng để trả lời cho các câu hỏi hỏi nguyên nhân như 'どうして' (tại sao) hay 'なぜ' (vì sao). Mang nghĩa 'là vì...', 'bởi vì...'. Động từ và tính từ đuôi い kết hợp ở thể thông thường với 'からです', còn tính từ đuôi な và danh từ kết hợp với 'だからです'.",
@@ -1481,7 +1481,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_から_74": {
+  "ja_n5_から_74": {
     "title": "～から もらいます (〜kara moraimasu)",
     "shortExplanation": "Nhận đồ vật từ ai đó hoặc được người khác làm giúp cho việc gì; 'nhận từ...', 'được... làm cho'.",
     "longExplanation": "'～から もらいます' (hoặc '～に もらいます') dùng để diễn tả việc người nói (hoặc người thuộc phe người nói) nhận một đồ vật từ ai đó hoặc từ một tổ chức/đoàn thể. Khi kết hợp với động từ thể て tạo thành cấu trúc '～てもらいます', biểu thị việc được người khác thực hiện một hành vi giúp đỡ có lợi cho mình với thái độ biết ơn ('được ai đó làm cho việc gì'). Người cho hoặc người thực hiện hành động được đánh dấu bằng trợ từ 'から' hoặc 'に'.",
@@ -1501,7 +1501,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_が_75": {
+  "ja_n5_が_75": {
     "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
     "shortExplanation": "Dùng để diễn tả ai đó tặng quà hoặc làm một việc gì đó cho 'tôi'; 'ai đó cho/tặng tôi'.",
     "longExplanation": "Mẫu ngữ pháp ～が私にくれます dùng để diễn tả việc người khác trao tặng đồ vật hoặc làm một điều gì đó cho người nói ('tôi') hoặc người thuộc phía người nói. Trong cấu trúc này, người trao tặng (chủ thể hành động) được đánh dấu bằng trợ từ が, còn người tiếp nhận là 私に (cho tôi). Đối với hành động giúp đỡ, động từ thường chia ở thể て kết hợp với くれます (～てくれます).",
@@ -1521,7 +1521,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_けど_76": {
+  "ja_n5_けど_76": {
     "title": "～けど、～ (〜kedo、～)",
     "shortExplanation": "Dùng để nối hai mệnh đề thể hiện sự đối lập hoặc mở đầu câu chuyện; 'nhưng', 'tuy... nhưng'.",
     "longExplanation": "Mẫu liên từ ～けど được dùng trong văn nói thân mật để nối hai vế câu, thể hiện sự đối lập, tương phản hoặc dùng làm tiền đề mở đầu câu chuyện. Mang nghĩa tương đương 'nhưng', 'thế nhưng' trong tiếng Việt. Đây là dạng nói ngắn gọn, suồng sã hơn so với けれど hoặc が.",
@@ -1541,7 +1541,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_けれど_77": {
+  "ja_n5_けれど_77": {
     "title": "～けれど、～ (〜keredo、～)",
     "shortExplanation": "Diễn tả sự tương phản, đối lập hoặc làm tiền đề nối hai vế; 'nhưng', 'tuy... nhưng'.",
     "longExplanation": "Mẫu liên từ ～けれど dùng để nối hai vế câu biểu thị sự đối lập, nhượng bộ hoặc mở đầu câu chuyện một cách nhẹ nhàng. Mang ý nghĩa 'tuy... nhưng', 'thế nhưng'. Cấu trúc này trang trọng và lịch sự hơn so với dạng rút gọn 'けど', thích hợp dùng trong cả giao tiếp hàng ngày lẫn văn phong lịch sự vừa phải.",
@@ -1561,7 +1561,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_こちら_78": {
+  "ja_n5_こちら_78": {
     "title": "こちら～ (kochira～)",
     "shortExplanation": "Đại từ chỉ phương hướng, địa điểm, sự vật hoặc người ở phía người nói; dạng lịch sự của 'kore / koko'.",
     "longExplanation": "Từ こちら là đại từ chỉ thị lịch sự thuộc hệ こ・そ・あ・ど, dùng để chỉ hướng ('hướng này, lối này'), địa điểm ('chỗ này, nơi đây'), đồ vật ('cái này') ở gần người nói, hoặc dùng để giới thiệu trang trọng về người ('vị này, người này'). Đây là cách nói lịch sự, trang trọng hơn của 'これ' (cái này), 'ここ' (chỗ này) và 'こっち' (phía này).",
@@ -1581,7 +1581,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_さっき_79": {
+  "ja_n5_さっき_79": {
     "title": "さっき～ (sakki～)",
     "shortExplanation": "Phó từ chỉ thời gian ngắn vừa trôi qua; 'vừa nãy', 'lúc nãy', 'vừa mới'.",
     "longExplanation": "Từ さっき là phó từ chỉ thời gian, dùng để diễn tả một hành động hoặc sự việc vừa mới xảy ra cách đây một khoảng thời gian ngắn (vài phút đến một hai tiếng trước). Mang nghĩa là 'vừa nãy', 'lúc nãy' trong tiếng Việt. Thường dùng trong hội thoại thân mật hàng ngày; dạng lịch sự và trang trọng hơn là 'さきほど' (先程).",
@@ -1601,7 +1601,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_すぐに_80": {
+  "ja_n5_すぐに_80": {
     "title": "すぐに～ (sugu ni～)",
     "shortExplanation": "Phó từ biểu thị hành động diễn ra nhanh chóng, không chậm trễ; 'ngay lập tức', 'ngay'.",
     "longExplanation": "Phó từ すぐに được dùng để diễn tả một hành động hay sự thay đổi diễn ra ngay tức thì, lập tức mà không có bất kỳ khoảng thời gian trễ nào. Tương đương với 'ngay lập tức', 'liền' trong tiếng Việt. Thường đứng trước động từ hoặc tính từ để bổ nghĩa.",
@@ -1621,7 +1621,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ぜんぜん_81": {
+  "ja_n5_ぜんぜん_81": {
     "title": "ぜんぜん～ (zenzen～)",
     "shortExplanation": "Đi với dạng phủ định để nhấn mạnh sự phủ định hoàn toàn; 'hoàn toàn không...', 'chẳng... chút nào'.",
     "longExplanation": "Phó từ ぜんぜん (Toàn Nhiên) theo ngữ pháp chuẩn luôn đi kèm với các từ ngữ ở thể phủ định (động từ hoặc tính từ phủ định) để nhấn mạnh sự phủ định tuyệt đối. Mang nghĩa là 'hoàn toàn không...', 'chẳng... chút nào'.",
@@ -1641,7 +1641,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そして_82": {
+  "ja_n5_そして_82": {
     "title": "そして、～ (soshite、～)",
     "shortExplanation": "Liên từ nối hai câu hoặc hai mệnh đề theo trình tự thời gian hoặc bổ sung thêm thông tin; 'và', 'rồi thì', 'sau đó'.",
     "longExplanation": "Từ そして là liên từ dùng để nối tiếp hai câu hoặc hai ý lại với nhau. Cấu trúc này thường biểu thị sự tiếp nối các hành động theo trình tự thời gian ('làm A rồi làm B') hoặc dùng để bổ sung, liệt kê thêm một sự việc liên quan ('và', 'đồng thời').",
@@ -1661,7 +1661,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そちら_83": {
+  "ja_n5_そちら_83": {
     "title": "そちら～ (sochira～)",
     "shortExplanation": "Đại từ chỉ phương hướng, địa điểm, sự vật hoặc người ở phía người nghe; dạng lịch sự của 'sore / soko'.",
     "longExplanation": "Từ そちら là đại từ chỉ thị lịch sự thuộc hệ こ・そ・あ・ど, dùng để chỉ hướng ('hướng đó, phía đó'), địa điểm ('chỗ đó'), sự vật ('cái đó') ở gần người nghe, hoặc người ở phía người nghe ('vị đó'). Ngoài ra, そちら còn được dùng trong giao tiếp lịch sự để chỉ chính đối phương hoặc phía đối phương ('quý vị, bên bạn').",
@@ -1681,7 +1681,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_それから_84": {
+  "ja_n5_それから_84": {
     "title": "それから、～ (sorekara、～)",
     "shortExplanation": "Liên từ biểu thị hành động diễn ra tiếp nối sau một hành động trước đó; 'sau đó', 'rồi thì', 'tiếp theo'.",
     "longExplanation": "Liên từ それから dùng để biểu thị trình tự thời gian liên tiếp giữa hai hành động hoặc sự việc: sau khi sự việc thứ nhất hoàn thành thì tiếp tục diễn ra sự việc thứ hai. Mang nghĩa tương đương với 'sau đó', 'rồi thì' trong tiếng Việt. Ngoài ra, nó cũng có thể dùng để liệt kê bổ sung thêm thông tin hoặc đồ vật ('và còn... nữa').",
@@ -1701,7 +1701,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だいたい_85": {
+  "ja_n5_だいたい_85": {
     "title": "だいたい〜 (daitai〜)",
     "shortExplanation": "Phó từ biểu thị ước lượng phỏng chừng hoặc đại khái; 'khoảng', 'đại khái', 'ước chừng'.",
     "longExplanation": "Từ だいたい (Đại Thể) là phó từ dùng để đưa ra ước lượng phỏng chừng về số lượng, thời gian, mức độ, tỷ lệ mà không cần con số chính xác tuyệt đối. Mang nghĩa là 'khoảng chừng', 'ước chừng', 'đại khái'. Đặt trước số từ, lượng từ hoặc cụm diễn đạt mức độ.",
@@ -1721,7 +1721,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たいてい_86": {
+  "ja_n5_たいてい_86": {
     "title": "たいてい～ (taitei～)",
     "shortExplanation": "Phó từ biểu thị tần suất phổ biến hoặc phần lớn trường hợp; 'thông thường', 'hầu hết', 'phần lớn'.",
     "longExplanation": "Từ たいてい (Đại Đê) là phó từ dùng để diễn tả thói quen lặp đi lặp lại trong phần lớn thời gian hoặc một đặc điểm mang tính quy luật chung, phổ biến. Mang nghĩa 'thông thường', 'thường thường', 'phần lớn'. Khi đi với danh từ, nó kết hợp dưới dạng 'たいていの + Danh từ' mang nghĩa 'hầu hết / phần lớn (ai/cái gì)'.",
@@ -1741,7 +1741,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だから_87": {
+  "ja_n5_だから_87": {
     "title": "だから、～ (dakara、～)",
     "shortExplanation": "Biểu thị nguyên nhân, lý do dẫn đến kết quả ở vế sau; 'vì... nên', 'cho nên', 'do đó'.",
     "longExplanation": "Cấu trúc だから dùng để chỉ ra lý do hoặc nguyên nhân dẫn đến phán đoán, hành động hay kết quả được nêu ở mệnh đề sau. Nó có thể đóng vai trò là đuôi liên kết sau Danh từ / Tính từ đuôi な (Danh từ + だから), hoặc đứng đầu câu như một liên từ kết nối ('vì vậy, cho nên'). Lưu ý: với Động từ và Tính từ đuôi い, ta nối trực tiếp với から (không có だ).",
@@ -1761,7 +1761,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たりたり_88": {
+  "ja_n5_たりたり_88": {
     "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
     "shortExplanation": "Liệt kê tượng trưng một vài hành động tiêu biểu trong số nhiều hành động; 'lúc thì... lúc thì...', 'nào là... nào là...'.",
     "longExplanation": "Mẫu ngữ pháp ～たり、～たり します được dùng để liệt kê một vài hành động hoặc trạng thái tiêu biểu đại diện, ngụ ý rằng ngoài những điều được kể ra thì còn có những hoạt động khác nữa. Trong tiếng Việt có thể dịch là 'làm những việc như... và...', 'nào là... nào là...', 'lúc thì... lúc thì...'. Cấu trúc được tạo bằng cách chia động từ sang thể quá khứ thông thường (thể た) rồi thêm り, cuối câu kết thúc bằng します (hoặc dạng quá khứ しました).",
@@ -1781,7 +1781,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だれ_89": {
+  "ja_n5_だれ_89": {
     "title": "だれ～ (dare～)",
     "shortExplanation": "Đại từ nghi vấn dùng để hỏi về người; 'ai'.",
     "longExplanation": "Từ だれ (chữ Hán: 誰) là đại từ nghi vấn dùng để hỏi danh tính của người nào đó, mang nghĩa là 'ai' trong tiếng Việt. Tùy theo vai trò ngữ pháp trong câu mà だれ sẽ kết hợp với các trợ từ thích hợp như: だれが (ai - làm chủ ngữ), だれを (ai - làm tân ngữ), だれに (cho ai / với ai), だれの (của ai). Trong cách nói lịch sự, trang trọng hơn người ta dùng 'どなた'.",
@@ -1801,7 +1801,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だれか_90": {
+  "ja_n5_だれか_90": {
     "title": "だれか〜 (dareka〜)",
     "shortExplanation": "Biểu thị 'ai đó', 'người nào đó' khi chưa xác định được danh tính hoặc danh tính không quan trọng.",
     "longExplanation": "Đại từ bất định 'だれか' (dareka) dùng để chỉ 'ai đó' hoặc một người nào đó khi người nói không biết rõ danh tính hoặc việc xác định cụ thể người đó là ai không quan trọng. 'だれか' có thể kết hợp với các trợ từ như が, を, に, の hoặc đứng độc lập bổ nghĩa trong câu (trong giao tiếp hàng ngày, trợ từ が và を thường có thể được lược bỏ).",
@@ -1821,7 +1821,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だれでも_91": {
+  "ja_n5_だれでも_91": {
     "title": "だれでも～ (dare demo～)",
     "shortExplanation": "Diễn tả 'bất kỳ ai', 'ai cũng', nhấn mạnh không có ngoại lệ đối với bất kỳ ai.",
     "longExplanation": "Mẫu ngữ pháp 'だれでも' được tạo thành từ từ để hỏi 'だれ' kết hợp với trợ từ 'でも', mang ý nghĩa 'bất kỳ ai', 'ai cũng', 'bất kể là ai'. Cấu trúc này dùng để khẳng định rằng một hành động, trạng thái, khả năng hoặc quyền lợi nào đó áp dụng bình đẳng cho mọi người mà không có sự phân biệt hay giới hạn.",
@@ -1841,7 +1841,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だれもないです_92": {
+  "ja_n5_だれもないです_92": {
     "title": "だれも～ないです (dare mo ~ nai desu)",
     "shortExplanation": "Diễn tả sự phủ định hoàn toàn ở dạng lịch sự: 'không có ai...', 'chẳng ai...'.",
     "longExplanation": "Cấu trúc 'だれも～ないです' kết hợp giữa đại từ phủ định toàn bộ 'だれも' (không ai) với dạng phủ định lịch sự '～ないです' (của động từ hoặc tính từ). Mẫu câu này dùng để diễn đạt ý 'không có ai...', 'chẳng một ai...' trong giao tiếp hàng ngày một cách lịch sự, tự nhiên và gần gũi.",
@@ -1861,7 +1861,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だれもません_93": {
+  "ja_n5_だれもません_93": {
     "title": "だれも～ません (daremo ~masen)",
     "shortExplanation": "Diễn tả sự phủ định hoàn toàn với động từ ở thể lịch sự chuẩn mực: 'không có ai...', 'chẳng ai...'.",
     "longExplanation": "Cấu trúc 'だれも～ません' kết hợp giữa từ phủ định 'だれも' (không ai) với động từ chia ở thể lịch sự phủ định '～ません' (hoặc thì quá khứ '～ませんでした'). Mẫu câu này dùng để diễn đạt một cách chuẩn mực, trang trọng rằng hoàn toàn không có người nào thực hiện một hành động cụ thể.",
@@ -1881,7 +1881,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どう_94": {
+  "ja_n5_どう_94": {
     "title": "～どう しますか。 (～dou shimasu ka.)",
     "shortExplanation": "Dùng để hỏi về ý kiến, quyết định hoặc cách giải quyết: '(sẽ) làm thế nào?', 'tính sao đây?'.",
     "longExplanation": "Mẫu câu '～どうしますか' được sử dụng khi người nói muốn hỏi ý kiến, dự định, quyết định hoặc phương hướng giải quyết của đối phương trước một tình huống, vấn đề hay điều kiện cụ thể. Thường đi sau một mệnh đề nêu lý do (ので / から), điều kiện (たら) hoặc chủ đề (について).",
@@ -1901,7 +1901,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どうですか_95": {
+  "ja_n5_どうですか_95": {
     "title": "～どうですか。 (〜dou desu ka.)",
     "shortExplanation": "Hỏi ý kiến, cảm nhận ('thấy thế nào?') hoặc đưa ra lời gợi ý, đề xuất ('...thì sao?').",
     "longExplanation": "Mẫu câu '～どうですか' được dùng phổ biến trong hai trường hợp: (1) Dùng để hỏi cảm nhận, ý kiến, đánh giá của người nghe về một sự vật, sự việc ('...thế nào?'); (2) Dùng để đưa ra lời gợi ý, rủ rê hoặc đề xuất một ý tưởng nào đó một cách lịch sự, nhã nhặn ('...thì sao?', 'hay là...?').",
@@ -1921,7 +1921,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どうやって_96": {
+  "ja_n5_どうやって_96": {
     "title": "どうやって～ (douyatte～)",
     "shortExplanation": "Hỏi về cách thức, phương pháp hoặc quy trình thực hiện: 'làm thế nào để...', 'bằng cách nào?'.",
     "longExplanation": "Từ để hỏi 'どうやって' (bắt nguồn từ thể て của động từ どうやる - làm thế nào) dùng để hỏi về cách thức, phương pháp, phương tiện di chuyển hoặc các bước thực hiện một công việc nào đó. Cấu trúc này thường đứng trực tiếp trước động từ và mang nghĩa là 'làm cách nào để...', 'bằng phương pháp nào'.",
@@ -1941,7 +1941,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どう_97": {
+  "ja_n5_どう_97": {
     "title": "～どう 言いますか。 (〜dou iimasu ka.)",
     "shortExplanation": "Hỏi cách diễn đạt một từ, cụm từ trong một ngôn ngữ cụ thể: 'nói như thế nào?', 'nói sao?'.",
     "longExplanation": "Mẫu câu '～どう言いますか' dùng để hỏi người khác về cách phát âm, cách diễn đạt hoặc từ tương đương trong một ngoại ngữ cụ thể (hoặc cách diễn đạt chuẩn mực). Cấu trúc thường gặp là đặt từ ngữ cần hỏi làm chủ đề với trợ từ 'は' hoặc tân ngữ với trợ từ 'を', tiếp theo là tên ngôn ngữ kèm trợ từ 'で', rồi đến 'どう言いますか'.",
@@ -1961,7 +1961,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とき_98": {
+  "ja_n5_とき_98": {
     "title": "～とき (〜toki)",
     "shortExplanation": "Chỉ thời điểm hoặc hoàn cảnh diễn ra một hành động, trạng thái: 'khi...', 'lúc...'.",
     "longExplanation": "Cấu trúc '～とき' (thời/khi) kết hợp với từ loại đứng trước để tạo thành mệnh đề phụ chỉ thời gian, diễn tả thời điểm mà một hành động, sự việc hoặc trạng thái diễn ra. Cách nối phụ thuộc vào từ loại: động từ chia ở thể thông thường (thể từ điển, thể た, thể ない); tính từ đuôi い giữ nguyên; tính từ đuôi な thêm 'な'; danh từ thêm 'の'.",
@@ -1981,7 +1981,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ときどき_99": {
+  "ja_n5_ときどき_99": {
     "title": "ときどき～ (tokidoki～)",
     "shortExplanation": "Phó từ chỉ tần suất: 'thỉnh thoảng', 'đôi khi', 'đôi lúc'.",
     "longExplanation": "Phó từ 'ときどき' (thời thời) dùng để diễn tả một hành động, sự việc diễn ra không thường xuyên, mang tính gián đoạn hoặc ngẫu nhiên theo từng khoảng thời gian nhất định, tương đương với 'thỉnh thoảng', 'đôi khi' trong tiếng Việt. Thường đứng ở đầu câu hoặc đặt ngay trước động từ/vị ngữ cần bổ nghĩa.",
@@ -2001,7 +2001,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこ_100": {
+  "ja_n5_どこ_100": {
     "title": "どこ～ (doko～)",
     "shortExplanation": "Từ để hỏi về vị trí, địa điểm: 'ở đâu', 'chỗ nào', 'nơi nào'.",
     "longExplanation": "Đại từ nghi vấn 'どこ' (doko) dùng để hỏi về không gian, địa điểm, vị trí hoặc phương hướng, tương đương với 'ở đâu', 'chỗ nào' trong tiếng Việt. Khi kết hợp với các trợ từ khác nhau sẽ biểu thị các câu hỏi cụ thể: どこですか (hỏi vị trí của sự vật), どこで (hỏi địa điểm diễn ra hành động), どこに (hỏi nơi tồn tại hoặc nơi cư trú), どこへ (hỏi hướng di chuyển/điểm đến).",
@@ -2021,7 +2021,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこか_101": {
+  "ja_n5_どこか_101": {
     "title": "どこか～ (dokoka～)",
     "shortExplanation": "Chỉ địa điểm chưa xác định hoặc người nói không biết rõ: 'đâu đó', 'nơi nào đó'.",
     "longExplanation": "Đại từ bất định 'どこか' được tạo thành từ từ để hỏi 'どこ' kết hợp với trợ từ bất định 'か', dùng để chỉ một địa điểm, nơi chốn nào đó mà người nói không biết chính xác hoặc không cần nêu cụ thể. 'どこか' có thể kết hợp với các trợ từ chỉ vị trí (で, に, へ) hoặc đứng độc lập bổ nghĩa cho cụm danh từ (như どこか静かな場所 - nơi nào đó yên tĩnh).",
@@ -2041,7 +2041,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこでも_102": {
+  "ja_n5_どこでも_102": {
     "title": "どこでも～ (dokodemo～)",
     "shortExplanation": "Diễn tả 'bất kỳ đâu', 'ở đâu cũng...', bao quát toàn bộ không giới hạn địa điểm.",
     "longExplanation": "Mẫu ngữ pháp 'どこでも' (kết hợp từ nghi vấn どこ với trợ từ でも) mang ý nghĩa 'bất kỳ nơi nào', 'bất cứ đâu', 'ở đâu cũng...'. Cấu trúc này dùng như một phó từ trong câu để khẳng định rằng một hành động, sự việc hoặc trạng thái có thể xảy ra hay tồn tại ở mọi địa điểm mà không bị ràng buộc bởi bất kỳ nơi chốn cụ thể nào.",
@@ -2061,7 +2061,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこにも_103": {
+  "ja_n5_どこにも_103": {
     "title": "どこにも + Động từ + ないです (doko ni mo ~ nai desu)",
     "shortExplanation": "Phủ định hoàn toàn về địa điểm ở dạng lịch sự: 'không... ở bất kỳ đâu', 'chẳng nơi nào có...'.",
     "longExplanation": "Cấu trúc 'どこにも + Động từ thể ない + です' kết hợp cụm từ phủ định địa điểm toàn bộ 'どこにも' (ở bất kỳ đâu cũng không) với thể phủ định lịch sự của động từ '～ないです'. Dùng để nhấn mạnh một cách lịch sự nhưng tự nhiên rằng một sự vật hoàn toàn không tồn tại, không thể tìm thấy hoặc một hành động không thể thực hiện ở bất kỳ địa điểm nào.",
@@ -2081,7 +2081,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこにも_104": {
+  "ja_n5_どこにも_104": {
     "title": "どこにも + Động từ + ません (doko ni mo ~ masen)",
     "shortExplanation": "Phủ định hoàn toàn về địa điểm với động từ ở thể lịch sự: 'không... ở bất kỳ đâu', 'chẳng có ở đâu...'.",
     "longExplanation": "Cấu trúc 'どこにも + Động từ thể ます (bỏ ます) + ません' (bao gồm cả dạng thể tiếp diễn '～ていません') kết hợp 'どこにも' với đuôi phủ định trang trọng '～ません'. Dùng để phát biểu một cách lịch sự, chuẩn mực rằng một đối tượng hoàn toàn không tồn tại, không hiện diện hoặc hành động không diễn ra ở bất kỳ địa điểm nào.",
@@ -2101,7 +2101,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこへも_105": {
+  "ja_n5_どこへも_105": {
     "title": "どこへも～ないです (doko e mo ~ nai desu)",
     "shortExplanation": "Diễn tả hành động không diễn ra ở bất kỳ nơi nào; 'hoàn toàn không... ở đâu cả', 'không đi đâu cả'.",
     "longExplanation": "Mẫu ngữ pháp どこへも kết hợp với động từ thể phủ định ngắn cùng です (thể ないです) dùng để nhấn mạnh sự phủ định hoàn toàn về phương hướng hoặc địa điểm. Cấu trúc này biểu thị chủ ngữ không thực hiện hành động tại bất kỳ nơi nào hay không đi tới bất kỳ đâu. Lưu ý rằng theo sau どこへも trong cấu trúc này luôn luôn là động từ ở dạng phủ định.",
@@ -2121,7 +2121,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこへも_106": {
+  "ja_n5_どこへも_106": {
     "title": "どこへも～ません (doko e mo ~ masen)",
     "shortExplanation": "Biểu thị sự phủ định hoàn toàn về phương hướng hoặc địa điểm trong câu nói lịch sự; 'hoàn toàn không đi đâu cả', 'không đến bất kỳ nơi nào'.",
     "longExplanation": "Mẫu câu どこへも～ません kết hợp trợ từ chỉ phương hướng へ với trợ từ phủ định toàn thể も và động từ thể lịch sự phủ định (thể ません). Cấu trúc này dùng để diễn tả rằng hành động (thường là các động từ chỉ sự di chuyển như 行きます, 走ります) không diễn ra tới bất kỳ địa điểm hay nơi chốn nào.",
@@ -2141,7 +2141,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこも_107": {
+  "ja_n5_どこも_107": {
     "title": "どこも～ないです (doko mo ~ nai desu)",
     "shortExplanation": "Biểu thị sự vật hoặc trạng thái không tồn tại ở bất kỳ nơi nào; 'ở đâu cũng không có...', 'chẳng có nơi nào...'.",
     "longExplanation": "Mẫu câu どこも～ないです dùng để diễn tả sự vắng mặt, không tồn tại của sự vật, dịch vụ hay đặc điểm nào đó ở mọi địa điểm được nhắc đến. Trợ từ も kết hợp với từ để hỏi どこ mang ý nghĩa phủ định toàn bộ ('bất kỳ đâu cũng không') khi đi kèm với vị ngữ phủ định ないです.",
@@ -2161,7 +2161,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どこも_108": {
+  "ja_n5_どこも_108": {
     "title": "どこも～ません (doko mo ~ masen)",
     "shortExplanation": "Diễn tả không một địa điểm nào đáp ứng hành động hoặc trạng thái trong câu lịch sự; 'ở đâu cũng không...', 'chẳng có nơi nào...'.",
     "longExplanation": "Mẫu câu どこも～ません dùng trong văn phong lịch sự để biểu thị rằng tất cả các địa điểm, cửa hàng hay tổ chức đều không thực hiện hành động hoặc không thỏa mãn một trạng thái nào đó. Theo sau どこも có thể là động từ thể ません, động từ thể khả năng phủ định (～できません), thể đang tiếp diễn phủ định (～ていません), hoặc tính từ đuôi な phủ định (～じゃありません).",
@@ -2181,7 +2181,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どちら_109": {
+  "ja_n5_どちら_109": {
     "title": "どちら～ (dochira～)",
     "shortExplanation": "Từ nghi vấn dùng để hỏi khi lựa chọn giữa hai đối tượng hoặc hỏi phương hướng lịch sự; 'cái nào (trong hai cái)', 'bên nào'.",
     "longExplanation": "Từ nghi vấn どちら được sử dụng khi yêu cầu người nghe lựa chọn giữa hai đối tượng hoặc phương án ('cái nào trong hai cái'). Ngoài ra, どちら còn là dạng nói lịch sự hơn của どっち hoặc どこ khi hỏi về phương hướng, địa điểm. Cấu trúc thường kết hợp với các trợ từ: どちらが (trong câu so sánh), どちらの + Danh từ, どちらに, hoặc どちらを.",
@@ -2201,7 +2201,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どなた_110": {
+  "ja_n5_どなた_110": {
     "title": "どなた～ (donata～)",
     "shortExplanation": "Cách nói lịch sự, tôn kính của từ để hỏi 'ai' (だれ); 'vị nào', 'ai (kính ngữ)'.",
     "longExplanation": "Từ どなた là dạng kính ngữ, lịch sự hơn của từ để hỏi だれ (ai). Từ này được sử dụng khi hỏi về danh tính của người khác trong các ngữ cảnh trang trọng, công sở hoặc khi giao tiếp với người trên. Các dạng phái sinh thường gặp bao gồm: どなたか (có vị nào / có ai đó), どなたも (bất kỳ ai cũng...), どなたが (vị nào / ai).",
@@ -2221,7 +2221,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どの_111": {
+  "ja_n5_どの_111": {
     "title": "どの + Danh từ (dono + Danh từ)",
     "shortExplanation": "Từ chỉ định nghi vấn bổ nghĩa cho danh từ đi sau để hỏi lựa chọn trong 3 đối tượng trở lên; '... nào'.",
     "longExplanation": "Mẫu cấu trúc どの + Danh từ là từ chỉ định nghi vấn thuộc hệ thống Ko-So-A-Do (kết hợp giữa ど và trợ từ の). Mẫu này bắt buộc phải đi trực tiếp trước một danh từ, dùng để hỏi người nghe lựa chọn hoặc xác định một sự vật hay người cụ thể trong một nhóm gồm ba đối tượng trở lên ('... nào').",
@@ -2241,7 +2241,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どれでも_112": {
+  "ja_n5_どれでも_112": {
     "title": "どれでも～ (dore demo～)",
     "shortExplanation": "Biểu thị bất kỳ cái nào trong nhiều sự lựa chọn cũng đều được chấp nhận; 'cái nào cũng được', 'bất cứ cái nào'.",
     "longExplanation": "Từ どれでも được hình thành từ đại từ nghi vấn どれ (cái nào trong 3 cái trở lên) kết hợp với trợ từ でも (dù là / cũng). Cấu trúc này diễn tả rằng trong số các lựa chọn được đưa ra, chọn bất kỳ cái nào cũng được hoặc tất cả đều thỏa mãn, tương đương với 'bất cứ cái nào' hoặc 'cái nào cũng...' trong tiếng Việt. Thường đi kèm với いい (được), 好き (thích).",
@@ -2261,7 +2261,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どんな_113": {
+  "ja_n5_どんな_113": {
     "title": "どんな + Danh từ (donna + Danh từ)",
     "shortExplanation": "Từ chỉ định nghi vấn dùng để hỏi về tính chất, chủng loại hoặc đặc điểm của sự vật, con người; '... như thế nào', 'loại... gì'.",
     "longExplanation": "Mẫu cấu trúc どんな + Danh từ là từ chỉ định nghi vấn dùng để hỏi về đặc tính, trạng thái hoặc chủng loại của danh từ đứng sau nó. Mẫu này tương đương với 'như thế nào', 'loại nào', 'kiểu gì' trong tiếng Việt. Khi trả lời câu hỏi với どんな, người nói thường sử dụng tính từ hoặc danh từ chỉ đặc tính để miêu tả cụ thể.",
@@ -2281,7 +2281,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なに_114": {
+  "ja_n5_なに_114": {
     "title": "なに～ (nani～)",
     "shortExplanation": "Đại từ nghi vấn dùng để hỏi về sự vật, sự việc hoặc hành động; 'cái gì', 'gì'.",
     "longExplanation": "Đại từ nghi vấn なに (cái gì) là một trong những từ để hỏi cơ bản nhất trong tiếng Nhật, dùng để hỏi về sự vật, nội dung hoặc hành động chưa xác định. Khi đứng độc lập hoặc đi trước các trợ từ như が, を, に, từ này được phát âm là 'nani' (なにが, なにを); khi đi trước các âm thuộc hàng d, t, n hoặc từ chỉ số đếm, từ này thường biến âm thành 'nan' (なん).",
@@ -2301,7 +2301,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なにか_115": {
+  "ja_n5_なにか_115": {
     "title": "なにか～ (nanika～)",
     "shortExplanation": "Diễn tả một thứ gì đó, điều gì đó không xác định rõ ràng; 'cái gì đó', 'điều gì đó'.",
     "longExplanation": "Từ なにか được hình thành từ từ để hỏi なに kết hợp với trợ từ bất định か, biểu thị một sự vật, đối tượng hoặc sự việc chưa được xác định cụ thể ('cái gì đó', 'thứ gì đó'). Cấu trúc này có thể đứng độc lập làm thành phần trong câu, hoặc đứng trước một danh từ như một định từ để diễn tả ý 'món... nào đó / chút... gì đó'.",
@@ -2321,7 +2321,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なにもないです_116": {
+  "ja_n5_なにもないです_116": {
     "title": "なにも～ないです (nani mo ~ nai desu)",
     "shortExplanation": "Phủ định hoàn toàn mọi sự vật hoặc hành động trong câu thân mật lịch sự; 'hoàn toàn không... cái gì cả', 'chẳng... gì cả'.",
     "longExplanation": "Mẫu câu なにも～ないです là sự kết hợp giữa từ để hỏi なに với trợ từ phủ định toàn bộ も và động từ thể phủ định ngắn kết hợp です (thể ないです). Cấu trúc này diễn tả sự phủ định tuyệt đối đối với đối tượng của hành động, tương đương với 'hoàn toàn không... cái gì cả' hoặc 'không có gì cả' trong tiếng Việt.",
@@ -2341,7 +2341,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なにもません_117": {
+  "ja_n5_なにもません_117": {
     "title": "なにも～ません (nani mo ~ masen)",
     "shortExplanation": "Biểu thị sự phủ định hoàn toàn về sự vật, nội dung trong câu nói trang trọng, lịch sự; 'hoàn toàn không... bất cứ cái gì'.",
     "longExplanation": "Mẫu câu なにも～ません sử dụng trong giao tiếp lịch sự chuẩn mực, kết hợp なにも với động từ dạng phủ định thể ます (thể ません hoặc quá khứ ませんでした). Mẫu này nhấn mạnh sự phủ định tuyệt đối đối với tân ngữ của động từ, biểu thị rằng người nói không làm bất kỳ điều gì hoặc không có đối tượng nào liên quan.",
@@ -2361,7 +2361,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なん_118": {
+  "ja_n5_なん_118": {
     "title": "なん～ (nan～)",
     "shortExplanation": "Biến thể ngữ âm của từ để hỏi '何' (cái gì), thường đứng trước từ chỉ số đếm hoặc âm đầu là d, t, n; 'mấy', 'bao nhiêu', 'gì'.",
     "longExplanation": "Từ なん là biến thể ngữ âm của chữ Hán 何 (nghĩa là 'gì', 'cái gì'). Từ này được dùng khi đứng trước từ chỉ số đếm (lượng từ) để hỏi số lượng như 'mấy', 'bao nhiêu' (なんさい - mấy tuổi, なんじ - mấy giờ, なんばん - số mấy), hoặc khi đứng trước các từ bắt đầu bằng âm thuộc hàng t, d, n như です (なんですか - là cái gì), と (なんという - gọi là gì).",
@@ -2381,7 +2381,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なんで_119": {
+  "ja_n5_なんで_119": {
     "title": "なんで～ (nande～)",
     "shortExplanation": "Từ nghi vấn thân mật dùng để hỏi nguyên nhân hoặc lý do; 'tại sao', 'sao lại', 'vì sao'.",
     "longExplanation": "Từ nghi vấn なんで được sử dụng phổ biến trong văn giao tiếp thân mật, đời thường để hỏi về nguyên nhân, lý do của một sự việc hoặc hành động, tương đương với 'tại sao', 'sao lại' trong tiếng Việt. So với どうして (tự nhiên, trung tính) hay なぜ (trang trọng, văn viết), なんで mang sắc thái gần gũi, thoải mái hơn nhưng đôi khi cũng có thể hàm ý ngạc nhiên hoặc trách móc nhẹ.",
@@ -2401,7 +2401,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なんでも_120": {
+  "ja_n5_なんでも_120": {
     "title": "なんでも～ (nandemo～)",
     "shortExplanation": "Diễn tả ý 'bất cứ thứ gì', 'cái gì cũng'; biểu thị phạm vi toàn bộ không giới hạn.",
     "longExplanation": "'なんでも' là từ kết hợp giữa từ nghi vấn 'なに' (cái gì) và trợ từ 'でも' (dù là / cũng), mang nghĩa 'bất cứ thứ gì', 'cái gì cũng', 'dù là gì đi nữa'. Cấu trúc này được dùng để chỉ sự bao hàm toàn bộ đối với sự vật, sự việc, không phân biệt hay kén chọn. Trong câu, nó có thể kết hợp linh hoạt với động từ, tính từ hoặc danh từ.",
@@ -2421,7 +2421,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なんと_121": {
+  "ja_n5_なんと_121": {
     "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
     "shortExplanation": "Dùng để hỏi tên gọi, cách nói hoặc cách diễn đạt của một sự vật, sự việc; '(cái này) gọi là gì vậy?'.",
     "longExplanation": "Mẫu câu '～なんと言いますか' là dạng câu hỏi lịch sự dùng khi người nói muốn biết tên gọi, từ vựng hoặc cách diễn đạt của một đồ vật, sự việc, hiện tượng cụ thể. Cấu trúc gồm từ nghi vấn 'なん' (gì), trợ từ trích dẫn 'と' (rằng, là) và động từ '言います' (nói/gọi) ở thể nghi vấn.",
@@ -2441,7 +2441,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に_122": {
+  "ja_n5_に_122": {
     "title": "～に あげます (〜 ni agemasu)",
     "shortExplanation": "Dùng để diễn tả hành động tặng hoặc cho ai đó món đồ gì; 'cho', 'tặng'.",
     "longExplanation": "Mẫu ngữ pháp ～にあげます được sử dụng khi người nói (hoặc người cùng phía với người nói) tặng hoặc cho ai đó một món đồ, nhấn mạnh hành động được thực hiện vì lợi ích của người nhận. Trong cấu trúc này, trợ từ 'に' đứng sau người nhận, theo sau là danh từ chỉ vật đi với trợ từ 'を' và động từ あげます.",
@@ -2461,7 +2461,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に_123": {
+  "ja_n5_に_123": {
     "title": "～に もらいます (〜ni moraimasu)",
     "shortExplanation": "Diễn tả việc nhận được đồ vật hoặc nhận được sự giúp đỡ, hành động từ ai đó; 'nhận từ...', 'được... (làm cho)'.",
     "longExplanation": "Mẫu ngữ pháp ～にもらいます được sử dụng khi người nói (hoặc người cùng phía với người nói) nhận một món đồ hay lợi ích từ người khác. Trợ từ 'に' (hoặc đôi khi là 'から') đứng sau người trao tặng/người thực hiện hành động. Khi đi với danh từ chỉ vật thì dùng 'Vật + を + もらいます', còn khi đi với động từ thể て ('～てもらいます') thì mang nghĩa nhờ ai đó làm gì cho mình hoặc nhận được hành động có lợi từ ai.",
@@ -2481,7 +2481,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_の_124": {
+  "ja_n5_の_124": {
     "title": "～の (〜no)",
     "shortExplanation": "Trợ từ nối các danh từ chỉ sở hữu, thuộc tính, vị trí, nguồn gốc hoặc danh từ hóa mệnh đề; 'của', 'ở'.",
     "longExplanation": "Trợ từ 'の' là một trong những trợ từ cơ bản và quan trọng nhất trong tiếng Nhật, dùng để nối hai danh từ với nhau (Danh từ 1 + の + Danh từ 2). Danh từ 1 đóng vai trò bổ nghĩa cho Danh từ 2, có thể chỉ quyền sở hữu ('của'), nguồn gốc xuất xứ, địa điểm ('ở'), vật liệu, hoặc thể loại. Ngoài ra, 'の' còn được dùng để thay thế danh từ đã nhắc đến ở trước hoặc dùng để danh từ hóa một mệnh đề/động từ.",
@@ -2501,7 +2501,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_はたいへんです_125": {
+  "ja_n5_はたいへんです_125": {
     "title": "～はたいへんです (〜wa taihen desu)",
     "shortExplanation": "Diễn tả một việc gì đó rất vất vả, gian nan hoặc khó khăn; '... rất vất vả / gian nan'.",
     "longExplanation": "Cấu trúc '～はたいへんです' dùng để diễn tả rằng một công việc, hoàn cảnh hoặc hành động nào đó rất vất vả, khó khăn, đòi hỏi nhiều công sức hoặc gây ra mệt mỏi, áp lực cho người thực hiện. Khi chủ ngữ là một hành động, ta dùng dạng 'Động từ thể từ điển + のはたいへんです' (danh từ hóa hành động).",
@@ -2521,7 +2521,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ほとんど_126": {
+  "ja_n5_ほとんど_126": {
     "title": "ほとんど〜 (hotondo〜)",
     "shortExplanation": "Phó từ chỉ số lượng hoặc mức độ; trong câu khẳng định mang nghĩa 'hầu như, phần lớn', trong câu phủ định mang nghĩa 'hầu như không'.",
     "longExplanation": "'ほとんど' là phó từ hoặc danh từ chỉ mức độ, tỷ lệ rất cao đạt gần mức tuyệt đối. Đi với câu khẳng định: biểu thị 'hầu hết', 'phần lớn', 'gần như hoàn toàn'. Đi với câu phủ định: biểu thị 'hầu như không...'. Khi bổ nghĩa cho danh từ, cấu trúc dùng dạng 'ほとんどの + Danh từ'.",
@@ -2541,7 +2541,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まあまあ_127": {
+  "ja_n5_まあまあ_127": {
     "title": "まあまあ～ (maa maa～)",
     "shortExplanation": "Diễn tả mức độ trung bình, tàm tạm, không quá tốt nhưng cũng không quá tệ; 'tàm tạm', 'cũng được', 'kha khá'.",
     "longExplanation": "'まあまあ' là một phó từ hoặc tính từ đuôi な biểu thị mức độ trung bình, vừa phải. Nó dùng để đánh giá sự vật, sự việc ở mức chấp nhận được, không hẳn là xuất sắc hay hoàn hảo nhưng cũng không đến mức tồi tệ ('tàm tạm', 'cũng tàm tạm', 'tương đối'). Ngoài ra trong hội thoại, 'まあまあ' còn dùng để khuyên can, xoa dịu người khác ('thôi nào, bình tĩnh lại nào').",
@@ -2561,7 +2561,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まだ_128": {
+  "ja_n5_まだ_128": {
     "title": "まだ〜 (mada〜)",
     "shortExplanation": "Biểu thị một trạng thái vẫn đang tiếp diễn ('vẫn'), hoặc một hành động chưa xảy ra tính đến thời điểm hiện tại ('chưa').",
     "longExplanation": "'まだ' là một phó từ chỉ thời gian và trạng thái rất thường gặp trong tiếng Nhật. Đi với câu khẳng định: diễn tả một trạng thái hoặc tình trạng vẫn đang tiếp tục kéo dài chưa thay đổi, dịch là 'vẫn / vẫn còn'. Đi với câu phủ định: diễn tả một hành động hoặc sự việc dự kiến xảy ra nhưng tới thời điểm hiện tại vẫn chưa xảy ra, dịch là 'vẫn chưa / chưa'.",
@@ -2581,7 +2581,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まだないです_129": {
+  "ja_n5_まだないです_129": {
     "title": "まだ〜ないです (mada 〜 nai desu)",
     "shortExplanation": "Dùng để diễn đạt lịch sự rằng một hành động hay sự việc vẫn chưa diễn ra hoặc chưa hoàn thành; 'vẫn chưa...'.",
     "longExplanation": "Cấu trúc 'まだ〜ないです' kết hợp phó từ 'まだ' (chưa) với động từ ở thể phủ định thông thường (thể ない) cộng với 'です' để tạo thành câu phủ định mang tính lịch sự nhưng mềm mại, thân thiện hơn thể '～ません'. Nó dùng để chỉ một hành động dự kiến thực hiện nhưng tại thời điểm nói vẫn chưa được thực hiện hay hoàn thành (thường gặp dưới dạng 'まだ〜ていないです').",
@@ -2601,7 +2601,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まだません_130": {
+  "ja_n5_まだません_130": {
     "title": "まだ～ません (mada ~masen)",
     "shortExplanation": "Diễn đạt trang trọng, chuẩn mực rằng một hành động chưa hoàn thành hoặc chưa từng diễn ra; 'vẫn chưa...'.",
     "longExplanation": "Mẫu ngữ pháp 'まだ～ません' là dạng phủ định lịch sự chuẩn mực dùng để diễn tả một hành động hoặc trạng thái chưa được thực hiện tính đến thời điểm hiện tại. Thông thường, đối với các hành động có tính hoàn thành, mẫu câu này kết hợp ở dạng tiếp diễn phủ định: 'まだ + Động từ thể ていません' (vẫn chưa làm...) hoặc 'まだ + Động từ thể たことがありません' (vẫn chưa từng làm...).",
@@ -2621,7 +2621,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もう_131": {
+  "ja_n5_もう_131": {
     "title": "もう～ (mou～)",
     "shortExplanation": "Phó từ biểu thị một hành động đã diễn ra ('đã'), không tiếp diễn nữa ('không... nữa'), hoặc sắp tới thời điểm ('sắp').",
     "longExplanation": "'もう' là phó từ đa năng trong tiếng Nhật với nhiều tầng nghĩa phụ thuộc vào ngữ cảnh: 1. Với câu khẳng định quá khứ/hoàn thành: biểu thị việc gì đó đã hoàn tất ('đã... rồi'). 2. Với câu phủ định: biểu thị sự chấm dứt, không còn tiếp tục làm việc gì nữa ('không còn... nữa'). 3. Khi kết hợp cùng từ chỉ thời gian hoặc 'もうすぐ': biểu thị thời điểm đã cận kề ('sắp'). 4. Ngoài ra còn mang nghĩa số lượng bổ sung ('thêm một chút nữa', ví dụ: もう一杯).",
@@ -2641,7 +2641,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もうすぐ_132": {
+  "ja_n5_もうすぐ_132": {
     "title": "もうすぐ〜 (mou sugu~)",
     "shortExplanation": "Diễn tả một sự việc hay hành động sắp sửa diễn ra trong một khoảng thời gian rất ngắn nữa; 'sắp', 'chẳng mấy chốc'.",
     "longExplanation": "'もうすぐ' là phó từ chỉ thời gian, kết hợp giữa 'もう' (đã gần) và 'すぐ' (ngay lập tức), dùng để biểu thị một sự việc, hiện tượng hoặc hành động nào đó sắp sửa xảy ra trong tương lai rất gần. Cấu trúc thường đi cùng động từ chia ở thì hiện tại/tương lai hoặc đi kèm danh từ chỉ sự kiện, mốc thời gian.",
@@ -2661,7 +2661,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もっと_133": {
+  "ja_n5_もっと_133": {
     "title": "もっと〜 (motto〜)",
     "shortExplanation": "Phó từ biểu thị sự gia tăng về mức độ, số lượng hoặc phẩm chất so với hiện tại hoặc một tiêu chuẩn nào đó; 'hơn nữa', 'thêm nữa'.",
     "longExplanation": "'もっと' là phó từ chỉ mức độ, dùng để nhấn mạnh sự thay đổi theo hướng gia tăng hơn nữa về mức độ, số lượng, cường độ hoặc kích thước so với trạng thái hiện có hoặc so với một mốc so sánh. Nó có thể đứng trước động từ, tính từ đuôi い hoặc tính từ đuôi な.",
@@ -2681,7 +2681,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_よく_134": {
+  "ja_n5_よく_134": {
     "title": "よく～ (yoku ~)",
     "shortExplanation": "Phó từ biểu thị tần suất cao ('thường xuyên'), mức độ kỹ càng hoặc khả năng làm tốt một việc gì đó ('giỏi', 'tốt', 'kỹ').",
     "longExplanation": "'よく' là phó từ biến đổi từ tính từ 'よい/いい' (tốt), có hai nhóm nghĩa chính trong tiếng Nhật: 1. Tần suất cao: Biểu thị một hành động xảy ra thường xuyên, đều đặn ('thường', 'hay làm gì'). 2. Mức độ, phẩm chất tốt hoặc kỹ lưỡng: Biểu thị việc làm một cách thấu đáo, thuần thục hoặc đáng khen ngợi ('làm tốt', 'hiểu rõ', 'ngắm kỹ'). Điển hình như câu khen ngợi 'よくできました' (Làm tốt lắm!).",
@@ -2701,7 +2701,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_場所にがあります_135": {
+  "ja_n5_場所にがあります_135": {
     "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
     "shortExplanation": "Diễn tả sự tồn tại, hiện diện của đồ vật, sự vật hoặc thực vật tại một địa điểm cụ thể; 'ở... có...'.",
     "longExplanation": "Mẫu ngữ pháp ～（場所）に～があります dùng để diễn đạt sự hiện diện hoặc tồn tại của đồ vật vô tri vô giác, sự vật hoặc thực vật tại một vị trí, địa điểm xác định. Trong cấu trúc này, danh từ chỉ nơi chốn đi với trợ từ 'に' để chỉ địa điểm tồn tại, danh từ chỉ sự vật đi với trợ từ 'が' để chỉ đối tượng tồn tại, và kết thúc bằng động từ 'あります' (có / tồn tại). Lưu ý đối với người và động vật thì sử dụng 'います'.",
@@ -2721,67 +2721,87 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_1": {
-    "title": "A うと B うと (A uto B uto)",
-    "shortExplanation": "Diễn tả thái độ hoặc kết quả không thay đổi bất kể rơi vào điều kiện A hay điều kiện B; 'dù là A hay B', 'cho dù... hay... đi chăng nữa'.",
-    "longExplanation": "Mẫu ngữ pháp JLPT N1 'Aうと Bうと' (đồng nghĩa với 'Aうが Bうが') dùng để liên kết hai vế đối lập hoặc mang tính giả định tương phản ('dù là A hay là B'). Cấu trúc này nhấn mạnh rằng lập trường, quyết tâm hoặc sự thật ở vế sau hoàn toàn không bị lung lay hay ảnh hưởng bởi việc điều kiện A hay điều kiện B xảy ra. Có thể kết hợp với động từ thể ý chí, tính từ đuôi い ở dạng '-かろうと', hoặc danh từ / tính từ đuôi な ở dạng 'であろうと'.",
-    "formation": "Động từ thể ý chí + と + Động từ thể ý chí / thể まい + と | Tính từ đuôi い (-かろう) + と | Tính từ đuôi な / Danh từ + であろうと",
+  "ja_n4_A_0": {
+    "title": "A とか B とか (A toka B toka)",
+    "shortExplanation": "Dùng để liệt kê không đầy đủ các ví dụ, sự vật, sự việc; 'như là... như là...', 'nào là... nào là...'.",
+    "longExplanation": "Mẫu ngữ pháp '～とか～とか' được dùng để nêu ra một vài ví dụ tiêu biểu trong số nhiều sự vật, sự việc hoặc hành động khả dĩ, mang tính chất liệt kê không đầy đủ (vẫn còn những thứ khác ngoài các ví dụ được nêu). Trong văn giao tiếp hàng ngày, nó rất phổ biến và mang sắc thái thân mật, tự nhiên hơn cấu trúc '～や～など'.",
+    "formation": "Danh từ + とか + Danh từ + とか (có thể đi với Động từ thể thông thường + とか)",
     "examples": [
       {
-        "translation": "Dù trời mưa hay trời nắng, tôi vẫn chạy bộ mỗi ngày."
+        "translation": "Cuối tuần tôi muốn làm những việc thú vị như xem phim hay đi mua sắm."
       },
       {
-        "translation": "Dù đề thi khó hay dễ, tôi cũng sẽ chăm chỉ hết sức mình."
+        "translation": "Cô ấy có thể nói được nhiều thứ tiếng như tiếng Anh, tiếng Pháp."
       },
       {
-        "translation": "Dù anh ấy là sinh viên hay người đã đi làm, tôi vẫn luôn tôn trọng anh ấy."
+        "translation": "Quán này phục vụ các món ăn Nhật Bản như sushi và sashimi."
       },
       {
-        "translation": "Dù bộ phim đó mới hay cũ, miễn là hay thì tôi đều xem."
+        "translation": "Có các hộp cơm trưa với nhiều mức giá khác nhau, chẳng hạn như hộp 1 đô-la hay hộp 5 đô-la."
       }
     ]
   },
-  "ja_A_2": {
-    "title": "A かたわら B (A katawara B)",
-    "shortExplanation": "Diễn tả việc vừa làm công việc chính A, vừa đồng thời làm thêm việc B; 'bên cạnh việc...', 'vừa... vừa...'.",
-    "longExplanation": "Mẫu ngữ pháp '～かたわら' (chữ Hán là 傍ら) được dùng để biểu thị rằng bên cạnh công việc, bổn phận hoặc hoạt động chính A (thường mang tính nghề nghiệp, học tập lâu dài), chủ ngữ còn thực hiện thêm một hoạt động B khác một cách song song. Thường được dịch là 'bên cạnh...', 'ngoài công việc... thì còn...', 'vừa... vừa...'. Mẫu câu này mang sắc thái trang trọng, thường dùng trong văn viết hoặc giới thiệu tiểu sử, hoạt động cá nhân.",
-    "formation": "Động từ thể từ điển + かたわら | Danh từ + のかたわら",
+  "ja_n4_A_1": {
+    "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
+    "shortExplanation": "Dùng trong so sánh kém lịch sự, diễn tả A không bằng B; 'A không... bằng B'.",
+    "longExplanation": "Mẫu câu 'A は B ほど～ありません' dùng để so sánh giữa hai đối tượng A và B, khẳng định rằng A không đạt đến mức độ hoặc tiêu chuẩn như B ở một phương diện nào đó (tính chất, trạng thái, năng lực). Đây là cách nói trang trọng, lịch sự hơn của dạng phủ định ngắn '～ない'. Vị ngữ phía sau luôn ở dạng phủ định lịch sự '～くありません', '～ではありません/じゃありません' hoặc động từ thể phủ định lịch sự.",
+    "formation": "A は + B ほど + Tính từ đuôi い (bỏ い) + くありません / Tính từ đuôi な + ではありません / Động từ thể phủ định lịch sự (〜ません)",
     "examples": [
       {
-        "translation": "Bên cạnh công việc chính, anh ấy còn theo học đại học."
+        "translation": "Hôm nay không lạnh bằng hôm qua."
       },
       {
-        "translation": "Bên cạnh việc là sinh viên, tôi còn làm thêm tại một nhà hàng."
+        "translation": "Anh ấy nói tiếng Anh không giỏi bằng tôi."
       },
       {
-        "translation": "Bên cạnh công việc bác sĩ, cô ấy còn vẽ tranh như một niềm đam mê."
+        "translation": "Nhà hàng này không đắt bằng nhà hàng đằng kia."
       },
       {
-        "translation": "Bên cạnh công việc, anh ấy còn tích cực tham gia các hoạt động tình nguyện."
+        "translation": "Cô ấy không bận rộn bằng anh ấy."
       }
     ]
   },
-  "ja_A_3": {
-    "title": "A かれ B かれ (A kare B kare)",
-    "shortExplanation": "Biểu thị ý dù là A hay B, dù trong trường hợp nào thì kết quả hay hành động vẫn không đổi; 'dù... hay...', 'bất kể... hay...'.",
-    "longExplanation": "Mẫu ngữ pháp '～AかれBかれ' là một dạng quán ngữ cổ mang tính văn chương, dùng để nối hai từ ngữ có ý nghĩa đối lập nhằm diễn tả rằng dù rơi vào trường hợp A hay trường hợp B thì sự việc vẫn diễn ra hoặc giữ nguyên bản chất như vậy ('dù... hay...', 'không ít thì nhiều', 'sớm hay muộn'). Thường gặp nhất với thân từ tính từ đuôi い (như 多かれ少なかれ, 早かれ遅かれ), đôi khi cũng được kết hợp mang tính quán ngữ với danh từ hoặc động từ.",
-    "formation": "Tính từ đuôi い bỏ い + かれ + Tính từ đuôi い bỏ い + かれ (Quán ngữ) | Danh từ + かれ + Danh từ + かれ | Động từ thể thông thường + かれ + Động từ thể thông thường + かれ",
+  "ja_n4_A_2": {
+    "title": "A は B ほど～ない (A wa B hodo ~ nai)",
+    "shortExplanation": "Dùng trong so sánh kém ở thể thông thường, diễn tả A không bằng B; 'A không... bằng B'.",
+    "longExplanation": "Mẫu câu 'A は B ほど～ない' dùng để so sánh hai đối tượng ở thể thông thường (ngắn gọn, thân mật), diễn đạt rằng A không đạt đến mức độ như B về một đặc điểm hay tính chất nào đó. Phía sau 'ほど' luôn là hình thức phủ định: tính từ đuôi い đổi thành '～くない', tính từ đuôi な đổi thành '～じゃない / ではない', hoặc động từ thể phủ định (thường là thể khả năng phủ định).",
+    "formation": "A は + B ほど + Tính từ đuôi い (bỏ い) + くない / Tính từ đuôi な + じゃない / Động từ thể phủ định (thường là thể khả năng phủ định ～ない)",
     "examples": [
       {
-        "translation": "Dù là mùa đông hay mùa hè, ngày nào tôi cũng chạy bộ."
+        "translation": "Anh Yamada không cao bằng anh Suzuki."
       },
       {
-        "translation": "Dù anh ấy có đến hay không đến thì bữa tiệc vẫn sẽ bắt đầu."
+        "translation": "Quả táo này không ngọt bằng quả táo đằng kia."
       },
       {
-        "translation": "Dù thắng hay thua, việc tham gia vào trận đấu mới là điều quan trọng."
+        "translation": "Cậu ấy học không giỏi bằng tôi."
       },
       {
-        "translation": "Dù trời mưa hay tuyết rơi, tôi không bao giờ bỏ việc dắt chó đi dạo."
+        "translation": "Nhà hàng này không yên tĩnh bằng nhà hàng đằng kia."
       }
     ]
   },
-  "ja_いAdjective_4": {
+  "ja_n4_A_3": {
+    "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
+    "shortExplanation": "Dùng để so sánh hơn giữa hai đối tượng; 'so với A thì B... hơn'.",
+    "longExplanation": "Mẫu câu so sánh 'A より B のほうが～' dùng để đối chiếu hai sự vật, hiện tượng hoặc con người (A và B), qua đó khẳng định B có tính chất, mức độ nổi trội hơn so với A. Trợ từ 'より' đi sau đối tượng làm mốc so sánh (A), còn cụm 'のほうが' đứng sau đối tượng được nhấn mạnh về mức độ hơn (B).",
+    "formation": "A + より + B + のほうが + Tính từ / Động từ",
+    "examples": [
+      {
+        "translation": "So với anh Tanaka thì anh Suzuki cao hơn."
+      },
+      {
+        "translation": "Chuối ngọt hơn táo."
+      },
+      {
+        "translation": "Mùa hè nóng hơn mùa đông."
+      },
+      {
+        "translation": "Tôi nghĩ Kyoto có bề dày lịch sử hơn Tokyo."
+      }
+    ]
+  },
+  "ja_n4_いAdjective_4": {
     "title": "Tính từ đuôi い + くする / くなる (i-keiyoushi kusuru/naru)",
     "shortExplanation": "Diễn tả sự biến đổi trạng thái tự nhiên (くなる: 'trở nên...') hoặc tác động làm thay đổi trạng thái (くする: 'làm cho...').",
     "longExplanation": "Cấu trúc 'Tính từ đuôi い + くする / くなる' dùng để diễn tả sự thay đổi về tính chất hoặc trạng thái. Trong đó:\n• '～くなる' diễn tả trạng thái tự nhiên biến đổi hoặc chuyển biến theo thời gian (nghĩa là 'trở nên...', 'trở thành...').\n• '～くする' là ngoại động từ, diễn tả hành động có chủ đích của con người nhằm làm biến đổi trạng thái của đối tượng (nghĩa là 'làm cho...', 'khiến cho...').\nCách chia: Bỏ đuôi 'い' của tính từ rồi thêm 'く', sau đó kết hợp với 'する' hoặc 'なる'.",
@@ -2801,7 +2821,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なadjective_5": {
+  "ja_n4_なadjective_5": {
     "title": "Tính từ đuôi な + にする / になる (na-keiyoushi ni suru/naru)",
     "shortExplanation": "Diễn tả sự biến đổi trạng thái với tính từ đuôi な (になる: 'trở nên...') hoặc tác động làm thay đổi trạng thái (にする: 'làm cho...').",
     "longExplanation": "Cấu trúc 'Tính từ đuôi な + にする / になる' dùng để diễn tả sự thay đổi trạng thái liên quan đến tính từ đuôi な:\n• '～になる' biểu thị sự biến đổi trạng thái diễn ra một cách tự nhiên hoặc khách quan ('trở nên...', 'trở thành...').\n• '～にする' biểu thị tác động có chủ ý của con người nhằm làm thay đổi trạng thái của sự vật ('làm cho...', 'làm thành...').\nCách kết hợp: Giữ nguyên phần gốc của tính từ đuôi な (bỏ な nếu có), thêm trợ từ 'に' rồi đi kèm 'する' hoặc 'なる'.",
@@ -2821,7 +2841,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_6": {
+  "ja_n4_Noun_6": {
     "title": "Danh từ + しか～ない (shika~nai)",
     "shortExplanation": "Biểu thị sự giới hạn duy nhất, mang sắc thái ít ỏi hoặc không còn sự lựa chọn nào khác; 'chỉ... mà thôi', 'chỉ có...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + しか～ない' dùng để nhấn mạnh tính duy nhất hoặc số lượng ít ỏi của sự vật, sự việc, mang sắc thái tiếc nuối hoặc không còn lựa chọn nào khác ngoài thứ được nhắc đến. Cấu trúc này bắt buộc phải đi kèm với động từ ở thể phủ định (～ない / ～ません), nhưng toàn bộ câu lại mang ý nghĩa khẳng định giới hạn ('chỉ có duy nhất cái đó').",
@@ -2841,7 +2861,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_7": {
+  "ja_n4_Noun_7": {
     "title": "Danh từ + にする (ni suru)",
     "shortExplanation": "Dùng để diễn tả sự lựa chọn hoặc quyết định chọn một sự vật, phương án; 'chọn...', 'quyết định lấy...'.",
     "longExplanation": "Mẫu cấu trúc 'Danh từ + にする' được sử dụng khi người nói đưa ra lựa chọn hoặc quyết định chọn một đối tượng cụ thể trong số nhiều phương án khác nhau. Cấu trúc này vô cùng phổ biến khi gọi món ăn tại nhà hàng (chọn món), mua sắm (chọn đồ), lên kế hoạch (chọn thời gian, địa điểm).",
@@ -2861,7 +2881,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_8": {
+  "ja_n4_Noun_8": {
     "title": "Danh từ + になる (ni naru)",
     "shortExplanation": "Diễn tả sự thay đổi, chuyển hóa trạng thái sang một chức danh, nghề nghiệp, độ tuổi hoặc thời gian mới; 'trở thành...', 'trở nên...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + になる' dùng để diễn tả sự biến đổi trạng thái, biến chuyển tự nhiên của sự vật hoặc sự phát triển của con người từ trạng thái ban đầu sang một trạng thái, thân phận, nghề nghiệp hoặc mốc thời gian mới. Thường gặp khi nói về ước mơ nghề nghiệp, sự thay đổi mùa màng hay tuổi tác.",
@@ -2881,7 +2901,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_のために_9": {
+  "ja_n4_のために_9": {
     "title": "Danh từ + のために (no tame ni)",
     "shortExplanation": "Diễn tả mục đích hành động hoặc vì lợi ích của ai đó/cái gì đó; 'vì...', 'cho...', 'để phục vụ cho...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のために' dùng để biểu thị mục đích hướng tới của một hành động ('để...', 'nhằm mục đích...') hoặc vì lợi ích của một đối tượng cụ thể nào đó ('vì...', 'cho...'). Khi danh từ đứng trước chỉ người hoặc tập thể, cấu trúc biểu đạt ý nghĩa vì quyền lợi của đối tượng đó; khi danh từ chỉ sự việc, cấu trúc biểu đạt mục đích của hành động.",
@@ -2901,7 +2921,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_10": {
+  "ja_n4_Noun_10": {
     "title": "Danh từ + の間に (no aida ni)",
     "shortExplanation": "Diễn tả một hành động hoặc sự việc diễn ra trong suốt hoặc trong một khoảng thời gian cụ thể; 'trong khi...', 'trong khoảng thời gian...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + の間に' dùng để chỉ một hành động mang tính khoảnh khắc hoặc xảy ra trong một khoảng thời gian liên tục do danh từ đứng trước biểu thị (như kì nghỉ, giờ nghỉ, thời gian biểu...). Khác với 'の間に' diễn tả hành động xảy ra vào một thời điểm trong khoảng thời gian đó, 'の間' không có 'に' diễn tả trạng thái kéo dài suốt toàn bộ khoảng thời gian.",
@@ -2921,7 +2941,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_11": {
+  "ja_n4_Noun_11": {
     "title": "Danh từ + ばかり (bakari)",
     "shortExplanation": "Diễn tả sự tập trung vào một việc duy nhất hoặc sự việc diễn ra liên tục, lặp đi lặp lại nhiều lần; 'toàn là...', 'chỉ toàn...'.",
     "longExplanation": "Trợ từ 'ばかり' dùng để biểu thị ý nghĩa 'toàn là...', 'chỉ toàn...', diễn tả việc một sự vật, hiện tượng hoặc hành động chiếm phần lớn hoặc lặp đi lặp lại áp đảo so với những thứ khác. Cấu trúc này thường mang sắc thái phê phán, phàn nàn hoặc không hài lòng của người nói khi thấy điều gì đó xảy ra quá nhiều. Ngoài danh từ, 'ばかり' còn có thể đi sau động từ thể て (～てばかりいる) hoặc tính từ.",
@@ -2941,7 +2961,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_12": {
+  "ja_n4_Noun_12": {
     "title": "Danh từ + をあげる (wo ageru)",
     "shortExplanation": "Dùng để diễn tả hành động cho, tặng ai đó một món đồ gì; 'cho...', 'tặng...'.",
     "longExplanation": "Mẫu cấu trúc 'Danh từ + をあげる' dùng để diễn tả hành động cho, tặng một đồ vật cụ thể từ phía người nói (hoặc người cùng phe với người nói) cho người khác có vị thế ngang hàng hoặc thấp hơn (bạn bè, người ít tuổi hơn, con cái, thú cưng). Danh từ chỉ vật được trao tặng đi kèm với trợ từ 'を', còn người nhận đi kèm với trợ từ 'に' (Người nhận + に + Vật + をあげる). Chú ý không dùng 'あげる' đối với người bề trên (thầy cô, cấp trên), mà khi đó phải dùng thể khiêm nhường '差し上げる'.",
@@ -2961,7 +2981,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Nounをいただく_13": {
+  "ja_n4_Nounをいただく_13": {
     "title": "Danh từ + をいただく (wo itadaku)",
     "shortExplanation": "Khiêm nhường ngữ của 'もらう', dùng khi nhận đồ vật, lời khuyên từ người bề trên hoặc dùng lịch sự khi ăn uống; 'xin nhận...', 'nhận được...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + をいただく' là thể khiêm nhường ngữ của động từ nhận 'もらう', biểu thị hành động nhận một đồ vật, sự giúp đỡ, lời khuyên hay ân huệ từ người có địa vị cao hơn hoặc bậc tiền bối với thái độ tôn kính, biết ơn sâu sắc. Người trao tặng thường đi kèm với trợ từ 'から' hoặc 'に'. Ngoài ra, 'いただく' còn là khiêm nhường ngữ của '食べる' (ăn) và '飲む' (uống), dùng khi xin phép dùng đồ ăn thức uống một cách lịch thiệp.",
@@ -2981,7 +3001,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Nounをくださる_14": {
+  "ja_n4_Nounをくださる_14": {
     "title": "～をくださる (〜wo kudasaru)",
     "shortExplanation": "Dạng tôn kính ngữ của 'くれる', diễn tả việc người bề trên hoặc người có địa vị cao hơn tặng, trao cho mình (hoặc người phe mình) một đồ vật hay sự quan tâm; 'kính tặng', 'cho'.",
     "longExplanation": "Mẫu ngữ pháp '～をくださる' là dạng tôn kính ngữ của động từ 'くれる', dùng khi một người có vai vế cao hơn, người lớn tuổi, thầy cô hoặc cấp trên trao tặng đồ vật hay dành sự chiếu cố, giúp đỡ cho người nói (hoặc người thuộc phe người nói như gia đình). Thể hiện lòng biết ơn và sự kính trọng sâu sắc của người nhận. Trong giao tiếp lịch sự hằng ngày, cấu trúc này thường được dùng ở thể lịch sự là '～をくださいます' hoặc quá khứ '～をくださいました'.",
@@ -3001,87 +3021,87 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_15": {
-    "title": "Danh từ + かたがた (Noun kata gata)",
-    "shortExplanation": "Diễn tả việc thực hiện một hành động chính đồng thời nhân tiện kết hợp làm một việc khác; 'nhân tiện...', 'tiện thể...', 'kết hợp...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + かたがた' (chữ Hán là 傍ら / 方々) là một cách diễn đạt trang trọng, dùng khi người nói muốn thực hiện hai mục đích trong cùng một chuyến đi hoặc hành động: vừa làm việc A, vừa nhân tiện thực hiện thêm việc B ('nhân tiện...', 'tiện thể kết hợp...'). Cấu trúc này hay xuất hiện trong thư từ thương mại, lời chào hỏi trang trọng hoặc thăm hỏi xã giao (như お見舞いかたがた, ご挨拶かたがた, 散歩かたがた).",
-    "formation": "Danh từ (động danh từ chỉ hành vi di chuyển/giao tiếp) + かたがた",
+  "ja_n4_Noun_15": {
+    "title": "～をくれる (〜wo kureru)",
+    "shortExplanation": "Diễn tả việc người khác trao tặng, cho người nói (hoặc người thuộc phe người nói) một đồ vật; 'cho (tôi)...', 'tặng (tôi)...'.",
+    "longExplanation": "Mẫu ngữ pháp '～をくれる' là một trong những động từ trao nhận cơ bản trong tiếng Nhật. Cấu trúc được dùng khi chủ thể hành động (người khác) tặng hoặc cho người nói (hoặc người có quan hệ thân thiết, cùng phe với người nói như anh em, con cái) một thứ gì đó. Hướng chuyển giao đồ vật luôn hướng về phía người nói. Trong giao tiếp lịch sự thường dùng ở dạng '～をくれます' hoặc '～をくれました'.",
+    "formation": "Người cho + が + Người nhận (thường là người nói / phe người nói) + に + Danh từ (vật) + を + くれる (lịch sự: くれます / くれました)",
     "examples": [
       {
-        "translation": "Nhân chuyến đi công tác đến Tokyo, tôi đã tiện thể ghé thăm một người bạn."
+        "translation": "Bạn tôi đã tặng quà cho tôi."
       },
       {
-        "translation": "Nhân dịp đi tham quan ngắm cảnh, tôi đã mua vài món quà lưu niệm."
+        "translation": "Anh ấy đã tặng hoa cho tôi."
       },
       {
-        "translation": "Tiện lúc đi dạo, tôi đã nhặt rác xung quanh."
+        "translation": "Thầy giáo đã tặng tôi một cuốn sách."
       },
       {
-        "translation": "Kết hợp lúc học bài, tôi đã lắng nghe một vài bản nhạc."
+        "translation": "Mẹ đã cho em trai tôi bánh kẹo."
       }
     ]
   },
-  "ja_Noun_16": {
-    "title": "Danh từ + がてら (Noun gatera)",
-    "shortExplanation": "Diễn tả việc nhân tiện thực hiện một hành động di chuyển thì kết hợp làm luôn một việc khác; 'tiện thể...', 'nhân tiện...', 'sẵn tiện...'.",
-    "longExplanation": "Hậu tố ngữ pháp '～がてら' kết hợp trực tiếp với danh từ chỉ hành động di chuyển (như đi dạo, mua sắm, lái xe...) hoặc động từ thể ます bỏ ます để biểu thị việc tận dụng cơ hội đang làm việc chính đó để tiện thể thực hiện thêm một hành động khác ('nhân tiện...', 'tiện thể...'). Cấu trúc này thường dùng tự nhiên trong sinh hoạt hàng ngày, có thể đi kèm trợ từ に thành '～がてらに'.",
-    "formation": "Danh từ (chỉ hành động di chuyển) + がてら (hoặc がてらに) | Động từ thể ます bỏ ます + がてら",
+  "ja_n4_Noun_16": {
+    "title": "～をさしあげる (〜wo sashiageru)",
+    "shortExplanation": "Dạng khiêm nhường ngữ của 'あげる', dùng khi người nói tặng, biếu đồ vật cho người có vị thế cao hơn hoặc khách hàng; 'kính tặng', 'biếu'.",
+    "longExplanation": "Mẫu ngữ pháp '～をさしあげる' là dạng khiêm nhường ngữ của động từ 'あげる' (cho, tặng). Cấu trúc này được dùng khi người nói (hoặc người cùng phe) trao tặng một vật gì đó cho người có địa vị cao hơn, người lớn tuổi hơn hoặc khách hàng, đối tác nhằm bày tỏ thái độ khiêm tốn và tôn kính. Trong giao tiếp hàng ngày thường dùng ở thể lịch sự '～をさしあげます'.",
+    "formation": "Người nhận (bề trên / khách hàng) + に + Danh từ (vật) + を + さしあげる (lịch sự: さしあげます)",
     "examples": [
       {
-        "translation": "Tiện lúc đi dạo, tôi đã hái vài bông hoa ở công viên gần nhà."
+        "translation": "Em xin kính biếu thầy một cuốn sách."
       },
       {
-        "translation": "Nhân tiện đi mua sắm, tôi đã ghé qua thăm một người bạn."
+        "translation": "Con muốn tặng hoa cho mẹ."
       },
       {
-        "translation": "Tiện chuyến đi du lịch, cô ấy đã tranh thủ học thêm một ngôn ngữ mới."
+        "translation": "Để tôi kính mời quý khách dùng trà nhé."
       },
       {
-        "translation": "Tiện lúc lái xe dạo mát, tôi đã nghe thử album ca nhạc mới."
+        "translation": "Khi tôi tặng quà cho tiền bối, anh ấy đã rất vui."
       }
     ]
   },
-  "ja_Noun_17": {
-    "title": "Số từ + Lượng từ + からある (kara aru)",
-    "shortExplanation": "Dùng sau số từ kèm lượng từ biểu thị số lượng, kích thước, khoảng cách, trọng lượng để nhấn mạnh số lượng đó lớn đến mức 'có tới hơn...', 'trên...', 'không dưới...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Số từ + Lượng từ + からある' (hoặc '～からの' khi bổ nghĩa cho danh từ) đi liền sau các từ chỉ số lượng, chiều dài, trọng lượng, số tầng, số tiền... nhằm nhấn mạnh quy mô, số lượng lớn đến mức đáng kinh ngạc ('có đến hơn...', 'không dưới...', 'trên...'). Thường dùng để biểu thị sự cảm thán, thán phục trước một con số ấn tượng. (Lưu ý: Đối với giá cả, người ta thường dùng '～からする', nhưng với tổng tài sản hoặc con số khổng lồ thì '～からある' cũng được sử dụng).",
-    "formation": "Số từ + Lượng từ + からある (hoặc からの + Danh từ)",
+  "ja_n4_Noun_17": {
+    "title": "～をもらう (〜wo morau)",
+    "shortExplanation": "Diễn tả việc người nói (hoặc phe người nói) nhận được một đồ vật từ ai đó; 'nhận...', 'được cho...'.",
+    "longExplanation": "Mẫu ngữ pháp '～をもらう' dùng để diễn đạt việc người nói (hoặc người thuộc cùng nhóm, gia đình với người nói) là người tiếp nhận đồ vật, quà tặng hoặc lợi ích từ người khác. Người trao tặng thường được biểu thị bằng trợ từ 'に' hoặc 'から'. Thể hiện góc nhìn từ phía người nhận. Trong hoàn cảnh lịch sự, ta dùng '～をもらいます' hoặc quá khứ '～をもらいました'. Nếu nhận từ bề trên thì dùng khiêm nhường ngữ 'いただく'.",
+    "formation": "Người cho + に / から + Danh từ (vật) + を + もらう (lịch sự: もらいます / もらいました)",
     "examples": [
       {
-        "translation": "Bộ sưu tập của anh ấy có tới hơn 500 món."
+        "translation": "Tôi đã nhận được quà từ bạn bè."
       },
       {
-        "translation": "Tòa nhà này cao tới hơn 40 tầng."
+        "translation": "Tôi đã nhận được lời khuyên từ thầy giáo."
       },
       {
-        "translation": "Tài sản của ông ấy lên tới không dưới 1 tỷ yên."
+        "translation": "Nhận tiền tiêu vặt từ bố."
       },
       {
-        "translation": "Cuộc chạy marathon này dài tới hơn 10 km."
+        "translation": "Tôi đã nhận được một lá thư từ cô ấy."
       }
     ]
   },
-  "ja_Noun_18": {
-    "title": "Danh từ + からすると (kara suru to)",
-    "shortExplanation": "Dùng để đưa ra căn cứ phán đoán hoặc góc nhìn đánh giá; 'xét từ...', 'căn cứ vào...', 'nhìn từ... mà nói'.",
-    "longExplanation": "Mẫu ngữ pháp 'Danh từ + からすると' (hoặc '～からすれば', '～からして') dùng sau một danh từ chỉ dấu hiệu, thái độ, dữ liệu hoặc lập trường để đưa ra phán đoán, suy luận hoặc đánh giá dựa trên căn cứ đó ('nhìn từ...', 'căn cứ vào...', 'xét từ... mà nói'). Vế sau thường đi kèm các cách nói suy đoán như '～ようだ', '～はずだ', '～だろう'.",
-    "formation": "Danh từ + からすると / からすれば / からして",
+  "ja_n4_Noun_18": {
+    "title": "～中 (〜chuu / 〜jyuu)",
+    "shortExplanation": "Biểu thị trạng thái đang diễn ra của một hành động, sự việc hoặc trải rộng trong suốt một khoảng thời gian, phạm vi; 'đang...', 'trong lúc...'.",
+    "longExplanation": "Hậu tố '～中' gắn trực tiếp sau danh từ để biểu thị: (1) Đang trong quá trình thực hiện một hành động hoặc một sự việc đang tiếp diễn (thường đọc là 'ちゅう', ví dụ: 勉強中, 仕事中, 準備中); (2) Trong suốt toàn bộ phạm vi thời gian hoặc không gian (thường đọc là 'じゅう', ví dụ: 今日中, 一日中, 世界中). Cấu trúc này rất thông dụng cả trong văn viết lẫn giao tiếp hàng ngày.",
+    "formation": "Danh từ + 中 (đọc là ちゅう hoặc じゅう)",
     "examples": [
       {
-        "translation": "Xét từ thái độ của anh ấy, có vẻ như anh ấy đang phản đối kế hoạch đó."
+        "translation": "Anh ấy đang trong giờ làm việc."
       },
       {
-        "translation": "Nhìn từ bầu không khí của nhà hàng này thì món ăn chắc chắn cũng rất tuyệt vời."
+        "translation": "Trong giờ thi không được sử dụng điện thoại di động."
       },
       {
-        "translation": "Căn cứ vào thành tích học tập thì cô ấy hẳn là một người rất chăm học."
+        "translation": "Đúng lúc đang xem phim thì anh ấy bật khóc."
       },
       {
-        "translation": "Nhìn từ tốc độ tăng trưởng của công ty đó thì trong tương lai có lẽ sẽ thu được lợi nhuận rất lớn."
+        "translation": "Cô ấy hiện đang học bài."
       }
     ]
   },
-  "ja_Verb_19": {
+  "ja_n4_Verb_19": {
     "title": "～させられる (〜saserareru)",
     "shortExplanation": "Thể sai khiến bị động, diễn tả việc bị người khác bắt ép làm một hành động ngoài ý muốn; 'bị bắt làm...', 'bị ép phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～させられる' là thể sai khiến bị động trong tiếng Nhật, kết hợp giữa thể sai khiến (bắt làm) và thể bị động (bị tác động). Cấu trúc này dùng để diễn tả việc người nói (hoặc chủ ngữ) bị một người khác ép buộc, sai bảo phải làm một việc mà bản thân không hề muốn hoặc cảm thấy miễn cưỡng, bất đắc dĩ. Đối với động từ nhóm 1, ngoài dạng đầy đủ '～せられる', trong giao tiếp thường dùng dạng rút gọn là '～される' (trừ các động từ có đuôi す).",
@@ -3101,7 +3121,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_20": {
+  "ja_n4_Verb_20": {
     "title": "～させる (〜saseru)",
     "shortExplanation": "Thể sai khiến, diễn tả hành động bắt ép người khác làm gì hoặc cho phép, để cho người khác làm gì; 'bắt làm...', 'cho phép làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～させる' là thể sai khiến của động từ. Mẫu câu này được người có vị trí bề trên (cha mẹ, thầy cô, cấp trên) sử dụng để: (1) Sai bảo, yêu cầu hoặc ép buộc người dưới làm một hành động nào đó; (2) Cho phép hoặc nhượng bộ để đối phương tự do làm điều họ muốn (thường đi kèm với '～てあげる / ～てくれる' thành '～させてあげる / ～させてくれる'). Ngoài ra còn dùng khi nói về việc làm phát sinh cảm xúc của người khác.",
@@ -3121,7 +3141,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_21": {
+  "ja_n4_Verb_21": {
     "title": "～たことがある (〜ta koto ga aru)",
     "shortExplanation": "Diễn tả kinh nghiệm từng trải qua hoặc từng làm một việc gì đó trong quá khứ; 'đã từng...', 'từng làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～たことがある' kết hợp động từ thể た với 'ことがある' để biểu thị rằng chủ ngữ đã từng có kinh nghiệm trải qua một hành động hay sự việc nào đó ít nhất một lần trước đây trong đời. Không dùng để diễn tả những thói quen thường nhật hay những hành động vừa mới xảy ra hôm qua. Thể phủ định là '～たことがない' (chưa từng), câu hỏi là '～たことがありますか' (bạn đã từng... chưa?).",
@@ -3141,7 +3161,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_22": {
+  "ja_n4_Verb_22": {
     "title": "～たときに (〜ta toki ni)",
     "shortExplanation": "Diễn tả một sự việc, hành động xảy ra sau khi một hành động khác đã hoàn thành trong quá khứ; 'khi đã...', 'sau khi...'.",
     "longExplanation": "Mẫu câu '～たときに' kết hợp động từ thể た với danh từ chỉ thời gian 'とき' (kèm trợ từ 'に'), diễn tả mốc thời điểm mà tại đó hành động ở mệnh đề trước đã được hoàn thành trước khi hành động hoặc hiện tượng ở mệnh đề sau diễn ra. Khác với 'Động từ nguyên dạng + とき' (khi chuẩn bị làm, trước khi làm), '～たとき' nhấn mạnh hành động phía trước đã kết thúc trọn vẹn rồi thì sự việc phía sau mới xảy ra.",
@@ -3161,7 +3181,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_23": {
+  "ja_n4_Verb_23": {
     "title": "～たところ (〜ta tokoro)",
     "shortExplanation": "Diễn tả tình huống vừa mới làm xong một việc gì đó thì phát hiện ra kết quả hoặc có sự việc khác lập tức xảy ra; 'vừa mới... thì...', 'sau khi thử... thì thấy...'.",
     "longExplanation": "Mẫu ngữ pháp '～たところ' gắn sau động từ thể た để biểu đạt hai sắc thái chính: (1) Ngay vừa lúc một hành động vừa kết thúc thì một hành động khác diễn ra; (2) Sau khi thực hiện một hành động (thường mang tính thử nghiệm, thăm dò hoặc hành động có chủ ý), kết quả hoặc tình huống bất ngờ sau đó được phát hiện ra. Vế sau của câu thường là một sự việc đã xảy ra, không dùng để biểu thị ý chí hay mệnh lệnh của người nói.",
@@ -3181,7 +3201,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_24": {
+  "ja_n4_Verb_24": {
     "title": "～たほうがいい (〜ta hou ga ii)",
     "shortExplanation": "Dùng để đưa ra lời khuyên, khuyến nghị hoặc gợi ý người khác nên làm một việc gì đó; 'nên...', 'tốt hơn là nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～たほうがいい' kết hợp động từ thể た với 'ほうがいい' (tốt hơn) để đưa ra lời khuyên bảo, gợi ý tích cực cho đối phương hoặc tự nhắc nhở bản thân về việc nên làm. Việc sử dụng thể quá khứ 'た' mang hàm ý giả định hành động đó đã được thực hiện thì kết quả sẽ tốt hơn. Dạng phủ định khuyên không nên làm là '～ないほうがいい'. Trong giao tiếp lịch sự, cấu trúc kết thúc bằng '～たほうがいいです'.",
@@ -3201,7 +3221,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_25": {
+  "ja_n4_Verb_25": {
     "title": "～ために (〜tame ni)",
     "shortExplanation": "Diễn tả mục đích hành động ('để...', 'nhằm...') hoặc chỉ nguyên nhân, lý do khách quan ('vì...', 'do...').",
     "longExplanation": "Mẫu ngữ pháp '～ために' có hai nhóm ý nghĩa quan trọng tùy vào ngữ cảnh: (1) Biểu thị mục đích: Đứng sau động từ thể nguyên dạng (từ điển) hoặc danh từ + の, diễn tả mục đích mà người nói nỗ lực thực hiện có ý chí (để, nhằm mục đích); (2) Biểu thị nguyên nhân, lý do: Đứng sau thể thông thường của động từ, tính từ hoặc danh từ + の, biểu thị nguyên nhân khách quan dẫn đến kết quả (thường mang tính tiêu cực hoặc nghiêm trọng trong văn viết, văn trang trọng).",
@@ -3221,7 +3241,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_26": {
+  "ja_n4_Verb_26": {
     "title": "～つもり (〜tsumori)",
     "shortExplanation": "Diễn tả ý định, dự định hoặc kế hoạch làm một việc gì đó của người nói; 'dự định...', 'tính làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～つもり' kết hợp với động từ thể thông thường (thể từ điển đối với khẳng định hoặc thể ない đối với phủ định) để diễn đạt ý định, kế hoạch trong tâm trí người nói về một việc sẽ làm trong tương lai. Thường dùng cho ngôi thứ nhất (người nói). Khi phủ định, có thể dùng '～ないつもり' (dự định không làm) hoặc dạng dứt khoát hơn '～つもりはない' (hoàn toàn không có ý định làm). Trong giao tiếp lịch sự, câu kết thúc bằng '～つもりです'.",
@@ -3241,7 +3261,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_27": {
+  "ja_n4_Verb_27": {
     "title": "～てあげる (〜te ageru)",
     "shortExplanation": "Diễn tả việc người nói (hoặc người phe mình) làm một hành động có lợi giúp cho người khác; 'làm... cho (ai)'.",
     "longExplanation": "Mẫu ngữ pháp '～てあげる' kết hợp động từ thể て với trợ động từ 'あげる', dùng để biểu thị việc người nói (hoặc người cùng phe) chủ động làm một việc gì đó mang lại lợi ích hay sự giúp đỡ cho người khác với thiện chí. Lưu ý quan trọng: Trong văn hóa giao tiếp tiếng Nhật, không nên dùng trực tiếp cấu trúc này đối với người có vai vế cao hơn (thầy cô, cấp trên, khách hàng) vì dễ mang sắc thái kể ơn, trịch thượng; thay vào đó nên dùng khiêm nhường ngữ '～てさしあげる' hoặc cách nói khéo léo khác. Thường dùng với bạn bè, cấp dưới, người trong nhà hoặc động thực vật.",
@@ -3261,7 +3281,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_28": {
+  "ja_n4_Verb_28": {
     "title": "～てある (〜te aru)",
     "shortExplanation": "Diễn tả một hành động có chủ đích đã được ai đó làm sẵn từ trước và trạng thái kết quả của nó vẫn còn đang duy trì; 'đã được làm... sẵn'.",
     "longExplanation": "Mẫu ngữ pháp '～てある' kết hợp ngoại động từ thể て với trợ động từ 'ある'. Cấu trúc này dùng để diễn tả một trạng thái hiện tại đang tồn tại, vốn là kết quả của một hành động có chủ ý, có mục đích chuẩn bị từ trước của một người nào đó. Trong mẫu câu này, tân ngữ trực tiếp của ngoại động từ thường chuyển sang đi kèm với trợ từ '偏' (ví dụ: 窓が開けてある - cửa sổ đã được mở sẵn). Khác với '～ている' (thường dùng với nội động từ để tả trạng thái khách quan), '～てある' nhấn mạnh có bóng dáng người đã cố ý thực hiện hành động đó.",
@@ -3281,7 +3301,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_29": {
+  "ja_n4_Verb_29": {
     "title": "～ていく (～te iku)",
     "shortExplanation": "Diễn tả hành động tiếp tục tiếp diễn hướng tới tương lai hoặc sự biến đổi đang dần diễn ra theo thời gian; '...tiếp', 'dần dần...'.",
     "longExplanation": "Mẫu ngữ pháp ～ていく kết hợp động từ thể て với trợ động từ いく để biểu thị: (1) Một hành động hoặc trạng thái bắt đầu từ hiện tại và tiếp tục kéo dài, phát triển hướng tới tương lai; (2) Quá trình biến đổi đang diễn ra dần dần theo dòng thời gian (xa dần mốc hiện tại); (3) Sự di chuyển rời xa người nói hoặc vị trí quan sát (làm gì đó rồi đi). Trái ngược với ～てくる (hướng về phía hiện tại/người nói).",
@@ -3301,7 +3321,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_30": {
+  "ja_n4_Verb_30": {
     "title": "～ていただきたい (～te itadakitai)",
     "shortExplanation": "Bày tỏ nguyện vọng hoặc đề nghị đối phương làm giúp việc gì một cách lịch sự, khiêm nhường; 'rất mong/muốn được... giúp'.",
     "longExplanation": "Mẫu ngữ pháp ～ていただきたい kết hợp động từ thể て với いただきたい (thể mong muốn của khiêm nhường ngữ いただく - nhận được ơn huệ từ ai đó). Cấu trúc này dùng để diễn đạt mong muốn hoặc lời thỉnh cầu người khác làm gì đó cho mình với thái độ hết sức khiêm nhường và lịch sự. Cấu trúc này trang trọng, khiêm tốn hơn nhiều so với ～てほしい và thường được dùng trong công việc, giao tiếp với cấp trên hoặc đối tác. Trong hội thoại, người ta thường dùng ở dạng ～ていただきたいのですが để giảm bớt tính áp đặt.",
@@ -3321,7 +3341,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_31": {
+  "ja_n4_Verb_31": {
     "title": "～ていただく (～te itadaku)",
     "shortExplanation": "Biểu thị việc nhận được hành động giúp đỡ, ân huệ từ người có địa vị cao hơn hoặc người ngoài với lòng biết ơn; 'được (ai đó) làm giúp'.",
     "longExplanation": "Mẫu ngữ pháp ～ていただく là dạng khiêm nhường ngữ của ～てもらう, dùng để diễn tả việc người nói (hoặc người thuộc phe người nói) nhận được một hành động, sự giúp đỡ từ người khác với lòng kính trọng và biết ơn sâu sắc. Đối tượng thực hiện hành động thường là người có địa vị cao hơn, người lớn tuổi hoặc đối tác, khách hàng và được đánh dấu bằng trợ từ に. Dạng lịch sự thường dùng là ～ていただきます hoặc ～ていただきました.",
@@ -3341,7 +3361,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_32": {
+  "ja_n4_Verb_32": {
     "title": "～ていただけませんか (～te itadakemasen ka)",
     "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách trang trọng, lịch sự; 'anh/chị có thể làm ơn... giúp tôi được không?'.",
     "longExplanation": "Mẫu câu ～ていただけませんか dùng thể khả năng phủ định lịch sự của khiêm nhường ngữ いただく (nhận lấy), kết hợp với trợ từ nghi vấn か để tạo thành một lời nhờ vả, thỉnh cầu vô cùng nhã nhặn và lịch sự (nghĩa đen: 'Tôi liệu có thể nhận được sự làm giúp... từ bạn không?'). Mẫu này trang trọng và lịch sự hơn nhiều so với ～てください hay ～てくれませんか, thích hợp dùng với người lớn tuổi, cấp trên, khách hàng hoặc người mới gặp lần đầu.",
@@ -3361,7 +3381,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_33": {
+  "ja_n4_Verb_33": {
     "title": "～ている (～te iru)",
     "shortExplanation": "Diễn tả hành động đang diễn ra trong hiện tại (tiếp diễn) hoặc trạng thái là kết quả của một hành động đã xảy ra trong quá khứ; 'đang...', 'đã...'.",
     "longExplanation": "Mẫu câu ～ている kết hợp động từ thể て với trợ động từ いる, mang hai ý nghĩa chính tùy thuộc vào bản chất của động từ: (1) Với động từ chỉ hành vi có quá trình (như 読む, 勉強する), nó diễn tả hành động đang diễn ra tại thời điểm nói (thì hiện tại tiếp diễn); (2) Với động từ chỉ sự biến đổi trạng thái (như 入る, 壊れる, 結婚する, なる), nó biểu thị kết quả của hành động đó vẫn còn tồn đọng và tiếp tục duy trì đến hiện tại (trạng thái kết quả). Dạng lịch sự là ～ています.",
@@ -3381,7 +3401,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_34": {
+  "ja_n4_Verb_34": {
     "title": "～ているところ (～te iru tokoro)",
     "shortExplanation": "Nhấn mạnh hành động đang diễn ra đúng vào thời điểm nói; 'đúng lúc đang...', 'đang trong lúc...'.",
     "longExplanation": "Mẫu ngữ pháp ～ているところ kết hợp động từ dạng ～ている với danh từ hình thức ところ (chỉ thời điểm, tình huống) để nhấn mạnh một hành động đang trong quá trình diễn ra ngay tại thời điểm được nói đến. So với dạng ～ている đơn thuần, cấu trúc này làm nổi bật hơn tính thời điểm tức thời ('đúng lúc đang bận làm việc gì'). Câu thường kết thúc bằng だ hoặc です / でした.",
@@ -3401,47 +3421,47 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_35": {
-    "title": "Động từ thể từ điển + ことなく (~kotonaku)",
-    "shortExplanation": "Diễn tả một hành động tiếp diễn liên tục mà hoàn toàn không thực hiện hoặc không để xảy ra việc gì đó; mang nghĩa 'mà không...', 'không hề...'.",
-    "longExplanation": "Mẫu câu '～ことなく' là hình thức trang trọng, mang tính văn viết của '～ないで' hoặc '～ずに'. Cấu trúc này kết hợp trực tiếp với thể từ điển (thể nguyên mẫu) của động từ để chỉ rằng một hành động hoặc trạng thái diễn ra một cách trơn tru, liên tục mà không hề bị gián đoạn hay không hề làm một hành vi nào đó đi kèm. Thường dùng trong văn học, bài phát biểu hoặc các văn bản trang trọng.",
-    "formation": "Động từ thể từ điển + ことなく",
+  "ja_n4_Verb_35": {
+    "title": "～ている間に (～te iru aida ni)",
+    "shortExplanation": "Diễn tả một sự việc, hành động mang tính khoảnh khắc xảy ra trong suốt khoảng thời gian một hành động khác đang diễn ra; 'trong khi đang...', 'trong lúc đang...'.",
+    "longExplanation": "Mẫu câu ～ている間に diễn tả một hành động hoặc sự kiện mang tính thời điểm, khoảnh khắc (ở vế sau) bất ngờ hoặc có chủ đích xảy ra trong khoảng thời gian mà một hành động, trạng thái kéo dài khác (ở vế trước) đang diễn ra. Khác với ～ている間 (hành động ở vế sau kéo dài xuyên suốt toàn bộ khoảng thời gian của vế trước), trợ từ 'に' trong ～ている間に chỉ ra rằng hành động ở vế sau chỉ diễn ra tại một thời điểm hoặc hoàn thành bên trong khoảng thời gian đó.",
+    "formation": "Động từ thể て + いる + 間に",
     "examples": [
       {
-        "translation": "Cô ấy đã ra về mà không hề khóc lấy một giọt nước mắt nào."
+        "translation": "Trong lúc đang xem phim thì anh ấy đã ngủ thiếp đi mất."
       },
       {
-        "translation": "Anh ấy đột ngột rời đi mà chẳng hề đưa ra bất kỳ lời lưu ý hay cảnh báo nào."
+        "translation": "Trong lúc bọn trẻ đang chơi đùa, tôi sẽ tranh thủ nấu ăn."
       },
       {
-        "translation": "Anh Yamada đã nghỉ việc ở công ty mà không hề tâm sự với bất kỳ ai."
+        "translation": "Trong lúc cuộc họp đang diễn ra, trời đã bắt đầu đổ mưa."
       },
       {
-        "translation": "Suốt 20 năm qua, tôi vẫn làm việc đều đặn mà không hề mắc phải bệnh tật nào."
+        "translation": "Trong khi anh ấy đang làm việc, chúng tôi sẽ tranh thủ đi mua sắm."
       }
     ]
   },
-  "ja_Verb_36": {
-    "title": "Động từ thể ない + ことには (~nai koto ni wa ~ nai)",
-    "shortExplanation": "Biểu thị điều kiện bắt buộc; nếu không làm vế trước thì tuyệt đối không thể thực hiện hay đạt được vế sau; 'nếu không... thì không thể...'.",
-    "longExplanation": "Cấu trúc '～ないことには' được dùng để nêu lên một điều kiện kiên quyết, bắt buộc phải có để một kết quả mong muốn có thể xảy ra. Vế trước chia ở thể phủ định 'Động từ thể ない + ことには', và vế sau hầu như luôn luôn là một cách diễn đạt mang tính phủ định hoặc bất khả thi (như ～ない, ～できない, ～わけにはいかない). Tương đương với cách nói 'chừng nào chưa làm xong việc trước thì sẽ không thể làm việc sau' hoặc 'nếu không có A thì chẳng thể nào đạt được B' trong tiếng Việt.",
-    "formation": "Động từ thể ない + ことには + Vế sau (thể phủ định / biểu thị không thể)",
+  "ja_n4_Verb_36": {
+    "title": "～ておく (～te oku)",
+    "shortExplanation": "Làm trước một việc gì đó để chuẩn bị cho tương lai hoặc giữ nguyên hiện trạng; 'làm sẵn', 'làm trước'.",
+    "longExplanation": "Mẫu ngữ pháp ～ておく kết hợp động từ thể て với trợ động từ おく để biểu thị: (1) Chuẩn bị làm sẵn trước một việc gì đó nhằm phục vụ cho mục đích hoặc tình huống dự kiến trong tương lai; (2) Thực hiện biện pháp cần thiết sau khi hoàn thành một việc (như cất đồ về chỗ cũ); (3) Để nguyên trạng thái như vậy không can thiệp thêm. Trong văn nói hàng ngày, ～ておく thường được rút gọn thành ～とく (ví dụ: 買っておく → 買っとく).",
+    "formation": "Động từ thể て + おく (dạng lịch sự: ～ておきます; văn nói rút gọn: ～とく)",
     "examples": [
       {
-        "translation": "Nếu không chịu uống thuốc thì bệnh sẽ không thể nào khỏi được."
+        "translation": "Chúng ta hãy mua vé trước ở nhà ga nhé."
       },
       {
-        "translation": "Nếu không suy nghĩ thật thấu đáo về vấn đề này thì không thể giải quyết được."
+        "translation": "Để ngày mai dậy sớm được, tối nay tôi sẽ đi ngủ sớm."
       },
       {
-        "translation": "Nếu không chịu khó luyện tập thì kỹ năng sẽ chẳng thể nào tiến bộ được."
+        "translation": "Nếu không ôn tập trước kỳ thi thì có thể sẽ thi trượt đấy."
       },
       {
-        "translation": "Nếu không hoàn tất thủ tục thì bạn sẽ không thể nhận được hộ chiếu mới."
+        "translation": "Trước khi anh ấy đến, chúng ta hãy dọn dẹp phòng ốc sạch sẽ sẵn đi nhé."
       }
     ]
   },
-  "ja_Verb_37": {
+  "ja_n4_Verb_37": {
     "title": "～てくださいませんか (～te kudasaimasen ka)",
     "shortExplanation": "Yêu cầu hoặc thỉnh cầu ai đó làm việc gì cho mình với thái độ rất tôn kính và lịch sự; 'xin vui lòng... giúp tôi có được không?'.",
     "longExplanation": "Mẫu câu ～てくださいませんか là một dạng yêu cầu, nhờ vả mang tính tôn kính và lịch thiệp cao. Cấu trúc này dùng dạng phủ định nghi vấn (くださいませんか) của tôn kính ngữ くださる (ban cho, làm cho). Nhờ dùng câu hỏi phủ định, người nói tạo cơ hội cho người nghe từ chối một cách thoải mái, giúp lời yêu cầu trở nên nhẹ nhàng, tinh tế và trang trọng hơn nhiều so với ～てください. Thích hợp dùng với cấp trên, người lạ hoặc trong môi trường trang trọng.",
@@ -3461,7 +3481,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_38": {
+  "ja_n4_Verb_38": {
     "title": "～てくださる (～te kudasaru)",
     "shortExplanation": "Diễn tả việc người có địa vị cao hơn hoặc được tôn kính làm việc gì đó giúp cho người nói (hoặc người phe mình) với lòng biết ơn; '(ai đó) làm giúp cho'.",
     "longExplanation": "Mẫu ngữ pháp ～てくださる là dạng tôn kính ngữ của ～てくれる, dùng khi một người có địa vị cao hơn, người lớn tuổi hoặc người được tôn trọng thực hiện một hành động, giúp đỡ mang lại lợi ích cho người nói hoặc người trong gia đình/nhóm của người nói. Người thực hiện hành động được đánh dấu bằng trợ từ が hoặc は. Thường xuất hiện ở dạng lịch sự là ～てくださいます hoặc quá khứ ～てくださいました.",
@@ -3481,7 +3501,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_39": {
+  "ja_n4_Verb_39": {
     "title": "～てくる (～te kuru)",
     "shortExplanation": "Diễn tả một hành động hoặc trạng thái bắt đầu từ quá khứ và tiếp diễn đến hiện tại, hoặc một sự biến đổi bắt đầu xuất hiện; 'dần dần...', 'bắt đầu... lên'.",
     "longExplanation": "Mẫu ngữ pháp ～てくる kết hợp động từ thể て với trợ động từ くる để diễn tả: (1) Một hành động hoặc trạng thái bắt đầu từ một thời điểm trong quá khứ và phát triển, tiếp diễn kéo dài đến mốc hiện tại; (2) Sự xuất hiện hoặc chuyển biến của một hiện tượng, cảm xúc, cảm giác nhận thức (như trời lạnh dần lên, dần hiểu ra); (3) Di chuyển về phía người nói (làm gì đó rồi quay lại). Trái ngược với ～ていく (hướng xa khỏi hiện tại), ～てくる hướng về phía hiện tại và người quan sát.",
@@ -3501,7 +3521,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_40": {
+  "ja_n4_Verb_40": {
     "title": "～てくれませんか (～te kuremasen ka)",
     "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách lịch sự, thân thiện; 'bạn có thể làm... giúp tôi được không?'.",
     "longExplanation": "Mẫu câu ～てくれませんか kết hợp động từ thể て với dạng phủ định nghi vấn lịch sự くれませんか của trợ động từ くれる (làm cho mình). Cấu trúc này dùng để đưa ra lời nhờ vả, yêu cầu ai đó làm điều gì có lợi cho mình một cách nhã nhặn, lịch sự. Thường được sử dụng trong các mối quan hệ ngang hàng, đồng nghiệp thân thiết, hoặc người lớn nói với người ít tuổi hơn. Với cấp trên hoặc người cần tôn kính, nên dùng dạng lịch sự hơn là ～ていただけませんか.",
@@ -3521,7 +3541,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_41": {
+  "ja_n4_Verb_41": {
     "title": "～てくれる (～te kureru)",
     "shortExplanation": "Diễn tả việc người khác làm điều gì đó mang lại lợi ích cho người nói (hoặc người thuộc phe người nói); '(ai đó) làm cho mình'.",
     "longExplanation": "Mẫu ngữ pháp ～てくれる kết hợp động từ thể て với trợ động từ くれる, dùng để diễn tả việc người khác thực hiện một hành động đem lại lợi ích, sự giúp đỡ cho bản thân người nói hoặc người trong gia đình/phe của người nói. Cấu trúc này luôn hàm chứa thái độ cảm kích, biết ơn đối với người thực hiện hành vi. Chủ ngữ thực hiện hành động thường đi với trợ từ が hoặc は. Dạng lịch sự là ～てくれます / ～てくれました.",
@@ -3541,7 +3561,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_42": {
+  "ja_n4_Verb_42": {
     "title": "～てさしあげる (～te sashiageru)",
     "shortExplanation": "Diễn đạt hành động mình làm điều gì đó giúp đỡ hoặc phục vụ cho người bề trên/người ngoài một cách khiêm nhường; 'làm giúp (cho ai đó)'.",
     "longExplanation": "Mẫu ngữ pháp ～てさしあげる là dạng khiêm nhường ngữ của ～てあげる. Dùng khi người nói (hoặc người phe mình) thực hiện một hành động mang lại lợi ích cho người có địa vị cao hơn, người lớn tuổi hoặc người ngoài cần tôn kính. Cấu trúc này thể hiện thái độ khiêm nhường đối với hành vi của bản thân. Tuy nhiên, vì vẫn xuất phát từ ý 'ban ơn' (làm ơn cho người khác), nếu dùng trực tiếp với cấp trên có thể gây cảm giác trịch thượng, do đó trong thực tế người ta thường dùng thể khiêm nhường khác như ～（お／ご）…します (ví dụ: お持ちしましょうか) thay cho ～てさしあげましょうか.",
@@ -3561,7 +3581,147 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_50": {
+  "ja_n4_Verb_43": {
+    "title": "～てしまう (～te shimau)",
+    "shortExplanation": "Diễn tả hành động đã hoàn thành trọn vẹn (xong xuôi) hoặc sự việc lỡ xảy ra ngoài ý muốn gây tiếc nuối; 'lỡ...', 'làm... mất rồi', 'xong xuôi'.",
+    "longExplanation": "Mẫu ngữ pháp ～てしまう kết hợp động từ thể て với trợ động từ しまう mang hai ý nghĩa chính: (1) Diễn tả sự tiếc nuối, hối hận hoặc bất ngờ trước một hành động, sự việc lỡ xảy ra ngoài ý muốn của người nói (nghĩa là 'lỡ làm...', 'trót làm... mất rồi'); (2) Diễn tả việc hoàn thành triệt để, trọn vẹn toàn bộ một hành động (nghĩa là 'làm xong hết', 'ăn sạch hết'). Trong văn nói thân mật hàng ngày, ～てしまう thường được biến âm thành ～ちゃう, và ～でしまう thành ～じゃう.",
+    "formation": "Động từ thể て + しまう (lịch sự: ～てしまいました; văn nói thân mật: ～ちゃう / ～じゃう)",
+    "examples": [
+      {
+        "translation": "Tôi lỡ ăn sạch hết cả chiếc bánh kem mất rồi."
+      },
+      {
+        "translation": "Tôi đã để quên bài tập về nhà mất rồi."
+      },
+      {
+        "translation": "Tôi đã lỡ miệng nói cho anh ấy biết bí mật mất rồi."
+      },
+      {
+        "translation": "Tôi đã lỡ mua chiếc áo đắt tiền mà không hề nhìn bảng giá."
+      }
+    ]
+  },
+  "ja_n4_Verb_44": {
+    "title": "～てほしい (～te hoshii)",
+    "shortExplanation": "Diễn tả mong muốn hoặc yêu cầu người khác làm việc gì cho mình hoặc vì lợi ích chung; 'muốn (ai đó) làm gì'.",
+    "longExplanation": "Mẫu ngữ pháp ～てほしい kết hợp động từ thể て với tính từ đuôi い ほしい (mang nghĩa mong muốn). Khác với ～たい (dùng khi bản thân người nói muốn tự làm gì), ～てほしい dùng để diễn đạt mong muốn người khác (ngôi thứ hai hoặc ngôi thứ ba) thực hiện một hành động nào đó. Đối tượng được mong đợi thực hiện hành động thường được đánh dấu bằng trợ từ に (hoặc có thể lược bỏ trong hội thoại thân mật). Dạng phủ định có hai cách nói: ～ないでほしい (mong ai đó đừng làm...) mang tính tự nhiên và phổ biến hơn, hoặc ～てほしくない (không muốn ai đó làm...). Vì thể hiện trực tiếp ý muốn cá nhân nên không nên dùng trực tiếp với người bề trên hoặc đối tác kinh doanh (thay vào đó nên dùng ～ていただきたい hoặc ～ていただけますか).",
+    "formation": "Động từ thể て + ほしい / Phủ định: Động từ thể ない + でほしい (hoặc thể て + ほしくない)",
+    "examples": [
+      {
+        "translation": "Tôi muốn con mình học hành chăm chỉ hơn."
+      },
+      {
+        "translation": "Tôi muốn anh ấy đến sớm hơn."
+      },
+      {
+        "translation": "Tôi muốn bạn tôi đọc cuốn sách đó."
+      },
+      {
+        "translation": "Tôi muốn giáo viên trả lời câu hỏi."
+      }
+    ]
+  },
+  "ja_n4_Verb_45": {
+    "title": "～てみる (～te miru)",
+    "shortExplanation": "Diễn tả hành động làm thử một việc gì đó để xem kết quả, trải nghiệm ra sao; 'thử làm... xem sao'.",
+    "longExplanation": "Mẫu ngữ pháp ～てみる kết hợp động từ thể て với trợ động từ みる (bắt nguồn từ động từ 見る nhưng thường viết bằng chữ hiragana). Cấu trúc này biểu thị việc thực hiện một hành vi với tâm thế thử nghiệm, trải nghiệm lần đầu để xem kết quả ra sao hoặc để thăm dò tình hình. Trợ động từ みる sau đó có thể chia tiếp theo các thì và thể ngữ pháp khác, chẳng hạn như ～てみます (lịch sự), ～てみてください (xin hãy làm thử), ～てみたい (muốn làm thử), ～てみよう (hãy cùng thử làm).",
+    "formation": "Động từ thể て + みる",
+    "examples": [
+      {
+        "translation": "Tôi sẽ thử làm món ăn này xem sao."
+      },
+      {
+        "translation": "Xin hãy mặc thử bộ quần áo đó xem."
+      },
+      {
+        "translation": "Chúng ta cùng thử đến nhà hàng mới xem sao nhé."
+      },
+      {
+        "translation": "Tôi muốn xem thử bộ phim này."
+      }
+    ]
+  },
+  "ja_n4_Verb_46": {
+    "title": "～てもらいたい (～te moraitai)",
+    "shortExplanation": "Bày tỏ nguyện vọng muốn được ai đó làm giúp việc gì cho mình; 'muốn được (ai đó) làm giúp', 'mong nhận được sự giúp đỡ'.",
+    "longExplanation": "Mẫu ngữ pháp ～てもらいたい kết hợp động từ thể て với もらいたい (thể mong muốn của trợ động từ もらう - nhận ơn huệ). Cấu trúc này dùng để diễn đạt mong muốn của người nói (hoặc người phe mình) được người khác thực hiện một hành động mang lại lợi ích cho mình. Người thực hiện hành động được đánh dấu bằng trợ từ に. So với ～てほしい (chỉ đơn thuần là muốn ai làm gì), ～てもらいたい nhấn mạnh hơn vào việc người nói là bên đón nhận ân huệ hay sự trợ giúp. Cấu trúc này thường dùng với bạn bè, đồng nghiệp hoặc người dưới; trong giao tiếp lịch sự với cấp trên hoặc khách hàng, người ta sử dụng thể khiêm nhường ～ていただきたい.",
+    "formation": "Động từ thể て + もらいたい (lịch sự: ～てもらいたいです / ～てもらいたいんですが)",
+    "examples": [
+      {
+        "translation": "Tôi muốn được bạn khiêng giúp hành lý này."
+      },
+      {
+        "translation": "Tôi muốn anh ấy báo tin đó cho tôi."
+      },
+      {
+        "translation": "Tôi muốn bạn dạy tiếng Nhật cho tôi."
+      },
+      {
+        "translation": "Tôi muốn nhân viên hướng dẫn cách làm thủ tục nhận phòng."
+      }
+    ]
+  },
+  "ja_n4_Verb_47": {
+    "title": "～てもらう (～te morau)",
+    "shortExplanation": "Diễn tả việc người nói (hoặc người phe mình) nhận được hành động giúp đỡ, ân huệ từ người khác; 'được (ai đó) làm giúp', 'nhờ (ai đó) làm cho'.",
+    "longExplanation": "Mẫu ngữ pháp ～てもらう kết hợp động từ thể て với trợ động từ chỉ quan hệ cho nhận もらう (nhận). Cấu trúc này diễn tả việc chủ ngữ (thường là người nói hoặc người thuộc phe người nói) đón nhận một hành động mang lại lợi ích từ đối phương với tâm lý biết ơn. Trong câu, người đón nhận lợi ích là chủ ngữ (đi với は hoặc が), còn người thực hiện hành động được đánh dấu bằng trợ từ に. Dạng lịch sự là ～てもらいます / ～てもらいました. Mẫu câu này dùng trong quan hệ bạn bè, người thân hoặc người dưới; khi người làm ơn là bề trên thì chuyển sang dạng khiêm nhường ～ていただく.",
+    "formation": "Động từ thể て + もらう (lịch sự: ～てもらいます / ～てもらいました)",
+    "examples": [
+      {
+        "translation": "Tôi đã nhờ bạn giúp làm bài tập về nhà."
+      },
+      {
+        "translation": "Tôi đã được mẹ dọn phòng giúp."
+      },
+      {
+        "translation": "Tôi muốn nhờ anh ấy xách hành lý giúp."
+      },
+      {
+        "translation": "Thầy cô có thể giải đáp thắc mắc giúp em được không ạ?"
+      }
+    ]
+  },
+  "ja_n4_Verb_48": {
+    "title": "～てもらえませんか (～te moraemasen ka)",
+    "shortExplanation": "Dùng để nhờ vả, yêu cầu ai đó làm giúp việc gì một cách lịch sự, nhã nhặn; 'anh/chị có thể làm ơn... giúp tôi được không?'.",
+    "longExplanation": "Mẫu câu ～てもらえませんか kết hợp động từ thể て với thể khả năng phủ định lịch sự nghi vấn của もらう (là もらえません + か). Nghĩa đen là 'Liệu tôi có thể nhận được hành động làm giúp... từ anh/chị không?'. Cấu trúc này dùng để đưa ra lời thỉnh cầu, nhờ vả một cách gián tiếp và lịch sự, tạo cơ hội cho đối phương dễ dàng từ chối nếu bất tiện. Mẫu này lịch sự hơn ～てください hay ～てくれませんか, thích hợp dùng với đồng nghiệp, người quen hoặc người ngoài. Khi muốn nhờ vả cấp trên hoặc đối tác kinh doanh với mức độ tôn kính cao nhất, người Nhật sẽ dùng ～ていただけませんか hoặc ～ていただけないでしょうか.",
+    "formation": "Động từ thể て + もらえませんか",
+    "examples": [
+      {
+        "translation": "Anh/chị có thể xem giúp tôi lá thư này được không ạ?"
+      },
+      {
+        "translation": "Anh/chị có thể xách giúp tôi hành lý được không ạ?"
+      },
+      {
+        "translation": "Bạn có thể dọn dẹp phòng giúp tôi được không?"
+      },
+      {
+        "translation": "Anh/chị có thể tham gia cuộc họp ngày mai giúp tôi được không ạ?"
+      }
+    ]
+  },
+  "ja_n4_Verb_49": {
+    "title": "～ないことがある (～nai koto ga aru)",
+    "shortExplanation": "Diễn tả rằng thỉnh thoảng, đôi khi có những lúc một hành động hay sự việc không diễn ra; 'có khi không...', 'thỉnh thoảng không...'.",
+    "longExplanation": "Mẫu ngữ pháp ～ないことがある kết hợp động từ thể phủ định (thể ない) với danh từ こと và trợ từ が theo sau bởi động từ ある. Cấu trúc này dùng để diễn đạt tính bất thường hoặc tần suất không tuyệt đối của một sự việc: nhìn chung thì sự việc đó thường xảy ra hoặc theo thói quen là có, nhưng đôi khi, có những trường hợp cá biệt lại không xảy ra. Thường hay đi kèm với các phó từ chỉ tần suất như ときどき (thỉnh thoảng), たまに (hiếm khi, đôi khi). Cần phân biệt với ～たことがない (chưa từng làm gì trong quá khứ).",
+    "formation": "Động từ thể ない + ことがある (lịch sự: ～ないことがあります)",
+    "examples": [
+      {
+        "translation": "Có đôi khi anh ấy không tham dự cuộc họp."
+      },
+      {
+        "translation": "Chuyến tàu này thỉnh thoảng không đến đúng giờ."
+      },
+      {
+        "translation": "Có những bữa sáng tôi không ăn gì."
+      },
+      {
+        "translation": "Thỉnh thoảng cô ấy không nghe điện thoại."
+      }
+    ]
+  },
+  "ja_n4_Verb_50": {
     "title": "～ないことにする (～nai koto ni suru)",
     "shortExplanation": "Diễn tả quyết định chủ quan của bản thân là sẽ không làm một việc gì đó; 'quyết định không...'.",
     "longExplanation": "Mẫu ngữ pháp ～ないことにする kết hợp động từ thể phủ định (thể ない) với danh từ こと, trợ từ に và động từ する (làm). Cấu trúc này diễn tả một sự lựa chọn có ý thức, một quyết định chủ quan của người nói rằng mình sẽ kiềm chế, từ bỏ hoặc không thực hiện hành vi đó. Khi nói về quyết định vừa mới đưa ra, ta dùng ～ないことにする; khi nói về quyết định đã đưa ra trước đó và hiện tại đang tuân theo, ta thường dùng dạng quá khứ ～ないことにした hoặc lịch sự là ～ないことにしました.",
@@ -3581,7 +3741,207 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_61": {
+  "ja_n4_Verb_51": {
+    "title": "～ないことになる (～nai koto ni naru)",
+    "shortExplanation": "Diễn tả một sự việc, quy định hoặc kết quả được ấn định là sẽ không diễn ra do hoàn cảnh khách quan hoặc quyết định của tập thể; 'được quyết định là không...', 'hóa ra là không...'.",
+    "longExplanation": "Mẫu ngữ pháp ～ないことになる kết hợp động từ thể phủ định (thể ない) với danh từ こと, trợ từ に và động từ なる (trở thành). Cấu trúc này diễn tả rằng một hành động sẽ không được thực hiện do ngoại cảnh, quyết định của tổ chức/người khác hoặc như một hệ quả tất yếu từ điều kiện nào đó, không phụ thuộc hoàn toàn vào ý chí cá nhân của người nói. Khi sự việc đã được quyết định hoặc trở thành quy ước, ta dùng ～ないことになった (được quyết định là không...). Khác với ～ないことにする (quyết định chủ quan của bản thân).",
+    "formation": "Động từ thể ない + ことになる (quá khứ / quy định: ～ないことになった / ～ないことになっています)",
+    "examples": [
+      {
+        "translation": "Nếu hôm nay anh ấy không đến thì kế hoạch của chúng tôi sẽ coi như bị hủy bỏ."
+      },
+      {
+        "translation": "Nếu dự án này không được triển khai tiếp thì đồng nghĩa với việc doanh thu sẽ sụt giảm."
+      },
+      {
+        "translation": "Nếu cô ấy không vượt qua kỳ thi thì việc tốt nghiệp sẽ bị hoãn lại."
+      },
+      {
+        "translation": "Nếu trời mưa thì buổi dã ngoại sẽ không được tổ chức."
+      }
+    ]
+  },
+  "ja_n4_Verb_52": {
+    "title": "～ないほうがいい (～nai hou ga ii)",
+    "shortExplanation": "Đưa ra lời khuyên hoặc gợi ý đối phương không nên làm một việc gì đó; 'không nên...', 'tốt hơn là không nên...'.",
+    "longExplanation": "Mẫu ngữ pháp ～ないほうがいい kết hợp động từ thể phủ định ngắn (thể ない) với danh từ ほう (phương hướng, phía) và tính từ いい (tốt). Cấu trúc này dùng để khuyên bảo, khuyến cáo hoặc gợi ý cho đối phương rằng tốt nhất là không nên thực hiện một hành động nào đó vì có thể dẫn đến kết quả bất lợi hoặc không mong muốn. Dạng lịch sự thường dùng là ～ないほうがいいです. Trái ngược với mẫu câu khuyên nên làm gì là ～たほうがいい (động từ thể た + ほうがいい; lưu ý rằng khi khuyên nên làm thì dùng thể た, còn khuyên không nên làm thì dùng thể ない).",
+    "formation": "Động từ thể ない + ほうがいい (lịch sự: ～ないほうがいいです)",
+    "examples": [
+      {
+        "translation": "Bạn không nên uống loại thuốc này."
+      },
+      {
+        "translation": "Khi đang vội thì tốt hơn là không nên chạy."
+      },
+      {
+        "translation": "Nếu không muốn anh ấy biết bí mật thì tốt nhất đừng nói ra."
+      },
+      {
+        "translation": "Vào ngày mưa thì không nên đi ra ngoài."
+      }
+    ]
+  },
+  "ja_n4_Verb_53": {
+    "title": "～ながら (～nagara)",
+    "shortExplanation": "Diễn tả một chủ thể thực hiện đồng thời hai hành động cùng một lúc; 'vừa... vừa...'.",
+    "longExplanation": "Trợ từ liên kết ～ながら gắn vào thân động từ (thể ます bỏ ます) để biểu thị hai hành động diễn ra song song cùng một thời điểm. Quy tắc quan trọng của mẫu câu này gồm: (1) Cả hai hành động phải do cùng một chủ ngữ thực hiện; (2) Hành động đứng sau ながら là hành động chính (trọng tâm), còn hành động đứng trước ながら là hành động phụ, mang tính bổ trợ. Thì của cả câu do động từ chính ở cuối quyết định. Ngoài ra, ながら còn có cách dùng biểu thị ý nghĩa tương phản, nhượng bộ (tuy... nhưng...), nhưng cách dùng đồng thời là phổ biến nhất ở cấp độ sơ trung cấp.",
+    "formation": "Động từ thể ます (bỏ ます) + ながら",
+    "examples": [
+      {
+        "translation": "Tôi vừa xem tivi vừa làm bài tập về nhà."
+      },
+      {
+        "translation": "Tôi vừa nghe nhạc vừa nấu ăn."
+      },
+      {
+        "translation": "Vừa đi bộ vừa nhìn điện thoại thông minh là rất nguy hiểm."
+      },
+      {
+        "translation": "Anh ấy vừa nói chuyện vừa cười."
+      }
+    ]
+  },
+  "ja_n4_Verb_54": {
+    "title": "～なさい (～nasai)",
+    "shortExplanation": "Mẫu câu mệnh lệnh nhẹ nhàng dùng khi người bề trên (cha mẹ, thầy cô) yêu cầu, chỉ thị cho người bề dưới thực hiện hành động; 'hãy...', 'mau... đi'.",
+    "longExplanation": "Đuôi mệnh lệnh ～なさい gắn vào thân động từ (thể ます bỏ ます) để đưa ra mệnh lệnh, yêu cầu hoặc chỉ thị trực tiếp. Về mặt ngữ pháp, nó bắt nguồn từ tôn kính ngữ なさい (dạng mệnh lệnh của なさる), do đó có âm hưởng lịch sự, chuẩn mực nhưng về bản chất vẫn là một mệnh lệnh mang tính áp đặt từ trên xuống dưới. Thường được sử dụng bởi: cha mẹ nhắc nhở con cái, giáo viên chỉ đạo học sinh, hoặc trong các đề thi, bài kiểm tra (hướng dẫn làm bài). Tuyệt đối không dùng đối với người bề trên, người ngang hàng hoặc đối tác.",
+    "formation": "Động từ thể ます (bỏ ます) + なさい",
+    "examples": [
+      {
+        "translation": "Hãy dọn phòng đi!"
+      },
+      {
+        "translation": "Học bài đi!"
+      },
+      {
+        "translation": "Mau dậy sớm đi!"
+      },
+      {
+        "translation": "Làm bài tập về nhà đi!"
+      }
+    ]
+  },
+  "ja_n4_Verb_55": {
+    "title": "～にくい (～nikui)",
+    "shortExplanation": "Gắn vào thân động từ để diễn tả một hành động khó thực hiện hoặc một trạng thái khó xảy ra; 'khó...'.",
+    "longExplanation": "Hậu tố tính từ ～にくい gắn vào thân động từ (thể ます bỏ ます) để tạo thành một tính từ đuôi い phức hợp, mang nghĩa hành động đó khó thực hiện, đòi hỏi nhiều công sức, gây cảm giác bất tiện hoặc khó khăn về mặt vật lý, kỹ thuật hay tâm lý. Cụm từ sau khi kết hợp sẽ được chia như một tính từ đuôi い thông thường (ví dụ: 読みにくかった, 読みにくくない). Khác với ～づらい (thường nhấn mạnh vào cảm giác đau đớn, khó chịu về mặt cảm xúc hoặc cơ thể của người nói), ～にくい mang tính khách quan và phổ biến hơn, dùng cho cả đặc tính vật lý của sự vật lẫn hành vi con người.",
+    "formation": "Động từ thể ます (bỏ ます) + にくい",
+    "examples": [
+      {
+        "translation": "Chữ này rất khó đọc."
+      },
+      {
+        "translation": "Cánh cửa này rất khó mở."
+      },
+      {
+        "translation": "Chữ viết của anh ấy rất khó đọc."
+      },
+      {
+        "translation": "Món ăn này rất khó làm."
+      }
+    ]
+  },
+  "ja_n4_Verb_56": {
+    "title": "～やすい (～yasui)",
+    "shortExplanation": "Gắn vào thân động từ để diễn tả một hành động dễ thực hiện hoặc một sự việc, trạng thái dễ xảy ra; 'dễ...'.",
+    "longExplanation": "Hậu tố tính từ ～やすい gắn vào thân động từ (thể ます bỏ ます) để tạo thành một tính từ đuôi い phức hợp, mang hai ý nghĩa chính: (1) Một hành động nào đó rất dễ dàng, thuận tiện để thực hiện nhờ vào đặc tính tốt của sự vật (ví dụ: sách dễ đọc, áo dễ mặc); (2) Một khuynh hướng, xu hướng dễ xảy ra sự biến đổi hoặc hiện tượng nào đó (thường là xu hướng tiêu cực như dễ bị hỏng, dễ bị cảm cúm). Sau khi kết hợp, từ này được chia như một tính từ đuôi い bình thường (ví dụ: 読みやすかった, 読みやすくない). Là cấu trúc trái nghĩa trực tiếp với ～にくい.",
+    "formation": "Động từ thể ます (bỏ ます) + やすい",
+    "examples": [
+      {
+        "translation": "Cuốn sách này rất dễ đọc."
+      },
+      {
+        "translation": "Chiếc áo sơ mi này mặc rất dễ chịu (dễ mặc)."
+      },
+      {
+        "translation": "Anh ấy là một người rất dễ gần, dễ bắt chuyện."
+      },
+      {
+        "translation": "Món ăn này rất dễ nấu."
+      }
+    ]
+  },
+  "ja_n4_Verb_57": {
+    "title": "～ようと思う (～you to omou)",
+    "shortExplanation": "Bày tỏ ý định, dự định hoặc quyết tâm thực hiện một hành động nào đó trong tương lai; 'tôi định...', 'tôi nghĩ là tôi sẽ...'.",
+    "longExplanation": "Mẫu ngữ pháp ～ようと思う kết hợp thể ý chí (ý hướng hình) của động từ với trợ từ と và động từ suy nghĩ 思う. Cấu trúc này dùng để diễn đạt dự định, ý muốn làm một việc gì đó của người nói. Cần chú ý sự khác biệt giữa hai dạng: (1) ～ようと思う diễn đạt ý định vừa mới nảy sinh tại thời điểm nói hoặc quyết tâm tức thời; (2) ～ようと思っている (dùng thể tiếp diễn) diễn đạt ý định đã được nung nấu từ trước và vẫn đang tiếp tục duy trì đến hiện tại. Dạng này có mức độ chắc chắn thấp hơn ～つもりだ và không dùng để nói về kế hoạch đã được ấn định chính thức (được thể hiện bằng ～予定だ).",
+    "formation": "Động từ thể ý chí (thể ý hướng) + と思う (hoặc と思っている / と思います)",
+    "examples": [
+      {
+        "translation": "Ngày mai tôi định sẽ xem phim."
+      },
+      {
+        "translation": "Cuối tuần này tôi dự định sẽ đi chơi với bạn bè."
+      },
+      {
+        "translation": "Tôi nghĩ mình sẽ cố gắng học hành chăm chỉ hơn."
+      },
+      {
+        "translation": "Năm tới tôi đang dự định đi du lịch nước ngoài."
+      }
+    ]
+  },
+  "ja_n4_Verb_58": {
+    "title": "～ように (～you ni)",
+    "shortExplanation": "Diễn tả mục đích để đạt được một trạng thái mong muốn ('để...', 'để sao cho...') hoặc diễn tả sự so sánh, ví von ('như...', 'giống như...').",
+    "longExplanation": "Mẫu ngữ pháp ～ように là một cấu trúc đa chức năng trong tiếng Nhật với hai cách dùng phổ biến nhất: (1) Biểu thị mục đích (để...): Đứng trước ように thường là động từ không có ý chí (động từ chỉ khả năng, động từ chỉ trạng thái như 見える, 分かる, hoặc động từ thể phủ định ない), diễn tả hành động ở mệnh đề sau nhằm mục đích đạt được hoặc tránh khỏi trạng thái ở mệnh đề trước (khác với ～ために đi kèm động từ có ý chí); (2) Biểu thị sự ví von, so sánh (như..., giống như...): Đi cùng danh từ (Danh từ + のように) hoặc mệnh đề để so sánh đặc điểm, dáng vẻ của đối tượng với một hình ảnh khác. Ngoài ra, cuối câu ～ように(願う/祈る) còn dùng để cầu chúc hoặc diễn đạt mệnh lệnh gián tiếp.",
+    "formation": "Mục đích: Động từ thể từ điển / thể ない + ように | Ví von: Danh từ + のように / Động từ thể thông thường + ように",
+    "examples": [
+      {
+        "translation": "Cô ấy nhảy múa nhẹ nhàng uyển chuyển như một chú chim."
+      },
+      {
+        "translation": "Để không quên những điều đã học, chúng ta hãy ôn tập mỗi ngày nhé."
+      },
+      {
+        "translation": "Để có thể trở thành ca sĩ, tôi luyện hát mỗi ngày."
+      },
+      {
+        "translation": "Khi qua đường, hãy quan sát kỹ để tránh không có xe lao tới."
+      }
+    ]
+  },
+  "ja_n4_Verb_59": {
+    "title": "～ようにする (～you ni suru)",
+    "shortExplanation": "Diễn tả sự nỗ lực, cố gắng thực hiện hoặc duy trì một thói quen, hành động; 'cố gắng...', 'chú ý làm sao để...'.",
+    "longExplanation": "Mẫu ngữ pháp '～ようにする' được dùng để diễn tả việc người nói đang nỗ lực, cố gắng hoặc để tâm thực hiện (hay không thực hiện) một hành vi nào đó để tạo thành thói quen hoặc đạt được mục tiêu. Dạng '～ようにしている' nhấn mạnh thói quen đang được duy trì đều đặn trong cuộc sống hàng ngày. Dạng '～ようにしてください' được dùng để khuyên bảo, nhắc nhở hoặc yêu cầu đối phương cố gắng thực hiện một việc gì đó.",
+    "formation": "Động từ thể từ điển / thể ない + ようにする",
+    "examples": [
+      {
+        "translation": "Tôi cố gắng tập thể dục mỗi ngày."
+      },
+      {
+        "translation": "Xin hãy cố gắng đi ngủ sớm nhé."
+      },
+      {
+        "translation": "Tôi sẽ cố gắng giữ đúng lời hứa."
+      },
+      {
+        "translation": "Tôi sẽ cố gắng không gặp anh ấy."
+      }
+    ]
+  },
+  "ja_n4_Verb_60": {
+    "title": "～ようになる (～you ni naru)",
+    "shortExplanation": "Diễn tả sự biến đổi về năng lực, trạng thái hoặc thói quen theo thời gian; 'trở nên có thể...', 'bắt đầu...'.",
+    "longExplanation": "Mẫu ngữ pháp '～ようになる' biểu thị sự biến đổi, chuyển biến dần dần từ trạng thái chưa thể sang đã có thể làm được một việc gì đó (thường kết hợp với động từ thể khả năng), hoặc sự hình thành một thói quen, nhận thức mới theo thời gian mà trước đây chưa có. Cấu trúc này thường được dịch là 'đã có thể...', 'trở nên...', hoặc 'dần bắt đầu...'.",
+    "formation": "Động từ thể khả năng / Động từ thể từ điển / Động từ thể ない + ようになる",
+    "examples": [
+      {
+        "translation": "Tôi đã có thể nói được tiếng Nhật rồi."
+      },
+      {
+        "translation": "Dạo gần đây tôi đã bắt đầu đi ngủ sớm."
+      },
+      {
+        "translation": "Anh ấy đã có thể chơi được đàn piano rồi."
+      },
+      {
+        "translation": "Kể từ khi bắt đầu công việc này, tôi dần cảm thấy mỗi ngày đều bận rộn."
+      }
+    ]
+  },
+  "ja_n4_Verb_61": {
     "title": "～ように言う (～you ni iu)",
     "shortExplanation": "Dùng để truyền đạt gián tiếp một mệnh lệnh, chỉ thị hoặc lời yêu cầu; 'bảo/nói là hãy làm gì', 'nhắc nhở làm gì'.",
     "longExplanation": "Mẫu ngữ pháp '～ように言う' dùng trong cách nói tường thuật gián tiếp, biểu thị việc truyền đạt lại yêu cầu, chỉ thị hoặc lời dặn dò của mình hoặc của người khác cho đối phương (yêu cầu làm hoặc không làm việc gì). So với cách trích dẫn trực tiếp thể mệnh lệnh, cấu trúc này diễn đạt nhẹ nhàng, lịch sự và mang tính hướng dẫn hơn. Phía trước 'ように' là động từ ở thể từ điển hoặc thể ない.",
@@ -3601,7 +3961,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_62": {
+  "ja_n4_Verb_62": {
     "title": "～られる (～rareru)",
     "shortExplanation": "Diễn tả thể bị động (bị/được làm gì) hoặc thể khả năng (có thể làm gì) của động từ; 'bị/được...', 'có thể...'.",
     "longExplanation": "Hậu tố '～られる' (và '～れる' đối với động từ nhóm 1) có hai cách dùng chính ở trình độ N4: 1. Thể bị động (受身): diễn tả hành động mà chủ ngữ phải chịu hoặc được đón nhận từ người khác (đối tượng tác động đi với trợ từ に). 2. Thể khả năng (可能): diễn tả năng lực của người hoặc điều kiện cho phép thực hiện hành động (đặc biệt phổ biến với động từ nhóm 2 bỏ る thêm られる).",
@@ -3621,7 +3981,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_63": {
+  "ja_n4_Verb_63": {
     "title": "～ることがある (～ru koto ga aru)",
     "shortExplanation": "Diễn tả một sự việc, hành động thỉnh thoảng xảy ra hoặc có đôi khi xuất hiện; 'có khi...', 'thỉnh thoảng có việc...'.",
     "longExplanation": "Mẫu câu 'Động từ thể từ điển + ことがある' dùng để biểu thị một hành động hoặc tình huống thỉnh thoảng, đôi khi xảy ra (không phải là thói quen cố định hay quy luật chắc chắn). Thường đi kèm với các phó từ chỉ tần suất như 'たまに' (thi thoảng), 'ときどき' (thỉnh thoảng). Cần phân biệt với 'Động từ thể た + ことがある' dùng để diễn tả trải nghiệm đã từng làm gì trong quá khứ.",
@@ -3641,7 +4001,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_64": {
+  "ja_n4_Verb_64": {
     "title": "～ることができる (～ru koto ga dekiru)",
     "shortExplanation": "Diễn tả năng lực có thể thực hiện một hành động hoặc khả năng, điều kiện cho phép việc gì đó xảy ra; 'có thể làm...'.",
     "longExplanation": "Mẫu câu 'Động từ thể từ điển + ことができる' là cách diễn đạt phổ biến và trang trọng để biểu thị khả năng: 1. Năng lực hoặc kỹ năng của một người (ví dụ: biết bơi, biết ngoại ngữ). 2. Khả năng mang tính hoàn cảnh, điều kiện cho phép làm việc gì đó (ví dụ: tại đây có thể thanh toán bằng thẻ). Cấu trúc này tương đương về ý nghĩa với thể khả năng (可能形) của động từ, nhưng mang sắc thái văn phong trang trọng, rõ ràng và khách quan hơn.",
@@ -3661,7 +4021,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_65": {
+  "ja_n4_Verb_65": {
     "title": "～ることにする (～ru koto ni suru)",
     "shortExplanation": "Diễn tả quyết định chủ quan của bản thân về việc sẽ thực hiện hoặc không thực hiện một hành động; 'quyết định làm/không làm gì'.",
     "longExplanation": "Mẫu ngữ pháp '～ことにする' thể hiện quyết định do chính bản thân người nói chủ động đưa ra sau khi suy nghĩ hoặc lựa chọn. Dạng '～ことにした / ～ことにしました' dùng để thông báo về quyết định đã đưa ra. Khi dùng ở dạng '～ことにしている', mẫu câu biểu thị một thói quen hoặc quy tắc hành vi mà bản thân tự quy định và đang duy trì thực hiện. Phủ định là '～ないことにする' (quyết định không làm gì).",
@@ -3681,7 +4041,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_66": {
+  "ja_n4_Verb_66": {
     "title": "～ることになる (～ru koto ni naru)",
     "shortExplanation": "Diễn tả sự việc đã được quyết định hoặc an bài do yếu tố khách quan, quy định hoặc người khác định đoạt; 'được quyết định là...', 'thành ra là...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことになる' được dùng để diễn tả rằng một sự việc, kế hoạch hay quyết định đã được định đoạt dựa trên hoàn cảnh khách quan, quy tắc của tập thể, hoặc do người khác sắp đặt mà không phụ thuộc hoàn toàn vào ý chí chủ quan của bản thân người nói. Trái ngược với '～ことにする' (bản thân tự quyết), '～ことになる' mang tính khách quan. Dạng '～ことになっている' biểu thị một quy định, lịch trình hoặc phong tục đã định sẵn.",
@@ -3701,7 +4061,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_67": {
+  "ja_n4_Verb_67": {
     "title": "～るときに (～ru toki ni)",
     "shortExplanation": "Chỉ thời điểm hoặc dịp một hành động nào đó diễn ra; 'khi...', 'lúc...'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ thể từ điển + とき（に）' được dùng để chỉ thời điểm hoặc dịp mà một hành động, sự kiện diễn ra. Khi động từ đứng trước 'とき' ở thể từ điển, nó diễn tả hành động đó chưa xảy ra, đang chuẩn bị thực hiện hoặc là một thói quen chung (ví dụ: 寝るときに...: lúc chuẩn bị đi ngủ thì tắt đèn). Điểm này phân biệt với 'Động từ thể た + とき（に）' vốn diễn tả hành động phía trước đã hoàn thành rồi mới diễn ra hành động tiếp theo.",
@@ -3721,7 +4081,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_68": {
+  "ja_n4_Verb_68": {
     "title": "～るところ (～ru tokoro)",
     "shortExplanation": "Diễn tả thời điểm chuẩn bị hoặc sắp sửa thực hiện một hành động; 'chuẩn bị...', 'sắp sửa...'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ thể từ điển + ところ（です）' biểu thị khoảnh khắc ngay trước khi một hành động bắt đầu, khi chủ thể chuẩn bị hoặc sắp sửa làm việc đó trong tích tắc. Thường đi cùng với các phó từ như '今から' (bây giờ), 'これから' (từ giờ). Dạng quá khứ '～ところでした' diễn tả việc suýt chút nữa thì một sự việc xảy ra (suýt khóc, suýt ngã). Cần phân biệt với '～ているところ' (đang làm) và '～たところ' (vừa mới làm xong).",
@@ -3741,7 +4101,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_69": {
+  "ja_n4_Verb_69": {
     "title": "～出す (～dasu)",
     "shortExplanation": "Khi làm trợ động từ ghép biểu thị một hành động đột ngột bắt đầu phát ra ('bỗng nhiên bắt đầu...'); khi là động từ độc lập biểu thị việc lấy ra hoặc nộp/xuất trình.",
     "longExplanation": "'出す' (dasu) trong tiếng Nhật có hai vai trò chính: 1. Là động từ độc lập mang nghĩa lấy cái gì đó ra khỏi một vị trí (ví dụ 1: lấy sách ra), hoặc nộp, xuất trình giấy tờ/bài tập (ví dụ 3: nộp bài tập). (Lưu ý: ví dụ 2 '出ました' là tự động từ 出る). 2. Là hậu tố ghép sau thân động từ thể ます (bỏ ます) để biểu thị một hành vi hoặc hiện tượng đột ngột bắt đầu bộc phát ra bên ngoài (ví dụ 4: 歌い出しました - bỗng cất tiếng hát), tương tự như 泣き出す (bỗng khóc òa lên), 降り出す (trời bỗng đổ mưa).",
@@ -3761,7 +4121,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_70": {
+  "ja_n4_Verb_70": {
     "title": "～方 (～kata)",
     "shortExplanation": "Biểu thị cách thức, phương pháp thực hiện một hành động; 'cách làm...', 'phương pháp làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～方' (đọc là かた - kata) được gắn vào sau thân động từ (thể ます bỏ ます) để tạo thành một danh từ phái sinh chỉ cách thức, phương pháp thực hiện hành động đó. Khi muốn chỉ đối tượng của hành động, trợ từ tân ngữ 'を' sẽ được chuyển thành trợ từ 'の' đứng trước danh từ phương pháp (ví dụ: ケーキを作る → ケーキの作り方: cách làm bánh kem).",
@@ -3781,7 +4141,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_71": {
+  "ja_n4_Verb_71": {
     "title": "～終わる (～owaru)",
     "shortExplanation": "Diễn tả một hành động, sự kiện hoặc công việc hoàn thành hay kết thúc; 'kết thúc', 'xong', 'chấm dứt'.",
     "longExplanation": "'終わる' (owaru) là động từ ngũ đoạn (nhóm 1) mang nghĩa kết thúc, xong xuôi. Nó có thể đóng vai trò tự động từ độc lập đi với trợ từ が để biểu thị sự kiện hay hành vi đã kết thúc (ví dụ: 映画が終わる: phim kết thúc). Ngoài ra, khi ghép vào sau thân động từ thể ます (bỏ ます), nó tạo thành động từ phức chỉ việc làm xong, hoàn tất trọn vẹn một hành động cụ thể (ví dụ: 読み終わる: đọc xong, 食べ終わる: ăn xong). Đối nghĩa với '始まる / 始める'.",
@@ -3801,7 +4161,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_72": {
+  "ja_n4_Verb_72": {
     "title": "～続ける (～tsuzukeru)",
     "shortExplanation": "Diễn tả sự tiếp tục, duy trì một hành động hoặc trạng thái không gián đoạn; 'tiếp tục làm gì', 'duy trì...'.",
     "longExplanation": "'続ける' (tsuzukeru) là tha động từ nhóm 2 biểu thị hành động tiếp diễn, duy trì. Cấu trúc có hai cách dùng phổ biến: 1. Ghép vào sau thân động từ thể ます (bỏ ます) để tạo thành động từ phức diễn tả một hành động được duy trì liên tục không ngắt quãng (ví dụ: 走り続ける - tiếp tục chạy, 勉強し続ける - tiếp tục học). 2. Dùng độc lập như một tha động từ đi cùng tân ngữ 'Danh từ + を + 続ける' (ví dụ: 運動を続ける - duy trì tập thể dục, 仕事を続ける - tiếp tục công việc).",
@@ -3821,7 +4181,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かしら_73": {
+  "ja_n4_かしら_73": {
     "title": "～かしら (～kashira)",
     "shortExplanation": "Trợ từ kết thúc câu dùng trong văn thoại thân mật (thường là nữ giới) để tự hỏi hoặc bày tỏ sự băn khoăn, nghi vấn nhẹ nhàng; 'không biết là... chăng?', 'liệu có... không nhỉ?'.",
     "longExplanation": "'かしら' là trợ từ cuối câu, dùng trong văn thoại thân mật hàng ngày để diễn tả sự tự hỏi, phân vân, hoài nghi nhẹ nhàng của người nói về một sự việc nào đó. Cấu trúc này có ý nghĩa tương đương với '～かな' nhưng mang sắc thái nữ tính, dịu dàng hơn và chủ yếu được phụ nữ sử dụng. Nó đi trực tiếp với thể thông thường của động từ, tính từ đuôi い, tính từ đuôi な (bỏ だ) và danh từ (không thêm だ).",
@@ -3841,7 +4201,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かどうか_74": {
+  "ja_n4_かどうか_74": {
     "title": "～かどうか (〜ka dou ka)",
     "shortExplanation": "Dùng trong câu hỏi gián tiếp để diễn tả sự phân vân liệu sự việc có xảy ra hay không; 'có... hay không', 'liệu... hay không'.",
     "longExplanation": "Mẫu ngữ pháp ～かどうか được dùng trong các câu hỏi gián tiếp hoặc mệnh đề phụ để diễn đạt sự không chắc chắn về một sự việc nào đó, tương đương với 'có... hay không' hoặc 'liệu... hay không' trong tiếng Việt. Mẫu câu này thường đi kèm với các động từ như 知りません (không biết), 分かりません (không rõ), 教えてください (xin hãy chỉ cho tôi), 覚えていません (không nhớ). Khi kết hợp với danh từ hoặc tính từ đuôi な, trợ động từ 'だ' thường được lược bỏ trong văn phong chuẩn, nhưng trong khẩu ngữ đôi khi vẫn được giữ lại.",
@@ -3861,7 +4221,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かなあ_75": {
+  "ja_n4_かなあ_75": {
     "title": "～かなあ (〜kanaa)",
     "shortExplanation": "Biểu thị sự băn khoăn, tự hỏi bản thân hoặc hy vọng nhẹ nhàng trong lời độc thoại; 'liệu... không nhỉ', 'không biết là... nhỉ'.",
     "longExplanation": "Mẫu ngữ pháp ～かなあ là trợ từ kết thúc câu dùng trong văn nói thân mật hoặc khi độc thoại (tự nói với chính mình) để bày tỏ sự phân vân, nghi hoặc hoặc tự hỏi về một sự việc, hiện tượng nào đó. Nó cũng có thể thể hiện một ước muốn hay nguyện vọng nhẹ nhàng. Khi đi với danh từ hoặc tính từ đuôi な, 'だ' thường được lược bỏ hoặc chuyển thành 'なのかなあ'. Lưu ý không dùng mẫu câu này để đặt câu hỏi trực tiếp cho người bề trên vì thiếu lịch sự.",
@@ -3881,7 +4241,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かもしれない_76": {
+  "ja_n4_かもしれない_76": {
     "title": "～かもしれない (〜kamoshirenai)",
     "shortExplanation": "Diễn tả khả năng, phỏng đoán không chắc chắn về một sự việc; 'có lẽ', 'có thể', 'không chừng'.",
     "longExplanation": "Mẫu ngữ pháp ～かもしれない diễn tả sự phỏng đoán của người nói về khả năng xảy ra của một sự việc với độ chắc chắn không cao (khoảng 50% hoặc thấp hơn), mang nghĩa 'có lẽ', 'có thể', 'không chừng'. Dạng lịch sự của cấu trúc này là ～かもしれません, còn trong khẩu ngữ thân mật thường được rút gọn thành ～かも. Khi kết hợp với danh từ hoặc tính từ đuôi な, trợ động từ 'だ' thường được lược bỏ trong văn nói tự nhiên.",
@@ -3901,7 +4261,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_から_77": {
+  "ja_n4_から_77": {
     "title": "～から (〜kara)",
     "shortExplanation": "Diễn tả lý do, nguyên nhân mang tính chủ quan của người nói; 'vì...', 'bởi vì...'.",
     "longExplanation": "Trợ từ liên kết ～から được dùng để nêu lý do, nguyên nhân dẫn đến kết quả, phán đoán hoặc đề xuất ở mệnh đề phía sau. Khác với ～ので (mang tính khách quan, lịch sự), ～から thường mang tính chủ quan, thể hiện rõ ý chí, quan điểm, đề xuất hoặc mệnh lệnh của người nói. Khi kết hợp với danh từ và tính từ đuôi な ở thể thông thường, bắt buộc phải dùng 'だから'.",
@@ -3921,7 +4281,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_けれど_78": {
+  "ja_n4_けれど_78": {
     "title": "～けれど (〜keredo)",
     "shortExplanation": "Nối hai mệnh đề biểu thị quan hệ tương phản nhẹ hoặc mở đầu câu chuyển ý; 'tuy... nhưng...', 'nhưng mà...'.",
     "longExplanation": "Liên từ liên kết ～けれど được dùng để nối hai vế câu có ý nghĩa đối lập, tương phản nhau hoặc dùng làm tiền đề chuyển ý, mở đầu câu chuyện một cách nhẹ nhàng. Đây là cách nói tương đối thân mật, trong văn phong trang trọng hơn người ta sử dụng ～けれども, ～けれど hoặc trợ từ ～が. Khi đi với danh từ hoặc tính từ đuôi な ở thể thông thường, thường dùng dạng '～だけれど'.",
@@ -3941,7 +4301,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_させてください_79": {
+  "ja_n4_させてください_79": {
     "title": "～させてください (〜sasete kudasai)",
     "shortExplanation": "Dùng để thỉnh cầu, xin phép đối phương cho phép mình thực hiện một hành động; 'xin hãy cho phép tôi...'.",
     "longExplanation": "Cấu trúc ～させてください kết hợp thể sai khiến của động từ với ください, tạo thành một lời thỉnh cầu lịch sự xin phép người nghe cho phép người nói làm một hành động nào đó. Cấu trúc tương đương mang tính trang trọng, cung kính hơn trong môi trường thương mại là ～させていただきます hoặc ～させていただけますでしょうか.",
@@ -3961,7 +4321,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_しし_80": {
+  "ja_n4_しし_80": {
     "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
     "shortExplanation": "Dùng để liệt kê nhiều nguyên nhân, lý do hoặc đặc điểm song song; 'vừa... lại vừa...', 'đã... lại còn...'.",
     "longExplanation": "Trợ từ liên kết ～し dùng để liệt kê từ hai lý do, nguyên nhân trở lên nhằm củng cố cho phán đoán, kết luận ở vế sau, hoặc dùng để liệt kê nhiều đặc tính, trạng thái cùng chiều của một sự vật, hiện tượng. Mẫu câu này mang hàm ý rằng không chỉ có một lý do duy nhất mà còn nhiều yếu tố khác nữa. Khi đi với danh từ và tính từ đuôi な ở thể thông thường, dùng dạng '～だし'.",
@@ -3981,7 +4341,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_すぎる_81": {
+  "ja_n4_すぎる_81": {
     "title": "～すぎる (〜sugiru)",
     "shortExplanation": "Diễn tả hành động, trạng thái vượt quá mức độ bình thường hoặc giới hạn thích hợp; 'quá...'.",
     "longExplanation": "Động từ phức ～すぎる đi sau thân động từ hoặc tính từ để biểu thị sự thái quá, vượt quá giới hạn thông thường hoặc mong muốn, thường mang hàm ý tiêu cực hoặc bất tiện do mức độ quá cao gây ra. Về mặt ngữ pháp, nó biến đổi như một động từ nhóm hai. Trong văn nói hiện đại của giới trẻ, nó đôi khi cũng được dùng để nhấn mạnh sự cực độ mang nghĩa tích cực.",
@@ -4001,7 +4361,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ずつ_82": {
+  "ja_n4_ずつ_82": {
     "title": "～ずつ (〜zutsu)",
     "shortExplanation": "Biểu thị sự phân chia đồng đều theo từng lượng nhất định hoặc diễn tiến từng chút một; 'từng...', 'mỗi lần...'.",
     "longExplanation": "Hậu tố trợ từ ～ずつ đi sau từ chỉ số lượng hoặc danh từ định lượng để biểu thị sự phân chia đều đặn (mỗi người/mỗi bên một lượng bằng nhau), hoặc diễn tả quá trình tiến hành từng bước một, từng lượng nhỏ một cách đều đặn theo thời gian.",
@@ -4021,7 +4381,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そうだ_83": {
+  "ja_n4_そうだ_83": {
     "title": "～そうだ (〜sou da)",
     "shortExplanation": "Diễn tả phán đoán, phỏng đoán về vẻ bề ngoài hoặc dấu hiệu sắp xảy ra dựa trên quan sát thị giác; 'trông có vẻ...', 'sắp...'.",
     "longExplanation": "Mẫu câu dạng vẻ ～そうだ dùng để miêu tả cảm nhận, suy đoán trực tiếp của người nói khi nhìn thấy dáng vẻ bề ngoài của sự vật, con người hoặc hiện tượng. Đối với động từ, nó diễn tả dấu hiệu một hành động sắp sửa xảy ra ngay trước mắt ('trông như sắp...'). Lưu ý trường hợp ngoại lệ: tính từ いい chuyển thành よさそうだ, ない chuyển thành なさそうだ. Cần phân biệt với ～そうだ truyền văn (nghe nói là), vốn đi với thể thông thường.",
@@ -4041,7 +4401,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そんな_84": {
+  "ja_n4_そんな_84": {
     "title": "そんな (sonna) + Danh từ",
     "shortExplanation": "Bổ nghĩa cho danh từ đứng sau, chỉ sự vật/sự việc thuộc loại đó (gần người nghe hoặc đã nhắc tới); 'như thế', 'loại đó'.",
     "longExplanation": "Chỉ từ そんな đứng trực tiếp trước danh từ để chỉ sự vật, tính chất, trạng thái thuộc dạng đó hoặc kiểu đó. Nó thường dùng để chỉ đối tượng ở gần phía người nghe hoặc chỉ sự việc mà đối phương vừa nhắc tới trong cuộc trò chuyện. Trong nhiều ngữ cảnh khẩu ngữ, nó còn mang sắc thái ngạc nhiên, phủ định hoặc coi nhẹ ('chuyện như thế', 'thứ như thế').",
@@ -4055,7 +4415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そんなに_85": {
+  "ja_n4_そんなに_85": {
     "title": "そんなに～ (sonna ni〜)",
     "shortExplanation": "Phó từ đi với thể phủ định để diễn tả mức độ không cao đến mức như vậy; 'không... đến thế', 'không... đến mức ấy'.",
     "longExplanation": "Phó từ chỉ mức độ そんなに thường đi kèm với các hình thức phủ định ở vị ngữ phía sau để chỉ rằng sự việc, tính chất không nghiêm trọng, không nhiều hoặc không đạt tới mức độ cao như người nghe hoặc mọi người đang nghĩ. Mang ý nghĩa 'không... đến mức ấy', 'không... nhiều như thế'.",
@@ -4075,7 +4435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たらいい_86": {
+  "ja_n4_たらいい_86": {
     "title": "～たらいい (〜tara ii)",
     "shortExplanation": "Dùng để đưa ra lời khuyên, gợi ý hoặc bày tỏ mong muốn, hy vọng về một kết quả tốt; 'nên...', 'giá mà... thì tốt'.",
     "longExplanation": "Mẫu câu ～たらいい kết hợp thể điều kiện ～たら với tính từ いい (tốt), dùng để đưa ra lời khuyên hoặc đề xuất nhẹ nhàng cho đối phương ('bạn nên làm... thì tốt'). Khi dùng ở dạng độc thoại với trợ từ kết thúc câu như ～たらいいな hoặc ～たらいいのに, cấu trúc này diễn tả niềm hy vọng, ước muốn một sự việc tốt lành nào đó sẽ diễn ra.",
@@ -4095,7 +4455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たら_87": {
+  "ja_n4_たら_87": {
     "title": "～たら いかがですか (〜tara ikaga desu ka)",
     "shortExplanation": "Dùng để đưa ra lời khuyên, gợi ý một cách vô cùng trang trọng và lịch sự; 'nếu... thì thế nào ạ?'",
     "longExplanation": "Mẫu câu ～たら いかがですか dùng thể điều kiện ～たら kết hợp với cách nói kính ngữ いかがですか (thế nào ạ) để đưa ra lời gợi ý, khuyên nhủ hoặc thăm dò ý kiến của đối phương một cách hết sức lịch sự và tế nhị. Đây là dạng trang trọng hơn của cấu trúc ～たらどうですか, thường dùng trong giao tiếp thương mại, dịch vụ khách hàng hoặc khi nói chuyện với người trên.",
@@ -4115,7 +4475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たら_88": {
+  "ja_n4_たら_88": {
     "title": "～たら どうですか (〜tara doudesuka)",
     "shortExplanation": "Dùng để đưa ra lời khuyên, gợi ý hoặc rủ rê một cách lịch sự, nhã nhặn; 'sao bạn không...?', 'hay là... xem sao?'.",
     "longExplanation": "Mẫu câu ～たら どうですか kết hợp thể điều kiện ～たら của động từ với cụm từ どうですか (như thế nào) để đưa ra lời khuyên bảo, đề xuất hoặc gợi ý một phương án giải quyết cho đối phương một cách lịch sự. Tuy nhiên, vì vẫn là lời khuyên mang tính định hướng hành động nên tránh dùng trực tiếp với cấp trên hoặc người có vị thế cao hơn hẳn (khi đó nên dùng ～たら いかがですか hoặc các hình thức khiêm nhường/kính ngữ khác).",
@@ -4135,7 +4495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たりたり_89": {
+  "ja_n4_たりたり_89": {
     "title": "～たり～たり (〜tari 〜tari)",
     "shortExplanation": "Dùng để liệt kê một số hành động, trạng thái tiêu biểu hoặc diễn tả sự thay đổi luân phiên; 'lúc thì... lúc thì...', 'làm những việc như... và...'.",
     "longExplanation": "Mẫu ngữ pháp '～たり～たり' dùng để liệt kê hai hoặc nhiều hành động, trạng thái mang tính đại diện mà không theo thứ tự thời gian hay mức độ quan trọng. Cấu trúc này hàm ý ngoài những hành động, trạng thái được kể ra thì còn có những điều khác nữa. Cuối câu thường kết thúc bằng động từ 'する' (hoặc 'です' khi liệt kê tính từ/danh từ). Ngoài ra, khi đi với tính từ hoặc trạng thái đối lập, mẫu này còn diễn tả sự thay đổi luân phiên ('lúc thì... lúc thì...').",
@@ -4155,7 +4515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だろう_90": {
+  "ja_n4_だろう_90": {
     "title": "～だろう (〜darou)",
     "shortExplanation": "Diễn tả sự suy đoán, phỏng đoán không chắc chắn ở thể thông thường; 'có lẽ', 'chắc là'.",
     "longExplanation": "Mẫu ngữ pháp '～だろう' là thể thông thường (thể ngắn) của '～でしょう', dùng để diễn đạt sự suy đoán, phỏng đoán của người nói về một sự việc, hiện tượng hoặc trạng thái nào đó dựa trên suy nghĩ chủ quan hoặc căn cứ nhất định. Thường đi kèm với các phó từ chỉ xác suất như 'たぶん' (có lẽ), 'きっと' (chắc chắn). Ngoài ra, khi lên giọng ở cuối câu, nó còn dùng để hỏi ý kiến hoặc xác nhận với người nghe trong giao tiếp thân mật.",
@@ -4175,7 +4535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っていう_91": {
+  "ja_n4_っていう_91": {
     "title": "～っていう (〜tte iu)",
     "shortExplanation": "Cách nói khẩu ngữ, thân mật của '～という', dùng để gọi tên, định nghĩa hoặc trích dẫn; 'gọi là...', 'nghe nói là...'.",
     "longExplanation": "Mẫu ngữ pháp '～っていう' là hình thức nói tắt, thân mật trong văn nói hàng ngày của '～という'. Nó được sử dụng để gọi tên một đối tượng, định nghĩa một khái niệm ('cái gọi là...'), hoặc đưa ra chủ đề của câu chuyện. Ngoài ra, nó cũng dùng để truyền đạt lại thông tin nghe được hoặc nhấn mạnh một chủ đề nói đến.",
@@ -4195,7 +4555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_で_92": {
+  "ja_n4_で_92": {
     "title": "～で (〜de)",
     "shortExplanation": "Trợ từ chỉ phương tiện, cách thức, công cụ hoặc địa điểm diễn ra hành động; 'bằng...', 'ở/tại...'.",
     "longExplanation": "Trợ từ '～で' là một trong những trợ từ cơ bản nhất trong tiếng Nhật, mang nhiều ý nghĩa tùy thuộc vào ngữ cảnh:\n1. Chỉ phương tiện đi lại, công cụ, vật liệu hoặc ngôn ngữ sử dụng để thực hiện hành động ('bằng', 'bằng cách').\n2. Chỉ địa điểm, nơi chốn diễn ra một hành động cụ thể ('ở', 'tại').\nTrợ từ này luôn đứng ngay sau danh từ.",
@@ -4215,7 +4575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_でしょう_93": {
+  "ja_n4_でしょう_93": {
     "title": "～でしょう (〜deshou)",
     "shortExplanation": "Diễn tả sự suy đoán, phỏng đoán lịch sự của người nói; 'có lẽ', 'chắc là'.",
     "longExplanation": "Mẫu ngữ pháp '～でしょう' là hình thức lịch sự dùng để biểu thị sự suy đoán, phỏng đoán về một sự việc, hiện tượng hoặc trạng thái chưa rõ ràng, thường xuất hiện trong dự báo thời tiết hoặc giao tiếp lịch sự. Thường đi cùng các phó từ như 'たぶん' (có lẽ). Khi lên giọng ở cuối câu, cấu trúc này dùng để hỏi ý kiến hoặc tìm kiếm sự đồng tình từ đối phương một cách nhã nhặn ('...phải không?').",
@@ -4235,7 +4595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てはいけない_94": {
+  "ja_n4_てはいけない_94": {
     "title": "～てはいけない (〜te wa ikenai)",
     "shortExplanation": "Biểu thị sự cấm đoán, không được phép làm một hành động nào đó; 'không được', 'không được phép'.",
     "longExplanation": "Mẫu ngữ pháp '～てはいけない' (hoặc dạng lịch sự '～てはいけません') dùng để diễn đạt sự cấm đoán rõ ràng, nghiêm khắc từ phía người nói, quy tắc chung, luật pháp hoặc nội quy nơi công cộng. Dịch nghĩa là 'không được...', 'không được phép...'. Trong văn nói thân mật hàng ngày, cấu trúc này thường được rút gọn thành '～ちゃいけない' hoặc '～じゃいけない'.",
@@ -4255,7 +4615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てもいい_95": {
+  "ja_n4_てもいい_95": {
     "title": "～てもいい (〜temo ii)",
     "shortExplanation": "Biểu thị sự cho phép hoặc xin phép làm một việc gì đó; '...cũng được', 'có thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～てもいい' (dạng lịch sự là '～てもいいです') dùng để cho phép người khác làm một việc gì đó ('làm... cũng được/được phép làm...'). Khi thêm 'か' ở cuối câu thành dạng câu hỏi ('～てもいいですか'), cấu trúc này dùng để xin phép đối phương một cách lịch sự ('tôi có thể... được không?'). Trong trường hợp động từ có dạng て kết thúc bằng で, ta kết hợp thành '～でもいい'.",
@@ -4275,7 +4635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てもでも_96": {
+  "ja_n4_てもでも_96": {
     "title": "～ても/でも (〜te mo/demo)",
     "shortExplanation": "Diễn tả điều kiện nghịch giả định; 'cho dù... cũng...', 'dù... đi chăng nữa'.",
     "longExplanation": "Mẫu ngữ pháp '～ても/でも' dùng để thiết lập mối quan hệ điều kiện nghịch, biểu thị rằng cho dù giả định ở vế trước có xảy ra thì hành động, trạng thái hoặc kết quả ở vế sau vẫn diễn ra bình thường mà không bị ảnh hưởng. Tùy thuộc vào từ loại kết hợp mà có các biến thể: động từ thể て + も, tính từ đuôi い đổi thành '～くても', tính từ đuôi な và danh từ đi với '～でも'.",
@@ -4295,7 +4655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といい_97": {
+  "ja_n4_といい_97": {
     "title": "～といい (〜to ii)",
     "shortExplanation": "Diễn tả mong ước, nguyện vọng hoặc lời chúc; 'mong là...', 'ước gì...', 'giá mà... thì tốt'.",
     "longExplanation": "Mẫu ngữ pháp '～といい' dùng để bày tỏ mong muốn, hy vọng một điều gì đó tốt đẹp sẽ xảy ra trong tương lai đối với bản thân hoặc người khác. Thường đi kèm các trợ từ tình thái cuối câu như 'ね', 'な' ('～といいね', '～といいな') để thể hiện cảm xúc nhẹ nhàng, hoặc '～といいですね' trong giao tiếp lịch sự để chúc mừng hoặc hy vọng điều tốt lành cho đối phương.",
@@ -4315,7 +4675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_という_98": {
+  "ja_n4_という_98": {
     "title": "～という + Danh từ (〜to iu + Danh từ)",
     "shortExplanation": "Bổ nghĩa cho danh từ, dùng để định nghĩa, gọi tên hoặc giải thích nội dung cụ thể; 'gọi là...', 'mang danh là...', 'nghe nói là...'.",
     "longExplanation": "Mẫu ngữ pháp '～という + Danh từ' dùng để định nghĩa, xác định rõ hoặc bổ nghĩa cho danh từ đứng sau. Nó có thể dùng để nêu tên gọi của sự vật, người hay sự việc ('người gọi là...'), hoặc giải thích nội dung, thực chất hay tiếng tăm của đối tượng ('sản phẩm được cho là thân thiện với môi trường').",
@@ -4335,7 +4695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どういう_99": {
+  "ja_n4_どういう_99": {
     "title": "どういう + Danh từ (dou iu + Danh từ)",
     "shortExplanation": "Dùng để hỏi thông tin chi tiết, tính chất hoặc nội dung cụ thể của danh từ đi sau; '...như thế nào', 'loại... nào'.",
     "longExplanation": "Cấu trúc liên thể từ 'どういう + Danh từ' dùng để hỏi về tính chất, chủng loại, trạng thái hoặc nội dung chi tiết của một danh từ nào đó. Cấu trúc này tương tự như 'どんな + Danh từ', nhưng 'どういう' thường hướng đến việc yêu cầu người nghe giải thích rõ ràng hơn về ý nghĩa, lý do hoặc bản chất của sự việc ('loại công việc như thế nào', 'lý do gì').",
@@ -4355,7 +4715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_と思う_100": {
+  "ja_n4_と思う_100": {
     "title": "～と思う (〜to omou)",
     "shortExplanation": "Bày tỏ suy nghĩ, ý kiến hoặc phán đoán chủ quan của người nói; 'tôi nghĩ rằng...', 'tôi cho là...'.",
     "longExplanation": "Mẫu ngữ pháp '～と思う' (kính ngữ: '～と思います') dùng để bày tỏ suy nghĩ, quan điểm cá nhân hoặc phỏng đoán của người nói về một sự việc, tình huống nào đó. Việc dùng cấu trúc này giúp câu nói trở nên mềm mỏng, khiêm tốn và lịch sự hơn so với việc khẳng định tuyệt đối. Mệnh đề đứng trước 'と思う' luôn ở thể thông thường (普通形).",
@@ -4375,7 +4735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_という_101": {
+  "ja_n4_という_101": {
     "title": "～という (〜to iu)",
     "shortExplanation": "Dùng để trích dẫn lời nói, truyền đạt thông tin nghe được hoặc định nghĩa, gọi tên; 'nói rằng...', 'nghe nói là...', 'gọi là...'.",
     "longExplanation": "Mẫu ngữ pháp '～という' có ba chức năng ngữ pháp chủ yếu:\n1. Trích dẫn trực tiếp hoặc gián tiếp lời nói, ý kiến của ai đó ('nói rằng...').\n2. Truyền đạt lại thông tin, dư luận hoặc tin đồn được nghe thấy ('có lời đồn rằng...', 'nghe nói là...').\n3. Dùng để nêu tên gọi, định nghĩa một danh từ ('được gọi là...').\nTừ đứng trước 'という' chia ở thể thông thường.",
@@ -4395,7 +4755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないといけない_102": {
+  "ja_n4_ないといけない_102": {
     "title": "～ないといけない (〜nai to ikenai)",
     "shortExplanation": "Diễn tả tính tất yếu, bổn phận hoặc nghĩa vụ cần phải làm; 'phải...', 'cần phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないといけない' (kính ngữ: '～ないといけません') dùng để diễn đạt việc người nói có nghĩa vụ, trách nhiệm hoặc tính tất yếu phải thực hiện một hành động nào đó ('nếu không làm thì không được'). Mẫu này thường dùng nhiều trong văn nói thường nhật khi nhắc nhở bản thân hoặc người khác về việc cần phải làm.",
@@ -4415,7 +4775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なきゃいけない_103": {
+  "ja_n4_なきゃいけない_103": {
     "title": "～なきゃいけない (〜nakya ikenai)",
     "shortExplanation": "Cách nói thân mật trong văn nói hàng ngày chỉ nghĩa vụ, sự cần thiết; 'phải...', 'phải làm... mới được'.",
     "longExplanation": "Mẫu ngữ pháp '～なきゃいけない' là hình thức rút gọn mang tính khẩu ngữ, thân mật của '～なければいけない'. Cấu trúc này dùng để diễn đạt nghĩa vụ, bổn phận hoặc việc bắt buộc phải làm trong cuộc sống hàng ngày. Trong giao tiếp thực tế, nó còn hay được lược bỏ phần đuôi chỉ còn '～なきゃ' (ví dụ: '行かなきゃ' - phải đi thôi).",
@@ -4435,7 +4795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なくちゃいけない_104": {
+  "ja_n4_なくちゃいけない_104": {
     "title": "～なくちゃいけない (〜naku cha ikenai)",
     "shortExplanation": "Diễn tả nghĩa vụ hoặc sự cần thiết phải làm gì đó; 'phải...', 'phải làm...' (khẩu ngữ thân mật).",
     "longExplanation": "Mẫu ngữ pháp '～なくちゃいけない' là dạng nói tắt, khẩu ngữ thân mật trong hội thoại hàng ngày của cấu trúc bắt buộc '～なくてはいけない' (trong đó 'なくては' biến âm thành 'なくちゃ'). Cấu trúc này dùng để diễn tả nghĩa vụ, bổn phận hoặc sự cần thiết phải thực hiện một hành động nào đó do hoàn cảnh đòi hỏi. Đi kèm với động từ chia ở thể phủ định (thể ない). Dạng lịch sự hơn là '～なくちゃいけません'.",
@@ -4455,7 +4815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なくてはいけない_105": {
+  "ja_n4_なくてはいけない_105": {
     "title": "～なくてはいけない (〜nakute wa ikenai)",
     "shortExplanation": "Diễn tả nghĩa vụ, bổn phận hoặc sự bắt buộc phải làm gì đó; 'phải...', 'phải làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～なくてはいけない' diễn tả nghĩa vụ, bổn phận hoặc sự cần thiết tất yếu phải thực hiện một hành động nào đó. Cấu trúc được hình thành từ động từ thể phủ định (thể ない) kết hợp với trợ từ 'は' và 'いけない' (không được), mang ý nghĩa đen là 'nếu không làm thì không được'. Thường dùng trong cả văn nói trang trọng và văn viết. Dạng lịch sự là '～なくてはいけません'.",
@@ -4475,7 +4835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なくてもいい_106": {
+  "ja_n4_なくてもいい_106": {
     "title": "～なくてもいい (〜nakutemo ii)",
     "shortExplanation": "Diễn tả sự không cần thiết hoặc cho phép không làm gì đó; 'không cần phải...', 'không... cũng được'.",
     "longExplanation": "Mẫu ngữ pháp '～なくてもいい' dùng để biểu thị rằng một hành động hay trạng thái nào đó là không bắt buộc, không cần thiết phải thực hiện, hoặc cho phép đối phương không làm điều đó mà không gây ra trở ngại gì. Cấu trúc được tạo thành từ động từ chia ở thể phủ định (thể ない) chuyển thành '～なくても' kết hợp với tính từ 'いい' (được/tốt). Dạng lịch sự là '～なくてもいいです'.",
@@ -4495,7 +4855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なければ_107": {
+  "ja_n4_なければ_107": {
     "title": "～なければ ならない (〜nakereba naranai)",
     "shortExplanation": "Diễn tả nghĩa vụ hoặc điều tất yếu phải làm theo quy tắc; 'phải...', 'bắt buộc phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～なければならない' dùng để diễn đạt nghĩa vụ, bổn phận khách quan hoặc một việc bắt buộc phải thực hiện theo luân thường, đạo lý hoặc quy tắc xã hội. Cấu trúc được tạo thành từ thể điều kiện phủ định '～なければ' (nếu không...) kết hợp với 'ならない' (không thành/không được), mang nghĩa đen là 'nếu không làm thì không được'. Đây là cách diễn đạt trang trọng và chuẩn mực trong cả văn nói lẫn văn viết. Dạng lịch sự là '～なければなりません'.",
@@ -4515,7 +4875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に_108": {
+  "ja_n4_に_108": {
     "title": "～に (〜ni)",
     "shortExplanation": "Trợ từ đa năng chỉ thời gian cụ thể, địa điểm đích đến, đối tượng tiếp nhận hoặc mục đích; 'vào lúc...', 'đến...', 'cho...'.",
     "longExplanation": "Trợ từ 'に' là một trong những trợ từ cơ bản và đa dụng nhất trong tiếng Nhật. Trợ từ này có các chức năng ngữ pháp chính bao gồm:\n1. Biểu thị thời điểm cụ thể diễn ra hành động ('vào lúc...').\n2. Biểu thị phương hướng, đích đến hoặc nơi kết thúc hành động ('đến...', 'vào...').\n3. Biểu thị đối tượng tiếp nhận hành động ('cho ai đó...').\n4. Biểu thị nơi tồn tại của người hoặc vật ('ở...', 'tại...').\n5. Biểu thị mục đích của hành động di chuyển ('để làm gì').",
@@ -4535,7 +4895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ので_109": {
+  "ja_n4_ので_109": {
     "title": "～ので (〜node)",
     "shortExplanation": "Diễn tả nguyên nhân, lý do khách quan một cách lịch sự, nhã nhặn; 'vì...', 'do... nên...'.",
     "longExplanation": "Liên từ '～ので' dùng để nối hai mệnh đề, biểu thị mệnh đề trước là nguyên nhân, lý do tự nhiên dẫn đến kết quả ở mệnh đề sau. So với 'から' (thường mang tính chủ quan của người nói), 'ので' mang sắc thái khách quan, nhẹ nhàng và lịch sự hơn, nhấn mạnh mối quan hệ nhân quả hiển nhiên chứ không áp đặt ý kiến cá nhân. Do đó, 'ので' rất hay được sử dụng khi trình bày lý do để xin phép, nhờ vả hoặc giải thích trong giao tiếp trang trọng.",
@@ -4555,7 +4915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_のです_110": {
+  "ja_n4_のです_110": {
     "title": "～のです (〜no desu)",
     "shortExplanation": "Dùng để nhấn mạnh lời giải thích, làm rõ nguyên nhân hoặc cung cấp thông tin nền; 'thực sự là...', 'bởi vì...'.",
     "longExplanation": "Mẫu ngữ pháp '～のです' (trong khẩu ngữ thường nói là '～んです') đặt ở cuối câu nhằm cung cấp thông tin nền tảng, giải thích lý do, nguồn cơn hoặc làm rõ nguyên nhân của một sự việc, tình huống đang diễn ra. Cấu trúc này thể hiện mong muốn người nghe thấu hiểu hoặc đồng cảm với ngữ cảnh đó. Trong câu hỏi, nó dùng để tìm kiếm sự giải thích hoặc tò mò xác nhận thông tin.",
@@ -4575,7 +4935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_のに_111": {
+  "ja_n4_のに_111": {
     "title": "～のに (〜no ni)",
     "shortExplanation": "Diễn tả sự tương phản ngược với dự đoán ('thế mà...', 'mặc dù...') hoặc chỉ mục đích ('để...').",
     "longExplanation": "Mẫu ngữ pháp '～のに' có hai công dụng chủ yếu:\n1. Biểu thị sự tương phản, nghịch lý: Nối hai mệnh đề khi kết quả ở mệnh đề sau đi ngược lại với lẽ thường, kỳ vọng hoặc mong đợi từ mệnh đề trước, thường kèm theo cảm xúc ngạc nhiên, tiếc nuối hoặc bất mãn ('thế mà', 'vậy mà', 'mặc dù...').\n2. Biểu thị mục đích: Đứng sau động từ thể từ điển để chỉ mục đích sử dụng hoặc hoàn cảnh thực hiện hành động ('để làm gì thì cần...').",
@@ -4595,7 +4955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばいい_112": {
+  "ja_n4_ばいい_112": {
     "title": "～ばいい (〜ba ii)",
     "shortExplanation": "Đưa ra lời khuyên, gợi ý hoặc giải pháp cho một vấn đề; 'chỉ cần... là được', 'nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～ばいい' được hình thành từ thể điều kiện '～ば' kết hợp với tính từ 'いい' (được, tốt). Cấu trúc này dùng để đưa ra lời khuyên, gợi ý, đề xuất phương án giải quyết cho đối phương ('chỉ cần làm... là được', 'nên... thì tốt'). Khi dùng dưới dạng câu hỏi '～ばいいですか', nó thể hiện việc xin lời khuyên hoặc hướng dẫn ('tôi nên làm gì thì tốt?').",
@@ -4615,7 +4975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まで_113": {
+  "ja_n4_まで_113": {
     "title": "～まで (〜made)",
     "shortExplanation": "Biểu thị giới hạn cuối cùng về thời gian, không gian ('đến...', 'cho tới khi...') hoặc mức độ cực đoan ('ngay cả...').",
     "longExplanation": "Trợ từ '～まで' có hai công dụng chủ yếu:\n1. Biểu thị giới hạn điểm kết thúc: Chỉ thời điểm, địa điểm hoặc giai đoạn mà một hành động, trạng thái tiếp diễn liên tục cho tới tận mốc đó ('đến tận khi...', 'cho tới tận...'). Thường đi theo cặp '～から～まで' (từ... đến...).\n2. Biểu thị mức độ cực đoan: Tương tự như trợ từ 'さえ', dùng để đưa ra một ví dụ bất ngờ ngoài dự liệu ('ngay cả...', 'đến cả...').",
@@ -4635,7 +4995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_までに_114": {
+  "ja_n4_までに_114": {
     "title": "～までに (〜made ni)",
     "shortExplanation": "Biểu thị thời hạn chót mà hành động phải được hoàn thành; 'trước khi...', 'chậm nhất là...'.",
     "longExplanation": "Mẫu ngữ pháp '～までに' dùng để chỉ hạn chót, kỳ hạn cuối cùng mà một hành động hay sự việc mang tính khoảnh khắc cần phải được hoàn tất trước mốc thời gian đó. Khác với '～まで' (chỉ hành động kéo dài liên tục đến tận thời điểm đó), '～までに' chỉ yêu cầu hành động xảy ra tại một thời điểm bất kỳ trước khi chạm đến mốc giới hạn.",
@@ -4655,7 +5015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まま_115": {
+  "ja_n4_まま_115": {
     "title": "～まま (〜mama)",
     "shortExplanation": "Diễn tả trạng thái được giữ nguyên không thay đổi trong khi tiến hành hành động khác; 'cứ để nguyên...', 'trong trạng thái...'.",
     "longExplanation": "Mẫu ngữ pháp '～まま' diễn tả việc một trạng thái hoặc kết quả của một hành động trước đó được duy trì nguyên vẹn, không có sự thay đổi nào trong lúc thực hiện một hành động khác. Thường mang hàm ý là một việc đáng lẽ phải thay đổi hay xử lý (như đóng cửa, tắt đèn) lại bị giữ nguyên do quên hoặc vô ý, gây ra bất thường. Khi đi với danh từ hoặc tính từ, nó diễn tả trạng thái tự nhiên vốn có được bảo toàn.",
@@ -4675,7 +5035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_みたいだ_116": {
+  "ja_n4_みたいだ_116": {
     "title": "～みたいだ (〜mitai da)",
     "shortExplanation": "Diễn tả sự phỏng đoán trực quan ('hình như...') hoặc so sánh ví von ('trông giống như...') trong khẩu ngữ.",
     "longExplanation": "Mẫu ngữ pháp '～みたいだ' là cách nói khẩu ngữ thông dụng trong hội thoại hàng ngày, có hai ý nghĩa cơ bản:\n1. Phỏng đoán dựa trên cảm nhận trực quan: Phán đoán một sự việc dựa trên những gì mắt thấy tai nghe hoặc cảm nhận trực tiếp ('hình như...', 'có vẻ như...').\n2. So sánh ví von: Tương tự như '～ようだ', ví von một đối tượng có vẻ ngoài hay tính chất tương tự như một sự vật khác ('trông như...', 'giống hệt như...').\nTrong giao tiếp lịch sự, đuôi câu chuyển thành '～みたいです'.",
@@ -4695,7 +5055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_も_117": {
+  "ja_n4_も_117": {
     "title": "～も (〜mo)",
     "shortExplanation": "Trợ từ biểu thị sự đồng nhất hoặc liệt kê thêm; 'cũng', 'cả', 'ngay cả'.",
     "longExplanation": "Trợ từ 'も' là một trợ từ quan trọng trong ngữ pháp tiếng Nhật với các cách dùng chủ yếu:\n1. Biểu thị sự đồng nhất hoặc tương đồng: Dùng khi một sự việc hay trạng thái cũng áp dụng đối với đối tượng này tương tự như đối tượng trước đó ('cũng...').\n2. Liệt kê song hành: Dùng theo cấu trúc 'Aも Bも' để chỉ cả hai đều như nhau ('cả A lẫn B').\n3. Nhấn mạnh số lượng: Đứng sau từ chỉ số lượng để nhấn mạnh mức độ nhiều vượt mức bình thường ('đến tận...', 'những...').\n4. Phủ định hoàn toàn: Đứng sau nghi vấn từ kết hợp với đuôi phủ định ('hoàn toàn không...').",
@@ -4715,7 +5075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ようだ_118": {
+  "ja_n4_ようだ_118": {
     "title": "～ようだ (〜you da)",
     "shortExplanation": "Diễn tả sự suy đoán dựa trên chứng cứ thực tế ('dường như...') hoặc so sánh ví von ('như thể...').",
     "longExplanation": "Mẫu ngữ pháp '～ようだ' là cách diễn đạt phán đoán hoặc ví von mang tính trang trọng và thường dùng trong văn viết hơn '～みたいだ'. Cấu trúc này có hai cách dùng chính:\n1. Đưa ra phán đoán, nhận định gián tiếp dựa trên các thông tin giác quan hoặc chứng cứ cụ thể thu thập được ('dường như...', 'có vẻ như...').\n2. So sánh ví von một đối tượng với một hình ảnh khác mang tính tượng trưng, thường đi kèm với phó từ 'まるで' ('giống hệt như...', 'như thể là...').",
@@ -4735,7 +5095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_んです_119": {
+  "ja_n4_んです_119": {
     "title": "～んです (〜n desu)",
     "shortExplanation": "Dùng để giải thích lý do, bối cảnh hoặc nhấn mạnh thông tin; 'là vì...', 'thực ra là...'.",
     "longExplanation": "Mẫu ngữ pháp '～んです' (dạng thông thường thân mật là '～んだ', văn viết là '～のだ') dùng để đưa ra lời giải thích, phân trần lý do cho một tình huống, trạng thái hoặc hành động đã đề cập trước đó. Cấu trúc này biểu thị việc người nói muốn chia sẻ bối cảnh, lý do cụ thể nhằm tạo sự thấu hiểu và gắn kết với người nghe. Kết hợp với thể thông thường của động từ và tính từ đuôi い; còn tính từ đuôi な và danh từ thì thêm 'な' trước 'んです'.",
@@ -4755,7 +5115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_文Aそのうえ_120": {
+  "ja_n4_文Aそのうえ_120": {
     "title": "文A。そのうえ 文B。",
     "shortExplanation": "Dùng để bổ sung thêm thông tin cùng chiều tích cực hoặc tiêu cực; 'hơn nữa', 'thêm vào đó'.",
     "longExplanation": "Liên từ 'そのうえ' (viết chữ Hán là 'その上') được đặt ở đầu câu B nhằm bổ sung thêm thông tin, đặc điểm hoặc tình huống liên quan đến điều đã được nêu ở câu A. Cấu trúc thường dùng khi cả hai câu đều cùng mang một tính chất (cùng khen ngợi hoặc cùng chê trách), nhấn mạnh sự cộng dồn các yếu tố; tương đương với 'hơn nữa', 'thêm vào đó', 'đã vậy lại còn...'.",
@@ -4775,7 +5135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_文Aそれで_121": {
+  "ja_n4_文Aそれで_121": {
     "title": "文A。それで 文B (Bun A. Sorede Bun B)",
     "shortExplanation": "Biểu thị quan hệ nhân quả tự nhiên giữa hai câu; 'vì vậy', 'do đó', 'thế là'.",
     "longExplanation": "Mẫu liên từ '文A。それで 文B' dùng để nối hai câu, trong đó câu A nêu ra nguyên nhân, lý do hoặc tiền đề, còn câu B trình bày kết quả, hệ quả diễn ra tự nhiên theo sau. Thường dùng trong hội thoại hàng ngày khi thuật lại sự việc, sự tình; tương đương với 'vì vậy', 'thế nên', 'do đó', 'thế là'. Lưu ý câu B thường là kết quả khách quan hoặc sự việc đã xảy ra, không dùng để biểu đạt mệnh lệnh hay ý chí cưỡng ép.",
@@ -4795,7 +5155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_文Aそれに_122": {
+  "ja_n4_文Aそれに_122": {
     "title": "文A。それに 文B (Bun A. Soreni Bun B)",
     "shortExplanation": "Dùng để liệt kê, bổ sung thêm thông tin hoặc lý lẽ; 'hơn nữa', 'thêm vào đó', 'vả lại'.",
     "longExplanation": "Liên từ 'それに' dùng để nối hai câu, bổ sung thêm một sự việc, đặc điểm hoặc lý do mới vào điều đã được nêu ở câu trước. Cấu trúc thường dùng khi người nói muốn đưa ra thêm chứng cứ, lý lẽ nhằm củng cố cho nhận định chung, mang nghĩa 'hơn nữa', 'thêm vào đó', 'vả lại'. Khác với liên từ chỉ nhân quả, 'それに' đơn thuần biểu thị sự tích lũy và liệt kê song song các thông tin.",
@@ -4815,7 +5175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_文Aだから_123": {
+  "ja_n4_文Aだから_123": {
     "title": "文A。だから 文B (Bun A. Dakara Bun B)",
     "shortExplanation": "Nối hai câu diễn tả nguyên nhân dẫn đến phán đoán, hành động; 'cho nên', 'vì thế', 'do đó'.",
     "longExplanation": "Mẫu liên từ '文A。だから 文B' dùng để diễn tả mối quan hệ nguyên nhân - kết quả mang tính chủ quan hoặc logic rõ ràng. Câu A nêu ra lý do, tiền đề, và câu B đưa ra kết luận, hành động, phán đoán, lời khuyên hoặc đề xuất của người nói dựa trên lý do đó. Trong giao tiếp hàng ngày, 'だから' rất quen thuộc và có thể đi kèm với các câu biểu thị ý chí, rủ rê hay yêu cầu ở vế sau.",
@@ -4835,7 +5195,27 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_うちに_1": {
+  "ja_n3_A_0": {
+    "title": "A その上 B (A sono ue B)",
+    "shortExplanation": "Nối hai mệnh đề/câu diễn tả sự bổ sung thêm một đặc điểm cùng chiều; 'hơn nữa', 'thêm vào đó'.",
+    "longExplanation": "Cấu trúc 'A その上 B' (sono ue) được dùng để kết nối hai mệnh đề hoặc hai câu, trong đó B bổ sung thêm thông tin, đặc điểm cùng chiều tích cực hoặc tiêu cực với A. Mẫu câu này nhấn mạnh sự cộng dồn các yếu tố làm nổi bật tính chất của sự việc, tương đương với 'hơn nữa', 'thêm vào đó', 'đã vậy lại còn...'. Có thể dùng trong cả văn nói trang trọng lẫn văn viết.",
+    "formation": "Mệnh đề/Câu A + その上 (そのうえ) + Mệnh đề/Câu B",
+    "examples": [
+      {
+        "translation": "Anh ấy thông minh. Hơn nữa, thể thao cũng rất giỏi."
+      },
+      {
+        "translation": "Quán cà phê này có bầu không khí tuyệt vời. Thêm vào đó, đồ ăn cũng rất ngon."
+      },
+      {
+        "translation": "Căn hộ này gần nhà ga. Hơn nữa, tiền thuê nhà cũng rẻ."
+      },
+      {
+        "translation": "Cô ấy có năng lực trong công việc. Thêm vào đó, cô ấy có thể hòa hợp với bất kỳ ai."
+      }
+    ]
+  },
+  "ja_n3_うちに_1": {
     "title": "～うちに (〜uchi ni)",
     "shortExplanation": "Diễn tả tranh thủ làm việc gì đó khi trạng thái chưa đổi, hoặc việc gì đó xảy ra trong một khoảng thời gian; 'trong khi', 'nhân lúc', 'trước khi'.",
     "longExplanation": "Mẫu ngữ pháp '～うちに' có hai cách dùng chính: (1) Tranh thủ làm một hành động nào đó trong lúc trạng thái vẫn còn đang tiếp diễn, trước khi điều kiện thay đổi (mang ý nghĩa 'nhân lúc', 'trong khi còn...', 'trước khi...'); (2) Trong khoảng thời gian một trạng thái hay hành động đang diễn ra thì có một biến đổi khác tự nhiên xảy đến ('trong lúc đang... thì...'). Cấu trúc kết hợp với động từ (thể từ điển, thể ている, thể ない), tính từ đuôi い, tính từ đuôi な (giữ な), và danh từ (đi với の).",
@@ -4855,7 +5235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_うとした_2": {
+  "ja_n3_うとした_2": {
     "title": "～うとした (〜uto shita)",
     "shortExplanation": "Diễn tả việc vừa toan tính, định làm gì thì có trở ngại xảy ra khiến không thực hiện được; 'định... thì...', 'vừa toan...'.",
     "longExplanation": "Mẫu câu '～（よ）うとした（g/けれど）' dùng để diễn tả khoảnh khắc người nói hoặc chủ ngữ vừa chuẩn bị, toan tính thực hiện một hành động nào đó thì ngay lúc đó có một sự cố, trở ngại hoặc lý do bất ngờ xuất hiện cản trở, khiến hành động không thành công hoặc không thể tiếp tục. Cấu trúc được tạo thành bằng cách chia động từ sang thể ý chí rồi kết hợp với 'とした'.",
@@ -4875,7 +5255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_おかげで_3": {
+  "ja_n3_おかげで_3": {
     "title": "～おかげで (〜okagede)",
     "shortExplanation": "Diễn tả nguyên nhân dẫn đến kết quả tốt đẹp, thể hiện sự cảm kích, biết ơn; 'nhờ có', 'nhờ vào'.",
     "longExplanation": "Mẫu ngữ pháp '～おかげで' dùng để chỉ ra nguyên nhân, lý do đem lại một kết quả tích cực, tốt đẹp hoặc may mắn, đồng thời bộc lộ tâm trạng biết ơn, cảm kích đối với sự giúp đỡ hay yếu tố thuận lợi đó ('nhờ có...', 'nhờ ơn...'). Trong một số ngữ cảnh mỉa mai, cấu trúc cũng có thể dùng để châm biếm một hậu quả xấu do ai đó gây ra. Kết hợp với thể thông thường của động từ và tính từ đuôi い, tính từ đuôi な đi với 'な', danh từ đi với 'の'.",
@@ -4895,7 +5275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かけ_4": {
+  "ja_n3_かけ_4": {
     "title": "～かけ (〜kake)",
     "shortExplanation": "Diễn tả hành động đang làm dở dang chưa hoàn thành; 'đang... dở', 'dở dang'.",
     "longExplanation": "Mẫu ngữ pháp '～かけ' (thường gặp dưới dạng '～かけの + Danh từ' hoặc '～かけだ') được ghép vào thân động từ thể ます để diễn tả một hành động đã bắt đầu tiến hành nhưng bị dừng lại giữa chừng và chưa hoàn tất, tức là ở trạng thái làm dở dang. Thường dùng cho các hành vi như ăn dở, đọc dở, làm dở dang... Tương đương với 'đang... dở', 'chưa xong'.",
@@ -4915,7 +5295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かなあ_5": {
+  "ja_n3_かなあ_5": {
     "title": "～かなあ (〜kanaa)",
     "shortExplanation": "Thể hiện sự băn khoăn, tự hỏi với chính mình hoặc mong muốn nhẹ nhàng; 'liệu có... không nhỉ', 'không biết là...'.",
     "longExplanation": "Trợ từ kết thúc câu '～かなあ' (dạng kéo dài của '～かな') dùng trong độc thoại hoặc giao tiếp thân mật để biểu đạt sự nghi vấn, băn khoăn, không chắc chắn về một sự việc hoặc thể hiện mong ước nhẹ nhàng của bản thân ('liệu... có được không nhỉ', 'không biết là...'). Cấu trúc đi với thể thông thường của động từ, tính từ đuôi い; còn với tính từ đuôi な và danh từ thì thường đi trực tiếp với từ căn hoặc kết hợp với 'だ'.",
@@ -4935,7 +5315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないで_6": {
+  "ja_n3_ないで_6": {
     "title": "～ないで (〜naide)",
     "shortExplanation": "Diễn tả làm một việc mà không thực hiện một việc khác đi kèm; 'mà không...', 'không làm... mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないで' (động từ thể ない kết hợp với trợ từ 'で') dùng để diễn tả trạng thái thực hiện hành động chính ở vế sau mà bỏ qua hoặc không thực hiện hành động ở vế trước, tương đương với 'mà không...', 'không làm A mà làm B'. Nó biểu thị trạng thái đi kèm của chủ ngữ khi tiến hành hành động tiếp theo.",
@@ -4955,7 +5335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からにかけて_7": {
+  "ja_n3_からにかけて_7": {
     "title": "～から～にかけて (〜kara 〜ni kakete)",
     "shortExplanation": "Biểu thị khoảng thời gian hoặc không gian trải dài từ điểm này đến điểm kia một cách đại khái; 'từ... đến...', 'suốt từ... qua...'.",
     "longExplanation": "Mẫu ngữ pháp '～から～にかけて' dùng để chỉ một khoảng thời gian, không gian hoặc phạm vi mang tính đại khái, mờ nhạt từ điểm bắt đầu đến điểm kết thúc (không phân định ranh giới cứng nhắc như '～から～まで'). Thường biểu thị sự việc, hiện tượng diễn ra liên tục hoặc rải rác trong suốt phạm vi đó; tương đương với 'từ... đến...', 'suốt từ khoảng... đến khoảng...'.",
@@ -4975,7 +5355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かわりに_8": {
+  "ja_n3_かわりに_8": {
     "title": "～かわりに (〜kawari ni)",
     "shortExplanation": "Diễn tả sự thay thế, đánh đổi hoặc bù lại; 'thay vì', 'thay cho', 'đổi lại'.",
     "longExplanation": "Mẫu ngữ pháp '～かわりに' có hai ý nghĩa chính: (1) Làm việc này thay thế cho việc khác ('thay vì làm A thì làm B', 'thay mặt cho A'); (2) Bù đắp, đánh đổi ('tuy có mặt này nhưng đổi lại thì...'). Kết hợp với thể thông thường của động từ và tính từ đuôi い; tính từ đuôi な đi với 'な', danh từ đi với 'の'.",
@@ -4995,7 +5375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_きり_9": {
+  "ja_n3_きり_9": {
     "title": "～きり (〜kiri)",
     "shortExplanation": "Diễn tả sau khi làm việc gì thì trạng thái giữ nguyên không đổi, hoặc chỉ duy nhất; 'kể từ khi... thì không...', 'chỉ...'.",
     "longExplanation": "Mẫu ngữ pháp '～きり' có hai ý nghĩa nổi bật: (1) Đi sau động từ thể quá khứ (thể た), diễn tả sau khi thực hiện hành động đó thì trạng thái sự việc giữ nguyên như vậy, suốt từ đó đến nay không hề diễn ra thêm lần nào nữa hoặc không có sự biến chuyển tiếp theo (vế sau thường mang nghĩa phủ định, tương đương 'kể từ sau khi... thì bặt vô âm tín / không hề... nữa'); (2) Đi sau danh từ hoặc số từ để chỉ sự giới hạn duy nhất ('chỉ có').",
@@ -5015,7 +5395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_くせに_10": {
+  "ja_n3_くせに_10": {
     "title": "～くせに (〜kuse ni)",
     "shortExplanation": "Dùng để biểu thị sự chê trách, mỉa mai hoặc bất mãn; 'thế mà lại', 'mặc dù... nhưng lại'.",
     "longExplanation": "Mẫu ngữ pháp '～くせに' diễn tả sự mỉa mai, trách móc hoặc không hài lòng của người nói về một sự việc, hành động trái ngược với điều đương nhiên hoặc kỳ vọng. Mẫu này chỉ được dùng khi người nói có thái độ chỉ trích, bất mãn với đối phương (thường là ngôi thứ ba hoặc ngôi thứ hai, không dùng cho chính mình).",
@@ -5035,7 +5415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_くらい_11": {
+  "ja_n3_くらい_11": {
     "title": "～くらい (〜kurai)",
     "shortExplanation": "Biểu thị số lượng ước chừng hoặc mức độ; 'khoảng', 'chừng', 'đến mức mà'.",
     "longExplanation": "Mẫu ngữ pháp '～くらい' (hoặc '～ぐらい') được dùng với hai ý nghĩa chính: một là chỉ số lượng hoặc thời gian ước chừng ('khoảng, chừng'); hai là chỉ mức độ, phạm vi của một hành động, tính chất ('đến mức...', 'tới độ...'). Có thể kết hợp linh hoạt với động từ, tính từ hoặc danh từ.",
@@ -5055,7 +5435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_くらいはない_12": {
+  "ja_n3_くらいはない_12": {
     "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
     "shortExplanation": "Nhấn mạnh yêu cầu hoặc mức độ tối thiểu cần làm; 'ít nhất cũng phải...', 'tối thiểu cũng...'.",
     "longExplanation": "Cấu trúc '～くらい～は～ない' (thường xuất hiện dưới dạng '～くらいは～ない / ないと') dùng để nhấn mạnh mức độ hoặc kỳ vọng tối thiểu mà một người cần thực hiện trong một tình huống nhất định. Nó truyền tải sắc thái: cho dù những việc khác không làm được thì ít nhất điều này cũng phải làm được.",
@@ -5075,7 +5455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_こそ_13": {
+  "ja_n3_こそ_13": {
     "title": "～こそ (〜koso)",
     "shortExplanation": "Trợ từ nhấn mạnh đối tượng, thời điểm hoặc lý do; 'chính là', 'nhất định (hôm nay...)', 'chính vì'.",
     "longExplanation": "Trợ từ '～こそ' được dùng để nhấn mạnh dứt khoát một đối tượng, thời điểm, hành động hoặc lý do cụ thể, khẳng định đối tượng đó là tiêu biểu, đặc biệt hoặc phù hợp nhất, loại trừ các đối tượng khác. Trong giao tiếp thường dùng để đáp lễ lịch sự (như 'こちらこそ') hoặc biểu thị quyết tâm mạnh mẽ.",
@@ -5095,7 +5475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_こと_14": {
+  "ja_n3_こと_14": {
     "title": "～こと (〜koto)",
     "shortExplanation": "Danh từ hóa động từ hoặc mệnh đề; 'việc...', 'chuyện...', 'cái việc...'.",
     "longExplanation": "Mẫu '～こと' là hình thức danh từ hóa (danh từ trừu tượng hóa), đứng sau dạng thông thường của động từ để biến động từ hoặc một cụm vị ngữ thành một danh từ. Nhờ đó, hành động có thể đóng vai trò làm chủ ngữ, tân ngữ hoặc bổ ngữ trong câu, kết hợp với các trợ từ như が, は, を, に.",
@@ -5115,7 +5495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことだ_15": {
+  "ja_n3_ことだ_15": {
     "title": "～ことだ (〜koto da)",
     "shortExplanation": "Dùng để đưa ra lời khuyên hoặc chỉ dẫn cần thiết; 'nên...', 'cần phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことだ' dùng khi người nói muốn đưa ra lời khuyên, gợi ý hoặc nhắc nhở đối phương về điều nên làm hoặc không nên làm trong một tình huống cụ thể (tương đương với 'nên...', 'tốt nhất là...'). Thường được dùng từ người có kinh nghiệm hoặc vị trí cao hơn khuyên người dưới, mang tính gián tiếp và chân thành.",
@@ -5135,7 +5515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことにしている_16": {
+  "ja_n3_ことにしている_16": {
     "title": "～ことにしている (〜koto ni shite iru)",
     "shortExplanation": "Diễn tả thói quen hoặc quy tắc do bản thân tự đề ra; 'quyết định là luôn...', 'tạo thói quen...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことにしている' dùng để diễn đạt một thói quen, nếp sống hoặc quy tắc do chính người nói tự mình quyết định và kiên trì duy trì thực hiện đều đặn trong đời sống hàng ngày (nghĩa là 'tôi tạo thói quen làm gì' hoặc 'tôi giữ nguyên tắc không làm gì').",
@@ -5155,7 +5535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことになっている_17": {
+  "ja_n3_ことになっている_17": {
     "title": "～ことになっている (〜koto ni natte iru)",
     "shortExplanation": "Diễn tả quy định, tập quán hoặc kế hoạch đã được ấn định từ trước; 'theo quy định là...', 'được định sẵn là...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことになっている' diễn tả các quy định, luật lệ, phong tục tập quán xã hội hoặc những kế hoạch, lịch trình đã được tổ chức hoặc người khác quyết định từ trước mà bản thân phải tuân theo. Khác với 'ことにしている' (do cá nhân tự quyết định), cấu trúc này nhấn mạnh tính khách quan của quy ước.",
@@ -5175,7 +5555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことはが_18": {
+  "ja_n3_ことはが_18": {
     "title": "～ことは…が (～koto wa... ga)",
     "shortExplanation": "Thừa nhận một thực tế nhưng theo sau là ý kiến đối lập; 'thì... thật đấy nhưng...', 'tuy có... nhưng...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことは…が' dùng để công nhận hoặc thừa nhận một sự thật, tính chất nào đó ở vế trước (thường lặp lại cùng một từ), nhưng ngay sau đó ở vế sau lại đưa ra một nhận xét trái ngược, một điểm hạn chế hoặc không hoàn toàn hài lòng ('đúng là... thật đấy nhưng mà...').",
@@ -5195,7 +5575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことはない_19": {
+  "ja_n3_ことはない_19": {
     "title": "～ことはない (〜koto wa nai)",
     "shortExplanation": "Biểu thị việc gì đó là không cần thiết, không nhất thiết phải làm; 'không cần phải...', 'không việc gì phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことはない' kết hợp chủ yếu với động từ thể từ điển để diễn tả rằng không có lý do hoặc không cần thiết phải thực hiện một hành vi nào đó (tương đương với 'không cần thiết phải làm gì', 'không việc gì phải...'). Mẫu này thường mang tính khuyên nhủ hoặc trấn an đối phương.",
@@ -5215,7 +5595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_さ_20": {
+  "ja_n3_さ_20": {
     "title": "～さ (〜sa)",
     "shortExplanation": "Hậu tố biến đổi tính từ thành danh từ chỉ mức độ hoặc tính chất; 'độ...', 'sự...'.",
     "longExplanation": "Hậu tố '～さ' được gắn vào sau thân từ của tính từ đuôi い (bỏ い) hoặc tính từ đuôi な để biến chúng thành danh từ trừu tượng biểu thị mức độ, độ lớn hoặc tính chất khách quan có thể đo đếm, so sánh được (như độ cao, độ dài, độ khó, sự tử tế...).",
@@ -5235,7 +5615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_さえ_21": {
+  "ja_n3_さえ_21": {
     "title": "～さえ (～sae)",
     "shortExplanation": "Đưa ra ví dụ cực đoan ('ngay cả...', 'thậm chí...') hoặc điều kiện tối thiểu duy nhất ('chỉ cần... là đủ').",
     "longExplanation": "Trợ từ '～さえ' có hai công dụng nổi bật: một là đưa ra một ví dụ mang tính cực đoan hoặc tối thiểu để ngụ ý những trường hợp thông thường khác là hiển nhiên ('thậm chí...', 'ngay cả... cũng'); hai là kết hợp với thể giả định (～さえ～ば) để biểu thị điều kiện tiên quyết tối thiểu duy nhất, có nghĩa là 'chỉ cần... là được/đủ'.",
@@ -5255,7 +5635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_しかない_22": {
+  "ja_n3_しかない_22": {
     "title": "～しかない (〜shika nai)",
     "shortExplanation": "Diễn tả không còn lựa chọn nào khác ngoài cách này; 'chỉ còn cách...', 'chỉ có... mà thôi'.",
     "longExplanation": "Mẫu ngữ pháp '～しかない' dùng để nhấn mạnh rằng hoàn toàn không có sự lựa chọn, phương pháp hoặc con đường nào khác, bắt buộc chủ ngữ chỉ có thể làm hành động đó hoặc chỉ còn duy nhất một trạng thái đó (tương đương với 'chỉ còn cách...', 'đành phải...', 'chỉ có... mà thôi').",
@@ -5275,7 +5655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_すこしもない_23": {
+  "ja_n3_すこしもない_23": {
     "title": "すこしも〜ない (sukoshimo~nai)",
     "shortExplanation": "Đi kèm với vị ngữ phủ định để biểu thị sự phủ định hoàn toàn; 'hoàn toàn không... chút nào', 'một chút cũng không...'.",
     "longExplanation": "Phó từ 'すこしも' (hoặc '少しも') luôn đi kèm với các vị ngữ ở dạng phủ định (động từ hoặc tính từ phủ định) để nhấn mạnh sự phủ định triệt để, có nghĩa là 'hoàn toàn không...', 'thậm chí một chút cũng không...'. Mẫu câu này dùng để khẳng định chắc nịch rằng trạng thái hoặc sự việc đó hoàn toàn không hề tồn tại.",
@@ -5295,7 +5675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ずに_24": {
+  "ja_n3_ずに_24": {
     "title": "～ずに (〜zu ni)",
     "shortExplanation": "Diễn tả việc thực hiện một hành động mà không làm một hành động khác; 'mà không...', 'không... mà lại...'.",
     "longExplanation": "Mẫu ngữ pháp '～ずに' (với 'ずに' gắn vào thân phủ định của động từ, tức thể ない bỏ ない; riêng động từ 'する' chuyển thành 'せずに') dùng để diễn tả việc thực hiện một hành động trong trạng thái không làm một hành động khác đi kèm. Mang ý nghĩa tương tự như '～ないで', nhưng '～ずに' có tính chất văn viết, trang trọng hơn.",
@@ -5315,7 +5695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_せいで_25": {
+  "ja_n3_せいで_25": {
     "title": "～せいで (〜sei de)",
     "shortExplanation": "Dùng để chỉ nguyên nhân dẫn đến một kết quả tiêu cực, đáng tiếc; 'tại vì...', 'do... mà (hóa ra tồi tệ)'.",
     "longExplanation": "Mẫu ngữ pháp '～せいで' dùng để diễn tả nguyên nhân hoặc lý do dẫn đến một kết quả xấu, tiêu cực hoặc không mong muốn. Cấu trúc này thường mang sắc thái trách móc, đổ lỗi hoặc than phiền ('tại vì...', 'chỉ vì...'). Khi muốn nêu nguyên nhân ở giữa câu thì dùng '～せいで', còn khi kết thúc câu ở vị trí vị ngữ thì dùng '～せいだ' hoặc '～せいです'.",
@@ -5335,7 +5715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_せてください_26": {
+  "ja_n3_せてください_26": {
     "title": "～せてください (〜sete kudasai)",
     "shortExplanation": "Dùng để xin phép đối phương cho mình được thực hiện một hành động nào đó; 'xin hãy cho phép tôi...', 'hãy để tôi...'.",
     "longExplanation": "Mẫu câu '～（さ）せてください' là dạng yêu cầu lịch sự sử dụng thể sai khiến kết hợp với '～てください'. Người nói dùng mẫu này để xin phép người nghe cho phép bản thân mình (hoặc người thuộc phe mình) được thực hiện một hành động cụ thể nào đó. Nó thể hiện thái độ khiêm tốn và tôn trọng đối phương.",
@@ -5355,7 +5735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そのために_27": {
+  "ja_n3_そのために_27": {
     "title": "～そのために (〜sono tame ni)",
     "shortExplanation": "Liên từ dùng để nêu mục đích hoặc lý do cho hành động tiếp theo; 'vì mục đích đó', 'để làm được điều đó', 'chính vì thế'.",
     "longExplanation": "Liên từ 'そのために' được đặt ở đầu câu thứ hai nhằm chỉ ra rằng nội dung của câu thứ hai là hành động, biện pháp hoặc nỗ lực được thực hiện nhằm đạt được mục tiêu hay mục đích đã nêu ở câu thứ nhất ('để làm được điều đó, ...'). Đôi khi nó cũng dùng để chỉ nguyên nhân ('chính vì lý do đó, ...').",
@@ -5375,7 +5755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_その結果_28": {
+  "ja_n3_その結果_28": {
     "title": "～その結果 (〜sono kekka)",
     "shortExplanation": "Biểu thị kết quả tự nhiên hoặc hậu quả sinh ra từ sự việc trước đó; 'kết quả là...', 'hậu quả là...'.",
     "longExplanation": "Liên từ 'その結果' (kết quả là...) dùng để kết nối hai sự việc có mối quan hệ nguyên nhân - kết quả, trong đó câu thứ nhất nêu ra nguyên nhân, sự việc đã xảy ra, và câu thứ hai nêu kết quả hoặc hậu quả tất yếu dẫn đến từ sự việc đó. Cấu trúc này thường xuất hiện trong văn viết hoặc phong cách diễn đạt mang tính khách quan, trang trọng.",
@@ -5395,7 +5775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_それと_29": {
+  "ja_n3_それと_29": {
     "title": "～それと～ (〜sore to〜)",
     "shortExplanation": "Dùng để bổ sung thêm một sự vật, sự việc hoặc hành động khác; 'và', 'còn nữa', 'thêm vào đó'.",
     "longExplanation": "Liên từ 'それと' (dạng nói tắt của 'それから' hoặc 'それに') dùng trong hội thoại hàng ngày để bổ sung thêm một nội dung, hạng mục hoặc sự việc khác ngoài những điều đã nêu trước đó. Nó thường đứng ở đầu câu thứ hai hoặc đặt giữa hai vế để liên kết.",
@@ -5415,7 +5795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_それとも_30": {
+  "ja_n3_それとも_30": {
     "title": "～？それとも～？ (～? sore tomo ～?)",
     "shortExplanation": "Dùng để đưa ra hai phương án lựa chọn trong câu hỏi; 'hay là...', 'hoặc là...'.",
     "longExplanation": "Liên từ 'それとも' dùng trong câu hỏi lựa chọn nhằm đưa ra hai sự việc, hành động hoặc trạng thái đối lập/khác biệt để người nghe chọn một trong hai. Mẫu câu này thường liên kết hai câu nghi vấn ('A? Hay là B?').",
@@ -5435,7 +5815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だけしか_31": {
+  "ja_n3_だけしか_31": {
     "title": "～だけしか (～dake shika)",
     "shortExplanation": "Nhấn mạnh tính duy nhất, ít ỏi hoặc thiếu thốn; 'chỉ có...', 'chỉ duy nhất... (ngoài ra không còn)' đi kèm với động từ phủ định.",
     "longExplanation": "Mẫu ngữ pháp '～だけしか' kết hợp hai trợ từ giới hạn 'だけ' và 'しか' nhằm tăng cường nhấn mạnh sự ít ỏi, khan hiếm hoặc hạn chế của số lượng/đối tượng được nhắc đến. Vị ngữ theo sau luôn luôn ở thể phủ định, diễn tả cảm giác người nói cho rằng số lượng đó là quá ít hoặc không đủ.",
@@ -5455,7 +5835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だけど_32": {
+  "ja_n3_だけど_32": {
     "title": "だけど (dakedo)",
     "shortExplanation": "Liên từ biểu thị quan hệ tương phản, đối lập trong giao tiếp thân mật; 'nhưng', 'tuy nhiên'.",
     "longExplanation": "Liên từ 'だけど' (dạng rút gọn của 'だけれども') dùng phổ biến trong khẩu ngữ hàng ngày để nối hai mệnh đề hoặc hai câu có ý nghĩa tương phản, mâu thuẫn nhau ('nhưng mà...', 'tuy nhiên...'). Nó có thể đứng ở đầu câu thứ hai ('Câu 1. だけど、Câu 2') hoặc nối trực tiếp giữa hai vế trong một câu (thường rút ngắn thành '～けど').",
@@ -5475,7 +5855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たて_33": {
+  "ja_n3_たて_33": {
     "title": "～たて (～tate)",
     "shortExplanation": "Diễn tả một hành động vừa mới hoàn thành xong và trạng thái vẫn còn tươi mới, nóng hổi; 'vừa mới... xong'.",
     "longExplanation": "Hậu tố '～たて' gắn vào thân động từ (thể ます bỏ ます) để diễn tả rằng một hành động vừa mới kết thúc cách đây rất ngắn, sản phẩm hoặc trạng thái do hành động đó tạo ra vẫn còn rất mới mẻ, tươi ngon hoặc nguyên vẹn (như bánh mì vừa mới nướng xong, cơm vừa mới nấu xong). Khi bổ nghĩa cho danh từ, cấu trúc sẽ dùng dạng '～たての + Danh từ'.",
@@ -5495,7 +5875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たとえても_34": {
+  "ja_n3_たとえても_34": {
     "title": "～たとえ～ても (〜tatoe〜temo)",
     "shortExplanation": "Biểu thị giả định nghịch; 'dù cho... đi chăng nữa thì vẫn...', 'cho dẫu... thì cũng...'.",
     "longExplanation": "Cấu trúc 'たとえ～ても' dùng để đưa ra một tình huống giả định mang tính nhượng bộ, nhấn mạnh rằng cho dù điều kiện giả định đó có xảy ra đi nữa thì kết quả, hành động hoặc quyết tâm ở vế sau vẫn không hề thay đổi. Phó từ 'たとえ' đặt ở đầu mệnh đề để báo trước sắc thái giả thiết.",
@@ -5515,7 +5895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たところ_35": {
+  "ja_n3_たところ_35": {
     "title": "～たところ (〜ta tokoro)",
     "shortExplanation": "Diễn tả sau khi thử làm hoặc vừa làm xong một việc thì nhận ra, phát hiện hoặc xuất hiện một kết quả; 'sau khi... thì thấy/xảy ra...'.",
     "longExplanation": "Mẫu ngữ pháp '～たところ' gắn sau động từ thể た để diễn tả rằng sau khi thực hiện một hành động nào đó thì nhận được một kết quả, một phản ứng hoặc phát hiện ra một sự thật mới ngoài dự kiến. Vế sau của mẫu câu này thường là những sự việc bất ngờ, không thuộc ý chí chủ quan có chủ đích của người nói.",
@@ -5535,7 +5915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たとたん_36": {
+  "ja_n3_たとたん_36": {
     "title": "～たとたん (〜ta totan)",
     "shortExplanation": "Diễn tả sự việc xảy ra gần như ngay tức khắc sau khi một hành động vừa dứt; 'ngay khi vừa...', 'vừa mới... thì ngay lập tức'.",
     "longExplanation": "Mẫu ngữ pháp '～たとたん' (hoặc '～たとたんに') gắn sau động từ thể た để biểu thị rằng ngay khoảnh khắc một hành động vừa diễn ra xong thì một sự việc tiếp theo bất ngờ ập đến gần như đồng thời. Vế sau thường miêu tả những biến đổi đột ngột ngoài dự kiến của người nói, không dùng cho câu thể hiện ý chí, mệnh lệnh hay nhờ vả.",
@@ -5555,7 +5935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たびに_37": {
+  "ja_n3_たびに_37": {
     "title": "～たびに (〜tabi ni)",
     "shortExplanation": "Diễn tả cứ mỗi khi một hành động hoặc sự việc xảy ra thì luôn luôn kèm theo một sự việc khác; 'mỗi lần...', 'cứ mỗi khi...'.",
     "longExplanation": "Mẫu ngữ pháp '～たびに' (hoặc '～たび') đi với động từ thể từ điển hoặc danh từ + の, dùng để diễn tả quy luật lặp đi lặp lại: cứ mỗi lần sự việc A xảy ra thì sự việc B cũng tất yếu xảy ra theo. Mẫu này không dùng cho những hiện tượng hiển nhiên theo chu kỳ tự nhiên mà nhấn mạnh cảm xúc hoặc thói quen của con người.",
@@ -5575,7 +5955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だものだ_38": {
+  "ja_n3_だものだ_38": {
     "title": "～だものだ (〜da mono da)",
     "shortExplanation": "Dùng để biện bạch, giải thích lý do một cách chủ quan; 'tại vì... cơ mà', 'bởi vì... mà lại' (thường gặp dạng ～ものだから / ～んだもの).",
     "longExplanation": "Mẫu ngữ pháp '～ものだから' (hoặc '～んだもの / ～ものだ') dùng trong khẩu ngữ để trần tình, giải thích lý do mang tính chủ quan hoặc viện cớ phân bua cho một hành động, trạng thái nào đó. Nó mang sắc thái 'bởi vì thực tế là như thế, không thể khác được' nhằm mong đối phương thông cảm.",
@@ -5595,7 +5975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ちゃった_39": {
+  "ja_n3_ちゃった_39": {
     "title": "～ちゃった (〜chatta)",
     "shortExplanation": "Dạng khẩu ngữ thân mật của '～てしまった', biểu thị hành động lỡ xảy ra gây tiếc nuối hoặc đã hoàn thành xong xuôi; 'lỡ... mất rồi', 'xong mất rồi'.",
     "longExplanation": "Mẫu câu '～ちゃった' (và '～じゃった') là cách nói rút gọn rất phổ biến trong đàm thoại hàng ngày của '～てしまった' (và '～でしまった'). Cấu trúc này dùng để diễn tả sự tiếc nuối, ân hận hoặc bất cẩn khi vô tình làm điều gì đó không mong muốn ('lỡ... mất rồi'), hoặc diễn tả một hành động đã được làm xong hoàn toàn.",
@@ -5615,7 +5995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ついでに_40": {
+  "ja_n3_ついでに_40": {
     "title": "～ついでに (〜tsuide ni)",
     "shortExplanation": "Nhân tiện, tiện thể làm việc gì đó nhân cơ hội thực hiện một hành động chính; 'tiện thể', 'nhân tiện'.",
     "longExplanation": "Mẫu ngữ pháp '～ついでに' dùng để diễn tả việc nhân cơ hội thực hiện một hành động chính có chủ đích từ trước, người nói tiện thể hoặc tranh thủ làm thêm một hành động khác. Vế trước là hành động chính, vế sau là hành động phụ phát sinh thuận tiện làm cùng.",
@@ -5635,7 +6015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っけ_41": {
+  "ja_n3_っけ_41": {
     "title": "～っけ？ (〜kke?)",
     "shortExplanation": "Trợ từ cuối câu dùng trong văn nói thân mật để nhớ lại hoặc xác nhận lại điều gì mơ hồ; '...phải không nhỉ?', '...gì ấy nhỉ?'.",
     "longExplanation": "Trợ từ cuối câu '～っけ' dùng trong hội thoại thân mật khi người nói đang cố gắng nhớ lại một thông tin mà bản thân đã quên, hoặc muốn hỏi lại người đối diện để xác nhận một sự việc trong quá khứ hay điều gì chưa chắc chắn ('...ấy nhỉ?', '...phải không nhỉ?').",
@@ -5655,7 +6035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っぱい_42": {
+  "ja_n3_っぱい_42": {
     "title": "～っぱい (〜ppai)",
     "shortExplanation": "Diễn tả trạng thái đầy ắp, tràn ngập một sự vật hoặc cảm xúc; 'đầy...', 'tràn ngập...' (thường dùng dạng 〜でいっぱい).",
     "longExplanation": "Cấu trúc '～đầy... với 〜でいっぱい' dùng để diễn đạt một không gian, trạng thái hoặc cảm xúc bị lấp đầy, tràn ngập bởi sự vật, hiện tượng hoặc tâm trạng nào đó ('chất đầy...', 'tràn ngập...'). Thường đi sau danh từ kết hợp với trợ từ 'で'.",
@@ -5675,7 +6055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っぱなし_43": {
+  "ja_n3_っぱなし_43": {
     "title": "～っぱなし (〜ppanashi)",
     "shortExplanation": "Chỉ trạng thái cứ để nguyên như vậy mà không làm tiếp hành động cần thiết tiếp theo; 'cứ để nguyên...', 'suốt không...'.",
     "longExplanation": "Mẫu ngữ pháp '～っぱなし' kết hợp sau thân động từ thể ます để diễn tả một hành động sau khi làm xong thì bị bỏ mặc, giữ nguyên trạng thái đó mà không thực hiện hành động xử lý tiếp theo lẽ thường. Thường mang sắc thái tiêu cực, phàn nàn, phê phán sự bất cẩn. Ngoài ra cũng dùng để chỉ một trạng thái diễn ra liên tục suốt không nghỉ.",
@@ -5695,7 +6075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_つまり_44": {
+  "ja_n3_つまり_44": {
     "title": "～つまり (〜tsumari)",
     "shortExplanation": "Liên từ dùng để tóm tắt, diễn giải lại hoặc làm rõ nội dung câu trước; 'tức là', 'nói cách khác là', 'tóm lại là'.",
     "longExplanation": "Liên từ 'つまり' dùng để diễn đạt lại nội dung đã trình bày ở trước bằng một cách ngắn gọn, dễ hiểu hơn, hoặc rút ra kết luận logic từ vế trước. Thường tương đương với 'tức là...', 'nói cách khác...', 'tóm lại là...'.",
@@ -5715,7 +6095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_つもりでした_45": {
+  "ja_n3_つもりでした_45": {
     "title": "～つもりでした (〜tsumori deshita)",
     "shortExplanation": "Diễn tả dự định, ý định trong quá khứ nhưng trên thực tế đã không thực hiện được; 'đã định...', 'tính làm... (nhưng lại không làm)'.",
     "longExplanation": "Mẫu câu '～つもりでした' dùng để nói về một ý định hoặc kế hoạch trong quá khứ, nhưng vì một nguyên nhân hay trở ngại nào đó mà trên thực tế đã không thể thực hiện được hoặc bị thay đổi. Thường mang sắc thái tiếc nuối và hay đi kèm với liên từ 'が' hoặc 'けれど'.",
@@ -5735,7 +6115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てくれと_46": {
+  "ja_n3_てくれと_46": {
     "title": "～てくれと (〜te kureto)",
     "shortExplanation": "Dùng để truyền đạt, trích dẫn lại lời yêu cầu hoặc nhờ vả của ai đó; 'bảo hãy làm...', 'nhờ làm...'.",
     "longExplanation": "Cấu trúc '～てくれと' (thường kết hợp với '言う', '頼む', '頼まれる', '言われる') dùng để trích dẫn gián tiếp một lời yêu cầu, thỉnh cầu hoặc mệnh lệnh từ người khác hướng đến mình hoặc người thứ ba ('ai đó đã nói/nhờ rằng hãy làm...').",
@@ -5755,7 +6135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てごらん_47": {
+  "ja_n3_てごらん_47": {
     "title": "～てごらん (〜te goran)",
     "shortExplanation": "Lời khuyên nhủ, đề nghị nhẹ nhàng đối phương thử làm một việc gì đó; 'thử làm... xem sao', 'hãy thử... xem'.",
     "longExplanation": "Mẫu ngữ pháp '～てごらん' (dạng nói tắt của '～てごらんなさい') được người trên hoặc người lớn tuổi dùng để khuyên nhủ, gợi ý nhẹ nhàng cho người dưới, trẻ con hoặc người thân trong gia đình thử làm một việc nào đó ('thử làm... xem sao nhé'). Mang sắc thái dịu dàng, thân mật và khích lệ.",
@@ -5775,7 +6155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ですから_48": {
+  "ja_n3_ですから_48": {
     "title": "ですから～ (desu kara)",
     "shortExplanation": "Liên từ biểu thị nguyên nhân, lý do trong cách nói lịch sự; 'vì thế', 'do đó', 'vì... nên'.",
     "longExplanation": "Từ nối 'ですから' đứng ở đầu câu thứ hai hoặc đặt giữa câu (sau thể lịch sự です) để nêu rõ nguyên nhân, lý do cho vế tiếp theo trong phong cách lịch sự. Vế sau thường đưa ra lời khuyên, đề nghị, nhận định hoặc yêu cầu ('vì lý do đó nên...').",
@@ -5795,7 +6175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てはじめて_49": {
+  "ja_n3_てはじめて_49": {
     "title": "～てはじめて (〜te hajimete)",
     "shortExplanation": "Chỉ sau khi trải qua một việc gì đó thì mới lần đầu tiên nhận ra hoặc mới xảy ra một điều; 'chỉ sau khi... mới...'.",
     "longExplanation": "Mẫu ngữ pháp '～てはじめて' diễn tả rằng chỉ sau khi một sự việc hoặc hành động ở vế trước xảy ra, người nói mới lần đầu tiên nhận thức được, thấu hiểu được hoặc mới có một trạng thái mới ở vế sau ('chỉ sau khi... thì mới nhận ra...').",
@@ -5815,7 +6195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てほしい_50": {
+  "ja_n3_てほしい_50": {
     "title": "～てほしい (〜te hoshii)",
     "shortExplanation": "Bày tỏ mong muốn đối phương hoặc người khác thực hiện một hành động nào đó; 'muốn (ai đó) làm gì'.",
     "longExplanation": "Cấu trúc '～てほしい' gắn vào thể て của động từ để diễn tả mong muốn, nguyện vọng của người nói rằng người khác sẽ thực hiện một hành động cụ thể. Người thực hiện hành động thường được đánh dấu bằng trợ từ 'に'. Dạng phủ định là '～ないでほしい' (muốn ai đó đừng làm gì).",
@@ -5835,7 +6215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ても_51": {
+  "ja_n3_ても_51": {
     "title": "～ても (〜temo)",
     "shortExplanation": "Biểu thị điều kiện nhượng bộ nghịch giả định hoặc sự thật; 'cho dù... cũng...', 'ngay cả khi... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ても' (hoặc '～demo') dùng để diễn tả điều kiện nhượng bộ, chỉ ra rằng dù điều kiện giả định hay thực tế ở vế trước có xảy ra đi nữa thì kết quả hay hành động ở vế sau vẫn không bị ảnh hưởng, hoặc diễn ra trái ngược với lẽ thông thường ('cho dù... đi chăng nữa thì vẫn...').",
@@ -5855,7 +6235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といいなあ_52": {
+  "ja_n3_といいなあ_52": {
     "title": "～といいなあ (〜to ii naa)",
     "shortExplanation": "Bày tỏ ước muốn, hy vọng một điều tốt đẹp sẽ xảy ra hoặc ở một trạng thái lý tưởng; 'giá mà...', 'ước gì...', 'mong là...'.",
     "longExplanation": "Mẫu câu '～といいなあ' kết hợp điều kiện 'と' với 'いい' và trợ từ cảm thán 'なあ' trong lối nói thân mật, độc thoại để bộc lộ niềm mong ước, hy vọng điều gì đó thuận lợi hoặc tốt đẹp sẽ đến với bản thân hay người khác ('mong sao...', 'giá mà... thì tốt biết mấy').",
@@ -5875,7 +6255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_という_53": {
+  "ja_n3_という_53": {
     "title": "～という (〜to iu)",
     "shortExplanation": "Dùng để gọi tên, định nghĩa hoặc bổ nghĩa cho danh từ theo sau; 'gọi là...', 'có tên là...', 'nghe nói là...'.",
     "longExplanation": "Mẫu ngữ pháp '～という' dùng để liên kết tên gọi, nội dung tường thuật, tin đồn hoặc sự định nghĩa với danh từ đứng sau ('danh từ có tên là...', 'nói rằng là...'). Khi kết hợp 'Danh từ 1 + という + Danh từ 2' thì mang nghĩa 'Danh từ 2 có tên gọi là Danh từ 1'. Khi đi sau thể thông thường của động từ hoặc tính từ, nó bổ nghĩa cho danh từ bằng nội dung được truyền tụng, nhận xét hoặc định nghĩa.",
@@ -5895,7 +6275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ということだ_54": {
+  "ja_n3_ということだ_54": {
     "title": "～ということだ (〜to iu koto da)",
     "shortExplanation": "Dùng để truyền đạt lại thông tin nghe được (nghe nói là...) hoặc giải thích ý nghĩa, kết luận một sự việc (nghĩa là...).",
     "longExplanation": "Mẫu ngữ pháp '～ということだ' có hai cách dùng chính: một là truyền đạt lại thông tin gián tiếp nghe được từ nguồn khác mang tính khách quan, trang trọng ('nghe nói rằng...', 'tin cho hay rằng...'); hai là dùng để tóm tắt, giải thích ý nghĩa hoặc rút ra kết luận từ một sự việc ('điều đó có nghĩa là...').",
@@ -5915,7 +6295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_というと_55": {
+  "ja_n3_というと_55": {
     "title": "～というと (〜to iu to)",
     "shortExplanation": "Dùng khi nhắc đến một chủ đề nào đó thì lập tức liên tưởng ngay đến đặc trưng tiêu biểu hoặc ví dụ điển hình; 'nhắc đến...', 'nói đến... là nghĩ ngay đến'.",
     "longExplanation": "Mẫu ngữ pháp '～というと' được dùng để nêu lên một chủ đề, đối tượng hoặc sự việc, từ đó liên tưởng ngay đến một hình ảnh đặc trưng, một ví dụ tiêu biểu hoặc một đặc điểm nổi bật nhất gắn liền với chủ đề đó ('hễ nhắc đến A là nghĩ ngay đến B'). Cấu trúc này cũng thường được dùng trong hội thoại để xác nhận lại điều mà đối phương vừa nhắc tới.",
@@ -5935,7 +6315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_というの_56": {
+  "ja_n3_というの_56": {
     "title": "～というの～ (〜to iu no〜)",
     "shortExplanation": "Dùng trong mẫu câu '〜のは、〜というのだ' để giải thích hoặc nhấn mạnh nguyên nhân, lý do của một sự việc; 'sở dĩ... là vì/do...'.",
     "longExplanation": "Mẫu ngữ pháp '～というの～' thường xuất hiện dưới cấu trúc '〜のは、〜というのだ' hoặc '〜という理由だ', dùng để giải thích rõ ràng hoặc nhấn mạnh nguyên nhân, bối cảnh dẫn đến một hành động, sự tình hay hiện trạng đã được nêu ở vế trước. Mẫu câu này làm nổi bật lý do thực sự khiến sự việc xảy ra.",
@@ -5955,7 +6335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_というのは_57": {
+  "ja_n3_というのは_57": {
     "title": "～というのは (〜to iu no wa)",
     "shortExplanation": "Dùng để định nghĩa, giải thích ý nghĩa của một từ ngữ hoặc làm rõ lý do, nội dung của sự việc; 'cái gọi là... nghĩa là...', 'sở dĩ nói như vậy là vì...'.",
     "longExplanation": "Mẫu ngữ pháp '～というのは' được dùng với hai mục đích chính: thứ nhất là đưa ra định nghĩa hoặc giải thích rõ ý nghĩa của một từ ngữ hay khái niệm (thường kết thúc bằng '〜のことだ' hoặc '〜ということだ'); thứ hai là nêu rõ nguyên nhân, lý do cho nhận định hay sự việc vừa nói ở trước (thường kết thúc bằng '〜からだ').",
@@ -5975,7 +6355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_というより_58": {
+  "ja_n3_というより_58": {
     "title": "～というより (〜to iu yori)",
     "shortExplanation": "Dùng để so sánh cách diễn đạt, cho rằng cách nói sau chuẩn xác hoặc thỏa đáng hơn cách nói trước; 'nói đúng hơn là...', 'thay vì nói là... thì đúng hơn là...'.",
     "longExplanation": "Mẫu ngữ pháp '～というより' (thường dùng ở dạng 'AというよりB') được sử dụng khi người nói cảm thấy cách diễn đạt A chưa thực sự chuẩn xác hoặc chưa lột tả đúng bản chất, mà cách diễn đạt B mới là phù hợp và sát với thực tế hơn ('thay vì nói là A thì đúng hơn là B').",
@@ -5995,7 +6375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といっても_59": {
+  "ja_n3_といっても_59": {
     "title": "～といっても (〜to ittemo)",
     "shortExplanation": "Thừa nhận một sự thật ở vế trước, nhưng bổ sung thêm rằng thực tế không đến mức to tát hay nghiêm trọng như người ta tưởng tượng; 'dù nói là... nhưng...', 'nói thế chứ...'.",
     "longExplanation": "Mẫu ngữ pháp '～といっても' dùng khi người nói thừa nhận sự việc ở vế trước là có thật, nhưng ngay sau đó đưa ra thông tin đính chính hoặc giới hạn lại ở vế sau, nhằm tránh cho người nghe có những hình dung hay kỳ vọng thái quá so với thực tế bình thường.",
@@ -6015,7 +6395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とおり_60": {
+  "ja_n3_とおり_60": {
     "title": "～とおり (〜toori)",
     "shortExplanation": "Diễn tả một hành động hoặc kết quả diễn ra hoàn toàn khớp với những gì đã nói, đã thấy, đã dự đoán hay hướng dẫn; 'đúng như...', 'theo đúng...'.",
     "longExplanation": "Mẫu ngữ pháp '～とおり' (hoặc '～とおりに', '～どおり') dùng để biểu thị rằng một hành động hay sự việc được thực hiện hoàn toàn chuẩn xác, y hệt theo những gì đã nghe, đã thấy, theo quy định, kế hoạch hay chỉ dẫn từ trước mà không có bất kỳ sai lệch nào. Khi đứng ngay sau danh từ, từ này thường biến âm thành '～どおり'.",
@@ -6035,7 +6415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とく_61": {
+  "ja_n3_とく_61": {
     "title": "～とく (〜toku)",
     "shortExplanation": "Dạng nói tắt trong khẩu ngữ của '～ておく', diễn tả việc làm sẵn một hành động nào đó để chuẩn bị cho tương lai; 'làm sẵn...', 'làm trước...'.",
     "longExplanation": "'～とく' là dạng rút gọn, biến âm trong giao tiếp thân mật hàng ngày của cấu trúc '～ておく' ('～ておく' nói tắt thành '～とく', và '～でおく' nói tắt thành '～どく'). Cấu trúc này dùng để diễn đạt việc hoàn thành sớm một hành động nhằm chuẩn bị cho sự việc tiếp theo hoặc để duy trì trạng thái tiện lợi cho sau này.",
@@ -6055,7 +6435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ところが_62": {
+  "ja_n3_ところが_62": {
     "title": "～ところが (〜tokoro ga)",
     "shortExplanation": "Liên từ hoặc trợ từ liên kết biểu thị kết quả thực tế xảy ra hoàn toàn trái ngược hoặc ngoài dự đoán so với kỳ vọng ban đầu; 'thế nhưng', 'nhưng ngờ đâu'.",
     "longExplanation": "'～ところが' dùng để kết nối hai sự việc có tính tương phản, trong đó vế trước nêu lên một hành động, dự định hoặc sự chờ đợi, còn vế sau đưa ra một kết quả thực tế xảy ra bất ngờ, ngoài dự tính của người nói. Thường mang sắc thái ngạc nhiên, thất vọng hoặc ngoài ý muốn. Có thể dùng nối câu ('Câu 1. ところが、Câu 2') hoặc nối vế câu ('〜たところが、...').",
@@ -6075,7 +6455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ところだった_63": {
+  "ja_n3_ところだった_63": {
     "title": "～ところだった (〜tokoro datta)",
     "shortExplanation": "Diễn tả một sự việc nguy hiểm, xấu hoặc đáng tiếc suýt chút nữa đã xảy ra nhưng may mắn là đã không xảy ra; 'suýt nữa thì...', 'suýt chút nữa là...'.",
     "longExplanation": "Mẫu ngữ pháp '～ところだった' dùng để kể về một tình huống xấu, nguy hiểm, thất bại hay rắc rối suýt chút nữa đã trở thành hiện thực trong gang tấc, nhưng nhờ kịp thời tránh được hoặc nhờ may mắn mà thực tế đã không xảy ra. Mẫu này rất thường đi kèm với các phó từ như 'もう少しで' (chút xíu nữa), '危うく' (suýt chút).",
@@ -6095,7 +6475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ところで_64": {
+  "ja_n3_ところで_64": {
     "title": "ところで (tokorode)",
     "shortExplanation": "Liên từ dùng để cắt ngang chủ đề đang nói và chuyển hướng câu chuyện sang một đề tài mới hoàn toàn; 'tiện đây', 'nhân tiện', 'à này'.",
     "longExplanation": "'ところで' là liên từ dùng để chủ động chuyển đổi đề tài trong cuộc hội thoại. Người nói sử dụng từ này khi muốn kết thúc câu chuyện đang trao đổi trước đó để mở ra một chủ đề mới, đặt một câu hỏi mới hoặc nêu lên một thông tin khác mà bản thân vừa chợt nhớ ra.",
@@ -6115,7 +6495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_としたら_65": {
+  "ja_n3_としたら_65": {
     "title": "～としたら (〜to shitara)",
     "shortExplanation": "Đưa ra một giả định hoặc điều kiện mang tính giả tưởng để từ đó đưa ra phán đoán, kết luận hoặc hành động tương ứng; 'nếu giả sử...', 'giả định là...'.",
     "longExplanation": "Mẫu ngữ pháp '～としたら' dùng để đặt ra một điều kiện giả định ('giả sử điều A là sự thật / giả định tình huống A xảy ra'), từ đó người nói nêu lên ý kiến, phán đoán, kết luận hoặc cách ứng phó tương ứng ở vế sau. Cấu trúc này thường dùng cho những tình huống giả định rõ rệt hoặc lập luận suy lý logic.",
@@ -6135,7 +6515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_として_66": {
+  "ja_n3_として_66": {
     "title": "～として (〜to shite)",
     "shortExplanation": "Nêu rõ tư cách, thân phận, lập trường, vai trò hoặc danh nghĩa của một đối tượng; 'với tư cách là...', 'dưới danh nghĩa...', 'với vai trò là...'.",
     "longExplanation": "Mẫu ngữ pháp '～として' gắn trực tiếp sau danh từ để biểu thị tư cách, thân phận, chức danh, địa vị hoặc lập trường của một người, hoặc chức năng, danh nghĩa, mục đích sử dụng của một sự vật. Khi bổ nghĩa trực tiếp cho một danh từ theo sau, cấu trúc này có dạng '～としての + Danh từ'.",
@@ -6155,7 +6535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どんなにことか_67": {
+  "ja_n3_どんなにことか_67": {
     "title": "～どんなに～ことか (〜donna ni〜koto ka)",
     "shortExplanation": "Câu cảm thán nhấn mạnh mức độ sâu sắc, to lớn của cảm xúc hoặc tình trạng; '...biết bao nhiêu', '...biết dường nào'.",
     "longExplanation": "Mẫu ngữ pháp '～どんなに～ことか' là một kết cấu cảm thán dùng ở cuối câu nhằm bày tỏ sự xúc động sâu sắc, nhấn mạnh mức độ cảm xúc, sự vất vả, niềm vui hoặc nỗi khổ tâm của người nói (hoặc người được nói tới) to lớn đến mức khôn xiết. 'どんなに' có thể được thay thế bằng các từ tương đương như 'どれほど', 'なんと'.",
@@ -6175,7 +6555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どんなにても_68": {
+  "ja_n3_どんなにても_68": {
     "title": "どんなに～ても (donna ni ~ temo)",
     "shortExplanation": "Biểu thị điều kiện nghịch bộ, dù mức độ của hành động hay trạng thái có cao hay nhiều đến mức nào thì kết quả vẫn không thay đổi; 'cho dù... đến thế nào đi nữa thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'どんなに～ても' là câu nhượng bộ biểu thị rằng dù mức độ của một hành động, nỗ lực hay trạng thái có cao đến cực điểm đi chăng nữa, thì kết quả, trạng thái hoặc quyết định ở vế sau vẫn không hề thay đổi. Cấu trúc này mang ý nghĩa tương tự như 'いくら～ても'.",
@@ -6195,7 +6575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないことはない_69": {
+  "ja_n3_ないことはない_69": {
     "title": "～ないことはない (〜nai koto wa nai)",
     "shortExplanation": "Dùng hình thức phủ định kép để biểu thị sự khẳng định một cách dè dặt, ngập ngừng; 'không phải là không...', 'không hẳn là không...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないことはない' (trong khẩu ngữ còn nói là '～ないこともない') sử dụng hình thức hai lần phủ định để đưa ra lời khẳng định mang tính dè dặt, ngập ngừng hoặc có chút gượng gạo. Ý nghĩa của cấu trúc là 'không phải là hoàn toàn không thể làm được hoặc không có khả năng, nhưng có điều kiện kèm theo hoặc bản thân không thực sự hào hứng'.",
@@ -6215,7 +6595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないと_70": {
+  "ja_n3_ないと_70": {
     "title": "～ないと (〜nai to)",
     "shortExplanation": "Diễn tả điều kiện phủ định; 'nếu không... thì...'. Thường dẫn tới một kết quả tiêu cực, bất lợi hoặc khó khăn.",
     "longExplanation": "Mẫu ngữ pháp '～ないと' được dùng để nêu lên điều kiện giả định mang tính phủ định ('nếu không thực hiện hành động đó thì...'), nhấn mạnh rằng nếu hành động đó không được thực hiện thì một kết quả xấu, phiền phức hoặc hệ quả bất lợi tất yếu sẽ xảy ra. Ngoài ra, trong hội thoại hàng ngày, khi đứng ở cuối câu (dạng nói tắt của '〜ないといけない / 〜ないとだめだ'), cấu trúc này còn biểu thị ý nghĩa 'phải làm gì đó'.",
@@ -6235,7 +6615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なぜなら_71": {
+  "ja_n3_なぜなら_71": {
     "title": "～なぜなら (〜nazenara)",
     "shortExplanation": "Dùng để giải thích nguyên nhân, lý do cho kết luận hoặc sự việc được nêu trước đó; 'bởi vì', 'lý do là vì'.",
     "longExplanation": "Từ nối '～なぜなら' (hoặc 'なぜならば') được dùng khi người nói đã đưa ra một nhận định, kết luận hoặc kết quả ở câu trước, sau đó muốn giải thích rõ ràng nguyên nhân, lý do dẫn đến điều đó ('sở dĩ như vậy là vì...'). Mẫu câu này thường đi kèm với '〜からだ / 〜からである / 〜から / 〜だから' ở cuối câu để tạo sự hô ứng chặt chẽ về mặt ngữ pháp.",
@@ -6255,7 +6635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_など_72": {
+  "ja_n3_など_72": {
     "title": "～など (〜nado)",
     "shortExplanation": "Dùng để liệt kê ví dụ mang tính đại diện, không đầy đủ; 'như là...', 'chẳng hạn như...', 'vân vân'.",
     "longExplanation": "Trợ từ '～など' được gắn sau danh từ để đưa ra một vài ví dụ tiêu biểu mang tính đại diện, ngụ ý rằng ngoài những sự vật, sự việc được kể ra thì vẫn còn những thứ tương tự khác ('chẳng hạn như... và những thứ khác', 'vân vân'). Mẫu câu này thường xuất hiện dưới dạng 'AやBなど' (những thứ như A và B).",
@@ -6275,7 +6655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なんか_73": {
+  "ja_n3_なんか_73": {
     "title": "～なんか (〜nanka)",
     "shortExplanation": "Dạng thân mật của 'など', dùng để đưa ra ví dụ hoặc thể hiện sự xem nhẹ, khiêm tốn hay phủ định mạnh mẽ; 'những thứ như...', 'mấy cái như...'.",
     "longExplanation": "Trợ từ '～なんか' là dạng khẩu ngữ thân mật của 'など'. Ngoài việc dùng để nêu ví dụ trong giao tiếp hàng ngày, cấu trúc này thường mang sắc thái xem nhẹ, coi thường sự vật, sự việc được nhắc tới ('mấy cái thứ như... chẳng đáng bận tâm'), hoặc thể hiện sự khiêm tốn khi nói về bản thân. Khi kết hợp với thể phủ định, nó nhấn mạnh sự phủ định dứt khoát ('chẳng... chút nào').",
@@ -6295,7 +6675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_において_74": {
+  "ja_n3_において_74": {
     "title": "～において (〜ni oite)",
     "shortExplanation": "Dùng trong văn phong trang trọng để chỉ địa điểm, thời gian, lĩnh vực hoặc bối cảnh diễn ra sự việc; 'ở', 'tại', 'trong', 'vào'.",
     "longExplanation": "Mẫu ngữ pháp '～において' là cách diễn đạt mang tính trang trọng, văn viết (tương đương với trợ từ 'で' trong văn nói), dùng để chỉ rõ địa điểm, không gian, thời kỳ, thời gian, lĩnh vực chuyên môn hay hoàn cảnh mà một sự việc, hành vi hay hiện tượng nào đó diễn ra. Khi bổ nghĩa trực tiếp cho danh từ đứng phía sau, cấu trúc này chuyển thành dạng '〜における + Danh từ'.",
@@ -6315,7 +6695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にかわって_75": {
+  "ja_n3_にかわって_75": {
     "title": "～にかわって (〜ni kawatte)",
     "shortExplanation": "Biểu thị hành động thay thế hoặc đại diện cho một người, một đối tượng khác; 'thay cho...', 'thay mặt cho...'.",
     "longExplanation": "Mẫu ngữ pháp '～にかわって' (thường viết bằng kanji là '～に代わって / ～に換わって') được dùng khi một người làm việc gì đó để thay thế hoặc đại diện cho người khác, hoặc khi một phương thức, sự vật mới thay thế cho cái cũ vốn có trước đây ('thay cho ai đó', 'thay mặt ai đó'). Khi bổ nghĩa cho danh từ đứng sau, cấu trúc chuyển thành '〜にかわる + Danh từ'.",
@@ -6335,7 +6715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にしては_76": {
+  "ja_n3_にしては_76": {
     "title": "～にしては (〜ni shite wa)",
     "shortExplanation": "Biểu thị sự việc không tương xứng hoặc khác với lẽ thông thường so với một tiêu chuẩn, hoàn cảnh cụ thể; 'thế mà', 'so với... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～にしては' được dùng khi kết quả, tính chất hay thực tế xảy ra không tương xứng, khác hẳn với điều thông thường người ta dự đoán dựa trên một tiêu chuẩn, thân phận hay điều kiện cụ thể nào đó ('nếu xét theo tiêu chuẩn A thì thực tế lại bất ngờ là B'). Vế sau luôn là nhận định thực tế, không dùng để biểu đạt nguyện vọng hay ý chí của người nói.",
@@ -6355,7 +6735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にしても_77": {
+  "ja_n3_にしても_77": {
     "title": "～にしても (〜ni shitemo)",
     "shortExplanation": "Biểu thị nhượng bộ giả định; 'cho dù... đi chăng nữa thì...', 'ngay cả khi... thì cũng...'.",
     "longExplanation": "Mẫu ngữ pháp '～にしても' được dùng để diễn tả một điều kiện nhượng bộ giả định hoặc chấp nhận một sự thực nào đó, nhấn mạnh rằng dù cho điều kiện đó có xảy ra hay sự thực đó có đúng đi chăng nữa thì kết luận, thái độ hay hành động ở vế sau vẫn không thay đổi ('dù có là... thì cũng...'). Cấu trúc này thường đi kèm với sắc thái đánh giá, khuyên nhủ hoặc phê phán nhẹ nhàng của người nói.",
@@ -6375,7 +6755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_について_78": {
+  "ja_n3_について_78": {
     "title": "～について (〜ni tsuite)",
     "shortExplanation": "Biểu thị chủ đề, đề tài của hành động suy nghĩ, nói năng, nghiên cứu; 'về...', 'về việc...'.",
     "longExplanation": "Mẫu ngữ pháp '～について' được dùng sau danh từ để nêu lên chủ đề, nội dung hay đối tượng mà một hành động như suy nghĩ (考える), tìm hiểu (調べる), thảo luận (話し合う), viết (書く) hướng tới ('nói/viết/nghĩ về...'). Khi bổ nghĩa trực tiếp cho danh từ đứng phía sau, cấu trúc này chuyển thành dạng '〜についての + Danh từ'.",
@@ -6395,7 +6775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にとって_79": {
+  "ja_n3_にとって_79": {
     "title": "～にとって (〜ni totte)",
     "shortExplanation": "Biểu thị lập trường, góc nhìn để đưa ra đánh giá, nhận định; 'đối với... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～にとって' được dùng sau danh từ chỉ người, tổ chức hay tập thể để nêu rõ rằng nếu đứng từ lập trường, góc độ hay nhận thức của đối tượng đó thì sự việc mang giá trị, ý nghĩa hay cảm nhận như thế nào ('đối với A thì...'). Vế sau thường đi kèm với những từ ngữ biểu thị sự đánh giá, giá trị (quan trọng, cần thiết, khó, dễ, vui mừng...). Khi bổ nghĩa cho danh từ, cấu trúc chuyển thành '〜にとっての + Danh từ'.",
@@ -6415,7 +6795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_によって_80": {
+  "ja_n3_によって_80": {
     "title": "～によって (〜ni yotte)",
     "shortExplanation": "Biểu thị nguyên nhân, lý do ('do/vì...'), phương thức, phương tiện ('bằng cách...'), hoặc sự khác biệt tùy theo đối tượng ('tùy vào...').",
     "longExplanation": "Mẫu ngữ pháp '～によって' là một cấu trúc đa nghĩa rất quan trọng trong tiếng Nhật, được dùng với các ý nghĩa chính: (1) Nêu nguyên nhân, lý do xảy ra sự việc ('do...', 'vì...'); (2) Chỉ phương thức, phương tiện thực hiện ('bằng cách...', 'nhờ vào...'); (3) Chỉ sự biến đổi tương ứng với từng đối tượng hay hoàn cảnh ('tùy thuộc vào...', 'tùy theo...'); (4) Chỉ chủ thể sáng tạo trong câu bị động ('bởi...'). Khi bổ nghĩa trực tiếp cho danh từ, cấu trúc đổi thành '〜による + Danh từ'.",
@@ -6435,7 +6815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_によれば_81": {
+  "ja_n3_によれば_81": {
     "title": "～によれば (〜ni yoreba)",
     "shortExplanation": "Dùng để dẫn nguồn thông tin, tin tức được nghe hoặc biết; 'theo...', 'căn cứ theo...'.",
     "longExplanation": "Mẫu ngữ pháp '～によれば' (tương đương với '～によると') được dùng sau danh từ chỉ nguồn thông tin (như dự báo thời tiết, bài báo, lời của ai đó, kết quả điều tra...) để trích dẫn hoặc truyền đạt lại thông tin thu thập được từ nguồn đó ('theo như... thì...'). Cuối câu hầu như luôn đi kèm với các hình thức biểu thị truyền đạt hoặc phán đoán như '〜そうだ', '〜ということだ', '〜らしい', '〜だろう'.",
@@ -6455,7 +6835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に対して_82": {
+  "ja_n3_に対して_82": {
     "title": "～に対して (～ni taishite)",
     "shortExplanation": "Biểu thị đối tượng hướng tới của hành động hay thái độ ('đối với...'), hoặc biểu thị sự đối lập, tương phản giữa hai sự việc ('trái ngược với... thì...').",
     "longExplanation": "Mẫu ngữ pháp '～に対して' có hai cách dùng quan trọng: (1) Chỉ đối tượng mà một hành động, thái độ, cảm xúc hay lời nói hướng đến ('đối với ai đó', 'đáp lại câu hỏi'); (2) Dùng để so sánh, đối chiếu hai sự vật hay hai mệnh đề có đặc điểm trái ngược nhau ('trái ngược với A thì B...'). Khi bổ nghĩa trực tiếp cho danh từ phía sau, cấu trúc chuyển thành '〜に対する + Danh từ'.",
@@ -6475,7 +6855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に比べて_83": {
+  "ja_n3_に比べて_83": {
     "title": "～に比べて (〜ni kurabete)",
     "shortExplanation": "Dùng để so sánh hai sự vật, hiện tượng; 'so với... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～に比べて' (bắt nguồn từ động từ 比べる nghĩa là so sánh) được dùng sau danh từ để lấy đối tượng đó làm chuẩn so sánh, qua đó làm nổi bật sự khác biệt về tính chất, mức độ hay trạng thái của đối tượng ở vế sau ('so với A thì B...'). Cấu trúc này cũng có thể dùng ở dạng '〜に比べ' hoặc '〜に比べると'.",
@@ -6495,7 +6875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に関して_84": {
+  "ja_n3_に関して_84": {
     "title": "～に関して (〜ni kanshite)",
     "shortExplanation": "Biểu thị chủ đề, vấn đề hoặc phạm vi liên quan trong văn phong trang trọng; 'về...', 'liên quan đến...'.",
     "longExplanation": "Mẫu ngữ pháp '～に関して' (dạng trang trọng, quy mô rộng hơn so với '〜について') được dùng sau danh từ để nêu lên chủ đề, vấn đề hay đối tượng mà một thông tin, cuộc điều tra, thảo luận hay nghiên cứu xoay quanh ('về vấn đề...', 'liên quan tới...'). Mẫu này thường dùng nhiều trong các thông báo, báo cáo, bài thuyết trình hoặc hội nghị chính thức. Khi bổ nghĩa trực tiếp cho danh từ phía sau, cấu trúc đổi thành '〜に関する + Danh từ'.",
@@ -6515,7 +6895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_の_85": {
+  "ja_n3_の_85": {
     "title": "～の～ (〜no 〜)",
     "shortExplanation": "Dùng để nối hai danh từ, biểu thị sở hữu, thuộc tính, xuất xứ hoặc mối quan hệ giữa chúng; tương đương 'của', 'ở', 'về' trong tiếng Việt.",
     "longExplanation": "Trợ từ 'の' là một trong những trợ từ cơ bản nhất trong tiếng Nhật, được đặt giữa hai danh từ (Danh từ 1 + の + Danh từ 2) để bổ nghĩa cho danh từ đứng sau. Cấu trúc này dùng để diễn đạt quan hệ sở hữu (ví dụ: 'chiếc ô của tôi'), nơi chốn hoặc xuất xứ (ví dụ: 'điểm du lịch của Tokyo'), tính chất hoặc chuyên môn (ví dụ: 'giáo viên âm nhạc').",
@@ -6535,7 +6915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばかり_86": {
+  "ja_n3_ばかり_86": {
     "title": "～ばかり (〜bakari)",
     "shortExplanation": "Diễn tả sự việc, hành động chỉ toàn một thứ hoặc cứ lặp đi lặp lại liên tục; 'toàn là...', 'suốt ngày chỉ...', thường mang sắc thái phàn nàn, tiêu cực.",
     "longExplanation": "Trợ từ '～ばかり' dùng để nhấn mạnh rằng một sự vật, đối tượng chiếm phần lớn hoặc duy nhất trong một phạm vi (Danh từ + ばかり: 'toàn là...'), hoặc một hành động cứ diễn ra liên tục, lặp đi lặp lại (Động từ thể て + ばかりいる: 'suốt ngày chỉ toàn...'). Trong đời sống hàng ngày, cấu trúc này thường đi kèm với thái độ chỉ trích, phàn nàn hoặc không hài lòng của người nói.",
@@ -6555,7 +6935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばかりか_87": {
+  "ja_n3_ばかりか_87": {
     "title": "～ばかりか (〜bakarika) ～も (mo)",
     "shortExplanation": "Diễn tả ý nghĩa 'không chỉ dừng lại ở mức đó mà còn thêm cả...', vế sau thường đi kèm với 'も' hoặc 'まで'; tương đương 'không những... mà còn...'.",
     "longExplanation": "Mẫu ngữ pháp '～ばかりか' (thường kết hợp với '～も') được dùng để diễn tả rằng sự việc không chỉ dừng lại ở điều đã nêu ở vế trước, mà ở vế sau còn phát sinh thêm một điều nữa với mức độ lớn hơn hoặc bất ngờ hơn ('không chỉ A mà ngay cả B cũng...'). Cả hai vế thường cùng mang tính chất tích cực hoặc cùng là điều tiêu cực.",
@@ -6575,7 +6955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_はずだ_88": {
+  "ja_n3_はずだ_88": {
     "title": "～はずだ (〜hazu da)",
     "shortExplanation": "Diễn tả sự phán đoán chắc chắn của người nói dựa trên một căn cứ, lý do hoặc quy luật tự nhiên có tính xác thực; 'chắc chắn là...', 'lẽ ra phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～はずだ' được dùng khi người nói đưa ra một dự đoán, phán đoán có độ tin cậy rất cao dựa trên các cơ sở khách quan, lý lẽ hợp lý hoặc dữ liệu thực tế ('theo lý thì chắc chắn là như vậy'). Người nói tin tưởng rằng sự việc tất yếu sẽ diễn ra hoặc đã diễn ra đúng như dự tính.",
@@ -6595,7 +6975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばのに_89": {
+  "ja_n3_ばのに_89": {
     "title": "～ば～のに (〜ba 〜noni)",
     "shortExplanation": "Diễn tả giả định trái ngược với thực tế trong quá khứ hoặc hiện tại để bộc lộ sự tiếc nuối, hối hận hoặc bất mãn; 'giá mà... thì đã... rồi'.",
     "longExplanation": "Cấu trúc '～ば～のに' kết hợp giữa thể điều kiện giả định '～ば' (nếu) và trợ từ liên kết '～のに' (thế mà/vậy mà), dùng để nêu lên một điều kiện trái ngược với thực tế kèm theo kết quả giả định tốt đẹp, qua đó biểu lộ sự tiếc nuối khôn nguôi, sự ân hận hoặc bất mãn đối với sự việc thực tế đã không diễn ra như ý muốn.",
@@ -6615,7 +6995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばほど_90": {
+  "ja_n3_ばほど_90": {
     "title": "～ば～ほど (〜ba 〜hodo)",
     "shortExplanation": "Diễn tả mối quan hệ tỷ lệ thuận về mức độ giữa hai vế; vế trước biến đổi bao nhiêu thì vế sau cũng thay đổi tương ứng bấy nhiêu; 'càng... càng...'.",
     "longExplanation": "Mẫu ngữ pháp '～ば～ほど' lặp lại cùng một động từ hoặc tính từ ở thể điều kiện '～ば' và dạng nguyên thể đi với '～ほど', dùng để biểu thị sự biến chuyển tương hỗ tỷ lệ thuận giữa hai vế: khi mức độ của hành động hoặc tính chất ở vế trước tăng lên thì kết quả hoặc mức độ ở vế sau cũng gia tăng tương ứng ('càng A thì càng B').",
@@ -6635,7 +7015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_はもちろんも_91": {
+  "ja_n3_はもちろんも_91": {
     "title": "～はもちろん～も (〜wa mochiron 〜mo)",
     "shortExplanation": "Đưa ra một điều đương nhiên ở vế trước để nhấn mạnh rằng một điều khác ở vế sau cũng như vậy; 'A là đương nhiên rồi, mà B cũng...', 'không chỉ A mà ngay cả B...'.",
     "longExplanation": "Cấu trúc '～はもちろん～も' dùng để nêu ra một sự vật hoặc sự việc A như một điều hiển nhiên, dĩ nhiên ai cũng biết, rồi mở rộng thêm đối tượng B ở vế sau để nhấn mạnh rằng B cũng hoàn toàn tương tự như thế. Cấu trúc này thường dùng khi muốn bổ sung thêm thông tin nhằm làm nổi bật quy mô hoặc mức độ bao quát.",
@@ -6655,7 +7035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばよかった_92": {
+  "ja_n3_ばよかった_92": {
     "title": "～ばよかった (〜ba yokatta)",
     "shortExplanation": "Diễn tả sự tiếc nuối, hối hận vì trong quá khứ đã không làm một việc gì đó; 'giá mà...', 'biết thế thì... đã tốt biết mấy'.",
     "longExplanation": "Cấu trúc '～ばよかった' dùng để thể hiện cảm giác nuối tiếc, ân hận sâu sắc của người nói về một hành động lẽ ra nên làm trong quá khứ nhưng thực tế lại không làm, và nhận ra rằng nếu lúc đó đã làm thì kết quả bây giờ sẽ tốt đẹp hơn rất nhiều.",
@@ -6675,7 +7055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ふりをする_93": {
+  "ja_n3_ふりをする_93": {
     "title": "～ふりをする (〜furi wo suru)",
     "shortExplanation": "Diễn tả hành động giả vờ, làm ra vẻ như thế nào đó để đánh lừa người khác dù sự thật không phải như vậy; 'giả vờ...', 'làm ra vẻ...'.",
     "longExplanation": "Mẫu ngữ pháp '～ふりをする' được sử dụng khi một người cố tình hành động, biểu cảm hoặc tỏ ra một trạng thái nào đó trước mặt người khác nhằm che giấu thực tế vốn hoàn toàn trái ngược ('giả vờ như đang...', 'làm ra vẻ là...').",
@@ -6695,7 +7075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_べきだ_94": {
+  "ja_n3_べきだ_94": {
     "title": "～べきだ (〜beki da)",
     "shortExplanation": "Diễn tả điều đương nhiên nên làm hoặc cần phải làm xét theo chuẩn mực đạo đức, trách nhiệm xã hội hoặc lẽ thường; 'nên...', 'phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～べきだ' xuất phát từ trợ động từ cổ 'べし', dùng để nêu lên một phán đoán mang tính đạo đức, nghĩa vụ xã hội hoặc lương tâm rằng một việc nào đó là đương nhiên phải làm ('nên làm/cần phải làm'). Cần lưu ý cấu trúc này biểu đạt nghĩa vụ mang tính luân lý, không dùng để bắt buộc trực tiếp bề trên.",
@@ -6715,7 +7095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ほど_95": {
+  "ja_n3_ほど_95": {
     "title": "～ほど～ (〜hodo〜)",
     "shortExplanation": "Dùng trong mẫu câu phủ định 'AはBほど...ない' để so sánh mức độ, nghĩa là 'A không bằng B', hoặc 'không có gì bằng...'.",
     "longExplanation": "Mẫu so sánh '～ほど...ない' dùng để lấy đối tượng B làm tiêu chuẩn so sánh cao, nhằm diễn đạt rằng đối tượng A không đạt tới mức độ của B ('A không bằng B', 'A không... như B'). Khi kết hợp với đại từ mang nghĩa tuyệt đối như '〜ほど…はない' thì biểu thị ý nghĩa so sánh bậc nhất: 'không có gì/ở đâu bằng...'.",
@@ -6735,7 +7115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ますように_96": {
+  "ja_n3_ますように_96": {
     "title": "～ますように (〜masu you ni)",
     "shortExplanation": "Dùng ở cuối câu để bày tỏ lời cầu nguyện, chúc phúc hoặc mong ước tha thiết cho mình hoặc người khác; 'cầu mong sao...', 'chúc cho...'.",
     "longExplanation": "Mẫu câu '～ますように' thường được dùng ở cuối câu trong các lời cầu nguyện tại đền chùa, điều ước viết trên thẻ nguyện ước dịp lễ Tanabata, hay lời chúc gửi gắm trong thư từ, thiệp mừng. Cấu trúc này thể hiện nguyện vọng chân thành và tha thiết mong cho một sự việc tốt lành sẽ xảy đến với bản thân hoặc người thân quen.",
@@ -6755,7 +7135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まったくない_97": {
+  "ja_n3_まったくない_97": {
     "title": "まったく～ない (mattaku ~nai)",
     "shortExplanation": "Dùng phó từ 'まったく' đi với thể phủ định để nhấn mạnh sự phủ định tuyệt đối 100%; 'hoàn toàn không...', 'chẳng... chút nào'.",
     "longExplanation": "Cấu trúc 'まったく～ない' kết hợp phó từ 'まったく' (hoàn toàn) với các dạng thức phủ định của động từ, tính từ hoặc danh từ nhằm khẳng định một cách tuyệt đối rằng một trạng thái hay hành vi nào đó hoàn toàn không hề tồn tại dù chỉ một chút ('hoàn toàn không', 'tuyệt đối không').",
@@ -6775,7 +7155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まで_98": {
+  "ja_n3_まで_98": {
     "title": "～まで (〜made)",
     "shortExplanation": "Chỉ điểm kết thúc, giới hạn về thời gian, không gian, địa điểm hoặc phạm vi hoạt động; 'đến...', 'cho đến tận...'.",
     "longExplanation": "Trợ từ '～まで' được dùng để xác định giới hạn cuối cùng, điểm dừng hoặc đích đến của một hành động, trạng thái trong thời gian, không gian hoặc số lượng. Khi đi với động từ thể từ điển, cấu trúc này biểu thị hành động diễn ra liên tục cho tới thời điểm hành động kia bắt đầu hoặc xảy ra.",
@@ -6795,7 +7175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まま_99": {
+  "ja_n3_まま_99": {
     "title": "～まま (〜mama)",
     "shortExplanation": "Diễn tả một trạng thái được giữ nguyên không hề thay đổi trong suốt quá trình một hành động khác diễn ra; 'cứ để nguyên...', 'trong trạng thái...'.",
     "longExplanation": "Mẫu ngữ pháp '～まま' dùng để diễn tả rằng một tình trạng, điều kiện hoặc trạng thái được duy trì nguyên vẹn, không có sự can thiệp hay thay đổi nào, và người nói tiếp tục thực hiện một hành động khác trong chính bối cảnh đó ('giữ nguyên như vậy mà...'). Thường dùng khi việc giữ nguyên trạng thái đó là bất thường hoặc trái với lẽ tự nhiên (ví dụ: mở cửa sổ rồi để nguyên vậy đi ngủ).",
@@ -6815,7 +7195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まるでよう_100": {
+  "ja_n3_まるでよう_100": {
     "title": "まるで～よう (maru de ~ you)",
     "shortExplanation": "Dùng để so sánh ví von hai sự vật, hiện tượng có tính chất tương đồng cao; mang nghĩa 'hệt như là...', 'giống như là...', 'cứ như thể là...'.",
     "longExplanation": "Cấu trúc 'まるで～よう' kết hợp phó từ 'まるで' (hoàn toàn, hệt như) với hình thức so sánh ví von '～よう' để nhấn mạnh mức độ tương đồng sâu sắc giữa hai sự vật hoặc trạng thái, dù thực tế chúng không phải là một. Khi bổ nghĩa cho danh từ, cấu trúc biến đổi thành 'まるで～ような + Danh từ', khi bổ nghĩa cho động từ/tính từ thì thành 'まるで～ように', và đứng cuối câu là 'まるで～ようだ'.",
@@ -6835,7 +7215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てみる_101": {
+  "ja_n3_てみる_101": {
     "title": "～てみる (〜te miru)",
     "shortExplanation": "Diễn tả hành động làm thử một việc gì đó để xem kết quả ra sao; 'thử làm... xem sao'.",
     "longExplanation": "Cấu trúc '～てみる' kết hợp động từ thể て với trợ động từ 'みる' (ở đây mang nghĩa thử nghiệm, không phải là dùng mắt nhìn thông thường), biểu thị việc người nói hoặc chủ ngữ thực hiện một hành động mang tính chất thử nghiệm, thăm dò để kiểm tra tính khả thi, mùi vị hoặc kết quả sau đó.",
@@ -6855,7 +7235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_みたいだ_102": {
+  "ja_n3_みたいだ_102": {
     "title": "～みたいだ (〜mitai da)",
     "shortExplanation": "Dùng trong văn nói thân mật để phỏng đoán dựa trên cảm nhận trực tiếp hoặc so sánh ví von; 'hình như là...', 'có vẻ như...', 'trông như...'.",
     "longExplanation": "Cấu trúc '～みたいだ' là dạng khẩu ngữ thường dùng trong giao tiếp đời thường của '～ようだ'. Cấu trúc này dùng để diễn đạt sự suy đoán không chắc chắn dựa trên quan sát trực quan hoặc cảm giác ('có vẻ là/hình như là...'), đồng thời cũng dùng để so sánh sự vật này với sự vật khác ('giống như...'). Khi bổ nghĩa cho danh từ dùng '～みたいな + Danh từ', bổ nghĩa cho vị ngữ dùng '～みたいに'.",
@@ -6875,7 +7255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_めったにない_103": {
+  "ja_n3_めったにない_103": {
     "title": "～めったに～ない (〜metta ni 〜nai)",
     "shortExplanation": "Diễn tả tần suất diễn ra của một hành động hay sự việc là vô cùng hiếm hoi; 'hiếm khi...', 'hầu như không bao giờ...'.",
     "longExplanation": "Phó từ 'めったに' (hiếm khi, hầu như không) luôn đi kèm với các hình thức phủ định '～ない' ở cuối câu để nhấn mạnh rằng một hành động, sự kiện hay trạng thái nào đó xảy ra với tần suất cực kỳ ít, gần như là không có trong điều kiện bình thường.",
@@ -6895,7 +7275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_めったにない_104": {
+  "ja_n3_めったにない_104": {
     "title": "～めったにない (〜metta ni nai)",
     "shortExplanation": "Biểu thị một sự việc, cơ hội hoặc hiện tượng là rất hiếm thấy, ít khi xảy ra; 'hiếm có...', 'hầu như không có...'.",
     "longExplanation": "Cụm từ '～めったにない' đóng vai trò là vị ngữ tính từ hoặc bổ nghĩa cho danh từ ('めったにない + Danh từ': cơ hội hiếm có). Khi kết hợp với động từ danh từ hóa dưới dạng '～(こと/の)はめったにない', cấu trúc dùng để nhấn mạnh sự khan hiếm, đặc biệt hoặc khác thường của việc đó.",
@@ -6915,7 +7295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もしかするとかもしれない_105": {
+  "ja_n3_もしかするとかもしれない_105": {
     "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
     "shortExplanation": "Diễn tả khả năng xảy ra của một sự việc dù không chắc chắn; 'có lẽ là... cũng không chừng', 'biết đâu lại...'.",
     "longExplanation": "Phó từ 'もしかすると' (có khả năng là, có khi) đứng đầu mệnh đề đi kèm với kết thúc vị ngữ '～かもしれない' (có lẽ/cũng không biết chừng), làm tăng thêm sắc thái suy đoán dè dặt, không chắc chắn của người nói về một sự tình hoặc diễn biến có thể xảy ra nhưng xác suất không quá cao.",
@@ -6935,7 +7315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もしたなら_106": {
+  "ja_n3_もしたなら_106": {
     "title": "もし～たなら (moshi ~ tanara)",
     "shortExplanation": "Nhấn mạnh điều kiện giả định trong trường hợp sự việc xảy ra hoặc đã hoàn tất; 'giả sử nếu...', 'nếu quả thật là...'.",
     "longExplanation": "Cấu trúc 'もし～たなら' kết hợp phó từ giả định 'もし' với động từ hoặc tính từ ở thể quá khứ (thể た) đi cùng 'なら'. Cấu trúc này dùng để nhấn mạnh điều kiện giả định khi một hành động đã xảy ra xong xuôi hoặc đặt tiền đề cho vế sau đưa ra lời khuyên, đề xuất, yêu cầu hoặc đánh giá.",
@@ -6955,7 +7335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もしても_107": {
+  "ja_n3_もしても_107": {
     "title": "もし～ても (moshi ~ temo)",
     "shortExplanation": "Diễn tả điều kiện nhượng bộ giả định; dù tình huống ở vế trước có xảy ra thì kết quả hay quyết định ở vế sau vẫn không thay đổi; 'cho dù... thì cũng...'.",
     "longExplanation": "Cấu trúc 'もし～ても' kết hợp phó từ giả định 'もし' với thể điều kiện nhượng bộ '～ても / ～でも'. Cấu trúc này nhấn mạnh rằng dù tình huống giả định ở vế trước có trở thành sự thật đi chăng nữa thì kết quả, hành vi hoặc ý chí ở vế sau vẫn giữ nguyên, không bị ảnh hưởng.",
@@ -6975,7 +7355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もしもなら_108": {
+  "ja_n3_もしもなら_108": {
     "title": "もしも～なら (moshimo ~ nara)",
     "shortExplanation": "Nhấn mạnh điều kiện giả định có tính bất định, giả thuyết cao hoặc vạn nhất xảy ra; 'nếu như...', 'giả sử như...'.",
     "longExplanation": "Từ 'もしも' mang sắc thái nhấn mạnh mạnh mẽ hơn so với 'もし', thường dùng khi người nói đưa ra một giả định về tình huống hiếm khi xảy ra, một tình huống ngặt nghèo hoặc giả định tưởng tượng mang tính bất trắc ('vạn nhất nếu như...'). Vế sau thường là nhận định, phán đoán hoặc biện pháp xử lý tương ứng.",
@@ -6995,7 +7375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ようとしない_109": {
+  "ja_n3_ようとしない_109": {
     "title": "～ようとしない (〜you to shinai)",
     "shortExplanation": "Diễn tả việc một người nào đó hoàn toàn không có ý định hoặc từ chối làm một hành động; 'chẳng chịu...', 'không hề có ý định làm...'.",
     "longExplanation": "Cấu trúc '～ようとしない' kết hợp động từ thể ý chí (thể ý định: ～よう/～おう) với trợ từ 'と' và thể phủ định 'しない'. Mẫu ngữ pháp này dùng để miêu tả hành vi của người thứ ba (không dùng cho chính bản thân người nói), thể hiện rằng đối phương hoàn toàn ngoan cố, không có chút biểu hiện hay mong muốn thực hiện hành động đó, thường hàm ý chê trách, bức xúc hoặc bất lực của người nói.",
@@ -7015,7 +7395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ようと思う_110": {
+  "ja_n3_ようと思う_110": {
     "title": "～ようと思う (〜you to omou)",
     "shortExplanation": "Diễn đạt ý định, kế hoạch hay quyết định làm một việc gì đó của người nói; 'định làm...', 'tính làm...'.",
     "longExplanation": "Cấu trúc '～ようと思う' kết hợp động từ thể ý chí (thể ý định) với 'と思う' để diễn tả ý định vừa nảy sinh tại thời điểm nói hoặc quyết định của bản thân người nói ('tôi định...'). Khi muốn diễn đạt ý định đã được ấp ủ hoặc lên kế hoạch từ trước đó, người ta thường dùng hình thức tiếp diễn '～ようと思っている'.",
@@ -7035,7 +7415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ように_111": {
+  "ja_n3_ように_111": {
     "title": "～ように (〜you ni)",
     "shortExplanation": "Dùng để biểu thị mục đích ('để mà...', 'sao cho...') hoặc dùng để so sánh ví von, biểu thị dáng vẻ ('như...', 'như thể là...').",
     "longExplanation": "Mẫu ngữ pháp '～ように' có hai cách dùng chính: (1) Biểu thị mục đích hoặc kết quả mong muốn hướng tới của hành động vế sau ('để...', 'sao cho...'), thường đi với động từ thể từ điển, thể khả năng hoặc thể phủ định; (2) Biểu thị sự so sánh, ví von dáng vẻ tương đồng của sự vật, hiện tượng ('giống như...', 'tựa như...').",
@@ -7055,7 +7435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ように_112": {
+  "ja_n3_ように_112": {
     "title": "～ように (〜you ni)",
     "shortExplanation": "Biểu thị mục đích hoặc trạng thái mong muốn hướng tới ('để...', 'nhằm mục đích...') và so sánh ví von ('giống như...', 'như...').",
     "longExplanation": "Cấu trúc '～ように' dùng để kết nối một trạng thái mục tiêu ở mệnh đề trước với hành động nỗ lực thực hiện ở mệnh đề sau ('làm việc B để đạt được trạng thái A'). Vế trước thường đi với các động từ tự nhiên, động từ khả năng hoặc động từ biểu thị sự biến đổi. Bên cạnh đó, khi đi với danh từ ('Danh từ + のように'), cấu trúc biểu đạt sự ví von tương đồng.",
@@ -7075,7 +7455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ように_113": {
+  "ja_n3_ように_113": {
     "title": "～ように (〜you ni)",
     "shortExplanation": "Biểu thị phương thức, cách thức thực hiện hành động ('sao cho...'), mục đích hướng đến ('để...') hoặc so sánh hình tượng ('như...').",
     "longExplanation": "Cấu trúc '～ように' dùng để chỉ cách thức hoặc mức độ mong muốn mà hành động cần đạt tới ('hãy giải thích sao cho dễ hiểu'), chỉ mục đích của sự cố gắng rèn luyện ('học để giỏi tiếng Nhật'), hoặc so sánh cách thức hành động với một đối tượng cụ thể ('hát như chim hót').",
@@ -7095,7 +7475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ようにしましょう_114": {
+  "ja_n3_ようにしましょう_114": {
     "title": "～ようにしましょう (〜you ni shimashou)",
     "shortExplanation": "Dùng để kêu gọi, rủ rê hoặc đề xuất mọi người cùng nỗ lực thực hiện hoặc duy trì một thói quen tốt; 'chúng ta hãy cố gắng...', 'hãy chú ý luôn...'.",
     "longExplanation": "Cấu trúc '～ようにしましょう' kết hợp mẫu ngữ pháp '～ようにする' (cố gắng làm gì / nỗ lực tạo thói quen) với đuôi rủ rê lịch sự '～ましょう'. Mẫu câu này dùng để khuyến khích, động viên hoặc kêu gọi người nghe cùng nhau nỗ lực hình thành một thói quen tích cực hoặc chú ý không để xảy ra hành động tiêu cực nào đó trong cuộc sống.",
@@ -7115,7 +7495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ようになった_115": {
+  "ja_n3_ようになった_115": {
     "title": "～ようになった (〜you ni natta)",
     "shortExplanation": "Diễn tả sự biến đổi về năng lực, thói quen hoặc trạng thái; từ 'chưa thể/chưa từng' trở thành 'đã có thể...', 'bắt đầu...'.",
     "longExplanation": "Mẫu ngữ pháp '～ようになった' biểu thị một quá trình biến đổi theo thời gian dẫn đến việc một khả năng mới được hình thành, một thói quen mới bắt đầu xuất hiện hoặc một trạng thái mới bắt đầu diễn ra. Khi kết hợp với động từ thể khả năng (như 読める, 食べられる), cấu trúc này mang nghĩa 'đã có thể làm được việc gì' (trước đây không làm được). Khi kết hợp với động từ chỉ thói quen hoặc hành động thông thường, nó mang nghĩa 'bắt đầu làm gì, dần dần có thói quen làm gì'.",
@@ -7135,7 +7515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ように言う_116": {
+  "ja_n3_ように言う_116": {
     "title": "～ように言う (〜you ni iu)",
     "shortExplanation": "Dùng để truyền đạt gián tiếp một chỉ thị, yêu cầu, nhắc nhở hoặc lời khuyên; 'bảo/nhắc ai đó hãy làm (hoặc đừng làm) gì'.",
     "longExplanation": "Mẫu ngữ pháp '～ように言う' (cũng như các cách nói tương tự như ように頼む, ように伝える) được sử dụng trong câu tường thuật gián tiếp nhằm truyền đạt lại chỉ thị, yêu cầu, lời dặn dò hay lời khuyên của một người tới người khác. Cách diễn đạt này mang sắc thái mềm mỏng, lịch sự và nhẹ nhàng hơn nhiều so với việc trích dẫn trực tiếp thể mệnh lệnh.",
@@ -7155,7 +7535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_らしい_117": {
+  "ja_n3_らしい_117": {
     "title": "～らしい (〜rashii)",
     "shortExplanation": "Diễn tả thông tin nghe nói hoặc suy đoán dựa trên căn cứ gián tiếp khách quan; 'nghe nói là...', 'hình như...', 'có vẻ như...'.",
     "longExplanation": "Trợ động từ '～らしい' dùng để diễn đạt thông tin mà người nói tiếp nhận được qua lời đồn, nghe ngóng từ người khác hoặc dựa trên các dấu hiệu, chứng cứ gián tiếp khách quan mà phán đoán ('nghe đồn là...', 'hình như là...'). Người nói tường thuật lại thông tin một cách khách quan mà không trực tiếp khẳng định tính xác thực tuyệt đối của sự việc.",
@@ -7175,7 +7555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_られた_118": {
+  "ja_n3_られた_118": {
     "title": "～られた (〜rareta)",
     "shortExplanation": "Thể bị động ở thì quá khứ; diễn tả hành động 'đã bị...', 'đã được...', chủ thể tiếp nhận tác động từ người hoặc sự việc khác.",
     "longExplanation": "'～られた' là dạng quá khứ của trợ động từ bị động (〜れる / 〜られる). Cấu trúc này dùng để diễn tả rằng chủ ngữ đã chịu tác động từ một hành vi do đối tượng khác thực hiện. Trong tiếng Nhật, câu bị động có thể dùng để trần thuật khách quan ('được làm gì'), biểu thị sự phiền hà, thiệt hại đối với chủ thể ('bị làm sao'), hoặc thể bị động sai khiến (〜させられた: 'bị làm cho rung động, cảm động').",
@@ -7195,7 +7575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ている_119": {
+  "ja_n3_ている_119": {
     "title": "～ている (〜te iru)",
     "shortExplanation": "Diễn tả hành động đang tiếp diễn hoặc trạng thái là kết quả của một hành vi đã hoàn thành; 'đang...', 'đang trong trạng thái...'.",
     "longExplanation": "Cấu trúc '～ている' biểu thị các trạng thái ngữ nghĩa phong phú: với động từ tiếp diễn, nó diễn tả hành động đang xảy ra tại thời điểm nói ('đang làm gì'); với động từ chỉ sự thay đổi trạng thái, nó diễn tả hành động đã hoàn tất nhưng kết quả của nó vẫn còn lưu lại ở hiện tại ('đã hoàn tất và đang ở trạng thái đó'); khi kết hợp với thể bị động (như 開けられている, 食べられている), nó nhấn mạnh một trạng thái do hành vi của ai đó tạo ra và hiện trạng vẫn đang tồn tại.",
@@ -7215,7 +7595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけがない_120": {
+  "ja_n3_わけがない_120": {
     "title": "～わけがない (〜wake ga nai)",
     "shortExplanation": "Diễn tả sự phủ định tuyệt đối dựa trên lý lẽ, logic hoặc căn cứ chắc chắn; 'tuyệt đối không thể nào...', 'làm sao có chuyện...'.",
     "longExplanation": "Mẫu ngữ pháp '～わけがない' (trong khẩu ngữ thường dùng '～わけない') được sử dụng khi người nói dựa trên lẽ thường, logic tự nhiên hoặc thông tin chắc chắn để khẳng định rằng một sự việc tuyệt đối không có lý do gì để xảy ra, không thể nào có chuyện như thế được. Khi kết hợp với thể phủ định (〜ないわけがない), cấu trúc mang nghĩa khẳng định mạnh mẽ ('chắc chắn là...').",
@@ -7235,7 +7615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけだ_121": {
+  "ja_n3_わけだ_121": {
     "title": "～わけだ (〜wake da)",
     "shortExplanation": "Diễn tả một kết luận hợp lý, tất yếu sau khi đã hiểu rõ nguyên nhân, lý do; 'thảo nào mà...', 'hóa ra là vì vậy...', 'đương nhiên là...'.",
     "longExplanation": "Mẫu ngữ pháp '～わけだ' được sử dụng khi người nói nhận biết được một tình huống, nguyên nhân hay hoàn cảnh cụ thể, từ đó vỡ lẽ và hiểu ra lý do tại sao sự việc lại diễn ra như vậy ('thảo nào mà lại thế!', 'hóa ra là vậy!'). Nó thể hiện mối liên hệ nhân quả mang tính logic tự nhiên và hiển nhiên giữa nguyên nhân và kết quả.",
@@ -7255,7 +7635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけではない_122": {
+  "ja_n3_わけではない_122": {
     "title": "～わけではない (〜wake dewa nai)",
     "shortExplanation": "Dùng để phủ định một phần, bác bỏ cách nhìn nhận phiến diện hoặc tuyệt đối hóa; 'không hẳn là...', 'không có nghĩa là...', 'không phải là...'.",
     "longExplanation": "Mẫu ngữ pháp '～わけではない' (trong khẩu ngữ thường nói '～わけじゃない') dùng để phủ định một phần nhận định, làm rõ rằng mặc dù tình hình có thể có nét giống như vậy nhưng không hoàn toàn đúng 100% như người khác mặc định hay suy diễn ('không hẳn là như thế'). Cấu trúc này rất hay kết hợp với '〜からといって' (chỉ vì... mà nói là...).",
@@ -7275,7 +7655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけにはいかない_123": {
+  "ja_n3_わけにはいかない_123": {
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
     "shortExplanation": "Diễn tả việc không thể làm gì do ràng buộc bởi đạo đức, trách nhiệm xã hội, lương tâm hoặc tình thế; 'không thể nào...', 'không thể... được'.",
     "longExplanation": "Mẫu ngữ pháp '～わけにはいかない' được dùng khi người nói muốn làm (hoặc không muốn làm) một việc, nhưng xét theo chuẩn mực đạo đức xã hội, nghĩa vụ, trách nhiệm hoặc hoàn cảnh khách quan thì không cho phép làm điều đó ('không thể làm như vậy được'). Khi dùng với thể phủ định '〜ないわけにはいかない', cấu trúc mang nghĩa 'buộc phải làm, không thể không làm' vì trách nhiệm hoặc lương tâm thôi thúc.",
@@ -7295,7 +7675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わりには_124": {
+  "ja_n3_わりには_124": {
     "title": "～わりには (〜wari ni wa)",
     "shortExplanation": "Diễn tả sự trái ngược, bất ngờ giữa tiêu chuẩn/điều kiện thực tế và kết quả; 'dù... nhưng...', 'so với... thì tương đối...'.",
     "longExplanation": "Mẫu ngữ pháp '～わりには' dùng khi kết quả hoặc thực tế không tương xứng, thậm chí trái ngược với những gì người ta thường kỳ vọng từ mức độ, tiêu chuẩn hay điều kiện đã nêu ở vế trước ('so với tiêu chuẩn A thì kết quả B lại ngoài dự tính'). Cấu trúc này thường đi kèm sắc thái bất ngờ, ngạc nhiên của người nói.",
@@ -7315,7 +7695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_んだって_125": {
+  "ja_n3_んだって_125": {
     "title": "～んだって (〜n datte)",
     "shortExplanation": "Dùng trong hội thoại thân mật để truyền đạt lại thông tin, lời đồn nghe được từ người khác; 'nghe nói là...', 'bảo là... đấy'.",
     "longExplanation": "Mẫu ngữ pháp '～んだって' là cách nói thân mật, suồng sã trong giao tiếp hàng ngày, kết hợp giữa thể giải thích '〜のだ (〜んだ)' và trợ từ trích dẫn thông tin gián tiếp 'って'. Nó được dùng để chia sẻ, thuật lại cho đối phương một thông tin mà mình vừa nghe ngóng được từ người khác ('nghe người ta bảo là... đấy').",
@@ -7335,7 +7715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_んだもん_126": {
+  "ja_n3_んだもん_126": {
     "title": "～んだもん (〜nda mon)",
     "shortExplanation": "Dùng trong văn nói thân mật để nêu lý do, phân trần hoặc biện bạch mang tính giãi bày, nũng nịu; 'tại vì... mà', 'bởi vì... đấy thôi'.",
     "longExplanation": "'～んだもん' (hoặc dạng đầy đủ '〜のだもの', dạng rút gọn '〜もん') là cách nói rất thân mật trong khẩu ngữ, thường được phụ nữ và trẻ em sử dụng (cũng rất phổ biến giữa bạn bè thân thiết). Nó dùng để đưa ra lý do nhằm giải thích, biện hộ, phân trần hoặc nũng nịu về một hành động, quyết định hay cảm xúc của bản thân ('tại vì như thế mà!').",
@@ -7355,7 +7735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_上げる_127": {
+  "ja_n3_上げる_127": {
     "title": "～上げる (〜ageru)",
     "shortExplanation": "Biểu thị việc hoàn thành trọn vẹn, rốt ráo một hành động sau khi đã bỏ ra nỗ lực hoặc thời gian; 'làm xong...', 'hoàn tất...'.",
     "longExplanation": "Cấu trúc bổ trợ '～上げる' gắn vào sau thân động từ (thể ます bỏ ます) để diễn tả một hành vi, công việc đòi hỏi nỗ lực, thời gian hoặc sự tập trung cuối cùng đã được hoàn thành xong xuôi, trọn vẹn đến đích (như 書き上げる: viết xong, 作り上げる: hoàn thành tác phẩm, やり上げる: làm xong xuôi).",
@@ -7375,7 +7755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_切れない_128": {
+  "ja_n3_切れない_128": {
     "title": "～切れない (～kirenai)",
     "shortExplanation": "Diễn tả việc không thể làm hết toàn bộ, không thể hoàn thành trọn vẹn vì số lượng quá nhiều hoặc vượt quá giới hạn; 'không thể... hết được'.",
     "longExplanation": "Dạng phủ định '～切れない' là thể khả năng phủ định của trợ động từ '～切る' (làm hết, làm đến cùng). Nó được gắn vào sau thân động từ để diễn tả rằng do số lượng quá lớn, thời gian có hạn hoặc sức lực không cho phép, người ta không thể nào hoàn tất hay thực hiện hết toàn bộ hành động đó đến cùng ('không thể nào làm xuể', 'không sao kể xiết').",
@@ -7395,7 +7775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_必ずしもとは限らない_129": {
+  "ja_n3_必ずしもとは限らない_129": {
     "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
     "shortExplanation": "Diễn tả sự phủ định tính tất yếu hoặc quy luật tuyệt đối; 'không nhất thiết...', 'chưa hẳn là...', 'không phải lúc nào cũng...'.",
     "longExplanation": "Cấu trúc '必ずしも～とは限らない' là một trong những cách diễn đạt phủ định một phần tiêu biểu nhất trong tiếng Nhật. Phó từ '必ずしも' (nhất thiết, luôn luôn) kết hợp với vị ngữ phủ định 'とは限らない' (không hạn định/quy định là) nhằm phản bác lại suy nghĩ cho rằng một điều gì đó là luôn luôn đúng trong mọi trường hợp, chỉ ra rằng vẫn luôn tồn tại ngoại lệ ('không nhất thiết cứ A thì sẽ là B').",
@@ -7415,7 +7795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_最中に_130": {
+  "ja_n3_最中に_130": {
     "title": "～最中に (～saichuu ni)",
     "shortExplanation": "Diễn tả một sự việc, hành động bất ngờ xảy ra chen ngang vào đúng lúc một hành động khác đang diễn ra; 'đúng lúc đang...', 'ngay trong lúc...'.",
     "longExplanation": "Mẫu ngữ pháp '～最中に' (hoặc '～最中だ') được dùng để nhấn mạnh rằng một sự việc bất ngờ hoặc một hành động chen ngang (thường gây cản trở hoặc ngoài dự tính) xảy ra đúng vào lúc một hành động khác đang được thực hiện sôi nổi, cao độ nhất. Thường đi kèm với động từ dạng 〜ている hoặc danh từ chỉ hành động gắn với の (như 会議の最中, 食事の最中). Vế sau thường là sự việc xảy ra trong khoảnh khắc ngắn làm gián đoạn vế trước.",
@@ -7435,7 +7815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_決してない_131": {
+  "ja_n3_決してない_131": {
     "title": "決して～ない (kesshite ~ nai)",
     "shortExplanation": "Nhấn mạnh sự phủ định tuyệt đối hoặc quyết tâm mạnh mẽ; 'tuyệt đối không...', 'nhất quyết không...', 'không bao giờ...'.",
     "longExplanation": "Phó từ '決して' kết hợp với vị ngữ ở thể phủ định (〜ない, 〜ません, 〜ないで, v.v.) nhằm nhấn mạnh sự phủ định tuyệt đối một sự việc hoặc biểu thị ý chí, quyết tâm sắt đá không thực hiện hành vi đó trong bất kỳ hoàn cảnh nào. Thường xuất hiện trong lời hứa, lời thề, lời dặn dò khuyên can hoặc phán đoán dứt khoát mang tính nguyên tắc.",
@@ -7455,7 +7835,27 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aおまけに_1": {
+  "ja_n2_A_0": {
+    "title": "A あるいは B (A aruiwa B)",
+    "shortExplanation": "Dùng để liên kết các lựa chọn tương đương mang tính trang trọng; 'hoặc là...', 'hoặc...', 'A hoặc B'.",
+    "longExplanation": "Liên từ 'あるいは' (có thể viết bằng chữ Hán 或いは) dùng để kết nối hai hay nhiều sự vật, phương án hoặc mệnh đề có tính chất ngang bằng, nhằm đưa ra các khả năng lựa chọn tương đương ('A hoặc là B'). Mang sắc thái trang trọng, văn viết và thường được dùng phổ biến trong văn bản hành chính, văn bản học thuật, báo chí cũng như các thông báo chính thức.",
+    "formation": "Cụm từ A / Câu A + あるいは + Cụm từ B / Câu B",
+    "examples": [
+      {
+        "translation": "Hôm nay tôi dự định hoặc là đi xem phim, hoặc là đi mua sắm."
+      },
+      {
+        "translation": "Cô ấy có thể nói chuyện bằng tiếng Anh hoặc tiếng Đức."
+      },
+      {
+        "translation": "Chúng tôi thích uống cà phê hoặc là trà."
+      },
+      {
+        "translation": "Với công việc này, bạn có thể làm việc dưới tư cách là nhân viên chính thức hoặc nhân viên hợp đồng."
+      }
+    ]
+  },
+  "ja_n2_Aおまけに_1": {
     "title": "A。おまけに B。(~omake ni)",
     "shortExplanation": "Biểu thị sự bổ sung thêm một thông tin, thường làm tăng thêm mức độ tiêu cực hoặc tích cực; 'đã vậy lại còn...', 'hơn nữa', 'thêm vào đó'.",
     "longExplanation": "Liên từ 'おまけに' (nguồn gốc từ chữ '御負け' mang nghĩa phần tặng kèm thêm) đứng ở đầu câu thứ hai để bổ sung thêm một sự việc, tình trạng cùng chiều hướng với câu trước. Mặc dù có thể dùng cho cả điều tích cực, cấu trúc này rất hay được dùng để nhấn mạnh sự bất lợi, khó khăn, rắc rối bị dồn dập (theo kiểu 'họa vô đơn chí', 'đã nghèo lại còn mắc cái eo', 'đã... lại còn...').",
@@ -7475,7 +7875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aさて_2": {
+  "ja_n2_Aさて_2": {
     "title": "A。さて B。(A. Sate B.)",
     "shortExplanation": "Dùng để chuyển chủ đề hoặc bắt đầu một hành động tiếp theo sau khi đã kết thúc việc trước; 'nào', 'bây giờ thì', 'và sau đây'.",
     "longExplanation": "Liên từ 'さて' thường đứng ở đầu câu nhằm đánh dấu sự chuyển đổi chủ đề nói chuyện hoặc chuyển hướng hành động sang một giai đoạn mới sau khi giai đoạn trước đã kết thúc, được tạm gác lại ('nào bây giờ...', 'thôi được rồi...'). Thường dùng trong hội thoại, bài phát biểu, dẫn chương trình để thu hút sự chú ý của người nghe vào nội dung chính tiếp theo.",
@@ -7495,7 +7895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aしかも_3": {
+  "ja_n2_Aしかも_3": {
     "title": "A。しかも B。(A. Shikamo B.)",
     "shortExplanation": "Dùng để bổ sung thêm một đặc điểm, thông tin có mức độ cao hơn vào câu trước; 'hơn nữa', 'đã vậy lại còn...', 'mà lại còn...'.",
     "longExplanation": "Liên từ 'しかも' dùng để liên kết hai vế câu mang tính độc lập, biểu thị sự bổ sung thêm một thông tin cùng chiều hướng mang tính nhấn mạnh vào vế trước ('hơn thế nữa', 'lại còn...'). Thường dùng để làm nổi bật mức độ ấn tượng của sự vật, sự việc (ví dụ: món ăn ngon mà giá lại còn rẻ, sinh viên vừa học giỏi mà thể thao lại còn xuất sắc).",
@@ -7515,7 +7915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aしたがって_4": {
+  "ja_n2_Aしたがって_4": {
     "title": "A。したがって B。(A. Shitagatte B.)",
     "shortExplanation": "Biểu thị mối quan hệ nhân quả logic mang tính tất yếu và trang trọng; 'do đó', 'vì vậy', 'theo đó'.",
     "longExplanation": "Liên từ 'したがって' (có thể viết chữ Hán 従って) dùng để liên kết hai câu, trong đó câu A là nguyên nhân, căn cứ hoặc tiền đề lý luận, còn câu B là kết quả, phán đoán hoặc kết luận tất yếu được rút ra một cách logic từ câu A. Mang sắc thái trang trọng, khách quan và văn phong trang nhã, thường được dùng trong các bài thuyết trình, văn bản nghị luận, báo cáo hoặc văn bản pháp lý.",
@@ -7535,27 +7935,27 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_5": {
-    "title": "A であれ B であれ (A deare B deare)",
-    "shortExplanation": "Biểu thị ý dù là A hay B thì nhận định hoặc kết quả vẫn bình đẳng, không thay đổi; 'cho dù là A hay B', 'dù là... hay...'.",
-    "longExplanation": "Mẫu ngữ pháp 'A であれ B であれ' (dạng liên kết của trợ động từ khẳng định である) đi kèm các cặp từ tương phản hoặc cùng nhóm để nhấn mạnh rằng dù trong trường hợp A hay trường hợp B thì kết quả, quy định hay tính chất phía sau đều áp dụng như nhau, không có sự phân biệt hay ngoại lệ ('cho dù là A hay B', 'bất kể là... hay...'). Mẫu này thuộc phong cách văn viết trang trọng, mang tính khái quát cao.",
-    "formation": "Danh từ 1 + であれ + Danh từ 2 + であれ | Tính từ đuôi な (thân từ) + であれ + Tính từ đuôi な (thân từ) + であれ",
+  "ja_n2_A_5": {
+    "title": "A すなわち B。 (A sunawachi B)",
+    "shortExplanation": "Dùng để giải thích lại, làm rõ ý hoặc nêu ra quan hệ đồng nhất giữa A và B; 'tức là', 'nói cách khác', 'đó chính là'.",
+    "longExplanation": "Liên từ 'すなわち' (có thể viết bằng chữ Hán 即ち) dùng để biểu thị rằng nội dung B là sự diễn đạt lại, làm rõ nghĩa hoặc đồng nhất với nội dung A vừa nêu trước đó ('tức là', 'nói cách khác là'). Từ này mang tính chất diễn giải logic, định nghĩa hoặc tóm tắt bản chất vấn đề, thường xuất hiện trong phong cách văn viết trang trọng, thuyết trình, bài giảng hoặc văn bản học thuật.",
+    "formation": "Cụm từ A / Câu A + すなわち + Cụm từ B / Câu B",
     "examples": [
       {
-        "translation": "Cho dù là mưa hay tuyết thì trận đấu cũng không bị hủy bỏ."
+        "translation": "Tôi muốn tạo ra thành quả xuất sắc, tức là, tôi muốn thành công."
       },
       {
-        "translation": "Dù là nam hay nữ thì cũng đều cần được đối xử bình đẳng."
+        "translation": "Anh ấy nghẹn lời, nói cách khác là anh ấy chẳng thể nói được gì."
       },
       {
-        "translation": "Dù giàu sang hay nghèo khó, hạnh phúc thực sự không thể mua được bằng tiền."
+        "translation": "Cô ấy không ngừng nỗ lực hướng tới mục tiêu của mình, tức là cô ấy đang vô cùng cố gắng."
       },
       {
-        "translation": "Dù là người có kinh nghiệm hay người mới bắt đầu, ai cũng có thể tận hưởng trò chơi này."
+        "translation": "Cửa hàng này coi trọng sự hài lòng của khách hàng nhất, nói cách khác chính là dịch vụ rất tốt."
       }
     ]
   },
-  "ja_Aすると_6": {
+  "ja_n2_Aすると_6": {
     "title": "A。すると B。(~suruto)",
     "shortExplanation": "Biểu thị khi hành động A vừa diễn ra thì ngay lập tức xuất hiện hành động hoặc tình huống B; 'thế là', 'vừa làm vậy thì...', 'ngay sau đó'.",
     "longExplanation": "Mẫu liên từ 'すると' đứng ở đầu câu thứ hai nhằm diễn tả việc sau khi hành động A ở câu trước vừa được thực hiện hoặc hoàn thành, thì sự việc B lập tức diễn ra một cách tự nhiên hoặc ngoài dự kiến như một hệ quả theo sau. Thường dùng trong lời kể để thuật lại diễn biến sự việc xảy ra trong thực tế theo dòng thời gian. Lưu ý: vế B không dùng cho câu thể hiện ý chí, mệnh lệnh hay nhờ vả của người nói.",
@@ -7575,7 +7975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aそういえば_7": {
+  "ja_n2_Aそういえば_7": {
     "title": "A。そういえば B。(~souieba)",
     "shortExplanation": "Dùng khi nhớ ra hoặc liên tưởng đến một điều gì đó liên quan từ nội dung câu trước; 'nhắc mới nhớ', 'nhân tiện', 'nói đến việc đó thì...'.",
     "longExplanation": "Mẫu liên từ 'そういえば' (phát triển từ 'そう言えば': nếu nói như vậy) đứng ở đầu câu thứ hai, được người nói sử dụng khi nghe thấy hoặc nói ra điều A ở câu trước mà sực nhớ ra, liên tưởng tới một thông tin hoặc câu chuyện liên quan khác ở câu B ('nhắc mới nhớ ra là...', 'tiện đây nói luôn...'). Rất phổ biến trong giao tiếp thường ngày để dẫn dắt câu chuyện sang một chủ đề mới có liên quan.",
@@ -7595,7 +7995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aそこで_8": {
+  "ja_n2_Aそこで_8": {
     "title": "A。そこで B。(~sokode)",
     "shortExplanation": "Diễn tả việc dựa trên tình huống hoặc vấn đề ở câu A mà đưa ra biện pháp, hành động ứng phó ở câu B; 'do vậy', 'chính vì thế', 'bởi vậy nên'.",
     "longExplanation": "Liên từ 'そこで' đứng ở đầu câu, dùng để liên kết khi câu A nêu ra một hoàn cảnh, vấn đề hoặc lý do thực tế, và câu B trình bày hành động có chủ đích, quyết định hoặc giải pháp mà chủ thể đưa ra để ứng phó với tình hình đó ('chính vì thế nên tôi đã quyết định...', 'do đó mà...'). Khác với 'それで' (thường chỉ kết quả tự nhiên, khách quan), 'そこで' đặc biệt nhấn mạnh vào hành vi có chủ ý và biện pháp giải quyết của người nói.",
@@ -7615,7 +8015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AそれがB_9": {
+  "ja_n2_AそれがB_9": {
     "title": "A。それがB。(~sorega)",
     "shortExplanation": "Khẳng định rằng sự việc A chính là định nghĩa, bản chất thực sự của B; 'đó chính là...', 'đó mới là...'.",
     "longExplanation": "Mẫu câu 'A。それがB。' sử dụng đại từ chỉ thị 'それが' để quy chiếu toàn bộ hành vi, trạng thái hay hiện tượng A được nhắc đến ở câu trước, và đưa ra định nghĩa, đúc kết mang tính bản chất rằng đó chính là hiện thân đích thực của khái niệm B ('đó mới thực sự là B', 'đó chính là cái gọi là B'). Thường đi với các cách nói định nghĩa như '〜というものだ', '〜の魅力だ', '〜の証拠だ'.",
@@ -7635,7 +8035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aそれで_10": {
+  "ja_n2_Aそれで_10": {
     "title": "A。それで B。 (~sore de)",
     "shortExplanation": "Biểu thị mối quan hệ nhân quả tự nhiên giữa hai sự việc trong lời kể; 'vì vậy', 'thế nên', 'do đó'.",
     "longExplanation": "Liên từ 'それで' đứng ở đầu câu, liên kết câu A (nguyên nhân, hoàn cảnh thực tế) với câu B (kết quả, hệ quả diễn biến tự nhiên tiếp theo). Đây là liên từ diễn đạt nhân quả rất thông dụng trong đời sống hàng ngày để trần thuật lại lý do và diễn biến của sự việc ('vì chuyện đó mà...'). Lưu ý vế sau thường là sự thật khách quan hoặc điều đã xảy ra, không dùng cho các câu mệnh lệnh, rủ rê hay ý chí can thiệp mạnh.",
@@ -7655,7 +8055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aそれでも_11": {
+  "ja_n2_Aそれでも_11": {
     "title": "A。それでも B。(~sore demo)",
     "shortExplanation": "Biểu thị sự đối lập nhượng bộ; dù có tình huống A ở trước thì hành động, quyết định B ở sau vẫn được thực hiện; 'dù vậy', 'cho dù như thế', 'thế nhưng vẫn...'.",
     "longExplanation": "Liên từ 'それでも' (nguồn gốc từ それ＋でも: cho dù là như thế) đứng ở đầu câu thứ hai để diễn tả quan hệ tương phản mang tính nhượng bộ. Nó chỉ ra rằng mặc dù thừa nhận thực tế hoặc hoàn cảnh bất lợi, trở ngại được nêu ra ở câu A, nhưng chủ thể vẫn giữ nguyên ý định, tiếp tục thực hiện hành động B, hoặc một sự việc B trái với dự đoán thông thường vẫn xảy ra ('dù vậy nhưng vẫn...').",
@@ -7675,7 +8075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aそれなのに_12": {
+  "ja_n2_Aそれなのに_12": {
     "title": "A。それなのに B。(~sorenanoni)",
     "shortExplanation": "Biểu thị sự bất bình, ngạc nhiên hoặc tiếc nuối khi kết quả trái ngược hoàn toàn với mong đợi từ tiền đề trước; 'vậy mà', 'thế nhưng', 'ấy thế mà'.",
     "longExplanation": "Liên từ 'それなのに' (kết hợp từ それ + なのに) đứng ở đầu câu thứ hai, dùng để chỉ ra sự mâu thuẫn gay gắt giữa sự việc A và sự việc B. Khi sự việc A xảy ra, thông thường người ta sẽ kỳ vọng một kết quả tương xứng, nhưng trên thực tế sự việc B lại đi ngược lại hoàn toàn, tạo nên cảm giác bất ngờ, khó hiểu, thất vọng hoặc phàn nàn, bất bình ('ấy thế mà...', 'vậy mà...').",
@@ -7695,7 +8095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aそれなら_13": {
+  "ja_n2_Aそれなら_13": {
     "title": "A。それなら B。(A. Sore nara B.)",
     "shortExplanation": "Dùng để tiếp nhận thông tin hoặc tình huống ở vế A rồi đưa ra phán đoán, quyết định hoặc hành động ở vế B; 'nếu vậy thì...', 'thế thì...', 'trong trường hợp đó thì...'.",
     "longExplanation": "Liên từ 'それなら' (dạng khẩu ngữ của 'それならば') được đặt ở đầu câu B để tiếp nhận tình huống, sự việc hoặc điều kiện vừa được nhắc đến ở câu A trước đó, từ đó đưa ra kết luận logic, quyết định, gợi ý hoặc hướng xử lý tiếp theo của người nói. Cấu trúc này tương đương với 'nếu là như thế thì...', 'thế thì...', 'vậy thì...' trong tiếng Việt.",
@@ -7715,7 +8115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_14": {
+  "ja_n2_A_14": {
     "title": "A それはそうと B。 (A Sore wa sou to B)",
     "shortExplanation": "Dùng để gác lại chủ đề đang nói ở vế A và chuyển sang một chủ đề hoàn toàn mới ở vế B; 'chuyện đó thì hãy gác lại đã...', 'tiện đây thì...', 'nói chuyện đó mới nhớ...'.",
     "longExplanation": "Liên từ 'それはそうと' được dùng trong giao tiếp khi người nói muốn cắt ngang hoặc tạm gác lại đề tài đang bàn luận ở câu A để nhanh chóng chuyển hướng cuộc trò chuyện sang một chủ đề mới, khác biệt ở câu B. Tương đương với các cách nói 'chuyện đó tạm thời để sau, còn chuyện này...', 'nói chuyện đó mới nhớ...', 'tiện thể thì...' trong tiếng Việt.",
@@ -7735,7 +8135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aだが_15": {
+  "ja_n2_Aだが_15": {
     "title": "A。だが B。(~daga)",
     "shortExplanation": "Liên từ biểu thị quan hệ tương phản, đối lập giữa hai câu; mang nghĩa 'nhưng', 'tuy nhiên', 'thế nhưng'.",
     "longExplanation": "Liên từ 'だが' (là dạng rút gọn của 'であるが') dùng để nối hai câu văn hoàn chỉnh có ý nghĩa trái ngược hoặc mang tính tương phản nhau. Vế A nêu ra một sự việc, và vế B đưa ra một điều đối lập hoặc hạn chế so với vế A. Cấu trúc này thường mang sắc thái văn viết hoặc phong cách nói ngắn gọn, dứt khoát, trang trọng hơn so với 'でも'.",
@@ -7755,7 +8155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AただB_16": {
+  "ja_n2_AただB_16": {
     "title": "A。ただB。(~tada)",
     "shortExplanation": "Dùng để bổ sung thêm một điểm ngoại lệ, hạn chế hoặc mặt còn lại của sự việc so với vế A; 'chỉ có điều là...', 'có điều...', 'tuy nhiên...'.",
     "longExplanation": "Liên từ 'ただ' được đặt ở đầu câu B nhằm thừa nhận và công nhận toàn bộ nội dung ở câu A, nhưng bổ sung thêm một chi tiết nhỏ, một sự thật hạn chế, một khuyết điểm hoặc góc nhìn đối lập mang tính ngoại lệ ở câu B. Khác với sự đối lập hoàn toàn của 'しかし', 'ただ' mang sắc thái 'nhìn chung là ổn/đúng, chỉ có điều là còn một điểm này nữa'.",
@@ -7775,7 +8175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AただしB_17": {
+  "ja_n2_AただしB_17": {
     "title": "A。ただしB。 (A. Tadashi B)",
     "shortExplanation": "Dùng để bổ sung thêm điều kiện ràng buộc, lưu ý hoặc trường hợp ngoại lệ cho sự việc vừa nêu ở câu A; 'tuy nhiên', 'nhưng với điều kiện là...', 'chỉ có điều là...'.",
     "longExplanation": "Liên từ 'ただし' được đặt ở đầu câu B nhằm đưa ra một điều kiện tiên quyết, một sự giới hạn, ngoại lệ hoặc điều khoản ràng buộc bắt buộc đối với tuyên bố ở câu A. Cấu trúc này thường xuất hiện trong các thông báo, quy định, hợp đồng, chỉ dẫn chính thức hoặc lời dặn dò có tính nguyên tắc.",
@@ -7795,7 +8195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aだって_18": {
+  "ja_n2_Aだって_18": {
     "title": "A。だって B。(Datte~)",
     "shortExplanation": "Dùng trong văn nói thân mật để đưa ra lý do, lời giải thích hoặc trần tình một cách tự nhiên; 'bởi vì...', 'tại vì... mà', 'thì là vì...'.",
     "longExplanation": "Trong khẩu ngữ thân mật hàng ngày, 'だって' được sử dụng để nêu lên nguyên nhân, lý do, viện cớ hoặc giải thích cho hành động, đề xuất ở vế sau ('bởi vì...', 'tại là...'). Cấu trúc này thường dùng khi trò chuyện thân thiết với bạn bè, người thân để bày tỏ cảm xúc phân bua, giãi bày hoặc nhấn mạnh căn cứ cho lời rủ rê, khuyên nhủ.",
@@ -7815,7 +8215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aちなみに_19": {
+  "ja_n2_Aちなみに_19": {
     "title": "A。ちなみに B。(A. Chinamini B.)",
     "shortExplanation": "Dùng để bổ sung thêm thông tin phụ, thông tin tham khảo liên quan đến chủ đề vừa nhắc ở câu A; 'nhân tiện', 'tiện đây xin nói thêm', 'nói thêm là...'.",
     "longExplanation": "Liên từ 'ちなみに' (dạng Hán tự: 因みに) được sử dụng khi người nói muốn nhân thể bổ sung thêm một thông tin liên quan, một chi tiết tham khảo hoặc kiến thức bên lề nhằm làm rõ và mở rộng thêm cho chủ đề vừa đề cập ở câu A. Khác với 'それはそうと' (chuyển hẳn sang đề tài mới), 'ちなみに' vẫn xoay quanh chủ đề trước đó nhưng cung cấp thêm góc nhìn hữu ích.",
@@ -7835,7 +8235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aということは_20": {
+  "ja_n2_Aということは_20": {
     "title": "A。ということは B。 (A. To iu koto wa B.)",
     "shortExplanation": "Dựa vào sự thực ở vế A để rút ra suy luận logic hoặc kết luận tất yếu ở vế B; 'điều đó có nghĩa là...', 'như thế tức là...', 'nói vậy nghĩa là...'.",
     "longExplanation": "Mẫu câu liên kết 'ということは' được sử dụng khi người nói tiếp nhận một hiện tượng, thông tin hoặc chứng cứ quan sát được ở câu A, từ đó suy đoán, diễn giải logic hoặc rút ra kết luận mang tính tất yếu ở câu B. Vế B thường đi kèm với các cách diễn đạt phỏng đoán, suy luận như '～に違いない' (chắc chắn là), '～かもしれない' (có thể là), '～ということだ' (tức là).",
@@ -7855,7 +8255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aというのは_21": {
+  "ja_n2_Aというのは_21": {
     "title": "A。というのは B。(Toiu no wa~)",
     "shortExplanation": "Dùng để giải thích lý do, nguyên nhân hoặc làm rõ chi tiết cho nhận định vừa đưa ra ở câu A; 'lý do là vì...', 'đó là bởi vì...', 'sở dĩ như vậy là vì...'.",
     "longExplanation": "Liên từ 'というのは' được đặt ở đầu câu B nhằm giải thích cặn kẽ nguyên nhân, động cơ hoặc định nghĩa cụ thể cho điều đã nêu ở câu A trước đó. Cấu trúc này thường đi kèm với các hình thức biểu thị nguyên nhân ở cuối câu như '～からだ', '～ためだ' ('lý do là bởi vì...'), giúp câu văn mang tính logic và giải thích rõ ràng.",
@@ -7875,7 +8275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_AなおB_22": {
+  "ja_n2_AなおB_22": {
     "title": "A。なおB。(A. Nao B.)",
     "shortExplanation": "Dùng để bổ sung thêm thông tin, thông báo hoặc giải thích thêm bên cạnh điều đã nêu ở câu A; 'ngoài ra', 'hơn nữa', 'thêm vào đó'.",
     "longExplanation": "Liên từ 'なお' (dạng Hán tự: 尚) được dùng để kết nối hai câu, trong đó câu B cung cấp thêm thông tin đồng loại, chi tiết bổ sung hoặc lưu ý cần thiết sau khi câu A đã hoàn tất. Cấu trúc này thường mang sắc thái trang trọng, khách quan, được sử dụng rất phổ biến trong các thông báo hành chính, văn bản hướng dẫn, tin tức và thư từ công việc.",
@@ -7895,7 +8295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Aもっとも_23": {
+  "ja_n2_Aもっとも_23": {
     "title": "A。もっとも B。(Motto mo ~)",
     "shortExplanation": "Dùng để đưa ra lời bổ sung, đính chính hoặc điều chỉnh nhẹ sau khi khẳng định vế A; 'tuy nhiên', 'nói thế chứ...', 'dù vậy thì...'.",
     "longExplanation": "Liên từ 'もっとも' (dạng Hán tự: 尤も) được sử dụng khi người nói sau khi đưa ra nhận định hoặc khẳng định chung ở câu A, bèn cảm thấy cần thêm một điều chỉnh, một điều kiện ngoại lệ hoặc một mặt hạn chế ở câu B để câu nói không trở nên phiến diện hay tuyệt đối hóa quá mức. Mang sắc thái 'nói thế thôi chứ thực ra...', 'tuy vậy thì cũng phải nói thêm rằng...' trong tiếng Việt.",
@@ -7915,7 +8315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A要するに_24": {
+  "ja_n2_A要するに_24": {
     "title": "A。要するに B。(A. Yousuru ni B.)",
     "shortExplanation": "Dùng để tóm lược, khái quát lại những điều chi tiết hoặc dài dòng ở câu A thành một kết luận ngắn gọn, súc tích ở câu B; 'tóm lại là...', 'nói tóm lại...', 'nói một cách đơn giản là...'.",
     "longExplanation": "Liên từ '要するに' (dạng Hán tự: 要するに) được sử dụng khi người nói muốn đúc kết, cô đọng nội dung vừa phân tích hoặc giải thích dài dòng ở vế A thành một ý cốt lõi, trọng tâm nhất ở vế B. Tương đương với các cách diễn đạt 'tóm lại', 'nói tóm lại là', 'nói chung quy là' trong tiếng Việt.",
@@ -7935,27 +8335,247 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_29": {
-    "title": "Số từ tối thiểu + たりとも～ない (tari tomo ~ nai)",
-    "shortExplanation": "Đi với lượng từ tối thiểu (như 1 phút, 1 lời, 1 lần...) để phủ định hoàn toàn; 'dù chỉ một... cũng không...', 'ngay cả một... cũng chẳng...'.",
-    "longExplanation": "Mẫu ngữ pháp 'Số từ tối thiểu (thường là 1) + Lượng từ + たりとも + Vế phủ định' là cách diễn đạt mang tính văn chương trang trọng, dùng để nhấn mạnh sự phủ định triệt để ('ngay cả một... cũng tuyệt đối không...'). Vế trước luôn là đơn vị số lượng nhỏ nhất có thể (như 一日, 一秒, 一滴, 一円, 一人), vế sau kết hợp với các động từ ở dạng phủ định để khẳng định không có bất kỳ ngoại lệ hay sự lãng phí nào.",
-    "formation": "Số từ tối thiểu (1 + Lượng từ) + たりとも + Vị ngữ phủ định (～ない / ～ず / ～するな)",
+  "ja_n2_Noun_25": {
+    "title": "Danh từ + につき (〜ni tsuki)",
+    "shortExplanation": "Biểu thị nguyên nhân, lý do trang trọng trong thông báo, biển báo ('do...', 'vì...'); hoặc biểu thị tỷ lệ, đơn vị tương ứng ('mỗi...', 'cứ mỗi...').",
+    "longExplanation": "Mẫu ngữ pháp '～につき' có hai cách dùng chính rất quan trọng: (1) Biểu thị lý do, nguyên nhân mang tính trang trọng, văn viết, chuyên dùng trong các biển hiệu, thông báo công cộng, văn bản hành chính (ví dụ: 工事中につき - vì đang thi công, 清掃中につき - vì đang dọn dẹp); (2) Đứng sau số từ hoặc danh từ để biểu thị tỷ lệ, phân bổ theo từng đơn vị (tương đương với 'mỗi...', 'cứ mỗi đơn vị...').",
+    "formation": "Danh từ + につき",
     "examples": [
       {
-        "translation": "Đừng có lãng phí dù chỉ một phút một giây nào!"
+        "translation": "Do đang có kỳ thi, xin vui lòng giữ yên lặng trong ngày hôm nay."
       },
       {
-        "translation": "Anh ta không hé răng nói dù chỉ một lời nào."
+        "translation": "Khu vực này do đang thi công nên cấm người qua lại."
       },
       {
-        "translation": "Cô ấy chưa từng xem bộ phim đó, dẫu chỉ một lần."
+        "translation": "Bảo tàng do đang trong thời gian bảo trì nên được miễn phí vé vào cổng."
       },
       {
-        "translation": "Tôi không giữ bất kỳ tấm ảnh nào về nó, dù chỉ là một tấm."
+        "translation": "Cứ mỗi một sản phẩm sẽ được giảm giá 1.000 yên."
       }
     ]
   },
-  "ja_あげく_37": {
+  "ja_n2_Noun_26": {
+    "title": "Danh từ + にて (Noun nite)",
+    "shortExplanation": "Dạng trang trọng, lịch sự của trợ từ で; dùng để biểu thị địa điểm diễn ra sự kiện ('tại...'), hoặc phương tiện, phương thức ('bằng...', 'qua...').",
+    "longExplanation": "Trợ từ 'にて' có chức năng ngữ pháp tương đương với trợ từ 'で', nhưng mang sắc thái cổ kính, trang trọng và lịch sự hơn nhiều. Cấu trúc này thường được sử dụng trong văn phong viết, thông báo chính thức, thiệp mời, thư từ thương mại hoặc các bài phát biểu nghi thức để chỉ nơi chốn diễn ra sự kiện, hoạt động ('tại nơi nào'), hoặc chỉ phương tiện, phương thức thực hiện ('bằng cách nào', 'thông qua phương tiện nào').",
+    "formation": "Danh từ (địa điểm / phương tiện / phương thức) + にて",
+    "examples": [
+      {
+        "translation": "Sự kiện sẽ được tổ chức tại quảng trường trước nhà ga."
+      },
+      {
+        "translation": "Cuộc họp sẽ được tiến hành tại khách sạn."
+      },
+      {
+        "translation": "Tôi đã nhận bưu kiện tại bưu điện."
+      },
+      {
+        "translation": "Khi tra cứu qua internet, tôi đã tìm ra câu trả lời."
+      }
+    ]
+  },
+  "ja_n2_Noun_27": {
+    "title": "Danh từ + のことだから (Noun no koto dakara)",
+    "shortExplanation": "Dựa vào tính cách, thói quen hoặc đặc trưng vốn có của người hoặc sự vật để đưa ra phán đoán mang tính quy luật; 'chính vì là...', 'vì tính cách của... nên chắc là...'.",
+    "longExplanation": "Cấu trúc '～のことだから' thường đi liền sau một danh từ chỉ người (hoặc đôi khi là sự vật, tổ chức) mà người nói nắm rất rõ tính nết, thói quen hoặc bản chất đặc trưng. Người nói dùng sự hiểu biết đó làm căn cứ vững chắc để suy đoán hành vi, kết quả sắp tới ('vì đã là anh ấy thì kiểu gì cũng...'). Vế sau thường kết thúc bằng các phỏng đoán như '～だろう', '～はずだ', '～かもしれない'.",
+    "formation": "Danh từ (chỉ người / tổ chức / sự vật) + のことだから",
+    "examples": [
+      {
+        "translation": "Chính vì là người giỏi nấu nướng như anh ấy, chắc chắn anh ấy sẽ nấu cho chúng ta những món ăn thật ngon."
+      },
+      {
+        "translation": "Vì là cô ấy vốn luôn đến muộn, nên có khi hôm nay cô ấy lại đến trễ nữa cũng nên."
+      },
+      {
+        "translation": "Vì là một cửa hàng bán đồ rẻ, chắc hẳn sẽ bán được rất nhiều hàng."
+      },
+      {
+        "translation": "Vì là anh ấy vốn rất thích phim truyền hình, nên bàn về những bộ phim mới nhất sẽ rất hợp đấy."
+      }
+    ]
+  },
+  "ja_n2_Noun_28": {
+    "title": "Danh từ + をはじめ (Noun wo hajime)",
+    "shortExplanation": "Đưa ra một ví dụ tiêu biểu, đại diện nhất trước tiên rồi kéo theo các đối tượng khác cùng loại; mang nghĩa 'trước tiên phải kể đến...', 'tiêu biểu là...', 'từ... cho đến...'.",
+    "longExplanation": "Mẫu ngữ pháp '～をはじめ' (bắt nguồn từ động từ 始める - bắt đầu) được dùng để nêu ra một sự vật, đối tượng tiêu biểu hoặc đại diện nổi bật nhất của một nhóm hoặc tập hợp, sau đó liệt kê hoặc ngụ ý đến nhiều đối tượng tương tự khác. Thường được dịch là 'trước hết phải kể đến...', 'đầu tiên là...', 'tiêu biểu là...'. Cấu trúc này thường dùng trong văn phong tương đối trang trọng, bài thuyết trình, phóng sự hoặc văn viết.",
+    "formation": "Danh từ + をはじめ",
+    "examples": [
+      {
+        "translation": "Tại nhà hàng này, quý khách có thể thưởng thức rất nhiều món ăn đa dạng, trước hết phải kể đến ẩm thực Nhật Bản."
+      },
+      {
+        "translation": "Anh ấy sưu tầm không chỉ hội họa mà còn cả các tác phẩm điêu khắc và nhiếp ảnh."
+      },
+      {
+        "translation": "Lễ hội truyền thống đang được tổ chức tại một số thành phố của Nhật Bản, tiêu biểu như Kyoto."
+      },
+      {
+        "translation": "Hệ Mặt Trời bao gồm Mặt Trời và cả các hành tinh khác như Trái Đất, Sao Hỏa."
+      }
+    ]
+  },
+  "ja_n2_Noun_29": {
+    "title": "Danh từ + をはじめとして (Noun wo hajime to shite)",
+    "shortExplanation": "Nêu ra đối tượng đại diện, điển hình hàng đầu để mở rộng ra các sự vật khác; mang nghĩa 'tiêu biểu là...', 'trước hết phải kể đến...', 'khởi đầu là...'.",
+    "longExplanation": "Mẫu câu '～をはじめとして' là dạng biến thể liên kết nhấn mạnh của '～をはじめ'. Cấu trúc này đặt một danh từ mang tính đại diện, nổi bật nhất lên đầu để làm minh chứng điển hình, qua đó nhấn mạnh rằng còn có rất nhiều đối tượng tương tự khác cũng được bao hàm trong phạm vi đó. Thường dùng trong các phát biểu chính thức, tin tức hoặc văn bản hành chính, học thuật.",
+    "formation": "Danh từ + をはじめとして",
+    "examples": [
+      {
+        "translation": "Ở Nhật Bản có rất nhiều điểm tham quan du lịch, tiêu biểu phải kể đến là Tokyo."
+      },
+      {
+        "translation": "Anh ấy có thể chơi được rất nhiều loại nhạc cụ, khởi đầu là đàn piano."
+      },
+      {
+        "translation": "Cuốn sách này chứa đựng rất nhiều ý tưởng sinh hoạt tiện ích, tiêu biểu như cách tự làm khẩu trang bằng vải xô."
+      },
+      {
+        "translation": "Tại trung tâm thương mại đó có rất nhiều thương hiệu tụ hội, tiêu biểu như ZARA."
+      }
+    ]
+  },
+  "ja_n2_Noun_30": {
+    "title": "Danh từ 1 + をはじめとする + Danh từ 2 (Noun o hajime to suru Noun)",
+    "shortExplanation": "Dùng để bổ nghĩa cho danh từ đứng sau, nêu ra đối tượng điển hình ở Danh từ 1 đại diện cho tập hợp ở Danh từ 2; 'Danh từ 2 tiêu biểu như Danh từ 1'.",
+    "longExplanation": "Dạng liên kết định ngữ '～をはじめとする + Danh từ' dùng để bổ nghĩa trực tiếp cho danh từ đứng sau. Trong đó, Danh từ 1 đóng vai trò là ví dụ tiêu biểu, đại diện xuất sắc nhất, còn Danh từ 2 là danh từ mang tính khái quát hoặc chỉ toàn thể nhóm đối tượng đó (như các nghệ sĩ nổi tiếng, các ngoại ngữ, các loại sách...). Mang ý nghĩa 'các Danh từ 2 mà tiêu biểu nhất là Danh từ 1'.",
+    "formation": "Danh từ 1 + をはじめとする + Danh từ 2",
+    "examples": [
+      {
+        "translation": "Anh ấy có thể nói được nhiều ngoại ngữ, tiêu biểu như tiếng Pháp."
+      },
+      {
+        "translation": "Buổi hòa nhạc này dự kiến sẽ có sự góp mặt của nhiều nghệ sĩ nổi tiếng, tiêu biểu là nhóm BTS."
+      },
+      {
+        "translation": "Cô ấy rất thích các loại hải sản, đặc biệt tiêu biểu là cá."
+      },
+      {
+        "translation": "Thư viện này có sách thuộc nhiều thể loại đa dạng, tiêu biểu như sách dành cho thiếu nhi."
+      }
+    ]
+  },
+  "ja_n2_Noun_31": {
+    "title": "Danh từ + をめぐって (Noun wo megutte)",
+    "shortExplanation": "Diễn tả việc nảy sinh các cuộc tranh luận, đối đầu hoặc nhiều luồng ý kiến xoay quanh một vấn đề trung tâm; 'xoay quanh...', 'về vấn đề...'.",
+    "longExplanation": "Mẫu ngữ pháp '～をめぐって' (bắt nguồn từ động từ 巡る - đi vòng quanh, xoay quanh) được dùng khi một sự việc, vấn đề hoặc mâu thuẫn trở thành tâm điểm chú ý, khiến nhiều người, nhiều bên liên quan cùng tranh luận, đối lập ý kiến hoặc hành động đối kháng lẫn nhau. Đi cùng các động từ biểu thị tranh cãi, thảo luận như 議論する (tranh luận), 対立する (đối lập), 争う (tranh giành), 話し合う (bàn bạc). Thường dùng trong tin tức, thời sự, chính trị, xã hội.",
+    "formation": "Danh từ + をめぐって",
+    "examples": [
+      {
+        "translation": "Nhiều cuộc tranh luận đang diễn ra sôi nổi xoay quanh các vấn đề về môi trường."
+      },
+      {
+        "translation": "Xoay quanh cái chết của ông ấy, một số thuyết âm mưu đã bắt đầu nổi lên."
+      },
+      {
+        "translation": "Công ty và công đoàn đang tiến hành thảo luận xoay quanh việc tăng lương."
+      },
+      {
+        "translation": "Xoay quanh bộ phim này hiện đang tồn tại cả hai luồng ý kiến khen và chê."
+      }
+    ]
+  },
+  "ja_n2_Noun_32": {
+    "title": "Danh từ 1 + をめぐる + Danh từ 2 (Noun o meguru Noun)",
+    "shortExplanation": "Dùng để bổ nghĩa cho danh từ phía sau, diễn tả các tranh cãi, tin đồn, hành động xoay quanh Danh từ 1; 'Danh từ 2 xoay quanh Danh từ 1'.",
+    "longExplanation": "Dạng định ngữ '～をめぐる + Danh từ' kết hợp trực tiếp với danh từ đứng sau (như cuộc tranh luận, tin đồn, hội nghị, mâu thuẫn...). Cấu trúc này biểu thị rằng các sự việc, hoạt động hoặc trạng thái ở Danh từ 2 đều lấy Danh từ 1 làm trọng tâm, chủ đề cốt lõi để nảy sinh và diễn biến. Thường gặp nhiều trong các bài báo, phóng sự, văn bản phân tích chính trị - xã hội.",
+    "formation": "Danh từ 1 + をめぐる + Danh từ 2",
+    "examples": [
+      {
+        "translation": "Cuộc tranh cãi xoay quanh sự cố này vẫn đang tiếp tục diễn ra."
+      },
+      {
+        "translation": "Hội nghị quốc tế xoay quanh các vấn đề môi trường sắp được tổ chức."
+      },
+      {
+        "translation": "Những lời đồn đoán xoay quanh việc từ chức đột ngột của ông ấy đang lan truyền rộng rãi."
+      },
+      {
+        "translation": "Các hoạt động xoay quanh liên hoan phim đang ngày càng trở nên nhộn nhịp."
+      }
+    ]
+  },
+  "ja_n2_Noun_33": {
+    "title": "Danh từ + をもとに (Noun o moto ni)",
+    "shortExplanation": "Lấy một sự vật, thông tin hoặc dữ liệu làm cơ sở, tài liệu gốc, chất liệu để sáng tạo hoặc phán đoán; 'dựa trên...', 'căn cứ vào...'.",
+    "longExplanation": "Mẫu ngữ pháp '～をもとに' (viết theo Hán tự là 基に - căn cứ, nền tảng) dùng để chỉ ra tài liệu, kinh nghiệm, số liệu, ý tưởng hoặc câu chuyện thực tế làm nền tảng, cơ sở xuất phát điểm để từ đó chế tác, sáng tạo ra một sản phẩm mới, xây dựng kế hoạch hoặc đưa ra nhận định. Khác với '～を原料に' (chỉ nguyên liệu vật chất cụ thể), 'をもとに' mang tính chất liệu nền tảng vô hình, dữ liệu, nguồn cảm hứng.",
+    "formation": "Danh từ + をもとに",
+    "examples": [
+      {
+        "translation": "Bộ phim này được sản xuất dựa trên một câu chuyện có thật."
+      },
+      {
+        "translation": "Cần phải đưa ra lời khuyên căn cứ vào kinh nghiệm thực tế của anh ấy."
+      },
+      {
+        "translation": "Tôi đã tiến hành phân tích dựa trên số liệu thu thập được."
+      },
+      {
+        "translation": "Tôi đã xây dựng bộ sưu tập này dựa trên cảm hứng từ các viện bảo tàng mỹ thuật khắp nơi trên thế giới."
+      }
+    ]
+  },
+  "ja_n2_Noun_34": {
+    "title": "Danh từ + をもとにして (Noun wo moto ni shite)",
+    "shortExplanation": "Dùng một chất liệu, tư liệu hoặc tiền lệ cụ thể làm xuất phát điểm để tạo ra hay tiến hành việc gì; 'dựa trên cơ sở...', 'căn cứ vào...'.",
+    "longExplanation": "Cấu trúc '～をもとにして' là dạng liên từ nhấn mạnh của '～をもとに', có ý nghĩa tương đương. Nó diễn tả việc người thực hiện chủ động lấy một sự thật, số liệu, tài liệu tham khảo, ý kiến hay kinh nghiệm làm chất liệu nền móng để từ đó biên soạn, viết sách, thiết kế, sửa đổi kế hoạch hoặc triển khai hành động. Mang ý nghĩa rõ ràng về phương thức và cách thức vận dụng tài liệu nền.",
+    "formation": "Danh từ + をもとにして",
+    "examples": [
+      {
+        "translation": "Dựa trên ý kiến đóng góp của anh ấy, chúng tôi đã thay đổi kế hoạch."
+      },
+      {
+        "translation": "Cuốn tiểu thuyết này được chắp bút dựa trên một câu chuyện có thật ngoài đời."
+      },
+      {
+        "translation": "Tôi đã lập bản báo cáo dựa vào các tài liệu thu thập được."
+      },
+      {
+        "translation": "Chúng tôi dự định sẽ xúc tiến dự án mới căn cứ trên những điển hình thành công trong quá khứ."
+      }
+    ]
+  },
+  "ja_n2_Verb_35": {
+    "title": "Động từ thể từ điển + ことなく (~kotonaku)",
+    "shortExplanation": "Diễn tả một hành động tiếp diễn liên tục mà hoàn toàn không thực hiện hoặc không để xảy ra việc gì đó; mang nghĩa 'mà không...', 'không hề...'.",
+    "longExplanation": "Mẫu câu '～ことなく' là hình thức trang trọng, mang tính văn viết của '～ないで' hoặc '～ずに'. Cấu trúc này kết hợp trực tiếp với thể từ điển (thể nguyên mẫu) của động từ để chỉ rằng một hành động hoặc trạng thái diễn ra một cách trơn tru, liên tục mà không hề bị gián đoạn hay không hề làm một hành vi nào đó đi kèm. Thường dùng trong văn học, bài phát biểu hoặc các văn bản trang trọng.",
+    "formation": "Động từ thể từ điển + ことなく",
+    "examples": [
+      {
+        "translation": "Cô ấy đã ra về mà không hề khóc lấy một giọt nước mắt nào."
+      },
+      {
+        "translation": "Anh ấy đột ngột rời đi mà chẳng hề đưa ra bất kỳ lời lưu ý hay cảnh báo nào."
+      },
+      {
+        "translation": "Anh Yamada đã nghỉ việc ở công ty mà không hề tâm sự với bất kỳ ai."
+      },
+      {
+        "translation": "Suốt 20 năm qua, tôi vẫn làm việc đều đặn mà không hề mắc phải bệnh tật nào."
+      }
+    ]
+  },
+  "ja_n2_Verb_36": {
+    "title": "Động từ thể ない + ことには (~nai koto ni wa ~ nai)",
+    "shortExplanation": "Biểu thị điều kiện bắt buộc; nếu không làm vế trước thì tuyệt đối không thể thực hiện hay đạt được vế sau; 'nếu không... thì không thể...'.",
+    "longExplanation": "Cấu trúc '～ないことには' được dùng để nêu lên một điều kiện kiên quyết, bắt buộc phải có để một kết quả mong muốn có thể xảy ra. Vế trước chia ở thể phủ định 'Động từ thể ない + ことには', và vế sau hầu như luôn luôn là một cách diễn đạt mang tính phủ định hoặc bất khả thi (như ～ない, ～できない, ～わけにはいかない). Tương đương với cách nói 'chừng nào chưa làm xong việc trước thì sẽ không thể làm việc sau' hoặc 'nếu không có A thì chẳng thể nào đạt được B' trong tiếng Việt.",
+    "formation": "Động từ thể ない + ことには + Vế sau (thể phủ định / biểu thị không thể)",
+    "examples": [
+      {
+        "translation": "Nếu không chịu uống thuốc thì bệnh sẽ không thể nào khỏi được."
+      },
+      {
+        "translation": "Nếu không suy nghĩ thật thấu đáo về vấn đề này thì không thể giải quyết được."
+      },
+      {
+        "translation": "Nếu không chịu khó luyện tập thì kỹ năng sẽ chẳng thể nào tiến bộ được."
+      },
+      {
+        "translation": "Nếu không hoàn tất thủ tục thì bạn sẽ không thể nhận được hộ chiếu mới."
+      }
+    ]
+  },
+  "ja_n2_あげく_37": {
     "title": "～あげく (~ageku)",
     "shortExplanation": "Diễn tả sau một thời gian dài trải qua nhiều gian nan, trăn trở hoặc nỗ lực thì rốt cuộc dẫn đến một kết quả (thường là tiêu cực, đáng tiếc); 'sau một hồi...', 'kết cục là...'.",
     "longExplanation": "Mẫu ngữ pháp '～あげく' (hoặc '～あげくに / ～あげくの + Danh từ') diễn tả kết cục đạt được sau một quá trình dài trải qua nhiều khó khăn, thử thách, loay hoay hoặc tranh cãi. Kết quả ở vế sau đa phần là một sự việc đáng tiếc, lãng phí thời gian, thất bại hoặc một quyết định bất đắc dĩ không như mong đợi ban đầu. Thường đi sau động từ thể quá khứ (thể た) hoặc danh từ có kèm 'の'.",
@@ -7975,7 +8595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_あまり_38": {
+  "ja_n2_あまり_38": {
     "title": "～あまり (〜amari)",
     "shortExplanation": "Vì mức độ tình cảm, cảm xúc hoặc trạng thái quá mãnh liệt dẫn đến một kết quả khác thường, không kìm nén được; 'vì quá... nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～あまり' (hoặc '～あまりに / ～あまりの + Danh từ + に / で') dùng để diễn tả rằng do một trạng thái, cảm xúc tâm lý (vui sướng, đau khổ, tức giận, lo âu, mệt mỏi...) vượt quá mức thông thường, dẫn tới một hành vi bột phát hoặc một kết quả bất thường, cực đoan ngoài tầm kiểm soát. Thường đi với các từ chỉ cảm xúc hoặc trạng thái tinh thần.",
@@ -7995,7 +8615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_うちに_39": {
+  "ja_n2_うちに_39": {
     "title": "～うちに (〜uchi ni)",
     "shortExplanation": "Tranh thủ làm việc gì đó trong khi điều kiện, trạng thái thuận lợi vẫn còn duy trì trước khi thay đổi; 'trong khi còn...', 'nhân lúc...', 'trước khi...'.",
     "longExplanation": "Mẫu ngữ pháp '～うちに' diễn tả ý định tranh thủ thực hiện một hành động nào đó trong khoảng thời gian mà trạng thái hiện tại vẫn chưa biến chuyển, bởi nếu để lâu thì tình hình sẽ thay đổi và khó thực hiện được nữa (như khi còn trẻ, khi trời chưa mưa, khi thức ăn còn nóng). Vế sau thường là hành động có chủ ý, mang tính rủ rê, khuyên bảo hoặc dự định.",
@@ -8015,7 +8635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_がい_40": {
+  "ja_n2_がい_40": {
     "title": "～がい (〜gai)",
     "shortExplanation": "Hậu tố gắn vào động từ để diễn tả giá trị, ý nghĩa hoặc sự thỏa mãn xứng đáng để làm việc gì; 'đáng để...', 'bõ công...'.",
     "longExplanation": "Hậu tố '～がい' (dạng biến âm liên thanh của danh từ 甲斐 - giá trị, ý nghĩa) được gắn trực tiếp vào thân động từ thể ます (bỏ ます) để tạo thành một danh từ biểu thị rằng hành động đó mang lại giá trị tinh thần, sự đền đáp xứng đáng cho thời gian và công sức đã bỏ ra. Các dạng thường gặp gồm: '～がいがある' (đáng để làm/bõ công), '～がいのない' (không bõ công), '～がいのある + Danh từ' (một công việc/mục tiêu bõ công theo đuổi). Ví dụ điển hình: やりがい (đáng làm), 生きがい (lẽ sống), 働きがい (ý nghĩa lao động).",
@@ -8035,7 +8655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かいがあって_41": {
+  "ja_n2_かいがあって_41": {
     "title": "～かいがあって (〜kaiga atte)",
     "shortExplanation": "Diễn tả nỗ lực, cố gắng đã được đền đáp xứng đáng bằng một kết quả tốt đẹp; 'bõ công...', 'thật không uổng công...'.",
     "longExplanation": "Mẫu câu '～かいがあって' (dạng liên kết của 甲斐がある) biểu thị rằng hành vi, sự nỗ lực bền bỉ, thời gian hoặc sự kiên nhẫn đã bỏ ra ở vế trước hoàn toàn xứng đáng vì đã mang lại một kết quả thành công, thuận lợi hoặc mỹ mãn ở vế sau. Tương đương với các cách nói 'thật không uổng công đã...', 'nhờ bõ công... mà đã...' trong tiếng Việt.",
@@ -8055,7 +8675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かいもなく_42": {
+  "ja_n2_かいもなく_42": {
     "title": "～かいもなく (〜kai mo naku)",
     "shortExplanation": "Diễn tả sự uổng phí công sức, mặc dù đã rất nỗ lực, cố gắng nhưng không thu được kết quả mong đợi; 'uổng công...', 'mặc dù đã... nhưng công cốc'.",
     "longExplanation": "Mẫu câu '～かいもなく' (dạng liên kết phủ định của 甲斐がある) diễn tả sự tiếc nuối và thất vọng sâu sắc khi bao nhiêu công sức, sự cố gắng, thời gian hay chi phí bỏ ra ở vế trước rốt cuộc không mang lại bất kỳ kết quả hay hiệu quả nào ở vế sau. Kết quả vế sau luôn luôn là sự thất bại, vô ích hoặc tình trạng tồi tệ không cải thiện được. Tương đương với 'mặc dù đã bõ bao công sức nhưng rốt cuộc hoài công vô ích' trong tiếng Việt.",
@@ -8075,7 +8695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かける_43": {
+  "ja_n2_かける_43": {
     "title": "～かける (〜kakeru)",
     "shortExplanation": "Diễn tả một hành động mới chỉ bắt đầu và đang diễn ra dở dang, chưa hoàn tất; 'đang dở...', 'chưa xong'.",
     "longExplanation": "Mẫu ngữ pháp '～かける' được gắn vào sau thân động từ (thể ます bỏ ます) để diễn tả một hành động đã bắt đầu nhưng bị dừng lại giữa chừng hoặc chưa hoàn thành trọn vẹn ('đang làm dở dang'). Khi đi với danh từ, nó thường mang dạng '～かけの + Danh từ' (ví dụ: 食べかけ - ăn dở, 読みかけ - đọc dở). Ngoài ra, mẫu câu này đôi khi còn mang nghĩa 'suýt nữa thì...' đối với các động từ chỉ sự biến đổi trạng thái.",
@@ -8095,7 +8715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_がち_44": {
+  "ja_n2_がち_44": {
     "title": "～がち (〜gachi)",
     "shortExplanation": "Diễn tả xu hướng thường hay xảy ra một sự việc, trạng thái không mong muốn; 'thường hay...', 'dễ bị...', 'có khuynh hướng...'.",
     "longExplanation": "Mẫu ngữ pháp '～がち' được gắn sau thân động từ (thể ます bỏ ます) hoặc danh từ để biểu thị một thói quen hoặc xu hướng thường xuyên lặp đi lặp lại. Đa phần được dùng cho những sự việc, trạng thái tiêu cực, bất tiện hoặc không như ý muốn (ví dụ: hay bị ốm, hay quên đồ, hay đi muộn). Khi làm bổ ngữ trước danh từ sẽ có dạng '～がちな + Danh từ', và khi đứng cuối câu thường là '～がちだ / がちです'.",
@@ -8115,7 +8735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かないかのうちに_45": {
+  "ja_n2_かないかのうちに_45": {
     "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
     "shortExplanation": "Diễn tả một sự việc khác xảy ra gần như ngay tức khắc sau khi một hành động vừa mới chớm bắt đầu; 'vừa mới... thì đã...', 'chưa kịp... thì đã...'.",
     "longExplanation": "Mẫu câu '～か～ないかのうちに' lặp lại cùng một động từ ở hai thể khẳng định (thể từ điển) và phủ định (thể ない) để nhấn mạnh sự kế tiếp cực kỳ nhanh chóng: hành động phía trước còn chưa biết là đã xong hẳn hay chưa thì sự việc phía sau đã lập tức xảy ra. Thường dùng để miêu tả các sự việc diễn ra bất ngờ, ngoài dự tính của người nói, và vế sau thường không dùng câu mệnh lệnh hay ý chí.",
@@ -8135,7 +8755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かねない_46": {
+  "ja_n2_かねない_46": {
     "title": "～かねない (〜kane nai)",
     "shortExplanation": "Diễn tả khả năng hoặc nguy cơ dẫn đến một kết quả xấu, tiêu cực; 'có thể sẽ...', 'có nguy cơ...', 'rất dễ dẫn đến...'.",
     "longExplanation": "Mẫu ngữ pháp '～かねない' được gắn vào thân động từ (thể ます bỏ ます) để diễn tả mối lo ngại hoặc phán đoán rằng một nguyên nhân nào đó hoàn toàn có thể dẫn tới một hậu quả tai hại, tiêu cực hoặc không mong muốn ('hoàn toàn có thể làm chuyện đó'). Cấu trúc này nhấn mạnh khả năng xấu xảy ra dựa trên tình hình hiện tại.",
@@ -8155,7 +8775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かねる_47": {
+  "ja_n2_かねる_47": {
     "title": "～かねる (〜kaneru)",
     "shortExplanation": "Dùng để từ chối một cách khéo léo, lịch sự hoặc bày tỏ rằng bản thân khó lòng có thể làm được điều gì; 'khó lòng...', 'không thể... được'.",
     "longExplanation": "Mẫu ngữ pháp '～かねる' gắn sau thân động từ (thể ます bỏ ます) để diễn tả việc người nói không thể thực hiện một hành động nào đó do rào cản về tâm lý, lập trường, hoặc hoàn cảnh khách quan. Mẫu câu này thường xuất hiện dưới dạng lịch sự '～かねます' trong văn phong thương mại và giao tiếp trang trọng, nhằm khéo léo từ chối một yêu cầu mà không gây cảm giác thẳng thừng hay thất lễ.",
@@ -8175,7 +8795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かのようだ_48": {
+  "ja_n2_かのようだ_48": {
     "title": "～かのようだ (〜ka no you da)",
     "shortExplanation": "Diễn tả sự ví von, so sánh về một trạng thái hoặc hành vi giống hệt như thể một sự việc có thật; 'cứ như thể là...', 'hệt như là...'.",
     "longExplanation": "Mẫu ngữ pháp '～かのようだ' được dùng để so sánh một sự việc, hành vi hay trạng thái nào đó trên thực tế không phải như vậy (hoặc chưa chắc đã phải như vậy) nhưng biểu hiện bên ngoài lại tạo cảm giác hệt như là thật. Khi làm định ngữ bổ nghĩa cho danh từ, nó có dạng '～かのような + Danh từ'; khi bổ nghĩa cho động từ, tính từ thì có dạng '～かのように'.",
@@ -8195,7 +8815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かまいか_49": {
+  "ja_n2_かまいか_49": {
     "title": "～か～まいか (〜ka 〜maika)",
     "shortExplanation": "Diễn tả sự đắn đo, do dự, phân vân giữa việc làm hay không làm một việc gì đó; 'nên... hay không nên...?', 'làm hay không làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～か～まいか' kết hợp thể ý chí (khẳng định) với thể 'まい' (phủ định ý chí hoặc phỏng đoán phủ định) của động từ, nhằm diễn tả sự phân vân, lưỡng lự trong nội tâm của chủ ngữ trước việc có nên thực hiện một hành động nào đó hay không. Trong văn phong trang trọng, mẫu câu này còn có thể đi cùng danh từ hoặc tính từ kết hợp với 'であるか…であるまいか'.",
@@ -8215,7 +8835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からこそ_50": {
+  "ja_n2_からこそ_50": {
     "title": "～からこそ (〜kara koso)",
     "shortExplanation": "Nhấn mạnh nguyên nhân, lý do cốt lõi dẫn đến kết quả ở vế sau; 'chính vì...', 'chính do...'.",
     "longExplanation": "Mẫu ngữ pháp '～からこそ' kết hợp trợ từ chỉ nguyên nhân 'から' với trợ từ nhấn mạnh 'こそ', dùng để khẳng định mạnh mẽ rằng chính lý do, nguyên nhân này (chứ không phải bất kỳ lý do nào khác) là nguồn cơn tất yếu dẫn tới kết quả đặc biệt ở mệnh đề sau. Thường mang sắc thái tích cực, đánh giá cao giá trị của nguyên nhân đó.",
@@ -8235,7 +8855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からして_51": {
+  "ja_n2_からして_51": {
     "title": "〜からして (〜kara shite)",
     "shortExplanation": "Đưa ra một ví dụ hoặc đặc điểm tiêu biểu làm căn cứ để suy đoán, đánh giá toàn thể; 'ngay từ...', 'ngay cả... đã...'.",
     "longExplanation": "Mẫu ngữ pháp '〜からして' được gắn sau danh từ nhằm chọn ra một chi tiết cụ thể, trực quan hoặc tiêu biểu (như vẻ bề ngoài, nét mặt, cái tên...) làm khởi điểm và căn cứ phán đoán. Hàm ý rằng ngay từ điểm cơ bản hoặc nhỏ nhất đó đã như vậy rồi thì những phương diện khác hoặc toàn thể chắc chắn cũng sẽ tương tự. Mẫu câu này phần lớn được dùng với các phán đoán mang sắc thái tiêu cực hoặc hoài nghi.",
@@ -8255,7 +8875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からすると_52": {
+  "ja_n2_からすると_52": {
     "title": "～からすると (〜kara suru to)",
     "shortExplanation": "Đưa ra phán đoán, nhận định hoặc đánh giá dựa trên một căn cứ, tiêu chuẩn hoặc góc độ nhất định; 'xét từ...', 'căn cứ vào...', 'nhìn từ góc độ...'.",
     "longExplanation": "Mẫu ngữ pháp '～からすると' (hoặc '～からすれば') đi sau danh từ để nêu lên một tiêu chuẩn, góc nhìn, căn cứ hoặc bằng chứng (như kinh nghiệm, giá cả, lời đồn...), từ đó người nói đưa ra kết luận, phán đoán hoặc đánh giá về một sự việc. Ngoài ra, nó cũng được dùng để nêu suy nghĩ đứng từ lập trường của một đối tượng nào đó.",
@@ -8275,7 +8895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からといって_53": {
+  "ja_n2_からといって_53": {
     "title": "～からといって (〜kara to itte)",
     "shortExplanation": "Diễn tả rằng dẫu có một lý do nào đó thì cũng không hẳn hoặc không thể lấy đó làm cớ để khẳng định kết quả; 'không phải cứ... là...', 'dẫu nói là... nhưng chưa chắc...'.",
     "longExplanation": "Mẫu ngữ pháp '～からといって' được dùng để bác bỏ mối quan hệ nhân quả tất nhiên giữa hai mệnh đề: thừa nhận vế trước là một lý do có thực, nhưng vế sau không nhất thiết hoặc không thể đương nhiên xảy ra theo cách đó. Mệnh đề phía sau thường kết hợp với các cấu trúc phủ định một phần như '～わけではない' (không hẳn là), '～とは限らない' (chưa chắc đã), '～とは言えない' (không thể nói là).",
@@ -8295,7 +8915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からにかけて_54": {
+  "ja_n2_からにかけて_54": {
     "title": "～から～にかけて (〜kara 〜ni kakete)",
     "shortExplanation": "Biểu thị khoảng phạm vi đại khái trong thời gian hoặc không gian; 'từ khoảng... đến khoảng...', 'từ... đến...'.",
     "longExplanation": "Mẫu ngữ pháp '～から～にかけて' dùng để chỉ một khoảng phạm vi kéo dài trong thời gian hoặc trải rộng trong không gian từ điểm A đến điểm B. Khác với '～から～まで' vốn chỉ rõ mốc bắt đầu và kết thúc một cách dứt khoát, rạch ròi, '～から～にかけて' mang sắc thái ranh giới đại khái, mơ hồ và diễn biến liên tục hoặc rải rác.",
@@ -8315,7 +8935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_からには_55": {
+  "ja_n2_からには_55": {
     "title": "～からには (〜kara niwa)",
     "shortExplanation": "Diễn tả quyết tâm, bổn phận hoặc nghĩa vụ đương nhiên phải làm khi một sự việc đã xảy ra; 'một khi đã... thì...', 'đã... thì phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～からには' được dùng khi sự việc ở vế trước đã được quyết định hoặc trở thành sự thật hiển nhiên, từ đó dẫn đến trách nhiệm, nghĩa vụ hoặc quyết tâm tất yếu ở vế sau ('một khi đã... thì đương nhiên phải...'). Mệnh đề phía sau thường kết hợp với các cách nói thể hiện nghĩa vụ, quyết tâm hoặc đề xuất như '～なければならない' (phải), '～べきだ' (nên), '～つもりだ' (dự định), '～たい' (muốn).",
@@ -8335,7 +8955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_から見ると_56": {
+  "ja_n2_から見ると_56": {
     "title": "～から見ると (〜kara miru to)",
     "shortExplanation": "Đưa ra đánh giá, nhận xét nhìn từ một lập trường, quan điểm hoặc khía cạnh cụ thể; 'nhìn từ góc độ...', 'xét về mặt...', 'dưới góc nhìn của...'.",
     "longExplanation": "Mẫu ngữ pháp '～から見ると' (hoặc '～から見れば', '～から見て') được gắn sau danh từ để xác lập một lập trường, góc nhìn của một đối tượng hoặc một phương diện xem xét cụ thể (như chi phí, thực lực, sức khỏe, ý kiến...). Dựa trên góc nhìn đó, người nói đưa ra nhận xét, đánh giá hoặc phán đoán của mình về bản chất của sự việc.",
@@ -8355,7 +8975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_から言うと_57": {
+  "ja_n2_から言うと_57": {
     "title": "～から言うと (〜kara iuto)",
     "shortExplanation": "Đưa ra đánh giá, nhận xét xét riêng về một phương diện hoặc tiêu chí cụ thể; 'xét về mặt...', 'nói về...', 'nếu xét từ...'.",
     "longExplanation": "Mẫu ngữ pháp '～から言うと' (hoặc '～から言えば', '～から言って') được gắn sau danh từ chỉ một khía cạnh, đặc tính hoặc tiêu chí đánh giá (như giá cả, hương vị, sự tiện lợi, sức khỏe...) để đưa ra nhận định tập trung vào riêng phương diện đó. Dù các khía cạnh khác có thể chưa hẳn tốt, nhưng xét riêng về tiêu chí được nhắc đến thì đưa ra kết luận rõ ràng.",
@@ -8375,7 +8995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_くせに_58": {
+  "ja_n2_くせに_58": {
     "title": "～くせに (〜kuse ni)",
     "shortExplanation": "Biểu thị sự trách móc, mỉa mai hoặc khinh khi khi một người làm điều trái ngược với thân phận, khả năng hay lời nói của mình; 'thế mà lại', 'vậy mà', 'mặc dù... nhưng mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～くせに' được sử dụng để thể hiện sự bất mãn, chê trách, mỉa mai hoặc coi thường đối với ai đó khi hành động hay tình trạng của họ mâu thuẫn hoàn toàn với địa vị, lời nói hay bản chất vốn có của họ. Cấu trúc này thường dùng trong văn nói thân mật hoặc khẩu ngữ hàng ngày và mang sắc thái chỉ trích khá gay gắt. Chủ ngữ ở hai vế thường phải là cùng một người hoặc nhóm đối tượng và người nói thường không dùng để tự nói về mình (trừ trường hợp tự trào).",
@@ -8395,7 +9015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことから_59": {
+  "ja_n2_ことから_59": {
     "title": "～ことから (〜koto kara)",
     "shortExplanation": "Biểu thị nguyên cớ, căn cứ hoặc nguồn gốc để đưa ra một phán đoán, kết luận hoặc đặt tên gọi; 'chính vì do...', 'từ chỗ... mà', 'bởi vì... nên'.",
     "longExplanation": "Mẫu ngữ pháp '～ことから' được dùng để nêu lên lý do, căn cứ hoặc khởi nguồn thực tế dẫn tới một kết luận, sự phán đoán, tên gọi hoặc sự biến chuyển của một sự việc ('bắt nguồn từ thực tế là...'). Thường dùng trong các văn bản mang tính trang trọng, báo chí, văn viết hay thuyết minh giải thích nguồn gốc, lai lịch.",
@@ -8415,7 +9035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことに_60": {
+  "ja_n2_ことに_60": {
     "title": "～ことに (〜koto ni)",
     "shortExplanation": "Biểu thị cảm xúc, sự ngạc nhiên, xúc động hay phẫn nộ trước một sự việc; 'thật là... biết bao', 'ngạc nhiên/tức giận trước việc...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことに' được dùng để nhấn mạnh cảm xúc, tâm trạng hoặc phản ứng chủ quan của người nói đối với một sự tình hoặc sự kiện nào đó. Mẫu này có thể đứng ở vế trước làm trạng ngữ nêu cảm xúc (dạng: Tính từ / Động từ + ことに, như 驚いたことに - thật ngạc nhiên là...), hoặc đứng sau mệnh đề trần thuật một sự việc để làm đối tượng cho động từ chỉ cảm xúc ở vế sau (như ...ことに驚いた / 感動した - ngạc nhiên / cảm động trước việc...).",
@@ -8435,7 +9055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ことになっている_61": {
+  "ja_n2_ことになっている_61": {
     "title": "～ことになっている (〜koto ni natte iru)",
     "shortExplanation": "Diễn tả quy định, quy tắc, tập quán xã hội hoặc kế hoạch dự định đã được ấn định; 'được quy định là...', 'theo luật/kế hoạch thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことになっている' diễn tả một sự việc đã được quyết định thành quy định, luật lệ, thỏa thuận của tập thể, tập quán xã hội hoặc một kế hoạch đã định sẵn từ trước mà các cá nhân phải tuân theo. Cấu trúc này nhấn mạnh tính khách quan của quy định hoặc kế hoạch đó, không phụ thuộc vào ý chí chủ quan tức thời của bản thân người nói.",
@@ -8455,7 +9075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_さえば_62": {
+  "ja_n2_さえば_62": {
     "title": "～さえ～ば (〜sae ~ba)",
     "shortExplanation": "Diễn tả điều kiện duy nhất cần thiết, chỉ cần đáp ứng được điều kiện đó thì mọi chuyện khác đều ổn thỏa; 'chỉ cần... là...'.",
     "longExplanation": "Mẫu ngữ pháp '～さえ～ば' được dùng để nhấn mạnh một điều kiện tối thiểu hoặc duy nhất: chỉ cần điều kiện đó được thỏa mãn thì các yếu tố khác đều không còn là vấn đề, và kết quả mong muốn ở vế sau sẽ diễn ra. Cấu trúc có thể đi với danh từ ('Danh từ + さえ + Động từ thể điều kiện') hoặc động từ ('Động từ thể ます bỏ ます + さえすれば').",
@@ -8475,7 +9095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ざるを得ない_63": {
+  "ja_n2_ざるを得ない_63": {
     "title": "～ざるを得ない (〜zaru wo enai)",
     "shortExplanation": "Diễn tả tình thế bắt buộc, dù không muốn nhưng vì hoàn cảnh khách quan đành phải làm; 'đành phải...', 'buộc phải...', 'không thể không...'.",
     "longExplanation": "Mẫu ngữ pháp '～ざるを得ない' được dùng để diễn tả việc chủ ngữ không còn sự lựa chọn nào khác ngoài việc phải thực hiện một hành động nào đó, do áp lực từ hoàn cảnh, lý trí hoặc quy luật khách quan, dù trong lòng bản thân thực sự không hề muốn làm ('không đặng đừng'). Lưu ý cách chia: động từ chia về thể phủ định ない, bỏ ない thêm ざるを得ない; riêng động từ する chuyển thành せざるを得ない.",
@@ -8495,7 +9115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ずにはいられない_64": {
+  "ja_n2_ずにはいられない_64": {
     "title": "～ずにはいられない (〜zu ni wa irarenai)",
     "shortExplanation": "Diễn tả cảm xúc, ham muốn hay sự thôi thúc nội tâm quá mãnh liệt không thể kìm nén được; 'không thể không...', 'không kìm lòng được mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～ずにはいられない' được dùng để diễn tả một cảm xúc, phản xạ tự nhiên hay sự thôi thúc từ bên trong mạnh đến mức chủ ngữ không thể nào kiềm chế hoặc kìm nén lại được, buộc phải thực hiện hành động đó ('không thể không làm', 'không chịu đựng nổi nếu không làm'). Lưu ý cách chia: động từ chuyển về thể phủ định ない, bỏ ない thêm ずにはいられない; riêng động từ する trở thành せずにはいられない.",
@@ -8515,7 +9135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_そうにない_65": {
+  "ja_n2_そうにない_65": {
     "title": "～そうにない (〜sou ni nai)",
     "shortExplanation": "Diễn tả phán đoán chủ quan rằng một sự việc hầu như không có khả năng xảy ra; 'khó lòng...', 'dường như không thể...', 'không có vẻ gì là sẽ...'.",
     "longExplanation": "Mẫu ngữ pháp '～そうにない' (hoặc dạng nhấn mạnh hơn là '～そうにもない') là dạng phủ định của trợ động từ phỏng đoán '～そうだ'. Dùng để người nói đưa ra nhận định, đánh giá dựa trên tình hình thực tế rằng một hành động hoặc biến chuyển nào đó rất khó có khả năng xảy ra, triển vọng là vô cùng mong manh. Gắn vào thân động từ (thể ます bỏ ます) hoặc thân tính từ.",
@@ -8535,7 +9155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たかと思ったら_66": {
+  "ja_n2_たかと思ったら_66": {
     "title": "～たかと思ったら (〜ta ka to omottara)",
     "shortExplanation": "Diễn tả một sự việc diễn ra gần như ngay tức khắc sau một hành động khác khiến người nói bất ngờ; 'vừa mới... thì đã...', 'ngỡ là... ai ngờ đã...'.",
     "longExplanation": "Mẫu ngữ pháp '～たかと思ったら' (hoặc dạng tương đương '～たと思うと') được dùng khi một sự việc vừa mới chớm xảy ra thì sự việc tiếp theo đã xảy ra gần như đồng thời, khiến người nói cảm thấy vô cùng bất ngờ hoặc ngạc nhiên trước tốc độ diễn tiến quá nhanh chóng của sự việc. Vế sau miêu tả sự việc bất ngờ đã xảy ra trong thực tế, không dùng câu mang tính ý chí, mệnh lệnh hay cầu khiến.",
@@ -8555,7 +9175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たきり_67": {
+  "ja_n2_たきり_67": {
     "title": "～たきり (〜takiri)",
     "shortExplanation": "Diễn tả một hành động sau khi diễn ra thì trạng thái đó cứ kéo dài liên tục và không hề lặp lại hay có tin tức gì nữa; 'kể từ sau khi... thì suốt', 'sau đó bặt vô âm tín'.",
     "longExplanation": "Mẫu ngữ pháp '～たきり' (hoặc dạng nhấn mạnh '～たきり～ない') được gắn sau động từ thể quá khứ (thể た) để diễn tả việc một hành động đã diễn ra một lần trong quá khứ, nhưng kể từ thời điểm đó cho tới nay, trạng thái sau hành động đó vẫn kéo dài liên tục mà không có thêm sự tiến triển hay lặp lại nào khác ('kể từ đó đến nay bặt tăm', 'mới làm một lần rồi thôi hẳn'). Thường mang sắc thái tiếc nuối hoặc bất an vì sự việc không diễn ra như kỳ vọng thông thường.",
@@ -8575,7 +9195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だけあって_68": {
+  "ja_n2_だけあって_68": {
     "title": "～だけあって (〜dake atte)",
     "shortExplanation": "Diễn tả sự khen ngợi, tán thưởng khi một kết quả hoàn toàn xứng đáng với danh tiếng, năng lực hay nỗ lực; 'quả đúng là...', 'chẳng trách mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～だけあって' (hoặc dạng '～だけのことはある') được dùng để đưa ra lời khen ngợi, đánh giá cao, biểu thị rằng kết quả, chất lượng hay biểu hiện nhận được là hoàn toàn tương xứng với năng lực, danh tiếng, giá trị hoặc quá trình rèn luyện vốn có ('đúng như kỳ vọng đối với...'). Vế sau luôn mang ý nghĩa tích cực, khâm phục, không dùng cho sự chê bai hay kết quả tồi tệ.",
@@ -8595,7 +9215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だけましだ_69": {
+  "ja_n2_だけましだ_69": {
     "title": "～だけましだ (〜dake mashi da)",
     "shortExplanation": "Biểu thị sự tự an ủi rằng dù tình cảnh hiện tại chưa phải là lý tưởng nhưng vẫn còn tốt chán so với tình huống tồi tệ hơn; 'vẫn còn may là...', 'dù sao cũng đỡ hơn...'.",
     "longExplanation": "Mẫu ngữ pháp '～だけましだ' được dùng khi so sánh tình huống hiện tại với một kịch bản tồi tệ hoặc tồi tệ nhất có thể xảy ra. Mặc dù thực tế hiện tại chưa hoàn toàn làm người nói hài lòng hoặc vẫn có điều bất tiện, nhưng xét cho cùng thì vẫn còn cứu vãn được, vẫn còn may mắn và đỡ hơn rất nhiều so với trường hợp tồi tệ hơn ('vẫn còn an ủi là...', 'còn đỡ hơn là...').",
@@ -8615,7 +9235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たところ_70": {
+  "ja_n2_たところ_70": {
     "title": "～たところ (〜ta tokoro)",
     "shortExplanation": "Diễn tả việc sau khi thực hiện một hành động nào đó thì nhận thấy một kết quả, phản ứng hoặc phát hiện ra một sự thật mới; 'sau khi... thì thấy...'.",
     "longExplanation": "Mẫu ngữ pháp '～たところ' gắn sau động từ thể quá khứ (thể た) để biểu thị việc sau khi thử làm hoặc vừa tiến hành một hành động nào đó, thì kết quả thực tế, phản hồi từ đối phương hay một sự việc khách quan nào đó đã bất ngờ hiện ra ('sau khi thử hỏi/làm thì phát hiện ra rằng...'). Vế sau thường là mệnh đề trần thuật miêu tả một sự thật khách quan hoặc một phát hiện mới, không dùng câu mang ý chí hay mệnh lệnh.",
@@ -8635,7 +9255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_たとたん_71": {
+  "ja_n2_たとたん_71": {
     "title": "～たとたん (〜ta totan)",
     "shortExplanation": "Diễn tả một sự việc bất ngờ xảy ra ngay đúng thời điểm một hành động vừa mới diễn ra xong; 'ngay khi vừa... thì lập tức...', 'đúng vào lúc...'.",
     "longExplanation": "Mẫu ngữ pháp '～たとたん' (hoặc '～たとたんに') gắn sau động từ thể quá khứ (thể た) để biểu thị rằng ngay đúng khoảnh khắc một hành động vừa dứt điểm thì một sự việc khác đã đột ngột xảy ra. Sự việc ở vế sau thường là biến cố bất ngờ ngoài tầm kiểm soát của người nói, do đó không dùng câu thể hiện ý chí, mục đích hay mệnh lệnh.",
@@ -8655,7 +9275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だらけ_72": {
+  "ja_n2_だらけ_72": {
     "title": "～だらけ (〜darake)",
     "shortExplanation": "Diễn tả tình trạng đầy rẫy, ngập tràn những thứ không mong muốn, dơ bẩn hoặc tiêu cực khắp bề mặt hay không gian; 'toàn là...', 'đầy rẫy...'.",
     "longExplanation": "Mẫu ngữ pháp '～だらけ' được gắn trực tiếp sau danh từ để biểu thị rằng một bề mặt, không gian hay một chỉnh thể nào đó bị bao phủ, ngập tràn hoặc dày đặc bởi một thứ gì đó. Hầu như luôn mang ý nghĩa tiêu cực, dùng cho những thứ không sạch sẽ, không như ý muốn hoặc mang tính sai sót, khuyết điểm (như rác rưởi, nếp nhăn, vết thương, lỗi sai...). Khác với '～まみれ' (chỉ dùng cho chất lỏng, bụi bẩn dính bết lên bề mặt), '～だらけ' dùng được cho cả các khái niệm trừu tượng như lỗi sai hay nợ nần.",
@@ -8675,7 +9295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っこない_73": {
+  "ja_n2_っこない_73": {
     "title": "～っこない (〜kkonai)",
     "shortExplanation": "Diễn tả sự phủ định mạnh mẽ, khẳng định tuyệt đối không thể nào xảy ra một việc gì đó; 'tuyệt đối không thể...', 'làm sao mà... được', 'không đời nào...'.",
     "longExplanation": "Mẫu ngữ pháp '～っこない' được gắn vào thân động từ (thể ます bỏ ます) để diễn tả sự phán đoán hoặc xác tín mang tính chủ quan của người nói rằng một sự việc tuyệt đối không thể xảy ra, hoặc hoàn toàn không có khả năng thực hiện được ('không đời nào', 'làm sao mà... được'). Cấu trúc này thường được dùng trong văn nói thân mật hàng ngày giữa những người thân quen, mang sắc thái phủ định dứt khoát.",
@@ -8695,7 +9315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_つつ_74": {
+  "ja_n2_つつ_74": {
     "title": "～つつ (〜tsutsu)",
     "shortExplanation": "Diễn tả hai hành động diễn ra đồng thời ('vừa... vừa...') hoặc diễn tả sự tương phản mang tính nghịch cảm ('mặc dù... nhưng...').",
     "longExplanation": "Mẫu ngữ pháp '～つつ' gắn vào thân động từ (thể ます bỏ ます) mang hai ý nghĩa chính trong văn phong trang trọng, văn viết: (1) Diễn tả hai hành động diễn ra cùng một lúc tương tự như 'ながら', thường hành động đi sau つつ là hành động phụ kèm theo hành động chính ở vế sau. (2) Diễn tả ý nghịch đảo, nhượng bộ, tương đương với 'つつも' hoặc 'ながらも' ('dù biết thế nhưng vẫn...', 'tuy rằng...'), thường đi với các động từ chỉ tâm lý, nhận thức như '思う', '知る', '感じる'.",
@@ -8715,7 +9335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_つつある_75": {
+  "ja_n2_つつある_75": {
     "title": "～つつある (〜tsutsu aru)",
     "shortExplanation": "Diễn tả một sự biến đổi đang dần dần diễn ra theo một chiều hướng nào đó; 'đang dần dần...', 'đang trong quá trình...'.",
     "longExplanation": "Mẫu ngữ pháp '～つつある' gắn vào sau thân động từ (thể ます bỏ ます) biểu thị một quá trình biến đổi, phát triển đang liên tục diễn ra từng bước một theo thời gian ('đang dần dần...', 'đang trên đà...'). Thường kết hợp với các động từ chỉ sự thay đổi như '変わる', '増える', '減る', '回復する', '進行する'. Đây là cách diễn đạt mang tính trang trọng, thường xuất hiện trên tin tức, báo chí, bài nghiên cứu hoặc văn bản chính luận.",
@@ -8735,7 +9355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っぱなし_76": {
+  "ja_n2_っぱなし_76": {
     "title": "～っぱなし (〜ppanashi)",
     "shortExplanation": "Diễn tả việc cứ để nguyên một trạng thái làm xong mà không xử lý tiếp theo lẽ thường, hoặc duy trì liên tục một hành động; 'cứ để nguyên...', 'suốt không ngừng'.",
     "longExplanation": "Mẫu ngữ pháp '～っぱなし' (biến âm từ 放し - はなし) được gắn vào sau thân động từ (thể ます bỏ ます) để diễn tả việc một hành động đã diễn ra nhưng sau đó lại để mặc nguyên như vậy, không dọn dẹp hay xử lý tiếp theo lẽ thường (ví dụ: mở cửa sổ rồi để mặc, bật đèn rồi cứ thế đi ngủ). Nó thường đi kèm sắc thái phàn nàn, trách móc hoặc tiếc nuối của người nói. Ngoài ra, nó cũng có thể biểu thị một hành vi hoặc trạng thái mệt mỏi tiếp diễn liên tục không nghỉ (như: 立ちっぱなし - đứng suốt cả ngày).",
@@ -8755,7 +9375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_っぽい_77": {
+  "ja_n2_っぽい_77": {
     "title": "～っぽい (〜ppoi)",
     "shortExplanation": "Diễn tả vẻ ngoài, cảm giác hoặc tính chất hơi hướng giống một thứ gì đó, hoặc dễ nổi cáu/hay quên; 'có vẻ...', 'nhìn như...', 'hơi có tính chất...'.",
     "longExplanation": "Hậu tố '～っぽい' là cách nói khẩu ngữ thân mật kết hợp với danh từ, tính từ hoặc thân động từ để biểu thị: (1) Mang cảm giác, diện mạo hoặc phong thái giống như sự vật/người đó dù bản chất không phải (ví dụ: 大人っぽい - chững chạc như người lớn, 子供っぽい - trẻ con); (2) Mang tính chất hoặc màu sắc thiên về phía đó (ví dụ: 白っぽい - ngả trắng, 油っぽい - nhiều dầu mỡ); (3) Rất dễ có xu hướng lặp lại một hành vi nào đó (ví dụ: 怒りっぽい - hay cáu giận, 忘れっぽい - hay quên).",
@@ -8775,7 +9395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ていられない_78": {
+  "ja_n2_ていられない_78": {
     "title": "～ていられない (〜te irarenai)",
     "shortExplanation": "Diễn tả việc tình thế bức bách khiến bản thân không thể cứ tiếp tục làm một hành động hay giữ nguyên một trạng thái nào đó; 'không thể tiếp tục... được nữa', 'không thể cứ mãi...'.",
     "longExplanation": "Mẫu ngữ pháp '～ていられない' là dạng phủ định khả năng của '～ている' ('đang làm gì'), gắn vào động từ thể て. Mẫu câu này được dùng khi người nói cảm thấy hoàn cảnh quá cấp bách, bận rộn hoặc tâm lý bức xúc, không thể kiên nhẫn để tiếp tục duy trì hành động hay trạng thái đó thêm được nữa ('không thể cứ ngồi chơi được', 'không thể nín nhịn mãi được'). Vế sau thường dẫn tới một hành động dứt khoát hoặc phản ứng ngay lập tức.",
@@ -8795,7 +9415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てかなわない_79": {
+  "ja_n2_てかなわない_79": {
     "title": "～てかなわない (〜te kanawanai)",
     "shortExplanation": "Diễn tả một cảm giác, cảm xúc hoặc trạng thái khó chịu quá mức đến nỗi bản thân không thể nào chịu đựng nổi; 'không tài nào chịu nổi', 'vô cùng khó chịu'.",
     "longExplanation": "Mẫu ngữ pháp '～てかなわない' (với かなわない bắt nguồn từ động từ 叶う - đáp ứng, đọ lại) diễn tả một trạng thái, hoàn cảnh bất lợi hoặc một cảm giác bức bối, phiền hà tới mức người nói không thể nào chống đỡ hay chịu đựng nổi ('không tài nào chịu thấu', 'bực không chịu nổi'). Mẫu câu này thường đi cùng các tính từ diễn tả sự khó chịu, phiền toái hoặc tiêu cực như '暑い', 'うるさい', '不便だ', '失礼だ'.",
@@ -8815,7 +9435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てからでないと_80": {
+  "ja_n2_てからでないと_80": {
     "title": "～てからでないと (〜te kara denai to)",
     "shortExplanation": "Diễn tả điều kiện tiên quyết: nếu chưa hoàn thành xong việc phía trước thì tuyệt đối không thể thực hiện được việc phía sau; 'chỉ sau khi... mới...', 'nếu chưa... thì không thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～てからでないと' (hoặc '～てからでなければ') gắn vào sau động từ thể て để nhấn mạnh một điều kiện bắt buộc tiên quyết. Vế sau của cấu trúc này hầu như luôn luôn đi với dạng phủ định hoặc câu mang nghĩa tiêu cực, bất khả thi ('không thể làm', 'khó lòng thực hiện'). Ý nghĩa là: chừng nào việc A chưa được hoàn tất thỏa đáng thì hoàn toàn không có cách nào làm được việc B.",
@@ -8835,7 +9455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てこそ_81": {
+  "ja_n2_てこそ_81": {
     "title": "～てこそ (〜te koso)",
     "shortExplanation": "Nhấn mạnh rằng chính nhờ hành động hoặc điều kiện đó mà mới tạo nên ý nghĩa hoặc kết quả thực sự; 'chính vì/nhờ... mới thật sự...', 'chỉ khi... mới...'.",
     "longExplanation": "Trợ từ nhấn mạnh 'こそ' khi kết hợp với thể て ('～てこそ') được dùng để nhấn mạnh điều kiện thiết yếu mang tính tích cực: chỉ khi thực sự bắt tay vào làm việc gì, trải qua chuyện gì thì một ý nghĩa, giá trị thực sự hay kết quả mong đợi mới phát huy hoặc được thấu hiểu ('chỉ khi làm... thì mới thực sự có ý nghĩa', 'phải trải qua... thì mới...'). Vế sau thường là những nhận định mang tính khẳng định về giá trị hoặc năng lực.",
@@ -8855,7 +9475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_でしょうがない_82": {
+  "ja_n2_でしょうがない_82": {
     "title": "～でしょうがない (〜deshou ga nai)",
     "shortExplanation": "Diễn tả một cảm xúc, cảm giác tự nhiên trào dâng vô cùng mãnh liệt đến mức không kìm nén được; 'vô cùng...', 'hết sức...', 'không chịu nổi'.",
     "longExplanation": "Mẫu ngữ pháp '～でしょうがない' (hoặc '～てしょうがない', '～て仕様がない') được dùng để biểu thị một cảm xúc, cảm giác bản năng hoặc trạng thái thể chất trào dâng mãnh liệt từ bên trong mà bản thân không thể kiềm chế hay kiểm soát được ('vô cùng lo lắng', 'nhớ da diết', 'buồn chán hết sức'). Thường kết hợp với các từ chỉ cảm xúc (bất an, vui mừng, cô đơn) hoặc cảm giác sinh lý (đau, buồn ngủ, đói).",
@@ -8875,7 +9495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_でたまらない_83": {
+  "ja_n2_でたまらない_83": {
     "title": "～でたまらない (〜de tamaranai)",
     "shortExplanation": "Diễn tả cảm giác, cảm xúc hoặc ham muốn mãnh liệt đến mức không thể nào kìm nén hay chịu đựng được; 'vô cùng...', '...không chịu nổi', '...đến phát điên'.",
     "longExplanation": "Mẫu ngữ pháp '～でたまらない' (với たまらない bắt nguồn từ 堪える - chịu đựng, kham nổi) gắn sau thể て của tính từ hoặc động từ. Cấu trúc này dùng để diễn đạt trạng thái mà một cảm xúc tâm lý, cảm giác thể xác hoặc khao khát nào đó dâng trào tới mức tột cùng, khiến người nói không thể nào chịu đựng nổi hay kìm nén thêm được nữa ('thèm ăn không chịu nổi', 'yêu vô cùng', 'nóng bức không kham nổi'). Khác với '～てかなわない' (vốn mang tính chán ghét, phiền hà), '～でたまらない' có thể dùng cho cả cảm xúc tích cực (vui mừng, yêu thích) lẫn tiêu cực (đau đớn, lo lắng).",
@@ -8895,7 +9515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_でならない_84": {
+  "ja_n2_でならない_84": {
     "title": "～でならない (〜de naranai)",
     "shortExplanation": "Diễn tả một cảm xúc, cảm nghĩ tự nhiên nảy sinh từ tận đáy lòng mà không cách nào kìm nén lại được; 'vô cùng...', 'không sao ngăn được cảm giác...'.",
     "longExplanation": "Mẫu ngữ pháp '～でならない' (hoặc '～てならない') biểu thị một trạng thái tâm lý, cảm xúc nảy sinh một cách hoàn toàn tự nhiên và bất giác chiếm lấy tâm trí mà người nói không thể nào kiểm soát hay gạt đi được ('không hiểu sao cứ thấy lo lắng khôn nguôi', 'tiếc nuối vô cùng'). Cấu trúc này thường đi với các động từ, tính từ biểu thị sự tự phát hoặc cảm xúc như '気になる' (bận tâm), '思える' (cảm thấy), '心配だ' (lo lắng), '残念だ' (tiếc nuối), '不思議だ' (kỳ lạ). Mang văn phong trang trọng, biểu cảm sâu sắc hơn so với 'しょうがない'.",
@@ -8915,7 +9535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_でばかりはいられない_85": {
+  "ja_n2_でばかりはいられない_85": {
     "title": "～でばかりはいられない (〜de bakari wa irarenai)",
     "shortExplanation": "Diễn tả việc không thể cứ mãi đắm chìm trong một hành động, trạng thái đó mà cần phải làm việc khác quan trọng hơn; 'không thể cứ mãi...', 'đâu thể chỉ... mãi được'.",
     "longExplanation": "Mẫu ngữ pháp '～でばかりはいられない' (hoặc '～てばかりはいられない') kết hợp phó từ nhấn mạnh 'ばかり' (chỉ toàn) với dạng phủ định khả năng của いる ('はいられない'). Mẫu câu này biểu thị nhận thức của người nói rằng không thể cứ mãi đắm chìm hay duy trì một việc gì đó (như nghỉ ngơi, ỷ lại, than vãn, vui chơi) mãi được, mà cần phải thức tỉnh, gánh vác trách nhiệm hoặc bắt tay vào làm những việc quan trọng tiếp theo.",
@@ -8935,7 +9555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ではないか_86": {
+  "ja_n2_ではないか_86": {
     "title": "～ではないか (〜de wa nai ka)",
     "shortExplanation": "Dùng để khẳng định mạnh mẽ, gợi ý đồng thuận, hoặc bộc lộ sự bất ngờ phát hiện; 'chẳng phải là... hay sao?', 'không phải là... sao!'.",
     "longExplanation": "Mẫu câu '～ではないか' (trong khẩu ngữ thường là '～じゃないか' hoặc '～ではないですか') đứng ở cuối câu mang các sắc thái biểu cảm phong phú: (1) Đưa ra ý kiến hoặc khẳng định một cách mạnh mẽ, nhằm lôi kéo sự đồng tình từ phía người nghe ('chẳng phải là... hay sao'); (2) Dùng như một câu hỏi tu từ để nhắc nhở hoặc trách móc nhẹ nhàng; (3) Biểu thị sự kinh ngạc, ngạc nhiên thú vị khi bất ngờ phát hiện ra một sự thật ngoài dự kiến ('ô kìa, chẳng phải là... đây sao!').",
@@ -8955,7 +9575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てはならない_87": {
+  "ja_n2_てはならない_87": {
     "title": "～てはならない (〜te wa naranai)",
     "shortExplanation": "Diễn tả sự nghiêm cấm mang tính mệnh lệnh hoặc nguyên tắc đạo đức, luật pháp; 'không được...', 'tuyệt đối không được...'.",
     "longExplanation": "Mẫu ngữ pháp '～てはならない' gắn vào sau động từ thể て để diễn tả lệnh cấm nghiêm khắc mang tính nguyên tắc, luật định hoặc chuẩn mực đạo đức xã hội ('tuyệt đối không được phép làm điều đó'). Mẫu câu này mang văn phong trang trọng, nghiêm túc và uy nghiêm, thường được dùng trong các điều luật, quy định, biển cảnh báo công cộng hoặc những lời căn dặn mang tính luân thường đạo lý, không dùng cho những mệnh lệnh vụn vặt cá nhân trong đời sống thường ngày.",
@@ -8975,7 +9595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_てまで_88": {
+  "ja_n2_てまで_88": {
     "title": "～てまで (〜te made)",
     "shortExplanation": "Diễn tả việc sẵn sàng làm một hành động cực đoan, quá mức hoặc chấp nhận hy sinh để đạt được mục đích; 'đến mức...', 'thậm chí đến mức...'.",
     "longExplanation": "Mẫu ngữ pháp '～てまで' gắn vào sau động từ thể て để diễn tả việc người nói hoặc một ai đó chấp nhận thực hiện một hành vi cực đoan, vượt qua chuẩn mực thông thường, hoặc phải đánh đổi, hy sinh ('thậm chí đến mức...', 'không tiếc... để...'). Cấu trúc này thường thể hiện sự ngạc nhiên, cảm phục, nghi ngại hoặc phê phán trước sự trả giá quá lớn để đạt được một mục tiêu nào đó.",
@@ -8995,7 +9615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_て当然だ_89": {
+  "ja_n2_て当然だ_89": {
     "title": "～て当然だ (〜te tōzen da)",
     "shortExplanation": "Diễn tả một kết quả hay sự việc là hiển nhiên, lẽ tất yếu theo logic hoặc quy luật thông thường; 'đương nhiên là...', 'là điều dĩ nhiên'.",
     "longExplanation": "Mẫu ngữ pháp '～て当然だ' (cũng thường dùng là '～て当たり前だ') gắn vào sau động từ thể て, tính từ thể て để diễn tả một sự việc, hành động hay kết quả là hoàn toàn tự nhiên, hợp lý và hiển nhiên theo lẽ thường dựa trên nguyên nhân hay tiền đề trước đó ('đương nhiên là...', 'tất nhiên là phải vậy'). Thường dùng khi người nói khẳng định kết quả đó là xứng đáng hoặc không có gì đáng ngạc nhiên.",
@@ -9015,7 +9635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_というものだ_90": {
+  "ja_n2_というものだ_90": {
     "title": "～というものだ (〜to iu mono da)",
     "shortExplanation": "Diễn tả một nhận định mang tính bản chất, chân lý hiển nhiên hoặc đạo lý phổ biến trong xã hội; 'quả đúng là...', 'chính là lẽ...', 'thật đúng là...'.",
     "longExplanation": "Mẫu ngữ pháp '～というものだ' dùng để khẳng định một chân lý, đạo lý thông thường, hoặc thể hiện cảm xúc, quan điểm sâu sắc của người nói rằng một điều gì đó đúng là như vậy theo lẽ tự nhiên ('đó mới thực sự là...', 'quả đúng là...'). Thường xuất hiện trong các câu bình luận, khái quát mang tính đúc kết về quy luật cuộc sống hoặc lẽ đời.",
@@ -9035,7 +9655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どうにかないものか_91": {
+  "ja_n2_どうにかないものか_91": {
     "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
     "shortExplanation": "Diễn tả nguyện vọng tha thiết hoặc trăn trở tìm cách xoay xở giải quyết một tình thế khó khăn; 'liệu có cách nào... không nhỉ?', 'giá mà có cách nào...'.",
     "longExplanation": "Cấu trúc 'どうにか～ないものか' (kết hợp từ 'どうにか' - bằng cách nào đó với dạng phủ định '～ないものか / ないものだろうか') dùng để bày tỏ tâm trạng trăn trở, băn khoăn và mong mỏi tha thiết tìm ra hướng giải quyết cho một tình huống khó khăn, nan giải ('chẳng lẽ không còn cách nào sao?', 'liệu có cách nào để... không?'). Mẫu câu thể hiện khát khao biến điều tưởng chừng bất khả thi thành khả thi.",
@@ -9055,7 +9675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とおり_92": {
+  "ja_n2_とおり_92": {
     "title": "～とおり (〜toori)",
     "shortExplanation": "Diễn tả hành động được thực hiện đúng theo chỉ dẫn, quy định hoặc sự việc diễn ra y hệt như đã nghe, đã dự liệu; 'đúng như...', 'theo như...'.",
     "longExplanation": "Mẫu ngữ pháp '～とおり' (hoặc '～どおり') biểu thị sự trùng khớp chính xác, diễn tả một hành động hoặc trạng thái diễn ra y hệt, không sai lệch chút nào so với sự hướng dẫn, dự tính, quy tắc hoặc lời nói trước đó ('theo đúng như...', 'y như...'). Khi ghép trực tiếp sau danh từ, từ này thường bị biến âm thành '～どおり' (ví dụ: 予定どおり - đúng như dự định, ルールどおり - đúng theo luật lệ).",
@@ -9075,7 +9695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とか_93": {
+  "ja_n2_とか_93": {
     "title": "～とか (〜to ka)",
     "shortExplanation": "Dùng để liệt kê vài ví dụ đại diện, hoặc diễn tả thông tin mơ hồ, nghe kể chưa chắc chắn; 'như là... hoặc là...', 'nghe nói là... hay sao ấy'.",
     "longExplanation": "Trợ từ '～とか' được dùng rất phổ biến trong văn nói giao tiếp thường ngày với hai công dụng chính: (1) Liệt kê một vài ví dụ tiêu biểu trong số nhiều sự vật, hoạt động tương tự ('nào là... nào là...', 'chẳng hạn như...'); (2) Đưa ra thông tin một cách ướm chừng, không chắc chắn hoặc dẫn lại điều nghe ngóng được mà bản thân chưa kiểm chứng rõ ràng ('nghe đâu là...', 'thấy bảo là...'). Cấu trúc thường lặp lại theo dạng '～とか～とか'.",
@@ -9095,7 +9715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ところ_94": {
+  "ja_n2_ところ_94": {
     "title": "～ところ (〜tokoro)",
     "shortExplanation": "Diễn tả thời điểm, giai đoạn cụ thể của hành động (sắp sửa làm, đang làm dở, vừa mới làm xong) hoặc chỉ tình huống, hoàn cảnh; 'đúng lúc...', 'đang trong lúc...'.",
     "longExplanation": "Mẫu ngữ pháp '～ところ' mang ý nghĩa tùy thuộc vào thể của động từ đi kèm: (1) Động từ thể từ điển + ところ: vừa đúng lúc sắp sửa thực hiện hành động; (2) Động từ thể ている + ところ: đang ở chính giữa lúc thực hiện hành động; (3) Động từ thể た + ところ: vừa mới hoàn tất hành động trong tích tắc. Ngoài ra, khi kết hợp với tính từ hoặc danh từ, cấu trúc này còn biểu thị tình huống, thời điểm hoặc hoàn cảnh cụ thể ('vào lúc đang bận rộn', 'trong lúc nguy cấp').",
@@ -9115,7 +9735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どころか_95": {
+  "ja_n2_どころか_95": {
     "title": "～どころか (〜dokoro ka)",
     "shortExplanation": "Diễn tả thực tế hoàn toàn trái ngược hoặc vượt xa so với mức độ được đề cập ở vế trước; 'đâu chỉ...', 'nói gì đến...', 'chẳng những không... mà trái lại còn...'.",
     "longExplanation": "Mẫu ngữ pháp '～どころか' dùng để nhấn mạnh sự cách biệt rất lớn giữa thực tế và điều người ta dự đoán hay kỳ vọng. Cấu trúc có hai sắc thái chính: (1) Thực tế vượt xa hơn hẳn mức độ tưởng tượng, mang tính tích cực hoặc bất ngờ ('đâu chỉ dừng ở mức hát hay mà giọng hát cứ như ca sĩ thực thụ'); (2) Thực tế hoàn toàn ngược lại theo hướng tiêu cực ('chẳng những không khá hơn mà trái lại bệnh tình còn trầm trọng thêm').",
@@ -9135,7 +9755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どころではない_96": {
+  "ja_n2_どころではない_96": {
     "title": "～どころではない (〜dokoro de wa nai)",
     "shortExplanation": "Diễn tả tình huống cấp bách, bận rộn hoặc nan giải đến mức không còn tâm trí, thời gian hay điều kiện để làm việc gì; 'không phải lúc...', 'tâm trí đâu mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～どころではない' biểu thị tình trạng hiện tại quá bận rộn, căng thẳng hoặc gặp phải vấn đề nghiêm trọng đến nỗi người nói không có đủ điều kiện, thời gian hoặc tâm trạng để thực hiện một hành động nào đó ('đây đâu phải lúc để...', 'làm sao mà thảnh thơi... được'). Mẫu câu này thường dùng để từ chối một lời đề nghị giải trí hoặc bộc lộ áp lực nặng nề trong hoàn cảnh thực tế.",
@@ -9155,7 +9775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_としたら_97": {
+  "ja_n2_としたら_97": {
     "title": "～としたら (〜to shitara)",
     "shortExplanation": "Đưa ra một giả định hoặc tình huống giả tưởng để làm tiền đề đưa ra phán đoán, hành động tương ứng; 'giả sử nếu...', 'nếu như là...'.",
     "longExplanation": "Mẫu ngữ pháp '～としたら' (hoặc '～とすれば') dùng để thiết lập một điều kiện giả định trong tâm tưởng ('giả sử rằng...', 'nếu quả thật là...'). Người nói đặt một tình huống vào vị trí đã xảy ra hoặc là sự thật, từ đó đưa ra suy luận, phán đoán, hoặc phương án xử lý tiếp theo ở vế sau. So với liên từ điều kiện 'たら' thông thường, 'としたら' nhấn mạnh rõ nét hơn tính chất giả định suy lý của người nói.",
@@ -9175,7 +9795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_としても_98": {
+  "ja_n2_としても_98": {
     "title": "～としても (〜to shite mo)",
     "shortExplanation": "Đưa ra một giả định mang tính nhượng bộ, diễn tả ý dù điều đó có xảy ra đi nữa thì kết quả hay lập trường ở vế sau vẫn không thay đổi; 'dẫu cho... thì cũng...', 'cho dù...'.",
     "longExplanation": "Mẫu ngữ pháp '～としても' (cũng như '～にしても') đưa ra một điều kiện giả tưởng mang tính nhượng bộ sâu sắc ('ngay cả khi giả sử là...', 'dẫu cho có... thì cũng...'). Vế sau luôn khẳng định một lập trường, quyết định, đánh giá hoặc sự thật vững vàng, hoàn toàn không bị lay chuyển hay chi phối bởi điều kiện giả định phía trước. So với '～ても', mẫu câu này mang tính lý luận và giả thiết mạnh mẽ hơn.",
@@ -9195,7 +9815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とともに_99": {
+  "ja_n2_とともに_99": {
     "title": "～と～ともに (〜to 〜tomoni)",
     "shortExplanation": "Diễn tả hai sự việc diễn ra đồng thời, sự biến đổi kéo theo song hành, hoặc 'cùng với' ai đó/cái gì đó; 'cùng với...', 'đồng thời với...'.",
     "longExplanation": "Mẫu ngữ pháp '～とともに' (chữ Hán: 共に) là cách diễn đạt mang tính trang trọng với các nét nghĩa cơ bản: (1) Biểu thị mối quan hệ biến đổi tương quan: sự biến chuyển ở vế trước kéo theo sự đổi thay tương ứng ở vế sau ('cùng với sự thay đổi của thời gian/mùa màng...'); (2) Diễn tả hai hành động hoặc sự kiện xảy ra đồng thời tại một thời điểm ('vừa đúng lúc... thì đồng thời...'); (3) Biểu thị sự đồng hành cùng với một đối tượng ('cùng chung với ai đó').",
@@ -9215,7 +9835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とは限らない_100": {
+  "ja_n2_とは限らない_100": {
     "title": "～とは限らない (〜to wa kagiranai)",
     "shortExplanation": "Biểu thị sự phủ định một phần, khẳng định một nhận định hay quy luật thông thường không phải lúc nào cũng đúng 100%; 'không hẳn là...', 'chưa chắc đã...'.",
     "longExplanation": "Mẫu ngữ pháp '～とは限らない' là cấu trúc biểu thị sự phủ định một phần điển hình trong tiếng Nhật. Nó được dùng để lưu ý rằng những quan niệm, định kiến hay suy đoán thông thường tuy có vẻ hợp lý nhưng không phải lúc nào cũng chính xác trong mọi hoàn cảnh, luôn luôn có ngoại lệ ('chưa hẳn đã...', 'không nhất thiết là...'). Cấu trúc thường đi kèm với các phó từ mang tính tuyệt đối như '必ずしも' (không hẳn), 'いつも' (không phải lúc nào cũng), '全部' (không phải tất cả).",
@@ -9235,7 +9855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないことはない_101": {
+  "ja_n2_ないことはない_101": {
     "title": "～ないことはない (〜nai koto wa nai)",
     "shortExplanation": "Sử dụng dạng phủ định kép để đưa ra lời khẳng định nhẹ nhàng, dè dặt rằng điều đó vẫn có khả năng xảy ra; 'không phải là không...', 'cũng có thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないことはない' kết hợp hai tầng phủ định để diễn đạt một sự khẳng định ngầm mang tính chất dè dặt, khiêm tốn hoặc không muốn nói quá dứt khoát ('không hẳn là hoàn toàn không...', 'nếu cố gắng thì vẫn làm được'). Người nói không khẳng định chắc nịch mà dùng lối nói này để ngầm xác nhận rằng khả năng hoặc điều kiện để thực hiện điều đó vẫn hoàn toàn tồn tại.",
@@ -9255,7 +9875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないこともない_102": {
+  "ja_n2_ないこともない_102": {
     "title": "～ないこともない (〜nai koto mo nai)",
     "shortExplanation": "Diễn tả ý không phải là hoàn toàn không thể làm được, nhưng bản thân có phần ngập ngừng, miễn cưỡng hoặc thấy có trở ngại; 'không phải là không thể... nhưng...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないこともない' (nhấn mạnh thêm bằng trợ từ 'も') mang sắc thái dè dặt và ngập ngừng rõ rệt hơn '～ないことはない'. Mẫu câu này biểu thị rằng việc đó tuy không phải là hoàn toàn bất khả thi, nhưng người nói cảm thấy không thực sự hào hứng, có phần gượng ép hoặc e ngại trước một khó khăn nào đó ('không phải là không làm được nhưng mà...'). Vế sau thường đi kèm với các liên từ tương phản như 'けれど', 'が', 'でも' để phân trần về lý do do dự.",
@@ -9275,7 +9895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ないではいられない_103": {
+  "ja_n2_ないではいられない_103": {
     "title": "～ないではいられない (〜nai de wa irarenai)",
     "shortExplanation": "Diễn tả cảm xúc, thôi thúc hoặc hành động tự nhiên trào dâng mãnh liệt đến mức không thể kìm nén hay kiềm chế được; 'không thể không...', 'không kìm được mà...', 'đành phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないではいられない' (dạng khẩu ngữ là '～ないじゃいられない') kết hợp với động từ thể ない để biểu thị một thôi thúc nội tâm, cảm xúc hoặc phản xạ tự nhiên của con người mạnh mẽ đến mức không có cách nào kiềm giữ hay ngăn lại được ('không thể nào không làm', 'không kìm lòng được mà...'). Dù về mặt lý trí có thể không muốn hoặc biết là không nên, nhưng người nói vẫn không thể ngừng hành động đó. Chủ ngữ thường là ngôi thứ nhất (người nói); nếu dùng cho ngôi thứ ba thì câu thường kết thúc bằng các cách nói phỏng đoán, suy diễn như '〜ようだ', '〜らしい', '〜そうだ'.",
@@ -9295,7 +9915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ながら_104": {
+  "ja_n2_ながら_104": {
     "title": "～ながら (〜nagara)",
     "shortExplanation": "Diễn tả hai hành động diễn ra song song cùng một lúc do cùng một chủ thể thực hiện; 'vừa... vừa...'.",
     "longExplanation": "Mẫu ngữ pháp '～ながら' gắn vào thân động từ (thể ます bỏ ます) để biểu thị hai hành động diễn ra đồng thời trong cùng một khoảng thời gian bởi cùng một chủ thể. Trong đó, hành động đi trước 'ながら' là hành động phụ mang tính kèm theo, còn hành động ở vế sau mới là hành động chính của người nói.",
@@ -9315,7 +9935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にあたり_105": {
+  "ja_n2_にあたり_105": {
     "title": "～にあたり (〜ni atari)",
     "shortExplanation": "Diễn tả thời điểm quan trọng, mang tính bước ngoặt, mở đầu cho một sự kiện hoặc dịp trọng đại; 'nhân dịp...', 'khi bước vào...', 'trước thềm...'.",
     "longExplanation": "Mẫu ngữ pháp '～にあたり' (hoặc '～にあたって') kết hợp với danh từ hoặc động từ thể từ điển, dùng để nhấn mạnh một thời điểm trọng đại, một sự kiện đặc biệt, một khởi đầu mới hay cột mốc mang tính bước ngoặt (như khai mạc, xuất phát, kết hôn, nhập học, khởi nghiệp...). Vế sau thường thể hiện sự chuẩn bị chu đáo, quyết tâm, lời chào hỏi trang trọng, lời chúc mừng hoặc các thủ tục cần thiết. Đây là cách diễn đạt rất trang trọng, thường xuất hiện trong các bài phát biểu, diễn văn hoặc văn bản thông báo chính thức.",
@@ -9335,7 +9955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_において_106": {
+  "ja_n2_において_106": {
     "title": "～において (〜ni oite)",
     "shortExplanation": "Chỉ địa điểm, thời gian, lĩnh vực hoặc bối cảnh diễn ra một hành động, sự kiện; 'ở', 'tại', 'trong', 'về mặt...'.",
     "longExplanation": "Mẫu ngữ pháp '～において' kết hợp với danh từ, là dạng văn phong trang trọng của trợ từ 'で' hoặc 'に'. Cấu trúc này được dùng để chỉ rõ địa điểm, phạm vi không gian, thời điểm lịch sử, lĩnh vực nghiên cứu, hoặc bối cảnh mà một hiện tượng, sự việc nào đó phát sinh hoặc được thực hiện ('ở...', 'tại...', 'trong lĩnh vực...'). Khi bổ nghĩa cho danh từ đi sau, cấu trúc này chuyển thành dạng '～における + Danh từ'. Thường xuất hiện trong các bản tin thời sự, văn kiện hành chính, báo cáo khoa học và các bài diễn văn trang trọng.",
@@ -9355,7 +9975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にかかわらず_107": {
+  "ja_n2_にかかわらず_107": {
     "title": "～にかかわらず (〜ni kakawarazu)",
     "shortExplanation": "Diễn tả việc một sự việc vẫn xảy ra hoặc được thực hiện mà không bị ảnh hưởng, chi phối bởi điều kiện hay tình huống phía trước; 'bất kể...', 'không phân biệt...', 'dù... hay không...'.",
     "longExplanation": "Mẫu ngữ pháp '～にかかわらず' (chữ Hán: '～に関わらず') đi cùng với động từ, tính từ hoặc danh từ biểu thị rằng một hành động, kết quả hay trạng thái phía sau luôn diễn ra bình thường, hoàn toàn không bị chi phối hay phụ thuộc vào điều kiện, mức độ, tình trạng được nêu ở vế trước. Thường đi cùng với các từ ngữ mang tính đối lập (có hay không, tốt hay xấu, làm hay không làm) hoặc các danh từ biểu thị độ chênh lệch, biến đổi (thời tiết, tuổi tác, giới tính, quốc tịch).",
@@ -9375,7 +9995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にかけては_108": {
+  "ja_n2_にかけては_108": {
     "title": "～にかけては (〜ni kakete wa)",
     "shortExplanation": "Nhấn mạnh một lĩnh vực, kỹ năng hoặc khía cạnh cụ thể mà một đối tượng có năng lực vượt trội hơn người khác; 'riêng về khoản...', 'nói về mặt...', 'nếu xét về...'.",
     "longExplanation": "Mẫu ngữ pháp '～にかけては' gắn vào sau danh từ để chỉ ra một lĩnh vực chuyên môn, kỹ năng, sở trường hoặc khía cạnh cụ thể mà một ai đó (hoặc sự vật nào đó) đạt trình độ xuất sắc, không hề thua kém bất kỳ ai ('nói về mặt...', 'riêng về khoản... thì đứng số một'). Vế sau hầu như luôn mang hàm ý đánh giá tích cực hoặc thể hiện sự tự tin, khẳng định năng lực vượt trội (như 'không thua ai', 'là giỏi nhất', 'vô cùng tinh tường').",
@@ -9395,7 +10015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にしたがって_109": {
+  "ja_n2_にしたがって_109": {
     "title": "～にしたがって (〜ni shitagatte)",
     "shortExplanation": "Diễn tả (1) một sự biến đổi này diễn ra kéo theo sự biến đổi khác tương ứng ('càng... càng...', 'cùng với đà...'), hoặc (2) làm theo một quy tắc, chỉ dẫn ('tuân theo...', 'theo như...').",
     "longExplanation": "Mẫu ngữ pháp '～にしたがって' gắn vào động từ thể từ điển hoặc danh từ có hai ý nghĩa căn bản: (1) Biểu thị mối quan hệ tương quan đồng biến: khi sự việc ở vế trước thay đổi theo một chiều hướng nào đó, thì sự việc ở vế sau cũng tự nhiên thay đổi tương ứng theo chiều hướng đó ('cùng với việc...', 'càng... thì càng...'). (2) Biểu thị sự tuân thủ, thuận theo một quy định, kế hoạch, chỉ dẫn hoặc người có thẩm quyền ('làm đúng theo...', 'tuân thủ theo...').",
@@ -9415,7 +10035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にしたら_110": {
+  "ja_n2_にしたら_110": {
     "title": "～にしたら (〜ni shitara)",
     "shortExplanation": "Đứng trên lập trường, góc nhìn hoặc hoàn cảnh của một người nào đó để phỏng đoán, đồng cảm hoặc nhận định về sự việc; 'đối với...', 'nếu đứng ở góc độ của... mà nói'.",
     "longExplanation": "Mẫu ngữ pháp '～にしたら' (đồng nghĩa với '～にすれば', '～にしてみれば', '～にしても') gắn trực tiếp vào danh từ hoặc đại từ chỉ người. Cấu trúc này dùng khi người nói đặt mình vào vị trí, tâm thế, góc nhìn hoặc hoàn cảnh của đối tượng đó để đồng cảm, đưa ra sự phỏng đoán hoặc phán xét xem họ sẽ cảm thấy hoặc suy nghĩ như thế nào ('đối với người đó mà nói thì...', 'nếu ở vào hoàn cảnh của...'). Vế sau thường kết thúc bằng các cách nói phỏng đoán như '〜だろう', '〜かもしれない', hoặc nêu lên một cảm nhận chủ quan.",
@@ -9435,7 +10055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にしろにしろ_111": {
+  "ja_n2_にしろにしろ_111": {
     "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
     "shortExplanation": "Nêu ra hai khả năng hoặc trường hợp tiêu biểu, đối lập để nhấn mạnh rằng dù rơi vào trường hợp nào đi chăng nữa thì kết quả hay hành động phía sau vẫn không thay đổi; 'dù là... hay là...', 'cho dù... hay...'.",
     "longExplanation": "Mẫu ngữ pháp '～にしろ～にしろ' (hoặc '～にせよ～にせよ') đưa ra hai ví dụ mang tính đối lập hoặc hai lựa chọn khác nhau để khẳng định rằng dù chọn phương án nào hay tình huống nào xảy ra đi chăng nữa, thì sự việc, kết luận hay thái độ ở vế sau vẫn giữ nguyên không có gì khác biệt ('cho dù là A hay là B thì cũng...'). Vế sau thường là một phán đoán khách quan, một lời khuyên, yêu cầu hoặc kết luận dứt khoát.",
@@ -9455,7 +10075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_につけにつけ_112": {
+  "ja_n2_につけにつけ_112": {
     "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
     "shortExplanation": "Nêu ra các trường hợp để diễn tả rằng cứ mỗi khi gặp trường hợp nào thì cũng đều có chung một cảm xúc, nhận thức hay trạng thái; 'mỗi lần... hay mỗi lần...', 'dù là... hay là...'.",
     "longExplanation": "Mẫu ngữ pháp '～につけ～につけ' được dùng khi đưa ra hai sự việc, sự vật đối lập hoặc cùng loại (như vui hay buồn, tốt hay xấu, xuân hay thu...) để diễn tả rằng trong bất kỳ tình huống nào trong số đó, người nói cũng luôn nảy sinh cùng một cảm xúc, suy nghĩ hoặc sự việc tương tự ('cứ mỗi khi gặp A hay mỗi khi gặp B thì đều...'). Vế sau hầu như luôn là những động từ chỉ cảm xúc nội tâm, sự xúc động hoặc suy nghĩ tự nhiên trào dâng.",
@@ -9475,7 +10095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_につれて_113": {
+  "ja_n2_につれて_113": {
     "title": "～につれて (〜ni tsurete)",
     "shortExplanation": "Diễn tả một sự việc, trạng thái biến đổi kéo theo sự biến đổi dần dần của một sự việc khác theo tỷ lệ tương ứng; 'càng... càng...', 'cùng với đà...', 'theo sự...'.",
     "longExplanation": "Mẫu ngữ pháp '～につれて' kết hợp với động từ thể từ điển (chỉ sự biến đổi như '進む', '高まる', '増える', '近づく'...) hoặc danh từ diễn tả hành động/quá trình để chỉ sự tương quan biến đổi tỉ lệ thuận hoặc tự nhiên: khi một yếu tố tiến triển theo thời gian hoặc mức độ thì yếu tố kia cũng tự nhiên biến chuyển dần dần theo ('càng... thì càng...', 'cùng với sự...'). Cấu trúc này thường nhấn mạnh vào tính biến đổi tự nhiên, khách quan của sự vật hiện tượng.",
@@ -9495,7 +10115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にともなって_114": {
+  "ja_n2_にともなって_114": {
     "title": "～にともなって (〜ni tomonatte)",
     "shortExplanation": "Diễn tả một sự việc phát sinh cùng lúc hoặc là hệ quả tất yếu đi kèm với một sự việc, biến đổi khác; 'đi cùng với...', 'kéo theo...', 'do... nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～にともなって' (chữ Hán: '～に伴って') gắn vào danh từ hoặc động từ thể thông thường, dùng để biểu thị rằng khi một biến đổi, sự kiện lớn hay tình huống nào đó xảy ra thì một sự kiện, hệ quả khác cũng đồng thời nảy sinh hoặc biến đổi theo ('cùng với...', 'kéo theo sự...'). Cấu trúc này mang sắc thái trang trọng, thường được sử dụng trong các bản tin kinh tế, xã hội, bài báo cáo để phân tích mối quan hệ nhân quả mang tính quy mô hoặc sự biến chuyển toàn diện.",
@@ -9515,7 +10135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にほかならない_115": {
+  "ja_n2_にほかならない_115": {
     "title": "～にほかならない (〜ni hoka naranai)",
     "shortExplanation": "Nhấn mạnh khẳng định chắc chắn một sự việc, nguyên nhân hay bản chất chính là điều đó chứ tuyệt đối không phải là điều gì khác; 'chính là...', 'không gì khác ngoài...', 'chẳng qua chỉ là...'.",
     "longExplanation": "Mẫu ngữ pháp '～にほかならない' (chữ Hán: '～に他ならない') kết hợp với danh từ, tính từ hoặc động từ thể thông thường, dùng để đưa ra sự phán đoán hoặc khẳng định dứt khoát rằng nguyên nhân cốt lõi, lý do duy nhất hoặc bản chất đích thực của sự việc chính là điều đó, không thể là một nguyên nhân nào khác ('không có gì khác ngoài...', 'chính là vì...'). Đây là cách nói mang tính quả quyết, trang trọng, thường xuất hiện trong các bài luận văn, văn chính luận hoặc phát biểu đanh thép.",
@@ -9535,7 +10155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にもかかわらず_116": {
+  "ja_n2_にもかかわらず_116": {
     "title": "～にもかかわらず (〜ni mo kakawarazu)",
     "shortExplanation": "Diễn tả một kết quả hoặc hành động xảy ra hoàn toàn trái ngược với điều đương nhiên được suy ra từ tiền đề phía trước; 'mặc dù... nhưng...', 'dẫu cho... vậy mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～にもかかわらず' (chữ Hán: '～にも関わらず') gắn vào động từ, tính từ hoặc danh từ biểu thị sự đối lập mang tính nghịch lý: dù trong tình huống hay điều kiện bất lợi ở vế trước (được kỳ vọng sẽ dẫn đến một kết quả nhất định), nhưng thực tế ở vế sau lại diễn ra điều hoàn toàn trái ngược, gây bất ngờ hoặc khâm phục ('mặc dù... thế nhưng vẫn...'). Đây là cách diễn đạt khá trang trọng, văn phong nghiêm túc hơn so với '〜のに'.",
@@ -9555,7 +10175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_により_117": {
+  "ja_n2_により_117": {
     "title": "～により (〜ni yori)",
     "shortExplanation": "Chỉ nguyên nhân, phương tiện, phương pháp, căn cứ hoặc chủ thể của hành động; 'do...', 'bằng cách...', 'thông qua...', 'theo như...'.",
     "longExplanation": "Mẫu ngữ pháp '～により' (hoặc '～によって') kết hợp với danh từ, mang nhiều ý nghĩa tùy thuộc vào ngữ cảnh trong văn phong trang trọng, viết văn: (1) Chỉ nguyên nhân, lý do dẫn đến một sự việc, biến cố ('do...', 'bởi vì...'); (2) Chỉ phương pháp, phương tiện, cách thức để đạt được mục đích ('nhờ...', 'bằng phương pháp...'); (3) Chỉ căn cứ, tiêu chuẩn phán đoán ('dựa theo...', 'căn cứ vào...'); (4) Chỉ chủ thể tạo ra tác phẩm trong câu bị động ('bởi nhà văn X...', 'do tổ chức Y thực hiện...'). Dạng bổ nghĩa danh từ là '～による + Danh từ'.",
@@ -9575,7 +10195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_にわたって_118": {
+  "ja_n2_にわたって_118": {
     "title": "～にわたって (〜ni watatte)",
     "shortExplanation": "Biểu thị một hành động, sự việc hoặc trạng thái kéo dài suốt một khoảng thời gian, hoặc trải rộng trên một phạm vi không gian, quy mô, số lượng lớn; 'suốt...', 'trong suốt...', 'trải dài...', 'trên khắp...'.",
     "longExplanation": "Mẫu ngữ pháp '～にわたって' (khi bổ nghĩa cho danh từ đi sau sẽ có dạng '～にわたる + Danh từ', và trong văn viết trang trọng có thể dùng '～にわたり') kết hợp với danh từ chỉ thời gian, cự ly, không gian, số lần hoặc quy mô. Mẫu câu dùng để nhấn mạnh sự việc, hiện tượng hoặc hành động diễn ra liên tục, bao trùm hoặc trải rộng trên toàn bộ khoảng thời gian, độ dài không gian hay phạm vi quy mô lớn đó.",
@@ -9595,7 +10215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に先立ち_119": {
+  "ja_n2_に先立ち_119": {
     "title": "～に先立ち (〜ni sakidachi)",
     "shortExplanation": "Diễn tả một hành động, sự chuẩn bị được tiến hành trước khi bắt đầu một sự kiện, kế hoạch quan trọng; 'trước khi...', 'trước thềm...', 'chuẩn bị cho...'.",
     "longExplanation": "Mẫu ngữ pháp '～に先立ち' (dạng liên từ hoặc khẩu ngữ trang trọng là '～に先立って', khi bổ nghĩa cho danh từ có dạng '～に先立つ + Danh từ') kết hợp với danh từ hoặc động từ thể từ điển. Cấu trúc này dùng để diễn tả việc thực hiện một hành động chuẩn bị, sắp xếp trước một sự kiện, hội nghị, chuyến đi hoặc kế hoạch quan trọng mang tính chính thức ('trước khi tiến hành...', 'trước thềm...'). Thường dùng trong văn phong công vụ, hội nghị, báo chí trang trọng.",
@@ -9615,7 +10235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に反して_120": {
+  "ja_n2_に反して_120": {
     "title": "～に反して (〜ni hanshite)",
     "shortExplanation": "Diễn tả kết quả hoặc hành động xảy ra trái ngược hoàn toàn với dự đoán, kỳ vọng, quy tắc hoặc ý muốn ban đầu; 'trái với...', 'ngược lại với...', 'trái ngược với...'.",
     "longExplanation": "Mẫu ngữ pháp '～に反して' (khi bổ nghĩa cho danh từ có dạng '～に反する + Danh từ', và dạng trang trọng trong văn viết là '～に反し') kết hợp với danh từ chỉ dự báo, kỳ vọng, nguyện vọng, quy tắc hoặc ý kiến (như 予想, 期待, 規則, 意図...). Mẫu câu biểu thị thực tế xảy ra trái ngược hoàn toàn với những gì đã nghĩ, đã mong đợi hoặc đi ngược lại với các chuẩn mực, quy định đã định sẵn.",
@@ -9635,7 +10255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に基づいて_121": {
+  "ja_n2_に基づいて_121": {
     "title": "～に基づいて (〜ni motozuite)",
     "shortExplanation": "Diễn tả việc thực hiện một hành động, đưa ra quyết định hay phán đoán dựa trên một cơ sở, tiêu chuẩn, dữ liệu hoặc quy định cụ thể; 'dựa trên...', 'căn cứ vào...', 'dựa vào...'.",
     "longExplanation": "Mẫu ngữ pháp '～に基づいて' (khi bổ nghĩa cho danh từ có dạng '～に基づく + Danh từ' hoặc '～に基づいた + Danh từ', trong văn viết trang trọng là '～に基づき') đi cùng với các danh từ mang tính nền tảng, cơ sở như dữ liệu, kết quả nghiên cứu, pháp luật, phương châm, nguyên tắc hay ý kiến. Cấu trúc này biểu thị rằng một hành động, quyết định, biện pháp hoặc kết luận được hình thành và tiến hành dựa trên nền tảng, căn cứ xác thực đó.",
@@ -9655,7 +10275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に対して_122": {
+  "ja_n2_に対して_122": {
     "title": "～に対して (〜ni taishite)",
     "shortExplanation": "Chỉ đối tượng mà hành động hoặc thái độ hướng tới ('đối với...', 'về phía...'); hoặc dùng để nêu sự so sánh đối chiếu tương phản giữa hai sự vật, hiện tượng ('trái lại với...', 'ngược lại với...').",
     "longExplanation": "Mẫu ngữ pháp '～に対して' (khi bổ nghĩa cho danh từ có dạng '～に対する + Danh từ', dạng văn viết là '～に対し') có hai cách dùng chính: (1) Chỉ đối tượng trực tiếp tiếp nhận tình cảm, hành vi, thái độ, phản ứng của chủ thể ('đối với ai đó/vấn đề gì đó'); (2) Dùng để so sánh, đối chiếu sự khác biệt rõ rệt giữa hai đối tượng, hai sự việc mang tính tương phản ('trong khi A thì B ngược lại...').",
@@ -9675,7 +10295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に応えて_123": {
+  "ja_n2_に応えて_123": {
     "title": "～に応えて (〜ni kotaete)",
     "shortExplanation": "Diễn tả hành động được thực hiện nhằm đáp ứng, đền đáp lại mong đợi, yêu cầu, tiếng gọi hoặc sự ủng hộ của ai đó; 'đáp lại...', 'đền đáp...', 'theo yêu cầu của...'.",
     "longExplanation": "Mẫu ngữ pháp '～に応えて' (khi bổ nghĩa cho danh từ có dạng '～に応える + Danh từ', và dạng trang trọng là '～に応え') kết hợp với danh từ chỉ nguyện vọng, kỳ vọng, yêu cầu, tiếng gọi hay sự cổ vũ (như 期待, 要望, 要請, 声, アンコール...). Cấu trúc này dùng để diễn tả việc chủ thể hành động tích cực nhằm thỏa mãn, làm hài lòng hoặc đáp lại những mong mỏi, đề nghị của đối phương.",
@@ -9695,7 +10315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に応じて_124": {
+  "ja_n2_に応じて_124": {
     "title": "～に応じて (〜ni oujite)",
     "shortExplanation": "Diễn tả sự việc, hành động thay đổi linh hoạt sao cho tương thích, phù hợp với từng điều kiện, mức độ hoặc hoàn cảnh cụ thể; 'tùy theo...', 'tương ứng với...', 'phù hợp với...'.",
     "longExplanation": "Mẫu ngữ pháp '～に応じて' (khi bổ nghĩa cho danh từ có dạng '～に応じた + Danh từ', văn viết là '～に応じ') kết hợp với các danh từ có thể phân cấp độ, biến đổi đa dạng hoặc có nhiều trạng thái khác nhau (như tuổi tác, thu nhập, khí hậu, nguyện vọng, năng lực...). Cấu trúc này biểu thị rằng nội dung ở vế sau sẽ thay đổi tương ứng, thích ứng hoặc được điều chỉnh linh hoạt cho phù hợp với mức độ hay điều kiện của danh từ đi trước.",
@@ -9715,7 +10335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に決まっている_125": {
+  "ja_n2_に決まっている_125": {
     "title": "～に決まっている (〜ni kimatte iru)",
     "shortExplanation": "Thể hiện sự phán đoán chủ quan vô cùng chắc chắn và tự tin của người nói; 'chắc chắn là...', 'nhất định là...', 'không thể nào khác được'.",
     "longExplanation": "Mẫu ngữ pháp '～に決まっている' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ (lưu ý: tính từ đuôi な và danh từ sẽ đi trực tiếp với に決まっている mà không có だ, hoặc trong khẩu ngữ đôi khi kèm だ). Cấu trúc này dùng khi người nói dựa trên cảm nhận, trực giác hoặc kinh nghiệm chủ quan của bản thân để khẳng định một điều gì đó là hiển nhiên đúng, không có mảy may nghi ngờ ('chắc chắn 100% là như vậy').",
@@ -9735,7 +10355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に沿って_126": {
+  "ja_n2_に沿って_126": {
     "title": "～に沿って (〜ni sotte)",
     "shortExplanation": "Diễn tả hành động đi dọc theo một vật thể trải dài (con đường, dòng sông); hoặc hành động tuân thủ, bám sát theo một quy tắc, kế hoạch, hướng dẫn đã định sẵn; 'dọc theo...', 'men theo...', 'tuân theo...', 'bám sát...'.",
     "longExplanation": "Mẫu ngữ pháp '～に沿って' (khi bổ nghĩa cho danh từ có dạng '～に沿う + Danh từ' hoặc '～に沿った + Danh từ', trong văn viết có thể dùng '～に沿い') kết hợp với danh từ. Có hai cách dùng: (1) Men theo, đi dọc theo một tuyến đường, bờ sông, bờ biển có hình dáng trải dài; (2) Hành động tuân thủ chặt chẽ, không đi chệch khỏi một khuôn mẫu, tiêu chuẩn, kế hoạch, quy tắc, đường lối hay nguyện vọng của người khác ('làm đúng theo...', 'bám sát...').",
@@ -9755,7 +10375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に過ぎない_127": {
+  "ja_n2_に過ぎない_127": {
     "title": "～に過ぎない (〜ni suginai)",
     "shortExplanation": "Biểu thị mức độ thấp, tầm thường của sự vật hoặc sự việc; 'chỉ là...', 'chẳng qua chỉ là...', 'không hơn không kém'.",
     "longExplanation": "Mẫu ngữ pháp '～に過ぎない' (chữ Hán: '～に過ぎない') kết hợp với động từ, tính từ hoặc danh từ ở thể thông thường (đối với danh từ và tính từ đuôi な, thường bỏ だ hoặc dùng である). Cấu trúc này dùng để diễn đạt rằng một sự việc, tình trạng không có gì to tát hay ghê gớm, người nói đánh giá mức độ, tính chất hay giá trị của nó chỉ dừng lại ở một mức khiêm tốn hoặc tầm thường ('không vượt quá mức đó', 'chẳng qua cũng chỉ đến thế mà thôi').",
@@ -9775,7 +10395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に関わって_128": {
+  "ja_n2_に関わって_128": {
     "title": "～に関わって (〜ni kakawatte)",
     "shortExplanation": "Chỉ sự việc có liên quan, dính líu hoặc ảnh hưởng sâu sắc đến một vấn đề, đối tượng; 'liên quan đến...', 'dính líu tới...', 'ảnh hưởng đến...'.",
     "longExplanation": "Mẫu ngữ pháp '～に関わって' (dạng liên kết danh từ là '～に関わる + Danh từ', và dạng trang trọng là '～に関わり') đi cùng với danh từ. Cấu trúc này dùng để diễn tả việc tham gia vào, dính líu tới, liên quan mật thiết hoặc có tác động to lớn đến một sự việc, tính mạng, danh dự, công việc quan trọng nào đó. Trong ngữ cảnh thông thường, nó cũng mang nghĩa tương tự '～に関連して' (liên quan đến vấn đề nào đó).",
@@ -9795,7 +10415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に限り_129": {
+  "ja_n2_に限り_129": {
     "title": "～に限り (〜ni kagiri)",
     "shortExplanation": "Chỉ sự giới hạn đối tượng, thời gian hoặc điều kiện áp dụng duy nhất cho một trường hợp đặc biệt; 'chỉ riêng...', 'chỉ giới hạn trong...', 'chỉ dành cho...'.",
     "longExplanation": "Mẫu ngữ pháp '～に限り' (khi đứng ở vị trí vị ngữ kết thúc câu thường là '～に限る') kết hợp với danh từ chỉ đối tượng, ngày tháng, thời gian hoặc tư cách. Cấu trúc này dùng trong các thông báo, quy định hoặc quảng cáo chính thức để tuyên bố rằng một đãi ngộ, ưu đãi, quy định hay điều kiện nào đó chỉ được áp dụng duy nhất cho đối tượng được nêu mà không áp dụng cho các trường hợp khác ('chỉ ngoại lệ trong trường hợp này').",
@@ -9815,7 +10435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に際して_130": {
+  "ja_n2_に際して_130": {
     "title": "～に際して (〜ni saishite)",
     "shortExplanation": "Diễn tả thời điểm chuẩn bị bước vào một sự kiện, dịp đặc biệt hoặc khi bắt đầu một việc quan trọng; 'nhân dịp...', 'khi...', 'trước thềm...'.",
     "longExplanation": "Mẫu ngữ pháp '～に際して' (khi bổ nghĩa cho danh từ có dạng '～に際しての + Danh từ', và dạng liên từ trang trọng là '～に際し') kết hợp với danh từ hoặc động từ thể từ điển. Cấu trúc này dùng để nhấn mạnh một thời điểm mang tính bước ngoặt, một sự kiện trọng đại trong đời hoặc một công việc quan trọng bắt đầu (như tốt nghiệp, kết hôn, du học, ký kết hợp đồng...). Vế sau thường là lời phát biểu, chuẩn bị thủ tục, lời khuyên hoặc tâm thế cần có. Rất phổ biến trong văn phong trang trọng, phát biểu nghi lễ.",
@@ -9835,7 +10455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ねばならない_131": {
+  "ja_n2_ねばならない_131": {
     "title": "～ねばならない (〜neba naranai)",
     "shortExplanation": "Diễn tả nghĩa vụ, bổn phận hoặc sự cần thiết bắt buộc phải thực hiện một hành động; 'phải...', 'bắt buộc phải...', 'không thể không...'.",
     "longExplanation": "Mẫu ngữ pháp '～ねばならない' (trong văn viết cũng có thể dùng '～ねばならぬ') là cách diễn đạt cổ điển và trang trọng tương đương với '～なければならない'. Cấu trúc này hình thành bằng cách chia động từ sang thể ない, bỏ 'ない' rồi thêm 'ねばならない' (đặc biệt: động từ 'する' sẽ chuyển thành 'せねばならない'). Thường dùng trong văn viết, diễn văn, châm ngôn hoặc khi người nói muốn thể hiện ý chí quyết tâm, trách nhiệm, bổn phận đạo đức nặng nề hoặc tính cấp bách.",
@@ -9855,7 +10475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_のみならずも_132": {
+  "ja_n2_のみならずも_132": {
     "title": "～のみならず～も (〜nomi narazu 〜mo)",
     "shortExplanation": "Diễn tả ý nghĩa không chỉ dừng lại ở phạm vi sự vật hay mức độ phía trước mà còn mở rộng sang cả sự vật khác tương tự; 'không những... mà còn...', 'không chỉ... mà cả...'.",
     "longExplanation": "Mẫu ngữ pháp '～のみならず～も' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ (với tính từ đuôi な và danh từ, có thể giữ nguyên thể cơ bản hoặc kèm 'である'). Cấu trúc này dùng để nhấn mạnh rằng không chỉ có sự việc hoặc đối tượng A được thỏa mãn hay đề cập, mà phạm vi còn được mở rộng bao gồm cả đối tượng B cùng loại hoặc ở mức độ cao hơn. Đây là lối diễn đạt trang trọng, tương đương với '～だけでなく～も' nhưng mang sắc thái văn viết lịch sự, học thuật hơn.",
@@ -9875,7 +10495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_のももっともだ_133": {
+  "ja_n2_のももっともだ_133": {
     "title": "～のももっともだ (〜no mo mottomo da)",
     "shortExplanation": "Diễn tả một phản ứng, hành động, cảm xúc hoặc sự việc là hoàn toàn đương nhiên, hợp tình hợp lý hoặc rất dễ hiểu trong hoàn cảnh đó; '... cũng là điều đương nhiên', '... cũng phải thôi', '... là điều dễ hiểu'.",
     "longExplanation": "Mẫu ngữ pháp '～のももっともだ' (chữ Hán là 尤も) kết hợp với thể thông thường (kèm 'の') để biểu thị rằng trước một tình huống hay nguyên nhân cụ thể, việc ai đó phản ứng, suy nghĩ hay một kết quả diễn ra như vậy là hoàn toàn thỏa đáng, hợp lý và có thể thấu hiểu được ('... cũng phải thôi', '... là điều hiển nhiên'). Người nói dùng cấu trúc này để bày tỏ sự đồng tình, cảm thông sâu sắc và xem đó là lẽ dĩ nhiên mà bất kỳ ai trong hoàn cảnh đó cũng sẽ như vậy.",
@@ -9895,7 +10515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_の上では_134": {
+  "ja_n2_の上では_134": {
     "title": "〜の上では (〜no ue de wa)",
     "shortExplanation": "Chỉ căn cứ, phương diện, góc độ hoặc lập trường để đưa ra phán đoán, đánh giá; 'xét về mặt...', 'trên phương diện...', 'theo...'.",
     "longExplanation": "Mẫu ngữ pháp '～の上では' (hoặc '～上は') kết hợp với danh từ để xác định rõ phạm vi, góc độ, tiêu chuẩn hoặc cơ sở lý thuyết mà dựa vào đó người nói đưa ra nhận định hoặc đánh giá ('xét về phương diện...', 'trên lý thuyết / pháp luật mà nói thì...'). Cách nói này thường ngụ ý việc nhận định chỉ dựa trên tiêu chuẩn hoặc phương diện cụ thể đó, đôi khi để đối lập với tình hình thực tế ngoài đời.",
@@ -9915,7 +10535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_の下で_135": {
+  "ja_n2_の下で_135": {
     "title": "～の下で (〜no shita de)",
     "shortExplanation": "Diễn tả một sự việc diễn ra dưới sự chỉ dẫn, quản lý, ảnh hưởng, tình cảm của ai đó hoặc dưới một điều kiện, hoàn cảnh cụ thể; 'dưới...', 'dưới sự...'.",
     "longExplanation": "Mẫu ngữ pháp '～の下で' (thường đọc là 'のもとで' khi chỉ sự chỉ đạo, bảo bọc, hướng dẫn của người có thẩm quyền; hoặc 'のしたで') đi kèm với danh từ để biểu thị một hành động hay sự phát triển diễn ra dưới sự kèm cặp, dạy dỗ, che chở, quản lý của ai đó, hoặc trong một điều kiện, bối cảnh, bầu không khí nhất định ('dưới sự chỉ bảo của...', 'dưới bầu trời trong xanh...', 'dưới áp lực...').",
@@ -9935,7 +10555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばかりかも_136": {
+  "ja_n2_ばかりかも_136": {
     "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
     "shortExplanation": "Diễn tả ý nghĩa 'không chỉ... mà còn...', nhấn mạnh rằng không chỉ dừng lại ở một mức độ hay yếu tố này mà còn có thêm một yếu tố khác vượt ngoài mong đợi.",
     "longExplanation": "Mẫu ngữ pháp '～ばかりか〜も' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ để biểu thị quan hệ tăng tiến ('không chỉ... mà còn...', 'không những... mà ngay cả... cũng'). Vế trước nêu lên một sự việc đã đủ ấn tượng hoặc rõ ràng, nhưng vế sau tiếp tục bổ sung thêm một sự việc, tính chất khác ở mức độ cao hơn hoặc đáng ngạc nhiên hơn. Vế sau thường đi kèm với trợ từ 'も', 'まで', 'さえ'.",
@@ -9955,7 +10575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばかりだ_137": {
+  "ja_n2_ばかりだ_137": {
     "title": "～ばかりだ (〜bakari da)",
     "shortExplanation": "Diễn tả một hành động lặp đi lặp lại liên tục hoặc chỉ toàn xảy ra một tình trạng, sự việc tiêu cực, gây ngán ngẩm; 'suốt ngày chỉ toàn...', 'toàn là...'.",
     "longExplanation": "Mẫu ngữ pháp '～ばかりだ' (khi đi với động từ thể て hoặc danh từ) diễn tả việc ai đó liên tục lặp đi lặp lại một hành động hoặc trong một hoàn cảnh chỉ toàn xuất hiện những sự việc, trạng thái tương tự nhau mà không có sự thay đổi nào khác ('suốt ngày chỉ làm...', 'toàn là...'). Mẫu câu này thường mang sắc thái phê phán, bất mãn, ngán ngẩm hoặc tự trách của người nói trước một thói quen hoặc xu hướng tiêu cực. (Lưu ý: Nếu đi với động từ thể từ điển, nó còn biểu thị xu hướng xấu ngày càng tăng tiến 'càng ngày càng...').",
@@ -9975,7 +10595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばかりに_138": {
+  "ja_n2_ばかりに_138": {
     "title": "～ばかりに (〜bakari ni)",
     "shortExplanation": "Diễn tả nguyên nhân duy nhất dẫn đến một kết quả xấu, đáng tiếc hoặc bất lợi ngoài mong muốn; 'chỉ vì... mà...', 'chỉ tại... mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～ばかりに' đi với thể thông thường của động từ, tính từ hoặc danh từ (kèm な hoặc である) để nhấn mạnh rằng chỉ vì một nguyên nhân duy nhất, đôi khi là một sơ suất nhỏ, mà dẫn đến một kết quả tiêu cực, tồi tệ hoặc vô cùng đáng tiếc ngoài ý muốn ('chỉ vì... mà ra nông nỗi này'). Mẫu câu này luôn đi kèm với kết quả không mong muốn ở vế sau và chứa đựng cảm xúc ân hận, nuối tiếc hoặc oán trách sâu sắc của người nói.",
@@ -9995,7 +10615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばというものでもない_139": {
+  "ja_n2_ばというものでもない_139": {
     "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
     "shortExplanation": "Diễn tả ý nghĩa phủ định tính tất yếu, không phải cứ thỏa mãn điều kiện phía trước thì kết quả phía sau đương nhiên sẽ xảy ra; 'không phải cứ... là sẽ...', 'chưa chắc cứ... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ば～というものでもない' (hoặc '～たら～というものでもない') dùng để bác bỏ quan điểm cho rằng khi một điều kiện nào đó được thỏa mãn thì kết quả tương ứng nhất định sẽ xảy ra ('không phải cứ... là tốt / là được đâu'). Cấu trúc này dùng để nhấn mạnh tính tương đối của sự việc, rằng trong thực tế còn phụ thuộc vào nhiều yếu tố khác chứ không thể suy diễn một cách tuyệt đối hay đơn giản như vậy.",
@@ -10015,7 +10635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_はともかくは_140": {
+  "ja_n2_はともかくは_140": {
     "title": "～はともかく～は (〜wa tomokaku 〜wa)",
     "shortExplanation": "Diễn tả việc tạm gác một yếu tố sang một bên chưa bàn đến, để tập trung nhấn mạnh vào một yếu tố khác quan trọng hơn; 'khoan bàn đến... thì...', 'tạm thời không xét đến... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～はともかく（として）～は' kết hợp với danh từ để biểu thị ý nghĩa: tạm thời gác lại vấn đề A, chưa xét đến hoặc chưa đánh giá vội, mà muốn hướng sự chú ý và nhấn mạnh vào vấn đề B quan trọng hơn phía sau ('A thì khoan hãy nói, còn B thì...'). Thường yếu tố A có thể chưa hoàn hảo hoặc gây tranh cãi, nhưng yếu tố B thì rất rõ ràng, nổi bật hoặc đáng ghi nhận.",
@@ -10035,7 +10655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_はまだしも_141": {
+  "ja_n2_はまだしも_141": {
     "title": "～はまだしも (〜wa mada shimo)",
     "shortExplanation": "Diễn tả việc một tình huống phía trước tuy không tốt nhưng vẫn còn có thể châm chước, chấp nhận được, trong khi tình huống phía sau thì hoàn toàn không thể tha thứ hay chấp nhận nổi; '... thì còn tạm chấp nhận được, đằng này...'.",
     "longExplanation": "Mẫu ngữ pháp '～はまだしも' (hoặc '～ならまだしも') gắn vào danh từ hoặc mệnh đề được danh từ hóa (với 'の') để biểu thị sự so sánh nhượng bộ: tình huống A dẫu sao vẫn còn ở mức độ có thể tha thứ, chịu đựng hoặc châm chước được ('thì cũng đành / còn tạm được'), thế nhưng tình huống B xảy ra tiếp theo thì tệ hại hơn nhiều và hoàn toàn không thể chấp nhận được. Thường thể hiện sự bất bình, phẫn nộ hoặc phê phán gay gắt đối với tình huống B.",
@@ -10055,7 +10675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_はもとより_142": {
+  "ja_n2_はもとより_142": {
     "title": "～はもとより (〜wa moto yori)",
     "shortExplanation": "Diễn tả ý nghĩa điều phía trước là đương nhiên rồi, không cần phải bàn cãi, và thêm vào đó ngay cả điều phía sau cũng như vậy; 'không chỉ... mà ngay cả... cũng...', '... thì là lẽ đương nhiên rồi, ngoài ra... cũng...'.",
     "longExplanation": "Mẫu ngữ pháp '～はもとより' (đồng nghĩa trang trọng hơn của '～はもちろん') gắn trực tiếp vào danh từ để khẳng định rằng yếu tố đứng trước là điều dĩ nhiên, hiển nhiên ai cũng biết, và muốn bổ sung thêm rằng ngay cả yếu tố đứng sau cũng hoàn toàn áp dụng được ('A thì khỏi phải bàn rồi, mà ngay cả B cũng...'). Cấu trúc này thường xuất hiện trong văn viết trang trọng, bài phát biểu hoặc các bối cảnh trang nghiêm.",
@@ -10075,7 +10695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_は抜きにして_143": {
+  "ja_n2_は抜きにして_143": {
     "title": "～は抜きにして (〜wa nuki ni shite)",
     "shortExplanation": "Diễn tả việc bỏ qua, loại trừ hoặc không tính đến một yếu tố nào đó để tập trung xem xét, đánh giá vấn đề chính; 'bỏ qua...', 'gạt... sang một bên', 'không tính đến...'.",
     "longExplanation": "Mẫu ngữ pháp '～は抜きにして' (hoặc '～を抜きにして', '～抜きで') kết hợp với danh từ để biểu thị việc chủ động loại bỏ, không xét tới hoặc tạm gác một yếu tố, thành phần thường có sang một bên ('bỏ qua...', 'không tính đến...', 'loại trừ...'). Cách diễn đạt này thường dùng khi người nói muốn tập trung phán đoán thực chất của sự việc mà không bị chi phối bởi yếu tố bị lược bỏ đó, hoặc dùng trong các cụm từ quán dụng như 'お世辞は抜きにして' (bỏ qua những lời tâng bốc khách sáo), '冗談は抜きにして' (bỏ qua chuyện đùa giỡn, nói nghiêm túc).",
@@ -10095,7 +10715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_べきではない_144": {
+  "ja_n2_べきではない_144": {
     "title": "～べきではない (〜beki dewa nai)",
     "shortExplanation": "Diễn tả quan điểm mang tính đạo đức, chuẩn mực xã hội hoặc lẽ thường rằng không nên hoặc không được phép làm một việc gì đó; 'không nên...', 'không được làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～べきではない' kết hợp với thể từ điển của động từ để đưa ra lời khuyên răn, phán đoán hoặc khẳng định mang tính chuẩn mực, luân thường đạo lý hoặc bổn phận xã hội rằng hành động đó là không đúng, không nên hoặc không được phép thực hiện ('không nên làm', 'lẽ ra không được...'). Đây là nhận định dựa trên lương tâm, lẽ phải khách quan chứ không phải chỉ là mệnh lệnh cá nhân nhất thời. Với động từ 'する', dạng phủ định có thể dùng 'するべきではない' hoặc 'すべきではない'.",
@@ -10115,7 +10735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_まい_145": {
+  "ja_n2_まい_145": {
     "title": "～まい (〜mai)",
     "shortExplanation": "Diễn tả (1) quyết tâm dứt khoát không làm gì (ý chí phủ định: 'quyết không...'), hoặc (2) phỏng đoán tiêu cực rằng một việc có lẽ sẽ không xảy ra (suy đoán phủ định: 'chắc là sẽ không...').",
     "longExplanation": "Mẫu ngữ pháp '～まい' là dạng phủ định mang tính văn viết, trang trọng của '〜ないだろう' (phủ định suy đoán) hoặc '〜ないつもりだ / 〜ないでおこう' (phủ định ý chí): (1) Khi chủ ngữ là ngôi thứ nhất, nó biểu thị ý chí kiên quyết, thề dứt khoát không bao giờ làm điều gì đó nữa ('quyết không...', 'tuyệt đối không...'). (2) Khi chủ ngữ là ngôi thứ ba hoặc một sự việc khách quan, nó biểu thị suy đoán phủ định rằng điều đó khó lòng xảy ra ('chắc chắn không...', 'có lẽ sẽ không...'). Nếu muốn nói về ý chí của người khác, thường dùng dạng '〜まいと思っている / 〜まいとしている'.",
@@ -10135,7 +10755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_までて_146": {
+  "ja_n2_までて_146": {
     "title": "～まで～て (〜made 〜te)",
     "shortExplanation": "Diễn tả một hành động được duy trì liên tục cho tới một thời điểm, giới hạn hoặc điều kiện nhất định, rồi sau đó chuyển tiếp sang hành động tiếp theo; '... cho đến tận... rồi...'.",
     "longExplanation": "Mẫu kết hợp '～まで～て' sử dụng trợ từ 'まで' (chỉ mốc giới hạn về thời gian, không gian hoặc sự việc hoàn tất) đi kèm động từ thể て để diễn tả quá trình một hành động được thực hiện liên tục kéo dài cho tới tận mốc đó, rồi sau đó tiến hành một hành động hoặc sự việc tiếp nối ('làm việc tới tận..., sau đó...'). Thường dùng để tường thuật trình tự diễn tiến của công việc hay chuỗi sinh hoạt hàng ngày.",
@@ -10155,7 +10775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ままに_147": {
+  "ja_n2_ままに_147": {
     "title": "～ままに (〜mama ni)",
     "shortExplanation": "Diễn tả việc giữ nguyên một trạng thái không hề thay đổi mà thực hiện hành động khác, hoặc làm theo tự nhiên, thuận theo những gì vốn có; 'cứ để nguyên như thế mà...', 'thuận theo...', 'cứ theo...'.",
     "longExplanation": "Mẫu ngữ pháp '～ままに' (hoặc '～まま', '～ままで') dùng để biểu thị: (1) Giữ nguyên một trạng thái, tình trạng vốn có mà không có sự thay đổi nào để tiến hành một hành vi khác ('giữ nguyên như vậy mà...'). (2) Làm một việc gì đó hoàn toàn thuận theo cảm xúc, suy nghĩ tự nhiên hoặc sự đưa đẩy của hoàn cảnh mà không gượng ép ('cứ theo như...', 'thuận theo tự nhiên', như trong '思うままに' - theo ý muốn, '気の向くままに' - tùy hứng, '足の向くままに' - theo bước chân dẫn lối).",
@@ -10175,7 +10795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もかまわず_148": {
+  "ja_n2_もかまわず_148": {
     "title": "～もかまわず (〜mo kamawazu)",
     "shortExplanation": "Diễn tả hành động được thực hiện mà không bận tâm, không để ý đến những ánh nhìn xung quanh, thời gian hay hiểm nguy; 'không màng đến...', 'bất chấp...', 'mặc kệ...'.",
     "longExplanation": "Mẫu ngữ pháp '～もかまわず' (bắt nguồn từ động từ 構う mang nghĩa bận tâm, để ý) kết hợp với danh từ hoặc động từ thể từ điển (kèm の) để biểu thị việc ai đó hành động một cách thản nhiên, hoàn toàn phớt lờ những yếu tố mà thông thường mọi người sẽ phải bận lòng (như ánh mắt người xung quanh, thời gian, thời tiết, sự nguy hiểm...). Mẫu câu này thường dùng để miêu tả hành vi của người khác hơn là của chính bản thân, đôi khi mang sắc thái ngạc nhiên hoặc phê phán nhẹ đối với sự thiếu tế nhị hay liều lĩnh đó.",
@@ -10195,7 +10815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものか_149": {
+  "ja_n2_ものか_149": {
     "title": "～ものか (〜mono ka)",
     "shortExplanation": "Diễn tả sự phủ định mạnh mẽ, dứt khoát hoặc kiên quyết từ chối; 'tuyệt đối không...', 'đời nào lại...', 'không đời nào', 'làm sao mà... được'.",
     "longExplanation": "Mẫu ngữ pháp '～ものか' (trong khẩu ngữ thân mật thường biến âm thành '～もんか', nữ giới hoặc người nói lịch sự có thể dùng '～ものですか' / '～もんですか') kết hợp với thể thông thường để biểu thị sự phủ định hoặc cự tuyệt vô cùng kiên quyết của người nói ('tuyệt đối không bao giờ...', 'đời nào lại...'). Mẫu câu này mang giọng điệu phản vấn gay gắt, thể hiện ý chí mạnh mẽ rằng chuyện đó không bao giờ có thể xảy ra hoặc bản thân nhất quyết không bao giờ chấp nhận làm như thế.",
@@ -10215,7 +10835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものがある_150": {
+  "ja_n2_ものがある_150": {
     "title": "～ものがある (〜mono ga aru)",
     "shortExplanation": "Diễn tả cảm xúc, ấn tượng mạnh mẽ hoặc một phẩm chất khiến người nói cảm nhận sâu sắc; 'có cảm giác...', 'có gì đó thật...', 'khiến người ta cảm thấy...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものがある' kết hợp với thể thông thường của động từ hoặc tính từ (tính từ đuôi な đi với 'な') để biểu thị rằng sự việc, đối tượng có một đặc tính, sức lôi cuốn hoặc giá trị đặc biệt nào đó khiến người nói cảm nhận rất sâu sắc, không thể xem nhẹ ('thực sự có điều gì đó khiến người ta...', 'có cảm giác...'). Mẫu câu này thường đi cùng với những từ ngữ biểu thị sự xúc động, suy ngẫm, hoặc đánh giá sâu sắc (như 心を打たれる, 考えさせられる...).",
@@ -10235,7 +10855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものだ_151": {
+  "ja_n2_ものだ_151": {
     "title": "～ものだ (〜mono da)",
     "shortExplanation": "Diễn tả chân lý, bản chất tự nhiên của sự vật, lẽ thường tình hoặc chuẩn mực đạo đức xã hội; 'vốn là...', 'thường là...', 'là lẽ đương nhiên', 'nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものだ' (khi đi với thể từ điển của động từ hoặc tính từ) diễn tả những quy luật tự nhiên, chân lý phổ quát, đạo lý hoặc lẽ thường tình trong xã hội mà mọi người ngầm hiểu và công nhận ('vốn dĩ là...', 'con người ta thường...'). Ngoài ra, nó còn dùng để khuyên răn một cách gián tiếp về việc nên làm theo chuẩn mực đạo đức ('đã là... thì nên...'). (Lưu ý: Mẫu này còn có nghĩa diễn tả hồi tưởng kỷ niệm quá khứ khi đi với thể た, hoặc biểu cảm cảm thán sâu sắc).",
@@ -10255,7 +10875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものだから_152": {
+  "ja_n2_ものだから_152": {
     "title": "～ものだから (〜mono dakara)",
     "shortExplanation": "Đưa ra lý do, nguyên nhân mang tính giải thích, biện bạch hoặc trần tình về hoàn cảnh; 'bởi vì...', 'tại vì... đấy mà', 'do là vì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものだから' (trong khẩu ngữ thường nói tắt thành '～もんだから') kết hợp với thể thông thường (tính từ đuôi な và danh từ đi với 'な') để giải thích nguyên nhân, lý do cho một tình trạng, sự việc hoặc hành động ('bởi vì...', 'tại vì... mà'). Cấu trúc này thường được dùng với sắc thái biện bạch, giải thích tình huống bất khả kháng, phân bua lý do cá nhân hoặc tìm kiếm sự thấu hiểu từ phía người nghe.",
@@ -10275,7 +10895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものではない_153": {
+  "ja_n2_ものではない_153": {
     "title": "～ものではない (〜mono dewa nai)",
     "shortExplanation": "Diễn tả lời khuyên răn, nhắc nhở hoặc cấm đoán dựa trên chuẩn mực đạo đức xã hội và phép lịch sự; 'không nên...', 'không được làm...', 'ai lại làm thế'.",
     "longExplanation": "Mẫu ngữ pháp '～ものではない' (dạng lịch sự là '～ものではありません', văn nói thân mật là '～もんじゃない') kết hợp với thể từ điển của động từ để đưa ra lời khuyên răn, răn dạy hoặc nghiêm cấm mang tính đạo lý, luân thường đạo lý và quy tắc ứng xử trong xã hội ('không nên làm...', 'không được phép...'). Cấu trúc này không mang tính ép buộc theo luật pháp cá nhân mà xuất phát từ việc hành vi đó không phù hợp với chuẩn mực văn minh hoặc cách cư xử của một con người đàng hoàng.",
@@ -10295,7 +10915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものなら_154": {
+  "ja_n2_ものなら_154": {
     "title": "～ものなら (〜mono nara)",
     "shortExplanation": "Diễn tả một giả định khó hoặc không thể thực hiện được trong thực tế, kèm theo mong muốn tha thiết; 'giá như có thể...', 'nếu như có thể... thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものなら' kết hợp với động từ thể khả năng để đưa ra một điều kiện giả định mà trên thực tế rất khó thực hiện hoặc gần như không thể xảy ra, và vế sau bày tỏ nguyện vọng, ước muốn vô cùng cháy bỏng của người nói nếu điều đó thành hiện thực ('giá như có thể... thì tôi muốn...', 'nếu mà làm được thì...'). Cấu trúc này chứa đựng tâm trạng khao khát hoặc tiếc nuối sâu sắc.",
@@ -10315,7 +10935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものの_155": {
+  "ja_n2_ものの_155": {
     "title": "～ものの、～ (〜mono no、～)",
     "shortExplanation": "Nối hai vế câu diễn tả sự tương phản, thừa nhận vế trước là sự thật nhưng vế sau lại không diễn ra như kỳ vọng; 'mặc dù... nhưng...', 'dẫu biết là... thế nhưng...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものの' kết hợp với thể thông thường của động từ, tính từ hoặc danh từ (kèm である) để liên kết hai vế đối lập mang tính nghịch cảnh ('mặc dù... nhưng...'). Người nói thừa nhận sự thật ở vế trước là đúng, tuy nhiên thực tế ở vế sau lại diễn ra trái ngược hoặc không đạt được kết quả tương xứng như điều người ta thường kỳ vọng từ sự thật đó. Mẫu này thường mang sắc thái tiếc nuối, thất vọng hoặc bất mãn nhẹ.",
@@ -10335,7 +10955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もばも_156": {
+  "ja_n2_もばも_156": {
     "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
     "shortExplanation": "Liệt kê song song nhiều đặc điểm, phẩm chất hoặc hành động cùng tồn tại; 'vừa... lại vừa...', 'đã... lại còn...', 'cũng có... mà cũng có...'.",
     "longExplanation": "Mẫu ngữ pháp '～も～ば～も～' (kết hợp trợ từ 'も' với thể điều kiện '～ば' và tiếp tục nối với 'も') dùng để liệt kê đồng thời hai hay nhiều yếu tố, tính chất, khả năng tương đồng hoặc bổ sung cho nhau của cùng một chủ thể ('vừa A lại vừa B', 'đã A lại còn B'). Cấu trúc này thường dùng để khen ngợi toàn diện (như vừa rẻ vừa ngon, vừa học giỏi vừa chơi thể thao cừ) hoặc để nêu lên sự đa dạng của các mặt đối lập cùng tồn tại (như cuộc đời có lúc vui cũng có lúc buồn).",
@@ -10355,7 +10975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_も同然だ_157": {
+  "ja_n2_も同然だ_157": {
     "title": "～も同然だ (〜mo douzen da)",
     "shortExplanation": "Diễn tả một sự vật, hiện tượng trên thực tế hầu như không có gì khác biệt so với một trạng thái nào đó; 'chẳng khác nào...', 'gần như là...', 'coi như là...'.",
     "longExplanation": "Mẫu ngữ pháp '～も同然だ' (từ chữ Hán 同然 - đồng nhiên, coi như nhau) kết hợp với danh từ, động từ thể thông thường (đặc biệt là thể た hoặc thể ない) để biểu thị rằng tuy trên danh nghĩa hoặc hình thức có thể chưa hoàn toàn 100% giống hệt, nhưng xét về bản chất và tình hình thực tế thì gần như không có sự khác biệt nào ('gần như là...', 'chẳng khác gì...', 'coi như là... rồi'). Cấu trúc này thường dùng để nhấn mạnh mức độ tương đồng sâu sắc hoặc sự bất mãn, chê trách trước một thực trạng tiêu cực.",
@@ -10375,7 +10995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_やらやら_158": {
+  "ja_n2_やらやら_158": {
     "title": "～やら～やら (〜yara〜yara)",
     "shortExplanation": "Liệt kê tiêu biểu nhiều sự vật, hành động, trạng thái một cách lộn xộn hoặc dồn dập; 'nào là... nào là...', 'nào... nào...'.",
     "longExplanation": "Mẫu ngữ pháp '～やら～やら' kết hợp với danh từ, động từ thể thông thường hoặc tính từ để liệt kê không đầy đủ các đối tượng, sự việc hoặc tính chất ('nào là A nào là B...'). Mẫu này thường tạo cảm giác sự việc, đồ vật xuất hiện quá nhiều, dồn dập, bừa bộn hoặc lộn xộn khiến người nói cảm thấy bối rối, vất vả, choáng ngợp hoặc khó kiểm soát hết được mọi thứ.",
@@ -10395,7 +11015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ようがない_159": {
+  "ja_n2_ようがない_159": {
     "title": "～ようがない (〜you ga nai)",
     "shortExplanation": "Diễn tả việc hoàn toàn không có cách nào, không có phương tiện hay biện pháp nào để thực hiện hành động; 'không có cách nào để...', 'không thể nào... nổi', 'hết cách...'.",
     "longExplanation": "Mẫu ngữ pháp '～ようがない' (dạng lịch sự là '～ようがありません', dạng bổ nghĩa cho danh từ là '～ようのない') kết hợp với thân động từ thể ます (bỏ ます) để biểu thị rằng dù có muốn làm đi chăng nữa thì cũng hoàn toàn bế tắc, không có bất kỳ phương pháp, cách thức hay cơ hội nào để thực hiện được hành động đó ('hoàn toàn không có cách nào...', 'không tài nào mà... được'). Cấu trúc này thường đi kèm cảm giác bất lực, tiếc nuối hoặc than thở trước sự việc không thể cứu vãn.",
@@ -10415,7 +11035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_よりほかない_160": {
+  "ja_n2_よりほかない_160": {
     "title": "～よりほかない (〜yori hoka nai)",
     "shortExplanation": "Diễn tả tình thế không còn sự lựa chọn nào khác ngoài việc đành phải thực hiện hành động đó; 'chỉ còn cách...', 'đành phải...', 'không còn lựa chọn nào khác ngoài...'.",
     "longExplanation": "Mẫu ngữ pháp '～よりほかない' (hoặc các biến thể như '～よりほかはない', '～よりない', '～ほかない') kết hợp với thể từ điển của động từ để biểu thị rằng trong hoàn cảnh hiện tại, mọi lối thoát hoặc phương án khác đều không khả thi, do đó chủ thể không còn bất kỳ sự lựa chọn hay giải pháp nào khác ngoài việc chấp nhận thực hiện hành động đó ('chỉ còn nước...', 'buộc phải...', 'chẳng còn cách nào ngoài...'). Mẫu câu này thường mang sắc thái bất đắc dĩ, ngậm ngùi chấp nhận thực tế.",
@@ -10435,7 +11055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけがない_161": {
+  "ja_n2_わけがない_161": {
     "title": "～わけがない (〜wake ga nai)",
     "shortExplanation": "Diễn tả sự phán đoán phủ định tuyệt đối dựa trên lý lẽ hoặc căn cứ xác thực; 'chắc chắn không thể nào...', 'làm sao mà... có thể xảy ra được', 'lẽ nào lại...'.",
     "longExplanation": "Mẫu ngữ pháp '～わけがない' (trong văn nói thân mật có thể dùng '～わけない', dạng lịch sự là '～わけがありません') kết hợp với thể thông thường (tính từ đuôi な đi với 'な', danh từ đi với 'の') để biểu thị sự phủ định hoàn toàn mang tính logic và chắc chắn tuyệt đối của người nói ('làm sao có chuyện...', 'tuyệt đối không thể nào...'). Dựa trên một lý do, sự thật hoặc căn cứ rõ ràng, người nói tin chắc 100% rằng sự việc đó không thể nào xảy ra.",
@@ -10455,7 +11075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけだ_162": {
+  "ja_n2_わけだ_162": {
     "title": "～わけだ (〜wake da)",
     "shortExplanation": "Diễn tả kết luận tất yếu, sự vỡ lẽ hoặc lý do hợp logic sau khi đã hiểu rõ nguyên nhân; 'thảo nào...', 'hóa ra là...', 'chẳng trách...'.",
     "longExplanation": "Mẫu ngữ pháp '～わけだ' (dạng lịch sự là '～わけです') kết hợp với thể thông thường (tính từ đuôi な và danh từ đi với 'な' hoặc 'である') để biểu thị rằng một sự việc, tình trạng xảy ra là một kết quả hoàn toàn tự nhiên, hợp lý và tất yếu theo lẽ thường sau khi đã nắm rõ nguyên cớ ('thảo nào...', 'hóa ra là vì thế...', 'đương nhiên là...'). Người nói thường dùng mẫu câu này khi ngộ ra, vỡ lẽ bản chất sự việc ('À, thảo nào mà lại như vậy'). Ngoài ra, nó cũng dùng để tóm tắt kết luận hợp lý từ một tiền đề.",
@@ -10475,7 +11095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけではない_163": {
+  "ja_n2_わけではない_163": {
     "title": "～わけではない (〜wake dewa nai)",
     "shortExplanation": "Diễn tả sự phủ định một phần, mang ý nghĩa 'không hẳn là...', 'không nhất thiết là...', 'không phải là...' hoặc 'không có nghĩa là...'.",
     "longExplanation": "Mẫu ngữ pháp '～わけではない' được dùng để phủ định một phần của một phán đoán, sự suy đoán hay nhận định chung nào đó ('không hẳn là...', 'không nhất thiết là...'). Cấu trúc này làm rõ rằng dù tình hình có vẻ như vậy, hoặc thông thường mọi người sẽ nghĩ như thế, nhưng thực tế không hoàn toàn tuyệt đối hoặc không nhất định phải như vậy. Thường đi kèm với các phó từ như '必ずしも' (chưa hẳn), '特に' (đặc biệt), '全部' (toàn bộ).",
@@ -10495,7 +11115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_わけにはいかない_164": {
+  "ja_n2_わけにはいかない_164": {
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
     "shortExplanation": "Diễn tả việc không thể làm một điều gì đó vì lý do đạo đức, trách nhiệm, nghĩa vụ xã hội hoặc tâm lý; 'không thể...', 'không thể nào... được'.",
     "longExplanation": "Mẫu ngữ pháp '～わけにはいかない' đi sau động từ thể từ điển để biểu thị rằng về mặt năng lực thì có thể làm được, nhưng do rào cản đạo đức, bổn phận, trách nhiệm xã hội, danh dự hoặc hoàn cảnh xung quanh nên bản thân không thể, không được phép làm điều đó ('không thể nào làm như thế được'). Mẫu câu này thể hiện sự kìm nén hoặc quyết tâm tuân thủ quy chuẩn của người nói.",
@@ -10515,7 +11135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_をきっかけに_165": {
+  "ja_n2_をきっかけに_165": {
     "title": "～をきっかけに (〜wo kikkake ni)",
     "shortExplanation": "Diễn tả một sự kiện, thời điểm hay cơ duyên nào đó trở thành khởi đầu, động lực hoặc bước ngoặt dẫn tới sự thay đổi, phát triển tiếp theo; 'nhân dịp...', 'từ cơ duyên...', 'nhờ có...'.",
     "longExplanation": "Mẫu ngữ pháp '～をきっかけに' (khi bổ nghĩa danh từ dùng '～をきっかけにした / とした'; cũng có thể dùng '～をきっかけにして / として') kết hợp với danh từ để biểu thị rằng một biến cố, sự việc, cuộc gặp gỡ hay trải nghiệm nào đó đóng vai trò là động lực, ngòi nổ hoặc bước ngoặt làm nảy sinh một hành động mới, một thói quen mới hoặc sự thay đổi lớn trong cuộc sống ('nhân dịp...', 'từ bước ngoặt...', 'nhờ cơ duyên...'). Mẫu câu này thường dùng khi kể lại quá trình dẫn đến một sự chuyển biến tích cực hoặc quan trọng.",
@@ -10535,7 +11155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_をとして_166": {
+  "ja_n2_をとして_166": {
     "title": "～を～として (〜wo〜toshite)",
     "shortExplanation": "Diễn tả việc coi, lấy hoặc xem một đối tượng nào đó như một vai trò, tư cách, mục đích hay tiêu chuẩn nhất định; 'lấy... làm...', 'xem... như...'.",
     "longExplanation": "Mẫu ngữ pháp '～を～として' (khi bổ nghĩa cho danh từ có dạng '～を～とする' hoặc '～を～とした') dùng để biểu thị việc xác định danh từ thứ nhất theo vai trò, tư cách, mục đích, lập trường hoặc nền tảng của danh từ thứ hai ('lấy A làm B', 'coi A là B', 'với tư cách B'). Cấu trúc này thường xuất hiện trong văn viết, văn phong trang trọng, các bản kế hoạch hay giới thiệu vai trò.",
@@ -10555,7 +11175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_を中心に_167": {
+  "ja_n2_を中心に_167": {
     "title": "～を中心に (〜wo chuushin ni)",
     "shortExplanation": "Biểu thị việc lấy một sự vật, hiện tượng, con người hoặc địa điểm làm trọng tâm, tâm điểm của một hoạt động hay phạm vi; 'lấy... làm trung tâm', 'chủ yếu xoay quanh...'.",
     "longExplanation": "Mẫu ngữ pháp '～を中心に' (chữ Hán là 中心 - trung tâm) kết hợp với danh từ để diễn tả rằng hành động, sự việc hoặc phạm vi đang nói đến được triển khai với sự tập trung chủ yếu vào đối tượng đó ('lấy... làm trung tâm', 'tập trung vào...', 'chủ yếu xoay quanh...'). Đối tượng đứng trước có thể là một nhân vật quan trọng, một chủ đề cốt lõi, một địa điểm trọng yếu hoặc nhóm người chủ chốt.",
@@ -10575,7 +11195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_を問わず_168": {
+  "ja_n2_を問わず_168": {
     "title": "～を問わず (〜wo towazu)",
     "shortExplanation": "Diễn tả việc một sự việc, quy định hay điều kiện được áp dụng chung mà không bị ảnh hưởng, không phân biệt hay câu nệ bởi yếu tố nào đó; 'bất kể...', 'không phân biệt...', 'không màng đến...'.",
     "longExplanation": "Mẫu ngữ pháp '～を問わず' (chữ Hán là 問 - vấn, nghĩa là không hỏi đến, không tra xét đến) kết hợp với danh từ chỉ các phạm trù có sự phân chia hoặc các cặp từ đối lập (như tuổi tác, giới tính, quốc tịch, ngày đêm, trong ngoài...) để biểu thị rằng điều đó áp dụng cho mọi đối tượng một cách bình đẳng, hoàn toàn không phân biệt hay phụ thuộc vào điều kiện đó ('bất kể...', 'không phân biệt...'). Thường dùng trong các thông báo tuyển dụng, thể lệ tham gia hoặc văn phong thông báo chính thức.",
@@ -10595,7 +11215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_を込めて_169": {
+  "ja_n2_を込めて_169": {
     "title": "～を込めて (〜wo komete)",
     "shortExplanation": "Diễn tả việc thực hiện một hành động bằng tất cả tấm lòng, tình cảm, sự nhiệt thành hoặc tâm nguyện chân thành; 'với tất cả...', 'chan chứa...', 'đong đầy...'.",
     "longExplanation": "Mẫu ngữ pháp '～を込めて' (chữ Hán là 込める - đong đầy, dồn hết vào; bổ nghĩa danh từ dùng '～を込めた') đi cùng các danh từ biểu thị cảm xúc, tình cảm hoặc ý nguyện (như tình yêu, lòng biết ơn, tâm huyết, lời chúc phúc, nỗi buồn...) để diễn tả việc người nói gửi gắm, dồn trọn vẹn tình cảm sâu sắc đó vào hành động của mình ('gửi gắm tình cảm vào...', 'với trọn vẹn lòng...'). Thường dùng khi làm một món đồ, viết thư, tặng quà hay cống hiến hết sức mình.",
@@ -10615,7 +11235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_を通じて_170": {
+  "ja_n2_を通じて_170": {
     "title": "～を通じて (〜wo tsuujite)",
     "shortExplanation": "Diễn tả phương tiện, trung gian gián tiếp ('thông qua...'); hoặc diễn tả một trạng thái, hành động kéo dài liên tục trong suốt một khoảng thời gian ('suốt trong...').",
     "longExplanation": "Mẫu ngữ pháp '～を通じて' (chữ Hán là 通 - thông qua; có thể dùng tương tự như '～を通して'; bổ nghĩa danh từ dùng '～を通じた') có hai ý nghĩa chính: (1) Chỉ phương tiện, phương thức hoặc người trung gian gián tiếp mà qua đó đạt được thông tin, mối quan hệ hay sự việc ('thông qua...', 'nhờ qua...'); (2) Đi với danh từ chỉ thời gian để biểu thị một hành động hay trạng thái diễn ra liên tục, không ngắt quãng trong suốt toàn bộ khoảng thời gian đó ('suốt cả...', 'trong suốt...').",
@@ -10635,7 +11255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_を頼りに_171": {
+  "ja_n2_を頼りに_171": {
     "title": "～を頼りに (〜wo tayori ni)",
     "shortExplanation": "Diễn tả việc nương tựa, dựa vào một người, vật hay thông tin nào đó như một điểm tựa, manh mối hoặc nguồn trợ lực duy nhất để tiến hành hành động; 'nhờ cậy vào...', 'dựa vào...', 'nhờ vào...'.",
     "longExplanation": "Mẫu ngữ pháp '～を頼りに' (chữ Hán là 頼る - trông cậy, nương tựa; có thể dùng '～を頼りにして'; bổ nghĩa danh từ dùng '～を頼りにした') kết hợp với danh từ chỉ đối tượng (người, bản đồ, ký ức, manh mối, sức mạnh...) đóng vai trò là chỗ dựa, sự trợ giúp hoặc cơ sở dẫn đường để thực hiện một hành động nào đó ('dựa vào...', 'trông cậy vào...', 'lấy... làm chỗ dựa'). Thường dùng trong tình huống gặp khó khăn, thiếu thốn thông tin hoặc khi phải nương nhờ vào sự giúp đỡ của người khác.",
@@ -10655,7 +11275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_一方_172": {
+  "ja_n2_一方_172": {
     "title": "～一方 (〜ippou)",
     "shortExplanation": "Diễn tả sự so sánh, đối lập giữa hai mặt của một vấn đề, hoặc hai hành động/trạng thái diễn ra song song cùng lúc; 'mặt khác...', 'ngược lại...', 'vừa... lại vừa...'.",
     "longExplanation": "Mẫu ngữ pháp '～一方' (thường dùng dưới dạng '～一方で') dùng để liên kết hai vế câu nhằm nêu bật hai khía cạnh đối lập, tương phản của cùng một sự vật, hiện tượng, con người; hoặc diễn tả hai sự việc, hành động cùng diễn ra đồng thời song song ('một mặt thì..., mặt khác thì...', 'trái lại...', 'đồng thời...'). Mẫu câu này giúp tạo nên cái nhìn đa chiều, khách quan và toàn diện.",
@@ -10675,7 +11295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_一方だ_173": {
+  "ja_n2_一方だ_173": {
     "title": "～一方だ (〜ippou da)",
     "shortExplanation": "Diễn tả một tình trạng, xu hướng đang liên tục tiếp diễn và biến đổi không ngừng theo một chiều hướng nhất định (thường là xu hướng tiêu cực hoặc gia tăng); 'càng ngày càng...', 'ngày một...'.",
     "longExplanation": "Mẫu ngữ pháp '～一方だ' đi sau động từ thể từ điển biểu thị sự biến đổi (như 増える, 減る, 悪化する, 上達する...) để diễn tả một xu hướng đang liên tục phát triển mạnh mẽ theo một chiều hướng duy nhất mà không có dấu hiệu dừng lại ('càng ngày càng...', 'cứ tiếp tục... mãi'). Cấu trúc này thường được dùng nhiều nhất với những biến chuyển xấu hoặc đáng lo ngại, nhưng cũng có thể dùng cho sự tiến triển không ngừng.",
@@ -10695,7 +11315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_上で_174": {
+  "ja_n2_上で_174": {
     "title": "～上で (〜ue de)",
     "shortExplanation": "Diễn tả việc làm một hành động trước như một bước chuẩn bị, điều kiện tiên quyết rồi mới thực hiện hành động tiếp theo; 'sau khi...', 'sau khi đã...'.",
     "longExplanation": "Mẫu ngữ pháp '～上で' kết hợp với động từ thể quá khứ た hoặc danh từ (đi với の) để biểu thị rằng sau khi đã hoàn thành một hành động, xem xét kỹ lưỡng hoặc chuẩn bị xong xuôi điều gì đó thì mới chuyển sang bước tiếp theo hoặc đưa ra phán đoán, quyết định ('sau khi đã làm... rồi mới...'). Hành động vế trước là tiền đề quan trọng và có chủ ý của người nói để đưa ra hành động ở vế sau.",
@@ -10715,7 +11335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_上に_175": {
+  "ja_n2_上に_175": {
     "title": "～上に (〜ue ni)",
     "shortExplanation": "Diễn tả ý nghĩa cộng thêm, gia tăng theo cùng một chiều hướng (cùng tốt hoặc cùng xấu); 'không những... mà còn...', 'hơn nữa...', 'thêm vào đó...'.",
     "longExplanation": "Mẫu ngữ pháp '～上に' dùng để bổ sung thêm một đặc điểm, tình trạng hay sự việc khác cùng chiều hướng đánh giá với vế trước ('không chỉ... mà còn...', 'đã... lại còn...'). Cần lưu ý rằng hai vế trước và sau '上に' luôn phải đồng nhất về mặt tích cực hoặc tiêu cực: nếu vế trước là điều tốt thì vế sau cũng là điều tốt; nếu vế trước là điều xấu thì vế sau cũng là điều xấu, không dùng để nối hai vế tương phản nhau.",
@@ -10735,7 +11355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_上は_176": {
+  "ja_n2_上は_176": {
     "title": "～上は (～ue wa)",
     "shortExplanation": "Diễn tả ý chí, quyết tâm hoặc nghĩa vụ tất yếu sau khi một tình huống hay sự việc đã được quyết định; 'một khi đã... thì...', 'đã... thì phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～上は' (gần nghĩa với '～以上は', '～からには') đi kèm với động từ để diễn tả rằng một khi tình thế đã diễn ra như vậy, hoặc một khi đã hạ quyết tâm/nhận lời thì việc thực hiện hành động tiếp theo là điều đương nhiên, mang tính trách nhiệm và nghĩa vụ tất yếu ('một khi đã... thì đương nhiên phải...'). Vế sau thường thể hiện ý chí, quyết tâm cao độ, nghĩa vụ, phán đoán tất yếu (thường đi với ～べきだ, ～つもりだ, ～なければならない, ～う/よう).",
@@ -10755,7 +11375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_以上_177": {
+  "ja_n2_以上_177": {
     "title": "～以上 (〜ijou)",
     "shortExplanation": "Diễn tả ý nghĩa 'một khi đã... thì đương nhiên...', biểu thị điều kiện tiền đề dẫn đến một nghĩa vụ, quyết tâm, trách nhiệm hay phán đoán tất yếu; 'đã... thì phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～以上' (hoặc '～以上は') dùng để nhấn mạnh rằng dựa trên một sự thật hiển nhiên, một lời hứa, hay một lập trường/thân phận đã được xác lập, người đó đương nhiên phải gánh vác trách nhiệm, đưa ra phán đoán dứt khoát hoặc thực hiện hành động tương ứng ('một khi đã... thì đương nhiên...'). Vế sau thường đi kèm các hình thức biểu thị nghĩa vụ, mệnh lệnh, yêu cầu hoặc quyết tâm như '～べきだ', '～なければならない', '～たい', '～つもりだ'.",
@@ -10775,7 +11395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_以来_178": {
+  "ja_n2_以来_178": {
     "title": "～以来 (〜irai)",
     "shortExplanation": "Diễn tả một trạng thái, sự việc bắt đầu từ một mốc thời gian trong quá khứ và vẫn tiếp diễn liên tục cho đến nay; 'kể từ khi...', 'suốt từ sau khi...'.",
     "longExplanation": "Mẫu ngữ pháp '～以来' kết hợp với danh từ, động từ thể て hoặc động từ thể た để biểu thị một sự việc, hành động hoặc trạng thái bắt đầu nảy sinh kể từ một thời điểm, sự kiện xác định trong quá khứ và liên tục kéo dài không gián đoạn cho tới tận hiện tại ('kể từ khi...', 'suốt từ dạo...'). Vế sau thường miêu tả tình trạng đang tiếp diễn, không dùng cho sự việc chỉ xảy ra một lần trong chớp mắt mà không có tính liên tục.",
@@ -10795,7 +11415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_切る_179": {
+  "ja_n2_切る_179": {
     "title": "～切る (〜kiru)",
     "shortExplanation": "Diễn tả hành động được thực hiện đến cùng một cách trọn vẹn, triệt để; hoặc trạng thái đạt đến mức tột cùng; 'làm hết...', 'làm đến cùng', 'hoàn toàn...'.",
     "longExplanation": "Mẫu ngữ pháp '～切る' kết hợp với thân động từ thể ます (bỏ ます) mang hai ý nghĩa chính: (1) Hoàn thành một hành động một cách dứt khoát, triệt để, trọn vẹn từ đầu đến cuối ('làm cho đến cùng', 'nói hết sạch'); (2) Biểu thị một trạng thái tâm lý hoặc thể chất đạt đến mức cực điểm ('vắt kiệt sức', 'mệt rã rời'). Dạng khả năng '～切れる' (có thể làm đến cùng) và phủ định khả năng '～切れない' (không thể xuể, không thể nào hết được) cũng được sử dụng rất phổ biến.",
@@ -10815,7 +11435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_反面_180": {
+  "ja_n2_反面_180": {
     "title": "～反面 (〜hanmen)",
     "shortExplanation": "Diễn tả hai mặt đối lập, tương phản tồn tại song song trong cùng một sự vật, hiện tượng hoặc con người; 'mặt khác...', 'ngược lại...', 'nhưng bù lại...'.",
     "longExplanation": "Mẫu ngữ pháp '～反面' (chữ Hán là 反面 - mặt trái, mặt đối lập) được dùng để nêu lên hai khía cạnh trái ngược nhau của cùng một chủ thể hoặc một tình huống ('một mặt thì..., nhưng mặt khác lại...'). Thường dùng khi muốn so sánh giữa ưu điểm và nhược điểm, mặt tích cực và tiêu cực. Có thể sử dụng độc lập đầu câu dưới dạng 'その反面'.",
@@ -10835,7 +11455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_向け_181": {
+  "ja_n2_向け_181": {
     "title": "～向け (〜muke)",
     "shortExplanation": "Biểu thị đối tượng mục tiêu mà sản phẩm, dịch vụ hay sự kiện hướng tới; 'dành cho...', 'hướng tới đối tượng...'.",
     "longExplanation": "Hậu tố '～向け' kết hợp trực tiếp với danh từ chỉ người, nhóm người hoặc tổ chức để biểu thị rằng sự vật, sản phẩm, thông tin hay hoạt động đó được thiết kế, sáng tạo hoặc sản xuất nhằm phục vụ riêng cho đối tượng mục tiêu đó ('dành riêng cho...', 'hướng đến...'). Cần phân biệt với '～向き' (mang nghĩa tự nhiên phù hợp, thích hợp với).",
@@ -10855,7 +11475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_恐れがある_182": {
+  "ja_n2_恐れがある_182": {
     "title": "～恐れがある (〜osore ga aru)",
     "shortExplanation": "Diễn tả sự lo ngại về một sự việc tiêu cực, rủi ro hay nguy hiểm có khả năng xảy ra; 'e rằng...', 'sợ rằng...', 'có nguy cơ...'.",
     "longExplanation": "Mẫu ngữ pháp '～恐れがある' (chữ Hán là 恐れ - nỗi sợ hãi, lo âu) kết hợp với động từ thể từ điển, thể phủ định ない hoặc danh từ (đi với の) để cảnh báo hoặc bày tỏ nỗi lo sợ rằng một hậu quả không mong muốn, một tai họa hoặc mối nguy hiểm có thể xảy ra trong tương lai ('e rằng có nguy cơ...', 'có khả năng xảy ra điều xấu'). Mẫu câu này có sắc thái trang trọng, thường xuất hiện trong dự báo thời tiết, bản tin tức thời sự, phân tích rủi ro và các văn bản chỉ dẫn an toàn.",
@@ -10875,7 +11495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_折には_183": {
+  "ja_n2_折には_183": {
     "title": "～折には (〜ori ni wa)",
     "shortExplanation": "Cách diễn đạt trang trọng để chỉ thời điểm, cơ hội hoặc dịp nào đó diễn ra một sự việc; 'khi...', 'vào dịp...', 'nhân dịp...'.",
     "longExplanation": "Mẫu ngữ pháp '～折には' (hoặc '～折に'; chữ Hán là 折 - thời khắc, cơ hội) là cách nói trang trọng, lịch sự tương đương với '～とき', dùng để chỉ một thời điểm hoặc một dịp cụ thể diễn ra một hành động ('khi...', 'vào thời điểm...', 'nhân dịp...'). Cấu trúc này thường xuất hiện trong thư từ kinh doanh, lời chào hỏi trang trọng hoặc những lời dặn dò, mời mọc khách sáo.",
@@ -10895,7 +11515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_末_184": {
+  "ja_n2_末_184": {
     "title": "～末 (～sue)",
     "shortExplanation": "Diễn tả kết cục hoặc quyết định đạt được sau một thời gian dài nỗ lực, đắn đo hoặc trải qua nhiều biến cố; 'sau một hồi...', 'sau nhiều...', 'kết quả là...'.",
     "longExplanation": "Mẫu ngữ pháp '～末' (thường dùng ở dạng '～末に' hoặc bổ nghĩa danh từ là '～末の'; chữ Hán là 末 - ngọn, cuối cùng) kết hợp với danh từ (đi với の) hoặc động từ thể た để biểu thị rằng sau khi trải qua một quá trình dài đầy vất vả, suy nghĩ, tranh luận hoặc nỗ lực thì cuối cùng cũng đi đến một kết quả hay quyết định nhất định ('sau một hồi lâu...', 'sau bao nhiêu cố gắng rốt cuộc...'). Kết quả này có thể mang tính tích cực hoặc tiêu cực.",
@@ -10915,7 +11535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_次第_185": {
+  "ja_n2_次第_185": {
     "title": "～次第 (〜shidai)",
     "shortExplanation": "Biểu thị ý nghĩa 'ngay sau khi...' (khi đi với động từ) hoặc 'tùy thuộc vào...' (khi đi với danh từ).",
     "longExplanation": "Mẫu ngữ pháp '～次第' có hai cách dùng căn bản: (1) Kết hợp với thân động từ thể ます (bỏ ます) để biểu thị rằng ngay sau khi hành động trước kết thúc, người nói sẽ lập tức thực hiện hành động tiếp theo một cách có chủ ý ('ngay sau khi... thì sẽ...'); (2) Kết hợp trực tiếp với danh từ để biểu thị sự việc được quyết định hoặc thay đổi tùy theo yếu tố đó ('tùy thuộc vào...', 'do... quyết định').",
@@ -10935,7 +11555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_次第で_186": {
+  "ja_n2_次第で_186": {
     "title": "～次第で (〜shidai de)",
     "shortExplanation": "Diễn tả sự việc hay kết quả bị thay đổi, quyết định dựa vào một điều kiện hoặc tình huống cụ thể; 'tùy thuộc vào...', 'tùy theo... mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～次第で' (trợ từ で biểu thị căn cứ, phương thức) kết hợp với danh từ để chỉ ra rằng kết quả, mức độ hoặc hành động ở vế sau sẽ biến chuyển tương ứng tùy thuộc vào điều kiện, yếu tố ở vế trước ('tùy thuộc vào...', 'căn cứ theo...'). Khi bổ nghĩa cho danh từ phía sau, cấu trúc chuyển thành '～次第での' hoặc '～次第の'.",
@@ -10955,7 +11575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_次第です_187": {
+  "ja_n2_次第です_187": {
     "title": "～次第です (〜shidai desu)",
     "shortExplanation": "Diễn tả kết luận lịch sự rằng 'tất cả tùy thuộc vào...' hoặc dùng ở cuối văn bản trang trọng để giãi bày lý do, nguồn cơn; 'tùy thuộc vào...', 'chính là vì lý do đó'.",
     "longExplanation": "Mẫu ngữ pháp '～次第です' là dạng kết thúc câu trang trọng của '次第'. Cấu trúc này có hai hướng sử dụng: (1) Đi sau danh từ mang nghĩa 'tùy thuộc vào...', 'do... định đoạt' trong các câu phát biểu lịch sự; (2) Đi sau thể thông thường của động từ trong thư từ, báo cáo kinh doanh để giải thích diễn tiến, hoàn cảnh dẫn tới quyết định hiện tại ('sở dĩ sự việc là như vậy chính là vì...', 'vì lý do đó nên tôi xin trình bày...').",
@@ -10975,7 +11595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_気味_188": {
+  "ja_n2_気味_188": {
     "title": "～気味 (〜gimi)",
     "shortExplanation": "Diễn tả cảm giác, khuynh hướng hoặc triệu chứng hơi có phần ngả sang một trạng thái (thường là tiêu cực); 'hơi có vẻ...', 'có triệu chứng...', 'hơi...'.",
     "longExplanation": "Hậu tố '～気味' (phát âm là ぎみ - gimi) kết hợp với danh từ hoặc thân động từ thể ます (bỏ ます) để biểu thị việc người nói cảm thấy bản thân hoặc đối tượng có một chút dấu hiệu, khuynh hướng ngả về một trạng thái nào đó ('hơi có vẻ...', 'có cảm giác hơi...'). Mẫu câu này thường dùng cho những tình trạng không tốt hoặc mang chiều hướng tiêu cực nhẹ như cảm mạo (風邪気味), thiếu ngủ (寝不足気味), mệt mỏi, béo lên (太り気味), chậm trễ (遅れ気味).",
@@ -10995,7 +11615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_限り_189": {
+  "ja_n2_限り_189": {
     "title": "～限り (〜kagiri)",
     "shortExplanation": "Diễn tả giới hạn hoặc điều kiện duy trì: chừng nào trạng thái phía trước còn tiếp diễn thì vế sau vẫn đúng; 'chừng nào...', 'miễn là...'.",
     "longExplanation": "Mẫu ngữ pháp '～限り' (chữ Hán là 限 - giới hạn) kết hợp với động từ, tính từ hoặc danh từ (kèm である) để biểu thị rằng trong suốt thời gian mà điều kiện hoặc trạng thái ở vế trước vẫn còn tiếp diễn thì sự việc, hành động ở vế sau vẫn sẽ luôn được duy trì ('chừng nào mà còn...', 'miễn là...'). Ngoài ra, '限り' còn có nghĩa là 'trong phạm vi' hiểu biết hoặc thông tin (ví dụ: 私が知っている限り - theo như tôi được biết).",
@@ -11015,7 +11635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_際に_190": {
+  "ja_n2_際に_190": {
     "title": "～際に (〜sai ni)",
     "shortExplanation": "Cách diễn đạt trang trọng của 'khi', 'lúc' để chỉ thời điểm một sự việc diễn ra; 'khi...', 'vào lúc...', 'nhân dịp...'.",
     "longExplanation": "Mẫu ngữ pháp '～際に' (hoặc '～際には'; chữ Hán là 際 - dịp, thời khắc) kết hợp với động từ thể từ điển, động từ thể た hoặc danh từ (đi với の) để chỉ thời điểm, hoàn cảnh cụ thể mà một hành động hay sự kiện xảy ra ('khi...', 'vào lúc...', 'trong dịp...'). Đây là cách diễn đạt mang sắc thái trang trọng hơn nhiều so với '～とき', thường xuất hiện trong các thông báo hướng dẫn, nội quy, giấy tờ hành chính và giao tiếp công sở.",
@@ -11035,7 +11655,87 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_4": {
+  "ja_n1_A_0": {
+    "title": "A うが B うが (A uga B uga)",
+    "shortExplanation": "Diễn tả sự bất biến: dù rơi vào trường hợp A hay trường hợp B đi chăng nữa thì kết quả hay phán đoán ở vế sau vẫn không có gì thay đổi; 'cho dù A hay B', 'dù là... hay... thì cũng...'.",
+    "longExplanation": "Mẫu ngữ pháp JLPT N1 'Aうが Bうが' (hoặc 'Aうと Bうと') kết hợp với dạng ý chí của động từ, dạng '-かろうが' của tính từ đuôi い hoặc 'であろうが' của danh từ/tính từ đuôi な. Cấu trúc này đưa ra hai trường hợp đối lập, tương phản (hoặc hai khả năng khẳng định - phủ định như 'しようがしまいが') để khẳng định mạnh mẽ rằng cho dù rơi vào trường hợp nào đi chăng nữa thì kết quả, trạng thái hoặc thái độ ở vế sau vẫn hoàn toàn không bị chi phối hay thay đổi.",
+    "formation": "Động từ thể ý chí + が + Động từ thể ý chí / thể まい + が | Tính từ đuôi い (-かろう) + が + Tính từ đuôi い (-かろう) + が | Tính từ đuôi な / Danh từ + であろうが",
+    "examples": [
+      {
+        "translation": "Dù là sáng sớm hay đêm muộn thì xe buýt lúc nào cũng đến trễ."
+      },
+      {
+        "translation": "Cho dù tôi có nói hay không nói với anh ta thì kết quả cũng chẳng thay đổi."
+      },
+      {
+        "translation": "Dù có làm hay không làm công việc này thì tiền lương vẫn như nhau cả thôi."
+      },
+      {
+        "translation": "Dù có nói hay không nói với người đó thì tôi cũng không nghĩ họ sẽ thấu hiểu."
+      }
+    ]
+  },
+  "ja_n1_A_1": {
+    "title": "A うと B うと (A uto B uto)",
+    "shortExplanation": "Diễn tả thái độ hoặc kết quả không thay đổi bất kể rơi vào điều kiện A hay điều kiện B; 'dù là A hay B', 'cho dù... hay... đi chăng nữa'.",
+    "longExplanation": "Mẫu ngữ pháp JLPT N1 'Aうと Bうと' (đồng nghĩa với 'Aうが Bうが') dùng để liên kết hai vế đối lập hoặc mang tính giả định tương phản ('dù là A hay là B'). Cấu trúc này nhấn mạnh rằng lập trường, quyết tâm hoặc sự thật ở vế sau hoàn toàn không bị lung lay hay ảnh hưởng bởi việc điều kiện A hay điều kiện B xảy ra. Có thể kết hợp với động từ thể ý chí, tính từ đuôi い ở dạng '-かろうと', hoặc danh từ / tính từ đuôi な ở dạng 'であろうと'.",
+    "formation": "Động từ thể ý chí + と + Động từ thể ý chí / thể まい + と | Tính từ đuôi い (-かろう) + と | Tính từ đuôi な / Danh từ + であろうと",
+    "examples": [
+      {
+        "translation": "Dù trời mưa hay trời nắng, tôi vẫn chạy bộ mỗi ngày."
+      },
+      {
+        "translation": "Dù đề thi khó hay dễ, tôi cũng sẽ chăm chỉ hết sức mình."
+      },
+      {
+        "translation": "Dù anh ấy là sinh viên hay người đã đi làm, tôi vẫn luôn tôn trọng anh ấy."
+      },
+      {
+        "translation": "Dù bộ phim đó mới hay cũ, miễn là hay thì tôi đều xem."
+      }
+    ]
+  },
+  "ja_n1_A_2": {
+    "title": "A かたわら B (A katawara B)",
+    "shortExplanation": "Diễn tả việc vừa làm công việc chính A, vừa đồng thời làm thêm việc B; 'bên cạnh việc...', 'vừa... vừa...'.",
+    "longExplanation": "Mẫu ngữ pháp '～かたわら' (chữ Hán là 傍ら) được dùng để biểu thị rằng bên cạnh công việc, bổn phận hoặc hoạt động chính A (thường mang tính nghề nghiệp, học tập lâu dài), chủ ngữ còn thực hiện thêm một hoạt động B khác một cách song song. Thường được dịch là 'bên cạnh...', 'ngoài công việc... thì còn...', 'vừa... vừa...'. Mẫu câu này mang sắc thái trang trọng, thường dùng trong văn viết hoặc giới thiệu tiểu sử, hoạt động cá nhân.",
+    "formation": "Động từ thể từ điển + かたわら | Danh từ + のかたわら",
+    "examples": [
+      {
+        "translation": "Bên cạnh công việc chính, anh ấy còn theo học đại học."
+      },
+      {
+        "translation": "Bên cạnh việc là sinh viên, tôi còn làm thêm tại một nhà hàng."
+      },
+      {
+        "translation": "Bên cạnh công việc bác sĩ, cô ấy còn vẽ tranh như một niềm đam mê."
+      },
+      {
+        "translation": "Bên cạnh công việc, anh ấy còn tích cực tham gia các hoạt động tình nguyện."
+      }
+    ]
+  },
+  "ja_n1_A_3": {
+    "title": "A かれ B かれ (A kare B kare)",
+    "shortExplanation": "Biểu thị ý dù là A hay B, dù trong trường hợp nào thì kết quả hay hành động vẫn không đổi; 'dù... hay...', 'bất kể... hay...'.",
+    "longExplanation": "Mẫu ngữ pháp '～AかれBかれ' là một dạng quán ngữ cổ mang tính văn chương, dùng để nối hai từ ngữ có ý nghĩa đối lập nhằm diễn tả rằng dù rơi vào trường hợp A hay trường hợp B thì sự việc vẫn diễn ra hoặc giữ nguyên bản chất như vậy ('dù... hay...', 'không ít thì nhiều', 'sớm hay muộn'). Thường gặp nhất với thân từ tính từ đuôi い (như 多かれ少なかれ, 早かれ遅かれ), đôi khi cũng được kết hợp mang tính quán ngữ với danh từ hoặc động từ.",
+    "formation": "Tính từ đuôi い bỏ い + かれ + Tính từ đuôi い bỏ い + かれ (Quán ngữ) | Danh từ + かれ + Danh từ + かれ | Động từ thể thông thường + かれ + Động từ thể thông thường + かれ",
+    "examples": [
+      {
+        "translation": "Dù là mùa đông hay mùa hè, ngày nào tôi cũng chạy bộ."
+      },
+      {
+        "translation": "Dù anh ấy có đến hay không đến thì bữa tiệc vẫn sẽ bắt đầu."
+      },
+      {
+        "translation": "Dù thắng hay thua, việc tham gia vào trận đấu mới là điều quan trọng."
+      },
+      {
+        "translation": "Dù trời mưa hay tuyết rơi, tôi không bao giờ bỏ việc dắt chó đi dạo."
+      }
+    ]
+  },
+  "ja_n1_A_4": {
     "title": "A だの B だの (A dano B dano)",
     "shortExplanation": "Dùng để liệt kê các sự vật, hành động làm ví dụ (thường mang sắc thái phàn nàn, ngán ngẩm); 'nào là... nào là...', 'nào... nào...'.",
     "longExplanation": "Mẫu ngữ pháp '～だの～だの' được dùng để liệt kê hàng loạt các sự vật, lý do hoặc hành động tương tự nhau ('nào là... nào là...'). Điểm đặc trưng của mẫu câu này là thường mang sắc thái bất mãn, phàn nàn, phê phán hoặc ngán ngẩm của người nói trước những điều phiền toái được liệt kê. Thường dùng trong khẩu ngữ giao tiếp hàng ngày.",
@@ -11055,7 +11755,47 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_7": {
+  "ja_n1_A_5": {
+    "title": "A であれ B であれ (A deare B deare)",
+    "shortExplanation": "Biểu thị ý dù là A hay B thì nhận định hoặc kết quả vẫn bình đẳng, không thay đổi; 'cho dù là A hay B', 'dù là... hay...'.",
+    "longExplanation": "Mẫu ngữ pháp 'A であれ B であれ' (dạng liên kết của trợ động từ khẳng định である) đi kèm các cặp từ tương phản hoặc cùng nhóm để nhấn mạnh rằng dù trong trường hợp A hay trường hợp B thì kết quả, quy định hay tính chất phía sau đều áp dụng như nhau, không có sự phân biệt hay ngoại lệ ('cho dù là A hay B', 'bất kể là... hay...'). Mẫu này thuộc phong cách văn viết trang trọng, mang tính khái quát cao.",
+    "formation": "Danh từ 1 + であれ + Danh từ 2 + であれ | Tính từ đuôi な (thân từ) + であれ + Tính từ đuôi な (thân từ) + であれ",
+    "examples": [
+      {
+        "translation": "Cho dù là mưa hay tuyết thì trận đấu cũng không bị hủy bỏ."
+      },
+      {
+        "translation": "Dù là nam hay nữ thì cũng đều cần được đối xử bình đẳng."
+      },
+      {
+        "translation": "Dù giàu sang hay nghèo khó, hạnh phúc thực sự không thể mua được bằng tiền."
+      },
+      {
+        "translation": "Dù là người có kinh nghiệm hay người mới bắt đầu, ai cũng có thể tận hưởng trò chơi này."
+      }
+    ]
+  },
+  "ja_n1_A_6": {
+    "title": "A というか B というか (A to iu ka B to iu ka)",
+    "shortExplanation": "Diễn tả sự phân vân khi tìm từ ngữ thích hợp để mô tả sự việc; 'nói là A hay nói là B...', 'chẳng biết nên gọi là A hay B'.",
+    "longExplanation": "Mẫu ngữ pháp 'A というか B というか' được dùng khi người nói cảm thấy băn khoăn, do dự không biết nên dùng từ ngữ nào (A hay B) để miêu tả chính xác trạng thái, tính chất hoặc cảm xúc của mình về sự vật, sự việc ('nói là A hay là B đây...', 'chẳng biết nên gọi là A hay B'). Vế sau thường kết luận bằng một nhận định mang tính khái quát hoặc đánh giá tổng thể (thường đi với とにかく, いずれにせよ).",
+    "formation": "Từ/Mệnh đề A + というか + Từ/Mệnh đề B + というか (kết hợp với Danh từ, Tính từ, Động từ thể thông thường)",
+    "examples": [
+      {
+        "translation": "Anh ấy nói là vô lễ cũng đúng, mà nói là thẳng thắn cũng được, tóm lại là tính cách rất rõ ràng."
+      },
+      {
+        "translation": "Bộ phim này nói là thú vị hay kỳ lạ đây, tóm lại là nó mang một bầu không khí rất huyền bí."
+      },
+      {
+        "translation": "Những bức tranh của anh ấy nói là tuyệt vời hay đáng kinh ngạc đây, thực sự rất đáng để xem."
+      },
+      {
+        "translation": "Bộ trang phục của cô ấy nói là dễ thương hay sặc sỡ đây, tóm lại là rất thu hút ánh nhìn của mọi người."
+      }
+    ]
+  },
+  "ja_n1_A_7": {
     "title": "A とも B とも (A tomo B tomo)",
     "shortExplanation": "Nêu ra hai khả năng hoặc đối tượng để biểu thị ý 'dù là A hay B', 'chẳng rõ là A hay B', hoặc 'cả A lẫn B'.",
     "longExplanation": "Mẫu ngữ pháp 'A とも B とも' dùng để liên kết hai sự vật, tình huống hoặc đối tượng nhằm biểu thị rằng sự việc có thể là A hoặc B, hoặc không thể phán định rạch ròi giữa A và B ('dù là A hay B', 'không biết là A hay B'). Thường kết hợp với các cách nói phán đoán, thời gian hoặc cụm từ phủ định như '〜言えない / つかない'.",
@@ -11075,7 +11815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_8": {
+  "ja_n1_A_8": {
     "title": "A にしろ B にしろ (A nishiro B nishiro)",
     "shortExplanation": "Nêu ra hai khả năng tương phản hoặc khác biệt để chỉ ra rằng dù là trường hợp nào thì phán đoán hay hành động vẫn không thay đổi; 'cho dù là A hay B', 'dù là... hay...'.",
     "longExplanation": "Mẫu ngữ pháp 'A にしろ B にしろ' (dạng mệnh lệnh cổ của 'にする') dùng để đưa ra hai trường hợp hoặc khả năng đối lập nhau, nhằm khẳng định rằng dù chọn phương án A hay phương án B thì nhận định, lời khuyên hay hành động ở vế sau vẫn giữ nguyên tính đúng đắn ('cho dù là A hay là B thì cũng...'). Mẫu này dùng linh hoạt cả trong văn nói trang trọng lẫn văn viết.",
@@ -11095,7 +11835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_A_9": {
+  "ja_n1_A_9": {
     "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
     "shortExplanation": "Văn phong trang trọng biểu thị ý dù là khả năng A hay B thì nhận định, quyết định ở vế sau vẫn đúng; 'cho dù là A hay B', 'bất kể là... hay...'.",
     "longExplanation": "Mẫu ngữ pháp 'A にせよ B にせよ' mang tính văn viết trang trọng hơn so với '～にしろ～にしろ', dùng để nêu lên hai trường hợp hoặc phương án lựa chọn nhằm nhấn mạnh rằng dù tình huống thực tế rơi vào A hay B thì sự việc, quan điểm ở vế sau hoàn toàn không bị ảnh hưởng ('dù là A hay B', 'cho dù là... hay...'). Thường dùng trong văn luận, các bài báo hoặc bài phát biểu chỉn chu.",
@@ -11115,7 +11855,47 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun1_12": {
+  "ja_n1_A_10": {
+    "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
+    "shortExplanation": "Diễn tả ý dù trong hoàn cảnh hay trạng thái A hay B thì cũng đều xảy ra tình trạng đó; 'dù... hay...', 'khi... cũng như khi...'.",
+    "longExplanation": "Mẫu ngữ pháp '～AにつけBにつけ' ghép đôi hai từ hoặc mệnh đề mang ý nghĩa tương phản (thường là cảm xúc như vui/buồn, hành động như cười/khóc, thời điểm như ngày/đêm) để diễn tả rằng dù trong trường hợp A hay trường hợp B thì cảm xúc, trạng thái hay hành động phía sau đều luôn luôn như vậy ('dù là lúc... hay lúc...', 'khi vui cũng như khi buồn'). Mẫu câu này mang âm hưởng trang trọng và gợi nhiều cảm xúc.",
+    "formation": "Động từ thể từ điển + につけ + Động từ thể từ điển + につけ | Tính từ đuôi い + につけ + Tính từ đuôi い + につけ | Danh từ + につけ + Danh từ + につけ",
+    "examples": [
+      {
+        "translation": "Ở anh ấy, dù là lúc cười hay lúc khóc cũng đều vô cùng quyến rũ."
+      },
+      {
+        "translation": "Dù là lúc vui hay lúc buồn, anh ấy đều luôn luôn lắng nghe âm nhạc."
+      },
+      {
+        "translation": "Dù là vào ban ngày hay ban đêm, phong cảnh nơi này đều tuyệt đẹp."
+      },
+      {
+        "translation": "Dù khi vui sướng hay lúc đau buồn, cô ấy vẫn luôn ở bên động viên nâng đỡ tôi."
+      }
+    ]
+  },
+  "ja_n1_A_11": {
+    "title": "A のやら B のやら (A no yara B no yara)",
+    "shortExplanation": "Diễn tả sự hoang mang, băn khoăn khi không thể biết rõ là rơi vào trường hợp A hay B; 'chẳng biết là A hay B', 'không biết là... hay...'.",
+    "longExplanation": "Mẫu ngữ pháp 'A のやら B のやら' (kết hợp của trợ từ の và trợ từ nghi vấn thể hiện sự mập mờ やら) được dùng khi người nói rơi vào trạng thái bối rối, không thể phán đoán hay xác định rõ ràng sự thực là A hay là B ('chẳng biết là... hay là...', 'không rõ là... hay...'). Vế sau hầu như luôn đi kèm các từ biểu thị sự không rõ ràng hoặc băn khoăn như 'わからない', 'はっきりしない', '気になって仕方がない'.",
+    "formation": "Động từ/Tính từ thể thông thường + のやら + Động từ/Tính từ thể thông thường + のやら | Tính từ đuôi な + なのやら | Danh từ + なのやら (hoặc のやら)",
+    "examples": [
+      {
+        "translation": "Tôi chẳng thể hiểu nổi là anh ấy đang tức giận hay đang buồn rầu nữa."
+      },
+      {
+        "translation": "Tôi bồn chồn đứng ngồi không yên vì chẳng biết kết quả thi là tốt hay xấu."
+      },
+      {
+        "translation": "Tôi chẳng biết được rốt cuộc là cô ấy thích tôi hay ghét tôi nữa."
+      },
+      {
+        "translation": "Vẫn chưa rõ ràng là anh ấy có thực sự đi hay là không đi."
+      }
+    ]
+  },
+  "ja_n1_Noun1_12": {
     "title": "Danh từ 1 + が + Danh từ 1 + なら、 Danh từ 2 + も + Danh từ 2 + だ (A ga A nara, B mo B da)",
     "shortExplanation": "Diễn tả sự tương xứng hoặc song hành giữa hai đối tượng; 'nếu A là A thì B cũng là B', 'A đã thế thì B cũng chẳng kém'.",
     "longExplanation": "Cấu trúc 'Danh từ 1 が Danh từ 1 なら、Danh từ 2 も Danh từ 2 だ' dùng sự lặp lại danh từ để nhấn mạnh tính chất tương xứng, đối xứng hoặc cùng loại giữa hai đối tượng ('nếu A đã mang bản chất như vậy thì B cũng tương tự như thế', 'nếu coi A là thế thì B cũng là thế'). Cấu trúc này thường mang sắc thái phản biện, khẳng định sự công bằng hoặc tương quan đối trọng giữa hai bên.",
@@ -11135,7 +11915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun1_13": {
+  "ja_n1_Noun1_13": {
     "title": "Danh từ 1 + も + Danh từ 1 + なら、Danh từ 2 + も + Danh từ 2 + だ (A mo A nara, B mo B da)",
     "shortExplanation": "Diễn tả ý cả hai bên đều có khuyết điểm hoặc đặc điểm kỳ lạ như nhau; 'A đã thế thì B cũng vậy', 'cả A lẫn B đều chẳng vừa'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 も Danh từ 1 なら、Danh từ 2 も Danh từ 2 だ' đặt hai đối tượng song song để chỉ ra rằng cả bên thứ nhất lẫn bên thứ hai đều có những biểu hiện, khuyết điểm hoặc đặc tính cực đoan tương tự nhau ('A cũng chẳng ra sao mà B cũng chẳng vừa', 'nói A đã vậy thì B cũng thế'). Cấu trúc này thường hàm ý phê phán nhẹ nhàng, ngán ngẩm trước cả hai bên, hoặc nêu bật nét đặc thù riêng biệt của từng phía.",
@@ -11155,7 +11935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_14": {
+  "ja_n1_Noun_14": {
     "title": "Danh từ 1 + あっての + Danh từ 2 (A atte no B)",
     "shortExplanation": "Nhấn mạnh Danh từ 2 chỉ có thể tồn tại được là nhờ có nền tảng hoặc sự hiện diện của Danh từ 1; 'chính nhờ có A mới có B', 'có A rồi mới có B'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + あっての + Danh từ 2' dùng để nhấn mạnh rằng Danh từ 2 có được, tồn tại được và có ý nghĩa là hoàn toàn dựa trên cơ sở, sự hỗ trợ hoặc sự tồn tại của Danh từ 1 ('chính nhờ có A mới có B', 'không có A thì B cũng chẳng tồn tại'). Cấu trúc này thể hiện lòng biết ơn sâu sắc, sự trân trọng cội nguồn hoặc nhấn mạnh điều kiện tiên quyết mang tính sống còn.",
@@ -11175,7 +11955,87 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_19": {
+  "ja_n1_Noun_15": {
+    "title": "Danh từ + かたがた (Noun kata gata)",
+    "shortExplanation": "Diễn tả việc thực hiện một hành động chính đồng thời nhân tiện kết hợp làm một việc khác; 'nhân tiện...', 'tiện thể...', 'kết hợp...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + かたがた' (chữ Hán là 傍ら / 方々) là một cách diễn đạt trang trọng, dùng khi người nói muốn thực hiện hai mục đích trong cùng một chuyến đi hoặc hành động: vừa làm việc A, vừa nhân tiện thực hiện thêm việc B ('nhân tiện...', 'tiện thể kết hợp...'). Cấu trúc này hay xuất hiện trong thư từ thương mại, lời chào hỏi trang trọng hoặc thăm hỏi xã giao (như お見舞いかたがた, ご挨拶かたがた, 散歩かたがた).",
+    "formation": "Danh từ (động danh từ chỉ hành vi di chuyển/giao tiếp) + かたがた",
+    "examples": [
+      {
+        "translation": "Nhân chuyến đi công tác đến Tokyo, tôi đã tiện thể ghé thăm một người bạn."
+      },
+      {
+        "translation": "Nhân dịp đi tham quan ngắm cảnh, tôi đã mua vài món quà lưu niệm."
+      },
+      {
+        "translation": "Tiện lúc đi dạo, tôi đã nhặt rác xung quanh."
+      },
+      {
+        "translation": "Kết hợp lúc học bài, tôi đã lắng nghe một vài bản nhạc."
+      }
+    ]
+  },
+  "ja_n1_Noun_16": {
+    "title": "Danh từ + がてら (Noun gatera)",
+    "shortExplanation": "Diễn tả việc nhân tiện thực hiện một hành động di chuyển thì kết hợp làm luôn một việc khác; 'tiện thể...', 'nhân tiện...', 'sẵn tiện...'.",
+    "longExplanation": "Hậu tố ngữ pháp '～がてら' kết hợp trực tiếp với danh từ chỉ hành động di chuyển (như đi dạo, mua sắm, lái xe...) hoặc động từ thể ます bỏ ます để biểu thị việc tận dụng cơ hội đang làm việc chính đó để tiện thể thực hiện thêm một hành động khác ('nhân tiện...', 'tiện thể...'). Cấu trúc này thường dùng tự nhiên trong sinh hoạt hàng ngày, có thể đi kèm trợ từ に thành '～がてらに'.",
+    "formation": "Danh từ (chỉ hành động di chuyển) + がてら (hoặc がてらに) | Động từ thể ます bỏ ます + がてら",
+    "examples": [
+      {
+        "translation": "Tiện lúc đi dạo, tôi đã hái vài bông hoa ở công viên gần nhà."
+      },
+      {
+        "translation": "Nhân tiện đi mua sắm, tôi đã ghé qua thăm một người bạn."
+      },
+      {
+        "translation": "Tiện chuyến đi du lịch, cô ấy đã tranh thủ học thêm một ngôn ngữ mới."
+      },
+      {
+        "translation": "Tiện lúc lái xe dạo mát, tôi đã nghe thử album ca nhạc mới."
+      }
+    ]
+  },
+  "ja_n1_Noun_17": {
+    "title": "Số từ + Lượng từ + からある (kara aru)",
+    "shortExplanation": "Dùng sau số từ kèm lượng từ biểu thị số lượng, kích thước, khoảng cách, trọng lượng để nhấn mạnh số lượng đó lớn đến mức 'có tới hơn...', 'trên...', 'không dưới...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Số từ + Lượng từ + からある' (hoặc '～からの' khi bổ nghĩa cho danh từ) đi liền sau các từ chỉ số lượng, chiều dài, trọng lượng, số tầng, số tiền... nhằm nhấn mạnh quy mô, số lượng lớn đến mức đáng kinh ngạc ('có đến hơn...', 'không dưới...', 'trên...'). Thường dùng để biểu thị sự cảm thán, thán phục trước một con số ấn tượng. (Lưu ý: Đối với giá cả, người ta thường dùng '～からする', nhưng với tổng tài sản hoặc con số khổng lồ thì '～からある' cũng được sử dụng).",
+    "formation": "Số từ + Lượng từ + からある (hoặc からの + Danh từ)",
+    "examples": [
+      {
+        "translation": "Bộ sưu tập của anh ấy có tới hơn 500 món."
+      },
+      {
+        "translation": "Tòa nhà này cao tới hơn 40 tầng."
+      },
+      {
+        "translation": "Tài sản của ông ấy lên tới không dưới 1 tỷ yên."
+      },
+      {
+        "translation": "Cuộc chạy marathon này dài tới hơn 10 km."
+      }
+    ]
+  },
+  "ja_n1_Noun_18": {
+    "title": "Danh từ + からすると (kara suru to)",
+    "shortExplanation": "Dùng để đưa ra căn cứ phán đoán hoặc góc nhìn đánh giá; 'xét từ...', 'căn cứ vào...', 'nhìn từ... mà nói'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + からすると' (hoặc '～からすれば', '～からして') dùng sau một danh từ chỉ dấu hiệu, thái độ, dữ liệu hoặc lập trường để đưa ra phán đoán, suy luận hoặc đánh giá dựa trên căn cứ đó ('nhìn từ...', 'căn cứ vào...', 'xét từ... mà nói'). Vế sau thường đi kèm các cách nói suy đoán như '～ようだ', '～はずだ', '～だろう'.",
+    "formation": "Danh từ + からすると / からすれば / からして",
+    "examples": [
+      {
+        "translation": "Xét từ thái độ của anh ấy, có vẻ như anh ấy đang phản đối kế hoạch đó."
+      },
+      {
+        "translation": "Nhìn từ bầu không khí của nhà hàng này thì món ăn chắc chắn cũng rất tuyệt vời."
+      },
+      {
+        "translation": "Căn cứ vào thành tích học tập thì cô ấy hẳn là một người rất chăm học."
+      },
+      {
+        "translation": "Nhìn từ tốc độ tăng trưởng của công ty đó thì trong tương lai có lẽ sẽ thu được lợi nhuận rất lớn."
+      }
+    ]
+  },
+  "ja_n1_Noun_19": {
     "title": "Danh từ 1 + からの + Danh từ 2 (kara no)",
     "shortExplanation": "Dùng để bổ nghĩa cho danh từ đứng sau, chỉ xuất xứ, điểm xuất phát hoặc nguồn gốc; 'từ...'.",
     "longExplanation": "Cấu trúc 'Danh từ 1 + からの + Danh từ 2' là sự kết hợp giữa trợ từ chỉ điểm xuất phát 'から' và trợ từ liên kết danh từ 'の', dùng để bổ nghĩa trực tiếp cho danh từ đứng sau nhằm chỉ rõ nơi xuất phát, nguồn gốc, thời điểm bắt đầu hoặc đối tượng gửi đến ('từ... đến', 'bắt đầu từ...').",
@@ -11195,7 +12055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_20": {
+  "ja_n1_Noun_20": {
     "title": "Danh từ + から言わせれば (kara iwasereba)",
     "shortExplanation": "Đứng sau từ chỉ người hoặc đối tượng để nêu quan điểm, ý kiến theo lập trường của họ; 'nếu để... nói thì...', 'dưới góc nhìn của... thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + から言わせれば' (thể sai khiến giả định của 言う, tương tự '～から言えば') dùng để biểu đạt ý kiến, đánh giá hoặc góc nhìn từ lập trường riêng của người hay đối tượng được nói tới ('nếu để... nói thì...', 'theo cách nhìn của... thì...', 'nếu nghe theo tiếng lòng của...'). Thường dùng khi muốn đưa ra một góc nhìn mang tính chủ quan hoặc khác biệt với cách nghĩ thông thường.",
@@ -11215,7 +12075,447 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_43": {
+  "ja_n1_Noun_21": {
+    "title": "Danh từ + ぐるみ (gurumi)",
+    "shortExplanation": "Đi cùng danh từ chỉ tập thể để diễn tả toàn thể thành viên cùng tham gia vào một việc; 'cùng toàn thể...', 'toàn bộ...'.",
+    "longExplanation": "Hậu tố ngữ pháp '～ぐるみ' (thường gặp dưới dạng '～ぐるみで') gắn vào sau danh từ chỉ tổ chức, tập thể (như gia đình, lớp học, công ty, thị trấn...) để diễn đạt ý tất cả mọi thành viên trong tập thể đó đều cùng tham gia hoặc cùng bị cuốn vào một sự việc ('toàn bộ...', 'cùng với toàn thể...', 'cả...'). Mang tính bao quát toàn diện không bỏ sót ai.",
+    "formation": "Danh từ (chỉ tập thể/tổ chức) + ぐるみ (thường dùng: Danh từ + ぐるみで)",
+    "examples": [
+      {
+        "translation": "Cả gia đình chúng tôi đã cùng nhau đi du lịch."
+      },
+      {
+        "translation": "Toàn thể lớp học đã cùng tham gia chuyến đi dã ngoại."
+      },
+      {
+        "translation": "Đất nước này toàn thể người dân đều đồng lòng ủng hộ dự luật đó."
+      },
+      {
+        "translation": "Anh ấy đã cùng với toàn bộ nhóm bạn của mình tham gia vào câu lạc bộ đó."
+      }
+    ]
+  },
+  "ja_n1_Noun_22": {
+    "title": "Danh từ + こそあれ (koso are)",
+    "shortExplanation": "Thừa nhận vế trước tuy có tồn tại (thường là mặt hạn chế, rủi ro) nhưng vế sau vẫn diễn ra tích cực; 'tuy có... nhưng...', 'dẫu có... đi chăng nữa thì...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + こそあれ' (chữ 'あれ' là thể mệnh lệnh/liên từ cổ của động từ 'ある') là lối diễn đạt trang trọng trong văn viết, dùng để thừa nhận một sự thật hoặc khuyết điểm nào đó ở vế trước ('tuy có...', 'dẫu tồn tại...'), nhưng ngay lập tức khẳng định vế sau không hề bị ảnh hưởng tiêu cực mà vẫn diễn biến tốt đẹp hoặc có giá trị lớn ('tuy có... nhưng...').",
+    "formation": "Danh từ + こそあれ | Tính từ đuôi な (thân từ) + でこそあれ",
+    "examples": [
+      {
+        "translation": "Tuy có một số vấn đề, nhưng dự án vẫn đang tiến triển hết sức thuận lợi."
+      },
+      {
+        "translation": "Dẫu có đôi chút rủi ro, nhưng việc này hoàn toàn xứng đáng để dấn thân thử thách."
+      },
+      {
+        "translation": "Tuy có khuyết điểm, nhưng đề xuất của anh ấy rất thú vị và đáng quan tâm."
+      },
+      {
+        "translation": "Dẫu trong lòng vẫn có lo âu, nhưng bây giờ chính là thời điểm phải hành động."
+      }
+    ]
+  },
+  "ja_n1_Noun_23": {
+    "title": "Danh từ + こそ～が (koso ~ ga)",
+    "shortExplanation": "Nhấn mạnh sự công nhận đối với danh từ đó là đúng hoặc quan trọng, nhưng vế sau nêu lên một khía cạnh đối lập khác; 'chính... thì quả là vậy thật, nhưng...', 'đúng là... nhưng...'.",
+    "longExplanation": "Cấu trúc 'Danh từ + こそ + (mệnh đề khẳng định) + が' dùng trợ từ nhấn mạnh 'こそ' để trước hết khẳng định tính quan trọng hoặc đúng đắn của danh từ đó, sau đó dùng liên từ 'が' để đưa ra một sự thật khác có tính chất tương phản hoặc bổ sung ('đúng là A thì thật sự quan trọng đấy, nhưng...', 'chính A thì đúng là như vậy, thế nhưng...').",
+    "formation": "Danh từ + こそ + Vị ngữ (Động từ / Tính từ) + が",
+    "examples": [
+      {
+        "translation": "Tiền bạc đúng là rất cần thiết thật đấy, nhưng đó không phải là tất cả trong cuộc đời."
+      },
+      {
+        "translation": "Nỗ lực quả thật là điều vô cùng quan trọng, nhưng kết quả cũng không thể bỏ qua."
+      },
+      {
+        "translation": "Sức khỏe đúng là tài sản quý giá nhất, nhưng đôi khi người ta vẫn buộc phải ưu tiên công việc."
+      },
+      {
+        "translation": "Tình yêu đúng là một sức mạnh lớn lao thật, nhưng việc biểu đạt nó ra lại chẳng hề dễ dàng."
+      }
+    ]
+  },
+  "ja_n1_Noun_24": {
+    "title": "Danh từ + こそすれ (koso sure)",
+    "shortExplanation": "Nhấn mạnh chỉ có khả năng vế trước xảy ra, tuyệt đối không có chuyện vế sau; 'chỉ có... chứ tuyệt đối không...', 'họa may có... chứ quyết không...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + こそすれ' (kết hợp giữa trợ từ nhấn mạnh 'こそ' và thể liên từ 'すれ' của động từ 'する') dùng để nhấn mạnh sự đối lập cực đoan giữa hai vế: vế trước (X) có thể xảy ra hoặc có khả năng xảy ra, nhưng vế sau (Y) mang tính phủ định tuyệt đối thì dứt khoát không bao giờ có chuyện đó ('chỉ có thể là X chứ quyết không đời nào có chuyện Y'). Đi sau danh từ hành động (danh từ する) hoặc thân từ động từ.",
+    "formation": "Danh từ (động danh từ) + こそすれ + Vế phủ định (～ない / ～できない) | Động từ thể ます bỏ ます + こそすれ + Vế phủ định",
+    "examples": [
+      {
+        "translation": "Tôi chỉ có biết ơn chứ tuyệt đối không thể nào buông lời trách móc được."
+      },
+      {
+        "translation": "Bận rộn thì có bận thật đấy, chứ tuyệt đối chẳng bao giờ có chuyện buồn chán."
+      },
+      {
+        "translation": "Tôi chỉ có ôm niềm ân hận chứ quyết không thể nào quên được chuyện đó."
+      },
+      {
+        "translation": "Tôi chỉ có nghi ngờ chứ dứt khoát không thể nào tán thành được."
+      }
+    ]
+  },
+  "ja_n1_Noun_25": {
+    "title": "Danh từ + ごとき / ごとく (gotoki / gotoku)",
+    "shortExplanation": "Văn phong văn chương cổ dùng để so sánh ví von; 'như...', 'giống như...'. (ごとき bổ nghĩa cho danh từ, ごとく bổ nghĩa cho động từ, tính từ).",
+    "longExplanation": "Cấu trúc so sánh ví von mang phong cách văn chương cổ điển '～ごとき／～ごとく' (dạng liên thể là 'ごとき' đứng trước danh từ, dạng liên dụng là 'ごとく' đứng trước động từ hoặc tính từ) mang ý nghĩa 'như là...', 'giống hệt như...'. So với 'ようだ' hay 'みたいだ', cấu trúc này mang âm hưởng trang trọng, kịch tính và giàu hình tượng văn học hơn hẳn. (Ngoài ra, ごとき còn có thể dùng để hạ thấp hoặc khiêm nhường).",
+    "formation": "Danh từ + ごとき + Danh từ | Danh từ + ごとく + Động từ / Tính từ",
+    "examples": [
+      {
+        "translation": "Tâm hồn anh ấy thuần khiết hệt như một thiên thần."
+      },
+      {
+        "translation": "Đừng có làm những hành vi độc ác như loài ác quỷ vậy!"
+      },
+      {
+        "translation": "Cô ấy sở hữu một làn da trắng ngần như tuyết."
+      },
+      {
+        "translation": "Anh ấy đã rời đi nhanh thoăn thoắt như một cơn gió."
+      }
+    ]
+  },
+  "ja_n1_Noun_26": {
+    "title": "Danh từ + じゃあるまいし (ja aru mai shi)",
+    "shortExplanation": "Cách nói khẩu ngữ dùng để phê phán, khuyên nhủ hoặc thanh minh; 'đâu phải là... đâu mà...', 'có phải là... đâu cơ chứ'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + じゃあるまいし' (là dạng khẩu ngữ thân mật của '～ではあるまいし') dùng để bác bỏ một lý do hay giả định vô lý, với ngụ ý 'đâu phải là... đâu mà làm thế', 'có phải là... đâu cơ chứ!'. Thường đi kèm với lời khuyên bảo, trách móc, châm biếm hoặc khẳng định rằng thái độ/hành vi đó là hoàn toàn không tương xứng hay không cần thiết.",
+    "formation": "Danh từ + じゃあるまいし (hoặc ではあるまいし)",
+    "examples": [
+      {
+        "translation": "Cậu ấy đâu còn là trẻ con nữa đâu, phải tự mình giải quyết cho ổn thỏa vấn đề đó đi chứ."
+      },
+      {
+        "translation": "Không cần phải vội thế đâu, đâu phải là sắp hết giờ đến nơi rồi đâu mà."
+      },
+      {
+        "translation": "Cậu có phải là huấn luyện viên đâu mà cứ phải lo lắng về kết quả trận đấu làm gì."
+      },
+      {
+        "translation": "Đâu phải là kẹo cứng đâu, cứ thế nuốt luôn cũng chẳng sao đâu."
+      }
+    ]
+  },
+  "ja_n1_Noun_27": {
+    "title": "Danh từ + ずくめ (zukume)",
+    "shortExplanation": "Diễn tả toàn bộ sự vật, hoàn cảnh bị bao trùm hoặc chỉ toàn là một thứ gì đó; 'toàn là...', 'ngập tràn...', 'chỉ rặt...'.",
+    "longExplanation": "Hậu tố ngữ pháp 'Danh từ + ずくめ' dùng để nhấn mạnh trạng thái mà xung quanh hoặc trong một khoảng thời gian chỉ ngập tràn, toàn bộ bao phủ bởi danh từ đó mà không có thứ gì khác xen vào ('toàn là...', 'chỉ rặt những...', 'toàn bộ là...'). Có thể dùng cho cả điều tốt (như 結構ずくめ, 幸せずくめ) lẫn điều xấu (như 失敗ずくめ, 嘘ずくめ) hoặc trạng thái màu sắc, ngoại cảnh (như 黒ずくめ).",
+    "formation": "Danh từ + ずくめ (hoặc ずくめの + Danh từ / ずくめだ)",
+    "examples": [
+      {
+        "translation": "Dạo gần đây anh ấy liên tiếp toàn gặp phải thất bại."
+      },
+      {
+        "translation": "Mùa đông năm nay tuyết rơi liên miên ngập tràn nên thật là vất vả."
+      },
+      {
+        "translation": "Câu chuyện của anh ta chỉ rặt toàn là những lời dối trá."
+      },
+      {
+        "translation": "Công việc hôm nay chỉ toàn là những chuỗi bận rộn không ngơi nghỉ."
+      }
+    ]
+  },
+  "ja_n1_Noun_28": {
+    "title": "Danh từ + だけではすまない (dake dewa sumanai)",
+    "shortExplanation": "Diễn tả ý không thể giải quyết hay dàn xếp ổn thỏa một vấn đề chỉ bằng riêng danh từ đó; 'chỉ... thôi thì không xong đâu', 'không chỉ đơn thuần là... là xong'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + だけではすまない' (dạng phủ định của động từ '済む' - kết thúc, giải quyết xong thỏa đáng) biểu thị rằng tình huống, trách nhiệm hoặc mục tiêu phức tạp đến mức không thể chỉ dựa vào một hành động, sự đền bù hay điều kiện đơn lẻ nào đó mà giải quyết êm thấm được ('chỉ... thôi thì không đủ giải quyết', 'không thể chỉ dừng lại ở... là xong chuyện').",
+    "formation": "Danh từ + だけではすまない (hoặc Động từ thể từ điển / thể て + だけではすまない)",
+    "examples": [
+      {
+        "translation": "Vấn đề nghiêm trọng này chỉ xin lỗi thôi thì không thể giải quyết xong đâu."
+      },
+      {
+        "translation": "Cô ấy đang giận dỗi đấy, chỉ tặng mỗi bánh kẹo thôi thì không êm chuyện được đâu."
+      },
+      {
+        "translation": "Sự thành công của dự án này không thể chỉ dựa vào sự nỗ lực đơn thuần là xong."
+      },
+      {
+        "translation": "Không thể chỉ dừng lại ở việc huy động vốn là xong, mà còn cần có kế hoạch kinh doanh thực tế nữa."
+      }
+    ]
+  },
+  "ja_n1_Noun_29": {
+    "title": "Số từ tối thiểu + たりとも～ない (tari tomo ~ nai)",
+    "shortExplanation": "Đi với lượng từ tối thiểu (như 1 phút, 1 lời, 1 lần...) để phủ định hoàn toàn; 'dù chỉ một... cũng không...', 'ngay cả một... cũng chẳng...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Số từ tối thiểu (thường là 1) + Lượng từ + たりとも + Vế phủ định' là cách diễn đạt mang tính văn chương trang trọng, dùng để nhấn mạnh sự phủ định triệt để ('ngay cả một... cũng tuyệt đối không...'). Vế trước luôn là đơn vị số lượng nhỏ nhất có thể (như 一日, 一秒, 一滴, 一円, 一人), vế sau kết hợp với các động từ ở dạng phủ định để khẳng định không có bất kỳ ngoại lệ hay sự lãng phí nào.",
+    "formation": "Số từ tối thiểu (1 + Lượng từ) + たりとも + Vị ngữ phủ định (～ない / ～ず / ～するな)",
+    "examples": [
+      {
+        "translation": "Đừng có lãng phí dù chỉ một phút một giây nào!"
+      },
+      {
+        "translation": "Anh ta không hé răng nói dù chỉ một lời nào."
+      },
+      {
+        "translation": "Cô ấy chưa từng xem bộ phim đó, dẫu chỉ một lần."
+      },
+      {
+        "translation": "Tôi không giữ bất kỳ tấm ảnh nào về nó, dù chỉ là một tấm."
+      }
+    ]
+  },
+  "ja_n1_Noun_30": {
+    "title": "Danh từ 1 + たる + Danh từ 2 (taru)",
+    "shortExplanation": "Văn phong trang trọng dùng để nhấn mạnh tư cách, thân phận hoặc bổn phận xứng đáng của người ở cương vị đó; 'đã là... thì...', 'với tư cách là...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + たる + Danh từ 2' (chữ 'たる' là dạng liên thể của trợ động từ khẳng định cổ 'たり', bắt nguồn từ 'とあり') là cách diễn đạt rất trang trọng trong văn viết hoặc diễn thuyết. Mẫu này dùng để khẳng định cương vị, thân phận hoặc chức trách cao cả của Danh từ 1 (thường là người lãnh đạo, giáo viên, bác sĩ, bậc cha mẹ...), từ đó đưa ra yêu cầu hoặc tiêu chuẩn đạo đức mà đối tượng Danh từ 2 (thường đi với 者 - người mang tư cách đó) phải noi theo và gánh vác xứng đáng ('đã là người làm... thì phải...', 'xứng danh là...').",
+    "formation": "Danh từ 1 (chỉ thân phận/nghề nghiệp/cương vị) + たる + Danh từ 2 (thường là 者)",
+    "examples": [
+      {
+        "translation": "Đã là một người lãnh đạo thì luôn phải biết nhìn xa trông rộng và hành động tương xứng."
+      },
+      {
+        "translation": "Đã ở cương vị người thầy thì phải làm tấm gương sáng cho học sinh noi theo."
+      },
+      {
+        "translation": "Đã là một người mẹ thì việc yêu thương gia đình là điều hết sức đương nhiên."
+      },
+      {
+        "translation": "Đã mang danh người thầy thuốc thì phải đặt sự an toàn của bệnh nhân lên vị trí ưu tiên hàng đầu."
+      }
+    ]
+  },
+  "ja_n1_Noun_31": {
+    "title": "Danh từ + ですら (desura)",
+    "shortExplanation": "Văn phong trang trọng dùng để nhấn mạnh một trường hợp cực đoan để suy ra những điều khác; 'ngay cả... cũng...', 'ngay đến... cũng...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + ですら' là dạng kết hợp giữa trợ động từ phán đoán khẳng định 'で' và phó trợ từ nhấn mạnh 'すら', mang tính chất văn viết trang trọng và nhấn mạnh mạnh mẽ hơn so với 'さえ' hay 'すら' thông thường. Cấu trúc này đưa ra một ví dụ cực đoan, điển hình hoặc hiển nhiên nhất ('ngay cả...', 'ngay đến... mà còn...') để ngụ ý rằng những trường hợp thông thường khác thì khỏi phải nói.",
+    "formation": "Danh từ + ですら",
+    "examples": [
+      {
+        "translation": "Ngày mai có bài thi rồi vậy mà ngay cả sách giáo khoa cậu ấy cũng chẳng buồn đọc."
+      },
+      {
+        "translation": "Vấn đề hóc búa này ngay cả các chuyên gia hàng đầu cũng không giải quyết nổi."
+      },
+      {
+        "translation": "Cô ấy đã bật khóc nức nở, ngay đến cả trong bài phát biểu cuối cùng."
+      },
+      {
+        "translation": "Anh ấy học hành chăm chỉ mỗi ngày, thế nhưng ngay đến cả chữ Hán cơ bản cũng chẳng thể nhớ nổi."
+      }
+    ]
+  },
+  "ja_n1_Noun_32": {
+    "title": "Danh từ + でなくてなんだろう (〜de nakute nandarou)",
+    "shortExplanation": "Câu hỏi tu từ mang tính khẳng định mạnh mẽ; 'nếu không phải là... thì là gì nữa', 'chính là... chứ còn gì nữa'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + でなくてなんだろう' là một câu hỏi tu từ mang sắc thái cảm thán và khẳng định cực kỳ mạnh mẽ của người nói ('nếu đây không phải là... thì là cái gì nữa?'). Người nói bày tỏ niềm tin tuyệt đối rằng sự việc, hiện tượng đó chắc chắn chính là danh từ được nhắc đến mà không thể là điều gì khác. Thường kết hợp với các danh từ trừu tượng mang tính cảm xúc cao như tình yêu (愛), sự thật (真実), kỳ tích (奇跡), số phận (運命).",
+    "formation": "Danh từ + でなくてなんだろう (hoặc でなくて何だろうか)",
+    "examples": [
+      {
+        "translation": "Nếu đây không phải là sự thật thì là gì nữa chứ."
+      },
+      {
+        "translation": "Anh ấy không phải là người lãnh đạo thì còn ai vào đây nữa."
+      },
+      {
+        "translation": "Nếu đây không phải là tình yêu thì còn là gì nữa."
+      },
+      {
+        "translation": "Đây không phải là nhà hàng tuyệt vời nhất thì còn là gì nữa chứ."
+      }
+    ]
+  },
+  "ja_n1_Noun_33": {
+    "title": "Danh từ + ではあるまいし (~dewa aru maishi)",
+    "shortExplanation": "Diễn tả ý phủ định một lý do hay tình huống không có thực để đưa ra lời khuyên, phê phán; 'có phải là... đâu mà', 'đâu còn là... nữa'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + ではあるまいし' được dùng để bác bỏ một giả định, lý do hoặc tình huống không có thực ('đâu phải là... đâu mà'), từ đó đưa ra nhận định, lời khuyên giải, sự nhắc nhở hoặc phê phán đối phương ở vế sau ('không cần phải...', 'đừng có... như vậy'). Đây là cách nói trang trọng, mang tính văn viết hơn so với dạng khẩu ngữ thông dụng là '～じゃあるまいし'.",
+    "formation": "Danh từ + ではあるまいし (khẩu ngữ: じゃあるまいし)",
+    "examples": [
+      {
+        "translation": "Cô ấy đâu phải là ca sĩ chuyên nghiệp đâu mà, đòi hỏi sự hoàn hảo thì quả là quá khắt khe."
+      },
+      {
+        "translation": "Cậu ấy đâu còn là trẻ con nữa đâu mà ăn toàn sô-cô-la như thế, tôi thấy thật chẳng nên chút nào."
+      },
+      {
+        "translation": "Anh ta đâu phải là bác sĩ đâu mà, không cần thiết phải tọc mạch soi mói tình trạng sức khỏe của bạn."
+      },
+      {
+        "translation": "Chiếc nhẫn này đâu phải là đồ đắt tiền gì đâu mà, dẫu có làm rơi cũng chẳng sao cả."
+      }
+    ]
+  },
+  "ja_n1_Noun_34": {
+    "title": "Danh từ 1 + と + Danh từ 2 + を兼ねて (Noun to Noun o kanete)",
+    "shortExplanation": "Biểu thị một người hoặc một vật đảm nhiệm đồng thời cả hai vai trò, chức năng hoặc mục đích; 'kiêm cả... lẫn...', 'vừa là... vừa là...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + と + Danh từ 2 + を兼ねて' (hoặc dạng vị ngữ là を兼ねる / を兼ねている) xuất phát từ động từ 兼ねる (kiêm nhiệm, gộp làm một), dùng để diễn đạt rằng một đối tượng, sự vật hoặc hành động đảm đương đồng thời cả hai chức vụ, vai trò hoặc mục đích khác nhau ('kiêm cả A lẫn B', 'vừa là A vừa là B'). Thường áp dụng cho chức vụ nghề nghiệp, công năng sử dụng của đồ vật, không gian hoặc các mục đích hành động song hành.",
+    "formation": "Danh từ 1 + と + Danh từ 2 + を兼ねて (hoặc を兼ねる / を兼ねている)",
+    "examples": [
+      {
+        "translation": "Bố tôi kiêm nhiệm cả chức giám đốc lẫn trưởng phòng kế toán."
+      },
+      {
+        "translation": "Cô ấy vừa là giáo viên âm nhạc vừa kiêm luôn nghệ sĩ dương cầm."
+      },
+      {
+        "translation": "Căn phòng này kiêm luôn cả phòng ngủ lẫn phòng làm việc."
+      },
+      {
+        "translation": "Anh ấy vừa làm cha vừa làm mẹ để chăm sóc cho các con."
+      }
+    ]
+  },
+  "ja_n1_Noun_35": {
+    "title": "Danh từ 1 + といい + Danh từ 2 + といい (〜to ii〜to ii)",
+    "shortExplanation": "Đưa ra hai sự vật tiêu biểu cùng loại để đánh giá, khen ngợi hoặc phàn nàn về tổng thể; 'dù là A hay B thì...', 'cả A lẫn B đều...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + といい + Danh từ 2 + といい' được dùng để nêu ra hai ví dụ tiêu biểu, đại diện trong cùng một nhóm chủ đề nhằm đưa ra lời nhận xét, đánh giá chung về toàn thể đối tượng ('nhìn vào A hay nhìn vào B cũng đều...', 'cả A lẫn B đều...'). Vế sau luôn đi kèm nhận định đánh giá của người nói, có thể là khen ngợi tán thưởng (như 素晴らしい, 完璧だ) hoặc phàn nàn chê trách (như 困ったものだ, 最悪だ).",
+    "formation": "Danh từ 1 + といい + Danh từ 2 + といい + [Đánh giá / Nhận xét]",
+    "examples": [
+      {
+        "translation": "Dù là món ăn hay các địa điểm du lịch của Nhật Bản thì tất cả đều vô cùng tuyệt vời."
+      },
+      {
+        "translation": "Dù là lòng tốt hay thể lực, anh ấy thực sự là một người bạn đời lý tưởng."
+      },
+      {
+        "translation": "Cả rạp chiếu phim lẫn công viên của thị trấn này, già trẻ gái trai ai nấy đều có thể tận hưởng."
+      },
+      {
+        "translation": "Cả giọng hát lẫn kỹ năng vũ đạo của anh ấy đều hoàn hảo."
+      }
+    ]
+  },
+  "ja_n1_Noun_36": {
+    "title": "Danh từ 1 + という + Danh từ 2 (~to iu~)",
+    "shortExplanation": "Dùng để gọi tên, định danh hoặc giải thích Danh từ 2 bằng tên gọi Danh từ 1; 'có tên là...', 'gọi là...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + という + Danh từ 2' dùng để xác định, định danh hoặc gọi tên một đối tượng cụ thể. Danh từ 1 là tên riêng, danh xưng hoặc nội dung định nghĩa, còn Danh từ 2 là danh từ chung chỉ chủng loại (người, sách, thành phố, công ty...). Cấu trúc này dịch là 'người/vật có tên gọi là...', 'cái gọi là...'. Thường dùng khi người nói muốn giới thiệu hoặc làm rõ một cái tên mà đối phương có thể chưa biết rõ.",
+    "formation": "Danh từ 1 (tên gọi / danh xưng) + という + Danh từ 2 (chủng loại)",
+    "examples": [
+      {
+        "translation": "Người có tên là Hayao Miyazaki là một đạo diễn phim hoạt hình nổi tiếng."
+      },
+      {
+        "translation": "Người phụ nữ được gọi là bạn gái đó đối xử với anh ấy rất nghiêm khắc."
+      },
+      {
+        "translation": "Thành phố tên là Tokyo về đêm cũng vô cùng náo nhiệt."
+      },
+      {
+        "translation": "Tôi rất thích cuốn sách có tựa đề là 'Harry Potter'."
+      }
+    ]
+  },
+  "ja_n1_Noun_37": {
+    "title": "Danh từ + というところだ (Noun to iu tokoro da)",
+    "shortExplanation": "Đưa ra ước lượng hoặc đánh giá đại khái về mức độ, tỷ lệ; 'khoảng chừng...', 'đại khái vào tầm...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + というところだ' (kết câu cũng có thể dùng というところだろう hoặc というところです) được dùng khi người nói muốn ước lượng hoặc đưa ra một đánh giá, phán đoán đại khái về một con số, mức độ, tỷ lệ hoặc tiến độ ('khoảng chừng...', 'đại khái là...', 'vào tầm...'). Thường đi kèm với các từ chỉ số lượng, phần trăm, phân số hoặc mức độ tương đối.",
+    "formation": "Danh từ (chỉ số lượng / mức độ / tỷ lệ) + というところだ (hoặc というところだろう / というところです)",
+    "examples": [
+      {
+        "translation": "Số thí sinh thi đỗ trong kỳ thi lần này ước chừng khoảng một nửa."
+      },
+      {
+        "translation": "Thực lực của anh ấy đại khái vào tầm 80%."
+      },
+      {
+        "translation": "Số người tán thành kế hoạch này khoảng chừng 70%."
+      },
+      {
+        "translation": "Đối với ý kiến của trưởng phòng, cá nhân tôi đồng tình vào khoảng 90%."
+      }
+    ]
+  },
+  "ja_n1_Noun_38": {
+    "title": "Danh từ + というもの (~ to iu mono)",
+    "shortExplanation": "Đề cập đến bản chất chung, đặc tính vốn có hoặc chân lý phổ quát của một đối tượng; 'cái gọi là...', 'bản chất của... là...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + というもの' (thường dùng ở dạng chủ đề というものは) được dùng khi muốn nói về bản chất chung, quy luật tất yếu hoặc đặc tính phổ quát của đối tượng, sự vật hay nhóm đối tượng được nhắc đến ('cái gọi là...', 'đã là... thì bản chất là...'). Mẫu câu này thường dùng để đúc kết những chiêm nghiệm, chân lý hoặc định nghĩa chung mang tính khái quát cao.",
+    "formation": "Danh từ + というもの (thường dùng: Danh từ + というものは)",
+    "examples": [
+      {
+        "translation": "Đã là trẻ con thì ngày nào cũng chơi đùa rất nhiều."
+      },
+      {
+        "translation": "Sinh viên đại học thường dành rất nhiều thời gian cho việc nghiên cứu."
+      },
+      {
+        "translation": "Bản chất văn hóa Nhật Bản là sự pha trộn giữa nét truyền thống và điều mới mẻ."
+      },
+      {
+        "translation": "Cái gọi là chia ly thì bao giờ cũng là điều đau buồn."
+      }
+    ]
+  },
+  "ja_n1_Noun_39": {
+    "title": "Danh từ + といったところだ (Noun to itta tokoro da)",
+    "shortExplanation": "Đánh giá mức độ, số lượng tối đa chỉ đạt tới một giới hạn nhất định; 'nhiều nhất cũng chỉ...', 'cùng lắm cũng chỉ vào khoảng...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + といったところだ' được dùng để ước lượng và chỉ ra mức trần, giới hạn cao nhất của một sự vật, hiện tượng ('nhiều nhất cũng chỉ tầm...', 'cùng lắm cũng chỉ...', 'ở mức... là cùng'). Người nói có sắc thái cho rằng con số hay mức độ đó không phải là quá nhiều, không vượt qua ngưỡng được đề cập. Thường đi kèm với các phó từ như せいぜい (cùng lắm), 多くても (nhiều nhất cũng chỉ).",
+    "formation": "Danh từ (số lượng / mức độ) + といったところだ (hoặc といったところです)",
+    "examples": [
+      {
+        "translation": "Trình độ tiếng Anh của anh ấy cùng lắm cũng chỉ ở mức sơ cấp."
+      },
+      {
+        "translation": "Vốn từ vựng tiếng Nhật của tôi nhiều nhất cũng chỉ vào khoảng 1.000 từ."
+      },
+      {
+        "translation": "Quãng đường anh ấy có thể chạy bộ mỗi ngày nhiều nhất cũng chỉ khoảng 5 cây số."
+      },
+      {
+        "translation": "Số lượng nhân viên của công ty đó cùng lắm cũng chỉ rơi vào khoảng 20 người."
+      }
+    ]
+  },
+  "ja_n1_Noun_40": {
+    "title": "Danh từ 1 + といわず + Danh từ 2 + といわず (A to iwazu B to iwazu)",
+    "shortExplanation": "Biểu thị sự việc diễn ra trên toàn bộ mọi trường hợp mà không phân biệt giữa A và B; 'bất kể là A hay B', 'không kể... hay...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + といわず + Danh từ 2 + といわず' bắt nguồn từ việc 'không chỉ nói riêng A hay riêng B', dùng để nhấn mạnh rằng một sự việc, hành động hay trạng thái áp dụng trên phạm vi toàn diện, triệt để mà không có sự phân biệt nào giữa hai đối tượng tương phản hoặc liên quan ('bất kể là A hay B', 'chẳng kể... hay...', 'bất luận ngày hay đêm'). Thường kết hợp với các cặp từ đối lập như ngày/đêm, đông/hè, già/trẻ, hoặc các bộ phận cơ thể (tay/chân).",
+    "formation": "Danh từ 1 + といわず + Danh từ 2 + といわず + [Vế câu diễn tả sự bao quát/toàn bộ]",
+    "examples": [
+      {
+        "translation": "Bất kể là mùa đông hay mùa hè, anh ấy lúc nào cũng ăn kem."
+      },
+      {
+        "translation": "Không phân biệt già hay trẻ, tất cả mọi người đều có thể tận hưởng sự kiện đó."
+      },
+      {
+        "translation": "Bất kể là đàn ông hay phụ nữ, bất kỳ ai cũng sẽ yêu thích bộ phim này."
+      },
+      {
+        "translation": "Bất kể thứ Hai hay thứ Ba, cửa hàng đó ngày nào cũng đông khách."
+      }
+    ]
+  },
+  "ja_n1_Noun_41": {
+    "title": "Danh từ + ときたら (〜tokitara)",
+    "shortExplanation": "Đưa ra một chủ đề để bày tỏ cảm xúc mạnh mẽ (thường là phàn nàn, ngán ngẩm hoặc tấm tắc khen ngợi); 'nhắc đến...', 'nói về... thì...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + ときたら' được dùng để nêu bật một đối tượng, sự vật làm chủ đề bàn luận nhằm bộc lộ cảm xúc mạnh mẽ của người nói đối với đối tượng đó ('nhắc đến... thì thật là...', 'nói về... thì...'). Đa số trường hợp dùng để bày tỏ sự bất mãn, phàn nàn, ngán ngẩm hoặc chê trách trước những thói xấu hay điều bất tiện (như thái độ, hành vi). Đôi khi cấu trúc này cũng dùng để biểu thị sự tấm tắc khen ngợi trước một điều vượt trội.",
+    "formation": "Danh từ + ときたら + [Nhận xét mang sắc thái cảm xúc mạnh mẽ]",
+    "examples": [
+      {
+        "translation": "Cứ nhắc đến món sushi là anh ấy lại chẳng ăn được món nào cả."
+      },
+      {
+        "translation": "Hễ cứ gặp phải bài toán là cô ấy lại luôn lúng túng chịu thua."
+      },
+      {
+        "translation": "Nói về món burger của quán đó thì thực sự ngon tuyệt vời."
+      },
+      {
+        "translation": "Cái thái độ thường ngày của anh ta thì thật là khiến người ta ngán ngẩm hết chỗ nói."
+      }
+    ]
+  },
+  "ja_n1_Noun_42": {
+    "title": "Danh từ + とは比べものにならない (~to wa kurabemono ni naranai)",
+    "shortExplanation": "Nhấn mạnh sự chênh lệch quá lớn về trình độ, quy mô hoặc tính chất; 'không thể so sánh với...', 'vượt trội hơn hẳn so với...'.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ + とは比べものにならない' (hoặc dạng định ngữ bổ nghĩa cho danh từ là 比べものにならないほど / 比べものにならない + Danh từ) được dùng để nhấn mạnh khoảng cách hoặc sự chênh lệch quá xa giữa hai đối tượng, đến mức không thể nào đặt lên bàn cân để so sánh được ('hoàn toàn không thể so sánh được với...', 'vượt trội hơn hẳn so với...'). Thường dùng khi một bên áp đảo hoàn toàn về mặt chất lượng, tốc độ, quy mô, trình độ.",
+    "formation": "Danh từ + とは比べものにならない (dạng bổ nghĩa: とは比べものにならないほど + Tính từ/Động từ)",
+    "examples": [
+      {
+        "translation": "Tốc độ của chiếc xe mới hoàn toàn không thể so sánh được với chiếc xe cũ."
+      },
+      {
+        "translation": "Trình độ tiếng Anh siêu việt của anh ấy thì tôi chẳng thể nào so bì được."
+      },
+      {
+        "translation": "Công nghệ của Nhật Bản vượt trội đến mức các quốc gia khác không thể nào sánh kịp."
+      },
+      {
+        "translation": "Thiệt hại của trận động đất lần này lớn đến mức không thể so sánh được với lần trước."
+      }
+    ]
+  },
+  "ja_n1_Noun_43": {
     "title": "Danh từ 1 + ともあろう + Danh từ 2 (~tomoarou~)",
     "shortExplanation": "Chỉ trích hoặc bày tỏ sự kinh ngạc trước hành vi không xứng đáng với địa vị, cương vị của một người; 'đường đường là... thế mà lại...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + ともあろう + Danh từ 2' (trong đó Danh từ 1 là chức vụ, danh phận, cương vị xã hội cao quý hoặc có trách nhiệm lớn; Danh từ 2 thường là 者, 人, 方) được dùng để phê phán, trách móc hoặc bày tỏ sự ngỡ ngàng, thất vọng khi một người có cương vị như vậy lại làm ra hành vi sai trái, đáng xấu hổ hoặc không hề tương xứng với vị thế của mình ('đường đường là một... thế mà lại...', 'ở cương vị... mà lại làm ra hành động như thế').",
@@ -11235,7 +12535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_44": {
+  "ja_n1_Noun_44": {
     "title": "Danh từ + ともなると (〜to mo naru to)",
     "shortExplanation": "Diễn tả khi một thời điểm đặc biệt, vị thế hay cấp độ nào đó đến thì tình hình sẽ thay đổi rõ rệt; 'hễ cứ đến...', 'một khi đã là... thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + ともなると' (kết hợp với danh từ chỉ thời gian, mùa lễ hội, độ tuổi hoặc vị thế đặc biệt) dùng để nhấn mạnh rằng một khi đã bước vào thời điểm, giai đoạn hay cương vị đó thì tình hình sẽ biến chuyển rõ rệt so với bình thường ('hễ cứ đến thời điểm đó là...', 'một khi đã lên đến mức... thì...'). Vế sau thường miêu tả một trạng thái tất yếu, tự nhiên nảy sinh hoặc sự thay đổi cục diện đáng chú ý.",
@@ -11255,7 +12555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_45": {
+  "ja_n1_Noun_45": {
     "title": "Danh từ + ともなれば (〜to mo nareba)",
     "shortExplanation": "Nhấn mạnh một khi đã bước vào tình huống, thời điểm hay vị thế đó thì đương nhiên sẽ nảy sinh kết quả tương ứng; 'một khi đã là...', 'nếu đã đến lúc... thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + ともなれば' (dạng điều kiện của động từ なる kết hợp với trợ từ nhấn mạnh とも) dùng để nhấn mạnh rằng một khi đã đạt đến một vị thế, giai đoạn, bước ngoặt hoặc tình huống quan trọng nào đó thì tất yếu sẽ kéo theo những thay đổi, trách nhiệm hoặc cảm xúc tương xứng ('một khi đã là...', 'nếu đến mức... thì...'). Thường dùng với các sự kiện lớn trong đời (kết hôn, thi cử, lên chức) hoặc các bước chuyển biến đáng kể.",
@@ -11275,7 +12575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_46": {
+  "ja_n1_Noun_46": {
     "title": "Danh từ + と相まって (~ to aimatte)",
     "shortExplanation": "Diễn tả nhiều yếu tố kết hợp, tác động qua lại lẫn nhau để tạo nên một hiệu quả hay kết quả nổi bật; 'kết hợp với...', 'cùng với...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + と相まって' xuất phát từ động từ 相まつ (hòa quyện, tác động qua lại), dùng để diễn tả rằng hai hay nhiều yếu tố, điều kiện cùng kết hợp lại, bổ trợ và cộng hưởng với nhau để tạo ra một kết quả hoặc hiệu ứng vô cùng rõ rệt ('cộng hưởng cùng với...', 'kết hợp với...', 'hòa quyện cùng...'). Thường đi với cấu trúc 'AとBとが相まって' (A kết hợp cùng với B) hoặc 'AがBと相まって' (A cùng hòa vào B) để miêu tả thành công, cảnh sắc tuyệt đẹp hoặc hương vị thơm ngon.",
@@ -11295,7 +12595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_47": {
+  "ja_n1_Noun_47": {
     "title": "Danh từ + なくして～はない (nakushite ~ wa nai)",
     "shortExplanation": "Biểu thị ý 'nếu không có... thì không thể có...', nhấn mạnh điều kiện tất yếu, không thể thiếu để đạt được điều gì.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + なくして～はない' (hoặc なくしては～ない) mang tính văn viết trang trọng, nhấn mạnh rằng nếu không có danh từ đi trước thì vế sau tuyệt đối không thể hình thành, tồn tại hay đạt được thành công ('nếu không có... thì không thể có...'). Thường đi kèm với các danh từ trừu tượng chỉ phẩm chất, nỗ lực, điều kiện cốt lõi như 努力 (nỗ lực), 愛 (tình yêu), 信頼 (sự tin tưởng), 協力 (sự hợp tác). Vế sau luôn là câu phủ định triệt để (～はない, ～はあり得ない, ～はできない).",
@@ -11315,7 +12615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_48": {
+  "ja_n1_Noun_48": {
     "title": "Danh từ + なしでは～ない (nashi de wa ~ nai)",
     "shortExplanation": "Biểu thị ý 'nếu không có... thì không thể...', nhấn mạnh sự thiết yếu của đối tượng trong hoàn cảnh thông thường.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + なしでは～ない' (hoặc なしには～ない) dùng để diễn đạt ý rằng nếu thiếu đi một người, vật hoặc điều kiện cụ thể nào đó thì không thể tiến hành, hoàn thành hay duy trì một việc gì đó ('nếu không có... thì không...'). Khác với 'なくして', mẫu câu này có thể áp dụng linh hoạt cho cả các sự vật, hiện tượng đời thường (như nước, máy tính, tiền bạc, người hỗ trợ...) lẫn trừu tượng. Vế sau thường là câu phủ định ở thể khả năng.",
@@ -11335,7 +12635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_49": {
+  "ja_n1_Noun_49": {
     "title": "Danh từ + なしには～ない (nashi ni wa ~ nai)",
     "shortExplanation": "Biểu thị ý 'nếu không có... thì không thể...', mang sắc thái trang trọng, văn viết hơn 'なしでは'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + なしには～ない' được sử dụng để diễn đạt rằng nếu không có hoặc thiếu đi danh từ được nhắc tới thì một hành động, trạng thái nào đó không thể thực hiện hay duy trì được ('không có... thì không thể...'). Về ý nghĩa, mẫu này tương đồng với '～なしでは～ない', nhưng mang sắc thái văn phong trang trọng, có tính văn viết và nhấn mạnh tính tất yếu hơn. Vế sau luôn đi kèm với động từ chia ở thể phủ định (đặc biệt là thể khả năng phủ định).",
@@ -11355,7 +12655,27 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_51": {
+  "ja_n1_Noun_50": {
+    "title": "Danh từ + ならいざ知らず (nara iza shirazu)",
+    "shortExplanation": "Diễn tả ý 'nếu là... thì còn chấp nhận được, đằng này lại...', biểu thị sự ngạc nhiên, bất mãn hoặc bất khả thi ở vế sau.",
+    "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + ならいざ知らず、Danh từ 2...' (hoặc dạng đầy đủ '～ならいざしらず') dùng để đối chiếu hai mức độ khác nhau: 'Nếu là A thì tôi không nói làm gì / có thể châm chước được, nhưng đối với B thì hoàn toàn không thể / không thể chấp nhận nổi'. Vế sau thường đi kèm với các từ ngữ biểu thị sự phủ định, chê trách, ngạc nhiên hoặc khó khăn cùng cực (như 全然わからない, 走れません, 考えたこともない).",
+    "formation": "Danh từ 1 + ならいざ知らず ＋ Danh từ 2 / Vế câu [Đánh giá / Phủ định]",
+    "examples": [
+      {
+        "translation": "Nếu là môn toán thì còn đỡ, chứ vật lý thì tôi hoàn toàn chẳng hiểu gì cả."
+      },
+      {
+        "translation": "Nếu là 5 cây số thì may ra, chứ 10 cây số thì tôi chịu không thể chạy nổi."
+      },
+      {
+        "translation": "Tiếng Nhật thì không nói làm gì, chứ tiếng Trung thì tôi hoàn toàn không nói được."
+      },
+      {
+        "translation": "Nếu là nước mát thì không sao, chứ bơi trong nước nóng thì tôi chưa từng nghĩ tới bao giờ."
+      }
+    ]
+  },
+  "ja_n1_Noun_51": {
     "title": "Danh từ + ならでは (nara dewa)",
     "shortExplanation": "Diễn tả nét đặc sắc, độc đáo chỉ có ở danh từ đó mà nơi khác, người khác không có được; 'chỉ có ở...', 'chỉ riêng... mới có'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + ならでは' dùng để ca ngợi hoặc nhấn mạnh một phẩm chất, nét đặc trưng, lợi thế tuyệt vời mà chỉ riêng người đó, nơi đó hay vật đó mới sở hữu, không ai khác hay nơi nào khác có thể bắt chước được ('chỉ có ở...', 'chỉ riêng... mới có'). Thường xuất hiện dưới dạng bổ nghĩa cho danh từ 'Danh từ 1 + ならではの + Danh từ 2' (ví dụ: 日本ならではの文化 - nét văn hóa chỉ có ở Nhật Bản) hoặc vị ngữ ở cuối câu '～ならではだ / ～ならではのものだ'.",
@@ -11375,7 +12695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_52": {
+  "ja_n1_Noun_52": {
     "title": "Danh từ 1 + なり + Danh từ 2 + なり (nari ~ nari)",
     "shortExplanation": "Đưa ra hai hoặc nhiều ví dụ tương đương để gợi ý, lựa chọn; 'chẳng hạn như A hoặc B', 'hoặc là A hoặc là B'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + なり + Danh từ 2 + なり' dùng để nêu ra hai ví dụ tiêu biểu thuộc cùng một nhóm chủng loại nhằm đưa ra gợi ý, đề xuất hoặc yêu cầu đối phương lựa chọn bất kỳ phương án nào phù hợp ('chẳng hạn như A hoặc B', 'dù là A hay B gì cũng được'). Vế sau thường là câu đưa ra lời khuyên, đề nghị, sai khiến hoặc chỉ thị (như ～てください, ～たらどうですか).",
@@ -11395,7 +12715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_53": {
+  "ja_n1_Noun_53": {
     "title": "Danh từ + なりとも (nari tomo)",
     "shortExplanation": "Biểu thị mức độ tối thiểu dù là nhỏ bé nhất; 'dù chỉ một chút...', 'ít nhất thì cũng...'. Mang sắc thái trang trọng, khiêm nhường.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + なりとも' đi kèm với các từ chỉ số lượng ít, thời gian ngắn hoặc đơn vị tối thiểu (như 一目, 一言, 一時間, 少し) để diễn đạt mong muốn, nguyện vọng hay yêu cầu đạt được mức tối thiểu đó ('dù chỉ một chút...', 'cho dẫu chỉ là...'). Đây là cách nói trang trọng, có tính chất nhún nhường, thường kết hợp với các đuôi câu biểu thị nguyện vọng, mệnh lệnh nhẹ nhàng hoặc nghĩa vụ (như ～たい, ～てほしい, ～べきだ).",
@@ -11415,7 +12735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_54": {
+  "ja_n1_Noun_54": {
     "title": "Danh từ + に + Danh từ + を重ねて (ni ~ o kasanete)",
     "shortExplanation": "Diễn tả hành động, trạng thái lặp đi lặp lại dồn dập; 'hết lần này đến lần khác', 'chồng chất... lên...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + に + Danh từ + を重ねて' (sử dụng cùng một danh từ ở cả hai vị trí, xuất phát từ động từ 重ねる - chồng chất, tích lũy) dùng để nhấn mạnh sự lặp lại liên tiếp nhiều lần của cùng một hành động, trạng thái hoặc sự việc ('hết... này đến... khác', 'chồng chất... lên...'). Thường đi kèm với các danh từ chỉ sự nỗ lực (như 苦労, 努力, 検討) hoặc những chuyện gian nan, thất bại liên tiếp (như 失敗, 失望, 困難, 問題) để dẫn tới một kết cục rõ rệt ở vế sau.",
@@ -11435,7 +12755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_55": {
+  "ja_n1_Noun_55": {
     "title": "Danh từ + にあっては (ni atte wa)",
     "shortExplanation": "Chỉ một hoàn cảnh, thời điểm hoặc tình huống đặc biệt; 'ở trong hoàn cảnh...', 'trong bối cảnh...'. Mang sắc thái văn viết trang trọng.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + にあっては' (xuất phát từ động từ あたる / ある, dạng trang trọng của においては) được dùng sau danh từ chỉ một thời kỳ, tình thế, cương vị hoặc hoàn cảnh đặc biệt (thường là những thời kỳ biến động, gian khó, khẩn cấp như chiến tranh, khủng hoảng kinh tế, cải cách). Mẫu câu này có nghĩa là 'trong bối cảnh...', 'ở vào hoàn cảnh...', 'đứng trước tình huống...', nhấn mạnh bối cảnh chi phối hành động hoặc trạng thái được miêu tả ở vế sau. Mang sắc thái văn phong văn viết, trang trọng và nghiêm túc.",
@@ -11455,7 +12775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_56": {
+  "ja_n1_Noun_56": {
     "title": "Danh từ 1 + にあるまじき + Danh từ 2 (ni aru majiki)",
     "shortExplanation": "Chỉ hành vi, thái độ hoàn toàn không thể chấp nhận được so với thân phận, cương vị hay chuẩn mực đạo đức; 'không thể chấp nhận được ở một...'. Mang tính văn viết, phê phán gay gắt.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + にあるまじき + Danh từ 2' là một cách diễn đạt mang tính văn viết cổ điển rất trang trọng, dùng để phê phán gay gắt một hành vi, lời nói hay thái độ (Danh từ 2, như 行為, 言動, 振る舞い, 態度) là hoàn toàn sai trái, không thể tha thứ và không được phép có ở một người mang thân phận, nghề nghiệp hoặc tư cách đạo đức đó (Danh từ 1, như 医者, 教師, 政治家, 人間, 社会人). 'あるまじき' là thể liên thể cổ của trợ động từ phủ định 'まじ' (tuyệt đối không nên / không được có).",
@@ -11475,7 +12795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_57": {
+  "ja_n1_Noun_57": {
     "title": "Danh từ + にして (ni shite)",
     "shortExplanation": "Biểu thị sự ngạc nhiên trước một sự việc bất ngờ xảy ra trái với năng lực, tư cách; 'ngay cả người như... mà cũng...', 'dẫu là... mà lại...'. Mang tính văn viết trang trọng.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + にして' trong ngữ cảnh này mang nghĩa tương tự như '～であって／～という高いレベル・立場の人でさえ', dùng để diễn tả sự kinh ngạc, khó tin của người nói khi một sự việc bất thường lại xảy ra đối với chính đối tượng vốn có trình độ cao, giàu kinh nghiệm hoặc điều kiện vượt trội đó ('ngay cả một người như... mà cũng...', 'dẫu là... thế mà lại...'). Thường đi sau các danh từ chỉ người có chuyên môn cao, thành tích xuất sắc, hoặc danh nhân, vế sau là sự việc thất bại hoặc thiếu sót nằm ngoài dự liệu.",
@@ -11495,7 +12815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_58": {
+  "ja_n1_Noun_58": {
     "title": "Danh từ + にして初めて (ni shite hajimete)",
     "shortExplanation": "Diễn tả ý 'chỉ khi đạt đến độ tuổi, giai đoạn hay cương vị đó thì mới lần đầu tiên thấm thía/trải nghiệm điều gì'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + にして初めて' dùng sau danh từ chỉ độ tuổi, giai đoạn cuộc đời hoặc cương vị xã hội (như 40歳, 大人, 親, 社長) để diễn tả rằng phải đợi đến tận khi bước sang giai đoạn đó hoặc đạt đến vị trí ấy thì người nói mới lần đầu tiên trải nghiệm, nhận thức sâu sắc hay thấu hiểu được một điều gì đó ('phải đến khi làm... mới lần đầu tiên...', 'chỉ khi thành... thì mới...'). Nhấn mạnh quá trình thời gian kéo dài hoặc bước chuyển lớn về mặt nhận thức.",
@@ -11515,7 +12835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_59": {
+  "ja_n1_Noun_59": {
     "title": "Danh từ + にすら (ni sura)",
     "shortExplanation": "Biểu thị ý 'ngay cả... cũng không/chẳng...', là dạng kết hợp giữa trợ từ に và trợ từ nhấn mạnh cực đoan すら. Mang tính văn viết, trang trọng hơn 'にさえ'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + にすら' là sự kết hợp giữa trợ từ 'に' (chỉ đối tượng tiếp nhận, địa điểm, sự việc...) và trợ từ cực đoan 'すら' (ngay cả, đến cả). Mẫu câu này dùng để đưa ra một ví dụ cực đoan, điển hình nhất để ngụ ý rằng 'ngay cả đối tượng đó mà còn (không) như vậy thì những đối tượng khác lại càng không thể' ('ngay cả... cũng không...', 'đến cả... còn chẳng...'). Thường đi kèm với câu phủ định mang sắc thái bất ngờ, thất vọng hoặc nhấn mạnh tính nghiêm trọng. Mang tính văn viết và trang trọng hơn so với '～にさえ'.",
@@ -11535,7 +12855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_60": {
+  "ja_n1_Noun_60": {
     "title": "Danh từ 1 + にとどまらず + Danh từ 2 + も (ni todomarazu ~ mo)",
     "shortExplanation": "Diễn tả ý không chỉ giới hạn dừng lại ở phạm vi đó mà còn lan rộng sang phạm vi lớn hơn; 'không chỉ dừng lại ở... mà còn...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + にとどまらず + Danh từ 2 + も' (xuất phát từ động từ とどまる - dừng lại, kết hợp với thể phủ định ず) dùng để diễn đạt rằng một hiện tượng, ảnh hưởng hoặc phạm vi hoạt động không chỉ dừng lại hay bị bó hẹp trong phạm vi Danh từ 1, mà còn lan rộng, mở rộng sang cả Danh từ 2 có quy mô lớn hơn hoặc lĩnh vực khác ('không chỉ dừng lại ở... mà còn...'). Mang sắc thái trang trọng, khách quan, thường dùng trong văn viết, báo chí và thuyết trình.",
@@ -11555,7 +12875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_61": {
+  "ja_n1_Noun_61": {
     "title": "Danh từ 1 + にひきかえ + Danh từ 2 + は (ni hikikae ~ wa)",
     "shortExplanation": "Đối chiếu tương phản rõ rệt giữa hai đối tượng; 'trái ngược với...', 'khác hẳn với...'. Mang sắc thái so sánh mạnh mẽ.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + にひきかえ + Danh từ 2 + は' (hoặc dạng mệnh đề là 'Thể thông thường + のにひきかえ') dùng để đối chiếu hai sự vật, hiện tượng hoặc con người có tính chất hoàn toàn trái ngược nhau, nhằm làm nổi bật sự khác biệt cực độ giữa chúng ('trái ngược hẳn với A thì B lại...', 'khác một trời một vực so với A thì B...'). Người nói thường lồng ghép cảm xúc chủ quan như khen ngợi một bên và chê trách bên kia, hoặc bày tỏ sự ngạc nhiên trước sự chênh lệch lớn.",
@@ -11575,7 +12895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_62": {
+  "ja_n1_Noun_62": {
     "title": "Danh từ + にもまして (〜ni mo mashite)",
     "shortExplanation": "Diễn tả sự so sánh vượt trội; 'hơn cả...', 'càng... hơn cả...', 'so với... lại càng... hơn'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + にもまして' được dùng để diễn đạt ý rằng một sự vật, hiện tượng hay mức độ nào đó còn vượt trội hơn, hơn hẳn danh từ được đưa ra làm tiêu chuẩn so sánh ('hơn cả...', 'vượt xa cả...'). Thông thường, bản thân danh từ làm mốc so sánh vốn dĩ đã có mức độ cao hoặc đã rất đáng kể rồi, nhưng sự việc được nói đến ở vế sau lại càng vượt bậc hơn thế. Cũng thường đi kèm với các danh từ chỉ thời gian trong quá khứ như 以前 (trước đây), 去年 (năm ngoái), 昨日 (hôm qua) hoặc từ nghi vấn như 何 (cái gì) để tạo thành '何にもまして' (hơn bất cứ thứ gì).",
@@ -11595,7 +12915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_63": {
+  "ja_n1_Noun_63": {
     "title": "Danh từ + によらず (～ni yorazu)",
     "shortExplanation": "Biểu thị sự việc không bị chi phối hay thay đổi bởi điều kiện; 'bất kể...', 'không phụ thuộc vào...', 'không phân biệt...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + によらず' (thể phủ định cổ của による) mang ý nghĩa 'không dựa vào', 'không phụ thuộc vào'. Mẫu này được dùng để biểu thị rằng kết quả, trạng thái hoặc hành động ở vế sau hoàn toàn không bị ảnh hưởng, phân biệt hay thay đổi bởi các điều kiện, sự khác biệt hay yếu tố được nêu ở danh từ đi trước ('bất kể...', 'bất luận...', 'không phụ thuộc vào...'). Thường đi cùng các danh từ mang tính chủng loại, sự khác biệt như 年齢 (tuổi tác), 国籍 (quốc tịch), 理由 (lý do), 季節 (mùa). Mang sắc thái trang trọng, văn viết.",
@@ -11615,7 +12935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_64": {
+  "ja_n1_Noun_64": {
     "title": "Danh từ + に先駆けて (〜ni sakigakete)",
     "shortExplanation": "Biểu thị việc đi trước, tiên phong làm một việc gì đó trước người khác; 'tiên phong...', 'đi trước...', 'sớm hơn...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + に先駆けて' (xuất phát từ động từ 先駆ける - tiên phong, dẫn đầu) được dùng để biểu đạt hành động được thực hiện trước những người khác, tổ chức khác hay địa phương khác về mặt thời gian, mang tính dẫn dắt hoặc mở đường cho một trào lưu, sự kiện mới ('tiên phong...', 'đi trước...', 'trước cả...'). Khác với '～に先立って' (chuẩn bị trước khi một sự kiện bắt đầu), '～に先駆けて' nhấn mạnh tính tiên phong, dẫn đầu và mang tính cạnh tranh hoặc đột phá. Thường dùng trong văn viết, báo chí hoặc tin tức trang trọng. Cũng có thể dùng dạng '～に先駆け'.",
@@ -11635,7 +12955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_65": {
+  "ja_n1_Noun_65": {
     "title": "Danh từ 1 + に即した + Danh từ 2 (A ni sokushita B)",
     "shortExplanation": "Bổ nghĩa cho danh từ đứng sau, biểu thị sự phù hợp, gắn liền với tiêu chuẩn, thực tế; 'phù hợp với...', 'bám sát...', 'dựa trên...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + に即した + Danh từ 2' (thể liên thể bổ nghĩa danh từ của động từ 即する) được dùng khi muốn diễn đạt rằng Danh từ 2 (như kế hoạch, đối sách, chính sách, hành động) hoàn toàn phù hợp, thích ứng và bám sát vào Danh từ 1 (như thực tế, nguyên tắc, luật pháp, nhu cầu) ('phù hợp với...', 'bám sát vào...', 'dựa trên...'). Mẫu câu này thường dùng trong các bối cảnh trang trọng như chính trị, kinh doanh, giáo dục, pháp luật.",
@@ -11655,7 +12975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_66": {
+  "ja_n1_Noun_66": {
     "title": "Danh từ + に即して + Động từ (〜ni sokushite〜)",
     "shortExplanation": "Đóng vai trò trạng ngữ bổ nghĩa cho động từ, biểu thị hành động theo đúng nguyên tắc, thực tế; 'dựa theo...', 'bám sát...', 'phù hợp với...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + に即して + Động từ' (thể liên dụng của động từ 即する) đóng vai trò trạng ngữ bổ nghĩa cho động từ đứng sau, biểu thị việc tiến hành một hành động, đưa ra quyết định hay phán đoán dựa theo, bám sát và tuân thủ đúng các nguyên tắc, chuẩn mực, hiện thực hoặc quy tắc được nêu ở danh từ đi trước ('dựa theo...', 'bám sát vào...', 'phù hợp với...'). Khác với '～に即した' dùng để bổ nghĩa cho danh từ, '～に即して' dùng để bổ nghĩa trực tiếp cho động từ. Thường xuất hiện trong văn phong kinh doanh, hành chính và văn bản trang trọng.",
@@ -11675,7 +12995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_67": {
+  "ja_n1_Noun_67": {
     "title": "Danh từ + に言わせれば (Noun ni iwasereba)",
     "shortExplanation": "Dẫn ra nhận định, quan điểm từ góc nhìn của một người; 'theo ý kiến của...', 'dưới góc nhìn của...', 'nếu để... nói thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + に言わせれば' (kết hợp thể sai khiến và thể điều kiện của động từ 言う, mang nghĩa đen là 'nếu để cho ai đó nói') được gắn vào sau danh từ chỉ người hoặc nhóm đối tượng có năng lực suy nghĩ để dẫn ra ý kiến, quan điểm hoặc nhận xét chủ quan từ lập trường của đối tượng đó ('theo ý kiến của...', 'dưới góc nhìn của...', 'nếu nghe... nói thì...'). Thường dùng khi quan điểm đó mang tính chuyên môn, hoặc thể hiện một góc nhìn riêng biệt, đôi khi có phần phê phán hay đối lập với ý kiến chung. Dạng khẩu ngữ tương đương là '～に言わせたら'.",
@@ -11695,7 +13015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_68": {
+  "ja_n1_Noun_68": {
     "title": "Danh từ + に限ったことではない (〜ni kagitta koto dewa nai)",
     "shortExplanation": "Khẳng định sự việc không chỉ giới hạn riêng ở đối tượng được nêu; 'không chỉ riêng...', 'không chỉ giới hạn ở...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + に限ったことではない' (dạng phủ định của に限る kết hợp với danh từ hoá こと) được dùng để nhấn mạnh rằng một vấn đề, hiện tượng, khó khăn hay đặc điểm nào đó không chỉ xảy ra riêng với danh từ đi trước, mà còn đúng hoặc tồn tại phổ biến ở rất nhiều đối tượng, hoàn cảnh, lĩnh vực hay địa phương khác ('không chỉ riêng...', 'không chỉ giới hạn ở...'). Thường dùng trong các bình luận xã hội, thảo luận học thuật hoặc văn phong trang trọng.",
@@ -11715,7 +13035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_69": {
+  "ja_n1_Noun_69": {
     "title": "Danh từ + に限ったことでもない (~ni kagitta koto demo nai)",
     "shortExplanation": "Cách diễn đạt uyển chuyển, nhẹ nhàng hơn; 'cũng không hẳn chỉ riêng...', 'chưa chắc chỉ giới hạn ở...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + に限ったことでもない' có ý nghĩa tương tự như '～に限ったことではない', nhưng nhờ sự kết hợp của trợ từ 'でも', câu nói mang sắc thái nhẹ nhàng, mềm mỏng và tế nhị hơn ('cũng không hẳn chỉ riêng...', 'chưa hẳn là chỉ giới hạn ở...'). Người nói ngụ ý rằng ngoài đối tượng được nhắc đến ra thì các phương diện hoặc đối tượng khác cũng hoàn toàn có thể có cùng tính chất như vậy, giúp câu văn bớt tính tuyệt đối hay khẳng định gay gắt.",
@@ -11735,7 +13055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_70": {
+  "ja_n1_Noun_70": {
     "title": "Danh từ / Động từ + に限る (~ni kagiru)",
     "shortExplanation": "Khẳng định một sự vật, hành động là lựa chọn tốt nhất; '...là tốt nhất', 'không gì bằng...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ / Động từ thể từ điển + に限る' được dùng để bày tỏ sự đánh giá, khẳng định hoặc lời khuyên chủ quan của người nói rằng: trong một hoàn cảnh cụ thể, việc đó hoặc thứ đó chính là sự lựa chọn hoàn hảo nhất, tối ưu nhất, không có gì sánh bằng ('...là tốt nhất', 'chẳng gì bằng...', 'cứ... là nhất'). Thường dùng để chia sẻ kinh nghiệm sống cá nhân, lời khuyên nhiệt tình hoặc cảm giác thỏa mãn của bản thân.",
@@ -11755,7 +13075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_71": {
+  "ja_n1_Noun_71": {
     "title": "Danh từ 1 + (を)ぬいた + Danh từ 2 (A nuita B)",
     "shortExplanation": "Biểu thị trạng thái đã loại bỏ, lược bớt một thành phần ra khỏi sự vật; 'đã bỏ...', 'không có...', 'đã rút/loại bớt...'.",
     "longExplanation": "Cấu trúc 'Danh từ 1 + (を)ぬいた + Danh từ 2' sử dụng thể quá khứ liên thể của động từ 抜く (nối lược, rút bớt, loại bỏ) để bổ nghĩa cho Danh từ 2, biểu thị rằng Danh từ 2 là món ăn, đồ vật hay trạng thái mà trong đó thành phần Danh từ 1 đã được lấy ra, loại bỏ hoặc bỏ qua ('đã bỏ...', 'đã loại bớt...'). Thường dùng phổ biến trong ẩm thực khi yêu cầu hoặc miêu tả món ăn không kèm theo một loại gia vị hay nguyên liệu nào đó (như cà rốt, mù tạt, đường).",
@@ -11775,7 +13095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_72": {
+  "ja_n1_Noun_72": {
     "title": "Danh từ + ぬいて (~nuite)",
     "shortExplanation": "Diễn tả việc loại trừ hoặc không tính đến một đối tượng; 'ngoại trừ...', 'không tính...', 'bỏ qua...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + (を)ぬいて' (thể て của động từ 抜く, tương đương với 抜きにして / 抜きで) được dùng khi muốn loại trừ một đối tượng, thành viên, khoảng thời gian hay yếu tố cụ thể nào đó ra khỏi tổng thể để nhận xét về toàn bộ phần còn lại ('ngoại trừ...', 'không tính...', 'bỏ qua...'). Thường dùng trong sinh hoạt hằng ngày khi miêu tả sự vắng mặt của ai đó hoặc ngoại trừ một ngoại lệ duy nhất.",
@@ -11795,7 +13115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ぬくnuku_73": {
+  "ja_n1_ぬくnuku_73": {
     "title": "Động từ thể ます + ぬく (〜nuku)",
     "shortExplanation": "Diễn tả hành động được kiên trì làm đến cùng hoặc làm một cách triệt để; 'làm đến cùng', 'làm triệt để', 'hết sức... cho tới cùng'.",
     "longExplanation": "Hậu tố bổ trợ '～ぬく' được gắn vào sau thân động từ thể ます (bỏ ます) để tạo thành động từ ghép, mang hai sắc thái chính: 1) Vượt qua muôn vàn khó khăn, đau khổ hay thử thách để kiên trì thực hiện hành động đến phút cuối cùng ('kiên trì... đến cùng', ví dụ: やりぬく - làm đến cùng, 生きぬく - kiên cường sống sót); 2) Tiến hành một trạng thái hay hành động ở mức độ triệt để, tận cùng ('vô cùng...', 'hết sức... triệt để', ví dụ: 悩みぬく - trăn trở khôn nguôi, 困りぬく - khốn đốn tột cùng). Biểu thị ý chí kiên định hoặc mức độ cực đại của hành động.",
@@ -11815,7 +13135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Nounのいかんだ_74": {
+  "ja_n1_Nounのいかんだ_74": {
     "title": "Danh từ + のいかんだ (Noun no ikan da)",
     "shortExplanation": "Đứng cuối câu biểu thị kết quả tùy thuộc vào danh từ đi trước; 'tùy thuộc vào...', 'do... quyết định'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんだ' (thường dùng ở dạng vị ngữ cuối câu, hoặc dạng liên kết '～のいかんで') là một cách nói trang trọng, mang tính văn viết cổ, biểu thị rằng kết quả, sự thành bại hay hướng đi của sự việc hoàn toàn tùy thuộc vào nội dung, tình hình hoặc thái độ của danh từ đứng trước ('tùy thuộc vào...', 'do... quyết định', tương đương với '〜次第だ'). Thường kết hợp với các danh từ mang tính biến động như 成果 (thành quả), 態度 (thái độ), 努力 (nỗ lực), 結果 (kết quả). Dạng '～のいかんでは' biểu thị 'tùy theo... mà có thể dẫn đến...'.",
@@ -11835,7 +13155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_75": {
+  "ja_n1_Noun_75": {
     "title": "Danh từ + のいかんでは (Noun no ikan de wa)",
     "shortExplanation": "Biểu thị rằng tùy thuộc vào tình huống mà có thể xảy ra kết quả tương ứng; 'tùy thuộc vào...', 'tùy theo... mà có thể...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんでは' (kết hợp với trợ từ は mang nghĩa nhấn mạnh hoặc nêu giả định) được dùng để biểu thị rằng tùy thuộc vào tình trạng, kết quả hay mức độ của danh từ đi trước mà ở vế sau có thể dẫn đến một biến đổi, hành động hoặc kết quả tương ứng ('tùy thuộc vào...', 'tùy theo... mà có thể...'). Vế sau câu thường đi kèm các cách nói suy đoán, khả năng hoặc cảnh báo như '～かもしれない' (có lẽ), '～こともある' (cũng có khi), '～決まる' (được quyết định). Là dạng câu văn viết trang trọng trong công văn, thông báo hoặc phát biểu chính thức.",
@@ -11855,7 +13175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_76": {
+  "ja_n1_Noun_76": {
     "title": "Danh từ + のいかんにかかわらず (Noun no ikan ni kakawarazu)",
     "shortExplanation": "Biểu thị sự việc không bị ảnh hưởng bởi tình hình hay kết quả; 'bất kể... thế nào', 'bất luận... ra sao', 'không màng đến...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんにかかわらず' (cũng dùng dạng '～のいかんによらず') là cách nói trang trọng, diễn tả ý rằng bất kể nội dung, tình trạng, lý do hay kết quả của danh từ đứng trước có như thế nào đi chăng nữa, thì sự việc, hành động hay nguyên tắc ở vế sau vẫn luôn không đổi và được tiến hành một cách nhất quán ('bất kể... thế nào', 'bất luận... ra sao', 'không phụ thuộc vào...'). Khác với '～にかかわらず' thông thường, việc thêm 'のいかん' làm cho câu văn mang tính pháp lý, hành chính và vô cùng trang trọng.",
@@ -11875,7 +13195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_77": {
+  "ja_n1_Noun_77": {
     "title": "Danh từ + のいかんによっては (Noun no ikan ni yotte wa)",
     "shortExplanation": "Tùy thuộc vào tình hình/nội dung của danh từ mà có thể...; 'tùy vào... mà có thể', 'tùy thuộc vào...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんによっては' (いかん viết bằng chữ Hán là 如何 - như hà) được dùng để biểu thị rằng tùy thuộc vào tình trạng, mức độ, kết quả hay sự diễn tiến của danh từ đi trước mà sự việc, hành động hoặc kết quả ở vế sau có thể xảy ra hay biến chuyển tương ứng ('tùy thuộc vào... mà có thể...'). Khác với '～のいかんによって' nói chung, đuôi '～によっては' nhấn mạnh vào một khả năng, trường hợp cụ thể có thể xảy ra. Thường dùng trong các văn cảnh trang trọng, văn viết hoặc phát biểu chính thức.",
@@ -11895,7 +13215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_78": {
+  "ja_n1_Noun_78": {
     "title": "Danh từ + のいかんによらず (~ no ikan ni yorazu)",
     "shortExplanation": "Biểu thị ý nghĩa không màng đến, không phụ thuộc vào tình trạng hay kết quả của sự việc; 'bất kể... như thế nào', 'không màng đến...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のいかんによらず' được dùng để diễn đạt rằng một hành động, trạng thái hoặc quy tắc vẫn được áp dụng, không chịu sự chi phối, thay đổi hay phân biệt bởi tình trạng, kết quả hay mức độ của danh từ phía trước ('bất kể... ra sao', 'không phụ thuộc vào việc... thế nào'). Thường kết hợp với các danh từ thể hiện tính biến động, đa dạng hoặc có nhiều kết quả khác nhau như 理由 (lý do), 結果 (kết quả), 天候 (thời tiết), 成否 (thành bại). Thuộc phong cách văn viết trang trọng, có tính tương đồng với '～のいかんに関わらず'.",
@@ -11915,7 +13235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_79": {
+  "ja_n1_Noun_79": {
     "title": "Danh từ 1 + のごとき + Danh từ 2 (A no gotoki B)",
     "shortExplanation": "Dùng để so sánh ví von mạnh mẽ; 'B như là A', 'B tựa như A', 'B giống hệt như A'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + のごとき + Danh từ 2' là một cách diễn đạt cổ mang đậm tính văn chương và trang trọng, tương đương với '～のような' trong tiếng Nhật hiện đại. Mẫu câu này dùng để so sánh ví von, nhấn mạnh rằng sự vật, hiện tượng hoặc con người (Danh từ 2) có phẩm chất, dáng vẻ hoặc tính chất giống hệt như sự vật được đem ra làm hình ảnh so sánh (Danh từ 1) ('như...', 'tựa như...'). Dạng bổ nghĩa cho động từ/tính từ là '～のごとく', dạng kết thúc câu là '～のごとし'. Thường xuất hiện trong văn học, thi ca, diễn văn trang trọng hoặc ngạn ngữ.",
@@ -11935,7 +13255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_80": {
+  "ja_n1_Noun_80": {
     "title": "Danh từ + のことだから (〜no koto dakara)",
     "shortExplanation": "Đưa ra phán đoán, suy đoán dựa trên tính cách hoặc thói quen đã biết rõ của ai đó; 'chính vì là... nên chắc chắn...', 'ai chứ... thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + のことだから' được dùng khi người nói đưa ra một suy đoán, kỳ vọng hoặc nhận định chắc chắn về một sự việc, dựa trên việc đã hiểu rất rõ tính cách, thói quen, bản chất hay năng lực của người/đối tượng được nhắc đến ('chính vì là anh ấy nên...', 'ai chứ người như cô ấy thì chắc chắn...'). Danh từ đi trước chủ yếu là danh từ chỉ người mà người nói quen thuộc, đôi khi cũng có thể là tổ chức, cửa hàng, công ty. Vế sau thường là câu mang tính suy đoán, ước lượng như '～だろう', '～はずだ', '～に違いない'.",
@@ -11955,7 +13275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_81": {
+  "ja_n1_Noun_81": {
     "title": "Danh từ + の嫌いがある (Noun no kirai ga aru)",
     "shortExplanation": "Biểu thị sự ghét, ác cảm hoặc không ưa thích đối với một đối tượng cụ thể; 'có ác cảm với...', 'không thích...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + の嫌いがある' (viết bằng chữ Hán là 嫌いがある) mang sắc thái trang trọng hoặc hơi cổ phong, dùng để diễn đạt rằng một người có tính ghét, ác cảm, sợ hãi hoặc khó chịu đối với một sự vật, đối tượng hay hoàn cảnh cụ thể ('không thích...', 'có ác cảm với...', 'ngại...'). Trong giao tiếp thông thường hiện đại, người ta thường dùng trực tiếp '～が嫌いだ'. (Lưu ý: Trong ngữ pháp N1 nói chung, '～きらいがある' cũng rất phổ biến với ý nghĩa chỉ một khuynh hướng, tật xấu không mong muốn, nhưng khi đi kèm danh từ chỉ đối tượng cụ thể như trong cấu trúc này, nó biểu thị sự không thích, ác cảm).",
@@ -11975,7 +13295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_82": {
+  "ja_n1_Noun_82": {
     "title": "Danh từ + の手前 (~no temae)",
     "shortExplanation": "Diễn tả thời điểm ngay trước khi diễn ra một sự kiện hoặc hành động quan trọng; 'ngay trước...', 'sát thềm...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + の手前' (hoặc 'Động từ thể từ điển + 手前') được dùng để chỉ thời điểm sát nút, ngay trước khi một sự kiện, mốc thời gian hoặc hành động quan trọng diễn ra ('ngay trước thềm...', 'sát giờ...'). Danh từ kết hợp thường là các danh từ chỉ sự kiện, kỳ thi, bầu cử hay hạn chót như 試験 (thi cử), 選挙 (bầu cử), 締め切り (hạn chót). (Lưu ý: Ngoài nghĩa về mặt thời gian này, '～の手前' trong tiếng Nhật N1 còn có nghĩa khác rất phổ biến là 'vì thể diện trước mặt ai đó / do vị thế của bản thân nên buộc phải...').",
@@ -11995,7 +13315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_83": {
+  "ja_n1_Noun_83": {
     "title": "Danh từ + の極み (〜no kiwami)",
     "shortExplanation": "Diễn tả đỉnh cao, tột cùng hoặc mức độ cao nhất của một trạng thái, cảm xúc hay phẩm chất; 'đỉnh cao của...', 'tột cùng của...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + の極み' (chữ Hán là 極み - tột cùng, đỉnh điểm) thuộc phong cách văn viết trang trọng, dùng để diễn đạt trạng thái đạt tới đỉnh điểm tối cao, cùng cực mà không gì có thể vượt qua được ('đỉnh cao của...', 'tột cùng của...', 'cực điểm của...'). Danh từ kết hợp thường chỉ cảm xúc, phẩm chất, vẻ đẹp hoặc giá trị tinh thần trừu tượng như 感動 (cảm động), 美 (cái đẹp), 贅沢 (xa hoa), 痛恨 (đau đớn/tiếc nuối), 疲労 (mệt mỏi). Thường dùng trong văn học, bài phát biểu hoặc đánh giá mang tính trang trọng.",
@@ -12015,7 +13335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_84": {
+  "ja_n1_Noun_84": {
     "title": "Danh từ + の至り (~no itari)",
     "shortExplanation": "Nhấn mạnh cảm xúc hoặc trạng thái tinh thần đạt đến đỉnh điểm tột cùng; 'vô cùng...', 'hết sức...', 'đỉnh điểm của...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + の至り' (chữ Hán là 至り - chỗ tột cùng, kết quả tột bực) là cách diễn đạt cực kỳ trang trọng và khiêm nhường hoặc đầy cảm xúc, dùng để biểu thị tâm trạng, vinh dự hoặc cảm xúc mạnh mẽ đã đạt đến mức cao nhất không gì sánh bằng ('vô cùng...', 'hết sức...', 'tột cùng của...'). Rất hay đi cùng các danh từ mang tính công thức, quán ngữ như 光栄の至り (vô cùng vinh hạnh), 感謝の至り (vô cùng biết ơn), 若気の至り (sự bồng bột tột cùng của tuổi trẻ), 赤面の至り (vô cùng xấu hổ đỏ mặt). Thường gặp trong các bài phát biểu, thư từ lễ nghi chính thức.",
@@ -12035,7 +13355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_85": {
+  "ja_n1_Noun_85": {
     "title": "Danh từ + はいざ知らず (~ wa iza shirazu)",
     "shortExplanation": "Diễn tả sự đối chiếu rằng trường hợp A thì còn hiểu được hoặc không nói làm gì, nhưng trường hợp B thì thật bất ngờ, khó chấp nhận; 'A thì không biết thế nào chứ B thì...', 'A thì còn đỡ chứ B thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + はいざ知らず' (hoặc Động từ thể thông thường + のはいざ知らず) được dùng để so sánh đối chiếu hai sự việc: vế trước là trường hợp có thể thông cảm, chấp nhận được hoặc tạm bỏ qua không bàn tới ('A thì không biết sao chứ/A thì đã đành'), còn vế sau đưa ra một trường hợp gây bất ngờ, khó tin, đáng kinh ngạc hoặc không thể chấp nhận được ('thế nhưng B thì...'). Vế sau thường đi kèm các trợ từ nhấn mạnh sự ngạc nhiên như '〜まで', '〜でも', '〜とは', '〜なんて'.",
@@ -12055,7 +13375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_86": {
+  "ja_n1_Noun_86": {
     "title": "Danh từ 1 + はおろか + Danh từ 2 + すら (Noun wa oroka ～sura)",
     "shortExplanation": "Nhấn mạnh mức độ nghiêm trọng; 'đừng nói đến A, ngay cả B cũng...'; 'A đã đành, đến cả B cũng...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + はおろか + Danh từ 2 + すら' (hoặc '～さえ') được dùng để nhấn mạnh tính chất cực đoan của sự việc: việc A ở mức độ cao hơn là điều đương nhiên không thể đạt được/không có được, mà ngay cả việc B ở mức độ cơ bản hơn, đơn giản hơn cũng chẳng thể thực hiện được ('đừng nói tới A, ngay cả B cũng không...'). Đa số thường dùng trong các câu mang ý nghĩa phủ định hoặc tiêu cực để làm nổi bật mức độ thiếu hụt hoặc yếu kém nghiêm trọng.",
@@ -12075,7 +13395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_87": {
+  "ja_n1_Noun_87": {
     "title": "Danh từ 1 + はおろか + Danh từ 2 + まで (~wa oroka ~made)",
     "shortExplanation": "Biểu thị phạm vi không chỉ dừng lại ở A mà mở rộng bất ngờ đến cả B; 'không chỉ A mà đến cả B cũng...', 'A là đương nhiên rồi, ngay cả B cũng...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + はおろか + Danh từ 2 + まで' được dùng khi người nói muốn nhấn mạnh rằng phạm vi, khả năng hoặc tính chất không chỉ dừng lại ở danh từ 1 (vốn đã là điều hiển nhiên hoặc đã rất đáng kể), mà còn mở rộng vượt ra ngoài dự đoán tới tận danh từ 2 ('không chỉ A mà thậm chí đến cả B cũng...'). Trợ từ 'まで' nhấn mạnh sự mở rộng phạm vi một cách bất ngờ đến mức gây ngạc nhiên cho người nghe.",
@@ -12095,7 +13415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_88": {
+  "ja_n1_Noun_88": {
     "title": "Danh từ 1 + はおろか + Danh từ 2 + も (Noun wa oroka ～ mo)",
     "shortExplanation": "Dùng trong câu phủ định để diễn tả việc A ở mức cao hơn thì không thể đã đành, ngay cả B ở mức cơ bản cũng không thể; 'chưa nói đến A, ngay cả B cũng không...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ 1 + はおろか + Danh từ 2 + も' thường đi kèm với các vị từ mang tính phủ định hoặc khó khăn ở vế sau, nhằm nhấn mạnh rằng sự việc A ở mức độ cao hơn là điều không thể bàn tới, mà ngay cả sự việc B ở mức độ thấp hơn hoặc cơ bản hơn cũng không làm được ('chưa nói đến A, ngay cả B cũng chẳng...', 'A thì khỏi phải nói, đến B cũng không...'). Tương đương về mặt ý nghĩa với '～はおろか～すら/さえ', nhưng việc dùng trợ từ 'も' mang sắc thái liệt kê và nhấn mạnh tính toàn thể của sự bất lực hay thiếu hụt.",
@@ -12115,7 +13435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_89": {
+  "ja_n1_Noun_89": {
     "title": "Danh từ + はさておき (~ wa sateoki)",
     "shortExplanation": "Tạm thời gác lại một vấn đề để ưu tiên bàn luận về điều quan trọng hơn; 'tạm gác lại...', 'khoan bàn đến...', 'chưa nói tới...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + はさておき' (chữ Hán là 扨措き - gác lại sang một bên) được dùng khi người nói muốn tạm thời để việc đó sang một bên, chưa bàn sâu tới, nhằm chuyển sự chú ý và trọng tâm thảo luận sang một chủ đề hoặc khía cạnh khác quan trọng, cấp thiết hơn ở vế sau ('khoan hãy bàn đến...', 'tạm gác... sang một bên'). Cũng có thể kết hợp dưới dạng 'Mệnh đề + の/こと + はさておき'. Thuộc phong cách trang trọng nhưng rất phổ biến trong cả hội thoại và văn viết.",
@@ -12135,7 +13455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_90": {
+  "ja_n1_Noun_90": {
     "title": "Danh từ + はどうであれ (~ wa dou de are)",
     "shortExplanation": "Bất kể tình trạng hay kết quả của danh từ có ra sao thì ý chí hoặc sự thật phía sau vẫn không thay đổi; 'bất kể... thế nào đi chăng nữa', 'dù... ra sao thì...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + はどうであれ' (xuất phát từ dạng liên kết giả định của である) được dùng để biểu thị rằng bất luận tình trạng, nội dung, tính chất hay kết quả của sự việc trước đó có diễn biến như thế nào đi chăng nữa, thì lập trường, quyết định, hành động hoặc hiện thực ở vế sau vẫn kiên định, không hề bị lay chuyển hay phụ thuộc ('cho dù... thế nào đi nữa', 'bất kể... ra sao'). Thuộc phong cách trang trọng, thể hiện ý chí hoặc nhận định kiên quyết của người nói.",
@@ -12155,7 +13475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_91": {
+  "ja_n1_Noun_91": {
     "title": "Danh từ + まみれ (~mamire)",
     "shortExplanation": "Diễn tả trạng thái bề mặt bị bao phủ, dính đầy hoặc vấy bẩn bởi thứ gì đó khó chịu, bẩn thỉu; 'dính đầy...', 'đầy những...', 'bê bết...'.",
     "longExplanation": "Mẫu ngữ pháp 'Danh từ + まみれ' (chữ Hán là 塗れ - nhuộm, bôi bẩn) là một hậu tố ghép sau danh từ để biểu thị trạng thái toàn bộ bề mặt của cơ thể, sự vật bị bao phủ, dính đầy hoặc vấy bẩn bởi những chất dơ, bụi bẩn, chất lỏng hoặc những thứ mang tính tiêu cực ('dính đầy...', 'bê bết...', 'ngập tràn tai tiếng'). Thường kết hợp với các danh từ có tính bám dính, dơ bẩn như 泥 (bùn), 血 (máu), 汗 (mồ hôi), 埃 (bụi), 借金 (nợ nần), スキャンダル (scandal/bê bối). Hầu như luôn mang sắc thái tiêu cực, nhơ nhuốc hoặc khó chịu (khác với '～だらけ' vốn dùng rộng rãi cho cả lỗi sai, người đông đúc; và khác với '～ずくめ' thường mang nghĩa tích cực toàn bộ).",
@@ -12175,7 +13495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_92": {
+  "ja_n1_Noun_92": {
     "title": "Danh từ 1 + もさることながら + Danh từ 2 + も (A mo saru koto nagara B mo)",
     "shortExplanation": "Diễn tả ý 'A là đương nhiên rồi, nhưng ngay cả B cũng...', 'không những A mà cả B cũng...'; vế B được nhấn mạnh nhiều hơn.",
     "longExplanation": "Mẫu ngữ pháp '～もさることながら' (N1) được dùng khi muốn nói rằng sự việc, đối tượng A thì dĩ nhiên, ai cũng công nhận rồi, nhưng điều đáng nói hơn, ấn tượng hơn hoặc được nhấn mạnh hơn nữa lại chính là B phía sau ('A đã đành nhưng B cũng...', 'không chỉ A mà B cũng...'). Cấu trúc này thường dùng để khen ngợi hoặc làm nổi bật thêm một khía cạnh vượt trội của đối tượng.",
@@ -12195,7 +13515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_93": {
+  "ja_n1_Noun_93": {
     "title": "Danh từ + も兼ねて (mo kanete)",
     "shortExplanation": "Biểu thị việc kết hợp thực hiện thêm một mục đích khác cùng lúc; 'tiện thể...', 'kết hợp cả...', 'đồng thời để...'.",
     "longExplanation": "Mẫu ngữ pháp '～も兼ねて' (chữ Hán là 兼ねて) được dùng để diễn tả rằng một hành động được thực hiện không chỉ cho mục đích chính mà còn nhằm phục vụ hoặc kết hợp thêm một mục đích hay hoạt động khác được nêu ở danh từ trước 'も兼ねて' ('tiện thể...', 'đồng thời cũng để...', 'kết hợp cả...'). Thường đi với các danh từ chỉ hoạt động, mục đích như 散歩 (đi dạo), 観光 (tham quan), 勉強 (học tập), 挨拶 (chào hỏi).",
@@ -12215,7 +13535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_94": {
+  "ja_n1_Noun_94": {
     "title": "Danh từ + も相まって (mo aimatte)",
     "shortExplanation": "Diễn tả nhiều yếu tố kết hợp, tác động qua lại lẫn nhau tạo nên một kết quả nổi bật; 'cùng với...', 'cộng thêm việc...', 'kết hợp với...'.",
     "longExplanation": "Mẫu ngữ pháp '～も相まって' (chữ Hán là 相まって) diễn tả việc một yếu tố này kết hợp hoặc tương tác cùng với các yếu tố khác (có sẵn) để tạo nên một kết quả hoặc tình trạng cộng hưởng rõ rệt ('cộng thêm với...', 'cùng với sự tác động của...', 'kết hợp lại...'). Thường dùng trong văn viết hoặc diễn đạt trang trọng khi phân tích nguyên nhân tạo nên thành công, sự biến đổi hoặc một đặc điểm đáng chú ý.",
@@ -12235,7 +13555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_95": {
+  "ja_n1_Noun_95": {
     "title": "Danh từ + をおいて他に + Động từ phủ định (wo oite hoka ni...nai)",
     "shortExplanation": "Nhấn mạnh đối tượng là duy nhất, không có ai hay điều gì khác có thể thay thế; 'ngoài... ra thì không còn ai/cái gì khác...'.",
     "longExplanation": "Mẫu ngữ pháp '～をおいて他に～ない' (chữ Hán là 置いて) được dùng để khẳng định mạnh mẽ rằng đối tượng đứng trước là duy nhất, tốt nhất hoặc phù hợp nhất, hoàn toàn không có lựa chọn nào khác có thể thay thế được ('ngoài... ra thì không có ai khác', 'ngoại trừ... thì chẳng còn nơi nào khác'). Mẫu này thường dùng để tán dương, ca ngợi năng lực, phẩm chất hoặc giá trị đặc biệt của một người hay sự vật.",
@@ -12255,7 +13575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_96": {
+  "ja_n1_Noun_96": {
     "title": "Danh từ + をもって (wo motte)",
     "shortExplanation": "Dùng để biểu thị phương tiện, cách thức ('bằng...', 'với...') hoặc chỉ mốc thời điểm kết thúc một sự việc ('kể từ...', 'vào lúc...').",
     "longExplanation": "Mẫu ngữ pháp '～をもって' (chữ Hán là 以て) là một lối nói trang trọng, có hai ý nghĩa chính:\n1. Biểu thị phương tiện, phương pháp, thái độ hoặc tinh thần thực hiện hành động ('bằng...', 'với tinh thần...').\n2. Biểu thị mốc thời gian hoặc sự kiện kết thúc, chuyển giao một trạng thái hay hoạt động chính thức ('vào thời điểm...', 'hết ngày... thì kết thúc'). Thường xuất hiện trong các thông báo, văn bản mang tính nghi thức hoặc trang trọng.",
@@ -12275,7 +13595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_97": {
+  "ja_n1_Noun_97": {
     "title": "Danh từ + をものともせずに (wo mono tomo sezu ni)",
     "shortExplanation": "Diễn tả việc kiên quyết hành động, không hề chùn bước trước khó khăn, nguy hiểm hay trở ngại; 'bất chấp...', 'vượt lên trên...'.",
     "longExplanation": "Mẫu ngữ pháp '～をものともせずに' được dùng để ca ngợi hoặc miêu tả hành động kiên cường, dũng cảm vượt qua nghịch cảnh của chủ ngữ mà không màng tới hay xem nhẹ những khó khăn, nguy hiểm, bệnh tật, điều kiện khắc nghiệt... ('không hề sợ hãi trước...', 'bất chấp...', 'vượt lên trên khó khăn'). Thường không dùng cho những khó khăn thông thường của bản thân trong đời sống vụn vặt.",
@@ -12295,7 +13615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_98": {
+  "ja_n1_Noun_98": {
     "title": "Danh từ + をよそに (wo yoso ni)",
     "shortExplanation": "Diễn tả việc làm ngơ, phớt lờ sự lo lắng, can ngăn, kỳ vọng của người khác hoặc tình hình xung quanh; 'mặc cho...', 'bất chấp...', 'bỏ ngoài tai...'.",
     "longExplanation": "Mẫu ngữ pháp '～をよそに' (chữ Hán là 余所に) được dùng khi chủ ngữ hoàn toàn ngó lơ, không bận tâm đến những ý kiến, kỳ vọng, lo lắng của những người xung quanh hoặc hoàn cảnh ngoại cảnh, mà vẫn thản nhiên làm theo ý mình ('bất chấp...', 'mặc cho...', 'bỏ ngoài tai...'). Mẫu này thường mang sắc thái phê phán, ngạc nhiên hoặc trách móc nhẹ trước sự thờ ơ, vô tâm của đối tượng.",
@@ -12315,7 +13635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_99": {
+  "ja_n1_Noun_99": {
     "title": "Danh từ + を余儀なくされる (wo yogi naku sareru)",
     "shortExplanation": "Diễn tả việc bị rơi vào tình thế ép buộc, không còn sự lựa chọn nào khác ngoài việc phải làm điều đó; 'bị buộc phải...', 'phải miễn cưỡng...'.",
     "longExplanation": "Mẫu ngữ pháp '～を余儀なくされる' (chữ Hán là 余儀なくされる) là một cách diễn đạt trang trọng trong văn viết hoặc thời sự, dùng để chỉ việc chủ ngữ bị hoàn cảnh khách quan éo le, bất khả kháng (như khó khăn kinh tế, thiên tai, thương tích, bệnh tật...) dồn vào đường cùng, buộc phải thực hiện hoặc chấp nhận một sự việc ngoài ý muốn ('bị buộc phải...', 'không thể không...', 'bị ép vào thế...').",
@@ -12335,7 +13655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_100": {
+  "ja_n1_Noun_100": {
     "title": "Danh từ + を前提として (wo zentei toshite)",
     "shortExplanation": "Diễn tả việc thực hiện một kế hoạch hay hành động dựa trên tiền đề, điều kiện tiên quyết là N; 'với tiền đề là...', 'trên cơ sở...'.",
     "longExplanation": "Mẫu ngữ pháp '～を前提として' (chữ Hán là 前提として) được dùng để biểu thị rằng danh từ phía trước đóng vai trò là tiền đề, điều kiện căn bản hoặc giả định cốt lõi để kế hoạch, hành động hoặc quyết định phía sau được xúc tiến ('với tiền đề là...', 'dựa trên tiền đề...', 'coi... là điều kiện tiên quyết'). Thường sử dụng trong văn phong trang trọng, kinh doanh hoặc phân tích kế hoạch.",
@@ -12355,7 +13675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_101": {
+  "ja_n1_Noun_101": {
     "title": "Danh từ + を前提にして (wo zentei ni shite)",
     "shortExplanation": "Diễn tả việc lấy một điều kiện hay giả định làm tiền đề để suy nghĩ, hành động; 'với tiền đề là...', 'dựa trên giả định là...'.",
     "longExplanation": "Mẫu ngữ pháp '～を前提にして' (chữ Hán là 前提にして) có ý nghĩa tương đương với '～を前提として', biểu thị việc tiến hành suy tính, chuẩn bị hay đưa ra quyết định dựa trên điều kiện nền tảng hoặc giả định N ('lấy... làm tiền đề', 'dựa trên cơ sở giả định...'). Dạng '～にして' mang tính động và thường dùng tự nhiên trong cả văn cảnh trao đổi công việc lẫn giao tiếp thường nhật.",
@@ -12375,7 +13695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_102": {
+  "ja_n1_Noun_102": {
     "title": "Danh từ + を境にして (wo sakai ni shite)",
     "shortExplanation": "Dùng để biểu thị một mốc thời gian hoặc sự kiện đóng vai trò là ranh giới, bước ngoặt làm thay đổi hoàn toàn cục diện; 'kể từ sau mốc...', 'lấy... làm ranh giới'.",
     "longExplanation": "Mẫu ngữ pháp '～を境にして' (hoặc '～を境に', chữ Hán là 境にして) được dùng để chỉ ra một mốc thời điểm, sự kiện trọng đại đóng vai trò như một đường ranh giới hoặc bước ngoặt, mà kể từ sau thời điểm đó, một tình trạng, tính cách hay xu hướng đã có sự thay đổi rõ rệt ('kể từ sau khi...', 'lấy... làm mốc bước ngoặt').",
@@ -12395,7 +13715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_103": {
+  "ja_n1_Noun_103": {
     "title": "Danh từ + を機にして (wo ki ni shite)",
     "shortExplanation": "Diễn tả việc tận dụng một sự kiện, thời cơ nào đó làm cơ hội để bắt đầu hoặc thay đổi một điều gì đó; 'nhân cơ hội...', 'nhân dịp...', 'lấy... làm cơ hội'.",
     "longExplanation": "Mẫu ngữ pháp '～を機にして' (chữ Hán là 機にして) được dùng để biểu thị việc lấy một sự kiện hoặc biến cố quan trọng trong cuộc đời (như chuyển nhà, kết hôn, đổi việc, thất bại...) làm động lực hoặc cơ hội thuận lợi để bắt tay vào làm một việc mới hay tạo nên một sự thay đổi tích cực ('nhân cơ hội...', 'nhân dịp...'). Tương tự với '～をきっかけに', nhưng '～を機に' mang tính chất chủ động nắm bắt cơ hội hơn.",
@@ -12415,7 +13735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_104": {
+  "ja_n1_Noun_104": {
     "title": "Danh từ + を皮切りに / を皮切りにして (wo kawakiri ni / wo kawakiri ni shite)",
     "shortExplanation": "Biểu thị một sự việc đóng vai trò là điểm mở đầu, phát pháo hiệu cho một chuỗi các sự kiện cùng loại liên tiếp diễn ra; 'khởi đầu bằng...', 'mở màn với...'.",
     "longExplanation": "Mẫu ngữ pháp '～を皮切りに / ～を皮切りにして' (xuất phát từ chữ 皮切り - vết châm cứu đầu tiên trên da) được dùng khi một sự việc hoặc hành động diễn ra đóng vai trò là phát pháo lệnh mở màn, tiếp sau đó là hàng loạt các sự kiện, hoạt động cùng loại hoặc cùng quy mô bùng nổ, mở rộng liên tiếp ('khởi đầu bằng...', 'mở màn bằng...', 'bắt đầu từ... rồi liên tiếp'). Mẫu này thường dùng trong các tin tức văn hóa, nghệ thuật, kinh doanh, lưu diễn...",
@@ -12435,7 +13755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_105": {
+  "ja_n1_Noun_105": {
     "title": "Danh từ + を皮切りにして (wo kawakiri ni shite)",
     "shortExplanation": "Biểu thị sự việc mở màn, điểm xuất phát cho một chuỗi các hoạt động kế tiếp nhau; 'bắt đầu với...', 'khởi đầu bằng...'.",
     "longExplanation": "Mẫu ngữ pháp '～を皮切りにして' được dùng để chỉ ra một sự kiện cụ thể đóng vai trò làm điểm khởi đầu, phát súng hiệu để từ đó một chuỗi những hoạt động hoặc tiến trình tiếp theo diễn ra liên tục ('khởi đầu từ...', 'bắt đầu với... rồi tiếp nối'). Cách dùng này nhấn mạnh vào sự khởi sắc, liên tiếp lan rộng của các sự kiện sau mốc xuất phát đó.",
@@ -12455,7 +13775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_106": {
+  "ja_n1_Noun_106": {
     "title": "Danh từ + を禁じ得ない (wo kinjienai)",
     "shortExplanation": "Diễn tả cảm xúc, tâm trạng mãnh liệt trào dâng đến mức không thể kiềm chế hay nén lại được; 'không khỏi...', 'không thể kìm nén được...'.",
     "longExplanation": "Mẫu ngữ pháp '～を禁じ得ない' (chữ Hán là 禁じ得ない) là một cách diễn đạt trang trọng trong văn viết, dùng đi kèm với các danh từ chỉ cảm xúc (như 驚き - kinh ngạc, 怒り - tức giận, 涙 - nước mắt, 疑念 - hoài nghi, 同情 - thương cảm...) để diễn tả một cảm xúc tự nhiên, mãnh liệt trào dâng trong lòng khiến người nói hoàn toàn không thể kìm nén hay ngăn lại được ('không khỏi cảm thấy...', 'không cầm được...', 'không thể kìm nén...').",
@@ -12475,7 +13795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_107": {
+  "ja_n1_Noun_107": {
     "title": "Danh từ + を経て (wo hete)",
     "shortExplanation": "Diễn tả ý nghĩa 'trải qua', 'kinh qua' (một quá trình, giai đoạn, thời gian) hoặc 'quá cảnh / đi qua' (một địa điểm, không gian).",
     "longExplanation": "Mẫu ngữ pháp '～を経て' (chữ Hán: 経て - kinh qua) dùng để diễn tả việc trải qua một quá trình, giai đoạn, thời gian gian khổ hoặc quá cảnh qua một địa điểm cụ thể để đạt được kết quả hoặc đi đến một trạng thái nào đó. Mẫu này có thể dịch là 'trải qua...', 'sau khi kinh qua...', hoặc 'quá cảnh qua...', dùng được cho cả nghĩa đen lẫn nghĩa bóng trong văn phong trang trọng.",
@@ -12495,7 +13815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_108": {
+  "ja_n1_Noun_108": {
     "title": "Danh từ + を踏まえて (wo fumaete)",
     "shortExplanation": "Biểu thị ý nghĩa 'dựa trên...', 'căn cứ vào...', 'xem xét đến...'; lấy điều gì đó làm cơ sở, tiền đề để suy nghĩ, phán đoán hoặc hành động.",
     "longExplanation": "Mẫu ngữ pháp '～を踏まえて' (bắt nguồn từ động từ 踏まえる - dẫm lên, dựa trên) dùng để diễn tả việc lấy một thực tế, kết quả trong quá khứ, ý kiến hoặc bối cảnh nào đó làm nền tảng, căn cứ để đưa ra quyết định, kế hoạch hay hành động tiếp theo ('dựa trên...', 'trên cơ sở...', 'sau khi đã cân nhắc...'). Đây là cách diễn đạt mang tính trang trọng, logic, thường dùng trong công việc, học thuật và báo cáo.",
@@ -12515,7 +13835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_109": {
+  "ja_n1_Noun_109": {
     "title": "Danh từ + を限りに (wo kagiri ni)",
     "shortExplanation": "Diễn tả ý nghĩa 'kể từ...', 'hết (mốc thời gian này)...', 'lấy mốc... làm điểm kết thúc'; biểu thị sự kết thúc hoặc chấm dứt của một trạng thái, hành động.",
     "longExplanation": "Mẫu ngữ pháp '～を限りに' đi sau một danh từ chỉ thời gian (như hôm nay, tháng này, năm học này...) để tuyên bố rằng kể từ thời điểm đó, một thói quen, công việc hay trạng thái đang tiếp diễn sẽ chính thức kết thúc ('kể từ hết hôm nay...', 'hết lần này là dừng...', 'lấy mốc... làm lần cuối cùng'). Thường mang sắc thái dứt khoát hoặc trịnh trọng trong các thông báo, quyết định quan trọng.",
@@ -12535,7 +13855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_110": {
+  "ja_n1_Noun_110": {
     "title": "Danh từ + 並み (nami)",
     "shortExplanation": "Biểu thị mức độ ngang bằng, tương đương với một tiêu chuẩn hoặc đối tượng nào đó; 'ngang tầm...', 'như...', 'tương đương với...'.",
     "longExplanation": "Mẫu ngữ pháp '～並み' (chữ Hán: 並み - ngang hàng, ngang tầm) đi liền sau một danh từ, mang ý nghĩa trình độ, mức độ, tình trạng hoặc quy mô đạt đến mức tương đương hoặc ngang bằng với đối tượng được so sánh ('ngang hàng với...', 'tầm cỡ như...', 'không thua kém gì...'). Thường dùng trong các cách nói quen thuộc như プロ並み (ngang tầm chuyên nghiệp), 人並み (như người bình thường).",
@@ -12555,7 +13875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Noun_111": {
+  "ja_n1_Noun_111": {
     "title": "Danh từ / Động từ thể thông thường + 前提で (zentei de)",
     "shortExplanation": "Biểu thị việc lấy một điều kiện, giả định làm tiền đề để tiến hành hành động; 'với tiền đề là...', 'với điều kiện là...', 'dựa trên giả định là...'.",
     "longExplanation": "Mẫu ngữ pháp '～前提で' (tiền đề: 前提) diễn tả việc hành động, kế hoạch ở vế sau được thực hiện dựa trên cơ sở ngầm hiểu hoặc điều kiện tiên quyết đã được định sẵn ở vế trước ('với tiền đề là...', 'trên cơ sở giả định là...'). Thường đi với danh từ hoặc mệnh đề bổ nghĩa cho 前提 (ví dụ: 結婚前提で - với tiền đề là tiến tới hôn nhân; 成功する前提で - với tiền đề là sẽ thành công).",
@@ -12575,7 +13895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_112": {
+  "ja_n1_Verbる_112": {
     "title": "Động từ thể từ điển / Danh từ (である) + 限り(は) (kagiri (wa))",
     "shortExplanation": "Diễn tả ý nghĩa 'chừng nào mà còn...', 'miễn là...', 'trong giới hạn điều kiện đó còn tiếp diễn'.",
     "longExplanation": "Mẫu ngữ pháp '～限り(は)' dùng để chỉ một giới hạn hoặc điều kiện: chừng nào trạng thái hay điều kiện ở vế trước còn tiếp diễn, thì trạng thái hoặc hành động ở vế sau vẫn sẽ luôn đúng và được duy trì ('chừng nào mà...', 'miễn là...'). Đi với động từ thể từ điển / thể ている, tính từ hoặc danh từ + である.",
@@ -12595,7 +13915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_113": {
+  "ja_n1_Verb_113": {
     "title": "Động từ thể ます (bỏ ます) / Danh từ + がてら (gatera)",
     "shortExplanation": "Diễn tả việc nhân tiện thực hiện một hành động chính thì tiện thể làm thêm một việc khác; 'tiện thể...', 'nhân tiện...'.",
     "longExplanation": "Mẫu ngữ pháp '～がてら' (chữ Hán: 徒ら) dùng khi người nói thực hiện một hành động chính (thường gắn với sự di chuyển như đi dạo, mua sắm) và nhân tiện việc đó kết hợp làm thêm một hành động khác có cùng hướng đi hoặc tiện công ('tiện thể...', 'nhân tiện làm việc A thì làm luôn việc B'). Khác với ついでに, がてら nhấn mạnh việc một hành động chính bao hàm luôn hành động phụ trên cùng lộ trình.",
@@ -12615,7 +13935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_114": {
+  "ja_n1_Verb_114": {
     "title": "Động từ thể ます (bỏ ます) / Danh từ + こそすれ (koso sure)",
     "shortExplanation": "Diễn tả ý nghĩa 'chỉ có làm A chứ tuyệt đối không bao giờ làm B'; vế trước thừa nhận A nhưng vế sau phủ định hoàn toàn B.",
     "longExplanation": "Mẫu ngữ pháp '～こそすれ' (kết hợp giữa trợ từ nhấn mạnh こそ và thể lửng của する là すれ) thường xuất hiện trong cấu trúc 'Aこそすれ、Bはない/しない', dùng để khẳng định mạnh mẽ rằng hành động hay trạng thái A thì có thể có, nhưng hành động hay tình trạng tiêu cực B thì tuyệt đối không bao giờ xảy ra ('chỉ có... chứ tuyệt đối không...', 'dù có làm A thì quyết không làm B').",
@@ -12635,7 +13955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_115": {
+  "ja_n1_Verb_115": {
     "title": "Động từ thể bị động sai khiến (saserareru / sareru)",
     "shortExplanation": "Biểu thị việc 'bị bắt buộc phải làm...', 'bị ép làm...' một hành động nào đó trái với ý muốn bản thân.",
     "longExplanation": "Mẫu ngữ pháp '～させられる / ～される' là thể bị động sai khiến (使役受身形) trong tiếng Nhật, được dùng khi người nói hoặc chủ ngữ bị một đối tượng khác ép buộc, sai bảo làm một việc gì đó mà bản thân không muốn hoặc cảm thấy miễn cưỡng, khó chịu ('bị bắt phải...', 'bị ép...'). Động từ nhóm 1 thường có dạng rút gọn là '～される' (trừ đuôi す), nhóm 2 là '～させられる', nhóm 3 là 'させられる / こさせられる'.",
@@ -12655,7 +13975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_116": {
+  "ja_n1_Verb_116": {
     "title": "Động từ thể ない (bỏ ない) + ざるを得ない (zaru wo enai)",
     "shortExplanation": "Diễn tả tình huống không muốn nhưng buộc phải làm một việc gì đó; 'đành phải...', 'buộc phải...', 'không thể không...'.",
     "longExplanation": "Mẫu ngữ pháp '～ざるを得ない' (chữ Hán: ざるを得ない - không thể không làm) dùng để diễn tả rằng dù chủ ngữ không thực sự mong muốn, nhưng do hoàn cảnh, quy định hoặc áp lực khách quan chi phối nên không còn sự lựa chọn nào khác ngoài việc phải làm hành động đó ('buộc phải...', 'đành phải...', 'không thể không...'). Động từ chia ở thể ない bỏ ない, riêng する chuyển thành せざるを得ない.",
@@ -12675,7 +13995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_117": {
+  "ja_n1_Verb_117": {
     "title": "Động từ thể ない (bỏ ない) + ずじまい (zu jimai)",
     "shortExplanation": "Diễn tả sự tiếc nuối khi rốt cuộc đã không thể làm được một việc gì đó dù đã có ý định hoặc cơ hội; 'rốt cuộc không kịp...', 'kết cục chẳng làm được...'.",
     "longExplanation": "Mẫu ngữ pháp '～ずじまい' (kết hợp giữa dạng phủ định cổ ず và じまい/仕舞い - kết thúc) dùng để diễn tả rằng một dự định, mong muốn hoặc cơ hội rốt cuộc đã kết thúc mà không thực hiện được, để lại nhiều tiếc nuối cho người nói ('kết cục là không...', 'rốt cuộc chẳng thể làm được gì mà đã kết thúc'). Thường đi với ～ずじまいで / ～ずじまいだった.",
@@ -12695,7 +14015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_118": {
+  "ja_n1_Verb_118": {
     "title": "Động từ thể ない (bỏ ない) + ずとも / ない → なくとも (zu tomo / nakutomo)",
     "shortExplanation": "Diễn tả ý nghĩa 'dù không làm... thì vẫn...', 'dù không có... thì vẫn ổn'; hành động hay điều kiện ở vế trước dù không thực hiện cũng không ảnh hưởng đến kết quả phía sau.",
     "longExplanation": "Mẫu ngữ pháp '～ずとも' (tương đương với ～なくても trong văn nói) là một cách diễn đạt trang trọng mang tính văn viết, biểu thị rằng ngay cả khi không thực hiện một hành động nào đó hoặc trong tình trạng không có điều kiện đó, thì mục tiêu hay kết quả ở vế sau vẫn có thể đạt được bình thường ('dù không... thì vẫn...', 'ngay cả khi không cần... thì cũng...'). Động từ nối ở thể ない bỏ ない + ずとも (riêng ない trở thành なくとも, する → せずとも).",
@@ -12715,7 +14035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_119": {
+  "ja_n1_Verb_119": {
     "title": "Động từ thể ない (bỏ ない) + ずにはおかない (zuni wa okanai)",
     "shortExplanation": "Diễn tả quyết tâm mạnh mẽ hoặc cảm xúc không thể kìm nén; 'nhất định sẽ...', 'chắc chắn phải...', 'không thể nào không làm...'.",
     "longExplanation": "Mẫu ngữ pháp '～ずにはおかない' (chữ Hán: 置かない - không bỏ mặc, không để yên) dùng để biểu thị: (1) Ý chí hoặc quyết tâm sắt đá của người nói là nhất định phải thực hiện hành động đó, tuyệt đối không thể bỏ qua hay để yên được ('nhất định sẽ...', 'quyết không thể tha/bỏ qua mà không làm...'); (2) Một sự việc hay tác nhân ngoại cảnh tất yếu sẽ gây ra cảm xúc hoặc tác động mạnh mẽ lên người khác ('chắc chắn sẽ làm cho ai đó phải...'). Động từ chia ở thể ない bỏ ない, riêng する chuyển thành せずにはおかない.",
@@ -12735,7 +14055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_120": {
+  "ja_n1_Verb_120": {
     "title": "Động từ thể ない (bỏ ない) + ずにはすまない (zuni wa sumanai)",
     "shortExplanation": "Diễn tả việc chiếu theo chuẩn mực đạo đức, trách nhiệm xã hội hoặc tình thế thì bắt buộc phải làm, 'không thể không làm...', 'không làm thì không yên chuyện'.",
     "longExplanation": "Mẫu ngữ pháp '～ずにはすまない' (chữ Hán: 済まない - không xong, không giải quyết êm đẹp được) dùng khi người nói ý thức rằng dựa trên quy tắc xã hội, đạo lý làm người hoặc trách nhiệm cá nhân, nếu không thực hiện hành động đó thì lương tâm không cho phép hoặc tình hình sẽ không thể êm xuôi được ('không thể không...', 'bắt buộc phải làm, không làm là không được'). Động từ chia ở thể ない bỏ ない, riêng する chuyển thành せずにはすまない.",
@@ -12755,7 +14075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_121": {
+  "ja_n1_Verb_121": {
     "title": "Động từ thể ます (bỏ ます) + そうにない (sou ni nai)",
     "shortExplanation": "Diễn tả phán đoán rằng một sự việc hầu như không có khả năng xảy ra; 'khó lòng mà...', 'không có vẻ gì là sẽ...', 'chắc không thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～そうにない' (dạng phủ định của trợ động từ phán đoán そうだ) gắn vào thân động từ thể ます, dùng để diễn tả nhận định, quan sát mang tính phán đoán của người nói rằng một hành động hay sự việc rất khó hoặc gần như không có khả năng xảy ra ('chắc là khó mà...', 'không có vẻ gì là sẽ...', 'khó lòng...'). Biến thể trang trọng hoặc nhấn mạnh hơn là '～そうにもない' hoặc '～そうもない'.",
@@ -12775,7 +14095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_122": {
+  "ja_n1_Verb_122": {
     "title": "Động từ thể ます + そうもない (〜sou mo nai)",
     "shortExplanation": "Biểu thị khả năng xảy ra của sự việc là vô cùng thấp; 'khó lòng mà...', 'hầu như không có vẻ gì là...', 'chắc là không thể nào...'.",
     "longExplanation": "Mẫu ngữ pháp '～そうもない' được gắn vào sau thân động từ thể ます (bỏ ます) để diễn tả phán đoán chủ quan của người nói rằng khả năng một sự việc, hành động xảy ra là cực kỳ thấp, gần như không thể nào thực hiện được ('khó lòng mà...', 'chắc là chẳng thể nào...'). Cấu trúc này tương tự như '～そうにない', nhưng việc sử dụng trợ từ 'も' tạo nên sắc thái phủ định mạnh mẽ hơn, nhấn mạnh sự khó khăn hoặc gần như tuyệt vọng.",
@@ -12795,7 +14115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_123": {
+  "ja_n1_Verb_123": {
     "title": "Động từ + そばから (〜soba kara)",
     "shortExplanation": "Diễn tả hành động vừa mới làm xong thì sự việc khác lại xảy ra ngay lập tức, thường mang sắc thái bất lực, lặp đi lặp lại; 'vừa mới... thì lại... ngay'.",
     "longExplanation": "Mẫu ngữ pháp '～そばから' (N1) kết hợp với động từ ở thể từ điển hoặc thể た để diễn tả rằng một hành động vừa mới được thực hiện xong thì ngay lập tức một sự việc hay hành vi đối nghịch, gây cản trở khác lại xảy ra, và tình trạng này thường lặp đi lặp lại nhiều lần. Thường được dịch là 'vừa mới... xong là lại...', 'hễ... là ngay lập tức...'. Mẫu câu này thường dùng để bộc lộ sự ngán ngẩm, tiếc công sức hoặc bất lực của người nói khi nỗ lực bị uổng phí.",
@@ -12815,7 +14135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_124": {
+  "ja_n1_Verb_124": {
     "title": "Động từ thể た + が最後 (〜ta ga saigo)",
     "shortExplanation": "Nhấn mạnh một khi hành động đã xảy ra thì sẽ dẫn đến hậu quả không thể cứu vãn; 'một khi đã... thì coi như xong', 'lỡ mà... thì hết cách'.",
     "longExplanation": "Mẫu ngữ pháp '～たが最後' (N1) kết hợp với động từ ở thể た (thể quá khứ) để diễn tả rằng một khi hành động hay sự việc nào đó đã trót xảy ra thì sẽ kéo theo một hệ quả mang tính tất yếu, không thể cứu vãn hay đảo ngược được tình thế ('một khi đã... thì coi như xong', 'hễ mà lỡ... thì hết đường quay lại'). Vế sau hầu như luôn luôn là một kết cục tiêu cực, tồi tệ hoặc mất kiểm soát.",
@@ -12835,7 +14155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_125": {
+  "ja_n1_Verb_125": {
     "title": "Động từ thể た + ことにしてください (~ ta koto ni shite kudasai)",
     "shortExplanation": "Yêu cầu đối phương hãy xem như hoặc giả vờ như một sự việc đã diễn ra; 'xin hãy coi như là...', 'hãy vờ như...'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ thể た + ことにしてください' bắt nguồn từ cấu trúc '～ことにする' (quyết định xem như, giả định là), dùng để nhờ vả hoặc yêu cầu đối phương hành xử, đối đãi như thể một việc gì đó đã hoàn tất hoặc đã xảy ra theo một cách nhất định (cho dù thực tế có thể không phải vậy). Cách diễn đạt này thường được dùng vì mục đích dàn xếp êm đẹp, giữ bí mật hoặc tránh tranh cãi, phiền phức trong giao tiếp.",
@@ -12855,7 +14175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_126": {
+  "ja_n1_Verb_126": {
     "title": "Động từ thể たら + Động từ thể た + で (~ tara ~ tade)",
     "shortExplanation": "Diễn tả việc nếu làm thì lại có nỗi khổ hay phiền toái của việc làm, đằng nào cũng nảy sinh vấn đề; 'nếu làm... thì cũng phiền, mà không làm... thì cũng dở'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ thể たら + cùng Động từ thể た + で' được dùng để diễn tả rằng cho dù sự việc có xảy ra hay không xảy ra thì phía nào cũng sẽ kéo theo những vấn đề, phiền toái hoặc mối bận tâm riêng ('làm thì cũng dở mà không làm thì cũng dở', 'có... thì lại phát sinh nỗi khổ của có...'). Thường được sử dụng theo cấu trúc song song 'AたらAたで～、AなかったらAなかったで～' để bộc lộ thế tiến thoái lưỡng nan của người nói.",
@@ -12875,7 +14195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_127": {
+  "ja_n1_Verb_127": {
     "title": "Động từ thể たら + きりがない (tara kiri ga nai)",
     "shortExplanation": "Diễn tả việc nếu bắt đầu làm gì thì sẽ tiếp diễn vô tận không có hồi kết; 'nếu... thì không có điểm dừng', 'nếu... thì biết đến bao giờ mới xong'.",
     "longExplanation": "Mẫu ngữ pháp '～たらきりがない' (kiri viết bằng chữ Hán là 限り - giới hạn) kết hợp động từ thể たら để biểu thị rằng nếu bắt đầu làm một việc gì đó thì những rắc rối, đòi hỏi hoặc hành động ấy sẽ cứ thế tiếp diễn mãi không bao giờ dứt ('nếu mà... thì chẳng biết đến bao giờ mới xong', 'hễ mà... thì không có hồi kết'). Thường mang hàm ý tiêu cực, nhằm khuyên ngăn người khác không nên nhượng bộ, không nên tiếp tục hoặc cần phải biết dừng lại đúng lúc.",
@@ -12895,7 +14215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_128": {
+  "ja_n1_Verb_128": {
     "title": "Động từ thể たら + 最後 (〜tara saigo)",
     "shortExplanation": "Diễn tả một khi đã làm gì thì sẽ dẫn đến tình trạng không thể dừng lại hoặc không thể cứu vãn; 'một khi đã... thì coi như xong', 'hễ mà... thì không thể dứt ra được'.",
     "longExplanation": "Mẫu ngữ pháp '～たら最後' (N1) kết hợp với động từ ở dạng điều kiện thể たら để nhấn mạnh rằng một khi hành động hoặc sự việc đã trót xảy ra thì tình thế sẽ trở nên không thể đảo ngược, không thể kiềm chế hay cứu vãn được nữa ('một khi đã... thì coi như xong', 'hễ mà lỡ... thì hết cách'). Có ý nghĩa và cách dùng tương tự như '～たが最後', thường đi kèm với những kết quả tiêu cực, mất kiểm soát hoặc không lối thoát ở vế sau.",
@@ -12915,7 +14235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_129": {
+  "ja_n1_Verb_129": {
     "title": "Động từ 1 thể ます + つ + Động từ 2 thể ます + つ (tsu... tsu...)",
     "shortExplanation": "Diễn tả hai hành động mang tính đối ứng hoặc luân phiên lặp đi lặp lại nhiều lần; 'lúc thì... lúc thì...', 'vừa... vừa...'.",
     "longExplanation": "Mẫu ngữ pháp '～つ～つ' (N1) kết hợp với thân động từ thể ます (bỏ ます) của hai động từ thường mang tính đối lập, tương hỗ hoặc song hành (như 押しつ押されつ - chen chúc xô đẩy, 持ちつ持たれつ - tương trợ lẫn nhau) để diễn tả hai hành động luân phiên tiếp diễn qua lại liên tục ('hết... lại...', 'vừa... vừa...'). Đây là lối diễn đạt mang đậm phong cách văn viết cổ điển, văn học hoặc mang tính thành ngữ trang trọng.",
@@ -12935,7 +14255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_130": {
+  "ja_n1_Verb_130": {
     "title": "Động từ thể て + からというもの (te kara to iu mono)",
     "shortExplanation": "Diễn tả kể từ sau một mốc sự kiện mang tính bước ngoặt, một trạng thái mới đã kéo dài liên tục cho đến nay; 'kể từ sau khi... thì suốt từ đó đến nay...'.",
     "longExplanation": "Mẫu ngữ pháp '～てからというもの' (N1) kết hợp với động từ ở thể て để diễn tả rằng kể từ sau khi một sự kiện quan trọng hay bước ngoặt nào đó xảy ra, một tình trạng hoặc thay đổi lớn đã liên tục kéo dài suốt từ thời điểm đó cho tới tận bây giờ ('kể từ sau khi... là suốt từ đó đến nay...'). Khác với '～てから' thông thường, mẫu này nhấn mạnh sự biến đổi sâu sắc và tính tiếp diễn liên tục của trạng thái mới so với trước kia.",
@@ -12955,7 +14275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_131": {
+  "ja_n1_Verb_131": {
     "title": "Động từ thể て + こそ (te koso)",
     "shortExplanation": "Nhấn mạnh chỉ khi thực hiện hành động đó thì mới có ý nghĩa hoặc mới đạt được kết quả, nhận thức sâu sắc; 'chính nhờ làm... mới...', 'chỉ khi... mới thực sự...'.",
     "longExplanation": "Mẫu ngữ pháp '～てこそ' (N1) kết hợp với động từ ở thể て cùng trợ từ nhấn mạnh 'こそ' để khẳng định rằng hành động đứng trước chính là điều kiện thiết yếu, tiên quyết nhất để một nhận thức, giá trị hoặc kết quả có thể thành hình ('chính nhờ... thì mới thực sự hiểu được', 'chỉ khi tự mình... thì mới có ý nghĩa'). Vế sau thường mang ý nghĩa tích cực, thể hiện sự thấu hiểu, trưởng thành hoặc đạt được thành quả.",
@@ -12975,7 +14295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_132": {
+  "ja_n1_Verb_132": {
     "title": "Động từ thể て + は (～te wa)",
     "shortExplanation": "Diễn tả hành động hễ cứ xảy ra là lại dẫn đến một kết quả lặp đi lặp lại, hoặc hai hành động luân phiên xoay vòng; 'hễ cứ... là lại...', 'cứ... rồi lại...'.",
     "longExplanation": "Mẫu ngữ pháp '～ては' (N1) kết hợp với động từ ở thể て để diễn tả: 1) Một hành động hoặc tình huống hễ cứ diễn ra thì kéo theo một hệ quả quen thuộc lặp đi lặp lại ('hễ cứ... là lại...'); 2) Hai hành vi luân phiên lặp lại như một vòng lặp không hồi kết theo dạng '～ては～、～ては～' ('cứ làm cái này rồi lại làm cái kia'). Thường dùng với ngữ điệu ngán ngẩm hoặc miêu tả nhịp sống, thói quen xoay vòng liên tục.",
@@ -12995,7 +14315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_133": {
+  "ja_n1_Verb_133": {
     "title": "Động từ 1 thể て + は + Động từ 2 (~ te wa ~)",
     "shortExplanation": "Diễn tả quy luật hoặc thói quen cứ hễ mỗi lần làm hành động 1 thì lại tiếp tục làm hành động 2; 'cứ mỗi khi... là lại...'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ 1 thể て + は + Động từ 2' được sử dụng để diễn đạt một chu kỳ thói quen hay quy luật hành vi lặp đi lặp lại: cứ mỗi khi hành động thứ nhất diễn ra thì người nói (hoặc chủ ngữ) lại tiến hành hành động thứ hai ('cứ mỗi lần... là lại...', 'hễ... là làm...'). Mẫu này nhấn mạnh tính quy luật, tính thường xuyên của một chuỗi hành động nối tiếp nhau trong đời sống.",
@@ -13015,7 +14335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_134": {
+  "ja_n1_Verb_134": {
     "title": "Động từ thể て + までも (~ temademo)",
     "shortExplanation": "Diễn tả việc sẵn sàng làm đến cả mức cực đoan hoặc chấp nhận đánh đổi để đạt được mục đích; 'thậm chí đến mức phải... thì cũng...', 'dù có phải... đi chăng nữa'.",
     "longExplanation": "Mẫu ngữ pháp '～てまでも' (hoặc '～てまで') là một mẫu N1 nhấn mạnh mức độ cực đoan của hành động đứng trước. Cấu trúc này diễn tả quyết tâm hoặc sự sẵn sàng chấp nhận hy sinh, đánh đổi bằng một hành vi vượt mức thông thường (như bớt xén giấc ngủ, chịu khổ cực, phạm pháp...) để đạt bằng được mục đích ở vế sau ('thậm chí đến mức phải... tôi cũng sẵn sàng', 'dù có phải... đi chăng nữa'). Trợ từ 'も' tăng thêm mức độ nhấn mạnh tính bất thường của hành vi.",
@@ -13035,7 +14355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_135": {
+  "ja_n1_Verb_135": {
     "title": "Động từ thể て + みせる (te miseru)",
     "shortExplanation": "Hành động thực tế để chứng minh năng lực cho người khác thấy, hoặc thể hiện quyết tâm mạnh mẽ; 'làm... cho mà xem', 'chứng minh bằng hành động'.",
     "longExplanation": "Mẫu ngữ pháp '～てみせる' kết hợp động từ thể て với động từ 'みせる' (見せる - cho xem). Cấu trúc này có hai ý nghĩa chính: 1) Thực hiện một hành động trước mắt người khác để chứng minh hoặc thị phạm năng lực của mình ('làm cho xem', 'thực hiện mẫu cho thấy'); 2) Bày tỏ ý chí, quyết tâm mãnh liệt của bản thân rằng nhất định sẽ làm được điều gì đó để người khác phải công nhận ('tôi nhất định sẽ làm được cho mà xem!').",
@@ -13055,7 +14375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_136": {
+  "ja_n1_Verb_136": {
     "title": "Động từ thể て + やまない (te yamanai)",
     "shortExplanation": "Đi kèm các động từ chỉ cảm xúc, nguyện vọng để diễn tả tâm tư sâu sắc, tha thiết không bao giờ nguôi dứt; 'khôn nguôi...', 'hết lòng...', 'không ngừng...'.",
     "longExplanation": "Mẫu ngữ pháp '～てやまない' (N1, bắt nguồn từ động từ 止む - dừng, dứt) kết hợp với các động từ thể hiện cảm xúc, tình cảm hoặc tâm tư sâu nặng từ đáy lòng (như 願う - cầu mong, 祈る - cầu nguyện, 愛する - yêu thương, 尊敬する - kính trọng, 期待する - kỳ vọng). Cấu trúc này dùng để bộc lộ rằng tình cảm hay mong ước ấy vô cùng mãnh liệt, tha thiết và kéo dài liên tục, không bao giờ phai nhạt hay ngơi nghỉ ('tha thiết cầu chúc...', 'không nguôi yêu thương...', 'luôn một lòng kính trọng...'). Thường dùng trong các phát biểu chính thức, lời chúc trang trọng hoặc văn chương trữ tình.",
@@ -13075,7 +14395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_137": {
+  "ja_n1_Verb_137": {
     "title": "Động từ thể ない + ではおかない (〜nai de wa okanai)",
     "shortExplanation": "Biểu đạt ý chí mạnh mẽ của người nói là nhất định sẽ thực hiện một hành động, hoặc sự việc tất yếu sẽ xảy ra; 'nhất định sẽ...', 'thế nào cũng...', 'không thể không...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないではおかない' (N1) là dạng phủ định kép mang ý khẳng định mạnh mẽ. Khi chủ ngữ là người nói (ngôi thứ nhất), cấu trúc biểu thị ý chí, quyết tâm sắt đá sẽ làm một việc gì đó đến cùng ('nhất định phải...', 'quyết không thể tha/bỏ qua'). Khi chủ ngữ là sự vật, sự việc hoặc ngôi thứ ba, nó diễn tả rằng hành động hay hiện tượng đó mang tính tất yếu, chắc chắn sẽ kích thích hay gây ra một phản ứng, cảm xúc hoặc hậu quả tự nhiên không thể tránh khỏi ('chắc chắn sẽ khiến cho...', 'thế nào cũng làm cho...'). Mẫu có ý nghĩa tương đương là '～ずにはおかない'.",
@@ -13095,7 +14415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_138": {
+  "ja_n1_Verb_138": {
     "title": "Động từ thể ない + ではすまない (〜nai de wa sumanai)",
     "shortExplanation": "Biểu thị rằng xét về mặt đạo lý, trách nhiệm xã hội hay tình thế thì bắt buộc phải làm việc gì đó, nếu không làm thì không thể xong; 'không thể không...', 'bắt buộc phải... mới xong'.",
     "longExplanation": "Mẫu ngữ pháp '～ないではすまない' (N1) kết hợp với động từ thể phủ định (thể ない) để diễn tả rằng dưới áp lực của chuẩn mực xã hội, quy tắc ứng xử, pháp luật hoặc cảm giác áy náy lương tâm, một hành động bắt buộc phải được thực hiện; nếu không làm thì sự việc sẽ không được giải quyết thỏa đáng hoặc bản thân người nói sẽ không an lòng ('không thể không...', 'bắt buộc phải... mới ổn'). Mẫu này mang sắc thái ràng buộc về đạo nghĩa và lương tâm mạnh hơn so với '～なければならない'. Mẫu tương đương là '～ずにはすまない'.",
@@ -13115,7 +14435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_139": {
+  "ja_n1_Verb_139": {
     "title": "Động từ thể ない + までも (〜nai made mo)",
     "shortExplanation": "Biểu thị dù chưa đạt đến mức độ lý tưởng hay cực đoan đó, nhưng ít nhất cũng phải đạt được một mức độ tối thiểu nhất định; 'dù không đến mức... nhưng ít nhất cũng...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないまでも' (N1) được dùng để thừa nhận rằng một trạng thái, mục tiêu hay mức độ lý tưởng cao nhất (ở vế trước) có thể chưa thực hiện được, nhưng ở vế sau vẫn phải đạt được một mức độ vừa phải, thấp hơn hoặc chấp nhận được ('dẫu không thể... thì ít nhất cũng...', 'dù không đến mức... nhưng cũng...'). Vế sau thường đi kèm với những mong muốn, nỗ lực hoặc kỳ vọng tối thiểu.",
@@ -13135,7 +14455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_140": {
+  "ja_n1_Verb_140": {
     "title": "Động từ thể ない + ものだろうか (〜nai mono darou ka)",
     "shortExplanation": "Bộc lộ niềm mong mỏi, hy vọng thiết tha hay trăn trở liệu có cách nào làm được điều gì đó hay không; 'liệu không thể... hay sao?', 'giá mà có cách nào để...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないものだろうか' (N1) thường đi sau thể phủ định khả năng của động từ (hoặc động từ thể phủ định) để diễn tả mong ước sâu sắc, khát khao hoặc sự trăn trở của người nói trước một hiện thực khó khăn ('liệu không có cách nào... hay sao?', 'giá mà có thể... thì tốt biết bao'). Mẫu này thường phản ánh tâm trạng bất lực trước tình hình thực tế nhưng vẫn không thôi hy vọng có một giải pháp hoặc phép màu xảy ra.",
@@ -13155,7 +14475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_141": {
+  "ja_n1_Verb_141": {
     "title": "Động từ thể ない + ものでもない (〜nai mono demo nai)",
     "shortExplanation": "Phủ định nhẹ nhàng để ngụ ý rằng sự việc vẫn có khả năng xảy ra hoặc không hoàn toàn bất khả thi; 'không hẳn là không...', 'cũng có thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～ないものでもない' (N1) là hình thức phủ định kép nhằm thể hiện thái độ dè dặt, thận trọng của người nói. Cấu trúc này diễn tả ý tứ 'không phải là hoàn toàn không thể...', 'nếu có điều kiện thích hợp thì vẫn có khả năng làm được'. Cách nói này giúp làm giảm tính quả quyết, tránh khẳng định một cách tuyệt đối.",
@@ -13175,7 +14495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_142": {
+  "ja_n1_Verb_142": {
     "title": "Danh từ 1 + のない + Danh từ 2 (〜no nai〜)",
     "shortExplanation": "Bổ nghĩa cho danh từ đứng sau để biểu thị sự thiếu vắng, không tồn tại của danh từ đứng trước; 'Danh từ 2 không có Danh từ 1'.",
     "longExplanation": "Cấu trúc '[Danh từ 1] のない [Danh từ 2]' bắt nguồn từ hiện tượng chuyển đổi trợ từ (chuyển が thành の) trong mệnh đề định ngữ tiếng Nhật. Khi mệnh đề bổ nghĩa có vị ngữ là tính từ phủ định 'ない' đi với chủ ngữ (vốn dùng trợ từ ' service' như trong '笑いがない', '水がない'), trợ từ 'が' có thể chuyển thành 'の' để nối liền mạch với danh từ trung tâm ở phía sau. Cấu trúc diễn tả một thực thể, môi trường hay trạng thái hoàn toàn thiếu vắng đi yếu tố được nhắc đến.",
@@ -13195,7 +14515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_143": {
+  "ja_n1_Verb_143": {
     "title": "Động từ thể ば + きりがない (〜ba kiri ga nai)",
     "shortExplanation": "Diễn tả rằng nếu cứ bắt đầu làm một việc gì đó (như kể lể, liệt kê, phàn nàn) thì sẽ không bao giờ có điểm dừng; 'nếu mà... thì không xiết', 'cứ... thì hết ngày'.",
     "longExplanation": "Mẫu ngữ pháp '～ばきりがない' (N1) kết hợp thể điều kiện '～ば' với cụm từ 'きりがない' (không có giới hạn/điểm dừng). Cấu trúc này dùng để nhấn mạnh số lượng, mức độ quá nhiều của sự vật hay hiện tượng: hễ bắt đầu kể, đếm hoặc làm thì sự việc sẽ kéo dài bất tận, không sao kể hết hay kết thúc được ('nếu kể ra thì nhiều vô kể', 'nếu đếm thì không xuể').",
@@ -13215,7 +14535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_144": {
+  "ja_n1_Verb_144": {
     "title": "Động từ thể ます + もしないで (〜mo shinai de)",
     "shortExplanation": "Chỉ trích việc không chịu làm một hành động tối thiểu cần thiết mà đã vội vàng làm việc khác; 'thậm chí chẳng buồn... mà đã...', 'không thèm... mà cứ...'.",
     "longExplanation": "Mẫu ngữ pháp '～もしないで' (N1) gắn vào thân động từ thể ます để nhấn mạnh sự thiếu sót, chểnh mảng. Người nói sử dụng cấu trúc này với thái độ trách móc, bất bình hoặc ngạc nhiên khi ai đó (hoặc bản thân) hoàn toàn không thực hiện một hành vi đương nhiên phải làm trước tiên, nhưng lại ngang nhiên tiến hành hành động tiếp theo ('chẳng chịu tìm hiểu mà đã kết luận', 'không thèm học mà đi thi').",
@@ -13235,7 +14555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_145": {
+  "ja_n1_Verb_145": {
     "title": "Động từ thể ます + やしない (〜yashinai)",
     "shortExplanation": "Phủ định mạnh mẽ trong khẩu ngữ mang sắc thái bực bội, bất mãn hoặc khẳng định chắc chắn điều gì sẽ không xảy ra; 'chẳng... chút nào', 'đời nào mà...', 'không thể nào...'.",
     "longExplanation": "Mẫu ngữ pháp '～やしない' (N1) là dạng khẩu ngữ biến âm từ '～はしない', dùng để nhấn mạnh sự phủ định tuyệt đối đối với một hành động hay trạng thái. Cấu trúc này thường mang sắc thái cảm xúc tiêu cực như than phiền, bực dọc, bất mãn hoặc kiên quyết cự tuyệt của người nói ('tuyệt đối không làm...', 'chẳng chịu làm gì cả').",
@@ -13255,7 +14575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_146": {
+  "ja_n1_Verb_146": {
     "title": "Động từ + ように (〜you ni)",
     "shortExplanation": "Biểu thị mục đích ('để...'), phương thức ('theo như...'), nỗ lực tạo thói quen ('cố gắng...'), hoặc lời khuyên nhủ, chỉ thị nhẹ nhàng ('hãy...').",
     "longExplanation": "Mẫu ngữ pháp '～ように' là cấu trúc đa dụng chỉ mục đích hoặc cách thức. Khi đứng trước các động từ chỉ sự nỗ lực như '努力する', '気をつける' hay '～ようにする', nó diễn tả sự cố gắng duy trì một hành động hay thói quen ('cố gắng làm sao cho...'). Khi đi kèm với động từ nhận thức hoặc truyền đạt như '言う', '頼む', nó đóng vai trò truyền đạt lời yêu cầu gián tiếp ('nhắc nhở hãy...'). Ngoài ra, nó còn dùng để mô tả hành động được thực hiện đúng theo phương thức nào đó ('theo như...').",
@@ -13275,7 +14595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_147": {
+  "ja_n1_Verb_147": {
     "title": "Động từ thể ý chí + か + Động từ + まいか (〜you ka〜mai ka)",
     "shortExplanation": "Thể hiện tâm trạng băn khoăn, do dự không biết nên làm hay không nên làm một việc; 'phân vân nên... hay không nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～ようか～まいか' (N1) kết hợp dạng ý chí (～よう) và dạng phủ định ý chí (～まい) của cùng một động từ để miêu tả sự đắn đo, giằng xé nội tâm khi đứng trước hai quyết định trái ngược nhau ('có nên làm hay thôi không làm'). Theo sau cấu trúc này thường là các động từ chỉ sự suy nghĩ, phân vân như '迷う', '悩む', '考える'.",
@@ -13295,7 +14615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_148": {
+  "ja_n1_Verb_148": {
     "title": "Động từ thể ý chí + が + Động từ + まいが (〜you ga〜mai ga)",
     "shortExplanation": "Biểu thị dù hành động đó có được thực hiện hay không thì kết quả hoặc thái độ của người nói vẫn không hề bị ảnh hưởng; 'dù có... hay không thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ようが～まいが' (N1) đưa ra hai tình huống đối lập (làm hoặc không làm, xảy ra hoặc không xảy ra) để khẳng định rằng trong bất kỳ trường hợp nào, phán đoán, kết quả hoặc quyết tâm ở vế sau vẫn giữ nguyên không thay đổi ('bất kể có... hay không thì...'). Mẫu này tương đương với '～ようと～まいと' nhưng thường dùng phổ biến trong cả văn nói trang trọng và văn viết.",
@@ -13315,7 +14635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_149": {
+  "ja_n1_Verb_149": {
     "title": "Động từ thể ます + ようがない (〜you ga nai)",
     "shortExplanation": "Biểu thị rằng hoàn toàn không có bất kỳ phương pháp hay cách thức nào để thực hiện hành động, dù rất muốn làm; 'không có cách nào để...', 'không thể nào... nổi'.",
     "longExplanation": "Mẫu ngữ pháp '～ようがない' (N1) kết hợp với thân động từ thể ます để diễn tả tình huống bế tắc, hoàn toàn không có phương tiện, điều kiện hoặc cơ hội để thực hiện hành động đó ('hoàn toàn bất khả thi', 'không biết làm cách nào mà...'). Cấu trúc nhấn mạnh sự bất lực của người nói trước hoàn cảnh khách quan.",
@@ -13335,7 +14655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_150": {
+  "ja_n1_Verb_150": {
     "title": "Động từ thể ý chí + と + Động từ + まいと (〜you to〜mai to)",
     "shortExplanation": "Biểu thị rằng dù làm hay không làm một việc thì sự việc ở vế sau vẫn diễn ra y như vậy; 'cho dù có... hay không thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～ようと～まいと' (N1) mang ý nghĩa tương tự như '～ようが～まいが', khẳng định rằng bất luận hành động có diễn ra hay không thì sự thật, quy luật hay quyết tâm của người nói vẫn không hề suy chuyển ('cho dù có... hay không...'). Cấu trúc này mang sắc thái văn phong trang trọng, nghiêm túc và có tính văn viết cao hơn.",
@@ -13355,7 +14675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_151": {
+  "ja_n1_Verb_151": {
     "title": "Động từ thể ý chí + にも (〜you ni mo)",
     "shortExplanation": "Diễn tả dù trong lòng rất muốn làm điều gì đó nhưng vì lý do, trở ngại nào đó mà đành bất lực không thể thực hiện được; 'dù muốn... cũng không thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～ようにも' (N1) kết hợp dạng ý chí của động từ với trợ từ 'にも', vế sau thường đi cùng thể khả năng phủ định hoặc các biểu hiện chỉ sự bất khả kháng ('～ない', '～無理だ'). Cấu trúc này bộc lộ sự tiếc nuối, bất lực khi ý muốn chủ quan rất tha thiết nhưng bị cản trở bởi hoàn cảnh thực tế ('dù rất muốn làm nhưng đành bó tay').",
@@ -13375,7 +14695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_152": {
+  "ja_n1_Verb_152": {
     "title": "Động từ thể ý chí + にも + Động từ thể khả năng phủ định / lý do (〜you ni mo 〜renai)",
     "shortExplanation": "Diễn tả dù rất muốn làm hay cố làm một việc gì đó nhưng không thể làm được vì có trở ngại; 'dù muốn... cũng không thể... nổi'.",
     "longExplanation": "Mẫu ngữ pháp '～ようにも～（ら）れない' (N1) kết hợp giữa động từ ở thể ý chí đi với trợ từ 'にも' và theo sau là cùng động từ đó ở thể khả năng phủ định (hoặc một vế chỉ lý do bất khả kháng). Cấu trúc này dùng để nhấn mạnh tâm trạng bất lực, bế tắc của người nói: bản thân rất có nguyện vọng, khao khát hoặc nỗ lực muốn thực hiện hành động đó, nhưng do hoàn cảnh hoặc trở ngại khách quan cản trở nên hoàn toàn không có cách nào làm được ('dù muốn... cũng không thể nào... được').",
@@ -13395,7 +14715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verb_153": {
+  "ja_n1_Verb_153": {
     "title": "Động từ thể ます + ようもない (~you mo nai)",
     "shortExplanation": "Biểu thị hoàn toàn không có cách nào, không có phương pháp nào để thực hiện được hành động; 'không có cách nào mà...', 'không thể nào... nổi'.",
     "longExplanation": "Mẫu ngữ pháp '～ようもない' (N1) kết hợp với thân động từ thể ます (bỏ ます) để diễn tả rằng hoàn toàn không có phương thức, biện pháp hay khả năng nào để tiến hành hành động đó ('không tài nào... được', 'hết cách...'). Cấu trúc này có ý nghĩa tương đương với '～ようがない', nhưng việc thêm trợ từ 'も' càng nhấn mạnh tính triệt để của việc bất khả kháng, tuyệt đối không còn đường nào xoay xở.",
@@ -13415,7 +14735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_154": {
+  "ja_n1_Verbる_154": {
     "title": "Động từ thể từ điển + がままに (〜ga mama ni)",
     "shortExplanation": "Diễn tả việc để mặc sự việc diễn ra tự nhiên theo đúng bản chất hay trạng thái vốn có của nó; 'cứ để mặc cho...', 'phó mặc theo...'.",
     "longExplanation": "Mẫu ngữ pháp '～がままに' (N1) kết hợp với động từ thể từ điển (hoặc kết hợp thành ngữ như 言われるがままに, なされるがままに, 流れるがままに) để diễn tả việc hành động hay sự việc diễn ra hoàn toàn tự nhiên theo xu thế sẵn có, hoặc để mặc cho đối phương hay hoàn cảnh định đoạt mà bản thân không can thiệp, không kháng cự ('cứ để thuận theo...', 'mặc cho...', 'phó mặc cho...'). Thường gợi lên trạng thái thụ động hoặc buông xuôi thuận theo tự nhiên.",
@@ -13435,7 +14755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_155": {
+  "ja_n1_Verbる_155": {
     "title": "Động từ thể từ điển / thể た + が早いか (verb-ru ga hayai ka)",
     "shortExplanation": "Diễn tả hành động vế sau diễn ra gần như ngay tức khắc sau hành động vế trước; 'vừa mới... thì ngay lập tức...', 'thoáng cái đã...'.",
     "longExplanation": "Mẫu ngữ pháp '～が早いか' (N1) đi với động từ thể từ điển (hoặc đôi khi thể た) để diễn tả rằng ngay sau khi hành động ở vế trước vừa xảy ra thì hành động ở vế sau diễn ra gần như tức thì, chớp nhoáng đến mức như thể hai hành động diễn ra cùng một lúc ('vừa mới... là ngay tức khắc...'). Vế sau thường là hành động thực tế đã xảy ra, không dùng thể hiện ý chí, mệnh lệnh hay phỏng đoán của người nói.",
@@ -13455,7 +14775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_156": {
+  "ja_n1_Verbる_156": {
     "title": "Động từ thể từ điển + くらいなら (〜ru kurai nara)",
     "shortExplanation": "Diễn tả thà chọn phương án khác còn hơn là phải làm một việc tồi tệ nào đó; 'nếu phải... thì thà... còn hơn'.",
     "longExplanation": "Mẫu ngữ pháp '～くらいなら' kết hợp với động từ ở thể từ điển để diễn đạt rằng: nếu phải rơi vào hoặc thực hiện tình huống tồi tệ, khó chịu ở vế trước thì thà chọn giải pháp ở vế sau còn tốt hơn nhiều ('thà... còn hơn...', 'nếu phải... thì thà...'). Vế sau thường đi kèm với các từ ngữ biểu thị sự so sánh hoặc lựa chọn hơn như '～ほうがいい', '～ほうがましだ', '～たい'.",
@@ -13475,7 +14795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_157": {
+  "ja_n1_Verbる_157": {
     "title": "Động từ thể từ điển + ことなしに (Verb-ru koto nashi ni)",
     "shortExplanation": "Diễn tả việc thực hiện một hành động khác mà hoàn toàn không thực hiện hành động này; 'mà không...', 'không hề...'. (Văn phong trang trọng)",
     "longExplanation": "Mẫu ngữ pháp '～ことなしに' (hoặc '～ことなしには') là dạng văn viết trang trọng kết hợp với động từ thể từ điển, mang ý nghĩa 'mà không làm việc gì đó' (tương đương với '～ないで' hoặc '～ずに'). Mẫu câu này nhấn mạnh việc hoàn toàn bỏ qua hoặc không tiến hành hành động ở vế trước mà vẫn thực hiện hành động hay đạt được kết quả ở vế sau.",
@@ -13495,7 +14815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_158": {
+  "ja_n1_Verbる_158": {
     "title": "Động từ thể từ điển + ことのないように (Verb-ru koto no nai you ni)",
     "shortExplanation": "Diễn tả mục đích hoặc nỗ lực phòng ngừa, nhằm tránh để sự việc không mong muốn xảy ra; 'để không...', 'sao cho không bị...'.",
     "longExplanation": "Mẫu ngữ pháp '～ことのないように' kết hợp với động từ ở thể từ điển, tương đương với '～ないように' nhưng mang tính trang trọng và cẩn trọng hơn. Cấu trúc này diễn tả mục đích ngăn ngừa, nỗ lực hết sức để không xảy ra sự cố, sai sót hoặc kết quả tiêu cực không mong muốn ở vế trước ('để tránh việc...', 'sao cho không xảy ra tình trạng...').",
@@ -13515,7 +14835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_159": {
+  "ja_n1_Verbる_159": {
     "title": "Động từ thể từ điển + ときりがない (verb-ru to kiri ga nai)",
     "shortExplanation": "Diễn tả nếu bắt đầu làm việc gì thì sự việc sẽ tiếp diễn bất tận không có hồi kết, không có điểm dừng; 'nếu mà... thì không biết bao giờ mới hết'.",
     "longExplanation": "Mẫu ngữ pháp '～ときりがない' kết hợp giữa động từ thể từ điển với liên từ điều kiện 'と' và cụm từ 'きりがない' (kiri mang nghĩa giới hạn, điểm dừng). Cấu trúc này diễn tả rằng hễ cứ bắt đầu làm hành động đó thì số lượng hoặc tình trạng sẽ nhiều vô kể, tiếp diễn triền miên đến mức không có điểm dừng ('nếu mà... thì chẳng biết bao giờ mới hết', 'hễ... là không có hồi kết').",
@@ -13535,7 +14855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_160": {
+  "ja_n1_Verbる_160": {
     "title": "Động từ thể từ điển + ともなく + Động từ (Verb-ru tomonaku Verb)",
     "shortExplanation": "Diễn tả hành động được thực hiện một cách vô thức, lơ đễnh, không hề có chủ đích hay mục đích rõ ràng; 'không chủ ý...', 'vô tình...', 'bâng quơ...'.",
     "longExplanation": "Mẫu ngữ pháp '～ともなく' (N1) đứng sau động từ thể từ điển (thường lặp lại cùng một động từ hoặc đi kèm với một động từ cùng nhóm hành vi như 見るともなく見る/眺める, 聞くともなく聞く) để diễn tả trạng thái làm một việc gì đó hoàn toàn bâng quơ, không chủ ý, vô thức hoặc lơ đễnh mà không hề có mục đích hay sự tập trung định sẵn ('lơ đễnh...', 'vô tình mà...', 'chẳng chủ đích...').",
@@ -13555,7 +14875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_161": {
+  "ja_n1_Verbる_161": {
     "title": "Động từ thể từ điển + ともなしに + Động từ (Verb-ru tomonashi ni Verb)",
     "shortExplanation": "Diễn tả việc làm gì đó một cách bâng quơ, vô tình không hề có chủ ý định trước, rồi tình cờ dẫn đến một kết quả; 'vô tình...', 'bâng quơ mà...'.",
     "longExplanation": "Mẫu ngữ pháp '～ともなしに' (N1) có ý nghĩa và cách dùng tương tự như '～ともなく', kết hợp với động từ thể từ điển để diễn tả hành động được thực hiện một cách hoàn toàn tự nhiên, không mang chủ ý hay dự định từ trước ('không định... mà lại...', 'vô tình...'). Cấu trúc này thường đi kèm với việc người nói trong khi đang làm một việc gì đó lơ đễnh, bâng quơ thì vô tình phát hiện hoặc dẫn tới một kết quả bất ngờ khác.",
@@ -13575,7 +14895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_162": {
+  "ja_n1_Verbる_162": {
     "title": "Động từ thể từ điển + なり (Verb-ru nari)",
     "shortExplanation": "Diễn tả vừa mới thực hiện hành động này xong thì ngay lập tức hành động kế tiếp xảy ra; 'vừa mới... thì đã ngay...', 'ngay sau khi...'.",
     "longExplanation": "Mẫu ngữ pháp '～なり' (N1) kết hợp trực tiếp với động từ ở thể từ điển để diễn tả một hành động vừa mới diễn ra thì ngay lập tức một hành động kế tiếp theo sau không chút chậm trễ ('vừa mới... là đã lập tức...'). Chủ ngữ của hai vế thông thường là cùng một người (ngôi thứ ba), và vế sau thường là một hành vi bộc phát hoặc bất ngờ, không dùng câu mệnh lệnh hay rủ rê.",
@@ -13595,7 +14915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_163": {
+  "ja_n1_Verbる_163": {
     "title": "Danh từ / Động từ thể từ điển + にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
     "shortExplanation": "Diễn tả sự việc không chỉ dừng lại ở phạm vi đó mà còn lan rộng ra phạm vi lớn hơn; 'không chỉ dừng lại ở... mà còn... cả...'.",
     "longExplanation": "Mẫu ngữ pháp '～にとどまらず' (N1) bắt nguồn từ động từ 'とどまる' (dừng lại/giới hạn), kết hợp với danh từ hoặc động từ thể từ điển để diễn tả rằng sự việc, hiện tượng không chỉ dừng lại ở mức độ hay phạm vi nhất định đó, mà còn vượt khỏi giới hạn ấy để mở rộng ra phạm vi lớn hơn, sâu rộng hơn ('không chỉ giới hạn ở... mà còn...'). Vế sau thường đi kèm trợ từ 'も'.",
@@ -13615,7 +14935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_164": {
+  "ja_n1_Verbる_164": {
     "title": "Động từ thể từ điển / Danh từ + にはあたらない (Verb-ru ni wa ataranai)",
     "shortExplanation": "Diễn tả việc không đến mức phải làm như vậy, hoặc không đáng để phản ứng thái quá; 'không đáng để...', 'không việc gì phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～にはあたらない' (N1) là cách nói văn viết trang trọng, kết hợp với động từ thể từ điển hoặc danh từ có tính động từ, mang ý nghĩa sự việc đó không to tát đến mức đáng để làm như vậy ('chẳng đáng để...', 'không việc gì phải...', 'chẳng cần thiết phải...'). Thường đi kèm với các động từ chỉ cảm xúc, phản ứng tâm lý như kinh ngạc, bi quan, chỉ trích, lo lắng, xin lỗi.",
@@ -13635,7 +14955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_165": {
+  "ja_n1_Verbる_165": {
     "title": "Động từ thể từ điển + にも (Verb-ru ni mo)",
     "shortExplanation": "Diễn tả dù muốn làm hành động đó thì cũng khó khăn hoặc không thể thực hiện được do điều kiện cản trở; 'ngay cả khi muốn... thì cũng...'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ thể từ điển + にも' kết hợp với một vế sau giải thích nguyên nhân, trở ngại khách quan khiến cho hành động dù muốn thực hiện cũng gặp rất nhiều khó khăn hoặc không thể làm được ('ngay cả muốn... thì cũng...'). Mẫu này tương tự như '～（よ）うにも', nhưng sử dụng động từ thể từ điển để đặt ra giả định về điều kiện tiên quyết hoặc tình thế nan giải.",
@@ -13655,7 +14975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_166": {
+  "ja_n1_Verbる_166": {
     "title": "Động từ thể ý chí + にも + Động từ thể khả năng phủ định (Verb-ru ni mo Verb-re nai)",
     "shortExplanation": "Diễn tả dù rất muốn làm hay cố hết sức làm điều gì đó thì cũng không tài nào làm nổi; 'dù muốn... cũng không thể... nổi'.",
     "longExplanation": "Mẫu ngữ pháp 'Động từ thể ý chí + にも + cùng Động từ thể khả năng phủ định' (N1) được dùng để nhấn mạnh sự bất lực tột cùng: người nói rất muốn hoặc cố gắng thực hiện hành động nhưng vì hoàn cảnh khách quan hoặc rào cản tâm lý mà hoàn toàn không thể làm được ('dù muốn... cũng không thể nào... được'). Cấu trúc này lặp lại hai lần cùng một động từ, vế đầu ở thể ý chí (よう) và vế sau ở thể khả năng phủ định (れない/られない).",
@@ -13675,7 +14995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_167": {
+  "ja_n1_Verbる_167": {
     "title": "Động từ thể từ điển + べからざる + Danh từ (Verb-ru bekara zaru Noun)",
     "shortExplanation": "Dùng trong văn viết trang trọng để bổ nghĩa cho danh từ, mang ý nghĩa 'tuyệt đối không được làm', 'không nên làm' hoặc 'không thể'.",
     "longExplanation": "Mẫu ngữ pháp '～べからざる' (N1) bắt nguồn từ trợ động từ cổ 'べし', đóng vai trò là dạng định ngữ (bổ nghĩa cho danh từ) mang ý nghĩa cấm đoán hoặc chỉ trích mạnh mẽ về mặt đạo đức, luân lý ('tuyệt đối không được làm', 'không thể tha thứ'). Mẫu câu này thường đi kèm với các danh từ chỉ hành vi, hành động hoặc thái độ (như 行為, 行動, 罪, 過ち...) trong các bài văn trang trọng, tuyên ngôn hoặc diễn văn chính thức. Riêng với động từ 'する', dạng thường gặp là 'すべからざる' (hoặc 'するべからざる').",
@@ -13695,7 +15015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_168": {
+  "ja_n1_Verbる_168": {
     "title": "Động từ thể từ điển + べからず (〜ru bekara zu)",
     "shortExplanation": "Dùng để biểu thị mệnh lệnh cấm đoán dứt khoát, nghiêm khắc; 'không được...', 'cấm...'.",
     "longExplanation": "Mẫu ngữ pháp '～べからず' (N1) là lối diễn đạt văn cổ, dùng ở cuối câu để đưa ra mệnh lệnh cấm đoán mang tính tuyệt đối, nghiêm cấm mọi người thực hiện hành vi đó ('cấm làm...', 'tuyệt đối không được làm...'). Mẫu này thường bắt gặp trên các biển báo cấm công cộng, bảng quy tắc, điều lệ hoặc danh ngôn, châm ngôn giáo huấn. Động từ 'する' có thể biến thành 'すべからず' hoặc 'するべからず'.",
@@ -13715,7 +15035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_169": {
+  "ja_n1_Verbる_169": {
     "title": "Động từ thể từ điển + べく (Verb-ru beku)",
     "shortExplanation": "Diễn tả mục đích với ý chí mạnh mẽ trong văn viết trang trọng; 'để...', 'nhằm mục đích...', 'với mong muốn...'.",
     "longExplanation": "Mẫu ngữ pháp '～べく' (N1) là dạng liên dụng của trợ động từ cổ 'べし', dùng trong văn viết hoặc diễn văn trang trọng để biểu thị mục đích rõ ràng và ý chí quyết tâm của người nói ('để làm...', 'nhằm...'). Cả hai vế câu thường có cùng một chủ ngữ, và vế sau đi kèm động từ thể hiện hành động có chủ ý nhằm đạt được mục đích ở vế trước. Không dùng cho các câu nhờ vả hay mệnh lệnh. Với động từ 'する', thường dùng dạng 'すべく' (hoặc 'するべく').",
@@ -13735,7 +15055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_170": {
+  "ja_n1_Verbる_170": {
     "title": "Động từ thể từ điển + べくもない (Verb-ru beku mo nai)",
     "shortExplanation": "Diễn tả việc hoàn toàn không có khả năng thực hiện; 'làm sao có thể...', 'hoàn toàn không thể nào... nổi'.",
     "longExplanation": "Mẫu ngữ pháp '～べくもない' (N1) kết hợp giữa trợ từ 'べく' (chỉ khả năng) với trợ từ nhấn mạnh 'も' và phủ định 'ない', mang ý nghĩa hoàn toàn không có khả năng hay cơ hội nào để làm được điều đó ('làm sao mà... cho nổi', 'đương nhiên là không thể nào...'). Đây là cách diễn đạt trang trọng trong văn viết, thường đi với các động từ nhận thức hoặc năng lực như 知る (hiểu biết), 望む (mong ước), 比べる (so sánh), 追いつく (đuổi kịp). Động từ 'する' có dạng 'すべくもない' hoặc 'するべくもない'.",
@@ -13755,7 +15075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_171": {
+  "ja_n1_Verbる_171": {
     "title": "Động từ thể từ điển + までもない (〜ru made mo nai)",
     "shortExplanation": "Diễn tả sự việc hiển nhiên hoặc quá nhỏ nhặt, không cần thiết phải tốn công làm đến mức đó; 'không cần phải...', 'chưa đến mức phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～までもない' (N1) kết hợp với động từ ở thể từ điển để diễn tả rằng sự việc đơn giản, hiển nhiên hoặc quá nhỏ nhặt đến mức không cần thiết phải nhọc công làm đến mức độ ấy ('không cần thiết phải...', 'chưa tới mức phải...'). Thường dùng trong các trường hợp như việc đã rõ ràng ai cũng biết (như cụm từ cố định '言うまでもない' - không cần nói cũng biết), hoặc vấn đề nhỏ nhặt không đáng để lo lắng, tranh cãi hay bận tâm.",
@@ -13775,7 +15095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_172": {
+  "ja_n1_Verbる_172": {
     "title": "Động từ thể từ điển + ものとする (〜ru mono to suru)",
     "shortExplanation": "Dùng trong văn bản pháp lý, hợp đồng, điều lệ để đưa ra quy định, điều khoản hoặc quyết định chính thức; 'được quy định là...', 'được coi là...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものとする' (N1) là lối diễn đạt văn phong quy chuẩn, chuyên dùng trong các văn bản pháp luật, hợp đồng, điều lệ, quy chế hoặc thông báo chính thức để xác lập một quy ước, nghĩa vụ hoặc quyết định có tính ràng buộc ('được quy định là...', 'được xem là...'). Cấu trúc này thiết lập một giả định hoặc nguyên tắc phải tuân thủ nghiêm ngặt.",
@@ -13795,7 +15115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_173": {
+  "ja_n1_Verbる_173": {
     "title": "Động từ thể từ điển + や否や (Verb-ru ya ina ya)",
     "shortExplanation": "Diễn tả hành động hoặc sự việc ở vế sau xảy ra gần như tức thì ngay sau hành động ở vế trước; 'vừa mới... thì ngay lập tức...', 'thoáng cái đã...'.",
     "longExplanation": "Mẫu ngữ pháp '～や否や' (N1) kết hợp với động từ ở thể từ điển để diễn tả hai hành động diễn ra liên tiếp gần như trong chớp mắt: ngay khi hành động ở vế trước vừa xảy ra (hoặc chưa kịp biết đã xong hay chưa) thì ngay lập tức hành động hoặc hiện tượng ở vế sau đã xuất hiện ('vừa mới... là ngay tức khắc...'). Vế sau mô tả sự thật khách quan đã diễn ra, không dùng câu mệnh lệnh, nhờ vả hay ý chí.",
@@ -13815,7 +15135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_174": {
+  "ja_n1_Verbる_174": {
     "title": "Động từ thể từ điển + 始末だ (〜ru shimatsu da)",
     "shortExplanation": "Diễn tả sau một quá trình diễn biến tiêu cực thì cuối cùng dẫn đến một kết cục tồi tệ, đáng thất vọng; 'kết cục là...', 'đến nông nỗi...', 'rốt cuộc đành phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～始末だ' (N1) đi kèm với động từ ở thể từ điển để diễn đạt rằng trải qua một chuỗi tình huống xấu hoặc hành vi không tốt, cuối cùng dẫn tới một kết quả tồi tệ, bế tắc hoặc đáng xấu hổ ('kết cục lại thành ra...', 'đến nỗi...'). Cấu trúc này thường mang sắc thái phê phán, than thở, ngao ngán hoặc thất vọng của người nói về tình cảnh không mong muốn.",
@@ -13835,7 +15155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_Verbる_175": {
+  "ja_n1_Verbる_175": {
     "title": "Động từ thể từ điển / Danh từ + の + 嫌いがある (～ru kirai ga aru)",
     "shortExplanation": "Diễn tả có khuynh hướng, xu hướng hoặc tật xấu không tốt; 'có tật...', 'có xu hướng xấu là...', 'thường hay có thói...'.",
     "longExplanation": "Mẫu ngữ pháp '～きらいがある' (N1) đi với động từ thể từ điển hoặc danh từ đi với trợ từ 'の' để chỉ ra rằng đối tượng có một xu hướng, thói quen hoặc chiều hướng tiêu cực, không đáng hoan nghênh ('có tật hay...', 'hơi có xu hướng...'). Cấu trúc này thường mang sắc thái phê bình, chê trách kín đáo hoặc chỉ ra khuyết điểm trong tính cách, thói quen hay cách làm việc của một người.",
@@ -13855,7 +15175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_いつまでのやら_176": {
+  "ja_n1_いつまでのやら_176": {
     "title": "いつまで + Động từ thể từ điển + のやら (itsumade ~ no yara)",
     "shortExplanation": "Diễn tả sự nghi hoặc, băn khoăn tự hỏi không biết sự việc kéo dài đến bao giờ mới kết thúc; 'chẳng biết đến bao giờ mới...', 'không biết tới khi nào mới...'.",
     "longExplanation": "Mẫu ngữ pháp 'いつまで～のやら' kết hợp từ nghi vấn 'いつまで' với động từ thể từ điển đi cùng trợ từ 'のやら' (biểu thị sự không chắc chắn, mơ hồ) để diễn tả nỗi băn khoăn, bất an hoặc tâm trạng thở dài, ngao ngán của người nói khi không biết đến bao giờ một tình trạng, sự việc mệt mỏi hay kéo dài dằng dặc mới chịu kết thúc ('chẳng biết chừng nào mới kết thúc đây').",
@@ -13875,7 +15195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_が_177": {
+  "ja_n1_が_177": {
     "title": "Chủ ngữ / Đối tượng + が + Động từ thể khả năng (〜ga Verb rareru)",
     "shortExplanation": "Biểu thị năng lực, khả năng có thể thực hiện một hành động hoặc điều kiện cho phép hành động diễn ra; 'có thể...'.",
     "longExplanation": "Mẫu câu sử dụng động từ thể khả năng (可能形) đi cùng trợ từ 'が' để diễn tả năng lực của chủ thể (ai đó có thể làm gì) hoặc đối tượng mà hành động hướng tới có thể thực hiện được (ví dụ: 日本語が話せる - có thể nói tiếng Nhật). Quy tắc chia thể khả năng: Với động từ nhóm 1 (ngũ đoạn), chuyển âm đuôi hàng [u] sang hàng [e] rồi thêm [ru] (như 書く→書ける, 運ぶ→運べる); với động từ nhóm 2 (nhất đoạn), thay đuôi [る] bằng [られる] (như 食べる→食べられる); với động từ nhóm 3 (bất quy tắc), 'する' chuyển thành 'できる', '来る' chuyển thành '来られる'.",
@@ -13895,7 +15215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_かと思いきや_178": {
+  "ja_n1_かと思いきや_178": {
     "title": "Thể thông thường + かと思いきや (〜ka to omoikiya)",
     "shortExplanation": "Diễn tả thực tế xảy ra trái ngược hoàn toàn so với dự đoán hay suy nghĩ ban đầu; 'cứ ngỡ là... ai ngờ...', 'tưởng là... nào ngờ...'.",
     "longExplanation": "Mẫu ngữ pháp '～かと思いきや' (N1) bắt nguồn từ cách nói cổ '思いきや' (nào ngờ), kết hợp với thể thông thường của câu để diễn tả rằng sự việc diễn ra hoàn toàn trái ngược hoặc khác xa so với điều mà người nói đã suy đoán, kỳ vọng trước đó ('cứ tưởng là... ai dè...', 'ngỡ rằng... nào ngờ...'). Mẫu này luôn đi kèm với sắc thái ngạc nhiên, bất ngờ trước diễn biến nằm ngoài dự tính.",
@@ -13915,7 +15235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_がゆえに_179": {
+  "ja_n1_がゆえに_179": {
     "title": "Danh từ / Động từ / Tính từ + がゆえに (～ga yue ni)",
     "shortExplanation": "Dùng trong văn viết trang trọng để nhấn mạnh nguyên nhân hoặc lý do dẫn đến một kết quả; 'chính vì...', 'do...'.",
     "longExplanation": "Mẫu ngữ pháp '～がゆえに' (N1) là cách nói văn phong trang trọng, tao nhã hoặc mang màu sắc văn học, triết lý để chỉ nguyên nhân, nguồn cơn trực tiếp dẫn đến kết quả ở vế sau ('chính vì...', 'do...'). Thường đi với các danh từ hoặc mệnh đề chỉ cảm xúc sâu sắc (như tình yêu, sự hận thù), thân phận, năng lực, sự non nớt, hoặc số phận nghiệt ngã.",
@@ -13935,7 +15255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_がゆえの_180": {
+  "ja_n1_がゆえの_180": {
     "title": "Danh từ / Động từ thể từ điển + がゆえの + Danh từ (〜ga yue no Noun)",
     "shortExplanation": "Dùng để bổ nghĩa cho danh từ, biểu thị kết quả sinh ra do chính nguyên nhân ở phía trước; '... do chính... mang lại/tạo nên'.",
     "longExplanation": "Mẫu ngữ pháp '～がゆえの' (N1) là dạng định ngữ (bổ nghĩa cho danh từ) của '～がゆえに'. Nó được dùng trong văn viết trang trọng hoặc văn chương để nối nguyên nhân với danh từ chỉ kết quả, mang ý nghĩa 'kết quả ... nảy sinh từ chính lý do/nguyên nhân ...' (ví dụ: nỗi buồn do tình yêu mang lại, sai lầm bắt nguồn từ sự trẻ dại). Mang sắc thái tao nhã, sâu sắc và đầy cảm xúc.",
@@ -13955,7 +15275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_から_181": {
+  "ja_n1_から_181": {
     "title": "Danh từ 1 + から + Danh từ 2 + に至るまで (〜kara 〜ni itaru made)",
     "shortExplanation": "Diễn tả phạm vi rộng lớn trải dài toàn diện từ điểm này đến tận điểm kia; 'từ... cho đến tận...', 'từ... tới cả...'.",
     "longExplanation": "Mẫu ngữ pháp '～から～に至るまで' (N1) kết hợp hai danh từ cực đối lập hoặc hai mốc tiêu biểu cùng với động từ trang trọng '至る' (đến/đạt tới) để nhấn mạnh một phạm vi hay quy mô trải dài toàn diện, không chừa một đối tượng nào ('từ... cho tới tận...'). Mẫu này áp dụng linh hoạt cho con người, độ tuổi, sự vật, địa điểm hay thời gian nhằm làm nổi bật tính bao quát, sâu rộng của vấn đề.",
@@ -13975,7 +15295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ごとく_182": {
+  "ja_n1_ごとく_182": {
     "title": "～ごとく (〜gotoku)",
     "shortExplanation": "Diễn tả sự so sánh ví von mang tính văn chương cổ kính; 'như thể...', 'giống như...', 'hệt như...'.",
     "longExplanation": "Mẫu ngữ pháp '～ごとく' (thể liên từ/phó từ của '～ごとし' [如し]) là cách diễn đạt trang trọng, mang đậm phong cách văn viết cổ điển hoặc văn học, dùng để ví von, so sánh một hành động hay trạng thái với một sự vật, hiện tượng khác ('như thể là...', 'hệt như...'). Vế sau thường bổ nghĩa cho động từ, tính từ theo sau như một trạng từ.",
@@ -13995,7 +15315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_こととて_183": {
+  "ja_n1_こととて_183": {
     "title": "～こととて (〜koto tote)",
     "shortExplanation": "Diễn tả nguyên nhân, lý do trong văn cảnh trang trọng, lịch sự hoặc thư từ; 'vì...', 'do...', 'bởi lẽ...'.",
     "longExplanation": "Mẫu ngữ pháp '～こととて' (N1) là cách diễn đạt trang trọng mang phong cách văn viết cổ điển hoặc thư tín trang nhã. Cấu trúc này dùng để nêu lên một hoàn cảnh, lý do đặc biệt dẫn đến một phán đoán, hành động, hoặc thường dùng để trình bày lý do nhằm mong nhận được sự thông cảm, châm chước, tha thứ từ đối phương ('vì lý do là... nên mong được lượng thứ').",
@@ -14015,7 +15335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ずにすんだ_184": {
+  "ja_n1_ずにすんだ_184": {
     "title": "～ずにすんだ (〜zuni sunda)",
     "shortExplanation": "Diễn tả việc may mắn tránh được hoặc không cần phải làm một điều phiền toái, tổn thất; 'may mà không phải...', 'tránh được việc...'.",
     "longExplanation": "Mẫu ngữ pháp '～ずにすんだ' (dạng quá khứ của '～ずにすむ') kết hợp với động từ ở thể phủ định 'ず' (tương đương với ないで) cùng động từ '済む' (kết thúc, giải quyết xong ổn thỏa). Cấu trúc này dùng để diễn tả sự nhẹ nhõm, may mắn khi bản thân đã tránh được một phiền toái, thiệt hại, hoặc không cần phải thực hiện một nghĩa vụ hay việc khó khăn nào đó mà mọi chuyện vẫn diễn ra êm xuôi ('may mà không phải...', 'tránh khỏi cảnh...').",
@@ -14035,7 +15355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_だろうとなかろうと_185": {
+  "ja_n1_だろうとなかろうと_185": {
     "title": "～だろうとなかろうと (〜darou to nakarou to)",
     "shortExplanation": "Diễn tả dù sự việc có tồn tại/xảy ra hay không thì hành động hay phán đoán vẫn không thay đổi; 'dù có... hay không...', 'bất kể... hay không...'.",
     "longExplanation": "Mẫu ngữ pháp '～だろうとなかろうと' (N1) đặt hai khả năng khẳng định và phủ định song hành để khẳng định rằng: dù tình huống ở vế trước có xảy ra hay không, có đúng hay không thì lập trường, quyết định hay kết quả ở vế sau vẫn kiên định và không hề bị lay chuyển ('bất kể có... hay không chăng nữa thì...').",
@@ -14055,7 +15375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_つもりだ_186": {
+  "ja_n1_つもりだ_186": {
     "title": "～つもりだ (〜tsumori da)",
     "shortExplanation": "Diễn tả dự định, ý định của người nói về một hành động trong tương lai; 'dự định...', 'tính...'.",
     "longExplanation": "Mẫu ngữ pháp '～つもりだ' kết hợp với động từ ở thể từ điển hoặc thể phủ định ない để biểu thị kế hoạch, dự định hoặc ý định chủ quan của bản thân người nói ('dự định làm gì', 'tính làm gì'). Nếu chủ ngữ là người khác thì thường dùng kèm theo cách nói gián tiếp như '～と言っている' hay '～ようだ'.",
@@ -14075,7 +15395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_つもりで_187": {
+  "ja_n1_つもりで_187": {
     "title": "～つもりで (〜tsumori de)",
     "shortExplanation": "Diễn tả ý định, tâm thế hoặc quyết tâm khi thực hiện một hành động; 'với ý định...', 'với tâm thế như thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～つもりで' kết hợp với động từ ở thể từ điển, thể た hoặc 'Danh từ + の' để diễn tả tâm thế, quyết tâm hoặc mục đích khi làm một hành động nào đó ('với ý định...', 'với quyết tâm...'). Ngoài ra, nó còn mang nghĩa coi như một trạng thái nào đó dù thực tế không hẳn như vậy ('với tâm niệm như thể là...', 'xem như là...').",
@@ -14095,7 +15415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ではすまない_188": {
+  "ja_n1_ではすまない_188": {
     "title": "～ではすまない (〜dewa sumanai)",
     "shortExplanation": "Diễn tả việc sự việc nghiêm trọng đến mức chỉ dừng lại ở cách giải quyết hay hành động đó là không thể xong xuôi; 'chỉ... thì không xong đâu', 'không thể chỉ... là được'.",
     "longExplanation": "Mẫu ngữ pháp '～ではすまない' (N1) được dùng khi người nói khẳng định mạnh mẽ rằng một vấn đề hay hậu quả nghiêm trọng không thể chỉ giải quyết êm đẹp bằng một hành vi đơn giản hay biện pháp qua loa ở vế trước ('không thể chỉ... là xong'). Mẫu này thường kết hợp với 'だけ' thành '～だけではすまない', hàm ý bắt buộc phải chịu trách nhiệm lớn hơn, bồi thường thích đáng hoặc nhận hình phạt nghiêm khắc hơn.",
@@ -14115,7 +15435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とあって_189": {
+  "ja_n1_とあって_189": {
     "title": "～とあって (〜to atte)",
     "shortExplanation": "Diễn tả nguyên nhân là một hoàn cảnh hay dịp đặc biệt dẫn đến một kết quả tất nhiên tương ứng; 'vì là dịp...', 'chính vì... nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～とあって' (N1) được dùng để nêu lên một sự kiện, thời điểm hoặc hoàn cảnh đặc biệt khác ngày thường (như ngày khai trương, dịp nghỉ lễ, sinh nhật...), và chính vì bối cảnh đặc biệt đó nên kết quả hay tình trạng ở vế sau diễn ra là điều hoàn toàn đương nhiên ('vì đúng vào dịp...', 'do hoàn cảnh đặc biệt là...'). Thường dùng trong văn phong phóng sự, tường thuật hoặc miêu tả khách quan.",
@@ -14135,7 +15455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とあれば_190": {
+  "ja_n1_とあれば_190": {
     "title": "～とあれば (〜to areba)",
     "shortExplanation": "Diễn tả điều kiện hay tiền đề đặc biệt mà nếu đúng như vậy thì đương nhiên sẽ làm hoặc sẵn sàng làm; 'nếu quả thực là...', 'nếu là vì...'.",
     "longExplanation": "Mẫu ngữ pháp '～とあれば' (N1) được dùng để đưa ra một điều kiện, hoàn cảnh hoặc tiền đề đặc biệt, ngụ ý rằng: nếu quả thực rơi vào tình huống hay điều kiện đó thì việc thực hiện hành động ở vế sau là hoàn toàn tất yếu hoặc bản thân sẵn sàng dốc lòng làm ('nếu là vì...', 'nếu đúng là... thì nhất định'). Thường biểu lộ quyết tâm cao độ hoặc phản ứng tự nhiên của con người trước một hoàn cảnh đặc thù.",
@@ -14155,7 +15475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といえども_191": {
+  "ja_n1_といえども_191": {
     "title": "～といえども (〜to iedomo)",
     "shortExplanation": "Diễn tả sự nhượng bộ trong phong cách trang trọng; 'dù là...', 'ngay cả... đi chăng nữa thì...'.",
     "longExplanation": "Mẫu ngữ pháp '～といえども' (N1) là cách diễn đạt trang trọng bắt nguồn từ văn viết cổ điển (nghĩa là 'cho dù có nói là...'). Mẫu này thừa nhận một sự thật, thân phận, hoặc danh xưng hiển nhiên ở vế trước, nhưng vế sau lại đưa ra một thực tế tương phản hoặc ngoại lệ không như mong đợi ('dù có là... đi chăng nữa thì...', 'ngay cả... cũng không ngoại lệ'). Thường dùng sau danh từ chỉ chuyên gia, trẻ em, người có địa vị cao hoặc hoàn cảnh đặc thù.",
@@ -14175,7 +15495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といったらありはしない_192": {
+  "ja_n1_といったらありはしない_192": {
     "title": "～といったらありはしない (〜to ittara ari wa shinai)",
     "shortExplanation": "Cảm thán mức độ cực kỳ cao của một sự việc, không từ ngữ nào tả xiết; 'không gì sánh bằng', 'hết chỗ nói', 'vô cùng...'.",
     "longExplanation": "Mẫu ngữ pháp '～といったらありはしない' (N1) là quán ngữ mang sắc thái cảm thán mạnh mẽ, dùng để biểu thị mức độ cực độ của một trạng thái hay tính chất, đến mức trên đời không có từ ngữ hay thước đo nào diễn tả hết được ('...đến mức không sao kể xiết', 'cực kỳ...'). Thường đi cùng danh từ phái sinh từ tính từ dạng '～さ' hoặc trực tiếp với tính từ.",
@@ -14195,7 +15515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といったらありゃしない_193": {
+  "ja_n1_といったらありゃしない_193": {
     "title": "～といったらありゃしない (〜to ittara arya shinai)",
     "shortExplanation": "Cách nói khẩu ngữ nhấn mạnh mức độ tột cùng của sự việc; 'hết chỗ nói', 'vô cùng...', 'không tưởng tượng nổi'.",
     "longExplanation": "Mẫu ngữ pháp '～といったらありゃしない' (N1) là dạng biến âm khẩu ngữ thân mật của '～といったらありはしない' ('ありは' biến âm thành 'ありゃ'). Mẫu câu này được dùng trong văn nói hàng ngày để cảm thán, nhấn mạnh mức độ của sự việc, cảm xúc đã lên tới đỉnh điểm, không gì diễn tả nổi ('...không biết chừng nào mà kể', 'cực kỳ...'). Thường bộc lộ cảm xúc khen ngợi hết lời hoặc than thở, ngán ngẩm.",
@@ -14215,7 +15535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_といったらない_194": {
+  "ja_n1_といったらない_194": {
     "title": "～といったらない (〜to ittara nai)",
     "shortExplanation": "Nhấn mạnh mức độ cực kỳ cao của sự việc, không gì sánh bằng; 'không kể xiết', 'hết chỗ nói', 'cực kỳ...'.",
     "longExplanation": "Mẫu ngữ pháp '～といったらない' (N1) được dùng để nhấn mạnh tính chất, cảm xúc hoặc trạng thái đã đạt đến đỉnh điểm, cao đến mức không còn lời lẽ nào có thể lột tả trọn vẹn ('...không biết chừng nào mà kể', 'cực độ...', 'không gì sánh nổi'). Xuất phát từ ý 'nếu phải nói về mức độ đó thì không có từ ngữ nào để tả'. Dùng được cho cả trạng thái tích cực lẫn tiêu cực.",
@@ -14235,7 +15555,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ときている_195": {
+  "ja_n1_ときている_195": {
     "title": "～ときている (〜to kite iru)",
     "shortExplanation": "Nhấn mạnh một tình cảnh, điều kiện đặc thù (thường bất lợi) khiến kết quả sau đó là điều tất yếu; 'đã... lại còn...', 'vốn đã... nên...'.",
     "longExplanation": "Mẫu ngữ pháp '～ときている' (N1) được dùng để nêu bật một sự thật, hoàn cảnh hay tính chất đặc thù (thường mang tính tiêu cực hoặc bất lợi) làm tiền đề hiển nhiên, từ đó dẫn đến kết quả tất yếu hoặc tình thế khó xử ở vế sau ('vì vốn dĩ đã... nên không ngạc nhiên khi...', 'ngặt nỗi là...'). Thường đi kèm với các liên từ chỉ nguyên nhân, điều kiện tăng cấp như '～ので', '～だけに', '～から', '～うえに'.",
@@ -14255,7 +15575,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ところを_196": {
+  "ja_n1_ところを_196": {
     "title": "～ところを (〜tokoro wo)",
     "shortExplanation": "Diễn tả một sự việc bất ngờ chen ngang đúng vào thời điểm hoặc hoàn cảnh không thuận lợi; 'đúng lúc đang... thì...', 'trong lúc... mà lại...'.",
     "longExplanation": "Mẫu ngữ pháp '～ところを' (N1) được dùng khi một sự việc hay hành vi bất ngờ chen ngang vào đúng thời điểm, bối cảnh hay trạng thái nhạy cảm ở vế trước ('đúng vào lúc đang...', 'trong lúc... thì bị...'). Thường mang sắc thái sự việc xen vào gây bất ngờ, bất tiện, khó chịu hoặc trớ trêu. Ngoài ra, trong văn giao tiếp trang trọng và thư từ, cấu trúc này còn dùng để mở lời xin lỗi hoặc cảm ơn một cách lịch sự khi đối phương bận rộn (như 'お忙しいところを...').",
@@ -14275,7 +15595,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とされる_197": {
+  "ja_n1_とされる_197": {
     "title": "～とされる (〜to sareru)",
     "shortExplanation": "Diễn tả nhận định, quan niệm chung của xã hội hoặc dư luận; 'được coi là...', 'được xem là...', 'được cho là...'.",
     "longExplanation": "Mẫu ngữ pháp '～とされる' (dạng bị động của 'とする') được dùng để biểu thị một quan điểm, đánh giá hoặc sự thật được xã hội, dư luận hoặc số đông công nhận rộng rãi ('được coi là...', 'được cho là...'). Mẫu câu này thường xuất hiện trong các bài báo, tin tức, văn bản học thuật hoặc văn cảnh trang trọng nhằm đưa ra nhận định mang tính khách quan.",
@@ -14295,7 +15615,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_としたところで_198": {
+  "ja_n1_としたところで_198": {
     "title": "～としたところで (〜to shita tokoro de)",
     "shortExplanation": "Diễn tả giả định nhượng bộ mang tính tiêu cực hoặc vô ích; 'dẫu cho...', 'ngay cả khi giả sử... thì (cũng chẳng thay đổi được gì)'.",
     "longExplanation": "Mẫu ngữ pháp '～としたところで' dùng để đưa ra một giả định nhượng bộ ('dẫu cho có làm thế... chăng nữa', 'ngay cả khi giả định là...'). Cấu trúc này nhấn mạnh rằng ngay cả trong trường hợp điều kiện đó xảy ra thì kết quả hay hiện trạng cũng chẳng có gì thay đổi đáng kể, mang sắc thái bất lực, hoài nghi hoặc vô ích. Vế sau luôn mang ý nghĩa phủ định hoặc tiêu cực.",
@@ -14315,7 +15635,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とすると_199": {
+  "ja_n1_とすると_199": {
     "title": "～とすると (〜to suru to)",
     "shortExplanation": "Diễn tả giả định hoặc suy đoán thuần túy; 'giả sử là...', 'nếu xem là...', 'nếu đúng là... thì'.",
     "longExplanation": "Mẫu ngữ pháp '～とすると' đặt ra một giả thiết, tình huống giả định hoặc một tiền đề suy luận ('nếu giả sử là...', 'nếu tính đến trường hợp...'). Từ tiền đề giả định đó, vế sau sẽ dẫn ra một suy đoán logic, một hệ quả tất yếu hoặc tính toán tiếp theo. Thường dùng trong các suy luận lý tính và giả định thuần túy.",
@@ -14335,7 +15655,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とすれば_200": {
+  "ja_n1_とすれば_200": {
     "title": "～とすれば (～to sureba)",
     "shortExplanation": "Diễn tả điều kiện giả định; 'nếu giả sử rằng...', 'nếu đúng là... thì'.",
     "longExplanation": "Mẫu ngữ pháp '～とすれば' dùng để đưa ra một điều kiện giả định hoặc một tiền đề khả dĩ ('nếu cho rằng...', 'nếu quả thực là...'). Dựa trên giả định đó, người nói đưa ra phán đoán, ý chí, câu hỏi hoặc hướng giải quyết ở vế sau. Khác với 'とすると' vốn thiên về quy luật tự nhiên hay hệ quả tất yếu, 'とすれば' có thể đi cùng với ý chí, nguyện vọng hay lời khuyên của người nói.",
@@ -14355,7 +15675,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_となったら_201": {
+  "ja_n1_となったら_201": {
     "title": "～となったら (〜to nattara)",
     "shortExplanation": "Diễn tả tình huống nếu quả thực sự việc xảy ra hoặc tiến triển đến mức đó; 'nếu thực sự...', 'một khi đã... thì'.",
     "longExplanation": "Mẫu ngữ pháp '～となったら' dùng để biểu thị trường hợp một sự việc nào đó thật sự xảy ra, trở thành hiện thực, hoặc chuyển biến đến bước đó ('nếu quả thực bước vào tình huống...', 'nếu xảy ra chuyện...'). Cấu trúc này thường đi kèm với thái độ nghiêm túc, sự lo lắng, bối rối hoặc quyết tâm hành động khi đối mặt với một bước ngoặt cụ thể.",
@@ -14375,7 +15695,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_となると_202": {
+  "ja_n1_となると_202": {
     "title": "～となると (〜to naru to)",
     "shortExplanation": "Nhấn mạnh khi đối mặt với một tình huống hay chủ đề cụ thể; 'hễ nhắc đến...', 'nếu quả thực là... thì (tất yếu dẫn tới)'.",
     "longExplanation": "Mẫu ngữ pháp '～となると' dùng để nêu bật một tình huống cụ thể, một chủ đề hoặc một sự thay đổi hoàn cảnh ('hễ đến chuyện...', 'nếu quả thực chuyển sang tình trạng...'). Cấu trúc này thường dẫn tới một phản ứng tự nhiên tất yếu, một hệ quả hiển nhiên, hoặc một nhận định tất yếu nảy sinh từ hoàn cảnh đó.",
@@ -14395,7 +15715,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_となれば_203": {
+  "ja_n1_となれば_203": {
     "title": "～となれば (〜to nareba)",
     "shortExplanation": "Diễn tả giả định một khi hoàn cảnh đã chuyển sang tình huống đó; 'nếu quả thật là...', 'nếu sự tình đã đến mức... thì'.",
     "longExplanation": "Mẫu ngữ pháp '～となれば' đặt ra một tiền đề hoặc điều kiện giả định ('nếu quả đúng như vậy...', 'trong trường hợp chuyển biến thành...'). Từ tình huống đó, người nói đưa ra hành động tương ứng, phán đoán tất yếu, lời đề nghị hoặc quyết tâm phải thực hiện ở vế sau.",
@@ -14415,7 +15735,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とのことだ_204": {
+  "ja_n1_とのことだ_204": {
     "title": "～とのことだ (〜to no koto da)",
     "shortExplanation": "Diễn tả thông tin truyền văn một cách trang trọng, lịch sự; 'nghe nói là...', 'thấy bảo là...'.",
     "longExplanation": "Mẫu ngữ pháp '～とのことだ' (tương đương với '～そうだ' nhưng mang sắc thái lịch sự, trang trọng hơn) dùng để truyền đạt lại thông tin mà người nói đã nghe được, nhận được qua thư từ, thông báo hoặc lời người khác nói ('nghe nói là...', 'được biết là...'). Cấu trúc này rất phổ biến trong giao tiếp công việc, tin tức và văn viết thư từ.",
@@ -14435,7 +15755,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とはいえ_205": {
+  "ja_n1_とはいえ_205": {
     "title": "～とはいえ (～to wa ie)",
     "shortExplanation": "Diễn tả sự tương phản mang tính văn viết trang trọng; 'tuy nói là... nhưng...', 'dẫu rằng... nhưng thực tế thì'.",
     "longExplanation": "Mẫu ngữ pháp '～とはいえ' là cách diễn đạt trang trọng trong văn viết dùng để nối hai vế tương phản. Cấu trúc này thừa nhận sự thật ở vế trước ('dẫu biết là như thế...', 'mặc dù nói là...'), nhưng ở vế sau lại nêu lên một thực tế, hạn chế hoặc một khía cạnh trái ngược với suy nghĩ thông thường ('thế nhưng...').",
@@ -14455,7 +15775,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とみえて_206": {
+  "ja_n1_とみえて_206": {
     "title": "～とみえて (〜to miete)",
     "shortExplanation": "Diễn tả phán đoán dựa trên quan sát thấy hiện tượng bên ngoài; 'có vẻ như...', 'trông như thể... nên'.",
     "longExplanation": "Mẫu ngữ pháp '～とみえて' dùng để đưa ra phán đoán hoặc suy đoán của người nói dựa trên những dấu hiệu trực quan hoặc hành động cụ thể đang diễn ra trước mắt ('dường như là...', 'có vẻ như...'). Vế sau thường chỉ hành động hoặc hiện tượng thực tế làm căn cứ cho phán đoán ở vế trước.",
@@ -14475,7 +15795,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とみられる_207": {
+  "ja_n1_とみられる_207": {
     "title": "～とみられる (～to mirareru)",
     "shortExplanation": "Diễn tả nhận định, suy đoán khách quan dựa trên tình hình; 'được coi là...', 'được dự đoán là...', 'dường như là...'.",
     "longExplanation": "Mẫu ngữ pháp '～とみられる' (thể bị động của '見る' với nghĩa là đánh giá, nhìn nhận) là cách diễn đạt khách quan, xuất hiện dày đặc trên các bản tin thời sự, báo chí hoặc báo cáo phân tích ('được nhận định là...', 'được dự báo là...'). Cấu trúc này dùng để đưa ra phán đoán hoặc dự báo về một tình hình mà không mang tính khẳng định tuyệt đối cá nhân.",
@@ -14495,7 +15815,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_とみると_208": {
+  "ja_n1_とみると_208": {
     "title": "～とみると (〜to miru to)",
     "shortExplanation": "Xem xét, nhìn nhận sự vật dưới một góc độ hay tiêu chuẩn nhất định; 'nếu xét từ góc độ...', 'khi nhìn nhận là... thì'.",
     "longExplanation": "Mẫu ngữ pháp '～とみると' dùng khi người nói đặt sự vật, hiện tượng vào một góc nhìn, lập trường hoặc tiêu chuẩn cụ thể để đánh giá ('nếu xét dưới góc độ là...', 'khi nhìn nhận trên tư cách là...'). Từ góc nhìn đó, một nhận thức mới, kết luận hoặc hành động tương ứng sẽ được mở ra ở vế sau.",
@@ -14515,7 +15835,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_どんなにうが_209": {
+  "ja_n1_どんなにうが_209": {
     "title": "どんなに～うが (donna ni ～ u ga)",
     "shortExplanation": "Diễn tả sự nhượng bộ tột cùng về mức độ; 'dù cho có... đến thế nào đi chăng nữa thì... (vẫn không đổi)'.",
     "longExplanation": "Mẫu ngữ pháp 'どんなに～うが' (dạng ý chí/suy đoán kết hợp trợ từ が, tương đương với 'どんなに～ても') là cách nói nhượng bộ mang tính quả quyết và văn phong trang trọng hoặc văn viết. Cấu trúc này khẳng định rằng dù mức độ hành động hay trạng thái ở vế trước có cao, nhiều hoặc khắc nghiệt đến đâu thì kết quả hay lập trường ở vế sau cũng không hề bị suy chuyển.",
@@ -14535,7 +15855,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_と言わんばかりに_210": {
+  "ja_n1_と言わんばかりに_210": {
     "title": "～と言わんばかりに (〜to iwan bakari ni)",
     "shortExplanation": "Diễn tả thái độ, hành động rõ rệt như muốn nói ra điều gì dù không thốt nên lời; 'như thể muốn nói rằng...', 'suýt nữa thì nói ra rằng...'.",
     "longExplanation": "Mẫu ngữ pháp '～と言わんばかりに' (với '言わん' là thể phủ định cổ của 言う) dùng để mô tả thái độ, cử chỉ, biểu cảm của ai đó biểu lộ rõ rệt đến mức như thể đang thốt ra câu nói đó, dù trên thực tế người đó không hề trực tiếp nói bằng lời ('như muốn nói rằng...', 'hệt như thể thốt lên...'). Mẫu câu này đóng vai trò trạng từ bổ nghĩa cho động từ theo sau.",
@@ -14555,7 +15875,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_と言わんばかりの_211": {
+  "ja_n1_と言わんばかりの_211": {
     "title": "～と言わんばかりの + Danh từ (～to iwan bakari no Noun)",
     "shortExplanation": "Bổ nghĩa cho danh từ theo sau, diễn tả cử chỉ, ánh mắt, vẻ mặt như muốn nói lên điều gì; 'như muốn nói rằng...', 'như thể thốt lên...'.",
     "longExplanation": "Mẫu ngữ pháp '～と言わんばかりの + Danh từ' là dạng bổ nghĩa cho danh từ của '～と言わんばかりに'. Nó dùng để miêu tả trực tiếp các danh từ chỉ biểu cảm, ánh mắt, nụ cười hay phong thái (như 笑顔, 視線, 態度, 姿...) toát lên một thông điệp hay cảm xúc mãnh liệt như thể đang muốn thốt lên bằng lời ('nụ cười như muốn reo lên...', 'ánh mắt như muốn nói...').",
@@ -14575,7 +15895,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ながらに_212": {
+  "ja_n1_ながらに_212": {
     "title": "～ながらに (～nagara ni)",
     "shortExplanation": "Diễn tả trạng thái giữ nguyên vẹn như lúc ban đầu hoặc trong một tình trạng nhất định; 'giữ nguyên...', 'từ khi...', 'trong...'.",
     "longExplanation": "Mẫu ngữ pháp '～ながらに' (thường gặp ở dạng '～ながらにして') là cách diễn đạt trang trọng trong văn viết, dùng để diễn tả một trạng thái, tính chất vốn có được giữ nguyên vẹn, không thay đổi từ một thời điểm bắt đầu hoặc đang trong một trạng thái cảm xúc, tâm thế cụ thể nào đó. Mẫu này chủ yếu đi kèm với một số danh từ hoặc động từ cố định tạo thành các quán dụng ngữ như: '生まれながらに' (từ lúc lọt lòng, bẩm sinh), '涙ながらに' (trong nước mắt, giàn giụa nước mắt), '昔ながらに' (y như ngày xưa, nguyên vẹn nét cổ truyền), '子供ながらに' (dù thân là con trẻ nhưng...).",
@@ -14595,7 +15915,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ながらの_213": {
+  "ja_n1_ながらの_213": {
     "title": "～ながらの + Danh từ (〜nagara no Noun)",
     "shortExplanation": "Bổ nghĩa cho danh từ phía sau để diễn tả hành động hay trạng thái diễn ra đồng thời; 'vừa... vừa...', 'trong lúc...'.",
     "longExplanation": "Mẫu ngữ pháp '～ながらの' kết hợp với động từ để tạo thành cụm bổ nghĩa cho danh từ phía sau, diễn tả hai hành động hoặc trạng thái diễn ra song song cùng một lúc. Mẫu này thường dịch là 'vừa làm việc này vừa làm việc kia' hoặc 'tiến hành việc này trong khi đang làm việc kia' (ví dụ: 'テレビを見ながらの夕食' nghĩa là 'bữa tối vừa ăn vừa xem ti vi').",
@@ -14615,7 +15935,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ながらも_214": {
+  "ja_n1_ながらも_214": {
     "title": "～ながらも (〜nagara mo)",
     "shortExplanation": "Diễn tả sự đối lập, tương phản giữa hai vế; 'dù... nhưng...', 'tuy... nhưng...'.",
     "longExplanation": "Mẫu ngữ pháp '～ながらも' (N1) được dùng để liên kết hai vế có tính chất tương phản, nhấn mạnh rằng dù trong tình trạng hay hoàn cảnh ở vế trước, kết quả hay hành động ở vế sau lại diễn ra khác hẳn so với điều thông thường người ta dự đoán hay kỳ vọng ('tuy... nhưng...', 'mặc dù... thế nhưng...'). Có thể đi với động từ, tính từ hoặc danh từ.",
@@ -14635,7 +15955,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なくはない_215": {
+  "ja_n1_なくはない_215": {
     "title": "～なくはない (〜naku wa nai)",
     "shortExplanation": "Phủ định kép diễn tả ý khẳng định dè dặt, e dè; 'không phải là không...', 'cũng có thể... nhưng...'.",
     "longExplanation": "Mẫu ngữ pháp '～なくはない' sử dụng hai lần phủ định để biểu thị sự khẳng định một cách nhẹ nhàng, dè dặt hoặc miễn cưỡng. Mẫu câu này ám chỉ rằng sự việc không hẳn là hoàn toàn bất khả thi hay hoàn toàn không có, nhưng người nói không dám khẳng định chắc chắn hoặc không cảm thấy tự tin 100% ('không phải là không thể...', 'cũng không hẳn là không...').",
@@ -14655,7 +15975,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_なくもない_216": {
+  "ja_n1_なくもない_216": {
     "title": "～なくもない (〜naku mo nai)",
     "shortExplanation": "Biểu thị khả năng hoặc sự cân nhắc một cách dè dặt; 'cũng không hẳn là không...', 'không phải là không thể...'.",
     "longExplanation": "Mẫu ngữ pháp '～なくもない' là cách nói phủ định kép thể hiện sự đồng tình, khả năng hoặc xu hướng một cách ngập ngừng, e dè. Mẫu này ngụ ý rằng tuy điều đó không phải là lựa chọn tối ưu hay chắc chắn nhất, nhưng người nói vẫn thấy có thể chấp nhận được, không loại trừ khả năng thực hiện ('cũng không phải là không xem xét...', 'cũng có thể tính tới...').",
@@ -14675,7 +15995,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ならなりに_217": {
+  "ja_n1_ならなりに_217": {
     "title": "～なら～なりに",
     "shortExplanation": "Biểu thị sự tương xứng, phù hợp với điều kiện hoặc thân phận đó; 'nếu là... thì sẽ theo cách của...'.",
     "longExplanation": "Mẫu ngữ pháp '～なら～なりに' lặp lại cùng một danh từ hoặc tính từ, dùng để diễn tả rằng tuy ở trong điều kiện hay hoàn cảnh đó (thường là có hạn chế hoặc đặc thù), đối tượng vẫn có được phong cách, nét hay hoặc sự nỗ lực tương xứng, phù hợp với hoàn cảnh riêng của mình ('nếu đã là... thì sẽ có cái hay/cách làm theo kiểu của...'). Mang sắc thái tích cực chấp nhận và trân trọng thực tại.",
@@ -14695,7 +16015,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_には及ばない_218": {
+  "ja_n1_には及ばない_218": {
     "title": "～には及ばない (〜ni wa oyobanai)",
     "shortExplanation": "Diễn tả không cần thiết phải làm đến mức như vậy; 'không cần thiết phải...', 'không đến mức phải...'.",
     "longExplanation": "Mẫu ngữ pháp '～には及ばない' (N1) được dùng để biểu thị rằng một hành động, nỗ lực hay sự lo lắng nào đó là không cần thiết, làm như vậy là thái quá hoặc không đáng phải bỏ công sức đến mức đó ('không cần phải...', 'chưa đến mức phải...'). Thường dùng để khuyên nhủ hoặc nhận định khách quan về mức độ của hành động.",
@@ -14715,7 +16035,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に堪えない_219": {
+  "ja_n1_に堪えない_219": {
     "title": "～に堪えない (～ni taenai)",
     "shortExplanation": "Diễn tả tình trạng tồi tệ, dở tệ đến mức không thể chịu đựng nổi; 'không thể chịu nổi', 'không nỡ nhìn/nghe', 'không đáng...'.",
     "longExplanation": "Mẫu ngữ pháp '～に堪えない' (N1) được dùng khi một sự vật, hiện tượng quá dở, quá phản cảm, vụng về hoặc bi thương đến mức người khác không thể chịu đựng nổi việc chứng kiến, lắng nghe hay đọc nó ('không thể chịu nổi', 'không nỡ nghe/xem'). Thường cố định đi với các động từ tri giác như '見る' (xem), '聞く' (nghe), '読む' (đọc).",
@@ -14735,7 +16055,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に堪える_220": {
+  "ja_n1_に堪える_220": {
     "title": "～に堪える (～ni taeru)",
     "shortExplanation": "Diễn tả đối tượng có chất lượng tốt, đủ giá trị đáng để thưởng thức hay đánh giá; 'đáng để...', 'xứng đáng...'.",
     "longExplanation": "Mẫu ngữ pháp '～に堪える' là dạng khẳng định tương phản với '～に堪えない'. Cấu trúc này dùng để khẳng định một tác phẩm hay đối tượng đạt chất lượng tốt, có chiều sâu hoặc giá trị thỏa đáng để người ta xem, nghe, đọc, thưởng thức hay phê bình ('đáng để...', 'bõ công...'). Thường đi với các động từ tri giác và thưởng thức như '見る', '聞く', '読む', '鑑賞する', '評価する'.",
@@ -14755,7 +16075,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に耐える_221": {
+  "ja_n1_に耐える_221": {
     "title": "～に耐える (～ni taeru)",
     "shortExplanation": "Diễn tả sức chịu đựng gian khổ, áp lực hoặc ngoại lực mạnh mẽ; 'chịu đựng được...', 'chống chịu được...'.",
     "longExplanation": "Mẫu ngữ pháp '～に耐える' (chữ Hán là 耐 - nại trong nhẫn nại, chịu đựng) dùng để diễn tả khả năng kiên trì chịu đựng nỗi đau đớn, khổ cực, áp lực tinh thần hoặc sức bền chống chịu các tác động vật lý, ngoại lực khắc nghiệt (như động đất, bão gió, tải trọng lớn) mà không bị suy sụp hay hư hỏng ('chịu đựng được...', 'chống chọi được...').",
@@ -14775,7 +16095,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に至った_222": {
+  "ja_n1_に至った_222": {
     "title": "～に至った (〜ni itatta)",
     "shortExplanation": "Diễn tả kết cục hoặc giai đoạn cuối cùng sau một quá trình diễn tiến; 'đã đi đến...', 'dẫn tới...'.",
     "longExplanation": "Mẫu ngữ pháp '～に至った' (dạng quá khứ của '～に至る') dùng để biểu thị kết cục, kết luận hoặc mức độ trạng thái cuối cùng đạt được sau một chuỗi diễn biến, quá trình hoặc sự việc trải qua nhiều giai đoạn ('đã dẫn tới...', 'đã đi đến mức...'). Thường biểu thị một bước ngoặt trọng đại, một kết quả mang tính bước ngoặt hoặc một tình thế nghiêm trọng.",
@@ -14795,7 +16115,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に越したことはない_223": {
+  "ja_n1_に越したことはない_223": {
     "title": "～に越したことはない (〜ni koshita koto wa nai)",
     "shortExplanation": "Khẳng định một điều gì đó là lý tưởng nhất, tốt nhất; 'không gì tốt bằng...', '...vẫn là tốt nhất'.",
     "longExplanation": "Mẫu ngữ pháp '～に越したことはない' (N1) bắt nguồn từ động từ '越す' (vượt qua), mang nghĩa đen là 'không có gì vượt qua được điều này'. Cấu trúc này dùng để nhấn mạnh rằng một phương án, hành động hay trạng thái nào đó là sự lựa chọn tối ưu, an toàn và hoàn hảo nhất ('không gì tốt bằng...', 'nếu được như vậy thì không có gì bằng', '...vẫn là yên tâm nhất').",
@@ -14815,7 +16135,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_に難くない_224": {
+  "ja_n1_に難くない_224": {
     "title": "～に難くない (～ni katakunai)",
     "shortExplanation": "Diễn tả việc có thể dễ dàng suy đoán, thấu hiểu trong văn phong trang trọng; 'không khó để...', 'dễ dàng...'.",
     "longExplanation": "Mẫu ngữ pháp '～に難くない' (đọc là にかたくない) là cách diễn đạt trang trọng trong văn viết hoặc phát biểu chính thức, dùng để diễn tả rằng dựa trên tình hình hay bối cảnh khách quan, người nói hoàn toàn có thể dễ dàng hình dung, thấu hiểu, cảm nhận được tâm trạng hay lý do của sự việc ('không khó để tưởng tượng/thấu hiểu/cảm nhận...'). Thường đi kèm với các danh từ hoặc động từ như '想像' (tưởng tượng), '理解' (thấu hiểu), '察する' (cảm thông/đoán biết).",
@@ -14835,7 +16155,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_のは_225": {
+  "ja_n1_のは_225": {
     "title": "～のは + Danh từ + ぐらいのものだ (〜no wa Noun gurai no mono da)",
     "shortExplanation": "Diễn tả chỉ duy nhất đối tượng đó là phù hợp hoặc ngoại lệ; 'chỉ có...', 'chẳng qua chỉ là...'.",
     "longExplanation": "Mẫu ngữ pháp '～のは + Danh từ + ぐらいのものだ' (hoặc くらいのものだ) được dùng để nhấn mạnh tính duy nhất hoặc hạn định cùng cực của một sự việc, ngụ ý rằng ngoại trừ danh từ được nêu ra thì không còn cái nào khác thỏa mãn hoặc đáng kể ('thứ duy nhất... chỉ là...', 'cùng lắm chỉ có thể coi là...'). Thường mang sắc thái đánh giá tiêu cực, bất đắc dĩ hoặc hạ thấp mức độ sự việc.",
@@ -14855,7 +16175,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ばものを_226": {
+  "ja_n1_ばものを_226": {
     "title": "～ば～ものを (～ba～mono o)",
     "shortExplanation": "Diễn tả sự tiếc nuối, hối hận hoặc trách cứ về một cơ hội đã bỏ lỡ; 'giá mà... thì đã... rồi'.",
     "longExplanation": "Mẫu ngữ pháp '～ば～ものを' (N1) là cách nói biểu thị sự nuối tiếc sâu sắc, thất vọng hoặc gián tiếp trách móc về một kết quả không như mong đợi. Vế trước đưa ra một giả thiết giả định trái với thực tế trong quá khứ, vế sau dùng 'ものを' để diễn đạt rằng đáng lẽ sự việc đã có thể diễn ra tốt đẹp, thế nhưng trên thực tế lại trái ngược ('giá mà... thì đã... đằng này lại...', 'nếu chịu... thì đâu đến nỗi...').",
@@ -14875,7 +16195,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_びた_227": {
+  "ja_n1_びた_227": {
     "title": "～びた (～bita)",
     "shortExplanation": "Hậu tố diễn tả ai đó hoặc sự vật toát lên vẻ, mang vẻ hoặc đượm nét của một tính chất, dáng dấp nào đó; 'mang vẻ...', 'có vẻ...', 'đượm vẻ...'.",
     "longExplanation": "Hậu tố '～びた' (dạng liên thể bổ nghĩa cho danh từ của động từ '～びる') gắn sau danh từ hoặc gốc tính từ để tạo thành cụm bổ nghĩa cho danh từ phía sau, diễn tả cảm giác một người hay sự vật toát lên vẻ, mang đậm phong thái, sắc thái hoặc tính chất ấy. Các cách kết hợp thông dụng gồm: '大人びた' (ra dáng người lớn, chững chạc), '古びた' (cũ kỹ, đượm màu thời gian), '田舎びた' (đượm vẻ chân quê, mang không khí làng quê).",
@@ -14895,7 +16215,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_びる_228": {
+  "ja_n1_びる_228": {
     "title": "～びる (〜biru)",
     "shortExplanation": "Hậu tố động từ hóa diễn tả việc trở nên giống hoặc mang dáng dấp, tính chất của một sự vật; 'ra dáng...', 'mang vẻ...', 'nhuốm vẻ...'.",
     "longExplanation": "Hậu tố '～びる' gắn vào danh từ hoặc gốc tính từ để tạo thành động từ nhóm hai, diễn tả sự biến đổi hoặc biểu hiện mang sắc thái, dáng vẻ hay phong cách của danh từ hoặc tính từ đó ('trở nên ra dáng...', 'toát lên phong thái...'). Thường dùng ở dạng '～びている' để diễn tả trạng thái. Điển hình gồm: '大人びる' (trở nên chững chạc, ra dáng người lớn), '古びる' (trở nên cũ kỹ, rêu phong), '田舎びる' (đượm vẻ quê mùa, mộc mạc).",
@@ -14915,7 +16235,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ぶった_229": {
+  "ja_n1_ぶった_229": {
     "title": "～ぶった (～butta)",
     "shortExplanation": "Dạng quá khứ hoặc định ngữ của '～ぶる', diễn tả thái độ ra vẻ, làm bộ làm tịch như thế nào đó; 'tỏ vẻ...', 'ra vẻ...', 'làm bộ...'.",
     "longExplanation": "'～ぶった' là dạng quá khứ hoặc dạng bổ nghĩa cho danh từ của động từ '～ぶる'. Mẫu câu này mang sắc thái phê phán, mỉa mai một ai đó cố tình làm bộ, tỏ ra vẻ bản thân có phẩm chất, địa vị hay tính cách nào đó trong khi thực chất không phải như vậy. Thường gặp trong các cụm như '偉そうぶった' (tỏ vẻ bề trên, kiêu căng hợm hĩnh), '大人ぶった' (tỏ vẻ người lớn), 'いい子ぶった' (ra vẻ con ngoan trò giỏi, làm bộ thánh thiện).",
@@ -14935,7 +16255,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ぶって_230": {
+  "ja_n1_ぶって_230": {
     "title": "～ぶって (〜butte)",
     "shortExplanation": "Dạng thể て của '～ぶる', diễn tả hành vi giả vờ, làm bộ làm tịch rồi thực hiện hành động khác; 'ra vẻ...', 'tỏ vẻ...'.",
     "longExplanation": "'～ぶって' là thể て của động từ '～ぶる', dùng để nối tiếp vế câu, miêu tả hành vi làm bộ, giả vờ như thế nào đó rồi thực hiện hành động tiếp theo. Mẫu này thường mang sắc thái chê trách, mỉa mai sự khoe khoang, ngạo mạn hay giả vờ ngây thơ của đối phương. Các cách diễn đạt thường gặp gồm '知ったかぶって' (tỏ vẻ biết tuốt), '偉そうぶって' (tỏ vẻ kẻ cả, hợm hĩnh), '大人ぶって' (ra vẻ người lớn).",
@@ -14955,7 +16275,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ぶり_231": {
+  "ja_n1_ぶり_231": {
     "title": "～ぶり (〜buri)",
     "shortExplanation": "Đi sau từ chỉ thời gian để diễn tả một sự việc lặp lại sau một khoảng thời gian dài gián đoạn; 'sau...', 'suốt... mới lại...'.",
     "longExplanation": "Hậu tố '～ぶり' gắn trực tiếp sau từ chỉ khoảng thời gian (như năm, tháng, ngày, tuần) để biểu thị rằng đã trải qua một khoảng thời gian dài như thế kể từ lần cuối cùng một hành động hay hiện tượng xảy ra. Thường mang sắc thái nhấn mạnh sự bồi hồi hoặc khoảng cách thời gian gián đoạn ('sau ngần ấy thời gian mới lại làm việc gì đó', 'lần đầu tiên sau...').",
@@ -14975,7 +16295,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ぶる_232": {
+  "ja_n1_ぶる_232": {
     "title": "～ぶる (〜buru)",
     "shortExplanation": "Hậu tố động từ mang nghĩa chê bai, diễn tả thái độ làm bộ, ra vẻ có phẩm chất hay vị thế mà thực chất mình không có; 'ra vẻ...', 'làm bộ...', 'tỏ vẻ...'.",
     "longExplanation": "Hậu tố '～ぶる' gắn sau danh từ hoặc gốc tính từ để tạo thành động từ nhóm một, diễn tả ai đó đang cố tình làm bộ, tỏ ra vẻ bản thân có học thức, phẩm hạnh, phong thái hay địa vị cao sang nào đó trong khi thực chất không phải vậy. Mẫu này luôn mang sắc thái tiêu cực, phê phán sự giả tạo, kênh kiệu hay làm điệu của đối phương ('học đòi làm...', 'làm bộ làm tịch').",
@@ -14995,7 +16315,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_までだ_233": {
+  "ja_n1_までだ_233": {
     "title": "～までだ (～made da)",
     "shortExplanation": "Biểu thị giới hạn phạm vi hoặc mức độ tối đa; 'chỉ đến...', 'chỉ dừng lại ở...', 'không hơn'.",
     "longExplanation": "Mẫu ngữ pháp '～までだ' dùng để giới hạn phạm vi, thời hạn hoặc mức độ của một sự việc, nhấn mạnh rằng sự việc đó chỉ dừng lại ở ranh giới ấy chứ tuyệt đối không vượt quá ('chỉ dừng ở mức...', 'chỉ đến mức đó mà thôi'). Ngoài ra trong các văn cảnh khác, khi đi với động từ, nó còn có nghĩa là 'chỉ còn cách...' hoặc 'chỉ làm thế thôi (không có ý gì khác)', nhưng ở cấu trúc này, nó nhấn mạnh ranh giới giới hạn.",
@@ -15015,7 +16335,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_もなんでもない_234": {
+  "ja_n1_もなんでもない_234": {
     "title": "～もなんでもない (〜mo nandemonai)",
     "shortExplanation": "Bác bỏ hoàn toàn mức độ hoặc tầm quan trọng của một việc; 'chẳng có gì to tát', 'chẳng nghĩa lý gì', 'không là cái gì cả'.",
     "longExplanation": "Mẫu ngữ pháp '～もなんでもない' dùng để phủ nhận mạnh mẽ giá trị, ý nghĩa hoặc mức độ ảnh hưởng của một sự việc, tính chất hay danh phận nào đó. Người nói biểu thị thái độ xem thường hoặc cho rằng điều đó chẳng có gì đáng để bận tâm, không có gì là ghê gớm hay to tát ('chẳng có gì quan trọng', 'chẳng đáng bận tâm một chút nào').",
@@ -15035,7 +16355,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_ものとして_235": {
+  "ja_n1_ものとして_235": {
     "title": "～ものとして (～mono to shite)",
     "shortExplanation": "Đặt ra một giả định hoặc tiền đề để tiến hành hành động; 'coi như là...', 'xem như...', 'trên cơ sở giả định là...'.",
     "longExplanation": "Mẫu ngữ pháp '～ものとして' dùng để đưa ra một điều kiện, quy ước hoặc giả định làm căn cứ, tiền đề cho một phán đoán, hành động hay quyết định tiếp theo ('coi như sự việc đó đã hoặc sẽ xảy ra', 'với tiền đề là...'). Người nói thiết lập một giả định tạm thời để xử lý công việc một cách chủ động.",
@@ -15055,7 +16375,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_んがために_236": {
+  "ja_n1_んがために_236": {
     "title": "～んがために (〜n ga tame ni)",
     "shortExplanation": "Lối nói trang trọng trong văn viết biểu thị mục đích lớn lao, quyết tâm cao độ; 'để nhằm...', 'với mục đích để...', 'cốt để...'.",
     "longExplanation": "Mẫu ngữ pháp '～んがために' (hoặc '～んがため') là cách diễn đạt cổ kính, trang trọng mang tính văn viết cao, dùng để nhấn mạnh mục đích hoặc ý chí quyết tâm mạnh mẽ để đạt được một nguyện vọng hay lý tưởng nào đó ('cốt để...', 'chính vì muốn... mà sẵn sàng dốc sức'). Vế sau thường là những hành động có chủ đích và đòi hỏi nhiều nỗ lực to lớn. Động từ chia ở thể phủ định cổ (thể 未然形 ＋ ん, riêng 'する' biến thành 'せん').",
@@ -15075,7 +16395,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_んばかりに_237": {
+  "ja_n1_んばかりに_237": {
     "title": "～んばかりに (〜n bakari ni)",
     "shortExplanation": "Diễn tả trạng thái sống động như thể sắp sửa làm gì hoặc như muốn nói ra điều gì; 'như thể sắp...', 'như muốn nói rằng...'.",
     "longExplanation": "Mẫu ngữ pháp '～んばかりに' (hoặc '～んばかりの ＋ Danh từ') là cách diễn đạt văn chương giàu hình ảnh, dùng để miêu tả một trạng thái, biểu cảm hoặc cử chỉ mãnh liệt tới mức làm cho người nhìn có cảm tưởng như sự việc đó sắp sửa bùng nổ, hoặc như muốn truyền tải một thông điệp gì đó dù không nói ra thành lời ('như thể chực khóc', 'như muốn nói là...'). Động từ chia ở thể 未然形 (bỏ ない) ＋ ん ＋ ばかりに (riêng 'する' thành 'せんばかりに').",
@@ -15095,7 +16415,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_差し支えない_238": {
+  "ja_n1_差し支えない_238": {
     "title": "～差し支えない (〜sashitsukaenai)",
     "shortExplanation": "Cách nói lịch sự, trang trọng biểu thị không có trở ngại hay phiền hà gì; 'không có trở ngại gì', 'hoàn toàn ổn', 'không sao cả'.",
     "longExplanation": "Mẫu ngữ pháp '～差し支えない' (dạng kính ngữ là '～差し支えありません / ～差し支えないです') là cách diễn đạt lịch sự thường dùng trong giao tiếp công việc hoặc bối cảnh trang trọng, biểu thị rằng một việc gì đó được cho phép, không gây ra sự bất tiện, vướng mắc hay cản trở nào ('không có vấn đề gì', 'vẫn ổn thỏa'). Thường kết hợp ở dạng '～ても差し支えない' (dù có... thì cũng không hề gì).",
@@ -15115,7 +16435,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_折に_239": {
+  "ja_n1_折に_239": {
     "title": "～折に (〜ori ni)",
     "shortExplanation": "Cách nói trang trọng biểu thị thời điểm hoặc cơ hội diễn ra một sự việc; 'vào dịp...', 'nhân dịp...', 'khi...'.",
     "longExplanation": "Mẫu ngữ pháp '～折に' (hoặc '～折には / ～折の') là cách diễn đạt trang trọng, lịch thiệp trong thư tín hoặc văn viết, tương đương với '～ときに' (khi, vào lúc). Mẫu này dùng để chỉ một thời điểm, giai đoạn hoặc cơ hội mà một sự việc nào đó xảy ra ('vào dịp...', 'nhân cơ hội...', 'trong lúc...').",
@@ -15135,7 +16455,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_極まりない_240": {
+  "ja_n1_極まりない_240": {
     "title": "～極まりない (〜kiwamarinai)",
     "shortExplanation": "Lối nói trang trọng biểu thị mức độ cực điểm, tột cùng (thường dùng cho nghĩa tiêu cực); 'vô cùng...', 'hết sức...', 'cực kỳ...'.",
     "longExplanation": "Mẫu ngữ pháp '～極まりない' là cách diễn đạt mang tính văn viết trang trọng, dùng để nhấn mạnh một trạng thái, tính chất đã lên đến đỉnh điểm hoặc cùng cực, không còn mức độ nào cao hơn được nữa ('vô cùng...', 'cực kỳ...', 'không sao tả xiết'). Mẫu này phần lớn dùng với các tính từ mang nghĩa tiêu cực (như vô lễ, nguy hiểm, mất vệ sinh, thiếu ý thức...) để bày tỏ sự phê phán hay bất bình mạnh mẽ.",
@@ -15155,7 +16475,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_極まる_241": {
+  "ja_n1_極まる_241": {
     "title": "～極まる (〜kiwamaru)",
     "shortExplanation": "Lối nói trang trọng biểu thị tính chất hay trạng thái đạt tới đỉnh điểm, tột cùng (thường là nghĩa tiêu cực); 'hết sức...', 'vô cùng...', 'cực kỳ...'.",
     "longExplanation": "Mẫu ngữ pháp '～極まる' là cách diễn đạt văn viết cổ kính, đồng nghĩa với '～極まりない', dùng để nhấn mạnh tính chất hay mức độ đã lên đến đỉnh điểm cao nhất ('hết sức...', 'vô cùng...'). Mẫu này thường đi liền với các tính từ đuôi な mang tính quán dụng cố định như '失礼極まる' (hết sức vô phép), '非常識極まる' (vô cùng phi lý, thiếu ý thức), '無責任極まる' (hết sức vô trách nhiệm), '遺憾極まる' (vô cùng đáng tiếc).",
@@ -15175,7 +16495,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_足りない_242": {
+  "ja_n1_足りない_242": {
     "title": "～足りない (～tarinai)",
     "shortExplanation": "Diễn tả sự thiếu hụt, không đầy đủ về số lượng, mức độ hay năng lực; 'không đủ', 'thiếu...'.",
     "longExplanation": "Mẫu '～足りない' là thể phủ định của động từ '足りる' (đủ, đáp ứng đủ), dùng để biểu thị số lượng, thời gian, khả năng, chi tiết hoặc yếu tố nào đó chưa đạt tới mức cần thiết, còn thiếu sót hoặc chưa thỏa đáng ('không đủ...', 'thiếu...'). Cấu trúc này thường đi kèm trợ từ 'が' đứng trước hoặc đứng độc lập làm vị ngữ sau chủ ngữ/tân ngữ.",
@@ -15195,7 +16515,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_足る_243": {
+  "ja_n1_足る_243": {
     "title": "～足る + Danh từ (〜taru Noun)",
     "shortExplanation": "Bổ nghĩa cho danh từ phía sau để diễn tả sự vật, sự việc hoàn toàn xứng đáng hoặc có đủ phẩm chất/giá trị để làm gì; 'đáng để...', 'xứng đáng để...'.",
     "longExplanation": "Mẫu ngữ pháp cổ mang tính văn viết trang trọng '～に足る + Danh từ' (thường gặp dưới dạng 'Danh từ / Động từ thể từ điển + に足る + Danh từ') biểu thị rằng một đối tượng có đầy đủ tư cách, phẩm chất hoặc giá trị tương xứng để làm điều gì đó hoặc nhận được sự đánh giá đó ('xứng đáng để...', 'đủ giá trị để...'). Cách dùng này mang sắc thái trang trọng, khác với động từ khẩu ngữ thông thường '足りる'. Cụm từ thường gặp gồm '信頼に足る' (đáng tin cậy), '読むに足る' (đáng đọc), '検討に足る' (đáng để xem xét).",
@@ -15215,7 +16535,7 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       }
     ]
   },
-  "ja_限りだ_244": {
+  "ja_n1_限りだ_244": {
     "title": "～限りだ (〜kagiri da)",
     "shortExplanation": "Biểu thị cảm xúc, tâm trạng hoặc sự xúc động lên đến tột cùng của người nói; 'vô cùng...', 'hết sức...', 'thật là...'.",
     "longExplanation": "Mẫu ngữ pháp '～限りだ' (N1) được dùng để diễn tả cảm xúc, tâm trạng chủ quan của người nói đạt đến mức độ cao nhất, tột cùng ('vô cùng...', 'hết sức...', 'không gì bằng'). Cấu trúc này chủ yếu kết hợp với các tính từ hoặc danh từ chỉ cảm xúc, tâm lý (như 嬉しい, 悲しい, 羨ましい, 幸せ, 驚き...) để nhấn mạnh mức độ mãnh liệt của cảm xúc trước một sự việc, hoàn cảnh cụ thể.",
@@ -15232,2119 +16552,6 @@ export const GRAMMAR_JA_VI: Record<string, GrammarTranslation> = {
       },
       {
         "translation": "Đã thi đỗ kỳ thi rồi, tôi cảm thấy nhẹ nhõm vô cùng."
-      }
-    ]
-  },
-  "en_a1_01": {
-    "title": "am / is / are - Các dạng của động từ to be ở thì hiện tại",
-    "shortExplanation": "Động từ 'to be' thì hiện tại: I đi với am; he/she/it đi với is; you/we/they đi với are; mang nghĩa 'thì, là, ở'.",
-    "longExplanation": "'To be' là động từ cơ bản và quan trọng nhất trong tiếng Anh, mang nghĩa là 'thì, là, ở' hoặc dùng để liên kết chủ ngữ với tính từ, danh từ chỉ đặc điểm, trạng thái hay nghề nghiệp. Ở thì hiện tại đơn, 'to be' có ba dạng chia theo chủ ngữ:\n• 'am': Chỉ đi với đại từ ngôi thứ nhất số ít 'I'.\n• 'is': Đi với ngôi thứ ba số ít (he, she, it, danh từ số ít hoặc danh từ không đếm được).\n• 'are': Đi với ngôi thứ hai và các ngôi số nhiều (you, we, they, danh từ số nhiều).",
-    "formation": "Chủ ngữ + am / is / are (+ Danh từ / Tính từ / Cụm giới từ)",
-    "examples": [
-      {
-        "translation": "Tôi đang đói."
-      },
-      {
-        "translation": "Cô ấy là bác sĩ."
-      },
-      {
-        "translation": "Họ đã sẵn sàng."
-      }
-    ]
-  },
-  "en_a1_02": {
-    "title": "Phủ định của động từ to be: am not / isn't / aren't",
-    "shortExplanation": "Thêm 'not' vào sau động từ to be để tạo câu phủ định; dạng viết tắt: isn't (= is not), aren't (= are not), I'm not.",
-    "longExplanation": "Để tạo câu phủ định với động từ 'to be', ta chỉ cần thêm phó từ phủ định 'not' ngay sau 'am', 'is' hoặc 'are'. Trong giao tiếp thường ngày và văn phong thân mật, các dạng viết tắt thường được sử dụng:\n• is not → isn't\n• are not → aren't\n• am not → viết tắt thành I'm not (chú ý: trong tiếng Anh chuẩn không có dạng 'amn't').",
-    "formation": "Chủ ngữ + am / is / are + not (+ Danh từ / Tính từ)",
-    "examples": [
-      {
-        "translation": "Tôi không phải là học sinh."
-      },
-      {
-        "translation": "Anh ấy không thấy mệt."
-      },
-      {
-        "translation": "Chúng tôi chưa sẵn sàng."
-      }
-    ]
-  },
-  "en_a1_03": {
-    "title": "Câu hỏi với động từ to be: Am I? / Is she? / Are they?",
-    "shortExplanation": "Đảo động từ to be lên trước chủ ngữ để tạo câu hỏi Có/Không; với câu hỏi có từ để hỏi: Từ để hỏi + to be + chủ ngữ.",
-    "longExplanation": "Để tạo câu hỏi với động từ 'to be', ta đảo động từ 'am / is / are' lên đứng trước chủ ngữ (Ví dụ: She is → Is she?).\n• Câu hỏi Có/Không (Yes/No questions): Am / Is / Are + Chủ ngữ...?\n• Câu hỏi có từ để hỏi: Từ để hỏi (Where, What, Who,...) + am / is / are + Chủ ngữ...?\n• Câu trả lời ngắn: Yes, + Đại từ + to be. / No, + Đại từ + to be + not.",
-    "formation": "Am / Is / Are + Chủ ngữ...? hoặc Từ để hỏi + am / is / are + Chủ ngữ...?",
-    "examples": [
-      {
-        "translation": "Bạn có phải là học sinh không?"
-      },
-      {
-        "translation": "Cái đó có đắt không?"
-      },
-      {
-        "translation": "Họ đang ở đâu?"
-      }
-    ]
-  },
-  "en_a1_04": {
-    "title": "Câu trả lời ngắn: Yes, I am. / No, she isn't.",
-    "shortExplanation": "Trả lời ngắn với to be: câu khẳng định bắt buộc dùng dạng đầy đủ (Yes, I am; không viết tắt 'Yes, I'm'); câu phủ định có thể viết tắt.",
-    "longExplanation": "Khi trả lời các câu hỏi Yes/No với động từ 'to be', ta sử dụng câu trả lời ngắn gồm: Yes/No + đại từ nhân xưng + động từ to be.\n• Với câu trả lời khẳng định (Yes): Bắt buộc dùng dạng đầy đủ của to be, không được phép viết tắt (Đúng: Yes, I am. / Sai: Yes, I'm.; Đúng: Yes, she is. / Sai: Yes, she's.).\n• Với câu trả lời phủ định (No): Thông thường sử dụng dạng viết tắt (Ví dụ: No, I'm not. / No, she isn't. / No, they aren't.).",
-    "formation": "Khẳng định: Yes, + Đại từ + am / is / are. | Phủ định: No, + Đại từ + am not / isn't / aren't.",
-    "examples": [
-      {
-        "translation": "Cô ấy đã sẵn sàng chưa? — Vâng, cô ấy sẵn sàng rồi."
-      },
-      {
-        "translation": "Họ có phải là bạn của bạn không? — Không, họ không phải."
-      }
-    ]
-  },
-  "en_a1_05": {
-    "title": "Mạo từ bất định: a / an",
-    "shortExplanation": "Đứng trước danh từ đếm được số ít khi được nhắc đến lần đầu; 'a' đứng trước phát âm phụ âm, 'an' đứng trước phát âm nguyên âm.",
-    "longExplanation": "'a' và 'an' là mạo từ bất định, đặt trước danh từ đếm được số ít khi đối tượng đó chưa xác định hoặc được nhắc tới lần đầu tiên. Việc dùng 'a' hay 'an' phụ thuộc hoàn toàn vào âm thanh mở đầu của từ đứng liền sau, không dựa vào chữ cái viết:\n• Dùng 'a' trước từ bắt đầu bằng một phụ âm: a book, a cat, a university (bắt đầu bằng âm bán nguyên âm /juː/).\n• Dùng 'an' trước từ bắt đầu bằng một nguyên âm: an apple, an hour (âm 'h' câm, bắt đầu bằng nguyên âm /aʊ/), an honest person.\n• Không dùng 'a / an' trước danh từ số nhiều hoặc danh từ không đếm được.",
-    "formation": "a + từ bắt đầu bằng phụ âm / an + từ bắt đầu bằng nguyên âm + Danh từ đếm được số ít",
-    "examples": [
-      {
-        "translation": "Tôi đã nhìn thấy một con mèo trong vườn."
-      },
-      {
-        "translation": "Cô ấy là một kỹ sư."
-      },
-      {
-        "translation": "Việc đó đã mất một tiếng đồng hồ."
-      }
-    ]
-  },
-  "en_a1_06": {
-    "title": "Mạo từ xác định: the",
-    "shortExplanation": "Dùng trước danh từ khi cả người nói và người nghe đều biết rõ đối tượng đang được nói đến; dùng cho vật là duy nhất hoặc dạng so sánh nhất.",
-    "longExplanation": "'the' là mạo từ xác định trong tiếng Anh, có thể đứng trước cả danh từ số ít, số nhiều và danh từ không đếm được khi đối tượng đã được xác định cụ thể. Các trường hợp phổ biến dùng 'the':\n1. Đối tượng đã được nhắc đến trước đó: I saw a cat. The cat was black.\n2. Sự vật duy nhất trong vũ trụ hoặc tự nhiên: the sun (mặt trời), the moon (mặt trăng), the earth (trái đất).\n3. Rõ ràng qua ngữ cảnh nói chuyện: Close the window, please. (cửa sổ trong phòng).\n4. Đi kèm với tính từ so sánh nhất hoặc số thứ tự: the best, the biggest, the first.",
-    "formation": "the + Danh từ (số ít, số nhiều hoặc không đếm được)",
-    "examples": [
-      {
-        "translation": "Bộ phim mà chúng ta đã xem thật tuyệt vời."
-      },
-      {
-        "translation": "Bạn có thể chuyền cho tôi lọ muối được không?"
-      }
-    ]
-  },
-  "en_a1_07": {
-    "title": "Không dùng mạo từ (Mạo từ số không)",
-    "shortExplanation": "Không dùng mạo từ trước tên riêng, tên ngôn ngữ, môn thể thao, hoặc khi nói về danh từ mang tính khái quát chung.",
-    "longExplanation": "Trong tiếng Anh, có nhiều trường hợp danh từ không đi kèm bất kỳ mạo từ nào (a, an hay the). Các trường hợp điển hình gồm:\n• Tên riêng (người, địa danh, quốc gia): John, London, Russia, Vietnam.\n• Ngôn ngữ: English, Spanish, Vietnamese.\n• Môn thể thao và trò chơi: football, basketball, chess.\n• Thức ăn, đồ uống khi nói chung: I love coffee, She drinks milk.\n• Khái niệm trừu tượng chung chung: Life is short. Love is blind.\n• Danh từ số nhiều chỉ loài hoặc nhóm đối tượng nói chung: Dogs are friendly.",
-    "formation": "Động từ / Giới từ + Danh từ (không có mạo từ)",
-    "examples": [
-      {
-        "translation": "Cô ấy nói tiếng Tây Ban Nha."
-      },
-      {
-        "translation": "Anh ấy chơi bóng rổ mỗi ngày."
-      }
-    ]
-  },
-  "en_a1_08": {
-    "title": "Thì hiện tại đơn - Câu khẳng định",
-    "shortExplanation": "Diễn tả thói quen, chân lý, sự thật hiển nhiên. Khi chủ ngữ là ngôi thứ ba số ít, động từ thêm đuôi -s hoặc -es.",
-    "longExplanation": "Thì hiện tại đơn (Present Simple) được dùng để diễn tả thói quen, hành động lặp đi lặp lại thường xuyên, sự thật hiển nhiên hoặc chân lý khách quan.\n• Quy tắc chia động từ:\n- Với chủ ngữ I / you / we / they và danh từ số nhiều: dùng động từ nguyên mẫu không chia.\n- Với chủ ngữ he / she / it và danh từ số ít (ngôi thứ ba số ít): thêm đuôi '-s' hoặc '-es' vào sau động từ.\n• Quy tắc thêm đuôi '-s / -es':\n- Đa số động từ: thêm '-s' (works, plays).\n- Động từ kết thúc bằng -o, -ch, -sh, -s, -ss, -x: thêm '-es' (goes, watches, washes).\n- Động từ kết thúc bằng một phụ âm + y: đổi '-y' thành '-ies' (study → studies, try → tries).",
-    "formation": "Chủ ngữ (I/you/we/they) + Động từ nguyên mẫu | Chủ ngữ (he/she/it) + Động từ thêm -s/-es",
-    "examples": [
-      {
-        "translation": "Tôi uống cà phê mỗi buổi sáng."
-      },
-      {
-        "translation": "Cô ấy làm việc trong một bệnh viện."
-      },
-      {
-        "translation": "Trái Đất quay quanh Mặt Trời."
-      }
-    ]
-  },
-  "en_a1_09": {
-    "title": "Thì hiện tại đơn - Câu phủ định: don't / doesn't",
-    "shortExplanation": "Dùng trợ động từ 'don't' hoặc 'doesn't' kết hợp với động từ nguyên mẫu không chia.",
-    "longExplanation": "Để tạo câu phủ định trong thì hiện tại đơn với động từ thường, ta mượn trợ động từ 'do / does' thêm 'not', theo sau luôn là động từ ở dạng nguyên mẫu:\n• Chủ ngữ I / you / we / they + don't (do not) + động từ nguyên mẫu.\n• Chủ ngữ he / she / it + doesn't (does not) + động từ nguyên mẫu.\nLưu ý quan trọng: Sau 'doesn't', động từ chính đã trở về dạng nguyên mẫu, không thêm -s hay -es nữa (Đúng: He doesn't like / Sai: He doesn't likes).",
-    "formation": "Chủ ngữ (I/you/we/they) + don't + Động từ nguyên mẫu | Chủ ngữ (he/she/it) + doesn't + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Tôi không ăn thịt."
-      },
-      {
-        "translation": "Anh ấy không nói tiếng Pháp."
-      },
-      {
-        "translation": "Họ không làm việc ở đây."
-      }
-    ]
-  },
-  "en_a1_10": {
-    "title": "Thì hiện tại đơn - Câu hỏi: Do you? / Does she?",
-    "shortExplanation": "Đảo trợ động từ Do hoặc Does lên trước chủ ngữ; với câu hỏi có từ để hỏi: Từ để hỏi + do/does + chủ ngữ + động từ nguyên mẫu.",
-    "longExplanation": "Để đặt câu hỏi trong thì hiện tại đơn với động từ thường, ta đảo trợ động từ 'Do' hoặc 'Does' lên trước chủ ngữ và động từ chính giữ ở dạng nguyên mẫu:\n• Câu hỏi Có/Không (Yes/No questions):\n- Do + I/you/we/they + động từ nguyên mẫu...?\n- Does + he/she/it + động từ nguyên mẫu...?\n• Câu hỏi có từ để hỏi (Wh-questions): Từ để hỏi (Where, What, When,...) + do / does + chủ ngữ + động từ nguyên mẫu...?",
-    "formation": "Do / Does + Chủ ngữ + Động từ nguyên mẫu...? hoặc Từ để hỏi + do / does + Chủ ngữ + Động từ nguyên mẫu...?",
-    "examples": [
-      {
-        "translation": "Bạn có nói tiếng Nga không?"
-      },
-      {
-        "translation": "Cô ấy có sống ở gần đây không?"
-      },
-      {
-        "translation": "Bạn làm việc ở đâu?"
-      }
-    ]
-  },
-  "en_a1_11": {
-    "title": "Động từ chỉ trạng thái (Stative verbs) - Không dùng ở thì tiếp diễn",
-    "shortExplanation": "Các động từ chỉ trạng thái, cảm xúc, nhận thức không được chia ở thì tiếp diễn (dùng 'I know', không dùng 'I am knowing').",
-    "longExplanation": "Động từ chỉ trạng thái (Stative verbs) là những động từ miêu tả trạng thái, cảm xúc, quá trình tư duy hoặc sự sở hữu thay vì một hành động thể chất. Các động từ này thông thường không được chia ở các thì tiếp diễn (-ing):\n• Nhận thức & Suy nghĩ: know (biết), believe (tin), understand (hiểu), remember (nhớ), forget (quên).\n• Cảm xúc & Nguyện vọng: love (yêu), hate (ghét), like (thích), want (muốn), need (cần), prefer (thích hơn).\n• Giác quan: see (nhìn thấy), hear (nghe thấy), smell (có mùi), taste (có vị).\n• Tồn tại & Sở hữu: belong (thuộc về), contain (chứa đựng), seem (dường như), appear (có vẻ).",
-    "formation": "Chủ ngữ + Động từ chỉ trạng thái ở thì đơn giản (không dùng dạng tiếp diễn -ing)",
-    "examples": [
-      {
-        "translation": "Tôi hiểu ý bạn. (Không dùng: I am understanding)"
-      },
-      {
-        "translation": "Cô ấy rất thích sô-cô-la. (Không dùng: is loving)"
-      }
-    ]
-  },
-  "en_a1_12": {
-    "title": "Đại từ nhân xưng: I, you, he, she, it, we, they",
-    "shortExplanation": "Chủ ngữ trong câu tiếng Anh bắt buộc phải có mặt; phân biệt đại từ làm chủ ngữ (I, you, he,...) và đại từ làm tân ngữ (me, you, him,...).",
-    "longExplanation": "Trong tiếng Anh, một câu hoàn chỉnh luôn bắt buộc phải có chủ ngữ rõ ràng (không thể lược bỏ đại từ chủ ngữ như trong tiếng Việt hay tiếng Nhật/Hàn).\n• Đại từ làm chủ ngữ (đứng trước động từ): I (tôi), you (bạn/các bạn), he (anh ấy), she (cô ấy), it (nó), we (chúng tôi), they (họ).\n• Đại từ làm tân ngữ (đứng sau động từ hoặc giới từ): me, you, him, her, it, us, them (Ví dụ: Tell him, help me, look at us).",
-    "formation": "Đại từ chủ ngữ + Động từ | Động từ / Giới từ + Đại từ tân ngữ",
-    "examples": [
-      {
-        "translation": "Cô ấy là giáo viên."
-      },
-      {
-        "translation": "Hãy nói cho anh ấy biết sự thật."
-      },
-      {
-        "translation": "Bạn có thể giúp tôi được không?"
-      }
-    ]
-  },
-  "en_a1_13": {
-    "title": "Tính từ sở hữu: my, your, his, her, its, our, their",
-    "shortExplanation": "Đứng trước danh từ để chỉ quyền sở hữu ('của tôi, của bạn,...'); hình thức không thay đổi theo số lượng của danh từ phía sau.",
-    "longExplanation": "Tính từ sở hữu (Possessive adjectives) đứng ngay trước danh từ để xác định ai là người sở hữu đối tượng đó:\n• my (của tôi), your (của bạn/các bạn), his (của anh ấy), her (của cô ấy), its (của nó), our (của chúng tôi), their (của họ).\n• Điểm lưu ý quan trọng: Phân biệt 'its' (tính từ sở hữu, không có dấu nháy đơn) và 'it's' (dạng viết tắt của it is hoặc it has).\n• Tính từ sở hữu không thay đổi hình thức dù danh từ theo sau là số ít hay số nhiều: my friend (một người bạn của tôi) / my friends (những người bạn của tôi).",
-    "formation": "Tính từ sở hữu (my / your / his / her / its / our / their) + Danh từ",
-    "examples": [
-      {
-        "translation": "Đây là điện thoại của tôi."
-      },
-      {
-        "translation": "Con chó của họ rất dễ thương."
-      },
-      {
-        "translation": "Con mèo bị thương ở bàn chân của nó."
-      }
-    ]
-  },
-  "en_a1_14": {
-    "title": "Danh từ số nhiều",
-    "shortExplanation": "Quy tắc thêm -s hoặc -es vào sau danh từ số ít; các biến đổi đuôi -y, -f/-fe và các trường hợp số nhiều bất quy tắc.",
-    "longExplanation": "Khi chuyển danh từ đếm được từ dạng số ít sang số nhiều trong tiếng Anh, ta áp dụng các quy tắc sau:\n• Quy tắc chung: Thêm '-s' vào sau danh từ (cat → cats, book → books).\n• Thêm '-es': Khi danh từ tận cùng bằng -s, -ss, -sh, -ch, -x, -o (box → boxes, watch → watches, tomato → tomatoes).\n• Tận cùng bằng 'nguyên âm + y': Thêm '-s' (boy → boys, day → days).\n• Tận cùng bằng 'phụ âm + y': Đổi y thành '-ies' (city → cities, baby → babies).\n• Tận cùng bằng '-f' hoặc '-fe': Đổi thành '-ves' (knife → knives, leaf → leaves, wife → wives).\n• Dạng số nhiều bất quy tắc: child → children, man → men, woman → women, tooth → teeth, foot → feet, mouse → mice, person → people, sheep → sheep, fish → fish.",
-    "formation": "Danh từ số ít + s / es / ies / ves (hoặc dạng biến đổi bất quy tắc)",
-    "examples": [
-      {
-        "translation": "một chiếc xe buýt → hai chiếc xe buýt"
-      },
-      {
-        "translation": "một đứa trẻ → nhiều đứa trẻ"
-      }
-    ]
-  },
-  "en_a1_15": {
-    "title": "Đại từ chỉ định: This / that / these / those",
-    "shortExplanation": "This/these dùng cho đối tượng ở gần; That/those dùng cho đối tượng ở xa; this/that đi với số ít, these/those đi với số nhiều.",
-    "longExplanation": "Các từ chỉ định trong tiếng Anh được dùng để chỉ rõ người hoặc vật dựa theo cự ly khoảng cách và số lượng:\n• 'this' (cái này / người này): Chỉ đối tượng số ít ở vị trí gần người nói.\n• 'these' (những cái này / những người này): Chỉ đối tượng số nhiều ở vị trí gần người nói.\n• 'that' (cái kia / người kia): Chỉ đối tượng số ít ở vị trí xa người nói hoặc sự việc vừa được nhắc đến.\n• 'those' (những cái kia / những người kia): Chỉ đối tượng số nhiều ở vị trí xa người nói.\nNgoài ra, chúng còn được dùng để chỉ thời gian: this week (tuần này), that year (năm đó).",
-    "formation": "This / That + Danh từ số ít (hoặc động từ số ít) | These / Those + Danh từ số nhiều (hoặc động từ số nhiều)",
-    "examples": [
-      {
-        "translation": "Đây là chiếc túi của tôi."
-      },
-      {
-        "translation": "Đôi giày đằng kia đắt tiền."
-      },
-      {
-        "translation": "Cái kia là cái gì vậy?"
-      }
-    ]
-  },
-  "en_a1_16": {
-    "title": "There is / There are - Diễn tả sự tồn tại",
-    "shortExplanation": "Dùng để diễn tả sự tồn tại hoặc hiện diện của người hoặc vật ở một nơi nào đó; mang nghĩa là 'có'.",
-    "longExplanation": "Cấu trúc 'There is / There are' được dùng để chỉ sự tồn tại của người hoặc vật (tương đương với 'có' trong tiếng Việt).\n• There is + danh từ số ít hoặc danh từ không đếm được.\n• There are + danh từ số nhiều.\nThể phủ định: There isn't (viết tắt của is not) / There aren't (viết tắt của are not).\nThể nghi vấn: Đảo động từ to be lên trước chủ ngữ: Is there...? / Are there...?",
-    "formation": "Khẳng định: There is + Danh từ số ít / không đếm được | There are + Danh từ số nhiều\nPhủ định: There isn't / There aren't + Danh từ\nNghi vấn: Is there...? / Are there...?",
-    "examples": [
-      {
-        "translation": "Có một rạp chiếu phim ở gần đây."
-      },
-      {
-        "translation": "Gần đây có cửa hàng nào không? — Vâng, có đấy."
-      }
-    ]
-  },
-  "en_a1_17": {
-    "title": "Giới từ chỉ nơi chốn: in, on, at, under, next to, behind, between",
-    "shortExplanation": "Dùng để xác định vị trí của người hoặc đồ vật trong không gian; 'ở trong', 'ở trên', 'ở tại'...",
-    "longExplanation": "Ba giới từ chỉ vị trí phổ biến nhất:\n• in = ở bên trong một không gian khép kín hoặc khu vực: in the box (trong hộp), in the city (trong thành phố), in bed (trên giường)\n• on = ở trên bề mặt tiếp xúc: on the table (trên bàn), on the wall (trên tường), on the left (ở bên trái)\n• at = ở một địa điểm hoặc vị trí cụ thể: at the station (ở nhà ga), at home (ở nhà), at school (ở trường)\nCác giới từ khác: under (ở dưới), next to / beside (bên cạnh), behind (ở đằng sau), in front of (ở phía trước), between (ở giữa hai đối tượng), opposite (đối diện).",
-    "formation": "Giới từ chỉ nơi chốn (in / on / at / under / next to / behind...) + Cụm danh từ / Địa điểm",
-    "examples": [
-      {
-        "translation": "Chùm chìa khóa ở trên bàn."
-      },
-      {
-        "translation": "Cô ấy đang ở trong bếp."
-      },
-      {
-        "translation": "Hãy gặp tôi ở lối vào nhé."
-      }
-    ]
-  },
-  "en_a1_18": {
-    "title": "Câu mệnh lệnh (Imperative)",
-    "shortExplanation": "Dùng để ra lệnh, yêu cầu, chỉ dẫn hoặc rủ rê; 'hãy...', 'đừng...', 'chúng ta hãy...'.",
-    "longExplanation": "Câu mệnh lệnh trong tiếng Anh bắt đầu trực tiếp bằng động từ nguyên mẫu không có chủ ngữ.\n• Khẳng định: Động từ nguyên thể đứng đầu câu (ví dụ: Open your books - Hãy mở sách ra).\n• Phủ định: Don't + động từ nguyên thể (ví dụ: Don't run - Đừng chạy).\n• Thêm 'please' ở đầu hoặc cuối câu để lời đề nghị, yêu cầu thêm phần lịch sự.\n• Câu rủ rê hoặc đề xuất có cả người nói: Let's + động từ nguyên thể (ví dụ: Let's go! - Chúng mình đi thôi!).",
-    "formation": "Khẳng định: Động từ nguyên thể (+ Tân ngữ/Bổ ngữ)\nPhủ định: Don't + Động từ nguyên thể\nLịch sự: Please + Động từ nguyên thể (hoặc thêm please ở cuối câu)\nRủ rê: Let's + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Hãy rẽ trái ở ngã tư."
-      },
-      {
-        "translation": "Đừng chạm vào cái đó!"
-      },
-      {
-        "translation": "Chúng ta hãy nghỉ giải lao một lát nhé."
-      }
-    ]
-  },
-  "en_a1_19": {
-    "title": "can / can't - Khả năng, cơ hội và sự xin phép",
-    "shortExplanation": "Động từ khuyết thiếu dùng để diễn tả năng lực, khả năng xảy ra, hoặc xin phép/yêu cầu; 'có thể' / 'không thể'.",
-    "longExplanation": "'can' là một động từ khuyết thiếu, theo sau luôn là động từ nguyên mẫu không 'to', dùng để diễn đạt:\n1. Khả năng hoặc năng lực: I can swim (Tôi biết bơi).\n2. Khả năng xảy ra hoặc cơ hội: It can be dangerous (Điều đó có thể nguy hiểm).\n3. Xin phép hoặc cho phép (văn nói): Can I use your phone? (Tôi có thể dùng nhờ điện thoại của bạn không?)\nThể phủ định là can't (viết tắt của cannot).",
-    "formation": "Khẳng định: Chủ ngữ + can + Động từ nguyên thể\nPhủ định: Chủ ngữ + can't (cannot) + Động từ nguyên thể\nNghi vấn: Can + Chủ ngữ + Động từ nguyên thể...?",
-    "examples": [
-      {
-        "translation": "Tôi có thể nói được ba thứ tiếng."
-      },
-      {
-        "translation": "Hôm nay cô ấy không thể đến được."
-      },
-      {
-        "translation": "Bạn có thể giúp tôi một chút được không?"
-      }
-    ]
-  },
-  "en_a1_20": {
-    "title": "Từ để hỏi: what, where, who, when, how, why, which, whose, how much/many",
-    "shortExplanation": "Dùng để đặt câu hỏi có từ để hỏi (Wh-questions) nhằm thu thập thông tin cụ thể; 'cái gì', 'ở đâu', 'ai'...",
-    "longExplanation": "Các từ để hỏi thường đứng ở đầu câu, theo sau là trợ động từ hoặc to be rồi đến chủ ngữ.\n• what = cái gì, gì\n• where = ở đâu, đâu\n• who = ai (khi hỏi cho chủ ngữ thì không dùng trợ động từ do/does: Who lives here?)\n• when = khi nào, bao giờ\n• why = tại sao, vì sao\n• which = cái nào, người nào (trong số lựa chọn có hạn)\n• whose = của ai\n• how = thế nào, bằng cách nào; how much = bao nhiêu (với danh từ không đếm được/giá tiền); how many = bao nhiêu (với danh từ đếm được số nhiều); how old = bao nhiêu tuổi; how long = bao lâu.",
-    "formation": "Từ để hỏi (Wh-) + Trợ động từ / to be + Chủ ngữ + Động từ nguyên thể / Bổ ngữ...?",
-    "examples": [
-      {
-        "translation": "Cô ấy làm việc ở đâu?"
-      },
-      {
-        "translation": "Bây giờ là mấy giờ rồi?"
-      },
-      {
-        "translation": "Bạn có bao nhiêu người anh em trai?"
-      }
-    ]
-  },
-  "en_a1_21": {
-    "title": "Số đếm (Cardinal numerals): 1–1000",
-    "shortExplanation": "Dùng để đếm số lượng người hoặc đồ vật; 'một, hai, ba... một trăm, một nghìn'.",
-    "longExplanation": "Quy tắc cấu tạo số đếm trong tiếng Anh từ 1 đến 1000:\n• Từ 1 đến 12: các từ riêng biệt (one, two, three... twelve).\n• Từ 13 đến 19: thêm đuôi '-teen' (thirteen, fourteen... nineteen; lưu ý biến đổi ở thirteen, fifteen, eighteen).\n• Các số hàng chục tròn chục: kết thúc bằng '-ty' (twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety).\n• Số ghép hàng chục và hàng đơn vị: nối bằng dấu gạch nối (ví dụ: 21 = twenty-one).\n• Hàng trăm: 100 = a/one hundred; hàng nghìn: 1000 = a/one thousand.\n• Trong tiếng Anh-Anh, sau hundred thường có 'and' trước hàng chục hoặc đơn vị (ví dụ: two hundred and fifty).",
-    "formation": "Số hàng chục + dấu gạch nối (-) + Số hàng đơn vị (từ 21 đến 99) | Số đếm + hundred / thousand (+ and + số tiếp theo)",
-    "examples": [
-      {
-        "translation": "Cô ấy hai mươi ba tuổi."
-      },
-      {
-        "translation": "Chiếc vé có giá bốn trăm bảng Anh."
-      }
-    ]
-  },
-  "en_a1_22": {
-    "title": "Số thứ tự (Ordinal numbers): first, second, third...",
-    "shortExplanation": "Dùng để chỉ thứ tự, vị trí, ngày tháng hoặc tầng nhà; 'thứ nhất, thứ hai, thứ ba...'.",
-    "longExplanation": "Số thứ tự trong tiếng Anh chủ yếu được tạo thành bằng cách thêm hậu tố '-th' vào sau số đếm: fourth, sixth, seventh...\nCác trường hợp đặc biệt cần ghi nhớ: first (thứ 1), second (thứ 2), third (thứ 3), fifth (thứ 5), eighth (thứ 8), ninth (thứ 9), twelfth (thứ 12).\nQuy tắc: Số thứ tự hầu như luôn đi kèm mạo từ xác định 'the' phía trước (ví dụ: the first day - ngày đầu tiên, the third floor - tầng ba).\nỨng dụng trong phân số: ½ = a half, ⅓ = a third, ¼ = a quarter.",
-    "formation": "the + Số thứ tự (+ Danh từ) | (Ví dụ: the first, the second, the third... the twenty-first)",
-    "examples": [
-      {
-        "translation": "Văn phòng của tôi ở tầng ba."
-      },
-      {
-        "translation": "Hôm nay là ngày mùng một tháng Ba."
-      }
-    ]
-  },
-  "en_a1_23": {
-    "title": "Sở hữu cách: 's và s'",
-    "shortExplanation": "Dùng dấu nháy đơn và chữ 's' để thể hiện quyền sở hữu hoặc mối quan hệ; 'của...'.",
-    "longExplanation": "Trong tiếng Anh, mối quan hệ sở hữu được biểu thị bằng dấu nháy đơn và chữ s ('s hoặc s'):\n• Danh từ số ít: thêm 's (ví dụ: Tom's book - cuốn sách của Tom, the dog's tail - đuôi của chú chó).\n• Danh từ số nhiều kết thúc bằng -s: chỉ thêm dấu nháy đơn ' (ví dụ: the teachers' room - phòng giáo viên, my parents' house - nhà của bố mẹ tôi).\n• Danh từ số nhiều bất quy tắc (không có đuôi -s): vẫn thêm 's (ví dụ: the children's playground - sân chơi của trẻ em, men's clothes - quần áo nam).\n• Tên riêng tận cùng bằng -s: có thể dùng James's hoặc James' đều đúng.",
-    "formation": "Danh từ số ít + 's + Danh từ sở hữu | Danh từ số nhiều có đuôi -s + ' + Danh từ sở hữu",
-    "examples": [
-      {
-        "translation": "Đây là máy tính xách tay của Anna."
-      },
-      {
-        "translation": "Đồ chơi của bọn trẻ ở trong hộp."
-      }
-    ]
-  },
-  "en_a1_24": {
-    "title": "Giới từ chỉ sự chuyển động: to, into, out of, up, down, along, across, through",
-    "shortExplanation": "Dùng để diễn tả hướng đi hoặc quỹ đạo di chuyển của người và vật; 'đến', 'vào trong', 'ra khỏi', 'băng qua'...",
-    "longExplanation": "Các giới từ chỉ phương hướng và chuyển động kết hợp với động từ di chuyển:\n• to = hướng tới một điểm đến: go to work (đi làm), walk to the park (đi bộ đến công viên)\n• into = di chuyển vào bên trong: come into the room (bước vào phòng), jump into the pool (nhảy vào hồ bơi)\n• out of = di chuyển từ trong ra ngoài: get out of the car (bước ra khỏi xe), take out of the bag (lấy ra khỏi túi)\n• up / down = hướng lên trên / xuống dưới: climb up the hill (leo lên đồi), walk down the stairs (đi xuống cầu thang)\n• along = đi dọc theo: walk along the river (đi dọc bờ sông)\n• across = đi ngang qua hoặc băng qua từ bên này sang bên kia: swim across the lake (bơi qua hồ), walk across the road (băng qua đường)\n• through = đi xuyên qua một không gian 3 chiều: drive through the tunnel (lái xe xuyên qua đường hầm).",
-    "formation": "Động từ di chuyển + Giới từ chuyển động (to / into / out of / across / through...) + Danh từ/Địa điểm",
-    "examples": [
-      {
-        "translation": "Cô ấy bước vào trong phòng."
-      },
-      {
-        "translation": "Anh ấy chạy băng qua đường."
-      },
-      {
-        "translation": "Chúng tôi đã lái xe xuyên qua khu rừng."
-      }
-    ]
-  },
-  "en_a2_01": {
-    "title": "Thì quá khứ đơn - Động từ có quy tắc: đuôi -ed",
-    "shortExplanation": "Diễn tả hành động đã hoàn tất trong quá khứ đối với các động từ có quy tắc; kết thúc bằng đuôi '-ed'.",
-    "longExplanation": "Thì quá khứ đơn dùng để diễn tả hành động đã diễn ra và kết thúc trong quá khứ.\nQuy tắc thêm đuôi '-ed' đối với động từ có quy tắc:\n• Hầu hết các động từ: thêm trực tiếp '-ed' (worked, played).\n• Động từ kết thúc bằng đuôi '-e': chỉ cần thêm '-d' (loved, used).\n• Động từ kết thúc bằng phụ âm + 'y': đổi 'y' thành 'i' rồi thêm '-ed' (studied, tried).\n• Động từ một âm tiết gồm một nguyên âm ngắn + một phụ âm: gấp đôi phụ âm cuối rồi thêm '-ed' (stopped, planned).",
-    "formation": "Chủ ngữ + Động từ có quy tắc thêm đuôi -ed (+ Tân ngữ/Trạng từ thời gian)",
-    "examples": [
-      {
-        "translation": "Hôm qua cô ấy đã làm việc cả ngày."
-      },
-      {
-        "translation": "Chủ nhật tuần trước họ đã chơi quần vợt."
-      }
-    ]
-  },
-  "en_a2_02": {
-    "title": "Thì quá khứ đơn - Động từ bất quy tắc",
-    "shortExplanation": "Diễn tả hành động trong quá khứ bằng các động từ có dạng biến đổi riêng, không theo quy tắc thêm '-ed'.",
-    "longExplanation": "Nhiều động từ thông dụng trong tiếng Anh không thêm '-ed' khi chuyển sang thì quá khứ mà biến đổi theo dạng bất quy tắc (khoảng 50 động từ phổ biến nhất chiếm tới 90% tần suất sử dụng).\nCác nhóm biến đổi thường gặp:\n• Dạng AAA (nguyên mẫu, quá khứ, quá khứ phân từ giống nhau): cut, put, hit, set, let.\n• Dạng ABA (dạng quá khứ phân từ quay về giống nguyên mẫu): run→ran→run, come→came→come.\n• Dạng ABC (cả 3 dạng đều khác nhau): go→went→gone, be→was/were→been, see→saw→seen.\n• Dạng ABB (dạng quá khứ và quá khứ phân từ giống nhau): have→had→had, buy→bought→bought.",
-    "formation": "Chủ ngữ + Động từ bất quy tắc ở dạng quá khứ (V2) (+ Tân ngữ/Trạng từ thời gian)",
-    "examples": [
-      {
-        "translation": "Tôi đã đến Paris vào mùa hè năm ngoái."
-      },
-      {
-        "translation": "Cô ấy đã xem một bộ phim rất hay."
-      },
-      {
-        "translation": "Chúng tôi đã có một cuộc họp lúc 9 giờ."
-      }
-    ]
-  },
-  "en_a2_03": {
-    "title": "Thì quá khứ đơn - Thể phủ định: didn't + động từ nguyên thể",
-    "shortExplanation": "Dùng để phủ định một hành động đã không xảy ra trong quá khứ; 'đã không làm gì'.",
-    "longExplanation": "Để tạo thể phủ định trong thì quá khứ đơn đối với động từ thường, ta mượn trợ động từ 'did' thêm 'not' thành 'didn't' (hoặc 'did not') cho tất cả các ngôi chủ ngữ.\nLưu ý quan trọng: Sau 'didn't', động từ chính luôn quay về dạng nguyên mẫu không 'to', tuyệt đối không dùng dạng quá khứ (ví dụ: She didn't go, không được nói She didn't went).",
-    "formation": "Chủ ngữ + didn't (did not) + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Hôm qua tôi đã không gặp anh ấy."
-      },
-      {
-        "translation": "Cô ấy đã không đến chỗ làm."
-      }
-    ]
-  },
-  "en_a2_04": {
-    "title": "Thì quá khứ đơn - Thể nghi vấn: Did you...? Where did she go?",
-    "shortExplanation": "Dùng để đặt câu hỏi Có/Không hoặc câu hỏi có từ để hỏi về hành động trong quá khứ; 'đã làm gì...?'",
-    "longExplanation": "Cách thành lập câu hỏi trong thì quá khứ đơn với động từ thường:\n• Câu hỏi Có/Không: Đảo trợ động từ 'Did' lên đầu câu: Did + Chủ ngữ + Động từ nguyên thể? (Ví dụ: Did you enjoy the film?)\n• Câu hỏi có từ để hỏi: Từ để hỏi (Wh-) + did + Chủ ngữ + Động từ nguyên thể? (Ví dụ: Where did they go?)\n• Lưu ý: Khi từ để hỏi đóng vai trò là chủ ngữ trong câu, không mượn trợ động từ did mà chia trực tiếp động từ ở thì quá khứ (Ví dụ: Who told you that?).",
-    "formation": "Câu hỏi Có/Không: Did + Chủ ngữ + Động từ nguyên thể...?\nCâu hỏi có từ để hỏi: Từ để hỏi (Wh-) + did + Chủ ngữ + Động từ nguyên thể...?",
-    "examples": [
-      {
-        "translation": "Bạn có thích bộ phim đó không?"
-      },
-      {
-        "translation": "Họ đã đi đâu vậy?"
-      },
-      {
-        "translation": "Ai đã nói với bạn điều đó thế?"
-      }
-    ]
-  },
-  "en_a2_05": {
-    "title": "was / were - Động từ 'to be' ở thì quá khứ",
-    "shortExplanation": "Dạng quá khứ của động từ 'to be', dùng để diễn tả trạng thái hoặc đặc điểm trong quá khứ; 'đã là', 'đã ở'.",
-    "longExplanation": "Động từ 'to be' ở thì quá khứ có hai dạng tùy thuộc vào chủ ngữ:\n• was: đi với các chủ ngữ số ít gồm I, he, she, it và danh từ số ít / không đếm được.\n• were: đi với các chủ ngữ you, we, they và danh từ số nhiều.\nThể phủ định: wasn't (= was not) / weren't (= were not).\nThể nghi vấn: Đảo was / were lên trước chủ ngữ: Was she...? / Were they...?",
-    "formation": "Khẳng định: I / He / She / It + was | You / We / They + were\nPhủ định: Chủ ngữ + wasn't / weren't\nNghi vấn: Was / Were + Chủ ngữ...?",
-    "examples": [
-      {
-        "translation": "Tối qua tôi đã rất mệt."
-      },
-      {
-        "translation": "Cả ngày họ đều ở nhà."
-      },
-      {
-        "translation": "Nó có đắt không?"
-      }
-    ]
-  },
-  "en_a2_06": {
-    "title": "will - Dự đoán và quyết định ngay tại thời điểm nói",
-    "shortExplanation": "Dùng để diễn tả quyết định đưa ra ngay lúc nói, lời dự đoán, lời hứa hoặc yêu cầu; 'sẽ'.",
-    "longExplanation": "'will' là một động từ khuyết thiếu dùng để diễn tả tương lai, theo sau là động từ nguyên mẫu không 'to', thường dùng cho:\n1. Quyết định tức thì (được đưa ra ngay tại thời điểm nói): I'll help you with that (Để tôi giúp bạn việc đó nhé).\n2. Dự đoán chủ quan không có căn cứ cụ thể: I think it will rain (Tôi nghĩ trời sẽ mưa).\n3. Lời hứa: I won't tell anyone (Tôi sẽ không nói với ai đâu).\n4. Lời đề nghị, yêu cầu: Will you open the window? (Bạn mở cửa sổ giúp tôi được không?)\nDạng viết tắt: 'll. Thể phủ định: won't (= will not).",
-    "formation": "Khẳng định: Chủ ngữ + will ('ll) + Động từ nguyên thể\nPhủ định: Chủ ngữ + won't (will not) + Động từ nguyên thể\nNghi vấn: Will + Chủ ngữ + Động từ nguyên thể...?",
-    "examples": [
-      {
-        "translation": "Điện thoại đang reo kìa. — Để tôi nghe máy cho!"
-      },
-      {
-        "translation": "Ngày mai trời sẽ lạnh đấy."
-      }
-    ]
-  },
-  "en_a2_07": {
-    "title": "be going to - Dự định và dự đoán có căn cứ",
-    "shortExplanation": "Dùng để diễn tả dự định đã định trước hoặc dự đoán có căn cứ rõ ràng trước mắt.",
-    "longExplanation": "Cấu trúc 'be going to' được dùng trong các trường hợp:\n1. Dự định, quyết định đã có từ trước: 'I'm going to start a diet next week.' (Tôi dự định bắt đầu ăn kiêng vào tuần tới).\n2. Dự đoán dựa trên dấu hiệu hiện tại nhìn thấy được: 'Look at those clouds - it's going to rain!' (Nhìn những đám mây kia kìa - trời sắp mưa rồi!).\nCấu trúc: am/is/are + going to + động từ nguyên mẫu",
-    "formation": "Chủ ngữ + am/is/are + going to + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Tôi dự định sẽ học ngành y."
-      },
-      {
-        "translation": "Cô ấy sắp sinh em bé."
-      }
-    ]
-  },
-  "en_a2_08": {
-    "title": "Thì hiện tại tiếp diễn: am/is/are + V-ing",
-    "shortExplanation": "Diễn tả hành động đang diễn ra tại thời điểm nói hoặc tạm thời trong giai đoạn hiện tại.",
-    "longExplanation": "Thì hiện tại tiếp diễn (Present Continuous) diễn tả hành động đang xảy ra ngay lúc nói hoặc chỉ xảy ra tạm thời xung quanh thời điểm hiện tại.\nCấu trúc: am/is/are + động từ thêm -ing\nQuy tắc thêm đuôi -ing:\n• Hầu hết động từ: chỉ cần thêm -ing → working, playing\n• Động từ kết thúc bằng -e: bỏ -e rồi thêm -ing → making, coming\n• Động từ một âm tiết có nguyên âm ngắn đứng giữa hai phụ âm: gấp đôi phụ âm cuối rồi thêm -ing → running, sitting",
-    "formation": "Chủ ngữ + am/is/are + Động từ-ing",
-    "examples": [
-      {
-        "translation": "Bây giờ tôi đang học tiếng Anh."
-      },
-      {
-        "translation": "Tháng này cô ấy làm việc tại nhà."
-      }
-    ]
-  },
-  "en_a2_09": {
-    "title": "Thì hiện tại tiếp diễn diễn tả kế hoạch tương lai",
-    "shortExplanation": "Dùng để diễn tả các kế hoạch, lịch trình đã được sắp xếp cụ thể trong tương lai.",
-    "longExplanation": "Thì hiện tại tiếp diễn được sử dụng để chỉ các cuộc hẹn hoặc kế hoạch chắc chắn trong tương lai, khi thời gian và địa điểm thường đã được xác định trước.\nSo sánh sự khác biệt:\n• 'I'm meeting Alice tomorrow': Buổi gặp đã được hai bên đồng ý và sắp xếp cụ thể (kế hoạch rõ ràng).\n• 'I'll meet Alice tomorrow': Quyết định đưa ra ngay lúc nói hoặc lời đề nghị.",
-    "formation": "Chủ ngữ + am/is/are + Động từ-ing + Trạng từ chỉ thời gian tương lai",
-    "examples": [
-      {
-        "translation": "Tối nay tôi sẽ đi ăn tối với Alex."
-      },
-      {
-        "translation": "Họ sẽ kết hôn vào tháng 6."
-      }
-    ]
-  },
-  "en_a2_10": {
-    "title": "Phân biệt Thì hiện tại đơn và Hiện tại tiếp diễn",
-    "shortExplanation": "Hiện tại đơn diễn tả thói quen, sự thật hiển nhiên; Hiện tại tiếp diễn diễn tả hành động đang xảy ra hoặc tạm thời.",
-    "longExplanation": "Thì hiện tại đơn (Present Simple): dùng cho thói quen, sự thật chân lý, lịch trình cố định hoặc chân lý chung.\nThì hiện tại tiếp diễn (Present Continuous): dùng cho hành động đang diễn ra ngay tại thời điểm nói hoặc mang tính chất tạm thời.\nSo sánh ví dụ:\n• 'She speaks French': Cô ấy biết nói tiếng Pháp (khả năng, thói quen lâu dài).\n• 'She is speaking French': Cô ấy đang nói tiếng Pháp ngay lúc này.",
-    "formation": "Hiện tại đơn: Chủ ngữ + Động từ (s/es) | Hiện tại tiếp diễn: Chủ ngữ + am/is/are + Động từ-ing",
-    "examples": [
-      {
-        "translation": "Nước sôi ở 100°C."
-      },
-      {
-        "translation": "Tuần này tôi đang đọc một cuốn sách rất hay."
-      }
-    ]
-  },
-  "en_a2_11": {
-    "title": "should / shouldn't - Lời khuyên và đề xuất",
-    "shortExplanation": "Dùng để đưa ra lời khuyên nhẹ nhàng hoặc ý kiến cá nhân: 'nên' / 'không nên'.",
-    "longExplanation": "'should' dùng để diễn tả lời khuyên chân thành, sự gợi ý hoặc quan điểm cá nhân (mức độ nhẹ hơn 'must').\nTheo sau 'should / shouldn't' luôn là động từ nguyên mẫu không có 'to'.\nNgoài ra cấu trúc 'should have + quá khứ phân từ' còn được dùng để chỉ sự nuối tiếc hoặc trách móc trong quá khứ.",
-    "formation": "Chủ ngữ + should / shouldn't + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Bạn nên tập thể dục nhiều hơn."
-      },
-      {
-        "translation": "Cô ấy không nên làm việc quá sức như vậy."
-      }
-    ]
-  },
-  "en_a2_12": {
-    "title": "must / mustn't - Sự bắt buộc và điều cấm tuyệt đối",
-    "shortExplanation": "'must' diễn tả bổn phận, trách nhiệm bắt buộc; 'mustn't' diễn tả sự nghiêm cấm tuyệt đối.",
-    "longExplanation": "'must' diễn tả nghĩa vụ mạnh mẽ (thường xuất phát từ ý thức chủ quan của người nói) hoặc yêu cầu dứt khoát.\n'mustn't' diễn tả sự cấm đoán nghiêm ngặt (tuyệt đối không được phép làm).\nLưu ý phân biệt:\n• mustn't = bị cấm (hoàn toàn không được làm)\n• don't have to = không bắt buộc phải làm (nhưng nếu muốn thì vẫn có thể làm)",
-    "formation": "Chủ ngữ + must / mustn't + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Bạn phải xuất trình hộ chiếu của mình."
-      },
-      {
-        "translation": "Bạn tuyệt đối không được hút thuốc ở đây."
-      }
-    ]
-  },
-  "en_a2_13": {
-    "title": "have to - Sự cần thiết do yếu tố khách quan",
-    "shortExplanation": "Diễn tả việc phải làm do quy định, luật lệ hoặc hoàn cảnh khách quan bên ngoài chi phối.",
-    "longExplanation": "'have to' diễn tả sự bắt buộc hoặc cần thiết bắt nguồn từ quy định, luật lệ hoặc hoàn cảnh bên ngoài tác động.\nPhân biệt với 'must':\n• must - sự bắt buộc mang tính chủ quan từ bản thân người nói: 'I must call her' (Tự bản thân tôi thấy cần thiết phải gọi).\n• have to - sự bắt buộc khách quan: 'I have to wear a uniform' (Đó là nội quy quy định).\n'don't have to' = không cần phải làm (tùy ý, không ép buộc).",
-    "formation": "Chủ ngữ + have to / has to / don't have to / doesn't have to + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Tôi phải hoàn thành bản báo cáo này trước thứ Sáu."
-      },
-      {
-        "translation": "Bạn không cần phải đến nếu không muốn."
-      }
-    ]
-  },
-  "en_a2_14": {
-    "title": "could - Khả năng trong quá khứ và lời yêu cầu lịch sự",
-    "shortExplanation": "Dùng để diễn tả khả năng, năng khiếu trong quá khứ hoặc dùng trong lời yêu cầu, nhờ vả lịch sự.",
-    "longExplanation": "'could' là dạng quá khứ của 'can', có hai cách dùng chính:\n1. Năng lực hoặc khả năng trong quá khứ: 'I could read at 4 years old.' (Tôi đã biết đọc từ lúc 4 tuổi).\n2. Lời thỉnh cầu hoặc đề nghị lịch sự (lịch sự và trang trọng hơn 'can'): 'Could you pass the salt, please?' (Bạn làm ơn chuyển giúp tôi lọ muối được không?).\nNgoài ra, 'could' cũng dùng để diễn tả một khả năng có thể xảy ra ở hiện tại: 'It could be true.' (Điều đó có thể là sự thật).",
-    "formation": "Chủ ngữ + could + Động từ nguyên mẫu | Could + Chủ ngữ + Động từ nguyên mẫu...?",
-    "examples": [
-      {
-        "translation": "Khi còn nhỏ cô ấy đã có thể chơi đàn vĩ cầm."
-      },
-      {
-        "translation": "Bạn có thể nói chậm hơn một chút được không?"
-      }
-    ]
-  },
-  "en_a2_15": {
-    "title": "Cấp so sánh hơn của tính từ",
-    "shortExplanation": "Dùng để so sánh tính chất giữa hai đối tượng: tính từ ngắn thêm đuôi -er, tính từ dài dùng 'more'.",
-    "longExplanation": "Quy tắc cấu tạo so sánh hơn:\n• Tính từ một âm tiết và hai âm tiết tận cùng bằng -y: thêm đuôi -er (fast → faster, happy → happier).\n• Tính từ dài (từ hai âm tiết trở lên không tận cùng bằng -y): dùng more + tính từ (more interesting).\n• Quy tắc biến đổi chính tả: tận cùng -e chỉ thêm -r (nice → nicer); một phụ âm đi sau một nguyên âm ngắn thì gấp đôi phụ âm cuối (big → bigger); phụ âm + y đổi thành -ier (heavy → heavier).\n• Bất quy tắc: good → better, bad → worse, far → further/farther, much/many → more.\nCấu trúc so sánh hơn thường đi với 'than': 'She is taller than her sister.'",
-    "formation": "Tính từ ngắn-er + than / more + Tính từ dài + than",
-    "examples": [
-      {
-        "translation": "Bộ phim này thú vị hơn bộ phim kia."
-      },
-      {
-        "translation": "Hôm nay thời tiết tệ hơn hôm qua."
-      }
-    ]
-  },
-  "en_a2_16": {
-    "title": "Cấp so sánh nhất của tính từ",
-    "shortExplanation": "Dùng để so sánh từ ba đối tượng trở lên: tính từ ngắn dùng 'the + -est', tính từ dài dùng 'the most'.",
-    "longExplanation": "Quy tắc cấu tạo so sánh nhất:\n• Tính từ ngắn (một âm tiết): the + tính từ thêm -est (fast → the fastest).\n• Tính từ dài (từ hai âm tiết trở lên): the most + tính từ (the most beautiful).\n• Quy tắc chính tả tương tự như so sánh hơn: -e biến thành -est (nice → the nicest); gấp đôi phụ âm cuối (big → the biggest); đổi -y thành -iest (happy → the happiest).\n• Bất quy tắc: good → the best, bad → the worst, far → the furthest/farthest, much/many → the most.",
-    "formation": "the + Tính từ ngắn-est / the most + Tính từ dài",
-    "examples": [
-      {
-        "translation": "Đây là nhà hàng đắt đỏ nhất trong thành phố."
-      },
-      {
-        "translation": "Anh ấy là cầu thủ xuất sắc nhất trong đội."
-      }
-    ]
-  },
-  "en_a2_17": {
-    "title": "some / any - Lượng từ chỉ số lượng không xác định",
-    "shortExplanation": "'some' dùng trong câu khẳng định và lời mời/đề nghị; 'any' dùng trong câu phủ định và câu hỏi.",
-    "longExplanation": "'some' và 'any' được dùng với cả danh từ đếm được số nhiều và danh từ không đếm được để chỉ một lượng không xác định:\n• some: thường dùng trong câu khẳng định, và trong câu hỏi khi đưa ra lời mời mọc, đề nghị lịch sự mà mong muốn nhận được câu trả lời đồng ý (ví dụ: 'Would you like some tea?', 'Can I have some water?').\n• any: thường dùng trong câu nghi vấn thông thường và câu phủ định (ví dụ: 'I don't have any money').",
-    "formation": "some / any + Danh từ không đếm được hoặc Danh từ đếm được số nhiều",
-    "examples": [
-      {
-        "translation": "Tôi đã mua một ít bánh mì và sữa."
-      },
-      {
-        "translation": "Trong tủ lạnh còn chút sữa nào không?"
-      },
-      {
-        "translation": "Tôi không mang theo chút tiền mặt nào trong người."
-      }
-    ]
-  },
-  "en_a2_18": {
-    "title": "much / many / a lot of / a few / a little - Lượng từ chỉ số lượng nhiều và ít",
-    "shortExplanation": "'much/a little' đi với danh từ không đếm được; 'many/a few' đi với danh từ đếm được; 'a lot of' đi với cả hai.",
-    "longExplanation": "Cách phân biệt và sử dụng các từ chỉ số lượng trong tiếng Anh:\n• much: dùng với danh từ không đếm được (much water, much time, much money), thường gặp trong câu phủ định và câu hỏi.\n• many: dùng với danh từ đếm được số nhiều (many people, many books).\n• a lot of / lots of: dùng được với cả hai loại danh từ, phổ biến trong văn phong giao tiếp hàng ngày.\n• a few: một vài, một ít (danh từ đếm được, mang nghĩa tích cực/đủ dùng).\n• few: rất ít, hầu như không có (danh từ đếm được, mang nghĩa tiêu cực/thiếu thốn).\n• a little: một chút, một ít (danh từ không đếm được, mang nghĩa tích cực/đủ dùng).\n• little: rất ít, hầu như không có (danh từ không đếm được, mang nghĩa tiêu cực/thiếu thốn).",
-    "formation": "much/a little + Danh từ không đếm được | many/a few + Danh từ đếm được số nhiều | a lot of + cả hai",
-    "examples": [
-      {
-        "translation": "Tôi không có nhiều thời gian."
-      },
-      {
-        "translation": "Cô ấy có một vài người bạn ở Luân Đôn."
-      },
-      {
-        "translation": "Vẫn còn một chút đường."
-      }
-    ]
-  },
-  "en_a2_19": {
-    "title": "Danh từ đếm được và không đếm được",
-    "shortExplanation": "Danh từ đếm được có dạng số ít và số nhiều; danh từ không đếm được không thể đếm trực tiếp và không có dạng số nhiều.",
-    "longExplanation": "Phân biệt danh từ đếm được và không đếm được:\n• Danh từ đếm được (Countable): có thể đếm bằng số (1, 2, 3...), có dạng số ít và số nhiều (a book, two books).\n• Danh từ không đếm được (Uncountable): không thể đếm trực tiếp bằng số, không dùng mạo từ 'a/an' và không có dạng số nhiều.\nCác danh từ không đếm được tiêu biểu: water (nước), milk (sữa), bread (bánh mì), rice (gạo), money (tiền), information (thông tin), advice (lời khuyên), news (tin tức), weather (thời tiết), luggage (hành lý), furniture (đồ đạc nội thất), hair (tóc), music (âm nhạc), work (công việc).\nĐể đếm số lượng cho danh từ không đếm được, cần dùng từ chỉ đơn vị đo lường: a glass of water (một cốc nước), a piece of advice (một lời khuyên), a loaf of bread (một ổ bánh mì), a bag of rice (một bao gạo).",
-    "formation": "Đếm được: a/an + Danh từ số ít / Danh từ-s/es | Không đếm được: Từ chỉ đơn vị + of + Danh từ",
-    "examples": [
-      {
-        "translation": "Tôi có thể xin một vài thông tin được không?"
-      },
-      {
-        "translation": "Cô ấy đã cho tôi một lời khuyên rất hữu ích."
-      }
-    ]
-  },
-  "en_a2_20": {
-    "title": "Giới từ chỉ thời gian: in / on / at",
-    "shortExplanation": "'at' đi với thời điểm chính xác; 'on' đi với ngày và thứ; 'in' đi với tháng, năm, mùa và các khoảng thời gian dài.",
-    "longExplanation": "Quy tắc sử dụng giới từ chỉ thời gian:\n• at → mốc thời gian cụ thể: at 6 o'clock (lúc 6 giờ), at noon (buổi trưa), at midnight (nửa đêm), at night (vào ban đêm), at the weekend (vào cuối tuần).\n• on → thứ trong tuần và ngày tháng cụ thể: on Monday (vào thứ Hai), on 5 March (vào ngày 5 tháng 3), on my birthday (vào sinh nhật tôi), on New Year's Day (vào ngày Tết/Đầu năm mới).\n• in → các khoảng thời gian lớn hơn như tháng, năm, mùa, thế kỷ hoặc các buổi trong ngày: in July (vào tháng Bảy), in 2023 (vào năm 2023), in the morning/afternoon/evening (vào buổi sáng/chiều/tối), in summer (vào mùa hè), in the 21st century (vào thế kỷ 21).\nTrường hợp không dùng giới từ: khi đứng trước có this, last, next (ví dụ: this morning, last week, next year).",
-    "formation": "at + Giờ/Thời điểm cụ thể | on + Thứ/Ngày | in + Tháng/Năm/Mùa/Buổi",
-    "examples": [
-      {
-        "translation": "Cuộc họp diễn ra lúc ba giờ rưỡi."
-      },
-      {
-        "translation": "Cô ấy sinh vào ngày 12 tháng 4."
-      },
-      {
-        "translation": "Tôi bắt đầu công việc này vào tháng Mười."
-      }
-    ]
-  },
-  "en_a2_21": {
-    "title": "for / since / ago - Khoảng thời gian, mốc thời gian và thời gian trong quá khứ",
-    "shortExplanation": "'for' chỉ khoảng thời gian kéo dài; 'since' chỉ mốc thời gian bắt đầu; 'ago' chỉ thời điểm cách đây bao lâu trong quá khứ.",
-    "longExplanation": "Phân biệt cách dùng for, since và ago:\n• for - chỉ khoảng thời gian kéo dài bao lâu: for two hours (trong 2 giờ), for a week (trong một tuần), for years (trong nhiều năm). Có thể kết hợp với nhiều thì khác nhau.\n• since - chỉ mốc thời gian bắt đầu hành động từ khi nào: since Monday (từ thứ Hai), since 2019 (từ năm 2019), since I was a child (từ khi tôi còn nhỏ). Thường dùng với thì hiện tại hoàn thành.\n• ago - dùng sau một khoảng thời gian để chỉ sự việc đã xảy ra cách thời điểm hiện tại bao lâu: three days ago (3 ngày trước), a month ago (một tháng trước). Luôn đi với thì quá khứ đơn.",
-    "formation": "for + Khoảng thời gian | since + Mốc thời gian/Mệnh đề quá khứ | Khoảng thời gian + ago",
-    "examples": [
-      {
-        "translation": "Tôi đã ở đây được sáu tháng rồi."
-      },
-      {
-        "translation": "Cô ấy đã làm việc ở đây từ năm 2020."
-      },
-      {
-        "translation": "Tôi đã gặp anh ấy hai ngày trước."
-      }
-    ]
-  },
-  "en_a2_22": {
-    "title": "Câu hỏi đuôi: ...isn't it? / ...do you? / ...haven't they?",
-    "shortExplanation": "Dùng ở cuối câu trần thuật để xác nhận thông tin hoặc tìm kiếm sự đồng tình từ người nghe; có nghĩa là 'phải không?', 'đúng không?'.",
-    "longExplanation": "Câu hỏi đuôi được sử dụng để xác nhận lại thông tin hoặc kiểm tra xem người nghe có đồng ý với mình hay không.\nQuy tắc cơ bản:\n• Mệnh đề chính khẳng định → phần đuôi phủ định (ví dụ: Bạn thích nhạc jazz, đúng không?).\n• Mệnh đề chính phủ định → phần đuôi khẳng định (ví dụ: Bạn không thích phim kinh dị, phải không?).\nTrợ động từ trong phần đuôi phải tương ứng với thì và chủ ngữ của mệnh đề chính.\nNgữ điệu:\n• Xuống giọng ở cuối (↘): người nói mong đợi sự xác nhận hoặc đồng tình (thực chất không phải câu hỏi mới).\n• Lên giọng ở cuối (↗): người nói thực sự muốn hỏi vì chưa chắc chắn về thông tin.",
-    "formation": "Khẳng định: Mệnh đề khẳng định + , + trợ động từ phủ định + đại từ chủ ngữ?\nPhủ định: Mệnh đề phủ định + , + trợ động từ khẳng định + đại từ chủ ngữ?",
-    "examples": [
-      {
-        "translation": "Hôm nay trời đẹp thật đấy, phải không?"
-      },
-      {
-        "translation": "Bạn không thích phim kinh dị, đúng không?"
-      },
-      {
-        "translation": "Cô ấy biết bơi, phải không nào?"
-      }
-    ]
-  },
-  "en_a2_23": {
-    "title": "have got - Diễn tả sự sở hữu (tiếng Anh - Anh)",
-    "shortExplanation": "Thường dùng trong văn phong khẩu ngữ tiếng Anh - Anh để diễn tả sự sở hữu hoặc mối quan hệ; tương đương với 'có'.",
-    "longExplanation": "Cấu trúc have got là dạng diễn đạt thân mật rất phổ biến trong tiếng Anh - Anh để chỉ sự sở hữu, tương đương nghĩa với động từ have.\nCác thể câu:\n• Khẳng định: Chủ ngữ + have got / 've got hoặc has got / 's got.\n• Phủ định: Chủ ngữ + haven't got hoặc hasn't got (không cần mượn trợ động từ do/does).\n• Nghi vấn: Have / Has + chủ ngữ + got...? (trả lời ngắn: Yes, I have. / No, I haven't.).\nLưu ý: Chỉ dùng ở thì hiện tại; trong quá khứ chỉ dùng had (không dùng had got để chỉ sở hữu).",
-    "formation": "Khẳng định: Chủ ngữ + have got / has got + Danh từ\nPhủ định: Chủ ngữ + haven't got / hasn't got + Danh từ\nNghi vấn: Have / Has + Chủ ngữ + got + Danh từ?",
-    "examples": [
-      {
-        "translation": "Tôi có hai người anh trai."
-      },
-      {
-        "translation": "Bạn có biết mấy giờ rồi không?"
-      },
-      {
-        "translation": "Cô ấy không có đồng tiền mặt nào cả."
-      }
-    ]
-  },
-  "en_a2_24": {
-    "title": "Trạng từ chỉ cách thức: quickly, carefully, well, hard, fast",
-    "shortExplanation": "Dùng để bổ nghĩa cho động từ, mô tả hành động diễn ra như thế nào; thường đứng sau động từ hoặc tân ngữ.",
-    "longExplanation": "Trạng từ chỉ cách thức mô tả cách thức một hành động được thực hiện.\nQuy tắc cấu tạo:\n• Đa số được hình thành bằng cách thêm hậu tố -ly vào sau tính từ: quick → quickly (nhanh nhẹn), careful → carefully (cẩn thận), slow → slowly (chậm chạp).\nCác trường hợp đặc biệt (bất quy tắc):\n• good → well (tốt, giỏi; không dùng goodly).\n• fast → fast (nhanh; không có dạng fastly).\n• hard → hard (chăm chỉ, vất vả; từ hardly mang nghĩa hoàn toàn khác là 'hầu như không').\n• late → late (muộn, trễ; từ lately mang nghĩa là 'dạo gần đây').\nVị trí trong câu: Thường đứng sau động từ hoặc sau tân ngữ trực tiếp (ví dụ: She speaks English well). Không đặt trạng từ vào giữa động từ và tân ngữ.",
-    "formation": "Tính từ + -ly (hoặc các dạng bất quy tắc)\nVị trí: Động từ + Trạng từ HOẶC Động từ + Tân ngữ + Trạng từ",
-    "examples": [
-      {
-        "translation": "Anh ấy đã giải thích điều đó một cách rõ ràng."
-      },
-      {
-        "translation": "Cô ấy đã chạy rất nhanh."
-      },
-      {
-        "translation": "Họ đã làm việc chăm chỉ suốt cả ngày."
-      }
-    ]
-  },
-  "en_a2_25": {
-    "title": "Trạng từ chỉ tần suất và vị trí trong câu",
-    "shortExplanation": "Diễn tả mức độ thường xuyên của hành động (always, usually, often, sometimes, rarely, never); đứng trước động từ thường, sau động từ to be và trợ động từ.",
-    "longExplanation": "Trạng từ chỉ tần suất được dùng để nói về mức độ thường xuyên xảy ra của một hành động.\nCác từ phổ biến theo mức độ giảm dần:\nalways (luôn luôn 100%) → usually (thường xuyên 90%) → often (thường 70%) → sometimes (đôi khi 50%) → occasionally (thỉnh thoảng 30%) → rarely / seldom (hiếm khi 10%) → never (không bao giờ 0%).\nQuy tắc vị trí trong câu:\n• Đứng trước động từ thường: She always drinks tea.\n• Đứng sau động từ to be: He is always late.\n• Đứng sau trợ động từ đầu tiên: She has never been to Italy.\nCác cụm trạng từ chỉ tần suất dài hơn như every day, once a week, twice a month thường được đặt ở cuối câu.",
-    "formation": "Chủ ngữ + Trạng từ tần suất + Động từ thường\nChủ ngữ + Động từ to be / Trợ động từ + Trạng từ tần suất",
-    "examples": [
-      {
-        "translation": "Tôi thường thức dậy lúc 7 giờ."
-      },
-      {
-        "translation": "Cô ấy không bao giờ đi làm muộn."
-      },
-      {
-        "translation": "Họ gặp nhau mỗi tuần một lần."
-      }
-    ]
-  },
-  "en_a2_26": {
-    "title": "Trật tự của tính từ trước danh từ",
-    "shortExplanation": "Khi nhiều tính từ cùng bổ nghĩa cho một danh từ, chúng phải tuân theo một thứ tự chuẩn định sẵn trước danh từ.",
-    "longExplanation": "Khi sử dụng nhiều tính từ trước một danh từ trong tiếng Anh, các tính từ cần tuân theo thứ tự phân loại chặt chẽ:\n1. Quan điểm, ý kiến đánh giá (Opinion: lovely, beautiful, nice)\n2. Kích thước (Size: big, small, tall)\n3. Tuổi thọ, độ cũ mới (Age: old, young, new)\n4. Hình dáng (Shape: round, square)\n5. Màu sắc (Color: red, blue, green)\n6. Nguồn gốc, xuất xứ (Origin: Italian, French, Vietnamese)\n7. Chất liệu (Material: leather, wooden, plastic)\n8. Mục đích sử dụng (Purpose: writing, sleeping)\n→ Đi kèm theo sau là Danh từ chính.\nVí dụ: a small beautiful old square brown French wooden writing desk (một chiếc bàn viết bằng gỗ của Pháp màu nâu hình vuông cổ đẹp nhỏ nhắn).",
-    "formation": "Ý kiến + Kích thước + Tuổi tác + Hình dáng + Màu sắc + Nguồn gốc + Chất liệu + Mục đích + Danh từ",
-    "examples": [
-      {
-        "translation": "một ngôi nhà tranh nhỏ nhắn, cổ kính và đáng yêu"
-      },
-      {
-        "translation": "một chiếc xe thể thao lớn màu đỏ của Ý"
-      }
-    ]
-  },
-  "en_b1_01": {
-    "title": "Thì hiện tại hoàn thành - Cấu trúc và cách dùng",
-    "shortExplanation": "Diễn tả hành động xảy ra trong quá khứ nhưng có liên hệ mật thiết hoặc kết quả ở hiện tại; 'đã làm...'.",
-    "longExplanation": "Thì hiện tại hoàn thành liên kết một hành động trong quá khứ với hiện tại.\nCông thức: Chủ ngữ + have / has + Quá khứ phân từ (động từ thêm -ed hoặc cột 3 trong bảng động từ bất quy tắc).\nBa cách dùng cơ bản:\n1. Trải nghiệm trong đời (không nêu rõ thời gian cụ thể): I have visited Tokyo (Tôi từng đến Tokyo).\n2. Kết quả còn lưu lại ở hiện tại: I have lost my keys (Tôi đã làm mất chìa khóa - hiện tại vẫn chưa tìm thấy).\n3. Hành động bắt đầu trong quá khứ và vẫn đang tiếp diễn: She has lived here for 5 years (Cô ấy đã sống ở đây được 5 năm).",
-    "formation": "Khẳng định: Chủ ngữ + have / has + Quá khứ phân từ\nPhủ định: Chủ ngữ + haven't / hasn't + Quá khứ phân từ\nNghi vấn: Have / Has + Chủ ngữ + Quá khứ phân từ?",
-    "examples": [
-      {
-        "translation": "Bạn đã bao giờ ăn sushi chưa?"
-      },
-      {
-        "translation": "Tôi vừa mới làm xong bài tập về nhà."
-      },
-      {
-        "translation": "Cô ấy vẫn chưa gọi điện."
-      }
-    ]
-  },
-  "en_b1_02": {
-    "title": "ever / never / already / yet / just - Các dấu hiệu nhận biết thì hiện tại hoàn thành",
-    "shortExplanation": "Các phó từ đặc trưng đi kèm thì hiện tại hoàn thành để nhấn mạnh thời điểm, trải nghiệm hoặc mức độ hoàn tất của hành động.",
-    "longExplanation": "Các phó từ này chỉ rõ tính chất thời gian trong thì hiện tại hoàn thành:\n• ever (từng, đã bao giờ): dùng trong câu nghi vấn hỏi về trải nghiệm đời người. Vị trí: đứng trước quá khứ phân từ.\n• never (chưa bao giờ): mang nghĩa phủ định tuyệt đối. Vị trí: đứng trước quá khứ phân từ (không cần thêm not vào câu).\n• already (đã... rồi): chỉ hành động đã xảy ra sớm hơn dự kiến. Vị trí: đứng trước quá khứ phân từ hoặc ở cuối câu.\n• yet (chưa / đã... chưa): dùng trong câu hỏi ('đã... chưa?') và câu phủ định ('vẫn chưa'). Vị trí: luôn đứng ở cuối câu.\n• just (vừa mới): chỉ hành động vừa mới kết thúc trong chốc lát. Vị trí: đứng trước quá khứ phân từ.",
-    "formation": "Chủ ngữ + have / has + ever / never / already / just + Quá khứ phân từ\nChủ ngữ + haven't / hasn't + Quá khứ phân từ + yet\nHave / Has + Chủ ngữ + ever + Quá khứ phân từ?\nHave / Has + Chủ ngữ + Quá khứ phân từ + yet?",
-    "examples": [
-      {
-        "translation": "Bạn đã từng đến Scotland bao giờ chưa?"
-      },
-      {
-        "translation": "Tôi chưa bao giờ ăn món ốc sên cả."
-      },
-      {
-        "translation": "Tôi đã xem bộ phim đó rồi."
-      }
-    ]
-  },
-  "en_b1_03": {
-    "title": "So sánh thì hiện tại hoàn thành và thì quá khứ đơn - Điểm khác biệt cốt lõi",
-    "shortExplanation": "Hiện tại hoàn thành nhấn mạnh kết quả hoặc trải nghiệm liên quan tới hiện tại (không rõ thời gian), quá khứ đơn diễn tả sự việc đã kết thúc ở một mốc thời gian xác định.",
-    "longExplanation": "Đây là một trong những điểm khác biệt quan trọng nhất trong ngữ pháp tiếng Anh.\n• Hiện tại hoàn thành: Hành động có mối liên hệ mật thiết với hiện tại, không chỉ rõ thời điểm cụ thể trong quá khứ. Ví dụ: I've lost my wallet (Tôi đã đánh mất ví - điều quan trọng là hiện tại tôi đang không có ví).\n• Quá khứ đơn: Hành động đã chấm dứt hoàn toàn trong quá khứ, luôn đi kèm hoặc ngụ ý một thời điểm quá khứ cụ thể xác định (như yesterday, last week, in 2020). Ví dụ: I lost my wallet yesterday (Hôm qua tôi đã đánh mất ví - hành động gắn liền với mốc ngày hôm qua).",
-    "formation": "Hiện tại hoàn thành: Chủ ngữ + have / has + Quá khứ phân từ (không có mốc thời gian cụ thể trong quá khứ)\nQuá khứ đơn: Chủ ngữ + Động từ quá khứ (kèm mốc thời gian quá khứ xác định)",
-    "examples": [
-      {
-        "translation": "Tôi đã gặp giám đốc mới rồi."
-      },
-      {
-        "translation": "Tôi đã gặp ông ấy vào thứ Ba tuần trước."
-      }
-    ]
-  },
-  "en_b1_04": {
-    "title": "Thì hiện tại hoàn thành kết hợp với for và since",
-    "shortExplanation": "Dùng để nói về hành động bắt đầu từ quá khứ và vẫn đang kéo dài tới hiện tại; for đi với khoảng thời gian, since đi với mốc thời gian.",
-    "longExplanation": "Trong thì hiện tại hoàn thành, for và since được sử dụng để trả lời cho câu hỏi 'Bao lâu?' (How long...?):\n• for (trong suốt, được): đi kèm với một khoảng thời gian kéo dài (ví dụ: for two days, for a year, for a long time, for ages).\n• since (từ khi, từ mốc): đi kèm với một mốc thời điểm xác định bắt đầu hành động trong quá khứ hoặc một mệnh đề quá khứ đơn (ví dụ: since Monday, since 2015, since I was a child).\nCâu hỏi về thời gian thực hiện hành động luôn bắt đầu bằng: How long + have / has + chủ ngữ + quá khứ phân từ...?",
-    "formation": "Chủ ngữ + have / has + Quá khứ phân từ + for + Khoảng thời gian\nChủ ngữ + have / has + Quá khứ phân từ + since + Mốc thời gian / Mệnh đề quá khứ đơn",
-    "examples": [
-      {
-        "translation": "Cô ấy đã làm việc ở đây được mười năm rồi."
-      },
-      {
-        "translation": "Tôi quen biết anh ấy từ hồi học đại học."
-      }
-    ]
-  },
-  "en_b1_05": {
-    "title": "Thì hiện tại hoàn thành tiếp diễn: have been + V-ing",
-    "shortExplanation": "Nhấn mạnh vào quá trình kéo dài liên tục của hành động từ quá khứ đến hiện tại, hoặc giải thích dấu vết để lại ở hiện tại.",
-    "longExplanation": "Thì hiện tại hoàn thành tiếp diễn nhấn mạnh vào độ dài thời gian hoặc tính chất liên tục chưa dừng lại của một hành động.\nCấu trúc: Chủ ngữ + have / has been + Động từ đuôi -ing.\nĐặc điểm chính:\n1. Nhấn mạnh quá trình liên tục (thường trả lời câu hỏi 'How long?'): I've been waiting for an hour (Tôi đã đợi suốt một tiếng đồng hồ rồi).\n2. Giải thích kết quả hoặc trạng thái quan sát được ở hiện tại: You look tired - have you been running? (Trông bạn mệt thế - vừa mới chạy bộ à?).\nPhân biệt với thì hiện tại hoàn thành đơn:\n• Hiện tại hoàn thành đơn nhấn mạnh kết quả hoặc sự hoàn tất: I've read 50 pages (Tôi đã đọc xong 50 trang).\n• Hiện tại hoàn thành tiếp diễn nhấn mạnh vào tiến trình của hành động: I've been reading all evening (Tôi đã ngồi đọc sách suốt cả buổi tối).",
-    "formation": "Khẳng định: Chủ ngữ + have / has been + Động từ đuôi -ing\nPhủ định: Chủ ngữ + haven't / hasn't been + Động từ đuôi -ing\nNghi vấn: Have / Has + Chủ ngữ + been + Động từ đuôi -ing?",
-    "examples": [
-      {
-        "translation": "Tôi đã và đang học tiếng Anh được hai năm rồi."
-      },
-      {
-        "translation": "Sao tay anh lấm lem thế kia? — Tôi vừa sửa xe xong."
-      }
-    ]
-  },
-  "en_b1_06": {
-    "title": "Thì quá khứ tiếp diễn: was/were + V-ing",
-    "shortExplanation": "Diễn tả hành động đang diễn ra tại một thời điểm xác định trong quá khứ hoặc làm nền cho sự việc khác; 'lúc đó đang làm...'.",
-    "longExplanation": "Thì quá khứ tiếp diễn được dùng để nói về một hành động đang trong quá trình xảy ra tại một thời điểm cụ thể trong quá khứ.\nCấu trúc: Chủ ngữ + was / were + Động từ đuôi -ing (was đi với I/he/she/it; were đi với you/we/they).\nCác trường hợp sử dụng chính:\n1. Hành động đang xảy ra tại một thời điểm chính xác trong quá khứ: At 9pm I was having dinner (Lúc 9 giờ tối qua tôi đang ăn tối).\n2. Hành động nền đang diễn ra thì có một hành động khác xen vào: I was walking when it started to rain (Tôi đang đi bộ thì trời bắt đầu đổ mưa).\n3. Hai hành động diễn ra song song cùng một lúc trong quá khứ: While she was cooking, he was watching TV (Trong khi cô ấy đang nấu ăn thì anh ấy đang xem ti-vi).",
-    "formation": "Khẳng định: Chủ ngữ + was / were + Động từ đuôi -ing\nPhủ định: Chủ ngữ + wasn't / weren't + Động từ đuôi -ing\nNghi vấn: Was / Were + Chủ ngữ + Động từ đuôi -ing?",
-    "examples": [
-      {
-        "translation": "Lúc tôi rời khỏi nhà thì trời đang mưa."
-      },
-      {
-        "translation": "Bạn đang làm gì vào lúc 7 giờ tối hôm qua vậy?"
-      }
-    ]
-  },
-  "en_b1_07": {
-    "title": "So sánh thì quá khứ đơn và quá khứ tiếp diễn - Hành động nền và sự việc xen vào",
-    "shortExplanation": "Quá khứ tiếp diễn làm nền cho hành động dài đang diễn ra, quá khứ đơn dùng cho sự việc ngắn hơn đột ngột xen vào.",
-    "longExplanation": "Sự kết hợp điển hình trong quá khứ: một hành động dài đang diễn ra làm bối cảnh nền (dùng thì quá khứ tiếp diễn) thì một hành động ngắn khác bất ngờ chen ngang (dùng thì quá khứ đơn).\nCác liên từ chỉ thời gian thường gặp:\n• when (khi, vào lúc): thường đi liền trước mệnh đề chia ở thì quá khứ đơn để chỉ sự việc xen vào đột ngột: She was sleeping when the alarm went off (Cô ấy đang ngủ thì chuông báo thức reo lên).\n• while / as (trong khi, khi): thường đi liền trước mệnh đề chia ở thì quá khứ tiếp diễn để diễn tả hành động nền kéo dài: While I was watching TV, the power went out (Trong khi tôi đang xem ti-vi thì bị mất điện).",
-    "formation": "Mệnh đề quá khứ tiếp diễn + when + Mệnh đề quá khứ đơn\nWhile + Mệnh đề quá khứ tiếp diễn + , + Mệnh đề quá khứ đơn",
-    "examples": [
-      {
-        "translation": "Cô ấy đang tắm thì điện thoại bất ngờ đổ chuông."
-      },
-      {
-        "translation": "Trong khi ông ấy đang phát biểu, có người đã ngủ gật."
-      }
-    ]
-  },
-  "en_b1_08": {
-    "title": "Câu điều kiện loại 0: If + Hiện tại đơn, Hiện tại đơn - Chân lý và quy luật tự nhiên",
-    "shortExplanation": "Diễn tả chân lý, quy luật tự nhiên hoặc sự thật hiển nhiên luôn đúng; 'nếu... thì luôn...'.",
-    "longExplanation": "Câu điều kiện loại 0 (Zero conditional) được dùng để phát biểu các sự thật khoa học, quy luật tự nhiên, hoặc thói quen luôn dẫn đến một kết quả tất yếu.\nCấu trúc: If + Mệnh đề hiện tại đơn, Mệnh đề hiện tại đơn.\nĐặc điểm: Cả hai mệnh đề đều chia ở thì hiện tại đơn vì hành động ở mệnh đề chính luôn xảy ra khi điều kiện được thỏa mãn.\nCó thể thay liên từ If bằng When mà ý nghĩa không đổi: When you mix red and blue, you get purple (Khi pha màu đỏ với màu xanh lam, bạn sẽ được màu tím).",
-    "formation": "If / When + Chủ ngữ + Động từ thì hiện tại đơn + , + Chủ ngữ + Động từ thì hiện tại đơn",
-    "examples": [
-      {
-        "translation": "Nếu bạn làm nóng băng, nó sẽ tan chảy."
-      },
-      {
-        "translation": "Nếu trời mưa, đường sá sẽ bị ướt."
-      }
-    ]
-  },
-  "en_b1_09": {
-    "title": "Câu điều kiện loại 1: If + Hiện tại đơn, will - Tình huống có thật ở tương lai",
-    "shortExplanation": "Diễn tả một sự việc hoặc tình huống hoàn toàn có thể xảy ra trong tương lai nếu điều kiện được đáp ứng.",
-    "longExplanation": "Câu điều kiện loại 1 (First conditional) diễn tả một điều kiện có thật, có khả năng cao sẽ xảy ra trong hiện tại hoặc tương lai, cùng với kết quả tương ứng.\nCấu trúc: If + Mệnh đề hiện tại đơn, Chủ ngữ + will + Động từ nguyên mẫu.\nLưu ý quan trọng:\n• Mệnh đề điều kiện (chứa if) chia ở thì hiện tại đơn, tuyệt đối không dùng will.\n• Trong mệnh đề chính, ngoài will còn có thể sử dụng các động từ khiếm khuyết khác như can, may, might, should để thể hiện các mức độ khả năng hoặc lời khuyên.\n• Có thể đảo mệnh đề chính lên trước mà không cần dùng dấu phẩy ngăn cách: I'll stay home if it rains.",
-    "formation": "If + Chủ ngữ + Động từ thì hiện tại đơn + , + Chủ ngữ + will / can / may + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Nếu cô ấy học hành chăm chỉ, cô ấy sẽ thi đỗ."
-      },
-      {
-        "translation": "Nếu bạn cần giúp đỡ, tôi có thể đến."
-      }
-    ]
-  },
-  "en_b1_10": {
-    "title": "Câu điều kiện loại 2: If + Quá khứ đơn, would - Tình huống giả định trái ngược với hiện tại",
-    "shortExplanation": "Diễn tả giả định về một sự việc không có thật hoặc không thể xảy ra ở hiện tại hoặc tương lai; 'giá như... thì sẽ...'.",
-    "longExplanation": "Câu điều kiện loại 2 (Second conditional) được sử dụng để giả định về một tình huống trái ngược với thực tế ở hiện tại, hoặc một viễn cảnh rất khó xảy ra trong tương lai.\nCấu trúc: If + Mệnh đề quá khứ đơn, Chủ ngữ + would + Động từ nguyên mẫu.\nQuy tắc ngữ pháp cần ghi nhớ:\n• Trong mệnh đề điều kiện (if), động từ to be theo truyền thống và trong văn phong trang trọng thường được chia là were cho tất cả các ngôi (kể cả I, he, she, it): If I were you... (Nếu tôi là bạn...).\n• Mệnh đề chính dùng would (hoặc could, might) + động từ nguyên mẫu để chỉ kết quả giả định.",
-    "formation": "If + Chủ ngữ + Động từ thì quá khứ đơn + , + Chủ ngữ + would / could + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Nếu trúng số, tôi sẽ đi du lịch vòng quanh thế giới."
-      },
-      {
-        "translation": "Nếu tôi cao hơn, tôi đã chơi bóng rổ rồi."
-      }
-    ]
-  },
-  "en_b1_11": {
-    "title": "Câu điều kiện loại 1 so với loại 2: Có thật vs Giả định khó xảy ra",
-    "shortExplanation": "So sánh câu điều kiện loại 1 (sự việc có thể xảy ra ở hiện tại hoặc tương lai) và loại 2 (giả định không có thật hoặc khó xảy ra ở hiện tại).",
-    "longExplanation": "Việc lựa chọn câu điều kiện loại 1 hay loại 2 thể hiện mức độ tin tưởng của người nói vào khả năng xảy ra của tình huống:\n• Câu điều kiện loại 1 (If + hiện tại đơn, will + động từ nguyên thể): Diễn tả tình huống thực tế, có khả năng cao xảy ra (Ví dụ: 'If I see her' - Tôi kỳ vọng sẽ gặp cô ấy).\n• Câu điều kiện loại 2 (If + quá khứ đơn, would + động từ nguyên thể): Diễn tả tình huống giả định, tưởng tượng hoặc rất khó xảy ra ở hiện tại (Ví dụ: 'If I saw her' - Khó có khả năng gặp, chỉ là tưởng tượng).\nSự khác biệt không chỉ nằm ở cấu trúc ngữ pháp mà còn thể hiện thái độ và góc nhìn của người nói đối với khả năng xảy ra của sự việc.",
-    "formation": "Loại 1: If + Chủ ngữ + Động từ (hiện tại đơn), Chủ ngữ + will + Động từ nguyên thể\nLoại 2: If + Chủ ngữ + Động từ (quá khứ đơn), Chủ ngữ + would + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Nếu ngày mai trời mưa, tôi sẽ mang theo ô (dù). (Khả năng thực tế có thể xảy ra)"
-      },
-      {
-        "translation": "Nếu ngày nào trời cũng mưa, tôi sẽ chuyển đến Tây Ban Nha sống. (Giả định khó xảy ra)"
-      }
-    ]
-  },
-  "en_b1_12": {
-    "title": "Thể bị động - Thì hiện tại đơn: am / is / are + Quá khứ phân từ (V3/ed)",
-    "shortExplanation": "Diễn tả hành động được thực hiện ở hiện tại, tập trung vào bản thân hành động hoặc đối tượng chịu tác động thay vì người thực hiện.",
-    "longExplanation": "Thể bị động ở thì hiện tại đơn được sử dụng khi:\n• Bản thân hành động hoặc kết quả quan trọng hơn người thực hiện hành động đó.\n• Người thực hiện hành động không rõ, không quan trọng hoặc đã hiển nhiên.\nNếu muốn nhắc đến người hoặc tác nhân thực hiện hành động, ta sử dụng giới từ 'by': Ví dụ: 'The window is broken by the ball' (Cửa sổ bị quả bóng làm vỡ).",
-    "formation": "Chủ ngữ + am / is / are + Quá khứ phân từ (V3/ed) (+ by + Tân ngữ)",
-    "examples": [
-      {
-        "translation": "Tiếng Anh được nói ở nhiều quốc gia."
-      },
-      {
-        "translation": "Bức thư được viết bằng tiếng Pháp."
-      }
-    ]
-  },
-  "en_b1_13": {
-    "title": "Thể bị động - Thì quá khứ đơn: was / were + Quá khứ phân từ (V3/ed)",
-    "shortExplanation": "Diễn tả hành động đã được thực hiện hoặc đã xảy ra đối với chủ ngữ trong quá khứ.",
-    "longExplanation": "Thể bị động ở thì quá khứ đơn dùng để diễn tả một sự việc đã xảy ra và kết thúc trong quá khứ mà đối tượng chịu tác động được đặt lên làm trọng tâm.\n• Dùng 'was' với chủ ngữ số ít (I, he, she, it, danh từ số ít).\n• Dùng 'were' với chủ ngữ số nhiều (you, we, they, danh từ số nhiều).\nChuyển từ câu chủ động sang bị động: Someone stole my car (Ai đó đã trộm xe của tôi) → My car was stolen (Xe của tôi đã bị trộm).",
-    "formation": "Chủ ngữ + was / were + Quá khứ phân từ (V3/ed) (+ by + Tân ngữ)",
-    "examples": [
-      {
-        "translation": "Tháp Eiffel được xây dựng vào năm 1889."
-      },
-      {
-        "translation": "Ba người đã bị thương trong vụ tai nạn."
-      }
-    ]
-  },
-  "en_b1_14": {
-    "title": "Thể bị động - Thì hiện tại hoàn thành: has / have been + Quá khứ phân từ (V3/ed)",
-    "shortExplanation": "Diễn tả hành động vừa mới được thực hiện hoặc đã hoàn thành tính đến thời điểm hiện tại, nhấn mạnh kết quả.",
-    "longExplanation": "Thể bị động ở thì hiện tại hoàn thành được dùng khi muốn nhấn mạnh kết quả của hành động ở hiện tại, chứ không quan trọng thời điểm chính xác hành động đó xảy ra.\n• Dùng 'has been' với chủ ngữ ngôi thứ ba số ít (he, she, it, danh từ số ít).\n• Dùng 'have been' với các chủ ngữ còn lại (I, you, we, they, danh từ số nhiều).",
-    "formation": "Chủ ngữ + has / have been + Quá khứ phân từ (V3/ed)",
-    "examples": [
-      {
-        "translation": "Dự án đã được hoàn thành."
-      },
-      {
-        "translation": "Tất cả khách mời đều đã được thông báo."
-      }
-    ]
-  },
-  "en_b1_15": {
-    "title": "Câu gián tiếp - Quy tắc lùi thì",
-    "shortExplanation": "Khi chuyển từ câu trực tiếp sang câu gián tiếp, các thì của động từ thường lùi một thì về quá khứ.",
-    "longExplanation": "Trong câu tường thuật gián tiếp, khi động từ tường thuật ở quá khứ (như 'said', 'told'), thì trong mệnh đề gián tiếp phải lùi về quá khứ tương ứng:\n• Hiện tại đơn → Quá khứ đơn (work → worked)\n• Quá khứ đơn → Quá khứ hoàn thành (went → had gone)\n• Hiện tại hoàn thành → Quá khứ hoàn thành (have seen → had seen)\n• Động từ khuyết thiếu: will → would, can → could, may → might, is/am going to → was going to.",
-    "formation": "Chủ ngữ + said (that) / told + Tân ngữ + (that) + Mệnh đề lùi thì",
-    "examples": [
-      {
-        "translation": "Cô ấy nói: 'Tôi đang rời đi.' → Cô ấy nói rằng cô ấy đang rời đi."
-      },
-      {
-        "translation": "Anh ấy bảo tôi: 'Tôi không thể đến.' → Anh ấy bảo tôi rằng anh ấy không thể đến."
-      }
-    ]
-  },
-  "en_b1_16": {
-    "title": "Câu hỏi gián tiếp: Từ để hỏi / if / whether + Chủ ngữ + Động từ",
-    "shortExplanation": "Chuyển câu hỏi trực tiếp sang gián tiếp: không đảo ngữ, đưa về trật tự câu trần thuật (Chủ ngữ + Động từ).",
-    "longExplanation": "Khi tường thuật một câu hỏi sang câu gián tiếp:\n1. Trật tự từ trở về trật tự của câu trần thuật (Chủ ngữ đứng trước Động từ), không còn hiện tượng đảo ngữ.\n2. Bỏ các trợ động từ do / does / did của câu hỏi.\n3. Với câu hỏi có từ để hỏi (Wh-questions): giữ nguyên từ để hỏi (where, what, why...) rồi đến Chủ ngữ + Động từ.\n4. Với câu hỏi Có/Không (Yes/No questions): dùng liên từ 'if' hoặc 'whether' + Chủ ngữ + Động từ.",
-    "formation": "Câu hỏi có từ để hỏi: Chủ ngữ + asked (+ Tân ngữ) + Từ để hỏi + Chủ ngữ + Động từ lùi thì\nCâu hỏi Có/Không: Chủ ngữ + asked (+ Tân ngữ) + if / whether + Chủ ngữ + Động từ lùi thì",
-    "examples": [
-      {
-        "translation": "'Bạn làm việc ở đâu?' → Cô ấy hỏi tôi làm việc ở đâu."
-      },
-      {
-        "translation": "'Anh đã kết hôn chưa?' → Anh ấy muốn biết liệu tôi đã kết hôn hay chưa."
-      }
-    ]
-  },
-  "en_b1_17": {
-    "title": "Phân biệt 'say' và 'tell' trong câu gián tiếp",
-    "shortExplanation": "'say' không bắt buộc có tân ngữ chỉ người nhận thông tin; 'tell' luôn bắt buộc phải có tân ngữ chỉ người theo sau.",
-    "longExplanation": "Trong câu tường thuật, 'say' và 'tell' có sự khác biệt rõ rệt về cấu trúc:\n• say (that)...: Không cần tân ngữ chỉ người nghe đi kèm (Ví dụ: She said that she was tired). Nếu muốn thêm người nghe, phải dùng giới từ 'to': said to me.\n• tell + tân ngữ chỉ người + (that)...: Bắt buộc PHẢI có tân ngữ chỉ người ngay sau 'tell' (Ví dụ: She told me that she was tired).\nSai: He told that he was late ✗ → Đúng: He said that he was late ✓ hoặc He told me that he was late ✓.",
-    "formation": "Chủ ngữ + say/said + (that) + Mệnh đề\nChủ ngữ + tell/told + Tân ngữ chỉ người + (that) + Mệnh đề",
-    "examples": [
-      {
-        "translation": "Cô ấy nói rằng cô ấy cần sự giúp đỡ."
-      },
-      {
-        "translation": "Anh ấy bảo với chúng tôi rằng cuộc họp đã bị hủy."
-      }
-    ]
-  },
-  "en_b1_18": {
-    "title": "Động từ theo sau bởi danh động từ (Động từ thêm -ing)",
-    "shortExplanation": "Các động từ bắt buộc kết hợp với danh động từ (V-ing) đóng vai trò làm tân ngữ theo sau.",
-    "longExplanation": "Một số động từ trong tiếng Anh luôn đòi hỏi một danh động từ (V-ing) theo sau làm tân ngữ trực tiếp, không dùng động từ nguyên thể có to (to-V).\nCác động từ tiêu biểu gồm: enjoy (thích), finish (hoàn thành), avoid (tránh), mind (phiền/ngại), suggest (gợi ý), keep (tiếp tục), consider (cân nhắc), deny (phủ nhận), imagine (tưởng tượng), miss (bỏ lỡ/nhớ), practice (luyện tập), risk (mạo hiểm), admit (thừa nhận), delay (trì hoãn), give up (từ bỏ), put off (hoãn lại), recommend (khuyên/tiến cử).\nMẹo ghi nhớ: Những hành động mang tính quá trình, trải nghiệm thực tế hoặc việc đang diễn ra thường đi với danh động từ -ing.",
-    "formation": "Chủ ngữ + Động từ + Danh động từ (Động từ thêm -ing)",
-    "examples": [
-      {
-        "translation": "Tôi rất thích bơi lội ở biển."
-      },
-      {
-        "translation": "Cô ấy đang cân nhắc việc chuyển ra nước ngoài sinh sống."
-      },
-      {
-        "translation": "Anh ấy đã tránh giao tiếp bằng mắt."
-      }
-    ]
-  },
-  "en_b1_19": {
-    "title": "Động từ theo sau bởi động từ nguyên thể có 'to' (to + V)",
-    "shortExplanation": "Các động từ bắt buộc kết hợp với động từ nguyên thể có 'to' đóng vai trò làm tân ngữ theo sau.",
-    "longExplanation": "Nhiều động từ trong tiếng Anh đòi hỏi một động từ nguyên thể có 'to' (to-infinitive) đi sau làm tân ngữ, thường diễn tả ý định, kế hoạch, mong muốn hoặc kỳ vọng hướng tới tương lai.\nCác động từ thông dụng bao gồm: want (muốn), decide (quyết định), hope (hy vọng), plan (lên kế hoạch), manage (xoay xở/thành công), agree (đồng ý), promise (hứa), refuse (từ chối), fail (thất bại/không làm được), expect (mong đợi), offer (đề nghị), learn (học), need (cần), afford (đủ khả năng chi trả), arrange (sắp xếp), attempt (cố gắng), choose (chọn), demand (yêu cầu), deserve (xứng đáng), pretend (giả vờ), tend (có xu hướng), threaten (đe dọa).",
-    "formation": "Chủ ngữ + Động từ + to + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Cô ấy đã quyết định nghỉ việc."
-      },
-      {
-        "translation": "Tôi hy vọng sẽ sớm được gặp lại bạn."
-      },
-      {
-        "translation": "Anh ấy đã không thể đưa ra câu trả lời."
-      }
-    ]
-  },
-  "en_b1_20": {
-    "title": "Động từ đi được với cả danh động từ (-ing) và động từ nguyên thể (to-V)",
-    "shortExplanation": "Các động từ có thể đi cùng cả V-ing lẫn to-V (như like, love, hate, start, begin) với nghĩa tương đồng hoặc có sự khác biệt nhỏ về sắc thái.",
-    "longExplanation": "Một nhóm động từ trong tiếng Anh có thể kết hợp với cả danh động từ (V-ing) lẫn động từ nguyên thể có to (to-V):\n• Với nhóm động từ chỉ cảm xúc (like, love, hate, prefer): Dùng V-ing khi nói về sở thích hoặc hành động nói chung (Ví dụ: 'I love cooking' - Tôi rất thích việc nấu ăn nói chung); Dùng to-V khi nhấn mạnh một tình huống cụ thể, sự lựa chọn hoặc thói quen tốt (Ví dụ: 'I like to clean my room on Sundays').\n• Với nhóm động từ bắt đầu hoặc tiếp tục (start, begin, continue): Cả hai cách dùng hầu như không có sự khác biệt về mặt ý nghĩa.",
-    "formation": "Chủ ngữ + like / love / hate / start / begin + Danh động từ (V-ing) HOẶC to + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Tôi rất thích đi du lịch."
-      },
-      {
-        "translation": "Cô ấy đã bắt đầu làm việc ở đây từ tháng Năm."
-      }
-    ]
-  },
-  "en_b1_21": {
-    "title": "used to - Thói quen hoặc trạng thái trong quá khứ",
-    "shortExplanation": "Diễn tả thói quen hoặc trạng thái từng xảy ra thường xuyên trong quá khứ nhưng nay đã chấm dứt; 'đã từng'.",
-    "longExplanation": "Cấu trúc 'used to' được dùng để nói về những hành động, thói quen lặp đi lặp lại hoặc tình trạng từng tồn tại trong quá khứ nhưng hiện tại không còn nữa.\n• Khẳng định: Chủ ngữ + used to + Động từ nguyên thể\n• Phủ định: Chủ ngữ + didn't use to + Động từ nguyên thể\n• Nghi vấn: Did + Chủ ngữ + use to + Động từ nguyên thể...?\nPhân biệt với 'be used to + V-ing/Danh từ': 'be used to' mang nghĩa 'quen với việc gì ở hiện tại' (Ví dụ: 'I am used to waking up early' - Tôi đã quen với việc dậy sớm).",
-    "formation": "Khẳng định: Chủ ngữ + used to + Động từ nguyên thể\nPhủ định: Chủ ngữ + didn't use to + Động từ nguyên thể\nNghi vấn: Did + Chủ ngữ + use to + Động từ nguyên thể?",
-    "examples": [
-      {
-        "translation": "Tôi từng hút thuốc, nhưng giờ tôi đã bỏ rồi."
-      },
-      {
-        "translation": "Trước đây bạn có từng chơi nhạc cụ nào không?"
-      }
-    ]
-  },
-  "en_b1_22": {
-    "title": "Mệnh đề quan hệ: who, which, that, where, whose",
-    "shortExplanation": "Sử dụng đại từ quan hệ và trạng từ quan hệ để bổ nghĩa và làm rõ danh từ đứng trước.",
-    "longExplanation": "Mệnh đề quan hệ được dùng để cung cấp thêm thông tin thiết yếu hoặc bổ sung cho danh từ đứng ngay trước nó:\n• who: Thay thế cho danh từ chỉ người làm chủ ngữ hoặc tân ngữ (Ví dụ: The woman who called is my sister).\n• which: Thay thế cho danh từ chỉ đồ vật hoặc động vật (Ví dụ: The book which I borrowed was great).\n• that: Có thể thay thế cho cả người lẫn vật trong mệnh đề quan hệ xác định (Ví dụ: The car that he bought is new).\n• where: Trạng từ quan hệ chỉ nơi chốn (Ví dụ: The café where we met is closed).\n• whose: Chỉ sự sở hữu (Ví dụ: The girl whose bag was stolen).\nLưu ý: Trong văn nói hàng ngày, đại từ quan hệ làm tân ngữ thường được lược bỏ: The film (that) I saw.",
-    "formation": "Danh từ (tiền từ) + who / which / that / where / whose + Mệnh đề quan hệ",
-    "examples": [
-      {
-        "translation": "Người đàn ông sống ở nhà bên cạnh rất thân thiện."
-      },
-      {
-        "translation": "Khách sạn nơi chúng tôi từng lưu trú có một hồ bơi."
-      }
-    ]
-  },
-  "en_b1_23": {
-    "title": "Liên từ chỉ sự tương phản: although, however, despite, in spite of, whereas",
-    "shortExplanation": "Các từ nối diễn tả sự đối lập hoặc nhượng bộ giữa hai mệnh đề hoặc ý niệm; 'mặc dù', 'tuy nhiên', 'trong khi'.",
-    "longExplanation": "Các liên từ chỉ sự tương phản trong tiếng Anh có cách kết hợp ngữ pháp khác nhau:\n• although / even though / though + Mệnh đề (Chủ ngữ + Động từ): Mang nghĩa 'mặc dù / dẫu cho'.\n• despite / in spite of + Danh từ / Cụm danh từ / Danh động từ (V-ing): Tuyệt đối KHÔNG đi trực tiếp với mệnh đề có chủ vị.\n• however: Trạng từ liên kết, thường đứng đầu câu mới sau dấu chấm hoặc dấu chấm phẩy và ngăn cách bởi dấu phẩy, mang nghĩa 'tuy nhiên'.\n• whereas: Dùng để so sánh và đối chiếu hai sự thật trái ngược nhau giữa hai mệnh đề, mang nghĩa 'trong khi / trái lại'.",
-    "formation": "although / even though / though + Mệnh đề\ndespite / in spite of + Danh từ / Cụm danh từ / Danh động từ (V-ing)\nhowever, + Mệnh đề mới\nMệnh đề 1, whereas + Mệnh đề 2",
-    "examples": [
-      {
-        "translation": "Dù rất mệt, cô ấy vẫn tiếp tục làm việc."
-      },
-      {
-        "translation": "Bất chấp trời mưa, anh ấy vẫn đạp xe đi làm."
-      },
-      {
-        "translation": "Món đồ đó đắt đỏ. Tuy nhiên, nó hoàn toàn xứng đáng với giá tiền."
-      }
-    ]
-  },
-  "en_b1_24": {
-    "title": "Thì tương lai tiếp diễn: will be + Động từ thêm -ing (V-ing)",
-    "shortExplanation": "Diễn tả hành động đang diễn ra tại một thời điểm xác định trong tương lai hoặc hành động đã được lên kế hoạch theo tiến trình tự nhiên.",
-    "longExplanation": "Thì tương lai tiếp diễn được sử dụng trong các trường hợp chính sau:\n1. Hành động đang xảy ra tại một thời điểm xác định cụ thể trong tương lai (Ví dụ: At this time tomorrow, I'll be lying on the beach - Vào giờ này ngày mai, tôi đang nằm trên bãi biển).\n2. Hành động chắc chắn sẽ xảy ra trong tương lai theo kế hoạch hoặc diễn biến tự nhiên thường lệ (Ví dụ: I'll be seeing her tomorrow anyway).\n3. Đặt câu hỏi lịch sự về kế hoạch của người khác mà không tạo áp lực hay có vẻ dò xét (Ví dụ: Will you be coming to the party? - Bạn sẽ đến dự bữa tiệc chứ?).",
-    "formation": "Khẳng định: Chủ ngữ + will be + Động từ thêm -ing\nPhủ định: Chủ ngữ + won't be + Động từ thêm -ing\nNghi vấn: Will + Chủ ngữ + be + Động từ thêm -ing?",
-    "examples": [
-      {
-        "translation": "Đừng gọi lúc 8 giờ nhé — lúc đó tôi đang ăn tối."
-      },
-      {
-        "translation": "Giờ này tuần sau, tôi sẽ đang ngồi thư giãn trên bãi biển."
-      }
-    ]
-  },
-  "en_b1_25": {
-    "title": "Thì tương lai hoàn thành: will have + Quá khứ phân từ (V3/ed)",
-    "shortExplanation": "Diễn tả một hành động sẽ được hoàn thành trước một thời điểm hoặc trước một hành động khác trong tương lai.",
-    "longExplanation": "Thì tương lai hoàn thành dùng để nhấn mạnh tính hoàn tất của một hành động trước một mốc thời gian cụ thể trong tương lai.\nThường đi kèm với các cụm từ chỉ thời gian bắt đầu bằng 'by' (trước/vào lúc), 'by the time' (trước khi), 'before' (trước khi):\nVí dụ: 'By the time you arrive, I will have cooked dinner' (Trước khi bạn đến, tôi sẽ nấu xong bữa tối rồi).",
-    "formation": "Khẳng định: Chủ ngữ + will have + Quá khứ phân từ (V3/ed)\nPhủ định: Chủ ngữ + won't have + Quá khứ phân từ (V3/ed)\nNghi vấn: Will + Chủ ngữ + have + Quá khứ phân từ (V3/ed)?",
-    "examples": [
-      {
-        "translation": "Tôi sẽ đọc xong cuốn sách này trước Chủ nhật."
-      },
-      {
-        "translation": "Trước năm 2050, các nhà khoa học sẽ tìm ra phương pháp chữa trị."
-      }
-    ]
-  },
-  "en_b1_26": {
-    "title": "Mệnh đề và cấu trúc chỉ mục đích: to, in order to, so that, so as to",
-    "shortExplanation": "Diễn tả mục đích của hành động: 'để', 'nhằm mục đích', 'để mà'.",
-    "longExplanation": "Các cấu trúc dùng để diễn đạt mục đích của một hành động:\n• to / in order to / so as to + Động từ nguyên mẫu: dùng khi chủ ngữ của hành động chính và mục đích là cùng một đối tượng. Trong đó, 'in order to' và 'so as to' mang sắc thái trang trọng hơn 'to'. Dạng phủ định là 'in order not to' hoặc 'so as not to' (để không làm gì).\n• so that / in order that + Mệnh đề (Chủ ngữ + Động từ khuyết thiếu như can/could, will/would + Động từ nguyên mẫu): thường dùng khi hai mệnh đề có chủ ngữ khác nhau hoặc muốn nhấn mạnh khả năng thực hiện.",
-    "formation": "to / in order to / so as to + Động từ nguyên mẫu | so that + Chủ ngữ + Động từ khuyết thiếu + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Cô ấy chăm chỉ học tập để giành được học bổng."
-      },
-      {
-        "translation": "Anh ấy đã rời đi sớm để có thể bắt kịp chuyến tàu cuối cùng."
-      }
-    ]
-  },
-  "en_b1_27": {
-    "title": "Cụm động từ cơ bản",
-    "shortExplanation": "Động từ kết hợp với tiểu từ (giới từ hoặc phó từ) tạo thành nét nghĩa mới mang tính thành ngữ.",
-    "longExplanation": "Cụm động từ được cấu tạo từ: Động từ + Tiểu từ (giới từ hoặc phó từ). Ý nghĩa của cả cụm thường mang tính thành ngữ và khác biệt so với nghĩa gốc của từng từ thành phần.\nMột số cụm động từ thông dụng nhất:\n• give up = từ bỏ, bỏ cuộc\n• find out = tìm hiểu, phát hiện ra\n• turn on / turn off = bật / tắt (thiết bị)\n• look up = tra cứu (trong từ điển, trên mạng)\n• look after = chăm sóc, trông nom\n• put off = trì hoãn\n• carry on = tiếp tục\n• get on / along (with) = hòa thuận, ăn ý (với ai)\n• bring up = nuôi nấng; đề cập đến một chủ đề\n• come across = tình cờ bắt gặp",
-    "formation": "Động từ + Giới từ / Phó từ (Tiểu từ)",
-    "examples": [
-      {
-        "translation": "Tôi đã bỏ hút thuốc rồi."
-      },
-      {
-        "translation": "Bạn có thể trông nom con mèo giúp tôi trong lúc tôi đi vắng không?"
-      },
-      {
-        "translation": "Chúng ta cần tìm hiểu xem chuyện gì đã xảy ra."
-      }
-    ]
-  },
-  "en_b2_01": {
-    "title": "Thì quá khứ hoàn thành đơn: had + Quá khứ phân từ",
-    "shortExplanation": "Diễn tả hành động đã xảy ra và hoàn tất trước một thời điểm hoặc một hành động khác trong quá khứ.",
-    "longExplanation": "Thì quá khứ hoàn thành đơn được dùng để diễn tả một hành động xảy ra trước một mốc thời gian hoặc một hành động khác trong quá khứ (hành động xảy ra trước dùng Quá khứ hoàn thành, hành động xảy ra sau dùng Quá khứ đơn).\n• Thể khẳng định: Chủ ngữ + had + Quá khứ phân từ (dùng cho mọi ngôi/chủ ngữ)\n• Thể phủ định: Chủ ngữ + hadn't + Quá khứ phân từ\n• Thể nghi vấn: Had + Chủ ngữ + Quá khứ phân từ?\n• Các liên từ và phó từ thường gặp: before, after, when, by the time, already, just, never.",
-    "formation": "Chủ ngữ + had + Quá khứ phân từ (hadn't + Quá khứ phân từ)",
-    "examples": [
-      {
-        "translation": "Khi tôi đến nơi thì cô ấy đã rời đi rồi."
-      },
-      {
-        "translation": "Anh ấy chưa bao giờ nhìn thấy tuyết trước mùa đông năm đó."
-      }
-    ]
-  },
-  "en_b2_02": {
-    "title": "Thì quá khứ hoàn thành tiếp diễn: had been + Động từ đuôi -ing",
-    "shortExplanation": "Nhấn mạnh tính liên tục và độ dài thời gian của một hành động đã diễn ra trước một thời điểm khác trong quá khứ.",
-    "longExplanation": "Thì quá khứ hoàn thành tiếp diễn có cấu trúc had been + Động từ đuôi -ing. Cấu trúc này dùng để nhấn mạnh khoảng thời gian kéo dài liên tục của một hành động diễn ra trước một mốc hoặc hành động khác trong quá khứ, và thường được dùng để giải thích nguyên nhân dẫn đến một kết quả rõ rệt trong quá khứ.",
-    "formation": "Chủ ngữ + had been + Động từ đuôi -ing (hadn't been + Động từ đuôi -ing)",
-    "examples": [
-      {
-        "translation": "Cô ấy kiệt sức vì đã làm việc suốt cả đêm."
-      },
-      {
-        "translation": "Bạn đã đợi bao lâu trước khi cô ấy đến?"
-      }
-    ]
-  },
-  "en_b2_03": {
-    "title": "must have + Quá khứ phân từ - Suy đoán chắc chắn về quá khứ",
-    "shortExplanation": "Diễn tả sự suy đoán gần như chắc chắn về một việc đã xảy ra trong quá khứ: 'chắc hẳn là đã...'.",
-    "longExplanation": "Cấu trúc must have + Quá khứ phân từ được dùng khi người nói gần như chắc chắn một sự việc đã xảy ra trong quá khứ dựa trên những căn cứ hoặc suy luận hợp lý rõ ràng (đây là lời giải thích duy nhất thỏa đáng).\nThang mức độ suy đoán về quá khứ:\n• must have + Quá khứ phân từ: chắc chắn đã xảy ra\n• should have + Quá khứ phân từ: lẽ ra nên xảy ra\n• may / might have + Quá khứ phân từ: có lẽ đã xảy ra\n• can't have + Quá khứ phân từ: chắc chắn không thể xảy ra.",
-    "formation": "Chủ ngữ + must have + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Chắc hẳn bạn đã rất kiệt sức sau chuyến hành trình đó."
-      },
-      {
-        "translation": "Chắc hẳn cô ấy đã về sớm rồi — áo khoác của cô ấy không còn ở đây."
-      }
-    ]
-  },
-  "en_b2_04": {
-    "title": "can't have + Quá khứ phân từ - Suy đoán điều bất khả thi trong quá khứ",
-    "shortExplanation": "Diễn tả sự suy đoán chắc chắn rằng một sự việc không thể nào đã xảy ra trong quá khứ; 'chắc chắn không thể...'.",
-    "longExplanation": "Cấu trúc can't have (hoặc couldn't have) + Quá khứ phân từ dùng để diễn tả sự suy luận chắc chắn rằng một việc không thể nào đã diễn ra trong quá khứ do có bằng chứng rõ ràng chứng minh điều đó là bất khả thi. Đây là cấu trúc phủ định đối lập với 'must have + Quá khứ phân từ'.",
-    "formation": "Chủ ngữ + can't have + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Anh ấy không thể nào đã nhìn thấy cô ấy được — lúc đó cô ấy đang ở nước ngoài."
-      },
-      {
-        "translation": "Đó không thể nào là địa chỉ chính xác được."
-      }
-    ]
-  },
-  "en_b2_05": {
-    "title": "should have + Quá khứ phân từ - Trách móc và tiếc nuối về quá khứ",
-    "shortExplanation": "Diễn tả sự tiếc nuối hoặc trách móc về một việc lẽ ra nên làm (hoặc không nên làm) trong quá khứ.",
-    "longExplanation": "• should have + Quá khứ phân từ: diễn tả một việc đáng lẽ ra nên làm trong quá khứ nhưng trên thực tế đã không làm (thể hiện sự tiếc nuối hoặc trách cứ).\n• shouldn't have + Quá khứ phân từ: diễn tả một việc đáng lẽ không nên làm nhưng thực tế lại đã làm (thể hiện sự phê bình hoặc hối hận).\nĐây là cấu trúc rất thông dụng trong giao tiếp hàng ngày.",
-    "formation": "Chủ ngữ + should have / shouldn't have + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Lẽ ra tôi nên mang theo một chiếc ô."
-      },
-      {
-        "translation": "Lẽ ra cô ấy không nên nói cho anh ta biết bí mật đó."
-      }
-    ]
-  },
-  "en_b2_06": {
-    "title": "might / could have + Quá khứ phân từ - Khả năng có thể đã xảy ra trong quá khứ",
-    "shortExplanation": "Diễn tả khả năng một sự việc có thể đã xảy ra trong quá khứ (không chắc chắn), hoặc lẽ ra đã có thể làm gì.",
-    "longExplanation": "• might have / could have + Quá khứ phân từ: dùng để đưa ra phỏng đoán về một sự việc có thể đã diễn ra trong quá khứ nhưng người nói không hoàn toàn dám chắc ('có lẽ đã...').\n• Ngoài ra, could have + Quá khứ phân từ còn diễn tả khả năng một việc lẽ ra đã có thể xảy ra hoặc thực hiện được trong quá khứ nhưng trên thực tế đã không xảy ra (ví dụ: Tôi lẽ ra đã có thể chiến thắng nếu cố gắng hơn).",
-    "formation": "Chủ ngữ + might / could have + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Có lẽ cô ấy đã quên mất cuộc họp."
-      },
-      {
-        "translation": "Anh ấy có thể đã rời đi bằng cửa sau."
-      }
-    ]
-  },
-  "en_b2_07": {
-    "title": "Câu điều kiện loại 3: If + Quá khứ hoàn thành, would have + Quá khứ phân từ",
-    "shortExplanation": "Diễn tả một giả định trái ngược với thực tế đã diễn ra trong quá khứ; 'nếu lúc đó... thì đã...'.",
-    "longExplanation": "Câu điều kiện loại 3 được dùng để nói về một tình huống không có thật trong quá khứ — cả điều kiện lẫn kết quả đều không xảy ra trên thực tế.\n• Cấu trúc: If + Chủ ngữ + had + Quá khứ phân từ, Chủ ngữ + would have + Quá khứ phân từ\n• Cả hai vế đều mang tính giả định trái thực tế trong quá khứ: điều kiện không được đáp ứng và kết quả cũng không xảy ra.\n• Trong vế chính, có thể dùng 'could have' (đã có thể) hoặc 'might have' (có lẽ đã) để thay thế cho 'would have'.",
-    "formation": "If + Chủ ngữ + had + Quá khứ phân từ, Chủ ngữ + would have + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Nếu cô ấy uống thuốc thì cô ấy đã hồi phục rồi."
-      },
-      {
-        "translation": "Nếu anh ấy không rời đi sớm thì anh ấy đã gặp được cô ấy rồi."
-      }
-    ]
-  },
-  "en_b2_08": {
-    "title": "Câu điều kiện hỗn hợp",
-    "shortExplanation": "Kết hợp các mốc thời gian khác nhau giữa điều kiện và kết quả (quá khứ ↔ hiện tại).",
-    "longExplanation": "Câu điều kiện hỗn hợp kết nối hai thời điểm khác nhau giữa mệnh đề điều kiện và mệnh đề kết quả:\n1. Điều kiện trong quá khứ → Kết quả ở hiện tại:\n• If + Chủ ngữ + had + Quá khứ phân từ, Chủ ngữ + would + Động từ nguyên mẫu\n• Ví dụ: Nếu trước đây tôi nhận công việc đó thì bây giờ tôi đang ở New York rồi.\n2. Bản chất/Hiện trạng ở hiện tại → Kết quả trong quá khứ:\n• If + Chủ ngữ + Quá khứ đơn, Chủ ngữ + would have + Quá khứ phân từ\n• Ví dụ: Nếu cô ấy cẩn thận hơn thì cô ấy đã không làm vỡ chiếc bình đó.",
-    "formation": "If + Chủ ngữ + had + Quá khứ phân từ, Chủ ngữ + would + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Nếu trước đây tôi học ngành y thì bây giờ tôi đã là bác sĩ rồi."
-      }
-    ]
-  },
-  "en_b2_09": {
-    "title": "Thể bị động tương lai và bị động với động từ khuyết thiếu",
-    "shortExplanation": "Cấu trúc bị động kết hợp với thì tương lai hoặc động từ khuyết thiếu: 'sẽ được...', 'phải được...'.",
-    "longExplanation": "Cấu trúc câu bị động đi kèm với thì tương lai hoặc các động từ khuyết thiếu:\n• Động từ khuyết thiếu + be + Quá khứ phân từ\nMột số dạng thường gặp:\n• will be + Quá khứ phân từ: sẽ được làm\n• must be + Quá khứ phân từ: phải được làm\n• should be + Quá khứ phân từ: nên được làm\n• can be + Quá khứ phân từ: có thể được làm.",
-    "formation": "Chủ ngữ + Động từ khuyết thiếu (will / must / should / can) + be + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Bản báo cáo sẽ được công bố vào ngày mai."
-      },
-      {
-        "translation": "Lỗi sai này phải được chỉnh sửa ngay lập tức."
-      }
-    ]
-  },
-  "en_b2_10": {
-    "title": "Thể truyền khiến have/get: have something done",
-    "shortExplanation": "Diễn tả việc thuê, nhờ hoặc sắp xếp người khác làm một việc/dịch vụ nào đó cho mình.",
-    "longExplanation": "Cấu trúc have / get + Tân ngữ + Quá khứ phân từ được dùng khi người nói sắp xếp hoặc thuê một người khác (như thợ, chuyên gia) làm một dịch vụ cho mình thay vì tự mình thực hiện.\nSo sánh:\n• I cut my hair: Tôi tự lấy kéo cắt tóc cho mình.\n• I had my hair cut: Tôi đi cắt tóc (thợ cắt tóc cắt cho tôi).\nTrong đó, 'get' mang sắc thái thân mật, khẩu ngữ hơn; 'have' mang sắc thái trang trọng hơn.",
-    "formation": "Chủ ngữ + have / get + Tân ngữ + Quá khứ phân từ",
-    "examples": [
-      {
-        "translation": "Tôi cần đi khám răng (nhờ nha sĩ kiểm tra)."
-      },
-      {
-        "translation": "Cô ấy đã thuê người sơn lại ngôi nhà vào mùa xuân năm ngoái."
-      }
-    ]
-  },
-  "en_b2_11": {
-    "title": "Động từ tường thuật ở thể bị động: It is said that... / He is believed to...",
-    "shortExplanation": "Dùng để truyền đạt thông tin, tin đồn hoặc nhận định chung mang tính khách quan: 'người ta nói rằng...', 'được cho là...'.",
-    "longExplanation": "Hai cấu trúc bị động phổ biến với các động từ tường thuật như say, think, believe, report, know, expect, consider (thường gặp trong báo chí và văn bản chính luận):\n1. It + Động từ bị động + that + Mệnh đề (Ví dụ: It is believed that... = Người ta tin rằng...)\n2. Chủ ngữ + Động từ to be + Quá khứ phân từ + to + Động từ nguyên mẫu (Ví dụ: She is known to be... = Cô ấy được biết đến là...).\nLưu ý: Nếu hành động trong mệnh đề xảy ra trước thời điểm tường thuật, ta dùng: to have + Quá khứ phân từ.",
-    "formation": "It + Động từ to be + Quá khứ phân từ + that + Mệnh đề | Chủ ngữ + Động từ to be + Quá khứ phân từ + to + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Có thông tin báo cáo rằng ba người đã bị thương."
-      },
-      {
-        "translation": "Người ta cho rằng anh ấy đã trốn ra nước ngoài."
-      }
-    ]
-  },
-  "en_b2_12": {
-    "title": "Phân biệt remember / forget đi với Động từ đuôi -ing và Động từ nguyên mẫu có to",
-    "shortExplanation": "Đi với đuôi -ing để nói về ký ức/việc trong quá khứ; đi với to để nói về bổn phận/nhiệm vụ cần làm.",
-    "longExplanation": "Sự khác biệt về ý nghĩa khi dùng remember và forget:\n• remember / forget + Động từ đuôi -ing: nhớ hoặc quên một ký ức, trải nghiệm đã từng diễn ra trong quá khứ.\n• remember / forget + to + Động từ nguyên mẫu: nhớ hoặc quên một việc, nhiệm vụ cần phải thực hiện trong tương lai.",
-    "formation": "remember / forget + Động từ đuôi -ing (việc trong quá khứ) vs remember / forget + to + Động từ nguyên mẫu (nhiệm vụ cần làm)",
-    "examples": [
-      {
-        "translation": "Tôi nhớ là đã từng gặp cô ấy tại một hội nghị."
-      },
-      {
-        "translation": "Hãy nhớ gọi điện cho mẹ của bạn nhé!"
-      },
-      {
-        "translation": "Tôi đã quên mua sữa mất rồi."
-      }
-    ]
-  },
-  "en_b2_13": {
-    "title": "Phân biệt stop / regret / mean đi với Động từ đuôi -ing và Động từ nguyên mẫu có to",
-    "shortExplanation": "Ý nghĩa của stop, regret, mean thay đổi hoàn toàn tùy theo động từ theo sau là đuôi -ing hay to nguyên mẫu.",
-    "longExplanation": "Các động từ stop, regret, mean thay đổi ý nghĩa rõ rệt theo dạng thức của động từ đi kèm:\n• stop + Động từ đuôi -ing: dừng hẳn hành động đang làm (Ví dụ: từ bỏ hút thuốc).\n• stop + to + Động từ nguyên mẫu: tạm dừng việc đang làm để chuyển sang làm việc khác.\n• regret + Động từ đuôi -ing: hối tiếc về một việc đã làm trong quá khứ.\n• regret + to + Động từ nguyên mẫu: lấy làm tiếc khi phải làm gì (thường dùng thông báo tin xấu: Tôi lấy làm tiếc phải thông báo rằng...).\n• mean + Động từ đuôi -ing: có nghĩa là, đồng nghĩa với việc gì.\n• mean + to + Động từ nguyên mẫu: có ý định, dự tính làm gì.",
-    "formation": "stop / regret / mean + Động từ đuôi -ing vs stop / regret / mean + to + Động từ nguyên mẫu",
-    "examples": [
-      {
-        "translation": "Anh ấy đã bỏ hút thuốc từ năm ngoái."
-      },
-      {
-        "translation": "Cô ấy đã dừng lại để ngắm nhìn phong cảnh."
-      }
-    ]
-  },
-  "en_b2_14": {
-    "title": "wish + Quá khứ đơn - Ước muốn trái ngược với thực tế ở hiện tại",
-    "shortExplanation": "Dùng để diễn tả mong ước về một điều không có thật hoặc trái ngược với thực tế ở hiện tại; 'ước gì', 'giá như'.",
-    "longExplanation": "Cấu trúc 'wish + thì quá khứ đơn' (tương đương câu điều kiện loại hai / giả định thức) diễn tả ước muốn thay đổi một tình huống ở hiện tại nhưng không thể thực hiện được hoặc trái với thực tế. Đối với động từ to be, dùng 'were' cho tất cả các ngôi trong ngữ cảnh trang trọng, mặc dù 'was' cũng thường gặp trong giao tiếp thân mật.",
-    "formation": "Chủ ngữ 1 + wish / wishes + (that) + Chủ ngữ 2 + Động từ (thì quá khứ đơn) / were",
-    "examples": [
-      {
-        "translation": "Giá như tôi có thể nói tiếng Anh tốt hơn."
-      },
-      {
-        "translation": "Cô ấy ước gì mình được sống ở một đất nước ấm áp hơn."
-      }
-    ]
-  },
-  "en_b2_15": {
-    "title": "wish + Quá khứ hoàn thành - Sự tiếc nuối về một việc trong quá khứ",
-    "shortExplanation": "Diễn tả sự hối tiếc hoặc tiếc nuối về một sự việc đã xảy ra hoặc không xảy ra trong quá khứ; 'giá như lúc đó...'.",
-    "longExplanation": "Cấu trúc 'wish + thì quá khứ hoàn thành' (tương đương câu điều kiện loại ba / giả định thức quá khứ) được dùng để bày tỏ sự ân hận, nuối tiếc về những hành động hoặc sự kiện trong quá khứ mà hiện tại không thể nào thay đổi được.",
-    "formation": "Chủ ngữ 1 + wish / wishes + (that) + Chủ ngữ 2 + had + Động từ phân từ hai",
-    "examples": [
-      {
-        "translation": "Giá như lúc nãy tôi không ăn nhiều đến thế."
-      },
-      {
-        "translation": "Cô ấy ước gì mình đã chấp nhận lời đề nghị công việc đó."
-      }
-    ]
-  },
-  "en_b2_16": {
-    "title": "wish + would - Mong muốn ai đó thay đổi hành vi hoặc tình huống chuyển biến",
-    "shortExplanation": "Dùng để diễn tả sự khó chịu, phiền lòng và mong muốn ai đó thay đổi hành vi hoặc mong một hoàn cảnh sớm chuyển biến.",
-    "longExplanation": "Cấu trúc 'wish + would + động từ nguyên thể' được dùng khi người nói cảm thấy bực mình, bất lực hoặc sốt ruột trước hành vi của người khác hay một hoàn cảnh hiện tại, và tha thiết mong muốn đối phương thay đổi hoặc tình huống đó biến chuyển. Lưu ý: Không dùng cấu trúc này khi chủ ngữ của hai mệnh đề là cùng một người (thay vào đó dùng wish + thì quá khứ đơn hoặc could).",
-    "formation": "Chủ ngữ 1 + wish / wishes + (that) + Chủ ngữ 2 + would + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Ước gì bạn chịu lắng nghe tôi nói."
-      },
-      {
-        "translation": "Ước gì trời tạnh mưa."
-      }
-    ]
-  },
-  "en_b2_17": {
-    "title": "Mệnh đề quan hệ xác định và Mệnh đề quan hệ không xác định",
-    "shortExplanation": "Mệnh đề xác định giúp định danh rõ danh từ (không có dấu phẩy), còn mệnh đề không xác định chỉ bổ sung thông tin phụ (được ngăn cách bởi dấu phẩy).",
-    "longExplanation": "1. Mệnh đề quan hệ xác định: Không dùng dấu phẩy, cung cấp thông tin thiết yếu để phân biệt chính xác người hoặc vật đang được nói đến; nếu lược bỏ mệnh đề này câu sẽ không trọn vẹn nghĩa; có thể dùng đại từ quan hệ that thay thế cho who hoặc which.\n2. Mệnh đề quan hệ không xác định: Được ngăn cách bằng dấu phẩy, chỉ bổ sung thêm thông tin phụ cho một danh từ đã rõ ràng; nếu bỏ đi thì câu vẫn giữ nguyên ý nghĩa cốt lõi; tuyệt đối không dùng đại từ that để thay thế.",
-    "formation": "Mệnh đề xác định: Danh từ + đại từ quan hệ (who / which / that) + mệnh đề | Mệnh đề không xác định: Danh từ riêng / xác định, + đại từ quan hệ (who / which), + mệnh đề",
-    "examples": [
-      {
-        "translation": "Bộ phim mà tôi kể với bạn sẽ được chiếu vào tối nay."
-      },
-      {
-        "translation": "Chị gái tôi, người hiện đang sống ở Paris, sẽ đến thăm vào tuần tới."
-      }
-    ]
-  },
-  "en_b2_18": {
-    "title": "Vị trí của giới từ trong mệnh đề quan hệ",
-    "shortExplanation": "Trong giao tiếp thân mật giới từ thường đứng ở cuối mệnh đề, còn trong văn phong trang trọng giới từ đứng trước đại từ quan hệ (whom / which).",
-    "longExplanation": "Vị trí của giới từ trong mệnh đề quan hệ phụ thuộc vào tính chất văn phong:\n1. Văn phong thân mật, khẩu ngữ: Giới từ thường được đặt ở cuối mệnh đề quan hệ (ví dụ: the house I grew up in), và đại từ quan hệ có thể được lược bỏ hoặc thay bằng that / who.\n2. Văn phong trang trọng, văn viết: Giới từ được đảo lên trước đại từ quan hệ (ví dụ: the house in which I grew up).\nLưu ý quan trọng: Ngay sau giới từ chỉ được phép dùng đại từ 'whom' (chỉ người) và 'which' (chỉ vật), tuyệt đối không dùng 'that' hay 'who'.",
-    "formation": "Khẩu ngữ: Danh từ + (đại từ quan hệ) + Mệnh đề + Giới từ | Trang trọng: Danh từ + Giới từ + whom / which + Mệnh đề",
-    "examples": [
-      {
-        "translation": "Dự án tôi đang làm việc vô cùng thú vị."
-      },
-      {
-        "translation": "Dự án mà tôi đang làm việc vô cùng thú vị."
-      }
-    ]
-  },
-  "en_b2_19": {
-    "title": "Liên từ và từ nối chỉ kết quả: so... that, such... that, therefore, as a result",
-    "shortExplanation": "Dùng để diễn tả nguyên nhân dẫn đến kết quả; mang nghĩa 'quá... đến nỗi mà' hoặc 'do đó', 'kết quả là'.",
-    "longExplanation": "Các cấu trúc chỉ kết quả phổ biến trong tiếng Anh:\n1. so + tính từ / trạng từ + that: Diễn tả mức độ đến mức dẫn tới kết quả tương ứng (ví dụ: He spoke so quickly that nobody understood).\n2. such + (a / an) + tính từ + danh từ + that: Tương tự như cấu trúc so... that nhưng kết hợp cùng cụm danh từ (ví dụ: It was such a long film that I fell asleep).\n3. Các trạng từ và cụm từ liên kết chỉ kết quả giữa các câu: therefore (do đó), consequently (hệ quả là), as a result (kết quả là), hence / thus (vì vậy). Những từ này thường đứng sau dấu chấm phẩy hoặc dấu chấm và đi kèm dấu phẩy.",
-    "formation": "so + Tính từ / Trạng từ + that + Mệnh đề | such + (a / an) + Tính từ + Danh từ + that + Mệnh đề | Mệnh đề 1; therefore / consequently / as a result, + Mệnh đề 2",
-    "examples": [
-      {
-        "translation": "Đó là một cuốn sách hay đến nỗi tôi đã đọc nó hai lần."
-      },
-      {
-        "translation": "Cô ấy đã trễ hạn chót; do đó, cô ấy đã bị mất hợp đồng."
-      }
-    ]
-  },
-  "en_b2_20": {
-    "title": "be used to / get used to + Danh động từ - Đã quen / Dần quen với điều gì",
-    "shortExplanation": "'be used to' diễn tả trạng thái đã quen thuộc với việc gì, còn 'get used to' nhấn mạnh quá trình dần thích nghi, làm quen.",
-    "longExplanation": "1. be used to + Danh động từ (V-ing) / Danh từ: Diễn tả một trạng thái đã quen thuộc, không còn cảm thấy xa lạ hay khó khăn trước một sự việc.\n2. get used to + Danh động từ (V-ing) / Danh từ: Nhấn mạnh quá trình biến đổi và thích nghi, từ chưa quen trở nên quen dần.\nPhân biệt rõ với cấu trúc 'used to + động từ nguyên thể': chỉ thói quen hoặc trạng thái từng xảy ra thường xuyên trong quá khứ nhưng nay đã chấm dứt hoàn toàn.",
-    "formation": "Chủ ngữ + be / get used to + Danh động từ (V-ing) / Danh từ",
-    "examples": [
-      {
-        "translation": "Tôi không quen với việc phải thức dậy sớm như thế này."
-      },
-      {
-        "translation": "Dù mất một thời gian, nhưng cô ấy đã dần quen với hệ thống mới."
-      }
-    ]
-  },
-  "en_b2_21": {
-    "title": "Tương lai trong quá khứ: would / was, were going to",
-    "shortExplanation": "Diễn tả hành động hoặc dự định được nhìn nhận là sẽ xảy ra trong tương lai tính từ một thời điểm trong quá khứ.",
-    "longExplanation": "Thì tương lai trong quá khứ được dùng trong lời trần thuật hoặc câu gián tiếp để diễn tả điều sẽ xảy ra sau mốc thời gian quá khứ:\n1. would + động từ nguyên thể: Dạng quá khứ của will, dùng để tường thuật lời hứa, dự định hoặc phán đoán (ví dụ: She said she would come).\n2. was / were going to + động từ nguyên thể: Thể hiện kế hoạch hoặc ý định đã được trù tính trong quá khứ nhưng thường chưa kịp hoàn tất hoặc bị gián đoạn (ví dụ: He was going to call but forgot).\n3. was / were about to + động từ nguyên thể: Diễn tả một hành động sắp sửa xảy ra ngay tức khắc tại một thời điểm trong quá khứ.",
-    "formation": "Chủ ngữ + would + Động từ nguyên thể | Chủ ngữ + was / were going to + Động từ nguyên thể | Chủ ngữ + was / were about to + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Cô ấy đã hứa rằng cô ấy sẽ có mặt ở đó."
-      },
-      {
-        "translation": "Anh ấy vừa định rời đi thì cô ấy gọi điện đến."
-      }
-    ]
-  },
-  "en_b2_22": {
-    "title": "be to + Động từ nguyên thể - Chỉ thị chính thức, lịch trình sắp đặt và định mệnh",
-    "shortExplanation": "Dùng để truyền đạt mệnh lệnh hoặc chỉ thị trang trọng, kế hoạch chính thức đã định sẵn, hoặc số phận định mệnh trong lời kể.",
-    "longExplanation": "Cấu trúc 'be to + động từ nguyên thể có to' là một dạng thức trang trọng với các nét nghĩa nổi bật:\n1. Mệnh lệnh hoặc quy định pháp lý: Diễn đạt chỉ thị chính thức, yêu cầu nghiêm ngặt (ví dụ: Passengers are to remain seated).\n2. Lịch trình và kế hoạch chính thức: Dùng cho các sự kiện bang giao hoặc cuộc họp lớn đã lên lịch ấn định (ví dụ: The summit is to take place next month).\n3. Định mệnh (thường ở thì quá khứ was / were to): Diễn tả một kết cục hay số phận định sẵn trong văn phong tiểu sử hoặc tự sự (ví dụ: They were never to meet again).",
-    "formation": "Chủ ngữ + am / is / are / was / were + to + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Bạn phải nộp bản báo cáo trước thứ Sáu."
-      },
-      {
-        "translation": "Bà ấy mang định mệnh trở thành một trong những nhà khoa học vĩ đại nhất của thời đại mình."
-      }
-    ]
-  },
-  "en_b2_23": {
-    "title": "ought to - Nghĩa vụ đạo đức và suy đoán hợp lý",
-    "shortExplanation": "Diễn tả bổn phận đạo đức, trách nhiệm nên làm hoặc phán đoán có căn cứ; mang nghĩa 'nên', 'phải'.",
-    "longExplanation": "'ought to' là một trợ động từ bán khuyết thiếu biểu thị bổn phận đạo đức, nghĩa vụ xã hội hoặc suy đoán mang tính logic (mang sắc thái mạnh và khách quan hơn should).\n• Khác với should, ought to luôn đi kèm 'to' trước động từ nguyên thể: ought to do.\n• Thể phủ định: ought not to (viết tắt là oughtn't to).\n• Diễn tả hành động trong quá khứ: cấu trúc 'ought to have + động từ phân từ hai' thể hiện sự trách móc hoặc nuối tiếc về một việc lẽ ra nên làm trong quá khứ nhưng đã không làm.",
-    "formation": "Khẳng định: Chủ ngữ + ought to + Động từ nguyên thể | Phủ định: Chủ ngữ + ought not to + Động từ nguyên thể | Quá khứ: Chủ ngữ + ought to have + Động từ phân từ hai",
-    "examples": [
-      {
-        "translation": "Bạn nên xin lỗi vì những gì bạn đã nói."
-      },
-      {
-        "translation": "Lẽ ra cô ấy nên nói cho chúng tôi biết sớm hơn."
-      }
-    ]
-  },
-  "en_b2_24": {
-    "title": "need - Động từ khuyết thiếu và Động từ thường",
-    "shortExplanation": "'need' vừa đóng vai trò là động từ khuyết thiếu (chủ yếu trong câu phủ định/nghi vấn trang trọng), vừa là động từ thường.",
-    "longExplanation": "'need' trong tiếng Anh có hai cách sử dụng về mặt ngữ pháp:\n1. Động từ khuyết thiếu (chủ yếu dùng trong câu phủ định và nghi vấn ở văn phong trang trọng): Không chia thêm -s ở ngôi thứ ba số ít, không mượn trợ động từ do / does / did, và kết hợp trực tiếp với động từ nguyên thể không to (ví dụ: You needn't worry / Need I explain?).\n2. Động từ thường: Chia theo thì và ngôi như một động từ thông thường, dùng trợ động từ do / does / did trong câu phủ định và nghi vấn, đi kèm động từ nguyên thể có to (ví dụ: She doesn't need to come).",
-    "formation": "Động từ khuyết thiếu: Chủ ngữ + needn't + Động từ nguyên thể | Động từ thường: Chủ ngữ + don't / doesn't / didn't need to + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Bạn không cần phải điền vào cả hai mẫu đơn."
-      },
-      {
-        "translation": "Cô ấy không nhất thiết phải tham dự tất cả các cuộc họp."
-      }
-    ]
-  },
-  "en_b2_25": {
-    "title": "dare - Dám, liều lĩnh (Động từ khuyết thiếu và Động từ thường)",
-    "shortExplanation": "Dùng để diễn tả sự dũng cảm dám làm điều gì, hoặc bộc lộ thái độ phẫn nộ trước hành vi quá đáng; mang nghĩa 'dám'.",
-    "longExplanation": "'dare' mang nghĩa là 'dám làm gì', có thể vận dụng linh hoạt ở hai thể thức ngữ pháp:\n1. Động từ khuyết thiếu: Thường gặp trong câu cảm thán, câu hỏi tu từ hoặc câu phủ định trang trọng. Không biến đổi đuôi theo ngôi, đi trực tiếp với động từ nguyên thể không to (ví dụ: How dare you! / I daren't ask).\n2. Động từ thường: Có đầy đủ các dạng biến đổi ngôi và thì, sử dụng trợ động từ do / does / did khi phủ định hoặc nghi vấn, theo sau là động từ nguyên thể có to (hoặc có thể lược bỏ to trong một số trường hợp) (ví dụ: She didn't dare to look / He dared to challenge the boss).",
-    "formation": "Cảm thán / Khuyết thiếu: How dare + Chủ ngữ + Động từ nguyên thể! | Chủ ngữ + daren't + Động từ nguyên thể | Động từ thường: Chủ ngữ + dare / dares / dared (to) + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Sao bạn dám nói chuyện với tôi bằng giọng điệu đó!"
-      },
-      {
-        "translation": "Cô ấy đã dám thẳng thắn bày tỏ quan điểm của mình."
-      }
-    ]
-  },
-  "en_b2_26": {
-    "title": "Đại từ phản thân: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
-    "shortExplanation": "Dùng khi đối tượng thực hiện và đối tượng tiếp nhận hành động là cùng một người, hoặc dùng để nhấn mạnh chính chủ ngữ tự làm.",
-    "longExplanation": "Đại từ phản thân (myself, yourself, himself, herself, itself, ourselves, yourselves, themselves) đảm nhận các chức năng ngữ pháp sau:\n1. Làm tân ngữ phản thân: Khi hành động của chủ thể tác động trực tiếp ngược lại chính bản thân chủ thể đó (ví dụ: He cut himself - Anh ấy tự làm đứt tay mình).\n2. Nhấn mạnh (đồng vị ngữ): Đặt ngay sau danh từ hoặc ở cuối mệnh đề để nhấn mạnh rằng chính người đó tự tay thực hiện hành động mà không cần sự trợ giúp (ví dụ: I did it myself - Chính tôi đã tự làm điều đó).\n3. Cụm từ thành ngữ thông dụng: by oneself (một mình, tự thân), help yourself (hãy tự nhiên / tự phục vụ), enjoy oneself (vui vẻ).",
-    "formation": "Tân ngữ phản thân: Chủ ngữ + Động từ + Đại từ phản thân | Nhấn mạnh: Chủ ngữ (+ Đại từ phản thân) + Động từ + Tân ngữ (+ Đại từ phản thân)",
-    "examples": [
-      {
-        "translation": "Cô ấy đã tự học chơi đàn ghi-ta."
-      },
-      {
-        "translation": "Chiếc máy này tự động tắt."
-      }
-    ]
-  },
-  "en_b2_27": {
-    "title": "Danh từ tập hợp: team, family, committee, government...",
-    "shortExplanation": "Danh từ chỉ một nhóm người hoặc tập thể; động từ có thể chia số ít hoặc số nhiều tùy thuộc vào góc nhìn ngữ nghĩa và biến thể ngôn ngữ.",
-    "longExplanation": "Danh từ tập hợp biểu thị một nhóm gồm nhiều cá nhân họp thành một chỉnh thể (ví dụ: team, family, government, committee, staff, audience, crew, public):\n• Tiếng Anh - Anh: Thường chia động từ ở số nhiều khi người nói hướng sự chú ý đến từng thành viên riêng rẽ trong tập thể (ví dụ: The team are playing well); và chia số ít khi coi cả nhóm là một thể thống nhất.\n• Tiếng Anh - Mỹ: Hầu như luôn coi danh từ tập hợp là một đơn vị đơn lẻ và chia động từ ở ngôi thứ ba số ít (ví dụ: The team is playing well).\nLưu ý ngoại lệ: Danh từ 'police' (cảnh sát) luôn luôn đi cùng động từ số nhiều trong mọi trường hợp.",
-    "formation": "Danh từ tập hợp + Động từ số ít (xem là một tập thể thống nhất / chuẩn Anh - Mỹ) HOẶC Động từ số nhiều (nhấn mạnh từng thành viên / chuẩn Anh - Anh)",
-    "examples": [
-      {
-        "translation": "Chính phủ vừa công bố các biện pháp mới."
-      },
-      {
-        "translation": "Toàn bộ khán giả đều đồng loạt đứng dậy tán thưởng."
-      }
-    ]
-  },
-  "en_b2_28": {
-    "title": "Phân số, số thập phân và biểu thức toán học cơ bản",
-    "shortExplanation": "Quy tắc đọc phân số, số thập phân, tỷ lệ phần trăm và các phép tính toán học cơ bản trong tiếng Anh.",
-    "longExplanation": "Quy ước đọc các biểu thức số học trong tiếng Anh:\n1. Phân số: Tử số đọc bằng số đếm, mẫu số đọc bằng số thứ tự; nếu tử số từ 2 trở lên thì mẫu số phải thêm đuôi số nhiều -s (ví dụ: 1/2 đọc là a half; 1/3 đọc là a third; 1/4 đọc là a quarter; 3/4 đọc là three quarters; 2/3 đọc là two thirds).\n2. Số thập phân: Dấu chấm thập phân được đọc là 'point', các số đứng sau dấu chấm được đọc tuần tự từng chữ số rời rạc (ví dụ: 3.14 đọc là three point one four; 5.7 đọc là five point seven).\n3. Tỷ lệ phần trăm: Số đếm + percent (ví dụ: 25% đọc là twenty-five percent).\n4. Các phép tính số học cơ bản: Phép cộng (+) đọc là plus; phép trừ (-) đọc là minus; phép nhân (×) đọc là times hoặc multiplied by; phép chia (÷) đọc là divided by; dấu bằng (=) đọc là equals hoặc is.",
-    "formation": "Phân số: Số đếm (tử số) + Số thứ tự (mẫu số, thêm -s nếu tử số > 1) | Số thập phân: Số nguyên + point + các chữ số đọc tách rời",
-    "examples": [
-      {
-        "translation": "Ba phần tư số học sinh đã vượt qua kỳ thi."
-      },
-      {
-        "translation": "Tỷ lệ lạm phát đã giảm xuống còn 2,5 phần trăm."
-      }
-    ]
-  },
-  "en_b2_29": {
-    "title": "Các cấp so sánh của phó từ (trạng từ)",
-    "shortExplanation": "Cấp so sánh của trạng từ: nhanh hơn, cẩn thận hơn, tốt nhất, tệ hơn, xa hơn.",
-    "longExplanation": "Trạng từ tạo các cấp so sánh tương tự như tính từ:\n• Trạng từ đơn âm tiết: thêm đuôi -er (so sánh hơn) / -est (so sánh nhất): fast → faster, hard → harder, early → earlier.\n• Hầu hết trạng từ tận cùng bằng -ly: dùng more (so sánh hơn) / most (so sánh nhất): carefully → more carefully → most carefully.\n• Bất quy tắc: well → better → best, badly → worse → worst, far → further/farther → furthest/farthest, little → less → least, much → more → most.",
-    "formation": "Trạng từ ngắn + -er / -est HOẶC more / most + Trạng từ đuôi -ly",
-    "examples": [
-      {
-        "translation": "Cô ấy nói chuyện tự tin hơn trước."
-      },
-      {
-        "translation": "Anh ấy làm việc chăm chỉ nhất trong cả đội."
-      }
-    ]
-  },
-  "en_c1_01": {
-    "title": "Đảo ngữ với phó từ mang nghĩa phủ định",
-    "shortExplanation": "Đảo trợ động từ lên trước chủ ngữ khi đứng sau phó từ phủ định để nhấn mạnh.",
-    "longExplanation": "Để nhấn mạnh, phó từ hoặc cụm từ mang ý nghĩa phủ định được đưa lên đầu câu. Khi đó, trật tự từ bị đảo lại: trợ động từ đứng trước chủ ngữ (tương tự như trật tự trong câu hỏi).\nCác từ/cụm từ kích hoạt đảo ngữ thường gặp: never (không bao giờ), rarely / seldom (hiếm khi), little (hầu như không), hardly / scarcely / barely (vừa mới... thì / hầu như không), not only (không những), only (chỉ khi), no sooner (vừa mới).",
-    "formation": "Phó từ phủ định + Trợ động từ + Chủ ngữ + Động từ chính",
-    "examples": [
-      {
-        "translation": "Chưa bao giờ tôi thấy điều gì đẹp đẽ đến thế."
-      },
-      {
-        "translation": "Hiếm khi cô ấy phạm phải sai lầm."
-      },
-      {
-        "translation": "Tôi hầu như không hề hay biết điều gì đang chờ đợi mình ở phía trước."
-      }
-    ]
-  },
-  "en_c1_02": {
-    "title": "Đảo ngữ với cấu trúc Not only... but also",
-    "shortExplanation": "Cấu trúc nhấn mạnh: đảo trợ động từ lên trước chủ ngữ ở vế Not only, vế sau giữ trật tự bình thường.",
-    "longExplanation": "Khi cụm 'Not only' được đưa lên đầu câu để nhấn mạnh, mệnh đề đầu tiên bắt buộc phải sử dụng hình thức đảo ngữ (trợ động từ đứng trước chủ ngữ). Mệnh đề thứ hai đi sau 'but (also)' vẫn giữ trật tự câu thông thường.\nCấu trúc này dùng để nhấn mạnh mức độ vượt xa mong đợi: 'Không những... mà còn...'.",
-    "formation": "Not only + Trợ động từ + Chủ ngữ + Động từ, but (chủ ngữ) + also + ...",
-    "examples": [
-      {
-        "translation": "Cô ấy không những tài năng mà còn vô cùng chăm chỉ."
-      },
-      {
-        "translation": "Họ không chỉ đến muộn mà còn bỏ quên cả tài liệu."
-      }
-    ]
-  },
-  "en_c1_03": {
-    "title": "Đảo ngữ với Hardly / Scarcely / No sooner (Vừa mới... thì...)",
-    "shortExplanation": "Diễn tả hai hành động xảy ra nối tiếp nhau ngay tức khắc: 'Vừa mới... thì...'.",
-    "longExplanation": "Đây là cấu trúc diễn tả tính nối tiếp tức thì của hai hành động trong quá khứ. Mệnh đề đầu xảy ra trước nên dùng thì quá khứ hoàn thành kèm đảo ngữ (had + chủ ngữ + phân từ hai), mệnh đề sau dùng thì quá khứ đơn.\n• Hardly / Scarcely + had + chủ ngữ + V3/phân từ hai + when / before + Mệnh đề quá khứ đơn.\n• No sooner + had + chủ ngữ + V3/phân từ hai + than + Mệnh đề quá khứ đơn.",
-    "formation": "Hardly/Scarcely + had + Chủ ngữ + V3/ED + when + Mệnh đề quá khứ đơn / No sooner + had + Chủ ngữ + V3/ED + than + Mệnh đề quá khứ đơn",
-    "examples": [
-      {
-        "translation": "Cô ấy vừa mới tới nơi thì trời bắt đầu đổ mưa."
-      },
-      {
-        "translation": "Tôi vừa mới ngồi xuống thì có người gõ cửa."
-      }
-    ]
-  },
-  "en_c1_04": {
-    "title": "Đảo ngữ trong câu điều kiện: Had / Were / Should",
-    "shortExplanation": "Lược bỏ liên từ If trong văn phong trang trọng bằng cách đảo Had, Were hoặc Should lên đầu câu.",
-    "longExplanation": "Trong văn phong trang trọng hoặc văn bản học thuật, liên từ 'if' có thể được lược bỏ và thay thế bằng cấu trúc đảo ngữ:\n• Điều kiện loại 3 (Quá khứ hoàn thành): Had + Chủ ngữ + V3/phân từ hai (= If + Chủ ngữ + had + V3).\n• Điều kiện loại 2 (Giả định hiện tại): Were + Chủ ngữ (+ to + Động từ nguyên thể) (= If + Chủ ngữ + were / V2).\n• Điều kiện loại 1 (Ít khả năng xảy ra): Should + Chủ ngữ + Động từ nguyên thể (= If + Chủ ngữ + should + Động từ nguyên thể).",
-    "formation": "Had + Chủ ngữ + V3 / Were + Chủ ngữ (+ to-V) / Should + Chủ ngữ + Động từ nguyên thể",
-    "examples": [
-      {
-        "translation": "Nếu cô ấy nói với tôi, tôi đã giúp đỡ rồi."
-      },
-      {
-        "translation": "Nếu tôi ở vào vị trí của bạn, tôi sẽ đồng ý."
-      },
-      {
-        "translation": "Nếu quý khách cần hỗ trợ, xin vui lòng gọi cho chúng tôi."
-      }
-    ]
-  },
-  "en_c1_05": {
-    "title": "Câu chẻ với It (Câu nhấn mạnh: It was... that/who...)",
-    "shortExplanation": "Cấu trúc chẻ câu với 'It is/was... that/who' dùng để nhấn mạnh một thành phần cụ thể trong câu.",
-    "longExplanation": "Cấu trúc câu chẻ với 'It': It + to be (chia theo thì) + thành phần được nhấn mạnh + who/that/which + phần còn lại của câu.\nCấu trúc này có tác dụng hướng toàn bộ sự chú ý của người nghe/người đọc vào đối tượng được đưa vào giữa 'to be' và 'that/who':\n• Dành cho người: thường dùng 'who' hoặc 'that'.\n• Dành cho sự vật, hiện tượng, trạng từ thời gian/nơi chốn: dùng 'that' (hoặc 'which').",
-    "formation": "It + to be + Thành phần nhấn mạnh + that/who + Phần còn lại",
-    "examples": [
-      {
-        "translation": "Chính tiếng ồn đó đã đánh thức tôi dậy."
-      },
-      {
-        "translation": "Chính sự làm việc chăm chỉ mới dẫn tới thành công."
-      }
-    ]
-  },
-  "en_c1_06": {
-    "title": "Câu chẻ với từ để hỏi Wh- (What... is/was...)",
-    "shortExplanation": "Dùng mệnh đề bắt đầu bằng 'What' làm chủ ngữ để nhấn mạnh thông tin được đưa ra ở vị ngữ.",
-    "longExplanation": "Cấu trúc câu chẻ giả định (wh-cleft sentence): Mệnh đề bắt đầu bằng What + động từ to be + thành phần được nhấn mạnh.\nCấu trúc này tạo sự hồi hộp hoặc tập trung chú ý bằng cách nêu ra vấn đề ở đầu câu, rồi mới tiết lộ điều quan trọng nhất ở phía sau: 'Điều mà tôi... chính là...'.",
-    "formation": "What + Mệnh đề phụ + to be + Thành phần nhấn mạnh",
-    "examples": [
-      {
-        "translation": "Điều tôi yêu thích nhất ở Luân Đôn chính là sự đa dạng văn hóa."
-      },
-      {
-        "translation": "Những gì anh ấy đã làm hoàn toàn nằm ngoài dự liệu của mọi người."
-      }
-    ]
-  },
-  "en_c1_07": {
-    "title": "Thức giả định trang trọng sau động từ yêu cầu, đề nghị",
-    "shortExplanation": "Động từ trong mệnh đề that luôn ở dạng nguyên thể không 'to' cho tất cả các ngôi (thể giả định).",
-    "longExplanation": "Sau các động từ chỉ yêu cầu, đề xuất, mệnh lệnh như: suggest (gợi ý), recommend (khuyên nghị), insist (khăng khăng), demand (đòi hỏi), propose (đề xuất), request / require (yêu cầu), order (ra lệnh) + that:\nĐộng từ trong mệnh đề 'that' giữ nguyên dạng nguyên thể (không chia thì, không thêm -s/-es đối với ngôi thứ 3 số ít, động từ to be giữ nguyên là 'be').\n• Tiếng Anh-Mỹ thường dùng dạng giả định thuần túy (động từ nguyên thể).\n• Tiếng Anh-Anh có thể dùng should + động từ nguyên thể (ví dụ: I suggest that he should leave).",
-    "formation": "Chủ ngữ + Động từ yêu cầu/đề xuất + that + Chủ ngữ + Động từ nguyên thể (hoặc should + Động từ nguyên thể)",
-    "examples": [
-      {
-        "translation": "Tôi khuyên anh ấy nên đi khám bác sĩ."
-      },
-      {
-        "translation": "Điều thiết yếu là tất cả học sinh đều phải tham dự buổi họp."
-      }
-    ]
-  },
-  "en_c1_08": {
-    "title": "Cấu trúc It's high time + Quá khứ đơn (Đã đến lúc phải làm gì)",
-    "shortExplanation": "Diễn tả việc lẽ ra đã phải làm từ trước tới giờ, mang sắc thái nhắc nhở hoặc phê bình nhẹ: 'Đã đến lúc...'.",
-    "longExplanation": "Cấu trúc: It's (high / about) time + Chủ ngữ + Động từ thì quá khứ đơn.\nMặc dù động từ chia ở thì quá khứ đơn, nhưng ý nghĩa lại nói về hiện tại hoặc tương lai. Cấu trúc này diễn tả một việc đã quá trễ và cấp bách cần phải thực hiện ngay:\n• It's time: đã đến lúc.\n• It's high time / It's about time: nhấn mạnh mạnh mẽ hơn, biểu đạt ý 'đáng lẽ việc này phải được làm từ lâu rồi!'.",
-    "formation": "It's (high / about) time + Chủ ngữ + Động từ thì quá khứ đơn",
-    "examples": [
-      {
-        "translation": "Đã đến lúc cô ấy phải tìm một công việc mới rồi."
-      },
-      {
-        "translation": "Đã quá muộn rồi, bạn thực sự nên xin lỗi ngay đi."
-      }
-    ]
-  },
-  "en_c1_09": {
-    "title": "Cấu trúc as if / as though với thể giả định (Cứ như thể là)",
-    "shortExplanation": "Diễn tả một so sánh không có thật hoặc trái ngược với thực tế: 'cứ như thể là...'.",
-    "longExplanation": "Cấu trúc liên từ 'as if' hoặc 'as though' (cứ như thể, dường như) kết hợp với các thì giả định để diễn tả tình huống trái với sự thật:\n• as if / as though + Quá khứ đơn: giả định trái với thực tế ở hiện tại (với to be thường dùng 'were' cho tất cả các ngôi).\n• as if / as though + Quá khứ hoàn thành (had + V3): giả định trái với thực tế trong quá khứ.",
-    "formation": "Chủ ngữ + Động từ + as if / as though + Chủ ngữ + Quá khứ đơn / Quá khứ hoàn thành",
-    "examples": [
-      {
-        "translation": "Anh ấy tiêu tiền cứ như thể mình là triệu phú vậy."
-      },
-      {
-        "translation": "Cô ấy nói chuyện cứ như thể đã từng gặp anh ấy từ trước rồi."
-      }
-    ]
-  },
-  "en_c1_10": {
-    "title": "Cấu trúc So / Neither + Trợ động từ + Chủ ngữ (Đồng tình ngắn gọn)",
-    "shortExplanation": "Dùng để thể hiện sự đồng tình: 'So...' cho câu khẳng định (cũng vậy), 'Neither...' cho câu phủ định (cũng không).",
-    "longExplanation": "Dùng để thể hiện sự tương đồng mà không cần lặp lại cả câu:\n• So + trợ động từ + chủ ngữ: đồng tình với câu khẳng định ('ai đó cũng vậy').\n• Neither / Nor + trợ động từ + chủ ngữ: đồng tình với câu phủ định ('ai đó cũng không').\nLưu ý: Trợ động từ phải phù hợp với thì và động từ của câu đứng trước (ví dụ: hiện tại đơn dùng do/does, quá khứ đơn dùng did, hiện tại hoàn thành dùng have/has, to be dùng am/is/are).",
-    "formation": "So / Neither + Trợ động từ + Chủ ngữ",
-    "examples": [
-      {
-        "translation": "Tôi yêu nhạc jazz. Cô ấy cũng vậy."
-      },
-      {
-        "translation": "Tôi chưa từng đến Rome. Tôi cũng chưa."
-      }
-    ]
-  },
-  "en_c1_11": {
-    "title": "Cụm từ thay thế với 'so': I think so / I hope so / I'm afraid so",
-    "shortExplanation": "Dùng từ 'so' để thay thế cho cả một mệnh đề phía trước sau các động từ như think, hope, afraid.",
-    "longExplanation": "Từ 'so' đóng vai trò như một từ thay thế ngắn gọn cho một mệnh đề danh ngữ sau các động từ bày tỏ suy nghĩ, hy vọng hay e ngại: think (nghĩ), hope (hy vọng), suppose (cho là), expect (mong đợi), believe (tin), imagine (tưởng tượng), be afraid (e là).\nDạng phủ định có hai cách:\n• Phủ định động từ: I don't think so, I don't suppose so.\n• Thêm 'not' vào sau động từ (với hope, be afraid): I hope not (hy vọng là không), I'm afraid not (e là không). Tuyệt đối không dùng 'I don't hope so'.",
-    "formation": "Chủ ngữ + think / hope / suppose... + so (Phủ định: I don't think so / I hope not)",
-    "examples": [
-      {
-        "translation": "Liệu anh ấy có đến không? — Tôi nghĩ là có. / Tôi nghĩ là không."
-      },
-      {
-        "translation": "Nó có đắt không? — Tôi e là có."
-      },
-      {
-        "translation": "Quán đóng cửa rồi à? — Hy vọng là không phải vậy."
-      }
-    ]
-  },
-  "en_c1_12": {
-    "title": "Mệnh đề quan hệ xác định và không xác định",
-    "shortExplanation": "Phân biệt mệnh đề quan hệ xác định (không có dấu phẩy) và không xác định (có dấu phẩy, bổ sung thông tin).",
-    "longExplanation": "Sự khác biệt quan trọng giữa hai loại mệnh đề quan hệ:\n• Mệnh đề xác định (Defining): Cung cấp thông tin thiết yếu để nhận diện người hay vật đang được nói đến. Không dùng dấu phẩy ngăn cách. Có thể dùng đại từ quan hệ 'that'. Đại từ quan hệ làm tân ngữ có thể được lược bỏ.\n• Mệnh đề không xác định (Non-defining): Chỉ cung cấp thêm thông tin phụ cho một đối tượng đã được xác định rõ từ trước. Luôn được ngăn cách bởi dấu phẩy. Chỉ được dùng who/which (tuyệt đối không dùng that) và không bao giờ được lược bỏ đại từ quan hệ.",
-    "formation": "Mệnh đề xác định: Danh từ + who/that/which + Động từ / Mệnh đề không xác định: Danh từ, who/which + Động từ, ...",
-    "examples": [
-      {
-        "translation": "Bộ phim đoạt giải Oscar đó vô cùng xuất sắc. (Mệnh đề xác định chỉ rõ bộ phim nào)"
-      },
-      {
-        "translation": "Phim Avatar, phát hành năm 2009, đã tạo nên một cơn sốt vang dội. (Thông tin bổ sung về bộ phim đã rõ tên)"
-      }
-    ]
-  },
-  "en_c1_13": {
-    "title": "Giới từ đứng trước which/whom trong văn phong trang trọng",
-    "shortExplanation": "Đặt giới từ lên trước đại từ quan hệ (which/whom) để tạo văn phong trang trọng, học thuật.",
-    "longExplanation": "Trong văn phong trang trọng, chính thức (văn bản học thuật, thư từ công việc):\n• Giới từ được đặt ngay trước đại từ quan hệ: Giới từ + which (cho sự vật) hoặc Giới từ + whom (cho người).\n• Trong văn phong thân mật hoặc thường ngày, giới từ thường được chuyển về cuối mệnh đề quan hệ (và thường dùng 'who' hoặc lược bỏ đại từ quan hệ).\nLưu ý: Sau giới từ chỉ được dùng 'whom' khi chỉ người (không dùng 'who' hoặc 'that'), và 'which' khi chỉ vật (không dùng 'that').",
-    "formation": "Trang trọng: Danh từ + Giới từ + which/whom + ... / Thường ngày: Danh từ + (who/that/which) + ... + Giới từ",
-    "examples": [
-      {
-        "translation": "Báo cáo mà tôi đã đề cập được đính kèm ở đây. (Văn phong trang trọng)"
-      },
-      {
-        "translation": "Báo cáo mà tôi nhắc tới được đính kèm ở đây. (Văn phong trung tính)"
-      },
-      {
-        "translation": "Bản báo cáo tôi nhắc đến có đính kèm nè. (Văn phong thân mật/khẩu ngữ)"
-      }
-    ]
-  },
-  "en_c1_14": {
-    "title": "Danh từ hóa (Nominalization) trong tiếng Anh",
-    "shortExplanation": "Biến đổi động từ hoặc tính từ thành danh từ, đặc trưng của văn phong học thuật và hành chính.",
-    "longExplanation": "Danh từ hóa (Nominalization) là quá trình chuyển đổi động từ hoặc tính từ thành danh từ. Đây là nét đặc trưng nổi bật trong văn phong học thuật, báo cáo khoa học và tài liệu công việc nhằm giúp câu văn mang tính khách quan, trang trọng và truyền tải nhiều thông tin cô đọng hơn.\nCác hậu tố phổ biến nhất:\n• -tion / -sion: decide → decision (quyết định), discuss → discussion (thảo luận).\n• -ment: improve → improvement (sự cải thiện), develop → development (sự phát triển).\n• -ance / -ence: appear → appearance (sự xuất hiện), differ → difference (sự khác biệt).\n• -ity: complex → complexity (sự phức tạp), able → ability (khả năng).\n• -ness: happy → happiness (hạnh phúc), aware → awareness (nhận thức).",
-    "formation": "Động từ/Tính từ + Hậu tố danh từ (-tion, -ment, -ance, -ity, -ness...)",
-    "examples": [
-      {
-        "translation": "Cô ấy quyết định mở rộng. → Quyết định mở rộng công ty của chúng tôi..."
-      },
-      {
-        "translation": "Anh ấy đã phát hiện ra rằng... → Việc anh ấy phát hiện ra sai sót đó..."
-      }
-    ]
-  },
-  "en_c1_15": {
-    "title": "Danh từ hóa trong văn bản học thuật (Nominalization)",
-    "shortExplanation": "Chuyển đổi động từ hoặc mệnh đề thành cụm danh từ để câu văn trở nên súc tích, khách quan và mang tính học thuật cao.",
-    "longExplanation": "Danh từ hóa là quá trình chuyển đổi hành động (động từ), tính chất (tính từ) hoặc cả một mệnh đề thành một cụm danh từ. Cấu trúc này giúp:\n1. Nén thông tin súc tích: Thay vì viết câu dài nhiều mệnh đề, ta dùng danh từ (Ví dụ: 'Giá cả tăng đáng kể' → 'Đã có sự gia tăng đáng kể về giá cả').\n2. Dễ dàng bổ sung các định ngữ miêu tả chi tiết.\n3. Tạo giọng văn khách quan, trang trọng, hạn chế đại từ nhân xưng, rất được ưa chuộng trong văn viết học thuật và báo cáo.",
-    "formation": "Mệnh đề chứa động từ → Cụm danh từ (Ví dụ: The fact that prices increased → The increase in prices...)",
-    "examples": [
-      {
-        "translation": "Chất lượng không khí đã có sự cải thiện đáng kể."
-      },
-      {
-        "translation": "Việc anh ấy từ chối bình luận đã khiến mọi người ngạc nhiên."
-      }
-    ]
-  },
-  "en_c1_16": {
-    "title": "Phân từ hiện tại: Mệnh đề V-ing (Present participle clause)",
-    "shortExplanation": "Dùng cụm phân từ hiện tại (V-ing) để rút gọn mệnh đề trạng ngữ chỉ hành động đồng thời hoặc nguyên nhân.",
-    "longExplanation": "Mệnh đề phân từ hiện tại (V-ing) được dùng để rút gọn mệnh đề phụ khi hai mệnh đề có cùng chủ ngữ:\n• Hành động diễn ra đồng thời: Walking home, I noticed something strange. (= Khi đang đi bộ về nhà, tôi nhận thấy...)\n• Chỉ nguyên nhân, lý do: Knowing the answer, she raised her hand. (= Vì đã biết câu trả lời, cô ấy...)\n• Lưu ý: Chủ ngữ ngầm hiểu của phân từ bắt buộc phải trùng với chủ ngữ của mệnh đề chính; tránh lỗi phân từ treo (phân từ lơ lửng).",
-    "formation": "Hiện tại phân từ (V-ing) + ..., Chủ ngữ + Động từ... / Phủ định: Not + V-ing + ..., Chủ ngữ + Động từ...",
-    "examples": [
-      {
-        "translation": "Vừa đến sân bay, anh ấy nhận ra mình đã để quên hộ chiếu."
-      },
-      {
-        "translation": "Không biết phải làm gì, cô ấy đã gọi điện cho mẹ."
-      }
-    ]
-  },
-  "en_c1_17": {
-    "title": "Cụm quá khứ phân từ: Mệnh đề V3 / Having + V3 (Past participle phrase)",
-    "shortExplanation": "Dùng quá khứ phân từ (V3/V-ed) cho nghĩa bị động hoặc 'Having + V3' để diễn tả hành động đã hoàn tất trước mệnh đề chính.",
-    "longExplanation": "Rút gọn mệnh đề bằng quá khứ phân từ giúp câu văn cô đọng và mang sắc thái văn phong cao cấp:\n• Mệnh đề quá khứ phân từ (V3/V-ed): Mang ý nghĩa bị động (Ví dụ: Built in 1889, the Eiffel Tower... = Được xây dựng vào năm 1889, tháp Eiffel...).\n• Cấu trúc phân từ hoàn thành (Having + V3/V-ed): Nhấn mạnh một hành động đã hoàn tất trước hành động của mệnh đề chính (Ví dụ: Having read the report, he called a meeting = Sau khi đọc xong báo cáo, anh ấy đã triệu tập cuộc họp).",
-    "formation": "Quá khứ phân từ (V3/V-ed) + ..., Chủ ngữ + Động từ... HOẶC Having + V3/V-ed + ..., Chủ ngữ + Động từ...",
-    "examples": [
-      {
-        "translation": "Bị bất ngờ trước tin tức đó, cô ấy lặng lẽ ngồi xuống."
-      },
-      {
-        "translation": "Sau khi hoàn thành bài thi, các học sinh đã rời khỏi phòng."
-      }
-    ]
-  },
-  "en_c2_01": {
-    "title": "Câu điều kiện với unless / provided / as long as / on condition that",
-    "shortExplanation": "Các liên từ thay thế 'if' để diễn đạt các sắc thái điều kiện nghiêm ngặt, giả định hoặc giao ước.",
-    "longExplanation": "Các liên từ thay thế 'if' trong câu điều kiện nâng cao:\n• unless = trừ khi, nếu không (bằng nghĩa với 'if not', bản thân mang nghĩa phủ định nên mệnh đề theo sau không dùng thể phủ định).\n• provided (that) / providing (that) = miễn là, với điều kiện là (chỉ điều kiện duy nhất, bắt buộc).\n• as long as = miễn là, chỉ cần (nhấn mạnh sự duy trì điều kiện trong suốt quá trình).\n• on condition that = với điều kiện là (rất trang trọng, thường dùng trong hợp đồng, văn bản chính thức).\n• in case = phòng khi, phòng trường hợp.",
-    "formation": "Liên từ điều kiện (Unless / Provided / As long as / On condition that) + Mệnh đề điều kiện, Mệnh đề chính",
-    "examples": [
-      {
-        "translation": "Tôi sẽ cho bạn vay tiền, miễn là bạn phải trả lại cho tôi."
-      },
-      {
-        "translation": "Bạn có thể dùng máy tính xách tay của tôi, với điều kiện bạn không được tải về bất cứ thứ gì."
-      }
-    ]
-  },
-  "en_c2_02": {
-    "title": "Câu hỏi giả định với Suppose / Supposing / What if",
-    "shortExplanation": "Dùng để nêu ra tình huống giả tưởng, đưa ra câu hỏi giả định hoặc gợi ý tưởng tượng.",
-    "longExplanation": "Các từ dùng để thiết lập tình huống giả định:\n• Suppose / Supposing: Dùng tương đương như 'nếu / giả sử' trong các câu hỏi mang tính suy đoán, tưởng tượng.\n• What if: Là dạng diễn đạt thân mật hơn trong khẩu ngữ, mang nghĩa 'lỡ như... thì sao?'.\n• Đi với thì Quá khứ đơn hoặc Quá khứ hoàn thành để diễn tả tình huống hoàn toàn mang tính tưởng tượng, không có thật hoặc rất khó xảy ra.",
-    "formation": "Suppose / Supposing / What if + Chủ ngữ + Động từ (chia ở thì Quá khứ hoặc Hiện tại)..., Mệnh đề nghi vấn?",
-    "examples": [
-      {
-        "translation": "Giả sử bạn bắt buộc phải lựa chọn — bạn sẽ chọn cái nào?"
-      },
-      {
-        "translation": "Lỡ như chẳng có ai đến thì sao? Chúng ta nên làm gì đây?"
-      }
-    ]
-  },
-  "en_c2_03": {
-    "title": "Đảo ngữ với Only đứng đầu câu (Only + trạng ngữ + đảo ngữ)",
-    "shortExplanation": "Đưa cụm 'Only' kết hợp với trạng từ, giới từ hoặc mệnh đề lên đầu câu và đảo trợ động từ lên trước chủ ngữ để nhấn mạnh tuyệt đối.",
-    "longExplanation": "Khi cụm từ bắt đầu bằng Only kết hợp với các từ chỉ thời gian, điều kiện hoặc phương thức (như only when, only after, only if, only then, only by, only in) được đảo lên đầu câu nhằm mục đích tu từ, mệnh đề chính bắt buộc phải thực hiện đảo ngữ (đưa trợ động từ lên trước chủ ngữ).\nĐây là một trong những biện pháp tu từ mạnh mẽ nhất trong văn viết trang trọng và nghệ thuật diễn thuyết trước công chúng.",
-    "formation": "Only + Trạng ngữ (thời gian / điều kiện / phương thức) + Trợ động từ / Động từ khiếm khuyết + Chủ ngữ + Động từ chính...",
-    "examples": [
-      {
-        "translation": "Chỉ khi bạn tự mình trải nghiệm thì bạn mới có thể thực sự thấu hiểu."
-      },
-      {
-        "translation": "Chỉ sau nhiều năm khổ luyện cô ấy mới làm chủ được kỹ năng đó."
-      }
-    ]
-  },
-  "en_c2_04": {
-    "title": "Đảo ngữ với So / Such (So + tính từ/trạng từ + đảo ngữ)",
-    "shortExplanation": "Đưa 'So + tính từ/trạng từ' hoặc 'Such' lên đầu câu nhằm nhấn mạnh mức độ đến nỗi gây ra kết quả ở mệnh đề sau.",
-    "longExplanation": "Cấu trúc đảo ngữ mang phong cách sách vở, trang trọng và giàu tính hùng biện:\n• So + Tính từ / Trạng từ + Động từ to be / Trợ động từ + Chủ ngữ + that + Mệnh đề chỉ kết quả (đến mức độ mà...).\n• Such + Động từ to be + Chủ ngữ + that + Mệnh đề chỉ kết quả (sự việc to lớn / nghiêm trọng đến mức mà...).",
-    "formation": "So + Tính từ / Trạng từ + be / Trợ động từ + Chủ ngữ + that + Mệnh đề HOẶC Such + be + Chủ ngữ + that + Mệnh đề",
-    "examples": [
-      {
-        "translation": "Sự biến đổi diễn ra nhanh đến nỗi không một ai kịp thời thích nghi."
-      },
-      {
-        "translation": "Tài năng của cô ấy xuất chúng đến mức cô đã được trao một suất học bổng."
-      }
-    ]
-  },
-  "en_c2_05": {
-    "title": "Ngôn ngữ rào đón trong văn bản học thuật (Hedging)",
-    "shortExplanation": "Sử dụng các cấu trúc làm mềm phát ngôn để thể hiện sự khách quan, cẩn trọng và khiêm tốn khoa học.",
-    "longExplanation": "Ngôn ngữ rào đón (cách nói giảm độ khẳng định) là kỹ thuật diễn đạt thận trọng, tránh khẳng định tuyệt đối để phù hợp với chuẩn mực nghiên cứu khoa học.\nCác cấu trúc nòng cốt:\n• appear / seem to: dường như, có vẻ như\n• tend to: có xu hướng, thường có khuynh hướng\n• be likely / unlikely to: có khả năng / khó có khả năng xảy ra\n• be thought / considered to be: được cho là, được nhìn nhận là",
-    "formation": "Chủ ngữ + appear / seem / tend + Động từ nguyên mẫu có to HOẶC Chủ ngữ + be likely / thought / considered + Động từ nguyên mẫu có to",
-    "examples": [
-      {
-        "translation": "Các kết quả dường như gợi ý về sự tồn tại của một mối tương quan."
-      },
-      {
-        "translation": "Các doanh nghiệp thường có xu hướng đánh giá thấp chi phí triển khai."
-      }
-    ]
-  },
-  "en_c2_06": {
-    "title": "Từ nối liên kết trong văn bản học thuật (Discourse markers)",
-    "shortExplanation": "Các từ nối chuyển ý giúp cấu trúc hóa lập luận, tạo sự mạch lạc và liên kết chặt chẽ cho bài viết học thuật.",
-    "longExplanation": "Từ nối liên kết văn bản đóng vai trò định hướng người đọc và gắn kết các mạch suy nghĩ trong văn bản học thuật:\n• Bổ sung ý kiến: Moreover, Furthermore, In addition, Additionally (hơn nữa, thêm vào đó)\n• Tương phản, đối lập: However, Nevertheless, Conversely, On the other hand (tuy nhiên, ngược lại, trái lại)\n• Kết quả, hệ quả: Therefore, Consequently, As a result, Hence, Thus (do đó, vì vậy, kết quả là)\n• Giải thích, làm rõ: In other words, That is to say, Namely (nói cách khác, tức là, cụ thể là)\n• Nhượng bộ: Admittedly, While it is true that, Despite this (phải thừa nhận rằng, mặc dù đúng là, dẫu vậy)",
-    "formation": "Từ nối liên kết (đầu câu) + Dấu phẩy + Mệnh đề độc lập HOẶC Mệnh đề 1; Từ nối, Mệnh đề 2",
-    "examples": [
-      {
-        "translation": "Thí nghiệm đã thất bại. Dù vậy, các kết quả thu được vẫn mang lại nhiều bài học bổ ích."
-      },
-      {
-        "translation": "Hơn nữa, dữ liệu nghiên cứu chỉ ra một mối tương quan hết sức chặt chẽ."
-      }
-    ]
-  },
-  "en_c2_07": {
-    "title": "Ngữ vực phong cách (Speech registers): trang trọng, trung tính, thân mật",
-    "shortExplanation": "Lựa chọn mức độ từ vựng và ngữ pháp phù hợp tùy theo bối cảnh, đối tượng giao tiếp và mục đích truyền tải.",
-    "longExplanation": "Ngữ vực là phong cách ngôn ngữ được quyết định bởi mục đích, người nghe và hoàn cảnh giao tiếp:\n• Trang trọng: Dùng câu bị động, danh từ hóa, liên từ phức, không viết tắt, ưu tiên từ gốc Latin (commence, terminate, assist).\n• Trung tính: Ngữ pháp chuẩn mực, không dùng tiếng lóng, cách diễn đạt chuẩn chỉ thông dụng.\n• Thân mật: Dùng lược từ, cụm động từ thay thế từ gốc Latin (put off thay cho postpone), viết tắt, từ ngữ khẩu ngữ đời thường.",
-    "formation": "Trang trọng (Từ vựng học thuật, bị động, không viết tắt) ↔ Trung tính (Chuẩn mực thông dụng) ↔ Thân mật (Khẩu ngữ, cụm động từ, viết tắt)",
-    "examples": [
-      {
-        "translation": "Trang trọng: Tôi xin được hướng sự chú ý của quý vị tới một điểm sai lệch."
-      },
-      {
-        "translation": "Trung tính: Tôi muốn chỉ ra một lỗi sai."
-      },
-      {
-        "translation": "Thân mật: Mình chỉ muốn nhắc nhanh một chút thôi."
-      }
-    ]
-  },
-  "en_c2_08": {
-    "title": "Nghĩa biểu cảm của từ đồng nghĩa - các sắc thái ý nghĩa (Connotations)",
-    "shortExplanation": "Phân biệt sắc thái tình cảm (tích cực, trung tính, tiêu cực) giữa các từ có cùng nét nghĩa cơ bản.",
-    "longExplanation": "Các từ đồng nghĩa có thể cùng miêu tả một sự vật hoặc hiện tượng nhưng lại khác nhau về sắc thái biểu cảm (nghĩa biểu cảm) và mức độ phù hợp ngữ cảnh.\nCác thang đo sắc thái tiêu biểu:\n• slim (mảnh mai: tích cực) → thin (gầy: trung tính) → skinny (gầy gò/gầy nhẳng: tiêu cực) → scrawny/gaunt (gầy trơ xương/hốc hác: rất tiêu cực)\n• determined (kiên định: tích cực) → firm (vững vàng: trung tính) → stubborn/pig-headed (bướng bỉnh/cứng đầu: tiêu cực)\n• thrifty (tiết kiệm/biết tính toán: tích cực) → economical (tiết kiệm: trung tính) → stingy/tight-fisted (keo kiệt/bủn xỉn: tiêu cực)\n• confident (tự tin: tích cực) → assertive (quả quyết: trung tính) → arrogant (ngạo mạn/kiêu căng: tiêu cực)",
-    "formation": "Từ đồng nghĩa: Sắc thái tích cực (+) → Sắc thái trung tính (0) → Sắc thái tiêu cực (-)",
-    "examples": [
-      {
-        "translation": "Cùng miêu tả một nét vóc dáng nhưng thể hiện thái độ khác biệt: Cô ấy mảnh mai (+) / Cô ấy gầy (0) / Cô ấy gầy gò nhom nhem (-)."
-      }
-    ]
-  },
-  "en_c2_09": {
-    "title": "Biện pháp tu từ: điệp từ đầu câu, đối chéo, tam trùng (Rhetorical devices)",
-    "shortExplanation": "Các thủ pháp tu từ cổ điển giúp tăng sức truyền cảm, tạo nhịp điệu và gây ấn tượng sâu sắc trong văn phong hùng biện.",
-    "longExplanation": "Các thủ pháp tu từ nâng cao thường được vận dụng trong diễn thuyết, báo chí và văn nghị luận:\n• Điệp từ ngữ đầu câu: Lặp lại từ ngữ ở đầu các câu hoặc mệnh đề liên tiếp để tạo cao trào cảm xúc (Ví dụ: 'I have a dream... I have a dream...').\n• Phép đối chéo: Kết cấu đối xứng bắt chéo theo mô hình A-B / B-A (Ví dụ: 'Ask not what your country can do for you, but what you can do for your country').\n• Phép tam trùng: Chuỗi ba thành phần cú pháp song song tạo nhịp điệu thuyết phục (Ví dụ: 'Veni, vidi, vici' - Tôi đến, tôi thấy, tôi chinh phục; 'Chính quyền của dân, do dân, vì dân').",
-    "formation": "Điệp từ đầu (A..., A...) / Phép đối chéo (A-B, B-A) / Phép tam trùng (Ba vế song hành A, B, C)",
-    "examples": [
-      {
-        "translation": "Hỡi các bạn, những người La Mã, hỡi đồng bào, xin hãy lắng nghe tôi. (Phép tam trùng ba vế song hành)"
-      },
-      {
-        "translation": "Càng học nhiều, bạn càng kiếm được nhiều tiền. (Phép đối chéo trong tục ngữ)"
-      }
-    ]
-  },
-  "en_c2_10": {
-    "title": "Kết hợp từ chuẩn xác trong văn bản học thuật (Academic collocations)",
-    "shortExplanation": "Sử dụng chính xác các cặp động từ - danh từ cố định theo chuẩn mực học thuật quốc tế.",
-    "longExplanation": "Ở trình độ cao cấp, việc kết hợp chuẩn xác động từ đi kèm với từng danh từ là tiêu chí quan trọng để tạo nên tính tự nhiên và học thuật:\nCác cụm kết hợp từ học thuật tiêu biểu:\n• conduct / carry out research (tiến hành nghiên cứu; không dùng make/do)\n• draw / reach a conclusion (rút ra kết luận)\n• raise / address / tackle an issue (nêu lên / giải quyết một vấn đề)\n• reach / achieve a consensus (đạt được sự đồng thuận chung)\n• make significant progress (đạt được bước tiến đáng kể)\n• pose / present a challenge (đặt ra một thách thức)",
-    "formation": "Động từ học thuật chuyên biệt + Cụm danh từ tương ứng (Ví dụ: conduct research, reach a consensus...)",
-    "examples": [
-      {
-        "translation": "Các nhà nghiên cứu đã tiến hành các cuộc phỏng vấn trên quy mô sâu rộng."
-      },
-      {
-        "translation": "Ủy ban đã không thể đạt được sự đồng thuận chung."
-      }
-    ]
-  },
-  "en_c2_11": {
-    "title": "Cấu trúc tuyệt đối với phân từ (Absolute construction)",
-    "shortExplanation": "Cấu trúc gồm danh từ/đại từ đi cùng phân từ có chủ ngữ độc lập với mệnh đề chính, dùng để bổ sung hoàn cảnh mà không cần liên từ.",
-    "longExplanation": "Cấu trúc tuyệt đối (cấu trúc độc lập phân từ) = Danh từ / Đại từ + Phân từ (mang chủ ngữ độc lập, không phụ thuộc vào chủ ngữ của mệnh đề chính).\nCấu trúc này mang văn phong trang trọng, thường xuất hiện trong văn viết để bổ sung hoàn cảnh (thời gian, điều kiện, nguyên nhân) một cách cô đọng mà không cần dùng liên từ phụ thuộc.\nCác phân loại thường gặp:\n• Điều kiện: Weather permitting = Nếu thời tiết cho phép\n• Nhận định: All things considered = Sau khi cân nhắc mọi khía cạnh\n• Thời gian / Hoàn thành: Her work finished = Khi công việc của cô ấy hoàn thành; This done = Sau khi điều này được thực hiện xong",
-    "formation": "Danh từ / Đại từ + Phân từ (V-ing hoặc V3/V-ed) + ..., Mệnh đề chính",
-    "examples": [
-      {
-        "translation": "Xét về mọi khía cạnh, đó vẫn là một sự kiện thành công tốt đẹp."
-      },
-      {
-        "translation": "Do thời hạn chót đã trôi qua, dự án đã bị bãi bỏ."
-      }
-    ]
-  },
-  "en_c2_12": {
-    "title": "Lược bỏ và thay thế trong ngữ cảnh văn bản (Ellipsis & Substitution)",
-    "shortExplanation": "Kỹ thuật lược bớt hoặc dùng từ thay thế cho các thành phần đã biết để câu văn súc tích và tránh lặp từ không cần thiết.",
-    "longExplanation": "Lược bỏ và thay thế là hai phương tiện liên kết ngữ văn quan trọng giúp văn bản mạch lạc:\n• Lược bỏ: Bỏ qua những thành phần đã được đề cập từ trước mà người nghe/người đọc vẫn tự hiểu được (Ví dụ: I wanted to leave, but wasn't allowed to [leave]).\n• Thay thế: Dùng các từ thay thế ngắn như do, so, one, it thay vì lặp lại cả một cụm từ dài.\nCác trường hợp điển hình:\n• Trả lời ngắn gọn: A: Are you coming? B: Might do.\n• Đồng tình: She speaks French and he does too / so does he.\n• Thay thế danh từ bằng 'one': The big one? I prefer the small one.",
-    "formation": "Mệnh đề nêu thông tin + Liên từ / Lượt lời đối thoại + [Thành phần được lược bỏ hoặc thay bằng do / so / one / to]",
-    "examples": [
-      {
-        "translation": "Bạn có biết lái xe không? — Trước đây tôi từng biết lái (nhưng giờ không lái nữa)."
-      },
-      {
-        "translation": "Cô ấy bảo rằng cô ấy sẽ có mặt ở đây, và quả đúng là cô ấy đã đến."
-      }
-    ]
-  },
-  "en_c2_13": {
-    "title": "Cụm động từ nguyên mẫu thay thế cho mệnh đề phụ",
-    "shortExplanation": "Sử dụng cụm động từ nguyên mẫu thay thế cho mệnh đề phụ nhằm giúp câu văn cô đọng và trang trọng hơn.",
-    "longExplanation": "Cấu trúc tân ngữ phức (tân ngữ đi kèm động từ nguyên mẫu) thường được dùng để thay thế cho một mệnh đề phụ hoàn chỉnh:\n• Động từ chỉ ý muốn, yêu cầu + tân ngữ + động từ nguyên mẫu có 'to': chẳng hạn câu 'Tôi muốn cô ấy ở lại'.\n• Sau các động từ giác quan và sai khiến (như nhìn thấy, nghe thấy, cho phép, bắt buộc, nhờ vả): dùng động từ nguyên mẫu không có 'to' ở thể chủ động, ví dụ: 'Tôi thấy cô ấy rời đi', 'Cô ấy làm anh ấy khóc', 'Hãy để tôi giúp'.\n• Trong câu bị động với các động từ sai khiến: bắt buộc phải dùng động từ nguyên mẫu có 'to', ví dụ: 'Anh ấy bị bắt phải trả tiền'.\n• Cấu trúc với các động từ chỉ vẻ ngoài hoặc phỏng đoán (như dường như, hóa ra, chứng minh là) + động từ nguyên mẫu có 'to': ví dụ 'Cô ấy dường như đã biết', 'Anh ấy tình cờ có mặt ở đó'.",
-    "formation": "Chủ ngữ + Động từ + Tân ngữ + Động từ nguyên mẫu (có 'to' / không 'to') hoặc Chủ ngữ + Động từ tình thái / phỏng đoán + Động từ nguyên mẫu có 'to'",
-    "examples": [
-      {
-        "translation": "Tôi cần bạn ký vào tài liệu này."
-      },
-      {
-        "translation": "Cô ấy bị bắt buộc phải xin lỗi công khai."
-      },
-      {
-        "translation": "Anh ấy dường như đã quên hết mọi thứ."
-      }
-    ]
-  },
-  "en_c2_14": {
-    "title": "Thì tương lai hoàn thành tiếp diễn",
-    "shortExplanation": "Diễn tả một hành động kéo dài liên tục cho đến một mốc thời điểm xác định trong tương lai.",
-    "longExplanation": "Thì tương lai hoàn thành tiếp diễn nhấn mạnh vào khoảng thời gian hoặc tính liên tục của một hành động sẽ diễn ra cho đến một thời điểm cụ thể trong tương lai. Cấu trúc này thường trả lời cho câu hỏi 'Tính đến lúc đó thì hành động đã kéo dài được bao lâu?'.\nThường được sử dụng kèm các từ chỉ thời gian như 'tính đến lúc', 'trong khoảng thời gian', 'khi': ví dụ 'Tính đến thứ Hai, cô ấy sẽ làm việc cho dự án này được ba tuần liên tục'.",
-    "formation": "Chủ ngữ + will have been + Động từ thêm đuôi '-ing'",
-    "examples": [
-      {
-        "translation": "Tính đến năm sau, tôi sẽ học tiếng Anh được tròn năm năm."
-      },
-      {
-        "translation": "Khi chúng tôi đến nơi, cô ấy sẽ đã chờ đợi suốt hai tiếng đồng hồ rồi."
-      }
-    ]
-  },
-  "en_c2_15": {
-    "title": "Sự hòa hợp các thì trong câu phức",
-    "shortExplanation": "Quy tắc phối hợp thì giữa mệnh đề chính và mệnh đề phụ khi động từ chính ở thì quá khứ.",
-    "longExplanation": "Trong câu phức, động từ của mệnh đề phụ phải phù hợp về mặt thời gian với động từ của mệnh đề chính.\nNếu động từ ở mệnh đề chính chia ở thì quá khứ, động từ mệnh đề phụ sẽ lùi về quá khứ một bậc:\n• Thì hiện tại đơn lùi thành thì quá khứ đơn (ví dụ: anh ấy nói điều đó là sự thật).\n• Thì quá khứ đơn lùi thành thì quá khứ hoàn thành (ví dụ: cô ấy nói cô ấy đã thấy nó).\n• Thì hiện tại hoàn thành lùi thành thì quá khứ hoàn thành (ví dụ: anh ấy nói anh ấy đã hoàn thành).\n• Các trợ động từ và động từ khuyết thiếu lùi về quá khứ tương ứng (will đổi thành would, can đổi thành could, may đổi thành might, is đổi thành was).\n*Lưu ý ngoại lệ: Giữ nguyên thì hiện tại đơn khi mệnh đề phụ diễn tả một chân lý khách quan, một sự thật khoa học hiển nhiên.",
-    "formation": "Mệnh đề chính (thì quá khứ) + Mệnh đề phụ (động từ lùi về thì quá khứ tương ứng)",
-    "examples": [
-      {
-        "translation": "Anh ấy nói với tôi rằng anh ấy đã sống ở đó nhiều năm rồi."
-      },
-      {
-        "translation": "Cô ấy nói rằng Trái Đất quay quanh Mặt Trời."
-      }
-    ]
-  },
-  "en_c2_16": {
-    "title": "Liên từ kết hợp (Liên từ đẳng lập)",
-    "shortExplanation": "Các liên từ dùng để nối kết các từ, cụm từ hoặc mệnh đề độc lập có cương vị ngữ pháp ngang nhau.",
-    "longExplanation": "Liên từ kết hợp dùng để kết nối các thành phần ngữ pháp bình đẳng trong câu. Có 7 liên từ cơ bản trong tiếng Anh:\n• for: mang nghĩa 'vì/bởi vì' (trang trọng, dùng giải thích lý do): 'Cô ấy rời đi, vì cô ấy đã mệt'.\n• and: mang nghĩa 'và' (bổ sung, thêm vào).\n• nor: mang nghĩa 'cũng không' (nối mệnh đề mang tính phủ định, có đảo ngữ): 'Cô ấy không gọi điện, mà cũng chẳng viết thư'.\n• but: mang nghĩa 'nhưng' (diễn tả sự đối lập, tương phản).\n• or: mang nghĩa 'hoặc' (lựa chọn thay thế).\n• yet: mang nghĩa 'tuy vậy/nhưng mà' (tương phản, sắc thái trang trọng hơn 'but').\n• so: mang nghĩa 'cho nên/vì vậy' (chỉ kết quả, hệ quả).",
-    "formation": "Mệnh đề độc lập + Dấu phẩy (,) + Liên từ kết hợp (for, and, nor, but, or, yet, so) + Mệnh đề độc lập",
-    "examples": [
-      {
-        "translation": "Cô ấy đã rất mệt mỏi, tuy vậy cô ấy vẫn tiếp tục làm việc."
-      },
-      {
-        "translation": "Cậu ấy đã không học bài, mà cũng không đến lớp."
-      }
-    ]
-  },
-  "en_c2_17": {
-    "title": "Liên từ phụ thuộc",
-    "shortExplanation": "Các liên từ dùng để mở đầu mệnh đề phụ và liên kết mệnh đề phụ với mệnh đề chính theo các mối quan hệ ngữ nghĩa logic.",
-    "longExplanation": "Liên từ phụ thuộc dùng để dẫn xuất một mệnh đề phụ và liên kết nó với mệnh đề chính, làm rõ mối quan hệ logic giữa hai mệnh đề.\nPhân loại theo ý nghĩa ngữ pháp:\n• Thời gian: khi, trong khi, sau khi, trước khi, cho đến khi, ngay khi, bất cứ khi nào...\n• Nguyên nhân, lý do: bởi vì, do chỗ, xét thấy, xét việc...\n• Điều kiện: nếu, trừ khi, miễn là, với điều kiện là, phòng khi, giả sử...\n• Mục đích: để mà, cốt để, nhằm mục đích...\n• Nhượng bộ, tương phản: mặc dù, dẫu cho, trong khi đó, tuy nhiên...",
-    "formation": "Liên từ phụ thuộc + Mệnh đề phụ + Dấu phẩy (,) + Mệnh đề chính hoặc Mệnh đề chính + Liên từ phụ thuộc + Mệnh đề phụ",
-    "examples": [
-      {
-        "translation": "Xét thấy hạn chót đã qua, chúng tôi đã hủy bỏ cuộc họp."
-      },
-      {
-        "translation": "Để phòng ngừa cô ấy quên, anh ấy đã gửi cho cô ấy một lời nhắc nhở."
-      }
-    ]
-  },
-  "en_c2_18": {
-    "title": "Dấu phẩy, dấu chấm phẩy và dấu hai chấm",
-    "shortExplanation": "Quy tắc sử dụng dấu phẩy, dấu chấm phẩy và dấu hai chấm để liên kết các mệnh đề và liệt kê các thành phần trong câu.",
-    "longExplanation": "Các quy tắc sử dụng dấu câu chuẩn xác trong tiếng Anh:\n• Dấu phẩy (,): Đặt trước các liên từ kết hợp khi nối hai mệnh đề độc lập; đặt sau các từ hoặc ngữ mở đầu câu (ví dụ: 'Tuy nhiên, cô ấy quyết định ở lại'); dùng để ngăn cách các từ trong chuỗi liệt kê (bao gồm cả dấu phẩy Oxford đặt ngay trước liên từ 'và' cuối cùng).\n• Dấu chấm phẩy (;): Dùng để nối liền hai mệnh đề độc lập có liên quan chặt chẽ về ngữ nghĩa mà không cần dùng đến từ nối (ví dụ: 'Cô ấy mệt mỏi; cô ấy đi ngủ').\n• Dấu hai chấm (:): Dùng để mở đầu cho một danh sách liệt kê, một lời giải thích chi tiết bổ sung, hoặc một câu trích dẫn.",
-    "formation": "Mệnh đề độc lập + Dấu phẩy (,) + Liên từ kết hợp + Mệnh đề độc lập hoặc Mệnh đề độc lập + Dấu chấm phẩy (;) + Mệnh đề độc lập hoặc Mệnh đề chính + Dấu hai chấm (:) + Danh sách / Phần giải thích",
-    "examples": [
-      {
-        "translation": "Tuy nhiên, các kết quả thu được vẫn chưa đủ để kết luận; cần phải tiến hành nghiên cứu thêm."
-      },
-      {
-        "translation": "Công ty có ba ưu tiên hàng đầu: hiệu quả, đổi mới và tính bền vững."
-      }
-    ]
-  },
-  "en_c2_19": {
-    "title": "Dấu gạch ngang dài, dấu nháy đơn và dấu ngoặc kép",
-    "shortExplanation": "Quy tắc sử dụng dấu gạch ngang dài để nhấn mạnh, dấu nháy đơn trong dạng viết tắt và sở hữu cách, cùng dấu ngoặc kép khi trích dẫn.",
-    "longExplanation": "Các quy tắc sử dụng dấu gạch ngang, dấu nháy đơn và ngoặc kép:\n• Dấu gạch ngang dài (—): Dùng để chen vào giữa câu một thành phần bổ chú hoặc giải thích nhằm tạo điểm nhấn mạnh mẽ hơn so với dấu phẩy (ví dụ: 'Giải pháp này — dù tốn kém — đã chứng minh được hiệu quả').\n• Dấu nháy đơn ('): Dùng trong các dạng viết tắt rút gọn (như viết tắt của đại từ và trợ động từ: it's, don't, they're) và dùng trong sở hữu cách của danh từ (ví dụ: sách của John, kết quả của các học sinh).\n• Dấu ngoặc kép: Dùng để dẫn lời nói trực tiếp hoặc trích dẫn nguyên văn (tiếng Anh-Mỹ thường chuộng dấu ngoặc kép kép \" \", tiếng Anh-Anh thường dùng dấu ngoặc kép đơn ' ').",
-    "formation": "Thành phần câu + Dấu gạch ngang dài (—) + Thành phần bổ chú / Giải thích + Dấu gạch ngang dài (—) hoặc Từ viết tắt / Danh từ + Dấu nháy đơn (') + Thành phần sở hữu hoặc Dấu ngoặc kép (\" \") + Lời dẫn trực tiếp",
-    "examples": [
-      {
-        "translation": "Dự án đó — được khởi động vào năm 2020 — đã vượt qua mọi kỳ vọng."
-      },
-      {
-        "translation": "Việc kiểm tra các cài đặt của nó trước khi sử dụng là rất quan trọng."
-      }
-    ]
-  },
-  "en_c2_20": {
-    "title": "Câu hỏi gián tiếp trong văn bản học thuật",
-    "shortExplanation": "Trong văn phong học thuật, câu hỏi trực tiếp thường được chuyển đổi thành câu hỏi gián tiếp với trật tự từ của một mệnh đề trần thuật.",
-    "longExplanation": "Trong các văn bản mang tính học thuật và nghiên cứu, câu hỏi trực tiếp thường được thay thế bằng câu hỏi gián tiếp (mệnh đề nghi vấn) để giữ giọng văn khách quan, trang trọng và lịch sự.\nCâu hỏi gián tiếp đóng vai trò như một mệnh đề phụ với trật tự từ thông thường (chủ ngữ đứng trước động từ, không đảo trợ động từ lên trước và không mượn trợ động từ do/does/did như trong câu hỏi trực tiếp).\nCác từ dẫn xuất thường gặp: các từ mang nghĩa 'liệu rằng / có hay không' và các từ để hỏi (cái gì, ở đâu, khi nào, như thế nào, tại sao, cái nào).\nVí dụ chuyển đổi: 'Dữ liệu này cho thấy điều gì?' → 'Vấn đề cốt lõi là dữ liệu này cho thấy điều gì'.",
-    "formation": "Mệnh đề chính + Từ để hỏi / Liệu rằng + Chủ ngữ + Vị ngữ (Động từ chia theo thì)",
-    "examples": [
-      {
-        "translation": "Tôi tự hỏi liệu giả thuyết này có chính xác hay không."
-      },
-      {
-        "translation": "Nghiên cứu này xem xét cách thức mạng xã hội tác động đến hành vi."
       }
     ]
   }

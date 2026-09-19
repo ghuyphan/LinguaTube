@@ -4,15 +4,16 @@
   <!-- Spotlight Search URL Bar (Single unified bar, no nested boxes) -->
   <div class="spotlight-container" [class.animate-enter]="stateTransition() === 'to-input'">
     <div class="spotlight-bar">
-      <app-icon name="link" [size]="18" class="spotlight-icon" />
-      <input type="text" [(ngModel)]="videoUrl" (ngModelChange)="error.set(null)" [placeholder]="i18n.t('player.pasteUrl')" class="spotlight-input"
-        (keyup.enter)="loadVideo()" spellcheck="false" autocomplete="off" />
+      <app-icon [name]="isYoutubeUrl() ? 'link' : 'search'" [size]="18" class="spotlight-icon" />
+      <input type="search" enterkeyhint="go" [ngModel]="videoUrl" (ngModelChange)="onUrlOrSearchChange($event)" [placeholder]="i18n.t('player.pasteUrl')" class="spotlight-input"
+        (keyup.enter)="onSubmit()" spellcheck="false" autocomplete="off" />
       @if (videoUrl.trim()) {
       <div class="spotlight-actions">
         <button type="button" class="spotlight-clear-btn" (click)="clearUrl()" [attr.aria-label]="i18n.t('common.clear') || 'Clear input'">
           <app-icon name="x" [size]="14" />
         </button>
-        <button class="btn btn-primary spotlight-load-btn" (click)="loadVideo()" [disabled]="isLoading()" [attr.aria-label]="i18n.t('player.load') || 'Load video'">
+        @if (isYoutubeUrl()) {
+        <button class="btn btn-primary spotlight-load-btn" (click)="onSubmit()" [disabled]="isLoading()" [attr.aria-label]="i18n.t('player.load') || 'Load video'">
           @if (isLoading()) {
           <app-icon name="loader" [size]="15" class="loading-spinner" />
           } @else {
@@ -20,6 +21,12 @@
           <span class="load-text">{{ i18n.t('player.load') }}</span>
           }
         </button>
+        } @else {
+        <button type="button" class="btn btn-primary spotlight-load-btn spotlight-search-btn" (click)="onSubmit()" [attr.aria-label]="i18n.t('player.search') || 'Search'">
+          <app-icon name="search" [size]="15" />
+          <span class="load-text">{{ i18n.t('player.search') || 'Search' }}</span>
+        </button>
+        }
       </div>
       } @else {
       <button type="button" class="spotlight-paste-btn" (click)="pasteFromClipboard()" [title]="i18n.t('player.pasteFromClipboard') || 'Paste from clipboard'" [attr.aria-label]="i18n.t('player.paste') || 'Paste'">
@@ -28,13 +35,6 @@
       </button>
       }
     </div>
-
-    @if (error()) {
-    <div class="error-banner">
-      <app-icon name="alert-circle" [size]="15" />
-      <span>{{ error() }}</span>
-    </div>
-    }
   </div>
   }
 
@@ -168,7 +168,7 @@
 
     <!-- Mini Progress Bar -->
     <div class="mini-progress" [class.visible]="!areControlsVisible()"
-      [style.--progress]="progressPercentage()" (touchstart)="startSeeking($event)" (mousedown)="startSeeking($event)">
+      [style.--progress]="progressPercentage()" (pointerdown)="startSeeking($event)">
       <div class="mini-progress-mask">
         <div class="mini-progress__fill"></div>
       </div>
@@ -216,7 +216,7 @@
             <!-- Playback Speed -->
             <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('speed')">
               <div class="menu-item-left">
-                <app-icon name="fast-forward" [size]="18" />
+                <app-icon name="speedometer" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</span>
               </div>
               <div class="menu-item-right">
@@ -260,7 +260,7 @@
             @if (supportsReadingDisplay()) {
             <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('reading')">
               <div class="menu-item-left">
-                <app-icon name="type" [size]="18" />
+                <app-icon name="ruby-text" [size]="18" />
                 <span class="menu-item-label">{{ readingModeName() }}</span>
               </div>
               <div class="menu-item-right">
@@ -273,7 +273,7 @@
             <!-- Grammar Mode -->
             <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('grammar')">
               <div class="menu-item-left">
-                <app-icon name="book-open" [size]="18" />
+                <app-icon name="sparkle-text" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('grammar.mode') || 'Grammar Mode' }}</span>
               </div>
               <div class="menu-item-right">
@@ -285,7 +285,7 @@
             <!-- Sleep Timer -->
             <button type="button" class="settings-menu-item" (click)="playerSettingsView.set('sleepTimer')">
               <div class="menu-item-left">
-                <app-icon name="moon" [size]="18" />
+                <app-icon name="timer" [size]="18" />
                 <span class="menu-item-label">{{ i18n.t('player.sleepTimer') || 'Sleep timer' }}</span>
               </div>
               <div class="menu-item-right">
@@ -508,7 +508,7 @@
               <app-icon name="chevron-left" [size]="18" />
             </button>
             <div class="sheet-title-group">
-              <app-icon name="moon" [size]="16" />
+              <app-icon name="timer" [size]="16" />
               <h3 class="sheet-title">{{ i18n.t('player.sleepTimer') || 'Sleep timer' }}</h3>
             </div>
           </div>
@@ -571,20 +571,22 @@
 
       <app-video-bottom-bar [isPlaying]="youtube.isPlaying()" [currentTime]="formattedCurrentTime()"
         [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
-        [volumePercent]="volumePercent()" [isFullscreen]="isFullscreen()" [subtitlesVisible]="subtitles.subtitlesVisible()"
-        [currentSpeed]="currentSpeed()" [isVolumeSliderVisible]="isVolumeSliderVisible()"
+        [volumePercent]="volumePercent()" [isVolumeSliderVisible]="isVolumeSliderVisible()"
+        [isFullscreen]="isFullscreen()" [subtitlesVisible]="subtitles.subtitlesVisible()"
+        [currentSpeed]="currentSpeed()"
         [showDualSubtitles]="settings.settings().showDualSubtitles" 
         [isCJKLanguage]="isCJKLanguage()"
         [isAISubtitle]="transcript.isAIGenerated()"
         [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
-        (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)" (toggleSubtitles)="toggleSubtitles()"
+        (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)"
+        (showVolumeSlider)="showVolumeSlider()" (hideVolumeSlider)="hideVolumeSlider()"
+        (toggleSubtitles)="toggleSubtitles()"
         (toggleDualSubs)="toggleDualSubtitles()"
         (openDualSubMenu)="openDualSubMenu($event)"
         (openSettings)="openPlayerSettings($event)"
         (toggleMiniplayer)="toggleMiniplayer()"
-        (toggleFullscreen)="toggleFullscreen()" (showVolumeSlider)="showVolumeSlider()"
-        (hideVolumeSlider)="hideVolumeSlider()" />
+        (toggleFullscreen)="toggleFullscreen()" />
     </div>
     }
 

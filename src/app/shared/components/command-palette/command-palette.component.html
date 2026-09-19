@@ -31,6 +31,11 @@
           autocapitalize="off"
           spellcheck="false"
           enterkeyhint="go"
+          role="combobox"
+          aria-autocomplete="list"
+          [attr.aria-expanded]="filteredItems().length > 0"
+          aria-controls="spotlight-results-list"
+          [attr.aria-activedescendant]="selectedIndex() >= 0 && filteredItems()[selectedIndex()] ? ('spotlight-opt-' + selectedIndex()) : null"
         />
 
         @if (url()) {
@@ -74,19 +79,15 @@
       </button>
     </div>
 
-    @if (error()) {
-      <div class="spotlight__error-pill" role="alert">
-        <app-icon name="alert-circle" [size]="14" />
-        <span>{{ error() }}</span>
-      </div>
-    } @else if (filteredItems().length > 0) {
-      <div class="spotlight-results" role="listbox">
+    @if (filteredItems().length > 0) {
+      <div class="spotlight-results">
         <div class="spotlight-results__header">
           {{ url() ? (i18n.t('common.search') || 'Results') : (i18n.t('commandPalette.quickActions') || 'Quick Navigation') }}
         </div>
-        <ul class="spotlight-results__list">
+        <ul id="spotlight-results-list" class="spotlight-results__list" role="listbox" [attr.aria-label]="i18n.t('commandPalette.quickActions') || 'Quick Navigation'">
           @for (item of filteredItems(); track item.id; let idx = $index) {
             <li 
+              [id]="'spotlight-opt-' + idx"
               class="spotlight-results__item" 
               [class.selected]="selectedIndex() === idx"
               (click)="executeItem(item)"

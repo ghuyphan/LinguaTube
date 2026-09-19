@@ -1,4 +1,4 @@
-import { GrammarPattern } from '../models/grammar.model';
+import { GrammarPattern } from "../models/grammar.model";
 
 // Data source: hanabira.org (CC License - Attribution Required)
 // https://github.com/tristcoil/hanabira.org-japanese-content
@@ -6,7 +6,7 @@ import { GrammarPattern } from '../models/grammar.model';
 
 export const GRAMMAR_JA: GrammarPattern[] = [
   {
-    "id": "ja_A_0",
+    "id": "ja_n5_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A が いちばん～ (A ga ichiban～)",
@@ -38,7 +38,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AけれどもB_1",
+    "id": "ja_n5_AけれどもB_1",
     "language": "ja",
     "pattern": "A。けれども、～B。",
     "title": "A。けれども、～B。(A. Keredomo,~ B.)",
@@ -70,7 +70,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AしかしB_2",
+    "id": "ja_n5_AしかしB_2",
     "language": "ja",
     "pattern": "A。しかし、～B。",
     "title": "A。しかし、～B。 (A. Shikashi, ~B.)",
@@ -102,7 +102,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AじゃB_3",
+    "id": "ja_n5_AじゃB_3",
     "language": "ja",
     "pattern": "A。じゃ、～B。",
     "title": "A。じゃ、～B。(A. Ja, ~B.)",
@@ -134,7 +134,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AそれじゃB_4",
+    "id": "ja_n5_AそれじゃB_4",
     "language": "ja",
     "pattern": "A。それじゃ、～B。",
     "title": "A。それじゃ、～B。(A. Soreja,~B.)",
@@ -166,7 +166,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AそれではB_5",
+    "id": "ja_n5_AそれではB_5",
     "language": "ja",
     "pattern": "A。それでは、～B。",
     "title": "A。それでは、～B。(A. Soredewa,~B.)",
@@ -198,7 +198,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_6",
+    "id": "ja_n5_A_6",
     "language": "ja",
     "pattern": "A。",
     "title": "A。 では、～B。 (A. Dewa, ~B)",
@@ -230,7 +230,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AでもB_7",
+    "id": "ja_n5_AでもB_7",
     "language": "ja",
     "pattern": "A。でも、～B。",
     "title": "A。でも、～B。(A. Demo, ~B)",
@@ -262,7 +262,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aと_8",
+    "id": "ja_n5_Aと_8",
     "language": "ja",
     "pattern": "Aと",
     "title": "Aと Bと どちら～ (A to B to dochira~)",
@@ -294,7 +294,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AとBと_9",
+    "id": "ja_n5_AとBと_9",
     "language": "ja",
     "pattern": "AとBと",
     "title": "AとBと どっち〜 (A to B to docchi〜)",
@@ -326,7 +326,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_10",
+    "id": "ja_n5_A_10",
     "language": "ja",
     "pattern": "A",
     "title": "A は B が〜 (A wa B ga〜)",
@@ -358,7 +358,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_11",
+    "id": "ja_n5_A_11",
     "language": "ja",
     "pattern": "A",
     "title": "A は B より～ (A wa B yori～)",
@@ -390,7 +390,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_12",
+    "id": "ja_n5_A_12",
     "language": "ja",
     "pattern": "A",
     "title": "A より B のほうが～ (A yori B no hou ga ～)",
@@ -422,7 +422,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いAdjective_13",
+    "id": "ja_n5_いAdjective_13",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective く + Verb (i-Adjective + ku + Verb)",
@@ -454,7 +454,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いAdjective_14",
+    "id": "ja_n5_いAdjective_14",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective く します (i-Adjective ku shimasu)",
@@ -486,7 +486,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いAdjective_15",
+    "id": "ja_n5_いAdjective_15",
     "language": "ja",
     "pattern": "い-Adjective:",
     "title": "い-Adjective: Negative Polite Form",
@@ -518,7 +518,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いAdjective_16",
+    "id": "ja_n5_いAdjective_16",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective て (i-Adjective + te~)",
@@ -550,7 +550,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なAdjective_17",
+    "id": "ja_n5_なAdjective_17",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective に + Verb",
@@ -582,7 +582,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なAdjective_18",
+    "id": "ja_n5_なAdjective_18",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective で～ (na-Adjective de~)",
@@ -614,7 +614,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なAdjective_19",
+    "id": "ja_n5_なAdjective_19",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective に します (na-Adjective ni shimasu)",
@@ -646,7 +646,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なAdjective_20",
+    "id": "ja_n5_なAdjective_20",
     "language": "ja",
     "pattern": "な-Adjective",
     "title": "な-Adjective に なります (na-Adjective ni narimasu)",
@@ -678,7 +678,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_21",
+    "id": "ja_n5_Noun_21",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun か Noun か～ (Noun ka Noun ka～)",
@@ -710,7 +710,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_22",
+    "id": "ja_n5_Noun_22",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun が できます (Noun ga dekimasu)",
@@ -742,7 +742,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_23",
+    "id": "ja_n5_Noun_23",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun がほしいです (〜ga hoshii desu)",
@@ -774,7 +774,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_24",
+    "id": "ja_n5_Noun_24",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun から Noun まで (Noun kara Noun made)",
@@ -806,7 +806,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_25",
+    "id": "ja_n5_Noun_25",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun くらい～ (Noun kurai～)",
@@ -838,7 +838,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_26",
+    "id": "ja_n5_Noun_26",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ぐらい～ (Noun gurai～)",
@@ -870,7 +870,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_27",
+    "id": "ja_n5_Noun_27",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ごろ～ (Noun + goro～)",
@@ -902,7 +902,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_28",
+    "id": "ja_n5_Noun_28",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun だけ〜 (〜dake)",
@@ -934,7 +934,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Nounで_29",
+    "id": "ja_n5_Nounで_29",
     "language": "ja",
     "pattern": "Nounで～",
     "title": "Nounで～ (Noun de ~)",
@@ -966,7 +966,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_30",
+    "id": "ja_n5_Noun_30",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun と～ (Noun to～)",
@@ -998,7 +998,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_31",
+    "id": "ja_n5_Noun_31",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に～ (Noun ni～)",
@@ -1030,7 +1030,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_32",
+    "id": "ja_n5_Noun_32",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 帰ります (Noun ni kaerimasu)",
@@ -1062,7 +1062,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_33",
+    "id": "ja_n5_Noun_33",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に します (Noun ni shimasu)",
@@ -1094,7 +1094,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_34",
+    "id": "ja_n5_Noun_34",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に なります (Noun ni narimasu)",
@@ -1126,7 +1126,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_35",
+    "id": "ja_n5_Noun_35",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 来ます (Noun ni kimasu)",
@@ -1158,7 +1158,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_36",
+    "id": "ja_n5_Noun_36",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 行きます (Noun ni ikimasu)",
@@ -1190,7 +1190,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_37",
+    "id": "ja_n5_Noun_37",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の あとで (Noun no atode)",
@@ -1222,7 +1222,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_38",
+    "id": "ja_n5_Noun_38",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 前に (Noun no mae ni)",
@@ -1254,7 +1254,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_39",
+    "id": "ja_n5_Noun_39",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun は～ (Noun wa〜)",
@@ -1286,7 +1286,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_40",
+    "id": "ja_n5_Noun_40",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun も〜 (Noun mo~)",
@@ -1318,7 +1318,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_41",
+    "id": "ja_n5_Noun_41",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun や Noun など～ (Noun ya Noun nado)",
@@ -1350,7 +1350,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_42",
+    "id": "ja_n5_Noun_42",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を〜 (Noun wo〜)",
@@ -1382,7 +1382,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_43",
+    "id": "ja_n5_Verb_43",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た あとで (ta ato de)",
@@ -1414,7 +1414,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_44",
+    "id": "ja_n5_Verb_44",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たいです (taidesu)",
@@ -1446,7 +1446,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_45",
+    "id": "ja_n5_Verb_45",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て～ (Verb + te～)",
@@ -1478,7 +1478,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_46",
+    "id": "ja_n5_Verb_46",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て います (Verb te imasu)",
@@ -1510,7 +1510,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_47",
+    "id": "ja_n5_Verb_47",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てから～ (〜te kara)",
@@ -1542,7 +1542,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_48",
+    "id": "ja_n5_Verb_48",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て ください (Verb-te kudasai)",
@@ -1574,7 +1574,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_49",
+    "id": "ja_n5_Verb_49",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないで ください (〜naide kudasai)",
@@ -1606,7 +1606,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_50",
+    "id": "ja_n5_Noun_50",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に 戻ります (Noun ni modorimasu)",
@@ -1638,7 +1638,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_51",
+    "id": "ja_n5_Verb_51",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb に 来ます (Verb ni kimasu)",
@@ -1670,7 +1670,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_52",
+    "id": "ja_n5_Verb_52",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb に 行きます (Verb ni ikimasu)",
@@ -1702,7 +1702,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_53",
+    "id": "ja_n5_Verb_53",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ましょう (mashou)",
@@ -1734,7 +1734,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_54",
+    "id": "ja_n5_Verb_54",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ましょうか。 (〜mashou ka.)",
@@ -1766,7 +1766,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_55",
+    "id": "ja_n5_Verb_55",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ませんか。 (Verb-masenka)",
@@ -1798,7 +1798,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_56",
+    "id": "ja_n5_Verb_56",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ること～ (〜ru koto)",
@@ -1830,7 +1830,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_57",
+    "id": "ja_n5_Verb_57",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る こと が できます (ru koto ga dekimasu)",
@@ -1862,7 +1862,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_58",
+    "id": "ja_n5_Verb_58",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る こと ができる (ru koto ga dekiru)",
@@ -1894,7 +1894,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_59",
+    "id": "ja_n5_Verb_59",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る の～ (Verb + ru + no~)",
@@ -1926,7 +1926,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_60",
+    "id": "ja_n5_Verb_60",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る 前に (ru mae ni)",
@@ -1958,7 +1958,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_あまりありません_61",
+    "id": "ja_n5_あまりありません_61",
     "language": "ja",
     "pattern": "あまり～ありません",
     "title": "あまり～ありません (amari ~ arimasen)",
@@ -1990,7 +1990,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_あまりないです_62",
+    "id": "ja_n5_あまりないです_62",
     "language": "ja",
     "pattern": "あまり～ないです",
     "title": "あまり～ないです (amari ~ nai desu)",
@@ -2022,7 +2022,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_あります_63",
+    "id": "ja_n5_あります_63",
     "language": "ja",
     "pattern": "～あります",
     "title": "～あります (〜arimasu)",
@@ -2054,7 +2054,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いかがですか_64",
+    "id": "ja_n5_いかがですか_64",
     "language": "ja",
     "pattern": "～いかがですか。",
     "title": "～いかがですか。 (〜ikaga desu ka.)",
@@ -2086,7 +2086,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いくつ_65",
+    "id": "ja_n5_いくつ_65",
     "language": "ja",
     "pattern": "いくつ～",
     "title": "いくつ～ (ikutsu~)",
@@ -2118,7 +2118,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いつか_66",
+    "id": "ja_n5_いつか_66",
     "language": "ja",
     "pattern": "いつか～",
     "title": "いつか～ (itsuka～)",
@@ -2150,7 +2150,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いつでも_67",
+    "id": "ja_n5_いつでも_67",
     "language": "ja",
     "pattern": "いつでも～",
     "title": "いつでも～ (itsudemo～)",
@@ -2182,7 +2182,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いつも_68",
+    "id": "ja_n5_いつも_68",
     "language": "ja",
     "pattern": "いつも～",
     "title": "いつも～ (itsumo～)",
@@ -2214,7 +2214,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_て_69",
+    "id": "ja_n5_て_69",
     "language": "ja",
     "pattern": "～て",
     "title": "～て います (～te imasu)",
@@ -2246,7 +2246,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_が_70",
+    "id": "ja_n5_が_70",
     "language": "ja",
     "pattern": "～が",
     "title": "～が (〜ga)",
@@ -2278,7 +2278,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_が_71",
+    "id": "ja_n5_が_71",
     "language": "ja",
     "pattern": "～が、～",
     "title": "～が、～ (〜ga, 〜)",
@@ -2310,7 +2310,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_から_72",
+    "id": "ja_n5_から_72",
     "language": "ja",
     "pattern": "～から、～",
     "title": "～から、～ (〜kara、～)",
@@ -2342,7 +2342,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からです_73",
+    "id": "ja_n5_からです_73",
     "language": "ja",
     "pattern": "～からです",
     "title": "～からです (〜kara desu)",
@@ -2374,7 +2374,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_から_74",
+    "id": "ja_n5_から_74",
     "language": "ja",
     "pattern": "～から",
     "title": "～から もらいます (〜kara moraimasu)",
@@ -2406,7 +2406,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_が_75",
+    "id": "ja_n5_が_75",
     "language": "ja",
     "pattern": "～が",
     "title": "～が 私に くれます (〜ga watashi ni kuremasu)",
@@ -2438,7 +2438,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_けど_76",
+    "id": "ja_n5_けど_76",
     "language": "ja",
     "pattern": "～けど、～",
     "title": "～けど、～ (〜kedo、～)",
@@ -2470,7 +2470,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_けれど_77",
+    "id": "ja_n5_けれど_77",
     "language": "ja",
     "pattern": "～けれど、～",
     "title": "～けれど、～ (〜keredo、～)",
@@ -2502,7 +2502,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_こちら_78",
+    "id": "ja_n5_こちら_78",
     "language": "ja",
     "pattern": "こちら～",
     "title": "こちら～ (kochira～)",
@@ -2534,7 +2534,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_さっき_79",
+    "id": "ja_n5_さっき_79",
     "language": "ja",
     "pattern": "さっき～",
     "title": "さっき～ (sakki～)",
@@ -2566,7 +2566,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_すぐに_80",
+    "id": "ja_n5_すぐに_80",
     "language": "ja",
     "pattern": "すぐに～",
     "title": "すぐに～ (sugu ni～)",
@@ -2598,7 +2598,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ぜんぜん_81",
+    "id": "ja_n5_ぜんぜん_81",
     "language": "ja",
     "pattern": "ぜんぜん～",
     "title": "ぜんぜん～ (zenzen～)",
@@ -2630,7 +2630,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そして_82",
+    "id": "ja_n5_そして_82",
     "language": "ja",
     "pattern": "そして、～",
     "title": "そして、～ (soshite、～)",
@@ -2662,7 +2662,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そちら_83",
+    "id": "ja_n5_そちら_83",
     "language": "ja",
     "pattern": "そちら～",
     "title": "そちら～ (sochira～)",
@@ -2694,7 +2694,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_それから_84",
+    "id": "ja_n5_それから_84",
     "language": "ja",
     "pattern": "それから、～",
     "title": "それから、～ (sorekara、～)",
@@ -2726,7 +2726,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だいたい_85",
+    "id": "ja_n5_だいたい_85",
     "language": "ja",
     "pattern": "だいたい〜",
     "title": "だいたい〜 (daitai〜)",
@@ -2758,7 +2758,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たいてい_86",
+    "id": "ja_n5_たいてい_86",
     "language": "ja",
     "pattern": "たいてい～",
     "title": "たいてい～ (taitei～)",
@@ -2790,7 +2790,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だから_87",
+    "id": "ja_n5_だから_87",
     "language": "ja",
     "pattern": "だから、～",
     "title": "だから、～ (dakara、～)",
@@ -2822,7 +2822,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たりたり_88",
+    "id": "ja_n5_たりたり_88",
     "language": "ja",
     "pattern": "～たり、～たり",
     "title": "～たり、～たり します (〜tari, 〜tari shimasu)",
@@ -2854,7 +2854,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だれ_89",
+    "id": "ja_n5_だれ_89",
     "language": "ja",
     "pattern": "だれ～",
     "title": "だれ～ (dare～)",
@@ -2886,7 +2886,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だれか_90",
+    "id": "ja_n5_だれか_90",
     "language": "ja",
     "pattern": "だれか〜",
     "title": "だれか〜 (dareka〜)",
@@ -2918,7 +2918,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だれでも_91",
+    "id": "ja_n5_だれでも_91",
     "language": "ja",
     "pattern": "だれでも～",
     "title": "だれでも～ (dare demo～)",
@@ -2950,7 +2950,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だれもないです_92",
+    "id": "ja_n5_だれもないです_92",
     "language": "ja",
     "pattern": "だれも～ないです",
     "title": "だれも～ないです (dare mo ~ nai desu)",
@@ -2982,7 +2982,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だれもません_93",
+    "id": "ja_n5_だれもません_93",
     "language": "ja",
     "pattern": "だれも～ません",
     "title": "だれも～ません (daremo ~masen)",
@@ -3014,7 +3014,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どう_94",
+    "id": "ja_n5_どう_94",
     "language": "ja",
     "pattern": "～どう",
     "title": "～どう しますか。 (～dou shimasu ka.)",
@@ -3046,7 +3046,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どうですか_95",
+    "id": "ja_n5_どうですか_95",
     "language": "ja",
     "pattern": "～どうですか。",
     "title": "～どうですか。 (〜dou desu ka.)",
@@ -3078,7 +3078,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どうやって_96",
+    "id": "ja_n5_どうやって_96",
     "language": "ja",
     "pattern": "どうやって～",
     "title": "どうやって～ (douyatte～)",
@@ -3110,7 +3110,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どう_97",
+    "id": "ja_n5_どう_97",
     "language": "ja",
     "pattern": "～どう",
     "title": "～どう 言いますか。 (〜dou iimasu ka.)",
@@ -3142,7 +3142,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とき_98",
+    "id": "ja_n5_とき_98",
     "language": "ja",
     "pattern": "～とき",
     "title": "～とき (〜toki)",
@@ -3174,7 +3174,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ときどき_99",
+    "id": "ja_n5_ときどき_99",
     "language": "ja",
     "pattern": "ときどき～",
     "title": "ときどき～ (tokidoki～)",
@@ -3206,7 +3206,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこ_100",
+    "id": "ja_n5_どこ_100",
     "language": "ja",
     "pattern": "どこ～",
     "title": "どこ～ (doko～)",
@@ -3238,7 +3238,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこか_101",
+    "id": "ja_n5_どこか_101",
     "language": "ja",
     "pattern": "どこか～",
     "title": "どこか～ (dokoka～)",
@@ -3270,7 +3270,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこでも_102",
+    "id": "ja_n5_どこでも_102",
     "language": "ja",
     "pattern": "どこでも～",
     "title": "どこでも～ (dokodemo～)",
@@ -3302,7 +3302,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこにも_103",
+    "id": "ja_n5_どこにも_103",
     "language": "ja",
     "pattern": "どこにも",
     "title": "どこにも + Verb + ないです (doko ni mo + Verb + nai desu)",
@@ -3334,7 +3334,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこにも_104",
+    "id": "ja_n5_どこにも_104",
     "language": "ja",
     "pattern": "どこにも",
     "title": "どこにも + Verb + ません (doko ni mo + Verb + masen)",
@@ -3366,7 +3366,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこへも_105",
+    "id": "ja_n5_どこへも_105",
     "language": "ja",
     "pattern": "どこへも",
     "title": "どこへも Verb ないです (doko e mo + Verb + nai desu)",
@@ -3398,7 +3398,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこへも_106",
+    "id": "ja_n5_どこへも_106",
     "language": "ja",
     "pattern": "どこへも",
     "title": "どこへも Verb ません (doko e mo + Verb + masen)",
@@ -3430,7 +3430,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこも_107",
+    "id": "ja_n5_どこも_107",
     "language": "ja",
     "pattern": "どこも",
     "title": "どこも Verb ないです (dokomo + Verb + naidesu)",
@@ -3462,7 +3462,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どこも_108",
+    "id": "ja_n5_どこも_108",
     "language": "ja",
     "pattern": "どこも",
     "title": "どこも Verb ません (dokomo + Verb + masen)",
@@ -3494,7 +3494,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どちら_109",
+    "id": "ja_n5_どちら_109",
     "language": "ja",
     "pattern": "どちら～",
     "title": "どちら～ (dochira～)",
@@ -3526,7 +3526,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どなた_110",
+    "id": "ja_n5_どなた_110",
     "language": "ja",
     "pattern": "どなた～",
     "title": "どなた～ (donata～)",
@@ -3558,7 +3558,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どの_111",
+    "id": "ja_n5_どの_111",
     "language": "ja",
     "pattern": "どの",
     "title": "どの Noun (dono Noun)",
@@ -3590,7 +3590,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どれでも_112",
+    "id": "ja_n5_どれでも_112",
     "language": "ja",
     "pattern": "どれでも～",
     "title": "どれでも～ (dore demo～)",
@@ -3622,7 +3622,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どんな_113",
+    "id": "ja_n5_どんな_113",
     "language": "ja",
     "pattern": "どんな",
     "title": "どんな Noun (donna)",
@@ -3654,7 +3654,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なに_114",
+    "id": "ja_n5_なに_114",
     "language": "ja",
     "pattern": "なに～",
     "title": "なに～ (nani~)",
@@ -3686,7 +3686,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なにか_115",
+    "id": "ja_n5_なにか_115",
     "language": "ja",
     "pattern": "なにか～",
     "title": "なにか～ (nanika～)",
@@ -3718,7 +3718,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なにもないです_116",
+    "id": "ja_n5_なにもないです_116",
     "language": "ja",
     "pattern": "なにも～ないです",
     "title": "なにも～ないです (nani mo~nai desu)",
@@ -3750,7 +3750,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なにもません_117",
+    "id": "ja_n5_なにもません_117",
     "language": "ja",
     "pattern": "なにも～ません",
     "title": "なにも～ません (nanimo~masen)",
@@ -3782,7 +3782,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なん_118",
+    "id": "ja_n5_なん_118",
     "language": "ja",
     "pattern": "なん～",
     "title": "なん～ (nan~)",
@@ -3814,7 +3814,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なんで_119",
+    "id": "ja_n5_なんで_119",
     "language": "ja",
     "pattern": "なんで～",
     "title": "なんで～ (nande～)",
@@ -3846,7 +3846,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なんでも_120",
+    "id": "ja_n5_なんでも_120",
     "language": "ja",
     "pattern": "なんでも～",
     "title": "なんでも～ (nandemo～)",
@@ -3878,7 +3878,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なんと_121",
+    "id": "ja_n5_なんと_121",
     "language": "ja",
     "pattern": "～なんと",
     "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
@@ -3910,7 +3910,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に_122",
+    "id": "ja_n5_に_122",
     "language": "ja",
     "pattern": "～に",
     "title": "～に あげます (〜 ni agemasu)",
@@ -3942,7 +3942,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に_123",
+    "id": "ja_n5_に_123",
     "language": "ja",
     "pattern": "～に",
     "title": "～に もらいます (〜ni moraimasu)",
@@ -3974,7 +3974,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_の_124",
+    "id": "ja_n5_の_124",
     "language": "ja",
     "pattern": "～の",
     "title": "～の (〜no)",
@@ -4006,7 +4006,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_はたいへんです_125",
+    "id": "ja_n5_はたいへんです_125",
     "language": "ja",
     "pattern": "～はたいへんです",
     "title": "～はたいへんです (〜wa taihen desu)",
@@ -4038,7 +4038,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ほとんど_126",
+    "id": "ja_n5_ほとんど_126",
     "language": "ja",
     "pattern": "ほとんど〜",
     "title": "ほとんど〜 (hotondo〜)",
@@ -4070,7 +4070,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まあまあ_127",
+    "id": "ja_n5_まあまあ_127",
     "language": "ja",
     "pattern": "まあまあ～",
     "title": "まあまあ～ (maa maa～)",
@@ -4102,7 +4102,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まだ_128",
+    "id": "ja_n5_まだ_128",
     "language": "ja",
     "pattern": "まだ〜",
     "title": "まだ〜 (mada〜)",
@@ -4134,7 +4134,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まだないです_129",
+    "id": "ja_n5_まだないです_129",
     "language": "ja",
     "pattern": "まだ〜ないです",
     "title": "まだ〜ないです (mada 〜 nai desu)",
@@ -4166,7 +4166,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まだません_130",
+    "id": "ja_n5_まだません_130",
     "language": "ja",
     "pattern": "まだ～ません",
     "title": "まだ～ません (mada ~masen)",
@@ -4198,7 +4198,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もう_131",
+    "id": "ja_n5_もう_131",
     "language": "ja",
     "pattern": "もう～",
     "title": "もう～ (mou～)",
@@ -4230,7 +4230,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もうすぐ_132",
+    "id": "ja_n5_もうすぐ_132",
     "language": "ja",
     "pattern": "もうすぐ〜",
     "title": "もうすぐ〜 (mou sugu~)",
@@ -4262,7 +4262,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もっと_133",
+    "id": "ja_n5_もっと_133",
     "language": "ja",
     "pattern": "もっと〜",
     "title": "もっと〜 (motto〜)",
@@ -4294,7 +4294,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_よく_134",
+    "id": "ja_n5_よく_134",
     "language": "ja",
     "pattern": "よく～",
     "title": "よく～ (yoku ~)",
@@ -4326,7 +4326,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_場所にがあります_135",
+    "id": "ja_n5_場所にがあります_135",
     "language": "ja",
     "pattern": "～（場所）に～があります",
     "title": "～（場所）に～があります (〜basho ni 〜 ga arimasu)",
@@ -4358,7 +4358,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n4_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A とか B とか",
@@ -4390,7 +4390,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_1",
+    "id": "ja_n4_A_1",
     "language": "ja",
     "pattern": "A",
     "title": "A は B ほど～ありません (A wa B hodo ～ arimasen)",
@@ -4422,7 +4422,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_2",
+    "id": "ja_n4_A_2",
     "language": "ja",
     "pattern": "A",
     "title": "A は B ほど～ない (A wa B hodo ~ nai)",
@@ -4454,7 +4454,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_3",
+    "id": "ja_n4_A_3",
     "language": "ja",
     "pattern": "A",
     "title": "A より B のほうが〜 (A yori B no hou ga 〜)",
@@ -4486,7 +4486,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いAdjective_4",
+    "id": "ja_n4_いAdjective_4",
     "language": "ja",
     "pattern": "い-Adjective",
     "title": "い-Adjective く する/なる (i-Adjective kusuru/naru)",
@@ -4518,7 +4518,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なadjective_5",
+    "id": "ja_n4_なadjective_5",
     "language": "ja",
     "pattern": "な-adjective",
     "title": "な-adjective に する/なる",
@@ -4550,7 +4550,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_6",
+    "id": "ja_n4_Noun_6",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun しか～ない (Noun shika~nai)",
@@ -4582,7 +4582,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_7",
+    "id": "ja_n4_Noun_7",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に する (Noun ni suru)",
@@ -4614,7 +4614,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_8",
+    "id": "ja_n4_Noun_8",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に なる (Noun ni naru)",
@@ -4646,7 +4646,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_のために_9",
+    "id": "ja_n4_のために_9",
     "language": "ja",
     "pattern": "のために",
     "title": "のために (no tame ni)",
@@ -4678,7 +4678,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_10",
+    "id": "ja_n4_Noun_10",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 間に (〜no aida ni)",
@@ -4710,7 +4710,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_11",
+    "id": "ja_n4_Noun_11",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ばかり (〜bakari)",
@@ -4742,7 +4742,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_12",
+    "id": "ja_n4_Noun_12",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を あげる (Noun wo ageru)",
@@ -4774,7 +4774,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Nounをいただく_13",
+    "id": "ja_n4_Nounをいただく_13",
     "language": "ja",
     "pattern": "Nounをいただく",
     "title": "Nounをいただく (Noun wo itadaku)",
@@ -4806,7 +4806,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Nounをくださる_14",
+    "id": "ja_n4_Nounをくださる_14",
     "language": "ja",
     "pattern": "Nounをくださる",
     "title": "Nounをくださる",
@@ -4838,7 +4838,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_15",
+    "id": "ja_n4_Noun_15",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を くれる (Noun wo kureru)",
@@ -4870,7 +4870,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_16",
+    "id": "ja_n4_Noun_16",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を さしあげる (Noun wo sashiageru)",
@@ -4902,7 +4902,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_17",
+    "id": "ja_n4_Noun_17",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun もらう (Noun wo morau)",
@@ -4934,7 +4934,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_18",
+    "id": "ja_n4_Noun_18",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + 中 (Noun + ちゅう)",
@@ -4966,7 +4966,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_19",
+    "id": "ja_n4_Verb_19",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb させられる (Verb-saserareru)",
@@ -4998,7 +4998,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_20",
+    "id": "ja_n4_Verb_20",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb させる (Verb-saseru)",
@@ -5030,7 +5030,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_21",
+    "id": "ja_n4_Verb_21",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た ことがある (Verb ta koto ga aru)",
@@ -5062,7 +5062,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_22",
+    "id": "ja_n4_Verb_22",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た ときに (Verb た ときに)",
@@ -5094,7 +5094,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_23",
+    "id": "ja_n4_Verb_23",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb た ところ (Verb ta tokoro)",
@@ -5126,7 +5126,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_24",
+    "id": "ja_n4_Verb_24",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たほうがいい (〜ta hou ga ii)",
@@ -5158,7 +5158,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_25",
+    "id": "ja_n4_Verb_25",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ために (tame ni)",
@@ -5190,7 +5190,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_26",
+    "id": "ja_n4_Verb_26",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb つもり (〜tsumori)",
@@ -5222,7 +5222,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_27",
+    "id": "ja_n4_Verb_27",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てあげる (Verb te ageru)",
@@ -5254,7 +5254,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_28",
+    "id": "ja_n4_Verb_28",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て ある (Verb-te aru)",
@@ -5286,7 +5286,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_29",
+    "id": "ja_n4_Verb_29",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いく (Verb-te iku)",
@@ -5318,7 +5318,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_30",
+    "id": "ja_n4_Verb_30",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ていただきたい (te itadakitai)",
@@ -5350,7 +5350,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_31",
+    "id": "ja_n4_Verb_31",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ていただく (〜te itadaku)",
@@ -5382,7 +5382,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_32",
+    "id": "ja_n4_Verb_32",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いただけませんか (Verb te itadakemasen ka)",
@@ -5414,7 +5414,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_33",
+    "id": "ja_n4_Verb_33",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いる (Verb-te iru)",
@@ -5446,7 +5446,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_34",
+    "id": "ja_n4_Verb_34",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て いる ところ (Verb te iru tokoro)",
@@ -5478,7 +5478,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_35",
+    "id": "ja_n4_Verb_35",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ている間に (te iru aida ni)",
@@ -5510,7 +5510,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_36",
+    "id": "ja_n4_Verb_36",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ておく (〜te oku)",
@@ -5542,7 +5542,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_37",
+    "id": "ja_n4_Verb_37",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くださいませんか (Verb-te kudasaimasen ka)",
@@ -5574,7 +5574,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_38",
+    "id": "ja_n4_Verb_38",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くださる (Verb-te kudasaru)",
@@ -5606,7 +5606,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_39",
+    "id": "ja_n4_Verb_39",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くる (Verb te kuru)",
@@ -5638,7 +5638,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_40",
+    "id": "ja_n4_Verb_40",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てくれませんか (〜te kuremasen ka)",
@@ -5670,7 +5670,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_41",
+    "id": "ja_n4_Verb_41",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て くれる (Verb-te kureru)",
@@ -5702,7 +5702,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_42",
+    "id": "ja_n4_Verb_42",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て + さしあげる (Verb TE sashiageru)",
@@ -5734,7 +5734,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_43",
+    "id": "ja_n4_Verb_43",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てしまう (〜te shimau)",
@@ -5766,7 +5766,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_44",
+    "id": "ja_n4_Verb_44",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て ほしい (Verb-te hoshii)",
@@ -5798,7 +5798,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_45",
+    "id": "ja_n4_Verb_45",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てみる (〜te miru)",
@@ -5830,7 +5830,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_46",
+    "id": "ja_n4_Verb_46",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てもらいたい (～te moraitai)",
@@ -5862,7 +5862,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_47",
+    "id": "ja_n4_Verb_47",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb て もらう (Verb-te morau)",
@@ -5894,7 +5894,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_48",
+    "id": "ja_n4_Verb_48",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てもらえませんか (～te moraemasen ka)",
@@ -5926,7 +5926,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_49",
+    "id": "ja_n4_Verb_49",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ない ことがある (Verb-nai koto ga aru)",
@@ -5958,7 +5958,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_50",
+    "id": "ja_n4_Verb_50",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ない + ことにする (Verb nai koto ni suru)",
@@ -5990,7 +5990,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_51",
+    "id": "ja_n4_Verb_51",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ない ことになる (Verb nai koto ni naru)",
@@ -6022,7 +6022,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_52",
+    "id": "ja_n4_Verb_52",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないほうがいい (Verb nai hou ga ii)",
@@ -6054,7 +6054,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_53",
+    "id": "ja_n4_Verb_53",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ながら (〜nagara)",
@@ -6086,7 +6086,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_54",
+    "id": "ja_n4_Verb_54",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb なさい (〜nasai)",
@@ -6118,7 +6118,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_55",
+    "id": "ja_n4_Verb_55",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb にくい (〜nikui)",
@@ -6150,7 +6150,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_56",
+    "id": "ja_n4_Verb_56",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb やすい (〜yasui)",
@@ -6182,7 +6182,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_57",
+    "id": "ja_n4_Verb_57",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようと思う (Verb-you to omou)",
@@ -6214,7 +6214,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_58",
+    "id": "ja_n4_Verb_58",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ように (〜you ni)",
@@ -6246,7 +6246,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_59",
+    "id": "ja_n4_Verb_59",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようにする (Verb ~you ni suru)",
@@ -6278,7 +6278,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_60",
+    "id": "ja_n4_Verb_60",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようになる (〜you ni naru)",
@@ -6310,7 +6310,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_61",
+    "id": "ja_n4_Verb_61",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ように言う (Verb-you ni iu)",
@@ -6342,7 +6342,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_62",
+    "id": "ja_n4_Verb_62",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb られる (〜rareru)",
@@ -6374,7 +6374,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_63",
+    "id": "ja_n4_Verb_63",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る ことがある (〜ru koto ga aru)",
@@ -6406,7 +6406,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_64",
+    "id": "ja_n4_Verb_64",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ることができる (〜ru koto ga dekiru)",
@@ -6438,7 +6438,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_65",
+    "id": "ja_n4_Verb_65",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ることにする (〜ru koto ni suru)",
@@ -6470,7 +6470,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_66",
+    "id": "ja_n4_Verb_66",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る ことになる (〜ru koto ni naru)",
@@ -6502,7 +6502,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_67",
+    "id": "ja_n4_Verb_67",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb るときに (〜ru toki ni)",
@@ -6534,7 +6534,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_68",
+    "id": "ja_n4_Verb_68",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb る ところ (Verb-ru tokoro)",
@@ -6566,7 +6566,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_69",
+    "id": "ja_n4_Verb_69",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb 出す (~dasu)",
@@ -6598,7 +6598,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_70",
+    "id": "ja_n4_Verb_70",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb 方 (〜hou)",
@@ -6630,7 +6630,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_71",
+    "id": "ja_n4_Verb_71",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb 終わる (〜owaru)",
@@ -6662,7 +6662,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_72",
+    "id": "ja_n4_Verb_72",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb + 続ける (つづける, tsuzukeru)",
@@ -6694,7 +6694,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かしら_73",
+    "id": "ja_n4_かしら_73",
     "language": "ja",
     "pattern": "～かしら",
     "title": "～かしら (〜kashira)",
@@ -6726,7 +6726,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かどうか_74",
+    "id": "ja_n4_かどうか_74",
     "language": "ja",
     "pattern": "～かどうか",
     "title": "～かどうか (〜ka dou ka)",
@@ -6758,7 +6758,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かなあ_75",
+    "id": "ja_n4_かなあ_75",
     "language": "ja",
     "pattern": "～かなあ",
     "title": "～かなあ (〜kanaa)",
@@ -6790,7 +6790,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かもしれない_76",
+    "id": "ja_n4_かもしれない_76",
     "language": "ja",
     "pattern": "～かもしれない",
     "title": "～かもしれない (〜kamoshirenai)",
@@ -6822,7 +6822,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_から_77",
+    "id": "ja_n4_から_77",
     "language": "ja",
     "pattern": "～から",
     "title": "～から (〜kara)",
@@ -6854,7 +6854,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_けれど_78",
+    "id": "ja_n4_けれど_78",
     "language": "ja",
     "pattern": "～けれど",
     "title": "～けれど (〜keredo)",
@@ -6886,7 +6886,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_させてください_79",
+    "id": "ja_n4_させてください_79",
     "language": "ja",
     "pattern": "～させてください",
     "title": "～させてください (〜sasete kudasai)",
@@ -6918,7 +6918,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_しし_80",
+    "id": "ja_n4_しし_80",
     "language": "ja",
     "pattern": "～し、～し、～",
     "title": "～し、～し、～ (〜shi, 〜shi, 〜)",
@@ -6950,7 +6950,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_すぎる_81",
+    "id": "ja_n4_すぎる_81",
     "language": "ja",
     "pattern": "～すぎる",
     "title": "～すぎる (〜sugiru)",
@@ -6982,7 +6982,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ずつ_82",
+    "id": "ja_n4_ずつ_82",
     "language": "ja",
     "pattern": "～ずつ",
     "title": "～ずつ (〜zutsu)",
@@ -7014,7 +7014,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そうだ_83",
+    "id": "ja_n4_そうだ_83",
     "language": "ja",
     "pattern": "～そうだ",
     "title": "～そうだ (〜sou da)",
@@ -7046,7 +7046,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そんな_84",
+    "id": "ja_n4_そんな_84",
     "language": "ja",
     "pattern": "そんな",
     "title": "そんな (sonna) + Noun",
@@ -7068,7 +7068,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そんなに_85",
+    "id": "ja_n4_そんなに_85",
     "language": "ja",
     "pattern": "そんなに～",
     "title": "そんなに～ (sonna ni〜)",
@@ -7100,7 +7100,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たらいい_86",
+    "id": "ja_n4_たらいい_86",
     "language": "ja",
     "pattern": "～たらいい",
     "title": "～たらいい (〜tara ii)",
@@ -7132,7 +7132,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たら_87",
+    "id": "ja_n4_たら_87",
     "language": "ja",
     "pattern": "～たら",
     "title": "～たら いかがですか (〜tara ikaga desu ka)",
@@ -7164,7 +7164,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たら_88",
+    "id": "ja_n4_たら_88",
     "language": "ja",
     "pattern": "～たら",
     "title": "～たら どうですか (〜tara doudesuka)",
@@ -7196,7 +7196,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たりたり_89",
+    "id": "ja_n4_たりたり_89",
     "language": "ja",
     "pattern": "～たり～たり",
     "title": "～たり～たり (〜tari 〜tari)",
@@ -7228,7 +7228,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だろう_90",
+    "id": "ja_n4_だろう_90",
     "language": "ja",
     "pattern": "～だろう",
     "title": "～だろう (〜darou)",
@@ -7260,7 +7260,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っていう_91",
+    "id": "ja_n4_っていう_91",
     "language": "ja",
     "pattern": "～っていう",
     "title": "～っていう (〜tte iu)",
@@ -7292,7 +7292,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_で_92",
+    "id": "ja_n4_で_92",
     "language": "ja",
     "pattern": "～で",
     "title": "～で (〜de)",
@@ -7324,7 +7324,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_でしょう_93",
+    "id": "ja_n4_でしょう_93",
     "language": "ja",
     "pattern": "～でしょう",
     "title": "～でしょう (〜deshou)",
@@ -7356,7 +7356,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てはいけない_94",
+    "id": "ja_n4_てはいけない_94",
     "language": "ja",
     "pattern": "～てはいけない",
     "title": "～てはいけない (〜te wa ikenai)",
@@ -7388,7 +7388,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てもいい_95",
+    "id": "ja_n4_てもいい_95",
     "language": "ja",
     "pattern": "～てもいい",
     "title": "～てもいい (〜temo ii)",
@@ -7420,7 +7420,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てもでも_96",
+    "id": "ja_n4_てもでも_96",
     "language": "ja",
     "pattern": "～ても/でも",
     "title": "～ても/でも (〜te mo/demo)",
@@ -7452,7 +7452,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といい_97",
+    "id": "ja_n4_といい_97",
     "language": "ja",
     "pattern": "～といい",
     "title": "～といい (〜to ii)",
@@ -7484,7 +7484,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_という_98",
+    "id": "ja_n4_という_98",
     "language": "ja",
     "pattern": "～という",
     "title": "～という (〜to iu) Noun",
@@ -7516,7 +7516,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どういう_99",
+    "id": "ja_n4_どういう_99",
     "language": "ja",
     "pattern": "どういう",
     "title": "どういう Noun (dou iu Noun)",
@@ -7548,7 +7548,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_と思う_100",
+    "id": "ja_n4_と思う_100",
     "language": "ja",
     "pattern": "～と思う",
     "title": "～と思う (〜to omou)",
@@ -7580,7 +7580,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_という_101",
+    "id": "ja_n4_という_101",
     "language": "ja",
     "pattern": "～という",
     "title": "～という (〜to iu)",
@@ -7612,7 +7612,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないといけない_102",
+    "id": "ja_n4_ないといけない_102",
     "language": "ja",
     "pattern": "～ないといけない",
     "title": "～ないといけない (〜nai to ikenai)",
@@ -7644,7 +7644,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なきゃいけない_103",
+    "id": "ja_n4_なきゃいけない_103",
     "language": "ja",
     "pattern": "～なきゃいけない",
     "title": "～なきゃいけない (〜nakya ikenai)",
@@ -7676,7 +7676,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なくちゃいけない_104",
+    "id": "ja_n4_なくちゃいけない_104",
     "language": "ja",
     "pattern": "～なくちゃいけない",
     "title": "～なくちゃいけない (〜naku cha ikenai)",
@@ -7708,7 +7708,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なくてはいけない_105",
+    "id": "ja_n4_なくてはいけない_105",
     "language": "ja",
     "pattern": "～なくてはいけない",
     "title": "～なくてはいけない (〜nakute wa ikenai)",
@@ -7740,7 +7740,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なくてもいい_106",
+    "id": "ja_n4_なくてもいい_106",
     "language": "ja",
     "pattern": "～なくてもいい",
     "title": "～なくてもいい (〜nakutemo ii)",
@@ -7772,7 +7772,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なければ_107",
+    "id": "ja_n4_なければ_107",
     "language": "ja",
     "pattern": "～なければ",
     "title": "～なければ ならない (〜nakereba naranai)",
@@ -7804,7 +7804,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に_108",
+    "id": "ja_n4_に_108",
     "language": "ja",
     "pattern": "～に",
     "title": "～に (〜ni)",
@@ -7836,7 +7836,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ので_109",
+    "id": "ja_n4_ので_109",
     "language": "ja",
     "pattern": "～ので",
     "title": "～ので (〜node)",
@@ -7868,7 +7868,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_のです_110",
+    "id": "ja_n4_のです_110",
     "language": "ja",
     "pattern": "～のです",
     "title": "～のです (〜no desu)",
@@ -7900,7 +7900,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_のに_111",
+    "id": "ja_n4_のに_111",
     "language": "ja",
     "pattern": "～のに",
     "title": "～のに (〜no ni)",
@@ -7932,7 +7932,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばいい_112",
+    "id": "ja_n4_ばいい_112",
     "language": "ja",
     "pattern": "～ばいい",
     "title": "～ばいい (〜ba ii)",
@@ -7964,7 +7964,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まで_113",
+    "id": "ja_n4_まで_113",
     "language": "ja",
     "pattern": "～まで",
     "title": "～まで (〜made)",
@@ -7996,7 +7996,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_までに_114",
+    "id": "ja_n4_までに_114",
     "language": "ja",
     "pattern": "～までに",
     "title": "～までに (〜made ni)",
@@ -8028,7 +8028,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まま_115",
+    "id": "ja_n4_まま_115",
     "language": "ja",
     "pattern": "～まま",
     "title": "～まま (〜mama)",
@@ -8060,7 +8060,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_みたいだ_116",
+    "id": "ja_n4_みたいだ_116",
     "language": "ja",
     "pattern": "～みたいだ",
     "title": "～みたいだ (〜mitai da)",
@@ -8092,7 +8092,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_も_117",
+    "id": "ja_n4_も_117",
     "language": "ja",
     "pattern": "～も",
     "title": "～も (〜mo)",
@@ -8124,7 +8124,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ようだ_118",
+    "id": "ja_n4_ようだ_118",
     "language": "ja",
     "pattern": "～ようだ",
     "title": "～ようだ (〜you da)",
@@ -8156,7 +8156,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_んです_119",
+    "id": "ja_n4_んです_119",
     "language": "ja",
     "pattern": "～んです",
     "title": "～んです (〜n desu)",
@@ -8188,7 +8188,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_文Aそのうえ_120",
+    "id": "ja_n4_文Aそのうえ_120",
     "language": "ja",
     "pattern": "文A。そのうえ",
     "title": "文A。そのうえ 文B。",
@@ -8220,7 +8220,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_文Aそれで_121",
+    "id": "ja_n4_文Aそれで_121",
     "language": "ja",
     "pattern": "文A。それで",
     "title": "文A。それで 文B (Bun A. Sorede Bun B)",
@@ -8252,7 +8252,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_文Aそれに_122",
+    "id": "ja_n4_文Aそれに_122",
     "language": "ja",
     "pattern": "文A。それに",
     "title": "文A。それに 文B (Bun A. Soreni Bun B)",
@@ -8284,7 +8284,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_文Aだから_123",
+    "id": "ja_n4_文Aだから_123",
     "language": "ja",
     "pattern": "文A。だから",
     "title": "文A。だから 文B (Bun A. Dakara Bun B)",
@@ -8316,7 +8316,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n3_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A その上 B (A sono ue B)",
@@ -8348,7 +8348,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_うちに_1",
+    "id": "ja_n3_うちに_1",
     "language": "ja",
     "pattern": "～うちに",
     "title": "～うちに (〜uchi ni)",
@@ -8380,7 +8380,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_うとした_2",
+    "id": "ja_n3_うとした_2",
     "language": "ja",
     "pattern": "～うとした",
     "title": "～うとした (〜uto shita)",
@@ -8412,7 +8412,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_おかげで_3",
+    "id": "ja_n3_おかげで_3",
     "language": "ja",
     "pattern": "～おかげで",
     "title": "～おかげで (〜okagede)",
@@ -8444,7 +8444,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かけ_4",
+    "id": "ja_n3_かけ_4",
     "language": "ja",
     "pattern": "～かけ",
     "title": "～かけ (〜kake)",
@@ -8476,7 +8476,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かなあ_5",
+    "id": "ja_n3_かなあ_5",
     "language": "ja",
     "pattern": "～かなあ",
     "title": "～かなあ (〜kanaa)",
@@ -8508,7 +8508,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないで_6",
+    "id": "ja_n3_ないで_6",
     "language": "ja",
     "pattern": "～ないで",
     "title": "～ないで (〜naide)",
@@ -8540,7 +8540,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からにかけて_7",
+    "id": "ja_n3_からにかけて_7",
     "language": "ja",
     "pattern": "～から～にかけて",
     "title": "～から～にかけて (〜kara 〜ni kakete)",
@@ -8572,7 +8572,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かわりに_8",
+    "id": "ja_n3_かわりに_8",
     "language": "ja",
     "pattern": "～かわりに",
     "title": "～かわりに (〜kawari ni)",
@@ -8604,7 +8604,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_きり_9",
+    "id": "ja_n3_きり_9",
     "language": "ja",
     "pattern": "～きり",
     "title": "～きり (〜kiri)",
@@ -8636,7 +8636,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_くせに_10",
+    "id": "ja_n3_くせに_10",
     "language": "ja",
     "pattern": "～くせに",
     "title": "～くせに (〜kuse ni)",
@@ -8668,7 +8668,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_くらい_11",
+    "id": "ja_n3_くらい_11",
     "language": "ja",
     "pattern": "～くらい",
     "title": "～くらい (〜kurai)",
@@ -8700,7 +8700,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_くらいはない_12",
+    "id": "ja_n3_くらいはない_12",
     "language": "ja",
     "pattern": "～くらい～は～ない",
     "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
@@ -8732,7 +8732,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_こそ_13",
+    "id": "ja_n3_こそ_13",
     "language": "ja",
     "pattern": "～こそ",
     "title": "～こそ (〜koso)",
@@ -8764,7 +8764,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_こと_14",
+    "id": "ja_n3_こと_14",
     "language": "ja",
     "pattern": "～こと",
     "title": "～こと (〜koto)",
@@ -8796,7 +8796,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことだ_15",
+    "id": "ja_n3_ことだ_15",
     "language": "ja",
     "pattern": "～ことだ",
     "title": "～ことだ (〜koto da)",
@@ -8828,7 +8828,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことにしている_16",
+    "id": "ja_n3_ことにしている_16",
     "language": "ja",
     "pattern": "～ことにしている",
     "title": "～ことにしている (〜koto ni shite iru)",
@@ -8860,7 +8860,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことになっている_17",
+    "id": "ja_n3_ことになっている_17",
     "language": "ja",
     "pattern": "～ことになっている",
     "title": "～ことになっている (〜koto ni natte iru)",
@@ -8892,7 +8892,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことはが_18",
+    "id": "ja_n3_ことはが_18",
     "language": "ja",
     "pattern": "～ことは…が",
     "title": "～ことは…が (～koto wa... ga)",
@@ -8924,7 +8924,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことはない_19",
+    "id": "ja_n3_ことはない_19",
     "language": "ja",
     "pattern": "～ことはない",
     "title": "～ことはない (〜koto wa nai)",
@@ -8956,7 +8956,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_さ_20",
+    "id": "ja_n3_さ_20",
     "language": "ja",
     "pattern": "～さ",
     "title": "～さ (〜sa)",
@@ -8988,7 +8988,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_さえ_21",
+    "id": "ja_n3_さえ_21",
     "language": "ja",
     "pattern": "～さえ",
     "title": "～さえ (～sae)",
@@ -9020,7 +9020,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_しかない_22",
+    "id": "ja_n3_しかない_22",
     "language": "ja",
     "pattern": "～しかない",
     "title": "～しかない (〜shika nai)",
@@ -9052,7 +9052,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_すこしもない_23",
+    "id": "ja_n3_すこしもない_23",
     "language": "ja",
     "pattern": "すこしも〜ない",
     "title": "すこしも〜ない (sukoshimo~nai)",
@@ -9084,7 +9084,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ずに_24",
+    "id": "ja_n3_ずに_24",
     "language": "ja",
     "pattern": "～ずに",
     "title": "～ずに (〜zu ni)",
@@ -9116,7 +9116,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_せいで_25",
+    "id": "ja_n3_せいで_25",
     "language": "ja",
     "pattern": "～せいで",
     "title": "～せいで (〜sei de)",
@@ -9148,7 +9148,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_せてください_26",
+    "id": "ja_n3_せてください_26",
     "language": "ja",
     "pattern": "～せてください",
     "title": "～せてください (〜sete kudasai)",
@@ -9180,7 +9180,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そのために_27",
+    "id": "ja_n3_そのために_27",
     "language": "ja",
     "pattern": "～そのために",
     "title": "～そのために (〜sono tame ni)",
@@ -9212,7 +9212,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_その結果_28",
+    "id": "ja_n3_その結果_28",
     "language": "ja",
     "pattern": "～その結果",
     "title": "～その結果 (〜sono kekka)",
@@ -9244,7 +9244,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_それと_29",
+    "id": "ja_n3_それと_29",
     "language": "ja",
     "pattern": "～それと～",
     "title": "～それと～ (〜sore to〜)",
@@ -9276,7 +9276,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_それとも_30",
+    "id": "ja_n3_それとも_30",
     "language": "ja",
     "pattern": "～？それとも～？",
     "title": "～？それとも～？ (～? sore tomo ～?)",
@@ -9308,7 +9308,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だけしか_31",
+    "id": "ja_n3_だけしか_31",
     "language": "ja",
     "pattern": "～だけしか",
     "title": "～だけしか (～dake shika)",
@@ -9340,7 +9340,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だけど_32",
+    "id": "ja_n3_だけど_32",
     "language": "ja",
     "pattern": "だけど",
     "title": "だけど (dakedo)",
@@ -9372,7 +9372,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たて_33",
+    "id": "ja_n3_たて_33",
     "language": "ja",
     "pattern": "～たて",
     "title": "～たて (～tate)",
@@ -9404,7 +9404,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たとえても_34",
+    "id": "ja_n3_たとえても_34",
     "language": "ja",
     "pattern": "～たとえ～ても",
     "title": "～たとえ～ても (〜tatoe〜temo)",
@@ -9436,7 +9436,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たところ_35",
+    "id": "ja_n3_たところ_35",
     "language": "ja",
     "pattern": "～たところ",
     "title": "～たところ (〜ta tokoro)",
@@ -9468,7 +9468,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たとたん_36",
+    "id": "ja_n3_たとたん_36",
     "language": "ja",
     "pattern": "～たとたん",
     "title": "～たとたん (〜ta totan)",
@@ -9500,7 +9500,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たびに_37",
+    "id": "ja_n3_たびに_37",
     "language": "ja",
     "pattern": "～たびに",
     "title": "～たびに (〜tabi ni)",
@@ -9532,7 +9532,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だものだ_38",
+    "id": "ja_n3_だものだ_38",
     "language": "ja",
     "pattern": "～だものだ",
     "title": "～だものだ (〜da mono da)",
@@ -9564,7 +9564,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ちゃった_39",
+    "id": "ja_n3_ちゃった_39",
     "language": "ja",
     "pattern": "～ちゃった",
     "title": "～ちゃった (〜chatta)",
@@ -9596,7 +9596,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ついでに_40",
+    "id": "ja_n3_ついでに_40",
     "language": "ja",
     "pattern": "～ついでに",
     "title": "～ついでに (〜tsuide ni)",
@@ -9628,7 +9628,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っけ_41",
+    "id": "ja_n3_っけ_41",
     "language": "ja",
     "pattern": "～っけ？",
     "title": "～っけ？ (〜kke?)",
@@ -9660,7 +9660,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っぱい_42",
+    "id": "ja_n3_っぱい_42",
     "language": "ja",
     "pattern": "～っぱい",
     "title": "～っぱい (〜ppai)",
@@ -9692,7 +9692,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っぱなし_43",
+    "id": "ja_n3_っぱなし_43",
     "language": "ja",
     "pattern": "～っぱなし",
     "title": "～っぱなし (〜ppanashi)",
@@ -9724,7 +9724,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_つまり_44",
+    "id": "ja_n3_つまり_44",
     "language": "ja",
     "pattern": "～つまり",
     "title": "～つまり (〜tsumari)",
@@ -9756,7 +9756,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_つもりでした_45",
+    "id": "ja_n3_つもりでした_45",
     "language": "ja",
     "pattern": "～つもりでした",
     "title": "～つもりでした (〜tsumori deshita)",
@@ -9788,7 +9788,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てくれと_46",
+    "id": "ja_n3_てくれと_46",
     "language": "ja",
     "pattern": "～てくれと",
     "title": "～てくれと (〜te kureto)",
@@ -9820,7 +9820,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てごらん_47",
+    "id": "ja_n3_てごらん_47",
     "language": "ja",
     "pattern": "～てごらん",
     "title": "～てごらん (〜te goran)",
@@ -9852,7 +9852,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ですから_48",
+    "id": "ja_n3_ですから_48",
     "language": "ja",
     "pattern": "ですから～",
     "title": "ですから～ (desu kara)",
@@ -9884,7 +9884,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てはじめて_49",
+    "id": "ja_n3_てはじめて_49",
     "language": "ja",
     "pattern": "～てはじめて",
     "title": "～てはじめて (〜te hajimete)",
@@ -9916,7 +9916,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てほしい_50",
+    "id": "ja_n3_てほしい_50",
     "language": "ja",
     "pattern": "～てほしい",
     "title": "～てほしい (〜te hoshii)",
@@ -9948,7 +9948,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ても_51",
+    "id": "ja_n3_ても_51",
     "language": "ja",
     "pattern": "～ても",
     "title": "～ても (〜temo)",
@@ -9980,7 +9980,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といいなあ_52",
+    "id": "ja_n3_といいなあ_52",
     "language": "ja",
     "pattern": "～といいなあ",
     "title": "～といいなあ (〜to ii naa)",
@@ -10012,7 +10012,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_という_53",
+    "id": "ja_n3_という_53",
     "language": "ja",
     "pattern": "～という",
     "title": "～という (〜to iu)",
@@ -10044,7 +10044,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ということだ_54",
+    "id": "ja_n3_ということだ_54",
     "language": "ja",
     "pattern": "～ということだ",
     "title": "～ということだ (〜to iu koto da)",
@@ -10076,7 +10076,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_というと_55",
+    "id": "ja_n3_というと_55",
     "language": "ja",
     "pattern": "～というと",
     "title": "～というと (〜to iu to)",
@@ -10108,7 +10108,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_というの_56",
+    "id": "ja_n3_というの_56",
     "language": "ja",
     "pattern": "～というの～",
     "title": "～というの～ (〜to iu no〜)",
@@ -10140,7 +10140,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_というのは_57",
+    "id": "ja_n3_というのは_57",
     "language": "ja",
     "pattern": "～というのは",
     "title": "～というのは (〜to iu no wa)",
@@ -10172,7 +10172,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_というより_58",
+    "id": "ja_n3_というより_58",
     "language": "ja",
     "pattern": "～というより",
     "title": "～というより (〜to iu yori)",
@@ -10204,7 +10204,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といっても_59",
+    "id": "ja_n3_といっても_59",
     "language": "ja",
     "pattern": "～といっても",
     "title": "～といっても (〜to ittemo)",
@@ -10236,7 +10236,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とおり_60",
+    "id": "ja_n3_とおり_60",
     "language": "ja",
     "pattern": "～とおり",
     "title": "～とおり (〜toori)",
@@ -10268,7 +10268,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とく_61",
+    "id": "ja_n3_とく_61",
     "language": "ja",
     "pattern": "～とく",
     "title": "～とく (〜toku)",
@@ -10300,7 +10300,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ところが_62",
+    "id": "ja_n3_ところが_62",
     "language": "ja",
     "pattern": "～ところが",
     "title": "～ところが (〜tokoro ga)",
@@ -10332,7 +10332,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ところだった_63",
+    "id": "ja_n3_ところだった_63",
     "language": "ja",
     "pattern": "～ところだった",
     "title": "～ところだった (〜tokoro datta)",
@@ -10364,7 +10364,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ところで_64",
+    "id": "ja_n3_ところで_64",
     "language": "ja",
     "pattern": "ところで",
     "title": "ところで (tokorode)",
@@ -10396,7 +10396,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_としたら_65",
+    "id": "ja_n3_としたら_65",
     "language": "ja",
     "pattern": "～としたら",
     "title": "～としたら (〜to shitara)",
@@ -10428,7 +10428,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_として_66",
+    "id": "ja_n3_として_66",
     "language": "ja",
     "pattern": "～として",
     "title": "～として (〜to shite)",
@@ -10460,7 +10460,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どんなにことか_67",
+    "id": "ja_n3_どんなにことか_67",
     "language": "ja",
     "pattern": "～どんなに～ことか",
     "title": "～どんなに～ことか (〜donna ni〜koto ka)",
@@ -10492,7 +10492,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どんなにても_68",
+    "id": "ja_n3_どんなにても_68",
     "language": "ja",
     "pattern": "どんなに～ても",
     "title": "どんなに～ても (donna ni ~ temo)",
@@ -10524,7 +10524,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないことはない_69",
+    "id": "ja_n3_ないことはない_69",
     "language": "ja",
     "pattern": "～ないことはない",
     "title": "～ないことはない (〜nai koto wa nai)",
@@ -10556,7 +10556,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないと_70",
+    "id": "ja_n3_ないと_70",
     "language": "ja",
     "pattern": "～ないと",
     "title": "～ないと (〜nai to)",
@@ -10588,7 +10588,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なぜなら_71",
+    "id": "ja_n3_なぜなら_71",
     "language": "ja",
     "pattern": "～なぜなら",
     "title": "～なぜなら (〜nazenara)",
@@ -10620,7 +10620,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_など_72",
+    "id": "ja_n3_など_72",
     "language": "ja",
     "pattern": "～など",
     "title": "～など (〜nado)",
@@ -10652,7 +10652,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なんか_73",
+    "id": "ja_n3_なんか_73",
     "language": "ja",
     "pattern": "～なんか",
     "title": "～なんか (〜nanka)",
@@ -10684,7 +10684,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_において_74",
+    "id": "ja_n3_において_74",
     "language": "ja",
     "pattern": "～において",
     "title": "～において (〜ni oite)",
@@ -10716,7 +10716,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にかわって_75",
+    "id": "ja_n3_にかわって_75",
     "language": "ja",
     "pattern": "～にかわって",
     "title": "～にかわって (〜ni kawatte)",
@@ -10748,7 +10748,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にしては_76",
+    "id": "ja_n3_にしては_76",
     "language": "ja",
     "pattern": "～にしては",
     "title": "～にしては (〜ni shite wa)",
@@ -10780,7 +10780,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にしても_77",
+    "id": "ja_n3_にしても_77",
     "language": "ja",
     "pattern": "～にしても",
     "title": "～にしても (〜ni shitemo)",
@@ -10812,7 +10812,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_について_78",
+    "id": "ja_n3_について_78",
     "language": "ja",
     "pattern": "～について",
     "title": "～について (〜ni tsuite)",
@@ -10844,7 +10844,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にとって_79",
+    "id": "ja_n3_にとって_79",
     "language": "ja",
     "pattern": "～にとって",
     "title": "～にとって (〜ni totte)",
@@ -10876,7 +10876,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_によって_80",
+    "id": "ja_n3_によって_80",
     "language": "ja",
     "pattern": "～によって",
     "title": "～によって (〜ni yotte)",
@@ -10908,7 +10908,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_によれば_81",
+    "id": "ja_n3_によれば_81",
     "language": "ja",
     "pattern": "～によれば",
     "title": "～によれば (〜ni yoreba)",
@@ -10940,7 +10940,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に対して_82",
+    "id": "ja_n3_に対して_82",
     "language": "ja",
     "pattern": "～に対して",
     "title": "～に対して (～ni taishite)",
@@ -10972,7 +10972,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に比べて_83",
+    "id": "ja_n3_に比べて_83",
     "language": "ja",
     "pattern": "～に比べて",
     "title": "～に比べて (〜ni kurabete)",
@@ -11004,7 +11004,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に関して_84",
+    "id": "ja_n3_に関して_84",
     "language": "ja",
     "pattern": "～に関して",
     "title": "～に関して (〜ni kanshite)",
@@ -11036,7 +11036,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_の_85",
+    "id": "ja_n3_の_85",
     "language": "ja",
     "pattern": "～の～",
     "title": "～の～ (〜no 〜)",
@@ -11068,7 +11068,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばかり_86",
+    "id": "ja_n3_ばかり_86",
     "language": "ja",
     "pattern": "～ばかり",
     "title": "～ばかり (〜bakari)",
@@ -11100,7 +11100,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばかりか_87",
+    "id": "ja_n3_ばかりか_87",
     "language": "ja",
     "pattern": "～ばかりか",
     "title": "～ばかりか (〜bakarika) ～も (mo)",
@@ -11132,7 +11132,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_はずだ_88",
+    "id": "ja_n3_はずだ_88",
     "language": "ja",
     "pattern": "～はずだ",
     "title": "～はずだ (〜hazu da)",
@@ -11164,7 +11164,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばのに_89",
+    "id": "ja_n3_ばのに_89",
     "language": "ja",
     "pattern": "～ば～のに",
     "title": "～ば～のに (〜ba 〜noni)",
@@ -11196,7 +11196,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばほど_90",
+    "id": "ja_n3_ばほど_90",
     "language": "ja",
     "pattern": "～ば～ほど",
     "title": "～ば～ほど (〜ba 〜hodo)",
@@ -11228,7 +11228,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_はもちろんも_91",
+    "id": "ja_n3_はもちろんも_91",
     "language": "ja",
     "pattern": "～はもちろん～も",
     "title": "～はもちろん～も (〜wa mochiron 〜mo)",
@@ -11260,7 +11260,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばよかった_92",
+    "id": "ja_n3_ばよかった_92",
     "language": "ja",
     "pattern": "～ばよかった",
     "title": "～ばよかった (〜ba yokatta)",
@@ -11292,7 +11292,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ふりをする_93",
+    "id": "ja_n3_ふりをする_93",
     "language": "ja",
     "pattern": "～ふりをする",
     "title": "～ふりをする (〜furi wo suru)",
@@ -11324,7 +11324,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_べきだ_94",
+    "id": "ja_n3_べきだ_94",
     "language": "ja",
     "pattern": "～べきだ",
     "title": "～べきだ (〜beki da)",
@@ -11356,7 +11356,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ほど_95",
+    "id": "ja_n3_ほど_95",
     "language": "ja",
     "pattern": "～ほど～",
     "title": "～ほど～ (〜hodo〜)",
@@ -11388,7 +11388,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ますように_96",
+    "id": "ja_n3_ますように_96",
     "language": "ja",
     "pattern": "～ますように",
     "title": "～ますように (〜masu you ni)",
@@ -11420,7 +11420,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まったくない_97",
+    "id": "ja_n3_まったくない_97",
     "language": "ja",
     "pattern": "まったく～ない",
     "title": "まったく～ない (mattaku ~nai)",
@@ -11452,7 +11452,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まで_98",
+    "id": "ja_n3_まで_98",
     "language": "ja",
     "pattern": "～まで",
     "title": "～まで (〜made)",
@@ -11484,7 +11484,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まま_99",
+    "id": "ja_n3_まま_99",
     "language": "ja",
     "pattern": "～まま",
     "title": "～まま (〜mama)",
@@ -11516,7 +11516,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まるでよう_100",
+    "id": "ja_n3_まるでよう_100",
     "language": "ja",
     "pattern": "まるで～よう",
     "title": "まるで～よう (maru de ~ you)",
@@ -11548,7 +11548,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てみる_101",
+    "id": "ja_n3_てみる_101",
     "language": "ja",
     "pattern": "～てみる",
     "title": "～てみる (〜te miru)",
@@ -11580,7 +11580,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_みたいだ_102",
+    "id": "ja_n3_みたいだ_102",
     "language": "ja",
     "pattern": "～みたいだ",
     "title": "～みたいだ (〜mitai da)",
@@ -11612,7 +11612,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_めったにない_103",
+    "id": "ja_n3_めったにない_103",
     "language": "ja",
     "pattern": "～めったに～ない",
     "title": "～めったに～ない (〜metta ni 〜nai)",
@@ -11644,7 +11644,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_めったにない_104",
+    "id": "ja_n3_めったにない_104",
     "language": "ja",
     "pattern": "～めったにない",
     "title": "～めったにない (〜metta ni nai)",
@@ -11676,7 +11676,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もしかするとかもしれない_105",
+    "id": "ja_n3_もしかするとかもしれない_105",
     "language": "ja",
     "pattern": "もしかすると〜かもしれない",
     "title": "もしかすると〜かもしれない (moshikasuru to 〜kamoshirenai)",
@@ -11708,7 +11708,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もしたなら_106",
+    "id": "ja_n3_もしたなら_106",
     "language": "ja",
     "pattern": "もし～たなら",
     "title": "もし～たなら (moshi ~ tanara)",
@@ -11740,7 +11740,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もしても_107",
+    "id": "ja_n3_もしても_107",
     "language": "ja",
     "pattern": "もし～ても",
     "title": "もし～ても (moshi ~ temo)",
@@ -11772,7 +11772,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もしもなら_108",
+    "id": "ja_n3_もしもなら_108",
     "language": "ja",
     "pattern": "もしも～なら",
     "title": "もしも～なら (moshimo ~ nara)",
@@ -11804,7 +11804,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ようとしない_109",
+    "id": "ja_n3_ようとしない_109",
     "language": "ja",
     "pattern": "～ようとしない",
     "title": "～ようとしない (〜you to shinai)",
@@ -11836,7 +11836,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ようと思う_110",
+    "id": "ja_n3_ようと思う_110",
     "language": "ja",
     "pattern": "～ようと思う",
     "title": "～ようと思う (〜you to omou)",
@@ -11868,7 +11868,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ように_111",
+    "id": "ja_n3_ように_111",
     "language": "ja",
     "pattern": "～ように",
     "title": "～ように (〜you ni)",
@@ -11900,7 +11900,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ように_112",
+    "id": "ja_n3_ように_112",
     "language": "ja",
     "pattern": "～ように",
     "title": "～ように (〜you ni)",
@@ -11932,7 +11932,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ように_113",
+    "id": "ja_n3_ように_113",
     "language": "ja",
     "pattern": "～ように",
     "title": "～ように (〜you ni)",
@@ -11964,7 +11964,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ようにしましょう_114",
+    "id": "ja_n3_ようにしましょう_114",
     "language": "ja",
     "pattern": "～ようにしましょう",
     "title": "～ようにしましょう (〜you ni shimashou)",
@@ -11996,7 +11996,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ようになった_115",
+    "id": "ja_n3_ようになった_115",
     "language": "ja",
     "pattern": "～ようになった",
     "title": "～ようになった (〜you ni natta)",
@@ -12028,7 +12028,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ように言う_116",
+    "id": "ja_n3_ように言う_116",
     "language": "ja",
     "pattern": "～ように言う",
     "title": "～ように言う (〜you ni iu)",
@@ -12060,7 +12060,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_らしい_117",
+    "id": "ja_n3_らしい_117",
     "language": "ja",
     "pattern": "～らしい",
     "title": "～らしい (〜rashii)",
@@ -12092,7 +12092,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_られた_118",
+    "id": "ja_n3_られた_118",
     "language": "ja",
     "pattern": "～られた",
     "title": "～られた (〜rareta)",
@@ -12124,7 +12124,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ている_119",
+    "id": "ja_n3_ている_119",
     "language": "ja",
     "pattern": "～ている",
     "title": "～ている (〜te iru)",
@@ -12156,7 +12156,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけがない_120",
+    "id": "ja_n3_わけがない_120",
     "language": "ja",
     "pattern": "～わけがない",
     "title": "～わけがない (〜wake ga nai)",
@@ -12188,7 +12188,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけだ_121",
+    "id": "ja_n3_わけだ_121",
     "language": "ja",
     "pattern": "～わけだ",
     "title": "～わけだ (〜wake da)",
@@ -12220,7 +12220,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけではない_122",
+    "id": "ja_n3_わけではない_122",
     "language": "ja",
     "pattern": "～わけではない",
     "title": "～わけではない (〜wake dewa nai)",
@@ -12252,7 +12252,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけにはいかない_123",
+    "id": "ja_n3_わけにはいかない_123",
     "language": "ja",
     "pattern": "～わけにはいかない",
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
@@ -12284,7 +12284,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わりには_124",
+    "id": "ja_n3_わりには_124",
     "language": "ja",
     "pattern": "～わりには",
     "title": "～わりには (〜wari ni wa)",
@@ -12316,7 +12316,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_んだって_125",
+    "id": "ja_n3_んだって_125",
     "language": "ja",
     "pattern": "～んだって",
     "title": "～んだって (〜n datte)",
@@ -12348,7 +12348,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_んだもん_126",
+    "id": "ja_n3_んだもん_126",
     "language": "ja",
     "pattern": "～んだもん",
     "title": "～んだもん (〜nda mon)",
@@ -12380,7 +12380,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_上げる_127",
+    "id": "ja_n3_上げる_127",
     "language": "ja",
     "pattern": "～上げる",
     "title": "～上げる (〜ageru)",
@@ -12412,7 +12412,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_切れない_128",
+    "id": "ja_n3_切れない_128",
     "language": "ja",
     "pattern": "～切れない",
     "title": "～切れない (～kirenai)",
@@ -12444,7 +12444,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_必ずしもとは限らない_129",
+    "id": "ja_n3_必ずしもとは限らない_129",
     "language": "ja",
     "pattern": "必ずしも～とは限らない",
     "title": "必ずしも～とは限らない (kanarazushimo ～ towa kagiranai)",
@@ -12476,7 +12476,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_最中に_130",
+    "id": "ja_n3_最中に_130",
     "language": "ja",
     "pattern": "～最中に",
     "title": "～最中に (～saichuu ni)",
@@ -12508,7 +12508,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_決してない_131",
+    "id": "ja_n3_決してない_131",
     "language": "ja",
     "pattern": "決して～ない",
     "title": "決して～ない (kesshite ~ nai)",
@@ -12540,7 +12540,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n2_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A あるいは B (A aruiwa B)",
@@ -12572,7 +12572,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aおまけに_1",
+    "id": "ja_n2_Aおまけに_1",
     "language": "ja",
     "pattern": "A。おまけに",
     "title": "A。おまけに B。(~omake ni)",
@@ -12604,7 +12604,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aさて_2",
+    "id": "ja_n2_Aさて_2",
     "language": "ja",
     "pattern": "A。さて",
     "title": "A。さて B。(A. Sate B.)",
@@ -12636,7 +12636,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aしかも_3",
+    "id": "ja_n2_Aしかも_3",
     "language": "ja",
     "pattern": "A。しかも",
     "title": "A。しかも B。(A. Shikamo B.)",
@@ -12668,7 +12668,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aしたがって_4",
+    "id": "ja_n2_Aしたがって_4",
     "language": "ja",
     "pattern": "A。したがって",
     "title": "A。したがって B。(A. Shitagatte B.)",
@@ -12700,7 +12700,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_5",
+    "id": "ja_n2_A_5",
     "language": "ja",
     "pattern": "A",
     "title": "A すなわち B。 (A sunawachi B)",
@@ -12732,7 +12732,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aすると_6",
+    "id": "ja_n2_Aすると_6",
     "language": "ja",
     "pattern": "A。すると",
     "title": "A。すると B。(~suruto)",
@@ -12764,7 +12764,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aそういえば_7",
+    "id": "ja_n2_Aそういえば_7",
     "language": "ja",
     "pattern": "A。そういえば",
     "title": "A。そういえば B。(~souieba)",
@@ -12796,7 +12796,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aそこで_8",
+    "id": "ja_n2_Aそこで_8",
     "language": "ja",
     "pattern": "A。そこで",
     "title": "A。そこで B。(~sokode)",
@@ -12828,7 +12828,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AそれがB_9",
+    "id": "ja_n2_AそれがB_9",
     "language": "ja",
     "pattern": "A。それがB。",
     "title": "A。それがB。(~sorega)",
@@ -12860,7 +12860,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aそれで_10",
+    "id": "ja_n2_Aそれで_10",
     "language": "ja",
     "pattern": "A。それで",
     "title": "A。それで B。 (~sore de)",
@@ -12892,7 +12892,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aそれでも_11",
+    "id": "ja_n2_Aそれでも_11",
     "language": "ja",
     "pattern": "A。それでも",
     "title": "A。それでも B。(~sore demo)",
@@ -12924,7 +12924,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aそれなのに_12",
+    "id": "ja_n2_Aそれなのに_12",
     "language": "ja",
     "pattern": "A。それなのに",
     "title": "A。それなのに B。(~sorenanoni)",
@@ -12956,7 +12956,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aそれなら_13",
+    "id": "ja_n2_Aそれなら_13",
     "language": "ja",
     "pattern": "A。それなら",
     "title": "A。それなら B。(A. Sore nara B.)",
@@ -12988,7 +12988,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_14",
+    "id": "ja_n2_A_14",
     "language": "ja",
     "pattern": "A",
     "title": "A それはそうと B。 (A Sore wa sou to B)",
@@ -13020,7 +13020,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aだが_15",
+    "id": "ja_n2_Aだが_15",
     "language": "ja",
     "pattern": "A。だが",
     "title": "A。だが B。(~daga)",
@@ -13052,7 +13052,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AただB_16",
+    "id": "ja_n2_AただB_16",
     "language": "ja",
     "pattern": "A。ただB。",
     "title": "A。ただB。(~tada)",
@@ -13084,7 +13084,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AただしB_17",
+    "id": "ja_n2_AただしB_17",
     "language": "ja",
     "pattern": "A。ただしB。",
     "title": "A。ただしB。 (A. Tadashi B)",
@@ -13116,7 +13116,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aだって_18",
+    "id": "ja_n2_Aだって_18",
     "language": "ja",
     "pattern": "A。だって",
     "title": "A。だって B。(Datte~)",
@@ -13148,7 +13148,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aちなみに_19",
+    "id": "ja_n2_Aちなみに_19",
     "language": "ja",
     "pattern": "A。ちなみに",
     "title": "A。ちなみに B。(A. Chinamini B.)",
@@ -13180,7 +13180,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aということは_20",
+    "id": "ja_n2_Aということは_20",
     "language": "ja",
     "pattern": "A。ということは",
     "title": "A。ということは B。 (A. To iu koto wa B.)",
@@ -13212,7 +13212,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aというのは_21",
+    "id": "ja_n2_Aというのは_21",
     "language": "ja",
     "pattern": "A。というのは",
     "title": "A。というのは B。(Toiu no wa~)",
@@ -13244,7 +13244,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_AなおB_22",
+    "id": "ja_n2_AなおB_22",
     "language": "ja",
     "pattern": "A。なおB。",
     "title": "A。なおB。(A. Nao B.)",
@@ -13276,7 +13276,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Aもっとも_23",
+    "id": "ja_n2_Aもっとも_23",
     "language": "ja",
     "pattern": "A。もっとも",
     "title": "A。もっとも B。(Motto mo ~)",
@@ -13308,7 +13308,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A要するに_24",
+    "id": "ja_n2_A要するに_24",
     "language": "ja",
     "pattern": "A。要するに",
     "title": "A。要するに B。(A. Yousuru ni B.)",
@@ -13340,7 +13340,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_25",
+    "id": "ja_n2_Noun_25",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun につき (〜ni tsuki)",
@@ -13372,7 +13372,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_26",
+    "id": "ja_n2_Noun_26",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にて (Noun nite)",
@@ -13404,7 +13404,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_27",
+    "id": "ja_n2_Noun_27",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の ことだから (Noun no koto dakara)",
@@ -13436,7 +13436,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_28",
+    "id": "ja_n2_Noun_28",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を はじめ (Noun wo hajime)",
@@ -13468,7 +13468,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_29",
+    "id": "ja_n2_Noun_29",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を はじめとして (Noun wo hajime to shite)",
@@ -13500,7 +13500,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_30",
+    "id": "ja_n2_Noun_30",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を はじめとする Noun (Noun o hajime to suru Noun)",
@@ -13532,7 +13532,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_31",
+    "id": "ja_n2_Noun_31",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を めぐって (Noun wo megutte)",
@@ -13564,7 +13564,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_32",
+    "id": "ja_n2_Noun_32",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を めぐる Noun (Noun o meguru Noun)",
@@ -13596,7 +13596,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_33",
+    "id": "ja_n2_Noun_33",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を もとに (Noun o moto ni)",
@@ -13628,7 +13628,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_34",
+    "id": "ja_n2_Noun_34",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を もとにして (Noun wo moto ni shite)",
@@ -13660,7 +13660,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_35",
+    "id": "ja_n2_Verb_35",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ことなく (~kotonaku)",
@@ -13692,7 +13692,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_36",
+    "id": "ja_n2_Verb_36",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないことには Verb ない (~nai koto ni wa ~ nai)",
@@ -13724,7 +13724,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_あげく_37",
+    "id": "ja_n2_あげく_37",
     "language": "ja",
     "pattern": "～あげく",
     "title": "～あげく (~ageku)",
@@ -13756,7 +13756,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_あまり_38",
+    "id": "ja_n2_あまり_38",
     "language": "ja",
     "pattern": "～あまり",
     "title": "～あまり (〜amari)",
@@ -13788,7 +13788,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_うちに_39",
+    "id": "ja_n2_うちに_39",
     "language": "ja",
     "pattern": "～うちに",
     "title": "～うちに (〜uchi ni)",
@@ -13820,7 +13820,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_がい_40",
+    "id": "ja_n2_がい_40",
     "language": "ja",
     "pattern": "～がい",
     "title": "～がい (〜gai)",
@@ -13852,7 +13852,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かいがあって_41",
+    "id": "ja_n2_かいがあって_41",
     "language": "ja",
     "pattern": "～かいがあって",
     "title": "～かいがあって (〜kaiga atte)",
@@ -13884,7 +13884,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かいもなく_42",
+    "id": "ja_n2_かいもなく_42",
     "language": "ja",
     "pattern": "～かいもなく",
     "title": "～かいもなく (〜kai mo naku)",
@@ -13916,7 +13916,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かける_43",
+    "id": "ja_n2_かける_43",
     "language": "ja",
     "pattern": "～かける",
     "title": "～かける (〜kakeru)",
@@ -13948,7 +13948,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_がち_44",
+    "id": "ja_n2_がち_44",
     "language": "ja",
     "pattern": "～がち",
     "title": "～がち (〜gachi)",
@@ -13980,7 +13980,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かないかのうちに_45",
+    "id": "ja_n2_かないかのうちに_45",
     "language": "ja",
     "pattern": "～か～ないかのうちに",
     "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
@@ -14012,7 +14012,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かねない_46",
+    "id": "ja_n2_かねない_46",
     "language": "ja",
     "pattern": "～かねない",
     "title": "～かねない (〜kane nai)",
@@ -14044,7 +14044,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かねる_47",
+    "id": "ja_n2_かねる_47",
     "language": "ja",
     "pattern": "～かねる",
     "title": "～かねる (〜kaneru)",
@@ -14076,7 +14076,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かのようだ_48",
+    "id": "ja_n2_かのようだ_48",
     "language": "ja",
     "pattern": "～かのようだ",
     "title": "～かのようだ (〜ka no you da)",
@@ -14108,7 +14108,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かまいか_49",
+    "id": "ja_n2_かまいか_49",
     "language": "ja",
     "pattern": "～か～まいか",
     "title": "～か～まいか (〜ka 〜maika)",
@@ -14140,7 +14140,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からこそ_50",
+    "id": "ja_n2_からこそ_50",
     "language": "ja",
     "pattern": "～からこそ",
     "title": "～からこそ (〜kara koso)",
@@ -14172,7 +14172,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からして_51",
+    "id": "ja_n2_からして_51",
     "language": "ja",
     "pattern": "〜からして",
     "title": "〜からして (〜kara shite)",
@@ -14204,7 +14204,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からすると_52",
+    "id": "ja_n2_からすると_52",
     "language": "ja",
     "pattern": "～からすると",
     "title": "～からすると (〜kara suru to)",
@@ -14236,7 +14236,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からといって_53",
+    "id": "ja_n2_からといって_53",
     "language": "ja",
     "pattern": "～からといって",
     "title": "～からといって (〜kara to itte)",
@@ -14268,7 +14268,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からにかけて_54",
+    "id": "ja_n2_からにかけて_54",
     "language": "ja",
     "pattern": "～から～にかけて",
     "title": "～から～にかけて (〜kara 〜ni kakete)",
@@ -14300,7 +14300,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_からには_55",
+    "id": "ja_n2_からには_55",
     "language": "ja",
     "pattern": "～からには",
     "title": "～からには (〜kara niwa)",
@@ -14332,7 +14332,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_から見ると_56",
+    "id": "ja_n2_から見ると_56",
     "language": "ja",
     "pattern": "～から見ると",
     "title": "～から見ると (〜kara miru to)",
@@ -14364,7 +14364,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_から言うと_57",
+    "id": "ja_n2_から言うと_57",
     "language": "ja",
     "pattern": "～から言うと",
     "title": "～から言うと (〜kara iuto)",
@@ -14396,7 +14396,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_くせに_58",
+    "id": "ja_n2_くせに_58",
     "language": "ja",
     "pattern": "～くせに",
     "title": "～くせに (〜kuse ni)",
@@ -14428,7 +14428,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことから_59",
+    "id": "ja_n2_ことから_59",
     "language": "ja",
     "pattern": "～ことから",
     "title": "～ことから (〜koto kara)",
@@ -14460,7 +14460,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことに_60",
+    "id": "ja_n2_ことに_60",
     "language": "ja",
     "pattern": "～ことに",
     "title": "～ことに (〜koto ni)",
@@ -14492,7 +14492,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ことになっている_61",
+    "id": "ja_n2_ことになっている_61",
     "language": "ja",
     "pattern": "～ことになっている",
     "title": "～ことになっている (〜koto ni natte iru)",
@@ -14524,7 +14524,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_さえば_62",
+    "id": "ja_n2_さえば_62",
     "language": "ja",
     "pattern": "～さえ～ば",
     "title": "～さえ～ば (〜sae ~ba)",
@@ -14556,7 +14556,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ざるを得ない_63",
+    "id": "ja_n2_ざるを得ない_63",
     "language": "ja",
     "pattern": "～ざるを得ない",
     "title": "～ざるを得ない (〜zaru wo enai)",
@@ -14588,7 +14588,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ずにはいられない_64",
+    "id": "ja_n2_ずにはいられない_64",
     "language": "ja",
     "pattern": "～ずにはいられない",
     "title": "～ずにはいられない (〜zu ni wa irarenai)",
@@ -14620,7 +14620,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_そうにない_65",
+    "id": "ja_n2_そうにない_65",
     "language": "ja",
     "pattern": "～そうにない",
     "title": "～そうにない (〜sou ni nai)",
@@ -14652,7 +14652,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たかと思ったら_66",
+    "id": "ja_n2_たかと思ったら_66",
     "language": "ja",
     "pattern": "～たかと思ったら",
     "title": "～たかと思ったら (〜ta ka to omottara)",
@@ -14684,7 +14684,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たきり_67",
+    "id": "ja_n2_たきり_67",
     "language": "ja",
     "pattern": "～たきり",
     "title": "～たきり (〜takiri)",
@@ -14716,7 +14716,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だけあって_68",
+    "id": "ja_n2_だけあって_68",
     "language": "ja",
     "pattern": "～だけあって",
     "title": "～だけあって (〜dake atte)",
@@ -14748,7 +14748,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だけましだ_69",
+    "id": "ja_n2_だけましだ_69",
     "language": "ja",
     "pattern": "～だけましだ",
     "title": "～だけましだ (〜dake mashi da)",
@@ -14780,7 +14780,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たところ_70",
+    "id": "ja_n2_たところ_70",
     "language": "ja",
     "pattern": "～たところ",
     "title": "～たところ (〜ta tokoro)",
@@ -14812,7 +14812,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_たとたん_71",
+    "id": "ja_n2_たとたん_71",
     "language": "ja",
     "pattern": "～たとたん",
     "title": "～たとたん (〜ta totan)",
@@ -14844,7 +14844,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だらけ_72",
+    "id": "ja_n2_だらけ_72",
     "language": "ja",
     "pattern": "～だらけ",
     "title": "～だらけ (〜darake)",
@@ -14876,7 +14876,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っこない_73",
+    "id": "ja_n2_っこない_73",
     "language": "ja",
     "pattern": "～っこない",
     "title": "～っこない (〜kkonai)",
@@ -14908,7 +14908,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_つつ_74",
+    "id": "ja_n2_つつ_74",
     "language": "ja",
     "pattern": "～つつ",
     "title": "～つつ (〜tsutsu)",
@@ -14940,7 +14940,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_つつある_75",
+    "id": "ja_n2_つつある_75",
     "language": "ja",
     "pattern": "～つつある",
     "title": "～つつある (〜tsutsu aru)",
@@ -14972,7 +14972,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っぱなし_76",
+    "id": "ja_n2_っぱなし_76",
     "language": "ja",
     "pattern": "～っぱなし",
     "title": "～っぱなし (〜ppanashi)",
@@ -15004,7 +15004,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_っぽい_77",
+    "id": "ja_n2_っぽい_77",
     "language": "ja",
     "pattern": "～っぽい",
     "title": "～っぽい (〜ppoi)",
@@ -15036,7 +15036,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ていられない_78",
+    "id": "ja_n2_ていられない_78",
     "language": "ja",
     "pattern": "～ていられない",
     "title": "～ていられない (〜te irarenai)",
@@ -15068,7 +15068,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てかなわない_79",
+    "id": "ja_n2_てかなわない_79",
     "language": "ja",
     "pattern": "～てかなわない",
     "title": "～てかなわない (〜te kanawanai)",
@@ -15100,7 +15100,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てからでないと_80",
+    "id": "ja_n2_てからでないと_80",
     "language": "ja",
     "pattern": "～てからでないと",
     "title": "～てからでないと (〜te kara denai to)",
@@ -15132,7 +15132,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てこそ_81",
+    "id": "ja_n2_てこそ_81",
     "language": "ja",
     "pattern": "～てこそ",
     "title": "～てこそ (〜te koso)",
@@ -15164,7 +15164,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_でしょうがない_82",
+    "id": "ja_n2_でしょうがない_82",
     "language": "ja",
     "pattern": "～でしょうがない",
     "title": "～でしょうがない (〜deshou ga nai)",
@@ -15196,7 +15196,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_でたまらない_83",
+    "id": "ja_n2_でたまらない_83",
     "language": "ja",
     "pattern": "～でたまらない",
     "title": "～でたまらない (〜de tamaranai)",
@@ -15228,7 +15228,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_でならない_84",
+    "id": "ja_n2_でならない_84",
     "language": "ja",
     "pattern": "～でならない",
     "title": "～でならない (〜de naranai)",
@@ -15260,7 +15260,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_でばかりはいられない_85",
+    "id": "ja_n2_でばかりはいられない_85",
     "language": "ja",
     "pattern": "～でばかりはいられない",
     "title": "～でばかりはいられない (〜de bakari wa irarenai)",
@@ -15292,7 +15292,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ではないか_86",
+    "id": "ja_n2_ではないか_86",
     "language": "ja",
     "pattern": "～ではないか",
     "title": "～ではないか (〜de wa nai ka)",
@@ -15324,7 +15324,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てはならない_87",
+    "id": "ja_n2_てはならない_87",
     "language": "ja",
     "pattern": "～てはならない",
     "title": "～てはならない (〜te wa naranai)",
@@ -15356,7 +15356,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_てまで_88",
+    "id": "ja_n2_てまで_88",
     "language": "ja",
     "pattern": "～てまで",
     "title": "～てまで (〜te made)",
@@ -15388,7 +15388,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_て当然だ_89",
+    "id": "ja_n2_て当然だ_89",
     "language": "ja",
     "pattern": "～て当然だ",
     "title": "～て当然だ (〜te tōzen da)",
@@ -15420,7 +15420,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_というものだ_90",
+    "id": "ja_n2_というものだ_90",
     "language": "ja",
     "pattern": "～というものだ",
     "title": "～というものだ (〜to iu mono da)",
@@ -15452,7 +15452,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どうにかないものか_91",
+    "id": "ja_n2_どうにかないものか_91",
     "language": "ja",
     "pattern": "どうにか～ないものか",
     "title": "どうにか～ないものか (dō ni ka ~ nai mono ka)",
@@ -15484,7 +15484,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とおり_92",
+    "id": "ja_n2_とおり_92",
     "language": "ja",
     "pattern": "～とおり",
     "title": "～とおり (〜toori)",
@@ -15516,7 +15516,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とか_93",
+    "id": "ja_n2_とか_93",
     "language": "ja",
     "pattern": "～とか",
     "title": "～とか (〜to ka)",
@@ -15548,7 +15548,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ところ_94",
+    "id": "ja_n2_ところ_94",
     "language": "ja",
     "pattern": "～ところ",
     "title": "～ところ (〜tokoro)",
@@ -15580,7 +15580,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どころか_95",
+    "id": "ja_n2_どころか_95",
     "language": "ja",
     "pattern": "～どころか",
     "title": "～どころか (〜dokoro ka)",
@@ -15612,7 +15612,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どころではない_96",
+    "id": "ja_n2_どころではない_96",
     "language": "ja",
     "pattern": "～どころではない",
     "title": "～どころではない (〜dokoro de wa nai)",
@@ -15644,7 +15644,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_としたら_97",
+    "id": "ja_n2_としたら_97",
     "language": "ja",
     "pattern": "～としたら",
     "title": "～としたら (〜to shitara)",
@@ -15676,7 +15676,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_としても_98",
+    "id": "ja_n2_としても_98",
     "language": "ja",
     "pattern": "～としても",
     "title": "～としても (〜to shite mo)",
@@ -15708,7 +15708,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とともに_99",
+    "id": "ja_n2_とともに_99",
     "language": "ja",
     "pattern": "～と～ともに",
     "title": "～と～ともに (〜to 〜tomoni)",
@@ -15740,7 +15740,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とは限らない_100",
+    "id": "ja_n2_とは限らない_100",
     "language": "ja",
     "pattern": "～とは限らない",
     "title": "～とは限らない (〜to wa kagiranai)",
@@ -15772,7 +15772,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないことはない_101",
+    "id": "ja_n2_ないことはない_101",
     "language": "ja",
     "pattern": "～ないことはない",
     "title": "～ないことはない (〜nai koto wa nai)",
@@ -15804,7 +15804,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないこともない_102",
+    "id": "ja_n2_ないこともない_102",
     "language": "ja",
     "pattern": "～ないこともない",
     "title": "～ないこともない (〜nai koto mo nai)",
@@ -15836,7 +15836,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ないではいられない_103",
+    "id": "ja_n2_ないではいられない_103",
     "language": "ja",
     "pattern": "～ないではいられない",
     "title": "～ないではいられない (〜nai de wa irarenai)",
@@ -15868,7 +15868,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ながら_104",
+    "id": "ja_n2_ながら_104",
     "language": "ja",
     "pattern": "～ながら",
     "title": "～ながら (〜nagara)",
@@ -15900,7 +15900,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にあたり_105",
+    "id": "ja_n2_にあたり_105",
     "language": "ja",
     "pattern": "～にあたり",
     "title": "～にあたり (〜ni atari)",
@@ -15932,7 +15932,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_において_106",
+    "id": "ja_n2_において_106",
     "language": "ja",
     "pattern": "～において",
     "title": "～において (〜ni oite)",
@@ -15964,7 +15964,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にかかわらず_107",
+    "id": "ja_n2_にかかわらず_107",
     "language": "ja",
     "pattern": "～にかかわらず",
     "title": "～にかかわらず (〜ni kakawarazu)",
@@ -15996,7 +15996,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にかけては_108",
+    "id": "ja_n2_にかけては_108",
     "language": "ja",
     "pattern": "～にかけては",
     "title": "～にかけては (〜ni kakete wa)",
@@ -16028,7 +16028,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にしたがって_109",
+    "id": "ja_n2_にしたがって_109",
     "language": "ja",
     "pattern": "～にしたがって",
     "title": "～にしたがって (〜ni shitagatte)",
@@ -16060,7 +16060,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にしたら_110",
+    "id": "ja_n2_にしたら_110",
     "language": "ja",
     "pattern": "～にしたら",
     "title": "～にしたら (〜ni shitara)",
@@ -16092,7 +16092,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にしろにしろ_111",
+    "id": "ja_n2_にしろにしろ_111",
     "language": "ja",
     "pattern": "～にしろ～にしろ",
     "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
@@ -16124,7 +16124,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_につけにつけ_112",
+    "id": "ja_n2_につけにつけ_112",
     "language": "ja",
     "pattern": "～につけ～につけ",
     "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
@@ -16156,7 +16156,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_につれて_113",
+    "id": "ja_n2_につれて_113",
     "language": "ja",
     "pattern": "～につれて",
     "title": "～につれて (〜ni tsurete)",
@@ -16188,7 +16188,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にともなって_114",
+    "id": "ja_n2_にともなって_114",
     "language": "ja",
     "pattern": "～にともなって",
     "title": "～にともなって (〜ni tomonatte)",
@@ -16220,7 +16220,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にほかならない_115",
+    "id": "ja_n2_にほかならない_115",
     "language": "ja",
     "pattern": "～にほかならない",
     "title": "～にほかならない (〜ni hoka naranai)",
@@ -16252,7 +16252,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にもかかわらず_116",
+    "id": "ja_n2_にもかかわらず_116",
     "language": "ja",
     "pattern": "～にもかかわらず",
     "title": "～にもかかわらず (〜ni mo kakawarazu)",
@@ -16284,7 +16284,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_により_117",
+    "id": "ja_n2_により_117",
     "language": "ja",
     "pattern": "～により",
     "title": "～により (〜ni yori)",
@@ -16316,7 +16316,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_にわたって_118",
+    "id": "ja_n2_にわたって_118",
     "language": "ja",
     "pattern": "～にわたって",
     "title": "～にわたって (〜ni watatte)",
@@ -16348,7 +16348,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に先立ち_119",
+    "id": "ja_n2_に先立ち_119",
     "language": "ja",
     "pattern": "～に先立ち",
     "title": "～に先立ち (〜ni sakidachi)",
@@ -16380,7 +16380,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に反して_120",
+    "id": "ja_n2_に反して_120",
     "language": "ja",
     "pattern": "～に反して",
     "title": "～に反して (〜ni hanshite)",
@@ -16412,7 +16412,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に基づいて_121",
+    "id": "ja_n2_に基づいて_121",
     "language": "ja",
     "pattern": "～に基づいて",
     "title": "～に基づいて (〜ni motozuite)",
@@ -16444,7 +16444,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に対して_122",
+    "id": "ja_n2_に対して_122",
     "language": "ja",
     "pattern": "～に対して",
     "title": "～に対して (〜ni taishite)",
@@ -16476,7 +16476,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に応えて_123",
+    "id": "ja_n2_に応えて_123",
     "language": "ja",
     "pattern": "～に応えて",
     "title": "～に応えて (〜ni kotaete)",
@@ -16508,7 +16508,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に応じて_124",
+    "id": "ja_n2_に応じて_124",
     "language": "ja",
     "pattern": "～に応じて",
     "title": "～に応じて (〜ni oujite)",
@@ -16540,7 +16540,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に決まっている_125",
+    "id": "ja_n2_に決まっている_125",
     "language": "ja",
     "pattern": "～に決まっている",
     "title": "～に決まっている (〜ni kimatte iru)",
@@ -16572,7 +16572,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に沿って_126",
+    "id": "ja_n2_に沿って_126",
     "language": "ja",
     "pattern": "～に沿って",
     "title": "～に沿って (〜ni sotte)",
@@ -16604,7 +16604,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に過ぎない_127",
+    "id": "ja_n2_に過ぎない_127",
     "language": "ja",
     "pattern": "～に過ぎない",
     "title": "～に過ぎない (〜ni suginai)",
@@ -16636,7 +16636,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に関わって_128",
+    "id": "ja_n2_に関わって_128",
     "language": "ja",
     "pattern": "～に関わって",
     "title": "～に関わって (〜ni kakawatte)",
@@ -16668,7 +16668,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に限り_129",
+    "id": "ja_n2_に限り_129",
     "language": "ja",
     "pattern": "～に限り",
     "title": "～に限り (〜ni kagiri)",
@@ -16700,7 +16700,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に際して_130",
+    "id": "ja_n2_に際して_130",
     "language": "ja",
     "pattern": "～に際して",
     "title": "～に際して (〜ni saishite)",
@@ -16732,7 +16732,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ねばならない_131",
+    "id": "ja_n2_ねばならない_131",
     "language": "ja",
     "pattern": "～ねばならない",
     "title": "～ねばならない (〜neba naranai)",
@@ -16764,7 +16764,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_のみならずも_132",
+    "id": "ja_n2_のみならずも_132",
     "language": "ja",
     "pattern": "～のみならず～も",
     "title": "～のみならず～も (〜nomi narazu 〜mo)",
@@ -16796,7 +16796,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_のももっともだ_133",
+    "id": "ja_n2_のももっともだ_133",
     "language": "ja",
     "pattern": "～のももっともだ",
     "title": "～のももっともだ (〜no mo mottomo da)",
@@ -16828,7 +16828,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_の上では_134",
+    "id": "ja_n2_の上では_134",
     "language": "ja",
     "pattern": "〜の上では",
     "title": "〜の上では (〜no ue de wa)",
@@ -16860,7 +16860,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_の下で_135",
+    "id": "ja_n2_の下で_135",
     "language": "ja",
     "pattern": "～の下で",
     "title": "～の下で (〜no shita de)",
@@ -16892,7 +16892,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばかりかも_136",
+    "id": "ja_n2_ばかりかも_136",
     "language": "ja",
     "pattern": "～ばかりか〜も",
     "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
@@ -16924,7 +16924,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばかりだ_137",
+    "id": "ja_n2_ばかりだ_137",
     "language": "ja",
     "pattern": "～ばかりだ",
     "title": "～ばかりだ (〜bakari da)",
@@ -16956,7 +16956,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばかりに_138",
+    "id": "ja_n2_ばかりに_138",
     "language": "ja",
     "pattern": "～ばかりに",
     "title": "～ばかりに (〜bakari ni)",
@@ -16988,7 +16988,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばというものでもない_139",
+    "id": "ja_n2_ばというものでもない_139",
     "language": "ja",
     "pattern": "～ば～というものでもない",
     "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
@@ -17020,7 +17020,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_はともかくは_140",
+    "id": "ja_n2_はともかくは_140",
     "language": "ja",
     "pattern": "～はともかく～は",
     "title": "～はともかく～は (〜wa tomokaku 〜wa)",
@@ -17052,7 +17052,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_はまだしも_141",
+    "id": "ja_n2_はまだしも_141",
     "language": "ja",
     "pattern": "～はまだしも",
     "title": "～はまだしも (〜wa mada shimo)",
@@ -17084,7 +17084,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_はもとより_142",
+    "id": "ja_n2_はもとより_142",
     "language": "ja",
     "pattern": "～はもとより",
     "title": "～はもとより (〜wa moto yori)",
@@ -17116,7 +17116,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_は抜きにして_143",
+    "id": "ja_n2_は抜きにして_143",
     "language": "ja",
     "pattern": "～は抜きにして",
     "title": "～は抜きにして (〜wa nuki ni shite)",
@@ -17148,7 +17148,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_べきではない_144",
+    "id": "ja_n2_べきではない_144",
     "language": "ja",
     "pattern": "～べきではない",
     "title": "～べきではない (〜beki dewa nai)",
@@ -17180,7 +17180,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_まい_145",
+    "id": "ja_n2_まい_145",
     "language": "ja",
     "pattern": "～まい",
     "title": "～まい (〜mai)",
@@ -17212,7 +17212,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_までて_146",
+    "id": "ja_n2_までて_146",
     "language": "ja",
     "pattern": "～まで～て",
     "title": "～まで～て (〜made 〜te)",
@@ -17244,7 +17244,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ままに_147",
+    "id": "ja_n2_ままに_147",
     "language": "ja",
     "pattern": "～ままに",
     "title": "～ままに (〜mama ni)",
@@ -17276,7 +17276,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もかまわず_148",
+    "id": "ja_n2_もかまわず_148",
     "language": "ja",
     "pattern": "～もかまわず",
     "title": "～もかまわず (〜mo kamawazu)",
@@ -17308,7 +17308,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものか_149",
+    "id": "ja_n2_ものか_149",
     "language": "ja",
     "pattern": "～ものか",
     "title": "～ものか (〜mono ka)",
@@ -17340,7 +17340,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものがある_150",
+    "id": "ja_n2_ものがある_150",
     "language": "ja",
     "pattern": "～ものがある",
     "title": "～ものがある (〜mono ga aru)",
@@ -17372,7 +17372,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものだ_151",
+    "id": "ja_n2_ものだ_151",
     "language": "ja",
     "pattern": "～ものだ",
     "title": "～ものだ (〜mono da)",
@@ -17404,7 +17404,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものだから_152",
+    "id": "ja_n2_ものだから_152",
     "language": "ja",
     "pattern": "～ものだから",
     "title": "～ものだから (〜mono dakara)",
@@ -17436,7 +17436,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものではない_153",
+    "id": "ja_n2_ものではない_153",
     "language": "ja",
     "pattern": "～ものではない",
     "title": "～ものではない (〜mono dewa nai)",
@@ -17468,7 +17468,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものなら_154",
+    "id": "ja_n2_ものなら_154",
     "language": "ja",
     "pattern": "～ものなら",
     "title": "～ものなら (〜mono nara)",
@@ -17500,7 +17500,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものの_155",
+    "id": "ja_n2_ものの_155",
     "language": "ja",
     "pattern": "～ものの、～",
     "title": "～ものの、～ (〜mono no、～)",
@@ -17532,7 +17532,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もばも_156",
+    "id": "ja_n2_もばも_156",
     "language": "ja",
     "pattern": "～も～ば～も～",
     "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
@@ -17564,7 +17564,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_も同然だ_157",
+    "id": "ja_n2_も同然だ_157",
     "language": "ja",
     "pattern": "～も同然だ",
     "title": "～も同然だ (〜mo douzen da)",
@@ -17596,7 +17596,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_やらやら_158",
+    "id": "ja_n2_やらやら_158",
     "language": "ja",
     "pattern": "～やら～やら",
     "title": "～やら～やら (〜yara〜yara)",
@@ -17628,7 +17628,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ようがない_159",
+    "id": "ja_n2_ようがない_159",
     "language": "ja",
     "pattern": "～ようがない",
     "title": "～ようがない (〜you ga nai)",
@@ -17660,7 +17660,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_よりほかない_160",
+    "id": "ja_n2_よりほかない_160",
     "language": "ja",
     "pattern": "～よりほかない",
     "title": "～よりほかない (〜yori hoka nai)",
@@ -17692,7 +17692,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけがない_161",
+    "id": "ja_n2_わけがない_161",
     "language": "ja",
     "pattern": "～わけがない",
     "title": "～わけがない (〜wake ga nai)",
@@ -17724,7 +17724,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけだ_162",
+    "id": "ja_n2_わけだ_162",
     "language": "ja",
     "pattern": "～わけだ",
     "title": "～わけだ (〜wake da)",
@@ -17756,7 +17756,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけではない_163",
+    "id": "ja_n2_わけではない_163",
     "language": "ja",
     "pattern": "～わけではない",
     "title": "～わけではない (〜wake dewa nai)",
@@ -17788,7 +17788,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_わけにはいかない_164",
+    "id": "ja_n2_わけにはいかない_164",
     "language": "ja",
     "pattern": "～わけにはいかない",
     "title": "～わけにはいかない (〜wake ni wa ikanai)",
@@ -17820,7 +17820,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_をきっかけに_165",
+    "id": "ja_n2_をきっかけに_165",
     "language": "ja",
     "pattern": "～をきっかけに",
     "title": "～をきっかけに (〜wo kikkake ni)",
@@ -17852,7 +17852,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_をとして_166",
+    "id": "ja_n2_をとして_166",
     "language": "ja",
     "pattern": "～を～として",
     "title": "～を～として (〜wo〜toshite)",
@@ -17884,7 +17884,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_を中心に_167",
+    "id": "ja_n2_を中心に_167",
     "language": "ja",
     "pattern": "～を中心に",
     "title": "～を中心に (〜wo chuushin ni)",
@@ -17916,7 +17916,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_を問わず_168",
+    "id": "ja_n2_を問わず_168",
     "language": "ja",
     "pattern": "～を問わず",
     "title": "～を問わず (〜wo towazu)",
@@ -17948,7 +17948,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_を込めて_169",
+    "id": "ja_n2_を込めて_169",
     "language": "ja",
     "pattern": "～を込めて",
     "title": "～を込めて (〜wo komete)",
@@ -17980,7 +17980,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_を通じて_170",
+    "id": "ja_n2_を通じて_170",
     "language": "ja",
     "pattern": "～を通じて",
     "title": "～を通じて (〜wo tsuujite)",
@@ -18012,7 +18012,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_を頼りに_171",
+    "id": "ja_n2_を頼りに_171",
     "language": "ja",
     "pattern": "～を頼りに",
     "title": "～を頼りに (〜wo tayori ni)",
@@ -18044,7 +18044,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_一方_172",
+    "id": "ja_n2_一方_172",
     "language": "ja",
     "pattern": "～一方",
     "title": "～一方 (〜ippou)",
@@ -18076,7 +18076,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_一方だ_173",
+    "id": "ja_n2_一方だ_173",
     "language": "ja",
     "pattern": "～一方だ",
     "title": "～一方だ (〜ippou da)",
@@ -18108,7 +18108,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_上で_174",
+    "id": "ja_n2_上で_174",
     "language": "ja",
     "pattern": "～上で",
     "title": "～上で (〜ue de)",
@@ -18140,7 +18140,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_上に_175",
+    "id": "ja_n2_上に_175",
     "language": "ja",
     "pattern": "～上に",
     "title": "～上に (〜ue ni)",
@@ -18172,7 +18172,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_上は_176",
+    "id": "ja_n2_上は_176",
     "language": "ja",
     "pattern": "～上は",
     "title": "～上は (～ue wa)",
@@ -18204,7 +18204,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_以上_177",
+    "id": "ja_n2_以上_177",
     "language": "ja",
     "pattern": "～以上",
     "title": "～以上 (〜ijou)",
@@ -18236,7 +18236,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_以来_178",
+    "id": "ja_n2_以来_178",
     "language": "ja",
     "pattern": "～以来",
     "title": "～以来 (〜irai)",
@@ -18268,7 +18268,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_切る_179",
+    "id": "ja_n2_切る_179",
     "language": "ja",
     "pattern": "～切る",
     "title": "～切る (〜kiru)",
@@ -18300,7 +18300,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_反面_180",
+    "id": "ja_n2_反面_180",
     "language": "ja",
     "pattern": "～反面",
     "title": "～反面 (〜hanmen)",
@@ -18332,7 +18332,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_向け_181",
+    "id": "ja_n2_向け_181",
     "language": "ja",
     "pattern": "～向け",
     "title": "～向け (〜muke)",
@@ -18364,7 +18364,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_恐れがある_182",
+    "id": "ja_n2_恐れがある_182",
     "language": "ja",
     "pattern": "～恐れがある",
     "title": "～恐れがある (〜osore ga aru)",
@@ -18396,7 +18396,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_折には_183",
+    "id": "ja_n2_折には_183",
     "language": "ja",
     "pattern": "～折には",
     "title": "～折には (〜ori ni wa)",
@@ -18428,7 +18428,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_末_184",
+    "id": "ja_n2_末_184",
     "language": "ja",
     "pattern": "～末",
     "title": "～末 (～sue)",
@@ -18460,7 +18460,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_次第_185",
+    "id": "ja_n2_次第_185",
     "language": "ja",
     "pattern": "～次第",
     "title": "～次第 (〜shidai)",
@@ -18492,7 +18492,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_次第で_186",
+    "id": "ja_n2_次第で_186",
     "language": "ja",
     "pattern": "～次第で",
     "title": "～次第で (〜shidai de)",
@@ -18524,7 +18524,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_次第です_187",
+    "id": "ja_n2_次第です_187",
     "language": "ja",
     "pattern": "～次第です",
     "title": "～次第です (〜shidai desu)",
@@ -18556,7 +18556,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_気味_188",
+    "id": "ja_n2_気味_188",
     "language": "ja",
     "pattern": "～気味",
     "title": "～気味 (〜gimi)",
@@ -18588,7 +18588,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_限り_189",
+    "id": "ja_n2_限り_189",
     "language": "ja",
     "pattern": "～限り",
     "title": "～限り (〜kagiri)",
@@ -18620,7 +18620,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_際に_190",
+    "id": "ja_n2_際に_190",
     "language": "ja",
     "pattern": "～際に",
     "title": "～際に (〜sai ni)",
@@ -18652,7 +18652,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_0",
+    "id": "ja_n1_A_0",
     "language": "ja",
     "pattern": "A",
     "title": "A うが B うが (A uga B uga)",
@@ -18684,7 +18684,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_1",
+    "id": "ja_n1_A_1",
     "language": "ja",
     "pattern": "A",
     "title": "A うと B うと (A uto B uto)",
@@ -18716,7 +18716,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_2",
+    "id": "ja_n1_A_2",
     "language": "ja",
     "pattern": "A",
     "title": "A かたわら B (A katawara B)",
@@ -18748,7 +18748,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_3",
+    "id": "ja_n1_A_3",
     "language": "ja",
     "pattern": "A",
     "title": "A かれ B かれ (A kare B kare)",
@@ -18780,7 +18780,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_4",
+    "id": "ja_n1_A_4",
     "language": "ja",
     "pattern": "A",
     "title": "A だの B だの (A dano B dano)",
@@ -18812,7 +18812,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_5",
+    "id": "ja_n1_A_5",
     "language": "ja",
     "pattern": "A",
     "title": "A であれ B であれ (A deare B deare)",
@@ -18844,7 +18844,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_6",
+    "id": "ja_n1_A_6",
     "language": "ja",
     "pattern": "A",
     "title": "A というか B というか (A to iu ka B to iu ka)",
@@ -18876,7 +18876,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_7",
+    "id": "ja_n1_A_7",
     "language": "ja",
     "pattern": "A",
     "title": "A とも B とも (A tomo B tomo)",
@@ -18908,7 +18908,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_8",
+    "id": "ja_n1_A_8",
     "language": "ja",
     "pattern": "A",
     "title": "A にしろ B にしろ (A nishiro B nishiro)",
@@ -18940,7 +18940,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_9",
+    "id": "ja_n1_A_9",
     "language": "ja",
     "pattern": "A",
     "title": "A にせよ B にせよ (A ni seyo B ni seyo)",
@@ -18972,7 +18972,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_10",
+    "id": "ja_n1_A_10",
     "language": "ja",
     "pattern": "A",
     "title": "A につけ B につけ (A ni tsuke B ni tsuke)",
@@ -19004,7 +19004,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_A_11",
+    "id": "ja_n1_A_11",
     "language": "ja",
     "pattern": "A",
     "title": "A のやら B のやら (A no yara B no yara)",
@@ -19036,7 +19036,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun1_12",
+    "id": "ja_n1_Noun1_12",
     "language": "ja",
     "pattern": "Noun1",
     "title": "Noun1 が Noun1 なら、 Noun2 も Noun2 だ (A ga A nara, B mo B da)",
@@ -19068,7 +19068,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun1_13",
+    "id": "ja_n1_Noun1_13",
     "language": "ja",
     "pattern": "Noun1",
     "title": "Noun1 も Noun1 なら、Noun2 も Noun2 だ (A mo A nara, B mo B da)",
@@ -19100,7 +19100,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_14",
+    "id": "ja_n1_Noun_14",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + あっての + Noun (A atte no B)",
@@ -19132,7 +19132,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_15",
+    "id": "ja_n1_Noun_15",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun かたがた (Noun kata gata)",
@@ -19164,7 +19164,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_16",
+    "id": "ja_n1_Noun_16",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun がてら (Noun gatera)",
@@ -19196,7 +19196,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_17",
+    "id": "ja_n1_Noun_17",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun からある (〜kara aru)",
@@ -19228,7 +19228,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_18",
+    "id": "ja_n1_Noun_18",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun からする (Noun kara suru)",
@@ -19260,7 +19260,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_19",
+    "id": "ja_n1_Noun_19",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun からの (~kara no)",
@@ -19292,7 +19292,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_20",
+    "id": "ja_n1_Noun_20",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun から言わせれば (~kara iwasereba)",
@@ -19324,7 +19324,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_21",
+    "id": "ja_n1_Noun_21",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ぐるみ (〜gurumi)",
@@ -19356,7 +19356,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_22",
+    "id": "ja_n1_Noun_22",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun こそあれ (~koso are)",
@@ -19388,7 +19388,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_23",
+    "id": "ja_n1_Noun_23",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun こそ～が (~koso~ga)",
@@ -19420,7 +19420,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_24",
+    "id": "ja_n1_Noun_24",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun こそすれ (~koso sure)",
@@ -19452,7 +19452,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_25",
+    "id": "ja_n1_Noun_25",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ごとき / Noun ごとく (〜gotoki/〜gotoku)",
@@ -19484,7 +19484,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_26",
+    "id": "ja_n1_Noun_26",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun じゃあるまいし (~ja aru mai shi)",
@@ -19516,7 +19516,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_27",
+    "id": "ja_n1_Noun_27",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ずくめ (~zukume)",
@@ -19548,7 +19548,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_28",
+    "id": "ja_n1_Noun_28",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun だけではすまない (Noun dake dewa sumanai)",
@@ -19580,7 +19580,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_29",
+    "id": "ja_n1_Noun_29",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun たりとも～ない (~tari tomo ~nai)",
@@ -19612,7 +19612,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_30",
+    "id": "ja_n1_Noun_30",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun たる Noun (~taru~)",
@@ -19644,7 +19644,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_31",
+    "id": "ja_n1_Noun_31",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ですら (~desura)",
@@ -19676,7 +19676,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_32",
+    "id": "ja_n1_Noun_32",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun でなくてなんだろう (〜de nakute nandarou)",
@@ -19708,7 +19708,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_33",
+    "id": "ja_n1_Noun_33",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ではあるまいし (~dewa aru maishi)",
@@ -19740,7 +19740,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_34",
+    "id": "ja_n1_Noun_34",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun と Noun を兼ねて (Noun to Noun o kanete)",
@@ -19772,7 +19772,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_35",
+    "id": "ja_n1_Noun_35",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun といい Noun といい (〜to ii〜to ii)",
@@ -19804,7 +19804,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_36",
+    "id": "ja_n1_Noun_36",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun という Noun (~to iu~)",
@@ -19836,7 +19836,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_37",
+    "id": "ja_n1_Noun_37",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun というところだ (Noun to iu tokoro da)",
@@ -19868,7 +19868,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_38",
+    "id": "ja_n1_Noun_38",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + というもの (~ to iu mono)",
@@ -19900,7 +19900,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_39",
+    "id": "ja_n1_Noun_39",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun といったところだ (Noun to itta tokoro da)",
@@ -19932,7 +19932,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_40",
+    "id": "ja_n1_Noun_40",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun といわず Noun といわず (A to iwazu B to iwazu)",
@@ -19964,7 +19964,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_41",
+    "id": "ja_n1_Noun_41",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ときたら (〜tokitara)",
@@ -19996,7 +19996,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_42",
+    "id": "ja_n1_Noun_42",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun とは比べものにならない (~to wa kurabemono ni naranai)",
@@ -20028,7 +20028,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_43",
+    "id": "ja_n1_Noun_43",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ともあろう + Noun (~tomoarou~)",
@@ -20060,7 +20060,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_44",
+    "id": "ja_n1_Noun_44",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ともなると (〜to mo naru to)",
@@ -20092,7 +20092,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_45",
+    "id": "ja_n1_Noun_45",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ともなれば (〜to mo nareba)",
@@ -20124,7 +20124,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_46",
+    "id": "ja_n1_Noun_46",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun と相まって (~ to aimatte)",
@@ -20156,7 +20156,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_47",
+    "id": "ja_n1_Noun_47",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なくして～はない (Noun nakushite ~ wa nai)",
@@ -20188,7 +20188,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_48",
+    "id": "ja_n1_Noun_48",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なしでは～ない (Noun nashi de wa ~nai)",
@@ -20220,7 +20220,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_49",
+    "id": "ja_n1_Noun_49",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なしには～ない (Noun nashi ni wa ~nai)",
@@ -20252,7 +20252,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_50",
+    "id": "ja_n1_Noun_50",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ならいざ知らず (~nara izashirazu)",
@@ -20284,7 +20284,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_51",
+    "id": "ja_n1_Noun_51",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ならでは (~nara de wa)",
@@ -20316,7 +20316,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_52",
+    "id": "ja_n1_Noun_52",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なり Noun なり (A nari B nari)",
@@ -20348,7 +20348,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_53",
+    "id": "ja_n1_Noun_53",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun なりとも (~nari tomo)",
@@ -20380,7 +20380,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_54",
+    "id": "ja_n1_Noun_54",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に Noun を重ねて (A ni B wo kasanete)",
@@ -20412,7 +20412,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_55",
+    "id": "ja_n1_Noun_55",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にあっては (Noun ni atte ha)",
@@ -20444,7 +20444,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_56",
+    "id": "ja_n1_Noun_56",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にあるまじき Noun (Noun ni aru majiki Noun)",
@@ -20476,7 +20476,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_57",
+    "id": "ja_n1_Noun_57",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にして (Noun ni shite)",
@@ -20508,7 +20508,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_58",
+    "id": "ja_n1_Noun_58",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にして初めて (Noun nishite hajimete)",
@@ -20540,7 +20540,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_59",
+    "id": "ja_n1_Noun_59",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にすら (〜ni sura)",
@@ -20572,7 +20572,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_60",
+    "id": "ja_n1_Noun_60",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にとどまらず～も (~ ni todomarazu ~ mo)",
@@ -20604,7 +20604,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_61",
+    "id": "ja_n1_Noun_61",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にひきかえ Noun は (~ni hikikae ~ wa)",
@@ -20636,7 +20636,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_62",
+    "id": "ja_n1_Noun_62",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun にもまして (〜ni mo mashite)",
@@ -20668,7 +20668,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_63",
+    "id": "ja_n1_Noun_63",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun によらず (～ni yorazu)",
@@ -20700,7 +20700,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_64",
+    "id": "ja_n1_Noun_64",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に先駆けて (〜ni saki gakete)",
@@ -20732,7 +20732,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_65",
+    "id": "ja_n1_Noun_65",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に即した Noun (A ni sokushita B)",
@@ -20764,7 +20764,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_66",
+    "id": "ja_n1_Noun_66",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に即して Verb (〜ni soku shite ~)",
@@ -20796,7 +20796,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_67",
+    "id": "ja_n1_Noun_67",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に言わせれば (Noun ni iwasereba)",
@@ -20828,7 +20828,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_68",
+    "id": "ja_n1_Noun_68",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に限ったことではない (〜ni kagitta koto dewa nai)",
@@ -20860,7 +20860,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_69",
+    "id": "ja_n1_Noun_69",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に限ったことでもない (~ni kagitta koto demo nai)",
@@ -20892,7 +20892,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_70",
+    "id": "ja_n1_Noun_70",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun に限る (~ni kagiru)",
@@ -20924,7 +20924,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_71",
+    "id": "ja_n1_Noun_71",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ぬいた Noun (A nuita B)",
@@ -20956,7 +20956,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_72",
+    "id": "ja_n1_Noun_72",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ぬいて（~nuite)",
@@ -20988,7 +20988,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ぬくnuku_73",
+    "id": "ja_n1_ぬくnuku_73",
     "language": "ja",
     "pattern": " ～ぬく (~nuku)",
     "title": " ～ぬく (~nuku)",
@@ -21020,7 +21020,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Nounのいかんだ_74",
+    "id": "ja_n1_Nounのいかんだ_74",
     "language": "ja",
     "pattern": "Noun+のいかんだ",
     "title": "Noun+のいかんだ (Noun no ikan da)",
@@ -21052,7 +21052,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_75",
+    "id": "ja_n1_Noun_75",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんでは (Noun no ikan de wa)",
@@ -21084,7 +21084,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_76",
+    "id": "ja_n1_Noun_76",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんにかかわらず (Noun no ikan ni kakawarazu)",
@@ -21116,7 +21116,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_77",
+    "id": "ja_n1_Noun_77",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんによっては (Noun no ikan ni yotte wa)",
@@ -21148,7 +21148,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_78",
+    "id": "ja_n1_Noun_78",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のいかんによらず (~ no ikan ni yorazu)",
@@ -21180,7 +21180,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_79",
+    "id": "ja_n1_Noun_79",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のごとき Noun (A no gotoki B)",
@@ -21212,7 +21212,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_80",
+    "id": "ja_n1_Noun_80",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun のことだから (〜no koto dakara)",
@@ -21244,7 +21244,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_81",
+    "id": "ja_n1_Noun_81",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 嫌いがある (Noun no kirai ga aru)",
@@ -21276,7 +21276,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_82",
+    "id": "ja_n1_Noun_82",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の手前 (~no temae)",
@@ -21308,7 +21308,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_83",
+    "id": "ja_n1_Noun_83",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の極み (〜no kiwami)",
@@ -21340,7 +21340,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_84",
+    "id": "ja_n1_Noun_84",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun の 至り (~no itari)",
@@ -21372,7 +21372,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_85",
+    "id": "ja_n1_Noun_85",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はいざ知らず (~ wa iza shirazu)",
@@ -21404,7 +21404,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_86",
+    "id": "ja_n1_Noun_86",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はおろか～すら (Noun wa oroka ～sura)",
@@ -21436,7 +21436,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_87",
+    "id": "ja_n1_Noun_87",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はおろか～まで (~wa oroka ~made)",
@@ -21468,7 +21468,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_88",
+    "id": "ja_n1_Noun_88",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はおろか～も (Noun wa oroka ～ mo)",
@@ -21500,7 +21500,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_89",
+    "id": "ja_n1_Noun_89",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun はさておき (~ wa sateoki)",
@@ -21532,7 +21532,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_90",
+    "id": "ja_n1_Noun_90",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + はどうであれ (~ wa dou de are)",
@@ -21564,7 +21564,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_91",
+    "id": "ja_n1_Noun_91",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun まみれ (~mamire)",
@@ -21596,7 +21596,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_92",
+    "id": "ja_n1_Noun_92",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun もさることながら Noun も (A mo saru koto nagara B mo)",
@@ -21628,7 +21628,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_93",
+    "id": "ja_n1_Noun_93",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun も兼ねて (~mo kanete)",
@@ -21660,7 +21660,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_94",
+    "id": "ja_n1_Noun_94",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun も相まって (~mo aimatte)",
@@ -21692,7 +21692,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_95",
+    "id": "ja_n1_Noun_95",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を おいて他に Verb ない (〜wo oite hoka ni〜nai)",
@@ -21724,7 +21724,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_96",
+    "id": "ja_n1_Noun_96",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun をもって (~wo motte)",
@@ -21756,7 +21756,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_97",
+    "id": "ja_n1_Noun_97",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun をものともせずに (Noun wo mono tomo sezu ni)",
@@ -21788,7 +21788,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_98",
+    "id": "ja_n1_Noun_98",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun をよそに (~wo yoso ni)",
@@ -21820,7 +21820,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_99",
+    "id": "ja_n1_Noun_99",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を余儀なくされる (Noun wo yogi naku sareru)",
@@ -21852,7 +21852,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_100",
+    "id": "ja_n1_Noun_100",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を前提として (Noun wo zentei toshite)",
@@ -21884,7 +21884,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_101",
+    "id": "ja_n1_Noun_101",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を前提にして (Noun wo zentei ni shite)",
@@ -21916,7 +21916,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_102",
+    "id": "ja_n1_Noun_102",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を境にして (Noun wo sakai ni shite)",
@@ -21948,7 +21948,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_103",
+    "id": "ja_n1_Noun_103",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を機にして (~wo ki ni shite)",
@@ -21980,7 +21980,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_104",
+    "id": "ja_n1_Noun_104",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を皮切りに / を皮切りにして (Noun wo kawakiri ni / wo kawakiri ni shite)",
@@ -22012,7 +22012,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_105",
+    "id": "ja_n1_Noun_105",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を皮切りにして (Noun wo kawakiri ni shite)",
@@ -22044,7 +22044,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_106",
+    "id": "ja_n1_Noun_106",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を禁じ得ない (〜wo kinjienai)",
@@ -22076,7 +22076,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_107",
+    "id": "ja_n1_Noun_107",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を経て (〜wo hete)",
@@ -22108,7 +22108,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_108",
+    "id": "ja_n1_Noun_108",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を踏まえて (〜wo fumaete)",
@@ -22140,7 +22140,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_109",
+    "id": "ja_n1_Noun_109",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun を限りに (Noun wo kagiri ni)",
@@ -22172,7 +22172,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_110",
+    "id": "ja_n1_Noun_110",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun 並み (~nami)",
@@ -22204,7 +22204,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Noun_111",
+    "id": "ja_n1_Noun_111",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + 前提で (Noun + zentei de)",
@@ -22236,7 +22236,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_112",
+    "id": "ja_n1_Verbる_112",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる / Noun(である) + 限り(は) (kagiri (wa))",
@@ -22268,7 +22268,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_113",
+    "id": "ja_n1_Verb_113",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb がてら (~ gatera)",
@@ -22300,7 +22300,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_114",
+    "id": "ja_n1_Verb_114",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb こそすれ (~koso sure)",
@@ -22332,7 +22332,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_115",
+    "id": "ja_n1_Verb_115",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb させられる (~saserareru)",
@@ -22364,7 +22364,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_116",
+    "id": "ja_n1_Verb_116",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ざるを得ない (~ zaru wo enai)",
@@ -22396,7 +22396,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_117",
+    "id": "ja_n1_Verb_117",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずじまい (~zu jimai)",
@@ -22428,7 +22428,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_118",
+    "id": "ja_n1_Verb_118",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずとも (〜zu tomo)",
@@ -22460,7 +22460,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_119",
+    "id": "ja_n1_Verb_119",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずにはおかない (~zuni wa okanai)",
@@ -22492,7 +22492,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_120",
+    "id": "ja_n1_Verb_120",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ずにはすまない (Verb zuni wa sumanai)",
@@ -22524,7 +22524,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_121",
+    "id": "ja_n1_Verb_121",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb そうにない (Verb sou ni nai)",
@@ -22556,7 +22556,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_122",
+    "id": "ja_n1_Verb_122",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb そうもない (〜sou mo nai)",
@@ -22588,7 +22588,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_123",
+    "id": "ja_n1_Verb_123",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb そばから (〜soba kara)",
@@ -22620,7 +22620,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_124",
+    "id": "ja_n1_Verb_124",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たが最後 (〜ta ga saigo)",
@@ -22652,7 +22652,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_125",
+    "id": "ja_n1_Verb_125",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たことにしてください (~ ta koto ni shite kudasai)",
@@ -22684,7 +22684,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_126",
+    "id": "ja_n1_Verb_126",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たら Verb たで (~ tara ~ tade)",
@@ -22716,7 +22716,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_127",
+    "id": "ja_n1_Verb_127",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たら きりがない (Verb tara kiri ga nai)",
@@ -22748,7 +22748,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_128",
+    "id": "ja_n1_Verb_128",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たら最後 (〜tara saigo)",
@@ -22780,7 +22780,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_129",
+    "id": "ja_n1_Verb_129",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb つ Verb つ (Verb tsu Verb tsu)",
@@ -22812,7 +22812,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_130",
+    "id": "ja_n1_Verb_130",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てからというもの (Verb te kara to iu mono)",
@@ -22844,7 +22844,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_131",
+    "id": "ja_n1_Verb_131",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てこそ (Verb te koso)",
@@ -22876,7 +22876,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_132",
+    "id": "ja_n1_Verb_132",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ては (～te wa)",
@@ -22908,7 +22908,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_133",
+    "id": "ja_n1_Verb_133",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ては Verb (~ te wa ~)",
@@ -22940,7 +22940,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_134",
+    "id": "ja_n1_Verb_134",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てまでも (~ temademo)",
@@ -22972,7 +22972,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_135",
+    "id": "ja_n1_Verb_135",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てみせる (Verb te miseru)",
@@ -23004,7 +23004,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_136",
+    "id": "ja_n1_Verb_136",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てやまない (Verb te yamanai)",
@@ -23036,7 +23036,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_137",
+    "id": "ja_n1_Verb_137",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないではおかない (~ nai de wa okanai)",
@@ -23068,7 +23068,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_138",
+    "id": "ja_n1_Verb_138",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないではすまない (Verb nai dewa sumanai)",
@@ -23100,7 +23100,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_139",
+    "id": "ja_n1_Verb_139",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないまでも (Verb nai made mo)",
@@ -23132,7 +23132,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_140",
+    "id": "ja_n1_Verb_140",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないものだろうか (Verb nai mono darou ka)",
@@ -23164,7 +23164,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_141",
+    "id": "ja_n1_Verb_141",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ないものでもない (Verb nai mono demo nai)",
@@ -23196,7 +23196,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_142",
+    "id": "ja_n1_Verb_142",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb の ない Noun (~ no nai ~)",
@@ -23228,7 +23228,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_143",
+    "id": "ja_n1_Verb_143",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ば きりがない (〜ba kiri ga nai)",
@@ -23260,7 +23260,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_144",
+    "id": "ja_n1_Verb_144",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb もしないで (~ mo shinai de)",
@@ -23292,7 +23292,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_145",
+    "id": "ja_n1_Verb_145",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb やしない (~ yashinai)",
@@ -23324,7 +23324,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_146",
+    "id": "ja_n1_Verb_146",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb よう (~ you / ~ you ni)",
@@ -23356,7 +23356,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_147",
+    "id": "ja_n1_Verb_147",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようか Verbるまいか (Verb you ka Verb ru mai ka)",
@@ -23388,7 +23388,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_148",
+    "id": "ja_n1_Verb_148",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようが Verb るまいが (Verb you ga Verb ru mai ga)",
@@ -23420,7 +23420,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_149",
+    "id": "ja_n1_Verb_149",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようがない (〜you ga nai)",
@@ -23452,7 +23452,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_150",
+    "id": "ja_n1_Verb_150",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようと Verbる まいと (Verb you to Verb ru mai to)",
@@ -23484,7 +23484,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_151",
+    "id": "ja_n1_Verb_151",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようにも (〜you ni mo)",
@@ -23516,7 +23516,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_152",
+    "id": "ja_n1_Verb_152",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようにも Verb れない (〜you ni mo 〜renai)",
@@ -23548,7 +23548,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verb_153",
+    "id": "ja_n1_Verb_153",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ようもない (~you mo nai)",
@@ -23580,7 +23580,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_154",
+    "id": "ja_n1_Verbる_154",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる がままに (〜ga mama ni)",
@@ -23612,7 +23612,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_155",
+    "id": "ja_n1_Verbる_155",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる が早いか (verb-ru ga hayai ka)",
@@ -23644,7 +23644,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_156",
+    "id": "ja_n1_Verbる_156",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる くらいなら (〜ru kurai nara)",
@@ -23676,7 +23676,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_157",
+    "id": "ja_n1_Verbる_157",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる こと なし に (Verb-ru koto nashi ni)",
@@ -23708,7 +23708,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_158",
+    "id": "ja_n1_Verbる_158",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ことのないように (Verb-ru koto no nai you ni)",
@@ -23740,7 +23740,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_159",
+    "id": "ja_n1_Verbる_159",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ときりがない (verb-ru to kiri ga nai)",
@@ -23772,7 +23772,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_160",
+    "id": "ja_n1_Verbる_160",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ともなく Verb (Verb-ru tomonaku Verb)",
@@ -23804,7 +23804,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_161",
+    "id": "ja_n1_Verbる_161",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ともなしに Verb (Verb-ru tomonashi ni Verb)",
@@ -23836,7 +23836,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_162",
+    "id": "ja_n1_Verbる_162",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる なり (Verb-ru nari)",
@@ -23868,7 +23868,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_163",
+    "id": "ja_n1_Verbる_163",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にとどまらず～も (Verb-ru ni todomarazu ~ mo)",
@@ -23900,7 +23900,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_164",
+    "id": "ja_n1_Verbる_164",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にはあたらない (Verb-ru ni wa ataranai)",
@@ -23932,7 +23932,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_165",
+    "id": "ja_n1_Verbる_165",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にも (Verb-ru ni mo)",
@@ -23964,7 +23964,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_166",
+    "id": "ja_n1_Verbる_166",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる にも Verb れない (Verb-ru ni mo Verb-re nai)",
@@ -23996,7 +23996,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_167",
+    "id": "ja_n1_Verbる_167",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べからざる Noun (Verb-ru bekara zaru Noun)",
@@ -24028,7 +24028,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_168",
+    "id": "ja_n1_Verbる_168",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べからず (〜ru bekara zu)",
@@ -24060,7 +24060,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_169",
+    "id": "ja_n1_Verbる_169",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べく (Verb-ru beku)",
@@ -24092,7 +24092,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_170",
+    "id": "ja_n1_Verbる_170",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる べくもない (Verb-ru beku mo nai)",
@@ -24124,7 +24124,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_171",
+    "id": "ja_n1_Verbる_171",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる までもない (〜ru made mo nai)",
@@ -24156,7 +24156,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_172",
+    "id": "ja_n1_Verbる_172",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる ものとする (〜ru mono to suru)",
@@ -24188,7 +24188,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_173",
+    "id": "ja_n1_Verbる_173",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる や否や (Verb-ru ya ina ya)",
@@ -24220,7 +24220,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_174",
+    "id": "ja_n1_Verbる_174",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる 始末だ (〜ru shimatsu da)",
@@ -24252,7 +24252,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_Verbる_175",
+    "id": "ja_n1_Verbる_175",
     "language": "ja",
     "pattern": "Verbる",
     "title": "Verbる 嫌いがある (～ru kirai ga aru)",
@@ -24284,7 +24284,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_いつまでのやら_176",
+    "id": "ja_n1_いつまでのやら_176",
     "language": "ja",
     "pattern": "いつまで～のやら",
     "title": "いつまで～のやら (itsumade ~ no yara)",
@@ -24316,7 +24316,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_が_177",
+    "id": "ja_n1_が_177",
     "language": "ja",
     "pattern": "～が",
     "title": "～が Verb られる (〜ga Verb rareru)",
@@ -24348,7 +24348,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_かと思いきや_178",
+    "id": "ja_n1_かと思いきや_178",
     "language": "ja",
     "pattern": "～かと思いきや",
     "title": "～かと思いきや (〜ka to omoikiya)",
@@ -24380,7 +24380,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_がゆえに_179",
+    "id": "ja_n1_がゆえに_179",
     "language": "ja",
     "pattern": "～がゆえに",
     "title": "～がゆえに (～ga yue ni)",
@@ -24412,7 +24412,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_がゆえの_180",
+    "id": "ja_n1_がゆえの_180",
     "language": "ja",
     "pattern": "～がゆえの",
     "title": "～がゆえの Noun (〜ga yue no Noun)",
@@ -24444,7 +24444,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_から_181",
+    "id": "ja_n1_から_181",
     "language": "ja",
     "pattern": "～から",
     "title": "～から Noun に 至る まで (〜kara 〜ni itaru made)",
@@ -24476,7 +24476,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ごとく_182",
+    "id": "ja_n1_ごとく_182",
     "language": "ja",
     "pattern": "～ごとく",
     "title": "～ごとく (〜gotoku)",
@@ -24508,7 +24508,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_こととて_183",
+    "id": "ja_n1_こととて_183",
     "language": "ja",
     "pattern": "～こととて",
     "title": "～こととて (〜koto tote)",
@@ -24540,7 +24540,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ずにすんだ_184",
+    "id": "ja_n1_ずにすんだ_184",
     "language": "ja",
     "pattern": "～ずにすんだ",
     "title": "～ずにすんだ (〜zuni sunda)",
@@ -24572,7 +24572,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_だろうとなかろうと_185",
+    "id": "ja_n1_だろうとなかろうと_185",
     "language": "ja",
     "pattern": "～だろうとなかろうと",
     "title": "～だろうとなかろうと (〜darou to nakarou to)",
@@ -24604,7 +24604,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_つもりだ_186",
+    "id": "ja_n1_つもりだ_186",
     "language": "ja",
     "pattern": "～つもりだ",
     "title": "～つもりだ (〜tsumori da)",
@@ -24636,7 +24636,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_つもりで_187",
+    "id": "ja_n1_つもりで_187",
     "language": "ja",
     "pattern": "～つもりで",
     "title": "～つもりで (〜tsumori de)",
@@ -24668,7 +24668,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ではすまない_188",
+    "id": "ja_n1_ではすまない_188",
     "language": "ja",
     "pattern": "～ではすまない",
     "title": "～ではすまない (〜dewa sumanai)",
@@ -24700,7 +24700,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とあって_189",
+    "id": "ja_n1_とあって_189",
     "language": "ja",
     "pattern": "～とあって",
     "title": "～とあって (〜to atte)",
@@ -24732,7 +24732,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とあれば_190",
+    "id": "ja_n1_とあれば_190",
     "language": "ja",
     "pattern": "～とあれば",
     "title": "～とあれば (〜to areba)",
@@ -24764,7 +24764,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といえども_191",
+    "id": "ja_n1_といえども_191",
     "language": "ja",
     "pattern": "～といえども",
     "title": "～といえども (〜to iedomo)",
@@ -24796,7 +24796,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といったらありはしない_192",
+    "id": "ja_n1_といったらありはしない_192",
     "language": "ja",
     "pattern": "～といったらありはしない",
     "title": "～といったらありはしない (〜to ittara ari wa shinai)",
@@ -24828,7 +24828,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といったらありゃしない_193",
+    "id": "ja_n1_といったらありゃしない_193",
     "language": "ja",
     "pattern": "～といったらありゃしない",
     "title": "～といったらありゃしない (〜to ittara arya shinai)",
@@ -24860,7 +24860,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_といったらない_194",
+    "id": "ja_n1_といったらない_194",
     "language": "ja",
     "pattern": "～といったらない",
     "title": "～といったらない (〜to ittara nai)",
@@ -24892,7 +24892,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ときている_195",
+    "id": "ja_n1_ときている_195",
     "language": "ja",
     "pattern": "～ときている",
     "title": "～ときている (〜to kite iru)",
@@ -24924,7 +24924,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ところを_196",
+    "id": "ja_n1_ところを_196",
     "language": "ja",
     "pattern": "～ところを",
     "title": "～ところを (〜tokoro wo)",
@@ -24956,7 +24956,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とされる_197",
+    "id": "ja_n1_とされる_197",
     "language": "ja",
     "pattern": "～とされる",
     "title": "～とされる (〜to sareru)",
@@ -24988,7 +24988,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_としたところで_198",
+    "id": "ja_n1_としたところで_198",
     "language": "ja",
     "pattern": "～としたところで",
     "title": "～としたところで (〜to shita tokoro de)",
@@ -25020,7 +25020,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とすると_199",
+    "id": "ja_n1_とすると_199",
     "language": "ja",
     "pattern": "～とすると",
     "title": "～とすると (〜to suru to)",
@@ -25052,7 +25052,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とすれば_200",
+    "id": "ja_n1_とすれば_200",
     "language": "ja",
     "pattern": "～とすれば",
     "title": "～とすれば (～to sureba)",
@@ -25084,7 +25084,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_となったら_201",
+    "id": "ja_n1_となったら_201",
     "language": "ja",
     "pattern": "～となったら",
     "title": "～となったら (〜to nattara)",
@@ -25116,7 +25116,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_となると_202",
+    "id": "ja_n1_となると_202",
     "language": "ja",
     "pattern": "～となると",
     "title": "～となると (〜to naru to)",
@@ -25148,7 +25148,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_となれば_203",
+    "id": "ja_n1_となれば_203",
     "language": "ja",
     "pattern": "～となれば",
     "title": "～となれば (〜to nareba)",
@@ -25180,7 +25180,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とのことだ_204",
+    "id": "ja_n1_とのことだ_204",
     "language": "ja",
     "pattern": "～とのことだ",
     "title": "～とのことだ (〜to no koto da)",
@@ -25212,7 +25212,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とはいえ_205",
+    "id": "ja_n1_とはいえ_205",
     "language": "ja",
     "pattern": "～とはいえ",
     "title": "～とはいえ (～to wa ie)",
@@ -25244,7 +25244,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とみえて_206",
+    "id": "ja_n1_とみえて_206",
     "language": "ja",
     "pattern": "～とみえて",
     "title": "～とみえて (〜to miete)",
@@ -25276,7 +25276,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とみられる_207",
+    "id": "ja_n1_とみられる_207",
     "language": "ja",
     "pattern": "～とみられる",
     "title": "～とみられる (～to mirareru)",
@@ -25308,7 +25308,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_とみると_208",
+    "id": "ja_n1_とみると_208",
     "language": "ja",
     "pattern": "～とみると",
     "title": "～とみると (〜to miru to)",
@@ -25340,7 +25340,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_どんなにうが_209",
+    "id": "ja_n1_どんなにうが_209",
     "language": "ja",
     "pattern": "どんなに～うが",
     "title": "どんなに～うが (donna ni ～ u ga)",
@@ -25372,7 +25372,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_と言わんばかりに_210",
+    "id": "ja_n1_と言わんばかりに_210",
     "language": "ja",
     "pattern": "～と言わんばかりに",
     "title": "～と言わんばかりに (〜to iwan bakari ni)",
@@ -25404,7 +25404,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_と言わんばかりの_211",
+    "id": "ja_n1_と言わんばかりの_211",
     "language": "ja",
     "pattern": "～と言わんばかりの",
     "title": "～と言わんばかりの Noun (～to iwan bakari no Noun)",
@@ -25436,7 +25436,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ながらに_212",
+    "id": "ja_n1_ながらに_212",
     "language": "ja",
     "pattern": "～ながらに",
     "title": "～ながらに (～nagara ni)",
@@ -25468,7 +25468,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ながらの_213",
+    "id": "ja_n1_ながらの_213",
     "language": "ja",
     "pattern": "～ながらの",
     "title": "～ながらの Noun (〜nagara no Noun)",
@@ -25500,7 +25500,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ながらも_214",
+    "id": "ja_n1_ながらも_214",
     "language": "ja",
     "pattern": "～ながらも",
     "title": "～ながらも (〜nagara mo)",
@@ -25532,7 +25532,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なくはない_215",
+    "id": "ja_n1_なくはない_215",
     "language": "ja",
     "pattern": "～なくはない",
     "title": "～なくはない (〜naku wa nai)",
@@ -25564,7 +25564,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_なくもない_216",
+    "id": "ja_n1_なくもない_216",
     "language": "ja",
     "pattern": "～なくもない",
     "title": "～なくもない (〜naku mo nai)",
@@ -25596,7 +25596,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ならなりに_217",
+    "id": "ja_n1_ならなりに_217",
     "language": "ja",
     "pattern": "～なら～なりに",
     "title": "～なら～なりに",
@@ -25628,7 +25628,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_には及ばない_218",
+    "id": "ja_n1_には及ばない_218",
     "language": "ja",
     "pattern": "～には及ばない",
     "title": "～には及ばない (〜ni wa oyobanai)",
@@ -25660,7 +25660,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に堪えない_219",
+    "id": "ja_n1_に堪えない_219",
     "language": "ja",
     "pattern": "～に堪えない",
     "title": "～に堪えない (～ni taenai)",
@@ -25692,7 +25692,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に堪える_220",
+    "id": "ja_n1_に堪える_220",
     "language": "ja",
     "pattern": "～に堪える",
     "title": "～に堪える (～ni taeru)",
@@ -25724,7 +25724,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に耐える_221",
+    "id": "ja_n1_に耐える_221",
     "language": "ja",
     "pattern": "～に耐える",
     "title": "～に耐える (～ni taeru)",
@@ -25756,7 +25756,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に至った_222",
+    "id": "ja_n1_に至った_222",
     "language": "ja",
     "pattern": "～に至った",
     "title": "～に至った (〜ni itatta)",
@@ -25788,7 +25788,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に越したことはない_223",
+    "id": "ja_n1_に越したことはない_223",
     "language": "ja",
     "pattern": "～に越したことはない",
     "title": "～に越したことはない (〜ni koshita koto wa nai)",
@@ -25820,7 +25820,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_に難くない_224",
+    "id": "ja_n1_に難くない_224",
     "language": "ja",
     "pattern": "～に難くない",
     "title": "～に難くない (～ni katakunai)",
@@ -25852,7 +25852,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_のは_225",
+    "id": "ja_n1_のは_225",
     "language": "ja",
     "pattern": "～のは",
     "title": "～のは Noun ぐらいのものだ (〜no wa Noun gurai no mono da)",
@@ -25884,7 +25884,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ばものを_226",
+    "id": "ja_n1_ばものを_226",
     "language": "ja",
     "pattern": "～ば～ものを",
     "title": "～ば～ものを (～ba～mono o)",
@@ -25916,7 +25916,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_びた_227",
+    "id": "ja_n1_びた_227",
     "language": "ja",
     "pattern": "～びた",
     "title": "～びた (～bita)",
@@ -25948,7 +25948,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_びる_228",
+    "id": "ja_n1_びる_228",
     "language": "ja",
     "pattern": "～びる",
     "title": "～びる (〜biru)",
@@ -25980,7 +25980,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ぶった_229",
+    "id": "ja_n1_ぶった_229",
     "language": "ja",
     "pattern": "～ぶった",
     "title": "～ぶった (～butta)",
@@ -26012,7 +26012,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ぶって_230",
+    "id": "ja_n1_ぶって_230",
     "language": "ja",
     "pattern": "～ぶって",
     "title": "～ぶって (〜butte)",
@@ -26044,7 +26044,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ぶり_231",
+    "id": "ja_n1_ぶり_231",
     "language": "ja",
     "pattern": "～ぶり",
     "title": "～ぶり (〜buri)",
@@ -26076,7 +26076,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ぶる_232",
+    "id": "ja_n1_ぶる_232",
     "language": "ja",
     "pattern": "～ぶる",
     "title": "～ぶる (〜buru)",
@@ -26108,7 +26108,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_までだ_233",
+    "id": "ja_n1_までだ_233",
     "language": "ja",
     "pattern": "～までだ",
     "title": "～までだ (～made da)",
@@ -26140,7 +26140,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_もなんでもない_234",
+    "id": "ja_n1_もなんでもない_234",
     "language": "ja",
     "pattern": "～もなんでもない",
     "title": "～もなんでもない (〜mo nandemonai)",
@@ -26172,7 +26172,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_ものとして_235",
+    "id": "ja_n1_ものとして_235",
     "language": "ja",
     "pattern": "～ものとして",
     "title": "～ものとして (～mono to shite)",
@@ -26204,7 +26204,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_んがために_236",
+    "id": "ja_n1_んがために_236",
     "language": "ja",
     "pattern": "～んがために",
     "title": "～んがために (〜n ga tame ni)",
@@ -26236,7 +26236,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_んばかりに_237",
+    "id": "ja_n1_んばかりに_237",
     "language": "ja",
     "pattern": "～んばかりに",
     "title": "～んばかりに (〜n bakari ni)",
@@ -26268,7 +26268,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_差し支えない_238",
+    "id": "ja_n1_差し支えない_238",
     "language": "ja",
     "pattern": "～差し支えない",
     "title": "～差し支えない (〜sashitsukaenai)",
@@ -26300,7 +26300,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_折に_239",
+    "id": "ja_n1_折に_239",
     "language": "ja",
     "pattern": "～折に",
     "title": "～折に (〜ori ni)",
@@ -26332,7 +26332,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_極まりない_240",
+    "id": "ja_n1_極まりない_240",
     "language": "ja",
     "pattern": "～極まりない",
     "title": "～極まりない (〜kiwamarinai)",
@@ -26364,7 +26364,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_極まる_241",
+    "id": "ja_n1_極まる_241",
     "language": "ja",
     "pattern": "～極まる",
     "title": "～極まる (〜kiwamaru)",
@@ -26396,7 +26396,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_足りない_242",
+    "id": "ja_n1_足りない_242",
     "language": "ja",
     "pattern": "～足りない",
     "title": "～足りない (～tarinai)",
@@ -26428,7 +26428,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_足る_243",
+    "id": "ja_n1_足る_243",
     "language": "ja",
     "pattern": "～足る",
     "title": "～足る Noun (〜taru Noun)",
@@ -26460,7 +26460,7 @@ export const GRAMMAR_JA: GrammarPattern[] = [
     ]
   },
   {
-    "id": "ja_限りだ_244",
+    "id": "ja_n1_限りだ_244",
     "language": "ja",
     "pattern": "～限りだ",
     "title": "～限りだ (〜kagiri da)",

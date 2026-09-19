@@ -490,13 +490,17 @@ function shuffleArray(arr) {
     return copy;
 }
 
-export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false, offset = 0) {
+export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false, offset = 0, query = null) {
     if (!lang) return [];
 
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
     const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
     const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
-    const candidateLimit = Math.max((safeOffset + safeLimit) * (shuffle ? 8 : (targetTier ? 5 : 2)), shuffle ? 120 : 60);
+    const cleanQuery = typeof query === 'string' && query.trim() ? query.trim().slice(0, 100) : null;
+    const shouldShuffle = cleanQuery ? false : shuffle;
+    const candidateLimit = cleanQuery
+        ? Math.max(safeOffset + safeLimit + 20, 50)
+        : Math.max((safeOffset + safeLimit) * (shouldShuffle ? 8 : (targetTier ? 5 : 2)), shouldShuffle ? 120 : 60);
     const videoMap = new Map();
 
     // 1. Query D1 video_languages table (primary metadata index)
@@ -504,7 +508,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         try {
             const searchPattern1 = `%"${lang}"%`;
             const searchPattern2 = `%${lang}%`;
-            const { results } = await db.prepare(`
+            let sql = `
                 SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, updated_at
                 FROM video_languages
                 WHERE (
@@ -515,25 +519,35 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     )
                 )
                   AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
-                ORDER BY updated_at DESC
-                LIMIT ?
-            `).bind(searchPattern1, searchPattern2, searchPattern1, searchPattern2, candidateLimit).all();
+            `;
+            const bindings = [searchPattern1, searchPattern2, searchPattern1, searchPattern2];
+
+            if (cleanQuery) {
+                sql += ` AND (title LIKE ? OR channel LIKE ?) `;
+                const qPattern = `%${cleanQuery}%`;
+                bindings.push(qPattern, qPattern);
+            }
+
+            sql += ` ORDER BY updated_at DESC LIMIT ? `;
+            bindings.push(candidateLimit);
+
+            const { results } = await db.prepare(sql).bind(...bindings).all();
 
             if (results && Array.isArray(results)) {
                 // When refresh is requested, randomize catalog candidates for variety and discovery,
                 // BUT pin the top 2 newest/recently updated additions at the front so newly transcribed videos are never buried
                 let rows = results;
-                if (shuffle && results.length > 2) {
+                if (shouldShuffle && results.length > 2) {
                     const pinnedCount = Math.min(2, results.length);
                     const pinned = results.slice(0, pinnedCount);
                     const shufflable = results.slice(pinnedCount);
                     rows = [...pinned, ...shuffleArray(shufflable)];
                 }
 
-                // Channel variety guard: limit consecutive/dominant creators in primary pass
+                // Channel variety guard: limit consecutive/dominant creators in primary pass (lifted for search)
                 const channelCounts = new Map();
                 const deferredRows = [];
-                const maxPerChannel = Math.max(2, Math.floor(safeLimit / 4));
+                const maxPerChannel = cleanQuery ? safeLimit : Math.max(2, Math.floor(safeLimit / 4));
                 let r2HeadChecks = 0;
                 const MAX_R2_HEAD_CHECKS = 10;
 

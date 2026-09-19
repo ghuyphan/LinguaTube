@@ -235,10 +235,14 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             if (tombstones.length > 0) {
                 for (const tId of tombstones) {
                     try {
-                        await this.supabase.client.from('playlists').delete().eq('id', tId);
-                        this.removeDeletionTombstone(tId);
-                    } catch {
-                        this.removeDeletionTombstone(tId);
+                        const { error } = await this.supabase.client.from('playlists').delete().eq('id', tId);
+                        if (!error) {
+                            this.removeDeletionTombstone(tId);
+                        } else {
+                            console.warn('[PlaylistRepo] Failed to delete remote playlist tombstone:', error);
+                        }
+                    } catch (err) {
+                        console.warn('[PlaylistRepo] Error deleting remote playlist tombstone:', err);
                     }
                 }
             }

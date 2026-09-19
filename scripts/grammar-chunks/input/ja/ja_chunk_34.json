@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_ないではいられない_103",
+    "id": "ja_n2_ないではいられない_103",
     "language": "ja",
     "pattern": "～ないではいられない",
     "title": "～ないではいられない (〜nai de wa irarenai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_ながら_104",
+    "id": "ja_n2_ながら_104",
     "language": "ja",
     "pattern": "～ながら",
     "title": "～ながら (〜nagara)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_にあたり_105",
+    "id": "ja_n2_にあたり_105",
     "language": "ja",
     "pattern": "～にあたり",
     "title": "～にあたり (〜ni atari)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_において_106",
+    "id": "ja_n2_において_106",
     "language": "ja",
     "pattern": "～において",
     "title": "～において (〜ni oite)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_にかかわらず_107",
+    "id": "ja_n2_にかかわらず_107",
     "language": "ja",
     "pattern": "～にかかわらず",
     "title": "～にかかわらず (〜ni kakawarazu)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_にかけては_108",
+    "id": "ja_n2_にかけては_108",
     "language": "ja",
     "pattern": "～にかけては",
     "title": "～にかけては (〜ni kakete wa)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_にしたがって_109",
+    "id": "ja_n2_にしたがって_109",
     "language": "ja",
     "pattern": "～にしたがって",
     "title": "～にしたがって (〜ni shitagatte)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_にしたら_110",
+    "id": "ja_n2_にしたら_110",
     "language": "ja",
     "pattern": "～にしたら",
     "title": "～にしたら (〜ni shitara)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_にしろにしろ_111",
+    "id": "ja_n2_にしろにしろ_111",
     "language": "ja",
     "pattern": "～にしろ～にしろ",
     "title": "～にしろ～にしろ (〜ni shiro 〜ni shiro)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_につけにつけ_112",
+    "id": "ja_n2_につけにつけ_112",
     "language": "ja",
     "pattern": "～につけ～につけ",
     "title": "～につけ～につけ (〜ni tsuke 〜ni tsuke)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_につれて_113",
+    "id": "ja_n2_につれて_113",
     "language": "ja",
     "pattern": "～につれて",
     "title": "～につれて (〜ni tsurete)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_にともなって_114",
+    "id": "ja_n2_にともなって_114",
     "language": "ja",
     "pattern": "～にともなって",
     "title": "～にともなって (〜ni tomonatte)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_にほかならない_115",
+    "id": "ja_n2_にほかならない_115",
     "language": "ja",
     "pattern": "～にほかならない",
     "title": "～にほかならない (〜ni hoka naranai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_にもかかわらず_116",
+    "id": "ja_n2_にもかかわらず_116",
     "language": "ja",
     "pattern": "～にもかかわらず",
     "title": "～にもかかわらず (〜ni mo kakawarazu)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_により_117",
+    "id": "ja_n2_により_117",
     "language": "ja",
     "pattern": "～により",
     "title": "～により (〜ni yori)",

@@ -4,6 +4,7 @@ const path = require('path');
 const crypto = require('crypto');
 require('dotenv').config();
 const cors = require('cors');
+const zlib = require('zlib');
 const { pinyin } = require('pinyin-pro');
 const hangulRomanization = require('hangul-romanization');
 const versionData = require('../src/app/data/version-info.json');
@@ -19,7 +20,7 @@ app.use(cors({
         if (!origin || allowedOrigins.includes(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
             callback(null, true);
         } else {
-            callback(new Error('CORS origin blocked by local server security policy'));
+            callback(null, false);
         }
     }
 }));
@@ -1700,7 +1701,13 @@ app.get('/api/recommended-videos', async (req, res) => {
         }
     }
 
-    if (isRefresh || offset === 0) {
+    const query = (req.query.q || req.query.query || '').trim().toLowerCase();
+    if (query) {
+        results = results.filter(v => 
+            (v.title && v.title.toLowerCase().includes(query)) ||
+            (v.channel && v.channel.toLowerCase().includes(query))
+        );
+    } else if (isRefresh || offset === 0) {
         // Fisher-Yates uniform shuffle
         for (let i = results.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -2057,8 +2064,8 @@ app.post('/api/transcript', async (req, res) => {
     if (resultUrl) {
         try {
             const parsed = new URL(resultUrl);
-            if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io') {
-                return res.status(400).json({ success: false, errorCode: 'INVALID_RESULT_URL', error: 'Invalid resultUrl' });
+            if (parsed.protocol !== 'https:' || parsed.hostname !== 'api.gladia.io' || !/^\/v2\/(transcription|pre-recorded)(\/[a-zA-Z0-9_/-]+)?$/.test(parsed.pathname)) {
+                return res.status(400).json({ success: false, errorCode: 'INVALID_RESULT_URL', error: 'Invalid resultUrl: must be a gladia.io transcription URL' });
             }
         } catch {
             return res.status(400).json({ success: false, errorCode: 'INVALID_RESULT_URL', error: 'Invalid resultUrl format' });
@@ -2418,6 +2425,38 @@ app.post('/api/transcript', async (req, res) => {
 
 
 /**
+ * GET /api/dual-subtitles
+ * Checks disk cache for existing dual subtitles
+ */
+app.get('/api/dual-subtitles', async (req, res) => {
+    const { videoId, sourceLang, targetLang } = req.query;
+
+    if (!isValidVideoId(videoId)) {
+        return res.status(400).json({ error: 'Invalid or missing videoId parameter' });
+    }
+
+    const cleanSource = (sourceLang || 'auto').replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 10);
+    const normTarget = (targetLang || 'en').replace(/[^a-zA-Z0-9_-]/g, '').split('-')[0].toLowerCase().slice(0, 5);
+    const cacheFileName = `${videoId}_${cleanSource}_${normTarget}_dual.json`;
+    const cacheFile = path.join(TRANSCRIPTS_CACHE_DIR, cacheFileName);
+
+    try {
+        const resolvedCache = path.resolve(cacheFile);
+        if (!resolvedCache.startsWith(path.resolve(TRANSCRIPTS_CACHE_DIR))) {
+            return res.status(400).json({ error: 'Invalid cache path' });
+        }
+
+        if (fs.existsSync(resolvedCache)) {
+            const data = JSON.parse(await fs.promises.readFile(resolvedCache, 'utf8'));
+            return res.json(data);
+        }
+        return res.status(404).json({ error: 'Dual subtitles not found in cache' });
+    } catch (err) {
+        return res.status(500).json({ error: 'Failed to read dual subtitles cache' });
+    }
+});
+
+/**
  * POST /api/dual-subtitles
  * Generates and returns dual subtitles for dev mode
  */
@@ -2568,6 +2607,49 @@ const segmenters = {
     en: new Intl.Segmenter('en', { granularity: 'word' })
 };
 
+let kuromojiDevTokenizer = null;
+let kuromojiDevPromise = null;
+
+function initKuromojiDev() {
+    if (!kuromojiDevPromise) {
+        try {
+            const kuromoji = require('@patdx/kuromoji');
+            const fsLoader = {
+                async loadArrayBuffer(filename) {
+                    const filePath = path.join(process.cwd(), 'node_modules', '@patdx', 'kuromoji', 'dict', filename);
+                    const compressed = await fs.promises.readFile(filePath);
+                    const uncompressed = zlib.gunzipSync(compressed);
+                    return uncompressed.buffer.slice(uncompressed.byteOffset, uncompressed.byteOffset + uncompressed.byteLength);
+                }
+            };
+            kuromojiDevPromise = new kuromoji.TokenizerBuilder({ loader: fsLoader })
+                .build()
+                .then(t => {
+                    kuromojiDevTokenizer = t;
+                    console.log('[Dev Server] Local kuromoji tokenizer initialized successfully');
+                    return t;
+                })
+                .catch(err => {
+                    console.warn('[Dev Server] Local kuromoji init failed, fallback to Intl.Segmenter:', err.message);
+                    kuromojiDevPromise = null;
+                    return null;
+                });
+        } catch (e) {
+            console.warn('[Dev Server] kuromoji module not loaded:', e.message);
+        }
+    }
+}
+initKuromojiDev();
+
+function katakanaToHiraganaDev(text) {
+    if (!text) return '';
+    return text.replace(/[\u30A1-\u30F6]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60));
+}
+
+function hasKanjiDev(text) {
+    return /[\u4E00-\u9FFF]/.test(text || '');
+}
+
 const PUNCTUATION_REGEX = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
 function isPunctuation(text) {
     return PUNCTUATION_REGEX.test(text);
@@ -2651,6 +2733,34 @@ function buildDevToken(surface, isWordLike, lang) {
 
 function tokenizeTextDev(text, lang) {
     if (!text || typeof text !== 'string') return [];
+    if (lang === 'ja' && kuromojiDevTokenizer) {
+        try {
+            const kuromojiTokens = kuromojiDevTokenizer.tokenize(text);
+            return kuromojiTokens.map(t => {
+                const token = { surface: t.surface_form };
+                const isPunc = t.pos === '記号' || t.pos === '空白' || isPunctuation(t.surface_form);
+                if (isPunc) {
+                    token.isPunctuation = true;
+                    return token;
+                }
+                if (t.reading) {
+                    const hira = katakanaToHiraganaDev(t.reading);
+                    if (hasKanjiDev(t.surface_form)) {
+                        token.reading = hira;
+                    }
+                }
+                if (t.basic_form && t.basic_form !== '*' && t.basic_form !== t.surface_form) {
+                    token.baseForm = t.basic_form;
+                }
+                if (t.pos && t.pos !== '*') {
+                    token.partOfSpeech = t.pos;
+                }
+                return token;
+            });
+        } catch (e) {
+            console.warn('[Dev Tokenize JA] kuromoji error:', e.message);
+        }
+    }
     const segmenter = segmenters[lang];
     let pinyinList = null;
     if (lang === 'zh') {

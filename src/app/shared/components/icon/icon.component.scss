@@ -8,8 +8,8 @@
     flex-shrink: 0;
     fill: none;
     stroke: currentColor;
-    // Softer, friendlier stroke
-    stroke-width: 1.5;
+    // Unified MingCute 2.0px stroke standard
+    stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
 
@@ -22,14 +22,9 @@
     &.icon--graduation-cap-filled,
     &.icon--book-open-filled,
     &.icon--list-video-filled,
-    &.icon--more-horizontal-filled {
+    &.icon--more-horizontal-filled,
+    &.icon--chart-bar {
         fill: currentColor;
-        stroke: none;
-    }
-
-    &.icon--google,
-    &.icon--diamond,
-    &.icon--trophy {
         stroke: none;
     }
 }

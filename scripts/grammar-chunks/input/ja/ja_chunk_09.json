@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_なんでも_120",
+    "id": "ja_n5_なんでも_120",
     "language": "ja",
     "pattern": "なんでも～",
     "title": "なんでも～ (nandemo～)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_なんと_121",
+    "id": "ja_n5_なんと_121",
     "language": "ja",
     "pattern": "～なんと",
     "title": "～なんと 言いますか。 (〜nan to iimasu ka.)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_に_122",
+    "id": "ja_n5_に_122",
     "language": "ja",
     "pattern": "～に",
     "title": "～に あげます (〜 ni agemasu)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_に_123",
+    "id": "ja_n5_に_123",
     "language": "ja",
     "pattern": "～に",
     "title": "～に もらいます (〜ni moraimasu)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_の_124",
+    "id": "ja_n5_の_124",
     "language": "ja",
     "pattern": "～の",
     "title": "～の (〜no)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_はたいへんです_125",
+    "id": "ja_n5_はたいへんです_125",
     "language": "ja",
     "pattern": "～はたいへんです",
     "title": "～はたいへんです (〜wa taihen desu)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ほとんど_126",
+    "id": "ja_n5_ほとんど_126",
     "language": "ja",
     "pattern": "ほとんど〜",
     "title": "ほとんど〜 (hotondo〜)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_まあまあ_127",
+    "id": "ja_n5_まあまあ_127",
     "language": "ja",
     "pattern": "まあまあ～",
     "title": "まあまあ～ (maa maa～)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_まだ_128",
+    "id": "ja_n5_まだ_128",
     "language": "ja",
     "pattern": "まだ〜",
     "title": "まだ〜 (mada〜)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_まだないです_129",
+    "id": "ja_n5_まだないです_129",
     "language": "ja",
     "pattern": "まだ〜ないです",
     "title": "まだ〜ないです (mada 〜 nai desu)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_まだません_130",
+    "id": "ja_n5_まだません_130",
     "language": "ja",
     "pattern": "まだ～ません",
     "title": "まだ～ません (mada ~masen)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_もう_131",
+    "id": "ja_n5_もう_131",
     "language": "ja",
     "pattern": "もう～",
     "title": "もう～ (mou～)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_もうすぐ_132",
+    "id": "ja_n5_もうすぐ_132",
     "language": "ja",
     "pattern": "もうすぐ〜",
     "title": "もうすぐ〜 (mou sugu~)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_もっと_133",
+    "id": "ja_n5_もっと_133",
     "language": "ja",
     "pattern": "もっと〜",
     "title": "もっと〜 (motto〜)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_よく_134",
+    "id": "ja_n5_よく_134",
     "language": "ja",
     "pattern": "よく～",
     "title": "よく～ (yoku ~)",

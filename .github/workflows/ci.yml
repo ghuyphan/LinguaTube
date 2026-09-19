@@ -11,8 +11,10 @@ on:
       - 'LICENSE'
       - 'streaks.pb.js'
       - 'db/**'
-      - 'scripts/**'
-      - '!scripts/build-functions.js'
+      - 'scripts/grammar-chunks/**'
+      - 'scripts/translations-builder/**'
+      - 'scripts/generate-translations.js'
+      - 'scripts/merge-translations.js'
   pull_request:
     paths-ignore:
       - 'doc/**'
@@ -21,8 +23,10 @@ on:
       - 'LICENSE'
       - 'streaks.pb.js'
       - 'db/**'
-      - 'scripts/**'
-      - '!scripts/build-functions.js'
+      - 'scripts/grammar-chunks/**'
+      - 'scripts/translations-builder/**'
+      - 'scripts/generate-translations.js'
+      - 'scripts/merge-translations.js'
   workflow_dispatch:
 
 concurrency:

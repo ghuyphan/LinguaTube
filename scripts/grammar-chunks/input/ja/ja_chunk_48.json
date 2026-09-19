@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Verb_122",
+    "id": "ja_n1_Verb_122",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb そうもない (〜sou mo nai)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Verb_123",
+    "id": "ja_n1_Verb_123",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb そばから (〜soba kara)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Verb_124",
+    "id": "ja_n1_Verb_124",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たが最後 (〜ta ga saigo)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Verb_125",
+    "id": "ja_n1_Verb_125",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たことにしてください (~ ta koto ni shite kudasai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Verb_126",
+    "id": "ja_n1_Verb_126",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たら Verb たで (~ tara ~ tade)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Verb_127",
+    "id": "ja_n1_Verb_127",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たら きりがない (Verb tara kiri ga nai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Verb_128",
+    "id": "ja_n1_Verb_128",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb たら最後 (〜tara saigo)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Verb_129",
+    "id": "ja_n1_Verb_129",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb つ Verb つ (Verb tsu Verb tsu)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Verb_130",
+    "id": "ja_n1_Verb_130",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てからというもの (Verb te kara to iu mono)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Verb_131",
+    "id": "ja_n1_Verb_131",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てこそ (Verb te koso)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Verb_132",
+    "id": "ja_n1_Verb_132",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ては (～te wa)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Verb_133",
+    "id": "ja_n1_Verb_133",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb ては Verb (~ te wa ~)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Verb_134",
+    "id": "ja_n1_Verb_134",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てまでも (~ temademo)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Verb_135",
+    "id": "ja_n1_Verb_135",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てみせる (Verb te miseru)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Verb_136",
+    "id": "ja_n1_Verb_136",
     "language": "ja",
     "pattern": "Verb",
     "title": "Verb てやまない (Verb te yamanai)",

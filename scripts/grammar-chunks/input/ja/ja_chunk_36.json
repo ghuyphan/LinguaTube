@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_のももっともだ_133",
+    "id": "ja_n2_のももっともだ_133",
     "language": "ja",
     "pattern": "～のももっともだ",
     "title": "～のももっともだ (〜no mo mottomo da)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_の上では_134",
+    "id": "ja_n2_の上では_134",
     "language": "ja",
     "pattern": "〜の上では",
     "title": "〜の上では (〜no ue de wa)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_の下で_135",
+    "id": "ja_n2_の下で_135",
     "language": "ja",
     "pattern": "～の下で",
     "title": "～の下で (〜no shita de)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_ばかりかも_136",
+    "id": "ja_n2_ばかりかも_136",
     "language": "ja",
     "pattern": "～ばかりか〜も",
     "title": "～ばかりか〜も (〜bakari ka 〜 mo)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_ばかりだ_137",
+    "id": "ja_n2_ばかりだ_137",
     "language": "ja",
     "pattern": "～ばかりだ",
     "title": "～ばかりだ (〜bakari da)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ばかりに_138",
+    "id": "ja_n2_ばかりに_138",
     "language": "ja",
     "pattern": "～ばかりに",
     "title": "～ばかりに (〜bakari ni)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ばというものでもない_139",
+    "id": "ja_n2_ばというものでもない_139",
     "language": "ja",
     "pattern": "～ば～というものでもない",
     "title": "～ば～というものでもない (〜ba 〜to iu mono demo nai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_はともかくは_140",
+    "id": "ja_n2_はともかくは_140",
     "language": "ja",
     "pattern": "～はともかく～は",
     "title": "～はともかく～は (〜wa tomokaku 〜wa)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_はまだしも_141",
+    "id": "ja_n2_はまだしも_141",
     "language": "ja",
     "pattern": "～はまだしも",
     "title": "～はまだしも (〜wa mada shimo)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_はもとより_142",
+    "id": "ja_n2_はもとより_142",
     "language": "ja",
     "pattern": "～はもとより",
     "title": "～はもとより (〜wa moto yori)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_は抜きにして_143",
+    "id": "ja_n2_は抜きにして_143",
     "language": "ja",
     "pattern": "～は抜きにして",
     "title": "～は抜きにして (〜wa nuki ni shite)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_べきではない_144",
+    "id": "ja_n2_べきではない_144",
     "language": "ja",
     "pattern": "～べきではない",
     "title": "～べきではない (〜beki dewa nai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_まい_145",
+    "id": "ja_n2_まい_145",
     "language": "ja",
     "pattern": "～まい",
     "title": "～まい (〜mai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_までて_146",
+    "id": "ja_n2_までて_146",
     "language": "ja",
     "pattern": "～まで～て",
     "title": "～まで～て (〜made 〜te)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ままに_147",
+    "id": "ja_n2_ままに_147",
     "language": "ja",
     "pattern": "～ままに",
     "title": "～ままに (〜mama ni)",

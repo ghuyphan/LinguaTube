@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_もかまわず_148",
+    "id": "ja_n2_もかまわず_148",
     "language": "ja",
     "pattern": "～もかまわず",
     "title": "～もかまわず (〜mo kamawazu)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_ものか_149",
+    "id": "ja_n2_ものか_149",
     "language": "ja",
     "pattern": "～ものか",
     "title": "～ものか (〜mono ka)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_ものがある_150",
+    "id": "ja_n2_ものがある_150",
     "language": "ja",
     "pattern": "～ものがある",
     "title": "～ものがある (〜mono ga aru)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_ものだ_151",
+    "id": "ja_n2_ものだ_151",
     "language": "ja",
     "pattern": "～ものだ",
     "title": "～ものだ (〜mono da)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_ものだから_152",
+    "id": "ja_n2_ものだから_152",
     "language": "ja",
     "pattern": "～ものだから",
     "title": "～ものだから (〜mono dakara)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ものではない_153",
+    "id": "ja_n2_ものではない_153",
     "language": "ja",
     "pattern": "～ものではない",
     "title": "～ものではない (〜mono dewa nai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ものなら_154",
+    "id": "ja_n2_ものなら_154",
     "language": "ja",
     "pattern": "～ものなら",
     "title": "～ものなら (〜mono nara)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_ものの_155",
+    "id": "ja_n2_ものの_155",
     "language": "ja",
     "pattern": "～ものの、～",
     "title": "～ものの、～ (〜mono no、～)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_もばも_156",
+    "id": "ja_n2_もばも_156",
     "language": "ja",
     "pattern": "～も～ば～も～",
     "title": "～も～ば～も～ (〜mo〜ba〜mo〜)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_も同然だ_157",
+    "id": "ja_n2_も同然だ_157",
     "language": "ja",
     "pattern": "～も同然だ",
     "title": "～も同然だ (〜mo douzen da)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_やらやら_158",
+    "id": "ja_n2_やらやら_158",
     "language": "ja",
     "pattern": "～やら～やら",
     "title": "～やら～やら (〜yara〜yara)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_ようがない_159",
+    "id": "ja_n2_ようがない_159",
     "language": "ja",
     "pattern": "～ようがない",
     "title": "～ようがない (〜you ga nai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_よりほかない_160",
+    "id": "ja_n2_よりほかない_160",
     "language": "ja",
     "pattern": "～よりほかない",
     "title": "～よりほかない (〜yori hoka nai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_わけがない_161",
+    "id": "ja_n2_わけがない_161",
     "language": "ja",
     "pattern": "～わけがない",
     "title": "～わけがない (〜wake ga nai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_わけだ_162",
+    "id": "ja_n2_わけだ_162",
     "language": "ja",
     "pattern": "～わけだ",
     "title": "～わけだ (〜wake da)",

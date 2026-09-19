@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_ついでに_40",
+    "id": "ja_n3_ついでに_40",
     "language": "ja",
     "pattern": "～ついでに",
     "title": "～ついでに (〜tsuide ni)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_っけ_41",
+    "id": "ja_n3_っけ_41",
     "language": "ja",
     "pattern": "～っけ？",
     "title": "～っけ？ (〜kke?)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_っぱい_42",
+    "id": "ja_n3_っぱい_42",
     "language": "ja",
     "pattern": "～っぱい",
     "title": "～っぱい (〜ppai)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_っぱなし_43",
+    "id": "ja_n3_っぱなし_43",
     "language": "ja",
     "pattern": "～っぱなし",
     "title": "～っぱなし (〜ppanashi)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_つまり_44",
+    "id": "ja_n3_つまり_44",
     "language": "ja",
     "pattern": "～つまり",
     "title": "～つまり (〜tsumari)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_つもりでした_45",
+    "id": "ja_n3_つもりでした_45",
     "language": "ja",
     "pattern": "～つもりでした",
     "title": "～つもりでした (〜tsumori deshita)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_てくれと_46",
+    "id": "ja_n3_てくれと_46",
     "language": "ja",
     "pattern": "～てくれと",
     "title": "～てくれと (〜te kureto)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_てごらん_47",
+    "id": "ja_n3_てごらん_47",
     "language": "ja",
     "pattern": "～てごらん",
     "title": "～てごらん (〜te goran)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ですから_48",
+    "id": "ja_n3_ですから_48",
     "language": "ja",
     "pattern": "ですから～",
     "title": "ですから～ (desu kara)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_てはじめて_49",
+    "id": "ja_n3_てはじめて_49",
     "language": "ja",
     "pattern": "～てはじめて",
     "title": "～てはじめて (〜te hajimete)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_てほしい_50",
+    "id": "ja_n3_てほしい_50",
     "language": "ja",
     "pattern": "～てほしい",
     "title": "～てほしい (〜te hoshii)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_ても_51",
+    "id": "ja_n3_ても_51",
     "language": "ja",
     "pattern": "～ても",
     "title": "～ても (〜temo)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_といいなあ_52",
+    "id": "ja_n3_といいなあ_52",
     "language": "ja",
     "pattern": "～といいなあ",
     "title": "～といいなあ (〜to ii naa)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_という_53",
+    "id": "ja_n3_という_53",
     "language": "ja",
     "pattern": "～という",
     "title": "～という (〜to iu)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ということだ_54",
+    "id": "ja_n3_ということだ_54",
     "language": "ja",
     "pattern": "～ということだ",
     "title": "～ということだ (〜to iu koto da)",

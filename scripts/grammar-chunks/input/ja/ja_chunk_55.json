@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_びた_227",
+    "id": "ja_n1_びた_227",
     "language": "ja",
     "pattern": "～びた",
     "title": "～びた (～bita)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_びる_228",
+    "id": "ja_n1_びる_228",
     "language": "ja",
     "pattern": "～びる",
     "title": "～びる (〜biru)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_ぶった_229",
+    "id": "ja_n1_ぶった_229",
     "language": "ja",
     "pattern": "～ぶった",
     "title": "～ぶった (～butta)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_ぶって_230",
+    "id": "ja_n1_ぶって_230",
     "language": "ja",
     "pattern": "～ぶって",
     "title": "～ぶって (〜butte)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_ぶり_231",
+    "id": "ja_n1_ぶり_231",
     "language": "ja",
     "pattern": "～ぶり",
     "title": "～ぶり (〜buri)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ぶる_232",
+    "id": "ja_n1_ぶる_232",
     "language": "ja",
     "pattern": "～ぶる",
     "title": "～ぶる (〜buru)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_までだ_233",
+    "id": "ja_n1_までだ_233",
     "language": "ja",
     "pattern": "～までだ",
     "title": "～までだ (～made da)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_もなんでもない_234",
+    "id": "ja_n1_もなんでもない_234",
     "language": "ja",
     "pattern": "～もなんでもない",
     "title": "～もなんでもない (〜mo nandemonai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ものとして_235",
+    "id": "ja_n1_ものとして_235",
     "language": "ja",
     "pattern": "～ものとして",
     "title": "～ものとして (～mono to shite)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_んがために_236",
+    "id": "ja_n1_んがために_236",
     "language": "ja",
     "pattern": "～んがために",
     "title": "～んがために (〜n ga tame ni)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_んばかりに_237",
+    "id": "ja_n1_んばかりに_237",
     "language": "ja",
     "pattern": "～んばかりに",
     "title": "～んばかりに (〜n bakari ni)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_差し支えない_238",
+    "id": "ja_n1_差し支えない_238",
     "language": "ja",
     "pattern": "～差し支えない",
     "title": "～差し支えない (〜sashitsukaenai)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_折に_239",
+    "id": "ja_n1_折に_239",
     "language": "ja",
     "pattern": "～折に",
     "title": "～折に (〜ori ni)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_極まりない_240",
+    "id": "ja_n1_極まりない_240",
     "language": "ja",
     "pattern": "～極まりない",
     "title": "～極まりない (〜kiwamarinai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_極まる_241",
+    "id": "ja_n1_極まる_241",
     "language": "ja",
     "pattern": "～極まる",
     "title": "～極まる (〜kiwamaru)",

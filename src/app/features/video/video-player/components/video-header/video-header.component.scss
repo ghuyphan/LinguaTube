@@ -6,7 +6,7 @@
     padding: var(--space-sm) 0 var(--space-xs);
     min-height: 3.25rem;
 
-    :host-context(.is-fullscreen) & {
+    .is-fullscreen & {
         display: none;
     }
 }

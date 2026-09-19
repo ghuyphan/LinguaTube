@@ -398,6 +398,38 @@ export async function parseMdbg(response) {
  * @param {string} [from=''] - Source language
  * @returns {Promise<DictEntry[]>}
  */
+function decodeHtmlEntities(str) {
+    if (!str || typeof str !== 'string') return '';
+    const namedEntities = {
+        '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&apos;': "'",
+        '&nbsp;': ' ', '&iexcl;': '¡', '&cent;': '¢', '&pound;': '£', '&curren;': '¤',
+        '&yen;': '¥', '&brvbar;': '¦', '&sect;': '§', '&uml;': '¨', '&copy;': '©',
+        '&ordf;': 'ª', '&laquo;': '«', '&not;': '¬', '&shy;': '­', '&reg;': '®',
+        '&macr;': '¯', '&deg;': '°', '&plusmn;': '±', '&sup2;': '²', '&sup3;': '³',
+        '&acute;': '´', '&micro;': 'µ', '&para;': '¶', '&middot;': '·', '&cedil;': '¸',
+        '&sup1;': '¹', '&ordm;': 'º', '&raquo;': '»', '&frac14;': '¼', '&frac12;': '½',
+        '&frac34;': '¾', '&iquest;': '¿', '&Agrave;': 'À', '&Aacute;': 'Á', '&Acirc;': 'Â',
+        '&Atilde;': 'Ã', '&Auml;': 'Ä', '&Aring;': 'Å', '&AElig;': 'Æ', '&Ccedil;': 'Ç',
+        '&Egrave;': 'È', '&Eacute;': 'É', '&Ecirc;': 'Ê', '&Euml;': 'Ë', '&Igrave;': 'Ì',
+        '&Iacute;': 'Í', '&Icirc;': 'Î', '&Iuml;': 'Ï', '&ETH;': 'Ð', '&Ntilde;': 'Ñ',
+        '&Ograve;': 'Ò', '&Oacute;': 'Ó', '&Ocirc;': 'Ô', '&Otilde;': 'Õ', '&Ouml;': 'Ö',
+        '&times;': '×', '&Oslash;': 'Ø', '&Ugrave;': 'Ù', '&Uacute;': 'Ú', '&Ucirc;': 'Û',
+        '&Uuml;': 'Ü', '&Yacute;': 'Ý', '&THORN;': 'Þ', '&szlig;': 'ß', '&agrave;': 'à',
+        '&aacute;': 'á', '&acirc;': 'â', '&atilde;': 'ã', '&auml;': 'ä', '&aring;': 'å',
+        '&aelig;': 'æ', '&ccedil;': 'ç', '&egrave;': 'è', '&eacute;': 'é', '&ecirc;': 'ê',
+        '&euml;': 'ë', '&igrave;': 'ì', '&iacute;': 'í', '&icirc;': 'î', '&iuml;': 'ï',
+        '&eth;': 'ð', '&ntilde;': 'ñ', '&ograve;': 'ò', '&oacute;': 'ó', '&ocirc;': 'ô',
+        '&otilde;': 'õ', '&ouml;': 'ö', '&divide;': '÷', '&oslash;': 'ø', '&ugrave;': 'ù',
+        '&uacute;': 'ú', '&ucirc;': 'û', '&uuml;': 'ü', '&yacute;': 'ý', '&thorn;': 'þ',
+        '&yuml;': 'ÿ'
+    };
+
+    return str
+        .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
+        .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+        .replace(/&[a-z0-9]+;/gi, match => namedEntities[match] || match);
+}
+
 export async function parseGlosbe(response, targetWord = '', from = '') {
     try {
         const html = await response.text();
@@ -407,7 +439,8 @@ export async function parseGlosbe(response, targetWord = '', from = '') {
         // 1. Get individual translations from h3 tags (class contains translation__item__pharse or phrase)
         const h3Matches = [...html.matchAll(/<h3[^>]*class="[^"]*translation__item__(?:pharse|phrase)[^"]*"[^>]*>([\s\S]*?)<\/h3>/g)];
         for (const match of h3Matches) {
-            const def = match[1].replace(/<[^>]+>/g, '').trim();
+            const rawDef = match[1].replace(/<[^>]+>/g, '').trim();
+            const def = decodeHtmlEntities(rawDef);
             if (def && !seenDefs.has(def.toLowerCase())) {
                 seenDefs.add(def.toLowerCase());
                 entries.push({
@@ -424,12 +457,7 @@ export async function parseGlosbe(response, targetWord = '', from = '') {
         if (entries.length === 0) {
             const summaryMatch = html.match(/id="content-summary"[\s\S]*?<strong>([\s\S]*?)<\/strong>/);
             if (summaryMatch) {
-                const decoded = summaryMatch[1]
-                    .replace(/&agrave;/g, 'à').replace(/&aacute;/g, 'á')
-                    .replace(/&egrave;/g, 'è').replace(/&eacute;/g, 'é')
-                    .replace(/&ograve;/g, 'ò').replace(/&oacute;/g, 'ó')
-                    .replace(/&ugrave;/g, 'ù').replace(/&uacute;/g, 'ú')
-                    .replace(/&amp;/g, '&');
+                const decoded = decodeHtmlEntities(summaryMatch[1]);
                 const defs = decoded.split(',').map(d => d.replace(/<[^>]+>/g, '').trim()).filter(Boolean);
                 if (defs.length > 0) {
                     entries.push({

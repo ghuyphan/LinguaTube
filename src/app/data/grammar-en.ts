@@ -243,11 +243,11 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR A1",
     "examples": [
       {
-        "sentence": "I understand you. (не: I am understanding)",
+        "sentence": "I understand you. (not: I am understanding)",
         "translation": "I understand you."
       },
       {
-        "sentence": "She loves chocolate. (не: is loving)",
+        "sentence": "She loves chocolate. (not: is loving)",
         "translation": "She loves chocolate."
       }
     ]
@@ -747,11 +747,11 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR A2",
     "examples": [
       {
-        "sentence": "Water boils at 100°C. (факт)",
+        "sentence": "Water boils at 100°C.",
         "translation": "Water boils at 100°C."
       },
       {
-        "sentence": "I'm reading a great book this week. (временно)",
+        "sentence": "I'm reading a great book this week.",
         "translation": "I'm reading a great book this week."
       }
     ]
@@ -1167,11 +1167,11 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR B1",
     "examples": [
       {
-        "sentence": "I've met the new director. (он сейчас здесь, это актуально)",
+        "sentence": "I've met the new director.",
         "translation": "I met the new director."
       },
       {
-        "sentence": "I met him last Tuesday. (конкретное время)",
+        "sentence": "I met him last Tuesday.",
         "translation": "I met him last Tuesday."
       }
     ]
@@ -1327,11 +1327,11 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR B1",
     "examples": [
       {
-        "sentence": "If it rains tomorrow, I'll take an umbrella. (реально возможно)",
+        "sentence": "If it rains tomorrow, I'll take an umbrella.",
         "translation": "If it rains tomorrow, I will take an umbrella."
       },
       {
-        "sentence": "If it rained every day, I'd move to Spain. (маловероятная фантазия)",
+        "sentence": "If it rained every day, I'd move to Spain.",
         "translation": "If it rained every day, I would move to Spain."
       }
     ]
@@ -1899,15 +1899,15 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR B2",
     "examples": [
       {
-        "sentence": "I remember meeting her at a conference. (это было)",
+        "sentence": "I remember meeting her at a conference.",
         "translation": "I remember meeting her at a conference."
       },
       {
-        "sentence": "Remember to call your mother! (нужно сделать)",
+        "sentence": "Remember to call your mother!",
         "translation": "Don't forget to call your mom!"
       },
       {
-        "sentence": "I forgot to buy milk. (не сделал)",
+        "sentence": "I forgot to buy milk.",
         "translation": "I forgot to buy milk."
       }
     ]
@@ -2003,11 +2003,11 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR B2",
     "examples": [
       {
-        "sentence": "The film that I told you about is on tonight. (какой именно)",
+        "sentence": "The film that I told you about is on tonight.",
         "translation": "The movie I told you about is showing tonight."
       },
       {
-        "sentence": "My sister, who lives in Paris, is visiting next week. (доп. инфо)",
+        "sentence": "My sister, who lives in Paris, is visiting next week.",
         "translation": "My sister, who lives in Paris, will arrive next week."
       }
     ]
@@ -2023,12 +2023,12 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR B2",
     "examples": [
       {
-        "sentence": "The project I'm working on is fascinating. (разг.)",
+        "sentence": "The project I'm working on is fascinating.",
         "translation": "The project I'm working on is very interesting."
       },
       {
-        "sentence": "The project on which I am working is fascinating. (форм.)",
-        "translation": ""
+        "sentence": "The project on which I am working is fascinating.",
+        "translation": "The project on which I am working is very interesting."
       }
     ]
   },
@@ -2351,7 +2351,7 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR C1",
     "examples": [
       {
-        "sentence": "It was the noise that woke me up. (не шум вообще, именно этот)",
+        "sentence": "It was the noise that woke me up.",
         "translation": "It was the noise that woke me up."
       },
       {
@@ -2495,11 +2495,11 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR C1",
     "examples": [
       {
-        "sentence": "The film that won the Oscar was brilliant. (определяет, о каком фильме речь)",
+        "sentence": "The film that won the Oscar was brilliant.",
         "translation": "The film that won the Oscar was great."
       },
       {
-        "sentence": "Avatar, which came out in 2009, was a huge hit. (доп. факт о и так известном фильме)",
+        "sentence": "Avatar, which came out in 2009, was a huge hit.",
         "translation": "Avatar, released in 2009, became a big hit."
       }
     ]
@@ -2515,16 +2515,16 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR C1",
     "examples": [
       {
-        "sentence": "The report to which I referred is attached. (формально)",
+        "sentence": "The report to which I referred is attached.",
         "translation": "The report I mentioned is attached."
       },
       {
-        "sentence": "The report which I referred to is attached. (нейтрально)",
-        "translation": ""
+        "sentence": "The report which I referred to is attached.",
+        "translation": "The report I mentioned is attached."
       },
       {
-        "sentence": "The report I referred to is attached. (разговорно)",
-        "translation": ""
+        "sentence": "The report I referred to is attached.",
+        "translation": "The report I mentioned is attached."
       }
     ]
   },
@@ -2779,12 +2779,12 @@ export const GRAMMAR_EN: GrammarPattern[] = [
     "level": "CEFR C2",
     "examples": [
       {
-        "sentence": "Friends, Romans, countrymen, lend me your ears. (триколон)",
-        "translation": ""
+        "sentence": "Friends, Romans, countrymen, lend me your ears.",
+        "translation": "Friends, Romans, countrymen, lend me your ears."
       },
       {
-        "sentence": "The more you learn, the more you earn. (хиазм в народной мудрости)",
-        "translation": ""
+        "sentence": "The more you learn, the more you earn.",
+        "translation": "The more you learn, the more you earn."
       }
     ]
   },
@@ -2907,7 +2907,7 @@ export const GRAMMAR_EN: GrammarPattern[] = [
         "translation": "He told me that he had lived there for many years."
       },
       {
-        "sentence": "She said the Earth moves around the Sun. (общая истина — не меняем)",
+        "sentence": "She said the Earth moves around the Sun.",
         "translation": "She said that the Earth moves around the Sun."
       }
     ]

@@ -37,8 +37,11 @@ export async function onRequestGet(context) {
     const offsetParam = parseInt(url.searchParams.get('offset'), 10);
     const offset = Math.max(isNaN(offsetParam) ? 0 : offsetParam, 0);
 
+    const rawQuery = (url.searchParams.get('q') || url.searchParams.get('query') || '').trim();
+    const query = rawQuery.length > 0 ? rawQuery.slice(0, 100) : null;
+
     const isRefresh = url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
-    const cacheKey = `${lang}_${tier || 'all'}_${limit}_${offset}`;
+    const cacheKey = `${lang}_${tier || 'all'}_${limit}_${offset}_${query || ''}`;
 
     // 1. Fast in-memory cache check (warm isolate) - bypassed when user forces reload
     if (!isRefresh) {
@@ -48,6 +51,7 @@ export async function onRequestGet(context) {
                 success: true,
                 language: lang,
                 tier: tier || undefined,
+                query: query || undefined,
                 count: cached.videos.length,
                 offset,
                 hasMore: cached.hasMore ?? (cached.videos.length >= limit),
@@ -66,7 +70,7 @@ export async function onRequestGet(context) {
     const db = env?.VOCAB_DB;
     const r2 = env?.TRANSCRIPT_STORAGE;
     const shouldShuffle = isRefresh || offset === 0;
-    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, shouldShuffle, offset);
+    const videos = await getRecommendedVideosFromCloudflare(db, r2, lang, limit, tier, shouldShuffle, offset, query);
     const hasMore = videos.length >= limit;
 
     // 3. Self-healing: if any returned videos lack channelAvatar, resolve and update D1 in background

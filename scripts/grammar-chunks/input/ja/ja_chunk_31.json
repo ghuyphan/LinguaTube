@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_くせに_58",
+    "id": "ja_n2_くせに_58",
     "language": "ja",
     "pattern": "～くせに",
     "title": "～くせに (〜kuse ni)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_ことから_59",
+    "id": "ja_n2_ことから_59",
     "language": "ja",
     "pattern": "～ことから",
     "title": "～ことから (〜koto kara)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_ことに_60",
+    "id": "ja_n2_ことに_60",
     "language": "ja",
     "pattern": "～ことに",
     "title": "～ことに (〜koto ni)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_ことになっている_61",
+    "id": "ja_n2_ことになっている_61",
     "language": "ja",
     "pattern": "～ことになっている",
     "title": "～ことになっている (〜koto ni natte iru)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_さえば_62",
+    "id": "ja_n2_さえば_62",
     "language": "ja",
     "pattern": "～さえ～ば",
     "title": "～さえ～ば (〜sae ~ba)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ざるを得ない_63",
+    "id": "ja_n2_ざるを得ない_63",
     "language": "ja",
     "pattern": "～ざるを得ない",
     "title": "～ざるを得ない (〜zaru wo enai)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ずにはいられない_64",
+    "id": "ja_n2_ずにはいられない_64",
     "language": "ja",
     "pattern": "～ずにはいられない",
     "title": "～ずにはいられない (〜zu ni wa irarenai)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_そうにない_65",
+    "id": "ja_n2_そうにない_65",
     "language": "ja",
     "pattern": "～そうにない",
     "title": "～そうにない (〜sou ni nai)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_たかと思ったら_66",
+    "id": "ja_n2_たかと思ったら_66",
     "language": "ja",
     "pattern": "～たかと思ったら",
     "title": "～たかと思ったら (〜ta ka to omottara)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_たきり_67",
+    "id": "ja_n2_たきり_67",
     "language": "ja",
     "pattern": "～たきり",
     "title": "～たきり (〜takiri)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_だけあって_68",
+    "id": "ja_n2_だけあって_68",
     "language": "ja",
     "pattern": "～だけあって",
     "title": "～だけあって (〜dake atte)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_だけましだ_69",
+    "id": "ja_n2_だけましだ_69",
     "language": "ja",
     "pattern": "～だけましだ",
     "title": "～だけましだ (〜dake mashi da)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_たところ_70",
+    "id": "ja_n2_たところ_70",
     "language": "ja",
     "pattern": "～たところ",
     "title": "～たところ (〜ta tokoro)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_たとたん_71",
+    "id": "ja_n2_たとたん_71",
     "language": "ja",
     "pattern": "～たとたん",
     "title": "～たとたん (〜ta totan)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_だらけ_72",
+    "id": "ja_n2_だらけ_72",
     "language": "ja",
     "pattern": "～だらけ",
     "title": "～だらけ (〜darake)",

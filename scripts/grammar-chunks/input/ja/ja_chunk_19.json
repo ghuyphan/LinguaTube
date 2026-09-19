@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_くせに_10",
+    "id": "ja_n3_くせに_10",
     "language": "ja",
     "pattern": "～くせに",
     "title": "～くせに (〜kuse ni)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_くらい_11",
+    "id": "ja_n3_くらい_11",
     "language": "ja",
     "pattern": "～くらい",
     "title": "～くらい (〜kurai)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_くらいはない_12",
+    "id": "ja_n3_くらいはない_12",
     "language": "ja",
     "pattern": "～くらい～は～ない",
     "title": "～くらい～は～ない (〜kurai 〜wa 〜nai)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_こそ_13",
+    "id": "ja_n3_こそ_13",
     "language": "ja",
     "pattern": "～こそ",
     "title": "～こそ (〜koso)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_こと_14",
+    "id": "ja_n3_こと_14",
     "language": "ja",
     "pattern": "～こと",
     "title": "～こと (〜koto)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_ことだ_15",
+    "id": "ja_n3_ことだ_15",
     "language": "ja",
     "pattern": "～ことだ",
     "title": "～ことだ (〜koto da)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_ことにしている_16",
+    "id": "ja_n3_ことにしている_16",
     "language": "ja",
     "pattern": "～ことにしている",
     "title": "～ことにしている (〜koto ni shite iru)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_ことになっている_17",
+    "id": "ja_n3_ことになっている_17",
     "language": "ja",
     "pattern": "～ことになっている",
     "title": "～ことになっている (〜koto ni natte iru)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_ことはが_18",
+    "id": "ja_n3_ことはが_18",
     "language": "ja",
     "pattern": "～ことは…が",
     "title": "～ことは…が (～koto wa... ga)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_ことはない_19",
+    "id": "ja_n3_ことはない_19",
     "language": "ja",
     "pattern": "～ことはない",
     "title": "～ことはない (〜koto wa nai)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_さ_20",
+    "id": "ja_n3_さ_20",
     "language": "ja",
     "pattern": "～さ",
     "title": "～さ (〜sa)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_さえ_21",
+    "id": "ja_n3_さえ_21",
     "language": "ja",
     "pattern": "～さえ",
     "title": "～さえ (～sae)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_しかない_22",
+    "id": "ja_n3_しかない_22",
     "language": "ja",
     "pattern": "～しかない",
     "title": "～しかない (〜shika nai)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_すこしもない_23",
+    "id": "ja_n3_すこしもない_23",
     "language": "ja",
     "pattern": "すこしも〜ない",
     "title": "すこしも〜ない (sukoshimo~nai)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_ずに_24",
+    "id": "ja_n3_ずに_24",
     "language": "ja",
     "pattern": "～ずに",
     "title": "～ずに (〜zu ni)",

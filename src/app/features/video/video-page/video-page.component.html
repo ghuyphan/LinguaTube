@@ -1,9 +1,11 @@
 <div class="layout" [class.miniplayer-active]="playerView.isMiniplayer()">
     <div class="layout-main">
-        <app-video-player (fullscreenWordClicked)="onWordClicked($event)"
+        <app-video-player #videoPlayer (fullscreenWordClicked)="onWordClicked($event)"
             (fullscreenChanged)="isVideoFullscreen.set($event)" (videoEnded)="onVideoEnded()"
             (saveClicked)="openAddToPlaylist()" (playlistNext)="onPlaylistNext()" (playlistPrev)="onPlaylistPrev()"
-            (selectTrack)="onSelectTrack($event)" (triggerAI)="onManualAITrigger($event)" />
+            (selectTrack)="onSelectTrack($event)" (triggerAI)="onManualAITrigger($event)"
+            (searchQueryChange)="onSearchQueryChange($event)"
+            (searchSubmit)="onSearchSubmit($event)" />
 
         <!-- Mobile Playlist Bar (Compact, zero-layout-shift YouTube Mobile style) -->
         @if (showMobilePlaylistCard() && !playerView.isMiniplayer()) {
@@ -81,8 +83,17 @@
             <div class="panel-header">
                 <div class="panel-header__row">
                     <div class="panel-header__left">
-                        <app-icon name="sparkles" [size]="20" class="panel-header__icon" />
+                        @if (searchQuery().trim()) {
+                        <app-icon name="search" [size]="20" class="panel-header__icon" />
+                        <h3 class="panel-header__title">{{ i18n.t('playlist.searchResultsFor') }} "{{ searchQuery().trim() }}"</h3>
+                        <button type="button" class="search-clear-chip" (click)="clearSearch()" [title]="i18n.t('common.clear')">
+                            <app-icon name="x" [size]="13" />
+                            <span>{{ i18n.t('common.clear') }}</span>
+                        </button>
+                        } @else {
+                        <app-icon name="star" [size]="20" class="panel-header__icon" />
                         <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
+                        }
                     </div>
                 </div>
             </div>
@@ -190,7 +201,7 @@
                                     }
                                     @if (item.video.matchedWords && item.video.matchedWords.length > 0) {
                                     <span class="yt-vocab-match-text" [title]="item.video.matchedWords.join(', ')">
-                                        <app-icon name="sparkles" [size]="11" />
+                                        <app-icon name="book-open" [size]="11" />
                                         <span>{{ i18n.t('playlist.vocabMatch', { count: item.video.matchedWords.length }) }}</span>
                                     </span>
                                     }
@@ -265,6 +276,20 @@
             </div>
             }
             }
+            } @else if (searchQuery().trim()) {
+            <div class="empty-state empty-state--centered">
+                <div class="empty-state__icon-box">
+                    <app-icon name="search" [size]="28" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('playlist.empty.searchTitle') || 'No matching videos found' }}</p>
+                    <p class="empty-state__description">{{ i18n.t('playlist.empty.searchHint') || 'Try different keywords or check spelling' }}</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" (click)="clearSearch()">
+                    <app-icon name="refresh-cw" [size]="15" />
+                    <span>{{ i18n.t('common.clear') || 'Clear search' }}</span>
+                </button>
+            </div>
             } @else if (homeTab() === 'playlists') {
             <div class="empty-state empty-state--centered">
                 <div class="empty-state__icon-box">

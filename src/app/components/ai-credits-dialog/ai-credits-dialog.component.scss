@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding: 1.5rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    padding: 1.5rem;
     max-width: 440px;
     margin: 0 auto;
     text-align: center;
@@ -194,7 +194,7 @@
     font-size: 0.9375rem;
     font-weight: 700;
     border-radius: var(--border-radius-md);
-    background: var(--gradient-pro, linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%));
+    background: var(--gradient-pro);
     color: #fff;
     border: none;
     cursor: pointer;

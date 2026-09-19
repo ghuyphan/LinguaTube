@@ -8,6 +8,12 @@ const BASE_URL = `http://localhost:${PORT}`;
 const VIDEO_ID = 'u9vpfPlvF7U';
 const CACHE_FILE = join(process.cwd(), 'server', 'transcripts_cache', `${VIDEO_ID}_zh.json`);
 
+// Guard live Gladia API calls: skip during CI or default test runs to preserve credits and test speed
+if (process.env.CI || process.env.SKIP_LIVE_E2E || (!process.env.RUN_E2E && !process.env.GLADIA_API_KEY)) {
+  console.log('[E2E Test] Skipping live Gladia E2E flow (to run: RUN_E2E=1 node tests/e2e-real-flow.test.mjs)');
+  process.exit(0);
+}
+
 async function waitForServer(retries = 30, delayMs = 500) {
   for (let i = 0; i < retries; i++) {
     try {

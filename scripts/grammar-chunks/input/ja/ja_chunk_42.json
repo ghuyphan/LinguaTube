@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_Noun_32",
+    "id": "ja_n1_Noun_32",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun でなくてなんだろう (〜de nakute nandarou)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_Noun_33",
+    "id": "ja_n1_Noun_33",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ではあるまいし (~dewa aru maishi)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_Noun_34",
+    "id": "ja_n1_Noun_34",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun と Noun を兼ねて (Noun to Noun o kanete)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_Noun_35",
+    "id": "ja_n1_Noun_35",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun といい Noun といい (〜to ii〜to ii)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_Noun_36",
+    "id": "ja_n1_Noun_36",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun という Noun (~to iu~)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_Noun_37",
+    "id": "ja_n1_Noun_37",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun というところだ (Noun to iu tokoro da)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_Noun_38",
+    "id": "ja_n1_Noun_38",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + というもの (~ to iu mono)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_Noun_39",
+    "id": "ja_n1_Noun_39",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun といったところだ (Noun to itta tokoro da)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_Noun_40",
+    "id": "ja_n1_Noun_40",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun といわず Noun といわず (A to iwazu B to iwazu)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_Noun_41",
+    "id": "ja_n1_Noun_41",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ときたら (〜tokitara)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_Noun_42",
+    "id": "ja_n1_Noun_42",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun とは比べものにならない (~to wa kurabemono ni naranai)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_Noun_43",
+    "id": "ja_n1_Noun_43",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun + ともあろう + Noun (~tomoarou~)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_Noun_44",
+    "id": "ja_n1_Noun_44",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ともなると (〜to mo naru to)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_Noun_45",
+    "id": "ja_n1_Noun_45",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun ともなれば (〜to mo nareba)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_Noun_46",
+    "id": "ja_n1_Noun_46",
     "language": "ja",
     "pattern": "Noun",
     "title": "Noun と相まって (~ to aimatte)",

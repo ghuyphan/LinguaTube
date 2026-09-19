@@ -71,7 +71,7 @@ export async function onRequestPost(context) {
         }
 
         const texts = body.texts;
-        const source = sanitizeLanguage(body.source, ['ja', 'zh', 'ko', 'en', 'vi']);
+        const source = sanitizeLanguage(body.source, ['ja', 'zh', 'ko', 'en', 'vi', 'auto']);
         const target = sanitizeLanguage(body.target, ['ja', 'zh', 'ko', 'en', 'vi']);
 
         if (!source || !target) {

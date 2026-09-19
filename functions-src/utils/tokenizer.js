@@ -108,7 +108,7 @@ export function segmentJapaneseRuby(surface, reading) {
     while (
         headLen < surface.length &&
         headLen < reading.length &&
-        surface[headLen] === reading[headLen] &&
+        katakanaToHiragana(surface[headLen]) === reading[headLen] &&
         isJapaneseKanaText(surface[headLen])
     ) {
         headLen++;
@@ -120,12 +120,12 @@ export function segmentJapaneseRuby(surface, reading) {
         reading = reading.slice(headLen);
     }
 
-    // 2. Strip matching trailing kana (e.g. 食べる -> 食 + べる)
+    // 2. Strip matching trailing kana (e.g. 食べる -> 食 + べる, 消しゴム -> 消し + ゴム)
     let tailLen = 0;
     while (
         tailLen < surface.length &&
         tailLen < reading.length &&
-        surface[surface.length - 1 - tailLen] === reading[reading.length - 1 - tailLen] &&
+        katakanaToHiragana(surface[surface.length - 1 - tailLen]) === reading[reading.length - 1 - tailLen] &&
         isJapaneseKanaText(surface[surface.length - 1 - tailLen])
     ) {
         tailLen++;
@@ -143,10 +143,11 @@ export function segmentJapaneseRuby(surface, reading) {
         const interiorKanaMatch = surface.match(/^([\u4E00-\u9FFF]+)([\u3040-\u309F\u30A0-\u30FFー]+)([\u4E00-\u9FFF]+)$/);
         if (interiorKanaMatch) {
             const [, kanji1, kanaMid, kanji2] = interiorKanaMatch;
-            const midReadingIdx = reading.indexOf(kanaMid);
-            if (midReadingIdx > 0 && midReadingIdx + kanaMid.length < reading.length) {
+            const midHiragana = katakanaToHiragana(kanaMid);
+            const midReadingIdx = reading.indexOf(midHiragana);
+            if (midReadingIdx > 0 && midReadingIdx + midHiragana.length < reading.length) {
                 const reading1 = reading.slice(0, midReadingIdx);
-                const reading2 = reading.slice(midReadingIdx + kanaMid.length);
+                const reading2 = reading.slice(midReadingIdx + midHiragana.length);
                 parts.push({ text: kanji1, reading: reading1 });
                 parts.push({ text: kanaMid });
                 parts.push({ text: kanji2, reading: reading2 });
@@ -227,12 +228,22 @@ export async function tokenizeJapanese(text) {
     });
 }
 
-// Hangul batchim (final consonant) detection: (code - 0xAC00) % 28 !== 0
-function hasHangulBatchim(char) {
+// Hangul batchim (final consonant) detection: (code - 0xAC00) % 28
+function getHangulBatchim(char) {
+    if (!char) return 0;
     const code = char.charCodeAt(0);
-    if (code < 0xAC00 || code > 0xD7AF) return false;
-    return (code - 0xAC00) % 28 !== 0;
+    if (code < 0xAC00 || code > 0xD7AF) return 0;
+    return (code - 0xAC00) % 28;
 }
+
+function hasHangulBatchim(char) {
+    return getHangulBatchim(char) !== 0;
+}
+
+const PROTECTED_GA_NOUNS = new Set([
+    '휴가', '국가', '작가', '화가', '물가', '농가', '상가', '단가',
+    '참가', '추가', '평가', '원가', '시가', '치가', '도가', '초가'
+]);
 
 /**
  * Heuristic Korean postpositional particle (조사) detachment
@@ -261,10 +272,11 @@ export function detachKoreanParticle(word) {
         }
     }
 
-    // 으로 (requires batchim except ㄹ)
+    // 으로 (requires batchim except ㄹ: batchim > 0 && batchim !== 8)
     if (word.endsWith('으로') && word.length > 2) {
         const prev = word[word.length - 3];
-        if (hasHangulBatchim(prev)) {
+        const batchim = getHangulBatchim(prev);
+        if (batchim > 0 && batchim !== 8) {
             return { stem: word.slice(0, -2), particle: '으로' };
         }
     }
@@ -273,16 +285,25 @@ export function detachKoreanParticle(word) {
     const last = word[word.length - 1];
     const prev = word[word.length - 2];
     const prevBatchim = hasHangulBatchim(prev);
+    const prevBatchimCode = getHangulBatchim(prev);
 
     if (last === '는' && !prevBatchim) return { stem: word.slice(0, -1), particle: '는' };
     if (last === '은' && prevBatchim) return { stem: word.slice(0, -1), particle: '은' };
     if (last === '를' && !prevBatchim) return { stem: word.slice(0, -1), particle: '를' };
     if (last === '을' && prevBatchim) return { stem: word.slice(0, -1), particle: '을' };
-    if (last === '가' && !prevBatchim) return { stem: word.slice(0, -1), particle: '가' };
+    if (last === '가' && !prevBatchim) {
+        if (word.length === 2 && PROTECTED_GA_NOUNS.has(word)) {
+            return null;
+        }
+        return { stem: word.slice(0, -1), particle: '가' };
+    }
     if (last === '이' && prevBatchim) return { stem: word.slice(0, -1), particle: '이' };
     if (last === '와' && !prevBatchim) return { stem: word.slice(0, -1), particle: '와' };
     if (last === '과' && prevBatchim) return { stem: word.slice(0, -1), particle: '과' };
-    if (last === '로' && !prevBatchim) return { stem: word.slice(0, -1), particle: '로' };
+    // 로: used when NO batchim OR with ㄹ batchim (batchim === 8)
+    if (last === '로' && (!prevBatchim || prevBatchimCode === 8)) {
+        return { stem: word.slice(0, -1), particle: '로' };
+    }
 
     // Neutral 1-syllable particles (stem >= 2 characters to avoid over-stripping roots)
     if (word.length >= 3 && (last === '의' || last === '도' || last === '만' || last === '에')) {
@@ -302,12 +323,20 @@ export async function tokenizeKoreanChinese(text, lang) {
 
     let pinyinFn = null;
     let pinyinList = null;
+    let codePointIndices = null;
     if (lang === 'zh') {
         pinyinFn = await getPinyin();
         if (pinyinFn) {
             try {
                 // Pass the complete sentence to pinyin-pro to capture n-gram context for polyphones (多音字)
                 pinyinList = pinyinFn(text, { toneType: 'symbol', type: 'all' });
+                // Precompute UTF-16 offset to pinyinList index mapping to handle emoji/surrogate pairs
+                codePointIndices = new Map();
+                let u16Offset = 0;
+                for (let i = 0; i < pinyinList.length; i++) {
+                    codePointIndices.set(u16Offset, i);
+                    u16Offset += (pinyinList[i].origin || '').length;
+                }
             } catch { }
         }
     }
@@ -330,27 +359,43 @@ export async function tokenizeKoreanChinese(text, lang) {
 
             // Add Chinese Pinyin (context-aware from full sentence)
             if (lang === 'zh') {
-                if (pinyinList && pinyinList.length >= seg.index + seg.segment.length) {
-                    const slice = pinyinList.slice(seg.index, seg.index + seg.segment.length);
-                    const py = slice.map(s => s.pinyin || s.origin).filter(Boolean).join(' ');
-                    if (py && py !== token.surface) {
-                        token.pinyin = py;
+                const hasChinese = /[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/.test(token.surface);
+                if (hasChinese) {
+                    let slice = null;
+                    if (pinyinList && codePointIndices && codePointIndices.has(seg.index)) {
+                        const startIdx = codePointIndices.get(seg.index);
+                        let endIdx = startIdx;
+                        let u16Span = 0;
+                        while (endIdx < pinyinList.length && u16Span < seg.segment.length) {
+                            u16Span += (pinyinList[endIdx].origin || '').length;
+                            endIdx++;
+                        }
+                        slice = pinyinList.slice(startIdx, endIdx);
+                    } else if (pinyinList && pinyinList.length >= seg.index + seg.segment.length) {
+                        slice = pinyinList.slice(seg.index, seg.index + seg.segment.length);
                     }
 
-                    // Character-level ruby parts for mono-ruby alignment
-                    if (slice.length > 0 && slice.some(s => s.pinyin)) {
-                        token.rubyParts = slice.map(s => ({
-                            text: s.origin,
-                            reading: s.pinyin || undefined
-                        }));
-                    }
-                } else if (pinyinFn) {
-                    try {
-                        const py = pinyinFn(token.surface, { toneType: 'symbol', type: 'string' });
-                        if (py !== token.surface) {
+                    if (slice && slice.length > 0) {
+                        const py = slice.map(s => s.pinyin || s.origin).filter(Boolean).join(' ');
+                        if (py && py !== token.surface) {
                             token.pinyin = py;
                         }
-                    } catch { }
+
+                        // Character-level ruby parts for mono-ruby alignment
+                        if (slice.some(s => s.pinyin)) {
+                            token.rubyParts = slice.map(s => ({
+                                text: s.origin,
+                                reading: s.pinyin || undefined
+                            }));
+                        }
+                    } else if (pinyinFn) {
+                        try {
+                            const py = pinyinFn(token.surface, { toneType: 'symbol', type: 'string' });
+                            if (py !== token.surface) {
+                                token.pinyin = py;
+                            }
+                        } catch { }
+                    }
                 }
             }
 
@@ -434,10 +479,14 @@ export async function tokenizeEnglish(text) {
                 }
 
                 const normal = term.normal || term.text.toLowerCase();
-                const lemma = doc.match(term.text).verbs().conjugate()[0]?.Infinitive
-                    || doc.match(term.text).nouns().conjugate()[0]?.Singular
-                    || doc.match(term.text).adjectives().conjugate()[0]?.Adjective
-                    || normal;
+                let lemma = normal;
+                if (term.tags && term.tags.includes('Verb')) {
+                    lemma = doc.match(term.text).verbs().conjugate()[0]?.Infinitive || normal;
+                } else if (term.tags && term.tags.includes('Noun')) {
+                    lemma = doc.match(term.text).nouns().conjugate()[0]?.Singular || normal;
+                } else if (term.tags && (term.tags.includes('Adjective') || term.tags.includes('Comparative') || term.tags.includes('Superlative'))) {
+                    lemma = doc.match(term.text).adjectives().conjugate()[0]?.Adjective || normal;
+                }
                 if (lemma && lemma.toLowerCase() !== token.surface.toLowerCase()) {
                     token.baseForm = lemma;
                 }

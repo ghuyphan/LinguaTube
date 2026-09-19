@@ -1,5 +1,5 @@
 .settings-modal {
-    padding: var(--space-md) var(--space-md) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    padding: var(--space-md) var(--space-md) var(--space-lg);
     max-width: 480px;
     margin: 0 auto;
 }
@@ -145,8 +145,8 @@
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
-    background: rgba(var(--accent-primary-rgb, 255, 107, 107), 0.1);
-    border: 1px solid rgba(var(--accent-primary-rgb, 255, 107, 107), 0.25);
+    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.1);
+    border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25);
     border-radius: var(--border-radius-md, 8px);
     color: var(--accent-primary);
     font-size: 0.8125rem;
@@ -570,13 +570,9 @@ div.settings-item-row {
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
 /* Release Notes Bottom Sheet */
 .release-notes-sheet {
-    padding: var(--space-md) var(--space-lg) calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
 }
 
 .release-notes-header {

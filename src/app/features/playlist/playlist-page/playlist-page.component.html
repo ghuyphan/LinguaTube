@@ -13,47 +13,54 @@
                 </div>
             </div>
 
-            <!-- Stable Filter Toolbar (Two-row hierarchy: Navigation & CTA on top, Search & Filters below) -->
-            <div class="playlist-toolbar">
-                <div class="toolbar-nav-row">
-                    <div class="view-tabs">
-                        <button type="button" class="filter-chip" [class.active]="view() === 'community'" (click)="setView('community')"
+            <!-- Stable, Solid Filter Toolbar (Zero translucency, compact 2-row layout) -->
+            <div class="panel-toolbar">
+                <div class="panel-toolbar__top">
+                    <div class="segmented-control" style="--tab-count: 3;" [style.--active-index]="view() === 'community' ? 0 : (view() === 'curated' ? 1 : 2)" role="tablist">
+                        <button type="button" class="segmented-control__item" [class.active]="view() === 'community'" (click)="setView('community')"
+                            role="tab" [attr.aria-selected]="view() === 'community'"
                             [attr.aria-label]="i18n.t('playlist.community')" [title]="i18n.t('playlist.community')">
                             <app-icon name="globe" [size]="14" />
-                            <span class="chip-text">{{ i18n.t('playlist.community') }}</span>
+                            <span>{{ i18n.t('playlist.community') }}</span>
                         </button>
-                        <button type="button" class="filter-chip" [class.active]="view() === 'curated'" (click)="setView('curated')"
+                        <button type="button" class="segmented-control__item" [class.active]="view() === 'curated'" (click)="setView('curated')"
+                            role="tab" [attr.aria-selected]="view() === 'curated'"
                             [attr.aria-label]="i18n.t('playlist.featured')" [title]="i18n.t('playlist.featured')">
-                            <app-icon name="sparkles" [size]="14" />
-                            <span class="chip-text">{{ i18n.t('playlist.featured') }}</span>
+                            <app-icon name="star" [size]="14" />
+                            <span>{{ i18n.t('playlist.featured') }}</span>
                         </button>
-                        <button type="button" class="filter-chip" [class.active]="view() === 'my'" (click)="setView('my')"
+                        <button type="button" class="segmented-control__item" [class.active]="view() === 'my'" (click)="setView('my')"
+                            role="tab" [attr.aria-selected]="view() === 'my'"
                             [attr.aria-label]="i18n.t('playlist.myPlaylists')" [title]="i18n.t('playlist.myPlaylists')">
                             <app-icon name="user" [size]="14" />
-                            <span class="chip-text">{{ i18n.t('playlist.myPlaylists') }}</span>
+                            <span>{{ i18n.t('playlist.myPlaylists') }}</span>
                         </button>
                     </div>
 
-                    <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
-                        [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
-                        <app-icon name="plus" [size]="14" />
-                        <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
-                    </button>
+                    <div class="panel-toolbar__actions">
+                        <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
+                            [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
+                            <app-icon name="plus" [size]="14" />
+                            <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="toolbar-filter-row">
-                    <div class="app-search-box playlist-search-box">
-                        <app-icon name="search" [size]="14" class="search-icon" />
-                        <input type="text" [ngModel]="searchQuery()" (ngModelChange)="onSearchChange($event)" [placeholder]="i18n.t('playlist.searchPlaylists') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
-                        @if (searchQuery()) {
-                        <button type="button" class="clear-btn" (click)="onSearchChange('')" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
-                            <app-icon name="x" [size]="12" />
-                        </button>
-                        }
+                <div class="panel-toolbar__filters">
+                    <div class="panel-search-wrapper">
+                        <div class="app-search-box">
+                            <app-icon name="search" [size]="14" class="search-icon" />
+                            <input type="search" enterkeyhint="search" [ngModel]="searchQuery()" (ngModelChange)="onSearchChange($event)" [placeholder]="i18n.t('playlist.searchPlaylists') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
+                            @if (searchQuery()) {
+                            <button type="button" class="clear-btn" (click)="onSearchChange('')" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
+                                <app-icon name="x" [size]="12" />
+                            </button>
+                            }
+                        </div>
                     </div>
 
-                    <div class="filter-chips-group">
-                        <button type="button" class="filter-chip filter-chip--lang" (click)="showLanguageFilter.set(true)"
+                    <div class="filter-scroll-strip">
+                        <button type="button" class="filter-chip filter-chip--lang" [class.active]="languageFilter() !== 'all'" [class.is-open]="showLanguageFilter()" (click)="showLanguageFilter.set(true)"
                             [attr.aria-label]="getLanguageFilterLabel()" [title]="getLanguageFilterLabel()">
                             @if (languageFilter() !== 'all') {
                             <img [src]="getFlagUrl(languageFilter())" class="circle-flag circle-flag--sm" alt="" />
@@ -64,7 +71,7 @@
                             <app-icon name="chevron-down" [size]="12" class="lang-chevron" />
                         </button>
 
-                        <button type="button" class="filter-chip filter-chip--level" (click)="showLevelFilter.set(true)"
+                        <button type="button" class="filter-chip filter-chip--level" [class.active]="levelFilter() !== 'all'" [class.is-open]="showLevelFilter()" (click)="showLevelFilter.set(true)"
                             [attr.aria-label]="getLevelFilterLabel()" [title]="getLevelFilterLabel()">
                             <app-icon name="graduation-cap" [size]="14" />
                             <span class="chip-text">{{ getLevelFilterLabel() }}</span>
@@ -75,7 +82,7 @@
             </div>
 
             <!-- Panel Content Area -->
-            <div class="panel-content">
+            <div class="panel-content tab-content-enter">
                 @if (isListLoading()) {
                 <div class="yt-video-grid skeleton-container" role="status" aria-busy="true" aria-hidden="true">
                     @for (_ of [1,2,3,4,5,6]; track $index) {
@@ -147,7 +154,7 @@
                                     <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
                                     }
                                     @if (playlist.isFeatured) {
-                                    <span class="meta-featured"><app-icon name="sparkles" [size]="11" /> {{ i18n.t('playlist.featured') }}</span>
+                                    <span class="meta-featured"><app-icon name="star" [size]="11" /> {{ i18n.t('playlist.featured') }}</span>
                                     }
                                     @if (playlist.visibility === 'private') {
                                     <span class="meta-private"><app-icon name="lock" [size]="10" /> {{ i18n.t('playlist.visibility.private') }}</span>

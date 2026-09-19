@@ -114,6 +114,7 @@ export class YoutubeService {
 
   private wasPausedOnLeave = false;
   private isSeeking = false;
+  private targetSeekTime: number | null = null;
   private seekingTimeout: ReturnType<typeof setTimeout> | null = null;
   private lastEmitTime = 0;
 
@@ -494,7 +495,9 @@ export class YoutubeService {
 
                 if (state === window.YT.PlayerState.PLAYING && this.wasPausedOnLeave) {
                   this.wasPausedOnLeave = false;
-                  this.pause();
+                  if (!this.intendedPlayingState()) {
+                    this.pause();
+                  }
                 }
 
                 if (state === window.YT.PlayerState.PLAYING || state === window.YT.PlayerState.PAUSED) {
@@ -572,12 +575,26 @@ export class YoutubeService {
 
   private startTimeTracking(): void {
     const track = () => {
-      if (!this.isSeeking && this.player && typeof this.player.getCurrentTime === 'function') {
+      if (this.player && typeof this.player.getCurrentTime === 'function') {
         try {
           const time = this.player.getCurrentTime() || 0;
+          if (this.targetSeekTime !== null) {
+            if (Math.abs(time - this.targetSeekTime) < 0.5) {
+              this.isSeeking = false;
+              this.targetSeekTime = null;
+            } else {
+              // Ignore stale pre-seek timecode from iframe
+              return;
+            }
+          } else if (this.isSeeking) {
+            return;
+          }
+
           const current = this.currentTime();
-          // Throttle time signal updates to ~150ms steps during linear playback to prevent 60-120fps CD storm
-          if (time !== current && (Math.abs(time - this.lastEmitTime) >= 0.15 || time === 0)) {
+          // Scale throttle threshold dynamically with playback rate (e.g. 60ms at 2x)
+          const rate = this.playbackRate() || 1;
+          const throttleThreshold = Math.max(0.04, 0.12 / rate);
+          if (time !== current && (Math.abs(time - this.lastEmitTime) >= throttleThreshold || time === 0)) {
             this.lastEmitTime = time;
             this.currentTime.set(time);
           }
@@ -615,6 +632,7 @@ export class YoutubeService {
   }
 
   play(): void {
+    this.wasPausedOnLeave = false;
     this.intendedPlayingState.set(true);
     try {
       this.player?.playVideo();
@@ -641,6 +659,7 @@ export class YoutubeService {
     const clampedTime = Math.max(0, Math.min(seconds, this.duration() || seconds));
     this.lastEmitTime = clampedTime;
     this.currentTime.set(clampedTime);
+    this.targetSeekTime = clampedTime;
 
     this.isSeeking = true;
     if (this.seekingTimeout) {
@@ -653,8 +672,9 @@ export class YoutubeService {
 
     this.seekingTimeout = setTimeout(() => {
       this.isSeeking = false;
+      this.targetSeekTime = null;
       this.seekingTimeout = null;
-    }, 300);
+    }, 1000);
   }
 
   seekRelative(seconds: number): void {

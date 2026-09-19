@@ -16,63 +16,74 @@
     </div>
     }
 
-    <!-- Clean, Streamlined Search & Filter Row -->
-    <div class="vocab-toolbar">
-        <div class="app-search-box vocab-search-box">
-            <app-icon name="search" [size]="14" class="search-icon" />
-            <input type="text" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" autocomplete="off" />
-            @if (searchQuery) {
-            <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
-                <app-icon name="x" [size]="12" />
-            </button>
+    <!-- Clean, Streamlined Search & Filter Row (Rendered when showToolbar is true) -->
+    @if (showToolbar()) {
+    <div class="panel-toolbar"
+         [style.padding-top]="'0'"
+         [style.padding-bottom]="'0'"
+         [style.margin-bottom]="embedded() ? 'var(--space-md)' : 'var(--space-xs)'">
+        <div class="panel-toolbar__top">
+            <div class="panel-search-wrapper" style="display: block; max-width: 100%;">
+                <div class="app-search-box">
+                    <app-icon name="search" [size]="14" class="search-icon" />
+                    <input type="search" enterkeyhint="search" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" autocomplete="off" />
+                    @if (searchQuery) {
+                    <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
+                        <app-icon name="x" [size]="12" />
+                    </button>
+                    }
+                </div>
+            </div>
+
+            @if (showMenu()) {
+            <div class="panel-toolbar__actions">
+                <button type="button" class="action-icon-btn" (click)="openMenuSheet(); menuRequest.emit()" [attr.aria-label]="i18n.t('vocab.options') || 'Options'" [title]="i18n.t('vocab.options') || 'Options'">
+                    <app-icon name="more-vertical" [size]="16" />
+                </button>
+            </div>
             }
         </div>
 
-        @if (showMenu()) {
-        <button class="btn btn-icon btn-ghost menu-btn" (click)="openMenuSheet(); menuRequest.emit()" [attr.aria-label]="i18n.t('vocab.options') || 'Options'">
-            <app-icon name="more-vertical" [size]="18" />
-        </button>
-        }
+        <!-- Level Filter Chips (Unified with app-wide filter-scroll-strip standard) -->
+        <div class="filter-scroll-strip" style="width: 100%; margin-top: 4px;">
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedLevel() === 'all'"
+                    (click)="selectedLevel.set('all')">
+                <span>{{ i18n.t('history.all') || 'All' }}</span>
+                <span class="chip-count">{{ levelCounts().all }}</span>
+            </button>
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedLevel() === 'new'"
+                    (click)="selectedLevel.set('new')">
+                <span>{{ i18n.t('vocab.new') || 'New' }}</span>
+                <span class="chip-count">{{ levelCounts().new }}</span>
+            </button>
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedLevel() === 'learning'"
+                    (click)="selectedLevel.set('learning')">
+                <span>{{ i18n.t('vocab.learning') || 'Learning' }}</span>
+                <span class="chip-count">{{ levelCounts().learning }}</span>
+            </button>
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedLevel() === 'known'"
+                    (click)="selectedLevel.set('known')">
+                <span>{{ i18n.t('vocab.known') || 'Known' }}</span>
+                <span class="chip-count">{{ levelCounts().known }}</span>
+            </button>
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedLevel() === 'ignored'"
+                    (click)="selectedLevel.set('ignored')">
+                <span>{{ i18n.t('vocab.ignored') || 'Ignored' }}</span>
+                <span class="chip-count">{{ levelCounts().ignored }}</span>
+            </button>
+        </div>
     </div>
-
-    <!-- Level Filter Chips (Unified with app-wide filter-chip standard) -->
-    <div class="vocab-level-chips">
-        <button type="button" 
-                class="filter-chip" 
-                [class.active]="selectedLevel() === 'all'"
-                (click)="selectedLevel.set('all')">
-            <span>{{ i18n.t('history.all') || 'All' }}</span>
-            <span class="chip-count">{{ levelCounts().all }}</span>
-        </button>
-        <button type="button" 
-                class="filter-chip" 
-                [class.active]="selectedLevel() === 'new'"
-                (click)="selectedLevel.set('new')">
-            <span>{{ i18n.t('vocab.new') || 'New' }}</span>
-            <span class="chip-count">{{ levelCounts().new }}</span>
-        </button>
-        <button type="button" 
-                class="filter-chip" 
-                [class.active]="selectedLevel() === 'learning'"
-                (click)="selectedLevel.set('learning')">
-            <span>{{ i18n.t('vocab.learning') || 'Learning' }}</span>
-            <span class="chip-count">{{ levelCounts().learning }}</span>
-        </button>
-        <button type="button" 
-                class="filter-chip" 
-                [class.active]="selectedLevel() === 'known'"
-                (click)="selectedLevel.set('known')">
-            <span>{{ i18n.t('vocab.known') || 'Known' }}</span>
-            <span class="chip-count">{{ levelCounts().known }}</span>
-        </button>
-        <button type="button" 
-                class="filter-chip" 
-                [class.active]="selectedLevel() === 'ignored'"
-                (click)="selectedLevel.set('ignored')">
-            <span>{{ i18n.t('vocab.ignored') || 'Ignored' }}</span>
-            <span class="chip-count">{{ levelCounts().ignored }}</span>
-        </button>
-    </div>
+    }
 
     <!-- Word list -->
     <div class="word-list">
@@ -111,8 +122,8 @@
                 <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
                 <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
             </div>
-            @if (searchQuery.trim()) {
-            <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary(searchQuery)">
+            @if (effectiveSearchQuery()) {
+            <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary(effectiveSearchQuery())">
                 <app-icon name="book-open" [size]="14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search in dictionary' }}</span>
             </button>
@@ -140,13 +151,12 @@
                 </div>
 
                 <div class="vocab-item__actions" (click)="$event.stopPropagation()">
-                    <!-- Level Pill Badge: Instant 1-click cycle, right-click opens full picker -->
+                    <!-- Level Pill Badge: Opens Option Picker modal to change level directly -->
                     <button type="button" 
                             class="level-badge-btn" 
                             [class]="'badge--' + item.level"
-                            (click)="cycleLevel(item, $event)"
-                            (contextmenu)="onLevelContextMenu(item, $event)"
-                            [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.clickToCycle') || 'Change level')">
+                            (click)="openLevelPicker(item, $event)"
+                            [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
                         <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
                         <app-icon name="chevron-down" [size]="10" class="level-badge-chevron" />
                     </button>

@@ -13,13 +13,14 @@ export class OfflineStreakRepository implements IStreakRepository {
     private storage = inject(StorageService);
     private supabase = inject(SupabaseService);
 
-    readonly streakData = signal<StreakData>({
+    private _streakData = signal<StreakData>({
         currentStreak: 0,
         longestStreak: 0,
         freezesRemaining: 2,
         lastActivity: null,
         practicedToday: false
     });
+    readonly streakData = this._streakData.asReadonly();
 
     readonly activityHistory = signal<string[]>([]);
     readonly isLoading = signal(false);
@@ -34,22 +35,19 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     async recordActivity(): Promise<ActivityResult | null> {
-        let result: ActivityResult | null = null;
+        // 1. Instant Optimistic Local Recording
+        const result = this.recordActivityLocally();
 
-        // 1. Optimistic Update Local (fallback to local if offline or network drops)
-        if (this.auth.isLoggedIn()) {
-            try {
-                result = await this.recordActivityOnServer();
-            } catch (err) {
-                console.warn('[StreakRepo] Network error while recording on server, falling back to local recording:', err);
-                result = this.recordActivityLocally();
-            }
-        } else {
-            result = this.recordActivityLocally();
-        }
-
-        // 2. Also ensure local log is updated for week view
+        // 2. Ensure local log is updated for week view
         this.addToLocalHistory(new Date());
+
+        // 3. Background Asynchronous Server Push
+        if (this.auth.isLoggedIn()) {
+            this.recordActivityOnServer().catch(err => {
+                console.warn('[StreakRepo] Background server record failed, saving pending sync date:', err);
+                this.markPendingStreakSync();
+            });
+        }
 
         return result;
     }
@@ -75,18 +73,25 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     async replenishFreeze(newCount: number): Promise<void> {
+        const clampedCount = Math.min(2, Math.max(0, newCount));
         this.updateLocal({
             ...this.streakData(),
-            freezesRemaining: Math.min(2, Math.max(0, newCount))
+            freezesRemaining: clampedCount
         });
         if (this.auth.isLoggedIn()) {
             const user = this.auth.user();
             if (user) {
                 try {
-                    await this.supabase.client.from('streaks').update({
-                        freezes_remaining: Math.min(2, Math.max(0, newCount)),
-                        updated_at: new Date().toISOString()
-                    }).eq('user_id', user.id);
+                    const { error: rpcErr } = await this.supabase.client.rpc('replenish_streak_freeze', {
+                        p_new_count: clampedCount
+                    });
+                    if (rpcErr) {
+                        // Fallback to direct update if RPC is not yet deployed
+                        await this.supabase.client.from('streaks').update({
+                            freezes_remaining: clampedCount,
+                            updated_at: new Date().toISOString()
+                        }).eq('user_id', user.id);
+                    }
                 } catch (err) {
                     console.warn('[StreakRepo] Failed to update freezes_remaining on server:', err);
                 }
@@ -117,10 +122,14 @@ export class OfflineStreakRepository implements IStreakRepository {
             const serverLastActivity = serverData.last_activity ? new Date(serverData.last_activity) : null;
             const serverPracticedToday = serverLastActivity ? this.isSameDay(new Date(), serverLastActivity) : false;
 
-            if (localTime > serverTime) {
-                // Local is ahead, push if practiced today
-                if (localData.practicedToday && !serverPracticedToday) {
+            const pendingDates = this.storage.get<string[]>('voca_pending_streak_dates') || [];
+            const hasPendingSync = pendingDates.length > 0;
+
+            if (localTime > serverTime || hasPendingSync) {
+                // Local is ahead or has pending offline practice dates, push to server
+                if ((localData.practicedToday && !serverPracticedToday) || hasPendingSync) {
                     await this.recordActivityOnServer();
+                    this.storage.remove('voca_pending_streak_dates');
                 }
             } else {
                 // Server is ahead or equal
@@ -165,7 +174,7 @@ export class OfflineStreakRepository implements IStreakRepository {
             }
         });
         this.auth.logoutEvent.subscribe(() => {
-            this.streakData.set({
+            this._streakData.set({
                 currentStreak: 0,
                 longestStreak: 0,
                 freezesRemaining: 2,
@@ -183,14 +192,23 @@ export class OfflineStreakRepository implements IStreakRepository {
         if (data) {
             const lastActivity = data.lastActivity ? new Date(data.lastActivity) : null;
             const practicedToday = lastActivity ? this.isSameDay(new Date(), lastActivity) : false;
-            this.streakData.set({ ...data, practicedToday });
+            this._streakData.set({ ...data, practicedToday });
         }
         this.activityHistory.set(this.storage.get<string[]>(HISTORY_KEY) || []);
     }
 
     private updateLocal(data: StreakData) {
-        this.streakData.set(data);
+        this._streakData.set(data);
         this.storage.set(STORAGE_KEY, data);
+    }
+
+    private markPendingStreakSync(): void {
+        try {
+            const todayStr = this.toLocalDateKey(new Date());
+            const pending = new Set(this.storage.get<string[]>('voca_pending_streak_dates') || []);
+            pending.add(todayStr);
+            this.storage.set('voca_pending_streak_dates', Array.from(pending));
+        } catch { }
     }
 
     private saveLocalHistory(history: string[]) {

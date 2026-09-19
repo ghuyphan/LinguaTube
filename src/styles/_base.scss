@@ -55,16 +55,32 @@ body {
    TYPOGRAPHY
    ============================================ */
 
-.text-jp {
+.text-ja,
+.text-jp,
+.text-japanese {
     font-family: var(--font-jp);
+    line-break: strict;
 }
 
-.text-cn {
+.text-zh,
+.text-cn,
+.text-chinese {
     font-family: var(--font-cn);
+    line-break: strict;
+    letter-spacing: 0.02em;
 }
 
-.text-ko {
+.text-ko,
+.text-korean {
     font-family: var(--font-ko);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.text-en,
+.text-english {
+    font-family: var(--font-sans);
+    word-spacing: normal;
 }
 
 .text-mono {
@@ -115,7 +131,7 @@ small {
 }
 
 a {
-    color: var(--accent-primary);
+    color: var(--accent-primary-text, var(--accent-primary));
     text-decoration: none;
     transition: color var(--transition-fast);
 }
@@ -131,9 +147,9 @@ ruby {
 }
 
 ruby rt {
-    font-size: 0.55em;
-    color: var(--text-muted);
-    font-weight: 400;
+    font-size: clamp(10px, 0.56em, 13px);
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
 /* ============================================

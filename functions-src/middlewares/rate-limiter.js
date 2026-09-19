@@ -62,17 +62,6 @@ function cleanMemoryCache(now) {
     }
 }
 
-/**
- * Consume one request from rate limit quota (atomic operation with in-memory fast-path)
- * 
- * @param {KVNamespace} cache - Cloudflare KV namespace
- * @param {string} clientIP - Client IP address
- * @param {RateLimitConfig} config - Rate limit configuration
- * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
- */
-export async function consumeRateLimit(cache, clientIP, config) {
-    return consumeRateLimitUnits(cache, clientIP, config, 1);
-}
 
 /**
  * Consume multiple units from rate limit quota (for batch operations)
@@ -82,9 +71,10 @@ export async function consumeRateLimit(cache, clientIP, config) {
  * @param {string} clientIP - Client IP address
  * @param {RateLimitConfig} config - Rate limit configuration
  * @param {number} units - Number of units to consume (default: 1)
+ * @param {Object} [context=null] - Execution context (e.g. Worker Event/ExecutionContext for waitUntil)
  * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
  */
-export async function consumeRateLimitUnits(cache, clientIP, config, units = 1) {
+export async function consumeRateLimitUnits(cache, clientIP, config, units = 1, context = null) {
     if (!clientIP) {
         return { allowed: true, remaining: config.max, resetAt: 0 };
     }
@@ -93,45 +83,35 @@ export async function consumeRateLimitUnits(cache, clientIP, config, units = 1) 
     const now = Date.now();
     cleanMemoryCache(now);
 
+    // 1. In-memory check (0ms, preserves KV read quota)
     let mem = memRateLimits.get(key);
-
-    // If no memory record or window expired, check KV once or start fresh
-    if (!mem || now > mem.resetAt) {
+    if (!mem || now >= mem.resetAt) {
+        // Window expired or not in memory - check KV first to restore count across isolates
         let initialCount = 0;
-        let resetAt = now + config.windowSeconds * 1000;
+        let windowResetAt = now + (config.windowSeconds * 1000);
 
         if (cache) {
             try {
                 const kvData = await cache.get(key, 'json');
-                if (kvData && now <= kvData.resetAt) {
-                    initialCount = kvData.count || 0;
-                    resetAt = kvData.resetAt;
+                if (kvData && now < kvData.resetAt) {
+                    initialCount = kvData.count;
+                    windowResetAt = kvData.resetAt;
                 }
             } catch {
-                // KV read failed or unavailable, continue with 0
+                // KV unavailable - start fresh window
             }
         }
 
-        mem = {
-            count: initialCount,
-            resetAt,
-            lastKvSync: now,
-            kvKnownCount: initialCount
-        };
+        mem = { count: initialCount, resetAt: windowResetAt, lastKvSync: now, kvKnownCount: initialCount };
         memRateLimits.set(key, mem);
     }
 
-    // Increment in-memory counter
+    // 2. Increment in memory
     mem.count += units;
-    const allowed = mem.count <= config.max;
     const remaining = Math.max(0, config.max - mem.count);
+    const allowed = mem.count <= config.max;
 
-    // Determine if we should sync to KV to preserve free tier quota (1,000 writes/day):
-    // 1. If limit exceeded (!allowed) -> sync on INITIAL breach, or throttled once every 60s
-    //    CRITICAL: Never sync on every blocked hit to prevent 429 floods from exhausting KV quota (Rule 2)
-    // 2. If approaching limit (>= 80% quota) -> sync to keep isolates tightly coordinated (throttled to 30s)
-    // 3. If client has consumed >= 50% quota AND incremented by KV_SYNC_SAMPLE_RATE (25) units since last sync -> sync
-    // Normal clients operating comfortably below 50% quota NEVER write to KV.
+    // 3. Throttled KV sync (Rule 2: Protect free tier KV write quota of 1,000/day)
     const justBreached = !allowed && (mem.count - units <= config.max);
     const blockedPeriodicSync = !allowed && (now - mem.lastKvSync >= 60 * 1000);
     const approachingLimit = allowed && mem.count >= config.max * 0.8 && (now - mem.lastKvSync >= 30 * 1000);
@@ -144,16 +124,32 @@ export async function consumeRateLimitUnits(cache, clientIP, config, units = 1) 
         mem.lastKvSync = now;
         mem.kvKnownCount = mem.count;
 
-        // Fire-and-forget sync to KV so request latency and KV quota errors never block responses
-        cache.put(key, JSON.stringify({ count: mem.count, resetAt: mem.resetAt }), {
+        // Sync to KV wrapped with waitUntil so isolate termination doesn't cancel in-flight write
+        const putPromise = cache.put(key, JSON.stringify({ count: mem.count, resetAt: mem.resetAt }), {
             expirationTtl: Math.max(60, Math.ceil((mem.resetAt - now) / 1000))
         }).catch(err => {
-            // Silently ignore KV quota or put errors
             console.warn('[RateLimit] KV put throttled or failed:', err?.message || err);
         });
+
+        if (context?.waitUntil) {
+            context.waitUntil(putPromise);
+        }
     }
 
     return { allowed, remaining, resetAt: mem.resetAt };
+}
+
+/**
+ * Consume one request from rate limit quota (atomic operation with in-memory fast-path)
+ * 
+ * @param {KVNamespace} cache - Cloudflare KV namespace
+ * @param {string} clientIP - Client IP address
+ * @param {RateLimitConfig} config - Rate limit configuration
+ * @param {Object} [context=null] - Execution context (e.g. Worker Event/ExecutionContext for waitUntil)
+ * @returns {Promise<{allowed: boolean, remaining: number, resetAt: number}>}
+ */
+export async function consumeRateLimit(cache, clientIP, config, context = null) {
+    return consumeRateLimitUnits(cache, clientIP, config, 1, context);
 }
 
 // Deprecated functions removed - use consumeRateLimit() for all rate limiting
@@ -196,7 +192,9 @@ export function getTieredConfig(baseConfig, tier) {
  */
 export function getClientIP(request) {
     return request.headers.get('CF-Connecting-IP')
-        || request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim()
+        || (request.headers.get('X-Forwarded-For') && !request.headers.get('CF-Ray')
+            ? request.headers.get('X-Forwarded-For').split(',')[0]?.trim()
+            : null)
         || null;
 }
 
@@ -229,6 +227,8 @@ export function rateLimitResponse(resetAt) {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
             ...getRateLimitHeaders(0, resetAt)
         }
     });

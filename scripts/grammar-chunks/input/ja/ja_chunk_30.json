@@ -1,6 +1,6 @@
 [
   {
-    "id": "ja_かける_43",
+    "id": "ja_n2_かける_43",
     "language": "ja",
     "pattern": "～かける",
     "title": "～かける (〜kakeru)",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "ja_がち_44",
+    "id": "ja_n2_がち_44",
     "language": "ja",
     "pattern": "～がち",
     "title": "～がち (〜gachi)",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "ja_かないかのうちに_45",
+    "id": "ja_n2_かないかのうちに_45",
     "language": "ja",
     "pattern": "～か～ないかのうちに",
     "title": "～か～ないかのうちに (〜ka〜naika no uchi ni)",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "ja_かねない_46",
+    "id": "ja_n2_かねない_46",
     "language": "ja",
     "pattern": "～かねない",
     "title": "～かねない (〜kane nai)",
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "id": "ja_かねる_47",
+    "id": "ja_n2_かねる_47",
     "language": "ja",
     "pattern": "～かねる",
     "title": "～かねる (〜kaneru)",
@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "ja_かのようだ_48",
+    "id": "ja_n2_かのようだ_48",
     "language": "ja",
     "pattern": "～かのようだ",
     "title": "～かのようだ (〜ka no you da)",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "id": "ja_かまいか_49",
+    "id": "ja_n2_かまいか_49",
     "language": "ja",
     "pattern": "～か～まいか",
     "title": "～か～まいか (〜ka 〜maika)",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "id": "ja_からこそ_50",
+    "id": "ja_n2_からこそ_50",
     "language": "ja",
     "pattern": "～からこそ",
     "title": "～からこそ (〜kara koso)",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": "ja_からして_51",
+    "id": "ja_n2_からして_51",
     "language": "ja",
     "pattern": "〜からして",
     "title": "〜からして (〜kara shite)",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "ja_からすると_52",
+    "id": "ja_n2_からすると_52",
     "language": "ja",
     "pattern": "～からすると",
     "title": "～からすると (〜kara suru to)",
@@ -320,7 +320,7 @@
     ]
   },
   {
-    "id": "ja_からといって_53",
+    "id": "ja_n2_からといって_53",
     "language": "ja",
     "pattern": "～からといって",
     "title": "～からといって (〜kara to itte)",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "id": "ja_からにかけて_54",
+    "id": "ja_n2_からにかけて_54",
     "language": "ja",
     "pattern": "～から～にかけて",
     "title": "～から～にかけて (〜kara 〜ni kakete)",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "id": "ja_からには_55",
+    "id": "ja_n2_からには_55",
     "language": "ja",
     "pattern": "～からには",
     "title": "～からには (〜kara niwa)",
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "id": "ja_から見ると_56",
+    "id": "ja_n2_から見ると_56",
     "language": "ja",
     "pattern": "～から見ると",
     "title": "～から見ると (〜kara miru to)",
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "id": "ja_から言うと_57",
+    "id": "ja_n2_から言うと_57",
     "language": "ja",
     "pattern": "～から言うと",
     "title": "～から言うと (〜kara iuto)",

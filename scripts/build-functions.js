@@ -41,32 +41,34 @@ async function build() {
     const entryPoints = routeDirs.flatMap(dir => findJsFiles(path.join(srcDir, dir)));
     console.log(`Bundling ${entryPoints.length} route functions (skipping internal modules)...\n`);
 
-    let success = 0;
-    let failed = 0;
+    const results = await Promise.all(
+        entryPoints.map(async entry => {
+            const outfile = entry.replace(srcDir, outDir);
+            fs.mkdirSync(path.dirname(outfile), { recursive: true });
 
-    for (const entry of entryPoints) {
-        const outfile = entry.replace(srcDir, outDir);
-        fs.mkdirSync(path.dirname(outfile), { recursive: true });
+            try {
+                await esbuild.build({
+                    entryPoints: [entry],
+                    bundle: true,
+                    format: 'esm',
+                    platform: 'browser',
+                    target: 'es2022',
+                    outfile,
+                    minify: true,
+                    conditions: ['worker', 'browser', 'import', 'default'],
+                    mainFields: ['browser', 'module', 'main'],
+                });
+                console.log(`✓ ${entry.replace(srcDir + '/', '')}`);
+                return { success: true };
+            } catch (e) {
+                console.error(`✗ ${entry}: ${e.message}`);
+                return { success: false, error: e };
+            }
+        })
+    );
 
-        try {
-            await esbuild.build({
-                entryPoints: [entry],
-                bundle: true,
-                format: 'esm',
-                platform: 'browser',
-                target: 'es2022',
-                outfile,
-                minify: true,
-                conditions: ['worker', 'browser', 'import', 'default'],
-                mainFields: ['browser', 'module', 'main'],
-            });
-            console.log(`✓ ${entry.replace(srcDir + '/', '')}`);
-            success++;
-        } catch (e) {
-            console.error(`✗ ${entry}: ${e.message}`);
-            failed++;
-        }
-    }
+    const success = results.filter(r => r.success).length;
+    const failed = results.filter(r => !r.success).length;
 
     console.log(`\n${success} succeeded, ${failed} failed`);
     if (failed > 0) process.exit(1);
