@@ -82,6 +82,28 @@ When modifying this repository, you **MUST** adhere to the following rules:
   - Do NOT run `npm run build:functions` or `npm run build` for frontend-only, documentation-only, or test-only changes.
 - **Single Source of Truth**: When an explicit release IS requested by the user, version metadata is managed centrally in `src/app/data/version-info.json` and updated via `npm run release [patch|minor|major|<version>]`.
 
+### ⚠️ RULE 9: Miniplayer Architecture & Container Query Isolation
+- **Dual Presentation Modes**:
+  1. **Desktop Floating PiP Card**: Docked to the bottom-right (`bottom: 24px; right: 24px; width: 360px`), 16:9 aspect ratio, upper 2px horizontal progress bar, video hover controls overlay (`.miniplayer-video-hover-overlay`), and clean single-line title/channel bottom bar (`.miniplayer-desktop-bar`).
+  2. **Mobile Floating Docked Bar**: Floats above bottom navigation (`bottom: calc(var(--bottom-nav-total-height, 5rem) + 8px); height: 60px`), `80px` thumbnail on the left, single-line title/channel in the center, play/pause and close touch buttons on the right (`.miniplayer-controls`), and full-width bottom progress track.
+- **Dedicated Miniplayer Classes (Zero Class Contamination)**:
+  - **NEVER** use generic layout utility classes like `.desktop-only` or `.mobile-only` on miniplayer elements.
+  - Always use dedicated classes: `.miniplayer-desktop-element` and `.miniplayer-mobile-element`.
+  - Generic `.desktop-only` and `.mobile-only` classes are subject to pointer media queries, container queries, and layout breakpoints that will corrupt the miniplayer.
+- **Container Query Disablement on Miniplayer**:
+  - `.video-container.is-miniplayer` MUST specify `container-type: normal !important;`.
+  - Because desktop miniplayer width is `360px`, any queries like `@container video-player (max-width: 640px)` will match if container containment is active.
+  - Video player container queries MUST also be explicitly scoped to `.video-container:not(.is-miniplayer)`.
+
+### ⚠️ RULE 10: User-Centric Release Notes (Patch Notes for Humans)
+- **Learner-First Communication**: When preparing releases and authoring `highlights` in `src/app/data/version-info.json`, **always write for everyday language learners, not software engineers**.
+- **What to Write**:
+  - Describe the **concrete user benefit, visible polish, and tactile feeling**: what looks better, what feels faster, what frustration was removed.
+  - Example: *"Restored Desktop Miniplayer: Enjoy seamless picture-in-picture playback with clean titles, instant expand on click, and easy hover controls."*
+- **What NOT to Write**:
+  - **Zero technical jargon**: Never mention CSS selectors, container queries, flexbox properties, hex colors, regex patterns, DOM event bubbling, SQL indexes, or API header names.
+- **Full 5-Language Parity**: Always provide natural, idiomatic translations across all 5 supported languages: `en` (English), `vi` (Vietnamese), `ja` (Japanese), `ko` (Korean), and `zh` (Chinese).
+
 ---
 
 ## 3. High-Level Architecture Map

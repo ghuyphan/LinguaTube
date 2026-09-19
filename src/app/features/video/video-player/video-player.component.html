@@ -53,7 +53,7 @@
       <div class="miniplayer-video-click-catcher" (click)="expandFromMiniplayer($event)"></div>
 
       <!-- Desktop Miniplayer Hover Controls on 16:9 Video (YouTube style) -->
-      <div class="miniplayer-video-hover-overlay desktop-only" (click)="expandFromMiniplayer($event)">
+      <div class="miniplayer-video-hover-overlay miniplayer-desktop-element" (click)="expandFromMiniplayer($event)">
         <div class="miniplayer-hover-top" (click)="$event.stopPropagation()">
           <button type="button" class="miniplayer-hover-btn" (click)="expandFromMiniplayer($event)"
             [attr.aria-label]="i18n.t('player.expand') || 'Expand (i)'"
@@ -593,12 +593,12 @@
     <!-- Miniplayer Bottom Bars (Desktop PiP & Mobile Docked) -->
     @if (isMiniplayer()) {
     <!-- Progress Bar Track (Desktop: between video and bottom bar) -->
-    <div class="miniplayer-progress-track desktop-only">
+    <div class="miniplayer-progress-track miniplayer-desktop-element">
       <div class="miniplayer-progress-fill" [style.width.%]="playbackProgressPercent()"></div>
     </div>
 
     <!-- Desktop Miniplayer Bottom Bar (Clean Title & Channel, no duplicated buttons) -->
-    <div class="miniplayer-desktop-bar desktop-only" (click)="expandFromMiniplayer($event)">
+    <div class="miniplayer-desktop-bar miniplayer-desktop-element" (click)="expandFromMiniplayer($event)">
       <div class="miniplayer-meta">
         <span class="miniplayer-title" [title]="youtube.currentVideo()?.title">{{ youtube.currentVideo()?.title }}</span>
         <span class="miniplayer-channel">{{ youtube.currentVideo()?.channel }}</span>
@@ -606,7 +606,7 @@
     </div>
 
     <!-- Mobile Miniplayer Docked Bar (YouTube Mobile style) -->
-    <div class="miniplayer-mobile-bar mobile-only" (click)="expandFromMiniplayer($event)">
+    <div class="miniplayer-mobile-bar miniplayer-mobile-element" (click)="expandFromMiniplayer($event)">
       <div class="miniplayer-meta">
         <span class="miniplayer-title" [title]="youtube.currentVideo()?.title">{{ youtube.currentVideo()?.title }}</span>
         <span class="miniplayer-channel">{{ youtube.currentVideo()?.channel }}</span>
@@ -624,7 +624,7 @@
     </div>
 
     <!-- Mobile progress bar along full bottom edge of card (0 to 100% width) -->
-    <div class="miniplayer-progress-track mobile-only">
+    <div class="miniplayer-progress-track miniplayer-mobile-element">
       <div class="miniplayer-progress-fill" [style.width.%]="playbackProgressPercent()"></div>
     </div>
     }
