@@ -153,10 +153,18 @@
 
         .playlist-items {
             background: var(--bg-card);
+            padding: var(--space-2xs) 0;
         }
 
         .playlist-item {
-            padding: var(--space-sm) var(--space-md);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--border-radius-md);
+            margin: 0 var(--space-2xs);
+
+            &.active {
+                background-color: var(--bg-surface);
+                border-color: var(--border-color);
+            }
         }
 
         .item-menu-btn {

@@ -179,9 +179,9 @@ graph TD
 - **Feed Error Recovery & Resilience**:
   - `VideoRecommendationService` tracks network/API failures with a reactive `hasError` signal.
   - `VideoPageComponent` renders an accessible, interactive error empty-state card with a "Retry" CTA (`refreshRecommendations()`), allowing seamless recovery from transient network issues.
-- **Responsive Mobile Queue (`.mobile-playlist-card`)**:
-  - In-flow expandable playlist bar positioned directly below the player.
-  - **Single-Video Optimization**: Hidden when `videos.length <= 1` (`showMobilePlaylistCard`), freeing up 54px vertical space for subtitles.
+- **Responsive Mobile Queue (`.mobile-playlist-card`) & Sheet Header**:
+  - In-flow compact playlist bar (~48px) positioned directly below the player with playlist metadata and expand chevron.
+  - Tapping opens the mobile `<app-bottom-sheet>` featuring a sticky `.mobile-playlist-sheet-header` with playlist info and full action toolbar (`[Shuffle]`, `[Repeat]`, `[Share]`), completely decluttering the video screen and maximizing vertical space for subtitles.
   - **Control Guarding**: Next and previous buttons are disabled when `videos.length <= 1` (unless looping) to avoid confusing dead clicks.
 
 #### VideoPlayerComponent (`video-player/`)
@@ -497,29 +497,37 @@ The application styling is organized using modular SCSS located in `src/styles/`
 - **`_layout.scss`**: Main grid, sidebar layouts, topbar header, safe area padding (`--bottom-nav-safe-area`, `env(safe-area-inset-bottom)`).
 - **`_components.scss`**: Badges, modals, dialog backdrops, pill tags, buttons.
 - **`_buttons.scss` & `_forms.scss`**: Standardized button variants (primary, secondary, danger, ghost) and input fields.
-- **Apple-Inspired Chill Pastel & Obsidian Theming**:
+- **Apple-Inspired Crisp Porcelain & Obsidian Theming**:
   Theme switching is controlled via `data-theme="dark"` or `data-theme="light"` on the `<html>` root, referencing harmonious CSS variables:
   ```scss
   :root {
-    /* Chill Pastel Light Mode */
-    --bg-primary: #FAF7F5;
-    --bg-secondary: #F2ECE7;
-    --bg-surface: #FDFBF9;
-    --text-primary: #242738;
-    --accent-primary: #F45B74;
+    /* Modern Crisp Porcelain Light Mode */
+    --bg-primary: #F3F4F7;
+    --bg-secondary: #E8EAF0;
+    --bg-surface: #F8F9FB;
+    --bg-card: #FFFFFF;
+    --bg-hover: #E2E5EC;
+    --border-color: #E2E5EC;
+    --text-primary: #181D27;
+    --text-secondary: #535862;
+    --accent-primary: #E84562;
     --word-new: #FFEBF0;
-    --word-new-text: #DF3D5B;
-    --word-new-border: rgba(223, 61, 91, 0.18);
+    --word-new-text: #C42B47;
+    --word-new-border: rgba(196, 43, 71, 0.18);
   }
 
   [data-theme="dark"] {
-    /* Rich Obsidian Dark Mode */
-    --bg-primary: #0D1017;
-    --bg-secondary: #141923;
-    --bg-surface: #1B2230;
-    --text-primary: #F0F2F8;
+    /* Rich Obsidian Dark Mode (Apple & Linear Inspired) */
+    --bg-primary: #0D0F14;
+    --bg-secondary: #13161F;
+    --bg-surface: #1E222D;
+    --bg-card: #181B24;
+    --bg-hover: #252A37;
+    --border-color: #272D3B;
+    --text-primary: #F1F3F7;
+    --text-secondary: #969EB2;
     --accent-primary: #FF6B82;
-    --word-new: rgba(255, 120, 145, 0.13);
+    --word-new: rgba(255, 120, 145, 0.14);
     --word-new-text: #FFA4B5;
     --word-new-border: rgba(255, 120, 145, 0.24);
   }

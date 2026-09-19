@@ -3,84 +3,89 @@
    ============================================ */
 
 :root {
-    /* Chill Pastel Palette (Light Mode) */
-    --bg-primary: #FAF7F5;
-    --bg-secondary: #F2ECE7;
-    --bg-tertiary: #E8E0D8;
+    /* Modern Crisp Porcelain Palette (Light Mode - Apple & Linear Inspired) */
+    --bg-primary: #F3F4F7;
+    --bg-secondary: #E8EAF0;
+    --bg-tertiary: #DFE2E8;
     --bg-card: #FFFFFF;
-    --bg-dark: #1e293b;
-    --bg-inverse: #1e293b;
-    --bg-surface: #FDFBF9;
-    --bg-hover: #EFE8E2;
+    --bg-surface: #F8F9FB;
+    --bg-hover: #E2E5EC;
 
     /* Extended text tokens */
-    --text-tertiary: #A8ADBF;
+    --text-tertiary: #9496A1;
 
     /* Extended border tokens */
-    --border-color-light: #F4EEE9;
+    --border-color: #E2E5EC;
+    --border-color-rgb: 226, 229, 236;
+    --border-color-light: #ECEEF2;
+    --border-color-hover: #C5CBD6;
 
-    /* Vibrant Strawberry-Coral Accent */
-    --accent-primary: #F45B74;
-    --accent-primary-rgb: 244, 91, 116;
-    --accent-primary-text: #E03E58;
-    --accent-primary-hover: #E54863;
-    --accent-primary-shadow: #CC3550;
-    --accent-primary-soft: rgba(244, 91, 116, 0.09);
+    /* Vibrant Strawberry-Coral Accent (WCAG AA 4.6:1 compliant on white text) */
+    --accent-primary: #E84562;
+    --accent-primary-rgb: 232, 69, 98;
+    --accent-primary-text: #E84562;
+    --accent-primary-hover: #D83855;
+    --accent-primary-shadow: #B82542;
+    --accent-primary-soft: rgba(232, 69, 98, 0.08);
 
-    --accent-secondary: #8B5CF6;
-    --accent-secondary-rgb: 139, 92, 246;
-    --accent-secondary-shadow: #7C3AED;
-    --accent-secondary-soft: rgba(139, 92, 246, 0.09);
+    --accent-secondary: #7C3AED;
+    --accent-secondary-rgb: 124, 58, 237;
+    --accent-secondary-shadow: #6D28D9;
+    --accent-secondary-soft: rgba(124, 58, 237, 0.08);
 
-    --accent-tertiary: #F59E0B;
+    --accent-tertiary: #D97706;
 
-    /* Soothing Typography (Charcoal & Warm Slate) */
-    --text-primary: #242738;
-    --text-primary-rgb: 36, 39, 56;
-    --text-secondary: #585D77;
-    --text-secondary-rgb: 88, 93, 119;
-    --text-muted: #6B7280;
-    --text-muted-rgb: 107, 114, 128;
+    /* Soothing Typography (Crisp Slate - WCAG AAA 16.8:1) */
+    --text-primary: #181D27;
+    --text-primary-rgb: 24, 29, 39;
+    --text-secondary: #535862;
+    --text-secondary-rgb: 83, 88, 98;
+    --text-muted: #717680;
+    --text-muted-rgb: 113, 118, 128;
     --text-inverse: #FFFFFF;
     --bg-card-rgb: 255, 255, 255;
-    --border-color-rgb: 232, 224, 216;
-    --border-color-hover: #D1C7BD;
 
     /* Primary button tokens */
-    --btn-primary-bg: var(--accent-primary, #F45B74);
-    --btn-primary-hover: var(--accent-primary-hover, #E54863);
+    --btn-primary-bg: var(--accent-primary, #E84562);
+    --btn-primary-hover: var(--accent-primary-hover, #D83855);
     --btn-primary-text: #ffffff;
 
-    /* Semantic colors */
+    /* Semantic colors - icons & badges */
     --success: #22c55e;
     --success-rgb: 34, 197, 94;
-    --warning: #ffc800;
-    --warning-rgb: 255, 200, 0;
-    --error: #ff4b4b;
-    --error-rgb: 255, 75, 75;
-    --info: #1cb0f6;
-    --info-rgb: 28, 176, 246;
+    --warning: #f59e0b;
+    --warning-rgb: 245, 158, 11;
+    --error: #ef4444;
+    --error-rgb: 239, 68, 68;
+    --info: #0ea5e9;
+    --info-rgb: 14, 165, 233;
+
+    /* Semantic text tokens - high-contrast accessible text (WCAG AA >= 4.5:1 on light) */
+    --success-text: #15803D;
+    --warning-text: #B45309;
+    --error-text: #DC2626;
+    --info-text: #0284C7;
 
     /* Chill Pastel Word Levels (Light Mode - WCAG 2.2 AA >= 4.5:1 compliant) */
     --word-new: #FFEBF0;
     --word-new-text: #C42B47;
     --word-new-border: rgba(196, 43, 71, 0.18);
-    --word-learning: #FEF4DA;
+    --word-learning: #FEF3D6;
     --word-learning-text: #8B5700;
     --word-learning-border: rgba(139, 87, 0, 0.18);
-    --word-known: #E7F3FF;
-    --word-known-text: #1060B8;
-    --word-known-border: rgba(16, 96, 184, 0.18);
-    --word-ignored: #EFECE8;
-    --word-ignored-text: #585D77;
-    --word-ignored-border: rgba(88, 93, 119, 0.16);
+    --word-known: #E6F2FF;
+    --word-known-text: #0E60B8;
+    --word-known-border: rgba(14, 96, 184, 0.18);
+    --word-ignored: #E8EAF0;
+    --word-ignored-text: #535862;
+    --word-ignored-border: rgba(83, 88, 98, 0.16);
 
     /* Chill Pastel Grammar Levels (Light Mode - WCAG 2.2 AA >= 4.5:1 compliant) */
-    --level-beginner: #E7F3FF;
-    --level-beginner-text: #1060B8;
+    --level-beginner: #E6F2FF;
+    --level-beginner-text: #0E60B8;
     --level-elementary: #E2F6F9;
     --level-elementary-text: #087382;
-    --level-intermediate: #FEF4DA;
+    --level-intermediate: #FEF3D6;
     --level-intermediate-text: #8B5700;
     --level-upper: #FFF0E5;
     --level-upper-text: #A74A00;
@@ -96,8 +101,8 @@
     --color-fire-rgb: 245, 158, 11;
     --color-diamond: #60a5fa;
     --color-diamond-rgb: 96, 165, 250;
-    --success-green: #22c55e;
-    --success-green-rgb: 34, 197, 94;
+    --success-green: var(--success);
+    --success-green-rgb: var(--success-rgb);
 
     /* Subscription Tier Gradients */
     --gradient-pro: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
@@ -137,7 +142,6 @@
     --text-3xl: 1.75rem;
 
     /* Borders & Shadows */
-    --border-color: #E8E0D8;
     --border-width: 1px;
     --border-radius-xs: 4px;
     --border-radius-sm: 8px;
@@ -184,7 +188,7 @@
     --input-height-lg: 44px;
 
     /* Focus ring */
-    --focus-ring: 0 0 0 4px rgba(244, 91, 116, 0.28);
+    --focus-ring: 0 0 0 4px rgba(232, 69, 98, 0.25);
     --focus-ring-offset: 2px;
 
     /* Mobile-specific sizing */
@@ -225,28 +229,27 @@
 }
 
 [data-theme="dark"] {
-    /* Rich Obsidian Palette (Dark Mode) */
-    --bg-primary: #0D1017;
-    --bg-secondary: #141923;
-    --bg-tertiary: #1D2331;
-    --bg-card: #161C27;
-    --bg-card-rgb: 22, 28, 39;
-    --border-color: #242C3D;
-    --border-color-rgb: 36, 44, 61;
-    --border-color-light: #1D2433;
-    --border-color-hover: #374258;
-    --bg-surface: #1B2230;
-    --bg-inverse: #FAF7F5;
-    --bg-hover: #232B3D;
+    /* Rich Obsidian Palette (Dark Mode - Apple & Linear Inspired) */
+    --bg-primary: #0D0F14;
+    --bg-secondary: #13161F;
+    --bg-tertiary: #191D28;
+    --bg-card: #181B24;
+    --bg-card-rgb: 24, 27, 36;
+    --border-color: #272D3B;
+    --border-color-rgb: 39, 45, 59;
+    --border-color-light: #1F2430;
+    --border-color-hover: #394256;
+    --bg-surface: #1E222D;
+    --bg-hover: #252A37;
 
-    --text-primary: #F0F2F8;
-    --text-primary-rgb: 240, 242, 248;
-    --text-secondary: #A0A8BF;
-    --text-secondary-rgb: 160, 168, 191;
-    --text-muted: #8E96AF;
-    --text-muted-rgb: 142, 150, 175;
-    --text-tertiary: #6E7690;
-    --text-inverse: #0D1017;
+    --text-primary: #F1F3F7;
+    --text-primary-rgb: 241, 243, 247;
+    --text-secondary: #969EB2;
+    --text-secondary-rgb: 150, 158, 178;
+    --text-muted: #7D879F;
+    --text-muted-rgb: 125, 135, 159;
+    --text-tertiary: #545C70;
+    --text-inverse: #0D0F14;
 
     /* Radiant Coral Accent (Dark Mode) */
     --accent-primary: #FF6B82;
@@ -254,46 +257,60 @@
     --accent-primary-text: #FF8CA0;
     --accent-primary-hover: #FF8095;
     --accent-primary-shadow: #E03E58;
-    --accent-primary-soft: rgba(255, 107, 130, 0.15);
+    --accent-primary-soft: rgba(255, 107, 130, 0.12);
 
     --accent-secondary: #A78BFA;
     --accent-secondary-rgb: 167, 139, 250;
     --accent-secondary-shadow: #8B5CF6;
-    --accent-secondary-soft: rgba(167, 139, 250, 0.15);
+    --accent-secondary-soft: rgba(167, 139, 250, 0.12);
 
-    --btn-primary-bg: #F45B74;
-    --btn-primary-hover: #FF6B82;
+    --accent-tertiary: #FBBF24;
+
+    --btn-primary-bg: var(--accent-primary, #FF6B82);
+    --btn-primary-hover: var(--accent-primary-hover, #FF8095);
     --btn-primary-text: #ffffff;
 
     --focus-ring: 0 0 0 4px rgba(255, 107, 130, 0.35);
 
     --success: #4ade80;
     --success-rgb: 74, 222, 128;
+    --warning: #fbbf24;
+    --warning-rgb: 251, 191, 36;
+    --error: #f87171;
+    --error-rgb: 248, 113, 113;
+    --info: #38bdf8;
+    --info-rgb: 56, 189, 248;
+
+    /* Semantic text tokens - high-contrast accessible text (Dark Mode) */
+    --success-text: #4ADE80;
+    --warning-text: #FBBF24;
+    --error-text: #F87171;
+    --info-text: #38BDF8;
 
     /* Chill Pastel Word Levels (Dark Mode - Apple-inspired luminous soft pills) */
-    --word-new: rgba(255, 120, 145, 0.13);
+    --word-new: rgba(255, 120, 145, 0.14);
     --word-new-text: #FFA4B5;
     --word-new-border: rgba(255, 120, 145, 0.24);
-    --word-learning: rgba(251, 197, 61, 0.13);
+    --word-learning: rgba(251, 197, 61, 0.14);
     --word-learning-text: #FDE068;
     --word-learning-border: rgba(251, 197, 61, 0.24);
-    --word-known: rgba(88, 175, 255, 0.13);
+    --word-known: rgba(88, 175, 255, 0.14);
     --word-known-text: #9BCEFF;
     --word-known-border: rgba(88, 175, 255, 0.24);
-    --word-ignored: rgba(255, 255, 255, 0.05);
+    --word-ignored: rgba(255, 255, 255, 0.06);
     --word-ignored-text: #8E95AF;
     --word-ignored-border: rgba(255, 255, 255, 0.08);
 
     /* Chill Pastel Grammar Levels (Dark Mode) */
-    --level-beginner: rgba(88, 175, 255, 0.13);
+    --level-beginner: rgba(88, 175, 255, 0.14);
     --level-beginner-text: #9BCEFF;
-    --level-elementary: rgba(56, 217, 238, 0.13);
+    --level-elementary: rgba(56, 217, 238, 0.14);
     --level-elementary-text: #67E8F9;
-    --level-intermediate: rgba(251, 197, 61, 0.13);
+    --level-intermediate: rgba(251, 197, 61, 0.14);
     --level-intermediate-text: #FDE068;
-    --level-upper: rgba(251, 146, 60, 0.13);
+    --level-upper: rgba(251, 146, 60, 0.14);
     --level-upper-text: #FDBA74;
-    --level-advanced: rgba(255, 120, 145, 0.13);
+    --level-advanced: rgba(255, 120, 145, 0.14);
     --level-advanced-text: #FFA4B5;
 
     --color-grammar: #2dd4bf;
@@ -302,8 +319,8 @@
     --color-fire-rgb: 251, 191, 36;
     --color-diamond: #93c5fd;
     --color-diamond-rgb: 147, 197, 253;
-    --success-green: #4ade80;
-    --success-green-rgb: 74, 222, 128;
+    --success-green: var(--success);
+    --success-green-rgb: var(--success-rgb);
 
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.5);

@@ -663,7 +663,7 @@
     position: fixed;
     left: 4.75rem;
     bottom: 1.25rem;
-    width: 280px;
+    width: 300px;
     max-width: calc(100vw - 5.5rem);
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -676,6 +676,7 @@
     z-index: 1050;
     animation: popover-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     box-sizing: border-box;
+    overflow: hidden;
 
     .stats-popover__header {
         display: flex;
@@ -809,8 +810,10 @@
 
     .stats-popover__metrics {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
 
         .metric-pill {
             display: flex;
@@ -823,6 +826,9 @@
             cursor: pointer;
             text-align: left;
             position: relative;
+            min-width: 0;
+            overflow: hidden;
+            box-sizing: border-box;
             transition: all var(--transition-fast);
 
             @media (hover: hover) {
@@ -858,6 +864,7 @@
                 flex-direction: column;
                 min-width: 0;
                 flex: 1;
+                overflow: hidden;
 
                 .metric-label {
                     font-size: 0.6875rem;
@@ -874,6 +881,8 @@
                     color: var(--text-primary);
                     line-height: 1.2;
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }

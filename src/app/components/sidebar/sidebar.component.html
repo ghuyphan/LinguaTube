@@ -326,12 +326,13 @@
                 }
             </button>
 
-            <button class="metric-pill" (click)="onPopoverAiCreditsClick()">
+            <button class="metric-pill" (click)="onPopoverAiCreditsClick()"
+                [attr.title]="(i18n.t('subtitle.aiCredits') || 'Audio Sync Passes') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                 <div class="metric-icon-box metric-icon-box--diamond">
                     <app-icon name="diamond" [size]="16" />
                 </div>
                 <div class="metric-info">
-                    <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'Audio Sync Passes' }}</span>
+                    <span class="metric-label">{{ i18n.t('subtitle.diamonds') || 'Diamonds' }}</span>
                     <span class="metric-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </div>
             </button>
