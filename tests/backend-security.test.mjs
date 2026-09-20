@@ -1712,6 +1712,78 @@ test('CSP Headers: connect-src allows all external origins used by fonts, thumbn
   }
 });
 
+test('Recommendation Engine: rankVideos applies multi-factor learner signals accurately', async () => {
+  const { rankVideos, declusterChannels, getDeterministicJitter } = await import('../functions-src/services/recommendation.service.js');
+
+  const candidates = [
+    { videoId: 'vid_completed', title: 'Japanese Beginner Lesson', channel: 'Channel A', duration: 300, tier: 'beginner' },
+    { videoId: 'vid_in_progress', title: 'Intermediate Conversation', channel: 'Channel B', duration: 400, tier: 'intermediate' },
+    { videoId: 'vid_vocab_match', title: 'Learn 単語 and 文法 in 10 minutes', channel: 'Channel C', duration: 500, tier: 'elementary' },
+    { videoId: 'vid_favorite_channel', title: 'Daily Life in Tokyo', channel: 'Favorite Channel', duration: 350, tier: 'intermediate' },
+    { videoId: 'vid_unwatched', title: 'Tokyo Travel Guide', channel: 'Channel D', duration: 450, tier: 'intermediate' },
+    { videoId: 'vid_too_long', title: '3 Hour Marathon Grammar Study', channel: 'Channel E', duration: 10800, tier: 'beginner' }
+  ];
+
+  const context = {
+    watched: ['vid_completed'],
+    inProgress: { 'vid_in_progress': 45 },
+    favorites: ['vid_favorite_channel'],
+    topChannels: ['Favorite Channel', 'Channel C'],
+    dominantTier: 'intermediate',
+    vocabWords: ['単語', '文法']
+  };
+
+  const ranked = rankVideos(candidates, {
+    language: 'ja',
+    tier: 'all',
+    context,
+    sessionSeed: 4242
+  });
+
+  assert.equal(ranked.length, candidates.length);
+
+  // 1. Check vocab matching
+  const vocabMatched = ranked.find(v => v.videoId === 'vid_vocab_match');
+  assert.ok(vocabMatched, 'Vocab matched video must exist');
+  assert.ok(Array.isArray(vocabMatched.matchedWords), 'matchedWords array must be attached');
+  assert.ok(vocabMatched.matchedWords.includes('単語'));
+  assert.ok(vocabMatched.matchedWords.includes('文法'));
+
+  // 2. Check resume progress attached
+  const inProg = ranked.find(v => v.videoId === 'vid_in_progress');
+  assert.equal(inProg.resumeProgress, 45);
+
+  // 3. Completed and marathon video must be heavily demoted compared to unwatched / vocab / resume
+  const completedIdx = ranked.findIndex(v => v.videoId === 'vid_completed');
+  const tooLongIdx = ranked.findIndex(v => v.videoId === 'vid_too_long');
+  const vocabIdx = ranked.findIndex(v => v.videoId === 'vid_vocab_match');
+  const inProgIdx = ranked.findIndex(v => v.videoId === 'vid_in_progress');
+
+  assert.ok(vocabIdx < completedIdx, 'Vocab match should rank higher than completed video');
+  assert.ok(inProgIdx < completedIdx, 'In-progress resume should rank higher than completed video');
+  assert.ok(tooLongIdx > 2, 'Marathon clip (>2h) should be demoted');
+
+  // 4. Deterministic jitter check across offsets
+  const jitter1 = getDeterministicJitter('test_video', 999);
+  const jitter2 = getDeterministicJitter('test_video', 999);
+  const jitterOtherSeed = getDeterministicJitter('test_video', 111);
+  assert.equal(jitter1, jitter2, 'Jitter must be strictly deterministic for same video and seed');
+  assert.notEqual(jitter1, jitterOtherSeed, 'Jitter should change when session seed changes');
+  assert.ok(jitter1 >= -4.0 && jitter1 <= 4.0, 'Jitter must be in [-4, 4] range');
+
+  // 5. Anti-clustering check
+  const clustered = [
+    { videoId: 'v1', channel: 'Channel X', title: 'Video 1' },
+    { videoId: 'v2', channel: 'Channel X', title: 'Video 2' },
+    { videoId: 'v3', channel: 'Channel Y', title: 'Video 3' },
+    { videoId: 'v4', channel: 'Channel X', title: 'Video 4' }
+  ];
+  const declustered = declusterChannels(clustered);
+  assert.equal(declustered[0].channel, 'Channel X');
+  assert.equal(declustered[1].channel, 'Channel Y', 'Adjacent same-channel candidate must be separated');
+});
+
+
 
 
 

@@ -9,12 +9,23 @@
             <app-icon name="history" [size]="20" class="panel-header__icon" />
             <h2 class="panel-header__title">{{ i18n.t('history.title') }}</h2>
           </div>
+          @if (historyItems().length > 0) {
+            <!-- Mobile-only: Clear history in header -->
+            <button
+              type="button"
+              class="action-icon-btn action-icon-btn--danger mobile-only"
+              (click)="confirmClear()"
+              [attr.aria-label]="i18n.t('history.clearAll')"
+              [title]="i18n.t('history.clearAll')">
+              <app-icon name="trash-2" [size]="15" />
+            </button>
+          }
         </div>
       </div>
 
       <!-- Stable, Solid Filter Toolbar (Zero translucency, compact 2-row layout) -->
       <div class="panel-toolbar">
-        <!-- Row 1: Segmented View Switcher & Action Group -->
+        <!-- Row 1: Segmented View Switcher -->
         <div class="panel-toolbar__top">
           <div class="segmented-control" style="--tab-count: 2;" [style.--active-index]="filter() === 'all' ? 0 : 1" role="tablist">
             <button
@@ -43,8 +54,9 @@
             </button>
           </div>
 
-          <div class="panel-toolbar__actions">
-            @if (historyItems().length > 0) {
+          <!-- Desktop-only: Inline with tabs -->
+          @if (historyItems().length > 0) {
+            <div class="panel-toolbar__actions desktop-only">
               <button
                 type="button"
                 class="action-icon-btn action-icon-btn--danger"
@@ -53,8 +65,8 @@
                 [title]="i18n.t('history.clearAll')">
                 <app-icon name="trash-2" [size]="15" />
               </button>
-            }
-          </div>
+            </div>
+          }
         </div>
 
         <!-- Row 2: Single-Row Horizontal Scrollable Filter Strip -->
@@ -193,23 +205,39 @@
             <app-icon name="layers" [size]="18" class="panel-header__icon" />
             <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('history.overview') || 'Overview' }}</h3>
           </div>
+          <span class="badge badge--primary">{{ historySubtitle() }}</span>
         </div>
       </div>
 
-      <div class="history-metric-row">
-        <div class="history-metric-item">
-          <span class="history-metric-num">{{ historyItems().length }}</span>
-          <span class="history-metric-label">{{ i18n.t('history.all') }}</span>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-value">{{ historyItems().length }}</span>
+          <span class="stat-label">{{ i18n.t('history.all') }}</span>
         </div>
-        <div class="history-metric-item">
-          <span class="history-metric-num">{{ completedCount() }}</span>
-          <span class="history-metric-label">{{ i18n.t('history.completed') }}</span>
+        <div class="stat-item">
+          <span class="stat-value stat-completed">{{ completedCount() }}</span>
+          <span class="stat-label">{{ i18n.t('history.completed') }}</span>
         </div>
-        <div class="history-metric-item">
-          <span class="history-metric-num stat-favorite">{{ favorites().length }}</span>
-          <span class="history-metric-label">{{ i18n.t('history.favorites') }}</span>
+        <div class="stat-item">
+          <span class="stat-value stat-favorite">{{ favorites().length }}</span>
+          <span class="stat-label">{{ i18n.t('history.favorites') }}</span>
         </div>
       </div>
+
+      @if (recentItem(); as recent) {
+        <button type="button" class="btn btn-primary sidebar-action-btn" (click)="resumeVideo(recent.video_id)">
+          <app-icon name="play" [size]="16" />
+          <span>{{ i18n.t('history.continueWatching') || 'Continue' }}</span>
+        </button>
+      } @else {
+        <div class="sidebar-empty-box">
+          <p class="sidebar-empty-desc">{{ i18n.t('history.noHistoryHint') || 'Videos you watch will appear here' }}</p>
+          <a routerLink="/video" class="btn btn-secondary btn-sm sidebar-action-btn">
+            <app-icon name="video" [size]="14" />
+            <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
+          </a>
+        </div>
+      }
 
       @if (auth.isInitialized() && !auth.isLoggedIn()) {
         <div class="sync-hint">

@@ -1797,7 +1797,7 @@ ruby rt {
 .desktop-only {
     display: inline-flex;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
         display: none !important;
     }
 }
@@ -1805,7 +1805,7 @@ ruby rt {
 .mobile-only {
     display: none;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
         display: inline-flex !important;
     }
 }

@@ -7,6 +7,8 @@
  * - D1: Persistent storage (video_languages, no_transcript_cache)
  */
 
+import { rankVideos } from '../services/recommendation.service.js';
+
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
 
@@ -490,7 +492,7 @@ function shuffleArray(arr) {
     return copy;
 }
 
-export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false, offset = 0, query = null) {
+export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false, offset = 0, query = null, options = {}) {
     if (!lang) return [];
 
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
@@ -498,9 +500,13 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
     const cleanQuery = typeof query === 'string' && query.trim() ? query.trim().slice(0, 100) : null;
     const shouldShuffle = cleanQuery ? false : shuffle;
+    const { context = null, sessionSeed = null } = (typeof options === 'object' && options !== null) ? options : {};
+
+    // For server-side ranking, retrieve an expanded candidate pool (80–120 candidates)
+    // so we evaluate candidates across the catalog rather than just safeOffset + safeLimit
     const candidateLimit = cleanQuery
         ? Math.max(safeOffset + safeLimit + 20, 50)
-        : Math.max((safeOffset + safeLimit) * (shouldShuffle ? 8 : (targetTier ? 5 : 2)), shouldShuffle ? 120 : 60);
+        : Math.max(safeOffset + safeLimit + 80, 100);
     const videoMap = new Map();
 
     // 1. Query D1 video_languages table (primary metadata index)
@@ -534,10 +540,10 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             const { results } = await db.prepare(sql).bind(...bindings).all();
 
             if (results && Array.isArray(results)) {
-                // When refresh is requested, randomize catalog candidates for variety and discovery,
+                // When refresh is requested and no deterministic seed is active, randomize catalog candidates
                 // BUT pin the top 2 newest/recently updated additions at the front so newly transcribed videos are never buried
                 let rows = results;
-                if (shouldShuffle && results.length > 2) {
+                if (shouldShuffle && results.length > 2 && sessionSeed === null) {
                     const pinnedCount = Math.min(2, results.length);
                     const pinned = results.slice(0, pinnedCount);
                     const shufflable = results.slice(pinnedCount);
@@ -648,22 +654,27 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     }
                 }
 
+                // Target candidate collection count
+                const targetCandidateCount = cleanQuery
+                    ? (safeOffset + safeLimit)
+                    : Math.max(safeOffset + safeLimit + 40, 80);
+
                 // Process candidates concurrently in small pools (8 at a time) to avoid sequential R2 HEAD latency
                 const POOL_SIZE = 8;
                 for (let i = 0; i < candidateRows.length; i += POOL_SIZE) {
                     const pool = candidateRows.slice(i, i + POOL_SIZE);
                     await Promise.all(pool.map(r => processRow(r)));
-                    if (videoMap.size >= safeOffset + safeLimit) {
+                    if (videoMap.size >= targetCandidateCount) {
                         break;
                     }
                 }
 
                 // Pass 2: Fill remaining slots with deferred rows if needed
-                if (videoMap.size < safeOffset + safeLimit && deferredRows.length > 0) {
+                if (videoMap.size < targetCandidateCount && deferredRows.length > 0) {
                     for (let i = 0; i < deferredRows.length; i += POOL_SIZE) {
                         const pool = deferredRows.slice(i, i + POOL_SIZE);
                         await Promise.all(pool.map(r => processRow(r)));
-                        if (videoMap.size >= safeOffset + safeLimit) {
+                        if (videoMap.size >= targetCandidateCount) {
                             break;
                         }
                     }
@@ -675,7 +686,14 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     }
 
     const allMatched = Array.from(videoMap.values());
-    return allMatched.slice(safeOffset, safeOffset + safeLimit);
+    const ranked = rankVideos(allMatched, {
+        language: lang,
+        tier: targetTier,
+        context,
+        sessionSeed
+    });
+
+    return ranked.slice(safeOffset, safeOffset + safeLimit);
 }
 
 /**

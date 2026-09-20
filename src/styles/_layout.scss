@@ -105,6 +105,13 @@ body::-webkit-scrollbar {
     padding-right: max(var(--space-lg), env(safe-area-inset-right));
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding-left: max(var(--space-md), env(safe-area-inset-left));
+        padding-right: max(var(--space-md), env(safe-area-inset-right));
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         padding-left: max(var(--space-sm), env(safe-area-inset-left));
@@ -423,7 +430,7 @@ body::-webkit-scrollbar {
 }
 
 .mobile-only {
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 768px),
@@ -434,6 +441,10 @@ body::-webkit-scrollbar {
 
     .mobile-only {
         display: block;
+
+        &:is(button, .btn, .action-icon-btn, .create-playlist-btn) {
+            display: inline-flex !important;
+        }
     }
 }
 

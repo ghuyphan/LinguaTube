@@ -10,6 +10,11 @@
                         <app-icon name="list-video" [size]="20" class="panel-header__icon" />
                         <h2 class="panel-header__title">{{ i18n.t('playlist.title') }}</h2>
                     </div>
+                    <!-- Mobile-only header action button -->
+                    <button type="button" class="btn btn-primary btn-sm create-playlist-btn mobile-only" (click)="showCreateDialog.set(true)"
+                        [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
+                        <app-icon name="plus" [size]="15" />
+                    </button>
                 </div>
             </div>
 
@@ -37,7 +42,8 @@
                         </button>
                     </div>
 
-                    <div class="panel-toolbar__actions">
+                    <!-- Desktop-only: Inline with tabs -->
+                    <div class="panel-toolbar__actions desktop-only">
                         <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
                             [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
                             <app-icon name="plus" [size]="14" />
@@ -362,22 +368,66 @@
 
     <!-- Desktop Sidebar (Matches history-page / dictionary-page design) -->
     <aside class="page-layout__sidebar desktop-only">
-        <!-- Card 1: New Playlist & Active Playlist -->
+        <!-- Card 1: Playlists Overview & Active Playlist -->
         <div class="card sidebar-card">
             <div class="panel-header">
                 <div class="panel-header__row">
                     <div class="panel-header__left">
                         <app-icon name="list-video" [size]="18" class="panel-header__icon" />
-                        <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('playlist.myPlaylists') }}</h3>
+                        <h3 class="panel-header__title" style="font-size: 0.9375rem;">{{ i18n.t('history.overview') || 'Overview' }}</h3>
                     </div>
+                    <span class="badge badge--primary">{{ playlistSubtitle() }}</span>
                 </div>
             </div>
 
+            <!-- Overview Metrics Grid (Standardized across all library views) -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value stat-new">{{ playlists().length }}</span>
+                    <span class="stat-label">{{ i18n.t('playlist.myPlaylists') }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value stat-known">{{ communityPlaylists().length }}</span>
+                    <span class="stat-label">{{ i18n.t('playlist.community') }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value stat-learning">{{ totalVideosCount() }}</span>
+                    <span class="stat-label">{{ i18n.t('playlist.videos') }}</span>
+                </div>
+            </div>
+
+            <!-- Active Playlist (Now Playing) Banner -->
             @if (activePlaylist(); as active) {
-            <div class="active-playlist-banner" (click)="openPlaylistDetail(active)">
+            <div class="active-playlist-banner" (click)="openPlaylistDetail(active)" (keydown.enter)="openPlaylistDetail(active)" (keydown.space)="openPlaylistDetail(active); $event.preventDefault()" [attr.role]="'button'" [attr.tabindex]="0" [attr.aria-label]="i18n.t('playlist.viewPlaylist') || 'View Playlist'" [title]="i18n.t('playlist.viewPlaylist') || 'View Playlist'">
+                <div class="active-playlist-banner__thumb" (click)="resumeActivePlaylist(); $event.stopPropagation()" [title]="i18n.t('playlist.resume') || 'Resume Playback'">
+                    @if (getActiveThumbnail(active)) {
+                    <img [src]="getActiveThumbnail(active)" [alt]="active.title" loading="lazy" decoding="async" />
+                    } @else {
+                    <div class="active-playlist-banner__thumb-placeholder">
+                        <app-icon name="list-video" [size]="20" />
+                    </div>
+                    }
+                    <div class="card-play-overlay">
+                        <div class="play-icon-circle">
+                            <app-icon name="play" [size]="12" />
+                        </div>
+                    </div>
+                    @if (getActivePlaylistPercent() > 0) {
+                    <div class="progress-bar">
+                        <div class="progress-fill" [style.width.%]="getActivePlaylistPercent()"></div>
+                    </div>
+                    }
+                </div>
+
                 <div class="active-playlist-info">
-                    <span class="active-playlist-label">{{ i18n.t('playlist.nowPlaying') || 'Active Series' }}</span>
-                    <span class="active-playlist-title">{{ active.title }}</span>
+                    <div class="active-playlist-status">
+                        <span class="status-pulse-dot"></span>
+                        <span class="active-playlist-label">{{ i18n.t('playlist.nowPlaying') || 'Now Playing' }}</span>
+                    </div>
+                    <span class="active-playlist-title" [title]="active.title">{{ active.title }}</span>
+                    <span class="active-playlist-meta">
+                        {{ currentDisplayIndex() }}/{{ active.videos.length || active.videoIds.length || 0 }} {{ i18n.t('playlist.videos') }}
+                    </span>
                 </div>
             </div>
             }

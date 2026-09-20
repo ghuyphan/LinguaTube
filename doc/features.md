@@ -516,15 +516,16 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Verified Database Transcript Video Recommendations (`VideoRecommendationService`)**:
   - Solves the cold-start problem: learners don't need a YouTube URL ready on their clipboard to start practicing.
   - **Pre-Processed & Instant (<100ms)**: Videos are sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Zero scraping delay, zero risk of missing captions, and zero AI Diamond credit consumption.
-  - **Server-Side Difficulty Level Filtering & Offset Pagination**: Supports querying by proficiency tier and offset (`GET /api/recommended-videos?lang={lang}&tier={tier}&limit=16&offset={offset}`). Resolves tiers via D1 `levels` JSON and metadata regex, ensuring continuous shelves of level-matched videos without sparse results. Server candidate gathering applies creator variety capping to avoid single-channel domination.
-  - **Intelligent Multi-Factor "For You" Ranking Engine**:
-    - **Offline-First Privacy Scoring**: Because watch history and vocabulary notebooks are stored client-side for user privacy, candidate scoring executes entirely on the client in $<5\text{ms}$ with zero network or database overhead.
+  - **Server-Side Edge Recommendation & Ranking Engine (`recommendation.service.js`)**:
+    - **Global Candidate Pool & Scoring**: Sourced from Cloudflare D1 (`video_languages`) and R2 permanent transcripts. Instead of localized client-only window sorting, the server pulls 80–120 candidates, scores them across the entire database slice in V8 worker memory ($<1.5\text{ms}$), applies anti-clustering, and returns cleanly paginated batches with deterministic `sessionSeed`.
+    - **Learner Context Integration (`POST /api/recommended-videos`)**: The client passes a compact digest (recent watched IDs, in-progress map, top channels, active SRS words) so personalization runs globally without requiring slow Supabase joins or exposing private data.
     - **Watch History & In-Progress Resume**: Unwatched videos receive $+40$ exploration bonus. In-progress videos receive $+35$ resume bonus with attached exact `resumeProgress` percentage. Completed videos ($\ge 85\%$) are demoted by $-70$ points to prevent feed stagnation. Favorite videos receive $+20$ points.
-    - **Creator Affinity**: Detects channels the user frequents in their watch history, granting $+10$ points per previous view (up to $+30$ points).
-    - **Active Vocabulary Notebook Overlap**: Cross-references video titles against the user's active SRS flashcard deck (`OfflineVocabularyRepository`), granting $+25$ to $+45$ points for matching words and attaching matched terms for UI recognition.
+    - **Creator Affinity**: Detects channels the user frequents in their watch history, granting $+10$ to $+30$ points.
+    - **Active Vocabulary Notebook Overlap**: Cross-references video titles against the user's active SRS flashcard deck (`OfflineVocabularyRepository`), granting $+25$ to $+45$ points for matching words and attaching matched terms (`matchedWords`) directly for UI recognition.
     - **Pedagogical Duration Sweet Spot**: Prioritizes focused, bite-sized language learning sessions ($+20$ pts for 3–12 mins, $+10$ pts for 12–20 mins, penalizing ultra-short clips $<1.5$ min and marathons $>40$ min).
     - **Krashen $i+1$ Comprehensible Input**: Infers the user's current proficiency level from watched history and rewards videos matching their dominant tier ($+20$ pts) or slightly stretching their comprehension by one level ($+12$ pts).
     - **Creator Anti-Clustering & De-Clustering**: Employs a greedy de-clustering pass that guarantees no two adjacent recommendation cards share the same channel creator.
+    - **Offline-First Client Fallback**: If the device is completely offline or network drops, `VideoRecommendationService` retains in-memory client-side ranking over locally cached entries.
   - **YouTube-Style Visual Progress & Study Indicators**:
     - **In-Progress Progress Bar**: Video cards display a 3.5px YouTube-red progress bar (`#ef4444`) anchored to the bottom edge of the thumbnail for partially watched videos.
     - **Study Word Sparkle Badge**: Videos containing vocabulary from the learner's notebook display a purple pill badge (`✨ {{count}} study words`) in the card metadata sub-row.

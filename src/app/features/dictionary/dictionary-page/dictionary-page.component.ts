@@ -35,6 +35,17 @@ import { WordLevel } from '../../../models';
                 <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : 'layers'" [size]="20" class="panel-header__icon" />
                 <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : (i18n.t('vocab.title') || 'Từ vựng') }}</h2>
               </div>
+              @if (activeTab() === 'vocab') {
+                <!-- Mobile-only: Options in header -->
+                <button
+                  type="button"
+                  class="action-icon-btn mobile-only"
+                  (click)="openVocabMenu()"
+                  [attr.aria-label]="i18n.t('vocab.options') || 'Options'"
+                  [title]="i18n.t('vocab.options') || 'Options'">
+                  <app-icon name="more-vertical" [size]="16" />
+                </button>
+              }
             </div>
           </div>
 
@@ -70,8 +81,9 @@ import { WordLevel } from '../../../models';
                 </button>
               </div>
 
-              <div class="panel-toolbar__actions">
-                @if (activeTab() === 'vocab') {
+              <!-- Desktop-only: Inline with tabs -->
+              @if (activeTab() === 'vocab') {
+                <div class="panel-toolbar__actions desktop-only">
                   <button
                     type="button"
                     class="action-icon-btn"
@@ -80,8 +92,8 @@ import { WordLevel } from '../../../models';
                     [title]="i18n.t('vocab.options') || 'Options'">
                     <app-icon name="more-vertical" [size]="16" />
                   </button>
-                }
-              </div>
+                </div>
+              }
             </div>
 
             <!-- Row 2: Search & Filter Row (Unified across Dictionary and Vocab tabs) -->
@@ -210,7 +222,7 @@ import { WordLevel } from '../../../models';
           <div class="panel-header">
             <div class="panel-header__row">
               <div class="panel-header__left">
-                <app-icon name="graduation-cap" [size]="20" class="panel-header__icon" />
+                <app-icon name="graduation-cap" [size]="18" class="panel-header__icon" />
                 <h3 class="panel-header__title">{{ i18n.t('study.title') }}</h3>
               </div>
               <span class="badge badge--primary">{{ stats().total }} {{ i18n.t('study.cards') }}</span>
@@ -302,54 +314,6 @@ import { WordLevel } from '../../../models';
       gap: var(--space-xs);
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
-      margin: var(--space-xs) 0 var(--space-sm);
-    }
-
-    .stat-item {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      padding: 0.5rem 0.25rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2px;
-      text-align: center;
-    }
-
-    .stat-value {
-      font-size: 1.125rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      line-height: 1.2;
-
-      &.stat-new {
-        color: var(--word-new-text, var(--accent-primary));
-      }
-
-      &.stat-learning {
-        color: var(--word-learning-text, #eab308);
-      }
-
-      &.stat-known {
-        color: var(--word-known-text, #3b82f6);
-      }
-    }
-
-    .stat-label {
-      font-size: 0.625rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-    }
-
     .sidebar-action-btn {
       width: 100%;
       gap: 0.5rem;
@@ -429,22 +393,6 @@ import { WordLevel } from '../../../models';
       }
     }
 
-    .sidebar-empty-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: var(--space-xs) 0;
-      gap: var(--space-sm);
-    }
-
-    .sidebar-empty-desc {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin: 0;
-    }
-
     .sync-hint {
       display: flex;
       align-items: center;
@@ -472,11 +420,6 @@ import { WordLevel } from '../../../models';
       overflow: visible;
       height: auto;
       min-height: 0;
-
-      .panel-header__row {
-        flex-wrap: wrap;
-        row-gap: var(--space-2xs);
-      }
     }
 
 

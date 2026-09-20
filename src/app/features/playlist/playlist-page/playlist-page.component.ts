@@ -8,8 +8,9 @@ import { CreatePlaylistDialogComponent } from '../../../shared/components/create
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { I18nService, ToastService, VideoLevelService } from '../../../core/services';
+import { getYouTubeThumbnail } from '../../../core/utils';
 import { HistoryService } from '../../history/history.service';
-import { Playlist, PlaylistLanguage, PlaylistVideo, ProficiencyLevelTier, SUPPORTED_LANGUAGES, getLanguageFlagUrl } from '../../../models';
+import { Playlist, PlaylistLanguage, PlaylistVideo, PlaylistWithVideos, ProficiencyLevelTier, SUPPORTED_LANGUAGES, getLanguageFlagUrl } from '../../../models';
 
 @Component({
     selector: 'app-playlist-page',
@@ -105,12 +106,30 @@ export class PlaylistPageComponent {
         return counts;
     });
 
+    currentDisplayIndex = computed(() => Math.max(0, this.currentIndex()) + 1);
+
     getActivePlaylistPercent(): number {
         const p = this.activePlaylist();
         if (!p) return 0;
         const total = p.videos?.length || p.videoIds?.length || 1;
-        const current = this.currentIndex() + 1;
+        const current = this.currentDisplayIndex();
         return Math.min(100, Math.round((current / total) * 100));
+    }
+
+    getActiveThumbnail(playlist: Playlist): string {
+        const currentV = this.currentVideo();
+        if (currentV?.thumbnail) return currentV.thumbnail;
+        if (playlist.thumbnail) return playlist.thumbnail;
+        if ('videos' in playlist) {
+            const pWithVideos = playlist as PlaylistWithVideos;
+            if (pWithVideos.videos?.[0]?.thumbnail) {
+                return pWithVideos.videos[0].thumbnail;
+            }
+        }
+        if (playlist.videoIds?.[0]) {
+            return getYouTubeThumbnail(playlist.videoIds[0]);
+        }
+        return '';
     }
 
     resumeActivePlaylist(): void {

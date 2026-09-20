@@ -7,9 +7,9 @@
             (searchQueryChange)="onSearchQueryChange($event)"
             (searchSubmit)="onSearchSubmit($event)" />
 
-        <!-- Mobile Playlist Bar (Compact, zero-layout-shift YouTube Mobile style) -->
+        <!-- Mobile & Tablet Playlist Bar (Compact, zero-layout-shift YouTube Mobile style) -->
         @if (showMobilePlaylistCard() && !playerView.isMiniplayer()) {
-        <div class="mobile-playlist-card mobile-only" (click)="openMobilePlaylistSheet()">
+        <div class="mobile-playlist-card" (click)="openMobilePlaylistSheet()">
             <div class="mobile-playlist-bar">
                 <div class="mobile-playlist-header-left">
                     <div class="mobile-playlist-badge">
@@ -67,16 +67,22 @@
                     <div class="panel-header__left">
                         @if (searchQuery().trim()) {
                         <app-icon name="search" [size]="20" class="panel-header__icon" />
-                        <h3 class="panel-header__title">{{ i18n.t('playlist.searchResultsFor') }} "{{ searchQuery().trim() }}"</h3>
+                        <h2 class="panel-header__title">{{ i18n.t('playlist.searchResultsFor') }} "{{ searchQuery().trim() }}"</h2>
                         <button type="button" class="search-clear-chip" (click)="clearSearch()" [title]="i18n.t('common.clear')">
                             <app-icon name="x" [size]="13" />
                             <span>{{ i18n.t('common.clear') }}</span>
                         </button>
                         } @else {
                         <app-icon name="star" [size]="20" class="panel-header__icon" />
-                        <h3 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h3>
+                        <h2 class="panel-header__title">{{ i18n.t('playlist.forYou') }}</h2>
                         }
                     </div>
+                    @if (!searchQuery().trim()) {
+                    <button type="button" class="action-icon-btn mobile-only" [disabled]="isFeedRefreshing()"
+                        (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
+                        <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />
+                    </button>
+                    }
                 </div>
             </div>
 
@@ -108,7 +114,7 @@
                     }
                 </div>
 
-                <div class="yt-chips-actions">
+                <div class="yt-chips-actions desktop-only">
                     <button type="button" class="yt-action-btn" [disabled]="isFeedRefreshing()"
                         (click)="refreshRecommendations()" [attr.aria-label]="i18n.t('playlist.refresh')" [title]="i18n.t('playlist.refresh')">
                         <app-icon name="refresh-cw" [size]="14" [class.spin-icon]="isFeedRefreshing()" />

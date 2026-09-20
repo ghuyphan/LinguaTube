@@ -354,38 +354,48 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 
 ---
 
-### 3.10. Recommended Videos API (Verified Database Transcripts)
-- **Route**: `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}&offset={offset}&q={query}`
-- **Source**: `functions-src/api/recommended-videos.js`
-- **Query Parameters**:
+### 3.10. Recommended Videos API (Verified Database Transcripts & Edge Ranking)
+- **Routes**:
+  - `POST /api/recommended-videos` (Personalized Edge Ranking with learner context)
+  - `GET /api/recommended-videos?lang={lang}&tier={tier}&limit={limit}&offset={offset}&q={query}&seed={seed}` (Standard / Crawlers)
+- **Source**: `functions-src/api/recommended-videos.js`, `functions-src/services/recommendation.service.js`
+- **Request Parameters & Body**:
   - `lang`: Target learning language (`ja`, `ko`, `zh`, `en`, defaults to `ja`).
   - `tier`: Optional proficiency tier (`beginner`, `elementary`, `intermediate`, `upper_intermediate`, `advanced`).
   - `limit`: Maximum items to return (1-50, default `12`).
   - `offset`: Optional pagination offset (default `0`) for infinite scrolling feeds.
-  - `q`: Optional search keyword (up to 100 characters). Queries Cloudflare D1 `video_languages` table matching `title LIKE %q% OR channel LIKE %q%`, disabling random shuffling to rank the most relevant and recent videos first.
-  - `refresh`: Optional boolean (`true`). When enabled, bypasses memory and CDN caches, forces `Cache-Control: no-cache, no-store, must-revalidate`, and applies Fisher-Yates uniform candidate shuffling for fresh video discovery.
+  - `q` / `query`: Optional search keyword (up to 100 characters). Queries Cloudflare D1 `video_languages` table matching `title LIKE %q% OR channel LIKE %q%`.
+  - `sessionSeed`: Optional integer seed ensuring deterministic serendipity jitter and duplicate-free pagination across infinite scroll pages.
+  - `refresh`: Optional boolean (`true`). Bypasses caches and applies fresh session randomization.
+  - `context`: Optional compact learner digest:
+    - `watched`: Array of completed video IDs.
+    - `inProgress`: Record mapping `videoId -> progressPercentage`.
+    - `favorites`: Array of favorited video IDs.
+    - `topChannels`: Array of top viewed channel names (for creator affinity).
+    - `dominantTier`: Inferred proficiency tier from watch history.
+    - `vocabWords`: Array of active SRS flashcard vocabulary words (for title matching and `✨ study words` tagging).
+- **Server-Side Edge Ranking Engine (`recommendation.service.js`)**:
+  - Candidate retrieval queries an expanded pool (80–120 candidates) from D1 `video_languages`.
+  - Applies 6-factor pedagogical scoring in V8 Worker memory ($<1.5\text{ms}$):
+    1. **History & Completion**: Unwatched (+40 exploration bonus), In-progress (+35 resume boost), Completed ($\ge 85\%$, -70 demotion), Favorites (+20).
+    2. **Creator Affinity**: Detects channels the user frequents, granting +10 to +30 points.
+    3. **Active Vocabulary Overlap**: Matches video titles against user's active flashcards (+25 to +45 points), attaching `matchedWords` tags directly to the response.
+    4. **Duration Sweet Spot**: Optimal 3–12 min study sessions (+20), 12–20 mins (+10), penalizing $<1.5$ min or $>40$ min.
+    5. **Krashen $i+1$ Level Alignment**: Rewards comfortable level (+20) or +1 stretch level (+12).
+    6. **Deterministic Serendipity Jitter**: Seeded pseudo-random $\pm 4$ pts variation ensuring variety without breaking pagination.
+  - **YouTube-Style Channel De-Clustering**: Greedy pass ensures no two adjacent recommendation cards share the same channel creator.
+  - Slices cleanly at `[offset, offset + limit]` with `hasMore: (offset + limit) < ranked.length`.
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for verified transcripts stored on our server (`sub_languages LIKE '%"lang"%'`), with fallback to `available_languages` only if `sub_languages` is unpopulated.
   - Multi-Language Support: Videos can store multiple verified transcript languages in `sub_languages` (e.g. `["ja", "en"]`), returned in `languages` for accurate multi-lingual badges (`JA / EN`).
   - Strict Server Verification: Verifies that transcript files (`transcripts/{videoId}/{lang}.json`) actually exist on our server (Cloudflare R2 storage / dev cache) before recommending, eliminating phantom recommendations and un-transcribed language badges.
-  - **Subrequest Quota Safety (`MAX_R2_HEAD_CHECKS = 10`)**: R2 object existence checks are strictly budgeted to a maximum of 10 HEAD requests per invocation, ensuring the function never violates Cloudflare Workers' 50 subrequest limit while populating recommendations.
-  - Supports `offset` pagination directly against D1 candidates (`LIMIT ? OFFSET ?`), enabling seamless infinite scroll without duplicate entries.
-  - When `tier` is requested or `refresh=true` is passed, queries a larger candidate pool from D1, performs uniform Fisher-Yates candidate shuffling, and filters rows matching the target tier (`labelToTier`).
-  - **Recent Candidate Pinning**: When shuffling candidates on refresh, the top 3 most recently updated / newly transcribed videos remain pinned at the front of the list, ensuring that newly generated user transcripts are never buried or lost upon clicking refresh.
-  - Duration filters safely accommodate videos with unrecorded/zero durations as well as typical learning durations (`(duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)`).
-  - Ordered by `updated_at DESC`.
-  - Automatic metadata & avatar enrichment: Any discovered video missing a title or avatar is enriched via YouTube oEmbed and `fetchChannelAvatar` and cached in D1 `video_languages.channel_avatar`.
-- **Caching & Authenticity**:
-  - Warm Worker isolate in-memory caching (`memCache`, 30-second TTL to absorb rapid double-clicks while keeping feed fresh, keyed by `${lang}_${tier || 'all'}_${limit}_${offset}`).
-  - Dynamic Candidate Shuffling: Automatically applies uniform Fisher-Yates candidate shuffling on initial feed load (`offset=0`) or explicit `refresh=true`, with the top 2 newest/recently updated videos pinned at the front.
-  - HTTP header: `Cache-Control: no-cache, no-store, must-revalidate` ensuring browser page reloads and PWA refreshes always receive fresh video lists without stale CDN locking.
-  - Zero Cloudflare KV write cost, strictly preserving free-tier limits.
-  - Authentic Content: Serves strictly verified transcribed videos directly from Cloudflare storage (`source: "cloudflare"` or `"cloudflare:refresh"`) with no artificial mock data.
+  - Subrequest Quota Safety (`MAX_R2_HEAD_CHECKS = 10`): R2 object existence checks are strictly budgeted to a maximum of 10 HEAD requests per invocation.
 - **Response**:
   ```json
   {
     "success": true,
     "language": "ja",
+    "tier": "elementary",
     "count": 12,
     "offset": 0,
     "hasMore": true,
@@ -399,10 +409,12 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
         "languages": ["ja", "en"],
         "level": "JLPT N4",
         "tier": "elementary",
+        "resumeProgress": 45,
+        "matchedWords": ["練習", "物語"],
         "updatedAt": 1725732000
       }
     ],
-    "source": "cloudflare"
+    "source": "cloudflare:personalized"
   }
   ```
 

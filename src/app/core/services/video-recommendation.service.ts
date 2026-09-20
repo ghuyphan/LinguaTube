@@ -7,6 +7,15 @@ import { HistoryService } from '../../features/history/history.service';
 import { OfflineVocabularyRepository } from '../repositories/offline-vocabulary.repository';
 import { environment } from '../../../environments/environment';
 
+export interface LearnerRecommendationContext {
+    watched: string[];
+    inProgress: Record<string, number>;
+    favorites: string[];
+    topChannels: string[];
+    dominantTier: string | null;
+    vocabWords: string[];
+}
+
 interface RecommendedVideosResponse {
     success: boolean;
     language: string;
@@ -28,6 +37,9 @@ export class VideoRecommendationService {
 
     /** Stream emitting events when the user requests a home feed refresh (e.g. via bottom nav tap or pull gesture) */
     readonly refreshRequested$ = new Subject<void>();
+
+    /** Deterministic session seed for consistent serendipity across infinite scroll pages */
+    readonly sessionSeed = signal<number>(Math.floor(Math.random() * 1000000));
 
     /** Trigger a programmatic feed refresh from any UI component */
     triggerHomeFeedRefresh(): void {
@@ -103,6 +115,7 @@ export class VideoRecommendationService {
         const cacheKey = `${language}_${activeTier || 'all'}_${limit}_${cleanQuery}`;
 
         if (forceRefresh) {
+            this.sessionSeed.set(Math.floor(Math.random() * 1000000));
             this.cache.delete(cacheKey);
             this.hasMore.set(true);
         } else {
@@ -125,25 +138,40 @@ export class VideoRecommendationService {
 
         try {
             const endpoint = environment.api.recommendedVideos;
-            let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=0`;
-            if (activeTier) {
-                url += `&tier=${encodeURIComponent(activeTier)}`;
-            }
-            if (cleanQuery) {
-                url += `&q=${encodeURIComponent(cleanQuery)}`;
-            }
-            if (forceRefresh) {
-                url += `&refresh=true&_t=${Date.now()}`;
-            }
+            const context = this.buildUserContext(language, activeTier);
+            const seed = this.sessionSeed();
 
-            const response = await firstValueFrom(
-                this.http.get<RecommendedVideosResponse>(url)
-                    .pipe(timeout(6000))
-            );
+            const body = {
+                lang: language,
+                limit,
+                offset: 0,
+                tier: activeTier,
+                q: cleanQuery || undefined,
+                sessionSeed: seed,
+                refresh: forceRefresh,
+                context
+            };
+
+            let response: RecommendedVideosResponse | null = null;
+            try {
+                response = await firstValueFrom(
+                    this.http.post<RecommendedVideosResponse>(endpoint, body)
+                        .pipe(timeout(6000))
+                );
+            } catch {
+                // Fallback to GET for offline/legacy servers
+                let fallbackUrl = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=0&seed=${seed}`;
+                if (activeTier) fallbackUrl += `&tier=${encodeURIComponent(activeTier)}`;
+                if (cleanQuery) fallbackUrl += `&q=${encodeURIComponent(cleanQuery)}`;
+                if (forceRefresh) fallbackUrl += `&refresh=true&_t=${Date.now()}`;
+                response = await firstValueFrom(
+                    this.http.get<RecommendedVideosResponse>(fallbackUrl)
+                        .pipe(timeout(6000))
+                );
+            }
 
             const rawVideos = response?.videos || [];
-            const hydratedVideos = this.hydrateVideos(rawVideos, language, activeTier);
-            const rankedVideos = this.rankRecommendedVideos(hydratedVideos, language, activeTier);
+            const rankedVideos = this.hydrateVideos(rawVideos, language, activeTier);
             const hasMoreFlag = response?.hasMore ?? (rawVideos.length >= limit);
 
             if (rankedVideos.length > 0) {
@@ -199,22 +227,37 @@ export class VideoRecommendationService {
 
         try {
             const endpoint = environment.api.recommendedVideos;
-            let url = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=${offset}`;
-            if (activeTier) {
-                url += `&tier=${encodeURIComponent(activeTier)}`;
-            }
-            if (cleanQuery) {
-                url += `&q=${encodeURIComponent(cleanQuery)}`;
-            }
+            const context = this.buildUserContext(language, activeTier);
+            const seed = this.sessionSeed();
 
-            const response = await firstValueFrom(
-                this.http.get<RecommendedVideosResponse>(url)
-                    .pipe(timeout(7000))
-            );
+            const body = {
+                lang: language,
+                limit,
+                offset,
+                tier: activeTier,
+                q: cleanQuery || undefined,
+                sessionSeed: seed,
+                context
+            };
+
+            let response: RecommendedVideosResponse | null = null;
+            try {
+                response = await firstValueFrom(
+                    this.http.post<RecommendedVideosResponse>(endpoint, body)
+                        .pipe(timeout(7000))
+                );
+            } catch {
+                let fallbackUrl = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=${offset}&seed=${seed}`;
+                if (activeTier) fallbackUrl += `&tier=${encodeURIComponent(activeTier)}`;
+                if (cleanQuery) fallbackUrl += `&q=${encodeURIComponent(cleanQuery)}`;
+                response = await firstValueFrom(
+                    this.http.get<RecommendedVideosResponse>(fallbackUrl)
+                        .pipe(timeout(7000))
+                );
+            }
 
             const rawVideos = response?.videos || [];
-            const hydrated = this.hydrateVideos(rawVideos, language, activeTier);
-            const ranked = this.rankRecommendedVideos(hydrated, language, activeTier);
+            const ranked = this.hydrateVideos(rawVideos, language, activeTier);
 
             // Deduplicate against existing IDs
             const existingIds = new Set(currentList.map(v => v.videoId));
@@ -237,6 +280,77 @@ export class VideoRecommendationService {
         } finally {
             this.isLoadingMore.set(false);
         }
+    }
+
+    /**
+     * Build compact learner context digest from local repositories (<1ms execution)
+     */
+    private buildUserContext(language: string, requestedTier?: string): LearnerRecommendationContext {
+        const history = this.historyService.history() || [];
+        const userVocab = this.vocabRepo.vocabulary() || [];
+
+        const watched: string[] = [];
+        const inProgress: Record<string, number> = {};
+        const favorites: string[] = [];
+        const channelCounts = new Map<string, number>();
+        const tierCounts = new Map<string, number>();
+
+        for (const item of history) {
+            if (item.video_id) {
+                const prog = item.progress || 0;
+                if (prog >= 85) {
+                    watched.push(item.video_id);
+                } else if (prog >= 10) {
+                    inProgress[item.video_id] = Math.round(prog);
+                }
+                if (item.is_favorite) {
+                    favorites.push(item.video_id);
+                }
+            }
+            if (item.channel) {
+                const ch = item.channel.trim();
+                channelCounts.set(ch, (channelCounts.get(ch) || 0) + 1);
+            }
+            if (item.level) {
+                const tier = this.videoLevel.labelToTier(item.level);
+                if (tier) {
+                    tierCounts.set(tier, (tierCounts.get(tier) || 0) + 1);
+                }
+            }
+        }
+
+        // Top 5 most viewed channels
+        const topChannels = Array.from(channelCounts.entries())
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5)
+            .map(e => e[0]);
+
+        // Dominant proficiency tier from history
+        let dominantTier: string | null = null;
+        if (!requestedTier || requestedTier === 'all') {
+            let maxCount = 0;
+            for (const [tier, count] of tierCounts.entries()) {
+                if (count > maxCount) {
+                    maxCount = count;
+                    dominantTier = tier;
+                }
+            }
+        }
+
+        // Top 40 active SRS words for the learning language
+        const vocabWords = userVocab
+            .filter(v => v.language === language && v.level !== 'ignored' && v.word && v.word.trim().length >= 2)
+            .slice(0, 40)
+            .map(v => v.word.trim());
+
+        return {
+            watched: watched.slice(0, 100),
+            inProgress,
+            favorites: favorites.slice(0, 50),
+            topChannels,
+            dominantTier,
+            vocabWords
+        };
     }
 
     /**
@@ -287,190 +401,6 @@ export class VideoRecommendationService {
                 tier: resolvedTier
             };
         });
-    }
-
-    /**
-     * YouTube & Language Learning Multi-Factor Ranking Engine
-     * 
-     * Factors:
-     * 1. Watch Progress & Completion (Unwatched prioritized, in-progress boosted for resume, completed demoted)
-     * 2. Creator Affinity (Frequent channels in user history boosted)
-     * 3. Vocabulary Overlap (Videos containing words from user's active flashcard notebook boosted)
-     * 4. Pedagogical Duration Sweet Spot (3 to 12 minutes favored for optimal retention)
-     * 5. Krashen i+1 Level Balancing (User's dominant proficiency tier + stretch tier)
-     * 6. YouTube Anti-Clustering (Spreading out consecutive videos from the same creator)
-     */
-    private rankRecommendedVideos(
-        videos: RecommendedVideo[],
-        language: string,
-        requestedTier?: string
-    ): RecommendedVideo[] {
-        if (!videos || videos.length === 0) return [];
-
-        const history = this.historyService.history() || [];
-        const userVocab = this.vocabRepo.vocabulary() || [];
-
-        // 1. Pre-calculate Creator Affinity & User Level Profile from History
-        const channelFrequency = new Map<string, number>();
-        const historyMap = new Map<string, { progress: number; isFavorite: boolean }>();
-        const tierCounts = new Map<string, number>();
-
-        for (const item of history) {
-            if (item.video_id) {
-                historyMap.set(item.video_id, {
-                    progress: item.progress || 0,
-                    isFavorite: Boolean(item.is_favorite)
-                });
-            }
-            if (item.channel) {
-                const normChannel = item.channel.toLowerCase().trim();
-                channelFrequency.set(normChannel, (channelFrequency.get(normChannel) || 0) + 1);
-            }
-            if (item.level) {
-                const tier = this.videoLevel.labelToTier(item.level);
-                if (tier) {
-                    tierCounts.set(tier, (tierCounts.get(tier) || 0) + 1);
-                }
-            }
-        }
-
-        // Determine dominant user tier from watch history if no explicit tier requested
-        let dominantTier: string | null = null;
-        if (!requestedTier || requestedTier === 'all') {
-            let maxCount = 0;
-            for (const [tier, count] of tierCounts.entries()) {
-                if (count > maxCount) {
-                    maxCount = count;
-                    dominantTier = tier;
-                }
-            }
-        }
-
-        // Filter active vocabulary words for the learning language
-        const activeWords = userVocab
-            .filter(v => v.language === language && v.level !== 'ignored' && v.word && v.word.trim().length >= 2)
-            .map(v => v.word.trim());
-
-        const TIERS_ORDER: ProficiencyLevelTier[] = ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'];
-
-        // 2. Score each candidate video
-        const scoredVideos = videos.map(video => {
-            let score = 0;
-            const historyEntry = historyMap.get(video.videoId);
-
-            // Factor A: History & Completion State
-            if (!historyEntry) {
-                // Completely new / unwatched
-                score += 40;
-            } else {
-                const progress = historyEntry.progress;
-                if (progress >= 85) {
-                    // Completed video -> heavily demote to end of feed
-                    score -= 70;
-                } else if (progress >= 10 && progress < 85) {
-                    // In-progress: "Resume Learning" boost
-                    score += 35;
-                    video.resumeProgress = Math.round(progress);
-                } else {
-                    // Barely started (< 10%)
-                    score += 15;
-                }
-                if (historyEntry.isFavorite) {
-                    score += 20;
-                }
-            }
-
-            // Factor B: Creator / Channel Affinity (YouTube style)
-            if (video.channel) {
-                const normChannel = video.channel.toLowerCase().trim();
-                const watchCount = channelFrequency.get(normChannel) || 0;
-                if (watchCount > 0) {
-                    score += Math.min(watchCount * 10, 30);
-                }
-            }
-
-            // Factor C: Vocabulary Overlap (Language learning superpower)
-            if (activeWords.length > 0 && video.title) {
-                const titleLower = video.title.toLowerCase();
-                const matched: string[] = [];
-                for (const w of activeWords) {
-                    if (titleLower.includes(w.toLowerCase())) {
-                        matched.push(w);
-                        if (matched.length >= 5) break;
-                    }
-                }
-                if (matched.length > 0) {
-                    video.matchedWords = matched;
-                    score += 25 + Math.min(matched.length * 5, 20); // up to +45 pts
-                }
-            }
-
-            // Factor D: Duration Sweet Spot (YouTube / micro-learning)
-            const d = video.duration || 0;
-            if (d >= 180 && d <= 720) {
-                score += 20; // 3 to 12 mins (optimal study session)
-            } else if (d > 720 && d <= 1200) {
-                score += 10; // 12 to 20 mins
-            } else if (d > 0 && (d < 90 || d > 2400)) {
-                score -= 10; // < 1.5 min or > 40 min
-            }
-
-            // Factor E: Krashen i+1 Comprehensible Input
-            if (dominantTier && video.tier) {
-                if (video.tier === dominantTier) {
-                    score += 20; // exact comfort zone
-                } else {
-                    const domIndex = TIERS_ORDER.indexOf(dominantTier as ProficiencyLevelTier);
-                    const videoIndex = TIERS_ORDER.indexOf(video.tier);
-                    if (videoIndex === domIndex + 1) {
-                        score += 12; // stretch i+1 goal
-                    }
-                }
-            }
-
-            // Factor F: Exploration Jitter (adds +/- 4 points for serendipity)
-            score += (Math.random() * 8) - 4;
-
-            return { video, score };
-        });
-
-        // 3. Sort primarily by score descending
-        scoredVideos.sort((a, b) => b.score - a.score);
-        const sorted = scoredVideos.map(sv => sv.video);
-
-        // 4. Channel Anti-Clustering (YouTube Spacing: avoid adjacent same-channel videos)
-        return this.declusterChannels(sorted);
-    }
-
-    /**
-     * YouTube-style channel spacing: ensures consecutive video cards are from different creators
-     */
-    private declusterChannels(videos: RecommendedVideo[]): RecommendedVideo[] {
-        if (videos.length <= 2) return videos;
-
-        const result: RecommendedVideo[] = [];
-        const pool = [...videos];
-
-        while (pool.length > 0) {
-            const current = pool.shift()!;
-            result.push(current);
-
-            if (pool.length === 0) break;
-
-            const prevChannel = current.channel?.toLowerCase().trim();
-            if (!prevChannel) continue;
-
-            // If the next video is from the same channel, find the next candidate from a different channel
-            if (pool[0].channel?.toLowerCase().trim() === prevChannel) {
-                const diffIdx = pool.findIndex(v => v.channel?.toLowerCase().trim() !== prevChannel);
-                if (diffIdx > 0) {
-                    const [diffVideo] = pool.splice(diffIdx, 1);
-                    result.push(diffVideo);
-                }
-            }
-        }
-
-        return result;
     }
 
     /**

@@ -1611,15 +1611,138 @@ async function fetchVideoMetaLocal(videoId) {
 }
 
 /**
- * GET /api/recommended-videos
- * Returns videos with verified transcripts from local disk cache, with dev seeds and uniform shuffle on refresh
+function hashStringLocal(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = (Math.imul(31, hash) + str.charCodeAt(i)) | 0;
+    }
+    return hash;
+}
+
+function declusterChannelsLocal(videos) {
+    if (!Array.isArray(videos) || videos.length <= 2) return videos || [];
+    const result = [];
+    const pool = [...videos];
+    while (pool.length > 0) {
+        const current = pool.shift();
+        result.push(current);
+        if (pool.length === 0) break;
+        const prevChannel = current.channel?.toLowerCase().trim();
+        if (!prevChannel) continue;
+        if (pool[0].channel?.toLowerCase().trim() === prevChannel) {
+            const diffIdx = pool.findIndex(v => v.channel?.toLowerCase().trim() !== prevChannel);
+            if (diffIdx > 0) {
+                const [diffVideo] = pool.splice(diffIdx, 1);
+                result.push(diffVideo);
+            }
+        }
+    }
+    return result;
+}
+
+function rankVideosLocal(videos, options = {}) {
+    const { tier: requestedTier, context, sessionSeed = 12345 } = options;
+    if (!Array.isArray(videos) || videos.length === 0) return [];
+
+    const safeContext = context && typeof context === 'object' ? context : {};
+    const watchedSet = new Set(Array.isArray(safeContext.watched) ? safeContext.watched : []);
+    const inProgressMap = new Map();
+    if (safeContext.inProgress && typeof safeContext.inProgress === 'object') {
+        for (const [id, prog] of Object.entries(safeContext.inProgress)) {
+            const num = Number(prog);
+            if (!isNaN(num) && num > 0) inProgressMap.set(id, num);
+        }
+    }
+    const favoritesSet = new Set(Array.isArray(safeContext.favorites) ? safeContext.favorites : []);
+    const channelAffinityMap = new Map();
+    if (Array.isArray(safeContext.topChannels)) {
+        safeContext.topChannels.forEach((ch, idx) => {
+            if (typeof ch === 'string' && ch.trim()) {
+                channelAffinityMap.set(ch.trim().toLowerCase(), Math.max(30 - idx * 5, 10));
+            }
+        });
+    }
+    const vocabWords = (Array.isArray(safeContext.vocabWords) ? safeContext.vocabWords : [])
+        .map(w => (typeof w === 'string' ? w.trim().toLowerCase() : ''))
+        .filter(w => w.length >= 2);
+    const dominantTier = safeContext.dominantTier?.toLowerCase()?.trim() || null;
+    const TIERS_ORDER = ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'];
+
+    const scored = videos.map(video => {
+        let score = 0;
+        const v = { ...video };
+        const vid = v.videoId;
+
+        if (inProgressMap.has(vid)) {
+            const prog = inProgressMap.get(vid);
+            if (prog >= 85) score -= 70;
+            else if (prog >= 10) { score += 35; v.resumeProgress = Math.round(prog); }
+            else score += 15;
+        } else if (watchedSet.has(vid)) {
+            score -= 70;
+        } else {
+            score += 40;
+        }
+
+        if (favoritesSet.has(vid)) score += 20;
+
+        if (v.channel && channelAffinityMap.has(v.channel.trim().toLowerCase())) {
+            score += channelAffinityMap.get(v.channel.trim().toLowerCase());
+        }
+
+        if (vocabWords.length > 0 && v.title) {
+            const titleLower = v.title.toLowerCase();
+            const matched = [];
+            for (const w of vocabWords) {
+                if (titleLower.includes(w)) {
+                    matched.push(w);
+                    if (matched.length >= 5) break;
+                }
+            }
+            if (matched.length > 0) {
+                v.matchedWords = matched;
+                score += 25 + Math.min(matched.length * 5, 20);
+            }
+        }
+
+        const d = v.duration || 0;
+        if (d >= 180 && d <= 720) score += 20;
+        else if (d > 720 && d <= 1200) score += 10;
+        else if (d > 0 && (d < 90 || d > 2400)) score -= 10;
+
+        if (!requestedTier || requestedTier === 'all') {
+            if (dominantTier && v.tier) {
+                if (v.tier === dominantTier) score += 20;
+                else {
+                    const domIdx = TIERS_ORDER.indexOf(dominantTier);
+                    const vidIdx = TIERS_ORDER.indexOf(v.tier);
+                    if (domIdx !== -1 && vidIdx === domIdx + 1) score += 12;
+                }
+            }
+        }
+
+        const h = Math.abs(hashStringLocal(String(vid)) ^ sessionSeed);
+        score += ((h % 8000) / 1000) - 4;
+
+        return { video: v, score };
+    });
+
+    scored.sort((a, b) => b.score - a.score);
+    return declusterChannelsLocal(scored.map(s => s.video));
+}
+
+/**
+ * GET & POST /api/recommended-videos
+ * Returns videos with verified transcripts, with server-side ranking support
  */
-app.get('/api/recommended-videos', async (req, res) => {
-    const lang = (req.query.lang || 'ja').toLowerCase().trim();
-    const targetTier = (req.query.tier || '').toLowerCase().trim();
-    const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 12, 1), 50);
-    const offset = Math.max(parseInt(req.query.offset, 10) || 0, 0);
-    const isRefresh = req.query.refresh === 'true' || req.query.force === 'true';
+app.all('/api/recommended-videos', async (req, res) => {
+    const lang = (req.body?.lang || req.query.lang || 'ja').toLowerCase().trim();
+    const targetTier = (req.body?.tier || req.query.tier || '').toLowerCase().trim();
+    const limit = Math.min(Math.max(parseInt(req.body?.limit ?? req.query.limit, 10) || 12, 1), 50);
+    const offset = Math.max(parseInt(req.body?.offset ?? req.query.offset, 10) || 0, 0);
+    const sessionSeed = parseInt(req.body?.sessionSeed ?? req.query.seed, 10) || 12345;
+    const isRefresh = req.body?.refresh === true || req.query.refresh === 'true' || req.query.force === 'true';
+    const userContext = (req.body?.context && typeof req.body.context === 'object') ? req.body.context : null;
 
     let results = [];
     const seenIds = new Set();
@@ -1701,19 +1824,20 @@ app.get('/api/recommended-videos', async (req, res) => {
         }
     }
 
-    const query = (req.query.q || req.query.query || '').trim().toLowerCase();
+    const query = (req.body?.q || req.body?.query || req.query.q || req.query.query || '').trim().toLowerCase();
     if (query) {
         results = results.filter(v => 
             (v.title && v.title.toLowerCase().includes(query)) ||
             (v.channel && v.channel.toLowerCase().includes(query))
         );
-    } else if (isRefresh || offset === 0) {
-        // Fisher-Yates uniform shuffle
-        for (let i = results.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [results[i], results[j]] = [results[j], results[i]];
-        }
     }
+
+    // Apply server-side ranking algorithm across all candidates
+    results = rankVideosLocal(results, {
+        tier: targetTier,
+        context: userContext,
+        sessionSeed
+    });
 
     const pagedVideos = results.slice(offset, offset + limit);
     const hasMore = (offset + limit) < results.length;
@@ -1727,7 +1851,7 @@ app.get('/api/recommended-videos', async (req, res) => {
         offset,
         hasMore,
         videos: pagedVideos,
-        source: isRefresh ? 'dev-server:refresh' : 'dev-server'
+        source: userContext ? 'dev-server:personalized' : (isRefresh ? 'dev-server:refresh' : 'dev-server')
     });
 });
 

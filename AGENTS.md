@@ -227,7 +227,7 @@ lingua-tube/
 │   │   └── video-level.js     # CEFR/JLPT/HSK/TOPIK level detection
 │   ├── middlewares/           # auth.js, bot-defense.js, rate-limiter.js, video-validator.js
 │   ├── providers/             # gladia.js, supadata.js, lingva.js, dictionary-apis.js, payos.js
-│   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, turnstile.service.js
+│   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, turnstile.service.js, recommendation.service.js
 │   ├── data/                  # transcript-db.js, transcript-r2.js, video-info-db.js
 │   └── utils/                 # svix-verifier.js, tokenizer.js, japanese-romaji.js, cache-manager.js, api-key-rotator.js, utils.js
 │
