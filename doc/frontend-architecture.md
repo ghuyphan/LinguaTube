@@ -18,7 +18,7 @@ This document outlines the frontend design principles, Angular 19 Signal state a
 
  [ 3. Standalone Component Tree ]     [ 4. Cross-Platform Responsive UI ]
    • Zero NgModules                       • Mobile-First Responsive SCSS Layouts
-   • Preloaded Bundles (PreloadAllModules)• Touch Gestures, Pointer Capture & RAF
+   • On-Demand Lazy Chunk Loading         • Touch Gestures, Pointer Capture & RAF
    • Isolated SCSS per component          • SVG Circle Flags & Full PWA Caching
 ```
 
