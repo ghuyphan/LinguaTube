@@ -10,6 +10,7 @@ import { SettingsService, I18nService, AudioService, ToastService } from '../../
 import { GrammarService } from '../../../services';
 import { DictionaryEntry, WordLevel, SupportedLearningLanguage } from '../../../models';
 import { GrammarPattern, SupportedGrammarLang } from '../../../models/grammar.model';
+import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
 
 @Component({
   selector: 'app-dictionary-panel',
@@ -72,6 +73,11 @@ export class DictionaryPanelComponent implements OnDestroy {
   });
 
   recentSearches = this.dictionary.recentSearches;
+
+  formatPos(posList: string[] | undefined): string[] {
+    if (!posList || posList.length === 0) return [];
+    return formatPartOfSpeech(posList, this.i18n.currentLanguage());
+  }
 
   constructor() {
     // 1. Load language-scoped recent searches

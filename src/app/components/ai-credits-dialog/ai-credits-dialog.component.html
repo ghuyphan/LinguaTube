@@ -55,7 +55,7 @@
     @if (auth.subscriptionTier() === 'pro') {
         <!-- Pro to Premium Upgrade Banner -->
         <div class="pro-promo-card" (click)="openProUpgrade.emit()" role="button" tabindex="0">
-            <div class="pro-promo-left">
+            <div class="pro-promo-main">
                 <div class="pro-promo-badge">
                     <app-icon name="diamond" [size]="18" />
                 </div>
@@ -64,15 +64,17 @@
                     <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHintPremium') || 'Receive 25 daily credits and 45-minute videos as a founder.' }}</span>
                 </div>
             </div>
-            <button class="btn btn-pro-sm" type="button">
-                <app-icon name="diamond" [size]="14" />
-                <span>{{ i18n.t('pro.tabPremium') || 'Founder' }}</span>
-            </button>
+            <div class="pro-promo-action">
+                <span class="btn-pro-sm">
+                    <span>{{ i18n.t('pro.tabPremium') || 'Founder' }}</span>
+                    <app-icon name="arrow-right" [size]="13" />
+                </span>
+            </div>
         </div>
     } @else if (auth.subscriptionTier() !== 'premium') {
         <!-- Pro / Premium Upgrade Promo Banner (Free Users) -->
         <div class="pro-promo-card" (click)="openProUpgrade.emit()" role="button" tabindex="0">
-            <div class="pro-promo-left">
+            <div class="pro-promo-main">
                 <div class="pro-promo-badge">
                     <app-icon name="crown" [size]="18" />
                 </div>
@@ -81,10 +83,12 @@
                     <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHint') || 'Receive up to 25 daily credits, priority queue & cloud sync as a project supporter.' }}</span>
                 </div>
             </div>
-            <button class="btn btn-pro-sm" type="button">
-                <app-icon name="zap" [size]="14" />
-                <span>{{ i18n.t('pro.viewPro') || 'View Perks' }}</span>
-            </button>
+            <div class="pro-promo-action">
+                <span class="btn-pro-sm">
+                    <span>{{ i18n.t('pro.viewPro') || 'View Perks' }}</span>
+                    <app-icon name="arrow-right" [size]="13" />
+                </span>
+            </div>
         </div>
     }
 

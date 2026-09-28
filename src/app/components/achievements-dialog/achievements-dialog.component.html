@@ -25,7 +25,7 @@
             [class.active]="currentTab() === 'leaderboard'"
             (click)="setTab('leaderboard')"
         >
-            <app-icon name="globe" [size]="15" />
+            <app-icon name="chart-bar" [size]="15" />
             <span>{{ i18n.t('leaderboard.tabTitle') || i18n.t('leaderboard.title') || 'Leaderboard' }}</span>
         </button>
     </div>
@@ -59,7 +59,7 @@
         <!-- Daily Completion Chest Card -->
         <div class="daily-chest-card" [class.ready-to-claim]="canClaimDailyBonus()" [class.claimed]="dailyBonusClaimed()">
             <div class="daily-chest-icon-wrap">
-                <app-icon [name]="dailyBonusClaimed() ? 'check-circle' : 'gift'" [size]="28" class="chest-icon" />
+                <app-icon [name]="dailyBonusClaimed() ? 'check-circle' : 'treasure-chest'" [size]="28" class="chest-icon" />
             </div>
             <div class="daily-chest-info">
                 <div class="daily-chest-header">
@@ -79,7 +79,7 @@
                     </span>
                 } @else if (canClaimDailyBonus()) {
                     <button type="button" class="claim-chest-btn pulse-anim" (click)="claimDailyBonus()">
-                        <app-icon name="gift" [size]="14" />
+                        <app-icon name="treasure-chest" [size]="14" />
                         {{ i18n.t('missions.claim') || 'Claim' }}
                     </button>
                 } @else {
@@ -177,13 +177,27 @@
         <div class="achievements-list">
             @for (ach of filteredAchievements(); track ach.id) {
             <div class="achievement-card" [class.unlocked]="ach.unlocked" [attr.data-tier]="ach.tier">
-                <div class="achievement-card__icon-wrap">
-                    <app-icon [name]="toIconName(ach.icon)" [size]="22" class="ach-icon" />
+                <div class="achievement-card__crest-wrap">
+                    <div class="rpg-shield-crest">
+                        <app-icon [name]="toIconName(ach.icon)" [size]="20" class="crest-icon" />
+                    </div>
+                    @if (ach.unlocked) {
+                        <span class="crest-status-badge is-unlocked" title="Unlocked">
+                            <app-icon name="check" [size]="9" />
+                        </span>
+                    } @else {
+                        <span class="crest-status-badge is-locked" title="Locked">
+                            <app-icon name="lock" [size]="9" />
+                        </span>
+                    }
                 </div>
 
                 <div class="achievement-card__body">
                     <div class="achievement-card__header">
-                        <h4 class="achievement-card__title">{{ i18n.t(ach.titleKey) || ach.id }}</h4>
+                        <div class="achievement-card__title-row">
+                            <h4 class="achievement-card__title">{{ i18n.t(ach.titleKey) || ach.id }}</h4>
+                            <span class="achievement-card__tier-tag">{{ ach.tier | uppercase }}</span>
+                        </div>
                         <span class="achievement-card__reward" [class.is-unlocked]="ach.unlocked">
                             @if (ach.unlocked) {
                                 <app-icon name="check" [size]="12" class="check-icon" />
@@ -243,74 +257,112 @@
             </div>
 
             <!-- Top 3 Podium -->
-            @if (top3().length >= 3) {
-                <div class="podium-container">
-                    <!-- 2nd Place (Silver) -->
+            <div class="podium-container">
+                <!-- 2nd Place (Silver) -->
+                <div class="podium-col podium-col--second" [class.is-unclaimed]="!secondPlace()">
                     @if (secondPlace(); as silver) {
-                        <div class="podium-col podium-col--second">
-                            <div class="podium-avatar-wrap">
-                                <div class="podium-crown podium-crown--silver"><app-icon name="medal" [size]="16" /></div>
-                                <div class="podium-avatar podium-avatar--silver">
-                                    {{ silver.avatar ? '' : silver.name.charAt(0).toUpperCase() }}
-                                    @if (silver.avatar) {
-                                        <img [src]="silver.avatar" [alt]="silver.name" class="avatar-img" />
-                                    }
-                                </div>
-                            </div>
-                            <span class="podium-name" [title]="silver.name">{{ silver.name }}</span>
-                            <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (silver.weeklyXp ?? silver.xp) : silver.xp).toLocaleString() }} XP</span>
-                            <div class="podium-pillar podium-pillar--silver">
-                                <span class="podium-rank-num">2</span>
-                                <span class="podium-level-tag">Lv.{{ silver.level }}</span>
+                        <div class="podium-avatar-wrap">
+                            <div class="podium-crown podium-crown--silver"><app-icon name="ribbon-shield" [size]="16" /></div>
+                            <div class="podium-avatar podium-avatar--silver">
+                                {{ silver.avatar ? '' : silver.name.charAt(0).toUpperCase() }}
+                                @if (silver.avatar) {
+                                    <img [src]="silver.avatar" [alt]="silver.name" class="avatar-img" />
+                                }
                             </div>
                         </div>
-                    }
-
-                    <!-- 1st Place (Gold) -->
-                    @if (firstPlace(); as gold) {
-                        <div class="podium-col podium-col--first">
-                            <div class="podium-avatar-wrap">
-                                <div class="podium-crown gold-crown"><app-icon name="crown" [size]="18" /></div>
-                                <div class="podium-avatar podium-avatar--gold">
-                                    {{ gold.avatar ? '' : gold.name.charAt(0).toUpperCase() }}
-                                    @if (gold.avatar) {
-                                        <img [src]="gold.avatar" [alt]="gold.name" class="avatar-img" />
-                                    }
-                                </div>
-                            </div>
-                            <span class="podium-name" [title]="gold.name">{{ gold.name }}</span>
-                            <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (gold.weeklyXp ?? gold.xp) : gold.xp).toLocaleString() }} XP</span>
-                            <div class="podium-pillar podium-pillar--gold">
-                                <span class="podium-rank-num">1</span>
-                                <span class="podium-level-tag">Lv.{{ gold.level }}</span>
+                        <span class="podium-name" [title]="silver.name">{{ silver.name }}</span>
+                        <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (silver.weeklyXp ?? silver.xp) : silver.xp).toLocaleString() }} XP</span>
+                        <div class="podium-pillar podium-pillar--silver">
+                            <span class="podium-rank-num">2</span>
+                            <span class="podium-level-tag">Lv.{{ silver.level }}</span>
+                        </div>
+                    } @else {
+                        <div class="podium-avatar-wrap">
+                            <div class="podium-crown podium-crown--silver"><app-icon name="ribbon-shield" [size]="16" /></div>
+                            <div class="podium-avatar podium-avatar--silver podium-avatar--unclaimed">
+                                <app-icon name="plus" [size]="18" />
                             </div>
                         </div>
-                    }
-
-                    <!-- 3rd Place (Bronze) -->
-                    @if (thirdPlace(); as bronze) {
-                        <div class="podium-col podium-col--third">
-                            <div class="podium-avatar-wrap">
-                                <div class="podium-crown podium-crown--bronze"><app-icon name="medal" [size]="16" /></div>
-                                <div class="podium-avatar podium-avatar--bronze">
-                                    {{ bronze.avatar ? '' : bronze.name.charAt(0).toUpperCase() }}
-                                    @if (bronze.avatar) {
-                                        <img [src]="bronze.avatar" [alt]="bronze.name" class="avatar-img" />
-                                    }
-                                </div>
-                            </div>
-                            <span class="podium-name" [title]="bronze.name">{{ bronze.name }}</span>
-                            <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (bronze.weeklyXp ?? bronze.xp) : bronze.xp).toLocaleString() }} XP</span>
-                            <div class="podium-pillar podium-pillar--bronze">
-                                <span class="podium-rank-num">3</span>
-                                <span class="podium-level-tag">Lv.{{ bronze.level }}</span>
-                            </div>
+                        <span class="podium-name podium-name--unclaimed">{{ i18n.t('leaderboard.unclaimed') || 'Open' }}</span>
+                        <span class="podium-xp podium-xp--unclaimed">-- XP</span>
+                        <div class="podium-pillar podium-pillar--silver podium-pillar--unclaimed">
+                            <span class="podium-rank-num">2</span>
+                            <span class="podium-level-tag">--</span>
                         </div>
                     }
                 </div>
-            }
+
+                <!-- 1st Place (Gold) -->
+                <div class="podium-col podium-col--first" [class.is-unclaimed]="!firstPlace()">
+                    @if (firstPlace(); as gold) {
+                        <div class="podium-avatar-wrap">
+                            <div class="podium-crown gold-crown"><app-icon name="laurel-crown" [size]="18" /></div>
+                            <div class="podium-avatar podium-avatar--gold">
+                                {{ gold.avatar ? '' : gold.name.charAt(0).toUpperCase() }}
+                                @if (gold.avatar) {
+                                    <img [src]="gold.avatar" [alt]="gold.name" class="avatar-img" />
+                                }
+                            </div>
+                        </div>
+                        <span class="podium-name" [title]="gold.name">{{ gold.name }}</span>
+                        <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (gold.weeklyXp ?? gold.xp) : gold.xp).toLocaleString() }} XP</span>
+                        <div class="podium-pillar podium-pillar--gold">
+                            <span class="podium-rank-num">1</span>
+                            <span class="podium-level-tag">Lv.{{ gold.level }}</span>
+                        </div>
+                    } @else {
+                        <div class="podium-avatar-wrap">
+                            <div class="podium-crown gold-crown"><app-icon name="laurel-crown" [size]="18" /></div>
+                            <div class="podium-avatar podium-avatar--gold podium-avatar--unclaimed">
+                                <app-icon name="plus" [size]="20" />
+                            </div>
+                        </div>
+                        <span class="podium-name podium-name--unclaimed">{{ i18n.t('leaderboard.unclaimed') || 'Open' }}</span>
+                        <span class="podium-xp podium-xp--unclaimed">-- XP</span>
+                        <div class="podium-pillar podium-pillar--gold podium-pillar--unclaimed">
+                            <span class="podium-rank-num">1</span>
+                            <span class="podium-level-tag">--</span>
+                        </div>
+                    }
+                </div>
+
+                <!-- 3rd Place (Bronze) -->
+                <div class="podium-col podium-col--third" [class.is-unclaimed]="!thirdPlace()">
+                    @if (thirdPlace(); as bronze) {
+                        <div class="podium-avatar-wrap">
+                            <div class="podium-crown podium-crown--bronze"><app-icon name="templar-shield" [size]="16" /></div>
+                            <div class="podium-avatar podium-avatar--bronze">
+                                {{ bronze.avatar ? '' : bronze.name.charAt(0).toUpperCase() }}
+                                @if (bronze.avatar) {
+                                    <img [src]="bronze.avatar" [alt]="bronze.name" class="avatar-img" />
+                                }
+                            </div>
+                        </div>
+                        <span class="podium-name" [title]="bronze.name">{{ bronze.name }}</span>
+                        <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (bronze.weeklyXp ?? bronze.xp) : bronze.xp).toLocaleString() }} XP</span>
+                        <div class="podium-pillar podium-pillar--bronze">
+                            <span class="podium-rank-num">3</span>
+                            <span class="podium-level-tag">Lv.{{ bronze.level }}</span>
+                        </div>
+                    } @else {
+                        <div class="podium-avatar-wrap">
+                            <div class="podium-crown podium-crown--bronze"><app-icon name="templar-shield" [size]="16" /></div>
+                            <div class="podium-avatar podium-avatar--bronze podium-avatar--unclaimed">
+                                <app-icon name="plus" [size]="18" />
+                            </div>
+                        </div>
+                        <span class="podium-name podium-name--unclaimed">{{ i18n.t('leaderboard.unclaimed') || 'Open' }}</span>
+                        <span class="podium-xp podium-xp--unclaimed">-- XP</span>
+                        <div class="podium-pillar podium-pillar--bronze podium-pillar--unclaimed">
+                            <span class="podium-rank-num">3</span>
+                            <span class="podium-level-tag">--</span>
+                        </div>
+                    }
+                </div>
+            </div>
 
             <!-- Ranks 4+ List -->
+            @if (remainingLearners().length > 0) {
             <div class="ranking-list">
                 @for (learner of remainingLearners(); track learner.userId) {
                     <div class="ranking-row" [class.is-current-user]="learner.userId === leaderboard.getCurrentUserId()">
@@ -342,6 +394,7 @@
                     </div>
                 }
             </div>
+            }
 
             <!-- Sticky User Position Bar -->
             @if (myRank(); as me) {

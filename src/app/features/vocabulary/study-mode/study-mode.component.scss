@@ -1170,18 +1170,99 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-xs);
+    gap: 0.75rem;
 
-    .complete-icon {
-        color: var(--success);
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background: var(--word-known);
+    .study-completion-crest {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(16, 185, 129, 0.25);
+        gap: 0.625rem;
+        position: relative;
+
+        .rpg-shield-crest--lg {
+            position: relative;
+            width: 72px;
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+            background: var(--crest-bg);
+            box-shadow: 0 8px 32px var(--crest-glow);
+            animation: crestPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 3px;
+                clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+                background: var(--crest-inner-bg);
+                border: 2px solid var(--crest-inner-border);
+                pointer-events: none;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 48%;
+                clip-path: inherit;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.02) 100%);
+                pointer-events: none;
+            }
+
+            .crest-icon {
+                position: relative;
+                z-index: 2;
+                color: var(--crest-icon-color);
+                filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
+            }
+        }
+
+        .crest-rank-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.875rem;
+            border-radius: var(--border-radius-pill, 9999px);
+            color: var(--tier-tag-color);
+            background: var(--tier-tag-bg);
+            border: 1px solid var(--crest-inner-border);
+            box-shadow: 0 2px 8px var(--crest-glow);
+        }
+
+        &[data-tier="bronze"] {
+            --crest-bg: linear-gradient(145deg, #f59e0b 0%, #b45309 40%, #78350f 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #92400e 0%, #451a03 100%);
+            --crest-inner-border: rgba(245, 158, 11, 0.5);
+            --crest-glow: rgba(217, 119, 6, 0.35);
+            --crest-icon-color: #fef3c7;
+            --tier-tag-color: #f59e0b;
+            --tier-tag-bg: rgba(217, 119, 6, 0.16);
+        }
+
+        &[data-tier="silver"] {
+            --crest-bg: linear-gradient(145deg, #f8fafc 0%, #cbd5e1 35%, #475569 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #64748b 0%, #1e293b 100%);
+            --crest-inner-border: rgba(255, 255, 255, 0.7);
+            --crest-glow: rgba(148, 163, 184, 0.4);
+            --crest-icon-color: #ffffff;
+            --tier-tag-color: #e2e8f0;
+            --tier-tag-bg: rgba(148, 163, 184, 0.18);
+        }
+
+        &[data-tier="gold"] {
+            --crest-bg: linear-gradient(145deg, #fef08a 0%, #f59e0b 40%, #b45309 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #b45309 0%, #451a03 100%);
+            --crest-inner-border: rgba(254, 240, 138, 0.8);
+            --crest-glow: rgba(245, 158, 11, 0.55);
+            --crest-icon-color: #fffbeb;
+            --tier-tag-color: #fbbf24;
+            --tier-tag-bg: rgba(245, 158, 11, 0.18);
+        }
     }
 
     h2 {
@@ -1338,3 +1419,15 @@
         margin-left: 3px;
     }
 }
+
+@keyframes crestPop {
+    0% {
+        transform: scale(0.65) translateY(12px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+

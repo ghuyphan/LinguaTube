@@ -245,19 +245,86 @@
         background: var(--bg-hover);
     }
 
-    &__icon-wrap {
+    &__crest-wrap {
+        position: relative;
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-        border-radius: var(--border-radius-md);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--text-muted);
-        border: 1px solid var(--border-color);
-        flex-shrink: 0;
-        transition: all var(--transition-fast);
+        width: 52px;
+        height: 56px;
+    }
+
+    .rpg-shield-crest {
+        position: relative;
+        width: 46px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // Classic RPG Heater Shield silhouette
+        clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+        background: var(--crest-bg);
+        box-shadow: 0 4px 16px var(--crest-glow);
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+        // Metallic inner shield rim & bevel
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+            background: var(--crest-inner-bg);
+            border: 1.5px solid var(--crest-inner-border);
+            pointer-events: none;
+        }
+
+        // Specular light glint / metallic sheen across upper shield
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 46%;
+            clip-path: inherit;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.02) 100%);
+            pointer-events: none;
+        }
+
+        .crest-icon {
+            position: relative;
+            z-index: 2;
+            color: var(--crest-icon-color);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+            transition: transform var(--transition-fast);
+        }
+    }
+
+    .crest-status-badge {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1.5px solid var(--bg-secondary);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+        &.is-unlocked {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+        }
+
+        &.is-locked {
+            background: #1e293b;
+            color: #94a3b8;
+            border-color: #334155;
+        }
     }
 
     &__body {
@@ -273,12 +340,34 @@
         margin-bottom: 0.25rem;
     }
 
+    &__title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 0;
+    }
+
     &__title {
         font-size: 0.875rem;
         font-weight: 700;
         color: var(--text-primary);
         margin: 0;
         line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__tier-tag {
+        font-size: 0.625rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        padding: 1px 6px;
+        border-radius: var(--border-radius-pill, 9999px);
+        color: var(--tier-tag-color);
+        background: var(--tier-tag-bg);
+        line-height: 1.3;
+        flex-shrink: 0;
     }
 
     &__reward {
@@ -336,58 +425,67 @@
         }
     }
 
-    // Tier-colored icon badges (Translucent glowing aesthetic)
-    &[data-tier="bronze"] .achievement-card__icon-wrap {
-        background: rgba(205, 127, 50, 0.12);
-        border-color: rgba(205, 127, 50, 0.28);
-        color: #cd7f32;
+    // ============================================
+    // RPG SHIELD CREST TIERS
+    // ============================================
+    // Bronze Shield (Sturdy Copper / Warrior)
+    &[data-tier="bronze"] {
+        --crest-bg: linear-gradient(145deg, #f59e0b 0%, #b45309 40%, #78350f 100%);
+        --crest-inner-bg: radial-gradient(circle at 50% 25%, #92400e 0%, #451a03 100%);
+        --crest-inner-border: rgba(245, 158, 11, 0.5);
+        --crest-glow: rgba(217, 119, 6, 0.3);
+        --crest-icon-color: #fef3c7;
+        --tier-tag-color: #d97706;
+        --tier-tag-bg: rgba(217, 119, 6, 0.14);
     }
 
-    &[data-tier="silver"] .achievement-card__icon-wrap {
-        background: rgba(148, 163, 184, 0.12);
-        border-color: rgba(148, 163, 184, 0.28);
-        color: #94a3b8;
+    // Silver Shield (Knight / Chrome Steel)
+    &[data-tier="silver"] {
+        --crest-bg: linear-gradient(145deg, #f8fafc 0%, #cbd5e1 35%, #475569 100%);
+        --crest-inner-bg: radial-gradient(circle at 50% 25%, #64748b 0%, #1e293b 100%);
+        --crest-inner-border: rgba(255, 255, 255, 0.7);
+        --crest-glow: rgba(148, 163, 184, 0.35);
+        --crest-icon-color: #ffffff;
+        --tier-tag-color: #94a3b8;
+        --tier-tag-bg: rgba(148, 163, 184, 0.14);
     }
 
-    &[data-tier="gold"] .achievement-card__icon-wrap {
-        background: rgba(245, 158, 11, 0.12);
-        border-color: rgba(245, 158, 11, 0.28);
-        color: #f59e0b;
+    // Gold Shield (Champion / 24K Sunburst)
+    &[data-tier="gold"] {
+        --crest-bg: linear-gradient(145deg, #fef08a 0%, #f59e0b 40%, #b45309 100%);
+        --crest-inner-bg: radial-gradient(circle at 50% 25%, #b45309 0%, #451a03 100%);
+        --crest-inner-border: rgba(254, 240, 138, 0.8);
+        --crest-glow: rgba(245, 158, 11, 0.45);
+        --crest-icon-color: #fffbeb;
+        --tier-tag-color: #f59e0b;
+        --tier-tag-bg: rgba(245, 158, 11, 0.14);
     }
 
-    &[data-tier="diamond"] .achievement-card__icon-wrap {
-        background: rgba(59, 130, 246, 0.12);
-        border-color: rgba(59, 130, 246, 0.28);
-        color: #3b82f6;
+    // Diamond Shield (Mythic Celestial Crystal)
+    &[data-tier="diamond"] {
+        --crest-bg: linear-gradient(145deg, #bae6fd 0%, #38bdf8 30%, #818cf8 70%, #c084fc 100%);
+        --crest-inner-bg: radial-gradient(circle at 50% 25%, #0369a1 0%, #1e1b4b 100%);
+        --crest-inner-border: rgba(224, 242, 254, 0.85);
+        --crest-glow: rgba(56, 189, 248, 0.5);
+        --crest-icon-color: #f0fdf4;
+        --tier-tag-color: #38bdf8;
+        --tier-tag-bg: rgba(56, 189, 248, 0.14);
     }
 
-    // Unlocked card state
+    // Unlocked Card State (Full Radiance)
     &.unlocked {
         background: var(--bg-card);
-        border-color: rgba(var(--accent-primary-rgb), 0.3);
+        border-color: rgba(var(--accent-primary-rgb), 0.35);
 
-        &[data-tier="bronze"] .achievement-card__icon-wrap {
-            background: linear-gradient(135deg, rgba(205, 127, 50, 0.25), rgba(205, 127, 50, 0.1));
-            border-color: rgba(205, 127, 50, 0.45);
-            box-shadow: 0 0 12px rgba(205, 127, 50, 0.2);
-        }
+        @media (hover: hover) {
+            &:hover .rpg-shield-crest {
+                transform: translateY(-2px) scale(1.05);
+                box-shadow: 0 6px 20px var(--crest-glow);
 
-        &[data-tier="silver"] .achievement-card__icon-wrap {
-            background: linear-gradient(135deg, rgba(148, 163, 184, 0.25), rgba(148, 163, 184, 0.1));
-            border-color: rgba(148, 163, 184, 0.45);
-            box-shadow: 0 0 12px rgba(148, 163, 184, 0.2);
-        }
-
-        &[data-tier="gold"] .achievement-card__icon-wrap {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.1));
-            border-color: rgba(245, 158, 11, 0.45);
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
-        }
-
-        &[data-tier="diamond"] .achievement-card__icon-wrap {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.1));
-            border-color: rgba(59, 130, 246, 0.45);
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
+                .crest-icon {
+                    transform: scale(1.08);
+                }
+            }
         }
 
         .progress-bar .progress-fill {
@@ -399,8 +497,18 @@
         }
     }
 
+    // Locked Card State (Forged Dark Iron)
     &:not(.unlocked) {
-        opacity: 0.8;
+        --crest-bg: linear-gradient(145deg, #334155 0%, #1e293b 50%, #0f172a 100%);
+        --crest-inner-bg: radial-gradient(circle at 50% 25%, #1e293b 0%, #0b0f19 100%);
+        --crest-inner-border: rgba(255, 255, 255, 0.08);
+        --crest-glow: transparent;
+        --crest-icon-color: #64748b;
+        opacity: 0.78;
+
+        .crest-icon {
+            filter: grayscale(0.8) opacity(0.5);
+        }
     }
 }
 
@@ -534,6 +642,40 @@
 
         .podium-rank-num {
             color: #d97706;
+        }
+    }
+
+    &.is-unclaimed {
+        opacity: 0.62;
+        transition: opacity var(--transition-fast);
+
+        @media (hover: hover) {
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+
+        .podium-avatar--unclaimed {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px dashed var(--border-color);
+            color: var(--text-muted);
+            box-shadow: none;
+        }
+
+        .podium-name--unclaimed {
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .podium-xp--unclaimed {
+            color: var(--text-muted);
+            opacity: 0.55;
+        }
+
+        .podium-pillar--unclaimed {
+            border-style: dashed;
+            opacity: 0.7;
         }
     }
 }
@@ -948,20 +1090,71 @@
     }
 
     .daily-chest-icon-wrap {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(245, 158, 11, 0.15);
-        color: #f59e0b;
+        background: linear-gradient(145deg, #fef08a 0%, #f59e0b 50%, #b45309 100%);
+        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+        color: #ffffff;
         flex-shrink: 0;
+        transition: all var(--transition-normal);
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 12px;
+            background: radial-gradient(circle at 50% 25%, #78350f 0%, #451a03 100%);
+            border: 1.5px solid rgba(254, 240, 138, 0.7);
+            pointer-events: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48%;
+            border-radius: 14px 14px 0 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.02) 100%);
+            pointer-events: none;
+        }
+
+        .chest-icon {
+            position: relative;
+            z-index: 2;
+            color: #fef08a;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+            transition: transform var(--transition-fast);
+        }
+    }
+
+    &.ready-to-claim .daily-chest-icon-wrap {
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.65);
+        animation: pulseButton 2s ease-in-out infinite;
+
+        .chest-icon {
+            transform: scale(1.1);
+        }
     }
 
     &.claimed .daily-chest-icon-wrap {
-        background: rgba(16, 185, 129, 0.15);
-        color: #10b981;
+        background: linear-gradient(145deg, #a7f3d0 0%, #10b981 50%, #047857 100%);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+
+        &::before {
+            background: radial-gradient(circle at 50% 25%, #065f46 0%, #022c22 100%);
+            border-color: rgba(167, 243, 208, 0.7);
+        }
+
+        .chest-icon {
+            color: #a7f3d0;
+        }
     }
 
     .daily-chest-info {
@@ -1066,27 +1259,85 @@
     &.completed:not(.claimed) {
         border-color: rgba(16, 185, 129, 0.5);
         background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
+
+        .mission-card__icon-wrap {
+            background: linear-gradient(145deg, #a7f3d0 0%, #10b981 40%, #047857 100%);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45);
+
+            &::before {
+                background: radial-gradient(circle at 50% 25%, #065f46 0%, #022c22 100%);
+                border-color: rgba(167, 243, 208, 0.75);
+            }
+
+            .mission-icon {
+                color: #f0fdf4;
+                transform: scale(1.08);
+            }
+        }
     }
 
     &.claimed {
         opacity: 0.75;
+
+        .mission-card__icon-wrap {
+            background: linear-gradient(145deg, #334155 0%, #1e293b 100%);
+            box-shadow: none;
+
+            &::before {
+                background: #0f172a;
+                border-color: rgba(255, 255, 255, 0.06);
+            }
+
+            .mission-icon {
+                color: #64748b;
+                opacity: 0.6;
+            }
+        }
     }
 
     .mission-card__icon-wrap {
+        position: relative;
         width: 44px;
-        height: 44px;
-        border-radius: 12px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--bg-hover);
-        color: var(--text-secondary);
+        clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+        background: linear-gradient(145deg, #475569 0%, #334155 50%, #1e293b 100%);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        color: #94a3b8;
         flex-shrink: 0;
-    }
+        transition: all var(--transition-fast);
 
-    &.completed .mission-card__icon-wrap {
-        background: rgba(16, 185, 129, 0.15);
-        color: #10b981;
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+            background: radial-gradient(circle at 50% 25%, #1e293b 0%, #0f172a 100%);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            pointer-events: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 44%;
+            clip-path: inherit;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.02) 100%);
+            pointer-events: none;
+        }
+
+        .mission-icon {
+            position: relative;
+            z-index: 2;
+            color: #94a3b8;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+            transition: transform var(--transition-fast);
+        }
     }
 
     .mission-card__body {

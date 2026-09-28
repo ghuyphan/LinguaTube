@@ -19,7 +19,7 @@
                                 </button>
                             } @else if (auth.subscriptionTier() !== 'premium') {
                                 <button class="account-upgrade-pill" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPro') || 'Become a Supporter'">
-                                    <app-icon name="zap" [size]="12" />
+                                    <app-icon name="crown" [size]="12" />
                                     <span>{{ i18n.t('pro.upgrade') || 'Support' }}</span>
                                 </button>
                             }
@@ -50,7 +50,7 @@
                             <div class="login-spinner"></div>
                             <span>{{ i18n.t('auth.signingIn') || 'Signing in...' }}</span>
                         } @else {
-                            <app-icon name="google" [size]="20" />
+                            <app-icon name="google" [size]="18" />
                             <span>{{ i18n.t('settings.signInGoogle') }}</span>
                         }
                     </button>
@@ -86,7 +86,7 @@
                     <button class="settings-item-row" (click)="showReadingModePicker.set(true)">
                         <div class="settings-item-left">
                             <div class="settings-item-icon-box">
-                                <app-icon name="languages" [size]="16" />
+                                <app-icon name="ruby-text" [size]="16" />
                             </div>
                             <span class="settings-item-title">{{ i18n.t('settings.learningDisplay') }}</span>
                         </div>
@@ -161,7 +161,7 @@
                         <div class="settings-item-row settings-item-row--update-ready">
                             <div class="settings-item-left">
                                 <div class="settings-item-icon-box settings-item-icon-box--update">
-                                    <app-icon name="rotate-ccw" [size]="16" />
+                                    <app-icon name="refresh-cw" [size]="16" />
                                 </div>
                                 <div class="settings-item-text-stack">
                                     <span class="settings-item-title">{{ i18n.t('app.updateAvailable') }}</span>
@@ -176,7 +176,7 @@
                         <button class="settings-item-row" (click)="checkForUpdates()" [disabled]="appUpdate.isChecking()">
                             <div class="settings-item-left">
                                 <div class="settings-item-icon-box">
-                                    <app-icon name="rotate-ccw" [size]="16" [class.is-spinning]="appUpdate.isChecking()" />
+                                    <app-icon name="refresh-cw" [size]="16" [class.is-spinning]="appUpdate.isChecking()" />
                                 </div>
                                 <span class="settings-item-title">
                                     {{ appUpdate.isChecking() ? (i18n.t('settings.checkingForUpdates') || 'Checking...') : (i18n.t('settings.checkForUpdates') || 'Check for Updates') }}

@@ -59,7 +59,7 @@ export class CommandPaletteComponent implements OnDestroy {
   allItems = computed<PaletteItem[]>(() => [
     {
       id: 'watch',
-      icon: 'play',
+      icon: 'play-circle',
       title: this.i18n.t('commandPalette.watchVideo') || 'Watch YouTube Videos',
       category: this.i18n.t('commandPalette.quickActions') || 'Navigation',
       run: () => this.navigate('/video')

@@ -90,7 +90,7 @@ describe('VideoLevelDialogComponent', () => {
 
     const tip = component.immersionTipText();
     expect(tip).toContain('0.75x');
-    expect(tip).toContain('Auto-Pause');
+    expect(tip).toContain('tricky lines');
   });
 
   it('should tailor immersion tip to advanced videos with normal speech pace', () => {
@@ -102,7 +102,7 @@ describe('VideoLevelDialogComponent', () => {
     fixture.detectChanges();
 
     const tip = component.immersionTipText();
-    expect(tip).toContain('Complex grammar');
+    expect(tip).toContain('Advanced content');
   });
 
   it('should tailor immersion tip to beginner videos with normal speech pace', () => {
@@ -114,7 +114,7 @@ describe('VideoLevelDialogComponent', () => {
     fixture.detectChanges();
 
     const tip = component.immersionTipText();
-    expect(tip).toContain('Clear and accessible');
+    expect(tip).toContain('Clear speech');
   });
 
   it('should fallback to general 0.75x speed tip for intermediate normal pace videos', () => {
@@ -128,5 +128,26 @@ describe('VideoLevelDialogComponent', () => {
     const tip = component.immersionTipText();
     expect(tip).toContain('0.75x');
     expect(tip).toContain('dual subtitles');
+  });
+
+  it('should provide correct evaluationSummary for linguistic analysis', () => {
+    expect(component.isLinguistic()).toBeTrue();
+    expect(component.evaluationSummary()).toContain('grammar patterns');
+    const summaryEl = fixture.nativeElement.querySelector('.evaluation-summary');
+    expect(summaryEl.textContent.trim()).toBe(component.evaluationSummary());
+  });
+
+  it('should provide correct evaluationSummary for metadata matching', () => {
+    fixture.componentRef.setInput('levelInfo', {
+      ...mockLevelInfo,
+      detectedFrom: 'title',
+      grammarCount: 0
+    });
+    fixture.detectChanges();
+
+    expect(component.isLinguistic()).toBeFalse();
+    expect(component.evaluationSummary()).toContain('video title, channel, or curriculum');
+    const summaryEl = fixture.nativeElement.querySelector('.evaluation-summary');
+    expect(summaryEl.textContent.trim()).toBe(component.evaluationSummary());
   });
 });

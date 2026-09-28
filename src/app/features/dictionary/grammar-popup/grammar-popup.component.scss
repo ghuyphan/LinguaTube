@@ -2,15 +2,17 @@
 
 .popup-content {
     position: relative;
-    padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .popup-header {
-    padding: var(--space-md) 2.75rem var(--space-sm);
-    text-align: left;
+    padding: var(--space-md) var(--space-lg) var(--space-sm);
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-xs);
 }
 
@@ -20,11 +22,11 @@
     color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
 }
 
 .popup-body {
-    padding: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
     max-height: 50vh;
     overflow-y: auto;
     scrollbar-width: none;
@@ -39,8 +41,11 @@
 
 .popup-badges {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: var(--space-xs);
     margin-bottom: var(--space-md);
+    flex-wrap: wrap;
 }
 
 .badge {
@@ -86,7 +91,11 @@
 }
 
 .popup-section {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .section-label {
@@ -177,8 +186,7 @@
 .popup-footer {
     display: flex;
     gap: var(--space-sm);
-    padding: var(--space-md);
-    border-top: 1px solid var(--border-color);
+    padding: var(--space-sm) var(--space-md) var(--space-md);
 
     .btn {
         flex: 1;
@@ -202,7 +210,7 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .popup-header {
-        padding: var(--space-xs) 2.75rem var(--space-sm);
+        padding: var(--space-xs) var(--space-lg) var(--space-sm);
     }
 
     .popup-word {
@@ -210,6 +218,6 @@
     }
 
     .popup-footer {
-        padding: var(--space-sm) var(--space-md);
+        padding: var(--space-sm) var(--space-md) var(--space-md);
     }
 }

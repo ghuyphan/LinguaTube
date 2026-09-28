@@ -27,6 +27,17 @@
         fill: currentColor;
         stroke: none;
     }
+
+    // Multi-color brand icons
+    &.icon--google {
+        fill: none;
+        stroke: none !important;
+        stroke-width: 0 !important;
+
+        path {
+            stroke: none !important;
+        }
+    }
 }
 
 /* Loader spinner - functional animation */

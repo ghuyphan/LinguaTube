@@ -142,7 +142,7 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
     readonly thirdPlace = computed(() => this.top3()[2] || null);
     readonly remainingLearners = computed(() => {
         const learners = this.leaderboard.topLearners();
-        return learners.length >= 3 ? learners.slice(3) : learners;
+        return learners.length > 3 ? learners.slice(3) : [];
     });
 
     readonly myRank = this.leaderboard.userRank;

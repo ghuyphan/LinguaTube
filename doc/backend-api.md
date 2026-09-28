@@ -201,7 +201,9 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - `en -> vi`: Naver English-Vietnamese (`envi`) $\rightarrow$ Glosbe
   - `en -> ja`: Naver English-Japanese (`enja`) $\rightarrow$ Jisho.org
   - `en -> ko`: Naver Oxford English-Korean (`enko`)
-  - `en -> zh`: Naver English-Chinese (`enzh`) $\rightarrow$ MDBG $\rightarrow$ Glosbe
+- **Query Relevance Ranking & Multi-Reading Formatting**:
+  - **Relevance Scoring**: Upstream dictionary results (Mazii, Jotoba) are dynamically scored against the query word: exact headword match (100 pts), primary reading match (85 pts), secondary reading match (50 pts), prefix match (40 pts), and `uk` (usually kana) bonus (+15 pts). This ensures kana queries (e.g. `いる`) prioritize true targets (`居る` / `要る`) over words where the query is only a secondary or archaic reading (`入る`).
+  - **Clean Multi-Reading Delimiters**: Space-delimited upstream readings are parsed and formatted with clean slashes (`はいる / いる`) and converted to romanization (`hairu / iru`), preventing concatenated syllable runs in client display.
 - **Dual In-Memory + Edge Caching**:
   - **In-Memory LRU Cache (`memPosDictCache`)**: Warm Worker isolates maintain up to 1,000 positive dictionary lookup entries with a 1-hour TTL. Frequently recurring words (particles, high-frequency verbs) return in $<0.1$ms with zero KV reads or writes (`X-Cache: HIT-MEMORY`).
   - **In-Memory Negative Cache (`memNegDictCache`)**: Missing words are cached in an isolate `Set` to prevent repeated upstream scraping calls.
@@ -441,17 +443,17 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 
 ### 3.13. Video Level Classification API
 - **Routes**:
-  - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`, `confidence`, `method`).
-  - `GET /api/video-info`: Includes `levels: Record<string, string>` map (e.g. `{"ja": "JLPT N4", "en": "CEFR B1"}`) with fast-path metadata regex detection across native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`).
-- **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`
+  - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`, `confidence`, `method`, optional rich diagnostic details: `tier`, `score`, `grammarCount`, `speechRateCpm`, `breakdown`).
+  - `GET /api/video-info`: Includes `levels: Record<string, string | VideoLevelInfo>` map with fast-path metadata regex detection across native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`) and full cached linguistic diagnostic details when available.
+- **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`, `server/server.js` (dev synced)
 - **Security & Integrity Protection**:
   - Rate limiting: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX`).
   - Confidence threshold: Client submissions must have `confidence >= 0.65` to be persisted.
   - Non-destructive updates: Submissions cannot overwrite an existing verified level if the existing level has higher confidence.
 - **Storage Strategy & Ingestion-Time Assessment**:
-  - Automatically evaluated at ingestion time in `saveVideoLanguages()` via `detectLevelFromMetadata()` and persisted strictly to Cloudflare D1 `video_languages.levels` column as a JSON map (Zero KV writes - Rule 2).
-  - Normalizes return objects so clients always receive clean language-to-level string mappings (`{ ja: "JLPT N4" }`).
-  - **Client Fast-Path**: The Angular client checks `serverLevels` first, achieving instant 0ms level resolution upon video open without requiring cue loops or client-side linguistic scans.
+  - Automatically evaluated at ingestion time in `saveVideoLanguages()` via `detectLevelFromMetadata()` or updated from client linguistic analysis with rich details (`score`, `tier`, `grammarCount`, `speechRateCpm`, `breakdown`). Persisted strictly to Cloudflare D1 `video_languages.levels` column as a JSON map (Zero KV writes - Rule 2) and `server/transcripts_cache/video_levels.json` in local dev.
+  - Backwards-compatible: Consumers can read either string label or full diagnostic object.
+  - **Client Fast-Path**: The Angular client checks `serverLevels` first, achieving instant 0ms level resolution upon video open. When cached diagnostics are present, full diagnostic cards (grammar count, pattern chips, speech cadence) render immediately without requiring client cue re-analysis.
 
 ---
 

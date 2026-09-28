@@ -314,7 +314,7 @@ export class AiJobManagerService {
       const langSuffix = isMismatch ? ` (${resolvedLang.toUpperCase()})` : '';
       this.toastService.show(`AI Subtitles ready${langSuffix} for ${titleSnippet}!`, {
         type: 'success',
-        icon: 'captions-ai',
+        icon: 'subtitles-ai',
         duration: 6000,
         action: {
           label: 'Watch',

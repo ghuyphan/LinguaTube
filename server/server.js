@@ -382,7 +382,28 @@ async function fetchDictLocal(word, from, to) {
                 });
                 if (res.ok) {
                     const data = await res.json();
-                    const results = data.data || data.results || [];
+                    let results = data.data || data.results || [];
+                    if (word && word.trim()) {
+                        const q = word.trim().toLowerCase();
+                        results = [...results].sort((a, b) => {
+                            const scoreEntry = (entry) => {
+                                const w = (entry.word || '').toLowerCase();
+                                const rawPhonetic = (entry.phonetic || entry.reading || '').toLowerCase();
+                                const parts = rawPhonetic.split(/[\s,、/]+/).filter(Boolean);
+                                const kind = (entry.means?.[0]?.kind || entry.type || '').toLowerCase();
+                                let s = 0;
+                                if (w === q) s = 100;
+                                else if (parts[0] === q) s = 85;
+                                else if (parts.includes(q)) s = 50;
+                                else if (w.startsWith(q)) s = 40;
+                                else if (parts.some(p => p.startsWith(q))) s = 30;
+                                else s = 10;
+                                if (kind.includes('uk')) s += 15;
+                                return s;
+                            };
+                            return scoreEntry(b) - scoreEntry(a);
+                        });
+                    }
                     entries = results.slice(0, 5).map(e => {
                         const defs = [];
                         const examples = [];
@@ -419,9 +440,12 @@ async function fetchDictLocal(word, from, to) {
                         if (audio && !audio.startsWith('http')) audio = '';
                         const rawLevel = Array.isArray(e.level) ? e.level[0] : e.level;
                         const level = rawLevel ? parseInt(String(rawLevel).replace(/\D/g, '')) : null;
+                        const rawReading = (e.phonetic || '').trim();
+                        const readingParts = rawReading.split(/[\s,、/]+/).filter(Boolean);
+                        const reading = readingParts.length > 1 ? readingParts.join(' / ') : rawReading;
                         return {
                             word: e.word || word,
-                            reading: e.phonetic || '',
+                            reading,
                             definitions: defs,
                             ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
                             partOfSpeech: e.means?.[0]?.kind || '',
@@ -1116,6 +1140,61 @@ if (!fs.existsSync(TRANSCRIPTS_CACHE_DIR)) {
     try { fs.mkdirSync(TRANSCRIPTS_CACHE_DIR, { recursive: true }); } catch {}
 }
 
+const VIDEO_LEVELS_CACHE_FILE = path.join(TRANSCRIPTS_CACHE_DIR, 'video_levels.json');
+let videoLevelsStore = {};
+try {
+    if (fs.existsSync(VIDEO_LEVELS_CACHE_FILE)) {
+        videoLevelsStore = JSON.parse(fs.readFileSync(VIDEO_LEVELS_CACHE_FILE, 'utf-8'));
+    }
+} catch {}
+
+function saveVideoLevelsStore() {
+    try {
+        if (!fs.existsSync(TRANSCRIPTS_CACHE_DIR)) {
+            fs.mkdirSync(TRANSCRIPTS_CACHE_DIR, { recursive: true });
+        }
+        fs.writeFileSync(VIDEO_LEVELS_CACHE_FILE, JSON.stringify(videoLevelsStore, null, 2), 'utf-8');
+    } catch {}
+}
+
+function detectLevelFromMetadataDev(title = '', channel = '') {
+    const text = `${title} ${channel}`;
+    const jlptMatch = text.match(/\b(?:JLPT\s*)?N([1-5])\b/i) || text.match(/(?:JLPT|日本語能力試験)?\s*([NＮ][1-5１-５])/i);
+    if (jlptMatch) {
+        const num = jlptMatch[1].replace('Ｎ', 'N').replace(/[１-５]/, m => String.fromCharCode(m.charCodeAt(0) - 0xFEE0)).replace('N', '');
+        return { lang: 'ja', level: `JLPT N${num}` };
+    }
+    if (/中上級/.test(text)) return { lang: 'ja', level: 'JLPT N2' };
+    if (/上級/.test(text)) return { lang: 'ja', level: 'JLPT N1' };
+    if (/中級/.test(text)) return { lang: 'ja', level: 'JLPT N3' };
+    if (/初級|入門/.test(text)) return { lang: 'ja', level: 'JLPT N5' };
+
+    const hskMatch = text.match(/\bHSK\s*([1-6])\b/i);
+    if (hskMatch) return { lang: 'zh', level: `HSK ${hskMatch[1]}` };
+    if (/中高级|中高級/.test(text)) return { lang: 'zh', level: 'HSK 4' };
+    if (/高级|高級/.test(text)) return { lang: 'zh', level: 'HSK 5' };
+    if (/中级|中級/.test(text)) return { lang: 'zh', level: 'HSK 3' };
+    if (/初级|初級/.test(text)) return { lang: 'zh', level: 'HSK 2' };
+    if (/入门|入門/.test(text)) return { lang: 'zh', level: 'HSK 1' };
+
+    const topikMatch = text.match(/\bTOPIK\s*([1-6]|I{1,2})\b/i);
+    if (topikMatch) return { lang: 'ko', level: `TOPIK ${topikMatch[1]}` };
+    if (/고급/.test(text)) return { lang: 'ko', level: 'TOPIK 5' };
+    if (/중급/.test(text)) return { lang: 'ko', level: 'TOPIK 3' };
+    if (/초급/.test(text)) return { lang: 'ko', level: 'TOPIK 2' };
+    if (/입문/.test(text)) return { lang: 'ko', level: 'TOPIK 1' };
+
+    const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i);
+    if (cefrMatch) return { lang: 'en', level: `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}` };
+    if (/\bupper[\s-]intermediate\b/i.test(text)) return { lang: 'en', level: 'CEFR B2' };
+    if (/\b(?:for\s+)?intermediate\b/i.test(text)) return { lang: 'en', level: 'CEFR B1' };
+    if (/\b(?:for\s+)?elementary\b/i.test(text)) return { lang: 'en', level: 'CEFR A2' };
+    if (/\b(?:for\s+)?beginners?\b/i.test(text)) return { lang: 'en', level: 'CEFR A1' };
+    if (/\b(?:advanced|fluent)\b/i.test(text)) return { lang: 'en', level: 'CEFR C1' };
+
+    return null;
+}
+
 function isValidVideoId(id) {
     if (!id || typeof id !== 'string') return false;
     if (id === 'demo' || id === 'test') return true;
@@ -1466,7 +1545,13 @@ app.get('/api/video-info', async (req, res) => {
     } catch {}
 
 
-    const availableLanguages = Array.from(new Set([...cachedLangs, ...nativeTracks]));
+    let levels = videoLevelsStore[videoId] ? { ...videoLevelsStore[videoId] } : {};
+    if (Object.keys(levels).length === 0) {
+        const detected = detectLevelFromMetadataDev(title, channel);
+        if (detected) {
+            levels[detected.lang] = detected.level;
+        }
+    }
 
     res.json({
         videoId,
@@ -1476,7 +1561,8 @@ app.get('/api/video-info', async (req, res) => {
         subLanguages: cachedLangs,
         hasAutoCaptions: availableLanguages.length > 0,
         channel,
-        channelAvatar
+        channelAvatar,
+        levels
     });
 });
 
@@ -1485,18 +1571,39 @@ app.get('/api/video-info', async (req, res) => {
  * Dev handler for saving video difficulty levels
  */
 app.post('/api/video-level', (req, res) => {
-    const { videoId, language, level, confidence, method } = req.body || {};
+    const { videoId, language, level, confidence, method, tier, score, grammarCount, speechRateCpm, breakdown } = req.body || {};
     if (!videoId || !language || !level) {
         return res.status(400).json({ error: 'Missing required fields' });
     }
+
+    if (!videoLevelsStore[videoId]) {
+        videoLevelsStore[videoId] = {};
+    }
+
+    const levelData = {
+        level,
+        tier: tier || null,
+        score: typeof score === 'number' ? score : null,
+        confidence: typeof confidence === 'number' ? confidence : 0.8,
+        grammarCount: typeof grammarCount === 'number' ? grammarCount : 0,
+        speechRateCpm: typeof speechRateCpm === 'number' ? speechRateCpm : null,
+        breakdown: breakdown || null,
+        method: method || 'linguistics',
+        updatedAt: Math.floor(Date.now() / 1000)
+    };
+
+    videoLevelsStore[videoId][language] = levelData;
+    saveVideoLevelsStore();
+
     res.json({
         success: true,
         videoId,
         language,
         level,
-        confidence: confidence ?? 0.8,
-        method: method ?? 'linguistics',
-        levels: { [language]: level }
+        confidence: levelData.confidence,
+        method: levelData.method,
+        details: levelData,
+        levels: videoLevelsStore[videoId]
     });
 });
 

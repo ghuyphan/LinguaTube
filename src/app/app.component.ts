@@ -209,7 +209,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             @if (appUpdate.updateAvailable()) {
               <button class="more-menu__item more-menu__item--update" (click)="openUpdateFromMore()">
                 <div class="more-menu__item-icon more-menu__item-icon--update">
-                  <app-icon name="rotate-ccw" [size]="18" />
+                  <app-icon name="refresh-cw" [size]="18" />
                 </div>
                 <div class="more-menu__item-text">
                   <span class="more-menu__item-title">{{ i18n.t('app.updateAvailable') }}</span>
@@ -324,7 +324,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
       >
         <div class="update-sheet">
           <div class="update-sheet__icon" [class.update-sheet__icon--alert]="appUpdate.forceUpdateRequired()">
-            <app-icon [name]="appUpdate.forceUpdateRequired() ? 'alert-circle' : 'rotate-ccw'" [size]="32" />
+            <app-icon [name]="appUpdate.forceUpdateRequired() ? 'alert-circle' : 'refresh-cw'" [size]="32" />
           </div>
           <div class="update-sheet__header-group">
             <h3 class="update-sheet__title">

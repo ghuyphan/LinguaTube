@@ -119,15 +119,86 @@ export function parseNaver(data) {
  * @param {Object} data - Raw API response from Jotoba
  * @returns {DictEntry[]}
  */
-export function parseJotoba(data) {
+function scoreJotobaMatch(entry, query) {
+    const kanji = (entry.reading?.kanji || '').toLowerCase();
+    const kana = (entry.reading?.kana || '').toLowerCase();
+    const misc = entry.senses?.[0]?.misc || '';
+    const isUk = typeof misc === 'string' && misc.includes('UsuallyWrittenInKana');
+
+    let score = 0;
+    if (kanji === query || kana === query) {
+        score = kanji === query ? 100 : 85;
+    } else if (kana.startsWith(query)) {
+        score = 40;
+    } else {
+        score = 10;
+    }
+
+    if (isUk) {
+        score += 15;
+    }
+    if (entry.common) {
+        score += 5;
+    }
+
+    return score;
+}
+
+function scoreMaziiMatch(entry, query) {
+    const word = (entry.word || '').toLowerCase();
+    const rawPhonetic = (entry.phonetic || entry.reading || '').toLowerCase();
+    const parts = rawPhonetic.split(/[\s,、/]+/).filter(Boolean);
+    const kind = (entry.means?.[0]?.kind || entry.type || '').toLowerCase();
+
+    let score = 0;
+    if (word === query) {
+        score = 100;
+    } else if (parts[0] === query) {
+        // Primary reading exact match (e.g. 居る for いる)
+        score = 85;
+    } else if (parts.includes(query)) {
+        // Secondary reading match (e.g. 入る for いる)
+        score = 50;
+    } else if (word.startsWith(query)) {
+        score = 40;
+    } else if (parts.some(p => p.startsWith(query))) {
+        score = 30;
+    } else if (word.includes(query)) {
+        score = 20;
+    } else {
+        score = 10;
+    }
+
+    // Usually written in kana bonus
+    if (kind.includes('uk')) {
+        score += 15;
+    }
+
+    return score;
+}
+
+/**
+ * Parse Jotoba Japanese dictionary API response
+ * Used for: ja-en
+ * @param {Object} data - Raw API response from Jotoba
+ * @param {string} [queryWord] - Original search term for ranking relevance
+ * @returns {DictEntry[]}
+ */
+export function parseJotoba(data, queryWord = '') {
     if (!data.words || data.words.length === 0) {
         return [];
+    }
+
+    let words = data.words;
+    if (queryWord && queryWord.trim()) {
+        const q = queryWord.trim().toLowerCase();
+        words = [...words].sort((a, b) => scoreJotobaMatch(b, q) - scoreJotobaMatch(a, q));
     }
 
     // Extract kanji JLPT level if available in the response
     const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
 
-    return data.words.slice(0, 5).map(entry => {
+    return words.slice(0, 5).map(entry => {
         const word = entry.reading?.kanji || entry.reading?.kana || '';
         const reading = entry.reading?.kana || '';
         const romanization = getJapaneseRomaji(reading, word);
@@ -171,18 +242,28 @@ export function parseJotoba(data) {
  * API: POST https://mazii.net/api/search with { dict: 'javi' | 'jacn', type: 'word', query: word, page: 1 }
  * Response structure: { status, found, data: [{ word, phonetic, short_mean, means: [{ mean, kind, examples }] }] }
  * @param {Object} response - Raw API response from Mazii
+ * @param {string} [queryWord] - Original search term for ranking relevance
  * @returns {DictEntry[]}
  */
-export function parseMazii(response) {
-    const results = response.data || response.results || [];
+export function parseMazii(response, queryWord = '') {
+    let results = response.data || response.results || [];
     if (!results || results.length === 0) {
         return [];
     }
 
+    if (queryWord && queryWord.trim()) {
+        const q = queryWord.trim().toLowerCase();
+        results = [...results].sort((a, b) => scoreMaziiMatch(b, q) - scoreMaziiMatch(a, q));
+    }
+
     return results.slice(0, 5).map(entry => {
         const word = entry.word || '';
-        const reading = entry.phonetic || entry.reading || '';
-        const romanization = getJapaneseRomaji(reading, word);
+        const rawReading = (entry.phonetic || entry.reading || '').trim();
+        const readingParts = rawReading.split(/[\s,、/]+/).filter(Boolean);
+        const reading = readingParts.length > 1 ? readingParts.join(' / ') : rawReading;
+        const romanization = readingParts.length > 1
+            ? readingParts.map(p => getJapaneseRomaji(p, word)).filter(Boolean).join(' / ')
+            : getJapaneseRomaji(reading, word);
 
         // Extract definitions and examples from means array or short_mean
         const definitions = [];

@@ -917,11 +917,11 @@
 
     .stats-popover__login-btn {
         width: 100%;
-        height: 2.25rem;
-        padding: 0 0.75rem;
-        font-size: 0.8125rem;
+        height: var(--btn-height-md);
+        padding: 0 1rem;
+        font-size: var(--text-base);
         font-weight: 600;
-        gap: 8px;
+        gap: 10px;
         border-radius: var(--border-radius-md);
         display: inline-flex;
         align-items: center;
@@ -1272,12 +1272,12 @@
 .sidebar__guest-card {
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
-    padding: 0.75rem;
+    gap: 0.75rem;
+    padding: 0.875rem 0.75rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    margin-bottom: 2px;
+    border-radius: var(--border-radius-lg, 12px);
+    margin-bottom: 4px;
     transition: border-color var(--transition-fast);
 
     @media (hover: hover) {
@@ -1288,32 +1288,31 @@
 
     .guest-card-header {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.5rem;
     }
 
     .guest-card-icon {
         color: var(--accent-primary);
         flex-shrink: 0;
+        margin-top: 1px;
     }
 
     .guest-card-title {
         font-size: 0.8125rem;
         font-weight: 600;
         color: var(--text-primary);
-        line-height: 1.25;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        line-height: 1.35;
+        word-break: break-word;
     }
 
     .sidebar-guest-login-btn {
         width: 100%;
-        height: 2.25rem;
-        padding: 0 0.75rem;
-        font-size: 0.8125rem;
+        height: var(--btn-height-md);
+        padding: 0 0.875rem;
+        font-size: var(--text-base);
         font-weight: 600;
-        gap: 8px;
+        gap: 10px;
         border-radius: var(--border-radius-md);
         display: inline-flex;
         align-items: center;
@@ -1328,6 +1327,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
     }
 }

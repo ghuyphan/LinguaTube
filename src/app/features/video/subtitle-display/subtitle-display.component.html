@@ -14,7 +14,7 @@
         <app-quiz-input />
         } @else if (!subtitles.subtitlesVisible()) {
         <div class="subtitle-off-placeholder">
-            <app-icon name="subtitles" [size]="16" />
+            <app-icon name="slash" [size]="16" />
             <span>{{ i18n.t('subtitle.subtitlesOff') || 'Subtitles turned off' }}</span>
         </div>
         } @else {
@@ -343,12 +343,12 @@
             }
         </button>
 
-        <!-- Quiz Mode Toggle (Graduation Cap Icon) -->
+        <!-- Quiz Mode Toggle (Quiz Clipboard Check Icon) -->
         <button type="button" class="ctrl-btn" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
             [attr.aria-pressed]="quiz.isActive()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('quiz.mode')">
-            <app-icon name="graduation-cap" [size]="15" />
+            <app-icon name="clipboard-check" [size]="15" />
             <span class="ctrl-label">{{ i18n.t('quiz.short') || 'Quiz' }}</span>
         </button>
 
@@ -385,7 +385,7 @@
             [attr.aria-pressed]="grammar.grammarModeEnabled()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('grammar.mode')">
-            <app-icon name="book-open" [size]="16" />
+            <app-icon name="sparkle-text" [size]="16" />
             <span class="ctrl-label">{{ i18n.t('grammar.mode') }}</span>
         </button>
     </div>
@@ -446,7 +446,7 @@
                     <div class="options-item-row">
                         <div class="options-item-left">
                             <div class="options-item-icon-box">
-                                <app-icon name="book-open" [size]="16" />
+                                <app-icon name="sparkle-text" [size]="16" />
                             </div>
                             <div class="options-item-text">
                                 <span class="options-item-title">{{ i18n.t('grammar.mode') }}</span>

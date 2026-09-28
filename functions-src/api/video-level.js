@@ -51,9 +51,35 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Assessment confidence too low to persist (minimum 0.65 required)', confidence }, 400);
         }
 
+        // Extract and sanitize rich diagnostic details if provided
+        const details = {};
+        if (typeof body?.score === 'number' && Number.isFinite(body.score)) {
+            details.score = Math.min(10.0, Math.max(0.0, Math.round(body.score * 10) / 10));
+        }
+        if (typeof body?.grammarCount === 'number' && Number.isFinite(body.grammarCount)) {
+            details.grammarCount = Math.max(0, Math.min(10000, Math.round(body.grammarCount)));
+        }
+        if (typeof body?.speechRateCpm === 'number' && Number.isFinite(body.speechRateCpm)) {
+            details.speechRateCpm = Math.max(0, Math.min(2000, Math.round(body.speechRateCpm)));
+        }
+        if (typeof body?.tier === 'string' && ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'].includes(body.tier)) {
+            details.tier = body.tier;
+        }
+        if (body?.breakdown && typeof body.breakdown === 'object' && !Array.isArray(body.breakdown)) {
+            const cleanBreakdown = {};
+            for (const [k, v] of Object.entries(body.breakdown).slice(0, 20)) {
+                if (typeof k === 'string' && k.length <= 20 && typeof v === 'number' && Number.isFinite(v) && v >= 0) {
+                    cleanBreakdown[k.trim()] = Math.min(1000, Math.round(v));
+                }
+            }
+            if (Object.keys(cleanBreakdown).length > 0) {
+                details.breakdown = cleanBreakdown;
+            }
+        }
+
         const db = env.VOCAB_DB;
         // Strict adherence to Rule 2: kv is passed as null to guarantee ZERO KV writes
-        const updatedLevels = await saveVideoLevel(db, null, videoId, language, rawLevel, confidence, method);
+        const updatedLevels = await saveVideoLevel(db, null, videoId, language, rawLevel, confidence, method, details);
 
         return jsonResponse({
             success: true,
@@ -62,6 +88,7 @@ export async function onRequestPost(context) {
             level: rawLevel,
             confidence,
             method,
+            details: Object.keys(details).length > 0 ? details : undefined,
             levels: updatedLevels || { [language]: rawLevel }
         }, 200);
 

@@ -76,11 +76,16 @@
 
 .account-login-btn {
     width: 100%;
-    margin-top: 2px;
+    height: var(--btn-height-md);
+    padding: 0 1rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    margin-top: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     transition: all var(--transition-fast, 0.2s);
 
     &.is-loading {

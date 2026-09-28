@@ -89,6 +89,9 @@
 
 // Toolbar and filter strip styles are inherited from global _components.scss
 // (.panel-toolbar, .action-icon-btn, .filter-scroll-strip, .filter-chip)
+.filter-scroll-strip {
+    flex-wrap: wrap;
+}
 
 // ============================================
 // WORD LIST

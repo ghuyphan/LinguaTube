@@ -24,7 +24,20 @@ export class VideoLevelDialogComponent {
   });
 
   readonly isLinguistic = computed(() => {
-    return this.levelInfo().detectedFrom === 'linguistics';
+    return this.levelInfo().detectedFrom === 'linguistics' || (this.levelInfo().grammarCount > 0);
+  });
+
+  readonly evaluationSummary = computed(() => {
+    if (this.isLinguistic()) {
+      return (
+        this.i18n.t('level.evaluationSummaryLinguistic') ||
+        'Level estimated from subtitle grammar patterns, vocabulary difficulty, and speech rate.'
+      );
+    }
+    return (
+      this.i18n.t('level.evaluationSummaryMetadata') ||
+      'Level matched from video title, channel, or curriculum information.'
+    );
   });
 
   readonly sortedBreakdown = computed(() => {

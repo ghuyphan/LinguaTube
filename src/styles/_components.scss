@@ -315,19 +315,19 @@
     }
 }
 
-/* Global Primary Action Button (e.g. New Playlist) */
+/* Global Primary Action Button (e.g. New Playlist icon button in toolbar) */
 .create-playlist-btn {
+    width: 38px;
     height: 38px;
+    min-width: 38px;
     min-height: 38px;
+    max-width: 38px;
     max-height: 38px;
-    padding: 0 16px;
-    font-size: 0.8125rem;
-    font-weight: 600;
+    padding: 0;
     border-radius: var(--border-radius-pill);
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    white-space: nowrap;
+    justify-content: center;
     user-select: none;
     box-shadow: 0 1px 3px rgba(var(--accent-primary-rgb), 0.2);
     flex-shrink: 0;
@@ -349,45 +349,14 @@
 
     // When positioned in panel header (mobile-only)
     .panel-header & {
-        height: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        margin-left: auto;
-    }
-
-    // Tablet: compact 38px circular icon in toolbar to fit comfortably alongside 3-tab segmented control
-    .panel-toolbar__actions & {
-        @media (max-width: 1024px) {
-            .btn-text {
-                display: none;
-            }
-            padding: 0;
-            width: 38px;
-            min-width: 38px;
-            max-width: 38px;
-            height: 38px;
-            min-height: 38px;
-            max-height: 38px;
-            border-radius: var(--border-radius-pill);
-            justify-content: center;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .btn-text {
-            display: none;
-        }
-        padding: 0;
         width: 32px;
-        min-width: 32px;
-        max-width: 32px;
         height: 32px;
+        min-width: 32px;
         min-height: 32px;
+        max-width: 32px;
         max-height: 32px;
         border-radius: var(--border-radius-round);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        margin-left: auto;
 
         &::after {
             inset: -6px;
@@ -402,21 +371,14 @@
     }
 }
 
-/* Horizontal Non-wrapping Swipe Strip for Filter Chips */
+/* Filter Chips Strip (Non-scrolling, trackpad-safe) */
 .filter-scroll-strip {
     display: flex;
     align-items: center;
     gap: 8px;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 2px;
+    overflow: visible;
     flex-shrink: 0;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 }
 
 /* Dropdown / Filter Chips for Language and Level */
@@ -549,13 +511,7 @@
         min-width: 0;
         width: 100%;
         max-width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
+        overflow: hidden;
 
         &__item {
             height: 100%;
@@ -619,15 +575,9 @@
         align-items: center;
         gap: 6px;
         flex: 0 0 auto;
-        max-width: 60%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        max-width: none;
+        overflow: visible;
         box-sizing: border-box;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
 
         .filter-chip,
         .filter-chip--lang,

@@ -161,8 +161,8 @@ export class DictionaryProvider {
             // Parse response
             switch (source.parser) {
                 case 'naver': return parseNaver(await response.json());
-                case 'jotoba': return parseJotoba(await response.json());
-                case 'mazii': return parseMazii(await response.json());
+                case 'jotoba': return parseJotoba(await response.json(), word);
+                case 'mazii': return parseMazii(await response.json(), word);
                 case 'freedict': return parseFreeDictionary(await response.json());
                 case 'datamuse': return parseDatamuse(await response.json());
                 case 'mdbg': return await parseMdbg(response);

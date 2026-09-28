@@ -26,7 +26,7 @@
         <!-- Empty State when user has 0 words saved in this language -->
         <div class="empty-state empty-state--centered empty-state--animate">
             <div class="empty-state__icon-box">
-                <app-icon name="graduation-cap" [size]="32" />
+                <app-icon name="cards" [size]="32" />
             </div>
             <div class="empty-state__text">
                 <h3 class="empty-state__title">{{ i18n.t('study.noWords') }}</h3>
@@ -157,7 +157,7 @@
 
                     <div class="study-option-item">
                         <div class="option-info">
-                            <app-icon name="repeat" [size]="15" />
+                            <app-icon name="refresh-cw" [size]="15" />
                             <span class="option-title">{{ i18n.t('study.reverseMode') }}</span>
                         </div>
                         <app-switch [checked]="reverseMode()" [label]="i18n.t('study.reverseMode')" (checkedChange)="reverseMode.set($event)" />
@@ -386,7 +386,7 @@
             <button type="button" 
                     class="btn btn-secondary reveal-action-btn card-action-interactive"
                     (click)="flipCard()">
-                <app-icon name="rotate-ccw" [size]="16" />
+                <app-icon name="eye" [size]="16" />
                 <span class="reveal-action-btn__text">{{ i18n.t('study.showAnswer') || i18n.t('study.tapToReveal') }}</span>
                 <kbd class="study-kbd-pill desktop-only">Space</kbd>
             </button>
@@ -428,7 +428,14 @@
         </div>
 
         <div class="complete-header">
-            <app-icon name="check" [size]="32" class="complete-icon" />
+            <div class="study-completion-crest" [attr.data-tier]="sessionAccuracy() >= 90 ? 'gold' : (sessionAccuracy() >= 75 ? 'silver' : 'bronze')">
+                <div class="rpg-shield-crest rpg-shield-crest--lg">
+                    <app-icon [name]="sessionAccuracy() >= 90 ? 'laurel-crown' : (sessionAccuracy() >= 75 ? 'ribbon-shield' : 'templar-shield')" [size]="34" class="crest-icon" />
+                </div>
+                <div class="crest-rank-badge">
+                    {{ sessionAccuracy() >= 90 ? (i18n.t('gamification.gold') || 'Gold Champion') : (sessionAccuracy() >= 75 ? (i18n.t('gamification.silver') || 'Silver Knight') : (i18n.t('gamification.bronze') || 'Bronze Warrior')) }}
+                </div>
+            </div>
             <h2>{{ i18n.t('study.sessionComplete') }}</h2>
         </div>
 
@@ -485,7 +492,7 @@
                     <span>{{ i18n.t('nav.watch') }}</span>
                 </a>
                 <a routerLink="/dictionary" [queryParams]="{ tab: 'vocab' }" class="btn btn-ghost btn-sm complete-nav-link">
-                    <app-icon name="book-open" [size]="14" />
+                    <app-icon name="layers" [size]="14" />
                     <span>{{ i18n.t('nav.vocab') }}</span>
                 </a>
             </div>

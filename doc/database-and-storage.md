@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS video_languages (
     title TEXT,
     channel TEXT,
     channel_avatar TEXT,                -- Official YouTube channel avatar CDN URL
-    levels TEXT DEFAULT '{}',           -- JSON map of lang -> level (e.g. {"ja":"JLPT N4"})
+    levels TEXT DEFAULT '{}',           -- JSON map of lang -> level or diagnostic object (score, tier, grammarCount, speechRateCpm, breakdown)
     created_at INTEGER DEFAULT (strftime('%s', 'now')),
     updated_at INTEGER DEFAULT (strftime('%s', 'now'))
 );

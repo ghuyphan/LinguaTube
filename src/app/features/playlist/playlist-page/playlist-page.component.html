@@ -46,8 +46,7 @@
                     <div class="panel-toolbar__actions desktop-only">
                         <button type="button" class="btn btn-primary create-playlist-btn" (click)="showCreateDialog.set(true)"
                             [attr.aria-label]="i18n.t('playlist.newPlaylist')" [title]="i18n.t('playlist.newPlaylist')">
-                            <app-icon name="plus" [size]="14" />
-                            <span class="btn-text">{{ i18n.t('playlist.newPlaylist') }}</span>
+                            <app-icon name="plus" [size]="16" />
                         </button>
                     </div>
                 </div>
@@ -129,7 +128,7 @@
                             <div class="yt-card-hover-overlay">
                                 <div class="yt-playlist-hover-content">
                                     <div class="yt-play-circle">
-                                        <app-icon name="list-video" [size]="18" />
+                                        <app-icon name="play" [size]="18" />
                                     </div>
                                     <span class="yt-play-all-text">{{ i18n.t('playlist.viewPlaylist') || 'View Playlist' }}</span>
                                 </div>
@@ -143,7 +142,7 @@
                                 <img [src]="getFlagUrl(playlist.language)" class="circle-flag" [alt]="playlist.language" [title]="playlist.language.toUpperCase()" loading="lazy" />
                                 } @else {
                                 <div class="avatar-placeholder">
-                                    <app-icon name="list-video" [size]="16" />
+                                    <app-icon name="user" [size]="16" />
                                 </div>
                                 }
                             </div>
@@ -368,7 +367,7 @@
                         <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
                     </div>
                     <button type="button" class="btn btn-primary btn-sm" (click)="onExploreVideos()">
-                        <app-icon name="globe" [size]="14" />
+                        <app-icon name="video" [size]="14" />
                         <span>{{ i18n.t('playlist.discoverVideos') }}</span>
                     </button>
                 </div>

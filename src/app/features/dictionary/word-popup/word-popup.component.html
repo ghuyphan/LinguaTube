@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isVisible()" [title]="selectedWord()?.surface || i18n.t('vocab.title') || 'Word Details'" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet [isOpen]="isVisible()" [title]="selectedWord()?.surface || i18n.t('vocab.title') || 'Word Details'" maxWidth="440px" [showDragHandle]="true" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="popup-content">
 
         <div class="popup-header">
@@ -18,14 +18,14 @@
             </div>
 
             <div class="header-meta">
-                @if (entry()?.reading) {
-                <span class="popup-reading">{{ entry()?.reading }}</span>
+                @if (formattedReading()) {
+                <span class="popup-reading">{{ formattedReading() }}</span>
                 }
                 @if (entry()?.pinyin) {
                 <span class="popup-pinyin">{{ entry()?.pinyin }}</span>
                 }
-                @if (entry()?.romanization) {
-                <span class="popup-pinyin">{{ entry()?.romanization }}</span>
+                @if (formattedRomanization()) {
+                <span class="popup-romaji">({{ formattedRomanization() }})</span>
                 }
             </div>
 
@@ -45,7 +45,7 @@
                     } @else {
                     <app-icon name="languages" [size]="12" />
                     }
-                    <span>{{ (entry()!.meanings.length > 1 ? (i18n.t('popup.all') || 'All') : (i18n.t('popup.translate') || 'Translate')) }}</span>
+                    <span>{{ i18n.t('popup.translate') || 'Translate' }}</span>
                 </button>
                 }
             </div>
@@ -80,9 +80,24 @@
                 </button>
             </div>
             } @else if (entry()) {
+            @if (entries().length > 1) {
+            <div class="entry-tabs">
+                @for (ent of entries(); track $index) {
+                <button type="button" class="entry-tab" [class.active]="$index === activeEntryIndex()"
+                    (click)="selectEntry($index)">
+                    <span class="entry-tab__num">{{ $index + 1 }}</span>
+                    <span class="entry-tab__word">{{ ent.word }}</span>
+                    @if (ent.reading) {
+                    <span class="entry-tab__reading">({{ ent.reading }})</span>
+                    }
+                </button>
+                }
+            </div>
+            }
+
             <div class="popup-badges">
-                @if (entry()?.partOfSpeech && entry()!.partOfSpeech!.length > 0) {
-                <span class="popup-pos">{{ entry()!.partOfSpeech!.join(', ') }}</span>
+                @for (pos of formattedPartOfSpeech(); track pos) {
+                <span class="badge badge--pos">{{ pos }}</span>
                 }
                 @if (entry()?.jlptLevel) {
                 <span class="badge">{{ entry()?.jlptLevel }}</span>
@@ -134,7 +149,7 @@
             } @else {
             <div class="empty-state empty-state--centered">
                 <div class="empty-state__icon-box">
-                    <app-icon name="alert-circle" [size]="28" />
+                    <app-icon name="search" [size]="28" />
                 </div>
                 <div class="empty-state__text" style="align-items: center; text-align: center;">
                     <p class="empty-state__title">{{ i18n.t('popup.noDictionaryEntry') }}</p>

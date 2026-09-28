@@ -245,6 +245,15 @@
     }
 }
 
+// Tablet portrait & wider responsive viewports: bottom sheet with proportional centered width
+@media (min-width: 481px) and (max-width: 768px) {
+    .sheet:not(.desktop-modal) {
+        max-width: var(--max-width, 460px);
+        width: min(92%, var(--max-width, 460px));
+        margin: 0 auto;
+    }
+}
+
 // Landscape phones & compact viewports: bottom sheet with proportional width
 @media (orientation: landscape) and (max-height: 600px) {
     .sheet-overlay {

@@ -17,8 +17,9 @@ export type IconName =
     | 'type' | 'log-out' | 'maximize' | 'minimize' | 'miniplayer' | 'expand' | 'fullscreen' | 'fullscreen-exit' | 'globe'
     | 'user' | 'google' | 'log-in'
     | 'clock' | 'history' | 'heart' | 'heart-filled' | 'cloud'
-    // Gamification & cute icons
+    // Gamification & RPG crest icons
     | 'star' | 'star-filled' | 'fire' | 'trophy' | 'medal' | 'gift' | 'diamond' | 'crown'
+    | 'ribbon-shield' | 'templar-shield' | 'laurel-crown' | 'treasure-chest'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-horizontal-filled' | 'more-vertical'
     | 'list' | 'list-video' | 'list-video-filled' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
     | 'headphones' | 'clipboard-check' | 'coffee'

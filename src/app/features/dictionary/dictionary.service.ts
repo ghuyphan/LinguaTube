@@ -175,15 +175,22 @@ export class DictionaryService {
       }
     }
 
+    const rawReading = (entry.reading || '').trim();
+    const readingParts = rawReading.split(/[\s,、/]+/).filter(Boolean);
+    const formattedReading = readingParts.length > 1 ? readingParts.join(' / ') : rawReading;
+    const formattedRomaji = from === 'ja'
+      ? (entry.romanization || (readingParts.length > 1
+        ? readingParts.map(p => getJapaneseRomaji(p, entry.word || word)).filter(Boolean).join(' / ')
+        : getJapaneseRomaji(rawReading, entry.word || word)))
+      : from === 'ko'
+        ? (entry.romanization || undefined)
+        : undefined;
+
     return {
       word: entry.word || word,
-      reading: from === 'ja' || from === 'en' || from === 'ko' ? (entry.reading || '') : undefined,
+      reading: from === 'ja' || from === 'en' || from === 'ko' ? (formattedReading || undefined) : undefined,
       pinyin: from === 'zh' ? (entry.reading || '') : undefined,
-      romanization: from === 'ja'
-        ? (entry.romanization || getJapaneseRomaji(entry.reading || '', entry.word || word))
-        : from === 'ko'
-          ? (entry.romanization || undefined)
-          : undefined,
+      romanization: formattedRomaji,
       audio: entry.audio || undefined,
       meanings,
       partOfSpeech: entry.partOfSpeech ? [entry.partOfSpeech] : [],
@@ -191,6 +198,36 @@ export class DictionaryService {
       hskLevel: from === 'zh' ? entry.level : undefined,
       topikLevel: from === 'ko' ? entry.level : undefined
     };
+  }
+
+  private scoreClientEntry(entry: DictionaryEntry, query: string): number {
+    const word = (entry.word || '').toLowerCase();
+    const reading = (entry.reading || '').toLowerCase();
+    const parts = reading.split(/[\s,、/]+/).filter(Boolean);
+    const pos = (entry.partOfSpeech || []).join(' ').toLowerCase();
+
+    let score = 0;
+    if (word === query) {
+      score = 100;
+    } else if (parts[0] === query) {
+      score = 85;
+    } else if (parts.includes(query)) {
+      score = 50;
+    } else if (word.startsWith(query)) {
+      score = 40;
+    } else if (parts.some(p => p.startsWith(query))) {
+      score = 30;
+    } else if (word.includes(query)) {
+      score = 20;
+    } else {
+      score = 10;
+    }
+
+    if (pos.includes('uk') || pos.includes('kana')) {
+      score += 15;
+    }
+
+    return score;
   }
 
   /**
@@ -266,6 +303,10 @@ export class DictionaryService {
         }
 
         const results = response.entries.map(e => this.mapRawEntry(e, trimmed, from));
+        if (results.length > 1) {
+          const q = trimmed.toLowerCase();
+          results.sort((a, b) => this.scoreClientEntry(b, q) - this.scoreClientEntry(a, q));
+        }
         this.saveToCacheWithKey(cacheKey, results);
         return results;
       }),

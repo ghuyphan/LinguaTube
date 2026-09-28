@@ -291,6 +291,9 @@ graph TD
 ### 3.3. Dictionary Domain (`src/app/features/dictionary/`)
 - **`WordPopupComponent`**:
   - Positioned adjacent to clicked subtitle token or search query.
+  - **Multi-Entry Disambiguation Tabs**: Automatically displays compact pills (`[ 1. 居る ] [ 2. 要る ] [ 3. 入る ]`) when queries match multiple homonyms, allowing learners to easily switch between meanings without leaving the video.
+  - **Human-Readable POS Badges**: Employs `formatPartOfSpeech()` (`src/app/shared/utils/pos.utils.ts`) to translate cryptic abbreviations (`v5r`, `vi`, `v1`, `adj-i`, `uk`, `rK`) into learner-friendly labels in the user's active UI language (e.g. "Động từ nhóm 1 (-ru)", "Tự động từ" in Vietnamese; "Godan verb (-ru)", "Intransitive" in English).
+  - **Formatted Readings & Romaji**: Formats multiple readings with clean delimiters (`はいる / いる`) and styles romanization in distinct italicized parentheses (`(hairu / iru)`).
   - Displays headword, phonetic readings, parts of speech, English/native definitions, JLPT/HSK/TOPIK level badges, and source audio pronunciation.
   - Features high-fidelity SVG circle flags for target language selection and translation results.
   - Provides a single-click "+ Add to Vocabulary" button.
@@ -576,19 +579,23 @@ Voca uses a centralized SVG sprite system (`src/assets/icons/sprite.svg`) render
 4. **Dual-State Outlined vs. Filled System**:
    - Outline variants (`heart`, `star`, `bookmark`, `play-circle`, `graduation-cap`, `book-open`, `list-video`, `more-horizontal`) use `fill="none"` and `stroke="currentColor"`.
    - Filled variants (`heart-filled`, `star-filled`, `bookmark-filled`, `play-circle-filled`, `chart-bar`, etc.) use single-path `fill="currentColor"` and `stroke="none"`.
-5. **Purpose-Built Domain Icons (100% Official MingCute)**:
+5. **Purpose-Built Domain Icons (100% Official MingCute & Semantic Rationalization)**:
    - **`clock`**: MingCute `time` circular clock face with hands at 12:00 and 3:00 for durations, review due intervals, and credit timers.
-   - **`history`**: MingCute `history` counter-clockwise rewind clock with arrow for Watch History and Recent Searches navigation.
-   - **`sparkles`**: MingCute `ai` four-point AI star with accent star (replaces weather precipitation arcs).
-   - **`speedometer`**: MingCute `dashboard` speed gauge for video playback rate.
+   - **`history`**: MingCute `history` counter-clockwise rewind clock with arrow for Watch History navigation and sidebar overview.
+   - **`sparkles`**: MingCute `ai` four-point AI star with accent star for smart features and recommendations.
+   - **`speedometer`**: MingCute `dashboard` speed gauge for video playback rate and spoken cadence speed (CPM in Video Level).
    - **`timer`**: MingCute `stopwatch` for playback sleep timer.
-   - **`ruby-text`**: MingCute `translate` for phonetic Furigana/Pinyin/Romaji display toggle.
-   - **`sparkle-text`**: MingCute `book-6-ai` for grammar detection indicator.
-   - **`chart-bar`**: MingCute `chart-bar-2` solid stepped level indicator for CEFR/JLPT/HSK/TOPIK filters.
-   - **`brain`**: MingCute `brain` icon for vocabulary "Learning" status.
-   - **`cards`**: MingCute `documents` overlapping cards icon for SRS Flashcards decks.
+   - **`ruby-text`**: MingCute `translate` for phonetic Furigana/Pinyin/Romaji reading display toggles in both Player Settings and App Settings.
+   - **`sparkle-text`**: MingCute `book-6-ai` for grammar pattern detection across Player Settings, Subtitle Toolbar, and Dictionary sections.
+   - **`chart-bar`**: MingCute `chart-bar-2` solid stepped level indicator for CEFR/JLPT/HSK/TOPIK filters and the Global Leaderboard tab in Achievements.
+   - **`brain`**: MingCute `brain` icon for vocabulary "Learning" status and SRS 50 review milestone.
+   - **`cards`**: MingCute `documents` overlapping cards icon for SRS Flashcard decks, Anki TSV export, empty deck states, and review missions/achievements.
+   - **`layers`**: Overlapping stacked cards icon representing the saved Vocabulary Notebook, cleanly distinguishing user collections from the open `book-open` Dictionary reference tool.
    - **`share-ios`**: MingCute `upload-2` tray icon for the iOS Safari PWA installation sheet.
-   - **Contextual Icon Accuracy**: Contexts where generic sparkles were previously overloaded now use semantically accurate MingCute icons: `diamond` for Voca Premium and Diamond currency, `plus-circle` for unstudied "New" vocabulary items, `star` for "For You" video recommendations, release highlights, and curated playlists, `languages` for bilingual subtitle translation benefits, and `trophy` for XP milestones and level-up celebrations.
+   - **`party-popper`**: Celebratory milestone icon accompanying confetti explosions on SRS study session completion.
+   - **`volume-1` vs `volume-2`**: `volume-1` renders a calibrated single sound wave arc for clear visual differentiation during audio pronunciation and volume adjustment.
+   - **`subtitles-ai` vs `languages`**: `subtitles-ai` is drawn as a CC caption screen with a top-right sparkle badge, cleanly separating speech recognition from `languages` (`文A`) bilingual translation.
+   - **Contextual Icon Accuracy**: Contexts where generic icons were previously overloaded have been strictly rationalized: `diamond` for Voca Premium and Diamond currency, `crown` for Voca Pro / Supporter tier, `fire` for all daily streak tiers, `search` for dictionary lookup buttons, and `trophy` for gamification XP milestones.
 
 - **Page Layout Grid System (`.page-layout`) & Tablet Ergonomics**: Main pages (Playlists, History, Dictionary, and Study) utilize a responsive grid layout (`1fr minmax(340px, 25vw)` on wide desktop, `1fr 280px` up to 1200px). On tablet viewports and below (`@media (max-width: 1024px)`), `.page-layout` collapses to a single column (`grid-template-columns: 1fr`) and hides the secondary right sidebar (`.page-layout__sidebar { display: none !important }`). This eliminates 3-column squeeze on tablets (e.g. iPad Air 820px) where the 252px navigation sidebar is expanded. Panel headers (`.panel-header__row`) enforce `flex-wrap: wrap; row-gap: var(--space-2xs)` and text truncation (`overflow: hidden; text-overflow: ellipsis`) to prevent badge and title collisions.
 - **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
@@ -665,7 +672,7 @@ To maintain complete visual, structural, and functional harmony across all prima
     - Sticky toolbars positioned inside `.card` containers use `background: var(--bg-card);` rather than `var(--bg-primary)`.
     - Prevents the dark inset cutout bug in dark mode where child toolbars with `#0f1117` background clashed with parent card containers (`#161c27`).
 - **Unified 38px Global Height Baseline (Single Source of Truth in `src/styles/_components.scss`)**:
-  - **Desktop ($\ge 769\text{px}$)**: All toolbar elements share exact 38px height: `.segmented-control` (38px), `.action-icon-btn` (38px), `.create-playlist-btn` (38px), `.app-search-box` (38px), and `.filter-chip` (38px). Primary panel actions (e.g. `.create-playlist-btn`, History clear `action-icon-btn--danger`, and Vocab options `action-icon-btn`) sit inline with the segmented tabs in `.panel-toolbar__top` on the right side of the card, sharing the exact 38px height baseline with the tabs.
+  - **Desktop ($\ge 769\text{px}$)**: All toolbar elements share exact 38px height: `.segmented-control` (38px), `.action-icon-btn` (38px), `.create-playlist-btn` (38px), `.app-search-box` (38px), and `.filter-chip` (38px). Primary panel actions (e.g. `.create-playlist-btn` primary icon button, History clear `action-icon-btn--danger`, and Vocab options `action-icon-btn`) sit inline with the segmented tabs in `.panel-toolbar__top` on the right side of the card, sharing the exact 38px circular geometry and height baseline with the tabs.
   - **Mobile ($\le 768\text{px}$)**: Responsive adaptive placement: Toolbar actions adapt into the top `.panel-header__row` as compact 32px circular icon buttons with expanded 44px touch targets. This completely frees Row 1 of `.panel-toolbar` on mobile, allowing `.segmented-control` (38px) to flex to 100% full width with equal, symmetric tab distribution; Row 2 pairs the search input (`.app-search-box`, 38px, font 14px) and horizontal filter strip (`.filter-scroll-strip`, chips 38px) side-by-side.
   - **Zero Component Overrides**: Every screen (Dictionary, Playlist, History, Vocab) inherits toolbar styling strictly from global CSS in `_components.scss`. Component SCSS files contain zero custom toolbar overrides.
   - **Segmented Controls & Hardware-Accelerated Sliding Tab Pill (`.segmented-control`)**:
@@ -676,14 +683,14 @@ To maintain complete visual, structural, and functional harmony across all prima
     - Symmetrical, perfectly balanced tab items without noisy numerical count badges (`.segment-badge` removed from tab buttons), preventing horizontal and vertical alignment jitter.
     - Solves dark mode "sunken tab" inversion with recessed track background (`rgba(0, 0, 0, 0.35)`) and elevated pill surface (`#252D3D` in dark mode, `#FFFFFF` in light mode with crisp shadow).
     - Zero press-in shrink/scale (`:active` scale transforms removed across all segmented buttons).
-  - **Action Buttons (`.action-icon-btn`, `.create-playlist-btn`)**: `.action-icon-btn` provides 38px universal circular/pill buttons for contextual utilities with invisible `&::after` touch target expansion (up to 44×44px Apple HIG compliance). When placed inside `.panel-header` on mobile, `.action-icon-btn` and `.create-playlist-btn` scale to 32px with `border-radius: var(--border-radius-round)` and 44px touch targets. On desktop, `.create-playlist-btn` provides a full text pill button and `.action-icon-btn` provides an icon button inline with the segmented tabs. In dark mode, active toggle states feature a luminous accent tint (`rgba(var(--accent-primary-rgb), 0.18)`) and border glow. Danger states (`.action-icon-btn--danger`) provide soft red alert cues on hover. Disabled states (`:disabled`) apply 0.5 opacity with disabled cursor and pointer-events prevention.
+  - **Action Buttons (`.action-icon-btn`, `.create-playlist-btn`)**: `.action-icon-btn` provides 38px universal circular/pill buttons for contextual utilities with invisible `&::after` touch target expansion (up to 44×44px Apple HIG compliance). When placed inside `.panel-header` on mobile, `.action-icon-btn` and `.create-playlist-btn` scale to 32px with `border-radius: var(--border-radius-round)` and 44px touch targets. On desktop, `.create-playlist-btn` provides a 38px circular primary coral icon button (`+`) matching the exact circular dimensions and height of `.action-icon-btn` inline with the segmented tabs. In dark mode, active toggle states feature a luminous accent tint (`rgba(var(--accent-primary-rgb), 0.18)`) and border glow. Danger states (`.action-icon-btn--danger`) provide soft red alert cues on hover. Disabled states (`:disabled`) apply 0.5 opacity with disabled cursor and pointer-events prevention.
   - **Standardized Card Padding & Panel Header Spacing Across All Screens**:
     - **Uniform Card Padding (`var(--space-md)` = 16px)**: All primary panels (`home-dashboard`, `study-panel`, `playlist-panel`, `history-panel`, `dict-panel`) share the exact same `var(--space-md)` (16px) padding across both desktop and mobile. Irregular mobile card padding overrides (e.g. 10px in video home dashboard or 8px in study mode) have been eliminated.
     - **Consistent Panel Header Baseline & Margin (`min-height: 32px`, `margin-bottom: var(--space-md)` = 16px)**: All `.panel-header` elements maintain a uniform 16px bottom margin (`margin-bottom: var(--space-md)`) with zero container flex gap collisions. The header row (`.panel-header__row`) enforces a fixed `min-height: 32px` baseline with centered alignment, ensuring identical vertical height across cards whether they contain a 32px mobile action button (Refresh, New Playlist, Clear, Options), a streak badge, or just the title. Titles truncate smoothly (`text-overflow: ellipsis; white-space: nowrap`) on narrow screens without wrapping onto multiple lines. The vertical rhythm from the header down to the toolbar, chips bar, or content grid is strictly identical across all screens.
     - **Harmonized Video Recommendation Refresh Button**:
       - **Desktop ($\ge 769\text{px}$)**: Kept inline with the recommendation chips in `.yt-chips-actions.desktop-only` on the right side of the chips bar, preserving quick-action parity with desktop toolbars on other pages.
       - **Mobile ($\le 768\text{px}$)**: Relocated to `.panel-header__row` as an `.action-icon-btn.mobile-only` (32px circular icon button with 44px touch target) on the right side of the "Dành cho bạn" / "For You" title, matching mobile action buttons across Playlist (`+`), History (`🗑`), and Dictionary (`⋮`), while allowing the mobile chips carousel to scroll 100% full width with zero obstruction.
-  - **Filter Chips (`.filter-chip`) & Horizontal Strip (`.filter-scroll-strip`)**: Normalized to 38px height across all views. Clean swipeable overflow with hidden scrollbars, momentum scrolling (`-webkit-overflow-scrolling: touch`), and high-contrast active state (`background: var(--accent-primary); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.3)`).
+  - **Filter Chips (`.filter-chip`) & Filter Strip (`.filter-scroll-strip`)**: Normalized to 38px height across all views. Non-scrolling layout with `overflow: visible` to prevent accidental trackpad traps, rubber-band bounces, or horizontal scroll clipping on both desktop and mobile, with high-contrast active state (`background: var(--accent-primary); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.3)`). In vocabulary lists, chips wrap gracefully across rows if needed.
 - **Dictionary & Vocabulary Harmonization**:
   - `DictionaryPageComponent`: Merged search input and filter chips directly into a single top card toolbar, eliminating duplicate titles, double-stacked toolbars, and divider lines.
   - `VocabularyListComponent`: Supports `showToolbar: false` when embedded in `DictionaryPageComponent` to eliminate duplicate toolbars while keeping the standalone video player sidebar in `VideoPageComponent` (`showToolbar: true`) completely untouched.
@@ -810,8 +817,19 @@ To maintain complete visual, structural, and functional harmony across all prima
 - **Design System & Structure**:
   - Hosted inside standard `BottomSheetComponent` for seamless mobile and desktop accessibility.
   - **Level Hero Card**: Large rank icon, level number, level title, and dual progress markers (`current / next XP`).
-  - **Filter Chips**: Segmented category selection (`all`, `immersion`, `vocabulary`, `streak`, `srs`, `quiz`) with unlocked badge counters.
-  - **Achievement Grid**: High-density responsive card layout with tier glow, radial progress borders for locked items, and gold trophy checkmarks for unlocked milestones.
+  - **Achievement Grid & RPG Crest Badges**: High-density responsive card layout with authentic RPG heater shield silhouettes (`clip-path: polygon(...)`), metallic double-beveled borders, specular light glints, and status indicators (miniature forged-steel lock badges when locked, glowing checkmark seals when unlocked). Tier palettes:
+    - 🥉 **Bronze**: Hammered copper & antique bronze (`#f59e0b` $\to$ `#78350f`) with ember glow.
+    - 🥈 **Silver**: Polished chrome & sterling steel (`#f8fafc` $\to$ `#475569`) with cool platinum reflection.
+    - 🥇 **Gold**: 24K radiant gold (`#fef08a` $\to$ `#b45309`) with warm sunburst aura.
+    - 💎 **Diamond**: Celestial prismatic crystal (`#bae6fd` $\to$ `#c084fc`) with cosmic cyan/violet particle aura.
+  - **Game-Icons.net RPG Vector Symbols (Style 1)**: Integrated human-crafted vector symbols (CC-BY 3.0) for authentic RPG immersion:
+    - `laurel-crown` (Imperial Champion Laurel Crown): 1st place leaderboard podium, $\ge 90\%$ Gold Study Mode deck completion, and Quiz Grandmaster badge.
+    - `ribbon-shield` (Knight Ribbon Shield Crest): 2nd place leaderboard podium, $\ge 75\%$ Silver Study Mode deck completion, and Vocab Master 10 badge.
+    - `templar-shield` (Warrior Cross Shield): 3rd place leaderboard podium, $< 75\%$ Bronze Study Mode deck completion, Daily Quiz mission, and First Quiz battle badge.
+    - `treasure-chest` (RPG Treasure Chest with Iron Bands): Daily Completion Chest vault card and 500-word mined vocabulary treasury badge.
+  - **Daily Missions RPG Quest Shields (`.rpg-quest-crest`)**: Heater shield silhouette with metallic bevel rim and specular glint; dark forged iron when pending, radiant emerald-gold aura with active pulse when claimable.
+  - **Daily Completion Chest Vault**: Golden beveled vault box with `treasure-chest` vector, glowing amber aura, and XP claim button.
+  - **Study Mode Deck Completion Crests**: SRS review completion screen awards dynamic RPG shield crests based on deck accuracy ($\ge 90\%$ Gold Champion `laurel-crown`, $\ge 75\%$ Silver Knight `ribbon-shield`, $<75\%$ Bronze Warrior `templar-shield`) with animated pop transitions and localized rank badges.
   - **OnPush Change Detection**: Completely signal-driven without unnecessary zone rerenders.
 
 ### 8.4. UI Badges & Visual Tokens
@@ -870,6 +888,14 @@ To ensure consistent vertical rhythm, heights, and tactile interactions across a
 - **Circular Action Buttons (`.menu-btn`)**:
   - Dimensions: `36px` $\times$ `36px`.
   - Shape: `border-radius: var(--border-radius-pill)`.
+- **Google Sign-In Button (`.btn-google`)**:
+  - Specification: Harmonized with Voca's porcelain/obsidian design system while maintaining authentic Google branding.
+  - Height: `var(--btn-height-md)` (`38px`).
+  - Shape: `border-radius: var(--border-radius-md)` (`12px`, matching parent cards and Voca button standard).
+  - Icon: Official 4-color Google "G" logo (`18px` $\times$ `18px`, bypasses SVG stroke/fill inheritance in `IconComponent`).
+  - Typography: `var(--font-sans)` (Nunito), `var(--text-base)` (`0.875rem` / 14px), font-weight `600`, gap `10px`.
+  - Palette & Theme: Uses `var(--bg-card)` background, `1px solid var(--border-color)` border, `var(--text-primary)` text, and `var(--shadow-sm)` elevation in both light and dark modes.
+  - Hover: `background: var(--bg-hover)`, `border-color: var(--border-color-hover)`, `box-shadow: var(--shadow-md)`, `transform: translateY(-1px)`.
 
 ### 9.3. Embedded Container Rule
 When feature components (`app-dictionary-panel`, `app-vocabulary-list`) are embedded inside parent page cards:

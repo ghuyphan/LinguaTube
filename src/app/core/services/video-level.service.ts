@@ -209,7 +209,7 @@ export class VideoLevelService {
         title = '',
         channel = '',
         cues: SubtitleCue[] = [],
-        serverLevels?: Record<string, string>
+        serverLevels?: Record<string, string | VideoLevelInfo>
     ): Promise<VideoLevelInfo | null> {
         if (!videoId || !lang) return null;
 
@@ -223,7 +223,27 @@ export class VideoLevelService {
         // 1. Instant Fast-Path: Server-verified level from Cloudflare D1 / API (0ms resolution)
         if (serverLevels?.[lang]) {
             const serverLevel = serverLevels[lang];
-            const info = this.buildInfoFromLabel(serverLevel, 'server');
+            let info: VideoLevelInfo;
+            if (typeof serverLevel === 'object' && serverLevel !== null && 'score' in serverLevel && typeof serverLevel.score === 'number') {
+                const s = serverLevel as VideoLevelInfo;
+                info = {
+                    level: s.level,
+                    tier: s.tier || this.labelToTier(s.level),
+                    score: s.score,
+                    confidence: s.confidence ?? 0.85,
+                    grammarCount: s.grammarCount ?? 0,
+                    speechRateCpm: s.speechRateCpm,
+                    detectedFrom: 'server',
+                    breakdown: s.breakdown
+                };
+            } else {
+                const label = typeof serverLevel === 'string'
+                    ? serverLevel
+                    : (typeof serverLevel === 'object' && serverLevel !== null && 'level' in serverLevel && typeof (serverLevel as VideoLevelInfo).level === 'string'
+                        ? (serverLevel as VideoLevelInfo).level
+                        : '');
+                info = this.buildInfoFromLabel(label, 'server');
+            }
             this.setCache(cacheKey, info);
             this.currentLevel.set(info);
             return info;
@@ -235,7 +255,7 @@ export class VideoLevelService {
             const info = this.buildInfoFromLabel(titleDetected, 'title');
             this.setCache(cacheKey, info);
             this.currentLevel.set(info);
-            this.saveToServer(videoId, lang, titleDetected, 0.90, 'metadata');
+            this.saveToServer(videoId, lang, info);
             return info;
         }
 
@@ -247,7 +267,7 @@ export class VideoLevelService {
                 if (info) {
                     this.setCache(cacheKey, info);
                     this.currentLevel.set(info);
-                    this.saveToServer(videoId, lang, info.level, info.confidence, 'linguistics');
+                    this.saveToServer(videoId, lang, info);
                     return info;
                 }
             } finally {
@@ -650,24 +670,38 @@ export class VideoLevelService {
         } catch { }
     }
 
-    private async saveToServer(videoId: string, language: string, level: string, confidence = 0.85, method = 'linguistics'): Promise<void> {
+    private async saveToServer(videoId: string, language: string, info: VideoLevelInfo): Promise<void> {
+        const method = info.detectedFrom === 'title' ? 'metadata' : 'linguistics';
+        const payload: Record<string, unknown> = {
+            videoId,
+            language,
+            level: info.level,
+            confidence: info.confidence,
+            method
+        };
+
+        if (info.tier) payload['tier'] = info.tier;
+        if (typeof info.score === 'number') payload['score'] = info.score;
+        if (typeof info.grammarCount === 'number') payload['grammarCount'] = info.grammarCount;
+        if (typeof info.speechRateCpm === 'number') payload['speechRateCpm'] = info.speechRateCpm;
+        if (info.breakdown) payload['breakdown'] = info.breakdown;
+
         try {
             const user = this.auth.user();
             if (user) {
-                await this.supabase.client.from('video_levels').insert({
+                void this.supabase.client.from('video_levels').insert({
                     video_id: videoId,
                     language,
-                    level,
-                    confidence,
+                    level: info.level,
+                    confidence: info.confidence,
                     method,
                     user_id: user.id
                 });
-                return;
             }
         } catch { }
 
-        // Fallback to edge endpoint
-        void this.http.post('/api/video-level', { videoId, language, level, confidence, method })
+        // Always sync to edge endpoint (Cloudflare D1 / local dev server)
+        void this.http.post('/api/video-level', payload)
             .toPromise()
             .catch(() => {});
     }

@@ -11,6 +11,7 @@ import { SubtitleService, YoutubeService } from '../../video';
 import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
 import { TranslationService } from '../../../services';
 import { Token, DictionaryEntry, SupportedLearningLanguage, WordLevel } from '../../../models';
+import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
 
 @Component({
   selector: 'app-word-popup',
@@ -37,7 +38,14 @@ export class WordPopupComponent implements OnDestroy {
   currentSentence = input<string>('');
   closed = output<void>();
 
-  entry = signal<DictionaryEntry | null>(null);
+  readonly entries = signal<DictionaryEntry[]>([]);
+  readonly activeEntryIndex = signal<number>(0);
+  readonly entry = computed<DictionaryEntry | null>(() => {
+    const list = this.entries();
+    const idx = this.activeEntryIndex();
+    return list.length > 0 ? (list[idx] || list[0]) : null;
+  });
+
   isVisible = signal(false);
   readonly isSaved = computed(() => {
     const word = this.selectedWord();
@@ -100,6 +108,36 @@ export class WordPopupComponent implements OnDestroy {
       || 'new';
   });
 
+  formattedReading = computed(() => {
+    const e = this.entry();
+    if (!e?.reading) return '';
+    const parts = e.reading.split(/[\s,、/]+/).filter(Boolean);
+    return parts.length > 1 ? parts.join(' / ') : e.reading;
+  });
+
+  formattedRomanization = computed(() => {
+    const e = this.entry();
+    if (!e?.romanization) return '';
+    const parts = e.romanization.split(/[\s,/]+/).filter(Boolean);
+    return parts.length > 1 ? parts.join(' / ') : e.romanization;
+  });
+
+  formattedPartOfSpeech = computed(() => {
+    const e = this.entry();
+    if (!e?.partOfSpeech || e.partOfSpeech.length === 0) return [];
+    return formatPartOfSpeech(e.partOfSpeech, this.i18n.currentLanguage());
+  });
+
+  selectEntry(index: number): void {
+    if (index >= 0 && index < this.entries().length) {
+      this.activeEntryIndex.set(index);
+      this.cancelAllTranslations();
+      this.translatedDefinitions.set(new Map());
+      this.translatingIndices.set(new Set());
+      this.translationErrors.set(new Set());
+    }
+  }
+
   // Translate loading state
   isTranslatingAll = computed(() => {
     const meanings = this.entry()?.meanings;
@@ -124,6 +162,8 @@ export class WordPopupComponent implements OnDestroy {
         this.translatedDefinitions.set(new Map());
         this.translatingIndices.set(new Set());
         this.translationErrors.set(new Set());
+        this.entries.set([]);
+        this.activeEntryIndex.set(0);
         this.lookupError.set(null);
         untracked(() => {
           const primaryWord = (word.baseForm && word.baseForm.trim()) ? word.baseForm.trim() : word.surface;
@@ -154,13 +194,14 @@ export class WordPopupComponent implements OnDestroy {
     this.lookupError.set(null);
 
     const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
-    this.lookupSubscription = this.dictionary.lookup(word, lang).subscribe({
-      next: result => {
-        if (!result && fallbackWord && fallbackWord !== word) {
+    this.lookupSubscription = this.dictionary.lookupEntries(word, lang).subscribe({
+      next: results => {
+        if ((!results || results.length === 0) && fallbackWord && fallbackWord !== word) {
           this.lookupWord(fallbackWord);
           return;
         }
-        this.entry.set(result);
+        this.entries.set(results || []);
+        this.activeEntryIndex.set(0);
       },
       error: () => {
         if (fallbackWord && fallbackWord !== word) {
@@ -168,7 +209,8 @@ export class WordPopupComponent implements OnDestroy {
           return;
         }
         this.lookupError.set('LOOKUP_FAILED');
-        this.entry.set(null);
+        this.entries.set([]);
+        this.activeEntryIndex.set(0);
       }
     });
   }
@@ -320,7 +362,8 @@ export class WordPopupComponent implements OnDestroy {
     this.audio.stopAudio();
 
     this.isVisible.set(false);
-    this.entry.set(null);
+    this.entries.set([]);
+    this.activeEntryIndex.set(0);
     this.closed.emit();
   }
 

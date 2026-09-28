@@ -36,7 +36,7 @@ export class StreakDialogComponent {
             this.toast.show(msg, { type: 'success', icon: 'snowflake', duration: 3500 });
         } else if (res.reason === 'insufficient_xp') {
             const msg = `⚠️ ${this.i18n.t('streak.insufficientXp') || 'Need 150 XP to replenish freeze'}`;
-            this.toast.show(msg, { type: 'warning', icon: 'zap', duration: 3500 });
+            this.toast.show(msg, { type: 'warning', icon: 'trophy', duration: 3500 });
         }
     }
 

@@ -6,6 +6,7 @@ import { OfflineStreakRepository } from '../repositories/offline-streak.reposito
 import { SupabaseService } from './supabase.service';
 import { StorageService } from './storage.service';
 import { LeaderboardEntry } from '../../models/gamification.model';
+import { mergeWithSeedLeaderboard } from '../../data/leaderboard-seeds';
 
 const STORAGE_KEY = 'voca_leaderboard_cache';
 const GUEST_ID_KEY = 'voca_guest_id';
@@ -101,12 +102,9 @@ export class LeaderboardService {
                 p_limit: 50
             });
 
-            if (error) {
-                throw error;
-            }
-
-            if (Array.isArray(data) && data.length > 0) {
-                const learners: LeaderboardEntry[] = (data as LeaderboardRpcRow[]).map(row => ({
+            let realLearners: LeaderboardEntry[] = [];
+            if (!error && Array.isArray(data)) {
+                realLearners = (data as LeaderboardRpcRow[]).map(row => ({
                     rank: Number(row.rank),
                     userId: row.user_id,
                     name: row.name || 'Learner',
@@ -119,16 +117,51 @@ export class LeaderboardService {
                     targetLang: row.target_lang || 'all',
                     country: row.country || ''
                 }));
-
-                this.topLearners.set(learners);
-                this.computeClientUserRank(learners);
-                this.saveToStorage(learners);
-            } else {
-                this.computeClientUserRank(this.topLearners());
             }
+
+            // Ensure current active user's local stats are incorporated
+            const currentUserId = this.getCurrentUserId();
+            const myXp = this.gamification.totalXP();
+            const myWeeklyXp = this.gamification.weeklyXP();
+            const myLevel = this.gamification.userLevel();
+            const myStreak = this.streakRepo.streakData().currentStreak;
+            const myBadges = Object.keys(this.gamification.rawState().unlockedAchievements).length;
+            const user = this.auth.user();
+
+            if (myXp > 0 || myWeeklyXp > 0 || user) {
+                const existingIdx = realLearners.findIndex(u => u.userId === currentUserId);
+                const currentUserEntry: LeaderboardEntry = {
+                    rank: 0,
+                    userId: currentUserId,
+                    name: user?.name || (existingIdx !== -1 ? realLearners[existingIdx].name : 'You'),
+                    avatar: user?.picture || (existingIdx !== -1 ? realLearners[existingIdx].avatar : ''),
+                    xp: Math.max(myXp, existingIdx !== -1 ? (realLearners[existingIdx].xp ?? 0) : 0),
+                    weeklyXp: Math.max(myWeeklyXp, existingIdx !== -1 ? (realLearners[existingIdx].weeklyXp ?? 0) : 0),
+                    level: Math.max(myLevel, existingIdx !== -1 ? (realLearners[existingIdx].level ?? 1) : 1),
+                    streak: Math.max(myStreak, existingIdx !== -1 ? (realLearners[existingIdx].streak ?? 0) : 0),
+                    badgesCount: Math.max(myBadges, existingIdx !== -1 ? (realLearners[existingIdx].badgesCount ?? 0) : 0),
+                    targetLang: lang === 'all' ? (this.settings.settings().language || 'ja') : lang,
+                    country: ''
+                };
+                if (existingIdx !== -1) {
+                    realLearners[existingIdx] = currentUserEntry;
+                } else {
+                    realLearners.push(currentUserEntry);
+                }
+            }
+
+            // Always merge real users with baseline community seed learners
+            const merged = mergeWithSeedLeaderboard(realLearners, lang === 'all' ? null : lang, 50, period);
+
+            this.topLearners.set(merged);
+            this.computeClientUserRank(merged);
+            this.saveToStorage(merged);
         } catch (err) {
-            console.warn('[LeaderboardService] Failed to fetch leaderboard from Supabase, using cache:', err);
-            this.computeClientUserRank(this.topLearners());
+            console.warn('[LeaderboardService] Failed to fetch leaderboard from Supabase, using seeds/cache:', err);
+            const cached = this.topLearners();
+            const fallback = cached.length >= 3 ? cached : mergeWithSeedLeaderboard([], lang === 'all' ? null : lang, 50, period);
+            this.topLearners.set(fallback);
+            this.computeClientUserRank(fallback);
         } finally {
             this.isLoading.set(false);
         }
@@ -208,6 +241,10 @@ export class LeaderboardService {
             if (Array.isArray(parsed) && parsed.length >= 3) {
                 this.topLearners.set(parsed);
                 this.computeClientUserRank(parsed);
+            } else {
+                const initial = mergeWithSeedLeaderboard([], null, 50, 'weekly');
+                this.topLearners.set(initial);
+                this.computeClientUserRank(initial);
             }
         } catch { }
     }

@@ -123,7 +123,7 @@ export class VideoHeaderComponent {
         value: '__subtitles_off__',
         label: this.i18n.t('player.subtitlesOff') || this.i18n.t('player.off') || 'Off',
         description: this.i18n.t('subtitle.hideCaptions') || this.i18n.t('player.hideCaptions') || 'Hide subtitles display',
-        icon: 'subtitles'
+        icon: 'slash'
       });
     }
 

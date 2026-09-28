@@ -4,7 +4,7 @@
     <div class="panel-header">
         <div class="panel-header__row">
             <div class="panel-header__left">
-                <app-icon name="book-open" [size]="18" class="panel-header__icon" />
+                <app-icon name="layers" [size]="18" class="panel-header__icon" />
                 <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
                 <span class="badge badge--primary">{{ currentLangVocabCount() }}</span>
             </div>
@@ -104,14 +104,14 @@
         <div class="empty-state empty-state--centered">
             @if (vocab.vocabulary().length === 0) {
             <div class="empty-state__icon-box">
-                <app-icon name="book-open" [size]="28" />
+                <app-icon name="layers" [size]="28" />
             </div>
             <div class="empty-state__text">
                 <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                 <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
             </div>
             <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary()">
-                <app-icon name="book-open" [size]="14" />
+                <app-icon name="search" [size]="14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
             </button>
             } @else {
@@ -124,7 +124,7 @@
             </div>
             @if (effectiveSearchQuery()) {
             <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary(effectiveSearchQuery())">
-                <app-icon name="book-open" [size]="14" />
+                <app-icon name="search" [size]="14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search in dictionary' }}</span>
             </button>
             }
@@ -201,7 +201,7 @@
     <div class="menu-sheet">
         <div class="menu-sheet__header">
             <div class="menu-sheet__title-box">
-                <app-icon name="book-open" [size]="20" class="menu-sheet__header-icon" />
+                <app-icon name="layers" [size]="20" class="menu-sheet__header-icon" />
                 <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
             </div>
         </div>
@@ -216,7 +216,7 @@
                 <div class="menu-divider"></div>
                 <button type="button" class="menu-option" (click)="exportVocabAnki(); vocabMenuOpen.set(false)">
                     <div class="menu-option__icon-box">
-                        <app-icon name="download" [size]="18" />
+                        <app-icon name="cards" [size]="18" />
                     </div>
                     <span class="menu-option__label">{{ i18n.t('vocab.exportAnki') }}</span>
                 </button>

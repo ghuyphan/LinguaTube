@@ -37,10 +37,9 @@ export async function getVideoLanguages(db, videoId) {
         try {
             if (row.levels) {
                 const parsed = JSON.parse(row.levels);
-                // Normalize so levels[lang] returns string label for backward compatibility
                 for (const [k, v] of Object.entries(parsed)) {
                     if (k.endsWith('_meta')) continue;
-                    levels[k] = (v && typeof v === 'object' && v.level) ? v.level : v;
+                    levels[k] = v;
                 }
             }
         } catch { }
@@ -175,32 +174,57 @@ export async function addSubLanguage(db, videoId, lang) {
  * @param {string} level - e.g. "JLPT N4", "HSK 2"
  * @param {number} [confidence] - Assessment confidence (0.0 to 1.0)
  * @param {string} [method] - Assessment method ('metadata' | 'linguistics')
+ * @param {object} [details] - Diagnostic details (score, tier, grammarCount, speechRateCpm, breakdown)
  */
-export async function saveVideoLevel(db, _kv, videoId, language, level, confidence = 0.8, method = 'linguistics') {
+export async function saveVideoLevel(db, _kv, videoId, language, level, confidence = 0.8, method = 'linguistics', details = null) {
     if (!db || !videoId || !language || !level) return null;
 
     try {
-        const existing = await getVideoLanguages(db, videoId);
-        const currentLevels = existing?.levels || {};
+        const row = await db.prepare(`
+            SELECT levels FROM video_languages WHERE video_id = ?
+        `).bind(videoId).first();
+
+        let currentLevels = {};
+        if (row?.levels) {
+            try { currentLevels = JSON.parse(row.levels); } catch {}
+        }
 
         // Security / Integrity check: prevent lower-confidence client payloads from downgrading verified levels
         const existingVal = currentLevels[language];
         const existingMeta = currentLevels[`${language}_meta`];
-        if (existingVal && existingMeta && typeof existingMeta === 'object') {
-            const existingConf = typeof existingMeta.confidence === 'number' ? existingMeta.confidence : 0.8;
-            if (confidence < existingConf) {
-                return currentLevels;
-            }
+        let existingConf = 0.8;
+        if (existingVal && typeof existingVal === 'object' && typeof existingVal.confidence === 'number') {
+            existingConf = existingVal.confidence;
+        } else if (existingMeta && typeof existingMeta === 'object' && typeof existingMeta.confidence === 'number') {
+            existingConf = existingMeta.confidence;
         }
 
-        currentLevels[language] = level;
-        currentLevels[`${language}_meta`] = {
+        if (confidence < existingConf) {
+            return currentLevels;
+        }
+
+        const levelData = {
+            level,
             confidence: Math.min(1.0, Math.max(0.0, confidence)),
             method,
             updatedAt: Math.floor(Date.now() / 1000)
         };
+        if (details && typeof details === 'object') {
+            if (details.tier) levelData.tier = details.tier;
+            if (typeof details.score === 'number') levelData.score = details.score;
+            if (typeof details.grammarCount === 'number') levelData.grammarCount = details.grammarCount;
+            if (typeof details.speechRateCpm === 'number') levelData.speechRateCpm = details.speechRateCpm;
+            if (details.breakdown && typeof details.breakdown === 'object') levelData.breakdown = details.breakdown;
+        }
 
-        if (existing) {
+        currentLevels[language] = levelData;
+        currentLevels[`${language}_meta`] = {
+            confidence: levelData.confidence,
+            method,
+            updatedAt: levelData.updatedAt
+        };
+
+        if (row) {
             await db.prepare(`
                 UPDATE video_languages 
                 SET levels = ?, updated_at = strftime('%s', 'now')
@@ -210,14 +234,7 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
             await saveVideoLanguages(db, videoId, [language], null, null, null, false, currentLevels);
         }
 
-        // Return clean string map
-        const cleanLevels = {};
-        for (const [k, v] of Object.entries(currentLevels)) {
-            if (!k.endsWith('_meta')) {
-                cleanLevels[k] = (v && typeof v === 'object' && v.level) ? v.level : v;
-            }
-        }
-        return cleanLevels;
+        return currentLevels;
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoLevel error:', err.message);
         return null;
@@ -279,7 +296,12 @@ export function detectLevelFromMetadata(title = '', channel = '') {
  * @returns {'beginner' | 'elementary' | 'intermediate' | 'upper_intermediate' | 'advanced' | null}
  */
 export function labelToTier(label = '') {
-    if (!label || typeof label !== 'string') return null;
+    if (!label) return null;
+    if (typeof label === 'object') {
+        if (label.tier) return label.tier;
+        label = label.level || '';
+    }
+    if (typeof label !== 'string' || !label) return null;
     const upper = label.toUpperCase();
     if (upper.includes('N5') || upper.includes('HSK 1') || upper.includes('A1') || upper.includes('BEGINNER')) {
         return 'beginner';
@@ -623,6 +645,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         verifiedLangs.sort((a, b) => (a === target ? -1 : (b === target ? 1 : 0)));
                     }
 
+                    const cleanLevelStr = (level && typeof level === 'object' && level.level) ? level.level : (typeof level === 'string' ? level : undefined);
                     videoMap.set(row.video_id, {
                         videoId: row.video_id,
                         title: row.title || null,
@@ -631,7 +654,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         duration: row.duration_seconds || 0,
                         thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
                         languages: verifiedLangs.length > 0 ? verifiedLangs : [lang],
-                        level: level || undefined,
+                        level: cleanLevelStr,
                         tier: videoTier || undefined,
                         updatedAt: row.updated_at
                     });

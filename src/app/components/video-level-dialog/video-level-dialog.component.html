@@ -52,7 +52,7 @@
     <div class="stat-card">
       <div class="stat-card__header">
         <div class="stat-icon-wrap stat-icon--pace">
-          <app-icon name="zap" [size]="16" />
+          <app-icon name="speedometer" [size]="16" />
         </div>
         <span class="stat-label">{{ i18n.t('level.speechCadence') || 'Spoken Pace' }}</span>
       </div>
@@ -72,7 +72,7 @@
         <app-icon name="info" [size]="16" />
       </div>
       <div class="info-content">
-        <p class="evaluation-summary">Level estimated from subtitle grammar patterns, vocabulary difficulty, and speech rate.</p>
+        <p class="evaluation-summary">{{ evaluationSummary() }}</p>
       </div>
     </div>
   </div>
