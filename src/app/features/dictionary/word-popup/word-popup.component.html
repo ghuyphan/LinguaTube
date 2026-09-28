@@ -81,6 +81,9 @@
             </div>
             } @else if (entry()) {
             <div class="popup-badges">
+                @if (entry()?.partOfSpeech && entry()!.partOfSpeech!.length > 0) {
+                <span class="popup-pos">{{ entry()!.partOfSpeech!.join(', ') }}</span>
+                }
                 @if (entry()?.jlptLevel) {
                 <span class="badge">{{ entry()?.jlptLevel }}</span>
                 }
@@ -104,7 +107,6 @@
                         <!-- Translated Text -->
                         @if (getTranslation($index); as translatedText) {
                         <div class="translation-result" aria-live="polite">
-                            <img [src]="getFlagUrl(getTranslationLang($index))" class="translation-flag-img" alt="" />
                             <span>{{ translatedText }}</span>
                         </div>
                         }

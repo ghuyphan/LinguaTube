@@ -26,27 +26,19 @@
 }
 
 .achievements-hero-icon {
-    width: 68px;
-    height: 68px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(245, 158, 11, 0.04) 100%);
-    border: 1.5px solid rgba(245, 158, 11, 0.3);
-    box-shadow: 0 0 24px rgba(245, 158, 11, 0.16);
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.25);
     transition: all var(--transition-normal);
 
     .hero-trophy {
         color: #f59e0b;
-        filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.45));
-        animation: trophyBounce 2.8s ease-in-out infinite;
     }
-}
-
-@keyframes trophyBounce {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-3px) scale(1.04); }
 }
 
 .title-group {

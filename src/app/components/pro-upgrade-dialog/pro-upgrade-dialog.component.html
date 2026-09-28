@@ -15,10 +15,10 @@
         <div class="already-pro-card already-premium">
             <div class="status-badge status-paid badge-premium-glow">
                 <app-icon name="check-circle" [size]="16" />
-                <span>{{ i18n.t('pro.activePremiumSubscription') || 'Active Premium Subscription' }}</span>
+                <span>{{ i18n.t('pro.activePremiumSubscription') || 'Active Patron' }}</span>
             </div>
             <p class="already-pro-desc">
-                {{ i18n.t('pro.enjoyingPremiumBenefits') || 'You have unlocked maximum immersion power, 25 daily AI diamonds, long-form podcast transcription, and VIP speed.' }}
+                {{ i18n.t('pro.enjoyingPremiumBenefits') || 'Patron active: 25 daily AI credits, 45-minute videos, and top priority.' }}
             </p>
             <button class="btn btn-primary btn-full" (click)="dismissed.emit()">
                 {{ i18n.t('common.close') || 'Done' }}
@@ -29,14 +29,14 @@
         <div class="already-pro-card">
             <div class="status-badge status-paid">
                 <app-icon name="check-circle" [size]="16" />
-                <span>{{ i18n.t('pro.activeSubscription') || 'Active Pro Subscription' }}</span>
+                <span>{{ i18n.t('pro.activeSubscription') || 'Active Supporter' }}</span>
             </div>
             <p class="already-pro-desc">
-                {{ i18n.t('pro.enjoyingBenefits') || 'You have unlocked Pro immersion features, 10 daily AI diamonds, and priority speech transcription.' }}
+                {{ i18n.t('pro.enjoyingBenefits') || 'Supporter active: 10 daily AI credits and priority processing.' }}
             </p>
             <button class="btn btn-upgrade-cta btn-premium-cta btn-full" type="button" (click)="setTier('premium')">
                 <app-icon name="diamond" [size]="16" />
-                <span>{{ i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium' }}</span>
+                <span>{{ i18n.t('pro.upgradeToPremium') || 'Become a Patron' }}</span>
             </button>
             <button class="btn btn-ghost btn-full" (click)="dismissed.emit()">
                 {{ i18n.t('common.close') || 'Done' }}
@@ -351,6 +351,11 @@
                     </div>
                 }
             </div>
+        </div>
+
+        <!-- Non-Profit Community Support Disclaimer -->
+        <div class="donation-disclaimer-box">
+            <p class="donation-disclaimer-text">{{ i18n.t('pro.nonProfitDisclaimer') }}</p>
         </div>
 
         <!-- Pinned Sticky Actions Footer -->

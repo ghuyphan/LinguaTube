@@ -608,11 +608,14 @@ Voca features a multi-tiered credit and quota management system designed to bala
   - **Voca Premium**:
     - Monthly (`premium_1m`): 119,000 VND/month (~`\$4.75`)
     - Annual (`premium_1y`): 990,000 VND/year (~`\$39.50`, 30% savings, ~82,500 VND/mo)
-- **VietQR Payment Flow**:
-  1. User selects "Upgrade" in `SidebarComponent`, `SettingsSheetComponent`, or the Pro/Premium teaser banner in `AiCreditsDialogComponent`.
-  2. Dedicated `ProUpgradeDialogComponent` opens, presenting an interactive Tier Switcher (`[ Voca Pro ] [ Voca Premium ]`) with real-time benefit comparisons, monthly/annual toggles, and localized badge highlights.
+- **Educational Supporter / Patron Backing Model**:
+  - Rather than commercial e-commerce subscriptions, Voca frames contributions as voluntary community support ("Ủng hộ dự án" / "Supporter & Patron Perks") to maintain server infrastructure, speech recognition AI processing costs, and dictionary databases.
+  - Displays a transparent non-profit educational disclaimer in `ProUpgradeDialogComponent` across all 5 supported languages.
+- **VietQR Payment & Backing Flow**:
+  1. User selects "Support Project" or "Upgrade" in `SidebarComponent`, `SettingsSheetComponent`, or the Supporter teaser banner in `AiCreditsDialogComponent`.
+  2. Dedicated `ProUpgradeDialogComponent` opens, presenting an interactive Tier Switcher (`[ Voca Pro ] [ Voca Premium ]`) with real-time perk comparisons, monthly/annual toggles, non-profit educational community disclaimer, and localized badge highlights.
   3. Frontend calls `POST /api/payment/create-order` with the chosen `planId`.
-  4. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY`, creates an order via payOS, parses raw EMVCo strings into scannable QR images, caches order metadata in Cloudflare KV, and returns structured banking info (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`).
+  4. Server signs payment payload with `HMAC-SHA256` using `PAYOS_CHECKSUM_KEY`, creates an order via payOS with neutral transfer description `VOCA${orderCode}`, parses raw EMVCo strings into scannable QR images, caches order metadata in Cloudflare KV, and returns structured banking info (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`).
   5. Frontend displays a responsive VietQR card featuring the generated QR image, mobile checkout deep link, copyable account details, and active polling via `PaymentService`.
   6. User scans with any Vietnamese banking app (Vietcombank, MBBank, Techcombank, etc.).
   7. Upon transfer settlement, payOS fires a secure webhook to `/api/payment/webhook`.

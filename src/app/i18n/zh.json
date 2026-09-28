@@ -293,7 +293,8 @@
     "signInToUpgrade": "登录并升级 - {{price}}",
     "signInToUpgradePrompt": "请登录后升级订阅",
     "createOrderFailed": "创建支付订单失败",
-    "qrAlt": "VietQR 支付二维码"
+    "qrAlt": "VietQR 转账二维码",
+    "nonProfitDisclaimer": "Voca 是一项非营利的语言教育支持计划。所有赞助款项将直接用于维护服务器、AI 语音识别处理成本及词典数据基础设施。"
   },
   "vocab": {
     "title": "生词本",
@@ -349,7 +350,9 @@
     "formation": "接续方式",
     "explanation": "语法详解",
     "examples": "例句",
-    "level": "等级"
+    "level": "等级",
+    "savePattern": "保存语法",
+    "moreDetails": "更多详情"
   },
   "dictionary": {
     "title": "词典",
@@ -391,6 +394,7 @@
     "korean": "韩语",
     "english": "英语",
     "appearance": "外观",
+    "darkMode": "深色模式",
     "switchToLightMode": "切换到浅色模式",
     "switchToDarkMode": "切换到深色模式",
     "vocabStats": "词汇统计",
@@ -416,6 +420,7 @@
     "textOnly": "仅文本",
     "signOutConfirmTitle": "确定退出登录？",
     "signOutConfirmMessage": "本地生词数据仍会保留，重新登录后将继续云端同步。",
+    "syncVocabHint": "登录后即可在云端保存闪卡、打卡记录与观看历史",
     "about": "关于与更新",
     "appVersion": "版本",
     "checkForUpdates": "检查更新",
@@ -593,6 +598,7 @@
     "videos": "视频",
     "emptyVideo": "该播放列表中暂无视频",
     "discoverVideos": "寻找视频添加",
+    "clearFilters": "清除筛选",
     "empty": {
       "myTitle": "暂无播放列表",
       "myHint": "立即新建一个播放列表吧",

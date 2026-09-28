@@ -118,7 +118,7 @@
                 </button>
                 <div class="stats-bar__divider"></div>
                 <button class="stats-bar__item" (click)="openAiCredits.emit()" 
-                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'Audio Sync Passes') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
+                    [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                     <app-icon name="diamond" [size]="16" class="stat-icon stat-icon--diamond" />
                     <span class="stats-bar__val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </button>
@@ -129,33 +129,33 @@
             @if (auth.isLoggedIn()) {
                 @if (auth.subscriptionTier() === 'pro') {
                     @if (!isCollapsed()) {
-                    <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
+                    <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Patron'">
                         <div class="pro-btn-content">
                             <div class="pro-btn-icon">
                                 <app-icon name="diamond" [size]="14" />
                             </div>
-                            <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
-                            <span class="pro-btn-badge">25💎</span>
+                            <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Patron' }}</span>
+                            <span class="pro-btn-badge">25</span>
                         </div>
                     </button>
                     } @else {
-                    <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Premium'">
+                    <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Patron'">
                         <app-icon name="diamond" [size]="16" />
                     </button>
                     }
                 } @else if (auth.subscriptionTier() !== 'premium') {
                     @if (!isCollapsed()) {
-                    <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
+                    <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Supporter'">
                         <div class="pro-btn-content">
                             <div class="pro-btn-icon">
                                 <app-icon name="crown" [size]="14" />
                             </div>
-                            <span class="pro-btn-label">{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
-                            <span class="pro-btn-badge">10💎</span>
+                            <span class="pro-btn-label">{{ i18n.t('pro.getPro') || 'Support Voca' }}</span>
+                            <span class="pro-btn-badge">10</span>
                         </div>
                     </button>
                     } @else {
-                    <button class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Pro'">
+                    <button class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Supporter'">
                         <app-icon name="crown" [size]="16" />
                     </button>
                     }
@@ -294,7 +294,7 @@
                     <span class="badge badge--sm" [class]="'badge--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'free')">
                         {{ (auth.isLoggedIn() ? auth.subscriptionTier() : 'guest') | uppercase }}
                     </span>
-                    <span class="popover-level-tag">🏆 {{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
+                    <span class="popover-level-tag">{{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
                 </div>
             </div>
         </div>
@@ -306,7 +306,7 @@
             </div>
             <div class="streak-text-box">
                 <div class="streak-title">{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') || 'Day Streak' }}</div>
-                <div class="streak-sub">{{ streak.practicedToday() ? (i18n.t('streak.practicedToday') || 'Practiced today! Keep it going!') : (i18n.t('streak.practiceToMaintain') || 'Practice today to maintain') }}</div>
+                <div class="streak-sub">{{ streak.practicedToday() ? (i18n.t('streak.practicedToday') || 'Practiced today! Keep it going!') : (i18n.t('streak.practiceToMaintain') || 'Practice today to keep your streak') }}</div>
             </div>
             <app-icon name="chevron-right" [size]="16" class="popover-arrow" />
         </button>
@@ -327,12 +327,12 @@
             </button>
 
             <button class="metric-pill" (click)="onPopoverAiCreditsClick()"
-                [attr.title]="(i18n.t('subtitle.aiCredits') || 'Audio Sync Passes') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
+                [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                 <div class="metric-icon-box metric-icon-box--diamond">
                     <app-icon name="diamond" [size]="16" />
                 </div>
                 <div class="metric-info">
-                    <span class="metric-label">{{ i18n.t('subtitle.diamonds') || 'Diamonds' }}</span>
+                    <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>
                     <span class="metric-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
                 </div>
             </button>
@@ -343,8 +343,8 @@
             @if (auth.subscriptionTier() !== 'premium') {
             <button class="stats-popover__upgrade-btn" (click)="onPopoverUpgradeClick()">
                 <app-icon name="crown" [size]="14" />
-                <span>{{ i18n.t('pro.getPro') || 'Get Pro' }}</span>
-                <span class="upgrade-badge">10💎</span>
+                <span>{{ i18n.t('pro.getPro') || 'Support Voca' }}</span>
+                <span class="upgrade-badge">10</span>
             </button>
             }
         } @else {

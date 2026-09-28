@@ -16,7 +16,7 @@
         } @else {
         <span class="source-pill source-pill--metadata">
           <app-icon name="book-open" [size]="14" class="source-icon" />
-          <span>{{ i18n.t('level.sourceMetadata') || 'Curriculum Metadata' }}</span>
+          <span>{{ i18n.t('level.sourceMetadata') || 'Curriculum Match' }}</span>
         </span>
         }
       </div>
@@ -65,37 +65,14 @@
   </div>
   }
 
-  <!-- Why this level? -->
+  <!-- Evaluation Summary -->
   <div class="info-box">
-    <h3 class="info-box__heading">{{ i18n.t('level.howEvaluated') || 'Why this level?' }}</h3>
-
     <div class="info-row">
       <div class="info-icon-wrap">
-        <app-icon name="book-open" [size]="16" />
+        <app-icon name="info" [size]="16" />
       </div>
       <div class="info-content">
-        <strong>{{ i18n.t('level.howGrammarTitle') || 'Grammar Structures' }}</strong>
-        <p>{{ i18n.t('level.howGrammarDesc') || 'Pattern structures identified to match this proficiency standard.' }}</p>
-      </div>
-    </div>
-
-    <div class="info-row">
-      <div class="info-icon-wrap">
-        <app-icon name="type" [size]="16" />
-      </div>
-      <div class="info-content">
-        <strong>{{ i18n.t('level.howVocabTitle') || 'Vocabulary & Expressions' }}</strong>
-        <p>{{ i18n.t('level.howVocabDesc') || 'Idioms and expressions suited for this stage of immersion.' }}</p>
-      </div>
-    </div>
-
-    <div class="info-row">
-      <div class="info-icon-wrap">
-        <app-icon name="clock" [size]="16" />
-      </div>
-      <div class="info-content">
-        <strong>{{ i18n.t('level.howCadenceTitle') || 'Conversational Pace' }}</strong>
-        <p>{{ i18n.t('level.howCadenceDesc') || 'Natural speaking tempo measured directly from audio cadence.' }}</p>
+        <p class="evaluation-summary">Level estimated from subtitle grammar patterns, vocabulary difficulty, and speech rate.</p>
       </div>
     </div>
   </div>

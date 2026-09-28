@@ -641,16 +641,16 @@ body::-webkit-scrollbar {
 
     .create-btn-core {
         position: relative;
-        width: 52px;
-        height: 38px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-text, #e04848) 100%);
+        width: 48px;
+        height: 36px;
+        border-radius: var(--border-radius-md, 12px);
+        background: var(--accent-primary);
         color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 3px 10px rgba(var(--accent-primary-rgb), 0.35), 0 1px 3px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s ease;
 
         app-icon {
             color: #ffffff;
@@ -659,20 +659,18 @@ body::-webkit-scrollbar {
             justify-content: center;
 
             .icon {
-                stroke-width: 2.5;
+                stroke-width: 2.2;
             }
         }
     }
 
     &:active .create-btn-core {
-        transform: scale(0.95);
-        box-shadow: 0 1px 4px rgba(var(--accent-primary-rgb), 0.25);
+        transform: scale(0.96);
     }
 
     @media (hover: hover) {
         &:hover .create-btn-core {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 16px rgba(var(--accent-primary-rgb), 0.45);
+            background: var(--accent-primary-hover, #e54863);
         }
     }
 }

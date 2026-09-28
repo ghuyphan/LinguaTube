@@ -293,7 +293,8 @@
     "signInToUpgrade": "로그인하고 업그레이드 - {{price}}",
     "signInToUpgradePrompt": "구독을 업그레이드하려면 로그인해 주세요",
     "createOrderFailed": "결제 주문 생성에 실패했습니다",
-    "qrAlt": "VietQR 결제 코드"
+    "qrAlt": "VietQR 송금 코드",
+    "nonProfitDisclaimer": "Voca는 비영리 교육 지원 프로젝트입니다. 후원해 주신 금액은 전액 서버 유지비, AI 음성 인식 처리 비용, 사전 데이터베이스 운영에 사용됩니다."
   },
   "vocab": {
     "title": "단어장",
@@ -349,7 +350,9 @@
     "formation": "활용 형태",
     "explanation": "설명",
     "examples": "예문",
-    "level": "레벨"
+    "level": "레벨",
+    "savePattern": "문법 저장",
+    "moreDetails": "더 보기"
   },
   "dictionary": {
     "title": "사전",
@@ -391,6 +394,7 @@
     "korean": "한국어",
     "english": "영어",
     "appearance": "화면 테마",
+    "darkMode": "다크 모드",
     "switchToLightMode": "라이트 모드로 전환",
     "switchToDarkMode": "다크 모드로 전환",
     "vocabStats": "단어장 통계",
@@ -416,6 +420,7 @@
     "textOnly": "텍스트만",
     "signOutConfirmTitle": "로그아웃하시겠습니까?",
     "signOutConfirmMessage": "현재 기기의 단어장은 유지되지만, 다시 로그인할 때까지 다른 기기와 동기화되지 않아요.",
+    "syncVocabHint": "로그인하여 단어 카드, 연속 학습 기록, 시청 기록을 동기화하세요",
     "about": "앱 정보 및 업데이트",
     "appVersion": "버전",
     "checkForUpdates": "업데이트 확인",
@@ -593,6 +598,7 @@
     "videos": "동영상",
     "emptyVideo": "이 재생목록에는 아직 동영상이 없습니다.",
     "discoverVideos": "동영상 찾아보기",
+    "clearFilters": "필터 초기화",
     "empty": {
       "myTitle": "재생목록이 없습니다",
       "myHint": "첫 재생목록을 만들어 학습 동영상을 정리해 보세요.",
@@ -605,7 +611,7 @@
       "feedErrorTitle": "추천 동영상을 불러올 수 없습니다",
       "feedErrorHint": "네트워크 연결을 확인한 뒤 다시 시도해 주세요.",
       "noVideosTitle": "동영상이 없습니다",
-      "noVideosHint": "저장 버튼으로 동영상을 추가하세요",
+      "noVideosHint": "동영상을 시청하면서 이 재생목록에 추가해 보세요",
       "title": "재생목록을 찾을 수 없습니다",
       "hint": "필터나 검색어를 변경해 보세요",
       "savedTitle": "저장된 재생목록이 없습니다",

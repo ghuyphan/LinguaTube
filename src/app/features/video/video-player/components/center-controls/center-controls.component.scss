@@ -142,13 +142,12 @@ $z-center-controls: 15;
         animation: fadeIn 0.2s ease;
     }
 
-    // New styles for unified button
+    // Unified button styling
     .icon-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        // Ensure resizing works for wrappers
         span.pop {
             display: flex;
             align-items: center;
@@ -156,11 +155,9 @@ $z-center-controls: 15;
         }
 
         .pop {
-            animation: iconPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.15s ease, opacity 0.15s ease;
         }
     }
-
-
 }
 
 .replay-btn {
@@ -186,7 +183,7 @@ $z-center-controls: 15;
     opacity: 0;
 
     &.animate {
-        animation: centerPop 0.4s ease-out forwards;
+        animation: centerHud 0.35s ease-out forwards;
     }
 }
 
@@ -221,50 +218,24 @@ $z-center-controls: 15;
 // KEYFRAMES
 // ============================================
 
-@keyframes centerPop {
+@keyframes centerHud {
     0% {
         opacity: 0;
-        transform: scale(0.7);
+        transform: scale(0.92);
     }
 
-    25% {
+    30% {
         opacity: 1;
-        transform: scale(1.1);
+        transform: scale(1);
     }
 
-    50% {
+    70% {
         opacity: 1;
         transform: scale(1);
     }
 
     100% {
         opacity: 0;
-        transform: scale(1);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-
-
-@keyframes iconPop {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale(1.04);
     }
 }

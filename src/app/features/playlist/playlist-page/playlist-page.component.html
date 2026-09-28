@@ -183,6 +183,20 @@
                     <div class="spinner spinner--md"></div>
                 </div>
                 }
+                } @else if (isFiltered()) {
+                <div class="empty-state empty-state--centered">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="search" [size]="28" />
+                    </div>
+                    <div class="empty-state__text" style="align-items: center; text-align: center;">
+                        <p class="empty-state__title">{{ i18n.t('playlist.empty.title') || 'No playlists found' }}</p>
+                        <p class="empty-state__description">{{ i18n.t('playlist.empty.hint') || 'Try adjusting your filters or search terms' }}</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" style="margin-top: var(--space-md);" (click)="clearFilters()">
+                        <app-icon name="x" [size]="14" />
+                        <span>{{ i18n.t('playlist.clearFilters') || 'Clear filters' }}</span>
+                    </button>
+                </div>
                 } @else {
                 <div class="empty-state empty-state--centered">
                     <div class="empty-state__icon-box">

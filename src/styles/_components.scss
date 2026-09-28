@@ -1252,6 +1252,23 @@
     }
 }
 
+/* Video Language Chip */
+.video-lang-chip {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 1px 6px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: var(--border-radius-xs, 4px);
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    line-height: 1.25;
+    user-select: none;
+}
+
 /* Video / Playlist Difficulty Level Pill */
 .level-badge--pill {
     display: inline-flex;
@@ -1336,41 +1353,12 @@
     background: var(--gradient-pro);
     color: white;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-}
-
-[data-theme="dark"] .badge--pro {
-    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
 }
 
 .badge--premium {
     background: var(--gradient-premium);
-    background-size: 200% 200%;
-    color: #1f2937;
+    color: white;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .badge--premium {
-    box-shadow: 0 2px 12px rgba(196, 181, 253, 0.3);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .badge--premium {
-        animation: badge-holo 3s ease infinite;
-    }
-}
-
-@keyframes badge-holo {
-
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
 }
 /* Stats grid (Standardized 3-column metric cards across all primary library views) */
 .stats-grid {

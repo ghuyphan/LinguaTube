@@ -150,14 +150,9 @@
                 rgba(255, 255, 255, 0.06) 75%,
                 transparent 100%);
             transform: translateX(-100%);
-            animation: levelShimmer 1.6s infinite ease-in-out;
+            animation: skeletonWave 1.6s infinite ease-in-out;
         }
     }
-}
-
-@keyframes levelShimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
 }
 
 .video-actions {
@@ -216,13 +211,12 @@
 
 .btn-close-video {
     margin-left: 4px;
-    border-color: rgba(239, 68, 68, 0.25);
 
     @media (hover: hover) {
         &:hover {
-            color: #ef4444;
-            border-color: rgba(239, 68, 68, 0.45);
-            background: rgba(239, 68, 68, 0.08);
+            color: var(--text-primary);
+            border-color: var(--border-color-hover, rgba(255, 255, 255, 0.25));
+            background: var(--bg-hover, rgba(255, 255, 255, 0.08));
         }
     }
 }
@@ -247,7 +241,7 @@
                 rgba(255, 255, 255, 0.08) 80%,
                 transparent 100%);
         transform: translateX(-100%);
-        animation: shimmer 1.8s infinite ease-in-out;
+        animation: skeletonWave 1.6s infinite ease-in-out;
     }
 }
 
@@ -261,14 +255,4 @@
     height: 1.3rem;
     width: 40%;
     max-width: 160px;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
 }

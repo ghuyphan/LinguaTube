@@ -459,24 +459,12 @@
     padding: 0 var(--space-sm);
 }
 
-/* Loop styling - transitions only apply when looping is active */
+/* Loop styling - calm static accent when looping is active */
 .subtitle-text.is-looping {
-    box-shadow: 0 0 0 2px var(--accent-primary), 0 0 16px rgba(var(--accent-primary-rgb), 0.35);
-    background: rgba(var(--accent-primary-rgb), 0.06);
-    animation: loopBreath 2s ease-in-out infinite;
-    transition: box-shadow 0.3s ease, background 0.3s ease;
-}
-
-@keyframes loopBreath {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0 2px var(--accent-primary), 0 0 16px rgba(var(--accent-primary-rgb), 0.25);
-    }
-
-    50% {
-        box-shadow: 0 0 0 2px var(--accent-primary), 0 0 28px rgba(var(--accent-primary-rgb), 0.45);
-    }
+    box-shadow: 0 0 0 1.5px var(--accent-primary);
+    background: rgba(var(--accent-primary-rgb), 0.04);
+    border-radius: var(--border-radius-md);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .current-subtitle--small .subtitle-text {
@@ -968,14 +956,14 @@
    ============================================ */
 .word {
     cursor: pointer;
-    padding: 3px 6px;
-    margin: 1px 2px;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    padding: 1px 3px;
+    margin: 0 1px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
     display: inline-block;
     vertical-align: baseline;
-    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.07);
+    background: transparent;
     border: 1px solid transparent;
     box-sizing: border-box;
     position: relative;
@@ -1009,7 +997,7 @@
 }
 
 [data-theme="dark"] .word {
-    background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.12);
+    background: transparent;
 }
 
 .word--static {

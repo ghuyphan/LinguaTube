@@ -20,9 +20,12 @@
             <!-- Explanation -->
             <div class="popup-section">
                 <div class="section-label">{{ i18n.t('grammar.explanation') }}</div>
-                <p class="explanation-text">{{ p.shortExplanation }}</p>
-                @if (p.longExplanation && p.longExplanation !== p.shortExplanation) {
-                <p class="explanation-long">{{ p.longExplanation }}</p>
+                <p class="explanation-text">{{ p.shortExplanation || p.longExplanation }}</p>
+                @if (p.longExplanation && p.longExplanation !== p.shortExplanation && p.longExplanation.length > (p.shortExplanation?.length || 0) + 30) {
+                <details class="grammar-details-toggle">
+                    <summary class="details-summary">{{ i18n.t('grammar.moreDetails') || 'More details' }}</summary>
+                    <p class="explanation-long">{{ p.longExplanation }}</p>
+                </details>
                 }
             </div>
 
@@ -58,7 +61,7 @@
             } @else {
             <button class="btn btn-primary" (click)="saveToVocabulary()">
                 <app-icon name="plus" [size]="14" />
-                <span>{{ i18n.t('popup.saveWord') || 'Save Pattern' }}</span>
+                <span>{{ i18n.t('grammar.savePattern') || 'Save Grammar' }}</span>
             </button>
             }
             <button class="btn btn-secondary" (click)="lookupInDictionary()" [title]="i18n.t('commandPalette.openDictionary') || 'Open Dictionary'">

@@ -140,37 +140,6 @@
               <div class="skeleton-line skeleton-title skeleton-pulse"></div>
             </div>
           </div>
-        } @else if (filter() === 'all' && selectedLanguage() === 'all') {
-          @if (inProgressVideo(); as resume) {
-          <div class="resume-hero" (click)="resumeVideo(resume.video_id)">
-            <div class="resume-hero__thumb">
-              <img [src]="resume.thumbnail || getThumbnail(resume.video_id)" [alt]="resume.title" loading="lazy" />
-              <div class="card-play-overlay">
-                <div class="play-icon-circle">
-                  <app-icon name="play" [size]="15" />
-                </div>
-              </div>
-              <div class="resume-progress-bar">
-                <div class="resume-progress-fill" [style.width.%]="resume.progress"></div>
-              </div>
-            </div>
-            <div class="resume-hero__content">
-              <div class="resume-hero__badge">
-                <app-icon name="play" [size]="12" />
-                <span>{{ i18n.t('history.continueWatching') || 'Continue Learning' }}</span>
-                <span class="resume-percent">({{ resume.progress }}%)</span>
-              </div>
-              <h3 class="resume-hero__title" [title]="resume.title">{{ resume.title }}</h3>
-              @if (resume.channel) {
-                <span class="resume-hero__channel">{{ resume.channel }}</span>
-              }
-            </div>
-            <button type="button" class="btn btn-primary btn-sm resume-hero__btn" (click)="resumeVideo(resume.video_id); $event.stopPropagation()">
-              <app-icon name="play" [size]="14" />
-              <span>{{ i18n.t('history.resume') || 'Resume' }}</span>
-            </button>
-          </div>
-          }
         }
 
         <app-history-list

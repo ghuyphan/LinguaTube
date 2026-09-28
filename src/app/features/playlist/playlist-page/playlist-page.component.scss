@@ -291,8 +291,6 @@
         height: 6px;
         border-radius: 50%;
         background-color: var(--success, #22c55e);
-        box-shadow: 0 0 6px var(--success, #22c55e);
-        animation: pulseGlow 2s ease-in-out infinite;
     }
 
     .active-playlist-label {

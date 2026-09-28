@@ -202,6 +202,16 @@ export class PlaylistPageComponent {
         return list;
     });
 
+    readonly isFiltered = computed(() =>
+        !!this.searchQuery().trim() || this.languageFilter() !== 'all' || this.levelFilter() !== 'all'
+    );
+
+    clearFilters(): void {
+        this.searchQuery.set('');
+        this.languageFilter.set('all');
+        this.levelFilter.set('all');
+    }
+
     getPlaylistLevel(playlist: Playlist): { level: string; tier: ProficiencyLevelTier } | null {
         return this.videoLevelService.resolvePlaylistLevel(playlist);
     }

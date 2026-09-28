@@ -16,7 +16,7 @@
             <button class="control-btn volume-btn" (click)="toggleMute.emit()"
                 [attr.aria-label]="t()('player.mute') || 'Mute'"
                 [attr.aria-keyshortcuts]="'m'"
-                [title]="(t()('player.mute') || 'Mute') + ' (m)'">
+                [title]="t()('player.mute') || 'Mute (M)'">
                 <app-icon [name]="volumeIcon()" [size]="18" />
             </button>
             <div class="volume-slider-container desktop-only" [class.visible]="isVolumeSliderVisible()">
@@ -57,7 +57,7 @@
                 (click)="toggleSubtitles.emit()"
                 [attr.aria-label]="isAISubtitle() ? (t()('subtitle.aiCaptions') || 'AI Captions') : (t()('player.subtitles') || 'Subtitles/closed captions')"
                 [attr.aria-keyshortcuts]="'c'"
-                [title]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (c)') : ((t()('player.subtitles') || 'Subtitles/closed captions') + ' (c)')">
+                [title]="isAISubtitle() ? ((t()('subtitle.aiCaptions') || 'AI Captions') + ' (C)') : (t()('player.subtitles') || 'Subtitles (C)')">
                 <app-icon [name]="isAISubtitle() ? 'subtitles-ai' : 'subtitles'" [size]="18" />
                 <span class="cc-indicator" [class.visible]="subtitlesVisible()"></span>
             </button>
@@ -71,7 +71,7 @@
                 (contextmenu)="onDualSubContextMenu($event)"
                 [attr.aria-label]="t()('subtitle.dualSubs') || 'Dual Subtitles'"
                 [attr.aria-keyshortcuts]="'d'"
-                [title]="(t()('subtitle.dualSubs') || 'Dual Subtitles') + ' (d)'">
+                [title]="(t()('subtitle.dualSubs') || 'Dual Subtitles') + ' (D)'">
                 <app-icon name="languages" [size]="18" />
                 <span class="cc-indicator" [class.visible]="showDualSubtitles()"></span>
             </button>
@@ -89,7 +89,7 @@
             <button class="control-btn" (click)="toggleMiniplayer.emit()"
                 [attr.aria-label]="t()('player.miniplayer') || 'Miniplayer'"
                 [attr.aria-keyshortcuts]="'i'"
-                [title]="(t()('player.miniplayer') || 'Miniplayer') + ' (i)'">
+                [title]="t()('player.miniplayer') || 'Miniplayer (I)'">
                 <app-icon name="miniplayer" [size]="18" />
             </button>
             }

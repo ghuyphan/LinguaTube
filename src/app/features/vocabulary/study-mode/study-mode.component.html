@@ -393,46 +393,23 @@
             } @else {
             <div class="answer-buttons">
                 <button class="answer-btn answer-btn--wrong card-action-interactive" (click)="markAnswer('wrong')">
-                    <div class="answer-btn__main">
-                        <app-icon name="x" [size]="16" />
-                        <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
-                        <kbd class="study-kbd-pill desktop-only">1</kbd>
-                    </div>
-                    <div class="answer-btn__meta">
-                        <span class="answer-time">{{ intervalPreviews().again }}</span>
-                    </div>
+                    <span class="answer-time">{{ intervalPreviews().again }}</span>
+                    <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
                 </button>
                 <button class="answer-btn answer-btn--hard card-action-interactive" (click)="markAnswer('hard')">
-                    <div class="answer-btn__main">
-                        <app-icon name="rotate-ccw" [size]="16" />
-                        <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
-                        <kbd class="study-kbd-pill desktop-only">2</kbd>
-                    </div>
-                    <div class="answer-btn__meta">
-                        <span class="answer-time">{{ intervalPreviews().hard }}</span>
-                    </div>
+                    <span class="answer-time">{{ intervalPreviews().hard }}</span>
+                    <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
                 </button>
                 <button class="answer-btn answer-btn--good card-action-interactive" (click)="markAnswer('good')">
-                    <div class="answer-btn__main">
-                        <app-icon name="check" [size]="16" />
-                        <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
-                        <kbd class="study-kbd-pill desktop-only">3</kbd>
-                    </div>
-                    <div class="answer-btn__meta">
-                        <span class="answer-time">{{ intervalPreviews().good }}</span>
-                    </div>
+                    <span class="answer-time">{{ intervalPreviews().good }}</span>
+                    <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
                 </button>
                 <button class="answer-btn answer-btn--easy card-action-interactive" (click)="markAnswer('easy')">
-                    <div class="answer-btn__main">
-                        <app-icon name="chevron-right" [size]="16" />
-                        <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
-                        <kbd class="study-kbd-pill desktop-only">4</kbd>
-                    </div>
-                    <div class="answer-btn__meta">
-                        <span class="answer-time">{{ intervalPreviews().easy }}</span>
-                    </div>
+                    <span class="answer-time">{{ intervalPreviews().easy }}</span>
+                    <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
                 </button>
             </div>
+            <p class="study-shortcut-hint desktop-only">{{ i18n.t('study.keyboardHint') || 'Use 1–4 keys to answer' }}</p>
             }
 
             <!-- Mobile swipe hint -->
@@ -442,15 +419,7 @@
     </div>
     } @else if (isComplete()) {
     <!-- Session Complete -->
-    <div class="session-complete" [class.with-confetti]="showConfetti()">
-        <!-- Confetti Particles -->
-        @if (showConfetti()) {
-        <div class="confetti-container">
-            @for (i of [1,2,3,4,5,6,7,8,9,10,11,12]; track i) {
-            <div class="confetti confetti--{{ i }}"></div>
-            }
-        </div>
-        }
+    <div class="session-complete">
 
         <div class="session-complete-topbar">
             <button type="button" class="btn btn-icon btn-ghost complete-close-btn" (click)="endSession()" [title]="i18n.t('common.close') || 'Close'">
@@ -485,7 +454,7 @@
 
         @if (cardsCompletedToday() >= dailyGoal()) {
         <div class="goal-achieved">
-            <span>{{ i18n.t('study.goalComplete') }} 🎉</span>
+            <span>{{ i18n.t('study.goalComplete') }}</span>
         </div>
         }
 

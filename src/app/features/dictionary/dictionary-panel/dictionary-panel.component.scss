@@ -242,10 +242,9 @@
     }
 
     &.playing {
-        background: linear-gradient(135deg, #FF7E93 0%, #F45B74 100%);
+        background: var(--accent-primary);
         color: #ffffff;
         border-color: transparent;
-        animation: pulseAudio 1.2s infinite ease-in-out;
     }
 }
 

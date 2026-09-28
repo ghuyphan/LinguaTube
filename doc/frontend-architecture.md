@@ -876,3 +876,30 @@ When feature components (`app-dictionary-panel`, `app-vocabulary-list`) are embe
 - Panels MUST declare `gap: 0;` and `padding: 0;` to prevent compounding flex gaps with child margins.
 - Embedded toolbars MUST declare `position: static; padding: 0; background: transparent; backdrop-filter: none;` to eliminate colliding sticky headers with the top-level page tab bar.
 
+---
+
+## 10. Visual Design Standards & Human-First UX Guidelines
+
+To maintain an authentic, distraction-free environment for serious language learners, Voca strictly enforces human-first visual design standards that eliminate generic "AI template" tropes:
+
+### 10.1. Grounded Color & Gradients
+- **No Rainbow/Holographic Gradients**: Tier badges and accents use refined, solid semantic colors or 2-stop tonal transitions (e.g. `--gradient-pro`, `--gradient-premium`). Continuous `@keyframes badge-holo` animations are eliminated.
+- **No Neon Drop-Shadows**: Buttons, badges, and progress bars use grounded, subtle elevation shadows (`0 1px 3px rgba(0,0,0,0.12)`). Heavy 20–28px glowing colored halos are banned.
+
+### 10.2. Subtitle Typography & Readability
+- **Continuous Fluid Sentences**: Word tokens (`.word`) use transparent backgrounds by default so sentences read as continuous prose. Interactive feedback is revealed via subtle background hover tints rather than rigid button pills.
+- **Calm Loop & Playback Indicators**: Loop status uses a calm static outline rather than distracting pulsating breathing glows (`loopBreath`). Fullscreen subtitles emphasize high contrast over video without heavy neon text shadows.
+
+### 10.3. Lexicographical Hierarchy (Dictionary & Grammar)
+- **Left-Aligned Reading Anchor**: Headwords and definitions are anchored to the left margin to match native eye-tracking patterns in language study.
+- **Authentic Linguistic Annotations**: Parts of speech (`partOfSpeech`) are displayed as subtle italicized tags scoped to definitions. National flag icons are strictly forbidden from being injected inside translated definition lines.
+- **Formula & Syntax Clarity**: Grammar formulas use clean left-aligned syntax blocks without centered speech bubble styling or screaming uppercase labels.
+
+### 10.4. Anki-Style SRS Rating Controls
+- **Cognitive Clarity**: Rating buttons (`Again`, `Hard`, `Good`, `Easy`) feature a clean two-line hierarchy: muted interval time (`10m`, `1d`, `3d`, `7d`) on top, bold rating label on bottom.
+- **Zero Button Clutter**: Redundant icons and individual keyboard shortcut `<kbd>` pills are removed from inside rating buttons; a single keyboard shortcut caption is provided below the controls.
+
+### 10.5. Voluntary Educational Supporter Framework
+- In compliance with Vietnamese digital commerce regulations (Bộ Công Thương), all commercial payment terminology ("gói cước", "mua", "checkout", "subscription") is framed as voluntary community educational support ("Ủng hộ dự án Voca", "Supporter / Patron Perks", "Tín chỉ AI", "Mã VietQR chuyển khoản ủng hộ").
+
+

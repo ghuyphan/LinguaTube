@@ -293,7 +293,8 @@
     "signInToUpgrade": "ログインしてアップグレード - {{price}}",
     "signInToUpgradePrompt": "プランをアップグレードするにはログインしてください",
     "createOrderFailed": "決済の開始に失敗しました。もう一度お試しください。",
-    "qrAlt": "VietQR決済コード"
+    "qrAlt": "VietQR送金コード",
+    "nonProfitDisclaimer": "Vocaは非営利の教育支援プロジェクトです。いただいた支援金はすべて、サーバー維持費、AI音声認識の処理コスト、および辞書インフラの運用に充てられます。"
   },
   "vocab": {
     "title": "単語帳",
@@ -349,7 +350,9 @@
     "formation": "接続",
     "explanation": "解説",
     "examples": "例文",
-    "level": "レベル"
+    "level": "レベル",
+    "savePattern": "文法を保存",
+    "moreDetails": "詳細"
   },
   "dictionary": {
     "title": "辞書",
@@ -391,6 +394,7 @@
     "korean": "韓国語",
     "english": "英語",
     "appearance": "テーマ",
+    "darkMode": "ダークモード",
     "switchToLightMode": "ライトモードに切替",
     "switchToDarkMode": "ダークモードに切替",
     "vocabStats": "単語帳の統計",
@@ -416,6 +420,7 @@
     "textOnly": "テキストのみ",
     "signOutConfirmTitle": "ログアウトしますか？",
     "signOutConfirmMessage": "単語帳はこの端末に保存されますが、再度ログインするまで同期されません。",
+    "syncVocabHint": "ログインすると単語カード、連続記録、視聴履歴をクラウドに保存できます",
     "about": "アプリ情報と更新",
     "appVersion": "バージョン",
     "checkForUpdates": "アップデートを確認",
@@ -593,6 +598,7 @@
     "videos": "動画",
     "emptyVideo": "このプレイリストにはまだ動画がありません。",
     "discoverVideos": "動画を探して追加",
+    "clearFilters": "フィルターを解除",
     "empty": {
       "myTitle": "プレイリストはまだありません",
       "myHint": "動画を整理して学習するためのプレイリストを作成しましょう",
@@ -605,7 +611,7 @@
       "feedErrorTitle": "おすすめ動画を読み込めませんでした",
       "feedErrorHint": "通信環境を確認して、もう一度お試しください。",
       "noVideosTitle": "動画がありません",
-      "noVideosHint": "保存ボタンで動画を追加",
+      "noVideosHint": "動画の再生中にこのプレイリストへ追加できます",
       "title": "プレイリストが見つかりません",
       "hint": "フィルターや検索キーワードを変更してみてください",
       "savedTitle": "保存したプレイリストはありません",

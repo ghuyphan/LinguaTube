@@ -975,19 +975,12 @@ import { VideoRecommendationService } from './core/services/video-recommendation
     }
 
     .update-badge-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #3b82f6;
       margin-left: auto;
       margin-right: var(--space-xs);
-      box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
-      animation: pulse-dot 2s infinite ease-in-out;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.7; }
     }
 
     .more-menu__item-desc {

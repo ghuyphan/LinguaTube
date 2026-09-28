@@ -60,7 +60,8 @@
                             [attr.title]="gamification.totalXP() < 150 ? (i18n.t('streak.insufficientXp') || 'Need 150 XP') : ((i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)')"
                             [attr.aria-label]="(i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)'"
                         >
-                            +1 ❄️ 150
+                            <app-icon name="snowflake" [size]="12" />
+                            <span>+1 (150 XP)</span>
                         </button>
                     }
                 </div>

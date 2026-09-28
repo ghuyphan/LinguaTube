@@ -1,13 +1,5 @@
 <app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('settings.title') || 'Settings'" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="settings-modal">
-        <!-- Modal Header -->
-        <div class="settings-modal__header">
-            <div class="settings-modal__title-box">
-                <app-icon name="settings" [size]="20" class="settings-modal__icon" />
-                <h2 class="settings-modal__title">{{ i18n.t('settings.title') }}</h2>
-            </div>
-        </div>
-
         <div class="settings-modal__body">
             <!-- 1. Account & Motivation Card -->
             <div class="settings-card settings-card--account">
@@ -21,14 +13,14 @@
                                 {{ auth.subscriptionTier() | uppercase }}
                             </span>
                             @if (auth.subscriptionTier() === 'pro') {
-                                <button class="account-upgrade-pill account-upgrade-pill--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPremium') || 'Upgrade to Premium'">
+                                <button class="account-upgrade-pill account-upgrade-pill--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPremium') || 'Become a Patron'">
                                     <app-icon name="diamond" [size]="12" />
-                                    <span>{{ i18n.t('pro.tabPremium') || 'Premium' }}</span>
+                                    <span>{{ i18n.t('pro.tabPremium') || 'Patron' }}</span>
                                 </button>
                             } @else if (auth.subscriptionTier() !== 'premium') {
-                                <button class="account-upgrade-pill" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPro') || 'Upgrade to Pro'">
+                                <button class="account-upgrade-pill" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPro') || 'Become a Supporter'">
                                     <app-icon name="zap" [size]="12" />
-                                    <span>{{ i18n.t('pro.upgrade') || 'Upgrade' }}</span>
+                                    <span>{{ i18n.t('pro.upgrade') || 'Support' }}</span>
                                 </button>
                             }
                         </div>
@@ -50,7 +42,7 @@
                         </div>
                         <div class="account-guest-text">
                             <strong class="account-guest-title">{{ i18n.t('settings.syncVocab') }}</strong>
-                            <span class="account-guest-hint">{{ i18n.t('app.subtitle') }}</span>
+                            <span class="account-guest-hint">{{ i18n.t('settings.syncVocabHint') || 'Sign in to save your flashcards, streak, and history' }}</span>
                         </div>
                     </div>
                     <button class="btn btn-google account-login-btn" [class.is-loading]="auth.isLoggingIn()" (click)="loginWithGoogle()" [disabled]="auth.isLoggingIn()">
@@ -70,34 +62,6 @@
                     }
                 </div>
                 }
-
-                <!-- Motivation, Level & AI Credits 3-Column Bar -->
-                <div class="settings-stats-grid">
-                    <button class="settings-stat-pill" (click)="openStreakDialog()" [class.active]="streak.practicedToday()"
-                        [attr.title]="i18n.t('streak.clickDetails')">
-                        <app-icon name="fire" [size]="18" class="stat-icon--fire" />
-                        <div class="settings-stat-text">
-                            <span class="settings-stat-val">{{ streak.currentStreak() }}</span>
-                            <span class="settings-stat-lbl">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
-                        </div>
-                    </button>
-
-                    <button class="settings-stat-pill" (click)="openAchievementsDialog()" [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
-                        <app-icon name="trophy" [size]="18" class="stat-icon--trophy" />
-                        <div class="settings-stat-text">
-                            <span class="settings-stat-val">{{ gamification.userLevel() }}</span>
-                            <span class="settings-stat-lbl">{{ i18n.t('gamification.level') || 'Level' }}</span>
-                        </div>
-                    </button>
-
-                    <button class="settings-stat-pill" (click)="openAiCreditsDialog()" [attr.title]="i18n.t('subtitle.aiCredits')">
-                        <app-icon name="diamond" [size]="18" class="stat-icon--diamond" />
-                        <div class="settings-stat-text">
-                            <span class="settings-stat-val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
-                            <span class="settings-stat-lbl">{{ i18n.t('subtitle.aiCredits') }}</span>
-                        </div>
-                    </button>
-                </div>
             </div>
 
             <!-- 2. Learning & Language Group Card -->
@@ -159,11 +123,11 @@
                                 <app-icon [name]="isDarkMode() ? 'moon' : 'sun'" [size]="16" />
                             </div>
                             <span class="settings-item-title">
-                                {{ isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode') }}
+                                {{ i18n.t('settings.darkMode') || 'Dark Mode' }}
                             </span>
                         </div>
                         <div class="settings-item-right">
-                            <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" [label]="isDarkMode() ? i18n.t('settings.switchToLightMode') : i18n.t('settings.switchToDarkMode')" />
+                            <app-switch [checked]="isDarkMode()" (checkedChange)="toggleTheme()" [label]="i18n.t('settings.darkMode') || 'Dark Mode'" />
                         </div>
                     </div>
                 </div>

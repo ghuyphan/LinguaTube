@@ -112,7 +112,7 @@
             </div>
             <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary()">
                 <app-icon name="book-open" [size]="14" />
-                <span>{{ i18n.t('dictionary.title') }}</span>
+                <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
             </button>
             } @else {
             <div class="empty-state__icon-box">

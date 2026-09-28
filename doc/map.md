@@ -335,7 +335,7 @@ sequenceDiagram
     participant KV as Cloudflare KV
     participant SB as Supabase Database (profiles)
 
-    User->>Dialog: Select Plan (Pro or Premium) & Click "Upgrade"
+    User->>Dialog: Select Supporter Tier (Pro or Premium Patron Backing) & Click "Back Voca"
     Dialog->>PayService: createOrder(planId: 'pro_1m' | 'premium_1m' | ...)
     PayService->>CreateAPI: POST /api/payment/create-order (Bearer Token via authInterceptor)
     CreateAPI->>PayOS: Generate Payment Link with HMAC-SHA256

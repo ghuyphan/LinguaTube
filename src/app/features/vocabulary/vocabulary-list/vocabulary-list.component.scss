@@ -350,14 +350,12 @@
         &:hover:not(.playing) {
             background: var(--accent-primary-soft);
             color: var(--accent-primary);
-            transform: scale(1.06);
         }
     }
 
     &.playing {
-        background: linear-gradient(135deg, #FF7E93 0%, #F45B74 100%) !important;
+        background: var(--accent-primary) !important;
         color: #ffffff !important;
-        animation: pulseAudio 1.2s infinite ease-in-out;
 
         app-icon,
         .icon {
@@ -366,25 +364,23 @@
     }
 }
 
-@keyframes pulseAudio {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(var(--accent-primary-rgb), 0.4);
-    }
-    50% {
-        transform: scale(1.04);
-        box-shadow: 0 0 0 4px rgba(var(--accent-primary-rgb), 0);
-    }
-}
-
 .delete-btn {
     color: var(--text-muted);
 
     @media (hover: hover) {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+
+        .vocab-item:hover & {
+            opacity: 0.7;
+            pointer-events: auto;
+        }
+
         &:hover {
+            opacity: 1 !important;
             color: var(--error);
             background: rgba(239, 68, 68, 0.12);
-            transform: scale(1.06);
         }
     }
 }

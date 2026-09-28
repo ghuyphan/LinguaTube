@@ -7,19 +7,20 @@
 
 .popup-header {
     padding: var(--space-md) 2.75rem var(--space-sm);
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-xs);
 }
 
 .popup-word {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
+    text-align: left;
 }
 
 .popup-body {
@@ -40,7 +41,6 @@
     display: flex;
     gap: var(--space-xs);
     margin-bottom: var(--space-md);
-    justify-content: center;
 }
 
 .badge {
@@ -90,12 +90,10 @@
 }
 
 .section-label {
-    font-size: 0.6875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-muted);
-    margin-bottom: var(--space-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
 }
 
 .formation-box {
@@ -106,9 +104,9 @@
     color: var(--text-primary);
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
-    padding: 10px 16px;
+    padding: 10px 14px;
     border-radius: var(--border-radius-md, 12px);
-    text-align: center;
+    text-align: left;
     line-height: 1.4;
 }
 

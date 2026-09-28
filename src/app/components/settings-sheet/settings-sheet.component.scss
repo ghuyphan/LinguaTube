@@ -4,34 +4,6 @@
     margin: 0 auto;
 }
 
-/* Modal Header */
-.settings-modal__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--space-md);
-    padding-bottom: var(--space-xs);
-    padding-right: 2.5rem;
-}
-
-.settings-modal__title-box {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.settings-modal__icon {
-    color: var(--accent-primary);
-}
-
-.settings-modal__title {
-    font-size: 1.125rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin: 0;
-    letter-spacing: -0.01em;
-}
-
 /* Modal Body */
 .settings-modal__body {
     display: flex;

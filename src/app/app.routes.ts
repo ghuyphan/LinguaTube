@@ -24,10 +24,10 @@ export const routes: Routes = [
     },
     {
         path: 'study',
-        title: 'Spaced Repetition Vocabulary Flashcards (SRS) | Voca',
+        title: 'Flashcard Review | Voca',
         data: {
-            description: 'Master foreign vocabulary with SM-2 spaced repetition flashcards, automated audio pronunciations, and memory tracking.',
-            keywords: 'spaced repetition, SM-2 flashcards, vocabulary notebook, language study, memorize words'
+            description: 'Review saved vocabulary with smart flashcards, native audio pronunciations, and daily streak tracking.',
+            keywords: 'vocabulary flashcards, language review, spaced repetition, vocabulary notebook, memorize words'
         },
         loadComponent: () => import('./features/vocabulary/study-page/study-page.component')
             .then(m => m.StudyPageComponent)

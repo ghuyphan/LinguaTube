@@ -92,19 +92,6 @@
 
             <!-- Details -->
             <div class="yt-video-card__details">
-                <div class="yt-video-card__avatar">
-                    @let langs = item.languages || [];
-                    @if (langs.length > 0) {
-                        <img [src]="getFlagUrl(langs[0])" class="circle-flag" [alt]="langs[0]" [title]="getLanguagesTooltip(langs)" loading="lazy" />
-                    } @else if (item.language) {
-                        <img [src]="getFlagUrl(item.language)" class="circle-flag" [alt]="item.language" [title]="item.language.toUpperCase()" loading="lazy" />
-                    } @else {
-                        <div class="avatar-placeholder">
-                            <app-icon name="play-circle" [size]="16" />
-                        </div>
-                    }
-                </div>
-
                 <div class="yt-video-card__meta">
                     <h3 class="yt-video-card__title" [title]="item.title">{{ item.title }}</h3>
 
@@ -117,6 +104,10 @@
                     </div>
 
                     <div class="yt-video-card__sub-row">
+                        @let langs = item.languages || (item.language ? [item.language] : []);
+                        @if (langs.length > 0) {
+                        <span class="video-lang-chip">{{ langs[0].toUpperCase() }}</span>
+                        }
                         @if (getItemLevel(item); as lvl) {
                         <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
                         }
