@@ -132,12 +132,6 @@
 
                 &.avatar-ring--premium {
                     background: var(--gradient-premium);
-                    background-size: 200% 200%;
-                    box-shadow: 0 0 10px rgba(196, 181, 253, 0.45);
-
-                    @media (prefers-reduced-motion: no-preference) {
-                        animation: holo-ring 3s ease infinite;
-                    }
                 }
             }
 
@@ -1174,14 +1168,6 @@
                 box-shadow 0.25s ease;
 }
 
-@keyframes holo-ring {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
 
 .user-avatar,
 .guest-avatar-box,

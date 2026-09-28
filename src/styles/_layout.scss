@@ -7,19 +7,11 @@
 @supports not selector(::-webkit-scrollbar) {
     * {
         scrollbar-width: thin;
-        scrollbar-color: transparent transparent;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
     }
 
-    @media (hover: hover) {
-        *:hover,
-        *:focus-within {
-            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-        }
-
-        [data-theme="dark"] *:hover,
-        [data-theme="dark"] *:focus-within {
-            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-        }
+    [data-theme="dark"] * {
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
     }
 }
 
@@ -34,27 +26,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.18);
     border-radius: 3px;
-    transition: background 0.2s ease;
+    transition: background 0.15s ease;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
 }
 
 @media (hover: hover) {
-    *:hover::-webkit-scrollbar-thumb,
-    *:focus-within::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.2);
-    }
-
-    *:hover::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb:hover {
         background: rgba(0, 0, 0, 0.35);
     }
 
-    [data-theme="dark"] *:hover::-webkit-scrollbar-thumb,
-    [data-theme="dark"] *:focus-within::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    [data-theme="dark"] *:hover::-webkit-scrollbar-thumb:hover {
+    [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.35);
     }
 }

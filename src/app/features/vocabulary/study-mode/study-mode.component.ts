@@ -83,7 +83,7 @@ export class StudyModeComponent implements OnDestroy {
     swipeOffset = signal(0);
     isSwiping = signal(false);
 
-    currentLanguage = computed(() => this.settings.settings().language);
+    currentLanguage = this.settings.language;
     deckStats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));
 
     // Due today count

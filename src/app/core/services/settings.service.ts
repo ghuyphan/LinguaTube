@@ -1,4 +1,4 @@
-import { Injectable, signal, effect, untracked, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, signal, computed, effect, untracked, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ReadingDisplayMode, SupportedLearningLanguage, UserSettings } from '../../models';
 import { FontLoaderService } from './font-loader.service';
@@ -33,6 +33,19 @@ export class SettingsService implements OnDestroy {
   private isBrowser = isPlatformBrowser(this.platformId);
 
   readonly settings = signal<UserSettings>(DEFAULT_SETTINGS);
+
+  // Granular computed signals to prevent expensive re-renders and re-fetches when unrelated settings change
+  readonly language = computed(() => this.settings().language);
+  readonly theme = computed(() => this.settings().theme);
+  readonly preferredLevel = computed(() => this.settings().preferredLevel);
+  readonly showFurigana = computed(() => this.settings().showFurigana);
+  readonly showPinyin = computed(() => this.settings().showPinyin);
+  readonly readingDisplayMode = computed(() => this.settings().readingDisplayMode);
+  readonly fontSize = computed(() => this.settings().fontSize);
+  readonly playbackSpeed = computed(() => this.settings().playbackSpeed);
+  readonly sidebarCollapsed = computed(() => this.settings().sidebarCollapsed);
+  readonly showDualSubtitles = computed(() => this.settings().showDualSubtitles);
+  readonly dualSubtitleTargetLang = computed(() => this.settings().dualSubtitleTargetLang);
 
   // Store reference for cleanup
   private mediaQuery = this.isBrowser && typeof window !== 'undefined' && window.matchMedia

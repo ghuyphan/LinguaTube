@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { provideRouter, withInMemoryScrolling, withPreloading, PreloadAllModules } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { isDevMode, ErrorHandler } from '@angular/core';
@@ -18,8 +18,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(withInterceptors([authInterceptor, timeoutInterceptor, cacheInterceptor])),
     provideRouter(
       routes,
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
-      withPreloading(PreloadAllModules)
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),

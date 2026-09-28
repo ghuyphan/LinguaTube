@@ -449,7 +449,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   }
 
   vocabLevelCounts = computed(() => {
-    const lang = this.settings.settings().language;
+    const lang = this.settings.language();
     const items = this.vocab.vocabulary().filter(w => w.language === lang);
     return {
       all: items.length,
@@ -479,7 +479,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   }
 
   stats = computed(() => {
-    return this.vocab.getStatsByLanguage(this.settings.settings().language);
+    return this.vocab.getStatsByLanguage(this.settings.language());
   });
 
   // Use shared service state for recent searches (sliced to 6 for sidebar display)
@@ -537,11 +537,11 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
 
   removeRecentSearch(term: string, event: Event): void {
     event.stopPropagation();
-    this.dictionary.removeRecentSearch(term, this.settings.settings().language);
+    this.dictionary.removeRecentSearch(term, this.settings.language());
   }
 
   clearAllRecentSearches(): void {
-    this.dictionary.clearAllRecentSearches(this.settings.settings().language);
+    this.dictionary.clearAllRecentSearches(this.settings.language());
   }
 
   onAddWordRequest(query?: string | void): void {

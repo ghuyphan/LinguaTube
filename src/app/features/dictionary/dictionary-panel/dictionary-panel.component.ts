@@ -95,7 +95,7 @@ export class DictionaryPanelComponent implements OnDestroy {
     // Effect: when learning language changes, reload recent searches and reset search state
     let lastHandledLang = '';
     effect(() => {
-      const lang = this.settings.settings().language;
+      const lang = this.settings.language();
       this.dictionary.loadRecentSearches(lang);
 
       if (lastHandledLang && lastHandledLang !== lang) {

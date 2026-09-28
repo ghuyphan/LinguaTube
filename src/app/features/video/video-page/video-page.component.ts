@@ -239,11 +239,11 @@ export class VideoPageComponent implements OnInit {
   showLearnHome = computed(() =>
     (!this.youtube.currentVideo() && !this.youtube.pendingVideoId()) || this.playerView.isMiniplayer()
   );
-  currentLearningLanguage = computed(() => this.getLanguageName(this.settings.settings().language));
+  currentLearningLanguage = computed(() => this.getLanguageName(this.settings.language()));
   featuredPlaylists = this.playlistService.recommendedPlaylists;
   isFeaturedLoading = this.playlistService.isRecommendedLoading;
   currentLangVocabCount = computed(() => {
-    const lang = this.settings.settings().language;
+    const lang = this.settings.language();
     return this.vocab.vocabulary().filter(w => w.language === lang).length;
   });
 
@@ -463,7 +463,7 @@ export class VideoPageComponent implements OnInit {
   }
 
   readonly languageMismatchMessage = computed(() => {
-    const requested = this.settings.settings().language;
+    const requested = this.settings.language();
     const detected = this.mismatchDetectedLang() || 'en';
     return this.i18n.t('subtitle.languageMismatchMessage')
       .replace('{{requested}}', this.getLanguageName(requested))
@@ -585,7 +585,7 @@ export class VideoPageComponent implements OnInit {
             this.onSentinelIntersect();
           }
         }, {
-          rootMargin: '600px 0px',
+          rootMargin: '250px 0px',
           threshold: 0.05
         });
         this.sentinelObserver.observe(sentinelRef.nativeElement);
@@ -615,7 +615,7 @@ export class VideoPageComponent implements OnInit {
     let previousRecommendLang = '';
     let previousRecommendTier = '';
     effect(() => {
-      const currentLang = this.settings.settings().language;
+      const currentLang = this.settings.language();
       const currentTier = this.videoLevelFilter();
       const tierParam = currentTier === 'all' ? undefined : currentTier;
 
@@ -628,7 +628,7 @@ export class VideoPageComponent implements OnInit {
 
       if (langChanged) {
         untracked(() => {
-          const prefLevel = this.settings.settings().preferredLevel;
+          const prefLevel = this.settings.preferredLevel();
           this.videoLevelFilter.set(prefLevel && prefLevel !== 'all' ? prefLevel : 'all');
           this.savedFeedScrollY = 0;
         });
@@ -756,7 +756,7 @@ export class VideoPageComponent implements OnInit {
     this.isRefreshing.set(true);
 
     try {
-      const currentLang = this.settings.settings().language;
+      const currentLang = this.settings.language();
       const currentTier = this.videoLevelFilter();
       const tierParam = currentTier === 'all' ? undefined : currentTier;
 
