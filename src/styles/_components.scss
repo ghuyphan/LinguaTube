@@ -1357,8 +1357,9 @@
 
 .badge--premium {
     background: var(--gradient-premium);
-    color: white;
-    font-weight: 600;
+    background-size: 200% 200%;
+    color: #1f2937;
+    font-weight: 700;
 }
 /* Stats grid (Standardized 3-column metric cards across all primary library views) */
 .stats-grid {

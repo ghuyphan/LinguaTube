@@ -883,7 +883,7 @@ When feature components (`app-dictionary-panel`, `app-vocabulary-list`) are embe
 To maintain an authentic, distraction-free environment for serious language learners, Voca strictly enforces human-first visual design standards that eliminate generic "AI template" tropes:
 
 ### 10.1. Grounded Color & Gradients
-- **No Rainbow/Holographic Gradients**: Tier badges and accents use refined, solid semantic colors or 2-stop tonal transitions (e.g. `--gradient-pro`, `--gradient-premium`). Continuous `@keyframes badge-holo` animations are eliminated.
+- **Signature Tier Gradients**: Recognizable signature gradients are preserved for Supporter (`--gradient-pro`) and Founder (`--gradient-premium`) accents, while maintaining high-contrast typography and eliminating continuous `@keyframes badge-holo` animations.
 - **No Neon Drop-Shadows**: Buttons, badges, and progress bars use grounded, subtle elevation shadows (`0 1px 3px rgba(0,0,0,0.12)`). Heavy 20–28px glowing colored halos are banned.
 
 ### 10.2. Subtitle Typography & Readability

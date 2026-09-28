@@ -129,17 +129,17 @@
             @if (auth.isLoggedIn()) {
                 @if (auth.subscriptionTier() === 'pro') {
                     @if (!isCollapsed()) {
-                    <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Patron'">
+                    <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Founder'">
                         <div class="pro-btn-content">
                             <div class="pro-btn-icon">
                                 <app-icon name="diamond" [size]="14" />
                             </div>
-                            <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Patron' }}</span>
+                            <span class="pro-btn-label">{{ i18n.t('pro.tabPremium') || 'Founder' }}</span>
                             <span class="pro-btn-badge">25</span>
                         </div>
                     </button>
                     } @else {
-                    <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Patron'">
+                    <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Founder'">
                         <app-icon name="diamond" [size]="16" />
                     </button>
                     }
@@ -176,7 +176,7 @@
                 </div>
                 } @else if (auth.isLoggedIn()) {
                 <button class="footer-btn user-settings-row" (click)="onFooterUserClick()"
-                    [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.subscriptionTier() | uppercase) + ')') : i18n.t('nav.settings')">
+                    [attr.title]="isCollapsed() ? ((auth.user()?.name || '') + ' (' + (auth.tierDisplayName() | uppercase) + ')') : i18n.t('nav.settings')">
                     <div class="avatar-ring" [class]="'avatar-ring--' + auth.subscriptionTier()">
                         @if (auth.user()?.picture && !avatarImgFailed()) {
                             <img [src]="auth.user()?.picture" [alt]="auth.user()?.name || 'User'" referrerpolicy="no-referrer" (error)="avatarImgFailed.set(true)" class="user-avatar" />
@@ -199,7 +199,7 @@
                     <div class="user-info-stack">
                         <span class="user-name">{{ auth.user()?.name }}</span>
                         <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
-                            {{ auth.subscriptionTier() | uppercase }}
+                            {{ auth.tierDisplayName() | uppercase }}
                         </span>
                     </div>
                     <div class="settings-icon-wrapper">
@@ -292,7 +292,7 @@
                 <div class="popover-user-name">{{ auth.isLoggedIn() ? auth.user()?.name : (i18n.t('auth.guestUser') || 'Guest') }}</div>
                 <div class="popover-user-badge">
                     <span class="badge badge--sm" [class]="'badge--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'free')">
-                        {{ (auth.isLoggedIn() ? auth.subscriptionTier() : 'guest') | uppercase }}
+                        {{ (auth.isLoggedIn() ? auth.tierDisplayName() : 'Guest') | uppercase }}
                     </span>
                     <span class="popover-level-tag">{{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
                 </div>

@@ -10,12 +10,12 @@
                         <div class="account-name-line">
                             <span class="account-name">{{ auth.user()?.name }}</span>
                             <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
-                                {{ auth.subscriptionTier() | uppercase }}
+                                {{ auth.tierDisplayName() | uppercase }}
                             </span>
                             @if (auth.subscriptionTier() === 'pro') {
-                                <button class="account-upgrade-pill account-upgrade-pill--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPremium') || 'Become a Patron'">
+                                <button class="account-upgrade-pill account-upgrade-pill--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPremium') || 'Become a Founder'">
                                     <app-icon name="diamond" [size]="12" />
-                                    <span>{{ i18n.t('pro.tabPremium') || 'Patron' }}</span>
+                                    <span>{{ i18n.t('pro.tabPremium') || 'Founder' }}</span>
                                 </button>
                             } @else if (auth.subscriptionTier() !== 'premium') {
                                 <button class="account-upgrade-pill" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.upgradeToPro') || 'Become a Supporter'">

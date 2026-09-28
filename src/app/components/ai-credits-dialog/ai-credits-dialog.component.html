@@ -60,13 +60,13 @@
                     <app-icon name="diamond" [size]="18" />
                 </div>
                 <div class="pro-promo-text">
-                    <span class="pro-promo-title">{{ i18n.t('pro.upgradeToPremium') || 'Become a Patron' }}</span>
-                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHintPremium') || 'Receive 25 daily credits and 45-minute videos as a patron.' }}</span>
+                    <span class="pro-promo-title">{{ i18n.t('pro.upgradeToPremium') || 'Become a Founder' }}</span>
+                    <span class="pro-promo-desc">{{ i18n.t('pro.upgradePromoHintPremium') || 'Receive 25 daily credits and 45-minute videos as a founder.' }}</span>
                 </div>
             </div>
             <button class="btn btn-pro-sm" type="button">
                 <app-icon name="diamond" [size]="14" />
-                <span>{{ i18n.t('pro.tabPremium') || 'Patron' }}</span>
+                <span>{{ i18n.t('pro.tabPremium') || 'Founder' }}</span>
             </button>
         </div>
     } @else if (auth.subscriptionTier() !== 'premium') {

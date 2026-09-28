@@ -1611,6 +1611,8 @@ async function fetchVideoMetaLocal(videoId) {
 }
 
 /**
+ * Fast deterministic 32-bit string hash for session shuffle
+ */
 function hashStringLocal(str) {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {

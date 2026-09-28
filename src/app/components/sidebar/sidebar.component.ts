@@ -49,8 +49,8 @@ export class SidebarComponent {
 
     brandTitle = computed(() => {
         const tier = this.auth.subscriptionTier();
-        if (tier === 'premium') return 'Premium';
-        if (tier === 'pro') return 'Pro';
+        if (tier === 'premium') return 'Founder';
+        if (tier === 'pro') return 'Supporter';
         return this.i18n.t('app.title') || 'Voca';
     });
 

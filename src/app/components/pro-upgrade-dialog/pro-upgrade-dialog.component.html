@@ -15,10 +15,10 @@
         <div class="already-pro-card already-premium">
             <div class="status-badge status-paid badge-premium-glow">
                 <app-icon name="check-circle" [size]="16" />
-                <span>{{ i18n.t('pro.activePremiumSubscription') || 'Active Patron' }}</span>
+                <span>{{ i18n.t('pro.activePremiumSubscription') || 'Active Founder' }}</span>
             </div>
             <p class="already-pro-desc">
-                {{ i18n.t('pro.enjoyingPremiumBenefits') || 'Patron active: 25 daily AI credits, 45-minute videos, and top priority.' }}
+                {{ i18n.t('pro.enjoyingPremiumBenefits') || 'Founder active: 25 daily AI credits, 45-minute videos, and top priority.' }}
             </p>
             <button class="btn btn-primary btn-full" (click)="dismissed.emit()">
                 {{ i18n.t('common.close') || 'Done' }}
@@ -36,7 +36,7 @@
             </p>
             <button class="btn btn-upgrade-cta btn-premium-cta btn-full" type="button" (click)="setTier('premium')">
                 <app-icon name="diamond" [size]="16" />
-                <span>{{ i18n.t('pro.upgradeToPremium') || 'Become a Patron' }}</span>
+                <span>{{ i18n.t('pro.upgradeToPremium') || 'Become a Founder' }}</span>
             </button>
             <button class="btn btn-ghost btn-full" (click)="dismissed.emit()">
                 {{ i18n.t('common.close') || 'Done' }}

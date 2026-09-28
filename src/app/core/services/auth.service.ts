@@ -39,6 +39,12 @@ export class AuthService {
         }
         return u.subscriptionTier || 'free';
     });
+    readonly tierDisplayName = computed<string>(() => {
+        const tier = this.subscriptionTier();
+        if (tier === 'premium') return 'Founder';
+        if (tier === 'pro') return 'Supporter';
+        return 'Free';
+    });
     readonly isInitialized = signal(this.initialProfile !== null || !this.supabase.hasStoredSession());
     readonly isLoggingIn = signal(false);
     readonly isLoggingOut = signal(false);

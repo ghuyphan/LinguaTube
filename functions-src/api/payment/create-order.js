@@ -13,7 +13,7 @@ const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 600, keyPrefix: 'pay_order' 
 export const PLANS = {
     pro_1m: {
         id: 'pro_1m',
-        name: 'Ung ho Voca Pro 1T',
+        name: 'Ung ho Voca Supporter 1T',
         tier: 'pro',
         amount: 49000, // 49,000 VND
         durationDays: 30,
@@ -21,7 +21,7 @@ export const PLANS = {
     },
     pro_1y: {
         id: 'pro_1y',
-        name: 'Ung ho Voca Pro 1N',
+        name: 'Ung ho Voca Supporter 1N',
         tier: 'pro',
         amount: 450000, // 450,000 VND (~37.5k/mo, 23% savings)
         durationDays: 365,
@@ -29,7 +29,7 @@ export const PLANS = {
     },
     premium_1m: {
         id: 'premium_1m',
-        name: 'Ung ho Voca Premium 1T',
+        name: 'Ung ho Voca Founder 1T',
         tier: 'premium',
         amount: 119000, // 119,000 VND
         durationDays: 30,
@@ -37,7 +37,7 @@ export const PLANS = {
     },
     premium_1y: {
         id: 'premium_1y',
-        name: 'Ung ho Voca Premium 1N',
+        name: 'Ung ho Voca Founder 1N',
         tier: 'premium',
         amount: 990000, // 990,000 VND (~82.5k/mo, 30% savings)
         durationDays: 365,
