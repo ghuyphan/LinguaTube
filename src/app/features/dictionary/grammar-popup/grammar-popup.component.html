@@ -21,7 +21,7 @@
             <div class="popup-section">
                 <div class="section-label">{{ i18n.t('grammar.explanation') }}</div>
                 <p class="explanation-text">{{ p.shortExplanation || p.longExplanation }}</p>
-                @if (p.longExplanation && p.longExplanation !== p.shortExplanation && p.longExplanation.length > (p.shortExplanation?.length || 0) + 30) {
+                @if (p.longExplanation && p.longExplanation !== p.shortExplanation && p.longExplanation.length > (p.shortExplanation.length || 0) + 30) {
                 <details class="grammar-details-toggle">
                     <summary class="details-summary">{{ i18n.t('grammar.moreDetails') || 'More details' }}</summary>
                     <p class="explanation-long">{{ p.longExplanation }}</p>
