@@ -60,7 +60,7 @@ export class StreakDialogComponent {
                 level: 1,
                 titleKey: 'streak.campfireEmberTitle',
                 descKey: 'streak.campfireEmberDesc',
-                icon: 'torch',
+                icon: 'campfire',
                 themeClass: 'hearth--ember',
                 badgeLabel: 'Hearth I'
             };

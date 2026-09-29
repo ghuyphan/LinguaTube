@@ -736,6 +736,12 @@
     vertical-align: middle;
     box-shadow: 0 0 0 1px var(--border-color, rgba(0, 0, 0, 0.1));
 
+    &--xs {
+        width: 11px;
+        height: 11px;
+        box-shadow: 0 0 0 0.5px var(--border-color, rgba(0, 0, 0, 0.15));
+    }
+
     &--sm {
         width: 14px;
         height: 14px;

@@ -57,6 +57,9 @@ export class BottomSheetComponent implements OnDestroy {
   // Optional manual z-index override
   zIndex = input<number | undefined>(undefined);
 
+  // Optional custom CSS panel class
+  panelClass = input<string>('');
+
   // Computed accessibility label
   effectiveAriaLabel = computed(() => this.title() || this.ariaLabel() || 'Dialog');
 

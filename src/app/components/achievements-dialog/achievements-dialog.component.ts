@@ -1,10 +1,30 @@
-import { Component, inject, signal, computed, ChangeDetectionStrategy, output, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy, output, OnInit, OnDestroy, viewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../shared/components/icon/icon.component';
 import { GamificationService } from '../../core/services/gamification.service';
 import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { AchievementCategory, Mission, LevelTier } from '../../models/gamification.model';
+import { getLanguageFlagUrl } from '../../models';
+
+const EMOJI_FLAG_MAP: Record<string, string> = {
+    '🇯🇵': '/flags/jp.svg',
+    '🇰🇷': '/flags/kr.svg',
+    '🇨🇳': '/flags/cn.svg',
+    '🇬🇧': '/flags/gb.svg',
+    '🇺🇸': '/flags/gb.svg',
+    '🇻🇳': '/flags/vn.svg',
+    '🇫🇷': '/flags/fr.svg',
+    '🇩🇪': '/flags/de.svg',
+    '🇪🇸': '/flags/es.svg',
+    '🇮🇹': '/flags/it.svg',
+    '🇷🇺': '/flags/ru.svg',
+    '🇧🇷': '/flags/pt.svg',
+    '🇹🇭': '/flags/th.svg',
+    '🇮🇩': '/flags/id.svg',
+    '🇦🇺': '/flags/gb.svg',
+    '🇨🇦': '/flags/gb.svg'
+};
 
 @Component({
     selector: 'app-achievements-dialog',
@@ -32,6 +52,42 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
     readonly canClaimDailyBonus = this.gamification.canClaimDailyBonus;
     readonly countdownStr = signal<string>('');
     private timerInterval: ReturnType<typeof setInterval> | null = null;
+
+    // Timer visibility tracking for scroll & tab-aware hourglass animation
+    readonly timerBannerRef = viewChild<ElementRef<HTMLElement>>('timerBanner');
+    readonly isTimerVisible = signal<boolean>(false);
+    private timerObserver: IntersectionObserver | null = null;
+    private isIntersecting = false;
+    private onVisibilityChange = () => {
+        if (typeof document !== 'undefined' && document.hidden) {
+            this.isTimerVisible.set(false);
+        } else if (this.isIntersecting) {
+            this.isTimerVisible.set(true);
+        }
+    };
+
+    constructor() {
+        if (typeof document !== 'undefined') {
+            document.addEventListener('visibilitychange', this.onVisibilityChange);
+        }
+
+        effect(() => {
+            const el = this.timerBannerRef()?.nativeElement;
+            this.cleanupObserver();
+            if (el && typeof IntersectionObserver !== 'undefined') {
+                this.timerObserver = new IntersectionObserver((entries) => {
+                    const entry = entries[0];
+                    this.isIntersecting = entry?.isIntersecting ?? false;
+                    const isDocVisible = typeof document === 'undefined' || !document.hidden;
+                    this.isTimerVisible.set(this.isIntersecting && isDocVisible);
+                }, { threshold: 0.1 });
+                this.timerObserver.observe(el);
+            } else {
+                this.isIntersecting = false;
+                this.isTimerVisible.set(false);
+            }
+        });
+    }
 
     readonly activeCategory = signal<'all' | AchievementCategory>('all');
 
@@ -74,6 +130,17 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         if (this.timerInterval) {
             clearInterval(this.timerInterval);
             this.timerInterval = null;
+        }
+        this.cleanupObserver();
+        if (typeof document !== 'undefined') {
+            document.removeEventListener('visibilitychange', this.onVisibilityChange);
+        }
+    }
+
+    private cleanupObserver(): void {
+        if (this.timerObserver) {
+            this.timerObserver.disconnect();
+            this.timerObserver = null;
         }
     }
 
@@ -158,12 +225,22 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
     readonly leaderboardLang = this.leaderboard.selectedLang;
 
     readonly langFilters = [
-        { code: 'all', label: 'All' },
-        { code: 'ja', label: 'JA 🇯🇵' },
-        { code: 'ko', label: 'KO 🇰🇷' },
-        { code: 'zh', label: 'ZH 🇨🇳' },
-        { code: 'en', label: 'EN 🇬🇧' }
+        { code: 'all', label: 'All', flagUrl: '' },
+        { code: 'ja', label: 'JA', flagUrl: '/flags/jp.svg' },
+        { code: 'ko', label: 'KO', flagUrl: '/flags/kr.svg' },
+        { code: 'zh', label: 'ZH', flagUrl: '/flags/cn.svg' },
+        { code: 'en', label: 'EN', flagUrl: '/flags/gb.svg' }
     ];
+
+    getCountryFlag(country?: string, targetLang?: string): string {
+        if (country && EMOJI_FLAG_MAP[country]) {
+            return EMOJI_FLAG_MAP[country];
+        }
+        if (targetLang) {
+            return getLanguageFlagUrl(targetLang);
+        }
+        return '';
+    }
 
     setTab(tab: 'missions' | 'achievements' | 'leaderboard'): void {
         this.currentTab.set(tab);

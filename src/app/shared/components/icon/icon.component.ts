@@ -25,7 +25,7 @@ export type IconName =
     | 'crystal-ball' | 'flint-spark' | 'campfire' | 'egyptian-bird' | 'card-draw' | 'brainstorm' | 'anvil'
     | 'sound-waves' | 'magnifying-glass' | 'laurels-trophy' | 'quill-ink' | 'scroll-unfurled' | 'crossed-swords'
     | 'cracked-shield' | 'roman-shield' | 'broadsword' | 'winged-sword' | 'bullseye' | 'ouroboros' | 'compass'
-    | 'ice-shield' | 'torch' | 'sunbeams' | 'imperial-crown'
+    | 'ice-shield' | 'torch' | 'sunbeams' | 'imperial-crown' | 'hourglass'
     | 'party-popper' | 'smile' | 'target' | 'zap' | 'snowflake' | 'more-horizontal' | 'more-horizontal-filled' | 'more-vertical'
     | 'list' | 'list-video' | 'list-video-filled' | 'list-plus' | 'share' | 'link' | 'lock' | 'grip-vertical'
     | 'headphones' | 'clipboard-check' | 'coffee'

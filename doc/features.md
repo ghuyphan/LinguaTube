@@ -481,21 +481,20 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 ## 8. The Traveler’s Campfire & Freeze Inventory
 
 - **Campfire Metaphor (Streak Reimagined)**:
-  - Replaces traditional number-only streaks with an immersive dark-fantasy hearth:
-    - **Stage 0 (Cold Hearth, 0 Days)**: Cold charcoal slate stones with unlit kindling (`flint-spark` icon).
-    - **Stage I (Scout’s Ember, 1–6 Days)**: Warm amber flame with gentle rhythmic breathing glow (`torch` icon).
-    - **Stage II (Blazing Campfire, 7–29 Days)**: Golden-orange roaring hearth with active rising CSS ember particles (`campfire` icon).
-    - **Stage III (Eternal Beacon, 30+ Days)**: Celestial aurora flame with brilliant cyan/gold halo (`campfire` icon).
+  - Replaces traditional number-only streaks with an elegant, scannable traveler's hearth:
+    - **Stage 0 (Cold Hearth, 0 Days)**: Slate stones with ember kindling (`flint-spark` icon).
+    - **Stage I (Scout’s Ember, 1–6 Days)**: Warm amber hearth glow (`campfire` icon).
+    - **Stage II (Blazing Campfire, 7–29 Days)**: Golden-orange roaring hearth (`campfire` icon).
+    - **Stage III (Eternal Beacon, 30+ Days)**: Celestial aurora flame with cyan/gold halo (`campfire` icon).
 - **Frost Ward (`ice-shield`) Protection**:
-  - Streak Freezes are visually represented as an ancient crystalline frost barrier surrounding the campfire.
-  - Active freezes project an ethereal cyan frost aura (`rgba(56, 189, 248, 0.45)`).
+  - Streak Freezes are visually represented as an ancient crystalline frost rune floating on the campfire hero badge.
   - When an inactive day occurs, a Blizzard Defense banner confirms: *"Frost Ward absorbed the blizzard and saved your embers!"*.
   - Users can infuse +1 Frost Ward (up to 2 max) for **150 XP** directly within the dialog.
-- **Weekly Expedition Trail**:
-  - Replaces generic day circles with 7 expedition waypoints: lit torches for completed days, pulsing kindling rings for today's pending practice, and dashed charcoal stones for missed waypoints.
-- **Sensory & Haptic Feedback**:
-  - Subtle mobile haptic pulse (`navigator.vibrate([15, 30, 20])`) triggers on modal open when today's practice has already been logged.
-  - Full `@media (prefers-reduced-motion: reduce)` accessibility fallback disabling floating embers.
+- **Minimal, Scannable 7-Day Calendar**:
+  - Clean horizontal strip of 7 days: lit campfire icons for completed days, pulsing kindle dots for today's pending practice, and dimmed circles for missed/future days.
+- **Clean Voca Design Harmony**:
+  - Renders directly in native bottom sheet (`var(--bg-card)`), perfectly matching Light and Dark modes.
+  - Zero text clutter: focuses on the big streak number, subtle stage pill, calendar strip, and 2 compact stat cards (Best Streak & Frost Wards).
 - **Full 5-Language Parity**:
   - Complete lore and status translations across English, Vietnamese, Japanese, Korean, and Chinese.
 - **Server-Side Streak Evaluation (`record_streak_activity`)**:
@@ -795,7 +794,7 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
 
 ### 13.4. Achievements & Missions Dialog (`AchievementsDialogComponent`)
 - **Tri-Segmented Tab Bar**:
-  - **Missions**: Live daily quests with individual claim buttons, progress bars, and the animated Daily Completion Chest.
+  - **Missions**: Live daily quests with individual claim buttons, progress bars, the daily reset countdown banner (warm amber pill with visibility-activated animated `hourglass` flip and tabular timer), and the Daily Completion Chest.
   - **Achievements**: Category-filtered badges (Immersion, Vocabulary, Streaks, SRS, Quizzes) with unlocked count pills.
   - **Leaderboard**: Global learner rankings with weekly and all-time toggle views.
 - **Clean Notification Dots (Zero "AI Slop")**:
@@ -815,12 +814,15 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
 - **Period Filter Pills**:
   - `⚡ This Week`: Displays weekly XP (`weekly_xp`) accrued in the current ISO calendar week (`YYYY-WW`). Automatically resets every Monday 00:00 UTC so new and active learners always have a real chance to top the podium.
   - `🏆 All Time`: Displays lifetime accumulated XP.
-- **Top 3 Podium**:
-  - Elevated central Gold pedestal (👑 #1), flanked by Silver (🥈 #2) and Bronze (🥉 #3).
-  - Glowing avatar halos, level indicators, streak flames, and dynamic XP display based on selected period.
-- **Top 50 Ranking Stream**: Ranks 4 to 50 rendered with rank badges, nationality flags, current levels, active daily streaks, and period-specific score counters.
+- **Top 3 Podium (Adventurer's Guild Hall Plinths)**:
+  - Elevated central Gold champion plinth (👑 #1) with beveled cornice and gilded marble shading, flanked by Silver (🥈 #2) and Bronze (🥉 #3) architectural stone plinths.
+  - Integrated heraldic crest medallions with laurel crowns, shield crests, multi-ring metallic avatar frames, and rank ribbons.
+  - Adventurer hero info rows with adventurer name and clean level tier badge (`Lv.X`) above each pedestal.
+  - Architectural plinth pedestals holding the large rank numeral (`1`, `2`, `3`) and the learner's period XP score (`850 XP`) in metallic tier styling (`#b45309`/`#fde047` for Gold, `#475569`/`#cbd5e1` for Silver, `#9a3412`/`#fdba74` for Bronze).
+  - Tournament-styled roster pills (`crossed-swords` for This Week, `laurel-crown` for All Time) with amber gold active states.
+- **Top 50 Ranking Stream**: Ranks 4 to 50 rendered with rank numerals, avatars, flag-first circular SVG nationality badges (`.circle-flag--xs`, 11px), learner names, level badges, active daily streaks, and period-specific score counters.
 - **Sticky Current User Anchor Bar**: Persistently shows the logged-in or guest learner's global rank position at the bottom of the dialog, with a one-tap sync button.
-- **Language Filter Chips**: Filter leaderboard rankings by target study language (`All`, `JA 🇯🇵`, `KO 🇰🇷`, `ZH 🇨🇳`, `EN 🇬🇧`).
+- **Language Filter Chips**: Filter leaderboard rankings by target study language (`All`, `JA`, `KO`, `ZH`, `EN`) featuring compact filter pills with crisp, flag-first circular SVG icons (`/flags/jp.svg`, `/flags/kr.svg`, `/flags/cn.svg`, `/flags/gb.svg`).
 - **Offline-First & Community Baseline Integration**:
   - `mergeWithSeedLeaderboard` merges registered real users with 28 realistic community learners across Japanese, Korean, Chinese, and English, guaranteeing that the Top 3 podium (Gold 👑, Silver 🥈, Bronze 🥉) and leaderboard stream are always active and competitive.
   - Dynamically calculates exact rank based on relative XP distribution rather than showing isolated single-user states.

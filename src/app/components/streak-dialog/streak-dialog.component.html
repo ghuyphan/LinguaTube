@@ -1,102 +1,65 @@
 <div class="streak-dialog">
-    <!-- Campfire Hearth Stage -->
-    <div class="campfire-stage" [class]="campfire().themeClass" [class.is-active]="streak.practicedToday()">
-        <!-- Ambient Night Stars & Floating Embers -->
-        <div class="campfire-atmosphere" aria-hidden="true">
-            <span class="ember ember--1"></span>
-            <span class="ember ember--2"></span>
-            <span class="ember ember--3"></span>
-            <span class="ember ember--4"></span>
-            <span class="ember ember--5"></span>
+    <!-- Header / Hero Section -->
+    <div class="header-section">
+        <div class="streak-hero-icon" [attr.data-stage]="campfire().stage" [class.is-practiced]="streak.practicedToday()">
+            @if (hasFrostWard()) {
+                <div class="frost-ward-badge" [class.is-absorbed]="freezeAbsorbed()" [attr.title]="i18n.t('streak.frostWardActive')">
+                    <app-icon name="ice-shield" [size]="11" />
+                </div>
+            }
+            <app-icon [name]="campfire().icon" [size]="36" class="hero-campfire" />
         </div>
 
-        <!-- Frost Ward Ring (if freeze remaining or active) -->
-        @if (hasFrostWard()) {
-            <div class="frost-ward-barrier" [class.is-absorbed]="freezeAbsorbed()" [attr.title]="i18n.t('streak.frostWardActive')">
-                <app-icon name="ice-shield" [size]="16" class="frost-ward-badge-icon" />
-            </div>
-        }
-
-        <!-- Campfire Hearth Centerpiece -->
-        <div class="campfire-hearth" [class.has-flame]="streak.currentStreak() > 0" [class.is-practiced]="streak.practicedToday()">
-            <div class="hearth-glow-halo"></div>
-            <app-icon [name]="campfire().icon" [size]="52" class="hearth-icon" />
-        </div>
-
-        <!-- Hearth Tier Badge -->
-        <div class="campfire-tier-badge">
-            <span class="tier-pill">{{ campfire().badgeLabel }}</span>
-            <span class="tier-name">{{ i18n.t(campfire().titleKey) }}</span>
-        </div>
-
-        <!-- Streak Count & Lore -->
-        <div class="campfire-info">
-            <div class="streak-hero-count">
+        <div class="title-group">
+            <div class="streak-count-row">
                 <span class="streak-num">{{ streak.currentStreak() }}</span>
                 <span class="streak-label">{{ i18n.t('streak.dayStreak') || 'Day Streak' }}</span>
             </div>
-            <p class="campfire-lore">
-                {{ i18n.t(campfire().descKey) }}
-            </p>
+
+            <div class="campfire-stage-pill" [attr.data-stage]="campfire().stage">
+                <app-icon name="campfire" [size]="12" />
+                <span class="stage-name">{{ i18n.t(campfire().titleKey) }}</span>
+            </div>
         </div>
 
-        <!-- Blizzard Defense Notification Banner (if freeze used) -->
         @if (freezeAbsorbed()) {
-            <div class="blizzard-absorbed-banner">
-                <app-icon name="ice-shield" [size]="15" />
+            <div class="blizzard-banner">
+                <app-icon name="ice-shield" [size]="14" class="blizzard-icon" />
                 <span>{{ i18n.t('streak.frostWardAbsorbed') }}</span>
             </div>
         }
     </div>
 
-    <!-- Expedition Waypoint Trail (7-Day Strip) -->
-    <div class="expedition-trail-card">
-        <div class="trail-header">
-            <span class="trail-title">{{ i18n.t('streak.trailTitle') }}</span>
-            @if (streak.practicedToday()) {
-                <span class="trail-status trail-status--lit">
-                    <app-icon name="torch" [size]="12" />
-                    {{ i18n.t('streak.keepItUp') || 'Lit today!' }}
-                </span>
-            } @else {
-                <span class="trail-status trail-status--pending">
-                    <app-icon name="flint-spark" [size]="12" />
-                    {{ i18n.t('streak.practiceToday') || 'Needs kindle' }}
-                </span>
-            }
-        </div>
-
-        <div class="trail-waypoints">
-            @for (day of weekDays(); track $index) {
-                <div class="waypoint-item" [class.today]="day.isToday">
-                    <span class="waypoint-day">{{ day.day }}</span>
-                    <div class="waypoint-node"
-                        [class.active]="day.active"
-                        [class.is-today]="day.isToday && !day.active"
-                        [class.missed]="!day.active && !day.isToday && !day.isFuture"
-                        [class.future]="day.isFuture">
-                        @if (day.active) {
-                            <app-icon name="torch" [size]="14" class="node-icon" />
-                        } @else if (day.isToday) {
-                            <span class="node-kindle-pulse"></span>
-                        }
-                    </div>
+    <!-- 7-Day Calendar Strip -->
+    <div class="week-view">
+        @for (day of weekDays(); track $index) {
+            <div class="day-item" [class.today]="day.isToday">
+                <span class="day-name">{{ day.day }}</span>
+                <div class="day-circle"
+                    [class.active]="day.active"
+                    [class.is-today]="day.isToday && !day.active"
+                    [class.missed]="!day.active && !day.isToday && !day.isFuture"
+                    [class.future]="day.isFuture">
+                    @if (day.active) {
+                        <app-icon name="campfire" [size]="13" />
+                    } @else if (day.isToday) {
+                        <span class="kindle-ember-pulse"></span>
+                    }
                 </div>
-            }
-        </div>
+            </div>
+        }
     </div>
 
-    <!-- Adventurer's Campfire Stats -->
+    <!-- Stats Grid -->
     <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-icon-wrap stat-icon-wrap--trophy">
                 <app-icon name="laurels-trophy" [size]="18" />
             </div>
             <div class="stat-info">
-                <span class="stat-label">{{ i18n.t('streak.longestExpedition') }}</span>
+                <span class="stat-label">{{ i18n.t('streak.longestStreak') || 'Best Streak' }}</span>
                 <div class="stat-value-row">
                     <span class="stat-value">{{ streak.longestStreak() }}</span>
-                    <span class="stat-unit">{{ i18n.t('streak.days') || 'days' }}</span>
                 </div>
             </div>
         </div>
@@ -106,7 +69,7 @@
                 <app-icon name="ice-shield" [size]="18" />
             </div>
             <div class="stat-info">
-                <span class="stat-label">{{ i18n.t('streak.frostWards') }}</span>
+                <span class="stat-label">{{ i18n.t('streak.freezesRemaining') || 'Streak Freezes' }}</span>
                 <div class="stat-value-row">
                     <span class="stat-value">{{ streak.freezesRemaining() }}/2</span>
                     @if (streak.freezesRemaining() < 2) {
@@ -115,11 +78,11 @@
                             class="btn-replenish-freeze"
                             (click)="replenishFreeze()"
                             [disabled]="gamification.totalXP() < 150"
-                            [attr.title]="gamification.totalXP() < 150 ? (i18n.t('streak.insufficientXp') || 'Need 150 XP') : ((i18n.t('streak.infuseWard') || 'Infuse Ward') + ' (150 XP)')"
-                            [attr.aria-label]="(i18n.t('streak.infuseWard') || 'Infuse Frost Ward') + ' (150 XP)'"
+                            [attr.title]="gamification.totalXP() < 150 ? (i18n.t('streak.insufficientXp') || 'Need 150 XP') : ((i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)')"
+                            [attr.aria-label]="(i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)'"
                         >
-                            <app-icon name="ice-shield" [size]="12" />
-                            <span>+1 (150 XP)</span>
+                            <app-icon name="ice-shield" [size]="11" />
+                            <span>+1</span>
                         </button>
                     }
                 </div>
@@ -127,6 +90,7 @@
         </div>
     </div>
 
+    <!-- Dismiss Button -->
     <button class="btn btn-primary streak-dismiss-btn" (click)="dismissed.emit()">
         {{ i18n.t('subtitle.gotIt') || 'Got it' }}
     </button>

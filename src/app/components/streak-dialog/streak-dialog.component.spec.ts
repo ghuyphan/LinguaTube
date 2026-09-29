@@ -114,7 +114,7 @@ describe('StreakDialogComponent', () => {
     it('should resolve campfire stage correctly based on streak count', () => {
         // Streak = 3 -> ember
         expect(component.campfire().stage).toBe('ember');
-        expect(component.campfire().icon).toBe('torch');
+        expect(component.campfire().icon).toBe('campfire');
 
         // Streak = 0 -> cold
         mockStreakData.set({ ...mockStreakData(), currentStreak: 0 });
