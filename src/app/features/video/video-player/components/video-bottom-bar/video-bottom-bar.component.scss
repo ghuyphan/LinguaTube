@@ -57,54 +57,73 @@
     }
 }
 
-.volume-slider-track {
+.volume-range-input {
     --volume-percent: 0%;
-
-    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        #ffffff var(--volume-percent),
+        rgba(255, 255, 255, 0.25) var(--volume-percent),
+        rgba(255, 255, 255, 0.25) 100%
+    );
     border-radius: 2px;
+    outline: none;
     cursor: pointer;
-    overflow: visible;
+    margin: 0;
+    padding: 0;
+    transition: height 0.15s ease;
 
     @media (hover: hover) {
         &:hover {
             height: 5px;
 
-            .volume-slider-handle {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.1);
+            &::-webkit-slider-thumb {
+                transform: scale(1.1);
+            }
+            &::-moz-range-thumb {
+                transform: scale(1.1);
             }
         }
     }
-}
 
-.volume-slider-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: var(--volume-percent);
-    background: white;
-    border-radius: 2px;
-    pointer-events: none;
-}
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        background: #ffffff;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.15s ease;
+    }
 
-.volume-slider-handle {
-    position: absolute;
-    top: 50%;
-    left: clamp(6px, var(--volume-percent), calc(100% - 6px));
-    transform: translate(-50%, -50%) scale(1);
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.15s ease, opacity 0.15s ease;
-    opacity: 1;
-    z-index: 3;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        background: #ffffff;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: transform 0.15s ease;
+    }
+
+    &::-moz-range-track {
+        background: transparent;
+        border: none;
+        height: 100%;
+    }
+
+    &:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.7);
+        outline-offset: 2px;
+    }
 }
 
 // Time Display

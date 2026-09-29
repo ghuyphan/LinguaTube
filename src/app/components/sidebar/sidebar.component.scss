@@ -1,3 +1,81 @@
+@use 'sass:map';
+
+// ------------------------------------
+// RPG Rank Tier Variables & Palette
+// ------------------------------------
+$tier-colors: (
+    'stone': (
+        'bg': linear-gradient(135deg, rgba(148, 163, 184, 0.38) 0%, rgba(51, 65, 85, 0.72) 100%),
+        'border': rgba(203, 213, 225, 0.8),
+        'accent': #94a3b8,
+        'glow': rgba(148, 163, 184, 0.5),
+        'text': #f8fafc
+    ),
+    'bronze': (
+        'bg': linear-gradient(135deg, rgba(217, 119, 6, 0.38) 0%, rgba(120, 53, 15, 0.72) 100%),
+        'border': rgba(245, 158, 11, 0.85),
+        'accent': #f59e0b,
+        'glow': rgba(245, 158, 11, 0.55),
+        'text': #fef3c7
+    ),
+    'silver': (
+        'bg': linear-gradient(135deg, rgba(203, 213, 225, 0.4) 0%, rgba(71, 85, 105, 0.72) 100%),
+        'border': rgba(255, 255, 255, 0.9),
+        'accent': #cbd5e1,
+        'glow': rgba(226, 232, 240, 0.6),
+        'text': #ffffff
+    ),
+    'gold': (
+        'bg': linear-gradient(135deg, rgba(234, 179, 8, 0.38) 0%, rgba(180, 83, 9, 0.72) 100%),
+        'border': rgba(250, 204, 21, 0.95),
+        'accent': #facc15,
+        'glow': rgba(250, 204, 21, 0.65),
+        'text': #fef08a
+    ),
+    'platinum': (
+        'bg': linear-gradient(135deg, rgba(6, 182, 212, 0.38) 0%, rgba(14, 116, 144, 0.72) 100%),
+        'border': rgba(56, 189, 248, 0.95),
+        'accent': #06b6d4,
+        'glow': rgba(6, 182, 212, 0.65),
+        'text': #a5f3fc
+    ),
+    'emerald': (
+        'bg': linear-gradient(135deg, rgba(16, 185, 129, 0.38) 0%, rgba(4, 120, 87, 0.72) 100%),
+        'border': rgba(52, 211, 153, 0.95),
+        'accent': #10b981,
+        'glow': rgba(16, 185, 129, 0.65),
+        'text': #a7f3d0
+    ),
+    'diamond': (
+        'bg': linear-gradient(135deg, rgba(59, 130, 246, 0.38) 0%, rgba(67, 56, 202, 0.72) 100%),
+        'border': rgba(96, 165, 250, 0.95),
+        'accent': #3b82f6,
+        'glow': rgba(59, 130, 246, 0.7),
+        'text': #bfdbfe
+    ),
+    'master': (
+        'bg': linear-gradient(135deg, rgba(139, 92, 246, 0.38) 0%, rgba(88, 28, 135, 0.72) 100%),
+        'border': rgba(168, 85, 247, 0.95),
+        'accent': #a855f7,
+        'glow': rgba(168, 85, 247, 0.75),
+        'text': #e9d5ff
+    ),
+    'grandmaster': (
+        'bg': linear-gradient(135deg, rgba(239, 68, 68, 0.38) 0%, rgba(153, 27, 27, 0.72) 100%),
+        'border': rgba(248, 113, 113, 0.95),
+        'accent': #ef4444,
+        'glow': rgba(239, 68, 68, 0.8),
+        'text': #fee2e2
+    ),
+    'mythic': (
+        'bg': linear-gradient(135deg, rgba(251, 191, 36, 0.45) 0%, rgba(236, 72, 153, 0.35) 50%, rgba(139, 92, 246, 0.45) 100%),
+        'border': rgba(253, 224, 71, 0.95),
+        'accent': #fbbf24,
+        'glow': rgba(251, 191, 36, 0.85),
+        'text': #ffffff
+    )
+);
+
 :host {
     display: block;
     position: fixed;
@@ -561,6 +639,23 @@
     flex-shrink: 0;
 }
 
+.stat-icon--level {
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+
+    @each $tier, $map in $tier-colors {
+        &.stat-icon--tier-#{$tier} {
+            color: map.get($map, 'accent');
+            filter: drop-shadow(0 0 4px map.get($map, 'glow'));
+
+            :host-context([data-theme="dark"]) & {
+                color: map.get($map, 'text');
+                filter: drop-shadow(0 0 6px map.get($map, 'glow'));
+            }
+        }
+    }
+}
+
 .stat-icon-wrap {
     position: relative;
     display: inline-flex;
@@ -645,21 +740,15 @@
     }
 }
 
-/* Floating Profile & Stats Popover (Anchored beside rail) */
-.stats-popover-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 1040;
-    background: transparent;
-}
-
+/* Floating Profile & Stats Popover (Anchored beside rail via Popover API) */
 .stats-popover-card {
     position: fixed;
-    left: 4.75rem;
-    bottom: 1.25rem;
+    inset: auto auto 1.25rem 4.75rem;
+    margin: 0;
     width: 300px;
     max-width: calc(100vw - 5.5rem);
     background: var(--bg-card);
+    color: inherit;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-xl);
@@ -671,6 +760,10 @@
     animation: popover-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     box-sizing: border-box;
     overflow: hidden;
+
+    &::backdrop {
+        background: transparent;
+    }
 
     .stats-popover__header {
         display: flex;
@@ -723,6 +816,28 @@
                     padding: 1px 6px;
                     border-radius: 9999px;
                     white-space: nowrap;
+
+                    &--rpg {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 3px;
+                        font-weight: 800;
+                        padding: 1px 6px 1px 4px;
+                        border-radius: 4px;
+                        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+                        app-icon {
+                            flex-shrink: 0;
+                        }
+
+                        @each $tier, $map in $tier-colors {
+                            &[data-tier="#{$tier}"] {
+                                background: map.get($map, 'bg');
+                                border: 1px solid map.get($map, 'border');
+                                color: map.get($map, 'text');
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -759,15 +874,20 @@
             width: 32px;
             height: 32px;
             border-radius: var(--border-radius-sm);
-            background: rgba(var(--color-fire-rgb, 245, 158, 11), 0.12);
-            color: var(--color-fire);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(180, 83, 9, 0.42) 100%);
+            border: 1.5px solid rgba(245, 158, 11, 0.65);
+            color: #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            transition: all var(--transition-fast);
 
             &.active {
-                background: rgba(var(--color-fire-rgb, 245, 158, 11), 0.2);
+                background: linear-gradient(135deg, rgba(245, 158, 11, 0.35) 0%, rgba(217, 119, 6, 0.6) 100%);
+                border-color: rgba(245, 158, 11, 0.9);
+                box-shadow: 0 0 14px rgba(245, 158, 11, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35);
             }
         }
 
@@ -834,22 +954,40 @@
             }
 
             .metric-icon-box {
-                width: 28px;
-                height: 28px;
+                width: 32px;
+                height: 32px;
                 border-radius: var(--border-radius-sm);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-shrink: 0;
+                transition: all var(--transition-fast);
 
                 &--trophy {
-                    background: rgba(245, 158, 11, 0.15);
+                    background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(180, 83, 9, 0.42) 100%);
+                    border: 1.5px solid rgba(245, 158, 11, 0.65);
                     color: #f59e0b;
+                    box-shadow: 0 0 10px rgba(245, 158, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
                 }
 
                 &--diamond {
-                    background: rgba(6, 182, 212, 0.15);
-                    color: #06b6d4;
+                    background: linear-gradient(135deg, rgba(56, 189, 248, 0.22) 0%, rgba(30, 58, 138, 0.45) 100%);
+                    border: 1.5px solid rgba(56, 189, 248, 0.65);
+                    color: #38bdf8;
+                    box-shadow: 0 0 10px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+                }
+
+                &--level {
+                    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+                    @each $tier, $map in $tier-colors {
+                        &[data-tier="#{$tier}"] {
+                            background: map.get($map, 'bg');
+                            border: 1.5px solid map.get($map, 'border');
+                            color: map.get($map, 'text');
+                            box-shadow: 0 0 10px map.get($map, 'glow'), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                        }
+                    }
                 }
             }
 

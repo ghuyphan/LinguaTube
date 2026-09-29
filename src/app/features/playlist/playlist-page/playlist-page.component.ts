@@ -36,9 +36,11 @@ export class PlaylistPageComponent {
 
     // Menu State (dropdown anchored to 3-dots)
     menuOpen = signal(false);
-    menuPosition = signal({ top: 0, left: 0 });
+    menuPopover = viewChild<ElementRef<HTMLElement>>('menuPopover');
+    private activeAnchorBtn: HTMLElement | null = null;
     deleteConfirmationOpen = signal(false);
     selectedPlaylist = signal<Playlist | null>(null);
+    playlistToDelete = signal<Playlist | null>(null);
 
     // Detail View State
     viewingPlaylist = signal<Playlist | null>(null);
@@ -329,30 +331,65 @@ export class PlaylistPageComponent {
         event.preventDefault();
         event.stopPropagation();
 
-        const btn = event.currentTarget as HTMLElement | null;
-        if (btn) {
-            const rect = btn.getBoundingClientRect();
-            const menuWidth = 160;
-            let left = rect.right - menuWidth;
-            if (left < 10) left = 10;
-            if (left + menuWidth > window.innerWidth - 10) {
-                left = window.innerWidth - menuWidth - 10;
-            }
-
-            let top = rect.bottom + 4;
-            if (top + 130 > window.innerHeight) {
-                top = Math.max(10, rect.top - 130);
-            }
-
-            this.menuPosition.set({ top, left });
-        }
-
         this.selectedPlaylist.set(playlist);
         this.menuOpen.set(true);
+
+        const btn = event.currentTarget as HTMLElement | null;
+        if (btn) {
+            if (this.activeAnchorBtn) {
+                this.activeAnchorBtn.style.removeProperty('anchor-name');
+            }
+            btn.style.setProperty('anchor-name', '--playlist-menu-anchor');
+            this.activeAnchorBtn = btn;
+
+            const rect = btn.getBoundingClientRect();
+            // Pass microtask or animationFrame to allow popover element to render if needed
+            requestAnimationFrame(() => {
+                const popoverEl = this.menuPopover()?.nativeElement;
+                if (popoverEl) {
+                    popoverEl.style.setProperty('--menu-top', `${rect.bottom + 4}px`);
+                    popoverEl.style.setProperty('--menu-left', `${Math.max(10, rect.right - 160)}px`);
+                    try {
+                        if (!popoverEl.matches(':popover-open')) {
+                            popoverEl.showPopover();
+                        }
+                    } catch {
+                        // Safe fallback if popover API is not available
+                    }
+                }
+            });
+        }
+    }
+
+    onMenuToggle(event: Event): void {
+        const toggleEvent = event as ToggleEvent;
+        if (toggleEvent.newState === 'closed') {
+            if (this.activeAnchorBtn) {
+                this.activeAnchorBtn.style.removeProperty('anchor-name');
+                this.activeAnchorBtn = null;
+            }
+            this.menuOpen.set(false);
+            this.selectedPlaylist.set(null);
+        }
     }
 
     closeMenu(): void {
+        const popoverEl = this.menuPopover()?.nativeElement;
+        if (popoverEl) {
+            try {
+                if (popoverEl.matches(':popover-open')) {
+                    popoverEl.hidePopover();
+                }
+            } catch {
+                // Ignore if not supported
+            }
+        }
+        if (this.activeAnchorBtn) {
+            this.activeAnchorBtn.style.removeProperty('anchor-name');
+            this.activeAnchorBtn = null;
+        }
         this.menuOpen.set(false);
+        this.selectedPlaylist.set(null);
     }
 
     async onSharePlaylist(): Promise<void> {
@@ -376,10 +413,10 @@ export class PlaylistPageComponent {
     }
 
     onDeletePlaylist(): void {
-        this.closeMenu();
         const p = this.selectedPlaylist() || this.viewingPlaylist();
+        this.closeMenu();
         if (p) {
-            this.selectedPlaylist.set(p);
+            this.playlistToDelete.set(p);
             this.deleteConfirmationOpen.set(true);
         }
     }
@@ -396,12 +433,12 @@ export class PlaylistPageComponent {
     }
 
     confirmDelete(): void {
-        const p = this.selectedPlaylist();
+        const p = this.playlistToDelete();
         if (p) {
             this.playlistService.deletePlaylist(p.id);
         }
         this.deleteConfirmationOpen.set(false);
-        this.selectedPlaylist.set(null);
+        this.playlistToDelete.set(null);
 
         // Return to list view if deleting the currently viewed playlist
         if (this.viewingPlaylist()?.id === p?.id) {
@@ -411,7 +448,7 @@ export class PlaylistPageComponent {
 
     cancelDelete(): void {
         this.deleteConfirmationOpen.set(false);
-        this.selectedPlaylist.set(null);
+        this.playlistToDelete.set(null);
     }
 
     onDialogClosed(): void {

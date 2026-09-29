@@ -2,15 +2,10 @@ import { Injectable, inject, signal } from '@angular/core';
 import { IGamificationRepository } from './gamification.repository';
 import { UserGamificationState, Mission, DailyMissionsState, MissionType } from '../../models/gamification.model';
 import { AuthService, StorageService, SupabaseService } from '../services';
-import { generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_gamification';
 const DIRTY_STORAGE_KEY = 'voca_gamification_dirty';
 const SYNC_DEBOUNCE_MS = 3000;
-
-function generateGamificationId(userId: string): string {
-    return generateDeterministicRecordId('gamification', userId);
-}
 
 export function getIsoWeekKey(d = new Date()): string {
     const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -39,7 +34,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'watch_video',
             titleKey: 'missions.watch1.title',
             descriptionKey: 'missions.watch1.desc',
-            icon: 'play-circle',
+            icon: 'film-strip',
             target: 1,
             progress: 0,
             completed: false,
@@ -51,7 +46,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'watch_video',
             titleKey: 'missions.watch2.title',
             descriptionKey: 'missions.watch2.desc',
-            icon: 'video',
+            icon: 'film-projector',
             target: 2,
             progress: 0,
             completed: false,
@@ -67,7 +62,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'save_word',
             titleKey: 'missions.save3.title',
             descriptionKey: 'missions.save3.desc',
-            icon: 'bookmark',
+            icon: 'quill-ink',
             target: 3,
             progress: 0,
             completed: false,
@@ -80,7 +75,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'save_word',
             titleKey: 'missions.save5.title',
             descriptionKey: 'missions.save5.desc',
-            icon: 'bookmark',
+            icon: 'miner',
             target: 5,
             progress: 0,
             completed: false,
@@ -93,7 +88,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'look_up_dict',
             titleKey: 'missions.dict3.title',
             descriptionKey: 'missions.dict3.desc',
-            icon: 'search',
+            icon: 'scroll-unfurled',
             target: 3,
             progress: 0,
             completed: false,
@@ -109,7 +104,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'srs_review',
             titleKey: 'missions.srs10.title',
             descriptionKey: 'missions.srs10.desc',
-            icon: 'cards',
+            icon: 'card-draw',
             target: 10,
             progress: 0,
             completed: false,
@@ -121,7 +116,7 @@ export function createDailyMissionsForDate(dateStr: string): DailyMissionsState 
             type: 'complete_quiz',
             titleKey: 'missions.quiz1.title',
             descriptionKey: 'missions.quiz1.desc',
-            icon: 'templar-shield',
+            icon: 'crossed-swords',
             target: 1,
             progress: 0,
             completed: false,
@@ -448,13 +443,16 @@ export class OfflineGamificationRepository implements IGamificationRepository {
 
     unlockAchievements(newUnlocked: Record<string, string>, xpGained: number): void {
         if (Object.keys(newUnlocked).length === 0 && xpGained <= 0) return;
+        this.ensureFreshPeriod();
 
         this._state.update(prev => {
             const newXP = prev.xp + xpGained;
+            const newWeeklyXp = (prev.weeklyXp || 0) + xpGained;
             const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
             const updated: UserGamificationState = {
                 ...prev,
                 xp: newXP,
+                weeklyXp: newWeeklyXp,
                 level: newLevel,
                 unlockedAchievements: { ...prev.unlockedAchievements, ...newUnlocked },
                 updatedAt: new Date().toISOString()
@@ -498,7 +496,6 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         this.isLoading.set(true);
 
         try {
-            const deterministicId = generateGamificationId(user.id);
             const { data: remoteRecord, error } = await this.supabase.client
                 .from('gamification')
                 .select('*')
@@ -574,7 +571,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                 // Record doesn't exist yet on remote, try creating it with deterministic ID
                 try {
                     await this.supabase.client.from('gamification').upsert({
-                        id: deterministicId,
+                        id: `game_${user.id}`,
                         user_id: user.id,
                         xp: local.xp,
                         level: local.level,
@@ -585,7 +582,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                         unlocked_achievements: local.unlockedAchievements,
                         notified_achievements: local.notifiedAchievements,
                         updated_at: new Date().toISOString()
-                    }, { onConflict: 'id' });
+                    }, { onConflict: 'user_id' });
                 } catch {
                     // Local state remains intact
                 }

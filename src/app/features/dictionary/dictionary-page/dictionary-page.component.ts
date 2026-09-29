@@ -193,25 +193,22 @@ import { WordLevel } from '../../../models';
           </div>
 
           <!-- Main View Content -->
-          @if (activeTab() === 'dictionary') {
-            <div class="tab-content-enter">
-              <app-dictionary-panel #panel [embedded]="true" />
-            </div>
-          } @else {
-            <div class="tab-content-enter">
-              <app-vocabulary-list 
-                #vocabList
-                [showHeader]="false"
-                [showMenu]="true"
-                [embedded]="true"
-                [showToolbar]="false"
-                [externalSearch]="vocabSearchQuery()"
-                [externalLevel]="selectedVocabLevel()"
-                (wordSelect)="onVocabWordSelect($event.surface)"
-                (addWordRequest)="onAddWordRequest($event)"
-              />
-            </div>
-          }
+          <div class="tab-content-enter" [hidden]="activeTab() !== 'dictionary'">
+            <app-dictionary-panel [embedded]="true" />
+          </div>
+          <div class="tab-content-enter" [hidden]="activeTab() !== 'vocab'">
+            <app-vocabulary-list 
+              #vocabList
+              [showHeader]="false"
+              [showMenu]="true"
+              [embedded]="true"
+              [showToolbar]="false"
+              [externalSearch]="vocabSearchQuery()"
+              [externalLevel]="selectedVocabLevel()"
+              (wordSelect)="onVocabWordSelect($event.surface)"
+              (addWordRequest)="onAddWordRequest($event)"
+            />
+          </div>
         </div>
       </div>
 
@@ -229,30 +226,36 @@ import { WordLevel } from '../../../models';
             </div>
           </div>
 
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-value stat-new">{{ stats().new }}</span>
-              <span class="stat-label">{{ i18n.t('study.new') }}</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value stat-learning">{{ stats().learning }}</span>
-              <span class="stat-label">{{ i18n.t('study.learning') }}</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value stat-known">{{ stats().known }}</span>
-              <span class="stat-label">{{ i18n.t('study.known') }}</span>
-            </div>
-          </div>
-
           @if (stats().total > 0) {
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value stat-new">{{ stats().new }}</span>
+                <span class="stat-label">{{ i18n.t('study.new') }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value stat-learning">{{ stats().learning }}</span>
+                <span class="stat-label">{{ i18n.t('study.learning') }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value stat-known">{{ stats().known }}</span>
+                <span class="stat-label">{{ i18n.t('study.known') }}</span>
+              </div>
+            </div>
+
             <a routerLink="/study" class="btn btn-primary sidebar-action-btn">
               <app-icon name="play" [size]="16" />
               <span>{{ i18n.t('study.start') }}</span>
             </a>
           } @else {
-            <div class="sidebar-empty-box">
-              <p class="sidebar-empty-desc">{{ i18n.t('dictionary.emptyNotebookHint') }}</p>
-              <a routerLink="/video" class="btn btn-secondary btn-sm sidebar-action-btn">
+            <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+              <div class="empty-state__icon-box">
+                <app-icon name="book-open" [size]="20" />
+              </div>
+              <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
+                <p class="empty-state__description">{{ i18n.t('dictionary.emptyNotebookHint') }}</p>
+              </div>
+              <a routerLink="/video" class="btn btn-primary btn-sm empty-state__action">
                 <app-icon name="video" [size]="14" />
                 <span>{{ i18n.t('dictionary.exploreVideos') }}</span>
               </a>
@@ -521,14 +524,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
     this.dictionary.screenQuery.set(clean);
     this.dictionary.screenEntries.set([]);
 
-    const p = this.panel();
-    if (p) {
-      p.search(clean);
-    } else {
-      setTimeout(() => {
-        this.panel()?.search(clean);
-      }, 50);
-    }
+    this.panel()?.search(clean);
 
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -549,14 +545,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
     if (query && typeof query === 'string') {
       const clean = query.trim();
       if (!clean) return;
-      const p = this.panel();
-      if (p) {
-        p.search(clean);
-      } else {
-        setTimeout(() => {
-          this.panel()?.search(clean);
-        }, 50);
-      }
+      this.panel()?.search(clean);
     }
   }
 }

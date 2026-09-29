@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, linkedSignal, ChangeDetectionStrategy, output, HostListener } from '@angular/core';
+import { Component, inject, signal, computed, linkedSignal, ChangeDetectionStrategy, output, viewChild, ElementRef } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/router';
@@ -135,6 +135,7 @@ export class SidebarComponent {
     readonly learningLangOptions = this.learningLanguage.languageOptions;
 
     showStatsPopover = signal(false);
+    private statsPopover = viewChild<ElementRef<HTMLElement>>('statsPopover');
 
     toggleCollapse(): void {
         this.settings.setSidebarCollapsed(!this.isCollapsed());
@@ -161,10 +162,39 @@ export class SidebarComponent {
         if (event) {
             event.stopPropagation();
         }
-        this.showStatsPopover.update(v => !v);
+        if (this.showStatsPopover()) {
+            this.closeStatsPopover();
+        } else {
+            this.showStatsPopover.set(true);
+            requestAnimationFrame(() => {
+                const el = this.statsPopover()?.nativeElement;
+                if (el) {
+                    try {
+                        if (!el.matches(':popover-open')) {
+                            el.showPopover();
+                        }
+                    } catch {}
+                }
+            });
+        }
+    }
+
+    onPopoverToggle(event: Event): void {
+        const toggleEvent = event as ToggleEvent;
+        if (toggleEvent.newState === 'closed') {
+            this.showStatsPopover.set(false);
+        }
     }
 
     closeStatsPopover(): void {
+        const el = this.statsPopover()?.nativeElement;
+        if (el) {
+            try {
+                if (el.matches(':popover-open')) {
+                    el.hidePopover();
+                }
+            } catch {}
+        }
         this.showStatsPopover.set(false);
     }
 
@@ -201,13 +231,6 @@ export class SidebarComponent {
     onPopoverSignOutClick(): void {
         this.closeStatsPopover();
         void this.auth.signOut();
-    }
-
-    @HostListener('document:keydown.escape')
-    onEscape(): void {
-        if (this.showStatsPopover()) {
-            this.closeStatsPopover();
-        }
     }
 
     loginWithGoogle(): void {

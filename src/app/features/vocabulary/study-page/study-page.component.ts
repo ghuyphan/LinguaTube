@@ -38,16 +38,8 @@ import { GamificationService } from '../../../core/services/gamification.service
               </div>
 
               <div class="sidebar-mastery-section">
-                <div class="progress-ring-container">
-                  <svg class="progress-ring" viewBox="0 0 100 100">
-                    <circle class="progress-ring__bg" cx="50" cy="50" r="42" />
-                    <circle
-                      class="progress-ring__fill"
-                      cx="50" cy="50" r="42"
-                      [style.strokeDasharray]="circumference"
-                      [style.strokeDashoffset]="progressOffset()"
-                    />
-                  </svg>
+                <div class="progress-ring-container" [style.--progress]="progressPercent()">
+                  <div class="progress-conic-ring"></div>
                   <div class="progress-ring__content">
                     <span class="progress-value">{{ progressPercent() }}%</span>
                     <span class="progress-label">{{ i18n.t('study.mastered') || 'Known' }}</span>
@@ -315,24 +307,17 @@ import { GamificationService } from '../../../core/services/gamification.service
       flex-shrink: 0;
     }
 
-    .progress-ring {
+    .progress-conic-ring {
       width: 100%;
       height: 100%;
-      transform: rotate(-90deg);
-    }
-
-    .progress-ring__bg {
-      fill: none;
-      stroke: var(--bg-surface);
-      stroke-width: 8;
-    }
-
-    .progress-ring__fill {
-      fill: none;
-      stroke: var(--success);
-      stroke-width: 8;
-      stroke-linecap: round;
-      transition: stroke-dashoffset 0.5s ease;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--success) calc(var(--progress, 0) * 1%),
+        var(--bg-surface) calc(var(--progress, 0) * 1%)
+      );
+      mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #fff calc(100% - 8px + 0.5px));
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #fff calc(100% - 8px + 0.5px));
+      transition: background 0.5s ease;
     }
 
     .progress-ring__content {
@@ -451,8 +436,6 @@ export class StudyPageComponent {
   currentLanguage = computed(() => this.settings.settings().language);
   stats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));
 
-  circumference = 2 * Math.PI * 42;
-
   dailyGoal = this.vocab.dailyGoal;
   cardsCompletedToday = this.vocab.cardsCompletedToday;
   goalProgress = this.vocab.goalProgress;
@@ -464,10 +447,5 @@ export class StudyPageComponent {
     const total = s.total;
     if (total === 0) return 0;
     return Math.round((s.known / total) * 100);
-  });
-
-  progressOffset = computed(() => {
-    const percent = this.progressPercent();
-    return this.circumference - (percent / 100) * this.circumference;
   });
 }

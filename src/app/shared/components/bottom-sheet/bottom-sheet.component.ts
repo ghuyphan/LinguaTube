@@ -476,7 +476,7 @@ export class BottomSheetComponent implements OnDestroy {
       const first = host.querySelector<HTMLElement>(
         'button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
       );
-      first?.focus();
+      first?.focus({ preventScroll: true });
     }, 50);
   }
 
@@ -492,11 +492,7 @@ export class BottomSheetComponent implements OnDestroy {
     if (this.previouslyFocusedElement && typeof this.previouslyFocusedElement.focus === 'function') {
       try {
         if (this.previouslyFocusedElement.isConnected) {
-          this.previouslyFocusedElement.focus();
-        } else {
-          // Resilient fallback: focus active cue, subtitle panel, or main element
-          const fallback = document.querySelector<HTMLElement>('.cue-item--active, .subtitle-panel, main, [role="main"]');
-          fallback?.focus?.();
+          this.previouslyFocusedElement.focus({ preventScroll: true });
         }
       } catch { }
       this.previouslyFocusedElement = null;

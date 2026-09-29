@@ -27,7 +27,7 @@
                 <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') }}</p>
                 <p class="empty-state__description">{{ i18n.t('history.noMatchesHint') }}</p>
             </div>
-            <button type="button" class="btn btn-secondary btn-sm" (click)="clearFilters.emit()">
+            <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="clearFilters.emit()">
                 <app-icon name="x" [size]="14" />
                 <span>{{ i18n.t('history.clearFilters') }}</span>
             </button>
@@ -41,6 +41,10 @@
                 <p class="empty-state__title">{{ i18n.t('history.noFavorites') }}</p>
                 <p class="empty-state__description">{{ i18n.t('history.noFavoritesHint') }}</p>
             </div>
+            <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="onBrowseVideos()">
+                <app-icon name="video" [size]="14" />
+                <span>{{ i18n.t('history.exploreVideos') }}</span>
+            </button>
         </div>
     } @else {
         <div class="empty-state empty-state--centered empty-state--animate">
@@ -51,7 +55,7 @@
                 <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
                 <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') }}</p>
             </div>
-            <button type="button" class="btn btn-primary btn-sm" (click)="onBrowseVideos()">
+            <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="onBrowseVideos()">
                 <app-icon name="video" [size]="14" />
                 <span>{{ i18n.t('history.exploreVideos') }}</span>
             </button>
@@ -64,6 +68,7 @@
         <article class="yt-video-card"
             [class.is-deleting]="isDeleting(item.id)"
             [style.--item-index]="i < 12 ? i : -1"
+            (animationend)="onItemAnimationEnd($event, item)"
             (click)="onPlayVideo(item)">
 
             <!-- Thumbnail (16:9) -->
@@ -116,6 +121,7 @@
                             <button type="button" class="action-btn action-btn--favorite"
                                 [class.active]="item.is_favorite"
                                 [class.animating]="isAnimatingFavorite(item.id)"
+                                (animationend)="onFavoriteAnimationEnd(item.id)"
                                 (click)="onToggleFavorite(item, $event)"
                                 [attr.aria-label]="i18n.t('history.favorites')"
                                 [attr.aria-pressed]="item.is_favorite"

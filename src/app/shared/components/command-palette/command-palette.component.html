@@ -3,6 +3,7 @@
   class="spotlight-overlay" 
   [class.closing]="isClosing()"
   (click)="onBackdropClick($event)"
+  (animationend)="onOverlayAnimationEnd($event)"
   (keydown.escape)="close()"
   role="dialog"
   aria-modal="true"
@@ -14,11 +15,12 @@
     (click)="$event.stopPropagation()"
   >
     <div class="spotlight-bar-row">
-      <div class="spotlight-bar" [class.has-error]="hasError()" [class.shake]="shakeError()">
+      <div class="spotlight-bar" [class.has-error]="hasError()" [class.shake]="shakeError()" (animationend)="onShakeAnimationEnd($event)">
         <app-icon name="search" [size]="20" class="spotlight__icon" />
         
         <input
           #urlInput
+          autofocus
           type="url"
           class="spotlight__input"
           [placeholder]="i18n.t('commandPalette.placeholder')"
@@ -107,6 +109,18 @@
             </li>
           }
         </ul>
+      </div>
+    } @else if (url().trim()) {
+      <div class="spotlight-results spotlight-results--empty">
+        <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+          <div class="empty-state__icon-box">
+            <app-icon name="search" [size]="20" />
+          </div>
+          <div class="empty-state__text">
+            <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') || 'No results found' }}</p>
+            <p class="empty-state__hint">{{ i18n.t('playlist.empty.searchHint') || 'Try a different command or paste a YouTube link' }}</p>
+          </div>
+        </div>
       </div>
     }
   </div>

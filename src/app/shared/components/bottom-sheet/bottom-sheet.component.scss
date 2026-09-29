@@ -75,35 +75,50 @@
 }
 
 // ============================================
-// DESKTOP MODAL ANIMATIONS
-// Explicit class-based control (not media query dependent)
 // ============================================
-.sheet.desktop-modal {
-    animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-}
+// DESKTOP MODAL ANIMATIONS & LAYOUT
+// ============================================
+@media (min-width: 769px) and (min-height: 501px) {
+    .sheet {
+        animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 
-.sheet.desktop-modal.closing {
-    animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        &.closing {
+            animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        }
+
+        .sheet-drag-handle {
+            display: none !important;
+        }
+    }
 }
 
 // ============================================
-// MOBILE SHEET ANIMATIONS
-// Uses :not(.desktop-modal) for explicit control
+// MOBILE SHEET ANIMATIONS & LAYOUT
 // ============================================
-.sheet:not(.desktop-modal) {
-    max-width: 100%;
-    margin: 0;
-    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
-    animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-    touch-action: none;
-}
+@media (max-width: 768px), (max-height: 500px) {
+    .sheet {
+        max-width: 100%;
+        margin: 0;
+        border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        touch-action: none;
 
-.sheet:not(.desktop-modal).square-corners {
-    border-radius: 0;
-}
+        &.square-corners {
+            border-radius: 0;
+        }
 
-.sheet:not(.desktop-modal).closing {
-    animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        &.closing {
+            animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+        }
+
+        .sheet-drag-handle {
+            display: block;
+        }
+
+        .sheet-content {
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+    }
 }
 
 // ============================================
@@ -195,11 +210,6 @@
     background: var(--text-muted);
 }
 
-// Show drag handle on mobile sheets
-.sheet:not(.desktop-modal) .sheet-drag-handle {
-    display: block;
-}
-
 // ============================================
 // CONTENT AREA
 // ============================================
@@ -228,11 +238,6 @@
     width: 100%;
 }
 
-// Safe area padding for mobile
-.sheet:not(.desktop-modal) .sheet-content {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
 // ============================================
 // LAYOUT ADJUSTMENTS
 // ============================================
@@ -247,7 +252,7 @@
 
 // Tablet portrait & wider responsive viewports: bottom sheet with proportional centered width
 @media (min-width: 481px) and (max-width: 768px) {
-    .sheet:not(.desktop-modal) {
+    .sheet {
         max-width: var(--max-width, 460px);
         width: min(92%, var(--max-width, 460px));
         margin: 0 auto;
@@ -262,10 +267,10 @@
         justify-content: center;
     }
 
-    .sheet:not(.desktop-modal) {
+    .sheet {
         max-width: var(--max-width, 460px);
         width: min(92%, var(--max-width, 460px));
-        max-height: calc(var(--app-height, 100dvh) - 30px);
+        max-height: calc(100dvh - 30px);
         border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     }
 }

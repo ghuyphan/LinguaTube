@@ -101,8 +101,8 @@
             }
         </div>
         } @else if (filteredWords().length === 0) {
-        <div class="empty-state empty-state--centered">
-            @if (vocab.vocabulary().length === 0) {
+        <div class="empty-state empty-state--centered empty-state--animate">
+            @if (currentLangVocabCount() === 0) {
             <div class="empty-state__icon-box">
                 <app-icon name="layers" [size]="28" />
             </div>
@@ -110,10 +110,16 @@
                 <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                 <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
             </div>
-            <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary()">
-                <app-icon name="search" [size]="14" />
-                <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
-            </button>
+            <div class="empty-state__actions">
+                <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
+                    <app-icon name="search" [size]="14" />
+                    <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
+                </button>
+                <a routerLink="/video" class="btn btn-secondary btn-sm empty-state__action">
+                    <app-icon name="play" [size]="14" />
+                    <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
+                </a>
+            </div>
             } @else {
             <div class="empty-state__icon-box">
                 <app-icon name="search" [size]="28" />
@@ -123,9 +129,14 @@
                 <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
             </div>
             @if (effectiveSearchQuery()) {
-            <button type="button" class="btn btn-primary btn-sm search-in-dict-btn" (click)="searchInDictionary(effectiveSearchQuery())">
+            <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary(effectiveSearchQuery())">
                 <app-icon name="search" [size]="14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search in dictionary' }}</span>
+            </button>
+            } @else if (selectedLevel() !== 'all') {
+            <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="selectedLevel.set('all')">
+                <app-icon name="rotate-ccw" [size]="14" />
+                <span>{{ i18n.t('history.all') || 'Show All' }}</span>
             </button>
             }
             }
@@ -133,7 +144,7 @@
         } @else {
         <div class="vocab-items">
             @for (item of filteredWords(); track item.id; let i = $index) {
-            <div class="vocab-item" [style.--item-index]="i" [class.is-deleting]="deletingWordId() === item.id" (click)="onWordClick(item)">
+            <div class="vocab-item" [style.--item-index]="i" [class.is-deleting]="deletingWordId() === item.id" (animationend)="onItemAnimationEnd($event, item)" (click)="onWordClick(item)">
                 <div class="vocab-item__content">
                     <div class="vocab-item__header">
                         <span class="vocab-item__word" [class]="'text-' + item.language">

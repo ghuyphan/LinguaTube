@@ -13,17 +13,54 @@
     stroke-linecap: round;
     stroke-linejoin: round;
 
-    // Filled icons
+    // Filled icons & RPG crests
     &.icon--heart-filled,
     &.icon--star-filled,
     &.icon--fire,
+    &.icon--diamond,
     &.icon--bookmark-filled,
     &.icon--play-circle-filled,
     &.icon--graduation-cap-filled,
     &.icon--book-open-filled,
     &.icon--list-video-filled,
     &.icon--more-horizontal-filled,
-    &.icon--chart-bar {
+    &.icon--chart-bar,
+    &.icon--ribbon-shield,
+    &.icon--templar-shield,
+    &.icon--laurel-crown,
+    &.icon--treasure-chest,
+    &.icon--sprout,
+    &.icon--film-strip,
+    &.icon--clapperboard,
+    &.icon--film-projector,
+    &.icon--miner,
+    &.icon--stone-block,
+    &.icon--gems,
+    &.icon--spell-book,
+    &.icon--crystal-ball,
+    &.icon--flint-spark,
+    &.icon--campfire,
+    &.icon--egyptian-bird,
+    &.icon--card-draw,
+    &.icon--brainstorm,
+    &.icon--anvil,
+    &.icon--sound-waves,
+    &.icon--magnifying-glass,
+    &.icon--laurels-trophy,
+    &.icon--quill-ink,
+    &.icon--scroll-unfurled,
+    &.icon--crossed-swords,
+    &.icon--cracked-shield,
+    &.icon--roman-shield,
+    &.icon--broadsword,
+    &.icon--winged-sword,
+    &.icon--bullseye,
+    &.icon--ouroboros,
+    &.icon--compass,
+    &.icon--ice-shield,
+    &.icon--torch,
+    &.icon--sunbeams,
+    &.icon--imperial-crown {
         fill: currentColor;
         stroke: none;
     }

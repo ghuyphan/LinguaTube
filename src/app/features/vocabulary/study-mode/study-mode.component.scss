@@ -41,10 +41,6 @@
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-
-    .empty-state {
-        padding-top: var(--space-sm);
-    }
 }
 
 .panel-badges {
@@ -428,8 +424,10 @@
 
 .study-filter-empty {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: var(--space-sm);
     padding: 1rem;
     background: var(--bg-surface);
@@ -1051,12 +1049,26 @@
     }
 
     .answer-btn__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
         font-size: 0.875rem;
         font-weight: 700;
         white-space: nowrap;
 
+        .btn-rpg-icon {
+            flex-shrink: 0;
+            opacity: 0.95;
+            transition: transform var(--transition-fast);
+        }
+
         @media (max-width: 600px) {
             font-size: 0.75rem;
+            gap: 3px;
+
+            .btn-rpg-icon {
+                transform: scale(0.85);
+            }
         }
     }
 

@@ -69,6 +69,16 @@
                 <span>{{ i18n.t('dictionary.title') || 'Dictionary' }}</span>
             </button>
         </div>
+        } @else {
+        <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+            <div class="empty-state__icon-box empty-state__icon-box--error">
+                <app-icon name="alert-circle" [size]="20" />
+            </div>
+            <div class="empty-state__text">
+                <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') || 'Pattern not found' }}</p>
+                <p class="empty-state__hint">{{ i18n.t('subtitle.networkErrorHint') }}</p>
+            </div>
+        </div>
         }
     </div>
 </app-bottom-sheet>

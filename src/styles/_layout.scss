@@ -3,7 +3,7 @@
 /* ============================================
    GLOBAL OVERLAY SCROLLBAR
    ============================================ */
-/* Standard Firefox scrollbar styling (isolated so Chrome 121+ does not disable ::-webkit-scrollbar) */
+/* Standard cross-browser overlay scrollbar: Firefox fallback */
 @supports not selector(::-webkit-scrollbar) {
     * {
         scrollbar-width: thin;

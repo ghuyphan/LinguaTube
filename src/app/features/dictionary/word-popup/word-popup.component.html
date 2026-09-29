@@ -71,10 +71,15 @@
             </div>
             } @else if (lookupError()) {
             <!-- Lookup error state -->
-            <div class="popup-error" role="alert">
-                <app-icon name="alert-circle" [size]="24" />
-                <span class="popup-error-text">{{ i18n.t('subtitle.networkErrorHint') }}</span>
-                <button class="popup-retry-btn" (click)="retryLookup()" [attr.aria-label]="i18n.t('quiz.retry') || 'Retry'">
+            <div class="empty-state empty-state--centered empty-state--compact empty-state--animate" role="alert">
+                <div class="empty-state__icon-box empty-state__icon-box--error">
+                    <app-icon name="alert-circle" [size]="20" />
+                </div>
+                <div class="empty-state__text">
+                    <p class="empty-state__title">{{ i18n.t('subtitle.networkErrorTitle') || 'Connection Error' }}</p>
+                    <p class="empty-state__hint">{{ i18n.t('subtitle.networkErrorHint') }}</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="retryLookup()">
                     <app-icon name="refresh-cw" [size]="14" />
                     <span>{{ i18n.t('quiz.retry') }}</span>
                 </button>
@@ -147,11 +152,11 @@
                 }
             </div>
             } @else {
-            <div class="empty-state empty-state--centered">
+            <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
                 <div class="empty-state__icon-box">
-                    <app-icon name="search" [size]="28" />
+                    <app-icon name="search" [size]="20" />
                 </div>
-                <div class="empty-state__text" style="align-items: center; text-align: center;">
+                <div class="empty-state__text">
                     <p class="empty-state__title">{{ i18n.t('popup.noDictionaryEntry') }}</p>
                     <p class="empty-state__description">{{ i18n.t('popup.saveManually') }}</p>
                 </div>

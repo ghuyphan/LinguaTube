@@ -111,16 +111,20 @@ export class HistoryListComponent {
             this.animatingFavorites.update(set => new Set(set).add(item.id));
             this.favoriteAdded.emit(item);
 
-            setTimeout(() => {
-                this.animatingFavorites.update(set => {
-                    const newSet = new Set(set);
-                    newSet.delete(item.id);
-                    return newSet;
-                });
-            }, 400);
+            // Fallback timeout in case animationend does not fire
+            setTimeout(() => this.onFavoriteAnimationEnd(item.id), 450);
         }
 
         this.historyService.toggleFavorite(item.id);
+    }
+
+    onFavoriteAnimationEnd(itemId: string): void {
+        this.animatingFavorites.update(set => {
+            if (!set.has(itemId)) return set;
+            const newSet = new Set(set);
+            newSet.delete(itemId);
+            return newSet;
+        });
     }
 
     onRemoveItem(item: HistoryItem, event: Event): void {
@@ -129,16 +133,27 @@ export class HistoryListComponent {
         // Animate exit then delete
         this.deletingItems.update(set => new Set(set).add(item.id));
 
-        setTimeout(() => {
-            this.historyService.removeFromHistory(item.id);
-            this.itemRemoved.emit(item);
+        // Fallback timer in case animationend does not fire (prefers-reduced-motion)
+        setTimeout(() => this.finishRemoveItem(item), 300);
+    }
 
-            this.deletingItems.update(set => {
-                const newSet = new Set(set);
-                newSet.delete(item.id);
-                return newSet;
-            });
-        }, 260);
+    onItemAnimationEnd(event: AnimationEvent, item: HistoryItem): void {
+        if ((event.animationName === 'collapseOut' || event.animationName === 'listItemOut') && this.isDeleting(item.id)) {
+            this.finishRemoveItem(item);
+        }
+    }
+
+    private finishRemoveItem(item: HistoryItem): void {
+        if (!this.isDeleting(item.id)) return;
+
+        this.historyService.removeFromHistory(item.id);
+        this.itemRemoved.emit(item);
+
+        this.deletingItems.update(set => {
+            const newSet = new Set(set);
+            newSet.delete(item.id);
+            return newSet;
+        });
     }
 
     isDeleting(itemId: string): boolean {

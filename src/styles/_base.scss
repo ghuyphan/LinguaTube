@@ -18,6 +18,10 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -48,6 +52,10 @@ body {
     min-height: 100vh;
     min-height: var(--app-height, 100dvh);
     overflow-x: clip;
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 
 

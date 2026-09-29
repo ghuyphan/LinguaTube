@@ -88,11 +88,15 @@
     <!-- Player Embed Error Overlay -->
     @if (youtube.error()) {
     <div class="player-error-overlay" role="alert">
-      <div class="player-error-card">
-        <app-icon name="alert-circle" [size]="28" class="player-error-icon" />
-        <div class="player-error-title">{{ youtube.error() }}</div>
-        <p class="player-error-desc">{{ i18n.t('player.embedErrorHelp') || 'This video cannot be played embedded. It may be restricted by the owner or unavailable.' }}</p>
-        <div class="player-error-actions">
+      <div class="player-error-card empty-state empty-state--centered empty-state--animate">
+        <div class="empty-state__icon-box empty-state__icon-box--error">
+          <app-icon name="alert-circle" [size]="28" />
+        </div>
+        <div class="empty-state__text">
+          <h3 class="empty-state__title">{{ youtube.error() }}</h3>
+          <p class="empty-state__description">{{ i18n.t('player.embedErrorHelp') || 'This video cannot be played embedded. It may be restricted by the owner or unavailable.' }}</p>
+        </div>
+        <div class="empty-state__action player-error-actions">
           @if (youtube.currentVideo()?.id) {
           <a [href]="'https://www.youtube.com/watch?v=' + youtube.currentVideo()?.id" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
             <app-icon name="external-link" [size]="14" />

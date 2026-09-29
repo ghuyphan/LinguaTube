@@ -4,7 +4,7 @@ import { IconComponent, IconName } from '../../shared/components/icon/icon.compo
 import { GamificationService } from '../../core/services/gamification.service';
 import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
-import { AchievementCategory, Mission } from '../../models/gamification.model';
+import { AchievementCategory, Mission, LevelTier } from '../../models/gamification.model';
 
 @Component({
     selector: 'app-achievements-dialog',
@@ -118,8 +118,16 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         return this.categoryStats()[cat]?.total ?? 0;
     }
 
+    getLevelTier(level: number): LevelTier {
+        return GamificationService.getLevelTier(level);
+    }
+
+    getLevelIcon(level: number): IconName {
+        return GamificationService.getLevelIcon(level);
+    }
+
     toIconName(icon: string | IconName): IconName {
-        return (icon as IconName) || 'trophy';
+        return (icon as IconName) || 'scroll-unfurled';
     }
 
     claimMission(mission: Mission): void {

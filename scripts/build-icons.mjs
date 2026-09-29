@@ -157,9 +157,25 @@ const typeContent = fs.readFileSync(typeFilePath, 'utf8');
 const match = typeContent.match(/export type IconName =\s*([\s\S]*?);/);
 const names = match[1].replace(/\/\/.*$/gm, '').split('|').map(s => s.trim().replace(/['"]/g, '')).filter(Boolean);
 
+const targetPath = path.resolve('src/assets/icons/sprite.svg');
+let existingSvg = '';
+if (fs.existsSync(targetPath)) {
+  existingSvg = fs.readFileSync(targetPath, 'utf8');
+}
+const existing512Symbols = {};
+const symbolRegex = /<symbol\s+id="([^"]+)"\s+viewBox="0 0 512 512">([\s\S]*?)<\/symbol>/g;
+let sm;
+while ((sm = symbolRegex.exec(existingSvg)) !== null) {
+  existing512Symbols[sm[1]] = sm[0];
+}
+
 let svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">\n`;
 
 for (const name of names) {
+  if (existing512Symbols[name]) {
+    svg += `${existing512Symbols[name]}\n`;
+    continue;
+  }
   const icon = mingCuteMap[name];
   if (!icon) {
     throw new Error(`Missing MingCute icon mapping for IconName: ${name}`);
@@ -179,6 +195,5 @@ for (const name of names) {
 
 svg += `</svg>\n`;
 
-const targetPath = path.resolve('src/assets/icons/sprite.svg');
 fs.writeFileSync(targetPath, svg, 'utf8');
-console.log(`Successfully compiled ${names.length} official MingCute icons from @mingcute/icons into ${targetPath} (${svg.length} bytes)`);
+console.log(`Successfully compiled ${names.length} official icons (${Object.keys(existing512Symbols).length} Game-Icons, ${names.length - Object.keys(existing512Symbols).length} MingCute) into ${targetPath} (${svg.length} bytes)`);

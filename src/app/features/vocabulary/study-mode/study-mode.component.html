@@ -32,10 +32,16 @@
                 <h3 class="empty-state__title">{{ i18n.t('study.noWords') }}</h3>
                 <p class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</p>
             </div>
-            <a routerLink="/video" class="btn btn-primary empty-state__action">
-                <app-icon name="play" [size]="16" />
-                <span>{{ i18n.t('nav.watch') }}</span>
-            </a>
+            <div class="empty-state__actions">
+                <a routerLink="/video" class="btn btn-primary empty-state__action">
+                    <app-icon name="play" [size]="16" />
+                    <span>{{ i18n.t('history.exploreVideos') }}</span>
+                </a>
+                <a routerLink="/dictionary" class="btn btn-secondary empty-state__action">
+                    <app-icon name="book-open" [size]="16" />
+                    <span>{{ i18n.t('dictionary.title') }}</span>
+                </a>
+            </div>
         </div>
         } @else {
         <!-- STUDY PRACTICE DASHBOARD -->
@@ -394,19 +400,31 @@
             <div class="answer-buttons">
                 <button class="answer-btn answer-btn--wrong card-action-interactive" (click)="markAnswer('wrong')">
                     <span class="answer-time">{{ intervalPreviews().again }}</span>
-                    <span class="answer-btn__label">{{ i18n.t('study.again') }}</span>
+                    <span class="answer-btn__label">
+                        <app-icon name="cracked-shield" [size]="14" class="btn-rpg-icon" />
+                        {{ i18n.t('study.again') }}
+                    </span>
                 </button>
                 <button class="answer-btn answer-btn--hard card-action-interactive" (click)="markAnswer('hard')">
                     <span class="answer-time">{{ intervalPreviews().hard }}</span>
-                    <span class="answer-btn__label">{{ i18n.t('study.hard') }}</span>
+                    <span class="answer-btn__label">
+                        <app-icon name="roman-shield" [size]="14" class="btn-rpg-icon" />
+                        {{ i18n.t('study.hard') }}
+                    </span>
                 </button>
                 <button class="answer-btn answer-btn--good card-action-interactive" (click)="markAnswer('good')">
                     <span class="answer-time">{{ intervalPreviews().good }}</span>
-                    <span class="answer-btn__label">{{ i18n.t('study.good') }}</span>
+                    <span class="answer-btn__label">
+                        <app-icon name="broadsword" [size]="14" class="btn-rpg-icon" />
+                        {{ i18n.t('study.good') }}
+                    </span>
                 </button>
                 <button class="answer-btn answer-btn--easy card-action-interactive" (click)="markAnswer('easy')">
                     <span class="answer-time">{{ intervalPreviews().easy }}</span>
-                    <span class="answer-btn__label">{{ i18n.t('study.easy') }}</span>
+                    <span class="answer-btn__label">
+                        <app-icon name="winged-sword" [size]="14" class="btn-rpg-icon" />
+                        {{ i18n.t('study.easy') }}
+                    </span>
                 </button>
             </div>
             <p class="study-shortcut-hint desktop-only">{{ i18n.t('study.keyboardHint') || 'Use 1–4 keys to answer' }}</p>

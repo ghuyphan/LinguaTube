@@ -75,7 +75,7 @@ $transition-fast: 0.15s ease;
     cursor: default;
     touch-action: pan-y;
     padding: 0.15rem 0.85rem 0.35rem 0.85rem;
-    max-height: 45vh;
+    max-height: 45dvh;
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior: contain;
@@ -112,7 +112,7 @@ $transition-fast: 0.15s ease;
 
     @media (max-height: 520px) and (orientation: landscape), (max-height: 480px) {
         padding: 0.1rem 0.65rem 0.25rem 0.65rem;
-        max-height: 55vh;
+        max-height: 55dvh;
         border-radius: 10px;
     }
 }

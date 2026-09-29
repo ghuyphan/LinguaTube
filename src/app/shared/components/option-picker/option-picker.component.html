@@ -51,9 +51,17 @@
                     </div>
                     }
                 </li>
-                @if (!isLast) {
-                <div class="option-picker-item__divider"></div>
-                }
+                } @empty {
+                <li class="option-picker-empty">
+                    <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+                        <div class="empty-state__icon-box">
+                            <app-icon name="list-video" [size]="20" />
+                        </div>
+                        <div class="empty-state__text">
+                            <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') || 'No options available' }}</p>
+                        </div>
+                    </div>
+                </li>
                 }
             </ul>
         </div>

@@ -178,30 +178,38 @@
         </div>
       </div>
 
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-value">{{ historyItems().length }}</span>
-          <span class="stat-label">{{ i18n.t('history.all') }}</span>
+      @if (historyItems().length > 0) {
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-value">{{ historyItems().length }}</span>
+            <span class="stat-label">{{ i18n.t('history.all') }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value stat-completed">{{ completedCount() }}</span>
+            <span class="stat-label">{{ i18n.t('history.completed') }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value stat-favorite">{{ favorites().length }}</span>
+            <span class="stat-label">{{ i18n.t('history.favorites') }}</span>
+          </div>
         </div>
-        <div class="stat-item">
-          <span class="stat-value stat-completed">{{ completedCount() }}</span>
-          <span class="stat-label">{{ i18n.t('history.completed') }}</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value stat-favorite">{{ favorites().length }}</span>
-          <span class="stat-label">{{ i18n.t('history.favorites') }}</span>
-        </div>
-      </div>
 
-      @if (recentItem(); as recent) {
-        <button type="button" class="btn btn-primary sidebar-action-btn" (click)="resumeVideo(recent.video_id)">
-          <app-icon name="play" [size]="16" />
-          <span>{{ i18n.t('history.continueWatching') || 'Continue' }}</span>
-        </button>
+        @if (recentItem(); as recent) {
+          <button type="button" class="btn btn-primary sidebar-action-btn" (click)="resumeVideo(recent.video_id)">
+            <app-icon name="play" [size]="16" />
+            <span>{{ i18n.t('history.continueWatching') || 'Continue' }}</span>
+          </button>
+        }
       } @else {
-        <div class="sidebar-empty-box">
-          <p class="sidebar-empty-desc">{{ i18n.t('history.noHistoryHint') || 'Videos you watch will appear here' }}</p>
-          <a routerLink="/video" class="btn btn-secondary btn-sm sidebar-action-btn">
+        <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+          <div class="empty-state__icon-box">
+            <app-icon name="history" [size]="20" />
+          </div>
+          <div class="empty-state__text">
+            <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
+            <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') || 'Videos you watch will appear here' }}</p>
+          </div>
+          <a routerLink="/video" class="btn btn-primary btn-sm empty-state__action">
             <app-icon name="video" [size]="14" />
             <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
           </a>

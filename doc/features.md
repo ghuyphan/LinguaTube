@@ -722,6 +722,21 @@ Voca incorporates an engaging, dopamine-positive gamification system designed to
   | **Flashcard Review** | **+10 XP** | Submitting SM-2 quality rating in Study Mode (`VocabularyService.markReviewed`) |
   | **Subtitle Quiz Mastered** | **+15 XP** | Correct answer on in-video subtitle quiz (`QuizService.checkAnswer`) |
 
+- **RPG Level Tiers & Evolving Badges**:
+  Each level features a distinct Game-Icons.net vector badge and faceted material tier palette with specular glints:
+  | Level | Rank Title | Tier Theme | Icon Name | Metaphor & Visual Material |
+  | :--- | :--- | :--- | :--- | :--- |
+  | **Lv. 1** | Curious Beginner | `stone` | `cracked-shield` | Battle-forged Stone & Slate recruit heater shield |
+  | **Lv. 2** | Active Listener | `bronze` | `sound-waves` | Burnished Bronze tuning frequency waves |
+  | **Lv. 3** | Word Collector | `silver` | `quill-ink` | Polished Silver scribe's quill mining vocabulary |
+  | **Lv. 4** | Dedicated Learner | `gold` | `ribbon-shield` | Tournament Gold heraldic knight's shield |
+  | **Lv. 5** | Conversationalist | `platinum` | `broadsword` | High-sheen Platinum blade for dialogue sparring |
+  | **Lv. 6** | Fluent Explorer | `emerald` | `compass` | Brilliant Emerald wayfinder compass for native content |
+  | **Lv. 7** | Advanced Scholar | `diamond` | `gems` | Prismatic Sapphire & Diamond crystalline mastery |
+  | **Lv. 8** | Language Specialist | `master` | `spell-book` | Arcane Amethyst grimoire of deep grammar patterns |
+  | **Lv. 9** | Master Polyglot | `grandmaster` | `laurel-crown` | Olympian Grandmaster golden laurel wreath |
+  | **Lv. 10+** | Language Expert | `mythic` | `imperial-crown` | Divine Mythic Imperial crown of linguistic mastery |
+
 ### 13.2. Achievement Badges Portfolio (19 Achievements)
 Achievements are organized into 5 core learning categories:
 1. **Immersion (`immersion`)**:

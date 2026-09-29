@@ -260,8 +260,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
   readonly isTranslatingDual = this.subtitles.isTranslatingDual;
   readonly isDualCached = this.subtitles.isDualCached;
 
-  readonly hasOverflowTop = signal(false);
-  readonly hasOverflowBottom = signal(false);
   readonly isUserScrolledAway = signal(false);
 
   private lastUserScrollTime = 0;
@@ -333,24 +331,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
     }
   }
 
-  onCurrentSubtitleScroll(): void {
-    this.lastUserScrollTime = Date.now();
-    this.updateOverflowIndicators();
-  }
-
-  private updateOverflowIndicators(): void {
-    const el = this.currentSubtitleInner()?.nativeElement;
-    if (!el) {
-      this.hasOverflowTop.set(false);
-      this.hasOverflowBottom.set(false);
-      return;
-    }
-    const threshold = 4;
-    const hasScroll = el.scrollHeight > el.clientHeight + threshold;
-    this.hasOverflowTop.set(hasScroll && el.scrollTop > threshold);
-    this.hasOverflowBottom.set(hasScroll && el.scrollTop + el.clientHeight < el.scrollHeight - threshold);
-  }
-
   constructor() {
     this.keyboardShortcuts.events$.pipe(takeUntilDestroyed()).subscribe(event => {
       if (event.type === 'toggle-cue-loop') {
@@ -388,19 +368,10 @@ export class SubtitleDisplayComponent implements OnDestroy {
           if (timeSinceUserScroll > this.SCROLL_DEBOUNCE_MS) {
             innerEl.scrollTop = 0;
           }
-          setTimeout(() => this.updateOverflowIndicators(), 50);
         }
       } else if (!currentCue) {
         this.previousCueId = null;
-        this.hasOverflowTop.set(false);
-        this.hasOverflowBottom.set(false);
       }
-    });
-
-    // Re-check overflow indicators when dual subtitle translations arrive
-    effect(() => {
-      this.cueTranslations();
-      setTimeout(() => this.updateOverflowIndicators(), 50);
     });
 
     // Segment loop effect
@@ -469,13 +440,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
     this.lastScrolledCueId = cueId;
 
-    const containerHeight = container.clientHeight;
-    const elementTop = activeElement.offsetTop;
-    const elementHeight = activeElement.offsetHeight;
-
-    // Perfectly center the active cue in the middle of the viewport
-    const targetScrollTop = elementTop - (containerHeight - elementHeight) / 2;
-
     this.isProgrammaticScrolling = true;
     if (this.programmaticScrollTimer) {
       clearTimeout(this.programmaticScrollTimer);
@@ -484,6 +448,11 @@ export class SubtitleDisplayComponent implements OnDestroy {
       this.isProgrammaticScrolling = false;
       this.checkIfScrolledAway();
     }, 450);
+
+    const containerHeight = container.clientHeight;
+    const elementTop = activeElement.offsetTop;
+    const elementHeight = activeElement.offsetHeight;
+    const targetScrollTop = elementTop - (containerHeight - elementHeight) / 2;
 
     container.scrollTo({
       top: Math.max(0, targetScrollTop),

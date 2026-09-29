@@ -183,32 +183,37 @@
                 </div>
                 }
                 } @else if (isFiltered()) {
-                <div class="empty-state empty-state--centered">
+                <div class="empty-state empty-state--centered empty-state--animate">
                     <div class="empty-state__icon-box">
                         <app-icon name="search" [size]="28" />
                     </div>
-                    <div class="empty-state__text" style="align-items: center; text-align: center;">
+                    <div class="empty-state__text">
                         <p class="empty-state__title">{{ i18n.t('playlist.empty.title') || 'No playlists found' }}</p>
                         <p class="empty-state__description">{{ i18n.t('playlist.empty.hint') || 'Try adjusting your filters or search terms' }}</p>
                     </div>
-                    <button class="btn btn-secondary btn-sm" style="margin-top: var(--space-md);" (click)="clearFilters()">
+                    <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="clearFilters()">
                         <app-icon name="x" [size]="14" />
                         <span>{{ i18n.t('playlist.clearFilters') || 'Clear filters' }}</span>
                     </button>
                 </div>
                 } @else {
-                <div class="empty-state empty-state--centered">
+                <div class="empty-state empty-state--centered empty-state--animate">
                     <div class="empty-state__icon-box">
                         <app-icon name="list-video" [size]="28" />
                     </div>
-                    <div class="empty-state__text" style="align-items: center; text-align: center;">
+                    <div class="empty-state__text">
                         <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedTitle') || 'No featured playlists') : i18n.t('playlist.empty.communityTitle')) }}</p>
                         <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedHint') || 'Check back later for staff-picked playlists') : i18n.t('playlist.empty.communityHint')) }}</p>
                     </div>
                     @if (view() === 'my') {
-                    <button class="btn btn-primary btn-sm" style="margin-top: var(--space-md);" (click)="showCreateDialog.set(true)">
+                    <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="showCreateDialog.set(true)">
                         <app-icon name="plus" [size]="14" />
                         <span>{{ i18n.t('playlist.newPlaylist') }}</span>
+                    </button>
+                    } @else {
+                    <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="onExploreVideos()">
+                        <app-icon name="video" [size]="14" />
+                        <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
                     </button>
                     }
                 </div>
@@ -364,9 +369,10 @@
                         <app-icon name="video" [size]="28" />
                     </div>
                     <div class="empty-state__text">
+                        <p class="empty-state__title">{{ i18n.t('playlist.empty.noVideosTitle') || 'No videos yet' }}</p>
                         <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
                     </div>
-                    <button type="button" class="btn btn-primary btn-sm" (click)="onExploreVideos()">
+                    <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="onExploreVideos()">
                         <app-icon name="video" [size]="14" />
                         <span>{{ i18n.t('playlist.discoverVideos') }}</span>
                     </button>
@@ -483,9 +489,11 @@
 </div>
 
 <!-- Compact Anchored Dropdown Menu (Replaces giant modal on desktop & mobile) -->
-@if (menuOpen() && selectedPlaylist(); as p) {
-<div class="dropdown-backdrop" (click)="closeMenu()"></div>
-<div class="playlist-dropdown-menu" [style.top.px]="menuPosition().top" [style.left.px]="menuPosition().left">
+@if (selectedPlaylist(); as p) {
+<div class="playlist-dropdown-menu"
+     popover="auto"
+     #menuPopover
+     (toggle)="onMenuToggle($event)">
     @if (p.visibility !== 'private') {
     <button class="dropdown-item" (click)="onSharePlaylist()">
         <app-icon name="share" [size]="16" />

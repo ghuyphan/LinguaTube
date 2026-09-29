@@ -126,8 +126,8 @@ export class CommandPaletteComponent implements OnDestroy {
   });
 
   private urlInputRef = viewChild<ElementRef<HTMLInputElement>>('urlInput');
-  private shakeTimeoutId?: ReturnType<typeof setTimeout>;
   private isLocked = false;
+  private pendingSubmittedId: string | null = null;
 
   constructor() {
     effect(() => {
@@ -139,9 +139,9 @@ export class CommandPaletteComponent implements OnDestroy {
           }
           this.isClosing.set(false);
           this.resetError();
-          setTimeout(() => {
+          requestAnimationFrame(() => {
             this.urlInputRef()?.nativeElement?.focus();
-          }, 50);
+          });
         }
       } else {
         if (this.isLocked) {
@@ -152,7 +152,12 @@ export class CommandPaletteComponent implements OnDestroy {
     });
   }
 
+  private closingTimer?: ReturnType<typeof setTimeout>;
+
   ngOnDestroy(): void {
+    if (this.closingTimer) {
+      clearTimeout(this.closingTimer);
+    }
     if (this.isLocked) {
       this.bodyScroll.unlock();
       this.isLocked = false;
@@ -166,13 +171,39 @@ export class CommandPaletteComponent implements OnDestroy {
   }
 
   close(): void {
+    this.startClosing(null);
+  }
+
+  onOverlayAnimationEnd(event: AnimationEvent): void {
+    if (this.isClosing() && event.target === event.currentTarget) {
+      if (this.closingTimer) {
+        clearTimeout(this.closingTimer);
+      }
+      this.finalizeClose();
+    }
+  }
+
+  private startClosing(submittedId: string | null): void {
+    this.pendingSubmittedId = submittedId;
     this.isClosing.set(true);
-    setTimeout(() => {
-      this.isClosing.set(false);
-      this.url.set('');
-      this.resetError();
+    if (this.closingTimer) {
+      clearTimeout(this.closingTimer);
+    }
+    this.closingTimer = setTimeout(() => this.finalizeClose(), 200);
+  }
+
+  private finalizeClose(): void {
+    if (!this.isClosing()) return;
+    this.isClosing.set(false);
+    this.url.set('');
+    this.resetError();
+    const id = this.pendingSubmittedId;
+    this.pendingSubmittedId = null;
+    if (id) {
+      this.submitted.emit(id);
+    } else {
       this.closed.emit();
-    }, 140);
+    }
   }
 
   clearInput(): void {
@@ -253,36 +284,24 @@ export class CommandPaletteComponent implements OnDestroy {
       return;
     }
 
-    const id = videoId;
-    this.isClosing.set(true);
-    setTimeout(() => {
-      this.isClosing.set(false);
-      this.url.set('');
-      this.resetError();
-      this.submitted.emit(id);
-    }, 140);
+    this.startClosing(videoId);
+  }
+
+  onShakeAnimationEnd(event: AnimationEvent): void {
+    if (event.animationName === 'shakeBar') {
+      this.shakeError.set(false);
+      this.hasError.set(false);
+    }
   }
 
   private triggerError(message: string): void {
     this.toast.error(message);
     this.hasError.set(true);
     this.shakeError.set(true);
-
-    if (this.shakeTimeoutId) {
-      clearTimeout(this.shakeTimeoutId);
-    }
-    this.shakeTimeoutId = setTimeout(() => {
-      this.shakeError.set(false);
-      this.hasError.set(false);
-    }, 450);
   }
 
   private resetError(): void {
     this.hasError.set(false);
     this.shakeError.set(false);
-    if (this.shakeTimeoutId) {
-      clearTimeout(this.shakeTimeoutId);
-      this.shakeTimeoutId = undefined;
-    }
   }
 }

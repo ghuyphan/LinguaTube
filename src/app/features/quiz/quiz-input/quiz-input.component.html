@@ -32,7 +32,7 @@
                 </div>
             </div>
             } @else {
-            <div class="input-wrapper quiz-fade-in" [class.is-shake]="isShake()">
+            <div class="input-wrapper quiz-fade-in" [class.is-shake]="isShake()" (animationend)="onShakeAnimationEnd($event)">
                 @if (quiz.questionState() === 'failed') {
                 <!-- Clean two-section comparison -->
                 <div class="comparison-display">

@@ -18,7 +18,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(withInterceptors([authInterceptor, timeoutInterceptor, cacheInterceptor])),
     provideRouter(
       routes,
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
+      withInMemoryScrolling({ scrollPositionRestoration: 'disabled', anchorScrolling: 'enabled' })
     ),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),

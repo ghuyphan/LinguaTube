@@ -3,6 +3,8 @@ import {
     Achievement,
     AchievementCategory,
     AchievementTier,
+    LevelTier,
+    LevelConfig,
     Mission
 } from '../../models/gamification.model';
 import { IconName } from '../../shared/components/icon/icon.component';
@@ -27,39 +29,64 @@ interface AchievementDefinition {
 
 const ACHIEVEMENT_CATALOG: AchievementDefinition[] = [
     // Immersion (Video watching)
-    { id: 'watch_1', titleKey: 'achievements.watch1.title', descriptionKey: 'achievements.watch1.desc', category: 'immersion', tier: 'bronze', icon: 'play-circle', target: 1, xpReward: 25 },
-    { id: 'watch_5', titleKey: 'achievements.watch5.title', descriptionKey: 'achievements.watch5.desc', category: 'immersion', tier: 'bronze', icon: 'video', target: 5, xpReward: 50 },
-    { id: 'watch_25', titleKey: 'achievements.watch25.title', descriptionKey: 'achievements.watch25.desc', category: 'immersion', tier: 'silver', icon: 'play-circle-filled', target: 25, xpReward: 150 },
-    { id: 'watch_100', titleKey: 'achievements.watch100.title', descriptionKey: 'achievements.watch100.desc', category: 'immersion', tier: 'gold', icon: 'medal', target: 100, xpReward: 500 },
+    { id: 'watch_1', titleKey: 'achievements.watch1.title', descriptionKey: 'achievements.watch1.desc', category: 'immersion', tier: 'bronze', icon: 'sprout', target: 1, xpReward: 25 },
+    { id: 'watch_5', titleKey: 'achievements.watch5.title', descriptionKey: 'achievements.watch5.desc', category: 'immersion', tier: 'bronze', icon: 'film-strip', target: 5, xpReward: 50 },
+    { id: 'watch_25', titleKey: 'achievements.watch25.title', descriptionKey: 'achievements.watch25.desc', category: 'immersion', tier: 'silver', icon: 'clapperboard', target: 25, xpReward: 150 },
+    { id: 'watch_100', titleKey: 'achievements.watch100.title', descriptionKey: 'achievements.watch100.desc', category: 'immersion', tier: 'gold', icon: 'film-projector', target: 100, xpReward: 500 },
 
     // Vocabulary (Sentence Mining)
-    { id: 'vocab_1', titleKey: 'achievements.vocab1.title', descriptionKey: 'achievements.vocab1.desc', category: 'vocabulary', tier: 'bronze', icon: 'bookmark', target: 1, xpReward: 15 },
-    { id: 'vocab_25', titleKey: 'achievements.vocab25.title', descriptionKey: 'achievements.vocab25.desc', category: 'vocabulary', tier: 'bronze', icon: 'layers', target: 25, xpReward: 50 },
-    { id: 'vocab_100', titleKey: 'achievements.vocab100.title', descriptionKey: 'achievements.vocab100.desc', category: 'vocabulary', tier: 'silver', icon: 'box', target: 100, xpReward: 200 },
-    { id: 'vocab_500', titleKey: 'achievements.vocab500.title', descriptionKey: 'achievements.vocab500.desc', category: 'vocabulary', tier: 'gold', icon: 'treasure-chest', target: 500, xpReward: 600 },
-    { id: 'vocab_master_10', titleKey: 'achievements.vocabMaster10.title', descriptionKey: 'achievements.vocabMaster10.desc', category: 'vocabulary', tier: 'silver', icon: 'ribbon-shield', target: 10, xpReward: 100 },
+    { id: 'vocab_1', titleKey: 'achievements.vocab1.title', descriptionKey: 'achievements.vocab1.desc', category: 'vocabulary', tier: 'bronze', icon: 'miner', target: 1, xpReward: 15 },
+    { id: 'vocab_25', titleKey: 'achievements.vocab25.title', descriptionKey: 'achievements.vocab25.desc', category: 'vocabulary', tier: 'bronze', icon: 'stone-block', target: 25, xpReward: 50 },
+    { id: 'vocab_100', titleKey: 'achievements.vocab100.title', descriptionKey: 'achievements.vocab100.desc', category: 'vocabulary', tier: 'silver', icon: 'gems', target: 100, xpReward: 200 },
+    { id: 'vocab_500', titleKey: 'achievements.vocab500.title', descriptionKey: 'achievements.vocab500.desc', category: 'vocabulary', tier: 'gold', icon: 'spell-book', target: 500, xpReward: 600 },
+    { id: 'vocab_master_10', titleKey: 'achievements.vocabMaster10.title', descriptionKey: 'achievements.vocabMaster10.desc', category: 'vocabulary', tier: 'silver', icon: 'crystal-ball', target: 10, xpReward: 100 },
 
     // Daily Streaks
-    { id: 'streak_3', titleKey: 'achievements.streak3.title', descriptionKey: 'achievements.streak3.desc', category: 'streak', tier: 'bronze', icon: 'sparkles', target: 3, xpReward: 30 },
+    { id: 'streak_3', titleKey: 'achievements.streak3.title', descriptionKey: 'achievements.streak3.desc', category: 'streak', tier: 'bronze', icon: 'flint-spark', target: 3, xpReward: 30 },
     { id: 'streak_7', titleKey: 'achievements.streak7.title', descriptionKey: 'achievements.streak7.desc', category: 'streak', tier: 'bronze', icon: 'fire', target: 7, xpReward: 70 },
-    { id: 'streak_30', titleKey: 'achievements.streak30.title', descriptionKey: 'achievements.streak30.desc', category: 'streak', tier: 'gold', icon: 'sun', target: 30, xpReward: 300 },
-    { id: 'streak_100', titleKey: 'achievements.streak100.title', descriptionKey: 'achievements.streak100.desc', category: 'streak', tier: 'diamond', icon: 'diamond', target: 100, xpReward: 1000 },
+    { id: 'streak_30', titleKey: 'achievements.streak30.title', descriptionKey: 'achievements.streak30.desc', category: 'streak', tier: 'gold', icon: 'campfire', target: 30, xpReward: 300 },
+    { id: 'streak_100', titleKey: 'achievements.streak100.title', descriptionKey: 'achievements.streak100.desc', category: 'streak', tier: 'diamond', icon: 'egyptian-bird', target: 100, xpReward: 1000 },
 
     // Study & Flashcards
-    { id: 'srs_10', titleKey: 'achievements.srs10.title', descriptionKey: 'achievements.srs10.desc', category: 'srs', tier: 'bronze', icon: 'graduation-cap', target: 10, xpReward: 50 },
-    { id: 'srs_50', titleKey: 'achievements.srs50.title', descriptionKey: 'achievements.srs50.desc', category: 'srs', tier: 'silver', icon: 'brain', target: 50, xpReward: 150 },
-    { id: 'srs_200', titleKey: 'achievements.srs200.title', descriptionKey: 'achievements.srs200.desc', category: 'srs', tier: 'gold', icon: 'cards', target: 200, xpReward: 500 },
+    { id: 'srs_10', titleKey: 'achievements.srs10.title', descriptionKey: 'achievements.srs10.desc', category: 'srs', tier: 'bronze', icon: 'card-draw', target: 10, xpReward: 50 },
+    { id: 'srs_50', titleKey: 'achievements.srs50.title', descriptionKey: 'achievements.srs50.desc', category: 'srs', tier: 'silver', icon: 'brainstorm', target: 50, xpReward: 150 },
+    { id: 'srs_200', titleKey: 'achievements.srs200.title', descriptionKey: 'achievements.srs200.desc', category: 'srs', tier: 'gold', icon: 'anvil', target: 200, xpReward: 500 },
 
     // Quizzes
-    { id: 'quiz_1', titleKey: 'achievements.quiz1.title', descriptionKey: 'achievements.quiz1.desc', category: 'quiz', tier: 'bronze', icon: 'templar-shield', target: 1, xpReward: 20 },
-    { id: 'quiz_10', titleKey: 'achievements.quiz10.title', descriptionKey: 'achievements.quiz10.desc', category: 'quiz', tier: 'silver', icon: 'target', target: 10, xpReward: 100 },
-    { id: 'quiz_50', titleKey: 'achievements.quiz50.title', descriptionKey: 'achievements.quiz50.desc', category: 'quiz', tier: 'gold', icon: 'laurel-crown', target: 50, xpReward: 400 },
+    { id: 'quiz_1', titleKey: 'achievements.quiz1.title', descriptionKey: 'achievements.quiz1.desc', category: 'quiz', tier: 'bronze', icon: 'sound-waves', target: 1, xpReward: 20 },
+    { id: 'quiz_10', titleKey: 'achievements.quiz10.title', descriptionKey: 'achievements.quiz10.desc', category: 'quiz', tier: 'silver', icon: 'magnifying-glass', target: 10, xpReward: 100 },
+    { id: 'quiz_50', titleKey: 'achievements.quiz50.title', descriptionKey: 'achievements.quiz50.desc', category: 'quiz', tier: 'gold', icon: 'laurels-trophy', target: 50, xpReward: 400 },
+];
+
+export const LEVEL_CONFIGS: LevelConfig[] = [
+    { level: 1,  titleKey: 'gamification.rank1',  tier: 'stone',       icon: 'cracked-shield' },
+    { level: 2,  titleKey: 'gamification.rank2',  tier: 'bronze',      icon: 'sound-waves' },
+    { level: 3,  titleKey: 'gamification.rank3',  tier: 'silver',      icon: 'quill-ink' },
+    { level: 4,  titleKey: 'gamification.rank4',  tier: 'gold',        icon: 'ribbon-shield' },
+    { level: 5,  titleKey: 'gamification.rank5',  tier: 'platinum',    icon: 'broadsword' },
+    { level: 6,  titleKey: 'gamification.rank6',  tier: 'emerald',     icon: 'compass' },
+    { level: 7,  titleKey: 'gamification.rank7',  tier: 'diamond',     icon: 'gems' },
+    { level: 8,  titleKey: 'gamification.rank8',  tier: 'master',      icon: 'spell-book' },
+    { level: 9,  titleKey: 'gamification.rank9',  tier: 'grandmaster', icon: 'laurel-crown' },
+    { level: 10, titleKey: 'gamification.rank10', tier: 'mythic',      icon: 'imperial-crown' },
 ];
 
 @Injectable({
     providedIn: 'root'
 })
 export class GamificationService {
+    static getLevelConfig(level: number): LevelConfig {
+        const clamped = Math.min(Math.max(1, Math.floor(level || 1)), 10);
+        return LEVEL_CONFIGS[clamped - 1];
+    }
+
+    static getLevelIcon(level: number): IconName {
+        return GamificationService.getLevelConfig(level).icon;
+    }
+
+    static getLevelTier(level: number): LevelTier {
+        return GamificationService.getLevelConfig(level).tier;
+    }
     private repo = inject(OfflineGamificationRepository);
     private vocabRepo = inject(OfflineVocabularyRepository);
     private historyRepo = inject(OfflineHistoryRepository);
@@ -109,6 +136,12 @@ export class GamificationService {
         const xp = this.totalXP();
         return Math.max(1, Math.floor(Math.sqrt(xp / 100)) + 1);
     });
+
+    readonly userLevelIcon = computed<IconName>(() => GamificationService.getLevelIcon(this.userLevel()));
+    readonly userLevelTier = computed<LevelTier>(() => GamificationService.getLevelTier(this.userLevel()));
+    readonly userLevelConfig = computed<LevelConfig>(() => GamificationService.getLevelConfig(this.userLevel()));
+    readonly nextLevelIcon = computed<IconName>(() => GamificationService.getLevelIcon(this.userLevel() + 1));
+    readonly nextLevelTier = computed<LevelTier>(() => GamificationService.getLevelTier(this.userLevel() + 1));
 
     /**
      * Progress towards next level (0 to 100%)
@@ -204,7 +237,7 @@ export class GamificationService {
         // Level-up celebration
         if (newLevel > prevLevel) {
             const levelUpMsg = `${this.i18n.t('gamification.levelUp') || 'Level Up!'} 🎉 ${this.i18n.t('gamification.reachedLevel') || 'You reached Level'} ${newLevel}!`;
-            this.toast.show(levelUpMsg, { type: 'success', icon: 'trophy', duration: 4500 });
+            this.toast.show(levelUpMsg, { type: 'success', icon: GamificationService.getLevelIcon(newLevel), duration: 4500 });
         }
     }
 
@@ -260,7 +293,7 @@ export class GamificationService {
         for (const m of missions) {
             const title = this.i18n.t(m.titleKey) || m.id;
             const msg = `🎯 ${this.i18n.t('missions.missionCompleted') || 'Daily Mission Complete!'}: ${title} (+${m.xpReward} XP)`;
-            this.toast.show(msg, { type: 'success', icon: 'target', duration: 4000 });
+            this.toast.show(msg, { type: 'success', icon: 'scroll-unfurled', duration: 4000 });
         }
     }
 
@@ -309,7 +342,7 @@ export class GamificationService {
                     newlyNotified.push(ach.id);
                     const title = this.i18n.t(ach.titleKey) || ach.id;
                     const toastMsg = `🏆 ${this.i18n.t('gamification.badgeUnlocked') || 'Achievement Unlocked'}: ${title} (+${ach.xpReward} XP)`;
-                    this.toast.show(toastMsg, { type: 'success', icon: 'trophy', duration: 4000 });
+                    this.toast.show(toastMsg, { type: 'success', icon: 'laurel-crown', duration: 4000 });
                 }
             }
 

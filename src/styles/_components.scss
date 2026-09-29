@@ -1397,7 +1397,7 @@
 }
 
 /* ============================================
-   EMPTY STATES
+   EMPTY STATES (Modern Luminous Voca Design System)
    ============================================ */
 
 .empty-state {
@@ -1405,27 +1405,28 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: var(--space-md);
-    padding: var(--space-lg) var(--space-md);
+    gap: 1rem;
+    padding: 1.25rem 1rem;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .empty-state__icon-box {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: var(--bg-secondary);
+    background: var(--bg-surface);
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-bottom: var(--space-xs);
-}
+    margin: 0;
 
-.empty-state__icon-box app-icon,
-.empty-state__icon-box .empty-icon {
-    color: var(--text-muted);
+    app-icon,
+    .empty-icon {
+        color: var(--text-muted);
+    }
 }
 
 .empty-state__text {
@@ -1434,39 +1435,185 @@
     gap: 4px;
     align-items: flex-start;
     text-align: left;
+    margin: 0;
 }
 
 .empty-state__title {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.0625rem;
     color: var(--text-primary);
     margin: 0;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
 }
 
 .empty-state__description,
 .empty-state__hint {
-    font-size: 0.9375rem;
-    color: var(--text-muted);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .empty-state__action {
-    margin-top: var(--space-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    height: 36px;
+    padding: 0 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-pill);
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
-/* Centered variant */
+.empty-state__actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 0;
+
+    .empty-state__action {
+        margin: 0;
+    }
+}
+
+/* Centered variant - Unified, tightly grouped visual hierarchy */
 .empty-state--centered {
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
     margin: 0 auto;
+    padding: 2rem 1.25rem;
+    gap: 1rem;
+    max-width: 440px;
+
+    @media (max-width: 600px) {
+        padding: 1.5rem 1rem;
+        gap: 0.875rem;
+    }
+
+    .empty-state__icon-box {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 0;
+
+        app-icon,
+        .empty-icon {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .empty-state__text {
+        align-items: center;
+        text-align: center;
+        max-width: 360px;
+        gap: 0.375rem;
+        margin: 0;
+    }
+
+    .empty-state__title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        color: var(--text-primary);
+        line-height: 1.35;
+        text-wrap: balance;
+    }
+
+    .empty-state__description,
+    .empty-state__hint {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.55;
+        text-wrap: balance;
+    }
+
+    .empty-state__actions,
+    .empty-state__action {
+        margin: 0;
+        margin-top: 0.25rem;
+    }
 }
 
-.empty-state--centered .empty-state__text {
-    align-items: center;
-    text-align: center;
+/* Compact variant (for sidebars, drawers, dialogs, and constrained containers) */
+.empty-state--compact {
+    padding: 1rem 0.75rem;
+    gap: 0.75rem;
+    max-width: 300px;
+
+    .empty-state__icon-box {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0;
+
+        app-icon,
+        .empty-icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .empty-state__text {
+        gap: 2px;
+        max-width: 260px;
+    }
+
+    .empty-state__title {
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    .empty-state__description,
+    .empty-state__hint {
+        font-size: 0.8125rem;
+        line-height: 1.4;
+        color: var(--text-muted);
+    }
+
+    .empty-state__action {
+        height: 30px;
+        padding: 0 0.875rem;
+        font-size: 0.8125rem;
+        margin-top: 0.125rem;
+    }
+}
+
+/* Semantic icon box variants */
+.empty-state__icon-box--error {
+    background: rgba(var(--error-rgb, 239, 68, 68), 0.1);
+    border-color: rgba(var(--error-rgb, 239, 68, 68), 0.25);
+
+    app-icon,
+    .empty-icon {
+        color: var(--error, #ef4444);
+    }
+}
+
+.empty-state__icon-box--neutral {
+    background: var(--bg-surface);
+    border-color: var(--border-color);
+
+    app-icon,
+    .empty-icon {
+        color: var(--text-muted);
+    }
+}
+
+.empty-state__icon-box--accent {
+    background: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.1);
+    border-color: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.25);
+
+    app-icon,
+    .empty-icon {
+        color: var(--accent-primary);
+    }
 }
 
 /* Animation variant */
@@ -1477,7 +1624,7 @@
 @keyframes emptyStateIn {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(6px);
     }
 
     to {

@@ -6,8 +6,6 @@
         [class.current-subtitle--xlarge]="settings.settings().fontSize === 'xlarge'"
         [class.has-dual-subtitles]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())"
         [class.has-coachmark]="showCoachmark()"
-        [class.has-overflow-top]="hasOverflowTop()"
-        [class.has-overflow-bottom]="hasOverflowBottom()"
         [class.is-quiz-active]="quiz.isActive()">
 
         @if (quiz.isActive()) {
@@ -29,7 +27,7 @@
             </button>
         </div>
         }
-        <div class="current-subtitle__inner" #currentSubtitleInner (scroll)="onCurrentSubtitleScroll()" (wheel)="onCurrentSubtitleScroll()" (touchmove)="onCurrentSubtitleScroll()">
+        <div class="current-subtitle__inner" #currentSubtitleInner>
             @if (subtitles.currentCue(); as cue) {
             <!-- Centering wrapper - enables vertical centering for short content -->
             <div class="subtitle-center-wrapper">
@@ -343,12 +341,12 @@
             }
         </button>
 
-        <!-- Quiz Mode Toggle (Quiz Clipboard Check Icon) -->
+        <!-- Quiz Mode Toggle (RPG Crossed Swords Icon) -->
         <button type="button" class="ctrl-btn" [class.active]="quiz.isActive()" (click)="toggleQuizMode()"
             [attr.aria-pressed]="quiz.isActive()"
             [disabled]="subtitles.subtitles().length === 0"
             [title]="i18n.t('quiz.mode')">
-            <app-icon name="clipboard-check" [size]="15" />
+            <app-icon name="crossed-swords" [size]="15" />
             <span class="ctrl-label">{{ i18n.t('quiz.short') || 'Quiz' }}</span>
         </button>
 

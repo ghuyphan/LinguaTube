@@ -7,7 +7,7 @@
             [class.active]="currentTab() === 'missions'"
             (click)="setTab('missions')"
         >
-            <app-icon name="target" [size]="15" />
+            <app-icon name="scroll-unfurled" [size]="15" />
             <span>{{ i18n.t('missions.tabTitle') || 'Missions' }}</span>
         </button>
         <button
@@ -16,7 +16,7 @@
             [class.active]="currentTab() === 'achievements'"
             (click)="setTab('achievements')"
         >
-            <app-icon name="trophy" [size]="15" />
+            <app-icon name="laurel-crown" [size]="15" />
             <span>{{ i18n.t('gamification.achievements') || 'Achievements' }}</span>
         </button>
         <button
@@ -33,13 +33,16 @@
     @if (currentTab() === 'missions') {
         <!-- Missions Hero Section -->
         <div class="header-section">
-            <div class="achievements-hero-icon missions-hero-icon">
-                <app-icon name="target" [size]="38" class="hero-target" />
+            <div class="achievements-hero-icon missions-hero-icon quest-bounty-seal">
+                <app-icon name="scroll-unfurled" [size]="36" class="hero-scroll" />
             </div>
 
             <div class="title-group">
                 <div class="hero-level-badge">
-                    <span class="level-tag">Lv.{{ userLevel() }}</span>
+                    <div class="level-badge-rpg" [attr.data-tier]="gamification.userLevelTier()">
+                        <app-icon [name]="gamification.userLevelIcon()" [size]="13" />
+                        <span class="level-badge-rpg__val">Lv.{{ userLevel() }}</span>
+                    </div>
                     <h2 class="level-rank">{{ rankTitle() }}</h2>
                 </div>
                 <p class="hero-subtitle">
@@ -125,18 +128,31 @@
                         }
                     </div>
                 </div>
+            } @empty {
+                <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="check-circle" [size]="20" />
+                    </div>
+                    <div class="empty-state__text">
+                        <p class="empty-state__title">{{ i18n.t('study.allCaughtUp') }}</p>
+                        <p class="empty-state__hint">{{ i18n.t('missions.dailyChestDesc') }}</p>
+                    </div>
+                </div>
             }
         </div>
     } @else if (currentTab() === 'achievements') {
         <!-- Header / Hero Section (Aligned with Streak & AI Credits dialogs) -->
         <div class="header-section">
-            <div class="achievements-hero-icon">
-                <app-icon name="trophy" [size]="38" class="hero-trophy" />
+            <div class="achievements-hero-icon rpg-rank-crest" [attr.data-tier]="gamification.userLevelTier()">
+                <app-icon [name]="gamification.userLevelIcon()" [size]="36" class="hero-crest-icon" />
             </div>
 
             <div class="title-group">
                 <div class="hero-level-badge">
-                    <span class="level-tag">Lv.{{ userLevel() }}</span>
+                    <div class="level-badge-rpg" [attr.data-tier]="gamification.userLevelTier()">
+                        <app-icon [name]="gamification.userLevelIcon()" [size]="13" />
+                        <span class="level-badge-rpg__val">Lv.{{ userLevel() }}</span>
+                    </div>
                     <h2 class="level-rank">{{ rankTitle() }}</h2>
                 </div>
                 <p class="hero-subtitle">
@@ -147,10 +163,13 @@
             </div>
 
             <!-- Level XP Progress Bar Card -->
-            <div class="level-progress-card">
+            <div class="level-progress-card" [attr.data-tier]="gamification.userLevelTier()">
                 <div class="level-progress-meta">
                     <span class="progress-hint">{{ progressToNext() }}% {{ i18n.t('gamification.toNextLevel') || 'to next level' }}</span>
-                    <span class="progress-target">Lv.{{ userLevel() + 1 }}</span>
+                    <div class="next-level-target">
+                        <span>Lv.{{ userLevel() + 1 }}</span>
+                        <app-icon [name]="gamification.nextLevelIcon()" [size]="13" />
+                    </div>
                 </div>
                 <div class="level-progress-track">
                     <div class="level-progress-fill" [style.width.%]="progressToNext()"></div>
@@ -215,6 +234,16 @@
                     </div>
                 </div>
             </div>
+            } @empty {
+                <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
+                    <div class="empty-state__icon-box">
+                        <app-icon name="trophy" [size]="20" />
+                    </div>
+                    <div class="empty-state__text">
+                        <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') || 'No achievements found' }}</p>
+                        <p class="empty-state__hint">{{ i18n.t('playlist.empty.hint') || 'Try selecting another category' }}</p>
+                    </div>
+                </div>
             }
         </div>
     } @else {
@@ -274,7 +303,7 @@
                         <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (silver.weeklyXp ?? silver.xp) : silver.xp).toLocaleString() }} XP</span>
                         <div class="podium-pillar podium-pillar--silver">
                             <span class="podium-rank-num">2</span>
-                            <span class="podium-level-tag">Lv.{{ silver.level }}</span>
+                            <span class="podium-level-tag" [attr.data-tier]="getLevelTier(silver.level)">Lv.{{ silver.level }}</span>
                         </div>
                     } @else {
                         <div class="podium-avatar-wrap">
@@ -308,7 +337,7 @@
                         <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (gold.weeklyXp ?? gold.xp) : gold.xp).toLocaleString() }} XP</span>
                         <div class="podium-pillar podium-pillar--gold">
                             <span class="podium-rank-num">1</span>
-                            <span class="podium-level-tag">Lv.{{ gold.level }}</span>
+                            <span class="podium-level-tag" [attr.data-tier]="getLevelTier(gold.level)">Lv.{{ gold.level }}</span>
                         </div>
                     } @else {
                         <div class="podium-avatar-wrap">
@@ -342,7 +371,7 @@
                         <span class="podium-xp">{{ (selectedPeriod() === 'weekly' ? (bronze.weeklyXp ?? bronze.xp) : bronze.xp).toLocaleString() }} XP</span>
                         <div class="podium-pillar podium-pillar--bronze">
                             <span class="podium-rank-num">3</span>
-                            <span class="podium-level-tag">Lv.{{ bronze.level }}</span>
+                            <span class="podium-level-tag" [attr.data-tier]="getLevelTier(bronze.level)">Lv.{{ bronze.level }}</span>
                         </div>
                     } @else {
                         <div class="podium-avatar-wrap">
@@ -381,7 +410,7 @@
                                 }
                             </div>
                             <div class="learner-meta">
-                                <span class="learner-level-badge">Lv.{{ learner.level }}</span>
+                                <span class="learner-level-badge" [attr.data-tier]="getLevelTier(learner.level)">Lv.{{ learner.level }}</span>
                                 @if (learner.streak > 0) {
                                     <span class="learner-streak">🔥 {{ learner.streak }}</span>
                                 }
@@ -409,7 +438,10 @@
                         </div>
                         <div class="my-details">
                             <span class="my-name">{{ i18n.t('leaderboard.yourRank') || 'Your Rank' }}</span>
-                            <span class="my-sub">Lv.{{ me.level }} • 🔥 {{ me.streak }}d</span>
+                            <span class="my-sub">
+                                <span class="learner-level-badge" [attr.data-tier]="gamification.userLevelTier()">Lv.{{ me.level }}</span>
+                                • 🔥 {{ me.streak }}d
+                            </span>
                         </div>
                     </div>
                     <div class="my-rank-right">

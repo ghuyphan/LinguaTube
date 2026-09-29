@@ -23,7 +23,7 @@
             <span class="day-name">{{ day.day }}</span>
             <div class="day-circle" [class.active]="day.active" [class.is-today]="day.isToday && !day.active" [class.missed]="!day.active && !day.isToday && !day.isFuture" [class.future]="day.isFuture">
                 @if (day.active) {
-                <app-icon name="check" [size]="14" />
+                <app-icon name="fire" [size]="13" />
                 }
             </div>
         </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="stat-card stat-card--freeze">
             <div class="stat-icon-wrap stat-icon-wrap--freeze">
-                <app-icon name="snowflake" [size]="18" />
+                <app-icon name="ice-shield" [size]="18" />
             </div>
             <div class="stat-info">
                 <span class="stat-label">{{ i18n.t('streak.freezesRemaining') || 'Streak Freezes' }}</span>
@@ -60,7 +60,7 @@
                             [attr.title]="gamification.totalXP() < 150 ? (i18n.t('streak.insufficientXp') || 'Need 150 XP') : ((i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)')"
                             [attr.aria-label]="(i18n.t('streak.replenish') || 'Restore freeze') + ' (150 XP)'"
                         >
-                            <app-icon name="snowflake" [size]="12" />
+                            <app-icon name="ice-shield" [size]="12" />
                             <span>+1 (150 XP)</span>
                         </button>
                     }

@@ -66,7 +66,9 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 ## 3. Accessibility, Focus Management & Mobile Stability
 
 ### 3.1. Modal Focus Traps, Stacking & Dynamic Height Transitions (`BottomSheetComponent` & `VideoPlayerComponent`)
-- **Focus Cycling & Restoration**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet container. Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element (with fallbacks to `.cue-item--active, .subtitle-panel, main`) upon dismissal.
+- **Focus Cycling & Scroll-Safe Restoration**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet container. Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element safely using `{ preventScroll: true }` upon dismissal, preventing destructive scroll position resets to the top of the viewport.
+- **Scroll-Locking & Sticky Element Preservation**: Employs event-level scroll interception (`wheel` and `touchmove` outside active modal content) via `BodyScrollService` with `touch-action: none` on overlays. Completely prevents background scrolling while keeping `html` and `body` free of `overflow: hidden`, guaranteeing `position: sticky` headers and sidebars never disappear or break.
+- **Pure CSS Responsive Modal vs Sheet**: Desktop centered modal vs mobile bottom sheet presentation is governed entirely by SCSS `@media` queries (`@media (min-width: 769px) and (min-height: 501px)`), eliminating JavaScript window resize event subscriptions and `isMobile` signal.
 - **Multi-Sheet Stacking & Accessibility Isolation**: When sheets stack (e.g. Settings Sheet -> Streak Dialog -> Upgrade Sheet), `BottomSheetService.isTopmost(sheetId)` coordinates stacking order. Non-topmost background sheets receive `[attr.inert]=""` and `[attr.aria-hidden]="true"`, completely preventing background tab navigation and screen-reader leakage without tearing down modal state.
 - **Race-Free Idempotent Dismissal**: Dismissal calls (`close()`, backdrop click, drag dismiss) track an explicit timeout ID (`closeTimeoutId`), cancelling pending timers and guarding `unregister(id)` against duplicate execution.
 - **Safe Area & Virtual Keyboard Clamping**: Max height is strictly clamped via `min(var(--max-height, 85vh), calc(var(--app-height, 100dvh) - 16px))`, preventing virtual keyboards from pushing sheet action headers off-screen. Bottom padding on `.sheet-content` is zeroed when the inner content wrapper supplies safe-area insets, eliminating unsightly 68px double-padding stacking on iOS devices.
@@ -82,7 +84,7 @@ readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 
 ### 3.2. WAI-ARIA Slider Navigation & Interactive State Controls
 - **Accessible Progress Bar (`ProgressBarComponent`)**: Configured with `role="slider"`, `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="duration()"`, and formatted `[attr.aria-valuetext]`. Supports `ArrowLeft`/`ArrowRight` (5s seek) and `Home`/`End` (0s / end seek).
-- **Accessible Volume Slider (`VideoBottomBarComponent`)**: Fully compliant `role="slider"` with `[attr.aria-valuenow]`, `[attr.aria-valuemin]="0"`, `[attr.aria-valuemax]="100"`, and `[attr.aria-label]`. Global `document` mouse/touch dragging listeners are cleanly torn down via dedicated cleanup callbacks to prevent memory leaks and listener accumulation.
+- **Accessible Volume Range Slider (`VideoBottomBarComponent`)**: Employs standard HTML5 `<input type="range">` styled with CSS `linear-gradient` tracks and vendor thumb pseudo-elements. Provides built-in native keyboard accessibility (`ArrowUp`/`ArrowDown`/`PageUp`/`PageDown`/`Home`/`End`), screen-reader attributes, and pointer dragging directly from the browser engine, eliminating custom window dragging event listeners and bounding client rect math.
 - **Button Toggle States (`SubtitleDisplayComponent`)**: Subtitle utility buttons (`Loop Cue`, `Quiz Mode`, `Reading Mode`, `Grammar Highlights`) implement `[attr.aria-pressed]` reflecting active signal state to assistive tech.
 - **Screen Reader Skeletons (`role="status"`)**: Skeleton containers maintain `role="status"` and `aria-busy="true"` with visually-hidden fallback text (`<span class="sr-only">`), avoiding conflicting `aria-hidden="true"` attributes that would otherwise silence loading state announcements.
 - **Player Embed Error Fallback (`VideoPlayerComponent`)**: When videos restrict third-party embeds (YouTube error codes 101/150), an accessible alert banner (`role="alert"`) displays with informative guidance and an explicit "Watch on YouTube" action link, preventing silent video stall.
@@ -196,7 +198,7 @@ graph TD
   - `CenterControlsComponent`: Play/pause toggle, $\pm 5$s seek buttons with smooth animation.
   - `ProgressBarComponent`: Custom slider with buffered progress indicator, hover time preview, and cue segment markers.
   - `VideoBottomBarComponent`: Time display, dual-subtitles toggle, audio volume hover slider (desktop-only), settings trigger, and fullscreen trigger.
-    - **Desktop & Mobile Standard Hierarchy**: CC button is hidden in standard (non-fullscreen) view on both desktop and mobile to avoid redundancy with the Subtitle Tracks button in the header. Playback speed is accessed directly inside the Player Settings menu (`settings`), keeping the bottom bar minimal and spacious.
+    - **Desktop & Mobile Standard Hierarchy**: CC button is hidden in standard (non-fullscreen) view on both desktop and mobile to avoid redundancy with the Subtitle Tracks button in the header. Playback speed is accessed directly inside the Player Settings menu (`settings`), keeping the bottom bar minimal and spacious. The desktop volume slider uses standard HTML5 `<input type="range">` with linear-gradient CSS track fill and vendor slider thumbs, eliminating manual mousemove/touch drag tracking and bounding box math.
     - **Fullscreen Mode**: In fullscreen mode, the bottom bar renders the dedicated CC button (`@if (isFullscreen())`) with dynamic `subtitles-ai` waveform icon and diamond bar indicator when an AI track is active.
     - **Player Settings / More Menu**: Contains Playback Speed (with current speed badge, e.g. `1x`), Dual Subtitles language selection, Reading Display (Furigana / Pinyin / Romaji with typography icon `type`), Grammar Mode toggle, Sleep Timer, and Save to Playlist.
     - **Normalized Optical Icon Sizing & Indicators**: Normalized SVG icons (`languages`, `settings`, `maximize`) to uniform `stroke-width: 1.5`, aligned `.time-display` to 36px height matching control buttons, and refined active Dual-Sub indicator pill with non-colliding spacing.
@@ -217,7 +219,7 @@ graph TD
     - **Cinematic Immersion & Subtle Grammar Accents**: Words render cleanly on the translucent backdrop. Grammar tokens in fullscreen use a subtle, faint dotted underline without any background box or solid borders, preserving cinematic reading flow while remaining interactive.
 - **Interaction Services**:
   - `GestureHandlerService`: Handles mobile touch gestures (single tap for controls toggle with zero-latency dismissal when controls are showing, double-tap left/right wings for $\pm 10$s seek with feedback pill & ripple, horizontal swipe for scrubbing preview, and long-press for $2\times$ playback speed).
-  - `KeyboardShortcutService`: Centralized, mobile-gated hotkey event dispatcher running outside `NgZone` (`NgZone.runOutsideAngular`) with zero listeners on touch/mobile devices (`(pointer: coarse) and (hover: none)` or viewport width $\le 768\text{px}$). Dispatches global hotkeys (`Cmd/Ctrl+K` for command palette), video playback controls (`Space`, `k`, `j`/`l` $\pm 10$s seek, `Left`/`Right` $\pm 5$s fine seek, `Up`/`Down` volume, `f` fullscreen, `m` mute, `c` subtitles, `d` dual subtitles, `v` subtitle position, `[`/`]` subtitle font size, `Shift+s` playback speed), `Shift+L` cue looping, and flashcard review hotkeys (`Space`/`Enter` to flip card, `1`–`4` for SRS rating, `R` to replay audio pronunciation). `VideoKeyboardShortcutService` re-exports it for backward compatibility.
+  - `KeyboardShortcutService`: Centralized hotkey event dispatcher running outside `NgZone` (`NgZone.runOutsideAngular`) with zero window resize polling. Dispatches global hotkeys (`Cmd/Ctrl+K` for command palette), video playback controls (`Space`, `k`, `j`/`l` $\pm 10$s seek, `Left`/`Right` $\pm 5$s fine seek, `Up`/`Down` volume, `f` fullscreen, `m` mute, `c` subtitles, `d` dual subtitles, `v` subtitle position, `[`/`]` subtitle font size, `Shift+s` playback speed), `Shift+L` cue looping, and flashcard review hotkeys (`Space`/`Enter` to flip card, `1`–`4` for SRS rating, `R` to replay audio pronunciation). `VideoKeyboardShortcutService` re-exports it for backward compatibility.
 
 #### SubtitleDisplayComponent (`subtitle-display/`)
 - Synchronizes with video playback via a high-performance $O(\log n)$ binary search (`findActiveCue`).
@@ -230,7 +232,7 @@ graph TD
   - **English Typographic Refinement & Natural Reading Flow**: English subtitles (`.text-en`) bypass CJK ruby-inflated line-heights (`2.0`–`2.1`), operating at a natural, legible reading rhythm (`1.48` on desktop, `1.44` on mobile). Word tokens feature unified, balanced interactive chip affordances (`rgba(accent, 0.07)` in light mode, `0.12` in dark mode) with compact padding (`2px 5px`). Grammar patterns stand out prominently with a distinct mint teal background (`rgba(color-grammar, 0.16)`), border, and underline. Trailing punctuation automatically pulls flush against preceding tokens with negative margin compensation (`.word + .punctuation { margin-left: -3px; }`), eliminating artificial punctuation gaps while preserving full click-to-lookup interactivity.
 - **Stable Card Height & Zero-Shift Typography**:
   - The `.current-subtitle` container maintains a rock-solid, stable height (`9.5rem` on desktop, `11.5rem` with dual subtitles; `8.5rem` / `10.5rem` on mobile) eliminating vertical layout jitter as dialogue shifts between 1-line and multi-line cues.
-  - Inner container `.current-subtitle__inner` uses `flex: 1; min-height: 0; overflow-y: auto` with modern floating pill scrollbars.
+  - Inner container `.current-subtitle__inner` uses `flex: 1; min-height: 0; overflow-y: auto` with modern floating pill scrollbars and pure CSS scroll shadows (`background-attachment: local, local, scroll, scroll`), eliminating JavaScript scroll/touch listeners and overflow indicator signals.
   - Bulletproof vertical centering via `margin: auto 0` on `.subtitle-center-wrapper`: short cues center automatically, while long cues naturally anchor to the top and scroll downward with zero top-clipping.
   - **Dual Subtitle Layout Stabilization (Zero-CLS Architecture)**:
     - Pre-allocates a fixed two-line bounding box for `.subtitle-translation-wrapper` (`calc(font-size * 2.8 + 6px)`) across normal, small, large, and xlarge font sizes.
@@ -247,7 +249,7 @@ graph TD
   - Active cues feature a refined, calm "spotlight" highlight: soft ambient accent wash (`rgba(var(--accent-primary-rgb), 0.07)`), an elegant 3px vertical accent indicator bar, crisp high-contrast typography, and a clean monospace timestamp without heavy colored pill borders or drop shadows.
   - Inactive dialogue maintains comfortable readable opacity (0.65 for upcoming, 0.45 for past), eliminating visual clutter while preserving effortless legibility.
   - Compact padding (`padding: 6px 0;`) ensures the dialogue begins cleanly at the top of the transcript without dead empty space.
-  - Continuous fluid auto-scrolling gently glides the active cue to the focal center (~46% from top) on every cue advance via `requestAnimationFrame` without jarring multi-line jumps.
+  - Continuous fluid auto-scrolling gently glides the active cue to the focal center on every cue advance via native `element.scrollIntoView({ behavior: 'smooth', block: 'center' })` without manual offset math.
   - If the learner scrolls away to inspect other cues (detected via wheel or touch), auto-scroll pauses and an elegant floating `[ ⏱ Jump to current ]` pill appears; clicking it smoothly centers the active cue and re-engages synchronization.
 - **5 Reading Display Modes**:
   - `native`: Original script.
@@ -324,10 +326,12 @@ graph TD
   - Interactive level badge opening an `<app-option-picker>` bottom sheet to directly select or change mastery status.
   - Shift-free mobile layout with fixed badge width, top-anchored action group, and automatic suppression of redundant reading chips when identical to surface word.
   - Inline authentic dictionary audio playback button on every card.
+  - **Native Animation Synchronization**: Synchronizes word deletion state removal with the CSS `listItemOut` keyframe animation via native `(animationend)` event listener rather than arbitrary `setTimeout` delays.
   - Search filtering and JSON export/import.
 - **`StudyPageComponent` & `StudyModeComponent`**:
   - Implements the **SuperMemo-2 (SM-2)** spaced repetition flashcard review deck.
   - **Unified Panel & Design Hierarchy**: Employs the standardized `.card.study-panel` structure matching `dict-panel`, `playlist-panel`, and `history-panel` with consistent `var(--space-md)` padding and responsive `var(--space-sm)` on mobile.
+  - **CSS Conic-Gradient Progress Ring**: Employs a pure CSS `conic-gradient(var(--success) calc(var(--progress, 0) * 1%), var(--bg-surface) calc(var(--progress, 0) * 1%))` ring with a radial-gradient mask (`mask: radial-gradient(...)`), completely eliminating $2\pi r$ trigonometry math and SVG strokeDashoffset attributes in TypeScript.
   - **Panel Header**: Features clean graduation cap icon, title, and streak counter badge (`.badge.badge--warning`), keeping the header focused and distraction-free.
   - **Streamlined Practice Launcher**: Direct 1-view launcher eliminating redundant queue tabs, letting learners immediately pick decks and launch flashcards without clutter.
   - **Compact Due Alert**: When cards are due today, displays an alert banner with clock icon, due count, and a 1-click "Review Due Now" button.
@@ -346,6 +350,7 @@ graph TD
 - **`PlaylistPageComponent`**:
   - Lists user-created custom playlists alongside curated Community Playlists with responsive view tabs (`Community`, `Featured`, `My Playlists`), language filtering, and difficulty level filtering (`Beginner`, `Elementary`, `Intermediate`, `Upper Intermediate`, `Advanced`).
   - **Structured Two-Tier Toolbar**: Two-row hierarchy separating navigation tabs and primary CTA (`+ Create playlist`) on the top row from search input and filter chips (`Language`, `Level`) on the second row, preventing text truncation or button clipping.
+  - **Native Popover API & CSS Anchor Positioning**: The card 3-dots action menu uses the modern HTML Popover API (`popover="auto"`) and CSS Anchor Positioning (`position-anchor: --playlist-menu-anchor; position-area: bottom span-left; position-try-fallbacks: flip-block`), eliminating manual coordinate boundary clamping against viewport bounds and removing fullscreen backdrop overlay elements in favor of native light-dismiss.
   - **Difficulty Level Badges**: Each playlist card displays a difficulty level badge (`[JLPT N5]`, `[HSK 2]`, etc.) resolved from explicit settings, video cues, constituent videos, or target language defaults.
   - **Curated / Featured Discovery ("Nổi bật")**: Surfaces playlists flagged with `is_featured: true` by moderators, with custom empty states for curated, community, and personal views.
   - **Playlist Search & Video Management**: Integrated real-time search filtering across title, description, and author, plus track removal (`trash-2`) for owned playlists.
@@ -356,6 +361,7 @@ graph TD
   - **Contextual Empty States**: Intelligently differentiates between zero watch history (with a direct "Browse videos" CTA navigating to `/video`) and active filters yielding zero matches (with a 1-tap "Clear filters" action resetting search, language, and level filters).
   - **Deduplicated Clear History Actions**: Removed redundant "Clear all" buttons in desktop overview cards, consolidating clear history into the single contextual toolbar action.
   - **History Search Bar & Filters**: Real-time toolbar search filtering items by video title or channel name, alongside language and proficiency level filtering.
+  - **Native Animation Synchronization**: Synchronizes video card removal and favorite heart pulse with CSS keyframes via native `(animationend)` event listeners rather than arbitrary `setTimeout` delays.
   - Features an in-progress **"Continue Learning" (Resume Hero Banner)** for one-tap resumption of unfinished study sessions.
   - Provides multi-language filtering pills (`All`, `JA`, `ZH`, `KO`, `EN`) and level picker via `OptionPickerComponent`.
   - Clear history confirmation dialog with explanatory warning text and instant Undo toast.
@@ -596,6 +602,13 @@ Voca uses a centralized SVG sprite system (`src/assets/icons/sprite.svg`) render
    - **`volume-1` vs `volume-2`**: `volume-1` renders a calibrated single sound wave arc for clear visual differentiation during audio pronunciation and volume adjustment.
    - **`subtitles-ai` vs `languages`**: `subtitles-ai` is drawn as a CC caption screen with a top-right sparkle badge, cleanly separating speech recognition from `languages` (`文A`) bilingual translation.
    - **Contextual Icon Accuracy**: Contexts where generic icons were previously overloaded have been strictly rationalized: `diamond` for Voca Premium and Diamond currency, `crown` for Voca Pro / Supporter tier, `fire` for all daily streak tiers, `search` for dictionary lookup buttons, and `trophy` for gamification XP milestones.
+6. **RPG Crests & Gamification System (Game-Icons.net, CC-BY 3.0)**:
+   - **Podium & Tournament Crests**: `laurel-crown` (1st place gold), `ribbon-shield` (2nd place silver), `templar-shield` (3rd place bronze), and `treasure-chest` (daily completion bounty).
+   - **All 19 Unique Achievement Crests**: Every achievement in `ACHIEVEMENT_CATALOG` features a dedicated Game-Icons symbol (`sprout`, `film-strip`, `clapperboard`, `film-projector`, `miner`, `stone-block`, `gems`, `spell-book`, `crystal-ball`, `flint-spark`, `campfire`, `egyptian-bird`, `card-draw`, `brainstorm`, `anvil`, `sound-waves`, `magnifying-glass`, `laurels-trophy`).
+   - **Daily Quests & Video Player Bar**: `quill-ink` (word mining), `scroll-unfurled` (dictionary sleuth), `crossed-swords` (comprehension test duel on video player bar).
+   - **Tactile SRS Rating Actions**: `cracked-shield` (Again), `roman-shield` (Hard), `broadsword` (Good), `winged-sword` (Easy).
+   - **Streak Wards & Milestones**: `ice-shield` (protective freeze ward), `torch` (7-day), `sunbeams` (30-day), `imperial-crown` (365-day mythic).
+   - **Single-Path Scalability & Pure Vector Loading**: Every Game-Icons symbol is authored at native `0 0 512 512`, uses single-path `fill="currentColor"`, and is pre-baked directly into `/assets/icons/sprite.svg`, eliminating external network dependencies during deployment and ensuring instant, zero-flicker loading across all routes.
 
 - **Page Layout Grid System (`.page-layout`) & Tablet Ergonomics**: Main pages (Playlists, History, Dictionary, and Study) utilize a responsive grid layout (`1fr minmax(340px, 25vw)` on wide desktop, `1fr 280px` up to 1200px). On tablet viewports and below (`@media (max-width: 1024px)`), `.page-layout` collapses to a single column (`grid-template-columns: 1fr`) and hides the secondary right sidebar (`.page-layout__sidebar { display: none !important }`). This eliminates 3-column squeeze on tablets (e.g. iPad Air 820px) where the 252px navigation sidebar is expanded. Panel headers (`.panel-header__row`) enforce `flex-wrap: wrap; row-gap: var(--space-2xs)` and text truncation (`overflow: hidden; text-overflow: ellipsis`) to prevent badge and title collisions.
 - **Divider-Free Modern Layout**: Card headers (`.panel-header`, `.vocab-header`, `.playlist-header`, `.result-header`) and toolbars do NOT use hard divider lines (`border-bottom: 1px solid var(--border-color)`). Visual hierarchy and clean separation are achieved through consistent whitespace and flex gaps (`var(--space-md)`, `var(--space-sm)`), preventing fragmented card slices.
@@ -619,6 +632,32 @@ All asynchronous loading states (History, Playlist, Vocabulary, and Dictionary W
   - `.skeleton-text`: Emulates typographic lines with standard 12px / 16px heights.
   - `.skeleton-avatar`, `.skeleton-badge`, `.skeleton-btn`: Emulates round avatars, pill chips, and rectangular button shapes.
   - `.skeleton-card`: Pre-assembled card template mirroring the structural dimensions of `HistoryCard`, `PlaylistCard`, and `VocabItem`.
+
+### Unified Empty & Placeholder State System (`_components.scss`)
+All zero-item, filter no-match, and fallback states across feeds, sidebars, sheets, and dialogs adhere to a strict BEM design system contract in `src/styles/_components.scss`:
+- **Standard Layout**: Root `.empty-state.empty-state--centered` with optional `.empty-state--animate` (smooth 0.35s `emptyStateIn` entrance animation with spring-like cubic-bezier curve).
+- **Proportional Spacing Hierarchy (Strict Zero-Margin Collision Prevention)**:
+  - In flex column centered mode, gap is strictly managed via parent `gap: 1rem;` (16px) with zero rogue child margins (`margin: 0` on icon box and text).
+  - Title-to-Description gap: `0.375rem` (6px) inside `.empty-state__text` with `text-wrap: balance` to prevent orphan words.
+  - Text-to-Actions gap: exactly `1.25rem` (20px) created by parent flex gap plus `margin-top: 0.25rem` on `.empty-state__actions` / `.empty-state__action`.
+  - Container padding: `2rem 1.25rem` (desktop) and `1.5rem 1rem` (mobile), max-width bounded at `440px` (text bounded at `360px`).
+- **Geometric Icon Box (`.empty-state__icon-box`)**:
+  - Always rendered as a clean, calm **50% circle** (`border-radius: 50%;`). Squircles or unbordered boxes are strictly prohibited.
+  - Standard centered size: `3.5rem` (56px) with 28px `<app-icon>` inside (`color: var(--text-muted)`).
+  - Clean styling: solid `var(--bg-surface)` background and `1px solid var(--border-color)` border, with zero glow or distracting radial auras.
+  - Semantic variants: `.empty-state__icon-box--error` (subtle red-tinted for network/player failures) and `.empty-state__icon-box--accent` (soft rose-tinted).
+- **Compact Variant (`.empty-state--compact`)**:
+  - Purpose-built for desktop sidebars, drawer side-panels, mobile bottom sheets, and modal option pickers.
+  - Scaled dimensions: `2.5rem` (40px) icon box with 18px `<app-icon>`, `0.875rem` title, and `0.8125rem` hint.
+  - Padding: `1rem 0.75rem`, gap `0.75rem` (12px), max-width `300px`.
+  - Deprecates ad-hoc one-off classes like `.sidebar-empty-box`.
+- **Typographic Scale**:
+  - Title: `.empty-state__title` (`1.125rem` / 18px, `font-weight: 700`, `letter-spacing: -0.015em`, `text-wrap: balance`).
+  - Description: `.empty-state__description` or `.empty-state__hint` (`0.875rem` / 14px, `color: var(--text-secondary)`, `line-height: 1.55`, `text-wrap: balance`).
+- **Action Button Hierarchy (`.empty-state__action` & `.empty-state__actions`)**:
+  - Action buttons are grouped inside `.empty-state__actions` (`gap: 0.625rem; display: inline-flex; flex-wrap: wrap; justify-content: center;`).
+  - Standard action button height is `36px` with pill border-radius, `0.875rem` font, and `font-weight: 600`.
+- **Zero Inline Style Rule**: Redundant inline styles like `style="align-items: center; text-align: center;"` or `style="margin-top: ..."` are forbidden; centered alignment is handled natively by `.empty-state--centered`.
 
 ### Modal & Bottom Sheet Standardization Conventions
 All modals and sheets throughout Voca (both desktop centered modals and mobile bottom sheets) adhere strictly to unified ergonomics:
@@ -927,5 +966,47 @@ To maintain an authentic, distraction-free environment for serious language lear
 
 ### 10.5. Voluntary Educational Supporter Framework
 - In compliance with Vietnamese digital commerce regulations (Bộ Công Thương), all commercial payment terminology ("gói cước", "mua", "checkout", "subscription") is framed as voluntary community educational support ("Ủng hộ dự án Voca", "Supporter / Patron Perks", "Tín chỉ AI", "Mã VietQR chuyển khoản ủng hộ").
+
+---
+
+## 11. Modern Web Platform Standards & Zero-Hack Architecture
+
+To maintain world-class performance, low memory footprint, and maintainability, Voca continuously eliminates legacy JavaScript/TypeScript layout hacks in favor of native modern web platform standards (HTML5, Modern CSS 2024–2026, Angular 19 Primitives):
+
+### 11.1. Dynamic Viewport Sizing (`100dvh` & `resizes-content`)
+- **Legacy Workaround**: Previously, `app.component.ts` maintained an `initViewportSizing()` routine listening to `window.visualViewport`, window `resize`, and `orientationchange` events to continuously write `--app-height` in pixels to `:root` to work around older mobile Safari address bar expanding/collapsing.
+- **Modern Architecture**:
+  - The viewport meta tag in `index.html` specifies `interactive-widget=resizes-content`, guaranteeing that the viewport dynamically resizes when virtual keyboards open.
+  - Layout containers use native CSS `100dvh` (Dynamic Viewport Height) across the application, eliminating all main-thread viewport resize listeners.
+  - Video embeds and fullscreen subtitles rely on `100dvh` / `45dvh` / `55dvh`, preventing any clipping under mobile browser toolbars.
+
+### 11.2. Native Form & Range Primitives
+- **Volume Slider**: Converted custom `<div>`-based slider with manual `getBoundingClientRect()`, mouse/touch drag math, and synthetic keyboard navigation into a semantic HTML5 `<input type="range">`. Stylized via modern CSS gradient tracks (`linear-gradient(to right, ... var(--volume-percent))`) and standard WebKit/Blink slider pseudo-elements, gaining full keyboard accessibility and touch handling natively.
+
+### 11.3. Pure CSS Scroll Shadows
+- **Subtitle Overflow Shadows**: Rather than tracking `scrollHeight`, `clientHeight`, and `scrollTop` in JavaScript with reactive signals (`hasOverflowTop`, `hasOverflowBottom`) and scroll event handlers, the subtitle display uses Lea Verou's pure CSS scroll shadow technique (`background-attachment: local, local, scroll, scroll`). Shadows appear dynamically when content overflows and hide when scrolled to boundaries with zero JavaScript involvement.
+
+### 11.4. HTML Popover API & Top-Layer Architecture
+- **Context Menus & Floating Cards**:
+  - `PlaylistPage` contextual action menu: Modernized to `popover="auto"` with CSS Anchor Positioning (`position-anchor: --playlist-menu-anchor; position-area: bottom span-left`) and fallback coordinates.
+  - `SidebarComponent` profile & stats popover: Modernized to `popover="auto"` docked beside the collapsed navigation rail (`inset: auto auto 1.25rem 4.75rem`).
+- **Zero Backdrop DOM**: Full-screen transparent overlay backdrop divs (`.dropdown-backdrop`, `.stats-popover-backdrop`) are completely removed; browser-native light dismiss automatically closes popovers on outside clicks or Escape key presses.
+
+### 11.5. Pure CSS Conic Gradients & Radial Masks
+- **SRS Flashcard Progress Ring**: Replaced SVG `<circle>` dasharray/dashoffset calculations ($2\pi r = 2 \times \pi \times 42$) in TypeScript with hardware-accelerated CSS `conic-gradient(var(--color-primary) var(--progress, 0%), var(--bg-surface) 0)` paired with a radial mask.
+
+### 11.6. Native Browser Lifecycle & Animation Timing
+- **Zero Synchronized SetTimeouts**:
+  - List item deletions (`VocabularyListComponent`, `HistoryListComponent`) and heart bounce effects listen directly to native `(animationend)` DOM events rather than scheduling arbitrary `setTimeout(..., 180)` timers.
+  - Form autofocus (`QuizInputComponent`, `CommandPaletteComponent`) uses `afterNextRender()` or `requestAnimationFrame()` paired with native HTML `autofocus`.
+  - Error shake animations on command palette and quiz inputs synchronize state reset through `(animationend)`.
+
+### 11.7. Persistent Tab Panels (`[hidden]`)
+- **Instant Search Resolution**: In `DictionaryPageComponent`, tabs (`dictionary` vs `vocab`) use the native CSS `[hidden]` attribute instead of destructive `@if` unmounting. Both components remain persistently mounted in memory, retaining active search states, scroll offsets, and enabling instantaneous, synchronous search execution (`this.panel()?.search(...)`) with zero rendering delay.
+
+### 11.8. Aspect Ratio & Legacy CSS Cleanup
+- Removed legacy `padding-bottom: 56.25%` and `@supports (aspect-ratio: 16 / 9)` blocks from `video-player.component.scss` (native `aspect-ratio` is Baseline 2021).
+- Removed unused `.hover-fix` and `.hover-passthrough` rules from `_utilities.scss`.
+- Standardized cross-browser overlay scrollbars with standard `scrollbar-width: thin; scrollbar-color: rgba(...) transparent;` without `@supports not selector(::-webkit-scrollbar)` isolation hacks.
 
 

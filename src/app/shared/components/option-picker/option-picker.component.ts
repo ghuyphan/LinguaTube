@@ -1,7 +1,8 @@
-import { Component, input, output, ChangeDetectionStrategy, viewChild } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy, viewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent, IconName } from '../icon/icon.component';
+import { I18nService } from '../../../core/services/i18n.service';
 
 export interface OptionItem {
     value: string;
@@ -23,6 +24,7 @@ export interface OptionItem {
     styleUrl: './option-picker.component.scss'
 })
 export class OptionPickerComponent {
+    readonly i18n = inject(I18nService);
     options = input.required<OptionItem[]>();
     value = input<string>('');
     isOpen = input<boolean>(false);

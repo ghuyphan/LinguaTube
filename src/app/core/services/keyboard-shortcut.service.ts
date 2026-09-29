@@ -41,7 +41,6 @@ export class KeyboardShortcutService implements OnDestroy {
 
     private isListening = false;
     private boundKeyDown: ((e: KeyboardEvent) => void) | null = null;
-    private boundResize: (() => void) | null = null;
 
     // Optional context providers
     private fsPopupVisibleCheck: (() => boolean) | null = null;
@@ -71,49 +70,14 @@ export class KeyboardShortcutService implements OnDestroy {
     }
 
     /**
-     * Determines whether the current device is touch-primary or mobile viewport.
-     * Mobile/touch devices do not require persistent keyboard event listeners.
-     */
-    isTouchDevice(): boolean {
-        if (!isPlatformBrowser(this.platformId)) return true;
-        const hasCoarsePointer = window.matchMedia?.('(pointer: coarse) and (hover: none)')?.matches ?? false;
-        const isMobileViewport = (window.innerWidth <= 768 || window.innerHeight <= 500);
-        return hasCoarsePointer || isMobileViewport;
-    }
-
-    /**
-     * Sets up responsive listener management outside NgZone to avoid change detection thrashing.
+     * Sets up keyboard listener outside NgZone to avoid change detection thrashing.
      */
     private setupListeners(): void {
         this.boundKeyDown = (e: KeyboardEvent) => this.onKeyDown(e);
-        this.boundResize = () => this.syncListenerState();
-
         this.ngZone.runOutsideAngular(() => {
-            window.addEventListener('resize', this.boundResize!, { passive: true });
+            document.addEventListener('keydown', this.boundKeyDown!, { passive: false });
         });
-
-        this.syncListenerState();
-    }
-
-    /**
-     * Attaches or detaches the keydown listener based on device mode (zero mobile overhead).
-     */
-    private syncListenerState(): void {
-        if (!isPlatformBrowser(this.platformId)) return;
-
-        if (this.isTouchDevice()) {
-            if (this.isListening) {
-                document.removeEventListener('keydown', this.boundKeyDown!);
-                this.isListening = false;
-            }
-        } else {
-            if (!this.isListening && this.boundKeyDown) {
-                this.ngZone.runOutsideAngular(() => {
-                    document.addEventListener('keydown', this.boundKeyDown!, { passive: false });
-                });
-                this.isListening = true;
-            }
-        }
+        this.isListening = true;
     }
 
     private teardownListeners(): void {
@@ -122,10 +86,6 @@ export class KeyboardShortcutService implements OnDestroy {
         if (this.isListening && this.boundKeyDown) {
             document.removeEventListener('keydown', this.boundKeyDown);
             this.isListening = false;
-        }
-        if (this.boundResize) {
-            window.removeEventListener('resize', this.boundResize);
-            this.boundResize = null;
         }
     }
 
@@ -150,6 +110,16 @@ export class KeyboardShortcutService implements OnDestroy {
             target.isContentEditable ||
             target.closest('input, textarea, select, [contenteditable="true"]')
         )) {
+            return false;
+        }
+
+        // Suppress playback & seek shortcuts when a modal, dialog, or bottom sheet is open
+        if (target?.closest('[role="dialog"], dialog, app-bottom-sheet, .spotlight-overlay')) {
+            return false;
+        }
+
+        // Allow native Space/Enter activation on buttons without triggering video play/pause
+        if (target?.closest('button, [role="button"]') && (event.code === 'Space' || event.code === 'Enter')) {
             return false;
         }
 

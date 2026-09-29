@@ -3,6 +3,25 @@ import { IconName } from '../shared/components/icon/icon.component';
 export type AchievementCategory = 'immersion' | 'vocabulary' | 'streak' | 'srs' | 'quiz';
 export type AchievementTier = 'bronze' | 'silver' | 'gold' | 'diamond';
 
+export type LevelTier =
+    | 'stone'
+    | 'bronze'
+    | 'silver'
+    | 'gold'
+    | 'platinum'
+    | 'emerald'
+    | 'diamond'
+    | 'master'
+    | 'grandmaster'
+    | 'mythic';
+
+export interface LevelConfig {
+    level: number;
+    titleKey: string;
+    tier: LevelTier;
+    icon: IconName;
+}
+
 export interface Achievement {
     id: string;
     titleKey: string;

@@ -178,36 +178,6 @@
     }
 }
 
-/* ============================================
-   HOVER FIX (Pointer event passthrough)
-   ============================================ */
-
-.hover-fix {
-    pointer-events: auto;
-}
-
-.hover-fix>* {
-    pointer-events: none;
-}
-
-.hover-fix>.hover-fix-interactive,
-.hover-fix>* .hover-fix-interactive,
-.hover-fix button,
-.hover-fix a,
-.hover-fix input,
-.hover-fix select,
-.hover-fix [role="button"],
-.hover-fix label {
-    pointer-events: auto;
-}
-
-.hover-passthrough {
-    pointer-events: none;
-}
-
-.hover-passthrough-target {
-    pointer-events: auto;
-}
 
 /* ============================================
    CIRCULAR FLAGS

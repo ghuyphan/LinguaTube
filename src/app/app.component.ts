@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID, computed, Injector, afterNextRender, OnDestroy, NgZone, untracked } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID, computed, Injector, OnDestroy, NgZone, untracked } from '@angular/core';
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -153,7 +153,7 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               </button>
               <button class="more-stat-card" (click)="openAchievementsFromMore()">
                 <div class="more-stat-icon-wrap">
-                  <app-icon name="trophy" [size]="20" class="stat-icon--trophy" />
+                  <app-icon [name]="gamification.userLevelIcon()" [size]="20" class="stat-icon--level" />
                   @if (gamification.hasClaimableRewards()) {
                     <span class="more-stat-dot"></span>
                   }
@@ -862,6 +862,12 @@ import { VideoRecommendationService } from './core/services/video-recommendation
       flex-shrink: 0;
     }
 
+    .stat-icon--level {
+      color: #f59e0b;
+      flex-shrink: 0;
+      transition: color var(--transition-fast);
+    }
+
     .more-stat-icon-wrap {
       position: relative;
       display: inline-flex;
@@ -1144,7 +1150,6 @@ export class AppComponent implements OnDestroy {
   private cleanupFns: Array<() => void> = [];
 
   constructor() {
-    this.initViewportSizing();
     this.initKeyboardShortcuts();
 
     // Ensure all app-level dialogs/sheets are dismissed if learning language changes
@@ -1164,6 +1169,21 @@ export class AppComponent implements OnDestroy {
       }
       prevLang = currentLang;
     });
+
+    // Scroll to top on distinct route changes (e.g. /video -> /study), avoiding same-path or queryParam resets
+    let lastPath = '';
+    this.router.events
+      .pipe(
+        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(e => {
+        const newPath = e.urlAfterRedirects.split('?')[0].split('#')[0];
+        if (lastPath && newPath !== lastPath && isPlatformBrowser(this.platformId)) {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }
+        lastPath = newPath;
+      });
   }
 
   ngOnDestroy(): void {
@@ -1172,51 +1192,6 @@ export class AppComponent implements OnDestroy {
     this.destroy$.complete();
   }
 
-  private initViewportSizing(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    afterNextRender(() => {
-      const root = this.document.documentElement;
-      const standaloneQuery = window.matchMedia('(display-mode: standalone)');
-      const updateViewportState = () => {
-        const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
-        root.style.setProperty('--app-height', `${Math.round(viewportHeight)}px`);
-
-        const isStandalone = standaloneQuery.matches ||
-          (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
-
-        root.classList.toggle('standalone-mode', isStandalone);
-      };
-
-      updateViewportState();
-
-      const handleResize = () => updateViewportState();
-
-      this.ngZone.runOutsideAngular(() => {
-        window.addEventListener('resize', handleResize, { passive: true });
-        window.addEventListener('orientationchange', handleResize);
-        this.cleanupFns.push(() => {
-          window.removeEventListener('resize', handleResize);
-          window.removeEventListener('orientationchange', handleResize);
-        });
-
-        if (window.visualViewport) {
-          window.visualViewport.addEventListener('resize', handleResize);
-          this.cleanupFns.push(() => window.visualViewport?.removeEventListener('resize', handleResize));
-        }
-
-        if (typeof standaloneQuery.addEventListener === 'function') {
-          standaloneQuery.addEventListener('change', handleResize);
-          this.cleanupFns.push(() => standaloneQuery.removeEventListener('change', handleResize));
-        } else {
-          standaloneQuery.addListener(handleResize);
-          this.cleanupFns.push(() => standaloneQuery.removeListener(handleResize));
-        }
-      });
-    }, { injector: this.injector });
-  }
 
   showSettingsSheet = signal(false);
   showStreakSheet = signal(false);

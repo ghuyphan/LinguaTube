@@ -23,20 +23,31 @@
     width: 100%;
 }
 
+@keyframes crestFloat {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
 .credits-hero-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(var(--color-diamond-rgb, 59, 130, 246), 0.18) 0%, rgba(var(--color-diamond-rgb, 59, 130, 246), 0.05) 100%);
-    border: 1.5px solid rgba(var(--color-diamond-rgb, 59, 130, 246), 0.3);
-    box-shadow: 0 4px 20px rgba(var(--color-diamond-rgb, 59, 130, 246), 0.2);
-    color: var(--color-diamond, #3b82f6);
+    background: radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.35) 0%, transparent 60%),
+                linear-gradient(135deg, rgba(56, 189, 248, 0.35) 0%, rgba(59, 130, 246, 0.2) 50%, rgba(30, 58, 138, 0.4) 100%);
+    border: 2px solid rgba(56, 189, 248, 0.75);
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.45), inset 0 1.5px 1px rgba(255, 255, 255, 0.5), inset 0 -2px 3px rgba(0, 0, 0, 0.35);
+    color: #38bdf8;
+    animation: crestFloat 3.2s ease-in-out infinite alternate;
 
     .hero-diamond {
-        filter: drop-shadow(0 2px 8px rgba(var(--color-diamond-rgb, 59, 130, 246), 0.4));
+        filter: drop-shadow(0 2px 10px rgba(56, 189, 248, 0.7));
     }
 }
 

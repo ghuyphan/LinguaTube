@@ -1,7 +1,7 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, output, input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
@@ -15,7 +15,7 @@ import { VocabularyItem, WordLevel, Token } from '../../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent],
+  imports: [CommonModule, FormsModule, RouterLink, IconComponent, OptionPickerComponent, BottomSheetComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -161,22 +161,37 @@ export class VocabularyListComponent implements OnDestroy {
     this.deletingWordId.set(item.id);
     this.lastDeletedItem.set(item);
 
-    // Wait for the exit animation (180ms) before removing from state
+    // Fallback timer in case animationend does not fire (prefers-reduced-motion or test harnesses)
     if (this.deleteTimeout) {
       clearTimeout(this.deleteTimeout);
     }
     this.deleteTimeout = setTimeout(() => {
-      this.vocab.deleteWord(item.id);
-      this.deletingWordId.set(null);
+      this.finishDelete(item);
+    }, 250);
+  }
+
+  onItemAnimationEnd(event: AnimationEvent, item: VocabularyItem): void {
+    if (event.animationName === 'listItemOut' && this.deletingWordId() === item.id) {
+      this.finishDelete(item);
+    }
+  }
+
+  private finishDelete(item: VocabularyItem): void {
+    if (this.deleteTimeout) {
+      clearTimeout(this.deleteTimeout);
       this.deleteTimeout = null;
-      this.toast.show(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, {
-        type: 'success',
-        action: {
-          label: this.i18n.t('common.undo') || 'Undo',
-          action: () => this.undoDelete()
-        }
-      });
-    }, 180);
+    }
+    if (this.deletingWordId() !== item.id) return;
+
+    this.vocab.deleteWord(item.id);
+    this.deletingWordId.set(null);
+    this.toast.show(this.i18n.t('vocab.deleteSuccess', { word: item.word }) || `Deleted "${item.word}"`, {
+      type: 'success',
+      action: {
+        label: this.i18n.t('common.undo') || 'Undo',
+        action: () => this.undoDelete()
+      }
+    });
   }
 
   undoDelete(): void {

@@ -109,7 +109,7 @@
                 <button class="stats-bar__item" (click)="openAchievements.emit()" 
                     [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
                     <div class="stat-icon-wrap">
-                        <app-icon name="trophy" [size]="16" class="stat-icon stat-icon--trophy" />
+                        <app-icon [name]="gamification.userLevelIcon()" [size]="16" [class]="'stat-icon stat-icon--level stat-icon--tier-' + gamification.userLevelTier()" />
                         @if (gamification.hasClaimableRewards()) {
                             <span class="stat-claim-dot"></span>
                         }
@@ -270,9 +270,12 @@
 
 <!-- Floating Profile & Stats Popover (Collapsed Mode) -->
 @if (isCollapsed() && showStatsPopover()) {
-    <div class="stats-popover-backdrop" (click)="closeStatsPopover()"></div>
-
-    <div class="stats-popover-card" role="dialog" aria-modal="true">
+    <div class="stats-popover-card"
+         popover="auto"
+         #statsPopover
+         (toggle)="onPopoverToggle($event)"
+         role="dialog"
+         aria-modal="true">
         <!-- Header: User info -->
         <div class="stats-popover__header">
             <div class="avatar-ring" [class]="'avatar-ring--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'guest')">
@@ -294,7 +297,10 @@
                     <span class="badge badge--sm" [class]="'badge--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'free')">
                         {{ (auth.isLoggedIn() ? auth.tierDisplayName() : 'Guest') | uppercase }}
                     </span>
-                    <span class="popover-level-tag">{{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
+                    <span class="popover-level-tag popover-level-tag--rpg" [attr.data-tier]="gamification.userLevelTier()">
+                        <app-icon [name]="gamification.userLevelIcon()" [size]="11" />
+                        <span>Lv.{{ gamification.userLevel() }}</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -302,7 +308,7 @@
         <!-- Hero Streak Widget -->
         <button class="stats-popover__streak-banner" (click)="onPopoverStreakClick()">
             <div class="streak-flame-box" [class.active]="streak.practicedToday()">
-                <app-icon name="fire" [size]="22" />
+                <app-icon name="fire" [size]="18" />
             </div>
             <div class="streak-text-box">
                 <div class="streak-title">{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') || 'Day Streak' }}</div>
@@ -314,8 +320,8 @@
         <!-- Stats Overview 2-Column Grid -->
         <div class="stats-popover__metrics">
             <button class="metric-pill" (click)="onPopoverAchievementsClick()">
-                <div class="metric-icon-box metric-icon-box--trophy">
-                    <app-icon name="trophy" [size]="16" />
+                <div class="metric-icon-box metric-icon-box--level" [attr.data-tier]="gamification.userLevelTier()">
+                    <app-icon [name]="gamification.userLevelIcon()" [size]="18" />
                 </div>
                 <div class="metric-info">
                     <span class="metric-label">{{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
@@ -329,7 +335,7 @@
             <button class="metric-pill" (click)="onPopoverAiCreditsClick()"
                 [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                 <div class="metric-icon-box metric-icon-box--diamond">
-                    <app-icon name="diamond" [size]="16" />
+                    <app-icon name="diamond" [size]="18" />
                 </div>
                 <div class="metric-info">
                     <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>

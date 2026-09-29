@@ -285,19 +285,13 @@ $transition-normal: 0.25s ease;
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  padding-bottom: 56.25%;
   background: #000;
   overflow: hidden;
   border-radius: inherit;
 
-  @supports (aspect-ratio: 16 / 9) {
-    padding-bottom: 0;
-  }
-
   .is-fullscreen & {
     aspect-ratio: auto;
-    padding-bottom: 0;
-    height: var(--app-height, 100dvh);
+    height: 100dvh;
   }
 }
 
@@ -362,26 +356,6 @@ $transition-normal: 0.25s ease;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
   gap: 0.75rem;
   animation: errorSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.player-error-icon {
-  color: var(--error, #ef4444);
-  background: rgba(var(--error-rgb, 239, 68, 68), 0.12);
-  border-radius: 50%;
-  padding: 8px;
-}
-
-.player-error-title {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--text-primary, #fff);
-}
-
-.player-error-desc {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--text-secondary, #94a3b8);
-  margin: 0;
 }
 
 .player-error-actions {
