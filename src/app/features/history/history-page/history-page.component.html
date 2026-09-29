@@ -73,23 +73,11 @@
         <div class="panel-toolbar__filters">
           <!-- Search Box (Always visible on all screen sizes) -->
           <div class="panel-search-wrapper">
-            <div class="app-search-box">
-              <app-icon name="search" [size]="14" class="search-icon" />
-              <input
-                type="search"
-                enterkeyhint="search"
-                [ngModel]="searchQuery()"
-                (ngModelChange)="searchQuery.set($event)"
-                [placeholder]="i18n.t('history.searchHistory') || i18n.t('common.search') || 'Search...'"
-                class="search-input"
-                spellcheck="false"
-              />
-              @if (searchQuery()) {
-                <button type="button" class="clear-btn" (click)="searchQuery.set('')" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
-                  <app-icon name="x" [size]="12" />
-                </button>
-              }
-            </div>
+            <app-search-input
+              [(value)]="searchQuery"
+              [placeholder]="i18n.t('history.searchHistory') || i18n.t('common.search') || 'Search...'"
+              [clearAriaLabel]="i18n.t('common.clear') || 'Clear search'"
+            />
           </div>
 
           <!-- Non-wrapping filter chips -->
@@ -201,19 +189,17 @@
           </button>
         }
       } @else {
-        <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
-          <div class="empty-state__icon-box">
-            <app-icon name="history" [size]="20" />
-          </div>
-          <div class="empty-state__text">
-            <p class="empty-state__title">{{ i18n.t('history.noHistory') }}</p>
-            <p class="empty-state__description">{{ i18n.t('history.noHistoryHint') || 'Videos you watch will appear here' }}</p>
-          </div>
+        <app-empty-state
+          icon="history"
+          [title]="i18n.t('history.noHistory')"
+          [description]="i18n.t('history.noHistoryHint') || 'Videos you watch will appear here'"
+          [compact]="true"
+        >
           <a routerLink="/video" class="btn btn-primary btn-sm empty-state__action">
             <app-icon name="video" [size]="14" />
             <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
           </a>
-        </div>
+        </app-empty-state>
       }
 
       @if (auth.isInitialized() && !auth.isLoggedIn()) {

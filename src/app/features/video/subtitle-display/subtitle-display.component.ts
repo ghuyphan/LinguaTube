@@ -10,13 +10,13 @@ import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, KeyboardShortcutService } from '../../../core/services';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { GrammarService } from '../../../services';
-import { SubtitleCue, Token, GrammarMatch, GrammarPattern, ReadingDisplayMode, SupportedLearningLanguage, SupportedGrammarLang } from '../../../models';
+import { SubtitleCue, Token, GrammarMatch, GrammarPattern, SupportedLearningLanguage, SupportedGrammarLang } from '../../../models';
 import { QuizService } from '../quiz.service';
 import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { formatTime } from '../../../core/utils';
-import { normalizeLanguageCode } from '../../../shared/utils/language.utils';
+import { normalizeLanguageCode, getReadingDisplayLabel } from '../../../shared/utils/language.utils';
 
 @Component({
   selector: 'app-subtitle-display',
@@ -470,42 +470,15 @@ export class SubtitleDisplayComponent implements OnDestroy {
   }
 
   readingLabel = computed(() => {
-    return this.getReadingDisplayLabel(
+    return getReadingDisplayLabel(
       this.readingDisplayMode(),
-      this.effectiveLanguage() as SupportedLearningLanguage
+      this.effectiveLanguage(),
+      key => this.i18n.t(key)
     );
   });
 
   toggleReading(): void {
     this.settings.toggleReadingDisplay(this.effectiveLanguage() as SupportedLearningLanguage);
-  }
-
-  private getReadingDisplayLabel(
-    mode: ReadingDisplayMode,
-    language: SupportedLearningLanguage
-  ): string {
-    if (language === 'en') {
-      return this.i18n.t('settings.textOnly');
-    }
-
-    switch (language) {
-      case 'ja':
-        if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
-        if (mode === 'annotatedRomanized') return this.i18n.t('settings.kanjiRomaji');
-        if (mode === 'romanized') return this.i18n.t('settings.romajiOnly');
-        return this.i18n.t('settings.kanaOnly');
-      case 'zh':
-        if (mode === 'native') return this.i18n.t('settings.hanziOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
-        return this.i18n.t('settings.pinyinOnly');
-      case 'ko':
-        if (mode === 'native') return this.i18n.t('settings.hangulOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
-        return this.i18n.t('settings.romanizationOnly');
-      default:
-        return this.i18n.t('settings.textOnly');
-    }
   }
 
   readonly fontSizes: ('small' | 'medium' | 'large' | 'xlarge')[] = ['small', 'medium', 'large', 'xlarge'];

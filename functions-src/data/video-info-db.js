@@ -39,7 +39,22 @@ export async function getVideoLanguages(db, videoId) {
                 const parsed = JSON.parse(row.levels);
                 for (const [k, v] of Object.entries(parsed)) {
                     if (k.endsWith('_meta')) continue;
-                    levels[k] = v;
+                    if (typeof v === 'string') {
+                        const tier = labelToTier(v) || 'intermediate';
+                        levels[k] = {
+                            level: v,
+                            tier,
+                            score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
+                            confidence: 0.8,
+                            method: 'metadata',
+                            updatedAt: row.updated_at || Math.floor(Date.now() / 1000)
+                        };
+                    } else if (typeof v === 'object' && v !== null) {
+                        levels[k] = {
+                            ...v,
+                            tier: v.tier || labelToTier(v.level) || 'intermediate'
+                        };
+                    }
                 }
             }
         } catch { }
@@ -85,7 +100,17 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
             if (Object.keys(existingLevels).length === 0) {
                 const autoDetected = detectLevelFromMetadata(title || existing?.title || '', channel || existing?.channel || '');
                 if (autoDetected) {
-                    existingLevels = { [autoDetected.lang]: autoDetected.level };
+                    const tier = labelToTier(autoDetected.level) || 'intermediate';
+                    existingLevels = {
+                        [autoDetected.lang]: {
+                            level: autoDetected.level,
+                            tier,
+                            score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
+                            confidence: 0.95,
+                            method: 'metadata',
+                            updatedAt: Math.floor(Date.now() / 1000)
+                        }
+                    };
                 }
             }
         } else {
@@ -189,40 +214,59 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
             try { currentLevels = JSON.parse(row.levels); } catch {}
         }
 
-        // Security / Integrity check: prevent lower-confidence client payloads from downgrading verified levels
-        const existingVal = currentLevels[language];
-        const existingMeta = currentLevels[`${language}_meta`];
-        let existingConf = 0.8;
-        if (existingVal && typeof existingVal === 'object' && typeof existingVal.confidence === 'number') {
-            existingConf = existingVal.confidence;
-        } else if (existingMeta && typeof existingMeta === 'object' && typeof existingMeta.confidence === 'number') {
-            existingConf = existingMeta.confidence;
+        const tier = details?.tier || labelToTier(level) || 'intermediate';
+        let score = typeof details?.score === 'number' && Number.isFinite(details.score) ? details.score : null;
+        if (score === null) {
+            if (tier === 'beginner') score = 1.0;
+            else if (tier === 'elementary') score = 2.0;
+            else if (tier === 'intermediate') score = 3.0;
+            else if (tier === 'upper_intermediate') score = 4.0;
+            else if (tier === 'advanced') score = 5.0;
         }
 
-        if (confidence < existingConf) {
+        // Cap client-submitted confidence to 0.85 max to prevent permanent poisoning
+        let safeConfidence = Math.min(1.0, Math.max(0.0, confidence));
+        if (method === 'linguistics') {
+            safeConfidence = Math.min(0.85, safeConfidence);
+        }
+
+        const existingVal = currentLevels[language];
+        let existingConf = 0.0;
+        let existingScore = null;
+        if (existingVal) {
+            if (typeof existingVal === 'object' && existingVal !== null) {
+                existingConf = typeof existingVal.confidence === 'number' ? existingVal.confidence : 0.8;
+                existingScore = typeof existingVal.score === 'number' ? existingVal.score : null;
+            } else if (typeof existingVal === 'string') {
+                existingConf = 0.8;
+            }
+        }
+
+        // Do not downgrade verified high-confidence metadata (>= 0.95) unless incoming is also >= 0.95
+        if (existingConf >= 0.95 && safeConfidence < 0.95) {
             return currentLevels;
+        }
+
+        // If existing record has valid score and confidence, blend using EMA (60% existing + 40% new)
+        let finalScore = score;
+        if (existingScore !== null && Number.isFinite(existingScore) && existingConf >= 0.75) {
+            finalScore = Math.round(((0.60 * existingScore) + (0.40 * score)) * 10) / 10;
         }
 
         const levelData = {
             level,
-            confidence: Math.min(1.0, Math.max(0.0, confidence)),
+            tier,
+            score: finalScore,
+            confidence: Math.max(safeConfidence, existingConf > 0.8 ? existingConf : safeConfidence),
             method,
             updatedAt: Math.floor(Date.now() / 1000)
         };
-        if (details && typeof details === 'object') {
-            if (details.tier) levelData.tier = details.tier;
-            if (typeof details.score === 'number') levelData.score = details.score;
-            if (typeof details.grammarCount === 'number') levelData.grammarCount = details.grammarCount;
-            if (typeof details.speechRateCpm === 'number') levelData.speechRateCpm = details.speechRateCpm;
-            if (details.breakdown && typeof details.breakdown === 'object') levelData.breakdown = details.breakdown;
-        }
+        if (typeof details?.grammarCount === 'number') levelData.grammarCount = details.grammarCount;
+        if (typeof details?.speechRateCpm === 'number') levelData.speechRateCpm = details.speechRateCpm;
+        if (details?.breakdown && typeof details.breakdown === 'object') levelData.breakdown = details.breakdown;
 
         currentLevels[language] = levelData;
-        currentLevels[`${language}_meta`] = {
-            confidence: levelData.confidence,
-            method,
-            updatedAt: levelData.updatedAt
-        };
+        delete currentLevels[`${language}_meta`];
 
         if (row) {
             await db.prepare(`
@@ -302,22 +346,85 @@ export function labelToTier(label = '') {
         label = label.level || '';
     }
     if (typeof label !== 'string' || !label) return null;
-    const upper = label.toUpperCase();
-    if (upper.includes('N5') || upper.includes('HSK 1') || upper.includes('A1') || upper.includes('BEGINNER')) {
+    const clean = label.trim();
+    const upper = clean.toUpperCase();
+
+    // Direct tier names
+    if (upper === 'BEGINNER' || upper === 'ELEMENTARY' || upper === 'INTERMEDIATE' || upper === 'UPPER_INTERMEDIATE' || upper === 'ADVANCED') {
+        return upper.toLowerCase();
+    }
+
+    // 1. Beginner
+    if (
+        /\b(?:JLPT\s*)?N5\b/i.test(clean) ||
+        /\bHSK\s*1\b/i.test(clean) ||
+        /\bTOPIK\s*(?:1|I)\b/i.test(clean) ||
+        /\bCEFR\s*A1\b/i.test(clean) ||
+        /\bA1\b/i.test(clean) ||
+        upper.includes('BEGINNER') ||
+        upper.includes('SƠ CẤP') ||
+        upper.includes('NHẬP MÔN') ||
+        /入門|初級|초급\s*1|입문/.test(clean)
+    ) {
         return 'beginner';
     }
-    if (upper.includes('N4') || upper.includes('HSK 2') || upper.includes('A2') || upper.includes('ELEMENTARY')) {
+
+    // 2. Elementary
+    if (
+        /\b(?:JLPT\s*)?N4\b/i.test(clean) ||
+        /\bHSK\s*2\b/i.test(clean) ||
+        /\bTOPIK\s*2\b/i.test(clean) ||
+        /\bCEFR\s*A2\b/i.test(clean) ||
+        /\bA2\b/i.test(clean) ||
+        upper.includes('ELEMENTARY') ||
+        /초급\s*2|초급/.test(clean)
+    ) {
         return 'elementary';
     }
-    if (upper.includes('UPPER') || upper.includes('N2') || upper.includes('HSK 5') || upper.includes('B2') || upper.includes('TRUNG CAO CẤP')) {
+
+    // 3. Upper Intermediate (Check BEFORE intermediate to prevent substring collisions)
+    if (
+        /\b(?:JLPT\s*)?N2\b/i.test(clean) ||
+        /\bHSK\s*5\b/i.test(clean) ||
+        /\bTOPIK\s*5\b/i.test(clean) ||
+        /\bCEFR\s*B2\b/i.test(clean) ||
+        /\bB2\b/i.test(clean) ||
+        upper.includes('UPPER') ||
+        upper.includes('TRUNG CAO CẤP') ||
+        /中上級|中高级|中高級|중고급/.test(clean)
+    ) {
         return 'upper_intermediate';
     }
-    if (upper.includes('N3') || upper.includes('HSK 3') || upper.includes('HSK 4') || upper.includes('B1') || upper.includes('INTERMEDIATE') || upper.includes('TRUNG CẤP')) {
-        return 'intermediate';
-    }
-    if (upper.includes('N1') || upper.includes('HSK 6') || upper.includes('C1') || upper.includes('C2') || upper.includes('ADVANCED') || upper.includes('CAO CẤP')) {
+
+    // 4. Advanced
+    if (
+        /\b(?:JLPT\s*)?N1\b/i.test(clean) ||
+        /\bHSK\s*6\b/i.test(clean) ||
+        /\bTOPIK\s*(?:6|II)\b/i.test(clean) ||
+        /\bCEFR\s*C[12]\b/i.test(clean) ||
+        /\bC[12]\b/i.test(clean) ||
+        upper.includes('ADVANCED') ||
+        upper.includes('CAO CẤP') ||
+        upper.includes('FLUENT') ||
+        /上級|高级|高級|고급/.test(clean)
+    ) {
         return 'advanced';
     }
+
+    // 5. Intermediate
+    if (
+        /\b(?:JLPT\s*)?N3\b/i.test(clean) ||
+        /\bHSK\s*[34]\b/i.test(clean) ||
+        /\bTOPIK\s*[34]\b/i.test(clean) ||
+        /\bCEFR\s*B1\b/i.test(clean) ||
+        /\bB1\b/i.test(clean) ||
+        upper.includes('INTERMEDIATE') ||
+        upper.includes('TRUNG CẤP') ||
+        /中級|中级|중급/.test(clean)
+    ) {
+        return 'intermediate';
+    }
+
     return 'intermediate';
 }
 

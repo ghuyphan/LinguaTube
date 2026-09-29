@@ -45,6 +45,7 @@ export class AppUpdateService implements OnDestroy {
   readonly isChecking = signal<boolean>(false);
   readonly showUpdateSheet = signal<boolean>(false);
   readonly isApplyingUpdate = signal<boolean>(false);
+  readonly showReloadFallback = signal<boolean>(false);
   readonly lastChecked = signal<Date | null>(null);
 
   // Localized highlights for the current incoming update
@@ -85,6 +86,9 @@ export class AppUpdateService implements OnDestroy {
 
     // Always fetch server version on startup to verify API compatibility & changelog
     void this.fetchServerVersion();
+
+    // Greet user with celebratory toast if app was just updated
+    this.checkPostUpdateCelebration();
   }
 
   ngOnDestroy(): void {
@@ -271,29 +275,36 @@ export class AppUpdateService implements OnDestroy {
     if (this.isApplyingUpdate()) {
       return;
     }
-    // 1. Dismiss the sheet and activate the smooth updating transition overlay
+
+    // 1. Pause any active video/audio so background media does not bleed into the overlay
+    if (typeof document !== 'undefined') {
+      document.querySelectorAll<HTMLMediaElement>('video, audio').forEach(el => {
+        try { el.pause(); } catch {}
+      });
+    }
+
+    // 2. Mark post-update version in localStorage for celebratory feedback
+    const nextVer = this.incomingVersion() || this.currentVersion();
+    try {
+      localStorage.setItem('voca_post_update_version', nextVer);
+    } catch {}
+
+    // 3. Dismiss the sheet and activate the smooth updating transition overlay
     this.showUpdateSheet.set(false);
     this.isApplyingUpdate.set(true);
+
+    // 4. Safety fallback: if reload takes longer than 4.5s, give user a direct reload action
+    setTimeout(() => {
+      if (this.isApplyingUpdate()) {
+        this.showReloadFallback.set(true);
+      }
+    }, 4500);
 
     try {
       console.log('[AppUpdate] Activating update...');
       if (this.swUpdate.isEnabled) {
         await this.swUpdate.activateUpdate();
         console.log('[AppUpdate] Update activated successfully');
-      }
-
-      // Clean up service worker and stale app caches safely
-      if (typeof caches !== 'undefined' && caches?.keys) {
-        try {
-          const names = await caches.keys();
-          await Promise.all(
-            names
-              .filter(name => name.startsWith('ngsw:') || name.includes('lingua-tube'))
-              .map(name => caches.delete(name))
-          );
-        } catch (e) {
-          console.warn('[AppUpdate] Cache cleanup warning:', e);
-        }
       }
     } catch (err) {
       console.warn('[AppUpdate] activateUpdate encountered an error, proceeding with hard reload:', err);
@@ -305,6 +316,40 @@ export class AppUpdateService implements OnDestroy {
       if (typeof window !== 'undefined') {
         window.location.reload();
       }
+    }
+  }
+
+  /**
+   * Force manual reload from escape hatch button
+   */
+  forceReload(): void {
+    if (typeof window !== 'undefined') {
+      window.location.reload();
+    }
+  }
+
+  /**
+   * Displays celebratory post-update toast if the app was recently reloaded into a new version.
+   */
+  private checkPostUpdateCelebration(): void {
+    if (!this.isBrowser) {
+      return;
+    }
+    try {
+      const updatedVersion = localStorage.getItem('voca_post_update_version');
+      if (updatedVersion) {
+        localStorage.removeItem('voca_post_update_version');
+        const msg = this.i18n.t('app.updateSuccess', { version: updatedVersion }) || `Updated to v${updatedVersion}!`;
+        setTimeout(() => {
+          this.toast.show(msg, {
+            type: 'success',
+            icon: 'sparkles',
+            duration: 4000
+          });
+        }, 1200);
+      }
+    } catch {
+      // localStorage unavailable or restricted
     }
   }
 

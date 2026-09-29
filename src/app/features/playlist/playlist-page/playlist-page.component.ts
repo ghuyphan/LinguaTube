@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, effect, ElementRef, viewChild, DestroyRef, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject, signal, computed, effect, ElementRef, viewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlaylistService } from '../playlist.service';
@@ -7,6 +7,9 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
+import { SearchInputComponent } from '../../../shared/components/search-input/search-input.component';
+import { InfiniteScrollDirective } from '../../../shared/directives';
 import { I18nService, ToastService, VideoLevelService } from '../../../core/services';
 import { getYouTubeThumbnail } from '../../../core/utils';
 import { HistoryService } from '../../history/history.service';
@@ -15,7 +18,7 @@ import { Playlist, PlaylistLanguage, PlaylistVideo, PlaylistWithVideos, Proficie
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, FormsModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent],
+    imports: [CommonModule, FormsModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent, EmptyStateComponent, SearchInputComponent, InfiniteScrollDirective],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -247,12 +250,6 @@ export class PlaylistPageComponent {
     pageSize = 24;
     visibleCount = signal<number>(24);
 
-    readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
-    private sentinelObserver: IntersectionObserver | null = null;
-    private platformId = inject(PLATFORM_ID);
-    private destroyRef = inject(DestroyRef);
-    private isExpanding = false;
-
     constructor() {
         void this.playlistService.loadUserPlaylists();
         void this.playlistService.loadCommunityPlaylists();
@@ -264,40 +261,6 @@ export class PlaylistPageComponent {
             this.levelFilter();
             this.searchQuery();
             this.visibleCount.set(this.pageSize);
-        });
-
-        effect(() => {
-            const sentinelRef = this.scrollSentinel();
-            if (!isPlatformBrowser(this.platformId)) return;
-
-            if (this.sentinelObserver) {
-                this.sentinelObserver.disconnect();
-                this.sentinelObserver = null;
-            }
-
-            if (sentinelRef?.nativeElement) {
-                this.sentinelObserver = new IntersectionObserver((entries) => {
-                    const entry = entries[0];
-                    if (entry?.isIntersecting && this.hasMorePlaylists() && !this.isExpanding) {
-                        this.isExpanding = true;
-                        this.loadMore();
-                        setTimeout(() => {
-                            this.isExpanding = false;
-                        }, 120);
-                    }
-                }, {
-                    rootMargin: '600px 0px',
-                    threshold: 0.05
-                });
-                this.sentinelObserver.observe(sentinelRef.nativeElement);
-            }
-        });
-
-        this.destroyRef.onDestroy(() => {
-            if (this.sentinelObserver) {
-                this.sentinelObserver.disconnect();
-                this.sentinelObserver = null;
-            }
         });
     }
 

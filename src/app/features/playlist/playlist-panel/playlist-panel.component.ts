@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, inject, output, signal, effect, inp
 import { CommonModule } from '@angular/common';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { I18nService, ToastService } from '../../../core/services';
 import { YoutubeService } from '../../video';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -9,7 +10,7 @@ import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 @Component({
     selector: 'app-playlist-panel',
     standalone: true,
-    imports: [CommonModule, IconComponent, DragDropModule],
+    imports: [CommonModule, IconComponent, DragDropModule, EmptyStateComponent],
     templateUrl: './playlist-panel.component.html',
     styleUrls: ['./playlist-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

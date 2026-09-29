@@ -10,7 +10,9 @@
     "updateRequired": "Cần cập nhật ứng dụng",
     "updateRequiredDesc": "Vui lòng cập nhật lên phiên bản mới nhất để tiếp tục sử dụng Voca mượt mà và ổn định.",
     "updatingApp": "Đang cập nhật Voca...",
-    "updatingDesc": "Đang cài đặt bản cập nhật và tối ưu ứng dụng..."
+    "updatingDesc": "Đang cài đặt bản cập nhật và tối ưu ứng dụng...",
+    "updateSuccess": "Đã cập nhật lên v{{version}}!",
+    "reloadNow": "Quá trình diễn ra lâu hơn dự kiến? Nhấn để tải lại"
   },
   "nav": {
     "video": "Video",
@@ -377,7 +379,8 @@
     "translateDef": "Dịch",
     "translating": "Đang dịch...",
     "emptyNotebookHint": "Lưu từ vựng khi xem video hoặc tra từ để ôn tập với flashcard lặp lại ngắt quãng (SRS).",
-    "exploreVideos": "Xem video để thu thập từ"
+    "exploreVideos": "Xem video để thu thập từ",
+    "studyTip": "Mẹo học tập"
   },
   "settings": {
     "title": "Cài đặt",
@@ -400,6 +403,9 @@
     "vocabStats": "Thống kê từ vựng",
     "totalWords": "Tổng số từ",
     "interfaceLanguage": "Ngôn ngữ giao diện",
+    "country": "Quốc gia / Khu vực",
+    "countryAuto": "Tự động nhận diện",
+    "countryActive": "Đang dùng",
     "learningDisplay": "Chế độ hiển thị học tập",
     "learningDisplayHint": "Đồng bộ cách hiển thị phiên âm giữa video và thẻ ghi nhớ",
     "furigana": "Furigana",
@@ -432,6 +438,18 @@
     "releaseNotes": "Nhật ký phát hành",
     "releaseDate": "Ngày phát hành",
     "vietnamese": "Tiếng Việt",
+    "editProfile": "Chỉnh sửa hồ sơ",
+    "displayName": "Tên hiển thị",
+    "displayNamePlaceholder": "Nhập tên hiển thị của bạn",
+    "avatar": "Ảnh đại diện",
+    "uploadPhoto": "Tải ảnh lên",
+    "chooseAvatar": "Hoặc chọn nhân vật",
+    "useGooglePhoto": "Dùng ảnh Google",
+    "saveProfile": "Lưu thay đổi",
+    "savingProfile": "Đang lưu...",
+    "profileUpdated": "Đã cập nhật hồ sơ thành công!",
+    "profileUpdateFailed": "Không thể cập nhật hồ sơ. Vui lòng thử lại.",
+    "countryHint": "Hiển thị bên cạnh tên bạn trên bảng xếp hạng toàn cầu",
     "language": "Ngôn ngữ"
   },
   "study": {

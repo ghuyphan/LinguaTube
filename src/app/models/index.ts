@@ -3,6 +3,8 @@ export * from './grammar.model';
 export * from './history.model';
 export * from './playlist.model';
 export * from './language.constants';
+export * from './country.constants';
+export * from './avatar.constants';
 export * from './video-level.model';
 export * from './gamification.model';
 export * from './transcript.model';
@@ -127,4 +129,5 @@ export interface UserSettings {
   preferredLevel?: string;
   hasSeenSubtitleCoachmark?: boolean;
   fullscreenSubtitleYPercent?: number;
+  country?: string;
 }

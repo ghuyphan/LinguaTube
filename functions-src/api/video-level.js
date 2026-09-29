@@ -11,7 +11,7 @@ import { saveVideoLevel } from '../data/video-info-db.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_level' };
-const VALID_LEVEL_REGEX = /^(JLPT\s*N[1-5]|HSK\s*[1-6]|TOPIK\s*([1-6]|I{1,2})|CEFR\s*[A-C][1-2]|Beginner|Intermediate|Advanced)$/i;
+const VALID_LEVEL_REGEX = /^(JLPT\s*N[1-5]|HSK\s*[1-6]|TOPIK\s*([1-6]|I{1,2})|CEFR\s*[A-C][1-2]|Beginner|Elementary|Intermediate|Upper[\s_-]?Intermediate|Advanced)$/i;
 
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
@@ -43,7 +43,10 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid level format. Must match standard proficiency levels (e.g. JLPT N4, HSK 2, CEFR B1)' }, 400);
         }
 
-        const confidence = typeof body?.confidence === 'number' ? Math.min(1.0, Math.max(0.0, body.confidence)) : 0.8;
+        // Cap client submissions to max 0.85 to protect server database integrity
+        const confidence = typeof body?.confidence === 'number'
+            ? Math.min(0.85, Math.max(0.0, body.confidence))
+            : 0.8;
         const method = typeof body?.method === 'string' && body.method.length <= 20 ? body.method : 'linguistics';
 
         // Reject assessments with insufficient confidence to protect D1 integrity

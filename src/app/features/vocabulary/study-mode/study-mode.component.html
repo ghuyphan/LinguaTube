@@ -24,14 +24,11 @@
 
         @if (deckStats().total === 0) {
         <!-- Empty State when user has 0 words saved in this language -->
-        <div class="empty-state empty-state--centered empty-state--animate">
-            <div class="empty-state__icon-box">
-                <app-icon name="cards" [size]="32" />
-            </div>
-            <div class="empty-state__text">
-                <h3 class="empty-state__title">{{ i18n.t('study.noWords') }}</h3>
-                <p class="empty-state__description">{{ i18n.t('study.noWordsHint') }}</p>
-            </div>
+        <app-empty-state
+            icon="cards"
+            [iconSize]="32"
+            [title]="i18n.t('study.noWords')"
+            [description]="i18n.t('study.noWordsHint')">
             <div class="empty-state__actions">
                 <a routerLink="/video" class="btn btn-primary empty-state__action">
                     <app-icon name="play" [size]="16" />
@@ -42,7 +39,7 @@
                     <span>{{ i18n.t('dictionary.title') }}</span>
                 </a>
             </div>
-        </div>
+        </app-empty-state>
         } @else {
         <!-- STUDY PRACTICE DASHBOARD -->
         <div class="study-dashboard">

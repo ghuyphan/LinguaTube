@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
@@ -16,7 +17,7 @@ import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
   selector: 'app-dictionary-panel',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, EmptyStateComponent],
   templateUrl: './dictionary-panel.component.html',
   styleUrl: './dictionary-panel.component.scss'
 })

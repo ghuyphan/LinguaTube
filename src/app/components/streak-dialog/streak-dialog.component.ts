@@ -4,6 +4,7 @@ import { IconComponent, IconName } from '../../shared/components/icon/icon.compo
 import { StreakService } from '../../services/streak.service';
 import { I18nService, ToastService } from '../../core/services';
 import { GamificationService } from '../../core/services/gamification.service';
+import { toLocalDateKey, toUtcDateKey } from '../../shared/utils/date.utils';
 
 export type CampfireStage = 'cold' | 'ember' | 'blaze' | 'beacon';
 
@@ -177,16 +178,10 @@ export class StreakDialogComponent {
     });
 
     private toLocalDateKey(date: Date): string {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        return toLocalDateKey(date);
     }
 
     private toUtcDateKey(date: Date): string {
-        const year = date.getUTCFullYear();
-        const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-        const day = String(date.getUTCDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        return toUtcDateKey(date);
     }
 }

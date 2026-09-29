@@ -16,7 +16,8 @@ import { jsonResponse, handleOptions, sanitizeVideoId, errorResponse } from '../
 import {
     getVideoLanguages,
     saveVideoLanguages,
-    detectLevelFromMetadata
+    detectLevelFromMetadata,
+    labelToTier
 } from '../data/video-info-db.js';
 import { getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 
@@ -62,7 +63,15 @@ export async function onRequestGet(context) {
             if (Object.keys(levels).length === 0) {
                 const detected = detectLevelFromMetadata(d1Result.title, d1Result.channel);
                 if (detected) {
-                    levels[detected.lang] = detected.level;
+                    const tier = labelToTier(detected.level) || 'intermediate';
+                    levels[detected.lang] = {
+                        level: detected.level,
+                        tier,
+                        score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
+                        confidence: 0.95,
+                        method: 'metadata',
+                        updatedAt: Math.floor(Date.now() / 1000)
+                    };
                     context.waitUntil?.(
                         saveVideoLanguages(db, videoId, d1Result.availableLanguages, d1Result.durationSeconds, d1Result.title, d1Result.channel, d1Result.hasAutoCaptions, levels, d1Result.channelAvatar)
                             .catch(err => console.error('[VideoInfo] Level save error:', err))
@@ -110,7 +119,15 @@ export async function onRequestGet(context) {
         const levels = {};
         const detected = detectLevelFromMetadata(metadata.title, metadata.author_name);
         if (detected) {
-            levels[detected.lang] = detected.level;
+            const tier = labelToTier(detected.level) || 'intermediate';
+            levels[detected.lang] = {
+                level: detected.level,
+                tier,
+                score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
+                confidence: 0.95,
+                method: 'metadata',
+                updatedAt: Math.floor(Date.now() / 1000)
+            };
         }
 
         // Try to fetch channel avatar from author channel page

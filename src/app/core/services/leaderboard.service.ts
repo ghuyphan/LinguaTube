@@ -5,6 +5,7 @@ import { GamificationService } from './gamification.service';
 import { OfflineStreakRepository } from '../repositories/offline-streak.repository';
 import { SupabaseService } from './supabase.service';
 import { StorageService } from './storage.service';
+import { CountryService } from './country.service';
 import { LeaderboardEntry } from '../../models/gamification.model';
 import { mergeWithSeedLeaderboard } from '../../data/leaderboard-seeds';
 
@@ -35,6 +36,7 @@ export class LeaderboardService {
     private settings = inject(SettingsService);
     private gamification = inject(GamificationService);
     private streakRepo = inject(OfflineStreakRepository);
+    private countryService = inject(CountryService);
 
     // Signals
     readonly topLearners = signal<LeaderboardEntry[]>([]);
@@ -171,7 +173,7 @@ export class LeaderboardService {
                     streak: Math.max(myStreak, existingIdx !== -1 ? (realLearners[existingIdx].streak ?? 0) : 0),
                     badgesCount: Math.max(myBadges, existingIdx !== -1 ? (realLearners[existingIdx].badgesCount ?? 0) : 0),
                     targetLang: lang === 'all' ? (this.settings.settings().language || 'ja') : lang,
-                    country: ''
+                    country: this.countryService.effectiveCountry()
                 };
                 if (existingIdx !== -1) {
                     realLearners[existingIdx] = currentUserEntry;
@@ -256,7 +258,7 @@ export class LeaderboardService {
             streak: Math.max(myStreak, devRank === 1 ? 14 : 7),
             badgesCount: Math.max(myBadges, devRank === 1 ? 8 : 4),
             targetLang: lang === 'all' ? (this.settings.settings().language || 'ja') : lang,
-            country: ''
+            country: this.countryService.effectiveCountry()
         };
 
         filtered.splice(targetIdx, 0, userEntry);
@@ -268,7 +270,7 @@ export class LeaderboardService {
     }
 
     /**
-     * Sync user's latest target language to Supabase profile
+     * Sync user's latest target language and country to Supabase profile
      */
     async syncMyScore(force = false): Promise<void> {
         const now = Date.now();
@@ -280,14 +282,18 @@ export class LeaderboardService {
 
         const userLang = this.settings.settings().language || 'ja';
         const targetLang = ['ja', 'ko', 'zh', 'en'].includes(userLang) ? userLang : 'ja';
+        const userCountry = this.countryService.effectiveCountry();
 
         try {
             await this.supabase.client
                 .from('profiles')
-                .update({ target_lang: targetLang })
+                .update({
+                    target_lang: targetLang,
+                    country: userCountry
+                })
                 .eq('id', user.id);
         } catch (err) {
-            console.warn('[LeaderboardService] Profile target_lang sync skipped:', err);
+            console.warn('[LeaderboardService] Profile target_lang/country sync skipped:', err);
         }
     }
 
@@ -331,7 +337,7 @@ export class LeaderboardService {
             streak: myStreak,
             badgesCount: myBadges,
             targetLang: this.selectedLang() !== 'all' ? this.selectedLang() : 'ja',
-            country: ''
+            country: this.countryService.effectiveCountry()
         });
     }
 

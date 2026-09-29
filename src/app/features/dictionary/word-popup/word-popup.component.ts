@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
 import { SubtitleService, YoutubeService } from '../../video';
@@ -17,7 +18,7 @@ import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
   selector: 'app-word-popup',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent, OptionPickerComponent],
+  imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent, OptionPickerComponent, EmptyStateComponent],
   templateUrl: './word-popup.component.html',
   styleUrl: './word-popup.component.scss'
 })

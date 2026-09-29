@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
+import { SearchInputComponent } from '../../../shared/components/search-input/search-input.component';
 import { HistoryListComponent } from '../history-list/history-list.component';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, ToastService, VideoLevelService } from '../../../core/services';
@@ -24,6 +26,8 @@ type FilterType = 'all' | 'favorites';
     ConfirmDialogComponent,
     OptionPickerComponent,
     HistoryListComponent,
+    EmptyStateComponent,
+    SearchInputComponent,
   ],
   templateUrl: './history-page.component.html',
   styleUrls: ['./history-page.component.scss'],

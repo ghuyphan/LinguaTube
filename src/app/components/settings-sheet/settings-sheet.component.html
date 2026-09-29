@@ -5,10 +5,18 @@
             <div class="settings-card settings-card--account">
                 @if (auth.isLoggedIn()) {
                 <div class="account-user-row">
-                    <img [src]="auth.user()?.picture" [alt]="auth.user()?.name" class="account-avatar" />
+                    <div class="account-avatar-wrapper" (click)="openEditProfile()" role="button" tabindex="0" (keydown.enter)="openEditProfile()" [attr.aria-label]="i18n.t('settings.editProfile') || 'Edit Profile'" [attr.title]="i18n.t('settings.editProfile') || 'Edit Profile'">
+                        <img [src]="auth.user()?.picture || '/avatars/cat.svg'" [alt]="auth.user()?.name || 'User'" class="account-avatar" />
+                        <div class="account-avatar-edit-badge">
+                            <app-icon name="pencil" [size]="10" />
+                        </div>
+                    </div>
                     <div class="account-details">
                         <div class="account-name-line">
                             <span class="account-name">{{ auth.user()?.name }}</span>
+                            @if (userFlagUrl()) {
+                                <img [src]="userFlagUrl()" class="account-country-flag" [alt]="countryService.effectiveCountry()" [attr.title]="userCountryTitle()" />
+                            }
                             <span class="badge badge--sm" [class]="'badge--' + auth.subscriptionTier()">
                                 {{ auth.tierDisplayName() | uppercase }}
                             </span>
@@ -26,13 +34,18 @@
                         </div>
                         <span class="account-email">{{ auth.user()?.email }}</span>
                     </div>
-                    <button class="account-signout-btn" (click)="showSignOutModal()" [disabled]="auth.isLoggingOut()" [attr.title]="i18n.t('header.signOut')">
-                        @if (auth.isLoggingOut()) {
-                            <div class="login-spinner login-spinner--sm"></div>
-                        } @else {
-                            <app-icon name="log-out" [size]="16" />
-                        }
-                    </button>
+                    <div class="account-actions">
+                        <button class="account-action-btn" (click)="openEditProfile()" [attr.aria-label]="i18n.t('settings.editProfile') || 'Edit Profile'" [attr.title]="i18n.t('settings.editProfile') || 'Edit Profile'">
+                            <app-icon name="pencil" [size]="15" />
+                        </button>
+                        <button class="account-action-btn account-action-btn--signout" (click)="showSignOutModal()" [disabled]="auth.isLoggingOut()" [attr.aria-label]="i18n.t('header.signOut')" [attr.title]="i18n.t('header.signOut')">
+                            @if (auth.isLoggingOut()) {
+                                <div class="login-spinner login-spinner--sm"></div>
+                            } @else {
+                                <app-icon name="log-out" [size]="15" />
+                            }
+                        </button>
+                    </div>
                 </div>
                 } @else {
                 <div class="account-guest-banner">
@@ -216,6 +229,113 @@
     <app-option-picker [options]="readingDisplayOptions()" [value]="settings.getReadingDisplayMode(settings.settings().language)"
         [isOpen]="showReadingModePicker()" [title]="i18n.t('settings.learningDisplay')"
         (selected)="onReadingDisplaySelected($event)" (closed)="showReadingModePicker.set(false)" />
+}
+
+<!-- Edit Profile Modal / Bottom Sheet -->
+@if (showEditProfile()) {
+    <app-bottom-sheet [isOpen]="showEditProfile()" [title]="i18n.t('settings.editProfile') || 'Edit Profile'" [showCloseButton]="true" [zIndex]="1300" (closed)="cancelEditProfile()">
+        <div class="edit-profile-modal">
+            <!-- Modal Header for consistency with other dialogs -->
+            <div class="edit-profile-header">
+                <h2 class="edit-profile-title">{{ i18n.t('settings.editProfile') || 'Edit Profile' }}</h2>
+            </div>
+
+            <!-- Hidden file input for custom photo upload -->
+            <input #avatarFileInput type="file" accept="image/png,image/jpeg,image/webp" style="display: none;" (change)="onAvatarFileSelected($event)" />
+
+            <!-- 1. Avatar Section -->
+            <div class="edit-profile-avatar-section">
+                <div class="edit-profile-avatar-wrapper" (click)="avatarFileInput.click()" role="button" tabindex="0" (keydown.enter)="avatarFileInput.click()" [attr.aria-label]="i18n.t('settings.uploadPhoto') || 'Upload photo'" [attr.title]="i18n.t('settings.uploadPhoto') || 'Upload photo'">
+                    <img [src]="editAvatar() || '/avatars/cat.svg'" alt="Avatar Preview" class="edit-profile-avatar-img" />
+                    <div class="edit-profile-camera-badge">
+                        <app-icon name="camera" [size]="14" />
+                    </div>
+                </div>
+
+                <div class="edit-profile-avatar-actions">
+                    <button type="button" class="btn btn-outline btn-sm edit-profile-upload-btn" (click)="avatarFileInput.click()">
+                        <app-icon name="camera" [size]="14" />
+                        <span>{{ i18n.t('settings.uploadPhoto') || 'Upload photo' }}</span>
+                    </button>
+                    @if (auth.user()?.googlePicture && auth.user()?.googlePicture !== editAvatar()) {
+                        <button type="button" class="btn btn-ghost btn-sm edit-profile-reset-btn" (click)="resetToGoogleAvatar()">
+                            <app-icon name="google" [size]="14" />
+                            <span>{{ i18n.t('settings.useGooglePhoto') || 'Use Google photo' }}</span>
+                        </button>
+                    }
+                </div>
+
+                <!-- Preset Avatars Carousel / Row -->
+                <div class="edit-profile-presets-block">
+                    <span class="edit-profile-presets-title">{{ i18n.t('settings.chooseAvatar') || 'Or choose a preset' }}</span>
+                    <div class="edit-profile-presets-row">
+                        @for (preset of presetAvatars; track preset.id) {
+                            <button type="button" class="edit-profile-preset-btn" [class.is-selected]="editAvatar() === preset.url" (click)="selectPresetAvatar(preset.url)" [attr.aria-label]="preset.name" [attr.title]="preset.name">
+                                <img [src]="preset.url" [alt]="preset.name" class="edit-profile-preset-img" />
+                                @if (editAvatar() === preset.url) {
+                                    <div class="edit-profile-preset-check">
+                                        <app-icon name="check" [size]="10" />
+                                    </div>
+                                }
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Form Fields (Name & Country) -->
+            <div class="edit-profile-fields">
+                <!-- Display Name Field -->
+                <div class="edit-profile-field">
+                    <label class="edit-profile-label" for="edit-profile-name-input">
+                        {{ i18n.t('settings.displayName') || 'Display Name' }}
+                    </label>
+                    <input id="edit-profile-name-input" type="text" class="edit-profile-input" [value]="editName()" (input)="editName.set($any($event.target).value)" [placeholder]="i18n.t('settings.displayNamePlaceholder') || 'Enter your display name'" maxlength="40" />
+                </div>
+
+                <!-- Country / Region Field -->
+                <div class="edit-profile-field">
+                    <label class="edit-profile-label">
+                        {{ i18n.t('settings.country') || 'Country / Region' }}
+                    </label>
+                    <button type="button" class="edit-profile-country-btn" (click)="showCountryPicker.set(true)">
+                        <div class="edit-profile-country-left">
+                            @if (editCountryFlag()) {
+                                <img [src]="editCountryFlag()" class="edit-profile-country-flag" alt="" />
+                            } @else {
+                                <app-icon name="globe" [size]="18" />
+                            }
+                            <span class="edit-profile-country-name">{{ editCountryDisplay() }}</span>
+                        </div>
+                        <app-icon name="chevron-right" [size]="16" class="edit-profile-country-chevron" />
+                    </button>
+                    <span class="edit-profile-hint">{{ i18n.t('settings.countryHint') || 'Appears next to your name on the global leaderboard' }}</span>
+                </div>
+            </div>
+
+            <!-- 3. Modal Actions (Save & Cancel) -->
+            <div class="edit-profile-footer">
+                <button type="button" class="btn btn-secondary edit-profile-cancel-btn" (click)="cancelEditProfile()" [disabled]="isSavingProfile()">
+                    {{ i18n.t('vocab.cancel') || 'Cancel' }}
+                </button>
+                <button type="button" class="btn btn-primary edit-profile-save-btn" (click)="saveProfile()" [disabled]="isSavingProfile() || !editName().trim()">
+                    @if (isSavingProfile()) {
+                        <div class="login-spinner login-spinner--sm"></div>
+                        <span>{{ i18n.t('settings.savingProfile') || 'Saving...' }}</span>
+                    } @else {
+                        <span>{{ i18n.t('settings.saveProfile') || 'Save Changes' }}</span>
+                    }
+                </button>
+            </div>
+        </div>
+    </app-bottom-sheet>
+}
+
+<!-- Country / Region Picker -->
+@if (showCountryPicker()) {
+    <app-option-picker [options]="countryOptions()" [value]="editCountry()" [zIndex]="1400"
+        [isOpen]="showCountryPicker()" [title]="i18n.t('settings.country') || 'Country / Region'"
+        (selected)="onCountrySelected($event)" (closed)="showCountryPicker.set(false)" />
 }
 
 <!-- Sign Out Confirmation -->

@@ -10,7 +10,9 @@
     "updateRequired": "업데이트 필요",
     "updateRequiredDesc": "원활한 서비스 이용을 위해 필수 업데이트가 필요해요.",
     "updatingApp": "Voca 업데이트 중...",
-    "updatingDesc": "업데이트를 적용하고 성능을 최적화하는 중입니다..."
+    "updatingDesc": "업데이트를 적용하고 성능을 최적화하는 중입니다...",
+    "updateSuccess": "v{{version}}(으)로 업데이트되었습니다!",
+    "reloadNow": "예상보다 오래 걸리나요? 탭하여 새로고침"
   },
   "nav": {
     "video": "동영상",
@@ -377,7 +379,8 @@
     "translateDef": "번역",
     "translating": "번역 중...",
     "emptyNotebookHint": "동영상을 시청하거나 사전을 검색할 때 단어를 저장하면 간격 반복(SRS) 플래시카드로 복습할 수 있습니다.",
-    "exploreVideos": "동영상 보고 단어 모으기"
+    "exploreVideos": "동영상 보고 단어 모으기",
+    "studyTip": "학습 팁"
   },
   "settings": {
     "title": "설정",
@@ -400,6 +403,9 @@
     "vocabStats": "단어장 통계",
     "totalWords": "총 단어 수",
     "interfaceLanguage": "앱 표시 언어",
+    "country": "국가 / 지역",
+    "countryAuto": "자동 감지",
+    "countryActive": "활성",
     "learningDisplay": "자막 표기 방식",
     "learningDisplayHint": "자막과 플래시카드에 표시할 발음 방식을 설정해요",
     "furigana": "후리가나",
@@ -432,6 +438,18 @@
     "releaseNotes": "릴리즈 노트",
     "releaseDate": "출시일",
     "vietnamese": "베트남어",
+    "editProfile": "프로필 수정",
+    "displayName": "닉네임",
+    "displayNamePlaceholder": "닉네임을 입력하세요",
+    "avatar": "프로필 이미지",
+    "uploadPhoto": "사진 업로드",
+    "chooseAvatar": "또는 캐릭터 선택",
+    "useGooglePhoto": "Google 사진 사용",
+    "saveProfile": "변경사항 저장",
+    "savingProfile": "저장 중...",
+    "profileUpdated": "프로필이 성공적으로 업데이트되었습니다!",
+    "profileUpdateFailed": "프로필 업데이트에 실패했습니다. 다시 시도해 주세요.",
+    "countryHint": "글로벌 랭킹에서 이름 옆에 표시됩니다",
     "language": "언어"
   },
   "study": {

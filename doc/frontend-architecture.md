@@ -80,7 +80,9 @@ To eliminate cold route transition delays without competing with initial page LC
 ### 3.1. Modal Focus Traps, Stacking & Dynamic Height Transitions (`BottomSheetComponent` & `VideoPlayerComponent`)
 - **Focus Cycling & Scroll-Safe Restoration**: Implements strict `keydown` listener trapping keyboard `Tab` / `Shift+Tab` cycles within the active bottom sheet container. Caches `document.activeElement` prior to sheet open and restores focus back to the triggering element safely using `{ preventScroll: true }` upon dismissal, preventing destructive scroll position resets to the top of the viewport.
 - **Scroll-Locking & Sticky Element Preservation**: Employs event-level scroll interception (`wheel` and `touchmove` outside active modal content) via `BodyScrollService` with `touch-action: none` on overlays. Completely prevents background scrolling while keeping `html` and `body` free of `overflow: hidden`, guaranteeing `position: sticky` headers and sidebars never disappear or break.
-- **Pure CSS Responsive Modal vs Sheet**: Desktop centered modal vs mobile bottom sheet presentation is governed entirely by SCSS `@media` queries (`@media (min-width: 769px) and (min-height: 501px)`), eliminating JavaScript window resize event subscriptions and `isMobile` signal.
+- **Responsive Modal vs Sheet Presentation**: Employs both responsive SCSS breakpoints and an explicit `[class.desktop-modal]="!isMobile()"` binding. Desktop presentation renders as a centered floating card modal with subtle `scaleIn`/`scaleOut` animations, while mobile viewports render as an edge-to-edge bottom sheet with `mobileSlideUp`/`mobileSlideDown` and drag-to-dismiss handle. This dual-selector design eliminates fractional viewport dead-zones (e.g. 768.5px under browser zoom) where keyframe animations could otherwise fail to bind.
+- **Non-Destructive Exit Animation Lifecycle (`shouldRender`)**: Rather than destroying the DOM instantaneously via `@if (isOpen())`, `BottomSheetComponent` decouples rendering via an internal `shouldRender` signal. When `isOpen` becomes `false` (either internally via close button, backdrop click, or drag gesture, or externally by parent state change), the DOM remains mounted with `.closing` class while CSS exit animations (`scaleOut`, `mobileSlideDown`, `fadeOut`) play. The DOM unmounts (`shouldRender = false`), service history unregisters, and `closed` event emits only after the exit animation completes (via `animationend` or safety fallback timeout).
+- **Angular Encapsulation Keyframe Compatibility**: Listens to `(animationend)` using `name.endsWith('...')` rather than strict equality, ensuring full compatibility with Angular ViewEncapsulation scoped keyframe identifiers (e.g. `_ngcontent-ng-c..._scaleOut`) on Chromium/Blink and WebKit.
 - **Multi-Sheet Stacking & Accessibility Isolation**: When sheets stack (e.g. Settings Sheet -> Streak Dialog -> Upgrade Sheet), `BottomSheetService.isTopmost(sheetId)` coordinates stacking order. Non-topmost background sheets receive `[attr.inert]=""` and `[attr.aria-hidden]="true"`, completely preventing background tab navigation and screen-reader leakage without tearing down modal state.
 - **Race-Free Idempotent Dismissal**: Dismissal calls (`close()`, backdrop click, drag dismiss) track an explicit timeout ID (`closeTimeoutId`), cancelling pending timers and guarding `unregister(id)` against duplicate execution.
 - **Safe Area & Virtual Keyboard Clamping**: Max height is strictly clamped via `min(var(--max-height, 85vh), calc(var(--app-height, 100dvh) - 16px))`, preventing virtual keyboards from pushing sheet action headers off-screen. Bottom padding on `.sheet-content` is zeroed when the inner content wrapper supplies safe-area insets, eliminating unsightly 68px double-padding stacking on iOS devices.
@@ -123,7 +125,7 @@ To eliminate cold route transition delays without competing with initial page LC
   - **Motivation Stats Bar (`stats-bar`) & Collapsed Popover Card (`stats-popover-card`)**: Available to both guest and authenticated users in alignment with Voca's offline-first architecture (`🔥 Streak`, `🏆 Level` with Achievements modal trigger, and `💎 AI Credits`). In expanded mode, renders as a single horizontal pill (`.stats-bar`). In collapsed mode, the rail remains purely iconic (40×40px items: Flag and Avatar with a neatly docked flame badge `🔥`), while clicking the avatar smoothly opens a floating card (`.stats-popover-card`) anchored to the bottom-left displaying the user profile, hero streak banner, XP overview, AI diamonds, settings, and sign-out actions. Harmonized with the sidebar and main content using `var(--bg-card)` for the card container and `var(--bg-primary)` for internal widget tiles to eliminate muddy contrast in both Light and Dark themes.
   - **Authenticated State (`auth.isLoggedIn()`)**: Displays Pro/Premium upgrade button (if eligible) and user profile row with subscription tier ring and settings trigger.
   - **Guest State (`!auth.isLoggedIn()`)**: Omits premature 👑 Pro upsell button. In expanded mode, displays the learning language picker, a welcoming Google sign-in card with vocabulary sync prompt, and settings button. In collapsed mode, displays the learning language flag and clean guest avatar, with cloud sync CTA in the popover card.
-- **`SettingsSheetComponent`**: Slide-over sheet for adjusting learning languages, Furigana/Pinyin toggles, Romaji display modes, font size, playback speed, and theme. Includes mobile-responsive motivation stats pills (`Streak`, `Level`, `AI Credits`).
+- **`SettingsSheetComponent`**: Slide-over sheet for adjusting learning languages, Furigana/Pinyin toggles, Romaji display modes, font size, playback speed, and theme. Features a compact, sleek account row with circular nationality flag and tier badge, an **Edit Profile** modal (custom avatar canvas compression & cute preset avatars, display name, and country/region selection), and mobile-responsive motivation stats pills (`Streak`, `Level`, `AI Credits`).
 - **`MoreMenuSheet` (in `AppComponent`)**: Mobile personal library & settings sheet accessible via the bottom navigation bar. Features a 3-column top quick stats bar (`🔥 Streak`, `🏆 Level`, `💎 AI Credits` - tapping Level opens the Achievements modal) alongside personal library and settings action rows (`Playlists`, `History`, `Install App`, `Settings`).
 - **Mobile Bottom Navigation (`.bottom-nav`)**: 5-item mobile navigation bar featuring `Xem` (Watch), `Ôn tập` (SRS Review), an elevated central `(+)` squircle CTA button with Voca's signature coral accent gradient (`linear-gradient(135deg, var(--accent-primary), #e04848)`) for instantaneous YouTube video URL entry, `Từ vựng` (Dictionary), and `Thêm` (More).
 - **`AchievementsDialogComponent`**: Interactive gamification modal showcasing user level, total XP progress bar, unlocked and in-progress achievement badges across Immersion, Vocabulary, Daily Streaks, Flashcards, and Quizzes, and global leaderboard rankings.
@@ -657,13 +659,14 @@ All zero-item, filter no-match, and fallback states across feeds, sidebars, shee
   - Container padding: `1.5rem 1rem` (desktop) and `1.25rem 0.75rem` (mobile), max-width bounded at `380px` (text bounded at `320px`).
 - **Geometric Icon Box (`.empty-state__icon-box`)**:
   - Always rendered as a clean, calm **50% circle** (`border-radius: 50%;`). Squircles or unbordered boxes are strictly prohibited.
-  - Standard centered size: `3rem` (48px) with 22px `<app-icon>` inside (`color: var(--text-muted)`).
+  - Standard centered size: `3rem` (48px) with 24px–28px `<app-icon>` inside (`color: var(--text-muted)`).
   - Clean styling: solid `var(--bg-surface)` background and `1px solid var(--border-color)` border, with zero glow or distracting radial auras.
   - Semantic variants: `.empty-state__icon-box--error` (subtle red-tinted for network/player failures) and `.empty-state__icon-box--accent` (soft rose-tinted).
 - **Compact Variant (`.empty-state--compact`)**:
-  - Purpose-built for desktop sidebars, drawer side-panels, mobile bottom sheets, and modal option pickers.
+  - Purpose-built for desktop sidebars (e.g. `/video` sidebar), drawer side-panels, mobile bottom sheets, and modal option pickers.
   - Scaled dimensions: `2.25rem` (36px) icon box with 16px `<app-icon>`, `0.8125rem` title, and `0.75rem` hint.
   - Padding: `0.75rem 0.5rem`, gap `0.5rem` (8px), max-width `260px`.
+  - **Responsive Sizing in Embedded Lists**: Components like `VocabularyListComponent` employ reactive mobile detection (`isMobile()` via `matchMedia('(max-width: 768px)')`). On mobile in full-page tabs (such as the Dictionary page's Vocabulary tab), the empty state automatically renders at the full standard size (28px icon, 3rem icon box) to match `DictionaryPanelComponent`, while remaining compact in desktop sidebars. Consumer components can explicitly override this via `[compactEmptyState]`.
   - Deprecates ad-hoc one-off classes like `.sidebar-empty-box`.
 - **Typographic Scale**:
   - Title: `.empty-state__title` (`1rem` / 16px, `font-weight: 700`, `letter-spacing: -0.015em`, `text-wrap: balance`).
@@ -671,6 +674,10 @@ All zero-item, filter no-match, and fallback states across feeds, sidebars, shee
 - **Action Button Hierarchy (`.empty-state__action` & `.empty-state__actions`)**:
   - Action buttons are grouped inside `.empty-state__actions` (`gap: 0.5rem; display: inline-flex; flex-wrap: wrap; justify-content: center;`).
   - Standard action button height is `32px` (28px in compact mode) with pill border-radius, `0.8125rem` font (`0.75rem` in compact mode), and `font-weight: 600`.
+- **Button Link Architecture & Specificity Guard (`a.btn`)**:
+  - Button elements rendered as router links (`<a class="btn ...">`) use `:where(a.btn)` for baseline reset styling with zero specificity `(0, 0, 0)`. This guarantees that variant classes (such as `.btn-primary` and `.btn-secondary`) retain absolute precedence over inherited text colors.
+  - All button variants (`.btn-primary`, `.btn-secondary`, `.btn-ghost`, `.btn-danger`) explicitly target both `.btn-*` and `a.btn-*`, coupled with `&:visited` and `@media (hover: hover)` hover states, ensuring `#ffffff` for primary buttons and tokenized text colors across all states without browser visited link discoloration or hover color flips.
+  - Global anchor hover styles (`a:not(.btn):hover`) strictly exclude button links, preventing secondary theme color contamination on button hover.
 - **Zero Inline Style Rule**: Redundant inline styles like `style="align-items: center; text-align: center;"` or `style="margin-top: ..."` are forbidden; centered alignment is handled natively by `.empty-state--centered`.
 
 ### Modal & Bottom Sheet Standardization Conventions
@@ -726,7 +733,7 @@ To maintain complete visual, structural, and functional harmony across all prima
     - Prevents the dark inset cutout bug in dark mode where child toolbars with `#0f1117` background clashed with parent card containers (`#161c27`).
 - **Unified 38px Global Height Baseline (Single Source of Truth in `src/styles/_components.scss`)**:
   - **Desktop ($\ge 769\text{px}$)**: All toolbar elements share exact 38px height: `.segmented-control` (38px), `.action-icon-btn` (38px), `.create-playlist-btn` (38px), `.app-search-box` (38px), and `.filter-chip` (38px). Primary panel actions (e.g. `.create-playlist-btn` primary icon button, History clear `action-icon-btn--danger`, and Vocab options `action-icon-btn`) sit inline with the segmented tabs in `.panel-toolbar__top` on the right side of the card, sharing the exact 38px circular geometry and height baseline with the tabs.
-  - **Mobile ($\le 768\text{px}$)**: Responsive adaptive placement: Toolbar actions adapt into the top `.panel-header__row` as compact 32px circular icon buttons with expanded 44px touch targets. This completely frees Row 1 of `.panel-toolbar` on mobile, allowing `.segmented-control` (38px) to flex to 100% full width with equal, symmetric tab distribution; Row 2 pairs the search input (`.app-search-box`, 38px, font 14px) and horizontal filter strip (`.filter-scroll-strip`, chips 38px) side-by-side.
+  - **Mobile ($\le 768\text{px}$)**: Responsive adaptive placement: Toolbar actions adapt into the top `.panel-header__row` as compact 32px circular icon buttons with expanded 44px touch targets. This completely frees Row 1 of `.panel-toolbar` on mobile, allowing `.segmented-control` (38px) to flex to 100% full width with equal, symmetric tab distribution. In Row 2 (`.panel-toolbar__filters`), views with both a search input and extensive filter chips use `.panel-toolbar__filters--stacked` to stack search at 100% width on row 1 and horizontal scrollable chips (`.filter-scroll-strip` with touch momentum `-webkit-overflow-scrolling: touch` and hidden scrollbars) on row 2, automatically transitioning to a single unified row on desktop ($\ge 769\text{px}$).
   - **Zero Component Overrides**: Every screen (Dictionary, Playlist, History, Vocab) inherits toolbar styling strictly from global CSS in `_components.scss`. Component SCSS files contain zero custom toolbar overrides.
   - **Segmented Controls & Hardware-Accelerated Sliding Tab Pill (`.segmented-control`)**:
     - Built with a 100% pure CSS, compositor-thread sliding pill indicator using pseudo-element `::before`, avoiding runtime JS measuring, `getBoundingClientRect()`, or DOM-injection directives.
@@ -758,7 +765,29 @@ To maintain complete visual, structural, and functional harmony across all prima
     - **Surface Container (`.stat-item`)**: `background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 0.5rem 0.25rem;`.
     - **Typography & Semantic Palette**: Numbers use `.stat-value` (`1.125rem`, `font-weight: 800`), colored using semantic tokens: `.stat-new` / `.stat-favorite` (coral), `.stat-learning` (amber), `.stat-known` / `.stat-community` (blue), `.stat-completed` (emerald). Labels use `.stat-label` (`0.625rem`, `font-weight: 700`, `text-transform: uppercase`, `letter-spacing: 0.5px`, `color: var(--text-muted)`).
     - **Full-Width Pill Action Button (`.sidebar-action-btn`)**: Consistent full-width primary CTA or secondary exploration button with centered icon and label.
-    - **Empty State Container (`.sidebar-empty-box`, `.sidebar-empty-desc`)**: Standardized vertical empty state wrapper with muted descriptive caption.
+    - **Contextual Learning Guide (`.sidebar-guide-box`)**: In `/dictionary`, when 0 cards exist, instead of rendering a redundant second `.empty-state` circle right beside the search empty state, the sidebar renders a soft onboarding guide (`.sidebar-guide-box`) with a subtle lightbulb icon, localized learning tip (`dictionary.studyTip`), and a secondary link to browse videos.
+- **Unified Standalone Empty State Component (`<app-empty-state>`)**:
+  - Located in `src/app/shared/components/empty-state/`.
+  - Replaces hand-crafted, copy-pasted `.empty-state` markup blocks across the application (`video-page`, `dictionary-panel`, `vocabulary-list`, `vocabulary-quick-view`, `history-list`, `history-page`, `playlist-panel`, `add-to-playlist-dialog`, `study-mode`, `video-player`, `achievements-dialog`, `command-palette`, `option-picker`, `grammar-popup`, `word-popup`).
+  - Supports configurable inputs: `icon` (`IconName`), `iconSize`, `title`, `description`, `compact` (for drawers, popups, and sidebars), `centered`, `animate` (entrance transition), and `iconVariant` (`'default' | 'accent' | 'error'`).
+  - Supports `<ng-content>` projection for custom action buttons or complex secondary markup.
+- **Unified Standalone Search Input Toolbar (`<app-search-input>`)**:
+  - Located in `src/app/shared/components/search-input/`.
+  - Standardizes search input styling, two-way `model<string>()` state binding, enter-key submission, clear button, and accessible aria-labels across `HistoryPageComponent`, `PlaylistPageComponent`, and `VocabularyListComponent`.
+- **DOM Teleportation Utility (`DomTeleporter`)**:
+  - Located in `src/app/shared/utils/teleport.utils.ts`.
+  - Unifies DOM relocation into `document.fullscreenElement` or `document.body` across `BottomSheetComponent` and `ToastComponent`, ensuring overlay content safely escapes stacking contexts, CSS transforms, and `overflow: hidden` containers with clean DOM restoration upon close.
+- **Date & Week Key Generation Engine (`date.utils.ts`)**:
+  - Located in `src/app/shared/utils/date.utils.ts`.
+  - Centralizes timezone-safe `toLocalDateKey(date)`, `toUtcDateKey(date)`, `getTodayKey()`, and ISO week key calculation `getIsoWeekKey(d)` shared across `OfflineGamificationRepository`, `OfflineStreakRepository`, and `StreakDialogComponent`.
+- **Offline Tombstone Store (`TombstoneStore`)**:
+  - Located in `src/app/shared/utils/sync.utils.ts`.
+  - Provides a structured store for tracking deletion tombstones with persistence and batch operations, eliminating duplicate deletion tracking logic across `OfflinePlaylistRepository` and `OfflineHistoryRepository`.
+- **Linguistic Utilities Consolidation (`language.utils.ts`)**:
+  - Located in `src/app/shared/utils/language.utils.ts`.
+  - Centralizes `getReadingDisplayLabelKey` and `getReadingDisplayLabel`, unifying label resolution across `SubtitleDisplayComponent`, `StudyModeComponent`, and `SettingsSheetComponent`.
+- **Single Source of Truth for Japanese Romaji Engine**:
+  - Canonical implementation maintained in `src/app/shared/utils/japanese-romaji.ts` and directly re-exported and bundled into Cloudflare Functions (`functions-src/utils/japanese-romaji.js`), eliminating full-file code duplication and vowel parsing divergence.
 
 ### 6.3. Unified YouTube-Style Video & Playlist Grid System (`.yt-video-grid` & `.yt-video-card`)
 - **Global Centralization (`src/styles/_components.scss`)**: Standardized responsive card grid system shared across the Home "For You" feed (`/video`), History (`/history`), and Playlists explorer (`/playlist`).
@@ -814,6 +843,7 @@ To maintain complete visual, structural, and functional harmony across all prima
   - Automatically listens to `unrecoverable` events (broken cache hashes or CDN desyncs), safely flushes stale browser CacheStorage, and performs a clean reload to prevent blank screens or locked app states.
 - **UI Integration**:
   - **Update Available Bottom Sheet**: Presents the incoming version badge, warning alert icon when forced, a bulleted "What's New" preview, and action buttons (`Update Now` / `Later`). If `forceUpdateRequired` is active, the sheet removes the close handle and hides the `Later` button.
+  - **Updating Transition Overlay**: Displays a fullscreen theme-adaptive glassmorphism scrim (`rgba(var(--bg-card-rgb), 0.88)` in Light mode, `rgba(13, 15, 20, 0.88)` in Dark mode with 24px blur), Kikyou flower pulse animation, indeterminate gradient progress bar, and safety reload fallback if reload stalls beyond 4.5 seconds. Automatically pauses background media before reload and presents a celebratory toast on subsequent bootstrap.
   - **Settings Sheet**: Displays the current app version with a "What's New" button that opens a full localized Release Notes sheet, an active "Check for Updates" button with a live spinner, and an instant "Update Now" button when an update is queued.
   - **Sidebar & More Sheet**: Surfaces a non-intrusive pulsating dot badge on the Settings item when an update is available but was dismissed for later.
   - **GlobalErrorHandler Protection**: Guards against infinite chunk reload loops with a 15-second debounce and awaits cache clearance before reloading.
@@ -896,9 +926,12 @@ To maintain complete visual, structural, and functional harmony across all prima
       - **Unified Sticky Player Row (`.ranking-row.is-current-user`)**: For learners in ranks 4+, the user is represented by a single, unified row inside the ranking list — completely eliminating redundant duplicate bottom bars:
         - Utilizes CSS `position: sticky; bottom: 8px; z-index: 10` with glassmorphic elevation (`backdrop-filter: blur(16px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3)`) so it pins gracefully to the bottom of the list when viewing upper ranks.
         - As the user scrolls down, the card seamlessly meets its natural slot in the rankings and scrolls naturally with neighboring learners without layout jumps or disappearing tricks.
-        - The refresh button lives in `.leaderboard-top-row`, cleanly aligned to the right of the centered timeframe pills (`Tuần này` / `Mọi lúc`) without orphan rows.
-        - Language filter chips (`All`, `JA`, `KO`, `ZH`, `EN`) maintain 100% visual parity with circular badges (`.circle-flag` for country flags, and `.circle-flag--globe` with the vector globe icon for `All`).
-        - **Local Dev Testing Mock (`LeaderboardService.devMockRank`)**: In local development (`localhost`/`127.0.0.1` or `isDevMode()`), the current user is automatically placed at Rank 1 (Gold Champion) out of the box for UI testing. Developers can switch ranks instantly in DevTools via `window.__setDevLeaderboardRank(1)`, `window.__setDevLeaderboardRank(3)`, or `window.__setDevLeaderboardRank(null)`.
+        - **Country Flag & Nationality Architecture (`CountryService`)**:
+          - Displays authentic learner nationality/origin flags rather than the language they are studying (preventing false language-flag confusion).
+          - **Hybrid Edge Resolution**: Auto-detects the user's home country via Cloudflare Geo-IP (`/api/geo` & `request.cf.country`) on app initialization, seamlessly falling back to browser locale (`navigator.language`) and timezones.
+          - **Manual Override in Settings**: Users can override their country or switch back to "Auto-detect" via the Settings Sheet country picker.
+          - **Flag Parity**: Vector circular SVG flag badges render uniformly across Podium columns (1st, 2nd, 3rd), Sticky Champion Bar, and individual ranking rows.
+        - **Local Dev Testing Mock (`LeaderboardService.devMockRank`)**: In local development (`localhost`/`127.0.0.1` or `isDevMode()`), developers can toggle mock ranks in DevTools via `window.__setDevLeaderboardRank(1)` (Gold Champion), `window.__setDevLeaderboardRank(3)` (Bronze), or `window.__setDevLeaderboardRank(null)` (reset to authentic data).
   - **OnPush Change Detection**: Completely signal-driven without unnecessary zone rerenders.
 
 ### 8.4. UI Badges & Visual Tokens
@@ -1038,5 +1071,13 @@ To maintain world-class performance, low memory footprint, and maintainability, 
 - Removed legacy `padding-bottom: 56.25%` and `@supports (aspect-ratio: 16 / 9)` blocks from `video-player.component.scss` (native `aspect-ratio` is Baseline 2021).
 - Removed unused `.hover-fix` and `.hover-passthrough` rules from `_utilities.scss`.
 - Standardized cross-browser overlay scrollbars with standard `scrollbar-width: thin; scrollbar-color: rgba(...) transparent;` without `@supports not selector(::-webkit-scrollbar)` isolation hacks.
+
+### 11.9. Declarative Infinite Scroll & Shared Directives
+- **InfiniteScrollDirective (`[appInfiniteScroll]`)**:
+  - Encapsulates `IntersectionObserver` sentinel lifecycle into a lightweight, standalone Angular directive (`src/app/shared/directives/infinite-scroll.directive.ts`).
+  - Standardizes progressive loading across `VideoPageComponent`, `PlaylistPageComponent`, and `HistoryListComponent`.
+  - Configurable `rootMargin` (default `400px 0px`), `threshold` (default `0.05`), `disabled` signal input, and automatic internal throttler (`throttleMs: 120ms`) preventing double-dispatch on rapid scrolls.
+  - Eliminated over 120 lines of repetitive `viewChild('scrollSentinel')`, `PLATFORM_ID`, and observer teardown boilerplate across components.
+
 
 

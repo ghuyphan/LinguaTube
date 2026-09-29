@@ -1,6 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { IStreakRepository, StreakData, ActivityResult } from './streak.repository';
 import { AuthService, StorageService, SupabaseService } from '../services';
+import { toLocalDateKey, toUtcDateKey } from '../../shared/utils/date.utils';
 
 const STORAGE_KEY = 'linguatube_streak';
 const HISTORY_KEY = 'linguatube_activity_log';
@@ -218,17 +219,11 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     private toLocalDateKey(date: Date): string {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        return toLocalDateKey(date);
     }
 
     private toUtcDateKey(date: Date): string {
-        const year = date.getUTCFullYear();
-        const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-        const day = String(date.getUTCDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        return toUtcDateKey(date);
     }
 
     private addToLocalHistory(date: Date) {

@@ -296,7 +296,7 @@
 
     &.selected {
         border-color: var(--accent-primary);
-        background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.07);
+        background: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.07);
         box-shadow: 0 0 0 1px var(--accent-primary);
 
         .card-title {
@@ -481,22 +481,13 @@
 
     &:active {
         transform: scale(0.98);
-        box-shadow: 0 2px 10px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.25);
+        box-shadow: 0 2px 10px rgba(var(--accent-primary-rgb, 232, 69, 98), 0.25);
     }
 }
 
 /* ============================================
    6. KEYFRAME ANIMATIONS
    ============================================ */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes modalPop {
     from {
         opacity: 0;

@@ -1783,6 +1783,136 @@ test('Recommendation Engine: rankVideos applies multi-factor learner signals acc
   assert.equal(declustered[1].channel, 'Channel Y', 'Adjacent same-channel candidate must be separated');
 });
 
+test('labelToTier: accurately maps levels and frameworks to standardized tiers', async () => {
+  const { labelToTier } = await import('../functions-src/data/video-info-db.js');
+
+  // 1. Japanese (JLPT)
+  assert.equal(labelToTier('JLPT N5'), 'beginner');
+  assert.equal(labelToTier('N4'), 'elementary');
+  assert.equal(labelToTier('JLPT N3'), 'intermediate');
+  assert.equal(labelToTier('N2'), 'upper_intermediate');
+  assert.equal(labelToTier('JLPT N1'), 'advanced');
+
+  // 2. Korean (TOPIK) - Verify bug fix
+  assert.equal(labelToTier('TOPIK 1'), 'beginner');
+  assert.equal(labelToTier('TOPIK I'), 'beginner');
+  assert.equal(labelToTier('TOPIK 2'), 'elementary');
+  assert.equal(labelToTier('TOPIK 3'), 'intermediate');
+  assert.equal(labelToTier('TOPIK 4'), 'intermediate');
+  assert.equal(labelToTier('TOPIK 5'), 'upper_intermediate');
+  assert.equal(labelToTier('TOPIK 6'), 'advanced');
+  assert.equal(labelToTier('TOPIK II'), 'advanced');
+
+  // 3. Chinese (HSK)
+  assert.equal(labelToTier('HSK 1'), 'beginner');
+  assert.equal(labelToTier('HSK 2'), 'elementary');
+  assert.equal(labelToTier('HSK 3'), 'intermediate');
+  assert.equal(labelToTier('HSK 4'), 'intermediate');
+  assert.equal(labelToTier('HSK 5'), 'upper_intermediate');
+  assert.equal(labelToTier('HSK 6'), 'advanced');
+
+  // 4. English (CEFR)
+  assert.equal(labelToTier('CEFR A1'), 'beginner');
+  assert.equal(labelToTier('CEFR A2'), 'elementary');
+  assert.equal(labelToTier('CEFR B1'), 'intermediate');
+  assert.equal(labelToTier('CEFR B2'), 'upper_intermediate');
+  assert.equal(labelToTier('CEFR C1'), 'advanced');
+  assert.equal(labelToTier('CEFR C2'), 'advanced');
+
+  // 5. Multilingual keywords
+  assert.equal(labelToTier('Tiếng Nhật Sơ Cấp 1'), 'beginner');
+  assert.equal(labelToTier('Tiếng Hàn Trung Cấp'), 'intermediate');
+  assert.equal(labelToTier('Tiếng Anh Cao Cấp'), 'advanced');
+  assert.equal(labelToTier('Tiếng Trung Trung Cao Cấp'), 'upper_intermediate');
+  assert.equal(labelToTier('日本語 初級 入門'), 'beginner');
+  assert.equal(labelToTier('한국어 초급'), 'elementary');
+  assert.equal(labelToTier('한국어 고급'), 'advanced');
+});
+
+test('estimateTranscriptLevel: calculates edge-friendly difficulty levels from subtitle cues', async () => {
+  const { estimateTranscriptLevel } = await import('../functions-src/utils/level-estimator.js');
+
+  // 1. Metadata match priority
+  const metaResult = estimateTranscriptLevel([], 'ja', { title: 'JLPT N4 Grammar Masterclass' });
+  assert.equal(metaResult.level, 'JLPT N4');
+  assert.equal(metaResult.tier, 'elementary');
+  assert.equal(metaResult.confidence, 0.95);
+  assert.equal(metaResult.method, 'metadata');
+
+  // 2. Simple Japanese (Hiragana-heavy, slow speech -> Beginner N5/N4)
+  const simpleJaCues = [
+    { text: 'こんにちは、わたしはたなかです。', start: 0, end: 5 },
+    { text: 'きょうは いい てんき ですね。', start: 5, end: 10 },
+    { text: 'ごはんを たべます。', start: 10, end: 15 }
+  ];
+  const jaResult = estimateTranscriptLevel(simpleJaCues, 'ja');
+  assert.ok(['JLPT N5', 'JLPT N4'].includes(jaResult.level));
+  assert.ok(['beginner', 'elementary'].includes(jaResult.tier));
+  assert.equal(jaResult.method, 'server_heuristic');
+
+  // 3. Advanced Japanese (Kanji-dense, political/formal compound words -> Upper/Advanced)
+  const advancedJaCues = [
+    { text: '日本政府は新たな経済安全保障政策の基本方針を閣議決定しました。', start: 0, end: 4 },
+    { text: '半導体などの重要物資の供給網強靱化に向けて支援措置を強化する方針です。', start: 4, end: 8 },
+    { text: '国際情勢の激変に伴う不透明感が増大する中で迅速な対応が求められています。', start: 8, end: 12 }
+  ];
+  const advJaResult = estimateTranscriptLevel(advancedJaCues, 'ja');
+  assert.ok(['JLPT N2', 'JLPT N1'].includes(advJaResult.level));
+  assert.ok(['upper_intermediate', 'advanced'].includes(advJaResult.tier));
+
+  // 4. Simple English (A1/A2 conversation)
+  const simpleEnCues = [
+    { text: 'Hello, my name is John.', start: 0, end: 3 },
+    { text: 'What is your name? Nice to meet you.', start: 3, end: 6 },
+    { text: 'I like apples and bananas.', start: 6, end: 9 }
+  ];
+  const enResult = estimateTranscriptLevel(simpleEnCues, 'en');
+  assert.ok(['CEFR A1', 'CEFR A2'].includes(enResult.level));
+  assert.ok(['beginner', 'elementary'].includes(enResult.tier));
+
+  // 5. Korean estimation (Hangul cues)
+  const koCues = [
+    { text: '안녕하세요. 오늘 날씨가 참 좋아요.', start: 0, end: 4 },
+    { text: '저는 한국어를 공부하고 있어요.', start: 4, end: 8 }
+  ];
+  const koResult = estimateTranscriptLevel(koCues, 'ko');
+  assert.ok(koResult.level.startsWith('TOPIK'));
+  assert.ok(['beginner', 'elementary'].includes(koResult.tier));
+});
+
+test('saveVideoLevel: caps client confidence and applies EMA blending', async () => {
+  const { saveVideoLevel } = await import('../functions-src/data/video-info-db.js');
+
+  let storedLevels = null;
+  const mockDb = {
+    prepare: (query) => ({
+      bind: (...args) => ({
+        first: async () => ({ levels: storedLevels ? JSON.stringify(storedLevels) : null }),
+        run: async () => {
+          if (query.includes('UPDATE')) {
+            storedLevels = JSON.parse(args[0]);
+          }
+          return { success: true };
+        }
+      })
+    })
+  };
+
+  // 1. First save with server estimate (score 2.0, confidence 0.85)
+  const first = await saveVideoLevel(mockDb, null, 'vid_test_1', 'ja', 'JLPT N4', 0.85, 'server_heuristic', { score: 2.0, tier: 'elementary' });
+  assert.equal(first.ja.level, 'JLPT N4');
+  assert.equal(first.ja.score, 2.0);
+  assert.equal(first.ja.tier, 'elementary');
+  assert.equal(first.ja.confidence, 0.85);
+
+  // 2. Client submits with spoofed confidence 1.0 (should be capped to 0.85) and blended via EMA
+  const second = await saveVideoLevel(mockDb, null, 'vid_test_1', 'ja', 'JLPT N3', 1.0, 'linguistics', { score: 3.0, tier: 'intermediate' });
+  assert.equal(second.ja.level, 'JLPT N3');
+  // Blended score: 0.60 * 2.0 + 0.40 * 3.0 = 1.2 + 1.2 = 2.4
+  assert.equal(second.ja.score, 2.4);
+  assert.ok(second.ja.confidence <= 0.85, 'Client confidence must be capped at 0.85');
+});
+
 
 
 

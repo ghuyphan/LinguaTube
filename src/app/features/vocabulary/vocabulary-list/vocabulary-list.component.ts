@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
+import { SearchInputComponent } from '../../../shared/components/search-input/search-input.component';
 
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AuthService, AudioService, ToastService } from '../../../core/services';
@@ -15,7 +17,7 @@ import { VocabularyItem, WordLevel, Token } from '../../../models';
   selector: 'app-vocabulary-list',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent],
+  imports: [CommonModule, FormsModule, IconComponent, OptionPickerComponent, BottomSheetComponent, EmptyStateComponent, SearchInputComponent],
   templateUrl: './vocabulary-list.component.html',
   styleUrl: './vocabulary-list.component.scss'
 })
@@ -30,6 +32,7 @@ export class VocabularyListComponent implements OnDestroy {
 
   // Inputs & Outputs
   embedded = input<boolean>(false);
+  compactEmptyState = input<boolean | null>(null);
   showHeader = input<boolean>(true);
   showMenu = input<boolean>(false);
   showToolbar = input<boolean>(true);
@@ -39,6 +42,13 @@ export class VocabularyListComponent implements OnDestroy {
   menuRequest = output<void>();
   wordSelect = output<Token>();
   addWordRequest = output<string | void>();
+
+  readonly isCompactEmptyState = computed(() => {
+    if (this.compactEmptyState() !== null) {
+      return this.compactEmptyState()!;
+    }
+    return false;
+  });
 
   effectiveSearchQuery = computed(() => {
     return (this.showToolbar() ? this.searchQuery : this.externalSearch()).trim();

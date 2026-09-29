@@ -24,15 +24,12 @@
          [style.margin-bottom]="embedded() ? 'var(--space-md)' : 'var(--space-xs)'">
         <div class="panel-toolbar__top">
             <div class="panel-search-wrapper" style="display: block; max-width: 100%;">
-                <div class="app-search-box">
-                    <app-icon name="search" [size]="14" class="search-icon" />
-                    <input type="search" enterkeyhint="search" [(ngModel)]="searchQuery" [placeholder]="i18n.t('vocab.search') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" autocomplete="off" />
-                    @if (searchQuery) {
-                    <button type="button" class="clear-btn" (click)="clearSearch()" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
-                        <app-icon name="x" [size]="12" />
-                    </button>
-                    }
-                </div>
+                <app-search-input
+                    [(value)]="searchQuery"
+                    [placeholder]="i18n.t('vocab.search') || i18n.t('common.search') || 'Search...'"
+                    [clearAriaLabel]="i18n.t('common.clear') || 'Clear search'"
+                    (cleared)="clearSearch()"
+                />
             </div>
 
             @if (showMenu()) {
@@ -101,40 +98,38 @@
             }
         </div>
         } @else if (filteredWords().length === 0) {
-        <div class="empty-state empty-state--centered empty-state--animate" [class.empty-state--compact]="embedded()">
-            @if (currentLangVocabCount() === 0) {
-            <div class="empty-state__icon-box">
-                <app-icon name="layers" [size]="embedded() ? 16 : 24" />
-            </div>
-            <div class="empty-state__text">
-                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-                <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
-            </div>
+        @if (currentLangVocabCount() === 0) {
+        <app-empty-state
+            icon="layers"
+            [title]="i18n.t('vocab.noWordsSaved')"
+            [description]="i18n.t('vocab.clickWordsToSave')"
+            [compact]="isCompactEmptyState()"
+        >
             <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
-                <app-icon name="search" [size]="embedded() ? 12 : 14" />
+                <app-icon name="search" [size]="isCompactEmptyState() ? 12 : 14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
             </button>
-            } @else {
-            <div class="empty-state__icon-box">
-                <app-icon name="search" [size]="embedded() ? 16 : 24" />
-            </div>
-            <div class="empty-state__text">
-                <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
-                <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
-            </div>
+        </app-empty-state>
+        } @else {
+        <app-empty-state
+            icon="search"
+            [title]="i18n.t('vocab.noMatchesFound')"
+            [description]="i18n.t('dictionary.tryDifferent')"
+            [compact]="isCompactEmptyState()"
+        >
             @if (effectiveSearchQuery()) {
             <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary(effectiveSearchQuery())">
-                <app-icon name="search" [size]="embedded() ? 12 : 14" />
+                <app-icon name="search" [size]="isCompactEmptyState() ? 12 : 14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search in dictionary' }}</span>
             </button>
             } @else if (selectedLevel() !== 'all') {
             <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="selectedLevel.set('all')">
-                <app-icon name="rotate-ccw" [size]="embedded() ? 12 : 14" />
+                <app-icon name="rotate-ccw" [size]="isCompactEmptyState() ? 12 : 14" />
                 <span>{{ i18n.t('history.all') || 'Show All' }}</span>
             </button>
             }
-            }
-        </div>
+        </app-empty-state>
+        }
         } @else {
         <div class="vocab-items">
             @for (item of filteredWords(); track item.id; let i = $index) {

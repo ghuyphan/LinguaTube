@@ -9,19 +9,17 @@
         </div>
 
         @if (recentWords().length === 0) {
-        <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
-            <div class="empty-state__icon-box">
-                <app-icon name="bookmark" [size]="16" />
-            </div>
-            <div class="empty-state__text">
-                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-                <p class="empty-state__description">{{ i18n.t('study.tapWordsHint') }}</p>
-            </div>
+        <app-empty-state
+            icon="bookmark"
+            [title]="i18n.t('vocab.noWordsSaved')"
+            [description]="i18n.t('study.tapWordsHint')"
+            [compact]="true"
+        >
             <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="openDictionary()">
                 <app-icon name="book-open" [size]="12" />
                 <span>{{ i18n.t('nav.dictionary') }}</span>
             </button>
-        </div>
+        </app-empty-state>
         } @else {
         <div class="quick-view-modal__card">
             <ul class="quick-view-list" role="list">

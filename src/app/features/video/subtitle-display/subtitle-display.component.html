@@ -178,30 +178,15 @@
                             } @else if (transcript.error() === 'NETWORK_ERROR') {
                             <span class="empty-title">{{ i18n.t('subtitle.networkErrorTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.networkErrorHint') }}</span>
-                            <div class="empty-actions">
-                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
-                                    <app-icon name="refresh-cw" [size]="14" />
-                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
-                                </button>
-                            </div>
+                            <ng-container *ngTemplateOutlet="retryAction" />
                             } @else if (transcript.error() === 'SERVER_ERROR') {
                             <span class="empty-title">{{ i18n.t('subtitle.serverErrorTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.serverErrorHint') }}</span>
-                            <div class="empty-actions">
-                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
-                                    <app-icon name="refresh-cw" [size]="14" />
-                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
-                                </button>
-                            </div>
+                            <ng-container *ngTemplateOutlet="retryAction" />
                             } @else if (transcript.error() === 'AI_TIMEOUT' || transcript.error() === 'AI_JOB_FAILED' || transcript.error() === 'AI_FAILED') {
                             <span class="empty-title">{{ i18n.t('subtitle.aiTimeoutTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.aiTimeoutHint') }}</span>
-                            <div class="empty-actions">
-                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
-                                    <app-icon name="refresh-cw" [size]="14" />
-                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
-                                </button>
-                            </div>
+                            <ng-container *ngTemplateOutlet="retryAction" />
                             } @else if (hasNativeInOtherLanguage()) {
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.captionsAvailableIn', { language: getLanguageDisplayName(firstAvailableNativeLanguage() || '') }) || ('Captions are available in ' + getLanguageDisplayName(firstAvailableNativeLanguage() || '')) }}</span>
@@ -232,23 +217,22 @@
                             } @else if (transcript.error() === 'NO_DIAMONDS' || transcript.error() === 'INSUFFICIENT_DIAMONDS') {
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.noDiamondsLeft') }}</span>
-                            <div class="empty-actions">
-                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
-                                    <app-icon name="refresh-cw" [size]="14" />
-                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
-                                </button>
-                            </div>
+                            <ng-container *ngTemplateOutlet="retryAction" />
                             } @else {
                             <span class="empty-title">{{ i18n.t('subtitle.noSubtitlesAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.aiUnavailable') }}</span>
+                            <ng-container *ngTemplateOutlet="retryAction" />
+                            }
+                        </div>
+
+                        <ng-template #retryAction>
                             <div class="empty-actions">
                                 <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
                                     <app-icon name="refresh-cw" [size]="14" />
                                     <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
                                 </button>
                             </div>
-                            }
-                        </div>
+                        </ng-template>
                     </div>
 
                     <!-- Empty (no video) -->

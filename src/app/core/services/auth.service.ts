@@ -8,9 +8,11 @@ export interface UserProfile {
     email: string;
     name: string;
     picture: string;
+    googlePicture?: string;
     subscriptionTier?: 'free' | 'pro' | 'premium';
     subscriptionExpires?: Date;
     diamonds?: number;
+    country?: string;
 }
 
 type OAuthPopup = Window | null;
@@ -180,6 +182,9 @@ export class AuthService {
      * Fetch profile record from public.profiles table or fallback to auth metadata
      */
     private async fetchProfile(user: User): Promise<UserProfile> {
+        const meta = user.user_metadata || {};
+        const googlePic = (meta['avatar_url'] as string) || (meta['picture'] as string) || undefined;
+
         try {
             const { data, error } = await this.supabase.client
                 .from('profiles')
@@ -191,11 +196,13 @@ export class AuthService {
                 return {
                     id: data.id,
                     email: data.email || user.email || '',
-                    name: data.name || user.user_metadata?.['full_name'] || user.user_metadata?.['name'] || data.email || 'User',
-                    picture: data.avatar_url || user.user_metadata?.['avatar_url'] || user.user_metadata?.['picture'] || '',
+                    name: data.name || meta['full_name'] || meta['name'] || data.email || 'User',
+                    picture: data.avatar_url || googlePic || '',
+                    googlePicture: googlePic,
                     subscriptionTier: (data.subscription_tier as 'free' | 'pro' | 'premium') || 'free',
                     subscriptionExpires: data.subscription_expires ? new Date(data.subscription_expires) : undefined,
-                    diamonds: data.diamonds ?? 5
+                    diamonds: data.diamonds ?? 5,
+                    country: data.country || undefined
                 };
             }
         } catch (err) {
@@ -203,15 +210,60 @@ export class AuthService {
         }
 
         // Fallback to session user metadata if profiles table row isn't readable yet
-        const meta = user.user_metadata || {};
         return {
             id: user.id,
             email: user.email || '',
             name: (meta['full_name'] as string) || (meta['name'] as string) || user.email || 'User',
-            picture: (meta['avatar_url'] as string) || (meta['picture'] as string) || '',
+            picture: googlePic || '',
+            googlePicture: googlePic,
             subscriptionTier: 'free',
             diamonds: 5
         };
+    }
+
+    /**
+     * Update user profile (name, avatar, country) in Supabase and local cache
+     */
+    async updateUserProfile(updates: { name?: string; picture?: string; country?: string }): Promise<boolean> {
+        const currentUser = this.user();
+        if (!currentUser) return false;
+
+        const dbUpdates: Record<string, string> = {};
+        if (updates.name !== undefined) dbUpdates['name'] = updates.name.trim();
+        if (updates.picture !== undefined) dbUpdates['avatar_url'] = updates.picture.trim();
+        if (updates.country !== undefined) dbUpdates['country'] = updates.country.trim();
+
+        if (Object.keys(dbUpdates).length === 0) return true;
+
+        try {
+            const { error } = await this.supabase.client
+                .from('profiles')
+                .update(dbUpdates)
+                .eq('id', currentUser.id);
+
+            if (error) {
+                console.error('[AuthService] Failed to update profile:', error);
+                return false;
+            }
+
+            const updatedProfile: UserProfile = {
+                ...currentUser,
+                name: updates.name !== undefined ? updates.name.trim() : currentUser.name,
+                picture: updates.picture !== undefined ? updates.picture.trim() : currentUser.picture,
+                country: updates.country !== undefined ? updates.country.trim() : currentUser.country
+            };
+
+            this.user.set(updatedProfile);
+            try {
+                localStorage.setItem(PROFILE_CACHE_KEY, JSON.stringify(updatedProfile));
+            } catch {
+                // Ignore storage errors
+            }
+            return true;
+        } catch (err) {
+            console.error('[AuthService] Exception updating profile:', err);
+            return false;
+        }
     }
 
     /**

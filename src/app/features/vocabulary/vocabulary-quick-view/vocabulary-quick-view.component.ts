@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService } from '../../../core/services';
 import { VocabularyItem } from '../../../models';
@@ -12,7 +13,7 @@ import { VocabularyItem } from '../../../models';
   selector: 'app-vocabulary-quick-view',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent],
+  imports: [CommonModule, IconComponent, BottomSheetComponent, OptionPickerComponent, EmptyStateComponent],
   templateUrl: './vocabulary-quick-view.component.html',
   styleUrl: './vocabulary-quick-view.component.scss'
 })

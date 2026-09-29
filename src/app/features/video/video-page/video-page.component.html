@@ -254,7 +254,7 @@
             @if (homeTab() !== 'playlists') {
             <!-- Infinite Scroll Sentinel Element -->
             @if (hasMoreVideos()) {
-            <div #scrollSentinel class="feed-sentinel"></div>
+            <div class="feed-sentinel" appInfiniteScroll rootMargin="250px 0px" (scrolled)="onSentinelIntersect()"></div>
             }
 
             <!-- Infinite Scroll Loading Spinner -->
@@ -265,71 +265,56 @@
             }
             }
             } @else if (searchQuery().trim()) {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box">
-                    <app-icon name="search" [size]="28" />
-                </div>
-                <div class="empty-state__text">
-                    <p class="empty-state__title">{{ i18n.t('playlist.empty.searchTitle') || 'No matching videos found' }}</p>
-                    <p class="empty-state__description">{{ i18n.t('playlist.empty.searchHint') || 'Try different keywords or check spelling' }}</p>
-                </div>
+            <app-empty-state
+                icon="search"
+                [iconSize]="28"
+                [title]="i18n.t('playlist.empty.searchTitle') || 'No matching videos found'"
+                [description]="i18n.t('playlist.empty.searchHint') || 'Try different keywords or check spelling'">
                 <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="clearSearch()">
                     <app-icon name="x" [size]="15" />
                     <span>{{ i18n.t('common.clear') || 'Clear search' }}</span>
                 </button>
-            </div>
+            </app-empty-state>
             } @else if (homeTab() === 'playlists') {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box">
-                    <app-icon name="list-video" [size]="28" />
-                </div>
-                <div class="empty-state__text">
-                    <p class="empty-state__title">{{ i18n.t('playlist.empty.communityTitle') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('playlist.empty.communityHint') }}</p>
-                </div>
+            <app-empty-state
+                icon="list-video"
+                [iconSize]="28"
+                [title]="i18n.t('playlist.empty.communityTitle')"
+                [description]="i18n.t('playlist.empty.communityHint')">
                 <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="openExplore()">
                     <app-icon name="globe" [size]="16" />
                     <span>{{ i18n.t('nav.playlists') }}</span>
                 </button>
-            </div>
+            </app-empty-state>
             } @else if (videoLevelFilter() !== 'all') {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box">
-                    <app-icon name="graduation-cap" [size]="28" />
-                </div>
-                <div class="empty-state__text">
-                    <p class="empty-state__title">{{ getLevelFilterLabel() }}</p>
-                    <p class="empty-state__description">{{ i18n.t('level.noVideos') }}</p>
-                </div>
+            <app-empty-state
+                icon="graduation-cap"
+                [iconSize]="28"
+                [title]="getLevelFilterLabel()"
+                [description]="i18n.t('level.noVideos')">
                 <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="selectFeedTab('videos', 'all')">
                     <app-icon name="rotate-ccw" [size]="14" />
                     <span>{{ i18n.t('level.allLevels') || 'All Levels' }}</span>
                 </button>
-            </div>
+            </app-empty-state>
             } @else if (isVideosError()) {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box empty-state__icon-box--error">
-                    <app-icon name="alert-circle" [size]="28" />
-                </div>
-                <div class="empty-state__text">
-                    <p class="empty-state__title">{{ i18n.t('playlist.empty.feedErrorTitle') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('playlist.empty.feedErrorHint') }}</p>
-                </div>
+            <app-empty-state
+                icon="alert-circle"
+                [iconSize]="28"
+                iconVariant="error"
+                [title]="i18n.t('playlist.empty.feedErrorTitle')"
+                [description]="i18n.t('playlist.empty.feedErrorHint')">
                 <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="refreshRecommendations()">
                     <app-icon name="refresh-cw" [size]="14" />
                     <span>{{ i18n.t('common.retry') }}</span>
                 </button>
-            </div>
+            </app-empty-state>
             } @else {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box">
-                    <app-icon name="play-circle" [size]="28" />
-                </div>
-                <div class="empty-state__text">
-                    <p class="empty-state__title">{{ i18n.t('playlist.empty.videosTitle') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('playlist.empty.videosHint') }}</p>
-                </div>
-            </div>
+            <app-empty-state
+                icon="play-circle"
+                [iconSize]="28"
+                [title]="i18n.t('playlist.empty.videosTitle')"
+                [description]="i18n.t('playlist.empty.videosHint')" />
             }
         </div>
 

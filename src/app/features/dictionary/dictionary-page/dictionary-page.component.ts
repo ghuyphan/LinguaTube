@@ -96,8 +96,7 @@ import { WordLevel } from '../../../models';
               }
             </div>
 
-            <!-- Row 2: Search & Filter Row (Unified across Dictionary and Vocab tabs) -->
-            <div class="panel-toolbar__filters">
+            <div class="panel-toolbar__filters" [class.panel-toolbar__filters--stacked]="activeTab() === 'vocab'">
               @if (activeTab() === 'dictionary') {
                 <div class="panel-search-wrapper">
                   <div class="app-search-box">
@@ -247,15 +246,15 @@ import { WordLevel } from '../../../models';
               <span>{{ i18n.t('study.start') }}</span>
             </a>
           } @else {
-            <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
-              <div class="empty-state__icon-box">
-                <app-icon name="book-open" [size]="20" />
+            <div class="sidebar-guide-box">
+              <div class="sidebar-guide-header">
+                <div class="sidebar-guide-icon">
+                  <app-icon name="lightbulb" [size]="16" />
+                </div>
+                <h4 class="sidebar-guide-title">{{ i18n.t('dictionary.studyTip') || 'Learning Tip' }}</h4>
               </div>
-              <div class="empty-state__text">
-                <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
-                <p class="empty-state__description">{{ i18n.t('dictionary.emptyNotebookHint') }}</p>
-              </div>
-              <a routerLink="/video" class="btn btn-primary btn-sm empty-state__action">
+              <p class="sidebar-guide-desc">{{ i18n.t('dictionary.emptyNotebookHint') }}</p>
+              <a routerLink="/video" class="btn btn-secondary btn-sm sidebar-guide-btn">
                 <app-icon name="video" [size]="14" />
                 <span>{{ i18n.t('dictionary.exploreVideos') }}</span>
               </a>
@@ -315,6 +314,62 @@ import { WordLevel } from '../../../models';
       display: flex;
       flex-direction: column;
       gap: var(--space-xs);
+    }
+
+    .sidebar-guide-box {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      padding: var(--space-sm);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+    }
+
+    .sidebar-guide-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar-guide-icon {
+      width: 1.625rem;
+      height: 1.625rem;
+      border-radius: var(--border-radius-round);
+      background: rgba(var(--accent-primary-rgb), 0.12);
+      color: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-guide-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .sidebar-guide-desc {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .sidebar-guide-btn {
+      width: 100%;
+      justify-content: center;
+      gap: 0.375rem;
+      margin-top: 2px;
+      color: var(--text-primary);
+
+      &:hover,
+      &:visited {
+        color: var(--text-primary);
+      }
     }
 
     .sidebar-action-btn {
@@ -424,8 +479,6 @@ import { WordLevel } from '../../../models';
       height: auto;
       min-height: 0;
     }
-
-
   `]
 })
 export class DictionaryPageComponent implements OnInit, OnDestroy {

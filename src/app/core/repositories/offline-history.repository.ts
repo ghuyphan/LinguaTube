@@ -5,9 +5,10 @@ import { StorageService } from '../services/storage.service';
 import { SupabaseService } from '../services/supabase.service';
 import { AuthService } from '../services/auth.service';
 import { getYouTubeThumbnail } from '../utils';
-import { generateDeterministicRecordId, mergeByTimestamp } from '../../shared/utils/sync.utils';
+import { generateDeterministicRecordId, mergeByTimestamp, TombstoneStore } from '../../shared/utils/sync.utils';
 
 const STORAGE_KEY = 'linguatube_history';
+const HISTORY_TOMBSTONES_KEY = 'linguatube_deleted_history_video_ids';
 const MAX_LOCAL_HISTORY = 50;
 
 const ALLOWED_LANGS = ['ja', 'zh', 'ko', 'en'] as const;
@@ -74,6 +75,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     private storage = inject(StorageService);
     private supabase = inject(SupabaseService);
     private auth = inject(AuthService);
+    private readonly tombstoneStore = new TombstoneStore(this.storage, HISTORY_TOMBSTONES_KEY);
 
     // Source of truth signal
     private history = signal<HistoryItem[]>([]);
@@ -103,7 +105,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         this.auth.logoutEvent.subscribe(() => {
             this.history.set([]);
             this.storage.remove(STORAGE_KEY);
-            this.storage.remove('linguatube_deleted_history_video_ids');
+            this.tombstoneStore.clearAll();
             this.remoteSyncTimers.forEach(t => clearTimeout(t));
             this.remoteSyncTimers.clear();
         });
@@ -302,20 +304,15 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     // ================= Private Helpers =================
 
     private getDeletionTombstones(): string[] {
-        return this.storage.get<string[]>('linguatube_deleted_history_video_ids') || [];
+        return this.tombstoneStore.getAll();
     }
 
     private addDeletionTombstone(videoId: string): void {
-        const tombstones = this.getDeletionTombstones();
-        if (!tombstones.includes(videoId)) {
-            tombstones.push(videoId);
-            this.storage.set('linguatube_deleted_history_video_ids', tombstones);
-        }
+        this.tombstoneStore.record(videoId);
     }
 
     private removeDeletionTombstone(videoId: string): void {
-        const tombstones = this.getDeletionTombstones().filter(v => v !== videoId);
-        this.storage.set('linguatube_deleted_history_video_ids', tombstones);
+        this.tombstoneStore.clear(videoId);
     }
 
     private async syncWithRemote(): Promise<void> {

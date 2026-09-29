@@ -10,7 +10,9 @@
     "updateRequired": "需要更新",
     "updateRequiredDesc": "为确保正常使用 Voca 服务，请更新至最新版本。",
     "updatingApp": "正在更新 Voca...",
-    "updatingDesc": "正在应用更新并优化性能..."
+    "updatingDesc": "正在应用更新并优化性能...",
+    "updateSuccess": "已更新至 v{{version}}！",
+    "reloadNow": "加载时间较长？点击重新加载"
   },
   "nav": {
     "video": "视频",
@@ -377,7 +379,8 @@
     "translateDef": "翻译",
     "translating": "翻译中...",
     "emptyNotebookHint": "在观看视频或查词时保存生词，即可通过间隔重复（SRS）记忆卡片进行复习。",
-    "exploreVideos": "观看视频积累词汇"
+    "exploreVideos": "观看视频积累词汇",
+    "studyTip": "学习小贴士"
   },
   "settings": {
     "title": "设置",
@@ -400,6 +403,9 @@
     "vocabStats": "词汇统计",
     "totalWords": "总词汇数",
     "interfaceLanguage": "界面语言",
+    "country": "国家 / 地区",
+    "countryAuto": "自动检测",
+    "countryActive": "已启用",
     "learningDisplay": "文字注音模式",
     "learningDisplayHint": "保持视频字幕与复习闪卡的注音标注模式一致",
     "furigana": "假名注音",
@@ -432,6 +438,18 @@
     "releaseNotes": "发布说明",
     "releaseDate": "发布日期",
     "vietnamese": "越南语",
+    "editProfile": "编辑个人资料",
+    "displayName": "显示昵称",
+    "displayNamePlaceholder": "输入您的昵称",
+    "avatar": "头像",
+    "uploadPhoto": "上传照片",
+    "chooseAvatar": "或选择预设头像",
+    "useGooglePhoto": "使用 Google 头像",
+    "saveProfile": "保存更改",
+    "savingProfile": "保存中...",
+    "profileUpdated": "个人资料更新成功！",
+    "profileUpdateFailed": "更新个人资料失败，请重试。",
+    "countryHint": "将在全球排行榜的昵称旁显示",
     "language": "语言"
   },
   "study": {

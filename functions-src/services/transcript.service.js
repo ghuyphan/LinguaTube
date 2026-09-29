@@ -4,7 +4,6 @@
 
 import {
     saveVideoLanguages,
-    addVideoLanguage,
     addVideoLanguages,
     addSubLanguage,
     getVideoDuration,
@@ -32,6 +31,7 @@ import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewa
 import { getTierDiamondConfig } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
 import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
+import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
 
@@ -83,6 +83,8 @@ export class TranscriptService {
                     if (!avatar && db) {
                         try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
                     }
+                    const estimatedLevel = estimateTranscriptLevel(enrichedSegments, actualLang, { title: options.title, channel: options.channel });
+                    const levelsObj = estimatedLevel ? { [actualLang]: estimatedLevel } : null;
                     await saveVideoLanguages(
                         db,
                         videoId,
@@ -91,16 +93,30 @@ export class TranscriptService {
                         options.title || null,
                         options.channel || null,
                         false,
-                        null,
+                        levelsObj,
                         avatar,
                         [actualLang]
                     );
                 };
                 savePromises.push(saveLanguages());
-            } else if (availableLangs.length > 0) {
-                savePromises.push(addVideoLanguages(db, videoId, availableLangs));
             } else {
-                savePromises.push(addVideoLanguage(db, videoId, actualLang));
+                const saveBasic = async () => {
+                    const estimatedLevel = estimateTranscriptLevel(enrichedSegments, actualLang);
+                    const levelsObj = estimatedLevel ? { [actualLang]: estimatedLevel } : null;
+                    await saveVideoLanguages(
+                        db,
+                        videoId,
+                        availableLangs.length > 0 ? availableLangs : [actualLang],
+                        null,
+                        null,
+                        null,
+                        false,
+                        levelsObj,
+                        null,
+                        [actualLang]
+                    );
+                };
+                savePromises.push(saveBasic());
             }
 
             if (waitUntil) {
@@ -455,9 +471,11 @@ export class TranscriptService {
                         }
                         await completeAiJob(db, jobId, detectedLang);
                         if (db) {
+                            const estimatedLevel = estimateTranscriptLevel(enrichedSegments, detectedLang);
+                            const levelsObj = estimatedLevel ? { [detectedLang]: estimatedLevel } : null;
                             const bgOps = [
                                 addSubLanguage(db, targetVideoId, detectedLang),
-                                saveVideoLanguages(db, targetVideoId, [detectedLang, job.language], null, null, null, false, null, null, [detectedLang])
+                                saveVideoLanguages(db, targetVideoId, [detectedLang, job.language], null, null, null, false, levelsObj, null, [detectedLang])
                             ];
                             if (waitUntil) waitUntil(Promise.allSettled(bgOps));
                             else await Promise.allSettled(bgOps);
@@ -557,9 +575,11 @@ export class TranscriptService {
                         };
                     }
                     if (db) {
+                        const estimatedLevel = estimateTranscriptLevel(enrichedSegments, detectedLang);
+                        const levelsObj = estimatedLevel ? { [detectedLang]: estimatedLevel } : null;
                         const bgOps = [
                             addSubLanguage(db, videoId, detectedLang),
-                            saveVideoLanguages(db, videoId, [detectedLang, lang], null, null, null, false, null, null, [detectedLang])
+                            saveVideoLanguages(db, videoId, [detectedLang, lang], null, null, null, false, levelsObj, null, [detectedLang])
                         ];
                         if (waitUntil) waitUntil(Promise.allSettled(bgOps));
                         else await Promise.allSettled(bgOps);

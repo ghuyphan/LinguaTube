@@ -145,7 +145,7 @@ a {
 }
 
 @media (hover: hover) {
-    a:hover {
+    a:not(.btn):hover {
         color: var(--accent-secondary);
     }
 }

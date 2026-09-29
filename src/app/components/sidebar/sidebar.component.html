@@ -308,10 +308,6 @@
                     <span class="badge badge--sm" [class]="'badge--' + (auth.isLoggedIn() ? auth.subscriptionTier() : 'free')">
                         {{ (auth.isLoggedIn() ? auth.tierDisplayName() : 'Guest') | uppercase }}
                     </span>
-                    <span class="popover-level-tag popover-level-tag--rpg" [attr.data-tier]="gamification.userLevelTier()">
-                        <app-icon [name]="gamification.userLevelIcon()" [size]="11" />
-                        <span>Lv.{{ gamification.userLevel() }}</span>
-                    </span>
                 </div>
             </div>
         </div>

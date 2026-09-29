@@ -155,15 +155,13 @@
                     </div>
                 </div>
             } @empty {
-                <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="check-circle" [size]="20" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('study.allCaughtUp') }}</p>
-                        <p class="empty-state__hint">{{ i18n.t('missions.dailyChestDesc') }}</p>
-                    </div>
-                </div>
+                <app-empty-state
+                    icon="check-circle"
+                    [iconSize]="20"
+                    [compact]="true"
+                    [title]="i18n.t('study.allCaughtUp')"
+                    [description]="i18n.t('missions.dailyChestDesc')"
+                />
             }
         </div>
         </div>
@@ -277,15 +275,13 @@
                 </div>
             </div>
             } @empty {
-                <div class="empty-state empty-state--centered empty-state--compact empty-state--animate">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="trophy" [size]="20" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('history.noMatchesFound') || 'No achievements found' }}</p>
-                        <p class="empty-state__hint">{{ i18n.t('playlist.empty.hint') || 'Try selecting another category' }}</p>
-                    </div>
-                </div>
+                <app-empty-state
+                    icon="trophy"
+                    [iconSize]="20"
+                    [compact]="true"
+                    [title]="i18n.t('history.noMatchesFound') || 'No achievements found'"
+                    [description]="i18n.t('playlist.empty.hint') || 'Try selecting another category'"
+                />
             }
         </div>
         </div>
@@ -382,13 +378,18 @@
                         </div>
 
                         <div class="podium-hero-info">
-                            <span
-                                class="podium-name"
-                                [class.podium-name--you]="isSecondPlaceCurrentUser()"
-                                [title]="isSecondPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : silver.name"
-                            >
-                                {{ isSecondPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : silver.name }}
-                            </span>
+                            <div class="podium-name-row">
+                                @if (getCountryFlag(silver.country); as flagUrl) {
+                                    <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
+                                }
+                                <span
+                                    class="podium-name"
+                                    [class.podium-name--you]="isSecondPlaceCurrentUser()"
+                                    [title]="isSecondPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : silver.name"
+                                >
+                                    {{ isSecondPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : silver.name }}
+                                </span>
+                            </div>
                             <span class="podium-level-pill" [attr.data-tier]="getLevelTier(silver.level)">
                                 <app-icon [name]="getLevelIcon(silver.level)" [size]="10" />
                                 <span>Lv.{{ silver.level }}</span>
@@ -451,13 +452,18 @@
                         </div>
 
                         <div class="podium-hero-info">
-                            <span
-                                class="podium-name"
-                                [class.podium-name--you]="isFirstPlaceCurrentUser()"
-                                [title]="isFirstPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : gold.name"
-                            >
-                                {{ isFirstPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : gold.name }}
-                            </span>
+                            <div class="podium-name-row">
+                                @if (getCountryFlag(gold.country); as flagUrl) {
+                                    <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
+                                }
+                                <span
+                                    class="podium-name"
+                                    [class.podium-name--you]="isFirstPlaceCurrentUser()"
+                                    [title]="isFirstPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : gold.name"
+                                >
+                                    {{ isFirstPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : gold.name }}
+                                </span>
+                            </div>
                             <span class="podium-level-pill" [attr.data-tier]="getLevelTier(gold.level)">
                                 <app-icon [name]="getLevelIcon(gold.level)" [size]="10" />
                                 <span>Lv.{{ gold.level }}</span>
@@ -520,13 +526,18 @@
                         </div>
 
                         <div class="podium-hero-info">
-                            <span
-                                class="podium-name"
-                                [class.podium-name--you]="isThirdPlaceCurrentUser()"
-                                [title]="isThirdPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : bronze.name"
-                            >
-                                {{ isThirdPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : bronze.name }}
-                            </span>
+                            <div class="podium-name-row">
+                                @if (getCountryFlag(bronze.country); as flagUrl) {
+                                    <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
+                                }
+                                <span
+                                    class="podium-name"
+                                    [class.podium-name--you]="isThirdPlaceCurrentUser()"
+                                    [title]="isThirdPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : bronze.name"
+                                >
+                                    {{ isThirdPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : bronze.name }}
+                                </span>
+                            </div>
                             <span class="podium-level-pill" [attr.data-tier]="getLevelTier(bronze.level)">
                                 <app-icon [name]="getLevelIcon(bronze.level)" [size]="10" />
                                 <span>Lv.{{ bronze.level }}</span>
@@ -604,6 +615,9 @@
 
                         <div class="champion-info">
                             <div class="champion-name-row">
+                                @if (getCountryFlag(me.learner.country); as flagUrl) {
+                                    <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
+                                }
                                 <span class="champion-name champion-name--you">{{ i18n.t('leaderboard.you') || 'You' }}</span>
                             </div>
                             <div class="champion-meta">
@@ -647,7 +661,7 @@
                         </div>
                         <div class="learner-info">
                             <div class="learner-name-line">
-                                @if (getCountryFlag(learner.country, learner.targetLang); as flagUrl) {
+                                @if (getCountryFlag(learner.country); as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
                                 <span class="learner-name" [class.learner-name--you]="learner.userId === leaderboard.getCurrentUserId()">

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { PlaylistService } from '../playlist.service';
 import { Playlist } from '../../../models';
 import { I18nService, ToastService } from '../../../core/services';
@@ -10,7 +11,7 @@ import { I18nService, ToastService } from '../../../core/services';
 @Component({
     selector: 'app-add-to-playlist-dialog',
     standalone: true,
-    imports: [CommonModule, BottomSheetComponent, IconComponent, CreatePlaylistDialogComponent],
+    imports: [CommonModule, BottomSheetComponent, IconComponent, CreatePlaylistDialogComponent, EmptyStateComponent],
     templateUrl: './add-to-playlist-dialog.component.html',
     styleUrls: ['./add-to-playlist-dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

@@ -33,7 +33,7 @@ export type IconName =
     // Audio & utility icons
     | 'bell' | 'mic' | 'mic-off' | 'keyboard' | 'send' | 'check-circle' | 'slash' | 'lightbulb' | 'leaf' | 'box' | 'droplet' | 'copy'
     // Purpose-built modern Voca icons
-    | 'speedometer' | 'timer' | 'ruby-text' | 'sparkle-text' | 'chart-bar' | 'brain' | 'cards' | 'share-ios';
+    | 'speedometer' | 'timer' | 'ruby-text' | 'sparkle-text' | 'chart-bar' | 'brain' | 'cards' | 'share-ios' | 'pencil' | 'camera';
 
 @Component({
     selector: 'app-icon',

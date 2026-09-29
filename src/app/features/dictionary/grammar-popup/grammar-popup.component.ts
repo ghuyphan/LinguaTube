@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { GrammarPattern, SupportedLearningLanguage } from '../../../models';
 import { I18nService, ToastService } from '../../../core/services';
 import { GrammarService } from '../../../services';
@@ -12,7 +13,7 @@ import { VocabularyService } from '../../vocabulary';
     selector: 'app-grammar-popup',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, BottomSheetComponent, IconComponent],
+    imports: [CommonModule, BottomSheetComponent, IconComponent, EmptyStateComponent],
     templateUrl: './grammar-popup.component.html',
     styleUrl: './grammar-popup.component.scss'
 })

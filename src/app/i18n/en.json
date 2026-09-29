@@ -10,7 +10,9 @@
     "updateRequired": "Update Required",
     "updateRequiredDesc": "Update Voca to keep watching and studying.",
     "updatingApp": "Updating Voca...",
-    "updatingDesc": "Getting the latest features ready for you..."
+    "updatingDesc": "Getting the latest features ready for you...",
+    "updateSuccess": "Updated to v{{version}}!",
+    "reloadNow": "Taking longer than usual? Tap to reload"
   },
   "nav": {
     "video": "Video",
@@ -377,7 +379,8 @@
     "translateDef": "Translate",
     "translating": "Translating...",
     "emptyNotebookHint": "Save words while watching videos or looking up definitions to practice with flashcards.",
-    "exploreVideos": "Browse Videos"
+    "exploreVideos": "Browse Videos",
+    "studyTip": "Learning Tip"
   },
   "settings": {
     "title": "Settings",
@@ -400,6 +403,9 @@
     "vocabStats": "Vocabulary Stats",
     "totalWords": "Total",
     "interfaceLanguage": "Interface Language",
+    "country": "Country / Region",
+    "countryAuto": "Auto-detect",
+    "countryActive": "Active",
     "learningDisplay": "Pronunciation & Script",
     "learningDisplayHint": "Show pronunciation guides on subtitles and flashcards",
     "furigana": "Furigana",
@@ -432,6 +438,18 @@
     "releaseNotes": "Release Notes",
     "releaseDate": "Released on",
     "vietnamese": "Vietnamese",
+    "editProfile": "Edit Profile",
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Enter your display name",
+    "avatar": "Avatar",
+    "uploadPhoto": "Upload photo",
+    "chooseAvatar": "Or choose a preset",
+    "useGooglePhoto": "Use Google photo",
+    "saveProfile": "Save Changes",
+    "savingProfile": "Saving...",
+    "profileUpdated": "Profile updated successfully!",
+    "profileUpdateFailed": "Failed to update profile. Please try again.",
+    "countryHint": "Appears next to your name on the global leaderboard",
     "language": "Language"
   },
   "study": {

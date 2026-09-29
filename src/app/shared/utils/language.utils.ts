@@ -105,3 +105,46 @@ export function isPunctuation(text: string): boolean {
     if (!text) return false;
     return PUNCTUATION_REGEX.test(text);
 }
+
+/**
+ * Get i18n translation key for a given reading display mode and learning language.
+ */
+export function getReadingDisplayLabelKey(
+    mode: string,
+    language: string
+): string {
+    if (language === 'en') {
+        return 'settings.textOnly';
+    }
+
+    switch (language) {
+        case 'ja':
+            if (mode === 'native') return 'settings.kanjiOnly';
+            if (mode === 'annotated') return 'settings.kanjiFurigana';
+            if (mode === 'annotatedRomanized') return 'settings.kanjiRomaji';
+            if (mode === 'romanized') return 'settings.romajiOnly';
+            return 'settings.kanaOnly';
+        case 'zh':
+            if (mode === 'native') return 'settings.hanziOnly';
+            if (mode === 'annotated') return 'settings.hanziPinyin';
+            return 'settings.pinyinOnly';
+        case 'ko':
+            if (mode === 'native') return 'settings.hangulOnly';
+            if (mode === 'annotated') return 'settings.hangulRomanization';
+            return 'settings.romanizationOnly';
+        default:
+            return 'settings.textOnly';
+    }
+}
+
+/**
+ * Get localized display label for a reading display mode.
+ */
+export function getReadingDisplayLabel(
+    mode: string,
+    language: string,
+    t: (key: string) => string
+): string {
+    return t(getReadingDisplayLabelKey(mode, language));
+}
+

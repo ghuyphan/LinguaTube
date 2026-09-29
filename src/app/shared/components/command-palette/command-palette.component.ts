@@ -16,6 +16,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IconComponent, IconName } from '../icon/icon.component';
+import { EmptyStateComponent } from '../empty-state/empty-state.component';
 import { I18nService, SettingsService, ToastService } from '../../../core/services';
 import { BodyScrollService } from '../../../services';
 import { YoutubeService } from '../../../features/video/youtube.service';
@@ -33,7 +34,7 @@ export interface PaletteItem {
   selector: 'app-command-palette',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent, EmptyStateComponent],
   templateUrl: './command-palette.component.html',
   styleUrl: './command-palette.component.scss'
 })

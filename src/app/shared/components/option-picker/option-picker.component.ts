@@ -2,6 +2,7 @@ import { Component, input, output, ChangeDetectionStrategy, viewChild, inject } 
 import { CommonModule } from '@angular/common';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { IconComponent, IconName } from '../icon/icon.component';
+import { EmptyStateComponent } from '../empty-state/empty-state.component';
 import { I18nService } from '../../../core/services/i18n.service';
 
 export interface OptionItem {
@@ -19,7 +20,7 @@ export interface OptionItem {
     selector: 'app-option-picker',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, BottomSheetComponent, IconComponent],
+    imports: [CommonModule, BottomSheetComponent, IconComponent, EmptyStateComponent],
     templateUrl: './option-picker.component.html',
     styleUrl: './option-picker.component.scss'
 })

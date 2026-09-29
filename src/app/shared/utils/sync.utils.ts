@@ -168,3 +168,44 @@ export function generateDeterministicRecordId(...keys: string[]): string {
     const p3 = (h3 >>> 0).toString(36).padStart(7, '0');
     return (p1 + p2 + p3).slice(0, 15);
 }
+
+export interface StorageInterface {
+    get<T>(key: string): T | null;
+    set<T>(key: string, value: T): boolean;
+    remove(key: string): void;
+}
+
+/**
+ * Reusable Tombstone store managing deleted record IDs across offline-first repositories.
+ */
+export class TombstoneStore {
+    private storage: StorageInterface;
+    private storageKey: string;
+
+    constructor(storage: StorageInterface, storageKey: string) {
+        this.storage = storage;
+        this.storageKey = storageKey;
+    }
+
+    getAll(): string[] {
+        return this.storage.get<string[]>(this.storageKey) || [];
+    }
+
+    record(id: string): void {
+        const list = this.getAll();
+        if (!list.includes(id)) {
+            list.push(id);
+            this.storage.set(this.storageKey, list);
+        }
+    }
+
+    clear(id: string): void {
+        const list = this.getAll().filter(item => item !== id);
+        this.storage.set(this.storageKey, list);
+    }
+
+    clearAll(): void {
+        this.storage.remove(this.storageKey);
+    }
+}
+

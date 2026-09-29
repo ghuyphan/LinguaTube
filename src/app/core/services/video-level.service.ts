@@ -597,32 +597,80 @@ export class VideoLevelService {
     }
 
     private buildInfoFromLabel(label: string, detectedFrom: 'title' | 'server'): VideoLevelInfo {
-        const upper = label.toUpperCase();
+        const clean = (label || '').trim();
+        const upper = clean.toUpperCase();
         let tier: ProficiencyLevelTier = 'intermediate';
-        let score = 2.5;
+        let score = 3.0;
 
-        if (upper.includes('N5') || upper.includes('HSK 1') || upper.includes('A1') || upper.includes('BEGINNER')) {
+        // 1. Beginner
+        if (
+            /\b(?:JLPT\s*)?N5\b/i.test(clean) ||
+            /\bHSK\s*1\b/i.test(clean) ||
+            /\bTOPIK\s*(?:1|I)\b/i.test(clean) ||
+            /\bCEFR\s*A1\b/i.test(clean) ||
+            /\bA1\b/i.test(clean) ||
+            upper.includes('BEGINNER') ||
+            upper.includes('SƠ CẤP') ||
+            upper.includes('NHẬP MÔN') ||
+            /入門|初級|초급\s*1|입문/.test(clean)
+        ) {
             tier = 'beginner';
             score = 1.0;
-        } else if (upper.includes('N4') || upper.includes('HSK 2') || upper.includes('A2') || upper.includes('ELEMENTARY')) {
+        } else if (
+            /\b(?:JLPT\s*)?N4\b/i.test(clean) ||
+            /\bHSK\s*2\b/i.test(clean) ||
+            /\bTOPIK\s*2\b/i.test(clean) ||
+            /\bCEFR\s*A2\b/i.test(clean) ||
+            /\bA2\b/i.test(clean) ||
+            upper.includes('ELEMENTARY') ||
+            /초급\s*2|초급/.test(clean)
+        ) {
             tier = 'elementary';
             score = 2.0;
-        } else if (upper.includes('UPPER') || upper.includes('N2') || upper.includes('HSK 5') || upper.includes('B2') || upper.includes('TRUNG CAO CẤP')) {
+        } else if (
+            /\b(?:JLPT\s*)?N2\b/i.test(clean) ||
+            /\bHSK\s*5\b/i.test(clean) ||
+            /\bTOPIK\s*5\b/i.test(clean) ||
+            /\bCEFR\s*B2\b/i.test(clean) ||
+            /\bB2\b/i.test(clean) ||
+            upper.includes('UPPER') ||
+            upper.includes('TRUNG CAO CẤP') ||
+            /中上級|中高级|中高級|중고급/.test(clean)
+        ) {
             tier = 'upper_intermediate';
             score = 4.0;
-        } else if (upper.includes('N3') || upper.includes('HSK 3') || upper.includes('HSK 4') || upper.includes('B1') || upper.includes('INTERMEDIATE') || upper.includes('TRUNG CẤP')) {
-            tier = 'intermediate';
-            score = 3.0;
-        } else if (upper.includes('N1') || upper.includes('HSK 6') || upper.includes('C1') || upper.includes('C2') || upper.includes('ADVANCED') || upper.includes('CAO CẤP')) {
+        } else if (
+            /\b(?:JLPT\s*)?N1\b/i.test(clean) ||
+            /\bHSK\s*6\b/i.test(clean) ||
+            /\bTOPIK\s*(?:6|II)\b/i.test(clean) ||
+            /\bCEFR\s*C[12]\b/i.test(clean) ||
+            /\bC[12]\b/i.test(clean) ||
+            upper.includes('ADVANCED') ||
+            upper.includes('CAO CẤP') ||
+            upper.includes('FLUENT') ||
+            /上級|高级|高級|고급/.test(clean)
+        ) {
             tier = 'advanced';
             score = 5.0;
+        } else if (
+            /\b(?:JLPT\s*)?N3\b/i.test(clean) ||
+            /\bHSK\s*[34]\b/i.test(clean) ||
+            /\bTOPIK\s*[34]\b/i.test(clean) ||
+            /\bCEFR\s*B1\b/i.test(clean) ||
+            /\bB1\b/i.test(clean) ||
+            upper.includes('INTERMEDIATE') ||
+            upper.includes('TRUNG CẤP') ||
+            /中級|中级|중급/.test(clean)
+        ) {
+            tier = 'intermediate';
+            score = 3.0;
         }
 
         return {
             level: label,
             tier,
             score,
-            confidence: 0.9,
+            confidence: detectedFrom === 'server' ? 0.95 : 0.9,
             grammarCount: 0,
             detectedFrom
         };

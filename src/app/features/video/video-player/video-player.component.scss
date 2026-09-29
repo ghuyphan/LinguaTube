@@ -471,18 +471,6 @@ $transition-normal: 0.25s ease;
   }
 }
 
-
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 // ============================================
 // SEEK FEEDBACK
 // ============================================

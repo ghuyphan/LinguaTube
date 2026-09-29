@@ -1,0 +1,94 @@
+// ============================================
+// SHARED DICTIONARY POPUP STYLES
+// Shared between WordPopup and GrammarPopup
+// ============================================
+
+.popup-content {
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.popup-header {
+    padding: var(--space-md) var(--space-lg) var(--space-sm);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.popup-word {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.popup-body {
+    padding: var(--space-xs) var(--space-md);
+    max-height: 50vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.popup-section {
+    margin-bottom: var(--space-md);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.popup-footer {
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+
+    .btn {
+        flex: 1;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .saved-btn {
+        color: var(--success) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-header {
+        padding: var(--space-xs) var(--space-lg) var(--space-sm);
+    }
+
+    .popup-word {
+        font-size: 1.75rem;
+    }
+
+    .popup-footer {
+        padding: var(--space-sm) var(--space-md) var(--space-md);
+    }
+}

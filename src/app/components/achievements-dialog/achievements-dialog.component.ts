@@ -1,36 +1,18 @@
 import { Component, inject, signal, computed, ChangeDetectionStrategy, output, OnInit, OnDestroy, viewChild, ElementRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../shared/components/icon/icon.component';
+import { EmptyStateComponent } from '../../shared/components/empty-state/empty-state.component';
 import { GamificationService } from '../../core/services/gamification.service';
 import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { AchievementCategory, Mission, LevelTier, LeaderboardEntry } from '../../models/gamification.model';
-import { getLanguageFlagUrl } from '../../models';
-
-const EMOJI_FLAG_MAP: Record<string, string> = {
-    '🇯🇵': '/flags/jp.svg',
-    '🇰🇷': '/flags/kr.svg',
-    '🇨🇳': '/flags/cn.svg',
-    '🇬🇧': '/flags/gb.svg',
-    '🇺🇸': '/flags/gb.svg',
-    '🇻🇳': '/flags/vn.svg',
-    '🇫🇷': '/flags/fr.svg',
-    '🇩🇪': '/flags/de.svg',
-    '🇪🇸': '/flags/es.svg',
-    '🇮🇹': '/flags/it.svg',
-    '🇷🇺': '/flags/ru.svg',
-    '🇧🇷': '/flags/pt.svg',
-    '🇹🇭': '/flags/th.svg',
-    '🇮🇩': '/flags/id.svg',
-    '🇦🇺': '/flags/gb.svg',
-    '🇨🇦': '/flags/gb.svg'
-};
+import { getCountryFlagUrl } from '../../models';
 
 @Component({
     selector: 'app-achievements-dialog',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent],
+    imports: [CommonModule, IconComponent, EmptyStateComponent],
     templateUrl: './achievements-dialog.component.html',
     styleUrls: ['./achievements-dialog.component.scss']
 })
@@ -290,14 +272,8 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         { code: 'en', label: 'EN', flagUrl: '/flags/gb.svg' }
     ];
 
-    getCountryFlag(country?: string, targetLang?: string): string {
-        if (country && EMOJI_FLAG_MAP[country]) {
-            return EMOJI_FLAG_MAP[country];
-        }
-        if (targetLang) {
-            return getLanguageFlagUrl(targetLang);
-        }
-        return '';
+    getCountryFlag(country?: string): string {
+        return getCountryFlagUrl(country);
     }
 
     setTab(tab: 'missions' | 'achievements' | 'leaderboard'): void {

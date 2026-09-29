@@ -5,15 +5,12 @@ import {
     signal,
     input,
     output,
-    ElementRef,
-    viewChild,
-    DestroyRef,
-    PLATFORM_ID,
-    effect,
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
+import { InfiniteScrollDirective } from '../../../shared/directives';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, VideoLevelService } from '../../../core/services';
 import { HistoryItem, ProficiencyLevelTier, getLanguageFlagUrl } from '../../../models';
@@ -23,7 +20,7 @@ import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
     selector: 'app-history-list',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent],
+    imports: [CommonModule, IconComponent, EmptyStateComponent, InfiniteScrollDirective],
     templateUrl: './history-list.component.html',
     styleUrls: ['./history-list.component.scss'],
 })
@@ -52,49 +49,6 @@ export class HistoryListComponent {
     // Animation states
     deletingItems = signal<Set<string>>(new Set());
     animatingFavorites = signal<Set<string>>(new Set());
-
-    // Infinite Scroll Sentinel & Observer
-    readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
-    private sentinelObserver: IntersectionObserver | null = null;
-    private platformId = inject(PLATFORM_ID);
-    private destroyRef = inject(DestroyRef);
-    private isExpanding = false;
-
-    constructor() {
-        effect(() => {
-            const sentinelRef = this.scrollSentinel();
-            if (!isPlatformBrowser(this.platformId)) return;
-
-            if (this.sentinelObserver) {
-                this.sentinelObserver.disconnect();
-                this.sentinelObserver = null;
-            }
-
-            if (sentinelRef?.nativeElement) {
-                this.sentinelObserver = new IntersectionObserver((entries) => {
-                    const entry = entries[0];
-                    if (entry?.isIntersecting && this.hasMore() && !this.isExpanding) {
-                        this.isExpanding = true;
-                        this.loadMore.emit();
-                        setTimeout(() => {
-                            this.isExpanding = false;
-                        }, 120);
-                    }
-                }, {
-                    rootMargin: '600px 0px',
-                    threshold: 0.05
-                });
-                this.sentinelObserver.observe(sentinelRef.nativeElement);
-            }
-        });
-
-        this.destroyRef.onDestroy(() => {
-            if (this.sentinelObserver) {
-                this.sentinelObserver.disconnect();
-                this.sentinelObserver = null;
-            }
-        });
-    }
 
     // ─────────────────────────────────────────────────────────────
     // Actions

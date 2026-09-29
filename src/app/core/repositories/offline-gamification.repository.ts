@@ -7,21 +7,8 @@ const STORAGE_KEY = 'linguatube_gamification';
 const DIRTY_STORAGE_KEY = 'voca_gamification_dirty';
 const SYNC_DEBOUNCE_MS = 3000;
 
-export function getIsoWeekKey(d = new Date()): string {
-    const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-    date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
-    const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
-    const weekNo = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
-    return `${date.getUTCFullYear()}-W${weekNo.toString().padStart(2, '0')}`;
-}
-
-export function getTodayKey(): string {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-}
+import { getIsoWeekKey, getTodayKey } from '../../shared/utils/date.utils';
+export { getIsoWeekKey, getTodayKey };
 
 export function createDailyMissionsForDate(dateStr: string): DailyMissionsState {
     const parts = dateStr.split('-');

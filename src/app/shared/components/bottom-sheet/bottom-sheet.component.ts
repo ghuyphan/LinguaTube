@@ -13,15 +13,13 @@ import {
   computed,
   DestroyRef
 } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { fromEvent } from 'rxjs';
 import { IconComponent } from '../icon/icon.component';
 import { BottomSheetService } from '../../../services/bottom-sheet.service';
 import { generateRandomId } from '../../../core/utils';
 import { I18nService } from '../../../core/services/i18n.service';
 import { SmoothHeightAnimator } from '../../utils/smooth-height.animator';
-
+import { DomTeleporter } from '../../utils/teleport.utils';
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -67,6 +65,7 @@ export class BottomSheetComponent implements OnDestroy {
   closed = output<void>();
 
   // Internal state
+  readonly shouldRender = signal(false);
   isClosing = signal(false);
   isDragging = signal(false);
   isDragClosing = signal(false); // Tracks if closing via drag (uses transition, not animation)
@@ -74,9 +73,7 @@ export class BottomSheetComponent implements OnDestroy {
   dragOffset = signal(0);
 
   // Teleportation state to escape parent stacking contexts
-  private originalParent: Node | null = null;
-  private nextSibling: Node | null = null;
-  private isTeleported = false;
+  private readonly teleporter = new DomTeleporter();
 
   // Drag gesture state
   private touchStartY = 0;
@@ -87,7 +84,7 @@ export class BottomSheetComponent implements OnDestroy {
   // Thresholds
   private readonly DISMISS_THRESHOLD = 80;
   private readonly VELOCITY_THRESHOLD = 0.5; // pixels per ms
-  private readonly ANIMATION_DURATION = 250;
+  private readonly ANIMATION_DURATION = 220;
 
   // Unique ID for this sheet instance
   private readonly sheetId = generateRandomId(8);
@@ -108,32 +105,39 @@ export class BottomSheetComponent implements OnDestroy {
 
   private previouslyFocusedElement: HTMLElement | null = null;
   private keydownListener: ((e: KeyboardEvent) => void) | null = null;
+  private initialFocusTimer: ReturnType<typeof setTimeout> | null = null;
 
   // Dynamic height animator for smooth height transitions on dynamic content changes
   private readonly heightAnimator = new SmoothHeightAnimator({
     duration: 220,
     easing: 'cubic-bezier(0.32, 0.72, 0, 1)',
     animatingClass: 'animating-height',
-    isReady: () => this.isOpen() && !this.isClosing() && !this.isDragClosing() && !this.isDragging()
+    isReady: () => this.shouldRender() && !this.isClosing() && !this.isDragClosing() && !this.isDragging()
   });
   private animationSafetyTimer: ReturnType<typeof setTimeout> | null = null;
 
   constructor() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.isMobile.set(window.innerWidth <= 768 || window.innerHeight <= 500);
-      fromEvent(window, 'resize', { passive: true })
-        .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe(() => {
-          this.isMobile.set(window.innerWidth <= 768 || window.innerHeight <= 500);
-        });
+    if (isPlatformBrowser(this.platformId) && typeof window.matchMedia === 'function') {
+      const mobileQuery = window.matchMedia('(max-width: 768px), (max-height: 500px)');
+      this.isMobile.set(mobileQuery.matches);
+      const onQueryChange = (e: MediaQueryListEvent) => this.isMobile.set(e.matches);
+      mobileQuery.addEventListener('change', onQueryChange);
+      this.destroyRef.onDestroy(() => mobileQuery.removeEventListener('change', onQueryChange));
     }
 
     effect(() => {
-      if (this.isOpen()) {
+      const open = this.isOpen();
+      if (open) {
         if (this.closeTimeoutId) {
           clearTimeout(this.closeTimeoutId);
           this.closeTimeoutId = null;
         }
+
+        this.shouldRender.set(true);
+        this.isClosing.set(false);
+        this.isDragClosing.set(false);
+        // Reset hasAnimated when sheet opens (animation will play)
+        this.hasAnimated.set(false);
 
         if (isPlatformBrowser(this.platformId) && document.activeElement instanceof HTMLElement) {
           this.previouslyFocusedElement = document.activeElement;
@@ -142,16 +146,14 @@ export class BottomSheetComponent implements OnDestroy {
         this.teleport();
 
         // Register with service - it handles scroll locking and history
-        this.unregisterFn = this.sheetService.register({
-          id: this.sheetId,
-          close: () => this.onServiceClose(),
-          allowEscape: this.allowEscapeClose()
-        });
+        if (!this.unregisterFn) {
+          this.unregisterFn = this.sheetService.register({
+            id: this.sheetId,
+            close: () => this.onServiceClose(),
+            allowEscape: this.allowEscapeClose()
+          });
+        }
 
-        this.isClosing.set(false);
-        this.isDragClosing.set(false);
-        // Reset hasAnimated when sheet opens (animation will play)
-        this.hasAnimated.set(false);
         this.setupFocusTrap();
 
         // Safety timeout in case animationend does not fire
@@ -160,19 +162,23 @@ export class BottomSheetComponent implements OnDestroy {
         }
         this.animationSafetyTimer = setTimeout(() => {
           this.animationSafetyTimer = null;
-          if (this.isOpen() && !this.hasAnimated()) {
+          if (this.shouldRender() && !this.hasAnimated()) {
             this.hasAnimated.set(true);
             this.heightAnimator.resetBaseline();
           }
         }, 350);
       } else {
-        // If closed externally (not by service), ensure unregister is called
-        if (this.unregisterFn) {
-          this.unregisterFn();
-          this.unregisterFn = null;
+        // If closed externally (e.g. parent sets isOpen = false), animate out first if currently rendered
+        if (this.shouldRender() && !this.isClosing()) {
+          this.startClosingAnimation();
+        } else if (!this.shouldRender()) {
+          if (this.unregisterFn) {
+            this.unregisterFn();
+            this.unregisterFn = null;
+          }
+          this.restoreFocus();
+          this.restore();
         }
-        this.restoreFocus();
-        this.restore();
       }
     });
 
@@ -180,7 +186,7 @@ export class BottomSheetComponent implements OnDestroy {
     effect(() => {
       const inner = this.contentInner()?.nativeElement;
       const sheet = this.sheetEl()?.nativeElement;
-      if (this.isOpen() && inner && sheet) {
+      if (this.shouldRender() && inner && sheet) {
         this.heightAnimator.attach(inner, sheet);
       } else {
         this.heightAnimator.detach();
@@ -193,39 +199,15 @@ export class BottomSheetComponent implements OnDestroy {
    * so it escapes all ancestor stacking contexts, overflow:hidden, and transforms.
    */
   private teleport(): void {
-    if (!isPlatformBrowser(this.platformId) || this.isTeleported) return;
-    const host = this.elementRef.nativeElement as HTMLElement;
-    if (!host.parentNode) return;
-
-    const target = document.fullscreenElement || document.body;
-    if (host.parentNode === target) return;
-
-    this.originalParent = host.parentNode;
-    this.nextSibling = host.nextSibling;
-    target.appendChild(host);
-    this.isTeleported = true;
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.teleporter.teleport(this.elementRef.nativeElement as HTMLElement);
   }
 
   /**
    * Restore sheet back to its original parent in the component tree.
    */
   private restore(): void {
-    if (!this.isTeleported || !this.originalParent) return;
-    const host = this.elementRef.nativeElement as HTMLElement;
-    try {
-      if (host.parentNode) {
-        if (this.nextSibling && this.originalParent.contains(this.nextSibling)) {
-          this.originalParent.insertBefore(host, this.nextSibling);
-        } else {
-          this.originalParent.appendChild(host);
-        }
-      }
-    } catch {
-      // Parent was detached, safe to ignore
-    }
-    this.isTeleported = false;
-    this.originalParent = null;
-    this.nextSibling = null;
+    this.teleporter.restore(this.elementRef.nativeElement as HTMLElement);
   }
 
   /**
@@ -234,30 +216,23 @@ export class BottomSheetComponent implements OnDestroy {
    */
   private onServiceClose(): void {
     this.unregisterFn = null;
-    this.heightAnimator.detach();
-    // Trigger the closing animation and emit
-    this.isClosing.set(true);
-    this.isDragging.set(false);
-    this.dragOffset.set(0);
-
-    if (this.closeTimeoutId) {
-      clearTimeout(this.closeTimeoutId);
-    }
-    this.closeTimeoutId = setTimeout(() => {
-      this.closeTimeoutId = null;
-      this.isClosing.set(false);
-      this.closed.emit();
-    }, this.ANIMATION_DURATION);
+    this.startClosingAnimation();
   }
 
   /**
-   * Handle animation end to mark entry animation as complete
+   * Handle animation end to mark entry animation as complete or cleanup on exit animation
    */
   onAnimationEnd(event: AnimationEvent): void {
-    // Only mark as animated for entry animations (scaleIn for desktop, mobileSlideUp for mobile)
-    if (event.animationName === 'mobileSlideUp' || event.animationName === 'scaleIn') {
+    if (event.target !== event.currentTarget) return;
+    const name = event.animationName || '';
+    // Support Angular ViewEncapsulation prefixed names (e.g. _ngcontent-c..._scaleIn)
+    if (name.endsWith('mobileSlideUp') || name.endsWith('scaleIn')) {
       this.hasAnimated.set(true);
       this.heightAnimator.resetBaseline();
+    } else if (name.endsWith('mobileSlideDown') || name.endsWith('scaleOut')) {
+      if (this.isClosing() && !this.isDragClosing()) {
+        this.finishClose();
+      }
     }
   }
 
@@ -296,7 +271,7 @@ export class BottomSheetComponent implements OnDestroy {
     const deltaY = touch.clientY - this.touchStartY;
 
     // Only allow dragging down
-    if (deltaY > 5) {
+    if (deltaY > 5 || this.isDragGesture) {
       this.isDragGesture = true;
 
       // Set dragging state only once at start
@@ -306,8 +281,8 @@ export class BottomSheetComponent implements OnDestroy {
         this.hasAnimated.set(true);
       }
 
-      // Update offset for CSS variable
-      this.dragOffset.set(deltaY);
+      // Update offset for CSS variable (clamped to >= 0 so sheet never lifts up)
+      this.dragOffset.set(Math.max(0, deltaY));
 
       // Prevent scroll while dragging
       event.preventDefault();
@@ -331,13 +306,12 @@ export class BottomSheetComponent implements OnDestroy {
     if (deltaY > this.DISMISS_THRESHOLD || velocity > this.VELOCITY_THRESHOLD) {
       // Dismiss - set offset to trigger close via CSS
       this.dragOffset.set(window.innerHeight);
-      this.animatedCloseFromDrag();
+      this.startClosingAnimation(true);
     } else {
       // Snap back - just reset offset, CSS transition handles animation
       this.isDragging.set(false);
       this.dragOffset.set(0);
     }
-
 
     this.resetDragState();
   }
@@ -351,28 +325,19 @@ export class BottomSheetComponent implements OnDestroy {
   }
 
   /**
-   * Handle backdrop click for close animation
+   * Dismiss sheet on backdrop click or touch (preventing ghost clicks on mobile)
    */
-  onBackdropClick(event: Event): void {
-    // Only close if clicking directly on the overlay (not the sheet)
+  onBackdropDismiss(event: Event): void {
     if (event.target === event.currentTarget && this.allowBackdropClose()) {
-      this.animatedClose();
-    }
-  }
-
-  /**
-   * Handle backdrop touchend for mobile - ensures smooth animation
-   */
-  onBackdropTouch(event: TouchEvent): void {
-    // Only close if touching directly on the overlay (not the sheet)
-    if (event.target === event.currentTarget && this.allowBackdropClose()) {
-      event.preventDefault(); // Prevent ghost click
-      this.animatedClose();
+      if (event.type === 'touchend') {
+        event.preventDefault(); // Prevent ghost click
+      }
+      this.startClosingAnimation();
     }
   }
 
   close(): void {
-    this.animatedClose();
+    this.startClosingAnimation();
   }
 
   private blurFocusedDescendant(): void {
@@ -383,61 +348,69 @@ export class BottomSheetComponent implements OnDestroy {
     }
   }
 
-  private animatedClose(): void {
+  /**
+   * Initiates the exit animation.
+   * If fromDrag is true, uses CSS transition on translateY instead of keyframe animation.
+   */
+  private startClosingAnimation(fromDrag = false): void {
+    if (!this.shouldRender() || this.isClosing()) return;
+
     this.blurFocusedDescendant();
     this.heightAnimator.detach();
-    this.isClosing.set(true);
-    this.isDragging.set(false);
-    this.dragOffset.set(0);
 
-    // Unregister from service (this also handles history and scroll unlock)
-    if (this.unregisterFn) {
-      this.unregisterFn();
-      this.unregisterFn = null;
+    // Under prefers-reduced-motion, finish immediately without waiting for animations
+    if (isPlatformBrowser(this.platformId) && typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.finishClose();
+      return;
+    }
+
+    if (fromDrag) {
+      this.isDragClosing.set(true);
+      this.isClosing.set(true);
+      this.isDragging.set(false);
+    } else {
+      this.isDragClosing.set(false);
+      this.isClosing.set(true);
+      this.isDragging.set(false);
+      this.dragOffset.set(0);
     }
 
     if (this.closeTimeoutId) {
       clearTimeout(this.closeTimeoutId);
     }
+    // Safety fallback: if animationend event doesn't fire, complete closure
     this.closeTimeoutId = setTimeout(() => {
-      this.closeTimeoutId = null;
-      this.isClosing.set(false);
-      this.restoreFocus();
-      this.closed.emit();
-    }, this.ANIMATION_DURATION);
+      this.finishClose();
+    }, this.ANIMATION_DURATION + 30);
   }
 
   /**
-   * Close animation specifically for drag-to-dismiss
-   * Sheet animates via inline styles, we just handle backdrop and cleanup
+   * Completes the sheet dismissal after the exit animation completes.
+   * Cleans up service registration, restores focus, and unmounts DOM.
    */
-  private animatedCloseFromDrag(): void {
-    this.blurFocusedDescendant();
-    this.heightAnimator.detach();
-    // Set drag closing to use inline transition instead of CSS animation
-    this.isDragClosing.set(true);
-    this.isClosing.set(true);
-    this.isDragging.set(false);
-    // don't reset dragOffset to 0 here, it should be set to dismiss value by caller
+  private finishClose(): void {
+    if (this.closeTimeoutId) {
+      clearTimeout(this.closeTimeoutId);
+      this.closeTimeoutId = null;
+    }
+    if (!this.shouldRender()) {
+      return;
+    }
 
-    // Unregister from service
+    this.shouldRender.set(false);
+    this.isClosing.set(false);
+    this.isDragClosing.set(false);
+    this.dragOffset.set(0);
+
+    // Unregister from service (handles history and scroll unlock)
     if (this.unregisterFn) {
       this.unregisterFn();
       this.unregisterFn = null;
     }
 
-    // Clean up after animation
-    if (this.closeTimeoutId) {
-      clearTimeout(this.closeTimeoutId);
-    }
-    this.closeTimeoutId = setTimeout(() => {
-      this.closeTimeoutId = null;
-      this.isClosing.set(false);
-      this.isDragClosing.set(false);
-      this.dragOffset.set(0);
-      this.restoreFocus();
-      this.closed.emit();
-    }, this.ANIMATION_DURATION);
+    this.restoreFocus();
+    this.restore();
+    this.closed.emit();
   }
 
   private setupFocusTrap(): void {
@@ -473,7 +446,8 @@ export class BottomSheetComponent implements OnDestroy {
     window.addEventListener('keydown', this.keydownListener);
 
     // Initial focus into sheet
-    setTimeout(() => {
+    this.initialFocusTimer = setTimeout(() => {
+      this.initialFocusTimer = null;
       const host = this.sheetEl()?.nativeElement;
       if (!host) return;
       const first = host.querySelector<HTMLElement>(
@@ -484,6 +458,10 @@ export class BottomSheetComponent implements OnDestroy {
   }
 
   private removeFocusTrap(): void {
+    if (this.initialFocusTimer) {
+      clearTimeout(this.initialFocusTimer);
+      this.initialFocusTimer = null;
+    }
     if (this.keydownListener) {
       window.removeEventListener('keydown', this.keydownListener);
       this.keydownListener = null;

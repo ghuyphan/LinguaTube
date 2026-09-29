@@ -1,0 +1,29 @@
+<div
+  class="empty-state"
+  [class.empty-state--centered]="centered()"
+  [class.empty-state--compact]="compact()"
+  [class.empty-state--animate]="animate()"
+>
+  @if (icon()) {
+    <div
+      class="empty-state__icon-box"
+      [class.empty-state__icon-box--accent]="iconVariant() === 'accent'"
+      [class.empty-state__icon-box--error]="iconVariant() === 'error'"
+    >
+      <app-icon [name]="icon()!" [size]="iconSize() ?? (compact() ? 16 : 28)" />
+    </div>
+  }
+
+  @if (title() || description()) {
+    <div class="empty-state__text">
+      @if (title()) {
+        <p class="empty-state__title">{{ title() }}</p>
+      }
+      @if (description()) {
+        <p [class]="compact() ? 'empty-state__hint' : 'empty-state__description'">{{ description() }}</p>
+      }
+    </div>
+  }
+
+  <ng-content />
+</div>

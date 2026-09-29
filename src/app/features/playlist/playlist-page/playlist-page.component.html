@@ -53,15 +53,11 @@
 
                 <div class="panel-toolbar__filters">
                     <div class="panel-search-wrapper">
-                        <div class="app-search-box">
-                            <app-icon name="search" [size]="14" class="search-icon" />
-                            <input type="search" enterkeyhint="search" [ngModel]="searchQuery()" (ngModelChange)="onSearchChange($event)" [placeholder]="i18n.t('playlist.searchPlaylists') || i18n.t('common.search') || 'Search...'" class="search-input" spellcheck="false" />
-                            @if (searchQuery()) {
-                            <button type="button" class="clear-btn" (click)="onSearchChange('')" [attr.aria-label]="i18n.t('common.clear') || 'Clear search'">
-                                <app-icon name="x" [size]="12" />
-                            </button>
-                            }
-                        </div>
+                        <app-search-input
+                            [(value)]="searchQuery"
+                            [placeholder]="i18n.t('playlist.searchPlaylists') || i18n.t('common.search') || 'Search...'"
+                            [clearAriaLabel]="i18n.t('common.clear') || 'Clear search'"
+                        />
                     </div>
 
                     <div class="filter-scroll-strip">
@@ -177,34 +173,28 @@
                 </div>
 
                 @if (hasMorePlaylists()) {
-                <div #scrollSentinel class="feed-sentinel"></div>
+                <div class="feed-sentinel" appInfiniteScroll rootMargin="600px 0px" (scrolled)="loadMore()"></div>
                 <div class="feed-loading-more" role="status" [attr.aria-label]="i18n.t('common.loading')">
                     <div class="spinner spinner--md"></div>
                 </div>
                 }
                 } @else if (isFiltered()) {
-                <div class="empty-state empty-state--centered empty-state--animate">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="search" [size]="28" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('playlist.empty.title') || 'No playlists found' }}</p>
-                        <p class="empty-state__description">{{ i18n.t('playlist.empty.hint') || 'Try adjusting your filters or search terms' }}</p>
-                    </div>
+                <app-empty-state
+                    icon="search"
+                    [iconSize]="28"
+                    [title]="i18n.t('playlist.empty.title') || 'No playlists found'"
+                    [description]="i18n.t('playlist.empty.hint') || 'Try adjusting your filters or search terms'">
                     <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="clearFilters()">
                         <app-icon name="x" [size]="14" />
                         <span>{{ i18n.t('playlist.clearFilters') || 'Clear filters' }}</span>
                     </button>
-                </div>
+                </app-empty-state>
                 } @else {
-                <div class="empty-state empty-state--centered empty-state--animate">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="list-video" [size]="28" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ view() === 'my' ? i18n.t('playlist.empty.myTitle') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedTitle') || 'No featured playlists') : i18n.t('playlist.empty.communityTitle')) }}</p>
-                        <p class="empty-state__description">{{ view() === 'my' ? i18n.t('playlist.empty.myHint') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedHint') || 'Check back later for staff-picked playlists') : i18n.t('playlist.empty.communityHint')) }}</p>
-                    </div>
+                <app-empty-state
+                    icon="list-video"
+                    [iconSize]="28"
+                    [title]="view() === 'my' ? i18n.t('playlist.empty.myTitle') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedTitle') || 'No featured playlists') : i18n.t('playlist.empty.communityTitle'))"
+                    [description]="view() === 'my' ? i18n.t('playlist.empty.myHint') : (view() === 'curated' ? (i18n.t('playlist.empty.curatedHint') || 'Check back later for staff-picked playlists') : i18n.t('playlist.empty.communityHint'))">
                     @if (view() === 'my') {
                     <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="showCreateDialog.set(true)">
                         <app-icon name="plus" [size]="14" />
@@ -216,7 +206,7 @@
                         <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
                     </button>
                     }
-                </div>
+                </app-empty-state>
                 }
             </div>
         </div>
@@ -364,19 +354,16 @@
                     }
                 </div>
                 } @else {
-                <div class="empty-state empty-state--centered empty-state--animate">
-                    <div class="empty-state__icon-box">
-                        <app-icon name="video" [size]="28" />
-                    </div>
-                    <div class="empty-state__text">
-                        <p class="empty-state__title">{{ i18n.t('playlist.empty.noVideosTitle') || 'No videos yet' }}</p>
-                        <p class="empty-state__description">{{ i18n.t('playlist.emptyVideo') }}</p>
-                    </div>
+                <app-empty-state
+                    icon="video"
+                    [iconSize]="28"
+                    [title]="i18n.t('playlist.empty.noVideosTitle') || 'No videos yet'"
+                    [description]="i18n.t('playlist.emptyVideo')">
                     <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="onExploreVideos()">
                         <app-icon name="video" [size]="14" />
                         <span>{{ i18n.t('playlist.discoverVideos') }}</span>
                     </button>
-                </div>
+                </app-empty-state>
                 }
             </div>
         </div>

@@ -19,13 +19,15 @@ import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitRespon
 import {
     getVideoLanguages,
     isNoTranscript,
-    deleteNoTranscript
+    deleteNoTranscript,
+    saveVideoLevel
 } from '../data/video-info-db.js';
 
 import { getTranscriptFromR2, saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { getActiveAiJob } from '../data/transcript-db.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
+import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
@@ -229,11 +231,22 @@ export async function onRequestPost(context) {
                         }
                     }
 
+                    const responseLevels = { ...(knownInfo?.levels || {}) };
+                    if (!responseLevels[targetNormLang] && cached.segments?.length > 0) {
+                        const estimated = estimateTranscriptLevel(cached.segments, targetNormLang, { title: body.title, channel: body.channel });
+                        if (estimated) {
+                            responseLevels[targetNormLang] = estimated;
+                            if (waitUntil && db) {
+                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, estimated).catch(() => {}));
+                            }
+                        }
+                    }
+
                     return jsonResponse({
                         success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
                         source: 'ai', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [lang], whisperAvailable: diamondInfo.diamonds > 0,
                         languageMismatch: false,
-                        levels: knownInfo?.levels || {},
+                        levels: responseLevels,
                         ...diamondInfo, timing: elapsed()
                     }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.AI });
                 }
@@ -271,11 +284,22 @@ export async function onRequestPost(context) {
                         }
                     }
 
+                    const responseLevels = { ...(knownInfo?.levels || {}) };
+                    if (!responseLevels[targetNormLang] && cached.segments?.length > 0) {
+                        const estimated = estimateTranscriptLevel(cached.segments, targetNormLang, { title: body.title, channel: body.channel });
+                        if (estimated) {
+                            responseLevels[targetNormLang] = estimated;
+                            if (waitUntil && db) {
+                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, estimated).catch(() => {}));
+                            }
+                        }
+                    }
+
                     return jsonResponse({
                         success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
                         source: 'cache', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [responseLang], whisperAvailable: diamondInfo.diamonds > 0,
                         languageMismatch: isMismatch,
-                        levels: knownInfo?.levels || {},
+                        levels: responseLevels,
                         ...diamondInfo, timing: elapsed()
                     }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
                 }

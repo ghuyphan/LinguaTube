@@ -49,14 +49,14 @@ $transition-fast: 0.15s ease;
         }
 
         .fs-subtitle-card {
-            border-color: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.45);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.3);
+            border-color: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.45);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(var(--accent-primary-rgb, 232, 69, 98), 0.3);
         }
 
         .fs-drag-pill {
             background: var(--accent-primary);
             width: 44px;
-            box-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 244, 91, 116), 0.6);
+            box-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 232, 69, 98), 0.6);
         }
     }
 
@@ -170,16 +170,6 @@ $transition-fast: 0.15s ease;
     box-sizing: border-box;
 }
 
-@keyframes subtitleFadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 .fs-subtitle-text {
     display: inline;
     font-size: 1.3125rem;
@@ -264,19 +254,6 @@ $transition-fast: 0.15s ease;
             font-size: 1.3125rem;
             line-height: 1.45;
         }
-    }
-}
-
-@keyframes dotPulse {
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scale(0.8);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
@@ -458,14 +435,14 @@ $transition-fast: 0.15s ease;
     }
 
     &--saved {
-        background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.22);
+        background: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.22);
         color: var(--accent-primary-text, #ff8585);
-        border: 1px solid rgba(var(--accent-primary-rgb, 244, 91, 116), 0.4);
+        border: 1px solid rgba(var(--accent-primary-rgb, 232, 69, 98), 0.4);
         font-weight: 600;
 
         @media (hover: hover) {
             &:hover {
-                background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.35);
+                background: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.35);
             }
         }
     }

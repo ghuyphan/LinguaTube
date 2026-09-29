@@ -1,7 +1,6 @@
 // ============================================
 // BOTTOM SHEET COMPONENT
-// Responsive: Modal on desktop, slide-up sheet on mobile
-// Uses .desktop-modal class for explicit animation control
+// Mobile-first: slide-up sheet on mobile, centered modal card on desktop
 // ============================================
 
 // ============================================
@@ -12,10 +11,15 @@
     inset: 0;
     background: transparent;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     z-index: var(--z-modal, 1200);
-    padding: var(--space-md);
+    padding: 0;
+
+    @media (min-width: 768.01px) and (min-height: 500.01px) {
+        align-items: center;
+        padding: var(--space-md);
+    }
 }
 
 // Backdrop pseudo-element - fades independently of sheet
@@ -23,24 +27,25 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.3s ease-out forwards;
+    background: rgb(0 0 0 / 50%);
+    animation: fadeIn 0.25s ease-out forwards;
 }
 
 .sheet-overlay.closing::before {
-    animation: fadeOut 0.25s ease-in forwards;
+    animation: fadeOut 0.22s ease-in forwards;
 }
 
 // ============================================
-// SHEET CONTAINER - BASE STYLES
+// SHEET CONTAINER - BASE & MOBILE STYLES
 // ============================================
 .sheet {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     width: 100%;
-    max-width: var(--max-width, 440px);
+    max-width: 100%;
+    margin: 0;
 
     // CSS Custom Property defaults
     --drag-offset: 0px;
@@ -48,8 +53,6 @@
     --max-width: 440px;
 
     max-height: min(var(--max-height, 85vh), calc(var(--app-height, 100dvh) - 16px));
-
-    // Apply drag offset transform
     transform: translateY(var(--drag-offset));
 
     overflow: hidden;
@@ -57,95 +60,82 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-    will-change: height, transform, opacity;
-}
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    touch-action: none;
 
-.sheet-content {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35) transparent;
+    // Mobile slide-up entrance by default
+    animation: mobileSlideUp 0.28s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 
-    &::-webkit-scrollbar {
-        width: 5px;
+    &.closing {
+        animation: mobileSlideDown 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    &.square-corners {
+        border-radius: 0;
+    }
+
+    .sheet-drag-handle {
         display: block;
     }
-    &::-webkit-scrollbar-thumb {
-        background: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35);
-        border-radius: 9999px;
+
+    .sheet-content {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
     }
 }
 
 // ============================================
+// DESKTOP MODAL PRESENTATION
 // ============================================
-// DESKTOP MODAL ANIMATIONS & LAYOUT
-// ============================================
-@media (min-width: 769px) and (min-height: 501px) {
+@mixin desktop-modal-layout {
+    max-width: var(--max-width, 440px);
+    margin: auto;
+    border-radius: var(--border-radius-xl);
+    animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+
+    &.closing {
+        animation: scaleOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .sheet-drag-handle {
+        display: none !important;
+    }
+
+    .sheet-content {
+        padding-bottom: 0;
+    }
+}
+
+.sheet.desktop-modal {
+    @include desktop-modal-layout;
+}
+
+@media (min-width: 768.01px) and (min-height: 500.01px) {
     .sheet {
-        animation: scaleIn 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-
-        &.closing {
-            animation: scaleOut 0.15s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-        }
-
-        .sheet-drag-handle {
-            display: none !important;
-        }
+        @include desktop-modal-layout;
     }
 }
 
 // ============================================
-// MOBILE SHEET ANIMATIONS & LAYOUT
+// DRAG STATES (Touch dismiss)
 // ============================================
-@media (max-width: 768px), (max-height: 500px) {
-    .sheet {
-        max-width: 100%;
-        margin: 0;
-        border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
-        animation: mobileSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-        touch-action: none;
-
-        &.square-corners {
-            border-radius: 0;
-        }
-
-        &.closing {
-            animation: mobileSlideDown 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
-        }
-
-        .sheet-drag-handle {
-            display: block;
-        }
-
-        .sheet-content {
-            padding-bottom: env(safe-area-inset-bottom, 0px);
-        }
-    }
-}
-
-// ============================================
-// DRAG STATES (applies to both desktop & mobile)
-// ============================================
-
-// No transition during active drag for 60fps performance
 .sheet.dragging {
     transition: none !important;
     animation: none !important;
 }
 
-// Drag-to-close uses CSS transition instead of animation
 .sheet.drag-closing {
     animation: none !important;
-    transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// After entry animation completes, disable it to prevent replay
-// IMPORTANT: Exclude closing states so close animation can play
 .sheet.animated:not(.closing):not(.drag-closing) {
     animation: none;
 }
 
-// Snap-back transition when drag ends without dismiss
 .sheet.animated:not(.dragging):not(.closing):not(.drag-closing) {
-    transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+    transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 // ============================================
@@ -191,7 +181,6 @@
 // DRAG HANDLE
 // ============================================
 .sheet-drag-handle {
-    display: none;
     padding: var(--space-sm) 0 var(--space-xs);
     cursor: grab;
     touch-action: none;
@@ -219,13 +208,16 @@
     overflow-x: hidden;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35) transparent;
 
     &::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
+        width: 5px;
+        display: block;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35);
+        border-radius: 9999px;
     }
 }
 
@@ -239,16 +231,8 @@
 }
 
 // ============================================
-// LAYOUT ADJUSTMENTS
+// RESPONSIVE REFINEMENTS
 // ============================================
-
-// Mobile: align to bottom
-@media (max-width: 768px) {
-    .sheet-overlay {
-        padding: 0;
-        align-items: flex-end;
-    }
-}
 
 // Tablet portrait & wider responsive viewports: bottom sheet with proportional centered width
 @media (min-width: 481px) and (max-width: 768px) {
@@ -278,35 +262,11 @@
 // ============================================
 // KEYFRAME ANIMATIONS
 // ============================================
-
-// Backdrop fade
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-// Desktop animations - scale effect
 @keyframes scaleIn {
     from {
         opacity: 0;
         transform: scale(0.95);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
@@ -318,30 +278,33 @@
         opacity: 1;
         transform: scale(1);
     }
-
     to {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.96);
     }
 }
 
-// Mobile animations - slide from bottom
 @keyframes mobileSlideUp {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
 }
 
 @keyframes mobileSlideDown {
-    from {
-        transform: translateY(0);
-    }
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
+}
 
-    to {
-        transform: translateY(100%);
+// ============================================
+// ACCESSIBILITY: REDUCED MOTION
+// ============================================
+@media (prefers-reduced-motion: reduce) {
+    .sheet-overlay::before,
+    .sheet-overlay.closing::before,
+    .sheet,
+    .sheet.desktop-modal,
+    .sheet.desktop-modal.closing,
+    .sheet.drag-closing {
+        animation: none !important;
+        transition: none !important;
     }
 }

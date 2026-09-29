@@ -77,7 +77,7 @@
         @media (hover: hover) {
             &:hover {
                 opacity: 0.85;
-                background: rgba(var(--accent-primary-rgb, 244, 91, 116), 0.08);
+                background: rgba(var(--accent-primary-rgb, 232, 69, 98), 0.08);
             }
         }
 
@@ -89,9 +89,6 @@
 
 // Toolbar and filter strip styles are inherited from global _components.scss
 // (.panel-toolbar, .action-icon-btn, .filter-scroll-strip, .filter-chip)
-.filter-scroll-strip {
-    flex-wrap: wrap;
-}
 
 // ============================================
 // WORD LIST

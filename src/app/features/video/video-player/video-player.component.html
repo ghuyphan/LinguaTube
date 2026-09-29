@@ -88,14 +88,13 @@
     <!-- Player Embed Error Overlay -->
     @if (youtube.error()) {
     <div class="player-error-overlay" role="alert">
-      <div class="player-error-card empty-state empty-state--centered empty-state--animate">
-        <div class="empty-state__icon-box empty-state__icon-box--error">
-          <app-icon name="alert-circle" [size]="28" />
-        </div>
-        <div class="empty-state__text">
-          <h3 class="empty-state__title">{{ youtube.error() }}</h3>
-          <p class="empty-state__description">{{ i18n.t('player.embedErrorHelp') || 'This video cannot be played embedded. It may be restricted by the owner or unavailable.' }}</p>
-        </div>
+      <app-empty-state
+        class="player-error-card"
+        icon="alert-circle"
+        [iconSize]="28"
+        iconVariant="error"
+        [title]="youtube.error() || ''"
+        [description]="i18n.t('player.embedErrorHelp') || 'This video cannot be played embedded. It may be restricted by the owner or unavailable.'">
         <div class="empty-state__action player-error-actions">
           @if (youtube.currentVideo()?.id) {
           <a [href]="'https://www.youtube.com/watch?v=' + youtube.currentVideo()?.id" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
@@ -107,7 +106,7 @@
             <span>{{ i18n.t('common.close') || 'Close' }}</span>
           </button>
         </div>
-      </div>
+      </app-empty-state>
     </div>
     }
 
@@ -320,14 +319,25 @@
         </div>
         }
 
-        @if (playerSettingsView() === 'speed') {
-        <div class="settings-panel">
+        <ng-template #settingsPanelHeader let-title="title" let-icon="icon">
           <div class="sheet-section-header with-back">
             <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
               <app-icon name="chevron-left" [size]="18" />
             </button>
-            <h3 class="sheet-title">{{ i18n.t('player.playbackSpeed') || 'Playback speed' }}</h3>
+            @if (icon) {
+            <div class="sheet-title-group">
+              <app-icon [name]="icon" [size]="16" />
+              <h3 class="sheet-title">{{ title }}</h3>
+            </div>
+            } @else {
+            <h3 class="sheet-title">{{ title }}</h3>
+            }
           </div>
+        </ng-template>
+
+        @if (playerSettingsView() === 'speed') {
+        <div class="settings-panel">
+          <ng-container *ngTemplateOutlet="settingsPanelHeader; context: { title: i18n.t('player.playbackSpeed') || 'Playback speed' }" />
           <div class="settings-options-list">
             @for (speed of playbackSpeeds; track speed) {
             <button type="button" class="settings-option-row" [class.active]="currentSpeed() === speed"
@@ -344,12 +354,7 @@
 
         @if (playerSettingsView() === 'fontSize') {
         <div class="settings-panel">
-          <div class="sheet-section-header with-back">
-            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-              <app-icon name="chevron-left" [size]="18" />
-            </button>
-            <h3 class="sheet-title">{{ i18n.t('subtitle.fontSize') || 'Subtitle size' }}</h3>
-          </div>
+          <ng-container *ngTemplateOutlet="settingsPanelHeader; context: { title: i18n.t('subtitle.fontSize') || 'Subtitle size' }" />
           <div class="settings-options-list">
             @for (size of fontSizes; track size) {
             <button type="button" class="settings-option-row" [class.active]="settings.settings().fontSize === size"
@@ -366,12 +371,7 @@
 
         @if (playerSettingsView() === 'dualSub') {
         <div class="settings-panel">
-          <div class="sheet-section-header with-back">
-            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-              <app-icon name="chevron-left" [size]="18" />
-            </button>
-            <h3 class="sheet-title">{{ i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }}</h3>
-          </div>
+          <ng-container *ngTemplateOutlet="settingsPanelHeader; context: { title: i18n.t('subtitle.dualSubs') || 'Dual Subtitles' }" />
           <div class="settings-options-list">
             <!-- Off Option -->
             <button type="button" class="settings-option-row" [class.active]="!settings.settings().showDualSubtitles"
@@ -411,12 +411,7 @@
 
         @if (playerSettingsView() === 'reading') {
         <div class="settings-panel">
-          <div class="sheet-section-header with-back">
-            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-              <app-icon name="chevron-left" [size]="18" />
-            </button>
-            <h3 class="sheet-title">{{ readingModeName() }}</h3>
-          </div>
+          <ng-container *ngTemplateOutlet="settingsPanelHeader; context: { title: readingModeName() }" />
           <div class="settings-options-list">
             <!-- Off Option -->
             <button type="button" class="settings-option-row" [class.active]="isReadingModeActive('native')"
@@ -467,12 +462,7 @@
 
         @if (playerSettingsView() === 'grammar') {
         <div class="settings-panel">
-          <div class="sheet-section-header with-back">
-            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-              <app-icon name="chevron-left" [size]="18" />
-            </button>
-            <h3 class="sheet-title">{{ i18n.t('grammar.mode') || 'Grammar Mode' }}</h3>
-          </div>
+          <ng-container *ngTemplateOutlet="settingsPanelHeader; context: { title: i18n.t('grammar.mode') || 'Grammar Mode' }" />
           <div class="settings-options-list">
             <!-- Off Option -->
             <button type="button" class="settings-option-row" [class.active]="!grammar.grammarModeEnabled()"
@@ -507,15 +497,7 @@
 
         @if (playerSettingsView() === 'sleepTimer') {
         <div class="settings-panel">
-          <div class="sheet-section-header with-back">
-            <button type="button" class="sheet-back-btn" (click)="playerSettingsView.set('main')" [attr.aria-label]="i18n.t('common.back') || 'Back'">
-              <app-icon name="chevron-left" [size]="18" />
-            </button>
-            <div class="sheet-title-group">
-              <app-icon name="timer" [size]="16" />
-              <h3 class="sheet-title">{{ i18n.t('player.sleepTimer') || 'Sleep timer' }}</h3>
-            </div>
-          </div>
+          <ng-container *ngTemplateOutlet="settingsPanelHeader; context: { title: i18n.t('player.sleepTimer') || 'Sleep timer', icon: 'timer' }" />
           <div class="settings-options-list">
             <button type="button" class="settings-option-row" [class.active]="sleepTimerOption() === 'off'"
               (click)="setSleepTimer('off')">

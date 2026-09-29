@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService, ToastService, KeyboardShortcutService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
-import { ReadingDisplayMode, SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
+import { SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
 import { calculateSRSPreview, formatTime, SRSIntervalPreview } from '../../../core/utils';
+import { getReadingDisplayLabel } from '../../../shared/utils/language.utils';
 
 const STUDY_AUTOPLAY_KEY = 'linguatube_study_autoplay';
 const STUDY_CLOZE_KEY = 'linguatube_study_cloze';
@@ -22,7 +24,7 @@ function escapeRegex(str: string): string {
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, FormsModule, RouterLink, IconComponent, SwitchComponent],
+    imports: [CommonModule, FormsModule, RouterLink, IconComponent, SwitchComponent, EmptyStateComponent],
     templateUrl: './study-mode.component.html',
     styleUrls: ['./study-mode.component.scss']
 })
@@ -193,7 +195,7 @@ export class StudyModeComponent implements OnDestroy {
 
     currentReadingDisplayLabel = computed(() => {
         const language = this.currentLanguage();
-        return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
+        return getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language, k => this.i18n.t(k));
     });
 
     startDueOnlySession(): void {
@@ -523,34 +525,6 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     readonly formatTime = formatTime;
-
-    private getReadingDisplayLabel(
-        mode: ReadingDisplayMode,
-        language: SupportedLearningLanguage
-    ): string {
-        if (language === 'en') {
-            return this.i18n.t('settings.textOnly');
-        }
-
-        switch (language) {
-            case 'ja':
-                if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
-                if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
-                if (mode === 'annotatedRomanized') return this.i18n.t('settings.kanjiRomaji');
-                if (mode === 'romanized') return this.i18n.t('settings.romajiOnly');
-                return this.i18n.t('settings.kanaOnly');
-            case 'zh':
-                if (mode === 'native') return this.i18n.t('settings.hanziOnly');
-                if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
-                return this.i18n.t('settings.pinyinOnly');
-            case 'ko':
-                if (mode === 'native') return this.i18n.t('settings.hangulOnly');
-                if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
-                return this.i18n.t('settings.romanizationOnly');
-            default:
-                return this.i18n.t('settings.textOnly');
-        }
-    }
 
     private triggerConfetti(): void {
         this.showConfetti.set(true);

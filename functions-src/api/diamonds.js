@@ -45,7 +45,8 @@ export async function onRequestGet(context) {
             nextRegenAt: status.nextRegenAt,
             regenIntervalMs: status.regenIntervalMs,
             tier: status.tier,
-            maxVideoDurationSec: status.maxVideoDurationSec
+            maxVideoDurationSec: status.maxVideoDurationSec,
+            detectedCountry: request.cf?.country || request.headers.get('cf-ipcountry') || null
         }, 200, {
             'Cache-Control': 'no-store, no-cache, must-revalidate'
         });

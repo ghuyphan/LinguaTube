@@ -58,13 +58,14 @@ import { FullscreenSubtitleComponent } from './components/fullscreen-subtitle';
 import { VideoBottomBarComponent } from './components/video-bottom-bar/video-bottom-bar.component';
 import { VideoHeaderComponent } from './components/video-header/video-header.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { SmoothHeightAnimator } from '../../../shared/utils/smooth-height.animator';
 
 @Component({
   selector: 'app-video-player',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, WordPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent, VideoBottomBarComponent, VideoHeaderComponent],
+  imports: [CommonModule, FormsModule, IconComponent, GrammarPopupComponent, WordPopupComponent, ProgressBarComponent, CenterControlsComponent, FullscreenSubtitleComponent, BottomSheetComponent, VideoBottomBarComponent, VideoHeaderComponent, EmptyStateComponent],
   providers: [GestureHandlerService],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, effect, computed, untracked, PLATFORM_ID, DestroyRef, viewChild, NgZone } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
@@ -10,6 +10,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
+import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
@@ -18,6 +19,7 @@ import { PlayerViewService } from '../services/player-view.service';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService, AiJobManagerService } from '../../../core/services';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
+import { InfiniteScrollDirective } from '../../../shared/directives';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
@@ -47,7 +49,9 @@ export type FeedItem =
     TurnstileComponent,
     OptionPickerComponent,
     IconComponent,
-    AddToPlaylistDialogComponent
+    AddToPlaylistDialogComponent,
+    EmptyStateComponent,
+    InfiniteScrollDirective
   ],
   templateUrl: './video-page.component.html',
   styleUrls: ['./video-page.component.scss']
@@ -92,8 +96,6 @@ export class VideoPageComponent implements OnInit {
   readonly isVideosError = this.videoRecommendation.hasError;
   readonly isLoadingMore = this.videoRecommendation.isLoadingMore;
   readonly hasMoreVideos = this.videoRecommendation.hasMore;
-  readonly scrollSentinel = viewChild<ElementRef<HTMLDivElement>>('scrollSentinel');
-  private sentinelObserver: IntersectionObserver | null = null;
   formatVideoTime = formatTime;
 
   // Feed refresh state
@@ -568,35 +570,7 @@ export class VideoPageComponent implements OnInit {
       this.previousShowLearnHome = isHome;
     });
 
-    // Setup IntersectionObserver for Infinite Scroll Sentinel
-    effect(() => {
-      const sentinelRef = this.scrollSentinel();
-      if (!isPlatformBrowser(this.platformId)) return;
-
-      if (this.sentinelObserver) {
-        this.sentinelObserver.disconnect();
-        this.sentinelObserver = null;
-      }
-
-      if (sentinelRef?.nativeElement) {
-        this.sentinelObserver = new IntersectionObserver((entries) => {
-          const entry = entries[0];
-          if (entry?.isIntersecting) {
-            this.onSentinelIntersect();
-          }
-        }, {
-          rootMargin: '250px 0px',
-          threshold: 0.05
-        });
-        this.sentinelObserver.observe(sentinelRef.nativeElement);
-      }
-    });
-
     this.destroyRef.onDestroy(() => {
-      if (this.sentinelObserver) {
-        this.sentinelObserver.disconnect();
-        this.sentinelObserver = null;
-      }
       this.seo.resetVideoSeo();
       this.resetSubtitleAndTranscriptState();
     });

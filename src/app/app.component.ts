@@ -450,7 +450,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
             <div class="app-updating-brand">
               <svg class="app-updating-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
+                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" class="updating-kikyou-petal-shape"/>
                 </defs>
                 <g transform="translate(256, 256) scale(0.66)">
                   <use href="#updating-kikyou-petal" transform="rotate(0)"/>
@@ -458,17 +458,23 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
                   <use href="#updating-kikyou-petal" transform="rotate(144)"/>
                   <use href="#updating-kikyou-petal" transform="rotate(216)"/>
                   <use href="#updating-kikyou-petal" transform="rotate(288)"/>
-                  <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
-                  <circle cx="0" cy="0" r="21" fill="#F45B74"/>
+                  <circle cx="0" cy="0" r="50" class="updating-kikyou-core-outer"/>
+                  <circle cx="0" cy="0" r="21" class="updating-kikyou-core-inner"/>
                 </g>
               </svg>
               <div class="app-updating-pulse-ring"></div>
             </div>
             <h2 class="app-updating-title">{{ i18n.t('app.updatingApp') || 'Updating Voca...' }}</h2>
             <p class="app-updating-desc">{{ i18n.t('app.updatingDesc') || 'Applying updates and optimizing performance...' }}</p>
-            <div class="app-updating-progress">
+            <div class="app-updating-progress" role="progressbar" aria-label="Updating Voca" aria-valuemin="0" aria-valuemax="100">
               <div class="app-updating-progress-bar"></div>
             </div>
+            @if (appUpdate.showReloadFallback()) {
+              <button class="app-updating-fallback-btn" (click)="appUpdate.forceReload()" type="button">
+                <app-icon name="refresh-cw" [size]="14" />
+                <span>{{ i18n.t('app.reloadNow') || 'Taking longer than usual? Tap to reload' }}</span>
+              </button>
+            }
           </div>
         </div>
       }
@@ -711,21 +717,25 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
     .app-updating-overlay {
       position: fixed;
       inset: 0;
-      z-index: 100000;
+      z-index: var(--z-toast, 100000);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: var(--space-xl);
-      animation: updateFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       user-select: none;
     }
 
     .app-updating-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(var(--bg-card-rgb, 255, 255, 255), 0.88);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+    }
+
+    [data-theme="dark"] .app-updating-backdrop {
+      background: rgba(13, 15, 20, 0.88);
     }
 
     .app-updating-card {
@@ -752,39 +762,53 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
     .app-updating-logo {
       width: 76px;
       height: 76px;
-      filter: drop-shadow(0 10px 24px rgba(244, 91, 116, 0.45));
-      animation: updatePulse 2s ease-in-out infinite;
+      filter: drop-shadow(0 10px 24px rgba(var(--accent-primary-rgb, 232, 69, 98), 0.35));
+      animation: pulse 2s ease-in-out infinite;
+
+      .updating-kikyou-petal-shape {
+        fill: #FFFDFB;
+      }
+
+      .updating-kikyou-core-outer {
+        fill: #FFFDFB;
+        stroke: var(--accent-primary, #E84562);
+        stroke-width: 7;
+      }
+
+      .updating-kikyou-core-inner {
+        fill: var(--accent-primary, #E84562);
+      }
     }
 
     .app-updating-pulse-ring {
       position: absolute;
       inset: 0;
-      border-radius: 50%;
-      border: 2px solid var(--accent-primary, #F45B74);
+      border-radius: var(--border-radius-round);
+      border: 2px solid var(--accent-primary, #E84562);
       opacity: 0;
       animation: updateRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
     }
 
     .app-updating-title {
-      font-size: 1.25rem;
+      font-size: var(--text-xl, 1.25rem);
       font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 var(--space-xs);
-      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin: 0 0 var(--space-2xs);
+      letter-spacing: -0.015em;
     }
 
     .app-updating-desc {
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.72);
+      font-size: var(--text-base, 0.875rem);
+      color: var(--text-secondary);
       margin: 0 0 var(--space-lg);
       line-height: 1.5;
     }
 
     .app-updating-progress {
-      width: 180px;
+      width: 190px;
       height: 4px;
-      background: rgba(255, 255, 255, 0.16);
-      border-radius: 2px;
+      background: var(--border-color);
+      border-radius: var(--border-radius-pill);
       overflow: hidden;
       position: relative;
     }
@@ -794,19 +818,37 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       top: 0;
       left: 0;
       bottom: 0;
-      background: linear-gradient(90deg, #FF7E93, #F45B74, #DF4360);
-      border-radius: 2px;
+      background: linear-gradient(
+        90deg,
+        var(--accent-primary-hover, #D83855),
+        var(--accent-primary, #E84562),
+        var(--accent-primary-soft, rgba(232, 69, 98, 0.4))
+      );
+      border-radius: var(--border-radius-pill);
       animation: updateProgressIndeterminate 1.4s infinite ease-in-out;
     }
 
-    @keyframes updateFadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
+    .app-updating-fallback-btn {
+      margin-top: var(--space-md);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: 0.5rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-pill);
+      color: var(--text-primary);
+      font-size: var(--text-xs, 0.75rem);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      animation: fadeIn 0.25s ease-out;
+      transition: all var(--transition-fast);
 
-    @keyframes updatePulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.06); }
+      &:hover {
+        background: var(--bg-hover);
+        border-color: var(--accent-primary);
+      }
     }
 
     @keyframes updateRing {
@@ -818,6 +860,20 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       0% { left: -40%; width: 40%; }
       50% { left: 20%; width: 60%; }
       100% { left: 100%; width: 40%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .app-updating-logo,
+      .app-updating-pulse-ring,
+      .app-updating-progress-bar {
+        animation: none !important;
+      }
+
+      .app-updating-progress-bar {
+        left: 0 !important;
+        width: 100% !important;
+        opacity: 0.8;
+      }
     }
 
     /* More Menu */
@@ -1033,7 +1089,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       align-items: center;
       justify-content: center;
       margin: 0 auto var(--space-sm);
-      box-shadow: 0 6px 18px rgba(244, 91, 116, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      box-shadow: 0 6px 18px rgba(232, 69, 98, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.45);
     }
 
     .ios-install-logo-kikyou {

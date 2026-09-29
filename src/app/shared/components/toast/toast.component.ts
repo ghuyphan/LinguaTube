@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, inject, ElementRef, PLATFORM_ID, On
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ToastService, ToastAction, ToastItem } from '../../../core/services/toast.service';
 import { IconComponent } from '../icon/icon.component';
+import { DomTeleporter } from '../../utils/teleport.utils';
 
 @Component({
     selector: 'app-toast',
@@ -56,9 +57,7 @@ export class ToastComponent implements OnDestroy {
     readonly isDragging = signal(false);
     readonly dragOffsetY = signal(0);
 
-    private originalParent: Node | null = null;
-    private nextSibling: Node | null = null;
-    private isTeleported = false;
+    private readonly teleporter = new DomTeleporter();
     private touchStartY = 0;
     private hasMoved = false;
 
@@ -82,43 +81,17 @@ export class ToastComponent implements OnDestroy {
      * to escape any ancestor transform, overflow:hidden, or stacking context limitations.
      */
     private teleport(): void {
-        if (!isPlatformBrowser(this.platformId) || this.isTeleported) return;
-        const host = this.elementRef.nativeElement as HTMLElement;
-        if (!host.parentNode) return;
-
-        const fullscreenEl = document.fullscreenElement;
-        const target = fullscreenEl || document.body;
-        this.isFullscreen.set(!!fullscreenEl);
-
-        if (host.parentNode === target) return;
-
-        this.originalParent = host.parentNode;
-        this.nextSibling = host.nextSibling;
-        target.appendChild(host);
-        this.isTeleported = true;
+        if (!isPlatformBrowser(this.platformId)) return;
+        this.isFullscreen.set(!!document.fullscreenElement);
+        this.teleporter.teleport(this.elementRef.nativeElement as HTMLElement);
     }
 
     /**
      * Restore toast host back to its original parent in the component tree.
      */
     private restore(): void {
-        if (!this.isTeleported || !this.originalParent) return;
-        const host = this.elementRef.nativeElement as HTMLElement;
-        try {
-            if (host.parentNode) {
-                if (this.nextSibling && this.originalParent.contains(this.nextSibling)) {
-                    this.originalParent.insertBefore(host, this.nextSibling);
-                } else {
-                    this.originalParent.appendChild(host);
-                }
-            }
-        } catch {
-            // Parent was detached, safe to ignore
-        }
-        this.isTeleported = false;
+        this.teleporter.restore(this.elementRef.nativeElement as HTMLElement);
         this.isFullscreen.set(false);
-        this.originalParent = null;
-        this.nextSibling = null;
     }
 
     onMouseEnter(): void {

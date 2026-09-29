@@ -161,4 +161,54 @@ describe('BottomSheetComponent', () => {
 
     expect(host.isOpen()).toBeTrue();
   }));
+
+  it('should play closing animation and keep DOM mounted until animation completes when isOpen is set to false externally', fakeAsync(() => {
+    host.isOpen.set(true);
+    fixture.detectChanges();
+
+    const overlay = document.querySelector('.sheet-overlay');
+    const sheet = document.querySelector('.sheet');
+    expect(overlay).toBeTruthy();
+    expect(sheet).toBeTruthy();
+
+    // Parent sets isOpen to false directly
+    host.isOpen.set(false);
+    fixture.detectChanges();
+
+    // DOM should NOT be immediately destroyed; closing classes should be applied
+    const closingOverlay = document.querySelector('.sheet-overlay.closing');
+    const closingSheet = document.querySelector('.sheet.closing');
+    expect(closingOverlay).toBeTruthy();
+    expect(closingSheet).toBeTruthy();
+
+    // After animation duration, DOM is cleaned up and closed emitted
+    tick(300);
+    fixture.detectChanges();
+
+    expect(document.querySelector('.sheet-overlay')).toBeNull();
+    expect(host.closedCalled).toBeTrue();
+  }));
+
+  it('should finish closing immediately when onAnimationEnd fires for scaleOut', fakeAsync(() => {
+    host.isOpen.set(true);
+    fixture.detectChanges();
+
+    const closeBtn = document.querySelector('.sheet-close-btn') as HTMLElement;
+    const sheet = document.querySelector('.sheet') as HTMLElement;
+    closeBtn.click();
+    fixture.detectChanges();
+
+    expect(sheet.classList.contains('closing')).toBeTrue();
+
+    // Emulate browser ending scaleOut animation (including Angular scoped name)
+    sheet.dispatchEvent(new AnimationEvent('animationend', {
+      animationName: '_ngcontent-test_scaleOut',
+      bubbles: true
+    }));
+    fixture.detectChanges();
+
+    expect(document.querySelector('.sheet-overlay')).toBeNull();
+    expect(host.closedCalled).toBeTrue();
+    expect(bottomSheetService.hasOpenSheets).toBeFalse();
+  }));
 });

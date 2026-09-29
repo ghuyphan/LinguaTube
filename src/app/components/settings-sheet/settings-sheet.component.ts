@@ -5,9 +5,10 @@ import { BottomSheetComponent } from '../../shared/components/bottom-sheet/botto
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { SwitchComponent } from '../../shared/components/switch/switch.component';
-import { ReadingDisplayMode, SupportedLearningLanguage } from '../../models';
+import { ReadingDisplayMode, SupportedLearningLanguage, PRESET_AVATARS } from '../../models';
+import { getReadingDisplayLabel } from '../../shared/utils/language.utils';
 
-import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService, AppUpdateService } from '../../core/services';
+import { SettingsService, AuthService, I18nService, UILanguage, ToastService, GamificationService, AppUpdateService, CountryService, LeaderboardService } from '../../core/services';
 import { TranscriptService } from '../../features/video';
 import { StreakService } from '../../services/streak.service';
 import { LearningLanguageService } from '../../services/learning-language.service';
@@ -30,6 +31,8 @@ export class SettingsSheetComponent {
   gamification = inject(GamificationService);
   appUpdate = inject(AppUpdateService);
   learningLanguage = inject(LearningLanguageService);
+  countryService = inject(CountryService);
+  leaderboard = inject(LeaderboardService);
 
   readonly sheet = viewChild(BottomSheetComponent);
 
@@ -45,9 +48,61 @@ export class SettingsSheetComponent {
   showUILangPicker = signal(false);
   showReadingModePicker = signal(false);
   showReleaseNotes = signal(false);
+  showCountryPicker = signal(false);
+  showEditProfile = signal(false);
+  editName = signal('');
+  editAvatar = signal('');
+  editCountry = signal('');
+  isSavingProfile = signal(false);
+  readonly presetAvatars = PRESET_AVATARS;
 
   readonly currentLearningLang = this.learningLanguage.currentLanguage;
   readonly learningLangOptions = this.learningLanguage.languageOptions;
+
+  // Computed for current country display
+  readonly currentCountry = computed(() => {
+    const isAuto = this.countryService.isAuto();
+    const info = this.countryService.effectiveCountryInfo();
+    return {
+      isAuto,
+      code: this.countryService.effectiveCountry(),
+      name: info ? info.name : this.countryService.effectiveCountry(),
+      flag: this.countryService.effectiveFlagUrl()
+    };
+  });
+
+  readonly currentCountryDisplay = computed(() => {
+    const info = this.countryService.effectiveCountryInfo();
+    const countryName = info ? (this.i18n.currentLanguage() === 'vi' ? info.nativeName : info.name) : this.countryService.effectiveCountry();
+    if (this.countryService.isAuto()) {
+      return `${countryName} (${this.i18n.t('settings.countryAuto') || 'Auto'})`;
+    }
+    return countryName;
+  });
+
+  readonly userFlagUrl = computed(() => this.countryService.effectiveFlagUrl());
+  readonly userCountryTitle = computed(() => this.countryService.effectiveCountryName());
+
+  readonly editCountryDisplay = computed(() => {
+    const val = this.editCountry();
+    if (val === 'auto' || !val) {
+      const detected = this.countryService.detectedCountry();
+      const detectedInfo = this.countryService.getCountryByCode(detected);
+      const detectedName = detectedInfo ? (this.i18n.currentLanguage() === 'vi' ? detectedInfo.nativeName : detectedInfo.name) : detected;
+      return `${detectedName} (${this.i18n.t('settings.countryAuto') || 'Auto'})`;
+    }
+    const info = this.countryService.getCountryByCode(val);
+    return info ? (this.i18n.currentLanguage() === 'vi' ? info.nativeName : info.name) : val;
+  });
+
+  readonly editCountryFlag = computed(() => {
+    const val = this.editCountry();
+    if (val === 'auto' || !val) {
+      return this.countryService.effectiveFlagUrl();
+    }
+    const info = this.countryService.getCountryByCode(val);
+    return info ? info.flagUrl : this.countryService.effectiveFlagUrl();
+  });
 
   // Computed for current UI language display
   currentUILang = computed(() => {
@@ -60,7 +115,7 @@ export class SettingsSheetComponent {
 
   currentReadingDisplay = computed(() => {
     const language = this.settings.settings().language;
-    return this.getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language);
+    return getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language, k => this.i18n.t(k));
   });
 
   uiLangOptions = computed<OptionItem[]>(() =>
@@ -77,10 +132,140 @@ export class SettingsSheetComponent {
 
     return modes.map(mode => ({
       value: mode,
-      label: this.getReadingDisplayLabel(mode, language),
+      label: getReadingDisplayLabel(mode, language, k => this.i18n.t(k)),
       example: this.getReadingDisplayExample(mode, language)
     }));
   });
+
+  countryOptions = computed<OptionItem[]>(() => {
+    const detected = this.countryService.detectedCountry();
+    const detectedInfo = this.countryService.getCountryByCode(detected);
+    const detectedName = detectedInfo ? (this.i18n.currentLanguage() === 'vi' ? detectedInfo.nativeName : detectedInfo.name) : detected;
+    const currentVal = this.showEditProfile() ? this.editCountry() : this.countryService.selectedCountry();
+
+    const options: OptionItem[] = [
+      {
+        value: 'auto',
+        label: this.i18n.t('settings.countryAuto') || 'Auto-detect',
+        example: `${detectedName} (${detected})`,
+        icon: 'globe',
+        badge: currentVal === 'auto' ? (this.i18n.t('settings.countryActive') || 'Active') : undefined
+      }
+    ];
+
+    for (const c of this.countryService.availableCountries) {
+      options.push({
+        value: c.code,
+        label: this.i18n.currentLanguage() === 'vi' ? c.nativeName : c.name,
+        example: c.nativeName !== c.name ? c.nativeName : c.code,
+        iconUrl: c.flagUrl
+      });
+    }
+
+    return options;
+  });
+
+  onCountrySelected(value: string): void {
+    if (this.showEditProfile()) {
+      this.editCountry.set(value);
+    } else {
+      this.countryService.setCountry(value);
+      void this.leaderboard.syncMyScore(true);
+    }
+    this.showCountryPicker.set(false);
+  }
+
+  openEditProfile(): void {
+    const u = this.auth.user();
+    if (!u) return;
+    this.editName.set(u.name || '');
+    this.editAvatar.set(u.picture || '');
+    this.editCountry.set(this.countryService.selectedCountry());
+    this.showEditProfile.set(true);
+  }
+
+  cancelEditProfile(): void {
+    this.showEditProfile.set(false);
+  }
+
+  selectPresetAvatar(url: string): void {
+    this.editAvatar.set(url);
+  }
+
+  resetToGoogleAvatar(): void {
+    const gPic = this.auth.user()?.googlePicture;
+    if (gPic) {
+      this.editAvatar.set(gPic);
+    }
+  }
+
+  onAvatarFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+    if (!file.type.startsWith('image/')) {
+      this.toast.show('Please select a valid image file (PNG, JPG, WebP)', { type: 'error' });
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const size = 128;
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        const minDim = Math.min(img.width, img.height);
+        const sx = (img.width - minDim) / 2;
+        const sy = (img.height - minDim) / 2;
+
+        ctx.drawImage(img, sx, sy, minDim, minDim, 0, 0, size, size);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        this.editAvatar.set(dataUrl);
+      };
+      img.src = e.target?.result as string;
+    };
+    reader.readAsDataURL(file);
+    input.value = '';
+  }
+
+  async saveProfile(): Promise<void> {
+    const name = this.editName().trim();
+    if (!name) {
+      this.toast.show(this.i18n.t('settings.displayNamePlaceholder') || 'Please enter a name', { type: 'error' });
+      return;
+    }
+
+    this.isSavingProfile.set(true);
+    try {
+      const avatar = this.editAvatar();
+      const country = this.editCountry();
+
+      const success = await this.auth.updateUserProfile({
+        name,
+        picture: avatar,
+        country: country === 'auto' ? undefined : country
+      });
+
+      if (success) {
+        this.countryService.setCountry(country);
+        void this.leaderboard.syncMyScore(true);
+        this.toast.show(this.i18n.t('settings.profileUpdated') || 'Profile updated successfully!', { type: 'success', icon: 'check-circle' });
+        this.showEditProfile.set(false);
+      } else {
+        this.toast.show(this.i18n.t('settings.profileUpdateFailed') || 'Failed to update profile.', { type: 'error', icon: 'alert-circle' });
+      }
+    } catch (err) {
+      console.error('[Settings] Error saving profile:', err);
+      this.toast.show(this.i18n.t('settings.profileUpdateFailed') || 'Failed to update profile.', { type: 'error', icon: 'alert-circle' });
+    } finally {
+      this.isSavingProfile.set(false);
+    }
+  }
 
   /**
    * Login with Google via PocketBase OAuth
@@ -157,34 +342,6 @@ export class SettingsSheetComponent {
 
   openAiCreditsDialog(): void {
     this.openAiCredits.emit();
-  }
-
-  private getReadingDisplayLabel(
-    mode: ReadingDisplayMode,
-    language: SupportedLearningLanguage
-  ): string {
-    if (language === 'en') {
-      return this.i18n.t('settings.textOnly');
-    }
-
-    switch (language) {
-      case 'ja':
-        if (mode === 'native') return this.i18n.t('settings.kanjiOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.kanjiFurigana');
-        if (mode === 'annotatedRomanized') return this.i18n.t('settings.kanjiRomaji');
-        if (mode === 'romanized') return this.i18n.t('settings.romajiOnly');
-        return this.i18n.t('settings.kanaOnly');
-      case 'zh':
-        if (mode === 'native') return this.i18n.t('settings.hanziOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.hanziPinyin');
-        return this.i18n.t('settings.pinyinOnly');
-      case 'ko':
-        if (mode === 'native') return this.i18n.t('settings.hangulOnly');
-        if (mode === 'annotated') return this.i18n.t('settings.hangulRomanization');
-        return this.i18n.t('settings.romanizationOnly');
-      default:
-        return this.i18n.t('settings.textOnly');
-    }
   }
 
   private getReadingDisplayExample(

@@ -1,7 +1,7 @@
-@if (isOpen()) {
+@if (shouldRender()) {
 <div class="sheet-overlay" [class.closing]="isClosing()" [style.z-index]="computedZIndex()"
-    (click)="onBackdropClick($event)" (touchend)="onBackdropTouch($event)">
-    <div class="sheet" #sheetEl [class]="panelClass()" [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
+    (click)="onBackdropDismiss($event)" (touchend)="onBackdropDismiss($event)">
+    <div class="sheet" #sheetEl [class]="panelClass()" [class.desktop-modal]="!isMobile()" [class.closing]="isClosing() && !isDragClosing()" [class.drag-closing]="isDragClosing()"
         [class.dragging]="isDragging()" [class.animated]="hasAnimated()"
         [class.square-corners]="squareCorners()" [style.--drag-offset]="dragOffset() + 'px'"
         [style.--max-height]="maxHeight()" [style.--max-width]="maxWidth()" (click)="$event.stopPropagation()" (animationend)="onAnimationEnd($event)"

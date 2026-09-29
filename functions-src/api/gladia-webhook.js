@@ -25,6 +25,7 @@ import { DiamondService } from '../services/diamond.service.js';
 import { CacheManager } from '../utils/cache-manager.js';
 import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
 import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
+import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 
 export function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
@@ -198,9 +199,12 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
 
     // 1. Save permanent transcript to R2 (enriched with tokens)
     let r2Saved = true;
-    if (r2 && videoId) {
-        const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
-        r2Saved = await saveTranscriptToR2(r2, videoId, detectedLang, enrichedSegments, 'ai');
+    let finalSegments = cleanedSegments;
+    if (videoId) {
+        finalSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
+        if (r2) {
+            r2Saved = await saveTranscriptToR2(r2, videoId, detectedLang, finalSegments, 'ai');
+        }
     }
 
     if (!r2Saved && r2) {
@@ -213,12 +217,14 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
         await completeAiJob(db, jobId, detectedLang);
     }
 
-    // 3. Update video languages registry in D1
+    // 3. Update video languages registry & difficulty levels in D1
     if (db && videoId) {
         try {
             await addSubLanguage(db, videoId, detectedLang);
             const saveLangs = Array.from(new Set([detectedLang, lang].filter(Boolean)));
-            await saveVideoLanguages(db, videoId, saveLangs, null, null, null, false, null, null, [detectedLang]);
+            const estimatedLevel = estimateTranscriptLevel(finalSegments, detectedLang);
+            const levelsObj = estimatedLevel ? { [detectedLang]: estimatedLevel } : null;
+            await saveVideoLanguages(db, videoId, saveLangs, null, null, null, false, levelsObj, null, [detectedLang]);
         } catch (metaErr) {
             console.error('[Gladia Webhook] Metadata save error:', metaErr.message);
         }

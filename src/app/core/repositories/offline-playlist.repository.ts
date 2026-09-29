@@ -4,7 +4,7 @@ import { Playlist, mapRecordToPlaylist } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { SupabaseService } from '../services/supabase.service';
 import { AuthService } from '../services/auth.service';
-import { mergeByTimestamp } from '../../shared/utils/sync.utils';
+import { mergeByTimestamp, TombstoneStore } from '../../shared/utils/sync.utils';
 
 const PLAYLISTS_STORAGE_KEY = 'linguatube_playlists';
 const PLAYLISTS_TOMBSTONES_KEY = 'linguatube_deleted_playlist_ids';
@@ -17,6 +17,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     private supabase = inject(SupabaseService);
     private auth = inject(AuthService);
     private storage = inject(StorageService);
+    private readonly tombstoneStore = new TombstoneStore(this.storage, PLAYLISTS_TOMBSTONES_KEY);
 
     readonly playlists = signal<Playlist[]>([]);
     readonly isLoading = signal(false);
@@ -202,20 +203,15 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     // ================= Private Helpers =================
 
     private getDeletionTombstones(): string[] {
-        return this.storage.get<string[]>(PLAYLISTS_TOMBSTONES_KEY) || [];
+        return this.tombstoneStore.getAll();
     }
 
     private addDeletionTombstone(id: string): void {
-        const tombstones = this.getDeletionTombstones();
-        if (!tombstones.includes(id)) {
-            tombstones.push(id);
-            this.storage.set(PLAYLISTS_TOMBSTONES_KEY, tombstones);
-        }
+        this.tombstoneStore.record(id);
     }
 
     private removeDeletionTombstone(id: string): void {
-        const tombstones = this.getDeletionTombstones().filter(tId => tId !== id);
-        this.storage.set(PLAYLISTS_TOMBSTONES_KEY, tombstones);
+        this.tombstoneStore.clear(id);
     }
 
     private async syncWithRemote(): Promise<void> {

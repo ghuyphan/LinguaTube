@@ -27,15 +27,6 @@
     width: 100%;
 }
 
-@keyframes crestFloat {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-3px);
-    }
-}
-
 // 68x68 Hero Badge (Matches AiCredits and Achievements hero icons)
 .streak-hero-icon {
     position: relative;

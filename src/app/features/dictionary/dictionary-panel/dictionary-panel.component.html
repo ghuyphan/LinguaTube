@@ -192,41 +192,32 @@
 
         } @else if (hasSearched() && !isLoading()) {
             @if (lookupError()) {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box empty-state__icon-box--error">
-                    <app-icon name="alert-circle" [size]="28" />
-                </div>
-                <div class="empty-state__text">
-                    <p class="empty-state__title">{{ i18n.t('dictionary.lookupErrorTitle') }}</p>
-                    <p class="empty-state__description">{{ i18n.t('dictionary.lookupErrorHint') }}</p>
-                </div>
+            <app-empty-state
+                icon="alert-circle"
+                iconVariant="error"
+                [title]="i18n.t('dictionary.lookupErrorTitle')"
+                [description]="i18n.t('dictionary.lookupErrorHint')">
                 <button type="button" class="btn btn-primary btn-sm empty-state__action" (click)="search()">
                     <app-icon name="refresh-cw" [size]="14" />
                     <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
                 </button>
-            </div>
+            </app-empty-state>
             } @else {
-            <div class="empty-state empty-state--centered empty-state--animate">
-                <div class="empty-state__icon-box">
-                    <app-icon name="search" [size]="28" />
-                </div>
+            <app-empty-state
+                icon="search"
+                [description]="i18n.t('dictionary.tryDifferent')">
                 <div class="empty-state__text">
                     <p class="empty-state__title">{{ i18n.t('dictionary.noResultsFor') }} "<strong>{{ lastQuery }}</strong>"</p>
-                    <p class="empty-state__description">{{ i18n.t('dictionary.tryDifferent') }}</p>
                 </div>
-            </div>
+            </app-empty-state>
             }
         } @else if (!hasSearched()) {
         <!-- Clean Initial Guidance -->
-        <div class="empty-state empty-state--centered empty-state--animate">
-            <div class="empty-state__icon-box">
-                <app-icon name="search" [size]="28" />
-            </div>
-            <div class="empty-state__text">
-                <p class="empty-state__title">{{ i18n.t('dictionary.enterWordAbove') }}</p>
-                <p class="empty-state__description">{{ i18n.t('dictionary.enterWordHint') }}</p>
-            </div>
-        </div>
+        <app-empty-state
+            icon="search"
+            [title]="i18n.t('dictionary.enterWordAbove')"
+            [description]="i18n.t('dictionary.enterWordHint')"
+        />
         <!-- Mobile Recent Searches -->
         @if (recentSearches().length > 0) {
         <div class="dict-recent">

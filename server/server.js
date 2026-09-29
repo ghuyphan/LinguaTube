@@ -936,6 +936,8 @@ app.get('/api/diamonds', (req, res) => {
             devDiamonds = 3;
             devLastRegen = Date.now();
         }
+        const acceptLang = req.headers['accept-language'] || '';
+        const devCountry = req.headers['cf-ipcountry'] || (acceptLang.includes('vi') ? 'VN' : (acceptLang.includes('ja') ? 'JP' : (acceptLang.includes('ko') ? 'KR' : 'VN')));
         res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
         res.json({
             success: true,
@@ -944,7 +946,8 @@ app.get('/api/diamonds', (req, res) => {
             nextRegenAt: devDiamonds < 3 ? devLastRegen + DEV_REGEN_INTERVAL_MS : null,
             regenIntervalMs: DEV_REGEN_INTERVAL_MS,
             tier: 'free',
-            maxVideoDurationSec: 900
+            maxVideoDurationSec: 900,
+            detectedCountry: devCountry
         });
     } catch (err) {
         res.status(200).json({
@@ -952,9 +955,20 @@ app.get('/api/diamonds', (req, res) => {
             diamonds: 3,
             maxDiamonds: 3,
             nextRegenAt: null,
-            regenIntervalMs: DEV_REGEN_INTERVAL_MS
+            regenIntervalMs: DEV_REGEN_INTERVAL_MS,
+            detectedCountry: 'VN'
         });
     }
+});
+
+app.get('/api/geo', (req, res) => {
+    const acceptLang = req.headers['accept-language'] || '';
+    const country = req.headers['cf-ipcountry'] || (acceptLang.includes('vi') ? 'VN' : (acceptLang.includes('ja') ? 'JP' : (acceptLang.includes('ko') ? 'KR' : 'VN')));
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.json({
+        success: true,
+        country
+    });
 });
 
 // Local Dev Payment Mock Endpoints
@@ -1193,6 +1207,89 @@ function detectLevelFromMetadataDev(title = '', channel = '') {
     if (/\b(?:advanced|fluent)\b/i.test(text)) return { lang: 'en', level: 'CEFR C1' };
 
     return null;
+}
+
+function labelToTierDev(label = '') {
+    if (!label) return null;
+    if (typeof label === 'object') {
+        if (label.tier) return label.tier;
+        label = label.level || '';
+    }
+    if (typeof label !== 'string' || !label) return null;
+    const clean = label.trim();
+    const upper = clean.toUpperCase();
+
+    if (upper === 'BEGINNER' || upper === 'ELEMENTARY' || upper === 'INTERMEDIATE' || upper === 'UPPER_INTERMEDIATE' || upper === 'ADVANCED') {
+        return upper.toLowerCase();
+    }
+
+    if (
+        /\b(?:JLPT\s*)?N5\b/i.test(clean) ||
+        /\bHSK\s*1\b/i.test(clean) ||
+        /\bTOPIK\s*(?:1|I)\b/i.test(clean) ||
+        /\bCEFR\s*A1\b/i.test(clean) ||
+        /\bA1\b/i.test(clean) ||
+        upper.includes('BEGINNER') ||
+        upper.includes('SƠ CẤP') ||
+        upper.includes('NHẬP MÔN') ||
+        /入門|初級|초급\s*1|입문/.test(clean)
+    ) {
+        return 'beginner';
+    }
+
+    if (
+        /\b(?:JLPT\s*)?N4\b/i.test(clean) ||
+        /\bHSK\s*2\b/i.test(clean) ||
+        /\bTOPIK\s*2\b/i.test(clean) ||
+        /\bCEFR\s*A2\b/i.test(clean) ||
+        /\bA2\b/i.test(clean) ||
+        upper.includes('ELEMENTARY') ||
+        /초급\s*2|초급/.test(clean)
+    ) {
+        return 'elementary';
+    }
+
+    if (
+        /\b(?:JLPT\s*)?N2\b/i.test(clean) ||
+        /\bHSK\s*5\b/i.test(clean) ||
+        /\bTOPIK\s*5\b/i.test(clean) ||
+        /\bCEFR\s*B2\b/i.test(clean) ||
+        /\bB2\b/i.test(clean) ||
+        upper.includes('UPPER') ||
+        upper.includes('TRUNG CAO CẤP') ||
+        /中上級|中高级|中高級|중고급/.test(clean)
+    ) {
+        return 'upper_intermediate';
+    }
+
+    if (
+        /\b(?:JLPT\s*)?N1\b/i.test(clean) ||
+        /\bHSK\s*6\b/i.test(clean) ||
+        /\bTOPIK\s*(?:6|II)\b/i.test(clean) ||
+        /\bCEFR\s*C[12]\b/i.test(clean) ||
+        /\bC[12]\b/i.test(clean) ||
+        upper.includes('ADVANCED') ||
+        upper.includes('CAO CẤP') ||
+        upper.includes('FLUENT') ||
+        /上級|高级|高級|고급/.test(clean)
+    ) {
+        return 'advanced';
+    }
+
+    if (
+        /\b(?:JLPT\s*)?N3\b/i.test(clean) ||
+        /\bHSK\s*[34]\b/i.test(clean) ||
+        /\bTOPIK\s*[34]\b/i.test(clean) ||
+        /\bCEFR\s*B1\b/i.test(clean) ||
+        /\bB1\b/i.test(clean) ||
+        upper.includes('INTERMEDIATE') ||
+        upper.includes('TRUNG CẤP') ||
+        /中級|中级|중급/.test(clean)
+    ) {
+        return 'intermediate';
+    }
+
+    return 'intermediate';
 }
 
 function isValidVideoId(id) {
@@ -1549,7 +1646,15 @@ app.get('/api/video-info', async (req, res) => {
     if (Object.keys(levels).length === 0) {
         const detected = detectLevelFromMetadataDev(title, channel);
         if (detected) {
-            levels[detected.lang] = detected.level;
+            const tier = labelToTierDev(detected.level) || 'intermediate';
+            levels[detected.lang] = {
+                level: detected.level,
+                tier,
+                score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
+                confidence: 0.95,
+                method: 'metadata',
+                updatedAt: Math.floor(Date.now() / 1000)
+            };
         }
     }
 
@@ -1580,11 +1685,21 @@ app.post('/api/video-level', (req, res) => {
         videoLevelsStore[videoId] = {};
     }
 
+    const cleanTier = tier || labelToTierDev(level) || 'intermediate';
+    let safeScore = typeof score === 'number' ? score : null;
+    if (safeScore === null) {
+        if (cleanTier === 'beginner') safeScore = 1.0;
+        else if (cleanTier === 'elementary') safeScore = 2.0;
+        else if (cleanTier === 'intermediate') safeScore = 3.0;
+        else if (cleanTier === 'upper_intermediate') safeScore = 4.0;
+        else if (cleanTier === 'advanced') safeScore = 5.0;
+    }
+
     const levelData = {
         level,
-        tier: tier || null,
-        score: typeof score === 'number' ? score : null,
-        confidence: typeof confidence === 'number' ? confidence : 0.8,
+        tier: cleanTier,
+        score: safeScore,
+        confidence: typeof confidence === 'number' ? Math.min(0.85, Math.max(0.0, confidence)) : 0.8,
         grammarCount: typeof grammarCount === 'number' ? grammarCount : 0,
         speechRateCpm: typeof speechRateCpm === 'number' ? speechRateCpm : null,
         breakdown: breakdown || null,

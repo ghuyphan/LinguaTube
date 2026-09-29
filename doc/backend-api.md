@@ -444,16 +444,18 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 ### 3.13. Video Level Classification API
 - **Routes**:
   - `POST /api/video-level`: Store and update computed difficulty level for a video (`videoId`, `language`, `level`, `confidence`, `method`, optional rich diagnostic details: `tier`, `score`, `grammarCount`, `speechRateCpm`, `breakdown`).
-  - `GET /api/video-info`: Includes `levels: Record<string, string | VideoLevelInfo>` map with fast-path metadata regex detection across native learning keywords (`初級`, `中級`, `上級`, `초급`, `중급`, `고급`, `初级`, `高级`, `Beginner`, `Intermediate`, `Advanced`) and full cached linguistic diagnostic details when available.
-- **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`, `server/server.js` (dev synced)
+  - `GET /api/video-info`: Includes canonical `levels: Record<string, VideoLevelInfo>` map with fast-path metadata regex detection, edge-evaluated transcript difficulty, and cached linguistic diagnostic details.
+- **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`, `functions-src/utils/level-estimator.js`, `server/server.js` (dev synced)
 - **Security & Integrity Protection**:
-  - Rate limiting: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX`).
-  - Confidence threshold: Client submissions must have `confidence >= 0.65` to be persisted.
-  - Non-destructive updates: Submissions cannot overwrite an existing verified level if the existing level has higher confidence.
-- **Storage Strategy & Ingestion-Time Assessment**:
-  - Automatically evaluated at ingestion time in `saveVideoLanguages()` via `detectLevelFromMetadata()` or updated from client linguistic analysis with rich details (`score`, `tier`, `grammarCount`, `speechRateCpm`, `breakdown`). Persisted strictly to Cloudflare D1 `video_languages.levels` column as a JSON map (Zero KV writes - Rule 2) and `server/transcripts_cache/video_levels.json` in local dev.
-  - Backwards-compatible: Consumers can read either string label or full diagnostic object.
-  - **Client Fast-Path**: The Angular client checks `serverLevels` first, achieving instant 0ms level resolution upon video open. When cached diagnostics are present, full diagnostic cards (grammar count, pattern chips, speech cadence) render immediately without requiring client cue re-analysis.
+  - Rate limiting: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX` supporting JLPT N1-N5, HSK 1-6, TOPIK 1-6 / I-II, CEFR A1-C2, and direct tier names).
+  - Confidence threshold & capping: Client submissions must have `confidence >= 0.65` and are capped at `0.85` max to prevent permanent poisoning by untrusted clients.
+  - Non-destructive updates & EMA Blending: Verified high-confidence metadata (`>= 0.95`) cannot be overwritten by lower-confidence client payloads. If an existing record has a valid score, incoming reports are blended via Exponential Moving Average (EMA: $0.60 \times \text{existing} + 0.40 \times \text{new}$).
+- **Server-Side Ingestion-Time Level Estimator (`estimateTranscriptLevel`)**:
+  - **Edge-Friendly Execution**: Runs in $< 1\text{ ms}$ CPU time with zero external dictionary files or heavy NLP dependencies. Evaluates speech rate (CPM/WPM), character/syllable complexity, and kanji/idiom distribution across sampled subtitle segments.
+  - **100% Catalog Coverage**: Automatically triggered inside `context.waitUntil(...)` whenever transcripts are ingested via native scraper (`fetchNativeCaptions`), Gladia AI (`pollAiJobStatus` / `gladia-webhook`), or self-healed on R2 cache hits (`POST /api/transcript`).
+  - **Full TOPIK & Framework Tier Parity**: `labelToTier()` supports comprehensive regex mapping for Japanese (JLPT N1-N5), Chinese (HSK 1-6), Korean (TOPIK 1-6 / I-II), English (CEFR A1-C2), and multilingual keywords (`sơ cấp`, `trung cấp`, `cao cấp`, `初級`, `中級`, `上級`, `초급`, `중급`, `고급`).
+  - **Storage Strategy**: Persisted strictly to Cloudflare D1 `video_languages.levels` column as a canonical typed JSON object (Zero KV writes - Rule 2) and `server/transcripts_cache/video_levels.json` in local dev.
+- **Client Fast-Path**: The Angular client checks `serverLevels` first, achieving instant 0ms level resolution upon video open. When cached diagnostics are present, full diagnostic cards render immediately without requiring client cue re-analysis.
 
 ---
 
@@ -563,6 +565,26 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 - **Input Constraints & Security**:
   - Max text length: 300 characters (returns HTTP 400 if exceeded).
   - Streamlined 2-tier architecture in `AudioService`: Unified Neural `/api/tts` (Edge Neural primary + server-side Google TTS failover + 30-day global CDN & client RAM cache) $\rightarrow$ Browser `window.speechSynthesis` offline fallback.
+
+---
+
+### 3.17. Geo-IP Country Detection API
+- **Routes**: `GET /api/geo`
+- **Source**: `functions-src/api/geo.js` (Cloudflare Pages Function) & `server/server.js` (Local Dev)
+- **Overview**:
+  - Detects the client's physical country using Cloudflare's Edge Geo-IP metadata (`request.cf.country` or incoming `cf-ipcountry` HTTP header).
+  - Returns ISO 3166-1 alpha-2 two-letter uppercase country code (e.g., `"VN"`, `"US"`, `"JP"`, `"KR"`).
+  - Zero database or KV reads; cached globally at the edge with `Cache-Control: public, max-age=86400, stale-while-revalidate=604800`.
+- **Response**:
+  ```json
+  {
+    "success": true,
+    "country": "VN"
+  }
+  ```
+- **Client Consumption**:
+  - Consumed by `CountryService` in conjunction with browser locale heuristics (`navigator.language`, timezone) and user preference overrides in Settings Sheet.
+
 
 
 
