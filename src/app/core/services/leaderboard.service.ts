@@ -1,4 +1,4 @@
-import { Injectable, inject, signal, effect } from '@angular/core';
+import { Injectable, inject, signal, effect, isDevMode } from '@angular/core';
 import { AuthService } from './auth.service';
 import { SettingsService } from './settings.service';
 import { GamificationService } from './gamification.service';
@@ -43,11 +43,23 @@ export class LeaderboardService {
     readonly selectedLang = signal<string>('all');
     readonly selectedPeriod = signal<'weekly' | 'all_time'>('weekly');
 
+    // Local dev testing rank override (can be set via window.__setDevLeaderboardRank(1 | 3 | null))
+    readonly devMockRank = signal<number | null>(null);
+
     private lastSyncTime = 0;
     private loadRequestId = 0;
     private memCache = new Map<string, { entries: LeaderboardEntry[]; timestamp: number }>();
 
     constructor() {
+        const isDev = isDevMode() || (typeof location !== 'undefined' && (location.hostname === 'localhost' || location.hostname === '127.0.0.1'));
+        if (typeof window !== 'undefined' && isDev) {
+            (window as unknown as { __setDevLeaderboardRank: (rank: number | null) => void }).__setDevLeaderboardRank = (rank: number | null) => {
+                this.devMockRank.set(rank);
+                this.memCache.clear();
+                void this.loadLeaderboard(this.selectedLang(), true, this.selectedPeriod());
+            };
+        }
+
         this.loadFromStorage();
         // Load initial leaderboard
         void this.loadLeaderboard('all');
@@ -169,7 +181,8 @@ export class LeaderboardService {
             }
 
             // Always merge real users with baseline community seed learners
-            const merged = mergeWithSeedLeaderboard(realLearners, lang === 'all' ? null : lang, 50, period);
+            let merged = mergeWithSeedLeaderboard(realLearners, lang === 'all' ? null : lang, 50, period);
+            merged = this.applyDevMockRank(merged, currentUserId, lang);
 
             this.memCache.set(cacheKey, { entries: merged, timestamp: Date.now() });
             this.topLearners.set(merged);
@@ -179,7 +192,8 @@ export class LeaderboardService {
             if (requestId !== this.loadRequestId) return;
             console.warn('[LeaderboardService] Failed to fetch leaderboard from Supabase, using seeds/cache:', err);
             const cachedFallback = this.topLearners();
-            const fallback = cachedFallback.length >= 3 ? cachedFallback : mergeWithSeedLeaderboard([], lang === 'all' ? null : lang, 50, period);
+            let fallback = cachedFallback.length >= 3 ? cachedFallback : mergeWithSeedLeaderboard([], lang === 'all' ? null : lang, 50, period);
+            fallback = this.applyDevMockRank(fallback, this.getCurrentUserId(), lang);
             this.topLearners.set(fallback);
             this.computeClientUserRank(fallback);
         } finally {
@@ -187,6 +201,70 @@ export class LeaderboardService {
                 this.isLoading.set(false);
             }
         }
+    }
+
+    /**
+     * Local development helper: mock current user rank (1st or 3rd) for UI testing
+     */
+    private applyDevMockRank(
+        entries: LeaderboardEntry[],
+        currentUserId: string,
+        lang: string
+    ): LeaderboardEntry[] {
+        const isDev = isDevMode() || (typeof location !== 'undefined' && (location.hostname === 'localhost' || location.hostname === '127.0.0.1'));
+        const devRank = this.devMockRank();
+        if (!isDev || !devRank || devRank < 1 || devRank > 3) {
+            return entries;
+        }
+
+        const user = this.auth.user();
+        const myLevel = this.gamification.userLevel();
+        const myStreak = this.streakRepo.streakData().currentStreak;
+        const myBadges = Object.keys(this.gamification.rawState().unlockedAchievements).length;
+
+        const existing = entries.find(e => e.userId === currentUserId);
+        const filtered = entries.filter(e => e.userId !== currentUserId);
+
+        const targetIdx = devRank - 1;
+        const topNeighbor = filtered[0];
+        const rank2Neighbor = filtered[1];
+        const rank3Neighbor = filtered[2];
+
+        let mockWeeklyXp = 980;
+        let mockXp = 15500;
+
+        if (targetIdx === 0) {
+            mockWeeklyXp = (topNeighbor?.weeklyXp ?? 850) + 120;
+            mockXp = (topNeighbor?.xp ?? 14250) + 500;
+        } else if (targetIdx === 2) {
+            const highWeekly = rank2Neighbor?.weeklyXp ?? 620;
+            const lowWeekly = rank3Neighbor?.weeklyXp ?? 490;
+            mockWeeklyXp = Math.floor((highWeekly + lowWeekly) / 2);
+            const highXp = rank2Neighbor?.xp ?? 8720;
+            const lowXp = rank3Neighbor?.xp ?? 5120;
+            mockXp = Math.floor((highXp + lowXp) / 2);
+        }
+
+        const userEntry: LeaderboardEntry = {
+            rank: devRank,
+            userId: currentUserId,
+            name: user?.name || existing?.name || 'You',
+            avatar: user?.picture || existing?.avatar || '',
+            xp: mockXp,
+            weeklyXp: mockWeeklyXp,
+            level: Math.max(myLevel, devRank === 1 ? 8 : 5),
+            streak: Math.max(myStreak, devRank === 1 ? 14 : 7),
+            badgesCount: Math.max(myBadges, devRank === 1 ? 8 : 4),
+            targetLang: lang === 'all' ? (this.settings.settings().language || 'ja') : lang,
+            country: ''
+        };
+
+        filtered.splice(targetIdx, 0, userEntry);
+
+        return filtered.map((row, idx) => ({
+            ...row,
+            rank: idx + 1
+        }));
     }
 
     /**

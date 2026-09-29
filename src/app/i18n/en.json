@@ -930,7 +930,12 @@
     "syncScore": "Sync Score",
     "synced": "Score synced!",
     "thisWeek": "This Week",
-    "allTime": "All Time"
+    "allTime": "All Time",
+    "jumpToRank": "Jump to your rank",
+    "jump": "Jump",
+    "podium": "Podium",
+    "scrollToPodium": "Jump to your podium",
+    "you": "You"
   },
   "missions": {
     "tabTitle": "Missions",

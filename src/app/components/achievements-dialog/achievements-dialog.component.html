@@ -171,8 +171,10 @@
         <div id="panel-achievements" class="tab-panel-wrap" role="tabpanel" aria-labelledby="tab-achievements">
         <!-- Header / Hero Section (Aligned with Streak & AI Credits dialogs) -->
         <div class="header-section">
-            <div class="achievements-hero-icon rpg-rank-crest" [attr.data-tier]="gamification.userLevelTier()">
-                <app-icon [name]="gamification.userLevelIcon()" [size]="36" class="hero-crest-icon" />
+            <div class="achievements-hero-icon rpg-rank-crest-wrap" [attr.data-tier]="gamification.userLevelTier()">
+                <div class="rpg-shield-crest rpg-rank-crest">
+                    <app-icon [name]="gamification.userLevelIcon()" [size]="30" class="hero-crest-icon" />
+                </div>
             </div>
 
             <div class="title-group">
@@ -292,28 +294,41 @@
         <div id="panel-leaderboard" class="tab-panel-wrap leaderboard-view" role="tabpanel" aria-labelledby="tab-leaderboard">
             <!-- Period & Language Filters -->
             <div class="leaderboard-top-controls">
-                <div class="period-pills" role="radiogroup" aria-label="Leaderboard timeframe">
+                <div class="leaderboard-top-row">
+                    <div class="period-pills" role="radiogroup" aria-label="Leaderboard timeframe">
+                        <button
+                            type="button"
+                            class="period-pill"
+                            role="radio"
+                            [attr.aria-checked]="selectedPeriod() === 'weekly'"
+                            [class.active]="selectedPeriod() === 'weekly'"
+                            (click)="setLeaderboardPeriod('weekly')"
+                        >
+                            <app-icon name="crossed-swords" [size]="13" />
+                            <span>{{ i18n.t('leaderboard.thisWeek') || 'This Week' }}</span>
+                        </button>
+                        <button
+                            type="button"
+                            class="period-pill"
+                            role="radio"
+                            [attr.aria-checked]="selectedPeriod() === 'all_time'"
+                            [class.active]="selectedPeriod() === 'all_time'"
+                            (click)="setLeaderboardPeriod('all_time')"
+                        >
+                            <app-icon name="laurel-crown" [size]="13" />
+                            <span>{{ i18n.t('leaderboard.allTime') || 'All Time' }}</span>
+                        </button>
+                    </div>
+
                     <button
                         type="button"
-                        class="period-pill"
-                        role="radio"
-                        [attr.aria-checked]="selectedPeriod() === 'weekly'"
-                        [class.active]="selectedPeriod() === 'weekly'"
-                        (click)="setLeaderboardPeriod('weekly')"
+                        class="leaderboard-refresh-btn"
+                        (click)="refreshLeaderboard()"
+                        [disabled]="leaderboard.isLoading()"
+                        [title]="i18n.t('leaderboard.syncScore') || 'Sync'"
+                        [attr.aria-label]="i18n.t('leaderboard.syncScore') || 'Sync'"
                     >
-                        <app-icon name="crossed-swords" [size]="13" />
-                        <span>{{ i18n.t('leaderboard.thisWeek') || 'This Week' }}</span>
-                    </button>
-                    <button
-                        type="button"
-                        class="period-pill"
-                        role="radio"
-                        [attr.aria-checked]="selectedPeriod() === 'all_time'"
-                        [class.active]="selectedPeriod() === 'all_time'"
-                        (click)="setLeaderboardPeriod('all_time')"
-                    >
-                        <app-icon name="laurel-crown" [size]="13" />
-                        <span>{{ i18n.t('leaderboard.allTime') || 'All Time' }}</span>
+                        <app-icon name="refresh-cw" [size]="13" [class.spinning]="leaderboard.isLoading()" />
                     </button>
                 </div>
 
@@ -330,6 +345,10 @@
                         >
                             @if (flt.flagUrl) {
                                 <img [src]="flt.flagUrl" class="circle-flag circle-flag--xs" alt="" />
+                            } @else {
+                                <span class="circle-flag circle-flag--xs circle-flag--globe">
+                                    <app-icon name="globe" [size]="10" />
+                                </span>
                             }
                             <span>{{ flt.label }}</span>
                         </button>
@@ -338,9 +357,16 @@
             </div>
 
             <!-- Top 3 Podium (Adventurer's Guild Plinths) -->
-            <div class="podium-container" role="region" aria-label="Top 3 Podium">
+            <div class="podium-container" #podiumRef role="region" aria-label="Top 3 Podium">
                 <!-- 2nd Place (Silver) -->
-                <div class="podium-col podium-col--second" [class.is-unclaimed]="!secondPlace()">
+                <div
+                    class="podium-col podium-col--second"
+                    [class.is-unclaimed]="!secondPlace()"
+                    [class.is-current-user]="isSecondPlaceCurrentUser()"
+                    [attr.id]="isSecondPlaceCurrentUser() ? 'current-user-position' : null"
+                    [attr.tabindex]="isSecondPlaceCurrentUser() ? 0 : null"
+                    (click)="isSecondPlaceCurrentUser() ? scrollToMyRank() : null"
+                >
                     @if (secondPlace(); as silver) {
                         <div class="podium-crest podium-crest--silver">
                             <div class="crest-crown crest-crown--silver" title="Rank 2">
@@ -356,8 +382,17 @@
                         </div>
 
                         <div class="podium-hero-info">
-                            <span class="podium-name" [title]="silver.name">{{ silver.name }}</span>
-                            <span class="podium-level-pill" [attr.data-tier]="getLevelTier(silver.level)">Lv.{{ silver.level }}</span>
+                            <span
+                                class="podium-name"
+                                [class.podium-name--you]="isSecondPlaceCurrentUser()"
+                                [title]="isSecondPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : silver.name"
+                            >
+                                {{ isSecondPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : silver.name }}
+                            </span>
+                            <span class="podium-level-pill" [attr.data-tier]="getLevelTier(silver.level)">
+                                <app-icon [name]="getLevelIcon(silver.level)" [size]="10" />
+                                <span>Lv.{{ silver.level }}</span>
+                            </span>
                         </div>
 
                         <div class="podium-pillar podium-pillar--silver">
@@ -393,7 +428,14 @@
                 </div>
 
                 <!-- 1st Place (Gold / Champion) -->
-                <div class="podium-col podium-col--first" [class.is-unclaimed]="!firstPlace()">
+                <div
+                    class="podium-col podium-col--first"
+                    [class.is-unclaimed]="!firstPlace()"
+                    [class.is-current-user]="isFirstPlaceCurrentUser()"
+                    [attr.id]="isFirstPlaceCurrentUser() ? 'current-user-position' : null"
+                    [attr.tabindex]="isFirstPlaceCurrentUser() ? 0 : null"
+                    (click)="isFirstPlaceCurrentUser() ? scrollToMyRank() : null"
+                >
                     @if (firstPlace(); as gold) {
                         <div class="podium-crest podium-crest--gold">
                             <div class="crest-crown crest-crown--gold" title="Rank 1 Champion">
@@ -409,8 +451,17 @@
                         </div>
 
                         <div class="podium-hero-info">
-                            <span class="podium-name" [title]="gold.name">{{ gold.name }}</span>
-                            <span class="podium-level-pill" [attr.data-tier]="getLevelTier(gold.level)">Lv.{{ gold.level }}</span>
+                            <span
+                                class="podium-name"
+                                [class.podium-name--you]="isFirstPlaceCurrentUser()"
+                                [title]="isFirstPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : gold.name"
+                            >
+                                {{ isFirstPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : gold.name }}
+                            </span>
+                            <span class="podium-level-pill" [attr.data-tier]="getLevelTier(gold.level)">
+                                <app-icon [name]="getLevelIcon(gold.level)" [size]="10" />
+                                <span>Lv.{{ gold.level }}</span>
+                            </span>
                         </div>
 
                         <div class="podium-pillar podium-pillar--gold">
@@ -446,7 +497,14 @@
                 </div>
 
                 <!-- 3rd Place (Bronze) -->
-                <div class="podium-col podium-col--third" [class.is-unclaimed]="!thirdPlace()">
+                <div
+                    class="podium-col podium-col--third"
+                    [class.is-unclaimed]="!thirdPlace()"
+                    [class.is-current-user]="isThirdPlaceCurrentUser()"
+                    [attr.id]="isThirdPlaceCurrentUser() ? 'current-user-position' : null"
+                    [attr.tabindex]="isThirdPlaceCurrentUser() ? 0 : null"
+                    (click)="isThirdPlaceCurrentUser() ? scrollToMyRank() : null"
+                >
                     @if (thirdPlace(); as bronze) {
                         <div class="podium-crest podium-crest--bronze">
                             <div class="crest-crown crest-crown--bronze" title="Rank 3">
@@ -462,8 +520,17 @@
                         </div>
 
                         <div class="podium-hero-info">
-                            <span class="podium-name" [title]="bronze.name">{{ bronze.name }}</span>
-                            <span class="podium-level-pill" [attr.data-tier]="getLevelTier(bronze.level)">Lv.{{ bronze.level }}</span>
+                            <span
+                                class="podium-name"
+                                [class.podium-name--you]="isThirdPlaceCurrentUser()"
+                                [title]="isThirdPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : bronze.name"
+                            >
+                                {{ isThirdPlaceCurrentUser() ? (i18n.t('leaderboard.you') || 'You') : bronze.name }}
+                            </span>
+                            <span class="podium-level-pill" [attr.data-tier]="getLevelTier(bronze.level)">
+                                <app-icon [name]="getLevelIcon(bronze.level)" [size]="10" />
+                                <span>Lv.{{ bronze.level }}</span>
+                            </span>
                         </div>
 
                         <div class="podium-pillar podium-pillar--bronze">
@@ -499,11 +566,78 @@
                 </div>
             </div>
 
+            <!-- Sticky Champion Bar (Ranks 1, 2, 3 when scrolled past podium) -->
+            @if (myTop3Rank(); as me) {
+                @if (isPodiumScrolledOutOfView()) {
+                    <div
+                        class="champion-sticky-bar"
+                        [attr.data-rank]="me.rank"
+                        (click)="scrollToMyRank()"
+                        role="button"
+                        tabindex="0"
+                        [title]="i18n.t('leaderboard.scrollToPodium') || 'Jump to your podium'"
+                        [attr.aria-label]="(i18n.t('leaderboard.scrollToPodium') || 'Jump to your podium') + ' - #' + me.rank"
+                    >
+                        <div class="champion-crest-wrap">
+                            @if (me.rank === 1) {
+                                <div class="crest-crown crest-crown--gold" title="Rank 1 Champion">
+                                    <app-icon name="laurel-crown" [size]="14" />
+                                </div>
+                            } @else if (me.rank === 2) {
+                                <div class="crest-crown crest-crown--silver" title="Rank 2">
+                                    <app-icon name="ribbon-shield" [size]="12" />
+                                </div>
+                            } @else {
+                                <div class="crest-crown crest-crown--bronze" title="Rank 3">
+                                    <app-icon name="templar-shield" [size]="12" />
+                                </div>
+                            }
+                            <span class="champion-rank-badge" [attr.data-rank]="me.rank">#{{ me.rank }}</span>
+                        </div>
+
+                        <div class="champion-avatar" [attr.data-rank]="me.rank">
+                            {{ me.learner.avatar ? '' : me.learner.name.charAt(0).toUpperCase() }}
+                            @if (me.learner.avatar) {
+                                <img [src]="me.learner.avatar" [alt]="me.learner.name" class="avatar-img" />
+                            }
+                        </div>
+
+                        <div class="champion-info">
+                            <div class="champion-name-row">
+                                <span class="champion-name champion-name--you">{{ i18n.t('leaderboard.you') || 'You' }}</span>
+                            </div>
+                            <div class="champion-meta">
+                                <span class="champion-level-badge" [attr.data-tier]="getLevelTier(me.learner.level)">
+                                    <app-icon [name]="getLevelIcon(me.learner.level)" [size]="10" />
+                                    <span>Lv.{{ me.learner.level }}</span>
+                                </span>
+                                <span class="champion-podium-jump">
+                                    <app-icon name="chevron-up" [size]="10" />
+                                    <span>{{ i18n.t('leaderboard.podium') || 'Podium' }}</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="champion-score">
+                            <span class="score-value">{{ (selectedPeriod() === 'weekly' ? (me.learner.weeklyXp ?? me.learner.xp) : me.learner.xp).toLocaleString() }}</span>
+                            <span class="score-label">XP</span>
+                        </div>
+                    </div>
+                }
+            }
+
             <!-- Ranks 4+ List -->
             @if (remainingLearners().length > 0) {
             <div class="ranking-list" role="list" aria-label="Leaderboard Rankings">
                 @for (learner of remainingLearners(); track learner.userId) {
-                    <div class="ranking-row" role="listitem" [class.is-current-user]="learner.userId === leaderboard.getCurrentUserId()">
+                    <div
+                        class="ranking-row"
+                        role="listitem"
+                        [class.is-current-user]="learner.userId === leaderboard.getCurrentUserId()"
+                        [attr.id]="learner.userId === leaderboard.getCurrentUserId() ? 'current-user-position' : null"
+                        [attr.tabindex]="learner.userId === leaderboard.getCurrentUserId() ? 0 : null"
+                        (click)="learner.userId === leaderboard.getCurrentUserId() ? scrollToMyRank() : null"
+                    >
                         <div class="rank-number">#{{ learner.rank }}</div>
                         <div class="learner-avatar">
                             {{ learner.avatar ? '' : learner.name.charAt(0).toUpperCase() }}
@@ -516,12 +650,20 @@
                                 @if (getCountryFlag(learner.country, learner.targetLang); as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
-                                <span class="learner-name">{{ learner.name }}</span>
+                                <span class="learner-name" [class.learner-name--you]="learner.userId === leaderboard.getCurrentUserId()">
+                                    {{ learner.userId === leaderboard.getCurrentUserId() ? (i18n.t('leaderboard.you') || 'You') : learner.name }}
+                                </span>
                             </div>
                             <div class="learner-meta">
-                                <span class="learner-level-badge" [attr.data-tier]="getLevelTier(learner.level)">Lv.{{ learner.level }}</span>
+                                <span class="learner-level-badge" [attr.data-tier]="getLevelTier(learner.level)">
+                                    <app-icon [name]="getLevelIcon(learner.level)" [size]="10" />
+                                    <span>Lv.{{ learner.level }}</span>
+                                </span>
                                 @if (learner.streak > 0) {
-                                    <span class="learner-streak">🔥 {{ learner.streak }}</span>
+                                    <span class="learner-streak">
+                                        <app-icon name="fire" [size]="10" class="streak-icon" />
+                                        <span>{{ learner.streak }}</span>
+                                    </span>
                                 }
                             </div>
                         </div>
@@ -532,34 +674,6 @@
                     </div>
                 }
             </div>
-            }
-
-            <!-- Sticky User Position Bar -->
-            @if (myRank(); as me) {
-                <div class="my-rank-sticky-bar">
-                    <div class="my-rank-left">
-                        <span class="my-rank-badge">#{{ me.rank }}</span>
-                        <div class="my-avatar">
-                            {{ me.avatar ? '' : (me.name ? me.name.charAt(0).toUpperCase() : 'Y') }}
-                            @if (me.avatar) {
-                                <img [src]="me.avatar" [alt]="me.name" class="avatar-img" />
-                            }
-                        </div>
-                        <div class="my-details">
-                            <span class="my-name">{{ i18n.t('leaderboard.yourRank') || 'Your Rank' }}</span>
-                            <span class="my-sub">
-                                <span class="learner-level-badge" [attr.data-tier]="gamification.userLevelTier()">Lv.{{ me.level }}</span>
-                                • 🔥 {{ me.streak }}d
-                            </span>
-                        </div>
-                    </div>
-                    <div class="my-rank-right">
-                        <span class="my-xp">{{ (selectedPeriod() === 'weekly' ? (me.weeklyXp ?? me.xp) : me.xp).toLocaleString() }} XP</span>
-                        <button type="button" class="sync-btn" (click)="refreshLeaderboard()" [title]="i18n.t('leaderboard.syncScore') || 'Sync'">
-                            <app-icon name="refresh-cw" [size]="13" />
-                        </button>
-                    </div>
-                </div>
             }
         </div>
     }

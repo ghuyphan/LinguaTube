@@ -930,7 +930,12 @@
     "syncScore": "점수 동기화",
     "synced": "동기화 완료!",
     "thisWeek": "이번 주",
-    "allTime": "전체"
+    "allTime": "전체",
+    "jumpToRank": "내 순위로 이동",
+    "jump": "이동",
+    "podium": "시상대",
+    "scrollToPodium": "시상대로 이동",
+    "you": "나"
   },
   "missions": {
     "tabTitle": "일일 미션",

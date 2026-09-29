@@ -930,7 +930,12 @@
     "syncScore": "Đồng bộ điểm",
     "synced": "Đã đồng bộ!",
     "thisWeek": "Tuần này",
-    "allTime": "Mọi lúc"
+    "allTime": "Mọi lúc",
+    "jumpToRank": "Đến thứ hạng của bạn",
+    "jump": "Đến hạng",
+    "podium": "Bục vinh danh",
+    "scrollToPodium": "Đến bục vinh danh",
+    "you": "Bạn"
   },
   "missions": {
     "tabTitle": "Nhiệm vụ",

@@ -930,7 +930,12 @@
     "syncScore": "同步分数",
     "synced": "已同步！",
     "thisWeek": "本周",
-    "allTime": "全部"
+    "allTime": "全部",
+    "jumpToRank": "跳转到我的排名",
+    "jump": "跳转",
+    "podium": "领奖台",
+    "scrollToPodium": "回到领奖台",
+    "you": "你"
   },
   "missions": {
     "tabTitle": "每日任务",

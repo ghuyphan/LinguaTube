@@ -930,7 +930,12 @@
     "syncScore": "スコア同期",
     "synced": "同期完了！",
     "thisWeek": "今週",
-    "allTime": "全期間"
+    "allTime": "全期間",
+    "jumpToRank": "自分の順位へ移動",
+    "jump": "移動",
+    "podium": "表彰台",
+    "scrollToPodium": "表彰台へ移動",
+    "you": "あなた"
   },
   "missions": {
     "tabTitle": "デイリーミッション",

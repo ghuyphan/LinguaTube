@@ -883,6 +883,22 @@ To maintain complete visual, structural, and functional harmony across all prima
   - **Daily Missions RPG Quest Shields (`.rpg-quest-crest`)**: Heater shield silhouette with metallic bevel rim and specular glint; dark forged iron when pending, radiant emerald-gold aura with active pulse when claimable.
   - **Daily Completion Chest Vault**: Golden beveled vault box with `treasure-chest` vector, glowing amber aura, and XP claim button.
   - **Study Mode Deck Completion Crests**: SRS review completion screen awards dynamic RPG shield crests based on deck accuracy ($\ge 90\%$ Gold Champion `laurel-crown`, $\ge 75\%$ Silver Knight `ribbon-shield`, $<75\%$ Bronze Warrior `templar-shield`) with animated pop transitions and localized rank badges.
+    - **Top 3 Podium & Champion Spotlight**:
+      - Architectural marble plinths topped by Gold (`laurel-crown`), Silver (`ribbon-shield`), and Bronze (`templar-shield`) avatar badges with centered `.podium-meta` micro-pills displaying tier vector icons and streak counters.
+      - **Current User Podium Spotlight (`.podium-col.is-current-user`)**: When the user holds 1st, 2nd, or 3rd place, their podium column is accentuated with a tier-colored `"YOU"` micro-badge (`.you-indicator--gold`, `--silver`, `--bronze`), a radiant avatar halo ring (`championHaloGlow`), and illuminated plinth cornices. Tapping the podium column triggers the celebratory `podiumSpotlightPulse` animation.
+      - **Top 3 Sticky Champion Bar (`.champion-sticky-bar`)**: If a Rank 1, 2, or 3 champion scrolls down into the lower rankings (ranks 4–50), an `IntersectionObserver` observing `.podium-container` (`podiumRef`) detects when the podium scrolls out of view off the top. A sleek, RPG-themed champion bar slides in and pins to `position: sticky; top: 0; z-index: 10`:
+        - Displays the heraldic crest crown, `#1`/`#2`/`#3` badge, glowing avatar, `"YOU"` badge, level badge, and period XP.
+        - Tapping the bar triggers `scrollToMyRank()`, smoothly gliding the viewport back up to the podium and firing the radiant spotlight pulse.
+        - Automatically hides when the podium re-enters the viewport, ensuring zero duplicate cards or clutter when viewing the top of the leaderboard.
+    - **Prestige Ranking Rows (`.ranking-row`)**: Sleek cards with hover elevation (`translateX(2px)`), high-contrast tabular score typography (`font-variant-numeric: tabular-nums`), and dedicated micro-pills:
+      - **Level Micro-Pills (`.learner-level-badge`)**: Rounded jewel pills (`border-radius: 9999px`) pairing the level's authentic RPG tier icon (`<app-icon [name]="getLevelIcon(...)">`) with the level text across all 10 progression tiers.
+      - **Ember Streak Pills (`.learner-streak`)**: Warm orange ember capsule (`rgba(249, 115, 22, 0.09)`) housing a vector fire icon with specular glow filter and dark-mode adaptation.
+      - **Unified Sticky Player Row (`.ranking-row.is-current-user`)**: For learners in ranks 4+, the user is represented by a single, unified row inside the ranking list — completely eliminating redundant duplicate bottom bars:
+        - Utilizes CSS `position: sticky; bottom: 8px; z-index: 10` with glassmorphic elevation (`backdrop-filter: blur(16px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3)`) so it pins gracefully to the bottom of the list when viewing upper ranks.
+        - As the user scrolls down, the card seamlessly meets its natural slot in the rankings and scrolls naturally with neighboring learners without layout jumps or disappearing tricks.
+        - The refresh button lives in `.leaderboard-top-row`, cleanly aligned to the right of the centered timeframe pills (`Tuần này` / `Mọi lúc`) without orphan rows.
+        - Language filter chips (`All`, `JA`, `KO`, `ZH`, `EN`) maintain 100% visual parity with circular badges (`.circle-flag` for country flags, and `.circle-flag--globe` with the vector globe icon for `All`).
+        - **Local Dev Testing Mock (`LeaderboardService.devMockRank`)**: In local development (`localhost`/`127.0.0.1` or `isDevMode()`), the current user is automatically placed at Rank 1 (Gold Champion) out of the box for UI testing. Developers can switch ranks instantly in DevTools via `window.__setDevLeaderboardRank(1)`, `window.__setDevLeaderboardRank(3)`, or `window.__setDevLeaderboardRank(null)`.
   - **OnPush Change Detection**: Completely signal-driven without unnecessary zone rerenders.
 
 ### 8.4. UI Badges & Visual Tokens

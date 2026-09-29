@@ -4,7 +4,7 @@ import { IconComponent, IconName } from '../../shared/components/icon/icon.compo
 import { GamificationService } from '../../core/services/gamification.service';
 import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
-import { AchievementCategory, Mission, LevelTier } from '../../models/gamification.model';
+import { AchievementCategory, Mission, LevelTier, LeaderboardEntry } from '../../models/gamification.model';
 import { getLanguageFlagUrl } from '../../models';
 
 const EMOJI_FLAG_MAP: Record<string, string> = {
@@ -66,6 +66,13 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         }
     };
 
+    // Podium observation for Top 3 Champion Sticky Bar
+    readonly podiumRef = viewChild<ElementRef<HTMLElement>>('podiumRef');
+    readonly isPodiumScrolledOutOfView = signal<boolean>(false);
+    private podiumObserver: IntersectionObserver | null = null;
+
+    private pulseTimeout: ReturnType<typeof setTimeout> | null = null;
+
     constructor() {
         if (typeof document !== 'undefined') {
             document.addEventListener('visibilitychange', this.onVisibilityChange);
@@ -85,6 +92,27 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
             } else {
                 this.isIntersecting = false;
                 this.isTimerVisible.set(false);
+            }
+        });
+
+        effect(() => {
+            const el = this.podiumRef()?.nativeElement;
+            this.cleanupPodiumObserver();
+            if (el && typeof IntersectionObserver !== 'undefined') {
+                const rootEl = el.closest('.sheet-content') || null;
+                this.podiumObserver = new IntersectionObserver((entries) => {
+                    const entry = entries[0];
+                    if (!entry) return;
+                    const rootTop = entry.rootBounds ? entry.rootBounds.top : 0;
+                    const isPastTop = !entry.isIntersecting && entry.boundingClientRect.top < rootTop;
+                    this.isPodiumScrolledOutOfView.set(isPastTop);
+                }, {
+                    root: rootEl,
+                    threshold: 0
+                });
+                this.podiumObserver.observe(el);
+            } else {
+                this.isPodiumScrolledOutOfView.set(false);
             }
         });
     }
@@ -131,7 +159,12 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
             clearInterval(this.timerInterval);
             this.timerInterval = null;
         }
+        if (this.pulseTimeout) {
+            clearTimeout(this.pulseTimeout);
+            this.pulseTimeout = null;
+        }
         this.cleanupObserver();
+        this.cleanupPodiumObserver();
         if (typeof document !== 'undefined') {
             document.removeEventListener('visibilitychange', this.onVisibilityChange);
         }
@@ -141,6 +174,13 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         if (this.timerObserver) {
             this.timerObserver.disconnect();
             this.timerObserver = null;
+        }
+    }
+
+    private cleanupPodiumObserver(): void {
+        if (this.podiumObserver) {
+            this.podiumObserver.disconnect();
+            this.podiumObserver = null;
         }
     }
 
@@ -215,6 +255,24 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
     readonly firstPlace = computed(() => this.top3()[0] || null);
     readonly secondPlace = computed(() => this.top3()[1] || null);
     readonly thirdPlace = computed(() => this.top3()[2] || null);
+    readonly isFirstPlaceCurrentUser = computed(() => this.firstPlace()?.userId === this.leaderboard.getCurrentUserId());
+    readonly isSecondPlaceCurrentUser = computed(() => this.secondPlace()?.userId === this.leaderboard.getCurrentUserId());
+    readonly isThirdPlaceCurrentUser = computed(() => this.thirdPlace()?.userId === this.leaderboard.getCurrentUserId());
+    readonly myTop3Rank = computed<{ rank: 1 | 2 | 3; learner: LeaderboardEntry } | null>(() => {
+        const currentUserId = this.leaderboard.getCurrentUserId();
+        const top = this.top3();
+        if (currentUserId && top.length > 0) {
+            const idx = top.findIndex(l => l.userId === currentUserId);
+            if (idx === 0 || idx === 1 || idx === 2) {
+                return { rank: (idx + 1) as 1 | 2 | 3, learner: top[idx] };
+            }
+        }
+        const userRank = this.myRank();
+        if (userRank && userRank.rank >= 1 && userRank.rank <= 3) {
+            return { rank: userRank.rank as 1 | 2 | 3, learner: userRank };
+        }
+        return null;
+    });
     readonly remainingLearners = computed(() => {
         const learners = this.leaderboard.topLearners();
         return learners.length > 3 ? learners.slice(3) : [];
@@ -260,5 +318,28 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
     async refreshLeaderboard(): Promise<void> {
         await this.leaderboard.syncMyScore(true);
         await this.leaderboard.loadLeaderboard(this.leaderboardLang(), true, this.selectedPeriod());
+    }
+
+    scrollToMyRank(): void {
+        let el = document.getElementById('current-user-position');
+        if (!el && this.myTop3Rank()) {
+            el = this.podiumRef()?.nativeElement || null;
+        }
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            this.triggerRowPulse(el);
+        }
+    }
+
+    private triggerRowPulse(el: HTMLElement): void {
+        if (this.pulseTimeout) {
+            clearTimeout(this.pulseTimeout);
+        }
+        el.classList.remove('spotlight-pulse');
+        void el.offsetWidth;
+        el.classList.add('spotlight-pulse');
+        this.pulseTimeout = setTimeout(() => {
+            el.classList.remove('spotlight-pulse');
+        }, 1600);
     }
 }
