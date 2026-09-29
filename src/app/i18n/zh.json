@@ -544,7 +544,21 @@
     "daysReached": "已连续打卡 {{count}} 天！",
     "replenish": "恢复",
     "freezeRestored": "已恢复 1 次打卡保护！",
-    "insufficientXp": "需要 150 XP 才能兑换打卡保护"
+    "insufficientXp": "需要 150 XP 才能兑换打卡保护",
+    "campfireColdTitle": "熄灭的营火",
+    "campfireColdDesc": "夜风刺骨。今天开始学习，击石点燃你的火苗。",
+    "campfireEmberTitle": "斥候的余烬",
+    "campfireEmberDesc": "荒野中一抹温暖的火光。每天照料让火焰更加炽热。",
+    "campfireBlazeTitle": "炽烈营火",
+    "campfireBlazeDesc": "噼啪作响的稳定火焰，驱散遗忘的暗影。",
+    "campfireBeaconTitle": "永恒烽火",
+    "campfireBeaconDesc": "不朽的耀眼光芒，照引你跨越重重境域的旅程。",
+    "frostWardActive": "冰霜结界生效中",
+    "frostWardAbsorbed": "冰霜结界抵御了暴风雪，保全了你的余烬！",
+    "longestExpedition": "最长远征",
+    "frostWards": "冰霜结界",
+    "infuseWard": "充能冰霜结界",
+    "trailTitle": "每周远征踪迹"
   },
   "history": {
     "title": "观看历史",

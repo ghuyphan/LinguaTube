@@ -544,7 +544,21 @@
     "daysReached": "{{count}}日連続達成！",
     "replenish": "回復",
     "freezeRestored": "ストリークフリーズを回復しました！",
-    "insufficientXp": "フリーズ回復には150 XPが必要です"
+    "insufficientXp": "フリーズ回復には150 XPが必要です",
+    "campfireColdTitle": "冷たい炉",
+    "campfireColdDesc": "夜風が冷たいです。今日も学習して火打ち石で炎を灯しましょう。",
+    "campfireEmberTitle": "斥候の残り火",
+    "campfireEmberDesc": "荒野に灯る温かな火花。毎日手入れをして炎を育てましょう。",
+    "campfireBlazeTitle": "燃え盛る篝火",
+    "campfireBlazeDesc": "パチパチと燃える安定した炎が、忘却の影を遠ざけます。",
+    "campfireBeaconTitle": "永遠の導き火",
+    "campfireBeaconDesc": "不滅の炎の輝きが、領域を越えたあなたの旅を導きます。",
+    "frostWardActive": "霜の護符発動中",
+    "frostWardAbsorbed": "霜の護符が吹雪を防ぎ、残り火を守りました！",
+    "longestExpedition": "最長遠征記録",
+    "frostWards": "霜の結界",
+    "infuseWard": "結界を補給",
+    "trailTitle": "週間遠征トレイル"
   },
   "history": {
     "title": "履歴",

@@ -1,9 +1,21 @@
 import { Component, inject, computed, ChangeDetectionStrategy, output, input, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../shared/components/icon/icon.component';
+import { IconComponent, IconName } from '../../shared/components/icon/icon.component';
 import { StreakService } from '../../services/streak.service';
 import { I18nService, ToastService } from '../../core/services';
 import { GamificationService } from '../../core/services/gamification.service';
+
+export type CampfireStage = 'cold' | 'ember' | 'blaze' | 'beacon';
+
+export interface CampfireConfig {
+    stage: CampfireStage;
+    level: number;
+    titleKey: string;
+    descKey: string;
+    icon: IconName;
+    themeClass: string;
+    badgeLabel: string;
+}
 
 export interface WeekDayItem {
     day: string;
@@ -29,11 +41,60 @@ export class StreakDialogComponent {
     isOpen = input<boolean>(true);
     dismissed = output<void>();
 
+    readonly campfire = computed<CampfireConfig>(() => {
+        const count = this.streak.currentStreak();
+        if (count <= 0) {
+            return {
+                stage: 'cold',
+                level: 0,
+                titleKey: 'streak.campfireColdTitle',
+                descKey: 'streak.campfireColdDesc',
+                icon: 'flint-spark',
+                themeClass: 'hearth--cold',
+                badgeLabel: 'Stage 0'
+            };
+        }
+        if (count < 7) {
+            return {
+                stage: 'ember',
+                level: 1,
+                titleKey: 'streak.campfireEmberTitle',
+                descKey: 'streak.campfireEmberDesc',
+                icon: 'torch',
+                themeClass: 'hearth--ember',
+                badgeLabel: 'Hearth I'
+            };
+        }
+        if (count < 30) {
+            return {
+                stage: 'blaze',
+                level: 2,
+                titleKey: 'streak.campfireBlazeTitle',
+                descKey: 'streak.campfireBlazeDesc',
+                icon: 'campfire',
+                themeClass: 'hearth--blaze',
+                badgeLabel: 'Hearth II'
+            };
+        }
+        return {
+            stage: 'beacon',
+            level: 3,
+            titleKey: 'streak.campfireBeaconTitle',
+            descKey: 'streak.campfireBeaconDesc',
+            icon: 'campfire',
+            themeClass: 'hearth--beacon',
+            badgeLabel: 'Hearth III'
+        };
+    });
+
+    readonly hasFrostWard = computed(() => this.streak.freezesRemaining() > 0);
+    readonly freezeAbsorbed = computed(() => !!this.streak.lastActivityResult()?.freezeUsed);
+
     replenishFreeze(): void {
         const res = this.streak.replenishFreeze();
         if (res.success) {
             const msg = `❄️ ${this.i18n.t('streak.freezeRestored') || 'Streak Freeze restored!'}`;
-            this.toast.show(msg, { type: 'success', icon: 'snowflake', duration: 3500 });
+            this.toast.show(msg, { type: 'success', icon: 'ice-shield', duration: 3500 });
         } else if (res.reason === 'insufficient_xp') {
             const msg = `⚠️ ${this.i18n.t('streak.insufficientXp') || 'Need 150 XP to replenish freeze'}`;
             this.toast.show(msg, { type: 'warning', icon: 'trophy', duration: 3500 });
@@ -41,10 +102,17 @@ export class StreakDialogComponent {
     }
 
     constructor() {
-        // When modal is opened, trigger a background sync to refresh streak data
+        // When modal is opened, trigger background sync and subtle haptic pulse
         effect(() => {
             if (this.isOpen()) {
                 this.streak.syncWithRemote();
+                if (typeof navigator !== 'undefined' && 'vibrate' in navigator && this.streak.practicedToday()) {
+                    try {
+                        navigator.vibrate([15, 30, 20]);
+                    } catch {
+                        // Ignore unsupported haptic environments
+                    }
+                }
             }
         });
     }

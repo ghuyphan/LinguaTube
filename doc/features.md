@@ -478,21 +478,28 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 
 ---
 
-## 8. Gamified Streaks & Freeze Inventory
+## 8. The Traveler’s Campfire & Freeze Inventory
 
-- **Daily Tracking**: Practicing (watching videos, completing flashcard reviews) records an activity entry for the current UTC date.
-- **Streak Freezes & Freeze Economy**:
-  - Users have an inventory of up to 2 Streak Freezes.
-  - If a user misses exactly 1 day, a freeze is consumed automatically to protect their streak.
-  - Milestones at 7, 30, and 100 days reward an extra streak freeze.
-  - **XP Freeze Replenishment**: Users can purchase +1 Streak Freeze (up to the cap of 2) for **150 XP** directly within `StreakDialogComponent`. The XP is deducted via `GamificationService.deductXP(150)` and synchronized with Supabase via `StreakRepository.replenishFreeze()`.
+- **Campfire Metaphor (Streak Reimagined)**:
+  - Replaces traditional number-only streaks with an immersive dark-fantasy hearth:
+    - **Stage 0 (Cold Hearth, 0 Days)**: Cold charcoal slate stones with unlit kindling (`flint-spark` icon).
+    - **Stage I (Scout’s Ember, 1–6 Days)**: Warm amber flame with gentle rhythmic breathing glow (`torch` icon).
+    - **Stage II (Blazing Campfire, 7–29 Days)**: Golden-orange roaring hearth with active rising CSS ember particles (`campfire` icon).
+    - **Stage III (Eternal Beacon, 30+ Days)**: Celestial aurora flame with brilliant cyan/gold halo (`campfire` icon).
+- **Frost Ward (`ice-shield`) Protection**:
+  - Streak Freezes are visually represented as an ancient crystalline frost barrier surrounding the campfire.
+  - Active freezes project an ethereal cyan frost aura (`rgba(56, 189, 248, 0.45)`).
+  - When an inactive day occurs, a Blizzard Defense banner confirms: *"Frost Ward absorbed the blizzard and saved your embers!"*.
+  - Users can infuse +1 Frost Ward (up to 2 max) for **150 XP** directly within the dialog.
+- **Weekly Expedition Trail**:
+  - Replaces generic day circles with 7 expedition waypoints: lit torches for completed days, pulsing kindling rings for today's pending practice, and dashed charcoal stones for missed waypoints.
+- **Sensory & Haptic Feedback**:
+  - Subtle mobile haptic pulse (`navigator.vibrate([15, 30, 20])`) triggers on modal open when today's practice has already been logged.
+  - Full `@media (prefers-reduced-motion: reduce)` accessibility fallback disabling floating embers.
+- **Full 5-Language Parity**:
+  - Complete lore and status translations across English, Vietnamese, Japanese, Korean, and Chinese.
 - **Server-Side Streak Evaluation (`record_streak_activity`)**:
-  An atomic PostgreSQL stored procedure evaluated via Supabase RPC checks active streaks daily, consuming freezes or resetting streaks if inactive for $>1$ day.
-- **Streak Dialog & Week Strip Reactivity**:
-  - `StreakDialogComponent` renders inside a responsive bottom sheet modal (`<app-bottom-sheet>`).
-  - Displays the current week (Monday–Sunday) with localized day labels (`weekday: 'narrow'`).
-  - Powered by Angular Signals (`streakData`, `activityHistory`, `isOpen`), auto-refreshing via background sync on modal open.
-  - Guarantees accurate checkmarks across all timezones by preserving both local calendar and UTC date keys and merging remote history without data loss.
+  - Atomic PostgreSQL stored procedure via Supabase RPC checks active streaks daily, consuming freezes or resetting streaks if inactive for $>1$ day.
 
 ---
 

@@ -544,7 +544,21 @@
     "daysReached": "{{count}}일 연속 달성!",
     "replenish": "복구",
     "freezeRestored": "연속 학습 보호가 복구되었습니다!",
-    "insufficientXp": "프리즈를 충전하려면 150 XP가 필요해요"
+    "insufficientXp": "프리즈를 충전하려면 150 XP가 필요해요",
+    "campfireColdTitle": "꺼진 모닥불",
+    "campfireColdDesc": "밤바람이 찹니다. 오늘 학습하여 부싯돌을 쳐 불꽃을 피우세요.",
+    "campfireEmberTitle": "정찰병의 불씨",
+    "campfireEmberDesc": "황야의 따뜻한 불꽃입니다. 매일 불을 지펴 화로를 키우세요.",
+    "campfireBlazeTitle": "타오르는 모닥불",
+    "campfireBlazeDesc": "타닥타닥 타오르는 굳건한 불길이 망각의 그림자를 쫓아냅니다.",
+    "campfireBeaconTitle": "영원의 봉화",
+    "campfireBeaconDesc": "영원히 타오르는 빛이 세상을 건너는 여정을 인도합니다.",
+    "frostWardActive": "서리 결계 활성화",
+    "frostWardAbsorbed": "서리 결계가 눈보라를 막아내어 불씨를 지켜냈습니다!",
+    "longestExpedition": "최장 원정 기록",
+    "frostWards": "서리 결계",
+    "infuseWard": "서리 결계 충전",
+    "trailTitle": "주간 원정 트레일"
   },
   "history": {
     "title": "시청 기록",

@@ -544,7 +544,21 @@
     "daysReached": "Bạn đã đạt chuỗi {{count}} ngày!",
     "replenish": "Khôi phục",
     "freezeRestored": "Đã khôi phục lượt bảo vệ chuỗi!",
-    "insufficientXp": "Cần thêm 150 XP để khôi phục lượt bảo vệ chuỗi"
+    "insufficientXp": "Cần thêm 150 XP để khôi phục lượt bảo vệ chuỗi",
+    "campfireColdTitle": "Bếp Lửa Tắt",
+    "campfireColdDesc": "Gió đêm buốt lạnh. Hãy học hôm nay để đánh đá thắp lên ngọn lửa của bạn.",
+    "campfireEmberTitle": "Tàn Lửa Thám Hiểm",
+    "campfireEmberDesc": "Một đốm lửa ấm giữa hoang dã. Chăm sóc hàng ngày để ngọn lửa bùng cháy.",
+    "campfireBlazeTitle": "Lửa Trại Rực Rỡ",
+    "campfireBlazeDesc": "Ngọn lửa bập bùng xua tan bóng tối của sự lãng quên.",
+    "campfireBeaconTitle": "Ngọn Lửa Bất Diệt",
+    "campfireBeaconDesc": "Ngọn lửa thần thánh dẫn lối cho cuộc hành trình của bạn qua muôn phương.",
+    "frostWardActive": "Lá Chắn Băng Đang Kích Hoạt",
+    "frostWardAbsorbed": "Lá Chắn Băng đã chống đỡ bão tuyết và cứu tàn lửa của bạn!",
+    "longestExpedition": "Hành Trình Dài Nhất",
+    "frostWards": "Lá Chắn Băng",
+    "infuseWard": "Nạp Lá Chắn Băng",
+    "trailTitle": "Dấu Ấn Chặng Đường Tuần"
   },
   "history": {
     "title": "Lịch sử xem",

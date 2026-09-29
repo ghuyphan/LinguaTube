@@ -31,6 +31,7 @@ describe('StreakDialogComponent', () => {
             longestStreak: () => mockStreakData().longestStreak,
             freezesRemaining: () => mockStreakData().freezesRemaining,
             practicedToday: () => mockStreakData().practicedToday,
+            lastActivityResult: signal(null),
             syncWithRemote: syncWithRemoteSpy
         };
 
@@ -108,5 +109,37 @@ describe('StreakDialogComponent', () => {
 
     it('should call syncWithRemote when isOpen is true', () => {
         expect(syncWithRemoteSpy).toHaveBeenCalled();
+    });
+
+    it('should resolve campfire stage correctly based on streak count', () => {
+        // Streak = 3 -> ember
+        expect(component.campfire().stage).toBe('ember');
+        expect(component.campfire().icon).toBe('torch');
+
+        // Streak = 0 -> cold
+        mockStreakData.set({ ...mockStreakData(), currentStreak: 0 });
+        fixture.detectChanges();
+        expect(component.campfire().stage).toBe('cold');
+        expect(component.campfire().icon).toBe('flint-spark');
+
+        // Streak = 14 -> blaze
+        mockStreakData.set({ ...mockStreakData(), currentStreak: 14 });
+        fixture.detectChanges();
+        expect(component.campfire().stage).toBe('blaze');
+        expect(component.campfire().icon).toBe('campfire');
+
+        // Streak = 45 -> beacon
+        mockStreakData.set({ ...mockStreakData(), currentStreak: 45 });
+        fixture.detectChanges();
+        expect(component.campfire().stage).toBe('beacon');
+        expect(component.campfire().icon).toBe('campfire');
+    });
+
+    it('should correctly indicate frost ward availability', () => {
+        expect(component.hasFrostWard()).toBeTrue();
+
+        mockStreakData.set({ ...mockStreakData(), freezesRemaining: 0 });
+        fixture.detectChanges();
+        expect(component.hasFrostWard()).toBeFalse();
     });
 });

@@ -544,7 +544,21 @@
     "daysReached": "You've reached {{count}} days!",
     "replenish": "Restore Freeze",
     "freezeRestored": "Streak Freeze restored!",
-    "insufficientXp": "You need 150 XP to restore a streak freeze"
+    "insufficientXp": "You need 150 XP to restore a streak freeze",
+    "campfireColdTitle": "Cold Hearth",
+    "campfireColdDesc": "The night wind is cold. Practice today to strike the flint and spark your flame.",
+    "campfireEmberTitle": "Scout's Ember",
+    "campfireEmberDesc": "A warm spark in the wild. Tend the hearth daily to feed the flame.",
+    "campfireBlazeTitle": "Blazing Campfire",
+    "campfireBlazeDesc": "A crackling, steady fire keeping the shadow of forgetfulness at bay.",
+    "campfireBeaconTitle": "Eternal Beacon",
+    "campfireBeaconDesc": "An immortal flame whose radiant light guides your journey across realms.",
+    "frostWardActive": "Frost Ward Active",
+    "frostWardAbsorbed": "Frost Ward absorbed the blizzard and saved your embers!",
+    "longestExpedition": "Longest Expedition",
+    "frostWards": "Frost Wards",
+    "infuseWard": "Infuse Frost Ward",
+    "trailTitle": "Weekly Expedition Trail"
   },
   "history": {
     "title": "History",
