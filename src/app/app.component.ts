@@ -21,6 +21,7 @@ import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { VocabularyService } from './features/vocabulary/vocabulary.service';
 import { VideoRecommendationService } from './core/services/video-recommendation.service';
+import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
 
 @Component({
   selector: 'app-root',
@@ -71,6 +72,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               class="bottom-nav__item"
               routerLink="/video"
               (click)="onLearnNavClick($event)"
+              (pointerenter)="onNavHover('/video')"
+              (touchstart)="onNavHover('/video')"
               [class.active]="isVideoActive()"
               [attr.aria-current]="isVideoActive() ? 'page' : null"
             >
@@ -83,6 +86,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               class="bottom-nav__item"
               routerLink="/study"
               (click)="onStudyNavClick($event)"
+              (pointerenter)="onNavHover('/study')"
+              (touchstart)="onNavHover('/study')"
               [class.active]="isStudyActive()"
               [attr.aria-current]="isStudyActive() ? 'page' : null"
             >
@@ -105,6 +110,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             <a
               class="bottom-nav__item"
               routerLink="/dictionary"
+              (pointerenter)="onNavHover('/dictionary')"
+              (touchstart)="onNavHover('/dictionary')"
               [class.active]="isDictionaryActive()"
               [attr.aria-current]="isDictionaryActive() ? 'page' : null"
             >
@@ -173,7 +180,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
             </div>
 
             <!-- Action Rows (Personal Library & Settings) -->
-            <button class="more-menu__item" (click)="navigateFromMore('/explore')">
+            <button class="more-menu__item" (click)="navigateFromMore('/explore')"
+              (pointerenter)="onNavHover('/explore')" (touchstart)="onNavHover('/explore')">
               <div class="more-menu__item-icon">
                 <app-icon name="list-video" [size]="18" />
               </div>
@@ -183,7 +191,8 @@ import { VideoRecommendationService } from './core/services/video-recommendation
               <app-icon name="chevron-right" [size]="16" class="more-menu__chevron" />
             </button>
 
-            <button class="more-menu__item" (click)="navigateFromMore('/history')">
+            <button class="more-menu__item" (click)="navigateFromMore('/history')"
+              (pointerenter)="onNavHover('/history')" (touchstart)="onNavHover('/history')">
               <div class="more-menu__item-icon">
                 <app-icon name="history" [size]="18" />
               </div>
@@ -1145,6 +1154,13 @@ export class AppComponent implements OnDestroy {
   private seo = inject(SeoService);
   pwa = inject(PwaService);
   private keyboardShortcuts = inject(KeyboardShortcutService);
+  private preloader = inject(IdlePreloadStrategy);
+
+  onNavHover(path: string): void {
+    this.ngZone.runOutsideAngular(() => {
+      this.preloader.preloadNow(path);
+    });
+  }
 
   private destroy$ = new Subject<void>();
   private cleanupFns: Array<() => void> = [];

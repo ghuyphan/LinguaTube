@@ -441,6 +441,45 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         return bonusGained;
     }
 
+    unlockAndNotifyAchievements(newUnlocked: Record<string, string>, xpGained: number, newlyNotified: string[]): void {
+        const hasUnlocked = Object.keys(newUnlocked).length > 0;
+        const hasNotified = newlyNotified && newlyNotified.length > 0;
+        if (!hasUnlocked && xpGained <= 0 && !hasNotified) return;
+
+        this.ensureFreshPeriod();
+
+        this._state.update(prev => {
+            const newXP = prev.xp + Math.max(0, xpGained);
+            const newWeeklyXp = (prev.weeklyXp || 0) + Math.max(0, xpGained);
+            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+
+            let notified = prev.notifiedAchievements;
+            if (hasNotified) {
+                const currentSet = new Set(prev.notifiedAchievements);
+                for (const id of newlyNotified) {
+                    currentSet.add(id);
+                }
+                notified = Array.from(currentSet);
+            }
+
+            const updated: UserGamificationState = {
+                ...prev,
+                xp: newXP,
+                weeklyXp: newWeeklyXp,
+                level: newLevel,
+                unlockedAchievements: hasUnlocked ? { ...prev.unlockedAchievements, ...newUnlocked } : prev.unlockedAchievements,
+                notifiedAchievements: notified,
+                updatedAt: new Date().toISOString()
+            };
+            this.saveToStorage(updated);
+            return updated;
+        });
+
+        if (hasUnlocked || xpGained > 0) {
+            this.scheduleRemotePush();
+        }
+    }
+
     unlockAchievements(newUnlocked: Record<string, string>, xpGained: number): void {
         if (Object.keys(newUnlocked).length === 0 && xpGained <= 0) return;
         this.ensureFreshPeriod();

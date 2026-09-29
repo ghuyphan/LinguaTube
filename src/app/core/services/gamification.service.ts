@@ -346,11 +346,8 @@ export class GamificationService {
                 }
             }
 
-            if (Object.keys(newUnlocked).length > 0 || xpGained > 0) {
-                this.repo.unlockAchievements(newUnlocked, xpGained);
-            }
-            if (newlyNotified.length > 0) {
-                this.repo.markNotified(newlyNotified);
+            if (Object.keys(newUnlocked).length > 0 || xpGained > 0 || newlyNotified.length > 0) {
+                this.repo.unlockAndNotifyAchievements(newUnlocked, xpGained, newlyNotified);
             }
         });
     }

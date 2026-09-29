@@ -101,28 +101,22 @@
             }
         </div>
         } @else if (filteredWords().length === 0) {
-        <div class="empty-state empty-state--centered empty-state--animate">
+        <div class="empty-state empty-state--centered empty-state--animate" [class.empty-state--compact]="embedded()">
             @if (currentLangVocabCount() === 0) {
             <div class="empty-state__icon-box">
-                <app-icon name="layers" [size]="28" />
+                <app-icon name="layers" [size]="embedded() ? 16 : 24" />
             </div>
             <div class="empty-state__text">
                 <p class="empty-state__title">{{ i18n.t('vocab.noWordsSaved') }}</p>
                 <p class="empty-state__description">{{ i18n.t('vocab.clickWordsToSave') }}</p>
             </div>
-            <div class="empty-state__actions">
-                <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
-                    <app-icon name="search" [size]="14" />
-                    <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
-                </button>
-                <a routerLink="/video" class="btn btn-secondary btn-sm empty-state__action">
-                    <app-icon name="play" [size]="14" />
-                    <span>{{ i18n.t('history.exploreVideos') || 'Browse Videos' }}</span>
-                </a>
-            </div>
+            <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
+                <app-icon name="search" [size]="embedded() ? 12 : 14" />
+                <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
+            </button>
             } @else {
             <div class="empty-state__icon-box">
-                <app-icon name="search" [size]="28" />
+                <app-icon name="search" [size]="embedded() ? 16 : 24" />
             </div>
             <div class="empty-state__text">
                 <p class="empty-state__title">{{ i18n.t('vocab.noMatchesFound') }}</p>
@@ -130,12 +124,12 @@
             </div>
             @if (effectiveSearchQuery()) {
             <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary(effectiveSearchQuery())">
-                <app-icon name="search" [size]="14" />
+                <app-icon name="search" [size]="embedded() ? 12 : 14" />
                 <span>{{ i18n.t('dictionary.searchInDict') || 'Search in dictionary' }}</span>
             </button>
             } @else if (selectedLevel() !== 'all') {
             <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="selectedLevel.set('all')">
-                <app-icon name="rotate-ccw" [size]="14" />
+                <app-icon name="rotate-ccw" [size]="embedded() ? 12 : 14" />
                 <span>{{ i18n.t('history.all') || 'Show All' }}</span>
             </button>
             }

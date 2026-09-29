@@ -16,6 +16,14 @@
     text-align: center;
 }
 
+.tab-panel-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    align-items: center;
+}
+
 // ------------------------------------
 // RPG Rank Tier Variables & Palette
 // ------------------------------------

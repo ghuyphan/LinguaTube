@@ -1,12 +1,14 @@
 <aside class="sidebar" [class.collapsed]="isCollapsed()">
     <!-- Toggle Button (Floating outside the right border) -->
-    <button class="sidebar-toggle" (click)="toggleCollapse()"
+    <button type="button" class="sidebar-toggle" (click)="toggleCollapse()"
+        [attr.aria-expanded]="!isCollapsed()"
+        aria-controls="sidebar-inner"
         [attr.aria-label]="isCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
         [attr.title]="isCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'">
         <app-icon [name]="isCollapsed() ? 'chevron-right' : 'chevron-left'" [size]="14" />
     </button>
 
-    <div class="sidebar__inner">
+    <div id="sidebar-inner" class="sidebar__inner">
         <!-- Logo / Brand -->
         <div class="sidebar__brand" (click)="onLearnClick($event)" (keydown.enter)="onLearnClick($event)" (keydown.space)="onLearnClick($event)" role="button" tabindex="0" [attr.title]="brandTitle()" [attr.aria-label]="brandTitle()" style="cursor: pointer;">
             <div class="sidebar__logo" aria-hidden="true">
@@ -33,15 +35,16 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="sidebar__nav">
-            <button class="nav-item nav-item--new" (click)="onNewVideoClick()"
+        <nav class="sidebar__nav" aria-label="Main navigation">
+            <button type="button" class="nav-item nav-item--new" (click)="onNewVideoClick()"
                 [attr.title]="i18n.t('nav.newVideo')">
                 <app-icon name="plus" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.newVideo') }}</span>
                 }
             </button>
-            <a class="nav-item" routerLink="/video" routerLinkActive="active" (click)="onLearnClick($event)"
+            <a class="nav-item" routerLink="/video" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="onLearnClick($event)"
+                (pointerenter)="onNavHover('/video')" (touchstart)="onNavHover('/video')"
                 [class.has-active-session]="hasActiveVideoSession()"
                 [attr.title]="hasActiveVideoSession() ? (i18n.t('nav.watch') + ' (' + (i18n.t('player.nowPlaying') || 'Now playing') + ')') : i18n.t('nav.watch')">
                 <app-icon name="play-circle" [size]="18" />
@@ -56,25 +59,33 @@
                 }
                 }
             </a>
-            <a class="nav-item" routerLink="/study" routerLinkActive="active" (click)="onStudyClick($event)" [attr.title]="i18n.t('nav.review')">
+            <a class="nav-item" routerLink="/study" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="onStudyClick($event)"
+                (pointerenter)="onNavHover('/study')" (touchstart)="onNavHover('/study')"
+                [attr.title]="i18n.t('nav.review')">
                 <app-icon name="graduation-cap" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.review') }}</span>
                 }
             </a>
-            <a class="nav-item" routerLink="/dictionary" routerLinkActive="active" [attr.title]="i18n.t('nav.vocab')">
+            <a class="nav-item" routerLink="/dictionary" routerLinkActive="active" ariaCurrentWhenActive="page"
+                (pointerenter)="onNavHover('/dictionary')" (touchstart)="onNavHover('/dictionary')"
+                [attr.title]="i18n.t('nav.vocab')">
                 <app-icon name="book-open" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.vocab') }}</span>
                 }
             </a>
-            <a class="nav-item" routerLink="/explore" routerLinkActive="active" [attr.title]="i18n.t('nav.playlists')">
+            <a class="nav-item" routerLink="/explore" routerLinkActive="active" ariaCurrentWhenActive="page"
+                (pointerenter)="onNavHover('/explore')" (touchstart)="onNavHover('/explore')"
+                [attr.title]="i18n.t('nav.playlists')">
                 <app-icon name="list-video" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('nav.playlists') }}</span>
                 }
             </a>
-            <a class="nav-item" routerLink="/history" routerLinkActive="active" [attr.title]="i18n.t('history.title')">
+            <a class="nav-item" routerLink="/history" routerLinkActive="active" ariaCurrentWhenActive="page"
+                (pointerenter)="onNavHover('/history')" (touchstart)="onNavHover('/history')"
+                [attr.title]="i18n.t('history.title')">
                 <app-icon name="history" [size]="18" />
                 @if (!isCollapsed()) {
                 <span>{{ i18n.t('history.title') }}</span>
@@ -86,13 +97,13 @@
         <div class="sidebar__bottom">
             <!-- Learning Language Selector -->
             @if (!isCollapsed()) {
-            <button class="lang-selector-btn" (click)="showLangPicker.set(true)" [attr.title]="i18n.t('settings.learningLanguage')">
+            <button type="button" class="lang-selector-btn" (click)="showLangPicker.set(true)" [attr.title]="i18n.t('settings.learningLanguage')">
                 <img [src]="currentLang().flag" class="lang-flag" alt="" />
                 <span class="lang-name">{{ currentLang().name }}</span>
                 <app-icon name="chevron-down" [size]="14" class="lang-chevron" />
             </button>
             } @else {
-            <button class="lang-flag-btn" (click)="showLangPicker.set(true)" [attr.title]="currentLang().name">
+            <button type="button" class="lang-flag-btn" (click)="showLangPicker.set(true)" [attr.title]="currentLang().name">
                 <img [src]="currentLang().flag" class="lang-flag" alt="" />
             </button>
             }
@@ -100,13 +111,13 @@
             <!-- Unified Motivation & Credits Bar (Expanded Only) -->
             @if (!isCollapsed()) {
             <div class="stats-bar">
-                <button class="stats-bar__item" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
+                <button type="button" class="stats-bar__item" (click)="openStreak.emit()" [class.active]="streak.practicedToday()"
                     [attr.title]="(i18n.t('streak.dayStreak') || 'Streak') + ': ' + streak.currentStreak()">
                     <app-icon name="fire" [size]="16" class="stat-icon stat-icon--fire" />
                     <span class="stats-bar__val">{{ streak.currentStreak() }}</span>
                 </button>
                 <div class="stats-bar__divider"></div>
-                <button class="stats-bar__item" (click)="openAchievements.emit()" 
+                <button type="button" class="stats-bar__item" (click)="openAchievements.emit()" 
                     [attr.title]="(i18n.t('gamification.level') || 'Level') + ' ' + gamification.userLevel() + ' (' + gamification.totalXP() + ' XP)'">
                     <div class="stat-icon-wrap">
                         <app-icon [name]="gamification.userLevelIcon()" [size]="16" [class]="'stat-icon stat-icon--level stat-icon--tier-' + gamification.userLevelTier()" />
@@ -117,7 +128,7 @@
                     <span class="stats-bar__val">{{ gamification.userLevel() }}</span>
                 </button>
                 <div class="stats-bar__divider"></div>
-                <button class="stats-bar__item" (click)="openAiCredits.emit()" 
+                <button type="button" class="stats-bar__item" (click)="openAiCredits.emit()" 
                     [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                     <app-icon name="diamond" [size]="16" class="stat-icon stat-icon--diamond" />
                     <span class="stats-bar__val">{{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }}</span>
@@ -129,7 +140,7 @@
             @if (auth.isLoggedIn()) {
                 @if (auth.subscriptionTier() === 'pro') {
                     @if (!isCollapsed()) {
-                    <button class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Founder'">
+                    <button type="button" class="sidebar-pro-btn sidebar-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Founder'">
                         <div class="pro-btn-content">
                             <div class="pro-btn-icon">
                                 <app-icon name="diamond" [size]="14" />
@@ -139,13 +150,13 @@
                         </div>
                     </button>
                     } @else {
-                    <button class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Founder'">
+                    <button type="button" class="collapsed-pro-btn collapsed-pro-btn--premium" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.titlePremium') || 'Voca Founder'">
                         <app-icon name="diamond" [size]="16" />
                     </button>
                     }
                 } @else if (auth.subscriptionTier() !== 'premium') {
                     @if (!isCollapsed()) {
-                    <button class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Supporter'">
+                    <button type="button" class="sidebar-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Supporter'">
                         <div class="pro-btn-content">
                             <div class="pro-btn-icon">
                                 <app-icon name="crown" [size]="14" />
@@ -155,7 +166,7 @@
                         </div>
                     </button>
                     } @else {
-                    <button class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Supporter'">
+                    <button type="button" class="collapsed-pro-btn" (click)="openProUpgrade.emit()" [attr.title]="i18n.t('pro.title') || 'Voca Supporter'">
                         <app-icon name="crown" [size]="16" />
                     </button>
                     }
@@ -230,7 +241,7 @@
                         </button>
                     </div>
                     }
-                    <button class="footer-btn user-settings-row guest-settings-row" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
+                    <button type="button" class="footer-btn user-settings-row guest-settings-row" (click)="openSettings.emit()" [attr.title]="i18n.t('nav.settings')">
                         <div class="guest-avatar-box">
                             <app-icon name="user" [size]="16" />
                         </div>
@@ -243,7 +254,7 @@
                     </button>
                 } @else {
                     <!-- Collapsed Guest View -->
-                    <button class="footer-btn user-settings-row" (click)="onFooterUserClick()"
+                    <button type="button" class="footer-btn user-settings-row" (click)="onFooterUserClick()"
                         [attr.title]="(i18n.t('header.signIn') || 'Sign In') + ' / ' + i18n.t('nav.settings')"
                         [attr.aria-label]="(i18n.t('header.signIn') || 'Sign In') + ' / ' + i18n.t('nav.settings')">
                         <div class="avatar-ring avatar-ring--guest">

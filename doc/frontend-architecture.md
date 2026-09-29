@@ -18,7 +18,7 @@ This document outlines the frontend design principles, Angular 19 Signal state a
 
  [ 3. Standalone Component Tree ]     [ 4. Cross-Platform Responsive UI ]
    • Zero NgModules                       • Mobile-First Responsive SCSS Layouts
-   • On-Demand Lazy Chunk Loading         • Touch Gestures, Pointer Capture & RAF
+   • Idle Preload & Hover Prefetching     • Touch Gestures, Pointer Capture & RAF
    • Isolated SCSS per component          • SVG Circle Flags & Full PWA Caching
 ```
 
@@ -60,6 +60,18 @@ readonly playerSettingsView = signal<'main' | 'speed' | 'fontSize' | 'dualSub' |
 readonly isFullscreen = signal<boolean>(false);
 readonly currentSpeed = computed(() => this.youtubeService.playbackRate());
 ```
+
+### 2.4. Two-Tier Speculative Routing & Idle Preload Strategy (`IdlePreloadStrategy`)
+To eliminate cold route transition delays without competing with initial page LCP or the YouTube IFrame API bootstrap, Voca uses a custom Angular `PreloadingStrategy` (`src/app/core/strategies/idle-preload.strategy.ts`):
+- **Tier 1 — Idle Background Preloading**:
+  - Delays execution by 2,000ms after client bootstrap, followed by small staggered delays (`2000 + index * 350ms`) per route.
+  - Schedules preloads via `window.requestIdleCallback({ timeout: 6000 })`, guaranteeing route chunks download exclusively when the main thread and network are free.
+  - Respects user data preferences via the Network Information API (`navigator.connection.saveData` and `effectiveType === 'slow-2g' | '2g'`), completely disabling background downloads on constrained networks.
+  - Incorporates error-unmarking so any transient background network failure automatically removes the path from `loadedPaths`, allowing subsequent user-initiated navigation or retries to succeed.
+- **Tier 2 — Anticipatory Hover / Touch Intent Prefetching (`preloadNow`)**:
+  - Bound to `(pointerenter)` and `(touchstart)` on navigation items across `SidebarComponent` and `AppComponent` (bottom navigation).
+  - Executed outside Angular Zone (`ngZone.runOutsideAngular`) to eliminate change-detection ticks during rapid cursor motion.
+  - Resolves route aliases (`/playlist` $\rightarrow$ `explore`, `/vocabulary` $\rightarrow$ `dictionary`, `''` $\rightarrow$ `video`) and begins downloading chunks during the 100–300ms human delay between hover/touch and click release, achieving perceived 0ms instantaneous route transitions.
 
 ---
 
@@ -635,28 +647,30 @@ All asynchronous loading states (History, Playlist, Vocabulary, and Dictionary W
 
 ### Unified Empty & Placeholder State System (`_components.scss`)
 All zero-item, filter no-match, and fallback states across feeds, sidebars, sheets, and dialogs adhere to a strict BEM design system contract in `src/styles/_components.scss`:
-- **Standard Layout**: Root `.empty-state.empty-state--centered` with optional `.empty-state--animate` (smooth 0.35s `emptyStateIn` entrance animation with spring-like cubic-bezier curve).
-- **Proportional Spacing Hierarchy (Strict Zero-Margin Collision Prevention)**:
-  - In flex column centered mode, gap is strictly managed via parent `gap: 1rem;` (16px) with zero rogue child margins (`margin: 0` on icon box and text).
-  - Title-to-Description gap: `0.375rem` (6px) inside `.empty-state__text` with `text-wrap: balance` to prevent orphan words.
-  - Text-to-Actions gap: exactly `1.25rem` (20px) created by parent flex gap plus `margin-top: 0.25rem` on `.empty-state__actions` / `.empty-state__action`.
-  - Container padding: `2rem 1.25rem` (desktop) and `1.5rem 1rem` (mobile), max-width bounded at `440px` (text bounded at `360px`).
+- **Standard Layout**: Root `.empty-state.empty-state--centered` with optional `.empty-state--animate` (smooth 0.25s `emptyStateIn` entrance animation).
+- **Proportional Spacing Hierarchy & Vertical/Horizontal Centering**:
+  - In flex column centered mode, `.empty-state--centered` specifies `flex: 1 1 auto; justify-content: center; align-items: center; margin: auto; width: 100%; box-sizing: border-box;`. This guarantees that in any flex container (cards, sidebars, modal bodies, feeds), the empty state naturally expands to fill the available vertical space and centers itself dead-center without hugging the top edge or leaving awkward bottom voids.
+  - Parent list containers (e.g. `.word-list`) apply `&:has(.empty-state) { overflow-y: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; }` to eliminate scrollbar artifacts and ensure perfect layout stability.
+  - Gap is strictly managed via parent `gap: 0.75rem;` (12px) with zero rogue child margins (`margin: 0` on icon box and text).
+  - Title-to-Description gap: `4px` inside `.empty-state__text` with `text-wrap: balance` to prevent orphan words.
+  - Text-to-Actions gap: `1rem` (16px) created by parent flex gap plus `margin-top: 0.125rem` on `.empty-state__actions` / `.empty-state__action`.
+  - Container padding: `1.5rem 1rem` (desktop) and `1.25rem 0.75rem` (mobile), max-width bounded at `380px` (text bounded at `320px`).
 - **Geometric Icon Box (`.empty-state__icon-box`)**:
   - Always rendered as a clean, calm **50% circle** (`border-radius: 50%;`). Squircles or unbordered boxes are strictly prohibited.
-  - Standard centered size: `3.5rem` (56px) with 28px `<app-icon>` inside (`color: var(--text-muted)`).
+  - Standard centered size: `3rem` (48px) with 22px `<app-icon>` inside (`color: var(--text-muted)`).
   - Clean styling: solid `var(--bg-surface)` background and `1px solid var(--border-color)` border, with zero glow or distracting radial auras.
   - Semantic variants: `.empty-state__icon-box--error` (subtle red-tinted for network/player failures) and `.empty-state__icon-box--accent` (soft rose-tinted).
 - **Compact Variant (`.empty-state--compact`)**:
   - Purpose-built for desktop sidebars, drawer side-panels, mobile bottom sheets, and modal option pickers.
-  - Scaled dimensions: `2.5rem` (40px) icon box with 18px `<app-icon>`, `0.875rem` title, and `0.8125rem` hint.
-  - Padding: `1rem 0.75rem`, gap `0.75rem` (12px), max-width `300px`.
+  - Scaled dimensions: `2.25rem` (36px) icon box with 16px `<app-icon>`, `0.8125rem` title, and `0.75rem` hint.
+  - Padding: `0.75rem 0.5rem`, gap `0.5rem` (8px), max-width `260px`.
   - Deprecates ad-hoc one-off classes like `.sidebar-empty-box`.
 - **Typographic Scale**:
-  - Title: `.empty-state__title` (`1.125rem` / 18px, `font-weight: 700`, `letter-spacing: -0.015em`, `text-wrap: balance`).
-  - Description: `.empty-state__description` or `.empty-state__hint` (`0.875rem` / 14px, `color: var(--text-secondary)`, `line-height: 1.55`, `text-wrap: balance`).
+  - Title: `.empty-state__title` (`1rem` / 16px, `font-weight: 700`, `letter-spacing: -0.015em`, `text-wrap: balance`).
+  - Description: `.empty-state__description` or `.empty-state__hint` (`0.8125rem` / 13px, `color: var(--text-secondary)`, `line-height: 1.5`, `text-wrap: balance`).
 - **Action Button Hierarchy (`.empty-state__action` & `.empty-state__actions`)**:
-  - Action buttons are grouped inside `.empty-state__actions` (`gap: 0.625rem; display: inline-flex; flex-wrap: wrap; justify-content: center;`).
-  - Standard action button height is `36px` with pill border-radius, `0.875rem` font, and `font-weight: 600`.
+  - Action buttons are grouped inside `.empty-state__actions` (`gap: 0.5rem; display: inline-flex; flex-wrap: wrap; justify-content: center;`).
+  - Standard action button height is `32px` (28px in compact mode) with pill border-radius, `0.8125rem` font (`0.75rem` in compact mode), and `font-weight: 600`.
 - **Zero Inline Style Rule**: Redundant inline styles like `style="align-items: center; text-align: center;"` or `style="margin-top: ..."` are forbidden; centered alignment is handled natively by `.empty-state--centered`.
 
 ### Modal & Bottom Sheet Standardization Conventions

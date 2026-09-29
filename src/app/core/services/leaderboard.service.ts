@@ -44,6 +44,8 @@ export class LeaderboardService {
     readonly selectedPeriod = signal<'weekly' | 'all_time'>('weekly');
 
     private lastSyncTime = 0;
+    private loadRequestId = 0;
+    private memCache = new Map<string, { entries: LeaderboardEntry[]; timestamp: number }>();
 
     constructor() {
         this.loadFromStorage();
@@ -88,11 +90,24 @@ export class LeaderboardService {
      */
     async loadLeaderboard(
         lang: string = this.selectedLang(),
-        _force = false,
+        force = false,
         period: 'weekly' | 'all_time' = this.selectedPeriod()
     ): Promise<void> {
         this.selectedLang.set(lang);
         this.selectedPeriod.set(period);
+
+        const cacheKey = `${lang}_${period}`;
+        const cached = this.memCache.get(cacheKey);
+
+        // Instant cache hit if fetched within last 60 seconds
+        if (!force && cached && (Date.now() - cached.timestamp < 60000)) {
+            this.topLearners.set(cached.entries);
+            this.computeClientUserRank(cached.entries);
+            this.isLoading.set(false);
+            return;
+        }
+
+        const requestId = ++this.loadRequestId;
         this.isLoading.set(true);
 
         try {
@@ -101,6 +116,9 @@ export class LeaderboardService {
                 p_period: period,
                 p_limit: 50
             });
+
+            // If a newer request was dispatched while this was in flight, discard stale response
+            if (requestId !== this.loadRequestId) return;
 
             let realLearners: LeaderboardEntry[] = [];
             if (!error && Array.isArray(data)) {
@@ -153,17 +171,21 @@ export class LeaderboardService {
             // Always merge real users with baseline community seed learners
             const merged = mergeWithSeedLeaderboard(realLearners, lang === 'all' ? null : lang, 50, period);
 
+            this.memCache.set(cacheKey, { entries: merged, timestamp: Date.now() });
             this.topLearners.set(merged);
             this.computeClientUserRank(merged);
             this.saveToStorage(merged);
         } catch (err) {
+            if (requestId !== this.loadRequestId) return;
             console.warn('[LeaderboardService] Failed to fetch leaderboard from Supabase, using seeds/cache:', err);
-            const cached = this.topLearners();
-            const fallback = cached.length >= 3 ? cached : mergeWithSeedLeaderboard([], lang === 'all' ? null : lang, 50, period);
+            const cachedFallback = this.topLearners();
+            const fallback = cachedFallback.length >= 3 ? cachedFallback : mergeWithSeedLeaderboard([], lang === 'all' ? null : lang, 50, period);
             this.topLearners.set(fallback);
             this.computeClientUserRank(fallback);
         } finally {
-            this.isLoading.set(false);
+            if (requestId === this.loadRequestId) {
+                this.isLoading.set(false);
+            }
         }
     }
 

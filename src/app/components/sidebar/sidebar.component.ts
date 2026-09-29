@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, linkedSignal, ChangeDetectionStrategy, output, viewChild, ElementRef } from '@angular/core';
+import { Component, inject, signal, computed, linkedSignal, ChangeDetectionStrategy, output, viewChild, ElementRef, NgZone } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, RouterLinkActive, NavigationEnd } from '@angular/router';
@@ -13,6 +13,7 @@ import { StreakService } from '../../services/streak.service';
 import { LearningLanguageService } from '../../services/learning-language.service';
 import { GamificationService } from '../../core/services/gamification.service';
 import { VideoRecommendationService } from '../../core/services/video-recommendation.service';
+import { IdlePreloadStrategy } from '../../core/strategies/idle-preload.strategy';
 
 @Component({
     selector: 'app-sidebar',
@@ -24,6 +25,8 @@ import { VideoRecommendationService } from '../../core/services/video-recommenda
 })
 export class SidebarComponent {
     private router = inject(Router);
+    private preloader = inject(IdlePreloadStrategy);
+    private ngZone = inject(NgZone);
     playerView = inject(PlayerViewService);
     settings = inject(SettingsService);
     vocab = inject(VocabularyService);
@@ -38,6 +41,12 @@ export class SidebarComponent {
     videoRecommendation = inject(VideoRecommendationService);
     learningLanguage = inject(LearningLanguageService);
     toast = inject(ToastService);
+
+    onNavHover(path: string): void {
+        this.ngZone.runOutsideAngular(() => {
+            this.preloader.preloadNow(path);
+        });
+    }
 
     private currentUrl = toSignal(
         this.router.events.pipe(

@@ -1,9 +1,13 @@
 <div class="achievements-dialog">
     <!-- Top View Segmented Bar -->
-    <div class="view-segmented-bar">
+    <div class="view-segmented-bar" role="tablist" aria-label="Gamification sections">
         <button
             type="button"
+            id="tab-missions"
             class="segmented-btn"
+            role="tab"
+            [attr.aria-selected]="currentTab() === 'missions'"
+            aria-controls="panel-missions"
             [class.active]="currentTab() === 'missions'"
             (click)="setTab('missions')"
         >
@@ -12,7 +16,11 @@
         </button>
         <button
             type="button"
+            id="tab-achievements"
             class="segmented-btn"
+            role="tab"
+            [attr.aria-selected]="currentTab() === 'achievements'"
+            aria-controls="panel-achievements"
             [class.active]="currentTab() === 'achievements'"
             (click)="setTab('achievements')"
         >
@@ -21,7 +29,11 @@
         </button>
         <button
             type="button"
+            id="tab-leaderboard"
             class="segmented-btn"
+            role="tab"
+            [attr.aria-selected]="currentTab() === 'leaderboard'"
+            aria-controls="panel-leaderboard"
             [class.active]="currentTab() === 'leaderboard'"
             (click)="setTab('leaderboard')"
         >
@@ -31,6 +43,7 @@
     </div>
 
     @if (currentTab() === 'missions') {
+        <div id="panel-missions" class="tab-panel-wrap" role="tabpanel" aria-labelledby="tab-missions">
         <!-- Missions Hero Section -->
         <div class="header-section">
             <div class="achievements-hero-icon missions-hero-icon quest-bounty-seal">
@@ -71,7 +84,12 @@
                 </div>
                 <p class="daily-chest-desc">{{ i18n.t('missions.dailyChestDesc') || 'Complete all 3 daily missions to open the chest!' }}</p>
                 <div class="daily-chest-footer">
-                    <div class="daily-chest-progress-track">
+                    <div class="daily-chest-progress-track"
+                        role="progressbar"
+                        [attr.aria-valuenow]="completedMissionsCount()"
+                        [attr.aria-valuemin]="0"
+                        [attr.aria-valuemax]="totalMissionsCount() || 3"
+                        [attr.aria-label]="i18n.t('missions.dailyChest') || 'Daily missions progress'">
                         <div class="daily-chest-progress-fill" [style.width.%]="(completedMissionsCount() / (totalMissionsCount() || 1)) * 100"></div>
                     </div>
                     <div class="daily-chest-action">
@@ -110,7 +128,12 @@
 
                         <div class="mission-card__footer">
                             <div class="mission-card__progress-wrap">
-                                <div class="progress-bar">
+                                <div class="progress-bar"
+                                    role="progressbar"
+                                    [attr.aria-valuenow]="m.progress"
+                                    [attr.aria-valuemin]="0"
+                                    [attr.aria-valuemax]="m.target"
+                                    [attr.aria-label]="i18n.t(m.titleKey) || m.id">
                                     <div class="progress-fill" [style.width.%]="(m.progress / m.target) * 100"></div>
                                 </div>
                             </div>
@@ -143,7 +166,9 @@
                 </div>
             }
         </div>
+        </div>
     } @else if (currentTab() === 'achievements') {
+        <div id="panel-achievements" class="tab-panel-wrap" role="tabpanel" aria-labelledby="tab-achievements">
         <!-- Header / Hero Section (Aligned with Streak & AI Credits dialogs) -->
         <div class="header-section">
             <div class="achievements-hero-icon rpg-rank-crest" [attr.data-tier]="gamification.userLevelTier()">
@@ -174,18 +199,25 @@
                         <app-icon [name]="gamification.nextLevelIcon()" [size]="13" />
                     </div>
                 </div>
-                <div class="level-progress-track">
+                <div class="level-progress-track"
+                    role="progressbar"
+                    [attr.aria-valuenow]="progressToNext()"
+                    [attr.aria-valuemin]="0"
+                    [attr.aria-valuemax]="100"
+                    [attr.aria-label]="i18n.t('gamification.toNextLevel') || 'Level progress'">
                     <div class="level-progress-fill" [style.width.%]="progressToNext()"></div>
                 </div>
             </div>
         </div>
 
         <!-- Category Filter Chips -->
-        <div class="category-chips">
+        <div class="category-chips" role="radiogroup" aria-label="Filter achievements by category">
             @for (cat of categories; track cat.id) {
             <button
                 type="button"
                 class="filter-chip"
+                role="radio"
+                [attr.aria-checked]="activeCategory() === cat.id"
                 [class.active]="activeCategory() === cat.id"
                 (click)="setCategory(cat.id)"
             >
@@ -230,7 +262,12 @@
                     <p class="achievement-card__desc">{{ i18n.t(ach.descriptionKey) || '' }}</p>
 
                     <div class="achievement-card__progress-wrap">
-                        <div class="progress-bar">
+                        <div class="progress-bar"
+                            role="progressbar"
+                            [attr.aria-valuenow]="ach.progress"
+                            [attr.aria-valuemin]="0"
+                            [attr.aria-valuemax]="ach.target"
+                            [attr.aria-label]="i18n.t(ach.titleKey) || ach.id">
                             <div class="progress-fill" [style.width.%]="(ach.progress / ach.target) * 100"></div>
                         </div>
                         <span class="progress-text">{{ ach.progress }}/{{ ach.target }}</span>
@@ -249,15 +286,18 @@
                 </div>
             }
         </div>
+        </div>
     } @else {
         <!-- Global Ranking / Leaderboard View -->
-        <div class="leaderboard-view">
+        <div id="panel-leaderboard" class="tab-panel-wrap leaderboard-view" role="tabpanel" aria-labelledby="tab-leaderboard">
             <!-- Period & Language Filters -->
             <div class="leaderboard-top-controls">
-                <div class="period-pills">
+                <div class="period-pills" role="radiogroup" aria-label="Leaderboard timeframe">
                     <button
                         type="button"
                         class="period-pill"
+                        role="radio"
+                        [attr.aria-checked]="selectedPeriod() === 'weekly'"
                         [class.active]="selectedPeriod() === 'weekly'"
                         (click)="setLeaderboardPeriod('weekly')"
                     >
@@ -267,6 +307,8 @@
                     <button
                         type="button"
                         class="period-pill"
+                        role="radio"
+                        [attr.aria-checked]="selectedPeriod() === 'all_time'"
                         [class.active]="selectedPeriod() === 'all_time'"
                         (click)="setLeaderboardPeriod('all_time')"
                     >
@@ -276,11 +318,13 @@
                 </div>
 
                 <!-- Language filter chips -->
-                <div class="leaderboard-filters">
+                <div class="leaderboard-filters" role="radiogroup" aria-label="Filter by language">
                     @for (flt of langFilters; track flt.code) {
                         <button
                             type="button"
                             class="filter-chip"
+                            role="radio"
+                            [attr.aria-checked]="leaderboardLang() === flt.code"
                             [class.active]="leaderboardLang() === flt.code"
                             (click)="setLeaderboardLang(flt.code)"
                         >
@@ -294,7 +338,7 @@
             </div>
 
             <!-- Top 3 Podium (Adventurer's Guild Plinths) -->
-            <div class="podium-container">
+            <div class="podium-container" role="region" aria-label="Top 3 Podium">
                 <!-- 2nd Place (Silver) -->
                 <div class="podium-col podium-col--second" [class.is-unclaimed]="!secondPlace()">
                     @if (secondPlace(); as silver) {
@@ -457,9 +501,9 @@
 
             <!-- Ranks 4+ List -->
             @if (remainingLearners().length > 0) {
-            <div class="ranking-list">
+            <div class="ranking-list" role="list" aria-label="Leaderboard Rankings">
                 @for (learner of remainingLearners(); track learner.userId) {
-                    <div class="ranking-row" [class.is-current-user]="learner.userId === leaderboard.getCurrentUserId()">
+                    <div class="ranking-row" role="listitem" [class.is-current-user]="learner.userId === leaderboard.getCurrentUserId()">
                         <div class="rank-number">#{{ learner.rank }}</div>
                         <div class="learner-avatar">
                             {{ learner.avatar ? '' : learner.name.charAt(0).toUpperCase() }}
