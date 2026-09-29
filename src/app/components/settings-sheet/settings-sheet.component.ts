@@ -34,7 +34,9 @@ export class SettingsSheetComponent {
   countryService = inject(CountryService);
   leaderboard = inject(LeaderboardService);
 
-  readonly sheet = viewChild(BottomSheetComponent);
+  readonly mainSheet = viewChild<BottomSheetComponent>('mainSheet');
+  readonly editProfileSheet = viewChild<BottomSheetComponent>('editProfileSheet');
+  readonly sheet = this.mainSheet;
 
   isOpen = input<boolean>(false);
   closed = output<void>();
@@ -185,6 +187,15 @@ export class SettingsSheetComponent {
   }
 
   cancelEditProfile(): void {
+    const sheet = this.editProfileSheet();
+    if (sheet) {
+      sheet.close();
+    } else {
+      this.showEditProfile.set(false);
+    }
+  }
+
+  onEditProfileClosed(): void {
     this.showEditProfile.set(false);
   }
 
@@ -255,7 +266,7 @@ export class SettingsSheetComponent {
         this.countryService.setCountry(country);
         void this.leaderboard.syncMyScore(true);
         this.toast.show(this.i18n.t('settings.profileUpdated') || 'Profile updated successfully!', { type: 'success', icon: 'check-circle' });
-        this.showEditProfile.set(false);
+        this.cancelEditProfile();
       } else {
         this.toast.show(this.i18n.t('settings.profileUpdateFailed') || 'Failed to update profile.', { type: 'error', icon: 'alert-circle' });
       }
@@ -399,3 +410,4 @@ export class SettingsSheetComponent {
     void this.appUpdate.applyUpdate();
   }
 }
+

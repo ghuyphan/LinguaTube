@@ -10,9 +10,10 @@
     "updateRequired": "업데이트 필요",
     "updateRequiredDesc": "원활한 서비스 이용을 위해 필수 업데이트가 필요해요.",
     "updatingApp": "Voca 업데이트 중...",
-    "updatingDesc": "업데이트를 적용하고 성능을 최적화하는 중입니다...",
+    "updatingDesc": "새로운 기능을 준비하고 있어요...",
     "updateSuccess": "v{{version}}(으)로 업데이트되었습니다!",
-    "reloadNow": "예상보다 오래 걸리나요? 탭하여 새로고침"
+    "reloadNow": "새로고침",
+    "dataSafe": "학습 기록이 안전하게 저장되었습니다"
   },
   "nav": {
     "video": "동영상",

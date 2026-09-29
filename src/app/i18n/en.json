@@ -12,7 +12,8 @@
     "updatingApp": "Updating Voca...",
     "updatingDesc": "Getting the latest features ready for you...",
     "updateSuccess": "Updated to v{{version}}!",
-    "reloadNow": "Taking longer than usual? Tap to reload"
+    "reloadNow": "Reload",
+    "dataSafe": "Learning progress safely saved"
   },
   "nav": {
     "video": "Video",

@@ -336,7 +336,8 @@ export class BottomSheetComponent implements OnDestroy {
     }
   }
 
-  close(): void {
+  close(event?: Event): void {
+    event?.stopPropagation();
     this.startClosingAnimation();
   }
 

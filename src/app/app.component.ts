@@ -442,15 +442,22 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         </div>
       </app-bottom-sheet>
 
-      <!-- App Updating Fullscreen Graceful Overlay -->
-      @if (appUpdate.isApplyingUpdate()) {
-        <div class="app-updating-overlay" role="status" aria-live="polite">
-          <div class="app-updating-backdrop"></div>
-          <div class="app-updating-card">
-            <div class="app-updating-brand">
-              <svg class="app-updating-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- App Updating Sheet (Consistent with all Voca Bottom Sheets) -->
+      <app-bottom-sheet
+        [isOpen]="appUpdate.isApplyingUpdate()"
+        [title]="i18n.t('app.updatingApp') || 'Updating Voca...'"
+        [showDragHandle]="false"
+        [showCloseButton]="false"
+        [allowBackdropClose]="false"
+        [allowEscapeClose]="false"
+        [zIndex]="100000"
+      >
+        <div class="update-sheet update-sheet--updating">
+          <div class="update-sheet__logo-wrap">
+            <div class="update-sheet__logo-box">
+              <svg class="update-sheet__logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" class="updating-kikyou-petal-shape"/>
+                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
                 </defs>
                 <g transform="translate(256, 256) scale(0.66)">
                   <use href="#updating-kikyou-petal" transform="rotate(0)"/>
@@ -458,26 +465,41 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
                   <use href="#updating-kikyou-petal" transform="rotate(144)"/>
                   <use href="#updating-kikyou-petal" transform="rotate(216)"/>
                   <use href="#updating-kikyou-petal" transform="rotate(288)"/>
-                  <circle cx="0" cy="0" r="50" class="updating-kikyou-core-outer"/>
-                  <circle cx="0" cy="0" r="21" class="updating-kikyou-core-inner"/>
+                  <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
+                  <circle cx="0" cy="0" r="21" fill="#F45B74"/>
                 </g>
               </svg>
-              <div class="app-updating-pulse-ring"></div>
             </div>
-            <h2 class="app-updating-title">{{ i18n.t('app.updatingApp') || 'Updating Voca...' }}</h2>
-            <p class="app-updating-desc">{{ i18n.t('app.updatingDesc') || 'Applying updates and optimizing performance...' }}</p>
-            <div class="app-updating-progress" role="progressbar" aria-label="Updating Voca" aria-valuemin="0" aria-valuemax="100">
-              <div class="app-updating-progress-bar"></div>
-            </div>
-            @if (appUpdate.showReloadFallback()) {
-              <button class="app-updating-fallback-btn" (click)="appUpdate.forceReload()" type="button">
-                <app-icon name="refresh-cw" [size]="14" />
-                <span>{{ i18n.t('app.reloadNow') || 'Taking longer than usual? Tap to reload' }}</span>
-              </button>
+            <div class="update-sheet__pulse-ring"></div>
+          </div>
+
+          <div class="update-sheet__header-group">
+            <h3 class="update-sheet__title">
+              {{ i18n.t('app.updatingApp') || 'Updating Voca...' }}
+            </h3>
+            @if (appUpdate.incomingVersion() || appUpdate.currentVersion()) {
+              <span class="update-sheet__version-badge">
+                v{{ appUpdate.incomingVersion() || appUpdate.currentVersion() }}
+              </span>
             }
           </div>
+
+          <p class="update-sheet__message">
+            {{ i18n.t('app.updatingDesc') || 'Getting the latest features ready for you...' }}
+          </p>
+
+          <div class="update-sheet__progress" role="progressbar" aria-label="Updating Voca">
+            <div class="update-sheet__progress-bar"></div>
+          </div>
+
+          @if (appUpdate.showReloadFallback()) {
+            <button class="update-sheet__reload-btn" (click)="appUpdate.forceReload()" type="button">
+              <app-icon name="refresh-cw" [size]="12" />
+              <span>{{ i18n.t('app.reloadNow') || 'Reload' }}</span>
+            </button>
+          }
         </div>
-      }
+      </app-bottom-sheet>
 
       <app-toast />
     </div>
@@ -713,107 +735,64 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       }
     }
 
-    /* Full-screen Native Updating Overlay */
-    .app-updating-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: var(--z-toast, 100000);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-xl);
-      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    /* Updating State inside Bottom Sheet */
+    .update-sheet--updating {
       user-select: none;
     }
 
-    .app-updating-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(var(--bg-card-rgb, 255, 255, 255), 0.88);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-    }
-
-    [data-theme="dark"] .app-updating-backdrop {
-      background: rgba(13, 15, 20, 0.88);
-    }
-
-    .app-updating-card {
+    .update-sheet__logo-wrap {
       position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 340px;
-      width: 100%;
-    }
-
-    .app-updating-brand {
-      position: relative;
-      width: 88px;
-      height: 88px;
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto var(--space-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: var(--space-lg);
     }
 
-    .app-updating-logo {
-      width: 76px;
-      height: 76px;
-      filter: drop-shadow(0 10px 24px rgba(var(--accent-primary-rgb, 232, 69, 98), 0.35));
-      animation: pulse 2s ease-in-out infinite;
-
-      .updating-kikyou-petal-shape {
-        fill: #FFFDFB;
-      }
-
-      .updating-kikyou-core-outer {
-        fill: #FFFDFB;
-        stroke: var(--accent-primary, #E84562);
-        stroke-width: 7;
-      }
-
-      .updating-kikyou-core-inner {
-        fill: var(--accent-primary, #E84562);
-      }
+    .update-sheet__logo-box {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FF7E93 0%, #F45B74 50%, #DF4360 100%);
+      border-radius: var(--border-radius-lg, 16px);
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      box-shadow: 0 6px 20px rgba(232, 69, 98, 0.32), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      animation: crestFloat 3.2s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 2;
     }
 
-    .app-updating-pulse-ring {
+    .update-sheet__logo-kikyou {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: block;
+    }
+
+    .update-sheet__pulse-ring {
       position: absolute;
-      inset: 0;
-      border-radius: var(--border-radius-round);
+      inset: -6px;
+      border-radius: 22px;
       border: 2px solid var(--accent-primary, #E84562);
       opacity: 0;
-      animation: updateRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      animation: updateRing 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      z-index: 1;
     }
 
-    .app-updating-title {
-      font-size: var(--text-xl, 1.25rem);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 0 0 var(--space-2xs);
-      letter-spacing: -0.015em;
-    }
-
-    .app-updating-desc {
-      font-size: var(--text-base, 0.875rem);
-      color: var(--text-secondary);
-      margin: 0 0 var(--space-lg);
-      line-height: 1.5;
-    }
-
-    .app-updating-progress {
-      width: 190px;
+    .update-sheet__progress {
+      width: 100%;
+      max-width: 220px;
       height: 4px;
-      background: var(--border-color);
+      background: var(--bg-secondary);
       border-radius: var(--border-radius-pill);
       overflow: hidden;
       position: relative;
+      margin: 0 auto;
     }
 
-    .app-updating-progress-bar {
+    .update-sheet__progress-bar {
       position: absolute;
       top: 0;
       left: 0;
@@ -822,24 +801,25 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         90deg,
         var(--accent-primary-hover, #D83855),
         var(--accent-primary, #E84562),
-        var(--accent-primary-soft, rgba(232, 69, 98, 0.4))
+        #FF7E93
       );
       border-radius: var(--border-radius-pill);
+      box-shadow: 0 0 8px rgba(var(--accent-primary-rgb, 232, 69, 98), 0.4);
       animation: updateProgressIndeterminate 1.4s infinite ease-in-out;
     }
 
-    .app-updating-fallback-btn {
-      margin-top: var(--space-md);
+    .update-sheet__reload-btn {
+      margin-top: var(--space-lg);
       display: inline-flex;
       align-items: center;
-      gap: var(--space-xs);
-      padding: 0.5rem 1rem;
-      background: var(--bg-card);
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius-pill);
-      color: var(--text-primary);
       font-size: var(--text-xs, 0.75rem);
       font-weight: 600;
+      color: var(--text-muted);
       cursor: pointer;
       box-shadow: var(--shadow-sm);
       animation: fadeIn 0.25s ease-out;
@@ -847,13 +827,14 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
 
       &:hover {
         background: var(--bg-hover);
-        border-color: var(--accent-primary);
+        color: var(--text-primary);
+        border-color: var(--border-color-hover, var(--border-color));
       }
     }
 
     @keyframes updateRing {
-      0% { transform: scale(0.85); opacity: 0.8; }
-      100% { transform: scale(1.45); opacity: 0; }
+      0% { transform: scale(0.9); opacity: 0.8; }
+      100% { transform: scale(1.4); opacity: 0; }
     }
 
     @keyframes updateProgressIndeterminate {
@@ -863,13 +844,13 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .app-updating-logo,
-      .app-updating-pulse-ring,
-      .app-updating-progress-bar {
+      .update-sheet__logo-box,
+      .update-sheet__pulse-ring,
+      .update-sheet__progress-bar {
         animation: none !important;
       }
 
-      .app-updating-progress-bar {
+      .update-sheet__progress-bar {
         left: 0 !important;
         width: 100% !important;
         opacity: 0.8;

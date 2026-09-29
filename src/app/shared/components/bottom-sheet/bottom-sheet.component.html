@@ -18,7 +18,7 @@
 
         <!-- Close Button -->
         @if (showCloseButton()) {
-        <button class="sheet-close-btn" (click)="close()" type="button" [attr.aria-label]="i18n.t('common.close') || 'Close'">
+        <button class="sheet-close-btn" (click)="close($event)" type="button" [attr.aria-label]="i18n.t('common.close') || 'Close'">
             <app-icon name="x" [size]="20" />
         </button>
         }

@@ -10,9 +10,10 @@
     "updateRequired": "需要更新",
     "updateRequiredDesc": "为确保正常使用 Voca 服务，请更新至最新版本。",
     "updatingApp": "正在更新 Voca...",
-    "updatingDesc": "正在应用更新并优化性能...",
+    "updatingDesc": "正在为你准备最新功能...",
     "updateSuccess": "已更新至 v{{version}}！",
-    "reloadNow": "加载时间较长？点击重新加载"
+    "reloadNow": "重新加载",
+    "dataSafe": "学习进度已安全保存"
   },
   "nav": {
     "video": "视频",

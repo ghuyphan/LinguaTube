@@ -1,4 +1,4 @@
-<app-bottom-sheet [isOpen]="isOpen()" [title]="i18n.t('settings.title') || 'Settings'" [showCloseButton]="true" (closed)="onSheetClosed()">
+<app-bottom-sheet #mainSheet [isOpen]="isOpen()" [title]="i18n.t('settings.title') || 'Settings'" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="settings-modal">
         <div class="settings-modal__body">
             <!-- 1. Account & Motivation Card -->
@@ -232,8 +232,7 @@
 }
 
 <!-- Edit Profile Modal / Bottom Sheet -->
-@if (showEditProfile()) {
-    <app-bottom-sheet [isOpen]="showEditProfile()" [title]="i18n.t('settings.editProfile') || 'Edit Profile'" [showCloseButton]="true" [zIndex]="1300" (closed)="cancelEditProfile()">
+<app-bottom-sheet #editProfileSheet [isOpen]="showEditProfile()" [title]="i18n.t('settings.editProfile') || 'Edit Profile'" [showCloseButton]="true" [maxWidth]="'480px'" [maxHeight]="'90vh'" [zIndex]="1300" (closed)="onEditProfileClosed()">
         <div class="edit-profile-modal">
             <!-- Modal Header for consistency with other dialogs -->
             <div class="edit-profile-header">
@@ -329,7 +328,6 @@
             </div>
         </div>
     </app-bottom-sheet>
-}
 
 <!-- Country / Region Picker -->
 @if (showCountryPicker()) {
@@ -350,36 +348,34 @@
 }
 
 <!-- Release Notes / What's New Sheet -->
-@if (showReleaseNotes()) {
-    <app-bottom-sheet
-        [isOpen]="showReleaseNotes()"
-        [title]="i18n.t('settings.releaseNotes') || 'Release Notes'"
-        [showCloseButton]="true"
-        [maxHeight]="'80vh'"
-        (closed)="showReleaseNotes.set(false)"
-    >
-        <div class="release-notes-sheet">
-            <div class="release-notes-header">
-                <div class="release-notes-badge">v{{ appUpdate.currentVersion() }}</div>
-                <span class="release-notes-date">
-                    {{ i18n.t('settings.releaseDate') || 'Released' }}: {{ appUpdate.currentRelease().buildDate }}
-                </span>
-            </div>
-
-            <div class="release-notes-content">
-                <div class="release-notes-section-title">
-                    <app-icon name="star" [size]="16" />
-                    <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
-                </div>
-                <ul class="release-notes-list">
-                    @for (item of appUpdate.currentHighlights(); track $index) {
-                        <li class="release-notes-item">
-                            <span class="release-notes-bullet">•</span>
-                            <span>{{ item }}</span>
-                        </li>
-                    }
-                </ul>
-            </div>
+<app-bottom-sheet
+    [isOpen]="showReleaseNotes()"
+    [title]="i18n.t('settings.releaseNotes') || 'Release Notes'"
+    [showCloseButton]="true"
+    [maxHeight]="'80vh'"
+    (closed)="showReleaseNotes.set(false)"
+>
+    <div class="release-notes-sheet">
+        <div class="release-notes-header">
+            <div class="release-notes-badge">v{{ appUpdate.currentVersion() }}</div>
+            <span class="release-notes-date">
+                {{ i18n.t('settings.releaseDate') || 'Released' }}: {{ appUpdate.currentRelease().buildDate }}
+            </span>
         </div>
-    </app-bottom-sheet>
-}
+
+        <div class="release-notes-content">
+            <div class="release-notes-section-title">
+                <app-icon name="star" [size]="16" />
+                <span>{{ i18n.t('settings.whatsNew') || "What's New" }}</span>
+            </div>
+            <ul class="release-notes-list">
+                @for (item of appUpdate.currentHighlights(); track $index) {
+                    <li class="release-notes-item">
+                        <span class="release-notes-bullet">•</span>
+                        <span>{{ item }}</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</app-bottom-sheet>

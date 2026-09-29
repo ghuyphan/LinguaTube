@@ -10,9 +10,10 @@
     "updateRequired": "Cần cập nhật ứng dụng",
     "updateRequiredDesc": "Vui lòng cập nhật lên phiên bản mới nhất để tiếp tục sử dụng Voca mượt mà và ổn định.",
     "updatingApp": "Đang cập nhật Voca...",
-    "updatingDesc": "Đang cài đặt bản cập nhật và tối ưu ứng dụng...",
+    "updatingDesc": "Đang chuẩn bị phiên bản mới cho bạn...",
     "updateSuccess": "Đã cập nhật lên v{{version}}!",
-    "reloadNow": "Quá trình diễn ra lâu hơn dự kiến? Nhấn để tải lại"
+    "reloadNow": "Tải lại",
+    "dataSafe": "Dữ liệu học tập đã được lưu an toàn"
   },
   "nav": {
     "video": "Video",

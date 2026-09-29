@@ -86,7 +86,7 @@
         <div class="spotlight-results__header">
           {{ url() ? (i18n.t('common.search') || 'Results') : (i18n.t('commandPalette.quickActions') || 'Quick Navigation') }}
         </div>
-        <ul id="spotlight-results-list" class="spotlight-results__list" role="listbox" [attr.aria-label]="i18n.t('commandPalette.quickActions') || 'Quick Navigation'">
+        <ul id="spotlight-results-list" class="spotlight-results__list" data-modal-scrollable="true" role="listbox" [attr.aria-label]="i18n.t('commandPalette.quickActions') || 'Quick Navigation'">
           @for (item of filteredItems(); track item.id; let idx = $index) {
             <li 
               [id]="'spotlight-opt-' + idx"

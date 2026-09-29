@@ -293,12 +293,12 @@ export class AppUpdateService implements OnDestroy {
     this.showUpdateSheet.set(false);
     this.isApplyingUpdate.set(true);
 
-    // 4. Safety fallback: if reload takes longer than 4.5s, give user a direct reload action
+    // 4. Safety fallback: if reload takes longer than 8s, give user a direct reload action
     setTimeout(() => {
       if (this.isApplyingUpdate()) {
         this.showReloadFallback.set(true);
       }
-    }, 4500);
+    }, 8000);
 
     try {
       console.log('[AppUpdate] Activating update...');
@@ -344,7 +344,7 @@ export class AppUpdateService implements OnDestroy {
           this.toast.show(msg, {
             type: 'success',
             icon: 'sparkles',
-            duration: 4000
+            duration: 5000
           });
         }, 1200);
       }

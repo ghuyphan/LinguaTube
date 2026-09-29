@@ -236,8 +236,31 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    max-height: 280px;
+    max-height: min(340px, calc(100dvh - 220px));
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35) transparent;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      display: block;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(var(--text-muted-rgb, 100, 116, 139), 0.35);
+      border-radius: 9999px;
+
+      &:hover {
+        background: rgba(var(--text-muted-rgb, 100, 116, 139), 0.55);
+      }
+    }
   }
 
   &__item {
