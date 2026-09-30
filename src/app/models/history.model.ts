@@ -1,9 +1,9 @@
 /**
  * History model for tracking watched videos
- * Matches PocketBase 'history' collection schema
+ * Matches cloud 'history' table schema
  */
 export interface HistoryItem {
-    id: string;                              // PocketBase record ID or local UUID
+    id: string;                              // Cloud record ID or local UUID
     video_id: string;                        // YouTube video ID (required)
     title: string;                           // Video title
     thumbnail?: string;                      // Thumbnail URL
@@ -28,7 +28,7 @@ export interface LocalHistoryData {
 }
 
 /**
- * PocketBase history record schema
+ * Cloud history record schema
  */
 export interface HistoryRecord {
     id: string;

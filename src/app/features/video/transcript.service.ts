@@ -1,6 +1,6 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay } from 'rxjs';
+import { Observable, of, Subject, from, catchError, switchMap, finalize, tap, shareReplay, takeUntil } from 'rxjs';
 import {
   SubtitleCue,
   TranscriptResponse,
@@ -32,6 +32,8 @@ export class TranscriptService {
   private auth = inject(AuthService);
   private videoRecommendation = inject(VideoRecommendationService);
   private aiJobManager = inject(AiJobManagerService);
+
+  private cancelTranscript$ = new Subject<void>();
 
   // ============================================================================
   // State (Simplified - single state signal)
@@ -138,12 +140,14 @@ export class TranscriptService {
     videoId: string,
     requestedLang: string,
     cues: SubtitleCue[],
-    defaultSource: 'native' | 'ai' = 'native'
+    defaultSource: 'native' | 'ai' = 'native',
+    actualLang?: string
   ): void {
     if (cues.length === 0) return;
-    const detectedLang = this.detectedLanguage() || requestedLang;
-    const isMismatch = this.languageMismatch();
-    const source = this.captionSource() || defaultSource;
+    const isCurrent = this.currentVideoId === videoId;
+    const detectedLang = actualLang || (isCurrent ? this.detectedLanguage() : null) || requestedLang;
+    const isMismatch = isCurrent ? this.languageMismatch() : false;
+    const source = (isCurrent ? this.captionSource() : null) || defaultSource;
 
     if (!isMismatch && detectedLang === requestedLang) {
       this.setTranscriptCache(`${videoId}:${requestedLang}`, cues);
@@ -269,6 +273,9 @@ export class TranscriptService {
     channel?: string,
     forceRefresh = false
   ): Observable<SubtitleCue[]> {
+    if (this.currentVideoId && this.currentVideoId !== videoId) {
+      this.cancelTranscript$.next();
+    }
     this.currentVideoId = videoId;
     const cacheKey = `${videoId}:${lang}`;
 
@@ -315,6 +322,11 @@ export class TranscriptService {
 
     return persistentCheck$.pipe(
       switchMap(cachedData => {
+        if (this.currentVideoId !== videoId) {
+          log('Discarding stale IndexedDB read for video:', { expected: this.currentVideoId, received: videoId });
+          return of([]);
+        }
+
         const isDevMock = cachedData?.cues?.some(c => c.text?.includes('LinguaTubeへようこそ') || c.text?.includes('Vocaへようこそ') || c.text?.includes('LinguaTube') || c.text?.includes('Voca, your'));
         if (cachedData && (!isDevMock || videoId === 'demo' || videoId === 'test')) {
           log('IndexedDB cache hit:', { videoId, lang, cues: cachedData.cues.length });
@@ -357,6 +369,9 @@ export class TranscriptService {
     channel?: string,
     forceRefresh = false
   ): Observable<SubtitleCue[]> {
+    if (this.currentVideoId && this.currentVideoId !== videoId) {
+      this.cancelTranscript$.next();
+    }
     this.currentVideoId = videoId;
 
     if (forceRefresh) {
@@ -510,6 +525,7 @@ export class TranscriptService {
     if (turnstileToken) payload['turnstileToken'] = turnstileToken;
 
     const request$ = this.http.post<TranscriptResponse>(environment.api.transcript, payload).pipe(
+      takeUntil(this.cancelTranscript$),
       switchMap(response => this.handleResponse(response, videoId, lang, preferAI, title, channel)),
       finalize(() => this.pendingRequests.delete(requestKey)),
       shareReplay(1)

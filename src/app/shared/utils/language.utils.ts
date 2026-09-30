@@ -27,6 +27,7 @@ export const UNICODE_RANGES = {
 export const PUNCTUATION_REGEX = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
 
 export type SupportedLanguage = 'ja' | 'zh' | 'ko' | 'en';
+export type SupportedLanguageCode = SupportedLanguage;
 
 /**
  * Normalize language codes from YouTube, Gladia, or external providers to canonical 2-letter codes.

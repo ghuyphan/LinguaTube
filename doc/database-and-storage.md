@@ -470,10 +470,15 @@ All public tables enforce strict RLS:
 - **Server-Authoritative Gamification (`gamification`, `xp_transactions`)**: Direct `INSERT` and `UPDATE` on `public.gamification` are revoked for `authenticated` and `anon` roles to completely seal DevTools browser console exploits. Only `SELECT` is permitted (`(auth.uid() = user_id)`). All mutations execute through `SECURITY DEFINER` Postgres stored procedures. Users can read their own append-only ledger in `xp_transactions`.
 - **Private Data (`vocabulary`, `streaks`, `history`, `orders`)**: Authenticated users can only `SELECT`, `INSERT`, `UPDATE`, and `DELETE` rows where `user_id = auth.uid()`. Direct reads on `orders` are restricted to the owner (`(SELECT auth.uid()) = user_id`).
 - **User Profiles (`profiles`)**: Users can read their own profile (`id = auth.uid()`) and update basic cosmetic fields (`display_name`, `avatar_url`, `target_lang`, `country`). Sensitive columns (`subscription_tier`, `diamonds`, `email`) are locked down by `protect_profile_fields()`. Cloudflare Pages edge functions use the `SUPABASE_SERVICE_ROLE_KEY` to update diamond balances and subscription tiers.
-- **Playlists (`playlists`)**: Public and unlisted playlists (`visibility IN ('published', 'unlisted')`) are readable by anyone. Private playlists are restricted to `user_id = auth.uid()`. Client modification of `is_featured` and `save_count` is blocked by server triggers.
+- **Playlists (`playlists`)**: Public and unlisted playlists (`visibility IN ('published', 'unlisted', 'public')`) are readable by anyone. Private playlists are restricted to `user_id = auth.uid()`. Client modification of `is_featured` and `save_count` is blocked by server triggers.
 - **Playlist Saves (`playlist_saves`)**: Users can only manage their own bookmarks (`user_id = auth.uid()`). Bookmark counters are synchronized server-side.
 - **Video Levels (`video_levels`)**: Readable by all users (`anon` and `authenticated`) for community difficulty browsing (`video_levels_select` policy). Authenticated users can submit difficulty evaluations (`(SELECT auth.uid()) = user_id`).
 - **Legacy PB Users (`legacy_pb_users`)**: RLS enabled with zero public policies. Accessible strictly via `service_role` and internal security triggers.
+
+#### RPC: `extend_user_subscription(p_user_id, p_tier, p_days, p_diamonds)`
+- **Security**: `SECURITY DEFINER`, granted strictly to `postgres` and `service_role`, revoked from `PUBLIC`, `anon`, and `authenticated`.
+- **Atomic Row-Level Locking (`FOR UPDATE`)**: Prevents race conditions from concurrent webhook retries.
+- **Duration Stacking**: Calculates `v_base := GREATEST(subscription_expires, NOW())` so overlapping purchase renewals accurately add onto existing subscription duration instead of calculating from a stale baseline. Sets `subscription_tier`, `subscription_expires`, `diamonds`, and `diamonds_updated_at`.
 
 ### 5.12. Server-Side Triggers & Stored Procedures (RPCs)
 

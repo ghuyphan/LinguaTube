@@ -7,6 +7,8 @@
  * - ai_transcription_jobs: Durable state machine for asynchronous Gladia jobs
  */
 
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+
 export function generateJobId() {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
         return 'job_' + crypto.randomUUID().replace(/-/g, '').slice(0, 16);
@@ -35,6 +37,7 @@ export function generateJobId() {
  */
 export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1 }) {
     if (!db || !videoId || !language) throw new Error('Missing required parameters for reserveAiJob');
+    const normLang = normalizeLanguageCode(language) || language;
     const id = generateJobId();
 
     try {
@@ -43,17 +46,17 @@ export async function reserveAiJob(db, { videoId, language, userId = null, clien
                 id, video_id, language, user_id, client_id, user_tier,
                 diamonds_charged, status, created_at, updated_at
             ) VALUES (?, ?, ?, ?, ?, ?, ?, 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
-        `).bind(id, videoId, language, userId, clientId, userTier, diamondsCharged).run();
+        `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged).run();
 
         const newJob = await getAiJobById(db, id);
         return {
             isNew: true,
-            job: newJob || { id, video_id: videoId, language, user_id: userId, client_id: clientId, user_tier: userTier, diamonds_charged: diamondsCharged, status: 'queued' }
+            job: newJob || { id, video_id: videoId, language: normLang, user_id: userId, client_id: clientId, user_tier: userTier, diamonds_charged: diamondsCharged, status: 'queued' }
         };
     } catch (err) {
         // Catch partial unique index collision (idx_ai_jobs_active_unique)
         if (err.message && (err.message.includes('UNIQUE constraint failed') || err.message.includes('SQLITE_CONSTRAINT'))) {
-            const existing = await getActiveAiJob(db, videoId, language);
+            const existing = await getActiveAiJob(db, videoId, normLang);
             if (existing) {
                 return { isNew: false, job: existing };
             }
@@ -111,12 +114,13 @@ export async function getAiJobById(db, jobId) {
  */
 export async function getActiveAiJob(db, videoId, language, diamondService = null, env = null, context = null) {
     if (!db || !videoId || !language) return null;
+    const normLang = normalizeLanguageCode(language) || language;
     try {
         const job = await db.prepare(`
             SELECT * FROM ai_transcription_jobs 
             WHERE video_id = ? AND language = ? AND status IN ('queued', 'processing')
             ORDER BY created_at DESC LIMIT 1
-        `).bind(videoId, language).first();
+        `).bind(videoId, normLang).first();
 
         if (!job) return null;
 

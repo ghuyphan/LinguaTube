@@ -102,56 +102,94 @@ export async function onRequestPost(context) {
             if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
             return jsonResponse({ success: false, error: 'Database service key unconfigured' }, 500);
         }
-        let baseTime = Date.now();
+        let upgradeSuccess = false;
+        let finalExpiresAt = null;
+
+        // 1. Attempt atomic Row-Level Locked RPC in Supabase (R13)
         try {
-            const profileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}&select=subscription_expires,subscription_tier`, {
+            const rpcRes = await fetch(`${supabaseUrl}/rest/v1/rpc/extend_user_subscription`, {
+                method: 'POST',
                 headers: {
+                    'Content-Type': 'application/json',
                     'apikey': serviceRoleKey,
-                    'Authorization': `Bearer ${serviceRoleKey}`,
-                    'Accept': 'application/json'
+                    'Authorization': `Bearer ${serviceRoleKey}`
                 },
-                signal: AbortSignal.timeout(4000)
+                body: JSON.stringify({
+                    p_user_id: userId,
+                    p_tier: targetTier,
+                    p_days: durationDays,
+                    p_diamonds: grantedDiamonds
+                }),
+                signal: AbortSignal.timeout(5000)
             });
-            if (profileRes.ok) {
-                const profiles = await profileRes.json();
-                if (profiles && profiles[0]?.subscription_expires) {
-                    const currentExp = new Date(profiles[0].subscription_expires).getTime();
-                    if (!isNaN(currentExp) && currentExp > baseTime) {
-                        baseTime = currentExp;
-                    }
+            if (rpcRes.ok) {
+                const rpcData = await rpcRes.json();
+                if (rpcData && rpcData.success) {
+                    upgradeSuccess = true;
+                    finalExpiresAt = rpcData.expires_at;
+                    console.log(`[payOS Webhook] Atomically extended subscription via RPC for ${userId} to ${targetTier} until ${finalExpiresAt}`);
                 }
             }
-        } catch (e) {
-            console.warn('[payOS Webhook] Error fetching current subscription expiration, defaulting to now:', e.message);
+        } catch (rpcErr) {
+            console.warn('[payOS Webhook] RPC extend_user_subscription error, falling back to manual patch:', rpcErr.message);
         }
 
-        const expiresAt = new Date(baseTime + durationDays * 24 * 60 * 60 * 1000).toISOString();
+        // 2. Fallback to direct PATCH if RPC was unavailable
+        if (!upgradeSuccess) {
+            let baseTime = Date.now();
+            try {
+                const profileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}&select=subscription_expires,subscription_tier`, {
+                    headers: {
+                        'apikey': serviceRoleKey,
+                        'Authorization': `Bearer ${serviceRoleKey}`,
+                        'Accept': 'application/json'
+                    },
+                    signal: AbortSignal.timeout(4000)
+                });
+                if (profileRes.ok) {
+                    const profiles = await profileRes.json();
+                    if (profiles && profiles[0]?.subscription_expires) {
+                        const currentExp = new Date(profiles[0].subscription_expires).getTime();
+                        if (!isNaN(currentExp) && currentExp > baseTime) {
+                            baseTime = currentExp;
+                        }
+                    }
+                }
+            } catch (e) {
+                console.warn('[payOS Webhook] Error fetching current subscription expiration, defaulting to now:', e.message);
+            }
 
-        // Upgrade user record to target tier ('pro' or 'premium') in Supabase
-        const updateRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'apikey': serviceRoleKey,
-                'Authorization': `Bearer ${serviceRoleKey}`
-            },
-            body: JSON.stringify({
-                subscription_tier: targetTier,
-                subscription_expires: expiresAt,
-                diamonds: grantedDiamonds,
-                diamonds_updated_at: new Date().toISOString(),
-                updated_at: new Date().toISOString()
-            }),
-            signal: AbortSignal.timeout(5000)
-        }).catch(() => null);
+            finalExpiresAt = new Date(baseTime + durationDays * 24 * 60 * 60 * 1000).toISOString();
 
-        if (!updateRes || !updateRes.ok) {
-            console.error(`[payOS Webhook] Failed to update user ${userId}: ${updateRes?.status}`);
+            const updateRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': serviceRoleKey,
+                    'Authorization': `Bearer ${serviceRoleKey}`
+                },
+                body: JSON.stringify({
+                    subscription_tier: targetTier,
+                    subscription_expires: finalExpiresAt,
+                    diamonds: grantedDiamonds,
+                    diamonds_updated_at: new Date().toISOString(),
+                    updated_at: new Date().toISOString()
+                }),
+                signal: AbortSignal.timeout(5000)
+            }).catch(() => null);
+
+            if (updateRes && updateRes.ok) {
+                upgradeSuccess = true;
+            }
+        }
+
+        if (!upgradeSuccess) {
+            console.error(`[payOS Webhook] Failed to update user ${userId}`);
             if (kv) await kv.delete(`order_lock:${orderCode}`).catch(() => {});
             return errorResponse('Failed to update user subscription', 500);
         }
 
-        console.log(`[payOS Webhook] Successfully upgraded user ${userId} to ${targetTier} until ${expiresAt}`);
+        console.log(`[payOS Webhook] Successfully upgraded user ${userId} to ${targetTier} until ${finalExpiresAt}`);
 
         // Mark as processed (retained for 90 days)
         if (kv) {

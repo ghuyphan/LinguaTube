@@ -406,8 +406,8 @@ export class SubtitleService {
     // Find active cue (prefer later one for overlaps)
     let index = this.findActiveCue(subs, currentTime);
 
-    // Sticky: show last ended cue if no active one
-    if (index === -1 && currentTime > 0) {
+    // Sticky: show last ended cue if no active one and player is not actively seeking
+    if (index === -1 && currentTime > 0 && !this.youtube.seeking) {
       index = this.findStickyCue(subs, currentTime);
     }
 

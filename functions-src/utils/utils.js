@@ -11,19 +11,45 @@ export const CORS_HEADERS = {
     'Access-Control-Allow-Headers': 'Content-Type, Authorization'
 };
 
+const ALLOWED_ORIGIN_PATTERNS = [
+    /^https:\/\/voca\.study$/,
+    /^https:\/\/.*\.voca\.pages\.dev$/,
+    /^http:\/\/localhost:(?:4200|3000|3001|8788)$/,
+    /^http:\/\/127\.0.0\.1:(?:4200|3000|3001|8788)$/
+];
+
+/**
+ * Determine allowed CORS origin based on request Origin header
+ * @param {string|null} origin
+ * @returns {string}
+ */
+export function getAllowedOrigin(origin) {
+    if (!origin) return '*';
+    if (ALLOWED_ORIGIN_PATTERNS.some(p => p.test(origin))) {
+        return origin;
+    }
+    return 'https://voca.study';
+}
+
 /**
  * Create a JSON response with proper headers
  * @param {any} data - Response data to serialize
  * @param {number} status - HTTP status code (default: 200)
  * @param {object} extraHeaders - Additional headers to include
+ * @param {Request} [request] - Incoming request to validate origin
  * @returns {Response}
  */
-export function jsonResponse(data, status = 200, extraHeaders = {}) {
+export function jsonResponse(data, status = 200, extraHeaders = {}, request = null) {
+    let origin = '*';
+    if (request && typeof request.headers?.get === 'function') {
+        const reqOrigin = request.headers.get('Origin');
+        if (reqOrigin) origin = getAllowedOrigin(reqOrigin);
+    }
     return new Response(JSON.stringify(data), {
         status,
         headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': origin,
             'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
             ...extraHeaders
@@ -33,15 +59,33 @@ export function jsonResponse(data, status = 200, extraHeaders = {}) {
 
 /**
  * Handle CORS preflight OPTIONS requests
- * @param {string[]} methods - Allowed HTTP methods (default: ['GET', 'POST', 'OPTIONS'])
+ * @param {string[]|Request} methodsOrRequest - Allowed HTTP methods or Request object
+ * @param {string[]|Request} [maybeMethods] - Allowed HTTP methods or Request object
  * @returns {Response}
  */
-export function handleOptions(methods = ['GET', 'POST', 'OPTIONS']) {
+export function handleOptions(methodsOrRequest = ['GET', 'POST', 'OPTIONS'], maybeMethods) {
+    let methods = ['GET', 'POST', 'OPTIONS'];
+    let origin = '*';
+
+    if (methodsOrRequest && typeof methodsOrRequest.headers?.get === 'function') {
+        const reqOrigin = methodsOrRequest.headers.get('Origin');
+        if (reqOrigin) origin = getAllowedOrigin(reqOrigin);
+        if (Array.isArray(maybeMethods)) methods = maybeMethods;
+    } else if (Array.isArray(methodsOrRequest)) {
+        methods = methodsOrRequest;
+        if (maybeMethods && typeof maybeMethods.headers?.get === 'function') {
+            const reqOrigin = maybeMethods.headers.get('Origin');
+            if (reqOrigin) origin = getAllowedOrigin(reqOrigin);
+        }
+    }
+
     return new Response(null, {
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': origin,
             'Access-Control-Allow-Methods': methods.join(', '),
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With, Range',
+            'Access-Control-Max-Age': '86400',
+            'Vary': 'Origin'
         }
     });
 }

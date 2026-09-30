@@ -142,14 +142,26 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
  * @param {number} quality - Translation quality percentage (0-100)
  * @param {string} source - Translation provider (default: lingva)
  */
+// Isolate-level write mutex to serialize concurrent Read-Modify-Write operations to R2
+const inFlightSaves = new Map();
+
 export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva') {
     if (!bucket || !videoId || !segments?.length) return null;
 
-    const key = `translations/${videoId}/${srcLang}-${tgtLang}.json`;
-    const now = Date.now();
+    const lockKey = `${videoId}:${srcLang}:${tgtLang}`;
+    const prevLock = inFlightSaves.get(lockKey) || Promise.resolve();
+    let releaseLock;
+    const currentLock = new Promise(resolve => { releaseLock = resolve; });
+    inFlightSaves.set(lockKey, currentLock);
 
     try {
-        let finalSegments = segments;
+        await prevLock.catch(() => {});
+
+        const key = `translations/${videoId}/${srcLang}-${tgtLang}.json`;
+        const now = Date.now();
+
+        try {
+            let finalSegments = segments;
 
         // Merge incoming translations with existing cached segments if present
         try {
@@ -231,16 +243,24 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
 
         log('Cache save success:', key, `(${finalSegments.length} segments, ${computedQuality}% quality, ${validCount} translated)`);
 
-        return {
-            segments: finalSegments,
-            quality: computedQuality,
-            validCount,
-            totalCount: finalSegments.length
-        };
+            return {
+                segments: finalSegments,
+                quality: computedQuality,
+                validCount,
+                totalCount: finalSegments.length
+            };
 
-    } catch (err) {
-        console.error('[R2 Translations] Write error:', err.message);
-        return null;
+        } catch (err) {
+            console.error('[R2 Translations] Write error:', err.message);
+            return null;
+        }
+    } finally {
+        if (typeof releaseLock === 'function') {
+            releaseLock();
+        }
+        if (inFlightSaves.get(lockKey) === currentLock) {
+            inFlightSaves.delete(lockKey);
+        }
     }
 }
 

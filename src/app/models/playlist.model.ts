@@ -1,6 +1,6 @@
 /**
  * Playlist models for shareable playlist feature
- * Matches PocketBase 'playlists' collection schema
+ * Matches cloud 'playlists' table schema
  */
 
 import { getYouTubeThumbnail } from '../core/utils/format.utils';
@@ -10,7 +10,7 @@ export type PlaylistVisibility = 'private' | 'unlisted' | 'published';
 export type PlaylistLanguage = 'ja' | 'zh' | 'ko' | 'en';
 
 /**
- * Core playlist interface matching PocketBase schema
+ * Core playlist interface matching cloud schema
  */
 export interface Playlist {
     id: string;
@@ -122,7 +122,7 @@ export interface LocalPlaylistData {
 }
 
 /**
- * PocketBase playlist record schema
+ * Cloud playlist record schema
  */
 export interface PlaylistRecord {
     id: string;
@@ -151,7 +151,7 @@ export interface PlaylistRecord {
 }
 
 /**
- * Maps a PocketBase record to a Playlist entity
+ * Maps a cloud record to a Playlist entity
  */
 export function mapRecordToPlaylist(record: PlaylistRecord | Record<string, unknown>): Playlist {
     const r = record as PlaylistRecord;

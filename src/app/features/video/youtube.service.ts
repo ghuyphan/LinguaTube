@@ -123,6 +123,10 @@ export class YoutubeService {
   readonly isPauseLocked = computed(() => this.pauseLocks().size > 0);
   private resumedStateMap = new Map<string, boolean>();
 
+  get seeking(): boolean {
+    return this.isSeeking;
+  }
+
   acquirePauseLock(reason: string): void {
     const wasPlaying = this.isPlaying() || this.intendedPlayingState();
     this.pauseLocks.update(locks => new Set(locks).add(reason));

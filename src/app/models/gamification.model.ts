@@ -71,9 +71,10 @@ export interface UserGamificationState {
     updatedAt?: string;
 }
 
-export interface PocketBaseGamificationRecord {
+export interface CloudGamificationRecord {
     id: string;
-    user: string;
+    user?: string;
+    user_id?: string;
     xp: number;
     level: number;
     weekly_xp?: number;
@@ -85,6 +86,9 @@ export interface PocketBaseGamificationRecord {
     created?: string;
     updated?: string;
 }
+
+// Backward compatibility alias
+export type PocketBaseGamificationRecord = CloudGamificationRecord;
 
 export interface LeaderboardEntry {
     rank: number;

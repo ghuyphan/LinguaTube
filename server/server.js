@@ -200,6 +200,17 @@ async function translateWithGtx(text, source, target) {
     return null;
 }
 
+let dictParsersPromise = null;
+async function getDictParsers() {
+    if (!dictParsersPromise) {
+        dictParsersPromise = import('../functions-src/utils/dict-parsers.js').catch(err => {
+            console.warn('[server] Notice: using local fallback dict parsers:', err.message);
+            return null;
+        });
+    }
+    return dictParsersPromise;
+}
+
 function parseNaverLocalItem(item) {
     const word = (item.expEntry || '')
         .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '')
@@ -303,8 +314,13 @@ async function fetchDictLocal(word, from, to) {
                 });
                 if (res.ok) {
                     const data = await res.json();
-                    const items = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
-                    entries = items.slice(0, 5).map(parseNaverLocalItem).filter(e => e.word && e.definitions.length > 0);
+                    const parsers = await getDictParsers();
+                    if (parsers?.parseNaver) {
+                        entries = parsers.parseNaver(data).filter(e => e.word && e.definitions.length > 0);
+                    } else {
+                        const items = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
+                        entries = items.slice(0, 5).map(parseNaverLocalItem).filter(e => e.word && e.definitions.length > 0);
+                    }
                     if (entries.length > 0) source = 'naver';
                 }
             } catch (e) { }
@@ -322,25 +338,30 @@ async function fetchDictLocal(word, from, to) {
                     });
                     if (res.ok) {
                         const data = await res.json();
-                        const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
-                        entries = (data.words || []).slice(0, 5).map(e => {
-                            let audio = e.audio?.url || (typeof e.audio === 'string' ? e.audio : '') || e.pitch?.audio || '';
-                            if (audio && audio.startsWith('/')) audio = `https://jotoba.de${audio}`;
-                            const partOfSpeech = (e.senses?.[0]?.pos || []).map(p => {
-                                if (typeof p === 'string') return p;
-                                if (p && typeof p === 'object') return Object.entries(p).map(([cat, sub]) => (sub ? `${cat} (${sub})` : cat)).join(', ');
-                                return '';
-                            }).filter(Boolean).join(', ');
-                            const level = e.jlpt ? parseInt(String(e.jlpt).replace(/\D/g, '')) : (kanjiJlpt ? parseInt(String(kanjiJlpt).replace(/\D/g, '')) : null);
-                            return {
-                                word: e.reading?.kanji || e.reading?.kana || word,
-                                reading: e.reading?.kana || '',
-                                definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
-                                partOfSpeech,
-                                level,
-                                ...(audio ? { audio } : {})
-                            };
-                        }).filter(e => e.word && e.definitions.length > 0);
+                        const parsers = await getDictParsers();
+                        if (parsers?.parseJotoba) {
+                            entries = parsers.parseJotoba(data).filter(e => e.word && e.definitions.length > 0);
+                        } else {
+                            const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
+                            entries = (data.words || []).slice(0, 5).map(e => {
+                                let audio = e.audio?.url || (typeof e.audio === 'string' ? e.audio : '') || e.pitch?.audio || '';
+                                if (audio && audio.startsWith('/')) audio = `https://jotoba.de${audio}`;
+                                const partOfSpeech = (e.senses?.[0]?.pos || []).map(p => {
+                                    if (typeof p === 'string') return p;
+                                    if (p && typeof p === 'object') return Object.entries(p).map(([cat, sub]) => (sub ? `${cat} (${sub})` : cat)).join(', ');
+                                    return '';
+                                }).filter(Boolean).join(', ');
+                                const level = e.jlpt ? parseInt(String(e.jlpt).replace(/\D/g, '')) : (kanjiJlpt ? parseInt(String(kanjiJlpt).replace(/\D/g, '')) : null);
+                                return {
+                                    word: e.reading?.kanji || e.reading?.kana || word,
+                                    reading: e.reading?.kana || '',
+                                    definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
+                                    partOfSpeech,
+                                    level,
+                                    ...(audio ? { audio } : {})
+                                };
+                            }).filter(e => e.word && e.definitions.length > 0);
+                        }
                         if (entries.length > 0) source = 'jotoba';
                     }
                 } catch (e) { }
@@ -382,10 +403,14 @@ async function fetchDictLocal(word, from, to) {
                 });
                 if (res.ok) {
                     const data = await res.json();
-                    let results = data.data || data.results || [];
-                    if (word && word.trim()) {
-                        const q = word.trim().toLowerCase();
-                        results = [...results].sort((a, b) => {
+                    const parsers = await getDictParsers();
+                    if (parsers?.parseMazii) {
+                        entries = parsers.parseMazii(data, word);
+                    } else {
+                        let results = data.data || data.results || [];
+                        if (word && word.trim()) {
+                            const q = word.trim().toLowerCase();
+                            results = [...results].sort((a, b) => {
                             const scoreEntry = (entry) => {
                                 const w = (entry.word || '').toLowerCase();
                                 const rawPhonetic = (entry.phonetic || entry.reading || '').toLowerCase();
@@ -453,6 +478,7 @@ async function fetchDictLocal(word, from, to) {
                             ...(audio ? { audio } : {})
                         };
                     }).filter(e => e.word && e.definitions.length > 0);
+                    }
                     if (entries.length > 0) source = 'mazii';
                 }
             } catch (e) { }
@@ -1823,6 +1849,7 @@ async function fetchVideoMetaLocal(videoId) {
                         }
                     }
                 } catch {}
+                }
             }
             const res = {
                 title: data.title,

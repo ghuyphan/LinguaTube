@@ -34,6 +34,9 @@ const BATCH_SIZE = 40;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
 const QUALITY_THRESHOLD = 0.8; // 80% success rate required for caching
 
+// In-memory Promise deduplication map across warm Worker isolates to prevent cache stampedes (R10)
+const inFlightTranslations = new Map();
+
 // Cache-Control headers
 const CACHE_HEADERS = {
     HIT: 'public, max-age=86400, stale-while-revalidate=3600',  // 24h + 1h SWR
@@ -90,6 +93,10 @@ export async function onRequestGet(context) {
 
 export async function onRequestPost(context) {
     const { request, env, waitUntil } = context;
+    let cleanVideoId = null;
+    let sourceLang = null;
+    let targetLang = null;
+    let rejectInFlight = null;
 
     try {
         const body = await request.json();
@@ -112,9 +119,9 @@ export async function onRequestPost(context) {
         }
 
         const { videoId, sourceLang: rawSourceLang, targetLang: rawTargetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
-        const cleanVideoId = sanitizeVideoId(videoId);
-        const sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
-        const targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi']);
+        cleanVideoId = sanitizeVideoId(videoId);
+        sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
+        targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi']);
 
         if (!cleanVideoId || !sourceLang || !targetLang) {
             return jsonResponse({ error: 'Invalid video ID or language format' }, 400);
@@ -123,8 +130,22 @@ export async function onRequestPost(context) {
         const r2 = env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
 
+        const stampedeKey = `${cleanVideoId}:${sourceLang}:${targetLang}`;
+
         // 1. Check Cache (skip if forceRefresh or saveOnly)
         if (!forceRefresh && !saveOnly && !onlySave) {
+            // Check in-flight translation stampede
+            if (inFlightTranslations.has(stampedeKey)) {
+                try {
+                    const inFlightResponse = await inFlightTranslations.get(stampedeKey);
+                    if (inFlightResponse) {
+                        return jsonResponse(inFlightResponse, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
+                    }
+                } catch {
+                    // If in-flight failed, continue to fresh attempt
+                }
+            }
+
             const cached = await getTranslation(r2, cleanVideoId, sourceLang, targetLang);
             if (cached) {
                 return jsonResponse({
@@ -216,7 +237,16 @@ export async function onRequestPost(context) {
             }, 400);
         }
 
-        // 3. Batch Translate
+        // 3. Batch Translate with Stampede Protection
+        let resolveInFlight;
+        if (!forceRefresh && !isSave) {
+            const inFlightPromise = new Promise((resolve, reject) => {
+                resolveInFlight = resolve;
+                rejectInFlight = reject;
+            });
+            inFlightTranslations.set(stampedeKey, inFlightPromise);
+        }
+
         const textChunks = [];
         for (let i = 0; i < segments.length; i += BATCH_SIZE) {
             textChunks.push(segments.slice(i, i + BATCH_SIZE).map(s => s.text));
@@ -309,12 +339,22 @@ export async function onRequestPost(context) {
             response.failedIndices = failedIndices;
         }
 
+        if (!isSave) {
+            inFlightTranslations.delete(stampedeKey);
+            resolveInFlight?.(response);
+        }
+
         return jsonResponse(response, 200, {
             'Cache-Control': cacheControl,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
     } catch (error) {
+        if (cleanVideoId && sourceLang && targetLang) {
+            const stampedeKey = `${cleanVideoId}:${sourceLang}:${targetLang}`;
+            inFlightTranslations.delete(stampedeKey);
+            rejectInFlight?.(error);
+        }
         logError('Dual Subtitles', error);
         return errorResponse(error.message);
     }

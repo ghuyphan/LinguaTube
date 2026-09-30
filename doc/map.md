@@ -50,7 +50,7 @@ graph TB
         Supadata[Supadata Native Captions]
         Gladia[Gladia AI Transcription]
         Turnstile[Cloudflare Turnstile CAPTCHA]
-        Supabase[Supabase PostgreSQL & Auth: profiles, vocabulary, streaks, gamification, xp_transactions, video_levels, orders, gamification RPCs]
+        Supabase[Supabase PostgreSQL & Auth: profiles, vocabulary, streaks, gamification, xp_transactions, video_levels, orders, atomic subscription & diamond RPCs]
         DictAPIs[Jotoba / Mazii / Naver / MDBG / Glosbe]
         Lingva[Lingva Translate API]
         GoogleGTX[Google Translate GTX]

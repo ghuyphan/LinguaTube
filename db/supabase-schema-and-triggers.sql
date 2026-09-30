@@ -352,6 +352,52 @@ FOR EACH ROW EXECUTE FUNCTION public.sync_playlist_save_count();
 REVOKE ALL ON FUNCTION public.sync_playlist_save_count() FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.sync_playlist_save_count() TO postgres, service_role;
 
+-- Stored Procedure: Atomic subscription extension with row-level locks (R13)
+CREATE OR REPLACE FUNCTION public.extend_user_subscription(
+    p_user_id UUID,
+    p_tier TEXT,
+    p_days INTEGER,
+    p_diamonds INTEGER
+) RETURNS JSONB AS $$
+DECLARE
+    v_base TIMESTAMPTZ;
+    v_new_exp TIMESTAMPTZ;
+    v_profile RECORD;
+BEGIN
+    SELECT subscription_expires, subscription_tier, diamonds
+    INTO v_profile
+    FROM public.profiles
+    WHERE id = p_user_id
+    FOR UPDATE;
+
+    IF NOT FOUND THEN
+        RETURN jsonb_build_object('success', false, 'error', 'User not found');
+    END IF;
+
+    v_base := COALESCE(GREATEST(v_profile.subscription_expires, timezone('utc'::text, now())), timezone('utc'::text, now()));
+    v_new_exp := v_base + (p_days || ' days')::INTERVAL;
+
+    UPDATE public.profiles
+    SET subscription_tier = p_tier,
+        subscription_expires = v_new_exp,
+        diamonds = p_diamonds,
+        diamonds_updated_at = timezone('utc'::text, now()),
+        updated_at = timezone('utc'::text, now())
+    WHERE id = p_user_id;
+
+    RETURN jsonb_build_object(
+        'success', true, 
+        'expires_at', v_new_exp,
+        'tier', p_tier,
+        'diamonds', p_diamonds
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER
+SET search_path = public, pg_temp;
+
+REVOKE ALL ON FUNCTION public.extend_user_subscription(UUID, TEXT, INTEGER, INTEGER) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.extend_user_subscription(UUID, TEXT, INTEGER, INTEGER) TO postgres, service_role;
+
 -- Trigger: Automatically provisions profile and re-links legacy data on auth user creation
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER

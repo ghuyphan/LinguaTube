@@ -53,6 +53,9 @@ function setMemDiamondsCache(cacheKey, value) {
     memDiamondsCache.set(cacheKey, value);
 }
 
+// In-flight mutex for anonymous diamond consumption to prevent race conditions (R12)
+const activeAnonConsumptions = new Map();
+
 const DEFAULT_SUPABASE_URL = 'https://edbkvzviqeulwzcnrrlb.supabase.co';
 const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg';
 
@@ -266,22 +269,33 @@ export class DiamondService {
      * Consume diamond(s) for a user action
      */
     async consumeDiamond(clientId, cost = 1, user = null, env = null, context = null) {
-        const now = Date.now();
-        const currentData = await this.getDiamonds(clientId, user, env, context);
-
-        const numericCost = Number(cost) || 1;
-        if (currentData.diamonds < numericCost) {
-            return {
-                success: false,
-                reason: 'insufficient_diamonds',
-                diamonds: currentData.diamonds,
-                requiredDiamonds: numericCost,
-                nextRegenAt: currentData.nextRegenAt,
-                maxDiamonds: currentData.maxDiamonds,
-                regenIntervalMs: currentData.regenIntervalMs,
-                tier: currentData.tier
-            };
+        let releaseAnonLock;
+        if (!user?.id && clientId) {
+            const inFlight = activeAnonConsumptions.get(clientId);
+            if (inFlight) {
+                try { await inFlight; } catch { }
+            }
+            const lockPromise = new Promise(res => { releaseAnonLock = res; });
+            activeAnonConsumptions.set(clientId, lockPromise);
         }
+
+        try {
+            const now = Date.now();
+            const currentData = await this.getDiamonds(clientId, user, env, context);
+
+            const numericCost = Number(cost) || 1;
+            if (currentData.diamonds < numericCost) {
+                return {
+                    success: false,
+                    reason: 'insufficient_diamonds',
+                    diamonds: currentData.diamonds,
+                    requiredDiamonds: numericCost,
+                    nextRegenAt: currentData.nextRegenAt,
+                    maxDiamonds: currentData.maxDiamonds,
+                    regenIntervalMs: currentData.regenIntervalMs,
+                    tier: currentData.tier
+                };
+            }
 
         const newDiamondCount = Math.max(0, currentData.diamonds - numericCost);
         let lastRegenTime = now;
@@ -365,14 +379,20 @@ export class DiamondService {
             }
         }
 
-        return {
-            success: true,
-            diamonds: newDiamondCount,
-            nextRegenAt,
-            maxDiamonds: currentData.maxDiamonds,
-            regenIntervalMs: currentData.regenIntervalMs,
-            tier: currentData.tier
-        };
+            return {
+                success: true,
+                diamonds: newDiamondCount,
+                nextRegenAt,
+                maxDiamonds: currentData.maxDiamonds,
+                regenIntervalMs: currentData.regenIntervalMs,
+                tier: currentData.tier
+            };
+        } finally {
+            if (!user?.id && clientId) {
+                activeAnonConsumptions.delete(clientId);
+                releaseAnonLock?.();
+            }
+        }
     }
 
     /**

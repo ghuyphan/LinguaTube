@@ -303,9 +303,14 @@ graph TD
   - Automatically fetches upcoming batches in the background before the user reaches them, minimizing latency and eliminating duplicate API calls.
   - **Circuit-Breaker & Exponential Backoff**: Prevents tight 3s retry loops upon encountering upstream rate limits (429/503), backing off progressively (5s $\rightarrow$ 10s $\rightarrow$ 30s) and self-healing when connectivity recovers.
   - **Auto-Persistence to R2**: Once translated cue coverage reaches $\ge 80\%$, `SubtitleService` automatically invokes `saveDualSubtitles()` to commit the complete transcript into Cloudflare R2 (`translations/{videoId}/{sourceLang}-{targetLang}.json`) and D1 `translation_meta`. Future views of the video load the dual subtitles instantaneously (<50ms) from R2 cache with $0 translation cost.
+- **Seeking Guard Against Sticky Cue Ghosting**: `findStickyCue()` checks `!this.youtube.seeking`. During timeline scrubs, backward seeks, or jumps into silent video sections, sticky cue retention is automatically suppressed, eliminating ghost subtitle text during playback pauses or seeks into non-dialogue intervals.
 - **Lifecycle & Cleanup**:
   - Exposes `cancelDualSubtitles()`, `toggleDualSubtitles()`, `setDualSubtitleTargetLang()`, and cleanly clears in-flight requests and maps on video change or unload via `clear()`.
   - Automatically listens to window `online` events to immediately resume paused background streams once the device reconnects.
+
+#### TranscriptService Network & Video Switch Lifecycle (`transcript.service.ts`)
+- **Stale Guard & Out-of-Order Race Prevention**: Uses an internal `cancelTranscript$` Subject that emits on every video switch (`fetchTranscript`), aborting in-flight HTTP requests via `takeUntil(this.cancelTranscript$)`.
+- **Target Video ID Verification**: Callbacks from network requests, AI transcription jobs, and asynchronous IndexedDB fetches explicitly check `this.currentVideoId === videoId` before updating signals (`_state`) or writing to local cache, guaranteeing that slow responses from previous videos can never contaminate the active player or corrupt IndexedDB caches.
 
 ---
 

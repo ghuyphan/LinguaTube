@@ -952,11 +952,11 @@
         flex-shrink: 0;
         position: relative;
 
-        // Accessible touch area expansion on mobile screens
+        // Accessible touch area expansion on mobile screens (44x44px target)
         &::after {
             content: '';
             position: absolute;
-            inset: -6px;
+            inset: -10px;
         }
 
         @media (hover: hover) {
