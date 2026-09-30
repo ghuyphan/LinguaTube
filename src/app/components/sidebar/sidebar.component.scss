@@ -777,10 +777,6 @@
                 border-color: var(--accent-primary);
                 transform: translateY(-1px);
 
-                .popover-shield-wrap {
-                    transform: scale(1.06);
-                }
-
                 .popover-arrow {
                     transform: translateX(2px);
                     color: var(--text-primary);
@@ -945,10 +941,6 @@
                     background: var(--bg-hover);
                     border-color: var(--accent-primary);
                     transform: translateY(-1px);
-
-                    .popover-shield-wrap {
-                        transform: scale(1.06);
-                    }
                 }
             }
 
