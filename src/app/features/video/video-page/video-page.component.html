@@ -333,25 +333,28 @@
             <!-- Segmented Control Tab Switcher (Playlist | Words | Grammar) -->
             <div class="sidebar-segmented-bar" role="tablist">
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'playlist'" [class.active]="sidebarTab() === 'playlist'"
+                    [title]="i18n.t('playlist.playlist')"
                     (click)="sidebarTab.set('playlist')">
-                    <app-icon name="list-video" [size]="15" />
-                    <span>{{ i18n.t('playlist.playlist') }}</span>
+                    <app-icon name="list-video" [size]="13" />
+                    <span class="tab-label">{{ i18n.t('playlist.playlist') }}</span>
                     @if (playlistService.currentPlaylist(); as pl) {
                     <span class="tab-count-pill">{{ pl.videos.length }}</span>
                     }
                 </button>
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'vocab'" [class.active]="sidebarTab() === 'vocab'"
+                    [title]="i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary')"
                     (click)="sidebarTab.set('vocab')">
-                    <app-icon name="book-open" [size]="15" />
-                    <span>{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
+                    <app-icon name="book-open" [size]="13" />
+                    <span class="tab-label">{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
                     @if (currentLangVocabCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
                     }
                 </button>
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'grammar'" [class.active]="sidebarTab() === 'grammar'"
+                    [title]="i18n.t('grammar.grammar') || 'Grammar'"
                     (click)="sidebarTab.set('grammar')">
-                    <app-icon name="bookmark" [size]="15" />
-                    <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
+                    <app-icon name="bookmark" [size]="13" />
+                    <span class="tab-label">{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
                     @if (currentLangGrammarCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangGrammarCount() }}</span>
                     }
@@ -381,17 +384,19 @@
             <!-- No playlist: Dedicated segmented switcher between Words and Grammar -->
             <div class="sidebar-segmented-bar" role="tablist">
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() !== 'grammar'" [class.active]="sidebarTab() !== 'grammar'"
+                    [title]="i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary')"
                     (click)="sidebarTab.set('vocab')">
-                    <app-icon name="book-open" [size]="15" />
-                    <span>{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
+                    <app-icon name="book-open" [size]="13" />
+                    <span class="tab-label">{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
                     @if (currentLangVocabCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
                     }
                 </button>
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'grammar'" [class.active]="sidebarTab() === 'grammar'"
+                    [title]="i18n.t('grammar.grammar') || 'Grammar'"
                     (click)="sidebarTab.set('grammar')">
-                    <app-icon name="bookmark" [size]="15" />
-                    <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
+                    <app-icon name="bookmark" [size]="13" />
+                    <span class="tab-label">{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
                     @if (currentLangGrammarCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangGrammarCount() }}</span>
                     }
