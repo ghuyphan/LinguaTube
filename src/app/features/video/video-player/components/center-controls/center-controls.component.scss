@@ -115,9 +115,27 @@ $z-center-controls: 15;
         pointer-events: none;
     }
 
-    // On desktop, native YouTube leaves the video center clean and unobstructed when paused
+    // On desktop, native YouTube leaves the video center clean and unobstructed when paused.
+    // BUT when the video has ended, the center replay button MUST remain visible on all devices!
     @media (min-width: 769px) and (hover: hover) and (pointer: fine) {
-        display: none !important;
+        &:not(.center-button-group--ended) {
+            display: none !important;
+        }
+    }
+
+    &.center-button-group--ended {
+        animation: fadeIn 0.25s ease-out;
+        z-index: 20;
+
+        .replay-btn {
+            background: rgba(0, 0, 0, 0.75);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.9);
+                transform: scale(1.12);
+            }
+        }
     }
 }
 

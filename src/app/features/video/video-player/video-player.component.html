@@ -68,8 +68,9 @@
         </div>
         <div class="miniplayer-hover-center" (click)="$event.stopPropagation()">
           <button type="button" class="miniplayer-hover-play-btn" (click)="togglePlayFromMiniplayer($event)"
-            [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')">
-            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="22" />
+            [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (youtube.isEnded() ? (i18n.t('player.replay') || 'Replay video') : (i18n.t('player.play') || 'Play'))"
+            [title]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (youtube.isEnded() ? (i18n.t('player.replay') || 'Replay video') : (i18n.t('player.play') || 'Play'))">
+            <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : (youtube.isEnded() ? 'rotate-ccw' : 'play')" [size]="22" />
           </button>
         </div>
       </div>
@@ -157,11 +158,11 @@
     }
 
     <!-- Player Vignette Backdrop (Darkens when controls are visible) -->
-    <div class="player-vignette" [class.visible]="areControlsVisible() && !isSubtitleDragging()"></div>
+    <div class="player-vignette" [class.visible]="(areControlsVisible() || youtube.isEnded()) && !isSubtitleDragging()"></div>
 
     <!-- Center Controls -->
     <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.isPlaying()"
-      [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible() && !isSubtitleDragging()"
+      [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="(areControlsVisible() || youtube.isEnded()) && !isSubtitleDragging()"
       [hasPlaylist]="hasPlaylist()" [canPlayPrev]="canPlayPrev()" [canPlayNext]="canPlayNext()"
       [playPauseFeedback]="playPauseFeedback()" [playPauseFeedbackIcon]="playPauseFeedbackIcon()"
       [volumeFeedback]="volumeFeedback()" [volumeFeedbackIcon]="volumeFeedbackIcon()"
@@ -557,7 +558,7 @@
       <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
       </app-progress-bar>
 
-      <app-video-bottom-bar [isPlaying]="youtube.isPlaying()" [currentTime]="formattedCurrentTime()"
+      <app-video-bottom-bar [isPlaying]="youtube.isPlaying()" [isEnded]="youtube.isEnded()" [currentTime]="formattedCurrentTime()"
         [duration]="formattedDuration()" [volume]="volume()" [isMuted]="youtube.isMuted()"
         [volumePercent]="volumePercent()" [isVolumeSliderVisible]="isVolumeSliderVisible()"
         [isFullscreen]="isFullscreen()" [subtitlesVisible]="subtitles.subtitlesVisible()"
@@ -600,8 +601,9 @@
       </div>
       <div class="miniplayer-controls" (click)="$event.stopPropagation()">
         <button type="button" class="miniplayer-ctrl-btn" (click)="togglePlayFromMiniplayer($event)"
-          [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (i18n.t('player.play') || 'Play')">
-          <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : 'play'" [size]="20" />
+          [attr.aria-label]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (youtube.isEnded() ? (i18n.t('player.replay') || 'Replay video') : (i18n.t('player.play') || 'Play'))"
+          [title]="youtube.intendedPlayingState() ? (i18n.t('player.pause') || 'Pause') : (youtube.isEnded() ? (i18n.t('player.replay') || 'Replay video') : (i18n.t('player.play') || 'Play'))">
+          <app-icon [name]="youtube.intendedPlayingState() ? 'pause' : (youtube.isEnded() ? 'rotate-ccw' : 'play')" [size]="20" />
         </button>
         <button type="button" class="miniplayer-ctrl-btn" (click)="closeFromMiniplayer($event)"
           [attr.aria-label]="i18n.t('player.closeVideo') || 'Close'">

@@ -1008,6 +1008,10 @@ export class VideoPlayerComponent implements OnDestroy {
       clearTimeout(this.doubleTapTimeout);
       this.doubleTapTimeout = null;
     }
+    if (this.youtube.isEnded()) {
+      this.onReplayClick(event);
+      return;
+    }
     this.togglePlay();
     this.lastControlsShowTime = Date.now();
     this.clearControlsTimeout();
@@ -1024,6 +1028,7 @@ export class VideoPlayerComponent implements OnDestroy {
     }
     this.youtube.seekTo(0);
     this.youtube.play();
+    this.showControls();
   }
 
   // ============================================
@@ -1395,6 +1400,10 @@ export class VideoPlayerComponent implements OnDestroy {
 
   togglePlayFromMiniplayer(event: MouseEvent): void {
     event.stopPropagation();
+    if (this.youtube.isEnded()) {
+      this.onReplayClick(event);
+      return;
+    }
     this.togglePlay();
   }
 

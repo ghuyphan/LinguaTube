@@ -3,10 +3,10 @@
     <div class="controls-left">
         <!-- Play/Pause Button - Desktop only -->
         <button class="control-btn desktop-only" (click)="playPauseClicked.emit($event)"
-            [attr.aria-label]="isPlaying() ? (t()('player.pause') || 'Pause') : (t()('player.play') || 'Play')"
+            [attr.aria-label]="isEnded() ? (t()('player.replay') || 'Replay video') : (isPlaying() ? (t()('player.pause') || 'Pause') : (t()('player.play') || 'Play'))"
             [attr.aria-keyshortcuts]="'k'"
-            [title]="isPlaying() ? (t()('player.pause') || 'Pause (k)') : (t()('player.play') || 'Play (k)')">
-            <app-icon [name]="isPlaying() ? 'pause' : 'play'" [size]="20" />
+            [title]="isEnded() ? ((t()('player.replay') || 'Replay video') + ' (k)') : (isPlaying() ? ((t()('player.pause') || 'Pause') + ' (k)') : ((t()('player.play') || 'Play') + ' (k)'))">
+            <app-icon [name]="isEnded() ? 'rotate-ccw' : (isPlaying() ? 'pause' : 'play')" [size]="20" />
         </button>
 
         <!-- Volume control (Desktop: hover slider) -->

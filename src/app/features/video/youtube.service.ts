@@ -647,6 +647,7 @@ export class YoutubeService {
   play(): void {
     this.wasPausedOnLeave = false;
     this.intendedPlayingState.set(true);
+    this.isEnded.set(false);
     try {
       this.player?.playVideo();
     } catch { }
@@ -664,12 +665,18 @@ export class YoutubeService {
     if (this.intendedPlayingState()) {
       this.pause();
     } else {
+      if (this.isEnded()) {
+        this.seekTo(0);
+      }
       this.play();
     }
   }
 
   seekTo(seconds: number): void {
     const clampedTime = Math.max(0, Math.min(seconds, this.duration() || seconds));
+    if (this.isEnded() && clampedTime < (this.duration() - 0.5)) {
+      this.isEnded.set(false);
+    }
     this.lastEmitTime = clampedTime;
     this.currentTime.set(clampedTime);
     this.targetSeekTime = clampedTime;
@@ -800,12 +807,14 @@ export class YoutubeService {
     this.duration.set(0);
     this.pendingVideoId.set(null);
     this.intendedPlayingState.set(false);
+    this.isEnded.set(false);
   }
   /**
    * Update internal state when video is loaded (reused or new)
    */
   private updateVideoState(videoId: string, metadata: { title: string; channel: string }, duration: number): void {
     this.duration.set(duration);
+    this.isEnded.set(false);
 
     // Build VideoInfo once and reuse for both the signal and the event
     const video: VideoInfo = {

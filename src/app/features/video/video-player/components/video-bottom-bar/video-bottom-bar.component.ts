@@ -18,6 +18,7 @@ export class VideoBottomBarComponent {
 
   // Playback state
   isPlaying = input<boolean>(false);
+  isEnded = input<boolean>(false);
   currentTime = input<string>('0:00');
   duration = input<string>('0:00');
 

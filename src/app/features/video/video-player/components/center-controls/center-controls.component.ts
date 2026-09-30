@@ -101,7 +101,7 @@ import { I18nService } from '../../../../../core/services';
 
       <!-- Replay Button (Ended State) -->
       @if (isEnded()) {
-        <div class="center-button-group">
+        <div class="center-button-group center-button-group--ended">
           @if (hasPlaylist()) {
             <button 
               class="center-nav-btn" 
@@ -114,6 +114,7 @@ import { I18nService } from '../../../../../core/services';
           }
 
           <button class="big-play-btn replay-btn" [attr.aria-label]="i18n.t('player.replay') || 'Replay video'"
+            [title]="i18n.t('player.replay') || 'Replay video'"
             (touchstart)="$event.stopPropagation()"
             (click)="onReplayClick($event)">
             <app-icon name="rotate-ccw" [size]="44" aria-hidden="true" />
