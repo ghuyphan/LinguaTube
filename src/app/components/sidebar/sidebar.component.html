@@ -315,7 +315,7 @@
         <!-- Hero Streak Widget -->
         <button class="stats-popover__streak-banner" (click)="onPopoverStreakClick()">
             <div class="streak-flame-box" [class.active]="streak.practicedToday()">
-                <app-icon name="fire" [size]="18" />
+                <app-icon name="fire" [size]="20" />
             </div>
             <div class="streak-text-box">
                 <div class="streak-title">{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') || 'Day Streak' }}</div>
@@ -328,7 +328,7 @@
         <div class="stats-popover__metrics">
             <button class="metric-pill" (click)="onPopoverAchievementsClick()">
                 <div class="metric-icon-box metric-icon-box--level" [attr.data-tier]="gamification.userLevelTier()">
-                    <app-icon [name]="gamification.userLevelIcon()" [size]="18" />
+                    <app-icon [name]="gamification.userLevelIcon()" [size]="20" />
                 </div>
                 <div class="metric-info">
                     <span class="metric-label">{{ i18n.t('gamification.level') || 'Level' }} {{ gamification.userLevel() }}</span>
@@ -342,7 +342,7 @@
             <button class="metric-pill" (click)="onPopoverAiCreditsClick()"
                 [attr.title]="(i18n.t('subtitle.aiCredits') || 'AI Credits') + ': ' + transcript.diamonds() + '/' + transcript.maxDiamonds()">
                 <div class="metric-icon-box metric-icon-box--diamond">
-                    <app-icon name="diamond" [size]="18" />
+                    <app-icon name="diamond" [size]="20" />
                 </div>
                 <div class="metric-info">
                     <span class="metric-label">{{ i18n.t('subtitle.aiCredits') || 'AI Credits' }}</span>
