@@ -25,6 +25,7 @@ import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dia
 import { PlaylistService } from '../../playlist/playlist.service';
 import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
+import { GrammarService } from '../../../services/grammar.service';
 import { LearningLanguageService } from '../../../services/learning-language.service';
 import { normalizeLanguageCode } from '../../../shared/utils/language.utils';
 import { FormatTimePipe, LanguageFlagPipe } from '../../../shared/pipes';
@@ -79,6 +80,7 @@ export class VideoPageComponent implements OnInit {
   toast = inject(ToastService);
   private learningLanguage = inject(LearningLanguageService);
   protected aiJobManager = inject(AiJobManagerService);
+  readonly grammar = inject(GrammarService);
 
   showAiConfirmDialog = signal(false);
   aiCaptchaToken = signal<string | null>(null);
@@ -223,7 +225,7 @@ export class VideoPageComponent implements OnInit {
   }
 
   // Sidebar tab state (only used when playlist is active)
-  sidebarTab = signal<'playlist' | 'vocab'>('playlist');
+  sidebarTab = signal<'playlist' | 'vocab' | 'grammar'>('playlist');
 
   // Immediately read URL param to prevent initial layout shift while playlist fetches
   readonly activePlaylistId = signal<string | null>(
@@ -247,7 +249,14 @@ export class VideoPageComponent implements OnInit {
   isFeaturedLoading = this.playlistService.isRecommendedLoading;
   currentLangVocabCount = computed(() => {
     const lang = this.settings.language();
-    return this.vocab.vocabulary().filter(w => w.language === lang).length;
+    this.grammar.loadedLanguages();
+    return this.vocab.vocabulary().filter(w => w.language === lang && !this.grammar.isGrammar(w.word, w.language)).length;
+  });
+
+  currentLangGrammarCount = computed(() => {
+    const lang = this.settings.language();
+    this.grammar.loadedLanguages();
+    return this.vocab.vocabulary().filter(w => w.language === lang && this.grammar.isGrammar(w.word, w.language)).length;
   });
 
   getPlaylistLevel(playlist: Playlist): { level: string; tier: ProficiencyLevelTier } | null {

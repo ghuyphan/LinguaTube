@@ -331,7 +331,10 @@
     "deleteSuccess": "Đã xóa \"{{word}}\"",
     "saveSuccess": "Đã thêm \"{{word}}\" vào từ vựng",
     "addWord": "Thêm từ",
-    "syncHint": "Đăng nhập Google để đồng bộ sổ từ vựng trên các thiết bị."
+    "syncHint": "Đăng nhập Google để đồng bộ sổ từ vựng trên các thiết bị.",
+    "filterAll": "Tất cả",
+    "filterWords": "Từ vựng",
+    "filterGrammar": "Ngữ pháp"
   },
   "popup": {
     "translationLang": "Ngôn ngữ dịch",
@@ -349,12 +352,18 @@
     "retry": "Thử lại"
   },
   "grammar": {
+    "grammar": "Ngữ pháp",
+    "ruleDetails": "Chi tiết ngữ pháp",
     "mode": "Ngữ pháp",
     "formation": "Cấu trúc",
     "explanation": "Giải thích",
     "examples": "Ví dụ",
     "level": "Cấp độ",
     "savePattern": "Lưu ngữ pháp",
+    "saved": "Đã lưu",
+    "saveSuccess": "Đã lưu \"{{pattern}}\" vào sổ ngữ pháp",
+    "noGrammarSaved": "Chưa lưu ngữ pháp nào",
+    "clickGrammarToSave": "Lưu các cấu trúc ngữ pháp khi xem video hoặc tra từ điển để ôn tập tại đây.",
     "moreDetails": "Chi tiết thêm"
   },
   "dictionary": {
@@ -532,7 +541,15 @@
     "searchQueue": "Tìm trong danh sách chờ ôn...",
     "noCardsInQueue": "Không có thẻ nào đang chờ ôn",
     "nextReview": "Lần ôn tiếp theo",
-    "dueNow": "Đến hạn"
+    "dueNow": "Đến hạn",
+    "filterAll": "Tất cả",
+    "filterWords": "Từ vựng",
+    "filterGrammar": "Ngữ pháp",
+    "inspectRule": "Xem chi tiết ngữ pháp",
+    "deckWords": "Từ vựng",
+    "deckGrammar": "Ngữ pháp",
+    "noGrammar": "Chưa có ngữ pháp để ôn tập",
+    "noGrammarHint": "Lưu ngữ pháp khi xem video để tạo bộ thẻ ôn tập."
   },
   "streak": {
     "dayStreak": "Chuỗi ngày học",

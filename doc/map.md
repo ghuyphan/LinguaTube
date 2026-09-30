@@ -125,6 +125,7 @@ graph TD
     App --> Onboarding[OnboardingComponent]
     App --> CommandPalette[CommandPaletteComponent]
     App --> BottomSheet[BottomSheetComponent]
+    App --> GrammarPopupRoot[GrammarPopupComponent - Global Defer Mount]
     App --> Toast[ToastComponent - Mobile-Native Status Capsule]
     App --> RouterOutlet[<router-outlet>]
     
@@ -138,8 +139,8 @@ graph TD
         VideoPage --> VideoPlayer[VideoPlayerComponent]
         VideoPage --> SubtitleDisplay[SubtitleDisplayComponent]
         VideoPage --> WordPopup[WordPopupComponent]
-        VideoPage --> GrammarPopup[GrammarPopupComponent]
-        VideoPage --> VocabList[VocabularyListComponent]
+        VideoPage --> VideoWordsList["VocabularyListComponent (filterType: words)"]
+        VideoPage --> VideoGrammarList["VocabularyListComponent (filterType: grammar)"]
         VideoPage --> PlaylistPanel[PlaylistPanelComponent]
     end
 
@@ -155,7 +156,8 @@ graph TD
 
     subgraph DictPageChildren["Dictionary Page Domain"]
         DictPage --> DictPanel[DictionaryPanelComponent]
-        DictPage --> DictVocabList["VocabularyListComponent (embedded: true)"]
+        DictPage --> DictWordsList["VocabularyListComponent (filterType: words)"]
+        DictPage --> DictGrammarList["VocabularyListComponent (filterType: grammar)"]
     end
 
     subgraph StudyPageChildren["Study Page Domain"]

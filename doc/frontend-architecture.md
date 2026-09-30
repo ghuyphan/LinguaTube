@@ -768,9 +768,9 @@ To maintain complete visual, structural, and functional harmony across all prima
       - **Desktop ($\ge 769\text{px}$)**: Kept inline with the recommendation chips in `.yt-chips-actions.desktop-only` on the right side of the chips bar, preserving quick-action parity with desktop toolbars on other pages.
       - **Mobile ($\le 768\text{px}$)**: Relocated to `.panel-header__row` as an `.action-icon-btn.mobile-only` (32px circular icon button with 44px touch target) on the right side of the "Dành cho bạn" / "For You" title, matching mobile action buttons across Playlist (`+`), History (`🗑`), and Dictionary (`⋮`), while allowing the mobile chips carousel to scroll 100% full width with zero obstruction.
   - **Filter Chips (`.filter-chip`) & Filter Strip (`.filter-scroll-strip`)**: Normalized to 38px height across all views. Non-scrolling layout with `overflow: visible` to prevent accidental trackpad traps, rubber-band bounces, or horizontal scroll clipping on both desktop and mobile, with high-contrast active state (`background: var(--accent-primary); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-primary-rgb), 0.3)`). In vocabulary lists, chips wrap gracefully across rows if needed.
-- **Dictionary & Vocabulary Harmonization**:
-  - `DictionaryPageComponent`: Merged search input and filter chips directly into a single top card toolbar, eliminating duplicate titles, double-stacked toolbars, and divider lines.
-  - `VocabularyListComponent`: Supports `showToolbar: false` when embedded in `DictionaryPageComponent` to eliminate duplicate toolbars while keeping the standalone video player sidebar in `VideoPageComponent` (`showToolbar: true`) completely untouched.
+- **Dictionary, Words & Grammar Harmonization**:
+  - `DictionaryPageComponent`: Features a 3-tab segmented control `[ Dictionary | Words | Grammar ]`, seamlessly unifying dictionary search, vocabulary notebook, and dedicated grammar notebook tabs with shared filter metrics and synchronized viewChild switching.
+  - `VocabularyListComponent`: Accepts `filterType: input<'all' | 'words' | 'grammar'>('all')` and `showToolbar: false` when embedded in `DictionaryPageComponent` to eliminate duplicate toolbars while retaining standalone usage in `VideoPageComponent` (`showToolbar: true`). When inspecting a saved item, if a matching grammar pattern exists, clicking directly opens `GrammarPopupComponent`.
 - **Standardized Card Play Overlay (`.card-play-overlay`)**:
   - Centered over 16:9 thumbnails (`inset: 0; background: rgba(0, 0, 0, 0.35);`).
   - Standardized 32px circular play icon (`.play-icon-circle`, `background: var(--accent-primary); color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);`).
@@ -1082,7 +1082,7 @@ To maintain world-class performance, low memory footprint, and maintainability, 
   - Error shake animations on command palette and quiz inputs synchronize state reset through `(animationend)`.
 
 ### 11.7. Persistent Tab Panels (`[hidden]`)
-- **Instant Search Resolution**: In `DictionaryPageComponent`, tabs (`dictionary` vs `vocab`) use the native CSS `[hidden]` attribute instead of destructive `@if` unmounting. Both components remain persistently mounted in memory, retaining active search states, scroll offsets, and enabling instantaneous, synchronous search execution (`this.panel()?.search(...)`) with zero rendering delay.
+- **Instant Search & Notebook Resolution**: In `DictionaryPageComponent`, tabs (`dictionary`, `words`, and `grammar`) use the native CSS `[hidden]` attribute instead of destructive `@if` unmounting. All panels remain persistently mounted in memory, retaining active search states, scroll offsets, and enabling instantaneous, synchronous tab switching with zero rendering delay.
 
 ### 11.8. Aspect Ratio & Legacy CSS Cleanup
 - Removed legacy `padding-bottom: 56.25%` and `@supports (aspect-ratio: 16 / 9)` blocks from `video-player.component.scss` (native `aspect-ratio` is Baseline 2021).
@@ -1095,6 +1095,11 @@ To maintain world-class performance, low memory footprint, and maintainability, 
   - Standardizes progressive loading across `VideoPageComponent`, `PlaylistPageComponent`, and `HistoryListComponent`.
   - Configurable `rootMargin` (default `400px 0px`), `threshold` (default `0.05`), `disabled` signal input, and automatic internal throttler (`throttleMs: 120ms`) preventing double-dispatch on rapid scrolls.
   - Eliminated over 120 lines of repetitive `viewChild('scrollSentinel')`, `PLATFORM_ID`, and observer teardown boilerplate across components.
+
+### 11.10. Separated Study Mode Deck Architecture
+- `StudyModeComponent`: Implements dual review decks (`words` vs `grammar`) with a dedicated switcher `.study-deck-switcher`.
+- Filters flashcard sessions, 3-deck counters (`New`, `Learning`, `Known`), due today alerts, and session queues based on `studyDeck()`.
+- Flashcard front and back dynamically render `.badge--grammar` and level indicators, while the back reveals `.card-formation-box` and an interactive `.card-grammar-inspect-btn` that triggers the global `GrammarPopupComponent` bottom sheet directly from active study sessions.
 
 
 

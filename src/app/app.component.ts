@@ -13,10 +13,12 @@ import { StreakDialogComponent } from './components/streak-dialog/streak-dialog.
 import { AiCreditsDialogComponent } from './components/ai-credits-dialog/ai-credits-dialog.component';
 import { AchievementsDialogComponent } from './components/achievements-dialog/achievements-dialog.component';
 import { ProUpgradeDialogComponent } from './components/pro-upgrade-dialog/pro-upgrade-dialog.component';
+import { GrammarPopupComponent } from './features/dictionary/grammar-popup/grammar-popup.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { I18nService, SettingsService, SeoService, PwaService, GamificationService, AppUpdateService, KeyboardShortcutService } from './core/services';
 import { YoutubeService, TranscriptService, PlayerViewService } from './features/video';
 import { StreakService } from './services/streak.service';
+import { GrammarService } from './services/grammar.service';
 import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { VocabularyService } from './features/vocabulary/vocabulary.service';
@@ -41,6 +43,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
     AiCreditsDialogComponent,
     AchievementsDialogComponent,
     ProUpgradeDialogComponent,
+    GrammarPopupComponent,
     ToastComponent
   ],
   template: `
@@ -320,6 +323,17 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         @defer (when showOnboardingSheet(); prefetch on idle) {
           @if (showOnboardingSheet()) {
             <app-onboarding (dismissed)="dismissOnboarding()" />
+          }
+        }
+
+        <!-- App-Wide Grammar Popup (lazy loaded on demand) -->
+        @defer (when grammar.isPopupVisible(); prefetch on idle) {
+          @if (grammar.selectedPattern()) {
+            <app-grammar-popup
+              [pattern]="grammar.selectedPattern()"
+              [isOpen]="grammar.isPopupVisible()"
+              (closed)="grammar.closePopup()"
+            />
           }
         }
 
@@ -1180,6 +1194,7 @@ export class AppComponent implements OnDestroy {
   i18n = inject(I18nService);
   settings = inject(SettingsService);
   vocab = inject(VocabularyService);
+  grammar = inject(GrammarService);
   streak = inject(StreakService);
   transcript = inject(TranscriptService);
   gamification = inject(GamificationService);

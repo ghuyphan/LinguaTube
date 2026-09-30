@@ -10,6 +10,7 @@ import { SearchInputComponent } from '../../../shared/components/search-input/se
 
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AuthService, AudioService, ToastService } from '../../../core/services';
+import { GrammarService } from '../../../services/grammar.service';
 
 import { VocabularyItem, WordLevel, Token } from '../../../models';
 
@@ -28,6 +29,7 @@ export class VocabularyListComponent implements OnDestroy {
   toast = inject(ToastService);
   readonly auth = inject(AuthService);
   readonly audio = inject(AudioService);
+  readonly grammar = inject(GrammarService);
   private router = inject(Router);
 
   // Inputs & Outputs
@@ -38,6 +40,7 @@ export class VocabularyListComponent implements OnDestroy {
   showToolbar = input<boolean>(true);
   externalSearch = input<string>('');
   externalLevel = input<WordLevel | 'all' | null>(null);
+  filterType = input<'all' | 'words' | 'grammar'>('all');
   deleteRequest = output<string>();
   menuRequest = output<void>();
   wordSelect = output<Token>();
@@ -83,6 +86,14 @@ export class VocabularyListComponent implements OnDestroy {
   // Level filter signal
   selectedLevel = signal<WordLevel | 'all'>('all');
 
+  // Type filter signal: all | words | grammar
+  selectedType = signal<'all' | 'words' | 'grammar'>('all');
+
+  // Effective type considering external filterType input
+  effectiveType = computed<'all' | 'words' | 'grammar'>(() => {
+    return this.filterType() !== 'all' ? this.filterType() : this.selectedType();
+  });
+
   // Search with debounce (300ms)
   private searchInput = signal('');
   private debouncedSearch = signal('');
@@ -103,9 +114,51 @@ export class VocabularyListComponent implements OnDestroy {
     return words.size;
   });
 
+  typeCounts = computed(() => {
+    const lang = this.settings.settings().language;
+    this.grammar.loadedLanguages();
+    const items = this.vocab.vocabulary().filter(w => w.language === lang);
+    let grammarCount = 0;
+    let wordCount = 0;
+    for (const item of items) {
+      if (this.grammar.isGrammar(item.word, item.language)) {
+        grammarCount++;
+      } else {
+        wordCount++;
+      }
+    }
+    return {
+      all: items.length,
+      words: wordCount,
+      grammar: grammarCount
+    };
+  });
+
+  displayCount = computed(() => {
+    const counts = this.typeCounts();
+    const type = this.effectiveType();
+    if (type === 'grammar') return counts.grammar;
+    if (type === 'words') return counts.words;
+    return counts.all;
+  });
+
+  displayTitle = computed(() => {
+    if (this.effectiveType() === 'grammar') {
+      return this.i18n.t('grammar.grammar') || 'Grammar';
+    }
+    return this.i18n.t('vocab.title');
+  });
+
   levelCounts = computed(() => {
     const lang = this.settings.settings().language;
-    const items = this.vocab.vocabulary().filter(w => w.language === lang);
+    this.grammar.loadedLanguages();
+    let items = this.vocab.vocabulary().filter(w => w.language === lang);
+    const type = this.effectiveType();
+    if (type === 'grammar') {
+      items = items.filter(w => this.grammar.isGrammar(w.word, w.language));
+    } else if (type === 'words') {
+      items = items.filter(w => !this.grammar.isGrammar(w.word, w.language));
+    }
     return {
       all: items.length,
       new: items.filter(w => w.level === 'new').length,
@@ -156,12 +209,22 @@ export class VocabularyListComponent implements OnDestroy {
   }
 
   onWordClick(item: VocabularyItem): void {
+    const pattern = this.grammar.findPattern(item.word, item.language);
+    if (pattern) {
+      this.grammar.showPopup(pattern);
+      return;
+    }
     this.wordSelect.emit({
       surface: item.word,
       reading: this.getItemReading(item) || undefined,
       baseForm: item.word,
       level: item.level
     });
+  }
+
+  isGrammarItem(item: VocabularyItem): boolean {
+    this.grammar.loadedLanguages();
+    return this.grammar.isGrammar(item.word, item.language);
   }
 
   deleteWordDirect(item: VocabularyItem, event: Event): void {
@@ -262,6 +325,14 @@ export class VocabularyListComponent implements OnDestroy {
     const level = this.showToolbar() ? this.selectedLevel() : (this.externalLevel() ?? 'all');
     if (level !== 'all') {
       items = items.filter(item => item.level === level);
+    }
+
+    // Filter by type (all | words | grammar)
+    const type = this.effectiveType();
+    if (type === 'grammar') {
+      items = items.filter(item => this.grammar.isGrammar(item.word, item.language));
+    } else if (type === 'words') {
+      items = items.filter(item => !this.grammar.isGrammar(item.word, item.language));
     }
 
     // Use debounced search value or external search value

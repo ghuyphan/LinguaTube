@@ -330,7 +330,7 @@
     <aside class="layout-sidebar desktop-only">
         <div class="card unified-sidebar">
             @if (hasPlaylist()) {
-            <!-- Segmented Control Tab Switcher -->
+            <!-- Segmented Control Tab Switcher (Playlist | Words | Grammar) -->
             <div class="sidebar-segmented-bar" role="tablist">
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'playlist'" [class.active]="sidebarTab() === 'playlist'"
                     (click)="sidebarTab.set('playlist')">
@@ -343,14 +343,22 @@
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'vocab'" [class.active]="sidebarTab() === 'vocab'"
                     (click)="sidebarTab.set('vocab')">
                     <app-icon name="book-open" [size]="15" />
-                    <span>{{ i18n.t('vocab.vocabulary') }}</span>
+                    <span>{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
                     @if (currentLangVocabCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
                     }
                 </button>
+                <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'grammar'" [class.active]="sidebarTab() === 'grammar'"
+                    (click)="sidebarTab.set('grammar')">
+                    <app-icon name="bookmark" [size]="15" />
+                    <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
+                    @if (currentLangGrammarCount() > 0) {
+                    <span class="tab-count-pill">{{ currentLangGrammarCount() }}</span>
+                    }
+                </button>
             </div>
 
-            <!-- Tab Content: Keep both alive using hidden to eliminate destruction and layout shifts -->
+            <!-- Tab Content: Keep panes alive using hidden to eliminate destruction and layout shifts -->
             <div class="sidebar-body">
                 <app-playlist-panel class="sidebar-pane" [class.hidden]="sidebarTab() !== 'playlist'"
                     [embedded]="true"
@@ -358,15 +366,48 @@
                     (openMenu)="onOpenPlaylistMenu($event)" />
                 <app-vocabulary-list class="sidebar-pane" [class.hidden]="sidebarTab() !== 'vocab'"
                     [embedded]="true"
+                    [filterType]="'words'"
                     [showHeader]="false"
+                    [showMenu]="true"
+                    (wordSelect)="onSidebarWordSelect($event)" />
+                <app-vocabulary-list class="sidebar-pane" [class.hidden]="sidebarTab() !== 'grammar'"
+                    [embedded]="true"
+                    [filterType]="'grammar'"
+                    [showHeader]="false"
+                    [showMenu]="true"
                     (wordSelect)="onSidebarWordSelect($event)" />
             </div>
             } @else {
-            <!-- No playlist: Show vocab directly inside unified sidebar with its own clean header -->
+            <!-- No playlist: Dedicated segmented switcher between Words and Grammar -->
+            <div class="sidebar-segmented-bar" role="tablist">
+                <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() !== 'grammar'" [class.active]="sidebarTab() !== 'grammar'"
+                    (click)="sidebarTab.set('vocab')">
+                    <app-icon name="book-open" [size]="15" />
+                    <span>{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
+                    @if (currentLangVocabCount() > 0) {
+                    <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
+                    }
+                </button>
+                <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'grammar'" [class.active]="sidebarTab() === 'grammar'"
+                    (click)="sidebarTab.set('grammar')">
+                    <app-icon name="bookmark" [size]="15" />
+                    <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
+                    @if (currentLangGrammarCount() > 0) {
+                    <span class="tab-count-pill">{{ currentLangGrammarCount() }}</span>
+                    }
+                </button>
+            </div>
             <div class="sidebar-body">
-                <app-vocabulary-list class="sidebar-pane"
+                <app-vocabulary-list class="sidebar-pane" [class.hidden]="sidebarTab() === 'grammar'"
                     [embedded]="true"
-                    [showHeader]="true"
+                    [filterType]="'words'"
+                    [showHeader]="false"
+                    [showMenu]="true"
+                    (wordSelect)="onSidebarWordSelect($event)" />
+                <app-vocabulary-list class="sidebar-pane" [class.hidden]="sidebarTab() !== 'grammar'"
+                    [embedded]="true"
+                    [filterType]="'grammar'"
+                    [showHeader]="false"
                     [showMenu]="true"
                     (wordSelect)="onSidebarWordSelect($event)" />
             </div>

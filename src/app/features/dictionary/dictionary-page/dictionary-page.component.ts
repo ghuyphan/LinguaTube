@@ -8,6 +8,7 @@ import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabu
 import { DictionaryService } from '../dictionary.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { VocabularyService } from '../../vocabulary';
+import { GrammarService } from '../../../services/grammar.service';
 import { SettingsService, I18nService, AuthService } from '../../../core/services';
 import { WordLevel } from '../../../models';
 
@@ -32,10 +33,10 @@ import { WordLevel } from '../../../models';
           <div class="panel-header">
             <div class="panel-header__row">
               <div class="panel-header__left">
-                <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : 'layers'" [size]="20" class="panel-header__icon" />
-                <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : (i18n.t('vocab.title') || 'Từ vựng') }}</h2>
+                <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : (activeTab() === 'vocab' ? 'layers' : 'bookmark')" [size]="20" class="panel-header__icon" />
+                <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : (activeTab() === 'vocab' ? (i18n.t('vocab.filterWords') || i18n.t('vocab.title')) : (i18n.t('grammar.grammar') || 'Grammar')) }}</h2>
               </div>
-              @if (activeTab() === 'vocab') {
+              @if (activeTab() !== 'dictionary') {
                 <!-- Mobile-only: Options in header -->
                 <button
                   type="button"
@@ -52,7 +53,7 @@ import { WordLevel } from '../../../models';
           <!-- Segmented View Tabs & Search Toolbar (Unified toolbar inside card, matches playlist & history) -->
           <div class="panel-toolbar">
             <div class="panel-toolbar__top">
-              <div class="segmented-control" style="--tab-count: 2;" [style.--active-index]="activeTab() === 'dictionary' ? 0 : 1" role="tablist">
+              <div class="segmented-control" style="--tab-count: 3;" [style.--active-index]="activeTab() === 'dictionary' ? 0 : (activeTab() === 'vocab' ? 1 : 2)" role="tablist">
                 <button 
                   type="button" 
                   class="segmented-control__item" 
@@ -73,16 +74,29 @@ import { WordLevel } from '../../../models';
                   (click)="activeTab.set('vocab')"
                   role="tab"
                   [attr.aria-selected]="activeTab() === 'vocab'"
-                  [attr.aria-label]="i18n.t('vocab.title')"
-                  [title]="i18n.t('vocab.title')"
+                  [attr.aria-label]="i18n.t('vocab.filterWords') || i18n.t('vocab.title')"
+                  [title]="i18n.t('vocab.filterWords') || i18n.t('vocab.title')"
                 >
                   <app-icon name="layers" [size]="14" />
-                  <span>{{ i18n.t('vocab.title') }}</span>
+                  <span>{{ i18n.t('vocab.filterWords') || i18n.t('vocab.title') }}</span>
+                </button>
+                <button 
+                  type="button" 
+                  class="segmented-control__item" 
+                  [class.active]="activeTab() === 'grammar'"
+                  (click)="activeTab.set('grammar')"
+                  role="tab"
+                  [attr.aria-selected]="activeTab() === 'grammar'"
+                  [attr.aria-label]="i18n.t('grammar.grammar') || 'Grammar'"
+                  [title]="i18n.t('grammar.grammar') || 'Grammar'"
+                >
+                  <app-icon name="bookmark" [size]="14" />
+                  <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
                 </button>
               </div>
 
               <!-- Desktop-only: Inline with tabs -->
-              @if (activeTab() === 'vocab') {
+              @if (activeTab() !== 'dictionary') {
                 <div class="panel-toolbar__actions desktop-only">
                   <button
                     type="button"
@@ -96,7 +110,7 @@ import { WordLevel } from '../../../models';
               }
             </div>
 
-            <div class="panel-toolbar__filters" [class.panel-toolbar__filters--stacked]="activeTab() === 'vocab'">
+            <div class="panel-toolbar__filters" [class.panel-toolbar__filters--stacked]="activeTab() !== 'dictionary'">
               @if (activeTab() === 'dictionary') {
                 <div class="panel-search-wrapper">
                   <div class="app-search-box">
@@ -201,11 +215,24 @@ import { WordLevel } from '../../../models';
               [showHeader]="false"
               [showMenu]="true"
               [embedded]="true"
+              [filterType]="'words'"
               [showToolbar]="false"
               [externalSearch]="vocabSearchQuery()"
               [externalLevel]="selectedVocabLevel()"
               (wordSelect)="onVocabWordSelect($event.surface)"
               (addWordRequest)="onAddWordRequest($event)"
+            />
+          </div>
+          <div class="tab-content-enter" [hidden]="activeTab() !== 'grammar'">
+            <app-vocabulary-list 
+              #grammarList
+              [showHeader]="false"
+              [showMenu]="true"
+              [embedded]="true"
+              [filterType]="'grammar'"
+              [showToolbar]="false"
+              [externalSearch]="vocabSearchQuery()"
+              [externalLevel]="selectedVocabLevel()"
             />
           </div>
         </div>
@@ -483,16 +510,18 @@ import { WordLevel } from '../../../models';
 })
 export class DictionaryPageComponent {
   readonly panel = viewChild(DictionaryPanelComponent);
-  readonly vocabList = viewChild(VocabularyListComponent);
+  readonly vocabList = viewChild<VocabularyListComponent>('vocabList');
+  readonly grammarList = viewChild<VocabularyListComponent>('grammarList');
 
   private vocab = inject(VocabularyService);
   private dictionary = inject(DictionaryService);
+  private grammar = inject(GrammarService);
   private route = inject(ActivatedRoute);
   settings = inject(SettingsService);
   i18n = inject(I18nService);
   auth = inject(AuthService);
 
-  activeTab = signal<'dictionary' | 'vocab'>('dictionary');
+  activeTab = signal<'dictionary' | 'vocab' | 'grammar'>('dictionary');
 
   dictSearchQuery = '';
 
@@ -500,12 +529,23 @@ export class DictionaryPageComponent {
   selectedVocabLevel = signal<WordLevel | 'all'>('all');
 
   openVocabMenu(): void {
-    this.vocabList()?.openMenuSheet();
+    if (this.activeTab() === 'grammar') {
+      this.grammarList()?.openMenuSheet();
+    } else {
+      this.vocabList()?.openMenuSheet();
+    }
   }
 
   vocabLevelCounts = computed(() => {
     const lang = this.settings.language();
-    const items = this.vocab.vocabulary().filter(w => w.language === lang);
+    this.grammar.loadedLanguages();
+    const tab = this.activeTab();
+    let items = this.vocab.vocabulary().filter(w => w.language === lang);
+    if (tab === 'grammar') {
+      items = items.filter(w => this.grammar.isGrammar(w.word, w.language));
+    } else if (tab === 'vocab') {
+      items = items.filter(w => !this.grammar.isGrammar(w.word, w.language));
+    }
     return {
       all: items.length,
       new: items.filter(w => w.level === 'new').length,

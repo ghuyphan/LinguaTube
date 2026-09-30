@@ -331,7 +331,10 @@
     "deleteSuccess": "已删除“{{word}}”",
     "saveSuccess": "已将“{{word}}”添加到生词本",
     "addWord": "添加生词",
-    "syncHint": "登录 Google 账号，在多个设备间同步生词本。"
+    "syncHint": "登录 Google 账号，在多个设备间同步生词本。",
+    "filterAll": "全部",
+    "filterWords": "单词",
+    "filterGrammar": "语法"
   },
   "popup": {
     "translationLang": "翻译语言",
@@ -349,12 +352,18 @@
     "retry": "重试"
   },
   "grammar": {
+    "grammar": "语法",
+    "ruleDetails": "语法详情",
     "mode": "语法",
     "formation": "接续方式",
     "explanation": "语法详解",
     "examples": "例句",
     "level": "等级",
     "savePattern": "保存语法",
+    "saved": "已保存",
+    "saveSuccess": "已将“{{pattern}}”添加到语法本",
+    "noGrammarSaved": "暂无保存的语法",
+    "clickGrammarToSave": "在观看视频或查词典时保存语法，即可在此处复习。",
     "moreDetails": "更多详情"
   },
   "dictionary": {
@@ -532,7 +541,15 @@
     "searchQueue": "搜索待复习生词...",
     "noCardsInQueue": "暂无待复习卡片",
     "nextReview": "下次复习",
-    "dueNow": "已到期"
+    "dueNow": "已到期",
+    "filterAll": "全部",
+    "filterWords": "单词",
+    "filterGrammar": "语法",
+    "inspectRule": "查看语法详情",
+    "deckWords": "单词",
+    "deckGrammar": "语法",
+    "noGrammar": "暂无待复习的语法",
+    "noGrammarHint": "在观看视频时保存语法以建立复习卡组。"
   },
   "streak": {
     "dayStreak": "连续打卡",

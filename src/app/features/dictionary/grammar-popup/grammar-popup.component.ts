@@ -51,7 +51,7 @@ export class GrammarPopupComponent {
             sentence
         );
 
-        const msg = this.i18n.t('vocab.saveSuccess', { word: p.pattern }) || `Added "${p.pattern}" to vocabulary`;
+        const msg = this.i18n.t('grammar.saveSuccess', { pattern: p.pattern }) || this.i18n.t('vocab.saveSuccess', { word: p.pattern }) || `Added "${p.pattern}" to grammar notebook`;
         this.toast.success(msg);
     }
 

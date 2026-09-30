@@ -331,7 +331,10 @@
     "deleteSuccess": "Deleted \"{{word}}\"",
     "saveSuccess": "Added \"{{word}}\" to vocabulary",
     "addWord": "Add Word",
-    "syncHint": "Sign in to sync your vocabulary across devices."
+    "syncHint": "Sign in to sync your vocabulary across devices.",
+    "filterAll": "All",
+    "filterWords": "Words",
+    "filterGrammar": "Grammar"
   },
   "popup": {
     "translationLang": "Translation Language",
@@ -349,12 +352,18 @@
     "retry": "Retry"
   },
   "grammar": {
+    "grammar": "Grammar",
+    "ruleDetails": "Rule Details",
     "mode": "Grammar",
     "formation": "Formation",
     "explanation": "Explanation",
     "examples": "Examples",
     "level": "Level",
     "savePattern": "Save Grammar",
+    "saved": "Saved",
+    "saveSuccess": "Added \"{{pattern}}\" to grammar notebook",
+    "noGrammarSaved": "No grammar patterns saved yet",
+    "clickGrammarToSave": "Save grammar patterns while watching videos or browsing the dictionary to practice them here.",
     "moreDetails": "More details"
   },
   "dictionary": {
@@ -532,7 +541,15 @@
     "searchQueue": "Search queue...",
     "noCardsInQueue": "No cards in queue",
     "nextReview": "Next review",
-    "dueNow": "Due now"
+    "dueNow": "Due now",
+    "filterAll": "All Items",
+    "filterWords": "Words",
+    "filterGrammar": "Grammar",
+    "inspectRule": "View Rule Details",
+    "deckWords": "Words",
+    "deckGrammar": "Grammar",
+    "noGrammar": "No grammar patterns to study",
+    "noGrammarHint": "Save grammar patterns while watching videos to build your review deck."
   },
   "streak": {
     "dayStreak": "Streak",

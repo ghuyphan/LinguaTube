@@ -331,7 +331,10 @@
     "deleteSuccess": "「{{word}}」を削除しました",
     "saveSuccess": "「{{word}}」を単語帳に追加しました",
     "addWord": "単語を追加",
-    "syncHint": "Googleでログインして、単語帳を他のデバイスと同期。"
+    "syncHint": "Googleでログインして、単語帳を他のデバイスと同期。",
+    "filterAll": "すべて",
+    "filterWords": "単語",
+    "filterGrammar": "文法"
   },
   "popup": {
     "translationLang": "翻訳言語",
@@ -349,12 +352,18 @@
     "retry": "再試行"
   },
   "grammar": {
+    "grammar": "文法",
+    "ruleDetails": "文法の詳細",
     "mode": "文法",
     "formation": "接続",
     "explanation": "解説",
     "examples": "例文",
     "level": "レベル",
     "savePattern": "文法を保存",
+    "saved": "保存済み",
+    "saveSuccess": "「{{pattern}}」を文法ノートに追加しました",
+    "noGrammarSaved": "保存された文法はありません",
+    "clickGrammarToSave": "動画の視聴中や辞書検索時に文法を保存すると、ここで復習できます。",
     "moreDetails": "詳細"
   },
   "dictionary": {
@@ -532,7 +541,15 @@
     "searchQueue": "復習リストを検索...",
     "noCardsInQueue": "復習待ちのカードはありません",
     "nextReview": "次の復習",
-    "dueNow": "今すぐ復習"
+    "dueNow": "今すぐ復習",
+    "filterAll": "すべて",
+    "filterWords": "単語",
+    "filterGrammar": "文法",
+    "inspectRule": "文法の詳細を見る",
+    "deckWords": "単語",
+    "deckGrammar": "文法",
+    "noGrammar": "復習する文法がありません",
+    "noGrammarHint": "動画を見ながら文法を保存して復習デッキを作成しましょう。"
   },
   "streak": {
     "dayStreak": "連続記録",

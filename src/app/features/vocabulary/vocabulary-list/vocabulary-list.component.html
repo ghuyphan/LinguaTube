@@ -4,9 +4,9 @@
     <div class="panel-header">
         <div class="panel-header__row">
             <div class="panel-header__left">
-                <app-icon name="layers" [size]="18" class="panel-header__icon" />
-                <h3 class="panel-header__title">{{ i18n.t('vocab.title') }}</h3>
-                <span class="badge badge--primary">{{ currentLangVocabCount() }}</span>
+                <app-icon [name]="effectiveType() === 'grammar' ? 'bookmark' : 'layers'" [size]="18" class="panel-header__icon" />
+                <h3 class="panel-header__title">{{ displayTitle() }}</h3>
+                <span class="badge badge--primary">{{ displayCount() }}</span>
             </div>
             <button type="button" class="panel-header__link" (click)="openDictionary()" [title]="i18n.t('dictionary.title')">
                 <span>{{ i18n.t('dictionary.title') }}</span>
@@ -40,6 +40,35 @@
             </div>
             }
         </div>
+
+        <!-- Type Filter Chips (Shown when saved grammar items exist and filterType is all) -->
+        @if (filterType() === 'all' && typeCounts().grammar > 0) {
+        <div class="filter-scroll-strip" style="width: 100%; margin-top: 4px;">
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedType() === 'all'"
+                    (click)="selectedType.set('all')">
+                <span>{{ i18n.t('vocab.filterAll') || 'All' }}</span>
+                <span class="chip-count">{{ typeCounts().all }}</span>
+            </button>
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedType() === 'words'"
+                    (click)="selectedType.set('words')">
+                <app-icon name="type" [size]="13" />
+                <span>{{ i18n.t('vocab.filterWords') || 'Words' }}</span>
+                <span class="chip-count">{{ typeCounts().words }}</span>
+            </button>
+            <button type="button" 
+                    class="filter-chip" 
+                    [class.active]="selectedType() === 'grammar'"
+                    (click)="selectedType.set('grammar')">
+                <app-icon name="bookmark" [size]="13" />
+                <span>{{ i18n.t('vocab.filterGrammar') || 'Grammar' }}</span>
+                <span class="chip-count">{{ typeCounts().grammar }}</span>
+            </button>
+        </div>
+        }
 
         <!-- Level Filter Chips (Unified with app-wide filter-scroll-strip standard) -->
         <div class="filter-scroll-strip" style="width: 100%; margin-top: 4px;">
@@ -98,18 +127,32 @@
             }
         </div>
         } @else if (filteredWords().length === 0) {
-        @if (currentLangVocabCount() === 0) {
-        <app-empty-state
-            icon="layers"
-            [title]="i18n.t('vocab.noWordsSaved')"
-            [description]="i18n.t('vocab.clickWordsToSave')"
-            [compact]="isCompactEmptyState()"
-        >
-            <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
-                <app-icon name="search" [size]="isCompactEmptyState() ? 12 : 14" />
-                <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
-            </button>
-        </app-empty-state>
+        @if (displayCount() === 0) {
+            @if (effectiveType() === 'grammar') {
+            <app-empty-state
+                icon="bookmark"
+                [title]="i18n.t('grammar.noGrammarSaved') || 'No grammar patterns saved yet'"
+                [description]="i18n.t('grammar.clickGrammarToSave') || 'Save grammar patterns while watching videos or browsing the dictionary to practice them here.'"
+                [compact]="isCompactEmptyState()"
+            >
+                <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
+                    <app-icon name="search" [size]="isCompactEmptyState() ? 12 : 14" />
+                    <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
+                </button>
+            </app-empty-state>
+            } @else {
+            <app-empty-state
+                icon="layers"
+                [title]="i18n.t('vocab.noWordsSaved')"
+                [description]="i18n.t('vocab.clickWordsToSave')"
+                [compact]="isCompactEmptyState()"
+            >
+                <button type="button" class="btn btn-primary btn-sm empty-state__action search-in-dict-btn" (click)="searchInDictionary()">
+                    <app-icon name="search" [size]="isCompactEmptyState() ? 12 : 14" />
+                    <span>{{ i18n.t('dictionary.searchInDict') || 'Search Dictionary' }}</span>
+                </button>
+            </app-empty-state>
+            }
         } @else {
         <app-empty-state
             icon="search"
@@ -139,6 +182,9 @@
                         <span class="vocab-item__word" [class]="'text-' + item.language">
                             {{ item.word }}
                         </span>
+                        @if (isGrammarItem(item)) {
+                        <span class="badge badge--grammar">{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
+                        }
                         @if (getItemReading(item); as reading) {
                             @if (reading !== item.word) {
                             <span class="vocab-item__reading" [title]="reading">{{ reading }}</span>

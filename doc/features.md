@@ -401,7 +401,8 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
   - Indexes English contractions (`isn't`, `aren't`, `don't`, `doesn't`, `I'm`, `you're`) while preserving single quotes so contractions don't fail dictionary lookups.
 - **Comprehensive Dynamic Translation Packs (100% Full UI Language Parity)**:
   Grammar definitions are 100% translated across all learning languages and UI languages (JA, KO, ZH, EN into VI, ZH, KO, JA plus native-to-native explanations `ja_ja`, `ko_ko`, `zh_zh`), covering all 2,401 grammar patterns and 9,604 individual `GrammarTranslation` datasets. Every single pattern features fully localized titles, concise summaries, in-depth pedagogical explanations, 100% native grammatical terminology in formation formulas (Danh từ/Động từ, 名词/动词, 名詞/動詞, 명사/동사 with zero leftover English placeholders), and completely translated example sentences. Translation packs are code-split and dynamically imported on demand by `GrammarService` to preserve a sub-100KB initial bundle size. When a video's subtitles load, `GrammarService.preloadPatterns` automatically pre-fetches the single translation pack for the user's active UI language in the background, ensuring 0ms zero-flash popup display on the very first tap.
-- **Grammar Popup UI (`GrammarPopupComponent`)**: Hosted inside `BottomSheetComponent` with smooth dynamic height transitions as users explore formation rules, alternative explanations, or translated example sentences.
+- **Grammar Popup UI (`GrammarPopupComponent`)**: Hosted inside `BottomSheetComponent` with smooth dynamic height transitions as users explore formation rules, alternative explanations, or translated example sentences. Mounted globally in `AppComponent` under `@defer (when grammar.isPopupVisible(); prefetch on idle)` so that any component (video player, dictionary, vocabulary notebook, flashcards) can invoke `GrammarService.showPopup(pattern)` with 0ms overhead.
+- **1-Tap Grammar Saving**: Grammar popup features a dedicated "Save Grammar" (`savePattern`) action that captures the rule pattern, formation, and example sentence context into the user's notebook with localized toast feedback (`grammar.saveSuccess`).
 
 ---
 
@@ -471,10 +472,20 @@ Learners can enable "Auto-play audio" in study settings to have authentic dictio
 - **Streamlined Ergonomics**: Essential keyboard shortcuts (`Space` to flip, `1-4` to grade, `R` to replay audio, `P` to peek reading, `V` to open scene) are presented in a quiet, non-intrusive footer hint bar.
 - **Mobile Swipe Physics**: Enhanced swipe gestures with rotation physics and watermark feedback tags (red "Again" on left swipe, green "Good" on right swipe).
 
-### 7.9. Streamlined Architecture & Memory Optimizations
-- **Shared Reactive State**: Daily goal progress (`goalProgress`) and due-card count calculations (`getDueCountByLanguage`) are unified in `VocabularyService`, eliminating duplicate filter closures between study components and sidebars.
-- **Zero-Wrapper Card Queue**: The study queue directly processes `VocabularyItem` arrays without wrapper object allocations during session initialization, failed-card recycling, or missed-card re-study.
-- **Full Metadata Undo Restoration**: When a user undoes a word deletion from the notebook, all captured sentence context, audio references, source video ID, and timestamp offsets are restored without data loss.
+### 7.10. Dedicated Grammar Study Decks & Separated Notebook Architecture
+To ensure language learners can re-learn and systematically reinforce both vocabulary words and grammatical sentence patterns without cognitive clutter:
+- **Dedicated Notebook Tabs**:
+  - In `/dictionary`: 3-tab segmented control `[ Dictionary | Words | Grammar ]`, giving users a dedicated view of their saved grammar rules, complete with JLPT/HSK/CEFR level filter chips, grammar count badges, and contextual empty states.
+  - In `/video` sidebar: Context-sensitive segmented tabs `[ Playlist | Words | Grammar ]` (or `[ Words | Grammar ]` when no playlist is active), allowing learners to review and manage words and grammar rules separately per video.
+- **Dual Study Decks in Practice Mode (`/study`)**:
+  - Segmented deck switcher `[ Words Deck (count) | Grammar Deck (count) ]` with independent 3-deck counters (`New`, `Learning`, `Known`), due today counts, and contextual empty states.
+  - Selecting the Grammar deck filters flashcard sessions strictly to saved grammar patterns.
+- **Rich Grammar Flashcard Face & Rule Inspection**:
+  - Front and back card top bars render dedicated `.badge--grammar` tags alongside the grammar level (e.g., `N3`, `HSK 4`).
+  - Flashcard back reveals the syntax formation rule box (`.card-formation-box`) and an interactive **`[ View Rule Details ]`** button (`.card-grammar-inspect-btn`) which opens the full `GrammarPopupComponent` bottom sheet directly from the card.
+- **Zero Schema Migrations (Deterministic Pattern Matching)**:
+  - Leverages `VocabularyItem`'s existing structure (`item.word` stores the pattern string, `item.sourceSentence` stores context).
+  - `GrammarService.findPattern()` normalizes and matches saved items against built-in catalogs (`GRAMMAR_JA`, `GRAMMAR_ZH`, `GRAMMAR_KO`, `GRAMMAR_EN`), automatically recognizing saved grammar rules retroactively across both client storage and Supabase cloud sync without requiring database schema changes.
 
 ---
 

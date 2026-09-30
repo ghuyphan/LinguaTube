@@ -56,7 +56,7 @@
             @if (isSaved()) {
             <button class="btn btn-secondary saved-btn" disabled>
                 <app-icon name="check" [size]="14" />
-                <span>{{ i18n.t('popup.saved') || 'Saved' }}</span>
+                <span>{{ i18n.t('grammar.saved') || i18n.t('popup.saved') || 'Saved' }}</span>
             </button>
             } @else {
             <button class="btn btn-primary" (click)="saveToVocabulary()">

@@ -859,6 +859,55 @@ export class GrammarService {
     }
 
     /**
+     * Ensure patterns are loaded for a language (async)
+     */
+    ensurePatternsLoaded(lang: SupportedGrammarLang): Promise<GrammarPattern[]> {
+        return this.loadPatterns(lang);
+    }
+
+    /**
+     * Find a registered grammar pattern by ID, exact pattern text, or normalized pattern
+     */
+    findPattern(wordOrPattern: string, lang: string): GrammarPattern | undefined {
+        if (!wordOrPattern || !['ja', 'zh', 'ko', 'en'].includes(lang)) return undefined;
+        const gLang = lang as SupportedGrammarLang;
+        const patterns = this.getPatterns(gLang);
+        if (!patterns.length) {
+            // Trigger background load if not yet cached
+            this.preloadPatterns(gLang);
+            return undefined;
+        }
+
+        const clean = wordOrPattern.trim();
+        // 1. Direct ID, pattern, or title match
+        let found = patterns.find(p => p.id === clean || p.pattern === clean || p.title === clean);
+        if (found) return found;
+
+        // 2. Normalized match (stripping 〜, ~, placeholders)
+        const normKey = this.normalizePattern(clean, gLang, true);
+        if (normKey) {
+            found = patterns.find(p => this.normalizePattern(p.pattern, gLang, true) === normKey);
+            if (found) return found;
+
+            // 3. Fallback: check index
+            const index = this.getIndex(gLang);
+            if (index) {
+                const list = index.get(normKey);
+                if (list?.length) return list[0];
+            }
+        }
+
+        return undefined;
+    }
+
+    /**
+     * Check if a word or pattern matches a registered grammar rule
+     */
+    isGrammar(wordOrPattern: string, lang: string): boolean {
+        return !!this.findPattern(wordOrPattern, lang);
+    }
+
+    /**
      * Show grammar popup
      */
     showPopup(pattern: GrammarPattern): void {

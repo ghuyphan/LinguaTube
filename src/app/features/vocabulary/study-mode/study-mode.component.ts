@@ -9,6 +9,7 @@ import { EmptyStateComponent } from '../../../shared/components/empty-state/empt
 import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService, ToastService, KeyboardShortcutService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
+import { GrammarService } from '../../../services/grammar.service';
 import { SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
 import { calculateSRSPreview, SRSIntervalPreview } from '../../../core/utils';
 import { getReadingDisplayLabel } from '../../../shared/utils/language.utils';
@@ -37,9 +38,13 @@ export class StudyModeComponent implements OnDestroy {
     settings = inject(SettingsService);
     i18n = inject(I18nService);
     streak = inject(StreakService);
+    grammar = inject(GrammarService);
     audioService = inject(AudioService);
     toast = inject(ToastService);
     keyboardService = inject(KeyboardShortcutService);
+
+    // Study Deck Selection: words vs grammar
+    studyDeck = signal<'words' | 'grammar'>('words');
 
     // Options (reactive signals)
     includeNew = signal(true);
@@ -75,7 +80,7 @@ export class StudyModeComponent implements OnDestroy {
 
     // Confetti
     showConfetti = signal(false);
-    private confettiTimeout: ReturnType<typeof setTimeout> | null = null;
+    private confettiTimeout: ReturnType<typeof setInterval> | null = null;
 
     // Swipe gestures
     touchStartX = 0;
@@ -87,23 +92,76 @@ export class StudyModeComponent implements OnDestroy {
     isSwiping = signal(false);
 
     currentLanguage = this.settings.language;
-    deckStats = computed(() => this.vocab.getStatsByLanguage(this.currentLanguage()));
+
+    deckCounts = computed(() => {
+        const currentLang = this.currentLanguage();
+        this.grammar.loadedLanguages();
+        const items = this.vocab.vocabulary().filter(item => item.language === currentLang);
+        let wordsCount = 0;
+        let grammarCount = 0;
+        for (const item of items) {
+            if (this.grammar.isGrammar(item.word, item.language)) {
+                grammarCount++;
+            } else {
+                wordsCount++;
+            }
+        }
+        return {
+            words: wordsCount,
+            grammar: grammarCount
+        };
+    });
+
+    deckStats = computed(() => {
+        const currentLang = this.currentLanguage();
+        this.grammar.loadedLanguages();
+        const deck = this.studyDeck();
+        let items = this.vocab.vocabulary().filter(item => item.language === currentLang);
+        if (deck === 'words') {
+            items = items.filter(item => !this.grammar.isGrammar(item.word, item.language));
+        } else {
+            items = items.filter(item => this.grammar.isGrammar(item.word, item.language));
+        }
+        return {
+            total: items.length,
+            new: items.filter(item => item.level === 'new').length,
+            learning: items.filter(item => item.level === 'learning').length,
+            known: items.filter(item => item.level === 'known').length,
+            ignored: items.filter(item => item.level === 'ignored').length,
+        };
+    });
 
     // Due today count
-    dueToday = computed(() => this.vocab.getDueCountByLanguage(this.currentLanguage()));
+    dueToday = computed(() => {
+        const currentLang = this.currentLanguage();
+        this.grammar.loadedLanguages();
+        const deck = this.studyDeck();
+        const today = new Date();
+        today.setHours(23, 59, 59, 999);
+        return this.vocab.vocabulary().filter(item => {
+            if (item.language !== currentLang || item.level === 'ignored') return false;
+            if (deck === 'words' && this.grammar.isGrammar(item.word, item.language)) return false;
+            if (deck === 'grammar' && !this.grammar.isGrammar(item.word, item.language)) return false;
+            return !item.nextReviewDate || new Date(item.nextReviewDate) <= today;
+        }).length;
+    });
 
     // Filtered available cards based on study preferences
     readonly filteredAvailableItems = computed(() => {
         const currentLang = this.currentLanguage();
+        this.grammar.loadedLanguages();
         const incNew = this.includeNew();
         const incLearning = this.includeLearning();
         const incKnown = this.includeKnown();
         const onlyDue = this.dueOnly();
+        const deck = this.studyDeck();
         const today = new Date();
         today.setHours(23, 59, 59, 999);
 
         return this.vocab.vocabulary().filter(item => {
             if (item.language !== currentLang) return false;
+            if (deck === 'words' && this.grammar.isGrammar(item.word, item.language)) return false;
+            if (deck === 'grammar' && !this.grammar.isGrammar(item.word, item.language)) return false;
             if (onlyDue && item.nextReviewDate && new Date(item.nextReviewDate) > today) return false;
             if (item.level === 'new' && incNew) return true;
             if (item.level === 'learning' && incLearning) return true;
@@ -135,9 +193,14 @@ export class StudyModeComponent implements OnDestroy {
     readonly cardViewModel = computed(() => {
         const item = this.currentCard();
         if (!item) return null;
+        this.grammar.loadedLanguages();
+        const pattern = this.grammar.findPattern(item.word, item.language);
+        const isGrammar = !!pattern || this.studyDeck() === 'grammar';
+        const formation = pattern?.formation || null;
+        const grammarLevel = pattern?.level || null;
         const reading = this.settings.getReadingText(item.language, item);
         const primaryText = this.settings.useReadingOnly(item.language) && reading ? reading : item.word;
-        const hasReading = !!reading && reading !== item.word;
+        const hasReading = !isGrammar && !!reading && reading !== item.word;
         const showReadingBack = hasReading && this.settings.showReadingAnnotation(item.language);
         const showReadingFront = hasReading && this.peekReading();
         const hasContext = !!item.sourceSentence?.trim();
@@ -164,9 +227,21 @@ export class StudyModeComponent implements OnDestroy {
             hasContext,
             maskedSentence,
             sourceVideoId: item.sourceVideoId,
-            sourceTimestamp: item.sourceTimestamp
+            sourceTimestamp: item.sourceTimestamp,
+            isGrammar,
+            pattern,
+            formation,
+            grammarLevel
         };
     });
+
+    openGrammarPattern(event?: Event): void {
+        if (event) event.stopPropagation();
+        const vm = this.cardViewModel();
+        if (vm?.pattern) {
+            this.grammar.showPopup(vm.pattern);
+        }
+    }
 
     readonly intervalPreviews = computed<SRSIntervalPreview>(() => {
         const card = this.currentCard();

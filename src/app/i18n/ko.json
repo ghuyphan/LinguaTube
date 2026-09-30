@@ -331,7 +331,10 @@
     "deleteSuccess": "\"{{word}}\" 삭제 완료",
     "saveSuccess": "\"{{word}}\" 단어장에 추가됨",
     "addWord": "단어 추가",
-    "syncHint": "Google 계정으로 로그인하여 여러 기기에서 단어장을 동기화하세요."
+    "syncHint": "Google 계정으로 로그인하여 여러 기기에서 단어장을 동기화하세요.",
+    "filterAll": "전체",
+    "filterWords": "단어",
+    "filterGrammar": "문법"
   },
   "popup": {
     "translationLang": "번역 언어",
@@ -349,12 +352,18 @@
     "retry": "다시 시도"
   },
   "grammar": {
+    "grammar": "문법",
+    "ruleDetails": "문법 세부사항",
     "mode": "문법",
     "formation": "활용 형태",
     "explanation": "설명",
     "examples": "예문",
     "level": "레벨",
     "savePattern": "문법 저장",
+    "saved": "저장됨",
+    "saveSuccess": "\"{{pattern}}\" 문법 노트에 추가됨",
+    "noGrammarSaved": "저장된 문법이 없어요",
+    "clickGrammarToSave": "동영상을 시청하거나 사전을 찾을 때 문법을 저장하면 여기서 복습할 수 있어요.",
     "moreDetails": "더 보기"
   },
   "dictionary": {
@@ -532,7 +541,15 @@
     "searchQueue": "복습 카드 검색...",
     "noCardsInQueue": "복습할 카드가 없어요",
     "nextReview": "다음 복습",
-    "dueNow": "지금 복습"
+    "dueNow": "지금 복습",
+    "filterAll": "전체",
+    "filterWords": "단어",
+    "filterGrammar": "문법",
+    "inspectRule": "문법 규칙 보기",
+    "deckWords": "단어",
+    "deckGrammar": "문법",
+    "noGrammar": "복습할 문법이 없어요",
+    "noGrammarHint": "동영상을 보며 문법을 저장하여 복습 덱을 만들어 보세요."
   },
   "streak": {
     "dayStreak": "일 연속 학습",

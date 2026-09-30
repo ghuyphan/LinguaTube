@@ -23,14 +23,26 @@
         </div>
 
         @if (deckStats().total === 0) {
-        <!-- Empty State when user has 0 words saved in this language -->
+        <!-- Empty State when user has 0 items in selected deck -->
         <app-empty-state
-            icon="cards"
+            [icon]="studyDeck() === 'grammar' ? 'bookmark' : 'cards'"
             [iconSize]="32"
-            [title]="i18n.t('study.noWords')"
-            [description]="i18n.t('study.noWordsHint')">
+            [title]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammar') || 'No grammar patterns to study') : i18n.t('study.noWords')"
+            [description]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammarHint') || 'Save grammar patterns while watching videos to build your review deck.') : i18n.t('study.noWordsHint')">
             <div class="empty-state__actions">
-                <a routerLink="/video" class="btn btn-primary empty-state__action">
+                @if (studyDeck() === 'grammar' && deckCounts().words > 0) {
+                <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('words')">
+                    <app-icon name="layers" [size]="16" />
+                    <span>{{ i18n.t('study.deckWords') }} ({{ deckCounts().words }})</span>
+                </button>
+                }
+                @if (studyDeck() === 'words' && deckCounts().grammar > 0) {
+                <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('grammar')">
+                    <app-icon name="bookmark" [size]="16" />
+                    <span>{{ i18n.t('study.deckGrammar') }} ({{ deckCounts().grammar }})</span>
+                </button>
+                }
+                <a routerLink="/video" class="btn btn-secondary empty-state__action">
                     <app-icon name="play" [size]="16" />
                     <span>{{ i18n.t('history.exploreVideos') }}</span>
                 </a>
@@ -43,6 +55,26 @@
         } @else {
         <!-- STUDY PRACTICE DASHBOARD -->
         <div class="study-dashboard">
+            <!-- Deck Switcher: Words Deck vs Grammar Deck -->
+            <div class="study-deck-switcher" role="tablist">
+                <button type="button" 
+                        class="study-deck-btn" 
+                        [class.active]="studyDeck() === 'words'"
+                        (click)="studyDeck.set('words')">
+                    <app-icon name="layers" [size]="16" />
+                    <span>{{ i18n.t('study.deckWords') || 'Words' }}</span>
+                    <span class="deck-count-pill">{{ deckCounts().words }}</span>
+                </button>
+                <button type="button" 
+                        class="study-deck-btn" 
+                        [class.active]="studyDeck() === 'grammar'"
+                        (click)="studyDeck.set('grammar')">
+                    <app-icon name="bookmark" [size]="16" />
+                    <span>{{ i18n.t('study.deckGrammar') || 'Grammar' }}</span>
+                    <span class="deck-count-pill">{{ deckCounts().grammar }}</span>
+                </button>
+            </div>
+
             <!-- Compact Due Alert Banner (Only shown when cards are due) -->
             @if (dueToday() > 0) {
                 <div class="study-due-alert">
@@ -252,9 +284,17 @@
                 <!-- Front (Word or Meaning based on reverseMode) -->
                 <div class="flashcard__front">
                     <div class="flashcard-top-bar">
-                        <span class="badge badge--{{ vm.item.level }}">
-                            {{ vm.item.level }}
-                        </span>
+                        <div class="flashcard-top-badges">
+                            <span class="badge badge--{{ vm.item.level }}">
+                                {{ vm.item.level }}
+                            </span>
+                            @if (vm.isGrammar) {
+                            <span class="badge badge--grammar">
+                                <app-icon name="bookmark" [size]="10" />
+                                <span>{{ vm.grammarLevel || (i18n.t('grammar.grammar') || 'Grammar') }}</span>
+                            </span>
+                            }
+                        </div>
                         
                         <div class="flashcard-top-actions">
                             @if (vm.sourceVideoId) {
@@ -324,9 +364,17 @@
                 <!-- Back (Meaning or Word based on reverseMode) -->
                 <div class="flashcard__back">
                     <div class="flashcard-top-bar">
-                        <span class="badge badge--{{ vm.item.level }}">
-                            {{ vm.item.level }}
-                        </span>
+                        <div class="flashcard-top-badges">
+                            <span class="badge badge--{{ vm.item.level }}">
+                                {{ vm.item.level }}
+                            </span>
+                            @if (vm.isGrammar) {
+                            <span class="badge badge--grammar">
+                                <app-icon name="bookmark" [size]="10" />
+                                <span>{{ vm.grammarLevel || (i18n.t('grammar.grammar') || 'Grammar') }}</span>
+                            </span>
+                            }
+                        </div>
 
                         <div class="flashcard-top-actions">
                             @if (vm.sourceVideoId) {
@@ -365,6 +413,23 @@
                             <div class="card-meaning-revealed">
                                 <span class="meaning-text">{{ vm.item.meaning || i18n.t('vocab.noDefinition') }}</span>
                             </div>
+
+                            @if (vm.isGrammar) {
+                                @if (vm.formation) {
+                                <div class="card-formation-box">
+                                    <span class="card-formation-label">{{ i18n.t('grammar.formation') || 'Formation' }}:</span>
+                                    <code class="card-formation-code">{{ vm.formation }}</code>
+                                </div>
+                                }
+                                @if (vm.pattern) {
+                                <button type="button"
+                                        class="btn btn-secondary btn-sm card-grammar-inspect-btn card-action-interactive"
+                                        (click)="openGrammarPattern($event)">
+                                    <app-icon name="book-open" [size]="13" />
+                                    <span>{{ i18n.t('study.inspectRule') || 'View Rule Details' }}</span>
+                                </button>
+                                }
+                            }
                         </div>
 
                         <!-- Context Sentence Quote (Exact same position as Front) -->
