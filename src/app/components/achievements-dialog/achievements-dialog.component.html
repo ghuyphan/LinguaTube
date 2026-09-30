@@ -238,7 +238,7 @@
             <div class="achievement-card" [class.unlocked]="ach.unlocked" [attr.data-tier]="ach.tier">
                 <div class="achievement-card__crest-wrap">
                     <div class="rpg-shield-crest">
-                        <app-icon [name]="toIconName(ach.icon)" [size]="20" class="crest-icon" />
+                        <app-icon [name]="toIconName(ach.icon)" [size]="25" class="crest-icon" />
                     </div>
                     @if (ach.unlocked) {
                         <span class="crest-status-badge is-unlocked" title="Unlocked">

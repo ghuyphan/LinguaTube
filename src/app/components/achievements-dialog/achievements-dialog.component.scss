@@ -467,14 +467,14 @@
 
     .crest-status-badge {
         position: absolute;
-        bottom: 0px;
-        right: 0px;
+        bottom: -2px;
+        right: -2px;
         z-index: 3;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 18px;
-        height: 18px;
+        width: 17px;
+        height: 17px;
         border-radius: 50%;
         border: 1.5px solid var(--bg-secondary);
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
@@ -661,17 +661,45 @@
         }
     }
 
-    // Locked Card State (Forged Dark Iron)
+    // Locked Card State (Forged Dark Iron with Crisp Tier Tint)
     &:not(.unlocked) {
-        --crest-bg: linear-gradient(145deg, #334155 0%, #1e293b 50%, #0f172a 100%);
-        --crest-inner-bg: radial-gradient(circle at 50% 25%, #1e293b 0%, #0b0f19 100%);
-        --crest-inner-border: rgba(255, 255, 255, 0.08);
-        --crest-glow: transparent;
-        --crest-icon-color: #64748b;
-        opacity: 0.78;
+        opacity: 0.92;
+
+        .rpg-shield-crest {
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+        }
 
         .crest-icon {
-            filter: grayscale(0.8) opacity(0.5);
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.85));
+            opacity: 0.95;
+        }
+
+        &[data-tier="bronze"] {
+            --crest-bg: linear-gradient(145deg, #78350f 0%, #451a03 50%, #1e130a 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #451a03 0%, #170802 100%);
+            --crest-inner-border: rgba(245, 158, 11, 0.4);
+            --crest-icon-color: #f59e0b;
+        }
+
+        &[data-tier="silver"] {
+            --crest-bg: linear-gradient(145deg, #64748b 0%, #334155 50%, #0f172a 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #334155 0%, #0b0f19 100%);
+            --crest-inner-border: rgba(226, 232, 240, 0.4);
+            --crest-icon-color: #e2e8f0;
+        }
+
+        &[data-tier="gold"] {
+            --crest-bg: linear-gradient(145deg, #b45309 0%, #78350f 50%, #290e02 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #78350f 0%, #1c0801 100%);
+            --crest-inner-border: rgba(251, 191, 36, 0.45);
+            --crest-icon-color: #fbbf24;
+        }
+
+        &[data-tier="diamond"] {
+            --crest-bg: linear-gradient(145deg, #0284c7 0%, #1e1b4b 50%, #080a14 100%);
+            --crest-inner-bg: radial-gradient(circle at 50% 25%, #0369a1 0%, #060b18 100%);
+            --crest-inner-border: rgba(56, 189, 248, 0.5);
+            --crest-icon-color: #7dd3fc;
         }
     }
 }

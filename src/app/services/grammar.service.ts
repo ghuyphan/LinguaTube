@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
+import { I18nService } from '../core/services/i18n.service';
 import { GrammarPattern, GrammarMatch, GrammarTranslation, SupportedGrammarLang } from '../models/grammar.model';
 import { Token } from '../models';
 
@@ -120,6 +121,8 @@ export class GrammarService {
         zh_ko: async () => (await import('../data/translations/zh/ko')).GRAMMAR_ZH_KO,
         zh_zh: async () => (await import('../data/translations/zh/zh')).GRAMMAR_ZH_ZH,
     };
+
+    private readonly i18n = inject(I18nService);
 
     // Grammar mode toggle
     readonly grammarModeEnabled = signal(true);
@@ -418,12 +421,19 @@ export class GrammarService {
     }
 
     /**
-     * Preload patterns for a language
+     * Preload patterns and active UI translations for a language
      */
     preloadPatterns(lang: SupportedGrammarLang): void {
         this.loadPatterns(lang).catch(() => {
             // Silently fail - patterns will be loaded on demand
         });
+
+        const uiLang = this.i18n.currentLanguage();
+        if (uiLang !== 'en') {
+            this.loadTranslation(lang, uiLang).catch(() => {
+                // Silently fail - translation will be loaded on demand
+            });
+        }
     }
 
     /**
