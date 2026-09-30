@@ -1,0 +1,730 @@
+{
+  "vi": {
+    "ko_아어_110": {
+      "title": "~아/어 놓다 (Làm sẵn, làm trước để đó, duy trì trạng thái)",
+      "shortExplanation": "Cấu trúc bổ trợ biểu thị việc thực hiện trước một hành động nào đó để chuẩn bị cho tương lai, hoặc duy trì trạng thái kết quả của hành động đó sau khi hoàn thành ('làm sẵn...', 'làm xong để đó').",
+      "longExplanation": "'~아/어 놓다' là cấu trúc kết hợp giữa vĩ tố liên kết '-아/어' với trợ động từ '놓다' (đặt, để). Cấu trúc này dùng để diễn đạt: 1) Hành động đã được thực hiện từ trước nhằm chuẩn bị, dự phòng cho một kế hoạch, tình huống trong tương lai; 2) Hành động đã hoàn tất và kết quả hay trạng thái của nó tiếp tục được duy trì, lưu giữ nguyên vẹn. Thường đi kèm với phó từ '미리' (trước) để nhấn mạnh sự chuẩn bị trước.",
+      "formation": "Thân động từ + -아/어 놓다 (nguyên âm ㅏ, ㅗ dùng -아 놓다; các nguyên âm khác dùng -어 놓다; 하다 chuyển thành 해 놓다)",
+      "examples": [
+        {
+          "translation": "Nghĩ rằng sáng mai sẽ bận rộn nên tối nay tôi đã làm sẵn bữa sáng rồi."
+        },
+        {
+          "translation": "Để chuẩn bị cho kỳ thi, trong tuần này tôi đã viết sẵn tất cả các ghi chú bài giảng."
+        },
+        {
+          "translation": "Trước khi đi nghỉ mát, chúng tôi đã dọn dẹp nhà cửa sẵn sàng rồi."
+        },
+        {
+          "translation": "Hôm nay bạn bè sẽ đến chơi nên tôi sẽ nấu sẵn thức ăn từ trước."
+        }
+      ]
+    },
+    "ko_아어_111": {
+      "title": "~아/어 달라다 / ~아/어 달라고 하다 (Yêu cầu làm cho mình, xin hãy làm giúp cho...)",
+      "shortExplanation": "Hình thức trích dẫn gián tiếp khi chuyển tiếp lời thỉnh cầu, yêu cầu ai đó làm một hành động nào đó có lợi cho chính người nói ('xin hãy làm cho tôi', 'nhờ làm giúp').",
+      "longExplanation": "'~아/어 달라다' là dạng biến đổi đặc biệt của động từ '주다' trong câu gián tiếp khi người nói trích dẫn lại lời yêu cầu của mình hoặc của người khác muốn đối phương làm điều gì đó phục vụ cho bản thân người đưa ra yêu cầu (thường xuất hiện dưới dạng '-아/어 달라고 하다/부탁하다/요청하다'). Nếu hành động nhằm phục vụ người thứ ba thì dùng '-아/어 주라고 하다', còn nếu phục vụ chính người yêu cầu thì bắt buộc chuyển thành '-아/어 달라다'.",
+      "formation": "Thân động từ + -아/어 달라다 (-아/어 달라고 하다/부탁하다/말하다)",
+      "examples": [
+        {
+          "translation": "Bạn tôi rất đói bụng nên đã nói rằng 'Hãy mau lấy cơm cho tôi ăn với'."
+        },
+        {
+          "translation": "Tôi bị đau đầu dữ dội nên đã nhờ người ta cho tôi xin ít thuốc giảm đau."
+        },
+        {
+          "translation": "Trong nhà nóng quá nên tôi đã nhờ người bật giúp điều hòa lên."
+        },
+        {
+          "translation": "Cà phê ngon quá nên tôi đã xin người ta cho thêm một ly nữa."
+        }
+      ]
+    },
+    "ko_아어_112": {
+      "title": "~아/어 대다 (Cứ liên tục..., làm tới tấp, mải miết...)",
+      "shortExplanation": "Trợ động từ biểu thị một hành động được lặp đi lặp lại liên tục, dữ dội hoặc làm một cách không suy tính, vẩn vơ, thường mang sắc thái thái quá hoặc gây phiền toái ('cứ liên tục làm...', 'làm tới tấp').",
+      "longExplanation": "'~아/어 대다' là cấu trúc kết hợp vĩ tố liên kết '-아/어' với trợ động từ '대다'. Nó diễn tả một hành động diễn ra liên tục, lặp đi lặp lại nhiều lần với cường độ mạnh mẽ, dồn dập, hoặc làm việc gì đó một cách tùy tiện, thiếu mục đích rõ ràng. Thường mang sắc thái tiêu cực, bực bội hoặc nhấn mạnh mức độ hành động diễn ra quá đà.",
+      "formation": "Thân động từ + -아/어 대다 (nguyên âm ㅏ, ㅗ dùng -아 대다; các nguyên âm khác dùng -어 대다; 하다 chuyển thành 해 대다)",
+      "examples": [
+        {
+          "translation": "Tôi cứ thế đi mua sắm bừa bãi mãi, rốt cuộc lại mua phải một bộ quần áo đắt đỏ."
+        },
+        {
+          "translation": "Dù đang là kỳ thi nhưng anh ấy cứ nhìn chằm chằm vào trang sách vẩn vơ rồi để thời gian trôi qua hết."
+        },
+        {
+          "translation": "Vừa nghe nhạc cô ấy vừa cứ thế rảo bước mãi trên phố để rồi đi lướt qua luôn cả quán ăn."
+        },
+        {
+          "translation": "Vì buồn chán nên tôi cứ lướt mạng linh tinh mãi, rồi mua một cuốn sách từ trang web mà mình vô tình biết được."
+        }
+      ]
+    },
+    "ko_아어_113": {
+      "title": "~아/어 보이다 (Trông có vẻ..., nhìn như...)",
+      "shortExplanation": "Cấu trúc kết hợp với tính từ để biểu thị sự phán đoán hoặc cảm nhận của người nói dựa trên vẻ bề ngoài của đối tượng ('trông có vẻ...', 'nhìn có vẻ...').",
+      "longExplanation": "'~아/어 보이다' kết hợp với thân tính từ để miêu tả ấn tượng, phán đoán của người nói dựa vào ngoại hình hoặc các biểu hiện bên ngoài của người hoặc sự vật. Nó không khẳng định bản chất thực sự của sự việc mà chỉ nêu lên cảm nhận thị giác hoặc cảm quan chủ quan ('trông có vẻ như thế, nhưng thực tế có thể không phải vậy').",
+      "formation": "Thân tính từ + -아/어 보이다 (nguyên âm ㅏ, ㅗ dùng -아 보이다; các nguyên âm khác dùng -어 보이다; 하다 chuyển thành 해 보이다)",
+      "examples": [
+        {
+          "translation": "Người phụ nữ đó trông có vẻ rất hạnh phúc, nhưng thực tế có lẽ đang phải chịu áp lực vô cùng lớn."
+        },
+        {
+          "translation": "Hôm nay thời tiết trông đẹp quá nhỉ, có vẻ là một ngày rất tuyệt để ra ngoài."
+        },
+        {
+          "translation": "Chiếc bánh ngọt này trông có vẻ ngọt sắc, nhưng thực tế thì không ngọt đến mức như vậy đâu."
+        },
+        {
+          "translation": "Bạn tôi bảo trông tôi có vẻ mệt mỏi, thế nhưng bản thân tôi lại không hề cảm thấy như thế."
+        }
+      ]
+    },
+    "ko_아어_114": {
+      "title": "~아/어서는 (Làm... thế mà, cứ ngỡ... nhưng lại...)",
+      "shortExplanation": "Vĩ tố liên kết kết hợp trợ từ đối chiếu, diễn tả một hành động hay nguyên nhân phía trước dẫn đến một kết quả hoàn toàn trái ngược với kỳ vọng ('làm... thế mà lại...', 'cứ nghĩ... nhưng rốt cuộc...').",
+      "longExplanation": "'~아/어서는' là sự kết hợp giữa vĩ tố liên kết chỉ nguyên nhân hoặc trình tự thời gian '-아/어서' với trợ từ đối chiếu, nhấn mạnh '-는'. Cấu trúc này dùng để đặt ra tiền đề là một hành động đã được tiến hành hoặc một lý do cụ thể ở mệnh đề trước, nhưng mệnh đề sau lại đưa ra một kết quả thực tế tương phản, bất ngờ hoặc trái ngược hẳn với mong đợi ban đầu. Thường mang sắc thái tiếc nuối, thất vọng hoặc phân trần.",
+      "formation": "Thân động từ/tính từ + -아/어서는 (nguyên âm ㅏ, ㅗ dùng -아서는; các nguyên âm khác dùng -어서는; 하다 chuyển thành 해서는)",
+      "examples": [
+        {
+          "translation": "Nghe bảo thời tiết lạnh nên tôi đã không đi ra ngoài, thế mà thực tế thì lại chẳng lạnh đến mức ấy."
+        },
+        {
+          "translation": "Tôi đã chăm chỉ đến phòng tập thể hình để tập luyện, thế mà cân nặng hầu như chẳng giảm đi chút nào."
+        },
+        {
+          "translation": "Tôi đã ra sức học tập để mong đạt điểm cao trong kỳ thi, thế nhưng kết quả nhận lại lại chẳng tốt đẹp gì."
+        },
+        {
+          "translation": "Tôi đã cố học thuộc lòng và cứ nghĩ là mình biểu diễn tốt, thế mà lúc diễn lại mắc rất nhiều lỗi sai."
+        }
+      ]
+    },
+    "ko_아어야만_115": {
+      "title": "~아/어야만 (Chỉ khi... mới có thể..., nhất thiết phải...)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả điều kiện tiên quyết duy nhất, biểu thị rằng chỉ khi thỏa mãn hành động hoặc trạng thái ở vế trước thì vế sau mới có thể xảy ra ('chỉ khi... mới...').",
+      "longExplanation": "'~아/어야만' là dạng nhấn mạnh của vĩ tố liên kết điều kiện '-아/어야', bằng cách gắn thêm trợ từ hạn định độc quyền '-만' (chỉ, duy nhất). Cấu trúc này khẳng định rằng điều kiện ở mệnh đề trước là yêu cầu bắt buộc tối thiểu duy nhất; nếu không đáp ứng được điều kiện đó thì tuyệt đối không thể thực hiện hành động hoặc đạt được kết quả ở mệnh đề sau.",
+      "formation": "Thân động từ/tính từ + -아/어야만 (nguyên âm ㅏ, ㅗ dùng -아야만; các nguyên âm khác dùng -어야만; 하다 chuyển thành 해야만)",
+      "examples": [
+        {
+          "translation": "Bạn phải tốt nghiệp trung học phổ thông thì mới có thể vào học đại học được."
+        },
+        {
+          "translation": "Đối với bộ phim đó, bạn nhất thiết phải đặt vé trước thì mới có thể xem được."
+        },
+        {
+          "translation": "Muốn đạt được mục tiêu thì bạn chỉ có cách làm việc chăm chỉ mỗi ngày mà thôi."
+        },
+        {
+          "translation": "Muốn đến nơi đó thì bạn buộc phải đi xe buýt, chứ không thể đi bằng tàu điện ngầm được."
+        }
+      ]
+    },
+    "ko_아어지다_116": {
+      "title": "~아/어지다 (Trở nên..., dần chuyển sang trạng thái...)",
+      "shortExplanation": "Vĩ tố phái sinh kết hợp với tính từ để biểu thị sự biến đổi dần dần sang một trạng thái mới ('trở nên...', 'trở thành...').",
+      "longExplanation": "'~아/어지다' là cấu trúc biến đổi tính từ thành động từ chỉ sự thay đổi trạng thái (hoặc kết hợp với động từ để tạo thể bị động). Khi đi cùng tính từ, cấu trúc này diễn tả một quá trình chủ ngữ chuyển dịch, biến hóa dần từ trạng thái này sang một trạng thái mới theo thời gian ('trở nên lạnh hơn', 'trở nên bận rộn').",
+      "formation": "Thân tính từ + -아/어지다 (nguyên âm ㅏ, ㅗ dùng -아지다; các nguyên âm khác dùng -어지다; 하다 chuyển thành 해지다)",
+      "examples": [
+        {
+          "translation": "Thời tiết đột ngột trở lạnh nên tôi đã phải bật lò sưởi lên."
+        },
+        {
+          "translation": "Năm ngoái tôi làm việc quá nhiều nên người mệt mỏi, lại không còn cả thời gian nghỉ ngơi nên thực sự rất vất vả."
+        },
+        {
+          "translation": "Vì bạn tôi trở nên bận rộn hơn nên chúng tôi không còn có thể thường xuyên gặp nhau được nữa."
+        },
+        {
+          "translation": "Thức ăn nhiều lên quá mức nên tôi không thể nào ăn hết trong một bữa được."
+        }
+      ]
+    },
+    "ko_았었_117": {
+      "title": "~았/었던 (Đã từng..., hồi tưởng việc đã hoàn tất trong quá khứ)",
+      "shortExplanation": "Định ngữ hồi tưởng quá khứ, dùng để bổ nghĩa cho danh từ phía sau bằng việc gợi nhớ lại một hành động, sự việc đã hoàn tất trọn vẹn hoặc đã kết thúc trong quá khứ ('từng...', 'đã từng...').",
+      "longExplanation": "'~았/었던' là cấu trúc định ngữ hồi tưởng được cấu tạo từ vĩ tố thời quá khứ '-았/었-' kết hợp với vĩ tố định ngữ hồi tưởng '-던'. Cấu trúc này dùng để bổ nghĩa cho danh từ đứng sau, biểu thị một hành động hoặc trạng thái đã diễn ra và kết thúc hoàn toàn trong quá khứ, hiện tại không còn tiếp diễn nữa. Người nói vừa miêu tả sự việc vừa gợi lại ký ức, kỷ niệm trong quá khứ.",
+      "formation": "Thân động từ/tính từ + -았/었던 + Danh từ (nguyên âm ㅏ, ㅗ dùng -았던; các nguyên âm khác dùng -었던; 하다 chuyển thành 했던)",
+      "examples": [
+        {
+          "translation": "Hôm qua tôi đã xem lại bộ phim hoạt hình mà mình từng say mê thuở nhỏ, biết bao ký ức đẹp đẽ lại ùa về."
+        },
+        {
+          "translation": "Anh ấy đã gặp lại người bạn mà mình từng quen biết từ 5 năm trước sau một thời gian dài xa cách."
+        },
+        {
+          "translation": "Tôi muốn được quay trở lại bãi biển mà mình từng đến vui chơi vào mùa hè năm nào."
+        },
+        {
+          "translation": "Tôi vẫn duy trì tình bạn thân thiết với những người bạn từng quen nhau thời còn đi học."
+        }
+      ]
+    },
+    "ko_았었으면_118": {
+      "title": "~았/었으면 좋겠다 (Giá mà... thì tốt biết mấy, ước gì đã...)",
+      "shortExplanation": "Mẫu câu dùng để bày tỏ niềm hy vọng tha thiết hoặc sự tiếc nuối, ân hận về một sự việc trong quá khứ đã không diễn ra như ý muốn ('giá mà...', 'ước gì...').",
+      "longExplanation": "'~았/었으면 좋겠다' được tạo thành bằng cách kết hợp vĩ tố thời quá khứ '-았/었-' với vĩ tố điều kiện '-으면' và tính từ '좋겠다'. Cấu trúc này dùng để diễn tả: 1) Một mong muốn, ước nguyện mãnh liệt trong hiện tại hoặc tương lai; 2) Đặc biệt khi nói về quá khứ, nó biểu thị sự tiếc nuối sâu sắc trước một việc đã xảy ra trái với mong đợi, ngụ ý rằng 'nếu như trong quá khứ chuyện đó đã diễn ra theo hướng khác thì hiện tại đã tốt biết bao nhiêu'.",
+      "formation": "Thân động từ/tính từ + -았/었으면 좋겠다 (nguyên âm ㅏ, ㅗ dùng -았으면 좋겠다; các nguyên âm khác dùng -었으면 좋겠다; 하다 chuyển thành 했으면 좋겠다)",
+      "examples": [
+        {
+          "translation": "Giá mà lúc đó tôi đã đến công ty để báo cáo thì tốt biết mấy, nếu vậy thì bây giờ đã chẳng đến nông nỗi này."
+        },
+        {
+          "translation": "Giá như tôi biết đến bạn sớm hơn, nếu được thế thì hẳn đã tránh được bao nhiêu rắc rối rồi."
+        },
+        {
+          "translation": "Ước gì ngày hôm ấy tôi đã đi theo anh ấy, nếu vậy thì không biết mình đã có được những trải nghiệm thú vị nào nhỉ?"
+        },
+        {
+          "translation": "Giá mà mình đã luyện tập nhiều hơn nữa thì tốt biết bao, có như vậy thì thành tích của mình mới tiến bộ vượt bậc hơn."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_아어_110": {
+      "title": "~아/어 놓다（做好了放着、预先做好、保持状态）",
+      "shortExplanation": "补助动词结构，表示为了未来的事情而提前做好某项准备，或在动作完成后将其状态保持下去（“预先做好……”、“做好了放着”）。",
+      "longExplanation": "“~아/어 놓다”是由连接词尾“-아/어”与补助动词“놓다”（放、搁）结合而成的句型。主要有两种核心用法：一是表示为了应对之后的某种情况或安排而提前做好准备工作（常与副词“미리”搭配使用）；二是表示某一动作结束后，其产生的状态被原样保留或维持下来。在日常口语和书面语中均极为常用。",
+      "formation": "动词词干 + -아/어 놓다（词干末尾元音为 ㅏ, ㅗ 时接 -아 놓다；其余元音接 -어 놓다；하다 变为 해 놓다）",
+      "examples": [
+        {
+          "translation": "考虑到明天早上会很忙，我今天晚上就把早餐提前做好了。"
+        },
+        {
+          "translation": "为了备考，这周我已经把所有讲义笔记都提前整理记录好了。"
+        },
+        {
+          "translation": "在去避暑度假之前，我们把家里的卫生提前打扫好了。"
+        },
+        {
+          "translation": "今天朋友们要来，所以我打算提前把饭菜做好。"
+        }
+      ]
+    },
+    "ko_아어_111": {
+      "title": "~아/어 달라다 / ~아/어 달라고 하다（间接引语请求：请给……、要求为自己做……）",
+      "shortExplanation": "间接引语表达，用于转述说话人请求他人为自己提供帮助或执行某动作（“请求给……做”、“要求请为自己……”）。",
+      "longExplanation": "“~아/어 달라다”是动词“주다”（给）在间接引语中的特殊变形。当转述的请求是希望对方为“说话人自己”做某事时，“-아/어 주다”必须替换为“-아/어 달라다”（常以“-아/어 달라고 하다/말하다/부탁하다”的形式出现）。若请求是让对方为“第三者”做某事，则使用“-아/어 주라고 하다”。这是韩语间接引语中极具特色且必须严格区分的语法点。",
+      "formation": "动词词干 + -아/어 달라다（后常接引用助词与说话动词：-아/어 달라고 하다/부탁하다/요청하다）",
+      "examples": [
+        {
+          "translation": "我朋友肚子饿坏了，便催促说‘快点给我弄点饭吃吧’。"
+        },
+        {
+          "translation": "我头痛得厉害，便向人求助说‘请给我拿点药来’。"
+        },
+        {
+          "translation": "屋里实在太热了，于是我便拜托对方‘请把空调开一下’。"
+        },
+        {
+          "translation": "咖啡太好喝了，所以我要求说‘请再给我来一杯’。"
+        }
+      ]
+    },
+    "ko_아어_112": {
+      "title": "~아/어 대다（一个劲儿地……、不停地……、反复折腾）",
+      "shortExplanation": "补助动词结构，表示某个动作反复、持续且猛烈地进行，或漫无目的地瞎忙活，多带有过度或令人反感的消极色彩（“一个劲儿地……”、“不停地……”）。",
+      "longExplanation": "“~아/어 대다”是由连接词尾“-아/어”与补助动词“대다”结合构成的表达。主要用来描述某一动作反复多次、毫无节制或剧烈地发生，也可以用来形容毫无明确计划和目的、随心所欲地瞎折腾或打发时间。在很多语境中带有说话人感到烦躁、无奈或认为该动作过于频繁、过度的消极色彩。",
+      "formation": "动词词干 + -아/어 대다（词干末尾元音为 ㅏ, ㅗ 接 -아 대다；其余元音接 -어 대다；하다 变为 해 대다）",
+      "examples": [
+        {
+          "translation": "我就这么漫无目的地瞎逛瞎买，结果买了一件昂贵的衣服。"
+        },
+        {
+          "translation": "虽然是考试周，但他只是漫不经心地一直翻弄着书本，白白浪费了时间。"
+        },
+        {
+          "translation": "她一边听着音乐一边在街上漫无边际地走着，结果走过了头错过了餐厅。"
+        },
+        {
+          "translation": "因为太无聊了，我便在网上一阵胡乱浏览，最终在偶然发现的一个网站上买了本书。"
+        }
+      ]
+    },
+    "ko_아어_113": {
+      "title": "~아/어 보이다（看起来……、显得……）",
+      "shortExplanation": "接在形容词词干后，表示说话人根据外表直观特征作出的主观推测或判断（“看起来……”、“显得……”）。",
+      "longExplanation": "“~아/어 보이다”主要接在形容词词干之后，表示说话人通过视觉观察对象的外貌、神态或外部特征，从而作出“看起来好像具有某种性质或状态”的主观推断。它仅反映外部表象，并不必然代表事物的真实内在本质，常用于对人物脸色、心情、身材或事物状态的外观评价。",
+      "formation": "形容词词干 + -아/어 보이다（词干末尾元音为 ㅏ, ㅗ 接 -아 보이다；其余元音接 -어 보이다；하다 变为 해 보이다）",
+      "examples": [
+        {
+          "translation": "那个女人看起来非常幸福，但实际上恐怕承受着巨大的压力。"
+        },
+        {
+          "translation": "今天天气看起来真好，似乎很适合出门呢。"
+        },
+        {
+          "translation": "这块蛋糕看着很甜，但实际上并没有那么甜。"
+        },
+        {
+          "translation": "朋友说我看起来很疲倦，但我自己却完全没有那种感觉。"
+        }
+      ]
+    },
+    "ko_아어_114": {
+      "title": "~아/어서는（做了……却、本以为……可是……）",
+      "shortExplanation": "连接词尾结合对比补助词，用于引出前项的先决动作或理由，后项则呈现出与预期完全相反的意外或遗憾结果（“做了……却……”、“虽说是……可是……”）。",
+      "longExplanation": "“~아/어서는”是由表示原因或先后顺序的连接词尾“-아/어서”与表示对比强调的补助词“-는”结合而成的句型。用于叙述说话人原本依据前项的某种前提、理由或动作做出了期待，然而后项的事态发展却截然相反或未达预期。多用于表达与初衷相违背的遗憾、纳闷或感叹色彩。",
+      "formation": "动词/形容词词干 + -아/어서는（词干末尾元音为 ㅏ, ㅗ 接 -아서는；其余元音接 -어서는；하다 变为 해서는）",
+      "examples": [
+        {
+          "translation": "虽说听人讲天气很冷我才没出门，可实际上根本没有那么冷。"
+        },
+        {
+          "translation": "我明明经常去健身房刻苦锻炼，可是体重却几乎一点儿都没减轻。"
+        },
+        {
+          "translation": "我本想通过刻苦用功考个好成绩，然而结果却并不尽如人意。"
+        },
+        {
+          "translation": "我明明背得很熟练、原以为演出时发挥得很好，结果却出现了许多失误。"
+        }
+      ]
+    },
+    "ko_아어야만_115": {
+      "title": "~아/어야만（唯有……才能、只有……才）",
+      "shortExplanation": "连接词尾结合限定助词，用于强调前项是后项能够实现所必需的唯一先决条件（“只有……才……”、“唯有……才能……”）。",
+      "longExplanation": "“~아/어야만”是由表示必要条件的连接词尾“-아/어야”与表示排他限定的补助词“-만”结合构成的强烈条件句型。用于极力强调：前项所提及的行为或状态是后项结果得以成立的不可或缺的唯一门槛。如果不满足前项，后项的事态就绝对不可能成立或实现。后项常伴随表示能力、可能性的“-ㄹ/을 수 있다”或表示义务的表达。",
+      "formation": "动词/形容词词干 + -아/어야만（词干末尾元音为 ㅏ, ㅗ 接 -아야만；其余元音接 -어야만；하다 变为 해야만）",
+      "examples": [
+        {
+          "translation": "只有高中顺利毕业，才能够进入大学深造。"
+        },
+        {
+          "translation": "为了看那部电影，唯有提前订票才能进场观看。"
+        },
+        {
+          "translation": "要想实现目标，唯有日复一日脚踏实地勤奋工作才行。"
+        },
+        {
+          "translation": "若想去那里就必须乘坐公交车才行，坐地铁是去不了的。"
+        }
+      ]
+    },
+    "ko_아어지다_116": {
+      "title": "~아/어지다（变得……、……起来）",
+      "shortExplanation": "接在形容词词干后，表示事物随时间推移逐渐发生性质或状态上的演变（“变得……”、“……起来”）。",
+      "longExplanation": "“~아/어지다”接在形容词词干之后，可将表示静态特征的形容词转化为表示动态变化的动词，表达事物的性状、心理状态或外界环境经历了某种自然转变过程。其核心语义相当于汉语的“变得……”、“……了起来”。（注：当接在他动词词干后时，则具有构成被动态的功能）。",
+      "formation": "形容词词干 + -아/어지다（词干末尾元音为 ㅏ, ㅗ 接 -아지다；其余元音接 -어지다；하다 变为 해지다）",
+      "examples": [
+        {
+          "translation": "天气突然变冷了，所以我不得不把取暖炉打开。"
+        },
+        {
+          "translation": "去年工作量太大导致身体异常疲惫，甚至到了没有时间休息的地步，真的很辛苦。"
+        },
+        {
+          "translation": "由于朋友逐渐忙碌起来，我们便无法经常见面了。"
+        },
+        {
+          "translation": "菜量变得实在太多了，根本没法一次性全部吃完。"
+        }
+      ]
+    },
+    "ko_았었_117": {
+      "title": "~았/었던（曾经……的、过去曾……的）",
+      "shortExplanation": "过去回想冠形词形词尾，用于修饰后接名词，表示回想过去已经彻底完成、现在不再持续的事实或经历（“曾经……的”）。",
+      "longExplanation": "“~았/었던”是由表示过去时态的先手语尾“-았/었-”与表示回想的定语词尾“-던”结合而成的结构。置于名词之前作修饰语，用来指称过去某一特定时刻已经发生并告一段落的事实、经验或状态，强调该状态与现在已产生脱节或不再延续。常带有说话人抚今追昔的回味与感触。",
+      "formation": "动词/形容词词干 + -았/었던 + 名词（词干末尾元音为 ㅏ, ㅗ 接 -았던；其余元音接 -었던；하다 变为 했던）",
+      "examples": [
+        {
+          "translation": "昨天我重温了小时候特别喜欢看的那部动画片，许多童年回忆瞬间涌上心头。"
+        },
+        {
+          "translation": "时隔许久，他再次见到了五年前曾经结识的那位老朋友。"
+        },
+        {
+          "translation": "好想再去一次夏天曾经去过的那片美丽海滩啊。"
+        },
+        {
+          "translation": "我和当年在学校里认识的那些同学们至今依然保持着深厚的友谊。"
+        }
+      ]
+    },
+    "ko_았었으면_118": {
+      "title": "~았/었으면 좋겠다（要是……就好了、但愿……、真希望……）",
+      "shortExplanation": "表达说话人强烈的愿望，或对过去未能实现的既成事实表达惋惜与遗憾（“要是……就好了”、“真希望曾经……”）。",
+      "longExplanation": "“~았/었으면 좋겠다”是由过去时态词尾“-았/었-”与假设条件词尾“-으면”及形容词“좋겠다”（好）结合构成的句型。它既可以用于表达说话人对某种美好状态的热切期盼，也常用于对过去已经发生的不如意结果进行反思和假设，抒发一种“要是当时那样做的话，现在就不会是这般光景了”的后悔或惋惜之情。",
+      "formation": "动词/形容词词干 + -았/었으면 좋겠다（词干末尾元音为 ㅏ, ㅗ 接 -았으면 좋겠다；其余元音接 -었으면 좋겠다；하다 变为 했으면 좋겠다）",
+      "examples": [
+        {
+          "translation": "要是当时去公司如实汇报了该有多好，那样的话现在也不至于变成这副模样。"
+        },
+        {
+          "translation": "真希望能够更早一点认识你，要是那样的话很多烦心事本都可以避免的。"
+        },
+        {
+          "translation": "要是那天我选择跟着他一起去就好了，那样的话又会经历些什么呢？"
+        },
+        {
+          "translation": "要是我之前进行了更多的练习就好了，那样一来我的成绩一定能得到进一步的提升。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_아어_110": {
+      "title": "~아/어 놓다（〜しておく、〜してある）",
+      "shortExplanation": "補助動詞構文で、将来のためにあらかじめ準備として動作を終えておくことや、動作後の状態をそのまま維持・放置しておくことを表します（「〜しておく」「〜してある」）。",
+      "longExplanation": "「~아/어 놓다」は、接続語尾「-아/어」に補助動詞「놓다」（置く）が結合した表現です。主に2つの意味合いを持ちます。1つは、将来の事態や計画に備えてあらかじめ準備としてある行為を済ませておく用法（多くの場合、副詞「미리（あらかじめ・前もって）」を伴います）。もう1つは、完了した動作の結果や状態をそのまま残しておく・維持する用法です。日本語の「〜しておく」「〜してある」に正確に対応します。",
+      "formation": "動詞語幹 + -아/어 놓다（陽母音 ㅏ, ㅗ には -아 놓다、陰母音には -어 놓다、하다 は 해 놓다）",
+      "examples": [
+        {
+          "translation": "明日の朝は忙しいだろうと思い、今晩のうちに朝食を作っておきました。"
+        },
+        {
+          "translation": "試験勉強のために、今週中に講義のノートをすべてあらかじめまとめておきました。"
+        },
+        {
+          "translation": "私たちは避暑地に行く前に、家の中の掃除を済ませておきました。"
+        },
+        {
+          "translation": "今日は友達が来るので、事前に料理を作っておくつもりです。"
+        }
+      ]
+    },
+    "ko_아어_111": {
+      "title": "~아/어 달라다 / ~아/어 달라고 하다（〜してくれと頼む、〜してほしいと言う）",
+      "shortExplanation": "間接話法における依頼表現で、話し手が自分のために何かをしてくれるよう他者に頼んだ発言を引用する際に用います（「〜してくれと頼む」「〜してほしいと言う」）。",
+      "longExplanation": "「~아/어 달라다」は、間接話法で「他者が自分自身のために何かをしてくれること」を要求・依頼した内容を引用する際に用いられる特殊な形です。直接話法の「〜주세요（〜してください）」を間接話法で伝える際、受益者が話者自身（依頼者本人）である場合は「~아/어 주라고 하다」ではなく「~아/어 달라고 하다」にする規則があります（第三者のためである場合は「~주라고 하다」）。",
+      "formation": "動詞語幹 + -아/어 달라다（通常「-아/어 달라고 하다/말하다/부탁하다」の形で引用助詞「고」とともに使用）",
+      "examples": [
+        {
+          "translation": "友達がすごくお腹を空かせていて、「早くご飯をくれ」と言いました。"
+        },
+        {
+          "translation": "頭がひどく痛かったので、「薬を少しください」と頼みました。"
+        },
+        {
+          "translation": "家の中があまりにも暑かったので、「エアコンをつけてほしい」とお願いしました。"
+        },
+        {
+          "translation": "コーヒーがとても美味しかったので、「もう一杯ください」と言いました。"
+        }
+      ]
+    },
+    "ko_아어_112": {
+      "title": "~아/어 대다（しきりに〜する、〜しまくる、やたらと〜する）",
+      "shortExplanation": "補助動詞構文で、ある動作を休むことなく激しく繰り返したり、目的もなくやたらとし続けたりすることを表します（「しきりに〜する」「〜しまくる」）。",
+      "longExplanation": "「~아/어 대다」は、動詞語幹に接続語尾「-아/어」と補助動詞「대다」が結合した表現です。ある行為が過度に、あるいはしつこく何度も繰り返される様子や、とりとめのない目的のままあれこれと漫然とし続ける様子を表します。動作の過剰さに対する苛立ちや呆れ、うんざりした感情など、話し手の批判的・否定的なニュアンスを伴うことがよくあります。",
+      "formation": "動詞語幹 + -아/어 대다（陽母音には -아 대다、陰母音には -어 대다、하다 は 해 대다）",
+      "examples": [
+        {
+          "translation": "私はただ目的もなく買い物をし続けたあげく、結局高い服を買ってしまいました。"
+        },
+        {
+          "translation": "試験期間なのに、彼はただ本をぼんやりと眺め回してばかりいて時間をすべて無駄にしました。"
+        },
+        {
+          "translation": "音楽を聴きながら彼女はただあてもなく街を歩き回っていて、飲食店を見落としてしまいました。"
+        },
+        {
+          "translation": "退屈だったので、ネットサーフィンをやたらとしていて見つけたサイトで本を購入しました。"
+        }
+      ]
+    },
+    "ko_아어_113": {
+      "title": "~아/어 보이다（〜そうに見える、〜に見える）",
+      "shortExplanation": "形容詞の語幹につき、外見や様子から話し手が受ける印象や主観的推測を表します（「〜そうに見える」「〜に見える」）。",
+      "longExplanation": "「~아/어 보이다」は、主に形容詞の語幹に接続語尾「-아/어」と補助動詞「보이다（見える）」が結合した表現です。対象の外見・表情・様子などを直接見て、「そのように思われる」「〜という状態に見える」と話し手が感じた判断を表します。外から見た印象を述べる表現であるため、事実そのものと異なる可能性があるニュアンスを含むことも多くあります。",
+      "formation": "形容詞語幹 + -아/어 보이다（陽母音には -아 보이다、陰母音には -어 보이다、하다 は 해 보이다）",
+      "examples": [
+        {
+          "translation": "彼女はとても幸せそうに見えますが、実際には計り知れないストレスを抱えているようです。"
+        },
+        {
+          "translation": "今日は天気がとても良さそうですね、外出するのにうってつけの日のようです。"
+        },
+        {
+          "translation": "このケーキは甘そうに見えますが、実際にはそれほど甘くありません。"
+        },
+        {
+          "translation": "友達に疲れているように見えると言われましたが、私はそのように感じたことはありません。"
+        }
+      ]
+    },
+    "ko_아어_114": {
+      "title": "~아/어서는（〜しては、〜したところで、〜だからといって）",
+      "shortExplanation": "原因や先行動作を表す接続語尾に対比の助詞が結合し、前項の行為や理由にもかかわらず、後項で期待に反する結果が生じたことを表します（「〜してはみたものの」「〜したのに」）。",
+      "longExplanation": "「~아/어서는」は、理由や順序を表す接続語尾「-아/어서」に対比を表す補助詞「-는」が組み合わさった表現です。前項で「〜ということで」「〜して」と前提の行為や理由を提示しつつ、後項において当初の予想や目的に反する思わしくない結果、あるいは意外な展開が生じたことを対比的に強調します。話し手の失望や想定外の結末に対する悔しさが込められる傾向があります。",
+      "formation": "動詞・形容詞語幹 + -아/어서는（陽母音には -아서는、陰母音には -어서는、하다 は 해서는）",
+      "examples": [
+        {
+          "translation": "寒いというので外出を控えたのですが、実際にはそれほど寒くありませんでした。"
+        },
+        {
+          "translation": "ジムに頻繁に通っては一生懸命運動したのに、体重はほとんど減りませんでした。"
+        },
+        {
+          "translation": "一生懸命勉強して試験で良い点を取ろうとしたのですが、結果は芳しくありませんでした。"
+        },
+        {
+          "translation": "一生懸命暗記して公演ではうまくできたと思っていたのですが、たくさんのミスをしてしまいました。"
+        }
+      ]
+    },
+    "ko_아어야만_115": {
+      "title": "~아/어야만（〜してこそ、〜して初めて、〜しなければ〜ない）",
+      "shortExplanation": "必須条件を表す接続語尾に限定の助詞が結合し、後項の実現のために前項が唯一不可欠な前提条件であることを強調します（「〜してこそ」「〜して初めて」）。",
+      "longExplanation": "「~아/어야만」は、必要条件を表す接続語尾「-아/어야」に排他的限定を表す補助詞「-만」（だけ）が合わさった構文です。後項の事態が成就するためには、前項の動作や状態が満たされることが絶対的な必須条件であることを強く打ち出します。前項が達成されなければ後項は不可能であるというニュアンスを持ち、後項には「〜(으)ㄹ 수 있다（〜できる）」などの可能表現が頻繁に続きます。",
+      "formation": "動詞・形容詞語幹 + -아/어야만（陽母音には -아야만、陰母音には -어야만、하다 は 해야만）",
+      "examples": [
+        {
+          "translation": "高校を卒業してこそ、大学に進学することができます。"
+        },
+        {
+          "translation": "その映画を見るためには、必ずチケットを予約しなければ観ることができません。"
+        },
+        {
+          "translation": "目標を達成するためには、一日一日を懸命に励まなければなりません。"
+        },
+        {
+          "translation": "そこへ行くにはバスに乗らなければいけません。地下鉄では行くことができません。"
+        }
+      ]
+    },
+    "ko_아어지다_116": {
+      "title": "~아/어지다（〜くなる、〜になる）",
+      "shortExplanation": "形容詞の語幹につき、性質や状態が時間の経過とともにその状態へと変化していく過程を表します（「〜くなる」「〜になる」）。",
+      "longExplanation": "「~아/어지다」は、主に形容詞の語幹に結合して状態の変化を表す動詞化表現です（他動詞につく場合は受身の意味になります）。人や物、環境の状態が時間とともに徐々にその性質を帯びるよう変化していく様子を表し、日本語の「〜くなる」「〜になる」に相当します。天候、感情、状況の推移を客観的に述べる際によく用いられます。",
+      "formation": "形容詞語幹 + -아/어지다（陽母音には -아지다、陰母音には -어지다、하다 は 해지다）",
+      "examples": [
+        {
+          "translation": "天気が急に寒くなったので、ストーブをつけなければなりませんでした。"
+        },
+        {
+          "translation": "去年は仕事が多すぎて疲れ果て、休む時間がなくなってしまって大変でした。"
+        },
+        {
+          "translation": "友達が忙しくなったので、頻繁に会うことができなくなりました。"
+        },
+        {
+          "translation": "食べ物の量が多すぎて、一度にはとても食べきれませんでした。"
+        }
+      ]
+    },
+    "ko_았었_117": {
+      "title": "~았/었던（かつて〜した、〜していた（過去の回想））",
+      "shortExplanation": "過去回想の連体形語尾で、過去に完了して現在は続いていない事柄や体験を話し手が思い起こしながら名詞を修飾する表現です（「かつて〜した…」「〜したことのある…」）。",
+      "longExplanation": "「~았/었던」は、過去時制語尾「-았/었-」に過去の回想を表す連体形語尾「-던」が合わさった表現です。名詞の前に置かれ、過去のある時点で一度完了し、現在ではすでに途絶えて続かなくなっている出来事や状態を回顧的に叙述します。単なる過去連体形「-(으)ㄴ」に比べ、遠い過去の思い出や懐かしさ、あるいは現在との断絶を想起させるニュアンスが色濃く現れます。",
+      "formation": "動詞・形容詞語幹 + -았/었던 + 名詞（陽母音には -았던、陰母音には -었던、하다 は 했던）",
+      "examples": [
+        {
+          "translation": "子供の頃によく見ていたアニメを昨日久しぶりに見返したら、たくさんの思い出が蘇りました。"
+        },
+        {
+          "translation": "彼は5年前に出会った友人と久しぶりに再会を果たしました。"
+        },
+        {
+          "translation": "夏に行ったことのあるあのビーチへ、もう一度行ってみたいです。"
+        },
+        {
+          "translation": "私は学生時代に出会った友人たちと、今でも親しく付き合っています。"
+        }
+      ]
+    },
+    "ko_았었으면_118": {
+      "title": "~았/었으면 좋겠다（〜ならよかったのに、〜だったらよかったのに）",
+      "shortExplanation": "強い願望を表すとともに、過去に思い通りにいかなかった事態に対する後悔や未練を表します（「〜だったらよかったのに」「〜していればよかったのに」）。",
+      "longExplanation": "「~았/었으면 좋겠다」は、過去時制「-았/었-」に仮定条件の「-(으)면」と「좋겠다（良いだろう）」が結合した構文です。現在や未来に対する切実な願いを表すこともありますが、過去の文脈においては、現実には起きなかった事実に対して「あの時〜していればよかったのに」と叶わなかった過去を惜しむ仮定・後悔の念を強く表します。",
+      "formation": "動詞・形容詞語幹 + -았/었으면 좋겠다（陽母音には -았으면 좋겠다、陰母音には -었으면 좋겠다、하다 は 했으면 좋겠다）",
+      "examples": [
+        {
+          "translation": "あの時会社に報告に行っていればよかったのに。そうしていれば今こんなことにはなっていなかっただろうに。"
+        },
+        {
+          "translation": "あなたをもっと早く知っていればよかったのに。そうであれば多くの問題を避けられたはずなのに。"
+        },
+        {
+          "translation": "あの日彼の後について行っていればよかったのに。そうしていればどんな経験ができたのだろうか。"
+        },
+        {
+          "translation": "もっとたくさん練習しておけばよかったのに。そうすれば自分の成果がもっと向上しただろうに。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_아어_110": {
+      "title": "~아/어 놓다 (동작 완료 후 상태 유지 및 사전 준비)",
+      "shortExplanation": "어떤 동작을 미리 해 두어 앞일에 대비하거나, 동작이 끝난 후 그 결과 상태를 그대로 유지함을 나타내는 보조용언 구문입니다 ('~해 두다/놓다').",
+      "longExplanation": "'~아/어 놓다'는 연결어미 '-아/어'에 보조동사 '놓다'가 결합한 문형입니다. 크게 두 가지 의미로 쓰입니다. 첫째는 미래의 어떤 일이나 상황에 대비하여 사전에 준비로써 동작을 완료해 둠을 나타내며, 이때 부사 '미리'와 자주 함께 쓰입니다. 둘째는 어떤 행위가 완결된 후 그 결과로 인한 상태가 계속해서 지속·유지됨을 나타냅니다. 일상 대화에서 매우 광범위하게 쓰이는 필수 표현입니다.",
+      "formation": "동사 어간 + -아/어 놓다 (양성모음 ㅏ, ㅗ 뒤에는 -아 놓다, 음성모음 뒤에는 -어 놓다, 하다 뒤에는 해 놓다)",
+      "examples": [
+        {
+          "translation": "내일 아침에 바쁠 것을 생각해서 오늘 저녁에 미리 아침 식사를 만들어 두었어요."
+        },
+        {
+          "translation": "시험을 준비하기 위해 이번 주 동안 모든 강의 필기를 미리 적어 두었습니다."
+        },
+        {
+          "translation": "우리는 피서를 떠나기 전에 집안 대청소를 미리 해 두었습니다."
+        },
+        {
+          "translation": "오늘은 친구들이 놀러 올 예정이라 음식을 미리 장만해 둘 생각이에요."
+        }
+      ]
+    },
+    "ko_아어_111": {
+      "title": "~아/어 달라다 / ~아/어 달라고 하다 (자신을 위해 행동해 줄 것을 요구하는 간접 인용)",
+      "shortExplanation": "간접 인용문에서 어떤 행위를 하는 주체가 '말하는 사람 자신'을 위해 무언가를 해 달라고 부탁·요구할 때 사용하는 표현입니다 ('~아/어 달라고 하다').",
+      "longExplanation": "'~아/어 달라다'는 간접화법에서 남에게 어떤 행동을 청하거나 부탁할 때 쓰는 불완전동사 '달라다'를 활용한 구문입니다. 본래 직접화법의 명령형인 '~해 주세요'를 간접 인용할 때, 그 요구의 혜택을 받는 대상이 제3자가 아닌 '요구자 본인'인 경우 반드시 '-아/어 주라고 하다' 대신 '-아/어 달라고 하다/부탁하다/요청하다'의 형태로 바꾸어 써야 하는 문법적 규칙을 갖습니다.",
+      "formation": "동사 어간 + -아/어 달라다 (인용격 조사와 결합하여 -아/어 달라고 하다/부탁하다/요청하다)",
+      "examples": [
+        {
+          "translation": "친구가 너무 배가 고픈 나머지, 빨리 밥을 달라고 말했습니다."
+        },
+        {
+          "translation": "머리가 심하게 쑤시고 아파서 약을 좀 달라고 요청했습니다."
+        },
+        {
+          "translation": "집안이 너무 후텁지근해서 에어컨을 좀 켜 달라고 부탁했습니다."
+        },
+        {
+          "translation": "커피 맛이 아주 훌륭해서 한 잔만 더 달라고 말했습니다."
+        }
+      ]
+    },
+    "ko_아어_112": {
+      "title": "~아/어 대다 (동작의 지나친 반복 및 지속)",
+      "shortExplanation": "어떤 동작이 끊임없이 반복되거나 지나치게 과도하게 지속됨을 나타내는 보조용언 표현입니다 ('~어 대다').",
+      "longExplanation": "'~아/어 대다'는 동사 어간 뒤에 연결어미 '-아/어'와 보조동사 '대다'가 어우러져, 행위가 쉬지 않고 거듭되거나 어떤 행동을 뚜렷한 목표 없이 맹목적으로 또는 극성맞게 지속함을 나타냅니다. 화자가 볼 때 행동의 빈도나 강도가 지나치다는 불만, 성가심, 안타까움 등의 부정적인 뉘앙스가 깃드는 경우가 많습니다.",
+      "formation": "동사 어간 + -아/어 대다 (양성모음에는 -아 대다, 음성모음에는 -어 대다, 하다 뒤에는 해 대다)",
+      "examples": [
+        {
+          "translation": "이것저것 생각 없이 마구 쇼핑을 해 대다가 결국 값비싼 옷을 사고 말았어요."
+        },
+        {
+          "translation": "시험 기간인데도 그는 책만 멍하니 들여다보아 대며 아까운 시간을 다 흘려보냈어요."
+        },
+        {
+          "translation": "음악 소리에 빠져 거리를 생각 없이 하염없이 쏘다니다가 가려던 식당을 지나쳤어요."
+        },
+        {
+          "translation": "너무 지루해서 인터넷 서핑을 이리저리 마구 해 대다가 알게 된 사이트에서 책을 주문했습니다."
+        }
+      ]
+    },
+    "ko_아어_113": {
+      "title": "~아/어 보이다 (시각적 판단 및 외양 묘사)",
+      "shortExplanation": "형용사 어간에 결합하여, 대상의 겉모습이나 상태를 보고 화자가 직관적으로 판단하거나 짐작함을 나타내는 보조용언 구문입니다 ('~해 보이다').",
+      "longExplanation": "'~아/어 보이다'는 형용사 어간 뒤에 연결어미 '-아/어'와 보조동사 '보이다'가 연결되어 쓰이는 표현입니다. 시각적인 관찰이나 외적인 단서를 바탕으로 주관적인 인상과 추측을 나타내며, 실질적인 본질과는 다를 수 있는 외관상의 느낌을 서술할 때 적합합니다. 사람의 표정, 기분, 옷차림이나 사물의 겉보기 상태를 묘사할 때 자주 쓰입니다.",
+      "formation": "형용사 어간 + -아/어 보이다 (양성모음에는 -아 보이다, 음성모음에는 -어 보이다, 하다 뒤에는 해 보이다)",
+      "examples": [
+        {
+          "translation": "그 여성은 무척 행복해 보이지만, 실제로는 극심한 스트레스를 겪고 있을지도 몰라요."
+        },
+        {
+          "translation": "오늘따라 날씨가 참 화창해 보이네요, 나들이 가기에 안성맞춤인 날 같아요."
+        },
+        {
+          "translation": "이 케이크는 겉보기에 아주 달아 보이지만, 막상 먹어 보면 그리 달지 않아요."
+        },
+        {
+          "translation": "친구가 저더러 피곤해 보인다고 말했지만, 정작 저는 전혀 피로를 느끼지 못했어요."
+        }
+      ]
+    },
+    "ko_아어_114": {
+      "title": "~아/어서는 (원인·선행 행위와 대조적 결과의 연결)",
+      "shortExplanation": "선행하는 행위나 원인을 제시하고, 그에 뒤따르는 결과가 기대나 예상과 상반됨을 대조하여 나타내는 연결어미 표현입니다 ('~아/어서는').",
+      "longExplanation": "'~아/어서는'은 이유나 시간적 선후관계를 나타내는 연결어미 '-아/어서'에 대조와 심층적 강조의 보조사 '-는'이 결합된 구성입니다. 앞 절에서 어떤 행위를 시도하였거나 특정한 근거를 가졌음에도 불구하고, 뒤 절에서는 기대했던 바와 전혀 어긋나거나 예상치 못한 불만족스러운 결과가 도출되었음을 역접·대조적으로 부각할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + -아/어서는 (양성모음에는 -아서는, 음성모음에는 -어서는, 하다 뒤에는 해서는)",
+      "examples": [
+        {
+          "translation": "날씨가 춥다는 말을 듣고는 외출을 자제했는데, 정작 밖은 그리 춥지 않았습니다."
+        },
+        {
+          "translation": "헬스클럽에 자주 드나들며 운동을 악착같이 했는데도 체중은 거의 줄어들지 않았어요."
+        },
+        {
+          "translation": "시험을 잘 치르려고 밤낮으로 열심히 공부했건만, 기대와 달리 결과는 신통치 않았어요."
+        },
+        {
+          "translation": "열심히 외워서 무대에서 완벽하게 해냈다고 자부했는데, 실제로는 실수가 무척 많았어요."
+        }
+      ]
+    },
+    "ko_아어야만_115": {
+      "title": "~아/어야만 (필수 불가결한 전제 조건 및 한정)",
+      "shortExplanation": "뒤 절의 내용이 실현되기 위해 앞 절의 행위나 상태가 유일무이한 필수 조건임을 강조하는 연결어미 표현입니다 ('~아/어야만').",
+      "longExplanation": "'~아/어야만'은 필수 조건을 나타내는 연결어미 '-아/어야'에 한정과 배타의 뜻을 지닌 보조사 '-만'이 더해진 형태입니다. 앞 절에서 제시하는 조건이 충족되지 않는 한 뒤 절의 사건이나 행위는 결코 성립할 수 없음을 명시적으로 못 박을 때 사용됩니다. 주로 뒤 절에 '-(으)ㄹ 수 있다', 또는 당위성을 나타내는 표현들과 긴밀하게 호응합니다.",
+      "formation": "동사/형용사 어간 + -아/어야만 (양성모음에는 -아야만, 음성모음에는 -어야만, 하다 뒤에는 해야만)",
+      "examples": [
+        {
+          "translation": "고등학교 과정을 마쳐야만 비로소 대학교에 진학할 자격이 주어집니다."
+        },
+        {
+          "translation": "그 화제작을 관람하려면 사전에 입장권을 예매하여야만 볼 수 있습니다."
+        },
+        {
+          "translation": "자신의 꿈을 현실로 만들려면 하루하루 성실하게 노력해야만 합니다."
+        },
+        {
+          "translation": "목적지에 닿으려면 버스를 이용해야만 하며, 지하철로는 접근할 수 없습니다."
+        }
+      ]
+    },
+    "ko_아어지다_116": {
+      "title": "~아/어지다 (상태의 점진적 변화 및 피동)",
+      "shortExplanation": "형용사 어간 뒤에 결합하여 시간의 경과에 따라 대상의 성질이나 상태가 변화해 감을 나타내는 보조용언형 표현입니다 ('~해지다').",
+      "longExplanation": "'~아/어지다'는 형용사의 어간에 붙어 상태의 점진적인 추이와 변화를 나타내는 동사 파생적 구조입니다(타동사에 붙을 경우 피동의 의미를 나타냄). 어떤 상태에 있지 않던 대상이 환경이나 요인에 의해 그 상태로 전환되어 가는 과정을 묘사하며, 일기 변화, 감정의 변화, 사물의 외적 상태 변화를 서술할 때 매우 널리 활용됩니다.",
+      "formation": "형용사 어간 + -아/어지다 (양성모음에는 -아지다, 음성모음에는 -어지다, 하다 뒤에는 해지다)",
+      "examples": [
+        {
+          "translation": "기온이 급격히 추워지는 바람에 난방 기구를 가동해야 했습니다."
+        },
+        {
+          "translation": "작년에는 업무량이 폭증하여 피로가 쌓이고 쉴 틈마저 없어져 몹시 고단했습니다."
+        },
+        {
+          "translation": "친구가 부쩍 바빠지면서 예전처럼 자주 만나기가 어려워졌습니다."
+        },
+        {
+          "translation": "차려진 음식이 너무 풍성해져서 한자리에서 다 비워낼 수가 없었어요."
+        }
+      ]
+    },
+    "ko_았었_117": {
+      "title": "~았/었던 (과거의 완료된 사건 및 경험의 회상)",
+      "shortExplanation": "과거에 완료되어 현재는 지속되지 않는 동작이나 상태를 회상하며 뒤의 명사를 수식할 때 쓰는 관형사형 어미 표현입니다 ('~았/었던').",
+      "longExplanation": "'~았/었던'은 과거시제 선어말어미 '-았/었-'에 회상의 관형사형 전성어미 '-던'이 결합된 형태입니다. 뒤따르는 명사를 수식하면서, 과거의 특정 시점에 완전히 종결되었거나 경험한 사실을 회고적으로 떠올리는 기능을 합니다. 단순 과거 관형사형 '-(으)ㄴ'에 비해 현재와의 단절감이나 추억, 과거 경험에 대한 기억을 더욱 선명하게 환기시키는 특성을 지닙니다.",
+      "formation": "동사/형용사 어간 + -았/었던 + 명사 (양성모음에는 -았던, 음성모음에는 -었던, 하다 뒤에는 했던)",
+      "examples": [
+        {
+          "translation": "어린 시절 즐겨 보았던 만화 영화를 어제 다시 보았더니 아련한 추억들이 되살아났습니다."
+        },
+        {
+          "translation": "그는 5년 전에 인연을 맺었던 옛 친구를 참으로 오랜만에 다시 마주했습니다."
+        },
+        {
+          "translation": "지난여름에 찾아갔었던 그 바닷가에 다시금 가 보고 싶습니다."
+        },
+        {
+          "translation": "학창 시절에 만나 친분을 쌓았던 벗들과 지금까지도 돈독하게 지내고 있습니다."
+        }
+      ]
+    },
+    "ko_았었으면_118": {
+      "title": "~았/었으면 좋겠다 (과거에 대한 아쉬움 및 소망)",
+      "shortExplanation": "과거에 실현되지 못한 일에 대한 짙은 아쉬움과 후회를 드러내거나, 간절한 소망을 가정하여 표현하는 문형입니다 ('~았/었으면 좋겠다').",
+      "longExplanation": "'~았/었으면 좋겠다'는 과거시제 선어말어미 '-았/었-'과 가정의 연결어미 '-(으)면', 그리고 보조형용사 '좋겠다'가 합쳐진 형태입니다. 현재나 미래에 대한 바람을 더욱 간절하게 드러낼 때도 쓰이지만, 특히 과거의 맥락에서는 이미 지나간 현실과 반대되는 가정을 세움으로써 '만약 과거에 그렇게 되었더라면 지금 얼마나 좋았을까' 하는 후회와 회한의 감정을 진하게 전달합니다.",
+      "formation": "동사/형용사 어간 + -았/었으면 좋겠다 (양성모음에는 -았으면 좋겠다, 음성모음에는 -었으면 좋겠다, 하다 뒤에는 했으면 좋겠다)",
+      "examples": [
+        {
+          "translation": "그때 회사에 보고하러 갔었더라면 참 좋았을 텐데, 그랬다면 지금 상황이 이 지경은 아니었을 텐데요."
+        },
+        {
+          "translation": "그대를 좀 더 일찍 알았더라면 좋았을 텐데, 그랬다면 수많은 시행착오를 미리 피할 수 있었을 것입니다."
+        },
+        {
+          "translation": "그날 그 사람의 뒤를 따랐더라면 어땠을까 싶네요, 그랬다면 과연 어떤 귀한 경험을 맛보았을까요?"
+        },
+        {
+          "translation": "연습을 한층 더 치열하게 해 두었더라면 좋았을 텐데, 그래야 제 성과가 더욱 발전할 수 있었을 것입니다."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_기_80": {
+      "title": "~기 시작하다 (Bắt đầu làm gì, bắt đầu...)",
+      "shortExplanation": "Cấu trúc biểu thị sự bắt đầu của một hành động hoặc sự khởi phát, chuyển biến của một trạng thái mới ('bắt đầu làm gì', 'bắt đầu...').",
+      "longExplanation": "'~기 시작하다' được tạo thành bằng cách kết hợp vĩ tố danh từ hóa '-기' với động từ '시작하다' (bắt đầu). Cấu trúc này dùng để diễn tả thời điểm một hành động bắt đầu được tiến hành hoặc một trạng thái tâm lý, tự nhiên bắt đầu nảy sinh và tiếp diễn. Thường kết hợp với các động từ hành động hoặc tính từ/động từ chỉ sự thay đổi trạng thái.",
+      "formation": "Thân động từ/tính từ + 기 시작하다",
+      "examples": [
+        {
+          "translation": "Vì công ty bắt đầu nảy sinh nhiều vấn đề nên nhiều người cũng bắt đầu cảm thấy khó chịu, bực bội."
+        },
+        {
+          "translation": "Khi mùa xuân thực sự bắt đầu, những bông hoa cũng bắt đầu nở rộ."
+        },
+        {
+          "translation": "Tôi bắt đầu cảm thấy đói bụng hơn hẳn so với ngày thường."
+        },
+        {
+          "translation": "Chúng tôi dần nhận ra rằng các lỗi đã bắt đầu phát sinh."
+        }
+      ]
+    },
+    "ko_남다_81": {
+      "title": "~남다 (Còn lại, thừa lại, đọng lại)",
+      "shortExplanation": "Động từ biểu thị phần còn tồn tại, thừa lại về số lượng, thời gian vật chất hoặc lưu lại về mặt cảm xúc, ký ức sau khi đã sử dụng, tiêu hao ('còn lại', 'đọng lại').",
+      "longExplanation": "'~남다' là tự động từ dùng để chỉ sự vật, thời gian, tiền bạc, đồ ăn... vẫn còn lại sau khi phần lớn đã được tiêu thụ, sử dụng hay loại bỏ. Ngoài ra, từ này còn được dùng theo nghĩa trừu tượng, diễn tả những cảm xúc sâu lắng (nỗi nhớ, sự tiếc nuối), kỷ niệm hay dấu ấn vẫn còn đọng lại trong tâm trí sau khi một sự kiện kết thúc.",
+      "formation": "Danh từ + 이/가 + 남다 | Danh từ + 만 + 남다",
+      "examples": [
+        {
+          "translation": "Tôi cũng rất muốn học bài, nhưng hầu như chẳng còn lại chút thời gian nào để chuẩn bị cho kỳ thi cả."
+        },
+        {
+          "translation": "Sau khi tất cả khách mời dự đám cưới đến đông đủ thì đồ ăn vẫn còn thừa lại rất nhiều."
+        },
+        {
+          "translation": "Sau khi chúng tôi đi dạo quanh bờ hồ xong thì chẳng còn điểm tham quan nào để xem nữa."
+        },
+        {
+          "translation": "Sau khi cô ấy rời đi, trong đêm đầu tiên của sự chia ly chỉ còn đọng lại nỗi nhớ khôn nguôi."
+        }
+      ]
+    },
+    "ko_네요_82": {
+      "title": "~네요 (Thế nhỉ, quá nhỉ, kìa...)",
+      "shortExplanation": "Vĩ tố kết thúc câu thể hiện sự ngạc nhiên, cảm thán hoặc nhận định trước một sự thật mới được phát hiện hay trải nghiệm trực tiếp ('thế nhỉ', 'quá nhỉ').",
+      "longExplanation": "'~네요' là vĩ tố kết thúc câu thân mật lịch sự (thể 해요) dùng khi người nói trực tiếp trải nghiệm, nhìn thấy hoặc mới phát hiện ra một sự thật mới mẻ, bất ngờ khác với suy nghĩ trước đó. Mang sắc thái cảm thán nhẹ nhàng, tự nhiên ('ơ...', 'hóa ra là...'). Có thể dùng với động từ, tính từ và trợ từ chỉ định từ '이다'.",
+      "formation": "Thân động từ/tính từ + 네요 | Danh từ + (이)네요",
+      "examples": [
+        {
+          "translation": "Hôm nay thời tiết ấm áp thật đấy nhỉ, thế mà buổi sáng tôi cứ nghĩ là trời lạnh."
+        },
+        {
+          "translation": "Cô ấy hát hay thật đấy nhỉ, trước giờ tôi chưa từng nghe cô ấy hát nên không biết."
+        },
+        {
+          "translation": "Oa, chiếc bánh kem này ngon quá đi thôi, đây là hương vị lần đầu tiên tôi được thưởng thức đấy."
+        },
+        {
+          "translation": "Ơ, trời đang mưa kìa, đáng lẽ tôi phải mang theo ô mới phải."
+        }
+      ]
+    },
+    "ko_다고_83": {
+      "title": "~다고 (Rằng..., nói là..., nghĩ là...)",
+      "shortExplanation": "Vĩ tố liên kết trích dẫn gián tiếp, dùng để thuật lại lời nói, suy nghĩ, cảm nhận của bản thân hoặc người khác ('nói rằng', 'nghĩ rằng').",
+      "longExplanation": "'~다고' là hình thức rút gọn của vĩ tố trích dẫn gián tiếp câu trần thuật '~다고 하다/말하다/생각하다/듣다...'. Dùng để truyền đạt lại lời tuyên bố, nhận định, suy nghĩ hoặc cảm xúc của ai đó một cách gián tiếp. Tùy theo thì và từ loại đi trước mà có sự kết hợp cụ thể (động từ thì hiện tại dùng -ㄴ/는다고, tính từ dùng -다고, quá khứ dùng -았/었다고, danh từ dùng -(이)라고).",
+      "formation": "Động từ hiện tại + -ㄴ/는다고 | Tính từ + -다고 | Quá khứ + -았/었다고 | Danh từ + -(이)라고 + (말하다/생각하다/하다...)",
+      "examples": [
+        {
+          "translation": "Anh ấy nghĩ rằng tôi đã ăn cơm rồi, nhưng thực ra tôi vẫn chưa ăn gì cả."
+        },
+        {
+          "translation": "Bạn tôi nói rằng hôm nay trời sẽ mưa, nên tôi đã mang theo một chiếc ô."
+        },
+        {
+          "translation": "Thầy giáo nói rằng bài thi sẽ rất khó, vì thế tôi đã học tập vô cùng chăm chỉ."
+        },
+        {
+          "translation": "Mẹ đã dặn tôi rằng tối nay không được về nhà muộn."
+        }
+      ]
+    },
+    "ko_다는_84": {
+      "title": "~다는 (Cái việc rằng..., tin tức rằng...)",
+      "shortExplanation": "Vĩ tố định ngữ trích dẫn gián tiếp, dùng để bổ nghĩa cho danh từ phía sau bằng nội dung của một lời nói, sự thật hay thông tin được nghe thấy ('rằng...', 'việc rằng...').",
+      "longExplanation": "'~다는' là dạng rút gọn của '~다고 하는', làm chức năng định ngữ trích dẫn gián tiếp. Cấu trúc này dùng để bổ nghĩa cho các danh từ trừu tượng phía sau như '사실' (sự thật), '소식' (tin tức), '이야기' (câu chuyện), '소문' (tin đồn), '생각' (suy nghĩ)... nhằm nêu rõ nội dung cụ thể của sự việc, tin tức đó. Động từ thì hiện tại kết hợp với '-ㄴ/는다는', tính từ đi với '-다는', quá khứ đi với '-았/었다는', danh từ đi với '-(이)라는'.",
+      "formation": "Động từ hiện tại + -ㄴ/는다는 | Tính từ + -다는 | Quá khứ + -았/었다는 + Danh từ (사실, 소식, 생각...)",
+      "examples": [
+        {
+          "translation": "Anh ấy không biết rằng việc tự thừa nhận sai lầm của bản thân khó khăn đến mức nào đâu."
+        },
+        {
+          "translation": "Lần đầu tiên tôi nhận ra một sự thật rằng bản thân mình đang yêu cô ấy."
+        },
+        {
+          "translation": "Tôi đã nghe tin tức rằng công ty của bạn Puppy đang mở rộng quy mô một cách nghiêm túc."
+        },
+        {
+          "translation": "Sáng nay tôi vừa nghe được tin là cậu sắp kết hôn đấy."
+        }
+      ]
+    },
+    "ko_다면서요_85": {
+      "title": "~다면서요 (Nghe nói là... đúng không?, nghe bảo là... phải không?)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng để xác nhận lại với đối phương về một thông tin, tin tức mà mình đã nghe được từ người khác ('nghe nói là... đúng không?').",
+      "longExplanation": "'~다면서요' được tạo thành từ vĩ tố trích dẫn gián tiếp '-다면서' kết hợp với trợ từ kính ngữ '요'. Cấu trúc này dùng khi người nói muốn kiểm chứng hoặc hỏi lại đối phương về một thông tin mà mình đã nghe đồn hoặc được người khác nói cho biết, mang sắc thái: 'Tôi nghe bảo là... có thực sự đúng như thế không?'. Động từ hiện tại dùng -ㄴ/는다면서요, tính từ dùng -다면서요, quá khứ dùng -았/었다면서요, danh từ dùng -(이)라면서요.",
+      "formation": "Động từ hiện tại + -ㄴ/는다면서요 | Tính từ + -다면서요 | Quá khứ + -았/었다면서요 | Danh từ + -(이)라면서요",
+      "examples": [
+        {
+          "translation": "Nghe nói Younghee đang sống ở Seoul đúng không, tôi thực sự không biết có đúng là như thế không nữa."
+        },
+        {
+          "translation": "Nghe bảo là bạn nói sẽ về nhà sớm cơ mà, sao đến giờ này vẫn chưa thấy về vậy?"
+        },
+        {
+          "translation": "Nghe nói ngày mai bạn không đến trường đúng không, có phải là bạn bị ốm rồi không?"
+        },
+        {
+          "translation": "Nghe bảo là bạn đã hứa sau này sẽ cùng đi uống cà phê cơ mà, thế sao mãi chẳng thấy liên lạc gì vậy?"
+        }
+      ]
+    },
+    "ko_던데_86": {
+      "title": "~던데 (Thấy bảo là..., thấy hồi đó..., mà...)",
+      "shortExplanation": "Vĩ tố liên kết hồi tưởng, dùng khi người nói nhớ lại một sự việc, trạng thái mà bản thân đã trực tiếp chứng kiến hoặc trải nghiệm trong quá khứ để làm bối cảnh gợi mở câu chuyện hoặc nêu sự tương phản ('thấy bảo...', 'hồi đó thấy...').",
+      "longExplanation": "'~던데' là sự kết hợp giữa vĩ tố hồi tưởng quá khứ '-더-' với vĩ tố liên kết gợi mở/tương phản '-ㄴ/은데'. Dùng khi người nói hồi tưởng lại một sự thật mà chính mắt mình đã thấy hoặc trải nghiệm trong quá khứ, đưa thông tin đó ra làm bối cảnh để hỏi han, đưa ra nhận xét, gợi ý hoặc chỉ ra sự đối lập giữa quá khứ và hiện tại.",
+      "formation": "Thân động từ/tính từ + 던데 | Quá khứ + -았/었던데",
+      "examples": [
+        {
+          "translation": "Tôi nhớ anh ấy lúc nào cũng để tóc dài cơ mà, anh ấy bắt đầu cắt tóc ngắn từ bao giờ thế?"
+        },
+        {
+          "translation": "Bạn tôi trước đây thấy ghét rau lắm cơ mà, giờ nghe bảo vì sức khỏe nên chăm chỉ ăn lắm rồi đấy."
+        },
+        {
+          "translation": "Hồi nhỏ tôi nhớ mình cực kỳ ghét dọn dẹp, nhưng giờ lại thích và ngày nào cũng dọn."
+        },
+        {
+          "translation": "Hồi nhỏ nhớ chúng mình hay học cùng nhau lắm, thế mà giờ mỗi đứa lại học một trường đại học khác nhau."
+        }
+      ]
+    },
+    "ko_도록_87": {
+      "title": "~도록 하다 (Hãy làm sao cho..., cố gắng để..., đảm bảo...)",
+      "shortExplanation": "Cấu trúc biểu thị sự chỉ thị, khuyên nhủ hoặc quyết tâm thực hiện một hành động nào đó nhằm đảm bảo đạt được một mục đích hay trạng thái nhất định ('cố gắng để', 'hãy làm sao cho').",
+      "longExplanation": "'~도록 하다' kết hợp giữa vĩ tố liên kết chỉ mục đích, mức độ '-도록' với trợ động từ '하다'. Cấu trúc này có hai sắc thái chính: khi dùng cho ngôi thứ nhất, nó thể hiện quyết tâm, sự nỗ lực làm một việc gì đó để đạt mục đích; khi dùng ở dạng mệnh lệnh, yêu cầu đối với ngôi thứ hai, nó là cách khuyên nhủ, giao nhiệm vụ hoặc yêu cầu một cách trang trọng, gián tiếp ('hãy chú ý làm sao cho...').",
+      "formation": "Thân động từ + 도록 하다",
+      "examples": [
+        {
+          "translation": "Chúng ta phải làm sao để nhân viên của mình được nghỉ ngơi đầy đủ. Nếu không làm như vậy thì hiệu suất làm việc của họ có thể sẽ bị giảm sút."
+        },
+        {
+          "translation": "Khi lên kế hoạch cho bữa tiệc sinh nhật, chúng ta phải đảm bảo mọi thứ diễn ra thật hoàn hảo. Dù sao thì đó cũng là ngày đặc biệt của bố mà."
+        },
+        {
+          "translation": "Với tư cách là lớp trưởng, tôi phải đốc thúc để tất cả học sinh hoàn thành bài tập về nhà. Như vậy thì giáo viên sẽ không có lý do gì để phiền lòng về chúng tôi nữa."
+        },
+        {
+          "translation": "Chúng ta phải nỗ lực hết mình để khách hàng hài lòng với sản phẩm của chúng ta. Có làm được như vậy thì công việc kinh doanh mới phát triển được."
+        }
+      ]
+    },
+    "ko_든지_88": {
+      "title": "~든지 (Dù là... hay là..., bất kể... hay...)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả sự lựa chọn không giới hạn, biểu thị rằng dù chọn phương án nào trong số các lựa chọn thì kết quả cũng như nhau hoặc người nói không bận tâm ('dù... hay...').",
+      "longExplanation": "'~든지' (thường được lặp lại thành '~든지 ~든지') là vĩ tố liên kết dùng để liệt kê hai hay nhiều hành động, trạng thái hoặc đối tượng lựa chọn mang tính tương đương. Thể hiện thái độ của người nói là tùy ý, không phân biệt đối xử và không câu nệ vào việc phương án nào được chọn lựa. Thường đi kèm với các từ để hỏi (như 언제든지 - bất cứ lúc nào, 누구든지 - bất cứ ai, 어디든지 - bất cứ nơi đâu). Cần tránh nhầm lẫn với vĩ tố hồi tưởng '-던지'.",
+      "formation": "Thân động từ/tính từ + 든지 | Danh từ + (이)든지",
+      "examples": [
+        {
+          "translation": "Dù bạn đi vào hay đi ra thì tôi cũng chẳng bận tâm đâu, điều quan trọng là công việc phải được tiếp tục."
+        },
+        {
+          "translation": "Dù trời mưa hay trời nắng đẹp thì tôi vẫn luôn luôn ra ngoài đi dạo."
+        },
+        {
+          "translation": "Dù bạn có hiểu hay không hiểu thì tôi vẫn sẽ tiếp tục giải thích."
+        },
+        {
+          "translation": "Dù chú cún có sủa hay không sủa thì việc cất lời chào như thể đang trò chuyện cùng nó vẫn thật là tốt."
+        }
+      ]
+    },
+    "ko_라는_89": {
+      "title": "~라는 것이다 (Có nghĩa là..., tức là việc...)",
+      "shortExplanation": "Cấu trúc giải thích, định nghĩa dùng để diễn giải rõ bản chất, ý nghĩa hoặc hàm ý sâu xa của một tiền đề hay sự thật phía trước ('có nghĩa là...', 'tức là...').",
+      "longExplanation": "'~라는 것이다' là cấu trúc kết hợp vĩ tố trích dẫn gián tiếp danh từ '-(이)라는' với danh từ phụ thuộc '것' và trợ từ chỉ định từ '이다'. Cấu trúc này thường đi sau mệnh đề chủ ngữ có dạng '-는다는 것은' để rút ra kết luận, giải thích bản chất, ý nghĩa hoặc sự tất yếu của một sự việc nào đó ('Việc A xảy ra có nghĩa là B...').",
+      "formation": "Động từ hiện tại + -ㄴ/는다는 것이다 | Tính từ + -다는 것이다 | Danh từ + -(이)라는 것이다",
+      "examples": [
+        {
+          "translation": "Việc cô ấy chụp ảnh có nghĩa là cô ấy rất yêu thích nhiếp ảnh."
+        },
+        {
+          "translation": "Việc anh ấy luôn thức dậy sớm chứng tỏ anh ấy là một người thuộc tuýp người buổi sáng."
+        },
+        {
+          "translation": "Việc lá cây chuyển sang màu vàng khi mùa thu tới tức là đặc trưng tiêu biểu của mùa thu."
+        },
+        {
+          "translation": "Việc chúng ta đang gặp phải một vấn đề đồng nghĩa với việc chúng ta phải tìm cách giải quyết vấn đề đó."
+        }
+      ]
+    },
+    "ko_라도_90": {
+      "title": "~라도 (Dù chỉ là..., ít nhất thì cũng...)",
+      "shortExplanation": "Trợ từ biểu thị phương án thay thế tối thiểu hoặc sự nhượng bộ khi không có được lựa chọn lý tưởng nhất ('ít nhất thì cũng', 'dù chỉ là').",
+      "longExplanation": "'~라도' là trợ từ mang ý nghĩa nhượng bộ, chỉ ra một phương án tuy không phải là tốt nhất nhưng vẫn có thể chấp nhận được như một sự lựa chọn tối thiểu trong hoàn cảnh hiện tại ('thôi thì ít nhất cũng...'). Dùng để xoa dịu lời đề nghị, thể hiện mong muốn tối thiểu hoặc đưa ra một phương án dự phòng khi điều kiện lý tưởng không được đáp ứng.",
+      "formation": "Danh từ + (이)라도 (có phụ âm cuối dùng 이라도, không có phụ âm cuối dùng 라도)",
+      "examples": [
+        {
+          "translation": "Tuy rằng việc đi bộ lên tận mặt trăng là bất khả thi, nhưng ít nhất chúng ta cũng hãy chụp lấy một tấm ảnh nào."
+        },
+        {
+          "translation": "Anh ấy nói làm việc vất vả, nhưng chẳng lẽ chúng ta lại không giao cho anh ấy ít nhất một công việc gì đó sao?"
+        },
+        {
+          "translation": "Lẽ ra ít nhất cô ấy cũng phải nói lời xin lỗi chứ nhỉ? Nếu làm vậy thì tình hình có lẽ đã khá hơn rồi."
+        },
+        {
+          "translation": "Nếu bạn không định về nhà thì ít nhất cũng phải gọi điện báo một tiếng chứ?"
+        }
+      ]
+    },
+    "ko_러_91": {
+      "title": "~러 / ~(으)러 (Để làm gì, đi/đến để...)",
+      "shortExplanation": "Vĩ tố liên kết chỉ mục đích của hành động di chuyển, dùng kết hợp với các động từ chỉ sự di chuyển như 가다, 오다, 다니다 ('để làm gì').",
+      "longExplanation": "'~(으)러' là vĩ tố liên kết chỉ mục đích trực tiếp của việc đi, đến hoặc di chuyển từ nơi này sang nơi khác. Luôn đi kèm với các động từ chỉ sự di chuyển như '가다' (đi), '오다' (đến), '다니다' (đi lại thường xuyên)... Thân động từ kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng '-러', kết thúc bằng các phụ âm khác dùng '-으러'.",
+      "formation": "Thân động từ + -(으)러 (thân động từ có phụ âm cuối dùng -으러, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -러) + (가다/오다/다니다)",
+      "examples": [
+        {
+          "translation": "Tôi đã đến Hàn Quốc để học tiếng Hàn."
+        },
+        {
+          "translation": "Anh ấy đã đến hiệu sách để mua một quyển sách."
+        },
+        {
+          "translation": "Mẹ đã vào bếp để chuẩn bị bữa tối cho cả nhà."
+        },
+        {
+          "translation": "Tôi đã đến rạp chiếu phim để xem phim cùng với những người bạn."
+        }
+      ]
+    },
+    "ko_려고_92": {
+      "title": "~려고 하다 / ~(으)려고 하다 (Định làm..., có ý định làm..., muốn...)",
+      "shortExplanation": "Cấu trúc biểu thị ý định, kế hoạch hoặc sự toan tính làm một việc gì đó trong tương lai gần ('định làm', 'có ý định').",
+      "longExplanation": "'~(으)려고 하다' được tạo thành bằng cách kết hợp vĩ tố liên kết chỉ ý định '-(으)려고' với động từ '하다'. Cấu trúc này dùng để diễn đạt ý chí, kế hoạch hoặc sự chuẩn bị hành động của chủ ngữ. Thường dùng cho các dự định sắp thực hiện, không khẳng định chắc chắn thành công nhưng phản ánh rõ ý muốn chủ quan của người nói. Thân động từ có phụ âm cuối dùng '-으려고 하다', không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng '-려고 하다'.",
+      "formation": "Thân động từ + -(으)려고 하다 (có phụ âm cuối dùng -으려고 하다, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -려고 하다)",
+      "examples": [
+        {
+          "translation": "Mỗi ngày tôi đều định học thêm 10 từ vựng mới, vì thế tôi đang rất nỗ lực để nâng cao năng lực tiếng Hàn của mình."
+        },
+        {
+          "translation": "Dù ngay cả lúc ốm đau tôi cũng luôn cố gắng nở nụ cười, đó chính là phong cách sống của tôi."
+        },
+        {
+          "translation": "Anh ấy lúc nào cũng định đi ngủ sớm, thế nhưng lần nào cũng thất bại."
+        },
+        {
+          "translation": "Chúng tôi đã cùng nhau luyện tập và học tập thật chăm chỉ để định kết thúc buổi biểu diễn một cách thành công mỹ mãn."
+        }
+      ]
+    },
+    "ko_려는_93": {
+      "title": "~려는 / ~(으)려는 (Định làm..., có ý định làm... [định ngữ])",
+      "shortExplanation": "Vĩ tố định ngữ chỉ ý định, dùng để bổ nghĩa cho danh từ phía sau bằng một hành động mà chủ ngữ đang toan tính hoặc có kế hoạch thực hiện ('người định...', 'việc toan tính...').",
+      "longExplanation": "'~(으)려는' là hình thức rút gọn của cấu trúc định ngữ chỉ ý định '-(으)려고 하는'. Vĩ tố này đứng trước danh từ (như '사람' - người, '것' - việc/điều, '학생' - học sinh...) để miêu tả đối tượng đang ấp ủ ý muốn, mục đích hay kế hoạch thực hiện một hành động nào đó trong tương lai. Thân động từ có phụ âm cuối dùng '-으려는', không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng '-려는'.",
+      "formation": "Thân động từ + -(으)려는 (có phụ âm cuối dùng -으려는, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -려는) + Danh từ",
+      "examples": [
+        {
+          "translation": "Người có ý định đi công tác vào ngày mai chỉ có duy nhất mình tôi thôi. Tất cả những người khác đều rất bận."
+        },
+        {
+          "translation": "Có rất nhiều người đang có ý định trở thành người ăn chay để có được một chế độ ăn uống lành mạnh."
+        },
+        {
+          "translation": "Những học sinh có kế hoạch chuẩn bị cho kỳ thi TOEIC đang đầu tư rất nhiều thời gian vào việc học."
+        },
+        {
+          "translation": "Kế hoạch cuối tuần của tôi là định học lập trình, nhưng việc này đòi hỏi nhiều thời gian và công sức hơn bình thường."
+        }
+      ]
+    },
+    "ko_로써_94": {
+      "title": "~로써 / ~(으)로써 (Bằng..., bằng cách..., với tư cách là...)",
+      "shortExplanation": "Trợ từ biểu thị công cụ, phương tiện, phương thức hành động ('bằng', 'bằng phương tiện'); trong khẩu ngữ cũng thường được người bản xứ dùng tương tự như tư cách, cương vị ('với tư cách là').",
+      "longExplanation": "'~(으)로써' là trợ từ chỉ công cụ, phương tiện hoặc phương thức để tiến hành một việc gì đó (như 'bằng nỗ lực', 'bằng lời nói'). Cần lưu ý rằng theo chuẩn ngữ pháp tiếng Hàn, trợ từ chỉ tư cách, thân phận, cương vị của con người là '~로서', tuy nhiên trong đời sống và khẩu ngữ thực tế, người bản xứ rất hay viết nhầm hoặc dùng lẫn lộn dạng '~로써' khi diễn đạt tư cách (như 'với tư cách học sinh', 'với tư cách là lãnh đạo'). Danh từ kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng '-로써', kết thúc bằng các phụ âm khác dùng '-으로써'.",
+      "formation": "Danh từ + -(으)로써 (danh từ có phụ âm cuối dùng -으로써, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -로써)",
+      "examples": [
+        {
+          "translation": "Với tư cách là một học sinh, tôi đã hiểu hết tất cả những điều mà thầy giáo đã giảng dạy."
+        },
+        {
+          "translation": "Với tư cách là một nghệ sĩ vĩ cầm, cô ấy đã nhận được sự công nhận trên toàn thế giới."
+        },
+        {
+          "translation": "Với tư cách là một kỹ sư, tôi hoàn toàn có thể giải quyết được vấn đề này."
+        },
+        {
+          "translation": "Với tư cách là một người lãnh đạo, anh ấy đang dẫn dắt đội ngũ của mình rất xuất sắc."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_기_80": {
+      "title": "~기 시작하다（开始做……、开始……起来）",
+      "shortExplanation": "表示动作的开始或某种状态的萌生与转变，相当于汉语的“开始做……”、“开始……起来”。",
+      "longExplanation": "“~기 시작하다”是由名词形词尾“-기”与动词“시작하다”（开始）组合而成的句型。用于指明某一行为在特定时间节点开始进行，或者某种心境、自然现象、身体感觉等状态开始显现并发展。除与一般动作动词连用外，也可与表示状态变化的形容词或动词搭配使用。",
+      "formation": "动词/形容词词干 + 기 시작하다",
+      "examples": [
+        {
+          "translation": "公司里开始出现各种问题，许多人也开始感到心烦意乱。"
+        },
+        {
+          "translation": "当真正的春天来临时，花儿们开始竞相绽放。"
+        },
+        {
+          "translation": "我开始觉得肚子比平时更饿了。"
+        },
+        {
+          "translation": "我们逐渐意识到系统已经开始出现错误了。"
+        }
+      ]
+    },
+    "ko_남다_81": {
+      "title": "~남다（剩下、残留、留下）",
+      "shortExplanation": "自动词，表示在消耗、使用或过去之后，在数量、时间或情感记忆上仍有剩余或留存（“剩下”、“剩余”、“留下”）。",
+      "longExplanation": "“~남다”是韩语中表示“剩下、残留”的核心自动词。可以用于具体事物（如食物、金钱、时间等），表示消耗后仍有剩余；也可以用于抽象事物（如思念、回忆、遗憾、印象等），表示某事结束后在心头长久驻留的情感或痕迹。常与主格助词“이/가”或限定助词“만”搭配使用。",
+      "formation": "名词 + 이/가 + 남다 | 名词 + 만 + 남다",
+      "examples": [
+        {
+          "translation": "我也很想好好复习，但备考的时间几乎没剩下多少了。"
+        },
+        {
+          "translation": "在所有参加婚礼的宾客都到齐并用餐之后，还剩下了许多食物。"
+        },
+        {
+          "translation": "我们绕着湖畔走完之后，就再也没有什么可看的景点了。"
+        },
+        {
+          "translation": "在她离去之后的离别首夜，心中只剩下了无尽的思念。"
+        }
+      ]
+    },
+    "ko_네요_82": {
+      "title": "~네요（……啊、真……呢、呀）",
+      "shortExplanation": "终结词尾，用于说话人通过亲身体验、观察而得知新事实或出乎意料的情况时，表达感叹或轻微惊讶（“……啊”、“真……呢”）。",
+      "longExplanation": "“~네요”是用于表达感叹或新领会事实的非格式体尊敬阶终结词尾。当说话人刚刚亲眼所见、亲身感受到某种新事实或发现情况与原先预想不同时使用，带有一种“原来如此”、“竟然……”的感叹语气。可直接附在动词、形容词词干或体词谓词形（이다/아니다）之后。",
+      "formation": "动词/形容词词干 + 네요 | 名词 + (이)네요",
+      "examples": [
+        {
+          "translation": "今天天气真暖和呢，早上我还以为会挺冷呢。"
+        },
+        {
+          "translation": "她唱歌唱得真好啊，以前我从没听过所以真没想到。"
+        },
+        {
+          "translation": "哇，这个蛋糕真好吃呀，这还是我第一次尝到这种味道呢。"
+        },
+        {
+          "translation": "哎呀，下雨了呢，我真该把雨伞带出来的。"
+        }
+      ]
+    },
+    "ko_다고_83": {
+      "title": "~다고（说……、认为……、间接引语）",
+      "shortExplanation": "陈述句间接引语连接词尾，用于转述他人或自己的话语、想法、判断或感受（“说……”、“认为……”）。",
+      "longExplanation": "“~다고”是韩语陈述句间接引语表达“~다고 하다/말하다/생각하다”的核心连接结构。用于间接转述由他人处听来的信息、转达自身观点或传达某种思考判断。接续时动词现在时接“-ㄴ/는다고”，形容词直接接“-다고”，过去时接“-았/었다고”，名词后接“-(이)라고”。",
+      "formation": "动词现在时 + -ㄴ/는다고 | 形容词 + -다고 | 过去时 + -았/었다고 | 名词 + -(이)라고 + (말하다/생각하다/하다...)",
+      "examples": [
+        {
+          "translation": "他以为我已经吃过饭了，但我其实还没吃呢。"
+        },
+        {
+          "translation": "朋友说今天会下雨，所以我带了把雨伞来。"
+        },
+        {
+          "translation": "老师说考试会很难，所以我非常用功地学习了。"
+        },
+        {
+          "translation": "妈妈嘱咐我说今天晚上不要太晚回家。"
+        }
+      ]
+    },
+    "ko_다는_84": {
+      "title": "~다는（……的这一事实/消息、所谓……的）",
+      "shortExplanation": "间接引用定语词尾，接在谓词后修饰名词，用于具体阐述某种言论、事实、消息或传闻的详细内容（“关于……的”、“所谓……的”）。",
+      "longExplanation": "“~다는”是间接引用定语表达“~다고 하는”的缩略形式。它将引述的陈述内容转化为定语从句，用于修饰后接的抽象名词，如“사실”（事实）、“소식”（消息）、“소문”（传闻）、“말”（话）、“생각”（想法）等。动词现在时接“-ㄴ/는다는”，形容词接“-다는”，过去时接“-았/었다는”，名词接“-(이)라는”。",
+      "formation": "动词现在时 + -ㄴ/는다는 | 形容词 + -다는 | 过去时 + -았/었다는 + 名词（사실/소식/생각 等）",
+      "examples": [
+        {
+          "translation": "他不知道承认自己的过失这一事实究竟有多么艰难。"
+        },
+        {
+          "translation": "我第一次深切体会到了自己深爱着她这一事实。"
+        },
+        {
+          "translation": "我听到了Puppy先生的公司正在全面扩展业务的消息。"
+        },
+        {
+          "translation": "今天早晨我听说了你要结婚的消息。"
+        }
+      ]
+    },
+    "ko_다면서요_85": {
+      "title": "~다면서요（听说……是真的吗？、听说……是吗？）",
+      "shortExplanation": "终结词尾，用于就之前从别处听来的传闻或对方曾说过的话向对方进行求证确认（“听说……是真的吗？”、“听说……是吗？”）。",
+      "longExplanation": "“~다면서요”是由间接引语连接词尾“-다면서”与敬体助词“요”融合而成的疑问终结句型。说话人将间接听到的事情或对方之前表态过的内容拿来重新向当事人询问核实，带有“我听说……这是真的吗？”或“你不是说过……吗，怎么却……”的求证与略带探问的语气。",
+      "formation": "动词现在时 + -ㄴ/는다면서요 | 形容词 + -다면서요 | 过去时 + -았/었다면서요 | 名词 + -(이)라면서요",
+      "examples": [
+        {
+          "translation": "听说英姬住在首尔，这是真的吗？我实在是不太清楚呢。"
+        },
+        {
+          "translation": "你之前不是说要早点回家吗，怎么到现在还没回来呢？"
+        },
+        {
+          "translation": "听说朋友明天不来学校了，是不是生病不舒服了呀？"
+        },
+        {
+          "translation": "听说你答应过之后要一起喝杯咖啡的，怎么一直没有联系呢？"
+        }
+      ]
+    },
+    "ko_던데_86": {
+      "title": "~던데（我记得……、我看……、当时明明……）",
+      "shortExplanation": "回想连接词尾，用于回忆起自己过去亲眼所见或亲身体验过的事实，以此作为背景引出后句的提问、感叹或转折对比（“我记得当时……”、“我看……”）。",
+      "longExplanation": "“~던데”是由表示回想亲身体验的先时制词尾“-더-”与表示提示背景或转折的连接词尾“-ㄴ/은데”结合而成的语法结构。说话人将自己过去亲身见闻或经历过的事情回忆起来，以此作为前提或背景，引出下文的疑问、建议、感叹，或者用来突出过去与现在情况的显著反差。",
+      "formation": "动词/形容词词干 + 던데 | 过去完成时 + -았/었던데",
+      "examples": [
+        {
+          "translation": "我记得他以前总是留长发来着，是从什么时候开始剪短发了呀？"
+        },
+        {
+          "translation": "我朋友以前明明很不爱吃蔬菜，现在听说为了健康正每天努力吃蔬菜呢。"
+        },
+        {
+          "translation": "我小的时候明明特别讨厌打扫卫生，现在却很喜欢，几乎每天都会打扫。"
+        },
+        {
+          "translation": "我记得我们从小就一直在一起学习，现在却各自上了不同的大学。"
+        }
+      ]
+    },
+    "ko_도록_87": {
+      "title": "~도록 하다（设法使……、务必做到……、促使……）",
+      "shortExplanation": "表示采取措施努力使某事达成，或要求、劝告他人务必促成某种结果或状态的句型（“设法使……”、“务必做到……”）。",
+      "longExplanation": "“~도록 하다”是由表示目的、结果或程度的连接词尾“-도록”与补助动词“하다”组合而成的句型。用于主语做出努力或采取手段，以确保达到预期的目的与状态。当用于第一人称时，表示自己努力达成某事的决心；用于第二人称指令或劝告句时，则构成委婉而郑重的要求，意为“请务必做到……”、“设法让……”。",
+      "formation": "动词词干 + 도록 하다",
+      "examples": [
+        {
+          "translation": "我们必须设法让员工得到充分的休息。如果不这么做，他们的工作效率可能会有所下降。"
+        },
+        {
+          "translation": "在筹划生日派对时，一定要设法让一切都进展得尽善尽美。毕竟那是属于父亲的特别日子。"
+        },
+        {
+          "translation": "作为班长，我必须促使所有同学都按时完成作业。这样一来老师也就没有理由对我们不满了。"
+        },
+        {
+          "translation": "我们必须全力以赴让客户对我们的产品感到满意。唯有如此，我们的业务才能够蓬勃发展。"
+        }
+      ]
+    },
+    "ko_든지_88": {
+      "title": "~든지（无论……还是……、不管……都……）",
+      "shortExplanation": "选择连接词尾，常以“~든지 ~든지”形式成对出现，表示无论在列举的选项中做出何种选择，结果都一样或说话人并不在意（“无论……还是……”、“不管……”）。",
+      "longExplanation": "“~든지”是表示无条件选择的连接词尾。常通过反复列举两个或两个以上的对立或相关选项（“A든지 B든지”），表明任何一种选择都是被允许的，或者无论哪种情况发生，后项的结果与态度都不会受到影响。与疑问词搭配时构成“언제든지”（随时）、“어디든지”（随地）、“누구든지”（任何人）等不定指表达。须注意与表示回想原因的“-던지”相区分。",
+      "formation": "动词/形容词词干 + 든지 | 名词 + (이)든지",
+      "examples": [
+        {
+          "translation": "不管你是要进来还是要出去我都无所谓，重要的是工作必须继续进行下去。"
+        },
+        {
+          "translation": "不管是下雨天还是大晴天，我都一定会出门散散步。"
+        },
+        {
+          "translation": "不管你能不能听懂，我都将继续讲解下去。"
+        },
+        {
+          "translation": "小狗无论是叫还是不叫，像跟它对话似地打个招呼都是极好的。"
+        }
+      ]
+    },
+    "ko_라는_89": {
+      "title": "~라는 것이다（意味着……、也就是说……）",
+      "shortExplanation": "阐释与界定句型，用于对前述的前提或事实进行本质上的总结、定义或引申说明（“意味着……”、“也就是……”）。",
+      "longExplanation": "“~라는 것이다”是由间接引用冠形词尾“-(이)라는”与依存名词“것”、体词谓词形“이다”结合而成的句型。通常与前项从句的“-는다는 것은”（……这一事实意味着）相互呼应，用于下结论、揭示某一现象背后的深刻本质或逻辑必然性，相当于汉语的“也就是说……”、“这表明其实就是……”。",
+      "formation": "动词现在时 + -ㄴ/는다는 것이다 | 形容词 + -다는 것이다 | 名词 + -(이)라는 것이다",
+      "examples": [
+        {
+          "translation": "她经常拍照这一事实，意味着她真心热爱摄影。"
+        },
+        {
+          "translation": "他总是起得很早，这意味着他是一个不折不扣的晨型人。"
+        },
+        {
+          "translation": "秋天到来时树叶变成金黄色，这说明这就是秋天的典型特征。"
+        },
+        {
+          "translation": "我们面临着某些问题这一事实，意味着我们必须去着手解决这些问题。"
+        }
+      ]
+    },
+    "ko_라도_90": {
+      "title": "~라도（哪怕是……也、至少……、就算是……也）",
+      "shortExplanation": "表示退而求其次的补助词，指在无法达到最理想状态时，退步选取最低限度能接受的替代方案（“哪怕是……也”、“至少……”）。",
+      "longExplanation": "“~라도”是韩语中表示让步性最低底线的补助词。常附在名词之后，表示“虽然并非最满意、最理想的选择，但在别无选择或退一步讲的情况下，作为次选方案也是可以接受的”。多用于委婉提议、表达底线要求或在假设条件下提供退让选项。",
+      "formation": "名词 + (이)라도（有收音时接 이라도，无收音时接 라도）",
+      "examples": [
+        {
+          "translation": "虽然走到月球上很难办到，但至少让我们拍张照片留念吧。"
+        },
+        {
+          "translation": "他虽然推脱说工作太辛苦，但难道我们连一件起码的活儿都不该吩咐他去做吗？"
+        },
+        {
+          "translation": "起码她也该道个歉不是吗？要是那样做的话情况本该好转一些的。"
+        },
+        {
+          "translation": "要是你不打算回家的话，起码也该打个电话联系一下才对吧？"
+        }
+      ]
+    },
+    "ko_러_91": {
+      "title": "~러 / ~(으)러（去/来做……、为了……而移动）",
+      "shortExplanation": "目的连接词尾，专门与表示移动的动词（如 가다, 오다, 다니다 等）搭配使用，表示前往某处开展某一行为的目的（“去/来做……”）。",
+      "longExplanation": "“~(으)러”是专门用于表达移动目的的连接词尾。后句谓语限定为表示位移的动词（如“가다/오다/다니다/나가다/들어가다”等），用于明确说明去往某地到底是为了做什么。动词词干无收音或收音为“ㄹ”时接“-러”，有收音（除“ㄹ”外）时接“-으러”。",
+      "formation": "动词词干 + -(으)러（有收音接 -으러，无收音或收音为 ㄹ 时接 -러） + (가다/오다/다니다 等移动动词)",
+      "examples": [
+        {
+          "translation": "我是为了学韩语而来韩国的。"
+        },
+        {
+          "translation": "他去书店买书了。"
+        },
+        {
+          "translation": "母亲去厨房准备晚餐了。"
+        },
+        {
+          "translation": "我和朋友们一起去电影院看电影了。"
+        }
+      ]
+    },
+    "ko_려고_92": {
+      "title": "~려고 하다 / ~(으)려고 하다（打算做……、想要做……、企图……）",
+      "shortExplanation": "表示主语内心的意图、计划或打算在近期付诸实践的行为（“打算做……”、“想要……”、“正要……”）。",
+      "longExplanation": "“~(으)려고 하다”是由表示意图的连接词尾“-(으)려고”与补助动词“하다”结合而成的句型。用于表达说话人或主语的主观意愿、行动计划或正在尝试做出的努力。不仅可以表达未来的计划打算，也可以用于描述即将发生某动作的临界状态。动词词干有收音接“-으려고 하다”，无收音或收音为“ㄹ”时接“-려고 하다”。",
+      "formation": "动词词干 + -(으)려고 하다（有收音接 -으려고 하다，无收音或收音为 ㄹ 时接 -려고 하다）",
+      "examples": [
+        {
+          "translation": "我打算每天学10个新单词，因此正在为了提高韩语水平而努力着。"
+        },
+        {
+          "translation": "即使在生病的时候我也总是努力尝试微笑，那就是我的处世方式。"
+        },
+        {
+          "translation": "他总是打算早睡，但每次都以失败告终。"
+        },
+        {
+          "translation": "我们刻苦练习、认真钻研，力求让演出圆满成功。"
+        }
+      ]
+    },
+    "ko_려는_93": {
+      "title": "~려는 / ~(으)려는（打算……的、企图……的、想要……的）",
+      "shortExplanation": "意图定语词尾，接在动词后修饰名词，用于修饰说明怀有某种行动意图、计划或目的的主体或事物（“想要……的……”、“打算……的……”）。",
+      "longExplanation": "“~(으)려는”是意图定语表达“-(으)려고 하는”的简缩形态。直接接在动词词干之后，修饰后续的名词（如“사람”人、“학생”学生、“것”事等），表示该主体怀抱着实施某动作的愿望、打算或意志。动词词干有收音接“-으려는”，无收音或收音为“ㄹ”时接“-려는”。",
+      "formation": "动词词干 + -(으)려는（有收音接 -으려는，无收音或收音为 ㄹ 时接 -려는） + 名词",
+      "examples": [
+        {
+          "translation": "明天打算去出差的人只有我一个。其他人都特别忙。"
+        },
+        {
+          "translation": "为了健康饮食，想要成为素食主义者的人正越来越多。"
+        },
+        {
+          "translation": "打算备考托业考试的学生们，正在将大量的时间投入到学习中。"
+        },
+        {
+          "translation": "我的周末计划是打算学习编程，但这需要比平时耗费更多的时间和精力。"
+        }
+      ]
+    },
+    "ko_로써_94": {
+      "title": "~로써 / ~(으)로써（作为、以……资格/手段、凭……）",
+      "shortExplanation": "副词格助词，语法规范上表示工具、手段、方式（“以……”、“凭……”）；而在日常习惯使用中，也常被广泛用于指代主体的身份、资格与立场（“作为……”、“以……的身份”）。",
+      "longExplanation": "“~(으)로써”是表示手段、工具、材料或方式的造格助词。按标准语法规范，表示人的身份、地位与资格时应写作“~로서”，但在现实日常口语和书写习惯中，韩国母语者常常将二者相混，使用“~로써”来表达“作为某种身份/立场”（如例句中的“학생으로써/지도자로써”）。有收音的名词接“-으로써”，无收音或收音为“ㄹ”的名词接“-로써”。",
+      "formation": "名词 + -(으)로써（有收音接 -으로써，无收音或收音为 ㄹ 时接 -로써）",
+      "examples": [
+        {
+          "translation": "作为一名学生，我完全理解了老师所讲授的所有内容。"
+        },
+        {
+          "translation": "作为一名小提琴演奏家，她在国际上赢得了高度赞誉。"
+        },
+        {
+          "translation": "作为一名工程师，我完全有能力解决这个难题。"
+        },
+        {
+          "translation": "作为团队的领导者，他把整个团队带领得非常出色。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_기_80": {
+      "title": "~기 시작하다（〜し始める、〜になり始める）",
+      "shortExplanation": "動作の開始や、ある状態への変化が起こり始めることを表す表現です（「〜し始める」「〜になり始める」）。",
+      "longExplanation": "「~기 시작하다」は、用言を名詞化する名詞形語尾「-기」に動詞「시작하다」（始める）が結合した構文です。ある動作が開始される瞬間や、心理状態・自然現象などの状態変化が起こり始めて継続していく局面を表します。動作動詞だけでなく、状態の変化を表す形容詞や自動詞にも幅広く接続します。",
+      "formation": "動詞・形容詞語幹 + 기 시작하다",
+      "examples": [
+        {
+          "translation": "会社で問題が生じ始め、多くの人がいらいらし始めました。"
+        },
+        {
+          "translation": "本当の春が訪れた時、花々が咲き始めました。"
+        },
+        {
+          "translation": "私は普段よりもお腹がひどく空き始めました。"
+        },
+        {
+          "translation": "私たちはエラーが発生し始めたということに気づきました。"
+        }
+      ]
+    },
+    "ko_남다_81": {
+      "title": "~남다（残る、余る）",
+      "shortExplanation": "使用や消費、時間の経過の後に、数量・時間や感情・記憶などがそのまま留まっていることを表す自動詞です（「残る」「余る」）。",
+      "longExplanation": "「~남다」は、物資や時間、お金、食べ物などが消費された後に「余る・残る」ことを表す代表的な自動詞です。また、具体的な事物だけでなく、別れの後の恋しさや余韻、記憶などの抽象的な感情が心に「残る」という表現としても情緒豊かに用いられます。主格助詞「이/가」や限定の助詞「만」とともによく使われます。",
+      "formation": "名詞 + 이/가 + 남다 | 名詞 + 만 + 남다",
+      "examples": [
+        {
+          "translation": "私も勉強したかったのですが、試験の準備のための時間がほとんど残っていませんでした。"
+        },
+        {
+          "translation": "結婚式に招待された人たちが全員到着した後も、料理がたくさん残っていました。"
+        },
+        {
+          "translation": "私たちは湖の周りを歩き終えた後、もうこれ以上見るべきものが残りませんでした。"
+        },
+        {
+          "translation": "彼女が去った後、別れの最初の夜には恋しさだけが残りました。"
+        }
+      ]
+    },
+    "ko_네요_82": {
+      "title": "~네요（〜ですね、〜ですねえ）",
+      "shortExplanation": "話し手がその場で直接見たり体験したりして、新しく知った事実や意外な発見に対して感嘆や軽い驚きを表す終結語尾です（「〜ですね」「〜ですねえ」）。",
+      "longExplanation": "「~네요」は、直接の観察や経験を通じて得られた新たな事実に対して、共感や感銘、驚きを込めて述べる非格式体の丁寧な終結語尾です。事前に思っていたことと違っていた時や、目の前の事実に「おや」「まあ」と感心したニュアンスを自然に添えることができます。用言の語幹や体言＋이다の後にそのまま接続します。",
+      "formation": "動詞・形容詞語幹 + 네요 | 名詞 + (이)네요",
+      "examples": [
+        {
+          "translation": "今日の天気は本当に暖かいですね、朝は寒いと思っていたのですが。"
+        },
+        {
+          "translation": "彼女は本当に歌が上手ですね、これまでに聴いたことがなかったので知りませんでした。"
+        },
+        {
+          "translation": "わあ、このケーキ本当に美味しいですね、初めて食べる味です。"
+        },
+        {
+          "translation": "おや、雨が降ってきましたね、傘を持ってくるべきでした。"
+        }
+      ]
+    },
+    "ko_다고_83": {
+      "title": "~다고（〜だと、〜ということだ、〜と言って）",
+      "shortExplanation": "平叙文の間接引用を表す接続語尾で、他人や自分の発言・思考・判断などを引用・伝達する際に用います（「〜だと（言う・思う）」）。",
+      "longExplanation": "「~다고」は、平叙文の間接引用形「~다고 하다/말하다/생각하다」を導く引用語尾です。誰かが述べた言葉や自分自身の考え、見解、伝聞の内容を客観的に引用して後続の述語につなげます。動詞の現在形には「-ㄴ/는다고」、形容詞には「-다고」、過去形には「-았/었다고」、名詞には「-(이)라고」が接続します。",
+      "formation": "動詞現在形 + -ㄴ/는다고 | 形容詞 + -다고 | 過去形 + -았/었다고 | 名詞 + -(이)라고 + (말하다/생각하다/하다など)",
+      "examples": [
+        {
+          "translation": "彼は私がもうご飯を食べたと思ったようですが、私はまだ食べていませんでした。"
+        },
+        {
+          "translation": "友達が今日は雨が降ると言っていたので、私は傘を持ってきました。"
+        },
+        {
+          "translation": "先生がテストは難しいと言っていたので、一生懸命に勉強しました。"
+        },
+        {
+          "translation": "母が今夜は遅く帰ってこないようにと言いました。"
+        }
+      ]
+    },
+    "ko_다는_84": {
+      "title": "~다는（〜という、〜だという事実・知らせ）",
+      "shortExplanation": "平叙文の間接引用の連体形語尾で、発言や伝聞、事実、噂などの具体的内容を後続の名詞に修飾する表現です（「〜という（事実・噂・知らせ）」）。",
+      "longExplanation": "「~다는」は「~다고 하는」の縮約形で、伝聞や思考の内容を連体修飾節として後続の名詞（「사실（事実）」「소식（知らせ）」「소문（噂）」「생각（考え）」など）に接続させる役割を持ちます。日本語の「〜という事実」「〜だという話」に相当します。動詞現在形には「-ㄴ/는다는」、形容詞には「-다는」、過去形には「-았/었다는」、名詞には「-(이)라는」が用いられます。",
+      "formation": "動詞現在形 + -ㄴ/는다는 | 形容詞 + -다는 | 過去形 + -았/었다는 + 名詞（사실, 소식, 생각など）",
+      "examples": [
+        {
+          "translation": "彼は自分の過ちを認めるという事実がどれほど難しいことか分かっていません。"
+        },
+        {
+          "translation": "私は自分が彼女を愛しているということに初めて気がついた。"
+        },
+        {
+          "translation": "パピーさんの会社が本格的に事業を拡張しているという知らせを聞きました。"
+        },
+        {
+          "translation": "今朝、君が結婚するという話を聞いたよ。"
+        }
+      ]
+    },
+    "ko_다면서요_85": {
+      "title": "~다면서요（〜だそうですね、〜と言っていましたよね？）",
+      "shortExplanation": "他人から伝え聞いた情報や以前相手が言っていた内容について、事実かどうかを相手に確認・問い直す終結語尾です（「〜だそうですね」「〜とお聞きしましたが」）。",
+      "longExplanation": "「~다면서요」は、間接引用の表現に丁寧の補助詞「요」がついた疑問の終結語尾です。人づてに聞いた話や噂、あるいは相手が以前約束・発言した内容を引き合いに出し、「〜だそうですね、本当ですか？」「〜と言っていたはずですが、どうしてですか？」と事実を確認したり追及したりするニュアンスを持ちます。",
+      "formation": "動詞現在形 + -ㄴ/는다면서요 | 形容詞 + -다면서요 | 過去形 + -았/었다면서요 | 名詞 + -(이)라면서요",
+      "examples": [
+        {
+          "translation": "ヨンヒさんがソウルに住んでいるそうですね、本当にそうなのか私には分かりません。"
+        },
+        {
+          "translation": "家に早く帰ると言っていたそうですが、どうしてまだ帰ってこないのですか？"
+        },
+        {
+          "translation": "友達が明日学校に来ないと言っていたそうですが、もしかして具合が悪いのでしょうか？"
+        },
+        {
+          "translation": "後で一緒にコーヒーを一杯飲もうと約束したそうですが、どうして連絡がないのですか？"
+        }
+      ]
+    },
+    "ko_던데_86": {
+      "title": "~던데（〜していたけど、〜だったのに、〜だったよ）",
+      "shortExplanation": "話し手が過去に直接見聞き・体験した事実を回想しながら提示し、後続文の背景としたり、現在の状況との対比や疑問を述べたりする接続語尾です（「〜していたけれど」「〜だったのに」）。",
+      "longExplanation": "「~던데」は、過去の直接経験を回想する語尾「-더-」と、背景の提示や逆接を表す接続語尾「-ㄴ/은데」が結合した表現です。自分が過去に実際に目撃したことや実感した出来事を思い起こして前置きとし、それに伴う疑問や感想を述べたり、過去と現在の変化やギャップを際立たせたりする際に非常に自然に使われます。",
+      "formation": "動詞・形容詞語幹 + 던데 | 過去完了形 + -았/었던데",
+      "examples": [
+        {
+          "translation": "彼はいつも髪を長く伸ばしていたけれど、いつから短く切り始めたのですか？"
+        },
+        {
+          "translation": "私の友達は昔は野菜が好きではなかったのに、今では健康のために熱心に食べているそうですね。"
+        },
+        {
+          "translation": "私は幼い頃は掃除が本当に嫌いだったけれど、今では好きになって毎日する方です。"
+        },
+        {
+          "translation": "私たちは幼い頃から一緒に勉強していたけれど、今はそれぞれ別の大学に通っています。"
+        }
+      ]
+    },
+    "ko_도록_87": {
+      "title": "~도록 하다（〜するようにする、〜するように計らう）",
+      "shortExplanation": "ある目的を達成したり特定の状態に至らせたりするために、努力や工夫、指示を行うことを表す表現です（「〜するようにする」「〜するように努める」）。",
+      "longExplanation": "「~도록 하다」は、目的や結果・限度を表す接続語尾「-도록」に補助動詞「하다」が結合した文型です。ある望ましい状況を実現するために必要な措置を講じることを表します。話者自身が主語の場合は「〜するように努める」という意志や決意を表し、聞き手に対して用いる場合は「〜するようにしなさい」「〜するようにしてください」と穏やかかつ丁寧に指示・要請する表現となります。",
+      "formation": "動詞語幹 + 도록 하다",
+      "examples": [
+        {
+          "translation": "私たちは社員が十分な休息を取れるようにしなければなりません。そうしなければ彼らの能率が落ちてしまう可能性があります。"
+        },
+        {
+          "translation": "誕生日パーティーを計画するにあたって、すべてが完璧に運ぶようにしなければなりません。何といっても父の特別な日ですからね。"
+        },
+        {
+          "translation": "学級委員長として、私はすべての生徒が宿題を完了するようにさせなければなりません。そうすれば先生も私たちに不満を持つ理由がなくなるはずです。"
+        },
+        {
+          "translation": "お客様が私たちの製品に満足していただけるよう最善を尽くさなければなりません。そうしてこそ私たちのビジネスも成長できるはずです。"
+        }
+      ]
+    },
+    "ko_든지_88": {
+      "title": "~든지（〜であれ〜であれ、〜だろうと〜だろうと）",
+      "shortExplanation": "選択を表す接続語尾で、「〜든지 ~든지」の形で並列され、どの選択肢を選んでも結果に関係がないことや気に留めないことを表します（「〜であれ〜であれ」「〜だろうと〜だろうと」）。",
+      "longExplanation": "「~든지」は、複数の事態や対象を対比・列挙し、どれを選択しても構わないことや、どちらの条件であっても後節の結果に差異がないことを表す語尾です。疑問詞と結合して「언제든지（いつでも）」「누구든지（だれでも）」「어디든지（どこでも）」などの不定表現としても頻用されます。過去の回想を表す「-던지」との混同に注意が必要です。",
+      "formation": "動詞・形容詞語幹 + 든지 | 名詞 + (이)든지",
+      "examples": [
+        {
+          "translation": "あなたが中に入ってこようが出ようが私は気にしません。重要なのは作業が続けられなければならないということです。"
+        },
+        {
+          "translation": "雨が降ろうと晴れた日であろうと、私はいつも散歩に出かけます。"
+        },
+        {
+          "translation": "あなたが理解できようができまいが、私は説明を続けます。"
+        },
+        {
+          "translation": "子犬が吠えようが吠えまいが、まるで会話を交わすかのように挨拶をするのが好ましいです。"
+        }
+      ]
+    },
+    "ko_라는_89": {
+      "title": "~라는 것이다（〜ということだ、〜を意味するのだ）",
+      "shortExplanation": "前述の前提や事実を受けて、その本質や意味、結論を定義・説明する構文です（「〜ということだ」「〜という意味である」）。",
+      "longExplanation": "「~라는 것이다」は、引用の連体形「-(이)라는」に依存名詞「것」と指定詞「이다」が結合した表現です。しばしば主語節「-는다는 것은（〜ということは）」と呼応して文末に置かれ、ある現象や事実がどのような本質・含意・結論を持っているのかを論理的に定義・解説する際に使われます。",
+      "formation": "動詞現在形 + -ㄴ/는다는 것이다 | 形容詞 + -다는 것이다 | 名詞 + -(이)라는 것이다",
+      "examples": [
+        {
+          "translation": "彼女が写真を撮るということは、彼女が写真を愛しているということを意味するのだ。"
+        },
+        {
+          "translation": "彼がいつも早起きするということは、彼が朝型の人間だということだ。"
+        },
+        {
+          "translation": "秋が来ると木の葉が黄色に変わるということは、秋ならではの特性だということだ。"
+        },
+        {
+          "translation": "私たちが何らかの問題を抱えているということは、私たちがその問題を解決しなければならないということだ。"
+        }
+      ]
+    },
+    "ko_라도_90": {
+      "title": "~라도（〜でも、せめて〜だけでも）",
+      "shortExplanation": "最善の選択肢が得られない場合に、最低限の代案や妥協策として受け入れられる対象を提示する助詞です（「〜でも」「せめて〜だけでも」）。",
+      "longExplanation": "「~라도」は、理想的・最善ではないものの、「せめて次善の策としてこれだけでも満たされれば」「これでも構わないから」と最低限のラインを受け入れるニュアンスを表す補助詞です。提案や依頼を和らげたり、控えめな希望を述べたりする際によく用いられます。体言にパッチムがある場合は「이라도」、ない場合は「라도」が付きます。",
+      "formation": "名詞 + (이)라도（パッチムがある場合は 이라도、ない場合は 라도）",
+      "examples": [
+        {
+          "translation": "月まで歩いていくのは無理ですが、せめて写真だけでも撮りましょう。"
+        },
+        {
+          "translation": "彼は働くのが辛いと言っていましたが、せめて仕事くらいはさせなければならないのではないでしょうか？"
+        },
+        {
+          "translation": "せめて謝罪だけでもするべきだったのではないでしょうか。そうしていれば状況はもう少し良くなったはずなのに。"
+        },
+        {
+          "translation": "家に帰らないつもりなら、せめて連絡くらいはくれてもよかったのではないでしょうか？"
+        }
+      ]
+    },
+    "ko_러_91": {
+      "title": "~러 / ~(으)러（〜しに（行く・来る））",
+      "shortExplanation": "移動動詞（가다, 오다など）とともに用いられ、ある場所へ移動する直接の目的を表す接続語尾です（「〜しに（行く・来る）」）。",
+      "longExplanation": "「~(으)러」は、移動の目的を表す接続語尾で、後続節の述語には「가다（行く）」「오다（来る）」「다니다（通う）」などの移動動詞が必ず続きます。何かの行為を行うために移動することを端的に表します。語幹の末尾にパッチムがない場合や「ㄹ」パッチムの場合は「-러」、それ以外のパッチムがある場合は「-으러」が接続します。",
+      "formation": "動詞語幹 + -(으)러（パッチムがない場合・ㄹパッチムは -러、パッチムがある場合は -으러） + （가다/오다/다니다など）",
+      "examples": [
+        {
+          "translation": "私は韓国語を学びにはるばる韓国へ来ました。"
+        },
+        {
+          "translation": "彼は本を買いに本屋へ行きました。"
+        },
+        {
+          "translation": "母は夕食を準備しに台所へ行かれました。"
+        },
+        {
+          "translation": "友達と一緒に映画を見に映画館へ行きました。"
+        }
+      ]
+    },
+    "ko_려고_92": {
+      "title": "~려고 하다 / ~(으)려고 하다（〜しようとする、〜するつもりだ）",
+      "shortExplanation": "主語の意図、計画、あるいはある行動を起こそうと試みる意志を表す表現です（「〜しようとする」「〜するつもりだ」）。",
+      "longExplanation": "「~(으)려고 하다」は、意図を表す接続語尾「-(으)려고」に補助動詞「하다」が結合した表現です。主語がある行為を行おうと企てたり、これから実行に移そうと試みたりする主観的な意志や計画を表します。努力や試行錯誤を表す文脈でもよく用いられます。語幹末尾にパッチムがない場合や「ㄹ」パッチムの場合は「-려고 하다」、それ以外のパッチムがある場合は「-으려고 하다」となります。",
+      "formation": "動詞語幹 + -(으)려고 하다（パッチムがない場合・ㄹパッチムは -려고 하다、パッチムがある場合は -으려고 하다）",
+      "examples": [
+        {
+          "translation": "私は毎日10個ずつ新しい単語を覚えようとしています。そのため韓国語上達のために努力しています。"
+        },
+        {
+          "translation": "体調が悪い時でもいつも笑おうとしています。それが私の流儀です。"
+        },
+        {
+          "translation": "彼はいつも早く寝ようとしますが、いつも失敗に終わってしまいます。"
+        },
+        {
+          "translation": "私たちは練習と勉強を重ね、公演を成功裏に終えようと努めました。"
+        }
+      ]
+    },
+    "ko_려는_93": {
+      "title": "~려는 / ~(으)려는（〜しようとする、〜するつもりの）",
+      "shortExplanation": "動詞の後に接続して名詞を修飾し、ある行動を実行しようとする意志や計画を抱いていることを表す意図の連体形語尾です（「〜しようとする（人・こと）」）。",
+      "longExplanation": "「~(으)려는」は、意図を表す連体形「-(으)려고 하는」の縮約形です。後続する名詞（「사람（人）」「학생（学生）」「것（こと）」など）を修飾し、その対象がある行為を遂行しようと企てている意図や目的を持っている状態であることを示します。語幹末尾にパッチムがない場合や「ㄹ」パッチムの場合は「-려는」、パッチムがある場合は「-으려는」が付きます。",
+      "formation": "動詞語幹 + -(으)려는（パッチムがない場合・ㄹパッチムは -려는、パッチムがある場合は -으려는） + 名詞",
+      "examples": [
+        {
+          "translation": "明日出張に行こうとする人は私一人だけです。他の人たちは皆忙しいです。"
+        },
+        {
+          "translation": "健康的な食生活のために菜食主義者になろうとする人が多いです。"
+        },
+        {
+          "translation": "TOEIC試験を準備しようとする学生たちは、多くの時間を勉強に投資しています。"
+        },
+        {
+          "translation": "私の週末の計画はプログラミングを学ぼうとすることですが、普段よりも多くの時間と労力が必要です。"
+        }
+      ]
+    },
+    "ko_로써_94": {
+      "title": "~로써 / ~(으)로써（〜として、〜をもって、〜によって）",
+      "shortExplanation": "手段や道具、方法を表す副詞格助詞です。なお日常の言語慣習では、資格や立場を表す「~로서」と混用され、「〜として」の意味合いでも頻繁に用いられます。",
+      "longExplanation": "「~(으)로써」は規範文法上、手段・道具・材料・方法などを表す格助詞（「〜をもって」「〜によって」）です。資格・身分・地位を表す場合は原則として「~로서」を用いますが、実際の日常会話や表現の中では母語話者によって混用され、本パターンの例文のように「학생으로써（学生として）」「지도자로써（指導者として）」といった身分・資格を表す文脈でも広く用いられています。パッチムがある名詞には「-으로써」、ない名詞や「ㄹ」パッチムには「-로써」が付きます。",
+      "formation": "名詞 + -(으)로써（パッチムがある場合は -으로써、ない場合やㄹパッチムは -로써）",
+      "examples": [
+        {
+          "translation": "私は学生として、先生が教えてくださったことをすべて理解しました。"
+        },
+        {
+          "translation": "ヴァイオリニストとして、彼女は世界的に高い評価を受けました。"
+        },
+        {
+          "translation": "私はエンジニアとして、この問題を解決することができます。"
+        },
+        {
+          "translation": "指導者として、彼はチームを見事に率いています。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_기_80": {
+      "title": "~기 시작하다 (동작 및 상태 변화의 시작)",
+      "shortExplanation": "어떤 동작이나 현상, 상태 변화가 본격적으로 시작됨을 나타내는 보조용언 구문입니다 ('~기 시작하다').",
+      "longExplanation": "'~기 시작하다'는 용언 어간에 명사형 전성어미 '-기'가 붙고 보조동사 '시작하다'가 결합된 형태입니다. 어떤 행위가 특정 시점에 개시되거나, 감정·자연 현상·신체 감각 등의 새로운 상태가 발현되어 지속되기 시작함을 나타낼 때 널리 쓰입니다.",
+      "formation": "동사/형용사 어간 + 기 시작하다",
+      "examples": [
+        {
+          "translation": "회사에서 문제가 생기기 시작해서 많은 사람들이 짜증이 나기 시작했어요."
+        },
+        {
+          "translation": "진짜 봄이 시작했을 때, 꽃들이 피기 시작했어요."
+        },
+        {
+          "translation": "나는 평소보다 많이 배가 고프기 시작했어요."
+        },
+        {
+          "translation": "우리는 오류가 발생하기 시작했다는 것을 알게 되었어요."
+        }
+      ]
+    },
+    "ko_남다_81": {
+      "title": "~남다 (사물·시간의 잔여 및 감정의 잔존)",
+      "shortExplanation": "다 쓰거나 지나간 뒤에 수량, 시간, 또는 추상적인 감정이나 여운이 남아 있음을 나타내는 자동사 표현입니다 ('~남다').",
+      "longExplanation": "'~남다'는 소비되거나 소진된 후에 물질(음식, 돈), 시간 등이 온전히 보존되어 잔여 상태에 있음을 뜻하는 동사입니다. 더 나아가 이별 후의 그리움, 기억, 후회 등 내면의 심리적 여운이 사라지지 않고 유지됨을 나타내는 비유적·문학적 맥락에서도 널리 쓰입니다.",
+      "formation": "명사 + 이/가 + 남다 | 명사 + 만 + 남다",
+      "examples": [
+        {
+          "translation": "저도 공부하고 싶었지만, 시험 준비를 위해 시간이 거의 남지 않았어요."
+        },
+        {
+          "translation": "결혼식에 초대된 모든 사람들이 도착한 후에는 음식이 많이 남았어요."
+        },
+        {
+          "translation": "우리는 호숫가를 다 걸은 후, 더 이상 볼거리가 남지 않았어요."
+        },
+        {
+          "translation": "그녀가 나간 후, 이별의 첫날 밤에 그리움만 남았어요."
+        }
+      ]
+    },
+    "ko_네요_82": {
+      "title": "~네요 (직접 경험한 사실에 대한 감탄과 인지)",
+      "shortExplanation": "말하는 사람이 직접 눈으로 보거나 겪어서 새롭게 알게 된 사실에 대해 감탄이나 가벼운 놀라움을 나타내는 종결어미입니다 ('~네요').",
+      "longExplanation": "'~네요'는 직전의 지각이나 직접적인 경험을 통해 새롭게 깨달은 사실을 청자에게 부드럽게 감탄하며 전달하는 비격식체 해요체 종결어미입니다. 자신의 기존 생각과 다른 현실을 마주했을 때나 신선한 인상을 받았을 때 '아, 그렇구나' 하는 자각의 뉘앙스를 풍부하게 표현합니다.",
+      "formation": "동사/형용사 어간 + 네요 | 명사 + (이)네요",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 정말 따뜻하네요, 아침에는 춥다고 생각했는데요."
+        },
+        {
+          "translation": "그녀가 노래를 정말 잘 부르네요, 이전에 들어본 적이 없어서 모르겠어요."
+        },
+        {
+          "translation": "와, 이 케이크가 정말 맛있네요, 처음 먹어보는 맛이에요."
+        },
+        {
+          "translation": "어, 비가 오네요, 우산을 가져왔어야 했어요."
+        }
+      ]
+    },
+    "ko_다고_83": {
+      "title": "~다고 (평서문 간접 인용 연결어미)",
+      "shortExplanation": "말하는 이가 다른 사람이나 자신의 말, 생각, 판단 등의 평서형 내용을 간접적으로 전달할 때 사용하는 인용 어미입니다 ('~다고 말하다/생각하다').",
+      "longExplanation": "'~다고'는 서술격 조사나 용언의 종결형 뒤에 붙어, 전해 들은 내용이나 머릿속의 생각·판단을 간접 화법으로 인용하여 뒤따르는 서술어(말하다, 생각하다, 듣다, 믿다 등)에 잇는 간접 인용 어미입니다. 동사 현재형 뒤에는 '-ㄴ/는다고', 형용사 뒤에는 '-다고', 과거형 뒤에는 '-았/었다고', 서술격 조사 뒤에는 '-(이)라고'가 결합합니다.",
+      "formation": "동사 현재형 + -ㄴ/는다고 | 형용사 + -다고 | 과거시제 + -았/었다고 | 명사 + -(이)라고 + (말하다/생각하다 등)",
+      "examples": [
+        {
+          "translation": "그는 내가 밥을 먹었다고 생각했어요, 하지만 저는 아직 밥을 먹지 않았어요."
+        },
+        {
+          "translation": "친구가 오늘은 비가 온다고 말했어요, 그래서 나는 우산을 가져왔어요."
+        },
+        {
+          "translation": "선생님이 시험이 어렵다고 말했어요, 그래서 부지런히 공부했어요."
+        },
+        {
+          "translation": "엄마가 오늘 밤 늦게 들어오지 마라고 말했어요."
+        }
+      ]
+    },
+    "ko_다는_84": {
+      "title": "~다는 (간접 인용 관형사형 어미)",
+      "shortExplanation": "들은 말이나 사실, 생각의 구체적인 내용을 뒤따르는 명사에 연결하여 꾸며 주는 인용 관형형 어미입니다 ('~다는 사실/소식').",
+      "longExplanation": "'~다는'은 간접 인용 구문인 '~다고 하는'이 줄어든 형태로, 평서형 진술 내용을 관형절로 만들어 뒤에 오는 추상명사(사실, 소식, 생각, 소문, 소리 등)를 수식하는 표현입니다. 동사 현재형 뒤에는 '-ㄴ/는다는', 형용사 뒤에는 '-다는', 과거형 뒤에는 '-았/었다는', 서술격 조사 뒤에는 '-(이)라는'이 결합합니다.",
+      "formation": "동사 현재형 + -ㄴ/는다는 | 형용사 + -다는 | 과거시제 + -았/었다는 + 명사 (사실, 소식, 생각 등)",
+      "examples": [
+        {
+          "translation": "그는 자신의 실수를 인정한다는 사실이 얼마나 어려운지 모릅니다."
+        },
+        {
+          "translation": "나는 내가 그녀를 사랑한다는 것을 처음으로 깨달았다."
+        },
+        {
+          "translation": "퍼피 님의 회사가 본격적으로 확장한다는 소식을 들었어요."
+        },
+        {
+          "translation": "오늘 아침에 네가 결혼한다는 사실을 들었어."
+        }
+      ]
+    },
+    "ko_다면서요_85": {
+      "title": "~다면서요 (전해 들은 사실에 대한 되물음과 확인)",
+      "shortExplanation": "다른 사람에게서 전해 들은 말이나 소문, 또는 상대방이 했던 말을 토대로 사실 여부를 되물어 확인할 때 쓰는 종결어미입니다 ('~다면서요?').",
+      "longExplanation": "'~다면서요'는 간접 인용 어미 '-다면서'에 존칭의 보조사 '요'가 결합된 형태입니다. 제3자에게서 들은 정보나 상대방이 과거에 말했던 내용을 상기시키며 '내가 듣기로는 그러하다고 하던데, 정말 맞습니까?'라는 뉘앙스로 사실을 확인하거나 은근한 추궁·의문을 나타낼 때 사용됩니다.",
+      "formation": "동사 현재형 + -ㄴ/는다면서요 | 형용사 + -다면서요 | 과거시제 + -았/었다면서요 | 명사 + -(이)라면서요",
+      "examples": [
+        {
+          "translation": "영희가 서울에 살고 있다면서요, 정말 그런 건지 알 수가 없어요."
+        },
+        {
+          "translation": "집에 일찍 돌아오라고 했다면서요, 그런데 왜 아직도 안 와요?"
+        },
+        {
+          "translation": "친구가 낼 학교에 안 온다고 했다면서요, 아마 아프지 않았나요?"
+        },
+        {
+          "translation": "나중에 커피 한 잔 같이 할 것을 약속했다면서요, 그런데 왜 연락이 없나요?"
+        }
+      ]
+    },
+    "ko_던데_86": {
+      "title": "~던데 (과거 회상 및 배경 제시)",
+      "shortExplanation": "말하는 이가 과거에 직접 보거나 경험하여 알게 된 사실을 회상하여 떠올리며, 뒤 절의 배경으로 제시하거나 현재와의 대비를 나타내는 연결어미입니다 ('~던데').",
+      "longExplanation": "'~던데'는 과거의 직접 경험을 회상하는 선어말어미 '-더-'에 어떤 사실을 제시하거나 대립적 상황을 연결하는 어미 '-ㄴ/은데'가 결합된 형태입니다. 화자가 직접 목격하거나 느꼈던 과거의 상황을 전제로 삼아 질문을 던지거나 의견을 덧붙일 때, 혹은 과거와 확연히 달라진 현재의 모습을 대조적으로 부각할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + 던데 | 과거완료 + -았/었던데",
+      "examples": [
+        {
+          "translation": "그는 항상 머리를 길게 기르던데, 언제부터 짧게 자르기 시작했어요?"
+        },
+        {
+          "translation": "내 친구는 예전에는 채소를 안 좋아했던데, 이제는 건강을 위해 열심히 먹는다고 하네요."
+        },
+        {
+          "translation": "나는 어릴 때 청소를 정말 싫어했던데, 이제는 좋아해서 매일 하는 편이에요."
+        },
+        {
+          "translation": "우리는 어렸을 때부터 함께 공부하던데, 지금은 각자 다른 대학교에 다녀요."
+        }
+      ]
+    },
+    "ko_도록_87": {
+      "title": "~도록 하다 (목적 달성을 위한 노력 및 완곡한 지시)",
+      "shortExplanation": "어떤 목적이나 결과를 이루기 위해 힘쓰거나, 다른 사람에게 특정한 행동을 취하도록 권고·지시함을 나타내는 구문입니다 ('~하도록 하다').",
+      "longExplanation": "'~도록 하다'는 목적이나 도달점을 나타내는 연결어미 '-도록'에 보조동사 '하다'가 결합된 형태입니다. 화자가 특정 결과를 유도하기 위해 조치를 취하거나 노력하겠다는 의지를 나타낼 때 쓰이며, 청자에게 지시나 명령의 형태로 쓰일 때는 직접적인 명령보다 정중하고 완곡하게 행동을 유도하는 격식 있는 표현이 됩니다.",
+      "formation": "동사 어간 + 도록 하다",
+      "examples": [
+        {
+          "translation": "우리는 우리의 직원들이 충분한 휴식을 취하도록 해야 합니다. 그렇게 하지 않으면 그들의 효율성이 줄어들 수 있습니다."
+        },
+        {
+          "translation": "생일 파티를 계획하면서 모든 것이 완벽하게 되도록 해야 해요. 아무래도 그것은 아버지의 특별한 날이니까요."
+        },
+        {
+          "translation": "반장으로서, 나는 모든 학생들이 숙제를 완료하도록 해야 합니다. 그럼 선생님은 우리에게 불만을 가질 이유가 없을 거예요."
+        },
+        {
+          "translation": "고객이 우리의 제품에 만족하도록 최선을 다해야 합니다. 그렇게 하면 우리의 비즈니스가 성장할 수 있을 것입니다."
+        }
+      ]
+    },
+    "ko_든지_88": {
+      "title": "~든지 (선택과 무관의 연결어미)",
+      "shortExplanation": "나열된 여러 가지 대상이나 동작 중 어느 것을 선택해도 상관없거나 결과가 동일함을 나타내는 선택 연결어미입니다 ('~든지 ~든지').",
+      "longExplanation": "'~든지'는 흔히 '~든지 ~든지'의 형태로 맞서 나열되어, 제시된 대안 중 어느 쪽을 택하든 화자에게는 무차별하거나 후행 절의 상황에 영향을 미치지 않음을 나타내는 어미입니다. 의문사와 어울려 '누구든지', '언제든지', '어디든지'와 같은 무조건적 포괄 표현을 만들기도 합니다. 과거 회상의 어미 '-던지'와 철자를 명확히 구별해야 합니다.",
+      "formation": "동사/형용사 어간 + 든지 | 명사 + (이)든지",
+      "examples": [
+        {
+          "translation": "당신이 들어오든지 나가든지 저는 상관하지 않아요, 중요한 것은 작업이 계속되어야 한다는 것입니다."
+        },
+        {
+          "translation": "비가 오든지 맑은 날이든지 저는 항상 산책하러 나갑니다."
+        },
+        {
+          "translation": "당신이 이해하든지 못하든지 저는 계속 설명하겠습니다."
+        },
+        {
+          "translation": "강아지가 짖든지 안 짖든지, 마치 대화를 나누는 것처럼 인사하는 것이 좋습니다."
+        }
+      ]
+    },
+    "ko_라는_89": {
+      "title": "~라는 것이다 (본질 규정 및 의미 해석)",
+      "shortExplanation": "앞서 제시된 사실이나 전제가 의미하는 바를 규정하거나 본질적인 결론을 내릴 때 사용하는 서술 구문입니다 ('~라는 뜻이다', '~라는 것이다').",
+      "longExplanation": "'~라는 것이다'는 인용격 관형사형 '-(이)라는'에 의존명사 '것'과 서술격 조사 '이다'가 결합된 형태입니다. 대개 앞 절의 주어절 '-는다는 것은'과 자연스럽게 호응하여, 특정 현상이나 행동이 지닌 내적 의미, 성격, 귀결점을 논리적으로 밝히거나 정의할 때 활용됩니다.",
+      "formation": "동사 현재형 + -ㄴ/는다는 것이다 | 형용사 + -다는 것이다 | 명사 + -(이)라는 것이다",
+      "examples": [
+        {
+          "translation": "그녀가 사진을 찍는다는 것은, 그녀가 사진을 좋아한다는 뜻이다."
+        },
+        {
+          "translation": "그가 항상 일찍 일어난다는 것은, 그는 아침형 인간이라는 것이다."
+        },
+        {
+          "translation": "가을이 오면 나무 잎이 노란색으로 변한다는 것은, 가을의 특성이라는 것이다."
+        },
+        {
+          "translation": "우리가 어떤 문제를 가지고 있다는 것은, 우리가 그 문제를 해결해야 한다는 것이다."
+        }
+      ]
+    },
+    "ko_라도_90": {
+      "title": "~라도 (차선책 및 최소한의 양보)",
+      "shortExplanation": "최선이 아닌 상황에서 차선책이나 최소한의 허용 한도를 나타낼 때 쓰는 보조사입니다 ('~라도').",
+      "longExplanation": "'~라도'는 명사 뒤에 붙어, 가장 만족스럽거나 마음에 드는 첫 번째 선택은 아니지만 차선이나 부득이한 대안으로서 받아들일 만한 최소한의 대상을 제시할 때 쓰는 보조사입니다. 요구나 제안을 부드럽게 표현하거나 아쉬움을 달래는 맥락에서 자주 사용됩니다.",
+      "formation": "명사 + (이)라도 (받침이 있으면 이라도, 받침이 없으면 라도)",
+      "examples": [
+        {
+          "translation": "달까지 걸어가기는 어렵지만, 사진이라도 찍자."
+        },
+        {
+          "translation": "그는 일하기 힘들다고 했지만, 일이라도 시켜야 하는 게 아니에요?"
+        },
+        {
+          "translation": "최소한 사과라도 했어야 하지 않았을까요? 그러면 상황이 좀 더 나아질 수 있었을 텐데."
+        },
+        {
+          "translation": "집에 가지 않을 거라면, 연락이라도 해주었어야 하는 게 아니겠어요?"
+        }
+      ]
+    },
+    "ko_러_91": {
+      "title": "~러 / ~(으)러 (이동의 목적을 나타내는 연결어미)",
+      "shortExplanation": "이동을 나타내는 동사(가다, 오다, 다니다 등)와 어울려, 어떤 행위를 하기 위한 직접적인 목적을 나타내는 연결어미입니다 ('~하러 가다/오다').",
+      "longExplanation": "'~(으)러'는 말하는 이가 자리를 옮기거나 이동하는 목적을 나타내는 어미입니다. 뒤에는 반드시 '가다', '오다', '다니다', '나서다' 등의 이동 동사가 따릅니다. 동사 어간 끝에 받침이 없거나 'ㄹ' 받침인 경우에는 '-러'를 쓰고, 'ㄹ' 이외의 받침이 있는 경우에는 '-으러'를 씁니다.",
+      "formation": "동사 어간 + -(으)러 (받침이 없거나 ㄹ 받침이면 -러, 그 외 받침이면 -으러) + (가다/오다/다니다 등)",
+      "examples": [
+        {
+          "translation": "저는 한국어를 배우러 한국에 왔어요."
+        },
+        {
+          "translation": "그는 책을 사러 서점에 갔어요."
+        },
+        {
+          "translation": "어머니는 저녁 식사를 준비하러 부엌에 가셨어요."
+        },
+        {
+          "translation": "친구들과 영화를 보러 영화관에 갔어요."
+        }
+      ]
+    },
+    "ko_려고_92": {
+      "title": "~려고 하다 / ~(으)려고 하다 (의도와 계획 및 시도)",
+      "shortExplanation": "주어의 미래 계획이나 의도, 또는 어떤 행위를 실행하려고 시도함을 나타내는 의도 보조용언 구문입니다 ('~하려고 하다').",
+      "longExplanation": "'~(으)려고 하다'는 의도를 나타내는 연결어미 '-(으)려고'에 보조동사 '하다'가 결합된 형태입니다. 어떤 행동을 시작할 마음을 품고 있거나 실행을 앞둔 상태를 나타내며, 성공 여부와 상관없이 주어가 지닌 주관적 결심이나 시도를 부드럽게 표현합니다. 동사 어간에 받침이 없거나 'ㄹ' 받침이면 '-려고 하다', 그 밖의 받침이 있으면 '-으려고 하다'를 씁니다.",
+      "formation": "동사 어간 + -(으)려고 하다 (받침이 없거나 ㄹ 받침이면 -려고 하다, 그 외 받침이면 -으려고 하다)",
+      "examples": [
+        {
+          "translation": "저는 매일 새로운 단어를 10개 배우려고 해요, 그래서 한국어 향상을 위해 노력하고 있어요."
+        },
+        {
+          "translation": "아플 때에도 항상 웃으려고 해요, 그것이 저의 방식입니다."
+        },
+        {
+          "translation": "그는 항상 일찍 자려고 하지만, 항상 실패하고 말아요."
+        },
+        {
+          "translation": "우리는 연습하고 공부해서 공연을 성공적으로 마치려고 했어요."
+        }
+      ]
+    },
+    "ko_려는_93": {
+      "title": "~려는 / ~(으)려는 (의도 및 계획의 관형사형 어미)",
+      "shortExplanation": "어떤 행동을 할 의도나 목적을 품고 있음을 나타내어 뒤따르는 명사를 수식하는 관형사형 어미입니다 ('~하려는 사람/것').",
+      "longExplanation": "'~(으)려는'은 의도의 관형절인 '-(으)려고 하는'이 축약된 형태입니다. 뒤에 오는 체언(사람, 것, 계획, 태도 등)을 꾸며 주며, 어떤 동작을 실천하고자 하는 주체의 의지, 계획, 목적의식을 나타냅니다. 동사 어간 끝에 받침이 없거나 'ㄹ' 받침일 때는 '-려는', 그 밖의 받침이 있을 때는 '-으려는'이 결합합니다.",
+      "formation": "동사 어간 + -(으)려는 (받침이 없거나 ㄹ 받침이면 -려는, 그 외 받침이면 -으려는) + 명사",
+      "examples": [
+        {
+          "translation": "내일 출장 가려는 사람은 저 혼자입니다. 다른 사람들은 모두 바쁩니다."
+        },
+        {
+          "translation": "건강한 식생활을 위해 채식주의자가 되려는 사람이 많습니다."
+        },
+        {
+          "translation": "토익 시험을 준비하려는 학생들은 많은 시간을 공부에 투자하고 있습니다."
+        },
+        {
+          "translation": "제 주말 계획은 코딩을 배우려는 것입니다만, 평소보다 더 많은 시간과 노력이 필요합니다."
+        }
+      ]
+    },
+    "ko_로써_94": {
+      "title": "~로써 / ~(으)로써 (수단·도구 및 신분·자격의 일상적 표현)",
+      "shortExplanation": "도구, 수단, 방법을 나타내는 부사격 조사입니다. 일상 언어생활에서는 지위나 신분, 자격을 나타내는 '~로서'와 통용되어 신분적 입장을 드러내는 데 쓰이기도 합니다 ('~로써').",
+      "longExplanation": "'~(으)로써'는 어떤 일의 수단, 도구, 재료를 나타내는 부사격 조사입니다. 규범 문법상 사람의 자격, 신분, 지위를 나타낼 때는 '~로서'를 쓰는 것이 표준이지만, 실제 언어 현실에서는 예문(학생으로써, 지도자로써 등)과 같이 자격 표현 맥락에서도 혼용되어 널리 발견됩니다. 받침이 없거나 'ㄹ' 받침 뒤에는 '-로써', 그 외의 받침 뒤에는 '-으로써'를 씁니다.",
+      "formation": "명사 + -(으)로써 (받침이 없거나 ㄹ 받침이면 -로써, 그 외 받침이면 -으로써)",
+      "examples": [
+        {
+          "translation": "제가 학생으로써 선생님께서 알려주신 것을 모두 이해했습니다."
+        },
+        {
+          "translation": "바이올리니스트로써 그녀는 세계적으로 인정받았습니다."
+        },
+        {
+          "translation": "나는 엔지니어로써 이 문제를 해결할 수 있습니다."
+        },
+        {
+          "translation": "지도자로써 그는 팀을 잘 이끌고 있습니다."
+        }
+      ]
+    }
+  }
+}

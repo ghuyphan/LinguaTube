@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_을_44": {
+      "title": "~(을/를) 바탕으로 (Dựa trên, trên cơ sở, căn cứ vào)",
+      "shortExplanation": "Dùng để diễn tả việc thực hiện một hành động, phán đoán hay quyết định nào đó dựa trên nền tảng, cơ sở của một sự thật, kinh nghiệm, tài liệu hoặc ý kiến ('dựa trên', 'trên cơ sở').",
+      "longExplanation": "'~(을/를) 바탕으로' là cụm biểu hiện ngữ pháp kết hợp giữa danh từ với danh từ '바탕' (nền tảng, căn bản) và trợ từ chỉ phương hướng/cách thức '-으로'. Cấu trúc này biểu thị rằng danh từ đi trước đóng vai trò là nền tảng, cơ sở dữ liệu hoặc kinh nghiệm thực tiễn để triển khai hành động, sáng tác hoặc đưa ra quyết định ở vế sau. Trong tiếng Việt tương đương với 'dựa trên...', 'trên cơ sở...', 'căn cứ vào...'. Khi bổ nghĩa trực tiếp cho danh từ phía sau, cấu trúc chuyển thành dạng '~(을/를) 바탕으로 한 + Danh từ'.",
+      "formation": "Danh từ + 을/를 바탕으로 (danh từ có phụ âm cuối dùng 을 바탕으로, không có phụ âm cuối dùng 를 바탕으로)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã cải tiến sản phẩm dựa trên phản hồi của khách hàng."
+        },
+        {
+          "translation": "Cô ấy đã viết một cuốn sách dựa trên kinh nghiệm của chính mình."
+        },
+        {
+          "translation": "Tôi có thể hoàn thành nhanh chóng công việc này dựa trên kinh nghiệm ở công ty trước."
+        },
+        {
+          "translation": "Họ đã đưa ra quyết định dựa trên các sự thật khách quan."
+        }
+      ]
+    },
+    "ko_을_45": {
+      "title": "~(을/를) 빼다 / ~(을/를) 빼고(는) (Ngoại trừ, trừ ra, bỏ qua)",
+      "shortExplanation": "Dùng để loại trừ một đối tượng, sự vật hoặc nhóm người cụ thể ra khỏi một tổng thể chung ('ngoại trừ', 'trừ... ra').",
+      "longExplanation": "'빼다' là động từ mang nghĩa 'rút ra, trừ đi, loại bỏ'. Khi dùng dưới dạng liên kết '~을/를 빼고' hoặc '~을/를 빼고는', cấu trúc này biểu thị việc tách riêng một hoặc vài yếu tố cá biệt ra khỏi phạm vi khái quát được đề cập, nhấn mạnh rằng phần còn lại đều thoả mãn một điều kiện hay trạng thái nhất định. Tương đương với 'trừ...', 'ngoại trừ... ra' trong tiếng Việt. Khi kết thúc câu hoàn chỉnh, cấu trúc biểu thị hành động loại bỏ hoặc không tính đến đối tượng đó.",
+      "formation": "Danh từ + 을/를 빼다 (thường dùng dạng liên kết: Danh từ + 을/를 빼고 / 을/를 빼고는; có phụ âm cuối dùng 을, không có phụ âm cuối dùng 를)",
+      "examples": [
+        {
+          "translation": "Ở trường chúng tôi, học sinh ai cũng thân thiện, trừ một vài học sinh ra thì tất cả đều rất tốt bụng."
+        },
+        {
+          "translation": "Tất cả các món ở nhà hàng này đều ngon, ngoại trừ một vài món ra thì món nào cũng ngon."
+        },
+        {
+          "translation": "Tất cả những người ở đây đều có thể nói tiếng Hàn, trừ một vài người ra."
+        },
+        {
+          "translation": "Trong tất cả những cuốn sách tôi từng đọc thì cuốn này thú vị nhất, trừ một vài cuốn ra."
+        }
+      ]
+    },
+    "ko_을_46": {
+      "title": "~(과/와) ~ 사이(에) (Ở giữa, giữa... và..., khoảng giữa)",
+      "shortExplanation": "Dùng để chỉ vị trí không gian, khoảng cách thời gian hoặc mối quan hệ nằm ở khoảng giữa hai hay nhiều đối tượng ('ở giữa', 'giữa... và...').",
+      "longExplanation": "'사이' là danh từ chỉ khoảng cách, khoảng trống giữa hai điểm (không gian), khoảng thời gian giữa hai thời điểm (thời gian), hoặc quan hệ qua lại giữa hai đối tượng. Cấu trúc thường kết hợp với trợ từ liên kết '과/와' theo mẫu 'Danh từ 1 + 과/와 + Danh từ 2 + 사이(에)', hoặc dùng sau danh từ số nhiều (như '우리 사이에' - giữa chúng ta). Trợ từ '에' được thêm vào khi làm trạng ngữ chỉ địa điểm hoặc thời điểm diễn ra hành động.",
+      "formation": "Danh từ 1 + 과/와 + Danh từ 2 + 사이(에) (danh từ 1 có phụ âm cuối dùng 과, không có phụ âm cuối dùng 와; hoặc Danh từ số nhiều + 사이(에))",
+      "examples": [
+        {
+          "translation": "Tôi ăn một bữa nhẹ đơn giản vào khoảng giữa bữa sáng và bữa trưa."
+        },
+        {
+          "translation": "Việc có thời gian nghỉ giải lao giữa công việc thứ nhất và công việc thứ hai là rất quan trọng."
+        },
+        {
+          "translation": "Tôi đã học bài ở công viên nằm giữa nhà cô ấy và trường học."
+        },
+        {
+          "translation": "Chúng tôi đã gặp nhau tại nhà hàng nằm ở giữa hai công ty."
+        }
+      ]
+    },
+    "ko_을_47": {
+      "title": "~(으)ㄹ 테니(까) (Chắc là sẽ... nên, tôi sẽ... nên)",
+      "shortExplanation": "Dùng để đưa ra suy đoán mạnh mẽ về một tình huống tương lai hoặc biểu thị ý chí của người nói nhằm làm tiền đề, căn cứ cho vế sau ('chắc là... nên', 'tôi sẽ... nên bạn hãy...').",
+      "longExplanation": "'~(으)ㄹ 테니(까)' là cấu trúc kết hợp giữa vĩ tố dạng định ngữ chỉ tương lai/suy đoán '-(으)ㄹ', danh từ phụ thuộc '터' (chỉ dự định, ý chí hoặc phỏng đoán) và vĩ tố liên kết chỉ nguyên nhân/tiền đề '-(으)니까'. Cấu trúc có hai cách dùng chính: (1) Khi chủ ngữ là ngôi thứ ba: người nói đưa ra phỏng đoán chắc chắn về một sự việc sắp xảy ra, làm lý do để đưa ra lời khuyên, đề nghị hoặc hành động ở vế sau ('chắc là sẽ... nên...'); (2) Khi chủ ngữ là ngôi thứ nhất: người nói tuyên bố ý chí, sự sẵn sàng của mình để yêu cầu đối phương thực hiện việc khác ('tôi sẽ làm... nên bạn hãy...').",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 테니 (thân từ có phụ âm cuối dùng -을 테니, không có phụ âm cuối hoặc có phụ âm cuối là ㄹ dùng -ㄹ 테니; quá khứ dùng -았/었을 테니)",
+      "examples": [
+        {
+          "translation": "Chắc là ngày mai trời sẽ mưa đấy nên bạn mang theo ô thì tốt hơn."
+        },
+        {
+          "translation": "Hồi nhỏ Jinhee chắc hẳn đã học bơi rồi nên chắc là cô ấy sẽ bơi giỏi thôi."
+        },
+        {
+          "translation": "Có vẻ anh ấy đã thức dậy và ăn sáng; trong bát chắc là vẫn còn vương chút cơm nên rõ ràng là anh ấy đã ăn sáng rồi mới đi."
+        },
+        {
+          "translation": "Vì Younghee bảo mệt nên giờ chắc cô ấy đang ngủ ở nhà đấy, đừng gọi điện thoại nhé."
+        }
+      ]
+    },
+    "ko_을_48": {
+      "title": "~(을/를) 통해(서) (Thông qua, qua, nhờ vào)",
+      "shortExplanation": "Chỉ phương tiện, phương thức, kênh trung gian hoặc quá trình mà nhờ đó một hành động được thực hiện hoặc một kết quả đạt được ('thông qua', 'qua').",
+      "longExplanation": "'~(을/를) 통해(서)' là cấu trúc bổ ngữ kết hợp giữa danh từ với động từ '통하다' (thông qua, xuyên qua) chia theo đuôi liên kết '-어/아(서)'. Cấu trúc biểu thị phương tiện, môi chất, công cụ truyền đạt (như email, sách báo, người trung gian) hoặc một quá trình trải nghiệm mà thông qua đó chủ ngữ tiếp nhận tri thức, giải quyết vấn đề hoặc đạt được mục tiêu. Tương đương với 'thông qua...', 'nhờ qua...', 'qua...' trong tiếng Việt. Khi bổ nghĩa trực tiếp cho danh từ phía sau, cấu trúc dùng dạng '~(을/를) 통한 + Danh từ'.",
+      "formation": "Danh từ + 을/를 통해(서) (danh từ có phụ âm cuối dùng 을 통해, không có phụ âm cuối dùng 를 통해)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã trao đổi ý kiến thông qua thư điện tử, nhờ thế ai nấy đều cảm thấy thoải mái khi bày tỏ quan điểm."
+        },
+        {
+          "translation": "Tôi thích học hỏi kiến thức mới qua sách vở, vì vậy tôi thường xuyên đến thư viện."
+        },
+        {
+          "translation": "Cô ấy đang học tiếng Hàn thông qua Google Dịch, nên việc học ngôn ngữ trở nên rất thuận tiện."
+        },
+        {
+          "translation": "Chúng ta đã có thể ngăn chặn sự lây lan của virus Corona thông qua việc đeo khẩu trang, nhờ đó cứu sống được rất nhiều sinh mạng."
+        }
+      ]
+    },
+    "ko_을를_49": {
+      "title": "~(을/를) 틈타(서) (Tranh thủ, nhân cơ hội, lợi dụng lúc)",
+      "shortExplanation": "Diễn tả việc nắm bắt, tận dụng một khoảng thời gian trống, sơ hở hoặc cơ hội ngắn ngủi để làm một việc gì đó ('nhân cơ hội', 'tranh thủ lúc').",
+      "longExplanation": "'틈' là danh từ chỉ khe hở, kẽ nứt hoặc khoảng thời gian rảnh rỗi, thời điểm sơ hở. Động từ '타다' ở đây mang nghĩa tận dụng thời cơ. Cấu trúc '~(을/를) 틈타(서)' diễn tả việc ai đó chớp lấy một khoảng thời gian ngắn (như giờ nghỉ, lúc đi làm) hoặc lợi dụng thời điểm sơ hở, tình huống thuận lợi (như lúc đối phương mất cảnh giác, lúc trời mưa vắng người) để tiến hành một hành động. Thường đi sau danh từ chỉ thời gian, cơ hội hoặc động từ dạng định ngữ + danh từ chỉ thời điểm ('-(으)ㄹ 때/사이를 틈타').",
+      "formation": "Danh từ + 을/를 틈타(서) (danh từ có phụ âm cuối dùng 을 틈타, không có phụ âm cuối dùng 를 틈타; hoặc Động từ dạng định ngữ + 때/사이를 틈타)",
+      "examples": [
+        {
+          "translation": "Tôi thường tranh thủ lúc trên đường đi làm để đọc sách, nhờ vậy có thể tận dụng tốt khoảng thời gian đi lại buồn tẻ."
+        },
+        {
+          "translation": "Cô ấy đã tranh thủ thời gian nghỉ giải lao để học bài, vì thế việc chuẩn bị cho kỳ thi diễn ra tốt hơn."
+        },
+        {
+          "translation": "Tôi tranh thủ lúc em bé ngủ say để làm việc nhà, nhờ thế mà giải quyết được rất nhiều công việc."
+        },
+        {
+          "translation": "Tôi đã nhân một ngày trời mưa để đọc sách tại một quán cà phê đầy lãng mạn, đó quả thực là một khoảng thời gian yên bình."
+        }
+      ]
+    },
+    "ko_이기는_50": {
+      "title": "~기는 한데 / ~이기는 한데 (Đúng là có... thật nhưng mà, tuy là... nhưng)",
+      "shortExplanation": "Dùng để thừa nhận tính chân thực của một sự thật, hành động hay đặc điểm ở vế trước, nhưng vế sau lại đưa ra một điều kiện, giới hạn hoặc tình huống trái ngược ('đúng là... thật đấy nhưng mà...').",
+      "longExplanation": "'~기는 한데' là cấu trúc kết hợp giữa vĩ tố danh từ hóa '-기', trợ từ nhấn mạnh đối lập '-는' và tính từ bổ trợ '하다' chia theo đuôi liên kết tương phản '-ㄴ/은데'. Cấu trúc này biểu thị việc người nói công nhận hoàn toàn một thực tế hay ý kiến được nêu ra ở vế trước, song ngay sau đó lập tức đưa ra một phương diện khác mang tính hạn chế, thiếu sót hoặc không thỏa mãn hoàn toàn ở vế sau. Tương đương với 'đúng là... thật nhưng', 'tuy... nhưng mà' trong tiếng Việt. Khi kết hợp với danh từ gắn với trợ từ chỉ định 이다, dạng thức sẽ là '~이기는 한데'. Trong khẩu ngữ thường được rút gọn thành '~긴 한데'.",
+      "formation": "Thân động từ / Thân tính từ + -기는 한데 (hoặc rút gọn là -긴 한데; Danh từ + (이)기는 한데; Quá khứ dùng -기는 했는데)",
+      "examples": [
+        {
+          "translation": "Tôi xem bộ phim đó thấy đúng là cũng hay thật nhưng mà có hơi nhiều cảnh bạo lực nên cảm thấy hơi khó chịu."
+        },
+        {
+          "translation": "Đúng là tôi đang học tiếng Hàn thật đấy, nhưng tôi lại muốn giỏi tiếng Trung hơn."
+        },
+        {
+          "translation": "Đội chúng tôi đúng là đã chiến thắng thật nhưng đối thủ chơi tốt hơn."
+        },
+        {
+          "translation": "Ngày mai có hội thao nên đúng là phải luyện tập thật nhiều đấy, nhưng vì không có thời gian nên tôi chẳng biết phải làm sao."
+        }
+      ]
+    },
+    "ko_이나_51": {
+      "title": "~(이)나 (Hoặc là, chẳng hạn như, những/tận - Lựa chọn hoặc số lượng lớn)",
+      "shortExplanation": "Dùng để liệt kê lựa chọn thay thế không quá vừa ý ('hoặc là', 'chẳng hạn như'), hoặc biểu thị sự ngạc nhiên trước số lượng nhiều hơn dự tính ('những tận', 'tới mức').",
+      "longExplanation": "'~(이)나' là trợ từ đa nghĩa quan trọng trong tiếng Hàn. Cấu trúc có ba chức năng ngữ pháp tiêu biểu: (1) Lựa chọn phương án phụ khi không có sự lựa chọn tối ưu, mang sắc thái 'chẳng hạn như...', 'hay là...'; (2) Liệt kê giữa hai hay nhiều danh từ với ý nghĩa 'hoặc là'; (3) Gắn sau từ chỉ số lượng để nhấn mạnh mức độ hay số lượng nhiều vượt trội so với kỳ vọng của người nói (tương đương với 'những tận...', 'lên đến...').",
+      "formation": "Danh từ + (이)나 (danh từ có phụ âm cuối dùng 이나, không có phụ âm cuối dùng 나)",
+      "examples": [
+        {
+          "translation": "Tôi sẽ uống cà phê hay trà hay thứ gì đó vậy, vì tôi đang khát nước quá."
+        },
+        {
+          "translation": "Cuối tuần này chúng mình đi dã ngoại hay làm gì đó nhé? Đi tận hưởng thời tiết đẹp cũng tuyệt đấy chứ."
+        },
+        {
+          "translation": "Cô ấy đã ăn trưa bằng thứ gì đó đơn giản như mì tôm hay sushi đậu phụ."
+        },
+        {
+          "translation": "Tôi đã phải đi bộ những tận 10 cây số mới về đến nhà, vì không có chuyến xe buýt nào cả."
+        }
+      ]
+    },
+    "ko_이래_52": {
+      "title": "~(으)ㄴ 이래(로) / ~ 이래(로) (Kể từ khi, từ đó đến nay)",
+      "shortExplanation": "Chỉ một mốc thời gian hoặc sự kiện trong quá khứ mà kể từ thời điểm đó cho đến tận hiện tại, một trạng thái hoặc hành động liên tục được duy trì ('kể từ khi', 'từ sau khi').",
+      "longExplanation": "'이래' là danh từ chỉ mốc thời gian quá khứ mà từ đó trở đi tình hình bắt đầu tiếp diễn. Khi kết hợp với danh từ chỉ thời gian hoặc động từ dạng định ngữ quá khứ '-(으)ㄴ 이래(로)', cấu trúc biểu thị rằng kể từ khi sự kiện ở vế trước diễn ra, trạng thái hoặc thói quen ở vế sau đã liên tục kéo dài suốt từ thời điểm đó cho tới nay. Tương đương với 'kể từ sau khi...', 'từ dạo ấy đến nay' trong tiếng Việt. Trợ từ phương hướng '-로' thường được thêm vào sau '이래' để tăng tính tự nhiên và nhấn mạnh sự tiếp diễn liên tục.",
+      "formation": "Thân động từ + -(으)ㄴ 이래(로) (thân động từ có phụ âm cuối dùng -은 이래, không có phụ âm cuối dùng -ㄴ 이래; hoặc Danh từ + 이래(로))",
+      "examples": [
+        {
+          "translation": "Kể từ lần đầu gặp cô ấy ở trường học, tôi đã đem lòng yêu thương cô ấy."
+        },
+        {
+          "translation": "Sau khi đến Ấn Độ, kể từ lần đầu ăn thử đồ cay, tôi đã trở nên thích ăn cay."
+        },
+        {
+          "translation": "Thức dậy và nghe xong câu chuyện, kể từ lúc đó tôi đã không thể thốt nên lời."
+        },
+        {
+          "translation": "Kể từ khi tòa nhà bị thiêu rụi trong biển lửa, nơi đó đã biến thành một ngôi nhà hoang phế."
+        }
+      ]
+    },
+    "ko_이러하다_53": {
+      "title": "이러하다 (Như thế này, thế này - Tính từ chỉ tính chất, trạng thái)",
+      "shortExplanation": "Tính từ chỉ thị dùng để miêu tả hình dáng, trạng thái, tính chất hoặc sự tình giống như thế này ('như thế này', 'như vầy').",
+      "longExplanation": "'이러하다' là tính từ chỉ thị mang nghĩa 'như thế này', 'như vầy' (dạng chuẩn của '이렇다'), dùng để miêu tả trạng thái, hoàn cảnh hoặc tính chất của sự vật, sự việc mà người nói đang trực tiếp chứng kiến, trải nghiệm hoặc vừa nhắc tới. Khi làm vị ngữ thường chia thành '이러하다/이러합니다', khi đứng trước danh từ làm định ngữ chia thành '이러한 + Danh từ' (những ... như thế này), khi đứng trước mệnh đề nguyên nhân chia thành '이러하니/이러하니까' (vì tình hình như thế này nên...).",
+      "formation": "Tính từ: 이러하다 (dạng rút gọn: 이렇다; định ngữ: 이러한 + Danh từ; trạng từ: 이러하게; liên kết: 이러하니, 이러하므로)",
+      "examples": [
+        {
+          "translation": "Vì tình hình như thế này nên tất cả mọi người đều không biết phải làm sao."
+        },
+        {
+          "translation": "Vấn đề lại ra nông nỗi như thế này so với suy nghĩ nên tôi thấy thực sự rất bối rối."
+        },
+        {
+          "translation": "Việc mọi người đối xử với tôi như thế này khiến tôi cảm thấy vô cùng tủi thân."
+        },
+        {
+          "translation": "Chính vì hành động như thế này của anh ta mà rất nhiều người đã phải chịu đau khổ."
+        }
+      ]
+    },
+    "ko_이리_54": {
+      "title": "이리 (Lại đây, theo hướng này, thế này - Phó từ chỉ thị)",
+      "shortExplanation": "Phó từ chỉ thị phương hướng hướng về phía người nói ('lại đây', 'về phía này') hoặc chỉ cách thức, mức độ ('thế này', 'đến mức này').",
+      "longExplanation": "'이리' là phó từ chỉ thị trong tiếng Hàn, vừa là dạng rút gọn của '이리로' (về phía này, lại đây), vừa là dạng rút gọn mang tính khẩu ngữ chỉ cách thức 'như thế này' (이러하게/이렇게) hoặc chỉ mức độ 'đến mức này' (이토록). Khi dùng chỉ phương hướng, nó thường kết hợp với các động từ di chuyển như 오다 (đến), 가다 (đi) hoặc câu mệnh lệnh ('이리 오세요' - hãy lại đây). Khi dùng chỉ cách thức thực hiện hành động, nó bổ nghĩa cho động từ đi sau mang nghĩa 'hãy làm theo cách này'.",
+      "formation": "Phó từ: 이리 + Động từ (như 이리 오다, 이리 하다, 이리 쓰다)",
+      "examples": [
+        {
+          "translation": "Đừng gọi như thế, hãy gọi theo cách này này."
+        },
+        {
+          "translation": "Cậu ấy đã làm bài tập theo cách như thế này này."
+        },
+        {
+          "translation": "Xin vui lòng chụp ảnh cho tôi theo góc này / như thế này nhé."
+        },
+        {
+          "translation": "Tôi nghĩ là mình sẽ làm việc đó theo cách này."
+        }
+      ]
+    },
+    "ko_이미_55": {
+      "title": "이미 (Đã, rồi, sẵn rồi - Phó từ chỉ sự hoàn tất)",
+      "shortExplanation": "Phó từ biểu thị một hành động, sự việc hoặc trạng thái đã hoàn thành, đã xảy ra trước thời điểm nói hoặc trước một thời điểm tiêu chuẩn ('đã... rồi').",
+      "longExplanation": "'이미' là phó từ chỉ thời gian trong tiếng Hàn, tương đương với 'đã', 'rồi' trong tiếng Việt. Nó đứng trước vị ngữ (thường là động từ chia ở thì quá khứ) để nhấn mạnh rằng một hành động hoặc biến đổi đã kết thúc một cách dứt khoát trong quá khứ và không thể đảo ngược được nữa. Khác với '벌써' (thường mang cảm xúc ngạc nhiên vì sự việc diễn ra sớm hơn dự kiến), '이미' thiên về việc xác lập một sự thật khách quan rằng sự việc đã hoàn thành hoặc đã an bài.",
+      "formation": "Phó từ: 이미 + Động từ/Tính từ (thường đi với thì quá khứ: 이미 + Thân từ + -았/었다)",
+      "examples": [
+        {
+          "translation": "Tôi đã bắt đầu học tiếng Hàn rồi, tuy hơi muộn một chút nhưng tôi đã quyết định sẽ học thật chăm chỉ."
+        },
+        {
+          "translation": "Chúng tôi đã đến bờ biển rồi, không cần phải chờ đợi thêm nữa."
+        },
+        {
+          "translation": "Lũ trẻ đã ăn tối rồi, cho nên bây giờ chúng đã no bụng."
+        },
+        {
+          "translation": "Bộ phim đó tôi đã xem rồi, vì thế chắc là phải tìm phim khác thôi."
+        }
+      ]
+    },
+    "ko_인_56": {
+      "title": "~(으)ㄴ/는 바 / ~인 바 (Xét thấy, theo như việc... nên - Văn phong trang trọng)",
+      "shortExplanation": "Dùng trong văn viết hoặc văn phong trang trọng, công vụ để nêu lên sự thật, tình huống hoặc căn cứ ở vế trước làm tiền đề cho nội dung được triển khai ở vế sau ('xét thấy', 'theo như việc... nên').",
+      "longExplanation": "'~(으)ㄴ/는 바' là cấu trúc liên kết kết hợp giữa vĩ tố dạng định ngữ với danh từ phụ thuộc '바' (chỉ sự việc, điều, phương diện). Trong văn phong hành chính, công văn, báo cáo hoặc phát biểu chính thức, cấu trúc này được dùng để giới thiệu bối cảnh, tình hình thực tế đã diễn ra hoặc căn cứ pháp lý/thực tiễn làm cơ sở cho quyết định, chỉ thị hoặc yêu cầu ở vế tiếp theo. Tương đương với 'xét thấy rằng...', 'theo như...', 'do việc... nên' trong tiếng Việt. Khi gắn với danh từ + 이다, cấu trúc có dạng '~인 바'. Ngoài ra cấu trúc còn xuất hiện dưới dạng '~ㄴ 바 있다/없다' (đã từng/chưa từng có việc...).",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄴ/는 바 (hoặc Danh từ + 인 바; quá khứ/hoàn thành: Thân động từ + -(으)ㄴ 바; hiện tại: Thân động từ + -는 바)",
+      "examples": [
+        {
+          "translation": "Xét thấy cuộc họp đã bị hủy bỏ nên hôm nay tôi dự định sẽ nghỉ ngơi ở nhà."
+        },
+        {
+          "translation": "Vì chưa có thông tin cô ấy đã đến nơi nên có lẽ cô ấy vẫn đang đợi chúng ta."
+        },
+        {
+          "translation": "Những người từng có tiền sử nhiễm loại virus này phải thực hiện tự cách ly."
+        },
+        {
+          "translation": "Vì nhà vệ sinh đã có người dùng xong rồi nên bây giờ người khác có thể sử dụng."
+        }
+      ]
+    },
+    "ko_인_57": {
+      "title": "~(으)ㄴ/는 이상 / ~인 이상 (Một khi đã..., chừng nào còn...)",
+      "shortExplanation": "Dùng để thiết lập một tiền đề hoặc điều kiện tất yếu, nhấn mạnh rằng một khi sự việc ở vế trước đã xảy ra hoặc ở trong trạng thái đó thì vế sau bắt buộc phải được thực hiện hoặc là điều đương nhiên ('một khi đã... thì phải', 'đã là... thì đương nhiên').",
+      "longExplanation": "'~(으)ㄴ/는 이상' là cấu trúc kết hợp giữa vĩ tố dạng định ngữ với danh từ '이상' (dĩ thượng - mang nghĩa vượt lên trên, hoặc một khi đã xác lập). Cấu trúc này dùng để biểu thị một tình huống đã trở thành tiền đề cố định không thể đảo ngược, do đó người nói nhấn mạnh hành động hoặc kết quả ở vế sau là nghĩa vụ bắt buộc, quyết tâm sắt đá hoặc là một điều hiển nhiên không thể tránh khỏi. Tương đương với 'một khi đã... thì...', 'đã là... thì nhất định...' trong tiếng Việt. Khi đi với danh từ + 이다, cấu trúc có dạng '~인 이상'.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄴ/는 이상 (động từ quá khứ/trạng thái dùng -(으)ㄴ 이상; hiện tại dùng -는 이상; Danh từ + 인 이상)",
+      "examples": [
+        {
+          "translation": "Một khi chúng ta đã đi xa đến tận nước này rồi thì không thể bỏ cuộc được."
+        },
+        {
+          "translation": "Một khi đã được cho phép rồi thì bạn có thể tự do làm."
+        },
+        {
+          "translation": "Một khi đã hứa thì nhất định phải giữ lời."
+        },
+        {
+          "translation": "Đã thi đỗ rồi thì chúng mình nhất định phải chúc mừng bạn chứ."
+        }
+      ]
+    },
+    "ko_인즉슨_58": {
+      "title": "~인즉슨 (Sự tình là, ngọn ngành là, nói tóm lại là)",
+      "shortExplanation": "Dùng sau một danh từ (như lý do, câu chuyện, sự tình) hoặc dùng đầu câu để mở đầu cho lời giải thích chi tiết, làm rõ chân tướng hoặc bản chất của vấn đề ('ngọn ngành câu chuyện là', 'nói tóm lại là').",
+      "longExplanation": "'~인즉슨' là trợ từ dạng quán ngữ kết hợp từ trợ từ liên kết '-인즉' (vốn bắt nguồn từ trợ từ chỉ định 이다 + -ㄴ즉) và trợ từ bổ nghĩa '-은/는'. Cấu trúc này thường đi kèm sau các danh từ chỉ nguyên do hoặc nội dung như '사연인즉슨' (ngọn ngành câu chuyện là), '이유인즉슨' (lý do thực sự là), '말인즉슨' (nói tóm lại là), hoặc dùng độc lập ở đầu câu '인즉슨' để bắt đầu trình bày chi tiết nguyên do, uẩn khúc đằng sau một sự việc đã nêu trước đó. Tương đương với 'sự tình là...', 'ngọn ngành là...', 'nói rõ ra là...' trong tiếng Việt.",
+      "formation": "Danh từ + 인즉슨 (thường dùng trong cụm: 사연인즉슨, 이유인즉슨, 말인즉슨; hoặc dùng đầu câu: 인즉슨, ~)",
+      "examples": [
+        {
+          "translation": "Chúng ta cần có phương tiện giao tiếp. Nói cách khác, điều đó có nghĩa là chúng ta phải thấu hiểu suy nghĩ của nhau."
+        },
+        {
+          "translation": "Cha tôi đã qua đời từ sớm. Nói rõ ra là tôi đã mồ côi cha từ khi còn rất nhỏ."
+        },
+        {
+          "translation": "Anh ấy đảm nhiệm công việc này. Nói tóm lại là trách nhiệm của công việc này thuộc về anh ấy."
+        },
+        {
+          "translation": "Tuần sau chúng ta sẽ thi. Điều đó có nghĩa là trong dịp cuối tuần này chúng ta cần phải đến thư viện để học bài."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_을_44": {
+      "title": "~(을/를) 바탕으로（以……为基础、基于、根据）",
+      "shortExplanation": "表示以某种事实、经验、数据或意见等作为后续行动、判断或决策的基础与根据（“以……为基础”、“基于……”）。",
+      "longExplanation": "“~(을/를) 바탕으로”由名词“바탕”（基础、底蕴）与表示手段或途径的助词“-으로”结合而成。前面的名词充当后续动作的出发点、立足点或参考依据，常用于学术研究、艺术创作、业务改进或正式决策等语境中。相当于汉语的“以……为基础”、“基于……”或“根据……”。若修饰后接的名词，则通常使用“~(을/를) 바탕으로 한 + 名词”的形式。",
+      "formation": "名词 + 을/를 바탕으로（有收音的名词接 을 바탕으로，无收音的名词接 를 바탕으로）",
+      "examples": [
+        {
+          "translation": "我们根据客户的反馈改进了产品。"
+        },
+        {
+          "translation": "她以自己的亲身经历为基础写了一本书。"
+        },
+        {
+          "translation": "凭借在上一家公司积累的经验，我能够快速完成这项工作。"
+        },
+        {
+          "translation": "他们基于事实做出了决定。"
+        }
+      ]
+    },
+    "ko_을_45": {
+      "title": "~(을/를) 빼다 / ~(을/를) 빼고(는)（除……之外、除去、除去……不算）",
+      "shortExplanation": "表示从整体中排除某一特定对象、部分或例外情况（“除了……之外”、“除去……”）。",
+      "longExplanation": "“빼다”是动词，本义为“抽出、去掉、减去”。在语法表达中常以连接形“~을/를 빼고”或添加强调助词的“~을/를 빼고는”出现，用来把特定的人、事物或要素从整体范畴中排除出去，说明除了该例外之外，其余部分均符合某种共性特征。相当于汉语的“除……之外”、“除去……不说”。",
+      "formation": "名词 + 을/를 빼다（常用于：名词 + 을/를 빼고 / 을/를 빼고는；有收音接 을，无收音接 를）",
+      "examples": [
+        {
+          "translation": "我们学校的学生都很亲切，除了几名学生之外全都非常热情。"
+        },
+        {
+          "translation": "这家餐厅所有的菜都很好吃，除了少数几道菜之外样样美味。"
+        },
+        {
+          "translation": "除了几个人之外，这里所有的人都会说韩语。"
+        },
+        {
+          "translation": "除了一两本书之外，这是我读过的所有书籍中最有趣的一本。"
+        }
+      ]
+    },
+    "ko_을_46": {
+      "title": "~(과/와) ~ 사이(에)（在……与……之间、中间）",
+      "shortExplanation": "表示在两个或多个对象之间的空间位置、时间间隔或人际关系（“在……与……之间”）。",
+      "longExplanation": "“사이”是名词，指空间上的间隔、距离，时间上的间隙，或人与人之间的关系。通常与连接助词“과/와”连用，构成“名词1 + 과/와 + 名词2 + 사이(에)”的基本结构，也可以直接接在表示多数或复数群体的名词之后（如“우리 사이에”——在我们之间）。当在句中作为时间或地点状语时，常附加助词“-에”。",
+      "formation": "名词1 + 과/와 + 名词2 + 사이(에)（名词1有收音接 과，无收音接 와；亦可用于：复数名词 + 사이(에)）",
+      "examples": [
+        {
+          "translation": "我在早餐和午餐之间会吃一顿简单的点心。"
+        },
+        {
+          "translation": "在第一项任务和第二项任务之间安排休息时间非常重要。"
+        },
+        {
+          "translation": "我在位于她家和学校之间的公园里学习了。"
+        },
+        {
+          "translation": "我们在两家公司之间的一家餐厅见了面。"
+        }
+      ]
+    },
+    "ko_을_47": {
+      "title": "~(으)ㄹ 테니(까)（推测大概会……所以、我来……所以请……）",
+      "shortExplanation": "说话人基于某种依据对将来的情况进行确信推测，或表明自己的强烈意向，以此作为后句行动的前提或理由（“想必会……所以”、“我负责……你负责……”）。",
+      "longExplanation": "“~(으)ㄹ 테니(까)”由表示将来推测的冠形词尾“-(으)ㄹ”、表示推测或意图的依存名词“터”以及表示原因根据的连接词尾“-(으)니까”紧缩而成。主要包含两种语用功能：一是主语为第三人称或非人称时，表示说话人凭常理或证据做出的强烈推测，作为后句提出建议、劝告或要求的理由（“肯定会……所以请……”）；二是主语为第一人称时，表示说话人主动承担某项行动，要求对方做出配合（“我来做……你就去……”）。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ 테니（词干有收音接 -을 테니，无收音或收音为 ㄹ 接 -ㄹ 테니；过去时接 -았/었을 테니）",
+      "examples": [
+        {
+          "translation": "明天大概会下雨，你最好带把雨伞去。"
+        },
+        {
+          "translation": "恩熙小时候肯定学过游泳，所以游泳应该游得很好。"
+        },
+        {
+          "translation": "看来他已经起床吃过早饭了。饭碗里肯定还剩着一点饭渣，说明他是吃完早饭才走的。"
+        },
+        {
+          "translation": "英姬说她很累，这会儿肯定正在家里睡觉呢，别打电话给她了。"
+        }
+      ]
+    },
+    "ko_을_48": {
+      "title": "~(을/를) 통해(서)（通过、借助、经过）",
+      "shortExplanation": "表示借助某种媒介、手段、渠道或过程来达成目的或进行某项活动（“通过……”、“借助……”）。",
+      "longExplanation": "“~(을/를) 통해(서)”由名词后接动词“통하다”（通过、畅通）的副词形“통해(서)”构成。它既可以表示通过具体的中介、工具或传播渠道（如邮件、翻译软件、书籍等）实现信息传递与行动，也可以表示经历某种过程或训练而获得经验与成长。相当于汉语中的“通过……”、“借助……”、“经由……”。修饰后接名词时，常以“~(을/를) 통한 + 名词”的形式出现。",
+      "formation": "名词 + 을/를 통해(서)（有收音的名词接 을 통해，无收音的名词接 를 통해）",
+      "examples": [
+        {
+          "translation": "我们通过电子邮件交流了意见，所以大家表达起来都很轻松自在。"
+        },
+        {
+          "translation": "我喜欢通过书籍汲取新知识，因此经常去图书馆。"
+        },
+        {
+          "translation": "她借助谷歌翻译在学习韩语，这让她的语言学习变得十分便捷。"
+        },
+        {
+          "translation": "我们通过佩戴口罩遏制了冠状病毒的扩散，从而挽救了许多生命。"
+        }
+      ]
+    },
+    "ko_을를_49": {
+      "title": "~(을/를) 틈타(서)（趁着、利用……之机、乘隙）",
+      "shortExplanation": "表示抓住并利用短暂的空闲时间、间隙或某种有利的时机、疏漏来做某事（“趁着……”、“乘机……”）。",
+      "longExplanation": "“틈”是名词，指缝隙、空隙或闲暇时间；“타다”在这里表示“利用机会”。“~(을/를) 틈타(서)”常用于描述抓住宝贵而短暂的空闲片刻（如下班途中、午休时间、孩子入睡时）高效处理事情，也可以用于描述趁着对方防备松懈或某种特殊情势乘隙采取行动。相当于汉语中的“趁着……”、“乘机……”、“利用……的空档”。",
+      "formation": "名词 + 을/를 틈타(서)（有收音接 을 틈타，无收音接 를 틈타；常用形式还包括：动词定语形 + 때/사이를 틈타）",
+      "examples": [
+        {
+          "translation": "我常常利用上班路上的空档看书，这样就能把原本无聊的通勤时间充分利用起来。"
+        },
+        {
+          "translation": "她趁着休息时间抓紧学习，因此考试准备得更加充分了。"
+        },
+        {
+          "translation": "我趁着宝宝睡着的时候做家务，所以能处理很多事情。"
+        },
+        {
+          "translation": "趁着下雨天，我在一家很有情调的咖啡馆里看了书，那真是一段平静安详的时光。"
+        }
+      ]
+    },
+    "ko_이기는_50": {
+      "title": "~기는 한데 / ~이기는 한데（确实是……但是、好是好但……）",
+      "shortExplanation": "用于承认前句陈述的事实或属性，但在后句话锋一转，提出限制、遗憾或相反的情况（“确实……但是……”）。",
+      "longExplanation": "“~기는 한데”由名物化词尾“-기”、表示对比强调的助词“-는”以及形容词“하다”后接转折连接词尾“-ㄴ/은데”组合而成。它的核心语用功能是“先退后进”，即说话人首先客观承认前一事实（“做是做了”、“好确实是好”），紧接着在后半句引出某种顾虑、不足或相反的事实，使语气显得客观且委婉。名词与体词谓词形结合时为“~(이)기는 한데”，日常口语中常略缩为“~긴 한데”。",
+      "formation": "动词词干 / 形容词词干 + -기는 한데（口语常缩略为 -긴 한데；名词接 -(이)기는 한데；过去时接 -기는 했는데）",
+      "examples": [
+        {
+          "translation": "那部电影看着确实挺有意思的，但暴力镜头实在太多了，让我觉得有些不适。"
+        },
+        {
+          "translation": "学韩语我确实是在学，但我更想把中文说得更好。"
+        },
+        {
+          "translation": "我们队确实是赢了，不过对方其实发挥得更出色。"
+        },
+        {
+          "translation": "明天有运动会，练习确实应该多练，可是完全挤不出时间，真不知道该怎么办好。"
+        }
+      ]
+    },
+    "ko_이나_51": {
+      "title": "~(이)나（或者、……之类的、多达/整整——表选择或数量之巨）",
+      "shortExplanation": "表示在未有最优选择时退而求其次（“……之类的”），或连接任选其一的事物（“或者”），亦可用于数词后强调数量之多（“多达”、“整整”）。",
+      "longExplanation": "“~(이)나”是韩语中高频使用的多功能补助词。主要语用含义包括：一是表示退而求其次的选择，即虽然不是最心仪的对象，但姑且一选，相当于“……之类的”、“或者什么的”；二是连接两个名词表示二选一的“或者”；三是接在数量词后，表示说话人认为该数量大大超出了寻常预期，带有一种惊讶与夸张的语气，相当于汉语的“整整……”、“多达……”。",
+      "formation": "名词 + (이)나（有收音的名词接 이나，无收音的名词接 나）",
+      "examples": [
+        {
+          "translation": "我喝点咖啡或者茶什么的都行，我口渴得厉害。"
+        },
+        {
+          "translation": "这个周末我们去野餐之类的玩玩怎么样？享受一下好天气应该很不错。"
+        },
+        {
+          "translation": "她午饭就随便吃了拉面或者油豆腐寿司之类简便的食物。"
+        },
+        {
+          "translation": "因为没有公交车，我整整走了10公里路才回到家。"
+        }
+      ]
+    },
+    "ko_이래_52": {
+      "title": "~(으)ㄴ 이래(로) / ~ 이래(로)（自……以来、从……之后一直）",
+      "shortExplanation": "表示从过去的某一特定基准时间点或发生某事件以来，某种状态或行为一直持续至今（“自……以来”）。",
+      "longExplanation": "“이래”是名词，意为“从某一时期以后的这段时间”。通常前接名词或动词过去时定语形，构成“~(으)ㄴ 이래(로)”或“名词 + 이래(로)”的格式。它明确指出一个过去的起点事件，并强调自该事件发生之后，某种心理变化、生活习惯或客观现实一直不间断地延续至说话当下。相当于汉语的“自……以来”、“打从……以后”。",
+      "formation": "动词词干 + -(으)ㄴ 이래(로)（词干有收音接 -은 이래，无收音接 -ㄴ 이래；名词直接接 + 이래(로)）",
+      "examples": [
+        {
+          "translation": "自从在学校初次遇见她以来，我便深深爱上了她。"
+        },
+        {
+          "translation": "来到印度初尝辣味食物之后，我便喜欢上了吃辣。"
+        },
+        {
+          "translation": "醒来听了那番话之后，从那以后我便一声不吭了。"
+        },
+        {
+          "translation": "自从那座大楼被大火烧毁以来，那里就变成了一处无人居住的空宅。"
+        }
+      ]
+    },
+    "ko_이러하다_53": {
+      "title": "이러하다（如此、这样、这般——指示形容词）",
+      "shortExplanation": "指示形容词，用于指代或描述眼前、当下正在经历的某种形态、性质、事实或状况（“这样”、“如此”）。",
+      "longExplanation": "“이러하다”是指示形容词（缩略形为“이렇다”），意为“如此”、“这样”。它用来指称事物具有眼前的性质、状态或局面。在句中充当谓语时常活用为“이러하다/이러합니다”，充当原因状语时变为“이러하니/이러하므로”，修饰后置名词时变为冠形词（定语）形“이러한 + 名词”，充当副词时变为“이러하게”。常用于书面语或郑重表达中，阐述某种令人深感棘手或令人瞩目的情势。",
+      "formation": "形容词原形：이러하다（缩略形：이렇다；冠形词/定语形：이러한 + 名词；副词形：이러하게；连接形：이러하니/이러하므로）",
+      "examples": [
+        {
+          "translation": "局势既然已经这般，大家一时之间都手足无措了。"
+        },
+        {
+          "translation": "没想到问题竟然成了这样，真是让人始料未及、倍感慌乱。"
+        },
+        {
+          "translation": "人们竟然这般对待我，实在令我倍感心酸委屈。"
+        },
+        {
+          "translation": "正是因为他这种不负责任的行为，导致许多人蒙受了痛苦。"
+        }
+      ]
+    },
+    "ko_이리_54": {
+      "title": "이리（往这边、到这里、这样、如此——指示副词）",
+      "shortExplanation": "指示副词，既可表示向说话人所在的方向靠拢（“往这边”、“到这里”），也可表示动作的方式或程度（“这样”、“这么”）。",
+      "longExplanation": "“이리”是兼具空间指向与方式程度的指示副词。作为空间指示时，是“이리로”（向这边、这里）的简缩形式，常与表示位移的动词连用（如“이리 오세요”——请到这里来）；作为方式或程度指示时，相当于“이렇게”（这样、如此）或“이토록”（这么、如此这般），直接修饰后置动词，指示动作的操作手段、角度或状态。日常口语中使用极为自然。",
+      "formation": "副词：이리 + 动词（如 이리 오다、이리 하다、이리 만들다）",
+      "examples": [
+        {
+          "translation": "别那样叫，按这么叫吧。"
+        },
+        {
+          "translation": "他是这么把作业完成并交上来的。"
+        },
+        {
+          "translation": "请按这种构图方式帮我拍张照片吧。"
+        },
+        {
+          "translation": "我想我大概会按这种方式来处理吧。"
+        }
+      ]
+    },
+    "ko_이미_55": {
+      "title": "이미（已经、早已——时间副词）",
+      "shortExplanation": "时间副词，表示某种动作、变化或状态在说话之前或某一特定基准时间之前早已完成或成立（“已经”、“早已”）。",
+      "longExplanation": "“이미”是表示动作完成或状态既成的时间副词。通常置于谓语动词之前，后接过去时谓语，强调某事已成定局、不可逆转，相当于汉语的“已经”、“早已”。与偏向主观惊讶、觉得时间过得快的“벌써”相比，“이미”更侧重于陈述客观事实，强调事情在客观上已经告一段落或既成事实。",
+      "formation": "副词：이미 + 谓语（多与过去时连用：이미 + 动词词干 + -았/었다）",
+      "examples": [
+        {
+          "translation": "我已经开始学习韩语了，虽然起步稍晚，但我决定全力以赴好好学。"
+        },
+        {
+          "translation": "我们已经抵达海边了，再也不需要继续等待了。"
+        },
+        {
+          "translation": "孩子们早已吃过晚饭，所以现在肚子很饱。"
+        },
+        {
+          "translation": "那部电影我已经看过了，所以得另找一部来看看了。"
+        }
+      ]
+    },
+    "ko_인_56": {
+      "title": "~(으)ㄴ/는 바 / ~인 바（鉴于……、根据……的情况、……的事——公文庄重体）",
+      "shortExplanation": "多用于公文、政论或正式书面语中，陈述前述事实、背景或依据，作为后项展开措施或判断的前提（“鉴于……”、“……的情况”）。",
+      "longExplanation": "“~(으)ㄴ/는 바”由冠形词尾后接依存名词“바”（事由、情况、所……）组合而成。在正式书面体或公函报告中，它起着连接前后句的重要功能，用于客观交待某种背景事实、法律条款或经验依据，引出后续的处置意见、决议或说明，相当于汉语的“鉴于……事实”、“根据上述情况”。另外，“-ㄴ 바 있다/없다”结构表示“有/没有发生过某种情况（曾经……）”。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄴ/는 바（过去时/完成体接 -(으)ㄴ 바，现在时接 -는 바；名词接 -인 바）",
+      "examples": [
+        {
+          "translation": "鉴于会议已经取消，我今天打算就在家里休息。"
+        },
+        {
+          "translation": "既然尚未有她抵达的消息，想必她还在等我们吧。"
+        },
+        {
+          "translation": "曾有感染该病毒史的人员必须进行居家隔离。"
+        },
+        {
+          "translation": "洗手间既然已经有人使用过了，现在其他人可以去使用了。"
+        }
+      ]
+    },
+    "ko_인_57": {
+      "title": "~(으)ㄴ/는 이상 / ~인 이상（既然……就……、只要……就……）",
+      "shortExplanation": "设定一个已成定局或不可推卸的前提条件，强调在此前提下，后文的行为是必然要求、理所应当或坚定意志（“既然……就必须要……”）。",
+      "longExplanation": "“~(으)ㄴ/는 이상”由冠形词尾与表示界限或既定事实的名词“이상”（以上）结合而成。它表达逻辑上的强前提关系：既然前项的事情已经发生、无法逆转或已经成立，那么后项的义务、决心、推论便是理所当然的必然归宿。相当于汉语的“既然……就……”、“既然已经……那就必须……”。名词后接指定词“이다”时，构成“~인 이상”的形式。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄴ/는 이상（动词过去/完成态接 -(으)ㄴ 이상，现在态接 -는 이상；名词接 -인 이상）",
+      "examples": [
+        {
+          "translation": "既然我们都已经走到这一步了，就绝不能轻言放弃。"
+        },
+        {
+          "translation": "既然已经获得了许可，你就可以自由地去做了。"
+        },
+        {
+          "translation": "既然做出了承诺，就必须言而有信、坚决遵守。"
+        },
+        {
+          "translation": "既然你已经通过了考试，我们理当好好为你庆祝一番。"
+        }
+      ]
+    },
+    "ko_인즉슨_58": {
+      "title": "~인즉슨（追究其由、其实是、也就是说、其原由是）",
+      "shortExplanation": "常接在“缘由、内情、话意”等名词后或位于句首，用于引出对前述事情的深入内情阐述、原委解释或本质总结（“究其原因其实是……”、“换言之……”）。",
+      "longExplanation": "“~인즉슨”由指定词后接连接词尾“-ㄴ즉”（表示“既然……考察其缘由”）与补助词“-은/는”结合演化而来。它最经典的应用是与表示事情原委的名词搭配，如“사연인즉슨”（个中原委其实是……）、“이유인즉슨”（究其原因其实是……）、“말인즉슨”（话虽如此/换言之……），或者单独放在后句开头充当连接词，用来揭晓前述概括性陈述背后的具体细节、真实意图或深层根由。",
+      "formation": "名词 + 인즉슨（常见固定搭配：사연인즉슨、이유인즉슨、말인즉슨；亦可位于句首独立使用：인즉슨, ~）",
+      "examples": [
+        {
+          "translation": "我们需要沟通交流的机制。换言之，也就是我们必须懂得彼此心中的想法。"
+        },
+        {
+          "translation": "家父很早就过世了。也就是说，从我很年幼的时候起便失去了父亲的依傍。"
+        },
+        {
+          "translation": "他全权负责这项工作。也就是说，这项工作的最终责任归咎于他一人。"
+        },
+        {
+          "translation": "我们下周就要举行考试了。也就是说，这个周末我们有必要去图书馆好好自习。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_을_44": {
+      "title": "~(을/를) 바탕으로（〜をもとに、〜に基づいて、〜を土台として）",
+      "shortExplanation": "ある事実や経験、データ、意見などを土台や根拠として、行動を起こしたり判断・決定を下したりすることを表します（「〜に基づいて」「〜をもとに」）。",
+      "longExplanation": "「~(을/를) 바탕으로」は、「基礎・土台」を意味する名詞「바탕」に、手段や方法を表す助詞「-으로」が結合した表現です。先行する名詞が後続する行為や創作、改善、意思決定の拠り所・土台となっていることを示します。日本語の「〜をもとに」「〜に基づいて」「〜を土台として」に相当します。なお、後ろの名詞を修飾する場合は「~(을/를) 바탕으로 한 + 名詞」の形が用いられます。",
+      "formation": "名詞 + 을/를 바탕으로（パッチムがある名詞には 을 바탕으로、パッチムがない名詞には 를 바탕으로）",
+      "examples": [
+        {
+          "translation": "私たちは顧客からのフィードバックをもとに製品を改善しました。"
+        },
+        {
+          "translation": "彼女は自身の経験に基づいて本を書きました。"
+        },
+        {
+          "translation": "私は前の会社での経験をもとに、この作業を迅速に終えることができます。"
+        },
+        {
+          "translation": "彼らは事実に基づいて決定を下しました。"
+        }
+      ]
+    },
+    "ko_을_45": {
+      "title": "~(을/를) 빼다 / ~(을/를) 빼고(는)（〜を除いて、〜を抜いて、〜以外は）",
+      "shortExplanation": "全体の中から特定の対象や例外となる項目を取り除き、除外することを表します（「〜を除いて」「〜を抜いて」）。",
+      "longExplanation": "「빼다」は「抜く、除く、引く」という意味の動詞です。日常会話や文章では、接続形の「~을/를 빼고」や強調の助詞を伴った「~을/를 빼고는」の形で極めてよく用いられ、全体の枠組みから一部の例外を切り離して「〜を除いては」「〜を抜きにして」という意味を表します。後続の節脈脈では、その例外を除く全体が共通の状態や性質を持っていることが述べられます。",
+      "formation": "名詞 + 을/를 빼다（主に 名詞 + 을/를 빼고 / 을/를 빼고는 の形で使用。パッチムありは 을、なしは 를）",
+      "examples": [
+        {
+          "translation": "うちの学校の生徒はみんな親切です。数人の生徒を除けば全員とても優しいです。"
+        },
+        {
+          "translation": "この食堂の料理はどれも美味しいです。いくつかのメニューを除いては全部美味しいです。"
+        },
+        {
+          "translation": "ここにいる人は何人かを除いて全員韓国語が話せます。"
+        },
+        {
+          "translation": "読んだすべての本の中で、数冊を除いて一番面白かったです。"
+        }
+      ]
+    },
+    "ko_을_46": {
+      "title": "~(과/와) ~ 사이(에)（〜と〜の間（に））",
+      "shortExplanation": "2つ以上の対象の空間的な位置、時間の隔たり、あるいは人間関係の「間」を表します（「〜と〜の間に」）。",
+      "longExplanation": "「사이」は、物理的な空間のすき間、時間の区切り、または人と人との関係性を表す名詞です。一般的に並立助詞「과/와」と組み合わされ、「名詞1 + 과/와 + 名詞2 + 사이(에)」の形で用いられます。また、複数の人を表す名詞の後について「우리 사이에（私たちの間で）」のようにも使われます。空間や時間の位置づけを示す副詞句として用いる場合は、場所・時間を表す助詞「-에」を伴います。",
+      "formation": "名詞1 + 과/와 + 名詞2 + 사이(에)（パッチムありは 과、なしは 와。または 複数名詞 + 사이(에)）",
+      "examples": [
+        {
+          "translation": "私は朝食と昼食の間に簡単な軽食をとります。"
+        },
+        {
+          "translation": "1つ目の作業と2つ目の作業の間に休憩時間をとることが大切です。"
+        },
+        {
+          "translation": "彼女の家と学校の間にある公園で勉強をしました。"
+        },
+        {
+          "translation": "私たちは2つの会社の間にあるレストランで会いました。"
+        }
+      ]
+    },
+    "ko_을_47": {
+      "title": "~(으)ㄹ 테니(까)（〜だろうから、〜はずだから、私が〜するから）",
+      "shortExplanation": "根拠をもとに将来の事態を強く推測して後続の助言・指示の前提としたり、話し手の意志を表明して相手に行動を促したりする表現です（「〜だろうから」「〜するから」）。",
+      "longExplanation": "「~(으)ㄹ 테니(까)」は、未来・推量を表す連体形語尾「-(으)ㄹ」、推量や意志を表す不完全名詞（依存名詞）「터」、そして理由を表す接続語尾「-(으)니까」が組み合わさった表現です。主に2つの用法があります。(1) 主語が第三者や事物の場合は「〜だろうから」「〜のはずだから」と強い確信を伴う推測を表し、後続節で提案・命令・勧誘を導きます。(2) 主語が話し手自身（一人称）の場合は「私が〜するから、あなたは〜して」と自分の意志を前提として相手に依頼や行動を促します。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 테니（パッチムありは -을 테니、パッチムなし・ㄹパッチムは -ㄹ 테니；過去形は -았/었을 테니）",
+      "examples": [
+        {
+          "translation": "明日は雨が降るだろうから、傘を持って行ったほうがいいですよ。"
+        },
+        {
+          "translation": "ジニは幼い頃に水泳を習ったはずだから、泳ぎが得意なはずです。"
+        },
+        {
+          "translation": "彼は起きて朝食を食べたようです。お茶碗にご飯が少し残っているはずですから、朝食を食べて出かけたのでしょう。"
+        },
+        {
+          "translation": "ヨンヒは疲れたと言っていたので、今は家で寝ているでしょうから電話しないでください。"
+        }
+      ]
+    },
+    "ko_을_48": {
+      "title": "~(을/를) 통해(서)（〜を通じて、〜を通して）",
+      "shortExplanation": "ある手段、媒体、経路、または経験や過程を経てある行為を行ったり結果を得たりすることを表します（「〜を通じて」「〜を通して」）。",
+      "longExplanation": "「~(을/를) 통해(서)」は、「通じる、通る」を意味する動詞「통하다」の活用形に由来する表現です。名詞に後続して、情報伝達の手段や媒介（メール、書籍、翻訳ツールなど）、または人脈や特定のプロセスを経て目的を達成することを示します。日本語の「〜を通じて」「〜を通して」にそのまま対応します。後ろの名詞を修飾する場合は「~(을/를) 통한 + 名詞」の形を用います。",
+      "formation": "名詞 + 을/를 통해(서)（パッチムがある名詞には 을 통해、パッチムがない名詞には 를 통해）",
+      "examples": [
+        {
+          "translation": "私たちはメールを通じて意見を交換したので、誰もが気兼ねなく意見を言えました。"
+        },
+        {
+          "translation": "私は本を通して新しい知識を学ぶのが好きなので、よく図書館に通っています。"
+        },
+        {
+          "translation": "彼女はGoogle翻訳を通じて韓国語を学んでおり、語学学習をとても手軽に進めています。"
+        },
+        {
+          "translation": "私たちはマスクの着用を通じて新型コロナウイルスの感染拡大を防ぐことができ、多くの命が救われました。"
+        }
+      ]
+    },
+    "ko_을를_49": {
+      "title": "~(을/를) 틈타(서)（〜に乗じて、〜の合間を縫って、〜を機に）",
+      "shortExplanation": "短いすきま時間や機会、あるいは相手の油断や状況のすき間を利用して何らかの行動を起こすことを表します（「〜の合間を縫って」「〜に乗じて」）。",
+      "longExplanation": "「틈」は空間のすき間や時間の合間、油断・隙（すき）を意味する名詞で、「타다」は機会を利用することを意味します。「~(을/를) 틈타(서)」は、通勤時間や休憩時間などの短いすきま時間を上手に活用して何かを行う前向きな文脈や、相手の警戒が薄れたすき間に乗じて行動を起こす文脈で広く用いられます。日本語の「〜の合間を縫って」「〜の隙に乗じて」「〜の機会を利用して」に相当します。",
+      "formation": "名詞 + 을/를 틈타(서)（パッチムがある名詞には 을 틈타、パッチムがない名詞には 를 틈타。または 動詞連体形 + 때/사이를 틈타）",
+      "examples": [
+        {
+          "translation": "私は通勤途中の時間を利用して本を読むようにしているので、退屈な移動時間を有効に活用できます。"
+        },
+        {
+          "translation": "彼女は休憩時間の合間を縫って勉強をしたため、試験の準備がより万全になりました。"
+        },
+        {
+          "translation": "赤ちゃんが寝ている隙を見計らって家事をするので、たくさんの用事を片付けることができます。"
+        },
+        {
+          "translation": "雨の日の合間を縫って雰囲気の良いカフェで読書をしましたが、本当に穏やかなひとときでした。"
+        }
+      ]
+    },
+    "ko_이기는_50": {
+      "title": "~기는 한데 / ~이기는 한데（〜することはするが、〜ではあるけれど）",
+      "shortExplanation": "前節の事実や性質を一旦認めた上で、後節でそれに相反する制約や不満、留保を述べる表現です（「〜することはするけれど」「確かに〜だが」）。",
+      "longExplanation": "「~기는 한데」は、名詞形語尾「-기」、対照を表す助詞「-는」、補助形容詞「하다」、そして逆接・前提を表す接続語尾「-ㄴ/은데」が結合した表現です。相手の意見や客観的事実を一度肯定・受容したのち、「ただし〜」「しかし〜」と別の側面や問題点、不満を付け加える際に用いられます。会話では縮約形の「~긴 한데」が頻繁に使われます。名詞に指定詞「이다」がつく場合は「~(이)기는 한데」となります。",
+      "formation": "動詞語幹 / 形容詞語幹 + -기는 한데（縮約形は -긴 한데；名詞 + (이)기는 한데；過去形は -기는 했는데）",
+      "examples": [
+        {
+          "translation": "その映画は面白く観るには観たのですが、暴力シーンが少し多すぎて居心地が悪かったです。"
+        },
+        {
+          "translation": "韓国語の勉強をしてはいるのですが、それ以上に中国語がもっと上手になりたいです。"
+        },
+        {
+          "translation": "うちのチームが勝ちには勝ちましたが、相手チームのほうが試合運びは上手でした。"
+        },
+        {
+          "translation": "明日スポーツ大会があるのでたくさん練習しなければならないのは確かなのですが、時間がなくてどうすればよいか分かりません。"
+        }
+      ]
+    },
+    "ko_이나_51": {
+      "title": "~(이)나（〜でも、〜とか、〜も——妥協・選択・数量の強調）",
+      "shortExplanation": "最善ではないが代案として選ぶニュアンス（「〜でも」「〜とか」）、または数量詞について予想以上の多さを強調する表現です（「〜も」「〜もの」）。",
+      "longExplanation": "「~(이)나」は多様な意味合いを持つ助詞です。主な機能として、(1) 「それほど満足ではないが、代案としてこれでも」という妥協・気軽な提案（「お茶でも」「ピクニックにでも」）、(2) 2つ以上の名詞を並べる「〜か〜」（または）、(3) 数量詞に結合して話し手の予想をはるかに超えていることに対する驚きを表す強調用法（日本語の「〜も」「〜もの」）があります。",
+      "formation": "名詞 + (이)나（パッチムがある名詞には 이나、パッチムがない名詞には 나）",
+      "examples": [
+        {
+          "translation": "喉がカラカラなので、コーヒーかお茶か何か飲みます。"
+        },
+        {
+          "translation": "今度の週末、ピクニックにでも行きましょうか？良い天気を楽しむのも良さそうです。"
+        },
+        {
+          "translation": "彼女は昼食にラーメンやいなり寿司のような簡単なものを食べました。"
+        },
+        {
+          "translation": "バスがなかったので、私は10キロも歩いて家に帰りました。"
+        }
+      ]
+    },
+    "ko_이래_52": {
+      "title": "~(으)ㄴ 이래(로) / ~ 이래(로)（〜して以来、〜以降ずっと）",
+      "shortExplanation": "過去のある時点や出来事を起点として、その時から現在に至るまである状態や行為が継続していることを表します（「〜（して）以来」「〜からこのかた」）。",
+      "longExplanation": "「이래」は「〜以来、〜以後」を意味する名詞です。動詞の過去連体形に後続して「~(으)ㄴ 이래(로)」、または名詞に直接付いて「名詞 + 이래(로)」の形で用いられます。過去に生じたある出来事を契機・出発点とし、それ以降現在まで感情の変化、習慣の定着、あるいは事態の推移が絶え間なく続いていることを強調します。日本語の「〜して以来」「〜以来ずっと」に該当します。",
+      "formation": "動詞語幹 + -(으)ㄴ 이래(로)（パッチムありは -은 이래、なしは -ㄴ 이래；名詞 + 이래(로)）",
+      "examples": [
+        {
+          "translation": "学校で彼女に初めて出会って以来、彼女を愛するようになりました。"
+        },
+        {
+          "translation": "インドに来て初めて辛い料理を食べて以来、辛い料理が好きになりました。"
+        },
+        {
+          "translation": "起きて話を聞いてからというもの、それ以降ずっと声を出さないようになりました。"
+        },
+        {
+          "translation": "建物が火事で焼失して以来、そこは空き家になってしまいました。"
+        }
+      ]
+    },
+    "ko_이러하다_53": {
+      "title": "이러하다（このようである、こうである——指示形容詞）",
+      "shortExplanation": "話者の目の前にある、あるいは直接体験している状態・性質・状況が「このようである」ことを表す指示形容詞です（「このようである」「こうである」）。",
+      "longExplanation": "「이러하다」は「このようである、こうである」を意味する指示形容詞で、縮約形は「이렇다」です。目の前で展開している事態や、直前に言及された具体的な状況・性質を指し示します。文末で「이러하다/이러합니다」と叙述するほか、名詞を修飾して「이러한 + 名詞（このような〜）」としたり、理由を表す接続形で「이러하니/이러하므로（事態がこうであるため）」としたり、副詞形で「이러하게（このように）」と活用して広く用いられます。",
+      "formation": "形容詞：이러하다（縮約形：이렇다；連体形：이러한 + 名詞；副詞形：이러하게；接続形：이러하니, 이러하므로）",
+      "examples": [
+        {
+          "translation": "状況がこのようであるため、誰もがどうすべきか分からず途方に暮れました。"
+        },
+        {
+          "translation": "思いのほか問題がこのようになっているので、本当に戸惑ってしまいます。"
+        },
+        {
+          "translation": "人々がこのように扱うことに、とても悲しい気持ちになります。"
+        },
+        {
+          "translation": "彼のこのような行動によって、多くの人々が苦しめられました。"
+        }
+      ]
+    },
+    "ko_이리_54": {
+      "title": "이리（こちらへ、このように、こう——指示副詞）",
+      "shortExplanation": "話し手に向かう空間的な方向（「こちらへ」「ここへ」）、または行動のやり方・方法（「このように」「こう」）を表す指示副詞です。",
+      "longExplanation": "「이리」は多義的な指示副詞です。「こちらへ」を意味する「이리로」の短縮形として移動動詞とともに用いられる用法（「이리 오세요（こちらへおいでください）」など）と、「このように」を意味する「이렇게」の同義語として動作のやり方・手順・角度を具体的に示す用法があります。文脈に応じて空間的な位置取りや動作の実演方法を指し示します。",
+      "formation": "副詞：이리 + 動詞（例：이리 오다, 이리 하다）",
+      "examples": [
+        {
+          "translation": "そんなふうに呼ばないで、このように呼んでください。"
+        },
+        {
+          "translation": "彼は課題をこのようにやってきました。"
+        },
+        {
+          "translation": "このように写真を撮ってください。"
+        },
+        {
+          "translation": "私はこのようにすることになりそうです。"
+        }
+      ]
+    },
+    "ko_이미_55": {
+      "title": "이미（すでに、もう——時間副詞）",
+      "shortExplanation": "動作や状態の変化が発話時または基準時より前に完了し、既成の事実となっていることを表します（「すでに」「もう」）。",
+      "longExplanation": "「이미」は動作の完了や事態の成立を表す時間副詞です。主に述語の前に置かれ、過去形の用言と呼応して、その行為や事態が「すでに」「疾うに（とうに）」完了している客観的な事実を示します。「予想より早い」という主観的な驚きを表すことが多い「벌써」に対し、「이미」は客観的にすでに済んでいて取り返しがつかない・変更できないという確定的な既成事実を淡々と述べるニュアンスが強いです。",
+      "formation": "副詞：이미 + 述語（主に過去形と呼応：이미 + 用言語幹 + -았/었다）",
+      "examples": [
+        {
+          "translation": "私はすでに韓国語の勉強を始めました。少し遅いスタートでしたが一生懸命やることに決めました。"
+        },
+        {
+          "translation": "私たちはもう海に到着しました。これ以上待つ必要はありません。"
+        },
+        {
+          "translation": "子どもたちはすでに夕食を食べたので、今はお腹がいっぱいです。"
+        },
+        {
+          "translation": "その映画はもう観たので、他のものを探さないといけないようです。"
+        }
+      ]
+    },
+    "ko_인_56": {
+      "title": "~(으)ㄴ/는 바 / ~인 바（〜であるところ、〜した事実、〜につき——格式表現）",
+      "shortExplanation": "公文書や改まった文脈において、後述の措置や判断の根拠となる事実や背景を提示する表現です（「〜であるところ」「〜したとおり」）。",
+      "longExplanation": "「~(으)ㄴ/는 바」は、連体形語尾に事柄を表す不完全名詞（依存名詞）「바」が結合した表現です。公的な報告、演説、論説文などで極めて頻繁に用いられ、前提となる客観的事実やこれまでの経緯を提示して後文の結論や指示へとつなげます。日本語の「〜であるところ」「〜した次第であり」「〜につき」に相当します。また「-ㄴ 바 있다/없다」の形をとると「〜した経緯・経験がある/ない」という意味を表します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄴ/는 바（過去・完了は -(으)ㄴ 바、現在は -는 바、名詞 + 이다 は -인 바）",
+      "examples": [
+        {
+          "translation": "会合が取り消された経緯があるため、本日は家で休むつもりです。"
+        },
+        {
+          "translation": "彼女が到着した事実は確認されていないため、おそらく彼女は私たちを待っているのでしょう。"
+        },
+        {
+          "translation": "このウイルスに感染した経緯がある方々は、自宅隔離を行わなければなりません。"
+        },
+        {
+          "translation": "トイレの使用が完了したところですので、今は別の方が使用できます。"
+        }
+      ]
+    },
+    "ko_인_57": {
+      "title": "~(으)ㄴ/는 이상 / ~인 이상（〜である以上は、〜した以上は）",
+      "shortExplanation": "ある事実やすでに決定した事態を動かしがたい前提として掲げ、「〜である以上は当然……すべきだ」「……しなければならない」という強い決意や義務を表します。",
+      "longExplanation": "「~(으)ㄴ/는 이상」は、連体形語尾に「以上」を意味する名詞「이상」が結びついた表現です。前節で取り消しのつかない既成事実や確立された立場を前提条件として提示し、後節でその立場や前提にふさわしい義務・覚悟・当然の帰結を導きます。日本語の「〜（した）以上は」「〜である以上は」に極めて忠実に対応します。名詞＋指定詞「이다」には「~인 이상」の形で接続します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄴ/는 이상（動詞過去・完了形は -(으)ㄴ 이상、現在は -는 이상、名詞は -인 이상）",
+      "examples": [
+        {
+          "translation": "私たちがすでにここまで来た以上は、諦めてはいけません。"
+        },
+        {
+          "translation": "許可を得た以上は、自由に行動することができます。"
+        },
+        {
+          "translation": "約束を交わした以上は、絶対に守らなければなりません。"
+        },
+        {
+          "translation": "試験に合格した以上は、私たちがあなたを祝ってあげなければなりませんね。"
+        }
+      ]
+    },
+    "ko_인즉슨_58": {
+      "title": "~인즉슨（というのも、そのわけはというと、つまり、言ってみれば）",
+      "shortExplanation": "前述の事実に対する詳しい内情、真の理由、あるいは本質的な意味を解き明かして説明する際に用いられます（「そのわけはというと」「つまり」「事情を説明すると」）。",
+      "longExplanation": "「~인즉슨」は、指定詞「이다」に理由や根拠を提示する古風な接続語尾「-ㄴ즉」と、対照・強調の助詞「-은/는」が結びついた慣用的な表現です。主に「사연인즉슨（事の経緯はというと）」「이유인즉슨（その理由というのは）」「말인즉슨（言葉の真意はというと）」などの慣用句として親しまれており、また文頭に単独で置いて「인즉슨, 〜（つまり〜ということだ）」と前述の要約や裏事情の展開を切り出す役割を果たします。",
+      "formation": "名詞 + 인즉슨（慣用表現：사연인즉슨, 이유인즉슨, 말인즉슨；または文頭で独立して：인즉슨, 〜）",
+      "examples": [
+        {
+          "translation": "私たちには意思疎通の機能が必要です。つまり、互いの考えを分かり合わなければならないということです。"
+        },
+        {
+          "translation": "父は早くに他界いたしました。言ってみれば、私が幼い頃から父親を失っていたという意味です。"
+        },
+        {
+          "translation": "彼がこの業務を担当します。つまり、この仕事の責任が彼にあるということです。"
+        },
+        {
+          "translation": "私たちは来週試験を受けます。そのわけはというと、週末の間に勉強しに図書館へ行く必要があるということです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_을_44": {
+      "title": "~(을/를) 바탕으로 (기반 및 근거 제시)",
+      "shortExplanation": "어떤 사실, 경험, 자료 등을 기초나 토대로 삼아 뒤의 행동이나 결정을 해 나감을 나타내는 표현입니다 ('~을 토대로').",
+      "longExplanation": "'~(을/를) 바탕으로'는 기초나 터전을 뜻하는 명사 '바탕'에 수단·방법을 나타내는 조사 '-으로'가 결합한 관용적 표현입니다. 앞선 명사가 뒤따르는 행위, 연구, 창작, 제도 개선 등의 든든한 토대나 근거가 됨을 밝힐 때 주로 쓰입니다. 뒤의 명사를 꾸밀 때는 '~(을/를) 바탕으로 한 + 명사'의 형태로 자주 활용됩니다.",
+      "formation": "명사 + 을/를 바탕으로 (받침이 있는 명사 뒤에는 을 바탕으로, 받침이 없는 명사 뒤에는 를 바탕으로)",
+      "examples": [
+        {
+          "translation": "우리는 고객들의 의견을 소중한 근거로 삼아 제품을 더 좋게 개선했습니다."
+        },
+        {
+          "translation": "그녀는 자신이 직접 겪은 삶의 경험을 토대로 책을 집필했습니다."
+        },
+        {
+          "translation": "저는 이전 직장에서 쌓은 실무 경험을 밑바탕 삼아 이 업무를 빠르게 끝마칠 수 있습니다."
+        },
+        {
+          "translation": "그들은 객관적인 사실을 명확한 근거로 삼아 최종 결정을 내렸습니다."
+        }
+      ]
+    },
+    "ko_을_45": {
+      "title": "~(을/를) 빼다 / ~(을/를) 빼고(는) (특정 대상의 제외)",
+      "shortExplanation": "전체 범위에서 특정 대상이나 항목을 따로 떼어내어 제외함을 나타내는 표현입니다 ('~을 제외하고').",
+      "longExplanation": "'빼다'는 전체에서 일부를 덜어내거나 없앤다는 뜻의 동사입니다. 주로 연결어미와 결합한 '~(을/를) 빼고' 또는 보조사 '는'이 붙은 '~(을/를) 빼고는'의 형태로 널리 쓰이며, 어떤 사실이나 규칙을 서술할 때 예외가 되는 대상을 젖혀 둠을 나타냅니다. 우리말의 '~을 제외하면'과 같은 의미입니다.",
+      "formation": "명사 + 을/를 빼다 (주로 명사 + 을/를 빼고 / 을/를 빼고는 형태로 활용; 받침 유무에 따라 을/를 구분)",
+      "examples": [
+        {
+          "translation": "우리 학교 학생들은 몇몇 학생들을 제외하고는 모두가 하나같이 친절합니다."
+        },
+        {
+          "translation": "이 식당의 음식은 몇 가지를 젖혀 두고 나면 전체적으로 다 맛이 좋습니다."
+        },
+        {
+          "translation": "소수의 몇 사람만 제외하면 여기 모인 모든 사람이 한국어로 의사소통할 수 있습니다."
+        },
+        {
+          "translation": "지금까지 읽었던 수많은 책들 가운데 몇 권을 제외하고 가장 흥미진진했습니다."
+        }
+      ]
+    },
+    "ko_을_46": {
+      "title": "~(과/와) ~ 사이(에) (공간·시간·관계의 틈)",
+      "shortExplanation": "둘 이상의 대상 사이에 놓인 공간적 거리, 시간적 간격, 또는 상호 관계를 나타내는 표현입니다 ('~와 ~의 중간에').",
+      "longExplanation": "'사이'는 한 물체에서 다른 물체까지의 거리나 공간, 한때부터 다른 때까지의 동안, 또는 사람과 사람 사이의 관계를 뜻하는 명사입니다. 통상 접속조사 '과/와'를 사용하여 '명사1 + 과/와 + 명사2 + 사이(에)'의 틀로 구성되거나 복수 명사 뒤에 직접 결합하여 쓰입니다. 위치나 시간의 부사어로 기능할 때는 주로 처소격 조사 '-에'와 함께 쓰입니다.",
+      "formation": "명사1 + 과/와 + 명사2 + 사이(에) (받침 유무에 따라 과/와 선택; 또는 집합·복수 명사 + 사이(에))",
+      "examples": [
+        {
+          "translation": "저는 아침밥과 점심밥을 먹는 중간 틈에 간단하게 간식을 챙겨 먹습니다."
+        },
+        {
+          "translation": "첫 번째 업무와 두 번째 업무 중간에 잠시 휴식 시간을 가지는 것이 무척 중요합니다."
+        },
+        {
+          "translation": "그녀의 집과 학교 중간 지점에 위치한 공원에서 시험공부를 했습니다."
+        },
+        {
+          "translation": "우리는 두 회사의 중간 길목에 있는 음식점에서 약속을 잡고 만났습니다."
+        }
+      ]
+    },
+    "ko_을_47": {
+      "title": "~(으)ㄹ 테니(까) (강한 추측이나 화자의 의지 표명)",
+      "shortExplanation": "말하는 사람이 앞의 일에 대해 강하게 추측하거나 자신의 확고한 의지를 밝히며, 이를 뒤 절의 이유나 전제로 삼을 때 쓰는 연결어미입니다 ('~할 것이므로').",
+      "longExplanation": "'~(으)ㄹ 테니(까)'는 추측이나 미래를 나타내는 관형사형 어미 '-(으)ㄹ', 의도나 추정을 나타내는 의존명사 '터', 이유를 나타내는 연결어미 '-(으)니까'가 줄어든 형태입니다. 크게 두 가지 의미로 쓰입니다. 첫째, 3인칭 주어나 상황에 대해 말하는 이가 정황상 강하게 확신·추측하여 뒤따르는 제안이나 주의의 근거로 삼을 때('~일 테니') 쓰입니다. 둘째, 1인칭 주어로서 화자가 어떤 행동을 맡아 하겠다는 의지를 보이며 상대방에게 다른 행동을 요구할 때 쓰입니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ 테니 (받침이 있으면 -을 테니, 받침이 없거나 'ㄹ' 받침이면 -ㄹ 테니; 과거형은 -았/었을 테니)",
+      "examples": [
+        {
+          "translation": "내일은 날씨 예보상 비가 내릴 것이 분명하니 외출할 때 우산을 챙겨 가는 편이 좋겠습니다."
+        },
+        {
+          "translation": "진희는 어린 시절에 수영 강습을 분명 배웠을 것이므로 당연히 수영을 능숙하게 잘할 것입니다."
+        },
+        {
+          "translation": "그 사람은 아침 일찍 일어나 식사를 마친 듯합니다. 밥그릇에 밥알이 조금 남아 있을 테니 아침밥을 분명 챙겨 먹고 출발한 것입니다."
+        },
+        {
+          "translation": "영희가 몹시 피곤하다고 말했으니, 지금쯤은 집에서 곤히 자고 있을 것이 분명하므로 전화를 걸지 마세요."
+        }
+      ]
+    },
+    "ko_을_48": {
+      "title": "~(을/를) 통해(서) (수단·매개 및 경로)",
+      "shortExplanation": "어떤 매개물, 수단, 방법 또는 일정한 과정을 거쳐 일이나 목적을 이룸을 나타내는 조사 표현입니다 ('~을 거쳐서').",
+      "longExplanation": "'~(을/를) 통해(서)'는 '통하다'의 활용형 '통해'에 조사 '서'가 붙거나 생략된 형태로, 목적을 달성하기 위한 구체적인 통로나 매개 수단(이메일, 책, 번역기 등)을 가리킵니다. 또한 어떤 물리적 매체뿐만 아니라 경험이나 절차 등의 추상적인 과정을 거치는 경우에도 폭넓게 쓰입니다. 뒤따르는 명사를 수식할 때는 관형사형 '~(을/를) 통한 + 명사'의 구조로 전환됩니다.",
+      "formation": "명사 + 을/를 통해(서) (받침이 있는 명사는 을 통해, 받침이 없는 명사는 를 통해)",
+      "examples": [
+        {
+          "translation": "우리는 전자우편(이메일)이라는 편리한 소통 수단을 거쳐 서로의 다양한 의견을 자유롭게 주고받았습니다."
+        },
+        {
+          "translation": "저는 독서라는 매개를 거쳐 새로운 교양과 지식을 습득하는 일을 좋아하여 도서관을 자주 찾습니다."
+        },
+        {
+          "translation": "그녀는 구글 번역 프로그램을 활용하여 한국어를 차근차근 익혀 가고 있어 언어 습득에 큰 도움을 얻고 있습니다."
+        },
+        {
+          "translation": "우리 국민들은 철저한 마스크 착용을 수단 삼아 감염병의 급속한 전파를 성공적으로 차단할 수 있었습니다."
+        }
+      ]
+    },
+    "ko_을를_49": {
+      "title": "~(을/를) 틈타(서) (시간적 틈이나 기회의 편승)",
+      "shortExplanation": "잠깐 생겨난 여유 시간이나 빈틈, 또는 어떤 상황의 기회를 놓치지 않고 포착하여 행동함을 나타내는 관용적 표현입니다 ('~의 기회를 타서').",
+      "longExplanation": "'틈'은 시간적인 여유나 겨를, 혹은 방심한 틈새를 뜻하고, '타다'는 기회를 능란하게 이용함을 의미합니다. '~(을/를) 틈타(서)'는 주로 출퇴근길, 휴식 시간, 아이가 낮잠 자는 시간 등 자투리 시간을 요긴하게 활용하는 긍정적인 상황이나, 상대의 허술한 경계나 특별한 정황을 기회 삼아 재빨리 어떤 행동을 행할 때 두루 사용됩니다.",
+      "formation": "명사 + 을/를 틈타(서) (받침이 있으면 을 틈타, 받침이 없으면 를 틈타; 또는 관형사형 + 때/사이를 틈타)",
+      "examples": [
+        {
+          "translation": "저는 회사로 출근하는 이동 시간의 틈을 활용하여 책을 자주 읽으며, 덕분에 지루한 시간을 알차게 쓰고 있습니다."
+        },
+        {
+          "translation": "그녀는 일과 중 잠깐 주어지는 휴식 시간을 틈타 틈틈이 자습을 한 덕택에 시험 대비를 더욱 철저히 마쳤습니다."
+        },
+        {
+          "translation": "아기가 곤히 잠든 틈새를 부지런히 타서 밀린 집안일을 해치우니 많은 일거리를 거뜬히 해결할 수 있습니다."
+        },
+        {
+          "translation": "비가 촉촉이 내리는 운치 있는 날의 분위기를 틈타 아늑한 카페에서 책을 읽으며 온전한 평온함을 누렸습니다."
+        }
+      ]
+    },
+    "ko_이기는_50": {
+      "title": "~기는 한데 / ~이기는 한데 (선행 사실의 인정과 후행의 대조·제한)",
+      "shortExplanation": "앞의 사실이나 상태를 일단 긍정하여 인정하되, 뒤에서 그에 대한 제한이나 상반된 사정을 덧붙일 때 쓰는 표현입니다 ('~하기는 하지만').",
+      "longExplanation": "'~기는 한데'는 명사형 전성어미 '-기', 대조의 보조사 '-는', 보조형용사 '하다', 그리고 연결어미 '-(으)ㄴ데'가 어우러진 양보 및 대조의 표현입니다. 구어에서는 흔히 '~긴 한데'로 줄여 씁니다. 말하는 이가 앞 절의 내용(동작이나 상태)을 일단 사실로서 흔쾌히 시인하면서도, 뒤이어 그것만으로는 채워지지 않는 아쉬움, 반대되는 정황, 한계점을 제시할 때 유연하고 부드러운 화법으로 널리 사용됩니다.",
+      "formation": "동사 어간 / 형용사 어간 + -기는 한데 (줄임말: -긴 한데; 명사 뒤에는 -(이)기는 한데; 과거형은 -기는 했는데)",
+      "examples": [
+        {
+          "translation": "그 영화를 흥미진진하게 관람하기는 했지만, 폭력적인 장면이 지나치게 자주 나와서 마음이 다소 불편했습니다."
+        },
+        {
+          "translation": "현재 한국어를 열심히 공부하고 있기는 한데, 솔직히 중국어를 훨씬 더 유창하게 잘하고 싶은 욕심이 큽니다."
+        },
+        {
+          "translation": "이번 시합에서 우리 팀이 최종 승리하긴 하였으나, 경기력 자체는 상대 팀이 한 수 위였습니다."
+        },
+        {
+          "translation": "내일 열릴 체육대회를 앞두고 충분히 연습을 거듭해야 마땅하기는 한데, 여유 시간이 통 없어서 어찌 대처할지 난감합니다."
+        }
+      ]
+    },
+    "ko_이나_51": {
+      "title": "~(이)나 (차선책 선택·나열 및 분량의 과다 강조)",
+      "shortExplanation": "마음에 꼭 차지는 않으나 차선책으로 택함을 나타내거나('~라도'), 둘 중 하나를 선택함을 나타내며, 수량 뒤에서는 생각보다 많음을 강조하는 보조사입니다 ('무려 ~씩이나').",
+      "longExplanation": "'~(이)나'는 다양한 화용적 기능을 지닌 보조사입니다. 주요 기능으로는 (1) 최선은 아니더라도 아쉬운 대로 차선책을 골라잡음을 나타낼 때('차나 한잔하자'), (2) 여러 대상 중 어느 하나를 선택함을 가리킬 때('사과나 배'), (3) 수량이나 횟수를 나타내는 말 뒤에 붙어 말하는 사람의 기대치보다 훨씬 분량이 크거나 많음을 놀라움과 함께 나타낼 때('무려 열 시간이나') 등이 있습니다.",
+      "formation": "명사 + (이)나 (받침이 있는 명사 뒤에는 이나, 받침이 없는 명사 뒤에는 나)",
+      "examples": [
+        {
+          "translation": "목이 너무나 마르니 커피나 차나 시원한 마실 거리라면 뭐든지 마시겠습니다."
+        },
+        {
+          "translation": "이번 주말에는 화창한 날씨도 만끽할 겸 가볍게 소풍이나 한번 다녀올까요?"
+        },
+        {
+          "translation": "그녀는 점심 식사로 라면이나 유부초밥처럼 손쉽게 먹을 수 있는 간편식으로 해결했습니다."
+        },
+        {
+          "translation": "시내버스가 끊기는 바람에 무려 10킬로미터나 되는 먼 거리를 걸어서 집으로 돌아왔습니다."
+        }
+      ]
+    },
+    "ko_이래_52": {
+      "title": "~(으)ㄴ 이래(로) / ~ 이래(로) (과거 시점 이후 동작·상태의 지속)",
+      "shortExplanation": "과거의 특정한 일이나 사건이 일어난 시점부터 지금까지 줄곧 어떤 상태나 사실이 이어져 오고 있음을 나타내는 시간 표현입니다 ('~한 뒤로 지금까지').",
+      "longExplanation": "'이래'는 어떤 과거의 기준 시점 이후를 가리키는 명사입니다. 동사의 관형사형 어미 뒤에 붙는 '~(으)ㄴ 이래(로)'나 명사 뒤에 붙는 '명사 + 이래(로)' 형태로 주로 쓰입니다. 과거에 발생한 중대한 계기나 전환점을 기점으로 삼아, 그 뒤로 현재까지 어떠한 마음가짐의 변화, 습관의 지속, 또는 상황의 귀결이 줄곧 변함없이 이어지고 있음을 서술할 때 활용됩니다.",
+      "formation": "동사 어간 + -(으)ㄴ 이래(로) (받침이 있으면 -은 이래, 받침이 없으면 -ㄴ 이래; 명사 뒤에는 이래(로))",
+      "examples": [
+        {
+          "translation": "학창 시절에 그녀와 처음 인연을 맺은 이래로 그녀를 향한 변함없는 사랑을 키워 왔습니다."
+        },
+        {
+          "translation": "인도에 건너와서 난생처음으로 매콤한 요리를 맛본 이래로 매운 음식을 몹시 즐겨 먹게 되었습니다."
+        },
+        {
+          "translation": "잠에서 깨어나 충격적인 사연을 전해 들은 이래로 마음에 큰 충격을 받아 입을 굳게 다물게 되었습니다."
+        },
+        {
+          "translation": "건물이 화마에 휩싸여 전소된 이래로 그 터는 오랫동안 인적 끊긴 빈집으로 방치되고 말았습니다."
+        }
+      ]
+    },
+    "ko_이러하다_53": {
+      "title": "이러하다 (상태·성질의 지시)",
+      "shortExplanation": "말하는 이의 눈앞에 있거나 방금 언급된 상태, 성질, 형편 등이 '이와 같다'는 뜻을 나타내는 지시형용사입니다 ('이렇다').",
+      "longExplanation": "'이러하다'는 사물의 상태, 모양, 성질 등이 지금 말하는 바와 같음을 나타내는 지시형용사로, 준말은 '이렇다'입니다. 서술어로 쓰일 때는 '이러하다/이러합니다', 명사를 꾸밀 때는 관형사형 '이러한 + 명사', 부사어로 기능할 때는 '이러하게', 이유나 근거의 연결형으로 쓰일 때는 '이러하니/이러하므로' 등으로 활용되어 정황이나 사태의 성격을 명확하게 제시할 때 쓰입니다.",
+      "formation": "형용사 기본형: 이러하다 (준말: 이렇다; 관형형: 이러한 + 명사; 부사형: 이러하게; 연결형: 이러하니, 이러하므로)",
+      "examples": [
+        {
+          "translation": "눈앞에 처한 상황이 이토록 엄중하다 보니 모두가 어찌 대처해야 할지 갈피를 잡지 못했습니다."
+        },
+        {
+          "translation": "예상했던 수준보다 사태의 본질이 이러하니 참으로 난감하고 당황스럽기 그지없습니다."
+        },
+        {
+          "translation": "주변 사람들이 나를 이처럼 냉대하고 박하게 취급한다는 사실이 무척 서럽고 슬픕니다."
+        },
+        {
+          "translation": "그가 저지른 이러한 무책임한 처신으로 말미암아 무고한 많은 이들이 크나큰 상처를 받았습니다."
+        }
+      ]
+    },
+    "ko_이리_54": {
+      "title": "이리 (방향 및 방식의 지시부사)",
+      "shortExplanation": "말하는 이가 있는 쪽으로의 방향('이리로')이나, 행동을 행하는 방식이나 상태('이렇게')를 가리키는 지시부사입니다.",
+      "longExplanation": "'이리'는 공간적인 방향을 가리키는 '이리로'의 준말이거나, 행동의 방법이나 태도를 나타내는 '이렇게'의 뜻을 지닌 부사입니다. 이동 동사와 어울려 화자가 위치한 쪽으로의 이동을 요청할 때('이리 오너라') 쓰이기도 하며, 뒤따르는 용언을 꾸며 어떤 행동을 취하는 구체적인 요령, 방식, 각도를 본보기로 보여줄 때('이리 해라') 두루 쓰입니다.",
+      "formation": "부사: 이리 + 동사 (예: 이리 오다, 이리 하다, 이리 쓰다)",
+      "examples": [
+        {
+          "translation": "그따위 방식으로 부르지 말고, 마땅히 이쪽 방식대로 정답게 불러 보세요."
+        },
+        {
+          "translation": "그 학생은 주어진 과제물을 이처럼 깔끔한 방식으로 성실하게 해 왔습니다."
+        },
+        {
+          "translation": "이쪽 각도와 구도를 보시고 사진을 멋지게 한 장 찍어 주십시오."
+        },
+        {
+          "translation": "제 생각에는 제가 직접 이와 같은 방식으로 일을 처리할 것 같습니다."
+        }
+      ]
+    },
+    "ko_이미_55": {
+      "title": "이미 (동작·상태의 기완료를 나타내는 부사)",
+      "shortExplanation": "어떤 행동이나 상태의 변화가 말하는 시점보다 앞서 완료되어 되돌릴 수 없는 기정사실이 되었음을 나타내는 시간부사입니다 ('벌써', '이전에 다 마침').",
+      "longExplanation": "'이미'는 어떤 일이 과거에 다 이루어졌거나 이미 끝난 상태임을 객관적으로 나타내는 부사입니다. 주로 과거형 서술어와 함께 쓰이며, '이미 지나간 일'처럼 상황이 완전히 종결되어 더는 번복할 수 없음을 강조할 때 쓰입니다. 주관적인 놀라움이나 때 이른 느낌을 담는 '벌써'에 비해 객관적인 기정사실의 완료를 담담하게 진술하는 점이 특징입니다.",
+      "formation": "부사: 이미 + 용언 (주로 과거 시제와 호응: 이미 + 동사 어간 + -았/었다)",
+      "examples": [
+        {
+          "translation": "저는 이미 한국어 학습의 첫걸음을 떼었으며, 비록 남들보다 다소 늦었을지라도 성실히 정진하기로 다짐했습니다."
+        },
+        {
+          "translation": "저희 일행은 이미 바닷가 목적지에 당도하였으므로 더는 지체하거나 기다릴 까닭이 없습니다."
+        },
+        {
+          "translation": "아이들은 이미 저녁 식사를 배불리 마친 상태여서 지금은 든든해하고 있습니다."
+        },
+        {
+          "translation": "해당 영화는 이미 지난번에 다 관람하였으니 다른 새로운 작품을 찾아보는 편이 낫겠습니다."
+        }
+      ]
+    },
+    "ko_인_56": {
+      "title": "~(으)ㄴ/는 바 / ~인 바 (배경·근거 제시 및 사실의 명시)",
+      "shortExplanation": "공식적인 문서나 격식적인 담화에서 뒷말의 근거나 전제가 되는 앞선 사실이나 정황을 격조 높게 제시할 때 쓰는 문어체 표현입니다 ('~한 사실', '~한 까닭에').",
+      "longExplanation": "'~(으)ㄴ/는 바'는 관형사형 어미 뒤에 일이나 사정을 뜻하는 의존명사 '바'가 결합한 고유의 격식체 구문입니다. 보고서, 공문서, 연설문 등에서 선행하는 구체적 정황이나 확정된 사실을 먼저 밝히고, 이에 근거하여 후속 조치나 판단을 내릴 때 널리 쓰입니다. 또한 '-(으)ㄴ 바 있다/없다'의 형태로 결합할 때는 과거에 어떠한 사실이나 경험이 실제로 존재했음을 객관적으로 나타냅니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄴ/는 바 (과거·완료형은 -(으)ㄴ 바, 현재형은 -는 바; 서술격 조사 뒤에는 -인 바)",
+      "examples": [
+        {
+          "translation": "모임이 공식적으로 취소된 바 있으므로, 오늘은 외출을 삼가고 자택에서 휴식을 취하고자 합니다."
+        },
+        {
+          "translation": "그녀가 현장에 당도한 사실이 확인된 바 없으니, 아마도 약속 장소에서 우리 일행을 기다리고 있는 모양입니다."
+        },
+        {
+          "translation": "해당 바이러스에 감염된 전력이 있는 분들은 반드시 지침에 따라 자가격리를 이행하셔야 합니다."
+        },
+        {
+          "translation": "화장실 정비 및 사용이 완료된 바 있으니, 이제는 다른 대기자가 순서대로 이용하실 수 있습니다."
+        }
+      ]
+    },
+    "ko_인_57": {
+      "title": "~(으)ㄴ/는 이상 / ~인 이상 (기정사실을 전제로 한 당연성·의무)",
+      "shortExplanation": "앞선 사태나 조건이 이미 기정사실로 굳어졌음을 전제로 삼아, 마땅히 뒤따라야 할 결단, 의무, 혹은 당연한 귀결을 나타내는 연결 표현입니다 ('이미 ~한 바에는').",
+      "longExplanation": "'~(으)ㄴ/는 이상'은 관형사형 어미와 기준점이나 한계를 뜻하는 명사 '이상'이 결합한 표현입니다. 이미 돌이킬 수 없게 성립된 사실이나 처지를 단호한 전제로 내세운 뒤, 그러한 조건 아래에서는 후행하는 행동(책임 완수, 포기 불가의 각오, 축하 등)을 취하는 것이 마땅하고 필연적임을 강조할 때 사용됩니다. 서술격 조사 뒤에는 '~인 이상'의 형태로 결합합니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄴ/는 이상 (동사 과거·완료형은 -(으)ㄴ 이상, 현재형은 -는 이상; 명사 뒤에는 -인 이상)",
+      "examples": [
+        {
+          "translation": "우리 일행이 이미 돌이킬 수 없이 여기까지 온 이상, 중도에 결코 포기해서는 안 됩니다."
+        },
+        {
+          "translation": "책임자로부터 정식 승인과 허락을 받은 이상, 소신껏 자유롭게 추진할 수 있습니다."
+        },
+        {
+          "translation": "상대방과 굳은 약속을 맺은 이상, 어떠한 난관이 있어도 반드시 지켜내야 합니다."
+        },
+        {
+          "translation": "어려운 시험에 당당히 합격한 이상, 우리가 다 함께 기쁜 마음으로 마땅히 축하해 주어야지요."
+        }
+      ]
+    },
+    "ko_인즉슨_58": {
+      "title": "~인즉슨 (내막·사유의 상세한 규명 및 요약)",
+      "shortExplanation": "앞서 제시된 사실의 자세한 내막, 실질적인 이유, 또는 숨은 사연을 차근차근 밝혀 설명할 때 쓰는 관용 표현입니다 ('사정을 따져보자면', '즉 다시 말해').",
+      "longExplanation": "'~인즉슨'은 서술격 조사 '이다'에 선행 사실을 근거로 제시하는 연결어미 '-ㄴ즉'과 보조사 '은/는'이 합쳐진 고풍스러우면서도 해설적인 표현입니다. 주로 '사연인즉슨', '이유인즉슨', '사정인즉슨', '말인즉슨' 등의 굳어진 관용구로 쓰이거나, 문장 첫머리에 '인즉슨' 단독으로 놓여 앞서 언급한 결과에 대한 구체적인 배경과 경위를 풀어서 청자에게 조리 있게 납득시킬 때 유용하게 쓰입니다.",
+      "formation": "명사 + 인즉슨 (관용 구문: 사연인즉슨, 이유인즉슨, 말인즉슨; 문두 부사적 용법: 인즉슨, ~)",
+      "examples": [
+        {
+          "translation": "우리 조직에는 원활한 소통 기능이 절실합니다. 즉 다시 말해서, 구성원 서로의 진솔한 생각을 정확히 알아야 한다는 뜻입니다."
+        },
+        {
+          "translation": "선친께서는 일찍이 세상을 떠나셨습니다. 그 사연인즉슨, 제가 아주 어린 시절부터 부친의 보살핌을 잃고 자랐음을 의미합니다."
+        },
+        {
+          "translation": "그가 이 실무 전체를 총괄 담당합니다. 요컨대 이 사업에서 발생하는 모든 법적·도의적 책임이 그에게 귀속된다는 것입니다."
+        },
+        {
+          "translation": "우리는 다음 주에 중요한 정기 시험을 치릅니다. 다시 말해, 이번 주말 동안 빈둥거리지 않고 도서관에서 학업에 매진해야 한다는 뜻입니다."
+        }
+      ]
+    }
+  }
+}

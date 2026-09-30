@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_하고는_74": {
+      "title": "~하고는 / ~고는 (Làm gì xong rồi thì..., sau đó thì... - Thứ tự hành động tiếp nối)",
+      "shortExplanation": "Vĩ tố liên kết dùng để nối hai hành động theo trình tự thời gian, biểu thị sau khi hoàn tất hành động phía trước thì tiếp tục thực hiện hành động phía sau ('rồi thì', 'sau khi... thì').",
+      "longExplanation": "'~고는' (kết hợp với động từ có đuôi '하다' là '~하고는') là vĩ tố liên kết được hình thành từ vĩ tố nối tiếp '-고' kết hợp cùng tiểu từ bổ trợ nhấn mạnh '-는'. Cấu trúc này dùng để diễn đạt trình tự hành vi rõ ràng: chủ ngữ sau khi hoàn tất một hành động ở vế trước thì liền chuyển sang thực hiện hành động kế tiếp ở vế sau. Ngoài việc diễn tả thói quen sinh hoạt theo trình tự thời gian ('làm A rồi làm B'), cấu trúc này còn thường được dùng khi một sự việc bất ngờ hoặc một trạng thái tâm lý mới xuất hiện ngay sau khi kết thúc hành động trước đó.",
+      "formation": "Thân động từ + -고는 (Thân động từ kết thúc bằng 하다 + -고는 thành 하고는)",
+      "examples": [
+        {
+          "translation": "Mỗi buổi sáng tôi thức dậy, tập thể dục xong rồi thì đi tắm."
+        },
+        {
+          "translation": "Cô ấy đọc sách xong rồi thì luyện viết."
+        },
+        {
+          "translation": "Anh ấy đến trường, nghe giảng xong rồi thì tự học."
+        },
+        {
+          "translation": "Chúng tôi đi máy bay, sau khi đến Seoul thì đã nghỉ ngơi."
+        }
+      ]
+    },
+    "ko_하구나_75": {
+      "title": "~하구나 / ~구나 / ~는구나 (Hóa ra là..., thì ra là... - Cảm thán ngộ ra sự việc)",
+      "shortExplanation": "Vĩ tố kết thúc câu cảm thán dùng khi người nói đột nhiên nhận ra, thấu hiểu hoặc vỡ lẽ một sự thật mà trước đó chưa biết ('thì ra là...', 'hóa ra là...').",
+      "longExplanation": "'-구나' (với tính từ/động từ thì hiện tại hay quá khứ, ví dụ như tính từ kết hợp '-구나', động từ kết hợp '-는구나', hoặc cấu trúc '-는 거였구나' / '-았/었던 거였구나') là vĩ tố kết thúc câu cảm thán thuộc phong cách thân mật hoặc độc thoại. Người nói sử dụng cấu trúc này để bộc lộ cảm xúc ngạc nhiên, thán phục hoặc giác ngộ tại thời điểm vừa mới phát hiện ra một sự thật khách quan, một nguyên nhân hay một bản chất mà trước đó bản thân chưa từng hay biết.",
+      "formation": "Tính từ + -구나; Động từ + -는구나 (với động từ đuôi 하다 là -하는구나); Động từ/Tính từ quá khứ + -았/었구나; Danh từ + -(이)구나; Dạng vỡ lẽ nguyên nhân: Động từ + -(으)ㄴ/는 거였구나, Danh từ + -(이)었던 거였구나",
+      "examples": [
+        {
+          "translation": "Thì ra là vì bận quá nên không liên lạc được, thế cũng hợp lý thôi."
+        },
+        {
+          "translation": "Hóa ra lý do hôm nay mình thấy vui vẻ chính là vì điều đó, là do thời tiết đẹp."
+        },
+        {
+          "translation": "Ồ, hóa ra là làm như thế này! Mình hiểu hết rồi."
+        },
+        {
+          "translation": "Thì ra người đó thực sự thích cậu à, mình không hề biết đấy."
+        }
+      ]
+    },
+    "ko_하다가_76": {
+      "title": "~하다가 / ~다가 (Đang làm gì thì... - Hành động đang diễn ra bị gián đoạn hoặc chuyển tiếp)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả một hành động hay trạng thái đang diễn ra thì bị ngắt quãng, hoặc chuyển hướng sang một hành động, sự việc khác ('đang... thì...').",
+      "longExplanation": "'~다가' (với các động từ đuôi '하다' là '~하다가') là vĩ tố liên kết chỉ sự gián đoạn hoặc chuyển hướng hành động. Cấu trúc diễn tả việc chủ ngữ đang trong quá trình thực hiện một hành động nào đó thì dừng lại giữa chừng do một sự việc bất ngờ xảy ra chen ngang, hoặc chủ ngữ tự ý chuyển đổi sang một hành động hoàn toàn mới. Thường được dịch sang tiếng Việt là 'đang... thì...'. Chủ ngữ của hai vế trong câu thường phải đồng nhất.",
+      "formation": "Thân động từ/tính từ + -다가 (Thân động từ kết thúc bằng 하다 + -다가 thành 하다가)",
+      "examples": [
+        {
+          "translation": "Tôi đang đọc sách thì buồn ngủ quá nên đã ngủ thiếp đi."
+        },
+        {
+          "translation": "Cậu ấy đang chơi game thì bị mẹ bảo tạm dừng lại một lát."
+        },
+        {
+          "translation": "Tôi đang nói chuyện với bạn thì chuông đột nhiên reo lên nên chúng tôi phải ngừng cuộc trò chuyện."
+        },
+        {
+          "translation": "Tôi đang học bài thì thấy một bài báo thú vị nên đã bắt đầu đọc nó."
+        }
+      ]
+    },
+    "ko_하다못해_77": {
+      "title": "~하다못해 / ~다 못해 (Quá mức đến nỗi không chịu nổi..., đến cực điểm là... - Mức độ vượt quá giới hạn)",
+      "shortExplanation": "Cấu trúc liên kết dùng để nhấn mạnh một trạng thái hay hành động đã chạm đến cực điểm, vượt quá mức chịu đựng thông thường dẫn đến kết quả tiêu cực hoặc ngỡ ngàng ('quá mức đến nỗi...', '...không nổi nữa nên...').",
+      "longExplanation": "'~다 못해' (với các từ có đuôi '하다' là '~하다못해') là cấu trúc kết hợp giữa vĩ tố liên kết '-다' và thể phủ định '못하다' (ở dạng liên kết '못해'). Cấu trúc này biểu thị một trạng thái tâm lý, cảm giác hoặc tính chất sự vật đã phát triển tới mức tột cùng, không còn có thể duy trì hay kiềm chế thêm được nữa, buộc phải chuyển sang một trạng thái khác hoặc dẫn đến một kết cục bất đắc dĩ, tiêu cực. Thường tương đương với 'quá... đến mức...', 'chịu không nổi nữa nên...' trong tiếng Việt.",
+      "formation": "Thân động từ/tính từ + -다 못해 (với tính từ/động từ kết thúc bằng 하다 là -하다 못해 hoặc viết liền 하다못해)",
+      "examples": [
+        {
+          "translation": "Bài phát biểu của ông ấy nhàm chán đến mức mọi người ngủ gục hết cả."
+        },
+        {
+          "translation": "Ngôi làng nhỏ này vắng vẻ đến nỗi đi dạo mà chẳng thấy bóng người, cảm giác thật cô quạnh."
+        },
+        {
+          "translation": "Hôm nay tôi mệt mỏi đến rã rời, về đến nhà là lăn ra ngủ ngay lập tức."
+        },
+        {
+          "translation": "Món ăn cô ấy nấu dở đến mức mọi người chẳng thể ăn hết mà phải bỏ dở."
+        }
+      ]
+    },
+    "ko_하던_78": {
+      "title": "~하던 중에 / ~던 중에 (Trong lúc đang dở..., giữa chừng khi đang... - Sự việc xen ngang hành động hồi tưởng)",
+      "shortExplanation": "Cấu trúc dùng để diễn tả một sự việc mới bất ngờ xảy ra ngay trong lúc một hành động khác đang diễn ra dở dang trong quá khứ ('trong lúc đang...', 'giữa chừng khi đang...').",
+      "longExplanation": "'~던 중에' (kết hợp với các động từ đuôi '하다' là '~하던 중에') cấu tạo từ vĩ tố định ngữ hồi tưởng '-던' biểu thị hành động đang dở dang hoặc từng diễn ra liên tục trong quá khứ, kết hợp với danh từ phụ thuộc '중' (ở giữa) và trợ từ chỉ thời điểm '에'. Cấu trúc này diễn tả tình huống khi chủ ngữ đang trong quá trình thực hiện một việc gì đó thì một sự việc khác bất ngờ xảy đến hoặc chen ngang. Tương đương với 'trong lúc đang...', 'giữa chừng khi đang...' trong tiếng Việt.",
+      "formation": "Thân động từ + -던 중에 (Thân động từ kết thúc bằng 하다 + -던 중에 thành 하던 중에)",
+      "examples": [
+        {
+          "translation": "Trong lúc tôi đang đọc sách dở thì bạn gọi điện rồi ghé qua chơi."
+        },
+        {
+          "translation": "Đang nghe nhạc thì tôi bắt gặp một bài hát rất hợp tâm trạng nên cảm thấy thật hạnh phúc."
+        },
+        {
+          "translation": "Trong lúc tôi đang xem phim truyền hình thì chị gái đột nhiên về nhà khiến tôi giật cả mình."
+        },
+        {
+          "translation": "Giữa lúc tôi đang tập thể dục thì trời bất chợt đổ mưa nên đành phải dừng lại và đi về nhà."
+        }
+      ]
+    },
+    "ko_하기는_79": {
+      "title": "~하기는 / ~기는 하다/했지만 (Công nhận là... thật đấy nhưng mà... - Thừa nhận và nhượng bộ tương phản)",
+      "shortExplanation": "Cấu trúc dùng để thừa nhận một sự thật hay tính chất ở vế trước nhưng vế sau lại đưa ra một nhận định, kết quả trái ngược hoặc hạn chế ('thì có... thật nhưng...', 'công nhận là... nhưng...').",
+      "longExplanation": "'~기는 하다' (dạng liên kết là '~기는 하지만', với động từ đuôi '하다' là '~하기는 하지만') là cấu trúc nhượng bộ được tạo thành từ vĩ tố danh từ hóa '-기', tiểu từ đối chiếu/nhấn mạnh '-는' và trợ động từ/tính từ '하다'. Người nói dùng cấu trúc này để công nhận một phần tính xác thực của sự việc hay ưu điểm được nhắc đến ở vế trước, nhưng ngay sau đó ở vế sau lại đưa ra một mặt hạn chế, khiếm khuyết hoặc ý kiến tương phản. Thường được dịch sang tiếng Việt là '...thì có... thật nhưng...', 'công nhận là... đấy nhưng...'.",
+      "formation": "Thân động từ/tính từ + -기는 하다 / -기는 하지만 (thân từ kết thúc bằng 하다 + -기는 하다/하지만 thành 하기는 하다/하지만)",
+      "examples": [
+        {
+          "translation": "Bộ phim đó hay thì có hay thật đấy nhưng vì tôi kỳ vọng quá nhiều nên hơi thất vọng một chút."
+        },
+        {
+          "translation": "Bánh kem ngon thì ngon thật nhưng ngọt quá nên tôi không thể ăn hết được."
+        },
+        {
+          "translation": "Anh ấy tính tình tốt thì tốt thật nhưng có xu hướng hơi chậm chạp."
+        },
+        {
+          "translation": "Món quà này có giá trị thì có giá trị thật nhưng lại không hợp với trang phục của tôi."
+        }
+      ]
+    },
+    "ko_하기로_80": {
+      "title": "~하기로 / ~기로 하다/결정하다 (Quyết định làm gì, thống nhất làm gì - Biểu thị quyết định và cam kết)",
+      "shortExplanation": "Cấu trúc dùng để biểu thị việc người nói hoặc một nhóm người đã đưa ra quyết định, thống nhất hoặc hứa hẹn sẽ thực hiện một hành động nào đó ('quyết định làm...', 'hẹn làm...').",
+      "longExplanation": "'~기로 하다' (thường kết hợp với các động từ đuôi '하다' thành '~하기로 하다', hoặc mở rộng thành '~기로 결정하다', '~기로 약속하다') được hình thành từ vĩ tố danh từ hóa '-기', trợ từ phương hướng/kết quả '-로' và động từ '하다'. Cấu trúc này dùng để diễn đạt một kế hoạch hành động đã được quyết định cụ thể, có thể là quyết tâm của một cá nhân hoặc thỏa thuận chung giữa hai người trở lên. Khi dùng ở thì quá khứ '-기로 했다', nó diễn tả sự việc đã được thống nhất hoặc chốt phương án trước đó.",
+      "formation": "Thân động từ + -기로 하다 / -기로 결정하다 (Thân động từ kết thúc bằng 하다 + -기로 하다 thành 하기로 하다)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã quyết định gặp nhau vào chiều mai. Giờ giấc của mọi người đều khớp nên đã sắp xếp được lịch trình bận rộn."
+        },
+        {
+          "translation": "Tôi đã quyết định sang năm sẽ chuyển đến Hàn Quốc sống, vì vậy hiện tại tôi đang dốc sức học tiếng Hàn."
+        },
+        {
+          "translation": "Cô ấy đã quyết định tuần sau sẽ kết hôn nên hiện đang tìm kiếm váy cưới."
+        },
+        {
+          "translation": "Tôi đã thống nhất cùng bạn bè đi biển vào mùa hè, thế nên từ bây giờ tôi định sẽ đi mua đồ bơi."
+        }
+      ]
+    },
+    "ko_하기에_81": {
+      "title": "~하기에 / ~기에 (Vì..., do... / Xét thấy... nên - Nêu lý do và căn cứ phán đoán)",
+      "shortExplanation": "Vĩ tố liên kết dùng để nêu nguyên nhân, lý do hoặc căn cứ thực tế dẫn đến kết quả hay phán đoán ở vế sau ('vì...', 'do...', 'xét thấy...').",
+      "longExplanation": "'~기에' (với các động từ/tính từ có đuôi '하다' là '~하기에') là vĩ tố liên kết được hình thành từ vĩ tố danh từ hóa '-기' kết hợp cùng trợ từ chỉ nguyên nhân/căn cứ '-에'. Cấu trúc này dùng để nêu lên lý do, tiền đề khách quan hoặc cơ sở thực tế mà người nói dựa vào đó để đưa ra phán đoán, hành động hay kết luận ở mệnh đề tiếp theo. Cấu trúc này mang sắc thái trang trọng, khách quan và thường xuất hiện trong văn viết hoặc văn phong lịch sự, tao nhã hơn so với '-아서/어서' hay '-(으)니까'.",
+      "formation": "Thân động từ/tính từ + -기에 (thân từ kết thúc bằng 하다 + -기에 thành 하기에)",
+      "examples": [
+        {
+          "translation": "Hôm nay vì thời tiết rất đẹp nên là một ngày tuyệt vời để đi dạo."
+        },
+        {
+          "translation": "Do cậu ấy học giỏi nên luôn nhận được lời khen ngợi từ thầy cô."
+        },
+        {
+          "translation": "Vì tình hình giao thông của thành phố này rất phức tạp nên việc lái xe ô tô đi lại khá là khó khăn."
+        },
+        {
+          "translation": "Vì cô ấy ghét tôi nên tôi không còn liên lạc với cô ấy nữa."
+        }
+      ]
+    },
+    "ko_하려고_82": {
+      "title": "~하려고 하다 / ~(으)려고 하다 (Định làm gì, có ý định làm gì - Biểu thị ý định và kế hoạch)",
+      "shortExplanation": "Cấu trúc dùng để biểu đạt ý định, kế hoạch hoặc nỗ lực hướng tới việc thực hiện một hành động của chủ ngữ ('định...', 'có ý định...').",
+      "longExplanation": "'~(으)려고 하다' (với động từ đuôi '하다' là '~하려고 하다') là cấu trúc ngữ pháp thông dụng dùng để diễn tả ý định, dự tính hoặc ý chí của chủ ngữ chuẩn bị tiến hành một hành động nào đó. Ngoài ra, khi nói về một sự biến chuyển của hiện tượng khách quan (ví dụ: trời sắp mưa), cấu trúc còn mang nghĩa là sự việc sắp sửa xảy ra. Trong các trường hợp nỗ lực thực hiện, cấu trúc tương đương với 'định làm gì', 'cố gắng làm gì' trong tiếng Việt.",
+      "formation": "Thân động từ + -(으)려고 하다 (thân động từ có phụ âm cuối dùng -으려고 하다, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -려고 하다; động từ kết thúc bằng 하다 dùng -하려고 하다)",
+      "examples": [
+        {
+          "translation": "Tôi định mỗi ngày đọc sách khoảng hai mươi phút, vì tôi đang cố gắng biến việc đọc sách thành thói quen."
+        },
+        {
+          "translation": "Anh ấy định đọc tạp chí để tìm kiếm một công việc tốt."
+        },
+        {
+          "translation": "Chúng tôi đã cố gắng trò chuyện với nhau để giải quyết mâu thuẫn, nhưng rốt cuộc đã không thành công."
+        },
+        {
+          "translation": "Chị gái tôi đã nỗ lực mỗi ngày để dạy toán cho em."
+        }
+      ]
+    },
+    "ko_할_83": {
+      "title": "~할 때마다 / ~(으)ㄹ 때마다 (Mỗi khi, mỗi lần... - Sự lặp lại có tính quy luật)",
+      "shortExplanation": "Cấu trúc dùng để biểu thị mỗi khi một thời điểm, điều kiện hay hành động nào đó diễn ra thì một hành động hoặc trạng thái khác lại lặp lại một cách đều đặn ('mỗi khi', 'mỗi lần...').",
+      "longExplanation": "'~(으)ㄹ 때마다' (với động từ đuôi '하다' là '~할 때마다') được kết hợp từ vĩ tố định ngữ tương lai/suy đoán '-(으)ㄹ', danh từ phụ thuộc '때' (khi, lúc) và trợ từ bổ trợ '마다' (mỗi, mọi). Cấu trúc này dùng để nhấn mạnh tính lặp lại có quy luật: bất cứ lúc nào điều kiện ở vế trước phát sinh thì sự việc ở vế sau cũng diễn ra đồng thời hoặc kéo theo. Thường đi kèm với các phó từ như '항상' (luôn luôn), '매번' (mỗi lần) hoặc cấu trúc thói quen '-곤 하다'.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 때마다 (thân từ có phụ âm cuối dùng -을 때마다, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -ㄹ 때마다; động từ kết thúc bằng 하다 thành 할 때마다); Danh từ + 때마다",
+      "examples": [
+        {
+          "translation": "Cứ mỗi độ thu về, tôi lại nhớ về quê hương và thường hay cất tiếng hát."
+        },
+        {
+          "translation": "Mỗi khi nhớ đến cô ấy, anh ấy lại thường ghi chép những bài hát về cô vào cuốn sổ tay."
+        },
+        {
+          "translation": "Mỗi lần kỳ thi đến, mẹ luôn nấu cho tôi những món ăn thật ngon và bổ dưỡng."
+        },
+        {
+          "translation": "Mỗi lần nhìn thấy cô ấy, tim tôi lại đập thình thịch."
+        }
+      ]
+    },
+    "ko_하면_84": {
+      "title": "~하면 할수록 / ~(으)면 ~(으)ㄹ수록 (Càng... thì càng... - Tương quan tỷ lệ thuận tăng tiến)",
+      "shortExplanation": "Cấu trúc lặp dùng để diễn tả mức độ của hành động hoặc trạng thái ở vế trước càng gia tăng thì kết quả ở vế sau cũng thay đổi tương ứng theo tỷ lệ thuận ('càng... thì càng...').",
+      "longExplanation": "'~(으)면 ~(으)ㄹ수록' (với các động từ/tính từ có đuôi '하다' là '~하면 할수록') là cấu trúc nhấn mạnh kết hợp giữa vĩ tố giả định điều kiện '-(으)면' và vĩ tố liên kết tăng tiến '-(으)ㄹ수록'. Cấu trúc này làm nổi bật mối quan hệ tỷ lệ thuận: khi một hành vi, sự rèn luyện hay điều kiện nào đó càng được đẩy mạnh hoặc tích lũy theo thời gian thì mức độ, chất lượng hay biến đổi ở vế sau lại càng trở nên rõ rệt hơn. Thường được dịch là 'càng... thì càng...' trong tiếng Việt.",
+      "formation": "Thân động từ/tính từ + -(으)면 + Thân từ + -(으)ㄹ수록 (thân từ có phụ âm cuối dùng -으면 -을수록, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -면 -ㄹ수록; từ kết thúc bằng 하다 dùng -하면 할수록)",
+      "examples": [
+        {
+          "translation": "Trời càng ấm lên bao nhiêu thì hoa lại càng nở rộ bấy nhiêu."
+        },
+        {
+          "translation": "Càng học chăm chỉ bao nhiêu thì xác suất thi đỗ lại càng cao bấy nhiêu."
+        },
+        {
+          "translation": "Càng chăm chỉ tập thể dục thì tôi lại càng cảm thấy cơ thể khỏe khoắn hơn."
+        },
+        {
+          "translation": "Càng luyện tập nấu nướng nhiều thì tay nghề lại càng được nâng cao."
+        }
+      ]
+    },
+    "ko_하면서_85": {
+      "title": "~하면서 / ~(으)면서 (Vừa... vừa... - Hai hành động diễn ra đồng thời)",
+      "shortExplanation": "Vĩ tố liên kết dùng để nối hai hành động diễn ra cùng một lúc do cùng một chủ ngữ thực hiện ('vừa... vừa...').",
+      "longExplanation": "'~(으)면서' (với động từ đuôi '하다' là '~하면서') là vĩ tố liên kết biểu thị sự đồng thời của hai hay nhiều hành động. Nó chỉ ra rằng chủ ngữ đang tiến hành hai công việc song song cùng một lúc. Ngoài ý nghĩa đồng thời, cấu trúc này đôi khi còn được dùng để chỉ sự tồn tại đồng thời của hai trạng thái, hoặc diễn tả sự mâu thuẫn giữa hai hành vi (với ý nghĩa 'thế mà lại...'). Thường tương đương với 'vừa... vừa...' trong tiếng Việt.",
+      "formation": "Thân động từ/tính từ + -(으)면서 (thân từ có phụ âm cuối dùng -으면서, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -면서; động từ kết thúc bằng 하다 dùng -하면서)",
+      "examples": [
+        {
+          "translation": "Tôi vừa đeo kính vừa đọc sách nên đã có thể đọc rất thoải mái."
+        },
+        {
+          "translation": "Tôi vừa nghe nhạc vừa làm bài tập về nhà nên không cảm thấy nhàm chán."
+        },
+        {
+          "translation": "Tôi vừa uống cà phê vừa làm việc ở quán cà phê nên đã có thể tập trung một cách rất tĩnh lặng."
+        },
+        {
+          "translation": "Vừa lái xe vừa hát rất là thích, vì thế mà việc lái xe chẳng còn buồn tẻ chút nào."
+        }
+      ]
+    },
+    "ko_하시겠습니까_86": {
+      "title": "~하시겠습니까? / ~(으)시겠습니까? (Ngài/Quý khách có muốn...? / Xin vui lòng...? - Hỏi ý và đề nghị cực kỳ trang trọng, tôn kính)",
+      "shortExplanation": "Vĩ tố kết thúc câu nghi vấn kính ngữ cao cấp dùng để dò hỏi ý định, đề nghị hoặc yêu cầu người nghe một cách vô cùng lịch sự và trang trọng ('ngài có muốn...', 'quý khách có thể vui lòng...').",
+      "longExplanation": "'~(으)시겠습니까?' (với các động từ đuôi '하다' là '~하시겠습니까?') là sự kết hợp giữa tiền vĩ tố kính ngữ chủ thể '-(으)시-', tiền vĩ tố biểu thị ý chí/hỏi ý lịch sự '-겠-' và đuôi câu nghi vấn trang trọng thể Hasipsio '-습니까?'. Mẫu câu này được dùng trong các tình huống đòi hỏi tính nghi thức cao như hội nghị, dịch vụ khách hàng, đàm phán kinh doanh hoặc khi trò chuyện với người bề trên, khách quý nhằm dò hỏi ý muốn của đối phương hoặc đưa ra một lời thỉnh cầu đầy nhã nhặn.",
+      "formation": "Thân động từ + -(으)시겠습니까? (thân từ có phụ âm cuối dùng -으시겠습니까?, không có phụ âm cuối dùng -시겠습니까?; động từ kết thúc bằng 하다 thành 하시겠습니까?)",
+      "examples": [
+        {
+          "translation": "Ngài có muốn cùng dùng bữa tối không ạ?"
+        },
+        {
+          "translation": "Xin quý khách vui lòng kiểm tra lại tài liệu này giúp tôi được không ạ?"
+        },
+        {
+          "translation": "Quý vị sẽ tham dự hội nghị lần này chứ ạ?"
+        },
+        {
+          "translation": "Xin vui lòng xem xét bản đề xuất này giúp tôi có được không ạ?"
+        }
+      ]
+    },
+    "ko_하자_87": {
+      "title": "~하자 / ~자마자 (1. Hãy cùng làm... [Rủ rê thân mật] / 2. Vừa mới... là... ngay [Hành động nối tiếp tức thì])",
+      "shortExplanation": "Có hai cách dùng chính: 1. Vĩ tố kết thúc câu thỉnh dụ thân mật ('chúng mình cùng... đi'); 2. Vĩ tố liên kết chỉ hành động xảy ra ngay tức thì sau hành động trước ('ngay khi vừa... thì...').",
+      "longExplanation": "'~하자' (kết hợp với động từ nói chung là '-자' hoặc '-자마자') là một hình thái ngữ pháp đa dụng trong tiếng Hàn: 1) Ở cuối câu, '-자' là vĩ tố kết thúc câu thỉnh dụ dạng thân mật, dùng giữa bạn bè hoặc người dưới để rủ rê cùng làm gì đó ('chúng mình cùng làm... nhé/đi'); 2) Ở giữa câu kết nối hai mệnh đề, dạng '-자' hoặc đầy đủ là '-자마자' đóng vai trò là vĩ tố liên kết chỉ thời gian tức thì, biểu thị ngay sau khi hành động ở vế trước vừa dứt điểm thì hành động hoặc biến cố ở vế sau lập tức xảy ra ngay ('vừa mới... đã...', 'ngay sau khi...').",
+      "formation": "1. Thỉnh dụ: Thân động từ + -자 (với động từ đuôi 하다 là -하자); 2. Nối tiếp tức thì: Thân động từ + -자마자 (hoặc -자)",
+      "examples": [
+        {
+          "translation": "Thời tiết đẹp thật đấy, chúng mình cùng ra ngoài đi dạo đi."
+        },
+        {
+          "translation": "Ngay khi ăn tối xong là tôi phải gọi điện cho bạn ngay."
+        },
+        {
+          "translation": "Tôi muốn đi du lịch ngay sau khi kỳ thi vừa kết thúc."
+        },
+        {
+          "translation": "Chúng mình cùng xem bộ phim này đi, cậu sẽ không hối hận đâu."
+        }
+      ]
+    },
+    "ko_하여_88": {
+      "title": "~하여 / ~해서 (Vì... nên..., do... nên... / Làm gì rồi... - Thể văn viết trang trọng của -아서/어서)",
+      "shortExplanation": "Vĩ tố liên kết dùng để chỉ nguyên nhân, lý do hoặc thứ tự hành động, là hình thái văn viết trang trọng của gốc từ '하다' kết hợp với '-여(서)' ('do...', 'vì...', 'làm gì rồi...').",
+      "longExplanation": "'~하여' (dạng khẩu ngữ thông dụng là '~해서', dạng đầy đủ là '~하여서') là hình thái liên kết của động từ '하다' khi kết hợp với vĩ tố liên kết '-아/어/여(서)'. Cấu trúc này thường được sử dụng trong văn viết, bài phát biểu trang trọng, tin tức báo chí hoặc tài liệu học thuật để trình bày nguyên nhân - kết quả ('vì... nên...'), phương thức thực hiện hoặc thứ tự hành động tiếp nối. Trong văn viết chuẩn, cấu trúc đem lại sắc thái trang trọng, khúc chiết và nghiêm túc hơn nhiều so với dạng khẩu ngữ thường ngày.",
+      "formation": "Động từ/Tính từ đuôi 하다 + -여 thành 하여 (Dạng đầy đủ: 하여서; Dạng khẩu ngữ: 해서)",
+      "examples": [
+        {
+          "translation": "Do thức dậy muộn nên tôi đã đến trường trễ."
+        },
+        {
+          "translation": "Cô ấy vì quá mệt mỏi nên không còn sức để gượng dậy nổi nữa."
+        },
+        {
+          "translation": "Vì quá bận rộn với công việc ở công ty nên tôi đành phải hủy cuộc hẹn với bạn bè."
+        },
+        {
+          "translation": "Thời tiết quá đỗi lạnh giá nên tôi đã không ra ngoài mà ở lại trong nhà."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_하고는_74": {
+      "title": "~하고는 / ~고는（……之后就……、做了……然后 - 动作先后顺接）",
+      "shortExplanation": "连接词尾，表示在前项动作完成之后紧接着进行后项动作（“……之后就……”、“做了……然后”）。",
+      "longExplanation": "“~고는”（以“하다”结尾的动词形式为“~하고는”）由表示顺接并列的连接词尾“-고”与表示强调或对比的补助词“-는”结合而成。主要用于按照时间顺序连接两个连续的动作，强调主语在彻底完成前一项动作后，随即转入后一项动作。常用于表述固定的生活习惯、先后步骤，或在完成某一行为后引发了意料之外的情绪反应或后续结果。",
+      "formation": "动词词干 + -고는（以하다结尾的动词词干接 -고는 变为 하고는）",
+      "examples": [
+        {
+          "translation": "我每天早晨起床后先锻炼身体，然后洗澡。"
+        },
+        {
+          "translation": "她读完书之后，接着练习写作。"
+        },
+        {
+          "translation": "他去学校听完课后，就进行自习。"
+        },
+        {
+          "translation": "我们乘飞机到达首尔后，便好好休息了一番。"
+        }
+      ]
+    },
+    "ko_하구나_75": {
+      "title": "~하구나 / ~구나 / ~는구나（原来是……啊、原来如此 - 感叹领会与顿悟）",
+      "shortExplanation": "感叹形终结词尾，用于说话人突然恍然大悟、领会或察觉到此前未知的事实时（“原来是……啊”、“原来如此”）。",
+      "longExplanation": "“-구나”（动词现在时为“-는구나”，形容词后接“-구나”，过去时接“-았/었구나”）是表示感叹的非敬语终结词尾，常用于独白或口语对话中。说话人借此表达在某一瞬间突然察觉真相、查明原因或领会事理时的惊喜与顿悟心情。例句中多用“-는 거였구나”（原来是这么回事啊）或“-았/었던 거였구나”（原来当时是……啊），传达出解开心中疑惑时的了然之情。",
+      "formation": "形容词词干 + -구나；动词词干 + -는구나（以하다结尾的动词接 -하는구나）；过去时 + -았/었구나；名词 + -(이)구나；解开疑窦形式：动词词干 + -(으)ㄴ/는 거였구나，名词 + -(이)었던 거였구나",
+      "examples": [
+        {
+          "translation": "原来是因为太忙才没联系上的啊，也是有可能的。"
+        },
+        {
+          "translation": "原来我今天感到幸福的原因正是这个啊，是因为天气太好了。"
+        },
+        {
+          "translation": "哦，原来是这样做啊！我现在全弄懂了。"
+        },
+        {
+          "translation": "原来那个人是真的喜欢你啊，我之前完全不知道。"
+        }
+      ]
+    },
+    "ko_하다가_76": {
+      "title": "~하다가 / ~다가（正做着……途中、做着做着就…… - 动作中断与转移）",
+      "shortExplanation": "连接词尾，表示前项动作正在进行中突然中断，或转入另一项动作、发生了意料之外的事件（“正做着……的时候”、“做着做着……”）。",
+      "longExplanation": "“~다가”（以“하다”结尾的动词形式为“~하다가”）是表示动作中断或转移的连接词尾。表示主语在持续进行前一动作的过程中，该动作由于外界突发事件的打断而终止，或者主语主动放弃前一行为转而从事另一行为。前后两分句的主语通常必须一致。常对应汉语中的“正……时”、“做着做着……就……”。",
+      "formation": "动词/形容词词干 + -다가（以하다结尾的动词接 -다가 变为 하다가）",
+      "examples": [
+        {
+          "translation": "我正读着书，因为太困就睡着了。"
+        },
+        {
+          "translation": "他正在玩游戏，妈妈叫他暂时停一下。"
+        },
+        {
+          "translation": "我正和朋友聊着天，门铃突然响了，只好中断了谈话。"
+        },
+        {
+          "translation": "我正在学习，看到一篇很有趣的文章便开始读了起来。"
+        }
+      ]
+    },
+    "ko_하다못해_77": {
+      "title": "~하다못해 / ~다 못해（极度……以至于、受不了……而甚至…… - 程度达到极限）",
+      "shortExplanation": "连接结构，用于强调某一状态、动作或情绪达到了难以承受的极限，从而引发了极端的或令人无奈的后果（“甚至无法再……以至于……”、“太……以致……”）。",
+      "longExplanation": "“~다 못해”（动词/形容词以“하다”结尾时写作“~하다못해”或“~하다 못해”）由连接词尾“-다”与动词“못하다”活用形“못해”融合而成。用于形容某种状态、疲劳感、无聊感或性质达到了顶峰，前项状态已严重到无法继续维持或再也难以忍受，最终导致了某种出人意料或负面的结果。常对应汉语中的“太……以至于……”、“忍无可忍终于……”。此外，“하다못해”还常作副词使用，表示“退一步讲、起码、甚至”。",
+      "formation": "动词/形容词词干 + -다 못해（以하다结尾的形容词/动词后接 -하다 못해 或 하다못해）",
+      "examples": [
+        {
+          "translation": "他的演讲枯燥乏味到了极点，以至于大家全都睡着了。"
+        },
+        {
+          "translation": "这个小村庄冷清极了，走在路上几乎见不到半个人影，让人感到格外孤寂。"
+        },
+        {
+          "translation": "今天实在太疲惫了，累到了极点，一回到家就立刻倒头睡着了。"
+        },
+        {
+          "translation": "她做的饭菜难吃到了极点，大家根本吃不下去，全都剩下了。"
+        }
+      ]
+    },
+    "ko_하던_78": {
+      "title": "~하던 중에 / ~던 중에（在正做着……途中、在……的中途 - 回想进行中插入事件）",
+      "shortExplanation": "惯用型，表示在过去某一动作正在持续进行的途中，发生了另一件突发或意外的事情（“正在……的中途”、“在做着……的时候”）。",
+      "longExplanation": "“~던 중에”（以“하다”结尾的动词形式为“~하던 중에”）由表示回想过去未完成或持续动作的定语词尾“-던”，结合不完全名词“중”（中、期间）和格助词“에”构成。用于说明某一背景动作在过去尚未结束、仍在持续推进的中间节点上，忽然发生了另一个新事件或插曲。汉语常翻译为“正在……的过程中”、“正……的时候”。",
+      "formation": "动词词干 + -던 중에（以하다结尾的动词词干接 -던 중에 变为 하던 중에）",
+      "examples": [
+        {
+          "translation": "正看书的当儿，朋友打来电话说要过来玩。"
+        },
+        {
+          "translation": "正在听音乐的中途，听到了特别合心意的一首歌，感到非常幸福。"
+        },
+        {
+          "translation": "正看着电视剧的时候，姐姐突然回到家，吓了我一跳。"
+        },
+        {
+          "translation": "正锻炼着身体，突然下起了雨，只好停下来回家了。"
+        }
+      ]
+    },
+    "ko_하기는_79": {
+      "title": "~하기는 / ~기는 하다/했지만（好是好/确实是……但是…… - 承认前项与转折让步）",
+      "shortExplanation": "让步转折结构，用于在承认前项事实或优点的同时，后项提出相反事实或不足之处（“确实是……不过……”、“……倒是……，但是……”）。",
+      "longExplanation": "“~기는 하다”（通常以后接连接词尾的形式出现，如“~기는 하지만”，以“하다”结尾的词干形式为“~하기는 하지만”）由名词形词尾“-기”、补助词“-는”及动词/形容词“하다”组合而成。常用于说话人先肯定或承认前项陈述的某些合理性或事实，随后在后项话锋一转，引出相反意见、顾虑或消极面。汉语常译为“……倒是……，但是……”、“虽然确实……不过……”。",
+      "formation": "动词/形容词词干 + -기는 하다 / -기는 하지만（以하다结尾的词干接 -기는 하다 变为 하기는 하다/하지만）",
+      "examples": [
+        {
+          "translation": "那部电影好看确实是好看，但由于期待值过高，还是稍微有点失望。"
+        },
+        {
+          "translation": "蛋糕好吃倒是挺好吃的，但因为太甜了，所以没能全部吃完。"
+        },
+        {
+          "translation": "他的脾气好是挺好，但做事稍微有点慢吞吞的倾向。"
+        },
+        {
+          "translation": "这份礼物虽然很有价值，但跟我的着装不太搭调。"
+        }
+      ]
+    },
+    "ko_하기로_80": {
+      "title": "~하기로 / ~기로 하다/결정하다（决定做……、约好做…… - 表达决定与约定）",
+      "shortExplanation": "惯用型，表示下定决心从事某事，或彼此之间做出了约定、做成了决定（“决定……”、“商定……”）。",
+      "longExplanation": "“~기로 하다”（以“하다”结尾的动词形式为“~하기로 하다”，常扩展为“~기로 결정하다/약속하다”）由名词形词尾“-기”、表示结果归宿的副词格助词“-로”和动词“하다”结合而成。用于表述个人已做出的决定、计划，或者是多人之间经过协商后达成的约定与承诺。常以过去时“-기로 했다/결정했다”的形式出现，表示某项计划已经敲定。",
+      "formation": "动词词干 + -기로 하다 / -기로 결정하다（以하다结尾的动词词干接 -기로 变为 하기로 하다/결정하다）",
+      "examples": [
+        {
+          "translation": "我们决定明天下午见面。大家的空闲时间刚好对得上，于是协调好了繁忙的日程。"
+        },
+        {
+          "translation": "我决定明年搬家去韩国，所以现在正在非常努力地学习韩语。"
+        },
+        {
+          "translation": "她决定下周举行婚礼，所以目前正在挑选婚纱。"
+        },
+        {
+          "translation": "我和朋友们约好夏天一起去海滩，所以打算从现在起物色泳衣。"
+        }
+      ]
+    },
+    "ko_하기에_81": {
+      "title": "~하기에 / ~기에（因为……所以、鉴于…… - 阐明原因与判断依据）",
+      "shortExplanation": "连接词尾，用于提出引起后项结果的原因、理由或判断依据（“因为……”、“由于……”、“鉴于……”）。",
+      "longExplanation": "“~기에”（词干以“하다”结尾时为“~하기에”）由名词形词尾“-기”与表示原因依据的副词格助词“-에”结合而成。多用于说话人说明后项结论、行为或状态得以成立的客观前提取依据。相较于口语中常用的“-아서/어서”或“-(으)니까”，“~기에”带有更加典雅的书面语色彩和沉稳的语气，常用于书面写作、正式陈述或表达客观归因。",
+      "formation": "动词/形容词词干 + -기에（以하다结尾的词干接 -기에 变为 하기에）",
+      "examples": [
+        {
+          "translation": "今天因为天气很好，正是适合散步的好日子。"
+        },
+        {
+          "translation": "由于他学习成绩优异，所以总是受到老师的表扬。"
+        },
+        {
+          "translation": "鉴于这座城市的交通状况十分拥堵复杂，自己开车出行非常困难。"
+        },
+        {
+          "translation": "因为她讨厌我，所以我便不再与她联系了。"
+        }
+      ]
+    },
+    "ko_하려고_82": {
+      "title": "~하려고 하다 / ~(으)려고 하다（打算做……、想要做…… - 表达意图与计划）",
+      "shortExplanation": "惯用型，表示主语打算、企图或正在努力进行某种行为（“打算……”、“想要……”、“准备……”）。",
+      "longExplanation": "“~(으)려고 하다”（以“하다”结尾的动词形式为“~하려고 하다”）由表示意图目的的连接词尾“-(으)려고”与动词“하다”组合而成。用于表述说话人或主语内心所具有的意图、打算或行动计划。若用于非生命主语或自然气象时，也可表示某一动作或状态即将发生。在汉语中通常对应为“打算做……”、“想要做……”、“试图做……”。",
+      "formation": "动词词干 + -(으)려고 하다（有收音接 -으려고 하다，无收音或收音为ㄹ接 -려고 하다；以하다结尾的动词接 -하려고 하다）",
+      "examples": [
+        {
+          "translation": "我打算每天读二十分钟的书，这是为了努力将阅读培养成一种习惯。"
+        },
+        {
+          "translation": "他打算翻看杂志，以便找一份好工作。"
+        },
+        {
+          "translation": "我们曾试图通过相互沟通来化解矛盾，但最终还是没能成功。"
+        },
+        {
+          "translation": "姐姐曾每天努力想要给弟弟妹妹辅导数学。"
+        }
+      ]
+    },
+    "ko_할_83": {
+      "title": "~할 때마다 / ~(으)ㄹ 때마다（每当……的时候、每次…… - 规律性重复）",
+      "shortExplanation": "惯用型，表示某种情况、时间或动作每一次出现时，后项动作或状态都会无一例外地重复发生（“每当……的时候”、“每次……”）。",
+      "longExplanation": "“~(으)ㄹ 때마다”（以“하다”结尾的动词形式为“~할 때마다”）由定语词尾“-(으)ㄹ”、不完全名词“때”（时候）与补助词“마다”（每）组合而成。用于强调事物发生的恒常性与规律性，即只要满足前项的时间或行为条件，后项就会随之发生。后句常与副词“항상”（总是）、“매번”（每次）或表示惯常行为的“-곤 하다”（经常……）呼应使用。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 때마다（有收音接 -을 때마다，无收音或收音为ㄹ接 -ㄹ 때마다；以하다结尾的动词接 -할 때마다）；名词 + 때마다",
+      "examples": [
+        {
+          "translation": "每逢秋天来临，我总会想起故乡，常常哼唱起歌来。"
+        },
+        {
+          "translation": "每次想起她的时候，他总会在笔记本上写下关于她的歌曲。"
+        },
+        {
+          "translation": "每当考试周到来的时候，母亲总是会为我做可口的美食。"
+        },
+        {
+          "translation": "我每次看到她的时候，心跳都会不由自主地加速。"
+        }
+      ]
+    },
+    "ko_하면_84": {
+      "title": "~하면 할수록 / ~(으)면 ~(으)ㄹ수록（越……就越…… - 递进比例强化）",
+      "shortExplanation": "复合惯用型，强调前项的动作或状态程度每加深一层，后项的结果或变化也随之成正比例增强（“越……就越……”）。",
+      "longExplanation": "“~(으)면 ~(으)ㄹ수록”（动词/形容词以“하다”结尾时写作“~하면 할수록”）是由条件连接词尾“-(으)면”与递进连接词尾“-(으)ㄹ수록”重复呼应构成的强化句型。用于鲜明地揭示两个事物之间强烈的正比例联动关系：前项的投入、练习或时间越是累积，后项的程度、成效或变化就越发显著。汉语对应为“越……就越……”、“愈……则愈……”。",
+      "formation": "动词/形容词词干 + -(으)면 + 同一词干 + -(으)ㄹ수록（有收音接 -으면 -을수록，无收音或收音为ㄹ接 -면 -ㄹ수록；以하다结尾的词接 -하면 할수록）",
+      "examples": [
+        {
+          "translation": "天气越是日渐暖和，鲜花就盛开得越多。"
+        },
+        {
+          "translation": "越是认真多下功夫学习，通过考试的概率就越高。"
+        },
+        {
+          "translation": "锻炼得越多，就越能感受到身体的健康与活力。"
+        },
+        {
+          "translation": "烹饪练习得越多，厨艺技能就越能得到显著提升。"
+        }
+      ]
+    },
+    "ko_하면서_85": {
+      "title": "~하면서 / ~(으)면서（一边……一边…… - 同一主体动作同时进行）",
+      "shortExplanation": "连接词尾，表示同一主语在同一时间内同时进行两项或两项以上的动作（“一边……一边……”）。",
+      "longExplanation": "“~(으)면서”（以“하다”结尾的动词形式为“~하면서”）是表示动作同时进行的连接词尾。要求前后两个分句的主语必须保持一致，表明该主语在进行前一动作的同时，伴随性地进行后一动作。此外，该词尾亦可连接形容词表示两种属性兼备，或用于转折句中表示前后行为相抵触。汉语中最基础且常用的对应表达是“一边……一边……”、“同时”。",
+      "formation": "动词/形容词词干 + -(으)면서（有收音接 -으면서，无收音或收音为ㄹ接 -면서；以하다结尾的动词接 -하면서）",
+      "examples": [
+        {
+          "translation": "我戴着眼镜看书，因此能够非常舒适轻松地阅读。"
+        },
+        {
+          "translation": "我一边听音乐一边做作业，所以一点儿也不觉得枯燥。"
+        },
+        {
+          "translation": "我在咖啡馆一边喝着咖啡一边工作，因此得以非常安静沉浸地专注其中。"
+        },
+        {
+          "translation": "一边开车一边唱歌非常棒，所以开车的时候一点也不会觉得无聊。"
+        }
+      ]
+    },
+    "ko_하시겠습니까_86": {
+      "title": "~하시겠습니까? / ~(으)시겠습니까?（您想……吗？/ 请问您是否愿意…… - 极郑重敬语询问与请求）",
+      "shortExplanation": "极高阶敬语终结词尾疑问式，用于在极其正式的场合向长辈、客户或上级客气地征询意向、提出建议或礼貌请求（“您打算……吗？”、“请问您是否愿意……”）。",
+      "longExplanation": "“~(으)시겠습니까?”（以“하다”结尾的动词形式为“~하시겠습니까?”）由主体尊称先语末词尾“-(으)시-”、表示委婉意图或询问意向的先语末词尾“-겠-”以及格式体最高阶敬语疑问终结词尾“-습니까?”复合而成。该句式是韩语中用于询问对方意愿或提出郑重请求的最高礼节形式，广泛应用于商务会谈、学术会议、酒店航空等高端服务业及对长辈的正式问询中。",
+      "formation": "动词词干 + -(으)시겠습니까?（有收音接 -으시겠습니까?，无收音接 -시겠습니까?；以하다结尾的动词接 -하시겠습니까?）",
+      "examples": [
+        {
+          "translation": "请问您愿意一起共进晚餐吗？"
+        },
+        {
+          "translation": "能请您审阅一下这份文件吗？"
+        },
+        {
+          "translation": "请问您会出席本次大会吗？"
+        },
+        {
+          "translation": "能劳烦您考虑一下这项提议吗？"
+        }
+      ]
+    },
+    "ko_하자_87": {
+      "title": "~하자 / ~자마자（1. 我们……吧 [亲切共动劝诱] / 2. 刚一……就…… [动作紧接发生]）",
+      "shortExplanation": "韩语中具有双重功能的核心语法：1. 用于非敬语共动劝诱（“咱们一起……吧”）；2. 作为连接词尾表示前项一结束便立即发生后项（“刚一……就……”、“一……就……”）。",
+      "longExplanation": "“~하자”（动词词干接“-자”或连接形式“-자마자”）包含两种极为常见的语法功能：1）用于句末时，作为非敬语共动形终结词尾，用于同辈、朋友或晚辈之间，亲切地提议大家一起从事某事（相当于“咱们……吧”）；2）用于连接前后两分句时，以“-자”或其扩展强化形式“-자마자”作为连接词尾，表示前项动作一经完成，后项动作或事态便毫不间断地紧随其后发生（相当于“刚一……就……”、“一……立刻……”）。",
+      "formation": "1. 共动劝诱：动词词干 + -자（以하다结尾的动词接 -하자）；2. 紧接发生：动词词干 + -자마자（或 -자）",
+      "examples": [
+        {
+          "translation": "天气真的很好，咱们出去散散步吧。"
+        },
+        {
+          "translation": "刚吃完晚饭，我就得立刻给朋友打个电话。"
+        },
+        {
+          "translation": "考试一结束，我就想立刻去旅行。"
+        },
+        {
+          "translation": "咱们看这部电影吧，你一定不会后悔的。"
+        }
+      ]
+    },
+    "ko_하여_88": {
+      "title": "~하여 / ~해서（因为……所以、做了……然后 - 书面正式语与因果连接）",
+      "shortExplanation": "连接词尾，用于表示原因、理由或先后顺接，是“하다”动词与“-여(서)”结合的标准书面语形态（“因为……所以……”、“……从而……”）。",
+      "longExplanation": "“~하여”（口语缩略形式为“~해서”，完整形式为“~하여서”）是包含“하다”的动词或形容词与连接词尾“-아/어/여(서)”结合而成的书面语形态。主要用于正式演讲、新闻报道、公文写作或学术文献中，阐述前因后果关系（“因为……所以……”），或说明动作的方法、手段与时间先后顺序。相比于口语日常中频繁使用的“-해서”，“~하여”具有鲜明庄重、典雅严谨的文学及公文修辞色彩。",
+      "formation": "以하다结尾的动词/形容词词干 + -여 变为 하여（完整形式为 하여서，口语常缩略为 해서）",
+      "examples": [
+        {
+          "translation": "由于我起得太晚，因此上学迟到了。"
+        },
+        {
+          "translation": "她因为极度疲倦，以至于浑身无力再也爬不起来了。"
+        },
+        {
+          "translation": "因在公司忙于工作分身乏术，我不得不取消了和朋友们的聚会约定。"
+        },
+        {
+          "translation": "由于天气实在是过于严寒，我没有外出，一直待在家里。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_하고는_74": {
+      "title": "~하고는 / ~고는（〜してからは、〜した後は - 先行動作の完了と後続動作）",
+      "shortExplanation": "前項の動作が完了した後に、引き続いて後項の動作を行うことを表す接続表現です（「〜してからは」「〜した後は」）。",
+      "longExplanation": "「~고는」（「하다」動詞の場合は「~하고는」）は、並列・継起を表す接続語尾「-고」に対比・強調の補助詞「-는」が結合した表現です。主語が前の動作を終えた後、間を置かずに次の動作へと移行する時間的な順序関係を表します。日常的な習慣の順序（〜してから〜する）を述べる場合や、ある動作を終えた直後に生じた感情や予期せぬ状況の変化を際立たせる際によく用いられます。",
+      "formation": "動詞語幹 + -고는（하다動詞の語幹 + -고는 で 하고는）",
+      "examples": [
+        {
+          "translation": "私は毎朝起きて運動をしてから、シャワーを浴びます。"
+        },
+        {
+          "translation": "彼女は本を読んでは、書く練習をします。"
+        },
+        {
+          "translation": "彼は学校に行って授業を聞いた後、勉強をします。"
+        },
+        {
+          "translation": "私たちは飛行機に乗ってソウルに到着した後は、休息を取りました。"
+        }
+      ]
+    },
+    "ko_하구나_75": {
+      "title": "~하구나 / ~구나 / ~는구나（〜なんだな、〜だったんだ - 気づき・納得の感嘆）",
+      "shortExplanation": "知らなかった事実や理由をその場で新たに気づいたり、深く納得・理解した際に用いる感嘆の終結語尾です（「〜なんだな」「〜だったんだ」）。",
+      "longExplanation": "「-구나」（形容詞語幹の後には「-구나」、動詞語幹の後には「-는구나」、過去形の後には「-았/었구나」）は、自らの独り言や親しい相手に対して、新たに知った事実や状況への驚きや納得の感情を表す感嘆終結語尾です。例文のように「-는 거였구나（〜することだったんだ／〜だったわけか）」の形をとることで、今まで疑問に思っていた原因や理由が氷解した際の「なるほど、そういうことだったのか！」という強い気づきを表します。",
+      "formation": "形容詞語幹 + -구나；動詞語幹 + -는구나（하다動詞は -하는구나）；過去形 + -았/었구나；名詞 + -(이)구나；事情納得の形：動詞語幹 + -(으)ㄴ/는 거였구나、名詞 + -(이)었던 거였구나",
+      "examples": [
+        {
+          "translation": "忙しくて連絡がつかなかったんだね、それなら無理もないよ。"
+        },
+        {
+          "translation": "私が今日幸せだと感じた理由はまさにそれだったんだな、天気が良かったからなんだ。"
+        },
+        {
+          "translation": "おお、こうやってやるものだったんだ！全部理解できたよ。"
+        },
+        {
+          "translation": "本当にあの人が君のことを好きだったんだね、知らなかったよ。"
+        }
+      ]
+    },
+    "ko_하다가_76": {
+      "title": "~하다가 / ~다가（〜している途中で、〜しかけて - 動作の中断と転換）",
+      "shortExplanation": "ある動作や状態が継続している途中でそれが中断されたり、別の動作や予期せぬ出来事へ切り替わることを表す接続語尾です（「〜している途中で」「〜していて」）。",
+      "longExplanation": "「~다가」（「하다」動詞の場合は「~하다가」）は、動作の中断や転換を表す接続語尾です。ある行為を行っている最中に、予期せぬ出来事が割り込んでその行為が中止されたり、途中で別の行動に移行したりする場面で用いられます。通常、前節と後節の主語は同一人物である必要があります。日本語の「〜している最中に」「〜の途中で」「〜していてふと……」に相当します。",
+      "formation": "動詞・形容詞語幹 + -다가（하다動詞の語幹 + -다가 で 하다가）",
+      "examples": [
+        {
+          "translation": "私は本を読んでいる途中で眠気に襲われ、眠ってしまいました。"
+        },
+        {
+          "translation": "彼はゲームをしている最中に、お母さんから少しやめるように言われました。"
+        },
+        {
+          "translation": "友達と話している途中で突然ベルが鳴ったので、会話を中断しました。"
+        },
+        {
+          "translation": "私は勉強をしている途中で興味深い記事を見かけ、読み始めました。"
+        }
+      ]
+    },
+    "ko_하다못해_77": {
+      "title": "~하다못해 / ~다 못해（〜のあまり、〜しきれなくなって - 極限状態の強調）",
+      "shortExplanation": "ある状態や感情が極限に達し、これ以上耐えきれなくなって予期せぬ結果や消極的な事態を引き起こすことを表します（「〜のあまり」「〜しきれなくなって」）。",
+      "longExplanation": "「~다 못해」（「하다」で終わる語幹の場合は「~하다못해」）は、接続語尾「-다」に不可能を表す「못하다」の活用形「못해」が合わさった表現です。ある行為や状態、疲労・退屈などが度を越して限界に達し、もはや持ちこたえられなくなった結果、好ましくない事態に陥ったり極端な行動に出たりすることを表します。日本語の「〜のあまり」「〜の度を越して」「〜に耐えかねて」に相当します。",
+      "formation": "動詞・形容詞語幹 + -다 못해（하다動詞・形容詞語幹の後には -하다 못해 または分かち書きせず 하다못해）",
+      "examples": [
+        {
+          "translation": "彼の演説は退屈のあまり、人々は眠り込んでしまいました。"
+        },
+        {
+          "translation": "この小さな村は閑散としすぎていて、人影もなく歩いていると寂しくなってきます。"
+        },
+        {
+          "translation": "今日はあまりにも疲れ果てて、家に帰り着くや否や眠ってしまいました。"
+        },
+        {
+          "translation": "彼女の料理は不味いにも程があって、人々は食べきれずに残してしまいました。"
+        }
+      ]
+    },
+    "ko_하던_78": {
+      "title": "~하던 중에 / ~던 중에（〜していた最中に、〜している途中で - 過去の動作進行中の割り込み）",
+      "shortExplanation": "過去にある動作が進行しているまさにその最中に、別の出来事や予期せぬ事態が起こったことを表します（「〜していた最中に」「〜している途中で」）。",
+      "longExplanation": "「~던 중에」（「하다」動詞の場合は「~하던 중에」）は、過去の未完了や継続的な動作を回想して修飾する連体形語尾「-던」に、依存名詞「중（中）」と助詞「에（に）」が結びついた表現です。ある行為を継続して行っていたさなかに、別の突発的な出来事が割り込んできた状況を客観的・描写的に述べます。日本語の「〜していた最中に」「〜の最中に」「〜している途中で」に相当します。",
+      "formation": "動詞語幹 + -던 중에（하다動詞の語幹 + -던 중에 で 하던 중에）",
+      "examples": [
+        {
+          "translation": "本を読んでいた最中に友達から電話がかかってきて、遊びに来ました。"
+        },
+        {
+          "translation": "音楽を聴いていた途中で心に響くぴったりの歌が流れてきて、幸せな気持ちになりました。"
+        },
+        {
+          "translation": "ドラマを見ていた最中に姉が突然帰宅してびっくりしました。"
+        },
+        {
+          "translation": "運動をしていた途中で突然雨が降ってきたため、中断して家に帰りました。"
+        }
+      ]
+    },
+    "ko_하기는_79": {
+      "title": "~하기는 / ~기는 하다/했지만（〜することは〜だが、〜には〜だが - 是認と逆接の譲歩）",
+      "shortExplanation": "前項の事実や長所を一応肯定・是認しながらも、後項でそれと相反する問題点や異なる事実を述べる譲歩表現です（「〜することは〜だが」「〜には〜だが」）。",
+      "longExplanation": "「~기는 하다」（接続形「~기는 하지만」、語幹が「하다」の場合は「~하기는 하지만」）は、名詞形語尾「-기」、対比の補助詞「-는」、補助用言「하다」が結合した文型です。相手の意見や客観的事実を「確かにそれはそうである」と一度受け止めつつ、後節で「しかし実際には問題や不満がある」と対比的な事情を持ち出す際に使われます。日本語の「〜することはするが」「〜には〜だが、しかし」に相当します。",
+      "formation": "動詞・形容詞語幹 + -기는 하다 / -기는 하지만（하다用言の語幹 + -기는 하다 で 하기는 하다/하지만）",
+      "examples": [
+        {
+          "translation": "その映画は面白くはあったのですが、期待しすぎて少しがっかりしました。"
+        },
+        {
+          "translation": "ケーキは美味しくはありましたが、甘すぎて全部は食べ切れませんでした。"
+        },
+        {
+          "translation": "彼は性格が良くはあるのですが、少し行動が遅い傾向があります。"
+        },
+        {
+          "translation": "この贈り物は価値があるにはあるのですが、私の服装とは合いません。"
+        }
+      ]
+    },
+    "ko_하기로_80": {
+      "title": "~하기로 / ~기로 하다/결정하다（〜することにする、〜することに決める - 決定と約束）",
+      "shortExplanation": "ある行動をとることを自ら決意したり、他者と話し合って合意・約束したことを表します（「〜することにする」「〜することに決めた」）。",
+      "longExplanation": "「~기로 하다」（「하다」動詞の場合は「~하기로 하다」、決定を強調して「~기로 결정하다」とも言います）は、名詞形語尾「-기」、方向や結果を表す助詞「-로」、動詞「하다（または결정하다）」が結合した構文です。個人が特定の計画を実行することを決心した場合や、複数の人が協議した結果として約束・取り決めを交わした場面で用いられます。通常、すでに確定した事柄として過去形「-기로 했다 / 결정했다」の形で頻繁に使われます。",
+      "formation": "動詞語幹 + -기로 하다 / -기로 결정하다（하다動詞の語幹 + -기로 で 하기로 하다/결정하다）",
+      "examples": [
+        {
+          "translation": "私たちは明日の午後に会うことに決めました。全員の都合が合ったので、過密なスケジュールを調整しなければなりませんでした。"
+        },
+        {
+          "translation": "私は来年韓国に引っ越すことに決めたので、今一生懸命に韓国語を学んでいます。"
+        },
+        {
+          "translation": "彼女は来週結婚することに決めたため、現在ウェディングドレスを探しています。"
+        },
+        {
+          "translation": "友達と一緒に夏に海へ行くことに決めたので、これから水着を買おうと思っています。"
+        }
+      ]
+    },
+    "ko_하기에_81": {
+      "title": "~하기에 / ~기에（〜だから、〜であるため、〜ゆえに - 理由・判断の根拠）",
+      "shortExplanation": "後節の判断や行動、結果に至る客観的な理由や判断の根拠を表す接続表現です（「〜だから」「〜であるため」「〜ゆえに」）。",
+      "longExplanation": "「~기에」（語幹が「하다」の場合は「~하기에」）は、名詞形語尾「-기」に理由や根拠を表す助詞「-에」が結合した接続表現です。話し手が自らの判断や行動を下すに至った客観的な事実や原因を提示する際に用いられます。日常会話でよく使われる「-아서/어서」や「-(으)니까」に比べ、やや改まった丁寧な響きを持ち、文章語や落ち着いた語り口において重宝されます。",
+      "formation": "動詞・形容詞語幹 + -기에（하다用言の語幹 + -기에 で 하기에）",
+      "examples": [
+        {
+          "translation": "今日は天気が良いので、散歩をするのにうってつけの日です。"
+        },
+        {
+          "translation": "彼は勉強ができるため、いつも先生から褒められています。"
+        },
+        {
+          "translation": "この街は交通事情が複雑であるため、車を持ち歩くのは難しいです。"
+        },
+        {
+          "translation": "彼女が私のことを嫌っているため、これ以上彼女には連絡していません。"
+        }
+      ]
+    },
+    "ko_하려고_82": {
+      "title": "~하려고 하다 / ~(으)려고 하다（〜しようとする、〜するつもりだ - 意図・計画）",
+      "shortExplanation": "主語がある行動を起こそうと意図・計画していること、またはそのために努めていることを表します（「〜しようとする」「〜するつもりだ」）。",
+      "longExplanation": "「~(으)려고 하다」（「하다」動詞の場合は「~하려고 하다」）は、意図や目的を表す接続語尾「-(으)려고」に補助動詞「하다」が結合した表現です。主語の明確な意思、計画、試みを述べる際に用いられます。また、天候や自然現象などの無意志主語に接続する場合は「今にも〜しそうだ」という切迫した兆候を表すこともあります。日本語の「〜しようとする」「〜するつもりだ」「〜しようと努める」に相当します。",
+      "formation": "動詞語幹 + -(으)려고 하다（パッチムがある場合は -으려고 하다、パッチムがない場合やㄹパッチムの場合は -려고 하다；하다動詞語幹には -하려고 하다）",
+      "examples": [
+        {
+          "translation": "私は毎日20分ずつ本を読もうとしています。そうして読書を習慣づけようとしているのです。"
+        },
+        {
+          "translation": "彼は良い仕事を見つけるために雑誌を読もうとしています。"
+        },
+        {
+          "translation": "私たちは葛藤を解決しようとお互いに話し合おうと試みましたが、結果的には成功しませんでした。"
+        },
+        {
+          "translation": "姉は妹に数学を教えようと毎日努力しようとしていました。"
+        }
+      ]
+    },
+    "ko_할_83": {
+      "title": "~할 때마다 / ~(으)ㄹ 때마다（〜するたびに、〜するごとに - 反復と規則性）",
+      "shortExplanation": "ある時間や条件、行為が生じるたびに、それに伴って決まって同じ事態が繰り返されることを表します（「〜するたびに」「〜のたびごとに」）。",
+      "longExplanation": "「~(으)ㄹ 때마다」（「하다」動詞の場合は「~할 때마다」）は、連体形語尾「-(으)ㄹ」に依存名詞「때（とき）」と反復を表す助詞「마다（ごと、たび）」が合わさった表現です。前項の契機や条件が成立するたびに、例外なく後項の動作や感情が引き起こされるという反復性・規則性を強調します。後節には「항상（いつも）」「매번（毎回）」や、習慣的動作を表す「-곤 하다（〜したものだ、よく〜する）」が頻繁に伴われます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 때마다（パッチムがある場合は -을 때마다、パッチムがない場合やㄹパッチムの場合は -ㄹ 때마다；하다動詞語幹には -할 때마다）；名詞 + 때마다",
+      "examples": [
+        {
+          "translation": "秋になると私は故郷を思い出しながら、いつも歌を歌ったものでした。"
+        },
+        {
+          "translation": "彼は彼女のことを思い出すたびに、ノートに彼女についての歌を書き留めていました。"
+        },
+        {
+          "translation": "試験期間が巡ってくるたびに、母は私に美味しい料理を作ってくれました。"
+        },
+        {
+          "translation": "私は彼女を見るたびに、胸がドキドキと高鳴ったものでした。"
+        }
+      ]
+    },
+    "ko_하면_84": {
+      "title": "~하면 할수록 / ~(으)면 ~(으)ㄹ수록（〜すればするほど、〜であればあるほど - 比例と強調）",
+      "shortExplanation": "前項の動作や状態の程度が進めば進むほど、それに伴って後項の程度や結果も一層強まるという比例関係を強調します（「〜すればするほど」）。",
+      "longExplanation": "「~(으)면 ~(으)ㄹ수록」（「하다」用言の場合は「~하면 할수록」）は、条件を表す接続語尾「-(으)면」と比例関係を表す接続語尾「-(으)ㄹ수록」を重ねて用いる強調表現です。単に「-(으)ㄹ수록」と述べるよりも、前項の深まりが後項の変化に及ぼす強い相関関係を鮮明に浮き彫りにします。日本語の「〜ば〜するほど」「〜であればあるほど」にそのまま相当します。",
+      "formation": "動詞・形容詞語幹 + -(으)면 + 同一語幹 + -(으)ㄹ수록（パッチムがある場合は -으면 -을수록、パッチムがない場合やㄹパッチムの場合は -면 -ㄹ수록；하다用言は -하면 할수록）",
+      "examples": [
+        {
+          "translation": "日がますます暖かくなればなるほど、花がたくさん咲いてきています。"
+        },
+        {
+          "translation": "勉強を多くすればするほど、試験の合格率は高まります。"
+        },
+        {
+          "translation": "運動を多くすればするほど、健康になったと実感できます。"
+        },
+        {
+          "translation": "料理の練習を重ねれば重ねるほど、腕前が上達していきます。"
+        }
+      ]
+    },
+    "ko_하면서_85": {
+      "title": "~하면서 / ~(으)면서（〜しながら - 同一主体の動作の同時進行）",
+      "shortExplanation": "同一の主語が、二つ以上の動作を同じ時間帯に並行して行うことを表す接続語尾です（「〜しながら」）。",
+      "longExplanation": "「~(으)면서」（「하다」動詞の場合は「~하면서」）は、動作の同時進行を表す代表的な接続語尾です。原則として前節と後節の主語は同一でなければならず、ある行為を行いながら並行してもう一つの行為を行う場面を表現します。また、形容詞に接続して二つの性質が両立していることを表したり、文脈によっては「〜であるにもかかわらず」という逆接のニュアンスを帯びることもあります。日本語の「〜しながら」に相当します。",
+      "formation": "動詞・形容詞語幹 + -(으)면서（パッチムがある場合は -으면서、パッチムがない場合やㄹパッチムの場合は -면서；하다動詞語幹には -하면서）",
+      "examples": [
+        {
+          "translation": "眼鏡をかけながら本を読んだので、とても快適に読むことができました。"
+        },
+        {
+          "translation": "音楽を聴きながら宿題をしたので、退屈しませんでした。"
+        },
+        {
+          "translation": "カフェでコーヒーを飲みながら仕事をしたので、とても静かに集中することができました。"
+        },
+        {
+          "translation": "運転をしながら歌を歌うのはとても気持ちが良く、運転が退屈になりません。"
+        }
+      ]
+    },
+    "ko_하시겠습니까_86": {
+      "title": "~하시겠습니까? / ~(으)시겠습니까?（〜なさいますか？/ 〜していただけますでしょうか？ - 最高級の丁寧・敬語依頼）",
+      "shortExplanation": "目上の人や顧客に対して、意向を尋ねたり極めて丁寧に依頼・提案する際に用いる最高級のフォーマル敬語疑問表現です（「〜なさいますか」「〜していただけますか」）。",
+      "longExplanation": "「~(으)시겠습니까?」（「하다」動詞の場合は「~하시겠습니까?」）は、主体尊敬の先語末語尾「-(으)시-」、丁寧な意志・意向の打診を表す先語末語尾「-겠-」、そして格式体敬語の疑問形終結語尾「-습니까?」が融合した表現です。相手の意思や要望を最大限に尊重しながら尋ねる際、あるいはビジネスの折衝や公式の会議、接客サービスにおいて丁重なリクエストを行う際に用いられます。日本語の「〜なさいますか」「〜していただけますでしょうか」に相当します。",
+      "formation": "動詞語幹 + -(으)시겠습니까?（パッチムがある場合は -으시겠습니까?、パッチムがない場合は -시겠습니까?；하다動詞語幹には -하시겠습니까?）",
+      "examples": [
+        {
+          "translation": "ご一緒に夕食を召し上がりませんか？"
+        },
+        {
+          "translation": "こちらの書類をご検討（ご確認）いただけますでしょうか？"
+        },
+        {
+          "translation": "こちらのカンファレンスにご出席なさいますか？"
+        },
+        {
+          "translation": "ご提案をご検討いただけますでしょうか？"
+        }
+      ]
+    },
+    "ko_하자_87": {
+      "title": "~하자 / ~자마자（1. 〜しよう [親しい勧誘・共動] / 2. 〜するやいなや [直後の生起]）",
+      "shortExplanation": "二つの代表的な用法を持ちます：1. 親しい相手に一緒に行動を起こそうと呼びかける勧誘（「〜しよう」）；2. 前の動作が終わると同時に次の動作が起こる接続（「〜するやいなや」「〜するとすぐに」）。",
+      "longExplanation": "「~하자」（動詞一般には「-자」または接続形の「-자마자」）には韓国語の重要な二つの機能があります。1）文末で使われる場合：パンマルの共動形終結語尾「-자」であり、友人や親しい間柄で「一緒に〜しよう」と提案する際に用いられます；2）節と節を繋ぐ接続表現として使われる場合：「-자마자」（あるいは文語的な「-자」）として機能し、先行する動作が完了したまさにその瞬間に間髪を入れず次の動作や事態が生じることを表します（「〜するやいなや」「〜したとたんに」）。",
+      "formation": "1. 勧誘（〜しよう）：動詞語幹 + -자（하다動詞は -하자）；2. 継起（〜するやいなや）：動詞語幹 + -자마자（または -자）",
+      "examples": [
+        {
+          "translation": "天気が本当にいいから、私たち外に出て散歩しよう。"
+        },
+        {
+          "translation": "夕飯を食べるやいなや、友達に電話をかけなければなりません。"
+        },
+        {
+          "translation": "試験が終わったらすぐに旅行へ行きたいです。"
+        },
+        {
+          "translation": "この映画を見ようよ、絶対に後悔しないから。"
+        }
+      ]
+    },
+    "ko_하여_88": {
+      "title": "~하여 / ~해서（〜して、〜によって、〜のために - 改まった接続・理由）",
+      "shortExplanation": "原因や理由、または順序を表す接続表現で、「하다」動詞に接続語尾「-여(서)」が結合した格調高い文章語形態です（「〜して」「〜によって」「〜のために」）。",
+      "longExplanation": "「~하여」（口語形は「~해서」、完全形は「~하여서」）は、「하다」で終わる動詞や形容詞の語幹に接続語尾「-아/어/여(서)」が結合した公式的・格式高い文章語の表現です。新聞記事、公的文書、学術論文、スピーチなどの改まった場面で、前項が後項の原因や理由となっていることを示したり、先行する動作の手段や時間的順序を格調高く記述する際に用いられます。日常会話の「-해서」に比べて引き締まった文体を作り出します。",
+      "formation": "하다動詞・形容詞語幹 + -여 で 하여（完全形は 하여서、口語短縮形は 해서）",
+      "examples": [
+        {
+          "translation": "朝起きるのが遅くなったため、学校に遅刻してしまいました。"
+        },
+        {
+          "translation": "彼女はあまりに疲れ果てていたため、それ以上起き上がることができませんでした。"
+        },
+        {
+          "translation": "会社での仕事が多忙を極めたため、友人たちとの約束をキャンセルせざるを得ませんでした。"
+        },
+        {
+          "translation": "天気が非常に寒かったため、外出せずに家に留まりました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_하고는_74": {
+      "title": "~하고는 / ~고는 (선행 동작 완료 후 후행 동작 진행)",
+      "shortExplanation": "앞선 행동을 끝마친 뒤에 이어서 다음 행동을 행함을 나타내는 연결 표현입니다 ('~하고는', '~고는').",
+      "longExplanation": "'~고는'('하다' 동사의 경우 '~하고는')은 순차적 연결어미 '-고'에 강조와 대조를 나타내는 보조사 '-는'이 결합된 형태입니다. 주어가 앞 절의 행동을 온전히 마친 뒤 시간의 흐름에 따라 다음 행동으로 이어짐을 나타내며, 규칙적인 생활 습관의 순서를 표현하거나 앞선 행동 직후에 벌어지는 상황의 추이나 심리적 변화를 뚜렷하게 드러낼 때 두루 쓰입니다.",
+      "formation": "동사 어간 + -고는 ('하다' 동사 어간 + -고는 결합 시 '하고는')",
+      "examples": [
+        {
+          "translation": "저는 매일 아침 일어나서 운동하고는 샤워를 합니다."
+        },
+        {
+          "translation": "그녀는 책을 읽고는 쓰기를 연습합니다."
+        },
+        {
+          "translation": "그는 학교에 가서 수업을 듣고는 공부를 합니다."
+        },
+        {
+          "translation": "우리는 비행기를 타고 서울에 도착하고는 휴식을 취했습니다."
+        }
+      ]
+    },
+    "ko_하구나_75": {
+      "title": "~하구나 / ~구나 / ~는구나 (새로운 사실 깨달음 및 감탄)",
+      "shortExplanation": "이전에는 미처 알지 못했던 사실이나 원인을 새롭게 알아차리거나 깊이 납득했을 때 쓰는 감탄형 종결어미입니다 ('~구나', '~하구나').",
+      "longExplanation": "'-구나'(동사 현재형 뒤에는 '-는구나', 형용사 뒤에는 '-구나', 서술격 조사 뒤에는 '-(이)구나')는 주로 독백이나 반말 상황에서 화자가 새로운 사실을 직접 목격하거나 깨달았을 때 느끼는 감탄과 수긍의 정서를 나타내는 종결어미입니다. 예문에서 나타나듯 '-(으)ㄴ/는 거였구나' 형태로 확장되면, 이전에는 몰랐던 까닭이나 속사정을 비로소 헤아려 의문이 풀렸을 때의 깨달음을 자연스럽게 전달합니다.",
+      "formation": "형용사 어간 + -구나; 동사 어간 + -는구나 ('하다' 동사 결합 시 -하는구나); 과거 시제 + -았/었구나; 명사 + -(이)구나; 인지·납득 확장형: 동사 어간 + -(으)ㄴ/는 거였구나, 명사 + -(이)었던 거였구나",
+      "examples": [
+        {
+          "translation": "바빠서 연락이 안 되는 거였구나, 그럴 수 있지."
+        },
+        {
+          "translation": "내가 오늘 행복하다고 느낀 이유는 바로 그거였구나, 날씨가 좋아서였어."
+        },
+        {
+          "translation": "오, 이렇게 하는 거였구나! 이해가 다 되었어."
+        },
+        {
+          "translation": "진짜로 그 사람이 너를 좋아하는 거였구나, 몰랐어."
+        }
+      ]
+    },
+    "ko_하다가_76": {
+      "title": "~하다가 / ~다가 (행동의 중단 및 다른 행동으로의 전환)",
+      "shortExplanation": "어떤 행동이나 상태가 진행되던 도중에 중단되거나 다른 행동으로 바뀜을 나타내는 연결어미입니다 ('~하다가', '~다가').",
+      "longExplanation": "'~다가'('하다' 동사의 경우 '~하다가')는 주어가 어떤 행동을 계속 이어가던 도중에 예기치 않은 사건이 발생하여 중단되거나, 다른 행동으로 주의나 행동의 방향이 전환될 때 사용하는 연결어미입니다. 일반적으로 앞 절과 뒤 절의 주어가 동일해야 하며, '공부하다가 잠이 들었다'처럼 앞선 행위가 온전히 완결되지 못한 채 뒤 절의 상황으로 넘어가는 양상을 보여줍니다.",
+      "formation": "동사/형용사 어간 + -다가 ('하다' 동사 어간 + -다가 결합 시 '하다가')",
+      "examples": [
+        {
+          "translation": "저는 책을 읽다가 너무 졸려서 잠이 들었어요."
+        },
+        {
+          "translation": "그는 게임을 하다가 엄마에게 잠깐 멈추라는 말을 들었어요."
+        },
+        {
+          "translation": "친구와 이야기하다가 갑자기 벨이 울려서 대화를 중단했어요."
+        },
+        {
+          "translation": "나는 공부하다가 흥미로운 기사를 보고 읽기 시작했어요."
+        }
+      ]
+    },
+    "ko_하다못해_77": {
+      "title": "~하다못해 / ~다 못해 (한계에 도달한 극단적 상태 및 강조)",
+      "shortExplanation": "어떤 상태나 행동의 정도가 한계에 이르러 더 이상 견디거나 유지하기 힘들어 극단적이거나 부정적인 결과로 이어짐을 나타내는 표현입니다 ('~다 못해').",
+      "longExplanation": "'~다 못해'('하다'로 끝나는 용언의 경우 '~하다못해')는 연결어미 '-다'에 '못하다'의 활용형 '못해'가 결합된 구성입니다. 지루함, 피로, 한산함 등 선행 절의 상태가 극에 달해 더 이상 감당하지 못하고, 그 결과 잠이 들거나 그만두는 등 마지못한 행동이나 바람직하지 않은 결과로 귀결됨을 강조합니다. 한편 '하다못해'는 부사어로 쓰여 '가장 낮추어 잡거나 물러서서 보더라도'라는 뜻으로도 자주 활용됩니다.",
+      "formation": "동사/형용사 어간 + -다 못해 ('하다' 용언 어간 뒤에는 -하다 못해 또는 하다못해)",
+      "examples": [
+        {
+          "translation": "그의 연설은 지루하다못해 사람들이 잠들어 버렸어요."
+        },
+        {
+          "translation": "이 작은 마을은 한산하다못해 사람 하나 없이 다니다 보니 외로워요."
+        },
+        {
+          "translation": "오늘 너무 피곤하다못해 집에 도착하자마자 잠이 들었어."
+        },
+        {
+          "translation": "그녀의 음식은 맛이 없다못해 사람들이 다 먹지 못하고 남겼어요."
+        }
+      ]
+    },
+    "ko_하던_78": {
+      "title": "~하던 중에 / ~던 중에 (지속 중이던 행동의 중간 시점)",
+      "shortExplanation": "과거에 어떤 행동이 지속적으로 진행되던 중간에 다른 일이 일어났음을 나타내는 문형입니다 ('~하던 중에', '~던 중에').",
+      "longExplanation": "'~던 중에'('하다' 동사의 경우 '~하던 중에')는 과거의 미완료나 지속을 나타내는 관형사형 어미 '-던'에 의존명사 '중'과 부사격 조사 '에'가 결합한 표현입니다. 주어가 어떤 일을 한창 하고 있던 과정 속에서 또 다른 사건이나 손님이 불쑥 찾아오는 등 새로운 상황이 끼어들었음을 시간적 배경으로 제시할 때 쓰입니다.",
+      "formation": "동사 어간 + -던 중에 ('하다' 동사 어간 + -던 중에 결합 시 '하던 중에')",
+      "examples": [
+        {
+          "translation": "책을 읽던 중에 친구가 전화해서 놀러 왔어요."
+        },
+        {
+          "translation": "음악을 듣던 중에 마음에 쏙 드는 노래를 들어서 행복했습니다."
+        },
+        {
+          "translation": "드라마를 보던 중에 언니가 갑자기 집에 와서 놀랐어요."
+        },
+        {
+          "translation": "운동을 하던 중에 갑자기 비가 와서 중단하고 집에 들어갔습니다."
+        }
+      ]
+    },
+    "ko_하기는_79": {
+      "title": "~하기는 / ~기는 하다 (앞선 사실 인정 및 뒤의 상반·대조)",
+      "shortExplanation": "앞 절의 사실이나 장점을 일단 인정하면서도, 뒤 절에서 그와 상반되거나 아쉬운 점을 덧붙여 나타내는 양보 표현입니다 ('~기는 하다', '~기는 하지만').",
+      "longExplanation": "'~기는 하다'('하다' 용언의 경우 '~하기는 하다', 대조 연결 시 '~기는 하지만')는 명사형 어미 '-기'에 대조의 보조사 '-는', 보조용언 '하다'가 결합한 구조입니다. 선행하는 내용이 분명 사실임을 긍정하며 받아들이되, 후행 절에서 그와 대조되는 한계, 결점, 혹은 예상 밖의 반응을 내세워 말하고자 하는 바를 차분하게 밝힐 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + -기는 하다 / -기는 하지만 ('하다' 용언 어간 뒤에는 하기는 하다/하지만)",
+      "examples": [
+        {
+          "translation": "그 영화는 재미있기는 했지만, 너무 기대를 해서 조금 실망했어요."
+        },
+        {
+          "translation": "케이크는 맛있기는 했지만, 너무 달아서 다 먹지는 못했어요."
+        },
+        {
+          "translation": "그는 성격이 좋기는 하지만, 조금 느린 경향이 있어요."
+        },
+        {
+          "translation": "이 선물은 가치가 있기는 하지만, 제 복장과는 맞지 않아요."
+        }
+      ]
+    },
+    "ko_하기로_80": {
+      "title": "~하기로 / ~기로 하다/결정하다 (행동에 대한 결정 및 약속)",
+      "shortExplanation": "어떤 행동을 하기로 마음먹거나 여러 사람이 함께 합의하여 계획을 정했음을 나타내는 표현입니다 ('~하기로 하다', '~기로 결정하다').",
+      "longExplanation": "'~기로 하다'('하다' 동사의 경우 '~하기로 하다', 동의어로 '~기로 결정하다/약속하다')는 명사형 어미 '-기'에 귀결의 조사 '-로', 동사 '하다'가 결합한 관용 표현입니다. 화자 개인의 확고한 다짐이나 의지를 밝힐 때뿐만 아니라, 다른 사람들과 의견을 모아 구체적인 일정이나 행동 방침을 합의하고 약속했을 때 널리 쓰이며, 대개 과거형인 '-기로 했다'의 꼴로 자주 사용됩니다.",
+      "formation": "동사 어간 + -기로 하다 / -기로 결정하다 ('하다' 동사 결합 시 '하기로 하다/결정하다')",
+      "examples": [
+        {
+          "translation": "우리는 내일 오후에 만나기로 결정했어요. 우리 모두의 시간이 맞아서 복잡한 일정을 조정해야 했어요."
+        },
+        {
+          "translation": "저는 내년에 한국에 이사하기로 결정했어요, 그래서 지금 열심히 한국어를 배우고 있어요."
+        },
+        {
+          "translation": "그녀는 다음 주에 결혼하기로 결정했어요, 그래서 현재 웨딩드레스를 찾고 있어요."
+        },
+        {
+          "translation": "친구들과 함께 여름에 해변에 가기로 결정했어요, 그래서 이제부터 수영복을 사려고 합니다."
+        }
+      ]
+    },
+    "ko_하기에_81": {
+      "title": "~하기에 / ~기에 (이유 및 판단의 근거 제시)",
+      "shortExplanation": "뒤 절의 행동이나 판단, 현상이 일어나게 된 이유나 객관적 근거를 밝힐 때 쓰는 연결어미입니다 ('~하기에', '~기에').",
+      "longExplanation": "'~기에'('하다' 용언의 경우 '~하기에')는 명사형 어미 '-기'에 이유나 원인을 나타내는 조사 '-에'가 어우러진 형태입니다. 화자가 어떠한 판단을 내리거나 특정 상황이 빚어지게 된 배경 및 근거를 조리 있게 설명할 때 활용되며, 구어에서 흔히 쓰이는 '-아서/어서'나 '-(으)니까'보다 다소 격식 있고 정제된 서술 느낌을 줍니다.",
+      "formation": "동사/형용사 어간 + -기에 ('하다' 용언 어간 뒤에는 하기에)",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 좋기에 산책하기 좋은 날입니다."
+        },
+        {
+          "translation": "그가 공부를 잘하기에 항상 선생님의 칭찬을 받습니다."
+        },
+        {
+          "translation": "이 도시의 교통 상황이 복잡하기에 차를 가지고 다니는 것이 어렵습니다."
+        },
+        {
+          "translation": "그녀가 나를 싫어하기에 더 이상 그녀에게 연락하지 않습니다."
+        }
+      ]
+    },
+    "ko_하려고_82": {
+      "title": "~하려고 하다 / ~(으)려고 하다 (의도 및 계획 표현)",
+      "shortExplanation": "주어가 어떤 행동을 실행에 옮기려는 의도나 구체적인 계획, 노력을 지니고 있음을 나타내는 문형입니다 ('~하려고 하다', '~(으)려고 하다').",
+      "longExplanation": "'~(으)려고 하다'('하다' 동사의 경우 '~하려고 하다')는 의도와 목적을 나타내는 연결어미 '-(으)려고'에 보조동사 '하다'가 결합된 표현입니다. 주어가 앞으로 특정한 행동을 취하려는 의지나 계획을 서술할 때 쓰이며, 무정물이나 자연 현상과 어울릴 때는 어떤 사태가 임박했음을 나타내기도 합니다.",
+      "formation": "동사 어간 + -(으)려고 하다 (받침이 있으면 -으려고 하다, 받침이 없거나 'ㄹ' 받침이면 -려고 하다; '하다' 동사는 -하려고 하다)",
+      "examples": [
+        {
+          "translation": "저는 매일 20분씩 책을 읽으려고 해요, 그래서 독서 행위를 습관화하려고 하는 거예요."
+        },
+        {
+          "translation": "그는 좋은 일자리를 찾기 위해 잡지를 읽으려고 해요."
+        },
+        {
+          "translation": "우리는 갈등을 해결하려고 서로 대화하려고 했어요, 하지만 결과적으로는 성공하지 못했어요."
+        },
+        {
+          "translation": "언니는 동생에게 수학을 가르치려고 매일 노력하려고 했어요."
+        }
+      ]
+    },
+    "ko_할_83": {
+      "title": "~할 때마다 / ~(으)ㄹ 때마다 (조건 반복 시 항상 수반되는 결과)",
+      "shortExplanation": "어떤 시간, 조건 또는 행동이 발생할 때마다 예외 없이 일정한 일이나 감정이 되풀이됨을 나타내는 표현입니다 ('~(으)ㄹ 때마다', '~할 때마다').",
+      "longExplanation": "'~(으)ㄹ 때마다'('하다' 동사의 경우 '~할 때마다')는 관형사형 어미 '-(으)ㄹ'에 의존명사 '때', 반복을 뜻하는 보조사 '마다'가 결합된 문형입니다. 앞선 사건이나 계기가 생길 때마다 어김없이 뒤 절의 행동이나 심리가 수반됨을 강조하며, 뒤 절에는 '항상', '늘', '매번'과 같은 부사나 반복적 습관을 나타내는 '-곤 하다'가 흔히 호응합니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 때마다 (받침이 있으면 -을 때마다, 받침이 없거나 'ㄹ' 받침이면 -ㄹ 때마다; '하다' 동사는 -할 때마다); 명사 + 때마다",
+      "examples": [
+        {
+          "translation": "가을이 되면 나는 고향을 떠올리며 항상 노래를 부르곤 하였다."
+        },
+        {
+          "translation": "그는 그녀를 떠올릴 때마다 노트에 그녀에 대한 노래를 적곤 했습니다."
+        },
+        {
+          "translation": "어머니가 시험기간이 돌아올 때마다 나에게 맛있는 음식을 만들어 주셨어요."
+        },
+        {
+          "translation": "나는 매번 그녀를 볼 때마다 심장이 빠르게 뛰곤 했다."
+        }
+      ]
+    },
+    "ko_하면_84": {
+      "title": "~하면 할수록 / ~(으)면 ~(으)ㄹ수록 (정도의 비례적 심화 및 점진적 변화)",
+      "shortExplanation": "앞선 행동이나 상태의 정도가 깊어지고 더해질수록 뒤 절의 상황이나 결과도 그에 비례하여 뚜렷해짐을 강조하는 문형입니다 ('~(으)면 ~(으)ㄹ수록', '~하면 할수록').",
+      "longExplanation": "'~(으)면 ~(으)ㄹ수록'('하다' 용언의 경우 '~하면 할수록')은 조건의 연결어미 '-(으)면'에 비례 심화의 연결어미 '-(으)ㄹ수록'을 중첩하여 호응시킨 강조 구문입니다. 단순히 '-(으)ㄹ수록'만 쓸 때보다 어떤 노력이나 자연적 추이가 축적됨에 따라 뒤따르는 결과의 폭 역시 정비례하여 커짐을 훨씬 생생하게 드러냅니다.",
+      "formation": "동사/형용사 어간 + -(으)면 + 동일 어간 + -(으)ㄹ수록 (받침이 있으면 -으면 -을수록, 받침이 없거나 'ㄹ' 받침이면 -면 -ㄹ수록; '하다' 용언은 -하면 할수록)",
+      "examples": [
+        {
+          "translation": "날이 점점 따뜻하면 할수록 꽃들이 많이 피어나고 있어요."
+        },
+        {
+          "translation": "공부를 많이 하면 할수록 시험 통과 확률이 높아져요."
+        },
+        {
+          "translation": "운동을 많이 하면 할수록 건강해지는 것이 느껴져요."
+        },
+        {
+          "translation": "요리 연습을 하면 할수록 실력이 향상되어요."
+        }
+      ]
+    },
+    "ko_하면서_85": {
+      "title": "~하면서 / ~(으)면서 (동일 주체의 두 동작 동시 진행)",
+      "shortExplanation": "동일한 주어가 두 가지 이상의 동작을 한 시간대 안에서 나란히 함께 행함을 나타내는 연결어미입니다 ('~(으)면서', '~하면서').",
+      "longExplanation": "'~(으)면서'('하다' 동사의 경우 '~하면서')는 동시성을 나타내는 연결어미로, 앞 절과 뒤 절의 주어가 동일해야 합니다. 주어가 한쪽 행동을 취하는 동시에 다른 행동을 병행하는 상황을 나타내며, 때로는 두 가지 상태가 공존함을 드러내거나 앞뒤 사실이 어긋남을 꼬집는 역접의 문맥으로도 확장됩니다.",
+      "formation": "동사/형용사 어간 + -(으)면서 (받침이 있으면 -으면서, 받침이 없거나 'ㄹ' 받침이면 -면서; '하다' 동사는 -하면서)",
+      "examples": [
+        {
+          "translation": "안경을 쓰면서 책을 읽었어요, 그래서 아주 편하게 읽을 수 있었어요."
+        },
+        {
+          "translation": "음악을 들으면서 숙제를 했어요, 그래서 지루하지 않았어요."
+        },
+        {
+          "translation": "카페에서 커피를 마시면서 일했어요, 그래서 아주 차분하게 집중할 수 있었어요."
+        },
+        {
+          "translation": "운전을 하면서 노래 부르는 것이 아주 좋아요, 그래서 운전이 지루하지 않아요."
+        }
+      ]
+    },
+    "ko_하시겠습니까_86": {
+      "title": "~하시겠습니까? / ~(으)시겠습니까? (정중한 의향 질문 및 요청)",
+      "shortExplanation": "상대방의 의향이나 계획을 최고조로 예우하여 조심스럽게 묻거나 정중하게 행동을 요청할 때 쓰는 격식체 의문형 어미입니다 ('~(으)시겠습니까?', '~하시겠습니까?').",
+      "longExplanation": "'~(으)시겠습니까?'('하다' 동사의 경우 '~하시겠습니까?')는 주체 높임 선어말어미 '-(으)시-'와 완곡한 의도·의향을 타진하는 선어말어미 '-겠-', 그리고 하십시오체의 의문형 종결어미 '-습니까'가 결합된 정중한 표현입니다. 공적인 회의, 비즈니스 교섭, 고객 응대 등 격식을 엄격히 갖추어야 하는 자리에서 상대방의 결정을 존중하며 권유하거나 요청할 때 널리 쓰입니다.",
+      "formation": "동사 어간 + -(으)시겠습니까? (받침이 있으면 -으시겠습니까?, 받침이 없으면 -시겠습니까?; '하다' 동사는 -하시겠습니까?)",
+      "examples": [
+        {
+          "translation": "저녁식사를 함께 하시겠습니까?"
+        },
+        {
+          "translation": "이 문서를 검토해 주시겠습니까?"
+        },
+        {
+          "translation": "이 콘퍼런스에 참석하시겠습니까?"
+        },
+        {
+          "translation": "제안을 고려해 주시겠습니까?"
+        }
+      ]
+    },
+    "ko_하자_87": {
+      "title": "~하자 / ~자마자 (청유형 종결어미 및 직후 연결어미)",
+      "shortExplanation": "1. 친근한 사이에 함께 행동할 것을 제안하는 청유형 종결어미 ('~자'); 2. 어떤 행동이 끝나자마자 다음 행동이 즉각 이어짐을 나타내는 연결어미 ('~자마자')의 두 가지 용법을 지닙니다.",
+      "longExplanation": "'~하자'(일반 동사 뒤 '-자' 또는 연결형 '-자마자')는 한국어에서 크게 두 가지 중요한 기능을 수행합니다. 1) 문장의 끝에 놓일 때는 반말 체계의 청유형 종결어미 '-자'로 기능하여 친구나 아랫사람에게 '함께 어떤 행동을 하자'고 가볍고 정답게 권유할 때 쓰입니다. 2) 문장 중간에서 두 절을 이어줄 때는 '-자마자'(또는 서면어의 '-자')의 연결어미로서, 앞선 동작이 완결된 바로 그 찰나에 지체 없이 다음 동작이나 사태가 잇따라 발생함을 나타냅니다.",
+      "formation": "1. 청유형: 동사 어간 + -자 ('하다' 동사 결합 시 -하자); 2. 즉시 연결형: 동사 어간 + -자마자 (또는 -자)",
+      "examples": [
+        {
+          "translation": "날씨가 정말 좋으니까, 우리 나가서 산책하자."
+        },
+        {
+          "translation": "저녁 먹자마자 친구에게 전화해야겠어요."
+        },
+        {
+          "translation": "시험이 끝나자마자 여행 가고 싶어요."
+        },
+        {
+          "translation": "이 영화를 보자, 후회하지 않을 거야."
+        }
+      ]
+    },
+    "ko_하여_88": {
+      "title": "~하여 / ~해서 (서면어 연결어미 및 이유·원인 표현)",
+      "shortExplanation": "이유나 원인, 또는 행동의 연결을 나타낼 때 쓰는 연결 표현으로, '하다' 용언 어간에 어미 '-여(서)'가 결합한 격식 있는 서면어 형태입니다 ('~하여', '~해서').",
+      "longExplanation": "'~하여'(구어형은 '~해서', 온전한 형태는 '~하여서')는 '하다'로 끝나는 동사나 형용사 어간에 연결어미 '-아/어/여(서)'가 결합한 문어적 표현입니다. 신문 기사, 논문, 공적 연설이나 서류 등 정중하고 격식 있는 글에서 앞선 사태가 뒤 절의 원인이나 계기가 됨을 조리 있게 밝힐 때 주로 쓰이며, 구어의 '-해서'에 비해 문장을 훨씬 단정하고 품격 있게 다듬어 주는 효과가 있습니다.",
+      "formation": "'하다' 동사/형용사 어간 + -여 결합 시 하여 (완전형은 하여서, 구어 축약형은 해서)",
+      "examples": [
+        {
+          "translation": "저는 늦게 일어나서 학교에 늦게 도착했어요."
+        },
+        {
+          "translation": "그녀는 너무 피곤하여 더 이상 일어날 수 없었어요."
+        },
+        {
+          "translation": "회사에서 일하느라 너무 바빴기에, 친구들과의 약속을 취소해야 했어요."
+        },
+        {
+          "translation": "날씨가 너무 추워서, 외출을 하지 않고 집에 있었어요."
+        }
+      ]
+    }
+  }
+}

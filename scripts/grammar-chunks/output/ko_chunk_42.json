@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_할_104": {
+      "title": "~(으)ㄹ 리가 없다 (Không có lý nào..., làm sao mà... được - Phủ định khả năng, hoài nghi tuyệt đối)",
+      "shortExplanation": "Dùng để biểu thị sự phủ định dứt khoát hoặc bác bỏ một khả năng, cho rằng một sự việc hay hành động nào đó tuyệt đối không thể xảy ra ('không có lý nào...', 'làm sao mà... được').",
+      "longExplanation": "'~(으)ㄹ 리가 없다' là cấu trúc biểu hiện phủ định mạnh mẽ trong tiếng Hàn, được kết hợp giữa vĩ tố định từ tương lai '-(으)ㄹ', danh từ phụ thuộc '리' (lý lẽ, căn cứ, khả năng) và tính từ phủ định '없다' (không có). Cấu trúc này dùng để diễn đạt sự hoài nghi sâu sắc hoặc khẳng định chắc nịch của người nói rằng hoàn toàn không có lý do, căn cứ hay xác suất nào để một sự việc xảy ra. Khi muốn diễn tả việc trong quá khứ không thể xảy ra, ta dùng hình thức '-았/었을 리가 없다'. Ngược lại, dạng nghi vấn '-(으)ㄹ 리가 있겠어요?' (Có lý nào lại như thế được?) mang tính chất câu hỏi tu từ để nhấn mạnh sự bất khả thi.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 리가 없다 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 리가 없다; kết thúc bằng phụ âm khác dùng -을 리가 없다; quá khứ dùng -았/었을 리가 없다)",
+      "examples": [
+        {
+          "translation": "Không có lý nào anh ấy lại nói dối, vì anh ấy là một người rất trung thực."
+        },
+        {
+          "translation": "Bây giờ trời tối thế này không có lý nào tôi lại đi ra ngoài, vì rất nguy hiểm."
+        },
+        {
+          "translation": "Không có lý nào có thể tự mình cáng đáng việc lớn như thế, nếu không có ai giúp đỡ thì chẳng có chút khả năng nào."
+        },
+        {
+          "translation": "Không có lý nào cô ấy lại ghét tôi, vì chúng tôi là những người bạn thân thiết nhất mà."
+        }
+      ]
+    },
+    "ko_할_105": {
+      "title": "~(으)ㄹ 때마다 (Mỗi khi, mỗi lần, cứ hễ... thì lại - Tính lặp lại đều đặn)",
+      "shortExplanation": "Dùng để diễn tả một hành động hay trạng thái luôn diễn ra lặp đi lặp lại mỗi khi một tình huống hay điều kiện nhất định xuất hiện ('mỗi khi...', 'cứ mỗi lần...').",
+      "longExplanation": "'~(으)ㄹ 때마다' là cấu trúc liên kết biểu thị tính chu kỳ hoặc sự lặp lại tất yếu của một sự việc. Cấu trúc được tạo thành từ vĩ tố định từ tương lai '-(으)ㄹ', danh từ phụ thuộc '때' (lúc, khi) và trợ từ bổ trợ '마다' (mỗi, mọi). Nó nhấn mạnh rằng cứ hễ hoàn cảnh ở mệnh đề trước xảy ra thì hành động hoặc trạng thái ở mệnh đề sau cũng sẽ lặp lại tương ứng mà hầu như không có ngoại lệ. Khi đi cùng danh từ chỉ thời gian hoặc sự kiện, có thể gắn trực tiếp '마다' hoặc '때마다' (ví dụ: 방학 때마다 - mỗi kỳ nghỉ).",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 때마다 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 때마다; kết thúc bằng phụ âm khác dùng -을 때마다; danh từ dùng 때마다)",
+      "examples": [
+        {
+          "translation": "Mỗi lần đọc sách tôi lại tiếp thu thêm được kiến thức mới, vì thế tôi rất thích đọc nhiều sách."
+        },
+        {
+          "translation": "Cứ mỗi lần luyện tập là anh ấy lại đạt được thành quả tốt hơn, anh ấy lúc nào cũng nỗ lực hết mình."
+        },
+        {
+          "translation": "Mỗi lần gặp bạn trai (anh ấy), chúng tôi lại đi xem phim lãng mạn, vì thế chúng tôi lúc nào cũng thấy hạnh phúc."
+        },
+        {
+          "translation": "Mỗi lần chơi bóng đá chúng tôi lại có thật nhiều niềm vui bên bạn bè, chúng tôi thực sự rất mê bóng đá."
+        }
+      ]
+    },
+    "ko_할_106": {
+      "title": "~(으)ㄹ 힘이 없다 (Không còn sức lực/sức lực để... - Kiệt sức, mệt mỏi)",
+      "shortExplanation": "Dùng để biểu thị rằng chủ ngữ đã hoàn toàn cạn kiệt thể lực hoặc tinh thần, không còn chút sức lực nào để thực hiện một hành động cụ thể ('không còn sức để...').",
+      "longExplanation": "'~(으)ㄹ 힘이 없다' là quán ngữ biểu thị tình trạng kiệt quệ về thể chất hoặc tinh thần. Cấu trúc được tạo thành bởi vĩ tố định từ '-(으)ㄹ', danh từ '힘' (sức mạnh, sức lực, thể lực) và tính từ '없다' (không có). Người nói sử dụng cấu trúc này nhằm than phiền hoặc giải thích lý do không thể tiếp tục làm một việc gì đó do lao lực, thiếu ngủ, bệnh tật hoặc áp lực kéo dài. Ngoài '없다', cũng có thể kết hợp với các từ phủ định khác như '남아 있지 않다' (không còn sót lại chút sức nào).",
+      "formation": "Thân động từ + -(으)ㄹ 힘이 없다 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 힘이 없다; kết thúc bằng phụ âm khác dùng -을 힘이 없다)",
+      "examples": [
+        {
+          "translation": "Công việc nhiều quá nên tôi chẳng còn chút sức lực nào để làm thêm nữa. Tôi nghĩ mỗi ngày mình phải nghỉ ngơi ít nhất 8 tiếng mới được."
+        },
+        {
+          "translation": "Đêm qua tôi hầu như không chợp mắt được chút nào nên hôm nay không còn sức đâu mà làm việc tiếp."
+        },
+        {
+          "translation": "Suốt một tuần tôi tập thể dục không bỏ sót ngày nào nên giờ khắp người đau nhức, chẳng còn sức để tập luyện nữa."
+        },
+        {
+          "translation": "Cả tuần này tôi đã dồn sức ôn thi quá vất vả nên bây giờ không còn chút sức lực nào để học thêm được nữa."
+        }
+      ]
+    },
+    "ko_할_107": {
+      "title": "~(으)ㄹ 것 같다 (Có vẻ như sẽ..., dường như... - Dự đoán, phỏng đoán tương lai)",
+      "shortExplanation": "Dùng để diễn đạt sự phỏng đoán, dự tính hoặc cảm nhận của người nói về một sự việc sắp xảy ra trong tương lai hoặc một trạng thái chưa chắc chắn ('có vẻ như...', 'chắc là...').",
+      "longExplanation": "'~(으)ㄹ 것 같다' là một trong những cấu trúc phỏng đoán căn bản và thông dụng bậc nhất trong tiếng Hàn. Cấu trúc được kết hợp từ vĩ tố định từ tương lai '-(으)ㄹ', danh từ phụ thuộc '것' (điều, sự việc) và tính từ '같다' (giống như, dường như). Nó thể hiện nhận định chủ quan, trực giác hoặc ước tính của người nói dựa trên các dấu hiệu quan sát được ở hiện tại mà không mang tính khẳng định tuyệt đối. Khi nói về hiện tại, động từ dùng '-는 것 같다', tính từ dùng '-(으)ㄴ 것 같다'; còn với việc quá khứ dùng '-(으)ㄴ 것 같다'.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 것 같다 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 것 같다; kết thúc bằng phụ âm khác dùng -을 것 같다)",
+      "examples": [
+        {
+          "translation": "Hôm nay trời có vẻ sắp mưa đấy, trên bầu trời mây đen đã kéo đến kín mít rồi."
+        },
+        {
+          "translation": "Có vẻ như cô ấy thích cậu đấy, thấy cô ấy lúc nào cũng mỉm cười với cậu kìa."
+        },
+        {
+          "translation": "Bài thi ngày mai chắc là sẽ khó lắm, vì phạm vi ra đề rộng quá."
+        },
+        {
+          "translation": "Tôi nghĩ dự án lần này chắc sẽ thành công thôi, vì mọi người đều đang chuẩn bị hết sức tận tụy."
+        }
+      ]
+    },
+    "ko_할_108": {
+      "title": "~(으)ㄹ 것이다 (Sẽ..., chắc chắn sẽ... - Biểu thị tương lai hoặc ý chí kiên định)",
+      "shortExplanation": "Dùng để biểu thị thì tương lai, kế hoạch đã định sẵn, ý chí quyết tâm của người nói hoặc sự phỏng đoán chắc chắn về một sự việc ('sẽ...').",
+      "longExplanation": "'~(으)ㄹ 것이다' là hình thái chỉ thì tương lai cơ bản và mang tính quy chuẩn trong ngữ pháp tiếng Hàn. Nó biểu đạt sự việc sẽ phát sinh trong tương lai, hoặc bày tỏ ý định, lời hứa hẹn của chủ ngữ ngôi thứ nhất ('tôi sẽ...'), cũng như phỏng đoán với độ chắc chắn tương đối cao của người nói đối với sự việc của ngôi thứ ba. Trong văn phong giao tiếp trang trọng hay thân mật hằng ngày, dạng đuôi câu này thường được nói gọn thành '-(으)ㄹ 거예요' hoặc '-(으)ㄹ 겁니다'. Trong văn viết học thuật hoặc báo chí, hình thức nguyên bản '-(으)ㄹ 것이다' được sử dụng phổ biến.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 것이다 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 것이다; kết thúc bằng phụ âm khác dùng -을 것이다; đuôi thân mật rút gọn thành -(으)ㄹ 거예요 / -(으)ㄹ 겁니다)",
+      "examples": [
+        {
+          "translation": "Nếu tuyết cứ tiếp tục rơi thế này thì ngày mai trường học chắc chắn sẽ đóng cửa."
+        },
+        {
+          "translation": "Vì đại hội thể thao đang đến gần nên chúng tôi sẽ luyện tập chăm chỉ hơn nữa."
+        },
+        {
+          "translation": "Điểm số học kỳ này chắc chắn sẽ tốt hơn so với học kỳ trước."
+        },
+        {
+          "translation": "Đêm nay chắc hẳn bầu trời sẽ nhìn thấy rất nhiều ngôi sao."
+        }
+      ]
+    },
+    "ko_할_109": {
+      "title": "~(으)ㄹ 줄 알다 (Biết làm..., biết cách... - Năng lực và kỹ năng)",
+      "shortExplanation": "Dùng để diễn tả người nói hoặc chủ ngữ có năng lực, kỹ năng hoặc biết phương pháp để thực hiện một hành động cụ thể ('biết làm...', 'biết cách...').",
+      "longExplanation": "'~(으)ㄹ 줄 알다' là cấu trúc biểu thị năng lực hoặc tri thức thực hành. Nó kết hợp vĩ tố định từ '-(으)ㄹ', danh từ phụ thuộc '줄' (phương pháp, đường lối, cách thức) và động từ '알다' (biết). Cấu trúc này dùng để khẳng định chủ ngữ đã học hỏi hoặc sở hữu khả năng thực thi một công việc hay kỹ năng nào đó (như bơi lội, nấu ăn, lái xe, ngoại ngữ). Dạng phủ định tương ứng là '-(으)ㄹ 줄 모르다' (không biết làm). Cần lưu ý, trong ngữ cảnh khác, cấu trúc này còn mang ý nghĩa phỏng đoán sai lệch ('ngỡ rằng, tưởng rằng...').",
+      "formation": "Thân động từ + -(으)ㄹ 줄 알다 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 줄 알다; kết thúc bằng phụ âm khác dùng -을 줄 알다; dạng phủ định dùng -(으)ㄹ 줄 모르다)",
+      "examples": [
+        {
+          "translation": "Bạn hỏi tôi nói tiếng Hàn giỏi cỡ nào ư? Ừm, tôi biết giao tiếp những câu hội thoại cơ bản nhất."
+        },
+        {
+          "translation": "Con của chúng tôi biết đánh đàn piano, nên lúc nào cháu đàn cho nghe cũng là lúc tôi cảm thấy hạnh phúc nhất."
+        },
+        {
+          "translation": "Sao cậu lại biết nấu ăn khéo thế? Bữa cơm thực sự rất là ngon miệng."
+        },
+        {
+          "translation": "Tôi biết lập trình máy tính, vì thế tôi có thể giải quyết được nhiều bài toán khác nhau."
+        }
+      ]
+    },
+    "ko_할지라도_110": {
+      "title": "~(으)ㄹ지라도 (Dù cho, dẫu có... đi chăng nữa - Giả định nhượng bộ mạnh mẽ)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả sự nhượng bộ giả định, cho thấy dù điều kiện ở vế trước có xảy ra hay ở mức độ thế nào thì sự thật, quyết tâm ở vế sau vẫn không thay đổi ('dù cho...', 'dẫu rằng...').",
+      "longExplanation": "'~(으)ㄹ지라도' là vĩ tố liên kết mang tính văn viết và trang trọng, biểu thị sự nhượng bộ mạnh mẽ hơn hẳn so với '-아/어도' hay '-(으)ㄹ망정'. Nó đặt ra một giả định giả thuyết mang tính cực đoan hoặc thử thách ở mệnh đề trước ('cho dù có khó khăn/bận rộn đến đâu'), nhưng khẳng định dứt khoát rằng mệnh đề sau vẫn giữ nguyên bản chất, nghĩa vụ hoặc hành động không hề lay chuyển. Cấu trúc này thường đi kèm với các phó từ nhấn mạnh như '비록' (dẫu cho), '아무리' (cho dù thế nào chăng nữa), '설령' (giả sử như).",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ지라도 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ지라도; kết thúc bằng phụ âm khác dùng -을지라도; danh từ dùng -(이)ㄹ지라도; quá khứ dùng -았/었을지라도)",
+      "examples": [
+        {
+          "translation": "Dù có bận rộn đến mức không có thời gian đi chăng nữa, việc tập thể dục mỗi ngày vẫn là điều vô cùng quan trọng."
+        },
+        {
+          "translation": "Cho dù mùi vị có ngon đến mấy đi nữa, ta vẫn phải kiên quyết tránh xa những món ăn gây hại cho sức khỏe."
+        },
+        {
+          "translation": "Dù có khó khăn đến đâu, nếu bền bỉ luyện tập thì cuối cùng nhất định bạn cũng sẽ thành công."
+        },
+        {
+          "translation": "Dẫu cho ngoài trời đang mưa, hôm nay tôi vẫn dự định ra ngoài theo đúng kế hoạch."
+        }
+      ]
+    },
+    "ko_할지언정_111": {
+      "title": "~(으)ㄹ지언정 (Dù có... đi nữa, thà... chứ quyết không - Nhượng bộ kiên quyết)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị rằng dẫu cho phải chấp nhận tình huống bất lợi ở vế trước, người nói vẫn giữ vững lập trường, quyết định hoặc thà chọn vế trước chứ không chịu khuất phục ở vế sau ('thà... chứ không', 'dù cho...').",
+      "longExplanation": "'~(으)ㄹ지언정' là vĩ tố liên kết mang sắc thái cổ kính, trang trọng và đầy khí phách. Nó dùng để khẳng định ý chí kiên định hoặc đạo lý của người nói: dẫu phía trước có là một trở ngại to lớn hay một tình thế ngặt nghèo ('dù có chết, dù có thất bại'), hành vi và quyết tâm ở vế sau vẫn trước sau như một, hoặc thà cam chịu vế trước còn hơn làm điều trái với lương tâm ở vế sau. Cấu trúc này cũng rất hay kết hợp với hình thức dẫn lời gián tiếp '-다 할지언정' (dù cho có bị cho là/dù sự việc có là... đi nữa).",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ지언정 (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㄹ지언정; kết thúc bằng phụ âm khác dùng -을지언정; thường kết hợp thành -다 할지언정)",
+      "examples": [
+        {
+          "translation": "Dù bài toán có khó đến mấy đi chăng nữa, tôi cũng sẽ kiên trì giải cho bằng được đến cùng."
+        },
+        {
+          "translation": "Dù cho cô ấy có chán ghét tôi đi nữa, tôi vẫn sẽ tiếp tục một lòng yêu thương cô ấy."
+        },
+        {
+          "translation": "Dù thời tiết có giá rét đến đâu, chúng ta vẫn phải tiếp bước không được dừng lại."
+        },
+        {
+          "translation": "Dù kỳ thi có cam go đến mức nào đi nữa, tôi vẫn nhất định phải kiên trì học tiếp."
+        }
+      ]
+    },
+    "ko_함에_112": {
+      "title": "~(으)ㅁ에 있어(서) (Trong việc, khi tiến hành, về phương diện - Bối cảnh và phạm vi hành động)",
+      "shortExplanation": "Cấu trúc dùng trong văn phong trang trọng hoặc văn viết để nêu lên bối cảnh, phạm vi hoặc tiêu chuẩn tiền đề khi thực hiện một hành động nào đó ('trong việc...', 'khi tiến hành...').",
+      "longExplanation": "'~(으)ㅁ에 있어(서)' là cấu trúc trang trọng kết hợp vĩ tố danh từ hóa '-(으)ㅁ', trợ từ vị trí '에' và động từ '있어(서)' (có/trong trạng thái). Cấu trúc này thường thấy trong nghị luận, báo chí, diễn thuyết, hợp đồng hoặc văn bản học thuật để xác lập phạm vi, lĩnh vực hay điều kiện then chốt của một hành vi. Mệnh đề sau thường đưa ra nhận định, nguyên tắc, nghĩa vụ hoặc lời khuyên mang tính bao quát (ví dụ: 'yếu tố cốt lõi trong việc...', 'khi đưa ra quyết định...').",
+      "formation": "Thân động từ/tính từ + -(으)ㅁ에 있어(서) (thân kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -ㅁ에 있어; kết thúc bằng phụ âm khác dùng -음에 있어)",
+      "examples": [
+        {
+          "translation": "Trong việc sản xuất lương thực hiện nay vẫn còn tồn tại nhiều bất cập, do đó chúng ta cần phải nhận thức rõ tính cấp thiết của sự đổi mới."
+        },
+        {
+          "translation": "Trong tình yêu, tôi nghĩ rằng sự thẳng thắn chân thành chính là một trong những yếu tố trọng yếu nhất."
+        },
+        {
+          "translation": "Trong việc bảo vệ môi trường, nỗ lực nhỏ bé của từng cá nhân sẽ đem lại những thay đổi to lớn."
+        },
+        {
+          "translation": "Xét về phương diện phát huy tinh thần đồng đội, cô ấy chính là nhân tố quan trọng nhất trong nhóm chúng tôi."
+        }
+      ]
+    },
+    "ko_해_113": {
+      "title": "~아/어 보이다 (Trông có vẻ, nhìn dường như - Đánh giá qua cảm quan thị giác)",
+      "shortExplanation": "Dùng để diễn tả nhận định, cảm nhận của người nói về trạng thái, tính chất hoặc tâm trạng của đối tượng dựa trên vẻ bề ngoài quan sát được ('trông có vẻ...', 'nhìn dường như...').",
+      "longExplanation": "'~아/어 보이다' là cấu trúc bổ trợ kết hợp thân tính từ với vĩ tố liên kết '-아/어' và động từ '보이다' (nhìn thấy, trông như). Cấu trúc này dùng để miêu tả phán đoán trực quan của người nói về trạng thái bên ngoài của một đối tượng (người, vật, sự việc). Cần lưu ý rằng cấu trúc này chủ yếu kết hợp với tính từ, biến tính từ thành dạng động từ vị ngữ miêu tả ấn tượng bề ngoài (như '피곤해 보이다' - trông có vẻ mệt, '행복해 보이다' - trông có vẻ hạnh phúc).",
+      "formation": "Thân tính từ + -아/어 보이다 (kết thúc bằng nguyên âm ㅏ, ㅗ dùng -아 보이다; các nguyên âm khác dùng -어 보이다; 하다 biến thành 해 보이다)",
+      "examples": [
+        {
+          "translation": "Người phụ nữ ấy trông thực sự rất hạnh phúc, cô ấy lúc nào cũng chào hỏi mọi người với nụ cười rạng rỡ."
+        },
+        {
+          "translation": "Món ăn này trông ngon mắt quá nên tôi đã gọi món ngay lập tức."
+        },
+        {
+          "translation": "Nhìn nét mặt của anh ấy thì trông như thể vừa xảy ra chuyện gì đau buồn lắm vậy."
+        },
+        {
+          "translation": "Khu công viên rợp bóng hoa anh đào nở rộ này trông thật đẹp đẽ biết bao."
+        }
+      ]
+    },
+    "ko_게다가_0": {
+      "title": "게다가 (Hơn nữa, thêm vào đó, lại còn - Bổ sung thông tin cùng chiều)",
+      "shortExplanation": "Phó từ liên kết đứng đầu câu hoặc đầu mệnh đề để bổ sung thêm một thông tin, tình tiết khác cùng chiều hướng tích cực hoặc tiêu cực ('hơn nữa', 'thêm vào đó').",
+      "longExplanation": "'게다가' là phó từ liên kết cực kỳ phổ biến trong tiếng Hàn, bắt nguồn từ danh từ phụ thuộc '데' (chỗ, việc) kết hợp trợ từ '다가'. Nó dùng để đặt nối giữa hai mệnh đề hoặc hai câu, nhằm đưa ra thêm một lý do, sự kiện hoặc đặc điểm bổ trợ nhằm tăng cường tính thuyết phục cho vế trước. Điểm ngữ pháp tương ứng trong mệnh đề ghép là cấu trúc vĩ tố định từ '-(으)ㄴ/는 데다가'. Thông tin ở vế sau '게다가' phải cùng tính chất (cùng khen ngợi hoặc cùng chê bai/than phiền) với vế trước.",
+      "formation": "Mệnh đề 1 + -고, 게다가 + Mệnh đề 2 (hoặc tương đương cấu trúc: Thân động từ/tính từ + -(으)ㄴ/는 데다가)",
+      "examples": [
+        {
+          "translation": "Quán cà phê đó cà phê pha rất ngon, hơn nữa không gian lại đẹp nên tôi thường xuyên ghé qua."
+        },
+        {
+          "translation": "Hôm nay trời vừa mưa, hơn nữa lại còn giá rét nên tôi chẳng muốn bước chân ra ngoài chút nào."
+        },
+        {
+          "translation": "Anh ấy tính tình rất hòa nhã, thêm vào đó lại thông minh nên mọi người ai cũng quý mến."
+        },
+        {
+          "translation": "Nhà hàng này đồ ăn ngon, lại thêm giá cả phải chăng nên tôi hay ghé tới dùng bữa."
+        }
+      ]
+    },
+    "ko_거니와_1": {
+      "title": "~거니와 (Không những... mà còn, vả lại còn - Thừa nhận và bổ sung trong văn viết)",
+      "shortExplanation": "Vĩ tố liên kết trang trọng dùng để vừa công nhận sự thật ở mệnh đề trước, vừa bổ sung thêm một sự thật hay lý do quan trọng khác ở mệnh đề sau ('không những... mà còn').",
+      "longExplanation": "'~거니와' là vĩ tố liên kết mang tính văn phong tao nhã, nghi thức và chuẩn mực văn viết. Nó biểu thị ý nghĩa đồng tình hoặc công nhận điều đã nêu ở vế trước là hiển nhiên, đồng thời bổ sung thêm một nội dung tương đồng hoặc có mức độ nhấn mạnh hơn ở vế sau. Trong tiếng Việt, cấu trúc này tương đương với 'đã đành... vả lại còn...', 'không những... mà còn...'. Cấu trúc này có thể kết hợp với thì quá khứ '-았/었거니와' và trợ từ tân ngữ '-도' ở vế sau để tăng cường mối tương quan.",
+      "formation": "Thân động từ/tính từ + -거니와 (gắn trực tiếp không phụ thuộc phụ âm cuối; quá khứ dùng -았/었거니와; danh từ dùng -(이)거니와)",
+      "examples": [
+        {
+          "translation": "Món đồ này vừa đắt đỏ, vả lại cũng chẳng phải kiểu dáng mà tôi mong muốn."
+        },
+        {
+          "translation": "Tôi không chỉ thích đọc sách mà phim ảnh cũng rất mê, thế nên cuối tuần nào cũng bận rộn."
+        },
+        {
+          "translation": "Sản phẩm này chất lượng đã kém cỏi, vả lại khâu dịch vụ khách hàng cũng hoàn toàn tệ hại."
+        },
+        {
+          "translation": "Bộ phim ấy không những hấp dẫn lôi cuốn mà còn mang lại cảm xúc rung động sâu sắc."
+        }
+      ]
+    },
+    "ko_것만은_2": {
+      "title": "~(으)ㄴ/는 것만은 (Chỉ riêng việc... thì, duy nhất điều... là - Nhấn mạnh ngoại lệ đối lập)",
+      "shortExplanation": "Cấu trúc nhấn mạnh rằng mặc dù các mặt khác có thể thế nào đi nữa, nhưng chỉ riêng khía cạnh hay sự việc này thì hoàn toàn là một ngoại lệ không như mong đợi ('chỉ riêng điều... thì').",
+      "longExplanation": "'~(으)ㄴ/는 것만은' là cấu trúc biểu hiện sự đối lập và nhấn mạnh đặc thù, cấu thành từ vĩ tố định từ '-(으)ㄴ/는', danh từ phụ thuộc '것', trợ từ chỉ phạm vi '만' (chỉ) và trợ từ đối chiếu '은/는'. Nó thường xuất hiện trong ngữ cảnh tương phản: khi mọi nỗ lực hoặc điều kiện khác đều thuận lợi, nhưng duy chỉ có một sự kiện hay kết quả cụ thể này là đi ngược lại kỳ vọng, khiến người nói cảm thấy khó hiểu, tiếc nuối hoặc thất vọng sâu sắc.",
+      "formation": "Động từ + -는 것만은 (hiện tại) / -(으)ㄴ 것만은 (quá khứ); Tính từ + -(으)ㄴ 것만은",
+      "examples": [
+        {
+          "translation": "Cô ấy đã học hành chăm chỉ, riêng việc điểm số ở trường lại không tốt thì tôi quả thật không tài nào hiểu nổi."
+        },
+        {
+          "translation": "Tối qua tôi đã ngủ rất nhiều, nhưng việc đến giờ người vẫn mệt mỏi rã rời thì thật khó giải thích."
+        },
+        {
+          "translation": "Đội chúng tôi đã nỗ lực hết mình, chỉ riêng việc để thua trong trận đấu là quá đỗi đáng tiếc."
+        },
+        {
+          "translation": "Ngày nào tôi cũng tập thể dục đều đặn, duy chỉ việc cân nặng lại tăng lên là làm tôi thất vọng tràn trề."
+        }
+      ]
+    },
+    "ko_과와_3": {
+      "title": "~과/와 같이 (Như, giống như, cũng như - So sánh tương đồng và ví von)",
+      "shortExplanation": "Trợ từ so sánh dùng để đối chiếu một đối tượng với sự vật, hiện tượng làm chuẩn mực nhằm chỉ ra sự giống nhau hay mức độ tương đương ('giống như...', 'như...').",
+      "longExplanation": "'~과/와 같이' là cấu trúc so sánh chuẩn mực trong tiếng Hàn, được kết hợp giữa trợ từ liên kết/so sánh '과/와' (với) và phó từ '같이' (cùng, giống như). Nó mang ý nghĩa ví von hoặc so sánh tương đồng, giúp làm nổi bật đặc trưng của chủ ngữ bằng cách đối chiếu với một đối tượng quen thuộc hay hình mẫu điển hình. Ngoài ra, trong văn phong diễn thuyết trang trọng, cụm từ này còn mang ý nghĩa dẫn chiếu như 'như đã nêu trên' (위와 같이).",
+      "formation": "Danh từ + 과/와 같이 (danh từ có phụ âm cuối dùng 과 같이; không có phụ âm cuối dùng 와 같이)",
+      "examples": [
+        {
+          "translation": "Cuối tuần trước trời ấm áp như mùa xuân vậy. Thế nhưng cuối tuần này lại rét buốt y như giữa mùa đông."
+        },
+        {
+          "translation": "Bức tranh đó trông sống động hệt như một bức ảnh chụp, qua đó có thể thấy được ông ấy là một họa sĩ tài năng xuất chúng."
+        },
+        {
+          "translation": "Hôm nay trời oi bức chẳng khác nào ngày hè, vì thế tôi đã đi ăn kem."
+        },
+        {
+          "translation": "Đọc sách cũng tương tự như rèn luyện thể dục, là một hoạt động nuôi dưỡng tâm hồn luôn khỏe mạnh."
+        }
+      ]
+    },
+    "ko_나마저_4": {
+      "title": "~(이)나마저 / ~마저 (Đến cả, ngay cả... cũng - Đối tượng cuối cùng bị cuốn vào)",
+      "shortExplanation": "Trợ từ bổ trợ dùng để nhấn mạnh rằng ngay cả đối tượng cuối cùng còn lại, hoặc đối tượng vốn ít có khả năng xảy ra nhất, cũng bị cuốn vào tình huống bất lợi ('đến cả... cũng', 'ngay cả... mà cũng').",
+      "longExplanation": "'~(이)나마저' (hay dạng chuẩn phổ biến nhất là trợ từ '~마저') là trợ từ bổ trợ đặc biệt trong tiếng Hàn. Nó thể hiện rằng không những các đối tượng khác đã như vậy, mà ngay đến hy vọng mong manh cuối cùng, người thân cận nhất hoặc vật phẩm sót lại sau cùng cũng không ngoại lệ. Cấu trúc này hầu như luôn gắn liền với tâm lý thất vọng, đau lòng, bất ngờ hoặc bất lực trước một hoàn cảnh tiêu cực không mong muốn.",
+      "formation": "Danh từ + (이)나마저 (danh từ có phụ âm cuối dùng -이나마저; không có phụ âm cuối dùng -나마저; dạng căn bản phổ biến nhất là ~마저)",
+      "examples": [
+        {
+          "translation": "Cô ấy ngay cả những môn học khó nhất trường cũng hiểu được một cách dễ dàng, thấy cô ấy nắm bắt trọn vẹn đến cả môn này nữa thì quả thực cô ấy quá xuất sắc."
+        },
+        {
+          "translation": "Bình thường tôi rất hòa đồng với bạn bè, vậy mà đến cả người bạn thân đó dường như cũng ghét bỏ tôi nên tôi rất tổn thương."
+        },
+        {
+          "translation": "Tất cả mọi người đều phản đối, nhưng anh ấy hiểu tầm quan trọng của việc có dù chỉ một người ủng hộ. Vậy mà khi đến cả người đó cũng phản đối thì tâm trạng anh ấy vô cùng tồi tệ."
+        },
+        {
+          "translation": "Tôi đã lật tung mọi thứ trên bàn lên xem rồi, thế nhưng ngay cả món đồ quan trọng đó tôi cũng chẳng thể tìm ra."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_할_104": {
+      "title": "~(으)ㄹ 리가 없다（绝不可能、毫无道理、没有可能 - 绝对否定与强烈质疑）",
+      "shortExplanation": "用于对某种事态或行为发生的可能性进行断然否定，表示绝不可能发生或毫无依据（“绝不可能……”、“哪有可能会……”）。",
+      "longExplanation": "“~(으)ㄹ 리가 없다”是韩语中表示强烈质疑或绝对断定不可能的常用句型。它由表示未来的定语词尾“-(으)ㄹ”、表示道理或理由的不完全名词“리”以及表示不存在的形容词“없다”结合而成。说话人借此表达自己坚信某种情况根本没有理由、毫无根据或绝对没有成立的概率。相当于汉语的“绝不可能……”、“哪有这种道理”。当针对过去发生的事进行否定推测时，使用“-았/었을 리가 없다”；而反问句式“-(으)ㄹ 리가 있겠어요?”（哪会有这种可能呢？）则起到强烈的反诘修辞效果。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 리가 없다（词干末尾无收音或以ㄹ为收音时接 -ㄹ 리가 없다；有收音时接 -을 리가 없다；过去时用 -았/었을 리가 없다）",
+      "examples": [
+        {
+          "translation": "他绝不可能说谎，因为他是一个极为正直诚实的人。"
+        },
+        {
+          "translation": "现在天色这么黑，我绝不可能外出，因为太危险了。"
+        },
+        {
+          "translation": "那么重大的事情绝不可能单凭一人搞定，如果不施以援手的话根本毫无胜算。"
+        },
+        {
+          "translation": "她绝不可能讨厌我，因为我们可是无话不谈的至交好友。"
+        }
+      ]
+    },
+    "ko_할_105": {
+      "title": "~(으)ㄹ 때마다（每当……时、每次……都 - 规律性重复）",
+      "shortExplanation": "用于表示每当某种特定条件或情况出现时，后项动作或状态都会毫无例外地反复发生（“每当……的时候”、“每次……都……”）。",
+      "longExplanation": "“~(으)ㄹ 때마다”是表示规律性反复的连接句型。由将来时定语词尾“-(으)ㄹ”、表示时间的不完全名词“때”以及表示“每”的补助词“마다”复合构成。它强调前项的特定时机或情境一旦成立，后项的行为、结果或心理感受便会随之再次出现，具有极高的一致性与规律性。与名词连用时，可直接接“때마다”或“마다”（例如：방학 때마다 每逢假期）。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 때마다（词干末尾无收音或以ㄹ为收音时接 -ㄹ 때마다；有收音时接 -을 때마다；名词接 때마다）",
+      "examples": [
+        {
+          "translation": "我每当读书的时候都会收获新的知识，因此我非常喜欢广泛阅读。"
+        },
+        {
+          "translation": "他每次练习都能取得更为出色的成果，他时刻都在拼尽全力。"
+        },
+        {
+          "translation": "每次和哥哥（男朋友）约会见面时我们都会去看浪漫爱情电影，所以我们总是感到十分幸福。"
+        },
+        {
+          "translation": "我们每次踢足球都能和朋友们体会到无穷的乐趣，我们真的很热爱这项运动。"
+        }
+      ]
+    },
+    "ko_할_106": {
+      "title": "~(으)ㄹ 힘이 없다（毫无力气做……、精疲力竭无法…… - 体力精力耗尽）",
+      "shortExplanation": "用于表达主体身心极其疲惫或虚弱，已经完全没有力气或精力去承担某项行动（“连……的力气都没有了”）。",
+      "longExplanation": "“~(으)ㄹ 힘이 없다”是表示体力或精神彻底衰竭的惯用表达。它由定语词尾“-(으)ㄹ”、名词“힘”（力气、力量、体力）与形容词“없다”（没有）搭配构成。说话人多在因连日劳累、失眠、高强度工作或生病导致筋疲力尽时使用，以此向对方说明无法继续从事某项任务的原因。在口语中也常与副词“더 이상”（再也）连用，表达“再也没有力气做下去”的心力交瘁之感。",
+      "formation": "动词词干 + -(으)ㄹ 힘이 없다（词干末尾无收音或以ㄹ为收音时接 -ㄹ 힘이 없다；有收音时接 -을 힘이 없다）",
+      "examples": [
+        {
+          "translation": "手头的事情实在太多了，我已经再也没有力气做下去了。我觉得每天至少得休息8个小时才行。"
+        },
+        {
+          "translation": "昨晚我几乎没怎么合眼，所以今天完全没有力气继续干活了。"
+        },
+        {
+          "translation": "连续一周每天不落坚持锻炼，结果现在浑身酸痛，连再去运动的力气都没有了。"
+        },
+        {
+          "translation": "这周为了备考耗尽了心力，现在已经累得一点儿力气都挤不出来去看书了。"
+        }
+      ]
+    },
+    "ko_할_107": {
+      "title": "~(으)ㄹ 것 같다（好像会……、似乎要……、看来要…… - 未来推测与预感）",
+      "shortExplanation": "用于表达说话人依据当前的迹象或个人直觉，对未来的事情或某种未定状态所作出的主观推断（“好像要……”、“似乎会……”）。",
+      "longExplanation": "“~(으)ㄹ 것 같다”是韩语中最为核心的基础推测句型之一。由表示推测或未来的定语词尾“-(으)ㄹ”、不完全名词“것”（事情、东西）以及形容词“같다”（如同、好像）组成。它传达出说话人根据眼前观察到的端倪或自身感知，委婉而谨慎地预估某事即将发生，语气柔和且留有余地。若推测动词的现在动作时用“-는 것 같다”，推测形容词的现状或动词的过去事实时用“-(으)ㄴ 것 같다”。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 것 같다（词干末尾无收音或以ㄹ为收音时接 -ㄹ 것 같다；有收音时接 -을 것 같다）",
+      "examples": [
+        {
+          "translation": "今天好像要下雨了，天空中布满了厚厚的乌云。"
+        },
+        {
+          "translation": "她似乎很喜欢你呢，看她每次面对你时总是眉开眼笑的。"
+        },
+        {
+          "translation": "明天的考试感觉会非常难，复习范围实在太广了。"
+        },
+        {
+          "translation": "我觉得这次项目肯定能够取得成功，因为大家都在如此全力以赴地筹备着。"
+        }
+      ]
+    },
+    "ko_할_108": {
+      "title": "~(으)ㄹ 것이다（将会……、一定会…… - 未来时制与坚定意志）",
+      "shortExplanation": "用于陈述客观未来将要发生的事件、确凿的推断，或表达第一人称主语坚决的意志与打算（“将会……”、“一定要……”）。",
+      "longExplanation": "“~(으)ㄹ 것이다”是韩语语法体系中最规范、最基础的未来时制表达形式。当主语为第一人称时，它多表达说话人对未来的坚定决心、承诺或计划（“我一定会……”）；当主语为第三人称或描写客观自然现象时，则表示说话人基于规律或事实做出的确信度较高的预判（“一定会发生……”）。在正式的书面出版物、演讲或论文中常用原形“-(으)ㄹ 것이다”，而在日常口语交流中则普遍紧缩为敬语形式“-(으)ㄹ 거예요”或“-(으)ㄹ 겁니다”。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 것이다（词干末尾无收音或以ㄹ为收音时接 -ㄹ 것이다；有收音时接 -을 것이다；口语敬语常缩略为 -(으)ㄹ 거예요 或 -(으)ㄹ 겁니다）",
+      "examples": [
+        {
+          "translation": "如果暴雪继续这样下下去，学校明天就一定会停课封校。"
+        },
+        {
+          "translation": "随着校运会的日益临近，我们全体人员都将会更加刻苦地展开训练。"
+        },
+        {
+          "translation": "相比上个学期，这个学期的成绩一定会明显提升。"
+        },
+        {
+          "translation": "今晚的夜空中一定能够清晰地看到许多繁星。"
+        }
+      ]
+    },
+    "ko_할_109": {
+      "title": "~(으)ㄹ 줄 알다（会做……、懂得如何…… - 技能与方法能力）",
+      "shortExplanation": "用于表示掌握了做某项事情的要领、技能或具备从事该行为的实际能力（“会做……”、“懂怎么……”）。",
+      "longExplanation": "“~(으)ㄹ 줄 알다”是表达实践能力与技术知识的关键句型。它由定语词尾“-(으)ㄹ”、表示方法或道道的不完全名词“줄”以及动词“알다”（知道、了解）结合而成。主要用于陈述主语是否掌握某种后天习得的本领（如外语会话、乐器演奏、驾车、烹饪等）。若表示没有这方面的能力，则将其否定为“-(으)ㄹ 줄 모르다”（不会……）。值得注意的是，在特定语境下该句式亦可用于表达误判或推测，意为“以为……、原以为……”。",
+      "formation": "动词词干 + -(으)ㄹ 줄 알다（词干末尾无收音或以ㄹ为收音时接 -ㄹ 줄 알다；有收音时接 -을 줄 알다；否定形式为 -(으)ㄹ 줄 모르다）",
+      "examples": [
+        {
+          "translation": "你问我的韩语究竟讲得有多好？嗯，最基本的日常问答交流我还是会说的。"
+        },
+        {
+          "translation": "我们家孩子懂得怎么弹奏钢琴，所以每次听到他弹琴的时候都是我最感幸福的时刻。"
+        },
+        {
+          "translation": "你怎么这么会做饭呀？这顿饭菜吃起来真是太美味可口了。"
+        },
+        {
+          "translation": "我懂得计算机软件编程，因此能够独立解决各种各样的技术难题。"
+        }
+      ]
+    },
+    "ko_할지라도_110": {
+      "title": "~(으)ㄹ지라도（哪怕……也、即便……也…… - 强假设性让步）",
+      "shortExplanation": "书面语让步连接词尾，表示即便前项设立了极其艰难或极端的假设条件，后项的事实、原则或行动决心也决不改变（“纵然……也……”）。",
+      "longExplanation": "“~(으)ㄹ지라도”是带有鲜明庄重感与文人气息的让步连接词尾。与口语化的“-아/어도”相比，它的让步意味和假设色彩更为强烈。它往往设定一个高度严苛、不利或甚至极端的情境（“哪怕再忙碌、哪怕再艰难”），但后项分句紧接着强调这一前提丝毫不能动摇既定的原则、规律或行为方向。句中常常与副词“비록”（虽然）、“설령”（纵使）、“아무리”（无论怎样）呼应使用。",
+      "formation": "动词/形容词词干 + -(으)ㄹ지라도（词干末尾无收音或以ㄹ为收音时接 -ㄹ지라도；有收音时接 -을지라도；名词接 -(이)ㄹ지라도；过去时接 -았/었을지라도）",
+      "examples": [
+        {
+          "translation": "哪怕再怎么忙得不可开交、抽不出时间，每天坚持锻炼身体也是至关重要的。"
+        },
+        {
+          "translation": "就算口感滋味再怎么诱人，有害身体健康的垃圾食品也必须坚决抵制。"
+        },
+        {
+          "translation": "即便过程极其艰辛，只要持之以恒地加以练习，终究是能够获得成功的。"
+        },
+        {
+          "translation": "纵然窗外正下着大雨，我今天也打算按照既定安排准时出门。"
+        }
+      ]
+    },
+    "ko_할지언정_111": {
+      "title": "~(으)ㄹ지언정（纵使……也绝不、宁可……也…… - 坚决让步）",
+      "shortExplanation": "具有古雅色彩的让步连接词尾，用于表示哪怕忍受前项极度不利或屈辱的境遇，也绝不改变后项的气节、立场或决心（“宁可……也绝不……”）。",
+      "longExplanation": "“~(으)ㄹ지언정”是韩语中语气极为坚毅、庄重沉稳的文语体连接词尾。它传达出一种宁为玉碎的气概：哪怕承认前项所描述的极大困难、痛苦甚至牺牲（“哪怕去死、哪怕被怨恨”），后项的原则、道义追求或个人志向也毫不退缩；或者表达“宁可选择承受前项，也断然不愿沦落为后项的境地”。在现代韩语中，也经常与间接引语相结合，以“-다 할지언정”（即便说是……）的形式出现。",
+      "formation": "动词/形容词词干 + -(으)ㄹ지언정（词干末尾无收音或以ㄹ为收音时接 -ㄹ지언정；有收音时接 -을지언정；常与间接引语复合为 -다 할지언정）",
+      "examples": [
+        {
+          "translation": "纵使这道难题再怎么繁复难解，我也必定会咬牙坚持推导计算到最后一步。"
+        },
+        {
+          "translation": "哪怕她对我心生厌弃，我也依然会矢志不渝地继续深爱着她。"
+        },
+        {
+          "translation": "纵然气候严寒刺骨，我们也绝不能停下脚步，必须毅然前行。"
+        },
+        {
+          "translation": "哪怕面临的考试难关重重，我也务必要坚持埋头苦读下去。"
+        }
+      ]
+    },
+    "ko_함에_112": {
+      "title": "~(으)ㅁ에 있어(서)（在……方面、在……之际、于……之中 - 前提范围与评价标准）",
+      "shortExplanation": "用于论述性或正式语体中，指出进行某项行为或判断时的前提条件、涉及领域或核心标准（“在从事……方面”、“在……过程中”）。",
+      "longExplanation": "“~(으)ㅁ에 있어(서)”是由名词化词尾“-(으)ㅁ”、处所格助词“에”以及动词形态“있어(서)”融合而成的庄重书面句型。广泛应用于学术论文、政论演说、公文法规以及社论评论中，用来确立某一观点、准则或行动展开时所依凭的基准场域与考察维度。后项常常导出关乎全局的核心主张、价值准则或至关重要的关键要素（例如“在经营企业方面，诚信是根本”）。",
+      "formation": "动词/形容词词干 + -(으)ㅁ에 있어(서)（词干末尾无收音或以ㄹ为收音时接 -ㅁ에 있어；有收音时接 -음에 있어）",
+      "examples": [
+        {
+          "translation": "在粮食生产方面目前仍然存在诸多瓶颈问题，因此我们必须深刻意识到推行革新的迫切性。"
+        },
+        {
+          "translation": "在彼此相爱的过程中，我认为坦诚相待乃是不可或缺的最核心基石之一。"
+        },
+        {
+          "translation": "在践行环境保护方面，每个人看似微小的点滴付出，都将凝聚汇成移风易俗的巨大变革。"
+        },
+        {
+          "translation": "若论及团队协作精神的凝聚发挥，她无疑是我们整个团队中最不可或缺的关键人物。"
+        }
+      ]
+    },
+    "ko_해_113": {
+      "title": "~아/어 보이다（看起来……、显得…… - 视觉感知与外在印象）",
+      "shortExplanation": "用于根据直接观察到的外貌、表情或举止，表达说话人对其状态、心境所产生的直观印象与判断（“看起来挺……”、“显得格外……”）。",
+      "longExplanation": "“~아/어 보이다”是极为日常且生动的视觉感知补助句型。它通过连接词尾“-아/어”将形容词词干与动词“보이다”（显现、显得）融为一体，使描述主观感觉的形容词转化为刻画外在客观风貌的动词结构。说话人借此表达依据亲眼所见的线索（如对方的脸色、装扮、气色等）所形成的直觉评价。通常仅与形容词结合（如“행복해 보이다”显现出幸福的样子、“젊어 보이다”看起来显年轻）。",
+      "formation": "形容词词干 + -아/어 보이다（词干末尾元音为ㅏ、ㅗ时接 -아 보이다；其余元音接 -어 보이다；하다变为 해 보이다）",
+      "examples": [
+        {
+          "translation": "那位女士看起来真是满脸洋溢着幸福，她总是带着如沐春风的笑容热情地向人们打招呼。"
+        },
+        {
+          "translation": "这道佳肴看起来色香味俱全、令人垂涎，所以我毫不犹豫当场就下单点了。"
+        },
+        {
+          "translation": "单从他的神色面容来看，似乎真真切切遇到了什么极为伤心欲绝的事情。"
+        },
+        {
+          "translation": "这片盛开着灿烂樱花的公园，此刻看起来着实美轮美奂。"
+        }
+      ]
+    },
+    "ko_게다가_0": {
+      "title": "게다가（而且、此外、再加上 - 同向层递补充）",
+      "shortExplanation": "用于承接前文并顺势追加同等性质的补充信息，以强化肯定的赞美或加重否定的抱怨（“不仅如此，而且……”）。",
+      "longExplanation": "“게다가”是韩语中非常高频的顺接副词，在句子中起承上启下的递进作用。它源自不完全名词“데”（地方、方面）与助词“다가”的结合。说话人在陈述完前述事实后，使用“게다가”引入另一项性质相同（同为优点或同为弊端）的细节或理由，从而使整个陈述更具说服力。在复合从句中，与之相对应的语法结构是定语词尾复合形式“-(으)ㄴ/는 데다가”（不仅……而且还……）。",
+      "formation": "分句1 + -고, 게다가 + 分句2（亦对应于语法句型：动词/形容词词干 + -(으)ㄴ/는 데다가）",
+      "examples": [
+        {
+          "translation": "那家咖啡厅的咖啡味道极其纯正，而且店内装潢氛围也非常惬意，因此我常常前去光顾。"
+        },
+        {
+          "translation": "今天外头下着淅淅沥沥的小雨，再加上天气严寒料峭，实在叫人打心底里不想迈出房门半步。"
+        },
+        {
+          "translation": "他的品行性格极好，再加上为人聪颖机敏，所以深受周围众人的喜爱。"
+        },
+        {
+          "translation": "这家饭馆不仅饭菜鲜美可口，而且定价亲民实惠，因而我总是经常光顾。"
+        }
+      ]
+    },
+    "ko_거니와_1": {
+      "title": "~거니와（不仅……而且……、既……又…… - 书面语认可与层递并列）",
+      "shortExplanation": "书面语连接词尾，用于先认可前项的事实，紧接着在后项追加更为重要或同等程度的补充内容（“不仅如此，更是……”）。",
+      "longExplanation": "“~거니와”是具有典雅文质色彩的连接词尾。它的功能在于将前后两个分句紧密串联：既明确首肯前项内容的真实性或合理性，又以此为铺垫，进一步延伸出后项更加引人注目或并驾齐驱的事实。在汉语中相当于“……固然如此，不仅如此而且还……”。该词尾可以直接接在过去时态词尾“-았/었-”之后，且后句谓语常常伴随补助词“-도”（也），以强化并立增补的语气。",
+      "formation": "动词/形容词词干 + -거니와（无论有无收音直接连接；过去时为 -았/었거니와；名词谓词形为 -(이)거니와）",
+      "examples": [
+        {
+          "translation": "这件东西不仅要价不菲，而且款式也根本不是我由衷青睐的设计。"
+        },
+        {
+          "translation": "我不仅平素喜爱手不释卷地阅读，同样也很痴迷电影艺术，因此每逢周末总是过得丰富充实。"
+        },
+        {
+          "translation": "这款产品不仅做工品质极为低劣，而且售后服务态度也是令人难以恭维。"
+        },
+        {
+          "translation": "那部电影不仅剧情扣人心弦、趣味横生，而且更蕴含着催人泪下的深沉感动。"
+        }
+      ]
+    },
+    "ko_것만은_2": {
+      "title": "~(으)ㄴ/는 것만은（唯独……这点、唯有……这一项 - 反衬突出例外）",
+      "shortExplanation": "用于强调其他方面或许尚可接受，但唯独眼下这一项事实违背了预期或常规，令人感到遗憾或费解（“唯独……这点却……”）。",
+      "longExplanation": "“~(으)ㄴ/는 것만은”是由定语词尾“-(으)ㄴ/는”、不完全名词“것”、表示限定排他的补助词“만”（唯独）以及对比补助词“은/는”层层构筑的复合限定表现。它通常置身于充满反差的对照语境之中：尽管前述付出了极大努力或客观环境完备，但偏偏后项这一特定结果走向了令人失望或不合常理的反面。说话人借此孤立并着重凸显这个让人耿耿于怀的个别例外。",
+      "formation": "动词 + -는 것만은（现在时）/ -(으)ㄴ 것만은（过去时）；形容词 + -(으)ㄴ 것만은",
+      "examples": [
+        {
+          "translation": "她分明在功课上倾注了极大努力，但唯独在学校考核中成绩欠佳这一节，真让人无法释怀与理解。"
+        },
+        {
+          "translation": "昨夜明明睡了相当长的时间，唯独至今依然浑身乏力困倦这点，着实叫人百思不得其解。"
+        },
+        {
+          "translation": "我们全队上下齐心协力奋力拼搏，唯独在赛场对决中抱憾告负这一结局，实在让人万分惋惜。"
+        },
+        {
+          "translation": "我天天坚持挥汗如雨地运动健身，唯独体重不减反升这点，叫人心里倍感泄气与失望。"
+        }
+      ]
+    },
+    "ko_과와_3": {
+      "title": "~과/와 같이（如同……一样、宛如……一般 - 比喻拟态与同等比较）",
+      "shortExplanation": "比较助词组合，用于将某一对象与作为范式或常态的标准进行横向类比，说明二者具有同等的特质或状态（“像……一样”）。",
+      "longExplanation": "“~과/와 같이”是韩语中标准且典雅的比较搭配，由格助词“과/와”（与、同）和副词“같이”（一同、如同）组合形成。它主要起到生动比喻与性质类比的修辞作用，通过引入人们耳熟能详的自然界物象或典型事例，让被描述事物的特征更直观、更有说服力。在正式报告书和公文中，此短语也常用来指代前述内容（如“위와 같이”如上所述）。",
+      "formation": "名词 + 과/와 같이（有收音的名词接 과 같이；无收音的名词接 와 같이）",
+      "examples": [
+        {
+          "translation": "上周末的天气温暖得宛若和煦阳春，然而这个周末却如同凛冬降临一般寒风刺骨。"
+        },
+        {
+          "translation": "那幅绘画逼真传神得宛如一张高清相片，由此足见他是一位造诣非凡的艺术大师。"
+        },
+        {
+          "translation": "今天燥热得就如同盛夏酷暑一般，所以我特意去买了一支冰淇淋来消暑解渴。"
+        },
+        {
+          "translation": "静心阅读正如强身健体的体育锻炼一样，是一项能让人的精神世界永葆健康的益心之举。"
+        }
+      ]
+    },
+    "ko_나마저_4": {
+      "title": "~(이)나마저 / ~마저（就连……也、连最后的……都 - 逼入绝境的最终波及）",
+      "shortExplanation": "用于表示甚至连最后残存的希望、最亲近的人或最不应当发生的对象都被卷入了消极局面之中（“连……都……”、“甚至连……也……”）。",
+      "longExplanation": "“~(이)나마저”（在日常语法中更具统摄性的核心形态为补助词“~마저”）是带有浓烈悲情色彩与沉重心理负担的强调词。它所指示的往往是按常理绝不该被辜负、或者处于最后防线位置的人或事物（例如至亲、最后的积蓄、最后的依靠）。句意暗含“其他人或事物早已尽皆如此，没想到连这最后的屏障也未能幸免”，多与失落、悲痛、无可奈何或绝望的消极语境紧密捆绑。",
+      "formation": "名词 + (이)나마저（有收音的名词接 -이나마저；无收音的名词接 -나마저；通用基本形态为 ~마저）",
+      "examples": [
+        {
+          "translation": "她连全校公认最艰深晦涩的功课都能轻松消化，看到连这门专业课她都能领悟得如此透彻，她实在太卓越了。"
+        },
+        {
+          "translation": "我平时与身边的伙伴向来相处融洽，可眼下居然连那位挚友似乎都对我敬而远之，令我内心备受煎熬与创伤。"
+        },
+        {
+          "translation": "哪怕其他所有人都齐声反对，他也深知哪怕唯有一人鼎力支持的分量。然而当连那个人最终都反戈倒戈时，他的心境跌落到了谷底。"
+        },
+        {
+          "translation": "我将书桌上散落的所有物件全都翻找了一遍，可即便连那件最关键的随身物品也终究没能寻获。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_할_104": {
+      "title": "~(으)ㄹ 리가 없다（〜するはずがない、〜なわけがない - 絶対的否定と強い不信）",
+      "shortExplanation": "ある事態や動作が発生する可能性を根底から否定し、道理や根拠に照らして絶対にあり得ないと断定する表現です（「〜するはずがない」「〜なわけがない」）。",
+      "longExplanation": "「~(으)ㄹ 리가 없다」は、話し手の強い確信に基づいて、事態の可能性を真っ向から否定する文型です。未来を表す連体形語尾「-(으)ㄹ」、道理や理由を表す依存名詞「리（理）」、そして存在の否定を表す形容詞「없다」が融合して成り立っています。話し手は「そんなことが起こる筋合いも根拠も皆無である」という強い否定判断を示します。過去の事態に対する否定推量は「-았/었을 리가 없다」となり、反語的疑問形「-(으)ㄹ 리가 있겠어요?（そんなはずがありましょうか）」としても多用されます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 리가 없다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 리가 없다；その他のパッチムがある場合は -을 리가 없다；過去形は -았/었을 리가 없다）",
+      "examples": [
+        {
+          "translation": "彼が嘘をつくはずがありません。彼は至極正直な人間ですから。"
+        },
+        {
+          "translation": "今こんなに暗いのに外出するはずがありません。危険ですから。"
+        },
+        {
+          "translation": "あんな大きな仕事を一人で成し遂げられるわけがありません。手助けがなければ見込みはありません。"
+        },
+        {
+          "translation": "彼女が私を嫌うはずがありません。私たちは無二の親友なのですから。"
+        }
+      ]
+    },
+    "ko_할_105": {
+      "title": "~(으)ㄹ 때마다（〜するたびに、〜するごとに - 反復と恒常性）",
+      "shortExplanation": "ある条件や状況が訪れるたびに、後節の動作や状態が例外なく繰り返し発生することを表します（「〜するたびに」「〜するごとに」）。",
+      "longExplanation": "「~(으)ㄹ 때마다」は、事象の規則的な反復や随伴性を表す接続表現です。未来連体形語尾「-(으)ㄹ」、時を表す依存名詞「때」、そして「〜ごと、〜ずつ」を意味する補助詞「마다」が組み合わさっています。前節の契機が生じる都度、後節の行為や心理的変化が規則正しく再現されることを強調します。名詞と結びつく場合は「때마다」または直接「마다」を後続させます（例：방학 때마다 休暇のたびに）。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 때마다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 때마다；その他のパッチムがある場合は -을 때마다；名詞には 때마다）",
+      "examples": [
+        {
+          "translation": "私は本を読むたびに新しい知識を得ることができます。ですからたくさん本を読むのが大好きです。"
+        },
+        {
+          "translation": "彼は練習を重ねるたびにより優れた成果を収めることができます。彼は常にベストを尽くしています。"
+        },
+        {
+          "translation": "彼（兄）と会うたびにロマンチックな映画を見に行きます。ですから私たちはいつも幸せです。"
+        },
+        {
+          "translation": "私たちはサッカーをするたびに友人たちと大きな楽しさを分かち合います。私たちはサッカーが本当に大好きです。"
+        }
+      ]
+    },
+    "ko_할_106": {
+      "title": "~(으)ㄹ 힘이 없다（〜する力が出ない、〜する気力・体力がない - 極度の疲労）",
+      "shortExplanation": "心身が極度に疲弊して衰弱し、特定の行為を行うための体力やエネルギーが全く残っていないことを訴える表現です（「〜する力もない」）。",
+      "longExplanation": "「~(으)ㄹ 힘이 없다」は、過労や睡眠不足、疾病などによりエネルギーを完全に喪失した状態を表す慣用表現です。連体形語尾「-(으)ㄹ」、名詞「힘（力、体力、気力）」、形容詞「없다（ない）」から構成されます。話し手はこれ以上何かをやり遂げる余力がないことを切実に吐露し、休息の必要性や作業の続行不可能性を伝える際に用います。副詞「더 이상（これ以上）」としばしば共起します。",
+      "formation": "動詞語幹 + -(으)ㄹ 힘이 없다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 힘이 없다；その他のパッチムがある場合は -을 힘이 없다）",
+      "examples": [
+        {
+          "translation": "仕事があまりにも多すぎて、これ以上続ける力が残っていません。1日に少なくとも8時間は休むべきだと思います。"
+        },
+        {
+          "translation": "昨夜ほとんど眠れなかったため、今日はもうこれ以上働く力がありません。"
+        },
+        {
+          "translation": "一週間一日も欠かさず運動したところ体中が痛んでしまい、もう運動する体力がありません。"
+        },
+        {
+          "translation": "今週は試験勉強に打ち込みすぎて疲れ果て、これ以上勉強を続ける気力が湧きません。"
+        }
+      ]
+    },
+    "ko_할_107": {
+      "title": "~(으)ㄹ 것 같다（〜しそうだ、〜する気がする - 未来推量と主観的予測）",
+      "shortExplanation": "観察された兆候や個人の直感に基づいて、未来の事態や不確実な状況について控えめに推測・予測する表現です（「〜しそうだ」「〜のようだ」）。",
+      "longExplanation": "「~(으)ㄹ 것 같다」は、韓国語において最も頻繁に用いられる基幹的な推量構文です。未来連体形語尾「-(으)ㄹ」、依存名詞「것（こと、もの）」、形容詞「같다（ようだ、同じだ）」の融合により、断定を避けて柔らかく見通しを述べるニュアンスを持ちます。話し手の直観や目下の兆候から判断して「おそらくそうなるだろう」という主観的見解を提示します。動詞の現在推量は「-는 것 같다」、形容詞の現在および動詞の過去推量は「-(으)ㄴ 것 같다」となります。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 것 같다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 것 같다；その他のパッチムがある場合は -을 것 같다）",
+      "examples": [
+        {
+          "translation": "今日は雨が降りそうですね。空に雨雲がびっしりと立ち込めています。"
+        },
+        {
+          "translation": "彼女は君のことが好きなんじゃないかな。いつも君に微笑みかけているのを見るとね。"
+        },
+        {
+          "translation": "明日の試験は難しくなりそうです。出題範囲があまりにも広すぎます。"
+        },
+        {
+          "translation": "今回のプロジェクトは成功しそうな気がします。皆がこれほど熱心に準備を進めているのですから。"
+        }
+      ]
+    },
+    "ko_할_108": {
+      "title": "~(으)ㄹ 것이다（〜だろう、〜するつもりだ - 未来時制と確固たる意志）",
+      "shortExplanation": "未来に起こる客観的な事象や高い確信を伴う推測、あるいは話し手自身の固い意志を表します（「〜するだろう」「〜するつもりだ」）。",
+      "longExplanation": "「~(으)ㄹ 것이다」は韓国語の未来時制を代表する標準的かつ文法的な表現です。一人称主語と共起する場合は話し手の計画や不退転の意志（「〜してみせる」「〜するつもりだ」）を表明し、三人称主語や無情物を主語とする場合は、蓋然性の高い将来の予測（「〜するはずだ」「〜だろう」）を導きます。改まった文章や演説ではそのままの形態「-(으)ㄹ 것이다」が用いられ、日常会話では縮約されたヘヨ体「-(으)ㄹ 거예요」やハムニダ体「-(으)ㄹ 겁니다」の形で極めて多用されます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 것이다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 것이다；その他のパッチムがある場合は -을 것이다；口語では -(으)ㄹ 거예요 や -(으)ㄹ 겁니다 に縮約）",
+      "examples": [
+        {
+          "translation": "雪がこのまま降り続けば、学校は明日休校になるはずです。"
+        },
+        {
+          "translation": "体育大会が近づいてきているので、私たちはより一層熱心に練習に励むつもりです。"
+        },
+        {
+          "translation": "前学期と比べて今学期の成績の方がずっと良くなるはずです。"
+        },
+        {
+          "translation": "今夜は夜空に星がたくさん見えることでしょう。"
+        }
+      ]
+    },
+    "ko_할_109": {
+      "title": "~(으)ㄹ 줄 알다（〜できる、〜するやり方を知っている - 技能・能力の保持）",
+      "shortExplanation": "ある行為を行う方法、手順、あるいは後天的に習得した技能を備えていることを表します（「〜できる」「〜のやり方が分かる」）。",
+      "longExplanation": "「~(으)ㄹ 줄 알다」は、実務的なノウハウや身体的・知的スキルの有無を言い表す代表的構文です。連体形語尾「-(으)ㄹ」、方法や方策を表す依存名詞「줄」、そして動詞「알다（知る）」が結びついています。外国語、楽器、水泳、運転などの技術を身につけていて実践できることを指します。否定表現は「-(으)ㄹ 줄 모르다（〜できない）」となります。なお、文脈によっては「〜だと思っていた（事実とは異なる誤認）」を指す場合もあります。",
+      "formation": "動詞語幹 + -(으)ㄹ 줄 알다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 줄 알다；その他のパッチムがある場合は -을 줄 알다；否定形は -(으)ㄹ 줄 모르다）",
+      "examples": [
+        {
+          "translation": "私が韓国語をどれくらい上手に話せるかって？うーん、ごく基本的な会話なら交わすことができますよ。"
+        },
+        {
+          "translation": "うちの子はピアノが弾けるので、いつも演奏を聴かせてくれる瞬間が何より一番幸せです。"
+        },
+        {
+          "translation": "あなたはどうやってそんなに料理ができるようになったの？ご飯、本当に美味しかったよ。"
+        },
+        {
+          "translation": "私はコンピュータのプログラミングができるので、様々な問題を独力で解決することができます。"
+        }
+      ]
+    },
+    "ko_할지라도_110": {
+      "title": "~(으)ㄹ지라도（たとえ〜であっても、〜としても - 強力な仮定譲歩）",
+      "shortExplanation": "前節で困難や極端な条件を仮定として設定しても、後節の原則、事実、あるいは決意が微動だにしないことを表す格調高い譲歩語尾です（「たとえ〜であろうとも」）。",
+      "longExplanation": "「~(으)ㄹ지라도」は、書き言葉や演説などで重用される厳粛な響きを帯びた譲歩の接続語尾です。一般的な「-아/어도」に比べて仮定性と譲歩の強度が一際際立っており、「たとえどれほど過酷で困難な境遇に置かれようとも、後節の義務や姿勢は決して曲げない」という断固たる含意を醸し出します。副詞「비록（たとえ）」「설령（よしんば）」「아무리（いくら）」などと好んで呼応します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지라도（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ지라도；その他のパッチムがある場合は -을지라도；名詞は -(이)ㄹ지라도；過去形は -았/었을지라도）",
+      "examples": [
+        {
+          "translation": "どんなに多忙で時間がなかろうとも、毎日欠かさず運動することは極めて重要です。"
+        },
+        {
+          "translation": "たとえどれほど味が良かろうとも、健康を害する恐れのある食べ物は断固避けるべきです。"
+        },
+        {
+          "translation": "たとえ険しい道のりであろうとも、たゆまず練習を積み重ねていけば最後には必ず成功を掴み取れます。"
+        },
+        {
+          "translation": "たとえ雨が降っていようとも、今日は予定通り外に出かけるつもりです。"
+        }
+      ]
+    },
+    "ko_할지언정_111": {
+      "title": "~(으)ㄹ지언정（たとえ〜することはあっても〜はしない、〜であろうとも - 毅然たる譲歩）",
+      "shortExplanation": "前節の極限状態や不利な境遇を甘受することはあっても、決して後節の信念や気骨を曲げることはないという強い覚悟を表します（「たとえ〜しようとも」「〜するくらいならむしろ」）。",
+      "longExplanation": "「~(으)ㄹ지언정」は、古典的で古風な厳粛さを持つ接続語尾です。不屈の気概を表明する際に用いられ、「前節のような苦難や痛恨の事態に直面しようとも、後節の信念やプライドは絶対に売り渡さない」、あるいは「前者を潔く選ぶことはあっても、後者のような恥ずべき真似は絶対にしない」という並々ならぬ覚悟を述べます。間接引用と接続した「-다 할지언정」の形式でも頻繁に登場します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지언정（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ지언정；その他のパッチムがある場合は -을지언정；間接引用と結んだ -다 할지언정 の形でも多用）",
+      "examples": [
+        {
+          "translation": "たとえ問題が難解を極めようとも、決して投げ出さず最後まで解き明かしてみせるつもりです。"
+        },
+        {
+          "translation": "たとえ彼女が私を嫌おうとも、私は変わることなく彼女を愛し続ける所存です。"
+        },
+        {
+          "translation": "寒風が身を刺そうとも、私たちは歩みを止めることなく前進し続けなければなりません。"
+        },
+        {
+          "translation": "たとえ試験がどれほど厳しかろうとも、私は学業の手を緩めず勉強に励まねばなりません。"
+        }
+      ]
+    },
+    "ko_함에_112": {
+      "title": "~(으)ㅁ에 있어(서)（〜するにあたって、〜において - 基準・領域・前提条件）",
+      "shortExplanation": "改まった文脈で、ある行為を遂行したり判断を下したりする際の領域、背景、または基準となる前提条件を提示します（「〜するにあたって」「〜において」）。",
+      "longExplanation": "「~(으)ㅁ에 있어(서)」は名詞形語尾「-(으)ㅁ」、場所・対象を表す助詞「에」、動詞「있어(서)」が融合した格式高い文語表現です。論文、公文書、スピーチ、社説などで頻繁に活用され、議論を展開する上での土台や前提視野を確定させます。後節には、その領域を全うする上で不可欠な心得、基本方針、原則、あるいは中核的な要素が提示されるのが通例です。",
+      "formation": "動詞・形容詞語幹 + -(으)ㅁ에 있어(서)（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㅁ에 있어；その他のパッチムがある場合は -음에 있어）",
+      "examples": [
+        {
+          "translation": "食糧を生産するにあたっては依然として多くの難題が存在するため、私たちは新たな変革の必要性を切実に痛感せねばなりません。"
+        },
+        {
+          "translation": "人を愛するにあたって、互いに率直で誠実であることこそが最も肝要な要素の一つだと考えます。"
+        },
+        {
+          "translation": "環境を保護する上において、個々人のささやかな実践の積み重ねこそが偉大な変革をもたらすのです。"
+        },
+        {
+          "translation": "チームワークを遺憾なく発揮するにあたっては、彼女こそが私たちのチームで最も欠かせない中核人物です。"
+        }
+      ]
+    },
+    "ko_해_113": {
+      "title": "~아/어 보이다（〜に見える、〜そうに見える - 視覚的印象と外見的判断）",
+      "shortExplanation": "視覚を通して直に観察された相手の表情、身なり、様子などに基づいて、主観的な印象や推論を述べる表現です（「〜に見える」「〜そうに見える」）。",
+      "longExplanation": "「~아/어 보이다」は、観察によって得られた視覚的知見を表現する補助構文です。形容詞語幹に接続語尾「-아/어」を介して動詞「보이다（見える）」が合体することで、状態を直観的な外観描写へと転換します。相手の顔色や仕草から受けた直感的な印象（例：행복해 보이다 幸せそうに見える、피곤해 보이다 疲れて見える）を自然に言語化できます。主として形容詞と結合します。",
+      "formation": "形容詞語幹 + -아/어 보이다（語幹末尾の母音がㅏ・ㅗの場合は -아 보이다；その他の母音の場合は -어 보이다；하다は 해 보이다）",
+      "examples": [
+        {
+          "translation": "あの女性は本当に幸せそうに見えました。いつも朗らかな笑顔で人々に挨拶をしていました。"
+        },
+        {
+          "translation": "この料理は見るからに美味しそうだったので、迷わずその場で注文しました。"
+        },
+        {
+          "translation": "彼の表情から察するに、本当にやりきれない悲しい出来事があったかのように見受けられました。"
+        },
+        {
+          "translation": "桜の花が満開に咲き誇るこの公園は、真に美しく見えます。"
+        }
+      ]
+    },
+    "ko_게다가_0": {
+      "title": "게다가（その上、おまけに、さらに - 同方向の累積的付加）",
+      "shortExplanation": "前述の内容に加えて、同性質の事柄や新たな理由を付け足して説得力を補強する接続副詞です（「その上」「おまけに」）。",
+      "longExplanation": "「게다가」は前後の文を論理的・感情的に累加する接続副詞です。依存名詞「데（ところ、点）」に助詞「다가」が結合した語源を持ちます。先行する記述に対し、同じ方向性（肯定的な褒め言葉ならさらに長所を、否定的な不満ならさらに短所を）を持つ情報を追加することで、全体の論調を強力に押し上げます。複文における対応文型としては「-(으)ㄴ/는 데다가（〜な上に）」が挙げられます。",
+      "formation": "先行節 + -고, 게다가 + 後行節（または対応構文：動詞・形容詞語幹 + -(으)ㄴ/는 데다가）",
+      "examples": [
+        {
+          "translation": "あのカフェはコーヒーの味が絶品で、その上雰囲気もとても落ち着いて素敵なので足繁く通っています。"
+        },
+        {
+          "translation": "今日は雨が降っており、おまけに寒気が厳しいため、一歩も外に出たくありません。"
+        },
+        {
+          "translation": "彼は人柄が大変優れており、さらに頭脳明晰でもあるため、周囲の人々から大いに慕われています。"
+        },
+        {
+          "translation": "この食堂は料理がとても美味しく、その上値段もリーズナブルなのでしょっちゅう足を運んでいます。"
+        }
+      ]
+    },
+    "ko_거니와_1": {
+      "title": "~거니와（〜ばかりでなく、〜である上に - 書き言葉における肯定と累加）",
+      "shortExplanation": "前節の事実を素直に認めた上で、さらに後節で同等あるいはそれ以上の重要な事実を付け足す文語的接続語尾です（「〜のみならず」「〜である上に」）。",
+      "longExplanation": "「~거니와」は格調高い文章語において用いられる累加の接続表現です。「前節の事柄は言うまでもなく当然のこととして認めるが、それに留まらず後節の事実もまた然りである」という論旨を整然と紡ぎ出します。過去時制「-았/었거니와」とも自由に結合し、後節の述語には助詞「-도（〜も）」が呼応して並列・強調のニュアンスをより一層強固なものにします。",
+      "formation": "動詞・形容詞語幹 + -거니와（パッチムの有無に関係なく直結；過去形は -았/었거니와；名詞述語形は -(이)거니와）",
+      "examples": [
+        {
+          "translation": "これは値段が高価であるばかりでなく、私が求めているデザインでもありません。"
+        },
+        {
+          "translation": "私は読書もさることながら映画鑑賞も大好きなため、毎週末はいつも充実して大忙しです。"
+        },
+        {
+          "translation": "この商品は品質が劣悪であるばかりか、顧客サービス対応も実に酷い有様です。"
+        },
+        {
+          "translation": "その映画は面白く引き込まれるばかりでなく、胸を打つ深い感動をも与えてくれます。"
+        }
+      ]
+    },
+    "ko_것만은_2": {
+      "title": "~(으)ㄴ/는 것만은（〜ということだけは、〜のだけは - 対比と例外の際立ち）",
+      "shortExplanation": "他の点についてはともかく、特定のこの一事だけは予想や期待に反する例外であり納得しがたいという点を際立たせる表現です（「〜のだけは」）。",
+      "longExplanation": "「~(으)ㄴ/는 것만은」は、連体形語尾「-(으)ㄴ/는」、依存名詞「것」、限定の助詞「만」、対比の助詞「은/는」が緊密に連なった構文です。他の諸条件や懸命な努力が前向きであるにもかかわらず、取り立てて「この特定の結末だけは期待を裏切っており、残念無念極まりない、あるいは到底腑に落ちない」という対比的例外を浮き彫りにする際に極めて効果を発揮します。",
+      "formation": "動詞 + -는 것만은（現在）/ -(으)ㄴ 것만은（過去）；形容詞 + -(으)ㄴ 것만은",
+      "examples": [
+        {
+          "translation": "彼女はあれほど熱心に勉強に励んだのに、学校での成績が振るわなかったことだけはどうしても納得がいきません。"
+        },
+        {
+          "translation": "昨夜あれほどぐっすり眠ったにもかかわらず、いまだに疲労感が抜けないことだけは解せません。"
+        },
+        {
+          "translation": "私たちのチームは死力を尽くして戦っただけに、試合に敗れたことだけは痛恨の極みとして心に残ります。"
+        },
+        {
+          "translation": "毎日欠かさず汗を流して運動したというのに、体重が増加してしまったことだけはひどく失望させられます。"
+        }
+      ]
+    },
+    "ko_과와_3": {
+      "title": "~과/와 같이（〜のように、〜と同様に - 比喩と基準の同等比較）",
+      "shortExplanation": "基準となる対象を引き合いに出し、主語がそれと同様の性質や状態を備えていることを明快に示す比較表現です（「〜のように」「〜と同じく」）。",
+      "longExplanation": "「~과/와 같이」は、格助詞「과/와（〜と）」と副詞「같이（一緒に、〜のように）」が合体した定型的な比較・比喩の構文です。身近な自然事象や代表的な事物になぞらえることで、対象の有する美質や特質を鮮烈に際立たせる修辞的効果を担います。また公的な報告やプレゼンテーションでは、「위와 같이（上記のように）」といった形で前述の内容を要約指示する際にも不可欠の表現となります。",
+      "formation": "名詞 + 과/와 같이（パッチムのある名詞には 과 같이；パッチムのない名詞には 와 같이）",
+      "examples": [
+        {
+          "translation": "先週末はまるでうららかな春のように暖かでした。しかし今週末は真冬のように身を切る寒さでした。"
+        },
+        {
+          "translation": "その絵画は実物の写真のように生き生きとしており、彼が傑出した画家であることが一目で分かります。"
+        },
+        {
+          "translation": "今日は真夏のように蒸し暑かったので、涼を求めてアイスクリームを食べました。"
+        },
+        {
+          "translation": "読書は身体を鍛える運動と同様に、私たちの精神を健やかに保ってくれる尊い営みです。"
+        }
+      ]
+    },
+    "ko_나마저_4": {
+      "title": "~(이)나마저 / ~마저（〜までも、〜さえも - 最後の砦の崩壊と極限の包摂）",
+      "shortExplanation": "既に他の多くが失われたり同様の状態にある中で、最後の頼みの綱や最も除外されるべき対象までもが好ましくない事態に巻き込まれたことを表します（「〜までもが」）。",
+      "longExplanation": "「~(이)나마저」（基本形は補助詞「~마저」）は、深い失望や衝撃の念を伴う強調の助詞表現です。「他のものはさておき、せめてこれだけは残ってほしかった」「最も信頼していた最後の砦」までもが期待を裏切り、否定的な事態に飲み込まれてしまったという極限の窮状を浮き彫りにします。救いのない悲哀や孤立無援の痛切なニュアンスを色濃く反映します。",
+      "formation": "名詞 + (이)나마저（パッチムのある名詞には -이나마저；パッチムのない名詞には -나마저；基本形態は ~마저）",
+      "examples": [
+        {
+          "translation": "彼女は校内で最も難解を極める授業さえも容易に理解しますが、この講義までも完璧に呑み込んでいるのを見ると真に非凡な才能です。"
+        },
+        {
+          "translation": "私は普段友人たちと極めて円満に過ごしているのに、あの親友までもが私を遠ざけ嫌っているようでひどく傷つきました。"
+        },
+        {
+          "translation": "他の人々が皆こぞって反対する中でも、彼はたった一人でも支持者がいてくれることの貴さを知っていました。それなのに、その人までもが反対に回ったため深く落胆しました。"
+        },
+        {
+          "translation": "机の上にあるありとあらゆる所持品を隅々まで探したのですが、あの肝心な品物までもが見つけ出せませんでした。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_할_104": {
+      "title": "~(으)ㄹ 리가 없다 (절대적 부정 및 불가능성 확언)",
+      "shortExplanation": "어떤 행위나 상태가 일어날 이유나 가능성이 전혀 없음을 강하게 단정하거나 의심할 때 사용하는 표현입니다 ('~할 리가 없다').",
+      "longExplanation": "'~(으)ㄹ 리가 없다'는 화자의 이성적 판단과 확고한 근거를 바탕으로 특정 사태의 발생 가능성을 정면으로 부인하는 대표적인 절대 부정 표현입니다. 미래 관형사형 어미 '-(으)ㄹ', 까닭이나 이치를 뜻하는 의존명사 '리', 부정 형용사 '없다'가 결합하여 '그렇게 될 하등의 이유나 타당성이 전혀 존재하지 않는다'는 단언을 이룹니다. 과거 시제의 사실에 대해 부정적으로 추측할 때에는 '-았/었을 리가 없다'를 사용하며, '-(으)ㄹ 리가 있겠어요?'와 같은 수사의문문 형태로도 자주 쓰여 불가능성을 반어적으로 부각합니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 리가 없다 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ 리가 없다; 'ㄹ'을 제외한 받침이 있는 경우 -을 리가 없다; 과거 시제는 -았/었을 리가 없다)",
+      "examples": [
+        {
+          "translation": "그 사람이 거짓말을 할 이유가 전혀 없어요, 그는 누구보다 정직한 사람이기 때문입니다."
+        },
+        {
+          "translation": "지금 이렇게 칠흑같이 어두운데 외출할 리가 없어요, 너무 위험하니까요."
+        },
+        {
+          "translation": "저렇게 큰 중책을 혼자서 다 해낼 리가 없어요, 곁에서 돕지 않으면 가망이 없습니다."
+        },
+        {
+          "translation": "그녀가 나를 싫어할 까닭이 전혀 없어요, 우리는 둘도 없는 단짝 친구이니까요."
+        }
+      ]
+    },
+    "ko_할_105": {
+      "title": "~(으)ㄹ 때마다 (사태의 규칙적 반복 및 항시성)",
+      "shortExplanation": "어떤 특정한 조건이나 상황이 생길 때마다 어김없이 뒤 절의 행동이나 상태가 되풀이됨을 나타내는 구문입니다 ('~할 때마다').",
+      "longExplanation": "'~(으)ㄹ 때마다'는 사태의 규칙적인 반복과 필연성을 드러내는 연결 표현입니다. 관형사형 어미 '-(으)ㄹ', 시간의 국면을 뜻하는 의존명사 '때', 낱낱의 대상을 고루 아우르는 보조사 '마다'가 어우러져, 앞 절의 사건이 발생하는 계기마다 예외 없이 뒤 절의 결과나 감정이 동일하게 수반됨을 나타냅니다. 명사와 직접 어울릴 때에는 '때마다' 또는 '마다'를 결합합니다 (예: 방학 때마다, 명절 때마다).",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 때마다 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ 때마다; 'ㄹ'을 제외한 받침이 있는 경우 -을 때마다; 명사에는 '때마다')",
+      "examples": [
+        {
+          "translation": "저는 책장을 넘겨 책을 읽을 때마다 새로운 지혜를 얻게 됩니다, 그래서 평소 독서를 무척 즐깁니다."
+        },
+        {
+          "translation": "그는 연습을 거듭할 때마다 더욱 뛰어난 기량을 선보입니다, 늘 온 힘을 기울이고 있기 때문입니다."
+        },
+        {
+          "translation": "오빠와 만날 때마다 우리는 로맨틱한 영화를 보러 갑니다, 그래서 저희는 늘 행복에 젖어 있습니다."
+        },
+        {
+          "translation": "우리는 축구를 할 때마다 벗들과 더없는 즐거움을 만끽합니다, 축구를 참으로 좋아하거든요."
+        }
+      ]
+    },
+    "ko_할_106": {
+      "title": "~(으)ㄹ 힘이 없다 (기력 소진 및 무력감 호소)",
+      "shortExplanation": "체력이나 기운이 바닥나서 특정 동작이나 과업을 계속 수행할 여력이 전혀 남아 있지 않음을 드러내는 관용구입니다 ('~할 힘이 없다').",
+      "longExplanation": "'~(으)ㄹ 힘이 없다'는 누적된 피로, 수면 부족, 과중한 노동 등으로 인해 신체적·정신적 에너지가 완전히 고갈되었음을 고백하는 표현입니다. 관형사형 어미 '-(으)ㄹ', 역량이나 체력을 뜻하는 명사 '힘', 존재의 결핍을 뜻하는 '없다'로 이루어져 있습니다. 더 이상의 활동을 중단하고 반드시 휴식이 필요함을 완곡하게 설명하거나 하소연할 때 주로 사용되며, '더 이상' 등의 부사와 짝을 이루는 경우가 많습니다.",
+      "formation": "동사 어간 + -(으)ㄹ 힘이 없다 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ 힘이 없다; 'ㄹ'을 제외한 받침이 있는 경우 -을 힘이 없다)",
+      "examples": [
+        {
+          "translation": "일거리가 너무 넘쳐나서 더 이상 손을 댈 힘이 없어요. 하루에 적어도 8시간은 푹 쉬어야 할 것 같습니다."
+        },
+        {
+          "translation": "어젯밤 뜬눈으로 밤을 지새우다시피 했더니 오늘은 더 이상 일을 감당할 기운이 없습니다."
+        },
+        {
+          "translation": "일주일 내내 하루도 거르지 않고 운동을 했더니 온몸이 쑤셔서 더는 몸을 움직일 힘이 안 나요."
+        },
+        {
+          "translation": "이번 주 내내 시험공부에 온 신경을 쏟았더니 탈진해서 더 이상 책을 들여다볼 힘이 없어요."
+        }
+      ]
+    },
+    "ko_할_107": {
+      "title": "~(으)ㄹ 것 같다 (미래 추측 및 주관적 예견)",
+      "shortExplanation": "현재 관찰된 조짐이나 개인의 직관을 토대로 미래의 일이나 미지의 상황에 대해 조심스럽게 미루어 짐작함을 나타냅니다 ('~할 것 같다').",
+      "longExplanation": "'~(으)ㄹ 것 같다'는 한국어 화자가 일상생활에서 자신의 직관적 판단이나 완곡한 전망을 드러낼 때 가장 보편적으로 구사하는 추측 구문입니다. 미래 관형사형 어미 '-(으)ㄹ', 현상이나 대상을 지칭하는 의존명사 '것', 흡사함을 뜻하는 형용사 '같다'가 결합되어, 단정적인 어조를 피하고 부드럽게 의견을 전달합니다. 동사의 현재 사실 추측은 '-는 것 같다', 형용사의 현재 및 동사의 과거 추측은 '-(으)ㄴ 것 같다'로 분화하여 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 것 같다 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ 것 같다; 'ㄹ'을 제외한 받침이 있는 경우 -을 것 같다)",
+      "examples": [
+        {
+          "translation": "오늘 금방이라도 비가 쏟아질 것 같아요, 하늘에 먹구름이 잔뜩 드리웠네요."
+        },
+        {
+          "translation": "그녀가 너한테 마음이 있는 것 같아, 늘 너를 바라보며 환하게 웃음 짓는 걸 보면 말이야."
+        },
+        {
+          "translation": "내일 치를 시험이 상당히 까다로울 것 같아, 출제 범위가 너무 광범위하거든."
+        },
+        {
+          "translation": "저는 이번 프로젝트가 순조롭게 성공할 것 같아요, 구성원 모두가 이토록 열성적으로 매진하고 있으니까요."
+        }
+      ]
+    },
+    "ko_할_108": {
+      "title": "~(으)ㄹ 것이다 (미래 시제 및 확고한 의지·예측)",
+      "shortExplanation": "앞으로 닥칠 객관적 사태를 예견하거나, 높은 확신을 가지고 미래를 추정하거나, 1인칭 주어의 굳센 결의를 표명할 때 씁니다 ('~할 것이다').",
+      "longExplanation": "'~(으)ㄹ 것이다'는 한국어 시제 체계에서 미래를 규정하는 표준적 서술 구성입니다. 주어가 1인칭일 때는 어떠한 과업을 반드시 실행하겠다는 굳은 의지와 공약('~하겠다')을 드러내며, 3인칭 주어나 자연 현상에 대해서는 사리상 당연히 그러할 것이라는 고도의 개연성 있는 추정을 담아냅니다. 격식 있는 문장이나 공식적인 석상에서는 원형 그대로 사용되고, 일상 대화체에서는 '-(으)ㄹ 거예요'나 '-(으)ㄹ 겁니다'로 부드럽게 변형되어 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 것이다 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ 것이다; 'ㄹ'을 제외한 받침이 있는 경우 -을 것이다; 구어에서는 -(으)ㄹ 거예요 / -(으)ㄹ 겁니다 로 축약)",
+      "examples": [
+        {
+          "translation": "눈발이 줄기차게 쏟아진다면 내일 학교는 임시 휴교를 단행할 것입니다."
+        },
+        {
+          "translation": "체육대회가 목전에 다가온 만큼 우리들은 한층 더 구슬땀을 흘리며 연습할 것입니다."
+        },
+        {
+          "translation": "지난 학기 성적에 비해 이번 학기에는 한결 나은 결실을 거둘 것입니다."
+        },
+        {
+          "translation": "오늘 밤 청명한 밤하늘에는 무수한 별들이 초롱초롱 빛을 발할 것입니다."
+        }
+      ]
+    },
+    "ko_할_109": {
+      "title": "~(으)ㄹ 줄 알다 (행위의 방법 인지 및 기능적 수행 능력)",
+      "shortExplanation": "어떤 행위를 수행하는 요령, 기술, 또는 후천적으로 체득한 능력을 갖추고 있음을 나타냅니다 ('~할 줄 알다').",
+      "longExplanation": "'~(으)ㄹ 줄 알다'는 실질적인 기능이나 지적 노하우를 갖추어 그것을 실행에 옮길 역량이 있음을 서술하는 표현입니다. 관형사형 어미 '-(으)ㄹ', 방도나 규범을 나타내는 의존명사 '줄', 앎을 나타내는 동사 '알다'가 어우러져 언어 구사, 악기 연주, 운전, 요리 등의 실천적 능력을 가리킵니다. 그와 같은 방도나 기술이 결여되어 있음을 나타낼 때는 '-(으)ㄹ 줄 모르다'로 표현합니다. 한편 사실과 다른 주관적 착각을 뜻할 때도 쓰입니다.",
+      "formation": "동사 어간 + -(으)ㄹ 줄 알다 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ 줄 알다; 'ㄹ'을 제외한 받침이 있는 경우 -을 줄 알다; 부정은 -(으)ㄹ 줄 모르다)",
+      "examples": [
+        {
+          "translation": "제가 한국어 구사를 얼마나 잘하느냐고요? 글쎄요, 기초적인 일상 대화는 무리 없이 나눌 줄 압니다."
+        },
+        {
+          "translation": "우리 아이가 피아노를 칠 줄 알아서 감미로운 연주를 선사해 줄 때마다 더할 나위 없이 행복해요."
+        },
+        {
+          "translation": "너는 언제 그렇게 솜씨 좋게 요리를 할 줄 알게 된 거야? 밥상이 정말 꿀맛이었어."
+        },
+        {
+          "translation": "저는 컴퓨터 프로그래밍을 능숙하게 할 줄 알기 때문에 복잡한 전산 문제를 손쉽게 해결할 수 있습니다."
+        }
+      ]
+    },
+    "ko_할지라도_110": {
+      "title": "~(으)ㄹ지라도 (가정적 양보 및 확고한 불변성)",
+      "shortExplanation": "설령 앞 절에 극심한 난관이나 불리한 가정이 전제될지라도 뒤 절의 진리, 도리, 혹은 실천 의지에는 변함이 없음을 나타내는 문어체 연결어미입니다 ('~할지라도').",
+      "longExplanation": "'~(으)ㄹ지라도'는 장중하고 격조 높은 어조를 띠는 양보의 연결어미입니다. 구어체의 '-아/어도'에 비하여 가정의 심도와 양보의 결의가 훨씬 강하여, 아무리 혹독한 상황이나 극한의 가설('설령 목숨이 위태로울지라도')이 닥친다 해도 뒤 절에 언급된 마땅한 책무나 진실은 결코 흔들리지 않음을 천명합니다. 흔히 '비록', '설령', '아무리' 따위의 부사와 잘 어울립니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지라도 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ지라도; 'ㄹ'을 제외한 받침이 있는 경우 -을지라도; 서술격 조사는 -(이)ㄹ지라도; 과거 시제는 -았/었을지라도)",
+      "examples": [
+        {
+          "translation": "아무리 눈코 뜰 새 없이 바빠 여유가 없을지라도 매일 규칙적으로 운동하는 것은 대단히 중요합니다."
+        },
+        {
+          "translation": "입맛을 돋우는 진미일지라도 몸을 상하게 하는 유해한 식품은 반드시 멀리해야 합니다."
+        },
+        {
+          "translation": "가시밭길처럼 험난할지라도 끈기 있게 연마한다면 종내에는 눈부신 성공을 일궈낼 수 있을 것입니다."
+        },
+        {
+          "translation": "비바람이 거세게 몰아치고 있을지라도 저는 오늘 예정된 걸음을 멈추지 않고 외출할 생각입니다."
+        }
+      ]
+    },
+    "ko_할지언정_111": {
+      "title": "~(으)ㄹ지언정 (비장한 양보 및 결사적 의지)",
+      "shortExplanation": "앞 절의 굴욕이나 극단적 손실을 감수할망정 뒤 절의 숭고한 지조나 결단을 결코 저버리지 않겠다는 단호한 태도를 나타내는 연결어미입니다 ('~할지언정').",
+      "longExplanation": "'~(으)ㄹ지언정'은 고풍스럽고 엄숙한 비장미를 자아내는 연결어미입니다. 불의와 타협하지 않는 꿋꿋한 기개나 도덕적 양심을 선언할 때 주로 동원되며, '차라리 앞 절과 같은 극단의 고초나 희생을 치를지언정 뒤 절의 부끄러운 행태는 결코 용납하지 않겠다'는 배수의 진을 치는 화자의 굳은 결의를 형상화합니다. 간접화법 형식을 취한 '-다 할지언정' 꼴로도 널리 구사됩니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지언정 (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㄹ지언정; 'ㄹ'을 제외한 받침이 있는 경우 -을지언정; 흔히 -다 할지언정 꼴로 결합)",
+      "examples": [
+        {
+          "translation": "문제가 난공불락처럼 어렵다 할지언정 결코 포기하지 않고 끝까지 물고 늘어져 풀어 볼 것입니다."
+        },
+        {
+          "translation": "그녀가 비록 나를 냉정히 밀어내고 미워한다 할지언정 나는 변함없는 지고지순한 사랑을 바칠 것입니다."
+        },
+        {
+          "translation": "살을 에는 듯 매서운 혹한이 닥쳐온다 할지언정 우리는 전진을 멈추지 않고 꿋꿋이 걸어가야 합니다."
+        },
+        {
+          "translation": "평가 시험이 첩첩산중으로 험난하다 할지언정 저는 배움의 끈을 놓지 않고 공부에 전념해야 합니다."
+        }
+      ]
+    },
+    "ko_함에_112": {
+      "title": "~(으)ㅁ에 있어(서) (판단과 행위의 영역 및 전제 기준)",
+      "shortExplanation": "어떤 행위를 추진하거나 사안을 헤아릴 때 기준이 되는 전제, 배경, 혹은 활동 영역을 제시하는 격식적 문어 표현입니다 ('~함에 있어서').",
+      "longExplanation": "'~(으)ㅁ에 있어(서)'는 명사형 어미 '-(으)ㅁ', 처격 조사 '에', 동사 '있어(서)'가 유기적으로 맞물린 논리적 서술 구문입니다. 학술 논문, 논설문, 법률 조항, 격식 있는 연설 등에서 특정한 과업을 수행할 때 반드시 견지해야 할 핵심적인 지침이나 불가결한 본질적 요소를 설파하기 위해 범주를 설정할 때 즐겨 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)ㅁ에 있어(서) (어간 끝 음절에 받침이 없거나 'ㄹ' 받침인 경우 -ㅁ에 있어; 'ㄹ'을 제외한 받침이 있는 경우 -음에 있어)",
+      "examples": [
+        {
+          "translation": "식량을 안정적으로 생산함에 있어서는 여전히 숱한 난제가 가로놓여 있으므로 우리는 과감한 체질 개선의 필요성을 절감해야 합니다."
+        },
+        {
+          "translation": "남녀가 진정으로 사랑함에 있어서 솔직한 교감이야말로 가장 으뜸가는 주춧돌 중 하나라고 확신합니다."
+        },
+        {
+          "translation": "생태 환경을 보호함에 있어서는 한 사람 한 사람의 티끌 같은 실천이 모여 태산 같은 변화를 견인합니다."
+        },
+        {
+          "translation": "조화로운 팀워크를 이끌어 냄에 있어서는 그녀야말로 우리 조직에서 가장 중추적인 역할을 담당하는 인재입니다."
+        }
+      ]
+    },
+    "ko_해_113": {
+      "title": "~아/어 보이다 (외양적 인상 및 시각적 판단)",
+      "shortExplanation": "직접 목격한 외모, 표정, 차림새 등을 근거로 하여 대상의 기색이나 심리 상태에 대한 인상을 드러내는 보조 구문입니다 ('~해 보이다').",
+      "longExplanation": "'~아/어 보이다'는 시각적 단서를 통해 포착된 대상의 외형적 양상을 기술하는 보조용언 구문입니다. 성상 형용사 어간에 연결어미 '-아/어'를 얹고 동사 '보이다'를 잇댐으로써, 내면의 속성을 겉으로 드러난 객관적 인상으로 치환하여 묘사합니다. 화자가 직접 보고 직관적으로 느끼는 기색(예: 행복해 보이다, 피곤해 보이다, 젊어 보이다)을 표현하는 데 전형적으로 활용됩니다.",
+      "formation": "형용사 어간 + -아/어 보이다 (어간 끝 음절 모음이 'ㅏ, ㅗ'이면 -아 보이다; 그 밖의 모음이면 -어 보이다; '하다'는 '해 보이다')",
+      "examples": [
+        {
+          "translation": "그 여인은 말할 수 없이 행복해 보이더군요, 언제나 해사하게 웃는 낯으로 이웃들에게 인사를 건넸습니다."
+        },
+        {
+          "translation": "이 요리가 군침이 돌 만큼 맛있어 보여서 망설임 없이 곧장 주문표를 넣었습니다."
+        },
+        {
+          "translation": "그의 일그러진 안색으로 보아하니 실로 가슴 미어지는 비통한 일이 벌어진 듯해 보였습니다."
+        },
+        {
+          "translation": "화사한 벚꽃이 흐드러지게 피어난 이 공원은 그야말로 한 폭의 그림처럼 아름다워 보입니다."
+        }
+      ]
+    },
+    "ko_게다가_0": {
+      "title": "게다가 (동일 맥락의 정보 누적 및 점층적 부가)",
+      "shortExplanation": "앞서 제시된 사실에 머무르지 않고 동일한 논조의 다른 사안이나 사유를 덧붙여 주장을 한층 강화하는 접속부사입니다 ('게다가').",
+      "longExplanation": "'게다가'는 앞 문장의 내용에 또 다른 사실을 보태어 담론의 강도를 고조시키는 접속부사입니다. 의존명사 '데'에 조사 '다가'가 결합된 형태에서 유래하였습니다. 장점 뒤에는 또 다른 장점을 보태고 단점 뒤에는 더 가혹한 단점을 얹음으로써 화자가 피력하고자 하는 찬탄이나 불평의 근거를 단단히 다집니다. 연결 구문으로는 관형사형에 기댄 '-(으)ㄴ/는 데다가'와 밀접하게 조응합니다.",
+      "formation": "앞 절 + -고, 게다가 + 뒤 절 (호응 구문: 동사/형용사 어간 + -(으)ㄴ/는 데다가)",
+      "examples": [
+        {
+          "translation": "저 찻집은 커피 풍미가 남다른 데다 게다가 아늑한 정취마저 그윽해서 문턱이 닳도록 자주 찾아갑니다."
+        },
+        {
+          "translation": "오늘은 궂은비가 부슬부슬 내리고 게다가 기온마저 쌀쌀맞게 곤두박질쳐서 문밖으로 발걸음을 떼기가 싫습니다."
+        },
+        {
+          "translation": "그는 성품이 한없이 원만하고 게다가 두뇌마저 명민하여 뭇사람들로부터 두터운 신망과 사랑을 한 몸에 받습니다."
+        },
+        {
+          "translation": "이 음식점은 차림표마다 맛깔스럽고 게다가 음식값마저 더없이 착해서 단골로 발길을 잇고 있습니다."
+        }
+      ]
+    },
+    "ko_거니와_1": {
+      "title": "~거니와 (기존 사실 인정 및 후행 사안의 첨가)",
+      "shortExplanation": "앞 절의 사실을 긍정적으로 받아들이면서 그에 덧붙여 뒤 절의 사실 또한 결코 뒤지지 않음을 아우르는 문어체 연결어미입니다 ('~거니와').",
+      "longExplanation": "'~거니와'는 문장의 품격을 높여 주는 격조 높은 문어적 연결어미입니다. 앞 절에서 진술한 명제의 타당성을 일단 흔쾌히 수긍한 연후에, 그에 못지않게 중요하거나 한 걸음 더 나아간 사안을 뒤 절에 덧붙임으로써 사실의 복합성과 풍부함을 드러냅니다. 과거 시제 선어말어미 '-았/었-'과도 자연스럽게 어우러지며, 뒤따르는 문장 성분에 보조사 '-도'가 짝을 지어 부가적 누적의 맛을 돋웁니다.",
+      "formation": "동사/형용사 어간 + -거니와 (받침 유무 불문하고 직접 결합; 과거 시제는 -았/었거니와; 서술격 조사는 -(이)거니와)",
+      "examples": [
+        {
+          "translation": "이 물품은 매겨진 가격표가 턱없이 비싸거니와 제가 마음에 품고 찾던 모양새도 결코 아닙니다."
+        },
+        {
+          "translation": "저는 평소 활자를 음미하는 독서도 즐겨 하거니와 영화 감상 또한 무척 애호하여 주말마다 쉴 틈 없이 분주합니다."
+        },
+        {
+          "translation": "이 제품은 만듦새의 품질이 조악하기 짝이 없거니와 고객을 응대하는 사후 서비스마저 엉망진창입니다."
+        },
+        {
+          "translation": "그 명작 영화는 줄거리의 흐름이 흥미진진하거니와 폐부를 찌르는 뜨거운 감동까지 선사합니다."
+        }
+      ]
+    },
+    "ko_것만은_2": {
+      "title": "~(으)ㄴ/는 것만은 (대비적 예외 특정 및 불합치 강조)",
+      "shortExplanation": "다른 정황은 수긍할 수 있을지언정 유독 지목된 특정한 한 사안만큼은 기대에 어긋나 납득하기 어렵거나 섭섭함을 강조할 때 씁니다 ('~것만은').",
+      "longExplanation": "'~(으)ㄴ/는 것만은'은 관형사형 어미 '-(으)ㄴ/는', 의존명사 '것', 배타적 한정을 뜻하는 보조사 '만', 대조의 보조사 '은/는'이 결집된 강조 구성입니다. 두드러진 역접이나 불일치의 문맥에서 빛을 발하여, 다른 여건들이 충분히 호의적이거나 각고의 노력을 쏟았음에도 불구하고 유독 이 한 가지 결과만은 예상 밖으로 빗나가 안타까움이나 불만을 자아낼 때 이를 집약하여 드러냅니다.",
+      "formation": "동사 + -는 것만은 (현재) / -(으)ㄴ 것만은 (과거); 형용사 + -(으)ㄴ 것만은",
+      "examples": [
+        {
+          "translation": "그녀가 밤낮으로 학업에 정진했음에도 학교 시험 성적이 기대치에 못 미친 것만은 도저히 납득하기 어렵습니다."
+        },
+        {
+          "translation": "어젯밤 꿀잠을 푹 잤는데도 불구하고 지금껏 피로가 가시지 않는 것만은 쉽사리 이해가 가지 않는군요."
+        },
+        {
+          "translation": "우리 선수단이 뼈를 깎는 노력을 경주했음에도 시합에서 끝내 패퇴하고 만 것만은 못내 가슴 쓰린 아쉬움으로 남습니다."
+        },
+        {
+          "translation": "매일같이 땀방울을 쏟으며 체력 단련을 거듭했건만 도리어 체중계 눈금이 올라간 것만은 여간 실망스러운 일이 아닙니다."
+        }
+      ]
+    },
+    "ko_과와_3": {
+      "title": "~과/와 같이 (전형적 표상과의 유비 및 동등 비교)",
+      "shortExplanation": "기준이 되는 대표적 대상을 내세워 서술 대상이 그와 동일한 상태나 속성을 띠고 있음을 선명하게 빗대어 나타냅니다 ('~과/와 같이').",
+      "longExplanation": "'~과/와 같이'는 비교 부사격 조사 '과/와'에 형용사 어간 '같-'과 부사형 전성어미 '-이'가 결합한 '같이'가 짝을 이룬 표현입니다. 보편적으로 널리 알려진 사물의 속성을 빗대어 화자가 묘사하고자 하는 대상의 분위기나 질감을 생동감 넘치게 형상화합니다. 또한 공문서나 보고서에서 선행 문맥의 내용을 집약적으로 수렴하여 '위와 같이' 형태로 제시할 때도 긴요하게 기능합니다.",
+      "formation": "명사 + 과/와 같이 (받침 있는 명사에는 '과 같이'; 받침 없는 명사에는 '와 같이')",
+      "examples": [
+        {
+          "translation": "지난 주말은 화사한 봄날과 같이 살가웠습니다. 하지만 이번 주말은 한겨울과 같이 매서운 삭풍이 몰아쳤습니다."
+        },
+        {
+          "translation": "그 유화는 실물 사진과 같이 생생한 숨결이 묻어나서 그가 천재적 화가임을 단박에 웅변해 줍니다."
+        },
+        {
+          "translation": "오늘은 복날 한여름과 같이 수은주가 치솟아서 더위를 달래려 차가운 아이스크림을 베어 물었습니다."
+        },
+        {
+          "translation": "마음의 양식을 쌓는 독서는 육신을 튼튼히 하는 신체 운동과 같이 우리의 영혼을 건강하게 북돋워 주는 고결한 활동입니다."
+        }
+      ]
+    },
+    "ko_나마저_4": {
+      "title": "~(이)나마저 / ~마저 (최후의 보루 붕괴 및 극단적 포함)",
+      "shortExplanation": "이미 다른 사태가 악화된 마당에 마지막 남은 희망이나 가장 믿었던 대상마저 부정적인 상황에 휩쓸렸음을 한탄조로 드러냅니다 ('~마저').",
+      "longExplanation": "'~(이)나마저'(표준 문법상 보조사 '마저'의 강조적 양상)는 화자에게 극도의 상실감과 배신감, 혹은 비탄을 안겨 주는 국면에서 구사되는 조사 표현입니다. '다른 것들은 다 제쳐놓더라도 이것만은 지켜지리라' 믿었던 마지노선이나 최후의 대상마저 허물어져 버렸음을 지목하여, 더 이상 기댈 곳 없는 막막한 파국이나 비극성을 절절하게 환기시킵니다.",
+      "formation": "명사 + (이)나마저 (받침 있는 명사 뒤에는 -이나마저; 받침 없는 명사 뒤에는 -나마저; 대표 기본형은 조사 '마저')",
+      "examples": [
+        {
+          "translation": "그녀는 전교에서 가장 난해한 심화 과목조차 거뜬히 소화해 내는데, 이 전문 강좌마저 척척 꿰뚫어 보는 것을 보니 경이로울 따름입니다."
+        },
+        {
+          "translation": "저는 평소 동무들과 무탈하게 잘 어울리는 편인데, 유독 그 절친한 벗마저 저를 백안시하는 듯하여 가슴에 깊은 생채기를 입었습니다."
+        },
+        {
+          "translation": "뭇사람들이 일제히 결사반대를 외쳤을 때도 그는 단 한 사람의 지지가 지니는 불씨를 소중히 여겼습니다. 그러나 그 동지마저 등을 돌리자 형언할 수 없는 참담함에 휩싸였습니다."
+        },
+        {
+          "translation": "서안 위에 널려 있는 온갖 세간을 샅샅이 훑어보았으나, 그토록 애타게 찾던 그 긴요한 물건마저 끝내 시야에 걸려들지 않았습니다."
+        }
+      ]
+    }
+  }
+}

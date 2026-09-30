@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_뿐만_5": {
+      "title": "~뿐만 아니라 (Không những... mà còn..., không chỉ... mà còn...)",
+      "shortExplanation": "Dùng để bổ sung thêm thông tin liên quan, diễn đạt ý 'không những... mà còn...', 'không chỉ... mà còn...'.",
+      "longExplanation": "'~뿐만 아니라' được cấu thành từ phụ trợ từ '뿐' (chỉ), trợ từ bổ trợ '만' (chỉ, duy nhất) và phủ định từ '아니다' (không phải là). Cấu trúc này dùng để biểu thị sự bổ sung, nhấn mạnh rằng sự việc không chỉ dừng lại ở nội dung phía trước mà còn bao hàm cả nội dung ở vế sau. Thường kết hợp với các trợ từ như '-도' (cũng) ở vế sau để tăng tính liên kết và nhấn mạnh mức độ.",
+      "formation": "Danh từ + 뿐만 아니라 | Thân động từ/tính từ + -(으)ㄹ 뿐만 아니라 (kết thúc bằng phụ âm dùng -을 뿐만 아니라, kết thúc bằng nguyên âm dùng -ㄹ 뿐만 아니라; thì quá khứ dùng -았/었을 뿐만 아니라)",
+      "examples": [
+        {
+          "translation": "Cô ấy không những có thể nói tiếng Trung mà còn nói tiếng Nhật rất lưu loát."
+        },
+        {
+          "translation": "Tôi không chỉ thích học tập mà còn thích cả thể thao nữa."
+        },
+        {
+          "translation": "Sản phẩm này không những giá cả phải chăng mà chất lượng cũng rất vượt trội."
+        },
+        {
+          "translation": "Anh ấy không chỉ sử dụng thành thạo tiếng Hàn mà tiếng Anh cũng rất lưu loát, nên đang làm công việc phiên dịch."
+        }
+      ]
+    },
+    "ko_더니_6": {
+      "title": "~더니 / ~았/었더니 (Sau khi làm... thì nhận ra..., vì đã... nên...)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả sau khi người nói trực tiếp thực hiện một hành động trong quá khứ thì phát hiện ra một sự thật mới, hoặc hành động đó trở thành nguyên nhân dẫn đến kết quả ở vế sau.",
+      "longExplanation": "'~더니' (khi đi với chủ ngữ ngôi thứ nhất hồi tưởng lại hành động của chính mình thường kết hợp dưới dạng '-았/었더니') là vĩ tố liên kết hồi tưởng. Nó diễn tả việc người nói sau khi đã trực tiếp trải nghiệm hoặc thực hiện một hành động ở vế trước thì phát hiện ra một tình huống hoặc kết quả bất ngờ ở vế sau ('sau khi... thì thấy rằng...'). Ngoài ra, nó cũng dùng để chỉ hành động của người nói trong quá khứ là nguyên nhân dẫn đến kết quả ở vế sau. Khi dùng trực tiếp '-더니' không có '-았/었-', cấu trúc này thường dùng cho ngôi thứ hai, thứ ba hoặc cảnh vật để đối chiếu sự thay đổi qua thời gian.",
+      "formation": "Thân động từ/tính từ + -았/었더니 (hành động của bản thân ngôi thứ nhất: thân từ có nguyên âm ㅏ, ㅗ dùng -았더니, nguyên âm khác dùng -었더니, 하다 biến thành 했더니) | Thân động từ/tính từ + -더니 (khi quan sát sự thay đổi của người khác hoặc sự vật)",
+      "examples": [
+        {
+          "translation": "Sau khi tôi ăn món này thì thấy vị của nó thực sự đã thay đổi, vì thế tôi quyết định đi tìm món khác để dùng."
+        },
+        {
+          "translation": "Tôi gọi điện cho cô ấy thì mới biết cô ấy đang trong kỳ nghỉ nên không thể nhận cuộc gọi."
+        },
+        {
+          "translation": "Tôi đến hiệu sách thì thấy cuốn sách mình muốn mua đã bán hết sạch rồi, nên phải tìm ở hiệu sách khác."
+        },
+        {
+          "translation": "Đến quán pizza thì món pizza tôi định gọi đã hết sạch từ trước, đây là lần đầu tiên tôi gặp trường hợp như vậy."
+        }
+      ]
+    },
+    "ko_이든지_7": {
+      "title": "~든지 ~든지 / ~(이)든지 (Dù là... hay là..., cho dù... hay...)",
+      "shortExplanation": "Dùng để liệt kê nhiều sự lựa chọn hoặc khả năng khác nhau, biểu thị rằng dù chọn phương án nào thì kết quả hay hành động ở vế sau cũng không thay đổi ('dù là... hay là...').",
+      "longExplanation": "'~든지 ~든지' (với danh từ dùng '(이)든지') là vĩ tố liên kết hoặc trợ từ biểu thị sự lựa chọn không phân biệt. Cấu trúc này dùng để liệt kê hai hay nhiều khả năng, hành động đối lập hoặc khác nhau, mang ý nghĩa rằng cho dù là phương án nào đi chăng nữa thì điều đó cũng không gây ảnh hưởng, không quan trọng đối với kết quả hay quyết định ở mệnh đề sau.",
+      "formation": "Thân động từ/tính từ + -든지 ... -든지 | Danh từ + (이)든지 ... (이)든지 (danh từ có phụ âm cuối dùng -이든지, không có phụ âm cuối dùng -든지)",
+      "examples": [
+        {
+          "translation": "Dù bạn thích cà phê hay thích trà, quán cà phê này đều có thể làm hài lòng tất cả mọi người."
+        },
+        {
+          "translation": "Dù bạn ra ngoài sớm vào buổi sáng hay trở về muộn vào buổi tối, hãy hứa gặp nhau một tiếng mỗi ngày nhé."
+        },
+        {
+          "translation": "Cho dù bạn thích bánh hamburger hay thích pizza, nhà hàng này đều có thể phục vụ tất cả các món."
+        },
+        {
+          "translation": "Dù bạn đi du lịch vào ngày trong tuần hay cuối tuần, hãy cứ thoải mái tận hưởng chuyến đi mà không cần bận tâm nhé."
+        }
+      ]
+    },
+    "ko_임에_8": {
+      "title": "~(으)ㅁ에 틀림없다 / ~임에 틀림없다 (Chắc chắn là..., ắt hẳn là..., không còn nghi ngờ gì nữa)",
+      "shortExplanation": "Dùng để diễn tả sự khẳng định hoặc phán đoán với độ chắc chắn rất cao, mang nghĩa 'chắc chắn là...', 'không nghi ngờ gì nữa'.",
+      "longExplanation": "'~(으)ㅁ에 틀림없다' là cấu trúc kết hợp giữa đuôi danh từ hóa '-(으)ㅁ', trợ từ chỉ phương hướng/đối tượng '에' và tính từ '틀림없다' (không có sai sót, chắc chắn). Nó được dùng để khẳng định một phán đoán mang tính chắc chắn tuyệt đối dựa trên căn cứ rõ ràng, tương đương với 'chắc chắn là...', 'ắt hẳn là...', 'không còn nghi ngờ gì nữa'. Cấu trúc này thường xuất hiện trong phong cách trang trọng hoặc văn viết chính thức.",
+      "formation": "Danh từ + 임에 틀림없다 | Thân động từ/tính từ + -(으)ㅁ에 틀림없다 (có phụ âm cuối dùng -음에 틀림없다, không có phụ âm cuối dùng -ㅁ에 틀림없다; thì quá khứ dùng -았/었음에 틀림없다; tương lai dùng -(으)ㄹ 것임에 틀림없다)",
+      "examples": [
+        {
+          "translation": "Dù sự xuất hiện của anh ấy chắc chắn là đã thành công, nhưng tài năng của anh ấy chắc chắn còn vượt trội hơn thế nữa."
+        },
+        {
+          "translation": "Tỉ lệ thắng của đội chúng ta rất cao, nên chắc chắn rằng chúng ta sẽ giành chiến thắng."
+        },
+        {
+          "translation": "Dù anh ấy có bị người khác chỉ trích đi chăng nữa, thì sự lựa chọn của anh ấy chắc chắn là đúng đắn."
+        },
+        {
+          "translation": "Theo dự báo của đài quan sát khí tượng, chắc chắn ngày mai trời sẽ mưa."
+        }
+      ]
+    },
+    "ko_쩌면_9": {
+      "title": "쩌면 / 어쩌면 (Có lẽ, biết đâu chừng, có khi)",
+      "shortExplanation": "Phó từ dùng để diễn tả sự suy đoán hoặc tính khả năng không chắc chắn của người nói ('có lẽ', 'biết đâu chừng').",
+      "longExplanation": "'쩌면' là dạng rút gọn trong khẩu ngữ của phó từ '어쩌면'. Từ này thường đứng ở đầu câu để diễn tả sự phán đoán mang tính phỏng đoán, e dè hoặc không chắc chắn về một sự việc, hiện tượng nào đó. Nó thường đi kèm với các vĩ tố phỏng đoán như '-(으)ㄹ지도 모르다' (không biết chừng), '-(으)ㄹ 수도 있다' (cũng có thể) hoặc '-(으)ㄹ 것 같다' (hình như, dường như).",
+      "formation": "쩌면 / 어쩌면 + Mệnh đề (thường kết hợp với -(으)ㄹ지도 모르다, -(으)ㄹ 수도 있다, -(으)ㄹ 것 같다 ở cuối câu)",
+      "examples": [
+        {
+          "translation": "Có lẽ anh ấy đã thực lòng yêu bạn cũng không biết chừng."
+        },
+        {
+          "translation": "Có lẽ mối xung đột này cũng có thể được giải quyết ổn thỏa."
+        },
+        {
+          "translation": "Biết đâu chừng kế hoạch đó lại có thể thành công cũng nên."
+        },
+        {
+          "translation": "Có khi kỳ thi lần này lại là kỳ thi khó khăn nhất cũng nên."
+        }
+      ]
+    },
+    "ko_치고는_10": {
+      "title": "~치고는 (So với..., xét là... thì...)",
+      "shortExplanation": "Dùng sau danh từ để biểu thị sự so sánh với tiêu chuẩn hay mong đợi thông thường, mang nghĩa 'so với...', 'xét là... thì...'.",
+      "longExplanation": "'~치고는' là cấu trúc kết hợp giữa trợ từ '치고' (xét trong phạm trù) và trợ từ đối chiếu nhấn mạnh '는'. Cấu trúc này dùng sau danh từ để đưa ra một chuẩn mực, tiêu chuẩn hay quy luật thông thường, sau đó chỉ ra rằng sự việc hay đối tượng thực tế lại mang tính ngoại lệ — có thể tốt hơn hoặc tệ hơn so với mức mong đợi thông thường của phạm trù đó. Tương đương trong tiếng Việt là 'so với...', 'xét là... thì...', 'đối với một... mà nói thì khá là...'.",
+      "formation": "Danh từ + 치고는",
+      "examples": [
+        {
+          "translation": "So với một tài xế mới tập lái thì bạn lái xe khá là giỏi đấy."
+        },
+        {
+          "translation": "So với thời tiết mùa đông thì thời tiết hôm nay ấm áp vô cùng."
+        },
+        {
+          "translation": "So với mức giá thành thì chất lượng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Xét theo độ tuổi thì trông bác rất khỏe mạnh đấy ạ."
+        }
+      ]
+    },
+    "ko_커녕_11": {
+      "title": "~은/는커녕 / ~기는커녕 (Chẳng những không... mà còn..., nói gì đến...)",
+      "shortExplanation": "Trợ từ dùng để nhấn mạnh rằng không những điều được kỳ vọng không xảy ra, mà ngay cả mức tối thiểu cũng không đạt được hoặc ngược lại còn tệ hơn ('nói gì đến...', 'chẳng những không... mà...').",
+      "longExplanation": "'~커녕' (với danh từ thường dùng '-은/는커녕', với động từ/tính từ dùng '-기는커녕') là trợ từ biểu đạt sự phủ định mạnh mẽ. Nó nhấn mạnh rằng sự việc được nêu ra ở vế trước là điều đáng lẽ phải xảy ra hoặc là kỳ vọng tự nhiên nhưng thực tế lại hoàn toàn không đạt được, thậm chí ngay cả điều cơ bản, tối thiểu hơn ở vế sau cũng chẳng làm được hoặc ngược lại xảy ra tình huống tồi tệ hơn. Thường đi kèm với các trợ từ nhấn mạnh tiêu cực ở vế sau như '-도' (cũng), '-조차' (thậm chí, ngay cả).",
+      "formation": "Danh từ + 은/는커녕 (có phụ âm cuối dùng -은커녕, không có phụ âm cuối dùng -는커녕) | Thân động từ/tính từ + -기는커녕",
+      "examples": [
+        {
+          "translation": "Nói là sẽ lập kế hoạch chu đáo, nhưng chẳng những chưa bắt đầu mà ngay cả chuẩn bị cũng chưa làm được gì."
+        },
+        {
+          "translation": "Cứ ngỡ là sẽ không bị muộn giờ hẹn, ai ngờ đến sớm chẳng thấy đâu mà ngược lại còn đến muộn mất rồi."
+        },
+        {
+          "translation": "Đến thư viện để học bài, vậy mà đọc sách đâu chẳng thấy, chỉ toàn gật gù ngủ gục là hết cả ngày."
+        },
+        {
+          "translation": "Cứ háo hức đi đợt giảm giá, nhưng nói gì đến chuyện mua rẻ, kết cục lại thành ra phải mua đắt hơn."
+        }
+      ]
+    },
+    "ko_판에_12": {
+      "title": "-(으)ㄴ/는 판에 / ~판에 (Trong lúc..., giữa tình cảnh..., trong hoàn cảnh...)",
+      "shortExplanation": "Dùng để diễn tả một hành động hay sự việc xảy ra ngay giữa bối cảnh, tình thế hoặc cục diện cụ thể nào đó ('trong tình cảnh...', 'giữa lúc...').",
+      "longExplanation": "'판' là danh từ phụ thuộc chỉ tình thế, cục diện hoặc hoàn cảnh diễn ra sự việc. Cấu trúc '-(으)ㄴ/는 판에' diễn tả rằng một sự việc hay hành động nào đó diễn ra ngay giữa lúc hoặc trong bối cảnh tình hình phía trước đang diễn biến. Cấu trúc này thường dùng để làm nổi bật sự éo le, tính cấp bách hoặc sự việc xảy ra không đúng lúc trong một hoàn cảnh cụ thể.",
+      "formation": "Thân động từ + -는 판에 (hiện tại) / -(으)ㄴ 판에 (quá khứ/hoàn thành) | Danh từ + 판에",
+      "examples": [
+        {
+          "translation": "Giữa lúc học kỳ mới đã bắt đầu, một học sinh mới đã nhập học."
+        },
+        {
+          "translation": "Trong tình cảnh công ty bắt đầu đóng cửa ngừng hoạt động từ hôm nay, tôi đang phải đi tìm việc làm mới."
+        },
+        {
+          "translation": "Giữa lúc đang ráo riết chuẩn bị cho dự án kinh doanh trọng điểm, cổ phiếu của công ty đã tăng vọt."
+        },
+        {
+          "translation": "Đúng lúc tôi đang cắm đầu ôn thi thì bạn bè lại kéo nhau sang chơi."
+        }
+      ]
+    },
+    "ko_하건마는_13": {
+      "title": "~건마는 / ~건만 (Tuy... thế nhưng..., những tưởng... vậy mà...)",
+      "shortExplanation": "Vĩ tố liên kết mang sắc thái văn viết biểu thị sự tương phản, nghịch lý giữa hai vế câu, thường kèm theo cảm xúc tiếc nuối, thất vọng ('tuy... thế nhưng...', 'vậy mà...').",
+      "longExplanation": "'~건마는' (dạng rút gọn là '~건만') là vĩ tố liên kết mang phong cách văn chương, cổ điển. Nó diễn tả việc vế trước thừa nhận một sự thật, ý định hay kỳ vọng, nhưng vế sau lại diễn ra một tình huống trái ngược hoàn toàn hoặc không như mong đợi. Cấu trúc này thường chuyên chở tâm trạng tiếc nuối, xót xa, buồn phiền hoặc thở dài trước sự việc bất như ý.",
+      "formation": "Thân động từ/tính từ + -건마는 (thì quá khứ kết hợp với -았/었건마는)",
+      "examples": [
+        {
+          "translation": "Tôi theo học chuyên ngành thiết kế đồ họa thế nhưng lại không thạo máy tính, nên việc sử dụng phần mềm thiết kế có vẻ khá khó khăn."
+        },
+        {
+          "translation": "Hôm nay thời tiết đẹp những tưởng sẽ đi dạo được thế mà đột nhiên trời lại đổ mưa nên chẳng thể đi dạo."
+        },
+        {
+          "translation": "Tôi rất muốn giỏi tiếng Hàn thế nhưng việc ghi nhớ từ vựng quá đỗi gian nan, thành ra ngày nào cũng học mà vẫn chẳng nhớ nổi."
+        },
+        {
+          "translation": "Bạn tôi đã hứa sẽ tặng quà sinh nhật cho tôi vậy mà bạn ấy lại quên mất món quà nên chẳng tặng tôi thứ gì."
+        }
+      ]
+    },
+    "ko_하더라도_14": {
+      "title": "-더라도 / ~하더라도 (Cho dù... thì cũng..., dẫu có... đi chăng nữa)",
+      "shortExplanation": "Vĩ tố liên kết giả định nhượng bộ, biểu thị ý nghĩa 'cho dù... thì cũng...', nhấn mạnh rằng tình huống ở vế sau không bị thay đổi bởi điều kiện giả định ở vế trước.",
+      "longExplanation": "'-더라도' (với các động từ gắn với 하다 tạo thành '~하더라도') là vĩ tố liên kết biểu thị sự giả định nhượng bộ. Nó được dùng khi giả định một tình huống hay điều kiện ở mệnh đề trước, đồng thời nhấn mạnh rằng cho dù điều đó có thực sự xảy ra đi chăng nữa thì ý chí, hành động hay kết quả ở mệnh đề sau vẫn không hề bị lay chuyển hay ảnh hưởng. Tương đương trong tiếng Việt là 'cho dù... thì vẫn...', 'dẫu cho... đi chăng nữa'.",
+      "formation": "Thân động từ/tính từ + -더라도 (thì quá khứ kết hợp với -았/었더라도)",
+      "examples": [
+        {
+          "translation": "Dù trời có mưa đi nữa thì tôi cũng sẽ không mang ô đâu, vì tôi rất ghét dùng ô."
+        },
+        {
+          "translation": "Dù có mệt mỏi thì tôi vẫn phải tiếp tục học bài, vì kỳ thi sắp đến rồi."
+        },
+        {
+          "translation": "Cho dù phải dậy sớm thì tôi vẫn luôn phải tập thể dục, vì sức khỏe của bản thân."
+        },
+        {
+          "translation": "Dẫu cho không có thời gian thì tôi vẫn phải chăm chỉ tiếp tục học tiếng Hàn, vì tôi rất quan tâm đến tiếng Hàn."
+        }
+      ]
+    },
+    "ko_하든지_15": {
+      "title": "~든지 말든지 (Dù có... hay không thì..., mặc kệ... hay không)",
+      "shortExplanation": "Cấu trúc biểu thị sự bàng quan, không bận tâm đến việc hành động đó có diễn ra hay không, mang nghĩa 'dù có... hay không thì...', 'mặc kệ... hay không'.",
+      "longExplanation": "'~든지 말든지' là cấu trúc kết hợp giữa vĩ tố liên kết lựa chọn '-든지' và trợ động từ phủ định '말다' (thôi, không làm). Nó được dùng để liệt kê hai khả năng đối lập: thực hiện hành động đó hoặc không thực hiện. Cấu trúc này thể hiện thái độ dứt khoát, mặc kệ hoặc không quan tâm của người nói, nhấn mạnh rằng đối phương hay sự việc có diễn ra như thế nào đi nữa thì quyết định, kế hoạch hay tình cảm ở mệnh đề sau vẫn không hề bị suy chuyển.",
+      "formation": "Thân động từ + -든지 말든지 (với động từ 하다 là 하든지 말든지; động từ kết thúc không có 하다 dùng Thân động từ + -든지 말든지, ví dụ: 오든지 말든지, 먹든지 말든지)",
+      "examples": [
+        {
+          "translation": "Người đó có thích hay không thích thì chúng tôi vẫn sẽ tiến hành theo đúng kế hoạch."
+        },
+        {
+          "translation": "Hôm nay trời mưa hay không mưa thì chúng tôi vẫn lên kế hoạch tiếp tục đi dạo."
+        },
+        {
+          "translation": "Cậu có tham gia hay không thì bữa tiệc này vẫn sẽ tiếp tục diễn ra."
+        },
+        {
+          "translation": "Dù cô ấy có yêu tôi hay không thì tôi vẫn sẽ tiếp tục yêu cô ấy."
+        }
+      ]
+    },
+    "ko_하려니와_16": {
+      "title": "-(으)려니와 / ~하려니와 (Định làm... thế nhưng..., muốn... vậy mà...)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả ý định muốn làm một việc gì đó nhưng lại gặp phải trở ngại, tình huống bất ngờ cản trở khiến sự việc không thành ('định làm... nhưng...').",
+      "longExplanation": "'-(으)려니와' (khi gắn với 하다 tạo thành '~하려니와') là vĩ tố liên kết kết hợp ý định '-(으)려고 하다' với vĩ tố liên kết '-거니와'. Trong ngữ cảnh diễn đạt sự cản trở, nó biểu thị rằng người nói có ý định hoặc nỗ lực thực hiện hành động ở vế trước, thế nhưng lại xuất hiện khó khăn, trở ngại bất ngờ ở vế sau khiến cho kế hoạch không thể hoàn thành như mong muốn. (Lưu ý: trong văn viết chuẩn, cấu trúc này còn có nghĩa phán đoán và bổ sung thông tin 'đã định... lại còn...').",
+      "formation": "Thân động từ + -(으)려니와 (thân từ có phụ âm cuối dùng -으려니와, không có phụ âm cuối hoặc kết thúc bằng ㄹ dùng -려니와; với 하다 biến thành 하려니와)",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi định cùng bạn bè đi xem phim thế nhưng thời tiết đột ngột trở xấu nên kế hoạch đã đổ bể."
+        },
+        {
+          "translation": "Tôi muốn thử làm món ăn với nhiều hương vị đa dạng hơn nhưng vì tay nghề nấu nướng còn vụng về nên làm không được ngon."
+        },
+        {
+          "translation": "Tôi định ngủ thật sớm thế nhưng bao nhiêu suy nghĩ cứ lướt qua trong đầu làm tôi không tài nào chợp mắt được."
+        },
+        {
+          "translation": "Tôi muốn bắt đầu tập thể dục nhưng vì cứ ru rú ở nhà không thu xếp được thời gian nên đến giờ vẫn chưa bắt đầu được."
+        }
+      ]
+    },
+    "ko_하여간_17": {
+      "title": "하여간 / ~하여간 (Dù thế nào đi nữa, dù sao chăng nữa, bằng mọi giá)",
+      "shortExplanation": "Phó từ dùng để biểu thị quyết tâm thực hiện hành vi bất chấp mọi khó khăn, trở ngại, mang nghĩa 'dù sao đi nữa', 'dù thế nào chăng nữa'.",
+      "longExplanation": "'하여간' (Hán tự: 何如間) là phó từ có nghĩa tương tự như '어찌 되었든 간에' (dù thế nào đi nữa) hoặc '아무튼' (dù sao chăng nữa). Nó diễn tả thái độ kiên định hoặc quyết tâm cao độ, khẳng định rằng bất luận hoàn cảnh xung quanh có phức tạp hay trở ngại thế nào thì chủ ngữ vẫn sẽ tìm mọi cách, bằng mọi giá nỗ lực để hướng tới và đạt được kết quả mong đợi.",
+      "formation": "Động từ/Tính từ liên kết + 하여간 | Đứng độc lập như một phó từ ở đầu hoặc giữa câu",
+      "examples": [
+        {
+          "translation": "Dù chưa chuẩn bị kỹ cho kỳ thi, nhưng bằng mọi giá tôi cũng sẽ nỗ lực để thi đỗ."
+        },
+        {
+          "translation": "Dẫu hoàn cảnh kinh tế muôn vàn khó khăn, nhưng dù thế nào chăng nữa tôi cũng phải cố gắng tằn tiện để gom góp học phí."
+        },
+        {
+          "translation": "Cho dù có gian nan vất vả, nhưng nếu cứ kiên trì bằng mọi giá thì nhất định sẽ đạt được mục tiêu ấy."
+        },
+        {
+          "translation": "Dù cần một khoản kinh phí rất lớn, nhưng nếu dù sao đi nữa vẫn chi tiêu tằn tiện thì chắc chắn sẽ hiện thực hóa được ước mơ."
+        }
+      ]
+    },
+    "ko_하여야만_18": {
+      "title": "-아/어야만 / ~하여야만 (Chỉ khi... mới có thể..., phải... thì mới...)",
+      "shortExplanation": "Vĩ tố liên kết nhấn mạnh điều kiện tiên quyết tuyệt đối, biểu thị rằng chỉ khi thỏa mãn điều kiện ở vế trước thì kết quả ở vế sau mới có thể xảy ra ('chỉ khi... mới...').",
+      "longExplanation": "'-아/어야만' (khi gắn với các động từ có đuôi 하다 sẽ thành '~하여야만' hoặc '~해야만') là cấu trúc được cấu tạo bởi vĩ tố liên kết chỉ điều kiện bắt buộc '-아/어야' và trợ từ nhấn mạnh độc nhất '만' (chỉ). Cấu trúc này nhấn mạnh rằng hành động hoặc trạng thái ở vế trước là điều kiện tiên quyết duy nhất, bắt buộc không thể thay thế; nếu không đáp ứng được điều kiện đó thì tuyệt đối không thể đạt được kết quả ở mệnh đề sau. Vế sau thường kết hợp với dạng có thể '-(으)ㄹ 수 있다' hoặc mệnh đề kết quả tất yếu.",
+      "formation": "Thân động từ/tính từ + -아/어야만 (kết thúc bằng nguyên âm ㅏ, ㅗ dùng -아야만; các nguyên âm khác dùng -어야만; 하다 biến thành 하여야만 hoặc 해야만)",
+      "examples": [
+        {
+          "translation": "Chỉ khi thức dậy sớm thì mới có thể đến nơi đúng giờ làm việc."
+        },
+        {
+          "translation": "Phải thảo luận với bác sĩ đã thấu hiểu hoàn cảnh của bạn thì mới có thể thay đổi kế hoạch phẫu thuật được."
+        },
+        {
+          "translation": "Chỉ khi có thu nhập ổn định thì mới có thể vay thế chấp mua nhà."
+        },
+        {
+          "translation": "Chỉ khi theo sát bài bản các bài huấn luyện thì mới có thể thi đỗ được kỳ thi."
+        }
+      ]
+    },
+    "ko_해야겠다_19": {
+      "title": "-아/어야겠다 / ~해야겠다 (Phải... thôi, chắc phải... mới được)",
+      "shortExplanation": "Đuôi câu diễn tả ý chí hoặc quyết định tức thời của người nói rằng mình cần phải thực hiện một hành động nào đó ('chắc phải... thôi').",
+      "longExplanation": "'-아/어야겠다' (kết hợp với động từ 하다 tạo thành '~해야겠다') là cấu trúc được tạo thành từ vĩ tố chỉ nghĩa vụ '-아/어야 하다' và vĩ tố phỏng đoán/ý chí '-겠-'. Nó diễn tả việc người nói nhận thức thấy sự cần thiết của một hành động trong hoàn cảnh hiện tại và lập tức đưa ra quyết định, ý chí thực hiện hành động đó. Tương đương trong tiếng Việt là 'chắc phải... thôi', 'phải... mới được', 'sẽ phải... ngay'.",
+      "formation": "Thân động từ + -아/어야겠다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아야겠다; các nguyên âm khác dùng -어야겠다; 하다 biến thành 해야겠다)",
+      "examples": [
+        {
+          "translation": "Bây giờ đã muộn rồi nên tôi phải về nhà thôi."
+        },
+        {
+          "translation": "Ngày mai có bài thi nên tối nay tôi chắc phải học bài thôi."
+        },
+        {
+          "translation": "Cân nặng cứ tiếp tục tăng lên nên tôi phải bắt đầu tập thể dục mới được."
+        },
+        {
+          "translation": "Lâu lắm rồi không liên lạc nên tôi phải gọi điện cho bạn mình mới được."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_뿐만_5": {
+      "title": "~뿐만 아니라（不仅……而且……、不但……还……）",
+      "shortExplanation": "用于补充添加相关信息，表示“不仅……而且……”、“不但……还……”。",
+      "longExplanation": "“~뿐만 아니라”由表示限定的依存名词/补助词“뿐”、补助词“만”（只、仅）以及否定形容词“아니다”（不是）组合而成。用于强调情况不仅限于前项所陈述的范围，还兼具或包含后项的内容。常与后句中的“도”（也）呼应使用，表示语意的递进或并列追加。",
+      "formation": "名词 + 뿐만 아니라 | 动词/形容词词干 + -(으)ㄹ 뿐만 아니라（有收音接 -을 뿐만 아니라，无收音接 -ㄹ 뿐만 아니라；过去时接 -았/었을 뿐만 아니라）",
+      "examples": [
+        {
+          "translation": "她不仅会说汉语，而且日语也说得非常流利。"
+        },
+        {
+          "translation": "我不仅喜欢学习，而且也喜欢运动。"
+        },
+        {
+          "translation": "这款商品不仅价格实惠，品质也非常出众。"
+        },
+        {
+          "translation": "他不仅韩语流利，英语也运用自如，因此正在从事口译工作。"
+        }
+      ]
+    },
+    "ko_더니_6": {
+      "title": "~더니 / ~았/었더니（做了……之后发现……、因为……结果……）",
+      "shortExplanation": "连接词尾，表示说话人亲自做了前项动作后，发现了后项的新情况，或前项行为导致了后项的结果。",
+      "longExplanation": "“~더니”（以说话人自身为第一人称主语时通常形式为“-았/었더니”）是表示回想体验的连接词尾。它表示说话人亲自经历了前项的行为或动作后，直接察觉、发现后项出乎意料的事实或结果（相当于“……之后发现……”）；或者前项自身的行为成为引发后项结果的原因、契机。若直接接在动词或形容词词干后使用“-더니”（不含过去时），则多用于第二、三人称或自然景物，回想过去亲眼所见的情况并与现状形成对比或说明原因。",
+      "formation": "动词/形容词词干 + -았/었더니（第一人称自身经历：词干元音为ㅏ、ㅗ接 -았더니，其余接 -었더니，하다变为 했더니）| 动词/形容词词干 + -더니（观察第二、三人称或事物变迁）",
+      "examples": [
+        {
+          "translation": "我吃了这个之后发现味道真的变了，所以决定换别的食物享用。"
+        },
+        {
+          "translation": "我给她打电话，才知道她正在休假接不了电话。"
+        },
+        {
+          "translation": "我去了书店，发现我想买的书已经全部售罄了，所以不得不去别的书店找找看。"
+        },
+        {
+          "translation": "到了披萨店才发现打算点的披萨已经全部卖完了，这种情况我还是第一次遇到。"
+        }
+      ]
+    },
+    "ko_이든지_7": {
+      "title": "~든지 ~든지 / ~(이)든지（无论……还是……、不管……还是……）",
+      "shortExplanation": "用于列举多个不同的选择或可能性，表示无论选择哪一种，后项的情况或决定都不会改变（“不管……还是……”、“无论……还是……”）。",
+      "longExplanation": "“~든지 ~든지”（与名词结合时为“(이)든지”）是表示任选、无差别的连接词尾或助词。它通过并列列举两个或多个相对立、相替代的事物或动作，表明无论处于何种情况、做出何种选择，对说话人而言都无所谓，或者后项的结果与结论都一概不受影响。",
+      "formation": "动词/形容词词干 + -든지 ... -든지 | 名词 + (이)든지 ... (이)든지（名词有收音接 -이든지，无收音接 -든지）",
+      "examples": [
+        {
+          "translation": "无论你喜欢咖啡还是喜欢茶，这家咖啡厅都能满足所有人。"
+        },
+        {
+          "translation": "不管你是早晨早起出门，还是晚上很晚回来，我们约好每天见上一小时吧。"
+        },
+        {
+          "translation": "不管你是喜欢汉堡包还是喜欢披萨，这家餐厅都能提供所有的餐点。"
+        },
+        {
+          "translation": "无论你是在工作日还是在周末去旅行，都请毫无顾虑地尽情享受旅程吧。"
+        }
+      ]
+    },
+    "ko_임에_8": {
+      "title": "~(으)ㅁ에 틀림없다 / ~임에 틀림없다（肯定是……、毫无疑问是……）",
+      "shortExplanation": "用于表达高度确信的判断或推断，表示“毫无疑问是……”、“肯定……”。",
+      "longExplanation": "“~(으)ㅁ에 틀림없다”由名词形词尾“-(으)ㅁ”、助词“에”以及形容词“틀림없다”（没错、确切）构成。说话人根据客观事实或合乎情理的依据，对某一情况或结果做出近乎百分之百肯定的断定，强调结论确凿无疑，相当于汉语的“肯定……”、“毫无疑问……必定……”。该句型书面语色彩浓厚，语气非常庄重坚定。",
+      "formation": "名词 + 임에 틀림없다 | 动词/形容词词干 + -(으)ㅁ에 틀림없다（词干有收音接 -음에 틀림없다，无收音接 -ㅁ에 틀림없다；过去时接 -았/었음에 틀림없다；推测或将来时接 -(으)ㄹ 것임에 틀림없다）",
+      "examples": [
+        {
+          "translation": "他的登场表演肯定是非常成功的，但毫无疑问他的才华更加出众。"
+        },
+        {
+          "translation": "我们队的胜率很高，因此毫无疑问我们一定会赢得胜利。"
+        },
+        {
+          "translation": "尽管他受到了其他人的批评，但他的选择肯定是正确的。"
+        },
+        {
+          "translation": "根据气象台的预报，明天毫无疑问肯定会下雨。"
+        }
+      ]
+    },
+    "ko_쩌면_9": {
+      "title": "쩌면 / 어쩌면（也许、说不定、可能）",
+      "shortExplanation": "副词，用于表达说话人对某种可能性的推测或不确定，相当于“也许”、“说不定”。",
+      "longExplanation": "“쩌면”是副词“어쩌면”在口语中的缩略形式。它通常置于句首，表达说话人对某一未确定情况的猜测、假设或疑虑。常与表示推测的终结表达如“-(으)ㄹ지도 모르다”（说不定……）、“-(으)ㄹ 수도 있다”（也可能……）或“-(으)ㄹ 것 같다”（好像……）呼应使用，使推测的语气更为委婉。",
+      "formation": "쩌면 / 어쩌면 + 句子（句尾常与 -(으)ㄹ지도 모르다, -(으)ㄹ 수도 있다, -(으)ㄹ 것 같다 呼应）",
+      "examples": [
+        {
+          "translation": "也许他曾是真心深爱着你的也说不定。"
+        },
+        {
+          "translation": "也许这场冲突也是可以化解的。"
+        },
+        {
+          "translation": "说不定那个计划还真能取得成功呢。"
+        },
+        {
+          "translation": "也许这次考试可能是最难的一次。"
+        }
+      ]
+    },
+    "ko_치고는_10": {
+      "title": "~치고는（作为……来说、以……而言算是……）",
+      "shortExplanation": "接在名词后，表示以一般标准或预期来衡量，实际情况呈现出例外（“就……而言”、“作为……来说算是……”）。",
+      "longExplanation": "“~치고는”由表示限定范围的助词“치고”与表示对比强调的助词“는”结合而成。接在名词之后，将该名词作为一般常理或普遍认知的基准，指出某人或某事物在该基准之下属于例外情况（超出预期地好，或低于预期）。相当于汉语的“作为……来说算挺……”、“以……而言”、“就……来看”。",
+      "formation": "名词 + 치고는",
+      "examples": [
+        {
+          "translation": "作为新手司机来说，你的车开得相当好呢。"
+        },
+        {
+          "translation": "以冬天的气候而言，今天的天气非常暖和。"
+        },
+        {
+          "translation": "就价格而言，它的品质可以说是非常出色的。"
+        },
+        {
+          "translation": "以您的年龄来说，看起来真是十分硬朗健康呢。"
+        }
+      ]
+    },
+    "ko_커녕_11": {
+      "title": "~은/는커녕 / ~기는커녕（别说……连……也、不但没……反倒……）",
+      "shortExplanation": "补助词，强调前项原本期待发生的事情非但没有实现，甚至连更低的要求都没达到，反而出现了更差的情况（“别说……连……”、“不但没……反倒……”）。",
+      "longExplanation": "“~커녕”（接名词时常为“-은/는커녕”，接用言时为“-기는커녕”）是表示强否定和递减对比的补助词。用于强调前项所提到的基本预期或良好设想根本无从谈起，而后项不仅未能如愿，甚至连最低限度的状态都没有达到（常与后句的“-도”、“-조차”呼应，表“连……都未……”），或是适得其反地发生了更糟糕的结局。",
+      "formation": "名词 + 은/는커녕（有收音接 -은커녕，无收音接 -는커녕）| 动词/形容词词干 + -기는커녕",
+      "examples": [
+        {
+          "translation": "嘴上说要好好制定计划，可别说动工开始了，就连准备工作都完全没做。"
+        },
+        {
+          "translation": "还以为不会耽误约会时间呢，谁知不但没能早到，反而还迟到了。"
+        },
+        {
+          "translation": "本是去图书馆用功学习的，可别说看书了，光打瞌睡一天就全晃过去了。"
+        },
+        {
+          "translation": "本满心期待去赶打折促销，可别说图便宜了，反而买得比平时还贵。"
+        }
+      ]
+    },
+    "ko_판에_12": {
+      "title": "-(으)ㄴ/는 판에 / ~판에（正当……之际、在这种情况下、局势之下）",
+      "shortExplanation": "表示在某种特定的局面、情势或境况之中发生了后项的事情（“在……情势下”、“正当……之际”）。",
+      "longExplanation": "“판”是表示局面、场合或处境的依存名词。“-(으)ㄴ/는 판에”用于表示某一动作或突发状况正好发生在前项特定的情境、局势或紧迫背景之下。常用来衬托事件发生时的特殊背景氛围，或强调事情发生得不合时宜、令人无奈的窘迫局面。",
+      "formation": "动词词干 + -는 판에（现在时）/ -(으)ㄴ 판에（过去或完成时）| 名词 + 판에",
+      "examples": [
+        {
+          "translation": "正当新学期已经开学之际，有一位新同学办理了入学。"
+        },
+        {
+          "translation": "在公司自今日起停业关闭的局面下，我正在物色新的工作。"
+        },
+        {
+          "translation": "正当全力筹备核心项目之际，公司的股票价格暴涨。"
+        },
+        {
+          "translation": "正当我焦头烂额复习备考的时候，朋友们却跑来找我玩了。"
+        }
+      ]
+    },
+    "ko_하건마는_13": {
+      "title": "~건마는 / ~건만（虽说……但是……、本以为……却……）",
+      "shortExplanation": "书面语连接词尾，表示转折与逆接，常带有遗憾、失落或无奈的情感色彩（“虽说……却……”、“本以为……然而……”）。",
+      "longExplanation": "“~건마는”（口语中常略为“~건만”）是具有浓郁书面语色彩的逆接连接词尾。前项陈述事实、意图或期待，后项却出现了与之相反或违背初衷的客观情况。往往伴随着说话人感到遗憾、惋惜、无奈或不满的心情，相当于汉语的“虽然……可是却……”、“本想着……然而……”。",
+      "formation": "动词/形容词词干 + -건마는（过去时接 -았/었건마는）",
+      "examples": [
+        {
+          "translation": "我虽说是学平面设计的，但却不太擅长摆弄电脑，所以设计软件用起来似乎挺费劲的。"
+        },
+        {
+          "translation": "今天天气很好本打算去散步的，然而突如其来下起雨来，结果没能去成。"
+        },
+        {
+          "translation": "我虽说很想把韩语学好，可是背单词实在太难了，即便天天学也总记不住。"
+        },
+        {
+          "translation": "朋友原本答应要送我生日礼物的，但他却把礼物给忘了，结果什么都没送给我。"
+        }
+      ]
+    },
+    "ko_하더라도_14": {
+      "title": "-더라도 / ~하더라도（哪怕……也……、即使……也……）",
+      "shortExplanation": "让步假设连接词尾，表示“即使……也……”、“哪怕……也……”，强调后项的意志或结果不受前项假设条件的左右。",
+      "longExplanation": "“-더라도”（与하다类动词结合时表现为“~하더라도”）是表示假设性让步的连接词尾。说话人假设前项的情况即使发生或成立，后项的行为、决心或客观事实依然保持不变，丝毫不受其干扰或限制。语气比“-아/어도”更加坚决，假设的让步色彩更加鲜明。相当于汉语的“即使……也……”、“即便……仍然……”。",
+      "formation": "动词/形容词词干 + -더라도（过去时接 -았/었더라도）",
+      "examples": [
+        {
+          "translation": "哪怕下雨我也不会带伞的，因为我真的很讨厌打伞。"
+        },
+        {
+          "translation": "即使很疲倦也必须继续学习，因为马上就要考试了。"
+        },
+        {
+          "translation": "就算得大清早起，也必须坚持锻炼身体，这都是为了健康着想。"
+        },
+        {
+          "translation": "哪怕没有时间，我也得坚持勤奋地继续学习韩语，因为我对韩语有着浓厚的兴趣。"
+        }
+      ]
+    },
+    "ko_하든지_15": {
+      "title": "~든지 말든지（爱……不……、不管……还是不……）",
+      "shortExplanation": "表示对做与不做不在乎、不关心的态度，相当于“爱……不……”、“不管……还是不……”。",
+      "longExplanation": "“~든지 말든지”是将表示任选的连接词尾“-든지”与表示否定的辅助动词“말다”（罢休、不做）组合而成的惯用表达。通过列举做某事与不做某事的两种相对立选择，表明说话人对结果毫不在意、任凭自便的态度，强调无论对方如何选择或客观情况怎样，后项的计划、决心依然照旧进行，毫不动摇。",
+      "formation": "动词词干 + -든지 말든지（하다动词接 하든지 말든지；其他动词如 오든지 말든지, 먹든지 말든지）",
+      "examples": [
+        {
+          "translation": "不管那个人喜不喜欢，我们都会按照计划进行。"
+        },
+        {
+          "translation": "不管今天下不下雨，我们都打算继续去散步。"
+        },
+        {
+          "translation": "不管你参不参加，这个派对都会照常办下去。"
+        },
+        {
+          "translation": "不管她到底爱不爱我，我都会一如既往地继续爱她。"
+        }
+      ]
+    },
+    "ko_하려니와_16": {
+      "title": "-(으)려니와 / ~하려니와（打算……却……、本想……但是……）",
+      "shortExplanation": "连接词尾，用于表达说话人本打算做某事，却遇到意外阻碍或困难导致事与愿违（“打算……却……”）。",
+      "longExplanation": "“-(으)려니와”（与하다动词结合时为“~하려니와”）是由意图词尾“-(으)려고”与连接词尾“-거니와”融合演变而来的表达。在本课例句所展现的用法中，它表示前项表达了说话人的打算、意图或尝试，但后项紧接着出现了意想不到的客观困难、变故或障碍，导致该打算未能如愿实现。（注：在标准韩国语语法中，该词尾亦常用作兼具推测与递进之意，意为“不仅会……而且也……”）。",
+      "formation": "动词词干 + -(으)려니와（词干有收音接 -으려니와，无收音或收音为ㄹ接 -려니와；하다后接 하려니와）",
+      "examples": [
+        {
+          "translation": "今天我本打算和朋友们一起去看电影的，但天气突然变得极差，结果计划落空了。"
+        },
+        {
+          "translation": "本想试着做出风味更加多元的料理，却因厨艺欠佳怎么也做不好。"
+        },
+        {
+          "translation": "本想早点入睡，可脑海里思绪万千浮想联翩，结果怎么也睡不着。"
+        },
+        {
+          "translation": "本想开始锻炼身体，但因为一直宅在家里腾不出时间，所以至今还没能开始。"
+        }
+      ]
+    },
+    "ko_하여간_17": {
+      "title": "하여간 / ~하여간（无论如何、不管怎样、总之）",
+      "shortExplanation": "副词，用于表达排除一切客观困难与阻碍、执意坚持到底的决心，意为“无论如何”、“不管怎样”。",
+      "longExplanation": "“하여간”（汉字词：何如間）是表示无论局势如何变化都要把事情推进下去的副词，意义与“아무튼”（总之）、“어찌 되었든”（不管怎样）相通。用于强调说话人坚定的信念或意志，表明不顾当前的险阻或恶劣条件，不管怎样、无论如何都要通过努力去达成预定的目标。",
+      "formation": "用言连接形 + 하여간 | 作为副词置于句首或句中修饰谓语",
+      "examples": [
+        {
+          "translation": "虽然没有好好准备考试，但无论如何我都要努力通过考试。"
+        },
+        {
+          "translation": "尽管经济上非常拮据，但不管怎样我也一定要省吃俭用来凑齐学费。"
+        },
+        {
+          "translation": "哪怕再辛苦，只要无论如何都坚持到底，就一定能够达成那个目标。"
+        },
+        {
+          "translation": "虽然需要巨额资金，但无论如何只要精打细算节约使用，就一定能实现梦想。"
+        }
+      ]
+    },
+    "ko_하여야만_18": {
+      "title": "-아/어야만 / ~하여야만（只有……才……、必须……才能……）",
+      "shortExplanation": "表示唯一必要条件的连接词尾，强调唯有满足前项条件，后项的结果才可能实现（“只有……才……”）。",
+      "longExplanation": "“-아/어야만”（在하다动词中体现为“~하여야만”或“~해야만”）由表示必要条件的连接词尾“-아/어야”与表示唯一的限定助词“만”（只、仅）结合而成。它极具排他性地强调前项是后项成立的绝对先决条件，若是前项条件得不到满足，后项的结果就绝无达成的可能。后句常与“-(으)ㄹ 수 있다”（能够）呼应，相当于汉语的“只有……才能……”、“必须……才……”。",
+      "formation": "动词/形容词词干 + -아/어야만（词干元音为ㅏ、ㅗ接 -아야만；其余元音接 -어야만；하다变为 하여야만 或 해야만）",
+      "examples": [
+        {
+          "translation": "只有起得早，才能够按时赶到公司上班。"
+        },
+        {
+          "translation": "必须同体谅您病情的医生协商，才能更改手术计划。"
+        },
+        {
+          "translation": "只有拥有稳定的固定收入，才能够申请到住房贷款。"
+        },
+        {
+          "translation": "只有认真跟上训练节奏，才能在考试中顺利合格。"
+        }
+      ]
+    },
+    "ko_해야겠다_19": {
+      "title": "-아/어야겠다 / ~해야겠다（得……了、该……了、必须得……才行）",
+      "shortExplanation": "终结词尾，表达说话人意识到某事的必要性后，当即做出的决心或意愿（“得……了”、“该……了”）。",
+      "longExplanation": "“-아/어야겠다”（在하다动词中体现为“~해야겠다”）由表示必要义务的“-아/어야 하다”与表示意图意志的先语末词尾“-겠-”融合成句尾。说话人根据当前的局势或情况，深感某项举动的紧迫性与必要性，进而表达出自己打算采取该行动的坚定决心。常用于第一人称，相当于汉语的“该……了”、“必须得……了”、“得赶紧……了”。",
+      "formation": "动词词干 + -아/어야겠다（词干元音为ㅏ、ㅗ接 -아야겠다；其余元音接 -어야겠다；하다变为 해야겠다）",
+      "examples": [
+        {
+          "translation": "现在时间不早了，我得回家了。"
+        },
+        {
+          "translation": "明天有考试，今晚我得好好用功复习了。"
+        },
+        {
+          "translation": "体重一直在增加，我真得开始锻炼身体了。"
+        },
+        {
+          "translation": "好久没联系了，我得给朋友打个电话了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_뿐만_5": {
+      "title": "~뿐만 아니라（〜だけでなく、〜ばかりでなく）",
+      "shortExplanation": "関連する情報を追加し、「〜だけでなく……も」「〜ばかりでなく……も」という意味を表します。",
+      "longExplanation": "「~뿐만 아니라」は、限定を表す助詞「뿐」、強調の助詞「만（〜だけ）」、否定の形容詞「아니다（ではない）」が結びついた表現で、事態が前節の内容にとどまらず後節にも及んでいることを表します。日本語の「〜だけでなく」「〜ばかりか」に相当し、後節には「-도（〜も）」などを伴ってさらなる情報や特徴を付け加える際によく用いられます。",
+      "formation": "名詞 + 뿐만 아니라 | 動詞・形容詞語幹 + -(으)ㄹ 뿐만 아니라（パッチムがある場合は -을 뿐만 아니라、ない場合は -ㄹ 뿐만 아니라；過去形は -았/었을 뿐만 아니라）",
+      "examples": [
+        {
+          "translation": "彼女は中国語だけでなく日本語も流暢に話すことができます。"
+        },
+        {
+          "translation": "私は勉強だけでなく運動も好きです。"
+        },
+        {
+          "translation": "この商品は値段が手頃なだけでなく品質も優れています。"
+        },
+        {
+          "translation": "彼は韓国語だけでなく英語も流暢に使いこなすため、通訳として働いています。"
+        }
+      ]
+    },
+    "ko_더니_6": {
+      "title": "~더니 / ~았/었더니（〜したら、〜したところ - 経験・結果の発見）",
+      "shortExplanation": "話し手が過去に前節の行為をした結果、後節の新たな事実を発見したことや、その結果が生じたことを表す接続語尾です。",
+      "longExplanation": "「~더니」（話し手自身の一人称主語の行為には通常「-았/었더니」の形を用いる）は、過去の経験を回想して述べる接続語尾です。話し手が自ら前節の行動をとった結果、「〜したところ（後節の事実が判明した）」のように新たな事実・結果に気づいた場面や、前節の行動が原因となって後節の事態が引き起こされたことを表します。なお、語幹に直接「-더니」がつく場合は、主に二人称・三人称の行動や過去に目撃した状況の変化・対比を表します。",
+      "formation": "動詞・形容詞語幹 + -았/었더니（一人称の経験・結果：陽母音は -았더니、陰母音は -었더니、하다は 했더니）| 動詞・形容詞語幹 + -더니（三人称の観察や状態の変化）",
+      "examples": [
+        {
+          "translation": "これを食べてみたら味が本当に変わっていました。それで他の食べ物を探して飲食することにしました。"
+        },
+        {
+          "translation": "彼女に電話をかけたところ、彼女は休暇中だったため電話に出られませんでした。"
+        },
+        {
+          "translation": "書店に行ってみたら、欲しかった本はすでに売り切れていました。そのため別の書店で探さなければなりませんでした。"
+        },
+        {
+          "translation": "ピザ屋に行ったところ、注文しようとしていたピザはすでに全て売り切れていました。このようなケースは初めてです。"
+        }
+      ]
+    },
+    "ko_이든지_7": {
+      "title": "~든지 ~든지 / ~(이)든지（〜であれ〜であれ、〜だろうと〜だろうと）",
+      "shortExplanation": "複数の選択肢や可能性を並列して挙げ、「どちらであっても関係なく」「〜であろうと〜であろうと」という意味を表します。",
+      "longExplanation": "「~든지 ~든지」（名詞と結合する場合は「(이)든지」）は、選択や無条件を表す接続語尾・助詞です。二つ以上の対立する選択肢や動作・状態を並べて挙げ、いずれの場合を選択したとしても後節の事態や判断には影響がなく、関係がないことを表します。日本語の「〜であれ〜であれ」「〜しようと〜しようと」に相当します。",
+      "formation": "動詞・形容詞語幹 + -든지 ... -든지 | 名詞 + (이)든지 ... (이)든지（名詞の末尾にパッチムがある場合は -이든지、ない場合は -든지）",
+      "examples": [
+        {
+          "translation": "コーヒーが好きであろうと、お茶が好きであろうと、このカフェではすべての人を満足させることができます。"
+        },
+        {
+          "translation": "朝早く出かけようと、夜遅く帰ってこようと、毎日1時間会うことを約束しましょう。"
+        },
+        {
+          "translation": "ハンバーガーが好きであれ、ピザが好きであれ、このレストランはすべての料理を提供できます。"
+        },
+        {
+          "translation": "平日に旅行に行こうと、週末に行こうと、関係なく気楽に旅行を楽しんでください。"
+        }
+      ]
+    },
+    "ko_임에_8": {
+      "title": "~(으)ㅁ에 틀림없다 / ~임에 틀림없다（〜に違いない、〜であることは確かだ）",
+      "shortExplanation": "事態に対する確信度の高い判断を表し、「〜に違いない」「〜であることに間違いない」という意味を表します。",
+      "longExplanation": "「~(으)ㅁ에 틀림없다」は、用言の名詞形語尾「-(으)ㅁ」、助詞「에」、形容詞「틀림없다（間違いない）」が合わさった表現です。確かな根拠や論理的推論に基づいて、ある事実や結果が確実であることを強く断定する際に用いられます。日本語の「〜に違いない」「〜に相違ない」に相当し、主に書き言葉や改まった公の場面で多く用いられます。",
+      "formation": "名詞 + 임에 틀림없다 | 動詞・形容詞語幹 + -(으)ㅁ에 틀림없다（パッチムがある場合は -음에 틀림없다、ない場合は -ㅁ에 틀림없다；過去形は -았/었음에 틀림없다；未来・推量形は -(으)ㄹ 것임에 틀림없다）",
+      "examples": [
+        {
+          "translation": "彼の出演が成功であったことに違いありませんが、彼の才能はさらに優れているに違いありません。"
+        },
+        {
+          "translation": "私たちのチームが勝つ確率は高いので、私たちが勝ち抜くことに違いありません。"
+        },
+        {
+          "translation": "彼はたとえ他の人々に批判されたとしても、彼の選択は正しかったに違いありません。"
+        },
+        {
+          "translation": "観測所の予報によると、明日は雨が降るに違いありません。"
+        }
+      ]
+    },
+    "ko_쩌면_9": {
+      "title": "쩌면 / 어쩌면（もしかすると、ひょっとしたら）",
+      "shortExplanation": "不確実な可能性や推測を表す副詞で、「もしかすると」「ひょっとしたら」という意味を表します。",
+      "longExplanation": "「쩌면」は、副詞「어쩌면」の口語縮約形です。文頭に置かれて事態の不確実な推測や可能性を控えめに提示する働きを持ちます。日本語の「もしかすると」「ひょっとして」「ことによると」に相当し、文末には「-(으)ㄹ지도 모르다（〜かもしれない）」「-(으)ㄹ 수도 있다（〜することもあり得る）」「-(으)ㄹ 것 같다（〜のようだ）」といった推量の表現が呼応することが非常に多いです。",
+      "formation": "쩌면 / 어쩌면 + 文（文末に -(으)ㄹ지도 모르다, -(으)ㄹ 수도 있다, -(으)ㄹ 것 같다 が呼応することが多い）",
+      "examples": [
+        {
+          "translation": "もしかすると彼は本気であなたを愛していたのかもしれません。"
+        },
+        {
+          "translation": "ひょっとしたらこの葛藤は解決できるかもしれません。"
+        },
+        {
+          "translation": "もしかするとその計画が成功するかもしれないですね。"
+        },
+        {
+          "translation": "ひょっとすると今回の試験が一番難しいかもしれません。"
+        }
+      ]
+    },
+    "ko_치고는_10": {
+      "title": "~치고는（〜にしては、〜の割には）",
+      "shortExplanation": "名詞の後について、一般的な基準や予想と照らし合わせて例外的な結果であることを表します（「〜にしては」「〜の割には」）。",
+      "longExplanation": "「~치고는」は、範囲を限定する助詞「치고」に対照・強調の助詞「는」が結びついた表現です。名詞について、そのものが本来持つ一般的な常識や基準を提示し、それに対して現実の状態が予想よりも上回っている、あるいは下回っているという例外性を述べるときに用います。日本語の「〜にしては」「〜の割には」に相当します。",
+      "formation": "名詞 + 치고는",
+      "examples": [
+        {
+          "translation": "初心者ドライバーにしてはかなり運転がお上手ですね。"
+        },
+        {
+          "translation": "冬の気候にしては天気がとても暖かいです。"
+        },
+        {
+          "translation": "値段の割には品質が非常に素晴らしいです。"
+        },
+        {
+          "translation": "ご年齢の割にはとても健康そうに見えますね。"
+        }
+      ]
+    },
+    "ko_커녕_11": {
+      "title": "~은/는커녕 / ~기는커녕（〜どころか、〜はおろか）",
+      "shortExplanation": "前節に期待された事態が成立しないばかりか、より低い基準さえ満たさない、あるいは逆の結果になったことを表します（「〜どころか」「〜はおろか」）。",
+      "longExplanation": "「~커녕」（名詞には「-은/는커녕」、動詞・形容詞には「-기는커녕」）は、期待された当然の基準を強く打ち消す補助詞です。前節の内容は当然期待されることであるにもかかわらず、その実現はおろか、後節ではそれ以下の最低限のことすらできなかったり（後節の「-도」「-조차」と呼応）、かえって正反対の悪い事態が生じたりしたことを強調します。日本語の「〜どころか」「〜はおろか」に相当します。",
+      "formation": "名詞 + 은/는커녕（パッチムがある場合は -은커녕、ない場合は -는커녕）| 動詞・形容詞語幹 + -기는커녕",
+      "examples": [
+        {
+          "translation": "計画をしっかり立てると言っていたのに、始めるどころか準備さえ全くできませんでした。"
+        },
+        {
+          "translation": "約束の時間に遅れないと思っていたのに、早く来るどころか遅刻してしまいました。"
+        },
+        {
+          "translation": "勉強をしに図書館に行ったのに、読書どころか居眠りばかりして一日が終わってしまいました。"
+        },
+        {
+          "translation": "セールに行くと期待していましたが、安く買うどころかもっと高く買う羽目になってしまいました。"
+        }
+      ]
+    },
+    "ko_판에_12": {
+      "title": "-(으)ㄴ/는 판에 / ~판에（〜という状況で、〜の折に、〜の最中に）",
+      "shortExplanation": "特定の局面、情勢、境遇の真っ只中で後節の事態が生じたことを表します（「〜という状況で」「〜の最中に」）。",
+      "longExplanation": "「판」は局面・情勢・状況を表す依存名詞です。「-(으)ㄴ/는 판에」は、前節のような特別な事情や緊迫した情勢の真っ只中にあって、後節の事態や行動が生じたことを表します。特定の状況下で事態が起こる際、時にそのタイミングの不都合さや皮肉な巡り合わせ、切迫感を浮き彫りにするニュアンスを持ちます。",
+      "formation": "動詞語幹 + -는 판에（現在）/ -(으)ㄴ 판에（過去・完了）| 名詞 + 판에",
+      "examples": [
+        {
+          "translation": "学校の新学期が始まった状況の中で、新しい生徒が入学しました。"
+        },
+        {
+          "translation": "会社が今日から廃業するという状況で、私は新しい職場を探しています。"
+        },
+        {
+          "translation": "主要な事業を準備している最中に、会社の株価が急騰しました。"
+        },
+        {
+          "translation": "試験勉強をしている最中に、友達が遊びに来てしまいました。"
+        }
+      ]
+    },
+    "ko_하건마는_13": {
+      "title": "~건마는 / ~건만（〜けれど、〜ものの、〜なのに）",
+      "shortExplanation": "前節の事実や意図に対して後節で思い通りにならない逆の結果が生じたことを表し、残念さやもどかしさを伴う接続語尾です。",
+      "longExplanation": "「~건마는」（縮約形は「~건만」）は、書き言葉の響きを持つ逆接の接続語尾です。前節で認めた事実や抱いていた期待に対し、後節ではそれに反する都合の悪い事態や相反する結果が続くことを表します。単なる逆接にとどまらず、思い通りにならないもどかしさ、無念さ、ため息交じりの後悔の情が込められる点に特徴があります。日本語の「〜ものの」「〜けれど」「〜のに（どうにもならない）」に相当します。",
+      "formation": "動詞・形容詞語幹 + -건마는（過去形は -았/었건마는）",
+      "examples": [
+        {
+          "translation": "私はグラフィックデザインを勉強しているものの、パソコンの扱いが苦手なのでデザインソフトを使うのが難しく感じられます。"
+        },
+        {
+          "translation": "今日は天気が良くて散歩しようとしたのに、急に雨が降ってきて散歩できませんでした。"
+        },
+        {
+          "translation": "韓国語が上手になりたいのは山々なのですが、単語の暗記が難しすぎて、毎日勉強してもなかなか思い出せません。"
+        },
+        {
+          "translation": "友達が私に誕生日プレゼントをくれると約束してくれたのに、プレゼントを忘れてしまって何もくれませんでした。"
+        }
+      ]
+    },
+    "ko_하더라도_14": {
+      "title": "-더라도 / ~하더라도（たとえ〜ても、〜としても）",
+      "shortExplanation": "仮定的な譲歩を表す接続語尾で、「たとえ〜ても」「〜としても」後節の内容が変わらないことを強調します。",
+      "longExplanation": "「-더라도」（하다動詞と結びついて「~하더라도」）は、仮定の譲歩を表す接続語尾です。前節で極端な条件や事態を仮定し、たとえそれが実際に起ころうとも後節の意志や行動、客観的結果が何ら揺らぐことなく実行されることを強調します。「-아/어도」に比べて仮定性が強く、断固たる決意や揺るぎない方針を示す場面でよく使われます。日本語の「たとえ〜としても」「〜であっても」に相当します。",
+      "formation": "動詞・形容詞語幹 + -더라도（過去形は -았/었더라도）",
+      "examples": [
+        {
+          "translation": "雨が降ったとしても傘は持っていきません。私は傘が嫌いだからです。"
+        },
+        {
+          "translation": "疲れていたとしても勉強を続けなければなりません。もうすぐ試験があるからです。"
+        },
+        {
+          "translation": "早起きしなければならないとしても常に運動をしなければなりません。健康のためです。"
+        },
+        {
+          "translation": "時間がないとしても私は根気強く韓国語の勉強を続けなければなりません。韓国語にとても興味があるからです。"
+        }
+      ]
+    },
+    "ko_하든지_15": {
+      "title": "~든지 말든지（〜しようとしまいと、〜しようがするまいが）",
+      "shortExplanation": "行為をするかしないかに関心を持たず、どちらであっても意に介さない態度を表します（「〜しようとしまいと」）。",
+      "longExplanation": "「~든지 말든지」は、選択を表す接続語尾「-든지」と、否定・中止を表す補助動詞「말다」が組み合わさった表現です。ある行為をするかしないかという正反対の選択肢を並べ、そのいずれであっても関知しないという無関心・放任の態度を表します。相手がどう行動しようと、あるいは状況がどう転ぼうと、後節の計画や意志には一切ブレが生じないことを強く示します。日本語の「〜しようがするまいが」「〜しようとしまいと」に相当します。",
+      "formation": "動詞語幹 + -든지 말든지（하다動詞は 하든지 말든지；その他は 오든지 말든지, 먹든지 말든지 など）",
+      "examples": [
+        {
+          "translation": "あの人が好もうと好むまいと、私たちは計画通りに進めます。"
+        },
+        {
+          "translation": "今日雨が降ろうと降るまいと、私たちは散歩を続ける予定です。"
+        },
+        {
+          "translation": "君が参加しようがしまいが、このパーティーは続けられます。"
+        },
+        {
+          "translation": "彼女が私を愛していようといまいと、私は彼女を愛し続けます。"
+        }
+      ]
+    },
+    "ko_하려니와_16": {
+      "title": "-(으)려니와 / ~하려니와（〜しようとしたものの、〜しようとしたが）",
+      "shortExplanation": "前節で何かを行おうとした意図や試みがあったものの、後節で予期せぬ障害や困難に直面して果たせなかったことを表す接続語尾です。",
+      "longExplanation": "「-(으)려니와」（하다動詞と結びついて「~하려니와」）は、意図を表す「-(으)려고 하다」と接続語尾「-거니와」のニュアンスが重なった表現です。本項の文脈では、前節で主語が自らの意図として何かを実行しようと試みたものの、後節で突発的な悪天候や能力不足といった障害・困難に直面し、結果として思い通りにならなかったという経緯を語る際に用いられます。（※標準文法における推量・添加「〜するだろうし、また〜」の用法とも関連します）。",
+      "formation": "動詞語幹 + -(으)려니와（パッチムがある場合は -으려니와、ない場合やㄹパッチムは -려니와；하다は 하려니와）",
+      "examples": [
+        {
+          "translation": "今日は友達と一緒に映画を見に行こうとしたものの、急に天気がひどく悪くなって計画が失敗してしまいました。"
+        },
+        {
+          "translation": "もっと多彩な味の料理を作ってみようとしたのですが、料理の腕前が足りなくてうまくできません。"
+        },
+        {
+          "translation": "早く寝ようとしたものの、色々な考えが頭をよぎってなかなか眠りにつけませんでした。"
+        },
+        {
+          "translation": "運動を始めようとしたのですが、家にいて時間がとれず、まだ始められずにいます。"
+        }
+      ]
+    },
+    "ko_하여간_17": {
+      "title": "하여간 / ~하여간（何としても、いずれにしても、とにかく）",
+      "shortExplanation": "困難や障害に関わらず、目的を果たすべく行動を押し進める強い決意を表す副詞です（「とにかく」「何としても」）。",
+      "longExplanation": "「하여간」（漢字語：何如間）は、「어찌 되었든 간에（どうであろうと）」や「아무튼（とにかく）」と同様の意味を持つ副詞です。周囲の厳しい状況や障害にとらわれることなく、いかなる手段を尽くしてでも前進しようとする固い決意や意志を表します。日本語の「いずれにしても」「何としても」「何が何でも」に相当し、述語の前に置かれて強い行動方針を強調します。",
+      "formation": "用言接続形 + 하여간 | または副詞として文頭・文中に単独で配置",
+      "examples": [
+        {
+          "translation": "試験の準備はしていませんでしたが、何としても努力して試験に合格するつもりです。"
+        },
+        {
+          "translation": "経済的に苦しい状況ではありますが、いずれにせよ節約して学費を集めなければなりません。"
+        },
+        {
+          "translation": "つらくても、何としてもコツコツとやり続ければその目標を達成できるはずです。"
+        },
+        {
+          "translation": "多くの資金が必要ですが、とにかく節約して使っていけば夢を叶えることができるはずです。"
+        }
+      ]
+    },
+    "ko_하여야만_18": {
+      "title": "-아/어야만 / ~하여야만（〜してこそはじめて、〜しなければ〜ない）",
+      "shortExplanation": "後節が実現するための絶対的な必須条件を強調し、「〜してこそはじめて」「〜してこそ」という意味を表します。",
+      "longExplanation": "「-아/어야만」（하다動詞と結びついて「~하여야만」または「~해야만」）は、必須条件を表す接続語尾「-아/어야」に、限定の助詞「만（〜だけ）」が付加されて条件の重要性を極限まで高めた構文です。前節の条件が満たされない限り、後節の結果は決して成立し得ないという唯一無二の前提条件を表します。後節には「-(으)ㄹ 수 있다（〜できる）」などの可能表現が呼応することが一般的で、日本語の「〜してこそはじめて」「〜してはじめて〜できる」に相当します。",
+      "formation": "動詞・形容詞語幹 + -아/어야만（語幹末尾の母音部がㅏ・ㅗの場合は -아야만、それ以外は -어야만；하다は 하여야만 または 해야만）",
+      "examples": [
+        {
+          "translation": "朝早く起きてこそはじめて出勤時間に間に合うように到着できます。"
+        },
+        {
+          "translation": "あなたの事情を汲み取ってくださった医師と相談してこそはじめて手術計画を変更することができます。"
+        },
+        {
+          "translation": "定期的な安定した収入があってこそはじめて住宅ローンを組むことができます。"
+        },
+        {
+          "translation": "訓練をしっかりこなしてこそはじめて試験に合格することができます。"
+        }
+      ]
+    },
+    "ko_해야겠다_19": {
+      "title": "-아/어야겠다 / ~해야겠다（〜しなければ、〜しよう、〜しなくちゃ）",
+      "shortExplanation": "ある行動の必要性を認識し、その行動をとろうとする話し手の決意や意志を表す文末表現です（「〜しなくちゃ」「〜しなければ」）。",
+      "longExplanation": "「-아/어야겠다」（하다動詞と結びついて「~해야겠다」）は、当為・義務の「-아/어야 하다」と意志の先語末語尾「-겠-」が組み合わさった表現です。現時点の状況や判断からその行為を行う必要性を実感し、「〜しなければならない」「〜することにしよう」と即座に決心する話し手の強い意志を表します。独り言や親しい間柄での決意表明にも頻繁に用いられます。日本語の「〜しなくちゃ」「〜することにしよう」「〜しなければ」に相当します。",
+      "formation": "動詞語幹 + -아/어야겠다（語幹末尾の母音部がㅏ・ㅗの場合は -아야겠다、それ以外は -어야겠다；하다は 해야겠다）",
+      "examples": [
+        {
+          "translation": "もう遅くなったので家に帰らなくちゃ。"
+        },
+        {
+          "translation": "明日試験があるので今晩は勉強しなくちゃいけないな。"
+        },
+        {
+          "translation": "体重が増え続けているので、運動を始めなければなりません。"
+        },
+        {
+          "translation": "長いこと連絡していなかったので、友達に電話をかけよう。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_뿐만_5": {
+      "title": "~뿐만 아니라 (추가 및 점층)",
+      "shortExplanation": "앞의 내용에 그치지 않고 다른 사실이 더해짐을 나타내는 표현으로, '그것 외에도 더'라는 뜻을 나타냅니다.",
+      "longExplanation": "'~뿐만 아니라'는 대상을 한정하는 보조사 '뿐'에 한정의 '만'과 부정의 형용사 '아니다'가 결합된 형태입니다. 앞 절의 사실이 유일한 것이 아니며 뒤 절의 내용도 함께 포함되거나 덧붙여짐을 강조할 때 사용됩니다. 주로 뒤 절에 보조사 '-도'가 호응하여 '뿐만 아니라 ~도'의 형태로 자주 쓰이며, 말하는 내용의 범위를 확장하거나 성질을 덧붙여 강조하는 효과를 줍니다.",
+      "formation": "명사 + 뿐만 아니라 | 동사/형용사 어간 + -(으)ㄹ 뿐만 아니라 (받침이 있으면 -을 뿐만 아니라, 받침이 없거나 'ㄹ' 받침이면 -ㄹ 뿐만 아니라; 과거 시제는 -았/었을 뿐만 아니라)",
+      "examples": [
+        {
+          "translation": "그녀는 중국어뿐만 아니라 일본어도 유창하게 할 수 있습니다."
+        },
+        {
+          "translation": "나는 공부뿐만 아니라 운동도 좋아해요."
+        },
+        {
+          "translation": "이 상품은 가격이 저렴할 뿐만 아니라 품질도 뛰어나요."
+        },
+        {
+          "translation": "그는 한국어뿐만 아니라 영어도 유창하게 구사해서 통역으로 일하고 있어요."
+        }
+      ]
+    },
+    "ko_더니_6": {
+      "title": "~더니 / ~았/었더니 (경험 및 결과의 발견)",
+      "shortExplanation": "말하는 사람이 과거에 직접 어떤 행동을 한 결과 뒤 절의 새로운 사실을 알게 되었거나 그로 인한 결과를 나타내는 연결어미입니다.",
+      "longExplanation": "'~더니'(말하는 사람 자신의 과거 행동을 나타낼 때는 주로 '-았/었더니'의 형태)는 과거의 경험을 돌이켜 회상하며 이어 주는 연결어미입니다. 주어가 앞 절의 행동을 직접 실행한 뒤에 후행 절의 새로운 상황이나 사실을 발견하게 되었음을 나타내거나, 앞 절의 행위가 뒤 절 결과의 직접적인 원인이나 계기가 되었음을 나타냅니다. (참고: 과거 시제 선어말어미 없이 어간에 직접 결합하는 '-더니'는 대개 2·3인칭 주어의 행동이나 과거에 관찰한 사실의 변화·대조를 나타낼 때 쓰입니다.)",
+      "formation": "동사/형용사 어간 + -았/었더니 (말하는 사람 자신의 경험: 어간 끝 모음이 'ㅏ, ㅗ'이면 -았더니, 그 밖의 모음이면 -었더니, '하다'는 '했더니') | 동사/형용사 어간 + -더니 (타인의 행동이나 상태 변화 관찰)",
+      "examples": [
+        {
+          "translation": "저는 이것을 먹었더니 맛이 진짜 변했어요. 그래서 다른 음식을 찾아 마시기로 했어요."
+        },
+        {
+          "translation": "나는 그녀에게 전화했더니 그녀는 휴가 중이라 전화를 못 받았어요."
+        },
+        {
+          "translation": "서점에 갔더니 내가 원하는 책은 이미 다 팔렸어요. 그래서 다른 서점에서 찾아야 했어요."
+        },
+        {
+          "translation": "피자집에 갔더니 주문하려던 피자는 이미 전부 소진되었어요. 이런 경우는 처음이에요."
+        }
+      ]
+    },
+    "ko_이든지_7": {
+      "title": "~든지 ~든지 / ~(이)든지 (선택 및 무관)",
+      "shortExplanation": "어느 것을 선택해도 상관없음을 나타내며, 여러 가지 대안이나 가능성을 나열할 때 쓰는 표현입니다 ('~하든 ~하든').",
+      "longExplanation": "'~든지 ~든지'(명사 뒤에서는 '(이)든지')는 나열된 여러 대상이나 동작 가운데 어느 것이 선택되어도 뒤 절의 내용에 아무런 영향을 미치지 않거나 무관함을 나타내는 연결어미 및 보조사입니다. 사태의 선택에 구애받지 않고 두루 해당함을 나타낼 때 널리 쓰입니다. (참고: 구어에서는 종종 '-든 -든'으로 줄여 쓰기도 하며, 과거의 회상을 나타내는 '-던지'와 혼동하지 않도록 주의해야 합니다.)",
+      "formation": "동사/형용사 어간 + -든지 ... -든지 | 명사 + (이)든지 ... (이)든지 (명사 받침이 있으면 -이든지, 받침이 없으면 -든지)",
+      "examples": [
+        {
+          "translation": "당신이 커피를 좋아하든지, 차를 좋아하든지, 이 카페에서는 모두를 만족시킬 수 있어요."
+        },
+        {
+          "translation": "아침에 일찍 나가든지, 저녁에 늦게 돌아오든지, 매일 한 시간 동안 만나기로 약속해요."
+        },
+        {
+          "translation": "햄버거를 좋아하든지, 피자를 좋아하든지, 이 식당은 모든 음식을 제공할 수 있어요."
+        },
+        {
+          "translation": "당신이 평일에 여행 가든지, 주말에 가든지, 무관하게 편하게 여행을 즐기세요."
+        }
+      ]
+    },
+    "ko_임에_8": {
+      "title": "~(으)ㅁ에 틀림없다 / ~임에 틀림없다 (강한 확신 및 단정)",
+      "shortExplanation": "어떤 사실이나 상태에 대해 틀림이 없다고 강하게 확신하여 단정할 때 쓰는 표현입니다 ('~임이 확실하다').",
+      "longExplanation": "'~(으)ㅁ에 틀림없다'는 명사형 전성어미 '-(으)ㅁ', 부사격 조사 '에', 그리고 어긋남이나 의심이 없음을 뜻하는 형용사 '틀림없다'가 결합된 구문입니다. 객관적인 정황이나 충분한 근거를 바탕으로 하여 어떤 사태가 반드시 그러할 것이라고 거의 100% 확신을 가지고 단정 지을 때 사용합니다. 구어보다는 격식적인 대화나 신문 기사, 논설문 등 문어체 표현에서 자주 쓰이며, 강한 설득력과 단언의 어조를 띱니다.",
+      "formation": "명사 + 임에 틀림없다 | 동사/형용사 어간 + -(으)ㅁ에 틀림없다 (받침이 있으면 -음에 틀림없다, 받침이 없으면 -ㅁ에 틀림없다; 과거 시제는 -았/었음에 틀림없다; 미래·추측은 -(으)ㄹ 것임에 틀림없다)",
+      "examples": [
+        {
+          "translation": "그의 출연이 성공적이었음에 틀림없지만, 그의 재능은 더욱 뛰어남에 틀림없어요."
+        },
+        {
+          "translation": "우리 팀이 이길 확률이 높으니, 우리가 이겨낼 것임에 틀림없어요."
+        },
+        {
+          "translation": "그는 비록 다른 사람들에게 비판받더라도, 그의 선택이 옳았음에 틀림없어요."
+        },
+        {
+          "translation": "관측소의 예보에 따르면, 내일 비가 올 것임에 틀림없어요."
+        }
+      ]
+    },
+    "ko_쩌면_9": {
+      "title": "쩌면 / 어쩌면 (추측 및 가능성)",
+      "shortExplanation": "어떤 일에 대한 막연한 추측이나 가능성을 나타내는 부사로, '혹시' 또는 '아마도'의 뜻을 나타냅니다.",
+      "longExplanation": "'쩌면'은 부사 '어쩌면'의 구어적 준말입니다. 주로 문장 첫머리에 쓰여 말하는 사람의 불확실한 짐작이나 조심스러운 가능성을 제기할 때 사용됩니다. 뒤에는 '-(으)ㄹ지도 모르다', '-(으)ㄹ 수도 있다', '-(으)ㄹ 것 같다' 등의 추측·가능성 표현이 호응하여 문장의 추측성을 자연스럽게 뒷받침합니다.",
+      "formation": "쩌면 / 어쩌면 + 문장 (문말에 '-(으)ㄹ지도 모르다', '-(으)ㄹ 수도 있다', '-(으)ㄹ 것 같다' 등이 자주 호응함)",
+      "examples": [
+        {
+          "translation": "쩌면 그는 진심으로 당신을 사랑했을지도 몰라요."
+        },
+        {
+          "translation": "쩌면 이 갈등은 해결될 수도 있을 것 같아요."
+        },
+        {
+          "translation": "쩌면 그 계획이 성공할 수 있을지도 모르겠어요."
+        },
+        {
+          "translation": "쩌면 이번 시험은 제일 어려울 수도 있어요."
+        }
+      ]
+    },
+    "ko_치고는_10": {
+      "title": "~치고는 (기준 및 예외)",
+      "shortExplanation": "명사 뒤에 붙어 일반적인 기준이나 상식에 비해 예외적인 상태임을 나타내는 보조사입니다 ('~에 비해서는').",
+      "longExplanation": "'~치고는'은 범위를 한정하는 보조사 '치고'에 대조와 강조를 나타내는 보조사 '는'이 결합된 표현입니다. 어떤 명사가 대표하는 일반적인 통념이나 평균적인 기준을 제시한 뒤, 실제 상황이 그 기준에서 벗어나 기대 이상이거나 기대 이하임을 나타낼 때 사용합니다. '그 기준에 비추어 보면 꽤/오히려 그러하다'라는 뉘앙스를 지닙니다.",
+      "formation": "명사 + 치고는",
+      "examples": [
+        {
+          "translation": "초보 운전자 치고는 운전을 꽤 잘하네요."
+        },
+        {
+          "translation": "겨울 날씨 치고는 날씨가 매우 따뜻해요."
+        },
+        {
+          "translation": "가격 치고는 품질이 아주 훌륭해요."
+        },
+        {
+          "translation": "나이 치고는 매우 건강해 보이세요."
+        }
+      ]
+    },
+    "ko_커녕_11": {
+      "title": "~은/는커녕 / ~기는커녕 (기대 미달 및 반대 상황 강조)",
+      "shortExplanation": "기대하거나 예상했던 바는 고사하고 그보다 못한 일이나 도리어 반대되는 상황이 일어났음을 나타내는 보조사입니다 ('~은 고사하고').",
+      "longExplanation": "'~커녕'(명사 뒤에서는 '-은/는커녕', 용언 뒤에서는 '-기는커녕')은 앞 절에 제시된 당연한 기대나 표준적인 기준을 강력하게 부정하는 보조사입니다. 앞선 내용이 실현되기는커녕 그보다 훨씬 낮은 수준의 일조차 이루어지지 않았음을 강조하거나(뒤 절에 '-도', '-조차'와 호응), 도리어 정반대의 불만족스러운 상황이 전개되었음을 드러낼 때 씁니다.",
+      "formation": "명사 + 은/는커녕 (받침이 있으면 -은커녕, 받침이 없으면 -는커녕) | 동사/형용사 어간 + -기는커녕",
+      "examples": [
+        {
+          "translation": "계획은 잘 하겠다고 했는데, 시작하기도 커녕 준비조차 못 했어요."
+        },
+        {
+          "translation": "약속 시간에 늦지 않을 거라고 생각했는데, 일찍 오기도 커녕 늦게 와버렸어요."
+        },
+        {
+          "translation": "공부하러 도서관에 갔는데, 독서는 커녕 졸다가 하루가 다 갔어요."
+        },
+        {
+          "translation": "세일에 간다고 기대했지만, 싸게 살 생각은 커녕 더 비싸게 살게 됐어요."
+        }
+      ]
+    },
+    "ko_판에_12": {
+      "title": "-(으)ㄴ/는 판에 / ~판에 (상황 및 국면)",
+      "shortExplanation": "어떤 특정한 상황이나 판국, 처지의 한가운데에서 다른 일이 일어남을 나타내는 표현입니다 ('~하는 판국에').",
+      "longExplanation": "'판'은 어떤 일이 벌어진 형편이나 국면, 처지를 나타내는 의존명사입니다. '-(으)ㄴ/는 판에'는 앞선 내용과 같은 특정한 사태나 배경이 한창 진행 중이거나 벌어진 판국에 뒤 절의 행위나 사건이 일어남을 나타냅니다. 주로 절박하거나 특수한 상황, 혹은 때에 맞지 않게 벌어진 곤란하거나 얄궂은 사정을 부각할 때 자주 쓰입니다.",
+      "formation": "동사 어간 + -는 판에 (현재) / -(으)ㄴ 판에 (과거·완료) | 명사 + 판에",
+      "examples": [
+        {
+          "translation": "학교가 시작된 판에 새로운 학생이 입학하였습니다."
+        },
+        {
+          "translation": "회사가 오늘부터 폐업하게 되는 판에 저는 새로운 직장을 찾고 있습니다."
+        },
+        {
+          "translation": "주요 사업을 준비하고 있는 판에 회사의 주식이 급등하였습니다."
+        },
+        {
+          "translation": "시험공부를 하는 판에 친구들이 놀러왔습니다."
+        }
+      ]
+    },
+    "ko_하건마는_13": {
+      "title": "~건마는 / ~건만 (역접 및 아쉬움)",
+      "shortExplanation": "앞 절의 사실이나 기대와 반대되는 뜻밖의 상황이 뒤 절에 이어짐을 나타내는 문어체 연결어미입니다 ('~하지만').",
+      "longExplanation": "'~건마는'(줄여서 '~건만')은 주로 문어체나 격식 있는 표현에서 쓰이는 역접 연결어미입니다. 앞 절에서 어떤 사실이나 희망, 전제를 인정하면서도 뒤 절에는 그와 어긋나거나 기대에 미치지 못하는 상반된 결과가 나타남을 연결합니다. 단순한 대조를 넘어 화자의 안타까움, 서운함, 탄식이나 아쉬움의 정서가 짙게 배어 있는 것이 특징입니다.",
+      "formation": "동사/형용사 어간 + -건마는 (과거 시제는 -았/었건마는)",
+      "examples": [
+        {
+          "translation": "난 그래픽 디자인을 공부하건마는 컴퓨터를 잘 못 다뤄서 디자인 프로그램 사용이 어려운 것 같아."
+        },
+        {
+          "translation": "오늘 날씨가 좋아서 산책하려고 했건마는 갑자기 비가 와서 산책할 수 없었어."
+        },
+        {
+          "translation": "저는 한국어를 잘하고 싶건마는 단어 외우기가 너무 어려워서 매일 공부해도 잘 생각나지 않아요."
+        },
+        {
+          "translation": "친구가 나에게 생일 선물을 주기로 했건마는, 그는 선물을 잊어버려서 아무것도 주지 않았어."
+        }
+      ]
+    },
+    "ko_하더라도_14": {
+      "title": "-더라도 / ~하더라도 (가정적 양보)",
+      "shortExplanation": "앞 절의 상황을 가정하여 양보하더라도 뒤 절의 행동이나 결과에는 아무런 영향이 없음을 나타내는 연결어미입니다 ('설령 ~할지라도').",
+      "longExplanation": "'-더라도'('하다' 동사와 결합하여 '~하더라도')는 어떤 사실이나 상황을 극단적으로 가정하여 양보하는 연결어미입니다. 설령 앞 절의 가정이 실제로 이루어진다 하더라도 뒤 절에 제시된 주어의 확고한 결심, 당위적인 행동, 혹은 사태의 결과가 결코 흔들리거나 바뀌지 않음을 강조합니다. '-아/어도'에 비해 가설적인 상황을 전제하는 양보의 강도가 훨씬 두드러집니다.",
+      "formation": "동사/형용사 어간 + -더라도 (과거 시제는 -았/었더라도)",
+      "examples": [
+        {
+          "translation": "비가 오더라도 우산을 가져가지 않을 거예요, 제가 우산을 싫어해서요."
+        },
+        {
+          "translation": "피곤하더라도 공부를 계속해야 해요, 시험이 곧 있어서요."
+        },
+        {
+          "translation": "일찍 일어나야 하더라도 항상 운동을 해야 돼요, 건강을 위해서요."
+        },
+        {
+          "translation": "시간이 없더라도 저는 부지런히 한국어를 계속 공부해야 합니다, 한국어에 관심이 많아서요."
+        }
+      ]
+    },
+    "ko_하든지_15": {
+      "title": "~든지 말든지 (무관심 및 방임)",
+      "shortExplanation": "어떤 행동을 하든 안 하든 상관하지 않겠다는 무관심이나 방임의 태도를 나타내는 관용 표현입니다 ('~하든 말든').",
+      "longExplanation": "'~하든지 말든지'는 선택의 연결어미 '-든지'와 중지나 부정을 뜻하는 보조동사 '말다'가 결합된 형태입니다. 어떤 행위를 실행하는 쪽과 실행하지 않는 쪽을 나란히 제시하여, 어느 쪽을 택하든 화자는 개의치 않음을 드러냅니다. 상대방의 선택이나 외부 상황의 변화와 무관하게 뒤 절의 계획이나 결심을 변함없이 밀고 나가겠다는 태도를 나타낼 때 널리 쓰입니다.",
+      "formation": "동사 어간 + -든지 말든지 ('하다' 동사는 '하든지 말든지', 그 외 동사는 어간에 직접 결합하여 '오든지 말든지', '먹든지 말든지' 등)",
+      "examples": [
+        {
+          "translation": "그 사람이 좋아하든지 말든지 우리는 계획대로 진행하겠어요."
+        },
+        {
+          "translation": "오늘 비가 오든지 말든지 우리는 계속해서 산책할 계획이에요."
+        },
+        {
+          "translation": "네가 참여하든지 말든지 이 파티는 계속될 거예요."
+        },
+        {
+          "translation": "그녀가 나를 사랑하든지 말든지 나는 계속해서 그녀를 사랑할 거야."
+        }
+      ]
+    },
+    "ko_하려니와_16": {
+      "title": "-(으)려니와 / ~하려니와 (의도와 장애의 대립)",
+      "shortExplanation": "어떤 일을 시도하거나 행하려는 의도가 있었으나 예상치 못한 장애나 어려움으로 인해 이루어지지 못했음을 나타내는 연결어미입니다.",
+      "longExplanation": "'-(으)려니와'('하다' 동사와 결합하여 '~하려니와')는 의도를 나타내는 전성 형태에 연결어미 '-거니와'가 결합된 표현입니다. 본문의 예문 맥락에서는 화자가 앞 절의 행동을 실행에 옮기려고 의도하거나 마음먹었음에도 불구하고, 뒤 절에서 갑작스러운 장애 요인이나 불가피한 난관이 발생하여 의도한 바를 온전히 달성하지 못했음을 진술할 때 쓰입니다. (참고: 국어문법의 표준 용례에서는 추측과 첨가를 아우르는 '앞선 사실도 그러하겠지만 다른 사실도 그러하다'라는 점층적 연결어미로도 널리 쓰입니다.)",
+      "formation": "동사 어간 + -(으)려니와 (어간에 받침이 있으면 -으려니와, 받침이 없거나 'ㄹ' 받침이면 -려니와; '하다'는 '하려니와')",
+      "examples": [
+        {
+          "translation": "오늘은 친구들과 함께 영화를 보러 가려니와, 갑자기 날씨가 너무 안 좋아져서 계획이 실패했어요."
+        },
+        {
+          "translation": "좀 더 다양한 맛의 음식을 만들어 보려니와, 요리 실력이 부족해서 잘 되지 않아요."
+        },
+        {
+          "translation": "빨리 잠자려니와, 많은 생각들이 머리를 스쳐 지나가서 잠에 들지 못했어요."
+        },
+        {
+          "translation": "운동을 시작하려니와, 집에 있느라 시간을 못 내어서 아직 시작하지 못했어요."
+        }
+      ]
+    },
+    "ko_하여간_17": {
+      "title": "하여간 / ~하여간 (결연한 의지 및 불고)",
+      "shortExplanation": "난관이나 장애에 구애받지 않고 어떻게 해서든 목표를 추진하겠다는 결심을 나타내는 부사적 표현입니다 ('어찌 되었든 간에', '아무튼').",
+      "longExplanation": "'하여간'(漢字: 何如間)은 '어찌 되었든 간에'나 '아무튼'과 뜻을 같이하는 부사입니다. 주변의 불리한 조건이나 제약, 곤란한 형편을 뒤로하고 화자가 기필코 어떠한 방식으로든 노력을 기울여 목적한 바를 이루어 내겠다는 결연한 의지나 방침을 강조할 때 사용됩니다.",
+      "formation": "용언 연결형 + 하여간 | 문두나 문중에 부사로 단독 쓰임",
+      "examples": [
+        {
+          "translation": "시험을 준비하지 않았지만, 노력하여간 시험을 통과하려고 합니다."
+        },
+        {
+          "translation": "비록 경제적으로 어려운 상황이지만, 아끼려하여간 학비를 모아야 합니다."
+        },
+        {
+          "translation": "힘들어도, 꾸준히 하여간 그 목표를 달성할 수 있을 것입니다."
+        },
+        {
+          "translation": "많은 자금이 필요하지만, 아껴 사용하여간 꿈을 이뤄낼 수 있을 것입니다."
+        }
+      ]
+    },
+    "ko_하여야만_18": {
+      "title": "-아/어야만 / ~하여야만 (유일 필수 조건)",
+      "shortExplanation": "뒤 절의 일이 이루어지기 위해 앞 절의 조건이 유일무이하게 충족되어야 함을 배타적으로 강조하는 연결어미입니다 ('오직 ~해야만').",
+      "longExplanation": "'-아/어야만'('하다' 동사 뒤에서는 '~하여야만' 또는 '~해야만')은 필수 선결 조건을 나타내는 연결어미 '-아/어야'에 단독 한정의 보조사 '만'이 결합된 표현입니다. 앞선 행위나 조건이 뒤 절 사태를 성립시키기 위한 유일하고 절대적인 전제임을 강조하며, 이 조건이 갖추어지지 않으면 뒤 절의 결과는 결코 얻을 수 없음을 못 박아 나타냅니다. 주로 뒤 절에 '-(으)ㄹ 수 있다'와 같은 가능의 구문과 긴밀하게 호응합니다.",
+      "formation": "동사/형용사 어간 + -아/어야만 (어간 끝 음절 모음이 'ㅏ, ㅗ'이면 -아야만, 그 밖의 모음이면 -어야만; '하다'는 '하여야만' 또는 '해야만')",
+      "examples": [
+        {
+          "translation": "일찍 기상하여야만 출근시간에 도착할 수 있어요."
+        },
+        {
+          "translation": "당신의 사정을 받아들여주신 의사와 상의하여야만 수술 계획을 변경할 수 있습니다."
+        },
+        {
+          "translation": "고정적인 수입이 있어야만 주택대출을 받을 수 있습니다."
+        },
+        {
+          "translation": "훈련을 잘 따라하여야만 시험에 합격할 수 있어요."
+        }
+      ]
+    },
+    "ko_해야겠다_19": {
+      "title": "-아/어야겠다 / ~해야겠다 (당위적 결심 및 의지)",
+      "shortExplanation": "어떤 행동의 필요성을 깨닫고 그것을 실행하려는 말하는 사람의 확고한 결심이나 의지를 나타내는 종결 표현입니다 ('~하기로 마음먹다').",
+      "longExplanation": "'-아/어야겠다'('하다' 동사 뒤에서는 '~해야겠다')는 당위나 의무를 뜻하는 '-아/어야 하다'에 주어의 미래 의지를 나타내는 선어말어미 '-겠-'이 결합된 표현입니다. 현재 직면한 상황이나 처지를 고려할 때 앞선 행동을 반드시 실행해야겠다고 스스로 판단하여 단호한 결심이나 의지를 표명할 때 씁니다. 독백이나 친근한 어투에서 스스로에게 다짐하듯 말할 때도 빈번하게 사용됩니다.",
+      "formation": "동사 어간 + -아/어야겠다 (어간 끝 음절 모음이 'ㅏ, ㅗ'이면 -아야겠다, 그 밖의 모음이면 -어야겠다; '하다'는 '해야겠다')",
+      "examples": [
+        {
+          "translation": "이제 늦었으니까 집에 가야겠다."
+        },
+        {
+          "translation": "내일 시험이 있으니까 오늘 밤에 공부해야겠다."
+        },
+        {
+          "translation": "체중이 계속 증가하고 있어서 운동을 시작해야겠다."
+        },
+        {
+          "translation": "오래동안 연락하지 않아서 친구에게 전화해야겠다."
+        }
+      ]
+    }
+  }
+}

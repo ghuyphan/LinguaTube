@@ -385,23 +385,47 @@ CREATE TABLE public.playlist_saves (
 ```
 
 ### 5.7. Table: `public.gamification`
-XP leaderboard points, levels, and unlocked achievement badges:
+XP leaderboard points, 50-level echelon progression, unlocked achievement badges, and anti-cheat rate-limiting state:
 ```sql
 CREATE TABLE public.gamification (
   id TEXT PRIMARY KEY,
   user_id UUID NOT NULL UNIQUE REFERENCES auth.users(id) ON DELETE CASCADE,
   xp INTEGER DEFAULT 0,
   level INTEGER DEFAULT 1,
+  weekly_xp INTEGER DEFAULT 0,
+  current_week_key TEXT,
   total_videos_watched INTEGER DEFAULT 0,
   total_quizzes_completed INTEGER DEFAULT 0,
   unlocked_achievements JSONB DEFAULT '{}'::jsonb,
   notified_achievements JSONB DEFAULT '[]'::jsonb,
+  daily_missions JSONB DEFAULT NULL,
+  unlocked_cosmetics TEXT[] DEFAULT '{}'::text[],
+  active_cosmetics JSONB DEFAULT '{}'::jsonb,
+  hourly_baseline_xp INTEGER DEFAULT 0,
+  hourly_window_start TIMESTAMPTZ,
+  is_flagged BOOLEAN DEFAULT FALSE,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 ```
 
-### 5.8. Table: `public.video_levels` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
+### 5.8. Table: `public.xp_transactions` (`db/migrations/20261001_server_gamification_authority.sql`)
+Append-only transactional ledger tracking every XP grant and expenditure for anti-cheat audit trails:
+```sql
+CREATE TABLE public.xp_transactions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  amount INTEGER NOT NULL,
+  source_type TEXT NOT NULL,
+  reference_id TEXT,
+  balance_after INTEGER NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_xp_tx_user_created ON public.xp_transactions(user_id, created_at DESC);
+```
+
+### 5.9. Table: `public.video_levels` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
 Crowdsourced and linguistic-derived CEFR / JLPT / HSK / TOPIK difficulty ratings per video:
 ```sql
 CREATE TABLE public.video_levels (
@@ -418,7 +442,7 @@ CREATE TABLE public.video_levels (
 CREATE INDEX idx_video_levels_vid_lang ON public.video_levels(video_id, language);
 ```
 
-### 5.9. Table: `public.orders` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
+### 5.10. Table: `public.orders` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
 payOS VietQR order checkout links, payment status, and idempotency tracking:
 ```sql
 CREATE TABLE public.orders (
@@ -441,18 +465,49 @@ CREATE INDEX idx_orders_user_id ON public.orders(user_id);
 CREATE INDEX idx_orders_order_code ON public.orders(order_code);
 ```
 
-### 5.10. Row Level Security (RLS) Policies
-All 10 public tables enforce strict RLS:
-- **Private Data (`vocabulary`, `streaks`, `history`, `gamification`, `orders`)**: Authenticated users can only `SELECT`, `INSERT`, `UPDATE`, and `DELETE` rows where `user_id = auth.uid()`. Direct writes to `gamification` are guarded by trigger against artificial XP inflation. Direct reads on `orders` are restricted to the owner (`(SELECT auth.uid()) = user_id`).
+### 5.11. Row Level Security (RLS) Policies & Anti-Cheat Authority
+All public tables enforce strict RLS:
+- **Server-Authoritative Gamification (`gamification`, `xp_transactions`)**: Direct `INSERT` and `UPDATE` on `public.gamification` are revoked for `authenticated` and `anon` roles to completely seal DevTools browser console exploits. Only `SELECT` is permitted (`(auth.uid() = user_id)`). All mutations execute through `SECURITY DEFINER` Postgres stored procedures. Users can read their own append-only ledger in `xp_transactions`.
+- **Private Data (`vocabulary`, `streaks`, `history`, `orders`)**: Authenticated users can only `SELECT`, `INSERT`, `UPDATE`, and `DELETE` rows where `user_id = auth.uid()`. Direct reads on `orders` are restricted to the owner (`(SELECT auth.uid()) = user_id`).
 - **User Profiles (`profiles`)**: Users can read their own profile (`id = auth.uid()`) and update basic cosmetic fields (`display_name`, `avatar_url`, `target_lang`, `country`). Sensitive columns (`subscription_tier`, `diamonds`, `email`) are locked down by `protect_profile_fields()`. Cloudflare Pages edge functions use the `SUPABASE_SERVICE_ROLE_KEY` to update diamond balances and subscription tiers.
 - **Playlists (`playlists`)**: Public and unlisted playlists (`visibility IN ('published', 'unlisted')`) are readable by anyone. Private playlists are restricted to `user_id = auth.uid()`. Client modification of `is_featured` and `save_count` is blocked by server triggers.
 - **Playlist Saves (`playlist_saves`)**: Users can only manage their own bookmarks (`user_id = auth.uid()`). Bookmark counters are synchronized server-side.
 - **Video Levels (`video_levels`)**: Readable by all users (`anon` and `authenticated`) for community difficulty browsing (`video_levels_select` policy). Authenticated users can submit difficulty evaluations (`(SELECT auth.uid()) = user_id`).
 - **Legacy PB Users (`legacy_pb_users`)**: RLS enabled with zero public policies. Accessible strictly via `service_role` and internal security triggers.
 
-### 5.11. Server-Side Triggers & Stored Procedures
+### 5.12. Server-Side Triggers & Stored Procedures (RPCs)
 
-#### Trigger: `on_auth_user_created` & `on_auth_user_email_confirmed` (`handle_new_user()`)
+#### RPC: `award_study_xp(p_activity_type, p_amount, p_reference_id, p_client_date)`
+- **Security**: `SECURITY DEFINER`, restricted to `authenticated` and `service_role`.
+- **Activity Whitelist & Capping**:
+  - `video_completed`: max 35 XP
+  - `word_saved`: max 10 XP
+  - `flashcard_review`: max 15 XP
+  - `quiz_completed`: max 25 XP
+  - `daily_mission`: max 40 XP
+  - `daily_bonus_chest`: max 60 XP
+  - `grammar_found`: max 10 XP
+  - `achievement_unlocked`: max 1,000 XP
+- **Rolling Velocity Limit**: Enforces a maximum ceiling of 600 XP per rolling 1-hour window. Spammed requests trigger `status: 'rate_limited'` and do not increment XP.
+- **Level Formula**: Atomically computes current level via 50-level echelon model: `LEAST(50, GREATEST(1, FLOOR(SQRT(v_new_xp / 75.0)) + 1))`.
+- **Ledger Recording**: Appends a verifiable record to `xp_transactions`.
+
+#### RPC: `spend_xp(p_cost, p_purpose, p_item_id)`
+- **Security**: `SECURITY DEFINER`, atomic balance validation.
+- **Purposes**:
+  - `streak_freeze`: Costs 150 XP. Validates maximum freeze caps (Master rank Lv $\ge 31$ gets up to 3 freezes, others max 2). Atomically increments `freezes_remaining` in `public.streaks`.
+  - `cosmetic_theme` / `cosmetic_frame`: Deducts cost and appends item ID to `unlocked_cosmetics`.
+- **Ledger Recording**: Logs negative transaction in `xp_transactions`.
+
+#### RPC: `record_streak_activity(p_client_date DATE DEFAULT NULL)`
+- **Timezone Awareness**: Accepts client's local study date (`YYYY-MM-DD`).
+- **Grace Periods & Freezes**: Extends streak on day difference = 1, consumes available streak freezes on missed days without breaking the streak, or resets on depleted freezes.
+
+#### RPC: `sync_achievements(p_unlocked JSONB, p_notified JSONB)`
+- **Atomic Badge Merge**: Merges unlocked achievement records with timestamps and updates notified badge IDs.
+
+#### RPC: `sync_daily_missions(p_missions JSONB)`
+- **Cross-Device Persistence**: Stores daily mission completion states and claim progress for seamless continuity across mobile and desktop.
 Automatically provisions a `profiles` record when a user registers via Google OAuth or Email. To strictly prevent pre-authentication account takeover of legacy records:
 - Only links and restores legacy PB data (tier, diamonds) if the email is confirmed (`NEW.email_confirmed_at IS NOT NULL`) or authenticated via a verified OAuth provider (`google`, `apple`, `github`).
 - Unconfirmed signups receive default free accounts with 10 diamonds. Once email confirmation occurs, `on_auth_user_email_confirmed` updates the profile and links the legacy account.

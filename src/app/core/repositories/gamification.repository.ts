@@ -6,10 +6,10 @@ export interface IGamificationRepository {
     readonly isLoading: Signal<boolean>;
     readonly pendingRolloverXp: Signal<number>;
     getState(): UserGamificationState;
-    addXP(amount: number): void;
-    deductXP(amount: number): boolean;
-    recordVideoCompleted(): Mission[];
-    recordQuizCompleted(): Mission[];
+    addXP(amount: number, activityType?: string, referenceId?: string): void;
+    deductXP(amount: number, purpose?: string, itemId?: string): boolean;
+    recordVideoCompleted(videoId?: string): Mission[];
+    recordQuizCompleted(quizId?: string): Mission[];
     trackMissionProgress(type: MissionType, amount?: number): Mission[];
     claimMissionReward(missionId: string): number;
     claimDailyBonus(): number;

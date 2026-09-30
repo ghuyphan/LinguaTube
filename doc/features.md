@@ -399,8 +399,8 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
   - Automatically strips pedagogical Latin placeholders (`N`, `V`, `M`, `Adj`, `A`, `B`, `AGE`) from Chinese, Japanese, and Korean rules using word-boundary matching prior to whitespace elimination.
   - Normalizes ASCII and CJK tildes (`~`, `～`, `〜`), expanding parentheses and slash alternatives.
   - Indexes English contractions (`isn't`, `aren't`, `don't`, `doesn't`, `I'm`, `you're`) while preserving single quotes so contractions don't fail dictionary lookups.
-- **Dynamic Translation Packs**:
-  Grammar definitions are translated across 16 combinations (JA, KO, ZH, EN into VI, ZH, KO, JA) plus native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`), fully synchronized and compiled into lazy chunks.
+- **Comprehensive Dynamic Translation Packs (100% Full UI Language Parity)**:
+  Grammar definitions are 100% translated across all learning languages and UI languages (JA, KO, ZH, EN into VI, ZH, KO, JA plus native-to-native explanations `ja_ja`, `ko_ko`, `zh_zh`), covering all 2,401 grammar patterns and 9,604 individual `GrammarTranslation` datasets. Every single pattern features fully localized titles, concise summaries, in-depth pedagogical explanations, 100% native grammatical terminology in formation formulas (Danh từ/Động từ, 名词/动词, 名詞/動詞, 명사/동사 with zero leftover English placeholders), and completely translated example sentences. Translation packs are code-split and dynamically imported on demand by `GrammarService` to preserve a sub-100KB initial bundle size.
 - **Grammar Popup UI (`GrammarPopupComponent`)**: Hosted inside `BottomSheetComponent` with smooth dynamic height transitions as users explore formation rules, alternative explanations, or translated example sentences.
 
 ---
@@ -718,60 +718,93 @@ Evaluating complete video transcripts with heavy morphological tokenizers on eve
 
 Voca incorporates an engaging, dopamine-positive gamification system designed to reinforce consistent daily immersion without punitive streaks or artificial grind.
 
-### 13.1. XP Engine & Level Curve
+### 13.1. XP Engine & 50-Level Echelon Curve
 - **Progression Formula**:
-  $$\text{Level} = \left\lfloor\sqrt{\frac{\text{XP}}{100}}\right\rfloor + 1$$
+  $$\text{Level} = \min\left(50, \left\lfloor\sqrt{\frac{\text{XP}}{75}}\right\rfloor + 1\right)$$
 - **XP Required for Level $N$**:
-  $$\text{XP}_{\text{req}}(N) = (N - 1)^2 \times 100$$
-- **Earning XP Actions**:
-  | Action | XP Reward | Trigger Event |
-  | :--- | :--- | :--- |
-  | **Complete Video** | **+25 XP** | Watching $\ge 80\%$ of video duration (`HistoryService.updateProgress`) |
-  | **Save Vocabulary** | **+5 XP** | Adding a word token to notebook (`VocabularyService.addWord`) |
-  | **Flashcard Review** | **+10 XP** | Submitting SM-2 quality rating in Study Mode (`VocabularyService.markReviewed`) |
-  | **Subtitle Quiz Mastered** | **+15 XP** | Correct answer on in-video subtitle quiz (`QuizService.checkAnswer`) |
+  $$\text{XP}_{\text{req}}(N) = (N - 1)^2 \times 75$$
+- **Milestone XP Requirements**:
+  - Level 1: 0 XP
+  - Level 2: 75 XP
+  - Level 5: 1,200 XP
+  - Level 10: 6,075 XP
+  - Level 25: 43,200 XP
+  - Level 50 (Max Cap): 180,075 XP
+- **Earning XP Actions & Server Quotas**:
+  | Action | Client Amount | Server Whitelist Cap | Trigger Event |
+  | :--- | :--- | :--- | :--- |
+  | **Complete Video** | **+25 XP** | 35 XP max | Watching $\ge 80\%$ duration (`HistoryService.updateProgress`) |
+  | **Save Vocabulary** | **+5 XP** | 10 XP max | Adding a word token to notebook (`VocabularyService.addWord`) |
+  | **Flashcard Review** | **+10 XP** | 15 XP max | SM-2 review in Study Mode (`VocabularyService.markReviewed`) |
+  | **Subtitle Quiz Mastered** | **+20 XP** | 25 XP max | Correct answer on subtitle quiz (`QuizService.checkAnswer`) |
+  | **Daily Mission** | **+20 to +35 XP** | 40 XP max | Claiming completed daily quest |
+  | **Daily Bonus Chest** | **+50 XP** | 60 XP max | Opening chest after completing all 3 daily missions |
+  | **Achievement Unlocked** | **+15 to +1000 XP** | 1,000 XP max | Unlocking milestone achievement badge |
 
-- **RPG Level Tiers & Evolving Badges**:
-  Each level features a distinct Game-Icons.net vector badge and faceted material tier palette with specular glints:
-  | Level | Rank Title | Tier Theme | Icon Name | Metaphor & Visual Material |
+- **RPG Level Tiers (10 Tiers across 50 Levels)**:
+  Each 5-level tier features distinctive Game-Icons.net vector crests, faceted material palettes, and localized rank titles:
+  | Tier | Levels | Theme | Distinct Crest Icons | Metaphor & Progression |
   | :--- | :--- | :--- | :--- | :--- |
-  | **Lv. 1** | Curious Beginner | `stone` | `cracked-shield` | Battle-forged Stone & Slate recruit heater shield |
-  | **Lv. 2** | Active Listener | `bronze` | `sound-waves` | Burnished Bronze tuning frequency waves |
-  | **Lv. 3** | Word Collector | `silver` | `quill-ink` | Polished Silver scribe's quill mining vocabulary |
-  | **Lv. 4** | Dedicated Learner | `gold` | `ribbon-shield` | Tournament Gold heraldic knight's shield |
-  | **Lv. 5** | Conversationalist | `platinum` | `broadsword` | High-sheen Platinum blade for dialogue sparring |
-  | **Lv. 6** | Fluent Explorer | `emerald` | `compass` | Brilliant Emerald wayfinder compass for native content |
-  | **Lv. 7** | Advanced Scholar | `diamond` | `gems` | Prismatic Sapphire & Diamond crystalline mastery |
-  | **Lv. 8** | Language Specialist | `master` | `spell-book` | Arcane Amethyst grimoire of deep grammar patterns |
-  | **Lv. 9** | Master Polyglot | `grandmaster` | `laurel-crown` | Olympian Grandmaster golden laurel wreath |
-  | **Lv. 10+** | Language Expert | `mythic` | `imperial-crown` | Divine Mythic Imperial crown of linguistic mastery |
+  | **Stone** | **Lv. 1–5** | `stone` | `cracked-shield`, `sound-waves`, `sprout`, `quill-ink`, `compass` | Novice recruits taking first listening steps |
+  | **Bronze** | **Lv. 6–10** | `bronze` | `miner`, `film-strip`, `card-draw`, `flint-spark`, `stone-block` | Active listeners mining words and building habit foundations |
+  | **Silver** | **Lv. 11–15** | `silver` | `clapperboard`, `ribbon-shield`, `brainstorm`, `campfire`, `roman-shield` | Dedicated learners expanding vocabulary and shadowing |
+  | **Gold** | **Lv. 16–20** | `gold` | `fire`, `broadsword`, `magnifying-glass`, `target`, `templar-shield` | Fluent streamers parsing complex dialogue and grammar |
+  | **Platinum** | **Lv. 21–25** | `platinum` | `bullseye`, `sound-waves`, `anvil`, `speedometer`, `gems` | Contextual decoders with rapid audio comprehension |
+  | **Emerald** | **Lv. 26–30** | `emerald` | `sparkles`, `globe`, `compass`, `wand`, `ouroboros` | Cultural voyagers mastering idioms and authentic accents |
+  | **Diamond** | **Lv. 31–35** | `diamond` | `diamond`, `winged-sword`, `crystal-ball`, `egyptian-bird`, `laurels-trophy` | Master comprehenders with 3 streak freeze capacity |
+  | **Master** | **Lv. 36–40** | `master` | `spell-book`, `hourglass`, `sunbeams`, `torch`, `ribbon-shield` | Language specialists and subtitle virtuosos |
+  | **Grandmaster** | **Lv. 41–45** | `grandmaster` | `laurel-crown`, `trophy`, `medal`, `ice-shield`, `templar-shield` | Cultural sages with near-native fluency |
+  | **Mythic** | **Lv. 46–50** | `mythic` | `star-filled`, `crown`, `imperial-crown`, `treasure-chest`, `imperial-crown` | Living lexicons reaching the zenith of multilingual mastery |
 
-### 13.2. Achievement Badges Portfolio (19 Achievements)
+### 13.2. Achievement Badges Portfolio (41 Achievements)
 Achievements are organized into 5 core learning categories:
 1. **Immersion (`immersion`)**:
-   - `first_video`: First Steps — Complete your first video (+50 XP)
-   - `video_5`: Video Explorer — Complete 5 videos (+100 XP)
-   - `video_25`: Binge Learner — Complete 25 videos (+250 XP)
-   - `video_100`: Marathon Master — Complete 100 videos (+1000 XP)
-   - `watch_multilang`: Polyglot Pioneer — Watch videos in 3 or more languages (+150 XP)
-2. **Vocabulary (`vocabulary`)**:
-   - `word_1`: Word Collector — Save your first vocabulary word (+25 XP)
-   - `word_25`: Lexicon Builder — Save 25 words (+100 XP)
-   - `word_100`: Vocabulary Master — Save 100 words (+300 XP)
-   - `word_500`: Living Dictionary — Save 500 words (+1000 XP)
-3. **Streaks (`streak`)**:
-   - `streak_3`: Consistency Starter — Maintain a 3-day streak (+50 XP)
-   - `streak_7`: Habit Former — Reach a 7-day streak (+150 XP)
-   - `streak_30`: Unstoppable — Maintain a 30-day streak (+500 XP)
-   - `streak_100`: Streak Legend — Reach a 100-day streak (+2000 XP)
-4. **Spaced Repetition (`srs`)**:
-   - `srs_10`: Memory Spark — Review 10 flashcard cards (+50 XP)
-   - `srs_50`: Recall Champ — Review 50 flashcard cards (+150 XP)
-   - `srs_200`: Spaced Repetition Guru — Review 200 flashcard cards (+500 XP)
-5. **Interactive Quizzes (`quiz`)**:
-   - `quiz_1`: Quick Thinker — Answer your first subtitle quiz (+30 XP)
-   - `quiz_10`: Quiz Prodigy — Complete 10 subtitle quizzes (+100 XP)
-   - `quiz_50`: Sharp Mind — Master 50 subtitle quizzes (+300 XP)
+   - `watch_1`: First Step — Watch 1 video with subtitles (+25 XP)
+   - `watch_5`: Binge Watcher — Complete 5 learning videos (+50 XP)
+   - `watch_15`: Media Enthusiast — Complete 15 learning videos (+100 XP)
+   - `watch_30`: Cinephile Learner — Complete 30 learning videos (+175 XP)
+   - `watch_60`: Immersion Traveler — Complete 60 learning videos (+300 XP)
+   - `watch_100`: Immersion Legend — Complete 100 learning videos (+500 XP)
+   - `watch_250`: Cinema Connoisseur — Complete 250 learning videos (+800 XP)
+   - `watch_500`: Master of Immersion — Complete 500 learning videos (+1000 XP)
+2. **Vocabulary Sentence Mining (`vocabulary`)**:
+   - `vocab_1`: Word Miner — Save 1 vocabulary word (+15 XP)
+   - `vocab_10`: Word Seeker — Save 10 vocabulary words (+30 XP)
+   - `vocab_25`: Lexicon Builder — Save 25 vocabulary words (+50 XP)
+   - `vocab_50`: Vocabulary Apprentice — Save 50 vocabulary words (+100 XP)
+   - `vocab_100`: Vocabulary Treasury — Save 100 vocabulary words (+200 XP)
+   - `vocab_250`: Lexicon Architect — Save 250 vocabulary words (+400 XP)
+   - `vocab_500`: Living Dictionary — Save 500 vocabulary words (+600 XP)
+   - `vocab_1000`: Polyglot's Vault — Save 1,000 vocabulary words (+1000 XP)
+3. **Vocabulary Mastery (SRS Interval $\ge 21$ Days or Known)**:
+   - `vocab_master_10`: True Recall — Master 10 words with spaced repetition (+100 XP)
+   - `vocab_master_50`: Deep Recall — Master 50 words with spaced repetition (+250 XP)
+   - `vocab_master_100`: Iron Memory — Master 100 words with spaced repetition (+450 XP)
+   - `vocab_master_250`: Lexical Mastery — Master 250 words with spaced repetition (+700 XP)
+   - `vocab_master_500`: Living Memory — Master 500 words with spaced repetition (+1000 XP)
+4. **Daily Streaks (`streak`)**:
+   - `streak_3`: Spark — Maintain a 3-day streak (+30 XP)
+   - `streak_7`: Habit Flame — Reach a 7-day streak (+70 XP)
+   - `streak_14`: Two-Week Triumph — Maintain a 14-day streak (+150 XP)
+   - `streak_30`: Unstoppable Blaze — Reach a 30-day streak (+300 XP)
+   - `streak_60`: Two-Month Torch — Maintain a 60-day streak (+500 XP)
+   - `streak_100`: Century Phoenix — Reach a 100-day streak (+800 XP)
+   - `streak_200`: Bicentennial Blaze — Reach a 200-day streak (+1000 XP)
+   - `streak_365`: Year of Mastery — Reach a 365-day streak (+1000 XP)
+5. **Study & Flashcards (`srs`)**:
+   - `srs_10`: Flashcard Novice — Review 10 flashcards (+50 XP)
+   - `srs_50`: Repetition Veteran — Review 50 flashcards (+150 XP)
+   - `srs_100`: Card Grinder — Review 100 flashcards (+300 XP)
+   - `srs_250`: Memory Smith — Review 250 flashcards (+500 XP)
+   - `srs_500`: SRS Champion — Review 500 flashcards (+750 XP)
+   - `srs_1000`: Grand Memorizer — Review 1,000 flashcards (+1000 XP)
+6. **Comprehension Quizzes (`quiz`)**:
+   - `quiz_1`: Sharp Ear — Answer 1 subtitle quiz correctly (+20 XP)
+   - `quiz_5`: Attentive Ear — Answer 5 subtitle quizzes correctly (+50 XP)
+   - `quiz_15`: Comprehension Scout — Answer 15 subtitle quizzes correctly (+150 XP)
+   - `quiz_30`: Quiz Specialist — Answer 30 subtitle quizzes correctly (+300 XP)
+   - `quiz_60`: Quiz Master — Answer 60 subtitle quizzes correctly (+500 XP)
+   - `quiz_100`: Quiz Champion — Answer 100 subtitle quizzes correctly (+800 XP)
 
 ### 13.3. Daily Missions & Daily Completion Chest (`DailyMissionsState`)
 To maintain strong daily retention and solve the "lifetime grind" barrier, Voca generates 3 randomized, bite-sized quests every day at midnight (local time):
@@ -832,24 +865,22 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
   - Generates deterministic persistent guest IDs for learners browsing without Supabase accounts.
   - Automatically syncs XP upon login or level-up events, with cache-busting real-time refresh support.
 
-### 13.6. Offline-First Supabase Persistence (`OfflineGamificationRepository`)
-- **Deterministic Entity IDs**:
-  - Gamification records use a deterministic ID (`btoa(userId + ':gamification').slice(0, 15)`) adhering to Supabase table identifier conventions.
-  - Guarantees zero duplicate records across multiple browser tabs, client restarts, or concurrent login sessions.
-- **Bi-Directional Timestamp Merge Strategy**:
-  - When merging local and remote gamification states, the repository computes:
-    - $\text{XP} = \max(\text{local.xp}, \text{remote.xp})$ (strictly monotonic progression).
-    - $\text{Level} = \left\lfloor\sqrt{\text{XP}/100}\right\rfloor + 1$.
-    - Video watch and quiz counts: $\max(\text{local}, \text{remote})$.
-    - Unlocked achievements: Union of all unlocked badge IDs, preserving the earliest `unlockedAt` timestamp for each badge.
-    - Notified achievements: Union of all acknowledged notification IDs.
-- **Debounced Remote Sync & Offline Tolerance**:
-  - Local state is updated instantaneously via Angular signals and persisted to `localStorage`.
-  - Remote synchronization is debounced (3 seconds) to prevent hammering Supabase on rapid actions (e.g. rapid flashcard clicks).
-  - Graceful degradation: If network is offline or table is temporarily unreachable, requests fail silently and safely while keeping local progress 100% functional.
+### 13.6. Server-Authoritative Architecture & Offline-First Queue (`OfflineGamificationRepository`)
+- **Server Authority (Zero DevTools Console Exploits)**:
+  - Direct `INSERT` and `UPDATE` on `public.gamification` are completely revoked for client roles (`authenticated` and `anon`).
+  - Browser console tampering (`supabase.from('gamification').update({ xp: 999999 })`) is rejected with immediate 403 Forbidden / RLS policy violation.
+  - XP, levels, and weekly progress are awarded strictly through server-side `SECURITY DEFINER` Postgres stored procedures (`award_study_xp`, `spend_xp`, `record_streak_activity`, `sync_achievements`, `sync_daily_missions`).
+  - Remote database state is the sole authority for total XP, weekly XP, and level.
+- **Offline Study Queue & Resilient Reconciliation**:
+  - While offline (e.g. studying during a flight or transit), local state updates optimistically with immediate UI feedback and saves to `localStorage`.
+  - Offline XP grants are buffered into an append-only offline queue (`PENDING_XP_KEY: 'voca_pending_gamification_xp_queue'`).
+  - Upon network reconnection (`reconnectEvent`) or session login (`loginEvent`), the queue is automatically flushed to `award_study_xp` sequentially, followed by a full server state reconciliation.
+- **Hourly Velocity & Anti-Cheat Ceilings**:
+  - `award_study_xp` enforces a strict 600 XP per rolling 1-hour window ceiling.
+  - Actions exceeding reasonable learning velocity are rejected with `status: 'rate_limited'` without granting XP, guarding against automated scripts and spam bots.
+  - Every transaction is recorded into `public.xp_transactions` with immutable balances and timestamps for complete auditability.
 - **Session Teardown & Clean Logout**:
-  - Progress is safely isolated per user account.
-  - On logout, user state transitions smoothly without destructive data loss.
+  - Memory state resets to a safe guest baseline on logout, clearing pending sync timers and user-specific storage keys (`STORAGE_KEY`, `DIRTY_STORAGE_KEY`, `PENDING_XP_KEY`) to prevent cross-account contamination.
 
 ---
 

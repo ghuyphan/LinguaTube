@@ -2,4437 +2,14792 @@ import { GrammarTranslation } from '../../../models/grammar.model';
 
 export const GRAMMAR_KO_JA: Record<string, GrammarTranslation> = {
   "ko_이가_0": {
-    "title": "이/가 [i/ga] (Subject markers)",
-    "shortExplanation": "These are 主格助詞 used to identify and emphasize the subject in a sentence.",
-    "longExplanation": "'이/가 [i/ga]' are postpositions used in Korean to mark the subject of a sentence. They are attached right after a noun to indicate that the noun is the subject. The choice between '이' and '가' depends on whether the noun ends in a consonant or a vowel. If the noun ends with a consonant, '이' is used. If the noun ends with a vowel, '가' is used.",
-    "formation": "名詞 + 이/가 + rest of the sentence"
+    "title": "이/가 (主格助詞：〜が)",
+    "shortExplanation": "名詞の後に付き、その名詞が文の主語であることを表します（日本語の「〜が」に相当）。",
+    "longExplanation": "「이/가」は、名詞の直後に接続してその名詞が文の主語であることを示す主格助詞です。日本語の「〜が」に直接対応します。前の名詞にパッチム（終声）がある場合は「이」を用い、パッチムがない（母音で終わる）場合は「가」を用います。主題を表す「은/는（〜は）」と異なり、「이/가」は主語そのものに焦点を当てたり、新しい情報の導入や眼前の状況を描写したりする際によく使われます。",
+    "formation": "パッチムあり名詞 + 이 / パッチムなし名詞 + 가",
+    "examples": [
+      {
+        "translation": "私はリンゴを食べますが、友達はオレンジが好きです。"
+      },
+      {
+        "translation": "私の犬がソファの上に飛び乗ります。"
+      },
+      {
+        "translation": "この本が一番面白いです。"
+      },
+      {
+        "translation": "あなたが好きなたべものは何ですか？"
+      }
+    ]
   },
   "ko_은는_1": {
-    "title": "은/는 [eun/neun] (Topic markers)",
-    "shortExplanation": "Used to mark the topic of a sentence or to contrast an idea or subject.",
-    "longExplanation": "'은/는 [eun/neun]' are particle markers in Korean used to introduce or highlight the topic of a sentence. They follow a noun to indicate what the speaker is talking about, drawing attention to it. '은 [eun]' is used after words ending with a consonant, and '는 [neun]' is used after words ending with a vowel. These markers can also be used to contrast an idea, person, or thing with another.",
-    "formation": "名詞 + 은/는"
+    "title": "은/는 (主題・対照の助詞：〜は)",
+    "shortExplanation": "名詞の後に付き、文の主題（話題）を提示したり、対比・対照を表します（日本語の「〜は」に相当）。",
+    "longExplanation": "「은/는」は、名詞の直後に付いて文の主題を取り立てて提示する助詞（補助詞）で、日本語の助詞「〜は」に正確に対応します。「〜について言えば」と話題を提示する働きのほか、二つ以上の事物を対照・対比させるニュアンスも持ちます。直前の名詞にパッチムがある場合は「은」、パッチムがない場合は「는」を接続します。",
+    "formation": "パッチムあり名詞 + 은 / パッチムなし名詞 + 는",
+    "examples": [
+      {
+        "translation": "私は学生です。私は韓国語を勉強しています。"
+      },
+      {
+        "translation": "友達は家にいて、私は学校にいます。"
+      },
+      {
+        "translation": "今日は雨が降り、明日は晴れます。"
+      },
+      {
+        "translation": "これは本で、あれは鉛筆です。"
+      }
+    ]
   },
   "ko_을를_2": {
-    "title": "을/를 [eul/reul] (Object markers)",
-    "shortExplanation": "Used to mark the object of a sentence in Korean.",
-    "longExplanation": "'을/를 [eul/reul]' are 目的格助詞 in Korean, indicating the object of an action in a sentence. They are used after a noun which is the object of the verb. They have no meaning on their own, but when attached to a noun, they signify that the noun is the object that the action of the verb is directed at.",
-    "formation": "名詞 + 을/를 + 動詞"
+    "title": "을/를 (目的格助詞：〜を)",
+    "shortExplanation": "名詞の後に付き、その名詞が他動詞の直接の目的語であることを表します（日本語の「〜を」に相当）。",
+    "longExplanation": "「을/를」は、他動詞の直前の名詞に結合して、その名詞が動作の対象（直接目的語）であることを示す目的格助詞です。日本語の助詞「〜を」にそのまま対応します。名詞の最後の音節にパッチムがある場合は「을」を用い、パッチムがない場合は「를」を用います。日常会話では文脈から自明な場合に省略されることもあります。",
+    "formation": "パッチムあり名詞 + 을 + 動詞 / パッチムなし名詞 + 를 + 動詞",
+    "examples": [
+      {
+        "translation": "私は毎朝コーヒーを飲みます。"
+      },
+      {
+        "translation": "私はこの本を読んでいます。"
+      },
+      {
+        "translation": "映画を見に行きたいです。"
+      },
+      {
+        "translation": "私たちは彼らを手助けしたいです。"
+      }
+    ]
   },
   "ko_아니다_3": {
-    "title": "아니다 [anida] (To not be)",
-    "shortExplanation": "〜を表すために使用されます negation; 'to not be' or 'is not'.",
-    "longExplanation": "'아니다 [anida]' is a negative verb used in Korean to indicate the non-existence or negation of something. It stands as the negative form of the verb '이다' ('to be'). '아니다' is used when the speaker wants to say a statement is incorrect or a certain condition or state is not present. This verb changes its form depending on formality and tense.",
-    "formation": "名詞 + 아니다"
+    "title": "이/가 아니다 (〜ではない、〜ではありません)",
+    "shortExplanation": "指定詞「이다（〜である）」の否定形で、名詞を否定して「〜ではない」「〜ではありません」という意味を表します。",
+    "longExplanation": "「아니다」は、事実や身元、所属などを否定する際に用いる否定の形容詞で、肯定の指定詞「이다」の反対語です。日本語の「〜ではない」「〜ではありません」に相当します。直前に否定する名詞に主格助詞「이/가」を取り、「名詞 + 이/가 아니다」の形で用いるのが文法上の基本です。ヘヨ体では「아니에요」、ハムニダ体では「아닙니다」となります。",
+    "formation": "パッチムあり名詞 + 이 아니다 / パッチムなし名詞 + 가 아니다",
+    "examples": [
+      {
+        "translation": "私の本ではありません。それは私の友達の本です。"
+      },
+      {
+        "translation": "私たちは遅すぎたわけではありません。まだ十分に時間があります。"
+      },
+      {
+        "translation": "この美しい公園は自然のものではなく、人間が造ったものです。"
+      },
+      {
+        "translation": "彼は私の友人ではありません。私たちはただの同僚です。"
+      }
+    ]
   },
   "ko_예요이에요_4": {
-    "title": "예요/이에요 [yeyo/ieyo] (Copula in the present tense)",
-    "shortExplanation": "〜を示します that something or someone is a certain noun in a polite way (similar to 'is/am/are').",
-    "longExplanation": "'예요/이에요' are polite present-tense forms of the Korean copula '이다,' used after nouns to show identification or classification. Choose '이에요' if the noun ends in a consonant, and '예요' if the noun ends in a vowel.",
-    "formation": "名詞 + 이에요 (if ending with a consonant) / 예요 (if ending with a vowel)"
+    "title": "예요/이에요 (丁寧な指定詞語尾：〜です)",
+    "shortExplanation": "指定詞「이다（〜である）」のヘヨ体（丁寧形）で、名詞の後に付いて「〜です」という意味を表します。",
+    "longExplanation": "「예요/이에요」は、名詞を述語にする指定詞「이다」に日常の丁寧な語尾（ヘヨ体）がついた形です。日本語の「〜です」に相当し、親しみを持たせつつ丁寧に話す場面で多用されます。前の名詞の語尾にパッチムがある場合は「이에요」、パッチムがない場合は「예요」を接続します。語尾のイントネーションを上げることで、そのまま疑問文（〜ですか？）としても使えます。",
+    "formation": "パッチムあり名詞 + 이에요 / パッチムなし名詞 + 예요",
+    "examples": [
+      {
+        "translation": "私は学生です。"
+      },
+      {
+        "translation": "この人は私の友達です。"
+      },
+      {
+        "translation": "これは私のカバンです。"
+      },
+      {
+        "translation": "私の趣味は読書です。"
+      }
+    ]
   },
   "ko_아요어요여요_5": {
-    "title": "아요/어요/여요 [ayo/eoyo/yeoyo] (Verb ending in present tense)",
-    "shortExplanation": "Used as a polite verb ending in the present tense for verbs and adjectives.",
-    "longExplanation": "'아요/어요/여요 [ayo/eoyo/yeoyo]' are endings attached to Korean verbs or adjectives to form the present tense in a polite but not overly formal style. If the stem’s final vowel is '아' or '오', use '아요'. For all other vowels, use '어요'. When a verb ends in '하다', it typically changes to '해요' (the most common contraction of '하여요').",
-    "formation": "動詞/形容詞 stem + 아요 (if stem ends in '아' or '오') / 어요 (if stem ends in other vowels) / 해요 (if stem ends with '하다')"
+    "title": "아요/어요/여요 (現在形の丁寧な終止語尾 - ヘヨ体)",
+    "shortExplanation": "動詞や形容詞の語幹に付き、親しみのある丁寧な表現（〜ます、〜です）を作ります。",
+    "longExplanation": "「아요/어요/여요」は、韓国語の日常会話で最も多用される丁寧な終止語尾（ヘヨ体）です。日本語の「〜ます」「〜です」に相当し、平叙文だけでなく、文末のイントネーションを上げることで疑問文（〜ますか？）としても使われます。語幹の最後の母音によって活用形が決まります。陽母音（ㅏ、ㅗ）の場合は「아요」、陰母音（それ以外の母音）の場合は「어요」を接続し、「하다」で終わる動詞や形容詞は「해요（하여요の縮約形）」になります。",
+    "formation": "母音「ㅏ」「ㅗ」で終わる動詞・形容詞語幹 + 아요 / その他の母音で終わる動詞・形容詞語幹 + 어요 / 「하다」動詞・形容詞 → 해요",
+    "examples": [
+      {
+        "translation": "私は韓国語を勉強しています。"
+      },
+      {
+        "translation": "私のお母さんは美味しい料理を作ります。"
+      },
+      {
+        "translation": "先生は生徒たちに韓国文化について教えています。"
+      },
+      {
+        "translation": "彼は昼休みに時々散歩に行きます。"
+      }
+    ]
   },
   "ko_고_6": {
-    "title": "~고 보니 [go boni] (After doing, I noticed)",
-    "shortExplanation": "Expresses that a realization or discovery is made after doing something.",
-    "longExplanation": "The form '~고 보니' is used when one notices or realizes something new after completing an action. It often implies that the speaker did not expect this outcome before the action was done.",
-    "formation": "動詞 stem + 고 보니"
+    "title": "~고 보니（〜してみると、〜した結果気づいたことに）",
+    "shortExplanation": "ある動作を完了した後に、それまでは気づかなかった新しい事実や価値、意外な側面に改めて気づかされたことを表します（「〜してみると」「〜してみたところ」）。",
+    "longExplanation": "「~고 보니」は、動作の完了・先行を表す接続語尾「-고」に、試行や発見を表す「-보니（〜してみると）」が合わさった表現です。ある行為をやり終えて立ち止まった時に初めて、「実はこうだったのか」とこれまで思いもしなかった真実や予期せぬ価値、教訓などに思い至ったという、自覚・気づきの過程を表します。",
+    "formation": "動詞語幹 + -고 보니",
+    "examples": [
+      {
+        "translation": "絵を描き終えてみると、本当に面白いものでした。"
+      },
+      {
+        "translation": "故郷に帰ってみると、昔の思い出がたくさん浮かんできました。"
+      },
+      {
+        "translation": "友達と別れてみて初めて、その人の大切さをいっそう強く感じました。"
+      },
+      {
+        "translation": "本を最後まで読み終えてみると、学ぶべき点が本当にたくさんありました。"
+      }
+    ]
   },
   "ko_하고_7": {
-    "title": "하고 [hago] (And, with)",
-    "shortExplanation": "〜を表すために使用されます 'and' or 'with' when connecting nouns or activities shared with someone.",
-    "longExplanation": "'하고 [hago]' is a conjunction used in Korean to link or associate two or more nouns (similar to 'and'), or to express doing something together with someone (similar to 'with'). It implies a joint action or connection between the listed nouns or people.",
-    "formation": "名詞 1 + 하고 + 名詞 2"
+    "title": "하고 (助詞：〜と、〜と一緒に)",
+    "shortExplanation": "名詞の後に付き、名詞同士を並列でつなぐ（〜と）か、動作を共にする相手を表します（〜と一緒に）。",
+    "longExplanation": "「하고」は、話し言葉で広く使われる名詞接続助詞・副詞格助詞です。パッチムの有無にかかわらず、そのまま名詞の後ろに接続します。二つ以上の名詞を並列して結びつける「〜と」の意味と、誰かと一緒に動作を行う際の同伴者を表す「〜と（一緒に）」の意味の両方で用いられます。",
+    "formation": "名詞1 + 하고 + 名詞2（または 名詞 + 하고 + 動詞）",
+    "examples": [
+      {
+        "translation": "私は友達と映画を見てご飯を食べ、それから家に帰って宿題をしました。"
+      },
+      {
+        "translation": "今週末は家族と一緒に旅行に行くことに決めました。"
+      },
+      {
+        "translation": "ピーターとメアリーは一緒に学校へ行きました。"
+      },
+      {
+        "translation": "私は今日、お父さんと買い物に行く予定です。"
+      }
+    ]
   },
   "ko_으세요euseyoImperativeform_8": {
-    "title": "(으)세요 [(eu)seyo] (Imperative form)",
-    "shortExplanation": "Used to give orders, instructions, or make polite requests.",
-    "longExplanation": "'(으)세요 [(eu)seyo]' is an imperative form in Korean used to request or command someone to do something politely. It is considered an honorific form, so it is used when speaking to someone older or of higher status, or simply to be polite. Use '세요' if the verb stem ends with a vowel, and '으세요' if the verb stem ends with a consonant.",
-    "formation": "動詞 stem + 세요 (if stem’s final syllable is a vowel) / 으세요 (if stem’s final syllable is a consonant)"
+    "title": "(으)세요 (丁寧な命令・勧誘・依頼語尾：〜してください)",
+    "shortExplanation": "動詞の語幹に付き、相手に何かを丁寧に依頼・命令・勧める表現（〜してください）。",
+    "longExplanation": "「(으)세요」は、相手に動作を促したり、指示・要請・アドバイスを丁重に行う際に用いられる丁寧な命令・依頼の終止語尾です。日本語の「〜してください」「〜なさってください」に相当します。主体尊敬の語尾「-(으)시-」とヘヨ体「-어요」が合わさった形です。動詞語幹末尾にパッチムがある場合は「으세요」を、パッチムがない場合および「ㄹ」パッチム（脱落規則適用）の場合は「세요」を接続します。",
+    "formation": "パッチムあり動詞語幹 + 으세요 / パッチムなし動詞語幹 + 세요（ㄹパッチム語幹はㄹ脱落後に세요）",
+    "examples": [
+      {
+        "translation": "気をつけて渡ってください、事故が起きるかもしれません。"
+      },
+      {
+        "translation": "家に帰って飲むべき薬を飲んでください。"
+      },
+      {
+        "translation": "このメッセージを受け取ったら返信してください。"
+      },
+      {
+        "translation": "今晩会う予定の人たちに前もって電話してください。"
+      }
+    ]
   },
   "ko_으수있다eulsuitdaCando_9": {
-    "title": "(으)ㄹ 수 있다 [(eu)l su itda] (Can do)",
-    "shortExplanation": "This form indicates the potential ability or possibility to perform something.",
-    "longExplanation": "'(으)ㄹ 수 있다' is a fundamental Korean grammar point that conveys the potential ability to do something. It works like 'can' in English. It indicates that an action is possible or that an event may occur, and also implies that the speaker (or subject) either has the ability or the permission to do the action described by the preceding verb.",
-    "formation": "動詞 Stem + (으)ㄹ 수 있다"
+    "title": "(으)ㄹ 수 있다 (能力・可能性の表現：〜することができる)",
+    "shortExplanation": "動詞の語幹に付き、ある動作をする能力があることや、そうした状況が可能であることを表します（〜できる、〜することができる）。",
+    "longExplanation": "「(으)ㄹ 수 있다」は、未来連体形語尾「-(으)ㄹ」に依存名詞「수（手立て・可能性）」と存在詞「있다」が結合した文型で、日本語の「〜ことができる」「〜できる」に相当します。話者や主語の個人的な能力を表す場合と、外部の客観的状況によって可能であることを表す場合の両方に用いられます。語幹末尾にパッチムがある場合は「을 수 있다」、パッチムがない場合や「ㄹ」パッチムの場合は「ㄹ 수 있다」を接続します。否定形は「(으)ㄹ 수 없다（〜できない）」です。",
+    "formation": "パッチムあり動詞語幹 + 을 수 있다 / パッチムなし動詞語幹（またはㄹパッチム語幹） + ㄹ 수 있다",
+    "examples": [
+      {
+        "translation": "彼女は韓国語をとても速く学ぶことができるので、1か月でTOPIKの試験を受けることができるでしょう。"
+      },
+      {
+        "translation": "家が近いので、一生懸命勉強すれば1か月以内に韓国語を流暢に話すことができます。"
+      },
+      {
+        "translation": "それについてよく知っているので、それに関するすべての質問に答えることができます。"
+      },
+      {
+        "translation": "理解するのが難しいようでしたら、もう少しゆっくり話すことができます。"
+      }
+    ]
   },
   "ko_으려고euryeogoIntentiontodo_10": {
-    "title": "(으)려고 [(eu)ryeogo] (Intention to do)",
-    "shortExplanation": "〜を表すために使用されます the speaker's intention or plan to do something.",
-    "longExplanation": "The '(으)려고' form is used in Korean to express intention or a plan to do something. It can be translated roughly as 'in order to,' 'intend to,' or 'plan to.' You can use it when talking about your own intentions or other people's intentions that you know of. It often implies a future action or purposeful activity.",
-    "formation": "動詞 Stem + (으)려고"
+    "title": "(으)려고 (意図・目的の接続語尾：〜しようと、〜するために)",
+    "shortExplanation": "動詞の語幹に付き、ある動作を行おうとする話者の意図や目的を表します（〜しようと、〜するために）。",
+    "longExplanation": "「(으)려고」は、前節で主語の意図・企てや目的を提示し、後節でその目的を達成するための行動を続ける接続語尾です。日本語の「〜しようと」「〜するために」に相当します。動詞語幹末尾にパッチムがある場合は「으려고」を、パッチムがない場合や「ㄹ」パッチムの場合は「려고」を接続します。後節には命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできず、もっぱら平叙文や疑問文が続きます。",
+    "formation": "パッチムあり動詞語幹 + 으려고 / パッチムなし動詞語幹（またはㄹパッチム語幹） + 려고",
+    "examples": [
+      {
+        "translation": "私は韓国語を学ぼうと韓国へ来ました。"
+      },
+      {
+        "translation": "姉は体重を減らそうと運動をしています。"
+      },
+      {
+        "translation": "学生たちは試験に合格しようと一生懸命勉強しています。"
+      },
+      {
+        "translation": "お父さんは子供たちに良い生活を提供しようと毎日働いています。"
+      }
+    ]
   },
   "ko_으는다eunneundaInformalstatementendings_11": {
-    "title": "(으)ㄴ/는다 [(eu)n/neunda] (Informal statement endings)",
-    "shortExplanation": "Used in informal or plain-style statements to make assertions or descriptions.",
-    "longExplanation": "'(으)ㄴ/는다' are plain-style (informal) statement endings in Korean. They often appear in written narratives, diaries, or casual speech among peers. If the verb stem ends in a vowel, use 'ㄴ다.' If the verb stem ends in a consonant, use '는다.'",
-    "formation": "動詞 stem + ㄴ다 (if stem ends with a vowel), 動詞 stem + 는다 (if stem ends with a consonant)"
+    "title": "(으)ㄴ/는다 (現在形平叙文終止語尾 - ヘラ体・基本階)",
+    "shortExplanation": "動詞や形容詞に付き、親しい間柄や日記・新聞・書籍などの書き言葉で現在形の客観的な陳述を表す語尾（常体・だ・である調）。",
+    "longExplanation": "「(으)ㄴ/는다」は、韓国語の基本階（ヘラ体）における現在形の平叙文終止語尾です。日本語の「常体（〜だ、〜である、動詞の辞書形）」に相当します。新聞記事、書籍、論文、日記などの不特定多数に向けた文面で客観的に事実を叙述する際や、親しい友人同士、年長者が年少者に話す際に用いられます。動詞の語幹にパッチムがある場合は「는다」、パッチムがない場合は「ㄴ다」（ㄹパッチムは脱落してㄴだ）を接続します。形容詞の現在形では語幹にそのまま「다」が付きます。",
+    "formation": "パッチムあり動詞語幹 + 는다 / パッチムなし動詞語幹 + ㄴ다 / 形容詞語幹 + 다",
+    "examples": [
+      {
+        "translation": "私は今日、真夜中に家に帰る。"
+      },
+      {
+        "translation": "彼はスペイン語が上手だ。"
+      },
+      {
+        "translation": "このコーヒーは濃すぎる。"
+      },
+      {
+        "translation": "私たちは明日、公園へ行ってピクニックをする。"
+      }
+    ]
   },
   "ko_도_12": {
-    "title": "도 [do] (Too, also)",
-    "shortExplanation": "〜を示します addition, similarity, or emphasis ('too', 'also', 'even').",
-    "longExplanation": "'도' is a particle that means 'too,' 'also,' or 'even' depending on context. It can be attached to nouns, pronouns, or other particles, indicating that the mentioned item is in addition to or shares the same property/action as something else.",
-    "formation": "名詞 (or pronoun) + 도"
+    "title": "도 (取り立て助詞：〜も)",
+    "shortExplanation": "名詞や代名詞の後に付き、同類の事物や事柄を並列・包括して「〜も」という意味を表します。",
+    "longExplanation": "「도」は、名詞や代名詞、他の助詞の後に付いて、前に述べた事柄と同じ状態や動作が当てはまることを表す助詞（補助詞）です。日本語の助詞「〜も」に直接対応します。また、文脈によっては「〜さえも」「〜までも」という強調・極端のニュアンスを表すこともあります。「도」が使われる場合、主格助詞「이/가」や目的格助詞「을/를」は通常脱落して「도」に置き換わります。",
+    "formation": "名詞・代名詞 + 도",
+    "examples": [
+      {
+        "translation": "私はコーヒーが好きで、友達もコーヒーが好きです。"
+      },
+      {
+        "translation": "チョルスはサッカーができますし、ミニもサッカーができます。"
+      },
+      {
+        "translation": "この映画は面白いので、多くの人が今でもこの映画を見続けています。"
+      },
+      {
+        "translation": "今回の試験は難しかったので、私も友達もあまりよくできませんでした。"
+      }
+    ]
   },
   "ko_만_13": {
-    "title": "만 [man] (Only)",
-    "shortExplanation": "〜を表すために使用されます the concept of 'only' or 'just' in Korean.",
-    "longExplanation": "'만' is a particle that indicates exclusivity. The noun (or pronoun) before '만' is the only or the sole subject/object in the context, emphasizing that no other people, items, or circumstances apply.",
-    "formation": "名詞 + 만"
+    "title": "만 (限定の助詞：〜だけ、〜のみ)",
+    "shortExplanation": "名詞や代名詞の後に付き、他のものを排除してそれだけに限定することを表します（〜だけ、〜のみ）。",
+    "longExplanation": "「만」は、他の事物を排除し、その事柄だけに限定・特定する働きを持つ助詞（補助詞）です。日本語の「〜だけ」「〜のみ」に正確に対応します。パッチムの有無にかかわらず名詞に直接接続します。主語や目的語に付く場合、助詞「이/가」や「을/를」に置き換わって単独で用いられるのが一般的です。",
+    "formation": "名詞・代名詞 + 만",
+    "examples": [
+      {
+        "translation": "私はコーヒーだけを飲みます。お茶は飲みません。"
+      },
+      {
+        "translation": "私の友達は韓国語だけが話せます。他の言語は全くできません。"
+      },
+      {
+        "translation": "私はデートをするとき映画だけを見に行きます。他の活動はあまりしません。"
+      },
+      {
+        "translation": "今月はお金を節約しようと交通費だけを使いました。他のところには使いませんでした。"
+      }
+    ]
   },
   "ko_와과_14": {
-    "title": "와/과 [wa/gwa] (And, with – for nouns)",
-    "shortExplanation": "Used to link two nouns in a similar way to 'and' or 'with' in English.",
-    "longExplanation": "'와/과' is a particle used to connect two nouns in Korean. If the final character of the first noun is a vowel, '와' is used. If it is a consonant, '과' is used. It can mean 'and' or 'with,' depending on context.",
-    "formation": "名詞 (ending in vowel) + 와 + 名詞 / 名詞 (ending in consonant) + 과 + 名詞"
+    "title": "와/과 (名詞の接続助詞：〜と、〜と共に)",
+    "shortExplanation": "名詞の後に付き、二つの名詞を並列で結ぶ（〜と）か、動作を共にする相手を表します（〜と共に）。",
+    "longExplanation": "「와/과」は、名詞同士を結ぶ並列接続助詞、または動作を共にする同伴者を表す副詞格助詞です。日本語の「〜と」「〜と共に」に相当します。「하고」や「(이)랑」に比べてやや改まった響きを持ち、書き言葉や公の会話で好まれます。直前の名詞にパッチムがない（母音で終わる）場合は「와」、パッチムがある（子音で終わる）場合は「과」を接続します。「함께（共に）」や「같이（一緒に）」と呼応して使われることも多くあります。",
+    "formation": "パッチムなし名詞 + 와 / パッチムあり名詞 + 과",
+    "examples": [
+      {
+        "translation": "私は公園で子犬と一緒に駆け回って遊びました。"
+      },
+      {
+        "translation": "私はパンとコーヒーを一緒に飲食することが好きです。"
+      },
+      {
+        "translation": "友達と鉛筆と共に勉強しました。"
+      },
+      {
+        "translation": "私は家族と一緒に旅行へ行きました。"
+      }
+    ]
   },
   "ko_부터_15": {
-    "title": "부터 [buteo] (From)",
-    "shortExplanation": "〜を示します the starting point in time or space; 'from'.",
-    "longExplanation": "'부터' indicates the starting point of an action, period, or range in Korean. It translates to 'from' in English. It is frequently used with time expressions (e.g., '오늘부터' = 'from today').",
-    "formation": "名詞 + 부터"
+    "title": "부터（〜から・〜から始めて）",
+    "shortExplanation": "時間や空間、順序の出発点や始まりを表す助詞で、日本語の「〜から」に相当します。",
+    "longExplanation": "「부터」は体言（名詞）の後ろについて、時間、場所、順序などの起点（始まり）を表す助詞です。日本語の「〜から」に相当します。特に時間を表す語句（例：「오늘부터」＝今日から、「내일부터」＝明日から）と共によく用いられ、到着点を表す「까지」（〜まで）と組み合わせて「〜부터 〜까지」（〜から〜まで）の形で頻出します。",
+    "formation": "名詞 ＋ 부터",
+    "examples": [
+      {
+        "translation": "私は今日からダイエットを始める予定なので、甘いものはもう食べないつもりです。"
+      },
+      {
+        "translation": "子どもから大人まで、誰もがこの映画を楽しむことができます。"
+      },
+      {
+        "translation": "私たちは明日からまた仕事を始めなければならないので、今日はゆっくり休んでください。"
+      },
+      {
+        "translation": "私は去年の夏から韓国語を勉強し始めたので、今は少し話せます。"
+      }
+    ]
   },
   "ko_까지_16": {
-    "title": "까지 [kkaji] (Until, up to)",
-    "shortExplanation": "Used to mark the endpoint or limit in time, space, amount, or degree.",
-    "longExplanation": "'까지' is a postposition that indicates the limit or endpoint of a range in Korean, similar to 'until' or 'up to' in English. It is widely used with time expressions (e.g., '내일까지' = 'until tomorrow'), as well as physical locations or quantities.",
-    "formation": "名詞 + 까지"
+    "title": "까지（〜まで）",
+    "shortExplanation": "時間や空間、数量、範囲の終了点や限度を表す助詞で、日本語の「〜まで」に相当します。",
+    "longExplanation": "「까지」は体言（名詞）の後ろについて、時間、場所、数量、程度などの到達点や限度（終わり）を表す助詞です。日本語の「〜まで」に相当します。時間表現（例：「내일까지」＝明日まで）や場所表現（例：「서울까지」＝ソウルまで）などに広く使われ、起点を示す「부터」（〜から）と組み合わせて「〜부터 〜까지」（〜から〜まで）という形でよく用いられます。",
+    "formation": "名詞 ＋ 까지",
+    "examples": [
+      {
+        "translation": "第1学期は全部で6か月間です。つまり、1月から6月までです。"
+      },
+      {
+        "translation": "私は毎朝早く起きて、夜10時まで働きます。"
+      },
+      {
+        "translation": "今日はお金が5千ウォンまでしかなくて、夕食を抜くことになってしまいました。"
+      },
+      {
+        "translation": "今までに行った作業を含めて、すべての内容を報告書に書いてください。"
+      }
+    ]
   },
   "ko_아어여서_17": {
-    "title": "아/어/여서 [a/eo/yeoseo] (Because, since)",
-    "shortExplanation": "Used to denote a reason or cause, similar to 'because' or 'since' in English.",
-    "longExplanation": "'아/어/여서' is a conjunctive ending that indicates the reason or cause of the following clause. It is attached directly to the verb or adjective stem to show why something happened.",
-    "formation": "動詞/形容詞 Stem + 아/어/여서"
+    "title": "아/어/여서（〜て・〜ので・〜から【原因・理由】）",
+    "shortExplanation": "先行節が後続節の原因や理由であることを表す接続語尾で、日本語の「〜ので」「〜て」「〜から」に相当します。",
+    "longExplanation": "「-아/어/여서」は動詞や形容詞の語幹について、前の事柄が後ろの事柄の原因や理由であることを表す接続語尾です。語幹の母音が陽母音（ㅏ, ㅗ）の場合は「-아서」、陰母音の場合は「-어서」をつけ、「하다」で終わる動詞・形容詞は「해서」になります。注意点として、「-아/어/여서」の節には過去形（-았/었-）をつけることができず、また後続節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできません。",
+    "formation": "動詞・形容詞の語幹 ＋ 아/어/여서",
+    "examples": [
+      {
+        "translation": "外で雨が降って風邪をひいてしまい、そのため学校に行けませんでした。"
+      },
+      {
+        "translation": "彼がお腹を空かせていたので、おやつを用意しました。"
+      },
+      {
+        "translation": "映画を見ていて時間がなかったので、宿題が全くできませんでした。"
+      },
+      {
+        "translation": "授業が難しいと思うので、毎日一生懸命勉強しています。"
+      }
+    ]
   },
   "ko_으면eumyeonIfwhen_18": {
-    "title": "(으)면 [(eu)myeon] (If, when)",
-    "shortExplanation": "This is generally 〜を表すために使用されます 'if' or 'when'. It's employed to present conditions and the possible consequences of those conditions.",
-    "longExplanation": "(으)면 [(eu)myeon] is a conditional ending in Korean attached to a verb or adjective stem. It can mean 'if', 'when', or 'in case'. This grammar point sets up a condition in the (으)면-clause, and the main clause explains the result or consequence that follows from that condition.",
-    "formation": "動詞/形容詞 stem + (으)면"
+    "title": "(으)면（〜なら・〜ば・〜たら【仮定・条件】）",
+    "shortExplanation": "条件や仮定を表す接続語尾で、日本語の「〜なら」「〜ば」「〜たら」に相当します。",
+    "longExplanation": "「-(으)면」は動詞や形容詞の語幹について、前節で条件や仮定を提示し、後節でその条件が満たされた場合の結果や行動を述べる接続語尾です。語幹末尾にパッチムがある場合（ㄹパッチムを除く）は「-으면」がつき、パッチムがない場合やㄹパッチムの場合は「-면」がつきます。",
+    "formation": "動詞・形容詞の語幹 ＋ (으)면",
+    "examples": [
+      {
+        "translation": "時間があれば、私は毎日韓国語を勉強したいです。"
+      },
+      {
+        "translation": "天気が良ければ、私は山へ登山に行くつもりです。"
+      },
+      {
+        "translation": "疲れているなら、早く寝るのが良いですよ。"
+      },
+      {
+        "translation": "このテストに合格すれば、私は学校に入学できます。"
+      }
+    ]
   },
   "ko_너무_19": {
-    "title": "너무 [neomu] (Too, very)",
-    "shortExplanation": "〜を表すために使用されます a high degree or extent; 'too', 'very'.",
-    "longExplanation": "'너무 [neomu]' is an adverb in Korean that emphasizes a strong degree or intensity of something. It can mean 'too (much)' or 'very', highlighting that something goes beyond the norm or is extremely so. It typically modifies verbs or adjectives.",
-    "formation": "너무 + 形容詞/動詞"
+    "title": "너무（あまりにも・すごく・とても）",
+    "shortExplanation": "程度が過度であることや極めて高いことを表す副詞で、日本語の「あまりにも」「すごく」「とても」に相当します。",
+    "longExplanation": "「너무」は形容詞や動詞を修飾して、状態や動作の程度が基準や限度を超えて甚だしいことを表す程度副詞です。元々は「あまりにも〜（すぎる）」という否定的な過度さを表す言葉でしたが、現代の日常会話では肯定的な表現でも「とても」「すごく」「めちゃくちゃ」の意味で日常的によく用いられています。",
+    "formation": "너무 ＋ 形容詞/動詞",
+    "examples": [
+      {
+        "translation": "これはあまりにも美味しくて全部食べてしまい、他の人のために残しておくことができませんでした。"
+      },
+      {
+        "translation": "この映画はとても面白くて私はすでに3回も見ましたが、今でもまた見たいです。"
+      },
+      {
+        "translation": "彼女がとても綺麗なので私は毎日彼女を見られればいいのにと思いますが、彼女は私のことを知りません。"
+      },
+      {
+        "translation": "ピザがすごく美味しくて毎週食べていますが、これからは少し減らさなければならないと思います。"
+      }
+    ]
   },
   "ko_많이_20": {
-    "title": "많이 [manhi] (A lot)",
-    "shortExplanation": "〜を表すために使用されます a large quantity, frequency, or degree; 'a lot', 'many', 'much'.",
-    "longExplanation": "'많이 [manhi]' is an adverb that indicates a large amount, frequency, or degree. It can be used with verbs, adjectives, and sometimes nouns (in certain constructions). It's similar to 'a lot' or 'much' in English.",
-    "formation": "動詞 + 많이"
+    "title": "많이（たくさん・多く・いっぱい）",
+    "shortExplanation": "数量が多いことや程度・頻度が高いことを表す副詞で、日本語の「たくさん」「多く」「いっぱい」に相当します。",
+    "longExplanation": "「많이」は形容詞「많다」（多い）の副詞形で、動詞や形容詞の前に置かれて、分量や数量が多いこと、または動作や状態の程度・頻度が著しいことを表します。日本語の「たくさん」「大いに」「多く」に相当し、日常会話で極めて頻繁に使用されます（例：「많이 먹어요」＝たくさん食べます、「일이 많이 바빠요」＝仕事がとても忙しいです）。",
+    "formation": "많이 ＋ 動詞/形容詞",
+    "examples": [
+      {
+        "translation": "私は友達がたくさん必要なので、いつも人と会いに出かける方です。"
+      },
+      {
+        "translation": "あの映画を見ましたか？私はたくさん笑いました！"
+      },
+      {
+        "translation": "最近仕事がとても忙しいので、休暇を取りたいです。"
+      },
+      {
+        "translation": "彼女はいつもたくさん運動しているので、健康そうに見えます。"
+      }
+    ]
   },
   "ko_조금_21": {
-    "title": "조금 [jogeum] (A little)",
-    "shortExplanation": "〜を示します a small amount or degree; 'a little', 'a bit'.",
-    "longExplanation": "'조금 [jogeum]' is an adverb that describes a small or modest amount or degree. It's similar to 'a little' or 'a bit' in English. It can be used with verbs to reduce intensity, or with adjectives to lessen the strength of a description.",
-    "formation": "조금 + 動詞/形容詞"
+    "title": "조금（少し・ちょっと）",
+    "shortExplanation": "分量や程度、時間がわずかであることを表す副詞で、日本語の「少し」「ちょっと」に相当します。",
+    "longExplanation": "「조금」は動詞や形容詞の前に置かれ、数量や分量が少ないこと、程度がわずかであること、あるいは時間が短いことを表す副詞です。日本語の「少し」「ちょっと」「わずかに」に相当します。日常会話では口語として「좀」に縮約されることも多く、依頼や断りの場面で表現を和らげるためにもよく使われます。",
+    "formation": "조금 ＋ 動詞/形容詞",
+    "examples": [
+      {
+        "translation": "気分が良くありません。少し休む必要があります。"
+      },
+      {
+        "translation": "部屋が少し暗いです。明かりをつけてください。"
+      },
+      {
+        "translation": "荷物が重すぎます。少し減らさなければならないようです。"
+      },
+      {
+        "translation": "彼女は韓国語を少し知っているので、簡単な会話なら可能です。"
+      }
+    ]
   },
   "ko_다_22": {
-    "title": "다 [da] (All, entirely)",
-    "shortExplanation": "〜を表すために使用されます the entirety or completeness of an action or state.",
-    "longExplanation": "'다 [da]' here functions as an adverb meaning 'all' or 'entirely.' It emphasizes the complete or total aspect of an action or state. In other words, everything is done or used up, or everyone/everything is involved.",
-    "formation": "動詞/形容詞 + 다 (adverb usage)"
+    "title": "다（全部・すべて・すっかり）",
+    "shortExplanation": "全体やすべて、または動作の完了・徹底を表す副詞で、日本語の「全部」「すべて」「すっかり」に相当します。",
+    "longExplanation": "「다」は副詞として用いられ、余すところなく全てが含まれていることや、動作が最後まで完全にやり遂げられた状態を表します。日本語の「全部」「すべて」「すっかり」「残らず」に相当します。動詞の前に置かれて「すべて〜し終えた」という完了や消費のニュアンスを強調することがよくあります（例：「다 먹었어요」＝全部食べました、「숙제를 다 했어요」＝宿題を全部やりました）。",
+    "formation": "다 ＋ 動詞/形容詞",
+    "examples": [
+      {
+        "translation": "私は韓国語を勉強する本をすべて読み終えたので、もう次は何を読めばいいかわかりません。"
+      },
+      {
+        "translation": "私たちは映画を最後まで全部見てから家に帰りました。"
+      },
+      {
+        "translation": "彼女は韓国に来て、韓国料理は全部好きだと言いました。"
+      },
+      {
+        "translation": "今週の食料品をすべて買って帰ってきたので、台所には空いているスペースが一つもありません。"
+      }
+    ]
   },
   "ko_으는데eunneundeButhowever_23": {
-    "title": "(으)ㄴ/는데 [(eu)n/neunde] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "'(으)ㄴ/는데' is 〜を表すために使用されます a contrast or introduce background information. It's similar to 'but' or 'however' in English, but can also be used for transitions or providing context. For verbs in the present tense, use '는데', while for descriptive verbs (adjectives), the form can be '(으)ㄴ데'.",
-    "formation": "動詞/形容詞 + (으)ㄴ/는데"
+    "title": "(으)ㄴ/는데（〜だが・〜けれど・〜のに【逆接・前提】）",
+    "shortExplanation": "前後の対比や逆接を表したり、後ろの文の背景・前提を提示する接続語尾で、日本語の「〜が」「〜けれど」「〜のに」に相当します。",
+    "longExplanation": "「-(으)ㄴ/는데」は、対比・逆接（〜だが、〜けれど）を表したり、後続文の内容に対する前置きや背景説明（〜のだけど、〜のところ）を行う接続語尾です。接続形態：動詞の現在形には「-는데」、形容詞の語幹でパッチムがない場合は「-ㄴ데」、パッチムがある場合は「-은데」がつきます。過去形には動詞・形容詞を問わず「-았/었는데」を用い、体言（名詞）には「-인/인데」がつきます。",
+    "formation": "動詞 ＋ 는데 / 形容詞 ＋ (으)ㄴ데 / 名詞 ＋ 인데",
+    "examples": [
+      {
+        "translation": "今日天気は良いですが、私は家にだけいたいです。"
+      },
+      {
+        "translation": "彼はとても親切ですが、たまに素直すぎて人を傷つけてしまうことがあります。"
+      },
+      {
+        "translation": "私は韓国語の勉強を長くしてきたにもかかわらず、まだ至らないところが多いです。"
+      },
+      {
+        "translation": "この服は綺麗ですが、私の好みではありません。"
+      }
+    ]
   },
   "ko_아어야_24": {
-    "title": "아/어야 해요 [a/eoya haeyo] (Have to do)",
-    "shortExplanation": "〜を表すために使用されます necessity or obligation; 'have to', 'must', 'should'.",
-    "longExplanation": "'아/어야 해요' is used when you must or need to do something. It conveys a strong sense of requirement or obligation, similar to 'have to' or 'must' in English. The exact form (아, 어, or 여) depends on the final vowel of the verb stem.",
-    "formation": "動詞 stem + 아/어/여 + 야 해요"
+    "title": "아/어야 하다/되다（〜しなければならない・〜すべきだ）",
+    "shortExplanation": "義務や当為、必要性を表す構文で、日本語の「〜しなければならない」「〜すべきだ」に相当します。",
+    "longExplanation": "「-아/어야 하다/되다」は動詞や形容詞の語幹について、ある行動を行う義務があることや、そうしなければならない必要性を表す必須文型です。語幹の母音が陽母音（ㅏ, ㅗ）の場合は「-아야 하다」、陰母音の場合は「-어야 하다」、「하다」で終わる動詞は「해야 하다」になります。会話では「하다」の代わりに「되다」も頻繁に用いられます（例：「가야 돼요」＝行かなければなりません）。",
+    "formation": "動詞・形容詞の語幹 ＋ 아/어/여야 하다（または 되다）",
+    "examples": [
+      {
+        "translation": "このように勉強することがたくさんあるので、私たちは早く始めなければなりません。そうでないと時間が足りず、すべてを終わらせることができません。"
+      },
+      {
+        "translation": "週末に試験があるので、私は今から準備しなければなりません。それだけ勉強しないと試験に落ちてしまうかもしれません。"
+      },
+      {
+        "translation": "明日会社に朝早く行かなければなりません。重要な会議があるので必ず出席しなければなりません。"
+      },
+      {
+        "translation": "夏はSPFが重要なので、外出する前に日焼け止めを塗らなければなりません。そうしないと肌が傷んでしまうことがあります。"
+      }
+    ]
   },
   "ko_안_25": {
-    "title": "안 [an] (Negation before verb/adjective)",
-    "shortExplanation": "Used to negate verbs and adjectives in Korean; equivalent to 'not'.",
-    "longExplanation": "'안 [an]' is an adverb that goes in front of a verb or adjective to negate it, similar to 'not' in English. It completely flips the meaning of the sentence, stating that the action or state does not happen or does not apply.",
-    "formation": "안 + 動詞/形容詞"
+    "title": "안（〜ない・〜しない【短形否定】）",
+    "shortExplanation": "動詞や形容詞の前に置いて否定の意味を表す短形否定の副詞で、日本語の「〜ない」「〜しない」に相当します。",
+    "longExplanation": "「안」は「아니」の短縮形で、動詞や形容詞の直前に置かれてその動作や状態を打ち消す短形否定の副詞です（例：「안 가요」＝行きません、「안 예뻐요」＝可愛くないです）。話者の意志による不実行や単純な状態否定を表します。なお、「名詞 ＋ 하다」型の動詞（例：「공부하다」）を否定する場合は、「공부를 안 하다」のように「名詞」と「하다」の間に「안」を挟むのが一般的です。",
+    "formation": "안 ＋ 動詞/形容詞（または 名詞 ＋ 안 하다）",
+    "examples": [
+      {
+        "translation": "私はまだ寝ていません。まだ仕事が残っています。"
+      },
+      {
+        "translation": "私の友達はサーモンを食べません。彼女は魚が好きではありません。"
+      },
+      {
+        "translation": "あなたはその映画を見ていないのですか？本当に面白いので、ぜひ見るべきです。"
+      },
+      {
+        "translation": "私はあの人のことが本当に好きではありません。いつも嘘をつくからです。"
+      }
+    ]
   },
   "ko_못_26": {
-    "title": "못 [mot] (Can't, not able to)",
-    "shortExplanation": "〜を表すために使用されます inability or impossibility; 'can't', 'not able to'.",
-    "longExplanation": "'못 [mot]' is a Korean adverb 〜を示します an inability or impossibility to do something. This can be a physical inability, a matter of circumstance, or a lack of permission. It corresponds to 'can't' or 'not able to' in English and is placed directly before the verb.",
-    "formation": "못 + 動詞"
+    "title": "못（〜できない・〜かねる【不可能・能力否定】）",
+    "shortExplanation": "能力の不足や外部の事情によって動作を行えないことを表す副詞で、日本語の「〜できない」「〜（し）かねる」に相当します。",
+    "longExplanation": "「못」は動詞の直前に置かれて、能力不足や体調、あるいは外的な状況・事情のせいでその動作を行うことが不可能であることを表す副詞です（話者の意志でしない「안」とは区別されます）。「名詞 ＋ 하다」型の動詞の場合、「운전을 못 하다」（運転ができない）のように名詞と「하다」の間に「못」を挟んで表現するのが自然です。",
+    "formation": "못 ＋ 動詞（または 名詞 ＋ 못 하다）",
+    "examples": [
+      {
+        "translation": "今日はあまりにも疲れていて、早く眠ることができませんでした。"
+      },
+      {
+        "translation": "彼女はとても心配してストレスを感じていたため、ご飯を食べられませんでした。"
+      },
+      {
+        "translation": "雨があまりにもひどく降ったので、私たちは遊園地に行くことができませんでした。"
+      },
+      {
+        "translation": "あまりにも遅く到着したため、会議に出席できませんでした。"
+      }
+    ]
   },
   "ko_아어여_27": {
-    "title": "아/어/여 보다 [a/eo/yeo boda] (Try doing)",
-    "shortExplanation": "Expresses an attempt or an experience of doing something; 'try doing'.",
-    "longExplanation": "'아/어/여 보다' is used in Korean to show that one attempts or experiences a certain action. It is attached to an action verb stem, while the final verb '보다' takes the tense. It can also be used to describe having done something at least once in the past (an experience).",
-    "formation": "Action verb + 아/어/여 보다"
+    "title": "아/어/여 보다（〜してみる・〜したことがある【試行・経験】）",
+    "shortExplanation": "試みに動作を行ってみること（試行）や、過去にそれを行った経験を表す補助動詞構文で、「〜してみる」「〜したことがある」に相当します。",
+    "longExplanation": "「-아/어/여 보다」は動詞の語幹について、ある行動を試しにやってみること（試行・お試し）や、過去形（-아/어/여 봤다）を伴って過去にその行為をしたことがあるという経験を表します。日本語の「〜してみる」「〜したことがある」に相当します。陽母音語幹には「-아 보다」、陰母音語幹には「-어 보다」、「하다」動詞には「해 보다」が接続します。",
+    "formation": "動詞の語幹 ＋ 아/어/여 보다",
+    "examples": [
+      {
+        "translation": "この問題をどのように解決すべきか分からなければ、私のやり方で一度やってみてください。"
+      },
+      {
+        "translation": "キムチを作ってみたことがないなら、一度試してみてください。本当に簡単で面白いですよ。"
+      },
+      {
+        "translation": "以前韓国語を習ってみましたが、全く覚えていません。"
+      },
+      {
+        "translation": "この方法で勉強してみましたが、結果がとても良かったです。"
+      }
+    ]
   },
   "ko_지금_28": {
-    "title": "지금 [jigeum] (Now)",
-    "shortExplanation": "Used to refer to 'now' or the 'current moment'.",
-    "longExplanation": "'지금 [jigeum]' means 'now' or 'at this moment' in English. It indicates that the speaker is referring to the immediate present. It can be used before verbs or at the start of a sentence to emphasize current time.",
-    "formation": "지금 (often used at the start of a clause or right before the verb)"
+    "title": "지금（今・現在）",
+    "shortExplanation": "発話の時点や現在の瞬間を表す時間詞で、日本語の「今」「現在」に相当します。",
+    "longExplanation": "「지금」は名詞または副詞として機能し、話し手が話しているまさにその時点や現段階を表します。日本語の「今」「現在」「ただいま」に相当します。文頭や動詞の直前に置かれて現在の時点を強調したり、「지금은」「지금부터」のように助詞を伴って時間的枠組みを提示します。",
+    "formation": "지금 ＋ 節/述語（または助詞を伴う：지금은, 지금부터）",
+    "examples": [
+      {
+        "translation": "今学校に行かなければなりません。授業がもうすぐ始まります。"
+      },
+      {
+        "translation": "今雨が降っています。傘を持って行った方がいいと思います。"
+      },
+      {
+        "translation": "今宿題をしています。後で電話しますね。"
+      },
+      {
+        "translation": "今うちの家に来てくだされば、一緒に食事ができますよ。"
+      }
+    ]
   },
   "ko_이미_29": {
-    "title": "이미 [imi] (Already)",
-    "shortExplanation": "〜を表すために使用されます an action that has already taken place.",
-    "longExplanation": "'이미 [imi]' is an adverb meaning 'already'. It is used when an action or situation has occurred before the current moment or earlier than expected. It emphasizes that something is not new or pending, but has taken place beforehand.",
-    "formation": "이미 + 動詞"
+    "title": "이미（すでに・もう・とっくに）",
+    "shortExplanation": "動作や事態が基準となる時よりも前に完了していることを表す副詞で、日本語の「すでに」「もう」「とっくに」に相当します。",
+    "longExplanation": "「이미」は話し手が話している時点やある基準となる時点よりも前に、すでにその行為や状態が完了・成立していることを表す時間副詞です。日本語の「すでに」「もう」「とっくに」に相当します。多くの場合、過去形や完了・継続を表す表現と共に用いられ、事態が既成事実であることを強調します。",
+    "formation": "이미 ＋ 動詞（主に過去形や完了表現）",
+    "examples": [
+      {
+        "translation": "あなたはすでにその映画を見たのだから、また見に行くことに何の意味があるのでしょうか？"
+      },
+      {
+        "translation": "私はすでに夕食を食べましたので、あなたは一人で召し上がってください。"
+      },
+      {
+        "translation": "去年にすでにその会社の株式を売却したので、今では何の損失もありません。"
+      },
+      {
+        "translation": "ここに来たとき、太陽はすでに昇っていました。"
+      }
+    ]
   },
   "ko_아직_30": {
-    "title": "아직 [ajik] (Yet, still)",
-    "shortExplanation": "〜を示します that a condition or situation persists; 'yet', 'still'.",
-    "longExplanation": "'아직 [ajik]' shows that an action or state is not finished or has not changed up to now. 〜と訳されます 'still' or 'yet' in English, depending on the context. It often appears in negative contexts (아직 안 했다) but can also be used more neutrally (아직 하고 있다).",
-    "formation": "아직 + 動詞 / 名詞 / 形容詞"
+    "title": "아직（まだ・いまだに・なお）",
+    "shortExplanation": "ある状態や動作が現在まで持続していることや、まだ完了していないことを表す副詞で、日本語の「まだ」「いまだに」に相当します。",
+    "longExplanation": "「아직」は、過去から現在に至るまで状態や行為に変化がなく続いていること、あるいは行われるべき動作がまだ行われていないことを表す副詞です。肯定の文脈や進行形（-고 있다など）と共に用いられると「まだ〜している」「いまだに〜だ」という意味になり、否定形（안、못、-지 않다など）と呼応すると「まだ〜していない」「いまだ〜できない」という意味を表します。",
+    "formation": "아직 ＋ 動詞 / 形容詞 / 名詞",
+    "examples": [
+      {
+        "translation": "私はまだ韓国語を完璧には理解できません。継続的な練習が必要です。"
+      },
+      {
+        "translation": "決定することはできても、まだその問題について考えている最中です。"
+      },
+      {
+        "translation": "まだその映画を観ていません。週末に観る予定です。"
+      },
+      {
+        "translation": "まだお昼ご飯を食べていません。とてもお腹が空きました。"
+      }
+    ]
   },
   "ko_때_31": {
-    "title": "때 [ttae] (When, time)",
-    "shortExplanation": "〜を示します a specific time or moment; 'when', 'at the time'.",
-    "longExplanation": "'때 [ttae]' is a noun meaning 'time' or 'moment.' It is commonly attached to a verb stem (or sometimes a noun + 적 or similar forms) to indicate 'when' something happened or will happen. It's very versatile and appears in expressions like '어릴 때' (when I was young) or '시간이 없을 때' (when there is no time).",
-    "formation": "動詞 stem/名詞 + 때"
+    "title": "때（〜の時・〜頃・〜とき）",
+    "shortExplanation": "特定の時間や時期、動作・状態が起きる瞬間を表す名詞（不完全名詞）で、日本語の「〜の時」「〜するとき」に相当します。",
+    "longExplanation": "「때」は、時や時期、ある出来事が生じるタイミングを表す語です。名詞の直後に接続して「〜の時」「〜の頃」（例：방학 때＝休みの時、점심 때＝昼食時、첫 만남 때＝初対面の時）と表現できるほか、動詞や形容詞の連体形語尾「-(으)ㄹ」の後ろに付いて「-(으)ㄹ 때（〜する時、〜な時）」の形で広く使われます。過去・現在・未来のいずれの時点における状況描写にも活用されます。",
+    "formation": "名詞 ＋ 때 / 動詞・形容詞の語幹 ＋ (으)ㄹ 때",
+    "examples": [
+      {
+        "translation": "私は幼い頃から韓国語を習いたがっていました。"
+      },
+      {
+        "translation": "その女性が笑う時、私は本当に幸せな気持ちになります。"
+      },
+      {
+        "translation": "初めて会った時の彼のことを、私は絶対に忘れられないでしょう。"
+      },
+      {
+        "translation": "今週末に旅行へ行きたいのですが、時間がない時はどうすればよいでしょうか？"
+      }
+    ]
   },
   "ko_으려고하다euryeogohadaIntendtodo_32": {
-    "title": "(으)려고 하다 [(eu)ryeogo hada] (Intend to do)",
-    "shortExplanation": "〜を表すために使用されます the intention or plan to do something.",
-    "longExplanation": "'(으)려고 하다' is used to say that someone intends or plans to do something in the future. The verb stem is followed by (으)려고, then '하다' is conjugated to show tense or politeness level. It often implies a near-future plan or deliberate intention.",
-    "formation": "動詞 stem + (으)려고 하다"
+    "title": "(으)려고 하다（〜しようとする・〜するつもりだ・〜しようと思う）",
+    "shortExplanation": "主語がある行動をとろうとする意図や計画を表す表現で、日本語の「〜しようとする」「〜するつもりだ」に相当します。",
+    "longExplanation": "「-(으)려고 하다」は、意図・目的を表す接続語尾「-(으)려고」に動詞「하다」が結合した表現で、主語が将来ある動作を行う計画や明確な意図を持っていることを示します。動詞の語幹末尾にパッチムがある場合（ㄹパッチムを除く）は「-으려고 하다」を接続し、母音で終わる場合または「ㄹ」パッチムで終わる場合は「-려고 하다」を接続します。また、天候などの無意志現象に用いられた場合は「今にも〜しそうだ」という直前の兆候を表すこともあります。",
+    "formation": "パッチムあり動詞の語幹（ㄹを除く） ＋ 으려고 하다 / パッチムなし動詞の語幹およびㄹパッチム動詞の語幹 ＋ 려고 하다",
+    "examples": [
+      {
+        "translation": "私は韓国語をもっと上達させるために努力するつもりです。たくさん練習して実力を伸ばそうと思います。"
+      },
+      {
+        "translation": "明日は雨が降りそうなので傘を持っていこうと思います。風邪を予防するつもりです。"
+      },
+      {
+        "translation": "友達と一緒に旅行へ行こうと思っています。一緒に良い思い出を作ろうとしています。"
+      },
+      {
+        "translation": "彼女は来月に結婚の準備をしようとしています。すべてを完璧に整えるつもりです。"
+      }
+    ]
   },
   "ko_처럼_33": {
-    "title": "처럼 [cheoreom] (Like, as)",
-    "shortExplanation": "〜を表すために使用されます similarity or comparison, like 'like' or 'as' in English.",
-    "longExplanation": "'처럼 [cheoreom]' is a Korean particle that expresses similarity to or comparison with the preceding noun. It can be read as 'like (something)' or 'as (something).' It often appears in similes or metaphors, but can also be used literally.",
-    "formation": "名詞 + 처럼"
+    "title": "처럼（〜のように・〜みたいに・〜のごとく）",
+    "shortExplanation": "名詞の後ろに付き、形や状態、性質がその名詞に似ていることを表す比況の格助詞で、日本語の「〜のように」「〜みたいに」に相当します。",
+    "longExplanation": "「처럼」は、体言（名詞）の直後に接続して、前にある名詞を比較の基準とし、動作や状態がそれとよく似ていることを表す格助詞（副詞格助詞）です。直前の名詞のパッチムの有無に関わらずそのまま「처럼」を用います。日常会話での直喩表現から文学的な比喩に至るまで幅広く活用され、日本語の「〜のように」「〜みたいに」と完全に一致します。",
+    "formation": "名詞 ＋ 처럼",
+    "examples": [
+      {
+        "translation": "彼はライオンのように強そうに見えましたが、実際にはそこまで強くはありません。"
+      },
+      {
+        "translation": "私たちの友達はいつも星のように輝いています。みんなから愛される人です。"
+      },
+      {
+        "translation": "彼女は蝶のように踊ります。本当に美しくて優雅です。"
+      },
+      {
+        "translation": "彼はワシのように空高く飛んでいきました。その飛行ぶりは実に印象的でした。"
+      }
+    ]
   },
   "ko_같이_34": {
-    "title": "같이 [gachi] (Together)",
-    "shortExplanation": "〜を表すために使用されます 'together' or 'along with'.",
-    "longExplanation": "'같이 [gachi]' is an adverb meaning 'together'. It often follows a noun (e.g., 엄마랑 같이) or appears before the verb. It emphasizes doing something in each other's company or jointly with someone else.",
-    "formation": "名詞 + 같이"
+    "title": "같이（一緒に・共に / 〜のように）",
+    "shortExplanation": "主に動作を共同で行うことを表す副詞（「一緒に」「共に」）として使われ、名詞に直接付いて「〜のように」と比況を表す助詞としても用いられます。",
+    "longExplanation": "「같이」は日常会話で非常によく使われる語で、副詞としての用法と助詞としての用法の2つがあります。副詞としては、助詞と組み合わさった「-(와/과) 같이」や「-(이)랑 같이」の形で「〜と一緒に」「〜と共に」という意味を表し、他者と行動を共にすることを強調します。一方、名詞の直後に分かち書きをせずに直接接続する場合は格助詞として機能し、「처럼」と同様に「〜のように」「〜と同様に」という比況の意味を表します。",
+    "formation": "名詞 ＋ 와/과/랑 같이（一緒に） / 名詞 ＋ 같이（〜のように）",
+    "examples": [
+      {
+        "translation": "友達と一緒に映画を観に行きました。本当に楽しかったです！"
+      },
+      {
+        "translation": "明日は私たちみんなで一緒に公園へ行ってピクニックをすることにしました。"
+      },
+      {
+        "translation": "お母さんと一緒に料理をすると、いつもより美味しい料理が作れます。"
+      },
+      {
+        "translation": "家庭教師の先生と一緒に勉強すると、とても大きな助けになります。"
+      }
+    ]
   },
   "ko_이랑irangWith_35": {
-    "title": "(이)랑 [(i)rang] (With)",
-    "shortExplanation": "〜を表すために使用されます 'with' or 'and' when referring to being together or doing something together.",
-    "longExplanation": "'(이)랑 [(i)rang]' is a conjunctive particle used in Korean to denote the concept of 'with' or 'and'. It connotes a sense of togetherness, indicating that the speaker is together with someone or doing something jointly. If the noun ends with a vowel, use '랑 [rang]'; if it ends with a consonant, use '이랑 [irang]'.",
-    "formation": "Vowel-ending noun + 랑, Consonant-ending noun + 이랑"
+    "title": "(이)랑（〜と・〜と一緒に）",
+    "shortExplanation": "名詞の後ろに付き、並列（「〜と」）や行動を共にする相手（「〜と一緒に」）を表す口語的な助詞です。",
+    "longExplanation": "「(이)랑」は、日常の会話で親しみを持って多用される接続助詞・格助詞です。主に二つの働きがあり、名詞と名詞を並列して繋ぐ「〜と」の意味と、動作を共に行う相手を表す「〜と（一緒に）」の意味を持ちます。直前の名詞にパッチムがある場合は「이랑」を接続し、パッチムがない場合は「랑」を接続します。文章語的な「와/과」に比べて、非常にフランクでカジュアルな響きを持ちます。",
+    "formation": "パッチムあり名詞 ＋ 이랑 / パッチムなし名詞 ＋ 랑",
+    "examples": [
+      {
+        "translation": "私は友達と映画を観ましたが、その映画は面白かったです。"
+      },
+      {
+        "translation": "昨日私はお母さんと市場へ行き、私たちはたくさんの食料品を買いました。"
+      },
+      {
+        "translation": "私は弟（妹）と公園で遊びましたが、私たちはとても楽しかったです。"
+      },
+      {
+        "translation": "今日のお昼休みに友達と音楽を聴きましたが、その曲はとても素晴らしかったです。"
+      }
+    ]
   },
   "ko_그런데_36": {
-    "title": "그런데 [geureonde] (However, but)",
-    "shortExplanation": "〜を示します contrast or contradiction; 'however', 'but'.",
-    "longExplanation": "'그런데 [geureonde]' is a transitional phrase used to introduce a statement that contradicts or contrasts with the previous statement. It can mean 'however', 'but', or 'though' in English. It often shifts the direction of the conversation or highlights an unexpected twist.",
-    "formation": "Sentence + 그런데 + Sentence"
+    "title": "그런데（ところが・でも・しかし / ところで）",
+    "shortExplanation": "前の文と対立・逆接する事実を導く接続副詞（「ところが」「しかし」「でも」）で、話題を切り替える際（「ところで」）にも使われます。",
+    "longExplanation": "「그런데」は、文頭に置かれて前後の文を繋ぐ代表的な接続副詞です。主に2つの機能があり、1つは前文で述べた内容から予期されることとは異なる結果や対比・逆接を提示する用法で、日本語の「ところが」「しかし」「でも」に相当します。もう1つは、会話の方向性を新しい話題へと自然に転換する用法で、「ところで」「さて」に相当します。日常会話のくだけた場面では「근데」と短縮されて発音されることも多いです。",
+    "formation": "先行文. 그런데 ＋ 後続文",
+    "examples": [
+      {
+        "translation": "最初はその課題が簡単そうに見えましたが、ところが実際にやってみるととても難しかったです。"
+      },
+      {
+        "translation": "私が一番好きなスポーツはバスケですが、でも私の友達はバスケがまったく好きではありません。"
+      },
+      {
+        "translation": "昨日映画館へ行きましたが、ところが映画はすでに始まってしまった後でした。"
+      },
+      {
+        "translation": "友達がこのジーンズを勧めてくれましたが、しかし私のスタイルには合っていません。"
+      }
+    ]
   },
   "ko_그래서_37": {
-    "title": "그래서 [geuraeseo] (So, therefore)",
-    "shortExplanation": "Used to show a cause-and-effect relationship; 'so', 'therefore'.",
-    "longExplanation": "'그래서 [geuraeseo]' is a conjunctive adverb that indicates the result or conclusion of the preceding clause. It's similar to 'so' or 'therefore' in English. The second sentence (after '그래서') explains the logical outcome or effect of the first sentence.",
-    "formation": "Sentence + 그래서 + Sentence"
+    "title": "그래서（だから・それで・そのため）",
+    "shortExplanation": "前文の原因・理由を受けて後文でその結果を述べる接続副詞で、日本語の「だから」「それで」「そのため」に相当します。",
+    "longExplanation": "「그래서」は、先行する文で原因や理由を提示し、後続する文でその当然の結果や帰結を導き出す順接の接続副詞です。日本語の「だから」「それで」「そのため」に正確に対応します。日常会話から文章表現まで幅広く用いられ、文と文を因果関係によって論理的かつ滑らかに結びつける役割を果たします。",
+    "formation": "先行文（原因・理由）. 그래서 ＋ 後続文（結果）",
+    "examples": [
+      {
+        "translation": "今日は軽めに食べようと思っていたのですが、友達が美味しい食べ物を持ってきてくれました。だからたくさん食べました。"
+      },
+      {
+        "translation": "私は読書が好きです。そのため月に何冊もの本を読みます。"
+      },
+      {
+        "translation": "昨日勉強をしすぎました。だから今日は休まなければなりません。"
+      },
+      {
+        "translation": "週末は遅くまで寝ていて起きられませんでした。それでいつの間にかお昼になってしまいました。"
+      }
+    ]
   },
   "ko_그리고_38": {
-    "title": "그리고 [geurigo] (And then)",
-    "shortExplanation": "Used to link consecutive actions or events, often translated as 'and then'.",
-    "longExplanation": "'그리고 [geurigo]' is a conjunction in Korean that links events or actions occurring in sequence. It implies continuation or succession, like 'and then' in English. It's common in narratives or step-by-step descriptions.",
-    "formation": "Sentence + 그리고 + Sentence"
+    "title": "그리고（そして・それから・それに）",
+    "shortExplanation": "前後の文を繋ぎ、事物の並列・付加（「そして」「それに」）や、時間の経過に伴う動作の連続（「それから」）を表す接続副詞です。",
+    "longExplanation": "「그리고」は、文と文を対等に繋ぐ最も基本的な順接の接続副詞です。主な機能として、2つ以上の事実や情報を並べて追加する並列の用法（「そして」「それに」）と、過去から順を追って行為や出来事が次々に起こることを述べる継起・連続の用法（「それから」「そのあと」）の2通りがあります。物語の展開や手順の説明など、あらゆる文脈で日常的に使われます。",
+    "formation": "文1. 그리고 ＋ 文2",
+    "examples": [
+      {
+        "translation": "私は学校へ行きました、それから授業を受けました、そして友達とお昼ご飯を食べました。"
+      },
+      {
+        "translation": "ゲームをしました、それから眠くなって寝ました、そしてまたゲームをしました。"
+      },
+      {
+        "translation": "私はコーヒーを飲みました、それから図書館へ行きました、そして勉強をしました。"
+      },
+      {
+        "translation": "友達に会いました、それから映画を観ました、そして家に帰ってきました。"
+      }
+    ]
   },
   "ko_아어여_39": {
-    "title": "아/어/여 주다 [a/eo/yeo juda] (To do for someone)",
-    "shortExplanation": "〜を表すために使用されます doing an action for someone’s benefit.",
-    "longExplanation": "'아/어/여 주다' is a verb ending that means doing something *for* or *on behalf of* someone else. It attaches to the verb stem (with 아/어/여 depending on the stem’s final vowel), followed by '주다'. It often suggests kindness, favor, or helping the other person.",
-    "formation": "動詞 stem + 아/어/여 + 주다"
+    "title": "아/어/여 주다（〜てあげる・〜てくれる・〜て差し上げる）",
+    "shortExplanation": "動詞の語幹に付き、他者の利益のために親切に行動することを表す補助動詞表現で、日本語の「〜てあげる」「〜てくれる」に相当します。",
+    "longExplanation": "「-아/어/여 주다」は、接続語尾「-아/어/여」に補助動詞「주다（与える・くれる）」が接続した構文で、相手や他者のために親切や好意をもってある動作を行ったり手助けしたりすることを表します。語幹末尾の母音が陽母音（ㅏ, ㅗ）の場合は「-아 주다」、陰母音の場合は「-어 주다」、「하다」動詞は「해 주다」となります。行為を受ける相手が目上の人である場合は謙譲語の「-아/어/여 드리다（〜て差し上げる）」を用い、目上の人が自分にしてくれる場合は尊敬補助動詞の「-아/어/여 주시다（〜てくださる）」を用います。",
+    "formation": "動詞の語幹 ＋ 아/어/여 주다（謙譲表現：아/어/여 드리다 / 尊敬表現：아/어/여 주시다）",
+    "examples": [
+      {
+        "translation": "私は講義ノートをまとめて友達にメールで送ってあげました。"
+      },
+      {
+        "translation": "ソミンさんが掃除をしてくれているのを見たあと、私も掃除を手伝ってあげました。"
+      },
+      {
+        "translation": "難しい問題のせいで悩んでいたのですが、先生が解決方法を教えてくださいました。"
+      },
+      {
+        "translation": "美味しい料理を作って友達に夕食をふるまってあげるのが好きです。"
+      }
+    ]
   },
   "ko_아어여_40": {
-    "title": "아/어/여 하다 [a/eo/yeo hada] (To feel or show a certain emotion)",
-    "shortExplanation": "Used mainly to convert adjectives (descriptive verbs) into active verbs that show one’s feeling or reaction.",
-    "longExplanation": "In Korean, some descriptive verbs (adjectives) become active verbs when combined with '아/어/여 하다'. For example, '슬프다' (to be sad) → '슬퍼하다' (to feel or show sadness). It indicates that the subject actively experiences or outwardly shows the emotion/state. This pattern is especially common with psychological or emotional adjectives.",
-    "formation": "Descriptive verb stem + 아/어/여 + 하다"
+    "title": "아/어/여 하다（〜がる・〜の感情を表す【感情形容詞の動詞化】）",
+    "shortExplanation": "感情や感覚を表す形容詞の語幹に付き、その感情を行動や表情に表していることを示す表現で、主に三人称の感情描写に用いられます（日本語の「〜がる」に相当）。",
+    "longExplanation": "「-아/어/여 하다」は、主観的な感情や心理・感覚を表す形容詞（例：슬프다＝悲しい、무섭다＝怖い、부끄럽다＝恥ずかしい）を動詞化する重要な文型です。日本語の接尾辞「〜がる」（悲しがる、怖がる、恥ずかしがる）に直接対応します。韓国語では、話し手が第三者の内面的な心理を直接断定することができないため、第三者の感情や欲求を客観的に観察して述べる際には必ずこの「-아/어/여 하다」を用いて動詞として表現します。",
+    "formation": "感情・感覚形容詞の語幹 ＋ 아/어/여 하다",
+    "examples": [
+      {
+        "translation": "彼は映画があまりにも悲しくて泣いたり悲しがったりしています。"
+      },
+      {
+        "translation": "子どもが怖がって一人で寝るのを嫌がります。"
+      },
+      {
+        "translation": "彼女は恥ずかしがって人前に出るのをためらいました。"
+      },
+      {
+        "translation": "人々はその知らせを聞いて非常に驚いていました。"
+      }
+    ]
   },
   "ko_의_41": {
-    "title": "의 [ui] (Possessive marker)",
-    "shortExplanation": "Used to denote possession or relationship; similar to '’s' in English.",
-    "longExplanation": "The marker '의 [ui]' indicates a possessive or descriptive relationship between two nouns. It is similar to English apostrophe-s ('s), or 'of' in some contexts. It can show ownership, belonging, or other relationships (e.g., family relationships, origin, material).",
-    "formation": "Noun1 + 의 + Noun2"
+    "title": "의（〜の【連体格助詞】）",
+    "shortExplanation": "名詞の後ろに付き、後ろに来る名詞を修飾して所有や所属、関係などを表す連体格助詞で、日本語の「〜の」に相当します。",
+    "longExplanation": "「의」は、体言（名詞）の直後に結合して後ろの名詞を修飾し、所有、所属、親族関係、性質などを表す連体格助詞（属格助詞）です。日本語の助詞「〜の」に完全に一致します。表記は「의」ですが、助詞として機能する際は実際には［에］と発音されるのが一般的です。また日常会話では省略されることも多く、代名詞と結びつく場合は「나의 → 내」「저의 → 제」「너의 → 네（発音は［니］）」のように縮約形が好んで用いられます。",
+    "formation": "先行名詞 ＋ 의 ＋ 後続名詞",
+    "examples": [
+      {
+        "translation": "これは私の本です、だから誰にもあげません。"
+      },
+      {
+        "translation": "お願いします、私の駐車スペースを占領しないでください。"
+      },
+      {
+        "translation": "彼女は自分の子犬を本当にとても愛しています。"
+      },
+      {
+        "translation": "これは彼のお父さんの古い時計です。"
+      }
+    ]
   },
   "ko_으로euroTotowardbymeansof_42": {
-    "title": "(으)로 [(eu)ro] (To, toward; by means of)",
-    "shortExplanation": "〜を表すために使用されます direction, method, or transformation ('to', 'toward', 'by', 'into').",
-    "longExplanation": "'(으)로 [(eu)ro]' is a Korean particle with several functions. It can indicate direction ('to/toward'), method or instrument ('by/with/using'), or transformation ('into'). After a consonant, use '으로'; after a vowel, just '로'.",
-    "formation": "名詞 + (으)로"
+    "title": "(으)로（〜へ・〜に向かって / 〜で・〜を使って / 〜に・〜として）",
+    "shortExplanation": "方向（「〜へ」）、手段・道具（「〜で」「〜を使って」）、原料、変化・資格（「〜として」「〜に」）などを幅広く表す多機能な副詞格助詞です。",
+    "longExplanation": "「(으)로」は、極めて多様な文法的機能を担う多機能な副詞格助詞です。主な用法として、① 動作が向かう方向・方角を表す（「〜へ」「〜に向かって」）、② 行動を遂行するための手段・道具・交通機関・言語などを表す（「〜で」「〜によって」）、③ 変化の結果や資格・立場を表す（「〜に変わる」「〜として」）、④ 原料や材料を表す用法があります。名詞の語尾にパッチムがある場合（ㄹパッチムを除く）は「으로」を用い、母音で終わる名詞または「ㄹ」パッチムで終わる名詞には「로」を用います。",
+    "formation": "パッチムあり名詞（ㄹを除く） ＋ 으로 / パッチムなし名詞およびㄹパッチム名詞 ＋ 로",
+    "examples": [
+      {
+        "translation": "私は毎朝地下鉄で学校へ通っています。"
+      },
+      {
+        "translation": "私の父は料理の材料を通して愛を表現します。"
+      },
+      {
+        "translation": "その会社は紙をリサイクルしてノートに作り替えています。"
+      },
+      {
+        "translation": "ドアを開けるために鍵で鍵穴を回します。"
+      }
+    ]
   },
   "ko_한테에게_43": {
-    "title": "한테/에게 [hante/ege] (To someone)",
-    "shortExplanation": "〜を示します the recipient or target of an action; roughly 'to' in English.",
-    "longExplanation": "'한테 [hante]' and '에게 [ege]' both mean 'to (a person)' in Korean. '에게' is slightly more formal, whereas '한테' is more colloquial. They specify to whom or to what an action is directed (e.g., giving, telling, teaching).",
-    "formation": "名詞 + 한테/에게 + 動詞"
+    "title": "한테/에게（〜に・〜へ【与格助詞】）",
+    "shortExplanation": "人や動物（有情名詞）の後ろに付き、動作の受け手や対象を表す助詞で、「에게」は文語・一般用、「한테」は親しい口語で使われます（日本語の「〜に」に相当）。",
+    "longExplanation": "「한테/에게」は、人や動物など意思を持つ存在（有情名詞）に接続して、動作が向けられる対象や受け手を示す与格助詞（副詞格助詞）です。日本語の助詞「〜に」「〜へ」に相当します。「에게」は標準的で文章語や改まった場面でも広く使われるのに対し、「한테」は会話や親しい間柄で好まれる口語表現です。また、動作が向けられる相手が目上の人や敬意を払うべき相手である場合は、尊敬の格助詞「께（〜に・〜へ）」を用います。",
+    "formation": "有情名詞（人・動物） ＋ 한테（口語） / 에게（一般・文語）（尊敬表現：께）",
+    "examples": [
+      {
+        "translation": "私は昨日、友達にプレゼントをあげました。"
+      },
+      {
+        "translation": "私の声を直接彼女に聞かせてあげたいです。"
+      },
+      {
+        "translation": "お姉ちゃんに嬉しいニュースを伝えたいです。"
+      },
+      {
+        "translation": "お母さんに夕食の用意をして差し上げました。"
+      }
+    ]
   },
   "ko_한테서에서_44": {
-    "title": "한테서/에서 [hanteseo/eseo] (From someone)",
-    "shortExplanation": "Used to denote the source or origin; 'from'.",
-    "longExplanation": "'한테서/에서 [hanteseo/eseo]' indicates the source or place from which something (an object, idea, or action) originates. '한테서' is used when receiving something from a person, and '에서' is used for inanimate sources or places. For example, when you get a letter from a friend, you use '친구한테서'; when you borrow a book from the library, you use '도서관에서.'",
-    "formation": "名詞 + 한테서 (person) / 에서 (place or inanimate source)"
+    "title": "한테서/에서（〜から【人から：한테서／場所から：에서】）",
+    "shortExplanation": "出所や起点、出処を表す助詞で、人・動物から受ける場合は「한테서」、場所や組織からの場合は「에서」を用います（日本語の「〜から」に相当）。",
+    "longExplanation": "「한테서」と「에서」は、事物や情報、行動の出所（出処）や空間的起点を示す副詞格助詞です。日本語の「〜から」に相当しますが、接続する名詞の種類によって明確に使い分けられます。「한테서」（より改まった表現は「에게서」）は人や動物など有情名詞について「人から（もらう、聞く、習う）」という人的な出所を表し、「에서」は場所や建物、組織などの無情名詞について「場所から」という空間的・組織的な出発点や出所を表します。なお、敬意を払う目上の人からの出所には「께로부터」や「에게서」を用います。",
+    "formation": "人を表す名詞 ＋ 한테서 / 場所・組織を表す名詞 ＋ 에서（人の一般・文語：에게서 / 尊敬表現：께로부터）",
+    "examples": [
+      {
+        "translation": "友達から手紙をもらいました。彼はいつもマメに連絡をくれます。"
+      },
+      {
+        "translation": "ソウルから釜山まで車でどれくらいかかるでしょうか？"
+      },
+      {
+        "translation": "私はこの本を図書館から借りました。"
+      },
+      {
+        "translation": "その料理はお母さんから教わりました。"
+      }
+    ]
   },
   "ko_보다_45": {
-    "title": "보다 [boda] (More than)",
-    "shortExplanation": "〜を表すために使用されます comparison; 'more than' or simply 'than'.",
-    "longExplanation": "'보다 [boda]' is a comparative marker in Korean. It follows the standard or benchmark being compared, while the element outside or after '보다' is the one being described as 'more' (or 'less') in some aspect. In English, this often corresponds to 'than' or 'more than.'",
-    "formation": "名詞/動詞/形容詞 + 보다 + 名詞/動詞/形容詞"
+    "title": "보다（比較の助詞：〜より、〜に比べて）",
+    "shortExplanation": "比較の基準となる名詞の後に付き、「〜より」「〜に比べて」という意味を表す助詞です。",
+    "longExplanation": "「보다」は比較の基準を表す格助詞で、日本語の「〜より」に相当します。比較の基準となる名詞の直後に結合し、文中の別の対象がその基準よりも程度が上（または下）であることを示します。後ろにはしばしば「더（もっと）」や「덜（あまり〜ない、より少なく）」といった副詞を伴って、形容詞や動詞を修飾します。",
+    "formation": "名詞（比較基準） ＋ 보다 (더/덜) ＋ 形容詞／動詞",
+    "examples": [
+      {
+        "translation": "私はコーヒーよりお茶のほうが好きです。お茶のほうが私の口に合います。"
+      },
+      {
+        "translation": "我が家は図書館よりも本が多いです。家族全員が読書好きなのでそうなりました。"
+      },
+      {
+        "translation": "韓国語を学ぶことは中国語を学ぶことより簡単です。文字と発音がより単純だからです。"
+      },
+      {
+        "translation": "今は夏ですが、春より天気が寒いです。異常気象のせいだと思います。"
+      }
+    ]
   },
   "ko_가장_46": {
-    "title": "가장 [gajang] (The most)",
-    "shortExplanation": "〜を表すために使用されます the 最上級; 'the most', 'the best'.",
-    "longExplanation": "'가장 [gajang]' is an adverb meaning 'most,' indicating the highest degree or superlative level of a characteristic. It can modify verbs, adjectives, or even some adverbs, conveying the sense of 'the most' or 'the best.'",
-    "formation": "가장 + 形容詞 / Adverb / 動詞"
+    "title": "가장（最上級の副詞：最も、一番）",
+    "shortExplanation": "数ある中で程度が最も高いことを表す副詞で、日本語の「最も」「一番」に相当します。",
+    "longExplanation": "「가장」は最上級を表す固有語の副詞で、日本語の「最も」「一番」に相当します。形容詞、副詞、または動詞の前に置かれ、同類の対象の中でその性質や状態の度合いが最高であることを示します。漢字語の「제일（第一）」とほぼ同じ意味で用いられます。",
+    "formation": "가장 ＋ 形容詞／副詞／動詞",
+    "examples": [
+      {
+        "translation": "私は一番大好きな人と結婚したいです。"
+      },
+      {
+        "translation": "一番早く到着した人が賞品をもらえます。"
+      },
+      {
+        "translation": "彼は最も辛かった時期にも諦めませんでした。"
+      },
+      {
+        "translation": "私は一番大きな夢を叶えたいです。"
+      }
+    ]
   },
   "ko_도_47": {
-    "title": "도 [do] (Even)",
-    "shortExplanation": "Used to emphasize inclusion or an extreme; 'even', 'also', 'too'.",
-    "longExplanation": "'도 [do]' is a particle that can mean 'too,' 'also,' or 'even,' depending on context. It often emphasizes the additional inclusion of an item or an extreme case, suggesting that the statement applies in that situation as well.",
-    "formation": "名詞/Pronoun/動詞 + 도"
+    "title": "도（並立・強調の助詞：〜も、〜さえ）",
+    "shortExplanation": "名詞などの後に付き、同類の事物や動作を追加する「〜も」や、極端な例を挙げる「〜さえ」を表す助詞です。",
+    "longExplanation": "「도」は、体言（名詞・代名詞）や副詞の直後に結合して、すでにある事柄に同じような事柄が加わることを表す補助詞です。日本語の「〜も」に直接対応します。また、意外な極端の事柄を提示して「〜さえ」「〜までも」という強調の意味を表すこともあります。主格助詞「이/가」や目的格助詞「을/를」と重なる場合は、それらの助詞に代わって「도」単独で用いられます。",
+    "formation": "名詞／代名詞／副詞 ＋ 도",
+    "examples": [
+      {
+        "translation": "私は韓国語も上手ですし、日本語も上手です。"
+      },
+      {
+        "translation": "彼はハンサムなだけでなく、性格も良いです。"
+      },
+      {
+        "translation": "この食堂は料理も美味しく、雰囲気も良いです。"
+      },
+      {
+        "translation": "私は昨日家に到着したとき、夜の12時も過ぎていました。"
+      }
+    ]
   },
   "ko_이그저_48": {
-    "title": "이/그/저 [i/geu/jeo] (This, that, that over there)",
-    "shortExplanation": "〜を示します spatial relationships: 'this' (close), 'that' (far), 'that over there' (farther).",
-    "longExplanation": "'이/그/저' are demonstratives in Korean. '이' is used for something close to the speaker ('this'), '그' for something near the listener or previously mentioned but not in the speaker's reach ('that'), and '저' for something far from both speaker and listener ('that over there').",
-    "formation": "이/그/저 + 名詞"
+    "title": "이/그/저（指示冠形詞：この・その・あの）",
+    "shortExplanation": "名詞の直前に置かれ、話し手と聞き手からの距離に応じて対象を指し示す冠形詞（「この・その・あの」に相当）です。",
+    "longExplanation": "「이」「그」「저」は、名詞の直前に置かれて空間的・心理的な位置関係を示す指示冠形詞（指示連体詞）です。日本語の「こそあど」体系の「この・その・あの」に正確に対応します。\n- 「이（この）」：話し手の近くにある対象を指します。\n- 「그（その）」：聞き手の近くにある対象、または会話で既出の話題を指します。\n- 「저（あの）」：話し手と聞き手の双方から離れた場所にある対象を指します。\n依存名詞「것（もの、こと）」と結合すると、「이것（これ）」「그것（それ）」「저것（あれ）」という代名詞になります。",
+    "formation": "이 / 그 / 저 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "このペンは私のペンです。そのペンはあなたのペンです。あのペンは誰のものか分かりません。"
+      },
+      {
+        "translation": "この携帯電話はバグが多いです。その携帯電話は性能が良いです。あの携帯電話は何の機種か分かりません。"
+      },
+      {
+        "translation": "この料理は美味しくないです。その料理は辛いです。あの料理はどんな味か分かりません。"
+      },
+      {
+        "translation": "この本は面白いです。その本は難しすぎます。あの本はどんな内容か分かりません。"
+      }
+    ]
   },
   "ko_이나inaOr_49": {
-    "title": "(이)나 [(i)na] (Or)",
-    "shortExplanation": "〜を表すために使用されます alternatives; 'or'.",
-    "longExplanation": "'(이)나 [(i)na]' is used after nouns (and sometimes verbs in certain constructions) to present alternatives or choices. It can be roughly translated to 'or' in English. For verbs, the more common form is '-거나,' but '(이)나' can appear after verbs in some contexts, especially in casual speech.",
-    "formation": "名詞 + (이)나 / 動詞 + (이)나 (colloquial), 動詞 + 거나 (standard for verbs)"
+    "title": "(이)나（選択の助詞：〜や、〜とか、〜でも）",
+    "shortExplanation": "名詞の後に付き、複数の事物の中からいずれかを選択することを表す助詞（「〜か」「〜や」「〜でも」）です。",
+    "longExplanation": "「(이)나」は、名詞の後に接続して複数の選択肢を提示する接続助詞です。日本語の「〜か」「〜や」「〜でも」に相当します。直前の名詞にパッチムがある場合は「이나」、パッチムがない場合は「나」を用います。なお、動詞や形容詞を選択肢としてつなぐ場合は「-거나」を用います。選択を表す働きのほかに、予想以上の多さを強調する「〜も（〜もの数）」や、次善の策として選ぶ「〜でも」の意味も持ちます。",
+    "formation": "パッチムあり名詞 ＋ 이나 / パッチムなし名詞 ＋ 나（用言の場合は：動詞語幹 ＋ 거나）",
+    "examples": [
+      {
+        "translation": "ピザかハンバーガーの中で何が食べたいですか？"
+      },
+      {
+        "translation": "私は週末に友達と映画を見に行くか、ショッピングに行くつもりです。"
+      },
+      {
+        "translation": "洗濯や皿洗いのような家事をしなければなりません。"
+      },
+      {
+        "translation": "今夜は宿題をするか、本を読むつもりです。"
+      }
+    ]
   },
   "ko_밖에_50": {
-    "title": "밖에 [bakke] (Only, except)",
-    "shortExplanation": "〜を表すために使用されます 'only' or 'nothing but', typically with a negative verb.",
-    "longExplanation": "'밖에 [bakke]' is used after a noun to emphasize that there is nothing else other than the noun in question. It usually pairs with a negative verb form to convey the idea of exclusivity or limitation—similar to 'only' or 'nothing but' in English (e.g., '할 수밖에 없다' = 'I have no choice but to do it').",
-    "formation": "名詞 + 밖에 + (negative verb form)"
+    "title": "밖에（限定の助詞：〜しか・〜以外に）",
+    "shortExplanation": "名詞の後に付き、必ず後ろに否定表現を伴って「〜しか（〜ない）」という意味を表す助詞です。",
+    "longExplanation": "「밖에」は限定を表す助詞で、日本語の「〜しか（〜ない）」に直接対応します。名詞の直後に結合し、後続する述語には必ず否定語（「없다」「안」「못」「모르다」など）を伴わなければなりません。提示された対象以外には他に選択肢や余地がないことを強く強調します。「-(으)ㄹ 수밖에 없다」の形をとると、「〜するしかない」「〜せざるを得ない」という意味を表します。",
+    "formation": "名詞 ＋ 밖에 ＋ 否定表現（없다 / 안 / 못 / 모르다）",
+    "examples": [
+      {
+        "translation": "私は今週末、家にいるしかありませんでした。友達がみんな忙しかったからです。"
+      },
+      {
+        "translation": "母は台所で料理することしか知らなくて、他の仕事はあまり上手にできません。"
+      },
+      {
+        "translation": "私は韓国語しか知らないので、他の言語で話すのが難しいです。"
+      },
+      {
+        "translation": "その学生は勉強しか知らなくて、遊んだり他のことをしたりするのが苦手です。"
+      }
+    ]
   },
   "ko_뿐_51": {
-    "title": "뿐 [ppun] (Only)",
-    "shortExplanation": "Used in positive sentences to express that only the stated thing is true or valid.",
-    "longExplanation": "'뿐 [ppun]' is similar to '밖에', but it's used in positive sentences to say 'only' or 'just' that one thing/situation is the case—often emphasizing exclusivity without requiring a negative verb. You might also see it combined as '뿐만 아니라' meaning 'not only…but also.'",
-    "formation": "名詞 + 뿐"
+    "title": "뿐（限定の助詞・依存名詞：〜だけ、〜のみ）",
+    "shortExplanation": "体言や連体形の後に付き、それ以外にはないという唯一の限定（「〜だけ」「〜のみ」）を表します。",
+    "longExplanation": "「뿐」は助詞として名詞に直接付くか、依存名詞として用言の連体形（特に「-(으)ㄹ」）の後に接続して、「〜だけ」「〜のみ」という限定の意味を表します。「밖에」と異なり、肯定文の指定詞「이다」と結びついて「〜だけでなく（〜だけでなく）」「〜するだけだ」の形で広く使われます。また、「〜뿐만 아니라（〜だけでなく〜も）」の構文でも非常に多用されます。",
+    "formation": "名詞 ＋ 뿐(이다) / 用言語幹 ＋ -(으)ㄹ 뿐이다",
+    "examples": [
+      {
+        "translation": "我が家には猫が2匹いるだけです。他のペットはいません。"
+      },
+      {
+        "translation": "週末は家で休息をとるだけで、特別な予定はありません。"
+      },
+      {
+        "translation": "私はコーヒーだけでなくお茶も好きです。"
+      },
+      {
+        "translation": "私にできることはこれだけです。最善を尽くしました。"
+      }
+    ]
   },
   "ko_는은_52": {
-    "title": "는/은 것 [neun/eun geot] (The thing that…, nominalizing)",
-    "shortExplanation": "Nominalizes verbs or adjectives, translating roughly as 'the act of …ing' or 'the thing that…'.",
-    "longExplanation": "The construction '는/은 것 [neun/eun geot]' is used in Korean to turn verbs or adjectives into noun phrases—'the thing that…' or 'the act of …ing.' You use '는' after a present verb stem (e.g., '보다' → '보는 것'), and '은' after an adjective stem or a past verb stem to make it function like a noun in the sentence.",
-    "formation": "動詞/形容詞 + 는/은 것"
+    "title": "-는/-(으)ㄴ 것（用言の名詞化：〜すること、〜するもの）",
+    "shortExplanation": "動詞や形容詞の連体形に依存名詞「것」を付け、節全体を名詞化する表現（「〜すること」「〜するもの」）です。",
+    "longExplanation": "動詞の現在連体形語尾「-는」や形容詞・過去連体形語尾「-(으)ㄴ」に依存名詞「것（こと、もの）」を結合させることで、動詞や形容詞が表す動作や状態を名詞句へと変換する名詞化構文です。日本語の「〜すること」「〜なこと」「〜するもの」に相当します。名詞化された句は文中で主語（-는 것은 / -는 것이）、目的語（-는 것을）、または補語・述語として機能します。日常会話では「것은 → 건」「것이 → 게」「것을 → 걸」と縮約されることがよくあります。",
+    "formation": "動詞語幹 ＋ 는 것 / 形容詞語幹 ＋ -(으)ㄴ 것",
+    "examples": [
+      {
+        "translation": "映画を見ることがなぜそんなに面白いのか理解できません。"
+      },
+      {
+        "translation": "私たちの国で暮らすことは本当に楽しいです。"
+      },
+      {
+        "translation": "一番重要なことは正直であることです。"
+      },
+      {
+        "translation": "私にとって韓国語を学ぶことは難しいですが、練習を続けたいです。"
+      }
+    ]
   },
   "ko_으는것같다eunneungeotgatdaItseemslike_53": {
-    "title": "(으)ㄴ/는 것 같다 [(eu)n/neun geot gatda] (It seems like)",
-    "shortExplanation": "〜を表すために使用されます a conjecture, guess, or resemblance; 'it seems like', 'it appears that'.",
-    "longExplanation": "'(으)ㄴ/는 것 같다' is a common structure in Korean for expressing a guess or impression about a situation. With **action verbs**, '는 것 같다' typically indicates a current action or a general impression; with **descriptive verbs** (adjectives) or **past tense verbs**, '(으)ㄴ 것 같다' is used. It loosely translates to 'it seems that...' or 'it looks like...'.",
-    "formation": "Action verb + 는 것 같다 / Descriptive or past verb + (으)ㄴ 것 같다"
+    "title": "-(으)ㄴ/는 것 같다（推量・婉曲表現：〜のようだ、〜そうだと思う）",
+    "shortExplanation": "話し手の推測や曖昧な判断を表したり、自分の意見を遠回しに柔らかく述べる表現（「〜のようだ」「〜みたいだ」）です。",
+    "longExplanation": "「-(으)ㄴ/는 것 같다」は、直感や観察に基づいた推量（「〜のようだ」「〜みたいだ」）を表す代表的な表現です。また、自らの意見や状況を断定的に言うのを避け、柔らかく婉曲に伝える際にも非常に頻繁に用いられます。動詞の現在形には「-는 것 같다」、形容詞および動詞の過去形には「-(으)ㄴ 것 같다」、未来の推量には「-(으)ㄹ 것 같다」を接続します。",
+    "formation": "動詞現在形 ＋ 는 것 같다 / 形容詞 ＋ -(으)ㄴ 것 같다 / 動詞過去形 ＋ -(으)ㄴ 것 같다 / 未来推量 ＋ -(으)ㄹ 것 같다",
+    "examples": [
+      {
+        "translation": "天気が寒いと思っていましたが、外は暖かいようです。"
+      },
+      {
+        "translation": "あの女性はとても親切な人のようです。周りの人々にいつも笑顔で接しているからです。"
+      },
+      {
+        "translation": "主人公は最後には成功すると思います。困難を克服しようと懸命に努力しているからです。"
+      },
+      {
+        "translation": "今回の試験は難しそうです。習った内容がかなり複雑だからです。"
+      }
+    ]
   },
   "ko_으러가다오다eureogadaodaGocometodosomething_54": {
-    "title": "(으)러 가다/오다 [(eu)reo gada/oda] (Go/come to do something)",
-    "shortExplanation": "〜を表すために使用されます the purpose of going or coming somewhere; 'go/come to do something'.",
-    "longExplanation": "'(으)러 가다/오다' is 〜を示します **why** someone goes or comes to a location. If the verb stem ends in a consonant, you add '(으)러'; if it ends in a vowel, you add '러'. It translates to 'go/come in order to do (something)'. For instance: 가다 → 가러, 먹다 → 먹으러, 배우다 → 배우러.",
-    "formation": "Consonant-ending verb stem + (으)러 가다/오다, Vowel-ending verb stem + 러 가다/오다"
+    "title": "-(으)러 가다/오다（移動の目的：〜しに行く／来る）",
+    "shortExplanation": "移動動詞（行く・来るなど）の前に付き、移動の目的（「〜しに行く」「〜しに来る」）を表す連結語尾です。",
+    "longExplanation": "「-(으)러 가다/오다」は、ある場所へ移動する目的を表す構文で、日本語の「〜しに行く／来る」に直接対応します。後続する述語には「가다（行く）」「오다（来る）」「다니다（通う）」などの移動動詞のみが用いられます。動詞語幹の末尾にパッチムがある場合は「-으러」、パッチムがない場合や「ㄹ」パッチムで終わる場合は「-러」を接続します。",
+    "formation": "パッチムあり動詞語幹 ＋ 으러 가다/오다 / パッチムなし・ㄹパッチム動詞語幹 ＋ 러 가다/오다",
+    "examples": [
+      {
+        "translation": "私は友達に会いに学校へ行きました。"
+      },
+      {
+        "translation": "明日、両親にお目にかかりに故郷へ行くつもりです。"
+      },
+      {
+        "translation": "彼女は新しい靴を買いにショッピングモールへ行きました。"
+      },
+      {
+        "translation": "私はスピーチの準備をしに図書館に来ました。"
+      }
+    ]
   },
   "ko_아어여도_55": {
-    "title": "아/어/여도 [a/eo/yeodo] (Even if)",
-    "shortExplanation": "〜を示します that a certain condition does not affect the main action or conclusion; 'even if'.",
-    "longExplanation": "'아/어/여도' means 'even if' or 'even though.' It attaches to the verb stem, showing that **even if** the condition in that clause happens, the main action or state **still** occurs regardless. For example, '늦어도 (even if you’re late)' or '비가 와도 (even if it rains)'.",
-    "formation": "動詞 stem + 아/어/여도"
+    "title": "-아/어/여도（譲歩の接続語尾：〜ても、〜であっても）",
+    "shortExplanation": "前節の条件が成立しても、後節の内容に影響を及ぼさないことを表す接続語尾（「〜ても」「〜でも」）です。",
+    "longExplanation": "「-아/어/여도」は、譲歩を表す代表的な接続語尾で、日本語の「〜ても」「〜でも」に相当します。前節の動作や状態が仮定または事実として成立したとしても、後節の動作や状況がそれに左右されることなく実行・維持されることを表します。語幹の陽母音（ㅏ, ㅗ）には「-아도」、陰母音には「-어도」、「하다」で終わる語には「-해도」を接続します。",
+    "formation": "陽母音語幹（ㅏ, ㅗ） ＋ 아도 / 陰母音語幹 ＋ 어도 / 하다動詞・形容詞 → 해도",
+    "examples": [
+      {
+        "translation": "雨が降っても学校に行かなければなりませんでした。試験があったからです。"
+      },
+      {
+        "translation": "友達が遅れても待ちます。私たちは長年の友人だからです。"
+      },
+      {
+        "translation": "風邪がひどくてもサッカーをしなければなりません。チームメイトを失望させたくないからです。"
+      },
+      {
+        "translation": "天気が寒くなっても散歩を続けるつもりです。それがストレス解消に一番です。"
+      }
+    ]
   },
   "ko_계속_56": {
-    "title": "계속 [gyesok] (Continue to)",
-    "shortExplanation": "〜を表すために使用されます the ongoing or repeated nature of an action or state.",
-    "longExplanation": "'계속 [gyesok]' means 'continuously' or 'keep (doing something)'. It shows that an action remains unbroken or is repeated over a period. It can also apply to states or conditions, indicating they persist without stopping.",
-    "formation": "계속 + 動詞"
+    "title": "계속（継続の副詞：ずっと、続けて、絶えず）",
+    "shortExplanation": "動作や状態が途切れることなく持続することを表す副詞（「ずっと」「続けて」）です。",
+    "longExplanation": "「계속」は動作や状態が途絶えることなく継続して行われることを示す副詞で、日本語の「ずっと」「続けて」「絶えず」に相当します。動詞や用言の前に置かれてその持続性を修飾します。また、「계속하다（続ける）」「계속되다（続く）」のように動詞として用いられることも多い語彙です。",
+    "formation": "계속 ＋ 動詞／形容詞",
+    "examples": [
+      {
+        "translation": "彼は勉強を続けているので、試験で良い点が取れると思います。"
+      },
+      {
+        "translation": "気分が良いので、私はずっと笑っています。"
+      },
+      {
+        "translation": "雨が降り続けているので、傘を持って行ったほうがいいと思います。"
+      },
+      {
+        "translation": "彼女はずっと健康に気を配っているので、病気になる確率が低いです。"
+      }
+    ]
   },
   "ko_항상_57": {
-    "title": "항상 [hangsang] (Always)",
-    "shortExplanation": "〜を示します something that happens at all times or consistently.",
-    "longExplanation": "'항상 [hangsang]' is an adverb that means 'always.' It indicates a repeated or continuous habit, behavior, or situation. Whether it’s past, present, or future, '항상' emphasizes the consistency or habitual nature of the action.",
-    "formation": "항상 + 動詞/形容詞"
+    "title": "항상（頻度の副詞：いつも、常に）",
+    "shortExplanation": "時間や状況にかかわらず変わらない習慣や状態を表す副詞（「いつも」「常に」）です。",
+    "longExplanation": "「항상」は漢字語「恒常」に由来する副詞で、日本語の「いつも」「常に」に相当します。例外なくある動作や状態が保たれていることや、日常的な習慣を指します。固有語の「늘」や「언제나」とほぼ同義で互換性があります。",
+    "formation": "항상 ＋ 動詞／形容詞",
+    "examples": [
+      {
+        "translation": "私はいつも朝早く起きて学校に行きます。"
+      },
+      {
+        "translation": "私の母はいつも夕食の準備をしながらラジオを聴きます。"
+      },
+      {
+        "translation": "彼はいつも勉強計画を綿密に立ててその通りに従います。"
+      },
+      {
+        "translation": "公園ではいつも鳥たちがさえずっています。"
+      }
+    ]
   },
   "ko_으때eulttaeWhen_58": {
-    "title": "(으)ㄹ 때 [(eu)l ttae] (When)",
-    "shortExplanation": "〜を表すために使用されます 'when' something happens or a time condition.",
-    "longExplanation": "'(으)ㄹ 때' corresponds to 'when' or 'at the time that' in English. It's used to link a time clause with the main clause, indicating when an action or state occurs. If the verb stem ends in a vowel, you add 'ㄹ 때,' and if it ends in a consonant, you add '을 때.'",
-    "formation": "動詞 stem + ㄹ 때 (vowel-ending) / 을 때 (consonant-ending)"
+    "title": "-(으)ㄹ 때（時を表す表現：〜のとき、〜する際）",
+    "shortExplanation": "用言の未来連体形に依存名詞「때」が付き、ある動作や状況が起こる時（「〜するとき」「〜のとき」）を表します。",
+    "longExplanation": "「-(으)ㄹ 때」は、動作や状態が起こる時間的タイミングを表す構文で、日本語の「〜するとき」「〜のとき」に直接対応します。用言語幹末尾にパッチムがある場合は「-을 때」、パッチムがない場合や「ㄹ」パッチムの場合は「-ㄹ 때」を接続します。名詞につく場合は直接「名詞 ＋ 때」（例：방학 때＝休みのとき）の形をとります。",
+    "formation": "パッチムあり用言語幹 ＋ 을 때 / パッチムなし・ㄹパッチム用言語幹 ＋ ㄹ 때（名詞の場合：名詞 ＋ 때）",
+    "examples": [
+      {
+        "translation": "夏には我が家から海を見るとき、窓を開けると涼しい潮風が入ってきます。"
+      },
+      {
+        "translation": "学校に行くとき、バスに乗ると便利です。"
+      },
+      {
+        "translation": "宿題をするとき、音楽を聴くとより集中できます。"
+      },
+      {
+        "translation": "友達に会うとき、一緒に食事をするとより楽しいです。"
+      }
+    ]
   },
   "ko_아어여야_59": {
-    "title": "아/어/여야 되다 [a/eo/yeoya doeda] (Must, have to)",
-    "shortExplanation": "〜を表すために使用されます obligation or necessity; 'must', 'have to'.",
-    "longExplanation": "'아/어/여야 되다' conveys an obligation or necessity, similar to 'must' or 'have to' in English. It is attached to the verb stem with the appropriate connector (아, 어, or 여), followed by '야 되다'. This indicates the speaker believes that action is required or unavoidable.",
-    "formation": "動詞 stem + 아/어/여 + 야 되다"
+    "title": "-아/어/여야（하다/되다）（義務・必須条件：〜しなければならない、〜してこそ）",
+    "shortExplanation": "後節が成り立つための必須条件（「〜してこそ」）や、義務・必然性（「〜しなければならない」）を表す表現です。",
+    "longExplanation": "「-아/어/여야」は必須の前提条件を表す接続語尾で、「〜してこそ」「〜してはじめて」という意味を持ちます。後続に補助動詞「하다」「되다」を伴って「-아/어/여야 하다/되다」の形をとると、日本語の「〜しなければならない」「〜する必要がある」という強い義務や必然性を表す必須文型となります。陽母音（ㅏ, ㅗ）には「-아야」、陰母音には「-어야」、「하다」動詞には「-해야」を接続します。",
+    "formation": "陽母音語幹（ㅏ, ㅗ） ＋ 아야 하다/되だ / 陰母音語幹 ＋ 어야 하다/되다 / 하다動詞・形容詞 → 해야 하다/되다",
+    "examples": [
+      {
+        "translation": "病院に行くなら健康診断を受けなければなりません。そうしてこそ安心して勉強できますからね。"
+      },
+      {
+        "translation": "今月の売上を伸ばすためには、より多くの顧客を引き入れなければなりません。そうしてこそ収益が上がるはずです。"
+      },
+      {
+        "translation": "学校に行く前には必ず朝食を食べなければなりません。そうしてこそ一日中エネルギーを維持できるのです。"
+      },
+      {
+        "translation": "明日試験があるので今夜勉強しなければなりません。そうしないと点数が悪くなってしまいます。"
+      }
+    ]
   },
   "ko_으면서eumyeonseoWhileand_60": {
-    "title": "(으)면서 [(eu)myeonseo] (While, and)",
-    "shortExplanation": "〜を表すために使用されます two actions happening at the same time; 'while doing X, doing Y'.",
-    "longExplanation": "'(으)면서' shows that two actions or states occur simultaneously. If the verb stem ends in a consonant, add '으면서'; if it ends in a vowel, just '면서'. For example, 먹다 → 먹으면서, 가다 → 가면서. It can translate to 'while ~ing' in English.",
-    "formation": "Consonant-ending verb + 으면서 / Vowel-ending verb + 면서"
+    "title": "(으)면서（接続語尾：〜しながら、〜しつつ）",
+    "shortExplanation": "2つの動作や状態が同時に並行して行われることを表す接続語尾です（「〜しながら」）。",
+    "longExplanation": "「-(으)면서」は、同一の主語が2つ以上の動作を同時に行ったり、2つの状態が同時に存在したりすることを表す接続語尾です。日本語の「〜しながら」に相当します。動詞の語幹末尾にパッチムがある場合は「-으면서」、パッチムがない場合や「ㄹ」パッチムの場合は「-면서」を付けます。前後の節で主語が同一でなければなりません。",
+    "formation": "パッチムのある動詞の語幹 ＋ 으면서 ／ パッチムのない動詞の語幹（またはㄹパッチム） ＋ 면서",
+    "examples": [
+      {
+        "translation": "私はテレビを見ながら食事をしました。そのため会話はできませんでした。"
+      },
+      {
+        "translation": "彼女はバスで音楽を聴きながら本を読んでいます。"
+      },
+      {
+        "translation": "最近、私の弟（妹）は学校の勉強をしながらアルバイトもしています。"
+      },
+      {
+        "translation": "私はポッドキャストを聴きながら新しい単語を書き留めています。リスニングの実力を伸ばしたいからです。"
+      }
+    ]
   },
   "ko_다가_61": {
-    "title": "다가 [daga] (And then, while)",
-    "shortExplanation": "Used to show that one action was interrupted or followed by another action.",
-    "longExplanation": "'다가' indicates that an action was in progress when another action or event occurred, often with an element of interruption or a sequence. In English, it might be 'while doing X, Y happened' or 'I was doing X, and then Y occurred.'",
-    "formation": "動詞 stem + 다가"
+    "title": "다가（接続語尾：〜している途中で、〜しかけて）",
+    "shortExplanation": "ある動作や状態が進行している途中で中断され、別の動作や事態に移ることを表す接続語尾です。",
+    "longExplanation": "「-다가」は、先行する動作や状態が続いている途中でそれが中断され、後続の新しい動作や予期せぬ状況に切り替わることを表す接続語尾です。日本語の「〜している途中で」「〜しかけて」に相当します。通常、前後節の主語は同一人物になります。また、相反する動作が交互に繰り返される場合にも用いられます。",
+    "formation": "動詞・形容詞の語幹 ＋ 다가",
+    "examples": [
+      {
+        "translation": "私は本を読んでいる途中で眠くなって寝てしまいました。"
+      },
+      {
+        "translation": "食堂に行ってご飯を食べている最中に友達に会いました。"
+      },
+      {
+        "translation": "音楽を聴いていたら突然電話がかかってきました。"
+      },
+      {
+        "translation": "私は勉強していたら急にパソコンの電源が切れて、とても驚きました。"
+      }
+    ]
   },
   "ko_아어여_62": {
-    "title": "아/어/여 보이다 [a/eo/yeo boida] (Looks, seems)",
-    "shortExplanation": "〜を表すために使用されます 'it seems', 'it looks like', or 'appears to be'.",
-    "longExplanation": "'아/어/여 보이다' is a Korean grammar pattern that describes the appearance or impression of someone or something, based on the speaker’s observation. It can relate to either physical appearance or a perceived mood or atmosphere. In English, it corresponds to expressions like 'it seems...', 'it looks...', or 'it appears...'.",
-    "formation": "Descriptive verb stem + 아/어/여 보이다"
+    "title": "아/어/여 보이다（〜に見える、〜そうだ）",
+    "shortExplanation": "形容詞の語幹に付き、話者が対象の外見や様子を見て感じた印象・推測を表します（「〜に見える」「〜そうに見える」）。",
+    "longExplanation": "「-아/어/여 보이다」は、対象の容姿や外見、表情などを見た話し手が、主観的な印象や直感的な判断を述べる際に用いる表現です。日本語の「〜に見える」「〜そうだ」に相当します。語幹の母音によって、陽母音（ㅏ, ㅗ）には「-아 보이다」、陰母音には「-어 보이다」、하다形容詞には「-해 보이다」を使い分けます。",
+    "formation": "形容詞の語幹 ＋ 아/어/여 보이다（陽母音ㅏ/ㅗ ＋ 아 보이다、陰母音 ＋ 어 보이다、하다 → 해 보이다）",
+    "examples": [
+      {
+        "translation": "お母さんは幸せそうに見えますが、たぶん良い知らせを聞いたみたいですね。"
+      },
+      {
+        "translation": "あの人はいつも親切そうに見えますが、実際はそうではありません。"
+      },
+      {
+        "translation": "この部屋はとても狭そうに見えますが、インテリアを工夫すれば十分に使う価値があります。"
+      },
+      {
+        "translation": "あなたはいつも忙しそうに見えるけれど、元気に過ごしている？"
+      }
+    ]
   },
   "ko_아어여_63": {
-    "title": "아/어/여 버리다 [a/eo/yeo beorida] (Completely, regretfully)",
-    "shortExplanation": "Expresses that an action is done completely or with regret/surprise.",
-    "longExplanation": "'아/어/여 버리다' is a grammatical form indicating that an action is carried out entirely or left a sense of regret, finality, or emotional surprise. It can mean 'to do something completely' or 'to end up doing something (with regret).' Depending on the final vowel of the verb stem, use 아, 어, or 여 before 버리다.",
-    "formation": "動詞 stem + 아/어/여 버리다"
+    "title": "아/어/여 버리다（補助動詞：〜してしまう、すっかり〜する）",
+    "shortExplanation": "動作が完全に完了したことを表し、それに伴う「残念・後悔」や「すっきりした開放感」のニュアンスを含む補助動詞です。",
+    "longExplanation": "「-아/어/여 버리다」は動詞の語幹に付き、動作が完全に終わったことを強調する表現です。日本語の「〜してしまう」「〜してしまった」に相当します。望ましくない事態が起きてしまったことに対する「後悔・無念」を表す場合と、負担だった仕事などを終えて「せいせいした・すっきりした」という開放感を表す場合があります。",
+    "formation": "動詞の語幹 ＋ 아/어/여 버리다（陽母音ㅏ/ㅗ ＋ 아 버리다、陰母音 ＋ 어 버리다、하다 → 해 버리다）",
+    "examples": [
+      {
+        "translation": "私は待ちくたびれて寝てしまい、約束の時間に友達に会えませんでした。"
+      },
+      {
+        "translation": "彼はストレスのあまりすべてを忘れてしまいましたが、それが意外な展開となりました。"
+      },
+      {
+        "translation": "私たちは問題をすべて分析してみましたが、結局すべてを諦めてしまいました。"
+      },
+      {
+        "translation": "週末が来ましたが、あいにく私はすべての課題を片付けてしまって、休む時間がありません。"
+      }
+    ]
   },
   "ko_아어여_64": {
-    "title": "아/어/여 놓다 [a/eo/yeo nohda] (Leave something as is)",
-    "shortExplanation": "Used to describe leaving something in a certain state or condition.",
-    "longExplanation": "'아/어/여 놓다' shows that after performing an action, you keep or maintain the resulting state. It implies that the speaker performed the action and deliberately left the object or situation as is. In English, you might say 'to leave (it) done' or 'have (it) done and left in place.'",
-    "formation": "Action verb stem + 아/어/여 놓다"
+    "title": "아/어/여 놓다（補助動詞：〜しておく、〜してある）",
+    "shortExplanation": "ある動作を行った後、その結果の状態をそのまま維持・持続させておくことを表す補助動詞です（「〜しておく」）。",
+    "longExplanation": "「-아/어/여 놓다」は、あらかじめ動作を完了させておき、その完了した結果の状態をそのまま放置・維持していることを表します。日本語の「〜しておく」「〜してある」に相当します。同様の補助動詞「-아/어 두다」とほぼ同義で用いられ、次の行動への準備や事後放置のニュアンスを持ちます。",
+    "formation": "動作動詞の語幹 ＋ 아/어/여 놓다（陽母音ㅏ/ㅗ ＋ 아 놓다、陰母音 ＋ 어 놓다、하다 → 해 놓다）",
+    "examples": [
+      {
+        "translation": "今日は家に早く帰ってきたので、夕飯を作っておきました。夜に気楽に食べられます。"
+      },
+      {
+        "translation": "私たちはチェックインする前にホテルの部屋を予約しておきました。そのためすぐに入ることができました。"
+      },
+      {
+        "translation": "彼は今日の予定をすべて立てておいたのに、何もしませんでした。"
+      },
+      {
+        "translation": "私は試験のためにすべての勉強を済ませておいたのですが、試験が中止になってしまいました。"
+      }
+    ]
   },
   "ko_아어여_65": {
-    "title": "아/어/여 지다 [a/eo/yeo jida] (Become)",
-    "shortExplanation": "Shows a change in state or condition, 'become' or 'get'.",
-    "longExplanation": "'아/어/여 지다' describes a transformation from one state to another over time. It’s often used with descriptive verbs (adjectives) to mean 'become + adjective' (e.g., 춥다 → 추워지다 for 'to become cold'). The choice of 아/어/여 depends on the stem’s final vowel.",
-    "formation": "形容詞 stem + 아/어/여 + 지다"
+    "title": "아/어/여 지다（〜くなる、〜になる：状態の変化）",
+    "shortExplanation": "形容詞の語幹に付き、時間の経過に伴って状態や性質が変化することを表します（「〜くなる」「〜になる」）。",
+    "longExplanation": "「-아/어/여 지다」は形容詞の語幹に結合して、その性質や状態が時間の経過とともにその方向へと変化することを表す表現です。日本語の「（寒）くなる」「（きれい）になる」に相当します。陽母音語幹には「-아 지다」、陰母音語幹には「-어 지다」、하다動詞・形容詞には「-해 지다」を用います。",
+    "formation": "形容詞の語幹 ＋ 아/어/여 지다（陽母音ㅏ/ㅗ ＋ 아 지다、陰母音 ＋ 어 지다、하다 → 해 지다）",
+    "examples": [
+      {
+        "translation": "空が暗くなって道がよく見えません。お店まで行くのは大変そうです。"
+      },
+      {
+        "translation": "天気が寒くなって出かけるのが嫌になりました。家の中にばかりいたいです。"
+      },
+      {
+        "translation": "今日は大変なことがあって気分が良くなりませんでした。少し休んで気分転換してみてはどうですか？"
+      },
+      {
+        "translation": "友達のおかげで気分がずいぶん良くなりました。頻繁に会わないといけませんね。"
+      }
+    ]
   },
   "ko_아어여_66": {
-    "title": "아/어/여 가지다 [a/eo/yeo gajida] (Have, possess)",
-    "shortExplanation": "Used when someone possesses or has certain qualities, traits, or characteristics.",
-    "longExplanation": "'아/어/여 가지다' signifies that someone or something 'has' or 'possesses' a particular feature, quality, or characteristic. It’s often used with adjectives or abstract qualities, indicating the subject is endowed with or exhibits those traits.",
-    "formation": "形容詞 stem + 아/어/여 + 가지다"
+    "title": "아/어/여 가지다 / 가지고 있다（〜を持つ、所有・具備する）",
+    "shortExplanation": "人や物が特定の特質、能力、性質、人間関係などを「持っている」「備えている」ことを表す表現です。",
+    "longExplanation": "「가지다」（日常的には「-가지고 있다」の形で多用）は、人や対象が特定の外見的特徴、才能、能力、競争力などを「持っている」「備えている」ことを表します。また、口語表現における接続表現「-아/어 가지고」は、先行動作の結果や原因・理由を表す際にも極めて広く使われます。",
+    "formation": "名詞 ＋ 을/를 ＋ 가지다 / 가지고 있다（または 動詞・形容詞の語幹 ＋ 아/어 가지고）",
+    "examples": [
+      {
+        "translation": "彼女は夜空の星のようにきらめく美しい目を持っています。"
+      },
+      {
+        "translation": "私は良い友達がたくさんいるので寂しくありません。"
+      },
+      {
+        "translation": "我が社は強力な競争力を持たなければなりません。そうでなければ成長できないからです。"
+      },
+      {
+        "translation": "彼は優れた能力を持っているので、どんな仕事でもうまくやり遂げることができます。"
+      }
+    ]
   },
   "ko_으는편이다eunneunpyeonidaTendto_67": {
-    "title": "(으)ㄴ/는 편이다 [(eu)n/neun pyeonida] (Tend to)",
-    "shortExplanation": "Used to describe someone's tendency, habit, or general characteristic.",
-    "longExplanation": "The expression '(으)ㄴ/는 편이다' describes a tendency or inclination. **With descriptive verbs (adjectives), you use (으)ㄴ 편이다**, and **with action verbs, you use 는 편이다**. It translates roughly to 'I tend to…' or 'It’s rather…'. It suggests that something is generally or somewhat the case, without being absolute.",
-    "formation": "Descriptive verb + (으)ㄴ 편이다 / Action verb + 는 편이다"
+    "title": "(으)ㄴ/는 편이다（〜の方だ、〜な傾向がある）",
+    "shortExplanation": "物事の性質や人の傾向・習慣が概ねどちらか一方に傾いていることを控えめに表します（「〜な方だ」）。",
+    "longExplanation": "「-(으)ㄴ/는 편이다」は、ある事実や傾向を断定的に言うのを避け、「どちらかといえば〜の部類に入る」「比較的〜な方だ」と遠回しに表現する文法です。動詞には「-는 편이다」、形容詞の語幹末にパッチムがあれば「-은 편이다」、なければ「-ㄴ 편이다」、名詞には「-인 편이다」を接続します。",
+    "formation": "動詞の語幹 ＋ 는 편이다 ／ パッチムのある形容詞の語幹 ＋ 은 편이다 ／ パッチムのない形容詞の語幹 ＋ ㄴ 편이다 ／ 名詞 ＋ 인 편이다",
+    "examples": [
+      {
+        "translation": "彼は早起きする方です。週末でもいつも朝早く起きます。"
+      },
+      {
+        "translation": "私は辛いものをよく食べる方です。とても辛い料理も楽しめます。"
+      },
+      {
+        "translation": "私の弟（妹）は安全を重視する方なので、いつもシートベルトを着用します。"
+      },
+      {
+        "translation": "私は本をよく読む方で、特にSF小説が好きです。"
+      }
+    ]
   },
   "ko_는은_68": {
-    "title": "는/은 데 [neun/eun de] (Situation or condition)",
-    "shortExplanation": "Used to describe or clarify a situation, often introducing contrasting or unexpected information.",
-    "longExplanation": "'는/은 데' serves as a connector in Korean. It provides context or background before introducing new or contrasting information. It can translate loosely to '…but…', '…and…', or '…so…' in English, depending on context. The form uses '는 데' for action verbs and '은 데' for descriptive verbs or nouns.",
-    "formation": "動詞/形容詞/名詞 + 는/은 데 + (additional clause)"
+    "title": "-(으)ㄴ/는데（接続語尾：〜けれど、〜のに、前置き）",
+    "shortExplanation": "後続の文に対する前提や背景を提示したり、逆接・対比（「〜けれど」「〜のに」）を表す接続語尾です。",
+    "longExplanation": "「-(으)ㄴ/는데」は韓国語で最も頻繁に使われる接続語尾の一つです。後続の文で言いたいことの前提となる状況や背景をあらかじめ提示したり（「〜ですが」）、前後の内容が対照的・逆接的であることを表したりします（「〜けれど」「〜のに」）。動詞や過去形には「-는데」、形容詞には「-(으)ㄴ데」、名詞には「-인데」が接続します。",
+    "formation": "動詞の語幹・過去形 ＋ 는데 ／ パッチムのある形容詞の語幹 ＋ 은데 ／ パッチムのない形容詞の語幹 ＋ ㄴ데 ／ 名詞 ＋ 인데",
+    "examples": [
+      {
+        "translation": "まだ学生なのですが、お金を稼ぐためにアルバイトをしています。"
+      },
+      {
+        "translation": "昨日私が家に帰ってきたのですが、誰もいませんでした。"
+      },
+      {
+        "translation": "今雨が降っているのに傘を持ってこなかったので大変なことになりました。"
+      },
+      {
+        "translation": "私は人と話すのが好きなのですが、恥ずかしがり屋なので難しいです。"
+      }
+    ]
   },
   "ko_아어여야겠다_69": {
-    "title": "아/어/여야겠다 [a/eo/yeoya getda] (Should, must)",
-    "shortExplanation": "Expresses necessity or a decision that the speaker has reached; 'I should', 'I must'.",
-    "longExplanation": "'아/어/여야겠다' is used when the speaker concludes that a certain action is necessary or desirable. It can translate to 'I should…', 'I must…', or 'I’d better…'. It expresses the speaker’s judgment or resolution about the action that needs to be taken.",
-    "formation": "動詞 stem + 아/어/여야겠다"
+    "title": "아/어/여야겠다（〜しなきゃ、〜しなければならない：意志・決意）",
+    "shortExplanation": "ある行動をする必要性や当為性を痛感し、そうしようという話し手の強い意志や決心を独り言のように表します（「〜しなきゃ」「〜しなければ」）。",
+    "longExplanation": "「-아/어/여야겠다」は、義務・必要性を表す「-아/어/여야 하다」に意志や推量を表す先語末語尾「-겠-」が結合した表現です。現状から判断して「これはもう〜しなければならない」「〜しよう」と自分の中で決意を固めるニュアンスを持ちます。日本語の「〜しなくちゃ」「〜することにしよう」に相当します。",
+    "formation": "動詞・形容詞の語幹 ＋ 아/어/여야겠다（陽母音ㅏ/ㅗ ＋ 아야겠다、陰母音 ＋ 어야겠다、하다 → 해야겠다）",
+    "examples": [
+      {
+        "translation": "このレポートを早く仕上げなければなりません。提出期限が明日ですから。"
+      },
+      {
+        "translation": "私たちは時間がありませんからタクシーに乗らなきゃいけませんね。"
+      },
+      {
+        "translation": "この料理は美味しそうに見えるので、私も一度食べてみなければなりませんね。"
+      },
+      {
+        "translation": "天気が寒いのでもっと暖かい服を着なきゃいけませんね。"
+      }
+    ]
   },
   "ko_아어여서는_70": {
-    "title": "아/어/여서는 안 되다 [a/eo/yeoseoneun an doeda] (Must not, shouldn't)",
-    "shortExplanation": "〜を表すために使用されます prohibition; 'must not', 'shouldn’t'.",
-    "longExplanation": "The construction '아/어/여서는 안 되다' conveys that a certain action is forbidden or must not happen. It’s similar to 'You must not…' or 'You shouldn’t…' in English. Typically, we use the verb stem, attach 아/어/여서, and then add '는 안 되다.'",
-    "formation": "動詞 stem + 아/어/여서 + 는 안 되다"
+    "title": "아/어/여서는 안 되다（〜してはならない、〜してはいけない：禁止）",
+    "shortExplanation": "規則や社会道徳、常識に基づき、ある行為を行ってはならないという「禁止」を表す文法です（「〜してはならない」）。",
+    "longExplanation": "「-아/어/여서는 안 되다」は、条件を表す「-아/어/여서」に強調の助詞「-는」が付き、「안 되다（いけない、駄目だ）」が後続することで、強い禁止を表す表現です。日本語の「〜してはならない」「〜してはいけない」に相当します。公共のルールや法律、モラルに反する行為を戒める際に用いられます。",
+    "formation": "動詞の語幹 ＋ 아/어/여서 ＋ 는 안 되다",
+    "examples": [
+      {
+        "translation": "この病院ではタバコを吸ってはいけません。健康に非常に有害です。"
+      },
+      {
+        "translation": "秘密の事実を他人に話してはなりません。信頼を失う恐れがあります。"
+      },
+      {
+        "translation": "試験中に友達と話をしてはいけません。不正行為とみなされる可能性があります。"
+      },
+      {
+        "translation": "宿題をあまりに早く雑に終わらせてはいけません。理解できなければ必ず先生に質問しなければなりません。"
+      }
+    ]
   },
   "ko_아어여_71": {
-    "title": "아/어/여 주세요 [a/eo/yeo juseyo] (Please give/do for me)",
-    "shortExplanation": "Politely request or command someone to do something for you.",
-    "longExplanation": "'아/어/여 주세요' is used in Korean to make a **polite request** to the listener, akin to 'please do (something)' or 'please give me (something).' It attaches to the stem of an **action verb**, and the exact form (아/어/여) depends on the final vowel in the verb stem.",
-    "formation": "動詞 stem + 아/어/여 + 주세요"
+    "title": "아/어/여 주세요（〜してください：丁寧な依頼・頼み）",
+    "shortExplanation": "相手に対して自分のために何か行動をしてくれるよう、丁重に頼んだり依頼したりする表現です（「〜してください」）。",
+    "longExplanation": "「-아/어/여 주세요」は、補助動詞「주다（与える、〜してくれる）」に丁寧な命令・依頼の語尾「-세요」が結合した表現です。話し手のために何かを行ってくれるよう相手に丁重にお願いする際に用いられ、日本語の「〜してください」「〜してくださいませんか」に相当します。",
+    "formation": "動作動詞の語幹 ＋ 아/어/여 ＋ 주세요",
+    "examples": [
+      {
+        "translation": "一緒に泊まれる場所を探してください。友達と一緒に韓国を旅行したいです。"
+      },
+      {
+        "translation": "この文の間違っている部分を探してください。私がよく分からないので助けが必要です。"
+      },
+      {
+        "translation": "帰る途中で牛乳を買ってきてください。家に牛乳が足りません。"
+      },
+      {
+        "translation": "このメールに返信を送ってください。すぐに回答が必要です。"
+      }
+    ]
   },
   "ko_아어여_72": {
-    "title": "아/어/여 드리다 [a/eo/yeo deurida] (To give – honorific)",
-    "shortExplanation": "Conveys politeness when doing something for someone (honorific).",
-    "longExplanation": "'아/어/여 드리다' is an **honorific** version of '아/어/여 주다' used to **politely express** that you are doing (or giving) something to someone of higher status or to show respect. It follows the same vowel rules as '주다', but replaces '주다' with '드리다' for heightened politeness.",
-    "formation": "動詞 stem + 아/어/여 드리다"
+    "title": "아/어/여 드리다（〜して差し上げる：謙譲表現）",
+    "shortExplanation": "「아/어/여 주다」の謙譲表現で、目上の人や敬意を払うべき相手のために何かをしてあげる際に用いる表現です（「〜して差し上げる」）。",
+    "longExplanation": "「-아/어/여 드리다」は「-아/어/여 주다（〜してあげる）」の謙譲表現です。話し手が目上の人や顧客など敬意を表すべき相手のために行動を起こす際に用いられ、日本語の「〜してお上げする」「〜して差し上げる」に相当します。動作の受け手には敬称の助詞「께（〜に・〜におかれましては）」を伴うのが一般的です。",
+    "formation": "動作動詞の語幹 ＋ 아/어/여 드리다",
+    "examples": [
+      {
+        "translation": "お知らせするために私の電話番号をあなたに差し上げます。"
+      },
+      {
+        "translation": "お客様により良いサービスをご提供できるよう、常に努力しております。"
+      },
+      {
+        "translation": "私は母に手紙を書いて差し上げました。"
+      },
+      {
+        "translation": "生徒たちに良い知識を教えて差し上げずにはいられません。"
+      }
+    ]
   },
   "ko_다니다_73": {
-    "title": "다니다 [danida] (To attend, go regularly)",
-    "shortExplanation": "〜を表すために使用されます attending or regularly going to a place.",
-    "longExplanation": "'다니다' means to **go (somewhere) regularly** or to **attend**. It conveys habitual or routine movement. Examples include attending school or work daily, going to the gym regularly, etc.",
-    "formation": "名詞 + 에 다니다 (often a place, like '학교에 다니다')"
+    "title": "다니다（動詞：通う、行き来する、勤める）",
+    "shortExplanation": "学校や職場、習い事など、特定の場所に定期的・反復して行き来する「通う」ことを表す動詞です。",
+    "longExplanation": "「다니다」は、一度だけの移動を表す「가다（行く）」とは異なり、一定の目的を持って特定の場所に定期的・継続的に往復することを表す動詞です。日本語の「通う」「勤めている」「通学する」に相当します。よく使われる連語には「학교에 다니다（学校に通う）」「회사에 다니다（会社に勤める）」などがあります。",
+    "formation": "場所の名詞 ＋ 에 다니다 ／ 動詞の語幹 ＋ (으)러 다니다",
+    "examples": [
+      {
+        "translation": "私は毎朝早く運動しにジムに通っていたらすっかり習慣になり、体力が良くなりました。"
+      },
+      {
+        "translation": "授業を受けるために生徒たちは毎日学校に通わなければなりません。そうしてこそまともに勉強できます。"
+      },
+      {
+        "translation": "私は週末ごとに友達とカフェに通いながら楽しい時間を過ごしました。だから思い出がたくさんあります。"
+      },
+      {
+        "translation": "この会社で働くには毎日オフィスに通わなければなりません。そうしてこそ業務を処理できますからね。"
+      }
+    ]
   },
   "ko_아어여_74": {
-    "title": "아/어/여 가다 [a/eo/yeo gada] (Continue/keep doing something – away from the present)",
-    "shortExplanation": "Indicates an action continuing or moving away from the present point in time or space.",
-    "longExplanation": "The expression '아/어/여 가다' can mean that **an action or state continues** in a forward direction—much like 'keep on ~ing' or 'go on ~ing.' It can also show that the action is moving away from the current context. (Note: If you want to say 'go somewhere to do something,' you typically use **'(으)러 가다'** instead.)",
-    "formation": "動詞 stem + 아/어/여 가다"
+    "title": "아/어/여 가다（補助動詞：〜していく：動作の継続・進行）",
+    "shortExplanation": "ある動作や状態が現在から未来に向かって継続・進行していく過程を表す補助動詞です（「〜していく」）。",
+    "longExplanation": "「-아/어/여 가다」は、動作や状態の変化が基準時（主に現在）から未来に向かって絶え間なく続いていくことを表す補助動詞です。日本語の「〜していく」に相当します。過去から現在までの継続を表す「-아/어/여 오다（〜してくる）」と対をなす重要な文法表現です。",
+    "formation": "動詞・形容詞の語幹 ＋ 아/어/여 가다",
+    "examples": [
+      {
+        "translation": "日が経つにつれて天気がますます寒くなってきています。"
+      },
+      {
+        "translation": "だんだん実力が伸びていっているようで嬉しいです。"
+      },
+      {
+        "translation": "練習を続けていけば、いつかプロになれるはずです。"
+      },
+      {
+        "translation": "その問題についてじっくり考えを進めながら、着実に解決策を探しています。"
+      }
+    ]
   },
   "ko_으러가다오다eureogadaodaGocomeinordertodo_75": {
-    "title": "(으)러 가다/오다 [(eu)reo gada/oda] (Go/come in order to do)",
-    "shortExplanation": "Indicates going or coming somewhere for the purpose of performing an action.",
-    "longExplanation": "'(으)러 가다/오다' is used when you physically **go** or **come** to a location in order to do something. The form is '(으)러' for verbs whose stems end in a consonant (other than ㄹ), and '러' if the stem ends in a vowel or ㄹ. For example, '공부하러 가다' = to go somewhere to study.",
-    "formation": "動詞 stem + (으)러 가다/오다"
+    "title": "(으)러 가다/오다（〜しに行く／来る）",
+    "shortExplanation": "ある動作を行う目的で、どこかへ移動（行く・来るなど）することを表す接続語尾です。",
+    "longExplanation": "「(으)러 가다/오다」は、動作の目的を表し、日本語の「〜しに行く／来る」に相当する表現です。後ろには主に「가다（行く）」「오다（来る）」「다니다（通う）」などの移動動詞が続きます。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-으러」、パッチムがない場合または「ㄹ」パッチムの場合は「-러」を接続します。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으러 가다/오다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 러 가다/오다",
+    "examples": [
+      {
+        "translation": "私は今週末に映画を見に行こうと思っています。"
+      },
+      {
+        "translation": "私たちは明日から勉強しに図書館へ行くつもりです。"
+      },
+      {
+        "translation": "彼女は今週、友達と旅行しに故郷へ行く予定です。"
+      },
+      {
+        "translation": "お腹がとても空いたので、お昼ご飯を食べに食堂へ行こうと思います。"
+      }
+    ]
   },
   "ko_아어여_76": {
-    "title": "아/어/여 오다 [a/eo/yeo oda] (Come to do / end up doing)",
-    "shortExplanation": "Expresses arriving at a certain action or state, or having done something up to now.",
-    "longExplanation": "'아/어/여 오다' can mean 'to come doing something' (physically) or 'to do something gradually until now' (metaphorically). For literal movement, it's often '(으)러 오다' (e.g., 먹으러 오다 = 'come to eat'). For a figurative sense, it can describe an action that has progressed and continued up to the present, akin to 'have been doing.'",
-    "formation": "動詞 stem + (으)러 오다 (physical movement) or 動詞 stem + 아/어/여 오다 (continuing action up to the present)"
+    "title": "아/어/여 오다（〜してきた／〜して来る）",
+    "shortExplanation": "過去から現在まである動作が継続してきたこと、または動作を行いながらこちらへ移動することを表します。",
+    "longExplanation": "「아/어/여 오다」は補助動詞「오다」を用いた表現で、主に2つの意味を持ちます。一つは、過去のある時点から現在に至るまでその動作や状態が継続・進行してきたこと（「〜してきた」）を表します。もう一つは、動作を伴いながら話者のいる方へ移動すること（「歩いて来る」「走って来る」など）を表します。語幹の母音によって「-아 오다」「-어 오다」「-해 오だ」を使い分けます。",
+    "formation": "動詞の語幹（陽母音 ㅏ, ㅗ） ＋ 아 오다 ／ 動詞の語幹（陰母音） ＋ 어 오다 ／ 하다動詞 ＋ 해 오다",
+    "examples": [
+      {
+        "translation": "そのキツネは手のひらの上の鶏肉を食べに来ました。"
+      },
+      {
+        "translation": "休暇中なので、友達と旅行しに来ました。"
+      },
+      {
+        "translation": "ダイエットを始めたので、毎朝ランニングを続けてきています。"
+      },
+      {
+        "translation": "あまりに食べ過ぎたので、長いこと歩いてきてようやく家に到着しました。"
+      }
+    ]
   },
   "ko_고_77": {
-    "title": "고 있다 [go itda] (To be doing)",
-    "shortExplanation": "Indicates a continuous or ongoing action, similar to the English '-ing' form.",
-    "longExplanation": "'고 있다' is the standard way to express an **action in progress**. For example, '읽고 있다' = 'am reading,' '요리하고 있다' = 'am cooking.' It differs from '아/어 있다,' which usually describes a **resultant state** (e.g., '앉아 있다' = 'to be seated').",
-    "formation": "動詞 stem + 고 있다"
+    "title": "고 있다（〜している：現在進行）",
+    "shortExplanation": "動作が今まさに進行中であることを表す表現で、日本語の「〜している」に相当します。",
+    "longExplanation": "「고 있다」は動詞の語幹に付き、ある動作が現在進行形で行われている最中であることを表します。語幹末尾のパッチムの有無にかかわらず、そのまま「-고 있다」を接続します。目上の人の動作に対しては、尊敬の補助形容詞・動詞を用いて「-고 계시다」という敬語表現を使います。",
+    "formation": "動詞の語幹 ＋ 고 있다（尊敬形：動詞の語幹 ＋ 고 계시다）",
+    "examples": [
+      {
+        "translation": "私は今、本を読んでいます。なので後で勉強会に参加しようと思っています。"
+      },
+      {
+        "translation": "母は料理をしています。私は部屋にいるので手伝うことができません。"
+      },
+      {
+        "translation": "兄は一人で練習しています。私は邪魔をしないように静かにしています。"
+      },
+      {
+        "translation": "友達たちはサッカーをしています。しかし雨が降ってきたので、もうやめようとしていますね。"
+      }
+    ]
   },
   "ko_아어여_78": {
-    "title": "아/어/여 보다 [a/eo/yeo boda] (Try to do)",
-    "shortExplanation": "Expresses an attempt or trial to do something, 'try doing'.",
-    "longExplanation": "'아/어/여 보다' indicates that you **attempt** or **try** an action to see what happens. It can be used for trying something for the first time or experimenting with a new method. In English, it corresponds to 'try ~ing' or 'give it a try.'",
-    "formation": "動詞 stem + 아/어/여 + 보다"
+    "title": "아/어/여 보다（〜してみる：試行・経験）",
+    "shortExplanation": "ある動作を試みにやってみること（試行）、または過去の経験を表します。",
+    "longExplanation": "「아/어/여 보다」は動詞の語幹に付き、「試しに〜してみる」という試行の意味を表します。また、過去形「-아/어 봤다」の形をとると「〜したことがある」という過去の経験を表す表現になります。語幹の母音に応じて「-아 보다」「-어 보다」「-해 보다」を使い分けます。",
+    "formation": "動詞の語幹（陽母音 ㅏ, ㅗ） ＋ 아 보다 ／ 動詞の語幹（陰母音） ＋ 어 보다 ／ 하다動詞 ＋ 해 보다",
+    "examples": [
+      {
+        "translation": "新しいレシピを習ったので、今日の夕食を作ってみようと思います。"
+      },
+      {
+        "translation": "英語を学ぶのは難しいですが、これからも勉強してみようと思います。"
+      },
+      {
+        "translation": "子供たちにロボット工学を教えてみるつもりですが、難しがらないか心配です。"
+      },
+      {
+        "translation": "このバッグが合っているか確認するには、実際に自分で持って歩いてみなければなりません。"
+      }
+    ]
   },
   "ko_게_0": {
-    "title": "~게 되다 [ge doeda] (End up doing)",
-    "shortExplanation": "〜を表すために使用されます events or actions that occur unintentionally or as a result of another event or circumstance.",
-    "longExplanation": "'~게 되다 [ge doeda]' is a grammar point in Korean 〜を示します outcomes that are primarily out of the speaker's control, often unexpected or resulting from certain circumstances or events. It conveys the sense of 'end up doing' or 'come to do' in English. It is 〜を表すために使用されます a change or transition, the result of an event, or to describe the inevitable outcome of a certain situation.",
-    "formation": "動詞 Stem + 게 되다"
+    "title": "~게 되다（〜することになる／〜するようになる）",
+    "shortExplanation": "外的な事情や環境の変化により、自分の意志とは関係なくそのような状況になることを表します。",
+    "longExplanation": "「~게 되다」は動詞や形容詞の語幹に付き、状況や外部の要因、他者からの決定などによって、結果的にある状態に至ったり、ある行為をすることになったりする変化を表します（日本語の「〜することになる」「〜するようになる」）。主語の自発的な意志というよりも、成り行きや不可抗力のニュアンスを含みます。語幹末尾のパッチムの有無に関わらず直接「-게 되다」を付けます。",
+    "formation": "動詞・形容詞の語幹 ＋ 게 되다",
+    "examples": [
+      {
+        "translation": "テスト勉強をしていたら寝落ちしてしまい、結局一夜漬けをすることになりました。"
+      },
+      {
+        "translation": "チームメンバーがみんな忙しくて、私一人で発表の準備を全部することになりました。"
+      },
+      {
+        "translation": "財布をなくしてしまったので、母にお金を借りなければならなくなりました。"
+      },
+      {
+        "translation": "チケットが売り切れてしまい、結局そのコンサートを見られなくなりました。"
+      }
+    ]
   },
   "ko_게_1": {
-    "title": "~게 되다 [ge dweda] (End up doing)",
-    "shortExplanation": "〜を表すために使用されます an action or state that ends up happening due to certain circumstances or changes.",
-    "longExplanation": "'~게 되다 [ge dweda]' is used when an action or situation comes about because of a certain circumstance or influence, often unexpectedly or unintentionally. It often implies a change from an initial plan or a passive result of external factors.",
-    "formation": "動詞 stem + 게 되다"
+    "title": "~게 되다（〜することになる、〜するようになる）",
+    "shortExplanation": "状況や環境の変化、外的な要因によって、自分の意志とは関わりなく自然とある事態に至ったことを表します（「〜することになる」「〜するようになる」）。",
+    "longExplanation": "「~게 되다」は、副詞形語尾「-게」と変化・被動を表す補助動詞「되다」が合わさった文型です。本人の直接的な意思決定というよりは、周囲の事情や自然な流れ、外部からの影響によって「結果としてそういう状況になった」という客観的な成り行きを述べます。日本語の「〜することになる」「〜するようになる」に相当します。",
+    "formation": "動詞語幹 + -게 되다",
+    "examples": [
+      {
+        "translation": "私は勉強に集中していたらいつの間にか眠ってしまいました。何だか変な気分です。"
+      },
+      {
+        "translation": "初めは1週間だけ韓国語を学ぶつもりでしたが、後になって1か月間学ぶことになりました。"
+      },
+      {
+        "translation": "私たちはもともと夏に結婚する予定でしたが、結局冬に結婚することになりました。"
+      },
+      {
+        "translation": "最初の頃は会社であまりにも多く働くことになり、そのため家族に頻繁に会うことができませんでした。"
+      }
+    ]
   },
   "ko_고_2": {
-    "title": "~고 싶다 [go sipda] (Want to do)",
-    "shortExplanation": "〜を表すために使用されます a desire or a wish.",
-    "longExplanation": "'~고 싶다 [go sipda]' is a grammatical form 〜を表すために使用されます a person's desire or wish to do something in Korean. It's often used with verbs when expressing “I want to…” or “I would like to….” Typically, it’s best used for your own desires rather than attributing desires to others (in which case different expressions are often used).",
-    "formation": "動詞 stem + 고 싶다"
+    "title": "~고 싶다（〜したい：話者の願望）",
+    "shortExplanation": "話者の希望や願望を表す表現で、日本語の「〜したい」に相当します。",
+    "longExplanation": "「~고 싶다」は動詞の語幹に付き、話者（平叙文）または聞き手（疑問文）の「〜したい」という願望や意志を表します。第三者の願望を表す場合には「-고 싶어하다」を用います。語幹末尾のパッチムの有無に関係なく、そのまま「-고 싶다」を接続します。",
+    "formation": "動詞の語幹 ＋ 고 싶다（三人称：動詞の語幹 ＋ 고 싶어하다）",
+    "examples": [
+      {
+        "translation": "私は韓国語の歌を聴きたいです。だから韓国語の歌をかけてください。"
+      },
+      {
+        "translation": "休暇中には友達と旅行に行きたいです。"
+      },
+      {
+        "translation": "彼女に韓国語を教えてあげたいです。"
+      },
+      {
+        "translation": "美味しい料理を作りたいので、料理教室に通いたいです。"
+      }
+    ]
   },
   "ko_기_3": {
-    "title": "~기 전에 [gi jeone] (Before doing)",
-    "shortExplanation": "〜を表すために使用されます 'before doing something'.",
-    "longExplanation": "'~기 전에 [gi jeone]' is a grammatical structure in Korean 〜を示します that one action happens before another, essentially meaning 'before doing something'. It describes the chronological order in which actions occur, whether in the past, present, or future.",
-    "formation": "動詞 stem (dictionary form) + 기 + 전에"
+    "title": "~기 전에（〜する前に）",
+    "shortExplanation": "ある動作を行う前の時点であることを表す表現で、日本語の「〜する前に」に相当します。",
+    "longExplanation": "「~기 전에」は動詞の語幹に名詞化語尾「-기」と名詞「전（前）」、助詞「에」が結合した表現で、時間的な順序として「ある動作をする前に別の動作を行う」ことを表します。時制（過去や未来）は文末の述語で表すため、「~기 전에」の前の動詞には時制語尾を付けず、常に原形の語幹に接続します。",
+    "formation": "動詞の語幹 ＋ 기 전에（名詞の場合：名詞 ＋ 전에）",
+    "examples": [
+      {
+        "translation": "私は学校へ行く前にいつも朝食をとります。"
+      },
+      {
+        "translation": "出発する前に入念に計画を立てることが重要です。"
+      },
+      {
+        "translation": "私がカフェへ行く前に、ご注文を教えてください。"
+      },
+      {
+        "translation": "試験を受ける前に、そのテーマについて十分に勉強しなければなりません。"
+      }
+    ]
   },
   "ko_기_4": {
-    "title": "~기 때문에 [gi ttaemune] (Because of doing)",
-    "shortExplanation": "〜を表すために使用されます a reason or cause; 'because (of doing)'.",
-    "longExplanation": "'기 때문에 [gi ttaemune]' is a grammar point used in Korean to express a reason or cause related to an action, equivalent to 'because (of doing)' in English. This form uses the nominalizing suffix '기' plus '때문에' to explain why something happens, showing a cause-effect relationship.",
-    "formation": "動詞 stem + 기 + 때문에"
+    "title": "~기 때문에（〜のせいで、〜なので：理由・原因）",
+    "shortExplanation": "原因や理由を客観的・論理的に表す表現で、日本語の「〜だから」「〜のために」に相当します。",
+    "longExplanation": "「~기 때문에」は動詞や形容詞の語幹に名詞化語尾「-기」と依存名詞「때문」、助詞「에」が結びついた表現で、後続の事態に対する明確な原因や理由を表します。「-아/어서」に比べて客観的・説明的な論理性が強く、過去形語尾（-았/었-）とも結合できます。ただし、後続節に命令文（-(으)세요）や勧誘文（-(으)ㅂ시다）を置くことはできません。",
+    "formation": "動詞・形容詞の語幹 ＋ 기 때문에（名詞の場合：名詞 ＋ (이)기 때문에）",
+    "examples": [
+      {
+        "translation": "私は勉強をしているため、友達と遊びに行く時間がありません。"
+      },
+      {
+        "translation": "風邪をひいてしまったため、学校に行けませんでした。"
+      },
+      {
+        "translation": "多くのお金を稼げるため、職場に通い続けています。"
+      },
+      {
+        "translation": "運動をしているため、どんどん健康になっています。"
+      }
+    ]
   },
   "ko_기로_5": {
-    "title": "~기로 하다 [giro hada] (Decide to do)",
-    "shortExplanation": "〜を表すために使用されます making a decision or a plan to do something.",
-    "longExplanation": "'~기로 하다' is used as Verb stem + 기로 하다 to express a decision or plan to do something. It often translates to 'decide to do' in English and is used when the speaker is stating what they (or someone) have decided, often as the result of a conversation or personal resolve.",
-    "formation": "動詞 stem + 기로 하다"
+    "title": "~기로 하다（〜することにする／〜することに決める）",
+    "shortExplanation": "ある動作を行うことを決定・約束したことを表す表現です。",
+    "longExplanation": "「~기로 하다」は動詞の語幹に付き、話者自身の決意や他者との約束によって「〜することにする」「〜することに決めた」という意味を表します。決定や約束は発話時点より前に行われていることが一般的であるため、通常は過去形「-기로 했다」の形で多く用いられます。語幹末尾のパッチムの有無に関わらず直接接続します。",
+    "formation": "動詞の語幹 ＋ 기로 하다（過去形：動詞の語幹 ＋ 기로 했다）",
+    "examples": [
+      {
+        "translation": "私たちは明日の午後に会うことにしました。なので明日の朝起きて準備をしなければなりません。"
+      },
+      {
+        "translation": "私は来週友達と旅行に行くことにしました。だから今週末に荷造りをしなければなりません。"
+      },
+      {
+        "translation": "最近あまりにも食べ過ぎたのでダイエットすることにしました。それで今日から食事制限をすることに決めました。"
+      },
+      {
+        "translation": "試験勉強を始めることにしました。なので今日から毎日ノートを作成したいです。"
+      }
+    ]
   },
   "ko_기_6": {
-    "title": "~기 시작하다 [gi sijakhada] (Start to do)",
-    "shortExplanation": "Expresses the start or commencement of an action or event.",
-    "longExplanation": "'~기 시작하다 [gi sijakhada]' is 〜を表すために使用されます the beginning of an action in Korean. By nominalizing a verb with '~기' and then using '시작하다 (to start)', you convey that the action has just begun or is beginning soon.",
-    "formation": "動詞 stem + 기 + 시작하다"
+    "title": "~기 시작하다（〜し始める：動作の開始）",
+    "shortExplanation": "動作や状態の変化がその時点から始まることを表す表現です。",
+    "longExplanation": "「~기 시작하다」は動詞の語幹に付き、その動作や状態の推移が開始されることを表します（日本語の「〜し始める」に相当）。名詞化語尾「-기」に動詞「시작하다（始める・始まる）」が結びついた形で、語幹末尾のパッチムの有無にかかわらず直接接続します。",
+    "formation": "動詞の語幹 ＋ 기 시작하다",
+    "examples": [
+      {
+        "translation": "天気がだんだん暖かくなり、花が咲き始めました。"
+      },
+      {
+        "translation": "学期が始まるとすぐに宿題をし始めました。"
+      },
+      {
+        "translation": "彼女はピアノを弾き始めました。"
+      },
+      {
+        "translation": "友達が到着するやいなやパーティーが始まりました。"
+      }
+    ]
   },
   "ko_기는_7": {
-    "title": "~기는 하다 [gineun hada] (Indeed do, but...)",
-    "shortExplanation": "Used to emphasize or concede that one does something, often followed by a contrasting point.",
-    "longExplanation": "'~기는 하다' attaches the nominalizer '~기' to a verb, followed by '는 하다'. It often indicates a concession or emphasis: “Yes, I do X (indeed), but...”. In many cases, it implies the action is done, yet not wholeheartedly, or a contrary result follows. It’s not limited to habitual actions, but more about emphasizing or conceding the fact that you do it.",
-    "formation": "動詞 stem + 기는 하다"
+    "title": "~기는 하다（〜することはするが、確かに〜だが：認容・譲歩）",
+    "shortExplanation": "前節の事実を一応認めた上で、後節でそれと相反する事柄や不十分な点を述べる表現です。",
+    "longExplanation": "「~기는 하다」（会話では縮約形「~긴 하다」も頻出）は動詞や形容詞の語幹に付き、「確かに〜することはするが」「〜であることは確かだが」と前述の事実を一旦肯定・認容した上で、後節で逆接の接続表現（-지만, -는데など）を伴い、それに反する事実や限定的な内容を付け加える際に用います。語幹末尾のパッチムの有無にかかわらず接続します。",
+    "formation": "動詞・形容詞の語幹 ＋ 기는 하다（縮約形：動詞・形容詞の語幹 ＋ 긴 하다）",
+    "examples": [
+      {
+        "translation": "毎朝英語を勉強することはするのですが、まだ口ごもってしまいます。"
+      },
+      {
+        "translation": "私は週末に読書をすることはしますが、多くの時間を割いてはいません。"
+      },
+      {
+        "translation": "料理をすることはしますが、自分の口にぴったり合うわけではありません。"
+      },
+      {
+        "translation": "運動を1日に1時間ずつしてはいますが、まだまだ体力が足りません。"
+      }
+    ]
   },
   "ko_는_8": {
-    "title": "~는 대로 [neun daero] (As it is / Just as someone says)",
-    "shortExplanation": "'~는 대로' is used to state that something is done exactly as it is or as told/given.",
-    "longExplanation": "The '~는 대로 [neun daero]' structure expresses doing something exactly in the manner stated or indicated, with no alteration. It can also be used when following instructions precisely or maintaining the original state/method.",
-    "formation": "動詞 stem + 는 대로"
+    "title": "~는 대로（〜のとおりに、〜のままに）",
+    "shortExplanation": "言われたことやある状態にそのまま従い、狂いなく同じように行うことを表します。",
+    "longExplanation": "「~는 대로」は動詞の語幹に現在連体形語尾「-는」と依存名詞「대로」が結合した表現で、「〜のとおりに」「〜の言うままに」という意味を表します。指示や状態に修正を加えず、そのまま同じように行うことを示します。（※未来の文脈では「〜するやいなや」という意味も持ちます）。名詞に直接付く場合は「名詞 ＋ 대로」の形をとります。",
+    "formation": "動詞の語幹 ＋ 는 대로（名詞の場合：名詞 ＋ 대로）",
+    "examples": [
+      {
+        "translation": "私が言うとおりに正確に真似してください。そうすれば失敗する可能性が低くなります。"
+      },
+      {
+        "translation": "この説明書に書いてあるとおりにおもちゃを組み立てれば、難なく完成させることができます。"
+      },
+      {
+        "translation": "彼は両親が教えるとおりにすべてのことを行ってきて、その努力のおかげで成功した人生を送っています。"
+      },
+      {
+        "translation": "音楽を聴くときは、歌手が歌うとおりに真似して歌うのが一番面白いです。"
+      }
+    ]
   },
   "ko_는_9": {
-    "title": "~는 바람에 [neun barame] (Because of / Due to)",
-    "shortExplanation": "Used when indicating the cause of a negative result or situation.",
-    "longExplanation": "'~는 바람에 [neun barame]' literally means 'because of (this wind/event)' and is used to describe a reason or cause behind an unfortunate or negative outcome. It emphasizes that the cause led directly to some undesirable result.",
-    "formation": "動詞 + 는 바람에 + (negative outcome)"
+    "title": "~는 바람에（〜のせいで、〜した拍子に：好ましくない結果の原因）",
+    "shortExplanation": "予期せぬ出来事が原因となって、後節で好ましくない・否定的な結果が生じたことを表します。",
+    "longExplanation": "「~는 바람에」は動詞の語幹に付き、予期しない突発的な出来事や状況が原因となって、望ましくない否定的な結果や不都合な事態を招いてしまったことを表す表現です（日本語の「〜したせいで」「〜した拍子に」）。後節には常に過去形の不都合な結果が続き、命令文や勧誘文を用いることはできません。",
+    "formation": "動詞の語幹 ＋ 는 바람에 ＋ 否定的な結果を表す文",
+    "examples": [
+      {
+        "translation": "家に遅く着いたせいで、早朝の授業を受け逃してしまいました。"
+      },
+      {
+        "translation": "彼女がパーティーに来なかったせいで、気分が良くありませんでした。"
+      },
+      {
+        "translation": "雨が降ってきたせいで、ピクニックを中止にしました。"
+      },
+      {
+        "translation": "電話に出られなかったせいで、重要なミーティングを逃してしまいました。"
+      }
+    ]
   },
   "ko_는데_10": {
-    "title": "~는데 [neunde] (But / however / and)",
-    "shortExplanation": "〜を表すために使用されます contrast, provide background, or connect clauses. Often means 'but' or 'however'.",
-    "longExplanation": "'~는데 [neunde]' can serve various functions: showing contrast (similar to 'but'), providing background information before another statement, or simply linking clauses. It is one of the most common connective endings in Korean, and nuance depends on context.",
-    "formation": "節 1 + 는데 + 節 2"
+    "title": "~는데（〜だが、〜のに、〜ところ：背景・対比の接続語尾）",
+    "shortExplanation": "後節の前提となる背景状況を提示したり、前節と後節の事実を対比させたりする接続語尾です。",
+    "longExplanation": "「~는데」は韓国語で最も頻繁に使われる接続語尾の一つで、主に2つの役割を持ちます。一つは、後節で提案、質問、依頼などをする前にその導入となる背景状況を説明すること（「〜のところ」「〜のだが」）。もう一つは、前節と後節の内容が食い違う対比や逆接を表すこと（「〜だが」「〜のに」）です。動詞には「-는데」、形容詞にはパッチムに応じて「-은데／-ㄴ데」、名詞には「-(이)ㄴ데」が接続します。",
+    "formation": "動詞 ＋ 는데 ／ 形容詞（パッチムあり） ＋ 은데 ／ 形容詞（パッチムなし） ＋ ㄴ데 ／ 名詞 ＋ (이)ㄴ데",
+    "examples": [
+      {
+        "translation": "ご飯をたくさん食べたのですが、まだお腹が空いています。"
+      },
+      {
+        "translation": "私の友達はいつも遅く寝るのに、いつも早く起きます。"
+      },
+      {
+        "translation": "最近天気が寒いのに、雪が降らないので残念です。"
+      },
+      {
+        "translation": "映画を見に行ったのですが、チケットが売り切れていて見られませんでした。"
+      }
+    ]
   },
   "ko_는지_11": {
-    "title": "~는지 모르다 [neunji moreuda] (Don't know if)",
-    "shortExplanation": "It is used when the speaker is unsure about a situation or fact.",
-    "longExplanation": "'~는지 모르다' is a form 〜を表すために使用されます uncertainty or lack of knowledge about something in Korean. It corresponds to the English 'do not know if'. This construction is used when the speaker does not know whether something happened, exists, or is true. The verb or adjective in front of '는지 모르다' should be in its adnominal form.",
-    "formation": "動詞-는지 모르다 / 動詞-ㄴ(은)지 모르다 / 形容詞-는지 모르다"
+    "title": "~는지 모르다（〜かわからない／〜かどうか知らない）",
+    "shortExplanation": "ある事実や状況について、話し手がよく分からないことや確信がないことを表します。「〜か分からない」「〜か知らない」に相当します。",
+    "longExplanation": "「~는지 모르다」は、ある事実や状況についてよく知らないことや確信が持てないことを表す文法です。日本語の「〜（なの）かわからない」「〜かどうか知らない」に相当します。現在形では動詞語幹に「-는지 모르다」、形容詞語幹に「-(으)ㄴ지 모르다」、名詞に「-(이)인지 모르다」を接続します。過去形では動詞・形容詞ともに「-았/었는지 모르다」、未来形や推測を表す場合は「-(으)ㄹ지 모르다」または「-(으)ㄹ 것인지 모르다」の形をとります。「언제（いつ）」「어디（どこ）」「누구（だれ）」「무엇（何）」などの疑問詞とともに用いられることも多いです。",
+    "formation": "動詞語幹 ＋ 는지 모르다 ／ 形容詞語幹 ＋ (으)ㄴ지 모르다 ／ 過去形：動詞・形容詞 ＋ 았/었는지 모르다 ／ 未来・推測：動詞・形容詞 ＋ (으)ㄹ지 모르다 ／ 名詞 ＋ (이)인지 모르다",
+    "examples": [
+      {
+        "translation": "彼が今日学校に来るかどうか分かりません。"
+      },
+      {
+        "translation": "彼女がどんな服を着るか分かりません。"
+      },
+      {
+        "translation": "彼がこの話を聞いたかどうか分かりません。"
+      },
+      {
+        "translation": "私たちの友達がここで幸せに過ごせるかどうか分かりません。"
+      }
+    ]
   },
   "ko_는지_12": {
-    "title": "~는지 알다 [neunji alda] (Know if)",
-    "shortExplanation": "〜を表すために使用されます 'know if' or 'know whether'.",
-    "longExplanation": "'~는지 알다 [neunji alda]' is 〜を表すために使用されます the concept of knowing if something is the case or not. It’s often used when conveying what someone knows or needs to find out about a situation, event, or fact.",
-    "formation": "動詞+는지 알다 / 形容詞+는지 알다"
+    "title": "~는지 알다（〜か知っている／〜かわかる）",
+    "shortExplanation": "ある事実や状況、情報について知っている・把握していることを表します。「〜か知っている」「〜かわかる」に相当します。",
+    "longExplanation": "「~는지 알다」は、ある事実や状況、情報について知っていることや把握していることを表す表現です。日本語の「〜（なの）か知っている」「〜かわかる」に相当します。現在形では動詞語幹に「-는지 알다」、形容詞語幹に「-(으)ㄴ지 알다」、名詞に「-(이)인지 알다」を接続します。過去形は「-았/었는지 알다」、未来・可能形は「-(으)ㄹ 수 있는지 알다」または「-(으)ㄹ지 알다」となります。疑問詞（언제, 어디, 누구, 어떻게など）を伴ったり、「-는지 알 수 없다（〜かわからない）」、「-는지 알아요?（〜か知っていますか）」などの形でも頻繁に用いられます。",
+    "formation": "動詞語幹 ＋ 는지 알다 ／ 形容詞語幹 ＋ (으)ㄴ지 알다 ／ 過去形：動詞・形容詞 ＋ 았/었는지 알다 ／ 可能・未来：動詞 ＋ (으)ㄹ 수 있는지 알다 ／ 名詞 ＋ (이)인지 알다",
+    "examples": [
+      {
+        "translation": "彼が私の言うことを理解しているのか分かりません。"
+      },
+      {
+        "translation": "彼女が決定を下したかどうか知りたいです。"
+      },
+      {
+        "translation": "私たちが来週会えるかどうか確認しなければなりません。"
+      },
+      {
+        "translation": "生徒たちが問題を解決できているか知るために、先生たちは常に確認しています。"
+      }
+    ]
   },
   "ko_마다_13": {
-    "title": "~마다 [mada] (Every)",
-    "shortExplanation": "〜を表すために使用されます a recurring or regular occurrence: 'every'.",
-    "longExplanation": "'~마다 [mada]' is a postposition in Korean 〜を表すために使用されます repetition or a recurring pattern. It corresponds to 'every' in English, indicating that something happens each time, every instance, or every unit of the specified noun.",
-    "formation": "名詞 + 마다"
+    "title": "~마다（〜ごとに／〜毎に）",
+    "shortExplanation": "名詞の後ろに付いて、例外なくすべてに該当することや、規則的な周期・反復を表す助詞です。「〜ごとに」「〜毎に」に相当します。",
+    "longExplanation": "「~마다」は名詞の直後に付く助詞で、パッチムの有無に関わらずそのまま接続します。時間を表す名詞に付いて規則的な反復や周期を表す用法（例：날마다＝毎日、아침마다＝毎朝）と、ある集団に属する対象を一つ残らず指す用法（例：사람마다＝人それぞれ／人ごとに、나라마다＝国ごとに）があります。また、「-(으)ㄹ 때」と組み合わさった「-(으)ㄹ 때마다」の形では、「〜するたびに／〜する時はいつも」という意味になります。",
+    "formation": "名詞 ＋ 마다 ／ 動詞・形容詞語幹 ＋ (으)ㄹ 때마다",
+    "examples": [
+      {
+        "translation": "私は毎朝早く起きて運動をします。"
+      },
+      {
+        "translation": "旅行に行くたびに新しい人たちに出会えるので、とても興味深いです。"
+      },
+      {
+        "translation": "テストが終わるたびに少しずつ休息をとります。"
+      },
+      {
+        "translation": "1週間ごとに韓国語を勉強するために図書館へ行きます。"
+      }
+    ]
   },
   "ko_부터_14": {
-    "title": "~부터 ~까지 [buteo ~ kkaji] (From ~ to ~)",
-    "shortExplanation": "〜を表すために使用されます the beginning and end of a range in time, space, or action.",
-    "longExplanation": "'~부터 ~까지 [buteo ~ kkaji]' is 〜を示します the starting point and ending point of an action, period, or location. It translates to 'from ~ to ~' in English and can be used for time, place, numbers, or other continuous ranges.",
-    "formation": "Starting point + 부터 + End point + 까지"
+    "title": "~부터 ~까지（〜から〜まで）",
+    "shortExplanation": "時間、空間、順序などの範囲における起点（〜부터）と終点（〜까지）を表す表現です。「〜から〜まで」に相当します。",
+    "longExplanation": "「~부터 ~까지」は、起点（始まり）を表す助詞「부터」と、終点（終わり・限度）を表す助詞「까지」を組み合わせた表現で、日本語の「〜から〜まで」に相当します。主に時間（何時から何時まで、月曜日から金曜日まで）や順序・番号（1番から10番まで）の範囲を表す際によく使われます。空間・場所の移動について述べる場合は通常「~에서 ~까지」を用いますが、口語では「서울부터 부산까지」のように区間の始点を強調して「부터」が使われることもあります。",
+    "formation": "名詞（時間・場所・順序） ＋ 부터 ＋ 名詞（時間・場所・順序） ＋ 까지",
+    "examples": [
+      {
+        "translation": "私たちは月曜日から金曜日まで働きます。"
+      },
+      {
+        "translation": "お昼休みは午後12時から1時までです。"
+      },
+      {
+        "translation": "ソウルから釜山まで電車でどのくらいかかりますか。"
+      },
+      {
+        "translation": "私は韓国語を勉強し始めた時から今まで、大分上達しました。"
+      }
+    ]
   },
   "ko_아어여_15": {
-    "title": "~아/어/여 보이다 [a/eo/yeo boida] (Seems, looks like)",
-    "shortExplanation": "〜を表すために使用されます that something appears or seems a certain way from the speaker’s perspective.",
-    "longExplanation": "The grammar '~아/어/여 보이다' is 〜を示します that someone or something appears, looks, or seems a certain way based on the speaker’s perception. 〜と訳されます 'seems' or 'looks like' in English. It implies that the statement is an inference or impression, not an absolute fact.",
-    "formation": "動詞 stem + 아/어/여 보이다"
+    "title": "아/어/여 보이다（〜そうに見える／〜に見える）",
+    "shortExplanation": "形容詞の語幹に接続し、話し手の視覚的な観察や印象から「〜そうに見える」「〜に見える」と推測・判断することを表します。",
+    "longExplanation": "「아/어/여 보이다」は主に形容詞の語幹に付き、話者が対象の外見や様子を見て感じた直感的な印象や推測を表す表現です。日本語の「〜そうに見える」「〜に見える」に相当します。客観的事実そのものではなく、目に見える様子からの主観的判断を表します。接続規則は陽母音（ㅏ, ㅗ）の語幹には「-아 보이다」（例：좋아 보이다）、陰母音の語幹には「-어 보이다」（例：맛있어 보이다）、そして「하다」形容詞は「-해 보이다」（例：행복해 보이다）となります。",
+    "formation": "形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아 보이다 ／ 形容詞語幹（その他陰母音） ＋ 어 보이다 ／ 하다形容詞語幹 ＋ 해 보이다",
+    "examples": [
+      {
+        "translation": "あの人は幸せそうに見えるので、他の人たちも気分が良くなるじゃないですか。"
+      },
+      {
+        "translation": "この料理はおいしそうに見えますが、実際には少し塩辛かったです。"
+      },
+      {
+        "translation": "その男性はいつも機嫌が悪そうに見えますが、何か問題でもあるのですか。"
+      },
+      {
+        "translation": "この服は写真で見た時は綺麗でしたが、実際に見るといまいちに見えます。"
+      }
+    ]
   },
   "ko_아어여_16": {
-    "title": "~아/어/여 주다 [a/eo/yeo juda] (Do something for someone)",
-    "shortExplanation": "〜を表すために使用されます the action of doing something for someone’s benefit.",
-    "longExplanation": "The '~아/어/여 주다 [a/eo/yeo juda]' form is used in Korean to express doing something for someone else. It is often used to show that the speaker (or subject) is performing an action as a favor, courtesy, or service to another person. In requests, it can also soften the tone, implying you want someone to do something for you.",
-    "formation": "動詞 stem + 아/어/여 + 주다"
+    "title": "아/어/여 주다（〜してくれる／〜してあげる）",
+    "shortExplanation": "動詞の語幹に接続し、誰かのために親切や好意でその動作を行うこと（授受表現）を表します。「〜してあげる」「〜してくれる」に相当します。",
+    "longExplanation": "「아/어/여 주다」は動詞の語幹に接続する補助動詞で、他人の利益や親切のためにある動作を行うこと（授受）を表します。日本語の「〜してあげる」「〜してくれる」に相当します。動作の受け手が目上の人や敬意を払うべき相手の場合は、謙譲表現である「아/어/여 드리다（〜して差し上げる）」を用います。また、相手に依頼する際には「아/어/여 주세요（〜してください）」や「아/어/여 주시겠어요?（〜していただけますか）」という丁寧な依頼表現として非常に頻繁に使われます。陽母音語幹には「-아 주다」、陰母音語幹には「-어 주다」、「하다」動詞には「-해 주다」が付きます。",
+    "formation": "動詞語幹（陽母音 ㅏ, ㅗ） ＋ 아 주다 ／ 動詞語幹（その他陰母音） ＋ 어 주다 ／ 하다動詞語幹 ＋ 해 주다（敬語：아/어/여 드리다）",
+    "examples": [
+      {
+        "translation": "疲れているみたいだから、僕がその宿題をやってあげるよ。"
+      },
+      {
+        "translation": "心配しないでください、お父さんが私たちを守ってくれますから。"
+      },
+      {
+        "translation": "家に帰る途中、お父さんがタクシーを捕まえてくれました。"
+      },
+      {
+        "translation": "私は母に夕食を作ってあげました。"
+      }
+    ]
   },
   "ko_아어여야만_17": {
-    "title": "~아/어/여야만 하다 [a/eo/yeoyaman hada] (Have to do)",
-    "shortExplanation": "This grammar point expresses necessity or obligation: 'must', 'have to'.",
-    "longExplanation": "The phrase '~아/어/여야만 하다 [a/eo/yeoyaman hada]' indicates that someone must or has to do something. It closely corresponds to 'have to' or 'must' in English. The verb stem combines with '아/어/여야만 하다', depending on the final vowel of the verb.",
-    "formation": "動詞 stem + 아야만 하다 / 어야만 하다 / 여야만 하다"
+    "title": "아/어/여야만 하다（〜しなければならない／どうしても〜すべきだ）",
+    "shortExplanation": "強い義務や必要性、またはある結果を得るための絶対的な前提条件を強調して表します。「必ず〜しなければならない」「〜してこそ」に相当します。",
+    "longExplanation": "「아/어/여야만 하다」は、義務や必要性を表す「아/어/여야 하다」に、限定を表す助詞「만（〜だけ）」が加わった強調表現です。他の選択肢はなく「必ず〜しなければならない」「絶対に〜すべきだ」という強い義務や切迫感を表します。また、接続語尾「아/어/여야만」の形では「〜してこそ初めて（〜できる）」という不可欠な必須条件を表します。陽母音語幹には「-아야만 하다」、陰母音語幹には「-어야만 하다」、「하다」動詞には「-해야만 하다」が接続します。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아야만 하다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어야만 하다 ／ 하다動詞・形容詞語幹 ＋ 해야만 하다",
+    "examples": [
+      {
+        "translation": "すべての生徒は試験の準備をしなければなりません。そうでなければ失敗してしまいます。"
+      },
+      {
+        "translation": "今すぐ出かけなければなりません。もし遅れたら飛行機に乗り遅れてしまいます。"
+      },
+      {
+        "translation": "あなたはこの仕事を終えてこそ家に帰ることができます。"
+      },
+      {
+        "translation": "私たちは毎朝ストレッチをしなければなりません。健康を維持するためです。"
+      }
+    ]
   },
   "ko_아어여도_18": {
-    "title": "~아/어/여도 되다 [a/eo/yeodo doeda] (Is it okay to ~ / May I ~)",
-    "shortExplanation": "Used to ask or state permission to do something.",
-    "longExplanation": "'~아/어/여도 되다 [a/eo/yeodo doeda]' is a Korean grammar pattern used to ask for or give permission. In questions, it means 'May I...?' or 'Is it okay to...?' In statements, it affirms that the action is permitted: 'You can...' or 'It’s okay to...'",
-    "formation": "動詞 stem + 아/어/여도 되다"
+    "title": "아/어/여도 되다（〜してもいい／〜しても構わない）",
+    "shortExplanation": "動作の許可を求めたり、許可を与えたりする表現です。「〜してもいいですか」「〜しても構わない」に相当します。",
+    "longExplanation": "「아/어/여도 되다」は、譲歩を表す接続語尾「-아/어/여도（〜しても）」と「되다（よい、構わない）」が組み合わさった文法で、許可を求めたり与えたりする際に用いられます。疑問形（「-아/어/여도 돼요?」「-아/어/여도 될까요?」）では「〜してもいいですか？」「〜しても構いませんか？」という丁寧な許可伺いになり、平叙形では「〜してもいいです」「〜しても構いません」という許可を表します。禁止を表す反対の表現は「-아/어/여서는 안 되다（〜してはいけない）」です。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아도 되다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어도 되다 ／ 하다動詞・形容詞語幹 ＋ 해도 되다 ／ 名詞 ＋ (이)어도 되다",
+    "examples": [
+      {
+        "translation": "この席に座ってもいいですか。他の人が予約していない場合のみ可能です。"
+      },
+      {
+        "translation": "明日フォトショップを使ってもいいですか。私のプロジェクトに必要なのです。"
+      },
+      {
+        "translation": "大きな音で音楽を聴いてもいい場所はありますか。ロック音楽が好きなんです。"
+      },
+      {
+        "translation": "私は雨が降ってもサッカーをしていいんです。雨がとても好きですから。"
+      }
+    ]
   },
   "ko_아어여서는_19": {
-    "title": "~아/어/여서는 안 되다 [a/eo/yeoseoneun an doeda] (Must not)",
-    "shortExplanation": "Indicates prohibition or that one must not do something.",
-    "longExplanation": "'~아/어/여서는 안 되다' explicitly expresses that something must not be done. It is often translated as 'You must not...' or 'It's not allowed to...'. It follows the verb stem plus '아/어/여서' + '는 안 되다'.",
-    "formation": "動詞 stem + 아/어/여 + 서는 안 되다"
+    "title": "아/어/여서는 안 되다（〜してはならない／〜してはいけない）",
+    "shortExplanation": "規則、道徳、常識などに照らし合わせて、ある行為を禁止することを表します。「〜してはならない」「〜してはいけない」に相当します。",
+    "longExplanation": "「아/어/여서는 안 되다」は、法律や規則、社会的道徳、常識などに基づいて、ある動作や行為を強く禁止する表現です。日本語の「〜してはならない」「〜してはいけません」に相当します。接続語尾「-아/어/여서」に対照・主題を表す助詞「는」が付き、否定の「안 되다（いけない）」が続く構造で、「そのように行動しては通用しない・許されない」というニュアンスを持ちます。標識や公的な規則、指導の場面などで多用されます。日常会話では「-아/어/여선 안 되다」と縮約されることもあります。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아서는 안 되다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어서는 안 되다 ／ 하다動詞・形容詞語幹 ＋ 해서는 안 되다",
+    "examples": [
+      {
+        "translation": "この標識を見ると、ここでタバコを吸ってはいけません。"
+      },
+      {
+        "translation": "私たちは健康をおろそかにしてはなりません。"
+      },
+      {
+        "translation": "この作業は精密に行わなければならないので、うわの空でやってはいけません。"
+      },
+      {
+        "translation": "リスニングテストのため、携帯電話をつけてはならないと強調しました。"
+      }
+    ]
   },
   "ko_아어서_20": {
-    "title": "~아/어서 [a/eo-seo] (Because, so)",
-    "shortExplanation": "〜を表すために使用されます cause and effect, or reason and result. Can also indicate a sequence ('after').",
-    "longExplanation": "The '~아/어서 [a/eo-seo]' form is used in Korean to show a cause-effect or reason-result relationship. It can also have a temporal meaning ('after doing something, then...'). For cause and effect, it is similar to 'because' or 'so' in English.",
-    "formation": "動詞/形容詞 stem + 아/어서"
+    "title": "아/어서（〜ので・〜て：理由・先行動作）",
+    "shortExplanation": "原因や理由（〜ので、〜て）を表すか、密接に関連する一連の動作の先行動作・順序（〜してから）を表す接続語尾です。",
+    "longExplanation": "「아/어서」は、韓国語で最も基本的かつ重要な接続語尾の一つです。主に2つの用法があります。(1) 原因・理由：前節が後節の理由や原因となることを表します（「〜ので」「〜て」）。注意点として、理由を表す際は前節に過去形語尾（았/었）をつけることができず、また後節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできません。(2) 動作の先行順序：前節の動作を行ってから、その状態や結果のまま後節の動作を行うという時間的・密接な順序関係を表します。陽母音語幹には「-아서」、陰母音語幹には「-어서」、「하다」動詞・形容詞には「-해서」が接続します。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아서 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어서 ／ 하다動詞・形容詞語幹 ＋ 해서 ／ 名詞 ＋ (이)라서",
+    "examples": [
+      {
+        "translation": "今日は仕事（用事）が多くて学校に行けませんでした。"
+      },
+      {
+        "translation": "部屋が寒かったので、服をもっとたくさん着ました。"
+      },
+      {
+        "translation": "彼は運動をたくさんしているので、健康な体を維持しています。"
+      },
+      {
+        "translation": "背が低くてコートを買うのが難しかったです。"
+      }
+    ]
   },
   "ko_았었으면_21": {
-    "title": "~았/었으면 좋겠다 [at/eosseumyeon joketda] (I wish/hope)",
-    "shortExplanation": "〜を表すために使用されます a desire for something to happen; equivalent to 'I wish/hope' in English.",
-    "longExplanation": "'~았/었으면 좋겠다 [at/eosseumyeon joketda]' is a Korean grammar form 〜を表すために使用されます a wish or hope for a certain event or situation to happen. It combines a past-tense marker (~았/었) with the conditional '면' and '좋겠다' (hope). The meaning is similar to 'I wish' or 'I hope' in English, conveying a desire for something that is not currently the case, but which the speaker wishes would be or become so.",
-    "formation": "動詞 + 았/었으면 좋겠다"
+    "title": "았/었으면 좋겠다（〜たらいいな／〜ばいいのに：願望・希望）",
+    "shortExplanation": "話し手の願望や希望を表し、「〜たらいいな」「〜ばいいのに」に相当します。現実とは異なる状況を仮定して願うニュアンスも持ちます。",
+    "longExplanation": "「았/었으면 좋겠다」は、話し手の強い願いや希望を表す構文で、日本語の「〜（だっ）たらいいな」「〜（すれ）ばいいのに」に相当します。過去を表す先語末語尾「-았/었-」、仮定を表す接続語尾「-(으)면」、そして「좋겠다（良いだろう）」が合わさった形です。過去形が入ることで、現在の事実とは異なる仮想の状況を思い描くニュアンスや、実現を強く願う気持ちが込められます。陽母音語幹には「-았으면 좋겠다」、陰母音語幹には「-었으면 좋겠다」、「하다」用言には「-했으면 좋겠다」を接続します。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 았으면 좋겠다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 었으면 좋겠다 ／ 하다動詞・形容詞語幹 ＋ 했으면 좋겠다",
+    "examples": [
+      {
+        "translation": "時間がたくさんあればいいのに、そうすればもっと多くの本が読めたはずなのに。"
+      },
+      {
+        "translation": "明日雨が降ったらいいな、そうすればもっと涼しく休めると思います。"
+      },
+      {
+        "translation": "彼女が私の言うことをもっと理解してくれたらいいのに。そうすればお互いの意見をもっとうまく分かち合えるはずです。"
+      },
+      {
+        "translation": "今週末は天気が良ければいいですね、そうすればピクニックに行けると思います。"
+      }
+    ]
   },
   "ko_어아야_22": {
-    "title": "~어/아야 하다 [eo/ayahada] (Have to, should)",
-    "shortExplanation": "〜を表すために使用されます obligation, necessity, or compulsion—'have to', 'should'.",
-    "longExplanation": "'~어/아야 하다 [eo/ayahada]' is used in Korean to express obligation, necessity, or compulsion, similar to 'have to' or 'should' in English. Depending on the final vowel of the verb stem, you use '아야 하다' (if the final vowel is ㅏ or ㅗ) or '어야 하다' (otherwise). This indicates that performing the verb's action is required or expected.",
-    "formation": "動詞 Stem + 아/어야 하다"
+    "title": "아/어야 하다（〜しなければならない／〜すべきだ）",
+    "shortExplanation": "義務や必要性、当為性を表し、「〜しなければならない」「〜すべきだ」に相当します。",
+    "longExplanation": "「아/어야 하다」は、義務や必要性、当然すべきことを表す韓国語の代表的な文法で、日本語の「〜しなければならない」「〜すべきだ」に相当します。日常会話では「하다」の代わりに「되다」を用いた「아/어야 되다」の形も頻繁に使われ、より口語的で自然な響きを持ちます。接続法は、陽母音語幹（ㅏ, ㅗ）には「-아야 하다」、陰母音語幹には「-어야 하다」、「하다」動詞には「-해야 하다」が接続します。名詞に付く場合は「-(이)어야 하다」となります。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아야 하다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어야 하다 ／ 하다動詞・形容詞語幹 ＋ 해야 하다 ／ 名詞 ＋ (이)어야 하다",
+    "examples": [
+      {
+        "translation": "明日試験があるので、今晩勉強しなければなりません。"
+      },
+      {
+        "translation": "私たちは今週末、家を掃除しなければなりません。"
+      },
+      {
+        "translation": "風邪をひいたのだから、薬を飲まなければいけませんね。"
+      },
+      {
+        "translation": "早く起きなければならないので、早く寝なければいけません。"
+      }
+    ]
   },
   "ko_어아도_23": {
-    "title": "~어/아도 [eo/ado] (Even if)",
-    "shortExplanation": "〜を表すために使用されます 'even if,' indicating a conditional situation or assumption.",
-    "longExplanation": "'~어/아도 [eo/ado]' is a conjunctive ending in Korean meaning 'even if' or 'although.' It sets up a hypothetical or assumed condition, and states what happens despite that condition. The choice of '어' or '아' depends on the final vowel of the preceding verb stem, following typical Korean conjugation rules.",
-    "formation": "動詞 stem + 어/아 + 도"
+    "title": "아/어도（〜ても／〜でも：譲歩）",
+    "shortExplanation": "前節の条件や仮定を認めつつも、後節の事態が影響を受けずに成立することを表す譲歩の接続語尾です。「〜ても」「〜でも」に相当します。",
+    "longExplanation": "「아/어도」は譲歩を表す接続語尾で、前節の事態を仮定または容認しても、後節の内容がそれによって左右されずそのまま成り立つことを示します。日本語の「〜ても」「〜でも」に相当します。程度を強調する副詞「아무리（いくら、どんなに）」と一緒によく用いられます（例：아무리 바빠도＝いくら忙しくても）。陽母音語幹には「-아도」、陰母音語幹には「-어도」、「하다」用言には「-해도」が接続し、名詞には「-(이)라도」または「-(이)어도」が接続します。",
+    "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아도 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어도 ／ 하다動詞・形容詞語幹 ＋ 해도 ／ 名詞 ＋ (이)라도 ／ (이)어도",
+    "examples": [
+      {
+        "translation": "たとえ雨が降っても私は歩き続けます。それが一番早い方法ですから。"
+      },
+      {
+        "translation": "疲れたといくら言っても私は仕事を続けなければなりません。この仕事を終わらせなければならないからです。"
+      },
+      {
+        "translation": "難しい問題であっても私は諦めずに挑戦し続けます。挑戦が好きですから。"
+      },
+      {
+        "translation": "試験結果が良くなくても私は奮起します。失敗は成功のもとだと考えています。"
+      }
+    ]
   },
   "ko_어아_24": {
-    "title": "~어/아 버리다 [eo/a beorida] (Regretfully, completely)",
-    "shortExplanation": "Used to emphasize that an action is completed, often with regret or an unintended outcome.",
-    "longExplanation": "'~어/아 버리다 [eo/a beorida]' is a verb ending that highlights the completion of an action, frequently carrying a feeling of regret, surprise, or finality. It often implies that the result was unintended or that the speaker wishes it had not happened.",
-    "formation": "動詞 stem + 어/아 버리다"
+    "title": "아/어 버리다（〜してしまう：完了・遺憾・負担解消）",
+    "shortExplanation": "動詞の後ろに付いて動作が完全に終わったことを表し、残念・後悔の気持ちや、逆に負担がなくなってすっきりした気持ちを表します。「〜してしまう」に相当します。",
+    "longExplanation": "「아/어 버리다」は動詞の語幹に接続する補助動詞で、ある動作が完全に完了したことを表します。日本語の「〜してしまう」「〜してしまった」に相当します。この表現には話し手の主観的な心情が強く反映され、主に2つの感情を含みます。(1) 望まない結果に対する後悔、残念、惜しさ、不本意な気持ち（例：놓쳐 버렸어요＝乗り遅れてしまいました）；(2) 重荷や面倒な課題をすべて片付けた後のすっきりした解放感や安心感（例：다 끝내 버렸어요＝全部終わらせてしまいました）。陽母音語幹には「-아 버리다」、陰母音語幹には「-어 버리다」、「하다」動詞には「-해 버리다」が接続します。",
+    "formation": "動詞語幹（陽母音 ㅏ, ㅗ） ＋ 아 버리다 ／ 動詞語幹（その他陰母音） ＋ 어 버리다 ／ 하다動詞語幹 ＋ 해 버리다",
+    "examples": [
+      {
+        "translation": "大切な出張を逃してしまいました、それで社長にひどく怒られました。"
+      },
+      {
+        "translation": "友達が私のカバンを傷つけてしまい、中に入っていた物が全部こぼれてしまいました。"
+      },
+      {
+        "translation": "ブレーキを踏まないと車が衝突してしまい、みんな怪我をする可能性があります。"
+      },
+      {
+        "translation": "思わずその言葉を聞いてしまい、とても嫌な気分になりました。"
+      }
+    ]
   },
   "ko_으면면_25": {
-    "title": "~으면/면 [eumyeon/myeon] (If, when)",
-    "shortExplanation": "〜を表すために使用されます conditions or hypothetical situations: 'if' or 'when'.",
-    "longExplanation": "'~으면/면 [eumyeon/myeon]' is used in Korean to express a condition or a hypothetical scenario, akin to 'if' or 'when' in English. It generally indicates that the main clause is contingent upon the condition in the subordinate clause.",
-    "formation": "動詞 stem + (으)면"
+    "title": "(으)면（〜なら／〜ば／〜たら：条件・仮定）",
+    "shortExplanation": "前節である前提条件や仮定を設定し、後節でその帰結を述べる接続語尾です。「〜なら」「〜ば」「〜たら」に相当します。",
+    "longExplanation": "「(으)면」は、条件や仮定を表す韓国語の最も基本的で代表的な接続語尾です。日本語の「〜なら」「〜ば」「〜たら」に相当します。前節で不確定な状況を仮定したり、後節の動作・状態が成立するための前提条件を提示します。また、反復的な日常の習慣や自然な法則（「〜するといつも…」）を表すこともあります。接続規則は、動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-으면」、パッチムがない場合または「ㄹ」パッチムの場合は「-면」を接続します。名詞には「-(이)면」が付きます。",
+    "formation": "動詞・形容詞語幹（ㄹ以外のパッチムあり） ＋ 으면 ／ 動詞・形容詞語幹（パッチムなしまたはㄹパッチム） ＋ 면 ／ 名詞 ＋ (이)면",
+    "examples": [
+      {
+        "translation": "雨が降ったら傘を持ってこなければなりません。"
+      },
+      {
+        "translation": "時間があれば本をもっと読んでみようと思います。"
+      },
+      {
+        "translation": "映画を見れば理解するのがもっと簡単になるでしょう。"
+      },
+      {
+        "translation": "天気が良ければ外に出て散歩します。"
+      }
+    ]
   },
   "ko_을를_26": {
-    "title": "~을/를 빼다 [eul/reul ppaeda] (Except for)",
-    "shortExplanation": "Used to mean 'except for' or 'excluding', showing an exclusion from a group or set.",
-    "longExplanation": "'~을/를 빼다 [eul/reul ppaeda]' is used in Korean to indicate that something is excluded from a given group, set, or situation. 〜と訳されます 'except for' or 'aside from.'",
-    "formation": "名詞 + 을/를 빼다"
+    "title": "~을/를 빼다（〜を除いて、〜以外）",
+    "shortExplanation": "あるグループや全体から特定の人や物事を除外することを表します（「〜を除いて」「〜以外」）。",
+    "longExplanation": "「~을/를 빼다」（会話では主に「~을/를 빼고」や「~을/를 빼고요」の形で使われます）は、「〜を除いて」「〜を抜いて」「〜以外」という意味を表し、全体や一定の範囲の中から特定の対象を除外する際に用いられます。パッチムのある名詞には「을 빼다」、パッチムのない名詞には「를 빼다」を接続します。",
+    "formation": "パッチムあり名詞 + 을 빼다 ／ パッチムなし名詞 + 를 빼다（日常会話：名詞 + 을/를 빼고）",
+    "examples": [
+      {
+        "translation": "彼は絵を描くこと以外は何もしていません。"
+      },
+      {
+        "translation": "私が病気だったことを除いて、生徒全員が放課後に運動をしました。"
+      },
+      {
+        "translation": "チェリーを除いて、私はすべての果物が好きです。"
+      },
+      {
+        "translation": "今までのところ、コメディ映画を除いてすべての映画を見ました。"
+      }
+    ]
   },
   "ko_을를_27": {
-    "title": "~을/를 수 있다 [eul/reul su itda] (Can, possible)",
-    "shortExplanation": "Expresses the ability or possibility to perform an action: 'can', 'be able to'.",
-    "longExplanation": "'~을/를 수 있다 [eul/reul su itda]' is 〜を示します that the subject is capable of or that it is possible to perform the action of the verb. It is commonly translated as 'can' or 'be able to' in English.",
-    "formation": "動詞 stem + (으)ㄹ 수 있다"
+    "title": "-(으)ㄹ 수 있다（〜できる、〜することが可能だ）",
+    "shortExplanation": "動作を行う能力があることや、ある事態が生じる可能性があることを表します（「〜できる」）。",
+    "longExplanation": "「-(으)ㄹ 수 있다」は、主語がその動作を行う能力や技術を持っていることや、状況的にそれが可能であることを表す表現で、日本語の「〜できる」「〜することができる」に相当します。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을 수 있다」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ 수 있다」を接続します。反対の意味を表す表現には「-(으)ㄹ 수 없다（〜できない）」があります。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을 수 있다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ 수 있다",
+    "examples": [
+      {
+        "translation": "私たちはこの問題を解決できます。みんなで協力すれば十分に可能だと思います。"
+      },
+      {
+        "translation": "私は明日その会議に出席できそうです。幸い他に予定がないからです。"
+      },
+      {
+        "translation": "水泳を習えば、いつか自由自在に泳げるようになりますよ。努力すれば可能です。"
+      },
+      {
+        "translation": "彼が韓国語を一生懸命勉強すれば、TOPIK試験に合格できるはずですし、きっと成功するでしょう。"
+      }
+    ]
   },
   "ko_을를_28": {
-    "title": "~을/를 통해 [eul/reul tonghae] (Through, via)",
-    "shortExplanation": "Used to show the medium or channel through which something is done or achieved.",
-    "longExplanation": "'~을/를 통해 [eul/reul tonghae]' indicates that something is accomplished, communicated, or obtained by means of a certain method, channel, or medium. It corresponds to 'through' or 'via' in English.",
-    "formation": "名詞 + 을/를 통해"
+    "title": "~을/를 통해(서)（〜を通じて、〜を通して）",
+    "shortExplanation": "手段や媒体、媒介となるものを表し、「〜を通じて」「〜を通して」という意味を表します。",
+    "longExplanation": "「~을/를 통해(서)」は名詞の後に付き、ある行為や目的を達成するための手段、媒介、経路などを表す表現です。日本語の「〜を通じて」「〜を通して」に相当します。パッチムのある名詞には「을 통해(서)」、パッチムのない名詞には「를 통해(서)」を接続します。日常会話では「서」を付けた「~을/를 통해서」の形も非常によく使われます。",
+    "formation": "パッチムあり名詞 + 을 통해(서) ／ パッチムなし名詞 + 를 통해(서)",
+    "examples": [
+      {
+        "translation": "私は韓国語をドラマを通じて学びました。そのため表現をより自然に身につけることができました。"
+      },
+      {
+        "translation": "私たちはメールを通じて会議の日程を調整しました。時間管理がはるかに効率的でした。"
+      },
+      {
+        "translation": "彼は音楽を通じて感情を表現することが多いです。音楽は彼にとって最高のコミュニケーション手段です。"
+      },
+      {
+        "translation": "写真を通じて、私たちは他の人々の日常生活を理解し共感することができます。"
+      }
+    ]
   },
   "ko_을까_29": {
-    "title": "~을까 [eulkka] (Shall we?)",
-    "shortExplanation": "Used to make a suggestion or proposal—'Shall we?', 'How about...?'.",
-    "longExplanation": "'~을까 [eulkka]' is used in Korean to propose an idea or action to someone, similar to asking 'Shall we...?' or 'How about...?' in English. It’s casual and frequently used among friends or peers.",
-    "formation": "動詞 stem + 을까"
+    "title": "-(으)ㄹ까（〜しようか、〜だろうか）",
+    "shortExplanation": "親しい間柄で相手に提案・勧誘したり（「〜しようか」）、自分の推測や疑問を表したりする終結語尾です。",
+    "longExplanation": "「-(으)ㄹ까」は、友人や年下に対して提案や勧誘をしたり、相手の意向を尋ねたりする際に使われる終結語尾です（丁寧形は「-(으)ㄹ까요」）。日本語の「〜しようか」「〜する？」に相当します。また、疑問文で話し手の推測や自問（「〜だろうか」）を表す用法もあります。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을까」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ까」を接続します。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을까 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ까",
+    "examples": [
+      {
+        "translation": "私たち今週末キャンプに行ってみようか？"
+      },
+      {
+        "translation": "明日映画を見ようか？"
+      },
+      {
+        "translation": "今晩レストランで夕飯を食べようか？"
+      },
+      {
+        "translation": "塾が終わった後、一緒に勉強しようか？"
+      }
+    ]
   },
   "ko_을래_30": {
-    "title": "~을래 [eullae] (Want to)",
-    "shortExplanation": "Expresses the speaker’s intention or will, often in casual speech: 'want to'.",
-    "longExplanation": "'~을래 [eullae]' is an informal Korean sentence ending that conveys the speaker’s desire or intention to do something. It also functions like a suggestion when speaking with friends or close acquaintances, and can be translated as 'I want to...' or 'I'm going to...'.",
-    "formation": "動詞 stem + 을래"
+    "title": "-(으)ㄹ래(요)（〜する、〜したい、〜する？）",
+    "shortExplanation": "会話で自分の意志や希望を表したり、相手の意向を尋ねたりする終結語尾です（「〜する」「〜したい」）。",
+    "longExplanation": "「-(으)ㄹ래(요)」は、日常会話でよく使われる終結語尾です。平叙文では話し手自身の意志や希望（「〜するよ」「〜したい」）を表し、疑問文では相手の意向を親しく尋ねる表現（「〜する？」「〜しない？」）になります。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을래(요)」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ래(요)」を接続します。親しい間柄では「-을래」、丁寧に言う場合は「-을래요」を用います。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을래(요) ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ래(요)",
+    "examples": [
+      {
+        "translation": "私は今夜映画を見に行くよ。君も一緒に行く？"
+      },
+      {
+        "translation": "私は家で夕飯を食べたいです。外食するより家庭料理のほうが好きなんです。"
+      },
+      {
+        "translation": "私は今週末に友達と登山に行きたいな。少し運動もしなきゃいけない気がして。"
+      },
+      {
+        "translation": "私は明日からダイエットを始めるよ。最近かなり太った気がするんだ。"
+      }
+    ]
   },
   "ko_을지라도_31": {
-    "title": "~을지라도 [euljirado] (Even if)",
-    "shortExplanation": "Emphasizes that the main clause remains true regardless of the condition in the subordinate clause.",
-    "longExplanation": "'~을지라도 [euljirado]' translates to 'even if' in English. It is used to specify that no matter the condition introduced by the subordinate clause, the main clause still holds. It emphasizes determination or inevitability despite obstacles.",
-    "formation": "動詞 stem + 을지라도"
+    "title": "-(으)ㄹ지라도（〜だとしても、〜であっても）",
+    "shortExplanation": "強い譲歩を表し、前節の条件や状況にかかわらず後節の事実や意志が変わらないことを示します（「たとえ〜であっても」）。",
+    "longExplanation": "「-(으)ㄹ지라도」は、前節で述べた状況や仮定を認めつつも、後節の事態や話し手の強い決意に影響を与えないことを表す譲歩の接続語尾です。文章語や改まった場面で好んで使われ、日本語の「たとえ〜であっても」「〜だとしても」に相当します。動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을지라도」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ지라도」を接続します。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지라도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지라도",
+    "examples": [
+      {
+        "translation": "たとえ問題が困難であっても諦めないでください。最後にはきっと解決できるはずです。"
+      },
+      {
+        "translation": "この本が高価だとしても、絶対に必要なので必ず買わなければなりません。"
+      },
+      {
+        "translation": "試験が難しいとしても、一生懸命勉強すれば必ず成果が出るはずです。"
+      },
+      {
+        "translation": "たとえ天気が寒くても、友達との約束があるので必ず出かけなければなりません。"
+      }
+    ]
   },
   "ko_을지언정_32": {
-    "title": "~을지언정 [euljieonjeong] (Even if, even though)",
-    "shortExplanation": "Used to mean 'even if' or 'even though,' emphasizing a strong concession or unexpected contrast.",
-    "longExplanation": "'~을지언정 [euljieonjeong]' is a Korean grammar structure that expresses a concession or contrast. It conveys the idea of 'even if' or 'even though.' Despite the condition stated, the speaker insists on or highlights another fact or determination. It emphasizes that regardless of the possible negative or contrasting scenario, something remains important or unchanged.",
-    "formation": "(形容詞/動詞 stem) + 을지언정 / (名詞 + 이) + 을지언정"
+    "title": "-(으)ㄹ지언정（〜であっても、〜するくらいならいっそ）",
+    "shortExplanation": "強い譲歩や対比を表し、「たとえ〜であっても」「〜することはあっても（〜はしない）」という意味を示します。",
+    "longExplanation": "「-(으)ㄹ지언정」は文章語的で改まった譲歩の接続語尾です。前節の不利な事実や極端な状況を一旦認めた上で後節の重要性を強調したり（「たとえ〜であっても」）、「前節のような不利益を被ることはあっても、決して後節のようなことはしない（〜するくらいならいっそ）」という強い意志・対比を表します。動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을지언정」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ지언정」を接続します。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지언정 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지언정",
+    "examples": [
+      {
+        "translation": "たとえ試験に落ちたとしても、目標に向かって努力し続けることが大切です。"
+      },
+      {
+        "translation": "もう春が来たとはいえ、まだまだ天気がとても寒いですね。"
+      },
+      {
+        "translation": "部屋が広いとしても、片付けなければめちゃくちゃになってしまうでしょう。"
+      },
+      {
+        "translation": "彼女に電話をかけるとしても、彼女が出るか出ないかは分かりません。"
+      }
+    ]
   },
   "ko_이_33": {
-    "title": "~이 되다 [i doeda] (Become)",
-    "shortExplanation": "〜を示します a change or transformation: 'become'.",
-    "longExplanation": "'~이 되다 [i doeda]' is a common expression in Korean indicating the transformation or shift from one state to another, often with nouns. It can refer to changes in jobs, positions, relationships, states, etc. It basically carries the meaning of 'become' in English when attached to a noun followed by '이'.",
-    "formation": "名詞 + 이 되다"
+    "title": "~이/가 되다（〜になる）",
+    "shortExplanation": "名詞の後に接続し、状態、身分、職業、時間・季節などが変化することを表します（「〜になる」）。",
+    "longExplanation": "「~이/가 되다」は名詞の直後に付き、ある状態や身分、職業、性質、季節や時間が別の状態へと変化・移行することを表します。日本語の「〜になる」に直接対応する極めて基本的な表現です。直前の名詞にパッチムがある場合は「이 되다」、パッチムがない場合は「가 되다」を用います。変化が成立しないことを表す場合は否定の「~이/가 안 되다」を用います。",
+    "formation": "パッチムあり名詞 + 이 되다 ／ パッチムなし名詞 + 가 되다",
+    "examples": [
+      {
+        "translation": "秋になると天気が寒くなるので、ニットが必ず必要だと感じるようになります。"
+      },
+      {
+        "translation": "学部生の時は弁護士になりたかったのですが、大学院では教授になりたいという思いが湧きました。"
+      },
+      {
+        "translation": "友達と一緒に勉強しているので、だんだんより良い学生になっています。"
+      },
+      {
+        "translation": "顔にできた傷が、結局大きな傷跡になってしまいました。"
+      }
+    ]
   },
   "ko_이나_34": {
-    "title": "~이나 ~ [ina] (Either... or...)",
-    "shortExplanation": "Used to offer or list multiple options or possibilities, similar to 'either... or...'.",
-    "longExplanation": "'~이나 ~' is used in Korean to give alternatives or options, much like 'either... or...' in English. It can introduce two or more nouns, verbs, or phrases. The construction often appears as 'Noun1 + 이나 + Noun2 + (하)나 + Verb/Adjective', offering multiple choices.",
-    "formation": "Noun1 + 이나 + Noun2 (…)"
+    "title": "~(이)나（〜か、〜でも、〜または）",
+    "shortExplanation": "名詞の後に接続し、複数の選択肢を列挙したり（「〜か」「〜または」）、次善の策として選んだりする助詞です。",
+    "longExplanation": "「~(이)나」は、名詞に接続して「〜か」「〜または」という意味で選択肢を提示する助詞です（「A이나 B」など）。また、ほかに適当な選択肢がないため消極的に「〜でも」と選ぶニュアンス（例：ゲームでもする、本でも読む）を表すこともあります。直前の名詞にパッチムがある場合は「이나」、パッチムがない場合は「나」を用います。",
+    "formation": "パッチムあり名詞 + 이나 ／ パッチムなし名詞 + 나",
+    "examples": [
+      {
+        "translation": "私たちは週末に映画を見に行くか、家でゲームでもするつもりです。"
+      },
+      {
+        "translation": "コーヒーかお茶でも飲みながら少し休みたいです。"
+      },
+      {
+        "translation": "今日でも明日でもいつでも構いません。"
+      },
+      {
+        "translation": "今月は旅行に行くか、そうでなければ家で本でも読みながら休もうと思います。"
+      }
+    ]
   },
   "ko_이라도_35": {
-    "title": "~이라도 [irado] (At least, even if)",
-    "shortExplanation": "〜を表すために使用されます 'at least' or 'even if it's just...', showing a minimal or second-best option.",
-    "longExplanation": "'~이라도 [irado]' is used in Korean to indicate a compromise, lesser option, or minimal requirement. It often conveys 'at least' or 'even if it's only…'. It can suggest that the speaker would settle for something, even if it’s not ideal.",
-    "formation": "名詞 or verb stem + (이)라도"
+    "title": "~(이)라도（〜でも、せめて〜だけでも）",
+    "shortExplanation": "最善ではないが、次善の策として選ぶことや、最低限の条件を表します（「〜でも」「せめて〜だけでも」）。",
+    "longExplanation": "「~(이)라도」は名詞の直後に付き、理想的・最善ではないものの、それに次ぐ妥協案として受け入れるニュアンス（「〜でも」「せめて〜だけでも」）を表す助詞です。最低限これだけでも満たしたいという気持ちを表す際によく使われます。前の名詞にパッチムがある場合は「이라도」、パッチムがない場合は「라도」を用います。",
+    "formation": "パッチムあり名詞 + 이라도 ／ パッチムなし名詞 + 라도",
+    "examples": [
+      {
+        "translation": "この高い値段にもかかわらず、せめてあそこの食べ物だけでも買って食べなければなりません。食べないと力が出ないですから。"
+      },
+      {
+        "translation": "今日の日程はとても忙しいですが、せめて夕飯だけでもちゃんと食べなければならないと思います。"
+      },
+      {
+        "translation": "彼の性格はいまいちですが、せめて仕事だけでもしっかりやるのでチームで重要な人物です。"
+      },
+      {
+        "translation": "試験が難しいとしても、せめて周囲の状況だけでもどの程度把握しておかなければなりません。"
+      }
+    ]
   },
   "ko_이랑_36": {
-    "title": "~이랑 [irang] (And, with)",
-    "shortExplanation": "Used to mean 'and' or 'with' when linking nouns in casual speech.",
-    "longExplanation": "'~이랑 [irang]' is an informal connective in Korean, roughly equivalent to 'and' or 'with.' It can link people, objects, or concepts, and is very common in spoken language. It’s less formal than other conjunctions like '~하고' or '~와/과.'",
-    "formation": "名詞 + 이랑 + 名詞"
+    "title": "~(이)랑（〜と、〜と一緒に）",
+    "shortExplanation": "会話で名詞と名詞をつなげたり（「〜と」）、動作を共にする相手を表したりする助詞です（「〜と一緒に」）。",
+    "longExplanation": "「~(이)랑」は、日常の会話で非常によく用いられる助詞です。名詞同士を並列でつないで「〜と」という意味を表す用法と、人と一緒に何かを行う際に「〜と（一緒に）」という意味を表す用法の2つがあります。「~와/과」に比べてくだけた親しい口語表現です。直前の名詞にパッチムがある場合は「이랑」、パッチムがない場合は「랑」を接続します。",
+    "formation": "パッチムあり名詞 + 이랑 ／ パッチムなし名詞 + 랑",
+    "examples": [
+      {
+        "translation": "今日友達と映画を見に行きました。"
+      },
+      {
+        "translation": "私はコーヒーとケーキを注文しました。"
+      },
+      {
+        "translation": "姉と私は同じ服を着ました。"
+      },
+      {
+        "translation": "お父さんとお母さんはソウルに住んでいらっしゃいます。"
+      }
+    ]
   },
   "ko_이래_37": {
-    "title": "~이래 [irae] (Since)",
-    "shortExplanation": "Used to mark the starting point of an event in the past and its continuation to the present: 'since'.",
-    "longExplanation": "'~이래 [irae]' marks a starting point in the past from which a situation has continued until now. It’s similar to 'since' in English. It typically follows a verb in past tense that indicates when the action or event began.",
-    "formation": "Past tense 動詞 + 이래"
+    "title": "~이래(로)（〜以来、〜から）",
+    "shortExplanation": "過去の時点や出来事を起点とし、現在までその状態がずっと続いていることを表します（「〜以来」）。",
+    "longExplanation": "「~이래(로)」は、時を表す名詞や動詞の過去連体形「-(으)ㄴ」に接続し、過去の出来事・時点を起点として現在に至るまである状態が継続していることを表します。日本語の「〜以来」「〜て以来」に相当します。助詞「로」を伴った「~이래로」の形でも非常によく用いられ、継続の意味合いが強調されます。",
+    "formation": "動詞の過去連体形（-(으)ㄴ） ＋ 이래(로) ／ 時を表す名詞 ＋ 이래(로)",
+    "examples": [
+      {
+        "translation": "私が生まれて以来、こんなに寒い冬は初めてです。"
+      },
+      {
+        "translation": "彼が学校を卒業して以来、初めて会いました。"
+      },
+      {
+        "translation": "引っ越して来て以来、友達ができなくて少し寂しいです。"
+      },
+      {
+        "translation": "退勤して以来ずっと忙しくて休むことができませんでした。"
+      }
+    ]
   },
   "ko_이므로_38": {
-    "title": "~이므로 [imyeo] (Because, so)",
-    "shortExplanation": "〜を示します a reason or cause: 'because', 'so'.",
-    "longExplanation": "'~이므로 [imyeo]' is a conjunctive form used in Korean to indicate cause or reason, roughly meaning 'because' or 'so.' It typically follows a noun, adjective, or verb, showing that the preceding clause is the reason for what follows.",
-    "formation": "名詞 + (이)므로 / 形容詞/動詞 stem + (으)므로"
+    "title": "-(으)므로 / ~(이)므로（〜であるから、〜なので、〜につき）",
+    "shortExplanation": "改まった文章や公的な場面で客観的な理由・原因を表す接続語尾です（「〜であるため」「〜につき」）。",
+    "longExplanation": "「-(으)므로 / ~(이)므로」は、ニュース、論説文、公的な通知文や案内放送などで客観的な原因や理由を述べる際に用いられる格式の高い接続語尾です。日本語の「〜であるため」「〜なので」「〜につき」に相当します。動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-으므로」、パッチムがない場合または「ㄹ」パッチムの場合は「-므로」を接続します。名詞にはパッチムの有無に応じて「이므로 / 므로」を接続します。後ろの節に命令文や勧誘文を続けることはできません。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으므로 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 므로 ／ 名詞 ＋ (이)므로",
+    "examples": [
+      {
+        "translation": "本日雨が降っているため、傘を持ってきました。"
+      },
+      {
+        "translation": "彼女が良い成績を収めたため、みんなが驚きました。"
+      },
+      {
+        "translation": "この作業は難しいため、気をつけて行わなければなりません。"
+      },
+      {
+        "translation": "状況が深刻であるため、明日へ治療を先延ばしにしないでください。"
+      }
+    ]
   },
   "ko_이어서_39": {
-    "title": "~이어서 [ieoseo] (And then, so) — (Using ~아/어서)",
-    "shortExplanation": "Often appears as ~아/어서 in modern usage to link clauses in sequence (and then) or cause/effect (so).",
-    "longExplanation": "The expression '~이어서 [ieoseo]' can literally mean 'continuing on from that,' but in modern usage the closely related connectors '~아/어서' also cover 'and then' or 'so' functions in Korean. These examples show how one action or event naturally leads to another, or how one reason leads to a result.",
-    "formation": "Action 動詞 + -아/어서 (depending on the verb stem’s final vowel)"
+    "title": "-아/어서 / ~(이)어서（〜て、〜ので、〜から）",
+    "shortExplanation": "動作の先行・連続関係（「〜してから」「〜して」）や、原因・理由（「〜ので」「〜から」）を表す接続語尾です。",
+    "longExplanation": "「-아/어서」（名詞に付く場合は「~(이)어서」）は、韓国語で最も頻繁に使われる接続語尾の一つです。主な用法として、(1) 前の動作を行ってからその状態のまま次の動作を行う「先行・連続」（〜て、〜してから）、(2) 前節が後節の直接的な原因・理由となる「原因・理由」（〜ので、〜から）の2つがあります。用言の語幹末尾の母音が「ㅏ, ㅗ」の場合は「-아서」、それ以外の母音の場合は「-어서」、「하다」は「해서」になります。名詞に付く場合はパッチムに応じて「이어서 / 여서」となります。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ） ＋ 아서 ／ その他母音 ＋ 어서 ／ 하다は해서 ／ 名詞 ＋ (이)어서",
+    "examples": [
+      {
+        "translation": "私は今日早く家に帰って本を読みました。それからすぐに眠りにつきました。"
+      },
+      {
+        "translation": "今朝雨が降って出かけるのが大変だったので、家で休みました。"
+      },
+      {
+        "translation": "友達に会いに行って、おいしい食べ物を一緒に食べました。"
+      },
+      {
+        "translation": "猫を見かけたのですが、とても可愛くて写真を撮りました。"
+      }
+    ]
   },
   "ko_이지만_40": {
-    "title": "~이지만 [ijiman] (But, however)",
-    "shortExplanation": "Used to show contrast or contradiction between two clauses: 'but', 'however'.",
-    "longExplanation": "'~이지만 [ijiman]' is a Korean conjunctive form meaning 'but' or 'however.' The clause before ~이지만 states a fact or quality, and the clause after it presents a contrasting or conflicting fact. This structure emphasizes the difference or contradiction between them.",
-    "formation": "名詞/動詞/形容詞 + 이지만"
+    "title": "-지만 / ~(이)지만（〜けれど、〜が、〜だが）",
+    "shortExplanation": "前節と後節で対照的・逆接的な内容をつなぐ接続語尾です（「〜けれど」「〜が」）。",
+    "longExplanation": "「-지만」（名詞に付く場合は「~(이)지만」）は、2つの対照的な事実や逆接の関係を接続する極めて基本的な接続語尾です。日本語の「〜けれど」「〜が」「〜ですが」に相当します。動詞・形容詞の語幹にはパッチムの有無に関係なくそのまま「-지만」が付きます。過去形「-았/었지만」にも接続できます。名詞に付く場合は、パッチムがある名詞には「이지만」、パッチムがない名詞には「지만」を接続します。",
+    "formation": "動詞・形容詞の語幹 ＋ 지만 ／ パッチムあり名詞 ＋ 이지만 ／ パッチムなし名詞 ＋ 지만 ／ 過去形語幹 ＋ 았/었지만",
+    "examples": [
+      {
+        "translation": "天気は本当に良いけれど、外出する時間がありません。"
+      },
+      {
+        "translation": "私はピザが好きですが、ダイエット中なので食べられません。"
+      },
+      {
+        "translation": "この歌は有名ですが、私はあまり好きではありません。"
+      },
+      {
+        "translation": "友達が私にお金をくれると約束したけれど、まだ受け取っていません。"
+      }
+    ]
   },
   "ko_인는데_41": {
-    "title": "~인/는데 [in/neunde] (But, so)",
-    "shortExplanation": "Used to connect clauses, often expressing contrast, background information, or a reason/cause: 'but', 'so', 'however'.",
-    "longExplanation": "'~인/는데' is a broad label for endings like '인데' (for nouns), '(으)ㄴ데' (for adjectives or past tense verbs), and '는데' (for action verbs). These endings connect two clauses and can imply various nuances such as contrast ('but', 'however'), reason/cause, or background information setting up a following statement. The exact meaning depends on context.",
-    "formation": "1) 名詞 + 인데\n2) 形容詞 + (으)ㄴ데\n3) 動詞 + 는데"
+    "title": "~인/는데（〜だけど、〜が、〜のに、〜ので）",
+    "shortExplanation": "前置き（背景説明）や逆接・対比（「〜けれど」「〜が」）、または軽い理由を表す接続語尾です。",
+    "longExplanation": "「~인/는데」は、文と文をつなぐ非常に頻出の接続語尾で、文脈によって多様なニュアンスを表します。(1) 逆接・対比：前後の文が対立・対比することを表し、「〜けれど」「〜が」「〜のに」に相当します；(2) 前置き・背景提示：後ろに続く質問、依頼、提案、感嘆などの前提・背景となる状況を提示します（「〜なんだけど」「〜ですが」）；(3) 理由・根拠：後続節に対する緩やかな理由を添えます。接続形：名詞には「인데」；形容詞の語幹にはパッチムがあれば（ㄹ以外）「-은데」、なければ「-ㄴ데」；動詞の現在形語幹には「-는데」が接続します。過去形「-았/었-」の後には品詞に関係なく「-는데」が付きます。",
+    "formation": "1) 名詞 + 인데\n2) 形容詞の語幹（ㄹ以外のパッチムあり） + 은데 ／ 形容詞の語幹（母音またはㄹパッチム） + ㄴ데\n3) 動詞の語幹 + 는데",
+    "examples": [
+      {
+        "translation": "今日は天気が良いですが、外出はしないと思います。家で映画を見ます。"
+      },
+      {
+        "translation": "ぐっすり眠れていたのに、目覚まし時計の音で目が覚めてしまいました。"
+      },
+      {
+        "translation": "私は韓国語を勉強しているのですが、発音が難しくて時々大変です。"
+      },
+      {
+        "translation": "就職の選考は難しかったですが、幸いにもこの仕事を見つけることができました。"
+      }
+    ]
   },
   "ko_자_42": {
-    "title": "~자 [ja] (Let's)",
-    "shortExplanation": "Used to suggest or propose an action: 'let's'.",
-    "longExplanation": "'~자 [ja]' is attached to a verb stem to propose an action or suggest doing something together, similar to 'let's' in English. It's an informal form commonly used among friends or peers.",
-    "formation": "動詞 stem + 자"
+    "title": "~자（〜しよう、〜しようぜ）",
+    "shortExplanation": "友人や親しい間柄で相手に一緒に何かをしようと提案・勧誘するパンマルの終結語尾です（「〜しよう」）。",
+    "longExplanation": "「~자」は、動詞の語幹に付いて「一緒に〜しよう」と提案や勧誘を表す勧誘形の終結語尾です。日本語の「〜しよう」「〜しようぜ」に相当します。親しい友人、同年代、または年下に対してのみ使われ、目上の人や改まった場面で使うと失礼にあたります（丁寧な勧誘には「-(으)ㅂ시다」や「-(으)ㄹ까요?」を用います）。パッチムの有無に関わらず、動詞の語幹にそのまま「자」を接続します。",
+    "formation": "動詞の語幹 ＋ 자",
+    "examples": [
+      {
+        "translation": "私たち映画を見に行こう。ここで新しく公開された映画を見たいんだ。"
+      },
+      {
+        "translation": "外の天気がいいから、散歩に行こう。"
+      },
+      {
+        "translation": "今から勉強しよう。試験が近いのに、まだ概念がよく分かっていないんだ。"
+      },
+      {
+        "translation": "お昼ご飯をおいしく食べたから、少し休もう。お腹がいっぱいだよ。"
+      }
+    ]
   },
   "ko_자마자_43": {
-    "title": "~자마자 [jamaja] (As soon as)",
-    "shortExplanation": "〜を示します that the second event happens immediately after the first event: 'as soon as'.",
-    "longExplanation": "'~자마자 [jamaja]' means 'as soon as' in English, showing that one action or event happens directly after another with no delay. The action in the second clause occurs immediately after the action in the first clause.",
-    "formation": "動詞 stem + 자마자"
+    "title": "~자마자（〜するやすぐに、〜するやいなや）",
+    "shortExplanation": "前の動作が終わるとすぐに次の動作が行われることを表す接続語尾です（「〜するやすぐに」「〜するやいなや」）。",
+    "longExplanation": "「~자마자」は、動詞の語幹に接続し、前の動作が完了した直後に間髪を入れず次の動作や事態が起きることを表す接続語尾です。日本語の「〜するやすぐに」「〜するやいなや」「〜したとたんに」に相当します。過去の出来事を述べる場合でも、前半の節には過去形「-았/었-」を用いず、文末の述語で時制を表します。パッチムの有無に関係なく、動詞の語幹にそのまま付きます。",
+    "formation": "動詞の語幹 ＋ 자마자",
+    "examples": [
+      {
+        "translation": "学校に着くやすぐに友達に会いました。朝とても忙しくて電話もできませんでした。"
+      },
+      {
+        "translation": "ドアを開けるやいなや猫が外に出て行ってしまいました。結局ずいぶん長い間探さなければなりませんでした。"
+      },
+      {
+        "translation": "飛行機が着陸するやすぐに携帯電話の電源を入れました。大事な電話がかかってくると思っていたからです。"
+      },
+      {
+        "translation": "家に帰るやすぐにシャワーを浴びました。今日の天気はとても暑かったです。"
+      }
+    ]
   },
   "ko_처럼_44": {
-    "title": "~처럼 [cheoreom] (Like, as)",
-    "shortExplanation": "〜を表すために使用されます similarity or resemblance: 'like', 'as if'.",
-    "longExplanation": "'~처럼 [cheoreom]' is a postposition in Korean that expresses similarity or comparison, often translating to 'like' or 'as if' in English. It can be used with both nouns and verb phrases to show that something acts or appears in a similar way to another thing.",
-    "formation": "名詞/動詞 + 처럼"
+    "title": "~처럼（〜のように、〜みたいに）",
+    "shortExplanation": "名詞の後ろに付き、その対象と姿や状態、動作が似ていることを表す比況の助詞です（「〜のように」「〜みたいに」）。",
+    "longExplanation": "「~처럼」は、名詞の直後に付いて（または連体形＋「것처럼」の形で）、人や物事の様子、性質、動作がその対象と似通っていることや比喩を表す助詞です。日本語の「〜のように」「〜みたいに」に相当します。日常会話では同様の意味を持つ「~같이」と言い換えることも可能です。名詞末尾のパッチムの有無に関係なく、そのまま接続します。",
+    "formation": "名詞 ＋ 처럼（または 連体形 ＋ 것 ＋ 처럼）",
+    "examples": [
+      {
+        "translation": "彼の目は星のようにキラキラと輝いています。"
+      },
+      {
+        "translation": "私の父はいつも翼の生えた馬のように一生懸命働きます。"
+      },
+      {
+        "translation": "彼女は魚のように泳ぎが上手です。"
+      },
+      {
+        "translation": "今日一日中、私は鳥のように自由に飛び回りました。"
+      }
+    ]
   },
   "ko_쯤_45": {
-    "title": "~쯤 [jjeum] (Around, about)",
-    "shortExplanation": "〜を示します approximation in quantity, time, or degree: 'around', 'about'.",
-    "longExplanation": "'쯤 [jjeum]' is a Korean particle that denotes an approximation or an estimated range of time, quantity, or degree. It is similar to 'around' or 'about' in English. You attach it after a noun indicating time, number, or quantity.",
-    "formation": "Number/Quantity/Time + 쯤"
+    "title": "~쯤（〜ごろ、〜くらい、〜ほど）",
+    "shortExplanation": "時間や数量、程度を表す名詞の後に付き、大体の見当や概数を表す助詞です（「〜ごろ」「〜くらい」）。",
+    "longExplanation": "「~쯤」は、時間、時刻、日付、数量、金額などを表す名詞の直後に付いて、おおよその見当や範囲（概数）を表す助詞です。時間を表す名詞につくと「〜ごろ」、数量や期間を表す名詞につくと「〜くらい」「〜ほど」という意味になります。「약」や「정도」と一緒に併用されることもよくあります。前の名詞と分かち書きをせず、続けて表記します。",
+    "formation": "時間・数量・程度を表す名詞 ＋ 쯤",
+    "examples": [
+      {
+        "translation": "試験が難しいので、1日に3時間くらい勉強しなければなりません。"
+      },
+      {
+        "translation": "私の家からバスで行くと約20分くらいかかると思います。"
+      },
+      {
+        "translation": "今日はとても暑いので、気温が30度くらいになりそうです。"
+      },
+      {
+        "translation": "その本を全部読み終えるには、1週間程度くらいかかるでしょう。"
+      }
+    ]
   },
   "ko_지_46": {
-    "title": "~지 않다 [ji anta] (Not)",
-    "shortExplanation": "Used to negate a verb or adjective: 'not'.",
-    "longExplanation": "'~지 않다 [ji anta]' is a negative form in Korean that translates to 'not' in English. It is attached to the verb/adjective stem to negate the action or state. It can be used in both formal and informal contexts to express that something does not happen or is not the case.",
-    "formation": "動詞/形容詞 stem + 지 않다"
+    "title": "~지 않다（〜ない、〜ません）",
+    "shortExplanation": "動詞や形容詞の語幹に付き、動作や状態を否定する「長形否定」の表現です（「〜ない」「〜しない」）。",
+    "longExplanation": "「~지 않다」は、動詞や形容詞の語幹に接続して、動作や状態を打ち消す否定表現（長形否定）です。日本語の「〜ない」「〜しません」に相当します。述語の前に「안」を置く短形否定に比べて、客観的で改まった響きを持ち、書き言葉や公の場でのスピーチ、丁寧な日常会話で好まれます。後続の「않다」に時制や敬語の終結語尾を結合させて活用します（例：「않아요」「않았습니다」）。",
+    "formation": "動詞の語幹 ／ 形容詞の語幹 ＋ 지 않다",
+    "examples": [
+      {
+        "translation": "私は今回の会議には出席しないつもりです。その時間に別の重要な用事があります。"
+      },
+      {
+        "translation": "うちの父はタバコを吸いません。そのため家の中の空気はいつも澄んでいます。"
+      },
+      {
+        "translation": "彼女は明るい表情を見せないため、周りの人たちと距離を置いているように見えます。"
+      },
+      {
+        "translation": "私は肉類を食べません。そのためいつもベジタリアンメニューを探します。"
+      }
+    ]
   },
   "ko_지만_47": {
-    "title": "~지만 [jiman] (But)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "'~지만 [jiman]' is a conjunction used in Korean to indicate a contrast or contradiction between two clauses. It carries the sense of 'but' or 'however' in English. The speaker presents a fact or situation, then adds a conflicting or contrasting fact following '~지만'.",
-    "formation": "動詞/形容詞 + 지만, 名詞 + (이)지만"
+    "title": "~지만（〜けれど、〜が、〜だが）",
+    "shortExplanation": "前後の文の内容が対立・対比することをはっきりと表す逆接の接続語尾です（「〜けれど」「〜が」）。",
+    "longExplanation": "「~지만」は、動詞・形容詞の語幹や名詞に付き、前の節と後ろの節の内容が対立・矛盾していることを明確に示す逆接の接続語尾です。日本語の「〜けれど」「〜が」「〜ですが」に相当します。背景を緩やかに示す「-(으)ㄴ/는데」に比べ、明確な対比・逆接の対立関係を際立たせる特徴があります。過去形「-았/었지만」や推測・意志「-겠지만」の形でも頻繁に使われます。名詞にはパッチムがあれば「이지만」、なければ「지만」を接続します。",
+    "formation": "動詞の語幹 ／ 形容詞の語幹 ＋ 지만，名詞（パッチムあり） ＋ 이지만 ／ 名詞（パッチムなし） ＋ 지만",
+    "examples": [
+      {
+        "translation": "私はとても疲れていますが、この仕事を終わらせなければならないので続けなければならないと思います。"
+      },
+      {
+        "translation": "その食べ物はおいしくありませんが、栄養がたっぷりなので食べなければなりません。"
+      },
+      {
+        "translation": "皆さんの中には問題が難しいと感じる方もいるでしょうが、諦めてはいけません。"
+      },
+      {
+        "translation": "彼は性格が良いですが、はっきりと意見を述べるのは少し苦手としています。"
+      }
+    ]
   },
   "ko_지요죠_48": {
-    "title": "~지요/~죠 [jiyo/jyo] (Isn’t it?, right?)",
-    "shortExplanation": "Used to confirm or seek agreement; 'isn't it?', 'right?'",
-    "longExplanation": "The endings '~지요/~죠 [jiyo/jyo]' are used to seek confirmation or agreement from the listener, similar to saying 'isn't it?' or 'right?' in English. They soften the statement and can function like a tag question. The form can be used in varying politeness levels, depending on the overall speech style.",
-    "formation": "動詞/形容詞 + 지요/죠"
+    "title": "~지요/~죠（〜ですよね、〜でしょう？）",
+    "shortExplanation": "聞き手に事実を確認したり、同意を求めたりする終結語尾です（「〜ですよね」「〜でしょう？」）。",
+    "longExplanation": "「~지요」（会話では縮約形の「~죠」が非常によく使われます）は、話し手がすでに知っている事実や予想していることについて、聞き手に確認を求めたり同意を促したりする終結語尾です。日本語の「〜ですよね」「〜でしょう？」に相当します。文末のイントネーションを上げることで確認・疑問のニュアンスとなり、下げることで柔らかい自己主張や確信を表します。過去形「-았/었지요」や推測「-겠지요」とも接続します。パッチムの有無に関係なく用言の語幹にそのまま結合します（名詞には「-(이)지요」）。",
+    "formation": "動詞の語幹 ／ 形容詞の語幹 ＋ 지요（会話縮約形：죠），名詞（パッチムあり） ＋ 이지요 ／ 名詞（パッチムなし） ＋ 지요",
+    "examples": [
+      {
+        "translation": "今日は天気が良いですよね？"
+      },
+      {
+        "translation": "私たちは同じクラスにいましたよね？"
+      },
+      {
+        "translation": "この仕事を終わらせなければいけませんよね？"
+      },
+      {
+        "translation": "その映画、本当に面白かったですよね？"
+      }
+    ]
   },
   "ko_하고_49": {
-    "title": "~하고 [hago] (And, with)",
-    "shortExplanation": "Used to connect nouns ('and') or indicate 'with' someone/something.",
-    "longExplanation": "'~하고 [hago]' is used in Korean to connect two nouns in the sense of 'and' or to indicate 'with' when paired with a verb. It's commonly used in spoken language and is a bit more informal than '~와/과'.",
-    "formation": "Noun1 + 하고 + Noun2 / 名詞 + 하고 + 動詞"
+    "title": "~하고（〜と、〜と一緒に）",
+    "shortExplanation": "名詞を並列でつないだり（「〜と」）、誰かと動作を共に行うこと（「〜と、〜と一緒に」）を表す助詞です。",
+    "longExplanation": "「~하고」は、日常の話し言葉で非常に広く使われる助詞です。主な用法は2つあります：(1) 名詞と名詞を対等につなぐ並列用法（「〜と」）；(2) 人や動物の後に付いて、動作を共にする相手を表す同伴用法（「〜と」「〜と一緒に」）。書き言葉で好まれる「~와/과」に比べて親しみやすく、くだけた会話で多用されます。直前の名詞にパッチムがあってもなくても、そのまま「하고」を接続します。",
+    "formation": "名詞1 ＋ 하고 ＋ 名詞2（並列：〜と） ／ 名詞 ＋ 하고（同伴：〜と一緒に）",
+    "examples": [
+      {
+        "translation": "私はコーヒーとドーナツを注文しました。"
+      },
+      {
+        "translation": "私たちは一緒に過ごし、語り合いながら楽しい時間を過ごしました。"
+      },
+      {
+        "translation": "私はイチゴとバナナをミキサーに入れてスムージーを作りました。"
+      },
+      {
+        "translation": "彼は友達とサッカーをするために公園へ行きました。"
+      }
+    ]
   },
   "ko_하기로_50": {
-    "title": "~하기로 [hagiro] (Decide to)",
-    "shortExplanation": "〜を表すために使用されます making a decision or plan to do something.",
-    "longExplanation": "'~하기로 [hagiro]' is used when a decision or plan is made to carry out a certain action. It frequently appears in daily conversation to share decisions, future intentions, or arrangements. 〜と訳されます 'decide to ~' in English.",
-    "formation": "動詞 stem + 기로"
+    "title": "~하기로 하다（〜することにする、〜することに決める）",
+    "shortExplanation": "ある動作を行うことを決定したり、約束したりしたことを表します（「〜することにする」）。",
+    "longExplanation": "「~하기로 하다」（および「~기로 결정하다 / 결심하다」）は、動詞の語幹に付いて、将来の行動について決意したり、計画を立てたり、誰かと約束したりしたことを表す表現です。日本語の「〜することにする」「〜することに決めた」に相当します。決定や約束自体は発話時より前に行われていることが多いため、通常は過去形「~기로 했다」の形で用いられます。パッチムの有無に関わらず、動詞の語幹にそのまま付きます。",
+    "formation": "動詞の語幹 ＋ 기로 하다（または 결정하다 ／ 결심하다）",
+    "examples": [
+      {
+        "translation": "私たちは明日ソウルへ行くことに決めました。そこで友達に会うつもりです。"
+      },
+      {
+        "translation": "私は来月新しい仕事を始めることに決心しました。今の仕事は退屈すぎるからです。"
+      },
+      {
+        "translation": "うちの家族は来週末にピクニックへ行くことにしました。天気が良い予定だからです。"
+      },
+      {
+        "translation": "私は1日に1時間読書することにしました。本を読めば知識が増えるからです。"
+      }
+    ]
   },
   "ko_하기는_51": {
-    "title": "~하기는 [hagineun] (But, however)",
-    "shortExplanation": "Used to introduce a contrasting or limiting perspective: 'but', 'however'.",
-    "longExplanation": "'~하기는 [hagineun]' is used in Korean to highlight a contrast or limitation. It conveys that while something may be true, there is a secondary point that limits or opposes the first statement. It often translates to 'but,' 'however,' or 'though' in English.",
-    "formation": "動詞 stem + 기는"
+    "title": "~기는 하다（〜することはする、〜には〜だが）",
+    "shortExplanation": "前半の事実や性質を一旦認めた上で、後半でそれに反する制約や対立点を述べる表現です（「〜することはするが」）。",
+    "longExplanation": "「~기는 하다」（会話では縮約形の「~긴 하다」も頻出で、後ろに逆接を伴って「~기는 하지만」「~기는 한데」「~기는 해도」などの形で多用されます）は、前の事柄や相手の意見を一旦肯定・是認しつつも、後ろの節でそれに対する留保、不満、制限などを付け加える表現です。日本語の「〜（し）はするけれど」「確かに〜だが」に相当します。パッチムの有無に関わらず、動詞・形容詞の語幹にそのまま結合します。",
+    "formation": "動詞の語幹 ／ 形容詞の語幹 ＋ 기는 하다（会話縮約形：긴 하다；接続形：기는 하지만 ／ 기는 한데 ／ 기는 해도）",
+    "examples": [
+      {
+        "translation": "天気は確かに寒くはありましたが、私たちはそれでも楽しい時間を過ごしました。"
+      },
+      {
+        "translation": "この新商品が好きではあるけれど、高すぎて買うのが難しいです。"
+      },
+      {
+        "translation": "料理は上手には作れますが、準備に多くの時間と労力が必要です。"
+      },
+      {
+        "translation": "彼は確かに性格が良くはあるのですが、しばしば遅刻する癖があります。"
+      }
+    ]
   },
   "ko_하기보다_52": {
-    "title": "~하기보다 [hagiboda] (Rather than)",
-    "shortExplanation": "Used to compare two actions or states, expressing a preference: 'rather than', 'instead of'.",
-    "longExplanation": "'~하기보다 [hagiboda]' is a Korean grammatical structure used when comparing or contrasting two actions, states, or situations. It introduces a preference for the second action over the first, translating to 'rather than' or 'instead of' in English. The verb before '~하기보다' is the less preferred, and what follows indicates the preferred action or situation.",
-    "formation": "動詞 stem + 기보다"
+    "title": "~하기보다（〜するよりは、〜する代わりに）",
+    "shortExplanation": "2つの行動や状態を比較して、後者の行動をより好ましいと選択することを表します（「〜するよりは」）。",
+    "longExplanation": "「~하기보다」（強調の助詞を伴った「~하기보다는」も頻出）は、動詞の語幹に付いて、2つの行為や状況を比較し、前者の行為よりも後者の行為を優先したり好ましいと判断したりすることを表す表現です。日本語の「〜するよりは」「〜するくらいなら」に相当します。「~하기보다」の前に置かれる動作は望ましくない選択肢であり、後ろに好ましい選択肢が提示されます。パッチムの有無に関わらず、動詞の語幹にそのまま付きます。",
+    "formation": "動詞の語幹 ＋ 기보다（強調形：기보다는）",
+    "examples": [
+      {
+        "translation": "私は車を運転するよりはバスに乗るほうがずっと楽です。"
+      },
+      {
+        "translation": "料理を買って食べるよりは、自分で直接料理するほうがより健康的です。"
+      },
+      {
+        "translation": "家で仕事をするよりはオフィスで作業するほうが生産的だと思います。"
+      },
+      {
+        "translation": "お金を稼ぐことよりは友達と一緒に時間を過ごすことのほうが大切だと思います。"
+      }
+    ]
   },
   "ko_하나_53": {
-    "title": "~하나 [hana] (Questioning oneself)",
-    "shortExplanation": "Used to show self-questioning or wondering; 'I wonder', 'Could it be'.",
-    "longExplanation": "The ending '~하나 [hana]' in Korean expresses the speaker’s puzzlement or self-questioning about a situation. It often appears in more casual, reflective speech when the speaker wonders about something or asks themselves a rhetorical question. It's roughly similar to phrases like 'I wonder...' or 'Could it be...' in English.",
-    "formation": "動詞 + 는/ㄴ/은/인 + 하나"
+    "title": "~하나 / ~나（〜なのかな、〜だろうか）",
+    "shortExplanation": "独り言や親しい口語で、自分自身に問いかけたり不思議に思う気持ちを表す自問の終結語尾です（「〜なのかな」）。",
+    "longExplanation": "「~하나」（語源的には自問を表す疑問形語尾「-나 ／ -(으)ㄴ가」の一種）は、独り言や親しい間柄の会話で、話し手が納得のいかない状況や不可解なことについて自問自答し、首をかしげたり訝しんだりするニュアンスを表します。日本語の「〜なのかな」「どうして〜なのだろう」に相当します。動詞の語幹には「-나」（「하다」は「하나」）、形容詞の語幹には「-(으)ㄴ가」が接続します。",
+    "formation": "動詞の語幹 ＋ 하나（または 나） ／ 形容詞の語幹 ＋ 은가/ㄴ가",
+    "examples": [
+      {
+        "translation": "私はどうしていつも一人なんだろう、自分でもよく分からないな。"
+      },
+      {
+        "translation": "なぜ彼があんなことを言ったのか、さっぱり理解できないな。"
+      },
+      {
+        "translation": "よく連絡をくれていた友達から急に連絡が来なくなったのはどうしてだろう。"
+      },
+      {
+        "translation": "たくさん勉強したのに試験で良い点数が取れないなんて、どういうことなんだろう。"
+      }
+    ]
   },
   "ko_하다가_54": {
-    "title": "~하다가 [hadaga] (Doing and then)",
-    "shortExplanation": "〜を表すために使用されます the notion of 'doing something and then'.",
-    "longExplanation": "'~하다가 [hadaga]' is a composite verb form in Korean meaning that while someone is in the middle of doing an action, another event occurs. It does not require the first action to finish before the second starts. Often, the second action interrupts or follows immediately after the first.",
-    "formation": "動詞 + 하다가"
+    "title": "~다가 / ~하다가（〜していて、〜している途中で）",
+    "shortExplanation": "ある動作や状態が続いている途中で、それが中断されたり別の事態に切り替わったりすることを表す接続語尾です（「〜していて」「〜している途中で」）。",
+    "longExplanation": "「~하다가」（接続語尾「-다가」の代表的な形）は、動詞の語幹に付いて、前の行為や状態が継続している最中に、その動作が途中で途切れたり、別の行動や予想外の出来事が割り込んで起きたりすることを表します。日本語の「〜していて」「〜している途中で」「〜しかけて」に相当します。前後の主語は同一人物であることが原則です。パッチムの有無に関わらず、動詞の語幹にそのまま付きます。",
+    "formation": "動詞の語幹 ＋ 다가（하다動詞の場合：하다가）",
+    "examples": [
+      {
+        "translation": "掃除をしていたら、偶然古い写真を見つけました。"
+      },
+      {
+        "translation": "私は本を読んでいて眠ってしまいました。"
+      },
+      {
+        "translation": "友達と話をしていて時間の経つのを忘れてしまいました。"
+      },
+      {
+        "translation": "運転をしている途中で道に迷ってしまいました。"
+      }
+    ]
   },
   "ko_하다가_55": {
-    "title": "~하다가 말다 [hadaga malda] (Stop doing something)",
-    "shortExplanation": "〜を表すために使用されます that someone stops in the midst of doing something.",
-    "longExplanation": "'~하다가 말다 [hadaga malda]' means that an action, which has begun, is interrupted or stopped before completion. It often implies the action may or may not resume later, highlighting a sudden change or interruption during the activity. The verb is typically in dictionary form before '하다가 말다.'",
-    "formation": "動詞 (dictionary form) + 하다가 말다"
+    "title": "~다가 말다 / ~하다가 말다（〜するのを途中でやめる、中途半端にやめる）",
+    "shortExplanation": "動作を途中で中断してやめてしまうこと、やりかけで放置することを表します（「〜しかけてやめる」「途中でやめる」）。",
+    "longExplanation": "「~다가 말다」（하다動詞では「~하다가 말다」）は、動詞の語幹に付き、始まった動作が完了しないまま中途半端に途中で中断したり中止したりすることを表す表現です。日本語の「〜するのを途中でやめる」「〜しかけてやめる」に相当します。補助動詞「말다」は通常、過去形「~다가 말았다／말았어요」の形で多く用いられます。パッチムの有無に関係なく、動詞の語幹にそのまま付きます。",
+    "formation": "動詞の語幹 ＋ 다가 말다（하다動詞の場合：하다가 말다）",
+    "examples": [
+      {
+        "translation": "勉強を途中でやめてしまいました。目覚ましが鳴らず時間を忘れてしまったからです。"
+      },
+      {
+        "translation": "友達が家に来たので、私はご飯を作るのを途中でやめました。"
+      },
+      {
+        "translation": "運動するのを途中でやめました。雨があまりにもひどく降ってきたからです。"
+      },
+      {
+        "translation": "本を読んでいたのですが途中でやめました。急に眠気が襲ってきたからです。"
+      }
+    ]
   },
   "ko_하더라_56": {
-    "title": "~하더라 [hadeora] (I observed, I remember)",
-    "shortExplanation": "〜を表すために使用されます a recollection or observation of a past event.",
-    "longExplanation": "'~하더라 [hadeora]' indicates the speaker personally saw, felt, or experienced something in the past. It's more than simply stating a past fact (~했다); it emphasizes the speaker’s direct observation or impression of an event or situation.",
-    "formation": "動詞 stem + 더라"
+    "title": "~하더라（〜（だっ）たよ、〜だったね）",
+    "shortExplanation": "過去に自分が直接見聞きしたり体験して知った事実を、回想して親しい相手に伝える終結語尾です。",
+    "longExplanation": "「~하더라」は、話者が過去に直接見聞きしたり、経験・実感した事実を思い起こし、親しい相手（パンマル）に伝える際に用いられる回想の終結語尾です（丁寧形は「~더라고요」）。単に過去の客観的事実を述べる「~했다」とは異なり、話者自身の生々しい目撃感や実感、その場の印象を相手に伝えるニュアンスが含まれます。",
+    "formation": "動詞・形容詞の語幹 ＋ 더라（過去：動詞・形容詞の語幹 ＋ 았/었더라）",
+    "examples": [
+      {
+        "translation": "君の妹は本当に可愛かったよ。近所で一番可愛い女の子として知られていたんだ。"
+      },
+      {
+        "translation": "彼はいつも忙しそうだったよ。だから彼に会うのは大変だったんだ。"
+      },
+      {
+        "translation": "うちのお父さんは子供の頃サッカーが上手だったんだよ。だから今でもサッカーの実力がすごいんだ。"
+      },
+      {
+        "translation": "去年私たちが海辺に行った時、夕暮れ時が本当に綺麗だったよ。"
+      }
+    ]
   },
   "ko_하려고_57": {
-    "title": "~하려고 [haryeogo] (In order to)",
-    "shortExplanation": "Expresses purpose or intention: 'in order to', 'for the purpose of'.",
-    "longExplanation": "'~하려고 [haryeogo]' is 〜を示します an intention or purpose for doing something. It often translates to 'in order to' or 'for the purpose of' in English. This pattern appears before the main verb or clause that shows what the speaker aims to accomplish or why they’re performing an action.",
-    "formation": "動詞 stem + 려고"
+    "title": "-(으)려고（〜しようと、〜するために）",
+    "shortExplanation": "後節の動作を行う目的や意図を表す接続語尾です（「〜しようと」「〜するために」）。",
+    "longExplanation": "「-(으)려고」は、前節で話者の目的や意図を示し、後節でその目的を達成するための行動を続ける接続語尾です。日本語の「〜しようと」「〜するために」に相当します。「하다」と結びついて「-(으)려고 하다（〜しようとする、〜するつもりだ）」という形で使われることも非常に多いです。後節に命令形や勧誘形を続けることはできません。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려고 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려고",
+    "examples": [
+      {
+        "translation": "韓国語をもっとよく理解しようと、たくさんの本を読みました。"
+      },
+      {
+        "translation": "試験で良い点を取るために、一生懸命勉強しようと思っています。"
+      },
+      {
+        "translation": "健康を維持するために運動をしています。"
+      },
+      {
+        "translation": "旅行の費用をためるためにアルバイトをしました。"
+      }
+    ]
   },
   "ko_하여해서_58": {
-    "title": "~하여/해서 [hayeo/haeseo] (So, therefore)",
-    "shortExplanation": "A connective ending that expresses cause or reason.",
-    "longExplanation": "'~하여/해서 [hayeo/haeseo]' is used in Korean to link two clauses, where the first clause is the cause or reason, and the second clause is the resulting action or statement. In colloquial speech, '해서' is more common. It corresponds to 'so' or 'therefore' in English.",
-    "formation": "動詞 stem + 하여/해서"
+    "title": "-아/어서（〜（し）て、〜ので、〜だから）",
+    "shortExplanation": "前節が後節の原因や理由になることを表す接続語尾です（「〜して」「〜だから」「〜ので」）。",
+    "longExplanation": "「-아/어서」（하다動詞の場合は「하여」、会話では「해서」）は、前節が後節の客観的な原因や理由を表す代表的な接続語尾です。日本語の「〜して」「〜だから」「〜ので」に相当します。前節に過去形（-았/었-）をつけることはできず、後節に命令形や勧誘形を使うことも原則としてできません。",
+    "formation": "語幹末尾の母音がㅏ・ㅗ ＋ 아서 ／ その他の母音 ＋ 어서 ／ 하다動詞 → 하여/해서",
+    "examples": [
+      {
+        "translation": "雨が降って家に遅く帰りました。"
+      },
+      {
+        "translation": "パソコンが壊れて課題ができませんでした。"
+      },
+      {
+        "translation": "一生懸命勉強したので試験がよくできました。"
+      },
+      {
+        "translation": "パンを食べすぎてお腹が痛くなりました。"
+      }
+    ]
   },
   "ko_한테한테서_59": {
-    "title": "~한테/한테서 [hante/hanteseo] (To/From someone)",
-    "shortExplanation": "Indicates 'to' or 'from' a person or animate being.",
-    "longExplanation": "'~한테 [hante]' and '~한테서 [hanteseo]' are postpositions used when the subject is sending something (physical or abstract) to someone, or receiving from someone. Typically used with people or animate beings: '한테' = 'to someone'; '한테서' = 'from someone'.",
-    "formation": "名詞/Pronoun + 한테 (to), 名詞/Pronoun + 한테서 (from)"
+    "title": "~한테 / ~한테서（〜に / 〜から）",
+    "shortExplanation": "人や動物に付く会話体の助詞。「~한테」は相手・対象（「〜に」）、「~한테서」は出処・起点（「〜から」）を表します。",
+    "longExplanation": "「~한테」と「~한테서」は、人や動物（有情物）の後について使われる口語の助詞です。「~한테」は動作が向かう対象や受け手（「〜に」）を表し（文章語の「~에게」に相当）、「~한테서」は人から何かを受け取ったり学んだりする出処や起点（「〜から」）を表します（文章語の「~에게서」に相当）。目上の人に対しては敬称の「~께」を用います。",
+    "formation": "人・動物の名詞/代名詞 ＋ 한테（〜に） ／ 人・動物の名詞/代名詞 ＋ 한테서（〜から）",
+    "examples": [
+      {
+        "translation": "私は友達にプレゼントをあげました。"
+      },
+      {
+        "translation": "私は先生から韓国語を習いました。"
+      },
+      {
+        "translation": "彼はお父さんからお金を借りました。"
+      },
+      {
+        "translation": "私には良い言葉だけを言ってください。"
+      }
+    ]
   },
   "ko_할_60": {
-    "title": "~할 거예요 [hal geoyeyo] (Going to do)",
-    "shortExplanation": "Expresses a future plan or intention: 'going to do'.",
-    "longExplanation": "'~할 거예요 [hal geoyeyo]' is a common future tense form in Korean that conveys a plan, intention, or prediction, similar to 'be going to' in English. It shows that the action is expected to happen in the future.",
-    "formation": "動詞 (stem) + (으)ㄹ 거예요  (e.g., 하다 → 할 거예요)"
+    "title": "-(으)ㄹ 거예요（〜するつもりです、〜するでしょう）",
+    "shortExplanation": "未来の予定・意志を表したり、未来の出来事や状態を推測したりする終結表現です（「〜するつもりです」「〜でしょう」）。",
+    "longExplanation": "「-(으)ㄹ 거예요」は、韓国語の日常会話で最もよく使われる未来・推測の終結表現です（タメ口は「-(으)ㄹ 거야」、格式体は「-(으)ㄹ 것입니다」）。主語が一人称・二人称の場合は、話者の今後の意志や計画（「〜するつもりです」「〜します」）を表し、主語が三人称や事物の場合は、未来の出来事に対する推測や見込み（「〜でしょう」「〜するはずです」）を表します。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 거예요 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 거예요",
+    "examples": [
+      {
+        "translation": "私は今週末、友達と一緒にキャンプに行くつもりです。テントやキャンプ用品を準備しなければなりません。"
+      },
+      {
+        "translation": "明日は天気が良いので公園で散歩するつもりです。晴れた天気を満喫できるでしょう。"
+      },
+      {
+        "translation": "私は夕方にスパゲッティを作るつもりです。スパゲッティソースとパスタを買ってこなければなりません。"
+      },
+      {
+        "translation": "父が退勤したら一緒に食堂で夕飯を食べるつもりです。父の好きなメニューを選ばなければなりません。"
+      }
+    ]
   },
   "ko_할_61": {
-    "title": "~할 만하다 [hal manhada] (Worth doing)",
-    "shortExplanation": "Indicates that an action is worth the effort, time, or cost: 'worth doing'.",
-    "longExplanation": "'~할 만하다 [hal manhada]' means that an action is sufficiently valuable or beneficial to be worth the effort it requires. It can be used with many verbs to suggest that something is recommended or rewarding despite possible difficulty or expense.",
-    "formation": "動詞 stem + 할 만하다"
+    "title": "-(으)ㄹ 만하다（〜する価値がある、〜に値する）",
+    "shortExplanation": "その行為を行うだけの十分な価値があることや、誰かに勧めるに値することを表します（「〜する価値がある」）。",
+    "longExplanation": "「-(으)ㄹ 만하다」は動詞の語幹に付き、時間や費用、労力をかけるだけの価値が十分にあることを表す補助形容詞構文です。日本語の「〜する価値がある」「〜してみるに値する」に相当します。また、完全ではなくてもある程度我慢できる、合格点に達しているというニュアンス（「まあまあ〜できる」「悪くない」）を表すこともあります。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을 만하다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ 만하다",
+    "examples": [
+      {
+        "translation": "この旅行は高価ですが、行ってみる価値があります。あそこは本当に美しいですから。"
+      },
+      {
+        "translation": "この映画は長いですが、観る価値があります。ストーリーがすごく面白いです。"
+      },
+      {
+        "translation": "この本は分厚いですが、読む価値がありますよ。内容がとても有益だからです。"
+      },
+      {
+        "translation": "この食堂は遠いですが、行ってみる価値があります。料理が本当に美味しいです。"
+      }
+    ]
   },
   "ko_할수록_62": {
-    "title": "~할수록 [hal surok] (The more...)",
-    "shortExplanation": "Used to describe a situation where one action or state increases or intensifies as another action or state does.",
-    "longExplanation": "'~할수록 [hal surok]' is a compound grammar pattern 〜を表すために使用されます a situation where, as one thing progresses or changes, another thing happens correspondingly. Essentially, it means 'the more...'. It often involves a shared subject in both clauses, indicating proportional or dependent change in one factor alongside another.",
-    "formation": "動詞 stem + (으)ㄹ수록 + (resulting increase/change)"
+    "title": "-(으)ㄹ수록（〜すればするほど、〜するほど）",
+    "shortExplanation": "前節の事態の度合いが増すにつれて、後節の度合いもそれに比例して深まることを表します（「〜するほど」）。",
+    "longExplanation": "「-(으)ㄹ수록」は、ある動作や状態の程度が進むのに伴い、別の事態の程度も比例して増大することを表す接続語尾です。日本語の「〜すればするほど」「〜するほど」に相当します。文脈を強めるために「-(으)면 -(으)ㄹ수록（〜すれば〜するほど）」という呼応の形で使われることも非常に多いです。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을수록 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ수록",
+    "examples": [
+      {
+        "translation": "彼女のことを知れば知るほど、私は彼女をもっと愛するようになりました。"
+      },
+      {
+        "translation": "練習を重ねれば重ねるほど、あなたの技術はさらに向上するはずです。"
+      },
+      {
+        "translation": "人が多ければ多いほど、パーティーはもっと楽しくなるでしょう。"
+      },
+      {
+        "translation": "時間が経てば経つほど、彼の恋しさはさらに大きくなっていきました。"
+      }
+    ]
   },
   "ko_할_63": {
-    "title": "~할 줄 알다 [hal jul alda] (Know how to)",
-    "shortExplanation": "〜を表すために使用されます the knowledge or skill to do something.",
-    "longExplanation": "'~할 줄 알다 [hal jul alda]' is 〜を示します that someone knows how to do a certain action or has the skill to do it. Literally, it means 'know the method of doing ~'.",
-    "formation": "動詞 (dictionary form) + 줄 알다"
+    "title": "-(으)ㄹ 줄 알다（〜できる、〜のやり方を知っている）",
+    "shortExplanation": "その動作を行う技術や能力、方法を知っていることを表します（「〜できる」「〜（のやり方）を知っている」）。",
+    "longExplanation": "「-(으)ㄹ 줄 알다」は、主語がある行為を行う方法や技能を身につけており、それを実行できる能力があることを表す表現です。日本語の「〜することができる」「〜のやり方を知っている」に相当します。反対にやり方を知らない、できない場合は「-(으)ㄹ 줄 모르다」を用います。なお、文脈によっては「〜かと思った（推測・勘違い）」の意味にもなります。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을 줄 알다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ 줄 알다",
+    "examples": [
+      {
+        "translation": "私は料理ができるので、友達が家に遊びに来るたびに美味しい料理を作ってあげられます。"
+      },
+      {
+        "translation": "私の友達は韓国語を話せるので、韓国人の友達と自由に会話ができます。"
+      },
+      {
+        "translation": "両親は運転ができるので、どこにでも行くことができます。"
+      },
+      {
+        "translation": "私はピアノを弾くことができるので、カラオケに行くといつも気分が良いです。"
+      }
+    ]
   },
   "ko_할지라도_64": {
-    "title": "~할지라도 [haljirado] (Even if)",
-    "shortExplanation": "〜を表すために使用されます a condition in the sense of 'even if'.",
-    "longExplanation": "'~할지라도 [haljirado]' translates to 'even if' in English. It suggests that even under a hypothetical condition or possibility, the outcome or stance in the second clause remains unchanged.",
-    "formation": "動詞 + (으)ㄹ지라도"
+    "title": "-(으)ㄹ지라도（たとえ〜としても、〜であっても）",
+    "shortExplanation": "前節の仮定や事実を認めても、後節の意志や事態には何の影響も及ばないことを表す強い譲歩の接続語尾です。",
+    "longExplanation": "「-(으)ㄹ지라도」は、前節で極端な状況や仮定を認めつつも、後節で述べられる話者の決意や客観的事実がそれに左右されないことを表す、強い譲歩の接続語尾です。日本語の「たとえ〜としても」「〜であっても」に相当し、主に文章語や演説などの改まった場面で好んで使われます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지라도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지라도",
+    "examples": [
+      {
+        "translation": "明日雨が降ったとしても、私は運動をしに行きます。"
+      },
+      {
+        "translation": "両親が彼を嫌がったとしても、私は会い続けるつもりです。"
+      },
+      {
+        "translation": "試験が難しいとしても、一生懸命勉強したので自信があります。"
+      },
+      {
+        "translation": "君がどう思おうとも、僕はその決断を後悔していない。"
+      }
+    ]
   },
   "ko_할_65": {
-    "title": "~할 텐데 [hal tende] (I thought/would have thought that...)",
-    "shortExplanation": "Expresses a presumption or expectation that differs from reality.",
-    "longExplanation": "'~할 텐데 [hal tende]' conveys a speaker's assumption or prediction about a situation that turned out differently. 〜と訳されます 'I would have thought...' or 'I expected...' but the actual result was unexpected or contrary to the assumption.",
-    "formation": "動詞 stem + (으)ㄹ 텐데"
+    "title": "-(으)ㄹ 텐데（〜のはずなのに、〜だろうに）",
+    "shortExplanation": "話者の強い推測や期待を前提として示し、後節でそれと食い違う現実や予期せぬ展開を述べる表現です。",
+    "longExplanation": "「-(으)ㄹ 텐데」（「-(으)ㄹ 터인데」の縮約形）は、強い推測や意図を表す「-(으)ㄹ 터」に、背景や逆接を表す接続語尾「-ㄴ/은/는데」が結びついた慣用表現です。話者が当然そうなるだろうと推測・期待していた状況を前節で提示し、後節ではその予想に反する現実や意外な事態を対比させて述べます。日本語の「〜のはずなのに」「〜だろうに」に相当します。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 텐데 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 텐데",
+    "examples": [
+      {
+        "translation": "今日は天気が良いはずなのに雨が降っていますね。予想が外れました。"
+      },
+      {
+        "translation": "彼は夕方に連絡してくるはずなのに、まだ連絡がありません。何かあったみたいです。"
+      },
+      {
+        "translation": "彼女はいつも明るいはずなのに、今日はなぜか機嫌が良くなさそうです。"
+      },
+      {
+        "translation": "試験は易しいだろうと思ったのに、本当に難しく出題されました。"
+      }
+    ]
   },
   "ko_해야지_66": {
-    "title": "~해야지 [haeyaji] (Decide to)",
-    "shortExplanation": "Expresses a personal decision or resolution; similar to 'I should' or 'I will'.",
-    "longExplanation": "'~해야지 [haeyaji]' indicates a personal decision or intent to do something. 〜と訳されます 'I should' or 'I will' and often sounds like talking to oneself or making a personal resolution. Sometimes it’s used in soft suggestions to others.",
-    "formation": "動詞 stem + 아/어/여야지"
+    "title": "-아/어야지（〜しなきゃ、〜すべきだよ）",
+    "shortExplanation": "自分の決意や覚悟を独り言のように言ったり（「〜しなきゃ」）、親しい相手に優しく促したりする終結語尾です。",
+    "longExplanation": "「-아/어야지」（丁寧形は「-아/어야지요」）は、義務や意志を含む終結語尾です。主に2つの用法があります。(1) 話者が自分自身に対して「〜しなきゃ」「〜しなければ」と決意を固めたり独り言を言ったりする用法。(2) 親しい友人や年下の相手に対して、「〜しなきゃだめだよ」「〜すべきだよ」と優しく注意を促したり勧めたりする用法です。",
+    "formation": "語幹末尾の母音がㅏ・ㅗ ＋ 아야지 ／ その他の母音 ＋ 어야지 ／ 하다動詞 → 해야지",
+    "examples": [
+      {
+        "translation": "今日は早く家に帰らなきゃ。明日早く起きないといけないからね。"
+      },
+      {
+        "translation": "健康のために運動を始めなきゃ。"
+      },
+      {
+        "translation": "多様な本をたくさん読まなきゃ。そうしてこそ知識を広げられるからね。"
+      },
+      {
+        "translation": "ゆっくり食べなきゃね、そうすれば消化がよくなるよ。"
+      }
+    ]
   },
   "ko_해도해봐도_67": {
-    "title": "~해도/해봐도 [haedo/haebwado] (Even if)",
-    "shortExplanation": "Indicates 'even if' or 'no matter how much' in sentences.",
-    "longExplanation": "'~해도/해봐도 [haedo/haebwado]' is used to say that regardless of a certain action or attempt, the result or situation does not change. It conveys an idea of 'even if' or 'no matter how much one tries/does something.'",
-    "formation": "動詞 stem + 아/어/해도 or 動詞 stem + 아/어/해봐도"
+    "title": "-아/어도 / -아/어 봐도（〜しても、〜してみても）",
+    "shortExplanation": "いくらその行為を行ったり試みたりしても、後節の結果や事態が変わらないことを表す譲歩の接続表現です。",
+    "longExplanation": "「-아/어도」（試みの補助動詞「보다」と結合した「-아/어 봐도」）は、仮定または既定の条件を認めつつも、後節の結果には影響がないことを表す譲歩の接続表現です。日本語の「〜しても」「〜してみても」「〜したところで」に相当します。しばしば「아무리（いくら、どんなに）」や「얼마나（どれほど）」などの副詞と呼応して、努力や試行にもかかわらず望ましい結果が得られない状況を強調します。",
+    "formation": "動詞・形容詞の語幹 ＋ 아/어도、または動詞の語幹 ＋ 아/어 봐도（母音ㅏ・ㅗは아、その他は어、하다は해도/해봐도）",
+    "examples": [
+      {
+        "translation": "ここで私たちがいくら努力してみても、状況は改善されません。"
+      },
+      {
+        "translation": "その店の料理がいくら美味しくても、そこで働きたいとは思いません。"
+      },
+      {
+        "translation": "いくら大金を稼いでみたところで、幸せでなければ意味がありません。"
+      },
+      {
+        "translation": "彼女がどれほど愛してみても、彼の気持ちを理解することはできないそうです。"
+      }
+    ]
   },
   "ko_해보다_68": {
-    "title": "~해보다 [haeboda] (Try to)",
-    "shortExplanation": "Indicates attempting or trying an action for the first time, or suggesting someone try something.",
-    "longExplanation": "'~해보다 [haeboda]' literally adds 'try' to a verb. It is used when someone attempts an action (often a new one) or suggests that another person try it. It conveys the sense of 'try doing (something)' in English.",
-    "formation": "Action 動詞 stem + 아/어/해 + 보다"
+    "title": "-아/어 보다（〜してみる）",
+    "shortExplanation": "試しにある行動を行ってみることや、経験することを表す補助動詞表現です（「〜してみる」）。",
+    "longExplanation": "「-아/어 보다」は動詞の語幹に接続し、ある行動を試しにやってみることを表す代表的な補助動詞表現です。日本語の「〜してみる」「〜てみる」に相当します。また、過去形「-아/어 봤다」の形で用いると、「〜したことがある」という過去の経験を表す表現にもなります。相手に何かを勧める際にも非常によく用いられます。",
+    "formation": "語幹末尾の母音がㅏ・ㅗ ＋ 아 보다 ／ その他の母音 ＋ 어 보다 ／ 하다動詞 → 해보다",
+    "examples": [
+      {
+        "translation": "私は新しい韓国料理を食べてみようと努力しましたが、あまりになじみがなくて大変でした。"
+      },
+      {
+        "translation": "あなたはこの言語を学んでみることについてどう思われますか？"
+      },
+      {
+        "translation": "初めは読むのが難しかったですが、やり続けてみたら徐々に分かるようになりました。"
+      },
+      {
+        "translation": "今週末に新しい趣味を探してみるのはどうですか？"
+      }
+    ]
   },
   "ko_해주다_69": {
-    "title": "~해주다 [haejuda] (Do for someone)",
-    "shortExplanation": "Indicates doing a favor or an action for someone else’s benefit.",
-    "longExplanation": "'~해주다 [haejuda]' is used in Korean when you do something beneficial or helpful for another person. It often implies goodwill or kindness towards the recipient of the action, translating to 'do something for someone' in English.",
-    "formation": "動詞 stem + 아/어/해 + 주다"
+    "title": "-아/어 주다（〜してあげる、〜してくれる）",
+    "shortExplanation": "相手のために親切や好意でその動作を行うことを表す補助動詞表現です（「〜してあげる」「〜してくれる」）。",
+    "longExplanation": "「-아/어 주다」は動詞の語幹に付き、他者の利益や便宜のために好意でその行為を行うことを表す補助動詞表現です。主語と対象の関係に応じて「〜してあげる」または「〜してくれる」の意味になります。相手に頼むときは「-아/어 주세요（〜してください）」となり、目上の人のために行為を行う場合は敬語表現の「-아/어 드리다（〜してさしあげる）」を用います。",
+    "formation": "語幹末尾の母音がㅏ・ㅗ ＋ 아 주다 ／ その他の母音 ＋ 어 주다 ／ 하다動詞 → 해주다（敬語：-아/어 드리다）",
+    "examples": [
+      {
+        "translation": "私は母にご飯を作ってあげようと料理を習っています。"
+      },
+      {
+        "translation": "友達が試験勉強で苦労していたので、私がまとめてあげました。"
+      },
+      {
+        "translation": "父が疲れていたので、私が運転をしてあげました。"
+      },
+      {
+        "translation": "チームのメンバーたちが忙しかったので、今回の報告書を代わりに作成してあげました。"
+      }
+    ]
   },
   "ko_했더니_70": {
-    "title": "~했더니 [haetdeoni] (When, and then)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます 'when something happened and then something else happened as a result'.",
-    "longExplanation": "'~했더니 [haetdeoni]' is a grammar point used in Korean to signify a cause-and-effect relationship where the first action directly leads to the second action. This construction denotes 'when I did [first action], and then [second action] happened'. It is often used in instances when the result is unexpected or surprising, emphasizing that the second action is a direct result of the first action.",
-    "formation": "動詞 in past tense + 더니 + Resulting action or state"
+    "title": "-았/었더니（〜してみたら、〜したところ）",
+    "shortExplanation": "話者が過去に自らその行動をとった結果、新たな事実を発見したり、ある結果が生じたりしたことを表します（「〜してみたら」「〜したところ」）。",
+    "longExplanation": "「-았/었더니」は、過去の事象を回想する接続語尾「-더니」に過去完了が結びついた表現です。前節の主語は通常話者自身（一人称）であり、話者が自らその動作を実行した結果、(1) 予想外の事態や新しい事実を目の当たりにして気付いたこと、(2) その動作が直接の原因となって後節の結果が生じたことを表します。日本語の「〜してみたら」「〜したところ」「〜した結果」に相当します。",
+    "formation": "語幹末尾の母音がㅏ・ㅗ ＋ 았더니 ／ その他の母音 ＋ 었더니 ／ 하다動詞 → 했더니",
+    "examples": [
+      {
+        "translation": "このケーキを食べてみたら、思ったよりずっと美味しくて、もっと食べたくなりました。"
+      },
+      {
+        "translation": "私が出勤してみると、オフィスには誰もいませんでした。"
+      },
+      {
+        "translation": "この本を読んでみたら、最初に思っていたよりもずっと面白かったです。"
+      },
+      {
+        "translation": "友達と久しぶりに会ってみると、本当に嬉しかったです。"
+      }
+    ]
   },
   "ko_했었다_71": {
-    "title": "~했었다 [haesseotda] (Had done)",
-    "shortExplanation": "Used to describe an action that had been done in the past, before another action or situation.",
-    "longExplanation": "'~했었다 [haesseotda]' is a verb ending used in Korean to express an action that had been completed before another event or action occurred. This form is similar to the English past perfect tense, often used to explain a past event or situation that happened prior to another past event. It can also be used to explain past regrets, experiences, and situations that were true in the past but not necessarily in the present.",
-    "formation": "動詞 Stem + 했었다"
+    "title": "~았/었었다 / ~했었다（〜したことがあった、〜していた）",
+    "shortExplanation": "過去に完了した動作や状態が、現在ではもう続いていないことや、現在とは状況が異なること（過去完了・断絶の過去）を表します。",
+    "longExplanation": "「~았/었었다」（動詞하다の場合は「했었다」）は、過去のある時点で発生・完了した事態が現在では完全に終了し、その状態がもはや続いていないこと（現在との断絶）を表す文法表現です。単なる過去形（~았다/었다）と異なり、「過去にはそうだったが、今は違う」「過去にそういう事態があった」という過去と現在の対比や完了のニュアンスを強く帯びます。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 았었다 / 動詞・形容詞の語幹（その他の母音）＋ 었었다 / 動詞하다 → 했었다",
+    "examples": [
+      {
+        "translation": "その日まで彼女に会うことはありませんでした。しかし、それ以前には数え切れないほどたくさんの手紙を書いていたのです。"
+      },
+      {
+        "translation": "初めて韓国に来た時、私はハングルを全く知りませんでした。それでも、韓国の子供たちにアルファベットを教えるために、あらかじめ韓国語を習っていたのです。"
+      },
+      {
+        "translation": "彼は今朝ホテルに来ていたのですが、お昼にはあの学校にいました。"
+      },
+      {
+        "translation": "私は彼女にたった一度だけ挨拶をしたことがありました。それ以降は彼女に会えませんでした。"
+      }
+    ]
   },
   "ko_했으면_72": {
-    "title": "~했으면 [haesseumyeon] (If it were)",
-    "shortExplanation": "〜を表すために使用されます a hypothetical condition in the past; 'If it were', 'If it could be'.",
-    "longExplanation": "'~했으면 [haesseumyeon]' is a Korean grammar structure 〜を表すために使用されます hypothetical situations or conditions in the past. It's often used to reflect wishes or to suppose different outcomes based on past events, and can be translated as 'If it had been...' or 'If I had done...' in English.",
-    "formation": "動詞 + 았/었으면"
+    "title": "-았/었으면（〜（し）ていたら、〜（だ）ったらよかったのに）",
+    "shortExplanation": "過去の事実と反対のことを仮定し、後悔や残念な気持ち、あるいは別の結果を推測する接続語尾です（「〜していたら」）。",
+    "longExplanation": "「-았/었으면」（하다の場合は「했으면」）は、過去時制語尾「-았/었-」と条件を表す接続語尾「-으면」が結合した表現です。過去に実際には起こらなかった事態を仮定し、「もしあの時〜していれば、こうならなかっただろうに」という後悔や未練、反事実的仮定を表す際によく使われます（後節には「-(으)ㄹ 텐데」「-(으)ㄹ 것이다」などが呼応します）。また、「-았/었으면 좋겠다」の形で強い希望や願望を表すこともできます。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 았으면 / 動詞・形容詞の語幹（その他の母音）＋ 었으면 / 動詞하다 → 했으면",
+    "examples": [
+      {
+        "translation": "あの時海外に出ていれば、今頃寂しくなかっただろうに。"
+      },
+      {
+        "translation": "答えを知っていれば、試験でもっと良い点数が取れていたはずです。"
+      },
+      {
+        "translation": "あなたがその時私を助けてくれていたら、私は失敗しなかったでしょう。"
+      },
+      {
+        "translation": "あの仕事を早く片付けていれば、今こんな問題に直面していなかったはずです。"
+      }
+    ]
   },
   "ko_했을_73": {
-    "title": "~했을 때 [haesseul ttae] (When someone did)",
-    "shortExplanation": "〜を表すために使用されます the time when a particular action or event took place.",
-    "longExplanation": "'~했을 때 [haesseul ttae]' is a verb ending used in Korean to indicate the time when a specific action or event happened in the past. It is typically translated as 'when someone did' in English. It connects two clauses: the first describes the action/event in the past, the second describes the result or consequence.",
-    "formation": "動詞 in past tense + 았을 때/었을 때"
+    "title": "-았/었을 때（〜した時、〜だった時）",
+    "shortExplanation": "過去にある動作が行われた時や、過去のある状態にあった時点を表す表現です（「〜した時」）。",
+    "longExplanation": "「-았/었을 때」は、過去時制「-았/었-」に連体形語尾「-(으)ㄹ」と時を表す名詞「때（時）」が結びついた表現です。過去の特定の時点において、動作が完了していたり、その状態にあった時を振り返って表す際に用いられます。「子供だった時」「習った時」のように過去の出来事の背景や時点を明示します。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 았을 때 / 動詞・形容詞の語幹（その他の母音）＋ 었을 때 / 動詞하다 → 했을 때",
+    "examples": [
+      {
+        "translation": "私は幼かった頃、家族とたくさん旅行に行きました。"
+      },
+      {
+        "translation": "初めて韓国語を習った時、話すことが本当に難しかったです。"
+      },
+      {
+        "translation": "彼が図書館に行った時、私は待たなければなりませんでした。"
+      },
+      {
+        "translation": "あなたが泣いた時、私も悲しくなるのだということに気づきました。"
+      }
+    ]
   },
   "ko_했을_74": {
-    "title": "~했을 텐데 [haesseul tende] (I think I did)",
-    "shortExplanation": "〜を表すために使用されます a strong assumption or belief about a past action or state.",
-    "longExplanation": "'~했을 텐데' is a grammatical expression used in Korean to indicate a strong assumption or belief regarding a past action or state. The speaker believes that the action mentioned likely occurred (or was true), but they do not have direct or definite confirmation. It can also convey a sense of regret or speculation about what probably happened.",
-    "formation": "動詞 stem + 았/었을 텐데"
+    "title": "-았/었을 텐데（〜したはずなのに、〜だっただろうに）",
+    "shortExplanation": "過去の動作や状態について強い推量を前提として提示し、それと食い違う現実や疑問を後節に続ける表現です（「〜したはずなのに」）。",
+    "longExplanation": "「-았/었을 텐데」は、過去の事態に対する推量を表す「-았/었을 터이다」に背景を提示する接続語尾「-(으)ㄴ/는데」が結合した表現です。話し手が「過去にきっと〜したはずだ（〜だったに違いない）」と強く確信・推測していることを背景として述べ、後節でその推測と食い違う意外な結果、疑問、残念な気持ちなどを表します。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 았을 텐데 / 動詞・形容詞の語幹（その他の母音）＋ 었을 텐데 / 動詞하다 → 했을 텐데",
+    "examples": [
+      {
+        "translation": "私はその用紙をすでに提出したはずなのに、なぜまた求められるのか分かりません。"
+      },
+      {
+        "translation": "彼はその知らせを聞いたはずなのに、まだ何の反応もありませんね。"
+      },
+      {
+        "translation": "私たちはその日の会議に出席したはずなのに、名簿に名前がありませんね。"
+      },
+      {
+        "translation": "彼女はこの連絡を受け取ったはずですが、まだ返事が来ません。"
+      }
+    ]
   },
   "ko_했지만_75": {
-    "title": "~했지만 [haetjiman] (But, however)",
-    "shortExplanation": "〜を表すために使用されます a contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "'~했지만 [haetjiman]' is a conjunctive form used in Korean to indicate a contrast or contradiction between two clauses. It is similar to the English conjunctions 'but' or 'however', combining sentences that show a difference or unexpected turn.",
-    "formation": "動詞 + ~했지만"
+    "title": "-았/었지만（〜（し）たけれど、〜（だ）ったが）",
+    "shortExplanation": "過去の事実に対して逆接の関係を表す接続語尾で、「〜したが」「〜だったけれど」という意味を表します。",
+    "longExplanation": "「-았/었지만」（하다の場合は「했지만」）は、過去時制を表す「-았/었-」と逆接の接続語尾「-지만」が結合した表現です。前節で過去に起きた事実や心情を述べつつ、後節でそれと対立する結果や予想外の展開、残念な結末などをつなぐ際に用いられます。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 았지만 / 動詞・形容詞の語幹（その他の母音）＋ 었지만 / 動詞하다 → 했지만",
+    "examples": [
+      {
+        "translation": "たくさん旅行に行きたかったけれど、時間がなくて行けませんでした。"
+      },
+      {
+        "translation": "私は一生懸命勉強したのですが、試験で高い点数を取ることができませんでした。"
+      },
+      {
+        "translation": "彼は楽しいことをたくさんしたかったけれど、毎晩働かなければなりませんでした。"
+      },
+      {
+        "translation": "友達と一緒に遊びたかったのですが、課題のせいで出かけることができませんでした。"
+      }
+    ]
   },
   "ko_아어여서_76": {
-    "title": "~아/어/여서 [a/eo/yeoseo] (Because, so)",
-    "shortExplanation": "〜を示します the reason or cause for something; can be translated as 'because' or 'so'.",
-    "longExplanation": "The '~아/어/여서' ending is used in Korean to denote a cause-and-effect relationship between two clauses. The clause that contains '~아/어/여서' indicates the reason or cause, and the main clause describes the result. Which form (아/어/여) you use depends on the verb stem’s final vowel or '하다' (which becomes '해서').",
-    "formation": "動詞 stem + 아/어/여서 + Result clause"
+    "title": "-아/어서（〜ので、〜て・〜で）",
+    "shortExplanation": "原因や理由を表す代表的な接続語尾で、自然な因果関係を表します（「〜ので」「〜て」）。",
+    "longExplanation": "「-아/어서」は、前節で原因・理由を述べ、後節でその結果を導く接続語尾です。客観的・自然な因果関係を表す際によく用いられます。重要な文法上の制約として、前節に過去時制「-았/었-」を使うことはできず、また後節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできません（その場合は「-(으)니까」を使用します）。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 아서 / 動詞・形容詞の語幹（その他の母音）＋ 어서 / 動詞하다 → 해서（または하여）",
+    "examples": [
+      {
+        "translation": "お腹が空いたのでご飯をたくさん食べました。"
+      },
+      {
+        "translation": "彼は性格が良いので友達が多いです。"
+      },
+      {
+        "translation": "電車が遅れたので会社に遅刻しました。"
+      },
+      {
+        "translation": "この部屋はあまりにもうるさくて勉強ができません。"
+      }
+    ]
   },
   "ko_아어여야_77": {
-    "title": "~아/어/여야 [a/eo/yeoya] (Have to)",
-    "shortExplanation": "〜を表すために使用されます necessity or obligation; 'have to', 'must'.",
-    "longExplanation": "'~아/어/여야' is a Korean grammar pattern 〜を示します that a certain action must be done or a condition must be met, similar to 'have to' or 'must' in English. The verb stem is followed by 아/어/여야 (and often combined with 하다 or 되다) to convey obligation.",
-    "formation": "動詞 Stem + 아/어/여야 (하다/된다/합니다)"
+    "title": "-아/어야（〜してこそ、〜しなければならない）",
+    "shortExplanation": "必須の前提条件を表す接続語尾で、「〜してこそ」「〜でなければ」という意味を表します。「하다/되だ」が続くと義務・当為（〜しなければならない）を表します。",
+    "longExplanation": "「-아/어야」は、後節の事態が成り立つために不可欠な必須条件を表す接続語尾です（「〜して初めて」「〜してこそ」）。また、補助動詞「하다」や「되다」と結合して「-아/어야 하다/되다」の形をとると、「〜しなければならない」「〜する必要がある」という義務、当為、必然性を表す極めて重要な日常表現になります（文語では하다が하여야となることもあります）。",
+    "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ）＋ 아야 (하다/되다) / 動詞・形容詞の語幹（その他の母音）＋ 어야 (하다/되다) / 動詞하다 → 해야 (하다/되다)（書面語：하여야）",
+    "examples": [
+      {
+        "translation": "期末試験のために、難しい問題をたくさん解かなければなりません。"
+      },
+      {
+        "translation": "今日は早く寝てこそ、明日疲れを感じずに済みそうです。"
+      },
+      {
+        "translation": "今月のために、私はもっと多くのお金を稼がなければなりません。"
+      },
+      {
+        "translation": "プロジェクトを提出する前に、チームメンバーとミーティングを行わなければなりません。"
+      }
+    ]
   },
   "ko_후에_78": {
-    "title": "~후에 [hue] (After)",
-    "shortExplanation": "〜を示します that an action or event happens after another action or event.",
-    "longExplanation": "'~후에 [hue]' is a time-related grammar point in Korean that means 'after'. It connects two different events or actions, emphasizing the chronological order: the second event happens after the first.",
-    "formation": "動詞 (으)ㄴ + 후에"
+    "title": "-(으)ㄴ 후에（〜した後に、〜してから）",
+    "shortExplanation": "前節の動作が完了した後に、後節の動作が行われるという時間的順序を表します（「〜した後に」）。",
+    "longExplanation": "「-(으)ㄴ 후에」は、過去完了の連体形語尾「-(으)ㄴ」に「後」を意味する名詞「후」と助詞「에」が結びついた表現です。先行する動作が完全に終わった後に後行の動作が行われるという、時間の前後関係を明確に示す際に使われます。名詞に直接付く場合は「名詞 ＋ 후에」の形をとります。",
+    "formation": "子音（ㄹを除く）で終わる動詞の語幹 ＋ 은 후에 / 母音または子音ㄹで終わる動詞の語幹 ＋ ㄴ 후에 / 名詞 ＋ 후에",
+    "examples": [
+      {
+        "translation": "私は学校を卒業した後にすぐ就職活動を始めました。他の用事もあって休む暇がありませんでした。"
+      },
+      {
+        "translation": "私は毎日起きた後に運動をして、また家に戻って身支度をします。"
+      },
+      {
+        "translation": "ご飯を食べた後に休憩時間があるので、友達とおしゃべりをします。"
+      },
+      {
+        "translation": "勉強した後に試験を受ける予定ですが、時間があまりありません。"
+      }
+    ]
   },
   "ko__79": {
-    "title": "~(으)나 [(eu)na] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contradiction or opposition; 'but', 'however'.",
-    "longExplanation": "'~(으)나 [(eu)na]' is a conjunction used in Korean to indicate a contrast or contradiction between two clauses or sentences. It delivers a meaning similar to 'but' or 'however' in English, and is often used when presenting a surprising or opposing fact.",
-    "formation": "Statement + ~(으)나 + Contradictory statement"
+    "title": "-(으)나（〜が、〜けれども）",
+    "shortExplanation": "書き言葉や改まった場面で使われる逆接の接続語尾で、前後の内容が対立・相反することを表します（「〜であるが」「〜ものの」）。",
+    "longExplanation": "「-(으)나」は、文章語（書き言葉）や公式の演説・ニュースなどで頻繁に用いられる逆接の接続語尾です（日常会話の「-지만」に相当）。前節と後節で対照的な事実や相反する状況を簡潔かつ格調高くつなぐ働きをします。過去形と結びついて「-았/었으나」の形でもよく用いられます。",
+    "formation": "子音（ㄹを除く）で終わる動詞・形容詞の語幹 ＋ 으나 / 母音または子音ㄹで終わる動詞・形容詞の語幹 ＋ 나（過去時制：-았/었으나）",
+    "examples": [
+      {
+        "translation": "今日は実は気分が良いのですが、雨が降りそうな天気なので少ししんどいです。"
+      },
+      {
+        "translation": "家に帰りたいものの、もっと勉強しなければならないので学校に残らなければなりません。"
+      },
+      {
+        "translation": "私をはじめ友達もこの映画を見る予定だったのですが、チケットが全席売り切れてしまい見ることができませんでした。"
+      },
+      {
+        "translation": "宿題は多いのですが、あまりにも難しくて本当にどうすればいいのか分かりません。"
+      }
+    ]
   },
   "ko__80": {
-    "title": "~(으)ㄹ까요? [(eu)lkka yo?] (Shall we?)",
-    "shortExplanation": "Used to make a suggestion or proposal to do something together.",
-    "longExplanation": "'~(으)ㄹ까요?' is a Korean sentence ending used when the speaker proposes doing something together. With verbs ending in a vowel, 'ㄹ까요?' is added, while those ending in a consonant take '을까요?'. It corresponds to 'Shall we...?' or 'Should we...?' in English.",
-    "formation": "動詞-stem + (으)ㄹ까요?"
+    "title": "-(으)ㄹ까요?（〜（し）ましょうか、〜（し）ようか）",
+    "shortExplanation": "相手の意向を尋ねたり、一緒に何かをしようと提案・勧誘する終結語尾です（「〜しましょうか」「〜しようか」）。",
+    "longExplanation": "「-(으)ㄹ까요?」は、丁寧形（ヘヨ体）の疑問形終結語尾です。主語が「私たち」の場合は、「一緒に〜しましょうか？」と相手の意向を伺いながら共同の行動を提案・勧誘する表現になります。主語が「私」の場合は「私が〜しましょうか？」と自発的な申し出を表し、第三者や客観的事象を対象にする場合は「〜でしょうか？」という推量の問いかけを表します。",
+    "formation": "子音（ㄹを除く）で終わる動詞の語幹 ＋ 을까요? / 母音または子音ㄹで終わる動詞の語幹 ＋ ㄹ까요?",
+    "examples": [
+      {
+        "translation": "私たち、写真を撮りましょうか？天気がいいので素敵な写真が撮れそうですよ。"
+      },
+      {
+        "translation": "お昼休みに一緒に運動しましょうか？体を動かすのは健康に良いじゃないですか。"
+      },
+      {
+        "translation": "今週末に映画を見ましょうか？面白い映画がたくさん公開されましたよ。"
+      },
+      {
+        "translation": "一緒にコーヒーを飲みましょうか？コーヒーを飲みながらおしゃべりしたら楽しそうですね。"
+      }
+    ]
   },
   "ko__81": {
-    "title": "~(으)ㄹ래요 [(eu)llae yo] (I will)",
-    "shortExplanation": "This grammar point is used when the speaker is suggesting doing something or explaining his/her intention.",
-    "longExplanation": "'~(으)ㄹ래요 [(eu)llae yo]' is a Korean grammar structure 〜を表すために使用されます the speaker's intention or decision to perform an action. It can also indicate a suggestion, inviting others to join or agree. It is typically used in informal or polite-casual situations among friends, family, and people who are about the same age or younger.",
-    "formation": "(動詞 stem) + (으)ㄹ래요"
+    "title": "-(으)ㄹ래요（〜（し）ます、〜（し）ませんか）",
+    "shortExplanation": "平叙文では話し手の意思や選択を表し、疑問文では相手の意向を親しく尋ねたり勧誘したりする終結語尾です。",
+    "longExplanation": "「-(으)ㄹ래요」は、親しい間柄での日常会話でよく使われる終結語尾です。平叙文（主語が私）では、話し手の自発的な意思や「〜するつもりだ」「〜したい」という選択・決定を表します。疑問文（-(으)ㄹ래요?）では、相手の意向を気兼ねなく尋ねたり、「〜しませんか？」「〜したいですか？」と柔らかく提案・勧誘したりする表現になります。",
+    "formation": "子音（ㄹを除く）で終わる動詞の語幹 ＋ 을래요 / 母音または子音ㄹで終わる動詞の語幹 ＋ ㄹ래요",
+    "examples": [
+      {
+        "translation": "夕方に一緒に映画を見ませんか？良い映画を見つけておいたんです。"
+      },
+      {
+        "translation": "天気が良いので外でお昼ご飯を食べたいと思います。新鮮な空気を楽しみながら食事ができますよ。"
+      },
+      {
+        "translation": "今晩私とチェスをしませんか？ずっと練習してきたんです。"
+      },
+      {
+        "translation": "あなたの落とし物を探してあげますよ。タクシーの運転手さんに連絡してみますね。"
+      }
+    ]
   },
   "ko__82": {
-    "title": "~(으)면서 [(eu)myeonseo] (While)",
-    "shortExplanation": "〜を表すために使用されます 'while' or 'at the same time' in Korean.",
-    "longExplanation": "'~(으)면서 [(eu)myeonseo]' is used in Korean to denote simultaneous actions or states. It is similar to 'while' in English, indicating that two or more actions are happening at the same time. It can also be 〜を表すために使用されます contradictions between two clauses, akin to 'but' or 'however', especially when the two clauses seem unexpected together.",
-    "formation": "動詞 + ~(으)면서"
+    "title": "-(으)면서（〜しながら、〜でありながら）",
+    "shortExplanation": "同一の主語が2つ以上の動作や状態を同時に並行して行うことを表す接続語尾です（「〜しながら」）。",
+    "longExplanation": "「-(으)면서」は、前節と後節の動作や状態が同時に並行して行われていることを表す接続語尾です。基本的に前後の文の主語は同一でなければなりません（「音楽を聴きながら勉強する」など）。また、両立しにくい二つの動作や状態が同時に存在することを表し、「〜でありながら（実は…）」「〜のくせに」という逆接や対比のニュアンスを帯びることもあります。",
+    "formation": "子音（ㄹを除く）で終わる動詞・形容詞の語幹 ＋ 으면서 / 母音または子音ㄹで終わる動詞・形容詞の語幹 ＋ 면서",
+    "examples": [
+      {
+        "translation": "私は学校に通いながらフルタイムで働いています。"
+      },
+      {
+        "translation": "スンミンは音楽を聴きながら勉強をしています。"
+      },
+      {
+        "translation": "彼は涙を流しながら笑いました。喜びがあふれ出たからです。"
+      },
+      {
+        "translation": "おばあちゃんは料理をしながら居間でお話をしてくれるのですが、私はそれがすごい特技だと思います。"
+      }
+    ]
   },
   "ko__83": {
-    "title": "~(으)로 [(eu)ro] (Towards, by means of)",
-    "shortExplanation": "This particle is 〜を表すために使用されます direction, means or method, or the purpose of an action.",
-    "longExplanation": "'~(으)로 [(eu)ro]' is a particle in Korean that can express: (1) the direction towards which an action is made, (2) the means or method by which an action is carried out, or (3) the intended result or purpose of an action. Depending on context, it can correspond to English prepositions like 'to', 'by', 'with', 'as', or 'for'.",
-    "formation": "If the preceding noun ends with a vowel, use '로'. If it ends with a consonant, use '으로'."
+    "title": "-(으)로（〜へ、〜に、〜で、〜によって）",
+    "shortExplanation": "方向（〜へ・〜に向かって）や、手段・道具・交通機関・方法・材料（〜で）などを表す助詞です。",
+    "longExplanation": "「-(으)로」は名詞の後に付き、多様な副詞的意味を表す重要な格助詞です。主な機能として、(1) 移動の向かう方向や目的地（〜へ、〜に向かって）、(2) 動作を行うための手段・道具・交通手段・方法・材料（〜で、〜を使って）、(3) 資格や身分、変化の結果（〜として、〜に）などを表します。",
+    "formation": "子音（ㄹを除く）で終わる名詞 ＋ 으로 / 母音または子音ㄹで終わる名詞 ＋ 로",
+    "examples": [
+      {
+        "translation": "私は毎朝地下鉄で会社に行きます。"
+      },
+      {
+        "translation": "私はこの問題を解決するために新しい方法で試みました。"
+      },
+      {
+        "translation": "私は友達を空港まで見送りました。"
+      },
+      {
+        "translation": "旅行の計画を立てることは紙とペンで行いました。"
+      }
+    ]
   },
   "ko__84": {
-    "title": "~(으)로서 [(eu)roseo] (As)",
-    "shortExplanation": "Used to mean 'as' or 'in the capacity of'.",
-    "longExplanation": "The Korean grammar point '~(으)로서 [(eu)roseo]' is 〜を表すために使用されます the concept of doing or existing in the capacity or status of something or someone. This is akin to the English preposition 'as'. If the noun ends with a consonant, use 으로서; if the noun ends with a vowel, use 로서.",
-    "formation": "Consonant-ending noun + 으로서 / Vowel-ending noun + 로서"
+    "title": "-(으)로서（〜として、〜の立場で）",
+    "shortExplanation": "人や物の身分、地位、資格、立場を表す助詞です（「〜として」「〜の立場から」）。",
+    "longExplanation": "「-(으)로서」は、名詞の後に付き、その人物や事物が持っている資格、身分、地位、役割などを表す格助詞です（「学生として」「親として」など）。行為者がどのような立場や責任において行動しているかを明確にする際に用いられます。手段や道具を表す「-(으)로써」と発音やスペルが似ているため混同しないよう注意が必要です。",
+    "formation": "子音（ㄹを除く）で終わる名詞 ＋ 으로서 / 母音または子音ㄹで終わる名詞 ＋ 로서",
+    "examples": [
+      {
+        "translation": "記者としての役割を全力で果たしています。"
+      },
+      {
+        "translation": "私は一人の学生として自分の義務を果たさなければなりません。"
+      },
+      {
+        "translation": "最後に、国民として極めて重要な仕事を行わなければなりません。"
+      },
+      {
+        "translation": "母として彼女は常に家族のために最善を尽くしています。"
+      }
+    ]
   },
   "ko__85": {
-    "title": "~(으)로써 [(eu)rosseo] (By, as)",
-    "shortExplanation": "〜を表すために使用されます the means or method of something; similar to 'by', 'as', or 'via' in English.",
-    "longExplanation": "'~(으)로써 [(eu)rosseo]' is used in Korean to indicate the method or means by which something is accomplished, or the capacity in which someone is acting. It emphasizes 'by means of', 'with', 'as', or 'via'. In everyday speech, '~(으)로써' is somewhat formal/literary, while '(으)로' often suffices. But '(으)로써' more explicitly stresses the means or instrument.",
-    "formation": "名詞 + ~(으)로써"
+    "title": "-(으)로써（〜をもって、〜によって、〜を通じて）",
+    "shortExplanation": "何らかの手段、道具、方法、材料を強調して表す改まった助詞です（「〜をもって」「〜によって」）。",
+    "longExplanation": "「-(으)로써」は、名詞の後に付き（動名詞「-(으)ㅁ으로써」の形でも多用されます）、ある目的を達成したり結果をもたらしたりするための手段、道具、方法、材料を明示・強調する格助詞です。単なる「-(으)로」よりも格調高く格式ばった文脈で用いられます。資格や立場を表す「-(으)로서」とは明確に使い分ける必要があります。",
+    "formation": "子音（ㄹを除く）で終わる名詞 ＋ 으로써 / 母音または子音ㄹで終わる名詞 ＋ 로써",
+    "examples": [
+      {
+        "translation": "私はこの成果を達成するために、努力によって成功を収めました。"
+      },
+      {
+        "translation": "彼は時間管理を通じて自分自身をコントロールする方法を学びました。"
+      },
+      {
+        "translation": "この宿題は彼女の教えのおかげで（教えをもって）完成させました。"
+      },
+      {
+        "translation": "監督という立場・手腕をもって、彼は映画を完成させました。"
+      }
+    ]
   },
   "ko__86": {
-    "title": "~(으)려고 하다 [(eu)ryeogo hada] (To try to)",
-    "shortExplanation": "This structure is 〜を表すために使用されます 'trying to do' something or 'intending to do' something.",
-    "longExplanation": "'~(으)려고 하다 [(eu)ryeogo hada]' is a useful grammar pattern in Korean that indicates an intention or a plan to perform an action in the future. It corresponds to English expressions like 'I’m going to…' or 'I intend to…'. It can also show that someone is actively making an effort to achieve a goal.",
-    "formation": "動詞 Stem + (으)려고 하다"
+    "title": "-(으)려고 하다（〜しようとする、〜するつもりだ）",
+    "shortExplanation": "話者の意図や今後の計画、または目標に向かって努力しようとする姿勢を表す表現です（「〜するつもりだ」「〜しようとする」）。",
+    "longExplanation": "「-(으)려고 하다」は、主語が将来ある行動をしようとする意図や計画を表す表現で、日本語の「〜するつもりだ」「〜しようと思っている」「〜しようとする」に相当します。また、ある目的を達成するために努力している最中であるニュアンスを表すこともあります。過去形「-(으)려고 했다」にすると、「〜しようとしたが（できなかった、途中で変わった）」という含みを持つことが多くなります。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려고 하다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려고 하다",
+    "examples": [
+      {
+        "translation": "韓国語をもっと上達させようとして、毎日たくさん練習しています。"
+      },
+      {
+        "translation": "母は美味しい夕食を準備しようと、料理の勉強をしています。"
+      },
+      {
+        "translation": "弟はもっと背を伸ばそうと、毎日運動しようとしています。"
+      },
+      {
+        "translation": "友達が勧めてくれた新しいアプリを使おうとして、スマートフォンをアップデートしました。"
+      }
+    ]
   },
   "ko__87": {
-    "title": "~(으)리라 [(eu)rira] (Probably)",
-    "shortExplanation": "This grammar form is 〜を表すために使用されます a supposition or assumption by the speaker, similar to 'probably' in English.",
-    "longExplanation": "'~(으)리라 [(eu)rira]' is a somewhat formal or literary form in Korean used when the speaker is making a supposition or assumption about something, much like 'probably' in English. If the verb stem ends in a consonant, add '으리라'; if it ends in a vowel, simply use '리라.' It can appear in both daily speech and writing, although it has a slightly more elevated nuance.",
-    "formation": "動詞 stem + (으)리라"
+    "title": "-(으)리라（〜だろう、〜であろう）",
+    "shortExplanation": "文語的・格式のある表現で、話者の推測や予想、または強い意志を表す終結語尾です（「〜だろう」「〜であろう」）。",
+    "longExplanation": "「-(으)리라」は、やや改まった場面や文語体で用いられ、話者が未来の事態やある状況について推測・確信することを表す終結語尾です。日本語の「〜だろう」「〜であろう」「〜に違いない」に相当します。主語が一人称で独白的な文脈脈脈では「〜しよう」「必ず〜するぞ」という強い決意を表すこともあります。「-(으)리라 생각하다（〜だろうと思う）」「-(으)리라 확신하다（〜だろうと確信する）」などの形で引用節としてよく使われます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으리라 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 리라",
+    "examples": [
+      {
+        "translation": "彼は明日きっと出勤するだろうと思います。"
+      },
+      {
+        "translation": "期末試験の成績は良いだろうと確信しています。"
+      },
+      {
+        "translation": "雨が降るだろうと思って傘を持ってきました。"
+      },
+      {
+        "translation": "私は会社で急速に昇進するだろうと予想していました。"
+      }
+    ]
   },
   "ko__88": {
-    "title": "~(으)실 거예요 [(eu)sil geoyeyo] (You will probably)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます an educated guess or assumption about a future action, typically regarding a third person or in polite speech.",
-    "longExplanation": "'~(으)실 거예요 [(eu)sil geoyeyo]' is a future tense form that expresses a polite assumption about someone's future action or state. The speaker is making an educated guess based on available information. It can also convey someone’s future plan in an honorific/polite way.",
-    "formation": "動詞 stem + (으)실 거예요"
+    "title": "-(으)실 거예요（〜されるでしょう、〜なさるはずです）",
+    "shortExplanation": "主体尊敬語尾「-(으)시-」と未来・推量表現「-(으)ㄹ 거예요」を組み合わせ、目上の人の行動や状態を丁寧に推測・表現します。",
+    "longExplanation": "「-(으)실 거예요」は、主語を高める主体尊敬語尾「-(으)시-」に、未来や推量を表す「-(으)ㄹ 거예요」が結合した丁寧な表現です。親、先生、上司など尊敬すべき人物の今後の予定を丁寧に述べたり、その人の行動や状態について「〜されるでしょう」「〜なさるはずです」と礼儀正しく推量する際に用いられます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으실 거예요 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 실 거예요",
+    "examples": [
+      {
+        "translation": "お母様は明日朝早く出かけられるでしょうから、前もって朝食を準備しておいてください。"
+      },
+      {
+        "translation": "先生はこの問題についてよくご存知のはずです。"
+      },
+      {
+        "translation": "両親はおそらく来週会社に行かれるだろうと考えていらっしゃるはずです。"
+      },
+      {
+        "translation": "大統領は来年もここをご訪問なさるでしょう。"
+      }
+    ]
   },
   "ko__89": {
-    "title": "~(으)면 좋겠다 [(eu)myeon jokgetda] (It would be good if)",
-    "shortExplanation": "〜を表すために使用されます a hope or wish for something to occur in the future.",
-    "longExplanation": "'~(으)면 좋겠다 [(eu)myeon jokgetda]' is a structure used in Korean to articulate a hope, wish, or desire for a future event or situation. It is similar to saying 'It would be nice if...' or 'I wish...' in English.",
-    "formation": "動詞-stem + (으)면 좋겠다"
+    "title": "-(으)면 좋겠다（〜ならいいな、〜だといいと思う）",
+    "shortExplanation": "話者の希望や願い、こうあってほしいという願望を表す表現です（「〜だといいな」「〜してほしい」）。",
+    "longExplanation": "「-(으)면 좋겠다」は、条件の接続語尾「-(으)면」に「良い」を意味する「좋다」の推量形が結びついた表現で、日本語の「〜ならいいな」「〜であればいいのに」「〜したい」に相当します。過去形を用いた「-았/었으면 좋겠다」にすると、より切実な願いや、現状とは異なることへの願望（仮定）を表すニュアンスが強まります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으면 좋겠다 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 면 좋겠다（または過去形：-았/었으면 좋겠다）",
+    "examples": [
+      {
+        "translation": "明日は天気が良ければいいなと思います。出かける予定があるので晴れてほしいです。"
+      },
+      {
+        "translation": "試験で良い結果が出せたらいいな。たくさん努力したんだから。"
+      },
+      {
+        "translation": "チキンが食べられたらいいのに。チキンが大好きだからです。"
+      },
+      {
+        "translation": "旅行に行けたらいいのになあ。家に閉じこもっていて本当に退屈です。"
+      }
+    ]
   },
   "ko__90": {
-    "title": "~(으)면서도 [(eu)myeonseodo] (While, although)",
-    "shortExplanation": "〜を表すために使用されます 'while' or 'although', indicating a situation or action that happens concurrently with another, or contrary to expectation.",
-    "longExplanation": "The grammar point '~(으)면서도' is used in Korean to indicate that an event or situation is happening while another is also taking place, or when something is contrary to expectation. 〜と訳されます 'while' or 'although'. This form can be used with both action verbs and descriptive verbs. You can express the continuation of two situations at the same time, or describe a contrasting situation that defies expectation.",
-    "formation": "動詞-stem + (으)면서도"
+    "title": "-(으)면서도（〜でありながらも、〜しつつも）",
+    "shortExplanation": "2つの動作や状態が同時に存在しながらも、それらが対照的・矛盾していることを表す接続語尾です（「〜でありながらも」「〜なのに」）。",
+    "longExplanation": "「-(으)면서도」は、同時進行を表す接続語尾「-(으)면서」に対照や強調の助詞「도」が結びついた表現です。2つの動作や状態が同時に起こっていることを表すだけでなく、それらが互いに矛盾していたり、常識的な予想に反しているというニュアンスを強調します。日本語の「〜しながらも」「〜でありながらも」「〜くせに」に相当します。主語は前後で同一である必要があります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으면서도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 면서도",
+    "examples": [
+      {
+        "translation": "彼は怒りながらも微笑みを浮かべた。"
+      },
+      {
+        "translation": "彼女は具合が悪かったにもかかわらず学校に行った。"
+      },
+      {
+        "translation": "雨が降っていながらも、放送はそのまま続けられていました。"
+      },
+      {
+        "translation": "この幼い子供は映画を見ながらも、常に遊ぶ計画を立てていた。"
+      }
+    ]
   },
   "ko__91": {
-    "title": "~(으)니까 [(eu)nikka] (Because, Since)",
-    "shortExplanation": "〜を表すために使用されます cause and effect, or to provide a reason or explanation.",
-    "longExplanation": "'~(으)니까' is a conjunction used in Korean to express the relationship of cause and effect between two clauses, similar to 'because' or 'since' in English. It attaches to the verb (or adjective) stem, stating the reason why something is or will be in a certain state, or explaining the cause of an action or situation.",
-    "formation": "動詞-으니까 / 形容詞-으니까"
+    "title": "-(으)니까（〜だから、〜ので）",
+    "shortExplanation": "理由や原因、判断の根拠を表す接続語尾です。後続節に命令文や勧誘文を用いることができます（「〜だから」「〜ので」）。",
+    "longExplanation": "「-(으)니까」は、前節が後節の理由や根拠であることを表す接続語尾です。「-아/어서」とは異なり、話者の主観的な判断や主張を表す際に多く使われ、後節に「〜してください（-(으)세요）」や「〜しましょう（-(으)ㅂ시다）」といった命令・勧誘・依頼の表現を自由に続けることができます。また、ある行動をした結果、新しい事実を発見・認識したことを表す用法もあります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으니까 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 니까（過去形：-았/었으니까）",
+    "examples": [
+      {
+        "translation": "昼ご飯を食べたから、今はお腹が空いていません。"
+      },
+      {
+        "translation": "銀行に行ったので、お金を引き出すことができました。"
+      },
+      {
+        "translation": "静かに勉強しているところだから、邪魔しないでください。"
+      },
+      {
+        "translation": "雨が降っているから、傘を持って行ってください。"
+      }
+    ]
   },
   "ko__92": {
-    "title": "~(으)다 보니 [(eu)da boni] (Seeing that, as)",
-    "shortExplanation": "Used to show the reason or cause of a certain result or situation based on a continuous action or state.",
-    "longExplanation": "'~(으)다 보니' is a grammatical construct in Korean that expresses a result or realization that naturally occurred through ongoing action or state. It's similar to the English expressions 'seeing that' or 'as a result of (continuing to do something)'. It shows that one thing led naturally or inevitably to another.",
-    "formation": "動詞-(으)다 보니"
+    "title": "-다 보니 / -(으)다 보니（〜しているうちに、〜してみると）",
+    "shortExplanation": "ある動作を継続・反復しているうちに、自然とある結果に至ったり新しい事実に気づくことを表します（「〜しているうちに」「〜してみると」）。",
+    "longExplanation": "「-다 보니」（「-다가 보니」の縮約形）は、ある行動を継続的または反復して行っているうちに、自然とその結果として新たな状況に至ったり、何らかの事実に気づいたことを表す表現です。日本語の「〜しているうちに」「〜していると、自然と〜になった」に相当します。後節には話者の実感や、意図せず生じた結果が来ることが一般的です。",
+    "formation": "動詞の語幹 ＋ 다 보니（過去形：-았/었다 보니）",
+    "examples": [
+      {
+        "translation": "早く着いたので、始まる前に少し休めそうです。"
+      },
+      {
+        "translation": "1か月間毎日運動しているうちに、体重が少し落ちました。"
+      },
+      {
+        "translation": "こつこつ勉強を続けているうちに、だんだん韓国語の実力が伸びてきました。"
+      },
+      {
+        "translation": "毎朝早く起きていると、昼ご飯を食べたらすぐに疲れが出てしまいます。"
+      }
+    ]
   },
   "ko__93": {
-    "title": "~(으)다가 [(eu)daga] (And then, but)",
-    "shortExplanation": "Expresses a sequence of actions or represents a contrast in situations.",
-    "longExplanation": "'~(으)다가' is a common Korean grammar point that can mean 'and then' (one action followed by another) or show a shift from one action/situation to a different or contrasting one. It may translate to 'while doing something, then...' or 'but suddenly...' in English, depending on context.",
-    "formation": "動詞 stem + 다가 / 動詞 stem + 으다가 (If the verb stem ends in a consonant)"
+    "title": "-다가 / -(으)다가（〜していて、〜している途中で）",
+    "shortExplanation": "ある動作や状態が続いている途中で中断し、別の動作や事態へと移行することを表す接続語尾です（「〜していて」「〜している途中で」）。",
+    "longExplanation": "「-다가」は、進行中のある動作や状態が途中で中断され、別の動作や新しい状況に移り変わることを表す接続語尾です。日本語の「〜している途中で」「〜しかけて」「〜していて突然〜」に相当します。原則として前後節の主語は同一ですが、停電や天候の急変など外部の突発的な状況が起きる場合には主語が異なることもあります。過去形「-았/었다가」は前のアクションを完了した後に逆の動作に転じる場合などに使われます。",
+    "formation": "動詞・形容詞の語幹 ＋ 다가（過去形：動詞・形容詞の語幹 ＋ 았/었다가）",
+    "examples": [
+      {
+        "translation": "私は本を読んでいる途中で寝落ちしてしまい、最後の部分が読めませんでした。"
+      },
+      {
+        "translation": "私たちは映画を見ていた途中で突然停電になり、結末を見ることができませんでした。"
+      },
+      {
+        "translation": "彼は話している途中で突然吹き出して、みんなを驚かせました。"
+      },
+      {
+        "translation": "家に帰る途中で偶然友達に会って、一緒に夕飯を食べました。"
+      }
+    ]
   },
   "ko__94": {
-    "title": "~(으)던 [(eu)deon] (Who used to)",
-    "shortExplanation": "This is used to describe an action or state that used to exist in the past but does not exist now.",
-    "longExplanation": "'~(으)던' is used when referring back to a past action or state that has since ended or changed. It corresponds to 'who used to' or 'that used to' in English. It often implies something was habitual or continuous, or it was once true but is no longer so.",
-    "formation": "動詞-던 / 形容詞-던"
+    "title": "-던 / -(으)던（〜（してい）た、よく〜していた）",
+    "shortExplanation": "過去の回想を表す連体形語尾で、過去に習慣的に行っていたことや、過去の状態・未完了の動作を修飾します（「〜（してい）た」「昔よく〜していた」）。",
+    "longExplanation": "「-던」は、用言の語幹について後ろの名詞を修飾する回想の連体形語尾です。話者が過去の記憶を思い起こし、「以前よく〜していた」「過去に〜だった」という習慣的・継続的な事柄や、過去に行われていて途中で終わった未完了の動作を表します。現在ではその状態が続いていないことを示唆することが多いです。完全に過去に完了・断絶した事柄には「-았/었던」が用いられます。",
+    "formation": "動詞・形容詞の語幹 ＋ 던（過去完了回想：動詞・形容詞の語幹 ＋ 았/었던）",
+    "examples": [
+      {
+        "translation": "私は子供の頃、よく泣く子でした。でも今はほとんど泣きません。"
+      },
+      {
+        "translation": "彼は子供の頃、いつもりんごが好きだった人でした。しかし今は嫌いになっています。"
+      },
+      {
+        "translation": "私たちの学校には、多くの生徒が嫌っていた数学の先生がいました。"
+      },
+      {
+        "translation": "彼女は前の山に住んでいた親切なおばさんでした。でも今では彼女の姿を見ることはできません。"
+      }
+    ]
   },
   "ko__95": {
-    "title": "~(으)려면 [(eu)ryeomyeon] (In order to)",
-    "shortExplanation": "〜を表すために使用されます the condition or criteria needed to realize a certain goal or result; 'in order to', 'if one wants to'.",
-    "longExplanation": "'~(으)려면' is used in Korean to present the conditions required to achieve a particular outcome or goal. 〜と訳されます 'in order to' or 'if you want to'. It emphasizes that certain conditions must be met for the intended result to happen.",
-    "formation": "動詞 stem + 으려면 (if ending in a consonant) / 動詞 stem + 려면 (if ending in a vowel)"
+    "title": "-(으)려면（〜しようとするなら、〜するには）",
+    "shortExplanation": "意図「-(으)려고 하다」と条件「-(으)면」の縮約形で、ある目的を達成するために必要な条件や方法を提示する接続語尾です（「〜するには」「〜しようとするなら」）。",
+    "longExplanation": "「-(으)려면」は「-(으)려고 하면」が縮まった形で、日本語の「〜しようとするなら」「〜するためには」に相当します。前節で目標や意図を掲げ、後節でその目標を達成するために必要な条件、アドバイス、必須事項を提示します。そのため、後節には「-아/어야 하다（〜しなければならない）」「-(으)세요（〜してください）」「필요하다（必要だ）」などの表現がよく続きます。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려면 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려면",
+    "examples": [
+      {
+        "translation": "韓国語のTOPIK試験に合格しようとするなら、たくさん練習しなければなりません。そうでなければ成功するのは難しいです。"
+      },
+      {
+        "translation": "スポーツジムで体型を維持するには、着実に運動して健康的な食生活を維持しなければなりません。"
+      },
+      {
+        "translation": "この仕事に就くには、関連分野での経験が必要です。それがなければ競争力が不足するでしょう。"
+      },
+      {
+        "translation": "このような問題を防ごうとするなら、もう少し綿密な計画が必要です。そうでなければ同じ問題を再び経験することになりかねません。"
+      }
+    ]
   },
   "ko__96": {
-    "title": "~(으)ㄹ 수록 [(eu)l surok] (The more)",
-    "shortExplanation": "〜を表すために使用されます an increase in degree, intensity, or extent; 'the more... the more...'.",
-    "longExplanation": "'~(으)ㄹ수록' is a pattern used to show that one action or state increasingly affects another, similar to 'the more... the more...' in English. It indicates that as one element increases (or decreases), another is affected proportionally.",
-    "formation": "動詞 stem + ~(으)ㄹ수록"
+    "title": "-(으)ㄹ수록（〜すればするほど、〜であるほど）",
+    "shortExplanation": "前の動作や状態の程度が進むにつれて、それに比例して後ろの事態の程度も増すことを表す接続語尾です（「〜すればするほど」）。",
+    "longExplanation": "「-(으)ㄹ수록」は、前節の行動や状態の程度が深まるのに伴い、後節の事態の程度もそれに比例して増大していくことを表す接続語尾です。日本語の「〜すればするほど」「〜であるほど、ますます〜」に相当します。強調のために「-(으)면 -(으)ㄹ수록（〜すればするほど）」という形で重ねて使われることも非常に多いです。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을수록 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ수록",
+    "examples": [
+      {
+        "translation": "運動をすればするほど健康になるので、毎朝ジョギングをしています。"
+      },
+      {
+        "translation": "勉強をたくさんすればするほど、試験でより良い点数を取ることができます。"
+      },
+      {
+        "translation": "食べ物を早く食べるほど、消化がうまくいかなくなることがあります。"
+      },
+      {
+        "translation": "時間が経てば経つほど、恋しさがより深まっていきます。"
+      }
+    ]
   },
   "ko__97": {
-    "title": "~(으)ㄴ/는 중 [(eu)n/neun jung] (In the middle of)",
-    "shortExplanation": "〜を示します 'in the process' or 'in the middle of' certain actions or states.",
-    "longExplanation": "'~(으)ㄴ/는 중' is used in Korean to express ongoing actions or states, similar to continuous/progressive forms in English. It suggests that the speaker (or subject) is 'in the middle of' doing something right now, or is currently in some state. The form depends on whether the verb ends in a vowel or consonant.",
-    "formation": "動詞 stem + ~(으)ㄴ 중 or 는 중"
+    "title": "-는 중（〜している最中、〜の途中）",
+    "shortExplanation": "動詞の現在連体形語尾「-는」と依存名詞「중（中）」が結びつき、ある動作が進行中・実施中であることを表します（「〜している最中だ」）。",
+    "longExplanation": "「-는 중」は、通常「-는 중이다（〜している最中だ）」「-는 중이라서（〜している最中なので）」の形で用いられ、ある動作がまさに進行中・継続中であることを表す文法です。日本語の「〜している最中だ」「〜の途中だ」に相当します。進行形「-고 있다」と意味は近いですが、「-는 중이다」は客観的にその過程の真っ只中にあることを強調するニュアンスがあります。また、動作性の漢字名詞には直接「名詞 ＋ 중」と接続することもできます（例：회의 중、통화 중）。",
+    "formation": "動詞の語幹 ＋ 는 중（または 動作名詞 ＋ 중）",
+    "examples": [
+      {
+        "translation": "私は今宿題をしている最中なので、後でご連絡します。"
+      },
+      {
+        "translation": "兄は彼女と電話中なので忙しいようです。"
+      },
+      {
+        "translation": "母がずっと質問をしている最中なので、なかなか集中できません。"
+      },
+      {
+        "translation": "彼女は面白い映画を見ている最中で、だから笑っているのです。"
+      }
+    ]
   },
   "ko__98": {
-    "title": "~(으)ㄴ/는 탓에 [(eu)n/neun tase] (Because of)",
-    "shortExplanation": "〜を表すために使用されます the cause of a negative result or situation; 'because of'.",
-    "longExplanation": "'~(으)ㄴ/는 탓에' is a grammar point in Korean 〜を表すために使用されます that a particular cause led to a negative or undesirable outcome. It is akin to 'because of' in English when something unfortunate happens due to a specified reason.",
-    "formation": "節 + ~(으)ㄴ/는 탓에 + Negative outcome"
+    "title": "-(으)ㄴ/는 탓에（〜のせいで、〜したせいで）",
+    "shortExplanation": "連体形語尾と原因・責任を表す依存名詞「탓（せい）」が結合し、好ましくない結果や否定的な事態を招いた原因を表します（「〜のせいで」）。",
+    "longExplanation": "「-(으)ㄴ/는 탓에」は、後節に起こった悪い結果や不運、失敗の原因・理由を表す表現で、日本語の「〜のせいで」「〜したせいで」に相当します。「탓」自体に過失や責任を押し付ける意味合いがあるため、後節には必ず否定的な事態や残念な結果が続きます。良い結果や肯定的な事態には使うことができず、その場合は「-(으)ㄴ/는 덕분에（〜のおかげで）」を用います。",
+    "formation": "動詞過去 ＋ 은/ㄴ 탓에 ／ 動詞現在 ＋ 는 탓에 ／ 形容詞 ＋ 은/ㄴ 탓에 ／ 名詞 ＋ 인 탓에",
+    "examples": [
+      {
+        "translation": "木を切りすぎたせいで町の環境が悪化し、多くの人が体調を崩しています。"
+      },
+      {
+        "translation": "先週食べ過ぎたせいで、今週体重が増えてしまいました。"
+      },
+      {
+        "translation": "十分な練習をしなかったせいで、試験で良い点数が取れませんでした。"
+      },
+      {
+        "translation": "母が材料を買いに行かなければならなかったのに、終電（最終バス）を逃したせいで今日は料理ができません。"
+      }
+    ]
   },
   "ko__99": {
-    "title": "~(으)ㄴ/는데다가 [(eu)n/neundedaga] (Moreover, additionally)",
-    "shortExplanation": "Used to add more information, similar to 'moreover' or 'additionally' in English.",
-    "longExplanation": "'~(으)ㄴ/는데다가' is a compound grammar form in Korean used to add an extra piece of information on top of what was already mentioned, similar to 'moreover', 'besides', or 'furthermore' in English. It can attach to verbs, adjectives, or nouns (with the right connectors), providing an additional detail or characteristic that reinforces what came before.",
-    "formation": "(動詞/形容詞/名詞) + ~(으)ㄴ/는데다가 + [Sentence]"
+    "title": "-(으)ㄴ/는데다가（〜な上に、〜である上に）",
+    "shortExplanation": "前節で述べた事柄や性質に加えて、さらに同性質の別の事柄が重なることを表す累積・累加の表現です（「〜な上に」「〜だけでなくさらに」）。",
+    "longExplanation": "「-(으)ㄴ/는데다가」は、連体形語尾に依存名詞「데（ところ、こと）」と助詞「다가」が結合した表現で、日本語の「〜な上に」「〜である上」「〜に加えて」に相当します。前節の事実にさらに別の事実を付け加えて強調する際に用いられます。注意点として、前節と後節は同じ評価の方向性（プラスとプラス、またはマイナスとマイナス）で揃える必要があります。",
+    "formation": "形容詞 ＋ 은/ㄴ 데다가 ／ 動詞現在 ＋ 는 데다가（過去：은/ㄴ 데다가） ／ 名詞 ＋ 인 데다가",
+    "examples": [
+      {
+        "translation": "このカフェは雰囲気が良い上に、コーヒーの味も素晴らしいです。"
+      },
+      {
+        "translation": "その本は面白い上に、有益でさえあります。"
+      },
+      {
+        "translation": "この携帯電話は価格が手頃な上に、機能も多様です。"
+      },
+      {
+        "translation": "彼は優しい上に頭も良いので、みんな彼が好きです。"
+      }
+    ]
   },
   "ko__100": {
-    "title": "~(으)ㄴ/는데도 불구하고 [(eu)n/neundedo bulguhago] (Despite, in spite of)",
-    "shortExplanation": "〜を表すために使用されます 'despite' or 'in spite of'.",
-    "longExplanation": "'~(으)ㄴ/는데도 불구하고' is a longer conjunction in Korean that indicates a counter-expected result. It means 'despite' or 'in spite of' the first clause, the second (often unexpected) result still happened. It emphasizes that the outcome defies the expectation one might have based on the first clause.",
-    "formation": "形容詞/動詞 in past or present tense + ~(으)ㄴ/는데도 불구하고"
+    "title": "-(으)ㄴ/는데도 불구하고（〜にもかかわらず、〜であるにもかかわらず）",
+    "shortExplanation": "前節の状況や障害にもかかわらず、予想や期待に反して後節の事態が起きることを表す強い逆接表現です（「〜にもかかわらず」）。",
+    "longExplanation": "「-(으)ㄴ/는데도 불구하고」は、強い譲歩と逆接を表す表現で、日本語の「〜にもかかわらず」「〜であるのに」に相当します。前節で障害となる状況や前提を提示し、通常ならその影響を受けるはずであるにもかかわらず、後節ではその予想に反した行動や結果が成立することを強調します。単なる「-(으)ㄴ/는데도」に比べて、より強調された格式のあるニュアンスを持ちます。",
+    "formation": "形容詞 ＋ 은/ㄴ 데도 불구하고 ／ 動詞現在 ＋ 는데도 불구하고（過去：았/었는데도 불구하고） ／ 名詞 ＋ 인데도 불구하고",
+    "examples": [
+      {
+        "translation": "雨が降っているにもかかわらず、彼女は外に出て楽しく遊びました。"
+      },
+      {
+        "translation": "彼は体調が悪かったにもかかわらず、学校に行きました。"
+      },
+      {
+        "translation": "望む結果が得られなかったにもかかわらず、私たちは努力を続けました。"
+      },
+      {
+        "translation": "試験が難しかったにもかかわらず、彼はよくできました。"
+      }
+    ]
   },
   "ko__101": {
-    "title": "~(으)ㄴ/는지 모르겠다 [(eu)n/neunji moreugessda] (I'm not sure if)",
-    "shortExplanation": "〜を表すために使用されます uncertainty or lack of confidence about something; 'I'm not sure if'.",
-    "longExplanation": "'~(으)ㄴ/는지 모르겠다' is used in Korean when the speaker is not certain about some fact or situation. It often corresponds to 'I don't know if...' or 'I'm not sure whether...' in English. You attach ~(으)ㄴ/는지 to the verb or adjective stem, then add 모르겠다 (or 모른다, 모르겠어요, etc.) to indicate uncertainty.",
-    "formation": "動詞/形容詞 + ~(으)ㄴ/는지 + 모르겠다"
+    "title": "-(으)ㄴ/는지 모르겠다（〜か分からない、〜かどうか分からない）",
+    "shortExplanation": "ある事実や状況について確信が持てないことや、疑念・不確実さを表す表現です（「〜か分からない」「〜かどうか分からない」）。",
+    "longExplanation": "「-(으)ㄴ/는지 모르겠다」は、話者がある事実や状況についてよく知らなかったり確信が持てない時に用いる表現で、日本語の「〜か分からない」「〜かどうか分からない」に相当します。現在形では動詞に「-는지 모르겠다」、形容詞にパッチムの有無に応じて「-(으)ㄴ지 모르겠다」、名詞に「-인지 모르겠다」を接続します。過去の事柄には「-았/었는지 모르겠다」、推測や未来には「-(으)ㄹ지 모르겠다」を用います。文末の「모르겠다」は「모른다」や「알 수 없다」に入れ替えることも可能です。",
+    "formation": "動詞の語幹 ＋ -는지 모르겠다 ／ 形容詞の語幹（ㄹ以外のパッチムあり） ＋ -은지 모르겠다 ／ 形容詞の語幹（母音またはㄹパッチム） ＋ -ㄴ지 모르겠다 ／ 名詞 ＋ -인지 모르겠다（過去形：-았/었는지 모르겠다）",
+    "examples": [
+      {
+        "translation": "出発するときに場所を正確に覚えて出たのかどうか分かりません。"
+      },
+      {
+        "translation": "彼がまだ私のことを愛しているのか分かりません。"
+      },
+      {
+        "translation": "雨が降ったのかどうか分かりませんが、地面が濡れていますね。"
+      },
+      {
+        "translation": "明日学校に行けるかどうか分かりません。体調が少し悪いです。"
+      }
+    ]
   },
   "ko__102": {
-    "title": "~(으)려는 참이다 [(eu)ryeoneun chamida] (I really want to)",
-    "shortExplanation": "〜を表すために使用されます a strong desire or intention to do something, often implying frustration at not being able to do it.",
-    "longExplanation": "'~(으)려는 참이다' emphasizes a strong intent or desire toward an action, sometimes accompanied by a sense of frustration or impatience. 〜と訳されます 'I was just about to...' or 'I really want to...' in English. It's commonly used when you feel you have been holding yourself back but are on the verge of acting.",
-    "formation": "動詞-으려는 + 참이다 / 動詞-려는 + 참이다"
+    "title": "-(으)려는 참이다（〜しようとしていたところだ、ちょうど〜しようとしていた）",
+    "shortExplanation": "まさにその行動を起こそうとしていた瞬間・意図を表す表現です（「ちょうど〜しようとしていたところだ」）。",
+    "longExplanation": "「-(으)려는 참이다」は、話者がある行動を行おうとまさに準備・意図していた瞬間であることを表す表現で、日本語の「ちょうど〜しようとしていたところだ」「〜するつもりだった」に相当します。過去形「-(으)려는 참이었다」の形で使われることが多く、後ろに「-지만」や「-는데」を伴って「まさに〜しようとしていたが、外部の事情や邪魔が入ってできなかった」という文脈でよく用いられます。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려는 참이다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려는 참이다",
+    "examples": [
+      {
+        "translation": "この人に何か言おうとしていたところでしたが、話を切り出すことができませんでした。"
+      },
+      {
+        "translation": "ため口を利こうとしていたところでしたが、彼を尊重して我慢しました。"
+      },
+      {
+        "translation": "屋外で遊ぼうとしていたところでしたが、天気が悪すぎて遊べませんでした。"
+      },
+      {
+        "translation": "その映画を観ようとしていたところだったのですが、チケットが売り切れで観られませんでした。"
+      }
+    ]
   },
   "ko__103": {
-    "title": "~(으)ㄹ 것 같다 [(eu)l geot gatda] (It seems like)",
-    "shortExplanation": "〜を表すために使用されます a guess, assumption, or prediction.",
-    "longExplanation": "'~(으)ㄹ 것 같다' is used to say that something seems like it will happen, or that you assume/predict something based on what you know. Whether you use '으' depends on whether the verb/adjective stem ends in a consonant or vowel. In casual speech, you’ll often hear it as '것 같아(요).'",
-    "formation": "動詞/形容詞 Stem + (으)ㄹ 것 같다"
+    "title": "-(으)ㄹ 것 같다（〜しそうだ、〜するようだ、〜すると思う）",
+    "shortExplanation": "未来の推測や予測、あるいは断定を避けて控えめに意見を述べる表現です（「〜しそうだ」「〜すると思う」）。",
+    "longExplanation": "「-(으)ㄹ 것 같다」は、これから起こるであろう出来事や未来の状態について推測・予想したり、自分の主観的な意見を断定を避けて柔らかく表現する文法です。日本語の「〜しそうだ」「〜するようだ」「〜だろうと思う」に相当します。動詞や形容詞の語幹末尾のパッチムの有無によって「-(으)ㄹ」を使い分け、名詞には「일 것 같다」を接続します。日常会話では「것 같아(요)」の形で頻繁に用いられます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 것 같다 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 것 같다（名詞：일 것 같다）",
+    "examples": [
+      {
+        "translation": "明日は雨が降りそうです。傘を用意したほうがいいでしょう。"
+      },
+      {
+        "translation": "彼女はとても幸せそうです。ついに念願のドリームチームに合流できたのですから。"
+      },
+      {
+        "translation": "この地図を見ていると、私たちは道に迷いそうです。"
+      },
+      {
+        "translation": "この製品は人気が出そうです。機能が非常に優れていますから。"
+      }
+    ]
   },
   "ko__104": {
-    "title": "~(으)ㄹ 것이다 [(eu)l geosida] (Will likely)",
-    "shortExplanation": "〜を表すために使用されます probability, anticipation, or plan for the future; 'will likely', 'will', 'is going to'.",
-    "longExplanation": "'~(으)ㄹ 것이다' is used in Korean to indicate a prediction, expectation, or plan regarding the future, akin to 'will' in English. It implies the speaker’s belief or intention about what will happen or what they (or someone else) will do.",
-    "formation": "動詞 stem + ㄹ 것이다 (if ending in a vowel) / 을 것이다 (if ending in a consonant)"
+    "title": "-(으)ㄹ 것이다（〜だろう、〜するはずだ、〜するつもりだ）",
+    "shortExplanation": "未来の推測や見通し、または話者の意志や計画を表す終結語尾です（「〜だろう」「〜する予定だ」）。",
+    "longExplanation": "「-(으)ㄹ 것이다」は、将来の出来事についての推測や見通し、あるいは主語の意志・計画を表す基本的な終結表現で、日本語の「〜だろう」「〜するはずだ」「〜するつもりだ」に相当します。主語が一人称の場合は強い決意や計画を表し、三人称や事物である場合は客観的な推測や予想を表します。書き言葉や演説などで好まれ、日常会話では「-(으)ㄹ 거예요」や「-(으)ㄹ 거다」の形で広く用いられます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 것이다 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 것이다",
+    "examples": [
+      {
+        "translation": "明日は天気が良いだろう。だからみんな屋外で過ごそうとするはずだ。"
+      },
+      {
+        "translation": "私は来年大学を卒業する予定だ。そして就職の準備をするつもりだ。"
+      },
+      {
+        "translation": "私たちは今週末にキャンプに行くつもりだ。だからキャンプ用品を買う予定だ。"
+      },
+      {
+        "translation": "彼女はピアノの練習をたくさんしているので、すぐに上手に弾けるようになるだろう。"
+      }
+    ]
   },
   "ko__105": {
-    "title": "~(으)ㄹ 뿐만 아니라 [(eu)l ppunman anira] (Not only... but also...)",
-    "shortExplanation": "〜を表すために使用されます 'not only..., but also...'.",
-    "longExplanation": "'~(으)ㄹ 뿐만 아니라' is used in Korean to emphasize two or more statements are true. The second part adds new information that supports or expands upon the first part, akin to 'not only…but also…' in English.",
-    "formation": "動詞/形容詞/名詞 + ~(으)ㄹ 뿐만 아니라 + [Additional statement]"
+    "title": "-(으)ㄹ 뿐만 아니라（〜だけでなく、〜ばかりでなく）",
+    "shortExplanation": "前節の内容にとどまらず、後節の内容も併せ持っていることを表す接続表現です（「〜だけでなく」「〜ばかりか」）。",
+    "longExplanation": "「-(으)ㄹ 뿐만 아니라」は、前の事柄に加えて後ろの事柄も同様に当てはまることを強調する添加・累加の接続表現で、日本語の「〜だけでなく」「〜ばかりでなく」に相当します。通常、前後の節は肯定的な内容同士、または否定的な内容同士というように評価の方向性が一致します。動詞・形容詞の語幹にパッチムに応じて接続し、名詞には直接「뿐만 아니라」を接続します。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 뿐만 아니라 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 뿐만 아니라 ／ 名詞 ＋ 뿐만 아니라",
+    "examples": [
+      {
+        "translation": "彼は仕事ができるだけでなく創造性も優れており、皆から認められました。"
+      },
+      {
+        "translation": "このレストランは美味しい料理を提供するだけでなく、素晴らしいサービスも提供しています。"
+      },
+      {
+        "translation": "彼女は英語ができるだけでなく、中国語と日本語も堪能です。"
+      },
+      {
+        "translation": "ジミンさんは料理が上手なだけでなく、本当に素敵な写真も撮ることができます。"
+      }
+    ]
   },
   "ko__106": {
-    "title": "~(으)ㄹ 뿐이다 [(eu)l ppunida] (Only, just)",
-    "shortExplanation": "〜を表すために使用されます 'only' or 'just', emphasizing a sole action or state.",
-    "longExplanation": "'~(으)ㄹ 뿐이다' emphasizes that there is nothing more or different beyond what’s stated. It’s similar to saying 'I only do X' or 'It’s just that…' in English. The form depends on whether the verb stem ends in a vowel (ㄹ 뿐이다) or consonant (을 뿐이다).",
-    "formation": "動詞 stem + ~(으)ㄹ 뿐이다"
+    "title": "-(으)ㄹ 뿐이다（〜するだけだ、ただ〜にすぎない）",
+    "shortExplanation": "述べられた動作や状態以外に何もないこと、それだけに限定されることを強調する終結表現です（「〜するだけだ」「ただ〜にすぎない」）。",
+    "longExplanation": "「-(으)ㄹ 뿐이다」は、その動作や状態だけに限定され、それ以上のことや他の選択肢が全くないことを強調する文法で、日本語の「〜するだけだ」「ただ〜にすぎない」に相当します。名詞の後には「일 뿐이다」を接続します。文中で対比として用いられる場合には「-(으)ㄹ 뿐이지（〜するだけで）」という接続の形もよく使われます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 뿐이다 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 뿐이다 ／ 名詞 ＋ 일 뿐이다",
+    "examples": [
+      {
+        "translation": "彼女は口先で言うだけで、実際には行動しません。"
+      },
+      {
+        "translation": "私は彼女に微笑みかけただけです。実際に対話はしませんでした。"
+      },
+      {
+        "translation": "父はお客さんと会話をするだけで、家事を手伝いません。"
+      },
+      {
+        "translation": "彼らは映画を見に行くだけです。映画について話し合ったりはしません。"
+      }
+    ]
   },
   "ko__107": {
-    "title": "~(으)ㄹ게요 [(eu)lgeyo] (I will, in the future)",
-    "shortExplanation": "〜を表すために使用されます an intention or promise about the future, often showing the speaker’s determination.",
-    "longExplanation": "'~(으)ㄹ게요' is a polite way in Korean to show the speaker’s intention or promise to do something soon. It also conveys the speaker’s will to carry out the action. Which form (을게요 or ㄹ게요) you use depends on the final sound of the verb stem.",
-    "formation": "動詞 stem + (으)ㄹ게요"
+    "title": "-(으)ㄹ게요（〜しますね、〜しますから）",
+    "shortExplanation": "聞き手に対して自分の意志や約束、自発的な行動を丁寧に伝える終結語尾です（「〜しますね」「私が〜します」）。",
+    "longExplanation": "「-(으)ㄹ게요」は、ヘヨ体の丁寧な終結語尾で、話者が聞き手に対して自発的に何かを行うという約束や意志を表明する際に用いられます。日本語の「〜しますね」「私が〜しておきますよ」に相当します。原則として主語は一人称（私・私たち）に限定され、平叙文でのみ使用可能であり、疑問文には使えません。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을게요 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ게요",
+    "examples": [
+      {
+        "translation": "私が直接電話して進捗状況をお知らせしますね。"
+      },
+      {
+        "translation": "この荷物は私が持って行きますね。とても重いので心配しないでください。"
+      },
+      {
+        "translation": "課題を明日までに終わらせて、報告書も書きますね。"
+      },
+      {
+        "translation": "今夜みんなが集まったら、私が料理を作って持ってきますね。"
+      }
+    ]
   },
   "ko__108": {
-    "title": "~(으)ㄹ게 [(eu)lge] (I will, in the future)",
-    "shortExplanation": "A casual way to indicate the speaker will do something in the future, often reflecting one’s decision or promise.",
-    "longExplanation": "'~(으)ㄹ게' is the casual version of '~(으)ㄹ게요', used among friends or people of the same age. It expresses the speaker’s intention or promise to do something soon. As with '~(으)ㄹ게요', the form depends on the final sound of the verb stem.",
-    "formation": "動詞 stem + (으)ㄹ게"
+    "title": "-(으)ㄹ게（〜するね、〜するよ）",
+    "shortExplanation": "友達や親しい相手に対して、自分の意志や約束を伝えるパンマル（ため口）の終結語尾です（「〜するね」「〜するよ」）。",
+    "longExplanation": "「-(으)ㄹ게」は、「-(으)ㄹ게요」のパンマル（非敬語・ため口）の形で、親しい友人や同年代、目下の相手に対して用いられます。自分がこれから何かを行うという約束や意思を気軽に伝える表現で、日本語の「〜するね」「〜しておくよ」に相当します。主語は一人称のみで、疑問文には使えません。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을게 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ게",
+    "examples": [
+      {
+        "translation": "私、明日からダイエットするね。今日までだけ美味しいものを食べるよ。"
+      },
+      {
+        "translation": "あまり心配しないで。韓国語の勉強を一生懸命頑張るからね。"
+      },
+      {
+        "translation": "ごめんね。今からは絶対に遅刻しないようにするよ。"
+      },
+      {
+        "translation": "部屋の掃除しなかったの？大丈夫、後で私がやっておくね。"
+      }
+    ]
   },
   "ko__109": {
-    "title": "~(으)ㄹ래 [(eu)llae] (I want to)",
-    "shortExplanation": "〜を表すために使用されます that the speaker wants or intends to do something, usually in casual speech.",
-    "longExplanation": "'~(으)ㄹ래' is used in casual Korean to indicate the speaker’s desire or plan to do something. It can translate to 'I want to…' or 'Shall we…?' depending on context. It is more informal than '~(으)ㄹ게요.'",
-    "formation": "動詞 stem + (으)ㄹ래"
+    "title": "-(으)ㄹ래（〜するよ、〜したい、〜しない？）",
+    "shortExplanation": "平叙文では話者の意向・希望を表し、疑問文では相手の意向を尋ねたり勧誘したりするパンマルの終結語尾です（「〜するよ」「〜しない？」）。",
+    "longExplanation": "「-(으)ㄹ래」は、親しい間柄で用いられるパンマル（非敬語）の終結語尾です。平叙文では話者自身の意志や「〜したい」という希望を表し、疑問文では相手の意向を尋ねたり「一緒に〜しない？」と提案・勧誘したりするニュアンスになります。敬語表現は「-(으)ㄹ래요」となります。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을래 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ래",
+    "examples": [
+      {
+        "translation": "今日の夕食はバーベキューを食べるよ。ステーキハウスに行きたいんだ。"
+      },
+      {
+        "translation": "明日友達と映画を観るつもりだよ。最近面白い映画がたくさんあるじゃない。"
+      },
+      {
+        "translation": "週末にピクニックに行かない？天気が良さそうだよ。"
+      },
+      {
+        "translation": "新しい趣味を見つけるよ。今までやってきたことがちょっと退屈になっちゃったんだ。"
+      }
+    ]
   },
   "ko__110": {
-    "title": "~(으)ㄹ 때 [eul ttae] (When, while)",
-    "shortExplanation": "〜を示します a specific time or situation for an action; 'when', 'while'.",
-    "longExplanation": "'~(으)ㄹ 때 [eul ttae]' is a common Korean grammar structure meaning 'when' or 'while'. It attaches to the verb stem or adjective stem to show that an action/event takes place under those circumstances or at that time.",
-    "formation": "動詞/形容詞 stem + (으)ㄹ 때"
+    "title": "~(으)ㄹ 때（〜する時、〜の時）",
+    "shortExplanation": "連体形語尾と依存名詞「때」が結びつき、ある動作や状態が生じる特定の時間や時点を表します（「〜する時」「〜の時」）。",
+    "longExplanation": "「~(으)ㄹ 때」は、連体形語尾「-(으)ㄹ」に時間を意味する依存名詞「때」が結合した表現で、ある動作が行われる時や、ある状態が存在する時点を表します。動詞・形容詞の語幹末尾が母音または「ㄹ」パッチムの場合は「-ㄹ 때」、その他の子音パッチムの場合は「-을 때」が接続します。名詞には直接「때」を付けることができます（例：방학 때 休暇の時、식사 때 食事の時）。",
+    "formation": "動詞語幹 / 形容詞語幹（母音・ㄹパッチム：-ㄹ 때 / 子音パッチム：-을 때）；名詞 + 때",
+    "examples": [
+      {
+        "translation": "お姉さんが家に帰ってくる時、いつも喜んで迎えてあげるのが妹の役目です。"
+      },
+      {
+        "translation": "出勤する時にいつもコーヒーを飲む習慣があります。"
+      },
+      {
+        "translation": "勉強をする時に音楽を聴くことが集中するのに役立ちます。"
+      },
+      {
+        "translation": "雨が降る時に明るい曲を聴くのはとても良いアイデアです。"
+      }
+    ]
   },
   "ko__111": {
-    "title": "~(으)ㄹ 테니까 [(eu)l tenikka] (Since I assume)",
-    "shortExplanation": "Used when the speaker makes a guess or assumption, then provides advice or a suggestion based on that assumption.",
-    "longExplanation": "'~(으)ㄹ 테니까' indicates a future assumption or strong belief about a situation, followed by advice or a suggestion. It shows that the speaker is giving guidance or instructions that hinge on this assumption.",
-    "formation": "動詞/形容詞 stem + (으)ㄹ 테니까"
+    "title": "-(으)ㄹ 테니까（〜するはずだから、〜するから（〜してください））",
+    "shortExplanation": "前節で強い推測や話者の意志を前提として示し、後節で提案・依頼・忠告を述べる接続語尾です（「〜するだろうから」「私が〜するから」）。",
+    "longExplanation": "「-(으)ㄹ 테니까」は、予定や推測を表す「-(으)ㄹ 터」に理由の接続語尾「-(으)니까」が組み合わさった表現です。主に2通りの用法があります：\n1）主語が一人称の場合、話者がその行動を行うことを約束・前提とし、聞き手に別の行動を促す用法（「私が〜しておくから、あなたは…してください」）；\n2）主語が三人称や事物の環境である場合、話者の強い確信や推測を理由・根拠として、聞き手に指示や助言を与える用法（「きっと〜だろうから、…したほうがいい」）。後節には勧誘文や命令文が来ることが多いです。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 테니까 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 테니까（過去形：-았/었을 테니까）",
+    "examples": [
+      {
+        "translation": "とても遅くなるでしょうから、もう家に帰るほうがいいですよ。"
+      },
+      {
+        "translation": "雨が降るでしょうから、傘を持って行ってください。"
+      },
+      {
+        "translation": "明日テストがあるでしょうから、今夜は勉強したほうがいいですよ。"
+      },
+      {
+        "translation": "彼はもう知っているでしょうから、あまり心配しないでください。"
+      }
+    ]
   },
   "ko__112": {
-    "title": "~(으)ㄹ지라도 [(eu)ljirado] (Even if)",
-    "shortExplanation": "〜を表すために使用されます 'even if', emphasizing that a certain action or decision remains unchanged regardless of the situation.",
-    "longExplanation": "'~(으)ㄹ지라도' is a complex suffix used in Korean to signify 'even if' or 'although'. It is commonly used for mentioning a hypothetical or difficult scenario, yet affirming that one’s stance or decision does not change. It emphasizes the speaker’s firm determination or resolution in spite of possible negative outcomes.",
-    "formation": "動詞 Stem + (으)ㄹ지라도"
+    "title": "-(으)ㄹ지라도（たとえ〜であっても、〜としても）",
+    "shortExplanation": "仮定の譲歩を表す格調高い接続語尾で、前節のような困難な状況であっても後節の決意や事実は変わらないことを表します（「たとえ〜であろうとも」）。",
+    "longExplanation": "「-(으)ㄹ지라도」は、書き言葉や格式ばった演説などで好まれる譲歩の接続語尾で、日本語の「たとえ〜であっても」「〜としても」「〜であろうとも」に相当します。前節で極端な状況や困難な逆境を仮定しながらも、後節ではその影響を受けることなく主語の確固たる意志や不変の事実を貫くニュアンスを表します。しばしば「비록（たとえ）」「설령（たとえ〜でも）」「아무리（いくら〜でも）」などの副詞と呼応します。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지라도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지라도（過去形：-았/었을지라도）",
+    "examples": [
+      {
+        "translation": "この仕事がどんなに難しかろうと、私は必ず成し遂げてみせます。"
+      },
+      {
+        "translation": "眠かろうとも、迫り来る試験のために徹夜で勉強しなければなりません。"
+      },
+      {
+        "translation": "雨が降らないとしても、傘はいつも持ち歩くべきです。"
+      },
+      {
+        "translation": "天気が寒かろうと、私はいつでもアイスクリームを食べたいです。"
+      }
+    ]
   },
   "ko__113": {
-    "title": "~(으)면서도 [(eu)myeonseodo] (While, although)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction; 'while', 'although'.",
-    "longExplanation": "'~(으)면서도' is used in Korean to show that two actions or states occur simultaneously, yet they are somewhat contradictory or unexpected when considered together. It is akin to saying 'while' or 'even though' in English.",
-    "formation": "動詞 stem + (으)면서도"
+    "title": "-(으)면서도（〜でありながらも、〜しつつも、〜なのに）",
+    "shortExplanation": "2つの動作や状態が同時に存在しながらも、それらが対照的・矛盾していることを表す接続語尾です（「〜でありながらも」「〜なのに」）。",
+    "longExplanation": "「-(으)면서도」は、同時進行を表す接続語尾「-(으)면서」に対照や強調の助詞「도」が結びついた表現です。2つの動作や状態が同時に起こっていることを表すだけでなく、それらが互いに矛盾していたり、常識的な予想に反しているというニュアンスを強調します。日本語の「〜しながらも」「〜でありながらも」「〜くせに」に相当します。主語は前後で同一である必要があります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으면서도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 면서도",
+    "examples": [
+      {
+        "translation": "彼女は具合が悪かったにもかかわらず仕事を続けました。痛みを乗り越えて仕事をやり遂げました。"
+      },
+      {
+        "translation": "雨が降っていながらも祭りは続けられました。みんな楽しさにすっかり浸っていました。"
+      },
+      {
+        "translation": "彼はミスを犯しながらも最後まで諦めませんでした。彼の集中力と粘り強さは見事でした。"
+      },
+      {
+        "translation": "食事をすべて済ませていながらもお腹が空いているようでした。走りすぎたせいだと思います。"
+      }
+    ]
   },
   "ko__114": {
-    "title": "~(으)시면 [(eu)simyeon] (If you)",
-    "shortExplanation": "〜を表すために使用されます a polite conditional, translating to 'if you' or 'when you' in English.",
-    "longExplanation": "'~(으)시면' is a polite conditional form used to say 'if you...' or 'when you...' in a respectful way. It is often directed at someone of equal or higher status, indicating a formal or polite tone.",
-    "formation": "動詞 stem + (으)시면"
+    "title": "-(으)시면（〜なさったら、〜でしたら、〜していただければ）",
+    "shortExplanation": "聞き手や尊ぶべき対象の動作や状態について、丁寧に条件を述べる敬語の接続表現です（「〜なさったら」「〜でしたら」）。",
+    "longExplanation": "「-(으)시면」は、主体を高める尊敬の補助語幹「-(으)시-」に条件の接続語尾「-(으)면」が結合した表現です。目上の人や取引先、顧客などの行動や状況を尊重しつつ、「もし〜なさるなら」「〜していただければ」と丁寧に条件や前提を提示する際に用いられます。後節には「-(으)세요（〜なさってください）」や「감사하겠습니다（幸甚に存じます）」などの丁寧な依頼・感謝の表現が続きます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으시면 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 시면",
+    "examples": [
+      {
+        "translation": "ご都合がよろしければ、今晩私にお電話いただけますでしょうか。"
+      },
+      {
+        "translation": "授業が終わられましたら、自己紹介を始めていただけると幸いです。"
+      },
+      {
+        "translation": "可能でしたら、明日の会議にご出席いただけますでしょうか。"
+      },
+      {
+        "translation": "お時間がございましたら、写真を何枚かお見せいただけると幸いです。"
+      }
+    ]
   },
   "ko__115": {
-    "title": "~(으)시겠어요 [(eu)sigesseoyo] (You will probably)",
-    "shortExplanation": "〜を表すために使用されます probability or an assumption about the listener’s action or state, in a polite way.",
-    "longExplanation": "'~(으)시겠어요' is a polite form in Korean 〜を表すために使用されます the speaker’s assumption or expectation about the listener’s future condition or action. It conveys respect and is often used in formal or semi-formal conversation.",
-    "formation": "動詞 stem + (으)시겠어요"
+    "title": "-(으)시겠어요（〜なさるでしょう、〜おありでしょう、〜なさいますか？）",
+    "shortExplanation": "相手の状況や心情に寄り添って丁寧に推測したり（「〜でしょうね」）、意向を丁寧に尋ねたりする敬語の終結語尾です。",
+    "longExplanation": "「-(으)시겠어요」は、尊敬の補助語幹「-(으)시-」、推測や意志の接尾辞「-겠-」、丁寧語尾「-어요」が組み合わさった表現です。平叙文や穏やかな疑問文では、相手の苦労や感情、今後の行動に共感しながら丁寧に推測するニュアンスを表します（例：「お疲れでしょうね」）。また、相手の意向を尋ねる疑問文では「〜なさいますか」「〜召し上がりますか」といった非常に礼儀正しい問いかけや勧誘の表現になります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으시겠어요 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 시겠어요",
+    "examples": [
+      {
+        "translation": "かなり冷え込みますね。マフラーを巻かれることでしょう。"
+      },
+      {
+        "translation": "本当に忙しい一日でしたね。とてもお疲れでしょう。"
+      },
+      {
+        "translation": "こんなに仕事が多いと、週末もお仕事をなさるのでしょうね。"
+      },
+      {
+        "translation": "こんなに暑いと、冷たいお飲み物がお気に召すでしょうね。"
+      }
+    ]
   },
   "ko__116": {
-    "title": "~(으)ㅂ시다 [(eu)bshida] (Let's)",
-    "shortExplanation": "Used to propose or suggest an activity together; 'Let's'.",
-    "longExplanation": "'~(으)ㅂ시다' is the standard form in Korean used to suggest doing something together, equivalent to 'Let's' in English. The form depends on whether the verb stem ends in a vowel (ㅂ시다) or consonant (읍시다).",
-    "formation": "動詞 stem + ㅂ시다 / 읍시다"
+    "title": "-(으)ㅂ시다（〜しましょう）",
+    "shortExplanation": "格式体の勧誘形終結語尾で、相手に一緒にある行動をしようと改まって提案・勧誘する表現です（「〜しましょう」）。",
+    "longExplanation": "「-(으)ㅂ시다」は、相手に対して一緒に何かをしようと呼びかけたり提案したりする際に用いる格式体（ハシプシオ体）の勧誘形終結語尾です。同僚同士や同年代、あるいは公の場でのスピーチや案内などで広く使われます。目上の人や年長者に対して使うと失礼にあたるため使えず、目上の人には「-(으)시지요」や「-(으)실까요?」などの丁寧な依頼・伺いの表現を用います。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 읍시다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㅂ시다",
+    "examples": [
+      {
+        "translation": "今日の夕方は食堂で夕食を食べましょう。他のことはすべて忘れてしまいましょう。"
+      },
+      {
+        "translation": "私たち一緒に散歩しましょう。みんな気分転換になるはずです。"
+      },
+      {
+        "translation": "この問題を一緒に解決しましょう。共にやればもっと簡単なはずです。"
+      },
+      {
+        "translation": "みんな一緒に旅行に行きましょう。一緒に行けばずっと楽しいですよ。"
+      }
+    ]
   },
   "ko__117": {
-    "title": "~(으)십시오 [(eu)sipsio] (Please)",
-    "shortExplanation": "〜を表すために使用されます polite requests or commands; roughly 'please do ~'.",
-    "longExplanation": "'~(으)십시오' is one of the most formal imperative endings in Korean, used to give commands or requests politely. It corresponds to 'please do ~' in English. Whether you use '십시오' or '으십시오' depends on whether the verb stem ends in a vowel or a consonant.",
-    "formation": "動詞 stem + (으)십시오"
+    "title": "-(으)십시오（〜（な）さい、〜してください、〜お〜ください）",
+    "shortExplanation": "最高敬度の格式体命令形終結語尾で、相手に敬意を払いながら改まって指示や要請を行う表現です（「〜してください」「〜なさってください」）。",
+    "longExplanation": "「-(으)십시오」は、ハシプシオ体（最高位の格式体）の命令形終結語尾で、目上の人や公衆、顧客などに対して極めて丁寧に要請・指示・勧告をする際に用いられます。公式のアナウンス、案内標識、試験問題の指示文、またはビジネスや接客の場などで不可欠な定番表現です。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으십시오 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 십시오",
+    "examples": [
+      {
+        "translation": "もう一度考えてみてください。おそらくそれが正しい選択でしょう。"
+      },
+      {
+        "translation": "こちらにお座りください。お話ししたいことがございます。"
+      },
+      {
+        "translation": "家にお戻りになったら、まず手を洗ってください。"
+      },
+      {
+        "translation": "疑問点があるようでしたら、その質問を今お聞きになってください。"
+      }
+    ]
   },
   "ko__0": {
-    "title": "~(으)나마 [(eu)nama] (At least, even if only)",
-    "shortExplanation": "〜を表すために使用されます the modest amount of what you can do or accept.",
-    "longExplanation": "'~(으)나마 [(eu)nama]' is a grammar point used in Korean to express that even if the quantity or degree is modest, it is at least that much. It can have a sense of consolation or slight regret, but also a feeling that one can be satisfied with that small amount in a given situation.",
-    "formation": "動詞 stem + 나마 / 名詞 + 이나마"
+    "title": "-(이)나마 / -(으)나마（せめて〜だけでも、〜なりとも）",
+    "shortExplanation": "不十分で満足はできないものの、少しでもそれが存在することに慰めや妥協を見出す補助詞です（「せめて〜だけでも」「〜なりとも」）。",
+    "longExplanation": "「-(이)나마」は、名詞や一部の用言の後について、理想的な状態や十分な量ではないものの、「せめてそれだけでもあってよかった」「わずかでも満たされている」という妥協や慰めのニュアンスを表す助詞です。不足感を抱きつつも、その少ない条件を受け入れて最善を尽くすという文脈でよく使われます。",
+    "formation": "名詞（パッチムあり） ＋ 이나마 ／ 名詞（パッチムなし） ＋ 나마（動詞・形容詞の語幹 ＋ 으나마/나마）",
+    "examples": [
+      {
+        "translation": "私は仕事が忙しくて多くの時間を割くことはできませんが、せめて1日1時間だけでも勉強しようと努力しています。"
+      },
+      {
+        "translation": "今月はお金が少し足りないですが、綿密な計画を立てればせめて10万ウォンだけでも節約できると思います。"
+      },
+      {
+        "translation": "彼女は体調が悪いと言ってよく練習を抜けますが、残された時間なりとも最善を尽くしています。"
+      },
+      {
+        "translation": "私たちが別れたのは事実ですが、良き友人としてあなたと話す時間だけでも持てたらいいなと思います。"
+      }
+    ]
   },
   "ko__1": {
-    "title": "~(으)니까 [(eu)nikka] (Because, so)",
-    "shortExplanation": "〜を示します the cause or reason; 'Because', 'So'.",
-    "longExplanation": "'~(으)니까 [(eu)nikka]' is a conjunction used in Korean to indicate the cause or reason why something happens or a certain situation exists. It is similar to 'because' or 'so' in English. It is most often used in casual conversations and can be used both for positive and negative statements.",
-    "formation": "動詞/形容詞 stem + (으)니까"
+    "title": "-(으)니까（〜だから、〜ので）",
+    "shortExplanation": "話し手の主観的な理由や根拠を表す接続語尾です。後続節に命令・勧誘・提案の文が来ることができるのが大きな特徴です（「〜だから」「〜ので」）。",
+    "longExplanation": "「-(으)니까」は、理由や原因を表す接続語尾です。「-아/어서」が客観的な原因・結果を表して後続節に命令や勧誘が使えないのに対し、「-(으)니까」は話し手の主観的な判断・根拠を表すため、後続節に勧誘（-ㅂ시다）や命令（-(으)십시오、-(으)세요）を伴うことができます。また、ある行動をした結果、新しい事実を発見した（〜してみたら）という文脈でも用いられます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으니까 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 니까（過去形：-았/었으니까、名詞：-(이)니까）",
+    "examples": [
+      {
+        "translation": "雨が降っているから、傘を持って行ってください。"
+      },
+      {
+        "translation": "もうとても遅いから、私たち明日また会おう。"
+      },
+      {
+        "translation": "今日は疲れたので、早く家に帰りました。"
+      },
+      {
+        "translation": "運動をたくさんしたから、力が入りません。"
+      }
+    ]
   },
   "ko__2": {
-    "title": "~(으)려다가 [(eu)ryeodaga] (Was about to, tried to)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます an action that was about to happen but did not take place due to some intervening cause.",
-    "longExplanation": "'~(으)려다가' is used when you want to express an action that was on the verge of happening or one that you intended to do, but for some reason did not happen, or another event intervened. Depending on the context, 〜と訳されます 'was about to', 'tried to', 'was going to', or 'intended to'.",
-    "formation": "動詞 stem + (으)려다가"
+    "title": "-(으)려다가（〜しようとしたが、〜しかけて）",
+    "shortExplanation": "ある行動をしようと意図していたものの、予期せぬ事情や心境の変化によって中断し、別の行動に変更したことを表す接続語尾です（「〜しようとしたが」「〜しかけたが」）。",
+    "longExplanation": "「-(으)려다가」は、意図を表す「-(으)려고」と動作の中断・転換を表す「-다가」が組み合わさった接続語尾です。本来はその行動を実行に移す予定であったが、途中で障害が生じたり考えが変わったりして諦めたり、別の行動へと方向転換したりした状況を表します。日常会話では縮約形の「-(으)려다」も頻繁に用いられます。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려다가 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려다가",
+    "examples": [
+      {
+        "translation": "家に帰ろうとしたけれど、雨があまりにもひどく降ってきたので友達の家に泊まりました。"
+      },
+      {
+        "translation": "本を買おうとしましたが、お金が足りなくて買えませんでした。"
+      },
+      {
+        "translation": "電話をかけようとしたらスマホの充電が切れてしまって、かけられませんでした。"
+      },
+      {
+        "translation": "運動しようとしたのですが、急に体調が悪くなって諦めました。"
+      }
+    ]
   },
   "ko__3": {
-    "title": "~(으)니 [(eu)ni] (Because, as one would expect)",
-    "shortExplanation": "〜を示します that given the circumstances, the result is natural or to be expected.",
-    "longExplanation": "'~(으)니 [(eu)ni]' is often used in Korean to mean 'because' or 'since,' emphasizing a cause-and-effect relationship or a natural/expected result. It can sound slightly more formal or written than '~(으)니까', and is also common in narratives to show that something is an obvious conclusion based on a certain action or condition.",
-    "formation": "動詞/形容詞 stem + (으)니"
+    "title": "-(으)니（〜ので、〜だから、〜してみると）",
+    "shortExplanation": "書き言葉や改まった場面で使われ、自然な因果関係の根拠を示したり、ある動作を行った結果を知覚したりする接続語尾です（「〜だから」「〜ので」「〜してみると」）。",
+    "longExplanation": "「-(으)니」は「-(으)니까」に比べて文語的で格調高いニュアンスを持つ接続語尾です。主に2つの役割があり、1つは前節が後節の当然の理由・原因・前提となることを表し、もう1つは前節の行動を実際に行ったところ、後節のような事実を発見・経験したことを表します。公の文章やスピーチ、格言などでも多用されます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으니 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 니（過去形：-았/었으니、名詞：-(이)니）",
+    "examples": [
+      {
+        "translation": "毎日練習しながらスピーチを準備したので、スピーチ大会で優勝することができました。"
+      },
+      {
+        "translation": "彼はいつも熱心に勉強していたので、試験で良い結果を得ました。"
+      },
+      {
+        "translation": "あまりにもたくさん食べたのだから、お腹が痛くなるのは当然です。"
+      },
+      {
+        "translation": "歯磨きをしなかったのだから、歯が痛くなるのは予想できます。"
+      }
+    ]
   },
   "ko__4": {
-    "title": "~(으)면 ~(으)ㄹ수록 [(eu)myeon ~(eu)lsurok] (The more... the more...)",
-    "shortExplanation": "〜を表すために使用されます the idea that the more one situation or action occurs, the more another result follows.",
-    "longExplanation": "'~(으)면 ~(으)ㄹ수록' is used to show a relationship of proportion, much like the English pattern 'the more..., the more...'. The first clause describes a certain action or condition increasing, and the second clause describes the corresponding change or result that likewise increases or intensifies.",
-    "formation": "動詞/形容詞 stem + (으)면 + (으)ㄹ수록"
+    "title": "-(으)면 -(으)ㄹ수록（〜すればするほど）",
+    "shortExplanation": "前節の行動や状態の程度が増すにつれて、後節の結果や程度もそれに比例して大きくなることを表す構文です（「〜すればするほど」）。",
+    "longExplanation": "「-(으)면 -(으)ㄹ수록」は、条件を表す「-(으)면」と比例・度合いの深化を表す「-(으)ㄹ수록」が組み合わさった表現です。前節の度合いが進めば進むほど、それに伴って後節の状況もいっそう激しくなったり深まったりする関係を表します。日常会話では前半の「-(으)면」が省略され、単に「-(으)ㄹ수록」の形だけで用いられることもあります。",
+    "formation": "動詞・形容詞の語幹 ＋ (으)면 ＋ 動詞・形容詞の語幹 ＋ (으)ㄹ수록（ㄹ以外のパッチムありは -으면 / -을수록；母音またはㄹパッチムは -면 / -ㄹ수록）",
+    "examples": [
+      {
+        "translation": "空がだんだん曇ってきて道路上が見えなくなれば見えなくなるほど、運転するのが怖くなります。"
+      },
+      {
+        "translation": "韓国語は勉強すればするほど、その言葉の美しさをより深く理解できるようになります。"
+      },
+      {
+        "translation": "友達とたくさん話せば話すほど、お互いについてもっとよく知ることができます。"
+      },
+      {
+        "translation": "この本は読めば読むほど興味深く感じられます。"
+      }
+    ]
   },
   "ko__5": {
-    "title": "~(으)면서는 [(eu)myeonseoneun] (While, whereas)",
-    "shortExplanation": "Used to connect two conflicting or contrasting situations or actions, often to criticize or show surprise.",
-    "longExplanation": "The grammar point '~(으)면서는' is used to connect two contrasting or unexpected situations in Korean. 〜と訳されます 'while' or 'whereas,' but it has a nuance of slight criticism or emphasis on the contradiction. It often conveys the speaker's surprise, disappointment, or disapproval about the two coexisting states.",
-    "formation": "(動詞/形容詞 stem) + (으)면서는"
+    "title": "-(으)면서는（〜していながら実際は、〜しつつも反面）",
+    "shortExplanation": "2つの動作や状態が同時に存在しながらも、その矛盾や対立を強調し、話し手の不満や批判、疑問のニュアンスを込めて表す接続語尾です（「〜していながら」「〜しつつも」）。",
+    "longExplanation": "「-(으)면서는」は、同時進行を表す「-(으)면서」に対照・強調の補助詞「는」が付いた形です。単に2つの動作が同時に行われるだけでなく、その2つの事柄が両立していることに対する理不尽さ、矛盾、あるいは話し手の失望・批判・驚きなどの感情を際立たせる働きをします。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으면서는 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 면서는",
+    "examples": [
+      {
+        "translation": "彼は学校に通っていながら全然勉強をしません。だから成績が悪いのだと思います。"
+      },
+      {
+        "translation": "母は仕事をしながら家事もすべてこなされていました。それなのに誰も母を手伝いませんでした。"
+      },
+      {
+        "translation": "ジンスは勉強をしながらもいつも友達と遊ぶのが好きなので、時間管理が本当に混乱しているように見えます。"
+      },
+      {
+        "translation": "雨が降りながら天気が寒くなりましたが、夏の真っ只中にこれほど寒い天気は本当に不思議です。"
+      }
+    ]
   },
   "ko__6": {
-    "title": "~(으)시거나 [(eu)sigeona] (Either... or... [honorific])",
-    "shortExplanation": "Used to present two or more possibilities or choices in a respectful manner (honorific).",
-    "longExplanation": "'~(으)시거나' is the honorific form of '~거나' (meaning 'or'), used when speaking about or to elders, superiors, or in polite/formal situations. It gives multiple alternatives, allowing the subject (respected person) to choose.",
-    "formation": "動詞 stem + (으)시거나 / 名詞 + (이)시거나"
+    "title": "-(으)시거나（〜なさったり〜なさったり、〜されるか〜されるか）",
+    "shortExplanation": "主体尊敬の先語末語尾「-(으)시-」と選択を表す接続語尾「-거나」が結合し、目上の人の動作や状態を選択的に列挙する敬語表現です（「〜なさったり〜なさったり」「〜されるか〜されるか」）。",
+    "longExplanation": "「-(으)시거나」は、主語となる人物（親、先生、顧客、高齢者など）を高める「-(으)시-」に、2つ以上の事柄からいずれかを選ぶ接続語尾「-거나」が付いた形です。尊敬すべき対象の行動や状態を複数挙げて「〜されたり、あるいは〜されたり」と述べる際に用いられ、丁寧で敬意のこもった表現となります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으시거나 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 시거나（名詞：+(이)시거나）",
+    "examples": [
+      {
+        "translation": "ご両親は散歩をなさったり、読書をなさったりするのがお好きです。"
+      },
+      {
+        "translation": "ソノおばあさんが今週体調が優れなかったり咳をなさったりしたら、お医者さんに診察を受けに行かなければなりません。"
+      },
+      {
+        "translation": "運動をなさったり本をお読みになったりすることが、良いストレス解消法です。"
+      },
+      {
+        "translation": "お母様が家にいらっしゃっても、学校にいらっしゃっても、どちらであっても気兼ねなくお過ごしになれます。"
+      }
+    ]
   },
   "ko__7": {
-    "title": "~(으)시든지 [(eu)sideunji] (Whether... or... [honorific])",
-    "shortExplanation": "Used to list two or more possibilities in a respectful manner.",
-    "longExplanation": "The grammar point '~(으)시든지' is the honorific counterpart of '~든지', which means 'whether... or...' and presents multiple possibilities or conditions politely. It allows freedom of choice for the respected person, without asserting which option is preferred.",
-    "formation": "動詞 stem + (으)시든지 / 形容詞 + (으)시든지 / 名詞 + (이)시든지"
+    "title": "-(으)시든지（〜なさろうと〜なさろうと、〜されるにせよ）",
+    "shortExplanation": "主体尊敬「-(으)시-」と選択・無関係を表す接続語尾「-든지」が結合した表現で、目上の人がどの選択肢を選んでも差し支えないことを敬意を込めて表します（「〜なさろうと〜なさろうと」）。",
+    "longExplanation": "「-(으)시든지」は、事柄の選択に制限がないことを示す「-든지」に尊敬の「-(으)시-」を加えた丁寧な表現です。敬うべき相手の意向を全面的に尊重し、提示された複数の選択肢のどれをお選びになっても構わないというニュアンスを上品に伝えます。「-(으)시든지 -(으)시든지」と重ねて使われることも多くあります。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으시든지 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 시든지（名詞：+(이)시든지）",
+    "examples": [
+      {
+        "translation": "先生が前もってお知らせくださるか、あるいは授業中にお教えくださるかしてこそ、生徒たちも理解できると思います。"
+      },
+      {
+        "translation": "お父さんが今家に帰ってこられようと、少し遅くなろうと、私はいつでも歓迎します。"
+      },
+      {
+        "translation": "おばあちゃん、夕方に電話をくださるか、あるいはメッセージを送ってくださるかしてくださいね。"
+      },
+      {
+        "translation": "医師が薬を処方されようと、それとも手術を勧められようと、患者は常に尊重されるべきです。"
+      }
+    ]
   },
   "ko__8": {
-    "title": "~(으)ㄹ 데가 없다 [(eu)l dega eopda] (There's no way to...)",
-    "shortExplanation": "〜を表すために使用されます 'there's absolutely no way/place/opportunity to...' do something.",
-    "longExplanation": "The phrase '~(으)ㄹ 데가 없다' literally means 'there is no place/way to do X' and emphasizes that, given the conditions, there is no possibility or option for the action. It can sound somewhat figurative, referring to both physical 'place' or a 'method/means' of doing something.",
-    "formation": "動詞 stem + (으)ㄹ 데가 없다"
+    "title": "-(으)ㄹ 데가 없다（〜する場所がない、〜する手立て／余地がない）",
+    "shortExplanation": "その行動を行うための物理的な場所や機会、または解決するための手立てが全く存在しないことを表す表現です（「〜する場所がない」「〜する手立てがない」）。",
+    "longExplanation": "「-(으)ㄹ 데가 없다」は、未来連体形「-(으)ㄹ」に、場所や場合・方法などを表す依存名詞「데」、そして否定の形容詞「없다」が組み合わさった慣用表現です。物理的に「〜する場所がない」という意味のほか、比喩的・抽象的に「〜する方法・逃げ道・手立てがまったくない」という八方塞がりの状況を強調する際にもよく用いられます。",
+    "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을 데가 없다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ 데가 없다",
+    "examples": [
+      {
+        "translation": "その問題を解決する手立てがありません。複雑すぎて誰も解決策を見出せずにいます。"
+      },
+      {
+        "translation": "私たちがその映画を見られる場所がありません。チケットがすべて売り切れてしまいました。"
+      },
+      {
+        "translation": "今この時間帯に交通渋滞を避ける手立てはありません。"
+      },
+      {
+        "translation": "来るのが遅すぎたので、あの車を捕まえる手段がありません。"
+      }
+    ]
   },
   "ko__9": {
-    "title": "~(으)ㄹ 수밖에 없다 [(eu)l subakke eopda] (Have no choice but to)",
-    "shortExplanation": "〜を表すために使用されます that one has 'no choice but to' do something.",
-    "longExplanation": "'~(으)ㄹ 수밖에 없다' emphasizes that a certain action or situation is unavoidable or inevitable. It is equivalent to the English phrase 'have no choice but to.'",
-    "formation": "動詞 stem + (으)ㄹ 수밖에 없다"
+    "title": "-(으)ㄹ 수밖에 없다（〜するしかない、〜せざるを得ない）",
+    "shortExplanation": "他に方法や選択肢がなく、そうするより他にないという必然性や不可避性を強調する表現です（「〜するしかない」「〜せざるを得ない」）。",
+    "longExplanation": "「-(으)ㄹ 수밖에 없다」は、可能性・手段を表す「-(으)ㄹ 수」に、限定の助詞「밖에（〜しか）」と否定詞「없다」が結びついた慣用句です。「それ以外の手段や可能性が存在しない」という意味から転じて、状況的にどうしてもそうせざるを得ないこと、あるいはそうなるのが必然であることを強く主張する際に用いられます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을 수밖에 없다 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ 수밖에 없다",
+    "examples": [
+      {
+        "translation": "天気があまりにも暑かったので、水を飲むしかありませんでした。"
+      },
+      {
+        "translation": "時間があまりにもなくて、タクシーに乗って行くしかありませんでした。"
+      },
+      {
+        "translation": "私はお金がなくてラーメンを食べるしかありませんでした。"
+      },
+      {
+        "translation": "彼があまりにも遅れたので、私は待つしかありませんでした。"
+      }
+    ]
   },
   "ko__10": {
-    "title": "~(으)ㄹ지라도 [(eu)ljirado] (Even if)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます 'even if' or 'no matter how'.",
-    "longExplanation": "'~(으)ㄹ지라도 [(eu)ljirado]' is a conditional ending in Korean used to convey that, even if the situation in the first clause is true, it does not affect or change the action or stance in the following clause. It often translates to 'no matter how' or 'even if'. It can also express an unlikely supposition or a scenario beyond one's control.",
-    "formation": "動詞/形容詞 stem + (으)ㄹ지라도"
+    "title": "-(으)ㄹ지라도（たとえ〜であっても、〜としても）",
+    "shortExplanation": "前節で強い仮定や極端な条件を認めつつも、後節の意志や事実に何ら影響を及ぼさないことを格調高く表す譲歩の接続語尾です（「たとえ〜であっても」「〜としても」）。",
+    "longExplanation": "「-(으)ㄹ지라도」は文語的で重みのある譲歩接続語尾です。「たとえ前節のような状況が存在する（起こる）としても、後節の内容は揺らぐことがない」という強い確信や決意を示します。「비록（たとえ）」「설령（かりに）」「아무리（いくら）」などの副詞と好んで呼応し、演説や論説文、格調高い対話などで頻繁に活用されます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지라도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지라도（名詞：+(이)ㄹ지라도、過去形：-았/었을지라도）",
+    "examples": [
+      {
+        "translation": "彼がどれほど残念に思うとしても、私は彼の決定に反対するつもりです。"
+      },
+      {
+        "translation": "いくら忙しいとしても、私たちは時間を割いてこの問題を解決しなければなりません。"
+      },
+      {
+        "translation": "どうにかして私たちのチームがこの試合に勝てるとしても、相手チームは依然として強力な相手です。"
+      },
+      {
+        "translation": "このダンスをいくら上手に踊れるとしても、私は依然として踊ることが恥ずかしいです。"
+      }
+    ]
   },
   "ko__11": {
-    "title": "~(으)려나 [(eu)ryeona] (I wonder if...)",
-    "shortExplanation": "This grammar point is used when the speaker is wondering or pondering about a future possibility or outcome.",
-    "longExplanation": "'~(으)려나 [(eu)ryeona]' is used in Korean to express doubt, curiosity, or speculation about a situation in the future. It is similar to the English expression 'I wonder if'. If the verb stem ends in a vowel, '려나' is used; if it ends in a consonant, '으려나' is used.",
-    "formation": "動詞 stem + (으)려나"
+    "title": "-(으)려나（〜だろうか、〜するのかな）",
+    "shortExplanation": "未来の出来事や可能性について、独り言のように推測したり漠然と疑問を抱いたりする終結語尾です（「〜だろうか」「〜するのかな」）。",
+    "longExplanation": "「-(으)려나」は、意図や推測を含む「-(으)려」に疑問の語尾「-나」が合わさった表現です。将来の事態がどうなるかについて、話し手が心の中で思案したり推し量ったりする際によく使われます。特に「-(으)려나 모르겠다（〜だろうか、よく分からない）」という定型フレーズで用いられ、確信が持てない不安や期待を素直に吐露するニュアンスを持ちます。",
+    "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으려나 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 려나（過去形：-았/었으려나）",
+    "examples": [
+      {
+        "translation": "今日の夕方に雨が降るだろうか、よく分かりません。"
+      },
+      {
+        "translation": "友達が私の誕生日を覚えていてくれるだろうか、気になります。"
+      },
+      {
+        "translation": "この試験に合格できるだろうか、不安です。"
+      },
+      {
+        "translation": "来年は旅行に行けるだろうか、まだ分かりません。"
+      }
+    ]
   },
   "ko_겠지만_12": {
-    "title": "~겠지만 [gesjiman] (I think, but...)",
-    "shortExplanation": "〜を表すために使用されます an assumption or conjecture followed by a contrasting idea or condition.",
-    "longExplanation": "'~겠지만 [gesjiman]' is used in Korean to show a strong guess or assumption about something, immediately followed by a contrast or a different condition. It can be compared to the English phrase 'I think (that)... but...', and sometimes conveys a note of uncertainty or reservation.",
-    "formation": "動詞/形容詞 stem + 겠지만"
+    "title": "-겠지만（〜だろうけれど、〜でしょうが）",
+    "shortExplanation": "推測の「-겠-」と逆接の「-지만」が合わさった接続語尾で、前節で推測や承認を述べつつ、後節でそれと相反する事柄や躊躇を示す表現です（「〜だろうけれど」「〜でしょうが」）。",
+    "longExplanation": "「-겠지만」は、話し手の推測や予想を表す「-겠-」に逆接の接続語尾「-지만」が結合した形です。前節で「おそらくそうであろう」「そうなるに違いない」と一定の予想や状況を認めつつも、後節ではそれに反する現実の困難や個人的な事情、相反する感情を対比させて述べるときに使われます。",
+    "formation": "動詞・形容詞の語幹 ＋ 겠지만（名詞：+(이)겠지만、過去形：-았/었겠지만）",
+    "examples": [
+      {
+        "translation": "明日は天気が良いだろうけれど、旅行に行く時間がありません。"
+      },
+      {
+        "translation": "彼女は理解してくれるだろうけれど、彼女に私の失敗を説明するのは難しいですね。"
+      },
+      {
+        "translation": "今回の試験で良い成績を取れるだろうけれど、今でもとても心配です。"
+      },
+      {
+        "translation": "友達は驚くだろうけれど、私は今回のパーティーには参加しないつもりです。"
+      }
+    ]
   },
   "ko_게_13": {
-    "title": "~게 되다 [ge dweda] (End up, come to)",
-    "shortExplanation": "〜を表すために使用されます that an action or situation resulted naturally or unintentionally.",
-    "longExplanation": "'~게 되다' is 〜を示します that an action or state 'came to be' as a result of certain circumstances, often without direct intention. It can refer to an unexpected outcome or something that happened gradually and naturally. It frequently translates as 'end up doing' or 'come to do' in English.",
-    "formation": "動詞 stem + 게 되다"
+    "title": "~게 되다（〜ことになる、〜ようになる）",
+    "shortExplanation": "話者の主観的な意図ではなく、周囲の客観的な状況や自然な成り行きによってある結果や状態の変化に至ったことを表す表現です（「〜ことになる」「〜ようになる」）。",
+    "longExplanation": "「~게 되다」は、接続語尾「-게」と動詞「되다」が組み合わさった表現で、外的な事情や環境の変化、あるいは時間の経過によって自然とある状態に到達したり、事態がそのように決着したりしたことを示します。本人の強い意志ではなく「成り行きでそうなった」というニュアンスを含み、動作動詞と結びつくと「〜することになる」、能力や習慣の変化を表す文脈では「〜ようになる」という意味合いになります。",
+    "formation": "動詞・形容詞の語幹 ＋ 게 되다",
+    "examples": [
+      {
+        "translation": "雨が降っているのに傘を持ってこなかったので、濡れてしまいました。"
+      },
+      {
+        "translation": "あまり勉強をしなかったので、試験に落ちることになりました。"
+      },
+      {
+        "translation": "私は韓国語をたくさん練習したので、韓国語を流暢に話せるようになりました。"
+      },
+      {
+        "translation": "週末に友達と会おうとしたのですが、みんな忙しくて結局一人で映画を見ることになりました。"
+      }
+    ]
   },
   "ko_게_14": {
-    "title": "~게 하다 [ge hada] (Make/cause someone to do)",
-    "shortExplanation": "〜を表すために使用されます 'making' or 'causing' someone to do something.",
-    "longExplanation": "'~게 하다' indicates that someone or something makes or causes another person to perform an action. It corresponds to 'make/let/cause (someone) do something' in English. The subject is the person causing the action, and the object is the one who is made to do it.",
-    "formation": "動詞 stem + 게 하다"
+    "title": "~게 하다（〜（さ）せる、〜するようにする）",
+    "shortExplanation": "使役の表現で、主語が他者にある行動を取らせたり、ある状態や感情を引き起こさせたりすることを表します（「〜（さ）せる」「〜するようにさせる」）。",
+    "longExplanation": "「~게 하다」は、動詞や形容詞の語幹について間接的な使役を表す構文です。指示や命令、働きかけなどによって相手にその動作を行わせたり、事象や対象がある状態になるよう仕向けたりする際に使われます。「人に勉強をさせる」「人を笑わせる」のように、行為の強制・指示から感情の誘発まで幅広い使役の場面で活用されます。",
+    "formation": "動詞・形容詞の語幹 ＋ 게 하다",
+    "examples": [
+      {
+        "translation": "お母さんは弟のミョンジュに勉強させました。そのため、ミョンジュは試験で良い成績を収めることができました。"
+      },
+      {
+        "translation": "社長は社員たちを早く会社に出社させました。そのため、みんな早く仕事を始めることになりました。"
+      },
+      {
+        "translation": "先生は学生たちに韓国語の文章を作らせました。そのため、学生たちはより良く理解できるようになりました。"
+      },
+      {
+        "translation": "その映画は私を笑わせてくれました。お笑いの部分が本当に面白かったからです。"
+      }
+    ]
   },
   "ko_고_15": {
-    "title": "~고 말다 [go malda] (End up)",
-    "shortExplanation": "〜を表すために使用されます that an action is completed or ends with an unexpected or unintended result.",
-    "longExplanation": "'~고 말다' emphasizes that an action/event reached its conclusion (often regretfully or unexpectedly). It can carry the nuance of something happening despite efforts or intentions to avoid it, leading to a sense of finality or mild lament.",
-    "formation": "動詞 stem + 고 말다"
+    "title": "~고 말다（とうとう〜してしまった、結局〜してしまった）",
+    "shortExplanation": "ある動作が完了したことを表しますが、特に意図しない好ましくない結果に終わってしまい、後悔や無念の気持ちが残ることを示します（「とうとう〜してしまった」「結局〜してしまった」）。",
+    "longExplanation": "「~고 말다」は、接続語尾「-고」に補助動詞「말다」が付いた表現で、ある行動や事態が最終的にその結末を迎えてしまったことを表します。多くの場合、本人が避けようと努力したにもかかわらず望まない結果に陥ってしまったという文脈で使われ、強い後悔や残念さ、諦めの気持ちが込められます。「결국（結局）」「끝내（とうとう）」などの副詞と共起することが多いです。",
+    "formation": "動詞の語幹 ＋ 고 말다（通常は過去形「-고 말았다」で使用）",
+    "examples": [
+      {
+        "translation": "練習をしすぎて指が痛くなり、結局練習をやめてしまいました。"
+      },
+      {
+        "translation": "友達がずっと勧めてくるのでとうとうその映画を見てしまいましたが、あまり面白くありませんでした。"
+      },
+      {
+        "translation": "お腹が空きすぎて彼女の作ってくれた料理を全部平らげてしまいました。実は具材の選び方が少し微妙だったのですが。"
+      },
+      {
+        "translation": "一日中働いてあまりに疲れていたため眠り込んでしまい、そのせいで計画していた仕事が全くできませんでした。"
+      }
+    ]
   },
   "ko_고_16": {
-    "title": "~고 말하다 [go malhada] (Say that...)",
-    "shortExplanation": "Used to convey that someone said something in a manner suggesting finality or firm intention.",
-    "longExplanation": "The construction '~고 말하다' in Korean means 'to say (something).' It can carry a nuance of definitiveness or insistence in the statement. It is often used when someone states a fact, an order, or a firm decision they have made.",
-    "formation": "節 + 고 말하다"
+    "title": "~고 말하다（〜と言っている、〜と言う、〜と話す）",
+    "shortExplanation": "間接引用の表現で、ある人が述べた発言、事実、決意や意向を客観的・確定的に引用して伝える構文です（「〜と言う」「〜と話す」）。",
+    "longExplanation": "「~고 말하다」は、引用の助詞「-고」に発話動詞「말하다（言う・話す）」が結びついた間接引用の構文です。先行する節には平叙文の引用語尾「-다고」、意志・推量の「-겠다고」、指定詞の「-(이)라고」などが接続し、他者（または話者自身）が発言した内容や意思決定を正確に相手へ伝達する際に用いられます。",
+    "formation": "間接引用節（-다고 / -냐고 / -(으)라고 / -자고） ＋ 말하다",
+    "examples": [
+      {
+        "translation": "彼女はお腹がいっぱいだけれど、小さなケーキをもう一切れ食べると言いました。"
+      },
+      {
+        "translation": "母は今晩早く寝ると言っていました。あまりにも疲れているからだそうです。"
+      },
+      {
+        "translation": "会社の代表は状況が厳しいと述べ、そのため社員たちはもっと集中しなければならないと感じました。"
+      },
+      {
+        "translation": "彼は決して諦めないと話したので、みんなが彼の決心を信じるようになりました。"
+      }
+    ]
   },
   "ko_고_17": {
-    "title": "~고 보면 [go bomyeon] (Upon closer look, when you consider)",
-    "shortExplanation": "〜を表すために使用されます the meaning 'when seen/considered in a certain way' or 'once you look at it, you realize...'.",
-    "longExplanation": "'~고 보면 [go bomyeon]' conveys the idea that after doing or seeing something, a new perspective or outcome emerges. It indicates that things may look different 'when you actually do/see them'.",
-    "formation": "動詞 stem + 고 보면"
+    "title": "~고 보면（〜してみると、よくよく〜してみれば）",
+    "shortExplanation": "実際にある動作を行ってみたり、物事を深く観察・熟考してみたりすると、当初の印象とは異なる新しい事実や視点に気づくことを表します（「〜してみると」「よく〜してみれば」）。",
+    "longExplanation": "「~고 보면」は、先行動作を表す「-고」と仮定・試行を表す「보면（見ると）」が組み合わさった接続表現です。初見や予断とは異なり、実際に実行してみたり、じっくり向き合って観察・思考してみたりした結果、本質が見えてきたり新たな評価・認識に至ったりするプロセスを表現します。",
+    "formation": "動詞の語幹 ＋ 고 보면",
+    "examples": [
+      {
+        "translation": "初めは問題が難しそうに見えましたが、詳しく見てみればそれほど難しくはありません。"
+      },
+      {
+        "translation": "彼のアイデアは初め奇妙に聞こえましたが、じっくり考えてみると非常に独創的です。"
+      },
+      {
+        "translation": "写真をよく見てみると、彼はずいぶん幸せそうに見えますね。"
+      },
+      {
+        "translation": "この本を読んでみれば、作家の意図がもっとよく理解できると思います。"
+      }
+    ]
   },
   "ko_고서_18": {
-    "title": "~고서 [goseo] (After doing)",
-    "shortExplanation": "〜を表すために使用されます that an action is performed after the execution of another action.",
-    "longExplanation": "'~고서 [goseo]' is a Korean grammar form 〜を示します that another action or event occurs after the first action has been completed. It roughly translates to 'after doing something.' This construction usually implies that the same subject completes one action and then proceeds somewhat directly to the next.",
-    "formation": "動詞 stem + 고서"
+    "title": "~고서（〜してから、〜した上で）",
+    "shortExplanation": "先行する動作が完全に完了した後に後続の動作が行われることを表す接続語尾で、「-고」よりも時間的先後関係や前提条件を強調します（「〜してから」「〜した上で」）。",
+    "longExplanation": "「~고서」は、並列・生起を表す接続語尾「-고」に助詞「-서」が結びついた形で、同一の主語が前の動作を確実に完了させ、それを踏まえた上で次の動作に移るという順序関係を際立たせる語尾です。単なる時間の経過だけでなく、前項が後項を行うための条件・根拠となっているニュアンスを含みます。",
+    "formation": "動詞の語幹 ＋ 고서",
+    "examples": [
+      {
+        "translation": "先週図書館に行きました。本を借りてから戻ってきました。"
+      },
+      {
+        "translation": "家に着くやいなやご飯を食べてから体を洗いました。"
+      },
+      {
+        "translation": "私は宿題を全部済ませてからテレビを見ました。"
+      },
+      {
+        "translation": "私たちはプールで泳いでからご飯を食べました。"
+      }
+    ]
   },
   "ko_고자_19": {
-    "title": "~고자 [goja] (In order to)",
-    "shortExplanation": "〜を表すために使用されます the purpose or aim of an action: 'in order to', 'for the purpose of'.",
-    "longExplanation": "'~고자 [goja]' is 〜を表すために使用されます someone’s intention or goal—like 'in order to' in English. It clarifies the purpose of an action. Note that this form is somewhat formal or literary; in more casual speech, you might see different expressions such as '~려고'.",
-    "formation": "動詞 stem + 고자"
+    "title": "~고자（〜しようと、〜したく、〜するために）",
+    "shortExplanation": "格式ばった表現で、ある行動を行う目的や意図、志向を明確に表す接続語尾です（「〜しようと」「〜するために」）。",
+    "longExplanation": "「~고자」は、文語的で改まった響きを持つ目的の接続語尾で、主語がどのような意図や目的を持って後続の行動を行うのかを述べる際に用いられます。日常会話の「-(으)려고」に相当しますが、公式のスピーチ、論文、面接、公の発表などで好まれます。文末で「~고자 하다（〜しようとする、〜したいと思う）」の形でも頻繁に使われます。",
+    "formation": "動詞の語幹 ＋ 고자（または -고자 하다）",
+    "examples": [
+      {
+        "translation": "私はTOPIK試験に合格するために韓国語を勉強しようと思います。"
+      },
+      {
+        "translation": "彼女は自分自身を向上させようと毎日運動をしています。"
+      },
+      {
+        "translation": "私の父は私たちの家族のために毎日働こうとしています。"
+      },
+      {
+        "translation": "私たちは環境を保護するためにリサイクル品を購入することに決めました。"
+      }
+    ]
   },
   "ko_기는_20": {
-    "title": "~기는 하다 [gineun hada] (Do something but...)",
-    "shortExplanation": "〜を表すために使用されます 'I do (action) but...', showing a contrast with an additional clause.",
-    "longExplanation": "'~기는 하다 [gineun hada]' acknowledges that something is true while introducing a contrasting or qualifying statement. The nuance is similar to 'I do X, but...' or 'Yes, it’s true that X, but...' in English.",
-    "formation": "動詞 stem + 기는 하다"
+    "title": "~기는 하다（〜することはするが、〜いことは〜いが）",
+    "shortExplanation": "前項の事実を一応は肯定・承認しつつも、後続節でそれと対比される留保条件や不十分な点を述べる表現です（「〜することはするが」「〜には〜が」）。",
+    "longExplanation": "「~기는 하다」は、用言の名詞形語尾「-기」、対照を表す補助詞「-는」、動詞「하다」が合わさった表現です。言及された動作や状態の存在自体は認めるものの（「食べはしたが」「良いことは良いが」）、後節において「期待したほどではない」「別の問題がある」といった限定や対照的な事実を付け加える際に使われます。口語では「~긴 하다」と縮約されます。",
+    "formation": "動詞・形容詞の語幹 ＋ 기는 하다（口語縮約形：-긴 하다）",
+    "examples": [
+      {
+        "translation": "食べはしましたが、そんなにたくさん食べたわけではありません。"
+      },
+      {
+        "translation": "私はその映画を見はしたのですが、楽しんで見ることはできませんでした。"
+      },
+      {
+        "translation": "彼は運動をしはする。しかし健康的な食生活は維持していません。"
+      },
+      {
+        "translation": "私は韓国語を習ってはいますが、まだ上手には話せません。"
+      }
+    ]
   },
   "ko_기로_21": {
-    "title": "~기로 하다 [giro hada] (Decide to)",
-    "shortExplanation": "〜を表すために使用されます the decision or resolution to do something.",
-    "longExplanation": "'~기로 하다 [giro hada]' is 〜を示します that someone has decided or resolved to carry out a particular action. It can refer to personal decisions or collectively agreed plans, often used when describing future intentions.",
-    "formation": "動詞 stem + 기로 하다"
+    "title": "~기로 하다（〜することにする、〜することに決める）",
+    "shortExplanation": "自らの意志で行動を決意したり、他者との話し合いの末にある計画や約束を取り決めたりしたことを表します（「〜することにする」「〜することに決めた」）。",
+    "longExplanation": "「~기로 하다」は、名詞形語尾「-기」、助詞「-로」、動詞「하다」から成る表現で、個人の主体的な決心や、複数人による合意・取り決めを表します。決定した事柄について語ることが多いため、通常は過去形「~기로 했다（〜することにした）」の形で最も頻繁に使用されます。",
+    "formation": "動詞の語幹 ＋ 기로 하다（通常は過去形「-기로 했다」で使用）",
+    "examples": [
+      {
+        "translation": "私は毎朝運動することに決めました。そのため、天気が寒くても毎日運動しています。"
+      },
+      {
+        "translation": "私たちはみんな来年一緒に旅行に行くことにしました。だから今からお金を貯めることにしました。"
+      },
+      {
+        "translation": "彼は今年中にタバコをやめることにしました。そのためタバコをこれ以上買わないことにしました。"
+      },
+      {
+        "translation": "会社は社員の安全のために、毎週金曜日にマスクを着用することにしました。"
+      }
+    ]
   },
   "ko_기로_22": {
-    "title": "~기로 되다 [giro dweda] (It is decided/settled)",
-    "shortExplanation": "〜を表すために使用されます that something has been officially decided or settled.",
-    "longExplanation": "'~기로 되다 [giro dweda]' is used when a decision has been made—often collectively or officially—and is now settled. It is akin to ‘It has been decided that...’ in English.",
-    "formation": "動詞 stem + 기로 되다"
+    "title": "~기로 되다（〜することになっている、〜することに決まる）",
+    "shortExplanation": "集団の決定、公の取り決め、または状況の成り行きによって予定や担当があらかじめ定まっていることを客観的に表します（「〜することになっている」「〜することに決まった」）。",
+    "longExplanation": "「~기로 되다」は、「-기」、「-로」に動詞「되다」が結合した表現です。主語本人の意志決定を表す「~기로 하다」とは異なり、組織や周囲の合意、規則、客観的な情勢によって「そのように物事が決定された」「予定として定められた」という客観的な枠組みを言い表します。",
+    "formation": "動詞の語幹 ＋ 기로 되다（通常は過去形「-기로 되었다 / -기로 됐다」で使用）",
+    "examples": [
+      {
+        "translation": "私たちは来週旅行に行くことになりました。日程はすでに決まりました。"
+      },
+      {
+        "translation": "彼女が詳しい計画を立てることになりました。来月の結婚式の準備中です。"
+      },
+      {
+        "translation": "私たちは毎週木曜日ごとに会議を開くことになりました。全員が参加できる時間です。"
+      },
+      {
+        "translation": "誰をチームリーダーに選抜するかはすでに決定しており、彼がその役割を引き受けることになりました。"
+      }
+    ]
   },
   "ko_기_23": {
-    "title": "~기 시작하다 [gi sijak-hada] (Begin to)",
-    "shortExplanation": "〜を表すために使用されます the beginning of an action or state.",
-    "longExplanation": "'~기 시작하다 [gi sijak-hada]' means 'to start doing something.' It's comparable to 'begin to' or 'start to' in English. It emphasizes that an action or condition has just begun.",
-    "formation": "動詞 stem + 기 시작하다"
+    "title": "~기 시작하다（〜し始める、〜しだす）",
+    "shortExplanation": "ある動作や習慣、あるいは状態の変化が新たに開始されることを表します（「〜し始める」「〜しだす」）。",
+    "longExplanation": "「~기 시작하다」は、名詞形語尾「-기」に「시작하다（始める）」が接続した表現で、ある動作の開始点や、新たな習慣・状態への移行を明示します。日本語の「〜し始める」に直接対応し、初歩段階からの着手や状況の推移を表す際によく使われます。",
+    "formation": "動詞・形容詞の語幹 ＋ 기 시작하다",
+    "examples": [
+      {
+        "translation": "私は韓国語を学び始めるためにこの学校に来ました。以前は全く知りませんでした。"
+      },
+      {
+        "translation": "運動を本格的に始めようとフィットネスクラブに登録しました。健康に良いそうですね。"
+      },
+      {
+        "translation": "最近は朝起き始めると、必ずコーヒーを一杯飲みます。"
+      },
+      {
+        "translation": "あの日以来、私は毎日映画を見始めました。人々の多様な物語に触れたいからです。"
+      }
+    ]
   },
   "ko_기_24": {
-    "title": "~기 전에 [gi jeone] (Before)",
-    "shortExplanation": "'~기 전에' is 〜を表すために使用されます 'before doing something'.",
-    "longExplanation": "'~기 전에 [gi jeone]' means 'before (doing something).' It marks that one action or state happens prior to another. Commonly used with the infinitive form of the verb plus '기 전에'.",
-    "formation": "動詞 stem + 기 전에"
+    "title": "~기 전에（〜する前に）",
+    "shortExplanation": "ある動作や出来事が発生するよりも前の時点であることを表す時間表現です（「〜する前に」）。",
+    "longExplanation": "「~기 전에」は、用言の名詞形語尾「-기」、名詞「전（前）」、時間格助詞「-에」が組み合わさった表現です。後節の動作が前節の動作に先立って行われることを明示します。文全体の時制が過去であっても、この語尾の直前には過去形を用いず、常に基本形（語幹）のまま接続します。",
+    "formation": "動詞の語幹 ＋ 기 전에（名詞 ＋ 전에）",
+    "examples": [
+      {
+        "translation": "旅行に行く前に荷物をまとめなければなりません。"
+      },
+      {
+        "translation": "ミーティングが始まる前に発表の準備を終えました。"
+      },
+      {
+        "translation": "私はいつも運動する前にストレッチをします。"
+      },
+      {
+        "translation": "試験を受ける前に十分勉強しました。"
+      }
+    ]
   },
   "ko_기_25": {
-    "title": "~기 힘들다 [gi himdeulda] (It's hard to...)",
-    "shortExplanation": "Expresses difficulty in performing an action or task.",
-    "longExplanation": "'~기 힘들다 [gi himdeulda]' is used to describe that it's difficult or hard to do something. '힘들다' means 'hard' or 'tough,' while the preceding '~기' nominalizes the verb, turning it into 'doing X is hard.'",
-    "formation": "動詞 stem + 기 + 힘들다"
+    "title": "~기 힘들다（〜するのが大変だ、〜しにくい、〜するのが困難だ）",
+    "shortExplanation": "ある動作を実行したり状態を維持したりすることが精神的・肉体的に非常に困難で骨が折れることを表します（「〜するのが大変だ」「〜しづらい」）。",
+    "longExplanation": "「~기 힘들다」は、用言の名詞形語尾「-기」に形容詞「힘들다（大変だ、辛い、困難だ）」が結びついた表現です。その行為を行うことに対して強い負担や障害を感じており、容易には成し遂げられない、あるいは継続するのが苦しいという実感を表します。強調する場合は「~기가 힘들다」とも言います。",
+    "formation": "動詞の語幹 ＋ 기 힘들다（強調：-기가 힘들다）",
+    "examples": [
+      {
+        "translation": "毎朝早く起きるのは大変ですが、どうしようもありません。"
+      },
+      {
+        "translation": "韓国語を学ぶことは初め難しかったですが、練習を続けても慣れるのが困難であることに気づきました。"
+      },
+      {
+        "translation": "毎日運動するのは大変ですが、健康のためにコツコツ続けようとしています。"
+      },
+      {
+        "translation": "人前で話すことは本当に大変で、今もなお練習を続けているところです。"
+      }
+    ]
   },
   "ko_기를_26": {
-    "title": "~기를 [gireul] (In order to)",
-    "shortExplanation": "〜を示します the purpose or motive behind an action, similar to 'in order to'.",
-    "longExplanation": "'~기를 [gireul]' is attached to a verb (in its nominalized form) to mean 'in order to do X' or 'for the purpose of doing X.' It's frequently followed by expressions like '위해(서)' (wihae[seo]), highlighting intent or purpose.",
-    "formation": "動詞 (기) + (을/를)"
+    "title": "~기(를) 위해(서)（〜するために、〜することを目的として）",
+    "shortExplanation": "後続の動作を行う目的、意図、または目指す対象を明示する表現です（「〜するために」「〜のために」）。",
+    "longExplanation": "「~기를 위해(서)」は、用言の名詞形語尾「-기」、目的格助詞「-를」、動詞「위하다（〜のためとする）」が合わさった目的表現です。ある行為を行うための明確な狙いや目標を提示します。日常的な表現では助詞「-를」や「-서」が省略され、「-기 위해(서)」の形でも非常によく用いられます。",
+    "formation": "動詞の語幹 ＋ 기를 위해(서)（省略形：-기 위해(서)、名詞 ＋ 을/를 위해(서)）",
+    "examples": [
+      {
+        "translation": "この海外旅行は、英語を学ぶために行くものです。"
+      },
+      {
+        "translation": "講義を聴くために、朝早く起きました。"
+      },
+      {
+        "translation": "彼は家を買うためにお金を貯めました。"
+      },
+      {
+        "translation": "彼女は本を執筆するために多くの経験を積みました。"
+      }
+    ]
   },
   "ko_기만_27": {
-    "title": "~기만 하다 [giman hada] (Just)",
-    "shortExplanation": "'~기만 하다' is 〜を表すために使用されます that someone or something does only the mentioned action and nothing else.",
-    "longExplanation": "The grammar point '~기만 하다' is used in Korean to show exclusivity of action — that the verb in question is the only thing done. The nominalized form (~기) plus '만 하다' implies 'only do X.' Often, it can carry a slightly negative nuance or express dissatisfaction because it implies that the action is insufficient or not meeting expectations.",
-    "formation": "動詞 (dictionary form) + 기만 하다"
+    "title": "~기만 하다（〜ばかりしている、ただ〜するだけだ）",
+    "shortExplanation": "他のことは一切せず、ひたすらその動作だけを行っていることを表し、不満や心配のニュアンスを伴うことが多いです（「〜ばかりしている」「ただ〜するだけだ」）。",
+    "longExplanation": "「~기만 하다」は、用言の名詞形語尾「-기」、限定の助詞「-만（〜だけ・ばかり）」、動詞「하다」が結合した表現です。主語がある行為にのみ終始し、本来すべき他の事柄を放棄している状況を際立たせます。そのため、話し手の懸念、小言、あるいは不満の感情が込められることがよくあります。形容詞につく場合は「ただ〜なだけだ（例：高価なばかりで美味しくない）」の意味になります。",
+    "formation": "動詞・形容詞の語幹 ＋ 기만 하다",
+    "examples": [
+      {
+        "translation": "私は一晩中勉強ばかりしていて、他のことは何一つしませんでした。"
+      },
+      {
+        "translation": "うちの父はテレビばかり見ていて、それが心配です。"
+      },
+      {
+        "translation": "彼は毎日同じ食堂に行って食べるばかりしています。健康に良くありません。"
+      },
+      {
+        "translation": "私たちの友達はゲームばかりしながら時間を無駄にしています。"
+      }
+    ]
   },
   "ko_기에는_28": {
-    "title": "~기에는 [gieneun] (For, in order to)",
-    "shortExplanation": "〜を表すために使用されます a purpose or intention ('for', 'in order to').",
-    "longExplanation": "'~기에는 [gieneun]' is a structure used in Korean to indicate that one is doing something for a particular purpose or end goal, similar to 'in order to' or 'for the sake of' in English. It highlights the reason for an action and what is required to achieve it.",
-    "formation": "動詞 stem + 기에는"
+    "title": "~기에는（〜するには、〜するためには）",
+    "shortExplanation": "名詞形語尾「-기」と助詞「-에는」が結合した表現で、ある動作を基準や目的として「〜するには」「〜するためには（もっと〜が必要だ／まだ足りない）」という意味を表します。",
+    "longExplanation": "「~기에는」は、動詞を名詞化する語尾「-기」に助詞「-에（〜に）」と強調の補助詞「-는（〜は）」が付いた構文です。前節の行為を評価や判断の基準・目的として提示し、それを達成するためには後節で述べるような条件・努力・費用などが求められること、あるいは現状では不十分・困難であることを表します。",
+    "formation": "動詞の語幹 ＋ 기에는",
+    "examples": [
+      {
+        "translation": "TOPIKの試験に合格するためには、もっとたくさん勉強しなければなりません。"
+      },
+      {
+        "translation": "学校に遅刻しないためには、朝早く起きなければなりません。"
+      },
+      {
+        "translation": "車を買うには、もっと多くのお金を貯めなければなりません。"
+      },
+      {
+        "translation": "かけっこ大会で勝つためには、毎日練習しなければなりません。"
+      }
+    ]
   },
   "ko_나_29": {
-    "title": "~나 보다 [na boda] (It seems, looks like)",
-    "shortExplanation": "〜を表すために使用されます an assumption or guess, like 'it seems' or 'looks like'.",
-    "longExplanation": "'~나 보다 [na boda]' is a common grammar pattern in Korean for making inferences or guesses based on observation or context. 〜と訳されます 'it seems that...' or 'looks like...' in English. It does not express absolute certainty, only a plausible guess or assumption.",
-    "formation": "動詞 stem + 나 보다"
+    "title": "~나 보다（〜のようだ、〜らしい、〜みたいだ）",
+    "shortExplanation": "目に見える外的な状況や事実を手がかりにして、「〜のようだ」「〜と見える」と推量を表す表現です。",
+    "longExplanation": "「~나 보다」は、疑問を表す語尾「-나」と補助動詞「보다」が合わさった構文で、話者が直接見聞きした状況や相手の行動などの根拠に基づいて、「どうやら〜のようだ」「〜らしい」と推測・判断する際に用いられます。主に動詞、存在詞「있다/없だ」、過去形語尾の後に接続します（形容詞には本来「-(으)ㄴ가 보다」が標準ですが、口語では形容詞にも「-나 보다」が広く使われます）。",
+    "formation": "動詞の語幹・있다/없다・過去形語尾 ＋ 나 보다（形容詞の語幹には -(으)ㄴ가 보다 または口語で 나 보다）",
+    "examples": [
+      {
+        "translation": "天気が少し寒いみたいですね、コートを着なければなりません。"
+      },
+      {
+        "translation": "彼は私のことが好きなようです、いつも私を訪ねてきます。"
+      },
+      {
+        "translation": "後輩は仕事ができるようですね、上司が彼を褒めています。"
+      },
+      {
+        "translation": "友達は今日機嫌が良くないみたいです、顔が憂鬱そうに見えます。"
+      }
+    ]
   },
   "ko_나요_30": {
-    "title": "~나요? [nayo?] (Isn't it?, right?)",
-    "shortExplanation": "Used to confirm or get the listener's agreement or opinion.",
-    "longExplanation": "'~나요? [nayo?]' is a colloquial way in Korean to seek the listener's confirmation or agreement, akin to saying 'Isn't it?' or 'Right?' in English. It invites the other person's feedback or concurrence, helping foster a cooperative tone in conversation.",
-    "formation": "動詞/形容詞 + (은/ㄴ/는/ㄹ) + 나요?"
+    "title": "~나요?（〜ですか？、〜ではないでしょうか？）",
+    "shortExplanation": "丁寧で柔らかい疑問の終結語尾で、相手に穏やかに尋ねたり、同意や確認を求めたりする際に使われます（「〜ですか」「〜ではないでしょうか」）。",
+    "longExplanation": "「~나요?」は、疑問語尾「-나」に丁寧の補助詞「-요」が付いた終結語尾です。通常の「-어요/아요?」よりも角が立たず、親しみやすく柔らかい響きを持つため、相手に配慮しながら質問したり、「그렇지 않나요?（そうではないでしょうか？）」のように相手の同意や共感を求めたりする場面で非常によく用いられます。",
+    "formation": "動詞の語幹・있다/없다・過去形語尾 ＋ 나요?、形容詞の語幹には本来 -(으)ㄴ가요?（않다などの否定補助形容詞の後には -나요? も多用）",
+    "examples": [
+      {
+        "translation": "今日はお天気が本当に良いので、外出したら気持ちがいいと思います。そう思いませんか？"
+      },
+      {
+        "translation": "このレストランの料理は美味しいので、次回もまたここに来られたら良いですね。そうではないでしょうか？"
+      },
+      {
+        "translation": "あの状況を理解できなかったのは私だけではなかったはずですが、そうではありませんか？"
+      },
+      {
+        "translation": "その映画は面白かったのでまた観たいと思います。そう思いませんか？"
+      }
+    ]
   },
   "ko_남짓_31": {
-    "title": "~남짓 [namjit] (About, around)",
-    "shortExplanation": "Indicates an approximate number or amount (similar to 'about' or 'around').",
-    "longExplanation": "'~남짓 [namjit]' is added after numbers to indicate an approximate quantity, similar to 'about' or 'around' in English. It suggests the total might be a bit more or a bit less than that number, providing a near approximation.",
-    "formation": "Number + 남짓"
+    "title": "~남짓（〜余り、〜強、およそ〜）",
+    "shortExplanation": "数量詞や単位名詞の後ろについて、その数値をわずかに超えていること、またはその前後の概数であることを表します（「〜余り」「〜強」「およそ〜」）。",
+    "longExplanation": "「~남짓」は、数詞や助数詞（単位名詞）の直後に接続して概数を表す依存名詞（接尾辞的用法）です。標準的な韓国語の意味合いとしては「その数量を少し超えている（〜余り、〜強）」ことを指しますが、日常会話では「およそ〜」「〜程度」というおおよその数量を提示する際にも広く用いられます。",
+    "formation": "数詞・単位名詞 ＋ 남짓",
+    "examples": [
+      {
+        "translation": "私はこの本を100ページ余り読みました。まだたくさん残っているのでもっと読まなければならないようです。"
+      },
+      {
+        "translation": "ここからソウルまでは100キロ強の距離があり、車で行くと1時間ほどかかります。"
+      },
+      {
+        "translation": "今日は5000人余りの人々が集まり、大規模な祭りを楽しみました。"
+      },
+      {
+        "translation": "私がこれまでに読んだ本はおよそ200冊余りです。"
+      }
+    ]
   },
   "ko_는_32": {
-    "title": "~는 대로 [neun daero] (As is, the way it is)",
-    "shortExplanation": "〜を表すために使用されます 'the same way', 'just as', or 'exactly like'.",
-    "longExplanation": "'~는 대로 [neun daero]' can follow a verb stem or a noun to indicate 'the way it is done' or 'just as someone does something.' It emphasizes doing or perceiving something exactly as it is, or following a particular method without changing it.",
-    "formation": "1) 動詞 stem + 는 대로\n2) 名詞 + (으)로 + 대로\n(Note: actual usage varies depending on the part of speech.)"
+    "title": "~는 대로（〜のとおりに、〜のままに）",
+    "shortExplanation": "連体形語尾「-는」と依存名詞「대로」が結合した表現で、前で述べられたやり方や指示、状態にそのまま従って行うことを表します（「〜のとおりに」「〜のままに」）。",
+    "longExplanation": "「~는 대로」は、動詞の現在連体形に「〜のとおり、〜のまま」を意味する依存名詞「대로」が接続した構文です。前節で示された方法、指示、様子などに手を加えず、そっくりそのまま従ったり再現したりするニュアンスを持ちます。名詞に直接付く場合は「〜대로（그대로＝そのまま、뜻대로＝思い通りに）」となり、過去の出来事には「-(으)ㄴ 대로」が用いられます。",
+    "formation": "動詞の語幹 ＋ 는 대로 / 名詞 ＋ 대로（過去連体形は -(으)ㄴ 대로）",
+    "examples": [
+      {
+        "translation": "お母さんが家を掃除するとおりに、私も同じように掃除しなければなりません。"
+      },
+      {
+        "translation": "彼はもともとやっていたとおりに、ずっと同じ仕事を続けてきました。"
+      },
+      {
+        "translation": "友達が教えてくれたとおりにラーメンを作りました。"
+      },
+      {
+        "translation": "その芸術家の絵は、本来の姿のまま鑑賞すべきです。"
+      }
+    ]
   },
   "ko_는_33": {
-    "title": "~는 바와 같이 [neun bawa gachi] (Just like, as if)",
-    "shortExplanation": "Used to compare two situations, meaning 'just like' or 'as if'.",
-    "longExplanation": "'~는 바와 같이 [neun bawa gachi]' is used to highlight a similarity between two actions or states. '바' (roughly 'the situation' or 'the way') and '같이' ('like') combine to mean 'just like that situation.' It carries a nuance similar to 'as if...' or 'the way that...' in English.",
-    "formation": "動詞 stem + 는 바와 같이 / 名詞 + (인) 바와 같이"
+    "title": "~는 바와 같이（〜のとおりに、〜のように、〜かのごとく）",
+    "shortExplanation": "連体形語尾、依存名詞「바」、助詞「와」、副詞「같이」が合わさった表現で、比況や言及において「〜のように」「〜のとおり」という意味を表します。",
+    "longExplanation": "「~는 바와 같이」は、事柄や内容を表す依存名詞「바」に比較の助詞「-와（〜と）」と「같이（同じく）」が組み合わさった構文です。二つの状況の著しい類似性を例えて「まるで〜であるかのように」と比況的に述べる場合や、公式なスピーチ・文書等で「ご承知のとおり」「前述のとおり」のように事実を引き合いに出して説明する際によく用いられます。",
+    "formation": "動詞・形容詞の語幹 ＋ -(으)ㄴ/는 바와 같이 / 名詞 ＋ (인) 바와 같이",
+    "examples": [
+      {
+        "translation": "彼はまるで生まれたばかりで目を閉じたかのように眠っていました。"
+      },
+      {
+        "translation": "学生たちは先生の説明が理解できず、まるで外国語を聞いているかのようでした。"
+      },
+      {
+        "translation": "彼女は苦労したかのように、疲れ切った顔つきで帰宅しました。"
+      },
+      {
+        "translation": "試験に落ちたかのように、彼は悲しそうな顔をして部屋に入っていきました。"
+      }
+    ]
   },
   "ko_는_34": {
-    "title": "~는 편이다 [neun pyeonida] (Tend to)",
-    "shortExplanation": "〜を表すために使用されます a habit, tendency, or general characteristic of someone.",
-    "longExplanation": "The structure '~는 편이다' is used in Korean to express regular habits or tendencies. It is typically translated as 'tend to (do)', 'usually (do)', or 'often (do)'. It helps describe the usual or characteristic behavior of a person or situation.",
-    "formation": "動詞 stem + 는 편이다"
+    "title": "~는 편이다（〜ほうだ、どちらかといえば〜するほうだ）",
+    "shortExplanation": "習慣や傾向、一般的な特徴を表し、断定を避けて「どちらかといえば〜するほうだ」「割と〜するほうだ」と控えめに述べる表現です。",
+    "longExplanation": "「~는 편이다」は、動詞の現在連体形語尾「-는」に側・方を表す依存名詞「편」と指定詞「이다」が接続した構文です。物事を100%断定するのではなく、「どちらの側に属するかと言えばそちらの傾向が強い」というニュアンスを含みます。日本語の「〜するほうだ」「割と〜なほうだ」に相当します。",
+    "formation": "動詞の語幹 ＋ 는 편이다（形容詞の語幹には -(으)ㄴ 편이다）",
+    "examples": [
+      {
+        "translation": "私は毎朝早く起きるほうです。朝はいろいろとやることが多くて早起きしなければならないからです。"
+      },
+      {
+        "translation": "彼は感情的な人なので怒りを表に出しやすいほうです。時には彼の表現が過剰に見えることもあります。"
+      },
+      {
+        "translation": "思春期の頃は悩みがいくら大きくても親には話しにくいほうです。親には理解してもらえないような気がするからです。"
+      },
+      {
+        "translation": "家では主に韓国料理を食べるほうです。韓国料理を一番得意としているからです。"
+      }
+    ]
   },
   "ko_는다는_35": {
-    "title": "~는다는 것 [neundaneun geot] (The fact that)",
-    "shortExplanation": "〜を表すために使用されます 'the fact that' or 'the meaning that' when referring to or summarizing someone's statement or idea.",
-    "longExplanation": "The '~는다는 것' construction is used to convey or emphasize 'the fact that' something is stated or believed. It can summarize someone’s words, thoughts, or statements. It often appears in discussions to restate a point or highlight that a particular idea or fact is important.",
-    "formation": "動詞 + 는다(는) + 는 것"
+    "title": "~는다는 것（〜ということ、〜という事実）",
+    "shortExplanation": "間接引用の連体形と依存名詞「것」が合わさった表現で、ある発言や命題、事実を名詞化して強調・定義する際に使われます（「〜ということ」「〜という事実」）。",
+    "longExplanation": "「~는다는 것」は、平叙文の間接引用形「-(ㄴ/는)다고 하는」が縮約された連体形「-(ㄴ/는)다는」に、事柄を表す依存名詞「것」が結合した名詞節構文です。ある主張、事実、概念などを文の主語や主題として取り上げ、「〜ということは…を意味する」「〜という事実に気づいた」のように本質的な意味を定義・解説したり強調したりする際に用いられます。",
+    "formation": "動詞の語幹（パッチム有 ＋ 는다는 것 / パッチム無 ＋ ㄴ다는 것）、形容詞の語幹 ＋ 다는 것、名詞 ＋ (이)라는 것、過去形 ＋ -았/었다는 것",
+    "examples": [
+      {
+        "translation": "彼が学校に通っているということは、本当に一生懸命勉強していることを示す証拠です。"
+      },
+      {
+        "translation": "私たちが互いを理解し合っているということは、本当に大切な関係を築いていく上で必要なことです。"
+      },
+      {
+        "translation": "私は友達が大成功を収めたという事実を知って、とても嬉しかったです。"
+      },
+      {
+        "translation": "彼が運動を好むということは、健康のために努力しているということを意味します。"
+      }
+    ]
   },
   "ko_는데_36": {
-    "title": "~는데 [neunde] (But, and, so)",
-    "shortExplanation": "Used to connect two clauses in various contexts—often 'but', 'and', or 'so'.",
-    "longExplanation": "'~는데' is a versatile connector in Korean. Its meaning depends on context—sometimes it indicates contrast (but), sometimes a sequential or related action (and/so). It can also be used at the end of a clause to invite further elaboration or explanation.",
-    "formation": "動詞/形容詞 stem + 는데"
+    "title": "~는데（〜のに、〜けれど、〜だが、〜のところ）",
+    "shortExplanation": "後節の前提となる背景状況を提示したり、前後の対比・逆接を表したりする非常に汎用性の高い接続語尾です（「〜のに」「〜けれど」「〜だが」）。",
+    "longExplanation": "「~는데」は、韓国語で最も頻繁に使われる代表的な接続語尾の一つです。主な働きとして、1) 後節で質問・命令・提案を行うための前置きや背景事情の提示、2) 前後の事柄が対照的・逆接的であることを表す用法（〜のに、〜だが）、3) 状況を客観的に並列して述べる用法があります。動詞の語幹・存在詞・過去形には「-는데」、形容詞の語幹には「-(으)ㄴ데」が接続します。",
+    "formation": "動詞の語幹・있다/없다・過去形語尾 ＋ 는데（形容詞の語幹には -(으)ㄴ데、名詞には -(이)ㄴ데）",
+    "examples": [
+      {
+        "translation": "天気が寒いのにコートを着ていませんね。病気になってしまいますよ。"
+      },
+      {
+        "translation": "友達と会う約束をしていたのですが、雨が降ったので予定が変わってしまいました。"
+      },
+      {
+        "translation": "今日たくさん勉強したのですが、依然として理解できません。"
+      },
+      {
+        "translation": "彼は笑っていましたが、後で分かってみると私に対して怒っていたのでした。"
+      }
+    ]
   },
   "ko_는지_37": {
-    "title": "~는지 알다/모르다 [neunji alda/moreuda] (Know/don't know whether)",
-    "shortExplanation": "〜を表すために使用されます knowing or not knowing whether something is or will be the case.",
-    "longExplanation": "The '~는지 알다/모르다' structure is 〜を示します whether the speaker (or someone else) knows or doesn't know a particular fact or circumstance. It can also appear in questions to ask if someone knows about a certain situation.",
-    "formation": "動詞 stem + 는지 + 알다/모르다"
+    "title": "~는지 알다/모르다（〜か知っている／知らない、〜かどうか分かる／分からない）",
+    "shortExplanation": "疑問を表す接続語尾「-는지」と動詞「알다（知る・分かる）」「모르다（知らない・分からない）」が結合し、ある事実や疑問について知っているかどうかを表します。",
+    "longExplanation": "「~는지 알다/모르다」は、間接疑問節を導く接続語尾「-는지」の後に認識を表す動詞「알다」「모르다」が続く構文です。ある事態が実際にそうであるかどうか、あるいは疑問詞の答えを把握しているか否かを表現する際に使われます。動詞の語幹や存在詞・過去形には「-는지」、形容詞の現在形には「-(으)ㄴ지」、未来・推量には「-(으)ㄹ지」が接続します。",
+    "formation": "動詞の語幹・있다/없다・過去形語尾 ＋ 는지 알다/모르다（形容詞現在形には -(으)ㄴ지、未来推量には -(으)ㄹ지）",
+    "examples": [
+      {
+        "translation": "彼が学校に行ったかどうか知っていますか？"
+      },
+      {
+        "translation": "私は彼女が今も愛しているのかどうか分かりません。"
+      },
+      {
+        "translation": "私たちが勝てるかどうか知っていますか？"
+      },
+      {
+        "translation": "あなたが彼の誕生日を覚えているのかどうか分かりません。"
+      }
+    ]
   },
   "ko_는지라_38": {
-    "title": "~는지라 [neunjira] (Because, since)",
-    "shortExplanation": "〜を示します the reason or cause ('because', 'since').",
-    "longExplanation": "'~는지라 [neunjira]' emphasizes that the condition in the first clause is the reason or cause for the following situation. It can carry a nuance that the cause is somewhat pressing or unavoidable, functioning like 'because' or 'since'.",
-    "formation": "動詞/形容詞 stem + 는지라"
+    "title": "~는지라（〜なもので、〜であるため、〜ゆえに）",
+    "shortExplanation": "格式ばった文章語的な接続語尾で、前節の客観的な事情や理由を背景として提示し、「〜であるため」「〜なもので」と後節の成り行きを説明します。",
+    "longExplanation": "「~는지라」は、間接疑問の語尾「-는지」に理由を表す助詞「-라」が結びついた、やや改まった古風・文章語的な接続語尾です。ある客観的な事態や避けられない事情を理由として述べ、「そのような状況であるため、当然後節のような結果になった」と理由を丁寧に弁解・説明するニュアンスを持ちます。",
+    "formation": "動詞の語幹・있다/없다 ＋ 는지라（形容詞の語幹には -(으)ㄴ지라、名詞には -(이)ㄴ지라、過去形には -았/었는지라）",
+    "examples": [
+      {
+        "translation": "彼女はあまりにも熱心に勉強するものですから、宿題もいつも完璧にこなします。"
+      },
+      {
+        "translation": "天気が非常に寒いものですから、学校に行きたくありません。"
+      },
+      {
+        "translation": "赤ちゃんが病気だったため、一晩中眠ることができませんでした。"
+      },
+      {
+        "translation": "今週は仕事が多くてあまりにも忙しかったため、休息する時間が全くありませんでした。"
+      }
+    ]
   },
   "ko_다가_39": {
-    "title": "~다가 [daga] (While doing, was doing but)",
-    "shortExplanation": "Connects two actions, indicating the first action was ongoing but got interrupted or changed by the second action.",
-    "longExplanation": "'~다가' shows that one action or event was in progress when another action or situation intervened. It often implies that the second action wasn’t necessarily planned, but it happened and stopped the first action in its tracks.",
-    "formation": "動詞 stem + 다가 + (second clause)"
+    "title": "~다가（〜していて、〜している途中で、〜しかけて）",
+    "shortExplanation": "ある動作や状態が継続している途中で中断され、別の動作や予期せぬ事態へと切り替わることを表す接続語尾です（「〜していて」「〜している途中で」）。",
+    "longExplanation": "「~다가」は、先行する動作や状態が進行中であるところに、別の動作や事態が割り込んで前の動作が中断したり、他の方向へ転換したりすることを示す接続語尾です。「本を読んでいて寝てしまった」「帰る途中で車が故障した」のように、中途で事態が変化する場面を自然に描写します。",
+    "formation": "動詞の語幹 ＋ 다가",
+    "examples": [
+      {
+        "translation": "本を読んでいる途中で眠ってしまいました。"
+      },
+      {
+        "translation": "家に帰る途中で車が故障してしまい、バスに乗って帰ってきました。"
+      },
+      {
+        "translation": "ご飯を食べている最中に友達から急に電話がかかってきて、最後まで食べられませんでした。"
+      },
+      {
+        "translation": "勉強をしていた途中で急に出かけなければなりませんでした。部長がいらっしゃったからです。"
+      }
+    ]
   },
   "ko_다가는_40": {
-    "title": "~다가는 [daganeun] (If continue doing)",
-    "shortExplanation": "Expresses a potential negative outcome if a certain action continues.",
-    "longExplanation": "The pattern '~다가는' warns about a negative result or consequence if the preceding action persists. It’s used to caution someone: 'If you keep doing X, then Y (bad result) will happen.'",
-    "formation": "動詞 stem + 다가는"
+    "title": "~다가는（〜していては、〜し続けていては、〜した日には）",
+    "shortExplanation": "前節の望ましくない行動や状態をこのまま続けた場合、後節で必ず悪い結果や破綻を招くという警告を表す表現です（「〜していては」「〜し続けていたら」）。",
+    "longExplanation": "「~다가는」は、接続語尾「-다가」に強調の補助詞「-는」が付いた表現です。現在行われている好ましくない行為や危うい状態をこのまま放置・持続させたなら、間違いなく深刻な悪影響や災難が降りかかるであろうという強い懸念や警告を相手に伝える際に用いられます。後節にはほぼ必ず好ましくない結末が続きます。",
+    "formation": "動詞の語幹 ＋ 다가는",
+    "examples": [
+      {
+        "translation": "お前、ずっとこんなに遅くまで働いていたら、体を壊してしまうよ。"
+      },
+      {
+        "translation": "お昼休みにご飯の代わりにコーヒーばかり飲んでいては、健康に問題が生じてしまいますよ。"
+      },
+      {
+        "translation": "私たちがこのように頻繁に衝突していては、この関係は長く続かないだろう。"
+      },
+      {
+        "translation": "毎晩遅く寝ていては、朝起きるのが辛くなってしまうよ。"
+      }
+    ]
   },
   "ko_다가도_41": {
-    "title": "~다가도 [dagado] (Even though was doing)",
-    "shortExplanation": "Indicates that an unexpected or sudden change occurred while in the middle of doing something.",
-    "longExplanation": "'~다가도' is used when something disrupts or abruptly changes an action that was in progress. It conveys a nuance of surprise or sudden shift, differing from what was initially expected to happen.",
-    "formation": "動詞 stem + 다가도"
+    "title": "~다가도（〜していても、〜していたかと思えば、〜する最中であっても）",
+    "shortExplanation": "ある動作や状態が続いていたにもかかわらず、急なきっかけによってあっさりと別の行動や逆転の事態へと切り替わることを表します（「〜していても」「〜していたかと思えば」）。",
+    "longExplanation": "「~다가도」は、接続語尾「-다가」に譲歩・強調の助詞「-도（〜も）」が付いた構文です。ある状態や動作が継続中であっても、ふとしたきっかけや急激な状況の変化によって、あっという間に中断したり正反対の状態に転じたりする「変化の急激さ」や「気まぐれさ」を生き生きと描写します。",
+    "formation": "動詞・形容詞の語幹 ＋ 다가도",
+    "examples": [
+      {
+        "translation": "私は家に帰る途中でしたが、急に雨がたくさん降ってきたので傘を買いました。"
+      },
+      {
+        "translation": "彼は勉強をしていても、友達が映画を見ようと誘えばすぐにやめて映画館へ行きます。"
+      },
+      {
+        "translation": "主人公は決勝戦で勝ち進んでいたにもかかわらず、最後にミスをして敗北してしまいました。"
+      },
+      {
+        "translation": "私たちはピクニックに行く途中でしたが、急に天気が悪くなったため家に戻ってきました。"
+      }
+    ]
   },
   "ko_다니_42": {
-    "title": "~다니 [dani] (Exclamation, surprise)",
-    "shortExplanation": "〜を表すために使用されます exclamation, surprise, disbelief, or shock.",
-    "longExplanation": "'~다니 [dani]' conveys strong emotional reaction—amazement, incredulity, or shock—when hearing or realizing something. It's similar to saying 'I can't believe that...' or 'Really?!' in English. It can appear in direct or reported speech.",
-    "formation": "動詞 + 아/어/여 + 다니 / 形容詞 stem + 다니"
+    "title": "~다니（〜だなんて、〜するとは、〜だとは）",
+    "shortExplanation": "間接引用の縮約表現で、見聞きした事実や情報に対して強い驚き、呆れ、信じられない気持ちや感嘆を表します（「〜だなんて」「〜するとは」）。",
+    "longExplanation": "「~다니」は、間接引用「-(ㄴ/는)다고 하니」が縮約された語尾です。耳にした情報や目の当たりにした事実が予想をはるかに超えていたり、常識では考えられなかったりするときに、「まさか〜だなんて！」「〜するとは信じられない」と強い衝撃、当惑、驚愕、または称賛の感情を直接吐露する際に用いられます。",
+    "formation": "動詞の語幹（パッチム有 ＋ 는다니 / パッチム無 ＋ ㄴ다니）、形容詞の語幹 ＋ 다니、名詞 ＋ (이)라니、過去形 ＋ -았/었다니",
+    "examples": [
+      {
+        "translation": "君が彼女と結婚しようとしているだなんて、本当に信じられないよ！"
+      },
+      {
+        "translation": "私がこんなに重要なプロジェクトを引き受けることになるだなんて、本当に驚きだ！"
+      },
+      {
+        "translation": "明日試験があるだなんて、どうして誰も教えてくれなかったんだ？"
+      },
+      {
+        "translation": "彼がこんなことをするだなんて、私は本当にびっくりしたよ！"
+      }
+    ]
   },
   "ko_다면_43": {
-    "title": "~다면 [damyeon] (If it is the case that)",
-    "shortExplanation": "Expresses a hypothetical condition (similar to 'if' in English).",
-    "longExplanation": "'~다면 [damyeon]' is used to form conditional statements, much like 'if' in English. It introduces a hypothetical scenario or condition, and the result or conclusion follows in the same sentence or after.",
-    "formation": "動詞 stem + 다면 / 名詞 + (이)라면"
+    "title": "~다면（〜（する）なら、もし〜だとしたら、仮に〜なら）",
+    "shortExplanation": "仮定を表す接続語尾で、純粋な仮定や実現の可能性が低い状況を想定して後続の文を展開する際に用います（「〜（する）なら」「もし〜だとしたら」）。",
+    "longExplanation": "「~다면」は間接引用の「-다고 하면（〜だと言うなら）」が縮約された形で、一般的な条件接続語尾「-(으)면」に比べて、より主観的な仮定や反実仮想（もし〜だとしたら）のニュアンスが強くなります。実現可能性が不確か、または低い事柄をあえて仮定として持ち出し、後続節で話者の判断、意志、提案などを述べる場合によく使われます。",
+    "formation": "動詞語幹（パッチム有：-는다면 / パッチム無：-ㄴ다면）、形容詞語幹 ＋ 다면、名詞 ＋ (이)라면、過去形 ＋ 았/었다면",
+    "examples": [
+      {
+        "translation": "時間があるなら、私は明日までここで待つことができます。"
+      },
+      {
+        "translation": "君がここに来るなら、一緒に夕食を食べられますね。"
+      },
+      {
+        "translation": "もし雨が降るなら、傘を持参してください。"
+      },
+      {
+        "translation": "もしそれが本当なら、実に驚くべきことです。"
+      }
+    ]
   },
   "ko_더라도_44": {
-    "title": "~더라도 [deorado] (Even if)",
-    "shortExplanation": "〜を表すために使用されます 'even if' or 'even though', presenting a hypothetical or contrary-to-fact condition.",
-    "longExplanation": "'~더라도 [deorado]' is a Korean grammar pattern meaning 'even if' or 'even though.' It introduces a hypothetical or imagined scenario that does not prevent a certain action or outcome in the following clause. The overall sense is that the second action/decision remains firm despite the 'even if' condition.",
-    "formation": "動詞/形容詞 stem + 더라도"
+    "title": "~더라도（たとえ〜であっても、〜としても、〜たとしても）",
+    "shortExplanation": "強い仮定譲歩を表す接続語尾で、前節のような不利・極端な事態が起きたとしても、後節の動作や意志、結果が何ら左右されないことを表します（「たとえ〜でも」「〜としても」）。",
+    "longExplanation": "「~더라도」は、前節で反実仮想や過酷な条件を仮定として提示しつつも、それに屈することなく後節の行為や態度、決意を一貫して維持することを表す表現です。一般的な譲歩表現である「-아/어도」に比べて仮定性が高く、困難や障害に動じない強い意志や客観的な不動の真理を述べる際によく用いられます。",
+    "formation": "動詞・形容詞の語幹 ＋ 더라도、名詞 ＋ (이)라도 / (이)라 하더라도",
+    "examples": [
+      {
+        "translation": "たとえ雨が降ったとしても私は学校に行きます。勉強を続けなければならないからです。"
+      },
+      {
+        "translation": "試験が難しいとしても最善を尽くします。失敗は選択肢にありません。"
+      },
+      {
+        "translation": "いくら寒くなったとしてもスキーをします。それが私の楽しむ方法だからです。"
+      },
+      {
+        "translation": "明日が休日であっても私は早起きします。そうしてこそ何事にも遅れずに済むからです。"
+      }
+    ]
   },
   "ko_더라구요_45": {
-    "title": "~더라구요 [deoraguyo] (It seemed, I noticed)",
-    "shortExplanation": "Expresses the speaker's personal observation or realization about a past event.",
-    "longExplanation": "'~더라구요' is a casual, conversational ending in Korean for sharing something you noticed or realized. It indicates the speaker is conveying newly discovered information or a personal impression from experience. It usually attaches to the verb stem in the past or descriptive form.",
-    "formation": "動詞 stem + 더라구요"
+    "title": "~더라구요 / ~더라고요（〜だったんですよ、〜していたんですよね、〜と実感しましたよ）",
+    "shortExplanation": "親しい口語の終結語尾で、過去に自身が直接見聞きしたり体験したりして実感・発見した事実や感想を、相手に親しみを持って伝える表現です（「〜だったんですよ」「〜でしたよ」）。",
+    "longExplanation": "「~더라구요」（正書法では「~더라고요」）は、話者の過去の直接的な見聞・実感を回想する語尾「-더라」に丁寧語尾「-요」がついた口語表現です。自分がその場で直接目撃したり、身をもって感じたりした新たな発見や個人的な印象を、生き生きと相手に回想して共有する際に用いられます。主観的な気づきや驚きを親密に伝えるニュアンスを帯びます。",
+    "formation": "動詞・形容詞の語幹 ＋ 더라고요（더라구요）、名詞 ＋ (이)더라고요（더라구요）、過去形 ＋ 았/었더라고요（었더라구요）",
+    "examples": [
+      {
+        "translation": "昨日は大幅な割引があるのを見て本当に驚きましてね、それですぐに買い物に行きましたよ。"
+      },
+      {
+        "translation": "天気が曇っていて散歩に行くにはいまいちだと感じたんですよ、それで家にいました。"
+      },
+      {
+        "translation": "友達の体がだんだん大きくなっていくのを見て、妊娠したんだなと気づきましてね、それでお祝いをしてあげました。"
+      },
+      {
+        "translation": "その映画を見てから、監督は本当に才能があるんだなと実感しましてね、それでもっと関心が湧きました。"
+      }
+    ]
   },
   "ko_던_46": {
-    "title": "~던 [deon] (That used to)",
-    "shortExplanation": "Refers to a past habit or situation that no longer continues.",
-    "longExplanation": "'~던 [deon]' is used to describe a past action or state that used to happen or exist but no longer does. It often carries a nostalgic or retrospective nuance. It modifies a following noun, indicating something like, ‘the cafe I used to go to,’ or ‘the toy he used to play with.’",
-    "formation": "動詞 stem + 던 (+ noun)"
+    "title": "~던（〜していた、よく〜したものだ、かつて〜だった）",
+    "shortExplanation": "回想の連体形語尾で、名詞を修飾し、過去に繰り返し行われていた習慣や動作、または過去に行われていて途中で中断した未完了の事態を表します（「よく〜していた…」「かつて〜だった…」）。",
+    "longExplanation": "「~던」は、話者の過去の経験や記憶を振り返る回想の連体形語尾です。名詞の前に置かれ、（1）「以前よく通っていた店」「昔よく着ていた服」のように過去に反復・継続していた習慣（現在は行っていない）、（2）過去のある時点で進行中だったが完了しなかった事柄、を表します。ノスタルジーや過去への懐古の情を込めて用いられることが多いのが特徴です。",
+    "formation": "動詞・形容詞の語幹 ＋ 던 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "私は高校時代によく通っていたカフェに久しぶりに来ました。"
+      },
+      {
+        "translation": "姉は昔よく食べていたチョコレートをもう一度探そうと努力しているところです。"
+      },
+      {
+        "translation": "あなたは私が毎日着ていたタートルネックを覚えていますか。"
+      },
+      {
+        "translation": "父は以前姪と遊んであげていたおもちゃを買いに書店へ行きました。"
+      }
+    ]
   },
   "ko_도록_47": {
-    "title": "~도록 [dorok] (So that, in order to)",
-    "shortExplanation": "Indicates purpose or reason for an action; 'so that', 'in order to'.",
-    "longExplanation": "'~도록 [dorok]' expresses purpose, goal, or extent, similar to 'so that' or 'in order to' in English. It shows the reason or aim behind an action. It can also imply how long or to what degree an action continues.",
-    "formation": "動詞 stem + 도록"
+    "title": "~도록（〜するように、〜できるように、〜のために）",
+    "shortExplanation": "目的や目標を表す接続語尾で、後節の行為がある状態の達成を目指して行われることを示します（「〜するように」「〜できるように」）。また、程度や限度を表すこともあります。",
+    "longExplanation": "「~도록」は主に二つの役割を果たします。（1）目的の提示：後節の行動が、前節で示された結果や状態を導くために行われることを示し、「〜するように」「〜できるように」と訳されます（「-게」と類似していますが、より公的・意図的な響きを持ちます）。（2）程度・時間の限度：ある状態に至るまで事態が進むことを表します（「夜が明けるまで」「喉が嗄れるほど」）。",
+    "formation": "動詞・形容詞の語幹 ＋ 도록",
+    "examples": [
+      {
+        "translation": "私は韓国語が上手になるように、毎日1時間ずつ勉強しようと思っています。"
+      },
+      {
+        "translation": "健康を維持できるように、適切に運動し栄養のある食事を摂らなければなりません。"
+      },
+      {
+        "translation": "理論を理解できるように、先生が複雑な概念を簡単に説明してくださいました。"
+      },
+      {
+        "translation": "子どもたちが安全に遊べるように、遊び場には安全装置がしっかりと設置されています。"
+      }
+    ]
   },
   "ko_도록_48": {
-    "title": "~도록 하다 [dorok hada] (Make sure, see to it that)",
-    "shortExplanation": "Used to give instructions or commands to ensure a certain outcome.",
-    "longExplanation": "'~도록 하다' can mean 'make sure to,' 'ensure that,' or 'see to it that.' The speaker is directing someone (or themselves) to do something in order to achieve or maintain a particular result. It often carries a sense of imperative or strong advice.",
-    "formation": "動詞 stem + 도록 하다"
+    "title": "~도록 하다（〜するようにする、〜するようにしなさい、〜させる）",
+    "shortExplanation": "指示や指示的な勧告、または自らの努力・意志を表す構文で、相手にある動作を確実に行うよう促したり、自分がそう努めることを表します（「〜するようにする」「〜するようにしてください」）。",
+    "longExplanation": "「~도록 하다」は、接続語尾「-도록」に「하다」が結合した表現です。命令形や勧誘形（「-도록 하세요」「-도록 합시다」）で用いられることが多く、相手に対して「確実にその結果になるよう行動してください」と丁寧かつ格式高く指示・指導する際に重宝されます。また、主語が自身の場合は「〜するように努める」という努力や心掛けを表します。",
+    "formation": "動詞の語幹 ＋ 도록 하다",
+    "examples": [
+      {
+        "translation": "明日は必ず出席するようにしてください。重要な情報を共有しなければなりません。"
+      },
+      {
+        "translation": "食後は手をきれいに洗うようにしなさい。"
+      },
+      {
+        "translation": "来年までにすべてのプロジェクトを完了させるようにしなければなりません。"
+      },
+      {
+        "translation": "学生たちが試験によく備えられるよう、準備物を前もって案内してください。"
+      }
+    ]
   },
   "ko_라든지_49": {
-    "title": "~라든지 [radeunji] (Or, either)",
-    "shortExplanation": "Lists options or possibilities; means 'or' or 'either'.",
-    "longExplanation": "'~라든지 [radeunji]' is used to present multiple possible options or examples, similar to 'or' in English. You can list items or actions, emphasizing that these are merely examples among many possibilities.",
-    "formation": "名詞/動詞 + 라든지 + (名詞/動詞 + 라든지)"
+    "title": "~라든지（〜だとか、〜とか、〜であれ）",
+    "shortExplanation": "例示を並列する接続語尾・助詞で、複数の事柄や動作を代表例として挙げ、「〜だとか〜だとか」「〜とか〜とか」と並挙する際に用います。",
+    "longExplanation": "「~라든지」は、多様な選択肢や具体例の中からいくつかを取り上げて例示する際に用いられる表現です。通常「A라든지 B라든지」のように反復して使われ、「これらはあくまで一例に過ぎず、ほかにもある」というニュアンスを含みます。名詞だけでなく用言の引用形（-다든지）にも接続し、趣味や理由、選択肢の列挙に広く活用されます。",
+    "formation": "名詞 ＋ (이)라든지、動詞・形容詞 ＋ -(ㄴ/는)다든지",
+    "examples": [
+      {
+        "translation": "絵を描くことだとか、写真を撮ることだとか、運動をすることだとか、趣味の活動は多様です。"
+      },
+      {
+        "translation": "早く来なければならない理由は、お腹が空いているだとか、やらなければならないことがあるだとか、色々あり得ますよね。"
+      },
+      {
+        "translation": "アイスクリームを買いに行くつもりですが、バニラだとかチョコレートだとか他の味もたくさんあります。"
+      },
+      {
+        "translation": "本が好きな人は、恋愛小説だとか自己啓発書だとか、多様なジャンルを楽しめますよね。"
+      }
+    ]
   },
   "ko_라도_50": {
-    "title": "~라도 [rado] (Even if, at least)",
-    "shortExplanation": "Indicates a fallback option ('at least') or a concession ('even if').",
-    "longExplanation": "The Korean particle '~라도' often has two core usages: (1) 'even if' (though somewhat less strong than '~더라도'), or (2) selecting the least favorable or minimal option when there is no better choice, translating to 'at least.' It implies partial satisfaction or a fallback stance.",
-    "formation": "1) 名詞 + (이)라도\n2) Sometimes attached to verbs or adjectives (but often overlaps with '~더라도')."
+    "title": "~라도（〜でも、せめて〜だけでも）",
+    "shortExplanation": "最低限の選択肢や譲歩を表す補助詞で、最善の選択肢がない場合に「せめて〜だけでも」「〜でいいから」と次善の策を受け入れるニュアンスを表します。",
+    "longExplanation": "「~라도」（パッチムのある名詞の後では「이라도」）は、理想的な最善策ではないものの、現状で妥協できる最低限の代替案を提示する際に用いられる助詞です。「せめて〜だけでも」「〜で妥協する」という気持ちを込めて使われます。また、疑問詞と結びつくと「いつでも（언제라도）」「誰でも（누구라도）」といった全面肯定・任意の意味を表します。",
+    "formation": "名詞（パッチム有） ＋ 이라도 / （パッチム無） ＋ 라도",
+    "examples": [
+      {
+        "translation": "宿題をしなかったとしても、授業には必ず出席しなければなりません。"
+      },
+      {
+        "translation": "その家があまりにも高価であってもお金がないのなら、せめて小さな部屋だけでも借りなければなりません。"
+      },
+      {
+        "translation": "就職が難しく大変だとしても、最低でも1日に1回は応募書類を送らなければなりません。"
+      },
+      {
+        "translation": "有名店で全部注文できないのなら、せめて小さなデザートだけでも買ってみるのはどうでしょうか。"
+      }
+    ]
   },
   "ko_라서_51": {
-    "title": "~라서 [raseo] (Because [it is Noun], so...)",
-    "shortExplanation": "Used with nouns to express reason or cause, meaning 'because it is...' or 'so...'.",
-    "longExplanation": "'~라서 [raseo]' (or '~이라서') attaches to **nouns**, showing that 'because (it is) X, ... follows.' It’s similar to '(으)라서' usage. For verbs and adjectives, Korean often uses '-아/어/해서.'",
-    "formation": "名詞 + (이)라서"
+    "title": "~라서 / ~(이)라서（〜なので、〜だから）",
+    "shortExplanation": "名詞について理由や原因を表す接続語尾で、指定詞「이다」に理由の「-어서」が融合した短縮形です（「〜なので」「〜だから」）。",
+    "longExplanation": "「~라서」（パッチムのある名詞の後では「이라서」）は、名詞に直接接続して後続の事態の根拠や原因を示す表現です。用言につく「-아/어서」と同様の機能を名詞に対して果たし、「名詞であるため、後ろの事態が成り立つ」という自然な理由づけを行います。会話や日常的な文章で極めて頻繁に用いられます。",
+    "formation": "名詞（パッチム有） ＋ 이라서 / （パッチム無） ＋ 라서",
+    "examples": [
+      {
+        "translation": "今日は休日なので、出勤しなくても大丈夫です。"
+      },
+      {
+        "translation": "あの食堂は有名な場所なので、いつもお客さんが多いです。"
+      },
+      {
+        "translation": "最近は休暇（休み）なので、学校に学生がほとんどいません。"
+      },
+      {
+        "translation": "週末だから道路がとても渋滞していますね。"
+      }
+    ]
   },
   "ko_라야_52": {
-    "title": "~라야 하다 [rayahada] (Must, have to)",
-    "shortExplanation": "A formal/literary way to express obligation or necessity, akin to 'must.'",
-    "longExplanation": "The phrase '~라야 하다' is a somewhat formal expression meaning 'must do X' or 'it’s necessary to do X.' It can appear with nouns (e.g., '학생이라야 한다') or with certain verb forms. In modern Korean, it's less common than '~아/어야 하다.'",
-    "formation": "名詞 + (이)라야 하다 / Certain verb forms + 라야 하다"
+    "title": "~라야 / ~(이)라야 하다（〜であってこそ、〜でなければならない）",
+    "shortExplanation": "排他的な必要条件を表す構文で、名詞について「その資格や条件を備えていてこそ初めて成立する」という不可欠な前提を示します（「〜であってこそ」「〜でなければならない」）。",
+    "longExplanation": "「~라야」（パッチムのある名詞の後では「이라야」）は、後ろに「하다」や「할 수 있다」を伴って、前節の名詞が後節の事態を成り立たせるための必須条件・資格であることを強調する表現です。やや格式ばった文章語的な響きを持ち、「他でもないまさにその対象であってこそ可能である」という限定的な前提条件を提示します。",
+    "formation": "名詞（パッチム有） ＋ 이라야 하다 / （パッチム無） ＋ 라야 하다（または 名詞 ＋ (이)라야 ＋ 節）",
+    "examples": [
+      {
+        "translation": "この仕事は専門家であってこそできると思います。"
+      },
+      {
+        "translation": "正直な人であってこそ、この責任を引き受けることができます。"
+      },
+      {
+        "translation": "本当に切実な熱望があってこそ、そのような努力を続けられるものですよ。"
+      },
+      {
+        "translation": "健康であってこそ何事でもできると思います。"
+      }
+    ]
   },
   "ko_려고_53": {
-    "title": "~려고 [ryeogo] (Intending to, planning to)",
-    "shortExplanation": "〜を表すために使用されます intention or plan to do something.",
-    "longExplanation": "'~려고' attaches to the verb stem to show the speaker’s plan or intention, similar to 'I'm going to...' or 'I'm planning to...' in English. It’s often used with future actions the speaker has decided on.",
-    "formation": "動詞 stem + 려고"
+    "title": "~려고 / ~(으)려고（〜しようと、〜するつもりで、〜するために）",
+    "shortExplanation": "意図や目的を表す接続語尾で、主語がこれから行おうとする意向や計画、動作の目的を示します（「〜しようと」「〜するつもりで」）。",
+    "longExplanation": "「~(으)려고」は、動詞の語幹について動作主の意図や計画を表す接続語尾です。後続の節に対して「そのような目的を持って」「〜するつもりで」という背景・動機を提供します。「-려고 했는데/했지만（〜しようとしたのだが）」の形で、当初の意図が何らかの予期せぬ事情によって阻まれたり変更されたりした経緯を語る場面でも極めて頻繁に用いられます。",
+    "formation": "動詞語幹（パッチム有・ㄹ除外） ＋ 으려고 / （パッチム無・ㄹパッチム） ＋ 려고",
+    "examples": [
+      {
+        "translation": "明日友達と映画を見に行こうと思っているのですが、まだどの映画を見るか決められていません。"
+      },
+      {
+        "translation": "今夜本を読もうとしましたが、あまりにも疲れていてそのまま寝てしまいました。"
+      },
+      {
+        "translation": "両親の家に行こうとしたのですが、急に用事ができて行けませんでした。"
+      },
+      {
+        "translation": "母は父に新しい財布をあげようとしたのですが、父がすでに同じものを買っていて驚きました。"
+      }
+    ]
   },
   "ko_려고_54": {
-    "title": "~려고 하다 [ryeogo hada] (Try to, plan to)",
-    "shortExplanation": "〜を表すために使用されます intention or an attempt to do something; similar to 'try to' or 'plan to' in English.",
-    "longExplanation": "'~려고 하다 [ryeogo hada]' is a commonly used verb construction that indicates the subject's intention or attempt to do something in the near future. 〜と訳されます 'I’m going to...', 'I plan to...', or 'I’m trying to...' in English.",
-    "formation": "動詞 stem + 려고 하다"
+    "title": "~려고 하다 / ~(으)려고 하다（〜しようとする、〜するつもりだ、〜しようと思う）",
+    "shortExplanation": "主語の意志、計画、あるいは近未来に向けた試み・意向を表す構文です（「〜しようとする」「〜するつもりだ」）。",
+    "longExplanation": "「~(으)려고 하다」は、意図の接続語尾「-(으)려고」と動詞「하다」が合わさった述語表現です。主語が近いうちにある動作を実行しようと心に決めている計画や意志を明確に伝えます。過去形「-(으)려고 했다」になると、「〜しようとしたが（結局できなかった・諦めた）」という未遂や計画変更の文脈で極めて多く用いられます。",
+    "formation": "動詞語幹（パッチム有・ㄹ除外） ＋ 으려고 하다 / （パッチム無・ㄹパッチム） ＋ 려고 하다",
+    "examples": [
+      {
+        "translation": "私は明日友達に会おうと思っていますが、予定が変わる可能性もあります。"
+      },
+      {
+        "translation": "彼はギターを習おうとしましたが、あまり時間がなくて結局諦めました。"
+      },
+      {
+        "translation": "私たちは今週末に登山へ行こうと思っていますが、天気が良くないので可能性は低いです。"
+      },
+      {
+        "translation": "私はこれから新しい技術を学ぼうとしています。これは自分の専門性を高めるためです。"
+      }
+    ]
   },
   "ko_려는데_55": {
-    "title": "~려는데 [ryeoneunde] (Trying to, want to, but)",
-    "shortExplanation": "〜を表すために使用されます an intention or plan, followed by a difficulty or complication.",
-    "longExplanation": "'~려는데 [ryeoneunde]' indicates that the speaker has an intention or plan (similar to '~려고 하는데'), but something is making it uncertain or difficult. It’s often followed by explanations of why the plan might fail or change.",
-    "formation": "動詞 stem + 려는데"
+    "title": "~려는데 / ~(으)려는데（〜しようとしているところだが、〜するつもりなのだが）",
+    "shortExplanation": "「-(으)려고 하는데」の縮約形で、前節である意図や予定を提示しつつ、後節でその計画の実行を妨げる障害や予期せぬ事情、ためらいを述べる接続語尾です（「〜しようとしているのだが」「〜するつもりなのに」）。",
+    "longExplanation": "「~(으)려는데」は、意図を表す「-(으)려고 하다」に背景・前置きの「-ㄴ/는데」が結びついた表現の短縮形です。話者が抱いている計画や行動の意向を前提として持ち出した上で、後節において「急な用事が入った」「天気が悪い」といった障害要因を挙げ、予定通りにいかないもどかしさや当惑を表現する際によく用いられます。",
+    "formation": "動詞語幹（パッチム有・ㄹ除外） ＋ 으려는데 / （パッチム無・ㄹパッチム） ＋ 려는데",
+    "examples": [
+      {
+        "translation": "私は今日少し早く家に帰ろうとしているのですが、急に緊急の業務が入って難しそうです。"
+      },
+      {
+        "translation": "初めはそのプロジェクトを完了させようとしたのですが、色々な問題が生じて完成させられませんでした。"
+      },
+      {
+        "translation": "明日友達と映画を見ようと思っているのですが、すべてのチケットが完売した状態なので行けるかどうか分かりません。"
+      },
+      {
+        "translation": "旅行に行こうとしているのですが、天気が良くなくてまた延期すべきか悩んでいるところです。"
+      }
+    ]
   },
   "ko_리가_56": {
-    "title": "~리가 없다 [riga eopda] (There’s no way that)",
-    "shortExplanation": "Expresses impossibility or disbelief.",
-    "longExplanation": "'~(으)ㄹ 리가 없다' indicates that something is impossible or that there’s no chance it could happen. It conveys strong disbelief about the situation. 〜と訳されます 'There’s no way that...' or 'It can’t be that...'.",
-    "formation": "動詞 (으)ㄹ 리가 없다"
+    "title": "~리가 없다 / ~(으)ㄹ 리가 없다（〜はずがない、〜わけがない）",
+    "shortExplanation": "強い否定の推測や確信を表す構文で、常識や道理、状況から考えて「そのような事態が起こる可能性や妥当性は絶対にない」と断定する表現です（「〜はずがない」「〜わけがない」）。",
+    "longExplanation": "「~(으)ㄹ 리가 없다」は、未来連体形「-(으)ㄹ」、依存名詞「리（理・道理・わけ）」、否定形容詞「없다（ない）」から構成される表現です。話者の確信や常識に基づき、「あるはずがない」「そんな理屈は成り立たない」と可能性を真っ向から全否定する際に用いられます。強い反論や信じ難い気持ちを表明する場面で効果的です。",
+    "formation": "動詞・形容詞の語幹（パッチム有・ㄹ除外） ＋ 을 리가 없다 / （パッチム無・ㄹパッチム） ＋ ㄹ 리가 없다、名詞 ＋ 일 리가 없다",
+    "examples": [
+      {
+        "translation": "彼が私に嘘をつくはずがありません。彼は本当に正直な人です。"
+      },
+      {
+        "translation": "あまりにもたくさん食べたので、これ以上食べられるはずがありません。"
+      },
+      {
+        "translation": "バッグが重すぎて、これ以上持てるはずがありません。"
+      },
+      {
+        "translation": "私は赤色が嫌いなので、その色の服を着るわけがありません。"
+      }
+    ]
   },
   "ko_리요_57": {
-    "title": "~리요 [riyo] (Likely, probably)",
-    "shortExplanation": "A more formal or older-style ending expressing a prediction or assumption.",
-    "longExplanation": "'~리요' is a somewhat archaic or very formal style verb ending used for predictions or expectations about the future. It implies a relatively firm belief in the likelihood of the event. Modern usage might be rare in casual speech, but it can appear in narratives or historical contexts.",
-    "formation": "動詞 stem + 리요"
+    "title": "~리요 / ~(으)리요（〜することだろう、きっと〜だろう、〜するであろう）",
+    "shortExplanation": "古風で格式高い文語体の終結語尾で、未来の事態や可能性に対して確信を持った推測や予測を述べる表現です（「きっと〜だろう」「〜するであろう」）。",
+    "longExplanation": "「~(으)리요」は、推量や意志を表す先語末語尾「-리-」に語尾「-요」が結びついた古雅な文体表現です。文脈において、事態の発生や可能性に対する確固たる信念を込めて推測・予言する際に用いられます。現代の日常会話ではあまり使われませんが、格調高い文学作品や時代劇、詩的・叙述的な文章において、厳かな予測や強い確信を表現する際に登場します。",
+    "formation": "動詞・形容詞の語幹（パッチム有・ㄹ除外） ＋ 으리요 / （パッチム無・ㄹパッチム） ＋ 리요",
+    "examples": [
+      {
+        "translation": "明日はきっと雨が降ることでございましょう。傘をお持ちになってください。"
+      },
+      {
+        "translation": "あの方はきっと美味しい食べ物がお好きでしょう。料理人なのですから。"
+      },
+      {
+        "translation": "この映画は大成功を収めることでありましょう。有名な俳優たちが勢揃いしているのですから。"
+      },
+      {
+        "translation": "今日はバスがかなり遅れることでしょう。出勤時間の交通は混雑しておりますから。"
+      }
+    ]
   },
   "ko_마다_58": {
-    "title": "~마다 [mada] (Every)",
-    "shortExplanation": "Indicates something happens regularly or repeats at a certain interval.",
-    "longExplanation": "'~마다' is a particle attached to time expressions (or other nouns) to mean 'every'—for example, 'every day,' 'every week,' or 'every time.' It shows that some event, activity, or situation occurs each time or regularly at that interval.",
-    "formation": "名詞 + 마다"
+    "title": "~마다（〜ごとに、〜たびに、〜のたびに、どの〜も）",
+    "shortExplanation": "名詞の後について、一定の時間間隔で何かが規則的・周期的に繰り返されることや、すべての対象に漏れなく当てはまることを表す助詞です（「〜ごとに」「〜のたび」「どの〜も」）。",
+    "longExplanation": "「~마다」は、時間を表す名詞（朝、週末、日など）や一般的な名詞の後ろに付く助詞で、日本語の「〜ごとに」「〜たびに」「どの〜も」に相当します。特定の時間間隔で同じ出来事や行為が規則的に反復される様子や、ある集合に含まれる全ての対象の一つひとつに例外なく該当する様子を表します。",
+    "formation": "名詞 ＋ 마다",
+    "examples": [
+      {
+        "translation": "私は毎朝運動をしています。健康のために欠かせない習慣です。"
+      },
+      {
+        "translation": "ここは昼休みになるたびに人が多くなり、席を取るのが大変です。"
+      },
+      {
+        "translation": "母は週末ごとに休むことなく大掃除をします。"
+      },
+      {
+        "translation": "バッグの中には水筒ごとに小さな間食が一つずつ入っています。"
+      }
+    ]
   },
   "ko_만_59": {
-    "title": "~만 [man] (Only, just)",
-    "shortExplanation": "Indicates exclusivity or limitation, equivalent to 'only' or 'just' in English.",
-    "longExplanation": "'~만 [man]' is a particle attached to nouns (or pronouns) to show that something is restricted, or that it applies exclusively to that noun. It conveys ‘only X’ or ‘just X,’ excluding all else.",
-    "formation": "名詞 + 만"
+    "title": "~만（〜だけ、〜のみ、〜ばかり）",
+    "shortExplanation": "名詞や代名詞の後について、それ以外のものを排除し、その対象だけに限定することを表す助詞です（「〜だけ」「〜のみ」）。",
+    "longExplanation": "「~만」は限定を表す補助詞で、日本語の「〜だけ」「〜のみ」に相当します。他の選択肢や対象を排除して、その特定の対象だけに限るという排他的なニュアンスを表します。主格助詞（-이/가）や目的格助詞（-을/를）に代わって用いられることが多く、他の副詞格助詞と結合して「-에만（〜にだけ）」「-에서만（〜でだけ）」といった形でも頻繁に使われます。",
+    "formation": "名詞 ＋ 만",
+    "examples": [
+      {
+        "translation": "私はコーヒーだけを飲みました。他の飲み物は全く飲みませんでした。"
+      },
+      {
+        "translation": "私だけがその事実を知っています。他の人たちは知らないようでした。"
+      },
+      {
+        "translation": "今週末は休むことだけを考えています。他のことはしないつもりです。"
+      },
+      {
+        "translation": "彼は友達にだけ会いに行き、家族には会いませんでした。"
+      }
+    ]
   },
   "ko_만_60": {
-    "title": "~만 하다 [man hada] (Sufficient, just right)",
-    "shortExplanation": "Expresses that a certain amount or condition is enough or suitable.",
-    "longExplanation": "This structure can be interpreted as ‘(it) is just enough to...’ or ‘(it) suffices to...’. Although in modern usage the pattern '~(으)ㄹ 만 하다' often means ‘worth doing something,’ certain contexts use ‘~만 하다’ to mean that something is just right or sufficient.",
-    "formation": "動詞 stem + 만 하다"
+    "title": "~만 하다（ちょうど良い、〜に値する、〜だけで十分だ）",
+    "shortExplanation": "程度や数量、状態がある基準にちょうど適していることや、十分満たされていることを表す表現です（「ちょうど〜くらいだ」「〜だけで十分だ」）。",
+    "longExplanation": "「~만 하다」は、名詞について大きさがそれと同等であることを表す用法（「〜ほどの大きさだ」）のほか、動詞や形容詞と結びついて（「-기만 하다」や「-(으)ㄹ 만하다」と関連して）、ある行為をするのに状態や分量がちょうど適している、あるいはそれだけで十分に事足りる状態を表します。「過不足なく適度である」「ちょうどよい」というニュアンスを込めて用いられます。",
+    "formation": "動詞・形容詞の語幹 ＋ 만 하다（または -기만 하다 / -(으)ㄹ 만하다）、名詞 ＋ 만 하다",
+    "examples": [
+      {
+        "translation": "このくらいの分量ならちょうどいいと思います。これ以上は必要ありません。"
+      },
+      {
+        "translation": "食べ物が熱すぎるときは水を足して、ちょうど食べられる程度にすることができます。"
+      },
+      {
+        "translation": "試験勉強は十分にやったので、今日は休養を取るだけで十分です。"
+      },
+      {
+        "translation": "この音楽は邪魔にならないほど静かなので、仕事をしながら聴くのにちょうどいいですね。"
+      }
+    ]
   },
   "ko_만큼_61": {
-    "title": "~만큼 [mankeum] (As much as, as many as)",
-    "shortExplanation": "Indicates an equivalent degree or amount, meaning 'as much as' or 'to the extent that.'",
-    "longExplanation": "'~만큼 [mankeum]' is used to denote an equivalent degree, quantity, or extent, similar to English ‘as much as’ or ‘as many as.’ It can attach to nouns, verbs, or adjectives, indicating the extent or degree matches the specified reference.",
-    "formation": "名詞/動詞/形容詞 + 만큼"
+    "title": "~만큼（〜ほど、〜くらい、〜と同じくらい、〜だけ）",
+    "shortExplanation": "名詞や連体形の後について、程度や数量、状態が前の基準と同等であることを表します（「〜ほど」「〜くらい」「〜の分だけ」）。",
+    "longExplanation": "「~만큼」は、体言（名詞）に直接付く場合は助詞として、動詞・形容詞の連体形（-(으)ㄴ/는/(으)ㄹ）に付く場合は依存名詞（形式名詞）として機能します。前節で提示された基準や分量と同じ程度であることを示し、「〜と同じくらい」「努力した分だけ」のように、事態が正比例して対応することを表す際にも非常によく用いられます。",
+    "formation": "名詞 ＋ 만큼、動詞・形容詞の連体形（-(으)ㄴ/는/(으)ㄹ） ＋ 만큼",
+    "examples": [
+      {
+        "translation": "彼は自分の実力に見合うだけの報酬を受け取りたがっています。"
+      },
+      {
+        "translation": "あなたが努力した分だけ、結果がついてくるはずです。"
+      },
+      {
+        "translation": "彼女は他の人たちと同じくらい上手に歌うことができます。"
+      },
+      {
+        "translation": "この料理は見かけに違わずおいしいです。"
+      }
+    ]
   },
   "ko_며면서_62": {
-    "title": "~며/면서 [myeo/myeonseo] (While)",
-    "shortExplanation": "〜を示します two simultaneous or closely related actions/states, similar to 'while' in English.",
-    "longExplanation": "The endings '~며' or '~면서' show that two actions happen at the same time or that one action occurs in the background of another. It can also highlight a contrast or additional aspect, but the main nuance is simultaneity—doing two things at once or having two states occur together.",
-    "formation": "動詞 stem + 며/면서"
+    "title": "~며 / ~면서（〜しながら、〜しつつ、〜でありながら）",
+    "shortExplanation": "同一の主語が二つの動作を同時に行うこと（「〜しながら」）や、二つの状態・資格が並行して存在することを表す接続語尾です。",
+    "longExplanation": "「~며」「~면서」（パッチムがある場合は「-으며 / -으면서」）は、同時並行を表す代表的な接続語尾です。主語が同一であることが原則で、一つの主体が同時に二つの動作を行う様子（「音楽を聴きながらメッセージを確認する」など）を表します。また動作だけでなく、「教師でありながら作家でもある」のように二重の身分や性質を並列して述べる際にも用いられます。",
+    "formation": "動詞・形容詞の語幹（パッチム有：-으며 / -으면서；パッチム無：-며 / -면서）",
+    "examples": [
+      {
+        "translation": "家に帰るとき、音楽を聴きながらメッセージを確認します。"
+      },
+      {
+        "translation": "学校に入学する前、一生懸命勉強しながら他の活動にも参加しました。"
+      },
+      {
+        "translation": "映画を見ながらポップコーンを食べるのが好きです。"
+      },
+      {
+        "translation": "運動しながらニュースを見るほうです。同時に健康情報も調べたりします。"
+      }
+    ]
   },
   "ko_면_63": {
-    "title": "~면 [myeon] (If)",
-    "shortExplanation": "〜を示します a conditional statement, equivalent to 'if' in English.",
-    "longExplanation": "'~면 [myeon]' is a conditional form in the Korean language. It conveys the meaning of 'if', creating a condition that if a certain situation occurs, another event will follow. This grammar is often 〜を表すために使用されます hypothetical situations or intentions that depend on a condition. Note that the verb typically appears in its plain or basic form before '~면'.",
-    "formation": "Plain form of verb + 면"
+    "title": "~면（〜（す）れば、〜なら、〜たら）",
+    "shortExplanation": "前節が後節の条件や仮定であることを表す最も基本的な接続語尾です（「〜ば」「〜たら」「〜なら」）。",
+    "longExplanation": "「-(으)면」は、韓国語における条件・仮定を表す最も基本的かつ代表的な接続語尾です。動詞や形容詞の語幹について、「もし前節の事態が成り立つならば、後節の事態が生じる・これを行う」という関係を示します。一般的な仮定だけでなく、「春になれば花が咲く」のような恒常的条件や規則的な習慣、契機を表す際にも日常的に使われます。",
+    "formation": "動詞・形容詞の語幹（パッチム有：-으면 / パッチム無：-면）、名詞 ＋ (이)면",
+    "examples": [
+      {
+        "translation": "明日雨が降れば、私たちは公園に行きません。"
+      },
+      {
+        "translation": "会いたいならその人に電話をしてください。"
+      },
+      {
+        "translation": "たくさん勉強すれば試験に合格できます。"
+      },
+      {
+        "translation": "最終バスを逃したらタクシーに乗らなければなりません。"
+      }
+    ]
   },
   "ko_면_64": {
-    "title": "~면 어때 [myeon eottae] (How about if)",
-    "shortExplanation": "Used to suggest an action or situation; 'How about if'.",
-    "longExplanation": "'~면 어때 [myeon eottae]' is used in Korean to propose an alternative plan or seek agreement on a course of action. It can mean 'How about if...' or 'What if...'. The speaker is asking for someone’s opinion or reaction to a hypothetical idea.",
-    "formation": "動詞 stem + 면 + 어때"
+    "title": "~면 어때(요)（〜したらどう？、〜するのはどうですか？）",
+    "shortExplanation": "提案や提案に対する相手の意向を尋ねる表現で、「〜したらどう？」「〜してみたらどうですか？」と相手に柔らかく勧める際に用います。",
+    "longExplanation": "「~면 어때(요)」は、条件の接続語尾「-(으)면」と状態を尋ねる疑問形「어때（どう）」が組み合わさった慣用語尾です。相手に対して「こうしてみるのはどうだろうか」と代替案や新しい行動を提案し、その反応や意見を優しく伺う際に用いられます。押し付けがましくない親和的なニュアンスを持ちます。",
+    "formation": "動詞・形容詞の語幹（パッチム有：-으면 / パッチム無：-면） ＋ 어때(요)",
+    "examples": [
+      {
+        "translation": "天気がいいから、私たち公園で遊ぶのはどう？"
+      },
+      {
+        "translation": "悩みが多そうに見えるよ。少しジムに行って運動してみたらどう？"
+      },
+      {
+        "translation": "時間がないんですか？それなら出前を取ってみたらどうですか？"
+      },
+      {
+        "translation": "この問題をこのように解決してみるのはどうでしょうか？"
+      }
+    ]
   },
   "ko_면서도_65": {
-    "title": "~면서도 [myeonseodo] (Even though, while)",
-    "shortExplanation": "Expresses a contrast or contradiction between two clauses, meaning 'even though' or 'while'.",
-    "longExplanation": "'~면서도 [myeonseodo]' is used when two facts or actions coexist, yet they seem contradictory or contrasting. It can also convey 'despite' or 'although' in English, highlighting the unexpected coexistence of these two states or actions.",
-    "formation": "動詞/形容詞 stem + 면서도"
+    "title": "~면서도（〜でありながらも、〜していながら、〜なのに）",
+    "shortExplanation": "二つの動作や状態が同時に存在しながらも、それらが互いに矛盾したり対比を成したりしていることを表す接続語尾です（「〜でありながらも」「〜なのに」）。",
+    "longExplanation": "「~면서도」（パッチムがある場合は「-으면서도」）は、同時の「-면서」に強調の助詞「-도（〜も）」が付いた形です。一つの主体の中に相反する二つの事実や態度が並存している様子を浮き彫りにし、「〜のくせに」「〜していながらも実は…」といった意外性、逆接、矛盾のニュアンスを際立たせる際に用いられます。",
+    "formation": "動詞・形容詞の語幹（パッチム有：-으면서도 / パッチム無：-면서도）、名詞 ＋ (이)면서도",
+    "examples": [
+      {
+        "translation": "彼女は驚くべきことに、働きながらも学校の勉強を続けています。それなのにいつも成績は極めて優秀なほうです。"
+      },
+      {
+        "translation": "この映画は苦労して作られましたが、面白くもありながら教訓的な内容を含んでいます。"
+      },
+      {
+        "translation": "彼は健康を維持しながらも毎日残業をしています。それなのにいつも活気に溢れています。"
+      },
+      {
+        "translation": "冬でありながらも天気が暖かく、アウトドア活動をするのに適しています。"
+      }
+    ]
   },
   "ko_밖에_66": {
-    "title": "~밖에 [bakke] (Only, nothing but)",
-    "shortExplanation": "Used to emphasize 'only' or 'nothing but' when accompanied by a negative verb.",
-    "longExplanation": "'~밖에 [bakke]' is a Korean particle that appears together with negative verbs to stress that there is nothing else except the stated noun. The sentence structure literally means 'aside from X, there is nothing/no one else,' conveying 'only X' or 'nothing but X.'",
-    "formation": "名詞 + 밖에 + Negative 動詞"
+    "title": "~밖에（〜しか（〜ない）、〜のほかに（〜ない））",
+    "shortExplanation": "名詞の後について、必ず後続節に否定表現を伴い、その対象以外には存在しない・それしか選択肢がないことを強調する助詞です（「〜しか…ない」）。",
+    "longExplanation": "「~밖에」は、日本語の「〜しか（…ない）」に完全に一致する否定呼応の助詞です。後続する述語には必ず否定形（없다, 모르다, 안, 못 など）が伴わなければならず、「その対象の外側には何もない」という直義から転じて、「それだけが唯一である」「それ以外の道はない」という強い限定や余儀なさを表します。肯定文で使える「~만」よりも切迫したニュアンスを持ちます。",
+    "formation": "名詞 ＋ 밖에 ＋ 否定述語（안 / 못 / 없다 / 모르다 など）",
+    "examples": [
+      {
+        "translation": "私はコーヒーしか飲みません。他の飲み物は飲む必要がないからです。"
+      },
+      {
+        "translation": "この試験を準備するためには私しかいないようです。他の人たちは準備しませんでしたから。"
+      },
+      {
+        "translation": "彼女は自分の誕生日しか覚えていません。他の重要な日付は忘れてしまったそうです。"
+      },
+      {
+        "translation": "私はピザしか食べませんでした。他の食べ物はおいしくなかったのです。"
+      }
+    ]
   },
   "ko_부터_67": {
-    "title": "~부터 [buteo] (From)",
-    "shortExplanation": "Indicates the starting point in time or space; 'from', 'since'.",
-    "longExplanation": "'~부터 [buteo]' is a postposition marking the starting point of an action or condition in time or space. In English, it corresponds to 'from' or 'since.' It’s used with time expressions (e.g., 'from tomorrow') or location expressions (e.g., 'from Seoul').",
-    "formation": "名詞 + 부터"
+    "title": "~부터（〜から、〜から始めて）",
+    "shortExplanation": "名詞の後について、時間、順序、空間などの起点・出発点を表す助詞です（「〜から」「〜より」）。",
+    "longExplanation": "「~부터」は、動作や状態が始まる起点を表す代表的な助詞で、日本語の「〜から」に相当します。特に時間を表す名詞（「7時から」「今週末から」）や順序を表す名詞（「初めから」「易しいものから」）の後ろによく付き、物事の開始点を明確に指示します。空間的な出発点を表す際にも、「~까지（〜まで）」とセットで用いられることが多くあります。",
+    "formation": "名詞 ＋ 부터",
+    "examples": [
+      {
+        "translation": "私は朝7時から仕事に行きます。"
+      },
+      {
+        "translation": "今週末から旅行の計画を立てようと思っています。"
+      },
+      {
+        "translation": "ソウルから釜山まで列車で何時間かかりますか。"
+      },
+      {
+        "translation": "2012年から韓国を愛するようになりました。"
+      }
+    ]
   },
   "ko_부터_68": {
-    "title": "~부터 ~까지 [buteo ~ kkaji] (From ~ to)",
-    "shortExplanation": "Used to specify a range or period, 'from ~ to'.",
-    "longExplanation": "'~부터 ~까지 [buteo ~ kkaji]' indicates a start and end point in time, location, or range. It parallels 'from ~ to' in English. For instance, 'from 1 to 10' or 'from Seoul to Busan.'",
-    "formation": "名詞 + 부터 + 名詞 + 까지"
+    "title": "~부터 ~까지（〜から〜まで）",
+    "shortExplanation": "起点と終点を表す二つの助詞が対になり、時間、空間、数量などの範囲や区間を包括して表します（「〜から〜まで」）。",
+    "longExplanation": "「~부터 ~까지」は、物事の始まりを示す「부터」と終わりを示す「까지」が呼応した構文で、日本語の「〜から〜まで」に直結します。何時から何時までといった時間の区間、ある地点からある地点までの空間的な広がり、1から10までの数値的範囲などを包括的に示す際に最も基礎的かつ普遍的に用いられます。",
+    "formation": "名詞1 ＋ 부터 ＋ 名詞2 ＋ 까지",
+    "examples": [
+      {
+        "translation": "私は朝8時から夕方6時まで働きます。"
+      },
+      {
+        "translation": "友達の家から学校まで歩いて行きました。"
+      },
+      {
+        "translation": "1から10まで数えてみてください。"
+      },
+      {
+        "translation": "今週末から来週末まで旅行に行こうと思っています。"
+      }
+    ]
   },
   "ko_사이_69": {
-    "title": "~사이 [sai] (Between)",
-    "shortExplanation": "Indicates 'between' or 'among' two or more subjects or points.",
-    "longExplanation": "'~사이 [sai]' is used to mean 'between' or 'among' when referring to two or more subjects. It can describe physical distance (e.g., between cities) or relationships (e.g., between people).",
-    "formation": "Noun1 + 와/과 + Noun2 + 사이 / 名詞 + 사이"
+    "title": "~사이（〜の間、〜のあいだ、仲・関係）",
+    "shortExplanation": "二つの対象の間に位置する空間的距離や時間的間隔を表すほか、人と人との人間関係や間柄を表す名詞です（「〜の間」「仲」）。",
+    "longExplanation": "「사이」は多面的な意味を持つ名詞です。（1）物理的な空間の隔たり（「都市と都市の間」）、（2）時間の合間・インターバル（「朝食と昼食の間」）、（3）人と人との情緒的な間柄や交友関係（「사이가 좋다 仲が良い」「사이가 나쁘다 仲が悪い」）を表します。日常会話では助詞「-에（〜に）」と結びついて時間を表したり、「-가/이」と結びついて関係性の良し悪しを述べたりします。",
+    "formation": "名詞1 ＋ 와/과 ＋ 名詞2 ＋ 사이 / 名詞 ＋ 사이",
+    "examples": [
+      {
+        "translation": "ソウルと釜山の間の距離は約325kmです。"
+      },
+      {
+        "translation": "友達と仲があまり良くないので、最近は連絡をしていません。"
+      },
+      {
+        "translation": "朝食と昼食の間に間食をとることが大切です。"
+      },
+      {
+        "translation": "週末の間に両親との仲がとても良くなりました。"
+      }
+    ]
   },
   "ko_세요_70": {
-    "title": "~세요 [seyo] (Please do, let’s do)",
-    "shortExplanation": "A polite sentence-ending used to make suggestions or requests.",
-    "longExplanation": "'세요 [seyo]' is an honorific verb ending in Korean used to politely ask or suggest someone do something. It can mean 'please do X' or 'let’s do X' depending on context. It often appears in daily polite speech.",
-    "formation": "動詞 stem + (으)세요"
+    "title": "~세요（〜（し）てください、〜なさい、〜しましょう）",
+    "shortExplanation": "丁寧で親しみのある敬語の終結語尾で、相手に丁寧に依頼や指示、勧めをする際に用います（「〜してください」「〜なさってください」）。",
+    "longExplanation": "「-(으)세요」は、主体尊敬の接尾辞「-(으)시-」にヘヨ体の終結語尾「-어요」が融合した敬語表現です。日常会話において相手を尊重しながら、指示、懇願、助言、依頼を行う際の最も標準的で親和的な表現です。「どうぞ〜してください」「〜しましょう」といった相手への思いやりと敬意がこもった柔らかいニュアンスを持ちます。",
+    "formation": "動詞の語幹（パッチム有：-으세요 / パッチム無：-세요）",
+    "examples": [
+      {
+        "translation": "どうか静かにしてください。ここで勉強している人が大勢います。"
+      },
+      {
+        "translation": "一緒にお昼を食べに行きましょう。おいしいお店を知っているんです。"
+      },
+      {
+        "translation": "今勉強してください。試験までもうあまり時間がありません。"
+      },
+      {
+        "translation": "私について来てください。道に迷わないようご案内します。"
+      }
+    ]
   },
   "ko_아어_71": {
-    "title": "~아/어 보다 [a/eo boda] (Try)",
-    "shortExplanation": "〜を示します the action of trying something.",
-    "longExplanation": "'~아/어 보다 [a/eo boda]' is a Korean grammar pattern that is used when someone is trying to do something or trying something out for the first time. It can also be used when asking or suggesting someone to try something. In English, it is similar to 'try'. It is generally used after the verb stem.",
-    "formation": "動詞 Stem + 아/어 보다"
+    "title": "~아/어 보다（〜してみる、〜してみようとする）",
+    "shortExplanation": "動詞の語幹について、新しい経験や結果を確かめるために試しにその行為を行ってみることを表す補助動詞構文です（「〜してみる」）。",
+    "longExplanation": "「~아/어 보다」は、動詞に接続して「試しに〜してみる」「〜してみて様子を伺う」という意味を表す補助用言です。何かを初めて体験しようとする意図や試みを表すほか、過去形「-아/어 봤다」の形をとることで、「〜したことがある」という過去の経験を表す表現としても広く機能します。",
+    "formation": "動詞の語幹（陽母音 ㅏ/ㅗ：-아 보다；陰母音：-어 보다；하다 語幹：해 보다）",
+    "examples": [
+      {
+        "translation": "私は韓国語の勉強をしてみようと思っています。面白そうですね。"
+      },
+      {
+        "translation": "私はこれからお肉を食べてみようと思います。どんな味なのか気になります。"
+      },
+      {
+        "translation": "私はこの新しい仕事をしてみることに決めました。挑戦することは良いことだと思います。"
+      },
+      {
+        "translation": "今日初めてガイドツアーを試してみましたが、とても楽しい経験でした。"
+      }
+    ]
   },
   "ko_아어_72": {
-    "title": "~아/어 버리다 [a/eo beorida] (Regrettably, completely)",
-    "shortExplanation": "〜を表すために使用されます regret or completion.",
-    "longExplanation": "'~아/어 버리다 [a/eo beorida]' is a verbal construction in Korean that is used to show a sense of regret or completion of an action. It is used when the speaker feels regret about an action that has already been done or when an action has been completed leaving nothing more to do. It adds a sense of finality or regret to the verb it is attached to.",
-    "formation": "動詞 stem + 아/어 버리다"
+    "title": "~아/어 버리다（〜してしまう、〜してしまった）",
+    "shortExplanation": "動作が完全に完了したことを表す補助動詞構文で、物事が完全に終わってすっきりした気持ちや、取り返しのつかない事態に対する後悔・残念な気持ちを表します（「〜してしまう」）。",
+    "longExplanation": "「~아/어 버리다」は、動詞について動作が跡形もなく完全に完了したことを表す表現で、日本語の「〜してしまう」「〜してしまった」に相当します。心理的ニュアンスとして、(1) 想定外の結果や不本意な事態に対する残念さ・遺憾・後悔の気持ちを込める場合と、(2) 負担だった事柄を完全にやり遂げて肩の荷が下りたすっきり感を表す場合の両方で用いられます。",
+    "formation": "動詞の語幹（陽母音 ㅏ/ㅗ：-아 버리다；陰母音：-어 버리다；하다 語幹：해 버리다）",
+    "examples": [
+      {
+        "translation": "私は宿題をあまりにも早く終わらせてしまって、もうこれ以上やることがありません。"
+      },
+      {
+        "translation": "昨日のサッカーの試合で私たちのチームが負けてしまい、会社の同僚たちからからかわれました。"
+      },
+      {
+        "translation": "友達が私に冗談で嘘をついてしまったので、私は気分が良くありません。"
+      },
+      {
+        "translation": "私は朝早くに出発してしまったのですが、交通渋滞のせいで道で多くの時間を過ごしました。"
+      }
+    ]
   },
   "ko_아어_73": {
-    "title": "~아/어 다니다 [a/eo danida] (Keep doing, repeatedly do)",
-    "shortExplanation": "Used to describe the continuation or repetition of an action, often in various places or on multiple occasions.",
-    "longExplanation": "'~아/어 다니다' is a Korean verbal ending that expresses that someone repeatedly or habitually does an action, often moving around while doing it. It is typically used with action verbs to convey repeated or continuous activity. The choice between ~아 or ~어 depends on the final vowel of the verb stem.",
-    "formation": "動詞 stem + (아/어) 다니다"
+    "title": "~아/어 다니다（〜して回る、あちこち〜して歩く）",
+    "shortExplanation": "動詞の語幹に付き、あちこち移動しながらその動作を繰り返したり、習慣的に〜して回ることを表します（「〜して回る」「あちこち〜して歩く」）。",
+    "longExplanation": "「~아/어 다니다」は、接続語尾「-아/어」に通う・歩き回るという意味の「다니다」が結合した表現です。主語があちこち場所を移動しながらある動作を継続・反復して行ったり、特定の目的を持ってあちこち巡り歩く習慣を表します（例：찾아다니다「探し回る」、돌아다니다「歩き回る」、뛰어다니다「走り回る」など）。語幹末尾の母音によって、陽母音（ㅏ, ㅗ）の場合は「-아 다니다」、陰母音の場合は「-어 다니다」、「하다」は「해 다니다」となります。",
+    "formation": "動詞語幹（陽母音 ㅏ, ㅗ：-아 다니다 / 陰母音：-어 다니다 / 하다：-해 다니다）",
+    "examples": [
+      {
+        "translation": "私は放課後、友達とあちこち歩き回りながら遊んでいます。"
+      },
+      {
+        "translation": "彼女は休日のたびにおいしいお店を探し回っています。"
+      },
+      {
+        "translation": "うちの子犬は家の中を走り回ってじゃれついています。"
+      },
+      {
+        "translation": "最近は新しいカフェを探し歩きながらコーヒーを飲んでいます。"
+      }
+    ]
   },
   "ko_아어_74": {
-    "title": "~아/어 두다 [a/eo duda] (Leave something in a state)",
-    "shortExplanation": "This grammar is 〜を表すために使用されます an intentional action to leave something or someone in a certain state or condition.",
-    "longExplanation": "The '~아/어 두다 [a/eo duda]' form is used in Korean grammar to indicate the deliberate act of leaving something or someone in a certain state or condition. In English, this is often translated as 'to leave something in a state'. It is constructed by attaching 아/어 to the stem of an action verb followed by 두다. The form of 아/어 will depend on the final vowel of the verb stem.",
-    "formation": "動詞 stem + 아/어 + 두다"
+    "title": "~아/어 두다（〜しておく、〜したままにしておく）",
+    "shortExplanation": "動詞の語幹に付き、ある動作を行った後、その結果や状態をそのまま維持・保存しておくことを表します（「〜しておく」「〜したままにしておく」）。",
+    "longExplanation": "「~아/어 두다」は、接続語尾「-아/어」に置く・保つという意味の補助動詞「두다」が結びついた表現です。ある行為を前もって完了させ、その結果生じた状態を後の必要や目的のためにそのまま維持・放置することを表します。目の前の結果状態に焦点を当てる「~아/어 놓다」に比べ、「~아/어 두다」は将来の備えとして比較的長い期間その状態を維持・保管しておくニュアンスが含まれます。",
+    "formation": "動詞語幹（陽母音 ㅏ, ㅗ：-아 두다 / 陰母音：-어 두다 / 하다：-해 두다）",
+    "examples": [
+      {
+        "translation": "私は窓を開けておきました。だから空気が良くなると思います。"
+      },
+      {
+        "translation": "彼は後でまた読めるように、本を机の上に置いておきました。"
+      },
+      {
+        "translation": "会話があまりに気まずくてつらかったので、私は電話を切っておきました。"
+      },
+      {
+        "translation": "燃えるストーブの脇に、お茶を温かいまま置いておきました。"
+      }
+    ]
   },
   "ko_아어_75": {
-    "title": "~아/어 놓다 [a/eo nohda] (Do in advance, set something up)",
-    "shortExplanation": "Used to convey the concept of doing something in preparation for something or setting something up.",
-    "longExplanation": "The grammar point '~아/어 놓다 [a/eo nohda]' is often used in Korean to express the idea of doing something in advance or preparing for something. It implies that an action has been performed and the result of the action remains. It's also 〜を表すために使用されます the intention of setting something up or putting things in a certain state.",
-    "formation": "動詞 stem + 아/어 놓다"
+    "title": "~아/어 놓다（〜しておく、あらかじめ〜しておく）",
+    "shortExplanation": "動詞の語幹に付き、あらかじめ準備として動作を完了させ、その結果生じた状態を維持しておくことを表します（「〜しておく」「あらかじめ〜しておく」）。",
+    "longExplanation": "「~아/어 놓다」は、接続語尾「-아/어」に置くという意味の補助動詞「놓다」が付いた表現です。後の状況や予定に備えてあらかじめその行為を済ませておき、その完了した状態がそのまま残っていることを表します。「미리（あらかじめ）」「먼저（先に）」などの副詞と非常によく呼応して用いられます。",
+    "formation": "動詞語幹（陽母音 ㅏ, ㅗ：-아 놓다 / 陰母音：-어 놓다 / 하다：-해 놓다）",
+    "examples": [
+      {
+        "translation": "明日の朝のために、今夜のうちにご飯を前もって炊いておきました。"
+      },
+      {
+        "translation": "ミーティングが始まる前に、まずプレゼンテーションを準備しておかなければなりません。"
+      },
+      {
+        "translation": "私たちは旅行に行く前に、あらかじめ荷物をまとめておきました。"
+      },
+      {
+        "translation": "弟が来る前に、部屋を掃除しておきました。"
+      }
+    ]
   },
   "ko_아어야_76": {
-    "title": "~아/어야 되다/하다 [a/eoya dweda/hada] (Have to, must)",
-    "shortExplanation": "This pattern is used to describe an obligation or necessity, equivalent to 'have to' or 'must' in English.",
-    "longExplanation": "'~아/어야 되다/하다 [a/eoya dweda/hada]' is used in Korean to express a sense of obligation or requirement, often in cases where the speaker must perform a certain action. It is akin to 'must' or 'have to' in English, giving the subject of the sentence a required action to carry out. This can be used in a variety of contexts, ranging from obligations in daily life, job requirements, giving or receiving advice, rules, and more.",
-    "formation": "動詞 stem + 아/어야 하다 or 動詞 stem + 아/어야 되다."
+    "title": "~아/어야 되다/하다（〜しなければならない、〜すべきだ）",
+    "shortExplanation": "義務や必要性、必須の条件を表し、「〜しなければならない」「〜する必要がある」という意味を表します。",
+    "longExplanation": "「~아/어야 되다/하다」は、必須条件を表す接続語尾「-아/어야」に「하다」または「되다」が結合した文型です。特定の目標達成や社会的ルール・道徳的義務として、その行為を行わなければならないことを表します。「-아/어야 하다」は話者の主観的な義務感や意志が強く、「-아/어야 되다」は客観的な状況や規則による必然性のニュアンスが強くなります。日常会話ではどちらも非常に頻繁に用いられます。",
+    "formation": "動詞語幹 / 形容詞語幹（陽母音 ㅏ, ㅗ：-아야 하다/되다 / 陰母音：-어야 하다/되다 / 하다：-해야 하다/되다）",
+    "examples": [
+      {
+        "translation": "私は8時に学校へ行かなければなりません。遅刻すると大変なことになります。"
+      },
+      {
+        "translation": "問題を解決するには、最初からやり直さなければなりません。"
+      },
+      {
+        "translation": "遅刻しないためには、バスに乗らなければなりません。"
+      },
+      {
+        "translation": "気分を良くするためには、運動をしなければなりません。"
+      }
+    ]
   },
   "ko_아어지다_77": {
-    "title": "~아/어지다 [a/eojida] (Become, get)",
-    "shortExplanation": "〜を示します a change of state or condition; 'become', 'get'.",
-    "longExplanation": "'~아/어지다 [a/eojida]' is a verb ending used in Korean to indicate a change in state or condition. The change implied by ~아/어지다 can be physical, mental, or situational, signaling that something or someone has transitioned from one state or condition to another. The context determines whether a sentence with ~아/어지다 refers to a change within oneself or something external.",
-    "formation": "動詞 stem + 아/어지다"
+    "title": "~아/어지다（〜くなる、〜になる）",
+    "shortExplanation": "形容詞の語幹に付き、時間の経過に伴って状態や性質が変化することを表します（「〜くなる」「〜になる」）。",
+    "longExplanation": "「~아/어지다」は、接続語尾「-아/어」に補助動詞「지다」が結合した表現です。主に形容詞の語幹に付き、ある状態や性質が徐々に変化して別の状態へ移行する過程を表します（例：좋아지다「良くなる」、행복해지다「幸せになる」、따뜻해지다「温かくなる」など）。語幹末尾の母音に応じて、陽母音（ㅏ, ㅗ）には「-아지다」、陰母音には「-어지다」、「하다」は「해지다」となります。",
+    "formation": "形容詞語幹（陽母音 ㅏ, ㅗ：-아지다 / 陰母音：-어지다 / 하다：-해지다）",
+    "examples": [
+      {
+        "translation": "彼女はその名前を聞くたびに気分が良くなりました。その名前は彼女に幸せな思い出を思い出させてくれたからです。"
+      },
+      {
+        "translation": "私は心が落ち着くにつれて、次第にずっと幸せになり始めました。"
+      },
+      {
+        "translation": "誰もが自分が望むものを手に入れて、お金持ちになりました。"
+      },
+      {
+        "translation": "彼女は時が経つにつれてとても成熟しました。彼女の経験が彼女をさらに強くしました。"
+      }
+    ]
   },
   "ko_아서어서_78": {
-    "title": "~아서/어서 [aseo/eoseo] (So, because, and)",
-    "shortExplanation": "〜を表すために使用されます reason, cause or condition; 'So', 'because' or 'and'.",
-    "longExplanation": "'~아서/어서 [aseo/eoseo]' is a connective ending in Korean that indicates reason, cause or condition. It can be compared to 'so', 'because', or 'and' in English. ~아서 is used after vowels in verbs ending or else ~어서 is used.",
-    "formation": "動詞 + 아서/어서 + 動詞"
+    "title": "~아서/어서（〜ので、〜て／〜で）",
+    "shortExplanation": "理由や原因を表したり（「〜ので」「〜から」）、時間的に先行する動作とそれに続く密接な動作を連結します（「〜して」）。",
+    "longExplanation": "「~아서/어서」は、韓国語で最も基本的な接続語尾の一つです。主な用法として、(1) 後続節の事態に対する原因・理由を表す用法（「雨が降ったので家にいた」）、(2) 同一主語による一連の密接な動作を時間順に連結する用法（「本屋に行って本を買った」）があります。重要な文法規則として、前節に過去時制「-았/었-」や推量・意志「-겠-」を付けることはできず、また後節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできません。",
+    "formation": "動詞語幹 / 形容詞語幹（陽母音 ㅏ, ㅗ：-아서 / 陰母音：-어서 / 하다：-해서）",
+    "examples": [
+      {
+        "translation": "お腹が痛かったので、学校に行くことができませんでした。"
+      },
+      {
+        "translation": "結婚式があったので、彼に会いにソウルへ行きました。"
+      },
+      {
+        "translation": "空が澄み切っていたので、星がとてもよく見えました。"
+      },
+      {
+        "translation": "彼女が笑ってくれたので、私も気分が良くなりました。"
+      }
+    ]
   },
   "ko_았었다가_79": {
-    "title": "~았/었다가 [at/eotdagga] (Did something and then another situation occurred)",
-    "shortExplanation": "〜を表すために使用されます that after a completed action or event in the past, a different situation/event followed.",
-    "longExplanation": "The grammar point '~았/었다가 [at/eotdagga]' is used to show that one action was completed in the past and then a new or contrasting action or situation occurred. It connects the two events, often implying a change or unexpected outcome.",
-    "formation": "動詞 in past tense + 았/었다가"
+    "title": "~았/었다가（〜したあとで、〜したところ）",
+    "shortExplanation": "前節の動作が完了したあと、別の状況に転換したり、予期せぬ結果や対照的な事態が続くことを表す接続表現です（「〜したあとで」「〜したところ」）。",
+    "longExplanation": "「~았/었다가」は、過去完了の「-았/었-」と動作の転換を表す接続語尾「-다가」が結合した文型です。前節の行為が完全に完了した直後に、その行為の結果として予期せぬ出来事が発生したり、状況が一転して別の事態へと切り替わることを表します。動作が途中で中断される「-다가」とは異なり、「-았/었다가」は前節の動作が一旦完了している点が特徴です。",
+    "formation": "動詞語幹 ＋ 았/었다가（陽母音 ㅏ, ㅗ：-았다가 / 陰母音：-었다가 / 하다：-했다가）",
+    "examples": [
+      {
+        "translation": "温かいコーヒーを飲んだところ、急にお腹が痛くなって病院に行きました。"
+      },
+      {
+        "translation": "彼はサッカーをしたのですが、転んで怪我をしてしまいました。"
+      },
+      {
+        "translation": "映画を見ていたのですが、途中で眠り込んでしまいました。そのため結末を知りません。"
+      },
+      {
+        "translation": "私が勉強していたところ、友達が図書館へ遊びにやって来ました。"
+      }
+    ]
   },
   "ko_았었던_80": {
-    "title": "~았/었던 [at/eotdeon] (That used to be)",
-    "shortExplanation": "〜を表すために使用されます past states or conditions; 'that used to be'.",
-    "longExplanation": "'~았/었던 [at/eotdeon]' is a grammar point used in Korean to express past states or conditions, equivalent to 'that used to be' in English. It can be used to describe a person, place, thing, or situation in the past. The past tense verb is combined with '던' to express a state or condition that was continuous in the past.",
-    "formation": "動詞 stem + 았/었던"
+    "title": "~았/었던（かつて〜だった、以前〜した）",
+    "shortExplanation": "過去回想の連体形語尾で、過去に完了して現在はすでに途絶えた事態や状態を回想しながら後ろの名詞を修飾します（「かつて〜だった」「以前〜した」）。",
+    "longExplanation": "「~았/었던」は、過去完了の「-았/었-」と回想を表す連体形語尾「-던」が結合した表現です。名詞を修飾し、過去のある時点で完全に起こり終わり、現在とは切り離されている（現在はそうではない）過去の経験・状態・事実を振り返って表現します。単なる未完了や反復習慣を表す「-던」に比べ、「~았/었던」は過去の完了性と現在の状況との対比が際立ちます。",
+    "formation": "動詞語幹 / 形容詞語幹 ＋ 았/었던（陽母音 ㅏ, ㅗ：-았던 / 陰母音：-었던 / 하다：-했던）",
+    "examples": [
+      {
+        "translation": "いつも人でいっぱいに満ちていたこの場所は、今では完全に空っぽになっています。"
+      },
+      {
+        "translation": "私たちがよく遊んでいたあの公園は、もうありません。"
+      },
+      {
+        "translation": "あなたが探していたあの本は、今ではすべて売り切れました。"
+      },
+      {
+        "translation": "昔住んでいた家には、今は別の人が暮らしています。"
+      }
+    ]
   },
   "ko_았었으면_81": {
-    "title": "~았/었으면 좋겠다 [at/eosseumyeon johgetda] (I hope, wish)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます a desire or a wish for a particular situation to happen.",
-    "longExplanation": "'~았/었으면 좋겠다 [at/eosseumyeon johgetda]' is a Korean grammar point 〜を表すために使用されます the speaker's hope or wish for a situation that has not yet occurred, similar to 'I hope' or 'I wish' in English. It is also 〜を表すために使用されます regret for a past event that did not go as desired. In formation, it uses the past tense of a verb followed by '으면 좋겠다' to indicate the speaker's hope or wish.",
-    "formation": "動詞 + 았/었으면 좋겠다"
+    "title": "~았/었으면 좋겠다（〜ならいいのに、〜だといいな、〜してほしい）",
+    "shortExplanation": "話者の希望や願い、または過去の事柄に対する悔恨を表し、「〜ならいいのに」「〜だといいな」という意味を表します。",
+    "longExplanation": "「~았/었으면 좋겠다」は、過去形の「-았/었-」に仮定の「-(으)면」、そして推量の「좋겠다（良いだろう）」が結合した表現です。まだ実現していない事柄や願望について「そうなればどんなに素晴らしいだろうか」と強く期待する気持ちを表します。また、すでに終わった過去の事態を振り返って「あの時〜していればよかったのに」という反実仮想的な後悔を表すこともあります。",
+    "formation": "動詞語幹 / 形容詞語幹 ＋ 았/었으면 좋겠다（陽母音 ㅏ, ㅗ：-았으면 좋겠다 / 陰母音：-었으면 좋겠다 / 하다：-했으면 좋겠다）",
+    "examples": [
+      {
+        "translation": "明日は天気が良ければいいなと思います。海へ行って遊びたいのに、毎回雨が降って行けませんでした。"
+      },
+      {
+        "translation": "おいしい料理を上手に作れたらいいな。友達においしい料理を作ってあげたいです。"
+      },
+      {
+        "translation": "TOPIKの試験で良い点数が取れたらいいな。たくさん勉強したのだから。"
+      },
+      {
+        "translation": "先週末にもっとたくさん休めていたらよかったのに。今はとても疲れています。"
+      }
+    ]
   },
   "ko_았었지만_82": {
-    "title": "~았/었지만 [at/eotjiman] (But, however, even though)",
-    "shortExplanation": "〜を表すために使用されます a contrast or conflict with something; 'but', 'however', 'even though'.",
-    "longExplanation": "'~았/었지만 [at/eotjiman]' is a conjunction used in Korean to show a contrast between the action or state provided in the first clause and the latter clause. This is similar to expressions such as 'but', 'however', or 'even though' in English. Usually, the condition or situation described in the first clause contrasts with or does not lead to the expected outcome mentioned in the latter clause.",
-    "formation": "動詞 + ~았/었지만"
+    "title": "~았/었지만（〜したけれど、〜だったが）",
+    "shortExplanation": "過去の事態を表す逆接の接続表現で、過去に起きた事実とそれに反する後節の結果を対比させます（「〜したけれど」「〜だったが」）。",
+    "longExplanation": "「~았/었지만」は、過去形の「-았/었-」と逆接の接続語尾「-지만」が結合した表現です。前節で過去に起きた動作や状態を述べ、後節でその事実から予想される結果とは食い違う出来事や、対照的な事実を述べるときに用います。",
+    "formation": "動詞語幹 / 形容詞語幹 ＋ 았/었지만（陽母音 ㅏ, ㅗ：-았지만 / 陰母音：-었지만 / 하다：-했지만）",
+    "examples": [
+      {
+        "translation": "私はたくさん勉強しましたが、試験に落ちてしまいました。"
+      },
+      {
+        "translation": "友達が私に招待状をくれましたが、パーティーに行けませんでした。"
+      },
+      {
+        "translation": "天気はとても良かったのですが、私は家で寝てばかりいました。"
+      },
+      {
+        "translation": "いくら教えてあげても、彼はそれを理解することができませんでした。"
+      }
+    ]
   },
   "ko_았었지요_83": {
-    "title": "~았/었지요 [at/eotjiyo] (Explanatory, as you know)",
-    "shortExplanation": "Used to explain or remind something that the speaker and listener both know; 'weren't they', 'didn't you', 'haven't we' etc.",
-    "longExplanation": "The grammar point '~았/었지요 [at/eotjiyo]' is used in sentences to explain or remind something that the speaker and the listener both know or have experienced before. It is similar to 'weren't they', 'didn't you', 'haven't we' in English and is often used to induce an agreement response from the listener. It is commonly used when the speaker assumes that the listener is aware of what is being said.",
-    "formation": "動詞 + 았/었지요"
+    "title": "~았/었지요（〜でしたよね、〜しましたよね）",
+    "shortExplanation": "話し手と聞き手の双方がすでに知っている過去の事実や経験について、確認したり同意を求めたりする終結語尾です（「〜でしたよね」「〜しましたよね」）。",
+    "longExplanation": "「~았/었지요」は、過去形の「-았/었-」と確認・同意を表す終結語尾「-지요（縮約形：-죠）」が合わさった表現です。話し手と聞き手の双方がすでに認知している過去の出来事や共通の思い出を話題に挙げ、「あの時そうでしたよね」と共感を誘ったり記憶を呼び起こしたりする際に好んで用いられます。",
+    "formation": "動詞語幹 / 形容詞語幹 ＋ 았/었지요（陽母音 ㅏ, ㅗ：-았지요 / 陰母音：-었지요 / 하다：-했지요）",
+    "examples": [
+      {
+        "translation": "私たちはあの映画を観たことがありましたよね。本当に面白かったですよね。"
+      },
+      {
+        "translation": "あなたが私を助けてくれましたよね。だから私は本当に感謝しました。"
+      },
+      {
+        "translation": "私たちはそのことについてたくさん話し合いましたよね。もうそれを決定する必要があります。"
+      },
+      {
+        "translation": "将来に関する私たちの計画が話題でしたよね。それは今でも重要な問題です。"
+      }
+    ]
   },
   "ko_어야지_84": {
-    "title": "~어야지 [eoyaji] (Intention, resolution)",
-    "shortExplanation": "〜を表すために使用されます a speaker's intention or resolution, equivalent to 'I should' or 'I must' in English.",
-    "longExplanation": "'~어야지 [eoyaji]' is a Korean structure 〜を示します the speaker’s resolve or intention. It implies a determination or necessity to perform an action in the future, akin to 'I should' or 'I must' in English. It is commonly used in sentences where the speaker is planning or making a firm decision to do something.",
-    "formation": "動詞 stem + 어야지"
+    "title": "~어야지（〜しなくちゃ、〜しなければ、〜するぞ）",
+    "shortExplanation": "話者自身の決意や意志、または自分自身に対する言い聞かせを表す終結表現です（「〜しなくちゃ」「〜しなければ」）。",
+    "longExplanation": "「~어야지」は、接続語尾「-아/어」に意志の「-야지」が結びついた終結語尾です。主に独り言や親しい間柄で、話し手が今後必ずその行動を実行しようとする強い意志や義務感を「〜しなくちゃ」「〜するぞ」と自らに言い聞かせるように誓う際に使われます。また親しい目下の者に対して助言や促しとして使われることもあります。",
+    "formation": "動詞語幹（陽母音 ㅏ, ㅗ：-아야지 / 陰母音：-어야지 / 하다：-해야지）",
+    "examples": [
+      {
+        "translation": "私は明日が試験だから今日は勉強しなくちゃ。そうしてこそ明日の試験がうまくいくはずだ。"
+      },
+      {
+        "translation": "ダイエットをしなくちゃ。体の健康のためにおいしくて体に良いものを食べなきゃ。"
+      },
+      {
+        "translation": "家事をしなくちゃ。自分の部屋を掃除しようと計画しているところです。"
+      },
+      {
+        "translation": "来週試験があるのだから、小説を読むより勉強する時間を確保しなくちゃ。"
+      }
+    ]
   },
   "ko_었더라면_85": {
-    "title": "~었더라면 [eotdeoramyeon] (If it had been the case that)",
-    "shortExplanation": "〜を表すために使用されます 'If it had been the case that'.",
-    "longExplanation": "'~었더라면 [eotdeoramyeon]' is a grammar structure used to describe an assumption or supposition about a past event or situation. It expresses a counterfactual condition—something that did not actually happen but is imagined for the purpose of speculation or explanation. 〜と訳されます 'if it had been the case that' or 'if...had...'.",
-    "formation": "動詞 + 었더라면"
+    "title": "~었더라면（もし〜していたら、〜だったなら）",
+    "shortExplanation": "過去の事実と反対の状況を仮定する反実仮想の接続語尾で、「もし〜していたら」「〜だったなら」という意味を表します。",
+    "longExplanation": "「~었더라면」は、過去完了の「-았/었-」、回想の「-더-」、仮定の「-(으)라면」が合わさった表現です。過去に実際に起こった事実とは正反対の事態を仮定し、「もしあの時そうしていたならば、違った結果になっていただろう」と後悔や安堵、残念な気持ちを込めて述べる際に用います。後節には推量の「-(으)ㄹ 텐데（〜だっただろうに）」や「-(으)ㄹ 것이다（〜だったはずだ）」がよく呼応します。",
+    "formation": "動詞語幹 / 形容詞語幹 ＋ 았/었더라면（陽母音 ㅏ, ㅗ：-았더라면 / 陰母音：-었더라면 / 하다：-했더라면）",
+    "examples": [
+      {
+        "translation": "もし天気が良かったなら、私たちは海に行ったはずだから、出版社で働く必要はなかったでしょう。"
+      },
+      {
+        "translation": "もし彼らが来ていなかったら、私たちを助けてくれる人は誰もいなかったでしょう。"
+      },
+      {
+        "translation": "もしそのことを知っていたなら、私は別の仕事をしていたはずです。"
+      },
+      {
+        "translation": "もし彼がウェイターの仕事を経験していたなら、料理することに対してもっと深い理解を持てていたでしょう。"
+      }
+    ]
   },
   "ko_에_86": {
-    "title": "~에 [e] (At, on, in, to)",
-    "shortExplanation": "Used to specify location, time, and destination (or direction with 가다/오다).",
-    "longExplanation": "'~에 [e]' is a particle used in Korean to denote a specific location, time, or destination. It can translate to 'on', 'at', 'in', or 'to' in English, and is placed after a noun to indicate when something happens, where something is, or where someone goes. For example, '학교에 가다' means 'to go to school'.",
-    "formation": "名詞 + 에"
+    "title": "~에（〜に、〜へ）",
+    "shortExplanation": "名詞の後に付き、存在の場所（「〜に」）、動作の行われる時間（「〜に」）、または移動の目的地・帰着点（「〜へ／〜に」）を表す副詞格助詞です。",
+    "longExplanation": "「~에」は、韓国語において最も基本的で多用される助詞の一つです。主な用法として、(1) 移動動詞（가だ, 오다など）と共に用いられ目的地や移動の方向を表す用法（「〜へ」「〜に」）、(2) 存在詞（있다, 없다）や滞在動詞と共に用いられ事物が存在する静的な場所を表す用法（「〜に」）、(3) 時間名詞に付き動作が行われる時点を指定する用法（「〜に」）があります。動作が具体的に行われる活動の場所を表す「-에서」との使い分けが重要です。",
+    "formation": "名詞 ＋ 에",
+    "examples": [
+      {
+        "translation": "私は学校へ勉強しに行きました。学校にいるときは友達といつも楽しい時間を過ごしました。"
+      },
+      {
+        "translation": "クリスマスには家族と一緒に家にいました。そして友達は外国へ旅行に行きました。"
+      },
+      {
+        "translation": "会社へ行って仕事をし、夜には友達と食堂へ行って夕食を食べました。"
+      },
+      {
+        "translation": "もうすぐ夏にソウルへ行く予定です。でも夏のソウルはとても暑いので少し心配です。"
+      }
+    ]
   },
   "ko_에_87": {
-    "title": "~에 따라 [e ddara] (According to, depends on)",
-    "shortExplanation": "〜を表すために使用されます 'according to' or 'depends on'.",
-    "longExplanation": "'~에 따라 [e ddara]' is a grammar point in Korean 〜を表すために使用されます that something is dependent on or varies according to another factor. It shows that the result or situation can change based on a particular condition or factor.",
-    "formation": "名詞 + 에 따라"
+    "title": "~에 따라（〜によって、〜に応じて、〜に従って）",
+    "shortExplanation": "名詞の後に付き、基準や条件、状況の違いによって結果や事態が変化・決定されることを表します（「〜によって」「〜に応じて」）。",
+    "longExplanation": "「~에 따라」は、助詞「-에」に従うという意味の動詞「따르다」が結合した表現です。先行する名詞が表す基準・条件・種類・状況などに応じて、後続する事態や選択、結果がそれぞれ異なってくることを表します。後続節には「달라지다（変わる）」「다르다（異なる）」「결정되다（決まる）」などの述語が頻繁に用いられます。名詞を直接修飾する場合は連体形の「~에 따른 ＋ 名詞」となります。",
+    "formation": "名詞 ＋ 에 따라（連体形：名詞 ＋ 에 따른 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "天候によって、私たちの旅行計画は変更される可能性があります。"
+      },
+      {
+        "translation": "生きている動物の種類によって、それらの生活パターンは大きく異なる場合があります。"
+      },
+      {
+        "translation": "人々の意見に応じて、あなたの決定が変わることもあります。"
+      },
+      {
+        "translation": "成績によって、大学の選択が変わることがあります。"
+      }
+    ]
   },
   "ko_에_88": {
-    "title": "~에 따르다 [e ddareuda] (To be attributed to, according to)",
-    "shortExplanation": "〜を表すために使用されます cause, reason, criteria or standards; 'according to', 'in accordance with', 'dependent on'.",
-    "longExplanation": "'~에 따르다 [e ddareuda]' is a compound verb commonly used in Korean to indicate that something happens or changes due to or as per some reason, rules, condition, or standard. It's like saying 'according to', 'in accordance with', or 'dependent on' in English. It's used to describe a circumstance that varies or is defined based on certain criteria or standards.",
-    "formation": "名詞 + 에 따르다"
+    "title": "~에 따르다 / ~에 따라(서)（〜に従って、〜に応じて、〜によって）",
+    "shortExplanation": "名詞に付き、ある基準・条件・規則・原因などに基づいて物事が決まったり変化することを表します（「〜に従って」「〜に応じて」「〜によって」）。",
+    "longExplanation": "「~에 따르다」（日常会話や文中では主に「-아/어(서)」と結合した「~에 따라」や「~에 따라서」の形で頻出）は、先行する名詞を基準・条件・規則・原因として、後続の事態がそれに左右されて変化したり決定されたりすることを表します。日本語の「〜に従って」「〜に応じて」「〜によって（異なる）」に相当します。規則や方針、指示などの名詞に付く場合は「〜に準じて」「〜に従って」という意味になります。",
+    "formation": "名詞 + 에 따르다 / 에 따라(서)",
+    "examples": [
+      {
+        "translation": "天気によって服の着こなしは変わるものです。とても寒い日にはおしゃれより暖かさが優先ですからね。"
+      },
+      {
+        "translation": "料理の味は材料によって全く異なることがあります。新鮮な材料を使えばおいしい料理を作ることができますよ。"
+      },
+      {
+        "translation": "交通状況に応じて到着時間が変わる場合があります。道が混雑すれば遅れて到着することになりますね。"
+      },
+      {
+        "translation": "実力によって結果が変わるものです。一生懸命勉強すれば良い結果を得ることができます。"
+      }
+    ]
   },
   "ko_에_89": {
-    "title": "~에 비해 [e bihae] (Compared to)",
-    "shortExplanation": "Used to compare or contrast something in respect to another.",
-    "longExplanation": "'~에 비해 [e bihae]' is a postposition in Korean 〜を示します comparison or contrast between two subjects or objects, similar to 'compared to' in English. Its use emphasizes the different characteristics or states of things based on a certain standard or reference.",
-    "formation": "Subject1 + ~에 비해 + Subject2 + 動詞"
+    "title": "~에 비해 / ~에 비해서（〜に比べて、〜と比較して）",
+    "shortExplanation": "名詞に付き、その名詞を基準として他の事物と比較・対照することを表します（「〜に比べて」「〜と比較して」）。",
+    "longExplanation": "「~에 비해」（または強調形の「~에 비해서」）は名詞の後に付き、2つの物事や対象を比較・対照する際に用いられる表現です。先行する名詞を比較の基準（物差し）として提示し、後続の対象が持つ性質や数量、程度などの違いを際立たせます。日本語の「〜に比べて」「〜と比較して」「〜の割に」に相当します。",
+    "formation": "名詞 + 에 비해(서)",
+    "examples": [
+      {
+        "translation": "ソウルに比べて釜山は天気が良いので、夏に行くのに適しています。"
+      },
+      {
+        "translation": "私は野菜に比べて果物をたくさん食べます。果物の方が甘くて好きだからです。"
+      },
+      {
+        "translation": "前学期の成績に比べて、今学期の成績ははるかに向上しました。"
+      },
+      {
+        "translation": "コーヒーに比べてお茶はカフェインが少ないので、夜に飲むことができます。"
+      }
+    ]
   },
   "ko_에게_90": {
-    "title": "~에게 [ege] (To someone, for someone)",
-    "shortExplanation": "〜を示します the target or recipient of an action.",
-    "longExplanation": "'~에게 [ege]' is a particle in Korean grammar that is 〜を示します the target or recipient of an action. It is attached to the end of a noun/pronoun and translates to 'to' or 'for' in English. It's frequently used when giving, sending, or saying something to someone.",
-    "formation": "名詞 + 에게"
+    "title": "~에게（〜に、〜へ）",
+    "shortExplanation": "人や動物などの有情名詞に付き、動作の及ぶ相手や受け手を示します（「〜に」「〜へ」）。",
+    "longExplanation": "「~에게」は、動作の直接の受け手や相手を表す副詞格助詞で、人や動物などの「有情名詞」にのみ付帯します。「주다（与える・あげる）」「보내다（送る）」「말하다（言う）」「가르치다（教える）」などの授受・伝達動詞と共に頻繁に用いられます。日常会話のくだけた表現では「~한테」がよく使われ、目上の人に対して敬意を表す場合は敬称助詞の「~께」を用います。",
+    "formation": "名詞（人・動物） + 에게",
+    "examples": [
+      {
+        "translation": "私は昨日友達にこのメッセージを送りましたが、まだ返事がありません。"
+      },
+      {
+        "translation": "先生は生徒たちに課題をたくさん出されました。すべて完了するには時間がかなり必要になりそうです。"
+      },
+      {
+        "translation": "お母さんは赤ちゃんにお話を聞かせていらっしゃいます。"
+      },
+      {
+        "translation": "私は弟（妹）にプレゼントをあげました。新しい本を受け取ってとても幸せそうに見えました。"
+      }
+    ]
   },
   "ko_에서_91": {
-    "title": "~에서 [eseo] (At, in)",
-    "shortExplanation": "'에서 [eseo]' is 〜を示します location or origin where an action takes place.",
-    "longExplanation": "'에서 [eseo]' is a particle often used in Korean to specify the place of origin or the space in which an action unfolds. It can sometimes be translated as 'at', 'in', or 'from' in English. The noun before '에서' is the reference point, and the verb that follows indicates an action taking place in or from that location.",
-    "formation": "名詞 + 에서"
+    "title": "~에서（〜で、〜から）",
+    "shortExplanation": "場所の名詞に付き、動作が行われる場所（「〜で」）や、出発点・起点（「〜から」）を表します。",
+    "longExplanation": "「~에서」は、場所を表す名詞に付く副詞格助詞で、大きく分けて2つの用法があります。1つは動的な動作や行為が行われる場所を表す用法で、日本語の「〜で」に相当します（静的な存在や移動の目的地を表す「~에」とは区別されます）。もう1つは、移動や行為の出発点・起点・出所を表す用法で、日本語の「〜から」に相当します。口語では「~서」に縮約されることもあります。",
+    "formation": "名詞（場所） + 에서",
+    "examples": [
+      {
+        "translation": "私はソウルで生まれました。ソウルは私が生まれて初めて息をした場所です。"
+      },
+      {
+        "translation": "学校で勉強することが私にとって最も重要です。だからいつも一生懸命努力する方です。"
+      },
+      {
+        "translation": "空港から飛行機に乗って東京へ行きました。東京は私にとって不慣れな場所でしたが、とても楽しかったです。"
+      },
+      {
+        "translation": "カフェで音楽を聴きながら勉強をします。そうすると楽しく勉強できます。"
+      }
+    ]
   },
   "ko_에서부터_92": {
-    "title": "~에서부터 ~까지 [eseobuteo ~ kkaji] (From ~ to)",
-    "shortExplanation": "〜を示します a duration or range from a specific start point to an end point.",
-    "longExplanation": "'에서부터 [eseobuteo]' and '까지 [kkaji]' are postpositions used in Korean to indicate a duration or range from a specified start point to an end point. They can be used with both time and place. In English, this can be translated as 'from ~ to'.",
-    "formation": "名詞 + 에서부터 + 名詞 + 까지"
+    "title": "~에서부터 ~까지（〜から〜まで）",
+    "shortExplanation": "場所や時間の起点と終点を表し、範囲の始まりと終わりを強調して示します（「〜から〜まで」）。",
+    "longExplanation": "「~에서부터」は、場所や起点を表す「에서」に、始まりを表す補助詞「부터」が重なった強調表現です。終点を表す「~까지（〜まで）」と呼応して「~에서부터 ~까지」の形で用いられ、時間的または空間的な範囲の出発点から到着点・終了点までを明確に示します。単に「~에서」「~부터」を用いるよりも、起点がより強調されるニュアンスがあります。",
+    "formation": "名詞（時間・場所） + 에서부터 + 名詞（時間・場所） + 까지",
+    "examples": [
+      {
+        "translation": "毎朝7時から8時まで朝の運動をして学校に行きます。"
+      },
+      {
+        "translation": "私たちはソウルから釜山まで車で旅行をしました。"
+      },
+      {
+        "translation": "今週末は土曜日の夕方5時から日曜日の午後3時まで休息を取ります。"
+      },
+      {
+        "translation": "写真展は11月1日から11月30日まで開催される予定です。"
+      }
+    ]
   },
   "ko_와과_93": {
-    "title": "~와/과 [wa/gwa] (And, with)",
-    "shortExplanation": "〜を表すために使用されます 'and' or 'with' in a list or connection between two or more nouns.",
-    "longExplanation": "'~와/과 [wa/gwa]' is a connective particle in Korean that links two or more nouns together. It is equivalent to the English conjunction 'and' or preposition 'with'. It is used when you need to link nouns in a list or show a connection between them. The choice between '와' (after a vowel) or '과' (after a consonant) depends on the final sound of the preceding noun.",
-    "formation": "名詞(ending with a vowel) + 와 / 名詞(ending with a consonant) + 과"
+    "title": "~와/과（〜と、〜とともに）",
+    "shortExplanation": "名詞と名詞を対等に並列して繋いだり（「〜と」）、動作を共にする相手を表します（「〜と」「〜と一緒に」）。",
+    "longExplanation": "「~와/과」は、名詞に付く接続助詞および副詞格助詞です。複数の名詞を対等に並列して繋ぐ「〜と」（並列）の役割と、「함께」や「같이」を伴って誰かと動作を共に行う相手を表す「〜と（一緒に）」（共同）の役割を持ちます。直前の名詞にパッチムがない（母音終わり）場合は「와」、パッチムがある（子音終わり）場合は「과」を用います。日常会話で多用される「~하고」や「~랑/이랑」に比べて、よりフォーマルで文章語的な響きを持ちます。",
+    "formation": "名詞（パッチムなし：+ 와 / パッチムあり：+ 과）",
+    "examples": [
+      {
+        "translation": "今日の朝はご飯とキムチとカルビを食べました。"
+      },
+      {
+        "translation": "私は友達と映画館に行きました。"
+      },
+      {
+        "translation": "スニーカーとジーンズとTシャツを買いに行きたいです。"
+      },
+      {
+        "translation": "今週末、私は家族と一緒に幸せな時間を過ごしました。"
+      }
+    ]
   },
   "ko_와과_94": {
-    "title": "~와/과 같다 [wa/gwa gatda] (Be the same as, like)",
-    "shortExplanation": "〜を表すために使用されます similarities or equivalences; 'like', 'the same as'.",
-    "longExplanation": "'~와/과 같다 [wa/gwa gatda]' is used in Korean to express similarity, comparison, or equivalence—acting like 'as', 'like' or 'the same as' in English. The context determines whether '와' or '과' is used, depending on whether the preceding noun ends in a vowel or a consonant.",
-    "formation": "名詞 + 와/과 + 같다"
+    "title": "~와/과 같다（〜のようだ、〜と同じだ）",
+    "shortExplanation": "名詞に付き、基準となる事物と同じであること（同一）や、〜に似ているという比喩を表します（「〜と同じだ」「〜のようだ」）。",
+    "longExplanation": "「~와/과 같다」は、比較・基準の助詞「~와/과」に形容詞「같다（同じだ）」が組み合わさった表現です。大きく分けて、対象の性質や状態を別のものに例える「比喩」（「まるで〜のようだ」）のニュアンスと、客観的に基準となるものと同一であることを示す「同一」（「〜と同じだ」）のニュアンスの2つを持ちます。先行する名詞にパッチムがない場合は「와 같다」、ある場合は「과 같다」を用います。",
+    "formation": "名詞（パッチムなし：+ 와 같다 / パッチムあり：+ 과 같다）",
+    "examples": [
+      {
+        "translation": "彼女の目は星のようです。輝いていて美しいです。"
+      },
+      {
+        "translation": "成長していく中で目標はいつも北極星のようでした。いつも進むべき方向を示してくれました。"
+      },
+      {
+        "translation": "うちの学校の寮はホテルのようです。とても快適で、すべての設備が整っています。"
+      },
+      {
+        "translation": "この問題は前の問題と同じです。類似した解法を持っています。"
+      }
+    ]
   },
   "ko_와과_95": {
-    "title": "~와/과 달리 [wa/gwa dalli] (Unlike, different from)",
-    "shortExplanation": "This pattern is 〜を示します contrast or difference between two things or situations.",
-    "longExplanation": "'~와/과 달리' is a postposition in Korean generally used to contrast or compare two different things, situations, or ideas. It translates into English as 'unlike' or 'different from' and indicates a clear contrast between the two subjects.",
-    "formation": "(Noun1 + 와/과) + Noun2 + 달리 + Sentence"
+    "title": "~와/과 달리（〜と違って、〜とは異なり）",
+    "shortExplanation": "名詞に付き、基準となる事物とは異なっていることや、対照的な事実を表します（「〜と違って」「〜とは異なり」）。",
+    "longExplanation": "「~와/과 달리」は、助詞「~와/과」に形容詞「다르다（異なる）」の副詞形である「달리（異なって・違って）」が結合した構文です。先行する名詞を対照基準とし、後続の事態・性質・状況がそれとは明確に異なっていることを際立たせます。日本語の「〜と違って」「〜とは異なり」に相当します。動詞節が先行する場合は「~는 것과 달리」の形を用います。",
+    "formation": "名詞（パッチムなし：+ 와 달리 / パッチムあり：+ 과 달리） / 動詞 + 는 것과 달리",
+    "examples": [
+      {
+        "translation": "毎日出勤するのとは違って、今日は家で仕事をしました。"
+      },
+      {
+        "translation": "夏とは異なり、冬は天気が寒いため服をたくさん着なければなりません。"
+      },
+      {
+        "translation": "チョルウさんと違って、ジヌさんは勉強がよくできます。"
+      },
+      {
+        "translation": "ソウルと違って、釜山では冬の寒さがそれほど厳しくありません。"
+      }
+    ]
   },
   "ko_을를_96": {
-    "title": "~을/를 통해 [eul/reul tonghae] (Through, by means of)",
-    "shortExplanation": "〜を示します the medium or method through which an action or result was achieved.",
-    "longExplanation": "'~을/를 통해 [eul/reul tonghae]' is a postpositional phrase in Korean used to signify the means, channel, or method through which an action or outcome was reached. It corresponds to 'through' in English and often appears with expressions about communicating information, conveying feelings, or achieving results.",
-    "formation": "名詞 + 을/를 + 통해"
+    "title": "~을/를 통해 / ~을/를 통해서（〜を通じて、〜を通して）",
+    "shortExplanation": "名詞に付き、ある結果を得たり行為を行ったりするための仲介・手段・媒介・経路などを表します（「〜を通じて」「〜を通して」）。",
+    "longExplanation": "「~을/를 통해」（強調形として「~을/를 통해서」も多用）は、名詞の後に付き、ある目的の達成、感情の表現、知識の習得などの手段・媒介・経路・契機を表す構文です。日本語の「〜を通じて」「〜を通して」「〜によって」に相当します。直前の名詞にパッチムがない場合は「를 통해」、ある場合は「을 통해」を用います。",
+    "formation": "名詞（パッチムなし：+ 를 통해(서) / パッチムあり：+ 을 통해(서)）",
+    "examples": [
+      {
+        "translation": "この本を通じて、彼の考えや哲学をより深く理解することができました。"
+      },
+      {
+        "translation": "その男性は音楽を通じて自分の感情を表現しました。"
+      },
+      {
+        "translation": "文化交流を通して、私たちは他国との関係を強化することができます。"
+      },
+      {
+        "translation": "旅行を通じて、私はさまざまな文化や景色を体験しました。"
+      }
+    ]
   },
   "ko_이가_97": {
-    "title": "~이/가 되다 [i/ga dweda] (Become)",
-    "shortExplanation": "This grammar point is used to describe a change or transition into a new state or condition.",
-    "longExplanation": "The grammar point '~이/가 되다 [i/ga dweda]' is used in Korean to indicate a change or transition into a different state or condition. It can be used to describe things like becoming an adult, becoming a teacher, or even something more abstract like becoming happy or becoming cold. The subject or condition that is changing is placed before '이/가 되다'.",
-    "formation": "名詞 + 이/가 되다"
+    "title": "~이/가 되다（〜になる）",
+    "shortExplanation": "補語となる名詞に付き、動詞「되다」と連動して、人や事物が新たな身分・状態・資格へと変化することを表します（「〜になる」）。",
+    "longExplanation": "「~이/가 되다」は、人や物事が時間の経過や努力、環境の変化によって新たな状態・身分・職業・段階などに移行することを表す最も基本的な構文です。「되다（〜になる）」の直前に来る名詞は補語であり、補格助詞「이/가」を伴います。直前の名詞にパッチムがある場合は「이 되다」、パッチムがない場合は「가 되다」となります。日本語の「〜になる」に相当します。",
+    "formation": "名詞（パッチムなし：+ 가 되다 / パッチムあり：+ 이 되다）",
+    "examples": [
+      {
+        "translation": "子供たちが大人になるにはたくさんの時間が必要です。"
+      },
+      {
+        "translation": "彼女はとても有名な歌手になりました。"
+      },
+      {
+        "translation": "今日は急に寒くなって手袋が必要になりました。"
+      },
+      {
+        "translation": "私は一生懸命勉強して医者になりました。"
+      }
+    ]
   },
   "ko_이가_98": {
-    "title": "~이/가 아니다 [i/ga anida] (Is not, are not)",
-    "shortExplanation": "Used to negate a noun; 'is not', 'are not'.",
-    "longExplanation": "The literal translation of '~이/가 아니다 [i/ga anida]' is 'is not' or 'are not'. It is used to negate a noun in a statement. You put '이 아니다' after a noun that ends with a consonant and '가 아니다' after a noun that ends with a vowel. This is roughly equivalent to English 'not', functioning to show contradiction or denial.",
-    "formation": "名詞 + 이/가 아니다"
+    "title": "~이/가 아니다（〜ではない、〜じゃありません）",
+    "shortExplanation": "名詞の後に付き、その事物や身分・属性を否定することを表します（「〜ではない」「〜じゃありません」）。",
+    "longExplanation": "「~이/가 아니다」は、指定詞（体言述語）「~이다（〜である・〜だ）」の直接的な否定形です。文法的に「아니다」は形容詞であり、直前の名詞は補格助詞「이/가」を伴う補語となります。ある対象の身分、属性、事実がその名詞に該当しないことを明確に否定します。パッチムがある名詞には「이 아니다」、パッチムがない名詞には「가 아니다」が接続します。日本語の「〜ではない」「〜ではありません」に相当します。",
+    "formation": "名詞（パッチムなし：+ 가 아니다 / パッチムあり：+ 이 아니다）",
+    "examples": [
+      {
+        "translation": "私は学生ではありません、先生です。"
+      },
+      {
+        "translation": "猫は私たちの落とし物（迷子）ではありません、私たちの迷子は子犬です。"
+      },
+      {
+        "translation": "料理が得意な人は私ではありません。私には料理の才能がまったくありません。"
+      },
+      {
+        "translation": "あの人はうちの学校の生徒ではありません。他の学校の生徒です。"
+      }
+    ]
   },
   "ko_이라도_99": {
-    "title": "~이라도 [irado] (Even if, at least)",
-    "shortExplanation": "Used to signify 'even if' or 'at least' in scenarios where something is better than nothing.",
-    "longExplanation": "'~이라도 [irado]' is a postposition used in Korean to minimize the value of the subject but imply that the mentioned thing is still better than having nothing at all. It implies a somewhat unsatisfactory situation, yet shows a compromise, similar to 'even if' or 'at least' in English.",
-    "formation": "名詞 + 이라도"
+    "title": "~(이)라도（〜でも、せめて〜だけでも）",
+    "shortExplanation": "名詞に付き、最善の選択ではないとしても次善の策として選ぶ譲歩のニュアンスを表します（「〜でも」「せめて〜だけでも」）。",
+    "longExplanation": "「~(이)라도」は、話し手にとって必ずしも最高・最善の選択肢ではないものの、「何もないよりはましだ」「せめてこれだけでも」という妥協や次善の選択を表す補助詞です。日本語の「〜でも（構わない）」「せめて〜だけでも」に相当します。先行する名詞にパッチムがある場合は「이라도」、パッチムがない場合は「라도」を接続します。",
+    "formation": "名詞（パッチムなし：+ 라도 / パッチムあり：+ 이라도）",
+    "examples": [
+      {
+        "translation": "たとえそれが期待していたものではなくても、何もないよりはずっとましですね。"
+      },
+      {
+        "translation": "せめてこの写真だけでも撮っておけば、後で良い思い出になるはずです。"
+      },
+      {
+        "translation": "歌が上手でなくても、カラオケでせめて1曲だけでも歌ってみてください。"
+      },
+      {
+        "translation": "テストで高得点が取れなかったとしても、せめて理解できなかった部分だけでも勉強したのなら大きな収穫です。"
+      }
+    ]
   },
   "ko_이래_100": {
-    "title": "~이래 [irae] (Since then)",
-    "shortExplanation": "〜を示します a period of time starting from a specific point in the past to the present time.",
-    "longExplanation": "'~이래 [irae]' is used in Korean to express 'since then' or 'ever since', indicating that something has continued or remained the same from a past point in time up to the present.",
-    "formation": "動詞 Past Tense + ~이래 / 名詞 + ~이래"
+    "title": "~이래 / ~이래로（〜以来、〜以降）",
+    "shortExplanation": "特定の時点や出来事を表す名詞や過去連体形の後に付き、過去のある時点から現在に至るまでの継続を表します（「〜以来」「〜このかた」）。",
+    "longExplanation": "「~이래（以来）」は、過去の特定の出来事や時点を起点とし、その時から現在に至るまで状態が続いていることを表します。歴史的な出来事や転換点を表す名詞の直後（例：「창립 이래／創立以来」「귀국 이래／帰国以来」）に付くか、動詞の過去連体形に後続して「-(으)ㄴ 이래」の形で用いられます。時間の継続を強調するために助詞「로」を伴った「~이래로」の形も非常によく使われます。日本語の「〜以来」「〜以降」に相当します。",
+    "formation": "名詞 + 이래(로) / 動詞語幹 + -(으)ㄴ 이래(로)",
+    "examples": [
+      {
+        "translation": "その事件が発生してからの5年間というもの、私はそこを一度も訪れたことがありません。"
+      },
+      {
+        "translation": "100年の中で初めて、うちの学校のサッカーチームが優勝を果たしました。"
+      },
+      {
+        "translation": "こんなに情熱的な求職者に出会ったのは本当に久しぶりだそうです。"
+      },
+      {
+        "translation": "学校で一番高い点数を取ったあの日以来、両親は私をとても誇りに思ってくれています。"
+      }
+    ]
   },
   "ko_이랑_101": {
-    "title": "~이랑 [irang] (And, with)",
-    "shortExplanation": "〜を表すために使用されます the relationship of 'and' or 'with' between two or more things or people.",
-    "longExplanation": "'~이랑 [irang]' is a postposition in Korean that can mean 'and' or 'with' when connecting two or more nouns. It is often used for casual or friendly contexts, indicating doing something together with someone or having something along with something else.",
-    "formation": "名詞 + 이랑"
+    "title": "~(이)랑（〜と、〜と一緒に）",
+    "shortExplanation": "日常会話で親しみを持って多用される助詞で、名詞の並列（「〜と」）や動作を共にする相手（「〜と」「〜と一緒に」）を表します。",
+    "longExplanation": "「~(이)랑」は、日常の会話で非常によく使われる親しみのある助詞です。機能的には「~와/과」や「~하고」と同じですが、よりくだけたカジュアルで親しいニュアンスを持ちます。名詞を並列して「〜と」と列挙する用法と、「같이」「함께」などと共に動作のパートナーを示して「〜と（一緒に）」を表す用法の両方で用いられます。先行する名詞にパッチムがある場合は「이랑」、パッチムがない場合は「랑」となります。",
+    "formation": "名詞（パッチムなし：+ 랑 / パッチムあり：+ 이랑）",
+    "examples": [
+      {
+        "translation": "私は友達と映画を見に行きました。本当に面白かったです。"
+      },
+      {
+        "translation": "長くて難しい宿題を友達と一緒にやったことで、チャレンジ精神が湧きました。"
+      },
+      {
+        "translation": "家族と一緒に忘れられない旅行に行ってきました。本当に楽しかったです。"
+      },
+      {
+        "translation": "私は毎朝、運動とシャワーをしてから学校に行きます。"
+      }
+    ]
   },
   "ko_이렇게_102": {
-    "title": "~이렇게 [ireohge] (Like this, in this way)",
-    "shortExplanation": "〜を示します the manner or degree of an action; 'like this', 'in this way'.",
-    "longExplanation": "'~이렇게 [ireohge]' is an adverb in Korean that describes how or to what degree an action is performed. It can translate as 'like this' or 'in this way.' It can also convey surprise or emphasis depending on context.",
-    "formation": "이렇게 + 動詞/節"
+    "title": "이렇게（このように、こんなに）",
+    "shortExplanation": "状態や動作の様態（「このように」）や、性質・程度の甚だしさ（「こんなに」）を表す指示副詞です。",
+    "longExplanation": "「이렇게」は、指示形容詞「이렇다（このようだ）」に副詞形語尾「-게」が付いた指示副詞です。大きく分けて2つの機能があります。1つは、動作や行為の方法・様態を表す用法（「このように」「こんなふうに」）です。もう1つは、形容詞や動詞を修飾して、話者の予想を超えた驚きや感情を込めて程度を強調する用法（「こんなに」「これほど」）です。",
+    "formation": "이렇게 + 動詞 / 形容詞 / 節",
+    "examples": [
+      {
+        "translation": "こんなに暑い日にはアイスクリームを食べるのが最高です。"
+      },
+      {
+        "translation": "自分がこんなに遅く到着するとは思いませんでした。"
+      },
+      {
+        "translation": "私はこれほど大きな問題を解決できるとは思いませんでした。"
+      },
+      {
+        "translation": "私は自分の体がこんなに大きくなっていたとは気づきませんでした。"
+      }
+    ]
   },
   "ko_이므로_103": {
-    "title": "~이므로 [imyeo] (Therefore, because)",
-    "shortExplanation": "〜を表すために使用されます cause or reason; 'therefore', 'because'.",
-    "longExplanation": "'이므로 [imyeo]' is a conjunction in Korean 〜を示します cause or reason, similar to 'therefore' or 'because' in English. It is especially common in formal or written contexts to connect a reason with its result. The noun or adjective preceding it is the cause, and what follows is the outcome or conclusion.",
-    "formation": "名詞/形容詞 + (이)므로"
+    "title": "~(이)므로（〜であるから、〜なので、〜につき）",
+    "shortExplanation": "原因や理由を表す改まった書き言葉の接続語尾で、公式な告知、論文、演説などで用いられます（「〜であるから」「〜につき」）。",
+    "longExplanation": "「~(이)므로」は、原因・理由・根拠を表す格式高い接続語尾です。公式な文書、公の告知、論文、格調高いスピーチなどにおいて、前半で客観的な原因・根拠を述べ、後半でその結果や結論を導き出します。動詞・形容詞の語幹末尾が母音または「ㄹ」パッチムの場合は「-므로」、その他の子音パッチムの場合は「-으므로」が接続します。名詞に接続する場合は、パッチムがあれば「-이므로」、なければ「-므로」となります。過去形は「-았/었/였으므로」を用います。",
+    "formation": "動詞語幹 / 形容詞語幹（母音・ㄹパッチム：-므로 / 子音パッチム：-으므로）；名詞（パッチムなし：-므로 / パッチムあり：-이므로）；過去形：-았/었/였으므로",
+    "examples": [
+      {
+        "translation": "1週間毎日雨が降ったので、傘を持っていくのが良いと思います。"
+      },
+      {
+        "translation": "彼女は韓国料理をとても上手に作ることができるので、近所の人たちから料理の腕前で愛されています。"
+      },
+      {
+        "translation": "天気がとても寒いので、マフラーを巻くのが良いでしょう。"
+      },
+      {
+        "translation": "明日は祝日ですので、郵便局は休業となります。"
+      }
+    ]
   },
   "ko_이어서_104": {
-    "title": "~이어서 [ieoseo] (And then, following that)",
-    "shortExplanation": "Used to show continuation or result of an action/event; 'and then', 'following that'.",
-    "longExplanation": "'~이어서 [ieoseo]' is a connector in Korean that indicates a sequence of events or actions, meaning 'and then' or 'continuing from that.' It can derive from '이다 + -어서' in certain contexts, or it can be used to show that one action follows directly after another.",
-    "formation": "動詞 stem + 이어서"
+    "title": "~이어서 / 이어서（続いて、引き続いて、その次に）",
+    "shortExplanation": "先行する動作や出来事に引き続いて次の事柄が行われる順序・継続を表します（「続いて」「その次に」）。",
+    "longExplanation": "「이어서」は、動詞「잇다（つなぐ、続く）」または「이다 + -어서」に由来する表現で、接続副詞または接続表現として用いられ、前の行為や出来事が完了した直後に次の行為が連続して行われることを示します。時間的・順序的な連続性をスムーズにつなげる役割を果たします。",
+    "formation": "先行節 + -고 이어서 + 後続節、または 名詞 + (이)어서",
+    "examples": [
+      {
+        "translation": "私は部屋を掃除し、続いて夕食を準備しました。"
+      },
+      {
+        "translation": "私たちはまず夕食を食べ、続いて散歩をしました。"
+      },
+      {
+        "translation": "彼女は一生懸命に勉強し、引き続いて試験に合格しました。"
+      },
+      {
+        "translation": "私は朝早く起きて、続いてゆっくりと身支度を整えました。"
+      }
+    ]
   },
   "ko_이었다_105": {
-    "title": "~이었다 [ieotda] (Was, were)",
-    "shortExplanation": "Used to describe a state or condition in the past; 'was', 'were'.",
-    "longExplanation": "The '~이었다 [ieotda]' form is the past tense of '이다' (to be). It describes a previous condition, quality, role, or identity of a noun—translated as 'was' or 'were' in English. It is not used for describing past actions (which require the normal past tense of action verbs).",
-    "formation": "名詞 + 이었다"
+    "title": "~이었다/였다（〜であった、〜だった）",
+    "shortExplanation": "指定詞（叙述格助詞）「이다」の過去形で、名詞が過去にある身分・状態・性質であったことを表します（「〜だった」「〜であった」）。",
+    "longExplanation": "「~이었다/였다」は指定詞「이다（〜である）」の過去形であり、名詞の後ろに付いて、その人や物が過去においてその身分、役割、性質、状態であったことを表します（現在は変わっているか、過去の出来事として振り返るニュアンスを含みます）。名詞の末尾にパッチムがある場合は「-이었다」（話し言葉では「-이었어요/이었습니다」）、パッチムがない場合は「-였다」（縮約して「-였어요/였습니다」）となります。動作動詞には直接接続しません。",
+    "formation": "名詞（パッチムあり：-이었다 / パッチムなし：-였다）",
+    "examples": [
+      {
+        "translation": "彼は幼い頃、本当に優しくて礼儀正しい子供だった。"
+      },
+      {
+        "translation": "鎮安（チナン）で目にしたあの老木が、庭園で最も美しい風景だった。"
+      },
+      {
+        "translation": "彼女はかつて私たちの学校の英語の先生だった。"
+      },
+      {
+        "translation": "そうして過ごしたあの年の夏は、忘れられない最高の時間だった。"
+      }
+    ]
   },
   "ko_이지만_106": {
-    "title": "~이지만 [ijiman] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "The particle '~이지만 [ijiman]' is used to show a contrast or contradiction between two statements. It is analogous to 'but' or 'however' in English. It typically appears after a copula or descriptive verb stem. The first part of the sentence states one situation or fact, followed by a second part that indicates a contrasting or opposing circumstance.",
-    "formation": "名詞/形容詞 + 이지만 (or verb stem + 지만)"
+    "title": "~이지만 / -지만（〜であるけれど、〜だが、〜だけれども）",
+    "shortExplanation": "対比・対立を表す接続語尾で、前節と後節が相反する内容であることを示します（「〜だが」「〜だけれど」）。",
+    "longExplanation": "「~이지만」は指定詞「이다」に逆接の接続語尾「-지만」が結合した形で、名詞について「〜であるけれど」という逆接を表します。動詞や形容詞の語幹につく場合は直接語尾「-지만」が接続します。前節で一定の事実や前提を認めつつ、後節でそれと対立・矛盾する状況や意外な結果を展開します。",
+    "formation": "名詞（パッチムあり：-이지만 / パッチムなし：-지만）；動詞語幹 / 形容詞語幹 + -지만；過去形：-았/었지만",
+    "examples": [
+      {
+        "translation": "とても痛みますが病院へ行って薬をもらってきました。家で休む予定です。"
+      },
+      {
+        "translation": "今日は風が強く吹いていますが、天気が良いのでトイレの窓を開けておきました。"
+      },
+      {
+        "translation": "宿題を全部は終えられませんでしたが、ひとまず提出しました。明日残りを全部やるつもりです。"
+      },
+      {
+        "translation": "私は今本当にお腹が空いています。夕食を食べたのにまだお腹が空いていますね。"
+      }
+    ]
   },
   "ko_인데_107": {
-    "title": "~인데 [inde] (But, and, so)",
-    "shortExplanation": "Used to connect sentences with meanings like 'but', 'and', or 'so'.",
-    "longExplanation": "The pattern '~인데 [inde]' (for nouns) or '~는데 [neunde]' (for verbs/adjectives) is one of the most commonly used connectors in Korean. Although there is no exact single English equivalent, 〜と訳されます 'but', 'and', or 'so' depending on context. Often, the first clause states a situation or background, and the second clause shows the result, contrast, or additional info.",
-    "formation": "名詞 + 인데 / 動詞/形容詞 stem + 는데"
+    "title": "~(으)ㄴ/는데 / ~인데（〜なんだけど、〜だが、〜なのに）",
+    "shortExplanation": "後続する文の前提や背景を提示したり、緩やかな対比・逆接を表します（「〜なんだけど」「〜なのに」）。",
+    "longExplanation": "「~인데」（名詞に接続）および「~(으)ㄴ/는데」（動詞・形容詞に接続）は、韓国語の中で極めて使用頻度が高い重要な接続語尾です。(1) 後ろで質問、提案、命令、依頼などを述べるための前置き・背景状況を提示する、(2) 前後の事柄を軽く対比・逆接させる、(3) 理由を添えながら新たな話題を切り出す、などの多彩な役割を果たします。名詞に接続する際、パッチムがあれば「-인데」、なければ「-ㄴ데」または「-인데」となります。",
+    "formation": "名詞（パッチムあり：-인데 / パッチムなし：-ㄴ데）；動詞語幹 / 있다・없다 + -는데；形容詞語幹（パッチムあり：-은데 / パッチムなし：-ㄴ데）；過去形：-았/었는데",
+    "examples": [
+      {
+        "translation": "私はアルバイトをしなければならないのですが時間がありません。ですから時間を効率的に使う方法を見つけなければなりません。"
+      },
+      {
+        "translation": "私はプログラミングが好きなのですが、理解するのが難しくてよく混乱してしまいます。"
+      },
+      {
+        "translation": "天気が良いのに外出の予定がなかったので、家で映画を観ました。"
+      },
+      {
+        "translation": "明日試験があるのにまだ勉強していないので、徹夜で勉強しなければならなさそうです。"
+      }
+    ]
   },
   "ko_인데다_108": {
-    "title": "~인데다 [indeda] (Moreover, besides)",
-    "shortExplanation": "Used to add more information or another reason; 'moreover', 'besides'.",
-    "longExplanation": "'~인데다 [indeda]' is used in Korean to give an additional supporting reason or trait. It can mean 'furthermore', 'in addition', or 'besides'. It typically attaches to descriptive verbs or copulas to emphasize an extra point on top of what was previously stated.",
-    "formation": "Descriptive 動詞 + (으)ㄴ/는 데다 or 名詞 + 인데다"
+    "title": "~(으)ㄴ/는 데다(가) / ~인데다（〜な上に、〜である上に、その上）",
+    "shortExplanation": "前節の状況に加えて、さらに同類の特徴や理由が重なることを表します（「〜な上に」「その上」）。",
+    "longExplanation": "「~인데다」（名詞）または「~(으)ㄴ/는 데다(가)」（動詞・形容詞）は、すでにある特徴や事実に対して、別の要素がさらに追加・重複されることを表す構文です。通常、プラスの評価にはプラスの評価、マイナスの状況にはマイナスの状況が重ねられます。助詞「-가」を付加して「-데다가」と強調されることもよくあります。",
+    "formation": "名詞 + -인데다(가)；動詞語幹（現在形：-는 데다 / 過去形：-(으)ㄴ 데다）；形容詞語幹 + -(으)ㄴ 데다(가)",
+    "examples": [
+      {
+        "translation": "彼女は美しいだけでなく頭が良い上に、心遣いも本当に優しいです。"
+      },
+      {
+        "translation": "この携帯電話は機能が多彩な上に価格も手頃なので、多くの人々に求められるようになりました。"
+      },
+      {
+        "translation": "この食堂は味が良い上に立地も良いので、たくさんのお客さんが訪れます。"
+      },
+      {
+        "translation": "彼は優れた歌手ですが、音楽を作曲する能力がある上にリーダーシップも抜群です。"
+      }
+    ]
   },
   "ko_인지_109": {
-    "title": "~인지 [inji] (Whether)",
-    "shortExplanation": "〜を表すために使用されます doubt, uncertainty, or an indirect question; 'whether', 'if'.",
-    "longExplanation": "'~인지 [inji]' is a conjunction used in Korean to introduce a subordinate clause expressing doubt, uncertainty, or an indirect question. It corresponds to 'whether' or 'if' in English. It is used after verbs or adjectives and can also indicate not knowing or being unsure about something.",
-    "formation": "動詞/形容詞 + -ㄴ/는/은지"
+    "title": "~(으)ㄴ/는지 / ~인지（〜なのか、〜かどうか、間接疑問）",
+    "shortExplanation": "疑問や不確実な内容を表す節を導き、間接疑問文を形成します（「〜なのか」「〜かどうか」）。",
+    "longExplanation": "「~인지」（名詞に接続）および「~(으)ㄴ/는지」（動詞・形容詞に接続）は、疑問・疑念・不確実性を表す間接疑問節を形成する接続語尾です。疑問詞（누구、무엇、어디、언제など）と呼応して使われるか、「~인지 아닌지 / ~는지 아닌지（〜かどうか）」の形でよく使われます。後節には「알다（知っている）」「모르다（分からない）」「궁금하다（気になる）」「고민하다（悩む）」「판단하다（判断する）」などの認識動詞が続きます。",
+    "formation": "名詞（パッチムあり：-인지 / パッチムなし：-인지 または -ㄴ지）；動詞語幹（現在形：-는지 / 過去形：-았/었는지 / 未来・推量：-(으)ㄹ지）；形容詞語幹 + -(으)ㄴ지",
+    "examples": [
+      {
+        "translation": "彼が来るのか来ないのか、よく分かりません。"
+      },
+      {
+        "translation": "その車を買うべきなのかどうか悩んでいます。"
+      },
+      {
+        "translation": "どの服を着るべきか決めるのが難しいです。"
+      },
+      {
+        "translation": "彼が本気なのかどうか判断するのは難しいです。"
+      }
+    ]
   },
   "ko_자_111": {
-    "title": "~자 [ja] (Let's)",
-    "shortExplanation": "'~자 [ja]' is a casual Korean grammar form used to propose an action together, similar to 'let's' in English.",
-    "longExplanation": "'~자 [ja]' is an informal suggestion form in Korean, attached to the stem of action verbs. It encourages both speaker and listener to do something together. Because it's casual, it's usually used among friends or peers of similar age/status.",
-    "formation": "動詞 stem + 자"
+    "title": "~자（〜しよう、〜しようぜ - パンマル勧誘形語尾）",
+    "shortExplanation": "ぞんざい語・親称（해라체 / 반말）において、相手に一緒に行動を起こすよう促す勧誘形終結語尾です（「〜しよう」「〜しようぜ」）。",
+    "longExplanation": "「~자」は韓国語のヘラ体（해라체）に属する勧誘の終結語尾で、動作動詞の語幹に付き、話者が聞き手に対して一緒にある行為を行うことを提案します。パンマル（タメ口）であるため、親しい友人同士、同年代、または年下に対してのみ使用されます。目上の人や公の席で使うと極めて不作法になるため注意が必要です。",
+    "formation": "動詞語幹 + -자",
+    "examples": [
+      {
+        "translation": "外に出て遊び場で遊ぼうよ。今日は天気がとても良いから、家にばかりいるのはもったいないじゃないか。"
+      },
+      {
+        "translation": "今日の夕方、一緒に食事しよう。私が明日準備することを手伝ってあげるよ。"
+      },
+      {
+        "translation": "ゲームしに行こう。家にばかりいるとストレスが溜まるから、少しだけでも風に当たろう。"
+      },
+      {
+        "translation": "本屋に行って本を選んでみよう。ネットで検索するより実際に手にとって見る方がずっと面白いよ。"
+      }
+    ]
   },
   "ko_자마자_112": {
-    "title": "~자마자 [jamaja] (As soon as)",
-    "shortExplanation": "'~자마자 [jamaja]' expresses that one action occurs immediately after another action finishes.",
-    "longExplanation": "The structure '~자마자 [jamaja]' means 'as soon as' in Korean. It indicates that the second action happens right after the first action is completed, showing no real time gap in between. Attach it directly to the verb stem of the first action.",
-    "formation": "動詞 stem + 자마자"
+    "title": "~자마자（〜するやいなや、〜するとすぐに）",
+    "shortExplanation": "先行する動作が完了した直後に、間を置かず後続の動作が即座に発生することを表します（「〜するやいなや」「〜するとすぐに」）。",
+    "longExplanation": "「~자마자」は動作動詞の語幹に直接付く接続語尾で、前の動作が終わった瞬間に、時間的な間隔を一切置かずに後ろの動作が行われることを表します。時制詞尾は前節の「~자마자」には付けず、文末の最終述語で表現します。",
+    "formation": "動詞語幹 + -자마자",
+    "examples": [
+      {
+        "translation": "学校から家に到着するやいなや宿題をしました。"
+      },
+      {
+        "translation": "おいしい夕食を食べながらテレビを見るやいなや、気分がずっと良くなりました。"
+      },
+      {
+        "translation": "飛行機が着陸するやいなや家族に電話をかけました。"
+      },
+      {
+        "translation": "出勤するやいなやコーヒーを飲みました。"
+      }
+    ]
   },
   "ko_장_113": {
-    "title": "~장 [jang] (Counting unit for flat items)",
-    "shortExplanation": "'~장 [jang]' is a Korean counter used to count flat objects like paper, tickets, photos, etc.",
-    "longExplanation": "'~장 [jang]' is a measure word (counter) in Korean for flat objects. It parallels words like 'sheet' or 'piece' in English when referring to items such as paper, tickets, documents, photographs, and so on.",
-    "formation": "Number + 장 + (名詞)"
+    "title": "~장【枚】（〜枚 - 薄くて平らな物の助数詞）",
+    "shortExplanation": "紙、チケット、写真、カードなど、薄くて平らな形状の物品を数える依存名詞（助数詞）です（「〜枚」）。",
+    "longExplanation": "「~장（張）」は、紙、乗車券、書類、写真、クレジットカードなど、平面的で薄い物を数える際に用いられる助数詞（単位依存名詞）です。通常は固有数詞（한 장, 두 장, 세 장...）と結びつきますが、公的な文書や大きな数字では漢数詞と結合することもあります。語順としては「名詞 ＋ 数詞 ＋ 장」または「数詞 ＋ 장 ＋ 名詞」の形をとります。",
+    "formation": "数詞（固有数詞または漢数詞）+ 장（+ 名詞）、または 名詞 + 数詞 + 장",
+    "examples": [
+      {
+        "translation": "私は今回の旅行のためにチケットを3枚買わなければならないと思います。"
+      },
+      {
+        "translation": "私は生徒たちにノート用紙を10枚ずつ配りました。"
+      },
+      {
+        "translation": "私たちは写真100枚でアルバムを作ることに決めました。"
+      },
+      {
+        "translation": "最後にカードを1枚引いてください。"
+      }
+    ]
   },
   "ko_저_114": {
-    "title": "~저 [jeo] (That kind of)",
-    "shortExplanation": "Used to describe 'that kind of' or 'such' qualities or characteristics.",
-    "longExplanation": "'~저 [jeo]' refers to an element of 'such' or 'that kind of' in Korean, often seen in words like '저렇다' (to be like that), '그렇다' (to be so), '이렇다' (to be like this). It can emphasize a certain abstract quality or scenario for comparison, emphasis, or expressing a particular state/behavior.",
-    "formation": "(이렇다/그렇다/저렇다) → 이렇게/그렇게/저렇게, or nouns with 저런/그런/이런"
+    "title": "저 / 저런 / 저렇게（あの、あんな、あのように - 遠称指示詞）",
+    "shortExplanation": "話者からも聞き手からも離れている人・物・状態・様態を指し示す遠称の指示表現です（「あの」「あんな」「あのように」）。",
+    "longExplanation": "「저」は、話し手と聞き手の双方から物理的・心理的に離れている事物や人物を修飾する遠称の冠形詞（あの〜）です。ここから派生した形容詞「저렇다（あんなである）」の連体形「저런（あんな〜）」や副詞形「저렇게（あのように、あんなに）」も頻繁に使われます。また慣用表現「그런 저런」は「あれこれの、あんなこんなの（理由や事情）」を指します。",
+    "formation": "저 + 名詞；저런 + 名詞；저렇다 → 저렇게 + 動詞 / 形容詞；慣用句：그런 저런 + 名詞",
+    "examples": [
+      {
+        "translation": "あれこれの理由から、彼は幸せそうには見えませんでした。"
+      },
+      {
+        "translation": "あんな車を見ると羨ましいです。私もあんな車を持ちたいです。"
+      },
+      {
+        "translation": "彼女があんなことを言うとは思いもよりませんでした。"
+      },
+      {
+        "translation": "私にあんな仕事ができるでしょうか。"
+      }
+    ]
   },
   "ko_전_115": {
-    "title": "~전 [jeon] (Before)",
-    "shortExplanation": "〜を表すために使用されます an action that happened before something else.",
-    "longExplanation": "'전 [jeon]' is a postposition in Korean 〜を示します an action or event that occurs prior to another action/event. It is similar to 'before' in English and is often used with time expressions or other chronological references.",
-    "formation": "名詞 + 전"
+    "title": "~기 전에 / ~전（〜の前に、〜する前に）",
+    "shortExplanation": "特定の時点や動作よりも前に事柄が行われることを表します（「〜する前に」「〜の前に」）。",
+    "longExplanation": "「전」は時間的に前であることを表す名詞です。時間を表す名詞や動作性の名詞に直接付く場合は「名詞 + 전(에)」（例：한 시간 전에 1時間前に、식사 전에 食事前に）となります。動詞の語幹に付く場合は、名詞形語尾「-기」を用いて「動詞語幹 + -기 전(에)」の形をとります。時制語尾は先行節には付かず、文末の述語で表現します。",
+    "formation": "名詞 + 전(에)；動詞語幹 + -기 전(에)",
+    "examples": [
+      {
+        "translation": "私は学校へ行く前にいつも朝食を食べます。"
+      },
+      {
+        "translation": "会議が始まる前に資料をすべて準備しておきました。"
+      },
+      {
+        "translation": "勉強したいのですが、試験が終わる前には時間が全くありません。"
+      },
+      {
+        "translation": "家に帰る前にスーパーマーケットで買い物をしなければなりません。"
+      }
+    ]
   },
   "ko_적_116": {
-    "title": "~적 [jeok] (Time, instance)",
-    "shortExplanation": "Used to denote a specific instance or time when something happened.",
-    "longExplanation": "'~적 [jeok]' refers to a certain time or instance associated with the verb it follows, somewhat akin to 'when I was...' or 'the time that...' in English. You often see it combined with '에' (e.g., '어릴 적에') to mean 'when one was young', etc.",
-    "formation": "動詞 stem + 적 (commonly + 에)"
+    "title": "~(으)ㄴ 적 / ~적（〜の頃、〜した時、〜したこと）",
+    "shortExplanation": "過去の特定の時期・時点を表したり、過去の経験の有無を表す依存名詞です（「〜の頃」「〜したこと」）。",
+    "longExplanation": "「적」は過去の特定の時点や経過した出来事を表す依存名詞です。主な用法として、(1) 過去の特定の時期を表す連体節や語句と結びつく用法（「어릴 적에 幼い頃に」「배울 적에 習っていた頃に」）、(2) 過去連体形と結びついて経験の有無を表す構文「-(으)ㄴ 적이 있다/없다（〜したことがある／ない）」があります。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ/ㄴ 적(에)；慣用表現：어릴 적(에)；経験構文：動詞語幹 + -(으)ㄴ 적이 있다/없다",
+    "examples": [
+      {
+        "translation": "私は幼い頃、ペットの猫を飼いたかったのですが、両親が許してくれませんでした。"
+      },
+      {
+        "translation": "初めて韓国語を習った頃は、話すことが非常に難しかったです。"
+      },
+      {
+        "translation": "彼女が微笑む時、私はいつも幸せな気分になります。"
+      },
+      {
+        "translation": "高校の頃、卒業式に出席した時、私たち皆これが最後だと分かっていたので、すすり泣いて涙を流しました。"
+      }
+    ]
   },
   "ko_죠_117": {
-    "title": "~죠 [jyo] (~Isn't it?)",
-    "shortExplanation": "Used as a tag question to request confirmation or agreement from the listener.",
-    "longExplanation": "'~죠 [jyo]' is typically used to seek agreement or confirmation from the listener, much like a tag question in English (e.g. 'isn't it?', 'right?'). It can also appear as '~지요', which is slightly more formal/polite.",
-    "formation": "Positive/Negative Sentence + 죠 (지요)"
+    "title": "~죠 / ~지요（〜ですよね、〜でしょう、〜でしょ）",
+    "shortExplanation": "聞き手に対して同意を求めたり、すでに知っている事実を親しみを持って確認する終結語尾です（「〜ですよね」「〜でしょう」）。",
+    "longExplanation": "「~죠」は終結語尾「~지요」の日常会話における縮約形です。話し手が知っている事実について聞き手に同意を求めたり、再確認したりする際に、柔らかく親近感のある口調で使用されます。名詞に接続する場合はパッチムがあれば「-이죠」、なければ「-죠」となり、過去形は「-았/었죠」、未来・推量は「-(으)ㄹ 거죠」となります。",
+    "formation": "動詞語幹 / 形容詞語幹 + -죠（原形：-지요）；名詞（パッチムあり：-이죠 / パッチムなし：-죠）；過去形：-았/었죠；未来・推量：-(으)ㄹ 거죠",
+    "examples": [
+      {
+        "translation": "今日は天気が良いですよね？"
+      },
+      {
+        "translation": "映画は面白かったでしょう？"
+      },
+      {
+        "translation": "彼女は綺麗ですよね？"
+      },
+      {
+        "translation": "私たち、近いうちにまた会えますよね？"
+      }
+    ]
   },
   "ko_지_118": {
-    "title": "~지 않을까 [ji anheulkka] (Perhaps)",
-    "shortExplanation": "〜を表すために使用されます a guess, supposition, or conjecture; 'perhaps', 'maybe'.",
-    "longExplanation": "'~지 않을까 [ji anheulkka]' is a common ending in Korean 〜を表すために使用されます an educated guess or prediction. It is similar to saying 'perhaps,' 'maybe,' or 'I wonder if...' in English, based on the speaker's available information.",
-    "formation": "動詞 stem + 지 않을까"
+    "title": "~지 않을까（〜ではないだろうか、〜ではないかと思う）",
+    "shortExplanation": "控えめな推測や疑問を表し、自分の考えを遠回しに伝える表現です（「〜ではないだろうか」「〜ではないかと思う」）。",
+    "longExplanation": "「~지 않을까」は否定の「-지 않다」に推測・疑問を表す語尾「-(으)ㄹ까」が合わさった表現で、話し手が「〜ではないだろうか」「〜するのではないか」と控えめに推測したり自問したりする際に用います。相手に対して断定を避け、柔らかく意見を提示したり可能性を窺ったりするニュアンスを持ち、後ろに「싶다」「생각하다」「궁금하다」などが続くことが多いです。",
+    "formation": "動詞・形容詞語幹 + 지 않을까 (생각하다/싶다)",
+    "examples": [
+      {
+        "translation": "空がすっかり灰色になっているので、今夜雨が降るのではないかと思います。"
+      },
+      {
+        "translation": "久しぶりに会ったので、彼女も私のことを考えているのではないかと気になります。"
+      },
+      {
+        "translation": "昨日は夜遅くまで勉強したので、明日の試験が中止にならないかと期待しています。"
+      },
+      {
+        "translation": "今日は私の誕生日なので、今家に帰ればお父さんが夕食を作ってくれているのではないかと思います。"
+      }
+    ]
   },
   "ko_지_119": {
-    "title": "~지 않아도 되다 [ji anado dweda] (Don't have to)",
-    "shortExplanation": "〜を表すために使用されます that an action is not necessary or mandatory; 'don't have to'.",
-    "longExplanation": "'~지 않아도 되다 [ji anado dweda]' indicates that someone is not obliged to perform a certain action. It literally means 'it is okay even if you do not do something.'",
-    "formation": "動詞 stem + 지 않아도 되다"
+    "title": "~지 않아도 되다（〜しなくてもよい、〜する必要はない）",
+    "shortExplanation": "ある行為をする義務や必要性がなく、行わなくても問題ないことを表します（「〜しなくてもよい」「〜しなくていい」）。",
+    "longExplanation": "「~지 않아도 되다」は、否定表現「-지 않다」に譲歩の接続語尾「-아/어도（〜しても）」と補助動詞「되다（よい、構わない）」が組み合わさった表現です。直訳すると「〜しなくても構わない」となり、相手の義務や負担を免除し、その行為をする必要がないことを伝えて安心させる際によく用いられます。",
+    "formation": "動詞語幹 + 지 않아도 되다",
+    "examples": [
+      {
+        "translation": "そんなに心配しなくても大丈夫だよ。すべてうまくいくから。"
+      },
+      {
+        "translation": "試験にはすでに合格したのだから、これ以上勉強しなくてもいいよ。"
+      },
+      {
+        "translation": "私たちは他人のためにすべてのことを諦めなくてもいいのです。"
+      },
+      {
+        "translation": "雨が降っているからといって、ただ家にじっと留まっていなくても構わないよ。"
+      }
+    ]
   },
   "ko_지만_120": {
-    "title": "지만 [jiman] (but)",
-    "shortExplanation": "〜を表すために使用されます contrast between two statements, similar to 'but' in English.",
-    "longExplanation": "'지만 [jiman]' is a common conjunction in Korean that expresses contrast or contradiction between two clauses, much like 'but' in English. The second clause contradicts or provides an unexpected twist to the first clause.",
-    "formation": "Statement 1 + 지만 + Statement 2"
+    "title": "~지만（〜けれど、〜だが、〜ですが）",
+    "shortExplanation": "前節と後節の内容が対照的・逆接の関係にあることを表す接続語尾（「〜だが」「〜けれど」）。",
+    "longExplanation": "「~지만」は、韓国語で最も基本的かつ頻繁に用いられる逆接の接続語尾です。前節で一定の事実や状況を述べた上で、後節でそれと矛盾・対立する内容や、予想とは食い違う事態を展開します。動詞や形容詞の語幹、または指定詞「-(이)다」の語幹に直接接続します。過去の事態に対しては「-았/었지만」が接続します。",
+    "formation": "動詞語幹 / 形容詞語幹 + 지만；名詞（パッチムなし：-지만 / パッチムあり：-이지만）；過去形：-았/었지만",
+    "examples": [
+      {
+        "translation": "今日は朝早く起きたのですが、学校に遅刻してしまいました。バスに乗り遅れたからです。"
+      },
+      {
+        "translation": "たくさん勉強しているのですが、まだあまりよく理解できません。"
+      },
+      {
+        "translation": "チョルスは背が低いけれど、非常に力強いたくましい人です。"
+      },
+      {
+        "translation": "ここの料理は美味しいですが、値段がとても高すぎます。"
+      }
+    ]
   },
   "ko_지요_121": {
-    "title": "~지요 [jiyo] (Isn't it? Right?)",
-    "shortExplanation": "Used to confirm or check agreement with the listener, akin to a polite tag question.",
-    "longExplanation": "'~지요 [jiyo]' is a sentence ending used in Korean to ask for confirmation or acknowledgment from the listener. It's often used in polite or friendly conversation to invite agreement or verify shared knowledge, similar to saying 'isn't it?' or 'right?' in English.",
-    "formation": "Statement + 지요"
+    "title": "~지요 / ~죠（〜でしょう？、〜ですよね？）",
+    "shortExplanation": "聞き手に念を押して確認したり、同意や共感を求めたりする丁寧な終結語尾（「〜ですよね」「〜でしょう」）。",
+    "longExplanation": "「~지요」（会話では縮約形の「~죠」が多用されます）は、話し手がすでに知っている、あるいは聞き手も当然承知していると思われる事柄について、相手に改めて念を押して確認したり、同意を求めたりする際に使われる終結語尾です。柔らかく親しみやすい語感があり、日本語の「〜ですよね」「〜でしょう？」に相当します。過去形は「-았/었지요」となります。",
+    "formation": "動詞語幹 / 形容詞語幹 + 지요；名詞（パッチムなし：-지요 / パッチムあり：-이지요）；過去形：-았/었지요",
+    "examples": [
+      {
+        "translation": "ずいぶん寒くなりましたよね？マフラーを用意したほうが良さそうです。"
+      },
+      {
+        "translation": "私たち、来週試験がありますよね？そろそろ勉強を始めなければなりませんね。"
+      },
+      {
+        "translation": "今週末、友達とキャンプに行くことになっていましたよね？もう少し準備が必要な気がします。"
+      },
+      {
+        "translation": "最近仕事が多くて大変でしょう？本当に休息が必要な時期のようですね。"
+      }
+    ]
   },
   "ko_진_122": {
-    "title": "~진 않지만 [jin anhjiman] (Not exactly, but)",
-    "shortExplanation": "〜を表すために使用されます that something is not entirely true but partially or somewhat so.",
-    "longExplanation": "'~진 않지만 [jin anhjiman]' indicates that a certain condition is not exactly or fully met, yet there is some partial truth or a mitigating factor. It softens the statement, showing modesty or a lesser degree than expected.",
-    "formation": "動詞/形容詞 stem + 진 않지만"
+    "title": "~진 않지만 / ~지는 않지만（〜くはないけれど、〜ではないが）",
+    "shortExplanation": "部分否定や留保を示し、後節で長所やフォローとなる事実を述べる表現（「〜ではないけれど」「〜くはないが」）。",
+    "longExplanation": "「~진 않지만」は「~지는 않지만」の縮約形です。否定の接続語尾「-지」に対比の助詞「-는（〜は）」が結合して「-진」となり、そこに逆接の「-않지만」が続いています。完全にその状態に当てはまるわけではないこと（部分的な否定）を前置きしつつ、後節でその欠点を補う長所やポジティブな評価を提示するニュアンスを持ちます。",
+    "formation": "動詞語幹 / 形容詞語幹 + 진 않지만（本形：-지는 않지만）",
+    "examples": [
+      {
+        "translation": "君が好きなその映画、私にはあまり面白くはなかったけれど、観る価値はあったよ。"
+      },
+      {
+        "translation": "彼が話したことはそれほど重要ではないけれど、覚えておいて損はないよ。"
+      },
+      {
+        "translation": "君がくれたサングラス、綺麗ではないけれど結構役に立つよ。"
+      },
+      {
+        "translation": "彼女はとても有名というわけではないけれど、十分な才能に恵まれている。"
+      }
+    ]
   },
   "ko_쯤_123": {
-    "title": "~쯤 [jjeum] (About, around)",
-    "shortExplanation": "A postposition indicating approximation or estimation (time, quantity, degree).",
-    "longExplanation": "'~쯤 [jjeum]' is used in Korean to show a rough estimate or approximation, similar to 'about,' 'around,' or 'approximately' in English. It's often used in casual conversation to give an inexact notion of time, number, or degree.",
-    "formation": "Number/名詞 + 쯤"
+    "title": "~쯤（〜頃、〜くらい、〜程度）",
+    "shortExplanation": "時間、数量、程度を表す語の後について、おおよその目安や推量を表す補助詞（「〜頃」「〜くらい」）。",
+    "longExplanation": "「~쯤」は、時刻、期間、数量、度量衡などを表す名詞や数詞に直接付いて、確定的な数値ではなく大体の見当や推量を示す補助詞です。日本語の「〜頃」「〜くらい」「〜程度」に相当します。文頭に「약（約）」を伴って「약 ...쯤」の形で強調されることもよくあります。",
+    "formation": "名詞 / 数詞 + 쯤",
+    "examples": [
+      {
+        "translation": "会社には午後3時頃に到着しそうです。"
+      },
+      {
+        "translation": "昨日、彼女は約10個くらいクッキーを食べました。"
+      },
+      {
+        "translation": "ここから学校まで歩いて15分くらいかかりそうです。"
+      },
+      {
+        "translation": "彼はすでに500ページほど読んだので、もうすぐ本を読み終えそうです。"
+      }
+    ]
   },
   "ko_처럼_124": {
-    "title": "~처럼 [cheoreom] (Like, as)",
-    "shortExplanation": "Used to compare two things or indicate that something behaves similarly to something else.",
-    "longExplanation": "'처럼 [cheoreom]' is a postposition in Korean that draws a comparison between two things, states, or actions, similar to 'like' or 'as' in English. It indicates that one entity resembles another in appearance, manner, or feeling.",
-    "formation": "名詞/動詞 + 처럼"
+    "title": "~처럼（〜のように、〜のごとく）",
+    "shortExplanation": "名詞の後について、様子や性質がその対象と似ていることを表す比況の格助詞（「〜のように」「〜のごとく」）。",
+    "longExplanation": "「~처럼」は、名詞に直接接続して、外見、性質、行動様式などがその対象とそっくりであることや似通っていることを表す格助詞です。日本語の「〜のように」「〜みたいに」に相当します。動詞や形容詞の節を比較対象とする場合は連体形と依存名詞「것」を伴って「-(으)ㄴ/는 것처럼（〜であるかのように）」の形で用いられます。副詞「마치（まるで）」と呼応することも非常に多いです。",
+    "formation": "名詞 + 처럼；連体形 + 것 + 처럼",
+    "examples": [
+      {
+        "translation": "彼女は天使のように見えます。顔立ちがとても美しく、純粋そうに見えます。"
+      },
+      {
+        "translation": "この料理は母が作ったもののように美味しいです。家庭料理の温もりが感じられます。"
+      },
+      {
+        "translation": "彼は夢の中で見た人のように見えたので、とても驚きました。"
+      },
+      {
+        "translation": "太陽が昇ると、まるで新しい世界が開かれたかのように気分が晴れやかになります。"
+      }
+    ]
   },
   "ko_층_125": {
-    "title": "~층 [cheung] (Floor count)",
-    "shortExplanation": "〜を表すために使用されます the number of floors in a building, like 'nth floor'.",
-    "longExplanation": "'~층 [cheung]' is a suffix in Korean denoting which floor of a building is being referred to. It attaches to a numeral to indicate the ordinal floor number, similar to English expressions like 'the 3rd floor', 'the 15th floor', etc.",
-    "formation": "Number + 층"
+    "title": "~층（〜階 / 建物の階数を表す助数詞）",
+    "shortExplanation": "漢数字の後について建物の階層を数えたり位置を指定したりする依存名詞（「〜階」）。",
+    "longExplanation": "「~층」（漢字：層）は、ビルの階数やフロアを示す際に用いる助数詞（単位性依存名詞）です。韓国語では固有数詞ではなく、必ず漢数字（일, 이, 삼, 사...）と組み合わせて使用します（例：1층、15층、20층）。地下フロアを表す場合は「지하 1층（地下1階）」のように表現します。",
+    "formation": "漢数字 + 층（または アラビア数字 + 층）",
+    "examples": [
+      {
+        "translation": "私たちの家はアパート棟の15階に位置しています。"
+      },
+      {
+        "translation": "会社は高層ビルの20階にあるため、見晴らしが本当に素晴らしいです。"
+      },
+      {
+        "translation": "エレベーターがなければ、10階まで歩いて上がらなければなりません。"
+      },
+      {
+        "translation": "メゾネット式アパートの構造は、一般的に2階建ての建物として設計されます。"
+      }
+    ]
   },
   "ko__126": {
-    "title": "~(으)ㄹ지 (Maybe, perhaps)",
-    "shortExplanation": "〜を表すために使用されます uncertainty, doubt, or speculation; 'might', 'maybe', 'I'm not sure if...'.",
-    "longExplanation": "The grammar pattern '~(으)ㄹ지' is used with verbs or adjectives to convey uncertainty or speculation. It often appears with expressions like '모르겠다 (I don't know)', forming '~(으)ㄹ지 모르겠다' to mean 'I’m not sure if...' or 'maybe...'. It's similar to 'perhaps' or 'might' in English.",
-    "formation": "動詞/形容詞 stem + (으)ㄹ지 (모르다)"
+    "title": "~(으)ㄹ지 (모르다)（〜かわからない、〜かもしれない）",
+    "shortExplanation": "疑問や不確実な推量を表す接続語尾で、主に「모르다」と結びついて不確定な事態を表します（「〜かわからない」「〜かもしれない」）。",
+    "longExplanation": "「~(으)ㄹ지」は、事態の不確定さや疑問を含んだ接続語尾です。多くの場合「모르다（わからない）」や「궁금하다（気になる）」といった認識動詞と連動し、「~(으)ㄹ지 모르다（〜かわからない / 〜かもしれない）」の形で日常的に使われます。未来のことに対する予測がつかない状態や、過去の意外な事実に対する感慨（「〜とは思わなかった」）を表すことができます。語幹末尾が母音または「ㄹ」パッチムの場合は「-ㄹ지」、子音パッチムの場合は「-을지」となります。",
+    "formation": "動詞語幹 / 形容詞語幹（母音・ㄹパッチム：-ㄹ지 / 子音パッチム：-을지） + 모르다；名詞（パッチムなし：-ㄹ지 / パッチムあり：-일지）",
+    "examples": [
+      {
+        "translation": "今日は雨が降るかどうかわかりません。朝は晴れていたのですけれど。"
+      },
+      {
+        "translation": "あの生徒が試験に合格するかどうかよくわかりません。熱心に勉強していなかったからです。"
+      },
+      {
+        "translation": "彼女がこんなにたくさん食べられるとは思いもしませんでした。いつも少ししか食べなかったものですから。"
+      },
+      {
+        "translation": "あの方が私を愛してくださるのかどうかまだよくわかりません。あの人の本心がまだ掴めないのです。"
+      }
+    ]
   },
   "ko_마다_127": {
-    "title": "~마다 [mada] (Every, each)",
-    "shortExplanation": "〜を表すために使用されます routines or regular occurrences; 'every', 'each'.",
-    "longExplanation": "'~마다 [mada]' is a suffix in Korean used after time words or intervals to indicate repetition or regularity, similar to 'every' in English. For example, 매주 토요일마다 (every Saturday), 매일 아침마다 (every morning), 매월 마지막 주마다 (every last week of the month), etc.",
-    "formation": "Time/Interval + 마다"
+    "title": "~마다（〜ごとに、毎〜、〜すべて）",
+    "shortExplanation": "名詞の後について、一定の周期で規則的に繰り返されることや、一つ残らず全てに当てはまることを表す補助詞（「毎〜」「〜ごとに」）。",
+    "longExplanation": "「~마다」は、名詞に直接接続して、一定の間隔や周期で事柄が規則的に繰り返されること（「毎朝」「毎週」など）、あるいはその集合に含まれるすべての対象に漏れなく当てはまること（「人それぞれ」「国ごとに」など）を表す補助詞です。漢字語の接頭辞「매-（毎）」と重ねて「매일 아침마다（毎朝ごとに）」のように強調して用いられることも非常に一般的です。",
+    "formation": "名詞 + 마다",
+    "examples": [
+      {
+        "translation": "私は毎週土曜日ごとに運動をします。このように規則的に運動すると健康に良いです。"
+      },
+      {
+        "translation": "彼は1週間に2回ずつ韓国語を勉強しているので、韓国語の実力が早く伸びています。"
+      },
+      {
+        "translation": "私たちは毎朝会って一緒に食事をします。これが私たちの日常的な習慣です。"
+      },
+      {
+        "translation": "彼女は毎月最終週の日曜日ごとに家族と集まります。そのように時間を過ごすのが彼女のスタイルです。"
+      }
+    ]
   },
   "ko__128": {
-    "title": "~(으)ㄹ 테니까 [tenikka] (So, therefore)",
-    "shortExplanation": "Indicates an assumption or reason, leading to a suggestion or conclusion; 'because it will be...', 'so'.",
-    "longExplanation": "'~(으)ㄹ 테니까' expresses the speaker’s assumption or strong guess about a future or present state, providing a reason for the following statement. For example, '배가 고플 테니까 (you must be hungry), so let's eat.' This form combines the future/assumed ending '~(으)ㄹ 테다' with '~니까 (because)'.",
-    "formation": "動詞 stem + (으)ㄹ 테니까 + (result or suggestion)"
+    "title": "~(으)ㄹ 테니까（〜するつもりだから、〜だろうから）",
+    "shortExplanation": "話し手の強い意志や確信に近い推測を理由・根拠として提示し、相手に行動や準備を促す接続表現（「〜するから」「きっと〜だろうから」）。",
+    "longExplanation": "「~(으)ㄹ 테니까」は、予定・意志・推量を表す「-(으)ㄹ 터이다」に理由を表す接続語尾「-니까」が結合した表現です。(1) 主語が1人称のとき：話し手がこれから行う予定や意志を理由として前置きし、後節で聞き手に対して指示、依頼、提案を行います（「私が〜するから、あなたは…して」）。(2) 主語が2・3人称や客観的事物のとき：話し手の強い推測や見通しを理由・前提として提示し、後節で提案や助言を行います（「きっと〜だろうから、…」）。語幹末尾が母音または「ㄹ」パッチムの場合は「-ㄹ 테니까」、子音パッチムの場合は「-을 테니까」を用います。",
+    "formation": "動詞語幹 / 形容詞語幹（母音・ㄹパッチム：-ㄹ 테니까 / 子音パッチム：-을 테니까）；過去形：-았/었을 테니까",
+    "examples": [
+      {
+        "translation": "とてもお腹が空いているでしょうから、早く食堂に行って何か食べましょう。"
+      },
+      {
+        "translation": "試験で良い結果を出すためにたくさん勉強したはずだから、きっと良い点数が取れるよ。"
+      },
+      {
+        "translation": "私たちが間もなくこの問題を解決しますので、少々お待ちください。"
+      },
+      {
+        "translation": "私がすぐに向かうから、先に準備をしていてね。"
+      }
+    ]
   },
   "ko_편이다_129": {
-    "title": "~편이다 [pyeonida] (It is preferable)",
-    "shortExplanation": "Indicates a personal leaning, tendency, or preference; 'tend to', 'find it better to'.",
-    "longExplanation": "The construction '~편이다 [pyeonida]' expresses that something is on the side of or tends to be a certain way. It conveys a personal preference or leaning. For example, '저는 집에서 공부하는 편이에요' means 'I tend to study at home' or 'I prefer studying at home.'",
-    "formation": "動詞 stem + (으)ㄴ/는 편이다 or 形容詞 + 편이다"
+    "title": "~(으)ㄴ/는 편이다（〜なほうだ、〜するほうだ）",
+    "shortExplanation": "断定を避け、どちらかといえばその性質や傾向の側に属していることを遠回しに表す表現（「〜なほうだ」「〜するほうだ」）。",
+    "longExplanation": "「~(으)ㄴ/는 편이다」は、連体形語尾に依存名詞「편（側、ほう）」と指定詞「이다」が結合した文型です。物事を100%そうであると決めつけるのではなく、「全体の中ではどちらかといえばその傾向にある」「大体その部類に入る」と控えめに表現する際に重宝されます。動詞の現在形には「-는 편이다」、動詞の過去形には「-(으)ㄴ 편이다」、形容詞の語幹末尾が母音の場合は「-ㄴ 편이다」、子音パッチムの場合は「-은 편이다」が接続します。",
+    "formation": "動詞語幹（現在形：-는 편이다 / 過去形：-(으)ㄴ 편이다）；形容詞語幹（母音パッチム：-ㄴ 편이다 / 子音パッチム：-은 편이다）",
+    "examples": [
+      {
+        "translation": "私は夏より冬のほうがずっと楽しいと感じるほうです。雪がたくさん降るのが好きだからです。"
+      },
+      {
+        "translation": "人と会話をするのが意外と苦手なほうなので、普段はまずメッセージで連絡を取ります。"
+      },
+      {
+        "translation": "幼い頃から数学の問題を解くのが得意なほうでした。そのため、後になって数学の先生になりたかったのです。"
+      },
+      {
+        "translation": "辛い食べ物が好きなほうなので、よく辛いラーメンを食べます。"
+      }
+    ]
   },
   "ko_하다가_130": {
-    "title": "~하다가 [hadaga] (Was doing something and then...)",
-    "shortExplanation": "Indicates an ongoing action that is interrupted by another event; 'was doing... then...'.",
-    "longExplanation": "'~하다가 [hadaga]' shows that one action was in progress when something else happened or changed. It often implies an unexpected interruption or switch of focus while the first activity was still ongoing.",
-    "formation": "動詞 stem + 하다가"
+    "title": "~다가 / ~하다가（〜していて、〜している途中で）",
+    "shortExplanation": "先行する動作や状態が継続している途中で中断され、別の動作や事態へと移行することを表す接続語尾（「〜していて」「〜している途中で」）。",
+    "longExplanation": "「~다가」（하다動詞の場合は「~하다가」）は、ある行為や状態が完了せずに進行している途中で、別の出来事が割り込んできたり、別の動作へと切り替わったりする中途転換を表す接続語尾です。後節には予期せぬ出来事や突発的な事態が続くことが多く見られます。動作が完全に完了した後に逆の動作に転じる場合は過去形の「-았/었다가」を用います。",
+    "formation": "動詞語幹 + 다가（하다動詞：-하다가）；過去形：-았/었다가",
+    "examples": [
+      {
+        "translation": "私が宿題をしている途中で、友達から電話がかかってきて遊びに行こうと誘われました。"
+      },
+      {
+        "translation": "明け方に散歩をしていたら、突然雨が降ってきました。"
+      },
+      {
+        "translation": "昨日、外で本を読んでいたら、急にお腹が空いてきました。"
+      },
+      {
+        "translation": "音楽を聴いていたら、ある曲が私の気分にぴったり合って、とても良い気分になりました。"
+      }
+    ]
   },
   "ko_하면_131": {
-    "title": "~하면 [hamyeon] (If, when)",
-    "shortExplanation": "Expresses a condition or hypothetical situation; 'if', 'when'.",
-    "longExplanation": "'~하면 [hamyeon]' introduces a conditional or hypothetical clause, much like 'if' or 'when' in English. It sets up a situation or requirement that triggers the outcome in the following clause.",
-    "formation": "動詞 stem + 하면"
+    "title": "~(으)면 / ~하면（〜（す）れば、〜なら、〜したら）",
+    "shortExplanation": "前節で条件や仮定を提示し、後節でその結果や展開を導く代表的な接続語尾（「〜ば」「〜たら」「〜なら」）。",
+    "longExplanation": "「~(으)면」（하다動詞の場合は「~하면」）は、韓国語において最も汎用性が高く基本的な条件・仮定の接続語尾です。前節で一定の事態を仮定の条件や前提として設定し、その条件が満たされた場合に後節の結果や意志、推量、提案などが成立することを示します。語幹末尾が母音または「ㄹ」パッチムの場合は「-면」、子音パッチムの場合は「-으면」が接続します。名詞にはパッチムの有無に応じて「-(이)면」が接続します。",
+    "formation": "動詞語幹 / 形容詞語幹（母音・ㄹパッチム：-면 / 子音パッチム：-으면；하다動詞：-하면）；名詞（パッチムなし：-면 / パッチムあり：-이면）",
+    "examples": [
+      {
+        "translation": "後でもっと時間に余裕ができれば、もっとたくさんの本を読むことができるでしょう。"
+      },
+      {
+        "translation": "今日雨が降ったら、私たちは映画を観に行けないと思います。"
+      },
+      {
+        "translation": "彼が私たちに証拠を見せてくれれば、私たちは彼を信じるつもりです。"
+      },
+      {
+        "translation": "あなたが学校にもっと真面目に通えば、良い成績を取ることができるはずだよ。"
+      }
+    ]
   },
   "ko_하면서_132": {
-    "title": "~하면서 [hamyeonseo] (While doing)",
-    "shortExplanation": "Expresses two simultaneous actions; 'while', 'as'.",
-    "longExplanation": "'~하면서 [hamyeonseo]' is used to describe two actions happening at the same time or an action happening in the background while another action occurs. It's similar to 'while' or 'as' in English when describing simultaneous activities.",
-    "formation": "動詞 stem + (으)면서"
+    "title": "~(으)면서 / ~하면서（〜しながら、〜しつつ）",
+    "shortExplanation": "同一の主語が2つの動作を同時に行う、あるいは2つの状態を兼ね備えていることを表す接続語尾（「〜しながら」）。",
+    "longExplanation": "「~(으)면서」（하다動詞の場合は「~하면서」）は、同一の主体が同時に2つの行為を並行して行うこと、または2つの性質を兼ね備えていることを表す接続語尾です。原則として前節と後節の主語は一致していなければなりません。日本語の「〜しながら」に直接対応します。語幹末尾が母音または「ㄹ」パッチムの場合は「-면서」、子音パッチムの場合は「-으면서」が接続します。名詞にはパッチムの有無に応じて「-(이)면서」が接続します。",
+    "formation": "動詞語幹 / 形容詞語幹（母音・ㄹパッチム：-면서 / 子音パッチム：-으면서；하다動詞：-하면서）；名詞（パッチムなし：-면서 / パッチムあり：-이면서）",
+    "examples": [
+      {
+        "translation": "大自然の中で心身を癒やしながら、写真もたくさん撮りました。"
+      },
+      {
+        "translation": "音楽を聴きながら宿題をしました。"
+      },
+      {
+        "translation": "父はテレビを見ながら夕食を召し上がりました。"
+      },
+      {
+        "translation": "彼は歩きながら本を読む習慣があります。"
+      }
+    ]
   },
   "ko_하기는_133": {
-    "title": "~하기는 [hakineun] (Though, although)",
-    "shortExplanation": "〜を表すために使用されます 'though' or 'although', showing contrast or contradiction.",
-    "longExplanation": "'~하기는 [hakineun]' is used to convey a sense of contrast or contradiction, similar to 'though' or 'although' in English. While the sentence may start with an assumption or statement, this grammar introduces a point that contradicts or partially goes against the expected outcome.",
-    "formation": "動詞 stem + 기는 + (contradicting statement)"
+    "title": "~하기는 (하다/하지만)（〜することはするが、〜はするものの）",
+    "shortExplanation": "名詞形語尾「-기」に対照を表す助詞「-는」が付いた表現で、前節の事実を一応認めた上で、後節でそれに反する事実や制限を述べる逆接表現です（「〜することはするが」「〜には〜だが」）。",
+    "longExplanation": "「~하기는 하다」または「~하기는 하지만」は、話し手が前節の動作や状態を一応認めつつも（「〜することはする」「確かに〜だが」）、後節においてそれに相反する事実や不満、制限などを対照的に提示する際に用いられます。通常「-지만」と組み合わされたり、動詞を繰り返す「動詞語幹 + -기는 하다/하지만」の形で多用されます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기는 하다（または -기는 하지만）",
+    "examples": [
+      {
+        "translation": "料理をすることは好きなのですが、面倒くさがりな方なので、よく外食します。"
+      },
+      {
+        "translation": "この映画を観に行きはしますが、正直あまり期待はしていません。"
+      },
+      {
+        "translation": "友達が店を経営してはいますが、頻繁に訪ねることはありません。"
+      },
+      {
+        "translation": "私がその人のことを好きではありますが、その人が私のことを好きというわけではありません。"
+      }
+    ]
   },
   "ko_하기로_134": {
-    "title": "~하기로 하다 [hakiro hada] (Decide to)",
-    "shortExplanation": "Expresses a decision or agreement to do something.",
-    "longExplanation": "'~하기로 하다 [hakiro hada]' indicates that a decision or agreement has been made to perform an action. It often appears in contexts describing future plans or intentions. After a verb stem, it is followed by '기로 하다' which translates to 'decide to' in English.",
-    "formation": "動詞 stem + 기로 하다"
+    "title": "~하기로 하다（〜することにする、〜することに決める）",
+    "shortExplanation": "ある動作や計画を行うことを決定・約束・合意したことを表します（「〜することにする」「〜することに決めた」）。",
+    "longExplanation": "「~하기로 하다」は、名詞形語尾「-기」、結果・選択を表す助詞「-로」、動詞「하다」が合わさった表現です。話者自身の決断や、他者との間で話し合って決めた約束・合意を表します。日常会話や文章では、すでに決定した事柄として過去形の「-기로 했다 / -기로 했습니다」の形で用いられることが非常に多いです。",
+    "formation": "動詞語幹 + -기로 하다（通常過去形：-기로 했다 / -기로 했습니다）",
+    "examples": [
+      {
+        "translation": "明日、私たちはプールに行くことにしました。みんなで一緒に泳ぐ予定です。"
+      },
+      {
+        "translation": "私は次の学期に韓国語を勉強することに決めました。韓国語能力を向上させたいからです。"
+      },
+      {
+        "translation": "食材が足りなくなってきたので、家に帰る途中で買い出しをすることにしました。"
+      },
+      {
+        "translation": "早く終わらせたいので、私たちのチームは今週プロジェクトを開始することに決めました。"
+      }
+    ]
   },
   "ko_하기보다_135": {
-    "title": "~하기보다 [hakiboda] (Rather than)",
-    "shortExplanation": "Compares two actions or things, indicating a preference for one over the other.",
-    "longExplanation": "'~하기보다 [hakiboda]' is 〜を表すために使用されます 'rather than' in Korean. It typically shows that the second action or choice is more desirable, suitable, or preferable than the first one.",
-    "formation": "動詞(기) + 보다"
+    "title": "~하기보다（〜するよりは、〜するくらいなら）",
+    "shortExplanation": "2つの行為や選択肢を比較し、前の行為をするより後の行為をする方が望ましい・優先されるべきであることを表します（「〜するよりは」「〜するより」）。",
+    "longExplanation": "「~하기보다」は、名詞形語尾「-기」と比較の助詞「-보다（〜より）」が結びついた表現です。2つの動作や状況を比較対象として並べ、前節の行動をとるよりも、後節の選択肢の方がより適切、有意義、あるいは好ましいという判断を示します。後節にはしばしば「より」「むしろ」などの副詞が呼応します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기보다（または -기보다는）",
+    "examples": [
+      {
+        "translation": "体重をさらに増やすことより、健康的に運動することの方が大切です。"
+      },
+      {
+        "translation": "家にじっとしているよりは、友達と外で楽しく遊びたいです。"
+      },
+      {
+        "translation": "夢を諦めてしまうよりは、ずっと追い続けようと決意しました。"
+      },
+      {
+        "translation": "お金を稼ぐことより、自分が何を愛しているのかを見つけることの方がずっと重要だと思います。"
+      }
+    ]
   },
   "ko_하기에_136": {
-    "title": "~하기에 [hakie] (For, considering)",
-    "shortExplanation": "Expresses a reason or basis for a certain situation; 'for, considering'.",
-    "longExplanation": "'~하기에 [hakie]' is used to provide a reason or basis for a circumstance or decision. It can translate to 'for', 'because', or 'considering that...' in English, especially when justifying or explaining a certain choice.",
-    "formation": "Descriptive 動詞 + 기에"
+    "title": "~하기에（〜なので、〜であるため；〜するには）",
+    "shortExplanation": "（1）後節の判断や行動の根拠・理由を表す用法（「〜であるため」「〜なので」）と、（2）ある行為を行う際の基準・評価を表す用法（「〜するには」「〜するのには」）があります。",
+    "longExplanation": "「~하기에」は、名詞形語尾「-기」と助詞「-에」が合わさった表現です。主に2つの用法があります：（1）客観的な根拠や理由を示し、それを踏まえて後節で判断や努力を行うことを述べる用法（やや改まった文脈で「〜であるため」「〜なので」）；（2）ある行為を行うための基準・対象を示し、後続に「좋다（良い）」「아깝다（もったいない）」「덥다（暑い）」などの形容詞を伴って評価を下す用法（「捨てるにはもったいない」「ピクニックに行くには暑すぎる」）。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기에（または -기에는）",
+    "examples": [
+      {
+        "translation": "年齢の割にサッカーの実力が非常に優れており、プロチームへの進出が可能であるため、一生懸命努力しています。"
+      },
+      {
+        "translation": "その職業は収入が多いもののストレスも多く、健康のためには良くないこともあり得るので、注意しなければなりません。"
+      },
+      {
+        "translation": "食材があまりにも多く、必要のないものを捨ててしまうにはもったいないと感じられます。"
+      },
+      {
+        "translation": "最近の天気の変化を見ると、明日ピクニックに行くには暑すぎるような気がします。"
+      }
+    ]
   },
   "ko_하기만_137": {
-    "title": "~하기만 하면 [hakiman hamyeon] (As long as)",
-    "shortExplanation": "Expresses that if a certain condition is met, a result is guaranteed to follow; 'as long as'.",
-    "longExplanation": "'~하기만 하면 [hakiman hamyeon]' means 'as long as one does something, then something else will definitely happen.' It implies a condition that, once fulfilled, ensures a particular outcome.",
-    "formation": "動詞 stem + 기만 하면"
+    "title": "~하기만 하면（〜さえすれば、〜しさえすれば）",
+    "shortExplanation": "前節の条件が満たされさえすれば、後節の結果や事態が確実に成り立つという唯一の十分条件を表します（「〜さえすれば」「〜しさえすれば」）。",
+    "longExplanation": "「~하기만 하면」は、名詞形語尾「-기」、限定の助詞「-만（〜だけ）」、条件を表す「-하면（〜すれば）」が合わさった表現です。後節に述べる望ましい結果や状況を実現するために、前節の行動や条件を満たすことさえすれば十分であるという強い確信や条件付けを表します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기만 하면",
+    "examples": [
+      {
+        "translation": "私は一生懸命勉強しさえすれば、韓国語の試験にきっと合格するはずです。"
+      },
+      {
+        "translation": "あなたが私を信じてくれさえすれば、傷を癒やすのはずっと容易になるでしょう。"
+      },
+      {
+        "translation": "ほんの少し努力しさえすれば、絵を描く技術を向上させることができるはずです。"
+      },
+      {
+        "translation": "人々がお互いを理解しようと努力しさえすれば、世界はもっと素晴らしい場所になり得ます。"
+      }
+    ]
   },
   "ko_하는_138": {
-    "title": "~하는 것 같다 [haneun geot gatda] (It seems like)",
-    "shortExplanation": "〜を表すために使用されます that something appears or seems a certain way; 'it seems/looks like'.",
-    "longExplanation": "'~하는 것 같다 [haneun geot gatda]' indicates the speaker's guess or observation based on evidence or impressions. It can translate to 'it seems like', 'it appears that', or 'it looks like' in English. The verb or adjective precedes '...는 것 같다' to form a statement of appearance or assumption.",
-    "formation": "動詞 stem + 는 것 같다 / 形容詞 stem + (으)ㄴ 것 같다"
+    "title": "~하는 것 같다 / ~(으)ㄴ/는 것 같다（〜のようだ、〜そうに見える、〜気がする）",
+    "shortExplanation": "外的な観察や直感、個人的な推量に基づき、断定を避けて柔らかく意見や状況を述べる推量表現です（「〜のようだ」「〜みたいだ」「〜気がする」）。",
+    "longExplanation": "「~(으)ㄴ/는 것 같다」は、連体形語尾、依存名詞「것（こと・もの）」、形容詞「같다（似ている・同じだ）」が組み合わさった、韓国語で最も頻繁に使われる推量・婉曲表現です。状況の観察や自身の感覚に基づいて「〜のように思われる」「〜のようだ」と控えめに述べ、断定的な響きを和らげる効果があります。動詞の現在形は「-는 것 같다」、過去形は「-(으)ㄴ 것 같다」、形容詞の現在形は「-(으)ㄴ 것 같다」、名詞には「-인 것 같다」を用います。",
+    "formation": "動詞（現在：-는 것 같다 / 過去：-(으)ㄴ 것 같다）；形容詞（現在：-(으)ㄴ 것 같다）；名詞：-인 것 같다",
+    "examples": [
+      {
+        "translation": "彼は私の言ったことを理解してくれたようです。その表情に安堵の色が浮かんでいましたから。"
+      },
+      {
+        "translation": "今日はとても寒い気がします。外で人々が体をすっかりすくめているのを見かけました。"
+      },
+      {
+        "translation": "友達は授業に遅刻しそうに見えます。学校へ走って向かいながら慌ててメッセージを送ってきました。"
+      },
+      {
+        "translation": "彼は私に怒っているみたいです。顔色があまり良くありませんでした。"
+      }
+    ]
   },
   "ko_하는_139": {
-    "title": "~하는 데 [haneun de] (In doing)",
-    "shortExplanation": "Expresses the process of doing something, often involving time, effort, or resources.",
-    "longExplanation": "'~하는 데 [haneun de]' highlights the time, effort, or resources necessary for an action. It can be thought of as 'in doing something' or 'it takes X to do something'.",
-    "formation": "動詞 stem + 는 데 + (time/effort/resources)"
+    "title": "~하는 데（〜するのに、〜することにおいて）",
+    "shortExplanation": "ある動作や目的を達成する過程で費やされる時間、労力、費用などを表します（「〜するのに」「〜するにあたって」）。",
+    "longExplanation": "「~하는 데」は、現在連体形語尾「-는」と、「事・場合」を表す依存名詞「데」が結びついた表現です。後続に「걸리다（時間がかかる）」「들다（費用や手間がかかる）」「필요하다（必要だ）」などの表現を伴い、ある行為を成し遂げるためにどれだけの時間、労力、費用、資材が必要とされるかを具体的に示します。なお、依存名詞であるため「-는」と「데」の間は分かち書き（スペース）します。",
+    "formation": "動詞語幹 + -는 데 +（時間 / 労力 / 費用）+ 걸리다 / 들다 / 필요하다",
+    "examples": [
+      {
+        "translation": "道がひどく渋滞していたため、家に到着するのに長い時間がかかりました。"
+      },
+      {
+        "translation": "今年の目標を達成するのには、本当に多くの努力が必要でした。"
+      },
+      {
+        "translation": "材料の準備から飾り付けまで全部やったので、このケーキを作るのに丸一日かかりました。"
+      },
+      {
+        "translation": "イ・ヒョリの新曲を作曲するのに1か月以上かかりました。"
+      }
+    ]
   },
   "ko_하는_140": {
-    "title": "~하는 편이다 [haneun pyeonida] (Tend to do)",
-    "shortExplanation": "Expresses a habitual action, tendency, or characteristic.",
-    "longExplanation": "'~하는 편이다 [haneun pyeonida]' means someone or something tends toward a certain behavior or habit. It implies that it’s not an absolute rule, but rather the usual or likely tendency the speaker observes.",
-    "formation": "動詞 stem + 는 편이다 / 形容詞 stem + (으)ㄴ 편이다"
+    "title": "~하는 편이다 / ~(으)ㄴ/는 편이다（〜する方だ、どちらかと言えば〜する傾向がある）",
+    "shortExplanation": "習慣、傾向、特徴が大まかにどちらか一方の側に傾いていることを表し、断定を避けて客観的・緩やかに述べる表現です（「〜する方だ」「どちらかといえば〜だ」）。",
+    "longExplanation": "「~(으)ㄴ/는 편이다」は、連体形語尾に「側・方向」を表す依存名詞「편」、指定詞「이다」が結びついた表現です。ある人や物事の性質・習慣・行動傾向が、全体として見てどちらかといえばその傾向に傾いている、あるいはその部類に属しているということを穏やかに伝えます。100%絶対的であると断言せず柔軟性を持たせる表現です。動詞現在形は「-는 편이다」、過去形は「-(으)ㄴ 편이다」、形容詞は「-(으)ㄴ 편이다」を用います。",
+    "formation": "動詞（現在：-는 편이다 / 過去：-(으)ㄴ 편이다）；形容詞：-(으)ㄴ 편이다",
+    "examples": [
+      {
+        "translation": "私は本を読むのが好きなので、普段から読書に多くの時間を費やす方です。"
+      },
+      {
+        "translation": "彼はいつも早く寝る方です。だから普段からとても健康的だねとよく言われます。"
+      },
+      {
+        "translation": "母はいつも美味しい料理を作ってくれる方です。"
+      },
+      {
+        "translation": "私は仕事を後回しにしがちな方なので、時々やるべきことが一度に押し寄せてしまうことがあります。"
+      }
+    ]
   },
   "ko_하는_141": {
-    "title": "~하는 한 [haneun han] (As long as)",
-    "shortExplanation": "Expresses the meaning 'as long as' or 'while' a certain condition holds true.",
-    "longExplanation": "'~하는 한 [haneun han]' is 〜を示します that something remains valid or continues to be the case so long as a condition is met. It can translate to 'as long as' in English, specifying the scope or boundary within which an action or state continues.",
-    "formation": "動詞 stem + 는 한"
+    "title": "~하는 한（〜する限り、〜である限り）",
+    "shortExplanation": "前節の条件や状況が維持・継続されている限度・範囲において、後節の事態や判断が成立することを表します（「〜する限りは」「〜である限り」）。",
+    "longExplanation": "「~하는 한」は、現在連体形語尾「-는」と、「限り・限界」を表す名詞「한（限）」が結びついた表現です。前節で提示された条件、状態、行為が保たれている範囲・限界を指定し、その枠組みが続く限りは後節の内容が確実に有効である・維持されるという論理関係を示します。動詞や「있다/없다」には「-는 한」、名詞には「-인 한」が接続します。",
+    "formation": "動詞語幹 / 있다·없다 + -는 한；名詞 + -인 한",
+    "examples": [
+      {
+        "translation": "あなたが健康を維持している限り、大きな問題は起きないでしょう。"
+      },
+      {
+        "translation": "あなたが私のそばにいてくれる限り、私は幸せです。"
+      },
+      {
+        "translation": "彼女が真心から努力を続ける限り、目標はきっと達成できるはずです。"
+      },
+      {
+        "translation": "私たちが一緒にいる限り、どんな困難も乗り越えることができます。"
+      }
+    ]
   },
   "ko_하는데_142": {
-    "title": "~하는데 [haneunde] (But, and so)",
-    "shortExplanation": "〜を表すために使用されます contrast or a cause-and-result link; 'but', 'and so'.",
-    "longExplanation": "'~하는데 [haneunde]' is a Korean connector 〜を示します contrast or provide background leading to a result, akin to 'but' or 'and so' in English. Often, the first clause establishes a situation or background and the second clause states a contradictory fact or a consequence derived from that background.",
-    "formation": "動詞 + 는데 (Present) / 動詞 + 았/었는데 (Past)"
+    "title": "~하는데 / ~(으)ㄴ/는데（〜するのだが、〜しているのに、〜けれど）",
+    "shortExplanation": "前節と後節の内容が対照的・逆接的な関係にあることを表したり、背景を提示して後節へつなぐ接続語尾です（「〜するのに」「〜だが」「〜けれど」）。",
+    "longExplanation": "「~하는데」（総称形：-(으)ㄴ/는데）は、日常会話や文章で最も基本となる接続語尾の一つです。逆接の文脈では、前節で前提となる状況や事実を述べた上で、後節でそれに相反する意外な結果や対立する事実を導き出します。また、前提となる状況の提示としても機能します。過去形は「-았/었는데」となります。",
+    "formation": "動詞（現在：-는데 / 過去：-았/었는데）；形容詞（子音パッチム：-은데 / 母音パッチム：-ㄴ데）；名詞：-인데",
+    "examples": [
+      {
+        "translation": "私の友達はたくさん勉強したにもかかわらず、試験に落ちてしまいました。"
+      },
+      {
+        "translation": "雨が降っているのに、傘を持ってきませんでした。"
+      },
+      {
+        "translation": "ゲームはとても面白いのですが、時間が経つのがあまりに早すぎます。"
+      },
+      {
+        "translation": "このケーキは美味しいけれど、糖分が多すぎます。"
+      }
+    ]
   },
   "ko_하다_143": {
-    "title": "~하다 보면 [hada bomyeon] (If one keeps doing)",
-    "shortExplanation": "Expresses that, with continued or repeated action, a certain result or realization will emerge.",
-    "longExplanation": "'~하다 보면 [hada bomyeon]' indicates that if someone continues or repeatedly does an action over time, a new result, skill, or understanding will naturally occur. It's akin to 'if one keeps doing something' or 'if one continues doing something' in English.",
-    "formation": "動詞 (dictionary form) + 하다 보면"
+    "title": "~하다 보면 / ~다 보면（〜していると、〜し続けていれば自然と）",
+    "shortExplanation": "ある動作を反復・継続して行っているうちに、自然とある結果に至ったり新たな気づきが得られたりすることを表します（「〜していればそのうち」「〜していると」）。",
+    "longExplanation": "「~다 보면」は、動作の継続や転換を表す接続語尾「-다가」の縮約形「-다」、補助動詞「보다（試みる）」、仮定条件を表す接続語尾「-면」が合わさった表現です。前節の動作を習慣的・継続的に積み重ねていくことで、時間の経過とともに新たな能力の向上、望ましい成果、あるいは自然な心境の変化が生じるという見通しを述べる際に多用されます。",
+    "formation": "動詞語幹 + -다 보면",
+    "examples": [
+      {
+        "translation": "毎日韓国語を勉強し続けていれば、いつの間にか韓国語が上達しているはずです。"
+      },
+      {
+        "translation": "練習を重ねていくうちに、芸術に対する興味や才能を見出すことができると思います。"
+      },
+      {
+        "translation": "ジムに頻繁に通っていれば、体力がついてもっと健康的になるでしょう。"
+      },
+      {
+        "translation": "毎日絵を描き続けていれば、素晴らしい画家になれるかもしれません。"
+      }
+    ]
   },
   "ko_하다가는_144": {
-    "title": "~하다가는 [hadaganeun] (If you continue doing)",
-    "shortExplanation": "Indicates a likely negative outcome if the current action continues in the same manner.",
-    "longExplanation": "'~하다가는 [hadaganeun]' is used to warn that if the speaker continues performing the preceding action in the same way, it will lead to an undesirable or negative consequence. It carries a sense of caution or concern.",
-    "formation": "動詞 stem + 하다가는"
+    "title": "~하다가는 / ~다가는（〜していては、このまま〜し続けたなら[悪い結果になる]）",
+    "shortExplanation": "現在の良くない行動や状態をこのまま継続した場合、後節で好ましくない結果や災難を招く恐れがあるという警告や懸念を表します（「〜していては」「このまま〜したら」）。",
+    "longExplanation": "「~다가는」は、動作の進行や継続を表す接続語尾「-다가」に強調の助詞「-는」が付いた表現です。話者が聞き手に対して警告や忠告を与えたり、強い懸念を表す際に用いられます。「このまま前節のような誤った行動や習慣を続けていたならば、後節のような望ましくない事態・失敗・健康悪化などの悪影響を招きかねない」という因果関係を指摘します。後節には推量や可能性を表す文末がよく結びつきます。",
+    "formation": "動詞語幹 + -다가는",
+    "examples": [
+      {
+        "translation": "こんなふうに食べ続けていては、健康を害してしまうかもしれません。"
+      },
+      {
+        "translation": "一緒に仕事を続けていては、お互いの関係が悪くなってしまいそうな気がします。"
+      },
+      {
+        "translation": "こんな調子で勉強していては、試験に落ちてしまうかもしれないよ。"
+      },
+      {
+        "translation": "毎日ゲームばかりしていては、将来困った問題に直面するかもしれないよ。"
+      }
+    ]
   },
   "ko_하여_145": {
-    "title": "~하여 [hayeo] (~ing, and)",
-    "shortExplanation": "Used to connect actions or show a method of doing something; roughly 'and' or 'by doing'.",
-    "longExplanation": "'~하여 [hayeo]' is a somewhat formal connective ending in Korean used to link two actions or show that the second action happens by means of the first. It can often be translated as 'and' or 'by doing' in English. This form is more common in written or formal contexts compared to conversational speech.",
-    "formation": "動詞 stem + 하여"
+    "title": "~하여 / ~아/어/하여（〜して、〜することによって）",
+    "shortExplanation": "書き言葉や改まった場面で用いられる接続表現で、先行動作が後続動作の手段・方法・原因となったり、動作が順序立てて継続することを表します（「〜して」「〜することにより」）。",
+    "longExplanation": "「~하여」は、「하다」用言に接続語尾「-아/어/여」が付いた、格調の高い文語体形式です（日常の話し言葉では「-해」と縮約されるのが一般的です）。公的な報告書、論文、報道、スピーチなどで好まれ、2つの動作を時間的順序に従って緊密につなぐ機能や、前節の行動を手段・方法として後節の成果や結果を達成したという因果関係を示す役割を果たします。",
+    "formation": "하다動詞語幹：-하여（話し言葉の縮約形：-해）；その他の動詞・形容詞語幹：-아/어",
+    "examples": [
+      {
+        "translation": "彼は毎日運動をして、健康を維持しています。"
+      },
+      {
+        "translation": "一生懸命に勉強して、目標を達成しました。"
+      },
+      {
+        "translation": "社長は従業員たちに動機付けを与え、より優れた成果を収めました。"
+      },
+      {
+        "translation": "私は予算を節約して、旅行の資金を用立てました。"
+      }
+    ]
   },
   "ko_하여야_146": {
-    "title": "~하여야 [hayeoya] (Must)",
-    "shortExplanation": "Expresses necessity or obligation; 'must', 'have to'.",
-    "longExplanation": "'~하여야 [hayeoya]' is a more formal verb ending indicating something must or has to be done. It attaches to action verbs and emphasizes the necessity of the action. It's typically used in more formal or written contexts.",
-    "formation": "Action 動詞 + 하여야"
+    "title": "~하여야 / ~아/어/해야 (하다)（〜しなければならない、〜してこそ）",
+    "shortExplanation": "必然性や義務、あるいは目的を果たすために満たすべき不可欠な必須条件を表します（「〜しなければならない」「〜してこそ」）。",
+    "longExplanation": "「~하여야」は、「하다」用言に必須の条件を表す接続語尾「-아/어/여야」が付いた格調高い表現です（日常会話では「-해야」と縮約されます）。主に補助動詞「하다」や「되다」を伴って「~하여야 하다/되다」（〜しなければならない）の構文を作り、ある行動が果たすべき義務であることや、後節の望ましい目標を達成するために避けては通れない前提条件であることを強く指示します。",
+    "formation": "하다動詞語幹：-하여야（話し言葉の縮約形：-해야）；その他の動詞語幹：-아/어야；後続表現：하다 / 되다",
+    "examples": [
+      {
+        "translation": "試験で良い点を取るためには、一生懸命勉強しなければなりません。"
+      },
+      {
+        "translation": "Violeコーディングを学ぶためには、まず基礎的なPythonの文法を熟知していなければなりません。"
+      },
+      {
+        "translation": "仕事を立派に成し遂げるためには、集中しなければなりません。"
+      },
+      {
+        "translation": "早く体重を減らしたいなら、毎日運動しなければなりません。"
+      }
+    ]
   },
   "ko_하였다_147": {
-    "title": "~하였다 [hayeotda] (Past formal)",
-    "shortExplanation": "A formal past-tense marker in Korean, used when addressing elders, superiors, or in polite writing.",
-    "longExplanation": "'~하였다 [hayeotda]' is a formal or literary past-tense form in Korean that can be attached to action or descriptive verbs. It's frequently seen in official documents or polite narratives, emphasizing respect or formality.",
-    "formation": "動詞 stem + 하였다"
+    "title": "~하였다 / ~았다/었다/하였다（〜した、〜いたしました[過去・格式体]）",
+    "shortExplanation": "過去の動作や状態を表す改まった文語体・格式体の終結表現で、公的な文章や丁寧な語りで用いられます（「〜した」「〜いたしました」）。",
+    "longExplanation": "「~하였다」は、「하다」用言の語幹に過去時制を表す先語末語尾「-였-」と終結語尾「-다」が結合した正規の文語的形態です（丁寧な終結形では「-하였습니다」となります）。公式文書、学術論文、報道記事、格調高い回想文などで用いられ、過去の出来事や完了した事実を重厚かつ客観的に叙述します。日常のくだけた会話では「-했다」と縮約されるのが通例です。",
+    "formation": "하다用言語幹：-하였다（丁寧体：-하였습니다 / 話し言葉の縮約形：-했다）；その他の語幹：-았다/었다",
+    "examples": [
+      {
+        "translation": "昨日ラーメンを作って食べようと家に帰ったところ、おばさんがお客さんのために料理を作ったと言うので、一緒に手伝いました。"
+      },
+      {
+        "translation": "彼は韓国語を学び始めた頃は何も知りませんでしたが、今やTOPIK試験の準備を整えました。"
+      },
+      {
+        "translation": "生徒たちは課題を準備してこないだろうと予想していましたが、全員が真剣に課題を準備してきました。"
+      },
+      {
+        "translation": "私たちのチームは今回のプロジェクトのために懸命に努力し、ついに成功裏に締めくくりました。"
+      }
+    ]
   },
   "ko_하자_148": {
-    "title": "~하자 [haja] (Upon doing, as soon as)",
-    "shortExplanation": "Indicates that the second action happens immediately after the first action is completed.",
-    "longExplanation": "'~하자 [haja]' is a connector in Korean that conveys immediacy: once the action in the first clause is done, the action in the second clause occurs right away. It is similar to 'as soon as' in English.",
-    "formation": "動詞 stem + 하자"
+    "title": "~하자 / ~자마자（〜するやいなや、〜するとすぐ）",
+    "shortExplanation": "前節の動作が完了した直後に、後節の動作が間髪を入れず起こることを表す接続語尾です（「〜するやいなや」「〜するとすぐ」）。",
+    "longExplanation": "「~자」または強調形の「~자마자」は、先行する動作が終わると同時に、後続の動作や出来事が直ちに発生することを示す接続表現です。日本語の「〜するやいなや」「〜するとすぐに」に相当します。前節には過去形語尾（-았/었-）を付けず、時制は文末で表現されます。口語ではより即時性を強調する「-자마자」が非常に頻繁に用いられます。",
+    "formation": "動詞語幹 + -자마자（または -자）",
+    "examples": [
+      {
+        "translation": "ドアを開けるやいなや、子犬が入ってきました。"
+      },
+      {
+        "translation": "道を渡ってすぐ、タクシーに乗りました。"
+      },
+      {
+        "translation": "雨が降るやいなや、傘を差しました。"
+      },
+      {
+        "translation": "本を閉じるやいなや、眠気が襲ってきました。"
+      }
+    ]
   },
   "ko_할_149": {
-    "title": "~할 것이다 [hal geotida] (Will, shall)",
-    "shortExplanation": "〜を表すために使用されます the speaker's future prediction or plan.",
-    "longExplanation": "The grammar point '~할 것이다 [hal geotida]' is a future tense form that indicates a prediction or intention. Formed by the verb stem plus '할 것이다', it translates to 'will' or 'shall' in English. It is used when the speaker predicts a future occurrence or announces a plan.",
-    "formation": "動詞 stem + ~할 것이다"
+    "title": "~(으)ㄹ 것이다（〜するつもりだ、〜だろう）",
+    "shortExplanation": "話し手の未来に対する意志や計画、または未来の出来事に対する確信的な推測を表します（「〜するつもりだ」「〜だろう」）。",
+    "longExplanation": "「~(으)ㄹ 것이다」は、未来を表す連体形語尾「-(으)ㄹ」、依存名詞「것（こと・もの）」、指定詞「이다」が結びついた表現です。主語が一人称の場合は未来の強い意志や予定・計画を表し（「〜するつもりだ」「〜する予定だ」）、三人称や客観的状況に対しては話者の確信に近い推測・予測を表します（「〜するだろう」「〜に違いない」）。会話では「-(으)ㄹ 거예요」や「-(으)ㄹ 겁니다」の形で頻繁に使われます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 것이다（母音語幹には -ㄹ 것이다、子音語幹には -을 것이다）",
+    "examples": [
+      {
+        "translation": "明日は雨が降るだろう。だから傘を持っていくべきだろう。"
+      },
+      {
+        "translation": "子犬を飼うつもりだ。だから子犬用のグッズを買わなければならないだろう。"
+      },
+      {
+        "translation": "来週、韓国でコンサートに行くつもりだ。だからチケットを予約する予定だ。"
+      },
+      {
+        "translation": "来年大学院に進学するつもりだ。だから詳細な計画を立てる予定だ。"
+      }
+    ]
   },
   "ko_할_150": {
-    "title": "~할 때마다 [hal ttaemada] (Every time when)",
-    "shortExplanation": "〜を表すために使用されます 'every time when' or 'whenever'.",
-    "longExplanation": "'~할 때마다 [hal ttaemada]' is used when something happens each time a certain action or event occurs. It emphasizes a recurring event or repetitive situation following that action.",
-    "formation": "動詞 (dictionary form) + 할 때마다"
+    "title": "~(으)ㄹ 때마다（〜するたびに、〜する時はいつも）",
+    "shortExplanation": "ある動作や状況が起きるたびに、常に決まって後節の事態が繰り返されることを表します（「〜するたびに」「〜するごとに」）。",
+    "longExplanation": "「~(으)ㄹ 때마다」は、未来・不確定を表す連体形語尾「-(으)ㄹ」、時を表す名詞「때（時）」、規則的反復を表す補助詞「마다（〜ごと・〜たび）」が結合した構文です。前節の動作や状態が生じるごとに、必ず後節の行為や心理状態が伴って発生するという反復性・規則性を強調します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 때마다（母音語幹には -ㄹ 때마다、子音語幹には -을 때마다）；名詞 + 때마다",
+    "examples": [
+      {
+        "translation": "彼は麺類を食べるたびに彼女のことを思い出します。彼女が麺好きだったからです。"
+      },
+      {
+        "translation": "私は家に帰るたびに子犬が出迎えてくれるので、とても幸せです。"
+      },
+      {
+        "translation": "彼女は彼を見るたびに、胸がドキドキと速く鼓動し始めます。"
+      },
+      {
+        "translation": "祖母は私が訪ねていくたびに特別なおやつを作ってくれるので、いつも楽しみにしています。"
+      }
+    ]
   },
   "ko_할_151": {
-    "title": "~할 만하다 [hal manhada] (Worth doing)",
-    "shortExplanation": "〜を示します that something is worth doing or trying.",
-    "longExplanation": "'~할 만하다 [hal manhada]' expresses the worthiness or value of doing an action. It often follows a verb stem. It can be used to suggest that an activity or item is meaningful, beneficial, or simply worth a try.",
-    "formation": "動詞 stem + 할 만하다"
+    "title": "~(으)ㄹ 만하다（〜する価値がある、〜に値する）",
+    "shortExplanation": "ある行為をするだけの十分な価値や意義があること（「〜する価値がある」「〜に値する」）、あるいは許容できる範囲にあることを表します。",
+    "longExplanation": "「~(으)ㄹ 만하다」は、連体形語尾「-(으)ㄹ」に補助形容詞「만하다」が結びついた構文です。その行為を行うだけの十分な価値や推薦に足る理由があることを示します（「観る価値がある」「食べる価値がある」「買うに値する」）。また、文脈によっては「まあまあ耐えられる」「一応満足できる」といった許容・妥協のニュアンスを表すこともあります。",
+    "formation": "動詞語幹 + -(으)ㄹ 만하다（母音語幹には -ㄹ 만하다、子音語幹には -을 만하다）",
+    "examples": [
+      {
+        "translation": "この映画を観ることは時間の無駄ではなく、かなり価値がありました。観る価値のある映画だったからです。"
+      },
+      {
+        "translation": "その本は内容が豊かで、読む価値が十分にありました。"
+      },
+      {
+        "translation": "あのアパートは住んでみる価値がありますよ。交通が便利で設備も整っていますから。"
+      },
+      {
+        "translation": "このカメラは少し高価ですが、品質が良いので買う価値があります。"
+      }
+    ]
   },
   "ko_할_152": {
-    "title": "~할 수 있다 [hal su itda] (Can do)",
-    "shortExplanation": "〜を表すために使用されます possibility or ability; 'can do' something.",
-    "longExplanation": "'~할 수 있다 [hal su itda]' indicates that someone is capable of or has the possibility to perform an action, effectively meaning 'can'. It is often used for skills or situations where something is feasible.",
-    "formation": "動詞 stem + -(으)ㄹ 수 있다"
+    "title": "~(으)ㄹ 수 있다（〜することができる、〜できる）",
+    "shortExplanation": "動作主の能力やスキル、または客観的な可能性・実現性を表す表現です（「〜することができる」「〜できる」）。",
+    "longExplanation": "「~(으)ㄹ 수 있다」は、未来・可能性の連体形語尾「-(으)ㄹ」、手段や可能性を表す依存名詞「수」、存在詞「있다（ある）」が組み合わさった、韓国語における最も基本的な可能表現です。主体がその行為を実行する能力を持っていること（「〜できる」）、または状況や条件が許してその事態が実現可能であることを表します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 수 있다（母音語幹には -ㄹ 수 있다、子音語幹には -을 수 있다）",
+    "examples": [
+      {
+        "translation": "私は韓国語を少し話すことができます。そのため韓国への関心が一層深まりました。"
+      },
+      {
+        "translation": "あなたが考えた通りに実行できますよ。あなたがその仕事を一番よく知っているので信頼しています。"
+      },
+      {
+        "translation": "これは誰でも簡単にできる仕事ですから、あまり心配しないでください。"
+      },
+      {
+        "translation": "週末に時間があれば、私が車を修理することができますよ。"
+      }
+    ]
   },
   "ko_할_153": {
-    "title": "~할 수 없다 [hal su eopda] (Cannot do)",
-    "shortExplanation": "〜を表すために使用されます inability or impossibility; 'cannot do'.",
-    "longExplanation": "'~할 수 없다 [hal su eopda]' means that the subject does not have the capacity or possibility to perform a certain action, i.e., 'cannot' do it in current circumstances. It emphasizes the impossibility or lack of ability.",
-    "formation": "動詞 stem + -(으)ㄹ 수 없다"
+    "title": "~(으)ㄹ 수 없다（〜することができない、〜できない）",
+    "shortExplanation": "能力の不足や状況・外部要因の制限により、ある動作を行うことが不可能であることを表します（「〜することができない」「〜できない」）。",
+    "longExplanation": "「~(으)ㄹ 수 없다」は、連体形語尾「-(으)ㄹ」、依存名詞「수」、否定存在詞「없다（ない）」が結合した可能表現の否定形です。話し手や主語が能力的にその動作を行えないこと、あるいは状況や物理的制約によって行動の実行が不可能であることを明確に表します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 수 없다（母音語幹には -ㄹ 수 없다、子音語幹には -을 수 없다）",
+    "examples": [
+      {
+        "translation": "今はとても忙しいので、友達と一緒に食事をすることができません。"
+      },
+      {
+        "translation": "彼女は水泳が苦手なので、一人で水に入ることができません。"
+      },
+      {
+        "translation": "私は芸術的なセンスがないため、絵を上手に描くことができません。"
+      },
+      {
+        "translation": "この映画は怖すぎるので、私は二度と観ることができません。"
+      }
+    ]
   },
   "ko_할_154": {
-    "title": "~할 줄 알다 [hal jul alda] (Know how to)",
-    "shortExplanation": "〜を表すために使用されます that one knows how to do something or has the skill/knowledge to do it.",
-    "longExplanation": "The phrase '~할 줄 알다 [hal jul alda]' signifies that someone has learned or can perform an action or process, translating to 'know how to (do something)' in English. It focuses on practical skill or capability rather than mere theoretical knowledge.",
-    "formation": "動詞 stem + (으)ㄹ 줄 알다"
+    "title": "~(으)ㄹ 줄 알다（〜のやり方を知っている、〜できる、〜かと思う）",
+    "shortExplanation": "ある動作の方法や手順・技術を心得ていること（「〜の仕方を知っている」「〜できる」）を表します。文脈により「〜かと思う・〜とばかり思っていた」の意味にもなります。",
+    "longExplanation": "「~(으)ㄹ 줄 알다」は、連体形語尾「-(으)ㄹ」、方法や道理を表す依存名詞「줄」、動詞「알다（知る・分かる）」が組み合わさった表現です。学習や経験を通じて後天的に得た技術や方法を知っており、それを実行できることを表します（否定形は「-(으)ㄹ 줄 모르다」）。また、別の用法として「〜だとばかり思っていた」という思い込みや予想を表すこともあります。",
+    "formation": "動詞語幹 + -(으)ㄹ 줄 알다（母音語幹には -ㄹ 줄 알다、子音語幹には -을 줄 알다）",
+    "examples": [
+      {
+        "translation": "私はピアノを弾くことができます（弾き方を知っています）。でも専門家ではありません。"
+      },
+      {
+        "translation": "うちの子はもう自分で靴を履くことができます。"
+      },
+      {
+        "translation": "チョルスはいつも新しいことを学ぶ方法をよく知っているようでした。"
+      },
+      {
+        "translation": "姉は料理を上手に作ることができるので、いつも美味しい料理を作ってくれます。"
+      }
+    ]
   },
   "ko_할지라도_155": {
-    "title": "~할지라도 [haljirado] (Even if)",
-    "shortExplanation": "This grammar point in Korean is 〜を表すために使用されます 'even if' or 'no matter how'.",
-    "longExplanation": "The '~할지라도 [haljirado]' grammar pattern is used in Korean to indicate a hypothetical situation similar to 'even if' or 'no matter how' in English. It is used before verbs (or adjectives) to express a condition, concession, or possibility contrary to reality or expectation.",
-    "formation": "動詞 (Stem) + (으)ㄹ지라도"
+    "title": "~(으)ㄹ지라도（たとえ〜であっても、〜としても）",
+    "shortExplanation": "強い仮定的な譲歩を表す格調高い接続語尾で、前節の極端な状況や困難を仮定しても、後節の意志や事実に影響がないことを示します（「たとえ〜であっても」「〜としても」）。",
+    "longExplanation": "「~(으)ㄹ지라도」は、接続語尾「-(으)ㄹ지」に譲歩の助詞「라도」が結合した、主に文章語や改まった場面で使われる譲歩の接続語尾です。前節で困難や逆境などの極端な条件を仮定しつつ、「たとえその状況が事実だとしても、後節の決意・方針・事実は決して揺るがない」という強い意志や客観的事実を提示します。「-아/어도」よりも固く、強い語感を持ちます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ지라도（母音語幹には -ㄹ지라도、子音語幹には -을지라도）",
+    "examples": [
+      {
+        "translation": "どんな問題が生じようとも、私は常に全力を尽くして仕事をやり遂げます。"
+      },
+      {
+        "translation": "明日雨が降るとしても、私は外出するつもりです。"
+      },
+      {
+        "translation": "あなたがそのような目に遭ったことがあるとしても、同情はしません。"
+      },
+      {
+        "translation": "コストが高くつくとしても、最高の品質を保証するために高価な材料を使用します。"
+      }
+    ]
   },
   "ko_든지_156": {
-    "title": "~든지 ~든지 [deunji deunji] (Whether ... or)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます 'whether ... or', indicating two (or more) possibilities.",
-    "longExplanation": "The pattern '~든지 ~든지' in Korean lists multiple possibilities or choices. It translates closely to 'whether ... or' in English. It is often used in daily conversation to show that no matter which option happens or is chosen, the outcome or decision remains consistent.",
-    "formation": "動詞 (Stem) + 든지 + 動詞 (Stem) + 든지"
+    "title": "~든지 ~든지（〜しようと〜しようと、〜であれ〜であれ）",
+    "shortExplanation": "2つ以上の選択肢を並列し、どちらを選ぼうとも後節の結果や事態に差異がないことを表す接続語尾です（「〜であれ〜であれ」「〜するか〜するか」）。",
+    "longExplanation": "「~든지 ~든지」は、複数の動作や状態の可能性を列挙し、そのいずれが選択されたとしても、後節で述べられる判断、結果、状況には何ら影響を与えず無関係であることを示す接続語尾です。日常の会話では縮約形の「~든 ~든」がよく用いられます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -든지 + 動詞語幹 / 形容詞語幹 + -든지（名詞には -(이)든지）",
+    "examples": [
+      {
+        "translation": "彼女が今夜到着しようと明日の朝到着しようと、私たちは彼女を待たなければなりません。"
+      },
+      {
+        "translation": "この問題を解決するにせよ先送りにするにせよ、決断はあなたが下さなければなりません。"
+      },
+      {
+        "translation": "私たちが勝とうが負けようが、最善を尽くすことこそが重要です。"
+      },
+      {
+        "translation": "彼が出席しようと欠席しようと、会議は予定通り進行します。"
+      }
+    ]
   },
   "ko_할_157": {
-    "title": "~할 텐데 [hal tende] (Probably will)",
-    "shortExplanation": "〜を表すために使用されます a prediction or expectation that something will occur in the future.",
-    "longExplanation": "'~할 텐데 [hal tende]' is a common ending in Korean that expresses a prediction or expectation that a certain event, situation, or behavior is likely to occur. It can also convey regret when referring to a likely outcome that did not happen. It is formed by taking the verb stem plus (으)ㄹ 텐데.",
-    "formation": "動詞 stem + (으)ㄹ 텐데"
+    "title": "~(으)ㄹ 텐데（〜するはずなのに、〜だろうから）",
+    "shortExplanation": "話し手の推測や予定を前提・背景として提示し、後節で提案や心配、あるいは遺憾の意を表します（「〜するはずなのに」「〜だろうから」）。",
+    "longExplanation": "「~(으)ㄹ 텐데」は、予定や強い推測を表す「-(으)ㄹ 터」に、背景を提示する接続語尾「-ㄴ/인데」が結びついた構文です。話し手が「きっと〜だろう」と強く推測する状況を前節で提示し、それを根拠・背景として後節で忠告、勧誘、懸念などを述べます。過去の反実仮想（-았/었다면）と呼応する場合や文末で終わる場合は、「〜のはずなのに」「〜だろうに」という残念な気持ちや心残りを表します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 텐데（母音語幹には -ㄹ 텐데、子音語幹には -을 텐데）",
+    "examples": [
+      {
+        "translation": "明日は雨が降るでしょうから、傘を持っていくのが良いですよ。"
+      },
+      {
+        "translation": "今出発すれば時間に間に合うはずですが、あまり遅く到着してはいけません。"
+      },
+      {
+        "translation": "彼の成績は優秀なので、きっと奨学金をもらえるはずです。"
+      },
+      {
+        "translation": "友達が手伝ってくれていれば問題を解決できたはずなのに、一人では大変です。"
+      }
+    ]
   },
   "ko_함께_158": {
-    "title": "~함께 [hamkke] (Together with)",
-    "shortExplanation": "〜を示します doing something together with someone or something.",
-    "longExplanation": "'~함께 [hamkke]' is a phrase in Korean that implies doing an activity 'together with' someone or something. It shows a simultaneous action or condition, similar to 'together with' in English. Commonly used with nouns.",
-    "formation": "名詞 + 함께"
+    "title": "~(와/과) 함께（〜と一緒に、〜とともに）",
+    "shortExplanation": "ある人物や対象と共同で行動を共にすることを表す同伴表現です（「〜と一緒に」「〜とともに」）。",
+    "longExplanation": "「~와/과 함께」は、同伴を表す助詞「-와/과」に副詞「함께（一緒に・共に）」が結びついた表現です。人や生き物を表す名詞に付いて、その対象と行動を共にすることを明示します。口語では「-하고 함께」や「-(이)랑 함께」も同様に使われます。また、抽象名詞に付いて「〜に伴って」「〜とともに」という付随的変化を表すこともあります。",
+    "formation": "名詞 + 와/과 함께（母音終わりには 와 함께、子音終わりには 과 함께）",
+    "examples": [
+      {
+        "translation": "私は今日、友達と一緒に映画を観ました。映画は本当に面白くて、みんなが楽しみました。"
+      },
+      {
+        "translation": "私は母と一緒に市場に行き、本当にたくさんの買い物をしました。"
+      },
+      {
+        "translation": "私は友達と一緒に旅行へ行き、そこでとても素晴らしい写真を撮りました。"
+      },
+      {
+        "translation": "私は弟（妹）と一緒に公園で遊びました。私たちは本当に珍しい動物たちを見ました。"
+      }
+    ]
   },
   "ko_해_159": {
-    "title": "~해 보다 [hae boda] (Try to do)",
-    "shortExplanation": "Indicates the speaker's attempt or experience of doing something.",
-    "longExplanation": "'~해 보다 [hae boda]' is used when a speaker expresses trying or experiencing something, often for the first time. It is typically formed with the verb stem plus '아/어 보다.' 〜と訳されます 'to try (doing something)' in English.",
-    "formation": "動詞 stem + 아/어 보다"
+    "title": "~아/어 보다（〜してみる、〜したことがある）",
+    "shortExplanation": "ある行為を試みにやってみる試行を表すか、過去の経験を表す補助動詞表現です（「〜してみる」「〜したことがある」）。",
+    "longExplanation": "「~아/어 보다」は、接続語尾「-아/어」に補助動詞「보다（見る・試す）」が結合した構文です。（1）試しにその動作を実際に行ってみる「試行」（「やってみる」「食べてみる」）；（2）過去形「~아/어 봤다」の形で用いられた場合は、過去にその動作を行ったことがあるという「経験」を表します。",
+    "formation": "動詞語幹 + -아/어 보다（語幹末が ㅏ, ㅗ の場合は -아 보다、それ以外は -어 보다、하다 は 해 보다）",
+    "examples": [
+      {
+        "translation": "私は一度、韓国語で討論をしてみようと思います。しかし難しくて練習が必要です。"
+      },
+      {
+        "translation": "多くの人が一度韓国料理を作ってみてと言ったので、今日はキムチチゲを作ってみました。"
+      },
+      {
+        "translation": "新しいプログラムを使ってみようとしましたが、複雑すぎて諦めました。"
+      },
+      {
+        "translation": "私は年を重ねても新しい経験をしてみることが好きです。だから頻繁に旅行へ行ってみようと思っています。"
+      }
+    ]
   },
   "ko_해_160": {
-    "title": "~해 주다 [hae juda] (Do for someone)",
-    "shortExplanation": "〜を表すために使用されます an action done for someone else's benefit.",
-    "longExplanation": "'~해 주다 [hae juda]' indicates that the subject does or did something for the benefit of another person. Commonly used in polite speech to express that an action is done for someone else. It can also show gratitude or a request.",
-    "formation": "動詞 stem + 아/어 주다 (하다 → 해 + 주다)"
+    "title": "~아/어 주다（〜してくれる、〜してあげる）",
+    "shortExplanation": "他者の利益のために親切に行為を行うこと（授受表現）を表します（「〜してくれる」「〜してあげる」）。",
+    "longExplanation": "「~아/어 주다」は、接続語尾「-아/어」に授受の補助動詞「주다（与える・くれる）」が結びついた表現です。ある人が他人のために親切に行動を施したり、恩恵を与えたりすることを表します（日本語の「〜してあげる」「〜してくれる」に相当）。目上の人に対して行う場合は謙譲形の「~아/어 드리다（〜して差し上げる）」を用います。",
+    "formation": "動詞語幹 + -아/어 주다（目上には -아/어 드리다；語幹末が ㅏ, ㅗ の場合は -아 주다、それ以外は -어 주다、하다 は 해 주다）",
+    "examples": [
+      {
+        "translation": "母が体調を崩していたので、私が夕食を作ってあげました。"
+      },
+      {
+        "translation": "友達が試験勉強を手伝ってくれたので、お礼を言いました。"
+      },
+      {
+        "translation": "先生が私の質問に対して詳しく説明してくださったので、よく理解できました。"
+      },
+      {
+        "translation": "弟（妹）が部屋の掃除を手伝ってくれると言いました。"
+      }
+    ]
   },
   "ko_해야겠다_161": {
-    "title": "~해야겠다 [haeyagetda] (Should do)",
-    "shortExplanation": "Expresses the speaker’s intention or resolution to do something.",
-    "longExplanation": "The phrase '~해야겠다 [haeyagetda]' shows the speaker's firm decision or determination to do something. It often translates to 'I should,' 'I ought to,' or 'I must' in English, highlighting the importance or necessity of the action.",
-    "formation": "動詞 stem + 아/어야 겠다"
+    "title": "~아/어야겠다（〜しなきゃ、〜しなければならない、〜しよう）",
+    "shortExplanation": "話し手がその行為の必要性や緊急性を自覚し、自らの強い決意や意志を表す表現です（「〜しなきゃ」「〜しなければ」「〜することにしよう」）。",
+    "longExplanation": "「~아/어야겠다」は、義務・必要条件を表す「-아/어야」に、意志を表す先語末語尾「-겠-」、平叙終結語尾「-다」が結合した表現です。現状を判断した結果、自分がその行動をとるべきだと自覚し、「もう〜しなければならない」「絶対に〜しよう」と自分自身に言い聞かせたり決意を表明したりする際に多用されます。",
+    "formation": "動詞語幹 + -아/어야겠다（語幹末が ㅏ, ㅗ の場合は -아야겠다、それ以外は -어야겠다、하다 は 해야겠다）",
+    "examples": [
+      {
+        "translation": "あなたがその問題に対処し続けないのなら、私が何とかしなければなりませんね。"
+      },
+      {
+        "translation": "このようなミスを繰り返さないためには、もっとたくさん練習しなければいけませんね。"
+      },
+      {
+        "translation": "私たちはチームメンバーとのコミュニケーションを改善するために、もっと努力しなければなりません。"
+      },
+      {
+        "translation": "今回の試験に合格するためには、もっと一生懸命勉強しなければなりませんね。"
+      }
+    ]
   },
   "ko_해서는_162": {
-    "title": "~해서는 안 되다 [haeseoneun an dweda] (Must not do)",
-    "shortExplanation": "Shows prohibition or something that must not be done.",
-    "longExplanation": "In Korean, '~해서는 안 되다 [haeseoneun an dweda]' indicates an action that is prohibited. It is used with action verbs to form negative commands or strong advice, meaning 'must not' or 'should not' do something. More common in formal contexts or rule statements.",
-    "formation": "動詞 stem + 아/어서는 안 되다 (하다 → 해서는 안 되다)"
+    "title": "~아/어서는 안 되다（〜してはならない、〜してはいけない）",
+    "shortExplanation": "規則、常識、道徳に照らし合わせて、ある行為を禁止したり厳しく戒めたりする表現です（「〜してはならない」「〜してはいけない」）。",
+    "longExplanation": "「~아/어서는 안 되다」は、接続語尾「-아/어서」、強調の助詞「-는」、否定副詞「안」、動詞「되다（よい・できる）」が結合した格式ある禁止表現です。法規、組織の規則、倫理道徳などに反するため、その行為を行うことが許されないことを明示します。公的な規則の提示や、改まった忠告・警告の場で多用されます。",
+    "formation": "動詞語幹 + -아/어서는 안 되다（語幹末が ㅏ, ㅗ の場合は -아서는 안 되다、それ以外は -어서는 안 되다、하다 は 해서는 안 되다）",
+    "examples": [
+      {
+        "translation": "その文書をコピーしてはなりません。企業の機密情報です。"
+      },
+      {
+        "translation": "困難な状況で嘘をついてはなりません。それは信頼を損なうことになりかねません。"
+      },
+      {
+        "translation": "試験で不正行為をしてはなりません。それはあなたの成績を台無しにしてしまいます。"
+      },
+      {
+        "translation": "友達を裏切ってはなりません。それはかけがえのない大切な関係を壊してしまいます。"
+      }
+    ]
   },
   "ko_해야_163": {
-    "title": "~해야 하다 [haeya hada] (Have to do)",
-    "shortExplanation": "Expresses obligation or necessity (have to, must, need to).",
-    "longExplanation": "'~해야 하다 [haeya hada]' indicates a strong necessity or obligation to carry out an action. It often translates to 'have to,' 'must,' or 'need to' in English, showing that there is no other choice but to do the mentioned action.",
-    "formation": "動詞 stem + 아/어야 하다"
+    "title": "~해야 하다（〜しなければならない、〜すべきだ）",
+    "shortExplanation": "ある動作を行う強い必要性や義務、当為を表します（「〜しなければならない」「〜する必要がある」）。",
+    "longExplanation": "「~해야 하다」（口語では「~해야 되다」も頻出）は、話者や主語がその行動を行う強い必要性や義務を負っていることを表します。ほかに選択肢がなく「必ずそうしなければならない」「そうするのが当然である」という強いニュアンスを含みます。日本語の「〜しなければならない」「〜する必要がある」に相当します。",
+    "formation": "動詞語幹 + -아/어야 하다（または -아/어야 되だ）",
+    "examples": [
+      {
+        "translation": "家に帰らなければならないので、約束をキャンセルしなければなりません。そうしないと遅刻してしまいそうです。"
+      },
+      {
+        "translation": "私は明日試験があるので、今夜勉強しなければなりません。勉強しないと良い点が取れないと思います。"
+      },
+      {
+        "translation": "今週末に父が病院に行かなければならないので、私が看病しなければなりません。"
+      },
+      {
+        "translation": "世界平和のためには、すべての国が共に努力しなければなりません。"
+      }
+    ]
   },
   "ko_했더니_164": {
-    "title": "~했더니 [haetdeoni] (After doing)",
-    "shortExplanation": "〜を表すために使用されます an unexpected result or surprise after doing an action.",
-    "longExplanation": "'~했더니 [haetdeoni]' is a grammar point used to describe a discovery or unexpected outcome that follows right after the speaker performed a certain action. It can imply some causal relationship, but it mainly highlights the speaker's surprise or the unanticipated result that happened immediately after an action.",
-    "formation": "動詞 in Past Tense + 더니"
+    "title": "~했더니（〜したら、〜したところ）",
+    "shortExplanation": "話者が過去にある行為をした結果、意外な事実を発見したり、思いがけない結果が生じたりしたことを表します（「〜したところ」「〜したら」）。",
+    "longExplanation": "「~했더니」は、過去形語尾「-았/었-」と回想の接続語尾「-더니」が結びついた表現です。前節の主語は通常一人称（私）であり、話者が自らある行動を実行した直後に、新たな事実に気づいたり、予想外の結果や相手の反応が生じたことを回想して後節で述べます。",
+    "formation": "動詞語幹 + -았/었더니（前節の主語は通常一人称）",
+    "examples": [
+      {
+        "translation": "私は今朝早く起きたら、頭痛がもっとひどくなってしまいました。"
+      },
+      {
+        "translation": "彼女に電話をしてみたところ、すでに家に帰って来ていました。"
+      },
+      {
+        "translation": "私は夕食を食べて宿題をしたら、どうしてもう12時になってしまったのでしょうか。"
+      },
+      {
+        "translation": "私は店で靴を買ったのですが、家に帰ってきたら足が痛くなっていました。"
+      }
+    ]
   },
   "ko_했었다_165": {
-    "title": "~했었다 [haesseotda] (Had done)",
-    "shortExplanation": "〜を表すために使用されます an action that was completed in the past.",
-    "longExplanation": "'~했었다 [haesseotda]' is a past-perfect-like expression in Korean, adding a sense of completion or “used to” nuance to something that happened previously. It can show that one action was finished in the past before another event took place, or that a repeated action/condition existed but does not continue anymore.",
-    "formation": "動詞 in past tense + 었다"
+    "title": "~했었다（かつて〜していた、〜したことがあった）",
+    "shortExplanation": "過去の一時期にその動作や状態が存在していたものの、現在はすでに終了または断絶しており、継続していないことを表します（「かつて〜していた」「〜したことがあった」）。",
+    "longExplanation": "「~했었다」は、過去を表す先語末語尾が二重に重なった（「-았/었- + -었-」）形態で、過去完了断絶（大過去）のニュアンスを表します。過去の出来事や状態が現在と切り離されており、「当時はそうだったが、今ではもうそうではない」という現在との対比・断絶を色濃く示します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -았/었었다",
+    "examples": [
+      {
+        "translation": "結婚前は旅行にたくさん行っていたものでした。でも子供が生まれてからは、あまり行けなくなってしまいました。"
+      },
+      {
+        "translation": "あの頃の青春を振り返ってみると、本当に幸せだったのだということに気づかされました。"
+      },
+      {
+        "translation": "母が来られた時には、すでに夕食を終えてしまっていました。"
+      },
+      {
+        "translation": "あなたが到着した時には、飛行機はすでに出発してしまっていました。"
+      }
+    ]
   },
   "ko_했으면_166": {
-    "title": "~했으면 좋겠다 [haesseumyeon jotgetda] (I wish, I hope)",
-    "shortExplanation": "〜を表すために使用されます wishing or hoping for a situation to happen.",
-    "longExplanation": "'~했으면 좋겠다 [haesseumyeon jotgetda]' is commonly 〜を表すために使用されます a personal wish or hope for some future or hypothetical situation. 〜と訳されます 'I wish...' or 'I hope...' in English. The speaker desires the action or state described by the verb.",
-    "formation": "動詞 + 았/었으면 좋겠다 (or 했으면 좋겠다)"
+    "title": "~했으면 좋겠다（〜ならいいな、〜してほしい）",
+    "shortExplanation": "ある事態や動作が実現することを切に望む願望や希望を表します（「〜ならいいな」「〜してほしい」「〜できればと思う」）。",
+    "longExplanation": "「~했으면 좋겠다」（または「-았/었으면 좋겠다」）は、過去形先語尾「-았/었-」、条件の接続語尾「-으면」、および「좋겠다（良いだろう）」が組み合わさった表現です。過去の形をとっていますが、実際には未来や現在の実現を望む仮定を表し、「〜したらいいな」「〜してほしい」という話し手の率直な願いや期待を示します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -았/었으면 좋겠다（または -았/었으면 하다）",
+    "examples": [
+      {
+        "translation": "今回の試験に合格できたらいいなと思います。そうしてこそ自分の夢を叶えることができます。"
+      },
+      {
+        "translation": "明日の天気が良かったら嬉しいです。そうすれば外で遊ぶことができますから。"
+      },
+      {
+        "translation": "彼女が幸せになってくれたらと願っています。彼女はたくさんの試練を経験してきましたから。"
+      },
+      {
+        "translation": "私たちのチームが勝ってくれたらいいなと思います。私たちは一生懸命練習しましたから。"
+      }
+    ]
   },
   "ko_했을_167": {
-    "title": "~했을 때 [haesseul ttae] (When someone did)",
-    "shortExplanation": "Expresses 'when someone did' or 'at the time when something was done'.",
-    "longExplanation": "'~했을 때 [haesseul ttae]' is 〜を示します a moment in the past when an action happened. It can sometimes introduce a second clause that describes a related event or reaction. In English, it roughly translates as 'when (someone) did something' or 'at the time that (something) occurred.'",
-    "formation": "動詞 in past tense + 을/를 + 때 (했을 때)"
+    "title": "~했을 때（〜した時、〜した際）",
+    "shortExplanation": "過去のある動作が完了した、または起きた特定の時点や状況を表します（「〜した時」「〜した頃」）。",
+    "longExplanation": "「~했을 때」（または「-았/었을 때」）は、過去形先語尾「-았/었-」に連体形語尾「-(으)ㄹ」、そして依存名詞「때（時）」が結びついた構文です。過去においてある行為がすでに完了していた瞬間や、その事態が生じていた時点を明確に指し示し、後節ではその時に生じた別の事象や心情を述べます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -았/었을 때",
+    "examples": [
+      {
+        "translation": "家に帰ってきた時、お母さんが夕食を準備していました。"
+      },
+      {
+        "translation": "その映画を観た時、本当にたくさん泣きました。"
+      },
+      {
+        "translation": "海外へ引っ越した時、初めはとても大変でした。"
+      },
+      {
+        "translation": "卒業した時、両親は本当に誇らしそうにしていました。"
+      }
+    ]
   },
   "ko_했을_168": {
-    "title": "~했을 텐데 [haesseul tende] (Would have)",
-    "shortExplanation": "〜を表すために使用されます a hypothetical past scenario or regret.",
-    "longExplanation": "'~했을 텐데 [haesseul tende]' is used for hypotheticals or regrets about something that did not happen in the past. It often appears with '만약 ~았/었더라면 (if I had done something)' or implies 'I would have...' or 'It would have been...' in English.",
-    "formation": "動詞 stem + 았/었을 텐데"
+    "title": "~했을 텐데（〜しただろうに、〜だったはずなのに）",
+    "shortExplanation": "過去の事態に対する強い推測や、「もし〜していたら〜だっただろうに」という過去の仮定に対する遺憾や後悔を表します（「〜したはずなのに」「〜だっただろうに」）。",
+    "longExplanation": "「~했을 텐데」（または「-았/었을 텐데」）は、「-았/었을 터인데」の縮約形です。過去形「-았/었-」、推量連体形「-(으)ㄹ」、推量や予定を表す依存名詞「터」、そして前置き・対比の接続語尾「-ㄴ데」から成り立ちます。過去の事態に対する話者の確信的な推量を述べるほか、反事実的仮定「만약 ~았/었더라면（もし〜していたなら）」と共に用いて「〜しただろうに」という後悔や未練を表します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -았/었을 텐데",
+    "examples": [
+      {
+        "translation": "分かっていたならあのような決定はしなかっただろうに、結局多くの時間と労力を無駄にしてしまいました。"
+      },
+      {
+        "translation": "急いでいたらそのチャンスを掴めたはずなのに、今となっては遅すぎます。"
+      },
+      {
+        "translation": "あの時彼女に話していたら違った結果になっていただろうに、でもそうすることはできませんでした。"
+      },
+      {
+        "translation": "あれほど一生懸命働いていたなら成功していただろうに、それでも私は自分の選択に満足しています。"
+      }
+    ]
   },
   "ko_했지만_169": {
-    "title": "~했지만 [haetjiman] (Did, but)",
-    "shortExplanation": "Connects two contrasting ideas in the past; 'did, but'.",
-    "longExplanation": "'~했지만 [haetjiman]' is used to show a contrast or unexpected result between two past actions/conditions, comparable to 'did, but' or 'although' in English. It often indicates the second clause contradicts or does not live up to the expectation set by the first clause.",
-    "formation": "動詞 in past tense + 지만"
+    "title": "~했지만（〜したが、〜したけれど）",
+    "shortExplanation": "過去に起こった2つの事柄を対比・逆接で結び、「〜したが」「〜したけれど」という意味を表します。",
+    "longExplanation": "「~했지만」（または「-았/었지만」）は、過去形先語尾「-았/었-」と逆接の接続語尾「-지만（〜が、〜けれど）」が結びついた表現です。過去の出来事について、前節で行った行為や前提に対して、後節で期待に反する結果や対照的な事実を述べる際に広く用いられます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -았/었지만",
+    "examples": [
+      {
+        "translation": "私は昨日たくさん勉強しましたが、試験の成績は良くありませんでした。"
+      },
+      {
+        "translation": "彼は骨折って働きましたが、その努力が正当に認められませんでした。"
+      },
+      {
+        "translation": "私はそれをたった今終えましたが、本当に大変でした。"
+      },
+      {
+        "translation": "私たちは本当に速く走りましたが、バスに間に合いませんでした。"
+      }
+    ]
   },
   "ko_했다_170": {
-    "title": "~했다 [haetda] (Did, past tense)",
-    "shortExplanation": "Marks an action as completed in the past; 'did'.",
-    "longExplanation": "'~했다 [haetda]' is a standard past-tense form in Korean, equivalent to saying 'I did (something)' in English. It simply indicates that the action is finished and took place in the past.",
-    "formation": "動詞 stem + 했다"
+    "title": "~했다（〜した、〜であった【過去形平叙文】）",
+    "shortExplanation": "ヘラ体（平叙・書面体）の過去形終結語尾で、動作や状態が過去に完了したことを簡潔に述べる表現です（「〜した」「〜であった」）。",
+    "longExplanation": "「~했다」（または「-았/었다」）は、過去形先語尾「-았/었-」にヘラ体の平叙形終結語尾「-다」が付いた標準的な過去形叙述形式です。新聞、論文、書籍、日記などの客観的な書き言葉として多用されるほか、親しい友人や目下に対するくだけた話し言葉（パンマル）としても用いられ、過去に出来事が完了したことを端的に表します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -았/었다（하다動詞は했다となる）",
+    "examples": [
+      {
+        "translation": "昨日理解できなかった問題をとうとう解いた。本当に嬉しい。"
+      },
+      {
+        "translation": "私たちは今回のイベントを成功裏に終えた。みんな大変だったがやりがいがあった。"
+      },
+      {
+        "translation": "私は昨日たくさん勉強した。今日は少し休まなければならない。"
+      },
+      {
+        "translation": "先週末に友達とショッピングに行って、面白い服をたくさん買った。"
+      }
+    ]
   },
   "ko_거든요_0": {
-    "title": "~거든요 [geodeunyo] (You see; Explaining)",
-    "shortExplanation": "Used for explaining or giving background information to the listener.",
-    "longExplanation": "'~거든요 [geodeunyo]' is a grammar point used in Korean when the speaker wants to provide additional information or background to the listener, usually as an explanation or justification. It is common in spoken language and indicates that the speaker believes the listener may not know or might be surprised by this information.",
-    "formation": "動詞 + 거든요 / 形容詞 + 거든요"
+    "title": "~거든요（〜なんですよ、〜ですからね）",
+    "shortExplanation": "聞き手がまだ知らない理由や背景・事情を親しみを持って説明・釈明する口語終結語尾です（「〜なんですよ」「〜ですからね」）。",
+    "longExplanation": "「~거든요」は、日常の会話で頻繁に使われる終結語尾です。話し手が自分の行動や発言の理由を説明したり、相手が知らないであろう背景や事実を「実はね、〜なんですよ」と親切に、あるいは釈明を込めて伝える際に用いられます。聞き手に新たな情報を提示して納得を促すニュアンスを含みます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -거든요、名詞 + -(이)거든요",
+    "examples": [
+      {
+        "translation": "私はずいぶん昔に学校に通っていたものですから、現在の教育制度がどのように変わったのかよく分からないんですよ。"
+      },
+      {
+        "translation": "私が遅刻したのはバスが遅れたからなんですよ、それで時間に間に合わなかったのです。"
+      },
+      {
+        "translation": "私はコーヒーを飲みません。コーヒーにはカフェインがたくさん入っていますからね、それでよく眠れなくなってしまうのです。"
+      },
+      {
+        "translation": "一日中家にいるので退屈です。天気がとても寒いものですから、外に出られないんですよ。"
+      }
+    ]
   },
   "ko_게_2": {
-    "title": "~게 하다 [ge hada] (Make/let someone do)",
-    "shortExplanation": "〜を表すために使用されます that someone causes or allows another person to do something.",
-    "longExplanation": "'~게 하다' indicates that an action occurs because someone made, let, allowed, or caused it to happen. It can show compulsion, permission, encouragement, etc., depending on context.",
-    "formation": "動詞 stem + 게 하다"
+    "title": "~게 하다（〜させる、〜するようにする）",
+    "shortExplanation": "使役を表し、主語が他者に対してある動作をさせたり、そのような状態になるよう仕向けたり許可したりすることを表します（「〜させる」「〜するようにする」）。",
+    "longExplanation": "「~게 하다」は、副詞形語尾「-게」と補助動詞「하다」から成る長形使役の代表的文型です。主語となる人物が相手に対して特定の動作を実行させたり、ある心理的・物理的状態に至らせたり、あるいはそれを容認・許可するニュアンスを持ちます。「〜させる」「〜するように仕向ける」という意味で幅広く使われます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -게 하다",
+    "examples": [
+      {
+        "translation": "洗濯機の値段が高すぎたため、店の主人が私に割引をしてくれて、買えるようにしてくれました。"
+      },
+      {
+        "translation": "彼女は私を喜ばせ、より一層熱心に活動するように仕向けてくれました。"
+      },
+      {
+        "translation": "母は私が英語を学べるよう、図書館へ連れて行ってくれました。"
+      },
+      {
+        "translation": "チームのメンバーたちは私が昇進できるよう力を貸してくれました。"
+      }
+    ]
   },
   "ko_게_3": {
-    "title": "~게 해서는 안 되다 [ge haeseoneun an dweda] (Shouldn't make/let someone do)",
-    "shortExplanation": "Used to convey that one shouldn’t make or allow someone to do something.",
-    "longExplanation": "'~게 해서는 안 되다' expresses the idea that it is wrong or not allowed to make or let someone do a certain action. It often implies an admonition or rule for proper conduct.",
-    "formation": "動詞 stem + 게 해서는 안 되다"
+    "title": "~게 해서는 안 되다（〜させてはならない、〜させてはいけない）",
+    "shortExplanation": "他者にある動作をさせたり、好ましくない事態に陥らせたりすることを強く禁止・戒める表現です（「〜させてはならない」「〜させてはいけない」）。",
+    "longExplanation": "「~게 해서는 안 되다」は、使役の「-게 하다」に強調の助詞「-는」、そして禁止・不許可を表す「-어서는 안 되다（〜してはならない）」が組み合わさった表現です。道徳的規範、業務上の規則、教育的配慮などに基づき、「そのような行為を他者にさせたり放任したりすることは絶対に許されない」という断固たる戒めを示します。",
+    "formation": "動詞語幹 + -게 해서는 안 되다",
+    "examples": [
+      {
+        "translation": "自分の試験にばかり集中させてはいけません。他の人の勉強にも気を配るべきです。"
+      },
+      {
+        "translation": "計画をあらかじめ確認もせずに進行させてはなりません。"
+      },
+      {
+        "translation": "子供たちにテレビばかり見させていてはなりません。読書など他の活動も必要です。"
+      },
+      {
+        "translation": "お客様を長く待たせてはなりません。サービスは迅速でなければなりません。"
+      }
+    ]
   },
   "ko_겠다_4": {
-    "title": "겠다 [getda] (will, guess, hope, wish)",
-    "shortExplanation": "A verb ending 〜を表すために使用されます ‘will’ (future), ‘guess’ (conjecture), or a strong wish or hope.",
-    "longExplanation": "'겠다 [getda]' is a versatile verb ending in Korean that can express the speaker’s future intention (‘will’), their inference or guess (‘must be…’ / ‘probably’), or a strong desire/wish depending on context. It often appears with first-person statements or in concluding inferences.",
-    "formation": "動詞 stem + 겠다"
+    "title": "겠다（〜します【意志】、〜でしょう【推量】）",
+    "shortExplanation": "話し手の未来への意志や決意（「〜します」）、あるいは直感や状況観察に基づく推量（「〜でしょう」「〜に違いない」）を表す先語末語尾です。",
+    "longExplanation": "「-겠-」は意志と推量を併せ持つ重要な先語末語尾です。一人称が主語の場合には、「〜します」「〜するつもりだ」という話者の未来への確固たる意志や決意を表します。三人称や自然現象が主語の場合には、状況から直感的に判断した「〜だろう」「〜に違いない」という推量を表します。また、控えめで丁寧な態度（婉曲）を示す際にも用いられます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -겠-（終結語尾と結合：-겠어요, -겠습니다, -겠다）",
+    "examples": [
+      {
+        "translation": "今夜は雨が降りそうですね。雲が濃く薄暗く見えます。"
+      },
+      {
+        "translation": "あの方が私に怒られるでしょうね。私が指示に従わなかったものですから。"
+      },
+      {
+        "translation": "この本を読み終えたら、韓国語がもっとよく分かるようになるでしょう。新しい単語や文法がたくさん載っています。"
+      },
+      {
+        "translation": "来週になったら、私は新しいスポーツクラブに加入するつもりです。何か新しい活動を始めたいですからね。"
+      }
+    ]
   },
   "ko_고_5": {
-    "title": "~고 말다 [go malda] (Ended up doing)",
-    "shortExplanation": "Emphasizes an unexpected or often undesirable result: ‘ended up doing.’",
-    "longExplanation": "'~고 말다 [go malda]' highlights that an action concluded in a certain way, often with a sense of regret, inevitability, or simply an unexpected final outcome. 〜と訳されます ‘ended up …ing’ or ‘finally ….’",
-    "formation": "動詞 stem + 고 말다"
+    "title": "~고 말다（とうとう〜してしまった、結局〜してしまった）",
+    "shortExplanation": "ある事態が紆余曲折の末にとうとう完了・終結したことを表し、多くは思い通りにならなかった無念さや後悔のニュアンスを伴います（「とうとう〜してしまった」）。",
+    "longExplanation": "「~고 말다」は、接続語尾「-고」に補助動詞「말다」が結びついた表現です。ほとんどの場合、過去形の「-고 말았다」の形で用いられ、努力や抵抗にもかかわらず、事態が意図しない好ましくない結末に行き着いてしまったことに対する失望、遺憾、後悔を強くにじませます。一部の文脈では「必ずやり遂げてみせる」という強い決意を表すこともあります。",
+    "formation": "動詞語幹 + -고 말다（通常過去形：-고 말았다 / -고 말았습니다）",
+    "examples": [
+      {
+        "translation": "長い時間待ったのですが、結局一人で食べてしまいました。友達が来なかったものですから。"
+      },
+      {
+        "translation": "昨日あまりにも遅く寝てしまったせいで、結局遅刻してしまいました。"
+      },
+      {
+        "translation": "彼は勉強を先延ばしにし続けた末に、とうとう試験に落ちてしまいました。"
+      },
+      {
+        "translation": "懸命に走ったのですが、結局1位の座を掴むことはできませんでした。"
+      }
+    ]
   },
   "ko_고_7": {
-    "title": "~고 싶다 [go sipda] (Want to)",
-    "shortExplanation": "〜を表すために使用されます a desire or wish to do something.",
-    "longExplanation": "'~고 싶다 [go sipda]' is 〜を示します that the speaker (or someone) wants to do something. It can be softened to express one’s own wishes or used to ask politely about someone else’s wishes.",
-    "formation": "動詞 stem + 고 싶다"
+    "title": "~고 싶다（〜したい）",
+    "shortExplanation": "話者の希望や願望を表し、「〜したい」という意味を表します。",
+    "longExplanation": "「~고 싶다」は動詞の語幹について、話者自身（一人称）の希望や願望、または疑問文で聞き手（二人称）の意向を尋ねる際に用いられます。主語が第三者の場合は、通常「~고 싶어 하다」を用います。否定形は「~고 싶지 않다」または「안 ~고 싶다」となります。",
+    "formation": "動詞語幹 + -고 싶다",
+    "examples": [
+      {
+        "translation": "私は韓国語を学びたいです。ですから毎日勉強しています。"
+      },
+      {
+        "translation": "友達が明日映画を見たいと言っているので、チケットを買おうと思っています。"
+      },
+      {
+        "translation": "今夜は家に帰りたくないので、友達の家に泊まるつもりです。"
+      },
+      {
+        "translation": "料理を習いたかったので、料理学校に行きたいと思っていました。"
+      }
+    ]
   },
   "ko_고_8": {
-    "title": "~고 있다 [go itda] (In the process of doing)",
-    "shortExplanation": "〜を表すために使用されます an ongoing action or a continuing state.",
-    "longExplanation": "'~고 있다 [go itda]' corresponds roughly to the present progressive in English (e.g., 'am doing'), but can also show a continued state (e.g., 'am wearing' something).",
-    "formation": "動詞 stem + 고 있다"
+    "title": "~고 있다（〜している、〜しつつある）",
+    "shortExplanation": "動作が進行中であること（「〜している」）や、動作の結果生じた状態が継続していることを表します。",
+    "longExplanation": "「~고 있다」は動詞の語幹について、ある動作が今まさに行われている進行中の状態（「〜している」）を表します。また、身につける動詞（입다、쓰다、신다など）や一部の動詞とともに用いられる場合は、動作が終わった後の結果の状態が続いていること（「〜を身につけている」）を表します。主語を高める敬語表現は「~고 계시다」です。",
+    "formation": "動詞語幹 + -고 있다（敬語形：-고 계시다）",
+    "examples": [
+      {
+        "translation": "彼女は日差しの下で本を読んでいます。"
+      },
+      {
+        "translation": "花々が風に揺れています。"
+      },
+      {
+        "translation": "彼は今年一年中ずっとストレスを感じています。"
+      },
+      {
+        "translation": "父は現在、ヨーロッパを旅行しています。"
+      }
+    ]
   },
   "ko_고자_9": {
-    "title": "~고자 하다 [goja hada] (In order to)",
-    "shortExplanation": "A more formal/official way to express intention or purpose: ‘in order to,’ ‘for the purpose of.’",
-    "longExplanation": "'~고자 하다 [goja hada]' is typically used in more formal contexts to express the speaker’s intention or plan to do something, similar to ‘in order to’ in English. It often appears in written or official discourse.",
-    "formation": "動詞 stem + 고자 하다 (often ~고자 + main verb in formal sentences)"
+    "title": "~고자 하다（〜しようとする、〜したいと思う）",
+    "shortExplanation": "格式ばった改まった場面で、話者の意図や目的を表します（「〜しようとする」「〜することを目的とする」）。",
+    "longExplanation": "「~고자 하다」は、意図や目的を表す接続語尾「-고자」に「하다」が結合した表現で、スピーチ、論文、公的な発表などのフォーマルな文脈で用いられます。「〜しようとする」「〜するつもりである」という意味で、強い意志や計画を示します。また「-고자」単独で文中に用いられ、目的を表す接続表現（「〜しようと」「〜するために」）としても多用されます。",
+    "formation": "動詞語幹 + -고자 하다（または 動詞語幹 + -고자 + 主動詞）",
+    "examples": [
+      {
+        "translation": "韓国語の実力を向上させようと、毎日韓国ドラマを見ています。"
+      },
+      {
+        "translation": "ご自身の健康を気遣おうと、毎朝早く起きて運動をしています。"
+      },
+      {
+        "translation": "企業の環境保護を実行しようと、製品の環境配慮型パッケージを導入しました。"
+      },
+      {
+        "translation": "彼女は真の幸福を見出そうと、はるか遠い国へと旅立ちました。"
+      }
+    ]
   },
   "ko_곤_10": {
-    "title": "~곤 하다 [gon hada] (Often do)",
-    "shortExplanation": "〜を表すために使用されます the repetition or frequency of an action or state.",
-    "longExplanation": "'~곤 하다 [gon hada]' is a pattern used in Korean to convey habitual or repeated actions. It attaches to action verbs to suggest that something happens repeatedly or as a habit. It generally reflects a recurring behavior, often in both the past and present.",
-    "formation": "動詞 stem + 곤 하다 (commonly used as '~곤 해요', '~곤 했어요', etc.)"
+    "title": "~곤 하다（よく〜する、〜したりする）",
+    "shortExplanation": "ある動作や状況が習慣的・反復的に行われることを表します（「よく〜する」「〜したりする」）。",
+    "longExplanation": "「~곤 하다」は「-고는 하다」の縮約形で、動詞の語幹について、反復的または習慣的に行われる動作を表します。現在のことについて「よく〜する」「〜することが多い」と述べるだけでなく、過去形「~곤 했다」の形で「かつてはよく〜したものだ」と昔の習慣を回想する際にも非常によく用いられます。",
+    "formation": "動詞語幹 + -곤 하다（よく「-곤 해요」「-곤 했다」の形で使用）",
+    "examples": [
+      {
+        "translation": "私は心が辛いとき、よく本を読んだりします。そうすると恋しい気持ちを紛らわせたりします。"
+      },
+      {
+        "translation": "朝起きるといつも窓を開けたりします。新鮮な空気を迎え入れたりします。"
+      },
+      {
+        "translation": "彼女は新しいレシピを見つけるとよく試したりします。そのためいつも新しい料理を作ったりします。"
+      },
+      {
+        "translation": "私は運動の後にいつもストレッチをしたりします。そうすると筋肉が固くなるのを防げたりします。"
+      }
+    ]
   },
   "ko_기도_11": {
-    "title": "~기도 하다 [gido hada] (Sometimes do)",
-    "shortExplanation": "Expresses that an action is done occasionally or sometimes.",
-    "longExplanation": "'~기도 하다 [gido hada]' is 〜を示します that someone sometimes (not always) does a certain action. It can also be used to emphasize that there are multiple actions: one does A and sometimes B, too. The '도' particle shows this sense of 'also' or 'too.'",
-    "formation": "動詞 stem + 기도 하다"
+    "title": "~기도 하다（〜することもある、〜でもあったりする）",
+    "shortExplanation": "ある動作や状態がたまに起こることや、並列して「〜することもある」と補足することを表します。",
+    "longExplanation": "「~기도 하다」は名詞形語尾「-기」に取り立て助詞「-도（〜も）」と補助用言「하다」がついた形です。常日頃そうであるわけではないが「時には〜することもある」「〜する場合もある」と偶発的な行為を表したり、二つ以上の動作・状態を並べて「〜もする」と付加的に表現する際に用いられます。形容詞に接続して「〜なこともある」と状態を表すこともできます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기도 하다",
+    "examples": [
+      {
+        "translation": "私は普段サッカーを見ますが、時々野球を見ることもあります。"
+      },
+      {
+        "translation": "彼女は料理が上手ですが、それでも学ぶべきことが多いため料理教室に行くこともあります。"
+      },
+      {
+        "translation": "私たちは主に山登りをしますが、たまに川辺でピクニックを楽しむこともあります。"
+      },
+      {
+        "translation": "私は普段早起きをしますが、時には朝寝坊することもあります。"
+      }
+    ]
   },
   "ko_기로_12": {
-    "title": "~기로 [giro] (Decided to)",
-    "shortExplanation": "Indicates a decision or agreement to do something.",
-    "longExplanation": "The '~기로 [giro]' construction is 〜を表すために使用されます that a decision or promise has been made to do something. It often appears as '~기로 하다', '~기로 결정하다', or '~기로 약속하다' to emphasize that a firm plan or promise is in place.",
-    "formation": "動詞 stem + 기로 (often followed by 하다/결정하다/약속하다)"
+    "title": "~기로（〜することに、〜すると決める・約束する）",
+    "shortExplanation": "後続の動詞（하다、결정하다、약속하다など）と結びつき、何かを行う決定や約束をしたことを表します。",
+    "longExplanation": "「~기로」は名詞形語尾「-기」に助詞「-로」が結合した形で、通常「하다」「결정하다（決定する）」「약속하다（約束する）」などの動詞を伴って用いられます。話者自身が決心・決定したことや、他者と話し合って合意・約束した内容を示す表現です。",
+    "formation": "動詞語幹 + -기로（後ろに 하다 / 결정하다 / 약속하다 などを伴う）",
+    "examples": [
+      {
+        "translation": "彼女は来週試験を受けることに決めました。"
+      },
+      {
+        "translation": "私は明日友達と映画を見る約束をしました。"
+      },
+      {
+        "translation": "両親は来年新しい家に引っ越すことに決めました。"
+      },
+      {
+        "translation": "私たちは次の会議でこの問題について話し合うことにしました。"
+      }
+    ]
   },
   "ko_기로_13": {
-    "title": "~기로 되다 [giro dweda] (It's decided to)",
-    "shortExplanation": "Expresses that something has been decided or arranged.",
-    "longExplanation": "'~기로 되다 [giro dweda]' is used when you want to indicate that some plan or arrangement has been set, often by an external decision or mutual agreement. It often translates to 'It has been decided that...' or 'It's arranged that...'",
-    "formation": "動詞 stem + 기로 되다"
+    "title": "~기로 되다（〜することになっている、〜することに決まった）",
+    "shortExplanation": "客観的な状況、規則、組織の決定、または他者との取り決めによって、予定や方針が決まっていることを表します（「〜することになっている」）。",
+    "longExplanation": "「~기로 되다」は「-기로」に受動・結果を表す「되다」が結合した表現です。主語の主観的な意志を表す「~기로 하다」とは対照的に、組織の規定、外部からの決定、あるいは双方の合意によって予定や方針が客観的に決まった（〜することになっている）というニュアンスを持ちます。",
+    "formation": "動詞語幹 + -기로 되다",
+    "examples": [
+      {
+        "translation": "会社で月曜日に会議をすることになりました。"
+      },
+      {
+        "translation": "私たちは明日午後3時に会うことになっています。"
+      },
+      {
+        "translation": "彼女との結婚は来年にすることに決まりました。"
+      },
+      {
+        "translation": "来週、友達と旅行に行くことになっています。"
+      }
+    ]
   },
   "ko_기로_14": {
-    "title": "~기로 하다 [giro hada] (Decide to)",
-    "shortExplanation": "Used to say that one decides or agrees to do something.",
-    "longExplanation": "'~기로 하다' is a common way to say 'decide to...' in Korean. It highlights that a resolution or plan has been set for some future action. It is also used for promises or mutual agreements (e.g., with friends or family).",
-    "formation": "動詞 stem + 기로 하다"
+    "title": "~기로 하다（〜することにする、〜することに決める）",
+    "shortExplanation": "話し手や主語が自らの意志で行動を決心・決定したり、約束したりしたことを表します（「〜することにする」）。",
+    "longExplanation": "「~기로 하다」は動詞の語幹について、将来の行動について主語が主体的に下した決断や方針を表します。個人の決意表明だけでなく、友人や同僚などとお互いに「〜することに決めた」と合意や約束を交わした際にも日常的によく使われます。過去形「~기로 했다」の形で用いられることが非常に多いです。",
+    "formation": "動詞語幹 + -기로 하다",
+    "examples": [
+      {
+        "translation": "私たちは来週旅行に行くことにしました。天気がよければ海に行こうかと思っています。"
+      },
+      {
+        "translation": "私は明日ジムに行くことにしました。運動を始めて健康になることに決めました。"
+      },
+      {
+        "translation": "ソユンは将来、自力で仕事に就くことにしました。"
+      },
+      {
+        "translation": "私たちのグループは事業拡大のためにより多くの社員を採用することに決定しました。"
+      }
+    ]
   },
   "ko_기_15": {
-    "title": "~기 시작하다 [gi sijakhada] (Begin to)",
-    "shortExplanation": "〜を表すために使用されます the start or beginning of an action.",
-    "longExplanation": "'~기 시작하다 [gi sijakhada]' indicates that an action has just begun (or will soon begin). It is the rough equivalent of 'to start doing' or 'to begin to do' in English.",
-    "formation": "動詞 stem + 기 시작하다"
+    "title": "~기 시작하다（〜し始める、〜しだす）",
+    "shortExplanation": "ある動作や状態の変化が始まることを表します（「〜し始める」「〜しだす」）。",
+    "longExplanation": "「~기 시작하다」は動詞の語幹に名詞形語尾「-기」と動詞「시작하다（始める）」が結合した表現で、ある動作の開始や新しい状態への変化が起こり始めたことを示します。日本語の「〜し始める」「〜しだす」に相当します。",
+    "formation": "動詞語幹 + -기 시작하다",
+    "examples": [
+      {
+        "translation": "彼女は5歳のときにピアノを弾き始めました。ですから今はピアノが本当に上手です。"
+      },
+      {
+        "translation": "私は朝起きるとすぐにコーヒーを飲み始めました。コーヒーなしでは一日を始められません。"
+      },
+      {
+        "translation": "私たちは最初の会議を始めるときから深刻な問題について話し合い始めました。"
+      },
+      {
+        "translation": "韓国語を学び始めてから1年が経ちましたが、まだ学ぶべきことがたくさんあります。"
+      }
+    ]
   },
   "ko_기_16": {
-    "title": "~기 위해서 [gi wihaeseo] (In order to)",
-    "shortExplanation": "〜を表すために使用されます the purpose or reason for doing something.",
-    "longExplanation": "'~기 위해서 [gi wihaeseo]' means 'in order to' or 'for the purpose of.' When attached to a verb in the '~기' nominal form, it denotes the reason or purpose for taking a particular action. It is common in both spoken and written Korean when describing why someone is doing something (especially future or ongoing actions).",
-    "formation": "動詞 stem + 기 위해서"
+    "title": "~기 위해서（〜するために、〜すべく）",
+    "shortExplanation": "後続の動作を行う目的や狙いを表します（「〜するために」「〜すべく」）。",
+    "longExplanation": "「~기 위해서」（縮約形「~기 위해」も頻出）は動詞の語幹について、後ろの節で行われる行動の目的や目標を示します。名詞につく場合は「名詞 + -을/를 위해(서)」の形をとります。日常会話から公式な論文・スピーチまで幅広く使われる標準的な目的表現です。",
+    "formation": "動詞語幹 + -기 위해서（名詞の場合：名詞 + -을/를 위해서）",
+    "examples": [
+      {
+        "translation": "英語が上手になるために、毎朝英語のリスニング練習をしています。"
+      },
+      {
+        "translation": "スポーツ選手になるために、学校が終わった後はいつもトレーニングに参加しています。"
+      },
+      {
+        "translation": "試験に合格するために、多くの時間を勉強に投資しました。"
+      },
+      {
+        "translation": "幸せな人生を送るためには、自分自身を愛することが大切です。"
+      }
+    ]
   },
   "ko_기는_17": {
-    "title": "~기는 [gineun] (But)",
-    "shortExplanation": "〜を示します contrast or an exception; similar to 'but' in English.",
-    "longExplanation": "'~기는 [gineun]' is attached to a verb stem (or sometimes an adjective stem) to imply a contrast with a following clause. It acknowledges or concedes one point, while highlighting a contrasting fact or viewpoint. It is somewhat similar to 'but' or 'although' in English, often used to say something “is true, but…”",
-    "formation": "動詞 stem + 기는 (or 形容詞 stem + 기는)"
+    "title": "~기는（〜することは〜するが、〜なのは〜だが）",
+    "shortExplanation": "前項の事実を一応認めた上で、後項でそれと相反する事柄や制限を述べる譲歩・対比を表します（「〜することは〜だが」）。",
+    "longExplanation": "「~기는」は名詞形語尾「-기」に対比の助詞「-는」がついた形です。多くの場合、同じ用言を繰り返して「-기는 -지만」や「-기는 한데」の形で用いられます。前節の事実や長所を一応是認・承認しつつも、後節においてそれに対立する事情や不満、制限などを対比的に述べるニュアンスを持ちます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기는（よく「-기는 -지만」「-기는 한데」の形で併用）",
+    "examples": [
+      {
+        "translation": "私は旅行することは好きなのですが、飛行機に乗ることが今でも怖いです。"
+      },
+      {
+        "translation": "その建物は大きくはあるのですが、状態があまりに悪いためリフォームが必要に見えます。"
+      },
+      {
+        "translation": "あの友人は親切なのは親切なのですが、正直なところ質問があまりに多すぎて少しうんざりします。"
+      },
+      {
+        "translation": "今の季節は春であることは春なのですが、天気がまだ寒く、暖かくなるのを待っています。"
+      }
+    ]
   },
   "ko_기에는_18": {
-    "title": "~기에는 [gieneun] (For doing)",
-    "shortExplanation": "〜を表すために使用されます 'for doing something' or 'in order to'.",
-    "longExplanation": "'~기에는 [gieneun]' typically indicates that something is either suitable or unsuitable for a certain purpose. It can often be translated as 'for (the purpose of) doing X' or 'to do X.' It frequently appears with judgments about time, conditions, or suitability for an action.",
-    "formation": "動詞 stem + 기에는 (+ complement)"
+    "title": "~기에는（〜するには、〜にしては）",
+    "shortExplanation": "ある動作や状態を基準や前提として、それに適しているか、時間や条件が十分かを判断・評価する際に用います（「〜するには」）。",
+    "longExplanation": "「~기에는」は名詞形語尾「-기」に助詞「-에（〜に）」と強調・対比の助詞「-는（〜は）」が結合した形です。ある行為を行うことを基準・目的として据えたとき、条件や時間、状況が適切であるか過不足があるかを評価する際に用いられます（「〜するには時間が足りない」「〜するには寒すぎる」など）。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기에는（+ 補足語・判断語句）",
+    "examples": [
+      {
+        "translation": "今回の試験を準備するには、時間が十分ではないと思います。"
+      },
+      {
+        "translation": "運動するには外があまりに寒いです。ですから家で運動しようと思います。"
+      },
+      {
+        "translation": "良い成績を取るには、心から努力しなければなりません。"
+      },
+      {
+        "translation": "サッカーを習うには年齢が高すぎると考える場合もあります。"
+      }
+    ]
   },
   "ko_기_19": {
-    "title": "~기 전에 [gi jeone] (Before doing)",
-    "shortExplanation": "〜を表すために使用されます that one action occurs before another.",
-    "longExplanation": "'~기 전에 [gi jeone]' means 'before doing (something).' It is used to specify an action that takes place prior to another action. The literal translation is 'before V-ing' in English. It is very common when giving a chronological order of steps or instructions.",
-    "formation": "動詞 stem + 기 전에"
+    "title": "~기 전에（〜する前に）",
+    "shortExplanation": "ある動作が行われる前の時点を表し、順序として先に何かを行うことを示します（「〜する前に」）。",
+    "longExplanation": "「~기 전에」は名詞形語尾「-기」に名詞「전（前）」と時を表す助詞「-에」が結合した表現です。動詞の語幹について、ある動作を行う前の段階であることを示し、前もって行うべき行動や注意事項、順序などを述べる際に日常的によく用いられます。",
+    "formation": "動詞語幹 + -기 전에",
+    "examples": [
+      {
+        "translation": "運動をする前に十分にストレッチをしなければなりません。そうしないと怪我をする可能性があります。"
+      },
+      {
+        "translation": "家を出る前に電気を消さなければなりません。そうしないと火災が発生する恐れがあります。"
+      },
+      {
+        "translation": "授業が始まる前に宿題を提出しなければなりません。そうしないと成績が引かれることがあります。"
+      },
+      {
+        "translation": "食べる前に必ず手を洗わなければなりません。そうしないと病原菌に感染する可能性があります。"
+      }
+    ]
   },
   "ko_나_20": {
-    "title": "~나 보다 [na boda] (Seems like, guess)",
-    "shortExplanation": "〜を表すために使用されます an assumption or supposition (e.g., 'it seems that...').",
-    "longExplanation": "'~나 보다 [na boda]' is used when the speaker draws a guess or conclusion from evidence, often translated as 'it seems...', 'I guess...', or 'looks like...'. It can be used with both verbs and adjectives: '하나 보다' (I guess one does it), '크나 보다' (I guess it's big), etc.",
-    "formation": "動詞 or adjective stem + 나 보다"
+    "title": "~나 보다（〜のようだ、〜らしい、〜と見える）",
+    "shortExplanation": "見聞きした客観的な手がかりや観察に基づいて、推量や判断を下す表現です（「〜のようだ」「〜とみえる」）。",
+    "longExplanation": "「~나 보다」は疑問詞尾「-나」に補助用言「보다」が結合した表現です。目の前の状況や具体的な手がかりをもとに、「〜しているようだ」「どうやら〜らしい」と推測する際に用います。主に動詞語幹に接続し、過去形「-았/었나 보다」の形でも多用されます。形容詞の現在形では「-(으)ㄴ가 보다」が標準的ですが口語では「-나 보다」も使われます。名詞の場合は「-(이)인가 보다」となります。",
+    "formation": "動詞語幹 / 形容詞語幹 + -나 보다（過去形：-았/었나 보다、名詞：-(이)인가 보다）",
+    "examples": [
+      {
+        "translation": "疲れているようです。学校に来てずっと眠っていました。"
+      },
+      {
+        "translation": "この風景を見ると幸せになるようです。絵を描きながら涙を流しました。"
+      },
+      {
+        "translation": "雨が降っているようです。外の人たちが傘を差しています。"
+      },
+      {
+        "translation": "彼女は風邪を引いたようです。ずっと空咳をしています。"
+      }
+    ]
   },
   "ko_나다_21": {
-    "title": "~나다 [nada] (End up doing, come to do)",
-    "shortExplanation": "Expresses that an action happened unexpectedly or wasn’t originally intended.",
-    "longExplanation": "The verb “나다” can appear in certain compound forms like ‘결정이 나다’ (‘a decision is made’), ‘끝나다’ (‘to end’), or ‘결론이 나다’ (‘a conclusion is reached’). In these contexts, it often carries the nuance of something happening or being completed somewhat beyond one’s direct intention. 〜と訳されます ‘end up ~ing’ or ‘come to ~.’",
-    "formation": "Commonly in fixed expressions (e.g., 결정이 나다, 끝나다)."
+    "title": "~나다（結果が出る、〜になる、結局〜に終わる）",
+    "shortExplanation": "慣用的な表現や複合表現で用いられ、ある過程を経て結果が出たり、意図せず最終的な状態に至ったりすることを表します。",
+    "longExplanation": "動詞「나다」は本来「生じる、出る」を意味しますが、「결정이 나다（決定が下りる）」「결론이 나다（結論が出る）」「끝나다（終わる）」などの慣用的な結びつきにおいて、ある経過を経た末に最終的な結果や結論が定まるニュアンスを表します。時に当初の意図とは異なる結果に落ち着いたというニュアンスを含みます。",
+    "formation": "慣用句や定型表現で用いられる（例：名詞 + -이/가 나다 / 끝나다 / -게 되다 など）",
+    "examples": [
+      {
+        "translation": "彼女は思い悩んだ末、結局友達の助言に従うことに決定が下りました。"
+      },
+      {
+        "translation": "私は軽く買い物に行ったつもりが、結局は大金を使ってしまう結果に終わりました。"
+      },
+      {
+        "translation": "昨日は早く帰宅しようとしましたが、夜遅くまで仕事をしたため結局遅く帰ることになりました。"
+      },
+      {
+        "translation": "学校に行こうとしましたが、結局雨があまりにひどく降ったため家にいることになりました。"
+      }
+    ]
   },
   "ko_나요_22": {
-    "title": "~나요? [nayo?] (Isn't it?)",
-    "shortExplanation": "Used to form tag questions or to express doubt (like 'isn't it?' or 'don't you?').",
-    "longExplanation": "'~나요? [nayo?]' is a question ending that often seeks confirmation or agreement. It can mean 'isn’t it?', 'don’t you?', or 'right?' in English. The speaker is fairly polite but is also expressing some uncertainty or asking for the listener’s opinion/confirmation.",
-    "formation": "動詞/形容詞 stem + 나요?"
+    "title": "~나요?（〜ですか？〜でしょうか？〜じゃないですか？）",
+    "shortExplanation": "相手に対して柔らかく親しみを込めて質問したり、念押し・確認を求めたりする疑問形終結語尾です（「〜ですか？」「〜でしょうか？」「〜じゃないですか？」）。",
+    "longExplanation": "「~나요?」は、相手に柔らかく丁寧に尋ねる疑問形終結語尾です。断定を避けて婉曲に質問したり、親しみを持って疑問を投げかけたりする際に使われます。否定形「~지 않나요?」や「그렇지 않나요?」の形で使われると、自分の意見を主張しつつ相手の同意や共感を求める付加疑問文（「〜ではないですか？」「そうではないでしょうか？」）のニュアンスになります。",
+    "formation": "動詞語幹 / 形容詞語幹 + -나요?（よく使われる形：動詞・形容詞語幹 + -지 않나요? / 그렇지 않나요?）",
+    "examples": [
+      {
+        "translation": "今日の天気はあまり良くないですよね？雨がずっと降っているので。"
+      },
+      {
+        "translation": "あなたは私と一緒に夕食を召し上がるんですよね、そうではないですか？"
+      },
+      {
+        "translation": "私は最近あまりにも忙しいので、週末に休息が必要ではないでしょうか？"
+      },
+      {
+        "translation": "私たちみんなコロナワクチンを接種しなければなりません、そうではないですか？"
+      }
+    ]
   },
   "ko_는_23": {
-    "title": "~는 대로 [neun daero] (As it is)",
-    "shortExplanation": "Expresses 'just as', 'according to', or 'in the same way as'.",
-    "longExplanation": "'~는 대로 [neun daero]' is used to mean 'exactly as' or 'according to.' It can be attached to verbs (e.g., '하는 대로') or nouns (with particles, e.g., '예측대로'). It emphasizes following instructions, patterns, or facts precisely as stated or observed.",
-    "formation": "動詞 stem + 는 대로 / 名詞 + 대로"
+    "title": "~는 대로 / ~대로（〜するとおりに、〜のままに、〜通り）",
+    "shortExplanation": "ある行動や状態、指示・基準にそのまま従うことや、その通りであることを表します（「〜するとおりに」「〜のままに」「〜通りに」）。",
+    "longExplanation": "「~는 대로」（動詞の後）または「~대로」（名詞の後）は、ある指示、規範、事実、予測などに寸分たがわず従うこと、またはその通りの状態であることを表します。日本語の「〜する通りに」「〜のままに」「〜に従って」に相当します。",
+    "formation": "動詞語幹 + -는 대로 / 名詞 + 대로",
+    "examples": [
+      {
+        "translation": "絵は絵を描く通りに、歌は歌を歌う通りに学ぶのが良いです。"
+      },
+      {
+        "translation": "彼女の予測通り、雨が本当にたくさん降りました。"
+      },
+      {
+        "translation": "料理はレシピ通りに、先生の指示通りに従ってください。"
+      },
+      {
+        "translation": "私たちは地図の通りに、今日計画された通りに旅行するつもりです。"
+      }
+    ]
   },
   "ko_는_24": {
-    "title": "~는 도중에 [neun dojunge] (While doing)",
-    "shortExplanation": "〜を示します that something happens in the midst of an ongoing action.",
-    "longExplanation": "'~는 도중에 [neun dojunge]' literally means 'in the middle of (doing something).' It shows that an event occurs while another action is still in progress. It is similar to 'while (verb)-ing' or 'in the midst of' in English.",
-    "formation": "動詞 stem + 는 도중에"
+    "title": "~는 도중에（〜している最中に、〜している途中で）",
+    "shortExplanation": "ある動作が進行しているまさにその最中や途中で、別の出来事や動作が割り込んで起こることを表します（「〜している最中に」「〜している途中で」）。",
+    "longExplanation": "「~는 도중에」は、動詞の現在連体形語尾「-는」に名詞「도중（途中）」と助詞「-에（〜に）」が結びついた表現です。前節の動作が継続して行われているその最中に、後節の事態が不意に発生したり、割り込んだりしたことを示します。",
+    "formation": "動詞語幹 + -는 도중에（または 名詞 + 도중에）",
+    "examples": [
+      {
+        "translation": "私は本を読んでいる途中で眠ってしまいました。そのため内容を全部思い出すことができません。"
+      },
+      {
+        "translation": "彼女は音楽を聴いている途中で、突然踊り始めました。"
+      },
+      {
+        "translation": "タイピングをしている途中でパソコンが突然消えてしまったので、作業を最初からやり直さなければなりませんでした。"
+      },
+      {
+        "translation": "友達とキャンプをしている最中に突然雨が降ってきたので、テントの中に入りました。"
+      }
+    ]
   },
   "ko_는_25": {
-    "title": "~는 방향으로 [neun banghyangeuro] (Toward)",
-    "shortExplanation": "Indicates movement or orientation 'toward' a certain direction.",
-    "longExplanation": "'~는 방향으로 [neun banghyangeuro]' is used to describe movement or orientation toward some direction or goal. It is often translated as 'in the direction of.' For instance, '학교 있는 방향으로 가다' means to walk or move toward where the school is located.",
-    "formation": "名詞 + (이/가/은/는) + 있는 방향으로 + 動詞"
+    "title": "~는 방향으로（〜のある方向へ、〜する方向へ）",
+    "shortExplanation": "ある場所や目標、状況が存在する方向に向かって移動したり、指向したりすることを表します（「〜がある方向へ」「〜の方向へ」）。",
+    "longExplanation": "「~는 방향으로」は、動詞の現在連体形語尾「-는」（特に「〜がある」を意味する「있는」など）に名詞「방향（方向）」と方向を表す助詞「-(으)로（〜へ、〜に）」が結合した文型です。ある場所や目標が存在する具体的な方角・方位に向かって移動することを表します。",
+    "formation": "名詞 + (이/가/은/는) + 있는 방향으로 + 動詞（または 動詞語幹 + -는 방향으로）",
+    "examples": [
+      {
+        "translation": "私は学校がある方向に向かって歩いています。それが一番早い道です。"
+      },
+      {
+        "translation": "彼は家がある方向へ走って行きました。一刻も早く帰りたがっていました。"
+      },
+      {
+        "translation": "その女性は私のいる方向へと席を移しました。そのため少し胸がときめきました。"
+      },
+      {
+        "translation": "私たちは雨が降っている方向へと歩き続けたため、服がすっかり濡れてしまいました。"
+      }
+    ]
   },
   "ko_는_26": {
-    "title": "~는 법이다 [neun beopida] (Usually, always)",
-    "shortExplanation": "This expression is used to describe a general rule or habit that always tends to happen.",
-    "longExplanation": "The phrase '~는 법이다 [neun beopida]' is a grammar structure used to say that something usually or always happens in a certain way, almost like a rule or law. It describes general truths, habits, or principles that tend not to change.",
-    "formation": "動詞 (dictionary form) + 는 + 법이다"
+    "title": "~는 법이다（〜するものだ、〜するのが常だ、決まっている）",
+    "shortExplanation": "物事の道理や自然の摂理、当然の規則・習慣として「そうなるのが当たり前だ」「決まっている」ということを表します（「〜するものだ」「〜するのが常だ」）。",
+    "longExplanation": "「~는 법이다」は、動詞の現在連体形語尾「-는」に、道理や法則を表す依存名詞「법（法・理）」と指定詞「이다（〜である）」が結びついた表現です。自然の摂理や世の常、変わることのない普遍的な真理について「当然そうなるものだ」「そうするのが決まり・道理である」と述べる際に用いられます。",
+    "formation": "動詞語幹 + -는 법이다（形容詞の場合は -(으)ㄴ 법이다）",
+    "examples": [
+      {
+        "translation": "私たちの家族は、毎晩一緒に夕食を食べるのが決まりです。"
+      },
+      {
+        "translation": "彼はいつも早起きして本を読むのが常です。"
+      },
+      {
+        "translation": "コーヒーを飲んだ後は、決まって口をゆすぐものです。"
+      },
+      {
+        "translation": "私はいつも家で勉強するときには音楽を聴くことにしています。"
+      }
+    ]
   },
   "ko_는데다_27": {
-    "title": "~는데다 [neunde-da] (Furthermore, and)",
-    "shortExplanation": "Used to add additional information or to emphasize a situation; 'furthermore', 'in addition'.",
-    "longExplanation": "'~는데다 [neunde-da]' is used to add another fact or condition that strengthens or expands upon the previous statement. It often translates to 'in addition to that...' or 'furthermore...' in English. It can be attached to verbs or adjectives to connect reasons or circumstances.",
-    "formation": "形容詞/Action verb + 는데다"
+    "title": "~는데다(가)（〜なうえに、〜それに加えて）",
+    "shortExplanation": "前節の事柄に加えて、さらに同類の事柄が重なることを表します（「〜なうえに」「〜それに加えて」）。",
+    "longExplanation": "「~는데다」（強意の助詞「-가」を伴って「~는데다가」とも）は、前節で述べた状況や特質に、さらに同方向（プラスならプラス、マイナスならマイナス）の事柄を積み重ねて強調する接続表現です。日本語の「〜なうえに」「〜それに加えて」「〜だけでなく」に相当します。",
+    "formation": "動詞語幹 + -는데다 / 形容詞語幹 + -(으)ㄴ데다 / 名詞 + -인데だ（または -는데다가）",
+    "examples": [
+      {
+        "translation": "そのカフェはコーヒーが美味しい上に、雰囲気もとても良いです。"
+      },
+      {
+        "translation": "このホテルは立地も良い上に、スタッフのサービスも素晴らしいです。"
+      },
+      {
+        "translation": "本を読むことは知識を身につける上に、ストレス解消にも役立ちます。"
+      },
+      {
+        "translation": "彼は成績の単位が高い上に学校の活動にも積極的に参加しているので、大学生活がとても忙しそうです。"
+      }
+    ]
   },
   "ko_는데도_28": {
-    "title": "~는데도 [neundedo] (Even though, but still)",
-    "shortExplanation": "〜を表すために使用されます a contrasting or contradictory situation: 'even though', 'but still'.",
-    "longExplanation": "'~는데도 [neundedo]' is a conjunctive particle that describes a surprising or unexpected result, given some situation or fact. It is similar to 'even though,' 'despite,' or 'but still' in English.",
-    "formation": "動詞/形容詞 + 는데도"
+    "title": "~는데도（〜のに、〜にもかかわらず）",
+    "shortExplanation": "前節の事実や条件から当然予想されることとは正反対の、あるいは意外な結果が後節に生じることを表します（「〜のに」「〜にもかかわらず」）。",
+    "longExplanation": "「~는데도」は、状況を提示する接続語尾「-는데」に譲歩・強調の助詞「-도（〜も）」が合わさった表現です。前節の事実や努力から考えれば当然そうなるはずの期待が裏切られ、逆の事態や予想外の結果になったことに対する驚きや不満、もどかしさを表します。",
+    "formation": "動詞語幹 + -는데도 / 形容詞語幹 + -(으)ㄴ데도 / 名詞 + -인데도",
+    "examples": [
+      {
+        "translation": "赤ん坊なのにあまり眠りません。一日中遊んでばかりいます。"
+      },
+      {
+        "translation": "たくさん勉強してうまくいくと思っていたのに、試験の点数が低く出ました。"
+      },
+      {
+        "translation": "たくさん食べるのに、彼女はいつもスリムに見えます。"
+      },
+      {
+        "translation": "このような仕事を何度も経験したにもかかわらず、私はずっと同じミスを繰り返しています。"
+      }
+    ]
   },
   "ko_는지_29": {
-    "title": "~는지 [neunji] (Whether or not)",
-    "shortExplanation": "〜を表すために使用されます doubt or to inquire about a certain fact: 'whether or not'.",
-    "longExplanation": "'~는지 [neunji]' is attached to a verb or adjective stem to indicate uncertainty or to form an indirect question. 〜と訳されます 'whether (or not)...' in English, and it’s often used when one is unsure or curious about some information.",
-    "formation": "動詞/形容詞 stem + 는지"
+    "title": "~는지（〜のか、〜かどうか）",
+    "shortExplanation": "不確定な事実や疑問の内容を文中に組み込み、間接疑問の節を作る接続語尾です（「〜のか」「〜かどうか」）。",
+    "longExplanation": "「~는지」は、不確定な事実や疑問を表す文節を後節の動詞（「알다（知る）」「모르다（知らない）」「궁금하다（気になる）」「알아보다（調べる）」など）に接続させる間接疑問語尾です。日本語の「〜のか」「〜かどうか」に相当します。",
+    "formation": "動詞語幹 + -는지 / 形容詞語幹 + -(으)ㄴ지 / 名詞 + -인지（過去形：-았/었는지）",
+    "examples": [
+      {
+        "translation": "彼は私が愛していることを知っているでしょうか？"
+      },
+      {
+        "translation": "私たちは明日会社に行けるかどうかわかりません。"
+      },
+      {
+        "translation": "彼女がどこにいるのか突き止めることができるでしょうか？"
+      },
+      {
+        "translation": "その映画が面白いかどうか確かめるためにレビューを読んでみてください。"
+      }
+    ]
   },
   "ko_는지_30": {
-    "title": "~는지 모르겠다 [neunji moreugessda] (I'm not sure if)",
-    "shortExplanation": "〜を表すために使用されます uncertainty: 'I'm not sure if...', 'I don't know whether...'.",
-    "longExplanation": "'~는지 모르겠다 [neunji moreugessda]' expresses doubt or uncertainty about a certain fact or outcome. It roughly corresponds to 'I’m not sure if...' or 'I don’t know whether...' in English.",
-    "formation": "動詞/形容詞 stem + 는지 모르겠다"
+    "title": "~는지 모르겠다（〜のかわからない、〜かどうか定かでない）",
+    "shortExplanation": "ある事実や結果について、確信が持てずはっきりわからないという不確かさや不安を表します（「〜のかわからない」「〜か定かでない」）。",
+    "longExplanation": "「~는지 모르겠다」（推量を含む「-(으)ㄹ지 모르겠다」の形でも頻出）は、間接疑問の「-는지」に「わからない・知る由もない」を意味する「모르겠다」が結びついた慣用表現です。今後の結果や相手の反応について見通しが立たず、不安や困惑、心配を抱いている心情を表します。",
+    "formation": "動詞語幹 + -는지 모르겠다 / 形容詞語幹 + -(으)ㄴ지 모르겠다 / 名詞 + -인지 모르겠다（または -(으)ㄹ지 모르겠다）",
+    "examples": [
+      {
+        "translation": "彼がどのように反応するかわかりません、そのため少し緊張しますね。"
+      },
+      {
+        "translation": "雨が降っているのか降っていないのかわかりません。天気がとても曇っているので。"
+      },
+      {
+        "translation": "明日の試験をうまく受けられるかわかりません。まだ勉強することがたくさん残っているからです。"
+      },
+      {
+        "translation": "会社で昇進できるかどうかわかりません。競争がとても激しいからです。"
+      }
+    ]
   },
   "ko_는지라_31": {
-    "title": "~는지라 [neunjira] (Because, since)",
-    "shortExplanation": "Used to provide a reason or cause for something: 'because', 'since'.",
-    "longExplanation": "'~는지라 [neunjira]' is a connective ending in Korean that provides a reason or cause. It is often used in relatively formal or written contexts and means 'because' or 'since' in English. It generally implies that the stated reason is decisive for the outcome in the main clause.",
-    "formation": "動詞/形容詞 stem + 는지라"
+    "title": "~는지라（〜のこととて、〜であるため、〜なもので）",
+    "shortExplanation": "やや改まった文体や書き言葉で、後節の事態に至る決定的な理由や根拠を客観的に提示する接続語尾です（「〜であるため」「〜のこととて」）。",
+    "longExplanation": "「~는지라」は、理由や原因を表す接続語尾で、比較的改まった場面や書き言葉などで好んで用いられます。前節の客観的な事実や状況が後節の行動・感情・結果をもたらす直接の背景となっていることを示し、日本語の「〜であるゆえに」「〜のこととて」「〜なもので」に相当します。",
+    "formation": "動詞語幹 + -는지라 / 形容詞語幹 + -(으)ㄴ지라 / 名詞 + -인지라（過去形：-았/었는지라）",
+    "examples": [
+      {
+        "translation": "彼が大変賢い上に誠実なものであるため、誰もが彼を尊敬しています。"
+      },
+      {
+        "translation": "この仕事があまりにも切実なため、私が最善を尽くして解決しなければなりませんでした。"
+      },
+      {
+        "translation": "彼女があまりにも綺麗なため、人々はよく彼女を見て微笑みます。"
+      },
+      {
+        "translation": "ラーメンがあまりにも辛かったため、私は水を何杯も飲まなければなりませんでした。"
+      }
+    ]
   },
   "ko_다가_32": {
-    "title": "~다가 [daga] (While, and then)",
-    "shortExplanation": "〜を表すために使用されます 'in the middle of something, when suddenly...' or 'and then'.",
-    "longExplanation": "'~다가 [daga]' indicates that one action was in progress, and then another action or event occurred. It can imply an interruption ('while doing X, suddenly Y happened') or a sequence ('I was doing X and then moved on to Y').",
-    "formation": "動詞 stem + 다가"
+    "title": "~다가（〜していて、〜している途中で）",
+    "shortExplanation": "ある動作が進行している途中でそれを中断し、別の動作に切り替わったり、突発的な事態が起きたりすることを表します（「〜していて」「〜している途中で」）。",
+    "longExplanation": "「~다가」は、動作の中断や局面の転換を表す接続語尾です。ある動作が進行している最中に、その動作をやめて別の動作に移ったり、別の突発的な出来事が割り込んできたりする場面で用いられます。",
+    "formation": "動詞語幹 + -다가",
+    "examples": [
+      {
+        "translation": "私がピクニックに行く途中で赤信号を待っていたら、携帯電話が鳴りました。"
+      },
+      {
+        "translation": "チャンミは音楽を聴いているうちに、眠ってしまいました。"
+      },
+      {
+        "translation": "私は夕食を食べている途中で、急にお腹が痛くなりました。"
+      },
+      {
+        "translation": "彼は本を読んでいましたが、疲れて眠ってしまいました。"
+      }
+    ]
   },
   "ko_다가는_33": {
-    "title": "~다가는 [daganeun] (If keep doing)",
-    "shortExplanation": "Expresses a negative consequence if the current action continues.",
-    "longExplanation": "'~다가는 [daganeun]' warns that if one keeps doing something (or if the current situation persists), a negative or undesired outcome will result. It translates roughly as 'if you keep doing this, then...' in English.",
-    "formation": "動詞 stem + 다가는"
+    "title": "~다가는（〜していては、〜し続けたら（悪い結果になる））",
+    "shortExplanation": "もし現在の好ましくない動作や状況をそのまま続ければ、必ず悪い結果を招くことになるという警告を表します（「〜していては」「〜し続けたら」）。",
+    "longExplanation": "「~다가는」は、接続語尾「-다가」に対比・強調の助詞「-는」が付いた表現です。「もし今のような悪い状態や行動をこのまま続けていれば」という仮定のもと、後節には必ず好ましくない結果や危険な事態が予測・警告として導かれます。日本語の「〜していては（ひどい目に遭う）」「〜し続けたら（大変なことになる）」に相当します。",
+    "formation": "動詞語幹 + -다가는",
+    "examples": [
+      {
+        "translation": "宿題をずっと先延ばしにしていては、結局試験で失敗することになりますよ。"
+      },
+      {
+        "translation": "いつも遅く寝ていては、健康に問題が生じてしまいますよ。"
+      },
+      {
+        "translation": "いつもそんなにゲームばかりしていては、視力が悪くなりますよ。"
+      },
+      {
+        "translation": "あまり悩みばかりしていては、決定する時間がなくなってしまいますよ。"
+      }
+    ]
   },
   "ko_다가도_34": {
-    "title": "~다가도 [dagado] (Even though was doing)",
-    "shortExplanation": "Used when an unexpected event occurs while another action is in progress.",
-    "longExplanation": "'~다가도 [dagado]' describes a scenario where the speaker was in the midst of doing something, yet an unexpected or contrasting outcome occurred. It can be interpreted as 'even though I was doing X, it turned out Y.'",
-    "formation": "動詞 stem + 다가도"
+    "title": "~다가도（〜していても、〜している最中でも（急に変わる））",
+    "shortExplanation": "ある動作や状態が続いている最中でも、急激に別の相反する事態に転じたり、突発的な変化が起きたりすることを表します（「〜していても」「〜している最中でも急に」）。",
+    "longExplanation": "「~다가도」は、接続語尾「-다가」に譲歩の助詞「-도（〜も）」が結びついた表現です。ある行為に集中していたり順調に進行していたりする最中であっても、ふとした拍子に真逆の状態へ急変したり、不慮のトラブルが生じたりする移り変わりの激しさを表します。",
+    "formation": "動詞語幹 + -다가도（形容詞語幹にも接続可能）",
+    "examples": [
+      {
+        "translation": "私は一生懸命勉強していても、試験に落ちることがあります。それでも次は必ず合格したいです。"
+      },
+      {
+        "translation": "カフェでコーヒーを飲んでいる最中にも急に雨が降ってきたため、傘を差しても少し濡れてしまいました。"
+      },
+      {
+        "translation": "料理を作っている間、注意を払っていても、結局沸騰したお湯に器を落として手を火傷してしまいました。"
+      },
+      {
+        "translation": "講義を聴いている最中であっても重要な部分を聞き逃してしまいがちです。もう一度聴き直そうとしても探すのが難しいですね。"
+      }
+    ]
   },
   "ko_다는_35": {
-    "title": "~다는 것 [daneun geot] (The fact that)",
-    "shortExplanation": "〜を表すために使用されます 'the fact that' or 'the idea that' when referring to specific information.",
-    "longExplanation": "'~다는 것 [daneun geot]' is a Korean grammar construct used to convey or emphasize the idea or concept of something, similar to 'the fact that' or 'the idea that' in English. It can also carry a nuance of 'it is said that,' but is most often used to highlight certain information the speaker has come to understand or wishes to point out.",
-    "formation": "動詞 stem + 다는 것"
+    "title": "~다는 것（〜ということ、〜という事実）",
+    "shortExplanation": "伝聞や断定的な内容を名詞化し、「〜ということ」「〜という事実」として主題化したり客観的に提示したりする表現です。",
+    "longExplanation": "「~다는 것」は、平叙文の間接引用形「-다고 하는」が縮約された「-다는」に依存名詞「것（こと・もの）」が結びついた名詞化表現です。「〜という事実」「〜ということ」という意味で文全体を名詞句に変え、「~다는 것을 알다（〜ということを知る）」「믿다（信じる）」などの目的語や主語として機能します。",
+    "formation": "動詞語幹 + -ㄴ/는다는 것 / 形容詞語幹 + -다는 것 / 名詞 + -(이)라는 것（過去形：-았/었다는 것）",
+    "examples": [
+      {
+        "translation": "私は彼女が韓国から来るということを全く知りませんでした。そのため彼女の韓国語の実力に大変驚きました。"
+      },
+      {
+        "translation": "私は自分が勝つということを固く信じています。そのため万全の準備をして今日の試合に臨みます。"
+      },
+      {
+        "translation": "あなたが辞めたということを聞いた時、私は本当に虚脱感を覚えました。なぜならあなたがこのプロジェクトにおいて重要な役割を果たしていたからです。"
+      },
+      {
+        "translation": "私は彼女が私のことを好きだということを知った時、本当に幸せでした。なぜなら私も彼女のことが好きだったからです。"
+      }
+    ]
   },
   "ko_다며_36": {
-    "title": "~다며 [damyeo] (Saying that)",
-    "shortExplanation": "Used to relay an action or state that the speaker (or someone else) says, thinks, or feels.",
-    "longExplanation": "'~다며 [damyeo]' is used in Korean when the speaker is quoting or restating something that was said or thought. It often appears when reporting direct speech or personal thoughts, indicating a subjective viewpoint. Tense is indicated by the overall sentence rather than by '다며' itself.",
-    "formation": "Declarative verb/adjective form + 다며"
+    "title": "~다며（〜だと言って、〜だとのことで）",
+    "shortExplanation": "自分や他人が述べた発言や主張、理由などを引用しながら、それに伴う行動や感想を述べる表現です（「〜だと言って」「〜と言いながら」）。",
+    "longExplanation": "「~다며」は、間接引用の「-다고 하며（〜だと言って）」が縮約された接続表現です。発話者本人や第三者が語った言葉、考え、または理由・口実を引き合いに出しながら、その言葉に伴って取った行動やその時の状況を説明します。日本語の「〜と言って」「〜だと言いながら」に相当します。",
+    "formation": "動詞語幹 + -ㄴ/는다며 / 形容詞語幹 + -다며 / 名詞 + -(이)라며（過去形：-았/었다며）",
+    "examples": [
+      {
+        "translation": "みんなが空が本当に青いと言った時、私はただ当たり前だと思いました。"
+      },
+      {
+        "translation": "彼女は自分にはもうこれ以上我慢できないと言って、辞めることに決めました。"
+      },
+      {
+        "translation": "私の友達は徹夜で勉強すると話していましたが、私はそれが嘘だと思いました。"
+      },
+      {
+        "translation": "お母さんは今年こそ必ずダイエットをしなければならないと言って、自分自身に約束しました。"
+      }
+    ]
   },
   "ko_대로_37": {
-    "title": "~대로 [daero] (According to, as)",
-    "shortExplanation": "〜を示します actions performed according to a certain method, rule, or manner.",
-    "longExplanation": "'~대로 [daero]' expresses that something is done 'according to' or 'in the same manner as' a previously mentioned instruction, plan, or situation. It can also mean 'just as it is.'",
-    "formation": "名詞 + 대로 / 動詞 stem + (으)ㄴ/는 대로"
+    "title": "~대로（〜の通りに、〜のままに）",
+    "shortExplanation": "ある方法や規則、指示、計画などに寸分たがわず従うことや、元の状態のままであることを表します（「〜の通りに」「〜のままに」）。",
+    "longExplanation": "「~대로」は、名詞に直接付く助詞、または動詞の連体形語尾に続く「-(으)ㄴ/는 대로」の形で用いられ、以前に示された指示・計画・状況に厳密に従って行動すること、あるいは「元の状態のまま」であることを表します。日本語の「〜の通りに」「〜に従って」「〜のまま」に相当します。",
+    "formation": "名詞 + 대로 / 動詞語幹 + -(으)ㄴ/는 대로",
+    "examples": [
+      {
+        "translation": "先生が教えてくれた通りに問題を解いてみましたが、まだよく理解できません。"
+      },
+      {
+        "translation": "姉が薦めてくれた通りに本を読んでみたら、深い意味が込められた面白い本でした。"
+      },
+      {
+        "translation": "私たちが計画した通りに旅行を続けながら、色々なランドマークを見ることができました。"
+      },
+      {
+        "translation": "写真に見える景色そのままに実際に見たら、あまりにも美しくて気分がとても良くなりました。"
+      }
+    ]
   },
   "ko_대로_38": {
-    "title": "~대로 하다 [daero hada] (Do as instructed/said)",
-    "shortExplanation": "〜を表すために使用されます doing something exactly as was stated or instructed.",
-    "longExplanation": "The expression '~대로 하다 [daero hada]' means to carry out an action 'according to' or 'as' someone said or as indicated by some rule, instruction, or pattern. It emphasizes following instructions or advice exactly.",
-    "formation": "名詞/動詞 어/아/해 + 대로 하다"
+    "title": "~대로 하다（〜の通りにする、〜に従って行う）",
+    "shortExplanation": "言われたことや指示、規則、基準などに寸分違わず従って行動することを表します（「〜の通りにする」「言われた通りにやる」）。",
+    "longExplanation": "「~대로 하다」は、相手の言った言葉、アドバイス、レシピ、規則などに正確に従って行動を実行することを強調する表現です。名詞に直接付くか、動詞の連体形（「말씀하신 대로」「지시한 대로」など）の後に「하다」が続く形で広く用いられます。",
+    "formation": "名詞 + 대로 하다 / 動詞語幹 + -(으)ㄴ/는 대로 하다",
+    "examples": [
+      {
+        "translation": "母は朝起きたら必ずご飯を食べるようにと言いました。だから私は母の言った通りにしてから学校へ行きます。"
+      },
+      {
+        "translation": "料理本のレシピ通りに料理を作れば、いつでも美味しく仕上げることができます。"
+      },
+      {
+        "translation": "先生が強調された通りに勉強すれば、試験で良い点数を取ることができるはずです。"
+      },
+      {
+        "translation": "両親が言った通りに毎日運動し、栄養のある食事をとったところ、健康がずっと良くなりました。"
+      }
+    ]
   },
   "ko_대로이면_39": {
-    "title": "~대로이면 [daeroimyeon] (If it’s as ... said)",
-    "shortExplanation": "〜を表すために使用されます the condition ‘if it is according to ...’ or ‘if it is as stated’.",
-    "longExplanation": "'~대로이면 [daeroimyeon]' is a conditional phrase meaning 'if it indeed is as stated or as told.' Often used when talking about a plan, rumor, or instruction that might or might not be accurate.",
-    "formation": "動詞 (plain form) + 대로이면"
+    "title": "~대로이면（〜の通りなら、〜の言う通りであれば）",
+    "shortExplanation": "誰かの言葉や計画、情報がその通りであると仮定する条件を表します（「〜の通りなら」「〜の言う通りであれば」）。",
+    "longExplanation": "「~대로이면」は、基準や通りの「대로」に指定詞「이-」と仮定の接続語尾「-면」が結合した表現です（日常会話では「~대로라면」の形も非常によく用いられます）。伝え聞いた話や計画、噂などが「もしその通りだとすれば」という前提を置き、その場合に予想される結果や判断を後節で述べます。",
+    "formation": "名詞 + 대로이면（または 대로라면）/ 動詞語幹 + -(으)ㄴ/는 대로이면（または 대로라면）",
+    "examples": [
+      {
+        "translation": "チキン屋の社長が言った通りなら、ここで一番人気のあるメニューはヤンニョムチキンだそうです。"
+      },
+      {
+        "translation": "君の計画通りなら、今夜映画を見ることができそうですね。"
+      },
+      {
+        "translation": "ミンスが言った通りなら、この試験はとても難しいそうです。"
+      },
+      {
+        "translation": "フンミンが全てを正直に言った通りなら、彼は今後このようなミスをしないはずです。"
+      }
+    ]
   },
   "ko_도록_40": {
-    "title": "~도록 [dorok] (So that)",
-    "shortExplanation": "〜を表すために使用されます ‘so that’ or ‘in order to’.",
-    "longExplanation": "'~도록 [dorok]' is a grammatical form used in Korean to express an intended purpose or result, similar to 'so that' or 'in order to' in English. It can also indicate cause-and-effect relationships or give instructions for achieving a particular outcome.",
-    "formation": "動詞 stem + 도록 / 名詞 + 이/가 + 形容詞 + 도록"
+    "title": "~도록（〜するように、〜できるように）",
+    "shortExplanation": "目的や目標、またはある結果に至る程度を表す接続語尾です（「〜するように」「〜できるように」）。",
+    "longExplanation": "「~도록」は動詞や形容詞の語幹に付く接続語尾で、後節の動作がある目標や目的（前節の内容）を達成するために行われることを表します。「〜するように」「〜できるために」という意味で広く使われ、相手に指示や依頼をする際や、ある状態に至るまでの程度を示す際にも用いられます。",
+    "formation": "動詞語幹 / 形容詞語幹 + -도록",
+    "examples": [
+      {
+        "translation": "夜行性動物を見られるように、ナイトサファリに行くことにしました。"
+      },
+      {
+        "translation": "私たちみんなが理解できるように、講義をゆっくり進めてください。"
+      },
+      {
+        "translation": "落ち葉が早く片付くように、定期的に庭を掃きました。"
+      },
+      {
+        "translation": "雨風が入ってこないように、窓をしっかり閉めておきました。"
+      }
+    ]
   },
   "ko_도록_41": {
-    "title": "~도록 하다 [dorok hada] (Make/ensure that)",
-    "shortExplanation": "〜を表すために使用されます making someone do something or ensuring that something happens.",
-    "longExplanation": "'~도록 하다 [dorok hada]' is often used in Korean to mean 'make sure to...' or 'have/let someone do something.' It can also mean you are ensuring a certain condition or outcome occurs.",
-    "formation": "動詞/名詞 + 도록 하다"
+    "title": "~도록 하다（〜するようにする、〜させる）",
+    "shortExplanation": "誰かに指示・働きかけて行動させたり、ある状態が確実に実現するよう努めたりすることを表します（「〜するようにする」「〜させる」）。",
+    "longExplanation": "「~도록 하다」は、相手に働きかけて特定の行動を取らせる使役的な意味合いや、ある望ましい結果・状態が確実に達成されるように措置を講じることを表します。また、一人称が主語で「-도록 하겠습니다」と使われる場合は、「必ず〜するように努めます」という丁寧な決意表明になります。",
+    "formation": "動詞語幹 / 形容詞語幹 + -도록 하다",
+    "examples": [
+      {
+        "translation": "私はいつも学生たちが真面目に授業を聞くように指導しています。"
+      },
+      {
+        "translation": "会社では社員たちが早く退勤できるように促しています。"
+      },
+      {
+        "translation": "彼女は子どもたちが安全に家に着くように配慮しました。"
+      },
+      {
+        "translation": "母は私たちが毎日野菜を食べるようにさせました。"
+      }
+    ]
   },
   "ko_도록이면_42": {
-    "title": "~도록이면 [dorogimyeon] (If possible)",
-    "shortExplanation": "〜を表すために使用されます a wish or desire for something to be done if possible.",
-    "longExplanation": "'~도록이면 [dorogimyeon]' is 〜を示します the speaker's preference or hope that something be done, assuming it’s possible. It can be interpreted as 'if possible...' or 'if you can help it...'.",
-    "formation": "動詞 stem + 도록이면"
+    "title": "도록이면 / 되도록이면（できれば、なるべく、可能な限り）",
+    "shortExplanation": "可能であればそうしたいという希望や、相手に対する婉曲な要請・アドバイスを表します（「できれば」「なるべく」「可能な限り」）。",
+    "longExplanation": "「도록이면」（標準的には「되도록이면」の縮約・口語的用法）は、「できることなら」「可能な限り」という意味を表します。文頭に置いて副詞的に用いられることが多く、話し手の希望や心がけ、あるいは相手に負担をかけないよう配慮しながら促す柔らかい助言・要望のニュアンスを持ちます。",
+    "formation": "文頭の副詞的用法 / 動詞語幹 + -도록이면",
+    "examples": [
+      {
+        "translation": "できれば健康に良い食べ物を食べるように努力しています。"
+      },
+      {
+        "translation": "可能であれば早めに返信をお願いします。"
+      },
+      {
+        "translation": "なるべく毎日運動してこそ、健康を維持することができます。"
+      },
+      {
+        "translation": "できれば宿題を後回しにせず、すぐにやるのが良いです。"
+      }
+    ]
   },
   "ko_든지_43": {
-    "title": "~든지 [deunji] (Whether ... or)",
-    "shortExplanation": "Used to present multiple possibilities or choices: 'whether ... or'.",
-    "longExplanation": "'~든지 [deunji]' is used to offer two or more choices, similar to 'whether ... or' in English. It indicates that any of the mentioned options is acceptable or possible. It can be attached to nouns, verbs, or phrases in a flexible way.",
-    "formation": "名詞 + (이)든지 / 動詞 stem + 든지"
+    "title": "~든지（〜であれ〜であれ、〜だろうと〜だろうと）",
+    "shortExplanation": "複数の選択肢や可能性を並べ、どれであっても関係なく当てはまることを表します（「〜であれ〜であれ」「〜だろうと〜だろうと」）。",
+    "longExplanation": "「~든지」は助詞として名詞に付くか、接続語尾として動詞や形容詞の語幹に付きます。複数の事柄や選択肢を提示し、「どちらを選んでも構わない」「どれであっても結果に影響はない」という無条件・無差別のニュアンスを表します。日本語の「〜であれ〜であれ」「〜だろうが〜だろうが」に相当します。",
+    "formation": "名詞 + (이)든지 / 動詞語幹 / 形容詞語幹 + -든지",
+    "examples": [
+      {
+        "translation": "団体旅行であれ個人旅行であれ、私はどんな形態の旅行でも好きです。"
+      },
+      {
+        "translation": "この問題を解決するために多くの時間を費やしたにせよ、多くのお金を使ったにせよ、その全ての努力には価値がありました。"
+      },
+      {
+        "translation": "彼がもしソウルに住んでいようと釜山に住んでいようと、彼はどこででも幸せでしょう。"
+      },
+      {
+        "translation": "この会社で勤務しようと別の会社で勤務しようと、私はどこででも最善を尽くします。"
+      }
+    ]
   },
   "ko_든지_44": {
-    "title": "~든지 ~든지 [deunji deunji] (Either ... or)",
-    "shortExplanation": "Used to enumerate alternatives or choices; 'either ... or'.",
-    "longExplanation": "'~든지 ~든지 [deunji deunji]' is a conjunctive expression in Korean used to convey multiple choices or alternatives. Similar to 'either ... or' in English, it indicates that any of the mentioned options is acceptable, leaving the final decision to the listener or speaker.",
-    "formation": "名詞 + 든지 + 名詞 + 든지"
+    "title": "~든지 ~든지（〜するなり〜するなり、〜か〜か）",
+    "shortExplanation": "複数の選択肢を並列し、その中からいずれかを選択することを表します（「〜するなり〜するなり」「〜か〜か」）。",
+    "longExplanation": "「~든지 ~든지」は、接続語尾「-든지」を重ねて複数の代替案を並べ立て、「〜するなり、〜するなり」と相手に選択肢を委ねたり、自分の予定を並列したりする表現です。後節に「아니면（それとも）」を伴って使われることも多く、どちらの行動を取っても構わない自由度を示します。",
+    "formation": "名詞 + (이)든지 名詞 + (이)든지 / 動詞語幹 + -든지 (아니면) 動詞語幹 + -든지",
+    "examples": [
+      {
+        "translation": "今度の週末は映画を見に行くなり、あるいは家で休むなりする計画です。"
+      },
+      {
+        "translation": "夕食のメニューにピザを食べるか、それともチキンを食べるか、まだ決められずにいます。"
+      },
+      {
+        "translation": "今家に帰るなり、それとももう少し残るなり、思い通りにして構いませんよ。"
+      },
+      {
+        "translation": "彼女に電話をかけるなり、あるいはメッセージを送るなりして、必ず連絡を取らなければなりません。"
+      }
+    ]
   },
   "ko_라도_45": {
-    "title": "~라도 [rado] (At least, even if)",
-    "shortExplanation": "〜を表すために使用されます the minimum action or condition; 'at least', 'even if'.",
-    "longExplanation": "'~라도 [rado]' indicates a minimal or lesser option that is still better than nothing. It carries the sense of 'at least' or 'even if,' showing that although the condition might not be ideal, it satisfies some minimum requirement or concession.",
-    "formation": "動詞 stem + 라도 / 名詞 + (이)라도"
+    "title": "~라도（〜だけでも、〜であっても、せめて〜でも）",
+    "shortExplanation": "最善ではないものの、妥協案や最低限の希望として受け入れることを表す助詞です（「せめて〜でも」「〜だけでも」）。",
+    "longExplanation": "「~라도」は名詞や副詞の後に付く補助詞で、最善の選択肢ではないものの、「ないよりはまし」「せめてこれだけでも」という最低限の譲歩や妥協を表します。日本語の「せめて〜でも」「〜だけでも」「〜であっても」に相当します。",
+    "formation": "名詞 + (이)라도 / 動詞語幹 + -아/어-라도（または 語幹 + -(으)ㄹ지라도）",
+    "examples": [
+      {
+        "translation": "この仕事ができないのなら、せめて手助けだけでもしてください。"
+      },
+      {
+        "translation": "彼は授業に参加しませんでしたが、せめて本だけでも読むべきでした。"
+      },
+      {
+        "translation": "試験には落ちてしまいましたが、せめてもう一度挑戦だけでもしてみます。"
+      },
+      {
+        "translation": "映画を見に行きたくなくても、友達が好きだと言うなら、せめて一緒に行くだけでも行きます。"
+      }
+    ]
   },
   "ko_라든지_46": {
-    "title": "~라든지 [radeunji] (Or something)",
-    "shortExplanation": "〜を示します alternatives or options; 'or something', 'for example'.",
-    "longExplanation": "'~라든지 [radeunji]' is a Korean conjunctive particle used to suggest various examples or possibilities. It’s often used when the speaker is unsure or when only offering sample options among many, much like 'or something like that' or 'for example' in English.",
-    "formation": "名詞/動詞 stem + 라든지"
+    "title": "~(이)라든지（〜とか〜とか、〜だの〜だの、〜など）",
+    "shortExplanation": "代表的な例をいくつか挙げて例示する助詞です（「〜とか〜とか」「〜など」）。",
+    "longExplanation": "「~(이)라든지」は、名詞や引用表現の後に付き、複数の具体例を並べて例示する並立助詞です。挙げられた事物だけでなく、それらに類する同種のもの全般を念頭に置きながら、「〜とか〜とか」「〜など」と例を挙げるニュアンスを持ちます。",
+    "formation": "名詞 + (이)라든지 / 動詞語幹 + -라든지",
+    "examples": [
+      {
+        "translation": "コーヒーとかお茶とか、何かお飲み物を召し上がりますか？"
+      },
+      {
+        "translation": "図書館で勉強しろだの家で本を読めだの言われますが、私はいつも多くのことを学んでいます。"
+      },
+      {
+        "translation": "旅行をするとか新しい趣味を探してみるとか、楽しみを見つけるためにできることはたくさんあります。"
+      },
+      {
+        "translation": "リンゴとかナシとか、果物の中でどれが一番好きですか？"
+      }
+    ]
   },
   "ko_라면_47": {
-    "title": "~라면 [ramyeon] (If it's the case that)",
-    "shortExplanation": "〜を表すために使用されます the hypothetical condition 'if it's the case that'.",
-    "longExplanation": "'~라면 [ramyeon]' is a conditional suffix in Korean that corresponds to 'if' or 'if it's the case that' in English. It’s commonly used for hypothetical or conjectural statements.",
-    "formation": "動詞/形容詞 + (이)라면"
+    "title": "~(이)라면 / ~다면（〜なら、もし〜だとしたら）",
+    "shortExplanation": "仮定の条件を表し、現実とは異なる仮定や推測に基づく状況を述べる表現です（「〜なら」「もし〜だとしたら」）。",
+    "longExplanation": "「~(이)라면」は名詞に付いて「もし〜なら」を意味し、動詞や形容詞に付く場合は間接引用の縮約形「-다면」や過去仮定「-았/었다면」として広く使われます。仮定の状況や事実に反する仮定（反実仮想）を提示し、その前提のもとで成立する結果や願望を後節で述べます。",
+    "formation": "名詞 + (이)라면 / 形容詞語幹 + -다면 / 動詞語幹 + -ㄴ/는다면（過去形は -았/었다면）",
+    "examples": [
+      {
+        "translation": "あなたがその事実を先に知っていたのなら、なぜ私に話してくれなかったのですか？"
+      },
+      {
+        "translation": "明日雨が降るというのなら、傘を用意しなければなりませんね。"
+      },
+      {
+        "translation": "私が天才なら、この問題を簡単に解決できるでしょうに。"
+      },
+      {
+        "translation": "映画を見に行きたいなら、夜に一緒に行きましょうか？"
+      }
+    ]
   },
   "ko_라면서_48": {
-    "title": "~라면서 [ramyeonseo] (While saying that)",
-    "shortExplanation": "Used when an action or state contradicts a previously stated intention or claim.",
-    "longExplanation": "'~라면서 [ramyeonseo]' is 〜を示します that someone acts in a way that goes against what they have said. It can also be used in contexts where you quote someone else’s words and then show a discrepancy. It loosely translates to 'while (he/she) said that...' in English.",
-    "formation": "動詞/形容詞 (future/past tense form) + 라면서"
+    "title": "~(ㄴ/는)다면서 / ~라면서（〜と言いながら、〜と言っておきながら）",
+    "shortExplanation": "前に言った言葉や公言と、実際の行動が食い違っている矛盾や言行不一致を表します（「〜と言っておきながら」「〜だと言いながら」）。",
+    "longExplanation": "「~라면서」（または用言の引用縮約形「-(ㄴ/는)다면서」）は、間接引用表現に同時・逆接の接続語尾「-(으)면서」が結合した文型です。口では「〜する」と言っていながら、実際にはそれと正反対の行動を取っている矛盾を指摘したり、呆れや軽い皮肉、あるいは自嘲を込めて述べる際に用いられます。",
+    "formation": "動詞語幹 + -(ㄴ/는)다면서 / 形容詞語幹 + -다면서 / 名詞 + -(이)라면서（意志・未来形：-겠다면서）",
+    "examples": [
+      {
+        "translation": "彼は勉強すると言っておきながら、ずっとゲームをしています。"
+      },
+      {
+        "translation": "彼女はお金を節約すると言いながら、今ショッピングをしています。"
+      },
+      {
+        "translation": "私はダイエットをしなければならないと言いながら、毎日甘いものを食べています。"
+      },
+      {
+        "translation": "うちの父は禁煙すると言っておきながら、今でもタバコを吸っています。"
+      }
+    ]
   },
   "ko_려고_49": {
-    "title": "~려고 [ryeogo] (In order to)",
-    "shortExplanation": "Used to show the intent or purpose of an action; 'in order to', 'to'.",
-    "longExplanation": "'~려고 [ryeogo]' is used in Korean to express the intention or purpose for doing something. It is often translated as 'in order to' or simply 'to' in English, indicating the reason or goal behind an action.",
-    "formation": "動詞 stem + 려고"
+    "title": "~(으)려고（〜しようと、〜するために）",
+    "shortExplanation": "ある行動を起こす目的や意図を表す接続語尾です（「〜しようと」「〜するために」）。",
+    "longExplanation": "「~(으)려고」は動詞の語幹に付き、後節の動作を行う目的や話し手の意図を表します。「〜しようとして」「〜するために」という意味になり、前節と後節の主語は同一でなければなりません。また、後節に命令形や勧誘形を用いることはできません。",
+    "formation": "動詞語幹（パッチムあり）+ -으려고 / 動詞語幹（パッチムなし・パッチム ㄹ）+ -려고",
+    "examples": [
+      {
+        "translation": "韓国語が上手になろうと、毎日韓国語を勉強しています。"
+      },
+      {
+        "translation": "ダイエットをしようと運動し、カロリーを減らそうと努力しました。"
+      },
+      {
+        "translation": "今回の試験で良い結果を出そうとたくさん勉強し、早く寝ようと努力しました。"
+      },
+      {
+        "translation": "お母さんを喜ばせてあげようと、毎日部屋を片付け、美味しい料理を作って差し上げました。"
+      }
+    ]
   },
   "ko_려고_50": {
-    "title": "~려고 하다 [ryeogo hada] (Try to)",
-    "shortExplanation": "〜を表すために使用されます one's intention or attempt to do something; 'try to', 'plan to'.",
-    "longExplanation": "'~려고 하다' indicates the speaker’s intention or plan to perform an action. 〜と訳されます 'try to...' or 'plan to...' in English. It’s a common structure for talking about near-future actions or goals.",
-    "formation": "動詞 stem + 려고 하다"
+    "title": "~(으)려고 하다（〜しようとする、〜するつもりだ）",
+    "shortExplanation": "ある行動を起こそうとする主語の意図や計画を表します（「〜しようとする」「〜するつもりだ」）。",
+    "longExplanation": "「~(으)려고 하다」は、意図を表す接続語尾「-(으)려고」に補助動詞「하다」が結合した文型で、主語がこれからある行動をしようと意図・計画していることを表します。過去形「-(으)려고 했다」の形で用いられると、「〜しようとしたが、予期せぬ事情でできなかった」という未達成の意図を述べる文脈で極めてよく使われます。",
+    "formation": "動詞語幹（パッチムあり）+ -으려고 하다 / 動詞語幹（パッチムなし・パッチム ㄹ）+ -려고 하다",
+    "examples": [
+      {
+        "translation": "私は今日学校に行こうとしましたが、雨が降ったため行くことができませんでした。"
+      },
+      {
+        "translation": "叔父は明日うちに来る予定でしたが、車が故障して来られなくなりました。"
+      },
+      {
+        "translation": "私はあなたに電話をかけようとしましたが、バッテリーが切れてしまって電話できませんでした。"
+      },
+      {
+        "translation": "友達と一緒に映画を見ようとしましたが、チケットが売り切れて見られませんでした。"
+      }
+    ]
   },
   "ko_려는데_51": {
-    "title": "~려는데 [ryeonde] (I'm planning to, I want to)",
-    "shortExplanation": "〜を表すために使用されます a plan or intention that has not yet been carried out.",
-    "longExplanation": "'~려는데 [ryeonde]' is used when the speaker has a plan or a certain inclination to do something in the future. It often carries the nuance that the plan could be affected by circumstances, or that it’s still in the preliminary stage.",
-    "formation": "動詞 stem + 려는데"
+    "title": "~(으)려는데（〜しようとしているところだが、〜するつもりなのだが）",
+    "shortExplanation": "ある行動をしようとしている状況を背景・前置きとして提示し、それに伴う状況や障害を後節で述べます（「〜しようとしているところだが」「〜するつもりなのだが」）。",
+    "longExplanation": "「~(으)려는데」は「-(으)려고 하는데」の縮約形です。意図を表す文型に背景提示の接続語尾「-는데」が結びついており、「ちょうど〜しようとしているところだが」と前置きした上で、後節でその意図を妨げる状況（雨、材料不足、チケット完売など）や相談・疑問を提示する際に頻繁に用いられます。",
+    "formation": "動詞語幹（パッチムあり）+ -으려는데 / 動詞語幹（パッチムなし・パッチム ㄹ）+ -려는데",
+    "examples": [
+      {
+        "translation": "本を買いに本屋へ行こうとしているところですが、雨があまりにもひどく降っているので、たぶん行けそうにありません。"
+      },
+      {
+        "translation": "夕食の準備をしようとしているところですが、必要な材料が足りないので買い出しに行かなければならなさそうです。"
+      },
+      {
+        "translation": "友達にプレゼントをあげようと思っているのですが、どんなプレゼントをあげるべきかまだ悩んでいる最中です。"
+      },
+      {
+        "translation": "今週末に映画を見に行こうとしているのですが、全てのチケットが予約されてしまって見られそうにありません。"
+      }
+    ]
   },
   "ko_마다_52": {
-    "title": "~마다 [mada] (Every)",
-    "shortExplanation": "〜を表すために使用されます 'every' or 'each'.",
-    "longExplanation": "'~마다 [mada]' is a postposition in Korean used to mean 'every' or 'each,' emphasizing the recurring nature of events or items. It can apply to time expressions (e.g., 매일마다), location (집집마다), or other contexts where the idea of ‘every’ or ‘each’ is relevant.",
-    "formation": "名詞 + 마다"
+    "title": "~마다（〜ごとに、〜のたびに、毎〜）",
+    "shortExplanation": "時間、場所、事物などを表す名詞に付き、規則的な反復や「どれも漏れなく」という意味を表します（「〜ごとに」「〜のたびに」「毎〜」）。",
+    "longExplanation": "「~마다」は名詞の後ろに付く助詞で、ある事柄が周期的に繰り返されることや、該当するすべての対象に漏れなく当てはまることを表します。日本語の「〜ごとに」「〜のたびに」「毎〜」に相当します。時間（날마다、주마다）、場所（집집마다）、一般的な名詞など幅広く用いられます。",
+    "formation": "名詞 + 마다",
+    "examples": [
+      {
+        "translation": "私は毎週図書館に行って本を借りて読んでいます。そのため、新しい知識を身につけ続けています。"
+      },
+      {
+        "translation": "毎朝気持ちよく一日を始めましょう。そうすれば良いことが起こるはずです。"
+      },
+      {
+        "translation": "私は友達と毎月末に映画を見に行きます。だからいつも新しい映画を見ることができます。"
+      },
+      {
+        "translation": "私たちは夏ごとに海辺に行って楽しい時間を過ごそうとしています。そのため毎年夏が待ち遠しいです。"
+      }
+    ]
   },
   "ko_만큼_53": {
-    "title": "~만큼 [mankeum] (As much as)",
-    "shortExplanation": "This pattern is used to show the extent or degree of something, or to compare two things.",
-    "longExplanation": "'~만큼 [mankeum]' is a grammar structure 〜を表すために使用されます 'as much as' or 'equivalent to' in English. It lets you denote that something has the same extent or degree as another thing. It’s often used to talk about comparisons, equivalences, or proportional relationships.",
-    "formation": "名詞 + 만큼 | 動詞 + 을 만큼"
+    "title": "~만큼 / ~(으)ㄹ 만큼（〜と同じくらい、〜ほど、〜するくらい）",
+    "shortExplanation": "前節の事物と同じくらいの程度・分量であることや、それに比例すること、またはある程度に達することを表します（「〜くらい」「〜ほど」）。",
+    "longExplanation": "「~만큼」（名詞の後）または「~(으)ㄹ 만큼」（動詞・形容詞の後）は、ある事物の程度や数量が前の対象と同等であることや、比例関係にあること、またはある状態に至るほどの程度であることを表します。日本語の「〜くらい」「〜ほど」「〜するほど」に相当します。",
+    "formation": "名詞 + 만큼 | 動詞・形容詞語幹 + -(으)ㄹ 만큼",
+    "examples": [
+      {
+        "translation": "あなたが気に入ってくださるなら、その分私も嬉しいです。感情は常に相互的なものですから。"
+      },
+      {
+        "translation": "私の父は若い頃ほど速くは走れませんが、今でも体力が十分あります。"
+      },
+      {
+        "translation": "この本は読めば読むほど良いです。本の後半部分を見ると、前半部分と同じくらい面白いです。"
+      },
+      {
+        "translation": "あなたがどれだけ努力するかによって、成功する可能性もその分だけ高くなります。"
+      }
+    ]
   },
   "ko_면_54": {
-    "title": "~면 [myeon] (If, when)",
-    "shortExplanation": "〜を表すために使用されます a conditional 'if' or to describe 'when' something happens.",
-    "longExplanation": "'~면 [myeon]' is a suffix attached to a verb stem to mean 'if' or sometimes 'when' in English. It describes a hypothetical or future condition. The action or state in the main clause will naturally occur once the condition in the dependent clause is met.",
-    "formation": "動詞 stem + 면"
+    "title": "~(으)면（〜なら、〜ば、〜たら、〜すると）",
+    "shortExplanation": "仮定の条件を提示したり、ある状況が満たされたときに必然的に起こる事柄を表す接続語尾です（「〜なら」「〜ば」「〜すると」）。",
+    "longExplanation": "「~(으)면」は動詞や形容詞の語幹に付く接続語尾で、まだ実現していない仮定の条件（「もし〜なら」）を表したり、ある動作や事態が起きれば自然と次の事態が成り立つこと（「〜すると」「〜の時には」）を表します。語幹末尾にパッチムがある場合（ㄹを除く）は「-으면」、母音またはㄹパッチムで終わる場合は「-면」を用います。",
+    "formation": "動詞・形容詞語幹 + -(으)면",
+    "examples": [
+      {
+        "translation": "私はご飯を食べると幸せな気分になります。まるで空腹を解決したかのようです。"
+      },
+      {
+        "translation": "授業が終わったらすぐに家に帰るつもりです。疲れすぎて勉強する意欲が湧きません。"
+      },
+      {
+        "translation": "試験に合格したら、友達と一緒にパーティーを開こうと考えています。"
+      },
+      {
+        "translation": "私をこれ以上押しつぶすなら、結局私は前に進む勇気を失ってしまいそうです。"
+      }
+    ]
   },
   "ko_면서_55": {
-    "title": "~면서 [myeonseo] (While)",
-    "shortExplanation": "A conjunction used to connect two actions happening at the same time.",
-    "longExplanation": "'~면서 [myeonseo]' indicates two actions or states occurring simultaneously with the same subject. It often translates to 'while' or 'as' in English. It’s used when both actions happen concurrently rather than in sequence.",
-    "formation": "動詞 stem + 면서"
+    "title": "~(으)면서（〜しながら）",
+    "shortExplanation": "同一の主体が2つの動作や状態を同時に並行して行うことを表す接続語尾です（「〜しながら」）。",
+    "longExplanation": "「~(으)면서」は動詞や形容詞の語幹に付く接続語尾で、同一の主語が同時に2つの動作を行ったり、2つの状態を兼ね備えていたりすることを表します。日本語の「〜しながら」に相当します。語幹末尾にパッチムがある場合（ㄹを除く）は「-으면서」、母音またはㄹパッチムで終わる場合は「-면서」を用います。",
+    "formation": "動詞・形容詞語幹 + -(으)면서",
+    "examples": [
+      {
+        "translation": "私は音楽を聴きながら勉強をします。そうするとずっと集中がよくできます。"
+      },
+      {
+        "translation": "うちのお母さんは料理をしながら歌を歌います。その姿がとても愛らしいです。"
+      },
+      {
+        "translation": "私は自転車に乗りながら本を読むことはできません。危険すぎるからです。"
+      },
+      {
+        "translation": "友達と話しながらコーヒーを飲みます。だからカフェによく行きます。"
+      }
+    ]
   },
   "ko_밖에_56": {
-    "title": "~밖에 [bakke] (Nothing but, only)",
-    "shortExplanation": "Expresses 'nothing but' or 'only', indicating limited choices or possibilities (usually in negative sentences).",
-    "longExplanation": "'~밖에 [bakke]' is a particle that emphasizes the exclusivity of something—only that item or option exists or applies. It generally appears in negative sentences to highlight that there is nothing else but whatever is mentioned.",
-    "formation": "名詞 + 밖에 + Negative verb"
+    "title": "~밖에（〜しか、〜以外には）",
+    "shortExplanation": "名詞の後ろに付き、後ろに必ず否定表現を伴って「それ以外にはない」という限定を表します（「〜しか……ない」）。",
+    "longExplanation": "「~밖에」は限定を表す助詞で、必ず後ろに否定の述語（안、못、없다、모르다など）を伴って用いられます。「〜のほかに（選択肢が）ない」という強い限定を表し、日本語の「〜しか（〜ない）」にぴったり対応します。",
+    "formation": "名詞 + 밖에 + 否定述語（안, 못, 없다, 모르다など）",
+    "examples": [
+      {
+        "translation": "私は韓国語しか知らないので、他の国で生活するのがとても大変です。"
+      },
+      {
+        "translation": "この店ではフライドポテトしか売っていないので、選択の幅が狭いです。"
+      },
+      {
+        "translation": "彼女はカフェでマフィンしか買わないので、他のメニューは全く知りません。"
+      },
+      {
+        "translation": "今週末は家で休むことしかできません。友達がみんな忙しくて会うことができません。"
+      }
+    ]
   },
   "ko_보다_57": {
-    "title": "~보다 [boda] (More than)",
-    "shortExplanation": "Used to form comparative expressions equivalent to 'more than' in English.",
-    "longExplanation": "'~보다 [boda]' is a particle that marks what something is being compared to, functioning like 'than' in English. The item before '보다' is the reference of comparison, indicating that something else is bigger, better, or more than it.",
-    "formation": "名詞/動詞 stem + 보다 + 形容詞"
+    "title": "~보다（〜より、〜に比べて）",
+    "shortExplanation": "比較の基準となる名詞の後ろに付き、「〜より」「〜に比べて」と比較を表す助詞です。",
+    "longExplanation": "「~보다」は比較の基準を表す格助詞で、名詞に直接接続して「〜よりも……だ」と比較文を作ります。文中では強調のために副詞「더（もっと）」や「덜（あまり〜ない）」を伴って用いられることが多く、日本語の「〜より」にぴったり対応します。",
+    "formation": "名詞 + 보다 (+ 더/덜) + 述語",
+    "examples": [
+      {
+        "translation": "私はコーヒーよりお茶の方が好きです。"
+      },
+      {
+        "translation": "今年の夏は去年の夏よりさらに暑かったです。"
+      },
+      {
+        "translation": "私は普段よりもたくさんご飯を食べました。"
+      },
+      {
+        "translation": "今の時間は夜10時よりもさらに遅いです。"
+      }
+    ]
   },
   "ko_부터_58": {
-    "title": "~부터 [buteo] (From, starting from)",
-    "shortExplanation": "Indicates the starting point of an action, location, or time.",
-    "longExplanation": "'~부터 [buteo]' is a common grammar particle used to show when or where something begins. It corresponds to 'from' in English, marking the starting moment, place, or status for an event or situation.",
-    "formation": "名詞 + 부터"
+    "title": "~부터（〜から、〜はじめ）",
+    "shortExplanation": "時間や順序の始まり、起点を表す助詞です（「〜から」「〜はじめ」）。",
+    "longExplanation": "「~부터」は時間や順序、動作が始まる起点を示す助詞です。日本語の「〜から」に相当し、終了点を表す「~까지（〜まで）」と組み合わせて「~부터 ~까지（〜から〜まで）」の形で非常によく用いられます。また、順序として「まずこれから先に」という意味でも使われます。",
+    "formation": "名詞 + 부터（よく「~까지」と呼応）",
+    "examples": [
+      {
+        "translation": "明日は朝7時から授業が始まるので、遅れないように準備しなければなりません。"
+      },
+      {
+        "translation": "旅行カバンを整理する時、まず服から取り出し、その後にアクセサリーを用意しました。"
+      },
+      {
+        "translation": "この食堂では昼食を12時から午後3時まで販売しています。"
+      },
+      {
+        "translation": "今月から来年初めまでに、このプロジェクトを完成させなければなりません。"
+      }
+    ]
   },
   "ko_서는_59": {
-    "title": "~서는 [seoneun] (But in)",
-    "shortExplanation": "〜を示します contrast or contradiction in two different contexts.",
-    "longExplanation": "'~서는 [seoneun]' can appear in contexts where there is a mismatch between an expectation or statement and the actual situation. It's somewhat similar to saying 'but in (that regard)' or 'but as for...' in English. It often conveys disappointment, contradiction, or surprise.",
-    "formation": "動詞 stem + 서는"
+    "title": "~서는 / ~에서는（〜においては、〜の点ではかえって）",
+    "shortExplanation": "特定の領域や場面を取り上げて、期待や前置きとの対比・落差を表します（「〜においては」「〜の点では」）。",
+    "longExplanation": "「~서는」（主に「-에서는」「-는 데서는」や接続の「-아/어서는」などに見られる形）は、特定の領域、局面、条件を取り立てて示し、一般的な予想や前節の主張とは食い違う残念な結果や意外な事実を対比させる際に使われます。日本語の「〜においては」「〜の点では」「〜に関してはかえって」に相当します。",
+    "formation": "名詞 + 에서는 / 動詞語幹 + -는 데서는 / 動詞語幹 + -아/어서는",
+    "examples": [
+      {
+        "translation": "その友達は日本語も上手で中国語も上手なのに、韓国語においては全く話せないので少し残念でした。"
+      },
+      {
+        "translation": "私は料理はかなり得意ですが、デザートを作る点では自信がありません。"
+      },
+      {
+        "translation": "彼は試験がよくできたと言っていましたが、結果においては本当に散々だったので驚きました。"
+      },
+      {
+        "translation": "弟はいつも部屋を綺麗に片付けていると言っていましたが、いざ見てみると部屋の掃除の点では完全に散らかっていてがっかりしました。"
+      }
+    ]
   },
   "ko_아어_60": {
-    "title": "~아/어 보이다 [a/eo boida] (Looks/seems like)",
-    "shortExplanation": "Used to make a subjective judgment about someone or something based on appearance or situation.",
-    "longExplanation": "'~아/어 보이다 [a/eo boida]' is used to convey that something or someone ‘looks like’ or ‘seems like’ a certain way, based on the speaker's subjective perspective. It can express guesses or first impressions about a person’s feelings, health, weather, etc.",
-    "formation": "動詞/形容詞 stem + 아/어 보이다"
+    "title": "~아/어 보이다（〜に見える、〜そうだ）",
+    "shortExplanation": "外見や様子から見て、そのように感じられるという主観的な判断や印象を表します（「〜に見える」「〜そうだ」）。",
+    "longExplanation": "「~아/어 보이다」は形容詞の語幹に付き、目に見える外見や様子、雰囲気から「〜のように見える」「〜そうだ」と主観的な判断・推測を述べる文型です。語幹の母音が陽母音（ㅏ, ㅗ）の場合は「-아 보이다」、陰母音の場合は「-어 보이다」、하다動詞・形容詞は「해 보이다」となります。",
+    "formation": "形容詞語幹 + -아/어 보이다",
+    "examples": [
+      {
+        "translation": "明日は天気が良さそうに見えますね。外出すれば良さそうです。"
+      },
+      {
+        "translation": "その友達は時々寂しそうに見えました。助けてあげられたら良いなと思います。"
+      },
+      {
+        "translation": "ジニさんは最近本当に忙しそうに見えます。真面目に働く姿に将来が楽しみです。"
+      },
+      {
+        "translation": "こんなにたくさん食べたのに、まだお腹が空いているように見えるのはどう説明できるでしょうか？"
+      }
+    ]
   },
   "ko_아어_61": {
-    "title": "~아/어 버리다 [a/eo beorida] (Completely do, or unfortunately do)",
-    "shortExplanation": "〜を示します completing an action fully, or doing something that leads to an unfortunate result.",
-    "longExplanation": "The structure '~아/어 버리다 [a/eo beorida]' attaches to a verb stem to emphasize that the action is done completely or that the outcome is regrettable/unwanted. It can imply relief at finishing something, or express the speaker’s sense of regret or finality about the action.",
-    "formation": "動詞 stem + 아/어 버리다"
+    "title": "~아/어 버리다（〜してしまう、〜し終える）",
+    "shortExplanation": "動作が完全に完了したことを表し、それに伴う「残念・後悔」または「すっきりした開放感」を表します（「〜してしまう」「〜してしまう」）。",
+    "longExplanation": "「~아/어 버리다」は動詞の語幹に付き、動作がすっかり完了したことを表す補助動詞文型です。望ましくない事態が起きて「〜してしまった」と残念さや後悔を表す場合と、負担だったことを完全に終えて「〜してすっきりした」と清々しさを表す場合の2通りのニュアンスで使われます。日本語の「〜してしまう」に相当します。",
+    "formation": "動詞語幹 + -아/어 버리다",
+    "examples": [
+      {
+        "translation": "初めて会う彼女を待っているうちに、遅くなりすぎて寝てしまいました。"
+      },
+      {
+        "translation": "課題があまりにも難しかったので、そのまま諦めてしまいました。"
+      },
+      {
+        "translation": "カバンをバスに置いたまま降りて、うっかり忘れてしまいました。"
+      },
+      {
+        "translation": "野球の試合で私たちのチームがあまりに不調で、点数を全部失ってしまいました。"
+      }
+    ]
   },
   "ko_아어_62": {
-    "title": "~아/어 두다 [a/eo duda] (Keep, leave)",
-    "shortExplanation": "〜を表すために使用されます leaving or keeping something in a certain state or condition.",
-    "longExplanation": "'~아/어 두다 [a/eo duda]' is used in Korean to indicate that one is leaving something in a particular state or maintaining it for a future use or reference. It implies an intentional act of preservation or preparation. Depending on the verb’s final vowel/consonant, use '아 두다' or '어 두다'.",
-    "formation": "動詞 stem + 아/어 + 두다"
+    "title": "~아/어 두다（〜しておく、〜しておく）",
+    "shortExplanation": "将来のために前もってある動作を行い、その結果の状態をそのまま維持することを表します（「〜しておく」）。",
+    "longExplanation": "「~아/어 두다」は動詞の語幹に付き、これからの用途や将来の備えのために意図的にある行動をあらかじめ済ませておき、その完了した状態をそのまま保持することを表します。日本語の「〜しておく」「〜ておく」にぴったり対応します。語幹の母音に応じて「-아 두다」「-어 두다」「해 두다」を使い分けます。",
+    "formation": "動詞語幹 + -아/어 두다",
+    "examples": [
+      {
+        "translation": "愛する人のために良い思い出を作っておくことが大切です。"
+      },
+      {
+        "translation": "料理を作りすぎました。後で食べるために冷蔵庫に保存しておきました。"
+      },
+      {
+        "translation": "勉強していて知らない単語を見つけたら、ノートに書き留めておくのが良いです。"
+      },
+      {
+        "translation": "私は自分の夢を叶えるために、常に様々な計画を立てておきました。"
+      }
+    ]
   },
   "ko_아어_63": {
-    "title": "~아/어 가다 [a/eo gada] (Go on doing)",
-    "shortExplanation": "Expresses the continuous or ongoing nature of an action over time.",
-    "longExplanation": "'~아/어 가다 [a/eo gada]' is used to show that an action continues steadily or gradually forward, often implying persistence or progress. It can be similar to 'go on doing something' in English.",
-    "formation": "動詞 stem + 아/어 가다"
+    "title": "~아/어 가다（〜していく、〜し続ける）",
+    "shortExplanation": "ある動作や状態の変化が、現在から将来に向かって段階的に進んでいくことを表します（「〜していく」「〜し続ける」）。",
+    "longExplanation": "「~아/어 가다」は動詞や形容詞の語幹に付き、動作や状態が現在を起点として将来に向かって持続的に進行・進展していく様子を表します。日本語の「〜していく」にそのまま対応し、努力を継続することや、徐々に変化していく過程を表す際によく使われます。",
+    "formation": "動詞・形容詞語幹 + -아/어 가다",
+    "examples": [
+      {
+        "translation": "彼は毎朝運動を続けていきながら、健康を維持しようと努力しています。"
+      },
+      {
+        "translation": "彼女は学校に通いながら、仕事を続けていっています。"
+      },
+      {
+        "translation": "私たちは大きな困難にもかかわらず、プロジェクトを継続していっています。"
+      },
+      {
+        "translation": "友達が諦めたにもかかわらず、私は練習を続けていっています。"
+      }
+    ]
   },
   "ko_아어_64": {
-    "title": "~아/어 오다 [a/eo oda] (Come to do)",
-    "shortExplanation": "Expresses an action developing over time or a gradual change leading up to the present.",
-    "longExplanation": "'~아/어 오다 [a/eo oda]' is used to show that an action has been in progress or gradually developed until now. It can translate to 'have been doing' or 'come to do' in English, depending on context.",
-    "formation": "動詞 stem + 아/어 오다"
+    "title": "~아/어 오다（〜してきた、ずっと〜してくる）",
+    "shortExplanation": "過去のある時点から現在に至るまで、動作や状態が継続・蓄積してきたことを表します（「〜してきた」「ずっと〜してきた」）。",
+    "longExplanation": "「~아/어 오다」は動詞や形容詞の語幹に付き、過去から現在に至るまでの時間の流れの中で、ある行為が継続して行われてきたことや、状態が徐々に変化してきた過程を表します。日本語の「〜してきた」「ずっと〜してきている」に相当します。",
+    "formation": "動詞・形容詞語幹 + -아/어 오다",
+    "examples": [
+      {
+        "translation": "彼は一ヶ月間毎日韓国語を勉強してきたので、今では流暢に話すことができます。"
+      },
+      {
+        "translation": "私たちは一緒に毎日運動してきたので、いつの間にか体力がとてもつきました。"
+      },
+      {
+        "translation": "ミナは絵をコツコツと描いてきたので、だんだん上手に描けるようになりました。"
+      },
+      {
+        "translation": "日が暮れてきたので、あっという間に暗くなりました。"
+      }
+    ]
   },
   "ko_아어야_65": {
-    "title": "~아/어야 하다 [a/eoya hada] (Have to, must)",
-    "shortExplanation": "Expresses obligation or necessity: 'have to,' 'must'.",
-    "longExplanation": "'~아/어야 하다 [a/eoya hada]' indicates that something needs to be done or is mandatory. It corresponds to 'have to' or 'must' in English. '아야 하다' is used if the verb ends in ㅏ/ㅗ, and '어야 하다' is used otherwise.",
-    "formation": "動詞 stem + 아/어야 하다"
+    "title": "~아/어야 하다（〜しなければならない、〜すべきだ）",
+    "shortExplanation": "義務、必然性、当為を表し、「〜しなければならない」「〜すべきだ」という意味を表します。",
+    "longExplanation": "「~아/어야 하다」は動詞や形容詞の語幹に付き、義務や必然性、あるいは規則や状況から生じる必須の条件を表します。日本語の「〜しなければならない」「〜する必要がある」に相当します。語幹の母音が陽母音（ㅏ, ㅗ）の場合は「-아야 하다」、陰母音の場合は「-어야 하다」、하다動詞は「해야 하다」を用います（「하다」の代わりに「되다」もよく使われます）。",
+    "formation": "動詞・形容詞語幹 + -아/어야 하다",
+    "examples": [
+      {
+        "translation": "明日試験があるので、今夜勉強しなければなりません。"
+      },
+      {
+        "translation": "会社に遅刻しないためには、7時に家を出なければなりません。"
+      },
+      {
+        "translation": "野外活動をする時は、太陽から肌を守らなければなりません。"
+      },
+      {
+        "translation": "良い点数を取るためには、もっと一生懸命勉強しなければなりません。"
+      }
+    ]
   },
   "ko_아어야지_66": {
-    "title": "~아/어야지 [a/eoyaji] (I'm going to)",
-    "shortExplanation": "Expresses the speaker's strong intention or determination to do something.",
-    "longExplanation": "The grammar '~아/어야지 [a/eoyaji]' conveys a strong resolve or plan to carry out an action, much like saying 'I really should...' or 'I’m definitely going to...' in English. It’s often used in first-person contexts.",
-    "formation": "動詞 stem + 아/어야지"
+    "title": "~아/어야지（〜しなくちゃ、〜しなければ、〜しよう）",
+    "shortExplanation": "自分自身の強い意志や決意を固める独り言、または相手に対する親しい勧めを表す終結語尾です（「〜しなくちゃ」「〜しなければ」）。",
+    "longExplanation": "「~아/어야지」は主に一人称で用いられ、「必ず〜しよう」「〜しなければならない」と自分自身に対して決意を固めたり、自戒したりするニュアンスを表す終結語尾です。日本語の「〜しなくちゃ」「絶対に〜しよう」に相当します。親しい間柄でのパンマル（ため口）としてよく使われます。",
+    "formation": "動詞語幹 + -아/어야지",
+    "examples": [
+      {
+        "translation": "本当に勉強をもっと一生懸命しなくちゃ。今回こそは絶対に成績を上げるぞ。"
+      },
+      {
+        "translation": "明日の朝起きて運動しなくちゃ。健康のためにもっと気を遣わなきゃ。"
+      },
+      {
+        "translation": "もう本当にタバコをやめなくちゃ。健康がすごく心配で決心しました。"
+      },
+      {
+        "translation": "お母さんに電話をしなくちゃ。ずいぶん長いこと連絡していなかったな。"
+      }
+    ]
   },
   "ko_아어도_67": {
-    "title": "~아/어도 [a/eodo] (Even if)",
-    "shortExplanation": "〜を表すために使用されます 'even if' or 'although'.",
-    "longExplanation": "'~아/어도 [a/eodo]' conveys a condition that won’t change the outcome or the speaker's viewpoint. Similar to 'even if' or 'no matter how' in English, it shows that whatever happens in the first clause does not alter the second clause.",
-    "formation": "動詞 stem + 아/어도"
+    "title": "~아/어도（〜ても、〜でも、どんなに〜ても）",
+    "shortExplanation": "譲歩を表す接続語尾で、前節の事態がどのような条件であっても後節の結果に影響しないことを表します（「〜ても」「〜でも」）。",
+    "longExplanation": "「~아/어도」は動詞や形容詞の語幹に付く譲歩の接続語尾で、前節で仮定・提示された事態に関係なく、後節の結果や話者の判断が変わらないことを表します。日本語の「〜ても」「〜でも」「いくら〜しても」に相当します。しばしば副詞「아무리（いくら、どんなに）」とともに用いられます。語幹末尾の母音によって、陽母音（ㅏ, ㅗ）には「-아도」、陰母音には「-어도」が付き、「하다」は「해도」となります。",
+    "formation": "動詞・形容詞語幹 + -아/어도",
+    "examples": [
+      {
+        "translation": "ここの料理はいくら高くても美味しいので、よく食べに来ます。"
+      },
+      {
+        "translation": "どんなに速く走っても、学校に遅刻しそうです。"
+      },
+      {
+        "translation": "私がいくら努力しても、そのプロジェクトを終わらせるのは難しそうです。"
+      },
+      {
+        "translation": "運動をいくらやっても、自分の体に満足できません。"
+      }
+    ]
   },
   "ko_아어서_68": {
-    "title": "~아/어서 [a/eoseo] (Because, so)",
-    "shortExplanation": "〜を表すために使用されます reason or cause: 'because', 'so'.",
-    "longExplanation": "'~아/어서 [a/eoseo]' is a common conjunctive ending indicating that the first clause is the reason or cause for the second clause. It corresponds to 'because' or 'so' in English and is used in everyday speech and writing.",
-    "formation": "動詞 stem + 아/어서"
+    "title": "~아/어서（〜ので、〜て、〜だから）",
+    "shortExplanation": "原因や理由を表す接続語尾で、「〜ので」「〜て」「〜だから」という意味を表します。",
+    "longExplanation": "「~아/어서」は動詞や形容詞の語幹に付き、前節が後節の直接的な原因や理由であることを表す接続語尾です。日本語の「〜ので」「〜て」「〜だから」に相当します。注意点として、前節には過去形（-았/었-）を用いることができず、後節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を続けることもできません。語幹末尾の母音により、陽母音には「-아서」、陰母音には「-어서」が付き、「하다」は「해서」になります。",
+    "formation": "動詞・形容詞語幹 + -아/어서",
+    "examples": [
+      {
+        "translation": "頭が痛かったので、学校に行けませんでした。"
+      },
+      {
+        "translation": "今日は天気が良かったので、散歩に行きました。"
+      },
+      {
+        "translation": "この映画は面白くて2回見ました。"
+      },
+      {
+        "translation": "彼女は本をなくしてしまって悲しんでいます。"
+      }
+    ]
   },
   "ko_았었던_69": {
-    "title": "~았/었던 [ass/eossdeon] (Was)",
-    "shortExplanation": "〜を表すために使用されます a past state or condition: 'was'.",
-    "longExplanation": "The past modifier '~았/었던 [ass/eossdeon]' is used to describe a noun that had a certain state or performed an action in the past. It's similar to saying 'that was...' or 'who was...' in English. The choice of 았/었 depends on the final vowel of the verb stem.",
-    "formation": "動詞 + 았/었던 + 名詞"
+    "title": "~았/었던（かつて〜だった、〜したことのある）",
+    "shortExplanation": "過去に完了し、現在とは状況が異なっている事態を回想して名詞を修飾する連体形語尾です（「かつて〜だった」「〜したことのある」）。",
+    "longExplanation": "「~았/었던」は動詞や形容詞の語幹に付き、後ろに来る名詞を修飾する過去回想の連体形語尾です。単なる過去の回想を表す「-던」とは異なり、その動作や状態が過去のある時点で完全に完了・終了しており、現在ではその状態が続いていない、あるいは現在とは対照的であることを強く示唆します。日本語の「かつて〜だった」「以前〜していた」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었던 + 名詞",
+    "examples": [
+      {
+        "translation": "私は学生時代、天才的な生徒でした。国語、数学、科学、社会のすべてで最高成績を収めました。"
+      },
+      {
+        "translation": "私が幼い頃に好きだった歌手は神話（SHINHWA）でした。彼らの音楽はいつも記憶に残っています。"
+      },
+      {
+        "translation": "うちの父は子供の頃貧しかった人でしたが、今は裕福に暮らしています。"
+      },
+      {
+        "translation": "彼女は学生時代には物静かだった人でしたが、今はとても活発になりました。"
+      }
+    ]
   },
   "ko_았었어야_70": {
-    "title": "~았/었어야 했다 [ass/eosseoya haessda] (Should have done)",
-    "shortExplanation": "〜を表すために使用されます regret about something that should have been done in the past but was not.",
-    "longExplanation": "'~았/었어야 했다 [ass/eosseoya haessda]' shows regret for not doing something that one should have done in the past. It translates to 'should have done' in English. It highlights a missed obligation or opportunity.",
-    "formation": "動詞 + 았/었어야 했다"
+    "title": "~았/었어야 했다（〜すべきだった、〜していればよかった）",
+    "shortExplanation": "過去に当然すべきだったのに実際には行わなかったことに対する後悔や遺憾、あるいは相手への非難を表します（「〜すべきだった」）。",
+    "longExplanation": "「~았/었어야 했다」は動詞や形容詞の語幹に付き、過去のある時点で当然行うべき義務や必要があったにもかかわらず、実際にはそれを行わなかったことに対する強い後悔や心残り、あるいは他者に対する非難を表します。日本語の「〜すべきだった」「〜しなければならなかったのに」に相当します。文末や接続形として「-았/었어야 했는데（〜すべきだったのに）」の形でよく使われます。",
+    "formation": "動詞・形容詞語幹 + -았/었어야 했다",
+    "examples": [
+      {
+        "translation": "私は昨日その仕事をすべきだったのに、時間がなくてできませんでした。とても後悔しています。"
+      },
+      {
+        "translation": "今朝運動をすべきだったのですが、怠けてしまってやりませんでした。"
+      },
+      {
+        "translation": "あなたはあのような状況では温かく接するべきだったのに、冷たく振る舞いましたね。"
+      },
+      {
+        "translation": "私はあの日、何としても喧嘩を避けるべきだったのに、結局避けられませんでした。"
+      }
+    ]
   },
   "ko_았었으면_71": {
-    "title": "~았/었으면 [ass/eosseumyeon] (I wish it were)",
-    "shortExplanation": "'~았/었으면' is 〜を表すために使用されます a wish or desire for a situation to be different from what it is now.",
-    "longExplanation": "'~았/었으면 [ass/eosseumyeon]' is a grammar point commonly 〜を表すために使用されます hypothetical or unreal situations, much like 'I wish...' or 'if only...' in English. It conveys regret or unfulfilled wishes. Formally, it’s the past tense stem plus ‘(으)면’, indicating a desire for something that did not happen.",
-    "formation": "Past verb stem + (으)면"
+    "title": "~았/었으면（〜たらいいのに、〜だったらよかったのに）",
+    "shortExplanation": "現在や過去の事実とは異なる状況を仮定し、強い願いや希望、または心残りを表します（「〜たらいいのに」「〜ばよかったのに」）。",
+    "longExplanation": "「~았/었으면」は過去形語尾「-았/었-」と条件接続語尾「-(으)면」が合わさった表現で、現実とは異なる状況を仮定して「もしそうであればどんなに良いか」という話者の強い願望や期待、あるいは過去の事態に対する遺憾の気持ちを表します。日常会話では「~았/었으면 좋겠다（〜だったらいいな、〜してほしい）」の形で非常によく用いられます。",
+    "formation": "動詞・形容詞語幹 + -았/었으면 (좋겠다)",
+    "examples": [
+      {
+        "translation": "私は子供の頃から音楽家になりたかったです。本当に音楽家になれたらいいなと思います。"
+      },
+      {
+        "translation": "天気が良ければいいですね。そうすれば私たちが一緒に散歩に行けたはずなのに。"
+      },
+      {
+        "translation": "最後に彼と会った時、良い話を聞かせてあげていたらよかったのにと思います。"
+      },
+      {
+        "translation": "約束を守っていればよかったです。そうすれば他の人たちも私をもっと信頼してくれたはずです。"
+      }
+    ]
   },
   "ko_았었을_72": {
-    "title": "~았/었을 텐데 [ass/eosseul tende] (I assume it must have been)",
-    "shortExplanation": "〜を表すために使用されます assumption or expectation based on past events.",
-    "longExplanation": "'~았/었을 텐데 [ass/eosseul tende]' expresses the speaker's speculation or presumption about a past situation. It combines the past tense marker '~았/었' with '을 텐데,' which shows the speaker’s expectation or guess about what must have happened.",
-    "formation": "動詞 stem + 았/었을 텐데"
+    "title": "~았/었을 텐데（〜だったはずなのに、きっと〜だっただろうに）",
+    "shortExplanation": "過去の状況に対する強い推測や前提を提示し、後節の背景や対比として導く表現です（「きっと〜だっただろうに」「〜したはずなのに」）。",
+    "longExplanation": "「~았/었을 텐데」は過去形「-았/었-」、推測を表す連体形「-(으)ㄹ」、依存名詞「터（状況・つもり）」および「-인데」が結合した表現です。話者が過去の事実や状況について「きっと〜だったに違いない」と強く推測し、それを後節の叙述の前置きや対比の背景として提示します。日本語の「きっと〜だったはずなのに」「〜しただろうに」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었을 텐데",
+    "examples": [
+      {
+        "translation": "とても忙しかっただろうに、その仕事を全部やり遂げることはできなかっただろうと思います。"
+      },
+      {
+        "translation": "あなたがあれほどたくさん勉強したはずなのに、問題を解くことはできましたか。"
+      },
+      {
+        "translation": "彼女はとても幸せだったはずなのに、どうして涙を流したのでしょうか。"
+      },
+      {
+        "translation": "天気は晴れ晴れとしていたでしょうから、旅行は楽しかっただろうと思います。"
+      }
+    ]
   },
   "ko_았었다가_73": {
-    "title": "~았/었다가 [ass/eossdaga] (Was and then)",
-    "shortExplanation": "Expresses that a past situation happened and then changed or was followed by another occurrence.",
-    "longExplanation": "'~았/었다가 [ass/eossdaga]' denotes a change in state or a sequence of events in the past. It’s often used with action verbs to show one event happened and then a subsequent action followed.",
-    "formation": "動詞 + 았/었다가"
+    "title": "~았/었다가（〜してから、〜した後に）",
+    "shortExplanation": "先行する動作が完全に完了した後に、その結果を経て別の動作や場所へ移行することを表す接続語尾です（「〜してから」「〜した後に」）。",
+    "longExplanation": "「~았/었다가」は動詞の語幹に付く接続語尾で、動作の途中で中断される「-다가」とは異なり、先行する動作がいったん完全に完了・達成された後、次の動作へと移行したり、場所を移動したり、あるいは状態が反転したりすることを表します。日本語の「〜してから」「〜した後に（別の動作をする）」に相当します。",
+    "formation": "動詞語幹 + -았/었다가",
+    "examples": [
+      {
+        "translation": "私は学校へ行った後、図書館へ勉強しに行きました。"
+      },
+      {
+        "translation": "彼は仕事をしてから家に帰りました。"
+      },
+      {
+        "translation": "私は友達に会ってから、映画を見に行きました。"
+      },
+      {
+        "translation": "私たちは昼ご飯を食べてから、公園で散歩をしました。"
+      }
+    ]
   },
   "ko_았었다면_74": {
-    "title": "~았/었다면 [ass/eossdamyeon] (If it had been)",
-    "shortExplanation": "Used for hypothetical past situations: 'If it had been'.",
-    "longExplanation": "'~았/었다면' imagines a different outcome for a past situation. '다면' after the past tense indicates an unreal or counterfactual condition, often expressing regret or speculation about what could have happened.",
-    "formation": "Past tense verb/adjective + 다면"
+    "title": "~았/었다면（もし〜していたら、〜だったなら）",
+    "shortExplanation": "過去の事実とは反対の事態を仮定し、もしそうであったならどうなっていただろうかと推測や後悔を表します（「もし〜していたら」）。",
+    "longExplanation": "「~았/었다면」は動詞や形容詞の語幹に付き、過去に実際には起こらなかったことや、事実と正反対の状況を仮定して述べる反事実仮定の表現です。後節には「-(으)ㄹ 텐데（〜だっただろうに）」や「-(으)ㄹ 것이다（〜だっただろう）」などが呼応し、過去に対する強い後悔、心残り、あるいは安堵の気持ちを表します。日本語の「もし〜（してい）たら」「〜だったなら」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었다면",
+    "examples": [
+      {
+        "translation": "あの時彼のアドバイスを聞いていたら、今の状況は変わっていたでしょう。"
+      },
+      {
+        "translation": "自分の過ちを認めていたなら、大きな難局に直面することはなかっただろうに。"
+      },
+      {
+        "translation": "昨日雨が降っていたら、サッカーの試合は中止になったでしょうか。"
+      },
+      {
+        "translation": "もっと早く到着していたら、彼女に会えたはずなのに。"
+      }
+    ]
   },
   "ko_으면_75": {
-    "title": "~으면 좋겠다 [eumyeon joketda] (I hope, it would be good if)",
-    "shortExplanation": "Expresses a wish or hope for a certain situation or result.",
-    "longExplanation": "'~으면 좋겠다 [eumyeon joketda]' is a common structure for stating what the speaker hopes will happen or would be nice if it happened. It often translates to 'I hope...' or 'It would be good if...' in English.",
-    "formation": "動詞 + (으)면 좋겠다"
+    "title": "~(으)면 좋겠다（〜ならいいな、〜だといいな、〜してほしい）",
+    "shortExplanation": "ある事態や結果が実現することを望む話者の願いや期待を表す表現です（「〜ならいいな」「〜だといいな」）。",
+    "longExplanation": "「~(으)면 좋겠다」は動詞や形容詞の語幹に付き、話者が望ましいと考える状態や事態が実現することを願う気持ちを表す表現です。日本語の「〜ならいいな」「〜だといいな」「〜してほしい」に相当します。語幹末尾にパッチムがある場合（ㄹを除く）は「-으면 좋겠다」、母音またはㄹパッチムで終わる場合は「-면 좋겠다」が付きます。",
+    "formation": "動詞・形容詞語幹 + -(으)면 좋겠다",
+    "examples": [
+      {
+        "translation": "天気が良ければいいな。そうすればお花見がもっと楽しくなりそうです。"
+      },
+      {
+        "translation": "試験がうまくいくといいな。そうすれば学期が終わったら旅行に行けそうです。"
+      },
+      {
+        "translation": "病気の友達が早く治ればいいな。そうすれば一緒に遊びに行けるだろうに。"
+      },
+      {
+        "translation": "コロナが終わればいいな。そうすればまた日常に戻れそうです。"
+      }
+    ]
   },
   "ko_으면서도_76": {
-    "title": "~으면서도 [eumyeonseodo] (While, but still)",
-    "shortExplanation": "Expresses a contradiction: 'while', 'but still', 'even though'.",
-    "longExplanation": "'~으면서도 [eumyeonseodo]' is used to link two contrasting facts. It shows that although the first situation is true, there is another fact that runs counter to it, akin to 'even though' or 'but still' in English.",
-    "formation": "動詞 stem + (으)면서도"
+    "title": "~(으)면서도（〜でありながらも、〜くせに、〜にもかかわらず）",
+    "shortExplanation": "前節の事実を認めつつも、それと矛盾・対立する事態が後節で起きていることを表す逆接の接続語尾です（「〜でありながらも」「〜にもかかわらず」）。",
+    "longExplanation": "「~(으)면서도」は同時を表す接続語尾「-(으)면서」に強調の助詞「-도」が付いた形で、前節と後節が相容れない矛盾した関係にあることを表します。「〜だと分かっていながら」「〜であるにもかかわらず」といったニュアンスで、常識や予想に反する事態が成り立っていることを示します。語幹末尾にパッチムがある場合（ㄹを除く）は「-으면서도」、母音またはㄹパッチムで終わる場合は「-면서도」を用います。",
+    "formation": "動詞・形容詞語幹 + -(으)면서도",
+    "examples": [
+      {
+        "translation": "彼は健康によくないと分かっていながらも、毎日ファストフードを食べています。"
+      },
+      {
+        "translation": "とても忙しいにもかかわらず、友達と時間を作って会ったりします。"
+      },
+      {
+        "translation": "マンションの価格は高いにもかかわらず、上がり続けています。"
+      },
+      {
+        "translation": "インターネットは遅いものの必要な情報は得られるので、問題なく利用しています。"
+      }
+    ]
   },
   "ko_을_77": {
-    "title": "~을/ㄹ 거예요 [eul/l geoyeyo] (Going to, will)",
-    "shortExplanation": "Expresses a future plan or intention—similar to 'going to' or 'will' in English.",
-    "longExplanation": "'~을/ㄹ 거예요 [eul/l geoyeyo]' is 〜を示します that something will happen or that the speaker plans or expects something in the future. It can also express the speaker's assumption about the future. If the verb stem ends in a consonant, use '을 거예요'; if it ends in a vowel, use 'ㄹ 거예요.'",
-    "formation": "動詞 stem + 을 거예요 (consonant-ending) / ㄹ 거예요 (vowel-ending)"
+    "title": "~(으)ㄹ 거예요（〜するつもりです、〜でしょう、〜するはずです）",
+    "shortExplanation": "話者の未来の計画や意志を表したり、第三者の行動や客観的事態に対する推測を表す終結語尾です（「〜するつもりです」「〜でしょう」）。",
+    "longExplanation": "「~(으)ㄹ 거예요」は未来連体形語尾「-(으)ㄹ」に依存名詞「것」とヘヨ体の叙述格語尾「-이에요」が縮約された形で、日常会話で最も頻繁に使われる未来・推測の終結語尾です。主語が一人称の場合は未来の意志や予定（「〜するつもりです」）を表し、三人称や事物・天候が主語の場合は未来の推測や予測（「〜でしょう」「〜のはずです」）を表します。語幹末尾にパッチムがある場合（ㄹを除く）は「-을 거예요」、母音またはㄹパッチムで終わる場合は「-ㄹ 거예요」を用います。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 거예요",
+    "examples": [
+      {
+        "translation": "私は今週末に買い物に行くつもりです。"
+      },
+      {
+        "translation": "明日は雨が降るでしょう。"
+      },
+      {
+        "translation": "お母さんは夕食にキムチチゲを作る予定です。"
+      },
+      {
+        "translation": "私たちのチームは次の大会で必ず勝つはずです。"
+      }
+    ]
   },
   "ko_을게요_78": {
-    "title": "~을/ㄹ게요 [eul/l geyo] (I will)",
-    "shortExplanation": "〜を表すために使用されます a future intention, promise, or decision (often more immediate/personal than '~을/ㄹ 거예요').",
-    "longExplanation": "'~을/ㄹ게요 [eul/l geyo]' is a verb ending in Korean that conveys the speaker’s **willingness**, **promise**, or **decision** to do something (often in response to the listener or a situation). Compared to '~을/ㄹ 거예요,' which can simply state a future plan, '~을/ㄹ게요' more strongly implies the speaker’s **own resolve** or reaction to the listener. The form '을게요' is used after stems ending in a **consonant**, and 'ㄹ게요' is used after stems ending in a **vowel**.",
-    "formation": "動詞 stem + 을게요 (after consonant) / ㄹ게요 (after vowel)"
+    "title": "~(으)ㄹ게요（〜しますね、〜することにします）",
+    "shortExplanation": "聞き手に対して自分の意志、約束、決心を伝える一人称専用の終結語尾です（「〜しますね」「〜します」）。",
+    "longExplanation": "「~(으)ㄹ게요」は動詞の語幹に付き、聞き手に向かって自分の行動を約束したり、相手の言葉に応えて即座に決心した意志を伝えたりする終結語尾です。主語は必ず一人称（私）に限られます。客観的な予定を淡々と述べる「-(으)ㄹ 거예요」とは異なり、聞き手に対する対人的な配慮や約束（「〜しますからね」）のニュアンスが強く含まれます。語幹末尾にパッチムがある場合（ㄹを除く）は「-을게요」、母音またはㄹパッチムで終わる場合は「-ㄹ게요」を用います。",
+    "formation": "動詞語幹 + -(으)ㄹ게요",
+    "examples": [
+      {
+        "translation": "私は明日学校に行って友達に会いますね。久しぶりに会う友達なので本当に楽しみです。"
+      },
+      {
+        "translation": "毎晩10時には寝るようにします。健康のためにもっと早く寝るべきだと思います。"
+      },
+      {
+        "translation": "週末には運動をしますね。運動すれば確実に体が元気になりますから。"
+      },
+      {
+        "translation": "明日ご飯を買いに行ってきますね。家には食べられるものがほとんどありませんね。"
+      },
+      {
+        "translation": "音楽にすっかり夢中になったのでピアノを習います。少し時間がかかっても一生懸命やってみるつもりです。"
+      },
+      {
+        "translation": "新しい言語を勉強しますね。時間はかかるでしょうが、ぜひ挑戦してみたいです。"
+      },
+      {
+        "translation": "美味しい料理を作りたいので、料理教室に通うことにします。"
+      },
+      {
+        "translation": "来週時間を作って、友達と映画を見ますね。"
+      }
+    ]
   },
   "ko_을까요_79": {
-    "title": "~을/ㄹ까요? [eul/l kkayo?] (Shall we?)",
-    "shortExplanation": "Used to suggest or propose an action to do together or to ask for the listener's opinion.",
-    "longExplanation": "'~을/ㄹ까요? [eul/l kkayo?]' is a Korean ending used to propose an activity (often including the listener) or to ask for the listener's suggestion. It translates roughly as 'Shall we...?' or 'Should we...?' in English. It is typically used in polite, but not extremely formal, conversations.",
-    "formation": "If the verb stem ends in a consonant: 動詞 stem + 을까요?\nIf the verb stem ends in a vowel: 動詞 stem + ㄹ까요?"
+    "title": "~(으)ㄹ까요?（〜しましょうか、〜しませんか）",
+    "shortExplanation": "相手に一緒にある行動をすることを提案・勧誘したり、相手の意向を尋ねる疑問形終結語尾です（「〜しましょうか」「〜しませんか」）。",
+    "longExplanation": "「~(으)ㄹ까요?」は動詞や形容詞の語幹に付き、聞き手に対して一緒に行動しようと提案・勧誘したり（「〜しましょうか」）、聞き手の意向や意見を丁寧に尋ねたりする疑問形終結語尾です。一人称単数が主語の場合は「私が〜しましょうか」という申し出になり、三人称や事物が主語の場合は推測を尋ねる疑問（「〜でしょうか」）になります。語幹末尾にパッチムがある場合（ㄹを除く）は「-을까요?」、母音またはㄹパッチムで終わる場合は「-ㄹ까요?」を用います。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ까요?",
+    "examples": [
+      {
+        "translation": "一緒に夕食を食べましょうか。美味しいお店を知っています。"
+      },
+      {
+        "translation": "映画を見ましょうか。今日良い映画が上映中だそうですよ。"
+      },
+      {
+        "translation": "週末に旅行に行きましょうか。気分転換が必要に見えますが。"
+      },
+      {
+        "translation": "私たち散歩しましょうか。天気がとても良さそうですね。"
+      }
+    ]
   },
   "ko_을_80": {
-    "title": "~을/ㄹ 때 [eul/l ttae] (When)",
-    "shortExplanation": "〜を示します the point in time or occasion when something occurs.",
-    "longExplanation": "'~을/ㄹ 때 [eul/l ttae]' means 'when' in English. You attach it to a verb stem to specify the time or context in which an action happens. '을 때' is used after a consonant-ending stem; 'ㄹ 때' after a vowel-ending stem.",
-    "formation": "動詞 stem + 을 때 (if ending in consonant) / 動詞 stem + ㄹ 때 (if ending in vowel)"
+    "title": "~(으)ㄹ 때（〜する時、〜の時）",
+    "shortExplanation": "ある動作が行われたり状態が現れたりする時点や時機、場合を表します（「〜する時」「〜の時」）。",
+    "longExplanation": "「~(으)ㄹ 때」は動詞や形容詞の語幹に付き、ある事態が生じる時間的なポイントや状況・折を表す表現です。連体形語尾「-(으)ㄹ」に時を表す名詞「때」が結びついたもので、日本語の「〜する時」「〜の時」に相当します。助詞を伴って「~(으)ㄹ 때는（〜する時には）」や「~(으)ㄹ 때마다（〜するたびに）」の形でもよく用いられます。語幹末尾にパッチムがある場合（ㄹを除く）は「-을 때」、母音またはㄹパッチムで終わる場合は「-ㄹ 때」を用います。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 때",
+    "examples": [
+      {
+        "translation": "本を読む時は静かな場所で読むのが良いです。"
+      },
+      {
+        "translation": "友達に会う時はいつもたくさん笑います。"
+      },
+      {
+        "translation": "試験を受ける時はいつも緊張します。"
+      },
+      {
+        "translation": "雨が降る時は傘を必ず持って行ってください。"
+      }
+    ]
   },
   "ko_을_81": {
-    "title": "~을/ㄹ 듯하다 [eul/l deuthada] (Seems like)",
-    "shortExplanation": "〜を表すために使用されます the idea that something appears or feels like something else, or that one is guessing based on observation.",
-    "longExplanation": "'~을/ㄹ 듯하다 [eul/l deuthada]' is used to convey that something seems or feels a certain way, based on the speaker’s inference or impression. It's similar to 'it seems that...' or 'it looks like...' in English.",
-    "formation": "Action/Descriptive verb stem + 을/ㄹ 듯하다"
+    "title": "~(으)ㄹ 듯하다 / ~는 듯하다 / ~(으)ㄴ 듯하다（〜のようだ、〜そうに見える、〜らしい）",
+    "shortExplanation": "外見の様子や観察、感覚に基づいて「〜のようだ」「〜そうに見える」と控えめに推測・判断する補助用言です（「〜のようだ」「〜らしい」）。",
+    "longExplanation": "「~듯하다」は動詞や形容詞の連体形語尾（未来・推測「-(으)ㄹ」、現在「-는 / -(으)ㄴ」、過去「-(으)ㄴ」など）の後ろに付き、観察した様子や漠然とした直感に基づいて「〜のようだ」「〜するように見える」と推測する補助形容詞です。「-것 같다」と似ていますが、より文学的・情緒的で、主観的な印象を控えめに伝えるニュアンスがあります。日本語の「〜のようだ」「〜のように思われる」「〜らしい」に相当します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 듯하다 / -는 듯하다 / -(으)ㄴ 듯하다",
+    "examples": [
+      {
+        "translation": "彼は変わったように見えますが、実際には昔のままのようです。"
+      },
+      {
+        "translation": "今日は冬のように寒いですね。秋だと言っても冬のような感じがするようです。"
+      },
+      {
+        "translation": "彼の表情を見ると、物思いに耽っているようです。"
+      },
+      {
+        "translation": "彼女は笑いそうに見えましたが、何か悩み事があるようでした。"
+      }
+    ]
   },
   "ko_을_82": {
-    "title": "~을/ㄹ 만하다 [eul/l manhada] (Worth doing)",
-    "shortExplanation": "Expresses that something is worthwhile or justifiable to do or experience.",
-    "longExplanation": "'~을/ㄹ 만하다' is used to say that a certain action or experience is valuable enough to be done, or 'worth it.' It implies the speaker's judgment that the effort, cost, or time involved is justified.",
-    "formation": "動詞 stem + 을/ㄹ 만하다"
+    "title": "~(으)ㄹ 만하다（〜する価値がある、〜に値する、〜するに値する）",
+    "shortExplanation": "ある行動や経験に十分な価値があり、やってみる価値や理由があることを表します（「〜する価値がある」「〜に値する」）。",
+    "longExplanation": "「~(으)ㄹ 만하다」は動詞の語幹に付き、ある行為をするだけの価値や理由が十分にあること、あるいはその価値に見合うだけの手間や費用をかけるに値することを表す表現です。日本語の「〜する価値がある」「〜してみる価値がある」に相当します。話し手が「やって損はない」「おすすめできる」と判断したニュアンスを含みます。また文脈によっては「まあまあ可能である」「何とか我慢できる」という意味も表します。",
+    "formation": "動詞語幹 + -(으)ㄹ 만하다",
+    "examples": [
+      {
+        "translation": "このケーキは高いですが、美味しくて買って食べる価値があります。"
+      },
+      {
+        "translation": "この映画は上映時間が長いですが、本当に面白いので見る価値があります。"
+      },
+      {
+        "translation": "そのバンドの公演チケットは高いですが、彼らの音楽はぜひ聴いてみる価値があります。"
+      },
+      {
+        "translation": "このゲームはインストールに長い時間がかかりますが、やってみる価値はあります。"
+      }
+    ]
   },
   "ko_을_83": {
-    "title": "~을/ㄹ 수록 [eul/l surok] (The more...)",
-    "shortExplanation": "Shows that as one condition increases or continues, another condition also changes proportionally.",
-    "longExplanation": "'~을/ㄹ 수록 [eul/l surok]' is 〜を表すために使用されます the idea that the more the first action or state intensifies, the more the second action or state does too. It corresponds to 'the more... the more...' in English.",
-    "formation": "動詞 stem + 을/ㄹ 수록"
+    "title": "~(으)ㄹ수록（〜すればするほど、〜であるほど）",
+    "shortExplanation": "前項の程度や状態が進むにつれて、それに比例して後項の程度も変化することを表します（「〜するほど」「〜すればするほど」）。",
+    "longExplanation": "「~(으)ㄹ수록」は動詞や形容詞の語幹に付く接続語尾で、前の動作や状態の度合いが深まるのに比例して、後の事態の度合いも増していくことを表します。日本語の「〜すればするほど」「〜であればあるほど」に相当します。母音やㄹパッチムで終わる語幹には「-ㄹ수록」、それ以外のパッチムで終わる語幹には「-을수록」が付きます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ수록",
+    "examples": [
+      {
+        "translation": "韓国語を多く勉強するほど、韓国の文化をより深く理解できるようになります。"
+      },
+      {
+        "translation": "ここに長くいるほど、この街がますます好きになります。"
+      },
+      {
+        "translation": "毎日歩くほど健康が良くなります。"
+      },
+      {
+        "translation": "コーヒーを多く飲むほど、眠気が来にくくなる気がします。"
+      }
+    ]
   },
   "ko_을_84": {
-    "title": "~을/ㄹ 줄 알다 [eul/l jul alda] (Know how to)",
-    "shortExplanation": "〜を示します that someone knows how to perform an action or is aware of a fact.",
-    "longExplanation": "'~을/ㄹ 줄 알다 [eul/l jul alda]' often translates to 'know how to do something' or 'know that...' in English. It indicates knowledge, skill, or awareness of a particular action or fact.",
-    "formation": "動詞 in dictionary form + 을/ㄹ 줄 알다"
+    "title": "~(으)ㄹ 줄 알다（〜できる、〜する仕方を知っている、〜だと思う・思っていた）",
+    "shortExplanation": "ある動作を行う能力や方法を知っていること（「〜できる」「〜の仕方を知っている」）、またはある事実や状況について予想・推測・思い込みを持っていること（「〜だと思う」「〜だと思っていた」）を表します。",
+    "longExplanation": "「~(으)ㄹ 줄 알다」には大きく分けて2つの用法があります。1つ目は、ある動作を行う方法や能力を備えていることを表し、日本語の「〜できる」「〜の仕方を知っている」に相当します（反対語は -(으)ㄹ 줄 모르다）。2つ目は、ある状況や事実について推測や思い込みを表し、特に過去形「~줄 알았다」の形で「〜だと思っていた」「〜だとばかり思っていた」という予想と異なる展開を表すときによく使われます。",
+    "formation": "動詞語幹 + -(으)ㄹ 줄 알다 | 連体形 + 줄 알다",
+    "examples": [
+      {
+        "translation": "私はハングルが読めるので、韓国ドラマを字幕なしで見ることができます。"
+      },
+      {
+        "translation": "お父さんは料理が上手だと思っていたのですが、昨夜夕食を準備する際にたくさんのトラブルが生じました。"
+      },
+      {
+        "translation": "私は彼女が韓国人だと思って韓国語で話しかけました。"
+      },
+      {
+        "translation": "うちの子犬は命令に従うことができるので、とてもよくしつけられています。"
+      }
+    ]
   },
   "ko_을지_85": {
-    "title": "~을/ㄹ지 [eul/lji] (Whether or not)",
-    "shortExplanation": "〜を表すために使用されます uncertainty or doubt: 'whether or not'.",
-    "longExplanation": "'~을/ㄹ지 [eul/lji]' indicates the speaker is unsure about an event or outcome, similar to 'whether' or 'whether or not' in English. It often appears in indirect questions or conditional statements involving doubt or possibility.",
-    "formation": "動詞 stem + 을/ㄹ지"
+    "title": "~(으)ㄹ지（〜かどうか、〜だろうか）",
+    "shortExplanation": "ある事柄に対する不確実さや疑念、間接的な疑問を表します（「〜かどうか」「〜だろうか」）。",
+    "longExplanation": "「~(으)ㄹ지」は動詞や形容詞の語幹に付く接続語尾で、不確かな事態や推測を伴う疑問を表し、主に間接疑問節を導きます。日本語の「〜かどうか」「〜だろうか」に相当します。後ろに「모르다（分からない）」「궁금하다（気になる）」「확신이 없다（確信が持てない）」などの述語が続くことが多く、選択や対比を表す「-(으)ㄹ지 안 -(으)ㄹ지」「-(으)ㄹ지 말지」の形でもよく用いられます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지",
+    "examples": [
+      {
+        "translation": "お父さんが今晩家に帰ってくるかどうか分かりません。"
+      },
+      {
+        "translation": "彼女が明日パーティーに来るかどうか気になります。"
+      },
+      {
+        "translation": "日が暖かくなるかどうか、まだ確信が持てません。"
+      },
+      {
+        "translation": "あなたが提案を受け入れるかどうかは分かりません。"
+      }
+    ]
   },
   "ko_을지도_86": {
-    "title": "~을/ㄹ지도 모르다 [eul/ljido moreuda] (Might)",
-    "shortExplanation": "This is 〜を表すために使用されます uncertainty or possibility.",
-    "longExplanation": "'~을/ㄹ지도 모르다 [eul/ljido moreuda]', or simply 'might' in English, is a grammar pattern used to represent the speaker's uncertainty or to express the possibility of a future event or condition. Depending on context, it can imply that something might or might not happen. The verb is conjugated according to the level of formality and respect required.",
-    "formation": "(動詞 stem + 을/ㄹ지도 모르다)"
+    "title": "~(으)ㄹ지도 모르다（〜かもしれない、〜かもわからない）",
+    "shortExplanation": "ある事態が起こるかもしれないという、不確かな推測や可能性を表します（「〜かもしれない」）。",
+    "longExplanation": "「~(으)ㄹ지도 모르다」は動詞や形容詞の語幹に付き、話し手がある事柄について確信は持てないものの、そうなる可能性も否定できないと控えめに推測する表現です。日本語の「〜かもしれない」「〜かも知れない」に相当します。副詞「혹시（もしや）」「아마（たぶん）」などと一緒に用いられることが多くあります。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지도 모르다",
+    "examples": [
+      {
+        "translation": "明日雨が降るかもしれないので、傘を持って行ってください。"
+      },
+      {
+        "translation": "彼は次の会議に出席するかもしれません。"
+      },
+      {
+        "translation": "私はもしかしたら来年韓国に引っ越すかもしれません。"
+      },
+      {
+        "translation": "彼女はその知らせを知っているかもしれませんね。"
+      }
+    ]
   },
   "ko_을지라도_87": {
-    "title": "~을/ㄹ지라도 [eul/ljirado] (Even if)",
-    "shortExplanation": "Used to say 'even if'; 'no matter how/if'; nonetheless.",
-    "longExplanation": "'~을/ㄹ지라도 [eul/ljirado]' is a conditional form used in Korean to express the meaning of 'even if', 'no matter how', or 'nonetheless'. It indicates that the expected result will remain unchanged regardless of the given condition.",
-    "formation": "動詞 stem + 을/ㄹ지라도"
+    "title": "~(으)ㄹ지라도（たとえ〜であっても、〜としても）",
+    "shortExplanation": "強い仮定の譲歩を表し、前項の状況がどうであれ、後項の意志や結果が変わらないことを表します（「たとえ〜であっても」「〜としても」）。",
+    "longExplanation": "「~(으)ㄹ지라도」は動詞や形容詞の語幹に付く接続語尾で、仮定的な譲歩を表す格調の高い表現です。前項で極端な条件や不利な事態を仮定しても、後項で示される話し手の決意や状況が何ら影響を受けず維持されることを表し、日本語の「たとえ〜であっても」「〜だとしても」に相当します。改まった文脈や書き言葉で多く用いられます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지라도",
+    "examples": [
+      {
+        "translation": "問題が難しくても諦めずに解き続けてみます。"
+      },
+      {
+        "translation": "たとえ雨が降ろうとも行くつもりです。大事なミーティングがあるのです。"
+      },
+      {
+        "translation": "バスが早く来たとしても、無理して走ったりはしません。"
+      },
+      {
+        "translation": "たとえ費用が多くかかっても、品質の良い製品を作りたいです。"
+      }
+    ]
   },
   "ko_을지_88": {
-    "title": "~을/ㄹ지 몰라 [eul/lji molla] (Maybe)",
-    "shortExplanation": "〜を表すために使用されます uncertainty or doubt; 'maybe', 'might', 'I don't know if'.",
-    "longExplanation": "'~을/ㄹ지 몰라 [eul/lji molla]' is a grammar form 〜を示します doubts, uncertainties, or suppositions. 〜と訳されます 'maybe', 'might', or 'I don’t know if' in English. This form is typically used when the speaker is unsure of something or wishes to present a speculative premise.",
-    "formation": "動詞/形容詞 + 을/ㄹ지 몰라"
+    "title": "~(으)ㄹ지 모르다 / ~(으)ㄹ지 몰라（〜かわからない、〜かもしれない）",
+    "shortExplanation": "ある状況に対して確信が持てないことや、「〜かもしれない」という不確かな推測を表します（「〜かわからない」「〜かもしれない」）。",
+    "longExplanation": "「~(으)ㄹ지 모르다」（くだけた口語形は「-(으)ㄹ지 몰ら」）は、疑問を表す接続語尾「-(으)ㄹ지」に「모르다（分からない）」が結びついた表現です。ある事柄について確信が持てず疑問に思っていることや、可能性を控えめに推測して「〜かもしれない」と述べる際に用いられます。また、「-(으)ㄹ지 몰라서（〜かどうかわからないので、〜かもしれないので）」の形で、不測の事態に備えた理由を述べる際にも頻繁に使われます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지 모르다 (몰라/몰라요)",
+    "examples": [
+      {
+        "translation": "彼女は明日学校に来るかもしれないよ、最近体調が悪いって言ってたから。"
+      },
+      {
+        "translation": "この商品を買おうと思ったのですが、まだお金が足りるか分かりません。"
+      },
+      {
+        "translation": "明日雨が降るか分からないので、傘を用意しておかなければなりません。"
+      },
+      {
+        "translation": "どんな服を着ればいいか分からなくて、3種類用意しました。"
+      }
+    ]
   },
   "ko_을래요_89": {
-    "title": "~을래요 [eullaeyo] (Want to)",
-    "shortExplanation": "〜を表すために使用されます the speaker's desire or intention to do something.",
-    "longExplanation": "'~을래요 [eullaeyo]' is a verb ending used in Korean to express an intention, suggestion, or polite proposal from the speaker's perspective. It denotes that the speaker wants or would like to do something and is often used when making plans or suggestions. Note that it is typically used for the speaker’s own actions.",
-    "formation": "動詞 Stem + 을래요"
+    "title": "~(으)ㄹ래요（〜します、〜したいです、〜しませんか）",
+    "shortExplanation": "話し手の意図や意思を表したり（「〜します」「〜したいです」）、相手の意向を尋ねて誘ったり（「〜しませんか」）する親しみのある終結語尾です。",
+    "longExplanation": "「~(으)ㄹ래요」は動詞の語幹に付く口語の終結語尾です。平叙文（1人称主語）では、話し手の個人的な意思、希望、選択を表し、「〜します」「〜したいです」に相当します。疑問文（2人称主語）では、相手の意向を柔らかく尋ねたり、親しい間柄で提案・勧誘したりする際に使われ、「〜しませんか」「〜しますか」という意味になります。語幹末尾が母音またはㄹパッチムの場合は「-ㄹ래요」、それ以外のパッチムの場合は「-을래요」を用います。",
+    "formation": "動詞語幹 + -(으)ㄹ래요",
+    "examples": [
+      {
+        "translation": "私は今日家で映画を見ます。外に出るには寒すぎます。"
+      },
+      {
+        "translation": "私たち今週末キャンプ場に行ってテントを張りませんか、どう思いますか？"
+      },
+      {
+        "translation": "私は夕食を一食だけ軽く食べます。もうお腹がいっぱいなのでこれ以上は食べたくないです。"
+      },
+      {
+        "translation": "私は今週末に演劇を見に行きたいです。韓国文化が好きなのでそう決めました。"
+      }
+    ]
   },
   "ko_을_90": {
-    "title": "~을 리가 없다 [eulliga eopda] (It's unlikely that)",
-    "shortExplanation": "This expression is 〜を示します that a certain situation is unlikely or impossible to happen.",
-    "longExplanation": "'~을 리가 없다 [eulliga eopda]' is a speculative expression used in Korean to indicate that something is improbable or implausible based on the speaker's judgment. It expresses disbelief or doubt about the possibility of an event occurring and is often used to contrast a hypothetical situation with reality.",
-    "formation": "動詞 + ~을 리가 없다"
+    "title": "~(으)ㄹ 리가 없다（〜はずがない、〜わけがない）",
+    "shortExplanation": "道理や常識、状況から考えて、そのようなことが起こる可能性が全くないことを強く主張する表現です（「〜はずがない」「〜わけがない」）。",
+    "longExplanation": "「~(으)ㄹ 리가 없다」は動詞や形容詞の語幹、または名詞（일 리가 없다）に付き、話し手の判断や常識から照らし合わせて「そのような理由や可能性は絶対にあり得ない」と強く否定する表現です。日本語の「〜はずがない」「〜わけがない」に相当します。事実に対する強い疑念や反論、驚きを表す際によく使われます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 리가 없다 | 名詞 + 일 리가 없다",
+    "examples": [
+      {
+        "translation": "これが事実であるはずがありません。彼がそのようなことをしでかす人ではありません。"
+      },
+      {
+        "translation": "彼女が私を忘れてしまうはずがありません。私たちはとても長く一緒に過ごしたのですから。"
+      },
+      {
+        "translation": "私がこの契約書にサインするはずがありません。私はまだ条件をすべて理解できていません。"
+      },
+      {
+        "translation": "彼が今日来るはずがありません。彼が病気なのは分かっていますから。"
+      }
+    ]
   },
   "ko_을수록_91": {
-    "title": "~을수록 [eulsurok] (The more)",
-    "shortExplanation": "〜を表すために使用されます 'the more...the more', indicating an increasing degree or intensity.",
-    "longExplanation": "The grammar point '~을수록 [eulsurok]' is used in Korean to indicate that as one condition intensifies, another condition increases proportionately. It is equivalent to the English phrase 'the more...the more', showing a direct proportional relationship between two events or states.",
-    "formation": "動詞-을수록 / 形容詞-을수록"
+    "title": "~(으)ㄹ수록（〜するほど、〜であればあるほど）",
+    "shortExplanation": "前項の動作や状態が進むほど、それに比例して後項の度合いも強まることを表します（「〜するほど」「〜すればするほど」）。",
+    "longExplanation": "「~(으)ㄹ수록」は動詞や形容詞の語幹に付き、先行する事態の進行や程度の上昇に比例して、後続する事態の度合いも増大していく関係を表す接続語尾です。日本語の「〜するほど」「〜であればあるほど」に相当します。後続節には「더（もっと）」などの副詞がよく使われ、「-(으)면 -(으)ㄹ수록（〜すればするほど）」という強調構文としても頻出します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ수록",
+    "examples": [
+      {
+        "translation": "韓国語を勉強するほど、韓国文化についてより深く理解できるようになります。"
+      },
+      {
+        "translation": "この歌はたくさん聴くほど、ますます好きになっていく気がします。"
+      },
+      {
+        "translation": "日がだんだん暑くなるほど、アイスクリームがより多く売れます。"
+      },
+      {
+        "translation": "人々が環境に優しい製品を使うほど、環境保護により多くの貢献ができます。"
+      }
+    ]
   },
   "ko_을지언정_92": {
-    "title": "~을지언정 [euljieonjeong] (Even though)",
-    "shortExplanation": "This phrase is 〜を示します 'even though' or 'despite'.",
-    "longExplanation": "'~을지언정 [euljieonjeong]' is a conjunction in Korean that conveys the meaning of 'even though', 'even if', or 'despite'. It is used to present a contrasting situation or fact that exists despite the previous condition. While more common in formal or written language, it is also useful in everyday contexts and for tests like TOPIK.",
-    "formation": "動詞 + 을지언정"
+    "title": "~(으)ㄹ지언정（〜であれ、〜としても、〜であっても）",
+    "shortExplanation": "前項の事実を譲歩して認めつつも、後項でそれと対比される事実や強固な意志を提示します（「〜であっても」「〜としても」）。",
+    "longExplanation": "「~(으)ㄹ지언정」は動詞・形容詞の語幹、または名詞（일지언정）に付く書き言葉寄りの格調高い接続語尾です。前項の状況や事実を一応認める譲歩の姿勢を取りながらも、後項ではそれに反する意外な事実や、妥協しない強い意志を対比させて述べます。日本語の「〜であっても」「〜としても」「たとえ〜であれ」に相当し、「むしろ〜することはあっても〜だけはしない」という決意を表す文脈でもよく使われます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지언정 | 名詞 + 일지언정",
+    "examples": [
+      {
+        "translation": "それが彼にとって極めて重要な事柄であったとしても、彼は決してそれに手を触れなかった。"
+      },
+      {
+        "translation": "彼はお金持ちであるとしても、普段はとても倹約する習慣がある。"
+      },
+      {
+        "translation": "試験が難しいとしても、生徒たちは一生懸命勉強しました。"
+      },
+      {
+        "translation": "その公園が美しいとしても、夜は危険が多いので気をつけてください。"
+      }
+    ]
   },
   "ko_이나_93": {
-    "title": "~이나 [ina] (Or, whether)",
-    "shortExplanation": "〜を示します choice or alternatives, typically attached to nouns.",
-    "longExplanation": "'~이나 [ina]' is a particle in Korean attached to nouns to indicate alternatives or choices. It functions similarly to 'or' in English and is used to present different options or possibilities. The proper formation is with a noun followed by (이)나.",
-    "formation": "名詞 + (이)나"
+    "title": "~(이)나（〜か、〜または、〜でも）",
+    "shortExplanation": "名詞の後ろに付き、2つ以上の対象の中からどれかを選択することを表します（「〜か」「〜または」）。",
+    "longExplanation": "「~(이)나」は名詞の後ろに付く助詞で、提示された複数の選択肢の中からいずれか1つを選ぶことを表し、日本語の「〜か」「〜または」に相当します。パッチムのある名詞には「-이나」、パッチムのない名詞には「-나」が付きます。選択肢の提示のほかにも、最善ではない次善の策として選ぶ「〜でも」や、数量の多さに驚く「〜も」の意味でも幅広く使われます。",
+    "formation": "名詞 + (이)나",
+    "examples": [
+      {
+        "translation": "リンゴかオレンジ、そのうち1つだけを選んでください。"
+      },
+      {
+        "translation": "映画かドラマを見ましょうか？"
+      },
+      {
+        "translation": "バスかタクシーに乗ってください。"
+      }
+    ]
   },
   "ko_이든_94": {
-    "title": "~이든 [ideun] (Either or)",
-    "shortExplanation": "Used to present two or more choices; 'either', 'or'.",
-    "longExplanation": "'~이든 [ideun]' is a connecting ending used in Korean to present two or more alternatives or choices. It is analogous to 'either' or 'or' in English and is commonly used when the speaker considers all options equally acceptable.",
-    "formation": "(名詞/形容詞/動詞) + 이든"
+    "title": "~(이)든（〜であれ〜であれ、〜だろうと〜だろうと）",
+    "shortExplanation": "複数の事物を並列し、どちらを選んでも関係がない、またはどれであっても構わないことを表します（「〜であれ〜であれ」「〜だろうと〜だろうと」）。",
+    "longExplanation": "「~(이)든」（「-(이)든지」の縮約形）は、名詞や用言の語幹に付き、複数の選択肢を挙げて「どちらを選択しようと結果に変わりはない」「いずれであっても構わない」という無条件・無差別の態度を表す表現です。日本語の「〜であれ〜であれ」「〜だろうと〜だろうと」「〜でも〜でも」に相当します。名詞にパッチムがある場合は「-이든」、ない場合は「-든」を用い、「A든 B든」の形でよく用いられます。",
+    "formation": "名詞 + (이)든 | 動詞・形容詞語幹 + -든",
+    "examples": [
+      {
+        "translation": "ピザであれパスタであれ何を食べてもいいです。どちらも美味しいですから。"
+      },
+      {
+        "translation": "運動であれヨガであれ、すべての活動は健康に良いです。"
+      },
+      {
+        "translation": "友達と映画を見ることであれ本を読むことであれ、私は幸せです。"
+      },
+      {
+        "translation": "トッポッキであれプデチゲであれ、私は両方とも好きな食べ物です。"
+      }
+    ]
   },
   "ko_이라도_95": {
-    "title": "~이라도 [irado] (At least, even if)",
-    "shortExplanation": "〜を表すために使用されます 'at least' or 'even if'; refers to a minimum or lesser expectation.",
-    "longExplanation": "The '~이라도 [irado]' grammar point is used in Korean to express a minimum expectation or to settle for a lesser alternative when the preferred option isn’t available. It conveys the idea of conceding to a less ideal scenario and is often used when faced with challenges or limited choices.",
-    "formation": "名詞 + 이라도"
+    "title": "~(이)라도（〜でも、せめて〜だけでも）",
+    "shortExplanation": "最善の選択肢がない場合に、次善の策として甘受したり、最低限の要求を表したりします（「〜でも」「せめて〜だけでも」）。",
+    "longExplanation": "「~(이)라도」は名詞の後ろに付く助詞で、最も望ましい選択肢が得られない場合に「妥協してこれだけでも受け入れる」という次善の選択を表したり、最低限の期待・条件を表したりする表現です。日本語の「〜でも」「せめて〜だけでも」に相当します。パッチムのある名詞には「-이라도」、パッチムのない名詞には「-라도」が付きます。",
+    "formation": "名詞 + (이)라도",
+    "examples": [
+      {
+        "translation": "せめてこの小さなプレゼントだけでも受け取ってください。これ以上の良い贈り物は差し上げられません。"
+      },
+      {
+        "translation": "せめてごめんねと一言だけでも言ってくれたら嬉しいです。"
+      },
+      {
+        "translation": "たとえ彼女が私を嫌っているとしても、せめて友達としてだけでも会い続けたいです。"
+      },
+      {
+        "translation": "靴は希望の色がないので、白でも買おうと思います。"
+      }
+    ]
   },
   "ko_이라는_96": {
-    "title": "~이라는 것 [iraneun geot] (The thing called)",
-    "shortExplanation": "This phrase is used to refer to or define something that was mentioned earlier.",
-    "longExplanation": "'~이라는 것 [iraneun geot]' is a sentence structure used in Korean to refer to or define a particular thing or idea. It is often used in explanations to elaborate on a concept or to highlight specific characteristics.",
-    "formation": "名詞 + 이라는 것 + Sentence"
+    "title": "~(이)라는 것（〜というもの、いわゆる〜とは）",
+    "shortExplanation": "名詞の後ろに付き、ある概念や対象を話題として提示し、その本質を定義・説明します（「〜というもの」「〜とは」）。",
+    "longExplanation": "「~(이)라는 것」は間接引用の連体形「-(이)라는」（-(이)라고 하는 の縮約形）と依存名詞「것（もの・こと）」が結合した表現です。抽象的な概念や特定の事物を主題として取り上げ、その本質を定義したり深く論評したりする際に用いられます。日本語の「〜というもの」「いわゆる〜とは」に相当します。パッチムのある名詞には「-이라는 것」、ない名詞には「-라는 것」が付きます。",
+    "formation": "名詞 + (이)라는 것",
+    "examples": [
+      {
+        "translation": "愛というものがどのようなものなのか、多くの人がぜひ知りたいと思っているようです。"
+      },
+      {
+        "translation": "成功というものは、多大な努力と献身なしには成し遂げられないものです。"
+      },
+      {
+        "translation": "幸福というものは、個人によって異なる意味を持っているため、定義することが困難です。"
+      },
+      {
+        "translation": "思いやりというものは、自分の行動が他人にどのような影響を及ぼすかを考慮することです。"
+      }
+    ]
   },
   "ko_이라면_97": {
-    "title": "~이라면 [iramyeon] (If it’s the case that)",
-    "shortExplanation": "Used to imagine a certain situation; 'if it’s the case that'.",
-    "longExplanation": "'~이라면 [iramyeon]' is used in Korean to pose a hypothetical scenario or situation. It is akin to saying 'if it’s the case that' in English and is used to speculate about consequences or outcomes.",
-    "formation": "動詞 stem + -이라면"
+    "title": "~(이)라면（もし〜なら、〜であれば）",
+    "shortExplanation": "名詞に付き、ある立場や状況を仮定して表します（「もし〜なら」「〜であれば」）。",
+    "longExplanation": "「~(이)라면」は名詞の後に付き、「もし〜なら」「〜であれば」と仮定の状況や身分、前提を提示する表現です。パッチムがある名詞には「-이라면」、パッチムがない名詞には「-라면」が付きます。特定の状況を仮定した上で、それに対する疑問、判断、対応などを後節で展開する際によく使われます。",
+    "formation": "名詞（パッチム有）+ 이라면 /（パッチム無）+ 라면",
+    "examples": [
+      {
+        "translation": "ここが本当に有名な観光名所なら、なぜこんなに人がいないのですか？"
+      },
+      {
+        "translation": "本当にそんなことが起きたら、どう対処すべきか悩まなければなりませんね。"
+      },
+      {
+        "translation": "学校を辞めたいのなら、将来をどのように設計するか考えてみるべきでしょう。"
+      },
+      {
+        "translation": "お前が私の友達なら、なぜ私を裏切って他の友達に悪口を言いふらしたのか？"
+      }
+    ]
   },
   "ko_이래_98": {
-    "title": "~이래 [irae] (Like this, in this manner)",
-    "shortExplanation": "〜を表すために使用されます 'like this' or 'in this manner', referring to a current state or condition.",
-    "longExplanation": "'~이래 [irae]' is used in Korean to describe the state, condition, or manner in which something exists or is done. It emphasizes the way in which a situation is and is often used when commenting on the current status or behavior.",
-    "formation": "名詞 + 이래"
+    "title": "~이래（このように、こんな風で、こんな調子で）",
+    "shortExplanation": "形容詞「이러하다（このようだ）」の活用形で、「このように」「こんな風で」と現在の状態や様子を表します。",
+    "longExplanation": "「~이래」は形容詞「이러하다（このようだ、こうである）」の活用・縮約形で、「이래서는（こんな風では、こうであっては）」「이래 있으면（こうしていれば）」などの連用形でよく用いられます。目の前にある状態や態度、様子が「こんな風だ」と示し、それに対する評価や懸念、今後の見通しを述べる際に使われます。",
+    "formation": "形容詞「이러하다」の活用形（이래서는、이래 있으면 など）",
+    "examples": [
+      {
+        "translation": "天気がこんな状態では遊びに行くことができません。"
+      },
+      {
+        "translation": "私がこのままでいれば、有名になりそうです。"
+      },
+      {
+        "translation": "この家がこんな風では売ることができないよ。"
+      },
+      {
+        "translation": "君がこんな調子でいれば、スポーツ選手として優れた成果を収めることができそうだね。"
+      }
+    ]
   },
   "ko_이랑_99": {
-    "title": "~이랑 [irang] (And, with)",
-    "shortExplanation": "Used to connect two nouns, expressing 'and' or 'with'.",
-    "longExplanation": "'~이랑 [irang]' is a common connector in Korean that joins two nouns together to show a relationship or connection. It is used informally in various sentence types regardless of the politeness level.",
-    "formation": "名詞 + 이랑 + 名詞"
+    "title": "~(이)랑（〜と、〜と一緒に）",
+    "shortExplanation": "名詞に付き、並列（「〜と」）や動作を共にする相手（「〜と一緒に」）を表す口語助詞です。",
+    "longExplanation": "「~(이)랑」は日常の会話で頻繁に使われる助詞です。名詞を並列して「〜と」と繋ぐ用法と、一緒に行動する相手を示して「〜と（一緒に）」を表す用法があります（しばしば「같이」「함께」を伴います）。直前の名詞にパッチムがある場合は「-이랑」、パッチムがない場合は「-랑」が付きます。親しみやすい口語的な響きを持ちます。",
+    "formation": "名詞（パッチム有）+ 이랑 /（パッチム無）+ 랑",
+    "examples": [
+      {
+        "translation": "私は友達と一緒に映画を見に行く予定です。"
+      },
+      {
+        "translation": "私たちはピザとチキンを注文しました。"
+      },
+      {
+        "translation": "私は姉と一緒にショッピングモールで服を買いました。"
+      },
+      {
+        "translation": "私は猫も犬も飼っています。"
+      }
+    ]
   },
   "ko_이러하다_100": {
-    "title": "~이러하다 [ireohada] (Like this)",
-    "shortExplanation": "Used to describe the state or condition of a subject as 'like this'.",
-    "longExplanation": "'~이러하다 [ireohada]' is a descriptive verb used in Korean to indicate that someone or something is in a particular state or condition. It emphasizes the current manner or appearance of the subject.",
-    "formation": "形容詞/動詞 base + -이러하다"
+    "title": "~이러하다（このようだ、こうである、このようなものだ）",
+    "shortExplanation": "事物の状態や態度、状況が「このようである」「こうだ」と指し示す指示形容詞です。",
+    "longExplanation": "「이러하다」（縮約形は「이렇だ」）は、物事の様子、性質、態度、状況などが話し手の目の前にある通り「このようだ」「こうである」と指し示す指示形容詞です。日本語の「このようだ」「こうだ」に相当します。「-더니」「-다니」「-다 보니」などの接続語尾と結びついて、現状を指摘し、それに対する驚きや失望、結果を述べる際によく用いられます。",
+    "formation": "形容詞「이러하다」+ 接続語尾（이러하더니、이러하다니、이러하다 보니 など）",
+    "examples": [
+      {
+        "translation": "友達の態度があまりにもこのようであったため、みんな当惑しました。"
+      },
+      {
+        "translation": "最近の世の中がこのようであるとは、信じがたいですね。"
+      },
+      {
+        "translation": "彼女の行動がこのようであったため、人々の信頼を失ってしまいました。"
+      },
+      {
+        "translation": "彼がこのようであると聞くと、本当に失望します。"
+      }
+    ]
   },
   "ko_이런그런저런_101": {
-    "title": "~이런/그런/저런 [ireon/geureon/jeoreon] (This kind of/That kind of/That kind over there)",
-    "shortExplanation": "Used to describe the type or category of something; 'this kind of', 'that kind of', or 'that kind over there'.",
-    "longExplanation": "~이런/그런/저런 [ireon/geureon/jeoreon] are demonstrative adjectives used in Korean to classify or describe things by their type or category. '이런' refers to something near the speaker, '그런' to something near the listener or already mentioned, and '저런' to something distant.",
-    "formation": "('이런' + 名詞) or ('그런' + 名詞) or ('저런' + 名詞)"
+    "title": "~이런 / 그런 / 저런（このような、そのような、あのような、こんな、そんな、あんな）",
+    "shortExplanation": "名詞の前に置かれ、種類や状態を修飾する指示冠形詞です（「こんな」「そんな」「あんな」）。",
+    "longExplanation": "「이런 / 그런 / 저런」は名詞を直接修飾する指示冠形詞（連体詞）です。対象の種類、性質、状態を表します。「이런」は話し手に近い「こんな、このような」を、「그런」は聞き手に近い、または既に言及された「そんな、そのような」を、「저런」は両者から遠いものや感嘆のニュアンスを含む「あんな、あのような」を表します。",
+    "formation": "이런 / 그런 / 저런 + 名詞",
+    "examples": [
+      {
+        "translation": "このような状況ではどのように対処すべきか分かりません。"
+      },
+      {
+        "translation": "そのような雰囲気が好きではありません。"
+      },
+      {
+        "translation": "あんな服を着たらどう思われるでしょうか？"
+      },
+      {
+        "translation": "こんな考えはしないようにしなければなりませんね。"
+      }
+    ]
   },
   "ko_이므로_102": {
-    "title": "~이므로 [imuro] (Because, since)",
-    "shortExplanation": "〜を表すために使用されます a reason or cause; 'because', 'since'.",
-    "longExplanation": "'~이므로 [imuro]' is a conjunction used in Korean to indicate a reason or cause, corresponding to 'because' or 'since' in English. It typically introduces the cause for a conclusion or result. This form is formal and is often used in written Korean, such as in official documents, academic writing, or news reports.",
-    "formation": "動詞/形容詞/名詞 + ~이므로"
+    "title": "~(으)므로 / -(이)므로（〜であるから、〜のため、〜ゆえに）",
+    "shortExplanation": "書き言葉や公式な場で、客観的な原因や明確な理由を表す格調高い接続語尾です（「〜のため」「〜ゆえに」）。",
+    "longExplanation": "「~(으)므로 / -(이)므로」は、公的な文書、論文、ニュース、演説などの書き言葉や改まった場で多用される接続語尾です。前節が後節の客観的な原因、理由、根拠であることを表し、日本語の「〜のため」「〜ゆえに」「〜であるから」に相当します。名詞には「-(이)므로」、動詞・形容詞の語幹にはパッチムに応じて「-(으)므로」が付きます。文末に命令形や勧誘形を続けることはできません。",
+    "formation": "名詞 + (이)므로 | 動詞・形容詞語幹 + -(으)므로",
+    "examples": [
+      {
+        "translation": "明日は月曜日であるため、今夜は早く就寝しなければなりません。"
+      },
+      {
+        "translation": "彼は単位が低く教授から奨学金をもらうことができなかったため、金銭的な問題がありました。"
+      },
+      {
+        "translation": "私たちは時間がないため、夕食を簡略化しなければなりません。"
+      },
+      {
+        "translation": "その社員は業務能力が極めて不良であるため、私たちは彼に警告を発しました。"
+      }
+    ]
   },
   "ko_이야_103": {
-    "title": "~이야 [iya] (Is, informal declaration)",
-    "shortExplanation": "'~이야' is used as an informal, casual way to state or declare something.",
-    "longExplanation": "'~이야' is a verb modifier in Korean used to assert, declare, or express a fact, situation, or feeling in an informal context. It attaches to the stem of a noun, verb, or adjective and is common in daily conversation among close friends or people of similar age. It is not recommended to use this form with elders or superiors as it may sound rude.",
-    "formation": "形容詞/動詞 stem + 이야"
+    "title": "~(이)야（〜だよ、〜なんだ、〜さ——パンマルの終結語尾）",
+    "shortExplanation": "名詞に付き、親しい間柄で「〜だよ」「〜なんだ」と説明・断定する親称（パンマル）の終結語尾です。",
+    "longExplanation": "「~(이)야」は指定詞「-(이)다」のパンマル（くだけた平叙文・ため口）終結語尾です。名詞や連体形「것 + 이야 -> 거야」に付き、事実を相手に伝えたり断定したりする際に用いられ、日本語の「〜だよ」「〜なんだ」「〜さ」に相当します。パッチムがある名詞には「-이야」、パッチムがない名詞には「-야」が付きます。友人同士や年下の相手に用いられ、目上の人には使えません。",
+    "formation": "名詞（パッチム有）+ 이야 /（パッチム無）+ 야 | 連体形 + 거야",
+    "examples": [
+      {
+        "translation": "お腹が空いていると思ったけれど違ったよ。キンパを買ってきたから、もうお腹は空いていないよ。"
+      },
+      {
+        "translation": "今日はずいぶん天気がいいね。空が澄んでいて青い空が見えるよ。"
+      },
+      {
+        "translation": "ここが僕の家だよ。少し小さいけれど、居心地が良くて落ち着くんだ。"
+      },
+      {
+        "translation": "君が本当に好きなんだね、教えてくれてありがとう。"
+      }
+    ]
   },
   "ko_이지만_104": {
-    "title": "~이지만 [ijiman] (But, although)",
-    "shortExplanation": "Used to convey a contrast or contradiction; 'but', 'although'.",
-    "longExplanation": "'~이지만 [ijiman]' is used in Korean to indicate a contrast or contradiction between two statements or facts. It is similar to 'but' or 'although' in English: despite what is stated in the first clause, the information in the second clause still holds true. In casual contexts, the shortened form '-지만' may be used on its own.",
-    "formation": "節 1 + 지만 + 節 2"
+    "title": "~(이)지만 / -지만（〜だけれども、〜だが、〜ですが）",
+    "shortExplanation": "前節と後節が対比・逆接の関係にあることを表す接続語尾です（「〜だけれども」「〜だが」）。",
+    "longExplanation": "「~(이)지만 / -지만」は、動詞や形容詞の語幹、または名詞（指定詞「-(이)다」）に付き、前節と後節の内容が対立したり逆接の関係にあることを表す代表的な接続語尾です。日本語の「〜だけれども」「〜ですが」「〜ものの」に相当します。前節で事実や前提を認めつつ、後節でそれに相反する事実を展開します。過去形「-았/었지만」や推量「-겠지만」とも結びつきます。",
+    "formation": "名詞 + (이)지만 | 動詞・形容詞語幹 + -지만",
+    "examples": [
+      {
+        "translation": "普段はドラマをあまり見ない方ですが、このドラマは興味深いのでぜひ見なければなりません。"
+      },
+      {
+        "translation": "今日は天気が良いですが、忙しくて出かけられそうにありません。"
+      },
+      {
+        "translation": "あなたは若いですが、すでに多くの経験を持っていますね。"
+      },
+      {
+        "translation": "私はチーム長ですが、すべての決定を一人でするわけではありません。"
+      }
+    ]
   },
   "ko_이후_105": {
-    "title": "~이후 [ihu] (After, since)",
-    "shortExplanation": "〜を表すために使用されます the meaning of 'after' or 'since'.",
-    "longExplanation": "'~이후 [ihu]' is a postposition used in Korean to indicate the time after a specific point or event. It corresponds to 'after' or 'since' in English and is often used to refer to the period following a particular event.",
-    "formation": "名詞 + 이후"
+    "title": "~이후 / -(으)ㄴ 이후（〜以後、〜以降、〜して以来）",
+    "shortExplanation": "名詞や動詞連体形に付き、ある時点や出来事の後の期間を表します（「〜以後」「〜して以来」）。",
+    "longExplanation": "「이후（以後）」は、特定の時点や出来事を基準として、それより後の時間や期間を表す表現です。日本語の「〜以後」「〜以降」「〜して以来」に相当します。名詞の直後に付くか、動詞の過去連体形「-(으)ㄴ 이후」の形で用いられます。助詞「로」を伴った「이후로」の形をとることも多く、ある出来事を契機としてその状態が継続しているニュアンスを強調します。",
+    "formation": "名詞 + 이후(로) | 動詞語幹 + -(으)ㄴ 이후(로)",
+    "examples": [
+      {
+        "translation": "中学校の卒業以来、初めて友達と集まりました。"
+      },
+      {
+        "translation": "彼女が都会に引っ越して以来、彼女に会ったことがありません。"
+      },
+      {
+        "translation": "朝食以後、何も食べていません。"
+      },
+      {
+        "translation": "会議の後から、オフィスで仕事を続けています。"
+      }
+    ]
   },
   "ko_인즉_106": {
-    "title": "~인즉 [injeuk] (In other words, that is to say)",
-    "shortExplanation": "Used to rephrase or further explain a preceding statement; 'in other words', 'that is to say'.",
-    "longExplanation": "'~인즉 [injeuk]' is a connective ending used in Korean to rephrase or further explain a preceding statement or idea. It is similar to saying 'in other words' or 'that is to say' in English, and it helps the speaker clarify their point.",
-    "formation": "節 + 인즉"
+    "title": "~인즉 / -(으)ㄴ즉（つまり、言い換えれば、その真相は）",
+    "shortExplanation": "前に述べた内容を分かりやすく言い直したり、その真相や本質を要約して提示したりする表現です（「つまり」「言い換えれば」）。",
+    "longExplanation": "「~인즉」（指定詞「이다」の語幹に接続語尾「-(으)ㄴ즉」が付いた形）は、前に述べた内容について改めて分かりやすく言い直したり、その真相や本質を要約して提示したりする際に用いられる表現です。日本語の「つまり」「言い換えれば」「事の真相は」に相当します。文頭に置いて接続副詞のように用いることも多く、強調形として「인즉슨」の形もよく使われます。",
+    "formation": "節・名詞 + 인즉 | 動詞・形容詞語幹 + -(으)ㄴ즉",
+    "examples": [
+      {
+        "translation": "この作業は本当に難しいです。つまり、専門家でなければ適切にやり遂げることができません。"
+      },
+      {
+        "translation": "彼女は明日結婚します。言い換えれば、彼女はもう独身ではありません。"
+      },
+      {
+        "translation": "博物館の職員は私が入場することを許可しませんでした。つまり、私は規定に違反したのです。"
+      },
+      {
+        "translation": "私たちは研究に参加しました。言い換えれば、私たちは何らかの学術的な貢献をしたということです。"
+      }
+    ]
   },
   "ko_자_107": {
-    "title": "~자 [ja] (Let's)",
-    "shortExplanation": "Used to propose doing something; 'Let's'.",
-    "longExplanation": "'~자 [ja]' is an ending particle in Korean used to suggest or propose doing an action together. It corresponds loosely to 'Let's' in English and is used in informal or casual contexts among friends, colleagues, or family members. The subject is usually omitted, and the verb appears in its dictionary (base) form.",
-    "formation": "Dictionary form of verb + 자"
+    "title": "~자（〜しよう、〜しようぜ——パンマルの勧誘語尾）",
+    "shortExplanation": "動詞語幹に付き、親しい相手に一緒にある行動をしようと提案・勧誘する親称（パンマル）の終結語尾です（「〜しよう」）。",
+    "longExplanation": "「~자」は動詞の語幹に直接付くパンマル（ため口）の勧誘形終結語尾です。親しい友人や同年代、または年下の相手に対して「〜しよう」「〜しようぜ」と一緒に行動することを提案する際に用いられます。目上の人や改まった場では使えません（丁寧形は「-(으)ㅂ시다」や「-(으)시죠」などを用います）。",
+    "formation": "動詞語幹 + 자",
+    "examples": [
+      {
+        "translation": "天気がとても良いから、僕たち山へ登山に行こう。"
+      },
+      {
+        "translation": "今日は日曜日だから、教会に行って祈ろう。"
+      },
+      {
+        "translation": "ご飯は全部食べたから、もうコーヒーを一杯飲みにカフェに行こう。"
+      },
+      {
+        "translation": "長くて退屈な一日だったから、もうボードゲームを一つプレイしてゆっくり休もう。"
+      }
+    ]
   },
   "ko_자마자_108": {
-    "title": "~자마자 [jamaja] (As soon as)",
-    "shortExplanation": "〜を表すために使用されます that one action occurs immediately after another.",
-    "longExplanation": "The '~자마자 [jamaja]' grammar point emphasizes that an action or event occurs immediately after a preceding one. It is equivalent to 'as soon as' in English and implies a very short time gap between the two actions.",
-    "formation": "動詞 stem + 자마자"
+    "title": "~자마자（〜するやいなや、〜するとすぐ、〜してすぐに）",
+    "shortExplanation": "動詞語幹に付き、前の動作が終わるとすぐに次の動作が続くことを表す接続語尾です（「〜するやいなや」「〜するとすぐ」）。",
+    "longExplanation": "「~자마자」は動詞の語幹に付き、前節の動作が完了した直後に間髪入れず後節の動作や事態が起きることを表す接続語尾です。日本語の「〜するやいなや」「〜するとすぐ」「〜してすぐに」に相当します。語幹のパッチムの有無に関わらず「-자마자」がそのまま付きます。前節には時制を表す「-았/었-」を入れず、文末の述語で全体の時制を表します。",
+    "formation": "動詞語幹 + 자마자",
+    "examples": [
+      {
+        "translation": "私は家に帰ってくるやいなや食事の準備をしました。とてもお腹が空いていてすぐに食べたかったからです。"
+      },
+      {
+        "translation": "母が電話を切るやいなや私は眠りにつきました。昨日は寝るのが遅すぎたのでとても疲れていました。"
+      },
+      {
+        "translation": "彼は起きるとすぐにコーヒーを飲みます。朝にコーヒーがないと仕事を始められないと言っています。"
+      },
+      {
+        "translation": "雨が降るやいなや傘を持って図書館へ行きました。授業の資料を探すことに決めたからです。"
+      }
+    ]
   },
   "ko_전에전까지_109": {
-    "title": "~전에/전까지 [jeone/jeonkkaji] (Before/by the time of)",
-    "shortExplanation": "〜を示します that an action or state is completed or occurs before a specific time.",
-    "longExplanation": "'~전에 [jeone]' and '전까지 [jeonkkaji]' are used to denote that an action or state is completed before a certain time or event. '~전에' is used when the action stops before that time, while '전까지' indicates that the action continues up to that point.",
-    "formation": "動詞 + (ㄴ/는다) + 전에/전까지"
+    "title": "~기 전에 / ~기 전까지（〜する前に、〜する前までに、〜する時まで）",
+    "shortExplanation": "動詞語幹や名詞に付き、ある行動が起こる前であること（「〜する前に」）や、その時点まで継続すること（「〜する前までに」）を表します。",
+    "longExplanation": "「~기 전에」と「~기 전까지」は、時間の前後関係や期限を表す表現です。動詞の語幹に名詞化語尾「-기」が付いて「-기 전에（〜する前に）」、または期限・継続を表す助詞「까지」を伴って「-기 전까지（〜する前までに、〜する時まで）」の形で用いられます。「~기 전에」はある事態の前に別の動作を行う点を指し、「~기 전까지」はその時点に至るまで状態や動作が継続することを強調します。名詞の後には「名詞 + 전에 / 전까지」が直接付きます。",
+    "formation": "動詞語幹 + -기 전에 / -기 전까지 | 名詞 + 전에 / 전까지",
+    "examples": [
+      {
+        "translation": "私は学校へ行く前に朝食を食べます。"
+      },
+      {
+        "translation": "彼女は出勤する前までに連絡します。おそらく連絡が来るまで待っていてください。"
+      },
+      {
+        "translation": "列車が到着する前に荷物をまとめなければなりません。"
+      },
+      {
+        "translation": "私たちが家に帰ってくる時まで気をつけてください。"
+      }
+    ]
   },
   "ko_정도_110": {
-    "title": "~정도 [jeongdo] (About, Approximately)",
-    "shortExplanation": "〜を表すために使用されます an approximate quantity, degree, or extent; 'about', 'approximately'.",
-    "longExplanation": "'~정도 [jeongdo]' is a particle used in Korean to indicate an approximation of a quantity, amount, degree, or level. It conveys a sense of estimation similar to 'about' or 'approximately' in English, and it is commonly used when the exact figure is unknown or when giving a rough idea.",
-    "formation": "名詞 + (Approximate Quantity/Amount) + 정도"
+    "title": "~정도 / -(으)ㄹ 정도（〜くらい、〜程度、〜ほど）",
+    "shortExplanation": "数量や時間、動詞連体形に付き、おおよその数量（「〜くらい」「〜程度」）や達する度合い（「〜するほど」）を表します。",
+    "longExplanation": "「정도（程度）」は、数量詞や名詞の後に付いておおよその分量、時間、数量を見積もって表す表現で、日本語の「〜くらい」「〜ほど」「〜程度」に相当します。また動詞や形容詞の未来連体形と結びついて「-(으)ㄹ 정도(로)」の形をとると、ある状態や動作が到達した極限の度合いを表し、「〜するほど」「〜するくらい」という意味を表します。",
+    "formation": "数量詞・名詞 + 정도 | 動詞・形容詞語幹 + -(으)ㄹ 정도(로)",
+    "examples": [
+      {
+        "translation": "この問題を解決するには1時間くらいかかりそうです。"
+      },
+      {
+        "translation": "本当に映画を観たのなら、4時間程度かかったはずです。"
+      },
+      {
+        "translation": "この課題を完了するには1か月程度の時間が必要です。"
+      },
+      {
+        "translation": "彼の成果を評価するには最低10項目以上の要素を考慮しなければならず、これには約1時間ほどの時間が求められます。"
+      }
+    ]
   },
   "ko_제_111": {
-    "title": "~제 [je] (Although, even if)",
-    "shortExplanation": "〜を表すために使用されます 'although' or 'even if'. It signifies that despite the preceding condition, the outcome differs from what is expected.",
-    "longExplanation": "'~제 [je]' is a conjunction used in Korean to express contrasting or unexpected outcomes. It is similar in meaning to 'although,' 'even if,' or 'even though' in English and functions much like '-지만' but is used in more formal or polite contexts.",
-    "formation": "名詞/形容詞 + ~제"
+    "title": "~제（〜だけれども、〜だが、〜にもかかわらず）",
+    "shortExplanation": "用言の語幹に付き、前節の条件にもかかわらず後節で予期せぬ結果が生じることを表す接続語尾です（「〜だけれども」「〜だが」）。",
+    "longExplanation": "「~제」は動詞や形容詞の語幹に付く接続語尾で、前節の状況や事実にもかかわらず、後節でそれに相反する結果や予想とは異なる行動が生じることを表します。日本語の「〜だけれども」「〜だが」「〜にもかかわらず」に相当し、「-지만」や「-되」と類似した逆接・譲歩の機能を持ちます。文学的な表現や特定の語脈において独特の対比的なニュアンスを表す際に用いられます。",
+    "formation": "動詞・形容詞語幹 + 제",
+    "examples": [
+      {
+        "translation": "彼女は具合が悪かったですが、仕事を続けました。"
+      },
+      {
+        "translation": "弟は幼いですが、彼に任せられる仕事がたくさんあります。"
+      },
+      {
+        "translation": "雨が降っていましたが、私は外出しました。"
+      },
+      {
+        "translation": "試験問題は難しかったですが、大好きな科目だったので楽しく解くことができました。"
+      }
+    ]
   },
   "ko_조차_112": {
-    "title": "~조차 [jocha] (Even)",
-    "shortExplanation": "Expresses 'even' or 'to the extent that', reinforcing a strong emphasis or unexpected inclusion.",
-    "longExplanation": "'~조차 [jocha]' is used in Korean to stress that something is included to an extreme degree or under surprising circumstances. It often conveys a sense of unexpectedness or limits reached.",
-    "formation": "名詞 + 조차"
+    "title": "~조차（〜さえ、〜すら）",
+    "shortExplanation": "極端な例や最も基本的な事柄を取り上げて「〜さえ」「〜すら」と強調する助詞で、主に否定的な文脈で用いられます。",
+    "longExplanation": "「~조차」は名詞（または動詞の名詞形「~는 것」）の後に付く補助詞で、最も基本的であるべき事柄や極端な例を挙げて「〜さえ」「〜すら」と強調を表します。「~도」よりも強調の度合いが強く、話し手の失望や困難、予想外の極端な状況など、否定的な事態や困惑を表す文脈で多く用いられます。",
+    "formation": "名詞 + 조차",
+    "examples": [
+      {
+        "translation": "彼はお金があまりにも好きで、友達にさえお金を貸してくれません。"
+      },
+      {
+        "translation": "今週末は家から出ることさえ面倒くさいです。"
+      },
+      {
+        "translation": "今回の試験は難しすぎて、問題を読むことさえ難しかったです。"
+      },
+      {
+        "translation": "店に人が多すぎて、メニューを選ぶことさえ大変でした。"
+      }
+    ]
   },
   "ko_존재하다_113": {
-    "title": "~존재하다 [jonjaehada] (To exist)",
-    "shortExplanation": "'존재하다' is 〜を表すために使用されます the existence or presence of someone or something.",
-    "longExplanation": "'존재하다 [jonjaehada]' is a Korean verb that indicates that someone or something exists or is present. It can be used for concrete objects, people, or even abstract concepts like hope, ideas, or problems. In its present form, it becomes '존재해요.'",
-    "formation": "(名詞/主語) + 존재하다"
+    "title": "~존재하다（存在する）",
+    "shortExplanation": "人、事物、あるいは抽象的な概念が客観的に「存在する」ことを表す動詞です。",
+    "longExplanation": "「존재하다」（漢字：存在하다）は、人や具体的な物体だけでなく、希望や愛、概念、問題などの抽象的な事柄が客観的・事実として「存在する」ことを表す動詞です。日常的な「いる・ある（있다）」に比べて、文章語的で論理的・哲学的な響きを持ち、事物の有無そのものを本質的に言及する際に用いられます。",
+    "formation": "名詞（主語） + 이/가 + 존재하다",
+    "examples": [
+      {
+        "translation": "映画の中に存在するようなファンタジーの世界が、現実にも存在することを願っています。"
+      },
+      {
+        "translation": "愛が果たして永遠に存在するのかどうか分かりません。"
+      },
+      {
+        "translation": "この世に完璧な人間が存在するのか疑問です。"
+      },
+      {
+        "translation": "この部屋には私以外に他の人間は存在しません。"
+      }
+    ]
   },
   "ko_줄_114": {
-    "title": "~줄 알다 [jul alda] (Thought that)",
-    "shortExplanation": "'~줄 알다' is 〜を表すために使用されます an assumption or expectation that turns out to be incorrect.",
-    "longExplanation": "'~줄 알다' is a Korean grammar pattern used when the speaker assumed or expected something to be a certain way, only to find that the reality was different. It is often translated as 'I thought that...' and conveys a sense of surprise or disappointment when the expectation does not match the outcome.",
-    "formation": "動詞/形容詞 + 줄 알다"
+    "title": "~줄 알다（〜かと思った、〜と思った）",
+    "shortExplanation": "話し手の事前の推測や予想が実際とは異なっていたことを表します（「〜かと思った」「〜だと思っていた」）。",
+    "longExplanation": "「~줄 알다」は用言の連体形に接続し、主に過去形の「~줄 알았다」の形で用いられます。事前の予想や思い込みと実際の現実が食い違っていた際に、「〜だと思っていた」「〜かと思った（ら違った）」という意味を表します。期待外れの失望や意外な安堵、驚きといった感情が伴うことが多い表現です。逆に「〜とは思わなかった（予想外だった）」は「~줄 몰랐다」を用います。",
+    "formation": "動詞・形容詞連体形(-(으)ㄴ/는/(으)ㄹ) + 줄 알다 (알았다)",
+    "examples": [
+      {
+        "translation": "天気が良いかと思っていたのに、急に雨が降ってがっかりしました。"
+      },
+      {
+        "translation": "あの人が私のことを好きなのかと思っていましたが、そうではありませんでした。"
+      },
+      {
+        "translation": "試験問題が難しいかと思っていたのですが、思ったより易しかったです。"
+      },
+      {
+        "translation": "進行が遅れるかと思っていましたが、早く終わりました。"
+      }
+    ]
   },
   "ko_즉시_115": {
-    "title": "~즉시 [jeukshi] (Immediately, at once)",
-    "shortExplanation": "〜を示します that something happens immediately or without delay.",
-    "longExplanation": "'~즉시 [jeukshi]' is an adverb in Korean 〜を表すために使用されます that an action occurs immediately after a preceding event. It emphasizes the immediacy of the subsequent action, similar to 'as soon as' or 'the moment' in English.",
-    "formation": "動詞 + (으)ㄹ/ㄴ + 즉시"
+    "title": "~즉시（すぐに、直ちに、〜するや否や）",
+    "shortExplanation": "前項の動作やすぐ直後のタイミングで後項の動作が間髪を入れずに行われることを表します（「直ちに」「〜するとすぐに」）。",
+    "longExplanation": "「즉시」（漢字：即時）は副詞として「直ちに」「すぐに」という意味を表すほか、動詞の連体形に付いて「-(으)ㄴ/는 즉시」の形で「〜するやすぐに」「〜した直後に」という時間的前後関係を表します。前の出来事が終わると同時に、少しの遅れもなく次の行動へ移行することを強く強調する表現です。",
+    "formation": "動詞 + -(으)ㄴ/는 즉시 | 副詞：즉시",
+    "examples": [
+      {
+        "translation": "彼女が部屋に入ってくるや否や、私はプレゼントを渡そうとしました。"
+      },
+      {
+        "translation": "メッセージを受け取ったらすぐに返信しなければなりません、そうでないとその人を待たせることになります。"
+      },
+      {
+        "translation": "その日の夜、彼女が報告書を完了するとすぐに確認しました。"
+      },
+      {
+        "translation": "会議が終わって直ちに写真を撮りに行きました。"
+      }
+    ]
   },
   "ko_지_116": {
-    "title": "~지 않다 [ji anta] (Negative form)",
-    "shortExplanation": "Negates the action implied by the verb; equivalent to 'not' in English.",
-    "longExplanation": "The grammar point '~지 않다 [ji anta]' is the standard and polite way to convert a verb into its negative form in Korean. By attaching '지 않다' to the verb stem, it changes the meaning to indicate that the action is not performed. This form is commonly used in both formal and casual contexts.",
-    "formation": "動詞-stem + 지 않다"
+    "title": "~지 않다（〜ない、〜ません）",
+    "shortExplanation": "動詞や形容詞の語幹に付き、動作や状態を否定する標準的な長形否定表現です（「〜しない」「〜でない」）。",
+    "longExplanation": "「~지 않다」は動詞や形容詞の語幹に直接接続し、その動作を行わないことや状態がそうでないことを表す標準的な長形否定構文です。日本語の「〜ない」「〜ません」に相当します。短形否定の「안 + 用言」に比べて、より丁寧で客観的、フォーマルな響きを持ち、書き言葉や公の場での会話でも好んで用いられます。",
+    "formation": "動詞・形容詞語幹 + 지 않다",
+    "examples": [
+      {
+        "translation": "雨があまりにもひどく降って行くのが不可能だったため、私は今日学校に行きませんでした。"
+      },
+      {
+        "translation": "私は菜食主義者なので、普段は肉を食べません。"
+      },
+      {
+        "translation": "ミンジはその映画を見ませんでした、とても怖がっているからです。"
+      },
+      {
+        "translation": "彼らは忙しかったので、私の誕生日パーティーに来ませんでした。"
+      }
+    ]
   },
   "ko_지_117": {
-    "title": "~지 않아도 되다 [ji anado dweda] (Do not have to)",
-    "shortExplanation": "Indicates that something does not have to be done or is not necessary.",
-    "longExplanation": "'~지 않아도 되다 [ji anado dweda]' is used when you want to express that there is no obligation or necessity to do something. It emphasizes the optional nature of an action or state.",
-    "formation": "動詞 stem + 지 않아도 되다"
+    "title": "~지 않아도 되다（〜しなくてもいい、〜する必要はない）",
+    "shortExplanation": "ある行動をする義務や必要がないこと、またはしなくても問題ないことを表します（「〜しなくてもよい」「〜する必要はない」）。",
+    "longExplanation": "「~지 않아도 되다」は否定の「~지 않다」と許容を表す「-아/어도 되다」が合体した表現で、何かの動作や状態が義務付けられておらず、しなくても構わないという不必要性や許可を表します。日本語の「〜しなくてもいい」「〜する必要はない」に相当します。相手のプレッシャーを和らげたり、無理をしなくてよいと伝えたりする際に頻繁に使われます。",
+    "formation": "動詞・形容詞語幹 + 지 않아도 되다",
+    "examples": [
+      {
+        "translation": "そんなに心配しなくてもいいよ、すべてうまくいくから。"
+      },
+      {
+        "translation": "今すぐ食べなくてもいいよ、後で食べても大丈夫だから。"
+      },
+      {
+        "translation": "他の人たちがしていることを真似しなくてもいい、自分自身を信じて。"
+      },
+      {
+        "translation": "どこにも行かなくてもいいよ、家でゆっくり休んでね。"
+      }
+    ]
   },
   "ko_지만_119": {
-    "title": "~지만 [jimyeon] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "'~지만 [jimyeon]' is a conjunction used in Korean to connect two clauses where the second clause presents a contrast or unexpected result compared to the first. It is similar to 'but' or 'however' in English.",
-    "formation": "動詞 stem + 지만"
+    "title": "~지만（〜けれど、〜が、〜だが）",
+    "shortExplanation": "前項と後項の内容が対照的・逆接の関係にあることを表す接続語尾です（「〜けれど」「〜が」）。",
+    "longExplanation": "「~지만」は動詞や形容詞の語幹、または体言＋「이다/아니다」の語幹に直接付き、前項と後項の内容が対立したり逆の事実であることを表す代表的な逆接の接続語尾です。日本語の「〜けれど（も）」「〜が」「〜だが」に相当します。パッチムの有無に関係なくそのまま接続し、過去形（-았/었-）や推量形（-겠-）にも直接接続できます。",
+    "formation": "動詞・形容詞語幹 + 지만 | 名詞 + (이)지만",
+    "examples": [
+      {
+        "translation": "今日の天気は曇っていますが、気分はとても良いです。"
+      },
+      {
+        "translation": "その映画は面白くなかったけれど、その俳優の演技は素晴らしかったです。"
+      },
+      {
+        "translation": "肉が好きですが、時々ヴィーガン料理を食べます。"
+      },
+      {
+        "translation": "息子は優しいですが、時々臆病になります。"
+      }
+    ]
   },
   "ko_지요_120": {
-    "title": "~지요 [jiyo] (~right?, isn't it?)",
-    "shortExplanation": "Used to echo or affirm the argument; '~right?', 'isn't it?'.",
-    "longExplanation": "The ending '~지요 [jiyo]' is used in Korean to echo or affirm the statement preceding it. This is similar to English phrases like 'right?' or 'isn't it?'. The speaker uses this ending to seek agreement or affirmation from the listener. It is usually used in declarative or interrogative sentences and can be used in both formal and informal contexts.",
-    "formation": "Stem verb/adjective + 지요"
+    "title": "~지요 / ~죠（〜ですよね、〜でしょ）",
+    "shortExplanation": "聞き手も知っていると想定される事実を確認したり、相手の同意や共感を求めたりする終結語尾です（「〜ですよね」「〜でしょ」）。",
+    "longExplanation": "「~지요」（会話では縮約形の「~죠」が頻用されます）は用言の語幹や体言＋「이다/아니다」に付く終結語尾です。話し手がすでに知っている、あるいは聞き手も知っているだろうと前提している事実について、相手に同意を求めたり念を押して確認したりする際に用いられます。日本語の「〜ですよね」「〜でしょう」に相当します。柔らかく親しみやすいニュアンスを含みます。",
+    "formation": "動詞・形容詞語幹 + 지요 (죠) | 名詞 + (이)지요 (죠)",
+    "examples": [
+      {
+        "translation": "今日の天気は本当に良いですよね、太陽が明るく輝いて風も涼しいですから。"
+      },
+      {
+        "translation": "新しくオープンしたあのカフェのコーヒーは美味しいですよね、一度行ってみる価値があると思います。"
+      },
+      {
+        "translation": "子犬が本当に可愛いですよね、毎日会いたくなります。"
+      },
+      {
+        "translation": "うちの子は背が高いですよね、父親に似てそうなったみたいです。"
+      }
+    ]
   },
   "ko_진_121": {
-    "title": "~진 않다 [jin anta] (Not really)",
-    "shortExplanation": "This pattern is used when something is not exactly or not demonstrably true.",
-    "longExplanation": "The ~진 않다 [jin anta] form is used when describing a condition or situation that is not fully or exactly as described by the preceding adjective or verb. It is equivalent to the English expressions 'not really', 'not quite', 'not necessarily', or 'not exactly'. The level of negation is softer than the standard negative form and is often used when the speaker does not want to fully agree or disagree.",
-    "formation": "形容詞/動詞 stem + 진 않다"
+    "title": "~진 않다（〜くはない、〜しはしない）",
+    "shortExplanation": "「~지는 않다」の縮約形で、部分否定や控えめな否定を表します（「〜（し）はしない」「それほど〜ではない」）。",
+    "longExplanation": "「~진 않다」は否定構文「~지 않다」に対照・強調の補助詞「는」が挟まれた「~지는 않다」の縮約形です。完全な否定を避け、「〜（し）はしない」「別に〜というわけではない」といった部分否定や控えめなニュアンスを表します。前項の性質をある程度限定しつつ、「ただし〜である」と後項で別の事実を対照的に述べる文脈でよく用いられます。",
+    "formation": "動詞・形容詞語幹 + 진 않다 (지는 않다)",
+    "examples": [
+      {
+        "translation": "そこはすごく暑くなりはしないものの、夏はいつも湿気があります。"
+      },
+      {
+        "translation": "私は彼女のことが好きというわけではありませんが、彼女の考え方は尊敬しています。"
+      },
+      {
+        "translation": "最近忙しすぎてジムに頻繁に通いはしませんが、家で運動はしています。"
+      },
+      {
+        "translation": "この食堂は必ずしも記憶に残るほどではないものの、料理は美味しいです。"
+      }
+    ]
   },
   "ko_처럼_122": {
-    "title": "~처럼 [cheoreom] (Like, as if)",
-    "shortExplanation": "〜を表すために使用されます similarities or comparisons; 'like', 'as if'.",
-    "longExplanation": "'~처럼 [cheoreom]' is a postposition 〜を示します that something is similar to or behaves in the same manner as the mentioned subject or object. It conveys a sense of comparison or simile, similar to 'like' or 'as if' in English.",
-    "formation": "名詞/動詞 + 처럼"
+    "title": "~처럼（〜のように、〜のような）",
+    "shortExplanation": "名詞の後に付き、ある事物と形状や様子、動作が似ていることを表す比況の助詞です（「〜のように」「〜のようだ」）。",
+    "longExplanation": "「~처럼」は名詞の直後に付く比況の助詞で、前の名詞と形や様子、性質、動作の仕方が似通っていることを表します。日本語の「〜のように」「〜のようだ」に相当します。比喩や例え話で頻繁に用いられ、副詞「마치（まるで）」と呼応して「마치 …처럼（まるで〜のように）」という形で使われることも多いです。",
+    "formation": "名詞 + 처럼 | (마치) + 名詞 + 처럼",
+    "examples": [
+      {
+        "translation": "彼女は蝶のように踊ります、彼女のリズム感と身のこなしは本当に美しいです。"
+      },
+      {
+        "translation": "父はいつも頼もしい木のように家族を守ってくれます。"
+      },
+      {
+        "translation": "彼はお腹が空いていて、ライオンのように肉を食べました。"
+      },
+      {
+        "translation": "真実がばれると、彼はまるでネズミを捕まえた猫のように笑みを浮かべました。"
+      }
+    ]
   },
   "ko_아서어서_123": {
-    "title": "~아서/어서 [aseo/eoseo] (So, therefore)",
-    "shortExplanation": "Used to connect two clauses and show that the second clause is the result of the first; 'so', 'therefore'.",
-    "longExplanation": "The ending '-아서/어서' is used in Korean to express cause and effect. It connects two clauses in a sentence where the second clause is the result or effect of what is described in the first clause. It is often translated as 'so' or 'therefore' in English, conveying a sense of consequence or reason.",
-    "formation": "動詞 stem + 아/어서"
+    "title": "~아서/어서（〜ので、〜て/くて、〜だから）",
+    "shortExplanation": "前項が後項の直接的な原因や理由であることを表す接続語尾です（「〜ので」「〜て」「〜から」）。",
+    "longExplanation": "「~아서/어서」は動詞や形容詞の語幹に付き、前項が後項の事態を引き起こした直接的な原因や理由であることを表す代表的な接続語尾です。日本語の「〜ので」「〜て/くて」「〜だから」に相当します。語幹末尾の母音によって、陽母音（ㅏ, ㅗ）には「-아서」、陰母音には「-어서」、「하다」は「해서」となります。注意点として、前項に過去形（-았/었-）や推量形（-겠-）を用いることはできず、後項に命令形や勧誘形を取ることもできません。",
+    "formation": "動詞・形容詞語幹 + -아/어서",
+    "examples": [
+      {
+        "translation": "私はお腹があまりにも空いていたので、ご飯を2杯も食べました。"
+      },
+      {
+        "translation": "友達が遅く来すぎたので、映画が既に始まってしまいました。"
+      },
+      {
+        "translation": "授業が難しすぎたので、たくさん勉強しました。"
+      },
+      {
+        "translation": "天気が寒すぎたので、家にばかりいました。"
+      }
+    ]
   },
   "ko_것_124": {
-    "title": "~것 같다 [geot gatda] (Seems like)",
-    "shortExplanation": "Expresses the speaker's guess or inference about a situation based on some evidence.",
-    "longExplanation": "The construction '~것 같다' is used in Korean to express a guess or inference about a situation. The speaker uses it when they have some evidence or basis for their inference, even if the situation is not directly observable. It is equivalent to saying 'seems like' or 'appears to be' in English.",
-    "formation": "動詞/形容詞 stem + (으)ㄴ/는 + 것 같(아요)"
+    "title": "~(으)ㄴ/는/ㄹ 것 같다（〜ようだ、〜みたいだ、〜気がする）",
+    "shortExplanation": "根拠や直感に基づく推測を表したり、断定を避けて柔らかく意見を述べたりする表現です（「〜のようだ」「〜みたいだ」）。",
+    "longExplanation": "「~(으)ㄴ/는/ㄹ 것 같다」は動詞や形容詞の連体形に依存名詞「것（こと・もの）」と形容詞「같다（同じだ・似ている）」が合体した構文です。客観的な状況や直感に基づいて「〜のようだ」「〜みたいだ」「〜気がする」と推測する際に用います。また、断定的な表現を避けて自分の考えや感覚を柔らかく控えめに伝えるためのクッション言葉としても日常会話で極めて高い頻度で使われます。",
+    "formation": "動詞・形容詞 + -(으)ㄴ/는/(으)ㄹ 것 같다",
+    "examples": [
+      {
+        "translation": "私は今朝からお腹が痛いです。たぶん辛いものを食べたから痛いのだと思います。"
+      },
+      {
+        "translation": "彼女の雰囲気が急に変わったような気がします。何があったのか知っている人はいません。"
+      },
+      {
+        "translation": "昨日は雨が降りましたが、今日はキラキラと晴れているようです。"
+      },
+      {
+        "translation": "外には人がいないみたいです。みんな一体どこへ行ったのか分かりません。"
+      }
+    ]
   },
   "ko_커녕_125": {
-    "title": "~커녕 [keonyeong] (Let alone, far from)",
-    "shortExplanation": "〜を表すために使用されます an idea contrary to expectation; 'let alone', 'far from'.",
-    "longExplanation": "'~커녕 [keonyeong]' is a connector used in Korean to indicate that a certain expectation is not met—in fact, the reality is far from that expectation. It is often translated as 'let alone' or 'far from' in English and is used when one thing is not done, let alone something even more unlikely or difficult.",
-    "formation": "名詞 or clause + 커녕"
+    "title": "~커녕 / ~는커녕（〜どころか、〜はおろか）",
+    "shortExplanation": "期待や予想とは程遠く、より基本的なことさえできていないことを表します（「〜どころか」「〜はおろか」）。",
+    "longExplanation": "「~커녕」（母音終わりには「-는커녕」、子音終わりには「-은커녕」、動詞には「-기는커녕」など）は、現実は期待された状況とはかけ離れており、それ以前により簡単で基本的な事柄すら満足に満たされていないことを強調する助詞です。日本語の「〜どころか」「〜はおろか」に相当します。後ろには「〜조차（〜さえ）」「〜도（〜も）」などを伴う否定的な内容が続くことが一般的です。",
+    "formation": "名詞 + -(은/는)커녕 | 動詞語幹 + -기는커녕 (는 것 커녕)",
+    "examples": [
+      {
+        "translation": "ジヨンは韓国語で簡単な会話を交わすどころか、「アンニョンハセヨ」程度しか話せません。"
+      },
+      {
+        "translation": "私は週末に本を読む時間があるどころか、家事に追われて手一杯です。"
+      },
+      {
+        "translation": "ソンジンは試験勉強を終えて寝るどころか、ゲームをして夜更かしすることさえあります。"
+      },
+      {
+        "translation": "彼女は痩せようとするどころか、毎晩おやつを食べています。"
+      }
+    ]
   },
   "ko_게_126": {
-    "title": "~게 되다 [ge gatda] (Become, end up)",
-    "shortExplanation": "Means 'to become' or 'to end up' and is 〜を表すために使用されます the result of a change or transformation.",
-    "longExplanation": "The construction '~게 되다' is used in Korean to indicate the end result of a change or transformation, often due to certain circumstances beyond the speaker's control. It is comparable to saying 'to become', 'to get', or 'to end up' in English.",
-    "formation": "動詞 or adjective stem + 게 되다"
+    "title": "~게 되다（〜ようになる、〜ことになる）",
+    "shortExplanation": "自分の意志だけでなく、周囲の状況や客観的な経緯によってある状態や結果に変化することを表します（「〜ようになる」「〜ことになる」）。",
+    "longExplanation": "「~게 되다」は動詞や形容詞の語幹に付き、話者自身の直接的な意志とは別に、状況の流れや客観的な外部環境、時間の経過によってある状態や結果へと変化したことを表します。日本語の「〜ようになる」「〜ことになる」「〜してしまう」に相当します。事態の推移や不可避な結果、受動的な変化を客観的に表現する際に多用されます。",
+    "formation": "動詞・形容詞語幹 + 게 되다",
+    "examples": [
+      {
+        "translation": "昨日友達と遠くでサッカーをしたのですが、疲れ果てて今は寝る以外に何もできそうにありません。"
+      },
+      {
+        "translation": "彼は一生懸命勉強して、立派なビジネスマンになりました。"
+      },
+      {
+        "translation": "その本を読んだ後、深い苦悩に陥ってしまいました。"
+      },
+      {
+        "translation": "長い時間寒さにさらされたため、私たちの健康が悪化してしまいました。"
+      }
+    ]
   },
   "ko_게_127": {
-    "title": "~게 하다 [ge hada] (Make)",
-    "shortExplanation": "〜を表すために使用されます causing someone or something to be in a certain state.",
-    "longExplanation": "'~게 하다' is a grammatical construction in Korean that means to make or cause someone or something to be in a particular state. It is used with descriptive verbs (or adjectives) to indicate a change in state. This is similar to the English verb 'make' or the phrase 'cause to be.'",
-    "formation": "Descriptive verb (or adjective) stem + 하게 하다"
+    "title": "~게 하다（〜くする、〜にする[状態の変化]）",
+    "shortExplanation": "形容詞の語幹に付き、人や物をある状態にさせる・変化させることを表します（「〜くする」「〜にする」）。",
+    "longExplanation": "「~게 하다」は形容詞の語幹に接続して使役の意味を表し、人や事物を特定の状態や心情にする、あるいは変化させることを示します。日本語の「〜くする」「〜にする」「〜な状態にさせる」に相当します。",
+    "formation": "形容詞語幹 + 게 하다",
+    "examples": [
+      {
+        "translation": "彼女は私を幸せにしてくれます。"
+      },
+      {
+        "translation": "シェフがこのジャガイモスープを美味しく作ってくれます。"
+      },
+      {
+        "translation": "母が私に準備をさせてくれたおかげで、試験に合格することができました。"
+      },
+      {
+        "translation": "教授が私を集中させてくださったおかげで、すべての情報を覚えることができました。"
+      }
+    ]
   },
   "ko_게_128": {
-    "title": "~게 하다 [ge hada] (To make someone do something)",
-    "shortExplanation": "〜を示します causing someone or something to perform an action.",
-    "longExplanation": "'~게 하다' is 〜を表すために使用されます the act of making or causing someone to do something. It is typically used with nouns or action verb stems to show that one party induces or forces another to take an action. This is similar to saying 'make (someone) do' in English.",
-    "formation": "名詞/Action 動詞 stem + (으)게 하다"
+    "title": "~게 하다（〜させる、〜するようにする[動作の使役]）",
+    "shortExplanation": "動詞の語幹に付き、他の人にその動作をさせる・仕向けることを表す使役表現です（「〜させる」「〜するようにする」）。",
+    "longExplanation": "「~게 하다」は動詞の語幹に接続して、主語が他者に指示、強制、あるいは許可を与えて特定の動作を行わせる使役構文を作ります。日本語の「〜させる」「〜するように仕向ける」に相当し、日常会話から公の表現まで広く使われます。",
+    "formation": "動詞語幹 + 게 하다",
+    "examples": [
+      {
+        "translation": "彼女がコーヒーが好きなので、毎朝コーヒーを飲ませました。"
+      },
+      {
+        "translation": "両親は学歴が重要だと考えて、子供たちに一人で勉強させました。"
+      },
+      {
+        "translation": "友達が海外旅行に行きたがっていたので、私は手伝って航空券を予約させました。"
+      },
+      {
+        "translation": "先生は生徒たちを早く起きさせました。"
+      }
+    ]
   },
   "ko_키가_129": {
-    "title": "~키가 크다/작다 [kiga keuda/jakda] (To be tall/short)",
-    "shortExplanation": "Expressions used to describe a person’s height, literally meaning 'big in size' (tall) and 'small in size' (short).",
-    "longExplanation": "'키가 크다 [kiga keuda]' and '키가 작다 [kiga jakda]' are simple expressions in Korean 〜を示します the height of a person. '키가 크다' describes someone as tall, while '키가 작다' indicates someone is short. These expressions directly refer to physical characteristics, specifically height.",
-    "formation": "名詞 + 키가 크다 / 키가 작다"
+    "title": "~키가 크다/작다（背が高い／低い）",
+    "shortExplanation": "人の身長を描写する表現で、「키가 크다」は背が高い、「키가 작다」は背が低いことを表します。",
+    "longExplanation": "「키가 크다」と「키가 작다」は、人の身長（背丈）を表す韓国語の代表的な慣用表現です。「키（身長・背）」に助詞「가」が付き、形容詞「크다（大きい）」で「背が高い」、「작다（小さい）」で「背が低い」という意味になります。",
+    "formation": "名詞（人物） + 은/는/이/가 + 키가 크다 / 작다",
+    "examples": [
+      {
+        "translation": "うちの学校で一番背が高い人は、私たちのクラスのチョルスだよ。"
+      },
+      {
+        "translation": "彼女は背が高くてモデルのように見えます。"
+      },
+      {
+        "translation": "私は背が低いので、今でも子供用の座席を利用できます。"
+      },
+      {
+        "translation": "彼は背が低くても、人間性はとても大きいように思えます。"
+      }
+    ]
   },
   "ko_키로_130": {
-    "title": "~키로 [kiro] (By means of, with)",
-    "shortExplanation": "〜を表すために使用されます the method, means, or instrument by which an action is performed.",
-    "longExplanation": "'~키로' is a grammatical marker in Korean that indicates the tool, means, or method by which an action is carried out. It is similar to the English phrases 'by means of' or 'with' and provides additional information about how something is done.",
-    "formation": "動詞 stem (without ‘다’) + 키로"
+    "title": "~기로（〜することに[決定・手段]）",
+    "shortExplanation": "名詞化語尾「-기」に助詞「-(으)로」が付いた形で、何かを行う方針や決定、手段を表します（「〜することに[する/決める]」）。",
+    "longExplanation": "「~기로」は動詞の語幹に名詞化語尾「-기」と方向・手段を表す格助詞「-(으)로」が結合した表現です。主に「하다（する）」「결정하다（決定する）」「약속하다（約束する）」などの動詞と呼応して、「〜することにする」「〜することに決める」という決心や方針の決定を表します。",
+    "formation": "動詞語幹 + 기로 (하다/결정하다)",
+    "examples": [
+      {
+        "translation": "私は毎朝一回ピアノを弾くことにして、音楽の腕を上達させました。"
+      },
+      {
+        "translation": "私たちはこの事件を解決するために対話することに決定しました。"
+      },
+      {
+        "translation": "彼女は毎週月曜日に文章を書くことにして、文章力を伸ばしました。"
+      },
+      {
+        "translation": "私は去年から毎日運動することにし、健康が大きく改善しました。"
+      }
+    ]
   },
   "ko_타다_131": {
-    "title": "~타다 [tada] (To take, ride)",
-    "shortExplanation": "〜を表すために使用されます the action of taking or riding a mode of transportation.",
-    "longExplanation": "'~타다' is a verb used in Korean to indicate the action of taking or riding transportation (such as a bus, train, taxi, or bicycle) or using mechanical/electronic devices. It is typically attached to a noun that indicates the type of transport or device.",
-    "formation": "名詞 indicating transport or mechanical device + ~타다"
+    "title": "~타다（乗る[交通機関]）",
+    "shortExplanation": "バス、地下鉄、タクシー、飛行機、自転車などの交通手段に乗ることを表す動詞です（「乗る」）。",
+    "longExplanation": "「타다」はバス、タクシー、地下鉄、飛行機、自転車などの交通機関や乗り物に乗ることを表す他動詞です。通常、乗り物を表す名詞に目的格助詞「을/를」を伴って用いられます。例文では「~타다 보면（乗っていると、乗り続けていると）」のような反復・習慣の接続語尾と組み合わされることも多いです。",
+    "formation": "名詞（乗り物） + 을/를 + 타다",
+    "examples": [
+      {
+        "translation": "私は一週間に二回飛行機に乗っているうちに、飛行機に慣れてきたようです。どうしても職場が遠いので、飛行機に度々乗らなければなりません。"
+      },
+      {
+        "translation": "どうしても自転車に乗っていると体力もつくし、健康にも良いので、頻繁に自転車に乗ってみてください。それに自転車に乗ることは運動としても良いです。"
+      },
+      {
+        "translation": "こんなに頻繁にタクシーに乗っていると、お金がたくさんかかる気がします。ですから可能であれば地下鉄に乗るか、徒歩で行かれるのが良いかと思います。"
+      },
+      {
+        "translation": "こんなに夜遅くにバスに一人で乗っていると、どうしても少し不安になりますよね？ですからこんな遅い時間には、できればタクシーに乗る方が良いです。"
+      }
+    ]
   },
   "ko_테니까_132": {
-    "title": "~테니까 [tenikka] (Because)",
-    "shortExplanation": "Used to explain the reason or cause of an action or state.",
-    "longExplanation": "The form '~테니까' is used in Korean to express 'because.' It clarifies the reason for a situation, behavior, or outcome. The clause before '~테니까' usually contains known or unimportant information, while the important or new information follows. This pattern emphasizes a strong cause–effect relationship compared to the simpler '~서' pattern.",
-    "formation": "動詞 Stem + 테니까"
+    "title": "~테니까（〜するから、〜だろうから[意図・推量による理由]）",
+    "shortExplanation": "話し手の意図や強い推測を理由・前提として後項の提案や指示につなげる接続語尾です（「〜するから」「〜だろうから」）。",
+    "longExplanation": "「~테니까」は「-(으)ㄹ 터이니까」の縮約形で、話し手の意志・予定、あるいは強い推量を根拠・前提として後続文につなげる接続語尾です。後項には勧誘文や命令文、提案が続くことが多く、「私が〜するから、あなたは〜して」「〜だろうから、〜しなさい」というニュアンスを表します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 테니까",
+    "examples": [
+      {
+        "translation": "外が寒いので、服をもっと着て出かけてください。"
+      },
+      {
+        "translation": "あまりにも遅く寝たので、朝起きるのが大変でした。"
+      },
+      {
+        "translation": "ソウルに住んでいるので、時々漢江へ散歩に行きます。"
+      },
+      {
+        "translation": "韓国語の勉強が楽しいので、毎日一生懸命勉強しています。"
+      }
+    ]
   },
   "ko_토록_133": {
-    "title": "~토록 [torok] (So that, to the extent that)",
-    "shortExplanation": "〜を表すために使用されます 'so that' or 'to the extent that'.",
-    "longExplanation": "'~토록' is a postposition 〜を示します a degree or condition that compels a certain result or action. It is synonymous with 'so that' or 'to the extent that' in English and is often used to emphasize a high degree or strong cause–effect relationship.",
-    "formation": "動詞/形容詞 + 토록 (inserted within the sentence)"
+    "title": "~도록 / ~토록（〜するほど、〜するまでに、〜するように）",
+    "shortExplanation": "動作や状態の極限の度合いや時間的限界、あるいは目的を表す副詞的接続語尾です（「〜するほど」「〜するように」）。",
+    "longExplanation": "「~토록」（「-도록」の強調・変異的表現）は用言の語幹に接続し、ある行動や状態が極限の程度に達していること（「〜するほどに」）、時間の限界（「〜に至るまで」）、または目的（「〜するように」）を表します。感情の深さや状況の過酷さを強調する文脈でしばしば用いられます。",
+    "formation": "動詞・形容詞語幹 + 도록 / 토록",
+    "examples": [
+      {
+        "translation": "彼はプロジェクトを成功させたくて、自分の健康まで犠牲にするほど努力しました。"
+      },
+      {
+        "translation": "彼女は会社に遅刻しないように、早く起きることに決めました。"
+      },
+      {
+        "translation": "人口が著しく増加し、ここで暮らす場所が減ってしまうほどになりました。"
+      },
+      {
+        "translation": "貧しさが深刻になり、ご飯一杯を食べるのも難しいほど過酷でした。"
+      }
+    ]
   },
   "ko_하게_134": {
-    "title": "~하게 되다 [hage dweda] (End up doing)",
-    "shortExplanation": "〜を表すために使用されます that something happens as a result of circumstances, often beyond one’s control.",
-    "longExplanation": "'~하게 되다' is a verb ending in Korean that indicates an action or state that comes about unexpectedly or unintentionally as a result of circumstances. It often implies that the result was not planned and may evoke a sense of surprise or resignation.",
-    "formation": "動詞-아/어/해 + 하게 되다"
+    "title": "~게 되다（〜することになる、〜するようになる[状況による結果]）",
+    "shortExplanation": "動詞の語幹に付き、本人の意志とは無関係に状況や外部の要因によってある事態に至ったことを表します（「〜することになる」）。",
+    "longExplanation": "「~게 되다」は動詞の語幹に接続し、本人の意図的な計画ではなく、周囲の状況や外部環境の変化、客観的な成り行きによって結果的にその動作を行うようになったことを表します。日本語の「〜することになる」「〜するようになる」に相当し、予期せぬ展開や成り行きを客観的に述べる表現です。",
+    "formation": "動詞語幹 + 게 되다",
+    "examples": [
+      {
+        "translation": "宿題があまりにもたくさん溜まって、結局週末中ずっと宿題をすることになりました。"
+      },
+      {
+        "translation": "普段なら言わないでしょうが、昨日は状況がそうだったので、あなたに全てを話すことになってしまいました。"
+      },
+      {
+        "translation": "最初は運動するのが嫌でしたが、友達がしきりに勧めるので、ジムの会員になることになりました。"
+      },
+      {
+        "translation": "試験勉強をしようと思っていたのに、面白いドラマを見ることになってしまいました。"
+      }
+    ]
   },
   "ko_하고_135": {
-    "title": "~하고 있다 [hago itda] (Is doing)",
-    "shortExplanation": "Used to describe a continuous or ongoing action.",
-    "longExplanation": "'~하고 있다' is a grammar pattern used in Korean to express an ongoing action or a state that continues to exist. It is equivalent to the English 'is doing' or 'am/are doing'. This form focuses on the progression of the action, not on its result or completion.",
-    "formation": "動詞 stem + ~하고 있다"
+    "title": "~고 있다 / ~하고 있다（〜している[動作の進行]）",
+    "shortExplanation": "動詞の語幹に付き、動作が現在進行中であることや継続していることを表します（「〜している」）。",
+    "longExplanation": "「~고 있다」（「하다」動詞の場合は「~하고 있다」）は動詞の語幹に接続して、動作の現在進行や継続を表す代表的な進行形表現です。発話の時点でまさにその動作を行っている最中であることや、最近一定期間継続して行っている習慣などを表し、日本語の「〜している」に相当します。",
+    "formation": "動詞語幹 + 고 있다",
+    "examples": [
+      {
+        "translation": "最近韓国語を学んでいます、だからまだ完璧には話せません。"
+      },
+      {
+        "translation": "今昼ご飯を食べています、忙しい一日の中で少し休む時間です。"
+      },
+      {
+        "translation": "母は夕食の料理を準備しています、美味しい料理を楽しみにしています。"
+      },
+      {
+        "translation": "うちの子犬は外で散歩しています、こうして運動を通じて健康を維持しています。"
+      }
+    ]
   },
   "ko_하고_136": {
-    "title": "~하고 나서 [hago naseo] (After doing)",
-    "shortExplanation": "〜を表すために使用されます sequence of actions; 'after doing'.",
-    "longExplanation": "'~하고 나서 [hago naseo]' is a sentence pattern in Korean that means 'after doing something'. It is 〜を示します that one action is completed before the next action takes place. The sequence is crucial, as the latter action happens only after the first is finished.",
-    "formation": "動詞 stem + 하고 나서 + (subsequent clause)"
+    "title": "~고 나서 / ~하고 나서（〜してから、〜し終わってから）",
+    "shortExplanation": "動詞の語幹に付き、前項の動作が完全に完了した後に後項の動作を行うことを強調します（「〜してから」「〜し終わってから」）。",
+    "longExplanation": "「~고 나서」は動詞の語幹に接続し、前の動作が完全に終わったことを確認した上で次の行動へ移るという厳密な時間的順序関係を表します。「-고」単独よりも「前項の終了」が強く強調され、日本語の「〜してから」「〜し終えた後に」に相当します。",
+    "formation": "動詞語幹 + 고 나서",
+    "examples": [
+      {
+        "translation": "勉強してから遊びに行くつもりです、だから時間をうまく管理しなければなりません。"
+      },
+      {
+        "translation": "朝食をとってから運動をします、そうすれば一日を元気に始めることができます。"
+      },
+      {
+        "translation": "宿題を全部終わらせてから友達と映画を見ました、とても楽しい時間を過ごしました。"
+      },
+      {
+        "translation": "会議を終えてから昼ご飯を食べました、お腹が空きすぎて大変でした。"
+      }
+    ]
   },
   "ko_하고_137": {
-    "title": "~하고 싶다 [hago sipda] (Want to do)",
-    "shortExplanation": "Expresses a desire to perform a certain action.",
-    "longExplanation": "'~하고 싶다 [hago sipda]' is a verb ending in Korean that indicates the speaker's desire or wish to perform a certain action. It is equivalent to 'want to do something' in English and is commonly 〜を表すために使用されます personal wishes or plans.",
-    "formation": "動詞 stem + 하고 싶다"
+    "title": "~고 싶다 / ~하고 싶다（〜したい[願望・希望]）",
+    "shortExplanation": "動詞の語幹に付き、話し手の希望や願望を表す代表的な表現です（「〜したい」）。",
+    "longExplanation": "「~고 싶다」（「하다」動詞の場合は「~하고 싶다」）は動詞の語幹に接続して、話し手自身の「〜したい」という願望や意向を表します（疑問文では聞き手の希望を尋ねることもできます）。三人称の願望を表す場合は「~고 싶어하다」の形を用いるという制約があります。日本語の「〜したい」に直接相当します。",
+    "formation": "動詞語幹 + 고 싶다",
+    "examples": [
+      {
+        "translation": "私は韓国語を流暢に話したいです、だから毎日一生懸命勉強しています。"
+      },
+      {
+        "translation": "私が一番好きな歌手のコンサートに行きたいのですが、チケットを手に入れるのが難しいです。"
+      },
+      {
+        "translation": "私はたくさん運動したいのですが、忙しすぎて時間がありません。"
+      },
+      {
+        "translation": "料理を習いたいです、それで料理教室の受講登録を考えています。"
+      }
+    ]
   },
   "ko_하기로_138": {
-    "title": "~하기로 하다 [hakiro hada] (Decide to do)",
-    "shortExplanation": "〜を示します that a decision about doing something has been made.",
-    "longExplanation": "'하기로 하다' is used when you want to express that a decision to do something has been made. It can be a personal decision or a mutual decision made by a group. It translates to 'decide to do' in English, with the action indicated by the attached verb.",
-    "formation": "動詞 (stem) + 기로 하다"
+    "title": "~기로 하다 / ~하기로 하다（〜することにする、〜することに決める）",
+    "shortExplanation": "動詞の語幹に付き、個人または複数人で特定の行動をすることに決心・決定したことを表します（「〜することにする」）。",
+    "longExplanation": "「~기로 하다」は動詞の語幹に名詞化語尾「-기」、助詞「-로」、動詞「하다」が結合した表現です。主に過去形の「~기로 했다」の形で用いられ、個人の決意や関係者同士の話し合いを経て、今後の行動方針を「〜することにした」「〜することに決めた」と述べる際に広く使われます。",
+    "formation": "動詞語幹 + 기로 하다",
+    "examples": [
+      {
+        "translation": "私たちは休暇に行くことに決めました。週末に休養をとりに海辺へ行くことにしました。"
+      },
+      {
+        "translation": "私は映画を見ることに決めたよ。今夜は家でアメリカのドラマを見ることにしたんだ。"
+      },
+      {
+        "translation": "彼女は韓国語を学ぶことに決めました。彼女は今年、韓国語の授業を受けることにしました。"
+      },
+      {
+        "translation": "会社は社員たちにボーナスを支給することに決定した。雇用主たちは来年、社員たちの年俸を引き上げることに決定した。"
+      }
+    ]
   },
   "ko_하기는_139": {
-    "title": "~하기는 하다 [hakineun hada] (Do to some extent)",
-    "shortExplanation": "Used to admit that something is done to some degree, but not fully or enthusiastically.",
-    "longExplanation": "~하기는 하다 is a Korean grammar point used when someone does do something, but not completely, regularly, or with enthusiasm. It shows that an action occurs but implies some limit or deficiency in how ideally it is done.",
-    "formation": "動詞-기 + 는 + 하다"
+    "title": "~기는 하다 / ~하기는 하다（〜することはするが、〜くはあるが）",
+    "shortExplanation": "用言の語幹に付き、前項の事実をひとまず肯定・承認しつつも、後項で不十分な点や限定を述べる表現です（「〜することはするが」）。",
+    "longExplanation": "「~기는 하다」は用言の語幹に名詞化語尾「-기」、対照の助詞「-는」、用言「하다」が結合した構文です。その動作を行っていることや状態が存在すること自体は認めつつも、後ろに「-지만」「-는데」を伴って、「理想的ではない」「完全ではない」「十分ではない」といった留保や不備を付け加えます。日本語の「〜することはするが（〜ではない）」に相当します。",
+    "formation": "動詞・形容詞語幹 + 기는 하다",
+    "examples": [
+      {
+        "translation": "私は料理をすることはするのですが、美味しく作れるわけではありません。"
+      },
+      {
+        "translation": "彼は運転をすることはするのですが、安全運転ではありません。"
+      },
+      {
+        "translation": "母は英語を理解することはしますが、話すのは少し大変そうです。"
+      },
+      {
+        "translation": "私は運動をすることはしますが、定期的にしているわけではありません。"
+      }
+    ]
   },
   "ko_하기보다_140": {
-    "title": "~하기보다 [hakiboda] (Rather than doing)",
-    "shortExplanation": "〜を表すために使用されます preference or a better option; 'rather than'.",
-    "longExplanation": "'~하기보다' is a grammar point 〜を示します that one option is preferred over another. It is equivalent to 'rather than' in English and compares two alternatives to express the speaker's preference.",
-    "formation": "動詞 + 기보다 + (alternative action)"
+    "title": "~기보다 / ~하기보다（〜するよりは、〜する代わりに）",
+    "shortExplanation": "動詞の語幹に付き、二つの選択肢を比較して、前項を行うより後項の選択肢の方が望ましいことを表します（「〜するよりは」）。",
+    "longExplanation": "「~기보다」（強調の助詞を伴って「~기보다는」とも言います）は動詞の語幹に名詞化語尾「-기」と比況の助詞「-보다」が結合した表現です。二つの行為を天秤にかけ、前項の動作を行うよりも後項の動作を行う方が好ましい、有益である、あるいは賢明であるという話し手の価値判断を表します。日本語の「〜するよりは」「〜するよりむしろ」に相当します。",
+    "formation": "動詞語幹 + 기보다 (기보다는)",
+    "examples": [
+      {
+        "translation": "子犬を買い与えるよりは、里親として引き取ることをお勧めします。"
+      },
+      {
+        "translation": "タクシーに乗るよりは、バスに乗る方が安いです。"
+      },
+      {
+        "translation": "たくさん食べるよりは、質の良い食べ物を食べることの方が大切です。"
+      },
+      {
+        "translation": "友達に嘘をつくよりは、真実を話す方が良いと思います。"
+      }
+    ]
   },
   "ko_하나_141": {
-    "title": "~하나 [hana] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction, similar to 'but' or 'however' in English.",
-    "longExplanation": "'~하나' is a conjunction often used in Korean to indicate a contrast or contradiction between two ideas or situations. It introduces a contrary point of view or an exception to a previous statement, much like 'but' or 'however' in English.",
-    "formation": "節 + 하나 + Contrasting clause"
+    "title": "하나 / ~하나（しかし、だが、けれども[逆接接続詞]）",
+    "shortExplanation": "前文と対立・逆接の関係にある内容を導く接続詞、あるいは逆接の接続語尾です（「しかし」「だが」）。",
+    "longExplanation": "「하나」は文頭で用いられて前述の事柄と相反する事態や条件を提示する逆接の接続詞で、文章語的で改まった響きを持ちます。日本語の「しかし」「だが」「けれども」に相当します。また、用言の語幹に付く逆接の接続語尾「-(으)나」と同根の機能として、文中で対立する二つの節を結ぶ働きも持っています。",
+    "formation": "先行節 + . 하나, + 逆接の後続節 | 動詞・形容詞語幹 + (으)나",
+    "examples": [
+      {
+        "translation": "私はその仕事を終えたと思っていたのですが、しかし人々はまだ終わらせていませんでした。"
+      },
+      {
+        "translation": "彼女は綺麗だと思います。しかし、性格がとても悪いです。"
+      },
+      {
+        "translation": "これは難しく感じられるかもしれませんが、しかし練習すれば易しくなるはずです。"
+      },
+      {
+        "translation": "私たちは家に帰らなければならないのに、しかし車がなかったので歩かなければなりませんでした。"
+      }
+    ]
   },
   "ko_하면_142": {
-    "title": "~하면 할수록 [hamyeon halsurok] (The more... the more)",
-    "shortExplanation": "〜を表すために使用されます a proportional increase or decrease; 'the more... the more'.",
-    "longExplanation": "'~하면 할수록' is a grammar structure used in Korean to illustrate that as one action or state increases (or decreases), another does so in proportion. It is similar to the English expression 'the more... the more'.",
-    "formation": "動詞 (or adjective) + 하면 할수록"
+    "title": "~하면 할수록（〜すればするほど）",
+    "shortExplanation": "前項の動作や状態の度合いが進むにつれて、それに比例して後項の事態も変化することを表します（「〜すればするほど」）。",
+    "longExplanation": "「~하면 할수록」（完全な形は「-(으)면 -(으)ㄹ수록」）は、ある動作や状態の程度が増加（または減少）するのに伴い、それに比例して後項の出来事も変化することを表す文法構文です。日本語の「〜すればするほど」「〜であればあるほど」に相当します。文脈によっては前半の仮定条件「-(으)면」を省き、単に「-(으)ㄹ수록」の形だけで用いられることもあります。",
+    "formation": "動詞・形容詞語幹 + -(으)면 + 動詞・形容詞語幹 + -(으)ㄹ수록（または 名詞 + -(이)면 -(이)ㄹ수록）",
+    "examples": [
+      {
+        "translation": "韓国語は勉強すればするほど、韓国の文化や歴史をより深く理解できるようになるので、ますます面白くなっていく気がします。"
+      },
+      {
+        "translation": "この家の中で本を読めば読むほど多くの知識を得られるので、私はいつも読書を楽しんでいます。"
+      },
+      {
+        "translation": "料理をすればするほど自信がついてくるので、私はいつも新しいレシピに挑戦しています。"
+      },
+      {
+        "translation": "彼女と一緒に時間を過ごせば過ごすほど、彼女のことをもっと愛するようになる気がします。彼女の性格が本当に魅力的だからです。"
+      }
+    ]
   },
   "ko_Expressing_0": {
-    "title": "Expressing Cause/Reason (~니까/아서/어서/으니)",
-    "shortExplanation": "〜を表すために使用されます the reason or cause; 'because', 'since'.",
-    "longExplanation": "In Korean, various grammatical patterns such as ~니까, ~아서/어서, and ~으니 are 〜を示します the cause or reason for an action or situation. They are equivalent to 'because' or 'since' in English and are used to logically connect two clauses. They can be used in both positive and negative contexts.",
-    "formation": "動詞 stem + (으)니까 / (으)아서/어서 / (으)니"
+    "title": "原因・理由の表現（~(으)니까 / -아/어서 / -(으)니）",
+    "shortExplanation": "文と文をつなぎ、後項の出来事や判断を引き起こす原因や理由を表す接続表現です（「〜だから」「〜ので」）。",
+    "longExplanation": "韓国語において「~(으)니까」「-아/어서」「-(으)니」は原因や理由を表す代表的な接続語尾です。「-아/어서」は客観的な因果関係を表す際に用いられ、後続節に命令文や勧誘文を置くことができません。一方、「~(으)니까」は話し手の主観的な判断や相手への働きかけの根拠を表し、命令文や勧誘文と自然に共起します。「-(으)니」は文章語的で改まった響きを持ち、前置きや理由を提示する際に用いられます。",
+    "formation": "動詞・形容詞語幹 + -(으)니까 / -아/어서 / -(으)니 | 名詞 + -(이)니까 / -(이)라서 / -(이)니",
+    "examples": [
+      {
+        "translation": "彼はいつも一生懸命に勉強しているので、TOPIKの試験に楽々と合格すると思います。"
+      },
+      {
+        "translation": "旅行に行きたかったのですが、お金がなかったので行くことができませんでした。"
+      },
+      {
+        "translation": "彼は病気休暇を取ったので、会社に来なかったのですね。"
+      },
+      {
+        "translation": "雨が降ってきたので、外出を取りやめにしました。"
+      }
+    ]
   },
   "ko_남짓_1": {
-    "title": "~남짓 [namjit] (About, or so)",
-    "shortExplanation": "Used to mean 'about' or 'approximately' when expressing quantities, amounts, or time.",
-    "longExplanation": "~남짓 is a Korean grammar point 〜を示します an approximate amount, quantity, or duration. It is equivalent to 'about' or 'approximately' in English and is used when providing an estimation rather than an exact figure.",
-    "formation": "Quantity/Amount + 남짓"
+    "title": "~남짓（〜余り、〜足らず、〜程度）",
+    "shortExplanation": "数量、時間、金額を表す語の後に付き、その基準値を少し超える程度、またはその前後の概数であることを表します（「〜余り」「〜ちょっと」）。",
+    "longExplanation": "「~남짓」は数量、時間、距離、金額などの表現に直接付く接尾語的・依存名詞的表現で、ある基準となる数量をわずかに超えていること、またはその前後の概算数値であることを示します。日本語の「〜余り」「〜ちょっと」「〜足らず」に相当し、厳密な正確さではなく大まかな見当や概数を述べる際に重宝されます。",
+    "formation": "数量詞 / 時間名詞 / 金額表現 + 남짓",
+    "examples": [
+      {
+        "translation": "私がこの本を読み終えるのに一週間余りかかりました。"
+      },
+      {
+        "translation": "今回の旅行では10万ウォン足らずを使いました。"
+      },
+      {
+        "translation": "子供たちが学校に到着するまでに10分余りかかったようです。"
+      },
+      {
+        "translation": "会社から自宅まで歩いて1時間ちょっとかかります。"
+      }
+    ]
   },
   "ko_내내_2": {
-    "title": "~내내 [naenae] (Throughout, the whole time)",
-    "shortExplanation": "〜を表すために使用されます something that continues throughout a specific period of time.",
-    "longExplanation": "~내내 is a compound particle that indicates an action or situation lasted for the entire duration of a specific period. It emphasizes continuity.",
-    "formation": "名詞 + 내내"
+    "title": "~내내（〜中ずっと、始終、終始）",
+    "shortExplanation": "時間を表す名詞の後に付き、その期間の最初から最後まで動作や状態が途切れることなく継続することを表します（「〜中ずっと」「終始」）。",
+    "longExplanation": "「~내내」は時間を表す名詞（하루、일주일、일 년、수업、방학など）に直接接続し、その期間の初めから終わりまである動作や状態が絶え間なく続いていることを強調する副詞的表現です。日本語の「〜中ずっと」「一貫して」「終始〜」に相当し、長時間の継続性をありありと描写します。",
+    "formation": "時間名詞 + 내내",
+    "examples": [
+      {
+        "translation": "学校では授業中ずっと先生の説明を聞いていなければなりませんでした。"
+      },
+      {
+        "translation": "その日は一日中雨が降り続いていたので、傘なしでは外出できませんでした。"
+      },
+      {
+        "translation": "夏休みに私たちは海辺で一日中遊び明かしました。"
+      },
+      {
+        "translation": "自分の結婚式で、彼は夜通しダンスを踊っていました。"
+      }
+    ]
   },
   "ko_네요_3": {
-    "title": "~네요 [neyo] (Expressing surprise)",
-    "shortExplanation": "〜を表すために使用されます surprise, new realizations, or sudden changes.",
-    "longExplanation": "~네요 is added to the stem of a verb or adjective to convey the speaker's surprise, realization, or a sudden change in circumstances. It expresses the speaker's impression or sentiment about a situation.",
-    "formation": "動詞/形容詞 stem + 네요"
+    "title": "~네요（〜ですね、〜だなあ - 感嘆と新事実の自覚）",
+    "shortExplanation": "直接見聞きしたり体験したりして新たに知った事実に対する感嘆や驚きを表す終結語尾です（「〜ですね」「〜だなあ」）。",
+    "longExplanation": "「~네요」は用言の語幹に付く丁寧な終結語尾です。話し手がその場で直接見たり聞いたり体験したりして初めて知った事実について、率直な驚きや感嘆、感銘を表す際に用いられます。会話を生き生きとさせ、相手に対して共感や親しみのある印象を与えるニュアンスを持ちます。",
+    "formation": "動詞・形容詞語幹 + 네요 | 名詞 + (이)네요",
+    "examples": [
+      {
+        "translation": "今日は本当に天気が良いですね。日差しが暖かくて気分が晴れやかになりました。"
+      },
+      {
+        "translation": "このケーキはとても美味しいですね。私、今回初めてこのケーキを食べてみました。"
+      },
+      {
+        "translation": "うちの子は本当に成長が早いですね。こうして大きくなりながら多くのことを学んでいます。"
+      },
+      {
+        "translation": "急に雨が降ってきましたね。傘を持ってこなかったので雨を避けることができませんでした。"
+      }
+    ]
   },
   "ko_노릇이다_4": {
-    "title": "~노릇이다 [noreusida] (Act as, function as)",
-    "shortExplanation": "Used to describe someone or something acting or functioning as another role or duty.",
-    "longExplanation": "~노릇이다 is used when someone or something takes on a role or duty that is not their primary one, often unexpectedly or due to circumstances. It carries the nuance of having to assume responsibilities not originally one's own.",
-    "formation": "名詞 + 노릇이다"
+    "title": "~노릇이다（〜役を務める、〜の立場だ / 〜な事態だ）",
+    "shortExplanation": "本来の職務とは異なる役割を代理・担当すること、または修飾語を受けてやりきれない・困惑した境遇を表現します（「〜役だ」「〜な事態だ」）。",
+    "longExplanation": "「~노릇이다」は、役回りや職務、境遇を意味する名詞「노릇」に指定詞「이다」が付いた構文です。主に二通りの用法があります。（1）本来の自分の本分ではない役割や職責を状況に迫られて引き受けたり代理で務めたりすること（「親役」「先生役」）；（2）用言の連体形の後ろに付き、呆れたり困惑したりするような不条理でやりきれない状況や巡り合わせを嘆く表現です。",
+    "formation": "名詞（身分・役割） + 노릇이다（または 노릇을 하다）",
+    "examples": [
+      {
+        "translation": "今日は先生が体調を崩されたので、私が先生役を務めることになります。"
+      },
+      {
+        "translation": "お父さんが出張に行ったので、お母さんが父親役を担っています。"
+      },
+      {
+        "translation": "この雑誌は旅行ガイドの役目をしっかりと果たしています。"
+      },
+      {
+        "translation": "彼女は友達というよりはお姉さん役を引き受けてあげるのが良いと考えています。"
+      }
+    ]
   },
   "ko_느라고_5": {
-    "title": "~느라고 [neurago] (Because of being occupied with)",
-    "shortExplanation": "〜を表すために使用されます that someone is so busy with one action that it prevents or hinders another, often resulting in a negative consequence.",
-    "longExplanation": "~느라고 is 〜を示します that an action or situation is taking up so much time or energy that it results in an undesired consequence, such as neglecting another activity. It expresses a cause-effect relationship with a sense of regret or inconvenience.",
-    "formation": "動詞 stem + 느라(고) (after removing ‘다’)"
+    "title": "~느라고（〜するのに追われて、〜していて - 否定的結果の原因）",
+    "shortExplanation": "前項の動作に多くの時間や労力を費やした結果、他のことができなかったり否定的な事態が生じたりした原因を表します（「〜するのに忙しくて」）。",
+    "longExplanation": "「~느라고」は動詞の語幹に接続する原因・理由の接続語尾です。主語がある意志的な行動に時間や心力を取られていたため、別の予定が果たせなかったり、過労や遅刻などの好ましくない結果を招いたりした際に用いられます。前節と後節の主語は同一でなければならず、前節には必ず意志動詞が来ます。",
+    "formation": "動詞語幹 + 느라고（または 느라）",
+    "examples": [
+      {
+        "translation": "私はTOPIK試験の準備をするのに追われて、明け方まで勉強しました。"
+      },
+      {
+        "translation": "私たちはプロジェクトを完成させるのに忙しくて、この2日間ほとんど眠れませんでした。"
+      },
+      {
+        "translation": "彼は大会の準備に追われて食事を抜いてしまいました。"
+      },
+      {
+        "translation": "母は私を大学に進学させるために、夜遅くまで一生懸命に働いてくださいました。"
+      }
+    ]
   },
   "ko_는데다가_6": {
-    "title": "~는데다가 [neundedaga] (Moreover, furthermore)",
-    "shortExplanation": "Used to add additional information or to emphasize a point; 'moreover', 'furthermore'.",
-    "longExplanation": "~는데다가 is a conjunctive expression used to add extra information or emphasize a detail in a sentence. It builds on previous statements by providing another reason or detail.",
-    "formation": "動詞/形容詞 + 는데다가"
+    "title": "~는데다가（〜な上に、〜だけでなくその上）",
+    "shortExplanation": "前項の事実や特徴に加えて、さらに同傾向の新たな事柄が重なることを表します（「〜な上に」「〜だけでなくさらに」）。",
+    "longExplanation": "「~는데다가」は連体形語尾に依存名詞「데」（点・場所）と助詞「다가」（付加）が結合した表現です。前項で述べた状態や事実に加えて、さらに同じ方向性（良いことならさらに良いこと、悪いことならさらに悪いこと）の別の事実が重畳して付け加わることを表し、日本語の「〜である上に」「〜だけでなくその上」に相当します。",
+    "formation": "動詞 + 는데다가 | 形容詞 + -(으)ㄴ데다가 | 名詞 + 인데다가",
+    "examples": [
+      {
+        "translation": "彼の学業成績は優秀である上に、運動能力もずば抜けています。"
+      },
+      {
+        "translation": "私は今日体調が優れない上に、天気も非常に冷え込んでいますね。"
+      },
+      {
+        "translation": "あのカフェは店内の雰囲気も素敵な上に、コーヒーの味わいも素晴らしいですね。"
+      },
+      {
+        "translation": "視野が広いこと自体が長所である上に、彼は韓国語も極めて流暢に話せますね。"
+      }
+    ]
   },
   "ko_는측에서_7": {
-    "title": "~는측에서 [neuncheugeseo] (From the perspective of)",
-    "shortExplanation": "〜を表すために使用されます 'from the standpoint of' or 'from the perspective of'.",
-    "longExplanation": "The suffix ~는측에서 is 〜を示します a particular viewpoint or perspective from which something is evaluated or observed. It is often used to present opinions or judgments from a specific standpoint.",
-    "formation": "名詞 + 는측에서"
+    "title": "~는 측에서（〜の立場からすると、〜の観点から見れば）",
+    "shortExplanation": "特定の人物、集団、あるいは専門分野の視座や立場を提示し、事態を判断する基準を示します（「〜の立場からすると」「〜の側から見れば」）。",
+    "longExplanation": "「~는 측에서」（または「名詞 + 의 측에서」）は、側や観点を意味する名詞「측（側）」に副詞格助詞「에서」が付いた構文です。多くは「볼 때（見るとき）」や「본다면（見るならば）」を伴い、ある特定の人々や専門的立場から物事を観察・評価する際の独自の視角を明示します。日本語の「〜の立場から言えば」「〜の観点から見ると」に相当します。",
+    "formation": "名詞 + (의) 측에서（볼 때 / 본다면）",
+    "examples": [
+      {
+        "translation": "学生たちの側から見ると、宿題が多すぎて大きな負担に感じられます。"
+      },
+      {
+        "translation": "経済学者の観点からすると、デジタル通貨は実体経済に甚大な影響を及ぼす可能性があります。"
+      },
+      {
+        "translation": "医師の立場から見れば、フライドチキンは健康に害を及ぼす恐れがあります。"
+      },
+      {
+        "translation": "母親の立場から見れば、我が子はいつだって最高に輝いているものです。"
+      }
+    ]
   },
   "ko_더라도_8": {
-    "title": "~더라도 [deorado] (Even if, even though)",
-    "shortExplanation": "〜を表すために使用されます a conditional statement meaning 'even if' or 'even though'.",
-    "longExplanation": "The pattern ~더라도 is used to present a condition that might be contrary to what is expected. It indicates that even if a certain condition holds, the outcome remains unchanged or is unsatisfactory.",
-    "formation": "動詞 stem + 더라도 (or 形容詞/名詞 + 라도)"
+    "title": "~더라도（たとえ〜ても、〜だとしても）",
+    "shortExplanation": "仮定譲歩の接続語尾：前項で極端な条件を仮定しても、後項の結論や決意、客観的事実は左右されないことを表します（「たとえ〜としても」）。",
+    "longExplanation": "「~더라도」は強い仮定譲歩を表す接続語尾で、用言の語幹に接続します。仮に前項の事態が実際に成立したり、どれほど極端で過酷な条件であったりしても、後項で述べる話し手の意志や行動、あるいは生じる客観的な結果には何の影響も及ばないことを強調します。「-아/어도」に比べて仮定譲歩の意味合いが一段と際立ちます。",
+    "formation": "動詞・形容詞語幹 + 더라도 | 名詞 + (이)더라도",
+    "examples": [
+      {
+        "translation": "あなたがいくら多くの時間を投資したとしても、その結果に満足できなければどうでしょうか。"
+      },
+      {
+        "translation": "たとえ一日中勉強したとしても、試験に落ちてしまえば私の努力は水の泡になってしまう。"
+      },
+      {
+        "translation": "君がどれほど努力したとしても、その目標を達成できなければどうなるだろうか。"
+      },
+      {
+        "translation": "いくら働いてもお金が貯まらなければ、生きていくのは辛いです。"
+      }
+    ]
   },
   "ko_다니_9": {
-    "title": "~다니 [dani] (Expressing disbelief)",
-    "shortExplanation": "〜を表すために使用されます surprise, doubt, or disbelief regarding a particular situation or piece of information.",
-    "longExplanation": "~다니 is attached to the end of a sentence or clause to convey the speaker's disbelief, shock, or doubt about something they have just heard or observed.",
-    "formation": "動詞-기다니 / 形容詞-다니 / 名詞이다니"
+    "title": "~다니（〜だなんて、〜するとは - 驚き・意外・感嘆）",
+    "shortExplanation": "見聞きした情報や目の前の事実に対して、強い驚きや疑念、感嘆の情を表します（「〜だなんて」「〜とは信じられない」）。",
+    "longExplanation": "「~다니」は、間接引用の語尾に感嘆・提示の接続語尾「-니」が融合した縮約表現です（「-다고 하니」の縮約形）。話し手が耳にした情報や目の当たりにした出来事が予想外であったり、あまりにも驚くべき内容であったりする際に、信じられないという驚愕や意外性、あるいは感銘の念を率直に表します。",
+    "formation": "動詞 + -ㄴ/는다니 | 形容詞 + -다니 | 名詞 + -(이)라니 | 過去形: -았/었다니",
+    "examples": [
+      {
+        "translation": "私たちの父が明日急きょ海外へ旅立つだなんて、まったく信じられません。"
+      },
+      {
+        "translation": "君が本当にこんなに難しい問題を解決しただなんて、実に驚きです。"
+      },
+      {
+        "translation": "当初の計画が変わる予定とはいえ、彼がこのチームのリーダーになるだなんて信じられない。"
+      },
+      {
+        "translation": "大勢の人たちが楽しみに期待していたのに、公演が中止になってしまうだなんて残念です。"
+      }
+    ]
   },
   "ko_답게_10": {
-    "title": "~답게 [dapge] (As befitting, like)",
-    "shortExplanation": "〜を表すために使用されます the meaning of 'as befitting' or 'like', highlighting the natural or expected characteristic or behavior of someone or something.",
-    "longExplanation": "The '~답게' pattern follows a noun to mean 'as is fitting for' or 'in a manner characteristic of'. It emphasizes the inherent qualities or typical behavior one would expect, and is used to comment on the natural characteristics of people or things.",
-    "formation": "名詞 + 답게"
+    "title": "~답게（〜らしく、〜にふさわしく）",
+    "shortExplanation": "名詞の後に付き、その身分や資格、事物の本質に実にふさわしく振る舞う様子を表します（「〜らしく」「〜にふさわしく」）。",
+    "longExplanation": "「~답게」は、その名詞に値する典型的な品格や資格を備えていることを表す接尾辞「-답다」に副詞形語尾「-게」が付いた表現です。名詞の直後に接続し、その立場や役割に期待される標準的な基準や美徳にぴったり合致した行動や状態であることを肯定的に表現します。",
+    "formation": "名詞 + 답게",
+    "examples": [
+      {
+        "translation": "プロサッカー選手らしく、彼はボールを巧みに扱う方法を実によく心得ていました。"
+      },
+      {
+        "translation": "勉学に励む学生らしく、彼は数学の問題を難なく解くことができました。"
+      },
+      {
+        "translation": "高級ブランドのデザイナーらしく、彼女の服は細部に至るまで完璧に仕立てられていました。"
+      },
+      {
+        "translation": "経験豊かな料理人らしく、彼は手早く調理の食材を扱うことができました。"
+      }
+    ]
   },
   "ko_대로_11": {
-    "title": "~대로 [daero] (As per, following)",
-    "shortExplanation": "〜を表すために使用されます doing something in accordance with or following something else.",
-    "longExplanation": "The grammar point '~대로' is used when an action is performed exactly as indicated by a rule, instruction, or example. It is similar to the English expressions 'as per', 'according to', or 'following'.",
-    "formation": "名詞 or 動詞 stem + 대로"
+    "title": "~대로（〜のとおりに、〜のままに）",
+    "shortExplanation": "前項の指示、規則、原状、またはありのままの事実に厳密に従って後項の動作を行うことを表します（「〜のとおりに」）。",
+    "longExplanation": "「~대로」は名詞に直接付く助詞、または動詞・形容詞の連体形に後続する依存名詞として機能します。前項で示された指示内容、マニュアルの規定、設計図、あるいは目にした事実のありのままの姿に少しのズレもなく従い、それに沿って後項の行動を進めることを表します。",
+    "formation": "名詞 + 대로 | 動詞 + -(으)ㄴ/는 대로",
+    "examples": [
+      {
+        "translation": "毎日運動しなさいという指示どおりに、毎朝運動を実践しています。"
+      },
+      {
+        "translation": "マニュアルに書かれているとおりに、機械を作動させなければなりません。"
+      },
+      {
+        "translation": "お母さんが言ったとおりに一生懸命勉強し、その結果成績も大変良かったです。"
+      },
+      {
+        "translation": "建物のすべての窓は設計図どおりに完璧に設置されました。"
+      }
+    ]
   },
   "ko_던데_12": {
-    "title": "~던데 [deonde] (Used to, before)",
-    "shortExplanation": "〜を表すために使用されます that something was the case or happened in the past, often to introduce contrasting or unexpected information.",
-    "longExplanation": "The '~던데' pattern is attached to a verb to indicate that something used to happen or be the case, often implying a change or contrast with the present. It is used to recall past conditions or behaviors and can be translated as 'used to' or 'before'.",
-    "formation": "動詞 + 던데"
+    "title": "~던데（〜だったけれど、〜していたようだけど - 回想と背景提示）",
+    "shortExplanation": "話し手が過去に直接見聞き・体験した事実を思い起こし、それを後続の談話の前提や背景として提示します（「〜だったけれど」「〜していたよ」）。",
+    "longExplanation": "「~던데」は、過去の回想を表す先語末語尾「-더-」と背景を提示する接続語尾「-ㄴ데」が合わさった表現です。話し手が自らの過去の直接経験に基づいて、かつて目撃した情景や知った事実を回想しながら後続の文の背景・前提として提示します。相手への質問、勧誘、あるいは現在とのコントラストを示す際によく用いられます。",
+    "formation": "動詞・形容詞語幹 + 던데 | 名詞 + (이)던데 | 過去形: -았/었던데",
+    "examples": [
+      {
+        "translation": "うちのチョルスが話していたけれど、彼は学校でいつも熱心に勉強していた学生だったそうだよ。"
+      },
+      {
+        "translation": "あのレストランはかつて美味しい料理を出していたけれど、最近はそうでもないね。"
+      },
+      {
+        "translation": "お父さんは以前は毎朝運動していたけれど、最近はそうしていませんね。"
+      },
+      {
+        "translation": "最初の出会いでは彼はとても親切だったけれど、でも今はそうではありません。"
+      }
+    ]
   },
   "ko_도록_13": {
-    "title": "~도록 하다 [dorok hada] (Make sure that, ensure that)",
-    "shortExplanation": "〜を表すために使用されます a commitment or directive to make sure that something happens.",
-    "longExplanation": "The '~도록 하다' construction is 〜を示します that the speaker intends to make something occur or wants someone to ensure a specific result. It is similar to saying 'make sure that' or 'ensure that' in English.",
-    "formation": "動詞 stem + (으)도록 하다"
+    "title": "~도록 하다（〜するようにする、〜するように計らう）",
+    "shortExplanation": "ある目的を達成するために努める意志を表したり、相手に対して所定の事態が実現するよう指示・勧告したりします（「〜するようにする」）。",
+    "longExplanation": "「~도록 하다」は、目的や結果、程度を表す接続語尾「-도록」に補助動詞「하다」が結合した文法構文です。話し手自身が主語の場合は、ある望ましい結果をもたらすために全力を尽くすという固い意志や約束を丁寧に表明します（「〜するようにいたします」）。一方、命令や勧誘の文脈では、相手に配慮しつつ確実に特定の行動を取らせるための指示・依頼表現となります。",
+    "formation": "動詞語幹 + -(으)도록 하다",
+    "examples": [
+      {
+        "translation": "私がこの件をきちんと解決するようにいたしますので、ご心配なさらないでください。"
+      },
+      {
+        "translation": "お客様にご満足いただけるよう、私たちは最善を尽くしてまいります。"
+      },
+      {
+        "translation": "子供たちが安全に学校に着けるよう、車の運転はゆっくり行ってください。"
+      },
+      {
+        "translation": "皆がよく理解できるように、落ち着いてゆっくりとお話しいたします。"
+      }
+    ]
   },
   "ko_라든지_14": {
-    "title": "~라든지 ~라든지 [radenji radenji] (Either or)",
-    "shortExplanation": "Used to list alternative options or possibilities without specifying a single choice.",
-    "longExplanation": "The '~라든지 ~라든지' pattern is used to list alternative options or possibilities, implying that any one of the mentioned items could be chosen. It is similar to 'either or' in English, used when the speaker does not wish to specify a particular option.",
-    "formation": "名詞/動詞 + 라든지 + 名詞/動詞 + 라든지"
+    "title": "~(이)라든지 ~(이)라든지（〜とか〜とか、〜であれ〜であれ）",
+    "shortExplanation": "複数の選択肢や例を並列して挙げ、そのうちのどれを選んでも構わないことを表す助詞です（「〜とか〜とか」「〜であれ〜であれ」）。",
+    "longExplanation": "「~(이)라든지 ~(이)라든지」は主に名詞の後に付き、複数の選択肢や例示を並べ立てて、挙げられたもののうちどれを選択しても差し支えないというニュアンスを表す並立助詞です。特定の対象に限定せず「〜とか〜とか」「〜であれ〜であれ」と幅広く例を挙げる際に用いられます。",
+    "formation": "名詞 + (이)라든지 | 動詞・形容詞語幹 + -ㄴ/는다든지",
+    "examples": [
+      {
+        "translation": "今夜の夕食はピザとかチキンとか、何でも注文して食べるつもりです。"
+      },
+      {
+        "translation": "あなたが必要としているものが何であれ、パソコンであれ本であれ、私は準備できます。"
+      },
+      {
+        "translation": "運動をしに行こうか考えているところですが、ランニングとか水泳とか何でもいいです。"
+      },
+      {
+        "translation": "1位を勝ち取れる人は、あなたか、あるいは他の誰かになるでしょう。"
+      }
+    ]
   },
   "ko_려고_15": {
-    "title": "~려고 하다 [ryeogo hada] (Try to)",
-    "shortExplanation": "〜を表すために使用されます an intention or plan to do something.",
-    "longExplanation": "The '~려고 하다' structure is commonly 〜を示します that someone intends, plans, or attempts to do something. It is equivalent to the English phrases 'plan to', 'intend to', or 'try to'.",
-    "formation": "動詞 stem + -려고 하다"
+    "title": "~(으)려고 하다（〜しようとする、〜するつもりだ）",
+    "shortExplanation": "主語がある動作をしようとする意図や計画、試みを表します（「〜しようとする」「〜するつもりだ」）。",
+    "longExplanation": "「-(으)려고 하다」は動詞の語幹に付き、話し手または主語が何らかの行動を行おうとする意志や計画、試みを表す表現です。日本語の「〜しようとする」「〜するつもりだ」に相当します。接続語尾「-(으)려고」の形で後続節とつながる場合は、「〜しようとして / 〜するために」という目的を表します。",
+    "formation": "母音またはパッチムㄹで終わる動詞語幹 + -려고 하다 | ㄹ以外のパッチムで終わる動詞語幹 + -으려고 하다",
+    "examples": [
+      {
+        "translation": "最近韓国語を学ぼうと取り組んでいるうちに、一日がどのように過ぎていくのかも分からないほどです。"
+      },
+      {
+        "translation": "明日友達に会う予定なので、今はとても早めに寝ようとしています。"
+      },
+      {
+        "translation": "彼はギターを弾こうと決めて、昨日から毎日練習しています。"
+      },
+      {
+        "translation": "息子は大学に進学するつもりなので、勉強に集中しようと努めています。"
+      }
+    ]
   },
   "ko_만이_16": {
-    "title": "~만이 아니다 [mani anida] (Not only)",
-    "shortExplanation": "〜を示します that the preceding clause is not the only reason or factor; 'not only'.",
-    "longExplanation": "The '~만이 아니다' pattern is 〜を表すために使用されます that something is not solely due to one reason, suggesting that additional factors or elements are involved. It is similar to 'not only' in English, highlighting that there is more than one contributing aspect.",
-    "formation": "名詞 + 만이 아니다"
+    "title": "~만이 아니다（〜だけではない、〜にとどまらない）",
+    "shortExplanation": "前述の内容が唯一の理由や要素ではなく、他にも重要な要素が含まれていることを表します（「〜だけではない」）。",
+    "longExplanation": "「~만이 아니다」は限定の補助詞「만」（〜だけ）に助詞「이」と否定詞「아니다」が結合した文型です。ある事態の理由や対象が一つだけに限定されず、他にも複数の要因や側面が存在することを強調する際に用いられ、日本語の「〜だけではない」「〜にとどまらない」に相当します。",
+    "formation": "名詞 + 만이 아니다 | 動詞・形容詞 + -는/-(으)ㄴ 것만이 아니다",
+    "examples": [
+      {
+        "translation": "私は韓国語を勉強しているだけでなく、日本語と中国語も勉強しています。"
+      },
+      {
+        "translation": "彼は俳優であるだけでなく、脚本家でもあります。"
+      },
+      {
+        "translation": "この素晴らしい結果は、血のにじむ努力だけでなく、継続的な経験が結びついた結果です。"
+      },
+      {
+        "translation": "私たちが建築に関心を持っているのは、審美的な側面だけでなく、その機能的な側面のためでもあります。"
+      }
+    ]
   },
   "ko_마련이다_17": {
-    "title": "~마련이다 [maryeonida] (Bound to, tend to)",
-    "shortExplanation": "〜を表すために使用されます that something is bound to happen or that a situation naturally tends to be a certain way.",
-    "longExplanation": "The expression '마련이다' is used to talk about an inevitability or a fact of life—something that is expected to occur given the nature or circumstances. It often carries a nuance of resignation or acceptance and is similar to the English expressions 'bound to' or 'tend to'.",
-    "formation": "名詞 + 이/가 + 마련이다"
+    "title": "~기 마련이다（〜するものだ、〜するのが当たり前だ）",
+    "shortExplanation": "世の道理や自然の法則からして、ある事態が起こるのが当然であり必然であることを表します（「〜するものだ」「〜するのが当たり前だ」）。",
+    "longExplanation": "「-기 마련이다」（または「-(으)ㄴ/는 것이 마련이다」の形）は用言の語幹に付き、自然の理や人間の心理、世間の常識に照らし合わせて「そうなるのが当たり前だ」「どうしてもそうなるものだ」という必然的な道理を述べる表現です。日本語の「〜するものだ」「〜するのが自然だ」に相当します。",
+    "formation": "動詞・形容詞語幹 + -기 마련이다（または -(으)ㄴ/는 것이 마련이다）",
+    "examples": [
+      {
+        "translation": "他人の目を気にしないようにしようとしても、どうしても気になってしまうのは仕方のないことです。"
+      },
+      {
+        "translation": "幼い子どもたちがたくさん遊ぶのは、その年齢の特性上ごく当たり前のことです。"
+      },
+      {
+        "translation": "今回失敗したからといって次回も必ず失敗するとは限らないのも、当然の道理です。"
+      },
+      {
+        "translation": "辛いことが起これば、誰しも落ち込んでしまうものです。"
+      }
+    ]
   },
   "ko_면서_18": {
-    "title": "~면서 [myeonseo] (While)",
-    "shortExplanation": "〜を表すために使用されます two concurrent actions or states; 'while' or 'as'.",
-    "longExplanation": "'~면서' is a grammatical structure 〜を示します that two actions or states occur simultaneously. It carries the same meaning as 'while' or 'as' in English and is used when the same subject is performing both actions.",
-    "formation": "動詞 Stem + 면서"
+    "title": "~(으)면서（〜しながら、〜しつつ）",
+    "shortExplanation": "同一の主語が二つの動作や状態を同時に並行して行うことを表す接続語尾です（「〜しながら」）。",
+    "longExplanation": "「-(으)면서」は用言の語幹に付く接続語尾で、同一の主語が二つの行動を同時に並行して行っていることを表します。日本語の「〜しながら」に相当し、前節と後節の主語は同一でなければなりません。",
+    "formation": "母音またはパッチムㄹで終わる動詞語幹 + -면서 | ㄹ以外のパッチムで終わる動詞語幹 + -으면서",
+    "examples": [
+      {
+        "translation": "私は音楽を聴きながら勉強するのが好きです。そうするともっと集中できます。"
+      },
+      {
+        "translation": "彼はご飯を食べながらテレビを見ます。それが彼の習慣です。"
+      },
+      {
+        "translation": "映画を見ながら昼食を食べました。そうすれば時間を節約できます。"
+      },
+      {
+        "translation": "私は運動しながらポッドキャストを聴いています。それは私にとってとても有益です。"
+      }
+    ]
   },
   "ko_동안_19": {
-    "title": "~동안 [dongan] (During/While)",
-    "shortExplanation": "〜を表すために使用されます the duration of an action or situation.",
-    "longExplanation": "'~동안' indicates the time span during which an action or situation occurs. It typically translates to 'during' or 'while' in English and is useful for describing ongoing actions over a period of time.",
-    "formation": "名詞 (indicating time) + 동안 / 動詞 + 동안"
+    "title": "~동안 / -는 동안（〜の間、〜している間）",
+    "shortExplanation": "時間名詞または動詞の後ろに付き、ある動作や状態が継続している時間の幅を表します（「〜の間」「〜している間」）。",
+    "longExplanation": "「~동안」は期間を表す名詞（または依存名詞）で、時間名詞に直接接続するか、動詞の連体形「-는」を伴って「-는 동안」の形で用いられます。ある事態が続いている時間的スパンを表し、日本語の「〜の間」「〜している間」に相当します。「-(으)면서」と異なり、前節と後節の主語が異なっていても構いません。",
+    "formation": "時間名詞 + 동안 | 動詞語幹 + -는 동안",
+    "examples": [
+      {
+        "translation": "冬休みの間、私はたくさん絵を描きました。それが私の趣味だからです。"
+      },
+      {
+        "translation": "料理をしている間、電話が鳴り止まなかったので料理に集中できませんでした。"
+      },
+      {
+        "translation": "私がカラオケで歌を歌っている間、友達はみんな踊っていて本当に楽しかったです。"
+      },
+      {
+        "translation": "彼女が家にいない間に泥棒が入り、彼女の貴重品をすべて盗んでいきました。"
+      }
+    ]
   },
   "ko_부터는_20": {
-    "title": "~부터는 [buteoneun] (From now on, since)",
-    "shortExplanation": "〜を表すために使用されます a change starting from a specific point in time; 'from now on', 'since', or 'after'.",
-    "longExplanation": "'~부터는' is a time-based postposition that marks the point from which a change occurs or a new condition starts. It can refer to events in the past, present, or future and signals that things will continue or change from that point onward.",
-    "formation": "名詞 (Time/Event) + 부터는"
+    "title": "~부터는（〜からは、〜以降は）",
+    "shortExplanation": "起点を示す助詞「부터」と対照の補助詞「는」が合わさり、特定の時点や出来事を境に状況が変わることを強調します（「〜からは」「〜以降は」）。",
+    "longExplanation": "「~부터는」は、開始の時点を表す助詞「부터」（〜から）に対照・強調の補助詞「는」（〜は）が結合した表現です。ある時点や契機を明確な境界線として設定し、その時点を境に以前とは異なる新しい習慣、決心、または変化が生じることを際立たせる際に用いられ、日本語の「〜からは」「〜以降は」に相当します。",
+    "formation": "名詞（時間・出来事） + 부터는 | 動詞語幹 + -(으)ㄴ 후부터는",
+    "examples": [
+      {
+        "translation": "今日からは健康にもう少し気を配ることにしました。そのため、毎朝ジョギングをするつもりです。"
+      },
+      {
+        "translation": "この事件が発生して以降は、すべてのことが変わりました。人々はこの事実を知ってから、少し慎重になりました。"
+      },
+      {
+        "translation": "去年からは稼いだお金をもっと節約して使うことに決めました。無駄な出費を減らすため最大限努力しています。"
+      },
+      {
+        "translation": "この報告書を読んだ後からは、この状況についてより深く理解できるようになりました。不思議なことに、以前は理解できなかった部分が急に腑に落ちました。"
+      }
+    ]
   },
   "ko_서야_21": {
-    "title": "~서야 [seoya] (Only after)",
-    "shortExplanation": "〜を表すために使用されます that only after doing A can B be done, emphasizing the sequential order of events.",
-    "longExplanation": "'~서야' is 〜を示します that the second action or condition can occur only after the first has been completed. It stresses that without fulfilling the prerequisite, the following action is impossible—much like saying 'only after' in English.",
-    "formation": "動詞 Stem + 서야"
+    "title": "~아/어서야（〜してはじめて、〜してようやく）",
+    "shortExplanation": "前項の動作や条件をクリアしてはじめて後項の事態が実現することを強調する接続表現です（「〜してはじめて」「〜してようやく」）。",
+    "longExplanation": "「-아/어서야」は接続語尾「-아/어서」に強調の助詞「야」が結合した表現です。前項の動作や条件が後項の不可欠な前提であることを強調し、「前項のことをやり遂げてようやく後項が可能になる」「その段階に至ってはじめて悟る」という意味を表します。日本語の「〜してはじめて」「〜してようやく」に相当します。",
+    "formation": "陽性母音語幹（ㅏ, ㅗ） + -아서야 | 陰性母音語幹 + -어서야 | 하다動詞 + -해서야",
+    "examples": [
+      {
+        "translation": "私の本を最後まで全部読んでこそ、ようやく理解できるはずです。軽く流し読みするのではなく、一文一文、一言一言を丁寧に精読しなければなりません。"
+      },
+      {
+        "translation": "恋に落ちてはじめて、その人の長所や短所が見えてくるものです。時には恋の盲目さゆえに、相手の欠点を無視してしまうこともあります。"
+      },
+      {
+        "translation": "このビジネスを成功させるには、計画を綿密に立ててはじめて可能になります。計画なしに成功を期待するのは無理があると私は思います。"
+      },
+      {
+        "translation": "誰も経験したことのない状況なので悩みどころですが、その状況を自ら直接体験してはじめて、的確な対処法が分かるはずです。"
+      }
+    ]
   },
   "ko_소문에는_22": {
-    "title": "~소문에는 [somuneneun] (I heard that)",
-    "shortExplanation": "Used to convey a hearsay or rumor that the speaker has heard.",
-    "longExplanation": "The '~소문에는' construction is used when the speaker wants to indicate that something has been heard as a rumor or hearsay. It does not express the speaker’s own opinion but relays what is commonly talked about.",
-    "formation": "名詞 + 이/가 + ~소문에는"
+    "title": "~소문에는（噂では、風の噂によると）",
+    "shortExplanation": "世間や人伝てに聞いた噂話を引用・伝達する表現です（「噂では」「風の噂によると」）。",
+    "longExplanation": "「~소문에는」（「名詞 + 에 대한 소문에는」や文頭の「소문에는」）は名詞「소문」（噂）に助詞「에」と「는」が結合した表現です。話し手自身の確信や公式発表ではなく、周囲でささやかれている風聞や噂の内容を紹介する際に用いられ、文末には「-ㄴ/는다고 하다」（〜だそうだ）や「들었다」（〜と聞いた）などの間接話法が呼応します。",
+    "formation": "名詞 + (에 대한) 소문에는 | 소문에는 + 間接話法節（-ㄴ/는다고 하다 / 들었다）",
+    "examples": [
+      {
+        "translation": "噂では、その会社が間もなく倒産することになると耳にしました。"
+      },
+      {
+        "translation": "彼の成功に関する噂では、彼が1日に18時間も働いているとのことです。"
+      },
+      {
+        "translation": "彼女が一躍有名になった噂では、彼女が来年ハリウッド映画に出演する予定だそうです。"
+      },
+      {
+        "translation": "最近のイム・ジェボムの人気に関する噂によると、彼が新しいアルバムをより早くリリースする予定だとのことです。"
+      }
+    ]
   },
   "ko_아어_23": {
-    "title": "~아/어 보이다 [a/eo boida] (To seem, appear)",
-    "shortExplanation": "〜を表すために使用されます that someone or something seems or appears a certain way, based on the speaker’s perception.",
-    "longExplanation": "The grammar point '~아/어 보이다' is used in Korean to convey the speaker’s judgment or perception about someone or something. The verb or adjective before '~아/어 보이다' is conjugated according to its final vowel, and the expression is equivalent to 'seem', 'appear', or 'look like' in English.",
-    "formation": "動詞 or 形容詞 + 아/어 보이다"
+    "title": "~아/어 보이다（〜に見える、〜そうに見える）",
+    "shortExplanation": "形容詞の語幹に付き、外見や様子から判断した視覚的な印象や推測を表します（「〜に見える」「〜そうに見える」）。",
+    "longExplanation": "「-아/어 보이다」は形容詞の語幹に接続する補助用言表現です。話し手が観察対象の外見、表情、様子などを目で直接見て感じ取った直感的な判断や印象を述べる際に用いられ、日本語の「〜に見える」「〜そうに見える」に相当します。",
+    "formation": "陽性母音語幹（ㅏ, ㅗ） + -아 보이다 | 陰性母音語幹 + -어 보이다 | 하다形容詞 + -해 보이다",
+    "examples": [
+      {
+        "translation": "あの男性は本当に気の毒そうに見えます。おそらく辛い時期を過ごしているようですね。"
+      },
+      {
+        "translation": "今日は疲れているように見えますから、早く休んではいかがですか。"
+      },
+      {
+        "translation": "彼女はとても幸せそうに見えますが、何か良いことがあったのでしょう。"
+      },
+      {
+        "translation": "この料理はとても美味しそうに見えるので、明日友達と一緒に来て食べてみます。"
+      }
+    ]
   },
   "ko_아어야지_24": {
-    "title": "~아/어야지 [a/eoyaji] (I should, I better)",
-    "shortExplanation": "〜を表すために使用されます the speaker's determination or intention; 'I should' or 'I better'.",
-    "longExplanation": "‘~아/어야지’ is a Korean grammar point 〜を表すために使用されます the speaker’s determination or intention. It conveys that the speaker feels they should do something or had better do it. It is often used when making a self-suggestion or deciding to take a certain action in the future, and sometimes used rhetorically to encourage oneself.",
-    "formation": "動詞 stem + 아/어야지 (if the stem ends in ㅏ or ㅗ, use 아야지; otherwise, use 어야지)"
+    "title": "~아/어야지（〜しなくちゃ、〜しなきゃ - 自戒と決意）",
+    "shortExplanation": "独り言や親しい間柄で、自分がすべき行動に対して強い決意や自戒を込めて述べる終結語尾です（「〜しなくちゃ」「〜しなきゃ」）。",
+    "longExplanation": "「-아/어야지」は動詞の語幹に付く終結語尾です。主に独り言や親しい間柄で用いられ、「もうこれ以上先延ばしにせず、これをしなければならない」と自らに言い聞かせたり、心の中で固い決意を固めたりする際に使われます。日本語の「〜しなくちゃ」「〜しなきゃ」「〜するぞ」に相当します。",
+    "formation": "陽性母音語幹（ㅏ, ㅗ） + -아야지 | 陰性母音語幹 + -어야지 | 하다動詞 + -해야지",
+    "examples": [
+      {
+        "translation": "もうこんなに遅くなった、もう家に帰らなきゃ。"
+      },
+      {
+        "translation": "今度こそ本当に本気でダイエットをしなくちゃ。"
+      },
+      {
+        "translation": "明日は早起きして運動しなくちゃ。"
+      },
+      {
+        "translation": "課題がたくさんたまっている、今からでも一生懸命頑張らなきゃ。"
+      }
+    ]
   },
   "ko_았었다_25": {
-    "title": "~았/었다 치다 [at/eotda chida] (Let’s say, suppose)",
-    "shortExplanation": "Expresses a hypothetical situation, equivalent to 'let's say' or 'suppose'.",
-    "longExplanation": "‘~았/었다 치다’ is used to propose a hypothetical situation or condition. It is equivalent to saying 'let’s say' or 'suppose' in English, setting up an assumed scenario for discussion. This expression is often used to analyze possible outcomes or to plan by exploring various scenarios.",
-    "formation": "動詞 stem + 았/었다 + 치다"
+    "title": "~았/었다 치다（〜したと仮定する、〜だったとしよう）",
+    "shortExplanation": "ある事態がすでに起きたものと仮定・譲歩して、その場合の帰結や対策を論じる表現です（「〜したと仮定する」「〜だったとしよう」）。",
+    "longExplanation": "「~았/었다 치다」（主に「-았/었다 치면」（〜だったとしたら）や「-았/었다 치고」（〜だったことにして）の形で用いられます）は、用言の過去形に接続し、ある仮定の状況を事実として仮置きし、それを前提にして議論を進めたり可能性を検討したりする表現です。日本語の「〜したと仮定する」「〜だったとしよう」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었다 치다（または -았/었다 치면, -았/었다 치고）",
+    "examples": [
+      {
+        "translation": "私たちにお金がたくさんあったと仮定したら、ヨーロッパ旅行に行けたでしょうか。"
+      },
+      {
+        "translation": "彼が私たちのチームにいたと仮定して、勝てたと思いますか。"
+      },
+      {
+        "translation": "もし彼女がいなかったとしたら、その仕事にどのように対処したでしょうか。"
+      },
+      {
+        "translation": "最近雨がたくさん降ったと仮定して、野外活動はどうなるでしょうか。"
+      }
+    ]
   },
   "ko_았었던_26": {
-    "title": "~았/었던 것 같다 [at/eotdeon geot gatda] (It seemed that)",
-    "shortExplanation": "〜を表すために使用されます that something appeared or seemed a certain way in the past.",
-    "longExplanation": "‘~았/었던 것 같다’ is 〜を表すために使用されます a speaker’s vague recollection or speculation about a past event. 〜と訳されます 'it seemed that', 'it looked as if', or 'I think that', often indicating uncertainty or a vague impression.",
-    "formation": "動詞 in past tense + ~았/었던 것 같다"
+    "title": "~았/었던 것 같다（〜だったようだ、〜したようだった）",
+    "shortExplanation": "過去の出来事や状態について、おぼろげな記憶や控えめな推測を述べる表現です（「〜だったようだ」「〜したようだった」）。",
+    "longExplanation": "「-았/었던 것 같다」は過去回想の連体形「-았/었던」に推量表現「- 것 같다」（〜のようだ）が結合した文型です。過去の出来事、感覚、記憶を思い起こしながら、断定を避けて控えめに推測したり、あやふやな記憶を回顧したりする際に用いられます。日本語の「〜だったようだ」「〜したように思う」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었던 것 같다",
+    "examples": [
+      {
+        "translation": "彼女はとても幸せだったようです。いつも笑みを浮かべていました。"
+      },
+      {
+        "translation": "あの日は聴いたことのなかった曲を聴いたように思います。その曲は今でも頭の中に残っています。"
+      },
+      {
+        "translation": "私は大昔にここを訪れたことがあるようです。建物に見覚えがあります。"
+      },
+      {
+        "translation": "今日が日曜日だと勘違いしていたようでした。でも実際には土曜日でした。"
+      }
+    ]
   },
   "ko_았었어야_27": {
-    "title": "~았/었어야 했다 [at/eosseoya haetda] (Should have)",
-    "shortExplanation": "Expresses regret over something in the past that should have been done but wasn't.",
-    "longExplanation": "‘~았/었어야 했다’ is 〜を表すために使用されます regret or a sense of missed opportunity about a past action. It is equivalent to 'should have' in English and reflects on an action that did not occur but would have been appropriate or beneficial if it had.",
-    "formation": "動詞 stem + 았/었어야 했다"
+    "title": "~았/었어야 했다（〜すべきだった、〜しておけばよかった）",
+    "shortExplanation": "過去に当然すべきだったのに行わなかった行為について、後悔、遺憾、あるいは非難を表します（「〜すべきだった」）。",
+    "longExplanation": "「-았/었어야 했다」は動詞の語幹に付き、過去のある時点において当然行うべきであった行為を果たさなかったことに対する強い後悔や、相手への反省・非難を表明する文型です。日本語の「〜すべきだった」「〜しておけばよかった」に相当します。否定形は「-지 말았어야 했다」（〜すべきではなかった）となります。",
+    "formation": "陽性母音語幹（ㅏ, ㅗ） + -았어야 했다 | 陰性母音語幹 + -었어야 했다 | 하다動詞 + -했어야 했다（否定形：動詞語幹 + -지 말았어야 했다）",
+    "examples": [
+      {
+        "translation": "今さら謝ってももう遅い、最初から素直に過ちを認めるべきだったんだ。"
+      },
+      {
+        "translation": "その話を聞く前に、私を信じるべきだった。"
+      },
+      {
+        "translation": "私はあの会社に応募すべきではなかった。そこでの経験は私にとって決して良くなかった。"
+      },
+      {
+        "translation": "私たちはもっと早く出発すべきだった。そうしていれば今よりもっと多くの観光地を見られたはずなのに。"
+      }
+    ]
   },
   "ko_어아_28": {
-    "title": "~어/아 가다 [eo/a gada] (While doing)",
-    "shortExplanation": "Describes an action that is ongoing or a process that continues over time.",
-    "longExplanation": "‘~어/아 가다’ is 〜を示します that an action started in the past is continuing into the present or future. 〜と訳されます 'while doing' or 'gradually' and is used to emphasize a process or change over time.",
-    "formation": "動詞 stem + 아/어 가다"
+    "title": "~아/어 가다（〜していく、だんだん〜していく）",
+    "shortExplanation": "動詞の語幹に付き、動作や状態が現在から未来に向かって次第に進行・変化していくことを表します（「〜していく」「だんだん〜していく」）。",
+    "longExplanation": "「-아/어 가다」は動詞の語幹に補助動詞「가다」（行く）が結合した表現です。ある動作や変化が過去や現在から出発し、未来に向かって時間とともに継続・深化していくプロセスを表します（배워가다「学んでいく」、나아져가다「良くなっていく」など）。なお、空間移動の動詞と合わさる場合（걸어가다など）は、「〜しながら進んでいく」という具体的な空間移動を表します。",
+    "formation": "陽性母音語幹（ㅏ, ㅗ） + -아 가다 | 陰性母音語幹 + -어 가다 | 하다動詞 + -해 가다",
+    "examples": [
+      {
+        "translation": "私は音楽を聴きながら歩いて行くつもりです。そうすればストレスを軽減できます。"
+      },
+      {
+        "translation": "母は毎朝運動しながら通っていた公園によく行きます。"
+      },
+      {
+        "translation": "赤ちゃんは成長するにつれて、ますます多くのことを学んでいっています。"
+      },
+      {
+        "translation": "私は韓国語を勉強しながら、次第に上達していっています。"
+      }
+    ]
   },
   "ko_어아_29": {
-    "title": "~어/아 달라다 [eo/a dallada] (To ask to do)",
-    "shortExplanation": "Used to request someone to do something, often in a formal or polite manner.",
-    "longExplanation": "‘~어/아 달라다’ is 〜を表すために使用されます a request for someone to perform an action. This form is typically employed in indirect or reported requests – usually followed by the quotation marker ‘-라고’ – and is most appropriate in formal or respectful contexts.",
-    "formation": "動詞 stem + 어/아 달라다 (with appropriate vowel harmony; in reported speech, it becomes 달라고)"
+    "title": "~어/아 달라다（〜してくれるよう頼む、間接話法での依頼）",
+    "shortExplanation": "間接話法において、話し手（または依頼主）自身のために何かをしてくれるよう他者に頼んだり要求したりしたことを伝える表現です（「〜してくれと頼む」）。",
+    "longExplanation": "「~어/아 달라다」は、動詞「주다（あげる・くれる）」が間接話法で用いられる際の特殊な形態です。話し手自身（あるいは依頼を行った主体）のために何か行動をしてくれるよう依頼した内容を引用・転述する際に用いられ、主に「~어/아 달라고 하다/부탁하다/요청하다（〜してくれと言う・頼む・要求する）」の形で使われます。なお、行為の恩恵が第三者に向けられる場合は「~어/아 주라고 하다」を用います。",
+    "formation": "動詞語幹 + -어/아 달라다（主に間接引用表現として：動詞語幹 + -어/아 달라고 하다/부탁하다/요청하다）",
+    "examples": [
+      {
+        "translation": "先生、この言葉でもう一度説明してくださるようお願いいたします。"
+      },
+      {
+        "translation": "私が理解できなかったため、もう一度説明してくれるよう要請しました。"
+      },
+      {
+        "translation": "友達に描き方を教えてほしいとお願いしました。"
+      },
+      {
+        "translation": "医師に症状について詳しく説明してくれるようお願いしました。"
+      }
+    ]
   },
   "ko_어아_30": {
-    "title": "~어/아 다니다 [eo/a danida] (To attend, to go regularly)",
-    "shortExplanation": "〜を示します habitual or regular attendance/visiting of a place.",
-    "longExplanation": "‘~어/아 다니다’ is 〜を表すために使用されます that someone regularly attends or visits a place, such as a school, workplace, or other location. It conveys the idea of a habitual or routine action.",
-    "formation": "Typically used with place-related verbs (e.g., 학교에 다니다, 도서관에 다니다)"
+    "title": "~어/아 다니다 / ~에 다니다（〜に通う、頻繁に行き来する）",
+    "shortExplanation": "特定の場所（学校、会社、図書館など）に習慣的・定期的に通ったり、頻繁に行き来したりすることを表します（「〜に通う」「〜へ行く」）。",
+    "longExplanation": "「다니다」はある場所へ規則的・反復的に行き来することを表す動詞です。「場所名詞 + 에 다니다」の形で、特定の目的を持って特定の場所へ定期的に通うこと（学校に通う「학교에 다니다」、会社に勤める「회사에 다니다」など）を表します。また、動詞語幹と結合した「-어/아 다니다」（「걸어 다니다 歩き回る」「찾아다니다 探し回る」など）の形では、移動しながら反復して動作を行う複合的な表現となります。",
+    "formation": "場所名詞 + 에 다니다（または 動詞語幹 + -어/아 다니다）",
+    "examples": [
+      {
+        "translation": "私は毎日学校に通っています。"
+      },
+      {
+        "translation": "彼女はよく図書館に通っています。"
+      },
+      {
+        "translation": "私たちは週末ごとに市場へ出かけます。"
+      },
+      {
+        "translation": "弟（妹）は放課後に塾へ通っています。"
+      }
+    ]
   },
   "ko_어아_31": {
-    "title": "~어/아 두다 [eo/a duda] (To leave something as is, to do in advance)",
-    "shortExplanation": "〜を示します that an action is performed and its resulting state is maintained or preserved for future reference.",
-    "longExplanation": "‘~어/아 두다’ is 〜を表すために使用されます that an action has been performed so that its result remains unchanged. It often implies preparing something in advance or leaving something in a particular state for later use.",
-    "formation": "動詞 stem + 어/아 두다"
+    "title": "~어/아 두다（〜しておく、〜したままにしておく）",
+    "shortExplanation": "動作を完了させ、その結果生じた状態を将来のためにそのまま維持・保管しておくことを表します（「〜しておく」「〜したままにしておく」）。",
+    "longExplanation": "「~어/아 두다」は動詞語幹に補助動詞「두다（置く、保つ）」が結合した構文です。ある行為を行い、その結果の状態を後々の使用や都合のためにそのまま保っておく（「あらかじめ準備しておく」「そのままの状態にしておく」）ことを表します。類似表現の「~어/아 놓다」と比べて、「~어/아 두다」はより長期的な保管や将来への備えというニュアンスが強く含まれます。",
+    "formation": "動詞語幹 + -어/아 두다（陽母音語幹には -아 두다、陰母音語幹には -어 두다、하다動詞は 해 두다 となる）",
+    "examples": [
+      {
+        "translation": "ドアを開けたままにしておきました。"
+      },
+      {
+        "translation": "明日使う食べ物をあらかじめ準備しておきました。"
+      },
+      {
+        "translation": "彼は宿題を全部済ませておきました。"
+      },
+      {
+        "translation": "店のドアを閉めたままにしておきました。"
+      }
+    ]
   },
   "ko_어아_32": {
-    "title": "~어/아 들다 [eo/a deulda] (Suddenly start to)",
-    "shortExplanation": "Used mainly in narrative contexts to indicate a sudden or unexpected onset of an action or state.",
-    "longExplanation": "‘~어/아 들다’ is a grammatical structure used in Korean storytelling to express that an action or emotion began abruptly or unintentionally. Often marked by a contrasting clause with ‘들더니’, it conveys a sudden change. Note that this form is less common in everyday conversation than '~기 시작하다'.",
-    "formation": "動詞 stem + 어/아 들다 (use 아 if the stem ends in ㅏ or ㅗ; otherwise, use 어)"
+    "title": "~어/아 들다（急に〜し始める、にわかに〜しだす）",
+    "shortExplanation": "主に物語や描写的な文脈で用いられ、ある動作や感情、現象が唐突に、予期せず始まりだすことを表します（「急に〜しだす」「にわかに〜し始める」）。",
+    "longExplanation": "「~어/아 들だ」は、韓国語の物語文や文学的叙述において、感情の高まりや自然現象、動作が突然わき起こったり急激に始まったりする様子を描写する構文です。多くの場合、「~어/아 들더니」の形で後続節と結びつき、急な変化や対比的な展開を導きます。現代の日常会話ではあまり使われず、一般的には「~기 시작하다」や「갑자기 ~하다」が使われます。",
+    "formation": "動詞・形容詞語幹 + -어/아 들다（語幹末尾が陽母音なら -아 들다、陰母音なら -어 들다）",
+    "examples": [
+      {
+        "translation": "その言葉を聞くやいなや、弟（妹）は急に笑い出したが、すぐに真顔になりました。"
+      },
+      {
+        "translation": "子供が急に泣き出したかと思うと、すぐに笑い声を上げました。"
+      },
+      {
+        "translation": "風がにわかに激しく吹き込んできて、窓がバタンと閉まりました。"
+      },
+      {
+        "translation": "日が沈むと、空が急に暗くなりだし、星たちが姿を現しました。"
+      }
+    ]
   },
   "ko_어아_33": {
-    "title": "~어/아 버리다 [eo/a beorida] (To end up doing, regrettably)",
-    "shortExplanation": "Expresses an action that was completed—often unexpectedly or with regret.",
-    "longExplanation": "‘~어/아 버리다’ is used in Korean to indicate that an action has been carried out completely, sometimes conveying a sense of regret, loss, or unintended finality. It emphasizes that something happened in its entirety, often in a way that the speaker wishes it hadn’t.",
-    "formation": "動詞 stem + 어/아 버리다"
+    "title": "~어/아 버리다（〜してしまう、〜し終わる - 遺憾やすっきり感）",
+    "shortExplanation": "動作が完全に完了したことを表し、それに伴う「残念・後悔・遺憾」の念や、重荷から解放された「すっきり感」を表します（「〜してしまう」「すっかり〜する」）。",
+    "longExplanation": "「~어/아 버리다」は動詞語幹に補助動詞「버리다（捨てる）」が結合した文型です。動作が完全に終わり、もはや取り返しがつかない状態になったことを表します。文脈に応じて大きく2つのニュアンスを持ちます。(1) 望ましくない事態が起きてしまい「後悔する・残念に思う」（「〜してしまった」）；(2) 負担だった課題や懸案事項をすっかり片付けて「気が楽になる・すっきりする」（「すっかり〜し終える」）。",
+    "formation": "動詞語幹 + -어/아 버리다（陽母音には -아 버리다、陰母音には -어 버리다、하다動詞は 해 버리다 となる）",
+    "examples": [
+      {
+        "translation": "コーヒーを全部飲んでしまいました。だからもうこれ以上飲むものがありません。"
+      },
+      {
+        "translation": "猫が私の靴を噛みちぎってしまったので、新しい靴を買わなければなりません。"
+      },
+      {
+        "translation": "ダイエットをしようと思っていたのに、ケーキを丸ごと全部食べてしまいました。"
+      },
+      {
+        "translation": "結局、普段勉強せずに、試験前日の夜に教科書を一冊丸ごと読み通してしまいました。"
+      }
+    ]
   },
   "ko_어아_34": {
-    "title": "~어/아 보다 [eo/a boda] (To try doing)",
-    "shortExplanation": "Used when the speaker expresses the intention of trying to do something.",
-    "longExplanation": "'~어/아 보다' is 〜を示します an attempt or trial of an action. The verb preceding '보다' shows what is being attempted, while the overall tense of the sentence is determined by the form of '보다'. It hints at testing an action to see what happens.",
-    "formation": "動詞 stem + 아/어 + 보다"
+    "title": "~어/아 보다（〜してみる、〜したことがある）",
+    "shortExplanation": "動詞の語幹に付き、ある動作を試みにやってみる「試み」や、過去形において「経験」を表します（「〜してみる」「〜したことがある」）。",
+    "longExplanation": "「~어/아 보다」は用言の語幹に補助動詞「보다（見る・試す）」が結合した頻出文型です。主に2つの意味用法があります。(1) 「試行・試み」：どのような結果になるか試しに行為を行ってみること（「〜してみる」）；(2) 「経験」：過去形「-어/아 봤다」の形で用いられ、過去にその動作を行った経験があること（「〜したことがある」）を表します。",
+    "formation": "動詞語幹 + -어/아 보다（陽母音には -아 보다、陰母音には -어 보다、하다動詞は 해 보다 となる）",
+    "examples": [
+      {
+        "translation": "今日は初めて韓国語を教えてみようかと考えているところです。"
+      },
+      {
+        "translation": "私は今週末、あなたが推薦してくれたカフェでコーヒーを飲んでみる予定です。"
+      },
+      {
+        "translation": "彼女は新しいレシピを見つけて料理を作ってみようとしています。"
+      },
+      {
+        "translation": "明日はその街を初めて訪れて、周りを見回してみるつもりです。"
+      }
+    ]
   },
   "ko_고_35": {
-    "title": "~고 나서 [go naseo] (After doing)",
-    "shortExplanation": "Indicates that after one action is completed, another action follows naturally.",
-    "longExplanation": "The expression '~고 나서' is used to show a sequence of events—once action A is completed, action B takes place. It conveys that the completion of the first action sets the stage for what comes next.",
-    "formation": "動詞 stem + 고 나서"
+    "title": "~고 나서（〜してから、〜し終えた後で）",
+    "shortExplanation": "前項の動作が完全に完了した後に、引き続いて後項の動作を行うという時間的な順序を強調して表します（「〜した後に」「〜し終えてから」）。",
+    "longExplanation": "「~고 나서」は接続語尾「-고」に動作の完了を表す補助動詞「나다」の「-아서」形が合わさった表現です。前項の動作が完全に終わり、その区切りがついた段階で次の動作へと移行する時間的推移を明瞭に際立たせます。単なる動作の並列やつながりを表す「-고」に比べて、前項の動作が「完了したこと」をより強く意識させる響きを持ちます。",
+    "formation": "動詞語幹 + 고 나서",
+    "examples": [
+      {
+        "translation": "家に帰ってご飯を食べ終えてから勉強しなければなりません。"
+      },
+      {
+        "translation": "ヨガの授業に参加した後は、体がより柔軟になるでしょう。"
+      },
+      {
+        "translation": "試験を終えてから休息を取るつもりです。"
+      },
+      {
+        "translation": "運動した後はタンパク質の摂取を増やす必要があります。"
+      }
+    ]
   },
   "ko_어아_36": {
-    "title": "~어/아 오다 [eo/a oda] (To come to do)",
-    "shortExplanation": "Expresses a gradual change or process that has accumulated over time.",
-    "longExplanation": "‘~어/아 오다’ is 〜を示します that a change or development has been coming about gradually. It is often attached to an action verb to show that, over time, a new state has been reached—frequently with a nuance of unexpectedness.",
-    "formation": "動詞 stem + 어/아 오다"
+    "title": "~어/아 오다（〜してきた、次第に〜してくる）",
+    "shortExplanation": "過去のある時点から現在に至るまで、動作や状態の変化が継続・累積して進行してきたことを表します（「ずっと〜してきた」「だんだん〜になってきた」）。",
+    "longExplanation": "「~어/아 오다」は動詞語幹に補助動詞「오다（来る）」が結合した文型です。ある行為や状態の変化が過去からスタートし、時間の経過とともに徐々に進展・蓄積しながら現在の時点まで及んできたことを表します。日本語の「〜してきた」「だんだん〜になってきた」に相当し、「점점（だんだん）」「계속（ずっと）」などの副詞と共起して変化のプロセスを強調します。",
+    "formation": "動詞語幹 + -어/아 오다（陽母音には -아 오다、陰母音には -어 오다、하다動詞は 해 오다 となる）",
+    "examples": [
+      {
+        "translation": "映画を見続けるうちに、次第にストーリーに興味を抱くようになってきました。"
+      },
+      {
+        "translation": "練習を繰り返すうちに、私はだんだんと韓国語が上達してきました。"
+      },
+      {
+        "translation": "時間が経つにつれて、彼女はだんだん私のことをより理解してくれるようになってきました。"
+      },
+      {
+        "translation": "お互いを知るようになるにつれて、私たちの仲はますます近づいてきています。"
+      }
+    ]
   },
   "ko_어아지다_37": {
-    "title": "~어/아지다 [eo/ajida] (Become)",
-    "shortExplanation": "〜を表すために使用されます change or transformation; essentially, 'become'.",
-    "longExplanation": "‘~어/아지다’ is attached to descriptive verbs (adjectives) to indicate that something has changed or transformed into a new state. The form ‘~어지다’ is used if the stem ends in a vowel, and ‘~아지다’ is used if it ends in a consonant.",
-    "formation": "Descriptive verb stem + 어/아지다"
+    "title": "~어/아지다（〜くなる、〜になる - 状態の変化）",
+    "shortExplanation": "形容詞の語幹に付き、時間の経過に伴って性質や状態が変化し、新たな状態になることを表します（「〜くなる」「〜になる」）。",
+    "longExplanation": "「~어/아지다」は形容詞語幹に補助用言「지다」が接続した、状態変化を表す代表的な文法です。人や物、環境が従前の状態から新たな性質や状況へと推移することを表し、日本語の「〜くなる」「〜になる」に相当します。語幹末尾の母音によって形態が変わり、陽母音（ㅏ, ㅗ）には「-아지다」、陰母音には「-어지다」、하다形容詞は「해지다」となります。",
+    "formation": "形容詞語幹 + -어/아지다（陽母音には -아지다、陰母音には -어지다、하다は 해지다 となる）",
+    "examples": [
+      {
+        "translation": "日増しに暑くなってきたので、家でゆっくり休むことにしました。"
+      },
+      {
+        "translation": "友達があまりにも忙しくなってしまったため、私たちは頻繁に会えなくなりました。"
+      },
+      {
+        "translation": "この公園は季節が変わるたびに美しくなるので、多くの人々が訪れます。"
+      },
+      {
+        "translation": "ストーブをつけたので、部屋が暖かくなりました。"
+      }
+    ]
   },
   "ko_었으면_38": {
-    "title": "~었으면 좋겠다 [eosseumyeon jotgetda] (I wish it was/were)",
-    "shortExplanation": "Expresses a wish or desire for something that did not happen or is unreal.",
-    "longExplanation": "‘~었으면 좋겠다’ is 〜を表すために使用されます a wish or regret regarding an unfulfilled or unreal situation. It can convey a longing for a different outcome—whether about the past, present, or future.",
-    "formation": "動詞 (아/어/여) + 었으면 좋겠다"
+    "title": "~었으면 좋겠다（〜ならいいのに、〜だったらよかったのに - 願い・願望）",
+    "shortExplanation": "話し手の強い願望や期待を表し、実現していない事柄や現実とは異なる状況に対する希望・未練を表します（「〜ならいいのに」「〜であればよかったのに」）。",
+    "longExplanation": "「~었으면 좋겠다」は過去時制語尾「-았/었-」に仮定の接続語尾「-으면」と形容詞「좋겠다（良いだろうに）」が結びついた構文です。話し手の心からの望みや理想的な状況への憧れを表すとともに、過去に思い通りにいかなかったことへの後悔や未練（反実仮想）を込めて表現する際にも多用されます。基本形の「-(으)면 좋겠다」に比べて過去形を含むことで、切実な思いや仮定性がより色濃く表れます。",
+    "formation": "動詞・形容詞語幹 + -았/었/였으면 좋겠다（名詞 + -이었/였으면 좋겠다）",
+    "examples": [
+      {
+        "translation": "あの時、彼女に自分の本心を伝えていればよかったのに。"
+      },
+      {
+        "translation": "もっと早く家に帰れたらいいのに。"
+      },
+      {
+        "translation": "あなたが私のことをもっと理解してくれたらいいのに。"
+      },
+      {
+        "translation": "私がその事実を知っていればよかったのに。"
+      }
+    ]
   },
   "ko_에_39": {
-    "title": "~에 한하다 [e hanhada] (Limited to)",
-    "shortExplanation": "Indicates that something is applicable only under a certain condition or case.",
-    "longExplanation": "The pattern ‘~에 한하다’ is 〜を表すために使用されます that a rule, offer, or situation applies exclusively to a specific case or condition. In English it is often translated as 'limited to' or 'applicable only to'.",
-    "formation": "名詞 + 에 한하다"
+    "title": "~에 한하다（〜に限る、〜に限定される）",
+    "shortExplanation": "名詞の後に付き、特定の条件、対象、期間だけに限定して規則や特典が適用されることを表します（「〜に限る」「〜に限定する」）。",
+    "longExplanation": "「~에 한하다」は助詞「-에」に漢字語動詞「한하다（限る）」が結合した格式ばった文法表現です。公式な告知、契約書、利用規約などで頻繁に用いられ、ある方針や特典、サービスの適用範囲が特定の対象者や条件だけに排他的に制限されていることを明示します。文中で副詞的に後続節を修飾する際には、「~에 한해」や「~에 한하여（〜に限って）」の形が多用されます。",
+    "formation": "名詞 + 에 한하다（副詞的用法では主に：名詞 + 에 한해 / 에 한하여 / 에 한한）",
+    "examples": [
+      {
+        "translation": "今回の割引イベントは本日に限り適用されます。他の日には適用されません。"
+      },
+      {
+        "translation": "私の愛は彼女だけに限定されており、他の人には全く関心がありません。"
+      },
+      {
+        "translation": "本製品の保証書サービスは初回購入者に限って提供されます。"
+      },
+      {
+        "translation": "今回のイベントは会員に限り参加可能です。非会員は参加できません。"
+      }
+    ]
   },
   "ko_에_40": {
-    "title": "~에 한해서 [e hanhaeseo] (Only in, limited to)",
-    "shortExplanation": "Specifies that something is valid or available only under a particular condition or circumstance.",
-    "longExplanation": "‘~에 한해서’ is 〜を示します that a rule, offer, or situation applies exclusively when a specific condition is met. It means 'only in' or 'limited to' the stated context, implying that it does not extend to other cases.",
-    "formation": "名詞 + 에 한해서"
+    "title": "~에 한해서（〜に限って、〜のみに限定して）",
+    "shortExplanation": "名詞の後に付き、ある特別な措置や条件、サービスが特定の対象や状況においてのみ有効であることを強調します（「〜に限って」「〜のみに」）。",
+    "longExplanation": "「~에 한해서」は「~에 한하다」に理由・接続の語尾「-어서」が合わさった副詞的表現です。特定の例外的な条件や限定された対象だけをクローズアップし、その枠組みの範囲内においてのみ後続の事態が許可されたり提供されたりすることを強調します。日本語の「〜に限って」「〜だけに限定して」に相当し、ビジネスや公式通知などで限定条件を提示する際によく用いられます。",
+    "formation": "名詞 + 에 한해서（または 動詞・形容詞語幹 + -기(에) 한해서）",
+    "examples": [
+      {
+        "translation": "明日が休日に限って、今夜遅くまで仕事をすることができます。"
+      },
+      {
+        "translation": "この特別割引はVIPのお客様に限って提供されるサービスです。"
+      },
+      {
+        "translation": "私たちは本日に限って無制限ドリンクを提供いたします。"
+      },
+      {
+        "translation": "このモバイルクーポンはスターバックス店舗に限って使用可能です。"
+      }
+    ]
   },
   "ko_에_41": {
-    "title": "~에 힘쓰다 [e himsseuda] (Put effort into)",
-    "shortExplanation": "Describes the act of putting a lot of effort into or striving for something.",
-    "longExplanation": "‘~에 힘쓰다’ is 〜を示します that someone is dedicating significant effort toward achieving a goal or maintaining a state. 〜と訳されます 'to put effort into', 'to strive for', or 'to work hard for' a particular objective.",
-    "formation": "名詞 + 에 힘쓰다"
+    "title": "~에 힘쓰다（〜に力を注ぐ、〜に励む、〜に尽力する）",
+    "shortExplanation": "名詞の後に付き、ある目標の達成や向上のために多くの力や情熱を注ぎ込み、全力を尽くすことを表します（「〜に力を注ぐ」「〜に励む」）。",
+    "longExplanation": "「~에 힘쓰다」は助詞「-에」に動詞「힘쓰다（力を尽くす・努める）」が結合した文型です。特定の目標達成や自己研鑽、健康維持などのために、精力や熱意を集中的に注ぎ込んで誠心誠意努力する様子を表します。日本語の「〜に力を入れる」「〜に励む」「〜に尽力する」に相当します。動詞と結びつく場合は名詞化語尾を介して「-기(에) 힘쓰다」の形を取ります。",
+    "formation": "名詞 + 에 힘쓰다（動詞と結びつく場合：動詞語幹 + -기(에) 힘쓰다 / -(으)ㅁ에 힘쓰다）",
+    "examples": [
+      {
+        "translation": "私は韓国語の学習に力を注いでいます。まだ不十分ですが、きっと良くなっていくでしょう。"
+      },
+      {
+        "translation": "彼女は勉強に励み始め、その結果は常に良好でした。"
+      },
+      {
+        "translation": "私たちのチームはこのプロジェクトで最善を尽くそうと努力しています。"
+      },
+      {
+        "translation": "友人たちが健康管理に励んでいる姿を見て、とても誇らしく思います。"
+      }
+    ]
   },
   "ko_으나마나_42": {
-    "title": "~으나마나 [eunamana] (It's no use, to no avail)",
-    "shortExplanation": "Used to convey that an effort or expectation was in vain.",
-    "longExplanation": "The grammar point '~으나마나' is used in Korean to express that an action or effort yielded no meaningful or positive result. It implies that no matter how much one does, the outcome remains unsatisfactory. This structure is generally used in negative contexts.",
-    "formation": "動詞-으나마나"
+    "title": "~으나마나（〜してもしなくても同じ、〜しても無駄）",
+    "shortExplanation": "前項の動作を行っても行わなくても結果は同じであり、努力や行動が無駄に終わることを表す接続語尾です（「〜してもしなくても同じだ」「〜するだけ無駄だ」）。",
+    "longExplanation": "「~으나마나」は「-(으)나（〜するが）」と「마나（〜しないが）」が合わさった接続語尾です。「〜しても、しなくても結果に変わりはない」という意味を表し、行動や努力が徒労に帰したこと、あるいは結果が火を見るより明らかであることを示します。そのため、後続節には期待外れの結果や否定的な事態が続くのが通例です（「보나 마나 見るまでもない」などの慣用表現としても頻用されます）。",
+    "formation": "動詞語幹 + -으나마나（パッチムがある場合は -으나마나、パッチムがない場合やㄹパッチムの場合は -나마나）",
+    "examples": [
+      {
+        "translation": "試験で良い点を取ろうと一生懸命勉強したものの無駄で、結果はいつも満足のいくものではありませんでした。"
+      },
+      {
+        "translation": "早く到着しようとタクシーに乗ったところで甲斐もなく、結局遅刻してしまいました。"
+      },
+      {
+        "translation": "彼は病院に行って薬をもらってきたものの無駄で、症状は全く良くなりませんでした。"
+      },
+      {
+        "translation": "私が彼女に謝ったところで無駄で、彼女は私を許してくれませんでした。"
+      }
+    ]
   },
   "ko_으니니까_43": {
-    "title": "~으니/니까 [euni/nikka] (So, since, because)",
-    "shortExplanation": "Expresses a reason or cause; similar to 'so', 'since', or 'because'.",
-    "longExplanation": "'~으니/니까' is a conjunction used to denote a cause-and-effect relationship between two clauses. It provides a reason or explanation for the following statement and is widely used to justify why something happens.",
-    "formation": "動詞-으니/니까"
+    "title": "~으니/니까（〜だから、〜ので、〜すると - 原因・理由・契機）",
+    "shortExplanation": "前項が後項の理由、原因、判断の根拠、または新たな事実を発見する契機であることを表す代表的な接続語尾です（「〜だから」「〜ので」）。",
+    "longExplanation": "「~으니/니까」（およびその短縮形「-(으)니」「-(으)니까」）は理由や原因を表す極めて重要な接続語尾です。客観的な因果関係を表す「-아/어서」とは異なり、話し手の主観的な理由づけや働きかけの根拠を表すため、後続節に命令形（「-(으)세요」）や勧誘形（「-(으)ㅂ시다」）を自由に伴うことができます。また、前項の動作を行った結果、後項の新たな状況に気づいたという「契機・発見」の用法も持ち合わせています。",
+    "formation": "動詞・形容詞語幹 + -(으)니까 / -(으)니（パッチムがある場合は -으니까/-으니、ない場合は -니까/-니）| 名詞 + -(이)니까 / -(이)니",
+    "examples": [
+      {
+        "translation": "今日は土曜日なので学校へは行きません。週末は学校が休みです。"
+      },
+      {
+        "translation": "誰も助けてくれないので、自分で解決しなければなりませんでした。"
+      },
+      {
+        "translation": "翻訳機を使うと、韓国語をより簡単に理解することができます。"
+      },
+      {
+        "translation": "雨が降っているから傘を持って出かけてください。雨に濡れると風邪をひいてしまうかもしれません。"
+      }
+    ]
   },
   "ko_을_44": {
-    "title": "~을 바탕으로 [eul batangeuro] (Based on)",
-    "shortExplanation": "Indicates that something is done 'based on' or 'on the basis of' certain information.",
-    "longExplanation": "'~을 바탕으로' is a postpositional phrase 〜を表すために使用されます that an action or decision is founded on a particular fact, evidence, or experience. The noun preceding this expression serves as the basis for what follows.",
-    "formation": "名詞 + 을 바탕으로"
+    "title": "~(을/를) 바탕으로（〜をもとに、〜に基づいて、〜を土台として）",
+    "shortExplanation": "ある事実や経験、データ、意見などを土台や根拠として、行動を起こしたり判断・決定を下したりすることを表します（「〜に基づいて」「〜をもとに」）。",
+    "longExplanation": "「~(을/를) 바탕으로」は、「基礎・土台」を意味する名詞「바탕」に、手段や方法を表す助詞「-으로」が結合した表現です。先行する名詞が後続する行為や創作、改善、意思決定の拠り所・土台となっていることを示します。日本語の「〜をもとに」「〜に基づいて」「〜を土台として」に相当します。なお、後ろの名詞を修飾する場合は「~(을/를) 바탕으로 한 + 名詞」の形が用いられます。",
+    "formation": "名詞 + 을/를 바탕으로（パッチムがある名詞には 을 바탕으로、パッチムがない名詞には 를 바탕으로）",
+    "examples": [
+      {
+        "translation": "私たちは顧客からのフィードバックをもとに製品を改善しました。"
+      },
+      {
+        "translation": "彼女は自身の経験に基づいて本を書きました。"
+      },
+      {
+        "translation": "私は前の会社での経験をもとに、この作業を迅速に終えることができます。"
+      },
+      {
+        "translation": "彼らは事実に基づいて決定を下しました。"
+      }
+    ]
   },
   "ko_을_45": {
-    "title": "~을 빼다 [eul ppaeda] (Except for)",
-    "shortExplanation": "Expresses exclusion; meaning 'except for' or 'aside from'.",
-    "longExplanation": "'~을 빼다' is used in Korean to exclude a particular item or group from a general statement. It specifies that while a general rule applies, there are exceptions.",
-    "formation": "名詞 + 을/를 빼다 + (rest of the sentence)"
+    "title": "~(을/를) 빼다 / ~(을/를) 빼고(는)（〜を除いて、〜を抜いて、〜以外は）",
+    "shortExplanation": "全体の中から特定の対象や例外となる項目を取り除き、除外することを表します（「〜を除いて」「〜を抜いて」）。",
+    "longExplanation": "「빼다」は「抜く、除く、引く」という意味の動詞です。日常会話や文章では、接続形の「~을/를 빼고」や強調の助詞を伴った「~을/를 빼고는」の形で極めてよく用いられ、全体の枠組みから一部の例外を切り離して「〜を除いては」「〜を抜きにして」という意味を表します。後続の節脈脈では、その例外を除く全体が共通の状態や性質を持っていることが述べられます。",
+    "formation": "名詞 + 을/를 빼다（主に 名詞 + 을/를 빼고 / 을/를 빼고는 の形で使用。パッチムありは 을、なしは 를）",
+    "examples": [
+      {
+        "translation": "うちの学校の生徒はみんな親切です。数人の生徒を除けば全員とても優しいです。"
+      },
+      {
+        "translation": "この食堂の料理はどれも美味しいです。いくつかのメニューを除いては全部美味しいです。"
+      },
+      {
+        "translation": "ここにいる人は何人かを除いて全員韓国語が話せます。"
+      },
+      {
+        "translation": "読んだすべての本の中で、数冊を除いて一番面白かったです。"
+      }
+    ]
   },
   "ko_을_46": {
-    "title": "~을 사이 [eul sai] (Between)",
-    "shortExplanation": "〜を表すために使用されます 'between' or 'among'.",
-    "longExplanation": "'~을 사이' is 〜を示します that something is located between or among two or more items. It is most naturally used with two nouns, often connected with '과/와', to show a spatial or conceptual intermediate position.",
-    "formation": "Noun1과(와) Noun2 사이(에)"
+    "title": "~(과/와) ~ 사이(에)（〜と〜の間（に））",
+    "shortExplanation": "2つ以上の対象の空間的な位置、時間の隔たり、あるいは人間関係の「間」を表します（「〜と〜の間に」）。",
+    "longExplanation": "「사이」は、物理的な空間のすき間、時間の区切り、または人と人との関係性を表す名詞です。一般的に並立助詞「과/와」と組み合わされ、「名詞1 + 과/와 + 名詞2 + 사이(에)」の形で用いられます。また、複数の人を表す名詞の後について「우리 사이에（私たちの間で）」のようにも使われます。空間や時間の位置づけを示す副詞句として用いる場合は、場所・時間を表す助詞「-에」を伴います。",
+    "formation": "名詞1 + 과/와 + 名詞2 + 사이(에)（パッチムありは 과、なしは 와。または 複数名詞 + 사이(에)）",
+    "examples": [
+      {
+        "translation": "私は朝食と昼食の間に簡単な軽食をとります。"
+      },
+      {
+        "translation": "1つ目の作業と2つ目の作業の間に休憩時間をとることが大切です。"
+      },
+      {
+        "translation": "彼女の家と学校の間にある公園で勉強をしました。"
+      },
+      {
+        "translation": "私たちは2つの会社の間にあるレストランで会いました。"
+      }
+    ]
   },
   "ko_을_47": {
-    "title": "~을 테니 [eul teni] (I assume/bet)",
-    "shortExplanation": "〜を表すために使用されます a confident assumption or prediction about a future event.",
-    "longExplanation": "The grammar point '~을 테니' is used to make a deduction or prediction based on available evidence. It expresses the speaker’s confident guess about a result or outcome, usually followed by a consequent action or result.",
-    "formation": "動詞/形容詞 + 을 테니 + (result/consequence)"
+    "title": "~(으)ㄹ 테니(까)（〜だろうから、〜はずだから、私が〜するから）",
+    "shortExplanation": "根拠をもとに将来の事態を強く推測して後続の助言・指示の前提としたり、話し手の意志を表明して相手に行動を促したりする表現です（「〜だろうから」「〜するから」）。",
+    "longExplanation": "「~(으)ㄹ 테니(까)」は、未来・推量を表す連体形語尾「-(으)ㄹ」、推量や意志を表す不完全名詞（依存名詞）「터」、そして理由を表す接続語尾「-(으)니까」が組み合わさった表現です。主に2つの用法があります。(1) 主語が第三者や事物の場合は「〜だろうから」「〜のはずだから」と強い確信を伴う推測を表し、後続節で提案・命令・勧誘を導きます。(2) 主語が話し手自身（一人称）の場合は「私が〜するから、あなたは〜して」と自分の意志を前提として相手に依頼や行動を促します。",
+    "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 테니（パッチムありは -을 테니、パッチムなし・ㄹパッチムは -ㄹ 테니；過去形は -았/었을 테니）",
+    "examples": [
+      {
+        "translation": "明日は雨が降るだろうから、傘を持って行ったほうがいいですよ。"
+      },
+      {
+        "translation": "ジニは幼い頃に水泳を習ったはずだから、泳ぎが得意なはずです。"
+      },
+      {
+        "translation": "彼は起きて朝食を食べたようです。お茶碗にご飯が少し残っているはずですから、朝食を食べて出かけたのでしょう。"
+      },
+      {
+        "translation": "ヨンヒは疲れたと言っていたので、今は家で寝ているでしょうから電話しないでください。"
+      }
+    ]
   },
   "ko_을_48": {
-    "title": "~을 통해 [eul tonghae] (Through, via)",
-    "shortExplanation": "Expresses the means or method by which something is done.",
-    "longExplanation": "The phrase '~을 통해' signifies the channel, method, or process by which an action is carried out. It is used after a noun to show that the following action occurs by way of or through that noun.",
-    "formation": "名詞 + 을 통해"
+    "title": "~(을/를) 통해(서)（〜を通じて、〜を通して）",
+    "shortExplanation": "ある手段、媒体、経路、または経験や過程を経てある行為を行ったり結果を得たりすることを表します（「〜を通じて」「〜を通して」）。",
+    "longExplanation": "「~(을/를) 통해(서)」は、「通じる、通る」を意味する動詞「통하다」の活用形に由来する表現です。名詞に後続して、情報伝達の手段や媒介（メール、書籍、翻訳ツールなど）、または人脈や特定のプロセスを経て目的を達成することを示します。日本語の「〜を通じて」「〜を通して」にそのまま対応します。後ろの名詞を修飾する場合は「~(을/를) 통한 + 名詞」の形を用います。",
+    "formation": "名詞 + 을/를 통해(서)（パッチムがある名詞には 을 통해、パッチムがない名詞には 를 통해）",
+    "examples": [
+      {
+        "translation": "私たちはメールを通じて意見を交換したので、誰もが気兼ねなく意見を言えました。"
+      },
+      {
+        "translation": "私は本を通して新しい知識を学ぶのが好きなので、よく図書館に通っています。"
+      },
+      {
+        "translation": "彼女はGoogle翻訳を通じて韓国語を学んでおり、語学学習をとても手軽に進めています。"
+      },
+      {
+        "translation": "私たちはマスクの着用を通じて新型コロナウイルスの感染拡大を防ぐことができ、多くの命が救われました。"
+      }
+    ]
   },
   "ko_을를_49": {
-    "title": "~을/를 틈타 [eul/reul teumta] (Taking advantage of, during)",
-    "shortExplanation": "Describes using a spare moment or opportunity to do something.",
-    "longExplanation": "'~을/를 틈타' is 〜を示します that someone takes advantage of a gap in time or an opportunity to perform an action. It implies doing something in the interim or making use of a favorable situation.",
-    "formation": "名詞/動詞 stem + 을/를 틈타"
+    "title": "~(을/를) 틈타(서)（〜に乗じて、〜の合間を縫って、〜を機に）",
+    "shortExplanation": "短いすきま時間や機会、あるいは相手の油断や状況のすき間を利用して何らかの行動を起こすことを表します（「〜の合間を縫って」「〜に乗じて」）。",
+    "longExplanation": "「틈」は空間のすき間や時間の合間、油断・隙（すき）を意味する名詞で、「타다」は機会を利用することを意味します。「~(을/를) 틈타(서)」は、通勤時間や休憩時間などの短いすきま時間を上手に活用して何かを行う前向きな文脈や、相手の警戒が薄れたすき間に乗じて行動を起こす文脈で広く用いられます。日本語の「〜の合間を縫って」「〜の隙に乗じて」「〜の機会を利用して」に相当します。",
+    "formation": "名詞 + 을/를 틈타(서)（パッチムがある名詞には 을 틈타、パッチムがない名詞には 를 틈타。または 動詞連体形 + 때/사이를 틈타）",
+    "examples": [
+      {
+        "translation": "私は通勤途中の時間を利用して本を読むようにしているので、退屈な移動時間を有効に活用できます。"
+      },
+      {
+        "translation": "彼女は休憩時間の合間を縫って勉強をしたため、試験の準備がより万全になりました。"
+      },
+      {
+        "translation": "赤ちゃんが寝ている隙を見計らって家事をするので、たくさんの用事を片付けることができます。"
+      },
+      {
+        "translation": "雨の日の合間を縫って雰囲気の良いカフェで読書をしましたが、本当に穏やかなひとときでした。"
+      }
+    ]
   },
   "ko_이기는_50": {
-    "title": "~이기는 한데 [igineun hande] (Although, but)",
-    "shortExplanation": "Indicates a contrast by acknowledging one fact while negating or limiting it with another.",
-    "longExplanation": "'~이기는 한데' is used in Korean to show that while one part of a statement is true, the following part provides a contrasting or limiting remark. It is roughly equivalent to 'although' or 'but' in English.",
-    "formation": "動詞-기는 한데"
+    "title": "~기는 한데 / ~이기는 한데（〜することはするが、〜ではあるけれど）",
+    "shortExplanation": "前節の事実や性質を一旦認めた上で、後節でそれに相反する制約や不満、留保を述べる表現です（「〜することはするけれど」「確かに〜だが」）。",
+    "longExplanation": "「~기는 한데」は、名詞形語尾「-기」、対照を表す助詞「-는」、補助形容詞「하다」、そして逆接・前提を表す接続語尾「-ㄴ/은데」が結合した表現です。相手の意見や客観的事実を一度肯定・受容したのち、「ただし〜」「しかし〜」と別の側面や問題点、不満を付け加える際に用いられます。会話では縮約形の「~긴 한데」が頻繁に使われます。名詞に指定詞「이다」がつく場合は「~(이)기는 한데」となります。",
+    "formation": "動詞語幹 / 形容詞語幹 + -기는 한데（縮約形は -긴 한데；名詞 + (이)기는 한데；過去形は -기는 했는데）",
+    "examples": [
+      {
+        "translation": "その映画は面白く観るには観たのですが、暴力シーンが少し多すぎて居心地が悪かったです。"
+      },
+      {
+        "translation": "韓国語の勉強をしてはいるのですが、それ以上に中国語がもっと上手になりたいです。"
+      },
+      {
+        "translation": "うちのチームが勝ちには勝ちましたが、相手チームのほうが試合運びは上手でした。"
+      },
+      {
+        "translation": "明日スポーツ大会があるのでたくさん練習しなければならないのは確かなのですが、時間がなくてどうすればよいか分かりません。"
+      }
+    ]
   },
   "ko_이나_51": {
-    "title": "~이나 [ina] (Or something)",
-    "shortExplanation": "Expresses uncertainty or gives approximate examples, similar to 'or something' or 'or so'.",
-    "longExplanation": "'~이나' is a particle used in Korean to introduce alternatives or approximate examples when the speaker is not certain of the details or wants to imply that there are other possibilities.",
-    "formation": "名詞 + 이나"
+    "title": "~(이)나（〜でも、〜とか、〜も——妥協・選択・数量の強調）",
+    "shortExplanation": "最善ではないが代案として選ぶニュアンス（「〜でも」「〜とか」）、または数量詞について予想以上の多さを強調する表現です（「〜も」「〜もの」）。",
+    "longExplanation": "「~(이)나」は多様な意味合いを持つ助詞です。主な機能として、(1) 「それほど満足ではないが、代案としてこれでも」という妥協・気軽な提案（「お茶でも」「ピクニックにでも」）、(2) 2つ以上の名詞を並べる「〜か〜」（または）、(3) 数量詞に結合して話し手の予想をはるかに超えていることに対する驚きを表す強調用法（日本語の「〜も」「〜もの」）があります。",
+    "formation": "名詞 + (이)나（パッチムがある名詞には 이나、パッチムがない名詞には 나）",
+    "examples": [
+      {
+        "translation": "喉がカラカラなので、コーヒーかお茶か何か飲みます。"
+      },
+      {
+        "translation": "今度の週末、ピクニックにでも行きましょうか？良い天気を楽しむのも良さそうです。"
+      },
+      {
+        "translation": "彼女は昼食にラーメンやいなり寿司のような簡単なものを食べました。"
+      },
+      {
+        "translation": "バスがなかったので、私は10キロも歩いて家に帰りました。"
+      }
+    ]
   },
   "ko_이래_52": {
-    "title": "~이래 [irae] (Since then, like this)",
-    "shortExplanation": "Expresses that a state or action has continued from a past point until now, or describes the manner in which something is done.",
-    "longExplanation": "'~이래' is used in Korean to indicate that a situation has continued from a specific point in the past to the present, or to describe how something is done. It is generally translated as 'since then' or 'like this' in English.",
-    "formation": "動詞 Stem + (으)면서 이래 / 名詞 + 이래"
+    "title": "~(으)ㄴ 이래(로) / ~ 이래(로)（〜して以来、〜以降ずっと）",
+    "shortExplanation": "過去のある時点や出来事を起点として、その時から現在に至るまである状態や行為が継続していることを表します（「〜（して）以来」「〜からこのかた」）。",
+    "longExplanation": "「이래」は「〜以来、〜以後」を意味する名詞です。動詞の過去連体形に後続して「~(으)ㄴ 이래(로)」、または名詞に直接付いて「名詞 + 이래(로)」の形で用いられます。過去に生じたある出来事を契機・出発点とし、それ以降現在まで感情の変化、習慣の定着、あるいは事態の推移が絶え間なく続いていることを強調します。日本語の「〜して以来」「〜以来ずっと」に該当します。",
+    "formation": "動詞語幹 + -(으)ㄴ 이래(로)（パッチムありは -은 이래、なしは -ㄴ 이래；名詞 + 이래(로)）",
+    "examples": [
+      {
+        "translation": "学校で彼女に初めて出会って以来、彼女を愛するようになりました。"
+      },
+      {
+        "translation": "インドに来て初めて辛い料理を食べて以来、辛い料理が好きになりました。"
+      },
+      {
+        "translation": "起きて話を聞いてからというもの、それ以降ずっと声を出さないようになりました。"
+      },
+      {
+        "translation": "建物が火事で焼失して以来、そこは空き家になってしまいました。"
+      }
+    ]
   },
   "ko_이러하다_53": {
-    "title": "~이러하다 [ireohada] (Like this, such)",
-    "shortExplanation": "〜を表すために使用されます 'like this' or 'such', indicating a certain state or condition.",
-    "longExplanation": "'~이러하다' is a descriptive verb used in Korean to depict a specific state, condition, or characteristic. It is used to describe something that is 'like this' or 'in such a way'—often when directly observing or experiencing the subject.",
-    "formation": "主語 + 이러하다"
+    "title": "이러하다（このようである、こうである——指示形容詞）",
+    "shortExplanation": "話者の目の前にある、あるいは直接体験している状態・性質・状況が「このようである」ことを表す指示形容詞です（「このようである」「こうである」）。",
+    "longExplanation": "「이러하다」は「このようである、こうである」を意味する指示形容詞で、縮約形は「이렇다」です。目の前で展開している事態や、直前に言及された具体的な状況・性質を指し示します。文末で「이러하다/이러합니다」と叙述するほか、名詞を修飾して「이러한 + 名詞（このような〜）」としたり、理由を表す接続形で「이러하니/이러하므로（事態がこうであるため）」としたり、副詞形で「이러하게（このように）」と活用して広く用いられます。",
+    "formation": "形容詞：이러하다（縮約形：이렇다；連体形：이러한 + 名詞；副詞形：이러하게；接続形：이러하니, 이러하므로）",
+    "examples": [
+      {
+        "translation": "状況がこのようであるため、誰もがどうすべきか分からず途方に暮れました。"
+      },
+      {
+        "translation": "思いのほか問題がこのようになっているので、本当に戸惑ってしまいます。"
+      },
+      {
+        "translation": "人々がこのように扱うことに、とても悲しい気持ちになります。"
+      },
+      {
+        "translation": "彼のこのような行動によって、多くの人々が苦しめられました。"
+      }
+    ]
   },
   "ko_이리_54": {
-    "title": "~이리 [iri] (This way, like this)",
-    "shortExplanation": "Used to denote 'in this manner' or 'like this', often to illustrate the way something is done.",
-    "longExplanation": "'~이리' is a Korean expression that indicates a specific method or manner of doing something. It is equivalent to the English expressions 'like this', 'in this way', or 'in this manner' and is frequently used in everyday conversation.",
-    "formation": "動詞 stem + 이리"
+    "title": "이리（こちらへ、このように、こう——指示副詞）",
+    "shortExplanation": "話し手に向かう空間的な方向（「こちらへ」「ここへ」）、または行動のやり方・方法（「このように」「こう」）を表す指示副詞です。",
+    "longExplanation": "「이리」は多義的な指示副詞です。「こちらへ」を意味する「이리로」の短縮形として移動動詞とともに用いられる用法（「이리 오세요（こちらへおいでください）」など）と、「このように」を意味する「이렇게」の同義語として動作のやり方・手順・角度を具体的に示す用法があります。文脈に応じて空間的な位置取りや動作の実演方法を指し示します。",
+    "formation": "副詞：이리 + 動詞（例：이리 오다, 이리 하다）",
+    "examples": [
+      {
+        "translation": "そんなふうに呼ばないで、このように呼んでください。"
+      },
+      {
+        "translation": "彼は課題をこのようにやってきました。"
+      },
+      {
+        "translation": "このように写真を撮ってください。"
+      },
+      {
+        "translation": "私はこのようにすることになりそうです。"
+      }
+    ]
   },
   "ko_이미_55": {
-    "title": "~이미 [imi] (Already)",
-    "shortExplanation": "〜を表すために使用されます that an action has already been completed.",
-    "longExplanation": "'~이미' is a particle used to denote that an action or event has already taken place. It functions similarly to the English adverb 'already' and is typically placed before the verb phrase to stress the completion of an action.",
-    "formation": "이미 + 動詞"
+    "title": "이미（すでに、もう——時間副詞）",
+    "shortExplanation": "動作や状態の変化が発話時または基準時より前に完了し、既成の事実となっていることを表します（「すでに」「もう」）。",
+    "longExplanation": "「이미」は動作の完了や事態の成立を表す時間副詞です。主に述語の前に置かれ、過去形の用言と呼応して、その行為や事態が「すでに」「疾うに（とうに）」完了している客観的な事実を示します。「予想より早い」という主観的な驚きを表すことが多い「벌써」に対し、「이미」は客観的にすでに済んでいて取り返しがつかない・変更できないという確定的な既成事実を淡々と述べるニュアンスが強いです。",
+    "formation": "副詞：이미 + 述語（主に過去形と呼応：이미 + 用言語幹 + -았/었다）",
+    "examples": [
+      {
+        "translation": "私はすでに韓国語の勉強を始めました。少し遅いスタートでしたが一生懸命やることに決めました。"
+      },
+      {
+        "translation": "私たちはもう海に到着しました。これ以上待つ必要はありません。"
+      },
+      {
+        "translation": "子どもたちはすでに夕食を食べたので、今はお腹がいっぱいです。"
+      },
+      {
+        "translation": "その映画はもう観たので、他のものを探さないといけないようです。"
+      }
+    ]
   },
   "ko_인_56": {
-    "title": "~인 바 [in ba] (Since, because it's the case that)",
-    "shortExplanation": "〜を表すために使用されます 'since' or 'because it's the case that'.",
-    "longExplanation": "'~인 바' is a formal grammar form used to provide a reason or cause for something. It is similar to saying 'since' or 'because it's the case that' in English and is most often found in written or formal contexts.",
-    "formation": "節 (with -인) + 바"
+    "title": "~(으)ㄴ/는 바 / ~인 바（〜であるところ、〜した事実、〜につき——格式表現）",
+    "shortExplanation": "公文書や改まった文脈において、後述の措置や判断の根拠となる事実や背景を提示する表現です（「〜であるところ」「〜したとおり」）。",
+    "longExplanation": "「~(으)ㄴ/는 바」は、連体形語尾に事柄を表す不完全名詞（依存名詞）「바」が結合した表現です。公的な報告、演説、論説文などで極めて頻繁に用いられ、前提となる客観的事実やこれまでの経緯を提示して後文の結論や指示へとつなげます。日本語の「〜であるところ」「〜した次第であり」「〜につき」に相当します。また「-ㄴ 바 있다/없다」の形をとると「〜した経緯・経験がある/ない」という意味を表します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄴ/는 바（過去・完了は -(으)ㄴ 바、現在は -는 바、名詞 + 이다 は -인 바）",
+    "examples": [
+      {
+        "translation": "会合が取り消された経緯があるため、本日は家で休むつもりです。"
+      },
+      {
+        "translation": "彼女が到着した事実は確認されていないため、おそらく彼女は私たちを待っているのでしょう。"
+      },
+      {
+        "translation": "このウイルスに感染した経緯がある方々は、自宅隔離を行わなければなりません。"
+      },
+      {
+        "translation": "トイレの使用が完了したところですので、今は別の方が使用できます。"
+      }
+    ]
   },
   "ko_인_57": {
-    "title": "~인 이상 [in isang] (As long as, since)",
-    "shortExplanation": "〜を表すために使用されます 'as long as', 'since', or 'now that' a certain condition is met.",
-    "longExplanation": "'~인 이상' sets a condition and implies that, because the condition is met, a corresponding result or action must follow. 〜と訳されます 'as long as', 'since', or 'now that' in English.",
-    "formation": "動詞 + (으)ㄴ 이상"
+    "title": "~(으)ㄴ/는 이상 / ~인 이상（〜である以上は、〜した以上は）",
+    "shortExplanation": "ある事実やすでに決定した事態を動かしがたい前提として掲げ、「〜である以上は当然……すべきだ」「……しなければならない」という強い決意や義務を表します。",
+    "longExplanation": "「~(으)ㄴ/는 이상」は、連体形語尾に「以上」を意味する名詞「이상」が結びついた表現です。前節で取り消しのつかない既成事実や確立された立場を前提条件として提示し、後節でその立場や前提にふさわしい義務・覚悟・当然の帰結を導きます。日本語の「〜（した）以上は」「〜である以上は」に極めて忠実に対応します。名詞＋指定詞「이다」には「~인 이상」の形で接続します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄴ/는 이상（動詞過去・完了形は -(으)ㄴ 이상、現在は -는 이상、名詞は -인 이상）",
+    "examples": [
+      {
+        "translation": "私たちがすでにここまで来た以上は、諦めてはいけません。"
+      },
+      {
+        "translation": "許可を得た以上は、自由に行動することができます。"
+      },
+      {
+        "translation": "約束を交わした以上は、絶対に守らなければなりません。"
+      },
+      {
+        "translation": "試験に合格した以上は、私たちがあなたを祝ってあげなければなりませんね。"
+      }
+    ]
   },
   "ko_인즉슨_58": {
-    "title": "~인즉슨 [injeuksseun] (Which means, in other words)",
-    "shortExplanation": "Means 'which implies that' or 'in other words', used to clarify a previous statement.",
-    "longExplanation": "'~인즉슨' is used to restate or clarify the premise mentioned earlier. The following clause summarizes or explains the previous information and is equivalent to 'which means that', 'implying', or 'in other words' in English.",
-    "formation": "Sentence + 인즉슨 + Explanation"
+    "title": "~인즉슨（というのも、そのわけはというと、つまり、言ってみれば）",
+    "shortExplanation": "前述の事実に対する詳しい内情、真の理由、あるいは本質的な意味を解き明かして説明する際に用いられます（「そのわけはというと」「つまり」「事情を説明すると」）。",
+    "longExplanation": "「~인즉슨」は、指定詞「이다」に理由や根拠を提示する古風な接続語尾「-ㄴ즉」と、対照・強調の助詞「-은/는」が結びついた慣用的な表現です。主に「사연인즉슨（事の経緯はというと）」「이유인즉슨（その理由というのは）」「말인즉슨（言葉の真意はというと）」などの慣用句として親しまれており、また文頭に単独で置いて「인즉슨, 〜（つまり〜ということだ）」と前述の要約や裏事情の展開を切り出す役割を果たします。",
+    "formation": "名詞 + 인즉슨（慣用表現：사연인즉슨, 이유인즉슨, 말인즉슨；または文頭で独立して：인즉슨, 〜）",
+    "examples": [
+      {
+        "translation": "私たちには意思疎通の機能が必要です。つまり、互いの考えを分かり合わなければならないということです。"
+      },
+      {
+        "translation": "父は早くに他界いたしました。言ってみれば、私が幼い頃から父親を失っていたという意味です。"
+      },
+      {
+        "translation": "彼がこの業務を担当します。つまり、この仕事の責任が彼にあるということです。"
+      },
+      {
+        "translation": "私たちは来週試験を受けます。そのわけはというと、週末の間に勉強しに図書館へ行く必要があるということです。"
+      }
+    ]
   },
   "ko_일_59": {
-    "title": "~일 리가 없다 [il riga eopda] (Cannot be, it's not possible that)",
-    "shortExplanation": "Expresses disbelief or denial, indicating that something is impossible.",
-    "longExplanation": "'~일 리가 없다' is used to strongly deny or reject the possibility of a situation or action. It is often translated as 'there's no way that...', 'it cannot be that...', or 'it's impossible that...'.",
-    "formation": "動詞 (dictionary form) + 일 리가 없다"
+    "title": "~일 리가 없다 / ~(으)ㄹ 리가 없다（〜のはずがない、〜わけがない - 強い確信否定）",
+    "shortExplanation": "ある事態や可能性を強く否定し、そのようなことが起こるはずがない、道理に合わないと断定するときに用います（「〜のはずがない」「〜わけがない」）。",
+    "longExplanation": "「~(으)ㄹ 리가 없다」はある事実や推測の可能性を真っ向から否定・否認する表現です。「리（理）」は「道理、理由、筋道」を表す依存名詞であり、「-(으)ㄹ」に修飾されて「そのような筋合い・理由が一切ない」という意味を表します。日本語の「〜のはずがない」「〜わけがない」に相当します。過去の推量を否定する場合は「-았/었을 리가 없다」または「-(으)ㄹ 리가 없었다」を用います。類似の表現として「-(으)ㄹ 일이 없다（〜することはない、〜するわけがない）」も用いられます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 리가 없다（パッチムがある場合は -을 리가 없다、パッチムがない場合やㄹパッチムの場合は -ㄹ 리가 없다；名詞 + -일 리가 없다）",
+    "examples": [
+      {
+        "translation": "彼がそんなことをするなんて、あり得ません。そんなことをするはずがありません。"
+      },
+      {
+        "translation": "よく知っているあの人が嘘をつくはずがありません。"
+      },
+      {
+        "translation": "今日は忙しすぎて、映画を楽しむ余裕なんてありません。"
+      },
+      {
+        "translation": "こんな高い車を買うわけがありません。そんなにお金を持っていません。"
+      }
+    ]
   },
   "ko_일수록_60": {
-    "title": "~일수록 [ilsulok] (The more ~, the more ~)",
-    "shortExplanation": "〜を表すために使用されます proportional relationships; 'the more ____, the more ____'.",
-    "longExplanation": "The grammar point '~일수록' denotes a proportional relationship between two states or actions. It is used when an increase or decrease in one aspect leads to a corresponding change in another, translating to 'the more ____, the more ____' in English.",
-    "formation": "動詞/adjective stem + 일수록"
+    "title": "~(으)ㄹ수록 / ~일수록（〜すればするほど、〜であるほど - 比例関係）",
+    "shortExplanation": "前項の行為や状態の程度が進むにつれて、それに伴って後項の程度も変化していく比例関係を表します（「〜すればするほど」「〜であるほど」）。",
+    "longExplanation": "「~(으)ㄹ수록」は、ある状態の深刻化や動作の反復・継続に伴い、それに比例して後項の結果や状態も強まることを表す接続語尾です。日本語の「〜ば〜ほど」「〜するほど」に相当します。後節には強調の副詞「더（もっと）」「더욱（さらに）」が呼応して用いられることが多く、条件を表す「-(으)면」と組み合わせて「-(으)면 -(으)ㄹ수록（〜すればするほど）」という強調パターンとしても頻繁に使われます。名詞の後には「일수록」が接続します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ수록（パッチムがある場合は -을수록、パッチムがない場合やㄹパッチムの場合は -ㄹ수록）；名詞 + 일수록",
+    "examples": [
+      {
+        "translation": "時間が経つにつれて彼への恋しさが募り、私たちは共に過ごした場所を訪れることになりました。"
+      },
+      {
+        "translation": "韓国語を練習すればするほど発音が良くなり、韓国の人たちも私の話をよりよく理解してくれるようになりました。"
+      },
+      {
+        "translation": "春巻きは揚げれば揚げるほどサクサクになって、美味しくなりました。"
+      },
+      {
+        "translation": "景気が悪化するほど人々の悩みが増え、進路をどう決めるべきか分からなくなります。"
+      }
+    ]
   },
   "ko_지_61": {
-    "title": "~지 않을래 [ji anheullae] (I don't want to)",
-    "shortExplanation": "Expresses the speaker's intention not to do something.",
-    "longExplanation": "'~지 않을래' is a verb ending used in Korean to indicate that the speaker does not want to perform a certain action. It shows a strong personal decision and is typically used in informal contexts.",
-    "formation": "動詞 stem + 지 않을래"
+    "title": "-지 않을래(요) / ~지 않을래（〜したくない、〜しないでおく）",
+    "shortExplanation": "話し手自身の「〜したくない」「〜しないでおく」という不作為の意志や、控えめな断りの意向を表す終結語尾です。",
+    "longExplanation": "「-지 않을래」は、用言の否定形「-지 않다」に、話し手の意志を表す語尾「-(으)ㄹ래」が結合した終結語尾です。主語が一人称（話し手）である場合、自分の気持ちや体調、好みに基づいて「自分はその行為をしないでおく」「したくない」という主観的な意向を表します。日常会話では親愛の補助詞「-요」を伴った「-지 않을래요」の形で頻繁に使われ、角を立てずに柔らかく断りを入れる表現として好まれます。（なお、疑問文で語尾を上げると相手への提案・お誘いになります）。",
+    "formation": "動詞語幹 + -지 않을래(요)（動詞にのみ接続）",
+    "examples": [
+      {
+        "translation": "私は今日運動しに行かないでおきます。体が少し疲れているので休みたいです。"
+      },
+      {
+        "translation": "私はあまりにもたくさん食べたので、デザートは食べないでおきます。"
+      },
+      {
+        "translation": "あまり心配しないでください。あの人には私が代わりに話したりはしないでおきますね。"
+      },
+      {
+        "translation": "この服は気に入らないので、買わないでおきます。"
+      }
+    ]
   },
   "ko_지만_62": {
-    "title": "~지만 [jimyeon] (But, although)",
-    "shortExplanation": "〜を表すために使用されます contrast or exception; 'but', 'although'.",
-    "longExplanation": "'~지만' is a conjunction used in Korean to introduce a contrasting idea or an exception to the preceding statement. It is equivalent to 'but' or 'although' in English and simply connects two clauses without implying a strong adversative relationship.",
-    "formation": "動詞/形容詞 + 지만"
+    "title": "~지만（〜けれど、〜が - 逆接・対比）",
+    "shortExplanation": "前節と後節の内容が対立したり逆接の関係にあることを表す代表的な接続語尾です（「〜けれど」「〜が」）。",
+    "longExplanation": "「~지만」は韓国語において最も基本的かつ頻繁に用いられる逆接の接続語尾です。前節で述べた事実や状態に対して、それと対照的な事柄や例外的な内容を後節で述べるときに使われます。日本語の「〜けれど」「〜が」「〜ですが」に相当します。過去形「-았/었지만」や意志・推量「-겠지만」とも自由に結合します。また、会話において「죄송하지만（申し訳ありませんが）」「실례지만（失礼ですが）」のように、前置きとして柔らかく本題を切り出す際にも重宝されます。",
+    "formation": "動詞・形容詞語幹 + -지만（過去形は -았/었지만）；名詞 + (이)지만",
+    "examples": [
+      {
+        "translation": "今日はお天気が良いですが、風が強すぎてピクニックに行くのは難しいです。"
+      },
+      {
+        "translation": "その映画は面白かったけれど、長すぎて退屈でした。"
+      },
+      {
+        "translation": "友達が冗談を言いましたが、誰も笑いませんでした。"
+      },
+      {
+        "translation": "その昼食は美味しかったですが、高すぎて二度と行きたくありません。"
+      }
+    ]
   },
   "ko_지_63": {
-    "title": "~지 않다/지 못하다 [ji anhda/ji mothada] (Not, don't, can't)",
-    "shortExplanation": "〜を表すために使用されます negation (do not) or inability (cannot).",
-    "longExplanation": "'~지 않다' is 〜を示します that one does not or does not intend to perform an action, while '~지 못하다' expresses an inability to perform an action. The former is used for intentional negation, and the latter when one is prevented or unable to do something.",
-    "formation": "動詞 Stem + 지 않다 / 動詞 Stem + 지 못하다"
+    "title": "~지 않다 / ~지 못하다（〜しない / 〜できない - 意志否定と能力否定）",
+    "shortExplanation": "用言の長形否定表現です。「~지 않다」は単なる事実の否定や本人の意志による否定（「〜しない」）を表し、「~지 못하다」は能力不足や外的事情により不可能なこと（「〜できない」）を表します。",
+    "longExplanation": "用言の語幹の後ろにつく代表的な長形否定表現です。「~지 않다」は客観的な事実の否定や、主体が自分の意志で「〜しない」という場合、あるいは単に状態が存在しないことを表します。一方、「~지 못하다」は行為者に行動を起こす意志があるにもかかわらず、本人の能力不足や外部の障害・環境のせいで「〜できない」「〜しきれない」という状況を表します。なお、「-지 못하다」は主に動詞に付き、形容詞には一部の基準未達を表す慣用語を除いて原則接続しません。",
+    "formation": "動詞・形容詞語幹 + -지 않다（意志・単純否定）；動詞語幹 + -지 못하다（能力・状況否定）",
+    "examples": [
+      {
+        "translation": "私たちはそのレストランで気に入った料理を見つけることができませんでした。そのため、別のレストランを探してみることにしました。"
+      },
+      {
+        "translation": "その生徒はその問題を理解できなかったので、先生にもう一度質問しました。"
+      },
+      {
+        "translation": "今夜は遅くに帰宅しないつもりです。なぜなら、まだやるべきことがあるからです。"
+      },
+      {
+        "translation": "映画も観られず、本も読めませんでした。あまりにも忙しすぎました。"
+      }
+    ]
   },
   "ko_지_64": {
-    "title": "~지 얼마나 되다 [ji eolmana dweda] (How long has it been)",
-    "shortExplanation": "Used to ask or state the duration since an event occurred.",
-    "longExplanation": "'~지 얼마나 되다' is a construction used to inquire about or indicate the amount of time that has passed since a certain event took place. It literally asks 'how long has it been' and is useful when discussing past events or experiences.",
-    "formation": "動詞 (in past tense) + 지 + 얼마나 되다"
+    "title": "-(으)ㄴ 지 얼마나 되다（〜してからどれくらいになるか - 経過時間の確認）",
+    "shortExplanation": "過去にある動作を行ってから、あるいはある事態が生じてから現在に至るまでどれほどの時間が経過したかを尋ねたり述べたりします（「〜してからどれくらいになるか」）。",
+    "longExplanation": "「-(으)ㄴ 지 얼마나 되다」は過去連体形語尾「-(으)ㄴ」、時間の経過を表す形式名詞（依存名詞）「지」、そして「どれほど経つか」を意味する「얼마나 되다」が組み合わさった表現です。過去の動作を起点として、現在までに流れた時間の長さを問う際や説明する際によく用いられます。「지」の前は分かち書き（スペースを空ける）する必要がある点に注意が必要です（例：「온 지」「만난 지」）。",
+    "formation": "動詞語幹 + -(으)ㄴ 지 + 얼마나 되다（パッチムがある場合は -은 지、パッチムがない場合やㄹパッチムの場合は -ㄴ 지）",
+    "examples": [
+      {
+        "translation": "私たちが最後に会ってから、どれくらいの時間が経ちましたか。"
+      },
+      {
+        "translation": "君はソウルに来てからどれくらい経ったの？"
+      },
+      {
+        "translation": "その本を読んでからどれくらい経ちましたか。"
+      },
+      {
+        "translation": "私は韓国に来てからずいぶん経ちますが、今でも韓国語が難しいです。"
+      }
+    ]
   },
   "ko_지요죠_65": {
-    "title": "~지요/죠 [jiyo/jyo] (Isn't it, right)",
-    "shortExplanation": "Used at the end of a sentence to seek agreement or confirmation.",
-    "longExplanation": "'~지요/죠' is an ending used in Korean to ask for confirmation or agreement from the listener. It suggests that the speaker expects the listener to share the same view or to confirm the statement, and it is often employed in polite or formal contexts.",
-    "formation": "動詞/形容詞 + 지요/죠"
+    "title": "~지요 / ~죠（〜ですよね、〜でしょう - 確認・同意の求め）",
+    "shortExplanation": "話し手がすでに知っている事実について聞き手に確認したり、同意・共感を求めたりする終結語尾です（「〜ですよね」「〜でしょう」）。",
+    "longExplanation": "「~지요」（口語では縮約形の「~죠」が頻用される）は丁寧な親愛体（ヘヨ体）の終結語尾です。話し手がその事柄をすでに予想・認識しており、相手も同じ見解を持っているだろうという前提のもとで、念のための確認を行ったり同意を求めたりする際に使われます。文末のイントネーションを上げると疑問形「〜ですよね？」となり、下げると確信を持った親しみのある断定「〜ですよ」「〜ですよね」となります。",
+    "formation": "動詞・形容詞語幹 + -지요（縮約形：-죠）；名詞 + -(이)지요（縮約形：-(이)죠）",
+    "examples": [
+      {
+        "translation": "今日はお天気が本当に良いですね？"
+      },
+      {
+        "translation": "その映画、本当に面白かったですよね？"
+      },
+      {
+        "translation": "明日もここで会うんですよね？"
+      },
+      {
+        "translation": "このやり方で合っているみたいですよね？"
+      }
+    ]
   },
   "ko_쯤_66": {
-    "title": "~쯤 [jjeum] (About, around)",
-    "shortExplanation": "〜を示します approximations or rough estimates.",
-    "longExplanation": "'~쯤' is a postposition used in Korean to give an approximate amount, time, or degree. It is commonly paired with numbers or measurements to express 'about' or 'around' in informal speech.",
-    "formation": "Number + Measure Word + 쯤"
+    "title": "~쯤（〜くらい、〜ごろ - 数量・時間の概数）",
+    "shortExplanation": "時間や数量、度量を表す名詞に付いて、おおよその数量や時点・目安を表す助詞です（「〜くらい」「〜ごろ」）。",
+    "longExplanation": "「~쯤」は体言の後ろに直接結びつき、厳密な数値ではなく概算の数値、時間帯、目安を表す助詞です。日本語の「〜くらい（程度）」「〜ごろ（時間）」に相当します。時間詞に付く場合は「내일쯤（明日ごろ）」「3시쯤（3時ごろ）」のように時点を表し、数量詞に付く場合は「한 시간쯤（1時間くらい）」「30명쯤（30人くらい）」のように分量を表します。助詞であるため前の語と分かち書きをせず続けて書きます。",
+    "formation": "名詞（数量詞、時間詞、単位名詞） + 쯤",
+    "examples": [
+      {
+        "translation": "飛行機が少なくとも3時間ほど遅延しそうなので心配です。"
+      },
+      {
+        "translation": "今日会社に30人ほどが出社したので、多くの仕事を受け持ちました。"
+      },
+      {
+        "translation": "彼はいつも1時間ほど早く来て準備をするので、他の人たちよりも常に早く終わります。"
+      },
+      {
+        "translation": "今週末に旅行を計画しているので、今日は1時間ほど早く退勤しようと思っています。"
+      }
+    ]
   },
   "ko_처럼_67": {
-    "title": "~처럼 [cheoreom] (Like, as)",
-    "shortExplanation": "〜を表すために使用されます similarity or comparison; 'like', 'as'.",
-    "longExplanation": "'~처럼' is used in Korean to compare or show similarity between two things. It indicates that someone or something is similar in appearance, behavior, or quality to another.",
-    "formation": "名詞 + 처럼"
+    "title": "~처럼（〜のように、〜みたいに - 比喩・類似）",
+    "shortExplanation": "名詞の後ろに付き、その事物と姿形や性質、動作が似通っていることを表す助詞です（「〜のように」「〜みたいに」）。",
+    "longExplanation": "「~처럼」はある対象の様子や状態、行動が別の対象と極めてよく似ていることを比喩的に表す助詞です。日本語の「〜のように」「〜みたいに」に相当します。文中に副詞「마치（まるで）」を伴って「마치 名詞 + 처럼（まるで〜のように）」という形で生動感ある描写を強めることが多々あります。同義の助詞として「같이」があり、多くの場合言い換えが可能です。",
+    "formation": "名詞 + 처럼",
+    "examples": [
+      {
+        "translation": "彼女は蝶のように舞い踊りました。美しく軽やかに見えました。"
+      },
+      {
+        "translation": "彼はまるで世界的なテニス選手のように打ちました。彼の技術は本当にずば抜けていました。"
+      },
+      {
+        "translation": "あなたは天使のように親切です。いつも他人を助けようと努めていますね。"
+      },
+      {
+        "translation": "この彩りは庭の花々のように華やかです。実に生き生きとした色彩を持っています。"
+      }
+    ]
   },
   "ko_치고는_68": {
-    "title": "~치고는 [chigoneun] (For, considering)",
-    "shortExplanation": "〜を表すために使用されます a comparison against a standard; 'for' or 'considering'.",
-    "longExplanation": "'~치고는' is a suffix used to compare a subject to what is normally expected of it. It indicates that, considering the usual standards, the result is surprisingly good or bad. It is often translated as 'for (a ...)' or 'considering (that ...)' in English.",
-    "formation": "名詞 + ~치고는"
+    "title": "~치고는（〜にしては、〜の割には - 一般基準からの乖離・評価）",
+    "shortExplanation": "名詞の後ろに付き、その対象が属する一般的な基準や常識的な予想に照らし合わせて、意外な結果や評価であることを表します（「〜にしては」「〜の割には」）。",
+    "longExplanation": "「~치고는」は助詞「치고」に対比の補助詞「는」が付いた表現です。ある事物を一般的なカテゴリーの基準に当てはめてみたとき、常識的に予想される水準から外れて意外な良さ（あるいは悪さ）を示していることを表します。日本語の「〜にしては」「〜の割には」にそのまま合致します。例えば「子供にしては上手だ」のように、一般的な子供の水準を上回る例外的な驚きを表す際によく用いられます。",
+    "formation": "名詞 + 치고는",
+    "examples": [
+      {
+        "translation": "子供にしては絵を描く実力がとても卓越しています。"
+      },
+      {
+        "translation": "基礎クラスにしては難しすぎて、すべての学生が混乱してしまいました。"
+      },
+      {
+        "translation": "こんなに短い時間にしては多くの仕事を処理したことに驚かされます。"
+      },
+      {
+        "translation": "初心者にしては、あなたはかなり上手にやっています。"
+      }
+    ]
   },
   "ko_테니라고_69": {
-    "title": "~테니라고 [tenirago] (Since, because)",
-    "shortExplanation": "〜を示します a reason or cause; 'since' or 'because'.",
-    "longExplanation": "The form '~테니라고' in the provided entry is nonstandard in contemporary Korean. In modern usage the common and natural form is '~테니까'. This ending is used to give a reason or justification for a situation or action. I have changed all instances to '~테니까' so that the explanation and examples match current usage.",
-    "formation": "動詞/形容詞 + (으)ㄴ/은 테니까"
+    "title": "~(으)ㄹ 테니까（〜するだろうから、〜するつもりだから - 推量・意向に基づく根拠）",
+    "shortExplanation": "話し手の強い推量や意志を理由・前提として提示し、聞き手に対して提案、勧誘、命令、依頼などを行うときに用います（「〜するだろうから」「〜するから」）。",
+    "longExplanation": "「~(으)ㄹ 테니까」は意図や予定・推量を表す「-(으)ㄹ 터」に理由の接続語尾「-(이)니까」が合わさった構文です。大きく分けて2つの使い方があります。(1) 話し手の確信的な推量を根拠にして相手に注意や安心、行動を促す場合（「〜するはずだから、〜してください」）；(2) 話し手自らの意志や行動を約束し、それを前提に相手に別の行動を求める場合（「私が〜するから、あなたは〜して」）。なお、見出しにある「~테니라고」は現代韓国語の文法としては非標準的であり、自然な標準形は「~(으)ㄹ 테니까」となります。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 테니까（パッチムがある場合は -을 테니까、パッチムがない場合やㄹパッチムの場合は -ㄹ 테니까）；名詞 + 일 테니까",
+    "examples": [
+      {
+        "translation": "あまりにも時間がかかる仕事だったので、私が自分でやってしまいました。下手に待っていては他の仕事まで滞ってしまうだろうと思ったのです。"
+      },
+      {
+        "translation": "勝つはずだから自信を持ってごらん。成功の秘訣は自信ですよ。"
+      },
+      {
+        "translation": "食べ過ぎては駄目だよ。消化がうまくできないだろうから注意しなきゃ。"
+      },
+      {
+        "translation": "そのお菓子は甘すぎて好きじゃない。甘すぎると歯が悪くなるだろうと思って食べなかった。"
+      }
+    ]
   },
   "ko_텐데_70": {
-    "title": "~텐데 [tende] (Would, might)",
-    "shortExplanation": "〜を表すために使用されます a hypothetical situation or expectation; 'would', 'might'.",
-    "longExplanation": "'~텐데' is 〜を表すために使用されます a hypothetical situation, expectation, assumption, or prediction. It indicates that under certain conditions an action or state would or might occur. Often, it is used to imply a consequence if a condition were met.",
-    "formation": "動詞/adjective stem + 텐데"
+    "title": "~(으)ㄹ 텐데（〜だろうに、〜はずなのに - 推量・仮定と背景提示）",
+    "shortExplanation": "話し手の強い推量や期待、反実仮想を前置きとして示し、それに反する現実や後続の状況を展開する接続語尾です（「〜だろうに」「〜のはずなのに」）。",
+    "longExplanation": "「~(으)ㄹ 텐데」は推量や意志を表す「-(으)ㄹ 터」に、背景や逆接・前置きを提示する「-ㄴ/은데」が結合した表現です。特に仮定の表現（「-(으)면」「-았/었더라면」）と呼応して過去の反実仮想「-았/었을 텐데（〜だっただろうに、〜したはずなのに）」の形で用いられ、「もし〜でなかったら大変なことになっていただろうに、幸いにも〜だった」という安堵や残念さを表す構文として頻出します。また、現在の状況を推測しつつ相手への気遣いや提案を述べる前置きとしても使われます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 텐데（過去の推量は -았/었을 텐데；パッチムがある場合は -을 텐데、パッチムがない場合やㄹパッチムの場合は -ㄹ 텐데）；名詞 + 일 텐데",
+    "examples": [
+      {
+        "translation": "今日あなたが来なかったら私は怒っていたでしょうに、幸いにもあなたが来てくれました。"
+      },
+      {
+        "translation": "見知らぬ人たちと話そうとしない性格だったら言語を学ぶのは難しかったでしょうに、幸いにも私はそういう人ではありません。"
+      },
+      {
+        "translation": "あなたが私に嘘をついていたら私は失望したでしょうに、幸いにもあなたは正直でした。"
+      },
+      {
+        "translation": "私があなたに出会えていなかったら韓国語を学ぶのが大変だったでしょうに、あなたのおかげで韓国語を上手に学ぶことができました。"
+      }
+    ]
   },
   "ko_토록_71": {
-    "title": "~토록 [torok] (So ~ that, to the extent)",
-    "shortExplanation": "〜を表すために使用されます the extent or degree of a condition or state.",
-    "longExplanation": "'~토록' is 〜を示します the degree or extent of a situation, often to emphasize that something is so extreme or intense that it produces a particular result. 〜と訳されます 'so ... that' or 'to the extent that' in English.",
-    "formation": "動詞 stem + 토록"
+    "title": "~토록 / ~도록 / ~(으)ㄹ 정도로（〜するほど、〜に至るまで - 程度・極限の強調）",
+    "shortExplanation": "動作や状態がある極限の度合いや時間的な限界点にまで達していることを強調して表します（「〜するほど」「〜に至るまで」）。",
+    "longExplanation": "「~토록」は文学的・強調的な響きを持つ接続語尾（または時間詞に付く助詞）で、ある行為や状態が極限の度合いに達したり、ある時点まで長く持続することを表します（例：「밤새도록 / 밤새토록 夜が明けるまで」「지치도록 疲れ果てるほど」）。日常会話や現代語法の解説においては、同義の語尾「-도록」や連体構文「-(으)ㄹ 정도로（〜するほどに、〜するくらいに）」と同等の程度表現として扱われ、後続節の事態を引き起こすほどの激しい水準を表します。",
+    "formation": "動詞・形容詞語幹 + -토록（または -도록 / -(으)ㄹ 정도로）；時間名詞 + 토록",
+    "examples": [
+      {
+        "translation": "彼の音楽を聴いた人々は皆、彼がどうやってあのような素晴らしい音楽を作れるのか理解できないほど彼の音楽に驚嘆しました。"
+      },
+      {
+        "translation": "建物があまりにも高くて、下を見るだけで体が震えるほどでした。"
+      },
+      {
+        "translation": "高校生の頃までは、数学の問題をすらすら解けるほど頭が良かったです。"
+      },
+      {
+        "translation": "その韓国語の本は難しすぎて、どの文章も理解できないほどです。"
+      }
+    ]
   },
   "ko_하게_72": {
-    "title": "~하게 [hage] (Make, let)",
-    "shortExplanation": "〜を示します making or letting someone do something.",
-    "longExplanation": "'~하게' is an ending attached to a verb root that shows someone is made to do something or is allowed to do something. It is commonly used when giving orders, making requests, or suggesting actions.",
-    "formation": "動詞 root + -하게"
+    "title": "~게 하다 / ~하게（〜させる、〜するようにする - 使役・促し・目的）",
+    "shortExplanation": "相手に特定の動作をさせたり（使役）、ある状態になるように仕向けたり、目的・方法を表したりする表現です（「〜させる」「〜するようにする」）。",
+    "longExplanation": "「~게 하다」は副詞形語尾「-게」に補助動詞「하다（する）」が結合した間接使役構文です。主語が対象に対して指示や働きかけを行い、その行為を実行させたり、特定の状態に至らしめたりすることを表します（日本語の「〜させる」「〜するように仕向ける」）。また、単独の「-게」の形で後続動詞を修飾する場合は（例：「이해하게 설명하다 理解できるように説明する」）、「〜するように」「〜するほどに」という目的や状態の様態を表す役割を果たします。",
+    "formation": "動詞・形容詞語幹 + -게 하다（または 動詞・形容詞語幹 + -게）",
+    "examples": [
+      {
+        "translation": "先生は生徒たちが宿題をよく理解できるように説明してくれました。"
+      },
+      {
+        "translation": "母は私に毎日寝室を掃除させました。"
+      },
+      {
+        "translation": "彼は私に自身の決定を受け入れさせようとしました。"
+      },
+      {
+        "translation": "私は子供たちがより創造的に考えられるようにするゲームを作りたいです。"
+      }
+    ]
   },
   "ko_하고나서_73": {
-    "title": "~하고나서 [hagonaseo] (After doing)",
-    "shortExplanation": "Indicates that one action is completed before another begins.",
-    "longExplanation": "'~하고나서' is used to show that one action is finished before starting the next. It expresses a clear sequence where the first action must be completed before the subsequent action occurs.",
-    "formation": "動詞 + 고나서"
+    "title": "~고 나서 / ~하고 나서（〜してから、〜し終えた後で - 動作の完了と順序）",
+    "shortExplanation": "前項の動作が完全に終了した後に、引き続いて後項の動作を行うという時間的な順序を強調して表します（「〜してから」「〜し終えた後で」）。",
+    "longExplanation": "「~고 나서」は接続語尾「-고」に、動作の終了・完了を表す補助動詞「나다」の「-아서」形が合わさった表現です。前節の動作が完全に終わり、その区切りがついた段階で次の動作へと移行する時間的推移を明瞭に際立たせます。単なる動作の連続やつながりを表す「-고」に比べて、前項の動作が「完全に終わったこと」をより強く意識させる響きを持ちます。",
+    "formation": "動詞語幹 + -고 나서（하다動詞は -하고 나서 となる）",
+    "examples": [
+      {
+        "translation": "家に帰ってシャワーを浴びてから勉強を始めました。"
+      },
+      {
+        "translation": "私は学校から帰ってきた後、宿題を終えてから友達に会いました。"
+      },
+      {
+        "translation": "食材を細かく刻んでから調理を始めました。"
+      },
+      {
+        "translation": "運動を終えてから軽くシャワーを浴びてご飯を食べました。"
+      }
+    ]
   },
   "ko_하고는_74": {
-    "title": "~하고는 [hagoneun] (And then, after)",
-    "shortExplanation": "Connects sequential actions in chronological order.",
-    "longExplanation": "'~하고는' is used to join two or more actions in the order in which they occur. It indicates that the first action is followed by the second and is equivalent to 'and then' or 'after' in English.",
-    "formation": "動詞 stem + 고는"
+    "title": "~하고는 / ~고는（〜してからは、〜した後は - 先行動作の完了と後続動作）",
+    "shortExplanation": "前項の動作が完了した後に、引き続いて後項の動作を行うことを表す接続表現です（「〜してからは」「〜した後は」）。",
+    "longExplanation": "「~고는」（「하다」動詞の場合は「~하고는」）は、並列・継起を表す接続語尾「-고」に対比・強調の補助詞「-는」が結合した表現です。主語が前の動作を終えた後、間を置かずに次の動作へと移行する時間的な順序関係を表します。日常的な習慣の順序（〜してから〜する）を述べる場合や、ある動作を終えた直後に生じた感情や予期せぬ状況の変化を際立たせる際によく用いられます。",
+    "formation": "動詞語幹 + -고는（하다動詞の語幹 + -고는 で 하고는）",
+    "examples": [
+      {
+        "translation": "私は毎朝起きて運動をしてから、シャワーを浴びます。"
+      },
+      {
+        "translation": "彼女は本を読んでは、書く練習をします。"
+      },
+      {
+        "translation": "彼は学校に行って授業を聞いた後、勉強をします。"
+      },
+      {
+        "translation": "私たちは飛行機に乗ってソウルに到着した後は、休息を取りました。"
+      }
+    ]
   },
   "ko_하구나_75": {
-    "title": "~하구나 [haguna] (Oh, so it's)",
-    "shortExplanation": "Expresses a sudden realization or understanding.",
-    "longExplanation": "'~하구나' is used when the speaker suddenly realizes or understands something that was previously obvious or unnoticed. It conveys surprise or enlightenment.",
-    "formation": "動詞 stem + 하구나"
+    "title": "~하구나 / ~구나 / ~는구나（〜なんだな、〜だったんだ - 気づき・納得の感嘆）",
+    "shortExplanation": "知らなかった事実や理由をその場で新たに気づいたり、深く納得・理解した際に用いる感嘆の終結語尾です（「〜なんだな」「〜だったんだ」）。",
+    "longExplanation": "「-구나」（形容詞語幹の後には「-구나」、動詞語幹の後には「-는구나」、過去形の後には「-았/었구나」）は、自らの独り言や親しい相手に対して、新たに知った事実や状況への驚きや納得の感情を表す感嘆終結語尾です。例文のように「-는 거였구나（〜することだったんだ／〜だったわけか）」の形をとることで、今まで疑問に思っていた原因や理由が氷解した際の「なるほど、そういうことだったのか！」という強い気づきを表します。",
+    "formation": "形容詞語幹 + -구나；動詞語幹 + -는구나（하다動詞は -하는구나）；過去形 + -았/었구나；名詞 + -(이)구나；事情納得の形：動詞語幹 + -(으)ㄴ/는 거였구나、名詞 + -(이)었던 거였구나",
+    "examples": [
+      {
+        "translation": "忙しくて連絡がつかなかったんだね、それなら無理もないよ。"
+      },
+      {
+        "translation": "私が今日幸せだと感じた理由はまさにそれだったんだな、天気が良かったからなんだ。"
+      },
+      {
+        "translation": "おお、こうやってやるものだったんだ！全部理解できたよ。"
+      },
+      {
+        "translation": "本当にあの人が君のことを好きだったんだね、知らなかったよ。"
+      }
+    ]
   },
   "ko_하다가_76": {
-    "title": "~하다가 [hadaga] (While doing, was doing)",
-    "shortExplanation": "Indicates that one was in the middle of doing something when another event occurred.",
-    "longExplanation": "'~하다가' is used to show that an action was ongoing when it was interrupted or when another action occurred. It is equivalent to 'while doing' or 'was doing' in English.",
-    "formation": "動詞 stem + 하다가"
+    "title": "~하다가 / ~다가（〜している途中で、〜しかけて - 動作の中断と転換）",
+    "shortExplanation": "ある動作や状態が継続している途中でそれが中断されたり、別の動作や予期せぬ出来事へ切り替わることを表す接続語尾です（「〜している途中で」「〜していて」）。",
+    "longExplanation": "「~다가」（「하다」動詞の場合は「~하다가」）は、動作の中断や転換を表す接続語尾です。ある行為を行っている最中に、予期せぬ出来事が割り込んでその行為が中止されたり、途中で別の行動に移行したりする場面で用いられます。通常、前節と後節の主語は同一人物である必要があります。日本語の「〜している最中に」「〜の途中で」「〜していてふと……」に相当します。",
+    "formation": "動詞・形容詞語幹 + -다가（하다動詞の語幹 + -다가 で 하다가）",
+    "examples": [
+      {
+        "translation": "私は本を読んでいる途中で眠気に襲われ、眠ってしまいました。"
+      },
+      {
+        "translation": "彼はゲームをしている最中に、お母さんから少しやめるように言われました。"
+      },
+      {
+        "translation": "友達と話している途中で突然ベルが鳴ったので、会話を中断しました。"
+      },
+      {
+        "translation": "私は勉強をしている途中で興味深い記事を見かけ、読み始めました。"
+      }
+    ]
   },
   "ko_하다못해_77": {
-    "title": "~하다못해 [hadamothae] (To the extent that)",
-    "shortExplanation": "Used to emphasize an extreme degree or state; 'to the extent that'.",
-    "longExplanation": "'~하다못해' emphasizes that something is so extreme or severe that the outcome is unexpected. It is often used to underscore a negative or surprising result and can be translated as 'to the extent that' in English.",
-    "formation": "動詞 + 다못해"
+    "title": "~하다못해 / ~다 못해（〜のあまり、〜しきれなくなって - 極限状態の強調）",
+    "shortExplanation": "ある状態や感情が極限に達し、これ以上耐えきれなくなって予期せぬ結果や消極的な事態を引き起こすことを表します（「〜のあまり」「〜しきれなくなって」）。",
+    "longExplanation": "「~다 못해」（「하다」で終わる語幹の場合は「~하다못해」）は、接続語尾「-다」に不可能を表す「못하다」の活用形「못해」が合わさった表現です。ある行為や状態、疲労・退屈などが度を越して限界に達し、もはや持ちこたえられなくなった結果、好ましくない事態に陥ったり極端な行動に出たりすることを表します。日本語の「〜のあまり」「〜の度を越して」「〜に耐えかねて」に相当します。",
+    "formation": "動詞・形容詞語幹 + -다 못해（하다動詞・形容詞語幹の後には -하다 못해 または分かち書きせず 하다못해）",
+    "examples": [
+      {
+        "translation": "彼の演説は退屈のあまり、人々は眠り込んでしまいました。"
+      },
+      {
+        "translation": "この小さな村は閑散としすぎていて、人影もなく歩いていると寂しくなってきます。"
+      },
+      {
+        "translation": "今日はあまりにも疲れ果てて、家に帰り着くや否や眠ってしまいました。"
+      },
+      {
+        "translation": "彼女の料理は不味いにも程があって、人々は食べきれずに残してしまいました。"
+      }
+    ]
   },
   "ko_하던_78": {
-    "title": "~하던 중에 [hadeon junge] (While I was doing)",
-    "shortExplanation": "〜を示します that something happened while another action was in progress.",
-    "longExplanation": "'~하던 중에' is used to describe an event that occurs during the course of another ongoing action. It is similar to saying 'while I was doing' or 'in the middle of doing' in English.",
-    "formation": "動詞 + (으)던 중에"
+    "title": "~하던 중에 / ~던 중에（〜していた最中に、〜している途中で - 過去の動作進行中の割り込み）",
+    "shortExplanation": "過去にある動作が進行しているまさにその最中に、別の出来事や予期せぬ事態が起こったことを表します（「〜していた最中に」「〜している途中で」）。",
+    "longExplanation": "「~던 중에」（「하다」動詞の場合は「~하던 중에」）は、過去の未完了や継続的な動作を回想して修飾する連体形語尾「-던」に、依存名詞「중（中）」と助詞「에（に）」が結びついた表現です。ある行為を継続して行っていたさなかに、別の突発的な出来事が割り込んできた状況を客観的・描写的に述べます。日本語の「〜していた最中に」「〜の最中に」「〜している途中で」に相当します。",
+    "formation": "動詞語幹 + -던 중에（하다動詞の語幹 + -던 중에 で 하던 중에）",
+    "examples": [
+      {
+        "translation": "本を読んでいた最中に友達から電話がかかってきて、遊びに来ました。"
+      },
+      {
+        "translation": "音楽を聴いていた途中で心に響くぴったりの歌が流れてきて、幸せな気持ちになりました。"
+      },
+      {
+        "translation": "ドラマを見ていた最中に姉が突然帰宅してびっくりしました。"
+      },
+      {
+        "translation": "運動をしていた途中で突然雨が降ってきたため、中断して家に帰りました。"
+      }
+    ]
   },
   "ko_하기는_79": {
-    "title": "~하기는 [hagineun] (Although, but)",
-    "shortExplanation": "〜を表すために使用されます concession or a contradictory relationship; 'although', 'but'.",
-    "longExplanation": "'~하기는' is a construction used in Korean to indicate a contrast or concession—acknowledging one fact while asserting that the overall conclusion differs or contradicts it. It is often used when the second clause counteracts the first.",
-    "formation": "動詞 stem + 기는 (attached to form a concessive clause)"
+    "title": "~하기는 / ~기는 하다/했지만（〜することは〜だが、〜には〜だが - 是認と逆接の譲歩）",
+    "shortExplanation": "前項の事実や長所を一応肯定・是認しながらも、後項でそれと相反する問題点や異なる事実を述べる譲歩表現です（「〜することは〜だが」「〜には〜だが」）。",
+    "longExplanation": "「~기는 하다」（接続形「~기는 하지만」、語幹が「하다」の場合は「~하기는 하지만」）は、名詞形語尾「-기」、対比の補助詞「-는」、補助用言「하다」が結合した文型です。相手の意見や客観的事実を「確かにそれはそうである」と一度受け止めつつ、後節で「しかし実際には問題や不満がある」と対比的な事情を持ち出す際に使われます。日本語の「〜することはするが」「〜には〜だが、しかし」に相当します。",
+    "formation": "動詞・形容詞語幹 + -기는 하다 / -기는 하지만（하다用言の語幹 + -기는 하다 で 하기는 하다/하지만）",
+    "examples": [
+      {
+        "translation": "その映画は面白くはあったのですが、期待しすぎて少しがっかりしました。"
+      },
+      {
+        "translation": "ケーキは美味しくはありましたが、甘すぎて全部は食べ切れませんでした。"
+      },
+      {
+        "translation": "彼は性格が良くはあるのですが、少し行動が遅い傾向があります。"
+      },
+      {
+        "translation": "この贈り物は価値があるにはあるのですが、私の服装とは合いません。"
+      }
+    ]
   },
   "ko_하기로_80": {
-    "title": "~하기로 [hagiro] (Decide to)",
-    "shortExplanation": "〜を表すために使用されます a decision made to perform an action.",
-    "longExplanation": "'~하기로' is used in Korean to signify a decision made to take a specific action. It indicates that one or more people have made a concrete decision to do something and is used in both casual and formal contexts.",
-    "formation": "動詞 stem + 하기로"
+    "title": "~하기로 / ~기로 하다/결정하다（〜することにする、〜することに決める - 決定と約束）",
+    "shortExplanation": "ある行動をとることを自ら決意したり、他者と話し合って合意・約束したことを表します（「〜することにする」「〜することに決めた」）。",
+    "longExplanation": "「~기로 하다」（「하다」動詞の場合は「~하기로 하다」、決定を強調して「~기로 결정하다」とも言います）は、名詞形語尾「-기」、方向や結果を表す助詞「-로」、動詞「하다（または결정하다）」が結合した構文です。個人が特定の計画を実行することを決心した場合や、複数の人が協議した結果として約束・取り決めを交わした場面で用いられます。通常、すでに確定した事柄として過去形「-기로 했다 / 결정했다」の形で頻繁に使われます。",
+    "formation": "動詞語幹 + -기로 하다 / -기로 결정하다（하다動詞の語幹 + -기로 で 하기로 하다/결정하다）",
+    "examples": [
+      {
+        "translation": "私たちは明日の午後に会うことに決めました。全員の都合が合ったので、過密なスケジュールを調整しなければなりませんでした。"
+      },
+      {
+        "translation": "私は来年韓国に引っ越すことに決めたので、今一生懸命に韓国語を学んでいます。"
+      },
+      {
+        "translation": "彼女は来週結婚することに決めたため、現在ウェディングドレスを探しています。"
+      },
+      {
+        "translation": "友達と一緒に夏に海へ行くことに決めたので、これから水着を買おうと思っています。"
+      }
+    ]
   },
   "ko_하기에_81": {
-    "title": "~하기에 [hagie] (For)",
-    "shortExplanation": "〜を表すために使用されます reasoning or the basis for a decision; 'for', 'considering'.",
-    "longExplanation": "'~하기에' indicates the reason or basis for making a judgment or decision. 〜と訳されます 'for', 'considering', or 'in view of' and is used when the speaker wants to explain or justify a conclusion.",
-    "formation": "動詞 stem + 기에"
+    "title": "~하기에 / ~기에（〜だから、〜であるため、〜ゆえに - 理由・判断の根拠）",
+    "shortExplanation": "後節の判断や行動、結果に至る客観的な理由や判断の根拠を表す接続表現です（「〜だから」「〜であるため」「〜ゆえに」）。",
+    "longExplanation": "「~기에」（語幹が「하다」の場合は「~하기에」）は、名詞形語尾「-기」に理由や根拠を表す助詞「-에」が結合した接続表現です。話し手が自らの判断や行動を下すに至った客観的な事実や原因を提示する際に用いられます。日常会話でよく使われる「-아서/어서」や「-(으)니까」に比べ、やや改まった丁寧な響きを持ち、文章語や落ち着いた語り口において重宝されます。",
+    "formation": "動詞・形容詞語幹 + -기에（하다用言の語幹 + -기에 で 하기에）",
+    "examples": [
+      {
+        "translation": "今日は天気が良いので、散歩をするのにうってつけの日です。"
+      },
+      {
+        "translation": "彼は勉強ができるため、いつも先生から褒められています。"
+      },
+      {
+        "translation": "この街は交通事情が複雑であるため、車を持ち歩くのは難しいです。"
+      },
+      {
+        "translation": "彼女が私のことを嫌っているため、これ以上彼女には連絡していません。"
+      }
+    ]
   },
   "ko_하려고_82": {
-    "title": "~하려고 하다 [haryeogo hada] (Try to do)",
-    "shortExplanation": "〜を表すために使用されます the intention or effort to try to do something.",
-    "longExplanation": "'~하려고 하다' indicates the speaker’s plan or intention to perform an action. It is equivalent to 'try to do' in English and is formed by attaching '하려고' to the verb stem, followed by '하다'.",
-    "formation": "動詞 stem + 하려고 + 하다"
+    "title": "~하려고 하다 / ~(으)려고 하다（〜しようとする、〜するつもりだ - 意図・計画）",
+    "shortExplanation": "主語がある行動を起こそうと意図・計画していること、またはそのために努めていることを表します（「〜しようとする」「〜するつもりだ」）。",
+    "longExplanation": "「~(으)려고 하다」（「하다」動詞の場合は「~하려고 하다」）は、意図や目的を表す接続語尾「-(으)려고」に補助動詞「하다」が結合した表現です。主語の明確な意思、計画、試みを述べる際に用いられます。また、天候や自然現象などの無意志主語に接続する場合は「今にも〜しそうだ」という切迫した兆候を表すこともあります。日本語の「〜しようとする」「〜するつもりだ」「〜しようと努める」に相当します。",
+    "formation": "動詞語幹 + -(으)려고 하다（パッチムがある場合は -으려고 하다、パッチムがない場合やㄹパッチムの場合は -려고 하다；하다動詞語幹には -하려고 하다）",
+    "examples": [
+      {
+        "translation": "私は毎日20分ずつ本を読もうとしています。そうして読書を習慣づけようとしているのです。"
+      },
+      {
+        "translation": "彼は良い仕事を見つけるために雑誌を読もうとしています。"
+      },
+      {
+        "translation": "私たちは葛藤を解決しようとお互いに話し合おうと試みましたが、結果的には成功しませんでした。"
+      },
+      {
+        "translation": "姉は妹に数学を教えようと毎日努力しようとしていました。"
+      }
+    ]
   },
   "ko_할_83": {
-    "title": "~할 때마다 [hal ttaemada] (Every time)",
-    "shortExplanation": "〜を表すために使用されます repetition; 'every time' or 'whenever'.",
-    "longExplanation": "'~할 때마다' is a standard construction 〜を示します that whenever a certain condition or event occurs, a specific action follows. It emphasizes the repeatability and consistency of the action.",
-    "formation": "動詞 stem + (을/ㄹ) 때마다"
+    "title": "~할 때마다 / ~(으)ㄹ 때마다（〜するたびに、〜するごとに - 反復と規則性）",
+    "shortExplanation": "ある時間や条件、行為が生じるたびに、それに伴って決まって同じ事態が繰り返されることを表します（「〜するたびに」「〜のたびごとに」）。",
+    "longExplanation": "「~(으)ㄹ 때마다」（「하다」動詞の場合は「~할 때마다」）は、連体形語尾「-(으)ㄹ」に依存名詞「때（とき）」と反復を表す助詞「마다（ごと、たび）」が合わさった表現です。前項の契機や条件が成立するたびに、例外なく後項の動作や感情が引き起こされるという反復性・規則性を強調します。後節には「항상（いつも）」「매번（毎回）」や、習慣的動作を表す「-곤 하다（〜したものだ、よく〜する）」が頻繁に伴われます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 때마다（パッチムがある場合は -을 때마다、パッチムがない場合やㄹパッチムの場合は -ㄹ 때마다；하다動詞語幹には -할 때마다）；名詞 + 때마다",
+    "examples": [
+      {
+        "translation": "秋になると私は故郷を思い出しながら、いつも歌を歌ったものでした。"
+      },
+      {
+        "translation": "彼は彼女のことを思い出すたびに、ノートに彼女についての歌を書き留めていました。"
+      },
+      {
+        "translation": "試験期間が巡ってくるたびに、母は私に美味しい料理を作ってくれました。"
+      },
+      {
+        "translation": "私は彼女を見るたびに、胸がドキドキと高鳴ったものでした。"
+      }
+    ]
   },
   "ko_하면_84": {
-    "title": "~하면 할수록 [hamyeon halsurok] (The more ~, the more ~)",
-    "shortExplanation": "Expresses that increasing one factor causes a corresponding change in another.",
-    "longExplanation": "'~하면 할수록' is 〜を示します a proportional relationship between two conditions or actions. It means that the more (or less) of one thing there is, the more (or less) of another occurs.",
-    "formation": "動詞-아/어/여 + 하면 + 動詞-ㄹ/을 + 수록"
+    "title": "~하면 할수록 / ~(으)면 ~(으)ㄹ수록（〜すればするほど、〜であればあるほど - 比例と強調）",
+    "shortExplanation": "前項の動作や状態の程度が進めば進むほど、それに伴って後項の程度や結果も一層強まるという比例関係を強調します（「〜すればするほど」）。",
+    "longExplanation": "「~(으)면 ~(으)ㄹ수록」（「하다」用言の場合は「~하면 할수록」）は、条件を表す接続語尾「-(으)면」と比例関係を表す接続語尾「-(으)ㄹ수록」を重ねて用いる強調表現です。単に「-(으)ㄹ수록」と述べるよりも、前項の深まりが後項の変化に及ぼす強い相関関係を鮮明に浮き彫りにします。日本語の「〜ば〜するほど」「〜であればあるほど」にそのまま相当します。",
+    "formation": "動詞・形容詞語幹 + -(으)면 + 同一語幹 + -(으)ㄹ수록（パッチムがある場合は -으면 -을수록、パッチムがない場合やㄹパッチムの場合は -면 -ㄹ수록；하다用言は -하면 할수록）",
+    "examples": [
+      {
+        "translation": "日がますます暖かくなればなるほど、花がたくさん咲いてきています。"
+      },
+      {
+        "translation": "勉強を多くすればするほど、試験の合格率は高まります。"
+      },
+      {
+        "translation": "運動を多くすればするほど、健康になったと実感できます。"
+      },
+      {
+        "translation": "料理の練習を重ねれば重ねるほど、腕前が上達していきます。"
+      }
+    ]
   },
   "ko_하면서_85": {
-    "title": "~하면서 [hamyeonseo] (While doing)",
-    "shortExplanation": "Used to describe two actions occurring simultaneously by the same subject.",
-    "longExplanation": "'~하면서' is a conjunction 〜を示します that two actions take place at the same time. It is equivalent to 'while' or 'as' in English and connects clauses where the same subject performs both actions.",
-    "formation": "動詞 stem + -하면서"
+    "title": "~하면서 / ~(으)면서（〜しながら - 同一主体の動作の同時進行）",
+    "shortExplanation": "同一の主語が、二つ以上の動作を同じ時間帯に並行して行うことを表す接続語尾です（「〜しながら」）。",
+    "longExplanation": "「~(으)면서」（「하다」動詞の場合は「~하면서」）は、動作の同時進行を表す代表的な接続語尾です。原則として前節と後節の主語は同一でなければならず、ある行為を行いながら並行してもう一つの行為を行う場面を表現します。また、形容詞に接続して二つの性質が両立していることを表したり、文脈によっては「〜であるにもかかわらず」という逆接のニュアンスを帯びることもあります。日本語の「〜しながら」に相当します。",
+    "formation": "動詞・形容詞語幹 + -(으)면서（パッチムがある場合は -으면서、パッチムがない場合やㄹパッチムの場合は -면서；하다動詞語幹には -하면서）",
+    "examples": [
+      {
+        "translation": "眼鏡をかけながら本を読んだので、とても快適に読むことができました。"
+      },
+      {
+        "translation": "音楽を聴きながら宿題をしたので、退屈しませんでした。"
+      },
+      {
+        "translation": "カフェでコーヒーを飲みながら仕事をしたので、とても静かに集中することができました。"
+      },
+      {
+        "translation": "運転をしながら歌を歌うのはとても気持ちが良く、運転が退屈になりません。"
+      }
+    ]
   },
   "ko_하시겠습니까_86": {
-    "title": "~하시겠습니까? [hasigesseubnikka?] (Would you?)",
-    "shortExplanation": "A very formal and honorific way to request, ask, or suggest something.",
-    "longExplanation": "'~하시겠습니까?' is used to politely and formally request or ask a question. It is formed by adding this ending (after removing the final '-다' from the verb) and is typically used in formal or honorific situations.",
-    "formation": "動詞 (without '-다') + 하시겠습니까?"
+    "title": "~하시겠습니까? / ~(으)시겠습니까?（〜なさいますか？/ 〜していただけますでしょうか？ - 最高級の丁寧・敬語依頼）",
+    "shortExplanation": "目上の人や顧客に対して、意向を尋ねたり極めて丁寧に依頼・提案する際に用いる最高級のフォーマル敬語疑問表現です（「〜なさいますか」「〜していただけますか」）。",
+    "longExplanation": "「~(으)시겠습니까?」（「하다」動詞の場合は「~하시겠습니까?」）は、主体尊敬の先語末語尾「-(으)시-」、丁寧な意志・意向の打診を表す先語末語尾「-겠-」、そして格式体敬語の疑問形終結語尾「-습니까?」が融合した表現です。相手の意思や要望を最大限に尊重しながら尋ねる際、あるいはビジネスの折衝や公式の会議、接客サービスにおいて丁重なリクエストを行う際に用いられます。日本語の「〜なさいますか」「〜していただけますでしょうか」に相当します。",
+    "formation": "動詞語幹 + -(으)시겠습니까?（パッチムがある場合は -으시겠습니까?、パッチムがない場合は -시겠습니까?；하다動詞語幹には -하시겠습니까?）",
+    "examples": [
+      {
+        "translation": "ご一緒に夕食を召し上がりませんか？"
+      },
+      {
+        "translation": "こちらの書類をご検討（ご確認）いただけますでしょうか？"
+      },
+      {
+        "translation": "こちらのカンファレンスにご出席なさいますか？"
+      },
+      {
+        "translation": "ご提案をご検討いただけますでしょうか？"
+      }
+    ]
   },
   "ko_하자_87": {
-    "title": "~하자 [haja] (Let's, as soon as)",
-    "shortExplanation": "Used to suggest an action or express immediate action following another.",
-    "longExplanation": "'~하자' is a conjugated form of '하다' used in two ways: to make suggestions (equivalent to 'let's') and to indicate that one action will immediately follow another (as in 'as soon as'). It is commonly used in conversational Korean.",
-    "formation": "動詞 stem + 자 (for suggestion) / 動詞 stem + 자마자 (for 'as soon as')"
+    "title": "~하자 / ~자마자（1. 〜しよう [親しい勧誘・共動] / 2. 〜するやいなや [直後の生起]）",
+    "shortExplanation": "二つの代表的な用法を持ちます：1. 親しい相手に一緒に行動を起こそうと呼びかける勧誘（「〜しよう」）；2. 前の動作が終わると同時に次の動作が起こる接続（「〜するやいなや」「〜するとすぐに」）。",
+    "longExplanation": "「~하자」（動詞一般には「-자」または接続形の「-자마자」）には韓国語の重要な二つの機能があります。1）文末で使われる場合：パンマルの共動形終結語尾「-자」であり、友人や親しい間柄で「一緒に〜しよう」と提案する際に用いられます；2）節と節を繋ぐ接続表現として使われる場合：「-자마자」（あるいは文語的な「-자」）として機能し、先行する動作が完了したまさにその瞬間に間髪を入れず次の動作や事態が生じることを表します（「〜するやいなや」「〜したとたんに」）。",
+    "formation": "1. 勧誘（〜しよう）：動詞語幹 + -자（하다動詞は -하자）；2. 継起（〜するやいなや）：動詞語幹 + -자마자（または -자）",
+    "examples": [
+      {
+        "translation": "天気が本当にいいから、私たち外に出て散歩しよう。"
+      },
+      {
+        "translation": "夕飯を食べるやいなや、友達に電話をかけなければなりません。"
+      },
+      {
+        "translation": "試験が終わったらすぐに旅行へ行きたいです。"
+      },
+      {
+        "translation": "この映画を見ようよ、絶対に後悔しないから。"
+      }
+    ]
   },
   "ko_하여_88": {
-    "title": "~하여 [hayeo] (So, therefore)",
-    "shortExplanation": "〜を表すために使用されます reason, cause, or circumstances; 'so' or 'therefore'.",
-    "longExplanation": "'~하여' is a connecting ending used to show a cause-effect relationship—similar to 'so' or 'therefore' in English. It introduces a clause that explains the reason or cause for the preceding statement and is generally used in formal or written contexts.",
-    "formation": "動詞 stem + 어/아 + 하여"
+    "title": "~하여 / ~해서（〜して、〜によって、〜のために - 改まった接続・理由）",
+    "shortExplanation": "原因や理由、または順序を表す接続表現で、「하다」動詞に接続語尾「-여(서)」が結合した格調高い文章語形態です（「〜して」「〜によって」「〜のために」）。",
+    "longExplanation": "「~하여」（口語形は「~해서」、完全形は「~하여서」）は、「하다」で終わる動詞や形容詞の語幹に接続語尾「-아/어/여(서)」が結合した公式的・格式高い文章語の表現です。新聞記事、公的文書、学術論文、スピーチなどの改まった場面で、前項が後項の原因や理由となっていることを示したり、先行する動作の手段や時間的順序を格調高く記述する際に用いられます。日常会話の「-해서」に比べて引き締まった文体を作り出します。",
+    "formation": "하다動詞・形容詞語幹 + -여 で 하여（完全形は 하여서、口語短縮形は 해서）",
+    "examples": [
+      {
+        "translation": "朝起きるのが遅くなったため、学校に遅刻してしまいました。"
+      },
+      {
+        "translation": "彼女はあまりに疲れ果てていたため、それ以上起き上がることができませんでした。"
+      },
+      {
+        "translation": "会社での仕事が多忙を極めたため、友人たちとの約束をキャンセルせざるを得ませんでした。"
+      },
+      {
+        "translation": "天気が非常に寒かったため、外出せずに家に留まりました。"
+      }
+    ]
   },
   "ko_하여야_89": {
-    "title": "~하여야 [hayeoya] (Have to, should)",
-    "shortExplanation": "〜を表すために使用されます the necessity or obligation; 'have to', 'should'.",
-    "longExplanation": "'~하여야' is a verb ending used in Korean to indicate that a certain action is necessary or obligatory—often used in contexts of duty, responsibility, or advice. It corresponds to 'have to', 'should', or 'must' in English, imparting a sense of expectation upon the subject.",
-    "formation": "動詞 stem + (어/아) 하여야 (한다)"
+    "title": "~하여야 / ~아/어야（〜してこそ、〜しなければ〜ない - 必須条件・義務）",
+    "shortExplanation": "後節の結果が成立するために前節の行為や状態が不可欠な条件であることを表します（「〜してこそ」「〜しなければ〜ない」）。",
+    "longExplanation": "「~하여야」（口語では主に「-아/어야」）は、前節の内容が後節の事態を成り立たせるための必須条件・前提条件であることを表す接続語尾です。日本語の「〜してこそ」「〜してはじめて」「〜しなければ（〜できない）」に相当します。また、「-아/어야 하다/되だ」の形で義務や当為（「〜しなければならない」）を表したり、「-아/어야 -(으)ㄹ 수 있다（〜してこそ〜できる）」の形で条件と可能を結びつけたりする際の中核構文となります。「-하여야」は「-해야」に比べて改まった文体や書き言葉で多く用いられ、条件の重要性を厳格に強調する響きを持ちます。",
+    "formation": "動詞・形容詞語幹 + -아/어야（語幹末尾の母音部がㅏ・ㅗの場合は -아야、それ以外は -어야；하다は 하여야 または 해야）",
+    "examples": [
+      {
+        "translation": "一生懸命勉強してこそ成績が良くなるので、毎日熱心に勉強しなければなりません。"
+      },
+      {
+        "translation": "料理を上手に作るためには前もって材料を準備しなければならず、そのため厨房で早くから始めなければなりません。"
+      },
+      {
+        "translation": "毎日運動してこそ健康を維持できるので、毎朝散歩をしなければなりません。"
+      },
+      {
+        "translation": "交通事故を防ぐためには法規をしっかり守るべきであり、また注意を払わなければなりません。"
+      }
+    ]
   },
   "ko_하자마자_90": {
-    "title": "~하자마자 [hajamaja] (As soon as)",
-    "shortExplanation": "〜を表すために使用されます 'as soon as' or 'immediately after'.",
-    "longExplanation": "'~하자마자' is a conjugational pattern in Korean 〜を示します that one action occurs immediately after another. It is roughly equivalent to 'as soon as' in English, showing prompt succession of events.",
-    "formation": "動詞 stem + 하자마자"
+    "title": "~하자마자 / ~자마자（〜するやいなや、〜するとすぐ - 直後継起）",
+    "shortExplanation": "前項の動作が終わるとほとんど時間をおかずに、後項の動作が直ちに起こることを表します（「〜するやいなや」「〜するとすぐ」）。",
+    "longExplanation": "「~자마자」（動詞하다の場合は「~하자마자」）は、先行する動作の完了と後続の動作の発生に時間的間隔がほとんどないことを表す接続語尾です。日本語の「〜するやいなや」「〜するとすぐに」「〜したとたんに」に相当します。動詞の語幹にのみ結合し、形容詞には接続しません。文全体が過去の事態を表す場合でも、「-자마자」の前に過去形語尾「-았/었-」を挟むことはできず、時制は常に後続節の末尾で表します。",
+    "formation": "動詞語幹 + -자마자（パッチムの有無に関係なく -자마자）",
+    "examples": [
+      {
+        "translation": "私は彼からの手紙を受け取るやいなや、遅らせることなくすぐに電話をかけました。"
+      },
+      {
+        "translation": "私は学校から帰宅するやすぐに宿題を始めました。休憩時間など一切ありませんでした。"
+      },
+      {
+        "translation": "映画が終わるやいなや、彼らは別の予定があったため映画館を後にしました。"
+      },
+      {
+        "translation": "お母さんが家に帰ってくるやいなや、子犬は喜んで跳びはねました。本当にお母さんが大好きなようです。"
+      }
+    ]
   },
   "ko_하여_91": {
-    "title": "~하여 [hayeo] (So, therefore)",
-    "shortExplanation": "〜を表すために使用されます a cause–effect relationship; 'so', 'therefore'.",
-    "longExplanation": "'~하여' is a connecting ending used in Korean to indicate the cause or reason for a situation, similar to 'so' or 'therefore' in English. It is typically used in formal or written contexts.",
-    "formation": "動詞 stem + (어/아) + 하여"
+    "title": "~하여 / ~아/어（〜して、〜によって - 書き言葉における原因・理由）",
+    "shortExplanation": "主に書き言葉や公の場で用いられ、前節が後節の事態を引き起こす原因や理由であることを表します（「〜して」「〜のため」）。",
+    "longExplanation": "「~하여」（「~하여서」の縮約形であり、「-아/어」語尾に由来）は、原因や理由を表す格調高い接続表現です。日常会話で多用される「-아/어서」に比べ、論文、ニュース、公的文書などの書き言葉において好まれ、簡潔で引き締まった文体を形成します。前節で事象の原因・根拠・背景を述べ、それによって生じた必然的な結果を後節で述べます。",
+    "formation": "動詞・形容詞語幹 + -아/어（하다は 하여；語幹末尾の母音部がㅏ・ㅗの場合は -아、それ以外は -어）",
+    "examples": [
+      {
+        "translation": "遅く起きてしまったため、学校に遅刻して到着しました。"
+      },
+      {
+        "translation": "彼女はあまりに疲労していたため、これ以上起き上がることができませんでした。"
+      },
+      {
+        "translation": "交通渋滞が激しかったため、バスが遅れて到着しました。"
+      },
+      {
+        "translation": "天候があまりに寒かったため、外に出るのが困難でした。"
+      }
+    ]
   },
   "ko_하기보다_92": {
-    "title": "~하기보다 [hagiboda] (Rather than)",
-    "shortExplanation": "〜を表すために使用されます comparison or contrast; 'rather than', 'instead of'.",
-    "longExplanation": "'~하기보다' is used in Korean to compare two alternatives, expressing a preference or contrast between them. It is roughly translated as 'rather than' or 'instead of' in English.",
-    "formation": "動詞 stem + 기보다"
+    "title": "~하기보다(는)（〜するよりは、〜するくらいなら - 比較・選択）",
+    "shortExplanation": "二つの行為を比較し、前項を行うよりは後項を行う方が好ましい、あるいは勝っているという選択を表します（「〜するよりは」「〜するくらいなら」）。",
+    "longExplanation": "「~하기보다(는)」は動詞の名詞形語尾「-기」、比較の格助詞「보다（〜より）」、補助詞「(는)」が組み合わさった表現です。二つの選択肢を対比させ、前節で挙げた行為をするくらいなら後節の行為をする方が望ましい、効果的である、または話し手の好みに合致しているという判断を示します。日本語の「〜するよりは」「〜するくらいならむしろ」に相当し、「차라리（いっそ、むしろ）」「오히려（かえって）」「더 낫다（よりましだ）」などの語句と好んで呼応します。",
+    "formation": "動詞語幹 + -기보다(는)",
+    "examples": [
+      {
+        "translation": "私は家で映画を見るよりは映画館で見る方がもっと好きです。"
+      },
+      {
+        "translation": "果物を食べるよりは、いっそサラダを食べる方がずっといいです。"
+      },
+      {
+        "translation": "友達と食堂でお昼を食べるよりは、家で自分で作った料理を食べる方がましだと思います。"
+      },
+      {
+        "translation": "テレビを見るよりは本を読む方がよっぽど役に立ちます。"
+      }
+    ]
   },
   "ko_하느라_93": {
-    "title": "~하느라 [haneura] (Because of doing, due to)",
-    "shortExplanation": "〜を示します that being busy doing something has led to a certain (often negative) consequence.",
-    "longExplanation": "'~하느라' is used in Korean to explain that one was so busy doing something that it caused another result—typically an unintended negative outcome. It is often translated as 'because of doing' or 'due to being busy with'.",
-    "formation": "動詞 stem + -느라"
+    "title": "~하느라 / ~느라고（〜するのに追われて、〜のせいで - 負担や好ましくない結果の原因）",
+    "shortExplanation": "前項の動作に没頭したり忙しかったりしたことが原因で、後項のような好ましくない結果や疲労を招いたことを表します（「〜するのに忙しくて」「〜のせいで」）。",
+    "longExplanation": "「~느라고」（短縮形「-느라」）は、ある目的に向けた行為に時間を費やし専念したことが原因で、他のことができなかったり、疲弊したり、思わしくない結果に至ったりしたことを説明する接続語尾です。日本語の「〜するのに手一杯で」「〜するのに追われて〜できない」「〜したせいで」に相当します。前後節の主語は同一でなければならず、後続節に命令文や勧誘文を用いることはできません。また語尾自体に過去形「-았/었-」を付けることはできず、もっぱら主語の意図的な動詞に結合します。",
+    "formation": "動詞語幹 + -느라(고)",
+    "examples": [
+      {
+        "translation": "準備に追われて時間がずいぶんかかりました。"
+      },
+      {
+        "translation": "試験勉強をするのに忙しくて、友達と会えませんでした。"
+      },
+      {
+        "translation": "事業のために懸命に働いたせいで、体がすっかり疲れ果ててしまいました。"
+      },
+      {
+        "translation": "暑い夏の日、彼女はアイスクリーム屋の切り盛りに追われて忙しくしていました。"
+      }
+    ]
   },
   "ko_하는_94": {
-    "title": "~하는 한 [haneun han] (As long as)",
-    "shortExplanation": "〜を示します the condition or basis on which something can happen or be established; 'as long as'.",
-    "longExplanation": "'~하는 한 [haneun han]' is used in Korean to emphasize the condition or requirement necessary for something to happen. It is equivalent to the English phrase 'as long as', indicating that something will or can happen on the premise of the condition specified. This is frequently used in situations requiring adherence to a certain condition or meeting a particular prerequisite.",
-    "formation": "動詞 + 하는 한"
+    "title": "~하는 한 / ~는 한（〜する限り、〜である限り - 条件の限定・前提）",
+    "shortExplanation": "前項の状態や行為が継続している範囲を限定条件として示し、その限りにおいて後項が成立することを表します（「〜する限り」）。",
+    "longExplanation": "「~는 한」は連体形語尾「-(으)ㄴ/는」に、限界・限度を意味する依存名詞「한（限）」が結合した構文です。前節で提示された条件や範囲が維持されている間は後節の事態や判断が有効であることを表します。日本語の「〜する限り」「〜である限り」に相当します。規則の順守や前提条件を明示する場面で多用されるほか、「내가 아는 한（私の知る限り）」「할 수 있는 한（できる限り）」のように認識や能力の枠組みを示す慣用句としても広く用いられます。",
+    "formation": "動詞語幹 + -는 한；形容詞語幹 + -(으)ㄴ 한（パッチムがある場合は -은 한、ない場合は -ㄴ 한）",
+    "examples": [
+      {
+        "translation": "君が勉強し続ける限り、いつでも成功を収めることができるはずです。"
+      },
+      {
+        "translation": "私たちがお互いに率直に話し合う限り、何の問題も起こらないでしょう。"
+      },
+      {
+        "translation": "両親の言いつけに従う限り、私たちの家ではどんなことも問題にはならない。"
+      },
+      {
+        "translation": "あなたが才能を発揮する限り、この仕事に対して挫折感を持つ必要はありません。"
+      }
+    ]
   },
   "ko_하는_95": {
-    "title": "~하는 김에 [haneun kime] (While at it)",
-    "shortExplanation": "This is 〜を表すために使用されます 'while doing A, do B', or 'since you are doing A, might as well do B'.",
-    "longExplanation": "~하는 김에 [haneun kime] is a Korean grammatical expression used to present additional actions you might as well do while you're in the process of doing a primary action. This commonly translates to 'while doing it, might as well do B' or 'since you're doing it, also do B'. It also suggests that the secondary action (B) may be somewhat related to, or is convenient because of, the primary action (A).",
-    "formation": "動詞 + ~는 김에"
+    "title": "~하는 김에 / ~(으)ㄴ/는 김에（〜するついでに、〜したついでに - 便乗行動）",
+    "shortExplanation": "主たる行為を行う機会や都合の良さを利用して、別の付随的な行為も合わせて行うことを表します（「〜のついでに」）。",
+    "longExplanation": "「~(으)ㄴ/는 김에」は連体形語尾に、好機や折を意味する依存名詞「김」が結合した表現です。本来の目的である主要な行動を行う際に生じた好都合な機会・動線を利用して、ついでに別の行動も一緒に行うときに用います。日本語の「〜するついでに」「〜したついでに」に相当します。現在または未来の予定動作には「-는 김에」を、前項の動作が完了した勢いで後項を行う場合には「-(으)ㄴ 김에」を用います。",
+    "formation": "動詞語幹 + -는 김에（現在・未来）；動詞語幹 + -(으)ㄴ 김에（過去・完了、パッチムがある場合は -은 김에、ない場合は -ㄴ 김에）",
+    "examples": [
+      {
+        "translation": "書店に行くついでに本も買い、必要な鉛筆も買ってきました。"
+      },
+      {
+        "translation": "家に帰るついでにマートでおやつを買いました。"
+      },
+      {
+        "translation": "弟（妹）が公園に行くついでに、私も一緒に行って運動しようと思います。"
+      },
+      {
+        "translation": "友達に会いに行くついでに、プレゼントを買ってあげるつもりです。"
+      }
+    ]
   },
   "ko_하는_96": {
-    "title": "~하는 편이다 [haneun pyeonida] (Tend to)",
-    "shortExplanation": "This expression is used to describe a tendency or habit.",
-    "longExplanation": "'~하는 편이다 [haneun pyeonida]' is a Korean grammar point 〜を表すために使用されます a general habit or tendency of someone or something. It is generally used to describe an action that is not absolutely consistent, but is generally favored or avoided. 〜と訳されます 'tend to', 'more likely to', or 'has a habit of' in English.",
-    "formation": "動詞 (stem) + 는 편이다"
+    "title": "~하는 편이다 / ~(으)ㄴ/는 편이다（〜する方だ、割と〜な方だ - 傾向・特性）",
+    "shortExplanation": "断定的な言及を避け、概ねある傾向や性質に属しているという柔らかい評価を表します（「〜な方だ」「割と〜する方だ」）。",
+    "longExplanation": "「~(으)ㄴ/는 편이다」は連体形語尾に、側・傾向を意味する依存名詞「편」と指定詞「이다」が結合した表現です。事態を絶対的に100%断定するのではなく、「どちらかと言えば〜の部類に入る」「大体において〜する傾向がある」と控えめに述べる際に用います。日本語の「〜する方だ」「割と〜な方だ」に相当します。動詞現在形には「-는 편이다」、形容詞には「-(으)ㄴ 편이다」、名詞には「인 편이다」が接続します。",
+    "formation": "動詞語幹 + -는 편이다；形容詞語幹 + -(으)ㄴ 편이다（パッチムがある場合は -은 편이다、ない場合は -ㄴ 편이다）；名詞 + 인 편이다",
+    "examples": [
+      {
+        "translation": "私は朝早く起きる方です。そうすることで一日をより効率的にスタートできるからです。"
+      },
+      {
+        "translation": "彼女は旅行に行くとき、いつも写真を多く撮る方です。思い出を写真として残すのが好きだからですね。"
+      },
+      {
+        "translation": "暖かくなると人々はより運動をする傾向にあります。健康維持のためにウォーキングやランニングを好むようです。"
+      },
+      {
+        "translation": "私は悩みがあるとき、友達に打ち明けて話す方です。彼らの多彩な考えがいつも助けになるからです。"
+      }
+    ]
   },
   "ko_하는_97": {
-    "title": "~하는 대로 [haneun daero] (As soon as)",
-    "shortExplanation": "〜を表すために使用されます 'as soon as' or 'immediately after'.",
-    "longExplanation": "'~하는 대로 [haneun daero]' is a compound verb ending 〜を表すために使用されます the immediate action taken after a certain situation or event has occurred. It indicates simultaneous actions or immediate sequences, much like 'as soon as' or 'immediately after' in English. When you want to say that something happened right after something else without any time gap, you can use this ending.",
-    "formation": "動詞 + 하는 대로"
+    "title": "~하는 대로 / ~는 대로（〜次第、〜するとすぐ - 直後即時行動）",
+    "shortExplanation": "前項の動作が行われるや否や、間髪を入れず後項の行為を行うことを表します（「〜次第」「〜するとすぐに」）。",
+    "longExplanation": "「~는 대로」は動詞の連体形語尾「-는」に、依存名詞「대로」が結合した表現です。ここでは「〜する通りに」という様態の意味ではなく、「ある事態が発生するやいなや直ちに後続の行動に移る」という時間的即時性を表します。日本語の「〜次第」「〜するとすぐに」に相当します。未来の約束や依頼の表現（「到着し次第連絡します」など）でも極めて頻繁に用いられます。",
+    "formation": "動詞語幹 + -는 대로",
+    "examples": [
+      {
+        "translation": "彼の公演が始まるやいなや、すべての観客が一斉に歓声を上げ始めました。"
+      },
+      {
+        "translation": "起きるやすぐに歯を磨いてこそ、歯の健康を守ることができます。"
+      },
+      {
+        "translation": "運動を終え次第たくさんの水を飲んでください。そうしてこそ脱水を防ぐことができます。"
+      },
+      {
+        "translation": "飛行機が着陸するとすぐに、彼は電話をかけました。"
+      }
+    ]
   },
   "ko_하다_98": {
-    "title": "~하다 보면 [hada bomyeon] (If you keep doing)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます the idea that if you keep doing something, then a certain result will eventually happen.",
-    "longExplanation": "The Korean grammar point '~하다 보면 [hada bomyeon]' is used to show that if you do something continuously, it will eventually lead to a certain outcome. It implies that over time, repeating an action or behavior can bring about a specific change or effect. The verb preceding '하다 보면' expresses the action, and the pattern is often used with actions that have a progressive or accumulative effect.",
-    "formation": "動詞 stem + 하다 보면"
+    "title": "~하다 보면 / ~다 보면（〜していると、〜し続けていれば - 継続動作からの結果）",
+    "shortExplanation": "ある行為を反復・継続して行っていれば、やがて一定の結果や変化が生じるであろうという見通しを表します（「〜し続けていれば」「〜しているうちに」）。",
+    "longExplanation": "「~다 보면」は動作の継続・転換を表す「-다가」に、試行を表す補助動詞「보다」、仮定条件の「-(으)면」が合わさった構文です。「もしある行動をずっと続けていれば、その積み重ねの果てに必然的にある結果や気づきに至るだろう」という見通し・助言を述べる際に用います。日本語の「〜し続けていれば〜になる」「〜しているうちに〜できるようになる」に相当します。後続節には「-(으)ㄹ 것이다（〜だろう）」「-(으)ㄹ 수 있다（〜できる）」などの推量や可能性を表す表現が続くのが普通です。",
+    "formation": "動詞語幹 + -다 보면",
+    "examples": [
+      {
+        "translation": "毎日一単語ずつ学んでいると、一ヶ月後には新しく学んだ単語が30個にも達します。"
+      },
+      {
+        "translation": "練習を粘り強く続けていれば、結局は実力が向上するはずです。"
+      },
+      {
+        "translation": "毎日十分に運動していれば、体は自然と健康になることでしょう。"
+      },
+      {
+        "translation": "変化を受け入れようと努力し続けていれば、困難な状況にもうまく対処できるようになるはずです。"
+      }
+    ]
   },
   "ko_하다_99": {
-    "title": "~하다 보니 [hada boni] (As I was doing)",
-    "shortExplanation": "〜を表すために使用されます how one thing naturally leads to another; 'as I was doing, I realized that...'.",
-    "longExplanation": "'~하다 보니 [hada boni]' is used to describe a situation where, while doing something, you gradually come to realize, understand, or feel something. It is often translated as 'as I was doing, I realized that' and is 〜を表すために使用されます naturally emerging emotions or insights as a result of ongoing actions.",
-    "formation": "動詞 (in dictionary form) + 하다 보니"
+    "title": "~하다 보니 / ~다 보니(까)（〜しているうちに、〜してみると - 経験による発見・実感）",
+    "shortExplanation": "ある行為を継続・反復して行う過程で、ある事実に気づいたり、自然とある結果に至ったりしたことを表します（「〜しているうちに」「〜してみたら」）。",
+    "longExplanation": "「~다 보니(까)」は「-다가」に補助動詞「보다」、理由・発見を表す語尾「-니(까)」が結合した構文です。ある動作を続けていくうちに、新たな知見を得たり、感情の変化に気づいたり、実際にその行為が原因となって現在の状態に立ち至ったという個人的な経験や実感を述べるときに用います。未来を仮定する「-다 보면」とは異なり、現実に起きた経験則や現在の実感について語る点が特徴です。",
+    "formation": "動詞語幹 + -다 보니(까)",
+    "examples": [
+      {
+        "translation": "毎日運動しているうちに健康状態が良くなり、気分もすっかり良くなりました。"
+      },
+      {
+        "translation": "韓国語をずっと勉強しているうちに、韓国の文化についてより深く理解できるようになりました。"
+      },
+      {
+        "translation": "よく料理をしているうちに家で食べるご飯がより美味しく感じられ、いっそう頻繁に料理をするようになりました。"
+      },
+      {
+        "translation": "友達と多くの時間を過ごしているうちに、彼らとより親密になれたような気がします。"
+      }
+    ]
   },
   "ko_하려는_100": {
-    "title": "~하려는 뜻이다 [haryeoneun tteushida] (Intend to)",
-    "shortExplanation": "This is 〜を表すために使用されます an intention or plan to do something in the future.",
-    "longExplanation": "'~하려는 뜻이다 [haryeoneun tteushida]' is a grammatical construction 〜を示します the speaker's intention or plan to do something. It is usually expressed using the verb stem + 려는 뜻이다. In English, it is equivalent to 'intend to' or 'plan to', and it is 〜を表すために使用されます future goals or plans.",
-    "formation": "動詞 stem + 려는 뜻이다"
+    "title": "~하려는 뜻이다 / ~(으)려는 뜻이다（〜する意向だ、〜するつもりだ - 意図・計画の表明）",
+    "shortExplanation": "話し手や主体の意図、志向、将来の計画を改まって明確に表明するときに用います（「〜する意向である」「〜するつもりだ」）。",
+    "longExplanation": "「~(으)려는 뜻이다」は意図を表す連体形語尾「-(으)려는」に、意思や意向を意味する名詞「뜻」、指定詞「이다」が結合した表現です。主語がある行動を起こそうとする確固たる意図や目的、胸に抱いている方針を説明する際に使われます。口語表現の「-(으)려고 하다」や「-(으)ㄹ 생각이다」よりも改まった響きを持ち、意思や志を重んじて述べる文脈に適しています。",
+    "formation": "動詞語幹 + -(으)려는 뜻이다（パッチムがある場合は -으려는 뜻이다、ない場合やりパッチムは -려는 뜻이다）",
+    "examples": [
+      {
+        "translation": "私は明日、友達に会う意向です。"
+      },
+      {
+        "translation": "私たちのチームは今度の試合で勝つつもりです。"
+      },
+      {
+        "translation": "私はお年寄りの方々をお助けしたいという意向です。"
+      },
+      {
+        "translation": "彼は英語を学ぶつもりである。"
+      }
+    ]
   },
   "ko_하면_101": {
-    "title": "~하면 ~하다 [hamyeon hada] (If ~ then)",
-    "shortExplanation": "Used to describe conditional statements or a sequence of events; 'if ~ then'.",
-    "longExplanation": "'~하면 ~하다 [hamyeon hada]' is used in Korean to link a condition with its result or subsequent action. When the action or condition in the first clause occurs, the second clause follows as a consequence. It is similar to the English 'if ~ then' structure and can be 〜を表すために使用されます hypothetical scenarios or sequential events.",
-    "formation": "動詞/形容詞 in dictionary form + 면 + 動詞/形容詞 in dictionary form + 다"
+    "title": "~하면 ~하다 / ~(으)면（〜すれば〜する、〜したら - 基本的条件・仮定）",
+    "shortExplanation": "前項に仮定の条件や前提を置き、その条件が満たされたときに生じる結果や後続行動を後項で述べます（「〜すれば」「〜したら」）。",
+    "longExplanation": "「~(으)면」は韓国語において最も基本的かつ広範に用いられる条件接続語尾です。前節で仮定・条件・前提となる事柄を提示し、後節でそれに伴って生じる帰結や意思、判断を導きます。日本語の「〜ば」「〜たら」「〜なら」に広く対応します。自然法則や反復的な日常の習慣から、将来の仮定的な事態に基づく約束・見通しに至るまで幅広く活用されます。",
+    "formation": "動詞・形容詞語幹 + -(으)면（パッチムがある場合は -으면、ない場合やりパッチムは -면）；名詞 + (이)면",
+    "examples": [
+      {
+        "translation": "復習すれば試験で良い点を取ることができるはずです。"
+      },
+      {
+        "translation": "明日天気が良ければ、私は公園に行きます。"
+      },
+      {
+        "translation": "このケーキをたくさん食べると太ってしまいますよ。"
+      },
+      {
+        "translation": "私たちが先に出発すれば時間に間に合わせることができると思います。"
+      }
+    ]
   },
   "ko_할_102": {
-    "title": "~할 만하다 [hal manhada] (Worth to)",
-    "shortExplanation": "Loosely translates to 'worth to' or 'deserving of', 〜を表すために使用されます that something is worthwhile.",
-    "longExplanation": "The construction '~할 만하다' is 〜を表すために使用されます the idea that something is worth the effort, time, or cost. The verb that precedes this construction determines the context. It is often translated as 'worth to' or 'deserving of' in English. Generally, it is used when something is considered worthwhile or valuable, and it is not typically used in the negative form.",
-    "formation": "動詞 stem + 할 만하다"
+    "title": "~할 만하다 / ~(으)ㄹ 만하다（〜する価値がある、〜に値する - 価値・妥当性）",
+    "shortExplanation": "その行為を行うだけの十分な価値や見返りがあること、あるいはある程度耐えうる・及第点であることを表します（「〜する価値がある」「〜に値する」）。",
+    "longExplanation": "「~(으)ㄹ 만하다」は推量・予定の連体形語尾「-(으)ㄹ」に、価値や程度を表す補助形容詞「만하다」が結合した表現です。時間や費用、労力を注ぎ込むに十分値する行為であることを示す際によく使われます（例：「見る価値がある」「行く価値がある」）。また文脈によっては、「完璧ではないが一応我慢できる、合格点に達している」という許容範囲を表すこともあります。日本語の「〜する価値がある」「〜に値する」「〜してもよい」に相当します。",
+    "formation": "動詞語幹 + -(으)ㄹ 만하다（パッチムがある場合は -을 만하다、ない場合やりパッチムは -ㄹ 만하다）",
+    "examples": [
+      {
+        "translation": "これを見たら本当にとても面白くて何度も繰り返し見る価値があり、時間がもったいなくありません。"
+      },
+      {
+        "translation": "その映画は本当に感動的でぜひ見るに値し、もう一度観たいくらいです。"
+      },
+      {
+        "translation": "この料理は材料費が多少高くても作って食べる価値があり、素晴らしい味で大変満足できます。"
+      },
+      {
+        "translation": "この本は値段が高いですが読む価値があります。その中に多くの知識が詰まっていて、お金を惜しむ気にはなりません。"
+      }
+    ]
   },
   "ko_할_103": {
-    "title": "~할 바에 [hal bae] (Rather than)",
-    "shortExplanation": "〜を表すために使用されます a preference for an alternative action over the one in consideration; 'rather than'.",
-    "longExplanation": "'~할 바에 [hal bae]' is used in Korean to indicate that, given a choice between two actions, the speaker prefers not to do the action attached to '할 바에'. It emphasizes a preference for a different action over the one being considered. It is often used when expressing a negative alternative or an unfavorable option.",
-    "formation": "動詞 in dictionary form + '할 바에'"
+    "title": "~할 바에 / ~(으)ㄹ 바에(야)（〜するくらいなら、〜するよりはむしろ - 好ましくない選択の拒絶）",
+    "shortExplanation": "前項のような不本意で望ましくない選択肢を受け入れるくらいなら、むしろ後項の代替案を選んだ方がましだという強い意志を表します（「〜するくらいならいっそ」）。",
+    "longExplanation": "「~(으)ㄹ 바에(야)」は連体形語尾「-(으)ㄹ」に、事柄・境遇を意味する依存名詞「바」、助詞「에(야)」が結合した構文です。前節で挙げられた事態が話し手にとって極めて不快、不利益、または不本意な選択肢であることを示し、「そんなことをするくらいなら、むしろ後節の行動を選んだ方がずっとましだ」という強い拒絶と対抗選択を表します。日本語の「〜するくらいならいっそ」「〜するくらいならむしろ〜する方がましだ」に相当し、「차라리（いっそ）」「-는 게 낫다（〜する方がましだ）」と呼応します。",
+    "formation": "動詞語幹 + -(으)ㄹ 바에(야)（パッチムがある場合は -을 바에、ない場合やりパッチムは -ㄹ 바에）",
+    "examples": [
+      {
+        "translation": "そんな言葉を聞くくらいなら、いっそ何も聞かない方がずっとましだ。"
+      },
+      {
+        "translation": "一人でいるくらいなら、友達と一緒に旅行に行く方がもっと良さそうです。"
+      },
+      {
+        "translation": "彼と喧嘩をするくらいなら、いっそ仲直りする方がましだ。"
+      },
+      {
+        "translation": "就職できないくらいなら、いっそこのまま大学に通い続ける方がましな気がします。"
+      }
+    ]
   },
   "ko_할_104": {
-    "title": "~할 리가 없다 [hal riga eopda] (There's no way that)",
-    "shortExplanation": "〜を表すために使用されます impossibility or disbelief in a certain action or state.",
-    "longExplanation": "'~할 리가 없다 [hal riga eopda]' is a Korean grammar point 〜を表すために使用されます the speaker's disbelief or assertion that something is impossible or cannot be the case. It translates to 'there's no way that' in English, signifying that the speaker strongly believes a certain action or situation cannot or will not occur.",
-    "formation": "動詞 (in dictionary form) + 할 리가 없다"
+    "title": "~(으)ㄹ 리가 없다（〜するはずがない、〜なわけがない - 絶対的否定と強い不信）",
+    "shortExplanation": "ある事態や動作が発生する可能性を根底から否定し、道理や根拠に照らして絶対にあり得ないと断定する表現です（「〜するはずがない」「〜なわけがない」）。",
+    "longExplanation": "「~(으)ㄹ 리가 없다」は、話し手の強い確信に基づいて、事態の可能性を真っ向から否定する文型です。未来を表す連体形語尾「-(으)ㄹ」、道理や理由を表す依存名詞「리（理）」、そして存在の否定を表す形容詞「없다」が融合して成り立っています。話し手は「そんなことが起こる筋合いも根拠も皆無である」という強い否定判断を示します。過去の事態に対する否定推量は「-았/었을 리가 없다」となり、反語的疑問形「-(으)ㄹ 리가 있겠어요?（そんなはずがありましょうか）」としても多用されます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 리가 없다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 리가 없다；その他のパッチムがある場合は -을 리가 없다；過去形は -았/었을 리가 없다）",
+    "examples": [
+      {
+        "translation": "彼が嘘をつくはずがありません。彼は至極正直な人間ですから。"
+      },
+      {
+        "translation": "今こんなに暗いのに外出するはずがありません。危険ですから。"
+      },
+      {
+        "translation": "あんな大きな仕事を一人で成し遂げられるわけがありません。手助けがなければ見込みはありません。"
+      },
+      {
+        "translation": "彼女が私を嫌うはずがありません。私たちは無二の親友なのですから。"
+      }
+    ]
   },
   "ko_할_105": {
-    "title": "~할 때마다 [hal ttaemada] (Every time when)",
-    "shortExplanation": "〜を示します repetition; 'every time when' or 'whenever'.",
-    "longExplanation": "'~할 때마다 [hal ttaemada]' is a conjunction used in Korean to indicate an action or state that repeatedly happens whenever a certain condition or situation occurs. It conveys a sense of regular occurrence, akin to 'every time when' or 'whenever' in English. It is used to emphasize the consistent and repetitive nature of an action or state in relation to a specific situation.",
-    "formation": "動詞 in dictionary form + 할 때마다"
+    "title": "~(으)ㄹ 때마다（〜するたびに、〜するごとに - 反復と恒常性）",
+    "shortExplanation": "ある条件や状況が訪れるたびに、後節の動作や状態が例外なく繰り返し発生することを表します（「〜するたびに」「〜するごとに」）。",
+    "longExplanation": "「~(으)ㄹ 때마다」は、事象の規則的な反復や随伴性を表す接続表現です。未来連体形語尾「-(으)ㄹ」、時を表す依存名詞「때」、そして「〜ごと、〜ずつ」を意味する補助詞「마다」が組み合わさっています。前節の契機が生じる都度、後節の行為や心理的変化が規則正しく再現されることを強調します。名詞と結びつく場合は「때마다」または直接「마다」を後続させます（例：방학 때마다 休暇のたびに）。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 때마다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 때마다；その他のパッチムがある場合は -을 때마다；名詞には 때마다）",
+    "examples": [
+      {
+        "translation": "私は本を読むたびに新しい知識を得ることができます。ですからたくさん本を読むのが大好きです。"
+      },
+      {
+        "translation": "彼は練習を重ねるたびにより優れた成果を収めることができます。彼は常にベストを尽くしています。"
+      },
+      {
+        "translation": "彼（兄）と会うたびにロマンチックな映画を見に行きます。ですから私たちはいつも幸せです。"
+      },
+      {
+        "translation": "私たちはサッカーをするたびに友人たちと大きな楽しさを分かち合います。私たちはサッカーが本当に大好きです。"
+      }
+    ]
   },
   "ko_할_106": {
-    "title": "~할 힘이 없다 [hal himi eopda] (Don't have the strength/energy to)",
-    "shortExplanation": "This phrase is 〜を表すために使用されます that one doesn't have the strength or energy to do something.",
-    "longExplanation": "The phrase '~할 힘이 없다 [hal himi eopda]' is commonly used in Korean to demonstrate the absence of capability, energy, or strength to perform a particular action. It is typically 〜を表すために使用されます physical or emotional fatigue that hinders one's ability to carry out a task.",
-    "formation": "動詞(원형) + 할 힘이 없다"
+    "title": "~(으)ㄹ 힘이 없다（〜する力が出ない、〜する気力・体力がない - 極度の疲労）",
+    "shortExplanation": "心身が極度に疲弊して衰弱し、特定の行為を行うための体力やエネルギーが全く残っていないことを訴える表現です（「〜する力もない」）。",
+    "longExplanation": "「~(으)ㄹ 힘이 없다」は、過労や睡眠不足、疾病などによりエネルギーを完全に喪失した状態を表す慣用表現です。連体形語尾「-(으)ㄹ」、名詞「힘（力、体力、気力）」、形容詞「없다（ない）」から構成されます。話し手はこれ以上何かをやり遂げる余力がないことを切実に吐露し、休息の必要性や作業の続行不可能性を伝える際に用います。副詞「더 이상（これ以上）」としばしば共起します。",
+    "formation": "動詞語幹 + -(으)ㄹ 힘이 없다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 힘이 없다；その他のパッチムがある場合は -을 힘이 없다）",
+    "examples": [
+      {
+        "translation": "仕事があまりにも多すぎて、これ以上続ける力が残っていません。1日に少なくとも8時間は休むべきだと思います。"
+      },
+      {
+        "translation": "昨夜ほとんど眠れなかったため、今日はもうこれ以上働く力がありません。"
+      },
+      {
+        "translation": "一週間一日も欠かさず運動したところ体中が痛んでしまい、もう運動する体力がありません。"
+      },
+      {
+        "translation": "今週は試験勉強に打ち込みすぎて疲れ果て、これ以上勉強を続ける気力が湧きません。"
+      }
+    ]
   },
   "ko_할_107": {
-    "title": "~할 것 같다 [hal geot gatda] (Seems like, feels like)",
-    "shortExplanation": "〜を表すために使用されます prediction, expectation, or intuition; 'seems like', 'feels like'.",
-    "longExplanation": "'~할 것 같다 [hal geot gatda]' is a sentence-ending expression in Korean used to predict or express an expectation or feeling about a future event. The speaker uses this form to share an opinion or intuition based on observations. It is translated as 'seems like' or 'feels like' in English.",
-    "formation": "動詞 stem + 을/ㄹ + 것 같다"
+    "title": "~(으)ㄹ 것 같다（〜しそうだ、〜する気がする - 未来推量と主観的予測）",
+    "shortExplanation": "観察された兆候や個人の直感に基づいて、未来の事態や不確実な状況について控えめに推測・予測する表現です（「〜しそうだ」「〜のようだ」）。",
+    "longExplanation": "「~(으)ㄹ 것 같다」は、韓国語において最も頻繁に用いられる基幹的な推量構文です。未来連体形語尾「-(으)ㄹ」、依存名詞「것（こと、もの）」、形容詞「같다（ようだ、同じだ）」の融合により、断定を避けて柔らかく見通しを述べるニュアンスを持ちます。話し手の直観や目下の兆候から判断して「おそらくそうなるだろう」という主観的見解を提示します。動詞の現在推量は「-는 것 같다」、形容詞の現在および動詞の過去推量は「-(으)ㄴ 것 같다」となります。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 것 같다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 것 같다；その他のパッチムがある場合は -을 것 같다）",
+    "examples": [
+      {
+        "translation": "今日は雨が降りそうですね。空に雨雲がびっしりと立ち込めています。"
+      },
+      {
+        "translation": "彼女は君のことが好きなんじゃないかな。いつも君に微笑みかけているのを見るとね。"
+      },
+      {
+        "translation": "明日の試験は難しくなりそうです。出題範囲があまりにも広すぎます。"
+      },
+      {
+        "translation": "今回のプロジェクトは成功しそうな気がします。皆がこれほど熱心に準備を進めているのですから。"
+      }
+    ]
   },
   "ko_할_108": {
-    "title": "~할 것이다 [hal geosida] (Will)",
-    "shortExplanation": "〜を表すために使用されます that an event will occur in the future.",
-    "longExplanation": "'~할 것이다 [hal geosida]' is a future tense marker in Korean. It is attached to the end of a verb to indicate that something is going to or will happen. It can also express the speaker’s wish, intention, or prediction regarding a future event.",
-    "formation": "動詞 Stem + ~(으)ㄹ 것이다"
+    "title": "~(으)ㄹ 것이다（〜だろう、〜するつもりだ - 未来時制と確固たる意志）",
+    "shortExplanation": "未来に起こる客観的な事象や高い確信を伴う推測、あるいは話し手自身の固い意志を表します（「〜するだろう」「〜するつもりだ」）。",
+    "longExplanation": "「~(으)ㄹ 것이다」は韓国語の未来時制を代表する標準的かつ文法的な表現です。一人称主語と共起する場合は話し手の計画や不退転の意志（「〜してみせる」「〜するつもりだ」）を表明し、三人称主語や無情物を主語とする場合は、蓋然性の高い将来の予測（「〜するはずだ」「〜だろう」）を導きます。改まった文章や演説ではそのままの形態「-(으)ㄹ 것이다」が用いられ、日常会話では縮約されたヘヨ体「-(으)ㄹ 거예요」やハムニダ体「-(으)ㄹ 겁니다」の形で極めて多用されます。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 것이다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 것이다；その他のパッチムがある場合は -을 것이다；口語では -(으)ㄹ 거예요 や -(으)ㄹ 겁니다 に縮約）",
+    "examples": [
+      {
+        "translation": "雪がこのまま降り続けば、学校は明日休校になるはずです。"
+      },
+      {
+        "translation": "体育大会が近づいてきているので、私たちはより一層熱心に練習に励むつもりです。"
+      },
+      {
+        "translation": "前学期と比べて今学期の成績の方がずっと良くなるはずです。"
+      },
+      {
+        "translation": "今夜は夜空に星がたくさん見えることでしょう。"
+      }
+    ]
   },
   "ko_할_109": {
-    "title": "~할 줄 알다 [hal jul alda] (Know how to)",
-    "shortExplanation": "〜を表すために使用されます 'know how to' or 'the ability to do something'.",
-    "longExplanation": "'~할 줄 알다 [hal jul alda]' is a grammatical expression used to convey the ability or knowledge of how to do something. When attached to a verb stem, it indicates that someone knows how to perform that action. It is often used in conversation to ask or assert one’s ability.",
-    "formation": "動詞 stem + -ㄹ/을 줄 알다"
+    "title": "~(으)ㄹ 줄 알다（〜できる、〜するやり方を知っている - 技能・能力の保持）",
+    "shortExplanation": "ある行為を行う方法、手順、あるいは後天的に習得した技能を備えていることを表します（「〜できる」「〜のやり方が分かる」）。",
+    "longExplanation": "「~(으)ㄹ 줄 알다」は、実務的なノウハウや身体的・知的スキルの有無を言い表す代表的構文です。連体形語尾「-(으)ㄹ」、方法や方策を表す依存名詞「줄」、そして動詞「알다（知る）」が結びついています。外国語、楽器、水泳、運転などの技術を身につけていて実践できることを指します。否定表現は「-(으)ㄹ 줄 모르다（〜できない）」となります。なお、文脈によっては「〜だと思っていた（事実とは異なる誤認）」を指す場合もあります。",
+    "formation": "動詞語幹 + -(으)ㄹ 줄 알다（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ 줄 알다；その他のパッチムがある場合は -을 줄 알다；否定形は -(으)ㄹ 줄 모르다）",
+    "examples": [
+      {
+        "translation": "私が韓国語をどれくらい上手に話せるかって？うーん、ごく基本的な会話なら交わすことができますよ。"
+      },
+      {
+        "translation": "うちの子はピアノが弾けるので、いつも演奏を聴かせてくれる瞬間が何より一番幸せです。"
+      },
+      {
+        "translation": "あなたはどうやってそんなに料理ができるようになったの？ご飯、本当に美味しかったよ。"
+      },
+      {
+        "translation": "私はコンピュータのプログラミングができるので、様々な問題を独力で解決することができます。"
+      }
+    ]
   },
   "ko_할지라도_110": {
-    "title": "~할지라도 [haljirado] (Even if)",
-    "shortExplanation": "〜を表すために使用されます 'even if', 'even though', or 'regardless of'.",
-    "longExplanation": "'~할지라도 [haljirado]' is a conjugation form 〜を表すために使用されます that, even if a certain condition or circumstance exists, the outcome in the second clause remains true. It is often used in hypothetical or speculative situations.",
-    "formation": "動詞 in future tense form + 지라도"
+    "title": "~(으)ㄹ지라도（たとえ〜であっても、〜としても - 強力な仮定譲歩）",
+    "shortExplanation": "前節で困難や極端な条件を仮定として設定しても、後節の原則、事実、あるいは決意が微動だにしないことを表す格調高い譲歩語尾です（「たとえ〜であろうとも」）。",
+    "longExplanation": "「~(으)ㄹ지라도」は、書き言葉や演説などで重用される厳粛な響きを帯びた譲歩の接続語尾です。一般的な「-아/어도」に比べて仮定性と譲歩の強度が一際際立っており、「たとえどれほど過酷で困難な境遇に置かれようとも、後節の義務や姿勢は決して曲げない」という断固たる含意を醸し出します。副詞「비록（たとえ）」「설령（よしんば）」「아무리（いくら）」などと好んで呼応します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지라도（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ지라도；その他のパッチムがある場合は -을지라도；名詞は -(이)ㄹ지라도；過去形は -았/었을지라도）",
+    "examples": [
+      {
+        "translation": "どんなに多忙で時間がなかろうとも、毎日欠かさず運動することは極めて重要です。"
+      },
+      {
+        "translation": "たとえどれほど味が良かろうとも、健康を害する恐れのある食べ物は断固避けるべきです。"
+      },
+      {
+        "translation": "たとえ険しい道のりであろうとも、たゆまず練習を積み重ねていけば最後には必ず成功を掴み取れます。"
+      },
+      {
+        "translation": "たとえ雨が降っていようとも、今日は予定通り外に出かけるつもりです。"
+      }
+    ]
   },
   "ko_할지언정_111": {
-    "title": "~할지언정 [haljieonjeong] (Regardless of whether)",
-    "shortExplanation": "〜を表すために使用されます 'regardless of whether', 'no matter what', or 'even if'. It shows that even if a condition exists, it will not affect the speaker's decision or action.",
-    "longExplanation": "'~할지언정 [haljieonjeong]' is 〜を示します that regardless of a certain condition or situation in the first clause, the outcome or decision in the main clause remains unchanged. It is similar to 'whether or not' or 'no matter what' in English.",
-    "formation": "動詞 + ~ㄹ지언정"
+    "title": "~(으)ㄹ지언정（たとえ〜することはあっても〜はしない、〜であろうとも - 毅然たる譲歩）",
+    "shortExplanation": "前節の極限状態や不利な境遇を甘受することはあっても、決して後節の信念や気骨を曲げることはないという強い覚悟を表します（「たとえ〜しようとも」「〜するくらいならむしろ」）。",
+    "longExplanation": "「~(으)ㄹ지언정」は、古典的で古風な厳粛さを持つ接続語尾です。不屈の気概を表明する際に用いられ、「前節のような苦難や痛恨の事態に直面しようとも、後節の信念やプライドは絶対に売り渡さない」、あるいは「前者を潔く選ぶことはあっても、後者のような恥ずべき真似は絶対にしない」という並々ならぬ覚悟を述べます。間接引用と接続した「-다 할지언정」の形式でも頻繁に登場します。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ지언정（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㄹ지언정；その他のパッチムがある場合は -을지언정；間接引用と結んだ -다 할지언정 の形でも多用）",
+    "examples": [
+      {
+        "translation": "たとえ問題が難解を極めようとも、決して投げ出さず最後まで解き明かしてみせるつもりです。"
+      },
+      {
+        "translation": "たとえ彼女が私を嫌おうとも、私は変わることなく彼女を愛し続ける所存です。"
+      },
+      {
+        "translation": "寒風が身を刺そうとも、私たちは歩みを止めることなく前進し続けなければなりません。"
+      },
+      {
+        "translation": "たとえ試験がどれほど厳しかろうとも、私は学業の手を緩めず勉強に励まねばなりません。"
+      }
+    ]
   },
   "ko_함에_112": {
-    "title": "~함에 있어 [hame isseo] (In terms of)",
-    "shortExplanation": "This pattern is 〜を示します 'in terms of', 'when it comes to', or 'with respect to'.",
-    "longExplanation": "'~함에 있어' is used when explaining a standard or point of view on which a judgment is made. It is equivalent to 'in terms of', 'when it comes to', or 'in the context of' in English. This form is often used in sentences that express opinions or subjective views from a particular perspective.",
-    "formation": "動詞 stem + -ㅁ + 에 있어"
+    "title": "~(으)ㅁ에 있어(서)（〜するにあたって、〜において - 基準・領域・前提条件）",
+    "shortExplanation": "改まった文脈で、ある行為を遂行したり判断を下したりする際の領域、背景、または基準となる前提条件を提示します（「〜するにあたって」「〜において」）。",
+    "longExplanation": "「~(으)ㅁ에 있어(서)」は名詞形語尾「-(으)ㅁ」、場所・対象を表す助詞「에」、動詞「있어(서)」が融合した格式高い文語表現です。論文、公文書、スピーチ、社説などで頻繁に活用され、議論を展開する上での土台や前提視野を確定させます。後節には、その領域を全うする上で不可欠な心得、基本方針、原則、あるいは中核的な要素が提示されるのが通例です。",
+    "formation": "動詞・形容詞語幹 + -(으)ㅁ에 있어(서)（語幹末尾にパッチムがない、またはㄹパッチムの場合は -ㅁ에 있어；その他のパッチムがある場合は -음에 있어）",
+    "examples": [
+      {
+        "translation": "食糧を生産するにあたっては依然として多くの難題が存在するため、私たちは新たな変革の必要性を切実に痛感せねばなりません。"
+      },
+      {
+        "translation": "人を愛するにあたって、互いに率直で誠実であることこそが最も肝要な要素の一つだと考えます。"
+      },
+      {
+        "translation": "環境を保護する上において、個々人のささやかな実践の積み重ねこそが偉大な変革をもたらすのです。"
+      },
+      {
+        "translation": "チームワークを遺憾なく発揮するにあたっては、彼女こそが私たちのチームで最も欠かせない中核人物です。"
+      }
+    ]
   },
   "ko_해_113": {
-    "title": "~해 보이다 [hae boida] (Look/seem to be)",
-    "shortExplanation": "〜を表すために使用されます an observation or opinion about how someone or something appears or seems.",
-    "longExplanation": "'~해 보이다 [hae boida]' is used in Korean to describe how someone or something appears based on personal observation. It combines an adjective or descriptive verb (in dictionary form) with 보이다 to express a subjective judgment—equivalent to 'look/seem to be' in English.",
-    "formation": "形容詞/Descriptive verb (dictionary form) + 보이다"
+    "title": "~아/어 보이다（〜に見える、〜そうに見える - 視覚的印象と外見的判断）",
+    "shortExplanation": "視覚を通して直に観察された相手の表情、身なり、様子などに基づいて、主観的な印象や推論を述べる表現です（「〜に見える」「〜そうに見える」）。",
+    "longExplanation": "「~아/어 보이다」は、観察によって得られた視覚的知見を表現する補助構文です。形容詞語幹に接続語尾「-아/어」を介して動詞「보이다（見える）」が合体することで、状態を直観的な外観描写へと転換します。相手の顔色や仕草から受けた直感的な印象（例：행복해 보이다 幸せそうに見える、피곤해 보이다 疲れて見える）を自然に言語化できます。主として形容詞と結合します。",
+    "formation": "形容詞語幹 + -아/어 보이다（語幹末尾の母音がㅏ・ㅗの場合は -아 보이다；その他の母音の場合は -어 보이다；하다は 해 보이다）",
+    "examples": [
+      {
+        "translation": "あの女性は本当に幸せそうに見えました。いつも朗らかな笑顔で人々に挨拶をしていました。"
+      },
+      {
+        "translation": "この料理は見るからに美味しそうだったので、迷わずその場で注文しました。"
+      },
+      {
+        "translation": "彼の表情から察するに、本当にやりきれない悲しい出来事があったかのように見受けられました。"
+      },
+      {
+        "translation": "桜の花が満開に咲き誇るこの公園は、真に美しく見えます。"
+      }
+    ]
   },
   "ko_게다가_0": {
-    "title": "~게다가 [gedaga] (Moreover, besides)",
-    "shortExplanation": "This grammar point is used to introduce an additional point or detail that strengthens the previous statement.",
-    "longExplanation": "`~게다가 [gedaga]` is a conjunctive adverb in Korean. It is used to add further information or details to a previously mentioned point, similar to 'moreover' or 'besides' in English. It implies that the subsequent information is an additional detail rather than a completely separate point.",
-    "formation": "Clause1 + 게다가 + Clause2"
+    "title": "게다가（その上、おまけに、さらに - 同方向の累積的付加）",
+    "shortExplanation": "前述の内容に加えて、同性質の事柄や新たな理由を付け足して説得力を補強する接続副詞です（「その上」「おまけに」）。",
+    "longExplanation": "「게다가」は前後の文を論理的・感情的に累加する接続副詞です。依存名詞「데（ところ、点）」に助詞「다가」が結合した語源を持ちます。先行する記述に対し、同じ方向性（肯定的な褒め言葉ならさらに長所を、否定的な不満ならさらに短所を）を持つ情報を追加することで、全体の論調を強力に押し上げます。複文における対応文型としては「-(으)ㄴ/는 데다가（〜な上に）」が挙げられます。",
+    "formation": "先行節 + -고, 게다가 + 後行節（または対応構文：動詞・形容詞語幹 + -(으)ㄴ/는 데다가）",
+    "examples": [
+      {
+        "translation": "あのカフェはコーヒーの味が絶品で、その上雰囲気もとても落ち着いて素敵なので足繁く通っています。"
+      },
+      {
+        "translation": "今日は雨が降っており、おまけに寒気が厳しいため、一歩も外に出たくありません。"
+      },
+      {
+        "translation": "彼は人柄が大変優れており、さらに頭脳明晰でもあるため、周囲の人々から大いに慕われています。"
+      },
+      {
+        "translation": "この食堂は料理がとても美味しく、その上値段もリーズナブルなのでしょっちゅう足を運んでいます。"
+      }
+    ]
   },
   "ko_거니와_1": {
-    "title": "~거니와 [geoniwa] (And, besides)",
-    "shortExplanation": "Used to add an additional reason or explanation, equivalent to 'and' or 'besides' in English, though it is more literary.",
-    "longExplanation": "`~거니와 [geoniwa]` is a conjunctive particle used in Korean to connect two clauses, providing an extra reason or detail. It is similar in function to 'and' or 'besides' in English. This construction is more formal or literary and is less common in everyday speech.",
-    "formation": "Clause1 (adjective/verb stem) + 거니와 + Clause2"
+    "title": "~거니와（〜ばかりでなく、〜である上に - 書き言葉における肯定と累加）",
+    "shortExplanation": "前節の事実を素直に認めた上で、さらに後節で同等あるいはそれ以上の重要な事実を付け足す文語的接続語尾です（「〜のみならず」「〜である上に」）。",
+    "longExplanation": "「~거니와」は格調高い文章語において用いられる累加の接続表現です。「前節の事柄は言うまでもなく当然のこととして認めるが、それに留まらず後節の事実もまた然りである」という論旨を整然と紡ぎ出します。過去時制「-았/었거니와」とも自由に結合し、後節の述語には助詞「-도（〜も）」が呼応して並列・強調のニュアンスをより一層強固なものにします。",
+    "formation": "動詞・形容詞語幹 + -거니와（パッチムの有無に関係なく直結；過去形は -았/었거니와；名詞述語形は -(이)거니와）",
+    "examples": [
+      {
+        "translation": "これは値段が高価であるばかりでなく、私が求めているデザインでもありません。"
+      },
+      {
+        "translation": "私は読書もさることながら映画鑑賞も大好きなため、毎週末はいつも充実して大忙しです。"
+      },
+      {
+        "translation": "この商品は品質が劣悪であるばかりか、顧客サービス対応も実に酷い有様です。"
+      },
+      {
+        "translation": "その映画は面白く引き込まれるばかりでなく、胸を打つ深い感動をも与えてくれます。"
+      }
+    ]
   },
   "ko_것만은_2": {
-    "title": "~것만은 [geot man-eun] (But / At least)",
-    "shortExplanation": "This construction is used to emphasize that one particular aspect is an exception, often contrasting with expectations.",
-    "longExplanation": "The `~것만은` construction in Korean is used to highlight that despite other circumstances, one specific aspect does not follow the expected result. It is often used in a contrasting or contradictory context to stress that, if nothing else, this one thing is different.",
-    "formation": "動詞/形容詞 (in past form) + -(ㄴ/은) + 것만은"
+    "title": "~(으)ㄴ/는 것만은（〜ということだけは、〜のだけは - 対比と例外の際立ち）",
+    "shortExplanation": "他の点についてはともかく、特定のこの一事だけは予想や期待に反する例外であり納得しがたいという点を際立たせる表現です（「〜のだけは」）。",
+    "longExplanation": "「~(으)ㄴ/는 것만은」は、連体形語尾「-(으)ㄴ/는」、依存名詞「것」、限定の助詞「만」、対比の助詞「은/는」が緊密に連なった構文です。他の諸条件や懸命な努力が前向きであるにもかかわらず、取り立てて「この特定の結末だけは期待を裏切っており、残念無念極まりない、あるいは到底腑に落ちない」という対比的例外を浮き彫りにする際に極めて効果を発揮します。",
+    "formation": "動詞 + -는 것만은（現在）/ -(으)ㄴ 것만은（過去）；形容詞 + -(으)ㄴ 것만은",
+    "examples": [
+      {
+        "translation": "彼女はあれほど熱心に勉強に励んだのに、学校での成績が振るわなかったことだけはどうしても納得がいきません。"
+      },
+      {
+        "translation": "昨夜あれほどぐっすり眠ったにもかかわらず、いまだに疲労感が抜けないことだけは解せません。"
+      },
+      {
+        "translation": "私たちのチームは死力を尽くして戦っただけに、試合に敗れたことだけは痛恨の極みとして心に残ります。"
+      },
+      {
+        "translation": "毎日欠かさず汗を流して運動したというのに、体重が増加してしまったことだけはひどく失望させられます。"
+      }
+    ]
   },
   "ko_과와_3": {
-    "title": "~과/와 같이 [gwa/wa gachi] (Like, as if)",
-    "shortExplanation": "〜を表すために使用されます a comparison, similarity, or analogy, equivalent to 'like' or 'as if' in English.",
-    "longExplanation": "`~과/와 같이 [gwa/wa gachi]` is an expression used in Korean to draw a comparison or analogy, showing that one thing is similar to another. It is equivalent to saying 'like' or 'as if' in English and helps in visualizing or emphasizing the resemblance between two things.",
-    "formation": "名詞 + 과/와 같이"
+    "title": "~과/와 같이（〜のように、〜と同様に - 比喩と基準の同等比較）",
+    "shortExplanation": "基準となる対象を引き合いに出し、主語がそれと同様の性質や状態を備えていることを明快に示す比較表現です（「〜のように」「〜と同じく」）。",
+    "longExplanation": "「~과/와 같이」は、格助詞「과/와（〜と）」と副詞「같이（一緒に、〜のように）」が合体した定型的な比較・比喩の構文です。身近な自然事象や代表的な事物になぞらえることで、対象の有する美質や特質を鮮烈に際立たせる修辞的効果を担います。また公的な報告やプレゼンテーションでは、「위와 같이（上記のように）」といった形で前述の内容を要約指示する際にも不可欠の表現となります。",
+    "formation": "名詞 + 과/와 같이（パッチムのある名詞には 과 같이；パッチムのない名詞には 와 같이）",
+    "examples": [
+      {
+        "translation": "先週末はまるでうららかな春のように暖かでした。しかし今週末は真冬のように身を切る寒さでした。"
+      },
+      {
+        "translation": "その絵画は実物の写真のように生き生きとしており、彼が傑出した画家であることが一目で分かります。"
+      },
+      {
+        "translation": "今日は真夏のように蒸し暑かったので、涼を求めてアイスクリームを食べました。"
+      },
+      {
+        "translation": "読書は身体を鍛える運動と同様に、私たちの精神を健やかに保ってくれる尊い営みです。"
+      }
+    ]
   },
   "ko_나마저_4": {
-    "title": "~나마저 [namajeo] (Even)",
-    "shortExplanation": "〜を表すために使用されます surprise or emphasis, indicating that even the unexpected subject or object is included.",
-    "longExplanation": "`~나마저 [namajeo]` is a postpositional particle in Korean that emphasizes an unexpected inclusion, similar to 'even' in English. It highlights that the subject or object in question surpasses normal expectations.",
-    "formation": "名詞 + 나마저"
+    "title": "~(이)나마저 / ~마저（〜までも、〜さえも - 最後の砦の崩壊と極限の包摂）",
+    "shortExplanation": "既に他の多くが失われたり同様の状態にある中で、最後の頼みの綱や最も除外されるべき対象までもが好ましくない事態に巻き込まれたことを表します（「〜までもが」）。",
+    "longExplanation": "「~(이)나마저」（基本形は補助詞「~마저」）は、深い失望や衝撃の念を伴う強調の助詞表現です。「他のものはさておき、せめてこれだけは残ってほしかった」「最も信頼していた最後の砦」までもが期待を裏切り、否定的な事態に飲み込まれてしまったという極限の窮状を浮き彫りにします。救いのない悲哀や孤立無援の痛切なニュアンスを色濃く反映します。",
+    "formation": "名詞 + (이)나마저（パッチムのある名詞には -이나마저；パッチムのない名詞には -나마저；基本形態は ~마저）",
+    "examples": [
+      {
+        "translation": "彼女は校内で最も難解を極める授業さえも容易に理解しますが、この講義までも完璧に呑み込んでいるのを見ると真に非凡な才能です。"
+      },
+      {
+        "translation": "私は普段友人たちと極めて円満に過ごしているのに、あの親友までもが私を遠ざけ嫌っているようでひどく傷つきました。"
+      },
+      {
+        "translation": "他の人々が皆こぞって反対する中でも、彼はたった一人でも支持者がいてくれることの貴さを知っていました。それなのに、その人までもが反対に回ったため深く落胆しました。"
+      },
+      {
+        "translation": "机の上にあるありとあらゆる所持品を隅々まで探したのですが、あの肝心な品物までもが見つけ出せませんでした。"
+      }
+    ]
   },
   "ko_뿐만_5": {
-    "title": "~뿐만 아니라 [ppunman anira] (Not only... but also)",
-    "shortExplanation": "〜を表すために使用されます 'not only... but also' by adding additional, related information.",
-    "longExplanation": "`~뿐만 아니라 [ppunman anira]` is used in Korean to add extra information, indicating that something applies not only in one aspect but also in another. It serves to emphasize that a subject or event encompasses multiple qualities or characteristics.",
-    "formation": "名詞/形容詞/動詞 + 뿐만 아니라 + 節"
+    "title": "~뿐만 아니라（〜だけでなく、〜ばかりでなく）",
+    "shortExplanation": "関連する情報を追加し、「〜だけでなく……も」「〜ばかりでなく……も」という意味を表します。",
+    "longExplanation": "「~뿐만 아니라」は、限定を表す助詞「뿐」、強調の助詞「만（〜だけ）」、否定の形容詞「아니다（ではない）」が結びついた表現で、事態が前節の内容にとどまらず後節にも及んでいることを表します。日本語の「〜だけでなく」「〜ばかりか」に相当し、後節には「-도（〜も）」などを伴ってさらなる情報や特徴を付け加える際によく用いられます。",
+    "formation": "名詞 + 뿐만 아니라 | 動詞・形容詞語幹 + -(으)ㄹ 뿐만 아니라（パッチムがある場合は -을 뿐만 아니라、ない場合は -ㄹ 뿐만 아니라；過去形は -았/었을 뿐만 아니라）",
+    "examples": [
+      {
+        "translation": "彼女は中国語だけでなく日本語も流暢に話すことができます。"
+      },
+      {
+        "translation": "私は勉強だけでなく運動も好きです。"
+      },
+      {
+        "translation": "この商品は値段が手頃なだけでなく品質も優れています。"
+      },
+      {
+        "translation": "彼は韓国語だけでなく英語も流暢に使いこなすため、通訳として働いています。"
+      }
+    ]
   },
   "ko_더니_6": {
-    "title": "~더니 [deoni] (After, and then)",
-    "shortExplanation": "Used to connect two clauses, indicating that the second clause follows after the first.",
-    "longExplanation": "`~더니` is a conjunction used in Korean to connect two clauses or actions, showing that the second event or state was realized after experiencing the first. It is often used in narratives or personal experiences to indicate a change or consequence.",
-    "formation": "動詞 (in past tense) + 더니"
+    "title": "~더니 / ~았/었더니（〜したら、〜したところ - 経験・結果の発見）",
+    "shortExplanation": "話し手が過去に前節の行為をした結果、後節の新たな事実を発見したことや、その結果が生じたことを表す接続語尾です。",
+    "longExplanation": "「~더니」（話し手自身の一人称主語の行為には通常「-았/었더니」の形を用いる）は、過去の経験を回想して述べる接続語尾です。話し手が自ら前節の行動をとった結果、「〜したところ（後節の事実が判明した）」のように新たな事実・結果に気づいた場面や、前節の行動が原因となって後節の事態が引き起こされたことを表します。なお、語幹に直接「-더니」がつく場合は、主に二人称・三人称の行動や過去に目撃した状況の変化・対比を表します。",
+    "formation": "動詞・形容詞語幹 + -았/었더니（一人称の経験・結果：陽母音は -았더니、陰母音は -었더니、하다は 했더니）| 動詞・形容詞語幹 + -더니（三人称の観察や状態の変化）",
+    "examples": [
+      {
+        "translation": "これを食べてみたら味が本当に変わっていました。それで他の食べ物を探して飲食することにしました。"
+      },
+      {
+        "translation": "彼女に電話をかけたところ、彼女は休暇中だったため電話に出られませんでした。"
+      },
+      {
+        "translation": "書店に行ってみたら、欲しかった本はすでに売り切れていました。そのため別の書店で探さなければなりませんでした。"
+      },
+      {
+        "translation": "ピザ屋に行ったところ、注文しようとしていたピザはすでに全て売り切れていました。このようなケースは初めてです。"
+      }
+    ]
   },
   "ko_이든지_7": {
-    "title": "~이든지 ~든지 [ideunji deunji] (Whether… or)",
-    "shortExplanation": "Used to present multiple alternatives, similar to 'whether... or' in English.",
-    "longExplanation": "`~이든지 ~든지 [ideunji deunji]` is used in Korean to list alternative options or possibilities, conveying indifference about which one is chosen. It is often used in both interrogative sentences and statements to present choices.",
-    "formation": "Clause1 + 이든지 + Clause2 + 든지"
+    "title": "~든지 ~든지 / ~(이)든지（〜であれ〜であれ、〜だろうと〜だろうと）",
+    "shortExplanation": "複数の選択肢や可能性を並列して挙げ、「どちらであっても関係なく」「〜であろうと〜であろうと」という意味を表します。",
+    "longExplanation": "「~든지 ~든지」（名詞と結合する場合は「(이)든지」）は、選択や無条件を表す接続語尾・助詞です。二つ以上の対立する選択肢や動作・状態を並べて挙げ、いずれの場合を選択したとしても後節の事態や判断には影響がなく、関係がないことを表します。日本語の「〜であれ〜であれ」「〜しようと〜しようと」に相当します。",
+    "formation": "動詞・形容詞語幹 + -든지 ... -든지 | 名詞 + (이)든지 ... (이)든지（名詞の末尾にパッチムがある場合は -이든지、ない場合は -든지）",
+    "examples": [
+      {
+        "translation": "コーヒーが好きであろうと、お茶が好きであろうと、このカフェではすべての人を満足させることができます。"
+      },
+      {
+        "translation": "朝早く出かけようと、夜遅く帰ってこようと、毎日1時間会うことを約束しましょう。"
+      },
+      {
+        "translation": "ハンバーガーが好きであれ、ピザが好きであれ、このレストランはすべての料理を提供できます。"
+      },
+      {
+        "translation": "平日に旅行に行こうと、週末に行こうと、関係なく気楽に旅行を楽しんでください。"
+      }
+    ]
   },
   "ko_임에_8": {
-    "title": "~임에 틀림없다 [ime tteollimeopda] (Without a doubt)",
-    "shortExplanation": "〜を表すために使用されます certainty, meaning 'without a doubt' or 'it's certain that...'.",
-    "longExplanation": "`~임에 틀림없다 [ime tteollimeopda]` is used in Korean to express a high degree of certainty about a situation or outcome. It emphasizes that there is no doubt about the assertion and is often used in formal or written contexts.",
-    "formation": "動詞/形容詞 (nominalized) + 임에 틀림없다"
+    "title": "~(으)ㅁ에 틀림없다 / ~임에 틀림없다（〜に違いない、〜であることは確かだ）",
+    "shortExplanation": "事態に対する確信度の高い判断を表し、「〜に違いない」「〜であることに間違いない」という意味を表します。",
+    "longExplanation": "「~(으)ㅁ에 틀림없다」は、用言の名詞形語尾「-(으)ㅁ」、助詞「에」、形容詞「틀림없다（間違いない）」が合わさった表現です。確かな根拠や論理的推論に基づいて、ある事実や結果が確実であることを強く断定する際に用いられます。日本語の「〜に違いない」「〜に相違ない」に相当し、主に書き言葉や改まった公の場面で多く用いられます。",
+    "formation": "名詞 + 임에 틀림없다 | 動詞・形容詞語幹 + -(으)ㅁ에 틀림없다（パッチムがある場合は -음에 틀림없다、ない場合は -ㅁ에 틀림없다；過去形は -았/었음에 틀림없다；未来・推量形は -(으)ㄹ 것임에 틀림없다）",
+    "examples": [
+      {
+        "translation": "彼の出演が成功であったことに違いありませんが、彼の才能はさらに優れているに違いありません。"
+      },
+      {
+        "translation": "私たちのチームが勝つ確率は高いので、私たちが勝ち抜くことに違いありません。"
+      },
+      {
+        "translation": "彼はたとえ他の人々に批判されたとしても、彼の選択は正しかったに違いありません。"
+      },
+      {
+        "translation": "観測所の予報によると、明日は雨が降るに違いありません。"
+      }
+    ]
   },
   "ko_쩌면_9": {
-    "title": "~쩌면 [jjeomyeon] (Maybe, perhaps)",
-    "shortExplanation": "〜を表すために使用されます possibility or probability; 'maybe', 'perhaps'.",
-    "longExplanation": "'~쩌면 [jjeomyeon]' is an adverb that expresses the speaker's uncertainty about a situation. It is usually placed at the beginning of a sentence to suggest that something might be the case. 〜と訳されます 'maybe' or 'perhaps' in English.",
-    "formation": "쩌면 + Sentence"
+    "title": "쩌면 / 어쩌면（もしかすると、ひょっとしたら）",
+    "shortExplanation": "不確実な可能性や推測を表す副詞で、「もしかすると」「ひょっとしたら」という意味を表します。",
+    "longExplanation": "「쩌면」は、副詞「어쩌면」の口語縮約形です。文頭に置かれて事態の不確実な推測や可能性を控えめに提示する働きを持ちます。日本語の「もしかすると」「ひょっとして」「ことによると」に相当し、文末には「-(으)ㄹ지도 모르다（〜かもしれない）」「-(으)ㄹ 수도 있다（〜することもあり得る）」「-(으)ㄹ 것 같다（〜のようだ）」といった推量の表現が呼応することが非常に多いです。",
+    "formation": "쩌면 / 어쩌면 + 文（文末に -(으)ㄹ지도 모르다, -(으)ㄹ 수도 있다, -(으)ㄹ 것 같다 が呼応することが多い）",
+    "examples": [
+      {
+        "translation": "もしかすると彼は本気であなたを愛していたのかもしれません。"
+      },
+      {
+        "translation": "ひょっとしたらこの葛藤は解決できるかもしれません。"
+      },
+      {
+        "translation": "もしかするとその計画が成功するかもしれないですね。"
+      },
+      {
+        "translation": "ひょっとすると今回の試験が一番難しいかもしれません。"
+      }
+    ]
   },
   "ko_치고는_10": {
-    "title": "~치고는 [chigoneun] (For, considering)",
-    "shortExplanation": "Expresses the meaning of 'for' or 'considering' when reality is better or worse than expected.",
-    "longExplanation": "'~치고는 [chigoneun]' is a postpositional expression used to compare a situation with expectations. It conveys that, considering the condition or status of something, the outcome is surprising or different from what one might expect.",
-    "formation": "名詞/動詞(-는/ᆫ) + 치고는"
+    "title": "~치고는（〜にしては、〜の割には）",
+    "shortExplanation": "名詞の後について、一般的な基準や予想と照らし合わせて例外的な結果であることを表します（「〜にしては」「〜の割には」）。",
+    "longExplanation": "「~치고는」は、範囲を限定する助詞「치고」に対照・強調の助詞「는」が結びついた表現です。名詞について、そのものが本来持つ一般的な常識や基準を提示し、それに対して現実の状態が予想よりも上回っている、あるいは下回っているという例外性を述べるときに用います。日本語の「〜にしては」「〜の割には」に相当します。",
+    "formation": "名詞 + 치고는",
+    "examples": [
+      {
+        "translation": "初心者ドライバーにしてはかなり運転がお上手ですね。"
+      },
+      {
+        "translation": "冬の気候にしては天気がとても暖かいです。"
+      },
+      {
+        "translation": "値段の割には品質が非常に素晴らしいです。"
+      },
+      {
+        "translation": "ご年齢の割にはとても健康そうに見えますね。"
+      }
+    ]
   },
   "ko_커녕_11": {
-    "title": "~커녕 [keonyeong] (Far from, let alone)",
-    "shortExplanation": "Used to show that the actual reality is far from the expected outcome.",
-    "longExplanation": "'~커녕 [keonyeong]' is used to emphasize that not only did the expected result not occur, but something even less occurred instead. It is similar to saying 'far from' or 'let alone' in English.",
-    "formation": "名詞/動詞 stem + 커녕"
+    "title": "~은/는커녕 / ~기는커녕（〜どころか、〜はおろか）",
+    "shortExplanation": "前節に期待された事態が成立しないばかりか、より低い基準さえ満たさない、あるいは逆の結果になったことを表します（「〜どころか」「〜はおろか」）。",
+    "longExplanation": "「~커녕」（名詞には「-은/는커녕」、動詞・形容詞には「-기는커녕」）は、期待された当然の基準を強く打ち消す補助詞です。前節の内容は当然期待されることであるにもかかわらず、その実現はおろか、後節ではそれ以下の最低限のことすらできなかったり（後節の「-도」「-조차」と呼応）、かえって正反対の悪い事態が生じたりしたことを強調します。日本語の「〜どころか」「〜はおろか」に相当します。",
+    "formation": "名詞 + 은/는커녕（パッチムがある場合は -은커녕、ない場合は -는커녕）| 動詞・形容詞語幹 + -기는커녕",
+    "examples": [
+      {
+        "translation": "計画をしっかり立てると言っていたのに、始めるどころか準備さえ全くできませんでした。"
+      },
+      {
+        "translation": "約束の時間に遅れないと思っていたのに、早く来るどころか遅刻してしまいました。"
+      },
+      {
+        "translation": "勉強をしに図書館に行ったのに、読書どころか居眠りばかりして一日が終わってしまいました。"
+      },
+      {
+        "translation": "セールに行くと期待していましたが、安く買うどころかもっと高く買う羽目になってしまいました。"
+      }
+    ]
   },
   "ko_판에_12": {
-    "title": "~판에 [pane] (In the midst of)",
-    "shortExplanation": "~판에 [pane] is 〜を表すために使用されます that something happens in the midst of a particular situation or event.",
-    "longExplanation": "'판에 [pane]' is a grammatical pattern 〜を示します that an action occurs during or in the midst of another event. Although its literal translation might seem odd, it is best understood as 'in the midst of' or 'during' and is often found in formal or written Korean.",
-    "formation": "動詞-는/名詞 + 판에"
+    "title": "-(으)ㄴ/는 판에 / ~판에（〜という状況で、〜の折に、〜の最中に）",
+    "shortExplanation": "特定の局面、情勢、境遇の真っ只中で後節の事態が生じたことを表します（「〜という状況で」「〜の最中に」）。",
+    "longExplanation": "「판」は局面・情勢・状況を表す依存名詞です。「-(으)ㄴ/는 판에」は、前節のような特別な事情や緊迫した情勢の真っ只中にあって、後節の事態や行動が生じたことを表します。特定の状況下で事態が起こる際、時にそのタイミングの不都合さや皮肉な巡り合わせ、切迫感を浮き彫りにするニュアンスを持ちます。",
+    "formation": "動詞語幹 + -는 판에（現在）/ -(으)ㄴ 판에（過去・完了）| 名詞 + 판에",
+    "examples": [
+      {
+        "translation": "学校の新学期が始まった状況の中で、新しい生徒が入学しました。"
+      },
+      {
+        "translation": "会社が今日から廃業するという状況で、私は新しい職場を探しています。"
+      },
+      {
+        "translation": "主要な事業を準備している最中に、会社の株価が急騰しました。"
+      },
+      {
+        "translation": "試験勉強をしている最中に、友達が遊びに来てしまいました。"
+      }
+    ]
   },
   "ko_하건마는_13": {
-    "title": "~하건마는 [hageonmaneun] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contrast or opposition; 'but', 'however'.",
-    "longExplanation": "'~하건마는 [hageonmaneun]' is a conjunction used to contrast two clauses. It shows that even though one thing is true, another conflicting fact or situation follows.",
-    "formation": "動詞 (present tense form) + 건마는"
+    "title": "~건마는 / ~건만（〜けれど、〜ものの、〜なのに）",
+    "shortExplanation": "前節の事実や意図に対して後節で思い通りにならない逆の結果が生じたことを表し、残念さやもどかしさを伴う接続語尾です。",
+    "longExplanation": "「~건마는」（縮約形は「~건만」）は、書き言葉の響きを持つ逆接の接続語尾です。前節で認めた事実や抱いていた期待に対し、後節ではそれに反する都合の悪い事態や相反する結果が続くことを表します。単なる逆接にとどまらず、思い通りにならないもどかしさ、無念さ、ため息交じりの後悔の情が込められる点に特徴があります。日本語の「〜ものの」「〜けれど」「〜のに（どうにもならない）」に相当します。",
+    "formation": "動詞・形容詞語幹 + -건마는（過去形は -았/었건마는）",
+    "examples": [
+      {
+        "translation": "私はグラフィックデザインを勉強しているものの、パソコンの扱いが苦手なのでデザインソフトを使うのが難しく感じられます。"
+      },
+      {
+        "translation": "今日は天気が良くて散歩しようとしたのに、急に雨が降ってきて散歩できませんでした。"
+      },
+      {
+        "translation": "韓国語が上手になりたいのは山々なのですが、単語の暗記が難しすぎて、毎日勉強してもなかなか思い出せません。"
+      },
+      {
+        "translation": "友達が私に誕生日プレゼントをくれると約束してくれたのに、プレゼントを忘れてしまって何もくれませんでした。"
+      }
+    ]
   },
   "ko_하더라도_14": {
-    "title": "~하더라도 [hadeorado] (Even if)",
-    "shortExplanation": "〜を表すために使用されます 'even if', 'even though', or 'despite'.",
-    "longExplanation": "'~하더라도 [hadeorado]' is a grammatical construction 〜を表すために使用されます a hypothetical or contrastive situation—essentially meaning 'even if' or 'even though'. It is used with all types of verbs to emphasize that the outcome remains unchanged despite the condition.",
-    "formation": "動詞 + 더라도"
+    "title": "-더라도 / ~하더라도（たとえ〜ても、〜としても）",
+    "shortExplanation": "仮定的な譲歩を表す接続語尾で、「たとえ〜ても」「〜としても」後節の内容が変わらないことを強調します。",
+    "longExplanation": "「-더라도」（하다動詞と結びついて「~하더라도」）は、仮定の譲歩を表す接続語尾です。前節で極端な条件や事態を仮定し、たとえそれが実際に起ころうとも後節の意志や行動、客観的結果が何ら揺らぐことなく実行されることを強調します。「-아/어도」に比べて仮定性が強く、断固たる決意や揺るぎない方針を示す場面でよく使われます。日本語の「たとえ〜としても」「〜であっても」に相当します。",
+    "formation": "動詞・形容詞語幹 + -더라도（過去形は -았/었더라도）",
+    "examples": [
+      {
+        "translation": "雨が降ったとしても傘は持っていきません。私は傘が嫌いだからです。"
+      },
+      {
+        "translation": "疲れていたとしても勉強を続けなければなりません。もうすぐ試験があるからです。"
+      },
+      {
+        "translation": "早起きしなければならないとしても常に運動をしなければなりません。健康のためです。"
+      },
+      {
+        "translation": "時間がないとしても私は根気強く韓国語の勉強を続けなければなりません。韓国語にとても興味があるからです。"
+      }
+    ]
   },
   "ko_하든지_15": {
-    "title": "~하든지 말든지 [hadeunji maldeunji] (Whether... or not)",
-    "shortExplanation": "Used to convey 'whether... or not'.",
-    "longExplanation": "'~하든지 말든지 [hadeunji maldeunji]' is a compound ending that expresses indifference toward the outcome regardless of which choice is made. It implies that the result remains unchanged.",
-    "formation": "動詞 stem + 하든지 말든지"
+    "title": "~든지 말든지（〜しようとしまいと、〜しようがするまいが）",
+    "shortExplanation": "行為をするかしないかに関心を持たず、どちらであっても意に介さない態度を表します（「〜しようとしまいと」）。",
+    "longExplanation": "「~든지 말든지」は、選択を表す接続語尾「-든지」と、否定・中止を表す補助動詞「말다」が組み合わさった表現です。ある行為をするかしないかという正反対の選択肢を並べ、そのいずれであっても関知しないという無関心・放任の態度を表します。相手がどう行動しようと、あるいは状況がどう転ぼうと、後節の計画や意志には一切ブレが生じないことを強く示します。日本語の「〜しようがするまいが」「〜しようとしまいと」に相当します。",
+    "formation": "動詞語幹 + -든지 말든지（하다動詞は 하든지 말든지；その他は 오든지 말든지, 먹든지 말든지 など）",
+    "examples": [
+      {
+        "translation": "あの人が好もうと好むまいと、私たちは計画通りに進めます。"
+      },
+      {
+        "translation": "今日雨が降ろうと降るまいと、私たちは散歩を続ける予定です。"
+      },
+      {
+        "translation": "君が参加しようがしまいが、このパーティーは続けられます。"
+      },
+      {
+        "translation": "彼女が私を愛していようといまいと、私は彼女を愛し続けます。"
+      }
+    ]
   },
   "ko_하려니와_16": {
-    "title": "~하려니와 [haryeoniwa] (Trying to, but)",
-    "shortExplanation": "〜を表すために使用されます a situation where one tries to do something but encounters an obstacle.",
-    "longExplanation": "'~하려니와 [haryeoniwa]' is used to show that while one is attempting to do something, an unexpected difficulty or issue prevents it from happening. 〜と訳されます 'trying to, but' or 'want to, but' in English.",
-    "formation": "動詞 stem + 려니와"
+    "title": "-(으)려니와 / ~하려니와（〜しようとしたものの、〜しようとしたが）",
+    "shortExplanation": "前節で何かを行おうとした意図や試みがあったものの、後節で予期せぬ障害や困難に直面して果たせなかったことを表す接続語尾です。",
+    "longExplanation": "「-(으)려니와」（하다動詞と結びついて「~하려니와」）は、意図を表す「-(으)려고 하다」と接続語尾「-거니와」のニュアンスが重なった表現です。本項の文脈では、前節で主語が自らの意図として何かを実行しようと試みたものの、後節で突発的な悪天候や能力不足といった障害・困難に直面し、結果として思い通りにならなかったという経緯を語る際に用いられます。（※標準文法における推量・添加「〜するだろうし、また〜」の用法とも関連します）。",
+    "formation": "動詞語幹 + -(으)려니와（パッチムがある場合は -으려니와、ない場合やㄹパッチムは -려니와；하다は 하려니와）",
+    "examples": [
+      {
+        "translation": "今日は友達と一緒に映画を見に行こうとしたものの、急に天気がひどく悪くなって計画が失敗してしまいました。"
+      },
+      {
+        "translation": "もっと多彩な味の料理を作ってみようとしたのですが、料理の腕前が足りなくてうまくできません。"
+      },
+      {
+        "translation": "早く寝ようとしたものの、色々な考えが頭をよぎってなかなか眠りにつけませんでした。"
+      },
+      {
+        "translation": "運動を始めようとしたのですが、家にいて時間がとれず、まだ始められずにいます。"
+      }
+    ]
   },
   "ko_하여간_17": {
-    "title": "~하여간 [hayaegane] (Anyway, anyhow)",
-    "shortExplanation": "〜を表すために使用されます that one will proceed regardless of difficulties or obstacles.",
-    "longExplanation": "'~하여간 [hayaegane]' is used in Korean to show a determined resolve or to express that, regardless of any obstacles or factors, one will do something. It is similar in meaning to 'anyway' or 'anyhow' in English.",
-    "formation": "Predicate (動詞/形容詞) + 아/어/여 + 하여간"
+    "title": "하여간 / ~하여간（何としても、いずれにしても、とにかく）",
+    "shortExplanation": "困難や障害に関わらず、目的を果たすべく行動を押し進める強い決意を表す副詞です（「とにかく」「何としても」）。",
+    "longExplanation": "「하여간」（漢字語：何如間）は、「어찌 되었든 간에（どうであろうと）」や「아무튼（とにかく）」と同様の意味を持つ副詞です。周囲の厳しい状況や障害にとらわれることなく、いかなる手段を尽くしてでも前進しようとする固い決意や意志を表します。日本語の「いずれにしても」「何としても」「何が何でも」に相当し、述語の前に置かれて強い行動方針を強調します。",
+    "formation": "用言接続形 + 하여간 | または副詞として文頭・文中に単独で配置",
+    "examples": [
+      {
+        "translation": "試験の準備はしていませんでしたが、何としても努力して試験に合格するつもりです。"
+      },
+      {
+        "translation": "経済的に苦しい状況ではありますが、いずれにせよ節約して学費を集めなければなりません。"
+      },
+      {
+        "translation": "つらくても、何としてもコツコツとやり続ければその目標を達成できるはずです。"
+      },
+      {
+        "translation": "多くの資金が必要ですが、とにかく節約して使っていけば夢を叶えることができるはずです。"
+      }
+    ]
   },
   "ko_하여야만_18": {
-    "title": "~하여야만 [hayeoyaman] (Only when)",
-    "shortExplanation": "Indicates that a certain condition must be satisfied for something else to happen.",
-    "longExplanation": "'~하여야만 [hayeoyaman]' is used when a specific condition or criteria must be met for an outcome to occur. It is equivalent to 'only when' in English and stresses that without this condition, the result is unattainable.",
-    "formation": "動詞 stem + ~하여야만 + Positive verb"
+    "title": "-아/어야만 / ~하여야만（〜してこそはじめて、〜しなければ〜ない）",
+    "shortExplanation": "後節が実現するための絶対的な必須条件を強調し、「〜してこそはじめて」「〜してこそ」という意味を表します。",
+    "longExplanation": "「-아/어야만」（하다動詞と結びついて「~하여야만」または「~해야만」）は、必須条件を表す接続語尾「-아/어야」に、限定の助詞「만（〜だけ）」が付加されて条件の重要性を極限まで高めた構文です。前節の条件が満たされない限り、後節の結果は決して成立し得ないという唯一無二の前提条件を表します。後節には「-(으)ㄹ 수 있다（〜できる）」などの可能表現が呼応することが一般的で、日本語の「〜してこそはじめて」「〜してはじめて〜できる」に相当します。",
+    "formation": "動詞・形容詞語幹 + -아/어야만（語幹末尾の母音部がㅏ・ㅗの場合は -아야만、それ以外は -어야만；하다は 하여야만 または 해야만）",
+    "examples": [
+      {
+        "translation": "朝早く起きてこそはじめて出勤時間に間に合うように到着できます。"
+      },
+      {
+        "translation": "あなたの事情を汲み取ってくださった医師と相談してこそはじめて手術計画を変更することができます。"
+      },
+      {
+        "translation": "定期的な安定した収入があってこそはじめて住宅ローンを組むことができます。"
+      },
+      {
+        "translation": "訓練をしっかりこなしてこそはじめて試験に合格することができます。"
+      }
+    ]
   },
   "ko_해야겠다_19": {
-    "title": "~해야겠다 [haeyagetda] (Should, ought to)",
-    "shortExplanation": "Expresses the speaker's intention or determination to do something in the future.",
-    "longExplanation": "'~해야겠다 [haeyagetda]' is a pattern 〜を表すために使用されます necessity or determination for a future action. It indicates that the speaker has decided that something should be done.",
-    "formation": "動詞 stem + 야겠다"
+    "title": "-아/어야겠다 / ~해야겠다（〜しなければ、〜しよう、〜しなくちゃ）",
+    "shortExplanation": "ある行動の必要性を認識し、その行動をとろうとする話し手の決意や意志を表す文末表現です（「〜しなくちゃ」「〜しなければ」）。",
+    "longExplanation": "「-아/어야겠다」（하다動詞と結びついて「~해야겠다」）は、当為・義務の「-아/어야 하다」と意志の先語末語尾「-겠-」が組み合わさった表現です。現時点の状況や判断からその行為を行う必要性を実感し、「〜しなければならない」「〜することにしよう」と即座に決心する話し手の強い意志を表します。独り言や親しい間柄での決意表明にも頻繁に用いられます。日本語の「〜しなくちゃ」「〜することにしよう」「〜しなければ」に相当します。",
+    "formation": "動詞語幹 + -아/어야겠다（語幹末尾の母音部がㅏ・ㅗの場合は -아야겠다、それ以外は -어야겠다；하다は 해야겠다）",
+    "examples": [
+      {
+        "translation": "もう遅くなったので家に帰らなくちゃ。"
+      },
+      {
+        "translation": "明日試験があるので今晩は勉強しなくちゃいけないな。"
+      },
+      {
+        "translation": "体重が増え続けているので、運動を始めなければなりません。"
+      },
+      {
+        "translation": "長いこと連絡していなかったので、友達に電話をかけよう。"
+      }
+    ]
   },
   "ko_에_20": {
-    "title": "~에 근거하여 [e geungeohayeo] (Based on)",
-    "shortExplanation": "Expresses the notion 'based on', 'according to', or 'in accordance with'.",
-    "longExplanation": "~에 근거하여 [e geungeohayeo] is 〜を示します that a statement, action, or conclusion is derived from a particular source such as data, rules, or authoritative information.",
-    "formation": "名詞 + 에 근거하여"
+    "title": "~에 근거하여（〜に基づいて、〜を根拠にして）",
+    "shortExplanation": "データ、事実、法律などの確かな根拠に基づいて判断や行動を行うことを表し、「〜に基づいて」「〜を根拠にして」という意味を表します。",
+    "longExplanation": "「~에 근거하여」は、助詞「에」と動詞「근거하다（根拠とする）」の接続形「-여」が結合した表現です。後節で述べる主張や結論、措置が、客観的な事実、統計データ、法律、規則などをよりどころとして導き出されたものであることを示します。改まったフォーマルな書き言葉であり、学術論文、報道記事、公的文書などで頻繁に用いられます。なお、名詞を修飾する場合は「~에 근거한 + 名詞」の形をとります。",
+    "formation": "名詞 + 에 근거하여（名詞を修飾する場合は 名詞 + 에 근거한 + 名詞）",
+    "examples": [
+      {
+        "translation": "データに基づいて、この製品が最もよく売れました。"
+      },
+      {
+        "translation": "法律に基づいて、彼が間違っていたことが証明されました。"
+      },
+      {
+        "translation": "科学的研究に基づいて、地球温暖化は深刻な問題です。"
+      },
+      {
+        "translation": "彼女のレビューに基づいて、この店はおいしくないとのことです。"
+      }
+    ]
   },
   "ko_에_21": {
-    "title": "~에 비추어 볼 때 [e bichueo bol ttae] (In comparison to)",
-    "shortExplanation": "〜を表すために使用されます comparison; 'in comparison to' or 'compared to'.",
-    "longExplanation": "'~에 비추어 볼 때 [e bichueo bol ttae]' is used to compare one subject or factor with another, often to assert a judgment or highlight a contrast.",
-    "formation": "名詞 + 에 비추어 볼 때"
+    "title": "~에 비추어 볼 때（〜に照らし合わせて見ると、〜と比較して見ると）",
+    "shortExplanation": "ある対象や基準、過去の状況などと照らし合わせたり比較したりして判断を下す際に用いられ、「〜に照らし合わせて見ると」「〜と比べて見ると」という意味を表します。",
+    "longExplanation": "「~에 비추어 볼 때」は、助詞「에」に動詞「비추다（照らす、鑑みる）」、接続語尾「-어」、動詞「보다（見る）」、時を表す語尾「-(으)ㄹ 때」が組み合わさった慣用句です。特定の比較対象や判断基準を念頭に置き、それと引き比べて状況を評価・分析するときに用いられます。客観的かつ慎重な思索・論評のニュアンスを含み、改まった発言や評論・論文などで好まれます。「~에 비추어 보면（〜に照らして見れば）」の形でも同様の意味でよく使われます。",
+    "formation": "名詞 + 에 비추어 볼 때（または 名詞 + 에 비추어 보면）",
+    "examples": [
+      {
+        "translation": "わが国に照らして見ると、アメリカの文化は大きく異なります。"
+      },
+      {
+        "translation": "自分の過去に照らし合わせて見ると、私は大きく変わりました。"
+      },
+      {
+        "translation": "ソウルと比べて見ると、釜山はずっと静かだ。"
+      },
+      {
+        "translation": "他の人々と比較して見ると、彼は特にずば抜けています。"
+      }
+    ]
   },
   "ko_이다_22": {
-    "title": "~이다 보니 [ida boni] (Since, as)",
-    "shortExplanation": "Used to state a reason or cause that leads to a certain result, similar to 'since' or 'as' in English.",
-    "longExplanation": "'~이다 보니 [ida boni]' expresses a cause-and-effect relationship. It is used when a state or habitual action gradually leads to a particular consequence, implying that the result became apparent over time.",
-    "formation": "動詞 stem + -다 + 보니"
+    "title": "~다 보니 / ~(이)다 보니（〜しているうちに、〜していると自然と）",
+    "shortExplanation": "ある行動を継続的に行ったりある状態が続いたりした結果、自然と後節の結果が生じたり新たな気づきを得たりしたことを表します。",
+    "longExplanation": "「~다 보니」は、動作の中断や移行を表す接続語尾「-다」に、経験・発見を表す補助動詞「보다」と理由・契機の語尾「-니」が合わさった表現です。前節の習慣的な動作や状態が継続する過程で、「〜しているうちに」「〜し続けているといつの間にか」後節のような結果に立ち至ったり、新たな事実や心境の変化に気づいたりしたことを述べます。前節は反復的・継続的な行為が多く、後節は意図せざる自然な変化・結果が導かれます。",
+    "formation": "動詞語幹 + -다 보니 | 名詞 + -(이)다 보니（名詞末尾にパッチムがある場合は -이다 보니、ない場合は -다 보니）",
+    "examples": [
+      {
+        "translation": "毎日同じ道を歩いているうちに、この町についてよく知るようになりました。"
+      },
+      {
+        "translation": "韓国で1か月暮らしているうちに、韓国語が少し楽になりました。"
+      },
+      {
+        "translation": "私達は同じ会社で働いているうちに親しくなりました。"
+      },
+      {
+        "translation": "毎朝運動を続けているうちに、体が健康になったような気がします。"
+      }
+    ]
   },
   "ko_이라면_23": {
-    "title": "~이라면 그것은 [iramyeon geugeoseun] (If it’s called)",
-    "shortExplanation": "Used when describing or explaining something in detail if it is defined in a certain way.",
-    "longExplanation": "'~이라면 그것은 [iramyeon geugeoseun]' is used to introduce a definition or explanation. It is roughly equivalent to saying 'if it's called...' in English and is followed by a more detailed description of the subject.",
-    "formation": "主語 + 이라면 그것은 + Detailed Description"
+    "title": "~(이)라면 그것은（〜というならそれは、〜といえばそれは……のことだ）",
+    "shortExplanation": "ある概念やトピックを提示し、その本質や定義について詳しく説明・言及する際に用いられます（「〜というならそれは……のことだ」）。",
+    "longExplanation": "「~(이)라면 그것은」は、条件や話題提示を表す接続表現「-(이)라면（〜であるならば、〜というなら）」と、指示代名詞「그것은（それは）」が結びついた構文です。前節で愛、自由、友情、成功といった抽象的な主題や概念を提起し、後節でその真の意味や本質的価値について詳細な定義・解釈を下す際に修辞的に用いられます。文末には「-을/를 말한다（〜を指して言う）」や「-는 것이다（〜ということだ）」などの表現がよく呼応します。",
+    "formation": "名詞 + (이)라면 그것은 + 説明・定義（名詞の末尾にパッチムがある場合は -이라면 그것은、ない場合は -라면 그것은）",
+    "examples": [
+      {
+        "translation": "愛というなら、それは相手を思いやり理解してあげることを言います。"
+      },
+      {
+        "translation": "自由というなら、それは自分の考えや言葉を制限されないことです。"
+      },
+      {
+        "translation": "友達というなら、それはお互いを理解し助け合う間柄を言います。"
+      },
+      {
+        "translation": "成功というなら、それは目標を達成し自分の夢をかなえたことを言います。"
+      }
+    ]
   },
   "ko_이래_24": {
-    "title": "~이래 [irae] (Since then, after)",
-    "shortExplanation": "〜を表すために使用されます that something has been the case since a certain past event.",
-    "longExplanation": "'~이래 [irae]' denotes 'since then' or 'after' an event, emphasizing the lasting impact or continued change from that moment onward.",
-    "formation": "Verbal noun + 이래"
+    "title": "~이래 / ~이래로（〜以来、〜からこのかた）",
+    "shortExplanation": "過去のある時点や特定の出来事を起点として、それ以降ある状態や変化が現在までずっと継続していることを表します（「〜以来」）。",
+    "longExplanation": "「~이래」（助詞「로」を伴って「~이래로」の形でも頻用される）は、漢字「以来」に由来する表現です。過去の特定の出来事、事故、決定、時期などを表す名詞に接続し、その時を境にして生じた新しい変化や状況が、現在に至るまで一貫して継続していることを強調します。生活習慣の激変や心理的トラウマ、事態の好転・悪化などを述べる際によく用いられます。",
+    "formation": "名詞（時点や事件） + 이래(로) | 連体形 -(으)ㄴ + 이래(로)",
+    "examples": [
+      {
+        "translation": "あの事故以来、私は車に乗れなくなってしまい、バスや地下鉄で移動するようになりました。"
+      },
+      {
+        "translation": "春以来、私は花粉アレルギーでひどく苦しんでおり、薬を飲み続けています。"
+      },
+      {
+        "translation": "前回の会議以来、オフィスの雰囲気が悪化し続けており、多くの人が不満を口にしています。"
+      },
+      {
+        "translation": "久しぶりに会った友人が結婚したという知らせを聞いて以来会えていないので、連絡をとってみなければならないと思います。"
+      }
+    ]
   },
   "ko_이야말로_25": {
-    "title": "~이야말로 [iyamallo] (Truly, really)",
-    "shortExplanation": "Used to emphasize that something or someone is the true or real example of a quality.",
-    "longExplanation": "'~이야말로 [iyamallo]' is used to assert that the attached noun is the very or best example of a given quality. 〜と訳されます 'truly' or 'really' in English and is used for emphasis when stating a fact or situation.",
-    "formation": "名詞 + 이야말로"
+    "title": "~(이)야말로（〜こそ、〜こそまさに）",
+    "shortExplanation": "ある事物を強く取り立てて強調し、それこそが真の代表例や本質であることを表します（「〜こそ」「〜こそまさに」）。",
+    "longExplanation": "「~(이)야말로」は、強調の補助詞「(이)야」、名詞「말（言葉）」、助詞「로」が融合した複合補助詞です。他のものを差し置いて、前につく名詞こそがまさにその性質や役割を最も純粋・典型的に体現している対象であることを強く断定・強調する際に用います。日本語の「〜こそ」「〜こそまさに」「〜にほかならない」に相当し、確信に満ちた力強い論調を表します。",
+    "formation": "名詞 + (이)야말로（名詞の末尾にパッチムがある場合は -이야말로、ない場合は -야말로）",
+    "examples": [
+      {
+        "translation": "あの学生こそまさに模範的な学生です。彼はいつも熱心に勉強し責任感が強いです。"
+      },
+      {
+        "translation": "今この瞬間こそ私たちが待ち望んでいた機会です。今回のチャンスを逃したら、これ以上の機会はないでしょう。"
+      },
+      {
+        "translation": "このボーカルこそまさにこのバンドの中核です。彼女の声なしにはこのバンドは想像すらできません。"
+      },
+      {
+        "translation": "その出来事こそが私の人生の重要な転換点でした。その出来事によって私の人生は一変しました。"
+      }
+    ]
   },
   "ko_인_26": {
-    "title": "~인 까닭에 [in kkadake] (Because, the reason why)",
-    "shortExplanation": "Indicates 'because' or 'the reason why' by giving the cause for the main clause.",
-    "longExplanation": "'~인 까닭에 [in kkadake]' is a conjunction expression used in Korean to explain the reason or cause of an action, event, or situation. It is similar in meaning to 'because' or 'the reason why' in English and is generally used in formal or literary contexts (in contrast to colloquial forms like '때문에' or '해서').",
-    "formation": "動詞‑기 / 形容詞‑은 / 名詞‑인 + 까닭에"
+    "title": "-(으)ㄴ/는 까닭에 / ~인 까닭에（〜のゆえに、〜という理由で）",
+    "shortExplanation": "後節の事態を引き起こした理由や原因を改まった書き言葉で述べる表現で、「〜のゆえに」「〜という理由で」という意味を表します。",
+    "longExplanation": "「~까닭에」は、「理由・わけ」を意味する名詞「까닭」に助詞「에」が結びついた表現です。日常会話でよく使われる「때문에」や「-아서/어서」に比べて非常に格調高く、文学的・学術的な文脈で重用される書き言葉の表現です。客観的かつ論理的に事態の原因や背景を明示する際に適しています。",
+    "formation": "動詞語幹 + -는 까닭에（過去形は -(으)ㄴ 까닭에）| 形容詞語幹 + -(으)ㄴ 까닭에（パッチムがある場合は -은 까닭에、ない場合は -ㄴ 까닭에）| 名詞 + -인 까닭에",
+    "examples": [
+      {
+        "translation": "両親が健康であるゆえに、私はいつも幸せです。"
+      },
+      {
+        "translation": "天気が良いゆえに、私は今日散歩に出かけました。"
+      },
+      {
+        "translation": "旅行の準備を徹底的に行ったゆえに、私は旅行中に不便を感じませんでした。"
+      },
+      {
+        "translation": "問題を念入りに検討したゆえに、休暇中の勉強で一度も扱わなかった問題はありません。"
+      }
+    ]
   },
   "ko_인_27": {
-    "title": "~인 즉 [in jeuk] (In other words)",
-    "shortExplanation": "Used to restate or clarify something; 'in other words', 'that is to say'.",
-    "longExplanation": "'~인 즉 [in jeuk]' is a phrase used in Korean to restate or clarify a previous statement in different words. It is similar to the English expressions 'in other words', 'that is to say', or 'namely' and offers additional clarification or perspective.",
-    "formation": "名詞/動詞 + ~인 즉 + Restatement"
+    "title": "~인즉 / ~인 즉（つまり、すなわち、換言すれば）",
+    "shortExplanation": "前の発言や状況を別の言葉で言い換えて補足説明し、その意味を明確にする表現です（「つまり」「すなわち」「換言すれば」）。",
+    "longExplanation": "「~인즉」は、指定詞に強調の接続助詞「-ㄴ즉」が結びついた表現で、副詞「즉（即ち）」と同根の機能を持ちます。前述の内容を受けて、「要するにこういうことだ」「言い換えればこういう意味になる」と事態の本質をわかりやすく言い直したり、明確な結論を提示したりする際に用いられます。論理的な説明文や改まった対話において、文意を整理・確認する役割を果たします。",
+    "formation": "名詞 + 인즉（または文頭の接続詞として 즉）| 用言には -(으)ㄴ/는즉",
+    "examples": [
+      {
+        "translation": "彼は独特な人です。すなわち、彼が普通の人とは異なった行動をとることを意味します。"
+      },
+      {
+        "translation": "今回の試験は難しかったです。つまり、多くの学生が低い点数を取ったということです。"
+      },
+      {
+        "translation": "あなたは私の最高の親友です。すなわち、私が最も信頼している人です。"
+      },
+      {
+        "translation": "地球が暖かくなっています。つまり、地球温暖化現象が起きているということです。"
+      }
+    ]
   },
   "ko_처럼_28": {
-    "title": "~처럼 하다 [cheoreom hada] (To act as if, pretend to)",
-    "shortExplanation": "Expresses that someone behaves as if they are in a certain state; 'pretend to' or 'act as if'.",
-    "longExplanation": "'~처럼 하다 [cheoreom hada]' is used to describe when someone imitates or mimics a particular state or behavior. In everyday Korean, speakers often use the expression with the auxiliary ‘척 하다’ to mean 'pretend to.'",
-    "formation": "名詞/形容詞 (or state) + 척 하다"
+    "title": "~처럼 하다 / ~(으)ㄴ/는 척하다（〜のように振る舞う、〜のふりをする）",
+    "shortExplanation": "実際はそうではないのに、ある状態や感情であるかのように見せかけたり振る舞ったりすることを表します（「〜のふりをする」「〜のように振る舞う」）。",
+    "longExplanation": "「~처럼 하다」（日常会話では同義の補助形容詞・動詞表現「-(으)ㄴ/는 척하다」や「~처럼 행동하다」として多用される）は、見せかけや偽装の行動を描写する表現です。本心や事実とは異なるにもかかわらず、周囲の目を気にしたり状況を取り繕ったりするために、特定の人物や感情・状態を模倣して演じる行為を指します。日本語の「〜のふりをする」「〜のように装う」に相当します。",
+    "formation": "名詞 + 처럼 하다/행동하다 | 動詞・形容詞語幹 + -(으)ㄴ/는 척하다（動詞現在形は -는 척하다、形容詞および動詞過去形は -(으)ㄴ 척하다）",
+    "examples": [
+      {
+        "translation": "彼は人前で幸せそうなふりをして笑いました。"
+      },
+      {
+        "translation": "私は理解したふりをして振る舞おうと努めましたが、実際には多くのことを理解できませんでした。"
+      },
+      {
+        "translation": "彼女は自分の問題を知らないふりをして行動しました。"
+      },
+      {
+        "translation": "彼は状況をコントロールできるかのように振る舞おうとしましたが、実際はそうではありません。"
+      }
+    ]
   },
   "ko_커지다_29": {
-    "title": "~커지다 [keojida] (Become bigger, more important)",
-    "shortExplanation": "Expresses that something grows in size, significance, or importance.",
-    "longExplanation": "The verb '커지다 [keojida]' indicates that something becomes bigger, more significant, or more important. It can be used for physical size as well as abstract or emotional growth, making it versatile in various contexts.",
-    "formation": "名詞 + 이/가 + 커지다"
+    "title": "~커지다（大きくなる、拡大する、重要性を増す）",
+    "shortExplanation": "物事の大きさ、規模、程度、重要性などが時間とともに増大することを表します（「大きくなる」「膨らむ」「増す」）。",
+    "longExplanation": "「커지だ」は、形容詞「크다（大きい）」に状態の変化を表す補助動詞「-어지다（〜になる）」が合わさって一語化した動詞です。物理的な寸法・体積の増大のみならず、夢や愛情、社会的責任、問題の深刻さ、重要度といった抽象的・心理的な度合いが時間とともに拡大・深化していく過程を広く描写します。「커져 가다（大きくなっていく）」の形でもよく用いられます。",
+    "formation": "名詞 + 이/가 + 커지다（現在形は 커진다/커져요、過去形は 커졌다/커졌어요、推移形は 커져 가다）",
+    "examples": [
+      {
+        "translation": "成長するにつれて私の夢はさらに大きくなり重要なものとなって、私の人生は変わりました。"
+      },
+      {
+        "translation": "その会社が拡張するにつれて、彼の役割はますます重要性を増していきました。"
+      },
+      {
+        "translation": "私たちの家族の愛は、一緒に時間を過ごすうちにますます深まっていきます。"
+      },
+      {
+        "translation": "議論が続くにつれて、その問題の重要性は高まるばかりでした。"
+      }
+    ]
   },
   "ko_키로_30": {
-    "title": "~키로 하다 [kiro hada] (Intend to, plan to)",
-    "shortExplanation": "Denotes the speaker's intention or resolution to do something.",
-    "longExplanation": "The form '~키로 하다 [kiro hada]' is used in Korean to express a decision, plan, or intention for a future action. It conveys a sense of resolution and deliberate commitment, and is generally translated as 'intend to' or 'plan to' in English.",
-    "formation": "動詞 (dictionary form) + 키로 하다"
+    "title": "~기로 하다 / ~키로 하다（〜することにする、〜することに決める）",
+    "shortExplanation": "話し手の決心や計画、または当事者同士の合意・約束を表し、「〜することにする」「〜することに決める」という意味を表します。",
+    "longExplanation": "「~기로 하다」は、動詞の名詞形語尾「-기」、決定・方向を表す助詞「로」、動詞「하다」が合わさった基本構文です。個人が自発的に下した確固たる決断や、複数人の間で取り交わした今後の取り決め・約束を表現する際に用いられます。通常、決定がすでに下されたことを示すため過去形「-기로 했다/했습니다」の形で多用されます。（なお、表記に見られる「~키로 하다」は口語における激音化の発音変化や誤記であり、標準文法では「~기로 하다」が正式な形式です）。",
+    "formation": "動詞語幹 + -기로 하다（口語・誤用表記：-키로 하다；主に過去形 -기로 했다/했습니다 で使用）",
+    "examples": [
+      {
+        "translation": "私は韓国語を完璧に習得することに決めました。そのため毎日たくさん練習しています。"
+      },
+      {
+        "translation": "私たちは来年結婚することにしました。"
+      },
+      {
+        "translation": "ダイエットを始めることにしました。そのため毎日運動しています。"
+      },
+      {
+        "translation": "社長は会社を拡張することに決めました。"
+      }
+    ]
   },
   "ko_하기에는_31": {
-    "title": "~하기에는 [hagineun] (Considering)",
-    "shortExplanation": "〜を表すために使用されます 'considering' or 'given that'.",
-    "longExplanation": "'~하기에는 [hagineun]' is used when taking into account a certain condition or fact before making a judgment or decision. It is attached to a verb stem (as in '하기에는') to indicate that, given that condition, the following statement holds true.",
-    "formation": "動詞 stem + 기에는"
+    "title": "~기에는 / ~하기에는（〜するには、〜ことには〜すぎる・難しい）",
+    "shortExplanation": "ある行為を判断の基準や前提として提示し、それを行うには条件や能力などが不十分であったり困難であったりすることを表します。",
+    "longExplanation": "「~기에는」は、動詞の名詞形語尾「-기」、助詞「에」、強調の補助詞「는」が組み合わさった表現です。前節にある行為を行うための基準を置き、後節でその行為を実行するには時間や費用、技術、状況などが不足していることや、困難・不適切であることを述べます。後節には「어렵다（難しい）」「부족하다（足りない）」「불가능하다（不可能だ）」「이르다（まだ早い）」といった評価・制限を表す表現が伴うことが多いです。",
+    "formation": "動詞語幹 + -기에는（하다動詞は ~하기에는；後節に 어렵다, 부족하다, 불가능하다, 무섭다 などが続くことが多い）",
+    "examples": [
+      {
+        "translation": "今日は雨が降っているので、サッカーをするには少し難しそうです。"
+      },
+      {
+        "translation": "私はお金があまりにもなさすぎて、旅行に行くには不可能です。"
+      },
+      {
+        "translation": "このプロジェクトを完成させるには時間が不足しています。"
+      },
+      {
+        "translation": "この映画を観るには怖すぎて無理そうです。"
+      }
+    ]
   },
   "ko_하기는_32": {
-    "title": "~하기는 하다 [hagineun hada] (Do it somehow)",
-    "shortExplanation": "Conveys that someone does something, though not very well or adequately.",
-    "longExplanation": "The expression '~하기는 하다 [hagineun hada]' is used to imply that while an action is indeed performed, it may not be done proficiently or to the expected standard.",
-    "formation": "動詞 stem + 기는 하다"
+    "title": "~기는 하다 / ~하기는 하다（〜することはするが、〜しはするものの）",
+    "shortExplanation": "前節の事実や行為をいったん肯定して認めたうえで、後節で不十分な点や不満な点について言及する表現です（「〜しはするが」「〜なことは〜だが」）。",
+    "longExplanation": "「~기는 하다」は、名詞形語尾「-기」、対照の補助詞「는」、動詞「하다」が合わさった譲歩表現です。相手の言葉や自らの行為について「確かに〜することはする」「〜であることは事実だ」とひとまず承認しつつも、すぐ後ろに「-지만（〜が）」や「-(으)ㄴ/는데（〜のだが）」などを続けて、質や熟練度、程度が期待に満たず不十分であることを補足します。",
+    "formation": "動詞・形容詞語幹 + -기는 하다（하다動詞は ~하기는 하다；後節に -지만 や -(으)ㄴ/는데 などの逆接が続く）",
+    "examples": [
+      {
+        "translation": "私は料理をしはするのですが、それほどおいしくはできません。"
+      },
+      {
+        "translation": "私たちの会社には仕事をしはするのですが、上手にこなす人はあまりいません。"
+      },
+      {
+        "translation": "彼は学校に通ってはいるのですが、実際には苦手な科目がたくさんあります。"
+      },
+      {
+        "translation": "私は英語を話しはしますが、自然に話すことはできません。"
+      }
+    ]
   },
   "ko_하기야_33": {
-    "title": "~하기야 [hagiya] (Indeed, truly)",
-    "shortExplanation": "Used to emphasize or affirm a statement; 'indeed', 'truly', 'to be sure'.",
-    "longExplanation": "'~하기야 [hagiya]' is a form used to strongly affirm the truth of a statement or to emphasize one’s viewpoint. It is akin to saying 'indeed' or 'truly' in English.",
-    "formation": "動詞 stem + 하기야"
+    "title": "~하기야 / ~기야（〜なのは確かだが、言われてみれば確かに〜だが）",
+    "shortExplanation": "誰の目にも明らかな事実や困難を当然のこととして認め、「確かに〜ではあるが」「もっとも〜だが」と同意を示す表現です。",
+    "longExplanation": "「~하기야」（文頭で接続副詞として「하기야」「하긴」の形でも頻用される）は、名詞形語尾「-기」と強調の補助詞「-(이)야」が結びついた表現です。話し手が客観的な状況や相手の主張に対して、「確かに言われてみればその通りだ」「〜なのは当然のことだが」と自然に首肯・納得するニュアンスを持ちます。困難や妥当性をいったん認めた上で、それに続く対処法や励ましの結論を述べる際によく使われます。",
+    "formation": "動詞・形容詞語幹 + -기야（하다動詞は ~하기야；文頭の副詞として 하기야 / 하긴 としても多用）",
+    "examples": [
+      {
+        "translation": "最近の友人たちが勉強するのは確かに容易ではありません。だからこそ毎晩の自習が必要です。"
+      },
+      {
+        "translation": "新型コロナウイルスが蔓延して旅行するのは確かに難しいので、家でばかり過ごしています。"
+      },
+      {
+        "translation": "学校に関することではないなら、それをやることは確かにぜひ望んでいます。"
+      },
+      {
+        "translation": "おいしい料理を作るのは難しいといえば確かにそうですが、毎日努力すれば次第に実力が向上するはずです。"
+      }
+    ]
   },
   "ko_하기만_34": {
-    "title": "~하기만 하면 [hakiman hamyeon] (As soon as)",
-    "shortExplanation": "Expresses 'as soon as' or 'whenever' an action occurs, another immediately follows.",
-    "longExplanation": "'~하기만 하면 [hakiman hamyeon]' is 〜を示します that as soon as a certain action (expressed by the verb stem + 하다) happens, another action follows immediately or consequently.",
-    "formation": "動詞 stem + 하기만 하면"
+    "title": "~기만 하면 / ~하기만 하면（〜しさえすれば、〜すると決まって）",
+    "shortExplanation": "前節の動作が起こりさえすれば、直ちに・決まって後節の行動や反応が引き起こされることを表します（「〜しさえすれば」「〜するといつも」）。",
+    "longExplanation": "「~기만 하면」は、動詞の名詞形語尾「-기」、限定の補助詞「만（〜だけ）」、仮定の接続語尾「-(으)면（〜すれば）」に動詞「하다」が加わった表現です。前節の動作が行われさえすれば十分な契機となって、後節の事態や習慣的行動、身体的反応が即座に、あるいは例外なく引き起こされることを表します。日本語の「〜しさえすれば」「〜するやいなや」「〜するといつも」に相当します。",
+    "formation": "動詞語幹 + -기만 하면（하다動詞は ~하기만 하면）",
+    "examples": [
+      {
+        "translation": "私は毎朝起きさえすれば運動をします。"
+      },
+      {
+        "translation": "彼女は家に到着しさえすればすぐに夕食を作ります。"
+      },
+      {
+        "translation": "授業が終わりさえすれば、生徒たちはすぐに学校を後にします。"
+      },
+      {
+        "translation": "彼は緊張しさえすると肩が震えます。"
+      }
+    ]
   },
   "ko_하면서도_35": {
-    "title": "~하면서도 [hamyeonseodo] (While, although)",
-    "shortExplanation": "〜を表すために使用されます a contradictory situation or event occurring at the same time; 'while', 'although'.",
-    "longExplanation": "'~하면서도 [hamyeonseodo]' is a conjunction used in Korean to indicate two actions or states happening simultaneously, with an aspect of contradiction or conflicting elements. It's like saying 'although' or 'even when' in English, and it implies that despite the first action, the second one still occurs. It can be used to show an inconsistency between what is expected and what really happens.",
-    "formation": "動詞-stem + ~하면서도"
+    "title": "~(으)면서도（〜でありながらも、〜していながらも、〜くせに）",
+    "shortExplanation": "二つの動作や状態が同時に行われながらも、それらが互いに矛盾したり対立したりしていることを表す接続語尾です（「〜でありながらも」「〜しながらも」）。",
+    "longExplanation": "「~(으)면서도」は、同時進行を表す接続語尾「-(으)면서」に対照や強調を表す助詞「-도」が結合した表現です。同一の主語が前節の動作や状態にありながら、同時にそれに相反する、あるいは予期に反する後節の行動や心理状態を持つことを表します。日本語の「〜でありながらも」「〜しているくせに」「〜と分かっていながらも」などに相当します。",
+    "formation": "動詞・形容詞語幹 + -(으)면서도（母音またはパッチムㄹで終わる場合は -면서도、ㄹ以外のパッチムで終わる場合は -으면서도）| 名詞 + (이)면서도（パッチムがない場合は -면서도、ある場合は -이면서도）",
+    "examples": [
+      {
+        "translation": "彼女は会社で忙しく働きながらも、いつも早く家に帰って子どもたちと一緒に食事をします。"
+      },
+      {
+        "translation": "私は勉強に集中しながらも、友達とコミュニケーションをとることには難しさを感じています。"
+      },
+      {
+        "translation": "彼は恋人と幸せに過ごしながらも、彼女がいつもそばにいない時を恐れています。"
+      },
+      {
+        "translation": "母はいつも他人の健康には気を配りながらも、自分自身の健康はいつも無視しがちです。"
+      }
+    ]
   },
   "ko_하면_36": {
-    "title": "~하면 할수록 [hamyeon halsurok] (The more... the more)",
-    "shortExplanation": "〜を表すために使用されます a correlation between two actions or situations; 'the more... the more'.",
-    "longExplanation": "The '~하면 할수록 [hamyeon halsurok]' grammar point is 〜を表すために使用されます a correlation between two things. The first clause shows what is increasing or decreasing, while the second clause shows the result. This pattern emphasizes that as one event or situation increases or decreases, a related event or situation also increases or decreases—much like the English expression 'the more... the more'.",
-    "formation": "動詞 + 면, 動詞 + 수록"
+    "title": "-(으)면 -(으)ㄹ수록（〜すればするほど、〜であればあるほど）",
+    "shortExplanation": "前節の動作や状態の程度が進むにつれて、それに伴って後節の事態や程度も変化することを表します（「〜すればするほど」）。",
+    "longExplanation": "「-(으)면 -(으)ㄹ수록」は、仮定・条件を表す接続語尾「-(으)면」と、程度・比例を表す接続語尾「-(으)ㄹ수록」が組み合わさった構文です。前節の事態が増減・反復するのに比例して、後節の結果や程度もますます強まるという相関関係を表します。日本語の「〜ば〜ほど」「〜すればするほど」に相当します。日常会話では前半の「-(으)면」を省略して「-(으)ㄹ수록」単独で用いられることもあります。",
+    "formation": "動詞・形容詞語幹 + -(으)면 動詞・形容詞語幹 + -(으)ㄹ수록（母音またはパッチムㄹで終わる場合は -면 / -ㄹ수록、ㄹ以外のパッチムで終わる場合は -으면 / -을수록）",
+    "examples": [
+      {
+        "translation": "これを練習すればするほど上手になるので、練習を続ければマスターできるようになるはずです。"
+      },
+      {
+        "translation": "天気が寒くなればなるほど、より多くの人々が服屋に立ち寄りました。"
+      },
+      {
+        "translation": "私は韓国語を勉強すればするほど、その言語についてもっと知りたくなります。"
+      },
+      {
+        "translation": "この街に住めば住むほど、見どころややるべきことがたくさんあることに気づきました。"
+      }
+    ]
   },
   "ko_하자마자_37": {
-    "title": "~하자마자 [hajamaja] (As soon as)",
-    "shortExplanation": "〜を表すために使用されます 'as soon as' or 'right after' something has happened.",
-    "longExplanation": "'~하자마자 [hajamaja]' is a conjugation used in Korean to indicate an action that is immediately followed by another action with no gap in between. Essentially, it means 'as soon as' or 'right after.'",
-    "formation": "動詞 stem + 하자마자"
+    "title": "-자마자 / ~하자마자（〜するやいなや、〜するとすぐに）",
+    "shortExplanation": "前節の動作が終わるとほとんど間を置かずに、直後に後節の動作が行われることを表す接続語尾です（「〜するやいなや」「〜するとすぐに」）。",
+    "longExplanation": "「-자마자」は、動詞の語幹について前節の動作の完了と同時に、または時間的な空白なしに直ちに後節の動作が引き続いて起こることを表す接続語尾です。日本語の「〜するやいなや」「〜するとすぐ」「〜するが早いか」に相当します。前節が過去の事柄であっても過去形語尾「-았/었-」をつけることはできず、時制は文末の用言で表します。",
+    "formation": "動詞語幹 + -자마자（パッチムの有無にかかわらず語幹に直接 -자마자 を接続；하다動詞は 하자마자）",
+    "examples": [
+      {
+        "translation": "学校に到着するやいなや、彼はすぐに授業に入りました。"
+      },
+      {
+        "translation": "私は空港に着くとすぐにタクシーを呼びました。"
+      },
+      {
+        "translation": "彼女は起きるやいなやコーヒーを淹れました。"
+      },
+      {
+        "translation": "会社から退勤するとすぐに家に直帰して休みました。"
+      }
+    ]
   },
   "ko_해서_38": {
-    "title": "~해서 그런지 [haeseo geureonji] (Perhaps because)",
-    "shortExplanation": "〜を表すために使用されます a supposition, assumption, or speculation; 'perhaps because', 'maybe due to'.",
-    "longExplanation": "'~해서 그런지 [haeseo geureonji]' is commonly used in Korean to indicate a speculative cause-and-effect relationship or supposition. It is generally translated as 'perhaps because' or 'maybe due to' and is used when the speaker is not completely certain about the cause but speculates based on observable evidence.",
-    "formation": "動詞/形容詞 + 해서 그런지"
+    "title": "-아/어서 그런지 / ~해서 그런지（〜のせいか、〜だからなのか）",
+    "shortExplanation": "前節の内容が後節の事態の原因や理由ではないかと推測しながら述べる表現です（「〜のせいか」「〜だからなのか」）。",
+    "longExplanation": "「-아/어서 그런지」は、原因・理由を表す接続語尾「-아/어서」に、「그렇다（そうだ）」と不確実な推測を表す語尾「-(으)ㄴ지」が結びついた表現です。話し手が後節の状況の原因を前節にあるのではないかと推し量りつつも、100%断定できない控えめなニュアンスを表します。日本語の「〜のせいか」「〜だからだろうか」に相当します。名詞につく場合は「-(이)라서 그런지」の形をとります。",
+    "formation": "動詞・形容詞語幹 + -아/어서 그런지（陽母音 ㅏ, ㅗ は -아서 그런지、陰母音は -어서 그런지、하다 は 해서 그런지）| 名詞 + (이)라서 그런지",
+    "examples": [
+      {
+        "translation": "今日は天気が良いせいか、多くの人々が活動しているのを見ることができました。"
+      },
+      {
+        "translation": "彼女は昨日怪我をしたせいなのか、今日はとても慎重に歩いていました。"
+      },
+      {
+        "translation": "昨日ジャージャー麺を食べすぎたみたいです。今日はお腹が痛いせいか体調があまり良くありません。"
+      },
+      {
+        "translation": "夢の中で彼女に会ったせいか、今日は彼女のことがずっと頭に浮かびます。"
+      }
+    ]
   },
   "ko_하여서는_39": {
-    "title": "~하여서는 안 되다 [hayeoseoneun an dweda] (Must not)",
-    "shortExplanation": "〜を表すために使用されます prohibition or strong advice against doing something, which can be translated as 'must not' or 'should not'.",
-    "longExplanation": "'~하여서는 안 되다 [hayeoseoneun an dweda]' is a grammar form 〜を示します that something should not or must not occur. It is often used when giving strong advice or setting prohibitions, highlighting the negative consequences of the action.",
-    "formation": "動詞 stem + 아/어/여 + 하여서는 안 되다"
+    "title": "-아/어서는 안 되다 / ~하여서는 안 되다（〜してはならない、〜してはいけない）",
+    "shortExplanation": "規則や道徳、社会的規範に基づき、ある行為をしてはいけないという強い禁止や戒めを表します（「〜してはならない」）。",
+    "longExplanation": "「-아/어서는 안 되다」（改まった書き言葉では「-아/여서는 안 되だ」）は、条件・理由の「-아/어서」に助詞「-는」と「안 되다（いけない）」が結合した文型です。前節の行為を行うと不都合や悪影響が生じるため、常識や規則、法律などに照らして「その行為をしてはならない」と強く禁止する際に用いられます。日本語の「〜してはならない」「〜してはいけない」に相当し、口語の「-면 안 되다」に比べてより格式高く公的な場面で使われます。",
+    "formation": "動詞語幹 + -아/어서는 안 되다（陽母音語幹は -아서는 안 되다、陰母音語幹は -어서는 안 되다、하다 は 해서는 안 되다 または 改まった書き言葉で 하여서는 안 되다）",
+    "examples": [
+      {
+        "translation": "学生だからといって授業に遅刻することは絶対に許されません（してはなりません）。"
+      },
+      {
+        "translation": "医師として患者に関する事項を外部に漏洩することは決してしてはなりません。"
+      },
+      {
+        "translation": "明日の試験のために徹夜をしてはいけません。健康が一番大切です。"
+      },
+      {
+        "translation": "他人に迷惑や被害を与える行動をしてはなりません。"
+      }
+    ]
   },
   "ko_한테는_40": {
-    "title": "~한테는 [hanteneun] (To, for someone)",
-    "shortExplanation": "〜を示します the target or recipient of an action, similar to 'to' or 'for' in English.",
-    "longExplanation": "'~한테는 [hanteneun]' is a construction in Korean used when the speaker wants to specify the recipient or target of an action. It is similar to 'to' or 'for' in English and is often used to single out someone in contrast to others.",
-    "formation": "名詞 + 한테는"
+    "title": "~한테는（〜にとっては、〜には、〜に対しては）",
+    "shortExplanation": "行為の相手や対象を表す助詞に対照の助詞が結合した形で、「〜に対しては」「〜にとっては」という意味を表します。",
+    "longExplanation": "「~한테는」は、人や動物を表す名詞につき動作の向かう対象（〜に・〜へ）を表す口語助詞「~한테」に、対比や強調を表す助詞「-는」が結合した表現です。他の対象と対比させて「特定の相手に対しては」「〜にとっては」と取り立てて述べる際に使われます。なお、「~한테」は人や生き物にのみ用いられ、目上の人に対しては敬語形の「께는」、公的な書き言葉では「에게는」が用いられます。",
+    "formation": "名詞（人・動物） + 한테는（目上の人には 께는；公的な書き言葉では 에게는）",
+    "examples": [
+      {
+        "translation": "姉にはプレゼントを買おうとここに来ました。友達にはメールでメッセージを送る予定です。"
+      },
+      {
+        "translation": "父にはこの事実をまだ知らせていません。姉にだけ話しました。"
+      },
+      {
+        "translation": "子どもたちには単純な言葉で説明しなければなりません。複雑すぎると理解できません。"
+      },
+      {
+        "translation": "彼は母親に対してはいつも親切ですが、父親に対しては失礼です。"
+      }
+    ]
   },
   "ko_할_41": {
-    "title": "~할 만하다 [hal manhada] (Worth doing)",
-    "shortExplanation": "〜を表すために使用されます the worthiness of doing something.",
-    "longExplanation": "'~할 만하다 [hal manhada]' is 〜を示します that something is worth the effort, time, or cost invested in it. 〜と訳されます 'worth doing' or 'worth it' in English, expressing a subjective assessment of value.",
-    "formation": "動詞 stem + 할 만하다"
+    "title": "-(으)ㄹ 만하다 / ~할 만하다（〜する価値がある、〜に値する、〜するに値する）",
+    "shortExplanation": "ある行動をとる十分な価値や理由があること、あるいはある状態が許容範囲内にあることを表します（「〜する価値がある」「〜に値する」）。",
+    "longExplanation": "「-(으)ㄹ 만하다」は、未来連体形語尾「-(으)ㄹ」に補助形容詞「만하다（〜に値する）」が結びついた表現です。話し手の主観的な価値判断として、時間や費用、労力をかけるだけの十分な価値があることを表します。日本語の「〜する価値がある」「〜してみるに値する」に相当します。また、状況によって「まあまあ〜できる」「我慢できる範囲だ」というニュアンスを表すこともあります。否定形は「-(으)ㄹ 만하지 않다」となります。",
+    "formation": "動詞語幹 + -(으)ㄹ 만하다（母音またはパッチムㄹで終わる場合は -ㄹ 만하다、ㄹ以外のパッチムで終わる場合は -을 만하다；하다 は 할 만하다）",
+    "examples": [
+      {
+        "translation": "料理の勉強を続けるのは大変ですが、美味しい料理を頻繁に食べられるようになるので、やる価値があります。"
+      },
+      {
+        "translation": "この作品は高価ではありますが、美しいデザインと高品質を考えれば購入する価値があります。"
+      },
+      {
+        "translation": "長い時間待つのは大変ですが、その結果が良いものであれば待つ価値があります。"
+      },
+      {
+        "translation": "この映画はあまり面白くないので、観る価値がありません。"
+      }
+    ]
   },
   "ko_할_42": {
-    "title": "~할 수밖에 없다 [hal subakke eopda] (Have no choice but to)",
-    "shortExplanation": "〜を表すために使用されます that there is no other option but to do what is mentioned.",
-    "longExplanation": "'~할 수밖에 없다 [hal subakke eopda]' is used when there is no alternative but to perform the action mentioned. It implies that circumstances force one to act in a certain way.",
-    "formation": "動詞 (in dictionary form) + 수밖에 없다"
+    "title": "-(으)ㄹ 수밖에 없다 / ~할 수밖에 없다（〜するしかない、〜せざるを得ない）",
+    "shortExplanation": "状況や理由から他に選択肢や方法がなく、そうするより他にないことを表します（「〜するしかない」「〜せざるを得ない」）。",
+    "longExplanation": "「-(으)ㄹ 수밖에 없다」は、可能を表す「-(으)ㄹ 수」に、限定の助詞「-밖에（〜しか）」と否定の存在詞「없다（ない）」が結合した構文です。客観的な状況や避けられない理由のために、他の手段や可能性が存在せず、その行為を行う以外に方法がないことを強く表します。日本語の「〜するしかない」「〜せざるを得ない」「〜するよりほかない」に相当します。形容詞に接続した場合は「〜であるのは当然だ」「〜になるのは必然だ」という必然性を表すこともあります。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ 수밖에 없다（母音またはパッチムㄹで終わる場合は -ㄹ 수밖에 없다、ㄹ以外のパッチムで終わる場合は -을 수밖에 없다；하다 は 할 수밖에 없다）",
+    "examples": [
+      {
+        "translation": "雨が降っているので、傘を持っていくしかありません。"
+      },
+      {
+        "translation": "試験があるため、勉強を続けるしかありません。"
+      },
+      {
+        "translation": "彼女がそう言った以上、私は彼女を信用するしかありませんでした。"
+      },
+      {
+        "translation": "今はお金がないので、このように安い物しか買うことができません。"
+      }
+    ]
   },
   "ko_해_43": {
-    "title": "~해 갈수록 [hae galsurok] (Increasingly, as time goes on)",
-    "shortExplanation": "Used to describe a situation where a condition progressively intensifies or becomes more serious.",
-    "longExplanation": "The '~해 갈수록 [hae galsurok]' expression indicates that as time passes, a particular state or condition gradually becomes more intense or worsens. It can be used with both verbs and adjectives, similar to saying 'increasingly' or 'the more... the more' in English.",
-    "formation": "動詞/形容詞 stem + -을수록 / -ㄹ수록"
+    "title": "-(으)ㄹ수록 / ~해 갈수록（〜するほど、〜していくにつれてますます）",
+    "shortExplanation": "ある動作や状態が深まり進むにつれて、それに伴って後節の程度もいっそう増していくことを表します（「〜するほど」「〜していくにつれて」）。",
+    "longExplanation": "「-(으)ㄹ수록」（および時間の経過に伴う推移を表す「-어/아 갈수록」）は、ある事態の程度や頻度が増加するのに比例して、他の事態の程度もますます高まることを表す接続語尾です。日本語の「〜するほど」「〜になればなるほど」「〜していくにつれていっそう」に相当します。単独でも用いられますが、条件の「-(으)면」と呼応して「-(으)면 -(으)ㄹ수록」の形で使われることも非常に多いです。",
+    "formation": "動詞・形容詞語幹 + -(으)ㄹ수록（母音またはパッチムㄹで終わる場合は -ㄹ수록、ㄹ以外のパッチムで終わる場合は -을수록）| 時間の推移形：動詞・形容詞語幹 + -어/아 갈수록",
+    "examples": [
+      {
+        "translation": "天気が寒くなるほど、風邪をひく人が多くなるような気がします。"
+      },
+      {
+        "translation": "彼女は知れば知るほど、より魅力的な人です。"
+      },
+      {
+        "translation": "本を読めば読むほど、私の思考力が向上しているように感じます。"
+      },
+      {
+        "translation": "私は家にいればいるほど寂しくなってくるので、外に出かけたくなります。"
+      }
+    ]
   },
   "ko_해_44": {
-    "title": "~해 보아야 [hae boaya] (Should try and see)",
-    "shortExplanation": "Used to suggest that somebody should try something out in order to know or understand it.",
-    "longExplanation": "'~해 보아야 [hae boaya]' is used when suggesting that one should try something to truly understand or experience it. In English, it is similar to saying 'you should try and see.'",
-    "formation": "動詞 stem + 해 보아야"
+    "title": "-아/어 보아야 / ~해 보아야（〜してみてこそ、〜してみなければ）",
+    "shortExplanation": "実際にその行為を試みて体験して初めて、事態の本質や良し悪しを把握できるという必要条件を表します（「〜してみてこそ」「〜してみなければ」）。",
+    "longExplanation": "「-아/어 보아야」は、試みを表す補助動詞「-아/어 보다（〜してみる）」に、必須の条件を表す接続語尾「-아/어야（〜してこそ、〜して初めて）」が結合した構文です。ある事実や価値、感触などを正しく理解したり判断したりするためには、まず自ら試行・体験してみることが不可欠な前提であると述べるときに用います。文末には「알 수 있다（分かる）」や「한다（〜すべきだ）」が続くことが多いです。日本語の「〜してみて初めて」「〜してみなければ分からない」に相当します。",
+    "formation": "動詞語幹 + -아/어 보아야（陽母音語幹は -아 보아야、陰母音語幹は -어 보아야、하다 は 해 보아야）",
+    "examples": [
+      {
+        "translation": "食べ物が新鮮かどうか知る方法は、食べてみなければなりません（食べてみて初めて分かります）。"
+      },
+      {
+        "translation": "この服が似合うかどうか知る方法は、着てみなければなりません。"
+      },
+      {
+        "translation": "この本が面白いかどうか知る方法は、読んでみなければなりません。"
+      },
+      {
+        "translation": "このスポーツがどれほど面白いか知る方法は、直接やってみなければなりません。"
+      }
+    ]
   },
   "ko_해오다_45": {
-    "title": "~해오다 [haeoda] (Continue doing something until now)",
-    "shortExplanation": "〜を表すために使用されます an ongoing action from the past up to the present moment.",
-    "longExplanation": "'해오다 [haeoda]' is used to denote an action that started in the past and continues until now. It literally means 'have been doing' and is often 〜を表すために使用されます a continuous habit, an ongoing action, or a series of actions over an extended period.",
-    "formation": "動詞 + 아/어/해 + 오다"
+    "title": "-아/어 오다 / ~해오다（ずっと〜してきた、〜し続けてきている）",
+    "shortExplanation": "過去のある時点から始まった動作や状態が、時間の経過とともに現在までずっと継続・反復されてきたことを表します（「〜してきた」）。",
+    "longExplanation": "「-아/어 오다」（하다動詞は「해오다」）は、接続語尾「-아/어」に空間的・時間的な接近を表す補助動詞「오다（来る）」が結びついた表現です。過去の特定の時点に端を発した行為、習慣、努力などが、現在に向かって時間的に途切れることなく継続・蓄積されてきたことを表します。日本語の「ずっと〜してきた」「〜し続けてきている」に相当します。多くの場合、継続を表す「-아/어 오고 있다」の形で用いられます。",
+    "formation": "動詞語幹 + -아/어 오다（陽母音語幹は -아 오다、陰母音語幹は -어 오다、하다 は 해오다；多くは現在進行形 -아/어 오고 있다 の形で使用）",
+    "examples": [
+      {
+        "translation": "私は幼い頃からずっとピアノを弾き続けてきています。"
+      },
+      {
+        "translation": "私たちはその事業を始めてから5年間、ずっと働き続けてきています。"
+      },
+      {
+        "translation": "世界旅行を夢見ながら、ずっとお金を節約してきています。"
+      },
+      {
+        "translation": "私たちは友達が来てからずっと一緒に話を続けてきています。"
+      }
+    ]
   },
   "ko_했건만_46": {
-    "title": "~했건만 [haetgeonman] (But, however)",
-    "shortExplanation": "〜を表すために使用されます contrast or contradiction; 'but', 'however'.",
-    "longExplanation": "The '~했건만 [haetgeonman]' form is 〜を表すために使用されます a contrasting situation or contradiction. 〜と訳されます 'but', 'nevertheless', or 'however' and is used when the speaker wants to present a fact or circumstance that conflicts with what was previously stated.",
-    "formation": "動詞 + 았/었/했건만"
+    "title": "-았/었건만 / ~했건만（〜したものの、〜したのだが、〜したのに）",
+    "shortExplanation": "前節で過去の努力や事実を認めながらも、後節でそれに反する残念な結果や対照的な事実が起こったことを表す接続語尾です（「〜したものの」「〜したのに」）。",
+    "longExplanation": "「-았/었건만」（하다動詞は「했건만」）は、過去時制を表す先語末語尾「-았/었-」に、逆接の接続語尾「-건만（-건마는の縮約形）」が結合した文学的・書面語的な表現です。過去に行われた行為や払われた努力を前提としつつ、期待や常識に反する望ましくない結果や対照的事実が後に続く際に用いられます。話し手の悔しさ、遺憾、嘆きなどの感情が込められることが多いです。日本語の「〜したものの」「〜したのに」「〜したのだが」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었건만（陽母音語幹は -았건만、陰母音語幹は -었건만、하다 は 했건만）",
+    "examples": [
+      {
+        "translation": "私は大いに努力したものの、試験に落ちてしまいました。"
+      },
+      {
+        "translation": "友達は昨日来たのに、今日は来られませんでした。"
+      },
+      {
+        "translation": "料理は美味しかったのだが、値段があまりにも高すぎました。"
+      },
+      {
+        "translation": "彼女は綺麗だと言っていたけれど、私はそうは思いませんでした。"
+      }
+    ]
   },
   "ko_했기_47": {
-    "title": "~했기 때문에 [haetgi ttaemune] (Because)",
-    "shortExplanation": "〜を表すために使用されます reason or cause, equivalent to 'Because' in English.",
-    "longExplanation": "'~했기 때문에 [haetgi ttaemune]' is used to give a reason or cause. It refers retrospectively to an action or situation in the past that explains a present condition or outcome.",
-    "formation": "Action 動詞 in Past Tense + 했기 때문에"
+    "title": "-았/었기 때문에 / ~했기 때문에（〜したため、〜したから、〜したせいで）",
+    "shortExplanation": "過去に完了した動作や状態が、後節の結果をもたらした直接の原因や理由であることを明確に表します（「〜したため」「〜したから」）。",
+    "longExplanation": "「-았/었기 때문에」（하다動詞は「했기 때문에」）は、過去時制を表す先語末語尾「-았/었-」、名詞形語尾「-기」、原因・理由を表す依存名詞「때문」、助詞「에」が結びついた因果構文です。過去に生じた明確な事実や行為が、後節の事態を引き起こした確固たる客観的理由であることを論理的に説明する際に用いられます。会話と書き言葉の双方で広く使われます。日本語の「〜したため」「〜したせいで」「〜したから」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었기 때문에（陽母音語幹は -았기 때문에、陰母音語幹は -었기 때문에、하다 は 했기 때문에）",
+    "examples": [
+      {
+        "translation": "昨日遅く寝たため、今朝起きるのが大変でした。"
+      },
+      {
+        "translation": "微小粒子状物質（PM2.5）の濃度が高くて窓を開けなかったため、部屋が暑くなりました。"
+      },
+      {
+        "translation": "たくさん勉強をしたため、試験で良い点数を取りました。"
+      },
+      {
+        "translation": "雨が降ったため、スニーカーが濡れてしまいました。"
+      }
+    ]
   },
   "ko_했기에_48": {
-    "title": "~했기에 [haetgie] (Because)",
-    "shortExplanation": "〜を示します the reason or cause; 'because' or 'since'.",
-    "longExplanation": "`~했기에 [haetgie]` is a conjunction that connects two sentences by showing that the first is the cause or reason for the second. It emphasizes that one situation exists because of another, equivalent to 'because' or 'since' in English.",
-    "formation": "動詞 + 했기에"
+    "title": "-았/었기에 / ~했기에（〜したからこそ、〜したために、〜した故に）",
+    "shortExplanation": "過去の事実や経験が後節の結果をもたらした原因や根拠であることを表す、やや文語的な表現です（「〜したからこそ」「〜したために」）。",
+    "longExplanation": "「-았/었기에」（하다動詞は「했기에」）は、過去時制を表す先語末語尾「-았/었-」に、原因・判断の根拠を表す接続語尾「-기에」が結びついた表現です。書き言葉や文学作品、スピーチなどでよく用いられ、過去の行為や状態がその後の結果や判断を導き出した根本的な理由であることを格調高く表します。客観的な説明に重きを置く「-았/었기 때문에」に比べ、叙情性や文彩を感じさせる響きを持ちます。日本語の「〜したからこそ」「〜した故に」「〜したために」に相当します。",
+    "formation": "動詞・形容詞語幹 + -았/었기에（陽母音語幹は -았기에、陰母音語幹は -었기에、하다 は 했기에）",
+    "examples": [
+      {
+        "translation": "彼女は学問がとても好きであったからこそ、大学で教授になりました。"
+      },
+      {
+        "translation": "私はカルビをたくさん食べたので、今お腹がとてもいっぱいです。"
+      },
+      {
+        "translation": "今日早く起きたので、出勤時間に遅れませんでした。"
+      },
+      {
+        "translation": "彼は個人的な問題のためにストレスを感じていたため、グループ活動には参加しませんでした。"
+      }
+    ]
   },
   "ko_했더니_49": {
-    "title": "~했더니 [haetdeoni] (And then)",
-    "shortExplanation": "〜を表すために使用されます the progression of actions or events, indicating a consequential relationship.",
-    "longExplanation": "The '~했더니 [haetdeoni]' expression is used in Korean to show that after an action or event, an unexpected or revealing result followed. 〜と訳されます 'and then' or 'so' in English.",
-    "formation": "動詞 + 았/었더니"
+    "title": "-았/었더니 / ~했더니（〜したところ、〜したら、〜した結果）",
+    "shortExplanation": "話し手自身が前節の動作を行った結果、新たな事実を発見したことや、その動作が原因となって後節の結果が生じたことを表す回想の接続語尾です（「〜したら」「〜したところ」）。",
+    "longExplanation": "「-았/었더니」（하다動詞は「했더니」）は、過去時制の「-았/었-」と回想の接続語尾「-더니」が結びついた表現です。基本的に第一人称（話し手自身）の行動を主語とし、話し手がある行動を自ら行ったところ、それに伴って後節のような新しい事態や予想外の事実を知るに至ったこと（発見・結果）、またはその行動が直接の契機となって後節の好転・悪化などの状態変化が生じたこと（因果関係）を表します。日本語の「〜したところ」「〜してみたら」「〜した結果」に相当します。",
+    "formation": "動詞語幹 + -았/었더니（陽母音語幹は -았더니、陰母音語幹は -었더니、하다 は 했더니；前節の主語は主に話し手自身）",
+    "examples": [
+      {
+        "translation": "彼女に電話をかけたところ、彼女は忙しくて電話に出られないと言いました。"
+      },
+      {
+        "translation": "バスから降りたら、財布を失くしてしまったことに気づきました。"
+      },
+      {
+        "translation": "本を読んでふと見たら、窓の外に雨が降っているのが見えました。"
+      },
+      {
+        "translation": "薬を飲んだら、気分が良くなりました。"
+      }
+    ]
   },
   "ko_했어야_50": {
-    "title": "~했어야 했다 [haesseoya haetda] (Had to)",
-    "shortExplanation": "Indicates that something 'had to' be done in the past, often expressing regret or missed opportunities.",
-    "longExplanation": "'~했어야 했다 [haesseoya haetda]' is 〜を表すために使用されます that something should have been done or occurred in the past, even if it wasn’t. It often carries a sense of regret or a feeling that an opportunity was missed.",
-    "formation": "動詞 stem + 았/었어야 했다"
+    "title": "-았/었어야 했다 / ~했어야 했다（〜すべきだった、〜していればよかった）",
+    "shortExplanation": "過去に当然そうすべきだったのに実際にはできなかったことを表し、後悔や残念な気持ちを表します（「〜すべきだった」「〜していればよかった」）。",
+    "longExplanation": "「-았/었어야 했다」は、当為・義務を表す「-아/어야 하다（〜しなければならない）」の語幹に過去完了の「-았/었-」が結合した文型です。過去のある時点において当然行うべきだった行動や起こるべきだった事態が、実際には実行されなかったことに対して、話し手が強い後悔や残念な思いを述べる際に用いられます。日常会話では「-았/었어야 했는데…（〜すべきだったのに…）」の形で使われることが多く、後ろにできなかった理由や現在の好ましくない結果が続きます。",
+    "formation": "動詞・形容詞語幹 + -았/었어야 했다（陽母音語幹には -았어야 했다、陰母音語幹には -었어야 했다、하다 は 했어야 했다）",
+    "examples": [
+      {
+        "translation": "昨日その仕事を終わらせるべきだったのですが、時間が足りなくて終わらせられませんでした。"
+      },
+      {
+        "translation": "塾に行って勉強すべきだったのに、ゲームに夢中で行くことができませんでした。"
+      },
+      {
+        "translation": "コーヒーの代わりに水を飲むべきだったのに、カフェインが多くて眠れませんでした。"
+      },
+      {
+        "translation": "電話に出るべきだったのですが、携帯電話に気づかなくて出られませんでした。"
+      }
+    ]
   },
   "ko_혹은_51": {
-    "title": "~혹은 [hogeun] (Or)",
-    "shortExplanation": "〜を表すために使用されます options or alternatives; 'or'.",
-    "longExplanation": "'~혹은 [hogeun]' is a conjunction used to present two or more alternatives or choices without prioritizing one over another, similar to 'or' in English.",
-    "formation": "Noun1 + 혹은 + Noun2"
+    "title": "혹은 / ~혹은（または、あるいは、もしくは）",
+    "shortExplanation": "2つ以上の名詞や文を並列して並べ、いずれかを選択できる事柄であることを表す接続詞です（「または」「あるいは」「もしくは」）。",
+    "longExplanation": "「혹은」は漢字の「或」に由来する接続副詞で、複数の事柄や選択肢を対等に提示し、そのうちのいずれかであることを表します。日本語の「または」「あるいは」「もしくは」に相当します。口語でよく使われる「아니면」や助詞の「-(이)나」に比べ、文章語的で改まった響きを持つため、公的な文書、ニュース、論文、公式な会話などで頻繁に用いられます。",
+    "formation": "名詞1 + 혹은 + 名詞2 | 文1 + . 혹은 + 文2",
+    "examples": [
+      {
+        "translation": "コーヒー、またはお茶はいかがですか？"
+      },
+      {
+        "translation": "この問題を解決するためには、時間あるいは努力が必要でしょう。"
+      },
+      {
+        "translation": "彼は子犬、あるいは子猫を飼いたがっていました。"
+      },
+      {
+        "translation": "夏休みを過ごすために、海岸あるいは山で休暇を過ごすことができます。"
+      }
+    ]
   },
   "ko_후에야_52": {
-    "title": "후에야 [hueya] (Only after)",
-    "shortExplanation": "〜を示します that something happened or was realized only after a certain event or time.",
-    "longExplanation": "'후에야 [hueya]' is a compound word formed from '후에' (after) and '야' (only). It emphasizes that an action or realization occurs only after a specified event or period has passed – the precondition for what follows.",
-    "formation": "名詞/動詞(Stem) + (으)ㄴ/는/ㄹ + 후에야 + 動詞"
+    "title": "-(으)ㄴ 후에야 / 후에야（〜して初めて、〜した後にようやく）",
+    "shortExplanation": "前の事柄が終わったり一定の時間が経過したりして初めて、後ろの事態が実現したり何かに気づいたりすることを強調します（「〜して初めて」「〜した後にようやく」）。",
+    "longExplanation": "「후에야」は、時間を表す依存名詞「후（後）」に助詞「에」、そして必要条件や限定を強調する補助詞「-야（〜してこそ、〜して初めて）」が結合した表現です。動詞には主に連体形語尾「-(으)ㄴ」を伴って「-(으)ㄴ 후에야」の形で接続します。前節の動作や出来事が完了することが不可欠な前提であり、それを経てようやく後ろの事態が起こったり、遅まきながら真実に気づいたりしたというニュアンスを強く表します。",
+    "formation": "動詞語幹 + -(으)ㄴ 후에야（母音またはパッチムㄹで終わる場合は -ㄴ 후에야、ㄹ以外のパッチムで終わる場合は -은 후에야）| 名詞 + 후에야",
+    "examples": [
+      {
+        "translation": "彼女が私のもとを去った後にようやく、自分が彼女をどれほど愛していたのかに気づきました。"
+      },
+      {
+        "translation": "試験を受けた後にようやく、この問題の正解が何だったのかを思い出しました。"
+      },
+      {
+        "translation": "私は大学を卒業して初めて、本当に学ぶべきことが何であるかを理解しました。"
+      },
+      {
+        "translation": "業務を始めて初めて、やるべき仕事がいかに多いかを知るようになりました。"
+      }
+    ]
   },
   "ko_흔히_53": {
-    "title": "~흔히 [heunhi] (Commonly, often)",
-    "shortExplanation": "〜を示します that an event or situation happens frequently or is commonly known.",
-    "longExplanation": "'~흔히 [heunhi]' is an adverb used in Korean to demonstrate that something happens frequently, is a common occurrence, or is typically known. It is very similar to English expressions like 'often', 'commonly', 'usually' or 'typically'. It is used in both objective descriptions of facts and in subjective observations.",
-    "formation": "흔히 + 動詞"
+    "title": "흔히 / ~흔히（よく、しばしば、一般に、ありがちに）",
+    "shortExplanation": "ある事態が頻繁に起こることや、世間一般で広く知られている通念・習慣などを表す副詞です（「よく」「しばしば」「一般に」）。",
+    "longExplanation": "「흔히」は、形容詞「흔하다（ありふれている、多い）」から派生した副詞です。動詞や形容詞の前、あるいは文頭に置かれ、ある事象の発生頻度が高いことや、世間一般で広く共有されている常識・認識であることを表します。日本語の「よく」「しばしば」「一般に」「往々にして」に相当します。客観的な事実の描写だけでなく、「人はよく〜と考えがちだ」といった人々の一般的な通念やステレオタイプを提示する際にも頻繁に用いられます。",
+    "formation": "흔히 + 動詞・形容詞 | 흔히 + 文",
+    "examples": [
+      {
+        "translation": "人々はよく、健康的な食べ物は美味しくないと考えがちです。"
+      },
+      {
+        "translation": "韓国では、一人暮らしをしている人々をよく「シングル」と呼びます。"
+      },
+      {
+        "translation": "私たちはしばしば、自国の料理よりも外国の料理を多く食べたりします。"
+      },
+      {
+        "translation": "春が来るとよく咲く花である桜は、多くの人々に広く知られています。"
+      }
+    ]
   },
   "ko_되다_54": {
-    "title": "~되다 [doeda] (To become)",
-    "shortExplanation": "〜を表すために使用されます a change into a different state or condition; 'to become'.",
-    "longExplanation": "'~되다 [doeda]' is 〜を示します that someone or something has changed into a new state or condition. It expresses a transformation or transition from one state to another.",
-    "formation": "名詞/形容詞/動詞 stem + 되다"
+    "title": "~이/가 되다 / ~되다（〜になる、〜へ変わる）",
+    "shortExplanation": "人や事象が以前とは異なる新しい身分や役割、状態へと変化することを表す動詞です（「〜になる」「〜へ変わる」）。",
+    "longExplanation": "「되다」は、変化や結果の成立を表す韓国語の基本動詞です。名詞に主格助詞「이/가」を伴って接続する場合（名詞 + 이/가 되다）は、新しい身分、職業、資格、あるいは別物へと変容することを表します（「医者になる」「大人になる」など）。また、形容詞や動詞の語幹に接続語尾「-게」を伴って「-게 되다」となると、客観的な成り行きや自然な推移によって新たな状況や状態に至ることを意味します。さらに、漢字語名詞の語尾に直接結合して受動・自動の意味を持つ派生動詞を形成することもあります。",
+    "formation": "名詞 + 이/가 되다（パッチムがある名詞は 이 되다、ない名詞は 가 되다）| 動詞・形容詞語幹 + -게 되다",
+    "examples": [
+      {
+        "translation": "天気が暑かったのに急に寒くなりました。そのため皆風邪を引いてしまいました。"
+      },
+      {
+        "translation": "彼女は熱心に勉強して、世界で最も若い教授になりました。"
+      },
+      {
+        "translation": "私の友達は韓国語を学んで翻訳家になりました。"
+      },
+      {
+        "translation": "小さかった子猫が、立派な大きな猫になりました。"
+      }
+    ]
   },
   "ko_잖다_55": {
-    "title": "~잖다 [janda] (You know, isn't it)",
-    "shortExplanation": "Used to state information the speaker assumes the listener already knows.",
-    "longExplanation": "'~잖다 [janda]' is a sentence-ending phrase 〜を示します the speaker's assumption that the listener is already aware of the information being shared. It's akin to saying 'you know' or 'isn’t it' in English. This grammar point can be used to confirm facts or imply shared knowledge.",
-    "formation": "動詞 stem + 잖다"
+    "title": "-잖아(요) / ~잖다（〜じゃない(ですか)、〜でしょ）",
+    "shortExplanation": "話し手と聞き手の双方がすでに知っている事実を想起させたり、当然の理由として相手に確認を求めたりする終結語尾です（「〜じゃないか」「〜でしょう」）。",
+    "longExplanation": "「-잖다」は、否定表現「-지 아니하다（-지 않다）」が口語で縮約された終結語尾です。話し手だけでなく聞き手もすでに知っているはずの事実を改めて相手に思い出させたり、自分の意見や行動の明白な理由として提示したりする際に用いられます。日本語の「〜じゃない（ですか）」「〜でしょ」「〜だもん」に相当します。親しい間柄ではパンマル（ぞんざい語）の「-잖아」、丁寧な会話では補助詞「-요」を付けた「-잖아요」を用います。相手の思い違いを指摘したり、軽く責めたりするニュアンスを含むこともあります。",
+    "formation": "動詞・形容詞語幹 + -잖아(요)（過去形は -았/었잖아(요)）| 名詞 + (이)잖아(요)（パッチムがある名詞は 이잖아(요)、ない名詞は 잖아(요)）",
+    "examples": [
+      {
+        "translation": "今日学校に行かなきゃいけないでしょ、なんでまだ遊んでいるの？"
+      },
+      {
+        "translation": "私たち明日テストがあるじゃない。だから今日勉強しようと思って。"
+      },
+      {
+        "translation": "あんたあの人のこと知ってるでしょ、ところで最近どう過ごしてるの？"
+      },
+      {
+        "translation": "もう時間も遅いじゃない、私たちそろそろ勉強しなきゃ。"
+      }
+    ]
   },
   "ko_져지다_56": {
-    "title": "~져/지다 [jyeo/jida] (Become)",
-    "shortExplanation": "Used to depict changes in state, emotion, condition, or situation, similar to 'become' or 'get' in English.",
-    "longExplanation": "'~져/지다 [jyeo/jida]' is a conjugation that indicates transformation or change. It can mean 'become' or 'get' and is used to describe shifts in state, feelings, or conditions.",
-    "formation": "形容詞/Verbal 名詞 + ~져/지다"
+    "title": "-아/어지다 / ~져/지다（〜くなる、〜になる）",
+    "shortExplanation": "形容詞の語幹について、状態や性質、感情などが時間の経過に伴って徐々に変化していく過程を表します（「〜くなる」「〜になる」）。",
+    "longExplanation": "「-아/어지다」は、主に形容詞の語幹に結合して、その性質や状態が時間の経過とともに推移・深化していく変化のプロセスを表す補助用言です。日本語の「〜くなる」「〜になる」「だんだん〜になる」に相当します（例：덥다 暑い -> 더워지다 暑くなる、좋다 良い -> 좋아지다 良くなる）。静的な状態を表す形容詞を、動的な変化を表す表現に変える働きを持ちます。なお、他動詞の語幹についた場合は、自然な成り行きや被動（受け身）の意味を表すこともあります。",
+    "formation": "形容詞語幹 + -아/어지다（陽母音語幹には -아지다、陰母音語幹には -어지다、하다 は 해지다）",
+    "examples": [
+      {
+        "translation": "天気がとても暑くなって、外に出るのが大変になりました。"
+      },
+      {
+        "translation": "彼女は学校で人気が高くなり、多くの人が彼女を知るようになりました。"
+      },
+      {
+        "translation": "彼は絵をたくさん描いているので、絵を描く腕前が本当に上達しました。"
+      },
+      {
+        "translation": "仕事に集中していたら、時間があっという間に過ぎ去ってしまいました。"
+      }
+    ]
   },
   "ko_졌다가_57": {
-    "title": "~졌다가 [jyeotdaga] (Was once, but)",
-    "shortExplanation": "〜を表すために使用されます that something was once in a certain state or condition, but then changed again.",
-    "longExplanation": "'~졌다가 [jyeotdaga]' is 〜を示します a sequence where the subject was once in one state and then changed to another—often reverting or fluctuating. It is typically attached to verbs in the past tense.",
-    "formation": "動詞 + -졌다가"
+    "title": "-았/었다가 / -아/어졌다가（〜したもののまた、〜したがその後）",
+    "shortExplanation": "前節の動作や状態変化がいったん完了した直後に、それが取り消されたり、反対の状態へ逆転・転換したりすることを表す接続語尾です（「〜したもののまた〜した」「〜してはみたが」）。",
+    "longExplanation": "「-았/었다가」（および状態変化の補助動詞と結合した「-아/어졌다가」）は、動作や状態の完了後に起こる急な転換や反復・逆転を表す接続語尾です。途中で中断することを表す「-다가」とは異なり、前節の事態がいったん完全に成立した後に、その結果や状態が維持されず、逆の動作や別の事態に切り替わる点に特徴があります（例：ドアを開けたがまた閉めた、就職したもののすぐに解雇されたなど）。",
+    "formation": "動詞・形容詞語幹 + -았/었다가（陽母音語幹には -았다가、陰母音語幹には -었다가、하다 は 했다가）",
+    "examples": [
+      {
+        "translation": "ドアをいったん開けたのですがまた閉めました。友達が来るのを待ちきれなかったからです。"
+      },
+      {
+        "translation": "あのレストランは数日前に開店したばかりだったのに、今日すぐに閉店してしまいました。"
+      },
+      {
+        "translation": "子どもたちはパソコンゲームをやっていて、宿題を途中でやめなければなりませんでした。"
+      },
+      {
+        "translation": "私の友達は就職が決まったものの、わずか1か月後に解雇されてしまいました。"
+      }
+    ]
   },
   "ko_즉_58": {
-    "title": "~즉 [jeuk] (That is to say, namely)",
-    "shortExplanation": "Used to restate or clarify a point with more detail; 'namely', 'that is to say'.",
-    "longExplanation": "'~즉 [jeuk]' is a conjunction used in Korean to re-explain or add further details to a statement. It is equivalent to 'namely' or 'that is to say' in English and helps clarify or specify information.",
-    "formation": "Sentence + 즉 + Sentence"
+    "title": "즉 / ~즉（すなわち、つまり、言い換えれば）",
+    "shortExplanation": "前に述べた内容を別の言葉で分かりやすく説明し直したり、要約・補足したりする接続副詞です（「すなわち」「つまり」「言い換えれば」）。",
+    "longExplanation": "「즉」は漢字の「即」に由来する接続副詞で、先行する発言や論述をさらに具体的に説明したり、要点を整理して言い換えたりする際に用いられます。日本語の「すなわち」「つまり」「言い換えれば」に相当します。論理的で硬い文章語のニュアンスを持ち、学術論文、報道記事、公的文書、公式なスピーチなどで定義や結論を明確にするためによく使われます。",
+    "formation": "文1 + . 즉 + 文2 | 名詞1 + , 즉 + 名詞2",
+    "examples": [
+      {
+        "translation": "この研究結果に基づけば、すなわち私たちが確認したところでは、地球温暖化は人間の活動に起因していることが明らかです。"
+      },
+      {
+        "translation": "彼は国際関係の専門家です。つまり、世界の多様な国家間の問題を研究しているのです。"
+      },
+      {
+        "translation": "このメールはあなたにだけ送信します。すなわち、あなたがこのメッセージの唯一の受信者です。"
+      },
+      {
+        "translation": "彼は私の親友です。言い換えれば、私は彼のことを非常によく知っているということです。"
+      }
+    ]
   },
   "ko_지_59": {
-    "title": "~지 않을까 싶다 [ji anheulkka sipda] (I think perhaps)",
-    "shortExplanation": "Expresses an assumption or supposition that something might be; it suggests that the speaker thinks something is likely.",
-    "longExplanation": "The structure '~지 않을까 싶다' is 〜を表すために使用されます a guess or speculation about a situation. It conveys uncertainty as well as a hopeful anticipation about what might happen or be true.",
-    "formation": "動詞-지 않을까 싶다"
+    "title": "-지 않을까 싶다 / ~지 않을까 싶다（〜ではないかと思う、〜ではないかと推測する）",
+    "shortExplanation": "ある事態が起こるのではないか、あるいは事実なのではないかと、控えめに推測や懸念・期待を述べる表現です（「〜ではないかと思う」「〜しはしないかと思う」）。",
+    "longExplanation": "「-지 않을까 싶다」は、否定疑問の推量形「-지 않을까（〜ではないだろうか）」に、話し手の心的状態を表す補助動詞「싶다（〜と思う）」が結合した構文です。断定を避け、自分の見解や推測を柔らかく控えめに伝える際に用いられます。日本語の「〜ではないかと思う」「〜しはしないかと思われる」に相当します。状況に対する漠然とした懸念や、控えめな期待感を表現するのに適しています。",
+    "formation": "動詞・形容詞語幹 + -지 않을까 싶다 | 名詞 + -(이)지 않을까 싶다（パッチムがある名詞は 이지 않을까 싶다、ない名詞は 지 않을까 싶다）",
+    "examples": [
+      {
+        "translation": "彼は今回の試験で良い成績を収められるのではないかと思います。いつも熱心に勉強していますから。"
+      },
+      {
+        "translation": "天気が悪くなるのではないかと思います。雲が多くなってきています。"
+      },
+      {
+        "translation": "今夜中に家に到着できるのではないかと思います。飛行機が時間通りに出発しました。"
+      },
+      {
+        "translation": "今週末に映画を観に行けるのではないかと思うのですが、どう思われますか？"
+      }
+    ]
   },
   "ko_지_60": {
-    "title": "~지 않을까 하다 [ji anheulkka hada] (I guess, I suspect)",
-    "shortExplanation": "〜を表すために使用されます one's conjecture or prediction; 'I think', 'I guess', 'I suspect'.",
-    "longExplanation": "'~지 않을까 하다' is 〜を表すために使用されます a guess or suspicion about a situation when the speaker is not completely sure. It conveys the speaker's uncertainty and expectation about what might be true.",
-    "formation": "動詞 + 지 않을까 하다"
+    "title": "-지 않을까 하다 / ~지 않을까 하다（〜ではないかと思う、〜しはしまいかと考える）",
+    "shortExplanation": "状況を観察した上で、ある事態が起こるのではないかと推し測ったり予想したりする表現です（「〜ではないかと思う」「〜するのではないかと考える」）。",
+    "longExplanation": "「-지 않을까 하다」は、否定疑問の推量「-지 않을까」に、内心の思考を表す「하다（考える、思う）」が結びついた表現です。不確かな推測に基づき、「〜ではないかと思う」「〜するかもしれないと考える」という話し手の心積もりを表します。特に接続語尾を伴った「-지 않을까 해서…」の形でよく用いられ、「〜ではないかと思って（備えた）」と、ある行動をとるに至った理由や動機を説明する際によく使われます。",
+    "formation": "動詞・形容詞語幹 + -지 않을까 하다 | 名詞 + -(이)지 않을까 하다",
+    "examples": [
+      {
+        "translation": "明日雨が降るのではないかと思って、傘を持ってきました。"
+      },
+      {
+        "translation": "彼女が好きな人に会うのではないかと思って、気を使っています。"
+      },
+      {
+        "translation": "もう明け方ですから、恐らくみんな眠っているのではないかと思います。"
+      },
+      {
+        "translation": "友達が今回の試験に合格するのではないかと思って、お祝いのメッセージを準備しています。"
+      }
+    ]
   },
   "ko_지요_62": {
-    "title": "~지요 [jyo] (~지, right?)",
-    "shortExplanation": "A casual way to seek agreement or confirmation from the listener, similar to 'right?' or 'isn't it?' in English.",
-    "longExplanation": "~지요 [jyo] is a commonly used ending in conversational Korean that seeks agreement or confirmation. It softens statements and is often used in friendly dialogues. In English, it can be roughly translated as 'right?' or 'isn't it?'.",
-    "formation": "動詞 + 지요"
+    "title": "-지요 (-죠) / ~지요（〜ですよね、〜でしょう、〜ですね）",
+    "shortExplanation": "聞き手に対して念を押して確認を求めたり、同意を促したり、あるいは自分の確信を柔らかく述べたりする終結語尾です（「〜ですよね」「〜でしょう」）。",
+    "longExplanation": "「-지요」（日常会話では縮約形の「-죠」が極めて頻繁に使われます）は、韓国語の会話で親しみと柔らかさを添える代表的な終結語尾です。疑問文（文末を上げる）では、話し手の推測や認識について聞き手に「〜ですよね？」「〜でしょう？」と確認を求めたり、同意を誘ったりする付加疑問的な機能を果たします。平叙文（文末を下げる）では、自分の確信を述べつつも断定調を和らげ、相手に対して穏やかで親切なニュアンスを与えます。",
+    "formation": "動詞・形容詞語幹 + -지요（縮約形は -죠；過去形は -았/었지요）| 名詞 + -(이)지요（パッチムがある名詞は 이지요、ない名詞は 지요）",
+    "examples": [
+      {
+        "translation": "お天気がとても良いですよね？"
+      },
+      {
+        "translation": "私たちは明日学校に行かなければなりませんよね？"
+      },
+      {
+        "translation": "この映画、面白かったでしょう？"
+      },
+      {
+        "translation": "彼女はまだ学生のようですよね？"
+      }
+    ]
   },
   "ko_진행하다_63": {
-    "title": "~진행하다 [jinhaenghada] (To proceed)",
-    "shortExplanation": "〜を表すために使用されます the progression or continuation of an action or event.",
-    "longExplanation": "'~진행하다 [jinhaenghada]' indicates that an action or event is being carried out or continued. It is equivalent to 'to proceed with' or 'to continue' in English and can be used in contexts such as work, study, or any ongoing process.",
-    "formation": "名詞 + 을/를 + 진행하다"
+    "title": "진행하다 / ~을/를 진행하다（進行する、進める、執り行う）",
+    "shortExplanation": "仕事や会議、調査、行事などを計画に沿って前へ進めたり、継続して執り行ったりすることを表す動詞です（「進める」「進行する」「執り行う」）。",
+    "longExplanation": "「진행하다」は漢字の「進行」に由来する動詞で、ビジネス、学術、公式行事などで幅広く用いられます。目的格助詞「을/를」を伴って他動詞として用いられる場合（〜을/를 진행하다）、会議、調査、研究、プロジェクトなどを計画に沿って主導・推進・執行することを意味します。また、自動詞として事態や状況が前進・推移していく様子を表すこともあります。",
+    "formation": "名詞 + 을/를 진행하다（パッチムがある名詞は 을 진행하다、ない名詞は 를 진행하다）",
+    "examples": [
+      {
+        "translation": "研究チームはこの問題について調査を進めています。彼らは多様なデータを収集しながら情報を分析しています。"
+      },
+      {
+        "translation": "今日の会議をどれほど素早く進行させるかによって、時間通りに退勤できるかどうかが決まります。"
+      },
+      {
+        "translation": "学生たちは勉強を進めているうちに、時間がどのように過ぎ去ったのかも忘れるほどでした。"
+      },
+      {
+        "translation": "プロジェクトの計画中、私たちのチームは問題解決のための議論を進行させています。"
+      }
+    ]
   },
   "ko_차라리_64": {
-    "title": "~차라리 [charari] (Rather, instead)",
-    "shortExplanation": "〜を表すために使用されます a preference for one option over another; 'rather', 'instead'.",
-    "longExplanation": "'~차라리 [charari]' is 〜を示します that one option is preferable to another, often implying that the chosen option is the lesser of two evils or simply more favorable. It is typically used in the pattern: '[A] 보다는 차라리 [B]'.",
-    "formation": "[A] 보다는 차라리 [B]"
+    "title": "차라리 / ~차라리（むしろ、いっそ、かえって）",
+    "shortExplanation": "2つの選択肢を比較検討した結果、どちらかと言えば後者の方がましである、あるいは好ましいと判断して選ぶ際に用いる副詞です（「むしろ」「いっそ」）。",
+    "longExplanation": "「차라리」は、好ましくない2つの状況や選択肢を天秤にかけた際に、「前の選択肢をとるくらいなら、いっそ後ろの選択肢をとる方がましだ」と判断する気持ちを表す副詞です。比較を表す「-기보다는（〜するよりは）」と呼応して「[A]보다는 차라리 [B]（Aよりはむしろ/いっそB）」の構文でよく用いられます。消極的な選択であっても、最悪を避けるためのより良い判断であることを強調するニュアンスを持ちます。",
+    "formation": "節1 + -기보다는 차라리 + 節2 | 차라리 + 文",
+    "examples": [
+      {
+        "translation": "ただ家で一人でいるよりは、いっそ外に出て友達と遊びに行きました。"
+      },
+      {
+        "translation": "あなたが自分から嘘をつくよりは、いっそ正直に話してくれた方が良いです。"
+      },
+      {
+        "translation": "その品物を買うくらいなら、いっそお金を貯金する方が賢明です。"
+      },
+      {
+        "translation": "そうするくらいなら、いっそ何も言わない方がましです。"
+      }
+    ]
   },
   "ko_처럼만_65": {
-    "title": "~처럼만 [cheoreomman] (Just like, as if)",
-    "shortExplanation": "〜を表すために使用されます similarity or comparison; 'just like', 'as if'.",
-    "longExplanation": "'~처럼만 [cheoreomman]' is used to compare one thing to another, emphasizing an exclusive similarity. 〜と訳されます 'just like' or 'as if' in English.",
-    "formation": "名詞/節 + 처럼만"
+    "title": "~처럼만（〜のようにだけ、〜のようにばかり）",
+    "shortExplanation": "比況を表す助詞に限定の助詞が結合し、あたかもその対象と全く同一であるかのように限定して比較・強調する表現です（「〜のようにだけ」「まるで〜のようにばかり」）。",
+    "longExplanation": "「~처럼만」は、「〜のように」を意味する比況格助詞「처럼」に、限定を表す補助詞「만」（だけ・ばかり）が合わさった表現です。ある動作や状態が、特定の対象や状況と排他的に瓜二つであることや、それだけに似ていることを際立たせる際に用います。多くの場合、副詞「마치」（まるで）と呼応して使われます。",
+    "formation": "名詞 + 처럼만 | 連体形節（-는/-(으)ㄴ 것） + 처럼만",
+    "examples": [
+      {
+        "translation": "彼女は他の人たちとは違って、まるで夢でも見ているかのようにばかり行動した。"
+      },
+      {
+        "translation": "この料理はまるで母が作ったものと同じように美味しいです。"
+      },
+      {
+        "translation": "今日の天気は春のように暖かく心地よいです。"
+      },
+      {
+        "translation": "彼はまるで私の正体を知っているかのように見つめてきた。"
+      }
+    ]
   },
   "ko_게_66": {
-    "title": "~게 하다 [ge hada] (To make)",
-    "shortExplanation": "〜を表すために使用されます causing someone or something to be in a certain state.",
-    "longExplanation": "'~게 하다 [ge hada]' is a verb ending used in Korean to indicate that someone causes or makes another person or thing perform an action or be in a certain state. The verb or adjective before it is used in its descriptive stem form. It is equivalent to 'make' or 'let' in English.",
-    "formation": "Descriptive verb stem + 게 하다"
+    "title": "~게 하다（〜させる、〜するようにする、〜くさせる）",
+    "shortExplanation": "使役を表す構文で、主語が他者に行動を起こさせたり、ある状態に至らせたりすることを表します（「〜させる」「〜するように仕向ける」）。",
+    "longExplanation": "「~게 하다」は、副詞形語尾「-게」に動詞「하다」が結合した長形使役構文です。主語が対象に対して指示、強制、誘発などの働きかけを行い、その結果として相手がある動作を行ったり、特定の状態（形容詞）になったりすることを表します。日本語の使役表現「〜させる」「〜するようにする」「〜くする」に相当します。",
+    "formation": "動詞・形容詞語幹 + 게 하다",
+    "examples": [
+      {
+        "translation": "母は私を早く寝かせました。"
+      },
+      {
+        "translation": "先生は私たちにたくさん勉強させました。"
+      },
+      {
+        "translation": "不運な事故のせいで、彼は彼女を泣かせてしまった。"
+      },
+      {
+        "translation": "彼女は夫を幸せにしました。"
+      }
+    ]
   },
   "ko_타다_67": {
-    "title": "~타다 [tada] (To take, ride)",
-    "shortExplanation": "Denotes the action of riding or taking a vehicle.",
-    "longExplanation": "'~타다 [tada]' is used with means of transportation to indicate that the subject is riding or taking that vehicle to a destination. It applies to buses, taxis, subways, cars, etc.",
-    "formation": "Means of transportation + 을/를 + 타다"
+    "title": "~을/를 타다（〜に乗る、〜に乗っていく）",
+    "shortExplanation": "乗り物や交通手段を表す名詞とともに用いられ、それに乗って移動することを表す動詞です（「〜に乗る」）。",
+    "longExplanation": "「~타다」は、バス、地下鉄、タクシー、飛行機、自転車などの交通機関に乗ることを表す他動詞です。日本語では「電車“に”乗る」と助詞「に」を用いますが、韓国語では目的格助詞「을/를」を用いて「지하철을 타다」のように表現する点に注意が必要です。「〜に乗って行く・来る」と移動手段を表す際には「~을/를 타고 가다/오다」の連結形が非常によく使われます。",
+    "formation": "交通手段の名詞 + 을/를 + 타다（パッチムがない場合は 를 타다、ある場合は 을 타다）",
+    "examples": [
+      {
+        "translation": "私は出勤する時、いつもバスに乗って会社に行きます。"
+      },
+      {
+        "translation": "疲れていたので、今日はタクシーに乗って家に帰りました。"
+      },
+      {
+        "translation": "妹は地下鉄に乗って学校に通っています。"
+      },
+      {
+        "translation": "うちの父は自家用車に乗って出勤します。"
+      }
+    ]
   },
   "ko_하게_68": {
-    "title": "~하게 하다 [hage hada] (Make someone do)",
-    "shortExplanation": "Used when one causes or allows someone else to perform an action.",
-    "longExplanation": "The '~하게 하다 [hage hada]' structure indicates that one person is causing or permitting another to do something. The action verb is conjugated with ~하게, and then 하다 is added to complete the construction. The subject causes the action, while the object is the person who performs it.",
-    "formation": "主語 + (目的語) + 動詞 (in ~하게 form) + 하다"
+    "title": "~하게 하다（〜させる、〜するように仕向ける）",
+    "shortExplanation": "主語が対象（目的語）に対して働きかけ、ある動作を行わせたり特定の状態に導いたりすることを表す使役表現です（「〜させる」「〜するようにする」）。",
+    "longExplanation": "「~하게 하다」は、動詞や形容詞の語幹に副詞形接続語尾「-하게」をつけ、補助動詞「하다」を続ける使役構文です。主語が相手（目的語「-을/를」または間接目的語「-에게」）に指示や強制、きっかけを与えて行動させたり、対象をある感情や状態（形容詞）にさせたりする際に幅広く使われます。接尾辞による短形使役に比べて客観的・間接的な使役のニュアンスを持ちます。",
+    "formation": "主語 + （目的語 + 을/를 / 에게） + 動詞・形容詞語幹 + -하게 하다",
+    "examples": [
+      {
+        "translation": "母は私に早く寝るように言いつけました。"
+      },
+      {
+        "translation": "先生は私たちに猛勉強をさせました。"
+      },
+      {
+        "translation": "ついていない事故のせいで、彼は彼女を泣かせてしまいました。"
+      },
+      {
+        "translation": "彼女は夫をいつも幸せな気持ちにさせました。"
+      }
+    ]
   },
   "ko_하여야만_69": {
-    "title": "~하여야만 [hayeoyaman] (Only by doing)",
-    "shortExplanation": "〜を表すために使用されます that an objective can be achieved only by doing a certain action.",
-    "longExplanation": "'~하여야만 [hayeoyaman]' conveys the meaning 'only by doing...' It is used to emphasize that a specific goal or result can be attained only if a certain action is performed.",
-    "formation": "動詞 + 어/아 + 하여야만"
+    "title": "-아/어야만 / ~하여야만（〜してこそ初めて、〜しなければ決して）",
+    "shortExplanation": "後節の目的や結果を達成するために、前節の行動が唯一不可欠な必須条件であることを強く強調する表現です（「〜してこそ」「〜して初めて」）。",
+    "longExplanation": "「~하여야만」は、「하다」に必須条件を表す接続語尾「-아/어야」と、限定を表す助詞「-만」（〜だけ）が結合した硬い文体・書き言葉の表現です（日常会話では主に「-해야만」）。「前節の条件が満たされてこそ、初めて後節の結果が得られる」という排他的な必要不可欠条件を表し、「そうしなければ後節は成立しない」という強い危機感や前提を伴うため、後続節に「그렇지 않으면（さもなければ）」などの表現が続くことが多くあります。",
+    "formation": "動詞・形容詞語幹 + -아/어야만（陽母音 ㅏ, ㅗ には -아야만、陰母音には -어야만、하다 は 하여야만 または 해야만）",
+    "examples": [
+      {
+        "translation": "成功しようとするならば、一生懸命勉強してこそ道が開けます。さもなければ失敗する恐れがあります。"
+      },
+      {
+        "translation": "病気を治そうとするなら薬をきちんと服用しなければなりません。さもなければ健康を取り戻すことはできません。"
+      },
+      {
+        "translation": "叶えたい夢があるなら不断の努力を重ねてこそです。さもなければその夢は単なる夢で終わってしまいます。"
+      },
+      {
+        "translation": "目標を達成するためには計画を立ててそれに従わなければなりません。さもなければ目標を成し遂げることはできません。"
+      }
+    ]
   },
   "ko_해서는_70": {
-    "title": "~해서는 안 되다 [haeseoneun an dwae] (Must not, shouldn't)",
-    "shortExplanation": "This grammar point is 〜を表すために使用されます prohibition or things that shouldn't be done.",
-    "longExplanation": "'~해서는 안 되다' is a common ending in Korean that translates to 'must not' or 'shouldn't'. It indicates actions or behaviors that are prohibited, and it is 〜を表すために使用されます restrictions, warnings, or advice. It can be attached to both action and descriptive verbs.",
-    "formation": "動詞 stem + 아/어/여서 +는 안 되다"
+    "title": "-아/어서는 안 되다 / ~해서는 안 되다（〜してはならない、〜してはいけない）",
+    "shortExplanation": "規則、道徳、常識に基づき、ある行為を行うことを厳しく禁じる禁止表現です（「〜してはならない」「〜してはいけない」）。",
+    "longExplanation": "「~해서는 안 되다」（全体形式としては「-아/어서는 안 되다」）は、条件を表す接続語尾「-아/어서」に対比・強調の助詞「-는」と否定の「안 되다」（だめだ、いけない）が結びついた文型です。「もしそのような行為をしては通らない・許されない」という論理から、公的な規則、法律、一般的な道徳観、あるいは強い忠告として行為を禁止する際に用いられます。",
+    "formation": "動詞語幹 + -아/어서는 안 되다（陽母音 ㅏ, ㅗ には -아서는 안 되다、陰母音には -어서는 안 되다、하다 は 해서는 안 되다）",
+    "examples": [
+      {
+        "translation": "他人の物を勝手に取ってはならない。それは盗みだ。"
+      },
+      {
+        "translation": "子どもたちは先に遊んではいけません。まず宿題をして、その後に遊ぶべきです。"
+      },
+      {
+        "translation": "夜遅くに寝てはなりません。健康を害することがあります。"
+      },
+      {
+        "translation": "私たちは問題を無視してはいけません。その代わりに、それを解決しなければなりません。"
+      }
+    ]
   },
   "ko_해서야_71": {
-    "title": "~해서야 [haeseoya] (In order to)",
-    "shortExplanation": "〜を表すために使用されます the necessity or requirement to achieve a purpose or goal; 'in order to', 'so that'.",
-    "longExplanation": "'~해서야' is a verb ending in Korean that expresses that a certain action is required to achieve a specific goal. It is similar to 'in order to' or 'so that' in English, implying that the desired outcome depends on performing the action.",
-    "formation": "動詞 stem + 아/어/여 + 서야"
+    "title": "-아/어서야 / ~해서야（〜してこそ、〜して初めて、〜してやっと）",
+    "shortExplanation": "前節の動作を行って初めて後節の目的や結果を達成できるという、必須条件や前提を強調する接続表現です（「〜してこそ」「〜して初めて」）。",
+    "longExplanation": "「~해서야」（一般形は「-아/어서야」）は、接続語尾「-아/어서」に前提・条件を際立たせる助詞「-야」が合わさった表現です。前節の行動や努力が成されて初めて所期の目的を達成できるという前提条件の重みを強調します。「〜するためには、これこれを行ってこそだ」という文脈で「위해서야（〜するためには）」や「~해서야 하다（〜してこそ成り立つ）」などの形で用いられます。",
+    "formation": "動詞語幹 + -아/어서야（陽母音 ㅏ, ㅗ には -아서야、陰母音には -어서야、하다 は 해서야）",
+    "examples": [
+      {
+        "translation": "学校により良くなじむためには、普段から学校の活動により多く参加してこそです。"
+      },
+      {
+        "translation": "持ち上げる重量をさらに増やすためには、私がもっと熱心にトレーニングしてこそ可能です。"
+      },
+      {
+        "translation": "会社の社員たちに良い印象を見せるためには、もっと残業をしてこそ評価されます。"
+      },
+      {
+        "translation": "料理をしっかり学ぶためには、食材についてより深く理解しようと努力して初めて身につきます。"
+      }
+    ]
   },
   "ko_해야겠다_72": {
-    "title": "~해야겠다 [haeyagetta] (Should, must, have to)",
-    "shortExplanation": "〜を示します a strong need or determination to perform an action; 'should', 'must', 'have to'.",
-    "longExplanation": "'~해야겠다' is used in Korean to express a firm decision or determination to carry out an action. It conveys the sense that something must be done and is often used in self-directed statements or diary entries.",
-    "formation": "動詞 stem + 아/어/여야겠다"
+    "title": "-아/어야겠다 / ~해야겠다（〜しなきゃ、〜しなければならない、〜することにしよう）",
+    "shortExplanation": "話し手が状況を判断し、ある行動を自発的に行う意志や決意を表明する表現です（「〜しなきゃ」「〜しなければならない」）。",
+    "longExplanation": "「~해야겠다」（一般形は「-아/어야겠다」）は、義務や必然性を表す「-아/어야 하다」に、話し手の意志を表す先語末語尾「-겠-」が結合した表現です。現時点の状況を踏まえて「もう〜しなければならない」「〜することにしよう」と自分自身に対して決意を固めたり、聞き手に対して自分の今後の行動方針を表明したりする際に用いられます。独り言や日記、日常の意思表示で頻出します。",
+    "formation": "動詞語幹 + -아/어야겠다（陽母音 ㅏ, ㅗ には -아야겠다、陰母音には -어야겠다、하다 は 해야겠다）",
+    "examples": [
+      {
+        "translation": "外が暑すぎます。次回からは日焼け止めを塗らなきゃいけませんね。"
+      },
+      {
+        "translation": "最後の試験も終わったので、もう本を片付けなければなりません。"
+      },
+      {
+        "translation": "一生懸命勉強したから、もう寝ることにしよう。"
+      },
+      {
+        "translation": "来週大事な会議があるので、自分の時間管理をしっかりしなければなりません。"
+      }
+    ]
   },
   "ko_해야지_73": {
-    "title": "~해야지 [haeyaji] (I should)",
-    "shortExplanation": "〜を表すために使用されます a determination or resolution; 'I should'.",
-    "longExplanation": "'~해야지' is used in casual, informal speech to express a self-suggestion or resolution regarding something you plan to do. It conveys the speaker's determination to carry out an action in the future.",
-    "formation": "動詞 stem + 야지"
+    "title": "-아/어야지 / ~해야지（〜しなくちゃ、〜しなきゃな、〜しなさい）",
+    "shortExplanation": "親しい間柄の会話や独り言で、自らに対して「〜しなければ」「〜するぞ」と決意や念押しを表す終結語尾です（「〜しなくちゃ」「〜しなきゃ」）。",
+    "longExplanation": "「~해야지」（一般形は「-아/어야지」）は、義務・必要性を表す「-아/어야」に、確信や念押しを表す語尾「-지」が結合したパンマル（親愛体）の表現です。自分自身のこれからの行動に向けて「〜しなくちゃ」「〜するぞ」と心に言い聞かせる独り言として非常に多用されます。また相手に向かって発言する場合は「〜しなきゃだめだよ」という親密なアドバイスや促しのニュアンスを持ちます。",
+    "formation": "動詞語幹 + -아/어야지（陽母音 ㅏ, ㅗ には -아야지、陰母音には -어야지、하다 は 해야지）",
+    "examples": [
+      {
+        "translation": "試験がもう目の前なんだから、さあ勉強を始めなくちゃ。"
+      },
+      {
+        "translation": "今晩友達と映画を見ることになったから、チケットを買わなきゃ。"
+      },
+      {
+        "translation": "ジムで長いこと運動していなかったから、明日は早く行かなくちゃ。"
+      },
+      {
+        "translation": "今日は夜遅くに眠りについたから、明日の朝はパンを買って食べなくちゃ。"
+      }
+    ]
   },
   "ko_했더니_74": {
-    "title": "~했더니 [haetdeoni] (After doing something, result)",
-    "shortExplanation": "Used to show that an action is followed by an unexpected outcome or change.",
-    "longExplanation": "'~했더니' is used in Korean to indicate that after an action is performed, a particular (often surprising) result occurs. It expresses a cause-and-effect relationship where the outcome is notable.",
-    "formation": "動詞 (in past tense) + 더니"
+    "title": "-았/었더니 / ~했더니（〜したら、〜してみたところ、〜した結果）",
+    "shortExplanation": "話し手が過去にある動作を行った結果、予想外の事実や変化を発見・認識したことを表す接続語尾です（「〜したところ」「〜したら」）。",
+    "longExplanation": "「~했더니」（一般形は「-았/었더니」）は、過去時制を表す「-았/었-」に、回想を表す接続語尾「-더니」が結びついた表現です。主語（基本的に話し手本人）が前節の行動を実際に行ったところ、後節のような新しい事実や変化、相手の反応に直面したという事実を客観的に報告・回想する際に用います。後節に命令形や勧誘形を続けることはできません。",
+    "formation": "動詞語幹 + -았/었더니（陽母音 ㅏ, ㅗ には -았더니、陰母音には -었더니、하다 は 했더니）",
+    "examples": [
+      {
+        "translation": "久しぶりに友人に会ったところ、友人が随分変わっていました。"
+      },
+      {
+        "translation": "家に帰ってみたら、掃除がきれいに済ませてありました。"
+      },
+      {
+        "translation": "リアルタイムの更新を確認してみたら、大きな変化が起きていました。"
+      },
+      {
+        "translation": "電話を切ったところ、うっかり掛け間違えて繋がっていたことが分かりました。"
+      }
+    ]
   },
   "ko_했었는데_75": {
-    "title": "~했었는데 [haesseotneunde] (Had done but)",
-    "shortExplanation": "〜を示します an action that was completed in the past but is still connected to the present or resulted in an unexpected contrast.",
-    "longExplanation": "'~했었는데' is a verb ending that expresses an action completed in the past which, in context, leads to a contrast or an unexpected situation in the present.",
-    "formation": "動詞 + 했었는데"
+    "title": "-았/었었는데 / ~했었는데（〜していたのだが、〜したことがあったけれど）",
+    "shortExplanation": "過去に完了し現在は状況が変わってしまった事柄を回想し、後節の対比や意外な結果の前置きとして提示する表現です（「〜していたのだが」「〜したけれど」）。",
+    "longExplanation": "「~했었는데」（一般形は「-았/었었는데」）は、過去に完了して現在とは切り離されている事態を表す大過去（過去完了）の「-았/었었-」に、前置きや逆接を表す接続語尾「-는데」が合わさった表現です。過去のある時点では確かにその動作を行ったものの、その後状況が変わって別の結果になったり、予想と異なる展開になったりした経験を語る際によく使われます。",
+    "formation": "動詞・形容詞語幹 + -았/었었는데（陽母音 ㅏ, ㅗ には -았었는데、陰母音には -었었는데、하다 は 했었는데）",
+    "examples": [
+      {
+        "translation": "本を買っていたのですが、図書館で同じ本を見つけてしまい、結局2冊手元にある状況になってしまいました。"
+      },
+      {
+        "translation": "夕食を食べた後だったのですが、友達が急に呼んできたので、また夕食を食べました。"
+      },
+      {
+        "translation": "学校に早く着いていたのですが、突然授業が休講になり、結局早く家に帰ることになりました。"
+      },
+      {
+        "translation": "何時間も勉強していたのに、試験問題が全部不正解になってしまいました。勉強した内容とは全く違う問題が出たんですよ。"
+      }
+    ]
   },
   "ko_했을_76": {
-    "title": "~했을 텐데 [haesseultende] (Would have done but)",
-    "shortExplanation": "〜を表すために使用されます that something 'would have' happened but for some reason did not.",
-    "longExplanation": "'~했을 텐데' is used in Korean to describe an action or state that was expected to occur but did not due to certain circumstances. It expresses a contrast between expectation and reality.",
-    "formation": "動詞 stem + 았/었을 텐데"
+    "title": "-았/었을 텐데 / ~했을 텐데（〜したはずなのに、〜しただろうに）",
+    "shortExplanation": "過去の推測や予定を表し、本来なら行われたはずの動作や状況が、何らかの事情で実現しなかったことに対する無念や逆接を表します（「〜したはずなのに」「〜できただろうに」）。",
+    "longExplanation": "「~했을 텐데」（一般形は「-았/었을 텐데」）は、過去推測の連体形「-았/었을」に、意図・推量を表す不完全名詞（依存名詞）「터」と逆接・前置きの「-ㄴ데」が結合した表現です。本来の予定や一般的な見通しからすれば「過去に〜していたはずだ」「〜しただろうに」という状況が、予期せぬ障害や事情によって実現しなかったことへの残念な気持ちや弁明を述べる際に用いられます。",
+    "formation": "動詞・形容詞語幹 + -았/었을 텐데（陽母音 ㅏ, ㅗ には -았을 텐데、陰母音には -었을 텐데、하다 は 했을 텐데）",
+    "examples": [
+      {
+        "translation": "私は本来なら今日空港に行っていたはずですが、航空券が売り切れて行けませんでした。"
+      },
+      {
+        "translation": "彼女は宿題を全部終えていたはずですが、急にパソコンが壊れてできませんでした。"
+      },
+      {
+        "translation": "私たちは先週末に映画を見たはずだったのですが、その日は忙しすぎて見られませんでした。"
+      },
+      {
+        "translation": "私があなたに電話をかけたはずだったのですが、携帯のバッテリーが切れてしまってかけられませんでした。"
+      }
+    ]
   },
   "ko_혹시_77": {
-    "title": "~혹시 [hoksi] (By any chance)",
-    "shortExplanation": "〜を表すために使用されます uncertainty or to make polite inquiries.",
-    "longExplanation": "The expression '혹시' is used at the beginning of sentences to indicate a level of uncertainty or to politely propose a possibility. It softens questions or suggestions and is useful when inquiring about something hypothetically.",
-    "formation": "혹시 + 動詞/形容詞"
+    "title": "혹시（もしかして、ひょっとして、万が一）",
+    "shortExplanation": "副詞で、疑問文や提案文の冒頭などで用いられ、不確実な事柄について相手に丁寧に尋ねたり推測したりする際にニュアンスを和らげます（「もしかして」「ひょっとして」）。",
+    "longExplanation": "「혹시（漢字：或時）」は、可能性や仮定を前提として相手に問いかける際に使われる副詞です。直接的な質問による唐突さや失礼さを和らげ、控えめで礼儀正しい口調を作り出すクッション言葉の役割を果たします。「もしかして」「ひょっとして」「もしよろしければ」などの意味合いで、日常会話の尋問や誘いの場面で極めて頻繁に使用されます。",
+    "formation": "혹시 + 疑問文・提案文",
+    "examples": [
+      {
+        "translation": "ひょっとして後でお時間ができたら、私たち一緒にお茶でもしに行きませんか？"
+      },
+      {
+        "translation": "もしかして明日は雨が降るでしょうか？"
+      },
+      {
+        "translation": "もしかして、あの方をご存じですか？"
+      },
+      {
+        "translation": "もしかしてお時間少しありますか？"
+      }
+    ]
   },
   "ko_힘들다_78": {
-    "title": "~힘들다 [himdeulda] (It's hard to)",
-    "shortExplanation": "〜を表すために使用されます that something is difficult or hard to do.",
-    "longExplanation": "'힘들다' is a common expression in Korean used to describe difficulty or hardship in performing an action. 〜と訳されます 'it's hard to' in English and often conveys a sense of struggle or challenge.",
-    "formation": "動詞 stem + 기 + 힘들다"
+    "title": "-기 힘들다 / ~힘들다（〜するのが大変だ、〜しづらい、〜するのが苦痛だ）",
+    "shortExplanation": "ある動作を行うことに多くの労力や苦労を要し、身体的・精神的に負担や困難を感じることを表す表現です（「〜するのが大変だ」「〜するのがつらい」）。",
+    "longExplanation": "「-기 힘들다」は、動詞の名詞形語尾「-기」に形容詞「힘들다（つらい、大変だ、苦しい）」が結合した文型です。ある行為を実行するのに苦痛や多大な労力が伴い、一筋縄ではいかない状況を表します。客観的な難易度を表す「-기 어렵다」に比べ、「-기 힘들다」は主観的な疲れ、肉体的・精神的な苦労や辛さが強くにじみ出る表現です。",
+    "formation": "動詞語幹 + -기 힘들다",
+    "examples": [
+      {
+        "translation": "起きるのが大変でした。なぜなら昨晩寝るのが遅すぎたからです。"
+      },
+      {
+        "translation": "英語を学ぶのは大変だと思っていましたが、毎日勉強しているうちにだんだん慣れてきました。"
+      },
+      {
+        "translation": "健康を維持するのは大変ですが、運動をこまめにして、しっかり食べれば可能です。"
+      },
+      {
+        "translation": "私は韓国語を初めて習った時、文字を覚えるのが大変でした。でも練習を続けていくうちにだんだん易しくなりました。"
+      }
+    ]
   },
   "ko_는_79": {
-    "title": "~는 김에 [neun gimae] (Used to express that someone does something while doing another action)",
-    "shortExplanation": "Used to depict that someone performs a certain action while already engaged in another.",
-    "longExplanation": "The ending '~는 김에' is used when one is already doing something and takes advantage of that situation to do something else. It conveys the idea of 'while you are at it' or 'since you are doing one thing, you might as well do another.'",
-    "formation": "動詞 stem + ~는 김에"
+    "title": "-는 김에 / -(으)ㄴ 김에（〜するついでに、〜したついでに）",
+    "shortExplanation": "前節の動作を行う機会や勢いを利用して、合わせて後節の別の行動も行うことを表す慣用表現です（「〜するついでに」「〜したついでに」）。",
+    "longExplanation": "「-는 김에」（過去完了は「-(으)ㄴ 김에」）は、連体形語尾「-는/-(으)ㄴ」に、機会や弾みを意味する不完全名詞（依存名詞）「김」と助詞「-에」が結合した表現です。わざわざ別に時間を取らずに、前節の行動の好機や弾みを利用して「ついでに別のことも合わせて行う」という意図を表します。日本語の「〜するついでに」にぴったり対応します。",
+    "formation": "動詞語幹 + -는 김에（現在形）| 動詞語幹 + -(으)ㄴ 김에（過去形・完了形：母音・パッチムㄹには -ㄴ 김에、子音パッチムには -은 김에）",
+    "examples": [
+      {
+        "translation": "私が本を読んでいるついでに、息子が私を呼ぶ声を聞きました。"
+      },
+      {
+        "translation": "ご飯を食べるついでにテレビを見てもいいですか？"
+      },
+      {
+        "translation": "彼は走っているついでに爪を噛みました。"
+      },
+      {
+        "translation": "私はシャワーを浴びるついでに歌を歌いました。"
+      }
+    ]
   },
   "ko_기_80": {
-    "title": "~기 시작하다 [sijakada] (To begin to, start to)",
-    "shortExplanation": "〜を表すために使用されます that something begins to occur or a state starts to develop.",
-    "longExplanation": "The form '~기 시작하다' is 〜を示します the initiation of an action or change in state. It marks the moment when something starts to happen.",
-    "formation": "動詞 stem + 기 시작하다"
+    "title": "~기 시작하다（〜し始める、〜になり始める）",
+    "shortExplanation": "動作の開始や、ある状態への変化が起こり始めることを表す表現です（「〜し始める」「〜になり始める」）。",
+    "longExplanation": "「~기 시작하다」は、用言を名詞化する名詞形語尾「-기」に動詞「시작하다」（始める）が結合した構文です。ある動作が開始される瞬間や、心理状態・自然現象などの状態変化が起こり始めて継続していく局面を表します。動作動詞だけでなく、状態の変化を表す形容詞や自動詞にも幅広く接続します。",
+    "formation": "動詞・形容詞語幹 + 기 시작하다",
+    "examples": [
+      {
+        "translation": "会社で問題が生じ始め、多くの人がいらいらし始めました。"
+      },
+      {
+        "translation": "本当の春が訪れた時、花々が咲き始めました。"
+      },
+      {
+        "translation": "私は普段よりもお腹がひどく空き始めました。"
+      },
+      {
+        "translation": "私たちはエラーが発生し始めたということに気づきました。"
+      }
+    ]
   },
   "ko_남다_81": {
-    "title": "~남다 [namda] (To remain, be left over)",
-    "shortExplanation": "〜を表すために使用されます that something remains or is left over.",
-    "longExplanation": "The term '~남다' is 〜を示します that something remains – whether a physical quantity or an abstract element – after other parts have been used up or removed.",
-    "formation": "名詞 + 남다"
+    "title": "~남다（残る、余る）",
+    "shortExplanation": "使用や消費、時間の経過の後に、数量・時間や感情・記憶などがそのまま留まっていることを表す自動詞です（「残る」「余る」）。",
+    "longExplanation": "「~남다」は、物資や時間、お金、食べ物などが消費された後に「余る・残る」ことを表す代表的な自動詞です。また、具体的な事物だけでなく、別れの後の恋しさや余韻、記憶などの抽象的な感情が心に「残る」という表現としても情緒豊かに用いられます。主格助詞「이/가」や限定の助詞「만」とともによく使われます。",
+    "formation": "名詞 + 이/가 + 남다 | 名詞 + 만 + 남다",
+    "examples": [
+      {
+        "translation": "私も勉強したかったのですが、試験の準備のための時間がほとんど残っていませんでした。"
+      },
+      {
+        "translation": "結婚式に招待された人たちが全員到着した後も、料理がたくさん残っていました。"
+      },
+      {
+        "translation": "私たちは湖の周りを歩き終えた後、もうこれ以上見るべきものが残りませんでした。"
+      },
+      {
+        "translation": "彼女が去った後、別れの最初の夜には恋しさだけが残りました。"
+      }
+    ]
   },
   "ko_네요_82": {
-    "title": "~네요 [neyo] (Express surprise)",
-    "shortExplanation": "Used when the speaker discovers something new or unexpected.",
-    "longExplanation": "The ending '~네요' is 〜を表すために使用されます surprise, realization, or a newly noticed fact. It can convey sentiments such as 'I see,' 'Oh,' or 'Wow,' indicating that the speaker has become aware of something.",
-    "formation": "形容詞/動詞 stem + 네요"
+    "title": "~네요（〜ですね、〜ですねえ）",
+    "shortExplanation": "話し手がその場で直接見たり体験したりして、新しく知った事実や意外な発見に対して感嘆や軽い驚きを表す終結語尾です（「〜ですね」「〜ですねえ」）。",
+    "longExplanation": "「~네요」は、直接の観察や経験を通じて得られた新たな事実に対して、共感や感銘、驚きを込めて述べる非格式体の丁寧な終結語尾です。事前に思っていたことと違っていた時や、目の前の事実に「おや」「まあ」と感心したニュアンスを自然に添えることができます。用言の語幹や体言＋이다の後にそのまま接続します。",
+    "formation": "動詞・形容詞語幹 + 네요 | 名詞 + (이)네요",
+    "examples": [
+      {
+        "translation": "今日の天気は本当に暖かいですね、朝は寒いと思っていたのですが。"
+      },
+      {
+        "translation": "彼女は本当に歌が上手ですね、これまでに聴いたことがなかったので知りませんでした。"
+      },
+      {
+        "translation": "わあ、このケーキ本当に美味しいですね、初めて食べる味です。"
+      },
+      {
+        "translation": "おや、雨が降ってきましたね、傘を持ってくるべきでした。"
+      }
+    ]
   },
   "ko_다고_83": {
-    "title": "~다고 [dago] (Saying that)",
-    "shortExplanation": "Used to indirectly report what someone said, thought, or felt.",
-    "longExplanation": "The ending '~다고' is used to quote or report someone’s speech, thoughts, or feelings indirectly. It functions similarly to saying 'saying that' in English.",
-    "formation": "動詞 + 다고 + (다/요)"
+    "title": "~다고（〜だと、〜ということだ、〜と言って）",
+    "shortExplanation": "平叙文の間接引用を表す接続語尾で、他人や自分の発言・思考・判断などを引用・伝達する際に用います（「〜だと（言う・思う）」）。",
+    "longExplanation": "「~다고」は、平叙文の間接引用形「~다고 하다/말하다/생각하다」を導く引用語尾です。誰かが述べた言葉や自分自身の考え、見解、伝聞の内容を客観的に引用して後続の述語につなげます。動詞の現在形には「-ㄴ/는다고」、形容詞には「-다고」、過去形には「-았/었다고」、名詞には「-(이)라고」が接続します。",
+    "formation": "動詞現在形 + -ㄴ/는다고 | 形容詞 + -다고 | 過去形 + -았/었다고 | 名詞 + -(이)라고 + (말하다/생각하다/하다など)",
+    "examples": [
+      {
+        "translation": "彼は私がもうご飯を食べたと思ったようですが、私はまだ食べていませんでした。"
+      },
+      {
+        "translation": "友達が今日は雨が降ると言っていたので、私は傘を持ってきました。"
+      },
+      {
+        "translation": "先生がテストは難しいと言っていたので、一生懸命に勉強しました。"
+      },
+      {
+        "translation": "母が今夜は遅く帰ってこないようにと言いました。"
+      }
+    ]
   },
   "ko_다는_84": {
-    "title": "~다는 [daneun] (The fact that)",
-    "shortExplanation": "Used to denote the fact or idea that something has been stated or quoted.",
-    "longExplanation": "'~다는' is used to emphasize the content of a statement or the fact that something is said or known. It is often used when reporting or conveying information that was heard from another source.",
-    "formation": "動詞/形容詞 + 다는"
+    "title": "~다는（〜という、〜だという事実・知らせ）",
+    "shortExplanation": "平叙文の間接引用の連体形語尾で、発言や伝聞、事実、噂などの具体的内容を後続の名詞に修飾する表現です（「〜という（事実・噂・知らせ）」）。",
+    "longExplanation": "「~다는」は「~다고 하는」の縮約形で、伝聞や思考の内容を連体修飾節として後続の名詞（「사실（事実）」「소식（知らせ）」「소문（噂）」「생각（考え）」など）に接続させる役割を持ちます。日本語の「〜という事実」「〜だという話」に相当します。動詞現在形には「-ㄴ/는다는」、形容詞には「-다는」、過去形には「-았/었다는」、名詞には「-(이)라는」が用いられます。",
+    "formation": "動詞現在形 + -ㄴ/는다는 | 形容詞 + -다는 | 過去形 + -았/었다는 + 名詞（사실, 소식, 생각など）",
+    "examples": [
+      {
+        "translation": "彼は自分の過ちを認めるという事実がどれほど難しいことか分かっていません。"
+      },
+      {
+        "translation": "私は自分が彼女を愛しているということに初めて気がついた。"
+      },
+      {
+        "translation": "パピーさんの会社が本格的に事業を拡張しているという知らせを聞きました。"
+      },
+      {
+        "translation": "今朝、君が結婚するという話を聞いたよ。"
+      }
+    ]
   },
   "ko_다면서요_85": {
-    "title": "~다면서요 [damyeonseyo] (Said that)",
-    "shortExplanation": "Used when quoting someone's words or conveying information heard from someone else.",
-    "longExplanation": "The expression '~다면서요' is used to relay information that was reported or said by someone else. It combines the declarative form with a quoting marker to indicate that the speaker is passing along what was heard.",
-    "formation": "動詞 + 다면서요"
+    "title": "~다면서요（〜だそうですね、〜と言っていましたよね？）",
+    "shortExplanation": "他人から伝え聞いた情報や以前相手が言っていた内容について、事実かどうかを相手に確認・問い直す終結語尾です（「〜だそうですね」「〜とお聞きしましたが」）。",
+    "longExplanation": "「~다면서요」は、間接引用の表現に丁寧の補助詞「요」がついた疑問の終結語尾です。人づてに聞いた話や噂、あるいは相手が以前約束・発言した内容を引き合いに出し、「〜だそうですね、本当ですか？」「〜と言っていたはずですが、どうしてですか？」と事実を確認したり追及したりするニュアンスを持ちます。",
+    "formation": "動詞現在形 + -ㄴ/는다면서요 | 形容詞 + -다면서요 | 過去形 + -았/었다면서요 | 名詞 + -(이)라면서요",
+    "examples": [
+      {
+        "translation": "ヨンヒさんがソウルに住んでいるそうですね、本当にそうなのか私には分かりません。"
+      },
+      {
+        "translation": "家に早く帰ると言っていたそうですが、どうしてまだ帰ってこないのですか？"
+      },
+      {
+        "translation": "友達が明日学校に来ないと言っていたそうですが、もしかして具合が悪いのでしょうか？"
+      },
+      {
+        "translation": "後で一緒にコーヒーを一杯飲もうと約束したそうですが、どうして連絡がないのですか？"
+      }
+    ]
   },
   "ko_던데_86": {
-    "title": "~던데 [deonde] (Used to)",
-    "shortExplanation": "〜を表すために使用されます reminiscence or describe how something used to be.",
-    "longExplanation": "The ending '~던데' is a past tense form used to recall how things were in the past. It is often used in a reminiscing context or to highlight a contrast between past and present.",
-    "formation": "動詞 in past tense + 던데"
+    "title": "~던데（〜していたけど、〜だったのに、〜だったよ）",
+    "shortExplanation": "話し手が過去に直接見聞き・体験した事実を回想しながら提示し、後続文の背景としたり、現在の状況との対比や疑問を述べたりする接続語尾です（「〜していたけれど」「〜だったのに」）。",
+    "longExplanation": "「~던데」は、過去の直接経験を回想する語尾「-더-」と、背景の提示や逆接を表す接続語尾「-ㄴ/은데」が結合した表現です。自分が過去に実際に目撃したことや実感した出来事を思い起こして前置きとし、それに伴う疑問や感想を述べたり、過去と現在の変化やギャップを際立たせたりする際に非常に自然に使われます。",
+    "formation": "動詞・形容詞語幹 + 던데 | 過去完了形 + -았/었던데",
+    "examples": [
+      {
+        "translation": "彼はいつも髪を長く伸ばしていたけれど、いつから短く切り始めたのですか？"
+      },
+      {
+        "translation": "私の友達は昔は野菜が好きではなかったのに、今では健康のために熱心に食べているそうですね。"
+      },
+      {
+        "translation": "私は幼い頃は掃除が本当に嫌いだったけれど、今では好きになって毎日する方です。"
+      },
+      {
+        "translation": "私たちは幼い頃から一緒に勉強していたけれど、今はそれぞれ別の大学に通っています。"
+      }
+    ]
   },
   "ko_도록_87": {
-    "title": "~도록 하다 [dorok hada] (To try to, to make sure to)",
-    "shortExplanation": "〜を表すために使用されます the intention of making something happen or ensuring an action occurs.",
-    "longExplanation": "The structure '~도록 하다' is used when someone takes measures or makes an effort to ensure that a certain action or state is achieved. It implies intention or control over making something happen.",
-    "formation": "動詞 stem + 기 / 名詞 + 도록 하다"
+    "title": "~도록 하다（〜するようにする、〜するように計らう）",
+    "shortExplanation": "ある目的を達成したり特定の状態に至らせたりするために、努力や工夫、指示を行うことを表す表現です（「〜するようにする」「〜するように努める」）。",
+    "longExplanation": "「~도록 하다」は、目的や結果・限度を表す接続語尾「-도록」に補助動詞「하다」が結合した文型です。ある望ましい状況を実現するために必要な措置を講じることを表します。話者自身が主語の場合は「〜するように努める」という意志や決意を表し、聞き手に対して用いる場合は「〜するようにしなさい」「〜するようにしてください」と穏やかかつ丁寧に指示・要請する表現となります。",
+    "formation": "動詞語幹 + 도록 하다",
+    "examples": [
+      {
+        "translation": "私たちは社員が十分な休息を取れるようにしなければなりません。そうしなければ彼らの能率が落ちてしまう可能性があります。"
+      },
+      {
+        "translation": "誕生日パーティーを計画するにあたって、すべてが完璧に運ぶようにしなければなりません。何といっても父の特別な日ですからね。"
+      },
+      {
+        "translation": "学級委員長として、私はすべての生徒が宿題を完了するようにさせなければなりません。そうすれば先生も私たちに不満を持つ理由がなくなるはずです。"
+      },
+      {
+        "translation": "お客様が私たちの製品に満足していただけるよう最善を尽くさなければなりません。そうしてこそ私たちのビジネスも成長できるはずです。"
+      }
+    ]
   },
   "ko_든지_88": {
-    "title": "~든지 [deunji] (Whether or)",
-    "shortExplanation": "〜を表すために使用されます indecision between two or more options; 'whether or'.",
-    "longExplanation": "The conjunction '~든지' is 〜を示します that any of the given alternatives is acceptable or that the speaker is indifferent about the choice. It is often used to show that no matter which option is chosen, the outcome will be similar.",
-    "formation": "名詞/V-아/어/여 + 든지 + 名詞/V-아/어/여 + 든지"
+    "title": "~든지（〜であれ〜であれ、〜だろうと〜だろうと）",
+    "shortExplanation": "選択を表す接続語尾で、「〜든지 ~든지」の形で並列され、どの選択肢を選んでも結果に関係がないことや気に留めないことを表します（「〜であれ〜であれ」「〜だろうと〜だろうと」）。",
+    "longExplanation": "「~든지」は、複数の事態や対象を対比・列挙し、どれを選択しても構わないことや、どちらの条件であっても後節の結果に差異がないことを表す語尾です。疑問詞と結合して「언제든지（いつでも）」「누구든지（だれでも）」「어디든지（どこでも）」などの不定表現としても頻用されます。過去の回想を表す「-던지」との混同に注意が必要です。",
+    "formation": "動詞・形容詞語幹 + 든지 | 名詞 + (이)든지",
+    "examples": [
+      {
+        "translation": "あなたが中に入ってこようが出ようが私は気にしません。重要なのは作業が続けられなければならないということです。"
+      },
+      {
+        "translation": "雨が降ろうと晴れた日であろうと、私はいつも散歩に出かけます。"
+      },
+      {
+        "translation": "あなたが理解できようができまいが、私は説明を続けます。"
+      },
+      {
+        "translation": "子犬が吠えようが吠えまいが、まるで会話を交わすかのように挨拶をするのが好ましいです。"
+      }
+    ]
   },
   "ko_라는_89": {
-    "title": "~라는 것이다 [raneun geosida] (It means that)",
-    "shortExplanation": "〜を示します or define the meaning of a statement; 'it means that'.",
-    "longExplanation": "'~라는 것이다' is a grammatical structure that turns a clause into a noun phrase to explain or define its implication. It is commonly used after a verb or descriptive verb to emphasize that something signifies a particular fact or idea.",
-    "formation": "動詞 + 라는 것이다 OR Descriptive 動詞 + 라는 것이다"
+    "title": "~라는 것이다（〜ということだ、〜を意味するのだ）",
+    "shortExplanation": "前述の前提や事実を受けて、その本質や意味、結論を定義・説明する構文です（「〜ということだ」「〜という意味である」）。",
+    "longExplanation": "「~라는 것이다」は、引用の連体形「-(이)라는」に依存名詞「것」と指定詞「이다」が結合した表現です。しばしば主語節「-는다는 것은（〜ということは）」と呼応して文末に置かれ、ある現象や事実がどのような本質・含意・結論を持っているのかを論理的に定義・解説する際に使われます。",
+    "formation": "動詞現在形 + -ㄴ/는다는 것이다 | 形容詞 + -다는 것이다 | 名詞 + -(이)라는 것이다",
+    "examples": [
+      {
+        "translation": "彼女が写真を撮るということは、彼女が写真を愛しているということを意味するのだ。"
+      },
+      {
+        "translation": "彼がいつも早起きするということは、彼が朝型の人間だということだ。"
+      },
+      {
+        "translation": "秋が来ると木の葉が黄色に変わるということは、秋ならではの特性だということだ。"
+      },
+      {
+        "translation": "私たちが何らかの問題を抱えているということは、私たちがその問題を解決しなければならないということだ。"
+      }
+    ]
   },
   "ko_라도_90": {
-    "title": "~라도 [rado] (At least, even if)",
-    "shortExplanation": "〜を表すために使用されます 'at least' or 'even if'.",
-    "longExplanation": "'~라도' is 〜を示します a minimum or acceptable alternative. It can be attached to a noun or verb stem to mean 'at least' or 'even if' under a given condition, often softening a statement or presenting a fallback option.",
-    "formation": "名詞/動詞 Stem + -라도"
+    "title": "~라도（〜でも、せめて〜だけでも）",
+    "shortExplanation": "最善の選択肢が得られない場合に、最低限の代案や妥協策として受け入れられる対象を提示する助詞です（「〜でも」「せめて〜だけでも」）。",
+    "longExplanation": "「~라도」は、理想的・最善ではないものの、「せめて次善の策としてこれだけでも満たされれば」「これでも構わないから」と最低限のラインを受け入れるニュアンスを表す補助詞です。提案や依頼を和らげたり、控えめな希望を述べたりする際によく用いられます。体言にパッチムがある場合は「이라도」、ない場合は「라도」が付きます。",
+    "formation": "名詞 + (이)라도（パッチムがある場合は 이라도、ない場合は 라도）",
+    "examples": [
+      {
+        "translation": "月まで歩いていくのは無理ですが、せめて写真だけでも撮りましょう。"
+      },
+      {
+        "translation": "彼は働くのが辛いと言っていましたが、せめて仕事くらいはさせなければならないのではないでしょうか？"
+      },
+      {
+        "translation": "せめて謝罪だけでもするべきだったのではないでしょうか。そうしていれば状況はもう少し良くなったはずなのに。"
+      },
+      {
+        "translation": "家に帰らないつもりなら、せめて連絡くらいはくれてもよかったのではないでしょうか？"
+      }
+    ]
   },
   "ko_러_91": {
-    "title": "~러 [reo] (In order to)",
-    "shortExplanation": "〜を示します the purpose or intention of an action; 'in order to'.",
-    "longExplanation": "'~러' is a grammar pattern attached to a verb stem to express the purpose or intent of an action. It is equivalent to 'in order to' or 'for the purpose of' in English and is commonly used when going somewhere or doing something with a specific goal in mind.",
-    "formation": "動詞 Stem + ~러"
+    "title": "~러 / ~(으)러（〜しに（行く・来る））",
+    "shortExplanation": "移動動詞（가다, 오다など）とともに用いられ、ある場所へ移動する直接の目的を表す接続語尾です（「〜しに（行く・来る）」）。",
+    "longExplanation": "「~(으)러」は、移動の目的を表す接続語尾で、後続節の述語には「가다（行く）」「오다（来る）」「다니다（通う）」などの移動動詞が必ず続きます。何かの行為を行うために移動することを端的に表します。語幹の末尾にパッチムがない場合や「ㄹ」パッチムの場合は「-러」、それ以外のパッチムがある場合は「-으러」が接続します。",
+    "formation": "動詞語幹 + -(으)러（パッチムがない場合・ㄹパッチムは -러、パッチムがある場合は -으러） + （가다/오다/다니다など）",
+    "examples": [
+      {
+        "translation": "私は韓国語を学びにはるばる韓国へ来ました。"
+      },
+      {
+        "translation": "彼は本を買いに本屋へ行きました。"
+      },
+      {
+        "translation": "母は夕食を準備しに台所へ行かれました。"
+      },
+      {
+        "translation": "友達と一緒に映画を見に映画館へ行きました。"
+      }
+    ]
   },
   "ko_려고_92": {
-    "title": "~려고 하다 [ryeogo hada] (Try to)",
-    "shortExplanation": "〜を表すために使用されます an intention or attempt to do something; 'try to'.",
-    "longExplanation": "The construction '~려고 하다' is used to convey an intention, plan, or attempt to do something. It expresses a planned future action or an effort, without guaranteeing success.",
-    "formation": "動詞 Stem + 려고 하다"
+    "title": "~려고 하다 / ~(으)려고 하다（〜しようとする、〜するつもりだ）",
+    "shortExplanation": "主語の意図、計画、あるいはある行動を起こそうと試みる意志を表す表現です（「〜しようとする」「〜するつもりだ」）。",
+    "longExplanation": "「~(으)려고 하다」は、意図を表す接続語尾「-(으)려고」に補助動詞「하다」が結合した表現です。主語がある行為を行おうと企てたり、これから実行に移そうと試みたりする主観的な意志や計画を表します。努力や試行錯誤を表す文脈でもよく用いられます。語幹末尾にパッチムがない場合や「ㄹ」パッチムの場合は「-려고 하다」、それ以外のパッチムがある場合は「-으려고 하다」となります。",
+    "formation": "動詞語幹 + -(으)려고 하다（パッチムがない場合・ㄹパッチムは -려고 하다、パッチムがある場合は -으려고 하다）",
+    "examples": [
+      {
+        "translation": "私は毎日10個ずつ新しい単語を覚えようとしています。そのため韓国語上達のために努力しています。"
+      },
+      {
+        "translation": "体調が悪い時でもいつも笑おうとしています。それが私の流儀です。"
+      },
+      {
+        "translation": "彼はいつも早く寝ようとしますが、いつも失敗に終わってしまいます。"
+      },
+      {
+        "translation": "私たちは練習と勉強を重ね、公演を成功裏に終えようと努めました。"
+      }
+    ]
   },
   "ko_려는_93": {
-    "title": "~려는 [ryeoneun] (Intending to)",
-    "shortExplanation": "〜を表すために使用されます a future intention, plan, or aim.",
-    "longExplanation": "~려는 is 〜を示します that someone intends or plans to do something in the future. It carries the nuance of will or purpose, even if the outcome is not yet decided.",
-    "formation": "動詞 Stem + ~려는"
+    "title": "~려는 / ~(으)려는（〜しようとする、〜するつもりの）",
+    "shortExplanation": "動詞の後に接続して名詞を修飾し、ある行動を実行しようとする意志や計画を抱いていることを表す意図の連体形語尾です（「〜しようとする（人・こと）」）。",
+    "longExplanation": "「~(으)려는」は、意図を表す連体形「-(으)려고 하는」の縮約形です。後続する名詞（「사람（人）」「학생（学生）」「것（こと）」など）を修飾し、その対象がある行為を遂行しようと企てている意図や目的を持っている状態であることを示します。語幹末尾にパッチムがない場合や「ㄹ」パッチムの場合は「-려는」、パッチムがある場合は「-으려는」が付きます。",
+    "formation": "動詞語幹 + -(으)려는（パッチムがない場合・ㄹパッチムは -려는、パッチムがある場合は -으려는） + 名詞",
+    "examples": [
+      {
+        "translation": "明日出張に行こうとする人は私一人だけです。他の人たちは皆忙しいです。"
+      },
+      {
+        "translation": "健康的な食生活のために菜食主義者になろうとする人が多いです。"
+      },
+      {
+        "translation": "TOEIC試験を準備しようとする学生たちは、多くの時間を勉強に投資しています。"
+      },
+      {
+        "translation": "私の週末の計画はプログラミングを学ぼうとすることですが、普段よりも多くの時間と労力が必要です。"
+      }
+    ]
   },
   "ko_로써_94": {
-    "title": "~로써 [rossyeo] (By means of)",
-    "shortExplanation": "〜を示します the role, means, or capacity in which something is done.",
-    "longExplanation": "'~로써' is used after a noun to express the manner or capacity in which an action is performed – similar to saying 'by means of' or 'as' in English.",
-    "formation": "名詞 + 로써"
+    "title": "~로써 / ~(으)로써（〜として、〜をもって、〜によって）",
+    "shortExplanation": "手段や道具、方法を表す副詞格助詞です。なお日常の言語慣習では、資格や立場を表す「~로서」と混用され、「〜として」の意味合いでも頻繁に用いられます。",
+    "longExplanation": "「~(으)로써」は規範文法上、手段・道具・材料・方法などを表す格助詞（「〜をもって」「〜によって」）です。資格・身分・地位を表す場合は原則として「~로서」を用いますが、実際の日常会話や表現の中では母語話者によって混用され、本パターンの例文のように「학생으로써（学生として）」「지도자로써（指導者として）」といった身分・資格を表す文脈でも広く用いられています。パッチムがある名詞には「-으로써」、ない名詞や「ㄹ」パッチムには「-로써」が付きます。",
+    "formation": "名詞 + -(으)로써（パッチムがある場合は -으로써、ない場合やㄹパッチムは -로써）",
+    "examples": [
+      {
+        "translation": "私は学生として、先生が教えてくださったことをすべて理解しました。"
+      },
+      {
+        "translation": "ヴァイオリニストとして、彼女は世界的に高い評価を受けました。"
+      },
+      {
+        "translation": "私はエンジニアとして、この問題を解決することができます。"
+      },
+      {
+        "translation": "指導者として、彼はチームを見事に率いています。"
+      }
+    ]
   },
   "ko_를_95": {
-    "title": "~를 바탕으로 [reul batageuro] (Based on)",
-    "shortExplanation": "〜を表すために使用されます the basis or foundation upon which something is derived.",
-    "longExplanation": "The phrase '~를 바탕으로' is 〜を示します that an action, decision, or creation is based on certain data, facts, or experience. 〜と訳されます 'on the basis of' or 'based on' in English.",
-    "formation": "名詞 + 를 바탕으로"
+    "title": "~을/를 바탕으로（〜に基づいて、〜をもとにして、〜を基礎にして）",
+    "shortExplanation": "ある事実やデータ、経験などを基礎・根拠として、新たな行動や判断、創作などを行うことを表す表現です（「〜に基づいて」「〜をもとにして」）。",
+    "longExplanation": "「~을/를 바탕으로」は、「基礎、土台」を意味する名詞「바탕」に、目的格助詞「을/를」と手段・方向を表す助詞「으로」が結合した表現です。ある行為や決定、研究、作品制作などが、特定のデータや事実、経験などを土台にして成り立っていることを表します。公的な文書や学術的な報告、ニュースなどで多用されます。パッチムがある名詞には「을 바탕으로」、ない名詞には「를 바탕으로」が接続します。",
+    "formation": "名詞 + 을/를 바탕으로（パッチムがある場合は 을 바탕으로、ない場合は 를 바탕으로）",
+    "examples": [
+      {
+        "translation": "研究結果に基づいて新しい薬を開発しています。"
+      },
+      {
+        "translation": "経験をもとにして自分の将来を計画しています。"
+      },
+      {
+        "translation": "このアイデアは科学的な事実に基づいて考え出されました。"
+      },
+      {
+        "translation": "あなたの意見に基づいて会議で話し合ってもよろしいでしょうか？"
+      }
+    ]
   },
   "ko_를_96": {
-    "title": "~를 통해 [reul tonghae] (Through, by means of)",
-    "shortExplanation": "〜を表すために使用されます the medium or method by which something is done or achieved.",
-    "longExplanation": "'~를 통해' is a postposition 〜を示します the means, method, or channel through which an action is performed. It is equivalent to 'through', 'by means of', or 'via' in English.",
-    "formation": "名詞 + 를 통해"
+    "title": "~을/를 통해（〜を通じて、〜を通して）",
+    "shortExplanation": "物事を行う手段や媒介、経路などを表し、ある結果に至るプロセスを示す表現です（「〜を通じて」「〜を通して」）。",
+    "longExplanation": "「~을/를 통해」（または「~을/를 통해서」）は、動詞「통하다」（通じる、通る）に目的格助詞「을/를」がついた表現です。人や物、メディア、体験などを媒介や手段として、情報が伝わったり、知識や能力を獲得したり、ある行動が実現したりすることを表します。パッチムがある名詞には「을 통해」、ない名詞には「를 통해」が接続します。",
+    "formation": "名詞 + 을/를 통해(서)（パッチムがある場合は 을 통해、ない場合は 를 통해）",
+    "examples": [
+      {
+        "translation": "私は音楽を通じて感情を表現することができます。"
+      },
+      {
+        "translation": "私たちはメールを通じて彼にこのメッセージを送りました。"
+      },
+      {
+        "translation": "生徒たちは実験を通して新しい知識を学びました。"
+      },
+      {
+        "translation": "彼女は練習を通じて絵を描く技術を向上させました。"
+      }
+    ]
   },
   "ko_만큼_97": {
-    "title": "~만큼 [mankeum] (As much as)",
-    "shortExplanation": "〜を表すために使用されます the amount, level, or extent equivalent to a certain standard; 'as much as', 'as...as'.",
-    "longExplanation": "'~만큼 [mankeum]' is a postposition used in Korean to demonstrate equivalence in extent, amount, or level with a given reference. It is used to compare two things, implying that they have the same level or quantity. It can be interpreted as 'as much as' or 'as...as' in English.",
-    "formation": "名詞/動詞 + 만큼"
+    "title": "~만큼（〜くらい、〜ほど、〜と同じくらい、〜の分だけ）",
+    "shortExplanation": "ある基準と同じくらいの分量や程度、レベルに達していることを表す比較・相当の表現です（「〜くらい」「〜ほど」「〜の分だけ」）。",
+    "longExplanation": "「~만큼」は、名詞の直後に結合する助詞、または用言の連体形（-(으)ㄴ/는/(으)ㄹ）の後に続く依存名詞として機能します。ある基準と数量や程度が同等であることを表すほか、連体形と結びついて「〜した分だけ」「〜できる限り」といった相関関係や程度の上限を表す際にも用いられます。",
+    "formation": "名詞 + 만큼 | 動詞・形容詞語幹 + -(으)ㄴ/는/(으)ㄹ 만큼",
+    "examples": [
+      {
+        "translation": "彼は彼の友達ほど一生懸命働かないので、その成果はいつもわずかです。"
+      },
+      {
+        "translation": "私は学んだ分だけ教えますので、自分が知っていることをすべて他の人に教えてあげられます。"
+      },
+      {
+        "translation": "私たちは自分たちにできる限り最善を尽くしています。他の人がもっと上手にできたとしても心配しません。"
+      },
+      {
+        "translation": "旅行に行って見られるだけたくさんのものを見ました。そのおかげでたくさんの思い出が作れました。"
+      }
+    ]
   },
   "ko_마저_98": {
-    "title": "~마저 [majeo] (Even)",
-    "shortExplanation": "〜を表すために使用されます the unexpected inclusion; 'even'.",
-    "longExplanation": "'~마저 [majeo]' is a postposition used in Korean to express the inclusion of someone or something that is not normally expected. It carries a sense of surprise or disbelief, similar to 'even' in English.",
-    "formation": "名詞 + 마저"
+    "title": "~마저（〜までも、〜さえも）",
+    "shortExplanation": "予期しなかった対象や、最後に残されたものまでもが含まれることを表し、驚きや失望、無念さなどの感情を強調する助詞です（「〜までも」「〜さえ」）。",
+    "longExplanation": "「~마저」は、名詞の直後に結合して、本来であればそうならないはずの対象や、最後に残っていた拠り所までもが望ましくない事態に巻き込まれることを表す補助詞です。単なる包含を表す「도」よりも強い語気を含み、また「조차」（〜さえ）が極端な最低条件を指すのに対し、「마저」は「最後の砦までもが崩れる」ような落胆や意外性のニュアンスを色濃く帯びます。",
+    "formation": "名詞 + 마저",
+    "examples": [
+      {
+        "translation": "試験があまりにも難しくて、私たちのクラスの秀才であるミンスまでも間違えてしまいました。"
+      },
+      {
+        "translation": "家に遅く帰ったら、お母さんまでもが眠ってしまっていました。"
+      },
+      {
+        "translation": "今日は天気がとても寒くて、動物園のライオンまでもが隠れてしまいました。"
+      },
+      {
+        "translation": "彼女はとても有名なので、この小さな村の人たちまでもが彼女を知っています。"
+      }
+    ]
   },
   "ko_못하다_99": {
-    "title": "~못하다 [mothada] (Cannot)",
-    "shortExplanation": "〜を表すために使用されます inability or impossibility; 'cannot'.",
-    "longExplanation": "'~못하다 [mothada]' is used in Korean with action verbs to indicate that the action cannot be performed. It conveys the speaker’s inability or impossibility to carry out the action.",
-    "formation": "Action 動詞 Stem + 못하다"
+    "title": "~지 못하다 / ~못하다（〜できない、〜することができない、うまく〜できない）",
+    "shortExplanation": "自身の能力不足や外部の客観的な状況・事情により、ある動作を行うことができないことを表す能力否定の表現です（「〜できない」）。",
+    "longExplanation": "「~못하다」は、動作を行う意思はあるものの、能力不足や知識の欠如、あるいは天候や外部環境の妨げによって動作が実現できないことを表す否定表現です。用言に直接後続する長形否定「-지 못하다」と、動詞の直前に置く短形否定「못 + 動詞」の2種類があります。話者の意思で行わない意志否定の「안 / -지 않다」と明確に対比されます。",
+    "formation": "動詞語幹 + -지 못하다 | 못 + 動詞",
+    "examples": [
+      {
+        "translation": "率直に言って私は韓国語が上手に話せないので、ずっと練習を続けています。"
+      },
+      {
+        "translation": "この雨のせいで運動ができません。雨があまりにも激しく降って芝生が滑り、身動きが取れません。"
+      },
+      {
+        "translation": "私はウェブ開発者でありながらこの問題を解決できません。コーディングの実力が足りず理解が追いつきません。"
+      },
+      {
+        "translation": "彼は禁煙できずにいます。タバコが大好きすぎてやめることができないようです。"
+      }
+    ]
   },
   "ko_바라다_100": {
-    "title": "~바라다 [barada] (Hope to)",
-    "shortExplanation": "〜を表すために使用されます the speaker's hope or wish for something.",
-    "longExplanation": "'~바라다 [barada]' is used after a verb stem to express a personal hope or wish. It conveys that the speaker looks forward to or wishes for a particular outcome in the future.",
-    "formation": "動詞 Stem + 바라다"
+    "title": "~기(를) 바라다（〜することを望む、〜してほしいと願う、〜を願う）",
+    "shortExplanation": "話し手の願いや望み、あるいは他者に対する期待や祈念を表す表現です（「〜することを願う」「〜してほしいと思う」）。",
+    "longExplanation": "「~기(를) 바라다」は、動詞などの語幹に名詞形語尾「-기」と目的格助詞「를」（省略可能）をつけ、動詞「바라다」（望む、願う）を続けた構文です。将来において物事が好ましく進むことや、相手が成功・健康であることへの切なる願いを表します。また、案内放送や公的な案内文では、敬語形「-(으)시기 바랍니다」（〜なさいますようお願いいたします）として丁寧な依頼表現としても非常によく使われます。",
+    "formation": "動詞・形容詞語幹 + -기(를) 바라다",
+    "examples": [
+      {
+        "translation": "あなたの事業が成功することを願っています。本当にあなたの努力が実を結ぶことを望みます。"
+      },
+      {
+        "translation": "私たち全員が健康に生きていくことを願う両親の気持ちを理解できます。"
+      },
+      {
+        "translation": "教授は私に大学院へ進学することを望まれましたが、私はまだ準備ができていません。"
+      },
+      {
+        "translation": "韓国語を流暢に話せるようになりたいと願っていますが、まだたくさん学ばなければなりません。"
+      }
+    ]
   },
   "ko_밖에_101": {
-    "title": "~밖에 [bakke] (Only, nothing but)",
-    "shortExplanation": "〜を表すために使用されます limitation; 'only', 'nothing but', or 'except'.",
-    "longExplanation": "'~밖에 [bakke]' is used in Korean with negative sentences to indicate that nothing else exists beyond what is mentioned. It emphasizes the limited or exclusive nature of the subject or object.",
-    "formation": "名詞 + 밖에 + Negative 動詞"
+    "title": "~밖에（〜しか［〜ない］、〜以外には［〜ない］）",
+    "shortExplanation": "後続に必ず否定の述語を伴い、それ以外には存在しないことや、他に選択肢がない限定を強調する助詞です（「〜しか…ない」）。",
+    "longExplanation": "「~밖에」は名詞に直接接続し、後ろには必ず「없다（ない）」「모르다（知らない）」「안/못（〜しない/できない）」などの否定述語が呼応します。言及された対象以外には該当するものがなく、それだけに限定されていることを強調します。肯定文で使える「만（〜だけ）」に比べ、唯一無二性や不足感、やむを得ない切迫した限定のニュアンスが強く前面に出ます。",
+    "formation": "名詞 + 밖에 + 否定述語（없다, 모르다, 안/못 + 動詞, -지 않다/못하다）",
+    "examples": [
+      {
+        "translation": "私はコーヒーしか飲みません。他の飲み物は全く口にしません。"
+      },
+      {
+        "translation": "この問題を解決できる人は私しかいません。他の人たちはさっぱり分かっていません。"
+      },
+      {
+        "translation": "彼はチキンしか食べないので、他の料理を食べることができません。"
+      },
+      {
+        "translation": "これが残された最後のチャンスしかないので、もっと一生懸命勉強しなければなりません。"
+      }
+    ]
   },
   "ko_본_102": {
-    "title": "~본 [bon] (Having experienced)",
-    "shortExplanation": "〜を表すために使用されます that the speaker has experienced or done something.",
-    "longExplanation": "'~본 [bon]' is attached to action verbs to indicate that the speaker has experienced or tried that action. It is typically used when sharing personal experiences or anecdotes.",
-    "formation": "Action 動詞 + 본"
+    "title": "~아/어 본（〜してみた、〜したことのある［連体形］）",
+    "shortExplanation": "試みや経験を表す補助動詞「-아/어 보다」の過去連体形で、後ろの名詞を修飾して過去の経験を表します（「〜したことのある」「〜してみた」）。",
+    "longExplanation": "「~본」（全体としては「-아/어 본」）は、試みや経験を表す「-아/어 보다」の語幹に、過去の連体形語尾「-ㄴ」が結合した形です。後ろに来る名詞（사람、경험など）を前から修飾し、「かつてその行動を体験したことがある人・物事」という意味を表します。自己の経験を語る際や、ある経験を持つ人を特定して描写する際によく用いられます。",
+    "formation": "動詞語幹 + -아/어 본（陽性母音 ㅏ, ㅗ は -아 본、陰性母音は -어 본、하다 は 해 본）",
+    "examples": [
+      {
+        "translation": "韓国語を勉強してみた人として、韓国語の文法を教えることが私の目標です。"
+      },
+      {
+        "translation": "海外で暮らしてみた友達が思ったより多くて幸せです。"
+      },
+      {
+        "translation": "コートを買ったのですが、このようなコートは初めて着てみます。"
+      },
+      {
+        "translation": "ギリシャに行ってみた人なら、アテネは必ず訪れるべき都市だと言うでしょう。"
+      }
+    ]
   },
   "ko_부터가_103": {
-    "title": "~부터가 [buteoga] (Starting from)",
-    "shortExplanation": "Indicates that the occurrence of an action or state begins at a certain point, time, or place.",
-    "longExplanation": "'~부터가 [buteoga]' combines '부터' (starting from) with the subject particle '가' to emphasize that things truly begin from that point. It is used to stress that from that moment or place onward, the state or action is in effect.",
-    "formation": "名詞 + 부터가"
+    "title": "~부터가（〜からして、〜からが、〜からこそが）",
+    "shortExplanation": "起点を表す助詞「부터」に主格助詞「가」が結合し、その時点や対象こそが本格的な始まりであることを際立たせる表現です（「〜からして」「〜からが」）。",
+    "longExplanation": "「~부터가」は、時間や順序の始まりを表す助詞「부터」（〜から）に、特定・強調の主格助詞「가」（〜が）が組み合わさった表現です。単に始点を示すだけでなく、「まさにそこからが本当の始まりだ」「その最初の段階からして既に特別である」といった強調のニュアンスを含みます。物事の過酷さや本質的な変化が顕著になるポイントを指し示す際によく使われます。",
+    "formation": "名詞 + 부터가",
+    "examples": [
+      {
+        "translation": "私は毎朝講義を聴いていますが、今日からが本当の大変さを実感しました。"
+      },
+      {
+        "translation": "愛とは最初からではなく、お互いを理解し合えるようになった瞬間から始まるものです。"
+      },
+      {
+        "translation": "その仕事は月曜日からが本当のスタートです。"
+      },
+      {
+        "translation": "夏休みは来週からが本格的な始まりですが、すでに準備は整っています。"
+      }
+    ]
   },
   "ko_뿐이다_104": {
-    "title": "~뿐이다 [ppunida] (Only, just)",
-    "shortExplanation": "〜を示します 'only' or 'just'.",
-    "longExplanation": "'~뿐이다 [ppunida]' expresses exclusivity by stating that nothing else exists beyond what is mentioned. It is used to emphasize limitation or singularity and is typically found with a negative verb.",
-    "formation": "名詞 + 뿐이다"
+    "title": "~뿐이다（〜だけだ、〜にすぎない、〜のみだ）",
+    "shortExplanation": "それ以外には存在しないことや、その状態に限定されていることを表す排他的な限定表現です（「〜だけだ」「〜にすぎない」）。",
+    "longExplanation": "「~뿐이다」は、限定を表す助詞・依存名詞「뿐」に叙述格助詞「이다」がついた表現です。名詞の直後につくか、用言の未来連体形と結びついた「-(으)ㄹ 뿐이다」の形で用いられます。言及されているもの以外には何もなく、単一の対象や状態に限られていることを断定的に表します。少なさや単なる事実にすぎないことを強調する際に多用されます。",
+    "formation": "名詞 + 뿐이다 | 動詞・形容詞語幹 + -(으)ㄹ 뿐이다",
+    "examples": [
+      {
+        "translation": "いま持っているお金は5000ウォンだけです。だから食べ物を買うには足りません。"
+      },
+      {
+        "translation": "私の友達はあなただけです。だからあなたが助けてくれなければ大変なことになってしまいます。"
+      },
+      {
+        "translation": "部屋の中にはテレビがあるだけです。他の家具は何一つありません。"
+      },
+      {
+        "translation": "友達の中で、私の話を聞いてくれる人は姉だけです。"
+      }
+    ]
   },
   "ko_사이에서_105": {
-    "title": "~사이에서 [saieseo] (Between)",
-    "shortExplanation": "〜を示します 'between' or 'among'.",
-    "longExplanation": "'~사이에서 [saieseo]' is a postposition used in Korean to denote a position within a range or to specify a selection between multiple options. It is used with both tangible objects and abstract choices.",
-    "formation": "名詞 + 사이에서"
+    "title": "~사이에서（〜の間で、〜の中で）",
+    "shortExplanation": "空間的に2つの場所の中間にあることや、複数の選択肢の間で迷うこと、または集団の内部を表す表現です（「〜の間で」「〜の中で」）。",
+    "longExplanation": "「~사이에서」は、間隔や関係を表す名詞「사이」（間）に場所や範囲を示す助詞「에서」（〜で）が合わさった表現です。主に(1)2つの地点・対象の中間という物理的位置、(2)2者択一などの選択肢の間で迷う抽象的な状況、(3)ある集団や人間関係の内側（例：友達の間で、若者の間で）を指す際に用いられます。",
+    "formation": "名詞 + 사이에서",
+    "examples": [
+      {
+        "translation": "どの色を選びましょうか？青と赤の間ですごく悩ましい選択です。"
+      },
+      {
+        "translation": "聖水洞（ソンスドン）と建国大学の間でカフェを探しています。"
+      },
+      {
+        "translation": "今年の夏の間、旅行に行くかそれとも家で休むかという2つの間で決断を下さなければなりません。"
+      },
+      {
+        "translation": "10歳から15歳の間で一番好きな映画を選ばなければなりませんでした。"
+      }
+    ]
   },
   "ko_서야_106": {
-    "title": "~서야 [seoya] (Only after)",
-    "shortExplanation": "〜を示します that a result is possible only if a preceding action or condition is fulfilled.",
-    "longExplanation": "'~서야 [seoya]' is formed by attaching the ending '-서야' to a verb stem. It expresses that only when the preceding action is done (or the condition is met) can the subsequent result occur.",
-    "formation": "動詞 stem + 서야"
+    "title": "~아/어서야（〜してはじめて、〜してやっと、〜してこそ）",
+    "shortExplanation": "前の動作や条件が満たされてはじめて、後ろの事態が実現したり気づいたりすることを強調する接続表現です（「〜してやっと」「〜してはじめて」）。",
+    "longExplanation": "「~아/어서야」は、先行動作や理由を表す接続語尾「-아/어서」に、限定・強調の助詞「-야」（〜してこそ）が結合した形です。「前項の事態が起こってやっと後項が実現する」「前項を経てはじめて後項に気づく」というニュアンスを表し、しばしば副詞「비로소」（はじめて・やっと）と呼応して用いられます。",
+    "formation": "動詞・形容詞語幹 + -아/어서야（陽性母音は -아서야、陰性母音は -어서야、하다 は 해서야）",
+    "examples": [
+      {
+        "translation": "一生懸命勉強してはじめて、試験で良い点数を取ることができます。"
+      },
+      {
+        "translation": "私は家に帰ってコーヒーを飲んでやっと仕事をすることができます。"
+      },
+      {
+        "translation": "彼女は講堂に到着してはじめて、自分が登壇することに気づきました。"
+      },
+      {
+        "translation": "両親に電話をしてやっと、昨日起きた事故について知ることになりました。"
+      }
+    ]
   },
   "ko_소서_107": {
-    "title": "~소서 [soseo] (Polite way to apologize for an action)",
-    "shortExplanation": "〜を表すために使用されます apology or regret in a very polite and formal manner.",
-    "longExplanation": "The verb ending '~소서 [soseo]' is an archaic and formal way to apologize or express deep regret. It is typically used in formal or public settings, especially when addressing someone of higher status, to show sincere remorse and respect.",
-    "formation": "動詞 stem + ~소서"
+    "title": "~소서（〜たまえ、〜してください、お許しください［古風な極尊称・祈願・謝罪］）",
+    "shortExplanation": "古風で格式高い極めて丁寧な終結語尾で、神仏や目上の人物に対して敬虔に懇願・祈願したり、深く謝罪・陳謝したりする際に用いられます（「〜たまえ」「お許しください」）。",
+    "longExplanation": "「~소서」は、朝鮮語の伝統的敬語体系における「ハソソ体（하소서체）」の終結語尾です。王や神仏、あるいは極めて高い地位の相手に対して、最大限の敬意と自らを低くする姿勢を示しながら、切なる祈願や嘆願、あるいは非礼を詫びる際に使われます。時代劇や古典的な文脈において、自分の過ちを深く認めて許しを請う荘重なニュアンスを醸し出します。",
+    "formation": "動詞語幹 + -소서（過去形：動詞語幹 + -았/었/였- + 소서）",
+    "examples": [
+      {
+        "translation": "私がそなたに辛い思いをさせてしまいました、どうかお許しを。もう私以外の他の人を訪ねて行かれよ。"
+      },
+      {
+        "translation": "仕事をうっかり忘れてしまいました、どうかお許しください。あまりに忙しく本当に思い出せませんでした。"
+      },
+      {
+        "translation": "あの時は確かに言葉を誤って送ってしまいました、伏してお詫び申し上げます。本当に申し訳ありません。"
+      },
+      {
+        "translation": "あまりに遅くなってしまいました、どうかご容赦を。今から迅速に行います。"
+      }
+    ]
   },
   "ko_않게_108": {
-    "title": "~않게 [anhge] (So as not to)",
-    "shortExplanation": "〜を表すために使用されます doing something in such a way as to prevent a certain outcome.",
-    "longExplanation": "'~않게 [anhge]' is a grammatical construction formed by attaching ‘않게’ to a verb stem. It expresses the speaker’s intention to avoid or prevent an action, situation, or condition from occurring – similar to saying 'so as not to' in English.",
-    "formation": "動詞 stem + 않게"
+    "title": "~지 않게（〜ないように、〜しないように）",
+    "shortExplanation": "後ろの動作を修飾し、望ましくない事態やトラブルが生じないよう配慮・予防する目的を表す表現です（「〜ないように」「〜しないように」）。",
+    "longExplanation": "「~않게」（または「-지 않게」）は、否定補助用言「-지 않다」に、副詞形語尾「-게」が結合した表現です。後続する動詞の修飾語として機能し、「ある好ましくない状態や失敗、問題が起きないように配慮して行動する」という予防や目的の意味を表します。注意喚起や準備の理由を述べる際によく使われます。",
+    "formation": "動詞・形容詞語幹 + -지 않게",
+    "examples": [
+      {
+        "translation": "何らかの問題が生じないように、あらかじめ準備してください。"
+      },
+      {
+        "translation": "誰も当惑しないように、時間を正確に守らなければなりません。"
+      },
+      {
+        "translation": "遅刻しないように学校に到着するには、早く出発しなければなりません。"
+      },
+      {
+        "translation": "怪我をしないように気をつけるには、安全指針に従わなければなりません。"
+      }
+    ]
   },
   "ko_아어_109": {
-    "title": "~아/어 버리다 [a/eo beorida] (To completely)",
-    "shortExplanation": "Used to emphasize that an action is done completely or to its end.",
-    "longExplanation": "The phrase '~아/어 버리다 [a/eo beorida]' attaches to a verb stem to indicate that an action is carried out completely or thoroughly, often adding a sense of finality. Depending on the context, it may express regret, surprise, or relief. This form is common in casual spoken Korean.",
-    "formation": "動詞 stem + ~아/어 버리다"
+    "title": "~아/어 버리다（〜してしまう、〜してしまった）",
+    "shortExplanation": "動作が完全に完了・終了したことを表し、文脈によって心残りの「残念・後悔」または重荷から解放された「清々しさ・すっきり感」を表す補助動詞です（「〜してしまう」）。",
+    "longExplanation": "「~아/어 버리다」は、接続語尾「-아/어」に補助動詞「버리다」（捨てる）が合わさった表現です。動作が最後まで徹底的に行われ、完了したことを示します。状況に応じて2つの心理的ニュアンスを持ちます。1つは取り返しのつかない事態に対する「後悔・残念・遺憾」、もう1つは面倒な仕事や用事をすべて片付けて「すっきりした安堵感」です。口語で極めて自然に使われます。",
+    "formation": "動詞語幹 + -아/어 버리다（陽性母音は -아 버리다、陰性母音は -어 버리다、하다 は 해 버리다）",
+    "examples": [
+      {
+        "translation": "私は思いがけずバレンタインデーのカードをあっという間に作ってしまいましたが、とても満足しています。"
+      },
+      {
+        "translation": "客室の掃除を待っているうちに、結局私が全部掃除してしまいました。"
+      },
+      {
+        "translation": "私は豚肉が大好きすぎて、一度に全部食べてしまいました。"
+      },
+      {
+        "translation": "冗談を言いすぎて友達が傷つくのではないかと心配したあまり、結局謝ってしまいました。"
+      }
+    ]
   },
   "ko_아어_110": {
-    "title": "~아/어 놓다 [a/eo notda] (To have done something in advance)",
-    "shortExplanation": "〜を示します that an action was performed ahead of time in preparation for something else.",
-    "longExplanation": "'~아/어 놓다 [a/eo notda]' is 〜を表すために使用されます that an action has been done beforehand—either to prepare for a future event or to leave something in a completed state. This form is common in everyday conversation and adds nuance to your sentence structure.",
-    "formation": "動詞 stem + 아/어 놓다"
+    "title": "~아/어 놓다（〜しておく、〜してある）",
+    "shortExplanation": "補助動詞構文で、将来のためにあらかじめ準備として動作を終えておくことや、動作後の状態をそのまま維持・放置しておくことを表します（「〜しておく」「〜してある」）。",
+    "longExplanation": "「~아/어 놓다」は、接続語尾「-아/어」に補助動詞「놓다」（置く）が結合した表現です。主に2つの意味合いを持ちます。1つは、将来の事態や計画に備えてあらかじめ準備としてある行為を済ませておく用法（多くの場合、副詞「미리（あらかじめ・前もって）」を伴います）。もう1つは、完了した動作の結果や状態をそのまま残しておく・維持する用法です。日本語の「〜しておく」「〜してある」に正確に対応します。",
+    "formation": "動詞語幹 + -아/어 놓다（陽母音 ㅏ, ㅗ には -아 놓다、陰母音には -어 놓다、하다 は 해 놓다）",
+    "examples": [
+      {
+        "translation": "明日の朝は忙しいだろうと思い、今晩のうちに朝食を作っておきました。"
+      },
+      {
+        "translation": "試験勉強のために、今週中に講義のノートをすべてあらかじめまとめておきました。"
+      },
+      {
+        "translation": "私たちは避暑地に行く前に、家の中の掃除を済ませておきました。"
+      },
+      {
+        "translation": "今日は友達が来るので、事前に料理を作っておくつもりです。"
+      }
+    ]
   },
   "ko_아어_111": {
-    "title": "~아/어 달라다 [a/eo dallada] (To ask for)",
-    "shortExplanation": "Used to make a request or ask someone to do something.",
-    "longExplanation": "'~아/어 달라다 [a/eo dallada]' is a form derived from the verb '달라하다' used when requesting or asking someone to do something. It is formed by conjugating the verb into its 아/어 form and then adding 달라다.",
-    "formation": "動詞 (아/어 form) + 달라다"
+    "title": "~아/어 달라다 / ~아/어 달라고 하다（〜してくれと頼む、〜してほしいと言う）",
+    "shortExplanation": "間接話法における依頼表現で、話し手が自分のために何かをしてくれるよう他者に頼んだ発言を引用する際に用います（「〜してくれと頼む」「〜してほしいと言う」）。",
+    "longExplanation": "「~아/어 달라다」は、間接話法で「他者が自分自身のために何かをしてくれること」を要求・依頼した内容を引用する際に用いられる特殊な形です。直接話法の「〜주세요（〜してください）」を間接話法で伝える際、受益者が話者自身（依頼者本人）である場合は「~아/어 주라고 하다」ではなく「~아/어 달라고 하다」にする規則があります（第三者のためである場合は「~주라고 하다」）。",
+    "formation": "動詞語幹 + -아/어 달라다（通常「-아/어 달라고 하다/말하다/부탁하다」の形で引用助詞「고」とともに使用）",
+    "examples": [
+      {
+        "translation": "友達がすごくお腹を空かせていて、「早くご飯をくれ」と言いました。"
+      },
+      {
+        "translation": "頭がひどく痛かったので、「薬を少しください」と頼みました。"
+      },
+      {
+        "translation": "家の中があまりにも暑かったので、「エアコンをつけてほしい」とお願いしました。"
+      },
+      {
+        "translation": "コーヒーがとても美味しかったので、「もう一杯ください」と言いました。"
+      }
+    ]
   },
   "ko_아어_112": {
-    "title": "~아/어 대다 [a/eo daeda] (To do aimlessly)",
-    "shortExplanation": "〜を示します that an action is done without a clear purpose or merely out of idleness.",
-    "longExplanation": "'~아/어 대다 [a/eo daeda]' attaches to a verb stem to express that the action is performed aimlessly, without proper thought, or in an idle, unproductive manner.",
-    "formation": "動詞 stem + 아/어 + 대다"
+    "title": "~아/어 대다（しきりに〜する、〜しまくる、やたらと〜する）",
+    "shortExplanation": "補助動詞構文で、ある動作を休むことなく激しく繰り返したり、目的もなくやたらとし続けたりすることを表します（「しきりに〜する」「〜しまくる」）。",
+    "longExplanation": "「~아/어 대다」は、動詞語幹に接続語尾「-아/어」と補助動詞「대다」が結合した表現です。ある行為が過度に、あるいはしつこく何度も繰り返される様子や、とりとめのない目的のままあれこれと漫然とし続ける様子を表します。動作の過剰さに対する苛立ちや呆れ、うんざりした感情など、話し手の批判的・否定的なニュアンスを伴うことがよくあります。",
+    "formation": "動詞語幹 + -아/어 대다（陽母音には -아 대다、陰母音には -어 대다、하다 は 해 대다）",
+    "examples": [
+      {
+        "translation": "私はただ目的もなく買い物をし続けたあげく、結局高い服を買ってしまいました。"
+      },
+      {
+        "translation": "試験期間なのに、彼はただ本をぼんやりと眺め回してばかりいて時間をすべて無駄にしました。"
+      },
+      {
+        "translation": "音楽を聴きながら彼女はただあてもなく街を歩き回っていて、飲食店を見落としてしまいました。"
+      },
+      {
+        "translation": "退屈だったので、ネットサーフィンをやたらとしていて見つけたサイトで本を購入しました。"
+      }
+    ]
   },
   "ko_아어_113": {
-    "title": "~아/어 보이다 [a/eo boida] (To seem, appear)",
-    "shortExplanation": "〜を表すために使用されます that something appears or seems to be a certain way.",
-    "longExplanation": "The grammar point '~아/어 보이다 [a/eo boida]' is 〜を示します that something looks or appears a certain way according to the speaker's perception or judgment. It is often used to describe appearances, conditions, or states based on external observation.",
-    "formation": "動詞 stem + 아/어 + 보이다"
+    "title": "~아/어 보이다（〜そうに見える、〜に見える）",
+    "shortExplanation": "形容詞の語幹につき、外見や様子から話し手が受ける印象や主観的推測を表します（「〜そうに見える」「〜に見える」）。",
+    "longExplanation": "「~아/어 보이다」は、主に形容詞の語幹に接続語尾「-아/어」と補助動詞「보이다（見える）」が結合した表現です。対象の外見・表情・様子などを直接見て、「そのように思われる」「〜という状態に見える」と話し手が感じた判断を表します。外から見た印象を述べる表現であるため、事実そのものと異なる可能性があるニュアンスを含むことも多くあります。",
+    "formation": "形容詞語幹 + -아/어 보이다（陽母音には -아 보이다、陰母音には -어 보이다、하다 は 해 보이다）",
+    "examples": [
+      {
+        "translation": "彼女はとても幸せそうに見えますが、実際には計り知れないストレスを抱えているようです。"
+      },
+      {
+        "translation": "今日は天気がとても良さそうですね、外出するのにうってつけの日のようです。"
+      },
+      {
+        "translation": "このケーキは甘そうに見えますが、実際にはそれほど甘くありません。"
+      },
+      {
+        "translation": "友達に疲れているように見えると言われましたが、私はそのように感じたことはありません。"
+      }
+    ]
   },
   "ko_아어_114": {
-    "title": "~아/어 서는 [a/eo seoneun] (Although)",
-    "shortExplanation": "〜を表すために使用されます a contrast or contrary expectation; 'although' or 'but'.",
-    "longExplanation": "'~아/어 서는 [a/eo seoneun]' is used to present a situation that contrasts with or contradicts an expectation. 〜と訳されます 'although' or 'but' and highlights an unexpected or contrary fact.",
-    "formation": "動詞 stem + 아/어 서는"
+    "title": "~아/어서는（〜しては、〜したところで、〜だからといって）",
+    "shortExplanation": "原因や先行動作を表す接続語尾に対比の助詞が結合し、前項の行為や理由にもかかわらず、後項で期待に反する結果が生じたことを表します（「〜してはみたものの」「〜したのに」）。",
+    "longExplanation": "「~아/어서는」は、理由や順序を表す接続語尾「-아/어서」に対比を表す補助詞「-는」が組み合わさった表現です。前項で「〜ということで」「〜して」と前提の行為や理由を提示しつつ、後項において当初の予想や目的に反する思わしくない結果、あるいは意外な展開が生じたことを対比的に強調します。話し手の失望や想定外の結末に対する悔しさが込められる傾向があります。",
+    "formation": "動詞・形容詞語幹 + -아/어서는（陽母音には -아서는、陰母音には -어서는、하다 は 해서는）",
+    "examples": [
+      {
+        "translation": "寒いというので外出を控えたのですが、実際にはそれほど寒くありませんでした。"
+      },
+      {
+        "translation": "ジムに頻繁に通っては一生懸命運動したのに、体重はほとんど減りませんでした。"
+      },
+      {
+        "translation": "一生懸命勉強して試験で良い点を取ろうとしたのですが、結果は芳しくありませんでした。"
+      },
+      {
+        "translation": "一生懸命暗記して公演ではうまくできたと思っていたのですが、たくさんのミスをしてしまいました。"
+      }
+    ]
   },
   "ko_아어야만_115": {
-    "title": "~아/어야만 [a/eoyaman] (Only if/when)",
-    "shortExplanation": "〜を表すために使用されます a condition that only if/when something happens, something else will or can occur.",
-    "longExplanation": "The phrase '~아/어야만' is a conditional form in Korean that expresses the idea that only if/when a certain condition is satisfied can an expected result occur. This grammar point indicates that an action or state is contingent on a condition being fulfilled; without that condition, the action or state is impossible. It is often used with potential or hypothetical situations.",
-    "formation": "動詞 + 아/어야만 (Depending on the final vowel of the verb stem)"
+    "title": "~아/어야만（〜してこそ、〜して初めて、〜しなければ〜ない）",
+    "shortExplanation": "必須条件を表す接続語尾に限定の助詞が結合し、後項の実現のために前項が唯一不可欠な前提条件であることを強調します（「〜してこそ」「〜して初めて」）。",
+    "longExplanation": "「~아/어야만」は、必要条件を表す接続語尾「-아/어야」に排他的限定を表す補助詞「-만」（だけ）が合わさった構文です。後項の事態が成就するためには、前項の動作や状態が満たされることが絶対的な必須条件であることを強く打ち出します。前項が達成されなければ後項は不可能であるというニュアンスを持ち、後項には「〜(으)ㄹ 수 있다（〜できる）」などの可能表現が頻繁に続きます。",
+    "formation": "動詞・形容詞語幹 + -아/어야만（陽母音には -아야만、陰母音には -어야만、하다 は 해야만）",
+    "examples": [
+      {
+        "translation": "高校を卒業してこそ、大学に進学することができます。"
+      },
+      {
+        "translation": "その映画を見るためには、必ずチケットを予約しなければ観ることができません。"
+      },
+      {
+        "translation": "目標を達成するためには、一日一日を懸命に励まなければなりません。"
+      },
+      {
+        "translation": "そこへ行くにはバスに乗らなければいけません。地下鉄では行くことができません。"
+      }
+    ]
   },
   "ko_아어지다_116": {
-    "title": "~아/어지다 [a/eojida] (To become)",
-    "shortExplanation": "〜を表すために使用されます a change of state, meaning 'to become'.",
-    "longExplanation": "'~아/어지다' is a verb ending used in Korean to indicate a change in state, condition, or emotion—essentially, 'to become'. The ending is chosen based on the vowel in the preceding syllable (use '아지다' after ㅏ or ㅗ, and '어지다' for all other vowels). It is often used to show a transition from one state to another.",
-    "formation": "Action verb stem + (~아/어지다)"
+    "title": "~아/어지다（〜くなる、〜になる）",
+    "shortExplanation": "形容詞の語幹につき、性質や状態が時間の経過とともにその状態へと変化していく過程を表します（「〜くなる」「〜になる」）。",
+    "longExplanation": "「~아/어지다」は、主に形容詞の語幹に結合して状態の変化を表す動詞化表現です（他動詞につく場合は受身の意味になります）。人や物、環境の状態が時間とともに徐々にその性質を帯びるよう変化していく様子を表し、日本語の「〜くなる」「〜になる」に相当します。天候、感情、状況の推移を客観的に述べる際によく用いられます。",
+    "formation": "形容詞語幹 + -아/어지다（陽母音には -아지다、陰母音には -어지다、하다 は 해지다）",
+    "examples": [
+      {
+        "translation": "天気が急に寒くなったので、ストーブをつけなければなりませんでした。"
+      },
+      {
+        "translation": "去年は仕事が多すぎて疲れ果て、休む時間がなくなってしまって大変でした。"
+      },
+      {
+        "translation": "友達が忙しくなったので、頻繁に会うことができなくなりました。"
+      },
+      {
+        "translation": "食べ物の量が多すぎて、一度にはとても食べきれませんでした。"
+      }
+    ]
   },
   "ko_았었_117": {
-    "title": "~았/었 던 [at/eot deon] (Past descriptive)",
-    "shortExplanation": "Used to describe past events or situations from the speaker's memory.",
-    "longExplanation": "'~았/었 던' is a past descriptive form in Korean used to recall an event, person, or situation that occurred in the past. It is commonly attached to a verb (forming '보던') when modifying a noun and expresses a past state or memory from the speaker’s perspective.",
-    "formation": "動詞 in past tense (~았/었) + 던 (attached before a noun)"
+    "title": "~았/었던（かつて〜した、〜していた（過去の回想））",
+    "shortExplanation": "過去回想の連体形語尾で、過去に完了して現在は続いていない事柄や体験を話し手が思い起こしながら名詞を修飾する表現です（「かつて〜した…」「〜したことのある…」）。",
+    "longExplanation": "「~았/었던」は、過去時制語尾「-았/었-」に過去の回想を表す連体形語尾「-던」が合わさった表現です。名詞の前に置かれ、過去のある時点で一度完了し、現在ではすでに途絶えて続かなくなっている出来事や状態を回顧的に叙述します。単なる過去連体形「-(으)ㄴ」に比べ、遠い過去の思い出や懐かしさ、あるいは現在との断絶を想起させるニュアンスが色濃く現れます。",
+    "formation": "動詞・形容詞語幹 + -았/었던 + 名詞（陽母音には -았던、陰母音には -었던、하다 は 했던）",
+    "examples": [
+      {
+        "translation": "子供の頃によく見ていたアニメを昨日久しぶりに見返したら、たくさんの思い出が蘇りました。"
+      },
+      {
+        "translation": "彼は5年前に出会った友人と久しぶりに再会を果たしました。"
+      },
+      {
+        "translation": "夏に行ったことのあるあのビーチへ、もう一度行ってみたいです。"
+      },
+      {
+        "translation": "私は学生時代に出会った友人たちと、今でも親しく付き合っています。"
+      }
+    ]
   },
   "ko_았었으면_118": {
-    "title": "~았/었으면 좋겠다 [at/eosseumyeon jokgetda] (Wish something had happened)",
-    "shortExplanation": "〜を表すために使用されます a wish or hope that something had occurred in the past.",
-    "longExplanation": "'~았/었으면 좋겠다' is a grammar construction in Korean that expresses a speaker's wish or regret about a past event that did not occur. By combining a verb in the past tense with '으면 좋겠다', it conveys a longing for a different past outcome.",
-    "formation": "動詞 (past tense) + 았/었으면 좋겠다"
+    "title": "~았/었으면 좋겠다（〜ならよかったのに、〜だったらよかったのに）",
+    "shortExplanation": "強い願望を表すとともに、過去に思い通りにいかなかった事態に対する後悔や未練を表します（「〜だったらよかったのに」「〜していればよかったのに」）。",
+    "longExplanation": "「~았/었으면 좋겠다」は、過去時制「-았/었-」に仮定条件の「-(으)면」と「좋겠다（良いだろう）」が結合した構文です。現在や未来に対する切実な願いを表すこともありますが、過去の文脈においては、現実には起きなかった事実に対して「あの時〜していればよかったのに」と叶わなかった過去を惜しむ仮定・後悔の念を強く表します。",
+    "formation": "動詞・形容詞語幹 + -았/었으면 좋겠다（陽母音には -았으면 좋겠다、陰母音には -었으면 좋겠다、하다 は 했으면 좋겠다）",
+    "examples": [
+      {
+        "translation": "あの時会社に報告に行っていればよかったのに。そうしていれば今こんなことにはなっていなかっただろうに。"
+      },
+      {
+        "translation": "あなたをもっと早く知っていればよかったのに。そうであれば多くの問題を避けられたはずなのに。"
+      },
+      {
+        "translation": "あの日彼の後について行っていればよかったのに。そうしていればどんな経験ができたのだろうか。"
+      },
+      {
+        "translation": "もっとたくさん練習しておけばよかったのに。そうすれば自分の成果がもっと向上しただろうに。"
+      }
+    ]
   }
 };

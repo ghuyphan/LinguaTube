@@ -50,7 +50,7 @@ graph TB
         Supadata[Supadata Native Captions]
         Gladia[Gladia AI Transcription]
         Turnstile[Cloudflare Turnstile CAPTCHA]
-        Supabase[Supabase PostgreSQL & Auth: profiles, vocabulary, streaks, gamification, video_levels, orders, get_leaderboard RPC]
+        Supabase[Supabase PostgreSQL & Auth: profiles, vocabulary, streaks, gamification, xp_transactions, video_levels, orders, gamification RPCs]
         DictAPIs[Jotoba / Mazii / Naver / MDBG / Glosbe]
         Lingva[Lingva Translate API]
         GoogleGTX[Google Translate GTX]
@@ -410,26 +410,36 @@ sequenceDiagram
     actor Learner
     participant Action as Video / Vocab / Study / Quiz Action
     participant Gamification as GamificationService
+    participant Repo as OfflineGamificationRepository
+    participant Supabase as Supabase RPC (award_study_xp)
     participant Toast as ToastService
     participant Storage as LocalStorage (linguatube_gamification)
     participant Dialog as AchievementsDialogComponent
 
     Learner->>Action: Complete Video (>=80%) / Save Word / Review SRS / Pass Quiz
     Action->>Gamification: recordVideoCompleted() / recordWordSaved() / recordFlashcardReviewed()
-    Gamification->>Gamification: Add Action XP (e.g. +25 XP)
-    Gamification->>Gamification: Recalculate Level: floor(sqrt(XP / 100)) + 1
-    alt Level Increased
+    Gamification->>Repo: recordXpGain(type, amount, refId)
+    alt Online & Authenticated
+        Repo->>Supabase: rpc('award_study_xp', { p_activity_type, p_amount, p_reference_id, p_client_date })
+        Note over Supabase: Validate activity cap, check 600 XP/hr ceiling, update xp_transactions
+        Supabase-->>Repo: { success, xp, level, awarded }
+    else Offline / Guest
+        Repo->>Repo: Optimistic Update + Enqueue to pending_xp_gains
+    end
+    Repo-->>Gamification: Updated State (xp, level = min(50, floor(sqrt(xp/75)) + 1))
+    alt Level Increased (1 to 50 Echelon)
         Gamification->>Toast: show({ type: 'achievement', message: '🎉 Level Up! You reached Level N' })
     end
-    Gamification->>Gamification: Evaluate 19 Milestone Criteria
+    Gamification->>Gamification: Evaluate 41 Milestone Criteria (6 Categories)
     alt New Achievement Unlocked
         Gamification->>Gamification: Award Achievement XP Bounty
         Gamification->>Toast: show({ type: 'achievement', message: '🏆 Unlocked: Badge Name (+XP)' })
+        Gamification->>Repo: syncAchievements(unlockedIds, notifiedIds)
     end
-    Gamification->>Storage: Persist Updated GamificationState (Optimistic)
+    Gamification->>Storage: Persist Updated GamificationState
     Learner->>Dialog: Open Achievements (from Sidebar Header or Stats Bar)
     Dialog->>Gamification: Read userState, currentLevel, levelTitle, achievements
-    Dialog-->>Learner: Display Hero XP Banner, Filter Tabs & Unlocked Badges
+    Dialog-->>Learner: Display Hero XP Banner, Filter Tabs & Unlocked Badges (Max Level 50)
 ```
 
 ---

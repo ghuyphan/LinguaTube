@@ -922,16 +922,56 @@
     "gold": "Gold Champion",
     "silver": "Silver Knight",
     "bronze": "Bronze Warrior",
-    "rank1": "Curious Beginner",
-    "rank2": "Active Listener",
-    "rank3": "Word Collector",
-    "rank4": "Dedicated Learner",
-    "rank5": "Conversationalist",
-    "rank6": "Fluent Explorer",
-    "rank7": "Advanced Scholar",
-    "rank8": "Language Specialist",
-    "rank9": "Master Polyglot",
-    "rank10": "Language Expert"
+    "rank1": "Novice Listener",
+    "rank2": "Curious Beginner",
+    "rank3": "Word Gatherer",
+    "rank4": "Sound Seeker",
+    "rank5": "Eager Explorer",
+    "rank6": "Active Listener",
+    "rank7": "Phrase Finder",
+    "rank8": "Subtitle Student",
+    "rank9": "Sentence Scout",
+    "rank10": "Habit Builder",
+    "rank11": "Word Collector",
+    "rank12": "Vocabulary Builder",
+    "rank13": "Flashcard Apprentice",
+    "rank14": "Shadowing Novice",
+    "rank15": "Subtitle Explorer",
+    "rank16": "Dedicated Learner",
+    "rank17": "Fluent Streamer",
+    "rank18": "Contextual Reader",
+    "rank19": "Dialogue Tracker",
+    "rank20": "Grammar Detective",
+    "rank21": "Conversationalist",
+    "rank22": "Contextual Decoder",
+    "rank23": "Rapid Recognizer",
+    "rank24": "Immersion Practitioner",
+    "rank25": "Vocabulary Vault",
+    "rank26": "Fluent Explorer",
+    "rank27": "Cultural Voyager",
+    "rank28": "Idiom Enthusiast",
+    "rank29": "Accent Tuner",
+    "rank30": "Polyglot In Training",
+    "rank31": "Advanced Scholar",
+    "rank32": "Speed Shadow",
+    "rank33": "Comprehension Ace",
+    "rank34": "Nuance Hunter",
+    "rank35": "Master of Comprehension",
+    "rank36": "Language Specialist",
+    "rank37": "Subtitle Virtuoso",
+    "rank38": "Lexicon Master",
+    "rank39": "Syntax Artisan",
+    "rank40": "Native Resonance",
+    "rank41": "Master Polyglot",
+    "rank42": "Cultural Sage",
+    "rank43": "Subtitle Maestro",
+    "rank44": "Eloquent Mind",
+    "rank45": "Language Sage",
+    "rank46": "Language Expert",
+    "rank47": "Infinite Memory",
+    "rank48": "Subtitle Luminary",
+    "rank49": "Legendary Polyglot",
+    "rank50": "Living Lexicon"
   },
   "leaderboard": {
     "title": "Global Ranking",
@@ -1080,6 +1120,110 @@
     "quiz50": {
       "title": "Quiz Grandmaster",
       "desc": "Answer 50 subtitle quizzes correctly"
+    },
+    "watch15": {
+      "title": "Media Enthusiast",
+      "desc": "Complete 15 learning videos"
+    },
+    "watch30": {
+      "title": "Cinephile Learner",
+      "desc": "Complete 30 learning videos"
+    },
+    "watch60": {
+      "title": "Immersion Traveler",
+      "desc": "Complete 60 learning videos"
+    },
+    "watch250": {
+      "title": "Cinema Connoisseur",
+      "desc": "Complete 250 learning videos"
+    },
+    "watch500": {
+      "title": "Master of Immersion",
+      "desc": "Complete 500 learning videos"
+    },
+    "vocab10": {
+      "title": "Word Seeker",
+      "desc": "Save 10 vocabulary words"
+    },
+    "vocab50": {
+      "title": "Vocabulary Apprentice",
+      "desc": "Save 50 vocabulary words"
+    },
+    "vocab250": {
+      "title": "Lexicon Architect",
+      "desc": "Save 250 vocabulary words"
+    },
+    "vocab1000": {
+      "title": "Polyglot's Vault",
+      "desc": "Save 1,000 vocabulary words"
+    },
+    "vocabMaster50": {
+      "title": "Deep Recall",
+      "desc": "Master 50 words with spaced repetition"
+    },
+    "vocabMaster100": {
+      "title": "Iron Memory",
+      "desc": "Master 100 words with spaced repetition"
+    },
+    "vocabMaster250": {
+      "title": "Lexical Mastery",
+      "desc": "Master 250 words with spaced repetition"
+    },
+    "vocabMaster500": {
+      "title": "Living Memory",
+      "desc": "Master 500 words with spaced repetition"
+    },
+    "streak14": {
+      "title": "Two-Week Triumph",
+      "desc": "Maintain a 14-day learning streak"
+    },
+    "streak60": {
+      "title": "Two-Month Torch",
+      "desc": "Maintain a 60-day learning streak"
+    },
+    "streak200": {
+      "title": "Bicentennial Blaze",
+      "desc": "Maintain a 200-day learning streak"
+    },
+    "streak365": {
+      "title": "Year of Mastery",
+      "desc": "Maintain a 365-day learning streak"
+    },
+    "srs100": {
+      "title": "Card Grinder",
+      "desc": "Complete 100 flashcard reviews"
+    },
+    "srs250": {
+      "title": "Memory Smith",
+      "desc": "Complete 250 flashcard reviews"
+    },
+    "srs500": {
+      "title": "SRS Champion",
+      "desc": "Complete 500 flashcard reviews"
+    },
+    "srs1000": {
+      "title": "Grand Memorizer",
+      "desc": "Complete 1,000 flashcard reviews"
+    },
+    "quiz5": {
+      "title": "Attentive Ear",
+      "desc": "Answer 5 subtitle quizzes correctly"
+    },
+    "quiz15": {
+      "title": "Comprehension Scout",
+      "desc": "Answer 15 subtitle quizzes correctly"
+    },
+    "quiz30": {
+      "title": "Quiz Specialist",
+      "desc": "Answer 30 subtitle quizzes correctly"
+    },
+    "quiz60": {
+      "title": "Quiz Master",
+      "desc": "Answer 60 subtitle quizzes correctly"
+    },
+    "quiz100": {
+      "title": "Quiz Champion",
+      "desc": "Answer 100 subtitle quizzes correctly"
     }
   }
 }

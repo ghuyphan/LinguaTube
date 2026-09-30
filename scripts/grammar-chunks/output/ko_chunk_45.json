@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_하면서도_35": {
+      "title": "~(으)면서도 (Vừa... lại vừa..., dù... nhưng vẫn...)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả hai hành động hoặc trạng thái diễn ra đồng thời nhưng mang tính đối lập, mâu thuẫn nhau ('dù... nhưng vẫn...', 'vừa... lại vừa...').",
+      "longExplanation": "'~(으)면서도' được cấu tạo bởi vĩ tố liên kết '-(으)면서' (biểu thị hai hành động xảy ra đồng thời) kết hợp với trợ từ nhấn mạnh đối lập '-도' (cũng, lại). Ngữ pháp này dùng để nối hai mệnh đề, diễn tả việc chủ ngữ dù đang thực hiện hành động hoặc ở trong trạng thái ở vế trước nhưng vế sau lại xuất hiện một hành động hoặc trạng thái đối lập, mâu thuẫn hay trái ngược với lẽ thường. Thường dùng khi có sự bất nhất giữa hành vi, cảm xúc hoặc suy nghĩ.",
+      "formation": "Thân động từ/tính từ + -(으)면서도 (thân từ kết thúc bằng nguyên âm hoặc phụ âm ㄹ dùng -면서도, kết thúc bằng phụ âm khác dùng -으면서도) | Danh từ + (이)면서도 (kết thúc bằng nguyên âm dùng -면서도, kết thúc bằng phụ âm dùng -이면서도)",
+      "examples": [
+        {
+          "translation": "Cô ấy dù bận rộn làm việc ở công ty nhưng luôn về nhà sớm để ăn cơm cùng các con."
+        },
+        {
+          "translation": "Dù tôi tập trung vào việc học nhưng vẫn gặp khó khăn trong việc giao tiếp với bạn bè."
+        },
+        {
+          "translation": "Dù đang chung sống hạnh phúc bên người yêu, anh ấy vẫn luôn lo sợ những lúc cô ấy không ở cạnh bên."
+        },
+        {
+          "translation": "Mẹ tuy luôn chăm lo cho sức khỏe của người khác, nhưng lại thường phớt lờ sức khỏe của chính mình."
+        }
+      ]
+    },
+    "ko_하면_36": {
+      "title": "-(으)면 -(으)ㄹ수록 (Càng... càng...)",
+      "shortExplanation": "Dùng để diễn tả một hành động hoặc trạng thái ở vế trước càng tăng tiến thì mức độ hoặc kết quả ở vế sau cũng thay đổi theo tương ứng ('càng... càng...').",
+      "longExplanation": "'-(으)면 -(으)ㄹ수록' là cấu trúc liên kết kết hợp giữa vĩ tố giả định điều kiện '-(으)면' và vĩ tố biểu thị mức độ tăng tiến '-(으)ㄹ수록'. Cấu trúc này dùng để nhấn mạnh mối quan hệ tương quan lũy tiến: khi hành động hoặc trạng thái phía trước càng được lặp lại, gia tăng hoặc biến chuyển thì kéo theo kết quả, cảm xúc hoặc sự việc ở mệnh đề sau cũng thay đổi tỉ lệ thuận theo mức độ đó. Đôi khi có thể lược bỏ phần '-(으)면' chỉ còn '-(으)ㄹ수록' mà ý nghĩa cơ bản không đổi.",
+      "formation": "Thân động từ/tính từ + -(으)면 Thân động từ/tính từ + -(으)ㄹ수록 (thân từ có nguyên âm hoặc phụ âm ㄹ dùng -면 / -ㄹ수록, có phụ âm cuối dùng -으면 / -을수록)",
+      "examples": [
+        {
+          "translation": "Cái này càng luyện tập thì tôi càng làm tốt hơn, nên nếu tiếp tục luyện tập tôi sẽ có thể thành thạo được."
+        },
+        {
+          "translation": "Thời tiết càng trở lạnh thì càng có nhiều người ghé vào cửa hàng quần áo."
+        },
+        {
+          "translation": "Tôi càng học tiếng Hàn thì lại càng muốn tìm hiểu nhiều hơn về ngôn ngữ này."
+        },
+        {
+          "translation": "Càng sống ở thành phố này, tôi càng nhận ra có nhiều điều để ngắm nhìn và nhiều việc để trải nghiệm."
+        }
+      ]
+    },
+    "ko_하자마자_37": {
+      "title": "-자마자 / ~하자마자 (Ngay sau khi..., vừa mới... thì...)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả hành động ở vế sau diễn ra ngay tức khắc, không có khoảng cách thời gian sau khi hành động ở vế trước kết thúc ('ngay khi', 'vừa... xong thì...').",
+      "longExplanation": "'-자마자' là vĩ tố liên kết dùng để gắn vào thân động từ, biểu thị một hành động xảy ra gần như đồng thời hoặc ngay lập tức tiếp nối sau khi hành động ở mệnh đề trước vừa mới kết thúc. Ngữ pháp này nhấn mạnh tính liên tục và sự khẩn trương, không có sự gián đoạn về thời gian giữa hai hành động. Lưu ý rằng thì quá khứ không được chia ở mệnh đề trước mà chỉ chia ở mệnh đề sau cùng của câu.",
+      "formation": "Thân động từ + -자마자 (không phụ thuộc vào phụ âm cuối hay nguyên âm; 하다 biến thành 하자마자)",
+      "examples": [
+        {
+          "translation": "Vừa đến trường một cái là anh ấy đi thẳng vào lớp học ngay."
+        },
+        {
+          "translation": "Ngay khi vừa đến sân bay, tôi đã gọi một chiếc taxi."
+        },
+        {
+          "translation": "Cô ấy vừa thức dậy là đã pha cà phê ngay lập tức."
+        },
+        {
+          "translation": "Vừa tan làm ở công ty là tôi về thẳng nhà nghỉ ngơi luôn."
+        }
+      ]
+    },
+    "ko_해서_38": {
+      "title": "-아/어서 그런지 / ~해서 그런지 (Chắc là vì... nên..., có lẽ do... chăng)",
+      "shortExplanation": "Dùng khi người nói phỏng đoán rằng một sự việc nào đó có thể là nguyên nhân hoặc lý do dẫn đến kết quả ở vế sau, nhưng chưa dám khẳng định chắc chắn 100% ('có lẽ vì... nên...').",
+      "longExplanation": "'-아/어서 그런지' là cấu trúc kết hợp giữa vĩ tố chỉ nguyên nhân '-아/어서', động từ '그렇다' (như thế) và vĩ tố nghi vấn phỏng đoán '-(으)ㄴ지'. Ngữ pháp này dùng để đưa ra một lý do mang tính suy đoán, ức đoán: người nói nghĩ rằng chính nguyên nhân ở mệnh đề trước là nguồn cơn dẫn đến tình huống ở mệnh đề sau, nhưng không hoàn toàn đoan chắc. Tương đương trong tiếng Việt là 'chắc tại vì...', 'có lẽ do... nên...', 'không biết có phải vì... hay không mà...'. Khi gắn với danh từ, cấu trúc có dạng '-(이)라서 그런지'.",
+      "formation": "Thân động từ/tính từ + -아/어서 그런지 (thân từ có nguyên âm ㅏ, ㅗ dùng -아서 그런지; nguyên âm khác dùng -어서 그런지; 하다 biến thành 해서 그런지) | Danh từ + (이)라서 그런지",
+      "examples": [
+        {
+          "translation": "Hôm nay chắc là vì thời tiết đẹp nên có thể thấy rất nhiều người ra ngoài hoạt động."
+        },
+        {
+          "translation": "Có lẽ vì hôm qua bị thương nên hôm nay cô ấy bước đi vô cùng cẩn trọng."
+        },
+        {
+          "translation": "Chắc là hôm qua tôi ăn quá nhiều mì tương đen rồi. Hôm nay có lẽ vì đau bụng nên thể trạng không được tốt."
+        },
+        {
+          "translation": "Có lẽ do đêm qua gặp cô ấy trong giấc mơ nên cả ngày hôm nay tôi cứ nghĩ về cô ấy suốt."
+        }
+      ]
+    },
+    "ko_하여서는_39": {
+      "title": "-아/어서는 안 되다 / ~하여서는 안 되다 (Không được làm..., tuyệt đối không được...)",
+      "shortExplanation": "Dùng để biểu thị sự ngăn cấm nghiêm khắc hoặc đưa ra lời khuyên mạnh mẽ rằng tuyệt đối không được phép thực hiện hành động nào đó ('không được...').",
+      "longExplanation": "'-아/어서는 안 되다' (dạng văn viết trang trọng thường viết là '-아/여서는 안 되다') là cấu trúc diễn tả sự cấm đoán mang tính quy tắc, pháp luật, đạo đức hoặc nguyên tắc ứng xử. Cấu trúc kết hợp vĩ tố điều kiện '-아/어서', trợ từ nhấn mạnh '-는' và cụm phủ định '안 되다' (không được, không được phép). Nó nhấn mạnh rằng nếu thực hiện hành động ở vế trước thì sẽ gây ra hậu quả tiêu cực, vi phạm quy định hoặc đi ngược lại chuẩn mực đạo đức xã hội. Trong khẩu ngữ, cấu trúc này thường tương đương với '-면 안 되다'.",
+      "formation": "Thân động từ + -아/어서는 안 되다 (thân từ có nguyên âm ㅏ, ㅗ dùng -아서는 안 되다; các nguyên âm khác dùng -어서는 안 되다; 하다 biến thành 해서는 안 되다 hoặc 하여서는 안 되다)",
+      "examples": [
+        {
+          "translation": "Dù mang danh là học sinh đi chăng nữa thì việc đi học muộn tuyệt đối không được phép xảy ra."
+        },
+        {
+          "translation": "Với tư cách là một bác sĩ, tuyệt đối không được tiết lộ thông tin bệnh nhân ra bên ngoài."
+        },
+        {
+          "translation": "Không được vì kỳ thi ngày mai mà thức trắng đêm đâu. Sức khỏe luôn là ưu tiên hàng đầu."
+        },
+        {
+          "translation": "Tuyệt đối không được thực hiện những hành vi gây phương hại đến người khác."
+        }
+      ]
+    },
+    "ko_한테는_40": {
+      "title": "~한테는 (Đối với..., cho/với ai đó thì...)",
+      "shortExplanation": "Trợ từ chỉ đối tượng tiếp nhận hành động kết hợp trợ từ nhấn mạnh/đối chiếu, mang ý nghĩa 'đối với ai đó thì...', 'cho/với người đó thì...'.",
+      "longExplanation": "'~한테는' là sự kết hợp giữa phó từ cách trợ từ '~한테' (chỉ đối tượng người hoặc động vật tiếp nhận hành động, tương đương 'cho', 'với', thường dùng trong khẩu ngữ) và trợ từ đối chiếu nhấn mạnh '-는'. Cấu trúc này dùng để nhấn mạnh riêng biệt đối tượng đó trong sự đối chiếu so sánh với những đối tượng khác ('đối với người này thì thế này, nhưng đối với người kia thì thế khác'). Lưu ý rằng '한테' chỉ dùng cho người hoặc động vật, không dùng cho sự vật hay cơ quan đoàn thể (khi đó phải dùng '에/에는'); đối với người lớn tuổi cần tôn kính thì dùng dạng kính ngữ là '께는'.",
+      "formation": "Danh từ (chỉ người/động vật) + 한테는 (đối với bề trên tôn kính dùng 께는; trong văn viết trang trọng dùng 에게는)",
+      "examples": [
+        {
+          "translation": "Tôi đến đây là để mua quà cho chị gái. Còn với bạn bè thì tôi dự định gửi tin nhắn qua email."
+        },
+        {
+          "translation": "Đối với bố thì tôi vẫn chưa báo sự thật này, mới chỉ kể cho chị gái nghe thôi."
+        },
+        {
+          "translation": "Đối với trẻ con thì phải giải thích bằng ngôn từ đơn giản, nếu quá phức tạp chúng sẽ không thể hiểu được."
+        },
+        {
+          "translation": "Anh ấy đối với mẹ thì lúc nào cũng ân cần thân thiện, nhưng đối với bố thì lại rất thô lỗ."
+        }
+      ]
+    },
+    "ko_할_41": {
+      "title": "-(으)ㄹ 만하다 / ~할 만하다 (Đáng để..., bõ công..., xứng đáng...)",
+      "shortExplanation": "Dùng để diễn tả một hành động nào đó rất đáng giá, bõ công để thực hiện, hoặc tình trạng nào đó nằm trong mức có thể chấp nhận được ('đáng để làm gì').",
+      "longExplanation": "'-(으)ㄹ 만하다' là cấu trúc kết hợp giữa vĩ tố định ngữ tương lai '-(으)ㄹ' và tính từ phụ thuộc '만하다' (đáng, đủ giá trị). Cấu trúc này dùng để biểu thị sự đánh giá chủ quan của người nói rằng đối tượng hoặc hành động đó có đủ giá trị, ý nghĩa hoặc phẩm chất để bỏ công sức, thời gian hay tiền bạc thực hiện ('rất đáng để xem/mua/thử'). Ngoài ra, nó cũng có thể biểu đạt ý nghĩa một việc gì đó nằm trong giới hạn chịu đựng hoặc khả thi ('cũng tạm được', 'còn chịu được').",
+      "formation": "Thân động từ + -(으)ㄹ 만하다 (thân từ có nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 만하다, có phụ âm cuối dùng -을 만하다; 하다 biến thành 할 만하다)",
+      "examples": [
+        {
+          "translation": "Việc tiếp tục học nấu ăn tuy khó khăn nhưng bù lại được thường xuyên ăn món ngon nên cũng rất bõ công."
+        },
+        {
+          "translation": "Tác phẩm này tuy đắt nhưng xét về thiết kế đẹp và chất lượng cao thì rất đáng để mua."
+        },
+        {
+          "translation": "Chờ đợi trong khoảng thời gian dài tuy mệt mỏi nhưng nếu kết quả tốt đẹp thì cũng rất đáng công."
+        },
+        {
+          "translation": "Bộ phim này không hay lắm nên chẳng đáng xem chút nào."
+        }
+      ]
+    },
+    "ko_할_42": {
+      "title": "-(으)ㄹ 수밖에 없다 / ~할 수밖에 없다 (Chỉ còn cách..., buộc phải..., không thể không...)",
+      "shortExplanation": "Dùng để diễn tả tình huống không còn sự lựa chọn nào khác ngoài việc thực hiện hành động đó ('chỉ còn cách...', 'đành phải...').",
+      "longExplanation": "'-(으)ㄹ 수밖에 없다' được cấu thành bởi cấu trúc biểu thị khả năng '-(으)ㄹ 수 있다/없다', trợ từ chỉ sự duy nhất mang tính giới hạn '-밖에' (ngoài... ra thì không còn) và phủ định từ '없다'. Cấu trúc này dùng để nhấn mạnh tình thế bắt buộc hoặc quy luật tất yếu: do hoàn cảnh khách quan hoặc lý do bất khả kháng, chủ ngữ không còn phương án thay thế nào khác mà bắt buộc phải chọn hành động đó. Tương đương trong tiếng Việt là 'chỉ còn cách...', 'không thể không...', 'đành phải...'.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 수밖에 없다 (thân từ có nguyên âm hoặc phụ âm ㄹ dùng -ㄹ 수밖에 없다, có phụ âm cuối dùng -을 수밖에 없다; 하다 biến thành 할 수밖에 없다)",
+      "examples": [
+        {
+          "translation": "Vì trời đang mưa nên tôi chẳng còn cách nào khác ngoài việc mang theo ô."
+        },
+        {
+          "translation": "Vì sắp có kỳ thi nên tôi đành phải tiếp tục học bài thôi."
+        },
+        {
+          "translation": "Cô ấy đã nói như thế rồi nên tôi không thể không tin tưởng cô ấy."
+        },
+        {
+          "translation": "Bây giờ vì không có tiền nên tôi chỉ có thể mua những món đồ rẻ tiền như thế này thôi."
+        }
+      ]
+    },
+    "ko_해_43": {
+      "title": "-(으)ㄹ수록 / ~해 갈수록 (Càng... thì càng..., càng ngày càng...)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả một trạng thái hay hành động khi càng tiếp diễn hoặc gia tăng theo thời gian thì mức độ ở vế sau cũng tỉ lệ thuận gia tăng theo ('càng... thì càng...').",
+      "longExplanation": "'-(으)ㄹ수록' (hoặc dạng kết hợp '-어/아 갈수록' biểu thị sự biến chuyển theo thời gian) là vĩ tố liên kết chỉ mức độ tăng tiến theo tỷ lệ thuận. Cấu trúc này diễn tả ý nghĩa: mức độ của hành động hoặc trạng thái ở mệnh đề trước càng tiến triển, càng đào sâu hoặc càng kéo dài thì kéo theo tính chất, số lượng hay cảm xúc ở mệnh đề sau cũng ngày một gia tăng tương ứng. Tương đương trong tiếng Việt là 'càng ngày càng...', 'càng... thì càng...'. Có thể dùng độc lập hoặc đi sau vế điều kiện '-(으)면'.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ수록 (thân từ có nguyên âm hoặc phụ âm ㄹ dùng -ㄹ수록, có phụ âm cuối dùng -을수록) | Dạng biến chuyển thời gian: Thân động từ/tính từ + -어/아 갈수록",
+      "examples": [
+        {
+          "translation": "Thời tiết càng trở lạnh thì dường như số người bị cảm cúm lại càng nhiều thêm."
+        },
+        {
+          "translation": "Cô ấy là kiểu người càng tìm hiểu thì lại càng thấy quyến rũ."
+        },
+        {
+          "translation": "Tôi cảm thấy càng đọc nhiều sách thì năng lực tư duy của mình lại càng được nâng cao."
+        },
+        {
+          "translation": "Càng ở nhà lâu tôi lại càng thấy cô đơn, nên rất muốn đi ra ngoài."
+        }
+      ]
+    },
+    "ko_해_44": {
+      "title": "-아/어 보아야 / ~해 보아야 (Phải thử... thì mới biết..., có thử... mới...)",
+      "shortExplanation": "Dùng để diễn tả điều kiện cần thiết: phải trực tiếp thử làm một hành động nào đó thì mới có thể biết, nhận thức hoặc đánh giá được kết quả ('phải thử... mới...').",
+      "longExplanation": "'-아/어 보아야' là cấu trúc kết hợp giữa động từ bổ trợ thử nghiệm '-아/어 보다' (thử làm gì) và vĩ tố liên kết điều kiện cần thiết '-아/어야' (phải... thì mới). Cấu trúc này dùng để nhấn mạnh rằng chỉ khi đích thân trải nghiệm hoặc thử qua hành động đó thì người nói hoặc đối phương mới thực sự biết rõ được thực chất sự việc, chất lượng hoặc cảm giác. Thường kết thúc bằng '-아/어 보아야 알 수 있다' (phải thử mới biết được) hoặc '-아/어 보아야 한다' (cần phải thử làm xem sao).",
+      "formation": "Thân động từ + -아/어 보아야 (thân từ có nguyên âm ㅏ, ㅗ dùng -아 보아야; nguyên âm khác dùng -어 보아야; 하다 biến thành 해 보아야)",
+      "examples": [
+        {
+          "translation": "Cách để biết thức ăn có tươi ngon hay không là phải ăn thử mới biết được."
+        },
+        {
+          "translation": "Cách để biết bộ quần áo này ra sao là phải mặc thử vào thì mới biết được."
+        },
+        {
+          "translation": "Cách để biết cuốn sách này có thú vị hay không là phải đọc thử mới rõ."
+        },
+        {
+          "translation": "Cách để biết môn thể thao này thú vị đến mức nào là phải trực tiếp thử chơi mới biết được."
+        }
+      ]
+    },
+    "ko_해오다_45": {
+      "title": "-아/어 오다 / ~해오다 (Làm... suốt từ quá khứ đến nay, duy trì làm...)",
+      "shortExplanation": "Động từ bổ trợ dùng để diễn tả một hành động bắt đầu từ một thời điểm trong quá khứ và vẫn tiếp tục duy trì, thực hiện đều đặn cho đến tận thời điểm hiện tại ('đã và đang làm...').",
+      "longExplanation": "'-아/어 오다' (với động từ '하다' tạo thành '해오다') là cấu trúc bổ trợ kết hợp vĩ tố liên kết '-아/어' với động từ hướng đích '오다' (đến). Cấu trúc này dùng để diễn tả phương diện thời gian: một thói quen, nỗ lực hoặc hành động đã khởi phát từ quá khứ và được người nói kiên trì duy trì, tiếp diễn liên tục theo dòng thời gian hướng về phía hiện tại. Trong tiếng Việt, cấu trúc tương đương với 'đã và đang làm...', 'làm suốt từ trước đến nay...'. Thường đi kèm với các từ chỉ mốc thời gian như 'từ trước đến giờ', 'trong suốt... qua'.",
+      "formation": "Thân động từ + -아/어 오다 (thân từ có nguyên âm ㅏ, ㅗ dùng -아 오다; các nguyên âm khác dùng -어 오다; 하다 biến thành 해오다; thường dùng dưới dạng hiện tại tiếp diễn -아/어 오고 있다)",
+      "examples": [
+        {
+          "translation": "Tôi đã chơi đàn piano liên tục suốt từ thời thơ ấu cho đến tận bây giờ."
+        },
+        {
+          "translation": "Chúng tôi đã và đang làm việc cống hiến cho công việc kinh doanh đó suốt 5 năm qua kể từ khi khởi nghiệp."
+        },
+        {
+          "translation": "Tôi vẫn đang chắt chiu tiết kiệm tiền suốt thời gian qua với ước mơ đi du lịch vòng quanh thế giới."
+        },
+        {
+          "translation": "Chúng tôi đã ngồi trò chuyện cùng nhau liên tục từ lúc người bạn ấy đến cho đến tận bây giờ."
+        }
+      ]
+    },
+    "ko_했건만_46": {
+      "title": "-았/었건만 / ~했건만 (Đã... thế mà, tuy đã... nhưng...)",
+      "shortExplanation": "Vĩ tố liên kết dùng trong văn viết hoặc văn phong biểu cảm, diễn tả sự tương phản, tiếc nuối khi kết quả ở vế sau hoàn toàn trái ngược với hành động hoặc kỳ vọng ở vế trước ('đã... vậy mà').",
+      "longExplanation": "'-았/었건만' (하다 biến thành '했건만') là vĩ tố liên kết mang tính văn học, kết hợp giữa vĩ tố quá khứ '-았/었-' và vĩ tố đối lập '-건만' (dạng rút gọn của '-건마는'). Ngữ pháp này dùng để thừa nhận một sự việc, hành động hay nỗ lực đã xảy ra trong quá khứ ở mệnh đề trước, nhưng mệnh đề sau lại mang lại một kết cục bất ngờ, trái ngược hoặc không như mong đợi. Thường mang sắc thái nuối tiếc, bất mãn hoặc than thở. Tương đương trong tiếng Việt là 'dù đã... thế mà...', 'đã... vậy mà lại...'.",
+      "formation": "Thân động từ/tính từ + -았/었건만 (thân từ có nguyên âm ㅏ, ㅗ dùng -았건만; nguyên âm khác dùng -었건만; 하다 biến thành 했건만)",
+      "examples": [
+        {
+          "translation": "Tôi đã nỗ lực rất nhiều, thế mà vẫn bị thi trượt."
+        },
+        {
+          "translation": "Hôm qua bạn tôi đã đến, vậy mà hôm nay lại không thể tới được."
+        },
+        {
+          "translation": "Món ăn tuy ngon thật đấy, nhưng giá cả lại quá đắt đỏ."
+        },
+        {
+          "translation": "Mọi người bảo rằng cô ấy xinh đẹp, vậy mà tôi lại không nghĩ như thế."
+        }
+      ]
+    },
+    "ko_했기_47": {
+      "title": "-았/었기 때문에 / ~했기 때문에 (Vì đã... nên..., bởi vì đã...)",
+      "shortExplanation": "Dùng để nêu rõ nguyên nhân hoặc lý do bắt nguồn từ một hành động hay trạng thái đã hoàn tất trong quá khứ dẫn đến kết quả ở hiện tại ('vì đã... nên...').",
+      "longExplanation": "'-았/었기 때문에' (하다 biến thành '했기 때문에') là cấu trúc diễn tả nguyên nhân, kết hợp giữa vĩ tố quá khứ '-았/었-', vĩ tố danh từ hóa '-기' và danh từ phụ thuộc chỉ lý do '때문' đi kèm trợ từ '에'. Cấu trúc này dùng để nhấn mạnh một sự việc hoặc hành vi cụ thể đã xảy ra trong quá khứ là nguyên nhân trực tiếp dẫn tới tình trạng, kết quả ở mệnh đề sau. Cấu trúc mang tính logic, rõ ràng và có thể sử dụng linh hoạt trong cả văn nói trang trọng lẫn văn viết.",
+      "formation": "Thân động từ/tính từ + -았/었기 때문에 (thân từ có nguyên âm ㅏ, ㅗ dùng -았기 때문에; nguyên âm khác dùng -었기 때문에; 하다 biến thành 했기 때문에)",
+      "examples": [
+        {
+          "translation": "Vì đêm qua ngủ muộn nên sáng nay tôi đã rất khó khăn mới thức dậy được."
+        },
+        {
+          "translation": "Vì nồng độ bụi mịn cao nên tôi không mở cửa sổ, kết quả là căn phòng trở nên oi bức."
+        },
+        {
+          "translation": "Vì đã học tập rất chăm chỉ nên tôi đã đạt được điểm số cao trong kỳ thi."
+        },
+        {
+          "translation": "Vì trời đã đổ mưa nên đôi giày thể thao của tôi đã bị ướt sũng."
+        }
+      ]
+    },
+    "ko_했기에_48": {
+      "title": "-았/었기에 / ~했기에 (Chính vì đã... nên..., do đã...)",
+      "shortExplanation": "Vĩ tố liên kết mang tính văn viết trang trọng, dùng để giải thích nguyên nhân hoặc lý do trong quá khứ dẫn đến kết quả ở mệnh đề sau ('chính vì đã... nên...').",
+      "longExplanation": "'-았/었기에' (하다 biến thành '했기에') là cấu trúc liên kết kết hợp giữa vĩ tố quá khứ '-았/었-' và vĩ tố chỉ nguyên nhân, căn cứ '-기에'. Cấu trúc này thường được sử dụng trong văn phong trang trọng, diễn văn, tiểu thuyết hoặc bài viết biểu cảm để chỉ ra rằng: chính vì đã có nguyên nhân hoặc sự thật ở vế trước nên mới dẫn đến kết quả, quyết định ở vế sau. So với '-았/었기 때문에', cấu trúc này mang đậm chất văn chương, nhẹ nhàng và tự nhiên hơn.",
+      "formation": "Thân động từ/tính từ + -았/었기에 (thân từ có nguyên âm ㅏ, ㅗ dùng -았기에; nguyên âm khác dùng -었기에; 하다 biến thành 했기에)",
+      "examples": [
+        {
+          "translation": "Cô ấy chính vì rất say mê học thuật nên đã trở thành giáo sư tại trường đại học."
+        },
+        {
+          "translation": "Vì tôi đã ăn rất nhiều món sườn nướng nên bây giờ bụng no căng."
+        },
+        {
+          "translation": "Nhờ sáng nay dậy sớm nên tôi đã không bị trễ giờ đi làm."
+        },
+        {
+          "translation": "Anh ấy do chịu nhiều áp lực vì chuyện cá nhân nên đã không tham gia vào hoạt động tập thể."
+        }
+      ]
+    },
+    "ko_했더니_49": {
+      "title": "-았/었더니 / ~했더니 (Sau khi làm... thì nhận ra..., vì đã... nên...)",
+      "shortExplanation": "Vĩ tố liên kết hồi tưởng dùng khi người nói sau khi đã trực tiếp thực hiện một hành động trong quá khứ thì phát hiện ra một sự thật mới, hoặc hành động đó trở thành nguyên nhân dẫn đến kết quả ở vế sau.",
+      "longExplanation": "'-았/었더니' (하다 biến thành '했더니') là vĩ tố liên kết hồi tưởng. Cấu trúc này dùng cho chủ ngữ ngôi thứ nhất (bản thân người nói), diễn tả việc sau khi người nói đã trực tiếp hoàn thành một hành động ở vế trước thì lập tức chứng kiến, phát hiện ra một sự việc bất ngờ hoặc mới mẻ ở vế sau ('sau khi tôi làm... thì thấy...'). Ngoài ra, nó cũng dùng để chỉ hành động của người nói trong quá khứ là nguyên nhân dẫn đến sự thay đổi trạng thái hoặc kết quả ở vế sau ('do tôi đã... nên...').",
+      "formation": "Thân động từ + -았/었더니 (thân từ có nguyên âm ㅏ, ㅗ dùng -았더니; nguyên âm khác dùng -었더니; 하다 biến thành 했더니; chủ yếu dùng với chủ ngữ ngôi thứ nhất thực hiện hành động ở vế trước)",
+      "examples": [
+        {
+          "translation": "Tôi gọi điện thoại cho cô ấy thì cô ấy bảo rằng đang bận nên không thể nghe máy được."
+        },
+        {
+          "translation": "Sau khi bước xuống xe buýt thì tôi mới phát hiện ra mình đã đánh rơi mất ví tiền."
+        },
+        {
+          "translation": "Tôi đọc sách xong nhìn ra thì thấy ngoài cửa sổ trời đang đổ mưa."
+        },
+        {
+          "translation": "Uống thuốc vào xong thì tôi cảm thấy dễ chịu hơn hẳn."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_하면서도_35": {
+      "title": "~(으)면서도（一面……却一面……、明明……却还……、尽管……但是……）",
+      "shortExplanation": "连接词尾，用于表示同一主体在进行前一动作或处于某种状态的同时，伴随着与之相矛盾、相冲突的后一动作或状态（“一面……却还……”、“明明……却……”）。",
+      "longExplanation": "“~(으)면서도”由表示两个动作或状态同时进行的连接词尾“-(으)면서”与表示强调、对比的补助词“-도”结合而成。用于同一主语所发生的两件事，强调前后两项虽然同时存在，但内容上却相互对立、矛盾或出人意料。相当于汉语的“一面……却一面……”、“明明……却还……”、“尽管……然而还是……”。",
+      "formation": "动词/形容词词干 + -(으)면서도（词干末尾为元音或收音ㄹ时接 -면서도，有收音时接 -으면서도）| 名词 + (이)면서도（无收音接 -면서도，有收音接 -이면서도）",
+      "examples": [
+        {
+          "translation": "她尽管在公司工作非常忙碌，却总是早早回家和孩子们一起吃晚饭。"
+        },
+        {
+          "translation": "我虽然专注于学习，但在与朋友沟通交流方面却感到有些困难。"
+        },
+        {
+          "translation": "他虽然和恋人生活得很幸福，却总是害怕她不在身边的时候。"
+        },
+        {
+          "translation": "母亲虽然总是操心家人的健康，却经常忽视自己的身体状况。"
+        }
+      ]
+    },
+    "ko_하면_36": {
+      "title": "-(으)면 -(으)ㄹ수록（越……越……）",
+      "shortExplanation": "连接词尾组合，用于表示前项动作或状态程度的加深，会导致后项结果也随之成比例地发生变化（“越……越……”）。",
+      "longExplanation": "“-(으)면 -(으)ㄹ수록”是将表示条件的连接词尾“-(으)면”与表示程度递进的连接词尾“-(으)ㄹ수록”重叠使用的表达方式。用来表示前后两个事态的关联性：随着前项动作的不断重复或状态的加剧，后项所表现出的程度或结果也随之进一步加深。相当于汉语的“越……越……”。在日常口语中有时也可以省略前半部分的“-(으)면”。",
+      "formation": "动词/形容词词干 + -(으)면 动词/形容词词干 + -(으)ㄹ수록（词干末尾为元音或收音ㄹ时接 -면 / -ㄹ수록，有收音时接 -으면 / -을수록）",
+      "examples": [
+        {
+          "translation": "这个越练习就越熟练，所以如果继续练下去的话，我一定能完全掌握它。"
+        },
+        {
+          "translation": "天气越变越冷，就有越多的人顺道光顾服装店。"
+        },
+        {
+          "translation": "我越是学习韩语，就越想深入了解这门语言。"
+        },
+        {
+          "translation": "在这座城市生活得越久，就越发现这里有看不完的景点和做不完的事情。"
+        }
+      ]
+    },
+    "ko_하자마자_37": {
+      "title": "-자마자 / ~하자마자（刚一……就……、一……就……）",
+      "shortExplanation": "连接词尾，用于表示前一个动作刚刚结束，紧接着几乎没有任何时间间隔就发生后一个动作（“一……就……”）。",
+      "longExplanation": "“-자마자”是接在动词词干之后的连接词尾，用于表示前项动作一旦完成，后项动作便立刻随之发生，强调两项动作之间时间上的紧密相连与毫无间隙。相当于汉语的“一……就……”、“刚……就……”。需要注意的是，前项动作即使发生在过去，也不能在“-자마자”前添加过去时词尾“-았/었-”，时态只能在句末终结词尾体现。",
+      "formation": "动词词干 + -자마자（无论有无收音，直接接 -자마자；하다 形式为 하자마자）",
+      "examples": [
+        {
+          "translation": "他刚一到学校，就立刻走进教室上课去了。"
+        },
+        {
+          "translation": "我一到达机场，就马上叫了一辆出租车。"
+        },
+        {
+          "translation": "她刚一起床，就煮了咖啡。"
+        },
+        {
+          "translation": "从公司一下班，我就直接回家休息了。"
+        }
+      ]
+    },
+    "ko_해서_38": {
+      "title": "-아/어서 그런지 / ~해서 그런지（不知是不是因为……、也许是因为……）",
+      "shortExplanation": "用于表达推测性的因果关系，表示说话人并不完全肯定，只是推测前项可能是导致后项情况的原因（“不知是不是因为……所以……”）。",
+      "longExplanation": "“-아/어서 그런지”由表示原因的连接词尾“-아/어서”、代词动词“그렇다”（那样）以及表示不确定或疑问的词尾“-(으)ㄴ지”结合而成。说话人基于眼前的现象或经验，推测前项大概是后项结果发生的原因，但语气并不十分断定，留有余地。相当于汉语的“不知是不是因为……的关系”、“也许是因为……所以……”。接在名词后时使用“-(이)라서 그런지”。",
+      "formation": "动词/形容词词干 + -아/어서 그런지（词干末尾阳性元音ㅏ, ㅗ接 -아서 그런지，阴性元音接 -어서 그런지，하다 变为 해서 그런지）| 名词 + (이)라서 그런지",
+      "examples": [
+        {
+          "translation": "今天不知是不是因为天气格外晴朗，可以看到很多人都在户外活动。"
+        },
+        {
+          "translation": "她也许是因为昨天受了伤，今天走路走得极其小心翼翼。"
+        },
+        {
+          "translation": "昨天我好像炸酱面吃得太多了。今天不知是不是因为肚子疼，状态很不舒服。"
+        },
+        {
+          "translation": "大概是因为昨晚在梦里遇见了她，今天一整天我脑子里都在不断想着她。"
+        }
+      ]
+    },
+    "ko_하여서는_39": {
+      "title": "-아/어서는 안 되다 / ~하여서는 안 되다（绝不能……、不得……、不准……）",
+      "shortExplanation": "用于表达严厉的禁止或强烈的规劝，表示从道德、规则或法律角度绝不允许进行某种行为（“绝不能……”、“不得……”）。",
+      "longExplanation": "“-아/어서는 안 되다”（书面语中常写作“-아/여서는 안 되다”）由连接词尾“-아/어서”、补助词“-는”以及表示不行的动词“안 되다”构成。表示如果做出前项动作，将导致严重的不良后果或违背常理规范，因此在社会道德、职业伦理或法律规章上绝对被禁止。相当于汉语的“决不能……”、“不可……”、“不得……”。相比口语中的“-면 안 되다”，该句型书面语色彩更浓，语气更加庄重严肃。",
+      "formation": "动词词干 + -아/어서는 안 되다（词干末尾阳性元音接 -아서는 안 되다，阴性元音接 -어서는 안 되다，하다 变形为 해서는 안 되다 或 书面语 하여서는 안 되다）",
+      "examples": [
+        {
+          "translation": "就算是学生，上课迟到这种事也绝对是不可容许的。"
+        },
+        {
+          "translation": "作为一名医生，绝不能将患者的相关隐私泄露给外界。"
+        },
+        {
+          "translation": "不能因为明天的考试就通宵熬夜，身体健康才是第一位的。"
+        },
+        {
+          "translation": "绝对不能做出给他人带来伤害或损害的行为。"
+        }
+      ]
+    },
+    "ko_한테는_40": {
+      "title": "~한테는（对……来说、给……的话）",
+      "shortExplanation": "给格助词结合对比补助词，用于指定动作的对象或接受者，并在与其他对象对比时予以强调（“对……而言”、“至于给……”）。",
+      "longExplanation": "“~한테는”由表示动作涉及的对象或接受者的给格助词“~한테”（口语常用）与表示强调、对比的补助词“-는”结合而成。用来把特定的人物（或动物）从群体中单独提出来加以对比说明，强调针对该对象所采取的态度、行为或其独特的情况。相当于汉语的“对……来说”、“对于……而言”、“至于给……”。需要注意的是，“한테”只用于人或动物；针对长辈须使用敬语形“께는”；在正式书面语中则使用“에게는”。",
+      "formation": "名词（人或动物） + 한테는（长辈敬语为 께는；书面语为 에게는）",
+      "examples": [
+        {
+          "translation": "我是为了给姐姐买礼物才来这里的。至于朋友，我打算通过电子邮件给他发消息。"
+        },
+        {
+          "translation": "对父亲我还尚未告知这一事实，目前只跟姐姐讲过。"
+        },
+        {
+          "translation": "对于孩子们必须用简单的语言来进行解释，要是太复杂他们是无法理解的。"
+        },
+        {
+          "translation": "他对待妈妈总是很亲切体贴，但对待爸爸却非常无礼。"
+        }
+      ]
+    },
+    "ko_할_41": {
+      "title": "-(으)ㄹ 만하다 / ~할 만하다（值得……、值得一……）",
+      "shortExplanation": "接在动词后，表示某事具备足够的价值或理由去付诸行动，相当于“值得一做”、“值得……”。",
+      "longExplanation": "“-(으)ㄹ 만하다”由冠形词形词尾“-(으)ㄹ”和依存形容词“만하다”（值得、够得上）组合而成。用来表达说话人对某一行为的主观价值判断，认为付出时间、精力或金钱去做某件事是完全值得的、有意义的。相当于汉语的“值得做……”、“值得一……”。此外，该句型在某些语境下也可以表示在可接受的范围内“还算过得去”、“勉强可以接受”。否定形式为“-(으)ㄹ 만하지 않다”。",
+      "formation": "动词词干 + -(으)ㄹ 만하다（词干末尾为元音或收音ㄹ接 -ㄹ 만하다，有收音接 -을 만하다；하다 变为 할 만하다）",
+      "examples": [
+        {
+          "translation": "虽然坚持学料理挺辛苦的，但因为能经常吃到美味佳肴，所以还是很值得一学的。"
+        },
+        {
+          "translation": "这件作品虽然昂贵，但从优美的设计和高端的品质来看，买下来是非常值得的。"
+        },
+        {
+          "translation": "长时间的等待虽然艰难，但只要结果令人满意，那就值得一等。"
+        },
+        {
+          "translation": "这部电影并不怎么有趣，所以根本不值得一看。"
+        }
+      ]
+    },
+    "ko_할_42": {
+      "title": "-(으)ㄹ 수밖에 없다 / ~할 수밖에 없다（只能……、不得不……、除了……别无选择）",
+      "shortExplanation": "用于表示受到客观条件或事态发展的制约，除此以外没有其他选择或办法（“只能……”、“不得不……”）。",
+      "longExplanation": "“-(으)ㄹ 수밖에 없다”由表示可能性的冠形词词尾“-(으)ㄹ 수”、表示唯一限定的助词“-밖에”（除了……以外）以及否定词“없다”结合而成。强调出于客观环境的逼迫或情势的必然性，除此之外别无其他出路或选择，只得采取这一做法。相当于汉语的“只能……”、“不得不……”、“除此以外别无他法”。用于形容词时，可表示必然呈现某种状态（“必定会……”）。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 수밖에 없다（词干末尾为元音或收音ㄹ接 -ㄹ 수밖에 없다，有收音接 -을 수밖에 없다；하다 变为 할 수밖에 없다）",
+      "examples": [
+        {
+          "translation": "因为下雨了，所以我只能带上雨伞出门。"
+        },
+        {
+          "translation": "因为面临考试，所以我不得不继续埋头学习。"
+        },
+        {
+          "translation": "既然她都那么说了，那我除了相信她之外别无选择。"
+        },
+        {
+          "translation": "现在手头没有钱，所以只能买这么便宜的东西。"
+        }
+      ]
+    },
+    "ko_해_43": {
+      "title": "-(으)ㄹ수록 / ~해 갈수록（越……越……、随着时间的推移越发……）",
+      "shortExplanation": "连接词尾，用于表示随着某一动作或状态的持续与深入，后项的程度或状态也随之加深（“越……越……”）。",
+      "longExplanation": "“-(으)ㄹ수록”（以及表示随时间推移不断加剧的形式“-어/아 갈수록”）是表示比例递进的连接词尾。用于说明前项事态的程度每加深一步，后项相关的情况也随之成比例地越发显著。相当于汉语的“越……越……”、“随着……越发……”。可单独使用，也常与前面的“-(으)면”呼应搭配。",
+      "formation": "动词/形容词词干 + -(으)ㄹ수록（词干末尾为元音或收音ㄹ接 -ㄹ수록，有收音接 -을수록）| 随时间推移动态形式：动词/形容词词干 + -어/아 갈수록",
+      "examples": [
+        {
+          "translation": "天气越变越冷，患感冒的人似乎也变得越多了。"
+        },
+        {
+          "translation": "她是一个越是深入了解，就越觉得充满魅力的人。"
+        },
+        {
+          "translation": "我感觉书读得越多，自己的思维能力就越有所提升。"
+        },
+        {
+          "translation": "我越是在家里待着就越感到孤独，所以很想出去走走。"
+        }
+      ]
+    },
+    "ko_해_44": {
+      "title": "-아/어 보아야 / ~해 보아야（只有尝试做过……才能……、必须试过才……）",
+      "shortExplanation": "用于强调只有亲自尝试或体验过前项的动作，才能真正了解、确认或评价后项的事实（“只有试着……才能……”）。",
+      "longExplanation": "“-아/어 보아야”是将表示尝试的辅助动词“-아/어 보다”与表示必要条件的连接词尾“-아/어야”（必须……才能……）结合而成的句型。用于强调要想了解某事物的真实情况、品质或感受，前提必须是亲自去做一番尝试体验。句尾常与“알 수 있다”（才能知道）、“한다”（应该亲自试一试）呼应使用。相当于汉语的“只有亲自试过才能知道……”、“必须尝试一下才行”。",
+      "formation": "动词词干 + -아/어 보아야（词干末尾阳性元音ㅏ, ㅗ接 -아 보아야，阴性元音接 -어 보아야，하다 变形为 해 보아야）",
+      "examples": [
+        {
+          "translation": "要想知道食物是否新鲜，必须亲自尝上一尝才能知道。"
+        },
+        {
+          "translation": "要想知道这件衣服穿上效果如何，必须亲自试穿一下才行。"
+        },
+        {
+          "translation": "要想知道这本书是否有意思，只有自己翻开读过才能明白。"
+        },
+        {
+          "translation": "要想知道这项运动有多么好玩，必须亲自参与体验一下才行。"
+        }
+      ]
+    },
+    "ko_해오다_45": {
+      "title": "-아/어 오다 / ~해오다（一直……以来、从过去持续至今）",
+      "shortExplanation": "辅助动词结构，表示某一动作从过去的某一时间点开始，一直持续或反复进行至今（“一直……过来”）。",
+      "longExplanation": "“-아/어 오다”（하다动词形式为“해오다”）是由连接词尾“-아/어”与表示空间或时间向说话基准点靠拢的趋向动词“오다”（来）组合而成的辅助动词结构。在时间维度上，用于表示某种状态、行为习惯或努力自过去的某一点开始发端，沿着时间轴持续不断地延续并积累至说话的当下。相当于汉语的“一直……到现在”、“向来……”、“持续做……下来”。常以“-아/어 오고 있다”的进行时形态出现。",
+      "formation": "动词词干 + -아/어 오다（词干末尾阳性元音接 -아 오다，阴性元音接 -어 오다，하다 变形为 해오다；常与进行时结合使用为 -아/어 오고 있다）",
+      "examples": [
+        {
+          "translation": "我从童年时期开始就一直弹着钢琴，一直坚持到了现在。"
+        },
+        {
+          "translation": "从开展那项事业起，这五年间我们一直在这个岗位上辛勤工作着。"
+        },
+        {
+          "translation": "怀揣着环游世界的梦想，这段时间我一直在省吃俭用攒钱。"
+        },
+        {
+          "translation": "从朋友到达的那一刻起，我们就一直在一起畅聊至今。"
+        }
+      ]
+    },
+    "ko_했건만_46": {
+      "title": "-았/었건만 / ~했건만（虽然已经……但是却……、明明已经……却偏偏……）",
+      "shortExplanation": "连接词尾，带有浓厚的书面语与感叹色彩，用于表示虽然前项的动作或状态已经发生，但后项却出现了完全相反或令人遗憾的事实（“虽已……却……”）。",
+      "longExplanation": "“-았/었건만”（하다动词形式为“했건만”）由过去时先语末词尾“-았/었-”与表示转折对立的连接词尾“-건만”（“-건마는”的缩略形）组合而成。用于在肯定前项已发生的事实、做出的努力或客观状态的同时，引出与之截然相反、事与愿违或未能如愿的后项结果。语气中往往包含着说话人深深的遗憾、叹息、抱怨或无奈。相当于汉语的“虽然已经……但是却……”、“明明早就……可偏偏还是……”。",
+      "formation": "动词/形容词词干 + -았/었건만（词干末尾阳性元音接 -았건만，阴性元音接 -었건만，하다 变形为 했건만）",
+      "examples": [
+        {
+          "translation": "我付出了巨大的努力，可最终还是在考试中落榜了。"
+        },
+        {
+          "translation": "朋友昨天明明已经来过了，可今天却没能来成。"
+        },
+        {
+          "translation": "饭菜虽然非常美味，但价格却实在是太昂贵了。"
+        },
+        {
+          "translation": "大家都说她很漂亮，但我却并不那么认为。"
+        }
+      ]
+    },
+    "ko_했기_47": {
+      "title": "-았/었기 때문에 / ~했기 때문에（因为之前已经……所以……、由于……）",
+      "shortExplanation": "用于明确阐述源自过去已经发生或完成的行为与状态，作为导致后续结果的直接客观原因（“因为已经……所以……”）。",
+      "longExplanation": "“-았/었기 때문에”（하다动词形式为“했기 때문에”）由过去时先语末词尾“-았/었-”、名词形转成词尾“-기”、表示原因的依存名词“때문”以及助词“에”结合而成。用来清晰、逻辑严密地说明过去所发生的某一事实或动作正是导致后面现存结果或现状的直接原因。与一般原因词尾相比，更侧重于客观因果阐述，适用于正式会话及书面论述。",
+      "formation": "动词/形容词词干 + -았/었기 때문에（词干末尾阳性元音接 -았기 때문에，阴性元音接 -었기 때문에，하다 变形为 했기 때문에）",
+      "examples": [
+        {
+          "translation": "因为昨天睡得很晚，所以今天早上起床非常吃力。"
+        },
+        {
+          "translation": "由于微尘浓度太高而没有开窗，导致房间里变得格外闷热。"
+        },
+        {
+          "translation": "因为付出了大量的努力学习，所以在考试中取得了优异的成绩。"
+        },
+        {
+          "translation": "因为下过了雨，所以我的运动鞋全被淋湿了。"
+        }
+      ]
+    },
+    "ko_했기에_48": {
+      "title": "-았/었기에 / ~했기에（正因为曾……所以……、由于已经……）",
+      "shortExplanation": "连接词尾，多见于书面语或抒情叙述，用于强调过去所发生的原因或理由造就了后项的结果（“正因为……所以……”）。",
+      "longExplanation": "“-았/었기에”（하다动词形式为“했기에”）由过去时先语末词尾“-았/었-”与表示原因、判断依据的连接词尾“-기에”结合而成。常用于书面语、文学作品或具有一定庄重感的情境中，说明正是因为前项过去的某种状态、经历或事实，才使得后项的结论或结果得以成立。相比于语气较为生硬客观的“-았/었기 때문에”，“-았/었기에”语调更为优雅流畅，富有叙事与抒情韵味。",
+      "formation": "动词/形容词词干 + -았/었기에（词干末尾阳性元音接 -았기에，阴性元音接 -었기에，하다 变形为 했기에）",
+      "examples": [
+        {
+          "translation": "正因为她十分热爱学问，所以最终成为了大学里的教授。"
+        },
+        {
+          "translation": "因为我刚才吃了很多排骨，所以现在肚子非常饱。"
+        },
+        {
+          "translation": "因为今天早早就起了床，所以上班并没有迟到。"
+        },
+        {
+          "translation": "他因为个人问题承受了很大的压力，所以没有参加集体活动。"
+        }
+      ]
+    },
+    "ko_했더니_49": {
+      "title": "-았/었더니 / ~했더니（做完……之后发现……、因为做了……结果……）",
+      "shortExplanation": "回想连接词尾，用于表示第一人称说话人亲自做了前项动作后，发现了后项意想不到的事实，或者前项动作成为引发后项结果的原因（“……之后发现……”、“因为……结果……”）。",
+      "longExplanation": "“-았/었더니”（하다动词形式为“했더니”）是由过去时先语末词尾“-았/었-”与回想连接词尾“-더니”结合而成的句型。主要用于第一人称主语回忆自己的亲身经历，包含两种主要用法：一是说话人完成前项动作之后，随之发现了后项新的情况或意料之外的事实（相当于“……之后才发现……”）；二是说话人过去的行为直接导致了后项事态或身心状态的转变（相当于“因为做了……所以结果……”）。",
+      "formation": "动词词干 + -았/었더니（词干末尾阳性元音接 -았더니，阴性元音接 -었더니，하다 变形为 했더니；前项主语通常为第一人称说话人）",
+      "examples": [
+        {
+          "translation": "我给她打电话，她却说现在正忙无法接听。"
+        },
+        {
+          "translation": "我下了公交车之后，才惊觉自己的钱包已经弄丢了。"
+        },
+        {
+          "translation": "我读着书抬头一看，才发现窗外正淅淅沥沥地下着雨。"
+        },
+        {
+          "translation": "吃过了药之后，感觉整个人舒服多了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_하면서도_35": {
+      "title": "~(으)면서도（〜でありながらも、〜していながらも、〜くせに）",
+      "shortExplanation": "二つの動作や状態が同時に行われながらも、それらが互いに矛盾したり対立したりしていることを表す接続語尾です（「〜でありながらも」「〜しながらも」）。",
+      "longExplanation": "「~(으)면서도」は、同時進行を表す接続語尾「-(으)면서」に対照や強調を表す助詞「-도」が結合した表現です。同一の主語が前節の動作や状態にありながら、同時にそれに相反する、あるいは予期に反する後節の行動や心理状態を持つことを表します。日本語の「〜でありながらも」「〜しているくせに」「〜と分かっていながらも」などに相当します。",
+      "formation": "動詞・形容詞語幹 + -(으)면서도（母音またはパッチムㄹで終わる場合は -면서도、ㄹ以外のパッチムで終わる場合は -으면서도）| 名詞 + (이)면서도（パッチムがない場合は -면서도、ある場合は -이면서도）",
+      "examples": [
+        {
+          "translation": "彼女は会社で忙しく働きながらも、いつも早く家に帰って子どもたちと一緒に食事をします。"
+        },
+        {
+          "translation": "私は勉強に集中しながらも、友達とコミュニケーションをとることには難しさを感じています。"
+        },
+        {
+          "translation": "彼は恋人と幸せに過ごしながらも、彼女がいつもそばにいない時を恐れています。"
+        },
+        {
+          "translation": "母はいつも他人の健康には気を配りながらも、自分自身の健康はいつも無視しがちです。"
+        }
+      ]
+    },
+    "ko_하면_36": {
+      "title": "-(으)면 -(으)ㄹ수록（〜すればするほど、〜であればあるほど）",
+      "shortExplanation": "前節の動作や状態の程度が進むにつれて、それに伴って後節の事態や程度も変化することを表します（「〜すればするほど」）。",
+      "longExplanation": "「-(으)면 -(으)ㄹ수록」は、仮定・条件を表す接続語尾「-(으)면」と、程度・比例を表す接続語尾「-(으)ㄹ수록」が組み合わさった構文です。前節の事態が増減・反復するのに比例して、後節の結果や程度もますます強まるという相関関係を表します。日本語の「〜ば〜ほど」「〜すればするほど」に相当します。日常会話では前半の「-(으)면」を省略して「-(으)ㄹ수록」単独で用いられることもあります。",
+      "formation": "動詞・形容詞語幹 + -(으)면 動詞・形容詞語幹 + -(으)ㄹ수록（母音またはパッチムㄹで終わる場合は -면 / -ㄹ수록、ㄹ以外のパッチムで終わる場合は -으면 / -을수록）",
+      "examples": [
+        {
+          "translation": "これを練習すればするほど上手になるので、練習を続ければマスターできるようになるはずです。"
+        },
+        {
+          "translation": "天気が寒くなればなるほど、より多くの人々が服屋に立ち寄りました。"
+        },
+        {
+          "translation": "私は韓国語を勉強すればするほど、その言語についてもっと知りたくなります。"
+        },
+        {
+          "translation": "この街に住めば住むほど、見どころややるべきことがたくさんあることに気づきました。"
+        }
+      ]
+    },
+    "ko_하자마자_37": {
+      "title": "-자마자 / ~하자마자（〜するやいなや、〜するとすぐに）",
+      "shortExplanation": "前節の動作が終わるとほとんど間を置かずに、直後に後節の動作が行われることを表す接続語尾です（「〜するやいなや」「〜するとすぐに」）。",
+      "longExplanation": "「-자마자」は、動詞の語幹について前節の動作の完了と同時に、または時間的な空白なしに直ちに後節の動作が引き続いて起こることを表す接続語尾です。日本語の「〜するやいなや」「〜するとすぐ」「〜するが早いか」に相当します。前節が過去の事柄であっても過去形語尾「-았/었-」をつけることはできず、時制は文末の用言で表します。",
+      "formation": "動詞語幹 + -자마자（パッチムの有無にかかわらず語幹に直接 -자마자 を接続；하다動詞は 하자마자）",
+      "examples": [
+        {
+          "translation": "学校に到着するやいなや、彼はすぐに授業に入りました。"
+        },
+        {
+          "translation": "私は空港に着くとすぐにタクシーを呼びました。"
+        },
+        {
+          "translation": "彼女は起きるやいなやコーヒーを淹れました。"
+        },
+        {
+          "translation": "会社から退勤するとすぐに家に直帰して休みました。"
+        }
+      ]
+    },
+    "ko_해서_38": {
+      "title": "-아/어서 그런지 / ~해서 그런지（〜のせいか、〜だからなのか）",
+      "shortExplanation": "前節の内容が後節の事態の原因や理由ではないかと推測しながら述べる表現です（「〜のせいか」「〜だからなのか」）。",
+      "longExplanation": "「-아/어서 그런지」は、原因・理由を表す接続語尾「-아/어서」に、「그렇다（そうだ）」と不確実な推測を表す語尾「-(으)ㄴ지」が結びついた表現です。話し手が後節の状況の原因を前節にあるのではないかと推し量りつつも、100%断定できない控えめなニュアンスを表します。日本語の「〜のせいか」「〜だからだろうか」に相当します。名詞につく場合は「-(이)라서 그런지」の形をとります。",
+      "formation": "動詞・形容詞語幹 + -아/어서 그런지（陽母音 ㅏ, ㅗ は -아서 그런지、陰母音は -어서 그런지、하다 は 해서 그런지）| 名詞 + (이)라서 그런지",
+      "examples": [
+        {
+          "translation": "今日は天気が良いせいか、多くの人々が活動しているのを見ることができました。"
+        },
+        {
+          "translation": "彼女は昨日怪我をしたせいなのか、今日はとても慎重に歩いていました。"
+        },
+        {
+          "translation": "昨日ジャージャー麺を食べすぎたみたいです。今日はお腹が痛いせいか体調があまり良くありません。"
+        },
+        {
+          "translation": "夢の中で彼女に会ったせいか、今日は彼女のことがずっと頭に浮かびます。"
+        }
+      ]
+    },
+    "ko_하여서는_39": {
+      "title": "-아/어서는 안 되다 / ~하여서는 안 되다（〜してはならない、〜してはいけない）",
+      "shortExplanation": "規則や道徳、社会的規範に基づき、ある行為をしてはいけないという強い禁止や戒めを表します（「〜してはならない」）。",
+      "longExplanation": "「-아/어서는 안 되다」（改まった書き言葉では「-아/여서는 안 되だ」）は、条件・理由の「-아/어서」に助詞「-는」と「안 되다（いけない）」が結合した文型です。前節の行為を行うと不都合や悪影響が生じるため、常識や規則、法律などに照らして「その行為をしてはならない」と強く禁止する際に用いられます。日本語の「〜してはならない」「〜してはいけない」に相当し、口語の「-면 안 되다」に比べてより格式高く公的な場面で使われます。",
+      "formation": "動詞語幹 + -아/어서는 안 되다（陽母音語幹は -아서는 안 되다、陰母音語幹は -어서는 안 되다、하다 は 해서는 안 되다 または 改まった書き言葉で 하여서는 안 되다）",
+      "examples": [
+        {
+          "translation": "学生だからといって授業に遅刻することは絶対に許されません（してはなりません）。"
+        },
+        {
+          "translation": "医師として患者に関する事項を外部に漏洩することは決してしてはなりません。"
+        },
+        {
+          "translation": "明日の試験のために徹夜をしてはいけません。健康が一番大切です。"
+        },
+        {
+          "translation": "他人に迷惑や被害を与える行動をしてはなりません。"
+        }
+      ]
+    },
+    "ko_한테는_40": {
+      "title": "~한테는（〜にとっては、〜には、〜に対しては）",
+      "shortExplanation": "行為の相手や対象を表す助詞に対照の助詞が結合した形で、「〜に対しては」「〜にとっては」という意味を表します。",
+      "longExplanation": "「~한테는」は、人や動物を表す名詞につき動作の向かう対象（〜に・〜へ）を表す口語助詞「~한테」に、対比や強調を表す助詞「-는」が結合した表現です。他の対象と対比させて「特定の相手に対しては」「〜にとっては」と取り立てて述べる際に使われます。なお、「~한테」は人や生き物にのみ用いられ、目上の人に対しては敬語形の「께는」、公的な書き言葉では「에게는」が用いられます。",
+      "formation": "名詞（人・動物） + 한테는（目上の人には 께는；公的な書き言葉では 에게는）",
+      "examples": [
+        {
+          "translation": "姉にはプレゼントを買おうとここに来ました。友達にはメールでメッセージを送る予定です。"
+        },
+        {
+          "translation": "父にはこの事実をまだ知らせていません。姉にだけ話しました。"
+        },
+        {
+          "translation": "子どもたちには単純な言葉で説明しなければなりません。複雑すぎると理解できません。"
+        },
+        {
+          "translation": "彼は母親に対してはいつも親切ですが、父親に対しては失礼です。"
+        }
+      ]
+    },
+    "ko_할_41": {
+      "title": "-(으)ㄹ 만하다 / ~할 만하다（〜する価値がある、〜に値する、〜するに値する）",
+      "shortExplanation": "ある行動をとる十分な価値や理由があること、あるいはある状態が許容範囲内にあることを表します（「〜する価値がある」「〜に値する」）。",
+      "longExplanation": "「-(으)ㄹ 만하다」は、未来連体形語尾「-(으)ㄹ」に補助形容詞「만하다（〜に値する）」が結びついた表現です。話し手の主観的な価値判断として、時間や費用、労力をかけるだけの十分な価値があることを表します。日本語の「〜する価値がある」「〜してみるに値する」に相当します。また、状況によって「まあまあ〜できる」「我慢できる範囲だ」というニュアンスを表すこともあります。否定形は「-(으)ㄹ 만하지 않다」となります。",
+      "formation": "動詞語幹 + -(으)ㄹ 만하다（母音またはパッチムㄹで終わる場合は -ㄹ 만하다、ㄹ以外のパッチムで終わる場合は -을 만하다；하다 は 할 만하다）",
+      "examples": [
+        {
+          "translation": "料理の勉強を続けるのは大変ですが、美味しい料理を頻繁に食べられるようになるので、やる価値があります。"
+        },
+        {
+          "translation": "この作品は高価ではありますが、美しいデザインと高品質を考えれば購入する価値があります。"
+        },
+        {
+          "translation": "長い時間待つのは大変ですが、その結果が良いものであれば待つ価値があります。"
+        },
+        {
+          "translation": "この映画はあまり面白くないので、観る価値がありません。"
+        }
+      ]
+    },
+    "ko_할_42": {
+      "title": "-(으)ㄹ 수밖에 없다 / ~할 수밖에 없다（〜するしかない、〜せざるを得ない）",
+      "shortExplanation": "状況や理由から他に選択肢や方法がなく、そうするより他にないことを表します（「〜するしかない」「〜せざるを得ない」）。",
+      "longExplanation": "「-(으)ㄹ 수밖에 없다」は、可能を表す「-(으)ㄹ 수」に、限定の助詞「-밖에（〜しか）」と否定の存在詞「없다（ない）」が結合した構文です。客観的な状況や避けられない理由のために、他の手段や可能性が存在せず、その行為を行う以外に方法がないことを強く表します。日本語の「〜するしかない」「〜せざるを得ない」「〜するよりほかない」に相当します。形容詞に接続した場合は「〜であるのは当然だ」「〜になるのは必然だ」という必然性を表すこともあります。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 수밖에 없다（母音またはパッチムㄹで終わる場合は -ㄹ 수밖에 없다、ㄹ以外のパッチムで終わる場合は -을 수밖에 없다；하다 は 할 수밖에 없다）",
+      "examples": [
+        {
+          "translation": "雨が降っているので、傘を持っていくしかありません。"
+        },
+        {
+          "translation": "試験があるため、勉強を続けるしかありません。"
+        },
+        {
+          "translation": "彼女がそう言った以上、私は彼女を信用するしかありませんでした。"
+        },
+        {
+          "translation": "今はお金がないので、このように安い物しか買うことができません。"
+        }
+      ]
+    },
+    "ko_해_43": {
+      "title": "-(으)ㄹ수록 / ~해 갈수록（〜するほど、〜していくにつれてますます）",
+      "shortExplanation": "ある動作や状態が深まり進むにつれて、それに伴って後節の程度もいっそう増していくことを表します（「〜するほど」「〜していくにつれて」）。",
+      "longExplanation": "「-(으)ㄹ수록」（および時間の経過に伴う推移を表す「-어/아 갈수록」）は、ある事態の程度や頻度が増加するのに比例して、他の事態の程度もますます高まることを表す接続語尾です。日本語の「〜するほど」「〜になればなるほど」「〜していくにつれていっそう」に相当します。単独でも用いられますが、条件の「-(으)면」と呼応して「-(으)면 -(으)ㄹ수록」の形で使われることも非常に多いです。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ수록（母音またはパッチムㄹで終わる場合は -ㄹ수록、ㄹ以外のパッチムで終わる場合は -을수록）| 時間の推移形：動詞・形容詞語幹 + -어/아 갈수록",
+      "examples": [
+        {
+          "translation": "天気が寒くなるほど、風邪をひく人が多くなるような気がします。"
+        },
+        {
+          "translation": "彼女は知れば知るほど、より魅力的な人です。"
+        },
+        {
+          "translation": "本を読めば読むほど、私の思考力が向上しているように感じます。"
+        },
+        {
+          "translation": "私は家にいればいるほど寂しくなってくるので、外に出かけたくなります。"
+        }
+      ]
+    },
+    "ko_해_44": {
+      "title": "-아/어 보아야 / ~해 보아야（〜してみてこそ、〜してみなければ）",
+      "shortExplanation": "実際にその行為を試みて体験して初めて、事態の本質や良し悪しを把握できるという必要条件を表します（「〜してみてこそ」「〜してみなければ」）。",
+      "longExplanation": "「-아/어 보아야」は、試みを表す補助動詞「-아/어 보다（〜してみる）」に、必須の条件を表す接続語尾「-아/어야（〜してこそ、〜して初めて）」が結合した構文です。ある事実や価値、感触などを正しく理解したり判断したりするためには、まず自ら試行・体験してみることが不可欠な前提であると述べるときに用います。文末には「알 수 있다（分かる）」や「한다（〜すべきだ）」が続くことが多いです。日本語の「〜してみて初めて」「〜してみなければ分からない」に相当します。",
+      "formation": "動詞語幹 + -아/어 보아야（陽母音語幹は -아 보아야、陰母音語幹は -어 보아야、하다 は 해 보아야）",
+      "examples": [
+        {
+          "translation": "食べ物が新鮮かどうか知る方法は、食べてみなければなりません（食べてみて初めて分かります）。"
+        },
+        {
+          "translation": "この服が似合うかどうか知る方法は、着てみなければなりません。"
+        },
+        {
+          "translation": "この本が面白いかどうか知る方法は、読んでみなければなりません。"
+        },
+        {
+          "translation": "このスポーツがどれほど面白いか知る方法は、直接やってみなければなりません。"
+        }
+      ]
+    },
+    "ko_해오다_45": {
+      "title": "-아/어 오다 / ~해오다（ずっと〜してきた、〜し続けてきている）",
+      "shortExplanation": "過去のある時点から始まった動作や状態が、時間の経過とともに現在までずっと継続・反復されてきたことを表します（「〜してきた」）。",
+      "longExplanation": "「-아/어 오다」（하다動詞は「해오다」）は、接続語尾「-아/어」に空間的・時間的な接近を表す補助動詞「오다（来る）」が結びついた表現です。過去の特定の時点に端を発した行為、習慣、努力などが、現在に向かって時間的に途切れることなく継続・蓄積されてきたことを表します。日本語の「ずっと〜してきた」「〜し続けてきている」に相当します。多くの場合、継続を表す「-아/어 오고 있다」の形で用いられます。",
+      "formation": "動詞語幹 + -아/어 오다（陽母音語幹は -아 오다、陰母音語幹は -어 오다、하다 は 해오다；多くは現在進行形 -아/어 오고 있다 の形で使用）",
+      "examples": [
+        {
+          "translation": "私は幼い頃からずっとピアノを弾き続けてきています。"
+        },
+        {
+          "translation": "私たちはその事業を始めてから5年間、ずっと働き続けてきています。"
+        },
+        {
+          "translation": "世界旅行を夢見ながら、ずっとお金を節約してきています。"
+        },
+        {
+          "translation": "私たちは友達が来てからずっと一緒に話を続けてきています。"
+        }
+      ]
+    },
+    "ko_했건만_46": {
+      "title": "-았/었건만 / ~했건만（〜したものの、〜したのだが、〜したのに）",
+      "shortExplanation": "前節で過去の努力や事実を認めながらも、後節でそれに反する残念な結果や対照的な事実が起こったことを表す接続語尾です（「〜したものの」「〜したのに」）。",
+      "longExplanation": "「-았/었건만」（하다動詞は「했건만」）は、過去時制を表す先語末語尾「-았/었-」に、逆接の接続語尾「-건만（-건마는の縮約形）」が結合した文学的・書面語的な表現です。過去に行われた行為や払われた努力を前提としつつ、期待や常識に反する望ましくない結果や対照的事実が後に続く際に用いられます。話し手の悔しさ、遺憾、嘆きなどの感情が込められることが多いです。日本語の「〜したものの」「〜したのに」「〜したのだが」に相当します。",
+      "formation": "動詞・形容詞語幹 + -았/었건만（陽母音語幹は -았건만、陰母音語幹は -었건만、하다 は 했건만）",
+      "examples": [
+        {
+          "translation": "私は大いに努力したものの、試験に落ちてしまいました。"
+        },
+        {
+          "translation": "友達は昨日来たのに、今日は来られませんでした。"
+        },
+        {
+          "translation": "料理は美味しかったのだが、値段があまりにも高すぎました。"
+        },
+        {
+          "translation": "彼女は綺麗だと言っていたけれど、私はそうは思いませんでした。"
+        }
+      ]
+    },
+    "ko_했기_47": {
+      "title": "-았/었기 때문에 / ~했기 때문에（〜したため、〜したから、〜したせいで）",
+      "shortExplanation": "過去に完了した動作や状態が、後節の結果をもたらした直接の原因や理由であることを明確に表します（「〜したため」「〜したから」）。",
+      "longExplanation": "「-았/었기 때문에」（하다動詞は「했기 때문에」）は、過去時制を表す先語末語尾「-았/었-」、名詞形語尾「-기」、原因・理由を表す依存名詞「때문」、助詞「에」が結びついた因果構文です。過去に生じた明確な事実や行為が、後節の事態を引き起こした確固たる客観的理由であることを論理的に説明する際に用いられます。会話と書き言葉の双方で広く使われます。日本語の「〜したため」「〜したせいで」「〜したから」に相当します。",
+      "formation": "動詞・形容詞語幹 + -았/었기 때문에（陽母音語幹は -았기 때문에、陰母音語幹は -었기 때문에、하다 は 했기 때문에）",
+      "examples": [
+        {
+          "translation": "昨日遅く寝たため、今朝起きるのが大変でした。"
+        },
+        {
+          "translation": "微小粒子状物質（PM2.5）の濃度が高くて窓を開けなかったため、部屋が暑くなりました。"
+        },
+        {
+          "translation": "たくさん勉強をしたため、試験で良い点数を取りました。"
+        },
+        {
+          "translation": "雨が降ったため、スニーカーが濡れてしまいました。"
+        }
+      ]
+    },
+    "ko_했기에_48": {
+      "title": "-았/었기에 / ~했기에（〜したからこそ、〜したために、〜した故に）",
+      "shortExplanation": "過去の事実や経験が後節の結果をもたらした原因や根拠であることを表す、やや文語的な表現です（「〜したからこそ」「〜したために」）。",
+      "longExplanation": "「-았/었기에」（하다動詞は「했기에」）は、過去時制を表す先語末語尾「-았/었-」に、原因・判断の根拠を表す接続語尾「-기에」が結びついた表現です。書き言葉や文学作品、スピーチなどでよく用いられ、過去の行為や状態がその後の結果や判断を導き出した根本的な理由であることを格調高く表します。客観的な説明に重きを置く「-았/었기 때문에」に比べ、叙情性や文彩を感じさせる響きを持ちます。日本語の「〜したからこそ」「〜した故に」「〜したために」に相当します。",
+      "formation": "動詞・形容詞語幹 + -았/었기에（陽母音語幹は -았기에、陰母音語幹は -었기에、하다 は 했기에）",
+      "examples": [
+        {
+          "translation": "彼女は学問がとても好きであったからこそ、大学で教授になりました。"
+        },
+        {
+          "translation": "私はカルビをたくさん食べたので、今お腹がとてもいっぱいです。"
+        },
+        {
+          "translation": "今日早く起きたので、出勤時間に遅れませんでした。"
+        },
+        {
+          "translation": "彼は個人的な問題のためにストレスを感じていたため、グループ活動には参加しませんでした。"
+        }
+      ]
+    },
+    "ko_했더니_49": {
+      "title": "-았/었더니 / ~했더니（〜したところ、〜したら、〜した結果）",
+      "shortExplanation": "話し手自身が前節の動作を行った結果、新たな事実を発見したことや、その動作が原因となって後節の結果が生じたことを表す回想の接続語尾です（「〜したら」「〜したところ」）。",
+      "longExplanation": "「-았/었더니」（하다動詞は「했더니」）は、過去時制の「-았/었-」と回想の接続語尾「-더니」が結びついた表現です。基本的に第一人称（話し手自身）の行動を主語とし、話し手がある行動を自ら行ったところ、それに伴って後節のような新しい事態や予想外の事実を知るに至ったこと（発見・結果）、またはその行動が直接の契機となって後節の好転・悪化などの状態変化が生じたこと（因果関係）を表します。日本語の「〜したところ」「〜してみたら」「〜した結果」に相当します。",
+      "formation": "動詞語幹 + -았/었더니（陽母音語幹は -았더니、陰母音語幹は -었더니、하다 は 했더니；前節の主語は主に話し手自身）",
+      "examples": [
+        {
+          "translation": "彼女に電話をかけたところ、彼女は忙しくて電話に出られないと言いました。"
+        },
+        {
+          "translation": "バスから降りたら、財布を失くしてしまったことに気づきました。"
+        },
+        {
+          "translation": "本を読んでふと見たら、窓の外に雨が降っているのが見えました。"
+        },
+        {
+          "translation": "薬を飲んだら、気分が良くなりました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_하면서도_35": {
+      "title": "~(으)면서도 (동시 진행 및 대립·모순)",
+      "shortExplanation": "어떤 동작이나 상태가 동시에 일어나면서 서로 상반되거나 모순되는 상황을 나타내는 연결어미입니다 ('~하면서도 불구하고').",
+      "longExplanation": "'~(으)면서도'는 두 가지 이상의 동작이나 상태가 동시에 일어남을 나타내는 연결어미 '-(으)면서'에 대조와 양보의 뜻을 더하는 보조사 '-도'가 결합한 형태입니다. 동일한 주어가 앞 절의 행동이나 상태를 유지하면서도, 그와 상반되거나 통념에 어긋나는 뒤 절의 행동이나 심리적 상태를 동시에 보일 때 사용합니다.",
+      "formation": "동사/형용사 어간 + -(으)면서도 (어간 끝음절 모음이나 받침 ㄹ 뒤에는 -면서도, ㄹ을 제외한 받침 뒤에는 -으면서도) | 명사 + (이)면서도 (받침이 없으면 -면서도, 받침이 있으면 -이면서도)",
+      "examples": [
+        {
+          "translation": "그녀는 회사에서 바쁘게 일하면서도 항상 일찍 집에 가서 아이들과 식사를 함께해요."
+        },
+        {
+          "translation": "저는 공부에 집중하면서도 친구들과 소통하는 데에는 어려움이 있어요."
+        },
+        {
+          "translation": "그는 연인과 행복하게 지내면서도, 그녀가 항상 곁에 없을 때를 두려워해요."
+        },
+        {
+          "translation": "어머니는 항상 건강에 신경을 쓰면서도, 자신의 건강은 항상 무시하곤 해요."
+        }
+      ]
+    },
+    "ko_하면_36": {
+      "title": "-(으)면 -(으)ㄹ수록 (비례적 증가 및 심화)",
+      "shortExplanation": "어떤 행동이나 상태의 정도가 더해짐에 따라 다른 현상의 정도도 비례하여 변함을 나타내는 표현입니다 ('~할수록 더욱').",
+      "longExplanation": "'-(으)면 -(으)ㄹ수록'은 조건의 연결어미 '-(으)면'과 정도의 심화·비례를 나타내는 연결어미 '-(으)ㄹ수록'이 함께 쓰여, 앞의 행위나 상황이 반복되거나 심화될수록 뒤의 사실이나 결과도 그에 비례하여 더욱 커지거나 변함을 강조하는 구문입니다. 구어에서는 앞의 '-(으)면'을 생략하고 '-(으)ㄹ수록'만 쓰기도 합니다.",
+      "formation": "동사/형용사 어간 + -(으)면 동사/형용사 어간 + -(으)ㄹ수록 (어간 끝음절 모음이나 받침 ㄹ 뒤에는 -면 / -ㄹ수록, ㄹ을 제외한 받침 뒤에는 -으면 / -을수록)",
+      "examples": [
+        {
+          "translation": "이것을 연습하면 연습할수록 더 잘해져서, 계속 연습하면 제가 마스터할 수 있을 거예요."
+        },
+        {
+          "translation": "날씨가 추워지면 추워질수록 더 많은 사람들이 옷가게에 들렀어요."
+        },
+        {
+          "translation": "나는 한국어를 공부하면 공부할수록 그 언어에 대해 더 알고 싶어져요."
+        },
+        {
+          "translation": "이 도시에 살면 살수록 더 많은 볼거리와 할 것들이 있는 걸 알게 됐어요."
+        }
+      ]
+    },
+    "ko_하자마자_37": {
+      "title": "-자마자 / ~하자마자 (즉시 연결 및 연속 동작)",
+      "shortExplanation": "앞의 동작이 끝나자마자 거의 틈이 없이 곧바로 뒤의 동작이 이어짐을 나타내는 연결어미입니다 ('~하자 곧바로').",
+      "longExplanation": "'-자마자'는 동사 어간에 붙어 앞 절의 사건이나 동작이 완료되는 즉시 시간적 간격 없이 뒤 절의 동작이 연이어 일어남을 나타내는 연결어미입니다. 두 동작 사이의 신속성과 긴밀한 연속성을 강조합니다. 앞 절에는 과거 시제 선어말어미 '-았/었-'을 결합할 수 없으며, 시제는 문장의 종결어미에서 나타냅니다.",
+      "formation": "동사 어간 + -자마자 (받침 유무와 관계없이 어간에 직접 결합; 하다는 하자마자)",
+      "examples": [
+        {
+          "translation": "학교에 도착하자마자 그는 수업에 바로 들어갔습니다."
+        },
+        {
+          "translation": "저는 공항에 도착하자마자 택시를 불렀어요."
+        },
+        {
+          "translation": "그녀는 일어나자마자 커피를 만들었습니다."
+        },
+        {
+          "translation": "회사에서 퇴근하자마자 집에 바로 가서 쉬었어요."
+        }
+      ]
+    },
+    "ko_해서_38": {
+      "title": "-아/어서 그런지 / ~해서 그런지 (원인 추측 및 조심스러운 추론)",
+      "shortExplanation": "어떤 결과의 이유나 원인을 확정적으로 단정하지 않고 막연하게 짐작하여 말할 때 쓰는 표현입니다 ('~해서인지').",
+      "longExplanation": "'-아/어서 그런지'는 이유나 원인을 나타내는 연결어미 '-아/어서'에 형용사 '그렇다'와 의문·추측을 나타내는 어미 '-(으)ㄴ지'가 결합된 형태입니다. 화자가 뒤 절의 결과나 상태를 발생시킨 원인이 앞 절의 내용에 있을 것이라고 짐작은 하지만, 확정적으로 단언하지 않고 개연성 있는 원인으로 조심스럽게 제시할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + -아/어서 그런지 (끝음절 모음이 ㅏ, ㅗ이면 -아서 그런지, 그 외 모음이면 -어서 그런지, 하다는 해서 그런지) | 명사 + (이)라서 그런지",
+      "examples": [
+        {
+          "translation": "오늘은 날씨가 좋아서 그런지 사람들이 많이 활동하는 것을 볼 수 있었습니다."
+        },
+        {
+          "translation": "그녀는 어제 다치고 나서 그런지 오늘은 엄청 조심스럽게 걸어갔습니다."
+        },
+        {
+          "translation": "어제 짜장면을 너무 많이 먹었나 봐요. 오늘은 배가 아파서 그런지 컨디션이 좋지 않아요."
+        },
+        {
+          "translation": "나는 꿈에서 그녀를 만났어서 그런지 오늘은 그녀가 계속 생각나요."
+        }
+      ]
+    },
+    "ko_하여서는_39": {
+      "title": "-아/어서는 안 되다 / ~하여서는 안 되다 (강한 금지 및 훈계)",
+      "shortExplanation": "규칙, 규범, 도덕 등에 비추어 볼 때 어떤 행위를 해서는 결코 안 됨을 단호하게 금지하거나 경고할 때 쓰는 표현입니다 ('~해서는 안 된다').",
+      "longExplanation": "'-아/어서는 안 되다'(문어체에서는 '-아/여서는 안 되다')는 연결어미 '-아/어서'에 보조사 '-는'과 부정 표현 '안 되다'가 결합된 형태입니다. 앞 절의 행위를 용납할 경우 심각한 부작용이나 규범 위반이 발생하므로 그러한 행위를 용인할 수 없음을 규범적·도덕적 관점에서 엄격하게 금지할 때 사용합니다. 일상 구어의 '-면 안 되다'에 비해 공식적이고 엄중한 어조를 띱니다.",
+      "formation": "동사 어간 + -아/어서는 안 되다 (끝음절 모음이 ㅏ, ㅗ이면 -아서는 안 되다, 그 외 모음이면 -어서는 안 되다, 하다는 해서는 안 되다 또는 문어체 하여서는 안 되다)",
+      "examples": [
+        {
+          "translation": "학생들이라고 해서 수업에 늦게 오는 것은 절대로 하여서는 안 되다."
+        },
+        {
+          "translation": "의사로서 환자에 대한 사항을 외부에 누설하는 것을 하여서는 안 되다."
+        },
+        {
+          "translation": "내일 시험 때문에 밤을 새운다고 해서는 안 돼요. 건강이 먼저예요."
+        },
+        {
+          "translation": "다른 사람에게 피해를 주는 행동을 하여서는 안 되다."
+        }
+      ]
+    },
+    "ko_한테는_40": {
+      "title": "~한테는 (대상 지정 및 대조 강조)",
+      "shortExplanation": "행위의 대상이나 처소를 나타내는 조사 '한테'에 대조와 강조의 '는'이 결합하여, 특정 대상을 다른 대상과 구별하여 강조할 때 쓰는 표현입니다 ('~에게는').",
+      "longExplanation": "'~한테는'은 유정명사(사람이나 동물) 뒤에 붙어 행동이 미치는 대상을 나타내는 부사격 조사 '한테'와 대조·화제 표시 보조사 '는'이 결합된 표현입니다. 다른 사람이나 대상과 비교하여 '그 대상에 대해서는 특별히 이러하다'라는 대조적인 뉘앙스를 드러낼 때 사용합니다. 높임의 대상인 웃어른에게는 '께는'을 쓰고, 격식체나 문어체에서는 '에게는'을 사용합니다.",
+      "formation": "명사(사람이나 동물) + 한테는 (웃어른에게는 께는; 문어체에서는 에게는)",
+      "examples": [
+        {
+          "translation": "제 언니한테는 선물을 사려고 왔어요. 제 친구한테는 이메일로 메시지를 보낼 예정입니다."
+        },
+        {
+          "translation": "아버지한테는 이 사실을 아직 알리지 않았어요. 언니에게만 이야기했어요."
+        },
+        {
+          "translation": "아이들한테는 단순한 언어로 설명해야 해요. 너무 복잡하면 이해할 수 없어요."
+        },
+        {
+          "translation": "그는 엄마한테는 항상 친절하지만, 아빠한테는 무례해요."
+        }
+      ]
+    },
+    "ko_할_41": {
+      "title": "-(으)ㄹ 만하다 / ~할 만하다 (가치성 및 타당성)",
+      "shortExplanation": "어떤 행위를 할 만한 충분한 가치나 이유가 있음을 나타내거나, 어떤 상태가 일정 기준을 충족함을 나타내는 표현입니다 ('~할 가치가 있다').",
+      "longExplanation": "'-(으)ㄹ 만하다'는 관형사형 전성어미 '-(으)ㄹ'에 의존형용사 '만하다'가 결합된 구문입니다. 시간, 노력, 비용을 들여서 어떤 행위를 할 만한 주관적 가치나 타당성이 충분히 있음을 평가하여 말할 때 씁니다. 때로는 어떤 상황이 '참거나 견딜 만하다', 혹은 '어느 정도 수준에 도달하여 괜찮다'라는 허용과 가능의 의미를 나타내기도 합니다. 부정형은 '-(으)ㄹ 만하지 않다'를 씁니다.",
+      "formation": "동사 어간 + -(으)ㄹ 만하다 (어간 끝음절 모음이나 받침 ㄹ 뒤에는 -ㄹ 만하다, ㄹ을 제외한 받침 뒤에는 -을 만하다; 하다는 할 만하다)",
+      "examples": [
+        {
+          "translation": "요리 공부를 계속하는 게 어렵지만, 맛있는 음식을 자주 먹을 수 있게 되니까 할 만해요."
+        },
+        {
+          "translation": "이 작품은 비싸기는 하지만, 아름다운 디자인과 고품질로 볼 때 사는 것이 할 만해요."
+        },
+        {
+          "translation": "긴 시간을 기다리는 것은 힘들지만, 그 결과가 좋으면 할 만합니다."
+        },
+        {
+          "translation": "이 영화는 별로 재미있지 않기 때문에 보는 것이 할 만하지 않아요."
+        }
+      ]
+    },
+    "ko_할_42": {
+      "title": "-(으)ㄹ 수밖에 없다 / ~할 수밖에 없다 (불가피성 및 필연적 선택)",
+      "shortExplanation": "주어진 상황이나 여건상 다른 대안이나 선택의 여지가 없어 그 행위를 할 수밖에 없음을 나타내는 표현입니다 ('~하는 방법 외에는 없다').",
+      "longExplanation": "'-(으)ㄹ 수밖에 없다'는 가능성을 나타내는 '-(으)ㄹ 수'에 단독·유일의 한정을 나타내는 보조사 '-밖에'와 부정을 나타내는 형용사 '없다'가 결합된 구문입니다. 피할 수 없는 객관적인 상황이나 정황으로 인해 다른 선택지가 존재하지 않아 필연적으로 해당 동작을 하거나 그러한 상태에 놓이게 됨을 강하게 나타냅니다. '오직 그 방법뿐이다'라는 불가피성을 강조합니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 수밖에 없다 (어간 끝음절 모음이나 받침 ㄹ 뒤에는 -ㄹ 수밖에 없다, ㄹ을 제외한 받침 뒤에는 -을 수밖에 없다; 하다는 할 수밖에 없다)",
+      "examples": [
+        {
+          "translation": "비가 오니까 우산을 가지고 갈 수밖에 없어요."
+        },
+        {
+          "translation": "시험이 있기 때문에 공부를 계속할 수밖에 없어요."
+        },
+        {
+          "translation": "그녀가 그렇게 말했으니까, 나는 그녀를 신뢰할 수밖에 없었어요."
+        },
+        {
+          "translation": "지금 돈이 없어서 이렇게 저렴한 물건밖에 살 수 없어요."
+        }
+      ]
+    },
+    "ko_해_43": {
+      "title": "-(으)ㄹ수록 / ~해 갈수록 (비례적 심화 및 점진적 증가)",
+      "shortExplanation": "어떤 일의 상태나 정도가 더해감에 따라 그에 비례하여 다른 일의 정도도 함께 커짐을 나타내는 연결어미입니다 ('~할수록 더').",
+      "longExplanation": "'-(으)ㄹ수록'(또는 시간의 흐름에 따른 심화를 나타내는 '-어/아 갈수록')은 앞 절의 사태가 반복되거나 시간의 흐름에 따라 깊어질 때, 그에 비례하여 뒤 절의 현상이나 심리 상태 역시 점진적으로 가중되거나 변화함을 나타내는 연결어미입니다. '-(으)면'과 함께 쓰여 '-(으)면 -(으)ㄹ수록'의 형태로도 빈번하게 사용됩니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ수록 (어간 끝음절 모음이나 받침 ㄹ 뒤에는 -ㄹ수록, ㄹ을 제외한 받침 뒤에는 -을수록) | 시간 경과적 표현: 동사/형용사 어간 + -어/아 갈수록",
+      "examples": [
+        {
+          "translation": "날씨가 추워질수록 감기에 걸리는 사람이 많아지는 것 같아요."
+        },
+        {
+          "translation": "그녀는 알수록 더 매력적인 사람이에요."
+        },
+        {
+          "translation": "책을 읽을수록 나의 사고력이 향상되는 것 같아요."
+        },
+        {
+          "translation": "저는 집에 있을수록 외로워져서, 밖에 나가고 싶어요."
+        }
+      ]
+    },
+    "ko_해_44": {
+      "title": "-아/어 보아야 / ~해 보아야 (필수적 시도 및 경험의 전제)",
+      "shortExplanation": "어떤 일의 실상이나 가치를 파악하기 위해서는 직접 시도하거나 체험해 보는 과정이 반드시 선행되어야 함을 나타내는 표현입니다 ('~해 봐야 알 수 있다').",
+      "longExplanation": "'-아/어 보아야'는 시도나 경험을 뜻하는 보조동사 '-아/어 보다'에 필수 조건을 나타내는 연결어미 '-아/어야'가 결합된 형태입니다. 어떤 사물의 특성, 맛, 재미, 진위 여부 등을 제대로 파악하거나 평가하기 위해서는 실제로 직접 해 보는 경험이 필수적인 전제 조건임을 강조할 때 쓰입니다. 문말에는 주로 '알 수 있다', '안다', '한다' 등이 호응합니다.",
+      "formation": "동사 어간 + -아/어 보아야 (끝음절 모음이 ㅏ, ㅗ이면 -아 보아야, 그 외 모음이면 -어 보아야, 하다는 해 보아야)",
+      "examples": [
+        {
+          "translation": "음식이 신선한지 아는 방법은 먹어 보아야 해요."
+        },
+        {
+          "translation": "이 옷이 어떤지 아는 방법은 입어 보아야 해요."
+        },
+        {
+          "translation": "이 책이 재미있는지 아는 방법은 읽어 보아야 해요."
+        },
+        {
+          "translation": "이 스포츠가 얼마나 재미있는지 아는 방법은 직접 해 보아야 해요."
+        }
+      ]
+    },
+    "ko_해오다_45": {
+      "title": "-아/어 오다 / ~해오다 (과거부터 현재까지의 지속 및 축적)",
+      "shortExplanation": "과거의 어느 시점부터 시작된 동작이나 상태가 현재까지 끊이지 않고 계속 이어져 오고 있음을 나타내는 보조용언 구문입니다 ('~해 오고 있다').",
+      "longExplanation": "'-아/어 오다'(하다 동사는 '해오다')는 연결어미 '-아/어'에 보조동사 '오다'가 결합되어, 과거의 특정 시점부터 출발한 행위나 습관, 지속적인 노력이 시간의 흐름을 따라 현재까지 계속 이어지거나 누적되어 왔음을 나타냅니다. 주로 일정한 기간을 나타내는 표현과 함께 쓰이며, 현재진행형인 '-아/어 오고 있다'의 형태로 매우 자주 활용됩니다.",
+      "formation": "동사 어간 + -아/어 오다 (끝음절 모음이 ㅏ, ㅗ이면 -아 오다, 그 외 모음이면 -어 오다, 하다는 해오다; 대개 -아/어 오고 있다 형태로 자주 쓰임)",
+      "examples": [
+        {
+          "translation": "나는 어렸을 때부터 피아노를 쳐오고 있어요."
+        },
+        {
+          "translation": "우리는 그 사업을 시작한 지 5년 동안 일해오고 있습니다."
+        },
+        {
+          "translation": "세계 여행을 꿈꾸며 돈을 아껴오고 있어요."
+        },
+        {
+          "translation": "우리는 친구가 왔을 때부터 함께 이야기해오고 있어요."
+        }
+      ]
+    },
+    "ko_했건만_46": {
+      "title": "-았/었건만 / ~했건만 (과거 사실의 인정 및 역접·아쉬움)",
+      "shortExplanation": "앞 절에서 이미 일어난 과거의 행위나 사실을 인정하면서도, 뒤 절에서 그에 어긋나는 상반된 결과나 유감스러운 일이 일어남을 나타내는 연결어미입니다 ('~했음에도 불구하고').",
+      "longExplanation": "'-았/었건만'(하다 동사는 '했건만')은 과거 시제 선어말어미 '-았/었-'에 역접을 나타내는 연결어미 '-건만'('-건마는'의 준말)이 결합된 다소 문학적이고 격식적인 표현입니다. 앞 절의 노력이나 사건이 분명히 존재했음에도 불구하고 기대에 미치지 못하거나 정반대의 상황이 벌어졌을 때 쓰이며, 말하는 사람의 아쉬움, 안타까움, 불만 등의 정서가 짙게 배어 있습니다.",
+      "formation": "동사/형용사 어간 + -았/었건만 (끝음절 모음이 ㅏ, ㅗ이면 -았건만, 그 외 모음이면 -었건만, 하다는 했건만)",
+      "examples": [
+        {
+          "translation": "저는 많이 노력했건만, 시험에 떨어졌습니다."
+        },
+        {
+          "translation": "친구는 어제 왔건만, 오늘은 못 왔습니다."
+        },
+        {
+          "translation": "음식은 맛있었건만, 가격이 너무 비쌌습니다."
+        },
+        {
+          "translation": "그녀는 예쁘다고 했건만, 저는 그렇게 생각하지 않았습니다."
+        }
+      ]
+    },
+    "ko_했기_47": {
+      "title": "-았/었기 때문에 / ~했기 때문에 (과거 행위·사건에 기인한 원인)",
+      "shortExplanation": "과거에 이미 일어난 사건이나 완료된 행동이 뒤 절 결과의 직접적인 원인이나 이유가 됨을 명확히 밝힐 때 쓰는 표현입니다 ('~했으므로').",
+      "longExplanation": "'-았/었기 때문에'(하다 동사는 '했기 때문에')는 과거 시제 선어말어미 '-았/었-', 명사형 전성어미 '-기', 원인과 까닭을 나타내는 의존명사 '때문', 그리고 부사격 조사 '에'가 결합된 구문입니다. 과거에 발생했던 명백한 사실이나 행동이 현재 혹은 결과 상황을 초래한 객관적 근거임을 논리적으로 밝힐 때 널리 쓰이며, 구어와 문어 모두에서 보편적으로 사용됩니다.",
+      "formation": "동사/형용사 어간 + -았/었기 때문에 (끝음절 모음이 ㅏ, ㅗ이면 -았기 때문에, 그 외 모음이면 -었기 때문에, 하다는 했기 때문에)",
+      "examples": [
+        {
+          "translation": "어제 늦게 잤기 때문에 오늘 아침에 일어나기 힘들었어요."
+        },
+        {
+          "translation": "미세먼지 농도가 높아서 창문을 열지 않았기 때문에 방이 더워졌어요."
+        },
+        {
+          "translation": "많은 공부를 했기 때문에 시험에서 좋은 점수를 받았어요."
+        },
+        {
+          "translation": "비가 왔기 때문에 운동화가 젖었어요."
+        }
+      ]
+    },
+    "ko_했기에_48": {
+      "title": "-았/었기에 / ~했기에 (과거 사실에 기반한 이유 및 근거)",
+      "shortExplanation": "과거에 있었던 일이나 상태가 뒤 절 사건의 중요한 원인이나 판단의 근거가 됨을 나타내는 다소 문어적인 연결어미입니다 ('~했으므로').",
+      "longExplanation": "'-았/었기에'(하다 동사는 '했기에')는 과거 시제 선어말어미 '-았/었-'과 원인·이유를 나타내는 연결어미 '-기에'가 결합된 형태입니다. 주로 격식 있는 담화나 문학 작품, 수필 등 문어체에서 자주 쓰이며, 과거의 특정 상황이나 행동이 뒤 절의 결과를 이끌어 낸 결정적인 이유나 배경이었음을 우아하고 자연스럽게 드러냅니다. 논리적 설명 중심인 '-았/었기 때문에'에 비해 문체적 부드러움과 서정성을 지닙니다.",
+      "formation": "동사/형용사 어간 + -았/었기에 (끝음절 모음이 ㅏ, ㅗ이면 -았기에, 그 외 모음이면 -었기에, 하다는 했기에)",
+      "examples": [
+        {
+          "translation": "그녀는 학문을 아주 좋아했기에, 대학에서 교수가 되었어요."
+        },
+        {
+          "translation": "저는 갈비를 많이 먹었기에, 지금 배가 너무 불러요."
+        },
+        {
+          "translation": "오늘 일찍 일어났기에, 출근할 시간에 늦지 않았어요."
+        },
+        {
+          "translation": "그는 개인적인 문제 때문에 스트레스를 받았기에, 단체 활동에 참여하지 않았어요."
+        }
+      ]
+    },
+    "ko_했더니_49": {
+      "title": "-았/었더니 / ~했더니 (자신의 행위 후 발견 및 인과적 결과)",
+      "shortExplanation": "말하는 사람이 직접 어떤 행동을 한 뒤에 새로운 사실을 알게 되었거나, 그 행동이 원인이 되어 뒤의 결과가 일어났음을 나타내는 회상 연결어미입니다 ('~하고 나니').",
+      "longExplanation": "'-았/었더니'(하다 동사는 '했더니')는 과거 시제 선어말어미 '-았/었-'에 회상의 연결어미 '-더니'가 결합된 형태입니다. 주로 화자 자신(1인칭)이 앞 절의 행동을 직접 실행한 것을 전제로 하여, 그 행동의 결과로 뜻밖의 새로운 사실을 목격하거나 발견하게 되었음('~했더니 그 결과... 알게 되었다')을 나타내거나, 그 행위가 직접적인 계기가 되어 뒤 절의 심리적·신체적 변화가 유발되었음('~했더니 그 영향으로...')을 나타낼 때 사용합니다.",
+      "formation": "동사 어간 + -았/었더니 (끝음절 모음이 ㅏ, ㅗ이면 -았더니, 그 외 모음이면 -었더니, 하다는 했더니; 앞 절의 주어는 주로 말하는 사람 자신임)",
+      "examples": [
+        {
+          "translation": "그녀에게 전화했더니 그녀는 바빠서 전화를 받을 수 없다고 했어요."
+        },
+        {
+          "translation": "저는 버스에서 내렸더니 지갑을 잃어버렸다는 것을 깨달았어요."
+        },
+        {
+          "translation": "나는 책을 읽었더니 창문 밖에 비가 오고 있는 것을 봤어요."
+        },
+        {
+          "translation": "약을 먹었더니 기분이 좋아졌어요."
+        }
+      ]
+    }
+  }
+}

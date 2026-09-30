@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_했어야_50": {
+      "title": "-았/었어야 했다 / ~했어야 했다 (Đáng lẽ phải..., lẽ ra nên...)",
+      "shortExplanation": "Dùng để diễn tả một việc lẽ ra nên làm hoặc bắt buộc phải làm trong quá khứ nhưng thực tế đã không thực hiện được, thường thể hiện sự hối tiếc hoặc tiếc nuối ('đáng lẽ phải...', 'lẽ ra nên...').",
+      "longExplanation": "'-았/었어야 했다' kết hợp giữa cấu trúc điều kiện bắt buộc '-아/어야 하다' (phải làm gì) được chuyển sang thì quá khứ '-았/었어야 했다'. Cấu trúc này dùng khi người nói nhìn lại một sự việc trong quá khứ và nhận thấy việc thực hiện hành động đó là cần thiết hoặc đúng đắn, nhưng trên thực tế hành động đó đã không diễn ra, dẫn đến kết quả đáng tiếc hoặc không như ý muốn. Trong giao tiếp hằng ngày, ngữ pháp này thường xuất hiện dưới dạng '-았/었어야 했는데...' để đưa ra bối cảnh trước khi giãi bày nguyên nhân khách quan hoặc kết quả đáng tiếc ở vế sau.",
+      "formation": "Thân động từ/tính từ + -았/었어야 했다 (thân từ có nguyên âm ㅏ, ㅗ dùng -았어야 했다; các nguyên âm khác dùng -었어야 했다; 하다 biến thành 했어야 했다)",
+      "examples": [
+        {
+          "translation": "Đáng lẽ hôm qua tôi phải hoàn thành xong công việc đó, nhưng vì thiếu thời gian nên tôi đã không thể làm xong."
+        },
+        {
+          "translation": "Lẽ ra tôi phải đến trung tâm học bài, nhưng vì mải chơi game nên đã không thể đi được."
+        },
+        {
+          "translation": "Đáng lẽ tôi nên uống nước thay vì cà phê, vì có quá nhiều caffeine nên tôi đã không ngủ được."
+        },
+        {
+          "translation": "Lẽ ra tôi phải nghe điện thoại, nhưng vì không nhìn thấy máy nên đã không bắt máy được."
+        }
+      ]
+    },
+    "ko_혹은_51": {
+      "title": "혹은 / ~혹은 (Hoặc, hoặc là, hay là)",
+      "shortExplanation": "Phó từ liên kết dùng để nối hai hay nhiều danh từ, cụm từ hoặc mệnh đề biểu thị sự lựa chọn, tương đương với 'hoặc', 'hoặc là', 'hay là'.",
+      "longExplanation": "'혹은' là một phó từ liên kết mang tính trang trọng và trung tính, có nguồn gốc từ chữ Hán (或 - hoặc). Từ này dùng để đặt giữa các danh từ, ngữ đoạn hoặc mệnh đề nhằm đưa ra hai hay nhiều phương án, khả năng thay thế nhau mà không ưu tiên hay thiên vị phương án nào ('A hoặc B'). So với từ khẩu ngữ '아니면' hay trợ từ '-(이)나', '혹은' thường mang sắc thái lịch sự, chỉn chu hơn, được sử dụng rộng rãi trong cả văn viết, bài giảng, văn bản pháp luật lẫn hội thoại trang trọng.",
+      "formation": "Danh từ 1 + 혹은 + Danh từ 2 | Mệnh đề 1 + . 혹은 + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Bạn muốn dùng cà phê hay là trà?"
+        },
+        {
+          "translation": "Để giải quyết vấn đề này thì cần có thời gian hoặc là sự nỗ lực."
+        },
+        {
+          "translation": "Anh ấy đã muốn nuôi một chú chó con hoặc một chú mèo con."
+        },
+        {
+          "translation": "Để trải qua kỳ nghỉ hè, bạn có thể nghỉ mát ở bãi biển hoặc là trên núi."
+        }
+      ]
+    },
+    "ko_후에야_52": {
+      "title": "-(으)ㄴ 후에야 / 후에야 (Chỉ sau khi... mới..., mãi sau khi... mới...)",
+      "shortExplanation": "Dùng để nhấn mạnh rằng chỉ sau khi sự việc hoặc mốc thời gian ở vế trước kết thúc trọn vẹn thì hành động, kết quả hoặc sự nhận thức ở vế sau mới diễn ra ('chỉ sau khi... mới...').",
+      "longExplanation": "'후에야' là sự kết hợp giữa danh từ phụ thuộc chỉ thời gian '후' (sau, sau này), trợ từ vị trí '에' và trợ từ nhấn mạnh điều kiện thiết yếu '-야' (chỉ, mới). Khi gắn với động từ, cấu trúc thường có dạng '-(으)ㄴ 후에야'. Cấu trúc này nhấn mạnh mệnh đề phía trước là điều kiện tiên quyết không thể thiếu; chỉ sau khi trải qua quá trình hoặc sự việc đó thì chủ ngữ mới nhận ra chân lý, giải quyết được vấn đề hoặc đạt được kết quả ở mệnh đề sau, thường hàm ý sự việc diễn ra khá muộn màng.",
+      "formation": "Thân động từ + -(으)ㄴ 후에야 (thân từ có nguyên âm hoặc phụ âm ㄹ dùng -ㄴ 후에야, có phụ âm cuối khác dùng -은 후에야) | Danh từ + 후에야",
+      "examples": [
+        {
+          "translation": "Mãi sau khi cô ấy rời xa tôi, tôi mới nhận ra mình yêu cô ấy nhiều đến nhường nào."
+        },
+        {
+          "translation": "Phải sau khi làm bài thi xong, tôi mới nhớ ra câu trả lời chính xác cho câu hỏi này là gì."
+        },
+        {
+          "translation": "Chỉ sau khi tốt nghiệp đại học, tôi mới thực sự hiểu được những điều mình cần phải học là gì."
+        },
+        {
+          "translation": "Mãi sau khi bắt tay vào làm việc, tôi mới biết khối lượng công việc nhiều đến mức độ nào."
+        }
+      ]
+    },
+    "ko_흔히_53": {
+      "title": "흔히 / ~흔히 (Thường, thông thường, thường thấy)",
+      "shortExplanation": "Phó từ dùng để diễn đạt một hiện tượng, sự việc nào đó xảy ra thường xuyên, phổ biến hoặc là một quan niệm thông thường được nhiều người biết đến ('thường', 'thông thường').",
+      "longExplanation": "'흔히' là phó từ có gốc từ tính từ '흔하다' (nhiều, phổ biến). Từ này được dùng trước động từ, tính từ hoặc đứng đầu câu nhằm chỉ ra rằng một tình huống, thói quen hay quan niệm nào đó diễn ra với tần suất cao hoặc rất quen thuộc trong đời sống xã hội. Nó tương đương với 'thường', 'thông thường', 'người ta thường...' trong tiếng Việt. '흔히' có thể dùng trong cả các nhận định khách quan về thực tế lẫn các quan niệm chủ quan phổ biến.",
+      "formation": "흔히 + Động từ/Tính từ | 흔히 + Mệnh đề",
+      "examples": [
+        {
+          "translation": "Mọi người thường hay nghĩ rằng đồ ăn tốt cho sức khỏe thì sẽ không ngon miệng."
+        },
+        {
+          "translation": "Ở Hàn Quốc, người ta thường gọi những người sống một mình là 'người độc thân' (single)."
+        },
+        {
+          "translation": "Chúng ta thường hay ăn món ăn nước ngoài nhiều hơn cả món ăn của nước mình."
+        },
+        {
+          "translation": "Hoa anh đào, loài hoa thường nở rộ khi mùa xuân đến, được rất nhiều người biết đến."
+        }
+      ]
+    },
+    "ko_되다_54": {
+      "title": "~이/가 되다 / ~되다 (Trở thành, trở nên, thành)",
+      "shortExplanation": "Động từ biểu thị sự biến đổi, chuyển biến từ một trạng thái, tư cách hay vai trò này sang một trạng thái, tính chất hoặc vai trò mới ('trở thành', 'trở nên', 'thành').",
+      "longExplanation": "'되다' là một trong những động từ cơ bản nhất trong tiếng Hàn, biểu thị sự thay đổi hoặc đạt được kết quả. Khi đi sau danh từ kết hợp với tiểu từ chủ cách '이/가' ('Danh từ + 이/가 되다'), cấu trúc diễn tả việc ai đó hoặc cái gì trở thành một nghề nghiệp, thân phận hay đối tượng mới (ví dụ: 'bác sĩ', 'người lớn'). Khi kết hợp với tính từ hoặc động từ thông qua vĩ tố '-게' ('Tính từ/Động từ + -게 되다'), cấu trúc biểu thị sự biến chuyển về mặt tính chất hoặc hoàn cảnh ngoại cảnh đưa đẩy dẫn đến tình trạng đó. Ngoài ra, '되다' còn là hậu tố cấu tạo động từ phái sinh khi ghép với danh từ gốc Hán.",
+      "formation": "Danh từ + 이/가 되다 (danh từ có phụ âm cuối dùng 이 되다, không có phụ âm cuối dùng 가 되다) | Thân tính từ/động từ + -게 되다",
+      "examples": [
+        {
+          "translation": "Thời tiết đang nóng bức bỗng nhiên trở nên lạnh buốt, thế nên mọi người đều bị cảm cúm."
+        },
+        {
+          "translation": "Cô ấy đã nỗ lực học tập chăm chỉ và trở thành vị giáo sư trẻ tuổi nhất thế giới."
+        },
+        {
+          "translation": "Bạn tôi đã học tiếng Hàn và trở thành một biên dịch viên."
+        },
+        {
+          "translation": "Chú mèo con bé bỏng ngày nào giờ đã trở thành một chú mèo to lớn."
+        }
+      ]
+    },
+    "ko_잖다_55": {
+      "title": "-잖아(요) / ~잖다 (Chẳng phải là... sao, mà, ấy mà)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng khi nhắc nhở, tái khẳng định một sự thật mà người nghe vốn dĩ đã biết, hoặc dùng để giải thích lý do hiển nhiên cho một tình huống ('chẳng phải là... sao', 'mà lại').",
+      "longExplanation": "'-잖다' là dạng rút gọn của cụm phủ định nghi vấn '-지 않다'. Vĩ tố này dùng khi người nói muốn nhắc người đối thoại nhớ lại một thông tin, sự thật mà cả hai bên cùng biết rõ, hoặc dùng để biện minh, đưa ra lý do hiển nhiên cho hành động của mình ('chẳng phải chúng ta đã hẹn trước rồi sao', 'trời đang mưa mà'). Trong văn phong thân mật dùng '-잖아', khi cần lịch sự tôn trọng thì thêm tiểu từ '-요' thành '-잖아요'. Đôi khi nó cũng mang sắc thái hờn dỗi nhẹ hoặc khiển trách nhẹ khi đối phương quên mất điều hiển nhiên.",
+      "formation": "Thân động từ/tính từ + -잖아(요) (quá khứ dùng -았/었잖아(요)) | Danh từ + (이)잖아(요) (có phụ âm cuối dùng 이잖아(요), không có phụ âm cuối dùng 잖아(요))",
+      "examples": [
+        {
+          "translation": "Cậu hôm nay phải đến trường mà, sao giờ này vẫn còn mải chơi thế?"
+        },
+        {
+          "translation": "Ngày mai tụi mình có bài kiểm tra mà. Thế nên hôm nay tớ mới định học bài này."
+        },
+        {
+          "translation": "Cậu cũng biết người đó mà, dạo này anh ấy thế nào rồi?"
+        },
+        {
+          "translation": "Bây giờ muộn rồi mà, tụi mình phải bắt đầu học thôi."
+        }
+      ]
+    },
+    "ko_져지다_56": {
+      "title": "-아/어지다 / ~져/지다 (Trở nên..., dần dần...)",
+      "shortExplanation": "Vĩ tố bổ trợ kết hợp với thân tính từ để diễn tả sự biến chuyển dần dần về trạng thái, tính chất hoặc cảm xúc theo thời gian ('trở nên...', 'càng ngày càng...').",
+      "longExplanation": "'-아/어지다' là cấu trúc biến đổi một tính từ chỉ trạng thái tĩnh thành một quá trình biến đổi động. Khi gắn vào thân tính từ, cấu trúc này diễn tả việc tính chất hay cảm giác đó đang dần hình thành, phát triển hoặc chuyển biến sang một mức độ mới (ví dụ: '춥다' lạnh -> '추워지다' trở nên lạnh; '좋다' tốt -> '좋아지다' trở nên tốt hơn). Lưu ý: khi kết hợp với động từ, '-아/어지다' có thể mang ý nghĩa bị động, nhưng công dụng phổ biến nhất của nó là kết hợp với tính từ để biểu thị sự biến đổi trạng thái.",
+      "formation": "Thân tính từ + -아/어지다 (thân từ có nguyên âm ㅏ, ㅗ dùng -아지다; các nguyên âm khác dùng -어지다; 하다 biến thành 해지다)",
+      "examples": [
+        {
+          "translation": "Thời tiết trở nên quá nóng bức nên việc đi ra ngoài cũng trở nên khó khăn."
+        },
+        {
+          "translation": "Cô ấy ngày càng nổi tiếng ở trường học nên có rất nhiều người đã biết đến cô ấy."
+        },
+        {
+          "translation": "Vì vẽ tranh rất nhiều nên tay nghề vẽ tranh của cậu ấy đã trở nên thực sự tiến bộ."
+        },
+        {
+          "translation": "Mải tập trung vào làm việc nên thời gian trôi qua quá nhanh."
+        }
+      ]
+    },
+    "ko_졌다가_57": {
+      "title": "-았/었다가 / -아/어졌다가 (Làm gì xong rồi lại..., vừa mới... thì lại...)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả một hành động hoặc trạng thái ở vế trước đã hoàn tất hoặc hình thành, nhưng sau đó bị đảo ngược, thay đổi hoặc chuyển tiếp sang một hành động, trạng thái hoàn toàn trái ngược ('xong rồi lại...', 'vừa mới... thì lại...').",
+      "longExplanation": "'-았/었다가' (hoặc dạng kết hợp biến đổi trạng thái '-아/어졌다가') là vĩ tố liên kết biểu thị sự đảo nghịch hoặc chuyển hướng hành động sau khi đã hoàn tất. Điểm khác biệt quan trọng với '-다가' thông thường (vốn diễn tả một hành động đang dang dở thì bị ngắt quãng) là '-았/었다가' yêu cầu hành động ở vế trước phải kết thúc trọn vẹn, rồi sau đó một hành động mới xuất hiện mang tính đảo ngược lại trạng thái cũ (ví dụ: mở cửa ra rồi lại đóng lại, vừa nhận việc xong thì bị sa thải).",
+      "formation": "Thân động từ/tính từ + -았/었다가 (thân từ có nguyên âm ㅏ, ㅗ dùng -았다가; các nguyên âm khác dùng -었다가; 하다 biến thành 했다가)",
+      "examples": [
+        {
+          "translation": "Tôi vừa mở cửa ra một lúc rồi lại đóng ngay lại, vì không thể kiên nhẫn đứng đợi bạn đến được."
+        },
+        {
+          "translation": "Nhà hàng đó vừa mới mở cửa hoạt động được vài ngày trước mà hôm nay đã đóng cửa luôn rồi."
+        },
+        {
+          "translation": "Lũ trẻ mải chơi điện tử trên máy tính nên đã phải bỏ dở việc làm bài tập về nhà."
+        },
+        {
+          "translation": "Bạn tôi vừa mới nhận được việc làm, nhưng chỉ sau một tháng đã bị sa thải."
+        }
+      ]
+    },
+    "ko_즉_58": {
+      "title": "즉 / ~즉 (Tức là, có nghĩa là, nói cách khác)",
+      "shortExplanation": "Phó từ liên kết dùng để giải thích lại, làm rõ hoặc tóm lược cụ thể hơn nội dung đã nêu ở câu trước ('tức là', 'nói cách khác').",
+      "longExplanation": "'즉' là phó từ liên kết gốc Hán (卽 - tức) dùng để mở đầu cho lời giải thích chi tiết hơn, chính xác hơn hoặc tóm tắt nội dung của mệnh đề đi trước. Tương đương với các cụm từ 'tức là', 'nói cách khác', 'điều này có nghĩa là...' trong tiếng Việt. Từ này có tính logic và học thuật cao, thường xuyên xuất hiện trong các bài luận, văn bản pháp quy, bài báo khoa học và các bài phát biểu mang tính trang trọng.",
+      "formation": "Mệnh đề 1 + . tức + Mệnh đề 2 | Danh từ 1 + , tức + Danh từ 2",
+      "examples": [
+        {
+          "translation": "Dựa trên kết quả của nghiên cứu này, tức là theo những gì chúng ta quan sát được, hiện tượng nóng lên toàn cầu rõ ràng là do hoạt động của con người gây ra."
+        },
+        {
+          "translation": "Ông ấy là một chuyên gia về quan hệ quốc tế. Nói cách khác, ông ấy nghiên cứu các vấn đề giữa các quốc gia khác nhau trên thế giới."
+        },
+        {
+          "translation": "Bức thư điện tử này sẽ chỉ gửi riêng cho cậu. Tức là, cậu là người nhận duy nhất của thông điệp này."
+        },
+        {
+          "translation": "Cậu ấy là một người bạn tốt của tôi. Có nghĩa là, tôi biết rất rõ về cậu ấy."
+        }
+      ]
+    },
+    "ko_지_59": {
+      "title": "-지 않을까 싶다 / ~지 않을까 싶다 (E rằng..., có lẽ là..., tự hỏi liệu có phải...)",
+      "shortExplanation": "Dùng để bày tỏ sự phỏng đoán, suy đoán một cách thận trọng, dè dặt về khả năng một sự việc nào đó có thể xảy ra hoặc đúng sự thật ('e rằng...', 'nghĩ rằng có lẽ...').",
+      "longExplanation": "'-지 않을까 싶다' được cấu thành bởi vĩ tố phủ định nghi vấn '-지 않을까' (liệu có phải là không...) kết hợp với động từ bổ trợ '싶다' (nghĩ rằng, e rằng). Cấu trúc này dùng khi người nói muốn đưa ra suy đoán mang tính chủ quan nhưng không muốn khẳng định một cách quá gay gắt, võ đoán. Nó mang sắc thái uyển chuyển, lịch thiệp, diễn tả rằng người nói 'e rằng/nghĩ rằng có lẽ sự việc sẽ như thế'. Cấu trúc này có thể thể hiện cả sự lo âu, e ngại lẫn niềm hy vọng nhẹ nhàng.",
+      "formation": "Thân động từ/tính từ + -지 않을까 싶다 | Danh từ + -(이)지 않을까 싶다 (danh từ có phụ âm cuối dùng 이지 않을까 싶다, không có phụ âm cuối dùng 지 않을까 싶다)",
+      "examples": [
+        {
+          "translation": "Tôi nghĩ có lẽ cậu ấy sẽ làm tốt bài kiểm tra lần này thôi, bởi vì cậu ấy lúc nào cũng học hành chăm chỉ mà."
+        },
+        {
+          "translation": "Tôi e rằng thời tiết có lẽ sắp xấu đi rồi, mây đen đang ngày càng nhiều lên."
+        },
+        {
+          "translation": "Tôi nghĩ có lẽ tối nay mình sẽ kịp về đến nhà, vì máy bay đã cất cánh đúng giờ."
+        },
+        {
+          "translation": "Tôi đang tính liệu cuối tuần này tụi mình có thể đi xem phim được không, bạn thấy thế nào?"
+        }
+      ]
+    },
+    "ko_지_60": {
+      "title": "-지 않을까 하다 / ~지 않을까 하다 (Nghĩ là có lẽ..., tính chừng là..., lo ngại rằng...)",
+      "shortExplanation": "Dùng để bày tỏ dự đoán, nhận định hoặc tính toán mang tính chủ quan của người nói trước một sự việc chưa chắc chắn ('nghĩ là có lẽ...', 'tính chừng là...').",
+      "longExplanation": "'-지 않을까 하다' là cấu trúc kết hợp vĩ tố phỏng đoán phủ định nghi vấn '-지 않을까' với động từ '하다' (ở đây mang nghĩa nội tâm: nghĩ, tự nhủ). Khác với câu khẳng định trực tiếp, cấu trúc này phản ánh quá trình suy tính, dự phóng trong đầu người nói: 'tôi đang nghĩ/tính chừng rằng chuyện đó có thể xảy ra'. Cấu trúc này thường được theo sau bởi '-해서' ('-지 않을까 해서...') để giải thích động cơ hoặc lý do khiến người nói chuẩn bị trước một hành động nào đó (ví dụ: 'nghĩ là trời sắp mưa nên tôi đã mang theo ô').",
+      "formation": "Thân động từ/tính từ + -지 않을까 하다 | Danh từ + -(이)지 않을까 하다",
+      "examples": [
+        {
+          "translation": "Nghĩ là ngày mai trời có thể sẽ mưa nên tôi đã mang theo sẵn một chiếc ô."
+        },
+        {
+          "translation": "Tôi cứ bận tâm lo lắng vì nghĩ rằng cô ấy có thể sẽ gặp gỡ người mà cô ấy thích."
+        },
+        {
+          "translation": "Bây giờ đã là rạng sáng rồi nên tôi đoán chừng có lẽ mọi người đều đã ngủ say."
+        },
+        {
+          "translation": "Đoán rằng bạn mình có khả năng sẽ đỗ kỳ thi lần này nên tôi đang chuẩn bị sẵn tin nhắn chúc mừng."
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "-지 않을래(요) / ~지 않을래 (Tôi không muốn làm..., tôi sẽ không...)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng để thể hiện ý định hoặc quyết định của bản thân người nói là không muốn hoặc từ chối thực hiện một hành động nào đó ('tôi không muốn...', 'tôi sẽ không...').",
+      "longExplanation": "'-지 않을래' là sự kết hợp giữa vĩ tố phủ định dài '-지 않다' và vĩ tố biểu thị ý chí '-(으)ㄹ래'. Khi dùng cho ngôi thứ nhất (người nói), cấu trúc này biểu thị rõ ràng ý định, quyết tâm của người nói là chọn không làm việc đó, thường dựa trên cảm xúc, tình trạng sức khỏe hoặc sở thích cá nhân. Trong giao tiếp lịch sự thường ngày, người nói thêm tiểu từ tôn kính '-요' thành '-지 않을래요' để lời từ chối nghe hòa nhã, nhẹ nhàng và tự nhiên hơn. (Lưu ý: khi lên giọng ở cuối câu trong câu nghi vấn với ngôi thứ hai, nó có thể mang nghĩa rủ rê 'cậu có muốn cùng... không?').",
+      "formation": "Thân động từ + -지 않을래(요) (chỉ kết hợp với động từ)",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi sẽ không đi tập thể dục đâu, người thấy hơi mệt mỏi nên tôi muốn nghỉ ngơi."
+        },
+        {
+          "translation": "Vì tôi đã ăn quá no rồi nên tôi sẽ không ăn món tráng miệng đâu."
+        },
+        {
+          "translation": "Cậu đừng quá lo lắng, còn với người đó thì tôi sẽ không thay cậu nói giúp đâu."
+        },
+        {
+          "translation": "Bộ quần áo này tôi không ưng ý lắm nên tôi sẽ không mua đâu."
+        }
+      ]
+    },
+    "ko_지요_62": {
+      "title": "-지요 (-죠) / ~지요 (Nhỉ, chứ, đúng không, phải không)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng để hỏi lại nhằm xác nhận thông tin, tìm kiếm sự đồng tình từ người nghe một cách thân thiện, hoặc khẳng định nhẹ nhàng điều mình tin là đúng ('nhỉ', 'chứ', 'đúng không').",
+      "longExplanation": "'-지요' (thường được rút gọn thành '-죠' trong văn nói thường nhật) là một vĩ tố kết thúc câu vô cùng phổ biến trong khẩu ngữ tiếng Hàn. Khi dùng trong câu hỏi (lên giọng ở cuối câu), nó đóng vai trò như một câu hỏi đuôi để tìm kiếm sự xác nhận hoặc chia sẻ quan điểm từ phía người nghe ('thời tiết đẹp nhỉ?', 'chúng ta phải đi chứ?'). Khi dùng trong câu trần thuật (xuống giọng ở cuối câu), nó giúp làm mềm câu nói, thể hiện thái độ thân mật, hòa nhã và lịch sự thay vì dùng các đuôi câu cứng nhắc.",
+      "formation": "Thân động từ/tính từ + -지요 (viết tắt là -죠; quá khứ dùng -았/었지요) | Danh từ + -(이)지요 (có phụ âm cuối dùng 이지요, không có phụ âm cuối dùng 지요)",
+      "examples": [
+        {
+          "translation": "Thời tiết hôm nay rất đẹp đúng không nhỉ?"
+        },
+        {
+          "translation": "Ngày mai chúng ta phải đến trường chứ nhỉ?"
+        },
+        {
+          "translation": "Bộ phim này đã rất hay và thú vị phải không?"
+        },
+        {
+          "translation": "Cô ấy hình như vẫn còn là học sinh đúng không nhỉ?"
+        }
+      ]
+    },
+    "ko_진행하다_63": {
+      "title": "진행하다 / ~을/를 진행하다 (Tiến hành, thực hiện, triển khai)",
+      "shortExplanation": "Động từ biểu thị việc xúc tiến, thực hiện hoặc duy trì một công việc, cuộc họp, nghiên cứu hay sự kiện nào đó theo kế hoạch ('tiến hành', 'triển khai').",
+      "longExplanation": "'진행하다' là một động từ gốc Hán (進行 - tiến hành) được dùng rất phổ biến trong môi trường học thuật, công sở và đời sống xã hội. Khi đi với tân ngữ mang trợ từ '을/를', từ này chỉ hành vi chủ động tổ chức, điều phối hoặc xúc tiến một chuỗi công việc (như 'tiến hành nghiên cứu', 'chủ trì cuộc họp', 'triển khai dự án'). Khi đóng vai trò nội động từ, nó mô tả bản thân sự việc đang diễn tiến, tiếp diễn theo dòng thời gian.",
+      "formation": "Danh từ + 을/를 진행하다 (danh từ có phụ âm cuối dùng 을 진행하다, không có phụ âm cuối dùng 를 진행하다)",
+      "examples": [
+        {
+          "translation": "Đội ngũ nghiên cứu đang tiến hành điều tra về vấn đề này. Họ vừa thu thập nhiều dữ liệu đa dạng vừa phân tích thông tin."
+        },
+        {
+          "translation": "Tùy thuộc vào việc hôm nay cuộc họp được tiến hành nhanh hay chậm mà quyết định xem tôi có thể tan làm đúng giờ được hay không."
+        },
+        {
+          "translation": "Các học sinh cứ mải miết tiếp tục việc học nên chẳng hề nhận ra thời gian đã trôi qua tự lúc nào."
+        },
+        {
+          "translation": "Trong quá trình lập kế hoạch dự án, đội ngũ chúng tôi đang tiến hành thảo luận để tìm giải pháp cho vấn đề."
+        }
+      ]
+    },
+    "ko_차라리_64": {
+      "title": "차라리 / ~차라리 (Thà rằng, thà... còn hơn)",
+      "shortExplanation": "Phó từ dùng để biểu thị sự lựa chọn một phương án được coi là thỏa đáng hoặc ít tồi tệ hơn khi so sánh với phương án kia ('thà rằng...', 'thà... còn hơn').",
+      "longExplanation": "'차라리' là một phó từ chỉ sự so sánh lựa chọn mang tính dứt khoát. Từ này thường kết hợp với cấu trúc so sánh '-기보다는' để tạo thành mẫu câu phổ biến: '[A]-기보다는 차라리 [B]' (thà làm B còn hơn là làm A). Cấu trúc này thường được dùng khi cả hai phương án đều có mặt hạn chế hoặc khó khăn, nhưng phương án B dù sao cũng dễ chấp nhận hơn, ít gây phiền toái hơn hoặc mang lại giá trị tốt hơn là cố chấp làm phương án A.",
+      "formation": "Mệnh đề 1 + -기보다는 차라리 + Mệnh đề 2 | 차라리 + Mệnh đề",
+      "examples": [
+        {
+          "translation": "Thay vì cứ ru rú ở nhà một mình, tôi thà ra ngoài đi chơi cùng bạn bè còn hơn."
+        },
+        {
+          "translation": "Thay vì việc bạn nói dối, tôi thà bạn cứ thẳng thắn nói thật ra thì tốt hơn."
+        },
+        {
+          "translation": "Thay vì tiêu xài vào món đồ đó, thà rằng bạn tiết kiệm số tiền đó thì tốt hơn nhiều."
+        },
+        {
+          "translation": "Nếu đã như thế thì thà rằng đừng nói lời nào còn tốt hơn."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_했어야_50": {
+      "title": "-았/었어야 했다 / ~했어야 했다（本应该……、本该……、要是……就好了）",
+      "shortExplanation": "用于表示过去本应该做某事却未能做到，通常伴随着后悔、自责或遗憾的情感（“本应该……”、“本该……”）。",
+      "longExplanation": "“-았/었어야 했다”是将表示必要义务的句型“-아/어야 하다”（应该、必须）置于过去完成时形态而构成的语法。用来回顾过去的事情，表示某种行为或状况本该发生，但实际上却没有做到，从而带有强烈的懊悔、遗憾或自责色彩。在实际口语交流中，常以“-았/었어야 했는데…”的形式出现，用来引出下半句所导致的遗憾结果或未能履行的具体原因。",
+      "formation": "动词/形容词词干 + -았/었어야 했다（词干末尾阳性元音ㅏ, ㅗ接 -았어야 했다，阴性元音接 -었어야 했다，하다 变为 했어야 했다）",
+      "examples": [
+        {
+          "translation": "昨天我本该把那项工作做完的，但因为时间不够，所以没能做完。"
+        },
+        {
+          "translation": "我本该去补习班学习的，但光顾着打游戏就没能去成。"
+        },
+        {
+          "translation": "我本该喝水而不是喝咖啡的，因为咖啡因太多导致没能睡着。"
+        },
+        {
+          "translation": "我本该接电话的，但没看到手机所以没能接上。"
+        }
+      ]
+    },
+    "ko_혹은_51": {
+      "title": "혹은 / ~혹은（或者、或、抑或）",
+      "shortExplanation": "连词/副词，用于连接两个或多个名词、短语或句子，表示在并列的事物中任选其一（“或者”、“或是”、“抑或”）。",
+      "longExplanation": "“혹은”（或）是汉字词，属于表示选择关系的并列连接副词。常置于两个或多个名词、词组或分句之间，用以提示可供选择的不同对象或方案，且两者之间没有先后高低之分。与口语中常见的“아니면”或助词“-(이)나”相比，“혹은”更具书面语色彩与文雅庄重感，广泛应用于学术论文、公文报告、新闻广播以及正式演讲等场合。",
+      "formation": "名词1 + 혹은 + 名词2 | 句子1 + . 혹은 + 句子2",
+      "examples": [
+        {
+          "translation": "您想要咖啡还是茶？"
+        },
+        {
+          "translation": "为了解决这个问题，需要时间或是付出努力。"
+        },
+        {
+          "translation": "他曾经想养一只小狗或者小猫。"
+        },
+        {
+          "translation": "为了度过暑假，你可以选择在海边或者山里度假。"
+        }
+      ]
+    },
+    "ko_후에야_52": {
+      "title": "-(으)ㄴ 후에야 / 후에야（只有在……之后才……、直到……才……）",
+      "shortExplanation": "表示只有在前面的行为结束或特定时间过去之后，后面的行为、结果或意识才得以实现或察觉（“只有在……之后才……”、“直到……才……”）。",
+      "longExplanation": "“후에야”由表示时间先后的依存名词“후”（后）、格助词“에”以及表示限定强调的补助词“-야”（才、唯有）组合而成。连接动词时通常以“-(으)ㄴ 후에야”的形式出现。强调前项事件的完成是后项得以发生的绝对前提条件，多用于表达经过某种经历、教训或经过了相当长的时间后，才终于明白某种道理、做出反应或达成某种结果，带有“终于”、“才迟迟恍然大悟”的语气色彩。",
+      "formation": "动词词干 + -(으)ㄴ 후에야（词干末尾为元音或收音ㄹ接 -ㄴ 후에야，有收音接 -은 후에야）| 名词 + 후에야",
+      "examples": [
+        {
+          "translation": "直到她离我而去之后，我才懂得自己是多么地深爱着她。"
+        },
+        {
+          "translation": "考完试之后，我才猛然想起来这道题的正确答案是什么。"
+        },
+        {
+          "translation": "唯有在大学毕业之后，我才真正懂得了自己究竟应该学习什么。"
+        },
+        {
+          "translation": "只有在开始着手工作之后，我才知道原来要做的事情竟有那么多。"
+        }
+      ]
+    },
+    "ko_흔히_53": {
+      "title": "흔히 / ~흔히（通常、往往、常常、常见地）",
+      "shortExplanation": "副词，用于表示某种现象、动作经常发生，或是某种说法在社会上极为普遍、广为人知（“通常”、“往往”、“常常”）。",
+      "longExplanation": "“흔히”是由形容词“흔하다”（普遍、多见）派生而来的副词。通常置于动词、形容词前或位于句首，用以说明某种情况发生的频率很高、具有普遍性，或者代表了大众普遍持有的看法与习惯。相当于汉语的“通常”、“往往”、“一般而言”、“人们常常……”。它既可用于陈述客观普遍存在的规律或社会现象，也可用于引述社会大众习以为常的普遍认知。",
+      "formation": "흔히 + 动词/形容词 | 흔히 + 句子",
+      "examples": [
+        {
+          "translation": "人们往往认为有益健康的食物味道不好。"
+        },
+        {
+          "translation": "在韩国，独自生活的人通常被称为“单身族”（Single）。"
+        },
+        {
+          "translation": "我们常常吃外国菜比吃本国料理还要多。"
+        },
+        {
+          "translation": "樱花作为春天一到便处处盛开的花朵，广为人所熟知。"
+        }
+      ]
+    },
+    "ko_되다_54": {
+      "title": "~이/가 되다 / ~되다（成为、变成、当上）",
+      "shortExplanation": "动词，表示人或事物发生转变，获得新的身份、资格，或进入一种全新的状态与境地（“成为”、“变成”、“当上”）。",
+      "longExplanation": "“되다”是韩语中最为核心的基础动词之一，主要表示状态转变或结果达成。当接在名词后并与主格助词“이/가”搭配时（名词 + 이/가 되다），表示获得某种新的职业、身份、地位或年龄（如“成为教授”、“变成大人”）；当与动词或形容词结合成“-게 되다”形态时，则表示由于外部客观条件或自然发展而转变为某种结果状态（“变得……”、“最终得以……”）。此外，“되다”还可作为后缀接在汉字名词之后，构成表示被动或自动意义的派生动词。",
+      "formation": "名词 + 이/가 되다（名词末尾有收音接 이 되다，无收音接 가 되다）| 动词/形容词词干 + -게 되다",
+      "examples": [
+        {
+          "translation": "天气原本很热，突然变得寒冷起来，所以大家都感冒了。"
+        },
+        {
+          "translation": "她刻苦钻研，成为了世界上最年轻的教授。"
+        },
+        {
+          "translation": "我的朋友学习了韩语，当上了翻译家。"
+        },
+        {
+          "translation": "曾经小巧玲珑的小猫咪，如今变成了一只大猫。"
+        }
+      ]
+    },
+    "ko_잖다_55": {
+      "title": "-잖아(요) / ~잖다（不是……嘛、……呀、你也是知道的）",
+      "shortExplanation": "终结词尾，用于提示或唤起听话人本已知晓的事实，亦或作为理所当然的理由来进行辩解、说明（“不是……嘛”、“明明……呀”）。",
+      "longExplanation": "“-잖다”是由否定疑问形“-지 아니하다/않다”（难道不是……吗）缩略演变而来的终结词尾。说话人用来提醒对方注意双方都心知肚明的事实，或者将公认的客观情况作为自己行为或主张的充足理由（类似于汉语的“你明明知道的嘛”、“不是……吗”）。非格式体口语中使用“-잖아”，对长辈或初次见面者则添加补助词“-요”使用“-잖아요”。有时还带有一丝轻微的嗔怪、反驳或催促对方认同的语调。",
+      "formation": "动词/形容词词干 + -잖아(요)（过去时接 -았/었잖아(요)）| 名词 + (이)잖아(요)（有收音接 이잖아(요)，无收音接 잖아(요)）",
+      "examples": [
+        {
+          "translation": "你今天不是得去学校嘛，怎么到现在还在玩？"
+        },
+        {
+          "translation": "我们明天不是有考试嘛，所以我今天打算好好复习。"
+        },
+        {
+          "translation": "你不是认识那个人嘛，话说他最近过得怎么样？"
+        },
+        {
+          "translation": "现在时间已经不早了呀，我们现在得开始学习了。"
+        }
+      ]
+    },
+    "ko_져지다_56": {
+      "title": "-아/어지다 / ~져/지다（变得……、越来越……）",
+      "shortExplanation": "补助动词，接在形容词词干后，表示事物的性质、状态或人的心理情感随时间推移逐渐发生变化（“变得……”、“越来越……”）。",
+      "longExplanation": "“-아/어지다”主要接在形容词词干之后，将原本表示静态属性的形容词转化为表示动态变化过程的动词。表达某种状态、特征或情感随着时间的流逝逐渐深化或改变，相当于汉语的“变得……”、“越来越……”。例如“더워지다”（变热）、“좋아지다”（好转）。若接在动词词干后，则多表示自然发生的被动态。但最核心、最普遍的用法是与形容词结合表示状态的转变。",
+      "formation": "形容词词干 + -아/어지다（词干末尾阳性元音ㅏ, ㅗ接 -아지다，阴性元音接 -어지다，하다 变为 해지다）",
+      "examples": [
+        {
+          "translation": "天气变得太炎热了，以至于出门都变得困难起来。"
+        },
+        {
+          "translation": "她在学校里人气越来越高，很多人都认识了她。"
+        },
+        {
+          "translation": "他画了很多画，所以绘画水平真的变得非常棒了。"
+        },
+        {
+          "translation": "因为集中精力工作，时间不知不觉过得太快了。"
+        }
+      ]
+    },
+    "ko_졌다가_57": {
+      "title": "-았/었다가 / -아/어졌다가（刚……就又……、曾经……后来又……）",
+      "shortExplanation": "连接词尾，表示前项动作或状态完成后，紧接着发生逆转、改变，或转换为了与之相反的另一种动作与状态（“刚……就又……”、“曾经……随后又……”）。",
+      "longExplanation": "“-았/었다가”（以及包含状态变化的“-아/어졌다가”）是表示动作或状态发生转折与反复的连接词尾。与表示动作进行中被中断的普通“-다가”不同，“-았/었다가”强调前项动作或状态已经完全实现并告一段落，但该状态未能持久，紧接着被后项相反或全新的动作所打断或扭转（例如“开门后又关上”、“就职后又离职”）。常用于表述事态的发展起伏、计划变动或出乎意料的反转。",
+      "formation": "动词/形容词词干 + -았/었다가（词干末尾阳性元音接 -았다가，阴性元音接 -었다가，하다 变为 했다가）",
+      "examples": [
+        {
+          "translation": "我把门打开后又重新关上了，因为实在等不及朋友过来了。"
+        },
+        {
+          "translation": "那家餐厅几天前才刚刚开业，结果今天就直接关门停业了。"
+        },
+        {
+          "translation": "孩子们光顾着玩电脑游戏，以至于不得不把作业搁置在一旁。"
+        },
+        {
+          "translation": "我的朋友刚找到工作，但仅仅过了一个月就被解雇了。"
+        }
+      ]
+    },
+    "ko_즉_58": {
+      "title": "즉 / ~즉（也就是说、即、换言之）",
+      "shortExplanation": "连接副词，用于对前面提到的内容进行再次阐释、补充说明或归纳总结（“也就是说”、“即”、“换言之”）。",
+      "longExplanation": "“즉”（即）是汉字词连接副词，主要用于承接上文，对前述观点、事实或概念进行进一步的明确、具象化、提炼或换言之的解释。相当于汉语中的“即”、“也就是说”、“换句话说”。由于其逻辑严密且语气正式庄重，常用于学术论文、新闻社论、法律条文以及正式公开演讲中，用以确保信息传达的准确无误。",
+      "formation": "句子1 + . 즉 + 句子2 | 名词1 + , 즉 + 名词2",
+      "examples": [
+        {
+          "translation": "以这项研究的结果为依据，也就是说，正如我们所见，全球变暖显然是由人类活动引起的。"
+        },
+        {
+          "translation": "他是国际关系专家。换言之，他专门研究世界上各个国家之间的各类议题。"
+        },
+        {
+          "translation": "这封邮件只会发送给你一个人。也就是说，你是这条消息的唯一接收者。"
+        },
+        {
+          "translation": "他是我的挚友。也就是说，我对他的情况了如指掌。"
+        }
+      ]
+    },
+    "ko_지_59": {
+      "title": "-지 않을까 싶다 / ~지 않을까 싶다（恐怕会……、心想也许会……、不知是不是……）",
+      "shortExplanation": "用于委婉、谨慎地表达说话人的主观推测或猜想，认为某种情况很可能会发生或属实（“恐怕会……”、“心想也许会……”）。",
+      "longExplanation": "“-지 않을까 싶다”由表示反问推测的词尾组合“-지 않을까”（会不会……呢）与表示心理想法的补助动词“싶다”（觉得、心想）构成。说话人并非百分之百断定，而是以极其委婉柔和的语气提出自己的假设与推断，相当于汉语的“我想也许会……”、“恐怕不会不……吧”、“不知是不是会……”。既可以用于表达令人担忧的顾虑，也可以表达带着期盼的隐约设想。",
+      "formation": "动词/形容词词干 + -지 않을까 싶다 | 名词 + -(이)지 않을까 싶다（有收音接 이지 않을까 싶다，无收音接 지 않을까 싶다）",
+      "examples": [
+        {
+          "translation": "我心想这次考试他也许能考得很好，因为他平时一直都那么用功学习。"
+        },
+        {
+          "translation": "恐怕天气要变糟糕了，天上的乌云越来越多了。"
+        },
+        {
+          "translation": "我想今晚大概能按时到家吧，飞机已经准点起飞了。"
+        },
+        {
+          "translation": "我在想这周末咱们不知能不能一起去看电影，你觉得如何呢？"
+        }
+      ]
+    },
+    "ko_지_60": {
+      "title": "-지 않을까 하다 / ~지 않을까 하다（寻思着大概会……、料想或许会……、估摸着……）",
+      "shortExplanation": "用于表达说话人内心的主观推断、预估或揣测，表示出于某种推想而产生了相应的顾虑或打算（“寻思着大概会……”、“料想或许会……”）。",
+      "longExplanation": "“-지 않을까 하다”结合了否定疑问推测词尾“-지 않을까”与表示内心活动的动词“하다”（在此表示思考、寻思）。表达说话人依据某些根据在心中暗自揣测某种可能性。尤其在日常交流中，极常以“-지 않을까 해서…”的形式出现，用来陈述自己做出后项防范、准备行动的内心动机或考量（如“料想可能会下雨，所以带了雨伞”）。",
+      "formation": "动词/形容词词干 + -지 않을까 하다 | 名词 + -(이)지 않을까 하다",
+      "examples": [
+        {
+          "translation": "寻思着明天大概会下雨，所以我把雨伞带过来了。"
+        },
+        {
+          "translation": "料想着她或许会去见心仪之人，所以我心里一直在意着。"
+        },
+        {
+          "translation": "现在已是拂晓时分，我估摸着大家大概都进入梦乡了吧。"
+        },
+        {
+          "translation": "琢磨着我的朋友这次大概能考及格，所以我正在提前准备祝贺信息。"
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "-지 않을래(요) / ~지 않을래（我不想……、我不打算……）",
+      "shortExplanation": "终结词尾，用于第一人称表达说话人自身不愿做出某种行为的主观意愿或委婉推辞（“我不想……”、“我不打算……”）。",
+      "longExplanation": "“-지 않을래”由长形否定词尾“-지 않다”与表示说话人意愿的词尾“-(으)ㄹ래”结合而成。当主语为第一人称（说话人自己）时，用来清晰且坚定地表达自己主观上“不想做某事”的个人意向或决定。添加敬语补助词“-요”形成“-지 않을래요”，可使拒绝或表态的语气显得既明确又亲切委婉，多用于日常生活与非正式场合。（注：若用于第二人称疑问句并读升调，则可表示询问对方意愿或提出劝诱邀请）。",
+      "formation": "动词词干 + -지 않을래(요)（只与动词结合）",
+      "examples": [
+        {
+          "translation": "我今天不想去运动了，身体有点疲惫想好好休息一下。"
+        },
+        {
+          "translation": "我吃得太饱了，所以甜点我就不吃了。"
+        },
+        {
+          "translation": "你别太担心了，至于那个人，我是不想替你去跟他说的。"
+        },
+        {
+          "translation": "这件衣服我不太中意，所以我不打算买。"
+        }
+      ]
+    },
+    "ko_지요_62": {
+      "title": "-지요 (-죠) / ~지요（吧、对吧、是不是）",
+      "shortExplanation": "终结词尾，用于向听话人确认已知事实、征求对方赞同，或以亲切温和的语气陈述确信的观点（“吧”、“对吧”、“是不是”）。",
+      "longExplanation": "“-지요”（在日常口语中极为普遍地缩略为“-죠”）是韩语口语中使用频率极高的终结词尾。在疑问句中（句末语调上扬），相当于反问句或附加疑问句，用于向对方核实自己所知的情况或寻求情感共鸣（“……吧？”、“……对吧？”）；在陈述句中（句末语调平缓或下降），则具有软化语气的作用，使言辞听起来柔和、得体且富有亲和力，避免显得生硬唐突。",
+      "formation": "动词/形容词词干 + -지요（缩略为 -죠；过去时接 -았/었지요）| 名词 + -(이)지요（有收音接 이지요，无收音接 지요）",
+      "examples": [
+        {
+          "translation": "天气非常好，对吧？"
+        },
+        {
+          "translation": "我们明天得去学校，是吧？"
+        },
+        {
+          "translation": "这部电影很有意思吧？"
+        },
+        {
+          "translation": "她看起来好像还是个学生，对不对？"
+        }
+      ]
+    },
+    "ko_진행하다_63": {
+      "title": "진행하다 / ~을/를 진행하다（进行、开展、推进）",
+      "shortExplanation": "动词，表示依照计划或步骤开展、推进某项业务、会议、研究或活动（“进行”、“开展”、“推进”）。",
+      "longExplanation": "“진행하다”（进行）是源于汉字的高频动词，广泛应用于学术报告、企事业单位公文以及正式会务等语境。当作为及物动词与宾格助词“을/를”搭配时，表示主体主动推动、主持或落实某项具体的计划、调查或议程（如“进行调查”、“推进项目”）；作为不及物动词使用时，则表示事物或事件本身正在向前演进与发展。",
+      "formation": "名词 + 을/를 진행하다（名词有收音接 을 진행하다，无收音接 를 진행하다）",
+      "examples": [
+        {
+          "translation": "研究团队正在就该议题展开调查，他们一边收集多样的资料数据，一边进行深度分析。"
+        },
+        {
+          "translation": "今天的会议推进得有多快，直接决定了我今天能否按时下班。"
+        },
+        {
+          "translation": "学生们持续不断地开展学习，不知不觉间连时间是怎么过去的都浑然不知。"
+        },
+        {
+          "translation": "在项目规划期间，我们团队正在进行旨在解决问题的专题讨论。"
+        }
+      ]
+    },
+    "ko_차라리_64": {
+      "title": "차라리 / ~차라리（宁可、宁愿、倒不如、索性）",
+      "shortExplanation": "副词，用于在两种不太理想或相互冲突的选项中进行权衡，表示宁可选择后者，相当于“宁可”、“倒不如”、“索性”。",
+      "longExplanation": "“차라리”是表达决意选择的比较副词。常与表示比较基准的句型“-기보다는”（与其……相比）呼应搭配，形成极具代表性的句型“[A]보다는 차라리 [B]”（与其做A，倒不如/宁愿做B）。这种句式通常用于两难境地或面临令人不满的现状时，说话人权衡利弊，认为选择B虽然并非最完美，但相较于令人难以接受的A而言，是更为明智、更有价值或代价较小的取舍。",
+      "formation": "分句1 + -기보다는 차라리 + 分句2 | 차라리 + 句子",
+      "examples": [
+        {
+          "translation": "与其一个人闷在家里无所事事，我倒不如出门去和朋友们一起玩耍。"
+        },
+        {
+          "translation": "与其由你亲口撒谎，倒不如坦诚相告来得更好。"
+        },
+        {
+          "translation": "与其盲目买下那个物件，倒不如索性把钱存起来更为划算。"
+        },
+        {
+          "translation": "要是那样的话，倒不如什么话都不说来得强。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_했어야_50": {
+      "title": "-았/었어야 했다 / ~했어야 했다（〜すべきだった、〜していればよかった）",
+      "shortExplanation": "過去に当然そうすべきだったのに実際にはできなかったことを表し、後悔や残念な気持ちを表します（「〜すべきだった」「〜していればよかった」）。",
+      "longExplanation": "「-았/었어야 했다」は、当為・義務を表す「-아/어야 하다（〜しなければならない）」の語幹に過去完了の「-았/었-」が結合した文型です。過去のある時点において当然行うべきだった行動や起こるべきだった事態が、実際には実行されなかったことに対して、話し手が強い後悔や残念な思いを述べる際に用いられます。日常会話では「-았/었어야 했는데…（〜すべきだったのに…）」の形で使われることが多く、後ろにできなかった理由や現在の好ましくない結果が続きます。",
+      "formation": "動詞・形容詞語幹 + -았/었어야 했다（陽母音語幹には -았어야 했다、陰母音語幹には -었어야 했다、하다 は 했어야 했다）",
+      "examples": [
+        {
+          "translation": "昨日その仕事を終わらせるべきだったのですが、時間が足りなくて終わらせられませんでした。"
+        },
+        {
+          "translation": "塾に行って勉強すべきだったのに、ゲームに夢中で行くことができませんでした。"
+        },
+        {
+          "translation": "コーヒーの代わりに水を飲むべきだったのに、カフェインが多くて眠れませんでした。"
+        },
+        {
+          "translation": "電話に出るべきだったのですが、携帯電話に気づかなくて出られませんでした。"
+        }
+      ]
+    },
+    "ko_혹은_51": {
+      "title": "혹은 / ~혹은（または、あるいは、もしくは）",
+      "shortExplanation": "2つ以上の名詞や文を並列して並べ、いずれかを選択できる事柄であることを表す接続詞です（「または」「あるいは」「もしくは」）。",
+      "longExplanation": "「혹은」は漢字の「或」に由来する接続副詞で、複数の事柄や選択肢を対等に提示し、そのうちのいずれかであることを表します。日本語の「または」「あるいは」「もしくは」に相当します。口語でよく使われる「아니면」や助詞の「-(이)나」に比べ、文章語的で改まった響きを持つため、公的な文書、ニュース、論文、公式な会話などで頻繁に用いられます。",
+      "formation": "名詞1 + 혹은 + 名詞2 | 文1 + . 혹은 + 文2",
+      "examples": [
+        {
+          "translation": "コーヒー、またはお茶はいかがですか？"
+        },
+        {
+          "translation": "この問題を解決するためには、時間あるいは努力が必要でしょう。"
+        },
+        {
+          "translation": "彼は子犬、あるいは子猫を飼いたがっていました。"
+        },
+        {
+          "translation": "夏休みを過ごすために、海岸あるいは山で休暇を過ごすことができます。"
+        }
+      ]
+    },
+    "ko_후에야_52": {
+      "title": "-(으)ㄴ 후에야 / 후에야（〜して初めて、〜した後にようやく）",
+      "shortExplanation": "前の事柄が終わったり一定の時間が経過したりして初めて、後ろの事態が実現したり何かに気づいたりすることを強調します（「〜して初めて」「〜した後にようやく」）。",
+      "longExplanation": "「후에야」は、時間を表す依存名詞「후（後）」に助詞「에」、そして必要条件や限定を強調する補助詞「-야（〜してこそ、〜して初めて）」が結合した表現です。動詞には主に連体形語尾「-(으)ㄴ」を伴って「-(으)ㄴ 후에야」の形で接続します。前節の動作や出来事が完了することが不可欠な前提であり、それを経てようやく後ろの事態が起こったり、遅まきながら真実に気づいたりしたというニュアンスを強く表します。",
+      "formation": "動詞語幹 + -(으)ㄴ 후에야（母音またはパッチムㄹで終わる場合は -ㄴ 후에야、ㄹ以外のパッチムで終わる場合は -은 후에야）| 名詞 + 후에야",
+      "examples": [
+        {
+          "translation": "彼女が私のもとを去った後にようやく、自分が彼女をどれほど愛していたのかに気づきました。"
+        },
+        {
+          "translation": "試験を受けた後にようやく、この問題の正解が何だったのかを思い出しました。"
+        },
+        {
+          "translation": "私は大学を卒業して初めて、本当に学ぶべきことが何であるかを理解しました。"
+        },
+        {
+          "translation": "業務を始めて初めて、やるべき仕事がいかに多いかを知るようになりました。"
+        }
+      ]
+    },
+    "ko_흔히_53": {
+      "title": "흔히 / ~흔히（よく、しばしば、一般に、ありがちに）",
+      "shortExplanation": "ある事態が頻繁に起こることや、世間一般で広く知られている通念・習慣などを表す副詞です（「よく」「しばしば」「一般に」）。",
+      "longExplanation": "「흔히」は、形容詞「흔하다（ありふれている、多い）」から派生した副詞です。動詞や形容詞の前、あるいは文頭に置かれ、ある事象の発生頻度が高いことや、世間一般で広く共有されている常識・認識であることを表します。日本語の「よく」「しばしば」「一般に」「往々にして」に相当します。客観的な事実の描写だけでなく、「人はよく〜と考えがちだ」といった人々の一般的な通念やステレオタイプを提示する際にも頻繁に用いられます。",
+      "formation": "흔히 + 動詞・形容詞 | 흔히 + 文",
+      "examples": [
+        {
+          "translation": "人々はよく、健康的な食べ物は美味しくないと考えがちです。"
+        },
+        {
+          "translation": "韓国では、一人暮らしをしている人々をよく「シングル」と呼びます。"
+        },
+        {
+          "translation": "私たちはしばしば、自国の料理よりも外国の料理を多く食べたりします。"
+        },
+        {
+          "translation": "春が来るとよく咲く花である桜は、多くの人々に広く知られています。"
+        }
+      ]
+    },
+    "ko_되다_54": {
+      "title": "~이/가 되다 / ~되다（〜になる、〜へ変わる）",
+      "shortExplanation": "人や事象が以前とは異なる新しい身分や役割、状態へと変化することを表す動詞です（「〜になる」「〜へ変わる」）。",
+      "longExplanation": "「되다」は、変化や結果の成立を表す韓国語の基本動詞です。名詞に主格助詞「이/가」を伴って接続する場合（名詞 + 이/가 되다）は、新しい身分、職業、資格、あるいは別物へと変容することを表します（「医者になる」「大人になる」など）。また、形容詞や動詞の語幹に接続語尾「-게」を伴って「-게 되다」となると、客観的な成り行きや自然な推移によって新たな状況や状態に至ることを意味します。さらに、漢字語名詞の語尾に直接結合して受動・自動の意味を持つ派生動詞を形成することもあります。",
+      "formation": "名詞 + 이/가 되다（パッチムがある名詞は 이 되다、ない名詞は 가 되다）| 動詞・形容詞語幹 + -게 되다",
+      "examples": [
+        {
+          "translation": "天気が暑かったのに急に寒くなりました。そのため皆風邪を引いてしまいました。"
+        },
+        {
+          "translation": "彼女は熱心に勉強して、世界で最も若い教授になりました。"
+        },
+        {
+          "translation": "私の友達は韓国語を学んで翻訳家になりました。"
+        },
+        {
+          "translation": "小さかった子猫が、立派な大きな猫になりました。"
+        }
+      ]
+    },
+    "ko_잖다_55": {
+      "title": "-잖아(요) / ~잖다（〜じゃない(ですか)、〜でしょ）",
+      "shortExplanation": "話し手と聞き手の双方がすでに知っている事実を想起させたり、当然の理由として相手に確認を求めたりする終結語尾です（「〜じゃないか」「〜でしょう」）。",
+      "longExplanation": "「-잖다」は、否定表現「-지 아니하다（-지 않다）」が口語で縮約された終結語尾です。話し手だけでなく聞き手もすでに知っているはずの事実を改めて相手に思い出させたり、自分の意見や行動の明白な理由として提示したりする際に用いられます。日本語の「〜じゃない（ですか）」「〜でしょ」「〜だもん」に相当します。親しい間柄ではパンマル（ぞんざい語）の「-잖아」、丁寧な会話では補助詞「-요」を付けた「-잖아요」を用います。相手の思い違いを指摘したり、軽く責めたりするニュアンスを含むこともあります。",
+      "formation": "動詞・形容詞語幹 + -잖아(요)（過去形は -았/었잖아(요)）| 名詞 + (이)잖아(요)（パッチムがある名詞は 이잖아(요)、ない名詞は 잖아(요)）",
+      "examples": [
+        {
+          "translation": "今日学校に行かなきゃいけないでしょ、なんでまだ遊んでいるの？"
+        },
+        {
+          "translation": "私たち明日テストがあるじゃない。だから今日勉強しようと思って。"
+        },
+        {
+          "translation": "あんたあの人のこと知ってるでしょ、ところで最近どう過ごしてるの？"
+        },
+        {
+          "translation": "もう時間も遅いじゃない、私たちそろそろ勉強しなきゃ。"
+        }
+      ]
+    },
+    "ko_져지다_56": {
+      "title": "-아/어지다 / ~져/지다（〜くなる、〜になる）",
+      "shortExplanation": "形容詞の語幹について、状態や性質、感情などが時間の経過に伴って徐々に変化していく過程を表します（「〜くなる」「〜になる」）。",
+      "longExplanation": "「-아/어지다」は、主に形容詞の語幹に結合して、その性質や状態が時間の経過とともに推移・深化していく変化のプロセスを表す補助用言です。日本語の「〜くなる」「〜になる」「だんだん〜になる」に相当します（例：덥다 暑い -> 더워지다 暑くなる、좋다 良い -> 좋아지다 良くなる）。静的な状態を表す形容詞を、動的な変化を表す表現に変える働きを持ちます。なお、他動詞の語幹についた場合は、自然な成り行きや被動（受け身）の意味を表すこともあります。",
+      "formation": "形容詞語幹 + -아/어지다（陽母音語幹には -아지다、陰母音語幹には -어지다、하다 は 해지다）",
+      "examples": [
+        {
+          "translation": "天気がとても暑くなって、外に出るのが大変になりました。"
+        },
+        {
+          "translation": "彼女は学校で人気が高くなり、多くの人が彼女を知るようになりました。"
+        },
+        {
+          "translation": "彼は絵をたくさん描いているので、絵を描く腕前が本当に上達しました。"
+        },
+        {
+          "translation": "仕事に集中していたら、時間があっという間に過ぎ去ってしまいました。"
+        }
+      ]
+    },
+    "ko_졌다가_57": {
+      "title": "-았/었다가 / -아/어졌다가（〜したもののまた、〜したがその後）",
+      "shortExplanation": "前節の動作や状態変化がいったん完了した直後に、それが取り消されたり、反対の状態へ逆転・転換したりすることを表す接続語尾です（「〜したもののまた〜した」「〜してはみたが」）。",
+      "longExplanation": "「-았/었다가」（および状態変化の補助動詞と結合した「-아/어졌다가」）は、動作や状態の完了後に起こる急な転換や反復・逆転を表す接続語尾です。途中で中断することを表す「-다가」とは異なり、前節の事態がいったん完全に成立した後に、その結果や状態が維持されず、逆の動作や別の事態に切り替わる点に特徴があります（例：ドアを開けたがまた閉めた、就職したもののすぐに解雇されたなど）。",
+      "formation": "動詞・形容詞語幹 + -았/었다가（陽母音語幹には -았다가、陰母音語幹には -었다가、하다 は 했다가）",
+      "examples": [
+        {
+          "translation": "ドアをいったん開けたのですがまた閉めました。友達が来るのを待ちきれなかったからです。"
+        },
+        {
+          "translation": "あのレストランは数日前に開店したばかりだったのに、今日すぐに閉店してしまいました。"
+        },
+        {
+          "translation": "子どもたちはパソコンゲームをやっていて、宿題を途中でやめなければなりませんでした。"
+        },
+        {
+          "translation": "私の友達は就職が決まったものの、わずか1か月後に解雇されてしまいました。"
+        }
+      ]
+    },
+    "ko_즉_58": {
+      "title": "즉 / ~즉（すなわち、つまり、言い換えれば）",
+      "shortExplanation": "前に述べた内容を別の言葉で分かりやすく説明し直したり、要約・補足したりする接続副詞です（「すなわち」「つまり」「言い換えれば」）。",
+      "longExplanation": "「즉」は漢字の「即」に由来する接続副詞で、先行する発言や論述をさらに具体的に説明したり、要点を整理して言い換えたりする際に用いられます。日本語の「すなわち」「つまり」「言い換えれば」に相当します。論理的で硬い文章語のニュアンスを持ち、学術論文、報道記事、公的文書、公式なスピーチなどで定義や結論を明確にするためによく使われます。",
+      "formation": "文1 + . 즉 + 文2 | 名詞1 + , 즉 + 名詞2",
+      "examples": [
+        {
+          "translation": "この研究結果に基づけば、すなわち私たちが確認したところでは、地球温暖化は人間の活動に起因していることが明らかです。"
+        },
+        {
+          "translation": "彼は国際関係の専門家です。つまり、世界の多様な国家間の問題を研究しているのです。"
+        },
+        {
+          "translation": "このメールはあなたにだけ送信します。すなわち、あなたがこのメッセージの唯一の受信者です。"
+        },
+        {
+          "translation": "彼は私の親友です。言い換えれば、私は彼のことを非常によく知っているということです。"
+        }
+      ]
+    },
+    "ko_지_59": {
+      "title": "-지 않을까 싶다 / ~지 않을까 싶다（〜ではないかと思う、〜ではないかと推測する）",
+      "shortExplanation": "ある事態が起こるのではないか、あるいは事実なのではないかと、控えめに推測や懸念・期待を述べる表現です（「〜ではないかと思う」「〜しはしないかと思う」）。",
+      "longExplanation": "「-지 않을까 싶다」は、否定疑問の推量形「-지 않을까（〜ではないだろうか）」に、話し手の心的状態を表す補助動詞「싶다（〜と思う）」が結合した構文です。断定を避け、自分の見解や推測を柔らかく控えめに伝える際に用いられます。日本語の「〜ではないかと思う」「〜しはしないかと思われる」に相当します。状況に対する漠然とした懸念や、控えめな期待感を表現するのに適しています。",
+      "formation": "動詞・形容詞語幹 + -지 않을까 싶다 | 名詞 + -(이)지 않을까 싶다（パッチムがある名詞は 이지 않을까 싶다、ない名詞は 지 않을까 싶다）",
+      "examples": [
+        {
+          "translation": "彼は今回の試験で良い成績を収められるのではないかと思います。いつも熱心に勉強していますから。"
+        },
+        {
+          "translation": "天気が悪くなるのではないかと思います。雲が多くなってきています。"
+        },
+        {
+          "translation": "今夜中に家に到着できるのではないかと思います。飛行機が時間通りに出発しました。"
+        },
+        {
+          "translation": "今週末に映画を観に行けるのではないかと思うのですが、どう思われますか？"
+        }
+      ]
+    },
+    "ko_지_60": {
+      "title": "-지 않을까 하다 / ~지 않을까 하다（〜ではないかと思う、〜しはしまいかと考える）",
+      "shortExplanation": "状況を観察した上で、ある事態が起こるのではないかと推し測ったり予想したりする表現です（「〜ではないかと思う」「〜するのではないかと考える」）。",
+      "longExplanation": "「-지 않을까 하다」は、否定疑問の推量「-지 않을까」に、内心の思考を表す「하다（考える、思う）」が結びついた表現です。不確かな推測に基づき、「〜ではないかと思う」「〜するかもしれないと考える」という話し手の心積もりを表します。特に接続語尾を伴った「-지 않을까 해서…」の形でよく用いられ、「〜ではないかと思って（備えた）」と、ある行動をとるに至った理由や動機を説明する際によく使われます。",
+      "formation": "動詞・形容詞語幹 + -지 않을까 하다 | 名詞 + -(이)지 않을까 하다",
+      "examples": [
+        {
+          "translation": "明日雨が降るのではないかと思って、傘を持ってきました。"
+        },
+        {
+          "translation": "彼女が好きな人に会うのではないかと思って、気を使っています。"
+        },
+        {
+          "translation": "もう明け方ですから、恐らくみんな眠っているのではないかと思います。"
+        },
+        {
+          "translation": "友達が今回の試験に合格するのではないかと思って、お祝いのメッセージを準備しています。"
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "-지 않을래(요) / ~지 않을래（〜したくない、〜しないでおく）",
+      "shortExplanation": "話し手自身の「〜したくない」「〜しないでおく」という不作為の意志や、控えめな断りの意向を表す終結語尾です。",
+      "longExplanation": "「-지 않을래」は、用言の否定形「-지 않다」に、話し手の意志を表す語尾「-(으)ㄹ래」が結合した終結語尾です。主語が一人称（話し手）である場合、自分の気持ちや体調、好みに基づいて「自分はその行為をしないでおく」「したくない」という主観的な意向を表します。日常会話では親愛の補助詞「-요」を伴った「-지 않을래요」の形で頻繁に使われ、角を立てずに柔らかく断りを入れる表現として好まれます。（なお、疑問文で語尾を上げると相手への提案・お誘いになります）。",
+      "formation": "動詞語幹 + -지 않을래(요)（動詞にのみ接続）",
+      "examples": [
+        {
+          "translation": "私は今日運動しに行かないでおきます。体が少し疲れているので休みたいです。"
+        },
+        {
+          "translation": "私はあまりにもたくさん食べたので、デザートは食べないでおきます。"
+        },
+        {
+          "translation": "あまり心配しないでください。あの人には私が代わりに話したりはしないでおきますね。"
+        },
+        {
+          "translation": "この服は気に入らないので、買わないでおきます。"
+        }
+      ]
+    },
+    "ko_지요_62": {
+      "title": "-지요 (-죠) / ~지요（〜ですよね、〜でしょう、〜ですね）",
+      "shortExplanation": "聞き手に対して念を押して確認を求めたり、同意を促したり、あるいは自分の確信を柔らかく述べたりする終結語尾です（「〜ですよね」「〜でしょう」）。",
+      "longExplanation": "「-지요」（日常会話では縮約形の「-죠」が極めて頻繁に使われます）は、韓国語の会話で親しみと柔らかさを添える代表的な終結語尾です。疑問文（文末を上げる）では、話し手の推測や認識について聞き手に「〜ですよね？」「〜でしょう？」と確認を求めたり、同意を誘ったりする付加疑問的な機能を果たします。平叙文（文末を下げる）では、自分の確信を述べつつも断定調を和らげ、相手に対して穏やかで親切なニュアンスを与えます。",
+      "formation": "動詞・形容詞語幹 + -지요（縮約形は -죠；過去形は -았/었지요）| 名詞 + -(이)지요（パッチムがある名詞は 이지요、ない名詞は 지요）",
+      "examples": [
+        {
+          "translation": "お天気がとても良いですよね？"
+        },
+        {
+          "translation": "私たちは明日学校に行かなければなりませんよね？"
+        },
+        {
+          "translation": "この映画、面白かったでしょう？"
+        },
+        {
+          "translation": "彼女はまだ学生のようですよね？"
+        }
+      ]
+    },
+    "ko_진행하다_63": {
+      "title": "진행하다 / ~을/를 진행하다（進行する、進める、執り行う）",
+      "shortExplanation": "仕事や会議、調査、行事などを計画に沿って前へ進めたり、継続して執り行ったりすることを表す動詞です（「進める」「進行する」「執り行う」）。",
+      "longExplanation": "「진행하다」は漢字の「進行」に由来する動詞で、ビジネス、学術、公式行事などで幅広く用いられます。目的格助詞「을/를」を伴って他動詞として用いられる場合（〜을/를 진행하다）、会議、調査、研究、プロジェクトなどを計画に沿って主導・推進・執行することを意味します。また、自動詞として事態や状況が前進・推移していく様子を表すこともあります。",
+      "formation": "名詞 + 을/를 진행하다（パッチムがある名詞は 을 진행하다、ない名詞は 를 진행하다）",
+      "examples": [
+        {
+          "translation": "研究チームはこの問題について調査を進めています。彼らは多様なデータを収集しながら情報を分析しています。"
+        },
+        {
+          "translation": "今日の会議をどれほど素早く進行させるかによって、時間通りに退勤できるかどうかが決まります。"
+        },
+        {
+          "translation": "学生たちは勉強を進めているうちに、時間がどのように過ぎ去ったのかも忘れるほどでした。"
+        },
+        {
+          "translation": "プロジェクトの計画中、私たちのチームは問題解決のための議論を進行させています。"
+        }
+      ]
+    },
+    "ko_차라리_64": {
+      "title": "차라리 / ~차라리（むしろ、いっそ、かえって）",
+      "shortExplanation": "2つの選択肢を比較検討した結果、どちらかと言えば後者の方がましである、あるいは好ましいと判断して選ぶ際に用いる副詞です（「むしろ」「いっそ」）。",
+      "longExplanation": "「차라리」は、好ましくない2つの状況や選択肢を天秤にかけた際に、「前の選択肢をとるくらいなら、いっそ後ろの選択肢をとる方がましだ」と判断する気持ちを表す副詞です。比較を表す「-기보다는（〜するよりは）」と呼応して「[A]보다는 차라리 [B]（Aよりはむしろ/いっそB）」の構文でよく用いられます。消極的な選択であっても、最悪を避けるためのより良い判断であることを強調するニュアンスを持ちます。",
+      "formation": "節1 + -기보다는 차라리 + 節2 | 차라리 + 文",
+      "examples": [
+        {
+          "translation": "ただ家で一人でいるよりは、いっそ外に出て友達と遊びに行きました。"
+        },
+        {
+          "translation": "あなたが自分から嘘をつくよりは、いっそ正直に話してくれた方が良いです。"
+        },
+        {
+          "translation": "その品物を買うくらいなら、いっそお金を貯金する方が賢明です。"
+        },
+        {
+          "translation": "そうするくらいなら、いっそ何も言わない方がましです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_했어야_50": {
+      "title": "-았/었어야 했다 / ~했어야 했다 (과거 행위에 대한 후회 및 아쉬움)",
+      "shortExplanation": "과거에 마땅히 행했어야 함에도 불구하고 그렇게 하지 못했던 일에 대해 후회나 아쉬운 심정을 나타낼 때 쓰는 표현입니다 ('~했어야 했는데 그러지 못했다').",
+      "longExplanation": "'-았/었어야 했다'는 당위나 의무를 나타내는 '-아/어야 하다'가 과거 시제와 결합한 구문입니다. 과거의 시점에서 어떤 행동을 하거나 상태를 갖추는 것이 마땅하거나 꼭 필요했음에도 불구하고 실제로는 그렇게 하지 못한 사실을 돌이켜보며, 화자가 깊은 후회나 미련, 아쉬움의 감정을 표현할 때 사용됩니다. 실제 담화에서는 '-았/었어야 했는데...'의 형태로 자주 쓰여, 뒤 절에 그렇게 하지 못한 구체적인 이유나 그로 인해 발생한 아쉬운 결과를 덧붙입니다.",
+      "formation": "동사/형용사 어간 + -았/었어야 했다 (끝음절 모음이 ㅏ, ㅗ이면 -았어야 했다, 그 외 모음이면 -었어야 했다, 하다는 했어야 했다)",
+      "examples": [
+        {
+          "translation": "어제 그 일을 마쳤어야 했는데, 시간이 부족해서 다 끝내지 못했습니다."
+        },
+        {
+          "translation": "학원에 가서 공부를 했어야 했는데, 게임을 하느라 가지 못했습니다."
+        },
+        {
+          "translation": "커피 대신에 물을 마셨어야 했는데, 카페인이 많아 잠이 오지 않았어요."
+        },
+        {
+          "translation": "전화를 받았어야 했는데, 휴대전화를 보지 못해서 받지 못했습니다."
+        }
+      ]
+    },
+    "ko_혹은_51": {
+      "title": "혹은 / ~혹은 (선택 및 대안 제시)",
+      "shortExplanation": "둘 이상의 대상이나 선택 항목, 사태를 나란히 대등하게 나열하여 그중 하나를 선택할 수 있음을 나타내는 접속부사입니다 ('또는', '아니면').",
+      "longExplanation": "'혹은(或-)'은 한자 '혹(或)'에서 유래한 접속부사로, 둘 이상의 대상이나 선택지, 사태를 대등하게 이어 주면서 '이것이나 저것'이라는 선택의 관계를 성립시킵니다. 일상 구어에서 쓰이는 '아니면'이나 연결 조사 '-(이)나'에 비해 문어적이고 격식 있는 느낌을 주며, 설명문, 논설문, 공공 문서, 뉴스 보도 등 격식체 담화에서 널리 활용됩니다.",
+      "formation": "명사1 + 혹은 + 명사2 | 문장1 + . 혹은 + 문장2",
+      "examples": [
+        {
+          "translation": "당신은 커피 혹은 차 중에서 무엇을 드시겠습니까?"
+        },
+        {
+          "translation": "이 문제를 해결하기 위해서는 시간 혹은 노력이 필요하겠습니다."
+        },
+        {
+          "translation": "그는 강아지 혹은 고양이를 기르고 싶어 했습니다."
+        },
+        {
+          "translation": "여름 휴가를 보내기 위해 바닷가 혹은 산지에서 시간을 보낼 수 있습니다."
+        }
+      ]
+    },
+    "ko_후에야_52": {
+      "title": "-(으)ㄴ 후에야 / 후에야 (선행 조건의 완료 및 뒤늦은 실현)",
+      "shortExplanation": "앞의 사건이나 일정한 시간이 완전히 지난 뒤에야 비로소 뒤의 행동이나 깨달음, 결과가 나타남을 강조하는 표현입니다 ('~하고 나서야 비로소').",
+      "longExplanation": "'후에야'는 시간의 경과를 나타내는 의존명사 '후(後)'에 부사격 조사 '에', 그리고 필수 선행 조건을 강조하는 보조사 '-야'가 결합된 형태입니다. 주로 동사의 관형사형 어미 뒤에 결합하여 '-(으)ㄴ 후에야'의 꼴로 자주 쓰입니다. 앞 절의 행동이나 사건이 종결되는 것이 뒤 절 사실이 성립하기 위한 절대적 전제 조건임을 강조하며, 어떤 과정을 겪고 난 뒤에야 비로소 깨닫거나 상황이 발생했음을 나타냅니다.",
+      "formation": "동사 어간 + -(으)ㄴ 후에야 (어간 끝음절 모음이나 받침 ㄹ 뒤에는 -ㄴ 후에야, ㄹ을 제외한 받침 뒤에는 -은 후에야) | 명사 + 후에야",
+      "examples": [
+        {
+          "translation": "그녀가 나를 떠나고 난 후에야 내가 그녀를 얼마나 깊이 사랑했는지 깨달았습니다."
+        },
+        {
+          "translation": "시험을 치르고 난 후에야 이 문항의 정답이 무엇이었는지 기억이 났습니다."
+        },
+        {
+          "translation": "저는 대학을 졸업하고 난 후에야 비로소 진정으로 배워야 할 것이 무엇인지 이해했습니다."
+        },
+        {
+          "translation": "업무를 시작한 후에야 처리해야 할 일이 얼마나 많은지 실감하게 되었습니다."
+        }
+      ]
+    },
+    "ko_흔히_53": {
+      "title": "흔히 / ~흔히 (빈번한 발생 및 일반적 통념)",
+      "shortExplanation": "어떤 일이나 현상이 자주 일어나거나 세상에 널리 알려져 있어 매우 흔함을 나타내는 부사입니다 ('보통', '일반적으로', '자주').",
+      "longExplanation": "'흔히'는 형용사 '흔하다'에서 파생된 부사로, 어떤 사물이나 현상이 쉽게 눈에 띌 만큼 자주 일어나거나, 세상 사람들에게 보편적·일반적으로 통용되고 있음을 나타냅니다. 동사나 형용사 앞 또는 문장 머리에 놓여 '일반적으로', '보통 사람들은 자주'라는 의미를 더합니다. 객관적인 사실 서술은 물론, '사람들은 흔히 ~라고 생각한다'처럼 널리 퍼진 통념이나 편견을 제시할 때에도 자주 활용됩니다.",
+      "formation": "흔히 + 동사/형용사 | 흔히 + 문장",
+      "examples": [
+        {
+          "translation": "보통 사람들은 건강에 좋은 음식은 맛이 없다고 생각하기 쉽습니다."
+        },
+        {
+          "translation": "한국에서는 1인 가구로 살아가는 사람들을 흔히 '싱글'이라고 일컫습니다."
+        },
+        {
+          "translation": "우리는 때때로 자국 음식보다 외국의 음식을 더 자주 접하고 먹습니다."
+        },
+        {
+          "translation": "봄이 오면 흔하게 피어나는 꽃인 벚꽃은 많은 사람들에게 친숙하게 알려져 있습니다."
+        }
+      ]
+    },
+    "ko_되다_54": {
+      "title": "~이/가 되다 / ~되다 (상태 변화 및 신분 획득)",
+      "shortExplanation": "사람이나 사물이 이전과 다른 새로운 상태, 자격, 신분 등으로 바뀌거나 변함을 나타내는 자동사입니다 ('~으로 변하다', '~이 이루어지다').",
+      "longExplanation": "'되다'는 주어가 이전과는 다른 새로운 신분, 직책, 자격을 얻거나 사물의 형질·상태가 완전히 달라짐을 나타내는 핵심 자동사입니다. 명사 뒤에 주격 조사 '이/가'와 함께 쓰여(명사 + 이/가 되다) 어떤 신분이나 위치에 도달함을 나타내며, 형용사나 동사 어간에 '-게'가 결합된 '-게 되다' 구문에서는 외적 요인이나 상황의 추이에 의해 새로운 상태에 도달하거나 처하게 됨을 나타냅니다. 또한 일부 명사 뒤에 붙어 피동성이나 자동성을 띤 파생동사를 형성하기도 합니다.",
+      "formation": "명사 + 이/가 되다 (받침 있는 명사 뒤에는 이 되다, 받침 없는 명사 뒤에는 가 되다) | 동사/형용사 어간 + -게 되다",
+      "examples": [
+        {
+          "translation": "날씨가 덥다가 갑자기 쌀쌀하게 변했습니다. 그래서 모두 감기에 걸렸어요."
+        },
+        {
+          "translation": "그녀는 치열하게 공부하여 세계에서 가장 젊은 교수가 되었습니다."
+        },
+        {
+          "translation": "제 친구는 한국어를 익혀서 번역가가 되었습니다."
+        },
+        {
+          "translation": "작고 연약했던 아기 고양이가 어느덧 훌륭하게 큰 고양이가 되었습니다."
+        }
+      ]
+    },
+    "ko_잖다_55": {
+      "title": "-잖아(요) / ~잖다 (기지 사실의 환기 및 동의 유도)",
+      "shortExplanation": "듣는 사람도 이미 알고 있는 사실을 상기시키거나, 어떤 행동이나 주장의 당연한 근거·이유로 제시할 때 쓰는 종결어미입니다 ('~하잖아', '~이지 않다').",
+      "longExplanation": "'-잖다'는 부정 표현인 '-지 아니하다'가 축약된 종결어미 형태입니다. 화자가 청자에게 이미 서로가 알고 있는 사실임을 일깨워 주거나, 어떤 결론이나 행동에 대한 자명한 원인·이유를 제시할 때 주로 구어에서 활발히 쓰입니다. 격식 없는 반말에서는 '-잖아', 존댓말에서는 보조사 '-요'를 붙여 '-잖아요'로 활용됩니다. 상대방이 깜빡 잊고 있거나 딴전을 피울 때 가볍게 핀잔을 주거나 동의를 구할 때도 자연스럽게 쓰입니다.",
+      "formation": "동사/형용사 어간 + -잖아(요) (과거 시제는 -았/었잖아(요)) | 명사 + (이)잖아(요) (받침 있는 명사 뒤에는 이잖아(요), 없는 명사 뒤에는 잖아(요))",
+      "examples": [
+        {
+          "translation": "너 오늘 학교에 가야 하잖아, 어째서 아직까지 놀고만 있니?"
+        },
+        {
+          "translation": "우리 내일 중요한 시험이 있잖아. 그래서 오늘 집중해서 공부하려고 해."
+        },
+        {
+          "translation": "너도 그 사람에 대해 잘 알잖아, 그런데 그분 요즘 어떻게 지내셔?"
+        },
+        {
+          "translation": "지금 시각이 이미 많이 늦었잖아, 우리는 이제 공부해야 해."
+        }
+      ]
+    },
+    "ko_져지다_56": {
+      "title": "-아/어지다 / ~져/지다 (상태 및 성질의 점진적 변화)",
+      "shortExplanation": "형용사 어간 뒤에 붙어, 사물의 상태나 성질, 심리적 감정 등이 시간의 흐름에 따라 서서히 변화함을 나타내는 보조용언입니다 ('~게 되다').",
+      "longExplanation": "'-아/어지다'는 주로 형용사 어간에 결합하여 정적인 성질이나 상태를 동적인 변화의 과정으로 전환시키는 보조동사입니다. 어떤 상태나 속성이 시간의 흐름에 따라 새로운 국면으로 차츰 달라지거나 심화됨을 나타냅니다. 예를 들어 '덥다'가 '더워지다'로, '좋다'가 '좋아지다'로 활용되는 경우가 이에 해당합니다. 동사 어간 뒤에 결합할 경우에는 피동의 의미를 나타내기도 합니다.",
+      "formation": "형용사 어간 + -아/어지다 (끝음절 모음이 ㅏ, ㅗ이면 -아지다, 그 외 모음이면 -어지다, 하다는 해지다)",
+      "examples": [
+        {
+          "translation": "기온이 너무 무더워져서 바깥으로 외출하기가 힘겨워졌습니다."
+        },
+        {
+          "translation": "그녀는 교내에서 인기가 많아져서 수많은 사람들이 그녀를 알아보게 되었습니다."
+        },
+        {
+          "translation": "그는 그림을 꾸준히 많이 그리다 보니 실력이 몰라보게 좋아졌습니다."
+        },
+        {
+          "translation": "업무에 깊이 몰두하다 보니 시간이 너무나 빠르게 흘러가 버렸습니다."
+        }
+      ]
+    },
+    "ko_졌다가_57": {
+      "title": "-았/었다가 / -아/어졌다가 (완료된 동작·상태의 전환 및 번복)",
+      "shortExplanation": "앞 절의 동작이나 상태 변화가 완전히 이루어졌다가, 그 상태가 지속되지 못하고 뒤 절에서 반대되는 행동이나 다른 상태로 전환·번복됨을 나타내는 연결어미입니다.",
+      "longExplanation": "'-았/었다가'(상태성 보조동사와 결합한 '-아/어졌다가' 포함)는 앞 절의 동작이나 상태의 변화가 완료된 후, 그 지속 상태가 이어지지 않고 반대 방향으로 되돌아가거나 새로운 국면으로 전환됨을 나타내는 연결어미입니다. 행위 도중의 중단을 뜻하는 '-다가'와 달리, 앞의 동작이 온전히 성취된 직후 그것이 번복되거나 반전되는 상황(예: 문을 열었다가 도로 닫음, 입사했다가 퇴사함)을 기술할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + -았/었다가 (끝음절 모음이 ㅏ, ㅗ이면 -았다가, 그 외 모음이면 -었다가, 하다는 했다가)",
+      "examples": [
+        {
+          "translation": "저는 문을 열었다가 이내 다시 닫았습니다. 친구가 도착하기를 마냥 기다릴 수 없었기 때문입니다."
+        },
+        {
+          "translation": "그 식당은 며칠 전에 영업을 시작했다가 오늘 곧바로 문을 닫았습니다."
+        },
+        {
+          "translation": "아이들은 컴퓨터 게임에 빠져 하다가 숙제하는 것을 그만두어야 했습니다."
+        },
+        {
+          "translation": "제 친구는 일자리를 얻었다가 불과 한 달 만에 해고당하고 말았습니다."
+        }
+      ]
+    },
+    "ko_즉_58": {
+      "title": "즉 / ~즉 (재진술 및 요약·환언)",
+      "shortExplanation": "앞에서 진술한 내용을 다시 알기 쉽게 바꾸어 설명하거나 구체적으로 정리하여 부연할 때 쓰는 접속부사입니다 ('곧', '다시 말해서').",
+      "longExplanation": "'즉(卽)'은 한자 '즉'에서 유래한 접속부사로, 앞에 제시된 진술이나 개념을 알기 쉽게 풀어서 바꾸어 말하거나 결론적으로 요약·정리할 때 사용합니다. '다시 말해', '곧'과 같은 뜻을 지니며, 문맥의 논리성을 부여하고 개념의 정의를 명확히 짚어 주는 역할을 합니다. 논설문, 학술 논문, 공문서 등 격식성이 높은 담화에서 자주 쓰입니다.",
+      "formation": "문장1 + . 즉 + 문장2 | 명사1 + , 즉 + 명사2",
+      "examples": [
+        {
+          "translation": "본 연구의 결과를 토대로 볼 때, 즉 우리가 관찰한 바에 따르면 지구 온난화는 인간의 활동에 기인함이 분명합니다."
+        },
+        {
+          "translation": "그는 국제관계 전문가입니다. 즉, 전 세계 여러 나라들 사이의 제반 문제를 전문적으로 연구합니다."
+        },
+        {
+          "translation": "이 메일은 오직 귀하에게만 발송될 것입니다. 즉, 귀하는 이 메시지의 유일한 수신인입니다."
+        },
+        {
+          "translation": "그는 저의 좋은 친구입니다. 즉, 저는 그 사람에 대해 누구보다 잘 알고 있습니다."
+        }
+      ]
+    },
+    "ko_지_59": {
+      "title": "-지 않을까 싶다 / ~지 않을까 싶다 (조심스러운 추측 및 우려·기대)",
+      "shortExplanation": "어떤 일이나 상황이 그러할 가능성이 높다고 조심스럽게 추측하거나 은근한 우려 또는 기대를 담아 완곡하게 말할 때 쓰는 구문입니다 ('~할지도 모른다고 생각하다').",
+      "longExplanation": "'-지 않을까 싶다'는 부정 의문의 형태를 띤 추측 어미 '-지 않을까'에 화자의 생각이나 심리 상태를 나타내는 보조형용사 '싶다'가 결합된 표현입니다. 자신의 판단이나 예측을 직설적으로 단정 짓지 않고 상대방을 배려하여 부드럽고 조심스럽게 완곡화하여 진술할 때 쓰입니다. 불안한 일에 대한 은근한 우려나 좋은 결과에 대한 희망 섞인 추측 모두에 폭넓게 활용됩니다.",
+      "formation": "동사/형용사 어간 + -지 않을까 싶다 | 명사 + -(이)지 않을까 싶다 (받침 있는 명사 뒤에는 이지 않을까 싶다, 받침 없는 명사 뒤에는 지 않을까 싶다)",
+      "examples": [
+        {
+          "translation": "그 친구가 이번 시험을 무난히 잘 치를 수 있지 않을까 싶습니다. 왜냐하면 늘 성실하게 공부하고 있으니까요."
+        },
+        {
+          "translation": "날씨가 궂어지지 않을까 싶습니다. 하늘에 구름이 점점 많아지고 있어요."
+        },
+        {
+          "translation": "오늘 밤에는 무사히 집에 도착할 수 있지 않을까 싶어요. 비행기가 정시에 맞춰 출발했거든요."
+        },
+        {
+          "translation": "이번 주말에 함께 영화를 보러 갈 수 있지 않을까 싶은데, 어떻게 생각하십니까?"
+        }
+      ]
+    },
+    "ko_지_60": {
+      "title": "-지 않을까 하다 / ~지 않을까 하다 (상황 짐작 및 주관적 예측)",
+      "shortExplanation": "불확실한 미래의 일이나 상황에 대해 화자가 나름대로 짐작하고 예측하여 헤아려 볼 때 쓰는 구문입니다 ('~할 것이라고 생각하다').",
+      "longExplanation": "'-지 않을까 하다'는 의문형 추측 표현인 '-지 않을까'에 마음속의 생각이나 의중을 드러내는 보조동사 '하다'가 결합된 형태입니다. 화자가 확실하지 않은 상황에 대해 '혹시 그러하지 않을까' 하고 주관적으로 예측하고 헤아림을 나타냅니다. 특히 '-지 않을까 해서'의 형태로 문중에 쓰여 뒤 절의 행동이나 대비를 하게 된 마음속의 동기나 배경을 설명할 때 매우 빈번하게 사용됩니다.",
+      "formation": "동사/형용사 어간 + -지 않을까 하다 | 명사 + -(이)지 않을까 하다",
+      "examples": [
+        {
+          "translation": "내일 비가 오지 않을까 싶어서 우산을 미리 챙겨 왔습니다."
+        },
+        {
+          "translation": "그녀가 좋아하는 사람을 만나지 않을까 해서 은근히 신경이 쓰입니다."
+        },
+        {
+          "translation": "지금은 깊은 새벽이라 아마 모든 사람들이 잠들어 있지 않을까 합니다."
+        },
+        {
+          "translation": "제 친구가 이번 시험에 무사히 합격하지 않을까 해서 축하 메시지를 준비하고 있습니다."
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "-지 않을래(요) / ~지 않을래 (화자의 부정적 의사 표현 및 완곡한 거절)",
+      "shortExplanation": "화자 자신의 확고한 의지로 어떤 행위를 하지 않겠다는 뜻을 드러내거나 완곡하게 거절의 뜻을 표할 때 쓰는 종결어미입니다 ('~하지 않겠다').",
+      "longExplanation": "'-지 않을래'는 긴 부정의 어간 '-지 않-'에 화자의 주관적 의지를 나타내는 종결어미 '-(으)ㄹ래'가 결합된 형태입니다. 1인칭 평서문에서 쓰일 때, 화자 자신이 어떤 행위를 하고 싶지 않거나 하지 않겠다는 사적인 의사를 자연스럽게 피력할 때 사용됩니다. 보조사 '-요'를 덧붙인 '-지 않을래요'는 상대방에게 불쾌감을 주지 않고 부드럽고 완곡하게 자신의 의사나 거절을 표현하는 일상 구어체로 널리 쓰입니다. (참고로 2인칭 의문문에서는 상대방의 의사를 묻거나 권유하는 용법으로 쓰입니다).",
+      "formation": "동사 어간 + -지 않을래(요) (동사에만 결합)",
+      "examples": [
+        {
+          "translation": "저는 오늘 운동하러 가지 않을래요. 몸이 다소 피곤해서 푹 쉬고 싶습니다."
+        },
+        {
+          "translation": "저는 밥을 너무 많이 먹었기 때문에 후식은 먹지 않을래요."
+        },
+        {
+          "translation": "너무 걱정하지 마세요. 다만 그 사람에게 제가 대신 말을 전하지는 않을래요."
+        },
+        {
+          "translation": "이 옷은 제 마음에 들지 않아서 사지 않을래요."
+        }
+      ]
+    },
+    "ko_지요_62": {
+      "title": "-지요 (-죠) / ~지요 (확인 및 동의 구함, 부드러운 단언)",
+      "shortExplanation": "화자가 알고 있거나 짐작하는 사실에 대해 상대방의 동의나 확인을 구할 때, 또는 자신의 생각을 부드럽게 단언할 때 쓰는 친근한 종결어미입니다.",
+      "longExplanation": "'-지요'(일상 구어에서는 축약형 '-죠'로 널리 쓰임)는 한국어 담화에서 정감 있고 부드러운 어조를 형성하는 대표적인 서술 및 의문 종결어미입니다. 의문문에서 쓰일 때는 화자가 이미 짐작하거나 알고 있는 사실에 대해 청자의 확인이나 동의를 자연스럽게 이끌어 내며, 평서문에서 쓰일 때는 직설적인 단정을 피하고 자신의 확신이나 의견을 친근하고 부드럽게 전하는 기능을 합니다.",
+      "formation": "동사/형용사 어간 + -지요 (줄여서 -죠; 과거 시제는 -았/었지요) | 명사 + -(이)지요 (받침 있는 명사 뒤에는 이지요, 없는 명사 뒤에는 지요)",
+      "examples": [
+        {
+          "translation": "날씨가 아주 화창하고 좋지요?"
+        },
+        {
+          "translation": "우리는 내일 학교에 출석해야 하지요?"
+        },
+        {
+          "translation": "이 영화 정말 재미있었지요?"
+        },
+        {
+          "translation": "그녀는 아직도 학생인 것 같지요?"
+        }
+      ]
+    },
+    "ko_진행하다_63": {
+      "title": "진행하다 / ~을/를 진행하다 (일의 추진 및 연속적 전개)",
+      "shortExplanation": "일, 회의, 행사, 연구 등의 과정을 앞으로 밀고 나가며 계획대로 계속해서 집행·추진함을 나타내는 동사입니다.",
+      "longExplanation": "'진행하다(進行-)'는 한자어 '진행'에 '하다'가 결합된 용언으로, 업무, 행사, 연구, 프로젝트 등을 일정이나 계획에 맞추어 주도적으로 펼치거나 계속 추진해 나갈 때 씁니다. 목적어에 목적격 조사 '을/를'을 동반하여 '조사를 진행하다', '회의를 진행하다'처럼 구체적인 활동을 집행함을 나타내며, 일이 시간의 흐름에 따라 순조롭게 앞으로 나아가고 있음을 뜻합니다.",
+      "formation": "명사 + 을/를 진행하다 (받침 있는 명사 뒤에는 을 진행하다, 받침 없는 명사 뒤에는 를 진행하다)",
+      "examples": [
+        {
+          "translation": "연구팀은 해당 이슈에 대해 조사를 진행하고 있습니다. 그들은 다양한 데이터를 수집하면서 정보를 분석하고 있어요."
+        },
+        {
+          "translation": "오늘 회의를 얼마나 신속하게 진행하느냐에 따라 제시간에 퇴근할 수 있을지가 결정됩니다."
+        },
+        {
+          "translation": "학생들은 공부를 계속 진행하다 보니 시간이 어떻게 흘러갔는지조차 의식하지 못했습니다."
+        },
+        {
+          "translation": "프로젝트 기획 단계에서 저희 팀은 문제 해결을 위한 논의를 진행하고 있습니다."
+        }
+      ]
+    },
+    "ko_차라리_64": {
+      "title": "차라리 / ~차라리 (차선책 선택 및 차라리의 결단)",
+      "shortExplanation": "둘 이상의 선택 항목을 비교할 때, 마음에 차지 않는 쪽을 피하고 차라리 다른 쪽을 택하는 것이 더 낫다고 판단할 때 쓰는 부사입니다.",
+      "longExplanation": "'차라리'는 두 가지 이상의 불만족스럽거나 대립되는 사태를 저울질할 때, 앞의 방식을 따르느니 다소 손해나 수고를 감수하더라도 뒤의 대안을 택하는 것이 훨씬 낫다고 판단하여 결정을 내릴 때 쓰는 부사입니다. 대개 비교 표현인 '-기보다는'과 호응하여 '[A]보다는 차라리 [B]'의 꼴로 긴밀하게 결합합니다. 마음에 들지 않는 차악을 피하고 차선의 길을 결단하는 심리를 생생하게 드러냅니다.",
+      "formation": "절1 + -기보다는 차라리 + 절2 | 차라리 + 문장",
+      "examples": [
+        {
+          "translation": "저는 그저 집에서 혼자 있기보다는 차라리 바깥으로 나가 친구들과 어울려 놀았습니다."
+        },
+        {
+          "translation": "당신이 직접 거짓말을 하기보다는 차라리 솔직하게 털어놓았으면 좋겠습니다."
+        },
+        {
+          "translation": "그 물건을 무턱대고 사들이기보다는 차라리 그 돈을 저축하는 편이 훨씬 낫습니다."
+        },
+        {
+          "translation": "그렇게 행동할 바에는 차라리 아무런 말도 하지 않는 편이 낫습니다."
+        }
+      ]
+    }
+  }
+}

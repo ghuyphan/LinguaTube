@@ -5,7 +5,20 @@ import { AuthService, StorageService, SupabaseService } from '../services';
 
 const STORAGE_KEY = 'linguatube_gamification';
 const DIRTY_STORAGE_KEY = 'voca_gamification_dirty';
-const SYNC_DEBOUNCE_MS = 3000;
+const PENDING_XP_KEY = 'voca_pending_gamification_xp_queue';
+const SYNC_DEBOUNCE_MS = 2000;
+
+export function calculateLevelFromXp(xp: number): number {
+    return Math.min(50, Math.max(1, Math.floor(Math.sqrt(Math.max(0, xp) / 75)) + 1));
+}
+
+export interface PendingXpEvent {
+    activityType: string;
+    amount: number;
+    referenceId?: string;
+    clientDate: string;
+    timestamp: number;
+}
 
 import { getIsoWeekKey, getTodayKey } from '../../shared/utils/date.utils';
 export { getIsoWeekKey, getTodayKey };
@@ -143,8 +156,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
     readonly isLoading = signal<boolean>(false);
     readonly pendingRolloverXp = signal<number>(0);
 
-    private syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
-    private hasPendingRemotePush = false;
+    private missionSyncTimer: ReturnType<typeof setTimeout> | null = null;
 
     constructor() {
         this.loadFromStorage();
@@ -195,7 +207,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         if (updated) {
             const nextXp = prev.xp + rolloverXp;
             const nextWeeklyXp = weeklyXp + rolloverXp;
-            const nextLevel = Math.max(1, Math.floor(Math.sqrt(nextXp / 100)) + 1);
+            const nextLevel = calculateLevelFromXp(nextXp);
 
             const nextState: UserGamificationState = {
                 ...prev,
@@ -208,8 +220,34 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             };
             this._state.set(nextState);
             this.saveToStorage(nextState);
-            if (rolloverXp > 0) {
-                this.scheduleRemotePush();
+            if (rolloverXp > 0 && this.auth.isLoggedIn()) {
+                void (async () => {
+                    try {
+                        const { data, error } = await this.supabase.client.rpc('award_study_xp', {
+                            p_activity_type: 'daily_bonus_chest',
+                            p_amount: Math.min(rolloverXp, 60),
+                            p_reference_id: 'rollover_missions',
+                            p_client_date: today
+                        });
+                        if (error || !data || data.status !== 'success') {
+                            this.queuePendingXp({
+                                activityType: 'daily_bonus_chest',
+                                amount: Math.min(rolloverXp, 60),
+                                referenceId: 'rollover_missions',
+                                clientDate: today,
+                                timestamp: Date.now()
+                            });
+                        }
+                    } catch {
+                        this.queuePendingXp({
+                            activityType: 'daily_bonus_chest',
+                            amount: Math.min(rolloverXp, 60),
+                            referenceId: 'rollover_missions',
+                            clientDate: today,
+                            timestamp: Date.now()
+                        });
+                    }
+                })();
             }
             return nextState;
         }
@@ -217,14 +255,14 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         return prev;
     }
 
-    addXP(amount: number): void {
+    addXP(amount: number, activityType = 'video_completed', referenceId?: string): void {
         if (amount <= 0) return;
 
         this.ensureFreshPeriod();
         this._state.update(prev => {
             const newXP = prev.xp + amount;
             const newWeeklyXp = (prev.weeklyXp || 0) + amount;
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+            const newLevel = calculateLevelFromXp(newXP);
             const updated: UserGamificationState = {
                 ...prev,
                 xp: newXP,
@@ -236,10 +274,58 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
 
-        this.scheduleRemotePush();
+        if (this.auth.isLoggedIn()) {
+            const todayStr = getTodayKey();
+            const allowedType = [
+                'video_completed', 'word_saved', 'flashcard_review',
+                'quiz_completed', 'daily_mission', 'daily_bonus_chest',
+                'grammar_found', 'achievement_unlocked'
+            ].includes(activityType) ? activityType : 'video_completed';
+
+            const xpToAward = Math.min(amount, allowedType === 'achievement_unlocked' ? 1000 : 60);
+
+            void (async () => {
+                try {
+                    const { data, error } = await this.supabase.client.rpc('award_study_xp', {
+                        p_activity_type: allowedType,
+                        p_amount: xpToAward,
+                        p_reference_id: referenceId || null,
+                        p_client_date: todayStr
+                    });
+                    if (error || !data || data.status !== 'success') {
+                        this.queuePendingXp({
+                            activityType: allowedType,
+                            amount: xpToAward,
+                            referenceId,
+                            clientDate: todayStr,
+                            timestamp: Date.now()
+                        });
+                    } else if (data.status === 'success') {
+                        this._state.update(prev => ({
+                            ...prev,
+                            xp: data.xp,
+                            weeklyXp: data.weekly_xp,
+                            level: data.level,
+                            totalVideosWatched: data.total_videos_watched ?? prev.totalVideosWatched,
+                            totalQuizzesCompleted: data.total_quizzes_completed ?? prev.totalQuizzesCompleted,
+                            updatedAt: new Date().toISOString()
+                        }));
+                        this.saveToStorage(this._state());
+                    }
+                } catch {
+                    this.queuePendingXp({
+                        activityType: allowedType,
+                        amount: xpToAward,
+                        referenceId,
+                        clientDate: todayStr,
+                        timestamp: Date.now()
+                    });
+                }
+            })();
+        }
     }
 
-    deductXP(amount: number): boolean {
+    deductXP(amount: number, purpose = 'freeze_replenish', itemId?: string): boolean {
         if (amount <= 0) return false;
         this.ensureFreshPeriod();
         const current = this.state();
@@ -248,7 +334,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         this._state.update(prev => {
             const newXP = Math.max(0, prev.xp - amount);
             const newWeeklyXp = Math.max(0, (prev.weeklyXp || 0) - amount);
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+            const newLevel = calculateLevelFromXp(newXP);
             const updated: UserGamificationState = {
                 ...prev,
                 xp: newXP,
@@ -260,11 +346,32 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
 
-        this.scheduleRemotePush();
+        if (this.auth.isLoggedIn()) {
+            void (async () => {
+                try {
+                    const { data } = await this.supabase.client.rpc('spend_xp', {
+                        p_cost: amount,
+                        p_purpose: purpose,
+                        p_item_id: itemId || null
+                    });
+                    if (data?.success && typeof data.new_xp === 'number') {
+                        this._state.update(prev => ({
+                            ...prev,
+                            xp: data.new_xp,
+                            level: calculateLevelFromXp(data.new_xp),
+                            updatedAt: new Date().toISOString()
+                        }));
+                        this.saveToStorage(this._state());
+                    }
+                } catch (err: unknown) {
+                    console.warn('[GamificationRepo] spend_xp error:', err);
+                }
+            })();
+        }
         return true;
     }
 
-    recordVideoCompleted(): Mission[] {
+    recordVideoCompleted(videoId?: string): Mission[] {
         this.ensureFreshPeriod();
         this._state.update(prev => {
             const updated: UserGamificationState = {
@@ -276,11 +383,11 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
         const completed = this.trackMissionProgress('watch_video', 1);
-        this.addXP(25);
+        this.addXP(25, 'video_completed', videoId);
         return completed;
     }
 
-    recordQuizCompleted(): Mission[] {
+    recordQuizCompleted(quizId?: string): Mission[] {
         this.ensureFreshPeriod();
         this._state.update(prev => {
             const updated: UserGamificationState = {
@@ -292,7 +399,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
         const completed = this.trackMissionProgress('complete_quiz', 1);
-        this.addXP(20);
+        this.addXP(20, 'quiz_completed', quizId);
         return completed;
     }
 
@@ -343,7 +450,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
 
-        this.scheduleRemotePush();
+        this.syncDailyMissionsDebounced();
         return newlyCompleted;
     }
 
@@ -370,7 +477,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
 
             const newXP = prev.xp + xpGained;
             const newWeeklyXp = (prev.weeklyXp || 0) + xpGained;
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+            const newLevel = calculateLevelFromXp(newXP);
 
             const updated: UserGamificationState = {
                 ...prev,
@@ -387,8 +494,30 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
 
-        if (xpGained > 0) {
-            this.scheduleRemotePush();
+        if (xpGained > 0 && this.auth.isLoggedIn()) {
+            this.syncDailyMissionsDebounced();
+            void (async () => {
+                try {
+                    const { data } = await this.supabase.client.rpc('award_study_xp', {
+                        p_activity_type: 'daily_mission',
+                        p_amount: Math.min(xpGained, 40),
+                        p_reference_id: missionId,
+                        p_client_date: getTodayKey()
+                    });
+                    if (data?.status === 'success') {
+                        this._state.update(prev => ({
+                            ...prev,
+                            xp: data.xp,
+                            weeklyXp: data.weekly_xp,
+                            level: data.level,
+                            updatedAt: new Date().toISOString()
+                        }));
+                        this.saveToStorage(this._state());
+                    }
+                } catch (err: unknown) {
+                    console.warn('[GamificationRepo] claim mission award error:', err);
+                }
+            })();
         }
         return xpGained;
     }
@@ -405,7 +534,7 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             bonusGained = prev.dailyMissions.bonusXp || 50;
             const newXP = prev.xp + bonusGained;
             const newWeeklyXp = (prev.weeklyXp || 0) + bonusGained;
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+            const newLevel = calculateLevelFromXp(newXP);
 
             const updated: UserGamificationState = {
                 ...prev,
@@ -422,8 +551,30 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             return updated;
         });
 
-        if (bonusGained > 0) {
-            this.scheduleRemotePush();
+        if (bonusGained > 0 && this.auth.isLoggedIn()) {
+            this.syncDailyMissionsDebounced();
+            void (async () => {
+                try {
+                    const { data } = await this.supabase.client.rpc('award_study_xp', {
+                        p_activity_type: 'daily_bonus_chest',
+                        p_amount: Math.min(bonusGained, 60),
+                        p_reference_id: 'daily_chest',
+                        p_client_date: getTodayKey()
+                    });
+                    if (data?.status === 'success') {
+                        this._state.update(prev => ({
+                            ...prev,
+                            xp: data.xp,
+                            weeklyXp: data.weekly_xp,
+                            level: data.level,
+                            updatedAt: new Date().toISOString()
+                        }));
+                        this.saveToStorage(this._state());
+                    }
+                } catch (err: unknown) {
+                    console.warn('[GamificationRepo] claim daily bonus award error:', err);
+                }
+            })();
         }
         return bonusGained;
     }
@@ -435,18 +586,19 @@ export class OfflineGamificationRepository implements IGamificationRepository {
 
         this.ensureFreshPeriod();
 
+        let updatedNotified: string[] = this.state().notifiedAchievements;
+
         this._state.update(prev => {
             const newXP = prev.xp + Math.max(0, xpGained);
             const newWeeklyXp = (prev.weeklyXp || 0) + Math.max(0, xpGained);
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
+            const newLevel = calculateLevelFromXp(newXP);
 
-            let notified = prev.notifiedAchievements;
             if (hasNotified) {
                 const currentSet = new Set(prev.notifiedAchievements);
                 for (const id of newlyNotified) {
                     currentSet.add(id);
                 }
-                notified = Array.from(currentSet);
+                updatedNotified = Array.from(currentSet);
             }
 
             const updated: UserGamificationState = {
@@ -455,39 +607,55 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                 weeklyXp: newWeeklyXp,
                 level: newLevel,
                 unlockedAchievements: hasUnlocked ? { ...prev.unlockedAchievements, ...newUnlocked } : prev.unlockedAchievements,
-                notifiedAchievements: notified,
+                notifiedAchievements: updatedNotified,
                 updatedAt: new Date().toISOString()
             };
             this.saveToStorage(updated);
             return updated;
         });
 
-        if (hasUnlocked || xpGained > 0) {
-            this.scheduleRemotePush();
+        if (this.auth.isLoggedIn()) {
+            void (async () => {
+                try {
+                    if (hasUnlocked || hasNotified) {
+                        await this.supabase.client.rpc('sync_achievements', {
+                            p_unlocked: hasUnlocked ? newUnlocked : {},
+                            p_notified: updatedNotified
+                        });
+                    }
+
+                    if (xpGained > 0) {
+                        const refId = newlyNotified.length > 0
+                            ? newlyNotified.join(',')
+                            : (Object.keys(newUnlocked).join(',') || 'achievements');
+
+                        const { data } = await this.supabase.client.rpc('award_study_xp', {
+                            p_activity_type: 'achievement_unlocked',
+                            p_amount: Math.min(xpGained, 1000),
+                            p_reference_id: refId,
+                            p_client_date: getTodayKey()
+                        });
+
+                        if (data && data.status === 'success') {
+                            this._state.update(prev => ({
+                                ...prev,
+                                xp: data.xp,
+                                weeklyXp: data.weekly_xp,
+                                level: data.level,
+                                updatedAt: new Date().toISOString()
+                            }));
+                            this.saveToStorage(this._state());
+                        }
+                    }
+                } catch (err: unknown) {
+                    console.warn('[GamificationRepo] achievement sync/award error:', err);
+                }
+            })();
         }
     }
 
     unlockAchievements(newUnlocked: Record<string, string>, xpGained: number): void {
-        if (Object.keys(newUnlocked).length === 0 && xpGained <= 0) return;
-        this.ensureFreshPeriod();
-
-        this._state.update(prev => {
-            const newXP = prev.xp + xpGained;
-            const newWeeklyXp = (prev.weeklyXp || 0) + xpGained;
-            const newLevel = Math.max(1, Math.floor(Math.sqrt(newXP / 100)) + 1);
-            const updated: UserGamificationState = {
-                ...prev,
-                xp: newXP,
-                weeklyXp: newWeeklyXp,
-                level: newLevel,
-                unlockedAchievements: { ...prev.unlockedAchievements, ...newUnlocked },
-                updatedAt: new Date().toISOString()
-            };
-            this.saveToStorage(updated);
-            return updated;
-        });
-
-        this.scheduleRemotePush();
+        this.unlockAndNotifyAchievements(newUnlocked, xpGained, []);
     }
 
     markNotified(achievementIds: string[]): void {
@@ -522,6 +690,10 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         this.isLoading.set(true);
 
         try {
+            // 1. Flush any pending offline XP
+            await this.flushPendingXp();
+
+            // 2. Fetch authoritative gamification record from Supabase
             const { data: remoteRecord, error } = await this.supabase.client
                 .from('gamification')
                 .select('*')
@@ -531,20 +703,21 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             const local = this.ensureFreshPeriod();
 
             if (remoteRecord && !error) {
-                // Merge strategy: Monotonic XP, earlier badge timestamps, union of notified badges
-                const mergedXP = Math.max(local.xp, remoteRecord.xp || 0);
-                const mergedLevel = Math.max(1, Math.floor(Math.sqrt(mergedXP / 100)) + 1);
-                const mergedVideos = Math.max(local.totalVideosWatched, remoteRecord.total_videos_watched || 0);
-                const mergedQuizzes = Math.max(local.totalQuizzesCompleted, remoteRecord.total_quizzes_completed || 0);
                 const currentWeek = getIsoWeekKey();
-                const mergedWeeklyXp = (remoteRecord.current_week_key === currentWeek)
-                    ? Math.max(local.weeklyXp || 0, remoteRecord.weekly_xp || 0)
-                    : (local.weeklyXp || 0);
+                const remoteWeeklyXp = (remoteRecord.current_week_key === currentWeek)
+                    ? (remoteRecord.weekly_xp || 0)
+                    : 0;
 
+                const remoteXP = remoteRecord.xp || 0;
+                const remoteLevel = remoteRecord.level || calculateLevelFromXp(remoteXP);
+
+                // Merge unlocked achievements: Union of local and remote
                 const mergedUnlocked: Record<string, string> = { ...(remoteRecord.unlocked_achievements || {}) };
+                let hasNewLocalAchievements = false;
                 for (const [badgeId, unlockDate] of Object.entries(local.unlockedAchievements)) {
                     if (!mergedUnlocked[badgeId]) {
                         mergedUnlocked[badgeId] = unlockDate;
+                        hasNewLocalAchievements = true;
                     } else {
                         const tLocal = new Date(unlockDate).getTime();
                         const tRemote = new Date(mergedUnlocked[badgeId]).getTime();
@@ -559,65 +732,63 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                     ...(local.notifiedAchievements || [])
                 ]));
 
+                // If local unlocked achievements while offline, push them to server via sync_achievements RPC
+                if (hasNewLocalAchievements || mergedNotified.length > (remoteRecord.notified_achievements?.length || 0)) {
+                    await this.supabase.client.rpc('sync_achievements', {
+                        p_unlocked: mergedUnlocked,
+                        p_notified: mergedNotified
+                    });
+                }
+
+                // Merge daily missions: If remote has today's missions, take maximum progress
+                let dailyMissions = local.dailyMissions;
+                if (remoteRecord.daily_missions && remoteRecord.daily_missions.date === getTodayKey()) {
+                    const remoteMissions = remoteRecord.daily_missions;
+                    dailyMissions = {
+                        ...local.dailyMissions!,
+                        allCompletedBonusClaimed: local.dailyMissions?.allCompletedBonusClaimed || remoteMissions.allCompletedBonusClaimed,
+                        missions: (local.dailyMissions?.missions || []).map(localM => {
+                            const remoteM = remoteMissions.missions?.find((rm: Mission) => rm.id === localM.id);
+                            if (!remoteM) return localM;
+                            return {
+                                ...localM,
+                                progress: Math.max(localM.progress, remoteM.progress || 0),
+                                completed: localM.completed || remoteM.completed || false,
+                                claimed: localM.claimed || remoteM.claimed || false
+                            };
+                        })
+                    };
+                }
+
                 const mergedState: UserGamificationState = {
                     ...local,
-                    xp: mergedXP,
-                    weeklyXp: mergedWeeklyXp,
+                    xp: remoteXP,
+                    weeklyXp: remoteWeeklyXp,
                     currentWeekKey: currentWeek,
-                    level: mergedLevel,
-                    totalVideosWatched: mergedVideos,
-                    totalQuizzesCompleted: mergedQuizzes,
+                    level: remoteLevel,
+                    totalVideosWatched: Math.max(local.totalVideosWatched, remoteRecord.total_videos_watched || 0),
+                    totalQuizzesCompleted: Math.max(local.totalQuizzesCompleted, remoteRecord.total_quizzes_completed || 0),
                     unlockedAchievements: mergedUnlocked,
                     notifiedAchievements: mergedNotified,
-                    updatedAt: new Date().toISOString()
+                    dailyMissions,
+                    updatedAt: remoteRecord.updated_at || new Date().toISOString()
                 };
 
                 this._state.set(mergedState);
                 this.saveToStorage(mergedState);
-
-                // If local had higher/newer stats, push merged state back to Supabase
-                if (mergedXP > (remoteRecord.xp || 0) ||
-                    mergedWeeklyXp > (remoteRecord.weekly_xp || 0) ||
-                    Object.keys(mergedUnlocked).length > Object.keys(remoteRecord.unlocked_achievements || {}).length ||
-                    mergedVideos > (remoteRecord.total_videos_watched || 0) ||
-                    mergedQuizzes > (remoteRecord.total_quizzes_completed || 0)) {
-                    await this.supabase.client.from('gamification').update({
-                        xp: mergedXP,
-                        level: mergedLevel,
-                        weekly_xp: mergedWeeklyXp,
-                        current_week_key: currentWeek,
-                        total_videos_watched: mergedVideos,
-                        total_quizzes_completed: mergedQuizzes,
-                        unlocked_achievements: mergedUnlocked,
-                        notified_achievements: mergedNotified,
-                        updated_at: new Date().toISOString()
-                    }).eq('id', remoteRecord.id);
-                }
-            } else {
-                // Record doesn't exist yet on remote, try creating it with deterministic ID
-                try {
-                    await this.supabase.client.from('gamification').upsert({
-                        id: `game_${user.id}`,
-                        user_id: user.id,
-                        xp: local.xp,
-                        level: local.level,
-                        weekly_xp: local.weeklyXp || 0,
-                        current_week_key: local.currentWeekKey || getIsoWeekKey(),
-                        total_videos_watched: local.totalVideosWatched,
-                        total_quizzes_completed: local.totalQuizzesCompleted,
-                        unlocked_achievements: local.unlockedAchievements,
-                        notified_achievements: local.notifiedAchievements,
-                        updated_at: new Date().toISOString()
-                    }, { onConflict: 'user_id' });
-                } catch {
-                    // Local state remains intact
+            } else if (!remoteRecord && !error) {
+                // Initialize remote record with local achievements if any
+                if (Object.keys(local.unlockedAchievements).length > 0 || local.notifiedAchievements.length > 0) {
+                    await this.supabase.client.rpc('sync_achievements', {
+                        p_unlocked: local.unlockedAchievements,
+                        p_notified: local.notifiedAchievements
+                    });
                 }
             }
         } catch (err) {
             console.warn('[GamificationRepo] Remote sync skipped:', err);
         } finally {
             this.isLoading.set(false);
-            this.hasPendingRemotePush = false;
             this.storage.remove(DIRTY_STORAGE_KEY);
         }
     }
@@ -640,11 +811,9 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         });
 
         this.auth.logoutEvent.subscribe(() => {
-            // Flush any pending remote sync before clearing memory
-            if ((this.hasPendingRemotePush || this.storage.get<boolean>(DIRTY_STORAGE_KEY)) && this.syncDebounceTimer) {
-                clearTimeout(this.syncDebounceTimer);
-                this.syncDebounceTimer = null;
-                void this.pushLocalToRemote();
+            if (this.missionSyncTimer) {
+                clearTimeout(this.missionSyncTimer);
+                this.missionSyncTimer = null;
             }
 
             // Safe reset: Clean memory to avoid cross-user leak, but keep guest continuity if needed
@@ -661,55 +830,78 @@ export class OfflineGamificationRepository implements IGamificationRepository {
             });
             this.storage.remove(STORAGE_KEY);
             this.storage.remove(DIRTY_STORAGE_KEY);
+            this.storage.remove(PENDING_XP_KEY);
         });
     }
 
-    private scheduleRemotePush(): void {
+    private syncDailyMissionsDebounced(): void {
         if (!this.auth.isLoggedIn()) return;
-        this.hasPendingRemotePush = true;
-        this.storage.set(DIRTY_STORAGE_KEY, true);
-
-        if (this.syncDebounceTimer) {
-            clearTimeout(this.syncDebounceTimer);
+        if (this.missionSyncTimer) {
+            clearTimeout(this.missionSyncTimer);
         }
-
-        this.syncDebounceTimer = setTimeout(() => {
-            this.syncDebounceTimer = null;
-            void this.pushLocalToRemote();
+        this.missionSyncTimer = setTimeout(() => {
+            this.missionSyncTimer = null;
+            const missions = this.state().dailyMissions;
+            if (missions) {
+                void (async () => {
+                    try {
+                        await this.supabase.client.rpc('sync_daily_missions', {
+                            p_missions: missions
+                        });
+                    } catch (err: unknown) {
+                        console.warn('[GamificationRepo] sync_daily_missions error:', err);
+                    }
+                })();
+            }
         }, SYNC_DEBOUNCE_MS);
     }
 
-    private async pushLocalToRemote(): Promise<void> {
+    private queuePendingXp(event: PendingXpEvent): void {
+        const queue = this.storage.get<PendingXpEvent[]>(PENDING_XP_KEY) || [];
+        queue.push(event);
+        if (queue.length > 50) {
+            queue.shift();
+        }
+        this.storage.set(PENDING_XP_KEY, queue);
+    }
+
+    private async flushPendingXp(): Promise<void> {
         if (!this.auth.isLoggedIn()) return;
-        const user = this.auth.user();
-        if (!user) return;
+        const queue = this.storage.get<PendingXpEvent[]>(PENDING_XP_KEY) || [];
+        if (queue.length === 0) return;
 
-        const current = this.ensureFreshPeriod();
-        const rowId = `game_${user.id}`;
-
-        try {
-            const { error } = await this.supabase.client.from('gamification').upsert({
-                id: rowId,
-                user_id: user.id,
-                xp: current.xp,
-                level: current.level,
-                weekly_xp: current.weeklyXp || 0,
-                current_week_key: current.currentWeekKey || getIsoWeekKey(),
-                total_videos_watched: current.totalVideosWatched,
-                total_quizzes_completed: current.totalQuizzesCompleted,
-                unlocked_achievements: current.unlockedAchievements,
-                notified_achievements: current.notifiedAchievements,
-                updated_at: new Date().toISOString()
-            }, { onConflict: 'user_id' });
-
-            if (error) {
-                console.warn('[GamificationRepo] Failed to push to remote:', error);
-                return;
+        const remaining: PendingXpEvent[] = [];
+        for (const item of queue) {
+            try {
+                const { data, error } = await this.supabase.client.rpc('award_study_xp', {
+                    p_activity_type: item.activityType,
+                    p_amount: item.amount,
+                    p_reference_id: item.referenceId ?? null,
+                    p_client_date: item.clientDate
+                });
+                if (error) {
+                    remaining.push(item);
+                } else if (data && data.status === 'success') {
+                    this._state.update(prev => ({
+                        ...prev,
+                        xp: data.xp,
+                        weeklyXp: data.weekly_xp,
+                        level: data.level,
+                        totalVideosWatched: data.total_videos_watched ?? prev.totalVideosWatched,
+                        totalQuizzesCompleted: data.total_quizzes_completed ?? prev.totalQuizzesCompleted,
+                        updatedAt: new Date().toISOString()
+                    }));
+                    this.saveToStorage(this._state());
+                }
+            } catch {
+                remaining.push(item);
             }
-            this.hasPendingRemotePush = false;
-            this.storage.remove(DIRTY_STORAGE_KEY);
-        } catch (err) {
-            console.warn('[GamificationRepo] Error pushing to remote:', err);
+        }
+
+        if (remaining.length > 0) {
+            this.storage.set(PENDING_XP_KEY, remaining);
+        } else {
+            this.storage.remove(PENDING_XP_KEY);
         }
     }
 

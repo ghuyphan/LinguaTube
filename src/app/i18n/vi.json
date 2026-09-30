@@ -922,16 +922,56 @@
     "gold": "Chiến binh Vàng",
     "silver": "Hiệp sĩ Bạc",
     "bronze": "Chiến binh Đồng",
-    "rank1": "Tân binh say mê",
-    "rank2": "Người khám phá",
-    "rank3": "Thợ săn từ vựng tập sự",
-    "rank4": "Học giả chăm chỉ",
-    "rank5": "Bậc thầy đa ngôn ngữ",
-    "rank6": "Nhà du hành ngôn ngữ",
-    "rank7": "Bậc thầy ngôn từ",
-    "rank8": "Học giả văn hóa",
-    "rank9": "Đại kiện tướng ngôn ngữ",
-    "rank10": "Huyền thoại ngôn ngữ"
+    "rank1": "Tân binh lắng nghe",
+    "rank2": "Người mới tò mò",
+    "rank3": "Người gom góp từ",
+    "rank4": "Người tìm kiếm âm điệu",
+    "rank5": "Nhà thám hiểm nhiệt huyết",
+    "rank6": "Người lắng nghe chủ động",
+    "rank7": "Người tìm kiếm cụm từ",
+    "rank8": "Học viên phụ đề",
+    "rank9": "Trinh sát câu văn",
+    "rank10": "Người xây thói quen",
+    "rank11": "Người sưu tầm từ vựng",
+    "rank12": "Người kiến tạo vốn từ",
+    "rank13": "Tập sự thẻ ghi nhớ",
+    "rank14": "Tân binh luyện Shadowing",
+    "rank15": "Nhà thám hiểm phụ đề",
+    "rank16": "Học giả tận tụy",
+    "rank17": "Người xem lưu loát",
+    "rank18": "Người đọc theo ngữ cảnh",
+    "rank19": "Người theo dõi hội thoại",
+    "rank20": "Thám tử ngữ pháp",
+    "rank21": "Người đàm thoại tự tin",
+    "rank22": "Chuyên viên giải mã ngữ cảnh",
+    "rank23": "Người nhận diện siêu tốc",
+    "rank24": "Tín đồ đắm chìm",
+    "rank25": "Kho tàng từ vựng",
+    "rank26": "Nhà du hành lưu loát",
+    "rank27": "Lữ khách văn hóa",
+    "rank28": "Người say mê thành ngữ",
+    "rank29": "Bậc thầy ngữ điệu",
+    "rank30": "Đa ngữ tập sự",
+    "rank31": "Học giả uyên thâm",
+    "rank32": "Bậc thầy Shadowing",
+    "rank33": "Á quân thấu hiểu",
+    "rank34": "Thợ săn sắc thái",
+    "rank35": "Bậc thầy thấu hiểu",
+    "rank36": "Chuyên gia ngôn ngữ",
+    "rank37": "Nghệ sĩ phụ đề",
+    "rank38": "Bậc thầy từ điển",
+    "rank39": "Nghệ nhân cú pháp",
+    "rank40": "Bản năng tự nhiên",
+    "rank41": "Đại kiện tướng đa ngữ",
+    "rank42": "Hiền triết văn hóa",
+    "rank43": "Nhạc trưởng phụ đề",
+    "rank44": "Tư duy hùng biện",
+    "rank45": "Hiền triết ngôn ngữ",
+    "rank46": "Chuyên gia ngôn ngữ đỉnh cao",
+    "rank47": "Ký ức vô tận",
+    "rank48": "Ngọn hải đăng phụ đề",
+    "rank49": "Huyền thoại đa ngữ",
+    "rank50": "Từ điển sống"
   },
   "leaderboard": {
     "title": "Bảng xếp hạng toàn cầu",
@@ -1080,6 +1120,110 @@
     "quiz50": {
       "title": "Đại kiện tướng câu đố",
       "desc": "Trả lời đúng 50 câu hỏi phụ đề"
+    },
+    "watch15": {
+      "title": "Người say mê video",
+      "desc": "Hoàn thành 15 video học tập"
+    },
+    "watch30": {
+      "title": "Tín đồ điện ảnh",
+      "desc": "Hoàn thành 30 video học tập"
+    },
+    "watch60": {
+      "title": "Lữ hành đắm chìm",
+      "desc": "Hoàn thành 60 video học tập"
+    },
+    "watch250": {
+      "title": "Chuyên gia điện ảnh",
+      "desc": "Hoàn thành 250 video học tập"
+    },
+    "watch500": {
+      "title": "Bậc thầy đắm chìm",
+      "desc": "Hoàn thành 500 video học tập"
+    },
+    "vocab10": {
+      "title": "Người tìm kiếm từ vựng",
+      "desc": "Lưu 10 từ vựng mới"
+    },
+    "vocab50": {
+      "title": "Tập sự từ vựng",
+      "desc": "Lưu 50 từ vựng mới"
+    },
+    "vocab250": {
+      "title": "Kiến trúc sư từ vựng",
+      "desc": "Lưu 250 từ vựng mới"
+    },
+    "vocab1000": {
+      "title": "Kho báu đa ngữ",
+      "desc": "Lưu 1.000 từ vựng mới"
+    },
+    "vocabMaster50": {
+      "title": "Ghi nhớ sâu sắc",
+      "desc": "Làm chủ 50 từ với lặp lại ngắt quãng"
+    },
+    "vocabMaster100": {
+      "title": "Trí nhớ thép",
+      "desc": "Làm chủ 100 từ với lặp lại ngắt quãng"
+    },
+    "vocabMaster250": {
+      "title": "Bậc thầy từ vựng",
+      "desc": "Làm chủ 250 từ với lặp lại ngắt quãng"
+    },
+    "vocabMaster500": {
+      "title": "Ký ức sống động",
+      "desc": "Làm chủ 500 từ với lặp lại ngắt quãng"
+    },
+    "streak14": {
+      "title": "Chiến thắng 2 tuần",
+      "desc": "Duy trì chuỗi học 14 ngày liên tiếp"
+    },
+    "streak60": {
+      "title": "Ngọn đuốc 2 tháng",
+      "desc": "Duy trì chuỗi học 60 ngày liên tiếp"
+    },
+    "streak200": {
+      "title": "Ngọn lửa 200 ngày",
+      "desc": "Duy trì chuỗi học 200 ngày liên tiếp"
+    },
+    "streak365": {
+      "title": "Một năm tinh thông",
+      "desc": "Duy trì chuỗi học 365 ngày liên tiếp"
+    },
+    "srs100": {
+      "title": "Chiến binh thẻ từ",
+      "desc": "Hoàn thành 100 lượt ôn tập flashcard"
+    },
+    "srs250": {
+      "title": "Thợ rèn ký ức",
+      "desc": "Hoàn thành 250 lượt ôn tập flashcard"
+    },
+    "srs500": {
+      "title": "Quán quân SRS",
+      "desc": "Hoàn thành 500 lượt ôn tập flashcard"
+    },
+    "srs1000": {
+      "title": "Đại kiện tướng ghi nhớ",
+      "desc": "Hoàn thành 1.000 lượt ôn tập flashcard"
+    },
+    "quiz5": {
+      "title": "Đôi tai chăm chú",
+      "desc": "Trả lời đúng 5 câu đố phụ đề"
+    },
+    "quiz15": {
+      "title": "Trinh sát thấu hiểu",
+      "desc": "Trả lời đúng 15 câu đố phụ đề"
+    },
+    "quiz30": {
+      "title": "Chuyên gia câu đố",
+      "desc": "Trả lời đúng 30 câu đố phụ đề"
+    },
+    "quiz60": {
+      "title": "Bậc thầy câu đố",
+      "desc": "Trả lời đúng 60 câu đố phụ đề"
+    },
+    "quiz100": {
+      "title": "Quán quân câu đố",
+      "desc": "Trả lời đúng 100 câu đố phụ đề"
     }
   }
 }

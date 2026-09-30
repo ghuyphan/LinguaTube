@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_에_20": {
+      "title": "~에 근거하여 (Căn cứ vào..., dựa trên...)",
+      "shortExplanation": "Dùng để diễn tả hành động, nhận định hoặc kết luận được đưa ra dựa trên một căn cứ, quy tắc hoặc dữ liệu cụ thể nào đó ('căn cứ vào...', 'dựa trên...').",
+      "longExplanation": "'~에 근거하여' là biểu hiện kết hợp giữa trợ từ chỉ phương hướng/căn cứ '에' và dạng liên kết '-어' của động từ '근거하다' (căn cứ vào). Cấu trúc này dùng để nêu rõ nguồn gốc, tiêu chuẩn hoặc cơ sở lý luận, dữ liệu thực tế, pháp luật làm chỗ dựa cho mệnh đề phía sau. Cấu trúc này mang sắc thái trang trọng, khách quan, thường xuyên xuất hiện trong các bài báo cáo, văn bản pháp luật, nghiên cứu học thuật hoặc thời sự chính luận.",
+      "formation": "Danh từ + 에 근거하여 (trong văn phong viết có thể dùng Danh từ + 에 근거한 + Danh từ khi bổ nghĩa)",
+      "examples": [
+        {
+          "translation": "Căn cứ vào dữ liệu, sản phẩm này đã bán chạy nhất."
+        },
+        {
+          "translation": "Dựa trên luật pháp, việc anh ấy làm sai đã được chứng minh."
+        },
+        {
+          "translation": "Dựa trên các nghiên cứu khoa học, hiện tượng ấm lên toàn cầu là một vấn đề nghiêm trọng."
+        },
+        {
+          "translation": "Căn cứ vào bài đánh giá của cô ấy, nghe nói nhà hàng này vị không được ngon lắm."
+        }
+      ]
+    },
+    "ko_에_21": {
+      "title": "~에 비추어 볼 때 (So với..., xét theo..., đối chiếu với...)",
+      "shortExplanation": "Dùng để so sánh, đối chiếu với một đối tượng, tiêu chuẩn hoặc hoàn cảnh khác nhằm đưa ra đánh giá, nhận xét ('so với...', 'chiếu theo... mà thấy').",
+      "longExplanation": "'~에 비추어 볼 때' được tạo thành từ trợ từ '에', động từ '비추다' (chiếu rọi, soi xét) dạng liên kết '-어', và cấu trúc '보다' + '-(으)ㄹ 때' (khi nhìn, khi xem xét). Cấu trúc này dùng để đặt một sự việc, hoàn cảnh bên cạnh một đối tượng so sánh hoặc một tiêu chuẩn nhất định nhằm rút ra kết luận, đánh giá hoặc nhận định. Nó mang tính suy ngẫm, đối chiếu sâu sắc và thường được dùng trong các bài phát biểu, văn viết bình luận hoặc hội thoại trang trọng.",
+      "formation": "Danh từ + 에 비추어 볼 때 (hoặc Danh từ + 에 비추어 보면)",
+      "examples": [
+        {
+          "translation": "So với đất nước chúng ta, văn hóa của nước Mỹ rất khác biệt."
+        },
+        {
+          "translation": "Đối chiếu với quá khứ của bản thân, tôi thấy mình đã thay đổi rất nhiều."
+        },
+        {
+          "translation": "So với Seoul thì Busan yên tĩnh hơn nhiều."
+        },
+        {
+          "translation": "So với những người khác thì anh ấy đặc biệt xuất chúng."
+        }
+      ]
+    },
+    "ko_이다_22": {
+      "title": "~다 보니 / ~(이)다 보니 (Vì liên tục làm... nên nhận ra..., do là... nên...)",
+      "shortExplanation": "Diễn tả việc liên tục thực hiện một hành động hoặc ở trong một trạng thái trong suốt thời gian dài, dẫn đến một kết quả mới hoặc tự nhiên nhận ra một điều gì đó.",
+      "longExplanation": "'~다 보니' là vĩ tố liên kết kết hợp giữa vĩ tố nối '-다' và động từ '보다' kèm theo đuôi nguyên nhân/phát hiện '-니'. Cấu trúc này dùng để diễn đạt ý: trong quá trình người nói lặp đi lặp lại một hành động hoặc duy trì một trạng thái trong thời gian dài, thì tự nhiên dẫn đến kết quả ở mệnh đề sau hoặc người nói dần phát hiện ra một sự thật mới. Mệnh đề trước là hành động mang tính liên tục, thói quen; mệnh đề sau thường là kết quả khách quan hoặc sự nhận thức tự nhiên theo thời gian.",
+      "formation": "Thân động từ + -다 보니 | Danh từ + -(이)다 보니 (danh từ có phụ âm cuối dùng -이다 보니, không có phụ âm cuối dùng -다 보니)",
+      "examples": [
+        {
+          "translation": "Do ngày nào cũng đi bộ trên cùng một con đường nên tôi đã trở nên thông thạo khu phố này."
+        },
+        {
+          "translation": "Sống ở Hàn Quốc một tháng nên tiếng Hàn của tôi đã trở nên thoải mái hơn một chút."
+        },
+        {
+          "translation": "Vì cùng làm việc chung một công ty nên chúng tôi đã trở nên thân thiết với nhau."
+        },
+        {
+          "translation": "Nhờ chăm chỉ tập thể dục mỗi sáng nên dường như cơ thể tôi đã trở nên khỏe mạnh hơn."
+        }
+      ]
+    },
+    "ko_이라면_23": {
+      "title": "~(이)라면 그것은 (Nếu nói đến... thì đó chính là..., nếu gọi là... thì đó là...)",
+      "shortExplanation": "Dùng để đưa ra một khái niệm hoặc chủ đề trọng tâm, sau đó định nghĩa hoặc giải thích bản chất thực sự của nó một cách chi tiết.",
+      "longExplanation": "'~(이)라면 그것은' là sự kết hợp giữa trợ từ liên kết giả định/chủ đề '-(이)라면' (nếu nói là...) và đại từ chỉ thị '그것은' (điều đó thì). Mẫu câu này được dùng như một phương thức tu từ để khơi mở một khái niệm trừu tượng (như tình yêu, tự do, tình bạn, thành công) ở vế trước, rồi tiếp tục đưa ra định nghĩa, bản chất cốt lõi hoặc quan điểm cá nhân sâu sắc ở mệnh đề phía sau. Đuôi câu thường kết thúc bằng các dạng định nghĩa như '-을/를 말한다' (nghĩa là), '-는 것이다' (chính là việc...).",
+      "formation": "Danh từ + (이)라면 그것은 + Mệnh đề giải thích/định nghĩa (danh từ có phụ âm cuối dùng -이라면 그것은, không có phụ âm cuối dùng -라면 그것은)",
+      "examples": [
+        {
+          "translation": "Nếu nói đến tình yêu, thì đó là việc biết quan tâm và thấu hiểu đối phương."
+        },
+        {
+          "translation": "Nếu nói đến tự do, thì đó chính là việc suy nghĩ và lời nói của bản thân không bị giới hạn."
+        },
+        {
+          "translation": "Nếu gọi là bạn bè, thì đó là mối quan hệ biết thấu hiểu và tương trợ lẫn nhau."
+        },
+        {
+          "translation": "Nếu nói đến thành công, thì đó là việc đạt được mục tiêu và hoàn thành ước mơ của bản thân."
+        }
+      ]
+    },
+    "ko_이래_24": {
+      "title": "~이래 / ~이래로 (Kể từ sau khi..., từ đó đến nay...)",
+      "shortExplanation": "Chỉ một mốc thời gian hoặc sự kiện trong quá khứ, biểu thị một tình trạng hoặc sự thay đổi liên tục kéo dài từ thời điểm đó cho đến tận hiện tại.",
+      "longExplanation": "'~이래' (thường đi kèm trợ từ phương hướng/thời gian thành '~이래로') là danh từ phụ thuộc chỉ mốc thời gian, có nghĩa là 'kể từ sau khi...'. Cấu trúc này dùng sau một danh từ chỉ thời điểm hoặc một sự kiện quan trọng trong quá khứ nhằm nhấn mạnh tình trạng, thói quen hoặc sự biến đổi mới bắt đầu nảy sinh từ cột mốc đó và vẫn tiếp tục duy trì đến nay. Thường xuất hiện trong cả văn nói lẫn văn viết trang trọng.",
+      "formation": "Danh từ (chỉ thời điểm hoặc sự kiện) + 이래(로) | Định từ quá khứ -(으)ㄴ + 이래(로)",
+      "examples": [
+        {
+          "translation": "Kể từ vụ tai nạn đó, tôi không thể lái xe ô tô được nữa, vì vậy tôi phải di chuyển bằng xe buýt và tàu điện ngầm."
+        },
+        {
+          "translation": "Từ mùa xuân đến nay tôi bị dị ứng phấn hoa rất khổ sở, vì thế tôi vẫn đang uống thuốc liên tục."
+        },
+        {
+          "translation": "Kể từ cuộc họp trước, bầu không khí văn phòng liên tục xấu đi, nhiều người đang bày tỏ sự bất mãn."
+        },
+        {
+          "translation": "Kể từ khi nghe tin người bạn lâu ngày mới gặp đã kết hôn thì tôi chưa gặp lại bạn ấy lần nào, nên có lẽ tôi phải liên lạc thôi."
+        }
+      ]
+    },
+    "ko_이야말로_25": {
+      "title": "~(이)야말로 (Chính là..., quả thực là...)",
+      "shortExplanation": "Trợ từ dùng để nhấn mạnh đối tượng đứng trước là trường hợp tiêu biểu, đích thực hoặc điển hình nhất trong số các lựa chọn ('chính là...', 'mới thực sự là...').",
+      "longExplanation": "'~(이)야말로' là trợ từ bổ trợ được kết hợp từ trợ từ nhấn mạnh '(이)야' và trợ từ '말' (lời nói) cùng trợ từ công cụ '로'. Nó được dùng để chỉ định và nhấn mạnh đối tượng được nhắc đến chính là ví dụ tiêu biểu nhất, không thể bàn cãi về một phẩm chất hay vai trò nào đó. Tương đương với các từ như 'chính là...', 'mới thực sự là...', 'quả đúng là...'. Thường mang ngữ khí trang trọng, xác quyết và đầy cảm xúc.",
+      "formation": "Danh từ + (이)야말로 (danh từ có phụ âm cuối dùng -이야말로, không có phụ âm cuối dùng -야말로)",
+      "examples": [
+        {
+          "translation": "Bạn học sinh đó quả thực là một học sinh gương mẫu; bạn ấy luôn chăm chỉ học tập và có tinh thần trách nhiệm rất cao."
+        },
+        {
+          "translation": "Chính khoảnh khắc lúc này đây là cơ hội mà chúng ta hằng chờ đợi; nếu bỏ lỡ cơ hội lần này thì sẽ không còn cơ hội nào nữa đâu."
+        },
+        {
+          "translation": "Giọng ca chính này quả thực là linh hồn cốt lõi của ban nhạc; nếu không có giọng hát của cô ấy thì thậm chí không thể tưởng tượng nổi ban nhạc này."
+        },
+        {
+          "translation": "Sự việc đó chính là bước ngoặt quan trọng trong cuộc đời tôi; nhờ việc đó mà cuộc đời tôi đã thay đổi hoàn toàn."
+        }
+      ]
+    },
+    "ko_인_26": {
+      "title": "-(으)ㄴ/는 까닭에 / ~인 까닭에 (Vì lý do là..., do nguyên cớ...)",
+      "shortExplanation": "Dùng trong văn viết trang trọng để giải thích nguyên nhân hoặc lý do dẫn đến kết quả ở mệnh đề sau ('vì lý do...', 'do...').",
+      "longExplanation": "'~까닭에' là biểu hiện nguyên nhân kết hợp từ danh từ chỉ nguyên cớ '까닭' (lý do, căn nguyên) và trợ từ '에'. Nó tương đương với 'vì...', 'do nguyên cớ...' nhưng mang đậm sắc thái văn phong văn học, trang trọng hơn nhiều so với các liên từ khẩu ngữ như '-아서/어서' hay '때문에'. Cấu trúc này dùng để trình bày căn nguyên của một sự tình hoặc kết quả một cách khách quan, mạch lạc.",
+      "formation": "Thân động từ + -는 까닭에 (quá khứ dùng -(으)ㄴ 까닭에) | Thân tính từ + -(으)ㄴ 까닭에 (có phụ âm cuối dùng -은 까닭에, không có phụ âm cuối dùng -ㄴ 까닭에) | Danh từ + -인 까닭에",
+      "examples": [
+        {
+          "translation": "Nhờ cha mẹ luôn khỏe mạnh nên tôi lúc nào cũng cảm thấy hạnh phúc."
+        },
+        {
+          "translation": "Do thời tiết đẹp nên hôm nay tôi đã đi dạo."
+        },
+        {
+          "translation": "Vì đã chuẩn bị chuyến đi một cách kỹ lưỡng nên tôi không cảm thấy bất tiện nào trong suốt chuyến du lịch."
+        },
+        {
+          "translation": "Vì đã xem xét kỹ lưỡng các dạng bài nên khi học trong kỳ nghỉ, không có bài tập nào là tôi chưa từng chạm đến."
+        }
+      ]
+    },
+    "ko_인_27": {
+      "title": "~인즉 / ~인 즉 (Nói cách khác là..., tức là..., xét ra thì...)",
+      "shortExplanation": "Dùng để giải thích lại, làm sáng tỏ thêm nội dung vừa phát biểu bằng một cách diễn đạt khác ('nói cách khác là...', 'tức là...').",
+      "longExplanation": "'~인즉' là dạng kết hợp giữa trợ từ xác định '-(이)라' hoặc tiếp từ danh từ và trợ từ nhấn mạnh '-(으)ㄴ즉'. Cấu trúc này thường đứng ở đầu câu liên kết hoặc sau một mệnh đề để giải thích cụ thể, diễn giải lại bản chất của sự việc vừa nêu bằng ngôn từ trực diện, rõ ràng hơn ('tức là...', 'nói cách khác là...', 'điều đó đồng nghĩa với việc...'). Nó mang tính phân tích, làm sáng tỏ mạch lập luận.",
+      "formation": "Danh từ + 인즉 (hoặc dùng độc lập như phó từ liên kết: 즉) | Vị từ kết hợp -(으)ㄴ/는즉",
+      "examples": [
+        {
+          "translation": "Anh ấy là một người lập dị, tức là hành vi của anh ấy khác biệt hẳn so với người bình thường."
+        },
+        {
+          "translation": "Kỳ thi lần này rất khó khăn, nói cách khác là có rất nhiều học sinh bị điểm thấp."
+        },
+        {
+          "translation": "Cậu là người bạn thân nhất của tôi, tức là người mà tôi tin tưởng nhất."
+        },
+        {
+          "translation": "Trái đất đang ấm dần lên, nói cách khác là hiện tượng nóng lên toàn cầu đang thực sự diễn ra."
+        }
+      ]
+    },
+    "ko_처럼_28": {
+      "title": "~처럼 하다 / ~(으)ㄴ/는 척하다 (Làm ra vẻ như..., vờ như..., hành động như thể...)",
+      "shortExplanation": "Dùng để diễn tả việc ai đó bắt chước, giả vờ hoặc làm ra vẻ như mình đang ở trong một trạng thái nào đó dù thực tế không phải vậy.",
+      "longExplanation": "'~처럼 하다' (thường kết hợp dưới dạng tương đương là '-(으)ㄴ/는 척하다' hoặc '~처럼 행동하다') là cách diễn đạt biểu thị hành vi giả tạo, vờ vịt. Người nói miêu tả một chủ thể đang cố tình bắt chước điệu bộ, cảm xúc hoặc năng lực của một đối tượng hay trạng thái nào đó nhằm che giấu sự thật hoặc tạo ấn tượng với người xung quanh ('giả vờ như...', 'hành động như thể...').",
+      "formation": "Danh từ + 처럼 하다/행동하다 | Thân động từ/tính từ + -(으)ㄴ/는 척하다 (thì hiện tại động từ dùng -는 척하다, tính từ hoặc quá khứ động từ dùng -(으)ㄴ 척하다)",
+      "examples": [
+        {
+          "translation": "Anh ấy vờ như đang hạnh phúc trước mặt mọi người và mỉm cười."
+        },
+        {
+          "translation": "Tôi đã cố gắng hành xử như thể mình hiểu hết, nhưng thực tế tôi chẳng hiểu được bao nhiêu."
+        },
+        {
+          "translation": "Cô ấy đã làm ra vẻ như không hề biết đến vấn đề của bản thân."
+        },
+        {
+          "translation": "Anh ấy cố tỏ ra như mình có thể kiểm soát được tình hình, nhưng thực tế lại không phải như vậy."
+        }
+      ]
+    },
+    "ko_커지다_29": {
+      "title": "~커지다 (Trở nên to lớn hơn, ngày càng lớn mạnh, gia tăng)",
+      "shortExplanation": "Diễn tả sự biến đổi làm cho kích thước, quy mô, mức độ hoặc tầm quan trọng của sự vật, hiện tượng ngày một gia tăng theo thời gian.",
+      "longExplanation": "'커지다' là động từ được hình thành từ tính từ '크다' (lớn, to) kết hợp với vĩ tố biến đổi trạng thái '-어지다' (trở nên). Từ này biểu thị quá trình phát triển, mở rộng hoặc chuyển biến tăng tiến theo thời gian. Nó có thể áp dụng cho kích thước vật lý cụ thể (như cơ thể, khối u) lẫn các khái niệm trừu tượng, tinh thần (như ước mơ, tình yêu, tầm quan trọng, quy mô tổ chức, mâu thuẫn).",
+      "formation": "Danh từ + 이/가 + 커지다 (thì hiện tại dùng 커진다/커져요, quá khứ dùng 커졌다/커졌어요, dạng tiến trình dùng 커져 가다)",
+      "examples": [
+        {
+          "translation": "Khi lớn lên, ước mơ của tôi ngày càng lớn mạnh và trở nên quan trọng hơn, khiến cuộc đời tôi thay đổi."
+        },
+        {
+          "translation": "Khi công ty mở rộng, vai trò của anh ấy ngày càng trở nên quan trọng và lớn hơn."
+        },
+        {
+          "translation": "Tình yêu thương của gia đình chúng tôi ngày càng lớn thêm khi cùng nhau trải qua thời gian bên nhau."
+        },
+        {
+          "translation": "Khi vấn đề tiếp diễn, tầm quan trọng của vấn đề đó chỉ càng ngày càng tăng lên."
+        }
+      ]
+    },
+    "ko_키로_30": {
+      "title": "~기로 하다 / ~키로 하다 (Quyết định làm gì, thống nhất làm gì)",
+      "shortExplanation": "Dùng để biểu thị một quyết định, kế hoạch hoặc sự thỏa thuận, quyết tâm của người nói về việc sẽ thực hiện một hành động nào đó ('quyết định làm...', 'hẹn làm...').",
+      "longExplanation": "'~기로 하다' là cấu trúc biểu hiện quyết định rất phổ biến, kết hợp giữa vĩ tố danh từ hóa '-기', trợ từ phương hướng/kết quả '로' và động từ '하다'. Nó thể hiện một quyết định cá nhân dứt khoát hoặc một lời hẹn ước, đồng thuận giữa hai hay nhiều người về một kế hoạch hành động trong tương lai. Thường kết thúc ở thì quá khứ là '-기로 했다/했습니다' để biểu thị quyết định đã được đưa ra. (Lưu ý: dạng '~키로 하다' là biến âm khẩu ngữ hoặc lỗi chính tả thường gặp của cấu trúc chuẩn '~기로 하다').",
+      "formation": "Thân động từ + -기로 하다 (khẩu ngữ biến âm: -키로 하다; thường chia ở thì quá khứ: -기로 했다/했습니다)",
+      "examples": [
+        {
+          "translation": "Tôi đã quyết định học tiếng Hàn một cách hoàn hảo, vì thế mỗi ngày tôi đều luyện tập rất nhiều."
+        },
+        {
+          "translation": "Chúng tôi đã quyết định sẽ kết hôn vào năm sau."
+        },
+        {
+          "translation": "Tôi đã quyết định bắt đầu giảm cân, vì vậy ngày nào tôi cũng tập thể dục."
+        },
+        {
+          "translation": "Giám đốc đã quyết định sẽ mở rộng quy mô công ty."
+        }
+      ]
+    },
+    "ko_하기에는_31": {
+      "title": "~기에는 / ~하기에는 (Để mà làm... thì..., xét về việc làm... thì...)",
+      "shortExplanation": "Dùng để đưa ra một hành động làm tiêu chuẩn hoặc điều kiện đánh giá, sau đó đưa ra phán đoán rằng điều kiện hay khả năng để thực hiện việc đó là khó khăn hoặc không thỏa đáng.",
+      "longExplanation": "'~기에는' được tạo thành từ vĩ tố danh từ hóa '-기', trợ từ phương hướng/đối tượng '에' và trợ từ nhấn mạnh '는'. Mẫu câu này dùng để thiết lập một hành động làm tiêu chuẩn quy chiếu, từ đó đánh giá tình hình ở vế sau. Đa phần các câu đi với cấu trúc này thường mang nghĩa phủ định hoặc tiêu cực, ám chỉ rằng để thực hiện được hành động ở vế trước thì thời gian, tiền bạc, năng lực hoặc hoàn cảnh ở vế sau là không đủ, quá khó hoặc không phù hợp (như 'quá... để làm...', 'khó mà...').",
+      "formation": "Thân động từ + -기에는 (với động từ kết thúc bằng 하다 là ~하기에는; theo sau thường là từ mang tính đánh giá như 어렵다, 부족하다, 불가능하다, 무섭다, 이르다)",
+      "examples": [
+        {
+          "translation": "Hôm nay trời mưa nên để mà đá bóng thì có vẻ hơi khó."
+        },
+        {
+          "translation": "Tôi quá thiếu tiền nên việc đi du lịch là điều bất khả thi."
+        },
+        {
+          "translation": "Để hoàn thành dự án này thì thời gian vẫn chưa đủ."
+        },
+        {
+          "translation": "Để xem bộ phim này thì nó quá đáng sợ nên tôi nghĩ chắc không xem nổi đâu."
+        }
+      ]
+    },
+    "ko_하기는_32": {
+      "title": "~기는 하다 / ~하기는 하다 (Làm thì có làm thật đấy nhưng..., quả thực là có... nhưng...)",
+      "shortExplanation": "Dùng để thừa nhận một sự thật hay hành động ở vế trước, nhưng vế sau lại đưa ra hạn chế, khiếm khuyết hoặc điều chưa trọn vẹn ('thì có làm nhưng...').",
+      "longExplanation": "'~기는 하다' là cấu trúc kết hợp giữa vĩ tố danh từ hóa '-기', trợ từ nhấn mạnh/đối chiếu '는' và động từ phụ trợ '하다'. Người nói dùng cấu trúc này để công nhận một sự thật, hành động hoặc trạng thái ở vế trước là đúng, nhưng ngay sau đó ở vế sau sẽ đưa ra một vế đối lập mang tính nhượng bộ, chỉ ra điểm thiếu sót, chưa đạt tiêu chuẩn hoặc chưa thực sự vừa ý ('làm thì có làm đấy nhưng không giỏi', 'biết thì có biết đấy nhưng không rõ').",
+      "formation": "Thân động từ/tính từ + -기는 하다 (khi động từ tận cùng bằng 하다 thường là ~하기는 하다; vế sau thường liên kết bằng -지만 hoặc -(으)ㄴ/는데)",
+      "examples": [
+        {
+          "translation": "Tôi thì cũng có nấu ăn thật đấy, nhưng nấu không được ngon đến mức thế đâu."
+        },
+        {
+          "translation": "Ở công ty chúng tôi thì mọi người cũng làm việc đấy, nhưng người làm giỏi thì hầu như không có."
+        },
+        {
+          "translation": "Cậu ấy thì cũng có đi học đấy, nhưng thực tế có rất nhiều môn cậu ấy học kém."
+        },
+        {
+          "translation": "Tôi thì cũng nói được tiếng Anh đấy, nhưng không thể nói một cách tự nhiên được."
+        }
+      ]
+    },
+    "ko_하기야_33": {
+      "title": "~하기야 / ~기야 (Đúng là... thật, quả thật là... thì cũng đúng)",
+      "shortExplanation": "Dùng để thừa nhận một sự thật hoặc điều hiển nhiên trước khi đưa ra nhận định tiếp theo ('đúng là... thật', 'thì đúng là vậy thật nhưng...').",
+      "longExplanation": "'~하기야' (hoặc thân từ kết hợp với trợ từ '-기야') là sự kết hợp của vĩ tố danh từ hóa '-기' và trợ từ nhấn mạnh '-(이)야'. Cấu trúc này dùng để công nhận hoặc đồng tình một cách tự nhiên với một thực tế hiển nhiên, một chân lý hay hoàn cảnh khó khăn nào đó ('quả thật chuyện đó thì đúng là như vậy rồi'). Sau khi khẳng định sự đồng tình đó, người nói có thể đưa ra giải pháp, an ủi hoặc giải thích lý do cho hành động tiếp theo.",
+      "formation": "Thân động từ/tính từ + -기야 (với động từ tận cùng bằng 하다 là ~하기야; độc lập ở đầu câu thường dùng phó từ 하기야 / 하긴)",
+      "examples": [
+        {
+          "translation": "Đúng là dạo này việc học hành của các bạn không hề dễ dàng, vì thế việc tự học buổi tối mỗi ngày là rất cần thiết."
+        },
+        {
+          "translation": "Bây giờ virus Covid-19 lây lan nên đúng là đi du lịch thật khó khăn, vì vậy tôi chỉ ở nhà suốt thôi."
+        },
+        {
+          "translation": "Đúng là nếu không phải chuyện liên quan đến trường học thì tôi nhất định muốn làm việc đó."
+        },
+        {
+          "translation": "Đúng là việc nấu món ăn ngon quả thực rất khó, nhưng nếu nỗ lực mỗi ngày thì năng lực dần dần sẽ tiến bộ thôi."
+        }
+      ]
+    },
+    "ko_하기만_34": {
+      "title": "~기만 하면 / ~하기만 하면 (Cứ hễ... là..., chỉ cần... là ngay lập tức...)",
+      "shortExplanation": "Diễn tả điều kiện cần và đủ hoặc thời điểm xảy ra hành động: cứ hễ một hành động diễn ra thì hành động tiếp theo sẽ lập tức xảy ra ngay ('cứ hễ... là...').",
+      "longExplanation": "'~하기만 하면' là cấu trúc kết hợp từ vĩ tố danh từ hóa '-기', trợ từ chỉ sự duy nhất/tập trung '만' và vĩ tố giả định '-면' (nếu) đi kèm động từ '하다'. Nó biểu thị rằng chỉ cần điều kiện ở vế trước vừa xảy ra thì kết quả hay hành động ở mệnh đề sau lập tức diễn ra một cách tức thì, tất yếu hoặc theo thói quen định kỳ. Mang ý nghĩa 'hễ cứ...', 'chỉ cần... là liền...'.",
+      "formation": "Thân động từ + -기만 하면 (với động từ tận cùng bằng 하다 là ~하기만 하면)",
+      "examples": [
+        {
+          "translation": "Cứ mỗi sáng hễ thức dậy là tôi lại tập thể dục ngay."
+        },
+        {
+          "translation": "Cô ấy cứ về đến nhà là nấu bữa tối ngay lập tức."
+        },
+        {
+          "translation": "Cứ hễ tan học là học sinh rời khỏi trường ngay tức khắc."
+        },
+        {
+          "translation": "Cứ hễ căng thẳng là vai anh ấy lại run lên."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_에_20": {
+      "title": "~에 근거하여（基于……、依据……、根据……）",
+      "shortExplanation": "用于表示某种判断、主张或行动是以特定的数据、法则、事实等为依据或根据（“依据……”、“基于……”）。",
+      "longExplanation": "“~에 근거하여”由助词“에”与动词“근거하다（根据、基于）”的连接形式“-여”结合而成。主要用于客观指明后项论述或结论所赖以成立的事实证据、法律规范或统计数据。该句型书面语色彩浓厚，语气庄重严谨，广泛应用于学术论文、新闻报道、正式报告以及司法法律文书中。做定语修饰名词时，常用“~에 근거한 + 名词”的形式。",
+      "formation": "名词 + 에 근거하여（修饰名词时用 名词 + 에 근거한 + 名词）",
+      "examples": [
+        {
+          "translation": "依据数据，这款产品销量最好。"
+        },
+        {
+          "translation": "根据法律规定，已证明他的行为是错误的。"
+        },
+        {
+          "translation": "依据科学研究，全球气候变暖是一个十分严峻的问题。"
+        },
+        {
+          "translation": "根据她的评价，据说这家餐厅味道并不好。"
+        }
+      ]
+    },
+    "ko_에_21": {
+      "title": "~에 비추어 볼 때（对照……来看、与……相比来看）",
+      "shortExplanation": "用于对照某一标准、对象或过去的情况来进行审视并做出判断，表示“对照……来看”、“相比之下”。",
+      "longExplanation": "“~에 비추어 볼 때”由助词“에”、动词“비추다（照耀、映照、参照）”以及“보다”加上时间依存名词结构“-(으)ㄹ 때”复合而成。意为将某个事物置于特定的对比坐标或参照标准下来加以观察与审视，进而得出某种评价或判断。常用于对社会现象、文化差异、个人变化等进行理性的比较与深思。在口语或书面中也可以写作“~에 비추어 보면”。",
+      "formation": "名词 + 에 비추어 볼 때（亦可作 名词 + 에 비추어 보면）",
+      "examples": [
+        {
+          "translation": "与我国对照来看，美国的文化大不相同。"
+        },
+        {
+          "translation": "参照我自己的过去来看，我真的改变了许多。"
+        },
+        {
+          "translation": "相比于首尔，釜山要安静得多。"
+        },
+        {
+          "translation": "对照其他人来看，他显得格外优秀。"
+        }
+      ]
+    },
+    "ko_이다_22": {
+      "title": "~다 보니 / ~(이)다 보니（做着做着就……、因为一直……所以……）",
+      "shortExplanation": "表示在持续进行某一动作或处于某种状态的过程中，自然而然地产生了后项的结果或发现了新的事实。",
+      "longExplanation": "“~다 보니”是由连接词尾“-다”与辅助动词“보다”的因果/发现词尾“-니”复合而成的惯用表现。用于表示说话人在反复进行前项行为、保持某种状态的过程中，随着时间的推移，自然而然地引出了后项的结果，或者发现了原本未曾意识到的新情况。前项通常为具有持续性、习惯性的动作；后项多为表示状态改变、领悟或新发现的句子。",
+      "formation": "动词词干 + -다 보니 | 名词 + -(이)다 보니（名词有收音接 -이다 보니，无收音接 -다 보니）",
+      "examples": [
+        {
+          "translation": "每天走在同一条路上，不知不觉就对这个社区非常熟悉了。"
+        },
+        {
+          "translation": "在韩国生活了一个月后，韩语用起来感觉顺畅了一些。"
+        },
+        {
+          "translation": "我们在同一家公司工作，时间一长自然就熟络起来了。"
+        },
+        {
+          "translation": "每天早晨坚持运动，感觉身体好像变得更健康了。"
+        }
+      ]
+    },
+    "ko_이라면_23": {
+      "title": "~(이)라면 그것은（若说是……那指的就是……、所谓……那就是……）",
+      "shortExplanation": "用于提出一个核心概念或主题，并在后文中对其本质、内涵进行详细的阐述或定义（“所谓……那就是……”）。",
+      "longExplanation": "“~(이)라면 그것은”由表示假设或提示话题的词尾“-(이)라면”（如果是……、若称之为……）与指示代词“그것은”（那个）组合而成。这是一种常用于论说文、修辞演讲中的句式，用来先引出一个抽象的重要概念（如爱情、自由、友谊、成功等），随后展开对其核心价值、本质特性的独到见解或正式定义。句尾多呼应“-을/를 말한다”（指的是……）或“-는 것이다”（也就是……）。",
+      "formation": "名词 + (이)라면 그것은 + 详细阐述/定义（名词有收音接 -이라면 그것은，无收音接 -라면 그것은）",
+      "examples": [
+        {
+          "translation": "若说是爱情，那指的就是体贴并理解对方。"
+        },
+        {
+          "translation": "若说是自由，那就是指自己的思想与言论不受限制。"
+        },
+        {
+          "translation": "若称之为朋友，指的就是互相理解与扶持的关系。"
+        },
+        {
+          "translation": "若说是成功，那指的就是达成目标并实现自己的梦想。"
+        }
+      ]
+    },
+    "ko_이래_24": {
+      "title": "~이래 / ~이래로（自从……以来、……之后一直……）",
+      "shortExplanation": "以过去的某个时间点或特定事件为起点，表示从那时起某种状态或变化一直持续至今（“自从……以来”）。",
+      "longExplanation": "“~이래”（常伴随助词“로”写作“~이래로”）是由汉字词“以来”发展而来的依存名词/接尾词用法。紧接在表示历史事件、转折点或时间的名词后，用于强调后项的某种结果、习惯或心理状态自那一时刻发生后便一直延续至今。常用于反思生活改变、社会变迁或陈述长期存在的事实。",
+      "formation": "名词（表示时间或事件） + 이래(로) | 冠形词形词尾 -(으)ㄴ + 이래(로)",
+      "examples": [
+        {
+          "translation": "自从那次事故以来，我就不敢开车了，所以出门都是坐公交车和地铁。"
+        },
+        {
+          "translation": "入春以来我因花粉过敏吃了不少苦头，所以一直在坚持吃药。"
+        },
+        {
+          "translation": "自上次会议以来，办公室的气氛一直持续恶化，许多人都在表达不满。"
+        },
+        {
+          "translation": "自从听说了久别重逢的朋友结婚的消息后，我就一直没再碰见过对方，所以觉得应该联系一下了。"
+        }
+      ]
+    },
+    "ko_이야말로_25": {
+      "title": "~(이)야말로（正是……、才是真正的……、确实是……）",
+      "shortExplanation": "用于极力强调前项名词是某种性质、资格或角色的最具代表性、无可争议的典型（“正是……”、“才真正是……”）。",
+      "longExplanation": "“~(이)야말로”是由强调补助词“(이)야”、名词“말（话语）”及助词“로”构成的复合补助词。用于在众多事物中格外突出前项名词，断定其乃是最纯正、最具有代表性的典范。其语气坚定且富有说服力，相当于汉语的“才是真正……”、“正所谓……”。常用于强调某人的人品才能、关键时刻的重要性或不可替代的核心价值。",
+      "formation": "名词 + (이)야말로（名词有收音接 -이야말로，无收音接 -야말로）",
+      "examples": [
+        {
+          "translation": "那个学生才是真正的模范生，他总是刻苦学习，而且责任感很强。"
+        },
+        {
+          "translation": "此时此刻正是我们翘首以盼的机会，如果错过了这次机会，就再也没有下一次了。"
+        },
+        {
+          "translation": "这位主唱正是这支乐队的核心，要是没有她的嗓音，这支乐队简直难以想象。"
+        },
+        {
+          "translation": "那件事才真正是我人生的重要转折点，多亏了那件事，我的人生彻底改变了。"
+        }
+      ]
+    },
+    "ko_인_26": {
+      "title": "-(으)ㄴ/는 까닭에 / ~인 까닭에（由于……的缘故、因为……的原因）",
+      "shortExplanation": "书面语表达，用于正式说明导致后项结果发生的原因或理由（“由于……的缘故”）。",
+      "longExplanation": "“~까닭에”由表示缘由、原委的名词“까닭”与助词“에”结合而成。其功能与“때문에”或“-아서/어서”相似，但具有鲜明庄重、典雅的书面语色彩，常见于文学作品、论说文或正式演说中。它以严谨客观的语气阐述引起某一事态或心理感受的深层根源。",
+      "formation": "动词词干 + -는 까닭에（过去时接 -(으)ㄴ 까닭에）| 形容词词干 + -(으)ㄴ 까닭에（有收音接 -은 까닭에，无收音接 -ㄴ 까닭에）| 名词 + -인 까닭에",
+      "examples": [
+        {
+          "translation": "由于父母身体健康，我总是感到很幸福。"
+        },
+        {
+          "translation": "因为天气晴好的缘故，我今天去散步了。"
+        },
+        {
+          "translation": "由于旅行准备得很充分，我在旅途中没有感到任何不便。"
+        },
+        {
+          "translation": "因为仔细审视过各类题目，假期学习时没有哪道题是我没接触过的。"
+        }
+      ]
+    },
+    "ko_인_27": {
+      "title": "~인즉 / ~인 즉（换言之、也就是说、按实际情况来看）",
+      "shortExplanation": "用于对前面所说的内容进行重新阐释、补充说明或换句话说，以使语意更加清晰明确（“也就是说”、“换言之”）。",
+      "longExplanation": "“~인즉”（常与副词“즉”同义互通）是由连接助词与强调词尾结合而成的逻辑连接表达。用于承接上文的陈述，在后文中以更直接、更具象化的语言将前述核心意图或客观实质再解释一遍（相当于“也就是说……”、“换言之……”）。它在说明文、论辩文或较为庄重的解说语境中经常起到点明本质、递进阐明的作用。",
+      "formation": "名词 + 인즉（或独立作为连接副词：즉）| 谓词后接 -(으)ㄴ/는즉",
+      "examples": [
+        {
+          "translation": "他是个与众不同的人，也就是说，他的行为举止和平常人很不一样。"
+        },
+        {
+          "translation": "这次考试很难，换言之，许多学生都拿了低分。"
+        },
+        {
+          "translation": "你是我最好的朋友，也就是说，你是我最信任的人。"
+        },
+        {
+          "translation": "地球正在变暖，换句话说，全球变暖现象正在切实发生。"
+        }
+      ]
+    },
+    "ko_처럼_28": {
+      "title": "~처럼 하다 / ~(으)ㄴ/는 척하다（装作……的样子、假装……、像……一样行动）",
+      "shortExplanation": "用于描述某人模仿某种情态或假装处于某种状态，但实际上并非如此（“装作……”、“假装……”）。",
+      "longExplanation": "“~처럼 하다”（日常生活中更常使用同义结构“-(으)ㄴ/는 척하다”或“~처럼 행동하다”）用于表达假装、掩饰之意。说话人用来描述某个主体为了遮掩事实真相或迎合他人，故意做出与客观实际不符的举止、神情或态度，相当于汉语的“装出……的样子”、“假装……”。",
+      "formation": "名词 + 처럼 하다/행동하다 | 动词/形容词词干 + -(으)ㄴ/는 척하다（动词现在时接 -는 척하다，形容词或动词过去时接 -(으)ㄴ 척하다）",
+      "examples": [
+        {
+          "translation": "他在众人面前假装很幸福地笑了笑。"
+        },
+        {
+          "translation": "我努力表现出听懂了的样子，但实际上很多东西我并没有弄明白。"
+        },
+        {
+          "translation": "她装作不知道自己自身问题的样子。"
+        },
+        {
+          "translation": "他试图表现得好像能够掌控局势一样，但事实并非如此。"
+        }
+      ]
+    },
+    "ko_커지다_29": {
+      "title": "~커지다（变大、增强、日益重要/扩大）",
+      "shortExplanation": "表示事物的体积、规模、程度或重要性随着时间推移而不断增长或扩大（“变大”、“扩大”）。",
+      "longExplanation": "“커지다”由形容词“크다（大）”与表示状态转化的辅助词尾“-어지다（变得……）”融合而成。既可用于描述具体可见的物理尺寸、空间的增大，也可广泛用于抽象概念（如梦想、爱意、责任、矛盾、影响力等）的升华、膨胀或地位的提升。常与表示渐进过程的“-어 가다”结合写作“커져 가다（渐渐变大）”。",
+      "formation": "名词 + 이/가 + 커지다（现在时用 커진다/커져요，过去时用 커졌다/커졌어요，进行或渐进态用 커져 가다）",
+      "examples": [
+        {
+          "translation": "随着我渐渐长大，我的梦想变得愈发宏大和重要，我的人生也随之改变。"
+        },
+        {
+          "translation": "随着公司规模扩大，他的角色逐渐变得越发举足轻重。"
+        },
+        {
+          "translation": "我们在一起相伴的时光里，家庭成员间的爱意日益加深。"
+        },
+        {
+          "translation": "随着议题持续发酵，该问题的重要性也变得愈发突出。"
+        }
+      ]
+    },
+    "ko_키로_30": {
+      "title": "~기로 하다 / ~키로 하다（决定做……、商定做……）",
+      "shortExplanation": "用于表达说话人做出的决心、打算，或者各方商定好的决定与承诺（“决定做……”）。",
+      "longExplanation": "“~기로 하다”由名词形词尾“-기”、助词“로”和动词“하다”组合而成。用于表示个人下定决心执行某项未来计划，或者两人以上经过协商商定好共同做某事。通常采用过去时形式“-기로 했다/했습니다”，表明该决议或计划已经确立。（注：输入中出现的“~키로 하다”为口语偶发的激音化变体或常见拼写笔误，规范标准的语法形式为“~기로 하다”）。",
+      "formation": "动词词干 + -기로 하다（口语变体为 -키로 하다；多以过去时 -기로 했다/했습니다 出现）",
+      "examples": [
+        {
+          "translation": "我决定要学好地道的韩语，所以每天都在进行大量练习。"
+        },
+        {
+          "translation": "我们已经决定明年结婚。"
+        },
+        {
+          "translation": "我决定开始减肥，所以每天都在坚持运动。"
+        },
+        {
+          "translation": "社长决定扩大公司规模。"
+        }
+      ]
+    },
+    "ko_하기에는_31": {
+      "title": "~기에는 / ~하기에는（要想……的话未免……、就……而言太……）",
+      "shortExplanation": "把某一行为作为判断的基准或条件，后项常指出完成该行为在时间、条件或能力上存在不足或难度（“要想……未免太……”）。",
+      "longExplanation": "“~기에는”由名词形词尾“-기”、助词“에”以及强调补助词“는”组合而成。用于提出某种预期的动作或目标作为衡量的基准点，并在后句中表明当前的主客观条件（如时间、财力、精力、胆量等）对于达成该目标而言过于困难、不足或不切实际。后半句常搭配“부족하다（不足）”、“어렵다（困难）”、“이르다（尚早）”、“불가능하다（不可能）”等评价性词汇。",
+      "formation": "动词词干 + -기에는（以 하다 结尾的动词为 ~하기에는；后句常与 어렵다, 부족하다, 불가능하다, 너무 ~하다 等搭配）",
+      "examples": [
+        {
+          "translation": "今天下着雨，去踢足球的话恐怕有点困难。"
+        },
+        {
+          "translation": "我实在太缺钱了，要想去旅行简直是不可能的。"
+        },
+        {
+          "translation": "要想完成这个项目，时间明显不够。"
+        },
+        {
+          "translation": "这部电影太吓人了，要想看下去恐怕是承受不了的。"
+        }
+      ]
+    },
+    "ko_하기는_32": {
+      "title": "~기는 하다 / ~하기는 하다（做倒是做……不过……、确实是……但是……）",
+      "shortExplanation": "用于首先承认前项所陈述的事实或动作确实存在，但后半句随即转折指出不足或不如人意之处（“倒是……但是……”）。",
+      "longExplanation": "“~기는 하다”由名词形词尾“-기”、对比补助词“는”和动词“하다”复合而成。说话人采用让步语气，首先坦率承认前文所说的行为或性质属实（即“确实做过”、“倒也……”），但紧接着用连接词尾“-지만”或“-(으)ㄴ/는데”引出转折，说明在质量、水平、熟练度或期望值上存在某些缺憾或未尽人意之处。",
+      "formation": "动词/形容词词干 + -기는 하다（以 하다 结尾的动词常写作 ~하기는 하다；后文通常接 -지만 或 -(으)ㄴ/는데 转折）",
+      "examples": [
+        {
+          "translation": "做饭我倒是也做，但做出来并没有那么可口。"
+        },
+        {
+          "translation": "我们公司里大家工作倒是在做，但做得好的人并不多。"
+        },
+        {
+          "translation": "他学倒是也在上，但实际上学不好的科目很多。"
+        },
+        {
+          "translation": "英语我倒是会说，但说得并不流利自然。"
+        }
+      ]
+    },
+    "ko_하기야_33": {
+      "title": "~하기야 / ~기야（确实……、说确实是……倒也如此）",
+      "shortExplanation": "用于理所当然地承认某种既定事实或客观困难，表示“说实话确实如此”、“固然……”之意。",
+      "longExplanation": "“~하기야”（可缩略为副词“하기야”或“하긴”）由名词形词尾“-기”与强调补助词“-(이)야”结合而成。说话人在语境中顺理成章地认可某种显而易见的现实、困境或常理，表明“就某种情况而言确实无可非议”、“按理说确实那样”。常用于在指出困难的同时为其寻找合理性，或者随后提出转折勉励与应对措施。",
+      "formation": "动词/形容词词干 + -기야（以 하다 结尾的动词为 ~하기야；亦常独立作为接续副词 하기야 / 하긴 置于句首）",
+      "examples": [
+        {
+          "translation": "如今朋友们要想好好学习确实不容易，所以每天晚上自习是很有必要的。"
+        },
+        {
+          "translation": "如今新冠病毒扩散开来，去旅行确实很困难，所以我就一直待在家里。"
+        },
+        {
+          "translation": "要不是和学校有关的事情，那件事我确实非常想去做。"
+        },
+        {
+          "translation": "做出美味佳肴确实可以说是件难事，但只要每天坚持努力，能力就一定会逐步提升的。"
+        }
+      ]
+    },
+    "ko_하기만_34": {
+      "title": "~기만 하면 / ~하기만 하면（只要一……就……、一……就……）",
+      "shortExplanation": "表示充分条件或紧随其后的反应：只要前项动作一发生，后项行为或结果就会必然、立即随之出现（“只要一……就……”）。",
+      "longExplanation": "“~기만 하면”由名词形词尾“-기”、限定补助词“만（只、仅）”以及假设连接词尾“-(으)면（如果）”结合动词“하다”复合而成。用于表明前项是触发后项发生的充分条件或瞬间契机。强调前项行为只要一出现，后项的特定反应、习惯性动作或生理反应就会毫无例外、紧接着发生。",
+      "formation": "动词词干 + -기만 하면（以 하다 结尾的动词为 ~하기만 하면）",
+      "examples": [
+        {
+          "translation": "每天早晨我只要一起床就去运动。"
+        },
+        {
+          "translation": "她只要一到家就立刻开始做晚饭。"
+        },
+        {
+          "translation": "只要课程一结束，学生们就会立刻离开学校。"
+        },
+        {
+          "translation": "他只要一感到紧张，肩膀就会颤抖。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_에_20": {
+      "title": "~에 근거하여（〜に基づいて、〜を根拠にして）",
+      "shortExplanation": "データ、事実、法律などの確かな根拠に基づいて判断や行動を行うことを表し、「〜に基づいて」「〜を根拠にして」という意味を表します。",
+      "longExplanation": "「~에 근거하여」は、助詞「에」と動詞「근거하다（根拠とする）」の接続形「-여」が結合した表現です。後節で述べる主張や結論、措置が、客観的な事実、統計データ、法律、規則などをよりどころとして導き出されたものであることを示します。改まったフォーマルな書き言葉であり、学術論文、報道記事、公的文書などで頻繁に用いられます。なお、名詞を修飾する場合は「~에 근거한 + 名詞」の形をとります。",
+      "formation": "名詞 + 에 근거하여（名詞を修飾する場合は 名詞 + 에 근거한 + 名詞）",
+      "examples": [
+        {
+          "translation": "データに基づいて、この製品が最もよく売れました。"
+        },
+        {
+          "translation": "法律に基づいて、彼が間違っていたことが証明されました。"
+        },
+        {
+          "translation": "科学的研究に基づいて、地球温暖化は深刻な問題です。"
+        },
+        {
+          "translation": "彼女のレビューに基づいて、この店はおいしくないとのことです。"
+        }
+      ]
+    },
+    "ko_에_21": {
+      "title": "~에 비추어 볼 때（〜に照らし合わせて見ると、〜と比較して見ると）",
+      "shortExplanation": "ある対象や基準、過去の状況などと照らし合わせたり比較したりして判断を下す際に用いられ、「〜に照らし合わせて見ると」「〜と比べて見ると」という意味を表します。",
+      "longExplanation": "「~에 비추어 볼 때」は、助詞「에」に動詞「비추다（照らす、鑑みる）」、接続語尾「-어」、動詞「보다（見る）」、時を表す語尾「-(으)ㄹ 때」が組み合わさった慣用句です。特定の比較対象や判断基準を念頭に置き、それと引き比べて状況を評価・分析するときに用いられます。客観的かつ慎重な思索・論評のニュアンスを含み、改まった発言や評論・論文などで好まれます。「~에 비추어 보면（〜に照らして見れば）」の形でも同様の意味でよく使われます。",
+      "formation": "名詞 + 에 비추어 볼 때（または 名詞 + 에 비추어 보면）",
+      "examples": [
+        {
+          "translation": "わが国に照らして見ると、アメリカの文化は大きく異なります。"
+        },
+        {
+          "translation": "自分の過去に照らし合わせて見ると、私は大きく変わりました。"
+        },
+        {
+          "translation": "ソウルと比べて見ると、釜山はずっと静かだ。"
+        },
+        {
+          "translation": "他の人々と比較して見ると、彼は特にずば抜けています。"
+        }
+      ]
+    },
+    "ko_이다_22": {
+      "title": "~다 보니 / ~(이)다 보니（〜しているうちに、〜していると自然と）",
+      "shortExplanation": "ある行動を継続的に行ったりある状態が続いたりした結果、自然と後節の結果が生じたり新たな気づきを得たりしたことを表します。",
+      "longExplanation": "「~다 보니」は、動作の中断や移行を表す接続語尾「-다」に、経験・発見を表す補助動詞「보다」と理由・契機の語尾「-니」が合わさった表現です。前節の習慣的な動作や状態が継続する過程で、「〜しているうちに」「〜し続けているといつの間にか」後節のような結果に立ち至ったり、新たな事実や心境の変化に気づいたりしたことを述べます。前節は反復的・継続的な行為が多く、後節は意図せざる自然な変化・結果が導かれます。",
+      "formation": "動詞語幹 + -다 보니 | 名詞 + -(이)다 보니（名詞末尾にパッチムがある場合は -이다 보니、ない場合は -다 보니）",
+      "examples": [
+        {
+          "translation": "毎日同じ道を歩いているうちに、この町についてよく知るようになりました。"
+        },
+        {
+          "translation": "韓国で1か月暮らしているうちに、韓国語が少し楽になりました。"
+        },
+        {
+          "translation": "私達は同じ会社で働いているうちに親しくなりました。"
+        },
+        {
+          "translation": "毎朝運動を続けているうちに、体が健康になったような気がします。"
+        }
+      ]
+    },
+    "ko_이라면_23": {
+      "title": "~(이)라면 그것은（〜というならそれは、〜といえばそれは……のことだ）",
+      "shortExplanation": "ある概念やトピックを提示し、その本質や定義について詳しく説明・言及する際に用いられます（「〜というならそれは……のことだ」）。",
+      "longExplanation": "「~(이)라면 그것은」は、条件や話題提示を表す接続表現「-(이)라면（〜であるならば、〜というなら）」と、指示代名詞「그것은（それは）」が結びついた構文です。前節で愛、自由、友情、成功といった抽象的な主題や概念を提起し、後節でその真の意味や本質的価値について詳細な定義・解釈を下す際に修辞的に用いられます。文末には「-을/를 말한다（〜を指して言う）」や「-는 것이다（〜ということだ）」などの表現がよく呼応します。",
+      "formation": "名詞 + (이)라면 그것은 + 説明・定義（名詞の末尾にパッチムがある場合は -이라면 그것은、ない場合は -라면 그것은）",
+      "examples": [
+        {
+          "translation": "愛というなら、それは相手を思いやり理解してあげることを言います。"
+        },
+        {
+          "translation": "自由というなら、それは自分の考えや言葉を制限されないことです。"
+        },
+        {
+          "translation": "友達というなら、それはお互いを理解し助け合う間柄を言います。"
+        },
+        {
+          "translation": "成功というなら、それは目標を達成し自分の夢をかなえたことを言います。"
+        }
+      ]
+    },
+    "ko_이래_24": {
+      "title": "~이래 / ~이래로（〜以来、〜からこのかた）",
+      "shortExplanation": "過去のある時点や特定の出来事を起点として、それ以降ある状態や変化が現在までずっと継続していることを表します（「〜以来」）。",
+      "longExplanation": "「~이래」（助詞「로」を伴って「~이래로」の形でも頻用される）は、漢字「以来」に由来する表現です。過去の特定の出来事、事故、決定、時期などを表す名詞に接続し、その時を境にして生じた新しい変化や状況が、現在に至るまで一貫して継続していることを強調します。生活習慣の激変や心理的トラウマ、事態の好転・悪化などを述べる際によく用いられます。",
+      "formation": "名詞（時点や事件） + 이래(로) | 連体形 -(으)ㄴ + 이래(로)",
+      "examples": [
+        {
+          "translation": "あの事故以来、私は車に乗れなくなってしまい、バスや地下鉄で移動するようになりました。"
+        },
+        {
+          "translation": "春以来、私は花粉アレルギーでひどく苦しんでおり、薬を飲み続けています。"
+        },
+        {
+          "translation": "前回の会議以来、オフィスの雰囲気が悪化し続けており、多くの人が不満を口にしています。"
+        },
+        {
+          "translation": "久しぶりに会った友人が結婚したという知らせを聞いて以来会えていないので、連絡をとってみなければならないと思います。"
+        }
+      ]
+    },
+    "ko_이야말로_25": {
+      "title": "~(이)야말로（〜こそ、〜こそまさに）",
+      "shortExplanation": "ある事物を強く取り立てて強調し、それこそが真の代表例や本質であることを表します（「〜こそ」「〜こそまさに」）。",
+      "longExplanation": "「~(이)야말로」は、強調の補助詞「(이)야」、名詞「말（言葉）」、助詞「로」が融合した複合補助詞です。他のものを差し置いて、前につく名詞こそがまさにその性質や役割を最も純粋・典型的に体現している対象であることを強く断定・強調する際に用います。日本語の「〜こそ」「〜こそまさに」「〜にほかならない」に相当し、確信に満ちた力強い論調を表します。",
+      "formation": "名詞 + (이)야말로（名詞の末尾にパッチムがある場合は -이야말로、ない場合は -야말로）",
+      "examples": [
+        {
+          "translation": "あの学生こそまさに模範的な学生です。彼はいつも熱心に勉強し責任感が強いです。"
+        },
+        {
+          "translation": "今この瞬間こそ私たちが待ち望んでいた機会です。今回のチャンスを逃したら、これ以上の機会はないでしょう。"
+        },
+        {
+          "translation": "このボーカルこそまさにこのバンドの中核です。彼女の声なしにはこのバンドは想像すらできません。"
+        },
+        {
+          "translation": "その出来事こそが私の人生の重要な転換点でした。その出来事によって私の人生は一変しました。"
+        }
+      ]
+    },
+    "ko_인_26": {
+      "title": "-(으)ㄴ/는 까닭에 / ~인 까닭에（〜のゆえに、〜という理由で）",
+      "shortExplanation": "後節の事態を引き起こした理由や原因を改まった書き言葉で述べる表現で、「〜のゆえに」「〜という理由で」という意味を表します。",
+      "longExplanation": "「~까닭에」は、「理由・わけ」を意味する名詞「까닭」に助詞「에」が結びついた表現です。日常会話でよく使われる「때문에」や「-아서/어서」に比べて非常に格調高く、文学的・学術的な文脈で重用される書き言葉の表現です。客観的かつ論理的に事態の原因や背景を明示する際に適しています。",
+      "formation": "動詞語幹 + -는 까닭에（過去形は -(으)ㄴ 까닭에）| 形容詞語幹 + -(으)ㄴ 까닭에（パッチムがある場合は -은 까닭에、ない場合は -ㄴ 까닭에）| 名詞 + -인 까닭에",
+      "examples": [
+        {
+          "translation": "両親が健康であるゆえに、私はいつも幸せです。"
+        },
+        {
+          "translation": "天気が良いゆえに、私は今日散歩に出かけました。"
+        },
+        {
+          "translation": "旅行の準備を徹底的に行ったゆえに、私は旅行中に不便を感じませんでした。"
+        },
+        {
+          "translation": "問題を念入りに検討したゆえに、休暇中の勉強で一度も扱わなかった問題はありません。"
+        }
+      ]
+    },
+    "ko_인_27": {
+      "title": "~인즉 / ~인 즉（つまり、すなわち、換言すれば）",
+      "shortExplanation": "前の発言や状況を別の言葉で言い換えて補足説明し、その意味を明確にする表現です（「つまり」「すなわち」「換言すれば」）。",
+      "longExplanation": "「~인즉」は、指定詞に強調の接続助詞「-ㄴ즉」が結びついた表現で、副詞「즉（即ち）」と同根の機能を持ちます。前述の内容を受けて、「要するにこういうことだ」「言い換えればこういう意味になる」と事態の本質をわかりやすく言い直したり、明確な結論を提示したりする際に用いられます。論理的な説明文や改まった対話において、文意を整理・確認する役割を果たします。",
+      "formation": "名詞 + 인즉（または文頭の接続詞として 즉）| 用言には -(으)ㄴ/는즉",
+      "examples": [
+        {
+          "translation": "彼は独特な人です。すなわち、彼が普通の人とは異なった行動をとることを意味します。"
+        },
+        {
+          "translation": "今回の試験は難しかったです。つまり、多くの学生が低い点数を取ったということです。"
+        },
+        {
+          "translation": "あなたは私の最高の親友です。すなわち、私が最も信頼している人です。"
+        },
+        {
+          "translation": "地球が暖かくなっています。つまり、地球温暖化現象が起きているということです。"
+        }
+      ]
+    },
+    "ko_처럼_28": {
+      "title": "~처럼 하다 / ~(으)ㄴ/는 척하다（〜のように振る舞う、〜のふりをする）",
+      "shortExplanation": "実際はそうではないのに、ある状態や感情であるかのように見せかけたり振る舞ったりすることを表します（「〜のふりをする」「〜のように振る舞う」）。",
+      "longExplanation": "「~처럼 하다」（日常会話では同義の補助形容詞・動詞表現「-(으)ㄴ/는 척하다」や「~처럼 행동하다」として多用される）は、見せかけや偽装の行動を描写する表現です。本心や事実とは異なるにもかかわらず、周囲の目を気にしたり状況を取り繕ったりするために、特定の人物や感情・状態を模倣して演じる行為を指します。日本語の「〜のふりをする」「〜のように装う」に相当します。",
+      "formation": "名詞 + 처럼 하다/행동하다 | 動詞・形容詞語幹 + -(으)ㄴ/는 척하다（動詞現在形は -는 척하다、形容詞および動詞過去形は -(으)ㄴ 척하다）",
+      "examples": [
+        {
+          "translation": "彼は人前で幸せそうなふりをして笑いました。"
+        },
+        {
+          "translation": "私は理解したふりをして振る舞おうと努めましたが、実際には多くのことを理解できませんでした。"
+        },
+        {
+          "translation": "彼女は自分の問題を知らないふりをして行動しました。"
+        },
+        {
+          "translation": "彼は状況をコントロールできるかのように振る舞おうとしましたが、実際はそうではありません。"
+        }
+      ]
+    },
+    "ko_커지다_29": {
+      "title": "~커지다（大きくなる、拡大する、重要性を増す）",
+      "shortExplanation": "物事の大きさ、規模、程度、重要性などが時間とともに増大することを表します（「大きくなる」「膨らむ」「増す」）。",
+      "longExplanation": "「커지だ」は、形容詞「크다（大きい）」に状態の変化を表す補助動詞「-어지다（〜になる）」が合わさって一語化した動詞です。物理的な寸法・体積の増大のみならず、夢や愛情、社会的責任、問題の深刻さ、重要度といった抽象的・心理的な度合いが時間とともに拡大・深化していく過程を広く描写します。「커져 가다（大きくなっていく）」の形でもよく用いられます。",
+      "formation": "名詞 + 이/가 + 커지다（現在形は 커진다/커져요、過去形は 커졌다/커졌어요、推移形は 커져 가다）",
+      "examples": [
+        {
+          "translation": "成長するにつれて私の夢はさらに大きくなり重要なものとなって、私の人生は変わりました。"
+        },
+        {
+          "translation": "その会社が拡張するにつれて、彼の役割はますます重要性を増していきました。"
+        },
+        {
+          "translation": "私たちの家族の愛は、一緒に時間を過ごすうちにますます深まっていきます。"
+        },
+        {
+          "translation": "議論が続くにつれて、その問題の重要性は高まるばかりでした。"
+        }
+      ]
+    },
+    "ko_키로_30": {
+      "title": "~기로 하다 / ~키로 하다（〜することにする、〜することに決める）",
+      "shortExplanation": "話し手の決心や計画、または当事者同士の合意・約束を表し、「〜することにする」「〜することに決める」という意味を表します。",
+      "longExplanation": "「~기로 하다」は、動詞の名詞形語尾「-기」、決定・方向を表す助詞「로」、動詞「하다」が合わさった基本構文です。個人が自発的に下した確固たる決断や、複数人の間で取り交わした今後の取り決め・約束を表現する際に用いられます。通常、決定がすでに下されたことを示すため過去形「-기로 했다/했습니다」の形で多用されます。（なお、表記に見られる「~키로 하다」は口語における激音化の発音変化や誤記であり、標準文法では「~기로 하다」が正式な形式です）。",
+      "formation": "動詞語幹 + -기로 하다（口語・誤用表記：-키로 하다；主に過去形 -기로 했다/했습니다 で使用）",
+      "examples": [
+        {
+          "translation": "私は韓国語を完璧に習得することに決めました。そのため毎日たくさん練習しています。"
+        },
+        {
+          "translation": "私たちは来年結婚することにしました。"
+        },
+        {
+          "translation": "ダイエットを始めることにしました。そのため毎日運動しています。"
+        },
+        {
+          "translation": "社長は会社を拡張することに決めました。"
+        }
+      ]
+    },
+    "ko_하기에는_31": {
+      "title": "~기에는 / ~하기에는（〜するには、〜ことには〜すぎる・難しい）",
+      "shortExplanation": "ある行為を判断の基準や前提として提示し、それを行うには条件や能力などが不十分であったり困難であったりすることを表します。",
+      "longExplanation": "「~기에는」は、動詞の名詞形語尾「-기」、助詞「에」、強調の補助詞「는」が組み合わさった表現です。前節にある行為を行うための基準を置き、後節でその行為を実行するには時間や費用、技術、状況などが不足していることや、困難・不適切であることを述べます。後節には「어렵다（難しい）」「부족하다（足りない）」「불가능하다（不可能だ）」「이르다（まだ早い）」といった評価・制限を表す表現が伴うことが多いです。",
+      "formation": "動詞語幹 + -기에는（하다動詞は ~하기에는；後節に 어렵다, 부족하다, 불가능하다, 무섭다 などが続くことが多い）",
+      "examples": [
+        {
+          "translation": "今日は雨が降っているので、サッカーをするには少し難しそうです。"
+        },
+        {
+          "translation": "私はお金があまりにもなさすぎて、旅行に行くには不可能です。"
+        },
+        {
+          "translation": "このプロジェクトを完成させるには時間が不足しています。"
+        },
+        {
+          "translation": "この映画を観るには怖すぎて無理そうです。"
+        }
+      ]
+    },
+    "ko_하기는_32": {
+      "title": "~기는 하다 / ~하기는 하다（〜することはするが、〜しはするものの）",
+      "shortExplanation": "前節の事実や行為をいったん肯定して認めたうえで、後節で不十分な点や不満な点について言及する表現です（「〜しはするが」「〜なことは〜だが」）。",
+      "longExplanation": "「~기는 하다」は、名詞形語尾「-기」、対照の補助詞「는」、動詞「하다」が合わさった譲歩表現です。相手の言葉や自らの行為について「確かに〜することはする」「〜であることは事実だ」とひとまず承認しつつも、すぐ後ろに「-지만（〜が）」や「-(으)ㄴ/는데（〜のだが）」などを続けて、質や熟練度、程度が期待に満たず不十分であることを補足します。",
+      "formation": "動詞・形容詞語幹 + -기는 하다（하다動詞は ~하기는 하다；後節に -지만 や -(으)ㄴ/는데 などの逆接が続く）",
+      "examples": [
+        {
+          "translation": "私は料理をしはするのですが、それほどおいしくはできません。"
+        },
+        {
+          "translation": "私たちの会社には仕事をしはするのですが、上手にこなす人はあまりいません。"
+        },
+        {
+          "translation": "彼は学校に通ってはいるのですが、実際には苦手な科目がたくさんあります。"
+        },
+        {
+          "translation": "私は英語を話しはしますが、自然に話すことはできません。"
+        }
+      ]
+    },
+    "ko_하기야_33": {
+      "title": "~하기야 / ~기야（〜なのは確かだが、言われてみれば確かに〜だが）",
+      "shortExplanation": "誰の目にも明らかな事実や困難を当然のこととして認め、「確かに〜ではあるが」「もっとも〜だが」と同意を示す表現です。",
+      "longExplanation": "「~하기야」（文頭で接続副詞として「하기야」「하긴」の形でも頻用される）は、名詞形語尾「-기」と強調の補助詞「-(이)야」が結びついた表現です。話し手が客観的な状況や相手の主張に対して、「確かに言われてみればその通りだ」「〜なのは当然のことだが」と自然に首肯・納得するニュアンスを持ちます。困難や妥当性をいったん認めた上で、それに続く対処法や励ましの結論を述べる際によく使われます。",
+      "formation": "動詞・形容詞語幹 + -기야（하다動詞は ~하기야；文頭の副詞として 하기야 / 하긴 としても多用）",
+      "examples": [
+        {
+          "translation": "最近の友人たちが勉強するのは確かに容易ではありません。だからこそ毎晩の自習が必要です。"
+        },
+        {
+          "translation": "新型コロナウイルスが蔓延して旅行するのは確かに難しいので、家でばかり過ごしています。"
+        },
+        {
+          "translation": "学校に関することではないなら、それをやることは確かにぜひ望んでいます。"
+        },
+        {
+          "translation": "おいしい料理を作るのは難しいといえば確かにそうですが、毎日努力すれば次第に実力が向上するはずです。"
+        }
+      ]
+    },
+    "ko_하기만_34": {
+      "title": "~기만 하면 / ~하기만 하면（〜しさえすれば、〜すると決まって）",
+      "shortExplanation": "前節の動作が起こりさえすれば、直ちに・決まって後節の行動や反応が引き起こされることを表します（「〜しさえすれば」「〜するといつも」）。",
+      "longExplanation": "「~기만 하면」は、動詞の名詞形語尾「-기」、限定の補助詞「만（〜だけ）」、仮定の接続語尾「-(으)면（〜すれば）」に動詞「하다」が加わった表現です。前節の動作が行われさえすれば十分な契機となって、後節の事態や習慣的行動、身体的反応が即座に、あるいは例外なく引き起こされることを表します。日本語の「〜しさえすれば」「〜するやいなや」「〜するといつも」に相当します。",
+      "formation": "動詞語幹 + -기만 하면（하다動詞は ~하기만 하면）",
+      "examples": [
+        {
+          "translation": "私は毎朝起きさえすれば運動をします。"
+        },
+        {
+          "translation": "彼女は家に到着しさえすればすぐに夕食を作ります。"
+        },
+        {
+          "translation": "授業が終わりさえすれば、生徒たちはすぐに学校を後にします。"
+        },
+        {
+          "translation": "彼は緊張しさえすると肩が震えます。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_에_20": {
+      "title": "~에 근거하여 (근거 및 기준 제시)",
+      "shortExplanation": "어떤 판단이나 주장, 행동이 구체적인 사실, 데이터, 법률 등의 객관적 근거에 바탕을 두고 있음을 나타내는 표현입니다 ('~을/를 바탕으로 하여').",
+      "longExplanation": "'~에 근거하여'는 부사격 조사 '에'에 '근거하다'의 연결형 '근거하여'가 결합한 문형입니다. 뒤 절에서 진술하는 사실, 결론, 조치 등이 앞 절에 제시된 객관적 통계 자료, 법규, 과학적 사실 등을 바탕으로 성립됨을 밝힐 때 사용됩니다. 매우 격식적이고 공적인 느낌을 주는 문어체 표현으로, 학술 논문, 법률 문서, 보도 기사, 공식 보고서 등에서 주로 쓰입니다. 명사를 직접 꾸밀 때는 '~에 근거한 + 명사'의 형태로 활용됩니다.",
+      "formation": "명사 + 에 근거하여 (명사를 수식할 때는 명사 + 에 근거한 + 명사)",
+      "examples": [
+        {
+          "translation": "데이터에 근거하여, 이 제품이 가장 잘 팔렸습니다."
+        },
+        {
+          "translation": "법에 근거하여, 그는 잘못되었다는 것이 증명되었습니다."
+        },
+        {
+          "translation": "과학적 연구에 근거하여, 지구 온난화는 심각한 문제입니다."
+        },
+        {
+          "translation": "그녀의 후기에 근거하여, 이 식당은 맛이 좋지 않다고 합니다."
+        }
+      ]
+    },
+    "ko_에_21": {
+      "title": "~에 비추어 볼 때 (비교 및 대조적 고찰)",
+      "shortExplanation": "어떤 기준이나 비교 대상을 염두에 두고 그것과 견주어 보았을 때의 판단이나 차이점을 나타내는 표현입니다 ('~과/와 비교해 볼 때').",
+      "longExplanation": "'~에 비추어 볼 때'는 부사격 조사 '에'에 동사 '비추다'의 연결형 '비추어', 그리고 동사 '보다'에 시점을 나타내는 어미 '-(으)ㄹ 때'가 결합된 형태입니다. 특정 기준, 역사적 전례, 과거의 경험, 다른 집단 등과 맞대어 비교·검토함으로써 현재의 상황이나 사물의 본질을 평가하고 규명할 때 사용됩니다. 사려 깊은 관찰과 논리적 분석을 전개할 때 유용하며, 문어적 담화나 격식 있는 토론에서 빈번히 활용됩니다. 유사한 표현으로 '~에 비추어 보면'도 자주 쓰입니다.",
+      "formation": "명사 + 에 비추어 볼 때 (또는 명사 + 에 비추어 보면)",
+      "examples": [
+        {
+          "translation": "우리나라에 비추어 볼 때 미국의 문화는 매우 다릅니다."
+        },
+        {
+          "translation": "나의 과거에 비추어 볼 때 나는 많이 변했어요."
+        },
+        {
+          "translation": "서울에 비추어 볼 때 부산은 훨씬 조용하다."
+        },
+        {
+          "translation": "다른 사람들에 비추어 볼 때 그는 특히 뛰어납니다."
+        }
+      ]
+    },
+    "ko_이다_22": {
+      "title": "~다 보니 / ~(이)다 보니 (지속적 행위로 인한 자연스러운 결과·발견)",
+      "shortExplanation": "앞 절의 행동을 지속적으로 하거나 어떤 상태가 이어지는 과정에서, 뒤 절의 새로운 사실을 알게 되었거나 자연스럽게 어떤 결과에 도달했음을 나타냅니다.",
+      "longExplanation": "'~다 보니'는 연결어미 '-다'에 보조용언 '보다'와 계기·이유를 나타내는 연결어미 '-니'가 결합된 형태입니다. 화자가 어떤 행위를 되풀이하여 실행하거나 특정한 환경에 지속해서 머무르는 과정에서 시간이 지남에 따라 점차 후행 절과 같은 상태나 결과에 이르렀음을 나타낼 때 사용됩니다. 전건에는 일상적이고 반복적인 동작이나 생활 상태가 오고, 후건에는 인위적인 의도라기보다는 자연스러운 상태의 변화나 깨달음, 익숙해짐 등이 자주 뒤따릅니다.",
+      "formation": "동사 어간 + -다 보니 | 명사 + -(이)다 보니 (명사 받침이 있으면 -이다 보니, 없으면 -다 보니)",
+      "examples": [
+        {
+          "translation": "매일 같은 길을 걸어 다니다 보니 이 동네에 대해 잘 알게 되었어요."
+        },
+        {
+          "translation": "한국에서 한 달 살다 보니 한국어가 조금 더 편해졌어요."
+        },
+        {
+          "translation": "우리는 같은 회사에서 일하다 보니 친해졌어요."
+        },
+        {
+          "translation": "매일 아침에 운동을 하다 보니 몸이 건강해진 것 같아요."
+        }
+      ]
+    },
+    "ko_이라면_23": {
+      "title": "~(이)라면 그것은 (개념 제시 및 본질적 정의)",
+      "shortExplanation": "어떤 핵심 개념이나 화제를 먼저 제기한 뒤, 그 본질적인 정의나 참된 의미를 상세히 풀어서 규정할 때 사용하는 표현입니다.",
+      "longExplanation": "'~(이)라면 그것은'은 화제를 조건적으로 제시하는 '-(이)라면'에 지시대명사 '그것은'이 결합된 수사적 문형입니다. 앞 절에서 사랑, 자유, 우정, 성공과 같은 추상적이거나 철학적인 가치를 화두로 던진 뒤, 뒤 절에서 그 개념이 지닌 참뜻이나 화자의 깊이 있는 정의를 구체적으로 진술할 때 쓰입니다. 문장의 끝부분에는 통상 '-을/를 말한다', '-는 것이다', '-을/를 뜻한다' 등의 정의적 서술이 자연스럽게 호응합니다.",
+      "formation": "명사 + (이)라면 그것은 + 상세 진술/정의 (명사 받침이 있으면 -이라면 그것은, 없으면 -라면 그것은)",
+      "examples": [
+        {
+          "translation": "사랑이라면 그것은 상대방을 배려하고 이해해 주는 것을 말한다."
+        },
+        {
+          "translation": "자유라면 그것은 자신의 생각과 말을 제한받지 않는 것이다."
+        },
+        {
+          "translation": "친구라면 그것은 서로를 이해하고 도와주는 사이를 말한다."
+        },
+        {
+          "translation": "성공이라면 그것은 목표를 달성하고 자신의 꿈을 이룬 것을 말한다."
+        }
+      ]
+    },
+    "ko_이래_24": {
+      "title": "~이래 / ~이래로 (기점 이후의 지속과 변화)",
+      "shortExplanation": "과거의 특정한 시점이나 사건을 출발점으로 삼아, 그때부터 지금까지 어떤 상태나 변화가 끊이지 않고 계속 이어짐을 나타냅니다.",
+      "longExplanation": "'~이래'(흔히 방향이나 경과를 나타내는 조사 '로'가 붙어 '~이래로'로 쓰임)는 한자 '以來'에서 온 표현으로, 특정한 사건이나 계기, 시기를 나타내는 명사 뒤에 결합합니다. 과거의 결정적인 계기 이후로 새로운 습관이 생겼거나 상황이 달라져 그 여파나 상태가 현재까지 지속되고 있음을 강조할 때 사용됩니다. 개인적인 신상 변화는 물론 사회적 현상의 지속성을 설명할 때도 폭넓게 쓰입니다.",
+      "formation": "명사(시점 또는 사건) + 이래(로) | 관형사형 어미 -(으)ㄴ + 이래(로)",
+      "examples": [
+        {
+          "translation": "그 사고 이래로 제가 차를 타지 못하게 되었어요, 그래서 버스와 지하철로 이동하게 되었어요."
+        },
+        {
+          "translation": "봄 이래 제가 꽃 알레르기로 고생을 많이 했어요, 그래서 약을 계속 먹고 있어요."
+        },
+        {
+          "translation": "지난 회의 이래로 사무실 분위기가 계속 나빠지고 있어요, 많은 사람들이 불만을 표시하고 있어요."
+        },
+        {
+          "translation": "오랜만에 만난 친구가 결혼했다는 소식을 들은 이래로는 못 마주쳤어요, 그래서 연락을 해야 할 것 같아요."
+        }
+      ]
+    },
+    "ko_이야말로_25": {
+      "title": "~(이)야말로 (단정적 강조 및 유일성 부각)",
+      "shortExplanation": "여러 대상 가운데 그 대상을 특별히 지정하여, 그것이 바로 진정하거나 으뜸가는 전형임을 강하게 드러낼 때 쓰는 보조사입니다 ('~이야말로 진정한').",
+      "longExplanation": "'~(이)야말로'는 강한 지정과 강조를 나타내는 보조사 '(이)야'에 명사 '말'과 부사격 조사 '로'가 합쳐져 굳어진 강조 보조사입니다. 어떤 성질, 자격, 역할에 관해 다른 어떤 것보다도 바로 그 명사가 가장 두드러지고 확고한 본보기임을 자신 있게 내세울 때 사용됩니다. 강한 단언과 확신의 어조를 띠며, 연설문이나 논설문뿐 아니라 일상적인 찬사나 결심을 표현할 때도 널리 쓰입니다.",
+      "formation": "명사 + (이)야말로 (명사 받침이 있으면 -이야말로, 없으면 -야말로)",
+      "examples": [
+        {
+          "translation": "그 학생이야말로 모범적인 학생이에요, 그는 항상 열심히 공부하고 책임감이 강해요."
+        },
+        {
+          "translation": "지금 이 순간이야말로 우리가 기다렸던 기회입니다, 이번 기회를 놓치면 더 이상의 기회는 없을 거예요."
+        },
+        {
+          "translation": "이 보컬이야말로 이 밴드의 핵심입니다, 그녀의 목소리 없이는 이 밴드가 상상조차 되지 않아요."
+        },
+        {
+          "translation": "그 일이야말로 제 인생의 중요한 전환점이었습니다, 그 일로 인해 제 인생이 완전히 바뀌었어요."
+        }
+      ]
+    },
+    "ko_인_26": {
+      "title": "-(으)ㄴ/는 까닭에 / ~인 까닭에 (원인 및 이유의 문어적 서술)",
+      "shortExplanation": "뒤 절의 사태나 행동이 일어나게 된 구체적인 이유나 원인을 격식 있는 문어체로 밝힐 때 쓰는 표현입니다 ('~하기 때문에').",
+      "longExplanation": "'~까닭에'는 어떤 일의 원인이나 연유를 나타내는 고유어 명사 '까닭'에 부사격 조사 '에'가 결합된 문형입니다. 일상 대화에서 쓰이는 '-아서/어서'나 '때문에'보다 격조 높고 문학적·논설적인 정취를 띠며, 앞선 사실이 뒤의 결론이나 상태를 낳게 된 필연적 연유임을 논리적으로 밝힐 때 사용됩니다.",
+      "formation": "동사 어간 + -는 까닭에 (과거 시제는 -(으)ㄴ 까닭에) | 형용사 어간 + -(으)ㄴ 까닭에 (받침이 있으면 -은 까닭에, 없으면 -ㄴ 까닭에) | 명사 + -인 까닭에",
+      "examples": [
+        {
+          "translation": "부모님이 건강하신 까닭에 저는 항상 행복해요."
+        },
+        {
+          "translation": "날씨가 좋은 까닭에 저는 오늘 산책하러 갔어요."
+        },
+        {
+          "translation": "여행 준비를 철저히 한 까닭에 저는 여행 중에 불편함을 느끼지 않았어요."
+        },
+        {
+          "translation": "문제를 꼼꼼히 살펴본 까닭에 방학 중에 공부할 때 하나도 다루지 않은 문제는 없어요."
+        }
+      ]
+    },
+    "ko_인_27": {
+      "title": "~인즉 / ~인 즉 (환언 및 구체적 부연 설명)",
+      "shortExplanation": "앞에서 한 말이나 사태의 내용을 알기 쉽게 다른 말로 바꾸어 다시 설명하거나 본질을 밝힐 때 쓰는 표현입니다 ('즉', '다시 말해').",
+      "longExplanation": "'~인즉'은 서술격 조사 '이다'의 어간에 설명이나 이유를 나타내는 보조사적 어미 '-(으)ㄴ즉'이 결합된 표현입니다. 부사 '즉'과 더불어, 앞서 제기된 명제나 상황의 실질적인 의미가 무엇인지를 후행 문장에서 풀어서 환언(換言)하거나 명확하게 매듭지을 때 쓰입니다. 담화나 글의 맥락에서 독자나 청자의 이해를 돕기 위해 사안의 핵심을 압축적으로 재정의하는 역할을 합니다.",
+      "formation": "명사 + 인즉 (또는 접속부사 '즉' / 용언 어간 뒤에서는 -(으)ㄴ/는즉)",
+      "examples": [
+        {
+          "translation": "그는 특이한 사람입니다, 즉 그가 평범한 사람과는 다르게 행동하는 것을 의미합니다."
+        },
+        {
+          "translation": "이번 시험은 어려웠습니다. 즉, 많은 학생들이 낮은 점수를 받았다는 것입니다."
+        },
+        {
+          "translation": "당신은 제 최고의 친구입니다, 즉 제가 가장 신뢰하는 사람입니다."
+        },
+        {
+          "translation": "지구가 따뜻해지고 있습니다, 즉 지구 온난화 현상이 일어나고 있는 것입니다."
+        }
+      ]
+    },
+    "ko_처럼_28": {
+      "title": "~처럼 하다 / ~(으)ㄴ/는 척하다 (모방 및 가장 행위)",
+      "shortExplanation": "실제로는 그렇지 않음에도 불구하고 어떤 특정한 상태나 감정인 것처럼 흉내를 내거나 꾸며서 행동함을 나타냅니다 ('~인 체하다').",
+      "longExplanation": "'~처럼 하다'(일상 구어에서는 유사한 의미의 보조용언 구성인 '-(으)ㄴ/는 척하다/체하다' 또는 '~처럼 행동하다'로 매우 빈번히 사용됨)는 실제 사실이나 속마음과 달리 겉모습을 꾸며서 특정한 태도를 취하는 '가장(假裝)'의 의미를 나타냅니다. 다른 사람의 시선을 의식하거나 불편한 상황을 모면하기 위해 거짓된 표정이나 몸짓을 연출할 때 널리 쓰입니다.",
+      "formation": "명사 + 처럼 하다/행동하다 | 동사/형용사 어간 + -(으)ㄴ/는 척하다 (동사 현재 시제는 -는 척하다, 형용사 및 동사 과거 시제는 -(으)ㄴ 척하다)",
+      "examples": [
+        {
+          "translation": "그는 사람들에게 행복한 척하며 웃었어요."
+        },
+        {
+          "translation": "제가 이해한 척 행동하려고 노력했지만, 사실 많은 것을 이해하지 못했어요."
+        },
+        {
+          "translation": "그녀는 자신의 문제를 모른 척 행동했어요."
+        },
+        {
+          "translation": "그는 상황을 통제할 수 있는 척 행동하려고 했지만, 사실은 그렇지 않아요."
+        }
+      ]
+    },
+    "ko_커지다_29": {
+      "title": "~커지다 (규모·크기·중요성의 점진적 확대)",
+      "shortExplanation": "사물의 부피, 규모, 심리적 감정, 문제의 비중 등이 시간의 흐름에 따라 더 크게 발전하거나 확장됨을 나타냅니다.",
+      "longExplanation": "'커지다'는 형용사 '크다'에 상태의 피동적 변화를 나타내는 '-어지다'가 결합하여 굳어진 동사입니다. 물리적인 외형이나 면적의 확대는 물론, 꿈, 사랑, 갈등, 사안의 중요도 등 추상적인 개념이나 비중이 점점 더 커지는 과정을 나타낼 때 두루 쓰입니다. 점진적인 진행을 나타낼 때는 '커져 가다'와 같이 결합하여 쓰이기도 합니다.",
+      "formation": "명사 + 이/가 + 커지다 (현재형 커진다/커져요, 과거형 커졌다/커졌어요, 점진형 커져 가다)",
+      "examples": [
+        {
+          "translation": "나는 자라면서 내 꿈이 더 커지고 중요해져서 내 삶이 바뀌었어요."
+        },
+        {
+          "translation": "그 회사는 확장하면서 그의 역할이 점점 중요하게 커졌어요."
+        },
+        {
+          "translation": "저희 가족의 사랑은 우리가 함께 시간을 보내며 점점 커져요."
+        },
+        {
+          "translation": "이슈가 계속되면서 그 문제의 중요성은 커져만 갔어요."
+        }
+      ]
+    },
+    "ko_키로_30": {
+      "title": "~기로 하다 / ~키로 하다 (결심 및 약속의 결정)",
+      "shortExplanation": "말하는 사람의 확고한 다짐이나 계획, 또는 당사자 간의 합의나 약속을 나타내는 표현입니다 ('~하기로 결심하다').",
+      "longExplanation": "'~기로 하다'는 명사형 전성어미 '-기'에 결정이나 선택을 뜻하는 조사 '로', 그리고 동사 '하다'가 결합된 대표적인 결정 표현입니다. 앞으로 어떤 행위를 실행하기로 마음을 굳혔거나 여러 사람이 협의하여 약속을 맺었음을 나타낼 때 사용됩니다. 대개 이미 결정된 사안을 보고하거나 전달하므로 과거형인 '-기로 했다/했습니다'의 형태로 매우 빈번히 쓰입니다. (참고: 입력된 '~키로 하다'는 일상 구어에서의 거센소리화 현상이나 오기에서 비롯된 형태이며, 표준 맞춤법 표기는 '~기로 하다'입니다.)",
+      "formation": "동사 어간 + -기로 하다 (구어적 오기: -키로 하다; 주로 과거형 -기로 했다/했습니다 형태로 쓰임)",
+      "examples": [
+        {
+          "translation": "저는 한국어를 완벽하게 배우기로 했습니다. 그래서 매일 많은 연습을 하고 있습니다."
+        },
+        {
+          "translation": "우리는 내년에 결혼하기로 했습니다."
+        },
+        {
+          "translation": "다이어트를 시작하기로 했어요. 그래서 매일 운동하고 있어요."
+        },
+        {
+          "translation": "사장님은 회사를 확장하기로 했습니다."
+        }
+      ]
+    },
+    "ko_하기에는_31": {
+      "title": "~기에는 / ~하기에는 (판단 기준 및 조건적 제약)",
+      "shortExplanation": "어떤 행동을 수행하기 위한 기준이나 전제를 제시하고, 그 행동을 하기에는 상황, 시간, 역량 등이 부족하거나 적절치 않음을 나타냅니다.",
+      "longExplanation": "'~기에는'은 동사의 명사형 전성어미 '-기'에 부사격 조사 '에'와 대조·강조의 보조사 '는'이 결합된 표현입니다. 앞 절에 제시된 행동을 실행하는 데 필요한 기준이나 잣대를 세워 두고, 뒤 절에서 시간, 비용, 신체적 조건, 심리적 한계 등이 모자라거나 감당하기 어렵다는 부정적·제약적 평가를 내릴 때 주로 쓰입니다. 뒤 절 서술어로는 '어렵다', '부족하다', '불가능하다', '이르다', '너무 ~하다' 등이 주로 호응합니다.",
+      "formation": "동사 어간 + -기에는 ('하다' 동사는 ~하기에는; 뒤 절에 '어렵다', '부족하다', '불가능하다' 등이 자주 호응함)",
+      "examples": [
+        {
+          "translation": "오늘은 비가 와서 축구를 하기에는 좀 어렵겠어요."
+        },
+        {
+          "translation": "저는 돈이 너무 없어서 여행을 가기에는 불가능해요."
+        },
+        {
+          "translation": "이 프로젝트를 완성하기에는 시간이 부족해요."
+        },
+        {
+          "translation": "이 영화를 보기에는 너무 무서워서 안 될 것 같아요."
+        }
+      ]
+    },
+    "ko_하기는_32": {
+      "title": "~기는 하다 / ~하기는 하다 (사실 인정 및 단서·한계 제시)",
+      "shortExplanation": "앞 절의 내용이나 동작 자체는 사실임을 인정하면서도, 뒤 절에서 그에 대한 미흡한 점이나 한계, 불만족스러운 단서를 덧붙일 때 씁니다.",
+      "longExplanation": "'~기는 하다'는 동사나 형용사의 명사형 전성어미 '-기'에 대조의 보조사 '는'과 용언 '하다'가 어우러진 양보 구문입니다. 어떤 행위를 하거나 상태가 그러함을 일단 긍정하지만('하기는 하지만'), 그 수준이나 정도, 완성도가 기대치에 온전히 미치지 못함을 밝힐 때 사용됩니다. 전건 긍정 후 뒤 절에서는 주로 '-지만', '-(으)ㄴ/는데' 등의 역접 어미와 결합하여 한계나 아쉬움을 솔직하게 털어놓는 맥락에서 자주 나타납니다.",
+      "formation": "동사/형용사 어간 + -기는 하다 ('하다' 동사는 ~하기는 하다; 뒤 절에 '-지만', '-(으)ㄴ/는데'와 같은 역접 표현이 이어짐)",
+      "examples": [
+        {
+          "translation": "제가 요리를 하기는 하는데, 그렇게 맛있게는 안 나와요."
+        },
+        {
+          "translation": "우리 회사에는 일을 하기는 하는데, 잘하는 사람이 별로 없어요."
+        },
+        {
+          "translation": "그는 학교를 다니기는 하는데, 실제로는 못하는 과목이 많아요."
+        },
+        {
+          "translation": "나는 영어를 말하기는 하는데, 자연스럽게 말하진 못해요."
+        }
+      ]
+    },
+    "ko_하기야_33": {
+      "title": "~하기야 / ~기야 (당연한 사실의 긍정 및 수긍)",
+      "shortExplanation": "누구나 인정할 만한 분명한 사실이나 어려운 정황을 당연한 것으로 흔쾌히 받아들이며 시인할 때 쓰는 표현입니다 ('말할 것도 없이 그렇지만').",
+      "longExplanation": "'~하기야'는 명사형 전성어미 '-기'에 지정과 강조를 나타내는 보조사 '-(이)야'가 결합된 형태입니다(문두에서 접속부사 '하기야'나 '하긴'으로도 널리 쓰임). 화자가 주어진 현실이나 상대방의 생각에 대해 '따지고 보면 과연 그러하다'라며 당연한 이치로 수긍하고 인정할 때 사용됩니다. 전건의 불가피한 사정을 받아들인 후, 그에 따른 합당한 이유나 극복 의지를 뒤이어 진술할 때 자연스럽게 어울립니다.",
+      "formation": "동사/형용사 어간 + -기야 ('하다' 동사는 ~하기야; 문두에서 접속부사 '하기야' 또는 '하긴'으로 단독 쓰이기도 함)",
+      "examples": [
+        {
+          "translation": "요즘 친구들이 공부하기야 쉽지 않지요, 그러니까 매일 야간 학습이 필요해요."
+        },
+        {
+          "translation": "이제 코로나19 바이러스가 퍼져서 여행하기야 어렵지요, 그래서 집에서만 시간을 보내고 있어요."
+        },
+        {
+          "translation": "학교에 관한 것이 아니라면, 그것을 하기는 정말 꼭 원합니다."
+        },
+        {
+          "translation": "맛있는 음식을 만드는 것은 어렵다고 하기야 그렇지만, 매일 노력하면 점차 능력이 향상될 것입니다."
+        }
+      ]
+    },
+    "ko_하기만_34": {
+      "title": "~기만 하면 / ~하기만 하면 (충분조건 및 즉각적 반응)",
+      "shortExplanation": "앞 절의 행동이나 상태가 일어나기만 하면 그 즉시 혹은 어김없이 뒤 절의 일이나 반응이 이어짐을 나타내는 조건 표현입니다 ('~하기만 하면 바로').",
+      "longExplanation": "'~기만 하면'은 동사의 명사형 전성어미 '-기'에 단독·한정의 보조사 '만', 그리고 조건의 연결어미 '-(으)면'이 결합된 구문입니다. 앞선 행위가 충족되기만 하면 다른 조건 없이도 곧바로 뒤 절의 행동이 습관적으로 실행되거나 신체적·심리적 반응이 반사적으로 촉발됨을 나타낼 때 널리 쓰입니다. '일어나기만 하면', '도착하기만 하면'과 같이 시간적 즉시성과 필연적인 연쇄 반응을 드러냅니다.",
+      "formation": "동사 어간 + -기만 하면 ('하다' 동사는 ~하기만 하면)",
+      "examples": [
+        {
+          "translation": "나는 매일 아침 일어나기만 하면 운동을 합니다."
+        },
+        {
+          "translation": "그녀가 집에 도착하기만 하면 바로 저녁을 만들어요."
+        },
+        {
+          "translation": "수업이 끝나기만 하면 학생들이 즉시 학교를 떠납니다."
+        },
+        {
+          "translation": "그가 긴장하기만 하면 어깨가 떨립니다."
+        }
+      ]
+    }
+  }
+}

@@ -585,6 +585,33 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 - **Client Consumption**:
   - Consumed by `CountryService` in conjunction with browser locale heuristics (`navigator.language`, timezone) and user preference overrides in Settings Sheet.
 
+---
 
+### 3.18. Server-Authoritative Gamification & Streak RPCs (Supabase)
+To ensure anti-cheat integrity, protect public leaderboards, and prevent browser DevTools console tampering (`gamification.xp += 999999`), all game state mutations are executed via server-side PostgreSQL functions running with `SECURITY DEFINER`:
 
-
+- **Row Level Security (RLS) Lock-Down**:
+  - `gamification` table: Direct client `INSERT` and `UPDATE` policies are dropped. Clients retain only `SELECT` privileges (`gamification_select_own`).
+  - `xp_transactions` table: Only `SELECT` privileges are granted (`xp_transactions_select_own`). All insertions are server-side via `award_study_xp` and `spend_xp`.
+- **Stored Procedures (RPCs)**:
+  1. `public.award_study_xp(p_activity_type, p_amount, p_reference_id, p_client_date)`:
+     - Whitelist validation: Restricts activity types (`video_watch`, `flashcard_review`, `quiz_complete`, `vocab_save`, `grammar_study`, `daily_goal_bonus`).
+     - Activity caps: Limits XP per transaction (e.g., flashcard review capped at 15 XP, quiz at 50 XP, video watch at 30 XP).
+     - Rolling Hourly Ceiling: Clamps XP gains to 600 XP per 60-minute window (`hourly_baseline_xp`, `hourly_window_start`). If client attempts to flood calls or script DevTools loops, transactions are clamped and `is_flagged = true` is set.
+     - Deterministic Level Derivation: `level = LEAST(50, FLOOR(SQRT(xp / 75.0)) + 1)`.
+     - Returns: `{ success, xp, level, awarded, old_xp, flagged }`.
+  2. `public.spend_xp(p_cost, p_purpose, p_item_id)`:
+     - Atomic balance deduction: Verifies `xp >= p_cost` and decrements balance. Prevents negative balances and race condition exploits.
+     - Automatically logs transaction to `xp_transactions` with negative amount.
+     - Returns: `{ success, xp, level, spent, error }`.
+  3. `public.record_streak_activity(p_client_date)`:
+     - Timezone-safe streak calculation: Receives ISO `YYYY-MM-DD` from client local time.
+     - Evaluates day diff against `last_active_date`: increments streak if `diff = 1`, maintains streak if `diff = 0`, consumes available streak freezes if `diff > 1`, or resets to 1 if broken without freeze.
+     - Updates `best_streak` dynamically.
+     - Returns: `{ success, streak, best_streak, freezes, used_freeze, client_date }`.
+  4. `public.sync_achievements(p_unlocked, p_notified)`:
+     - Union-merges client and server unlocked badge IDs atomically using `ARRAY(SELECT DISTINCT UNNEST(...))`.
+     - Returns: `{ success, unlocked_achievements, notified_achievements }`.
+  5. `public.sync_daily_missions(p_missions)`:
+     - Persists client daily quest state (progress, claimed status, objective counts) to JSONB `daily_missions` column.
+     - Returns: `{ success }`.

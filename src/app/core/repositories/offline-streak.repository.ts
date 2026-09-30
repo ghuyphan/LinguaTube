@@ -80,22 +80,16 @@ export class OfflineStreakRepository implements IStreakRepository {
             freezesRemaining: clampedCount
         });
         if (this.auth.isLoggedIn()) {
-            const user = this.auth.user();
-            if (user) {
-                try {
-                    const { error: rpcErr } = await this.supabase.client.rpc('replenish_streak_freeze', {
-                        p_new_count: clampedCount
-                    });
-                    if (rpcErr) {
-                        // Fallback to direct update if RPC is not yet deployed
-                        await this.supabase.client.from('streaks').update({
-                            freezes_remaining: clampedCount,
-                            updated_at: new Date().toISOString()
-                        }).eq('user_id', user.id);
-                    }
-                } catch (err) {
-                    console.warn('[StreakRepo] Failed to update freezes_remaining on server:', err);
+            try {
+                const { error: rpcErr } = await this.supabase.client.rpc('spend_xp', {
+                    p_cost: 150,
+                    p_purpose: 'freeze_replenish'
+                });
+                if (rpcErr) {
+                    console.warn('[StreakRepo] spend_xp error:', rpcErr);
                 }
+            } catch (err) {
+                console.warn('[StreakRepo] Failed spend_xp on server:', err);
             }
         }
     }
@@ -281,7 +275,10 @@ export class OfflineStreakRepository implements IStreakRepository {
     }
 
     private async recordActivityOnServer(): Promise<ActivityResult | null> {
-        const { data, error } = await this.supabase.client.rpc('record_streak_activity');
+        const todayStr = this.toLocalDateKey(new Date());
+        const { data, error } = await this.supabase.client.rpc('record_streak_activity', {
+            p_client_date: todayStr
+        });
 
         if (error) {
             console.error('[StreakRepo] RPC record_streak_activity error:', error);

@@ -118,10 +118,9 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
     ];
 
     readonly rankTitle = computed(() => {
-        const lvl = Math.min(Math.max(1, this.userLevel()), 10);
-        const key = 'gamification.rank' + lvl;
-        const translated = this.i18n.t(key);
-        return translated !== key ? translated : (this.i18n.t('gamification.linguist') || 'Language Learner');
+        const config = this.gamification.userLevelConfig();
+        const translated = this.i18n.t(config.titleKey);
+        return translated !== config.titleKey ? translated : (this.i18n.t('gamification.linguist') || 'Language Learner');
     });
 
     readonly filteredAchievements = computed(() => {

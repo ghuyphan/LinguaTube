@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_일_59": {
+      "title": "~일 리가 없다 / ~(으)ㄹ 리가 없다 (Không đời nào..., làm sao có chuyện... - Phủ định chắc chắn)",
+      "shortExplanation": "Dùng để phủ định mạnh mẽ một sự việc hay hành động nào đó, khẳng định rằng điều đó hoàn toàn vô lý hoặc không thể nào xảy ra ('không đời nào', 'làm sao có chuyện').",
+      "longExplanation": "'~(으)ㄹ 리가 없다' là cấu trúc biểu thị sự phủ định tuyệt đối hoặc bác bỏ hoàn toàn khả năng xảy ra của một tình huống. Trong đó, '리' là danh từ phụ thuộc chỉ lý lẽ, nguyên cớ hoặc tính xác thực. Khi kết hợp với vĩ tố định ngữ thì tương lai/suy đoán '-(으)ㄹ' và tính từ phủ định '없다', cấu trúc mang nghĩa 'hoàn toàn không có lý do hay đạo lý nào để chuyện đó xảy ra', tương đương với 'không đời nào...', 'làm sao có thể...' trong tiếng Việt. Khi phủ định một sự việc trong quá khứ, cấu trúc chuyển thành '-았/었을 리가 없다'. Ngoài ra, dạng tương tự '-(으)ㄹ 일이 없다' cũng được dùng để diễn tả việc hoàn toàn không có dịp, lý do hay khả năng làm gì.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 리가 없다 (thân từ có phụ âm cuối dùng -을 리가 없다, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -ㄹ 리가 없다; Danh từ + -일 리가 없다)",
+      "examples": [
+        {
+          "translation": "Anh ấy làm chuyện như vậy ư, không thể nào. Không đời nào anh ấy lại làm chuyện như thế."
+        },
+        {
+          "translation": "Người mà tôi hiểu quá rõ như vậy thì không đời nào lại nói dối."
+        },
+        {
+          "translation": "Hôm nay tôi bận rộn quá nên chẳng có chuyện rảnh rỗi thưởng thức phim ảnh đâu."
+        },
+        {
+          "translation": "Không đời nào tôi lại mua chiếc xe đắt đỏ thế này, tôi đâu có nhiều tiền đến mức đó."
+        }
+      ]
+    },
+    "ko_일수록_60": {
+      "title": "~(으)ㄹ수록 / ~일수록 (Càng... càng... - Mối quan hệ tỷ lệ thuận)",
+      "shortExplanation": "Dùng để diễn tả mức độ của một hành động hay trạng thái ngày càng tăng tiến, kéo theo kết quả ở vế sau cũng thay đổi theo tỉ lệ thuận ('càng... càng...').",
+      "longExplanation": "'~(으)ㄹ수록' là vĩ tố liên kết dùng để chỉ mối quan hệ tương hỗ hoặc tỷ lệ thuận giữa hai vế câu: khi mức độ, tần suất hay phạm vi của vế trước tăng lên hoặc biến chuyển thì trạng thái, kết quả ở vế sau cũng gia tăng hoặc biến đổi tương ứng. Thường được dịch sang tiếng Việt là 'càng... càng...'. Cấu trúc này thường đi kèm với các phó từ chỉ mức độ như '더' (hơn), '더욱' (càng thêm) ở vế sau, hoặc có thể kết hợp thành cấu trúc lặp '-으면 -(으)ㄹ수록' (nếu càng... thì càng...) để tăng cường tính nhấn mạnh.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ수록 (thân từ có phụ âm cuối dùng -을수록, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -ㄹ수록); Danh từ + 일수록",
+      "examples": [
+        {
+          "translation": "Thời gian càng trôi qua, tôi lại càng nhớ anh ấy nhiều hơn, vì vậy tôi đã đến thăm nơi chúng tôi từng bên nhau."
+        },
+        {
+          "translation": "Tôi càng luyện tập tiếng Hàn nhiều thì phát âm của tôi càng tốt hơn, nhờ đó người Hàn Quốc có thể hiểu tôi rõ hơn."
+        },
+        {
+          "translation": "Chả giò càng rán kỹ thì lại càng giòn rụm và trở nên ngon hơn."
+        },
+        {
+          "translation": "Kinh tế càng khó khăn thì nỗi lo của mọi người càng nhiều hơn, khiến tôi không biết phải quyết định định hướng tương lai như thế nào."
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "~지 않을 테니(까) (Sẽ không... đâu nên... - Phủ định dự đoán và trấn an)",
+      "shortExplanation": "Dùng để đưa ra phán đoán hoặc khẳng định chắc chắn của người nói rằng một việc sẽ không xảy ra, từ đó khuyên bảo, an ủi hoặc dặn dò người nghe ('sẽ không... đâu nên...').",
+      "longExplanation": "'~지 않을 테니(까)' là sự kết hợp giữa hình thái phủ định dài '-지 않다' với cấu trúc biểu thị căn cứ phỏng đoán hoặc ý chí '-(으)ㄹ 테니(까)'. Người nói sử dụng cấu trúc này khi tin chắc một tình huống tiêu cực hoặc một sự việc cụ thể sẽ không xảy ra, và dựa trên tiền đề chắc chắn đó để an ủi, động viên hoặc đưa ra lời đề nghị, khuyên nhủ đối phương an tâm hành động. Vế sau thường là câu mệnh lệnh, thỉnh dụ hoặc khuyên nhủ.",
+      "formation": "Thân động từ/tính từ + -지 않을 테니(까)",
+      "examples": [
+        {
+          "translation": "Cơm sẽ không nguội đâu nên bạn cứ thong thả đến nhé."
+        },
+        {
+          "translation": "Thời tiết sẽ không nóng lên đâu nên hôm nay chắc không cần phải mặc áo dài tay đâu."
+        },
+        {
+          "translation": "Vấn đề này sẽ không quá khó đâu nên đừng lo lắng nhé."
+        },
+        {
+          "translation": "Anh ấy sẽ không tìm bạn đâu nên cứ yên tâm đi."
+        }
+      ]
+    },
+    "ko_지만_62": {
+      "title": "~지만 (Nhưng, tuy... nhưng - Biểu thị sự tương phản, đối lập)",
+      "shortExplanation": "Vĩ tố liên kết dùng để nối hai mệnh đề có ý nghĩa đối lập, tương phản hoặc nhượng bộ ('tuy... nhưng', 'nhưng mà').",
+      "longExplanation": "'~지만' là một trong những vĩ tố liên kết mang ý nghĩa đối lập cơ bản và phổ biến nhất trong tiếng Hàn. Nó được dùng để liên kết hai vế câu có nội dung tương phản, trái ngược nhau hoặc vế sau nêu lên một thực tế ngoại lệ so với vế trước. Cấu trúc này có thể kết hợp trực tiếp với thì quá khứ ('-았/었지만') hoặc tương lai ('-겠지만'). Ngoài ra, nó cũng thường được sử dụng trong các cách nói xã giao lịch sự mở đầu câu (như '죄송하지만...', '실례지만...') để giảm nhẹ tính đường đột.",
+      "formation": "Thân động từ/tính từ + -지만 (thì quá khứ dùng -았/었지만); Danh từ + (이)지만",
+      "examples": [
+        {
+          "translation": "Hôm nay thời tiết đẹp nhưng gió thổi nhiều quá nên khó mà đi dã ngoại được."
+        },
+        {
+          "translation": "Bộ phim đó thú vị thật đấy nhưng dài quá nên xem phát chán."
+        },
+        {
+          "translation": "Bạn tôi kể chuyện đùa nhưng chẳng có ai cười cả."
+        },
+        {
+          "translation": "Bữa trưa đó ngon đấy nhưng đắt quá nên tôi không muốn quay lại ăn lần nữa."
+        }
+      ]
+    },
+    "ko_지_63": {
+      "title": "~지 않다 / ~지 못하다 (Không làm / Không thể làm - Phủ định dài ý chí và năng lực)",
+      "shortExplanation": "Dùng để phủ định hành động hoặc trạng thái: '~지 않다' biểu thị phủ định thông thường hoặc không có ý định làm ('không'), còn '~지 못하다' biểu thị không có khả năng hoặc hoàn cảnh cản trở ('không thể').",
+      "longExplanation": "Đây là hai hình thức phủ định dài cơ bản đứng sau thân động từ hoặc tính từ trong tiếng Hàn. '~지 않다' dùng cho phủ định khách quan hoặc chủ ý của chủ ngữ (không muốn làm hoặc sự việc đơn thuần không xảy ra). Ngược lại, '~지 못하다' biểu thị chủ ngữ dù có mong muốn nhưng do năng lực bản thân thiếu hụt hoặc do điều kiện ngoại cảnh ngăn cản nên không thể thực hiện được hành động (tương đương với 'không thể...'). Chú ý rằng tính từ thường chỉ kết hợp với '-지 않다', rất hiếm khi kết hợp với '-지 못하다' (trừ một số trường hợp đánh giá mức độ đạt tiêu chuẩn).",
+      "formation": "Thân động từ/tính từ + -지 않다 (phủ định ý chí/thông thường); Thân động từ + -지 못하다 (phủ định năng lực/ngoại cảnh)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã không thể tìm được món ăn vừa ý tại nhà hàng đó, vì vậy chúng tôi quyết định tìm nhà hàng khác."
+        },
+        {
+          "translation": "Học sinh đó chưa hiểu vấn đề đó nên đã hỏi lại giáo viên một lần nữa."
+        },
+        {
+          "translation": "Tối nay tôi sẽ không về nhà muộn đâu, vì tôi vẫn còn việc phải làm."
+        },
+        {
+          "translation": "Tôi không thể xem phim mà cũng chẳng thể đọc sách. Tôi đã quá bận."
+        }
+      ]
+    },
+    "ko_지_64": {
+      "title": "-(으)ㄴ 지 얼마나 되다 (Đã được bao lâu kể từ khi... - Thời gian trôi qua)",
+      "shortExplanation": "Dùng để hỏi hoặc diễn tả khoảng thời gian đã trôi qua kể từ thời điểm một hành động hay sự việc nào đó bắt đầu diễn ra ('đã làm... được bao lâu rồi').",
+      "longExplanation": "'-(으)ㄴ 지 얼마나 되다' là cấu trúc được tạo thành bởi vĩ tố định ngữ thì quá khứ '-(으)ㄴ', danh từ phụ thuộc '지' (chỉ mốc thời gian trôi qua) và cụm vị ngữ '얼마나 되다' (được bao lâu). Cấu trúc này dùng để hỏi hoặc trần thuật về độ dài thời gian đã trôi qua kể từ khi một sự việc bắt đầu hoặc hoàn thành trong quá khứ. Cần đặc biệt chú ý khoảng cách viết cách (cách chữ) giữa động từ định ngữ và '지' ('온 지', '만난 지'), vì '지' ở đây đóng vai trò là một danh từ phụ thuộc chỉ thời gian.",
+      "formation": "Thân động từ + -(으)ㄴ 지 + 얼마나 되다 (thân từ có phụ âm cuối dùng -은 지, không có phụ âm cuối hoặc có phụ âm cuối ㄹ biến đổi dùng -ㄴ 지)",
+      "examples": [
+        {
+          "translation": "Đã bao lâu rồi kể từ lần cuối cùng chúng ta gặp nhau nhỉ?"
+        },
+        {
+          "translation": "Cậu đến Seoul được bao lâu rồi?"
+        },
+        {
+          "translation": "Đã bao lâu rồi kể từ khi bạn đọc cuốn sách đó?"
+        },
+        {
+          "translation": "Tôi đến Hàn Quốc cũng đã được một thời gian rồi mà tiếng Hàn vẫn còn khó quá."
+        }
+      ]
+    },
+    "ko_지요죠_65": {
+      "title": "~지요 / ~죠 (Đúng không, chứ nhỉ - Hỏi xác nhận và tìm kiếm sự đồng tình)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng khi người nói muốn xác nhận lại điều mình đã biết hoặc tìm kiếm sự đồng tình từ phía người nghe ('đúng không', 'chứ nhỉ').",
+      "longExplanation": "'~지요' (khẩu ngữ thường rút gọn thành '~죠') là vĩ tố kết thúc câu thể lịch sự thân mật. Người nói sử dụng đuôi câu này khi tin rằng người nghe cũng biết hoặc đồng ý với sự thật hay quan điểm mà mình đưa ra, nhằm mục đích hỏi để xác nhận lại hoặc tạo không khí trò chuyện thân thiện, tìm kiếm sự đồng cảm. Cấu trúc này có thể dùng với mọi thì (quá khứ '-았/었지요', tương lai '-겠지요'). Trong câu hỏi, ngữ điệu lên giọng ở cuối câu; trong câu trần thuật khẳng định, ngữ điệu hạ giọng để thể hiện sự chắc chắn thân mật.",
+      "formation": "Thân động từ/tính từ + -지요 (rút gọn: -죠); Danh từ + -(이)지요 (rút gọn: -(이)죠)",
+      "examples": [
+        {
+          "translation": "Hôm nay thời tiết thật là đẹp, đúng không nhỉ?"
+        },
+        {
+          "translation": "Bộ phim đó thực sự rất thú vị, đúng chứ?"
+        },
+        {
+          "translation": "Ngày mai chúng ta cũng gặp nhau ở đây, đúng không ạ?"
+        },
+        {
+          "translation": "Hình như phương pháp này là đúng rồi nhỉ?"
+        }
+      ]
+    },
+    "ko_쯤_66": {
+      "title": "~쯤 (Khoảng, chừng, độ - Trợ từ ước lượng số lượng và thời gian)",
+      "shortExplanation": "Trợ từ gắn sau danh từ chỉ số lượng, thời gian hoặc nơi chốn để biểu thị sự ước tính, phỏng chừng ('khoảng', 'chừng', 'độ chừng').",
+      "longExplanation": "'~쯤' là trợ từ (tiểu từ) được gắn trực tiếp ngay sau danh từ (đặc biệt là các từ chỉ số lượng, đơn vị đếm, thời gian hoặc địa điểm) nhằm biểu thị con số xấp xỉ, sự ước lượng hoặc ước chừng không tuyệt đối chính xác. Tương đương với các từ 'khoảng...', 'chừng...', 'tầm...' trong tiếng Việt. Cần lưu ý viết liền trợ từ này với danh từ đứng trước theo quy tắc chính tả tiếng Hàn (ví dụ: '3시쯤', '내일쯤', '백 명쯤').",
+      "formation": "Danh từ (số lượng, thời gian, đơn vị đo lường) + 쯤",
+      "examples": [
+        {
+          "translation": "Có vẻ như chuyến bay sẽ bị hoãn khoảng 3 tiếng đồng hồ, vì vậy tôi thấy lo lắng."
+        },
+        {
+          "translation": "Hôm nay công ty chúng tôi có khoảng 30 người đến, vì vậy chúng tôi đã đảm nhận rất nhiều công việc."
+        },
+        {
+          "translation": "Anh ấy luôn đến sớm khoảng một tiếng để chuẩn bị, do đó lúc nào cũng hoàn thành công việc nhanh hơn người khác."
+        },
+        {
+          "translation": "Tôi đang lên kế hoạch đi du lịch vào cuối tuần này nên hôm nay tôi định tan làm sớm khoảng một tiếng."
+        }
+      ]
+    },
+    "ko_처럼_67": {
+      "title": "~처럼 (Như, giống như - Trợ từ so sánh ví von)",
+      "shortExplanation": "Trợ từ gắn sau danh từ để biểu thị hình dáng, hành vi hoặc tính chất tương tự, giống như đối tượng được nêu ra ('như', 'giống như').",
+      "longExplanation": "'~처럼' là trợ từ so sánh được dùng để so sánh một người, sự vật hoặc hành động với một sự vật khác có đặc tính tương đồng, tương đương với 'như...', 'giống như...' trong tiếng Việt. Cấu trúc này thường đi kèm với phó từ '마치' (cứ như thể là...) ở phía trước để tăng thêm hiệu quả tu từ, ví von sinh động. Có thể dùng thay thế tương đương với trợ từ '같이'.",
+      "formation": "Danh từ + 처럼",
+      "examples": [
+        {
+          "translation": "Cô ấy đã nhảy múa như một chú bướm. Trông cô thật xinh đẹp và nhẹ nhàng."
+        },
+        {
+          "translation": "Anh ấy đánh bóng cứ như một tay vợt quần vợt đẳng cấp thế giới. Kỹ năng của anh ấy thực sự xuất sắc."
+        },
+        {
+          "translation": "Bạn tốt bụng như một thiên thần vậy. Lúc nào bạn cũng cố gắng giúp đỡ người khác."
+        },
+        {
+          "translation": "Những họa tiết hoa này lộng lẫy hệt như những bông hoa trong vườn. Chúng mang màu sắc thực sự tràn đầy sức sống."
+        }
+      ]
+    },
+    "ko_치고는_68": {
+      "title": "~치고는 (So với..., xét là... thì... - So sánh với tiêu chuẩn thông thường)",
+      "shortExplanation": "Trợ từ gắn sau danh từ để diễn tả rằng kết quả hay đặc tính là ngoại lệ, bất ngờ so với những gì thường được kỳ vọng ở đối tượng đó ('so với', 'xét là... thì').",
+      "longExplanation": "'~치고는' là sự kết hợp giữa trợ từ '치고' với trợ từ nhấn mạnh chủ đề '는'. Cấu trúc này dùng để đặt đối tượng vào một quy chuẩn hoặc kỳ vọng chung, rồi chỉ ra rằng thực tế vượt ngoài dự kiến thông thường đó (tốt hơn mong đợi hoặc kém hơn mong đợi). Ví dụ, đối với một đứa trẻ thông thường thì không vẽ đẹp đến thế, nhưng trường hợp này lại đặc biệt xuất sắc. Tương đương với 'so với...', 'đối với...', 'xét là... thì...' trong tiếng Việt.",
+      "formation": "Danh từ + 치고는",
+      "examples": [
+        {
+          "translation": "Đối với một đứa trẻ thì tài năng vẽ tranh của bé rất xuất sắc."
+        },
+        {
+          "translation": "So với một lớp học căn bản thì quá khó nên tất cả học viên đều cảm thấy bối rối."
+        },
+        {
+          "translation": "Xét trong một khoảng thời gian ngắn như thế này mà xử lý được nhiều việc đến vậy thì thật đáng kinh ngạc."
+        },
+        {
+          "translation": "Dù là người mới bắt đầu nhưng bạn đang làm khá tốt đấy."
+        }
+      ]
+    },
+    "ko_테니라고_69": {
+      "title": "~(으)ㄹ 테니까 (Vì sẽ... nên..., do người nói dự đoán/dự định - Đưa ra lý do, căn cứ)",
+      "shortExplanation": "Dùng để đưa ra lý do hoặc căn cứ dựa trên dự đoán chắc chắn hoặc ý định của người nói, từ đó dẫn dắt lời đề nghị, khuyên nhủ hoặc giải thích ở vế sau ('vì sẽ... nên...').",
+      "longExplanation": "'~(으)ㄹ 테니까' là cấu trúc kết hợp giữa vĩ tố dự tính '-(으)ㄹ 터' với trợ từ chỉ nguyên nhân '-이니까'. Cấu trúc mang hai sắc thái ngữ nghĩa chính: (1) Biểu thị dự đoán chắc chắn của người nói về một tình huống tương lai để làm căn cứ khuyên nhủ, dặn dò người nghe ở vế sau ('chắc là sẽ... nên hãy...'); (2) Biểu thị ý chí hoặc sự chuẩn bị sẵn sàng của người nói, từ đó yêu cầu hoặc phân công người nghe thực hiện việc khác ('tôi sẽ làm việc này, nên bạn hãy...'). Lưu ý: mục từ ghi '~테니라고' là cách diễn đạt không chuẩn trong tiếng Hàn hiện đại, dạng thức chuẩn mực và tự nhiên là '~(으)ㄹ 테니까'.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 테니까 (có phụ âm cuối dùng -을 테니까, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -ㄹ 테니까); Danh từ + 일 테니까",
+      "examples": [
+        {
+          "translation": "Vì đó là việc mất quá nhiều thời gian nên tôi đã tự mình làm luôn. Tôi nghĩ là chờ đợi vô ích thì việc khác cũng sẽ bị chậm trễ mất."
+        },
+        {
+          "translation": "Bạn sẽ chiến thắng thôi nên hãy tự tin lên. Bí quyết của thành công chính là sự tự tin đấy."
+        },
+        {
+          "translation": "Không được ăn quá nhiều đâu. Tiêu hóa sẽ không tốt đâu nên phải chú ý đấy."
+        },
+        {
+          "translation": "Bánh đó ngọt quá nên tôi không thích. Tôi nghĩ rằng nếu quá ngọt thì răng sẽ bị sâu nên đã không ăn."
+        }
+      ]
+    },
+    "ko_텐데_70": {
+      "title": "~(으)ㄹ 텐데 (Chắc là... mà..., đáng lẽ ra thì... - Phỏng đoán, giả định và tình huống đối lập)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả sự phỏng đoán, dự tính hoặc giả định của người nói về một sự việc, đồng thời làm bối cảnh để dẫn ra thực tế trái ngược hoặc tình huống ở vế sau ('chắc là... mà...').",
+      "longExplanation": "'~(으)ㄹ 텐데' là sự kết hợp giữa hình thái biểu thị dự định, phỏng đoán '-(으)ㄹ 터' với vĩ tố liên kết tiền đề, đối lập '-인데'. Cấu trúc này thường được dùng trong các câu giả định trái thực tế (đi cùng '-았/었으면 -(으)ㄹ 텐데') để diễn đạt ý 'đáng lẽ ra đã... thế nhưng...', hoặc dùng để đưa ra sự phỏng đoán, lo lắng của người nói làm tiền đề cho câu hỏi, đề nghị ở vế sau. Quá khứ thường dùng dạng '-았/었을 텐데'.",
+      "formation": "Thân động từ/tính từ + -(으)ㄹ 텐데 (quá khứ dùng -았/었을 텐데; có phụ âm cuối dùng -을 텐데, không có phụ âm cuối hoặc có phụ âm cuối ㄹ dùng -ㄹ 텐데); Danh từ + 일 텐데",
+      "examples": [
+        {
+          "translation": "Hôm nay nếu bạn không đến thì chắc là tôi đã nổi giận rồi đấy, may mà bạn đã đến."
+        },
+        {
+          "translation": "Nếu tôi là người không chịu nói chuyện với người lạ thì việc học ngôn ngữ chắc hẳn đã rất khó khăn rồi, may thay tôi lại không phải kiểu người như vậy."
+        },
+        {
+          "translation": "Nếu bạn nói dối tôi thì chắc tôi đã thất vọng lắm, may mà bạn đã rất thành thật."
+        },
+        {
+          "translation": "Nếu tôi không gặp được bạn thì việc học tiếng Hàn của tôi hẳn đã gặp muôn vàn khó khăn rồi, nhưng nhờ có bạn mà tôi đã học tốt tiếng Hàn."
+        }
+      ]
+    },
+    "ko_토록_71": {
+      "title": "~토록 / ~도록 / ~(으)ㄹ 정도로 (Đến mức, đến độ... - Nhấn mạnh mức độ và giới hạn)",
+      "shortExplanation": "Vĩ tố hoặc cấu trúc phụ ngữ dùng để biểu thị mức độ, giới hạn thời gian hoặc kết quả của một trạng thái đạt đến mức cực độ ('đến mức...', 'cho đến tận...').",
+      "longExplanation": "'~토록' là vĩ tố liên kết (hoặc trợ từ gắn sau danh từ chỉ thời gian) mang tính văn phong nhấn mạnh, dùng để biểu thị một hành động hoặc trạng thái đạt đến giới hạn cao độ hoặc kéo dài đến tận một mốc thời gian nào đó (như '밤이 새도록 / 밤새도록' - cho đến tận sáng, '지치도록' - đến mức kiệt sức). Trong khẩu ngữ và ngữ pháp thông dụng, nó đồng nghĩa và thường được dùng tương đương với '~도록' hoặc cụm cấu trúc phụ ngữ '-(으)ㄹ 정도로' (đến mức độ mà...). Cả hai đều nhấn mạnh kết quả hoặc mức độ sâu sắc của hành vi.",
+      "formation": "Thân động từ/tính từ + -토록 (hoặc -도록 / -(으)ㄹ 정도로); Danh từ thời gian + 토록",
+      "examples": [
+        {
+          "translation": "Những người từng nghe âm nhạc của anh ấy đều ngạc nhiên trước âm nhạc của anh đến mức không thể hiểu nổi làm sao anh có thể tạo ra được thứ âm nhạc tuyệt vời đến vậy."
+        },
+        {
+          "translation": "Tòa nhà cao đến nỗi mỗi khi nhìn xuống mặt đất là toàn thân tôi lại run lên bần bật."
+        },
+        {
+          "translation": "Cho đến tận thời trung học phổ thông, đầu óc tôi vẫn đủ thông minh để giải quyết các bài toán hóc búa."
+        },
+        {
+          "translation": "Cuốn sách tiếng Hàn đó khó đến mức tôi chẳng thể hiểu nổi một câu nào."
+        }
+      ]
+    },
+    "ko_하게_72": {
+      "title": "~게 하다 / ~하게 (Làm cho, khiến cho, bảo làm... - Sai khiến và tạo điều kiện)",
+      "shortExplanation": "Cấu trúc sai khiến và mục đích, dùng để diễn tả việc khiến cho, bắt buộc hoặc tạo điều kiện cho ai đó thực hiện một hành động nào đó ('bắt làm', 'khiến cho', 'để cho').",
+      "longExplanation": "'~게 하다' là cấu trúc sai khiến gián tiếp được cấu tạo từ vĩ tố phụ từ hóa '-게' kết hợp với động từ '하다' (hoặc '만들다', '시키다'). Cấu trúc này biểu thị chủ ngữ tác động, sai khiến, thúc ép hoặc cho phép một đối tượng khác thực hiện hành động hay chuyển sang một trạng thái nào đó. Khi dùng độc lập ở dạng '-게' trước một mệnh đề hành động (như '이해하게 설명하다'), nó đóng vai trò trạng ngữ chỉ mục đích hoặc cách thức ('giải thích sao cho hiểu').",
+      "formation": "Thân động từ/tính từ + -게 하다 (hoặc Thân động từ/tính từ + -게)",
+      "examples": [
+        {
+          "translation": "Giáo viên đã giải thích để học sinh có thể hiểu rõ bài tập về nhà."
+        },
+        {
+          "translation": "Mẹ bắt tôi phải dọn dẹp phòng ngủ mỗi ngày."
+        },
+        {
+          "translation": "Anh ta đã cố khiến tôi chấp nhận quyết định của mình."
+        },
+        {
+          "translation": "Tôi muốn tạo ra một trò chơi giúp trẻ em suy nghĩ sáng tạo hơn."
+        }
+      ]
+    },
+    "ko_하고나서_73": {
+      "title": "~고 나서 / ~하고 나서 (Sau khi làm xong... thì... - Trình tự hành động hoàn tất)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả một hành động ở vế trước đã được hoàn thành trọn vẹn rồi mới tiếp tục thực hiện hành động ở vế sau ('sau khi làm xong...').",
+      "longExplanation": "'~고 나서' là sự kết hợp giữa vĩ tố liên kết '-고' với động từ bổ trợ '나다' (chỉ sự hoàn tất, xong xuôi) chia theo dạng '-어서'. Cấu trúc này nhấn mạnh tính hoàn thành triệt để của hành động đi trước: phải làm xong xuôi việc thứ nhất thì mới chuyển sang làm việc thứ hai. So với việc chỉ dùng đơn thuần '-고', cấu trúc '~고 나서' làm nổi bật rõ ràng hơn ranh giới kết thúc của hành động trước trong chuỗi thời gian.",
+      "formation": "Thân động từ + -고 나서 (với động từ kết thúc bằng 하다 là -하고 나서)",
+      "examples": [
+        {
+          "translation": "Sau khi về nhà và tắm rửa xong xuôi, tôi đã bắt đầu ngồi vào học."
+        },
+        {
+          "translation": "Sau khi đi học về và hoàn thành xong bài tập về nhà, tôi đã đi gặp bạn bè."
+        },
+        {
+          "translation": "Sau khi thái nhỏ nguyên liệu xong, tôi đã bắt đầu nấu nướng."
+        },
+        {
+          "translation": "Sau khi tập thể dục xong, tôi đã tắm qua một chút rồi ăn cơm."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_일_59": {
+      "title": "~일 리가 없다 / ~(으)ㄹ 리가 없다（绝不可能、绝无此理 - 强烈确信否定）",
+      "shortExplanation": "表示对某种事实或可能性予以断然否定，断定绝无发生之理（“绝不可能……”、“哪有……的道理”）。",
+      "longExplanation": "“~(으)ㄹ 리가 없다”用于强烈否定某种情况或动作发生的可能性。“리”是不完全名词，表示道理、理由或依据。与定语词尾“-(으)ㄹ”和否定形容词“없다”搭配时，字面意思是“没有任何发生此事的道理”，即断定某种情况根本不可能成立。过去时通常使用“-(으)ㄹ 리가 없었다”或“-았/었을 리가 없다”。有时也可拓展为“-(으)ㄹ 일이 없다”，表示绝无此类事情发生或毫无这般缘由。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 리가 없다（有收音接 -을 리가 없다，无收音或收音为ㄹ接 -ㄹ 리가 없다；名词 + -일 리가 없다）",
+      "examples": [
+        {
+          "translation": "他竟然做出那种事，简直难以置信。他绝不可能做那种事的。"
+        },
+        {
+          "translation": "我对那个人了如指掌，他绝不可能撒谎。"
+        },
+        {
+          "translation": "今天实在太忙了，根本没功夫去看电影。"
+        },
+        {
+          "translation": "我绝不可能买这么贵的车，我可没那么多钱。"
+        }
+      ]
+    },
+    "ko_일수록_60": {
+      "title": "~(으)ㄹ수록 / ~일수록（越……越…… - 递进比例关系）",
+      "shortExplanation": "连接词尾，表示前项动作或状态程度的加深会导致后项程度相应发生变化（“越……越……”）。",
+      "longExplanation": "“~(으)ㄹ수록”是表示比例递进关系的连接词尾。用于说明某一动作或状态随着程度的加重、时间的推移，使得后续的事态或结果发生正比例的变化。在汉语中通常对应为“越……越……”、“愈……愈……”。后句常与副词“더”（更）、“더욱”（更加）呼应使用。为了强化语气，该句型常拓展为“-으면 -(으)ㄹ수록”（越是……就越……）的形式。名词后直接接“일수록”。",
+      "formation": "动词/形容词词干 + -(으)ㄹ수록（有收音接 -을수록，无收音或收音为ㄹ接 -ㄹ수록）；名词 + 일수록",
+      "examples": [
+        {
+          "translation": "随着时间的流逝，我越来越思念他，因此我来到了我们曾在一起的地方。"
+        },
+        {
+          "translation": "我练习韩语练得越多，发音就越好，韩国人也就更能听懂我说的话了。"
+        },
+        {
+          "translation": "春卷越炸越香脆，变得更加好吃了。"
+        },
+        {
+          "translation": "经济越是不景气，人们的烦恼就越多，我都不知道该如何决定自己的前途了。"
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "~지 않을 테니(까)（不会……的，所以…… - 否定推测与安心叮嘱）",
+      "shortExplanation": "表达说话人确信某事绝不会发生，并以此作为劝慰、打消对方顾虑或提出建议的理由（“不会……的，所以……”）。",
+      "longExplanation": "“~지 않을 테니(까)”是由长型否定词尾“-지 않다”与表示说话人推测、意志及理由的连接词尾“-(으)ㄹ 테니(까)”结合而成的句型。用于说话人根据自己的判断或把握，向对方担保某种不希望发生的情形绝不会出现，从而以此为由安慰对方、消除其担忧，或者要求、劝告对方放心去做某事。后半句多接命令句、共动句或建议句。",
+      "formation": "动词/形容词词干 + -지 않을 테니(까)",
+      "examples": [
+        {
+          "translation": "饭菜不会凉的，你慢慢过来吧。"
+        },
+        {
+          "translation": "天气不会变热的，今天应该不需要穿长袖。"
+        },
+        {
+          "translation": "这道题应该不会太难，请不要担心。"
+        },
+        {
+          "translation": "他不会来找你的，放心吧。"
+        }
+      ]
+    },
+    "ko_지만_62": {
+      "title": "~지만（虽然……但是……、可是 - 转折接续）",
+      "shortExplanation": "连接词尾，用于连接内容相反、相对立或互有转折的前后两个分句（“虽然……但是……”、“可是”）。",
+      "longExplanation": "“~지만”是韩语中最基础且高频使用的转折连接词尾。它连接两个在事实、性质或评价上相对立的分句，指出后项事实与前项存在差异或例外情况。相当于汉语的“虽然……但是……”、“然而”、“可是”。该词尾可以与表示时态的先妥尾“-았/었-”、“-겠-”连用。此外，在日常礼貌交际中，也常用于客套引言（如“죄송하지만... 对不起，打扰一下……”、“실례지만... 冒昧问一下……”），以缓和语气。",
+      "formation": "动词/形容词词干 + -지만（过去时接 -았/었지만）；名词 + (이)지만",
+      "examples": [
+        {
+          "translation": "今天天气虽然很好，但风刮得太大，不太适合去野餐。"
+        },
+        {
+          "translation": "那部电影虽然很有趣，但片长太长了，让人觉得枯燥。"
+        },
+        {
+          "translation": "朋友开了个玩笑，但谁也没有笑。"
+        },
+        {
+          "translation": "那顿午饭虽然挺好吃，但价格太贵了，我不想再去吃了。"
+        }
+      ]
+    },
+    "ko_지_63": {
+      "title": "~지 않다 / ~지 못하다（不…… / 没能……、不能…… - 意志否定与能力否定）",
+      "shortExplanation": "长形否定表达：“~지 않다”表示客观否定或主观意愿不愿去做（“不……”）；“~지 못하다”表示因能力不足或外部阻碍而无法做到（“没能……”、“不能……”）。",
+      "longExplanation": "这是韩语中最为核心的长形否定句型。“~지 않다”用于中立陈述事实的否定或表达说话人自身的主观意志（不想做或未曾发生），相当于汉语的“不”、“没”。而“~지 못하다”则强调尽管主观上想要做某事，但受制于自身能力欠缺或客观环境限制而无法实现（不能做、未能实现），相当于汉语的“没能……”、“无法……”。需要注意的是，形容词一般只与“-지 않다”搭配，极少接“-지 못하다”（除非评价某物未能达到预期水准）。",
+      "formation": "动词/形容词词干 + -지 않다（单纯/意志否定）；动词词干 + -지 못하다（能力/环境否定）",
+      "examples": [
+        {
+          "translation": "我们在那家餐厅没能找到合心意的食物，所以决定另找一家餐厅看看。"
+        },
+        {
+          "translation": "那个学生没能理解那道题，所以又向老师请教了。"
+        },
+        {
+          "translation": "今晚我不会很晚才回家，因为我还有必须要办的事。"
+        },
+        {
+          "translation": "既没能看电影，也没能看书。实在太忙了。"
+        }
+      ]
+    },
+    "ko_지_64": {
+      "title": "-(으)ㄴ 지 얼마나 되다（……有多久了 - 询问与陈述时间流逝）",
+      "shortExplanation": "接在动词词干后，用于询问或叙述自过去的某个动作或事件发生以来已经过去了多长时间（“做某事有多久了”）。",
+      "longExplanation": "“-(으)ㄴ 지 얼마나 되다”是由过去时定语词尾“-(으)ㄴ”、表示时间经过的不完全名词“지”以及谓语短语“얼마나 되다”（有多少、有多久）组合而成的常用疑问与叙述句式。它用于核实或说明从某事开始或发生算起，至今过去了多少时间。在韩语正字法中，“-(으)ㄴ”与“지”必须隔写（如“온 지”, “배운 지”），因为此处的“지”是独立成词的依存名词。",
+      "formation": "动词词干 + -(으)ㄴ 지 + 얼마나 되다（有收音接 -은 지，无收音或收音为ㄹ接 -ㄴ 지）",
+      "examples": [
+        {
+          "translation": "距离我们上次见面已经过去多久了呢？"
+        },
+        {
+          "translation": "你来首尔多久了？"
+        },
+        {
+          "translation": "你读完那本书过去多久了呢？"
+        },
+        {
+          "translation": "我来韩国已经有一段时间了，但韩语依然很难。"
+        }
+      ]
+    },
+    "ko_지요죠_65": {
+      "title": "~지요 / ~죠（……吧、对吧 - 确认与寻求赞同）",
+      "shortExplanation": "终结词尾，用于说话人向对方核实自己已有所知的事实，或寻求对方的赞同与共鸣（“……吧”、“对吧”）。",
+      "longExplanation": "“~지요”（在口语中通常缩略为“~죠”）是韩语中极具亲和力的准敬体终结词尾。当说话人已经对某事实有所了解，或者推测听话人持有相同的看法时，使用该句型向对方确认、印证，或寻求听者的心理认同。根据语调的不同，升调时用于疑问句征求同意（“对吧？”、“……吧？”），降调时用于陈述句表达亲切而自信的确认。",
+      "formation": "动词/形容词词干 + -지요（缩略形：-죠）；名词 + -(이)지요（缩略形：-(이)죠）",
+      "examples": [
+        {
+          "translation": "今天天气真好，对吧？"
+        },
+        {
+          "translation": "那部电影真的很有意思吧？"
+        },
+        {
+          "translation": "明天也是在这里见面吧？"
+        },
+        {
+          "translation": "这方法好像挺对的，是吧？"
+        }
+      ]
+    },
+    "ko_쯤_66": {
+      "title": "~쯤（左右、大概 - 概数与时间估计）",
+      "shortExplanation": "接在表示数量、时间或程度的名词之后，表示大概的推测或估算（“左右”、“大约”）。",
+      "longExplanation": "“~쯤”是韩语中极为常用的概数助词。直接附加在时间、数量、计量单位名词之后，用来表明该数量或时点并非绝对精确，而是一个粗略估算的近似值。相当于汉语的“大约……”、“……左右”、“……上下”。按照正字法规则，“쯤”作为助词必须与前面的体词紧密连写（如“3시간쯤”, “서른 명쯤”, “내일쯤”）。",
+      "formation": "名词（数量词、时间词、量词） + 쯤",
+      "examples": [
+        {
+          "translation": "飞机似乎至少要延误3个小时左右，所以挺让人担心的。"
+        },
+        {
+          "translation": "今天我们公司来了大约三十个人左右，所以承担了大量的任务。"
+        },
+        {
+          "translation": "他总是提前一个小时左右到达并做好准备，因此总是比别人完成得更快。"
+        },
+        {
+          "translation": "我计划这个周末去旅行，所以今天打算提前一个小时左右下班。"
+        }
+      ]
+    },
+    "ko_처럼_67": {
+      "title": "~처럼（像……一样、宛如 - 比喻与比拟）",
+      "shortExplanation": "格助词，接在名词后，表示与该事物在样貌、状态或性质上极其相似（“像……一样”、“宛如”）。",
+      "longExplanation": "“~처럼”是韩语中表示比喻和比较的典型格助词。附于名词之后，说明所描述的人、事、动作与所比附的对象在姿态、动作、属性等方面具有高度相似性。常与副词“마치”（如同、仿佛）搭配使用，构成“마치 名词 + 처럼”（宛如……一样）的生动比喻句型。该词与助词“같이”意义基本相同，常可互相替换。",
+      "formation": "名词 + 처럼",
+      "examples": [
+        {
+          "translation": "她像蝴蝶一样翩翩起舞，看起来优美而轻盈。"
+        },
+        {
+          "translation": "他打得就像世界顶尖网球选手一样，技术真的太出色了。"
+        },
+        {
+          "translation": "你就像天使一样善良亲切，总是努力去帮助他人。"
+        },
+        {
+          "translation": "这些装饰宛如花园里的花朵一般绚丽，色彩真正充满了生机活力。"
+        }
+      ]
+    },
+    "ko_치고는_68": {
+      "title": "~치고는（作为……来说、以……而言 - 超出常理的例外评价）",
+      "shortExplanation": "接在名词后，表示以该事物所代表的一般常理或标准来衡量，其结果出乎意料地更好或更差（“就……而言”、“以……来说”）。",
+      "longExplanation": "“~치고는”是由助词“치고”与表示对比强调的补助词“는”结合而成的语法。它将某个对象归入某种特定的类别或常理范围，并表明其实际展现出的水准、状态与该群体的常规预期存在差异或破格表现（通常用来表达超出预期的优秀，或者相反地未能达到该标准的逊色）。相当于汉语的“作为……来说”、“凭……而言”。",
+      "formation": "名词 + 치고는",
+      "examples": [
+        {
+          "translation": "作为小孩子来说，这画画水平相当卓越。"
+        },
+        {
+          "translation": "作为一门基础课程来说太难了，搞得所有学生都很困惑。"
+        },
+        {
+          "translation": "在这么短的时间内能处理这么多事情，真是令人惊叹。"
+        },
+        {
+          "translation": "虽说是初学者，但你已经做得相当不错了。"
+        }
+      ]
+    },
+    "ko_테니라고_69": {
+      "title": "~(으)ㄹ 테니까（因为会……所以……、既然……就…… - 原因依据与意向）",
+      "shortExplanation": "连接词尾，以说话人的强烈推测或主观意志作为理由和前提，向对方提出建议、劝告或要求（“因为会……所以……”、“既然……就……”）。",
+      "longExplanation": "“~(으)ㄹ 테니까”是由表示打算或推断的依存名词“터”加上定语词尾“-(으)ㄹ”与原因连接词尾“-(이)니까”融汇而成的句式。主要具有两种语用功能：一是用于说话人对客观情况做出确定性的推测，并以此为由叮嘱或劝导对方（“肯定会……，所以请……”）；二是表明说话人自身的意图和承诺，进而分工要求对方行动（“我会负责……，所以你……”）。注：原词条所标“~테니라고”在现代韩语中并不规范，标准通用的自然形式为“~(으)ㄹ 테니까”。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 테니까（有收音接 -을 테니까，无收音或收音为ㄹ接 -ㄹ 테니까）；名词 + 일 테니까",
+      "examples": [
+        {
+          "translation": "因为那是太耗时间的事情，所以干脆我自己做了。我想着白白等待只会耽误其他事情。"
+        },
+        {
+          "translation": "你肯定会赢的，拿出自信来吧。成功的秘诀就在于自信。"
+        },
+        {
+          "translation": "不能吃太多。会消化不良的，所以得多注意。"
+        },
+        {
+          "translation": "那种点心太甜了我不喜欢。想着如果太甜牙齿会坏掉，所以就没吃。"
+        }
+      ]
+    },
+    "ko_텐데_70": {
+      "title": "~(으)ㄹ 텐데（应该会……可是……、按理说…… - 假设推测与转折提示）",
+      "shortExplanation": "连接词尾，表达说话人的强烈推测、推断或假定设想，并以此作为背景引出后项转折或对比的现实（“应该会……可是……”、“按理说……”）。",
+      "longExplanation": "“~(으)ㄹ 텐데”是由表示推测或意志的依存名词“터”结合定语词尾“-(으)ㄹ”，再加上具有提示背景或转折意味的词尾“-ㄴ/은데”构成的。常用于虚拟假设的语境中（常与“-았/었더라면 / -(으)면”搭配成“-았/었을 텐데”），表达“要是那样的话本该会……，幸亏/然而现实是……”。此外，也可用于陈述当前的推测并以此作为铺垫，引出后文的建议或询问。",
+      "formation": "动词/形容词词干 + -(으)ㄹ 텐데（过去推测用 -았/었을 텐데；有收音接 -을 텐데，无收音或收音为ㄹ接 -ㄹ 텐데）；名词 + 일 텐데",
+      "examples": [
+        {
+          "translation": "今天你要是没来的话，我本该会生气的，幸好你来了。"
+        },
+        {
+          "translation": "如果我总是不愿跟陌生人搭话的话，学语言肯定会很困难，所幸我不是那样的人。"
+        },
+        {
+          "translation": "你要是骗了我的话我肯定会很失望的，幸亏你很坦诚。"
+        },
+        {
+          "translation": "如果我没能遇到你的话，我学韩语肯定会困难重重，多亏了你我才能把韩语学得这么好。"
+        }
+      ]
+    },
+    "ko_토록_71": {
+      "title": "~토록 / ~도록 / ~(으)ㄹ 정도로（到……地步、极其……以至于…… - 程度与限度）",
+      "shortExplanation": "连接词尾或短语，用于强调动作或状态达到的极端程度、限度或时间跨度（“到……程度”、“以至于……”）。",
+      "longExplanation": "“~토록”是带有书面与文学色彩的强调性词尾（或附于时间名词后的助词），用于表达某种状态或动作持续到某一极点，或者严重到了某种令人注目的程度（如“밤새도록 / 밤새토록 彻夜直至天明”、“지치도록 达到精疲力竭的地步”）。在日常表达和语法演练中，它与“-도록”以及定语构型“-(으)ㄹ 정도로”（到了……的地步/程度）相通，主要用于鲜明地衬托后项事态发展的深度与强烈程度。",
+      "formation": "动词/形容词词干 + -토록（或 -도록 / -(으)ㄹ 정도로）；时间名词 + 토록",
+      "examples": [
+        {
+          "translation": "听过他音乐的人都对他的音乐惊叹不已，以至于根本无法理解他怎能做出如此美妙的音乐。"
+        },
+        {
+          "translation": "大楼实在太高了，以至于往地面看一眼都会浑身发抖。"
+        },
+        {
+          "translation": "直到高中时期，我都足够聪明，能够轻松解答数学难题。"
+        },
+        {
+          "translation": "那本韩语书实在太难了，到了连任何一个句子都看不懂的程度。"
+        }
+      ]
+    },
+    "ko_하게_72": {
+      "title": "~게 하다 / ~하게（让……、使……、令…… - 使动与促成）",
+      "shortExplanation": "使动句型与副词性连接，表示促使、要求、命令或允许某人做某事，或使某种状态得以达成（“让……”、“使……”、“令……”）。",
+      "longExplanation": "“~게 하다”是由副词形连接词尾“-게”与动词“하다”（或“만들다 促使”、“시키다 指使”）组合而成的长形使动表达。它表明主语施加影响，使宾语对象去执行某项动作或发生某种状态改变，相当于汉语的“使……”、“让……”、“叫……”、“令……”。而当“-게”直接修饰后项动词时（如“이해하게 설명하다”），则表示后项行为的目的或方式标准（“讲解得让大家能理解”）。",
+      "formation": "动词/形容词词干 + -게 하다（或 动词/形容词词干 + -게）",
+      "examples": [
+        {
+          "translation": "老师进行了细致的讲解，以便让学生们能够很好地理解作业。"
+        },
+        {
+          "translation": "妈妈每天都让我打扫卧室。"
+        },
+        {
+          "translation": "他试图让我接受他的决定。"
+        },
+        {
+          "translation": "我想制作一款能让孩子们更有创造性地思考的游戏。"
+        }
+      ]
+    },
+    "ko_하고나서_73": {
+      "title": "~고 나서 / ~하고 나서（在做完……之后、……之后才…… - 动作先后完成）",
+      "shortExplanation": "连接词尾组合，强调前项动作完全终结之后，才紧接着开启后项动作（“在做完……之后”、“……之后才……”）。",
+      "longExplanation": "“~고 나서”是由连接词尾“-고”与表示动作完结终了的辅助动词“나다”（加上“-아서”构成“나서”）组合而成的时序语法。它特别强调前后两个动作在时间顺序上的先后关系与前后独立性，即前项动作必须彻底完成、告一段落之后，后项动作才得以发生。相比于单纯表示并列先后接续的“-고”，它更鲜明地凸显了前项动作的“完结性”。",
+      "formation": "动词词干 + -고 나서（하다动词接 -하고 나서）",
+      "examples": [
+        {
+          "translation": "回家冲完澡之后，我就开始学习了。"
+        },
+        {
+          "translation": "我从学校回来做完作业之后，去见了朋友。"
+        },
+        {
+          "translation": "把食材细细切碎之后，才开始烹饪。"
+        },
+        {
+          "translation": "运动完之后，我简单冲了个澡然后吃了饭。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_일_59": {
+      "title": "~일 리가 없다 / ~(으)ㄹ 리가 없다（〜のはずがない、〜わけがない - 強い確信否定）",
+      "shortExplanation": "ある事態や可能性を強く否定し、そのようなことが起こるはずがない、道理に合わないと断定するときに用います（「〜のはずがない」「〜わけがない」）。",
+      "longExplanation": "「~(으)ㄹ 리가 없다」はある事実や推測の可能性を真っ向から否定・否認する表現です。「리（理）」は「道理、理由、筋道」を表す依存名詞であり、「-(으)ㄹ」に修飾されて「そのような筋合い・理由が一切ない」という意味を表します。日本語の「〜のはずがない」「〜わけがない」に相当します。過去の推量を否定する場合は「-았/었을 리가 없다」または「-(으)ㄹ 리가 없었다」を用います。類似の表現として「-(으)ㄹ 일이 없다（〜することはない、〜するわけがない）」も用いられます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 리가 없다（パッチムがある場合は -을 리가 없다、パッチムがない場合やㄹパッチムの場合は -ㄹ 리가 없다；名詞 + -일 리가 없다）",
+      "examples": [
+        {
+          "translation": "彼がそんなことをするなんて、あり得ません。そんなことをするはずがありません。"
+        },
+        {
+          "translation": "よく知っているあの人が嘘をつくはずがありません。"
+        },
+        {
+          "translation": "今日は忙しすぎて、映画を楽しむ余裕なんてありません。"
+        },
+        {
+          "translation": "こんな高い車を買うわけがありません。そんなにお金を持っていません。"
+        }
+      ]
+    },
+    "ko_일수록_60": {
+      "title": "~(으)ㄹ수록 / ~일수록（〜すればするほど、〜であるほど - 比例関係）",
+      "shortExplanation": "前項の行為や状態の程度が進むにつれて、それに伴って後項の程度も変化していく比例関係を表します（「〜すればするほど」「〜であるほど」）。",
+      "longExplanation": "「~(으)ㄹ수록」は、ある状態の深刻化や動作の反復・継続に伴い、それに比例して後項の結果や状態も強まることを表す接続語尾です。日本語の「〜ば〜ほど」「〜するほど」に相当します。後節には強調の副詞「더（もっと）」「더욱（さらに）」が呼応して用いられることが多く、条件を表す「-(으)면」と組み合わせて「-(으)면 -(으)ㄹ수록（〜すればするほど）」という強調パターンとしても頻繁に使われます。名詞の後には「일수록」が接続します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ수록（パッチムがある場合は -을수록、パッチムがない場合やㄹパッチムの場合は -ㄹ수록）；名詞 + 일수록",
+      "examples": [
+        {
+          "translation": "時間が経つにつれて彼への恋しさが募り、私たちは共に過ごした場所を訪れることになりました。"
+        },
+        {
+          "translation": "韓国語を練習すればするほど発音が良くなり、韓国の人たちも私の話をよりよく理解してくれるようになりました。"
+        },
+        {
+          "translation": "春巻きは揚げれば揚げるほどサクサクになって、美味しくなりました。"
+        },
+        {
+          "translation": "景気が悪化するほど人々の悩みが増え、進路をどう決めるべきか分からなくなります。"
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "~지 않을 테니(까)（〜しないだろうから、〜しないはずだから - 否定推量と安心・促し）",
+      "shortExplanation": "ある事態が起こらないという話し手の確信や見通しを理由として示し、聞き手を安心させたり行動を促したりするときに用います（「〜しないはずだから」「〜しないだろうから」）。",
+      "longExplanation": "「~지 않을 테니(까)」は長形否定の「-지 않다」に、話し手の推量や意図に基づく根拠・理由を表す接続構文「-(으)ㄹ 테니(까)」が結合した形です。話し手が「決して〜にはならない」「〜する心配はない」と強く予測・確信し、それを根拠にして相手の不安を和らげたり、落ち着いて行動するよう促したりする場面で使われます。後続節には勧誘・命令・依頼の表現が続くのが典型的です。",
+      "formation": "動詞・形容詞語幹 + -지 않을 테니(까)",
+      "examples": [
+        {
+          "translation": "ご飯は冷めないはずだから、ゆっくり来てください。"
+        },
+        {
+          "translation": "天気は暑くならないはずだから、今日は長袖を着る必要はないでしょう。"
+        },
+        {
+          "translation": "この問題はそれほど難しくないはずだから、心配しないでください。"
+        },
+        {
+          "translation": "彼は君を探したりしないはずだから、安心してください。"
+        }
+      ]
+    },
+    "ko_지만_62": {
+      "title": "~지만（〜けれど、〜が - 逆接・対比）",
+      "shortExplanation": "前節と後節の内容が対立したり逆接の関係にあることを表す代表的な接続語尾です（「〜けれど」「〜が」）。",
+      "longExplanation": "「~지만」は韓国語において最も基本的かつ頻繁に用いられる逆接の接続語尾です。前節で述べた事実や状態に対して、それと対照的な事柄や例外的な内容を後節で述べるときに使われます。日本語の「〜けれど」「〜が」「〜ですが」に相当します。過去形「-았/었지만」や意志・推量「-겠지만」とも自由に結合します。また、会話において「죄송하지만（申し訳ありませんが）」「실례지만（失礼ですが）」のように、前置きとして柔らかく本題を切り出す際にも重宝されます。",
+      "formation": "動詞・形容詞語幹 + -지만（過去形は -았/었지만）；名詞 + (이)지만",
+      "examples": [
+        {
+          "translation": "今日はお天気が良いですが、風が強すぎてピクニックに行くのは難しいです。"
+        },
+        {
+          "translation": "その映画は面白かったけれど、長すぎて退屈でした。"
+        },
+        {
+          "translation": "友達が冗談を言いましたが、誰も笑いませんでした。"
+        },
+        {
+          "translation": "その昼食は美味しかったですが、高すぎて二度と行きたくありません。"
+        }
+      ]
+    },
+    "ko_지_63": {
+      "title": "~지 않다 / ~지 못하다（〜しない / 〜できない - 意志否定と能力否定）",
+      "shortExplanation": "用言の長形否定表現です。「~지 않다」は単なる事実の否定や本人の意志による否定（「〜しない」）を表し、「~지 못하다」は能力不足や外的事情により不可能なこと（「〜できない」）を表します。",
+      "longExplanation": "用言の語幹の後ろにつく代表的な長形否定表現です。「~지 않다」は客観的な事実の否定や、主体が自分の意志で「〜しない」という場合、あるいは単に状態が存在しないことを表します。一方、「~지 못하다」は行為者に行動を起こす意志があるにもかかわらず、本人の能力不足や外部の障害・環境のせいで「〜できない」「〜しきれない」という状況を表します。なお、「-지 못하다」は主に動詞に付き、形容詞には一部の基準未達を表す慣用語を除いて原則接続しません。",
+      "formation": "動詞・形容詞語幹 + -지 않다（意志・単純否定）；動詞語幹 + -지 못하다（能力・状況否定）",
+      "examples": [
+        {
+          "translation": "私たちはそのレストランで気に入った料理を見つけることができませんでした。そのため、別のレストランを探してみることにしました。"
+        },
+        {
+          "translation": "その生徒はその問題を理解できなかったので、先生にもう一度質問しました。"
+        },
+        {
+          "translation": "今夜は遅くに帰宅しないつもりです。なぜなら、まだやるべきことがあるからです。"
+        },
+        {
+          "translation": "映画も観られず、本も読めませんでした。あまりにも忙しすぎました。"
+        }
+      ]
+    },
+    "ko_지_64": {
+      "title": "-(으)ㄴ 지 얼마나 되다（〜してからどれくらいになるか - 経過時間の確認）",
+      "shortExplanation": "過去にある動作を行ってから、あるいはある事態が生じてから現在に至るまでどれほどの時間が経過したかを尋ねたり述べたりします（「〜してからどれくらいになるか」）。",
+      "longExplanation": "「-(으)ㄴ 지 얼마나 되다」は過去連体形語尾「-(으)ㄴ」、時間の経過を表す形式名詞（依存名詞）「지」、そして「どれほど経つか」を意味する「얼마나 되다」が組み合わさった表現です。過去の動作を起点として、現在までに流れた時間の長さを問う際や説明する際によく用いられます。「지」の前は分かち書き（スペースを空ける）する必要がある点に注意が必要です（例：「온 지」「만난 지」）。",
+      "formation": "動詞語幹 + -(으)ㄴ 지 + 얼마나 되다（パッチムがある場合は -은 지、パッチムがない場合やㄹパッチムの場合は -ㄴ 지）",
+      "examples": [
+        {
+          "translation": "私たちが最後に会ってから、どれくらいの時間が経ちましたか。"
+        },
+        {
+          "translation": "君はソウルに来てからどれくらい経ったの？"
+        },
+        {
+          "translation": "その本を読んでからどれくらい経ちましたか。"
+        },
+        {
+          "translation": "私は韓国に来てからずいぶん経ちますが、今でも韓国語が難しいです。"
+        }
+      ]
+    },
+    "ko_지요죠_65": {
+      "title": "~지요 / ~죠（〜ですよね、〜でしょう - 確認・同意の求め）",
+      "shortExplanation": "話し手がすでに知っている事実について聞き手に確認したり、同意・共感を求めたりする終結語尾です（「〜ですよね」「〜でしょう」）。",
+      "longExplanation": "「~지요」（口語では縮約形の「~죠」が頻用される）は丁寧な親愛体（ヘヨ体）の終結語尾です。話し手がその事柄をすでに予想・認識しており、相手も同じ見解を持っているだろうという前提のもとで、念のための確認を行ったり同意を求めたりする際に使われます。文末のイントネーションを上げると疑問形「〜ですよね？」となり、下げると確信を持った親しみのある断定「〜ですよ」「〜ですよね」となります。",
+      "formation": "動詞・形容詞語幹 + -지요（縮約形：-죠）；名詞 + -(이)지요（縮約形：-(이)죠）",
+      "examples": [
+        {
+          "translation": "今日はお天気が本当に良いですね？"
+        },
+        {
+          "translation": "その映画、本当に面白かったですよね？"
+        },
+        {
+          "translation": "明日もここで会うんですよね？"
+        },
+        {
+          "translation": "このやり方で合っているみたいですよね？"
+        }
+      ]
+    },
+    "ko_쯤_66": {
+      "title": "~쯤（〜くらい、〜ごろ - 数量・時間の概数）",
+      "shortExplanation": "時間や数量、度量を表す名詞に付いて、おおよその数量や時点・目安を表す助詞です（「〜くらい」「〜ごろ」）。",
+      "longExplanation": "「~쯤」は体言の後ろに直接結びつき、厳密な数値ではなく概算の数値、時間帯、目安を表す助詞です。日本語の「〜くらい（程度）」「〜ごろ（時間）」に相当します。時間詞に付く場合は「내일쯤（明日ごろ）」「3시쯤（3時ごろ）」のように時点を表し、数量詞に付く場合は「한 시간쯤（1時間くらい）」「30명쯤（30人くらい）」のように分量を表します。助詞であるため前の語と分かち書きをせず続けて書きます。",
+      "formation": "名詞（数量詞、時間詞、単位名詞） + 쯤",
+      "examples": [
+        {
+          "translation": "飛行機が少なくとも3時間ほど遅延しそうなので心配です。"
+        },
+        {
+          "translation": "今日会社に30人ほどが出社したので、多くの仕事を受け持ちました。"
+        },
+        {
+          "translation": "彼はいつも1時間ほど早く来て準備をするので、他の人たちよりも常に早く終わります。"
+        },
+        {
+          "translation": "今週末に旅行を計画しているので、今日は1時間ほど早く退勤しようと思っています。"
+        }
+      ]
+    },
+    "ko_처럼_67": {
+      "title": "~처럼（〜のように、〜みたいに - 比喩・類似）",
+      "shortExplanation": "名詞の後ろに付き、その事物と姿形や性質、動作が似通っていることを表す助詞です（「〜のように」「〜みたいに」）。",
+      "longExplanation": "「~처럼」はある対象の様子や状態、行動が別の対象と極めてよく似ていることを比喩的に表す助詞です。日本語の「〜のように」「〜みたいに」に相当します。文中に副詞「마치（まるで）」を伴って「마치 名詞 + 처럼（まるで〜のように）」という形で生動感ある描写を強めることが多々あります。同義の助詞として「같이」があり、多くの場合言い換えが可能です。",
+      "formation": "名詞 + 처럼",
+      "examples": [
+        {
+          "translation": "彼女は蝶のように舞い踊りました。美しく軽やかに見えました。"
+        },
+        {
+          "translation": "彼はまるで世界的なテニス選手のように打ちました。彼の技術は本当にずば抜けていました。"
+        },
+        {
+          "translation": "あなたは天使のように親切です。いつも他人を助けようと努めていますね。"
+        },
+        {
+          "translation": "この彩りは庭の花々のように華やかです。実に生き生きとした色彩を持っています。"
+        }
+      ]
+    },
+    "ko_치고는_68": {
+      "title": "~치고는（〜にしては、〜の割には - 一般基準からの乖離・評価）",
+      "shortExplanation": "名詞の後ろに付き、その対象が属する一般的な基準や常識的な予想に照らし合わせて、意外な結果や評価であることを表します（「〜にしては」「〜の割には」）。",
+      "longExplanation": "「~치고는」は助詞「치고」に対比の補助詞「는」が付いた表現です。ある事物を一般的なカテゴリーの基準に当てはめてみたとき、常識的に予想される水準から外れて意外な良さ（あるいは悪さ）を示していることを表します。日本語の「〜にしては」「〜の割には」にそのまま合致します。例えば「子供にしては上手だ」のように、一般的な子供の水準を上回る例外的な驚きを表す際によく用いられます。",
+      "formation": "名詞 + 치고는",
+      "examples": [
+        {
+          "translation": "子供にしては絵を描く実力がとても卓越しています。"
+        },
+        {
+          "translation": "基礎クラスにしては難しすぎて、すべての学生が混乱してしまいました。"
+        },
+        {
+          "translation": "こんなに短い時間にしては多くの仕事を処理したことに驚かされます。"
+        },
+        {
+          "translation": "初心者にしては、あなたはかなり上手にやっています。"
+        }
+      ]
+    },
+    "ko_테니라고_69": {
+      "title": "~(으)ㄹ 테니까（〜するだろうから、〜するつもりだから - 推量・意向に基づく根拠）",
+      "shortExplanation": "話し手の強い推量や意志を理由・前提として提示し、聞き手に対して提案、勧誘、命令、依頼などを行うときに用います（「〜するだろうから」「〜するから」）。",
+      "longExplanation": "「~(으)ㄹ 테니까」は意図や予定・推量を表す「-(으)ㄹ 터」に理由の接続語尾「-(이)니까」が合わさった構文です。大きく分けて2つの使い方があります。(1) 話し手の確信的な推量を根拠にして相手に注意や安心、行動を促す場合（「〜するはずだから、〜してください」）；(2) 話し手自らの意志や行動を約束し、それを前提に相手に別の行動を求める場合（「私が〜するから、あなたは〜して」）。なお、見出しにある「~테니라고」は現代韓国語の文法としては非標準的であり、自然な標準形は「~(으)ㄹ 테니까」となります。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 테니까（パッチムがある場合は -을 테니까、パッチムがない場合やㄹパッチムの場合は -ㄹ 테니까）；名詞 + 일 테니까",
+      "examples": [
+        {
+          "translation": "あまりにも時間がかかる仕事だったので、私が自分でやってしまいました。下手に待っていては他の仕事まで滞ってしまうだろうと思ったのです。"
+        },
+        {
+          "translation": "勝つはずだから自信を持ってごらん。成功の秘訣は自信ですよ。"
+        },
+        {
+          "translation": "食べ過ぎては駄目だよ。消化がうまくできないだろうから注意しなきゃ。"
+        },
+        {
+          "translation": "そのお菓子は甘すぎて好きじゃない。甘すぎると歯が悪くなるだろうと思って食べなかった。"
+        }
+      ]
+    },
+    "ko_텐데_70": {
+      "title": "~(으)ㄹ 텐데（〜だろうに、〜はずなのに - 推量・仮定と背景提示）",
+      "shortExplanation": "話し手の強い推量や期待、反実仮想を前置きとして示し、それに反する現実や後続の状況を展開する接続語尾です（「〜だろうに」「〜のはずなのに」）。",
+      "longExplanation": "「~(으)ㄹ 텐데」は推量や意志を表す「-(으)ㄹ 터」に、背景や逆接・前置きを提示する「-ㄴ/은데」が結合した表現です。特に仮定の表現（「-(으)면」「-았/었더라면」）と呼応して過去の反実仮想「-았/었을 텐데（〜だっただろうに、〜したはずなのに）」の形で用いられ、「もし〜でなかったら大変なことになっていただろうに、幸いにも〜だった」という安堵や残念さを表す構文として頻出します。また、現在の状況を推測しつつ相手への気遣いや提案を述べる前置きとしても使われます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 텐데（過去の推量は -았/었을 텐데；パッチムがある場合は -을 텐데、パッチムがない場合やㄹパッチムの場合は -ㄹ 텐데）；名詞 + 일 텐데",
+      "examples": [
+        {
+          "translation": "今日あなたが来なかったら私は怒っていたでしょうに、幸いにもあなたが来てくれました。"
+        },
+        {
+          "translation": "見知らぬ人たちと話そうとしない性格だったら言語を学ぶのは難しかったでしょうに、幸いにも私はそういう人ではありません。"
+        },
+        {
+          "translation": "あなたが私に嘘をついていたら私は失望したでしょうに、幸いにもあなたは正直でした。"
+        },
+        {
+          "translation": "私があなたに出会えていなかったら韓国語を学ぶのが大変だったでしょうに、あなたのおかげで韓国語を上手に学ぶことができました。"
+        }
+      ]
+    },
+    "ko_토록_71": {
+      "title": "~토록 / ~도록 / ~(으)ㄹ 정도로（〜するほど、〜に至るまで - 程度・極限の強調）",
+      "shortExplanation": "動作や状態がある極限の度合いや時間的な限界点にまで達していることを強調して表します（「〜するほど」「〜に至るまで」）。",
+      "longExplanation": "「~토록」は文学的・強調的な響きを持つ接続語尾（または時間詞に付く助詞）で、ある行為や状態が極限の度合いに達したり、ある時点まで長く持続することを表します（例：「밤새도록 / 밤새토록 夜が明けるまで」「지치도록 疲れ果てるほど」）。日常会話や現代語法の解説においては、同義の語尾「-도록」や連体構文「-(으)ㄹ 정도로（〜するほどに、〜するくらいに）」と同等の程度表現として扱われ、後続節の事態を引き起こすほどの激しい水準を表します。",
+      "formation": "動詞・形容詞語幹 + -토록（または -도록 / -(으)ㄹ 정도로）；時間名詞 + 토록",
+      "examples": [
+        {
+          "translation": "彼の音楽を聴いた人々は皆、彼がどうやってあのような素晴らしい音楽を作れるのか理解できないほど彼の音楽に驚嘆しました。"
+        },
+        {
+          "translation": "建物があまりにも高くて、下を見るだけで体が震えるほどでした。"
+        },
+        {
+          "translation": "高校生の頃までは、数学の問題をすらすら解けるほど頭が良かったです。"
+        },
+        {
+          "translation": "その韓国語の本は難しすぎて、どの文章も理解できないほどです。"
+        }
+      ]
+    },
+    "ko_하게_72": {
+      "title": "~게 하다 / ~하게（〜させる、〜するようにする - 使役・促し・目的）",
+      "shortExplanation": "相手に特定の動作をさせたり（使役）、ある状態になるように仕向けたり、目的・方法を表したりする表現です（「〜させる」「〜するようにする」）。",
+      "longExplanation": "「~게 하다」は副詞形語尾「-게」に補助動詞「하다（する）」が結合した間接使役構文です。主語が対象に対して指示や働きかけを行い、その行為を実行させたり、特定の状態に至らしめたりすることを表します（日本語の「〜させる」「〜するように仕向ける」）。また、単独の「-게」の形で後続動詞を修飾する場合は（例：「이해하게 설명하다 理解できるように説明する」）、「〜するように」「〜するほどに」という目的や状態の様態を表す役割を果たします。",
+      "formation": "動詞・形容詞語幹 + -게 하다（または 動詞・形容詞語幹 + -게）",
+      "examples": [
+        {
+          "translation": "先生は生徒たちが宿題をよく理解できるように説明してくれました。"
+        },
+        {
+          "translation": "母は私に毎日寝室を掃除させました。"
+        },
+        {
+          "translation": "彼は私に自身の決定を受け入れさせようとしました。"
+        },
+        {
+          "translation": "私は子供たちがより創造的に考えられるようにするゲームを作りたいです。"
+        }
+      ]
+    },
+    "ko_하고나서_73": {
+      "title": "~고 나서 / ~하고 나서（〜してから、〜し終えた後で - 動作の完了と順序）",
+      "shortExplanation": "前項の動作が完全に終了した後に、引き続いて後項の動作を行うという時間的な順序を強調して表します（「〜してから」「〜し終えた後で」）。",
+      "longExplanation": "「~고 나서」は接続語尾「-고」に、動作の終了・完了を表す補助動詞「나다」の「-아서」形が合わさった表現です。前節の動作が完全に終わり、その区切りがついた段階で次の動作へと移行する時間的推移を明瞭に際立たせます。単なる動作の連続やつながりを表す「-고」に比べて、前項の動作が「完全に終わったこと」をより強く意識させる響きを持ちます。",
+      "formation": "動詞語幹 + -고 나서（하다動詞は -하고 나서 となる）",
+      "examples": [
+        {
+          "translation": "家に帰ってシャワーを浴びてから勉強を始めました。"
+        },
+        {
+          "translation": "私は学校から帰ってきた後、宿題を終えてから友達に会いました。"
+        },
+        {
+          "translation": "食材を細かく刻んでから調理を始めました。"
+        },
+        {
+          "translation": "運動を終えてから軽くシャワーを浴びてご飯を食べました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_일_59": {
+      "title": "~일 리가 없다 / ~(으)ㄹ 리가 없다 (강한 확신 부정 및 불가능)",
+      "shortExplanation": "어떤 일이나 상황이 일어날 가능성이 전혀 없거나 이치에 닿지 않는다고 강하게 부정할 때 씁니다 ('~할 리가 없다').",
+      "longExplanation": "'~(으)ㄹ 리가 없다'는 어떤 사실이나 상황의 가능성을 강하게 부인하고 거부할 때 사용하는 문형입니다. 의존명사 '리'는 '이치'나 '까닭'을 뜻하며, 앞선 내용이 일어날 만한 타당한 이유나 근거가 전혀 없음을 나타내어 '결코 그럴 가능성이 없다'는 화자의 확신에 찬 부정을 드러냅니다. 과거 사실에 대한 강한 부정은 '-았/었을 리가 없다'로 표현하며, 맥락에 따라 '-(으)ㄹ 일이 없다'(어떤 일이 일어날 이유나 경우가 없다)의 형태로 쓰이기도 합니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 리가 없다 (받침이 있으면 -을 리가 없다, 받침이 없거나 'ㄹ' 받침이면 -ㄹ 리가 없다; 명사 + -일 리가 없다)",
+      "examples": [
+        {
+          "translation": "그가 그런 일을 하다니, 그럴 수가 없어요. 그런 일을 할 리가 없어요."
+        },
+        {
+          "translation": "너무 잘 알고 있는 그 사람이 거짓말을 할 일이 없어요."
+        },
+        {
+          "translation": "오늘은 너무 바빠서 영화를 즐길 일이 없어요."
+        },
+        {
+          "translation": "이런 비싼 차를 살 일이 없어요, 돈이 그리 많지 않아요."
+        }
+      ]
+    },
+    "ko_일수록_60": {
+      "title": "~(으)ㄹ수록 / ~일수록 (비례 관계의 심화)",
+      "shortExplanation": "앞의 행동이나 상태의 정도가 더해짐에 따라 뒤의 결과나 현상도 비례하여 심화됨을 나타내는 연결어미입니다 ('~할수록').",
+      "longExplanation": "'~(으)ㄹ수록'은 어떤 일이나 상태의 정도가 깊어지거나 누적됨에 비례하여 뒤에 오는 상황이나 태도 역시 그만큼 더해짐을 나타내는 연결어미입니다. 흔히 뒤 절에 '더', '더욱'과 같은 부사와 호응하여 변화의 폭을 강조하며, 조건을 나타내는 어미와 결합한 '-(으)면 -(으)ㄹ수록' 형태로 쓰여 정도의 심화를 한층 뚜렷하게 부각하기도 합니다. 명사 뒤에는 '일수록'으로 결합합니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ수록 (받침이 있으면 -을수록, 받침이 없거나 'ㄹ' 받침이면 -ㄹ수록); 명사 + 일수록",
+      "examples": [
+        {
+          "translation": "시간이 갈수록 나는 그를 더 많이 그리워했습니다, 그래서 우리가 함께한 장소를 방문하게 되었어요."
+        },
+        {
+          "translation": "내가 한국어를 많이 연습할수록, 내 발음이 더 좋아져서 한국 사람들이 저를 더 잘 이해할 수 있었어요."
+        },
+        {
+          "translation": "스프링롤을 튀길수록, 그것들은 더욱 바삭바삭해져서 맛있어졌어요."
+        },
+        {
+          "translation": "경제가 더 나빠질수록 사람들의 고민이 더 많아져서 진로를 어떻게 결정해야 할지 모르겠어요."
+        }
+      ]
+    },
+    "ko_지_61": {
+      "title": "~지 않을 테니(까) (부정적 추측과 안심·당부)",
+      "shortExplanation": "어떤 일이 일어나지 않을 것이라는 화자의 확신에 찬 추측을 바탕으로, 상대방을 안심시키거나 권유·당부할 때 쓰는 연결 표현입니다 ('~하지 않을 테니까').",
+      "longExplanation": "'~지 않을 테니(까)'는 장형 부정 어미 '-지 않다'에 화자의 강한 추측이나 의지를 전제로 이유나 배경을 제시하는 '-(으)ㄹ 테니(까)'가 결합한 문형입니다. 화자가 특정 상황이 벌어지지 않을 것임을 확신하면서 이를 근거로 청자의 불안이나 염려를 덜어주고, 안심하고 행동하도록 권유하거나 당부할 때 즐겨 쓰입니다. 뒷문장에는 주로 권유, 청유, 명령형 문장이 자주 따릅니다.",
+      "formation": "동사/형용사 어간 + -지 않을 테니(까)",
+      "examples": [
+        {
+          "translation": "밥은 식지 않을 테니 천천히 오세요."
+        },
+        {
+          "translation": "날씨가 더워지지 않을 테니 오늘은 긴팔을 입을 필요가 없을 거예요."
+        },
+        {
+          "translation": "이 문제는 너무 어렵지 않을 테니 걱정하지 마세요."
+        },
+        {
+          "translation": "그는 너를 찾지 않을 테니 안심하세요."
+        }
+      ]
+    },
+    "ko_지만_62": {
+      "title": "~지만 (대조 및 상반된 사실 연결)",
+      "shortExplanation": "앞 절과 뒤 절의 내용이 서로 상반되거나 대조를 이룰 때 사용하는 대표적인 연결어미입니다 ('~하지만').",
+      "longExplanation": "'~지만'은 앞 절에서 제시한 사실이나 상황에 대하여, 뒤 절에서 그와 상반되거나 대조적인 내용 또는 예외적인 상황을 이어줄 때 쓰는 연결어미입니다. 한국어에서 가장 기본적이고 널리 쓰이는 대조 표현으로, 과거시제 선어말어미('-았/었-')나 추측·미래 시제('-겠-')와도 자유롭게 결합합니다. 또한 대화 상황에서 '죄송하지만', '실례지만'처럼 본론을 꺼내기 전 완곡한 양해를 구할 때도 두루 활용됩니다.",
+      "formation": "동사/형용사 어간 + -지만 (과거형은 -았/었지만); 명사 + (이)지만",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 좋지만 바람이 너무 많이 불어서 소풍 가기에는 힘들어요."
+        },
+        {
+          "translation": "그 영화가 재미있었지만 너무 길어서 지루했어요."
+        },
+        {
+          "translation": "친구가 농담을 했지만 아무도 웃지 않았어요."
+        },
+        {
+          "translation": "그 점심이 맛있었지만 너무 비싸서 다시 가기 싫어요."
+        }
+      ]
+    },
+    "ko_지_63": {
+      "title": "~지 않다 / ~지 못하다 (단순·의지 부정과 능력 부정)",
+      "shortExplanation": "용언 뒤에 붙는 긴 부정 표현으로, '~지 않다'는 단순 사실이나 의지에 따른 부정을, '~지 못하다'는 능력 부족이나 외부 사정으로 인한 불가능을 나타냅니다.",
+      "longExplanation": "'~지 않다'와 '~지 못하다'는 용언 어간 뒤에 연결되어 부정을 나타내는 대표적인 보조용언 구문(장형 부정)입니다. '~지 않다'는 주어의 주관적 의지에 의해 행동을 하지 않거나(의지 부정), 사물의 상태나 속성이 그러하지 않음을 단순 서술할 때 쓰입니다. 반면 '~지 못하다'는 주어의 하려는 의도가 있음에도 불구하고 능력의 부족이나 외적 조건의 방해 때문에 행동을 온전히 실현할 수 없을 때 쓰입니다. 대체로 형용사 뒤에는 '-지 않다'가 결합하며, '-지 못하다'는 동사와 주로 결합합니다.",
+      "formation": "동사/형용사 어간 + -지 않다 (의지/단순 부정); 동사 어간 + -지 못하다 (능력/상황 부정)",
+      "examples": [
+        {
+          "translation": "우리는 그 레스토랑에서 마음에 드는 음식을 찾지 못했어요, 그래서 다른 레스토랑을 찾아보기로 했어요."
+        },
+        {
+          "translation": "그 학생은 그 문제를 이해하지 못해서 선생님에게 또 질문했어요."
+        },
+        {
+          "translation": "오늘 밤에 늦게 집에 돌아오지 않을 거예요, 왜냐하면 아직 해야 할 일이 있기 때문이에요."
+        },
+        {
+          "translation": "영화도 보지 못하고, 책도 읽지 못했어요. 너무 바빴어요."
+        }
+      ]
+    },
+    "ko_지_64": {
+      "title": "-(으)ㄴ 지 얼마나 되다 (시간의 경과 표현)",
+      "shortExplanation": "과거에 어떤 동작이나 사건이 일어난 시점부터 지금까지 얼마만큼의 시간이 흘렀는지를 묻거나 나타낼 때 씁니다 ('~한 지 얼마나 되다').",
+      "longExplanation": "'-(으)ㄴ 지 얼마나 되다'는 과거 관형사형 어미 '-(으)ㄴ'에 시간의 경과를 나타내는 의존명사 '지', 그리고 시간의 분량을 묻는 '얼마나 되다'가 결합된 문형입니다. 과거의 특정한 행동이나 사건을 기점으로 하여 현재에 이르기까지 흐른 시간의 길이를 묻거나 표현할 때 쓰입니다. 이때 '지'는 동안을 나타내는 의존명사이므로 앞말과 반드시 띄어 써야 합니다(예: '온 지', '배운 지').",
+      "formation": "동사 어간 + -(으)ㄴ 지 + 얼마나 되다 (받침이 있으면 -은 지, 받침이 없거나 'ㄹ' 받침이면 -ㄴ 지)",
+      "examples": [
+        {
+          "translation": "우리가 마지막으로 만난 후 지난 시간이 얼마나 되었나요?"
+        },
+        {
+          "translation": "너는 서울에 온 지 얼마나 되었어?"
+        },
+        {
+          "translation": "그 책을 읽은 지 얼마나 되었나요?"
+        },
+        {
+          "translation": "저는 한국에 온 지 꽤 되었는데 아직도 한국말이 어렵습니다."
+        }
+      ]
+    },
+    "ko_지요죠_65": {
+      "title": "~지요 / ~죠 (동의 및 확인 요구)",
+      "shortExplanation": "화자가 이미 알고 있는 사실에 대해 상대방의 동의를 구하거나 재확인할 때 쓰는 친근한 종결어미입니다 ('~지요 / ~죠').",
+      "longExplanation": "'~지요'(구어에서는 주로 축약형인 '~죠'로 쓰임)는 상대방도 화자와 마찬가지로 그 사실을 알고 있을 것이라 생각하고, 그에 대한 동의를 구하거나 이미 알고 있는 바를 다정하게 확인할 때 쓰는 어말어미입니다. 의문문으로 끝을 올리면 상대방에게 다정하게 사실 여부를 되묻는 역할을 하며, 평서문으로 끝을 내리면 화자의 확신을 친근하고 부드럽게 전달하는 역할을 합니다.",
+      "formation": "동사/형용사 어간 + -지요 (줄임말: -죠); 명사 + -(이)지요 (줄임말: -(이)죠)",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 참 좋지요?"
+        },
+        {
+          "translation": "그 영화 정말 재미있었지요?"
+        },
+        {
+          "translation": "내일도 여기서 만나는 거죠?"
+        },
+        {
+          "translation": "이 방법이 맞는 것 같지요?"
+        }
+      ]
+    },
+    "ko_쯤_66": {
+      "title": "~쯤 (수량·시간의 어림)",
+      "shortExplanation": "수량이나 시간, 장소를 나타내는 명사 뒤에 붙어 대략의 정도나 기준을 어림잡음을 나타내는 보조사입니다 ('~쯤').",
+      "longExplanation": "'~쯤'은 수사나 단위를 나타내는 명사, 시간 명사 등의 뒤에 붙어 정확한 수치가 아닌 대략적인 수량, 정도, 시간 따위를 짐작하거나 어림할 때 쓰는 보조사입니다. '약'이나 '대략'과 같은 부사와 함께 쓰이기도 하며, 앞의 말에 붙여 씁니다(예: '한 시간쯤', '서른 명쯤', '내일쯤').",
+      "formation": "명사 (수량, 시간, 단위명사) + 쯤",
+      "examples": [
+        {
+          "translation": "비행기가 적어도 3시간쯤 지연될 것 같아요, 그래서 걱정이 돼요."
+        },
+        {
+          "translation": "우리는 오늘 회사에 서른 명쯤이 왔어요, 그래서 많은 일을 맡았어요."
+        },
+        {
+          "translation": "그는 항상 한 시간쯤 일찍 와서 준비를 해요, 그래서 다른 사람들보다 항상 더 빨리 끝나요."
+        },
+        {
+          "translation": "저는 이번 주말에 여행을 계획하고 있어서 오늘은 한 시간쯤 일찍 퇴근하려고 해요."
+        }
+      ]
+    },
+    "ko_처럼_67": {
+      "title": "~처럼 (모양·상태의 비유와 비교)",
+      "shortExplanation": "체언 뒤에 붙어 모양이나 태도, 속성이 그 대상과 거의 비슷함을 나타내는 격조사입니다 ('~처럼').",
+      "longExplanation": "'~처럼'은 명사 뒤에 결합하여 어떤 대상의 모양이나 상태, 움직임 등이 기준이 되는 사물과 유사함을 비유적으로 나타내는 격조사입니다. 흔히 앞서 '마치'와 같은 부사와 짝을 이루어 '마치 ~처럼' 형태로 비유의 생동감을 높이며, 같은 뜻을 가진 조사 '같이'와 바꾸어 쓸 수 있습니다.",
+      "formation": "명사 + 처럼",
+      "examples": [
+        {
+          "translation": "그녀는 나비처럼 춤을 추었습니다. 아름답고 가벼워 보였어요."
+        },
+        {
+          "translation": "그는 마치 세계적인 테니스 선수처럼 쳤어요. 그의 기술이 정말 뛰어났어요."
+        },
+        {
+          "translation": "당신은 천사처럼 친절해요. 항상 남을 도와주려고 노력하죠."
+        },
+        {
+          "translation": "이 장식은 정원의 꽃들처럼 화려합니다. 진짜로 생동감 넘치는 색을 가지고 있어요."
+        }
+      ]
+    },
+    "ko_치고는_68": {
+      "title": "~치고는 (일반적 기준에 대한 예외적 평가)",
+      "shortExplanation": "명사 뒤에 붙어, 그 대상이 속한 일반적인 통념이나 기준에 비추어 볼 때 뜻밖의 결과나 예외적인 양상을 띰을 나타내는 보조사 표현입니다 ('~치고는').",
+      "longExplanation": "'~치고는'은 보조사 '치고'에 대조를 나타내는 보조사 '는'이 덧붙은 형태입니다. 어떤 대상을 그것이 속한 일반적 범주나 보편적 기준에 비추어 보았을 때, 보통의 기대치와는 다르게 뜻밖의 결과가 나타남(예상보다 훨씬 뛰어나거나 혹은 반대로 미치지 못함)을 드러낼 때 씁니다. 대개 '어린이 치고는', '초보자 치고는'처럼 해당 범주의 평균을 넘어서는 의외성을 평가할 때 널리 쓰입니다.",
+      "formation": "명사 + 치고는",
+      "examples": [
+        {
+          "translation": "어린이 치고는 그림 그리는 실력이 아주 탁월해요."
+        },
+        {
+          "translation": "기초 수업 치고는 너무 어려워서 모든 학생들이 혼란스러웠어요."
+        },
+        {
+          "translation": "이렇게 짧은 시간 치고는 많은 일을 처리한 게 놀라워요."
+        },
+        {
+          "translation": "비록 초보자 치고는 당신이 상당히 잘하고 있어요."
+        }
+      ]
+    },
+    "ko_테니라고_69": {
+      "title": "~(으)ㄹ 테니까 (추측·의지에 따른 이유와 근거)",
+      "shortExplanation": "화자의 강한 추측이나 의지를 앞 절의 이유나 전제로 제시하고, 뒤 절에서 청자에게 행동을 권유·명령·당부할 때 씁니다 ('~할 테니까').",
+      "longExplanation": "'~(으)ㄹ 테니까'는 의도나 상태를 나타내는 의존명사 '터'에 관형사형 어미 '-(으)ㄹ', 그리고 이유를 나타내는 연결어미 '-(이)니까'가 결합된 표현입니다. 크게 두 가지로 쓰이는데, 첫째는 화자의 확실한 상황 추측을 근거로 삼아 상대방에게 당부나 조언을 건넬 때('~할 테니 안심해라')이고, 둘째는 화자 자신의 행동 의지를 밝히면서 상대방에게 특정 행위를 요구하거나 역할을 나눌 때('내가 할 테니 너는 쉬어라')입니다. (원문의 '~테니라고'는 현대 표준어 용법에 맞지 않으며, 올바른 표준 표현은 '~(으)ㄹ 테니까'입니다.)",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 테니까 (받침이 있으면 -을 테니까, 받침이 없거나 'ㄹ' 받침이면 -ㄹ 테니까); 명사 + 일 테니까",
+      "examples": [
+        {
+          "translation": "너무 오래 걸리는 일이라서 그냥 제가 했어요. 괜히 기다렸다가 다른 일에 지체될 테니까 생각했어요."
+        },
+        {
+          "translation": "이길 테니까 자신감을 가져보세요. 성공의 비결은 자신감이에요."
+        },
+        {
+          "translation": "너무 많이 먹으면 안 돼. 소화가 잘 안 될 테니까 주의해야 돼."
+        },
+        {
+          "translation": "그 과자는 너무 달아서 안 좋아. 너무 달면 이가 상할 테니까 생각해서 안 먹었어."
+        }
+      ]
+    },
+    "ko_텐데_70": {
+      "title": "~(으)ㄹ 텐데 (추측·가정과 배경 제시)",
+      "shortExplanation": "화자의 강한 추측이나 가상적 상황을 앞 절의 배경으로 제시하면서 뒤 절의 상반된 현실이나 이어지는 상황을 드러낼 때 씁니다 ('~할 텐데').",
+      "longExplanation": "'~(으)ㄹ 텐데'는 미래나 추측을 나타내는 의존명사 '터'에 관형사형 어미 '-(으)ㄹ', 그리고 배경이나 대조를 나타내는 연결어미 '-(으)ㄴ데'가 합쳐진 형태입니다. 주로 반대 상황을 가정한 조건문('-(으)면', '-았/었더라면')과 함께 쓰여 과거의 반실가상(사실과 반대되는 가정)에 대한 추측인 '-았/었을 텐데' 형태로 빈번하게 활용되며, '그렇게 되었더라면 ~했을 텐데 다행히도 ~했다'와 같은 안도감이나 아쉬움을 절절하게 나타냅니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 텐데 (과거 추측은 -았/었을 텐데; 받침이 있으면 -을 텐데, 받침이 없거나 'ㄹ' 받침이면 -ㄹ 텐데); 명사 + 일 텐데",
+      "examples": [
+        {
+          "translation": "오늘 당신이 오지 않았다면, 저는 화가 났을 텐데 다행히 당신이 왔어요."
+        },
+        {
+          "translation": "모르는 사람들하고 말을 하지 않으려고 했으면, 언어를 배우는 것이 어려웠을 텐데 다행히 내가 그런 사람이 아니에요."
+        },
+        {
+          "translation": "당신이 나에게 거짓말을 했다면, 나는 실망했을 텐데 다행히 당신은 솔직했어요."
+        },
+        {
+          "translation": "제가 당신을 만나지 못했다면, 한국어를 배우는 것이 어려웠을 텐데 당신 덕분에 한국어를 잘 배울 수 있었어요."
+        }
+      ]
+    },
+    "ko_토록_71": {
+      "title": "~토록 / ~도록 / ~(으)ㄹ 정도로 (정도 및 한계의 강조)",
+      "shortExplanation": "어떤 행동이나 상태가 특정한 한도나 시간에 이를 때까지 극진히 이어지거나, 심한 정도에 도달함을 강조하는 연결 표현입니다 ('~하도록', '~할 정도로').",
+      "longExplanation": "'~토록'은 동사·형용사 어간 뒤에 붙거나 시간 명사 뒤에 붙어, 어떤 상태나 행위가 어떤 시점까지 길게 이어짐을 나타내거나(예: '밤새도록/밤새토록', '지나도록/지나토록') 어떠한 결과가 빚어질 만큼 그 정도가 극에 달함을 강조하는 표현입니다. 흔히 구어와 문법 설명에서는 유사한 의미를 지닌 연결어미 '-도록'이나 관형사절 구성인 '-(으)ㄹ 정도로'와 통용되어, 뒤따르는 사건이나 감정의 깊이가 대단함을 드러낼 때 즐겨 쓰입니다.",
+      "formation": "동사/형용사 어간 + -토록 (또는 -도록 / -(으)ㄹ 정도로); 시간 명사 + 토록",
+      "examples": [
+        {
+          "translation": "그의 음악을 들어본 사람들은 모두 그가 어떻게 그런 멋진 음악을 만들 수 있는지를 이해하지 못할 정도로 그의 음악에 놀랐어요."
+        },
+        {
+          "translation": "건물이 너무 높아서 바닥을 볼 때 몸이 떨릴 정도였어요."
+        },
+        {
+          "translation": "고등학생 때까지는 수학 문제를 잘 풀 정도로 머리가 좋았어요."
+        },
+        {
+          "translation": "그 한국어 책이 너무 어려워서 아무런 문장도 이해하지 못할 정도예요."
+        }
+      ]
+    },
+    "ko_하게_72": {
+      "title": "~게 하다 / ~하게 (사동 및 행동 유도)",
+      "shortExplanation": "주어가 다른 대상에게 어떤 행동을 하도록 시키거나, 어떤 상태가 되도록 유도함을 나타내는 사동 및 목적 표현입니다 ('~하게 하다').",
+      "longExplanation": "'~게 하다'는 부사형 전성어미 '-게'에 보조동사 '하다'가 결합된 간접 사동 구문입니다. 주어가 목적어(대상)에게 영향력을 행사하여 특정한 행위를 하도록 명령·지시·허락하거나, 그러한 상태에 도달하도록 만들 때 쓰입니다. 또한 어미 '-게'가 뒤따르는 서술어를 직접 수식할 때에는(예: '이해하게 설명하다') 어떤 행위의 목적이나 기준, 방식('~하도록')을 나타내는 부사적 기능을 수행합니다.",
+      "formation": "동사/형용사 어간 + -게 하다 (또는 동사/형용사 어간 + -게)",
+      "examples": [
+        {
+          "translation": "선생님은 학생들이 숙제를 잘 이해하게 설명해 주었어요."
+        },
+        {
+          "translation": "엄마는 저에게 매일 침실을 청소하게 했어요."
+        },
+        {
+          "translation": "그는 저를 자신의 결정을 받아들이게 하려고 했어요."
+        },
+        {
+          "translation": "나는 어린이들이 더 창의적으로 생각하게 하는 게임을 만들고 싶어요."
+        }
+      ]
+    },
+    "ko_하고나서_73": {
+      "title": "~고 나서 / ~하고 나서 (행동의 완료와 순차적 진행)",
+      "shortExplanation": "앞 절의 행동이 완전히 끝난 뒤에 비로소 다음 행동이 순차적으로 이어짐을 강조하는 연결 표현입니다 ('~하고 나서').",
+      "longExplanation": "'~고 나서'는 연결어미 '-고'에 동작의 완료를 나타내는 보조동사 '나다'의 어서 형인 '나서'가 결합된 형태입니다. 앞선 행위가 완전히 종결되었음을 확인하고, 그 완료된 상태 위에서 다음 행위가 이루어짐을 시간 순서에 따라 분명하게 밝힙니다. 단순히 두 행위를 이어주는 '-고'에 비해 앞 행위의 '완결성'을 더욱 뚜렷하게 부각하는 특징이 있습니다.",
+      "formation": "동사 어간 + -고 나서 ('하다' 동사는 -하고 나서)",
+      "examples": [
+        {
+          "translation": "집에 와서 샤워하고 나서 공부를 시작했어요."
+        },
+        {
+          "translation": "저는 학교에서 돌아온 후에 숙제를 끝내고 나서 친구를 만났어요."
+        },
+        {
+          "translation": "음식을 잘게 썰고 나서 조리를 시작했습니다."
+        },
+        {
+          "translation": "운동하고 나서 가볍게 샤워하고 밥을 먹었어요."
+        }
+      ]
+    }
+  }
+}

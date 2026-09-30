@@ -195,8 +195,13 @@
                 <div class="level-progress-meta">
                     <span class="progress-hint">{{ progressToNext() }}% {{ i18n.t('gamification.toNextLevel') || 'to next level' }}</span>
                     <div class="next-level-target">
-                        <span>Lv.{{ userLevel() + 1 }}</span>
-                        <app-icon [name]="gamification.nextLevelIcon()" [size]="13" />
+                        @if (userLevel() < 50) {
+                            <span>Lv.{{ userLevel() + 1 }}</span>
+                            <app-icon [name]="gamification.nextLevelIcon()" [size]="13" />
+                        } @else {
+                            <span>MAX</span>
+                            <app-icon name="imperial-crown" [size]="13" />
+                        }
                     </div>
                 </div>
                 <div class="level-progress-track"
