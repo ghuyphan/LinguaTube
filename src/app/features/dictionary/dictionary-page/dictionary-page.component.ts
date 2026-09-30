@@ -33,7 +33,7 @@ import { WordLevel } from '../../../models';
           <div class="panel-header">
             <div class="panel-header__row">
               <div class="panel-header__left">
-                <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : (activeTab() === 'vocab' ? 'layers' : 'bookmark')" [size]="20" class="panel-header__icon" />
+                <app-icon [name]="activeTab() === 'dictionary' ? 'book-open' : (activeTab() === 'vocab' ? 'type' : 'sparkle-text')" [size]="20" class="panel-header__icon" />
                 <h2 class="panel-header__title">{{ activeTab() === 'dictionary' ? i18n.t('dictionary.title') : (activeTab() === 'vocab' ? (i18n.t('vocab.filterWords') || i18n.t('vocab.title')) : (i18n.t('grammar.grammar') || 'Grammar')) }}</h2>
               </div>
               @if (activeTab() !== 'dictionary') {
@@ -77,7 +77,7 @@ import { WordLevel } from '../../../models';
                   [attr.aria-label]="i18n.t('vocab.filterWords') || i18n.t('vocab.title')"
                   [title]="i18n.t('vocab.filterWords') || i18n.t('vocab.title')"
                 >
-                  <app-icon name="layers" [size]="14" />
+                  <app-icon name="type" [size]="14" />
                   <span>{{ i18n.t('vocab.filterWords') || i18n.t('vocab.title') }}</span>
                 </button>
                 <button 
@@ -90,7 +90,7 @@ import { WordLevel } from '../../../models';
                   [attr.aria-label]="i18n.t('grammar.grammar') || 'Grammar'"
                   [title]="i18n.t('grammar.grammar') || 'Grammar'"
                 >
-                  <app-icon name="bookmark" [size]="14" />
+                  <app-icon name="sparkle-text" [size]="14" />
                   <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
                 </button>
               </div>

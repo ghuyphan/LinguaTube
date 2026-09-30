@@ -344,7 +344,7 @@
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'vocab'" [class.active]="sidebarTab() === 'vocab'"
                     [title]="i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary')"
                     (click)="sidebarTab.set('vocab')">
-                    <app-icon name="book-open" [size]="13" />
+                    <app-icon name="type" [size]="13" />
                     <span class="tab-label">{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
                     @if (currentLangVocabCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
@@ -353,7 +353,7 @@
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'grammar'" [class.active]="sidebarTab() === 'grammar'"
                     [title]="i18n.t('grammar.grammar') || 'Grammar'"
                     (click)="sidebarTab.set('grammar')">
-                    <app-icon name="bookmark" [size]="13" />
+                    <app-icon name="sparkle-text" [size]="13" />
                     <span class="tab-label">{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
                     @if (currentLangGrammarCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangGrammarCount() }}</span>
@@ -386,7 +386,7 @@
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() !== 'grammar'" [class.active]="sidebarTab() !== 'grammar'"
                     [title]="i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary')"
                     (click)="sidebarTab.set('vocab')">
-                    <app-icon name="book-open" [size]="13" />
+                    <app-icon name="type" [size]="13" />
                     <span class="tab-label">{{ i18n.t('vocab.filterWords') || i18n.t('vocab.vocabulary') }}</span>
                     @if (currentLangVocabCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangVocabCount() }}</span>
@@ -395,7 +395,7 @@
                 <button class="segmented-tab" role="tab" [attr.aria-selected]="sidebarTab() === 'grammar'" [class.active]="sidebarTab() === 'grammar'"
                     [title]="i18n.t('grammar.grammar') || 'Grammar'"
                     (click)="sidebarTab.set('grammar')">
-                    <app-icon name="bookmark" [size]="13" />
+                    <app-icon name="sparkle-text" [size]="13" />
                     <span class="tab-label">{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
                     @if (currentLangGrammarCount() > 0) {
                     <span class="tab-count-pill">{{ currentLangGrammarCount() }}</span>

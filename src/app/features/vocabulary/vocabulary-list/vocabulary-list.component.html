@@ -4,7 +4,7 @@
     <div class="panel-header">
         <div class="panel-header__row">
             <div class="panel-header__left">
-                <app-icon [name]="effectiveType() === 'grammar' ? 'bookmark' : 'layers'" [size]="18" class="panel-header__icon" />
+                <app-icon [name]="effectiveType() === 'grammar' ? 'sparkle-text' : 'type'" [size]="18" class="panel-header__icon" />
                 <h3 class="panel-header__title">{{ displayTitle() }}</h3>
                 <span class="badge badge--primary">{{ displayCount() }}</span>
             </div>
@@ -63,7 +63,7 @@
                     class="filter-chip" 
                     [class.active]="selectedType() === 'grammar'"
                     (click)="selectedType.set('grammar')">
-                <app-icon name="bookmark" [size]="13" />
+                <app-icon name="sparkle-text" [size]="13" />
                 <span>{{ i18n.t('vocab.filterGrammar') || 'Grammar' }}</span>
                 <span class="chip-count">{{ typeCounts().grammar }}</span>
             </button>
@@ -130,7 +130,7 @@
         @if (displayCount() === 0) {
             @if (effectiveType() === 'grammar') {
             <app-empty-state
-                icon="bookmark"
+                icon="sparkle-text"
                 [title]="i18n.t('grammar.noGrammarSaved') || 'No grammar patterns saved yet'"
                 [description]="i18n.t('grammar.clickGrammarToSave') || 'Save grammar patterns while watching videos or browsing the dictionary to practice them here.'"
                 [compact]="isCompactEmptyState()"
@@ -142,7 +142,7 @@
             </app-empty-state>
             } @else {
             <app-empty-state
-                icon="layers"
+                icon="type"
                 [title]="i18n.t('vocab.noWordsSaved')"
                 [description]="i18n.t('vocab.clickWordsToSave')"
                 [compact]="isCompactEmptyState()"
@@ -244,7 +244,7 @@
     <div class="menu-sheet">
         <div class="menu-sheet__header">
             <div class="menu-sheet__title-box">
-                <app-icon name="layers" [size]="20" class="menu-sheet__header-icon" />
+                <app-icon [name]="effectiveType() === 'grammar' ? 'sparkle-text' : 'type'" [size]="20" class="menu-sheet__header-icon" />
                 <h3 class="menu-sheet__title">{{ i18n.t('vocab.options') }}</h3>
             </div>
         </div>

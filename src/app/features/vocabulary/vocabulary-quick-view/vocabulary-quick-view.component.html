@@ -2,7 +2,7 @@
     <div class="quick-view-modal">
         <div class="quick-view-modal__header">
             <div class="quick-view-modal__title-box">
-                <app-icon name="bookmark" [size]="20" class="quick-view-modal__icon" />
+                <app-icon name="type" [size]="20" class="quick-view-modal__icon" />
                 <h2 class="quick-view-modal__title">{{ i18n.t('study.recentlyAdded') }}</h2>
                 <span class="count-badge">{{ recentWords().length }}</span>
             </div>
@@ -10,7 +10,7 @@
 
         @if (recentWords().length === 0) {
         <app-empty-state
-            icon="bookmark"
+            icon="type"
             [title]="i18n.t('vocab.noWordsSaved')"
             [description]="i18n.t('study.tapWordsHint')"
             [compact]="true"

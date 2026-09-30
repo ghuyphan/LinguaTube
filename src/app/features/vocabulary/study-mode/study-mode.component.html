@@ -25,20 +25,20 @@
         @if (deckStats().total === 0) {
         <!-- Empty State when user has 0 items in selected deck -->
         <app-empty-state
-            [icon]="studyDeck() === 'grammar' ? 'bookmark' : 'cards'"
+            [icon]="studyDeck() === 'grammar' ? 'sparkle-text' : 'cards'"
             [iconSize]="32"
             [title]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammar') || 'No grammar patterns to study') : i18n.t('study.noWords')"
             [description]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammarHint') || 'Save grammar patterns while watching videos to build your review deck.') : i18n.t('study.noWordsHint')">
             <div class="empty-state__actions">
                 @if (studyDeck() === 'grammar' && deckCounts().words > 0) {
                 <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('words')">
-                    <app-icon name="layers" [size]="16" />
+                    <app-icon name="type" [size]="16" />
                     <span>{{ i18n.t('study.deckWords') }} ({{ deckCounts().words }})</span>
                 </button>
                 }
                 @if (studyDeck() === 'words' && deckCounts().grammar > 0) {
                 <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('grammar')">
-                    <app-icon name="bookmark" [size]="16" />
+                    <app-icon name="sparkle-text" [size]="16" />
                     <span>{{ i18n.t('study.deckGrammar') }} ({{ deckCounts().grammar }})</span>
                 </button>
                 }
@@ -61,7 +61,7 @@
                         class="study-deck-btn" 
                         [class.active]="studyDeck() === 'words'"
                         (click)="studyDeck.set('words')">
-                    <app-icon name="layers" [size]="16" />
+                    <app-icon name="type" [size]="16" />
                     <span>{{ i18n.t('study.deckWords') || 'Words' }}</span>
                     <span class="deck-count-pill">{{ deckCounts().words }}</span>
                 </button>
@@ -69,7 +69,7 @@
                         class="study-deck-btn" 
                         [class.active]="studyDeck() === 'grammar'"
                         (click)="studyDeck.set('grammar')">
-                    <app-icon name="bookmark" [size]="16" />
+                    <app-icon name="sparkle-text" [size]="16" />
                     <span>{{ i18n.t('study.deckGrammar') || 'Grammar' }}</span>
                     <span class="deck-count-pill">{{ deckCounts().grammar }}</span>
                 </button>
@@ -290,7 +290,7 @@
                             </span>
                             @if (vm.isGrammar) {
                             <span class="badge badge--grammar">
-                                <app-icon name="bookmark" [size]="10" />
+                                <app-icon name="sparkle-text" [size]="10" />
                                 <span>{{ vm.grammarLevel || (i18n.t('grammar.grammar') || 'Grammar') }}</span>
                             </span>
                             }
@@ -370,7 +370,7 @@
                             </span>
                             @if (vm.isGrammar) {
                             <span class="badge badge--grammar">
-                                <app-icon name="bookmark" [size]="10" />
+                                <app-icon name="sparkle-text" [size]="10" />
                                 <span>{{ vm.grammarLevel || (i18n.t('grammar.grammar') || 'Grammar') }}</span>
                             </span>
                             }
@@ -572,7 +572,7 @@
                     <span>{{ i18n.t('nav.watch') }}</span>
                 </a>
                 <a routerLink="/dictionary" [queryParams]="{ tab: 'vocab' }" class="btn btn-ghost btn-sm complete-nav-link">
-                    <app-icon name="layers" [size]="14" />
+                    <app-icon name="type" [size]="14" />
                     <span>{{ i18n.t('nav.vocab') }}</span>
                 </a>
             </div>
