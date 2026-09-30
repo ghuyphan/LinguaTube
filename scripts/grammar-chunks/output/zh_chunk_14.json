@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_O不没被叫让SV_198": {
+      "title": "Tân ngữ + 不 / 没 + 被 / 叫 / 让 + Chủ thể + Động từ (Thể phủ định của câu bị động)",
+      "shortExplanation": "Dạng phủ định của câu bị động trong tiếng Trung: phó từ phủ định '不' hoặc '没(有)' bắt buộc phải đặt TRƯỚC giới từ bị động ('被', '叫', '让'), tuyệt đối không đặt sau giới từ hay trước động từ.",
+      "longExplanation": "Trong tiếng Trung, khi muốn phủ định một câu bị động (câu chữ 被, 叫, 让), phó từ phủ định '不' (phủ định thói quen, ý chí hoặc trong tương lai) hoặc '没 / 没有' (phủ định hành động đã xảy ra trong quá khứ hoặc trạng thái hiện tại) bắt buộc phải đứng trước giới từ biểu thị bị động '被', '叫' hoặc '让'. Đây là quy tắc ngữ pháp cố định: không bao giờ được đặt từ phủ định sau '被/叫/让' hoặc ngay trước động từ chính (ví dụ không nói: ❌ 问题被没解决, mà phải nói: ✔️ 问题没被解决). Ngoài ra, các trợ động từ năng nguyện (能, 会, 想, 应该...) và phó từ chỉ thời gian cũng phải đặt trước '被/叫/让'. Tương đương với '... vẫn chưa bị/được...', '... không bị/được... bởi...' trong tiếng Việt.",
+      "formation": "Tân ngữ (Đối tượng chịu tác động) + 不 / 没(有) + 被 / 叫 / 让 + Chủ thể thực hiện + Động từ + Thành phần khác",
+      "examples": [
+        {
+          "translation": "Vấn đề vẫn chưa được giải quyết đâu."
+        }
+      ]
+    },
+    "zh_只有才_199": {
+      "title": "只有……，才…… (Chỉ khi... mới... - Câu phức điều kiện duy nhất)",
+      "shortExplanation": "Cặp liên từ biểu thị điều kiện cần và duy nhất: chỉ có thỏa mãn điều kiện ở vế trước thì mới có thể đạt được kết quả ở vế sau; tương đương với 'chỉ khi... mới...' trong tiếng Việt.",
+      "longExplanation": "Cấu trúc '只有……，才……' (zhǐyǒu…… cái……) là cấu trúc câu phức biểu thị điều kiện tất yếu (điều kiện cần duy nhất) trong tiếng Trung. '只有' (chỉ có, chỉ khi) đứng ở vế trước nhằm nhấn mạnh rằng điều kiện được đưa ra là điều kiện duy nhất không thể thiếu; '才' (mới) đứng trước vị ngữ của vế sau để dẫn ra kết quả, năng lực hoặc mục đích chỉ xuất hiện sau khi thỏa mãn điều kiện đó. Cần phân biệt với '只要……就……' (chỉ cần... là... - điều kiện đủ). Nếu không có '只有', kết quả ở vế sau hoàn toàn không thể thực hiện được.",
+      "formation": "只有 + Mệnh đề điều kiện duy nhất，(Chủ ngữ + ) 才 + Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Chỉ khi làm xong bài tập về nhà thì mới được xem ti vi."
+        }
+      ]
+    },
+    "zh_不仅也还而且_200": {
+      "title": "Chủ ngữ + 不仅……，也 / 还 / 而且…… (Không những... mà còn... - Cùng chủ ngữ)",
+      "shortExplanation": "Cấu trúc câu phức tăng tiến khi hai vế câu có CÙNG CHỦ NGỮ: chủ ngữ đứng trước '不仅', biểu thị ngoài hành động hay đặc điểm ở vế trước, đối tượng còn có thêm hành động hay đặc điểm ở vế sau.",
+      "longExplanation": "Cấu trúc 'Chủ ngữ + 不仅……，也 / 还 / 而且……' (bùjǐn…… yě/ hái/ érqiě……) dùng để diễn tả quan hệ tăng tiến về mặt ý nghĩa khi hai phân câu có cùng một chủ ngữ. Vì cùng chung chủ ngữ, vị trí của chủ ngữ bắt buộc phải đặt ở TRƯỚC liên từ '不仅' (Chủ ngữ + 不仅……). '不仅' (không những, không chỉ) nêu ra sự thực đầu tiên, còn các phó từ/liên từ ở vế sau như '也' (cũng), '还' (còn), '而且' (mà còn, hơn nữa) tiếp tục bổ sung thêm một sự thực hay mức độ cao hơn. Tương đương với 'không những... mà còn...', 'không chỉ... mà cũng...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 不仅 + Phân câu 1，也 / 还 / 而且 + Phân câu 2",
+      "examples": [
+        {
+          "translation": "Tôi không những đã xem phim Titanic mà còn xem cả phim Notting Hill nữa."
+        }
+      ]
+    },
+    "zh_不仅S1S2也_201": {
+      "title": "不仅 + Chủ ngữ 1……，Chủ ngữ 2 + 也 / 还…… (Không những Chủ ngữ 1... mà Chủ ngữ 2 cũng... - Khác chủ ngữ)",
+      "shortExplanation": "Cấu trúc câu phức tăng tiến khi hai vế câu có HAI CHỦ NGỮ KHÁC NHAU: liên từ '不仅' bắt buộc phải đứng TRƯỚC chủ ngữ 1, và phó từ '也' hoặc '还' đứng sau chủ ngữ 2.",
+      "longExplanation": "Cấu trúc '不仅 + Chủ ngữ 1……，Chủ ngữ 2 + 也……' biểu thị ý nghĩa tăng tiến, bao hàm đối tượng khi hai vế câu có hai chủ ngữ khác nhau. Đây là một quy tắc ngữ pháp rất quan trọng: khi chủ ngữ khác nhau, liên từ '不仅' (hoặc 不但) bắt buộc phải đứng ở ĐẦU CÂU (trước chủ ngữ 1). Nếu đặt sau chủ ngữ 1 sẽ bị sai ngữ pháp. Vế sau bắt đầu bằng chủ ngữ 2, theo sau là phó từ '也' (cũng) hoặc '还' (còn), đôi khi có thể đi kèm '而且'. Tương đương với 'Không những [người 1]... mà [người 2] cũng...' trong tiếng Việt.",
+      "formation": "不仅 + Chủ ngữ 1 + Vị ngữ 1，Chủ ngữ 2 + 也 / 还 + Vị ngữ 2",
+      "examples": [
+        {
+          "translation": "Không những Mark đã xem phim Notting Hill mà tôi cũng từng xem phim Notting Hill rồi."
+        }
+      ]
+    },
+    "zh_从来不V_202": {
+      "title": "从来不 + Động từ (Từ trước đến nay chưa bao giờ / Không bao giờ làm gì)",
+      "shortExplanation": "Dùng phó từ '从来不' (cónglái bù) trước động từ để biểu thị thói quen, nguyên tắc sống hoặc quy luật bền vững từ trước đến nay: không bao giờ làm một việc gì đó.",
+      "longExplanation": "Cấu trúc '从来不 + Động từ' kết hợp phó từ '从来' (từ trước tới nay, luôn luôn) và phó từ phủ định '不' để diễn tả một thói quen cố định, nề nếp sinh hoạt, nguyên tắc xử thế hoặc quy luật tự nhiên được duy trì nhất quán từ quá khứ cho đến hiện tại và tương lai. Nó nhấn mạnh việc 'không bao giờ làm' một hành động nào đó do ý chí hoặc thói quen cá nhân. Khác với '从来没……过' (phủ định kinh nghiệm đã từng xảy ra trong quá khứ), '从来不 + Động từ' dùng để phủ định tính quy luật và thói quen thường nhật. Tương đương với 'từ trước đến giờ không bao giờ...', 'chưa bao giờ...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Thời gian) + 从来不 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Buổi trưa tôi không bao giờ ngủ trưa cả."
+        }
+      ]
+    },
+    "zh_从来没VA过_203": {
+      "title": "从来没(有) + Động từ / Tính từ + 过 (Từ trước đến nay chưa từng... bao giờ)",
+      "shortExplanation": "Dùng phó từ '从来没(有)' kết hợp với trợ từ động thái '过' để biểu thị từ trước tới nay chưa từng trải qua hành động đó, hoặc chưa từng đạt tới trạng thái đó bao giờ.",
+      "longExplanation": "Cấu trúc '从来没(有) + Động từ / Tính từ + 过' (cóngláiméi…… guò) là cấu trúc phủ định kinh nghiệm tuyệt đối trong tiếng Trung. Khi đi với động từ, nó diễn tả một trải nghiệm chưa từng xảy ra dù chỉ một lần trong quá khứ tính đến thời điểm nói (ví dụ: 从来没吃过 - chưa từng ăn bao giờ, 从来没去过 - chưa từng đi bao giờ). Khi đi với tính từ (thường có đại từ chỉ mức độ như 这么, 那么 đi kèm), nó nhấn mạnh trạng thái từ trước đến nay chưa bao giờ đạt tới mức độ như vậy (ví dụ câu mẫu: 从来没这么高兴过 - chưa bao giờ vui như thế này). Tương đương với 'từ trước tới nay chưa từng... bao giờ' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 从来没(有) + Động từ / Tính từ + 过 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Bố mẹ anh ấy từ trước tới nay chưa từng vui mừng như thế này bao giờ."
+        }
+      ]
+    },
+    "zh_刚刚刚V_204": {
+      "title": "刚 / 刚刚 + Động từ (Phó từ thời gian: Vừa mới làm gì)",
+      "shortExplanation": "Phó từ '刚' hoặc '刚刚' (gāng / gānggang) đặt trước động từ để biểu thị hành động vừa mới xảy ra cách thời điểm nói không lâu theo cảm nhận chủ quan của người nói; 'vừa mới...'.",
+      "longExplanation": "Trong tiếng Trung, '刚' hoặc '刚刚' là phó từ chỉ thời gian, đứng ngay trước vị ngữ động từ để diễn đạt hành động vừa mới phát sinh hoặc hoàn thành cách đây không lâu. Điểm mấu chốt của '刚/刚刚' là tính tương đối theo nhận định chủ quan của người nói: khoảng thời gian đó không nhất thiết phải là vài phút hay vài giây, mà có thể là ngày hôm qua, tháng trước hay năm ngoái, miễn là người nói cảm thấy sự việc đó mới vừa diễn ra gần đây (ví dụ: 我上个月刚结婚 - Tôi tháng trước vừa mới kết hôn). Cần chú ý vị trí: là phó từ nên '刚/刚刚' chỉ đứng sau chủ ngữ và trước động từ (không được đứng ở đầu câu như danh từ thời gian '刚才').",
+      "formation": "Chủ ngữ + (Thời gian) + 刚 / 刚刚 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tháng trước tôi vừa mới kết hôn."
+        }
+      ]
+    },
+    "zh_刚VDURATION_205": {
+      "title": "Chủ ngữ + 刚 + Động từ + Cụm từ chỉ thời lượng (Mới làm gì được bao lâu)",
+      "shortExplanation": "Cấu trúc kết hợp phó từ '刚' với động từ và cụm từ chỉ thời lượng (khoảng thời gian) để nhấn mạnh khoảng thời gian hành động diễn ra là rất ngắn theo cảm nhận của người nói; 'mới... được [thời gian]'.",
+      "longExplanation": "Cấu trúc '刚 + Động từ + Cụm từ chỉ thời lượng' dùng để diễn tả một hành động, sự việc hoặc trạng thái bắt đầu diễn ra và kéo dài cho tới nay mới chỉ được một khoảng thời gian ngắn. Ở đây, phó từ '刚' (mới) kết hợp với bổ ngữ thời lượng (như 一个月, 三天, 半年) nhằm nhấn mạnh tính ngắn ngủi, non nớt hoặc mới bắt đầu của sự việc theo góc nhìn của người nói. Ví dụ trong câu '他刚来一个月' (Anh ấy mới đến được một tháng), người nói hàm ý rằng một tháng là thời gian ngắn, chưa lâu. Tương đương với 'mới... được bao lâu' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 刚 + Động từ + (Tân ngữ) + Cụm từ chỉ thời lượng",
+      "examples": [
+        {
+          "translation": "Anh ấy mới đến đây được một tháng thôi."
+        }
+      ]
+    },
+    "zh_刚才_206": {
+      "title": "刚才 (Danh từ thời gian: Vừa nãy / Lúc nãy / Ban nãy)",
+      "shortExplanation": "Danh từ chỉ thời gian '刚才' (gāngcái) biểu thị khoảng thời gian vừa mới trôi qua trước thời điểm nói chỉ vài giây hoặc vài phút; 'vừa nãy', 'lúc nãy'.",
+      "longExplanation": "Từ '刚才' trong tiếng Trung là một danh từ chỉ thời gian (chứ không phải phó từ). Nó chỉ khoảng thời gian ngắn khách quan ngay trước thời điểm nói (thường chỉ vài phút hoặc chốc lát trước đó). Vì là danh từ thời gian nên '刚才' có các đặc điểm ngữ pháp đặc thù: (1) Có thể đứng trước chủ ngữ hoặc sau chủ ngữ (ví dụ: 刚才我收到... hoặc 我刚才收到...); (2) Có thể kết hợp với giới từ (như 比刚才好多了); (3) Có thể làm định ngữ bổ nghĩa cho danh từ khác khi thêm '的' (ví dụ: 刚才的事 - chuyện lúc nãy). Cần phân biệt rõ với phó từ '刚': '刚' có thể chỉ khoảng thời gian dài nếu người nói cảm thấy ngắn (như năm ngoái), còn '刚才' bắt buộc phải là thời gian vật lý thực tế vừa trôi qua cách đây ít phút. Tương đương với 'vừa nãy', 'lúc nãy' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 刚才 (+ Chủ ngữ) + Vị ngữ (Động từ / Tính từ)",
+      "examples": [
+        {
+          "translation": "Vừa nãy tôi nhận được một bức thư điện tử."
+        }
+      ]
+    },
+    "zh_即使也_207": {
+      "title": "即使……，也…… (Cho dù... cũng... - Câu phức nhượng bộ giả thiết)",
+      "shortExplanation": "Cặp liên từ biểu thị quan hệ nhượng bộ giả thiết: vế trước dùng '即使' để lùi một bước nêu ra tình huống giả định (thường là khắc nghiệt, cực đoan), vế sau dùng '也' để khẳng định kết quả hoặc hành động vẫn không thay đổi.",
+      "longExplanation": "Cấu trúc '即使……，也……' (jíshǐ…… yě……) là dạng câu ghép nhượng bộ giả thiết rất thông dụng trong tiếng Trung. '即使' (cho dù, ngay cả khi) đặt ở vế trước nhằm đưa ra một giả thiết mang tính nhượng bộ cực đoan hoặc tình huống không thuận lợi; phó từ '也' (vẫn, cũng) đặt trước vị ngữ của vế sau để nhấn mạnh rằng trong bất kỳ hoàn cảnh nào, quyết định, quy luật hoặc kết quả nêu ra vẫn hoàn toàn không bị lay chuyển hay thay đổi. Kết cấu này có thể dùng cho cả tình huống giả định chưa xảy ra lẫn sự thật được thừa nhận để nhượng bộ. Tương đương với 'cho dù... vẫn...', 'ngay cả khi... thì cũng...' trong tiếng Việt.",
+      "formation": "即使 + Mệnh đề nhượng bộ giả thiết，(Chủ ngữ + ) 也 + Mệnh đề chính",
+      "examples": [
+        {
+          "translation": "Cho dù mùa đông rất lạnh, anh ấy vẫn chạy bộ ở sân vận động mỗi ngày."
+        }
+      ]
+    },
+    "zh_在N上_208": {
+      "title": "(在) + Danh từ + 上 (Về mặt... / Xét về phương diện...)",
+      "shortExplanation": "Cụm giới từ '(在)……上' kết hợp với danh từ trừu tượng để chỉ ra phạm vi, góc độ, phương diện hoặc lĩnh vực đang được bàn luận; 'về mặt...', 'xét về phương diện...'.",
+      "longExplanation": "Cấu trúc '(在) + Danh từ + 上' (zài…… shàng) là cách diễn đạt phổ biến dùng để giới hạn phạm vi hoặc phương diện thảo luận trong tiếng Trung. Khi danh từ đứng giữa là một danh từ trừu tượng (như 爱好 - sở thích, 工作 - công việc, 学习 - học tập, 思想 - tư tưởng, 生活 - đời sống, 经济 - kinh tế), cụm này mang ý nghĩa 'xét về phương diện...', 'trên phương diện/lĩnh vực...'. Trong khẩu ngữ thông thường, giới từ '在' có thể được lược bỏ (chỉ còn 'Danh từ + 上', ví dụ: 工作上, 爱好上). Cụm giới từ này thường đứng ở đầu câu làm trạng ngữ định hướng chủ đề cho cả câu, theo sau thường có dấu phẩy. Tương đương với 'về phương diện...', 'về mặt...' trong tiếng Việt.",
+      "formation": "(在 + ) Danh từ trừu tượng + 上，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Về mặt sở thích, tôi giống mẹ tôi hơn."
+        }
+      ]
+    },
+    "zh_正好_209": {
+      "title": "正好 (Tính từ / Phó từ: Vừa vặn / Đúng lúc / Vừa khéo)",
+      "shortExplanation": "Từ '正好' (zhènghǎo) dùng làm tính từ mang nghĩa kích cỡ, số lượng, mức độ 'vừa vặn, vừa khéo'; hoặc làm phó từ mang nghĩa hành động diễn ra 'đúng lúc, vừa vặn gặp dịp'.",
+      "longExplanation": "Từ '正好' trong tiếng Trung có hai chức năng ngữ pháp chủ yếu: (1) Làm tính từ vị ngữ: miêu tả kích thước, số lượng, thời gian, nhiệt độ hay mức độ đạt tới trạng thái chuẩn xác, hoàn hảo, không thừa không thiếu, không to không nhỏ (như ví dụ câu mẫu: 衣服大小正好 - Quần áo kích cỡ vừa vặn; hoặc 这双鞋不大不小，正好); (2) Làm phó từ: biểu thị thời điểm xảy ra sự việc là vừa đúng lúc, tình cờ gặp dịp thuận lợi (ví dụ: 我正好要找你 - Tôi vừa khéo đang định tìm bạn; 正好有空 - vừa vặn rảnh rỗi). Cần phân biệt với '刚' (nhấn mạnh thời gian ngắn) và '恰好'. Tương đương với 'vừa vặn', 'vừa khéo', 'đúng chuẩn' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Kích cỡ / Số lượng / Thời gian...) + 正好",
+      "examples": [
+        {
+          "translation": "Kích cỡ quần áo vừa vặn lắm."
+        }
+      ]
+    },
+    "zh_V得正好_210": {
+      "title": "Chủ ngữ + Động từ + 得正好 (Đến / làm gì thật đúng lúc, thật vừa khéo)",
+      "shortExplanation": "Dùng '得正好' làm bổ ngữ trạng thái sau động từ để biểu thị hành động diễn ra vào một thời điểm vô cùng lý tưởng, thuận tiện hoặc kịp thời; '... thật đúng lúc'.",
+      "longExplanation": "Cấu trúc 'Động từ + 得正好' (V de zhènghǎo) là cấu trúc vị ngữ mang bổ ngữ trạng thái/tình thái rất đặc trưng trong khẩu ngữ tiếng Trung. Trong đó, trợ từ kết cấu '得' kết nối động từ chính với tính từ '正好' (vừa vặn, đúng lúc) để miêu tả và đánh giá thời cơ hoặc trạng thái thực hiện của hành động đó. Động từ thường gặp nhất là '来' (như câu mẫu: 你来得正好 - Bạn đến thật đúng lúc), '赶' (赶得正好 - kịp đến thật khéo), '碰' (碰得正好 - gặp gỡ thật khéo). Cấu trúc này bộc lộ cảm xúc vui mừng, hoan nghênh của người nói khi hành động của đối phương diễn ra ngay tại thời điểm tối ưu nhất để giải quyết vấn đề hoặc tham gia vào một việc gì đó.",
+      "formation": "Chủ ngữ + Động từ + 得正好",
+      "examples": [
+        {
+          "translation": "Bạn đến thật là đúng lúc."
+        }
+      ]
+    },
+    "zh_NN差不多_211": {
+      "title": "Danh từ 1 + 和 / 跟 + Danh từ 2 + 差不多 (Hai sự vật xấp xỉ nhau / gần như nhau)",
+      "shortExplanation": "Dùng tính từ '差不多' (chàbuduō) làm vị ngữ so sánh giữa hai đối tượng hoặc thuộc tính: biểu thị hai bên rất giống nhau, mức độ khác biệt là cực kỳ nhỏ; 'gần như nhau', 'xêm xêm nhau'.",
+      "longExplanation": "Cấu trúc 'Danh từ 1 + 和 / 跟 + Danh từ 2 + 差不多' dùng để so sánh sự tương đồng giữa hai sự vật, người hoặc đặc tính. Trong cấu trúc này, '差不多' đóng vai trò là một tính từ làm vị ngữ ở cuối câu, có nghĩa là 'không sai khác bao nhiêu', 'xấp xỉ bằng nhau', 'gần như nhau'. Cấu trúc có thể so sánh trực tiếp hai danh từ (như: 这两辆车差不多 - Hai chiếc xe này gần như nhau) hoặc so sánh một thuộc tính cụ thể của hai sự vật (như câu mẫu: 这辆车的颜色和那辆车的颜色差不多 - Màu sắc của xe này và màu sắc của xe kia gần như giống nhau). Tương đương với '... và ... xấp xỉ nhau', '... tương đương nhau' trong tiếng Việt.",
+      "formation": "Danh từ 1 + 和 / 跟 + Danh từ 2 + 差不多 (hoặc: Danh từ 1 + 和 + Danh từ 2 + 的 + Đặc điểm + 差不多)",
+      "examples": [
+        {
+          "translation": "Màu của chiếc xe này và màu của chiếc xe kia gần như giống nhau."
+        }
+      ]
+    },
+    "zh_差不多_212": {
+      "title": "差不多 + Số từ + Lượng từ (Phó từ ước lượng: Khoảng / Xấp xỉ / Gần như...)",
+      "shortExplanation": "Phó từ '差不多' (chàbuduō) đứng trước số từ và lượng từ hoặc biểu thức số lượng để ước lượng con số xấp xỉ; tương đương với 'khoảng', 'xấp xỉ', 'gần bằng' trong tiếng Việt.",
+      "longExplanation": "Khi đứng trước một cụm số lượng (Số từ + Lượng từ + Danh từ), '差不多' đóng vai trò là một phó từ chỉ số lượng ước lượng. Nó biểu thị số lượng thực tế xấp xỉ bằng hoặc suýt soát đạt tới con số được nêu ra (có thể hơi ít hơn một chút hoặc xấp xỉ mức đó). Ví dụ trong câu mẫu: '这台电脑差不多5000块' (Chiếc máy tính này khoảng 5.000 tệ). Cấu trúc này dùng rất phong phú để ước lượng giá cả, tuổi tác, thời gian, khoảng cách, trọng lượng hay số lượng người/đồ vật. Tương đương với 'khoảng chừng...', 'xấp xỉ...', 'gần...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Vị ngữ + ) 差不多 + Số từ + Lượng từ (+ Danh từ)",
+      "examples": [
+        {
+          "translation": "Chiếc máy tính này giá khoảng 5.000 tệ."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_O不没被叫让SV_198": {
+      "title": "目的語 ＋ 不 / 没 ＋ 被 / 叫 / 让 ＋ 動作主 ＋ 動詞（受け身文の否定形）",
+      "shortExplanation": "中国語の受身文（被字句など）における否定形式です。否定副詞「不」または「没(有)」は必ず受身介詞「被 / 叫 / 让」の直前に置き、「〜によって…されていない / …されない」という意味を表します。",
+      "longExplanation": "中国語の受身文（「被」「叫」「让」を用いた文）を否定文にする際、否定副詞の「不」（習慣・意図・将来の否定）や「没(有)」（過去の事実・現在の完了の否定）は、必ず介詞「被/叫/让」の『前』に置かなければならないという厳格な規則があります。介詞の後ろや動詞の直前に否定詞を置くことは文法的に誤りです（❌ 问题被没解决 ではなく ✔️ 问题没被解决）。能願動詞（助動詞）や時間副詞（已经、还など）も同様に「被」の前に置かれます。日本語の「〜に…されていない」「まだ〜によって…されていない」に相当します。",
+      "formation": "目的語（受け手） ＋ 不 / 没(有) ＋ 被 / 叫 / 让 ＋ (動作主) ＋ 動詞 ＋ 他の成分",
+      "examples": [
+        {
+          "translation": "問題はまだ解決されていませんよ。"
+        }
+      ]
+    },
+    "zh_只有才_199": {
+      "title": "只有……，才……（必要条件の複文：〜してこそ初めて…・〜でなければ…ない）",
+      "shortExplanation": "前節で唯一不可欠な必要条件（〜してこそ、〜のみが）を提示し、後節でその条件が満たされて初めて結果が得られること（初めて…できる）を表す必要条件の接続表現です。",
+      "longExplanation": "「只有……，才……」（zhǐyǒu…… cái……）は、必要条件（唯一の条件）を表す中国語の代表的な呼応構文です。「只有」は前節に置かれ、「その条件だけが唯一の前提であり、他にはない」という必要条件を限定的に提示します。後節では副詞「才」（初めて〜できる）を述語の前に置き、その条件を満たして初めて結果・行動が実現することを導きます。「只要……就……」（十分条件：〜しさえすれば…だ）とは明確に区別され、「只有」の条件が満たされなければ後節の事態は決して成立しません。日本語の「〜してこそ初めて…できる」「〜でなければ…できない」に相当します。",
+      "formation": "只有 ＋ 必要条件節，(主語 ＋ ) 才 ＋ 結果節",
+      "examples": [
+        {
+          "translation": "宿題をやり終えて初めて、テレビを見ることができます。"
+        }
+      ]
+    },
+    "zh_不仅也还而且_200": {
+      "title": "主語 ＋ 不仅……，也 / 还 / 而且……（同一主語の累加・漸進複文：〜だけでなく…も）",
+      "shortExplanation": "2つの節が同一の主語を持つ漸進（累加）の複文表現です。主語を「不仅」の前に置き、「〜だけでなく、さらに…も」と事態や性質を重ねて述べます。",
+      "longExplanation": "「不仅……，也/还/而且……」（bùjǐn…… yě/ hái/ érqiě……）は、前節で述べた事柄にとどまらず、後節でさらに範囲や程度を広げる漸進複文（累加表現）の基本構文です。前後2つの節が『同じ主語』を共有する場合、主語は必ず接続詞「不仅」の『前』に置かれます（主語 ＋ 不仅……）。後節では副詞の「也」（〜も）、「还」（さらに、また）や接続詞「而且」（その上、しかも）と呼応させて累加のニュアンスを表します。日本語の「〜は…だけでなく、〜もまた…だ」に相当します。",
+      "formation": "主語 ＋ 不仅 ＋ 節1，也 / 还 / 而且 ＋ 節2",
+      "examples": [
+        {
+          "translation": "私は『タイタニック』を見たことがあるだけでなく、『ノッティングヒルの恋人』も見たことがあります。"
+        }
+      ]
+    },
+    "zh_不仅S1S2也_201": {
+      "title": "不仅 ＋ 主語1……，主語2 ＋ 也 / 还……（異主語の累加・漸進複文：〜だけでなく…もまた〜）",
+      "shortExplanation": "2つの節が異なる主語を持つ漸進（累加）の複文表現です。接続詞「不仅」は必ず主語1の『前（文頭）』に置き、主語2の後に「也」や「还」を伴います。",
+      "longExplanation": "「不仅 ＋ 主語1……，主語2 ＋ 也……」は、前後の節で主語が異なる場合に用いられる漸進複文の重要構文です。中国語の厳格な文法規則として、前後の節で主語が異なる場合、接続詞「不仅」（または「不但」）は必ず文頭、すなわち主語1の直前に置かなければなりません（❌ 主語1 ＋ 不仅…… ではなく ✔️ 不仅 ＋ 主語1……）。後節では主語2の直後に副詞「也」（〜もまた）や「还」を置いて呼応させます。日本語の「〜だけでなく、…もまた〜だ」に相当します。",
+      "formation": "不仅 ＋ 主語1 ＋ 述語1，主語2 ＋ 也 / 还 ＋ 述語2",
+      "examples": [
+        {
+          "translation": "マークが『ノッティングヒルの恋人』を見たことがあるだけでなく、私も『ノッティングヒルの恋人』を見たことがあります。"
+        }
+      ]
+    },
+    "zh_从来不V_202": {
+      "title": "从来不 ＋ 動詞（副詞：これまで一度も〜しない・決して〜しない・習慣の否定）",
+      "shortExplanation": "副詞「从来不」（cónglái bù）を動詞の前に置き、過去から現在に至るまでの一貫した習慣・信条・規則として「決して〜しない」「いつも〜しない」ことを表します。",
+      "longExplanation": "「从来不 ＋ 動詞」は、「これまでずっと〜しない」「決して〜しない」という話者の確固たる習慣、生活習慣、信条、または不変の規律を否定する表現です。「从来」（従来・これまで）と現在・未来・恒常的な事態を否定する「不」が結びつき、過去から現在に至るまで一貫してその動作を行わないことを表します。過去の経験の有無を否定する「从来没……过」（一度も〜したことがない）とは異なり、「从来不」は日頃の習慣や本人の意志・ポリシーとしての「不実行」を強調します。日本語の「いつも〜しない」「これまで決して〜しないことにしている」に相当します。",
+      "formation": "主語 ＋ (時間) ＋ 从来不 ＋ 動詞 (＋ 目的語)",
+      "examples": [
+        {
+          "translation": "私は昼には決して昼寝をしません。"
+        }
+      ]
+    },
+    "zh_从来没VA过_203": {
+      "title": "从来没(有) ＋ 動詞 / 形容詞 ＋ 过（副詞：これまで一度も〜したことがない・かつてこれほど〜だったことはない）",
+      "shortExplanation": "「从来没(有)」と動態助詞「过」を呼応させ、過去から現在に至るまでの過去の経験を全否定したり、ある状態に達したことがかつて一度もないことを表します。",
+      "longExplanation": "「从来没(有) ＋ 動詞/形容詞 ＋ 过」（cóngláiméi…… guò）は、過去の経験の全盤否定を表す代表的な構文です。動詞と結びつく場合、過去から現在に至るまでその動作・体験が一度も生じたことがないこと（「一度も〜したことがない」）を表します。また、形容詞（多くは「这么」「那么」などの程度表現を伴う）と結びつく場合、これまでの生涯や歴史の中でこれほどの状態・感情に達したことがかつてないこと（「かつてこれほど〜だったことはない」）を強調します。習慣の否定を表す「从来不」と対比されます。日本語の「これまで一度も〜したことがない」「かつてこれほど〜したことはない」に相当します。",
+      "formation": "主語 ＋ 从来没(有) ＋ 動詞 / 形容詞 ＋ 过 (＋ 目的語)",
+      "examples": [
+        {
+          "translation": "彼のご両親は、これまでこれほど喜んだことは一度もありませんでした。"
+        }
+      ]
+    },
+    "zh_刚刚刚V_204": {
+      "title": "刚 / 刚刚 ＋ 動詞（時間副詞：〜したばかり・たった今〜した）",
+      "shortExplanation": "時間副詞「刚」または「刚刚」を動詞の前に置き、動作や変化が起きてから時間があまり経っていないこと（話者の主観的判断を含む）を表します（「〜したばかりだ」）。",
+      "longExplanation": "「刚 / 刚刚 ＋ 動詞」（gāng / gānggang）は、動作が完了または発生してから間もないことを表す時間副詞です。「刚」の大きな特徴は、話者の主観的な時間感覚に基づく点にあります。客観的な時間の長短に関わらず、話者が「最近のことだ」「つい先日のことだ」と感じていれば、数分前だけでなく先月や昨年起きた事柄に対しても用いることができます（例：我上个月刚结婚＝先月結婚したばかりだ）。文法上の位置として副詞であるため、必ず主語の後ろ・動詞の前に置かれ、文頭に置くことはできません（時間名詞の「刚才」との相違点）。日本語の「〜したばかり」「たった今〜した」に相当します。",
+      "formation": "主語 ＋ (時間) ＋ 刚 / 刚刚 ＋ 動詞 (＋ 目的語)",
+      "examples": [
+        {
+          "translation": "私は先月結婚したばかりです。"
+        }
+      ]
+    },
+    "zh_刚VDURATION_205": {
+      "title": "刚 ＋ 動詞 ＋ 時量表現（動作・状態の継続期間が短いことの強調：〜してまだ…にしかならない）",
+      "shortExplanation": "副詞「刚」を動詞の前に置き、後ろに時量補語（期間を表す表現）を伴うことで、ある事態が生じてから現在までの期間が「まだ〜にしかならない（短い）」ことを強調します。",
+      "longExplanation": "「刚 ＋ 動詞 ＋ 時量表現」は、ある動作や状態が始まってから経過した期間が、話者の主観において非常に短いことを表す構文です。動詞の後ろに「一个月」「三天」「半年」などの時量詞（継続時間）を置き、述語の前の副詞「刚」と呼応させることで、「まだたったの〜しか経っていない」「〜し始めてまだほんの…だ」というわずかな時間を強調します。例文「他刚来一个月」では、彼が来てからまだ1か月しか経っておらず、日が浅いことが示されています。日本語の「〜してまだ…にしかならない」「〜してほんの…だ」に相当します。",
+      "formation": "主語 ＋ 刚 ＋ 動詞 ＋ (目的語) ＋ 時量詞 / 時間量表現",
+      "examples": [
+        {
+          "translation": "彼は来てからまだ1か月しかなりません。"
+        }
+      ]
+    },
+    "zh_刚才_206": {
+      "title": "刚才（時間名詞：さっき・たった今・先ほど）",
+      "shortExplanation": "発話時からごくわずか前の時点（数分〜十数分前の物理的な過去）を指す時間名詞です。「さっき」「先ほど」という意味で、文頭にも主語の後ろにも置くことができます。",
+      "longExplanation": "「刚才」（gāngcái）は、発話の時点からほんの少し前の時間（通例数分から十数分前の客観的な過去）を指す『時間名詞』です。副詞の「刚」と異なり名詞であるため、(1) 文頭（主語の前）にも主語の後ろにも自由に置くことができる（「刚才我……」も「我刚才……」も可能）、(2) 「比刚才好多了」のように介詞の目的語になれる、(3) 「刚才的事」のように「的」を伴って名詞を修飾できる、という際立った特徴があります。また、「刚」が話者の主観的な近さ（数ヶ月前でも可）を表すのに対し、「刚才」は物理的に直前の現実的な短時間のみを指します。日本語の「さっき」「先ほど」「たった今」に相当します。",
+      "formation": "(主語 ＋ ) 刚才 (＋ 主語) ＋ 述語（動詞 / 形容詞）",
+      "examples": [
+        {
+          "translation": "さっき私はメールを1通受け取りました。"
+        }
+      ]
+    },
+    "zh_即使也_207": {
+      "title": "即使……，也……（仮定譲歩の複文：たとえ〜であっても、やはり…だ）",
+      "shortExplanation": "前節で「たとえ〜としても」と極端な状況や不利な条件を一歩譲って仮定し、後節で副詞「也」を用いて「それでもやはりその結果や行動は変わらない」と主張する仮定譲歩の接続表現です。",
+      "longExplanation": "「即使……，也……」（jíshǐ…… yě……）は、仮定譲歩を表す中国語の代表的な複文構文です。「即使」（たとえ〜だとしても）は前節の文頭または主語の後に置かれ、不利な条件や極端な仮定を一歩譲歩して提示します。後節では副詞「也」（それでも、やはり）を述語の前に置き、そのような極端な条件下であっても主節の行動、事実、意志が全く影響を受けずにそのまま維持されることを強調します。未発生の仮定状況だけでなく、既成の事実を譲歩的に提示する場合にも広く用いられます。日本語の「たとえ〜であっても、（やはり）…だ」に相当します。",
+      "formation": "即使 ＋ 譲歩仮定節，(主語 ＋ ) 也 ＋ 主節",
+      "examples": [
+        {
+          "translation": "たとえ冬がとても寒くても、彼は毎日グラウンドへ走りに行きます。"
+        }
+      ]
+    },
+    "zh_在N上_208": {
+      "title": "(在) ＋ 名詞 ＋ 上（介詞句：〜の面で・〜に関して・〜において）",
+      "shortExplanation": "抽象名詞の前後に「(在)……上」を添えて介詞句を形成し、話題の範囲や視点、領域を限定して提示します（「〜の面で」「〜においては」）。",
+      "longExplanation": "「(在) ＋ 名詞 ＋ 上」（zài…… shàng）は、文で論じる対象の分野、観点、または範囲を限定する抽象的な空間・領域表現です。「爱好」（趣味）、「工作」（仕事）、「学习」（学習）、「生活」（生活）、「性格」（性格）などの抽象名詞と結びつき、「〜の面において」「〜の観点から言えば」という意味を表します。口語では前置詞の「在」が省略されて「名詞 ＋ 上」の形（例：工作上、生活上）になることも頻繁にあります。多くの場合、文頭に置かれて文全体の話題を提示する連用修飾語（状語）として機能し、読点（コンマ）を伴います。日本語の「〜の面で」「〜においては」「〜の点では」に相当します。",
+      "formation": "(在 ＋ ) 抽象名詞 ＋ 上，主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "趣味の面では、私は母により似ています。"
+        }
+      ]
+    },
+    "zh_正好_209": {
+      "title": "正好（形容詞・副詞：ちょうどよい・ぴったりだ・都合よく）",
+      "shortExplanation": "サイズ・数量・度合いが「過不足なくぴったり合っている（ちょうどいい）」ことを表す形容詞、またはタイミングが「折よく・ちょうど都合よく」であることを表す副詞です。",
+      "longExplanation": "「正好」（zhènghǎo）は、中国語で極めて多用される語で、形容詞と副詞の両方の用法を持ちます。(1) 形容詞としての用法：大きさ、数量、時間、温度、味付けなどの度合いが過不足なく完全に適合していること（「ぴったりだ」「ちょうどよい」）を表し、述語として用いられます（例文：衣服大小正好＝服のサイズがぴったりだ；肉熟得正好＝肉の焼き加減がちょうどいい）。(2) 副詞としての用法：動作や機会が絶妙なタイミングで生じること（「ちょうど都合よく〜する」「折よく」）を表し、動詞の前に置かれます（例：我正好也要去＝私も折よく行くところだった）。日本語の「ちょうどいい」「ぴったりだ」に相当します。",
+      "formation": "主語 ＋ (サイズ / 数量 / タイミング...) ＋ 正好",
+      "examples": [
+        {
+          "translation": "服のサイズはちょうどいいです。"
+        }
+      ]
+    },
+    "zh_V得正好_210": {
+      "title": "動詞 ＋ 得正好（様態補語：ちょうどいいタイミングで〜する・折よく〜した）",
+      "shortExplanation": "動詞の後ろに構造助詞「得」を介して様態補語「正好」を続け、その動作が行われたタイミングが極めて適切で都合が良いこと（「ちょうどいいところへ〜した」）を表します。",
+      "longExplanation": "「動詞 ＋ 得正好」（V dé zhènghǎo）は、動詞と様態補語「正好」が結びついた口語表現です。構造助詞「得」によって動作とその評価を結び、その動作の行われたタイミングが絶妙で、話者にとって願ってもない好都合な時機であったことを称賛・歓迎するニュアンスを込めて評価します。最も典型的に使われるのが「来」（例文：你来得正好＝いいところへ来たね、ちょうどいいタイミングで来てくれた）や「赶」（赶得正好＝ちょうど都合よく居合わせた）などです。話者の歓迎や問題解決への安堵感が込められます。日本語の「ちょうどいいタイミングで〜した」「折よく〜した」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 得正好",
+      "examples": [
+        {
+          "translation": "あなたはちょうどいいタイミングで来ましたね。"
+        }
+      ]
+    },
+    "zh_NN差不多_211": {
+      "title": "名詞1 ＋ 和 / 跟 ＋ 名詞2 ＋ 差不多（比較表現：〜と…はほとんど同じだ・大差ない）",
+      "shortExplanation": "介詞「和」や「跟」で2つの事物・属性を結び、述語に形容詞「差不多」を置いて「両者は大体同じである」「ほとんど大差ない」ことを表します。",
+      "longExplanation": "「名詞1 ＋ 和 / 跟 ＋ 名詞2 ＋ 差不多」（N & N chàbuduō）は、2つの対象やその属性を比較して、両者の差異が極めてわずかであり、大差がないことを表す述語構文です。「差不多」は形容詞として文末の述語となり、「差がほとんどない」「だいたい同じである」という意味を持ちます。主語として2つの名詞をそのまま並べる場合（例：他们俩差不多＝彼ら二人はほとんど同じだ）と、例文のように特定の属性を比較する場合（这辆车的颜色和那辆车的颜色差不多＝この車の色とあの車の色はほとんど同じだ）の両方で頻繁に使われます。日本語の「〜と…はほとんど同じだ」「大体似通っている」に相当します。",
+      "formation": "名詞1 ＋ 和 / 跟 ＋ 名詞2 ＋ 差不多（または：名詞1 ＋ 和 ＋ 名詞2 ＋ 的 ＋ 特徴 ＋ 差不多）",
+      "examples": [
+        {
+          "translation": "この車の色とあの車の色はほとんど同じです。"
+        }
+      ]
+    },
+    "zh_差不多_212": {
+      "title": "差不多 ＋ 数詞 ＋ 量詞（概数副詞：およそ〜・約〜・ほぼ〜）",
+      "shortExplanation": "副詞「差不多」を数詞＋量詞（数量表現）の前に置き、数量・金額・時間・年齢などがその数値に極めて近いこと（「およそ」「約」）を表す概数表現です。",
+      "longExplanation": "数量表現（数詞 ＋ 量詞）の前に置かれる「差不多」は、数量の概数を表す副詞として機能します。実際の数値がその提示された数値とほぼ同等であるか、あるいはわずかに達しない程度の近似値であることを表し、日本語の「およそ」「約」「だいたい〜」に相当します。例文の「这台电脑差不多5000块」（このパソコンは約5000元です）のように、価格、人数、年齢、距離、時間などの具体的な数値を大まかに見積もる際に日常会話からビジネスまで幅広く用いられます。「大概」や「左右」と並ぶ代表的な概数表現の一つです。",
+      "formation": "主語 ＋ (述語 ＋ ) 差不多 ＋ 数詞 ＋ 量詞 (＋ 名詞)",
+      "examples": [
+        {
+          "translation": "このパソコンはおよそ5,000元です。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_O不没被叫让SV_198": {
+      "title": "목적어 + 不 / 没 + 被 / 叫 / 让 + 동작주 + 동사 (피동문의 부정형)",
+      "shortExplanation": "중국어 피동문(피동표지 '被', '叫', '让')의 부정 표현으로, 부정부사 '不'나 '没(有)'는 반드시 피동개사 앞에 위치해야 합니다.",
+      "longExplanation": "중국어에서 피동문(‘被/叫/让’을 사용하는 문장)을 부정할 때는 부정부사 ‘不’(의지, 습관, 미래 부정) 또는 ‘没(有)’(과거 사실이나 완료의 부정)를 반드시 피동을 나타내는 개사 ‘被/叫/让’의 ‘앞’에 두어야 합니다. 피동개사 뒤나 동사 바로 앞에 부정사를 두는 것은 문법적 오류입니다(예: ❌ 问题被没解决 → ✔️ 问题没被解决). 조동사(能, 应该 등)나 시간부사(还, 已经 등) 역시 피동개사 앞에 위치합니다. 한국어의 ‘~에 의해 …되지 않았다’, ‘아직 …되지 못했다’에 해당합니다.",
+      "formation": "목적어(피동 대상) + 不 / 没(有) + 被 / 叫 / 让 + (동작주) + 동사 + 기타 성분",
+      "examples": [
+        {
+          "translation": "문제는 아직 해결되지 않았어요."
+        }
+      ]
+    },
+    "zh_只有才_199": {
+      "title": "只有……，才…… (필수조건 복문: 오직 ~해야만 비로소 …하다)",
+      "shortExplanation": "앞 절에서 유일무이하고 필수적인 조건(오직 ~해야만)을 제시하고, 뒤 절에서 부사 '才'와 호응하여 그 조건이 충족되어야 비로소 결과가 실현됨(비로소 …하다)을 나타냅니다.",
+      "longExplanation": "‘只有……，才……’(zhǐyǒu…… cái……)는 유일한 필수조건을 나타내는 대표적인 복문 접속 구조입니다. ‘只有’(오직 ~해야만)는 앞 절에서 결과 실현을 위한 절대적인 전제 조건을 한정하며, 뒤 절의 부사 ‘才’(비로소, 겨우)와 어우러져 ‘그 유일한 조건이 충족된 뒤에야 비로소 후속 사태가 성립할 수 있음’을 강조합니다. 단순한 충분조건을 나타내는 ‘只要……就……’(~하기만 하면 곧 …하다)와 구별되며, 조건이 갖춰지지 않으면 결코 결과가 발생할 수 없음을 내포합니다. 한국어의 ‘오직 ~해야만 비로소 …할 수 있다’에 해당합니다.",
+      "formation": "只有 + 필수조건절，(주어 + ) 才 + 결과절",
+      "examples": [
+        {
+          "translation": "숙제를 다 끝내야만 비로소 텔레비전을 볼 수 있습니다."
+        }
+      ]
+    },
+    "zh_不仅也还而且_200": {
+      "title": "주어 + 不仅……，也 / 还 / 而且…… (동일 주어 점진 복문: ~할 뿐만 아니라 …도)",
+      "shortExplanation": "앞뒤 두 절의 주어가 동일할 때 사용하는 점진 복문 구문입니다. 주어를 '不仅' 앞에 두고, 앞 절의 사실에 더하여 뒤 절의 내용까지 아울러 지님(~뿐만 아니라 …도)을 나타냅니다.",
+      "longExplanation": "‘不仅……，也/还/而且……’(bùjǐn…… yě/ hái/ érqiě……)는 앞 절의 내용에 한 걸음 더 나아가 범위나 정도를 심화시키는 점진(누가) 복문의 대표적 표현입니다. 두 절의 ‘주어가 서로 같을 때’는 주어가 반드시 접속사 ‘不仅’의 ‘앞’에 놓입니다(주어 + 不仅……). ‘不仅’(…뿐만 아니라)으로 첫 번째 사실을 제시한 뒤, 뒤 절에서 부사 ‘也’(…도), ‘还’(또한), 혹은 접속사 ‘而且’(게다가)와 호응하여 부가적인 사실이나 더 높은 차원의 행동을 덧붙입니다. 한국어의 ‘~는 …일 뿐만 아니라 또한 …하다’에 해당합니다.",
+      "formation": "주어 + 不仅 + 절1，也 / 还 / 而且 + 절2",
+      "examples": [
+        {
+          "translation": "저는 영화 〈타이타닉〉을 보았을 뿐만 아니라, 〈노팅힐〉도 보았습니다."
+        }
+      ]
+    },
+    "zh_不仅S1S2也_201": {
+      "title": "不仅 + 주어1……，주어2 + 也 / 还…… (상이한 주어 점진 복문: 주어1뿐만 아니라 주어2도)",
+      "shortExplanation": "앞뒤 두 절의 주어가 서로 다를 때 사용하는 점진 복문 구문입니다. 접속사 '不仅'은 반드시 주어1의 앞(문두)에 위치해야 하며, 주어2 뒤에 '也'나 '还'가 호응합니다.",
+      "longExplanation": "‘不仅 + 주어1……，주어2 + 也……’는 두 절의 주어가 서로 다를 때 사물의 포괄 범위나 주체를 점진적으로 확장하는 복문 구조입니다. 매우 중요한 문법 규칙으로, 앞뒤 절의 ‘주어가 서로 다를 경우’ 접속사 ‘不仅’(또는 不但)은 반드시 첫 번째 주어 앞(문장 맨 앞)에 놓여야 합니다(❌ 주어1 + 不仅…… 이 아닌 ✔️ 不仅 + 주어1……). 뒤 절에서는 두 번째 주어 바로 뒤에 부사 ‘也’(…도 역시)나 ‘还’를 두어 호응을 이룹니다. 한국어의 ‘[주어1]뿐만 아니라, [주어2]도 …하다’에 해당합니다.",
+      "formation": "不仅 + 주어1 + 술어1，주어2 + 也 / 还 + 술어2",
+      "examples": [
+        {
+          "translation": "마크가 영화 〈노팅힐〉을 보았을 뿐만 아니라, 저 역시 〈노팅힐〉을 보았습니다."
+        }
+      ]
+    },
+    "zh_从来不V_202": {
+      "title": "从来不 + 동사 (부사: 여태껏 절대 ~하지 않는다, 평소 습관의 부정)",
+      "shortExplanation": "부사 '从来不'(cónglái bù)를 동사 앞에 사용하여, 과거부터 지금까지의 확고한 습관, 생활 신조, 원칙상 '결코 ~하지 않는다'를 나타냅니다.",
+      "longExplanation": "‘从来不 + 동사’는 ‘지금까지 죽 ~하지 않는다’, ‘결코 ~하는 법이 없다’라는 뜻으로, 과거부터 현재에 이르기까지 일관되게 지켜온 일상적인 습관, 가치관, 행동 원칙을 부정할 때 쓰입니다. 과거의 일회성 경험 부정을 나타내는 ‘从来没……过’(여태껏 한 번도 ~해 본 적이 없다)와 달리, ‘从来不’는 현재와 미래에도 지속되는 평소의 지속적인 행동 양식이나 불변의 규칙을 부정합니다. 한국어의 ‘여태껏 절대 ~하지 않는다’, ‘평소에 결코 ~하지 않는다’에 해당합니다.",
+      "formation": "주어 + (시간) + 从来不 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 점심때 결코 낮잠을 자지 않습니다."
+        }
+      ]
+    },
+    "zh_从来没VA过_203": {
+      "title": "从来没(有) + 동사 / 형용사 + 过 (부사: 지금까지 한 번도 ~해 본 적이 없다 / 이토록 ~한 적이 없다)",
+      "shortExplanation": "부사 '从来没(有)'와 동태조사 '过'를 호응시켜, 과거부터 현재까지 어떤 동작을 겪어본 적이 전혀 없거나 어떤 상태에 이른 적이 결코 없음을 나타내는 경험의 전면 부정 표현입니다.",
+      "longExplanation": "‘从来没(有) + 동사/형용사 + 过’(cóngláiméi…… guò)는 과거의 경험을 완전히 부정하는 구문입니다. 동사와 결합할 때는 ‘지금까지 한 번도 ~해 본 적이 없다’(예: 从来没去过 - 가 본 적이 없다)는 절대적 미경험을 나타내며, 형용사(보통 ‘这么’, ‘那么’ 등과 결합)와 쓰일 때는 ‘지금까지 이토록 ~해 본 적이 없다’(예: 从来没这么高兴过)처럼 감정이나 상태가 과거에 유례없는 수준에 도달했음을 감탄적으로 표현합니다. 불변의 습관을 부정하는 ‘从来不’와 뚜렷하게 구별됩니다. 한국어의 ‘여태껏 한 번도 ~해 본 적이 없다’, ‘지금껏 이렇게 ~한 적이 없다’에 해당합니다.",
+      "formation": "주어 + 从来没(有) + 동사 / 형용사 + 过 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그의 부모님은 지금까지 이토록 기뻐하신 적이 한 번도 없었습니다."
+        }
+      ]
+    },
+    "zh_刚刚刚V_204": {
+      "title": "刚 / 刚刚 + 동사 (시간부사: 방금 ~했다, 막 ~한 참이다)",
+      "shortExplanation": "시간부사 '刚' 또는 '刚刚'를 동사 앞에 사용하여, 화자의 주관적 인식상 동작이나 변화가 일어난 지 얼마 지나지 않았음(~한 지 얼마 안 됨, 막 ~함)을 나타냅니다.",
+      "longExplanation": "‘刚 / 刚刚 + 동사’(gāng / gānggang)는 어떤 동작이나 사건이 발생한 지 얼마 되지 않았음을 나타내는 시간부사입니다. ‘刚’의 핵심적인 특징은 시간 경과에 대한 ‘화자의 주관적인 판단’이 개입된다는 점입니다. 객관적으로 몇 분 전의 일뿐만 아니라, 몇 주 전이나 지난달, 작년에 발생한 일이라 하더라도 화자가 느끼기에 ‘얼마 되지 않았다’고 생각하면 자유롭게 사용할 수 있습니다(예: 我上个月刚结婚 - 지난달에 막 결혼했다). 품사가 부사이므로 반드시 ‘주어 뒤, 동사 앞’에 위치해야 하며 문두에는 올 수 없습니다(시간명사 ‘刚才’와의 결정적 차이). 한국어의 ‘막 ~했다’, ‘~한 지 얼마 안 되었다’에 해당합니다.",
+      "formation": "주어 + (시간) + 刚 / 刚刚 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 지난달에 막 결혼했습니다."
+        }
+      ]
+    },
+    "zh_刚VDURATION_205": {
+      "title": "주어 + 刚 + 동사 + 시간 수량사 (기간의 짧음 강조: ~한 지 겨우 …밖에 안 되었다)",
+      "shortExplanation": "부사 '刚' 뒤에 동사와 시량사(기간 표현)를 연결하여, 어떤 동작이나 상태가 시작된 이래 경과한 시간이 화자의 체감상 '겨우 …에 불과하다(매우 짧다)'를 나타냅니다.",
+      "longExplanation": "‘주어 + 刚 + 동사 + 시간 수량사(시량보어)’ 구조는 어떤 동작이나 상태가 지속된 기간이 화자의 주관적 기준에서 아직 매우 짧음을 강조할 때 쓰입니다. ‘刚’(막, 겨우)이 ‘一个月’(한 달), ‘几天’(며칠) 등의 시간 수량 표현과 어우러져 ‘~한 지 이제 겨우 …에 지나지 않는다’, ‘시작된 지 얼마 안 되었다’는 뉘앙스를 강하게 풍깁니다. 예문 ‘他刚来一个月’은 그가 이곳에 온 지 아직 한 달밖에 되지 않아 얼마 안 되었다는 느낌을 전합니다. 한국어의 ‘~한 지 겨우 …밖에 안 되다’, ‘막 ~해서 …가 되었다’에 해당합니다.",
+      "formation": "주어 + 刚 + 동사 + (목적어) + 시간 수량사 / 기간 표현",
+      "examples": [
+        {
+          "translation": "그는 온 지 겨우 한 달밖에 되지 않았습니다."
+        }
+      ]
+    },
+    "zh_刚才_206": {
+      "title": "刚才 (시간명사: 방금, 아까, 방금 전)",
+      "shortExplanation": "말하는 시점 바로 직전의 몇 분 전(객관적 과거 시점)을 가리키는 시간명사로, '아까', '방금 전'의 뜻을 나타냅니다. 문두나 주어 뒤 모두에 놓일 수 있습니다.",
+      "longExplanation": "‘刚才’(gāngcái)는 발화 시점 직전의 얼마 되지 않은 객관적인 물리적 시간(주로 몇 분~십수 분 전)을 가리키는 ‘시간명사’입니다. 부사인 ‘刚’과 뚜렷이 구별되는 명사적 특성을 가집니다: (1) 주어 앞(문장 맨 앞)이나 주어 뒤에 모두 자유롭게 놓여 상황어로 쓰일 수 있음(‘刚才我……’와 ‘我刚才……’ 둘 다 가능), (2) 개사의 목적어가 될 수 있음(예: 比刚才好 - 아까보다 낫다), (3) ‘刚才的事’(아까 일)처럼 ‘的’를 동반하여 관형어로 다른 명사를 수식할 수 있음. 또한 ‘刚’이 주관적으로 몇 달 전 일에도 쓰일 수 있는 것과 달리, ‘刚才’는 오직 객관적으로 직전의 짧은 시간에만 사용됩니다. 한국어의 ‘아까’, ‘방금 전’에 해당합니다.",
+      "formation": "(주어 + ) 刚才 (+ 주어) + 술어(동사 / 형용사)",
+      "examples": [
+        {
+          "translation": "아까 저는 이메일 한 통을 받았습니다."
+        }
+      ]
+    },
+    "zh_即使也_207": {
+      "title": "即使……，也…… (가설양보 복문: 설령 ~할지라도, (그래도) …하다)",
+      "shortExplanation": "앞 절에서 극단적이거나 불리한 상황을 한 걸음 양보하여 가정(설령 ~할지라도)하고, 뒤 절에서 부사 '也'로 호응하여 그 조건에 구애받지 않고 결과나 행동이 변함없음((그래도) …하다)을 나타냅니다.",
+      "longExplanation": "‘即使……，也……’(jíshǐ…… yě……)는 가설 양보를 나타내는 대표적인 복문 구문입니다. 앞 절에 접속사 ‘即使’(설령 ~라 할지라도, 비록 ~일망정)를 사용하여 극단적이거나 불리한 가설 조건을 한 걸음 물러서서 인정·제시합니다. 뒤 절에서는 부사 ‘也’(그래도, 역시)를 술어 앞에 두어, 그러한 상황에도 불구하고 주체의 확고한 의지나 본래의 결론, 객관적 결과가 조금도 흔들리지 않고 성립됨을 역설합니다. 아직 발생하지 않은 미래의 가정은 물론, 현실의 사실을 양보하는 맥락에서도 두루 쓰입니다. 한국어의 ‘설령 ~라 하더라도 (여전히) …하다’에 해당합니다.",
+      "formation": "即使 + 양보 가설절，(주어 + ) 也 + 주절",
+      "examples": [
+        {
+          "translation": "설령 겨울에 매우 춥더라도, 그는 매일 운동장에 가서 달리기를 합니다."
+        }
+      ]
+    },
+    "zh_在N上_208": {
+      "title": "(在) + 명사 + 上 (개사구: ~ 방면에서, ~ 면에 있어서)",
+      "shortExplanation": "추상명사의 앞뒤에 '(在)……上'을 둘러싸서 개사구를 이루며, 논의하고자 하는 범위, 관점, 영역을 한정하여 제시합니다(~의 면에서, ~ 방면에서).",
+      "longExplanation": "‘(在) + 명사 + 上’(zài…… shàng)은 어떤 판단이나 서술이 적용되는 구체적인 범위나 측면을 한정할 때 쓰는 격틀 구조입니다. 명사 자리에 ‘爱好’(취미), ‘工作’(일/업무), ‘学习’(공부), ‘生活’(생활), ‘性格’(성격)과 같은 추상명사가 들어가 ‘~라는 방면에서’, ‘~라는 관점에 있어서’라는 뜻을 나타냅니다. 구어에서는 앞의 개사 ‘在’를 생략하고 ‘명사 + 上’(예: 工作上, 性格上) 형태로도 매우 빈번하게 사용됩니다. 통상 문장 맨 앞이나 주어 뒤에 놓여 문장 전체의 상황어(배경 화제 제시) 역할을 합니다. 한국어의 ‘~ 면에서’, ‘~ 방면에서는’, ‘~에 있어서는’에 해당합니다.",
+      "formation": "(在 + ) 추상명사 + 上，주어 + 술어",
+      "examples": [
+        {
+          "translation": "취미 방면에서는, 제가 어머니를 더 많이 닮았습니다."
+        }
+      ]
+    },
+    "zh_正好_209": {
+      "title": "正好 (형용사/부사: 딱 맞다, 알맞다, 마침 때마침)",
+      "shortExplanation": "크기, 수량, 정도 등이 과하거나 부족함 없이 완벽하게 어우러짐(딱 알맞다)을 나타내는 형용사이거나, 타이밍이 절묘하게 들어맞음(마침 때맞춰)을 나타내는 부사입니다.",
+      "longExplanation": "‘正好’(zhènghǎo)는 형용사와 부사의 두 가지 주요한 용법으로 활발하게 쓰입니다: (1) 형용사 용법: 옷의 치수, 수량, 시간, 온도, 정도 등이 크지도 작지도 않고 완벽히 적절함을 나타내어 술어로 기능합니다(예문: 衣服大小正好 - 옷 크기가 딱 알맞다; 不多不少，正好 - 많지도 적지도 않고 딱 맞다). (2) 부사 용법: 타이밍이나 기회가 매우 우연하고도 시의적절하게 맞아떨어짐(‘마침 때마침’, ‘공교롭게도’)을 나타내어 술어 앞에 놓입니다(예: 我正好有空 - 마침 시간이 있다). 한국어의 ‘딱 맞다’, ‘알맞다’, ‘마침 좋다’에 해당합니다.",
+      "formation": "주어 + (크기 / 수량 / 시기...) + 正好",
+      "examples": [
+        {
+          "translation": "옷 크기가 딱 맞습니다."
+        }
+      ]
+    },
+    "zh_V得正好_210": {
+      "title": "주어 + 동사 + 得正好 (상태보어: 마침 딱 알맞게 ~하다, 때맞춰 ~하다)",
+      "shortExplanation": "동사 뒤에 구조조사 '得'와 상태보어 '正好'를 결합하여, 동작이 이루어진 시점이나 상황이 절묘할 정도로 시의적절하고 적합함(마침 딱 알맞은 때에 ~하다)을 나타냅니다.",
+      "longExplanation": "‘동사 + 得正好’(V dé zhènghǎo)는 구조조사 ‘得’를 매개로 형용사 ‘正好’가 상태보어로 쓰인 구문입니다. 어떤 행동이나 사태가 발생한 시기가 화자의 입장에서 더할 나위 없이 훌륭하고 유익한 최적의 순간이었음을 긍정적으로 평가할 때 씁니다. 가장 대표적인 결합은 ‘来’(오다)와 쓰여 ‘你来得正好’(마침 정말 잘 왔다, 때맞춰 잘 왔다)처럼 상대방의 등장을 반기거나 도움을 요청할 수 있는 절호의 순간임을 드러내는 경우입니다. 한국어의 ‘마침 때맞춰 ~하다’, ‘딱 알맞은 때에 ~하다’에 해당합니다.",
+      "formation": "주어 + 동사 + 得正好",
+      "examples": [
+        {
+          "translation": "마침 때맞춰 아주 잘 오셨네요."
+        }
+      ]
+    },
+    "zh_NN差不多_211": {
+      "title": "명사1 + 和 / 跟 + 명사2 + 差不多 (비교 표현: ~와 …은 거의 비슷하다, 큰 차이가 없다)",
+      "shortExplanation": "개사 '和'나 '跟'으로 연결된 두 대상이나 그 속성이 서로 큰 차이 없이 '거의 엇비슷함'을 나타내는 술어 형용사 구문입니다.",
+      "longExplanation": "‘명사1 + 和/跟 + 명사2 + 差不多’(N & N chàbuduō)는 두 사람, 사물 또는 그들의 성질·속성을 대비하여 서로 간의 간극이 거의 존재하지 않음을 서술하는 비교 문형입니다. 여기서 ‘差不多’는 형용사로서 술어 역할을 하며, ‘차이가 거의 없다’, ‘대동소이하다’, ‘비슷비슷하다’라는 의미를 나타냅니다. 두 개체를 주어로 통째로 묶어 서술할 수도 있고(예: 他们俩的水平差不多 - 두 사람의 수준은 엇비슷하다), 예문처럼 특정 속성을 비교하는 구문(这辆车的颜色和那辆车的颜色差不多)으로도 널리 쓰입니다. 한국어의 ‘~와 …은 거의 비슷하다’, ‘큰 차이가 없다’에 해당합니다.",
+      "formation": "명사1 + 和 / 跟 + 명사2 + 差不多 (또는: 명사1 + 和 + 명사2 + 的 + 특성/성질 + 差不多)",
+      "examples": [
+        {
+          "translation": "이 차의 색깔과 저 차의 색깔은 거의 비슷합니다."
+        }
+      ]
+    },
+    "zh_差不多_212": {
+      "title": "差不多 + 수사 + 양사 (개수 부사: 약 ~, 대략 ~, 거의 ~)",
+      "shortExplanation": "부사 '差不多'를 수량 표현(수사 + 양사) 앞에 사용하여, 수량·금액·나이·시간 등이 그 수치에 매우 근접함(약, 대략)을 나타내는 개수(대략의 수) 표현입니다.",
+      "longExplanation": "수량사(수사 + 양사) 앞에 놓이는 ‘差不多’는 어림수를 나타내는 개수(概數) 부사로 쓰입니다. 실제의 수량이나 가격, 시간, 거리 등이 제시된 수치에 거의 근접해 있음을 나타내며, 우리말의 ‘약’, ‘대략’, ‘거의’에 해당합니다. 예문 ‘这台电脑差不多5000块’(이 컴퓨터는 대략 5,000위안이다)처럼 가격의 어림셈은 물론, ‘差不多十个人’(약 10명), ‘差不多两岁’(거의 두 살)처럼 다양한 사물의 수치 평가에 두루 활용됩니다. ‘大概’와 유사하게 쓰이면서도 구어에서 매우 친근하고 자연스럽게 사용되는 표현입니다.",
+      "formation": "주어 + (술어 + ) 差不多 + 수사 + 양사 (+ 명사)",
+      "examples": [
+        {
+          "translation": "이 컴퓨터는 대략 5,000위안쯤 합니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_O不没被叫让SV_198": {
+      "title": "受事主语 + 不 / 没 + 被 / 叫 / 让 + 施事 + 动词（被动句的否定形式）",
+      "shortExplanation": "“被”字句等被动句的否定格式：否定副词“不”或“没(有)”必须置于介词“被/叫/让”之前，绝不能放在“被/叫/让”之后或动词之前。",
+      "longExplanation": "汉语被动句（包括“被”、“叫”、“让”引导的被动句）的否定形式具有严格的语序规则：否定副词“不”（用于否定经常性、习惯性行为或将来的情况）或“没/没有”（用于否定动作的发生或完成）必须置于被动标志介词“被/叫/让”的前面，绝对不能置于介词之后或动词谓语之前（例如：不可说成❌“问题被没解决”，而必须说成✔️“问题还没被解决”）。同样地，能愿动词（如“能”、“会”、“想”、“应该”）和时间副词（如“已经”、“还”）也必须放在“被/叫/让”的前面。",
+      "formation": "受事主语 + 不 / 没(有) + 被 / 叫 / 让 + (施事者) + 动词 + 其他成分",
+      "examples": [
+        {
+          "translation": "问题还没有被解决呢。"
+        }
+      ]
+    },
+    "zh_只有才_199": {
+      "title": "只有……，才……（必要条件复句：唯一的条件与结果）",
+      "shortExplanation": "表示必要条件关系的关联词搭配：前一分句用“只有”提出唯一不可缺少的条件，后一分句用“才”引出在满足该条件的前提下产生的结果，“只有……才……”。",
+      "longExplanation": "“只有……，才……”是现代汉语中表示必要条件关系的典型复句结构。“只有”置于前一分句，强调所提出的条件具有唯一性和排他性（即缺此不可、没有别的办法）；后一分句在谓语前用副词“才”呼应，表明唯有在此唯一条件满足的前提下，预期的行为或结果才能得以实现。该格式与表示充分条件的“只要……就……”有本质区别：“只要”是不排除其他条件，满足此项即可；而“只有”则强调这是唯一的出路与门槛。",
+      "formation": "只有 + 必要条件分句，(主语 + ) 才 + 结果分句",
+      "examples": [
+        {
+          "translation": "只有写完作业，才能看电视。"
+        }
+      ]
+    },
+    "zh_不仅也还而且_200": {
+      "title": "主语 + 不仅……，也 / 还 / 而且……（同主语递进复句：不仅……而且……）",
+      "shortExplanation": "前后分句为主语相同的递进复句格式：主语置于连词“不仅”之前，表示在肯定前项事实的基础上，进一步补充更深一层的情况，“不仅……而且/还/也……”。",
+      "longExplanation": "“不仅……，也/还/而且……”是现代汉语中表示递进关系的典型复句结构。当复句的前后两个分句共用同一个主语时，主语必须置于连词“不仅”的前面（即“主语 + 不仅……，也/还/而且……”）。“不仅”引出前一个已经成立的动作、属性或范围，后一分句则由副词“也”、“还”或连词“而且”呼应，引出在范围、程度或数量上进一步递进的新信息。前后两项在意义上通常是由浅入深、由轻到重的关系。",
+      "formation": "主语 + 不仅 + 分句1，也 / 还 / 而且 + 分句2",
+      "examples": [
+        {
+          "translation": "我不仅看过《泰坦尼克号》，也看过《诺丁山》。"
+        }
+      ]
+    },
+    "zh_不仅S1S2也_201": {
+      "title": "不仅 + 主语1……，主语2 + 也 / 还……（异主语递进复句：不同施事递进）",
+      "shortExplanation": "前后分句主语不同时的递进复句格式：连词“不仅”必须置于主语1之前（句首），主语2之后配合副词“也”或“还”。",
+      "longExplanation": "“不仅 + 主语1……，主语2 + 也……”是递进复句在前后分句主语不同时的标准语序规则。汉语语法中具有非常严格的主语与关联词位置分工：前后主语相同时，主语在关联词前；前后主语不同时，连词“不仅”（或“不但”）必须置于第一分句的主语之前（即句首位置，不可说成❌“主语1不仅……，主语2也……”）。后一分句则在主语2之后使用副词“也”或“还”予以呼应，表明某种行为、性质或情况不仅适用于主语1，同样也适用于主语2。",
+      "formation": "不仅 + 主语1 + 谓语1，主语2 + 也 / 还 + 谓语2",
+      "examples": [
+        {
+          "translation": "不仅马克看过《诺丁山》，我也看过《诺丁山》。"
+        }
+      ]
+    },
+    "zh_从来不V_202": {
+      "title": "从来不 + 动词（时间副词否定习惯：从来不做某事）",
+      "shortExplanation": "副词“从来”与否定词“不”连用置于动词前，表示从过去到现在一贯坚持的生活习惯、处事原则或客观规律，“向来不 / 从来不”。",
+      "longExplanation": "“从来不 + 动词”是表示一贯性习惯或既定原则的否定结构。“从来”（从过去到现在一贯如此）与否定副词“不”组合，用于否定经常性、规律性的动作或主观意愿，强调某人由于个人习惯、生活作风或原则立场，从过去到当下无论何时都绝对不做某事。它侧重于常态和规则的否定，而“从来没……过”则侧重于既往经历或既成事实的否定。例如“从来不喝酒”、“从来不抽烟”。",
+      "formation": "主语 + (时间) + 从来不 + 动词 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "我中午从来不睡觉。"
+        }
+      ]
+    },
+    "zh_从来没VA过_203": {
+      "title": "从来没(有) + 动词 / 形容词 + 过（否定过去经历：从不曾经历或达到某状态）",
+      "shortExplanation": "“从来没有”与动态助词“过”呼应，用于完全否定过去的某种动作经历，或强调某种状态从未达到过如此程度，“从来没有……过”。",
+      "longExplanation": "“从来没(有) + 动词/形容词 + 过”是现代汉语中用于全盘否定既往经验的典型结构。(1) 与动词连用时，表明从过去到说话时为止的全部时间内，某动作或事件从未发生过哪怕一次（例如“从来没吃过烤鸭”、“从来没去过北京”）；(2) 与形容词（多伴随指示代词“这么”、“那么”）连用时，则强调某种情绪、感受或状态在此前从未达到过如此之高的程度（如例句“从来没这么高兴过”，具有强烈的感叹与衬托意味）。它与着眼于日常生活习惯常态的“从来不”形成了鲜明对照。",
+      "formation": "主语 + 从来没(有) + 动词 / 形容词 + 过 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "他爸爸妈妈从来没这么高兴过。"
+        }
+      ]
+    },
+    "zh_刚刚刚V_204": {
+      "title": "刚 / 刚刚 + 动词（时间副词：表示动作刚发生不久）",
+      "shortExplanation": "时间副词“刚”或“刚刚”置于动词谓语前，表示动作发生或情况改变距今时间不长（含有说话人的主观认定），“刚刚 / 才……不久”。",
+      "longExplanation": "“刚/刚刚 + 动词”是现代汉语中用于表达动作刚刚发生或刚刚完成的时间副词结构。“刚”的一大突出特点是具有强烈的主观性：它所表示的时间短暂是相对于说话人的主观心理感受而言的，不局限于客观的几秒或几分钟前，哪怕事情发生在几天前、上个月甚至去年，只要说话人主观上觉得“时间不长、刚刚过去”，都可以使用“刚”（如例句“我上个月刚结婚”）。在句法位置上，“刚/刚刚”是副词，只能置于主语之后、动词之前，不能像时间名词“刚才”那样置于主语前或单独作句子成分。",
+      "formation": "主语 + (时间) + 刚 / 刚刚 + 动词 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "我上个月刚结婚。"
+        }
+      ]
+    },
+    "zh_刚VDURATION_205": {
+      "title": "主语 + 刚 + 动词 + 时量短语（强调持续时间短：才经历了多长时间）",
+      "shortExplanation": "副词“刚”与动词及后接的时量短语组合，用于强调某动作发生或状态持续至今的时间非常短暂，“才……（不久）”。",
+      "longExplanation": "“刚 + 动词 + 时量短语”是用于突显时间短暂性的常见结构。在此句型中，副词“刚”修饰动词谓语，后面跟表示时间段的时量补语（如“一个月”、“三天”、“两个星期”），用以主观强调动作自开始发生并延续至今经历的时间相当有限，带有“才开始不久、时间尚短”的评价色彩。例如“他刚来一个月”，说话人意在说明他来此的时间不长，对环境或许还不够熟悉。与普通陈述句“他来了一个月”相比，加上“刚”凸显了主观上“短”的认知。",
+      "formation": "主语 + 刚 + 动词 + (宾语) + 时量短语",
+      "examples": [
+        {
+          "translation": "他刚来一个月。"
+        }
+      ]
+    },
+    "zh_刚才_206": {
+      "title": "刚才（时间名词：说话前不久的极短时间）",
+      "shortExplanation": "指说话前不久的片刻时间（客观的几分钟或片刻之前）的时间名词，“刚才 / 方才”。可置于主语前或主语后。",
+      "longExplanation": "“刚才”（gāngcái）是表示指称时间的“时间名词”，特指说话时刻之前不久的那段很短的客观时间（通常是几分钟或片刻之前）。作为时间名词，“刚才”在句法上具有副词所不具备的灵活性：(1) 既可以放在主语之后作状语，也可以放在主语之前置于句首（例如既可说“刚才我收到……”，也可说“我刚才收到……”）；(2) 可以受介词修饰作介词宾语（如“比刚才好多了”）；(3) 可以后接“的”充当定语修饰中心名词（如“刚才的事”、“刚才那个人”）。需与时间副词“刚”严格区分：“刚”表示说话人主观上的短时间（哪怕相隔数月），且只能放在动词前作状语；而“刚才”指客观上刚刚过去的实际片刻。",
+      "formation": "(主语 + ) 刚才 (+ 主语) + 谓语（动词 / 形容词）",
+      "examples": [
+        {
+          "translation": "刚才我收到了一封电子邮件。"
+        }
+      ]
+    },
+    "zh_即使也_207": {
+      "title": "即使……，也……（假设让步复句：即使存在极端情况结果也不变）",
+      "shortExplanation": "表示假设让步关系的关联词搭配：前一分句用“即使”退一步提出某种不利或极端的假设，后一分句用“也”表明正句的结果或行动依然不变，“即使……也……”。",
+      "longExplanation": "“即使……，也……”是现代汉语中用于表达假设让步关系的典型复句结构。“即使”（相当于“即便”、“就算”）置于前一分句的句首或主语后，用于退一步做出极端的、不利的或假设性的让步说明；后一分句在谓语前使用副词“也”呼应，用于强调不论前述的假设条件多么苛刻或极端，后一分句所指称的决定、行动、规律或推论都具有坚定性，决不会因此发生改变或动摇。该结构既可用于未发生之事的假设，也可用于对已知事实的退让承认。",
+      "formation": "即使 + 让步假设分句，(主语 + ) 也 + 正句",
+      "examples": [
+        {
+          "translation": "即使冬天很冷，他也每天去操场跑步。"
+        }
+      ]
+    },
+    "zh_在N上_208": {
+      "title": "(在) + 名词 + 上（介词短语引出方面：在某方面 / 某领域）",
+      "shortExplanation": "介词“在”与方位词“上”框住抽象名词，构成方位短语，用于引出话题讨论的角度、范围或领域，“在……方面”。",
+      "longExplanation": "“(在) + 名词 + 上”是现代汉语中用于提示论述方面或限定范围的典型框式介词结构。当介引的名词为抽象名词（如“爱好”、“工作”、“学习”、“思想”、“生活”、“性格”等）时，“上”便由具体的空间方位引申为抽象的领域、范畴与视角，意为“在某方面”、“从某角度来看”。在口语中，介词“在”常常可以省略，直接说成“名词 + 上”（如“工作上”、“性格上”）。该短语通常置于句首充当全句的状语，其后往往有逗号停顿，用以明确后续陈述的具体适用范围。",
+      "formation": "(在 + ) 抽象名词 + 上，主语 + 谓语",
+      "examples": [
+        {
+          "translation": "在爱好上，我更像我妈妈。"
+        }
+      ]
+    },
+    "zh_正好_209": {
+      "title": "正好（形容词 / 副词：恰到好处、正合标准）",
+      "shortExplanation": "作形容词时表示大小、数量、程度等不偏不倚、恰到好处；作副词时表示时间或机会恰巧适宜、“碰巧 / 正巧”。",
+      "longExplanation": "“正好”（zhènghǎo）在汉语中有两个非常重要的词性与语法功能：(1) 作形容词：充当谓语，用来描述事物的大小、长短、轻重、数量、时间或火候程度等完全符合需要或标准，不多不少、不大不小、恰如其分（如例句“衣服大小正好”，以及“这双鞋不大不小，正好”、“水温正好”）；(2) 作副词：充当状语置于动词前，表示动作发生的时机非常巧合、切合当前所需（如“我正好看见他”、“正好要去找你”）。本句型着重体现其作为形容词充当谓语、表示“恰好符合标准”的基本用法。",
+      "formation": "主语 + (大小 / 数量 / 时间等) + 正好",
+      "examples": [
+        {
+          "translation": "衣服大小正好。"
+        }
+      ]
+    },
+    "zh_V得正好_210": {
+      "title": "动词 + 得正好（状态补语：时机绝佳、动作发生正当其时）",
+      "shortExplanation": "动词后接结构助词“得”引出状态补语“正好”，评价动作发生的时机非常巧合、合拍或及时，“……得正是时候 / 恰到好处”。",
+      "longExplanation": "“动词 + 得正好”是口语中极常见的情态补语/状态补语格式。结构助词“得”连接动词与形容词“正好”，“正好”充当补语，用以对动作发生的时间点或情态进行生动的主观评价，强调该动作的出现恰逢其时、恰到好处，往往给说话人带来极大的便利或惊喜。最经典的用例是“来得正好”（如例句“你来得正好”，意指对方到来的时刻恰巧赶上需要人手、用餐或分享喜悦的最佳节点），此外还有“赶得正好”、“做得正好”等。体现了汉语用情态补语生动描摹时机契合度的特点。",
+      "formation": "主语 + 动词 + 得正好",
+      "examples": [
+        {
+          "translation": "你来得正好。"
+        }
+      ]
+    },
+    "zh_NN差不多_211": {
+      "title": "名词1 + 和 / 跟 + 名词2 + 差不多（比较句：两者大同小异、相差无几）",
+      "shortExplanation": "用介词“和/跟”连接两个对比对象，形容词“差不多”充当谓语，表示两者在性质、外观或程度上极其接近、相差无几，“差不多 / 大体相同”。",
+      "longExplanation": "“名词1 + 和/跟 + 名词2 + 差不多”是现代汉语中用于表达相似性比较的经典形容词谓语句。在该句型中，“差不多”作形容词独立充当句子的谓语，核心语义为“相差不大”、“大体相同”、“相仿”。句式既可以直接对比两件事物或两个人（如“他们俩差不多”、“这两件衣服差不多”），也可以具体对比事物某方面的特定属性（如例句“这辆车的颜色和那辆车的颜色差不多”）。在句中强调客观存在的差异非常细微，整体上可以视同一致。",
+      "formation": "名词1 + 和 / 跟 + 名词2 + 差不多（或：名词1 + 和 + 名词2 + 的 + 属性/特征 + 差不多）",
+      "examples": [
+        {
+          "translation": "这辆车的颜色和那辆车的颜色差不多。"
+        }
+      ]
+    },
+    "zh_差不多_212": {
+      "title": "差不多 + 数词 + 量词（副词表概数：估计数量接近某数值）",
+      "shortExplanation": "副词“差不多”置于数词和量词（数量短语）之前充当状语，表示所估计的数量、金额、时间等极其接近该数值，“大约 / 差不多有……”。",
+      "longExplanation": "当“差不多”置于数量短语（数词 + 量词）之前时，其语法性质由形容词转化为表示概数的状语副词。它表示实际数量、价格、距离、年龄或时间与所列举的基数极为相近，接近该数额（通常略低于或十分贴近该数值）。例如例句“这台电脑差不多5000块”，即表示电脑的价格大约在5000元上下。这一格式在现代汉语口语与书面语中应用极为广泛，常用于“差不多十个人”、“差不多跑了三公里”、“差不多等了半个小时”等各种概括性数量估计的表达场景中。",
+      "formation": "主语 + (谓语 + ) 差不多 + 数词 + 量词 (+ 名词)",
+      "examples": [
+        {
+          "translation": "这台电脑差不多5000块。"
+        }
+      ]
+    }
+  }
+}

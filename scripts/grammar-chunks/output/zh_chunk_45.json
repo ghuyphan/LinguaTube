@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_V1V1V2V2_707": {
+      "title": "Động từ 1 Động từ 1 Động từ 2 Động từ 2 (Cấu trúc lặp động từ dạng AABB: Đùa nghịch, va chạm, diễn tả hành động lặp đi lặp lại hoặc diễn ra liên tục, sinh động)",
+      "shortExplanation": "Hình thức lặp lại của hai động từ đơn âm tiết theo dạng AABB, dùng để miêu tả các hành động diễn ra liên tiếp, thường xuyên hoặc mang tính chất thoải mái, sinh động; \"đùa đùa nghịch nghịch\", \"va va chạm chạm\".",
+      "longExplanation": "“Động từ 1 Động từ 1 Động từ 2 Động từ 2” là hình thức trùng điệp động từ theo kết cấu AABB rất đặc sắc trong khẩu ngữ tiếng Hán hiện đại. Hai động từ đơn âm tiết thường có mối liên hệ đẳng lập, bổ sung ý nghĩa cho nhau hoặc là thành phần của một từ ghép đẳng lập bị tách ra để lặp lại (ví dụ: 打闹 -> 打打闹闹; 磕碰 -> 磕磕碰碰; 吵闹 -> 吵吵闹闹; 摇晃 -> 摇摇晃晃; 蹦跳 -> 蹦蹦跳跳). Về mặt ngữ pháp, cấu trúc này có thể làm vị ngữ, chủ ngữ, trạng ngữ hoặc định ngữ trong câu. Về mặt ngữ nghĩa và biểu cảm, nó diễn tả hành động diễn ra liên tục, lặp đi lặp lại hoặc mang tính chất sinh hoạt thường nhật, tạo cảm giác hình ảnh sống động, vui vẻ, thoải mái hoặc xem nhẹ mức độ nghiêm trọng của sự việc (như va quệt nhỏ nhặt).",
+      "formation": "Động từ 1 Động từ 1 Động từ 2 Động từ 2 (ví dụ: 打打闹闹, 磕磕碰碰, 吵吵闹闹)",
+      "examples": [
+        {
+          "translation": "Trẻ con vốn thích đùa nghịch ồn ào, va quệt vấp váp là chuyện khó tránh, qua vài hôm là khỏi thôi, đừng lo lắng."
+        }
+      ]
+    },
+    "zh_左MN右MN_708": {
+      "title": "左 + Số từ + Lượng từ + Danh từ + 右 + Số từ + Lượng từ + Danh từ (Cấu trúc đối xứng khẩu ngữ: Hết... này đến... khác / Liên tiếp dồn dập hết cái này sang cái khác)",
+      "shortExplanation": "Cấu trúc bốn chữ đối xứng khẩu ngữ sử dụng \"左\" và \"右\" kết hợp với cụm số lượng từ (thường là số 1), biểu thị sự việc hoặc hành động diễn ra liên tiếp dồn dập, hết cái này đến cái khác không ngừng nghỉ; \"hết... này lại đến... khác\".",
+      "longExplanation": "“左 + Số từ + Lượng từ + Danh từ + 右 + Số từ + Lượng từ + Danh từ” (thường gặp dưới dạng quán dụng: “左一个……右一个……”) là một kết cấu biểu cảm rất mạnh mẽ và hình ảnh trong khẩu ngữ tiếng Hán. Trong đó, “左” (trái) và “右” (phải) không hề chỉ phương hướng thực tế trong không gian mà mang hàm nghĩa ẩn dụ về sự xuất hiện từ mọi phía, dồn dập, bủa vây và nối tiếp nhau liên miên. Số từ đi kèm gần như tuyệt đối là “一”. Cấu trúc này thường kết hợp với trợ từ “地” làm trạng ngữ để tu sức cho động từ chính (ví dụ: “左一个电话右一个电话地催” - hết cuộc điện thoại này đến cuộc điện thoại khác giục giã; “左一声谢谢右一声对不起” - hết câu cảm ơn lại đến câu xin lỗi). Nó thường truyền tải sự quá mức, dồn dập của hành động, đôi khi hàm chứa sự sốt ruột, bất đắc dĩ hoặc bất ngờ của người nói.",
+      "formation": "(Chủ ngữ +) 左 + (Số từ +) Lượng từ + Danh từ + 右 + (Số từ +) Lượng từ + Danh từ (+ 地 + Động từ)",
+      "examples": [
+        {
+          "translation": "Mẹ hết gọi cuộc điện thoại này đến cuộc điện thoại khác giục anh ấy về nhà."
+        }
+      ]
+    },
+    "zh_莫非难道不成_709": {
+      "title": "莫非 / 难道 …… 不成 (Khung ngữ khí phản vấn / suy đoán nghi vấn: Chẳng lẽ... hay sao / Lẽ nào... thật ư?)",
+      "shortExplanation": "Khung ngữ khí kết hợp giữa phó từ phản vấn/suy đoán \"莫非\" hoặc \"难道\" ở đầu vế và trợ từ ngữ khí cuối câu \"不成\", dùng để diễn đạt sự nghi hoặc mãnh liệt, phỏng đoán với tâm lý không dám tin hoặc phản vấn đanh thép; \"chẳng lẽ... hay sao?\".",
+      "longExplanation": "“莫非……不成” và “难道……不成” là những cấu trúc khung ngữ khí phản vấn - suy đoán đặc trưng trong tiếng Hán. Trong đó, “莫非” (mòfēi - chẳng lẽ, không lẽ) thiên về sự phỏng đoán dè dặt trước một tình huống bất ngờ, không mong muốn; còn “难道” (nándào - lẽ nào, há lẽ) mang ngữ khí phản vấn chất vấn mạnh mẽ. Thành phần “不成” (bùchéng) là một trợ từ ngữ khí đóng vai trò then chốt chốt lại ở cuối câu, có chức năng củng cố và đẩy ngữ khí nghi vấn hoặc bất bình lên mức cao nhất, hàm ý sự việc nếu thực sự xảy ra như vậy thì là điều phi lý, khó chấp nhận. Cấu trúc thường xuất hiện khi người nói bàng hoàng nhận ra một sự thật ngoài ý muốn hoặc khi chất vấn gay gắt người đối diện.",
+      "formation": "莫非 / 难道 + Phân câu / Vị ngữ + 不成 ？",
+      "examples": [
+        {
+          "translation": "Anh ấy giật mình kinh hãi, đầu óc trống rỗng — chẳng lẽ lại bị lừa rồi hay sao?"
+        }
+      ]
+    },
+    "zh_一个N_710": {
+      "title": "一个 + Danh từ (Cấu trúc trạng ngữ phương thức chỉ động tác đột ngột: Làm một cú / Bỗng... một cái - chỉ động tác cơ thể nhanh, dứt khoát hoặc bất ngờ)",
+      "shortExplanation": "Cấu trúc trạng ngữ hoặc bổ ngữ chỉ phương thức động tác, trong đó \"一个\" kết hợp với danh từ chỉ động thái thân thể (như 跟头, 激灵, 转身, 踉跄), miêu tả hành động diễn ra cực kỳ mau lẹ, đột ngột hoặc trọn vẹn trong tích tắc; \"làm một cú...\", \"bỗng... một cái\".",
+      "longExplanation": "Trong ngữ pháp tiếng Hán, kết cấu “一个 + Danh từ” (với các danh từ đặc biệt chỉ cử chỉ, tư thế hoặc phản xạ cơ thể như: 跟头 [nhào lộn], 激灵 [rùng mình], 转身 [quay người], 踉跄 / 趔趄 [lảo đảo]) đóng vai trò như một trạng ngữ miêu tả hoặc tân ngữ đồng nguyên chỉ trạng thái động tác. Nó không đơn thuần chỉ số lượng một lần, mà nhấn mạnh tính chất trọn vẹn, dứt khoát, đột ngột và nhanh như chớp của hành vi. Thường đứng trước động từ hành động hoặc bổ ngữ kết quả (ví dụ: “一个跟头栽了下来” - cắm đầu ngã nhào một cú; “一个激灵醒了过来” - bỗng rùng mình một cái tỉnh giấc; “一个转身溜了” - thoăn thoắt xoay người chuồn mất). Giúp câu văn giàu tính hành động và tạo ấn tượng thị giác rất mạnh.",
+      "formation": "Chủ ngữ + 一个 + Danh từ (chỉ động thái cơ thể: 跟头, 激灵, 转身, 踉跄) + Động từ (+ Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Tay anh ấy không nắm được vào lan can, ngã lộn nhào một cú cắm đầu xuống đất."
+        }
+      ]
+    },
+    "zh_了个A_711": {
+      "title": "(了) 个 + Tính từ (Cấu trúc bổ ngữ mức độ/kết quả khẩu ngữ: Đến mức... / Ra nông nỗi... / Trở nên... - chỉ kết quả triệt để, cực độ)",
+      "shortExplanation": "Cấu trúc bổ ngữ khẩu ngữ đặc sắc, chèn trợ từ \"(了)个\" vào giữa động từ và tính từ (hoặc thành ngữ 4 chữ), nhấn mạnh kết quả hoặc mức độ của động tác đạt đến một trạng thái vô cùng triệt để, trọn vẹn hoặc trầm trọng; \"đến mức...\", \"thành ra...\".",
+      "longExplanation": "Trong ngữ pháp khẩu ngữ tiếng Hán, kết cấu “Động từ + (了) 个 + Tính từ / Cụm từ miêu tả” là một phương thức biểu đạt bổ ngữ kết quả và bổ ngữ mức độ giàu tính cường điệu và cảm xúc. Trong đó, “了” biểu thị động tác đã hoàn tất, còn “个” đóng vai trò trợ từ kết cấu biểu cảm đặc biệt (đọc nhẹ, không mang ý nghĩa lượng từ số đếm) nhằm dẫn ra tính từ miêu tả hậu quả trạng thái sau cùng. Tính từ hoặc cụm bốn chữ đi sau thường là các từ miêu tả trạng thái triệt để, tột cùng hoặc gây ấn tượng mạnh, ví dụ: “摔了个粉碎” (đập tan tành thành từng mảnh), “输了个精光” (thua sạch sành sanh không còn manh giáp), “闹了个大红脸” (ngượng chín cả mặt), “喝了个酩酊大醉” (uống say túy lúy bí tỉ), “弄了个一清二楚” (làm cho rõ mười mươi). Mang tính chất miêu tả sinh động và cường điệu hóa kết quả của hành động.",
+      "formation": "Động từ + (了) 个 + Tính từ / Cụm tính từ (như: 粉碎, 精光, 清楚, 焦头烂额)",
+      "examples": [
+        {
+          "translation": "Anh ấy đã đập cây đàn yêu quý của mình tan tành thành từng mảnh vụn."
+        }
+      ]
+    },
+    "zh_向来VA_712": {
+      "title": "向来 + Động từ / Tính từ (Phó từ thời gian: Từ trước đến nay luôn / Xưa nay vốn dĩ / Luôn luôn)",
+      "shortExplanation": "Phó từ thời gian biểu thị một đặc điểm, thói quen, tính cách hoặc nguyên tắc ứng xử vốn đã tồn tại và duy trì nhất quán từ quá khứ kéo dài liên tục cho tới hiện tại; \"từ trước đến nay\", \"xưa nay vốn\".",
+      "longExplanation": "“向来” (xiànglái) là một phó từ chỉ thời gian rất thông dụng trong cả khẩu ngữ lẫn văn viết chuẩn mực của tiếng Hán, kết hợp giữa “向” (hướng về, từ trước) và “来” (lại, tới nay). Về mặt ngữ pháp, nó đứng trước động từ, cụm động từ hoặc tính từ làm trạng ngữ thời gian. “向来” nhấn mạnh tính liên tục, bất biến và nhất quán tuyệt đối của một phẩm chất, thái độ, tập quán hoặc quy luật từ xưa đến nay mà không hề có sự thay đổi. Các kết hợp kinh điển gồm: “向来如此” (xưa nay đều như vậy), “向来忠厚” (xưa nay vốn thật thà lương thiện), “向来不赞成” (từ trước đến nay chưa bao giờ tán thành). So với “从来”, “向来” thường mang phong thái đĩnh đạc, ổn định và trung tính hơn; so với “一向”, “向来” có xu hướng chỉ khoảng thời gian dài hơn và tính chất căn bản hơn.",
+      "formation": "Chủ ngữ + 向来 + Động từ / Tính từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Họ xưa nay vốn đôn hậu, thật thà, cư xử thành tâm thật ý."
+        }
+      ]
+    },
+    "zh_预先_713": {
+      "title": "预先 (Phó từ thời gian: Trước / Sớm / Làm trước / Dự liệu trước)",
+      "shortExplanation": "Phó từ thời gian chỉ hành động chuẩn bị, sắp xếp, thông báo hoặc suy nghĩ dự tính được tiến hành trước khi sự việc diễn ra; \"trước\", \"sớm\", \"làm trước\".",
+      "longExplanation": "“预先” (yùxiān) là một phó từ chỉ thời gian rất chuẩn mực trong tiếng Hán, được ghép bởi “预” (dự - dự trù, trước) và “先” (tiên - trước tiên). Từ này thường đứng trước động từ vị ngữ hoặc cụm động từ để làm trạng ngữ thời gian, biểu thị rằng hành động, quyết định, biện pháp chuẩn bị hoặc suy đoán được thực hiện đi trước một bước so với thời điểm sự kiện chính phát sinh. Thường dùng trong các kết hợp: “预先通知” (thông báo trước), “预先准备” (chuẩn bị trước), “预先安排” (thu xếp trước), “预先想到” (nghĩ tới từ trước). Khi dùng ở thể phủ định như “预先没有想到 / 预先都未曾料到”, nó làm nổi bật tính bất ngờ, kinh ngạc của sự việc ngoài dự liệu.",
+      "formation": "(Chủ ngữ +) 预先 (+ Phó từ phủ định) + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Mọi người từ trước đều không ngờ rằng triển lãm hội họa lần này lại được đón nhận nồng nhiệt đến thế."
+        }
+      ]
+    },
+    "zh_CLAUSE1也好CLAUSE2也罢_714": {
+      "title": "Mệnh đề 1 也好 Mệnh đề 2 也罢 (Liên từ nhượng bộ song song: Dù là... hay là... / Cho dù là... đi chăng nữa thì...)",
+      "shortExplanation": "Cấu trúc liên kết nhượng bộ song song, liệt kê hai hoặc nhiều tình huống, điều kiện khác nhau (hoặc đối lập) để nhấn mạnh rằng dù trong bất kỳ trường hợp nào thì kết quả hay nhận định ở phân câu sau vẫn giữ nguyên; \"dù là... hay là...\".",
+      "longExplanation": "“Mệnh đề 1 也好 Mệnh đề 2 也罢” (cũng có thể dùng biến thể đối xứng “……也好……也好” hoặc “……也罢……也罢”) là một kết cấu liên từ nhượng bộ song song rất phổ biến và linh hoạt trong tiếng Hán. Trong cấu trúc này, “也好” và “也罢” đứng ở cuối mỗi phân câu hoặc danh ngữ được liệt kê ra nhằm đặt chúng vào vị thế giả định song song. Người nói đưa ra các khả năng lựa chọn khác nhau (hoặc các trạng thái đối lập) không phải để chọn một bỏ một, mà nhằm chứng minh rằng bất luận là rơi vào trường hợp thứ nhất hay trường hợp thứ hai thì kết luận, yêu cầu hoặc quy luật tất yếu được nêu ở mệnh đề chính phía sau đều hoàn toàn đúng đắn và không hề bị lay chuyển.",
+      "formation": "Mệnh đề 1 也好 ， Mệnh đề 2 也罢 ，+ Mệnh đề chính (Kết luận tất yếu)",
+      "examples": [
+        {
+          "translation": "Dù là lái xe ô tô hay đi xe đạp, việc vừa đi vừa nghe điện thoại đều sẽ làm phân tán sự chú ý và khả năng phản xạ."
+        }
+      ]
+    },
+    "zh_不时_715": {
+      "title": "不时 (Phó từ tần suất / thời gian: Thỉnh thoảng / Chốc chốc / Lâu lâu lại / Đôi khi)",
+      "shortExplanation": "Phó từ thời gian và tần suất, biểu thị một hành động, âm thanh hoặc hiện tượng diễn ra lặp lại nhiều lần theo từng khoảng thời gian ngắt quãng ngắn; \"chốc chốc\", \"thỉnh thoảng\", \"lâu lâu lại\".",
+      "longExplanation": "“不时” (bùshí) là một phó từ chỉ tần suất và thời gian rất giàu tính biểu cảm và miêu tả trong tiếng Hán. Trong đó, “不” (không) và “时” (thời gian cố định) kết hợp mang hàm ý là không theo một giờ giấc cố định nào mà chốc chốc, thỉnh thoảng lại xuất hiện. Nó đứng trước động từ hoặc cụm động từ để làm trạng ngữ. “不时” thường dùng để miêu tả những sự việc, âm thanh, cử chỉ thoáng qua nhưng lặp đi lặp lại nhiều lần tạo nên cảm giác ngắt quãng liên tục, ví dụ: “不时传来阵阵掌声” (chốc chốc lại vọng lại từng tràng pháo tay), “不时回头张望” (thỉnh thoảng lại quay đầu nhìn ngó), “不时点头” (thỉnh thoảng lại gật gù). So với “偶尔” (thỉnh thoảng, mang tần suất thưa thớt), “不时” mang tần suất mau hơn, tạo cảm giác sự việc liên tục đan xen vào tiến trình hiện tại.",
+      "formation": "Chủ ngữ + 不时 (+ 地) + Động từ (+ Tân ngữ) / 不时 + Cụm động từ",
+      "examples": [
+        {
+          "translation": "Vài tiếng chim hót chốc chốc vọng lại nhắc nhở chúng tôi rằng, một ngày mới lại bắt đầu rồi."
+        }
+      ]
+    },
+    "zh_多多少少_716": {
+      "title": "多多少少 (Phó từ mức độ láy: Ít nhiều / Ít hay nhiều / Phần nào)",
+      "shortExplanation": "Hình thức trùng điệp của tính từ \"多少\", dùng làm trạng ngữ chỉ mức độ để biểu thị sự tồn tại ít nhiều hoặc ở một chừng mực nhất định; làm dịu giọng điệu nhận định; \"ít nhiều\", \"phần nào\".",
+      "longExplanation": "“多多少少” (duōduōshǎoshǎo) là dạng thức trùng điệp AABB của tính từ/phó từ “多少” (ít nhiều). Khi làm trạng ngữ đứng trước vị ngữ động từ hoặc tính từ, nó biểu thị rằng về mặt số lượng, mức độ hay phạm vi, đối tượng được đề cập có tồn tại ở một chừng mực nhất định, không đến mức hoàn toàn không có. Việc sử dụng hình thức lặp từ này giúp lời nói trở nên uyển chuyển, khách quan, mang tính chừng mực và làm dịu đi sắc thái phán đoán tuyệt đối của câu văn. Thường kết hợp với các từ ngữ biểu thị mức độ nhẹ hoặc tồn tại như: “多多少少有一点 / 有些……” (ít nhiều cũng có chút...), “多多少少受了影响” (ít nhiều cũng chịu ảnh hưởng).",
+      "formation": "Chủ ngữ + 多多少少 + Động từ / Tính từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Lời anh ấy nói ít nhiều cũng có phần chân thực."
+        }
+      ]
+    },
+    "zh_逐M_717": {
+      "title": "逐 + Lượng từ (Cấu trúc trạng ngữ văn viết: Từng... một / Lần lượt theo từng... - chỉ hành động diễn ra tuần tự từng đơn vị một)",
+      "shortExplanation": "Cấu trúc trạng ngữ trang trọng mang phong cách văn viết, kết hợp từ \"逐\" (từng, lần lượt theo) với lượng từ chỉ đơn vị (như 个, 条, 项, 年, 日), biểu thị hành động được tiến hành tuần tự, tỉ mỉ theo từng đơn vị một mà không bỏ sót; \"từng... một\".",
+      "longExplanation": "“逐 + Lượng từ” (zhú + Lượng từ) là một kết cấu trạng ngữ đặc trưng của phong cách văn chính luận, công văn hành chính, báo chí và văn viết chuẩn mực trong tiếng Hán. Trong đó, “逐” có nguồn gốc từ Hán cổ mang ý nghĩa là “lần lượt theo, từng cái một theo thứ tự”. Cấu trúc này đứng trước động từ để biểu thị hành động được thực thi một cách tuần tự, nghiêm ngặt, rà soát từng đối tượng đơn lẻ theo đơn vị lượng từ mà không bỏ qua bất kỳ mắt xích nào. Các dạng kết hợp điển hình: “逐个 / 逐一” (từng cái một, từng người một), “逐条” (từng điều khoản một), “逐项” (từng hạng mục một), “逐年” (từng năm một, qua từng năm), “逐日” (từng ngày một), “逐句” (từng câu một). Giúp văn phong cô đọng, khúc chiết và chuẩn xác.",
+      "formation": "Chủ ngữ + 逐 + Lượng từ + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Mùa mưa sắp đến rồi, các hồ chứa nước cần phải được kiểm tra từng cái một để loại trừ các mối nguy hiểm tiềm ẩn về an toàn."
+        }
+      ]
+    },
+    "zh_归根到底_718": {
+      "title": "归根到底 (Thành ngữ / Ngữ chêm xen: Suy cho cùng / Rốt cuộc / Nói cho cùng - chỉ bản chất căn bản cốt lõi)",
+      "shortExplanation": "Thành ngữ làm trạng ngữ bình luận hoặc liên kết phân câu, dùng để đúc kết, quy nạp vấn đề về cội nguồn, bản chất sâu xa hoặc nguyên nhân căn bản nhất; \"suy cho cùng\", \"rốt cuộc\", \"nói cho cùng\".",
+      "longExplanation": "“归根到底” (guīgēndàodǐ - cũng có thể dùng biến thể “归根结底”) là một thành ngữ bốn chữ có chức năng ngữ pháp như một trạng ngữ bình luận (ngữ chêm xen) vô cùng quan trọng trong tiếng Hán. Nghĩa đen của nó là “quay về tận gốc rễ và chạm tới đáy cùng”. Khi sử dụng trong diễn ngôn, nó giúp người nói gạt bỏ các hiện tượng bề ngoài, các chi tiết phụ thuộc hoặc những yếu tố ngẫu nhiên để chỉ thẳng ra chân lý bản chất, nguyên nhân cốt lõi hoặc trách nhiệm sau cùng của vấn đề. Cấu trúc này có thể đứng độc lập ở đầu phân câu (kèm dấu phẩy) hoặc chen vào giữa chủ ngữ và vị ngữ. Rất thường gặp trong các lập luận triết học, chính luận hoặc các lời đúc kết sâu sắc trong cuộc sống.",
+      "formation": "(Phân câu 1 ，) Chủ ngữ + 归根到底 + Vị ngữ / 归根到底 ， Mệnh đề (Kết luận cốt lõi)",
+      "examples": [
+        {
+          "translation": "Tập luyện thể dục thể thao suy cho cùng là việc của chính mình, tập đối phó qua loa thì thực chất là đang tự lừa dối bản thân."
+        }
+      ]
+    },
+    "zh_哪怕_719": {
+      "title": "哪怕 (Liên từ nhượng bộ giả thiết: Cho dù / Dù là / Kể cả khi / Ngay cả khi - đưa ra giả định ở mức cực hạn)",
+      "shortExplanation": "Liên từ nhượng bộ giả thiết, dẫn ra một điều kiện cực đoan, tối thiểu hoặc khó khăn nhất để nhấn mạnh rằng trong bất kỳ hoàn cảnh khắc nghiệt nào thì quyết tâm, kết quả hay hành động ở mệnh đề chính vẫn không hề thay đổi; \"cho dù\", \"kể cả khi\".",
+      "longExplanation": "“哪怕” (nǎpà) là một liên từ nhượng bộ mang tính giả thiết cực kỳ tiêu biểu trong tiếng Hán, kết hợp giữa đại từ nghi vấn “哪” (nào) và động từ “怕” (sợ, e ngại). Về mặt logic cú pháp, “哪怕” dẫn ra một tiền đề mang tính giả định ở mức độ cực hạn, tối thiểu (ví dụ: chỉ còn một tia hy vọng, chỉ có một người, phải chịu đựng gian khổ tột cùng). Sau đó, ở mệnh đề chính thường hô ứng bằng các phó từ như “也” (cũng), “都” (đều), “还” (vẫn), “绝不” (tuyệt đối không) để khẳng định một ý chí kiên định, một quy luật tất yếu không thể bị suy chuyển bởi bất kỳ nghịch cảnh nào. “哪怕” cũng có thể đặt ở phân câu sau như một thành phần bổ sung điều kiện nhượng bộ (như ví dụ mẫu: “...哪怕只有一线希望”).",
+      "formation": "哪怕 + Điều kiện giả thiết cực đoan ，(Chủ ngữ +) 也 / 还 + Kết luận / Mệnh đề chính ， 哪怕 + Điều kiện",
+      "examples": [
+        {
+          "translation": "Bác cứ yên tâm, chúng tôi nhất định sẽ dốc hết sức mình cứu chữa cho bệnh nhân, cho dù chỉ còn một tia hy vọng mong manh."
+        }
+      ]
+    },
+    "zh_反之_720": {
+      "title": "反之 (Liên từ chuyển tiếp đối lập: Ngược lại / Trái lại / Nếu tình hình ngược lại thì)",
+      "shortExplanation": "Liên từ chuyển tiếp đối lập mang phong cách văn viết trang trọng, dùng để dẫn ra giả định hoặc kết quả đối lập hoàn toàn với nội dung vừa đề cập ở phân câu trước; \"ngược lại\", \"trái lại\".",
+      "longExplanation": "“反之” (fǎnzhī) là một liên từ liên kết vế câu mang phong cách văn viết cổ kính, ngắn gọn và chuẩn xác trong tiếng Hán. Trong đó, “反” có nghĩa là ngược lại, phản diện; “之” là đại từ chỉ thị trong văn ngôn, thay thế cho toàn bộ sự việc, điều kiện hay giả thuyết vừa được trình bày ở phân câu đứng trước (“反之” = “反过来讲 / 如果情况与此相反”). Về mặt cấu trúc, “反之” thường đứng ở đầu phân câu sau (sau dấu phẩy hoặc dấu chấm phẩy) để dẫn ra một mối quan hệ đối xứng tương phản logic: nếu tiền đề thứ nhất dẫn đến kết quả thuận, thì trong tình huống ngược lại (phủ định của tiền đề), sẽ phát sinh kết quả trái ngược hoàn toàn. Thường dùng trong các văn bản lý luận, báo chí, kinh tế và khoa học để lập luận chặt chẽ hai chiều.",
+      "formation": "Phân câu 1 。/ ， 反之 ，+ Phân câu 2 (Kết quả đối lập hoàn toàn)",
+      "examples": [
+        {
+          "translation": "Kinh tế phát triển, thu nhập của người dân tăng lên thì sức mua tiêu dùng sẽ mạnh; ngược lại, sức mua tiêu dùng của người dân sẽ kém."
+        }
+      ]
+    },
+    "zh_VA1的VA1VA2的VA2_721": {
+      "title": "Động từ / Tính từ 1 的 Động từ / Tính từ 1 ， Động từ / Tính từ 2 的 Động từ / Tính từ 2 (Cấu trúc đối xứng miêu tả cảnh tượng đa dạng: Cái thì... cái thì... / Người thì... người thì... / Kẻ... người...)",
+      "shortExplanation": "Cấu trúc bốn nhịp đối xứng sử dụng trợ từ \"的\" để danh hóa động từ hoặc tính từ rồi lặp lại làm vị ngữ, miêu tả một cảnh tượng phong phú, náo nhiệt hoặc đa dạng khi các cá thể khác nhau mang những trạng thái hoặc thực hiện những hành vi khác nhau; \"cái thì... cái thì...\", \"kẻ... người...\".",
+      "longExplanation": "“Động từ / Tính từ 1 的 Động từ / Tính từ 1 ， Động từ / Tính từ 2 的 Động từ / Tính từ 2” là một cấu trúc cú pháp mang tính đối ngẫu và tạo hình tuyệt đẹp trong tiếng Hán. Trong cấu trúc này, “Động từ / Tính từ + 的” ở nhịp thứ nhất biến động tác/tính chất thành một cụm danh từ hóa chỉ nhóm đối tượng mang đặc điểm đó (tương đương \"những thứ/người mà...\"), còn chữ thứ hai lặp lại chính động từ/tính từ đó làm vị ngữ khẳng định trạng thái. Hai vế tương phản hoặc bổ sung cho nhau được đặt song hành (ví dụ: “红的红，绿的绿” - quả thì đỏ quả thì xanh; “走的走，留的留” - người thì đi người thì ở lại; “哭的哭，笑的笑” - kẻ thì khóc người thì cười; “买的买，卖的卖” - kẻ mua người bán). Cấu trúc giúp câu văn nhịp nhàng, sinh động, vẽ nên một bức tranh toàn cảnh nhiều màu sắc, đa dạng chủng loại hoặc cảnh tượng phân hóa mỗi người một ngả.",
+      "formation": "Chủ ngữ (Tổng thể) + ， Động từ / Tính từ 1 的 Động từ / Tính từ 1 ， Động từ / Tính từ 2 的 Động từ / Tính từ 2",
+      "examples": [
+        {
+          "translation": "Bước vào vườn cây ăn quả, mọi người nhìn thấy cả cây đào quả sai trĩu cành, quả thì đỏ quả thì xanh, đẹp vô cùng."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_V1V1V2V2_707": {
+      "title": "動詞1動詞1動詞2動詞2（動詞のAABB型重畳：〜したり…したりする、繰り返される動作や様態の生き生きとした描写）",
+      "shortExplanation": "2つの単音節動詞をAABBの形式で重ね合わせ、動作が連続的・反復的に行われる様子や、気楽で生き生きとした様態を表します（「じゃれ合ったり騒いだり」「ぶつかったり転んだり」）。",
+      "longExplanation": "「動詞1動詞1動詞2動詞2」は、中国語の日常口語において動作の反復や状態の展開を極めて写実的かつ軽妙に描写するAABB型の動詞重畳構文です。多くは並列関係にある2つの動詞素（あるいは「打闹」「磕碰」「吵闹」「摇晃」などの並列複合動詞）がそれぞれ個別に重ね合わされて構成されます。文法上は述語、主語、連用修飾語、連体修飾語として柔軟に機能します。この形式を用いることで、単なる動作の発生にとどまらず、「楽しげにじゃれ合っている」「細かな衝突や擦り傷を日常茶飯事として繰り返している」といった動作の継続性や、事態を深刻に捉えずおおらかに見守る話し手の感情・語気が生き生きと表現されます。",
+      "formation": "動詞1動詞1動詞2動詞2（例：打打闹闹、磕磕碰碰、吵吵闹闹）",
+      "examples": [
+        {
+          "translation": "子供たちはじゃれ合って大騒ぎするのが大好きなのだから、ぶつかったり転んだりするのは避けられないよ。数日もすれば良くなるから、心配しないで。"
+        }
+      ]
+    },
+    "zh_左MN右MN_708": {
+      "title": "左 ＋ 数詞 ＋ 量詞 ＋ 名詞 ＋ 右 ＋ 数詞 ＋ 量詞 ＋ 名詞（口語反復強調表現：次から次へと〜、立て続けに〜を連発して）",
+      "shortExplanation": "方位を表す「左」「右」と数量詞（主に「一 ＋ 量詞」）を組み合わせ、事象や行為が立て続けに、次から次へとひっきりなしに押し寄せる様子を表す口語構文です（「次から次へと」「あれこれ立て続けに」）。",
+      "longExplanation": "「左 ＋ 数詞 ＋ 量詞 ＋ 名詞 ＋ 右 ＋ 数詞 ＋ 量詞 ＋ 名詞」（日常会話では「左一个……右一个……」の形で多用）は、出来事や行為の頻度の高さや執拗さを生き生きと誇張する対句的口語構文です。ここでの「左」「右」は実際の左右の方向ではなく、左右あらゆる方面から絶え間なく押し寄せる様態の比喩であり、数詞には通例「一」が用いられます。多くは助詞「地」を伴って連用修飾語（様態状語）となり、後続の動詞を修飾します（例：「左一个电话右一个电话地催」＝立て続けに電話をかけて催促する、「左一声对不起右一声抱歉」＝何度も何度も謝り倒す）。相手の執拗な働きかけや事態の目まぐるしさを強調し、時に話し手の辟易したニュアンスや圧倒された感情を反映します。",
+      "formation": "（主語 ＋）左 ＋（数詞 ＋）量詞 ＋ 名詞 ＋ 右 ＋（数詞 ＋）量詞 ＋ 名詞（＋ 地 ＋ 動詞）",
+      "examples": [
+        {
+          "translation": "お母さんは次から次へと立て続けに電話をかけてきて、彼に早く帰るよう催促した。"
+        }
+      ]
+    },
+    "zh_莫非难道不成_709": {
+      "title": "莫非 / 难道 …… 不成（反語・推量疑問構文：まさか〜というわけではあるまい／まさか〜とでもいうのか）",
+      "shortExplanation": "文頭の推量・反語副詞「莫非」または「难道」と文末の語気助詞「不成」が呼応し、信じがたい事態に対する強い疑念、驚き、あるいは反語的な詰問を表します（「まさか〜ではあるまいな」「一体〜とでもいうのか」）。",
+      "longExplanation": "「莫非……不成」および「难道……不成」は、話し手の強い疑惑、驚愕、または不合理に対する反発を際立たせる呼応式の疑問・反語フレームです。「莫非」は予期せぬ不都合な事態に対する慎重な推量を導き、「难道」は強い反駁や詰問の語気を導きます。そして文末に置かれる「不成」（語源的には「〜では成り立たない／〜というわけにはいかない」）が文全体の語気を決定づけ、「もしそれが事実だとすれば到底納得できない」という感情を極限まで高めます。自己の衝撃的な気づき（独話）として使われることもあれば、相手の理不尽な態度を追及する鋭い反語として用いられることもあります。",
+      "formation": "莫非 / 难道 ＋ 節 / 述語 ＋ 不成 ？",
+      "examples": [
+        {
+          "translation": "彼は仰天し、頭の中が真っ白になった――まさか騙されたとでもいうのだろうか。"
+        }
+      ]
+    },
+    "zh_一个N_710": {
+      "title": "一个 ＋ 名詞（様態修飾・身体動作描写構文：くるりと・ぐらりと・思わず身を〜して、突発的・一挙動の動作を表す）",
+      "shortExplanation": "「一个」に身体動作や反射的反応を表す名詞（「跟头」「激灵」「转身」「踉跄」など）を続け、動作が一瞬のうちに、突発的かつ完結して行われる様子を生き生きと描写します（「くるりと身を〜」「ぐらりと〜」）。",
+      "longExplanation": "「一个 ＋ 名詞」は、中国語において一瞬の身体的動作、反射的な身のこなし、あるいは突発的な姿勢の変化を極めて動的に描写する連用修飾構文（様態状語）です。ここで組み合わされる名詞は純粋な事物を指すものではなく、「跟头（宙返り・つまずき）」「激灵（身震い・悪寒）」「转身（身を翻すこと）」「趔趄（よろめき）」のように動詞性を帯びた一連の身振りを指します。数量の「ひとつ」を表すにとどまらず、動作が急激かつ切れ味よく、一気に行われたという「一回性」と「緊迫感」を鮮明に浮き彫りにします（例：「一个激灵坐了起来」＝ハッと身震いして跳ね起きた）。",
+      "formation": "主語 ＋ 一个 ＋ 名詞（身体動作名詞：跟头、激灵、转身、踉跄 など） ＋ 動詞（＋ 補語）",
+      "examples": [
+        {
+          "translation": "彼は手で手すりを掴みそこね、一回転して真っ逆さまに転落した。"
+        }
+      ]
+    },
+    "zh_了个A_711": {
+      "title": "（了） 个 ＋ 形容詞（口語結果・程度強調表現：すっかり…になる・徹底的に…してしまう・〜して散々な…になる）",
+      "shortExplanation": "動詞と形容詞（または四字熟語）の間に助詞「（了）个」を挟み、動作がもたらした結果や状態が極めて徹底的・完全・または深刻な極限に達したことを生き生きと強調します（「〜して粉々になる」「すっかり…してしまう」）。",
+      "longExplanation": "「動詞 ＋（了）个 ＋ 形容詞 / 四字成語」は、日常の話し言葉で動作の帰結を誇張的かつ劇的に描写する結果・程度補語構文です。ここでの「了」は動作の完了を示し、「个」は本来の量詞としての実質的な意味を失い、軽声で添えられる特殊な語気・構造助詞として機能しています。後続する形容詞や成語は、事態が最終的・徹底的な極限状態に達したことを示し、「摔了个粉碎」（粉々に粉砕してしまう）、「输了个精光」（一文無しにすっかり負けてしまう）、「闹了个大红脸」（真っ赤になって赤恥をかく）、「喝了个酩酊大醉」（泥酔するまで痛飲する）のように用いられます。事態の劇的な結末に対する話し手の驚きや強調の感情が強く込められます。",
+      "formation": "動詞 ＋ （了） 个 ＋ 形容詞 / 四字熟語（例：粉碎、精光、大红脸、酩酊大醉）",
+      "examples": [
+        {
+          "translation": "彼は大切にしていたバイオリンを地面に叩きつけ、粉々に砕いてしまった。"
+        }
+      ]
+    },
+    "zh_向来VA_712": {
+      "title": "向来 ＋ 動詞 / 形容詞（時間副詞：従来・昔から・これまでずっと〜である・生来）",
+      "shortExplanation": "過去から現在に至るまで、特定の性質、習慣、方針、または状態が一貫して変わらず維持されていることを表す時間副詞です（「昔からずっと」「従来」「これまで一貫して」）。",
+      "longExplanation": "「向来」（xiànglái）は、過去から現在に至るまでの長い時間的スパンにおいて、ある事柄や性格、態度が一貫して変わることなく保たれていることを表す代表的な時間副詞です。動詞や形容詞の直前に置かれて連用修飾語（状語）として機能します。「向」には「従来、古くから」という意味があり、「来」は「現在に至るまで」を表します。人の人柄や信条を述べる文脈で「向来忠厚（昔から実直である）」「向来严谨（従来から綿密である）」のように用いられたり、方針・習慣に関して「向来如此（これまでずっとこうである）」「向来不主张……（従来から一貫して〜を支持しない）」のように使われます。口語・書面語を問わず自然に用いられ、事態の恒常性と確実性を力強く言明します。",
+      "formation": "主語 ＋ 向来 ＋ 動詞 / 形容詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "彼らは昔からずっと実直で誠実であり、人柄も温厚である。"
+        }
+      ]
+    },
+    "zh_预先_713": {
+      "title": "预先（時間副詞：あらかじめ・前もって・事前に・前々から）",
+      "shortExplanation": "事態の発生や本番を迎える前に、あらかじめ準備、通知、計画、あるいは想定を行っておくことを表す時間副詞です（「あらかじめ」「事前に」「前もって」）。",
+      "longExplanation": "「预先」（yùxiān）は、「预（あらかじめ）」と「先（先に）」から構成される標準的な時間副詞です。動詞や動詞句の前に置かれて連用修飾語（状語）として機能し、行動、対策、段取り、あるいは心理的な予測が、当該の事態が実際に生起するよりも前段階で行われることを表します。公的な通知や準備作業に関して「预先通知（事前通知する）」「预先安排（あらかじめ手配する）」「预先防范（前もって予防する）」のように広く用いられます。また、例文のように「预先没有想到（事前に誰一人予想していなかった）」という否定形で用いられると、結果の意外性や予想を遥かに超えた反響に対する驚きが鮮やかに浮き彫りにされます。",
+      "formation": "（主語 ＋）预先 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "事前には誰一人として予想していなかったが、今回の絵画展がまさかこれほど大盛況になるとは思わなかった。"
+        }
+      ]
+    },
+    "zh_CLAUSE1也好CLAUSE2也罢_714": {
+      "title": "節1 也好 節2 也罢（並列譲歩接続表現：〜であろうと…であろうと・〜にせよ…にせよ・〜でも…でも）",
+      "shortExplanation": "2つ以上の並列あるいは対照的な条件・事態を提示し、いずれの状況であっても後続の節で述べられる結論や影響には何ら変わりがないことを表します（「〜であれ…であれ」「〜にせよ…にせよ」）。",
+      "longExplanation": "「節1 也好 節2 也罢」（バリエーションとして「〜也好〜也好」「〜也罢〜也罢」も同等）は、複数の選択肢や対立する前提条件を並列に提示しながら、それらを等しく譲歩の対象として括り込む複文接続表現です。文節や名詞句の末尾に「也好」「也罢」を添えることで、「そのどちらであっても差し支えない／どちらの条件を代入しても結果は同じである」という論理関係を構築します。後続の主節には「都……（いずれも〜だ）」「全……」などの包括的な副詞を伴うことが多く、前提の相違に左右されない普遍的な規則、不可避の結末、または固い決意を明確に提示する際に用いられます。",
+      "formation": "節1 也好 ， 節2 也罢 ，＋ 主節（不変の帰結・規則）",
+      "examples": [
+        {
+          "translation": "自動車を運転していようと、自転車に乗っていようと、走行中の通話は注意力と反射神経を鈍らせる。"
+        }
+      ]
+    },
+    "zh_不时_715": {
+      "title": "不时（時間・頻度副詞：時折・折に触れて・時々・合間合間に・しきりに）",
+      "shortExplanation": "一定の短い時間間隔を置いて、ある動作、音、現象などが繰り返し断続的に生じる様子を表す時間・頻度副詞です（「時折」「合間合間に」「ふと」「しきりに」）。",
+      "longExplanation": "「不时」（bùshí）は、情景描写や叙述において極めて豊かな表現力を持つ時間・頻度の副詞です。「不（決まっていない）」と「时（定時）」からなり、「決まった時刻を定めず、折に触れて何度も生じる」という原義を持ちます。動詞述語の直前に置かれて連用修飾語（状語）として機能します。特に風景の描写、鳥の鳴き声や物音、あるいは人の無意識な仕草について、「不时传来……（合間合間に〜が伝わってくる）」「不时回头（しきりに振り返る）」のように用いられます。「偶尔（たまに）」が単に発生頻度の低さ（希薄さ）を示すのに対し、「不时」は事象が現在の時間軸の合間合間にテンポよく割り込んでくる継続的・断続的な反復のニュアンスを含みます。",
+      "formation": "（主語 ＋）不时（＋ 地） ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "折に触れて聞こえてくる鳥のさえずりが、新しい一日がまた始まったことを私たちに教えてくれる。"
+        }
+      ]
+    },
+    "zh_多多少少_716": {
+      "title": "多多少少（程度副詞・重畳語：多かれ少なかれ・いくらか・多少なりとも・ある程度は）",
+      "shortExplanation": "形容詞「多少」のAABB重畳形式で、程度や数量がある水準で確実に存在することを表し、断定を和らげて控えめに言明する際に用いる程度副詞表現です（「多かれ少なかれ」「いくらか」）。",
+      "longExplanation": "「多多少少」（duōduōshǎoshǎo）は、「多少（多少、いくらか）」がAABB形式に重ね合わされた生き生きとした連用修飾語（状語）です。動詞や形容詞の前に置かれ、数量や程度において「決してゼロではなく、多かれ少なかれ一定の分量や影響が備わっている」ことを表します。重畳されることでリズムが整い、話し手の主観的判断を過度に断定的にせず、客観的かつ柔軟に伝えるクッション言葉としての役割を果たします。「多多少少有一点……（いくらか〜がある）」「多多少少会受到影响（多かれ少なかれ影響を受ける）」のように使われ、日常の評価や感想を自然に表現できます。",
+      "formation": "主語 ＋ 多多少少 ＋ 動詞 / 形容詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "彼の言った言葉には、多かれ少なかれ真実が含まれている。"
+        }
+      ]
+    },
+    "zh_逐M_717": {
+      "title": "逐 ＋ 量詞（書面語連用修飾表現：一つずつ・一項目ずつ・順を追って〜ごとに・個別に）",
+      "shortExplanation": "格調高い書面語において「逐（順を追って、一つずつ）」に量詞を組み合わせ、動作や点検が漏れなく順番に、単位ごとに徹底して行われることを表す表現です（「一つずつ」「順次」「項目ごとに」）。",
+      "longExplanation": "「逐 ＋ 量詞」（zhú ＋ 量詞）は、公文書、学術報告、報道記事などで極めて頻繁に用いられる書面語特有の連用修飾構文（状語）です。「逐」は古典漢語に由来し、「順を追って次々と、一つ一つ漏れなく」という意味を表します。後続の量詞と密接に結びつき、動作がその単位ごとに綿密・厳格に遂行される様子を示します。代表的な連語として、「逐个 / 逐一（一つずつ、一人ずつ）」「逐条（条項ごとに一つ一つ）」「逐项（一項目ずつ）」「逐年（年を追うごとに、年々）」「逐字逐句（一字一句漏らさず）」などが挙げられます。口語の「一个一个地」に比べて極めて簡潔・典雅であり、公的で厳格なニュアンスを付与します。",
+      "formation": "主語 ＋ 逐 ＋ 量詞 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "雨季が近づいているため、安全上のリスクを排除すべく、貯水池を一つずつ点検しなければならない。"
+        }
+      ]
+    },
+    "zh_归根到底_718": {
+      "title": "归根到底（挿入成語・接続副詞：結局のところ・突き詰めれば・根本的には・帰する所）",
+      "shortExplanation": "表面的な現象や枝葉末節を削ぎ落とし、問題の本質、最終的な原因、または根本的な帰着点を端的に指し示す際に用いる成語表現です（「突き詰めれば」「結局のところ」「根本的には」）。",
+      "longExplanation": "「归根到底」（guīgēndàodǐ、類義成語として「归根结底」も同等）は、事象の究極的な本質や核心的要因を一言で総括する挿入語・接続副詞成語です。字義通り「根源に立ち帰り、底の底まで突き詰める」ことを意味します。文章や対話において、様々な表層的議論や付随的要素を一括して総括し、「最も重要かつ決定的な真実はここにある」と結論づける際に強力な説得力を発揮します。文頭に単独で置かれて読点を伴うこともあれば、主語と述語の間に挟まれて連用修飾語として機能することもあります。学術論文、時事論評から日常の人生論まで幅広く使われます。",
+      "formation": "（主語 ＋）归根到底 ＋ 述語 / 归根到底 ， 節（本質的結論）",
+      "examples": [
+        {
+          "translation": "運動やフィットネスは突き詰めれば自分自身の問題であり、いい加減にごまかすのは実のところ自分を騙しているにすぎない。"
+        }
+      ]
+    },
+    "zh_哪怕_719": {
+      "title": "哪怕（譲歩仮定接続詞：たとえ〜であっても・仮に〜だとしても・たとえわずか〜でも）",
+      "shortExplanation": "極限の仮定条件や最低限度の前提を提示し、たとえそのような過酷・微小な状況であっても、主節の決意、帰結、あるいは義務が変わらないことを強調する譲歩接続詞です（「たとえ〜でも」「仮に〜としても」）。",
+      "longExplanation": "「哪怕」（nǎpà）は、極端な仮定や最悪の事態、あるいは極小の可能性を前提として導き入れる代表的な譲歩仮定の接続詞です。「哪（いかなる）」と「怕（恐れる）」から成り、「たとえ何を恐れることがあろうとも／たとえどんな事態に直面しようとも」という強いニュアンスを持ちます。後続の節では通例「也」「都」「还」などの副詞と呼応し、「いかに厳しい条件であろうとも、断固として成し遂げる」という不屈の意志や、動かしがたい客観的帰結を示します。また、例文のように文末に倒置的・補足的に置かれて「〜哪怕……（たとえ〜であっても）」と強い念押しを行う用法も極めて頻繁に見られます。",
+      "formation": "哪怕 ＋ 極限の仮定条件 ，（主語 ＋）也 / 都 ＋ 帰結節 / 主節 ， 哪怕 ＋ 条件節",
+      "examples": [
+        {
+          "translation": "ご安心ください。私たちはたとえ一筋の希望しか残されていなくとも、全力で患者の救命にあたります。"
+        }
+      ]
+    },
+    "zh_反之_720": {
+      "title": "反之（対照接続詞：これに反して・逆に・反対に・その逆であれば）",
+      "shortExplanation": "簡潔で格調高い書面語の接続詞で、「これと反対に」「もし逆の状況であれば」という意味で、前件と正反対の条件・推論を対称的に導く際に用います（「逆に」「これに反して」）。",
+      "longExplanation": "「反之」（fǎnzhī）は、文言文（古典漢語）の代名詞構造を色濃く残した格式高い対照接続詞です。「反（逆である、反対である）」と代名詞「之（これ、前述の事態）」が結合したもので、「これと正反対の状況が生じたならば」という対照的仮定を端的に表します。複文において、先行する文で肯定的な条件と結果を述べた後、「反之」を挟んで後続文で「もし条件が逆であれば正反対の結果となる」という対称的・論理的な対比構文を構築します。経済学、社会学の学術論文、時事社説、法律文書などで、物事の両面を論理整然と対比・論証する際に好んで用いられます。",
+      "formation": "節1 。/ ， 反之 ，＋ 節2（対照的な帰結）",
+      "examples": [
+        {
+          "translation": "経済が発展して庶民の収入が増加すれば消費力は強まり、逆にそうでなければ、庶民の消費力は落ち込む。"
+        }
+      ]
+    },
+    "zh_VA1的VA1VA2的VA2_721": {
+      "title": "動詞 / 形容詞1 的 動詞 / 形容詞1 ， 動詞 / 形容詞2 的 動詞 / 形容詞2（対照列挙描写構文：〜なものは〜し、…なものは…する／〜のもあれば…のもある）",
+      "shortExplanation": "動詞や形容詞に構造助詞「的」を添えて名詞化し、それを述語として重ねるリズム形式を2組対照的に並べることで、様々な事物がそれぞれの様態を生き生きと競い合っている情景を描写します（「〜なものは〜し、…なものは…する」「〜のもあれば…のもある」）。",
+      "longExplanation": "「動詞 / 形容詞1 的 動詞 / 形容詞1 ， 動詞 / 形容詞2 的 動詞 / 形容詞2」は、対象の多様性、群像劇の賑やかさ、あるいは事態の錯綜した様態を極めてリズミカルに描き出す対句的描写構文です。前半の「動詞/形容詞 ＋ 的」がその属性や動作を持つ部分集合（「〜なもの／〜する人々」）を指し示し、直後に同一の語を反復することで「それぞれの状態を十全に現出させている」ことを強調します。色彩の対比（例：「红的红，绿的绿」＝赤みのあるものは赤く、青いものは青い）、人間の動態の対比（例：「走的走，留的留」＝去る者は去り残る者は残る、「哭的哭，笑的笑」＝泣く者もあれば笑う者もある）などに広く用いられ、一様ではない豊かな情景を読者の眼前に鮮烈に浮き彫りにします。",
+      "formation": "主語（全体） ＋ ， 動詞 / 形容詞1 的 動詞 / 形容詞1 ， 動詞 / 形容詞2 的 動詞 / 形容詞2",
+      "examples": [
+        {
+          "translation": "果樹園に入ると、木一面に実った桃が目に入り、赤いものは赤く、青いものは青く、実に美しかった。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_V1V1V2V2_707": {
+      "title": "동사1동사1동사2동사2 (동사의 AABB형 중첩: ~하고 …하며 떠들썩함, 반복적이고 생생한 동작 묘사)",
+      "shortExplanation": "두 개의 단음절 동사를 AABB 형태로 중첩하여 동작이 잇달아 반복되거나 일상적으로 편안하게 이루어지는 모습을 생동감 있게 묘사합니다('치고받고 장난치다', '부딪치고 까지다').",
+      "longExplanation": "“동사1동사1동사2동사2”는 현대 중국어 구어에서 동작의 반복과 다채로운 양태를 한 폭의 그림처럼 생생하게 표현하는 대표적인 AABB형 동사 중첩 구조입니다. 병렬 관계를 이루는 두 개의 단음절 동사(또는 '打闹', '磕碰', '吵闹' 등의 병렬 복합어)를 각각 두 번씩 겹쳐 씀으로써 형성됩니다(예: 打打闹闹, 磕磕碰碰, 吵吵闹闹, 摇摇晃晃). 문장 속에서 술어는 물론 주어, 상황어(부사어), 관형어로도 자유롭게 쓰입니다. 이 구문은 개별 동작을 단순히 나열하는 것을 넘어, 동작이 끊임없이 유쾌하게 이어지거나 일상적으로 가볍게 발생하는 성질을 강조하며, 대수롭지 않거나 자연스러운 일로 받아들이는 화자의 너그러운 어감을 담아냅니다.",
+      "formation": "동사1동사1동사2동사2 (예: 打打闹闹, 磕磕碰碰, 吵吵闹闹)",
+      "examples": [
+        {
+          "translation": "아이들은 원래 치고받고 장난치는 걸 좋아하니, 이리저리 부딪치고 넘어지는 건 불가피한 일이야. 며칠 지나면 괜찮아지니까 걱정하지 마."
+        }
+      ]
+    },
+    "zh_左MN右MN_708": {
+      "title": "左 + 수사 + 양사 + 명사 + 右 + 수사 + 양사 + 명사 (구어 빈번 반복 강조 구문: 이쪽저쪽에서 연달아 ~하다, 쉴 새 없이 꼬리를 물고 ~하다)",
+      "shortExplanation": "방위사 '左'와 '右'에 수량사(주로 '一 + 양사')를 결합하여 특정 사물이나 동작이 꼬리에 꼬리를 물고 쉴 새 없이 빗발치듯 이어지는 모습을 묘사합니다('연달아', '빗발치듯').",
+      "longExplanation": "“左 + 수사 + 양사 + 명사 + 右 + 수사 + 양사 + 명사”(실제 구어에서는 주로 “左一个……右一个……”의 형태)는 일상 대화에서 특정 행위나 사건이 빈번하고 끈질기게 되풀이되는 양상을 과장하여 생생하게 나타내는 대칭형 구어 구문입니다. 여기서 '左'와 '右'는 물리적인 좌우 방향을 가리키는 것이 아니라 사방에서 쉴 틈 없이 밀려드는 모습을 상징하며, 수사로는 거의 예외 없이 숫자 '一'이 쓰입니다. 대개 구조 조사 '地'를 수반하여 술어 동사를 수식하는 상황어(부사어)로 기능합니다(예: “左一个电话右一个电话地催”＝전화를 연달아 걸어 대며 재촉하다, “左一声谢谢右一声感激”＝연신 고맙다고 인사하다). 어떤 행위가 집요하게 쏟아져 들어와 어쩔 줄 모르거나 성가셔하는 화자의 심리를 고스란히 담아냅니다.",
+      "formation": "(주어 +) 左 + (수사 +) 양사 + 명사 + 右 + (수사 +) 양사 + 명사 (+ 地 + 동사)",
+      "examples": [
+        {
+          "translation": "어머니는 빗발치듯 연달아 전화를 걸어 대며 그에게 집에 빨리 들어오라고 재촉했다."
+        }
+      ]
+    },
+    "zh_莫非难道不成_709": {
+      "title": "莫非 / 难道 …… 不成 (반어 및 강한 추측 의문 구문: 설마 ~란 말인가, 정녕 ~라는 것인가)",
+      "shortExplanation": "문두의 추측·반어 부사 '莫非' 또는 '难道'와 문말 어기조사 '不成'이 호응하여, 믿기 힘든 상황에 대한 깊은 의구심, 경악, 혹은 강력한 반어적 질책을 나타냅니다('설마 ~란 말인가', '정녕 ~라는 말인가').",
+      "longExplanation": "“莫非……不成”과 “难道……不成”은 현대 중국어에서 화자의 강력한 의혹과 충격, 혹은 도저히 납득할 수 없는 사태에 대한 반문을 나타내는 대표적인 호응식 의문 구문입니다. 문두의 “莫非”는 주로 불길하거나 뜻밖의 상황을 조심스레 짚어내는 강한 추측을 유도하고, “难道”는 상식적으로 용납하기 어려운 현실에 맞서는 단호한 반어적 어기를 이끕니다. 문장 맨 끝의 “不成”은 어기조사로서 앞선 부사와 호응하여 '설마 진짜 그러한 것은 아니겠지', '만약 그렇다면 말도 안 된다'라는 배척과 반문의 뉘앙스를 최고조로 끌어올립니다. 황망한 자문자답이나 상대방을 매섭게 추궁하는 문맥에서 주로 쓰입니다.",
+      "formation": "莫非 / 难道 + 절 / 술어 + 不成 ?",
+      "examples": [
+        {
+          "translation": "그는 깜짝 놀라 머릿속이 새하얘졌다. 설마 사기라도 당했단 말인가?"
+        }
+      ]
+    },
+    "zh_一个N_710": {
+      "title": "一个 + 명사 (돌발 동작 양태 구문: 한바탕 홱/우당탕 ~하다, 몸을 한 번 획 움직여 ~하다)",
+      "shortExplanation": "'一个' 뒤에 신체 동작이나 반사적 움직임을 나타내는 명사(跟头, 激灵, 转身, 踉跄 등)를 결합하여, 동작이 눈 깜짝할 사이에 돌발적이고 완전하게 이루어지는 양태를 묘사합니다('몸을 홱 돌려', '곤두박질치며').",
+      "longExplanation": "“一个 + 명사”는 신체의 즉각적인 반응이나 돌발적인 동작 양태를 술어 앞에서 역동적으로 묘사하는 특수 상황어(부사어) 구조입니다. 결합하는 명사는 일반 사물이 아닌, 동작성과 체태를 내포하는 특정 어휘군으로 제한됩니다(예: 跟头 [곤두박질], 激灵 [흠칫 놀람/몸서리], 转身 [몸을 홱 돌림], 踉跄 [비틀거림]). 이 구조는 단순히 횟수가 '한 번'임을 세는 차원을 넘어, 동작이 지체 없이 단숨에, 그리고 전신으로 일어났음을 강조하여 문장에 강렬한 시각적 효과와 긴박감을 불어넣습니다(예: “一个转身溜走了”＝몸을 홱 돌려 냅다 달아났다, “一个激灵惊醒了”＝흠칫 몸서리를 치며 화들짝 깨어났다).",
+      "formation": "주어 + 一个 + 명사 (신체 동작 명사: 跟头, 激灵, 转身, 踉跄 등) + 동사 (+ 보어)",
+      "examples": [
+        {
+          "translation": "그는 손으로 난간을 붙잡지 못해, 거꾸로 곤두박질치며 굴러떨어졌다."
+        }
+      ]
+    },
+    "zh_了个A_711": {
+      "title": "(了) 个 + 형용사 (구어 결과·정도 강조 구문: 완전히 …해 버리다, 아주 철저하게 …한 지경에 이르다)",
+      "shortExplanation": "동사와 형용사(또는 사자성어) 사이에 조사 '(了)个'를 삽입하여, 동작이 초래한 결과나 상태의 정도가 극에 달해 완전히 그러한 상태가 되었음을 과장되고 생생하게 묘사합니다('완전히 …해 버리다', '…하게 산산조각 나다').",
+      "longExplanation": "“동사 + (了) 个 + 형용사 / 성어”는 현대 중국어 구어에서 동작의 극적인 종결 상태나 그로 인한 철저한 영향을 생동감 넘치게 드러내는 특수 보어 구문입니다. 여기서 “了”는 동작의 실현을 나타내고, 가볍게 경성으로 발음되는 “个”는 본래의 양사적 수량 의미를 상실한 채 형용사 술어를 이끄는 구조·어기 조사의 성격을 띱니다. 뒤에 결합하는 형용사나 4자 성어는 사태가 더 이상 돌이킬 수 없을 만큼 극단적이거나 완벽한 결과에 도달했음을 나타냅니다(예: “摔了个粉碎”＝내던져 산산조각을 내다, “输了个精光”＝한 푼도 남김없이 몽땅 털리다, “闹了个大红脸”＝얼굴이 새빨개지며 망신을 당하다, “弄了个一清二楚”＝명명백백하게 밝혀내다). 화자의 깊은 탄식, 놀라움, 혹은 강렬한 인상을 담아냅니다.",
+      "formation": "동사 + (了) 个 + 형용사 / 사자성어 (예: 粉碎, 精光, 大红脸, 酩酊大醉)",
+      "examples": [
+        {
+          "translation": "그는 아끼던 바이올린을 내던져 산산조각을 내버렸다."
+        }
+      ]
+    },
+    "zh_向来VA_712": {
+      "title": "向来 + 동사 / 형용사 (시간 부사: 원래부터 죽, 줄곧, 여태껏 늘 ~하다)",
+      "shortExplanation": "과거부터 현재에 이르기까지 어떤 성품, 습관, 원칙 혹은 상태가 변함없이 일관되게 지속되어 왔음을 나타내는 시간 부사입니다('여태껏 늘', '원래부터 줄곧', '예로부터').",
+      "longExplanation": "“向来”(xiànglái)는 과거에서 현재에 걸친 긴 시간 동안 주어의 태도, 성격, 행동 양식 등이 한결같이 유지되어 왔음을 밝히는 표준적인 시간 부사입니다. 술어 동사나 형용사 앞에 놓여 상황어(부사어)로 쓰입니다. 글자 그대로 '과거로부터(向) 지금까지 이어져 왔다(来)'는 뜻을 지니며, 사람의 됨됨이를 평할 때 “向来忠厚”(늘 충직하다), “向来随和”(성품이 한결같이 원만하다)처럼 애용되며, 확고한 신념이나 관례를 밝힐 때 “向来如此”(예로부터 늘 이래 왔다), “向来不赞成”(줄곧 찬성하지 않아 왔다)처럼 쓰입니다. “从来”나 “一向”과 유사하지만, 보다 안정적이고 격조 있는 어감을 지니며 오랜 시간 동안 형성된 불변의 본질적 특성을 강조합니다.",
+      "formation": "주어 + 向来 + 동사 / 형용사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그들은 예로부터 늘 충직하고 성실하며 처세가 진솔했다."
+        }
+      ]
+    },
+    "zh_预先_713": {
+      "title": "预先 (시간 부사: 미리, 사전에, 사전에 앞서서)",
+      "shortExplanation": "어떤 일이나 사건이 발생하기에 앞서 미리 준비하거나 알리거나 예측해 두는 행위를 나타내는 시간 부사입니다('사전에', '미리', '앞서서').",
+      "longExplanation": "“预先”(yùxiān)는 사전에(预) 먼저(先) 어떠한 조치나 계획, 혹은 예상을 선행하여 실행함을 나타내는 대표적인 시간 부사입니다. 주로 술어 동사나 동사구 앞에 놓여 상황어(부사어)로 기능합니다. 업무 처리나 일상 계획에서 “预先通知”(사전에 알리다), “预先准备”(미리 준비하다), “预先防范”(사전에 방지하다) 등과 같이 빈번하게 결합합니다. 아울러 예문과 같이 부정 형식인 “预先都没料到 / 预先都没有想到”(사전에 아무도 짐작조차 못 했다)의 꼴로 쓰일 경우, 사태의 결과가 가져다준 엄청난 반향이나 뜻밖의 전개에 대한 화자와 대중의 깊은 경탄을 효과적으로 부각합니다.",
+      "formation": "(주어 +) 预先 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "사전에 그 누구도 미처 생각지 못했으나, 이번 회화 전시회가 이토록 폭발적인 인기를 끌 줄은 몰랐다."
+        }
+      ]
+    },
+    "zh_CLAUSE1也好CLAUSE2也罢_714": {
+      "title": "절1 也好 절2 也罢 (병렬 양보 접속 구문: ~이든 …이든 간에, ~하든 …하든 관계없이)",
+      "shortExplanation": "두 가지 이상의 서로 다른 조건이나 상황을 병렬로 나열하여, 그 어떤 경우에 해당할지라도 뒤따르는 귀결이나 결론에는 아무런 차이가 없음을 나타내는 양보 접속 표현입니다('~이든 …이든 간에', '~하든 …하든 간에').",
+      "longExplanation": "“절1 也好 절2 也罢”(상황에 따라 “……也好……也好” 혹은 “……也罢……也罢”로 대칭을 이루기도 함)는 복문에서 서로 다른 대안이나 대립되는 전제를 폭넓게 아우르며 양보하는 대표적인 접속 틀입니다. 각 분절이나 어구 뒤에 “也好”와 “也罢”를 덧붙여 '전자이든 후자이든 가릴 것 없이 모두 인정한다'는 전제를 세웁니다. 그 후 이어지는 주절에서는 “都”나 “全” 등의 부사와 결합하여, 어떠한 선택지에서도 예외 없이 성립하는 객관적 진리, 보편적 규칙, 혹은 흔들림 없는 원칙을 도출합니다. 구어와 서면어 모두에서 자연스럽게 활용되며 논지를 객관적이고 설득력 있게 전개할 때 유용합니다.",
+      "formation": "절1 也好 , 절2 也罢 , + 주절 (불변의 귀결·원칙)",
+      "examples": [
+        {
+          "translation": "자동차를 운전하든 자전거를 타든, 주행 중에 통화하는 것은 주의력과 순발력에 악영향을 미친다."
+        }
+      ]
+    },
+    "zh_不时_715": {
+      "title": "不时 (빈도·시간 부사: 때때로, 이따금씩, 간간이, 심심찮게)",
+      "shortExplanation": "짧은 시간 간격을 두고 특정한 동작, 소리, 현상 등이 단속적으로 끊임없이 되풀이되는 양상을 나타내는 빈도·시간 부사입니다('간간이', '이따금씩', '때때로').",
+      "longExplanation": "“不时”(bùshí)는 문학적 묘사나 생생한 서술에서 감각적인 현장의 소리와 동작을 섬세하게 표현하는 대표적인 빈도·시간 부사입니다. 정해진 때가 없이 수시로 일어난다는 의미에서 비롯되어, 술어 동사 앞에서 상황어(부사어)로 쓰입니다. 특히 배경 소리의 출현이나 인물의 반복적인 행동을 포착할 때 “不时传来……”(간간이 들려오다), “不时望向窗外”(이따금 창밖을 내다보다), “不时点头”(연신 고개를 끄덕이다)와 같이 활발히 쓰입니다. 단순히 가끔 일어남을 뜻하는 “偶尔”에 비해, “不时”는 동작이나 자극이 현재 진행 중인 상황 속에서 비교적 잦은 간격으로 틈틈이 끼어드는 연속적 생동감을 풍깁니다.",
+      "formation": "(주어 +) 不时 (+ 地) + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "간간이 들려오는 새 울음소리는 우리에게 새로운 하루가 다시 시작되었음을 일깨워 준다."
+        }
+      ]
+    },
+    "zh_多多少少_716": {
+      "title": "多多少少 (정도 부사·중첩어: 다소, 다소간, 얼마간, 많든 적든 간에)",
+      "shortExplanation": "'多少'의 AABB형 중첩 형태로, 수량이나 정도 면에서 전혀 없지 않고 어느 정도 존재함을 나타내며 단정적인 어투를 부드럽게 완화해 주는 정도 부사입니다('다소간', '얼마간', '많든 적든').",
+      "longExplanation": "“多多少少”(duōduōshǎoshǎo)는 '다소, 얼마간'을 뜻하는 형용사/부사 “多少”가 AABB 형태로 중첩된 어휘입니다. 술어 동사나 형용사 앞에서 상황어(부사어)로 기능하며, 사물의 수량이나 정도가 완전히 배제되지 않고 '어느 정도는 유효하게 존재한다'는 사실을 드러냅니다. 중첩을 통해 표현에 온건함과 객관성을 더해주며, 극단적이거나 성급한 단정을 피하고 사태를 신중하게 평가하는 완충 작용을 합니다(예: “多多少少有些道理”＝다소간 일리가 있다, “多多少少带有点偏见”＝얼마간 편견이 섞여 있다). 일상 회화와 비평문에서 두루 애용됩니다.",
+      "formation": "주어 + 多多少少 + 동사 / 형용사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그의 말에는 다소간 진실이 담겨 있다."
+        }
+      ]
+    },
+    "zh_逐M_717": {
+      "title": "逐 + 양사 (서면어 부사어 구문: 하나하나, 차례차례 개별적으로, ~별로 순차적으로)",
+      "shortExplanation": "격식 있는 서면어에서 '逐(차례로, 낱낱이)'에 양사를 결합하여, 동작이나 점검이 단위별로 하나도 빠짐없이 차례대로 꼼꼼히 진행됨을 나타내는 부사어 구조입니다('하나하나', '순차적으로', '항목별로').",
+      "longExplanation": "“逐 + 양사”(zhú + 양사)는 공문서, 보도자료, 학술 연구 등 격조 높은 문체에서 애용되는 대표적인 서면어 상황어(부사어) 구조입니다. 고전 한문에서 유래한 “逐”은 '순서에 따라 차례차례, 낱낱이'라는 뜻을 지니며, 단위 양사와 결합하여 동작의 철저성과 순차성을 부각합니다. 대표적인 결합형으로 “逐个 / 逐一”(하나하나, 일일이), “逐条”(한 조항씩 차례로), “逐项”(항목별로 빠짐없이), “逐年”(해마다 순차적으로), “逐句”(한 문장 한 문장 꼼꼼히) 등이 있습니다. 일반 구어의 “一个个地”에 비해 군더더기 없이 간결하며, 누락 없이 빈틈없이 일을 처리하는 공적이고 엄격한 뉘앙스를 담아냅니다.",
+      "formation": "주어 + 逐 + 양사 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "우기가 다가오고 있으므로 안전상 취약 요소를 배제하기 위해 저수지를 하나하나 꼼꼼히 점검해야 한다."
+        }
+      ]
+    },
+    "zh_归根到底_718": {
+      "title": "归根到底 (성어 연어·접속 부사어: 결국, 근본적으로 따져 보면, 귀결하자면)",
+      "shortExplanation": "지엽적인 현상이나 겉모습을 배제하고, 사안의 가장 깊은 뿌리와 본질, 혹은 궁극적인 원인을 짚어 결론을 내릴 때 사용하는 대표적인 사자성어 부사 표현입니다('결국 따지고 보면', '근본적으로는').",
+      "longExplanation": "“归根到底”(guīgēndàodǐ, 동의 성어로 “归根结底”도 널리 쓰임)는 문제의 궁극적 본질과 핵심 원인을 날카롭게 통찰하여 제시하는 핵심적인 성어형 담화 표지입니다. 글자 그대로 '뿌리로 돌아가고 바닥까지 가닿는다'는 뜻에서 유래하여, 복잡다단한 표면적 요소를 걷어내고 가장 본질적인 결론이나 귀착점을 매듭지을 때 쓰입니다. 문두에 독립하여 쉼표를 동반하거나 주어와 술어 사이에 삽입되어 문장 전체를 수식합니다. 논설문이나 시사 비평에서 논지를 확고하게 매듭짓거나, 일상에서 삶의 본질적 가치를 환기시킬 때 강력한 설득력을 발휘합니다.",
+      "formation": "(주어 +) 归根到底 + 술어 / 归根到底 , 절 (본질적 결론)",
+      "examples": [
+        {
+          "translation": "운동과 체력 관리는 결국 따지고 보면 자기 자신의 일이니, 건성으로 때우는 것은 실상 스스로를 속이는 짓이다."
+        }
+      ]
+    },
+    "zh_哪怕_719": {
+      "title": "哪怕 (양보 가정 접속사: 비록 ~일지라도, 설령 ~라 할지라도, 단지 ~뿐이라도)",
+      "shortExplanation": "극한의 가설이나 최소한의 조건, 혹은 가장 가혹한 상황을 전제로 이끌어내어, 그러한 처지일지라도 주절의 결단이나 결과에는 흔들림이 없음을 강조하는 양보 가정 접속사입니다('설령 ~라 할지라도', '비록 ~일망정').",
+      "longExplanation": "“哪怕”(nǎpà)는 의문사 “哪”와 동사 “怕”(두려워하다)가 융합된 어휘로, '설령 무엇을 두려워하랴', 즉 '어떤 극단적인 고난이나 미미한 조건이 닥칠지라도'라는 강렬한 양보 가정을 유도하는 대표적인 접속사입니다. 복문에서 주로 전제절 머리에 놓이며, 뒷절의 “也”, “都”, “还要” 등과 긴밀히 호응하여 악조건 속에서도 결코 꺾이지 않는 확고한 의지나 필연적인 결과를 단호하게 서술합니다. 아울러 예문에서처럼 주절 뒤에 보충적·후치적으로 배치되어 “……，哪怕……”(설령 ~일지라도)의 형태로 쓰이며 확고한 결의나 진정성을 극적으로 각인시키는 역할을 하기도 합니다.",
+      "formation": "哪怕 + 극한의 가정 조건 , (주어 +) 也 / 都 + 귀결절 / 주절 , 哪怕 + 조건절",
+      "examples": [
+        {
+          "translation": "안심하십시오, 저희는 설령 한 줄기 희망만 남아 있을지라도 온 힘을 다해 환자를 살려낼 것입니다."
+        }
+      ]
+    },
+    "zh_反之_720": {
+      "title": "反之 (대조 접속사: 반대로, 이와 반대로, 그와 역으로 상황이 전개된다면)",
+      "shortExplanation": "격조 높은 서면어 접속사로, '이와 반대로', '만약 상황이 역전된다면'의 뜻을 지니며 앞서 진술한 조건이나 사실과 정반대되는 전제 및 결과를 대칭적으로 이끌어냅니다('반대로', '이와 달리').",
+      "longExplanation": "“反之”(fǎnzhī)는 고전 문언문의 지시대명사 용법을 계승한 품격 높은 서면어 대조 접속사입니다. '반대되다'라는 뜻의 “反”과 앞 문장의 조건·상황 전체를 받는 대명사 “之”가 어우러져 '이와 정반대로 뒤집어 말하자면'이라는 논리적 전환을 단 두 글자로 압축합니다. 주로 앞 절에서 긍정적 조건에 따른 긍정적 결과를 설명한 뒤, 뒷절 머리에 “反之”를 배치하여 부정적 조건에 따른 부정적 결과를 엄정하게 대립시키는 양방향 대칭 구문을 이룹니다. 논문, 경제 보고서, 정책 사설 등에서 양면적 인과 관계를 빈틈없이 증명할 때 불가결하게 쓰입니다.",
+      "formation": "절1 。/ ， 反之 ，+ 절2 (대조적 결과)",
+      "examples": [
+        {
+          "translation": "경제가 발전하여 백성들의 소득이 늘어나면 소비 여력이 커지고, 반대로 그렇지 못하면 소비 여력이 떨어지게 된다."
+        }
+      ]
+    },
+    "zh_VA1的VA1VA2的VA2_721": {
+      "title": "동사 / 형용사1 的 동사 / 형용사1 ， 동사 / 형용사2 的 동사 / 형용사2 (대비 열거 묘사 구문: ~한 것은 ~하고 …한 것은 …하다, 어떤 것은 ~하고 어떤 것은 …하다)",
+      "shortExplanation": "동사나 형용사에 조사 '的'를 붙여 명사화한 후 동일한 어휘를 술어로 반복하는 대칭적 리듬 구문을 병렬시켜, 여러 대상이 각양각색의 상태를 띠거나 제각기 다른 행동을 펼치는 다채로운 광경을 묘사합니다('어떤 것은 ~하고 어떤 것은 …하다', '~하는 자는 ~하고 …하는 자는 …하다').",
+      "longExplanation": "“동사 / 형용사1 的 동사 / 형용사1 ， 동사 / 형용사2 的 동사 / 형용사2”는 대상의 다양성과 생동감 넘치는 군상의 정경을 리드미컬하게 포착하는 대구적 묘사 구문입니다. 선행하는 “동사/형용사 + 的”가 해당 성질이나 행위를 지닌 특정 집단(‘~한 것들 / ~하는 사람들’)을 지칭하고, 뒤이어 동일한 동사/형용사가 재차 술어로 놓여 각자의 속성을 생생히 구현합니다. 다양한 색채의 어우러짐(예: “红的红，绿的绿”＝붉은 것은 붉고 푸른 것은 푸르다), 인물들의 각기 다른 행보(예: “走的走，留的留”＝떠날 사람은 떠나고 남을 사람은 남다, “哭的哭，笑的笑”＝우는 사람이 있는가 하면 웃는 사람도 있다) 등을 한 폭의 수채화처럼 펼쳐 보입니다.",
+      "formation": "주어 (전체) + , 동사 / 형용사1 的 동사 / 형용사1 , 동사 / 형용사2 的 동사 / 형용사2",
+      "examples": [
+        {
+          "translation": "과수원에 들어서자 나무 한가득 열린 복숭아가 보였는데, 붉은 것은 붉고 푸른 것은 푸르러 참으로 아름다웠다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_V1V1V2V2_707": {
+      "title": "动词1动词1动词2动词2（动词AABB式重叠：打打闹闹、磕磕碰碰，生动描摹动作的频繁交替与生活化情态）",
+      "shortExplanation": "两个单音节并列动词各自重叠构成AABB式，用于生动展现动作行为的反复交替、轻松自如或日常琐碎状态，常带有轻快、随和或不以为意的语气体味；相当于“又……又……”、“不断地……”。",
+      "longExplanation": "“动词1动词1动词2动词2”是汉语口语中表现力极强的AABB动词重叠格式。它通常由结构对等、意义相近或互为因果的两个单音节动词组合重叠而成（多数源于“打闹”、“磕碰”、“吵闹”、“进出”等联合式词语的分拆重叠，如“打打闹闹”、“磕磕碰碰”、“进进出出”）。在句法功能上，既可充当主语、谓语，也可作定语或带“地”作状语。在语用表达上，该格式打破了单音动词的刻板印象，赋予话语强烈的画面感、节奏感与动态感，能够生动地烘托出场面的热闹、动作的琐碎无拘束，抑或是说话人对日常微小波折持包容释怀的豁达态度。",
+      "formation": "动词1动词1动词2动词2（如：打打闹闹、磕磕碰碰、吵吵闹闹）",
+      "examples": [
+        {
+          "translation": "小孩子本来就喜欢嬉闹折腾，磕磕碰碰也都是难免的事，过几天就全好了，不必悬着心。"
+        }
+      ]
+    },
+    "zh_左MN右MN_708": {
+      "title": "左 + 数词 + 量词 + 名词 + 右 + 数词 + 量词 + 名词（口语对称强调结构：左一个……右一个……，形容动作频繁、连续不断且应接不暇）",
+      "shortExplanation": "口语中极具夸张色彩的对称格式，借“左”、“右”虚指四面八方、连续涌现，强调某一事物或言行动作频频发生、接二连三让人应接不暇；相当于“一个接一个地”、“接连不断地”。",
+      "longExplanation": "“左 + 数词 + 量词 + 名词 + 右 + 数词 + 量词 + 名词”（最典型的凝固模式为“左一个……右一个……”）是现代汉语口语中描摹事物密集反复、应接不暇的生动句式。式中的“左”与“右”早已脱离具体的空间方位义，而是借左右开弓之势，虚指频率极高、此起彼伏、毫无停歇的态势；数量成分通常由数词“一”与量词构成。该结构主要充当状语，修饰后续的谓语动词，且常带描写助词“地”（如“左一个电话右一个电话地催”、“左一声道歉右一声认错”）。语用上不仅强调频次极高，往往还微妙地透露出当事人被频频催促打扰时的无奈、忙乱或被重重包围的紧迫感。",
+      "formation": "（主语 +）左 +（数词 +）量词 + 名词 + 右 +（数词 +）量词 + 名词（+ 地 + 动词）",
+      "examples": [
+        {
+          "translation": "母亲接二连三、一通接着一通地打电话，急迫地催促他赶紧回家。"
+        }
+      ]
+    },
+    "zh_莫非难道不成_709": {
+      "title": "莫非/难道 …… 不成（揣测反问呼应格式：莫非……不成、难道……不成，表示强烈的惊疑、揣测或质问）",
+      "shortExplanation": "句首揣测副词“莫非”或反问副词“难道”与句末语气助词“不成”前后呼应，用于表达对出乎意料之事的极大震惊、难以置信的猜测，或是严正的反诘质问；相当于“难道真的……吗”、“难不成……”。",
+      "longExplanation": "“莫非……不成”与“难道……不成”是汉语中极富语用张力的框式反问与揣测格式。句首的“莫非”侧重于对未料及的消极事态进行惊疑不定的推断（如自言自语的疑虑）；而“难道”则侧重于以不容置疑的反诘语气强化不可思议之感。句尾的“不成”原为动词结构，在句末已彻底虚化为语气助词，专与反问或揣测副词呼应，起到收束全句、将质疑或不可理喻之情推向顶峰的作用。整个句子表达的潜台词通常是“如果事情真是那样，那是绝对不可理喻或无法接受的”，因此常见于主人公突遭变故时的内心独白或面对不公时的愤然反诘。",
+      "formation": "莫非 / 难道 + 分句 / 谓语 + 不成 ？",
+      "examples": [
+        {
+          "translation": "他心头猛地一震，脑子里瞬间一片空白——莫非当真是中了别人的圈套不成？"
+        }
+      ]
+    },
+    "zh_一个N_710": {
+      "title": "一个 + 名词（动作态势状语：表示动作迅疾突发、一气呵成的特定体态举动）",
+      "shortExplanation": "数词“一”与量词“个”后接表示身体姿态或应激动作的名词（如跟头、激灵、转身、趔趄），整体用作状语，生动描画动作发生得迅猛突兀、利落干脆；相当于“猛地一……”、“一瞬间……”。",
+      "longExplanation": "在汉语语法中，“一个 + 名词”结构具有极具特色的状语描写功能。该结构所搭配的名词并非普通实体名词，而是高度凝固的身体姿态或生理应激类动作名词，如“一个跟头”（翻滚栽倒）、“一个激灵”（寒颤惊醒）、“一个转身”（旋即回身）、“一个踉跄/趔趄”（摇晃失控）。从语义特征来看，它不仅仅是在计量动作的次数，核心在于借由“一个完整动作单元”的突发呈现，生动描绘出身体动作在电光石火之间的爆发性、突兀性与连贯性。置于动词谓语前，能够瞬间拉紧叙事节奏，给读者或听众带来极为逼真的现场动态画面。",
+      "formation": "主语 + 一个 + 名词（体态动作类名词：跟头、激灵、转身、踉跄） + 动词（+ 补语）",
+      "examples": [
+        {
+          "translation": "他的手没能抓住栏杆，猛地打了个大跟头栽落下来。"
+        }
+      ]
+    },
+    "zh_了个A_711": {
+      "title": "（了）个 + 形容词（口语结果强调格式：摔了个粉碎、输了个精光，极言动作导致的状态或程度极其彻底）",
+      "shortExplanation": "在动词与形容词（或四字成语）之间插入虚化的“（了）个”，用作结果或状态补语，强调动作所引发的最终状态达到了无以复加、彻底到极致的地步；相当于“弄得彻底……”、“变得极其……”。",
+      "longExplanation": "“动词 +（了）个 + 形容词/成语”是现代汉语口语中富有极强戏剧张力与修辞色彩的补语扩展格式。式中的“了”提示动作完成，“个”则已完全虚化为一种带有语气强化的结构助词（读轻声），不再具有计量实体的功能，而是专门用于引出后续带有夸张描写色彩的状态描写成分。后续的形容词或成语多具有“极致”、“彻底”或“不可逆转”的终极状态特征，诸如“摔了个粉碎”、“输了个精光”、“闹了个大红脸”、“喝了个酩酊大醉”、“忙了个焦头烂额”。它赋予语言强烈的现场感与主观评价色彩，生动呈现出说话人对事态结局之彻底或惨烈所产生的由衷惊叹。",
+      "formation": "动词 +（了）个 + 形容词 / 四字成语（如：粉碎、精光、大红脸、一清二楚）",
+      "examples": [
+        {
+          "translation": "他将自己心爱的提琴重重摔落在地，砸得粉身碎骨、支离破碎。"
+        }
+      ]
+    },
+    "zh_向来VA_712": {
+      "title": "向来 + 动词/形容词（时间副词：自过去至今一贯如此、向来、素来保持某种属性或行为规律）",
+      "shortExplanation": "时间副词，用在动词或形容词前作状语，表示某种人品特征、行为习惯、立场原则或自然状态自过去一直延续至今，从未发生改变；相当于“一贯”、“素来”、“从来”。",
+      "longExplanation": "“向来”（xiànglái）是汉语中连接过去与现在、展现行为或属性长期恒定不移的标准时间副词。字面上，“向”有“往昔、向来”之义，“来”则标示时间顺延至当下。在句法上，它充当状语修饰谓语动词或形容词。该词多用于概括人的性格修养（如“向来忠厚”、“向来低调”）、长久秉持的行为准则（如“向来不干涉”、“向来主张公平”）或是对客观事物规律的一贯认知（如“向来如此”）。与“一向”相比，“向来”所涵盖的时间往往更为久远、性质更为稳固；与“从来”相比，语气更为沉着从容，无论是书面典雅行文还是日常严谨叙事皆被广泛采纳。",
+      "formation": "主语 + 向来 + 动词 / 形容词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "他们自过去到现在一向为人忠厚老实，处世待人格外真诚恳切。"
+        }
+      ]
+    },
+    "zh_预先_713": {
+      "title": "预先（时间副词：事先、预先、在事件发生或着手之前先行安排或料想）",
+      "shortExplanation": "时间副词，置于动词或动词短语前作状语，表示动作的准备、通知、筹划或心理预料发生在事情展开之前；相当于“事先”、“前置地”、“提前”。",
+      "longExplanation": "“预先”（yùxiān）是由语素“预”（预备、预先）与“先”（先行、在前）构成的常用时间副词。在句法结构中，它紧跟主语之后、居于谓语动词之前充任状语。该词强调时间维度的超前性，主要用于表述在特定核心事态或关键节点到来之前，先行完成某种措施、防范或认识储备（如“预先告知”、“预先演练”、“预先部署”）。当用于否定结构“预先没想到/料不到”时，更可有力地反衬出事态发展的剧烈变迁、巨大成功或意外转折，使叙事与说明更具波澜起伏的修辞效果。",
+      "formation": "（主语 +）预先 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "事前大家都未曾预料到，本届美术绘画展览竟然会受到如此广泛而热烈的欢迎。"
+        }
+      ]
+    },
+    "zh_CLAUSE1也好CLAUSE2也罢_714": {
+      "title": "分句1 也好 分句2 也罢（并列让步关联格式：无论是……还是……、不管……还是……，表示条件虽殊而结论恒定）",
+      "shortExplanation": "并列让步复句格式，先后列举两种或多种不同甚至相对立的情形，并在后文指出无论何种情况，主句所陈述的结论、规约或事实皆一律适用、概莫能外；相当于“无论是……还是……”。",
+      "longExplanation": "“分句1 也好 分句2 也罢”（其对称变体包括“……也好……也好”或“……也罢……也罢”）是现代汉语中用于兼容多种并列条件、引申普遍规律的高频让步格式。在分句或名词性成分末尾分别附以“也好”与“也罢”，其语用目的不在于权衡取舍，而在于将所有可能的情形全盘纳入考量视野，并在主句中借助副词“都”、“总”等引出毫无悬念的恒定结论。该句式逻辑缜密、兼顾全面，既可用于论说文中的客观法理阐释，亦可用于日常口语中的道理说服与立场申明。",
+      "formation": "分句1 也好 ， 分句2 也罢 ，+ 主句结论（一律适用的结果）",
+      "examples": [
+        {
+          "translation": "不论是开汽车也好，抑或是骑自行车也罢，在行驶途中接打电话都会严重削弱注意力与应急反应能力。"
+        }
+      ]
+    },
+    "zh_不时_715": {
+      "title": "不时（频率/时间副词：时时、频频、间歇反复出现，生动描绘动作或声响的断续发生）",
+      "shortExplanation": "时间与频率副词，置于动词或动词短语前作状语，表示某种行为、声响或自然现象不隔多时便重复出现一次，呈现出断断续续的动态过程；相当于“时常”、“时而”、“间或”。",
+      "longExplanation": "“不时”（bùshí）在古汉语及现代汉语中皆是极富画面感的时间频率副词。字面由“不”（不定）与“时”（定时）复合而成，取其“不拘定时、随时间歇呈现”之意。句法上紧跟动词作状语（常可带描写助词“地”）。该词尤为擅长捕捉自然景物音响或人物无意识举动在时间轴上的穿插律动，常见搭配如“不时传来掌声/歌声”、“不时举目远眺”、“不时点头赞同”。相较于偏重发生几率极低的“偶尔”，“不时”更突出动作反复浮现的密集感与连贯感，为全句烘托出富有诗意或现场感的生活气息。",
+      "formation": "（主语 +）不时（+ 地）+ 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "不时回荡在林间清脆悦耳的鸟叫声提醒着我们，崭新的一天已然悄悄拉开帷幕。"
+        }
+      ]
+    },
+    "zh_多多少少_716": {
+      "title": "多多少少（重叠程度状语：多多少少、或多或少，表示在一定程度上具备某种分量或属性）",
+      "shortExplanation": "形容词“多少”的AABB式重叠，作状语修饰动词或形容词，表示程度或数量并非全无、而是具有一定限度的分量，常用以缓和语气、留有余地；相当于“或多或少”、“在某种程度上”。",
+      "longExplanation": "“多多少少”（duōduōshǎoshǎo）是“多少”在汉语修辞中重叠衍生出的程度状语格式。在句中紧随主语、居于谓语之前，用以表明主语所具有的性状、受到的牵涉或体现的特征虽未能达到极致或百分之百的纯粹，但也绝非微不足道或彻底归零，而是实实在在地占据了一定比重。从语用机能来看，该重叠格式富有弹性，能极为得体地软化主观断语的生硬感，使言谈评价显得谦和中肯、留有回旋余地。常与“有点”、“有些”、“带有”等轻微估量词协同出现。",
+      "formation": "主语 + 多多少少 + 动词 / 形容词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "他所说的那一番话，在某种程度上多多少少带有几分真实的成分。"
+        }
+      ]
+    },
+    "zh_逐M_717": {
+      "title": "逐 + 量词（书面语状语格式：逐个、逐条、逐项，依照计量单位依次无遗漏地推进）",
+      "shortExplanation": "典雅的书面语状语结构，动词性语素“逐”（依次、挨个）与量词结合，表示某种清查、分析或实施动作按计量单位顺序开展，严谨细致且毫无遗漏；相当于“一个一个地”、“一项一项依次”。",
+      "longExplanation": "“逐 + 量词”（zhú + 量词）是现代汉语政经公文、法学条例与科学论著中具有高度规范性的状语搭配模式。“逐”承袭古汉语“挨个、循序”之意，与不同的分类量词结合，构成高度精炼的副词性语块。常见的定型组合有：“逐个/逐一”（单个排查）、“逐条”（按条款细究）、“逐项”（分项目落实）、“逐年/逐月/逐日”（按时序推进）、“逐字逐句”（推敲文本）。该结构在修辞效果上远比口语化的“一个个地”更为紧凑凝练，能够精准传递出治理管控的严谨周密、制度落实的一丝不苟以及分析推演的系统性。",
+      "formation": "主语 + 逐 + 量词 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "雨季即将来临，必须对各个水库逐个进行严格排查，以彻底消除潜在的安全隐患。"
+        }
+      ]
+    },
+    "zh_归根到底_718": {
+      "title": "归根到底（成语/评注性状语：归根结底、究其根本，揭示事物的本质归宿与终极原因）",
+      "shortExplanation": "评注性成语状语，用于拨开表象与细枝末节，一针见血地指出事物最核心的本质、最根本的原因或最终的归宿；相当于“从根本上说”、“归根结底”。",
+      "longExplanation": "“归根到底”（guīgēndàodǐ，亦常作“归根结底”）是汉语论辩与议论篇章中极具归纳定论力度的核心成语。字面寓意“寻根溯源直达底层”。在句法上，它既可充当评注性插入语置于分句句首，亦可嵌于主谓之间充当状语。该格式的语用价值在于高度的概括性与深刻性：在罗列分析了纷繁复杂的客观表象之后，说话人借助此语陡然收拢逻辑视界，直击问题内在的最原初动力、最本质属性或最终责任归属，从而使论点具备不可撼动的思辨深度与说服力。",
+      "formation": "（主语 +）归根到底 + 谓语 / 归根到底 ， 分句（揭示本质结论）",
+      "examples": [
+        {
+          "translation": "强身健体归根到底是个人的切身大事，马虎敷衍实质上不过是在自欺欺人。"
+        }
+      ]
+    },
+    "zh_哪怕_719": {
+      "title": "哪怕（假设让步连词：即便、纵然、就算，引出极限假设或最低限度条件）",
+      "shortExplanation": "假设让步连词，引出一种处于极端状态的假设、极小的可能性或最艰难的条件，用以反衬出主句行动决心的坚定不移或客观结论的断然成立；相当于“即便”、“纵使”。",
+      "longExplanation": "“哪怕”（nǎpà）是现代汉语复句中表述极限让步的强语气连词。字面蕴涵“何惧之有、即便如此亦无所畏惧”之意。句法上多领起让步分句，常与后件中的副词“也”、“都”、“还要”相呼应。其鲜明的逻辑特征在于所设定的前置条件往往具有“最低限度”（如仅有一丝希望）或“极端艰险”（如赴汤蹈火）的特质，以此作为衬托，强力彰显出主句主体誓不放弃的坚定意志、高度责任感或客观规律的不可违抗。此外，该词亦可后置于主句之后，充当补充性让步从句（如“……，哪怕……”），使语篇流露出深沉真挚的感人力量。",
+      "formation": "哪怕 + 极限假设条件 ，（主语 +）也 / 还 + 结论分句 / 主句 ， 哪怕 + 条件分句",
+      "examples": [
+        {
+          "translation": "请您尽管放宽心，纵然哪怕只剩下一线微茫的希望，我们也必定会竭尽全力抢救伤病员。"
+        }
+      ]
+    },
+    "zh_反之_720": {
+      "title": "反之（转折对比连词：反之、反过来说、若情况与此相反，用于引出对称相悖的前提与推论）",
+      "shortExplanation": "凝练典雅的书面语连词，由动词“反”与代词“之”（指代前文所述情况）复合而成，用于引出与前文条件完全相对立的另一种假定与对应后果；相当于“反过来说”、“与此相反”。",
+      "longExplanation": "“反之”（fǎnzhī）是现代汉语书面语中直接传承文言句法精髓的高级逻辑关联词。“反”为相反逆向，“之”为文言指示代词，在此承指前文所设定的完整情境。“反之”通常置于后一分句句首，自成停顿。其最根本的语用价值在于构筑严密对称的双向逻辑闭环：在前文确立了“正向条件导致正向结论”之后，借“反之”迅即翻转逻辑视角，严密推导出“逆向条件必致逆向结论”。该词不仅行文极为洗练精当，更能极大增强学术论证、经济评析与法理推演的周密性与说服力。",
+      "formation": "分句1 。/ ， 反之 ，+ 分句2（相反情况的对称结论）",
+      "examples": [
+        {
+          "translation": "经济繁荣发展，百姓收入水涨船高，消费能力自然强劲；反之，民众的消费购买力就会疲软萎缩。"
+        }
+      ]
+    },
+    "zh_VA1的VA1VA2的VA2_721": {
+      "title": "动词/形容词1 的 动词/形容词1，动词/形容词2 的 动词/形容词2（对称列举并列格式：有的……有的……、各具形态，生动描画多样纷呈之图景）",
+      "shortExplanation": "动词或形容词后接结构助词“的”构成名词化短语，继而重复该词作谓语，两组结构对称并置，用于生动展现事物色彩形态斑斓多样、或人群各行其是的丰富动态场景；相当于“有的……有的……”、“各显其……”。",
+      "longExplanation": "“动词/形容词1 的 动词/形容词1，动词/形容词2 的 动词/形容词2”是汉语修辞中极富建筑美与音韵美的一对四音节并列描写格式。前一个“词项 + 的”形成“的”字短语指称具备该特征的分支子集（即“那部分……的个体”），随后复叠该词项以坐实其性状。两相并立，既形成形式工整的对偶节奏，更构筑起生动多姿的微观全景图。该句式常用于描绘色彩斑斓的自然物象（如“红的红，绿的绿”、“大的大，小的小”），或是摹写群体分化、各奔前程的世相百态（如“走的走，留的留”、“哭的哭，闹的闹”）。句风生动晓畅，具有鲜明的视觉穿透力。",
+      "formation": "主语（整体） + ， 动词 / 形容词1 的 动词 / 形容词1 ， 动词 / 形容词2 的 动词 / 形容词2",
+      "examples": [
+        {
+          "translation": "步入果园深处，众人举目望见满树累累硕果，红的鲜红、绿的碧绿，景致分外明艳动人。"
+        }
+      ]
+    }
+  }
+}

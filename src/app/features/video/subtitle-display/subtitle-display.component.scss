@@ -308,7 +308,7 @@
     flex-direction: column;
     align-items: center;
     padding: var(--space-2xs) 0;
-    gap: 6px;
+    gap: 0;
     box-sizing: border-box;
 }
 
@@ -333,8 +333,8 @@
 }
 
 .subtitle-translation {
-    font-size: 0.84375rem;
-    line-height: 1.35;
+    font-size: 0.9375rem;
+    line-height: 1.4;
     min-height: auto;
     box-sizing: border-box;
     color: var(--text-secondary);
@@ -367,7 +367,7 @@
     background: transparent;
     border: 1px solid transparent;
     box-shadow: none;
-    min-height: calc(0.84375rem * 2.8 + 6px);
+    min-height: calc(0.9375rem * 2.8 + 6px);
     box-sizing: border-box;
     padding: 3px var(--space-sm);
     display: inline-flex;
@@ -379,7 +379,7 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    height: calc(0.84375rem * 1.4);
+    height: calc(0.9375rem * 1.4);
     padding: 0 4px;
 
     span {
@@ -415,13 +415,35 @@
 }
 
 .subtitle-translation-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: calc(0.84375rem * 1.35);
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                margin-top 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     margin-top: 0;
+    width: 100%;
+    overflow: hidden;
+
+    &.is-expanded {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        margin-top: 6px;
+    }
+
+    .subtitle-translation-inner {
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateY(-4px);
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &.is-expanded .subtitle-translation-inner {
+        transform: translateY(0);
+    }
 }
 
 .subtitle-translation--empty {
@@ -430,7 +452,7 @@
     border: 1px solid transparent !important;
     box-shadow: none !important;
     pointer-events: none;
-    min-height: calc(0.84375rem * 1.35);
+    min-height: calc(0.9375rem * 1.35);
     box-sizing: border-box;
     padding: 0 var(--space-sm);
 }
@@ -450,14 +472,13 @@
 }
 
 .current-subtitle--small .subtitle-translation {
-    font-size: 0.75rem;
+    font-size: 0.84375rem;
     min-height: auto;
 }
 
-.current-subtitle--small .subtitle-translation-wrapper,
 .current-subtitle--small .subtitle-translation--empty,
 .current-subtitle--small .subtitle-translation--loading {
-    min-height: calc(0.75rem * 1.35);
+    min-height: calc(0.84375rem * 1.35);
 }
 
 .current-subtitle--large .subtitle-text {
@@ -467,14 +488,13 @@
 }
 
 .current-subtitle--large .subtitle-translation {
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
     min-height: auto;
 }
 
-.current-subtitle--large .subtitle-translation-wrapper,
 .current-subtitle--large .subtitle-translation--empty,
 .current-subtitle--large .subtitle-translation--loading {
-    min-height: calc(0.875rem * 1.35);
+    min-height: calc(1.0625rem * 1.35);
 }
 
 .current-subtitle--large.has-dual-subtitles {
@@ -490,14 +510,13 @@
 }
 
 .current-subtitle--xlarge .subtitle-translation {
-    font-size: 1rem;
+    font-size: 1.25rem;
     min-height: auto;
 }
 
-.current-subtitle--xlarge .subtitle-translation-wrapper,
 .current-subtitle--xlarge .subtitle-translation--empty,
 .current-subtitle--xlarge .subtitle-translation--loading {
-    min-height: calc(1rem * 1.35);
+    min-height: calc(1.25rem * 1.35);
 }
 
 .current-subtitle--xlarge.has-dual-subtitles {
@@ -1382,7 +1401,7 @@ ruby rt {
 
 .cue-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-md);
     width: calc(100% - 16px);
     margin: 2px 8px;
@@ -1992,7 +2011,7 @@ ruby rt {
     }
 
     .subtitle-translation {
-        font-size: 0.8125rem;
+        font-size: 0.9375rem;
     }
 
     .current-subtitle--small .subtitle-text {
@@ -2000,7 +2019,7 @@ ruby rt {
     }
 
     .current-subtitle--small .subtitle-translation {
-        font-size: 0.6875rem;
+        font-size: 0.8125rem;
     }
 
     .current-subtitle--large .subtitle-text {
@@ -2008,7 +2027,7 @@ ruby rt {
     }
 
     .current-subtitle--large .subtitle-translation {
-        font-size: 0.875rem;
+        font-size: 1.0625rem;
     }
 
     .current-subtitle--xlarge .subtitle-text {
@@ -2016,7 +2035,7 @@ ruby rt {
     }
 
     .current-subtitle--xlarge .subtitle-translation {
-        font-size: 0.9375rem;
+        font-size: 1.1875rem;
     }
 
     .word {
@@ -2258,7 +2277,7 @@ ruby rt {
     }
 
     .subtitle-translation {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
     }
 
     .current-subtitle--small .subtitle-text {
@@ -2266,7 +2285,7 @@ ruby rt {
     }
 
     .current-subtitle--small .subtitle-translation {
-        font-size: 0.625rem;
+        font-size: 0.75rem;
     }
 
     .current-subtitle--large .subtitle-text {
@@ -2274,7 +2293,7 @@ ruby rt {
     }
 
     .current-subtitle--large .subtitle-translation {
-        font-size: 0.8125rem;
+        font-size: 0.9375rem;
     }
 
     .current-subtitle--xlarge .subtitle-text {
@@ -2282,7 +2301,7 @@ ruby rt {
     }
 
     .current-subtitle--xlarge .subtitle-translation {
-        font-size: 0.875rem;
+        font-size: 1.0625rem;
     }
 
     .cue-item {

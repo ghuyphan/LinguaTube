@@ -162,9 +162,10 @@
 .dialog-footer {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-.create-playlist-btn {
+.add-playlist-create-btn {
     width: 100%;
     min-height: 2.75rem;
     display: inline-flex;
@@ -180,6 +181,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-fast);
+    white-space: nowrap;
 
     @media (hover: hover) {
         &:hover {

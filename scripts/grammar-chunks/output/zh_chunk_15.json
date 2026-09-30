@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_差不多A_213": {
+      "title": "差不多 + Tính từ (Phó từ: Gần như... / Xấp xỉ...)",
+      "shortExplanation": "Phó từ '差不多' đứng trước tính từ hoặc cụm tính từ biểu thị mức độ xấp xỉ, gần bằng nhau hoặc tương đương; 'gần như...', 'xấp xỉ...'.",
+      "longExplanation": "'差不多' (chàbuduō) khi dùng làm phó từ đứng trước tính từ (hoặc cụm như '一样高', '一样大') nhằm biểu thị mức độ chênh lệch rất nhỏ, gần như tương đương hoặc tiệm cận với tính chất đó. Trong câu thường kết hợp với cấu trúc so sánh '跟……差不多一样……'. Tương đương với 'gần như...', 'xấp xỉ...', 'ngang ngửa...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (跟 + Đối tượng so sánh + ) 差不多 + (一样 + ) Tính từ",
+      "examples": [
+        {
+          "translation": "Chiều cao của con gái tôi xấp xỉ bằng tôi."
+        }
+      ]
+    },
+    "zh_差不多V_214": {
+      "title": "差不多 + Động từ (Phó từ: Gần như đã... / Sắp... xong)",
+      "shortExplanation": "Phó từ '差不多' đứng trước động từ (thường đi kèm bổ ngữ kết quả như '完', '好') để biểu thị hành động đã gần như hoàn thành; 'gần như đã... xong'.",
+      "longExplanation": "'差不多' (chàbuduō) khi đứng trước động từ thường kết hợp với các động từ có bổ ngữ kết quả (như 干完, 做完, 准备好) hoặc trợ từ ngữ khí '了', biểu thị hành động hoặc công việc đã tiến hành đến giai đoạn sắp kết thúc, gần như đã hoàn tất toàn bộ tiến trình. Tương đương với 'gần như đã...', 'coi như đã... xong' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 差不多 + Động từ (+ Bổ ngữ kết quả + 了)",
+      "examples": [
+        {
+          "translation": "Công việc gần như đã làm xong xuôi rồi."
+        }
+      ]
+    },
+    "zh_几乎_215": {
+      "title": "几乎 + Số lượng từ (Phó từ: Gần... / Suýt soát... - Chỉ số lượng xấp xỉ)",
+      "shortExplanation": "Phó từ '几乎' đặt trước cụm số lượng để biểu thị số lượng hoặc mức giá đã tiệm cận, suýt soát đạt đến con số đó; 'gần...', 'suýt soát...'.",
+      "longExplanation": "'几乎' (jīhū) là phó từ chỉ mức độ tiệm cận. Khi đứng trước cụm số lượng từ (như 5000块, 一半, 一年), '几乎' biểu thị con số thực tế dù chưa hoàn toàn đạt tới nhưng đã vô cùng sát với con số được nêu ra. Cấu trúc thường dùng để nhấn mạnh số lượng lớn, giá trị cao hoặc mức độ xấp xỉ rất sát. Tương đương với 'gần...', 'suýt soát...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 几乎 + Số từ + Lượng từ (+ Danh từ)",
+      "examples": [
+        {
+          "translation": "Chiếc máy tính này có giá gần 5000 tệ."
+        }
+      ]
+    },
+    "zh_几乎A_216": {
+      "title": "几乎 + Tính từ (Phó từ: Gần như... / Hầu như... - Chỉ mức độ tiệm cận)",
+      "shortExplanation": "Phó từ '几乎' đứng trước tính từ để biểu thị tính chất hoặc trạng thái đã tiệm cận mức độ hoàn toàn, sai khác không đáng kể; 'gần như...', 'hầu như...'.",
+      "longExplanation": "'几乎' (jīhū) khi bổ nghĩa cho tính từ có tác dụng chỉ mức độ tiệm cận tuyệt đối, tức là trạng thái hoặc tính chất đó đã đạt đến mức gần như hoàn toàn (như 相当 - tương đương, 一样 - như nhau, 不可能 - không thể). Cấu trúc này thường mang phong cách tương đối trang trọng hơn so với '差不多'. Tương đương với 'gần như...', 'hầu như...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 几乎 + Tính từ",
+      "examples": [
+        {
+          "translation": "Được và mất gần như tương đương nhau."
+        }
+      ]
+    },
+    "zh_几乎V_217": {
+      "title": "几乎 + Động từ (Phó từ: Suýt nữa... / Gần như...)",
+      "shortExplanation": "Phó từ '几乎' đứng trước động từ để biểu thị hành động suýt nữa đã xảy ra (thực tế chưa xảy ra hoặc vừa kịp ngăn lại), hoặc động tác gần như đạt tới một mức độ nhất định.",
+      "longExplanation": "'几乎' (jīhū) khi bổ nghĩa cho động từ thường biểu thị hai trường hợp: (1) Biểu thị một tình huống không mong muốn suýt nữa thì xảy ra trên thực tế (tương tự như '差点儿'), ví dụ '几乎忘了' (suýt nữa thì quên), '几乎跌倒' (suýt nữa thì ngã); (2) Biểu thị hành vi, trạng thái gần như đã hoàn tất hoặc bao trùm toàn bộ. Tương đương với 'suýt nữa...', 'suýt chút nữa...', 'gần như...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 几乎 + Động từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Chuyện này tôi suýt nữa thì quên nói cho bạn biết rồi."
+        }
+      ]
+    },
+    "zh_尽管_218": {
+      "title": "尽管……，可是 / 但是…… (Dù cho / Cho dù... nhưng... - Câu phức chuyển ngoặt nhượng bộ)",
+      "shortExplanation": "Liên từ '尽管' dùng ở vế trước để thừa nhận một sự thật hiển nhiên (cho dù / mặc dù...), vế sau dùng '但是', '可是' hoặc '却' để diễn tả sự chuyển ngoặt trái ngược.",
+      "longExplanation": "'尽管' (jǐnguǎn) là liên từ biểu thị quan hệ nhượng bộ chuyển ngoặt. Vế câu chứa '尽管' nêu ra một điều kiện, tình huống có thật đã hoặc đang tồn tại; vế tiếp theo thường phối hợp với các liên từ chuyển ngoặt như '但是', '可是', '却' để đưa ra một kết quả hoặc hành động đi ngược lại lẽ thường. Khác với '即使' (giả thiết điều chưa xảy ra), '尽管' nhấn mạnh vào sự thật đã tồn tại. Tương đương với 'cho dù...', 'mặc dù... nhưng...' trong tiếng Việt.",
+      "formation": "尽管 + Mệnh đề thừa nhận sự thật，可是 / 但是 + Mệnh đề chuyển ngoặt",
+      "examples": [
+        {
+          "translation": "Mặc dù hôm nay trời rất lạnh, nhưng anh ấy mặc rất ít quần áo."
+        }
+      ]
+    },
+    "zh_虽然尽管却_219": {
+      "title": "(虽然 / 尽管) …… 却…… ((Tuy rằng / Mặc dù)... nhưng lại... - Câu chuyển ngoặt với phó từ 却)",
+      "shortExplanation": "Vế trước dùng '虽然' hoặc '尽管' (có thể lược bỏ), vế sau dùng phó từ '却' đứng sau chủ ngữ để biểu thị sự chuyển hướng trái ngược đầy ngạc nhiên hoặc đáng khen; '... nhưng lại...'.",
+      "longExplanation": "Cấu trúc '(虽然/尽管) …… 却……' dùng để diễn tả quan hệ nghịch tiếp mang tính tương phản rõ rệt. Trong đó, liên từ '虽然' hoặc '尽管' có thể xuất hiện ở vế đầu hoặc được lược bỏ; điểm mấu chốt là phó từ '却' bắt buộc phải đứng sau chủ ngữ của vế thứ hai (Chủ ngữ + 却 + Vị ngữ), không được đứng trước chủ ngữ như '但是'. '却' mang sắc thái chuyển hướng tương phản nhẹ nhàng nhưng dứt khoát, thường nhấn mạnh sự bất ngờ hoặc nỗ lực kiên trì. Tương đương với 'mặc dù... nhưng lại...' trong tiếng Việt.",
+      "formation": "(虽然 / 尽管 + ) Mệnh đề 1，Chủ ngữ + 却 + Vị ngữ",
+      "examples": [
+        {
+          "translation": "(Mặc dù) công việc rất bận rộn, nhưng họ vẫn kiên trì rèn luyện mỗi ngày."
+        }
+      ]
+    },
+    "zh_而_220": {
+      "title": "而 (Liên từ: Mà / Và / Còn... thì - Biểu thị quan hệ liên hợp hoặc chuyển tiếp)",
+      "shortExplanation": "Liên từ '而' (ér) dùng để nối hai mệnh đề, ngữ hoặc từ, biểu thị quan hệ tăng tiến, bổ sung ('và / mà còn') hoặc biểu thị sự chuyển tiếp, đối lập ('còn... thì / nhưng mà').",
+      "longExplanation": "'而' là một liên từ đa năng mang tính chất văn phong trang trọng, thanh nhã trong tiếng Trung. Nó có thể biểu thị: (1) Quan hệ liên tiếp, bổ sung thêm một khía cạnh song song ('và', 'mà'); (2) Quan hệ tương phản hoặc đối chiếu hai sự việc, tình huống khác nhau ('nhưng', 'trong khi đó, trái lại'); (3) Quan hệ nhân quả hoặc tăng tiến. Trong ví dụ cụ thể này, '而' liên kết hai khía cạnh cùng quan trọng, tương đương với 'mà', 'còn... cũng...' trong tiếng Việt.",
+      "formation": "Mệnh đề 1 / Thành phần 1 + ，+ 而 + Mệnh đề 2 / Thành phần 2",
+      "examples": [
+        {
+          "translation": "Kỹ năng nghe, nói rất quan trọng, mà năng lực viết chữ Hán cũng quan trọng không kém."
+        }
+      ]
+    },
+    "zh_挺A的_221": {
+      "title": "挺 + Tính từ / Động từ tâm lý + 的 (Khẩu ngữ: Khá là... / Rất...)",
+      "shortExplanation": "Cấu trúc khẩu ngữ '挺……的' (tǐng... de) dùng để biểu thị mức độ tương đối cao của đặc điểm hay cảm xúc; tương đương với 'khá là...', 'rất...'.",
+      "longExplanation": "'挺……的' là một cấu trúc quen thuộc trong khẩu ngữ tiếng Trung. Phó từ '挺' mang nghĩa là khá, rất; trợ từ ngữ khí '的' ở cuối câu giúp làm mềm ngữ khí và khẳng định đánh giá chủ quan của người nói. Cấu trúc này thường đi với tính từ (như 挺好的, 挺漂亮的) hoặc các động từ chỉ tâm lý, cảm xúc (như 挺喜欢的, 挺想你的). Mức độ của '挺' cao hơn '比较' (tương đối) nhưng sắc thái nhẹ nhàng, tự nhiên hơn '很' hay '非常'.",
+      "formation": "Chủ ngữ + 挺 + Tính từ / Động từ tâm lý (+ Tân ngữ) + 的",
+      "examples": [
+        {
+          "translation": "Tôi khá là thích nơi này."
+        }
+      ]
+    },
+    "zh_本来VA_222": {
+      "title": "本来 + Động từ / Tính từ (Phó từ: Vốn dĩ... / Ban đầu... - Chỉ tình trạng ban đầu)",
+      "shortExplanation": "Phó từ '本来' (běnlái) đứng trước động từ hoặc tính từ để biểu thị ý định, trạng thái lúc ban đầu, thường ngụ ý tình hình hiện tại đã có sự thay đổi; 'vốn dĩ...', 'ban đầu...'.",
+      "longExplanation": "'本来' đóng vai trò là phó từ chỉ thời gian hoặc trạng thái, diễn tả sự việc, dự định hay thuộc tính vốn có từ trước, lúc ban đầu. Cấu trúc này thường đi kèm với các liên từ chỉ sự chuyển ngoặt ở vế sau như '但是', '可是', '后来', '现在' để nhấn mạnh sự thay đổi hoặc khác biệt giữa quá khứ ban đầu và thực tế hiện tại. Tương đương với 'vốn dĩ...', 'ban đầu...', 'trước kia...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 本来 + Động từ / Tính từ，但是 / 可是 + Hiện tại / Thay đổi",
+      "examples": [
+        {
+          "translation": "Ban đầu cô ấy muốn học ngành báo chí, nhưng bây giờ lại đang theo học ngành luật."
+        }
+      ]
+    },
+    "zh_本来就VA_223": {
+      "title": "本来就 + Động từ / Tính từ (Vốn dĩ đã... / Vốn dĩ nên/phải... - Nhấn mạnh lẽ đương nhiên)",
+      "shortExplanation": "Kết hợp '本来就' (běnlái jiù) dùng để nhấn mạnh một chân lý hiển nhiên, một đạo lý vốn có từ trước hoặc sự việc vốn dĩ hiển nhiên phải như vậy; 'vốn dĩ đã...', 'ngay từ đầu đã...'.",
+      "longExplanation": "Khi phó từ '本来' kết hợp với '就' đứng trước động từ hoặc tính từ, nó không chỉ biểu thị trạng thái vốn có mà còn mang ngữ khí nhấn mạnh mạnh mẽ rằng: sự việc đó là lẽ dĩ nhiên, hiển nhiên theo lẽ thường, không cần phải bàn cãi hoặc trách móc (mang nghĩa 'vốn dĩ đã...', 'vốn dĩ ngay từ đầu đã...'). Cấu trúc thường kết hợp với các động từ chỉ sự tất yếu như '应该', '不应该', '是'. Tương đương với 'vốn dĩ đã...', 'ngay từ đầu đã không nên/phải...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 本来就 + Động từ (như 应该 / 不应该 / 是) / Tính từ",
+      "examples": [
+        {
+          "translation": "Học sinh vốn dĩ không nên đi học muộn."
+        }
+      ]
+    },
+    "zh_另另外另外的N_224": {
+      "title": "另 / 另外 / 另外的 + Số từ + Lượng từ + Danh từ (Một... khác / ... còn lại)",
+      "shortExplanation": "Dùng '另', '另外' hoặc '另外的' đứng trước cụm số lượng và danh từ để chỉ một đối tượng khác ngoài đối tượng đã được đề cập; 'một... khác'.",
+      "longExplanation": "Các từ chỉ thị '另' (lìng) và '另外' (lìngwài) khi đứng trước cụm số lượng (Số từ + Lượng từ + Danh từ) biểu thị sự vật hoặc người khác ngoài phạm vi đã nói trước đó. '另' chỉ đi trực tiếp với số từ (thường là '一' + lượng từ, không dùng '的'); trong khi '另外' có thể dùng '另外 + Số từ + Lượng từ' hoặc thêm '的' thành '另外的 + Số từ + Lượng từ + Danh từ'. Tương đương với 'một... khác', '... khác nữa' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 另 / 另外 / 另外的 + Số từ + Lượng từ + Danh từ",
+      "examples": [
+        {
+          "translation": "Anh ấy lấy ra một cuốn sách khác."
+        }
+      ]
+    },
+    "zh_另外的其他的别的N_225": {
+      "title": "另外的 / 其他的 / 别的 + Danh từ (Định ngữ: ... khác / ... còn lại)",
+      "shortExplanation": "Các định từ '另外的' (lìngwài de), '其他的' (qítā de) hoặc '别的' (biéde) đứng trước danh từ để chỉ các đối tượng, sự vật hoặc người khác; '... khác'.",
+      "longExplanation": "Trong tiếng Trung, '另外的', '其他的' và '别的' đều làm định ngữ đứng trước danh từ trung tâm để chỉ những đối tượng khác ngoài đối tượng đang được đề cập: (1) '别的' là từ khẩu ngữ phổ biến nhất, đứng trực tiếp trước danh từ; (2) '其他的' mang tính tề chỉnh hơn, chỉ các đối tượng còn lại trong một phạm vi nhất định; (3) '另外的' nhấn mạnh vào sự riêng biệt, nằm ngoài nhóm đã nhắc tới. Tương đương với '... khác', 'những cái khác' trong tiếng Việt.",
+      "formation": "另外的 / 其他的 / 别的 + Danh từ",
+      "examples": [
+        {
+          "translation": "Đừng đọc cuốn sách này, xin hãy đọc những cuốn sách khác."
+        }
+      ]
+    },
+    "zh_另另外V_226": {
+      "title": "另 / 另外 + Động từ (Phó từ: ... thêm / ... riêng / Làm... khác)",
+      "shortExplanation": "Phó từ '另' hoặc '另外' đứng trước động từ để biểu thị hành động được thực hiện thêm ngoài hành động đã có, hoặc thực hiện theo một cách thức khác; 'làm... thêm', 'làm... riêng'.",
+      "longExplanation": "'另' và '另外' khi dùng làm phó từ đứng trước động từ có chức năng bổ nghĩa cho hành động: (1) Biểu thị làm thêm hành động đó ngoài những gì đã làm từ trước (tương đương với 'thêm', 'bổ sung'); (2) Biểu thị đổi cách làm hoặc thực hiện với một đối tượng khác, nơi khác (như 另想办法 - nghĩ cách khác, 另外安排 - bố trí riêng). '另' thường đi với động từ đơn âm tiết, còn '另外' dùng linh hoạt hơn. Tương đương với '... thêm', '... riêng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 另 / 另外 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Anh ấy đã đưa thêm cho tôi ba mươi tệ nữa."
+        }
+      ]
+    },
+    "zh_另外_227": {
+      "title": "另外，…… (Liên từ: Ngoài ra,... / Hơn nữa,... - Bổ sung thông tin)",
+      "shortExplanation": "Liên từ '另外' đặt ở đầu câu hoặc phân câu thứ hai (thường có dấu phẩy đi kèm) để bổ sung thêm một ý, thông tin hoặc lời dặn dò khác; 'ngoài ra, ...', 'hơn nữa, ...'.",
+      "longExplanation": "'另外' (lìngwài) khi đứng độc lập ở đầu câu hoặc đầu phân câu đóng vai trò như một liên từ kết nối câu. Nó dùng để chuyển sang bổ sung thêm một sự việc, ý kiến, yêu cầu hoặc lời nhắc nhở mới nằm ngoài nội dung vừa trình bày ở câu trước. Sau '另外' thường có dấu phẩy ngắt quãng. Tương đương với 'ngoài ra,...', 'thêm vào đó,...', 'bên cạnh đó,...' trong tiếng Việt.",
+      "formation": "Mệnh đề 1。另外，(Chủ ngữ + ) Mệnh đề bổ sung",
+      "examples": [
+        {
+          "translation": "Hãy ăn nhiều hoa quả nhé. Ngoài ra, cũng phải nhớ uống nhiều nước nữa."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_差不多A_213": {
+      "title": "差不多 ＋ 形容詞（副詞：ほぼ〜・だいたい〜）",
+      "shortExplanation": "副詞「差不多」を形容詞（または「一样高」などの形容詞句）の前に置き、性質や状態の度合いにほとんど差がなく、ほぼ同等であることを表します（「ほぼ〜」「だいたい〜」）。",
+      "longExplanation": "「差不多」（chàbuduō）が副詞として形容詞の前に置かれると、その程度や状態の隔たりが極めて小さく、「ほとんど同等である」「ほぼ〜に近い」という意味を表します。「跟……差不多一样高」（〜と背の高さがほぼ同じ）のように、比較対象を導く構文で頻繁に用いられます。日本語の「ほぼ〜」「だいたい同じくらい〜」に相当します。",
+      "formation": "主語 ＋ (跟 ＋ 比較対象 ＋ ) 差不多 ＋ (一样 ＋ ) 形容詞",
+      "examples": [
+        {
+          "translation": "娘の身長は私とほぼ同じ高さです。"
+        }
+      ]
+    },
+    "zh_差不多V_214": {
+      "title": "差不多 ＋ 動詞（副詞：ほぼ〜した・だいたい〜し終えた）",
+      "shortExplanation": "副詞「差不多」を動詞の前に置き、動作や作業がほぼ完了した段階にあること（「ほぼ〜し終えた」「だいたい〜した」）を表します。",
+      "longExplanation": "「差不多」（chàbuduō）が動詞の前に置かれると、その動作や事態が完結する寸前にあること、あるいはほぼすべて終えている状態を表します。後ろには「干完」「做好」のように結果補語を伴う動詞や、完了の語気助詞「了」が置かれることが極めて一般的です。日本語の「ほぼ〜した」「だいたい〜し終わった」に相当します。",
+      "formation": "主語 ＋ 差不多 ＋ 動詞 (＋ 結果補語 ＋ 了)",
+      "examples": [
+        {
+          "translation": "仕事はほぼやり終えました。"
+        }
+      ]
+    },
+    "zh_几乎_215": {
+      "title": "几乎 ＋ 数量詞（副詞：ほぼ〜・およそ〜近く）",
+      "shortExplanation": "副詞「几乎」を数量詞の前に置き、実際の数量や金額がその数値に極めて近づいていること（「ほぼ〜」「〜近く」）を表します。",
+      "longExplanation": "副詞「几乎」（jīhū）は数量表現（数詞＋量詞）の前に置かれると、実際の数値がその基準値にほぼ到達している、あるいはわずかに達していない程度まで肉薄していることを表します。数量の多さや金額の高さなどを強調するニュアンスを含みます。日本語の「ほぼ〜」「〜近く」「およそ〜」に相当します。",
+      "formation": "主語 ＋ 几乎 ＋ 数詞 ＋ 量詞 (＋ 名詞)",
+      "examples": [
+        {
+          "translation": "このパソコンは5000元近くします。"
+        }
+      ]
+    },
+    "zh_几乎A_216": {
+      "title": "几乎 ＋ 形容詞（副詞：ほとんど〜・ほぼ〜）",
+      "shortExplanation": "副詞「几乎」を形容詞の前に置き、その状態や性質が完全にその域に達しているに近いこと（「ほとんど〜」「ほぼ〜」）を表します。",
+      "longExplanation": "「几乎」（jīhū）が形容詞を修飾する場合、その性質や状態の度合いが極限や基準値に極めて近づいており、差がほとんどないことを表します（例：相当、一样、绝望など）。口語的な「差不多」に比べ、やや書き言葉的で改まったニュアンスを持ちます。日本語の「ほとんど〜」「ほぼ〜である」に相当します。",
+      "formation": "主語 ＋ 几乎 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "得失はほぼ同等です。"
+        }
+      ]
+    },
+    "zh_几乎V_217": {
+      "title": "几乎 ＋ 動詞（副詞：あやうく〜しそうになる・ほとんど〜する）",
+      "shortExplanation": "副詞「几乎」を動詞の前に置き、もう少しでその動作や事態が発生しそうになったこと（「あやうく〜しそうになった」）、または動作がほぼ全体に及んでいることを表します。",
+      "longExplanation": "「几乎」（jīhū）が動詞を修飾する場合、(1) もう少しである好ましくない事態が起こりそうだったが、実際には起きずに済んだこと（「差点儿」と同様のニュアンス、例：几乎忘了＝あやうく忘れそうになった）、(2) 動作や影響がほぼ完全に及んでいることを表します。日本語の「あやうく〜するところだった」「ほとんど〜した」に相当します。",
+      "formation": "主語 ＋ 几乎 ＋ 動詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "この件について、もう少しであなたに伝えるのを忘れそうになるところでした。"
+        }
+      ]
+    },
+    "zh_尽管_218": {
+      "title": "尽管……，可是 / 但是……（譲歩接続詞：〜にもかかわらず・たとえ〜であっても）",
+      "shortExplanation": "接続詞「尽管」を前節に置いて確定した事実を認め（〜にもかかわらず）、後節で「可是」「但是」「却」などを伴って予想に反する逆接の結果を導きます。",
+      "longExplanation": "「尽管」（jǐnguǎn）は譲歩を表す接続詞で、前節で既存の事実や客観的状況をそのまま受け入れつつ、後節で「可是」「但是」「却」などと呼応して、通常の予想とは食い違う結果・状態を導きます。未発生の仮定を述べる「即使」とは異なり、「尽管」はすでに確定した事実に用いられるのが原則です。日本語の「〜であるにもかかわらず」「いくら〜でも、しかし…」に相当します。",
+      "formation": "尽管 ＋ 事実・譲歩節，可是 / 但是 ＋ 逆接節",
+      "examples": [
+        {
+          "translation": "今日はとても寒いにもかかわらず、彼はとても薄着をしています。"
+        }
+      ]
+    },
+    "zh_虽然尽管却_219": {
+      "title": "(虽然 / 尽管) …… 却……（逆接の呼応：〜であるのに、かえって・しかし〜）",
+      "shortExplanation": "前節に「虽然」や「尽管」（省略可能）を置き、後節の主語の後ろに逆接の副詞「却」を置いて、予想に反する意外な事態や対照的な行動を表します。",
+      "longExplanation": "「(虽然/尽管) …… 却……」は、強い対比や意外性を伴う逆接を表す構文です。前節の接続詞「虽然 / 尽管」は省略されることもあります。後節の「却」（què）は接続詞ではなく副詞であるため、必ず後節の主語の後ろに置かれます（主語 ＋ 却 ＋ 述語）。「但是」が文頭に置けるのに対し、「却」は主語の前に置くことはできません。日本語の「〜であるのに、しかし（かえって）〜する」「〜だが、それでも…」に相当します。",
+      "formation": "(虽然 / 尽管 ＋ ) 節1，主語 ＋ 却 ＋ 述語",
+      "examples": [
+        {
+          "translation": "（たとえ）仕事が非常に忙しくても、彼女たちは毎日欠かさず鍛錬を続けています。"
+        }
+      ]
+    },
+    "zh_而_220": {
+      "title": "而（接続詞：そして・また・一方で〜）",
+      "shortExplanation": "接続詞「而」（ér）は2つの節や語句を結び、並列・添加（「そして」「また」）や対比・逆接（「しかし」「一方で」）を表す格調高い接続表現です。",
+      "longExplanation": "「而」は書き言葉や改まった会話で広く用いられる接続詞です。主な用法として、(1) 並列・累加：前後の事柄を「そして」「また」「〜であり、かつ…」と並列的・相加的につなぐ、(2) 逆接・対比：「しかし」「それに対して〜」と前後の対照的な側面を際立たせる、(3) 因果関係をつなぐ、などがあります。文脈に応じて順接にも逆接にも働く柔軟な表現です。日本語の「そして」「また」「その一方で」に相当します。",
+      "formation": "節1 / 語句1 ＋ ，＋ 而 ＋ 節2 / 語句2",
+      "examples": [
+        {
+          "translation": "聞く能力や話す能力は非常に重要ですが、一方で漢字を書く能力もまた重要です。"
+        }
+      ]
+    },
+    "zh_挺A的_221": {
+      "title": "挺 ＋ 形容詞 / 心理動詞 ＋ 的（口語：かなり〜・結構〜だ）",
+      "shortExplanation": "口語表現「挺……的」（tǐng... de）は形容詞や心理動詞を挟み、度合いがかなり高いこと（「結構〜だ」「かなり〜だ」）を親しみやすく表します。",
+      "longExplanation": "「挺……的」は日常会話で頻出する程度の表現です。副詞「挺」は「かなり、ずいぶん」を意味し、文末の「的」が語気を整えて親しみや主観的な実感を添えます（「的」は省略されることもあります）。形容詞だけでなく、「喜欢」「想」などの心理動詞ともよく結びつきます。「比较」（比較的）よりも程度が高く、口語特有の自然な響きを持ちます。日本語の「結構〜だ」「かなり〜である」に相当します。",
+      "formation": "主語 ＋ 挺 ＋ 形容詞 / 心理動詞 (＋ 目的語) ＋ 的",
+      "examples": [
+        {
+          "translation": "私はここがかなり気に入っています。"
+        }
+      ]
+    },
+    "zh_本来VA_222": {
+      "title": "本来 ＋ 動詞 / 形容詞（副詞：元々は〜・当初は〜）",
+      "shortExplanation": "副詞「本来」（běnlái）を動詞や形容詞の前に置き、当初の計画や本来の状態を表します。後ろに「但是」「后来」などが続き、状況の変化を表すのが一般的です。",
+      "longExplanation": "「本来」は副詞として用いられ、「もともと」「当初は」「元来」という意味を表します。過去の当初の意図、予定、あるいは事物の原型を指し示し、後続の文で「但是」（しかし）、「后来」（その後）、「现在」（今は）などを用いて、当初の目論見や状態が現在とは変化したことを対比する文脈で頻繁に使われます。日本語の「元々は〜だったが」「当初は〜するつもりだったが」に相当します。",
+      "formation": "主語 ＋ 本来 ＋ 動詞 / 形容詞，但是 / 可是 ＋ 変化・現在の状況",
+      "examples": [
+        {
+          "translation": "彼女は元々はジャーナリズムを学びたかったのですが、現在は法律を学んでいます。"
+        }
+      ]
+    },
+    "zh_本来就VA_223": {
+      "title": "本来就 ＋ 動詞 / 形容詞（当然の強調：もともと〜なのだ・当たり前だ）",
+      "shortExplanation": "「本来就」（běnlái jiù）は動詞や形容詞の前に置かれ、道理や道理上の当然性、最初からそうであるべき自明の理（「もともと〜なのだ」）を強く強調します。",
+      "longExplanation": "「本来」の後に強調の副詞「就」を伴った「本来就」は、ある事柄が「最初から当然そうであるべきだ」「論を俟たない自明の真理だ」という話し手の強い主張や確信を表します。規則、義務、常識などを述べる文脈で「应该」「不应该」などと頻繁に共起します。日本語の「そもそも〜なのだ」「もともと〜であるべきだ（当たり前だ）」に相当します。",
+      "formation": "主語 ＋ 本来就 ＋ 動詞（应该 / 不应该 など） / 形容詞",
+      "examples": [
+        {
+          "translation": "学生はそもそも授業に遅刻すべきではありません。"
+        }
+      ]
+    },
+    "zh_另另外另外的N_224": {
+      "title": "另 / 另外 / 另外的 ＋ 数詞 ＋ 量詞 ＋ 名詞（連体修飾：もう一つの〜・別の〜）",
+      "shortExplanation": "「另」「另外」「另外的」を数量詞（数詞＋量詞）と名詞の前に置き、すでに言及した対象とは別の新たな対象（「もう一つの〜」「別の〜」）を指し示します。",
+      "longExplanation": "「另」（lìng）および「另外」（lìngwài）は、既に話題に上がっている範囲以外の別の事物や人物を特定する指示代名詞・修飾表現です。「另」は直接「一＋量詞」などの数量詞に接続し（「的」は挟まない）、「另外」は「另外 ＋ 数量詞」または助詞「的」を挟んだ「另外的 ＋ 数量詞 ＋ 名詞」の形をとることができます。日本語の「もう一つの〜」「別の〜」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 另 / 另外 / 另外的 ＋ 数詞 ＋ 量詞 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "彼はもう1冊の別の本を取り出しました。"
+        }
+      ]
+    },
+    "zh_另外的其他的别的N_225": {
+      "title": "另外的 / 其他的 / 别的 ＋ 名詞（連体修飾：ほかの〜・別の〜）",
+      "shortExplanation": "代名詞「另外的」「其他的」「别的」を名詞の前に置き、現在取り上げている対象以外の事物や人々（「ほかの〜」「別の〜」）を指します。",
+      "longExplanation": "「另外的」「其他的」「别的」はいずれも名詞の前に置かれて連体修飾語（定語）となり、言及されているものとは異なる「別の〜」「他の〜」を指し示します。「别的」は最も口語的で日常会話で多用され、「其他的」はやや改まった語感を持ち特定範囲の残りを指す傾向があり、「另外的」は別途存在する別個の対象を強調します。日本語の「ほかの〜」「別の〜」に相当します。",
+      "formation": "另外的 / 其他的 / 别的 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "この本は読まないで、ほかの本を読んでください。"
+        }
+      ]
+    },
+    "zh_另另外V_226": {
+      "title": "另 / 另外 ＋ 動詞（副詞：別に〜する・さらに追加して〜する）",
+      "shortExplanation": "副詞「另」や「另外」を動詞の前に置き、それまでの動作に加えて別途行うこと（「別に〜する」「さらに追加で〜する」）を表します。",
+      "longExplanation": "「另」（lìng）と「另外」（lìngwài）は副詞として動詞の前に置かれ、(1) すでに完了・合意した事柄に付け加えて、別途さらに動作を行うこと（例：另外给我三十元＝さらに別に30元くれる）、(2) 方法や場所、対象を改めて別のやり方で動作を行うこと（例：另想办法＝別の方法を考える）を表します。「另」は単音節動詞と結びつきやすく、「另外」はより幅広く使われます。日本語の「別に〜する」「さらに〜する」に相当します。",
+      "formation": "主語 ＋ 另 / 另外 ＋ 動詞 (＋ 目的語)",
+      "examples": [
+        {
+          "translation": "彼は私にさらに別で30元くれました。"
+        }
+      ]
+    },
+    "zh_另外_227": {
+      "title": "另外，……（接続詞：そのほか・それに・また）",
+      "shortExplanation": "接続詞「另外」を文頭や後節の冒頭に置き（通例読点を伴う）、前述の話題に加えて別の新たな事柄や補足事項を付け加えます（「そのほか」「それに」）。",
+      "longExplanation": "「另外」（lìngwài）が文頭や節の冒頭に独立して置かれる場合、文と文をつなぐ接続詞として機能します。前に述べた内容の外側に、新たな情報、アドバイス、追加の要件などを補足・添加する役割を果たします。直後に読点（，）を打つのが一般的です。日本語の「そのほかに」「それに」「また、〜」に相当します。",
+      "formation": "節1。另外，(主語 ＋ ) 補足節",
+      "examples": [
+        {
+          "translation": "果物をたくさん食べてください。そのほか、水分をたくさん摂ることも覚えておいてください。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_差不多A_213": {
+      "title": "差不多 + 형용사 (부사: 거의 ~하다, 대략 ~하다)",
+      "shortExplanation": "부사 '差不多'가 형용사(또는 '一样高'와 같은 형용사구) 앞에 놓여 성질이나 상태의 차이가 거의 없이 대등함을 나타냅니다('거의 ~하다', '비슷하게 ~하다').",
+      "longExplanation": "'差不多'(chàbuduō)는 부사로서 형용사 앞에 쓰여 대상 간의 차이가 아주 적어 거의 같거나 특정 기준치에 근접함을 의미합니다. 비교 구문 '跟……差不多一样……'(~와 거의 비슷하게 …하다) 형태로 매우 자주 결합하여 쓰입니다. 한국어의 '거의 ~하다', '대략 비슷하게 ~하다'에 해당합니다.",
+      "formation": "주어 + (跟 + 비교 대상 + ) 差不多 + (一样 + ) 형용사",
+      "examples": [
+        {
+          "translation": "딸의 키는 저와 거의 비슷하게 큽니다."
+        }
+      ]
+    },
+    "zh_差不多V_214": {
+      "title": "差不多 + 동사 (부사: 거의 ~했다, 대강 다 ~했다)",
+      "shortExplanation": "부사 '差不多'가 동사 앞에 쓰여 어떤 동작이나 업무가 거의 마무리 단계에 이르렀음('거의 다 ~했다')을 나타냅니다.",
+      "longExplanation": "'差不多'(chàbuduō)가 동사 앞에 쓰이면 동작의 진행 정도가 완성에 매우 근접하여 거의 끝나가는 상태를 나타냅니다. 보통 '干完'(다 하다), '做好'(다 만들다/준비하다)와 같이 결과보어나 어기조사 '了'를 동반하는 경우가 많습니다. 한국어의 '거의 다 ~했다', '대충 다 마쳤다'에 해당합니다.",
+      "formation": "주어 + 差不多 + 동사 (+ 결과보어 + 了)",
+      "examples": [
+        {
+          "translation": "일은 거의 다 끝냈습니다."
+        }
+      ]
+    },
+    "zh_几乎_215": {
+      "title": "几乎 + 수량사 (부사: 거의 ~에 달하다, 거의 ~ 가까이 되다)",
+      "shortExplanation": "부사 '几乎'가 수량 표현 앞에 쓰여 실제 수치나 금액이 그 기준치에 거의 육박함('거의 ~에 달하다')을 나타냅니다.",
+      "longExplanation": "'几乎'(jīhū)가 수량구(수사+양사) 앞에 결합하면 실제 수량이나 가격이 완벽히 그 수치에 도달하지는 않았더라도 매우 근접하여 거의 그에 필적함을 나타냅니다. 보통 액수가 크거나 수량이 많음을 은연중에 강조할 때 사용됩니다. 한국어의 '거의 ~에 육박하다', '거의 ~ 가까이 되다'에 해당합니다.",
+      "formation": "주어 + 几乎 + 수사 + 양사 (+ 명사)",
+      "examples": [
+        {
+          "translation": "이 컴퓨터는 거의 5000위안에 달합니다."
+        }
+      ]
+    },
+    "zh_几乎A_216": {
+      "title": "几乎 + 형용사 (부사: 거의 ~하다, 거의 다름없다)",
+      "shortExplanation": "부사 '几乎'가 형용사 앞에 놓여 성질이나 상태가 거의 완전한 수준에 도달하여 차이가 거의 없음('거의 ~하다')을 나타냅니다.",
+      "longExplanation": "'几乎'(jīhū)가 형용사를 수식할 때는 대상의 특성이나 상태가 어떤 기준이나 극한에 거의 도달하여 오차가 거의 없음을 나타냅니다(예: 相当 - 상당하다/대등하다, 一样 - 같다). 구어적인 '差不多'에 비해 다소 격식 있고 서면어적인 느낌을 줍니다. 한국어의 '거의 ~하다', '거의 다름없다'에 해당합니다.",
+      "formation": "주어 + 几乎 + 형용사",
+      "examples": [
+        {
+          "translation": "얻은 것과 잃은 것이 거의 대등합니다."
+        }
+      ]
+    },
+    "zh_几乎V_217": {
+      "title": "几乎 + 동사 (부사: 하마터면 ~할 뻔하다, 거의 ~하다)",
+      "shortExplanation": "부사 '几乎'가 동사 앞에 쓰여 하마터면 어떤 일이 벌어질 뻔했거나('하마터면 ~할 뻔하다'), 동작의 영향이 거의 전체에 미침을 나타냅니다.",
+      "longExplanation": "'几乎'(jīhū)가 동사 앞에 쓰일 때는 (1) 조금만 잘못했으면 바람직하지 않은 사태가 일어날 뻔했으나 실제로는 일어나지 않았음을 나타내거나('差点儿'과 유사, 예: 几乎忘了 - 하마터면 잊을 뻔했다), (2) 동작의 진행이나 범위가 거의 전부를 차지함을 나타냅니다. 한국어의 '하마터면 ~할 뻔하다', '거의 ~할 지경이다'에 해당합니다.",
+      "formation": "주어 + 几乎 + 동사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "이 일에 대해 하마터면 너에게 말해 주는 것을 깜빡 잊을 뻔했어."
+        }
+      ]
+    },
+    "zh_尽管_218": {
+      "title": "尽管……，可是 / 但是…… (양보 접속사: 비록 ~임에도 불구하고, 그러나 ~하다)",
+      "shortExplanation": "접속사 '尽管'을 앞 절에 두어 이미 일어난 사실을 인정(비록 ~하지만)하고, 뒤 절에서 '可是', '但是' 등과 호응하여 역접의 결과(그러나 ~하다)를 이끕니다.",
+      "longExplanation": "'尽管'(jǐnguǎn)은 양보와 전환을 나타내는 접속사입니다. 앞 절에서 명백히 존재하는 객관적 사실을 먼저 긍정하며 양보하고, 뒤 절에서는 '但是', '可是', '却' 등과 짝을 이루어 일반적인 상식이나 예측과는 상반되는 상황을 진술합니다. 가상의 상황을 전제하는 '即使'와 달리, '尽管'은 현실로 확인된 사실에 사용됩니다. 한국어의 '비록 ~함에도 불구하고', '비록 ~하지만'에 해당합니다.",
+      "formation": "尽管 + 사실·양보절，可是 / 但是 + 역접절",
+      "examples": [
+        {
+          "translation": "비록 오늘 날씨가 매우 춥지만, 그는 옷을 아주 얇게 입었습니다."
+        }
+      ]
+    },
+    "zh_虽然尽管却_219": {
+      "title": "(虽然 / 尽管) …… 却…… (역접 부사 호응: (비록) ~하지만, 오히려/도리어 ~하다)",
+      "shortExplanation": "앞 절에 '虽然'이나 '尽管'(생략 가능)을 두고, 뒤 절의 주어 뒤에 역접 부사 '却'을 배치하여 예측과 다른 대조적인 결과나 끈기를 나타냅니다.",
+      "longExplanation": "‘(虽然/尽管) …… 却……’ 구문은 앞선 조건과 뒤의 행동 사이에 뚜렷한 대비가 존재함을 나타냅니다. 앞 절의 접속사 ‘虽然’이나 ‘尽管’은 종종 생략되기도 하지만, 뒤 절의 ‘却’(què)은 접속사가 아닌 부사이므로 반드시 주어 뒤, 술어 앞에 위치해야 합니다(주어 + 却 + 술어). ‘但是’와 함께 쓰여 어조를 한층 강화하기도 합니다. 한국어의 ‘(비록) ~하지만, (오히려) ~하다’에 해당합니다.",
+      "formation": "(虽然 / 尽管 + ) 절1，주어 + 却 + 술어",
+      "examples": [
+        {
+          "translation": "(비록) 업무가 매우 바쁘지만, 그녀들은 매일 꾸준히 운동을 합니다."
+        }
+      ]
+    },
+    "zh_而_220": {
+      "title": "而 (접속사: 그리고, 또한, 한편 / 반면에)",
+      "shortExplanation": "접속사 '而'(ér)는 두 개의 절이나 단어를 연결하여 병렬·첨가('그리고', '또한')나 대조·전환('한편', '반면에')을 나타내는 격식 있는 표현입니다.",
+      "longExplanation": "'而'는 문어적 색채가 짙은 다기능 접속사입니다. 주요 기능으로는 (1) 병렬 및 누가지속: 앞뒤 사실을 동등하게 나열하거나 덧붙임('그리고', '또한'), (2) 대조 및 역접: 두 가지 서로 다른 사실이나 측면을 대비시킴('그러나', '한편으로는'), (3) 인과 관계 연결 등이 있습니다. 문맥에 따라 순접과 역접 모두로 자연스럽게 전환됩니다. 한국어의 '그리고', '또한', '한편 ~도'에 해당합니다.",
+      "formation": "절1 / 어구1 + ，+ 而 + 절2 / 어구2",
+      "examples": [
+        {
+          "translation": "듣기와 말하기 능력은 매우 중요하며, 아울러 한자를 쓰는 능력 또한 중요합니다."
+        }
+      ]
+    },
+    "zh_挺A的_221": {
+      "title": "挺 + 형용사 / 심리 동사 + 的 (구어: 꽤 ~하다, 제법 ~하다)",
+      "shortExplanation": "구어체 구조인 '挺……的'(tǐng... de)는 형용사나 심리 동사와 결합하여 그 정도가 제법 높음('꽤 ~하다', '상당히 ~하다')을 친근하게 나타냅니다.",
+      "longExplanation": "‘挺……的’는 중국인들의 일상 회화에서 매우 즐겨 쓰이는 정도 표현입니다. 부사 ‘挺’은 ‘꽤, 제법, 퍽’의 뜻을 지니며, 문말의 조사 ‘的’는 어기를 부드럽게 완화하면서 화자의 주관적 긍정 어조를 확인시켜 줍니다. 형용사뿐 아니라 ‘喜欢’(좋아하다), ‘想’(그리워하다) 등의 심리 동사와도 자주 어울립니다. 한국어의 ‘꽤 ~하다’, ‘제법 ~하다’에 해당합니다.",
+      "formation": "주어 + 挺 + 형용사 / 심리 동사 (+ 목적어) + 的",
+      "examples": [
+        {
+          "translation": "저는 이곳을 꽤 좋아합니다."
+        }
+      ]
+    },
+    "zh_本来VA_222": {
+      "title": "本来 + 동사 / 형용사 (부사: 원래는 ~하다, 당초에는 ~하다)",
+      "shortExplanation": "부사 '本来'(běnlái)가 동사나 형용사 앞에 놓여 본래의 의도나 당초의 상태를 나타내며, 뒤에 '但是', '现在' 등이 이어져 상황이 달라졌음을 드러냅니다.",
+      "longExplanation": "'本来'는 부사로서 '원래는', '당초에는'이라는 의미를 갖습니다. 과거 시점의 원래 계획, 생각, 혹은 본래 사물이 지녔던 성질을 언급할 때 쓰이며, 뒤 절에 '但是'(하지만), '可是'(그러나), '现在'(지금은) 등과 함께 쓰여 당초의 계획과 현재의 결과가 달라졌음을 대조할 때 매우 흔히 사용됩니다. 한국어의 '원래는 ~하려 했으나', '당초에는 ~했다'에 해당합니다.",
+      "formation": "주어 + 本来 + 동사 / 형용사，但是 / 可是 + 현재 상태 및 변화",
+      "examples": [
+        {
+          "translation": "그녀는 원래 언론학을 전공하고 싶어 했지만, 지금은 법학을 공부하고 있습니다."
+        }
+      ]
+    },
+    "zh_本来就VA_223": {
+      "title": "本来就 + 동사 / 형용사 (당연함의 강조: 원래부터 ~하다, 애당초 ~해야 마땅하다)",
+      "shortExplanation": "'本来就'(běnlái jiù)는 동사나 형용사 앞에 결합하여 어떤 이치나 규범이 원래부터 당연하고 자명함('원래부터 ~하다', '애초에 ~인 법이다')을 강력하게 강조합니다.",
+      "longExplanation": "‘本来’에 강조를 나타내는 부사 ‘就’가 결합된 ‘本来就’는 상식, 도리, 당연한 법칙 등을 내세워 ‘누가 뭐래도 처음부터 당연히 그러하다’는 강한 확신과 주장을 나타냅니다. 주로 ‘应该’(마땅히 ~해야 한다), ‘不应该’(~해서는 안 된다) 등과 결합하여 규칙이나 의무를 환기시킬 때 쓰입니다. 한국어의 ‘원래부터 ~인 것이다’, ‘애당초 당연히 ~해야 한다’에 해당합니다.",
+      "formation": "주어 + 本来就 + 동사(应该 / 不应该 등) / 형용사",
+      "examples": [
+        {
+          "translation": "학생은 애당초 수업에 지각해서는 안 되는 법입니다."
+        }
+      ]
+    },
+    "zh_另另外另外的N_224": {
+      "title": "另 / 另外 / 另外的 + 수사 + 양사 + 명사 (관형 수식: 또 다른 한 ~, 다른 ~)",
+      "shortExplanation": "'另', '另外', '另外的'를 수량사(수사+양사)와 명사 앞에 놓아 이미 언급된 것 외의 또 다른 대상('또 다른 한 ~', '다른 ~')을 가리킵니다.",
+      "longExplanation": "'另'(lìng)과 '另外'(lìngwài)는 이미 거론된 대상 범위 이외의 다른 사물이나 사람을 가리킬 때 수량사 앞에 쓰입니다. '另'은 뒤에 곧바로 수량사(주로 '一' + 양사)가 이어지며 조사 '的'를 붙이지 않는 반면, '另外'는 '另外 + 수량사' 또는 '另外的 + 수량사 + 명사' 형태를 모두 취할 수 있습니다. 한국어의 '또 다른 한 권의 ~', '다른 ~'에 해당합니다.",
+      "formation": "주어 + 동사 + 另 / 另外 / 另外的 + 수사 + 양사 + 명사",
+      "examples": [
+        {
+          "translation": "그는 또 다른 한 권의 책을 꺼냈습니다."
+        }
+      ]
+    },
+    "zh_另外的其他的别的N_225": {
+      "title": "另外的 / 其他的 / 别的 + 명사 (관형 수식: 다른 ~, 그 밖의 ~)",
+      "shortExplanation": "지시·대명 표현 '另外的', '其他的', '别的'가 명사 앞에 놓여 거론된 대상 이외의 것들('다른 ~', '그 밖의 ~')을 수식합니다.",
+      "longExplanation": "‘另外的’(lìngwài de), ‘其他的’(qítā de), ‘别的’(biéde)는 모두 명사 앞에서 수식어로 쓰여 지금 다루고 있는 대상 외의 ‘다른 사물이나 사람’을 가리킵니다. ‘别的’는 가장 구어적인 표현으로 일상 대화에서 널리 쓰이며, ‘其他的’는 일정 범위 내의 나머지 대상을 가리킬 때 즐겨 쓰이고, ‘另外的’는 별개로 존재하는 대상을 지칭할 때 사용됩니다. 한국어의 ‘다른 ~’, ‘그 밖의 ~’에 해당합니다.",
+      "formation": "另外的 / 其他的 / 别的 + 명사",
+      "examples": [
+        {
+          "translation": "이 책은 보지 마시고, 다른 책들을 보세요."
+        }
+      ]
+    },
+    "zh_另另外V_226": {
+      "title": "另 / 另外 + 동사 (부사: 따로 ~하다, 추가로 더 ~하다)",
+      "shortExplanation": "부사 '另' 또는 '另外'가 동사 앞에 쓰여 기존 동작 외에 별도로 행하거나 추가하여 행함('따로 ~하다', '추가로 더 ~하다')을 나타냅니다.",
+      "longExplanation": "'另'(lìng)과 '另外'(lìngwài)는 부사로서 동사 앞에 위치하여, (1) 기존에 이루어진 행동 외에 부가적으로 무언가를 더 행함('따로 더 ~하다', '추가로 ~하다'), (2) 대상, 방법, 장소를 바꾸어 별도로 행함(예: 另想办法 - 다른 방법을 생각하다, 另外找人 - 다른 사람을 찾다)을 나타냅니다. '另'은 주로 1음절 동사와 결합하는 경향이 강하며, '另外'는 자유롭게 쓰입니다. 한국어의 '따로 ~하다', '추가로 더 ~해 주다'에 해당합니다.",
+      "formation": "주어 + 另 / 另外 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그는 나에게 따로 30위안을 더 주었습니다."
+        }
+      ]
+    },
+    "zh_另外_227": {
+      "title": "另外，…… (접속사: 그 밖에, 게다가, 아울러)",
+      "shortExplanation": "접속사 '另外'를 문두나 절의 처음에 단독으로 두고(보통 쉼표 동반) 앞서 언급한 내용 외에 새로운 사실이나 당부 사항을 덧붙입니다('그 밖에', '게다가').",
+      "longExplanation": "'另外'(lìngwài)가 문두에 독립적으로 쓰일 때는 문장 접속사 역할을 수행합니다. 앞 문장에서 진술한 내용 외에 다른 정보, 추가적인 주의 사항, 혹은 새로운 화제를 부가적으로 제시할 때 사용됩니다. 뒤에 쉼표(，)를 찍어 호흡을 가다듬는 것이 특징입니다. 한국어의 '그 밖에', '게다가', '아울러'에 해당합니다.",
+      "formation": "절1. 另外，(주어 + ) 보충절",
+      "examples": [
+        {
+          "translation": "과일을 많이 드세요. 그 밖에, 물을 많이 마시는 것도 잊지 마시고요."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_差不多A_213": {
+      "title": "差不多 + 形容词（副词：表示相差无几、几乎一样）",
+      "shortExplanation": "副词“差不多”置于形容词或“一样+形容词”前，表示程度相差极小，极为接近或基本相同，“差不多 / 几乎”。",
+      "longExplanation": "“差不多”（chàbuduō）用作副词置于形容词（或“一样+形容词”）之前，表示两者在性质、特征或状态上的差距微乎其微，几乎完全一样。在句中常与介词短语“跟/和……”搭配使用，构成“跟……差不多一样+形容词”的结构，表示“与……几乎同样……”。",
+      "formation": "主语 + (跟 + 比较对象 + ) 差不多 + (一样 + ) 形容词",
+      "examples": [
+        {
+          "translation": "女儿的个子和我差不多一样高。"
+        }
+      ]
+    },
+    "zh_差不多V_214": {
+      "title": "差不多 + 动词（副词：表示动作接近完成）",
+      "shortExplanation": "副词“差不多”置于动词前，表示事情或动作接近结束，基本已经完成，“差不多 / 几乎做完了”。",
+      "longExplanation": "“差不多”（chàbuduō）用作副词修饰动词时，常与带结果补语的动词（如“干完”、“做好”、“写完”）及语气助词“了”连用，表示某种行为或工作的进度已经非常接近终点，大部分已经落实完毕。在日常交流中极其常用。",
+      "formation": "主语 + 差不多 + 动词 (+ 结果补语 + 了)",
+      "examples": [
+        {
+          "translation": "工作差不多做完了。"
+        }
+      ]
+    },
+    "zh_几乎_215": {
+      "title": "几乎 + 数量词（副词：表示十分接近某一数量）",
+      "shortExplanation": "副词“几乎”置于数量短语前，表示实际数值或数量非常接近该数额（只差一点就达到），“几乎达到 / 接近”。",
+      "longExplanation": "“几乎”（jīhū）修饰数量词组时，表示客观事实在数量、金额或程度上与所提及的基数极为接近，虽然稍有不足但相差无几。常带有说话人强调该数量之大或程度之深的主观色彩。",
+      "formation": "主语 + 几乎 + 数词 + 量词 (+ 名词)",
+      "examples": [
+        {
+          "translation": "这台电脑差不多要5000块钱。"
+        }
+      ]
+    },
+    "zh_几乎A_216": {
+      "title": "几乎 + 形容词（副词：表示程度极度接近某种状态）",
+      "shortExplanation": "副词“几乎”修饰形容词，表示事物具有的某种属性或状态已十分接近极限或完全一致，“几乎 / 差不多”。",
+      "longExplanation": "“几乎”（jīhū）用于修饰形容词时，强调在性质或状态上与某一标准或完全状态的差距极微，近乎完全达到（如“相当”、“一样”、“绝望”）。相较于口语色彩浓厚的“差不多”，“几乎”的书面语色彩稍强，语体更为庄重。",
+      "formation": "主语 + 几乎 + 形容词",
+      "examples": [
+        {
+          "translation": "得到的和失去的几乎差不多。"
+        }
+      ]
+    },
+    "zh_几乎V_217": {
+      "title": "几乎 + 动词（副词：表示差点儿发生某种动作或情况）",
+      "shortExplanation": "副词“几乎”修饰动词，表示某种情况差一点就要发生（但实际上未发生或及时避免），或动作影响几乎完全落实，“差点儿 / 几乎”。",
+      "longExplanation": "“几乎”（jīhū）置于动词前，主要有两种用法：(1) 表示差一点就出现了某种不太理想的结果或情况，相当于“差点儿”（如“几乎忘了”、“几乎摔倒”）；(2) 表示动作行为涉及的范围或程度接近于完全发生。在日常陈述中非常高频。",
+      "formation": "主语 + 几乎 + 动词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "这件事我差点儿忘了跟你说。"
+        }
+      ]
+    },
+    "zh_尽管_218": {
+      "title": "尽管……，可是 / 但是……（让步复句：承认客观事实，引出转折）",
+      "shortExplanation": "连词“尽管”用于前一分句先承认某种既定的客观事实，后一分句用“可是 / 但是 / 却”引出反常或出乎意料的转折情况，“虽然……但是……”。",
+      "longExplanation": "“尽管”（jǐnguǎn）用于表示让步转折关系的复句中。前一分句提出某种已经存在的事实或情况，让步承认；后一分句常与“可是”、“但是”、“却”等词呼应，转而指出与通常推论相反的结果或做法。需要注意的是，“尽管”后面必须连接客观真实的情况，不能用于纯粹的虚构假设（纯假设多用“即使”）。",
+      "formation": "尽管 + 事实分句，可是 / 但是 + 转折分句",
+      "examples": [
+        {
+          "translation": "虽然今天很冷，但是他穿的衣服却很少。"
+        }
+      ]
+    },
+    "zh_虽然尽管却_219": {
+      "title": "(虽然 / 尽管) …… 却……（转折呼应：表示出乎意料的转折与对比）",
+      "shortExplanation": "前一分句用“虽然”或“尽管”（可省略），后一分句在主语后用副词“却”，强调与常理或预期相反的事实，“虽然……却……”。",
+      "longExplanation": "“(虽然/尽管) …… 却……”是表示转折关系的经典句式。前一分句提出前提背景，关联词“虽然”或“尽管”常可省略；后一分句的“却”（què）是副词，位置非常固定，必须放在后一分句的主语之后、谓语动词之前（即“主语 + 却 + 谓语”），不能置于主语前面。此结构常用来突出对比、转折或是某种令人佩服的坚持。",
+      "formation": "(虽然 / 尽管 + ) 分句1，主语 + 却 + 谓语",
+      "examples": [
+        {
+          "translation": "虽然工作很忙，但她们每天都坚持锻炼身体。"
+        }
+      ]
+    },
+    "zh_而_220": {
+      "title": "而（连词：连接分句，表示并列、递进或转折）",
+      "shortExplanation": "连词“而”（ér）用于连接两个分句或词语，可表示并列递进（“而且 / 又”），亦可表示对比转折（“然而 / 却”），书面色彩较浓。",
+      "longExplanation": "“而”是现代汉语中非常重要的文雅连词，兼具多种连接功能：(1) 表示并列或相承递进关系，连接两个在意义上相辅相成、同等重要的方面，相当于“而且”、“同时也”；(2) 表示转折或对比关系，连接两个意思相对或相反的分句，相当于“但是”、“然而”、“却”；(3) 说明原因与结果或方式与目的。书面语及正式交际中使用频率极高。",
+      "formation": "分句1 / 词语1 + ，+ 而 + 分句2 / 词语2",
+      "examples": [
+        {
+          "translation": "听说能力非常重要，同时写汉字的能力也很重要。"
+        }
+      ]
+    },
+    "zh_挺A的_221": {
+      "title": "挺 + 形容词 / 心理动词 + 的（口语程度：相当、很）",
+      "shortExplanation": "口语常用格式“挺……的”，中间插入形容词或心理动词，表示程度比较深，“很 / 蛮 / 相当……”。",
+      "longExplanation": "“挺……的”（tǐng... de）是现代汉语口语中高频使用的程度表达方式。“挺”充当程度副词，意为“很”、“相当”；句尾的结构助词/语气助词“的”起配合、肯定与舒缓语调的作用（有时也可省略）。中间除了接性质形容词（如“挺好”、“挺漂亮”）外，也常接心理动词（如“挺喜欢”、“挺满意”）。语气亲切自然，富有浓厚的生活气息。",
+      "formation": "主语 + 挺 + 形容词 / 心理动词 (+ 宾语) + 的",
+      "examples": [
+        {
+          "translation": "我蛮喜欢这个地方的。"
+        }
+      ]
+    },
+    "zh_本来VA_222": {
+      "title": "本来 + 动词 / 形容词（副词：表示起初、原本的情况）",
+      "shortExplanation": "副词“本来”（běnlái）修饰动词或形容词，表示原本的计划、打算或事物的初始状态，后文常引出变化，“本来……后来/现在却……”。",
+      "longExplanation": "“本来”充当副词修饰谓语动词或形容词时，表示事情原先的性质、状态或原有的打算。这类句子经常与后半句的转折关联词（如“但是”、“可是”、“后来”、“现在”）呼应配合，通过今昔对比，说明实际结果与起初的设想发生了变化或违背了初衷。",
+      "formation": "主语 + 本来 + 动词 / 形容词，但是 / 可是 + 现状或改变",
+      "examples": [
+        {
+          "translation": "她原先想学新闻专业，但现在在学法律。"
+        }
+      ]
+    },
+    "zh_本来就VA_223": {
+      "title": "本来就 + 动词 / 形容词（强调理所当然或固有属性）",
+      "shortExplanation": "副词组合“本来就”用于谓语前，强调事情合乎常理、理所应当或本就具备该特征，“本来就应该 / 毫无疑问”。",
+      "longExplanation": "“本来就”（běnlái jiù）用于加强肯定语气，强调某种道理、规则或状态是自明的、必然的、理所当然的，根本无需争辩或意外。常与能愿动词“应该”、“不应该”或判断动词“是”等连用，传达出说话人对客观公理或既成事实的坚定态度。",
+      "formation": "主语 + 本来就 + 动词（如 应该 / 不应该 / 是） / 形容词",
+      "examples": [
+        {
+          "translation": "学生原本就不该上课迟到。"
+        }
+      ]
+    },
+    "zh_另另外另外的N_224": {
+      "title": "另 / 另外 / 另外的 + 数词 + 量词 + 名词（表示在上述范围之外的另一事物）",
+      "shortExplanation": "指示代词“另”、“另外”或“另外的”修饰数量短语和名词，指代在前面已经提到的人或物之外的另一个，“另一个 / 另外一……”。",
+      "longExplanation": "“另”和“另外”都可用在数量短语前，表示在已知范围之外的事物。“另”后直接接数词（多为“一”）和量词，不带“的”；而“另外”则既可以直接接数量词（如“另外一本书”），也可以加上结构助词“的”（如“另外的一本书”）。在句中通常作动词的宾语或修饰中心语。",
+      "formation": "主语 + 动词 + 另 / 另外 / 另外的 + 数词 + 量词 + 名词",
+      "examples": [
+        {
+          "translation": "他拿出了另外一本书。"
+        }
+      ]
+    },
+    "zh_另外的其他的别的N_225": {
+      "title": "另外的 / 其他的 / 别的 + 名词（定语修饰：指代别的人或事物）",
+      "shortExplanation": "代词短语“另外的”、“其他的”、“别的”置于名词前作定语，指代所提及对象之外的其他同类事物，“别的…… / 其他的……”。",
+      "longExplanation": "“另外的”、“其他的”和“别的”都可用于名词前充当定语，泛指所谈及的事物或人以外的对象：(1)“别的”口语色彩最浓，最常用；(2)“其他的”带有一定的书面色彩，常指特定范围内的其余事物；(3)“另外的”着重指在原先之外另有一部分。三者在很多语境下可以互换使用。",
+      "formation": "另外的 / 其他的 / 别的 + 名词",
+      "examples": [
+        {
+          "translation": "别看这本书了，请看其他的书。"
+        }
+      ]
+    },
+    "zh_另另外V_226": {
+      "title": "另 / 另外 + 动词（副词：表示额外进行或换一种方式进行动作）",
+      "shortExplanation": "副词“另”或“另外”置于动词前作状语，表示在此前动作之外额外补充进行，或者另换方式、对象进行，“另外 / 额外 / 另行”。",
+      "longExplanation": "“另”和“另外”充当副词修饰谓语动词时，主要有两种含义：(1) 表示在原有行为或数量之外，额外再做某事（如“另外给了三十元”、“另外买了一份”）；(2) 表示改变原本的方式、场所或对象，重新开展行动（如“另想办法”、“另外通知”）。“另”多与单音节动词结合，语感精练；“另外”适用范围更广。",
+      "formation": "主语 + 另 / 另外 + 动词 (+ 宾语)",
+      "examples": [
+        {
+          "translation": "他又额外给了我三十块钱。"
+        }
+      ]
+    },
+    "zh_另外_227": {
+      "title": "另外，……（连词：独立使用于句首，引出补充说明）",
+      "shortExplanation": "连词“另外”置于后一句句首（常带逗号），用于在上文内容之外另起话题或补充提出新的事项、提示，“另外 / 此外 / 还有”。",
+      "longExplanation": "“另外”（lìngwài）作为连词独立用于后一句话的开头时，起连接上下文的作用。它表明在前文所谈及的内容之外，说话人还需要进一步补充相关的信息、建议、要求或注意要点。书面语与口语中均极其常用，后常紧跟逗号以示停顿。",
+      "formation": "分句1。另外，(主语 + ) 补充说明分句",
+      "examples": [
+        {
+          "translation": "要多吃水果。此外，还要记得多喝水。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,654 @@
+{
+  "vi": {
+    "zh_非_503": {
+      "title": "非 (Tiền tố / Phó từ phủ định: Phi, không phải, phi-)",
+      "shortExplanation": "Dùng trước danh từ hoặc tính từ làm tiền tố cấu tạo từ mang nghĩa 'không phải', 'phi-'; hoặc làm phó từ phủ định mang sắc thái văn viết trang trọng; 'phi', 'không phải'.",
+      "longExplanation": "'非' (fēi) có nguồn gốc từ Hán văn cổ, trong tiếng Hán hiện đại thường được sử dụng theo hai cách chính: thứ nhất, đóng vai trò như một tiền tố (phụ tố trước) kết hợp với danh từ hoặc tính từ để tạo thành từ ghép biểu thị sự đối lập hoặc không thuộc phạm trù đó (như '非正常' - bất thường, '非正式' - không chính thức, '非法人' - không có tư cách pháp nhân, '非法' - phi pháp, '非金属' - phi kim); thứ hai, đóng vai trò phó từ phủ định tương đương với '不是' (không phải là) trong các câu văn viết trang trọng, nghị luận hoặc ngạn ngữ. Tương đương với tiền tố 'phi-', 'không phải' trong tiếng Việt.",
+      "formation": "非 + Danh từ / Tính từ (tạo thành từ phức: 非正常 / 非法 / 非正式……) (hoặc: Chủ ngữ + 非 + Danh từ / Động từ)",
+      "examples": [
+        {
+          "translation": "Khi xuất hiện tình huống bất thường xin đừng căng thẳng."
+        }
+      ]
+    },
+    "zh_并非_504": {
+      "title": "并非 (Phó từ phủ định: Hoàn toàn không phải, thực sự không phải)",
+      "shortExplanation": "Phó từ mang sắc thái văn viết trang trọng, là dạng kết hợp của '并' và '非', tương đương '并不是'; dùng để nhấn mạnh phủ định và đính chính sự thật; 'hoàn toàn không phải'.",
+      "longExplanation": "'并非' (bìngfēi) là sự kết hợp chặt chẽ giữa phó từ nhấn mạnh '并' và từ phủ định văn ngôn '非' (tương đương với '并不是' trong khẩu ngữ). Từ này dùng để nhấn mạnh ngữ khí phủ định, thường nhằm bác bỏ một quan điểm sai lầm, định kiến hoặc sự suy đoán chủ quan của người khác, từ đó đưa ra sự thật khách quan. Thường xuất hiện sau các từ nối mang ý chuyển ngoặt như '其实', '然而', '但是'. Tương đương với 'hoàn toàn không phải là', 'thực ra không phải', 'tuyệt nhiên không phải' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 并非 + Danh từ / Động từ / Tính từ (+ như vậy / đến mức đó)",
+      "examples": [
+        {
+          "translation": "Thành công đôi khi hoàn toàn không khó như tưởng tượng."
+        }
+      ]
+    },
+    "zh_以_505": {
+      "title": "以 (Giới từ / Liên từ: Lấy, dùng, căn cứ vào, để / nhằm)",
+      "shortExplanation": "Giới từ hoặc liên từ mang phong cách thư diện ngữ trang trọng; biểu thị phương tiện, căn cứ ('lấy', 'dùng', 'dựa vào') hoặc biểu thị mục đích ('để', 'nhằm').",
+      "longExplanation": "'以' (yǐ) là một hư từ cực kỳ quan trọng và đa nghĩa có nguồn gốc từ Hán văn cổ. Trong tiếng Hán hiện đại, từ này chủ yếu được dùng trong văn viết và các ngữ cảnh trang trọng với hai vai trò chính: (1) Làm giới từ, biểu thị phương tiện, công cụ, tư cách, hoặc căn cứ (tương đương với '用', '拿', '凭借', '按', '根据' - như '以理服人' lấy lý lẽ phục vụ lòng người, '以身作则' lấy mình làm gương, '以事实为依据' lấy sự thật làm căn cứ, '以……为名' nhân danh...); (2) Làm liên từ nối hai hành động hoặc mệnh đề để biểu thị mục đích (tương đương với '以便', '来' - như '制定法律以保障公民权利' ban hành luật nhằm bảo đảm quyền công dân). Tương đương với 'lấy', 'dùng', 'dựa vào', 'nhằm', 'để' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 以 + Danh từ (phương tiện / căn cứ / tư cách) + Động từ (hoặc: Mệnh đề hành động + 以 + Mệnh đề mục đích)",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_平常_506": {
+      "title": "平常 (Tính từ: Bình thường, thông thường, phổ thông)",
+      "shortExplanation": "Tính từ chỉ tính chất bình thường, phổ biến, không có gì nổi bật hay kỳ lạ; thường dùng dạng phủ định '不平常' để nhấn mạnh sự phi thường, đặc biệt; 'bình thường'.",
+      "longExplanation": "'平常' (píngcháng) khi đóng vai trò tính từ miêu tả sự vật, sự việc, hiện tượng hoặc con người có tính chất bình thường, giản dị, phổ thông, không có điểm gì xuất chúng hay kỳ lạ khác người. Có thể đứng trước danh từ làm định ngữ (như '平常人' - người bình thường, '平常事' - chuyện thường tình), làm vị ngữ (như '相貌平常' - tướng mạo bình thường) hoặc bổ ngữ. Trong thực tế, từ này rất thường kết hợp với phó từ phủ định thành '不平常' (không hề bình thường, phi thường, bất phàm) để nhấn mạnh tầm quan trọng hoặc tính đặc thù của một thời khắc, sự kiện lịch sử hay con người. Tương đương với 'bình thường', 'thông thường' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) (很 / 不 +) 平常 (+ 的 + Danh từ)",
+      "examples": [
+        {
+          "translation": "Đối với Tiểu Vương mà nói, hôm nay là một ngày không hề bình thường."
+        }
+      ]
+    },
+    "zh_平常_507": {
+      "title": "平常 (Danh từ thời gian / Phó từ: Bình thường, thường ngày, mọi khi)",
+      "shortExplanation": "Chỉ khoảng thời gian thông thường, những ngày bình thường không có biến cố hay khác biệt; thường đứng trước động từ làm trạng ngữ; 'bình thường', 'thường ngày', 'mọi khi'.",
+      "longExplanation": "'平常' (píngcháng) khi dùng như danh từ chỉ thời gian hoặc phó từ, có ý nghĩa chỉ khoảng thời gian thông thường, những ngày bình thường hoặc thói quen diễn ra đều đặn từ trước tới nay (tương đương với '平时' - bình thường, thường ngày). Nó thường đứng ở đầu câu hoặc đứng trước cụm vị ngữ làm trạng ngữ thời gian, nhằm đối chiếu với một tình huống đặc biệt, ngoại lệ vừa mới xảy ra trong hiện tại (thường kết hợp với '但是', '今天却……'). Tương đương với 'bình thường', 'thường ngày', 'mọi khi', 'hằng ngày' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 平常 + (总 / 都 / 经常 +) Động từ / Tính từ (hoặc: 平常，Chủ ngữ + Động từ……)",
+      "examples": [
+        {
+          "translation": "Anh ấy ngày thường luôn đến rất sớm, nhưng hôm nay lại đến muộn."
+        }
+      ]
+    },
+    "zh_宁可_508": {
+      "title": "宁可……也…… (Liên từ lựa chọn: Thà rằng... cũng... / Thà... chứ không...)",
+      "shortExplanation": "Liên từ biểu thị sự cân nhắc giữa hai tình huống bất lợi, chấp nhận chịu đựng điều thứ nhất để tránh xảy ra điều thứ hai tệ hại hơn; 'thà', 'thà rằng'.",
+      "longExplanation": "'宁可' (nìngkě) là liên từ biểu thị quan hệ lựa chọn trong thế cân nhắc được mất. Khi đối mặt với hai sự việc đều mang tính chất bất lợi hoặc khó khăn, người nói quyết định chấp nhận hy sinh, chịu đựng phương án thứ nhất (dù gian khổ, thiệt thòi) chứ dứt khoát không chịu chấp nhận phương án thứ hai tồi tệ hơn. Thường kết hợp chặt chẽ với '也' hoặc '决不' trong cặp kết cấu '宁可……，也 / 决不……' (thà... chứ quyết không...). Đồng nghĩa với '宁愿', '宁肯'. Tương đương với 'thà rằng', 'thà... còn hơn...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 宁可 + Phương án chịu thiệt / hy sinh，也 + (不 / 决不 +) Phương án từ chối",
+      "examples": [
+        {
+          "translation": "Là một người mẹ, cô ấy thà bản thân chịu mệt một chút, chứ không muốn để con mình phải chịu thiệt thòi."
+        }
+      ]
+    },
+    "zh_极其_509": {
+      "title": "极其 (Phó từ mức độ: Cực kỳ, vô cùng, hết sức)",
+      "shortExplanation": "Phó từ chỉ mức độ rất cao, đứng trước tính từ song âm tiết hoặc động từ tâm lý; mang sắc thái trang trọng, văn viết; 'cực kỳ', 'vô cùng', 'hết sức'.",
+      "longExplanation": "'极其' (jíqí) là phó từ chỉ mức độ tuyệt đối cao, mang phong cách văn viết trang trọng, học thuật và tin tức báo chí. Từ này thường bổ nghĩa cho tính từ song âm tiết (như '极其重要' - cực kỳ quan trọng, '极其危险' - cực kỳ nguy hiểm, '极其严峻' - cực kỳ nghiêm trọng) hoặc động từ tâm lý (như '极其渴望' - vô cùng khao khát). Mức độ của '极其' cao hơn '很' và '非常', tương đương với '极度' (cực độ). Tương đương với 'cực kỳ', 'vô cùng', 'hết sức' trong tiếng Việt.",
+      "formation": "极其 + Tính từ song âm tiết / Động từ tâm lý",
+      "examples": []
+    },
+    "zh_其余_511": {
+      "title": "其余 (Đại từ: Còn lại, phần còn lại, những người còn lại)",
+      "shortExplanation": "Đại từ chỉ người hoặc vật còn lại sau khi đã trừ đi một bộ phận đã được đề cập; 'còn lại', 'những cái khác'.",
+      "longExplanation": "'其余' (qíyú) là đại từ chỉ định mang sắc thái văn viết và trung tính. Từ này dùng để chỉ toàn bộ những người, sự vật hoặc phần còn lại trong một chỉnh thể sau khi đã tách riêng hoặc nhắc tới một bộ phận cụ thể trước đó. Có thể đứng độc lập làm chủ ngữ, tân ngữ (như '其余都很好' - những cái còn lại đều rất tốt) hoặc làm định ngữ đứng trước danh từ (thường có trợ từ kết cấu '的', như '其余的同学' - các bạn học còn lại, '其余的钱' - số tiền còn lại). Tương đương với 'còn lại', 'phần còn lại', 'những người khác' trong tiếng Việt.",
+      "formation": "其余 (+ 的) + Danh từ (hoặc: 其余 + Động từ / Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Sao chỉ có hai người các bạn vậy? Những bạn học còn lại đâu rồi?"
+        }
+      ]
+    },
+    "zh_由此可见_512": {
+      "title": "(由此) 可见 (Cụm từ liên kết: Từ đó có thể thấy, qua đó thấy rằng)",
+      "shortExplanation": "Cụm từ liên kết mang tính lập luận, đứng đầu mệnh đề sau để rút ra nhận định, kết luận tất yếu từ tiền đề hoặc sự thật vừa nêu; 'từ đó có thể thấy'.",
+      "longExplanation": "'(由此) 可见' ((yóucǐ) kějiàn) là cụm từ liên kết logic mang phong cách lập luận, nghị luận và học thuật. Trong đó '由此' có nghĩa là 'từ điểm này / từ việc này', còn '可见' mang nghĩa 'có thể thấy được rằng / có thể suy ra rằng'. Khi đứng ở đầu phân câu hoặc đầu đoạn văn sau một loạt chứng cứ hay sự kiện thực tế, cụm từ này dùng để dẫn dắt một kết luận mang tính quy luật, một nhận xét xác đáng hoặc một bài học sâu sắc rút ra từ những gì đã nói ở trước. Tương đương với 'từ đó có thể thấy', 'qua đó cho thấy', 'bởi thế mới thấy' trong tiếng Việt.",
+      "formation": "Tiền đề / Hiện tượng thực tế ，(由此) 可见 + Mệnh đề kết luận / Đánh giá",
+      "examples": [
+        {
+          "translation": "Từ đó có thể thấy rằng, thành công là cần phải nỗ lực."
+        }
+      ]
+    },
+    "zh_N般_513": {
+      "title": "Danh từ + 般 (Trợ từ so sánh: Như..., tựa như..., giống như...)",
+      "shortExplanation": "Trợ từ so sánh đứng sau danh từ tạo thành cụm từ mang ý nghĩa 'giống như', 'tựa như'; thường kết hợp với '的' làm định ngữ hoặc '地' làm trạng ngữ; 'như...'.",
+      "longExplanation": "'般' (bān) là một trợ từ so sánh (tỉ huống trợ từ) mang màu sắc văn học, thi vị và giàu tính hình tượng. Khi đứng ngay sau một danh từ ('Danh từ + 般'), cấu trúc này tạo thành một cụm từ biểu thị sự ví von, so sánh mức độ hoặc hình dáng tương tự như sự vật đó (tương đương với '像……一样' trong khẩu ngữ). Thường đi kèm với trợ từ kết cấu '的' để bổ nghĩa cho danh từ phía sau làm định ngữ (như '阳光般的笑容' - nụ cười như ánh mặt trời, '大海般的胸怀' - tấm lòng bao la như biển cả) hoặc đi kèm với '地' làm trạng ngữ bổ nghĩa cho động từ (như '飞一般地跑' - chạy như bay). Tương đương với 'như...', 'tựa như...' trong tiếng Việt.",
+      "formation": "Danh từ + 般 (+ 的 + Danh từ) (hoặc: Danh từ + 般 + 地 + Động từ)",
+      "examples": [
+        {
+          "translation": "Trên gương mặt cô ấy nở nụ cười rạng rỡ như ánh mặt trời."
+        }
+      ]
+    },
+    "zh_闻_514": {
+      "title": "闻 (Động từ: Ngửi, ngửi thấy mùi)",
+      "shortExplanation": "Động từ biểu thị hành động dùng mũi để cảm nhận hoặc ngửi mùi hương, mùi vị; 'ngửi', 'ngửi thấy'.",
+      "longExplanation": "'闻' (wén) trong tiếng Hán hiện đại có nghĩa thông dụng nhất trong đời sống hàng ngày là động từ chỉ hành động dùng khứu giác (mũi) để ngửi, cảm nhận mùi vị hoặc hương thơm của sự vật. Động từ này có thể mang tân ngữ chỉ mùi vị (như '闻味儿' - ngửi mùi, '闻花香' - ngửi hương hoa), có thể dùng theo dạng lặp động từ '闻了闻' hoặc '闻一闻' để biểu thị hành động ngửi thử ngắn gọn, hoặc kết hợp với bổ ngữ kết quả '到' / '见' tạo thành '闻到' / '闻见' (ngửi thấy). Tương đương với 'ngửi', 'ngửi thấy' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 闻 (+ 一闻 / 了闻) (+ Tân ngữ / Bổ ngữ kết quả: 到 / 见)",
+      "examples": [
+        {
+          "translation": "Anh ấy mở nắp bình ra, ngửi ngửi một chút, hóa ra là rượu."
+        }
+      ]
+    },
+    "zh_闻_515": {
+      "title": "闻 (Động từ văn ngôn: Nghe, nghe thấy, nghe nói)",
+      "shortExplanation": "Động từ mang sắc thái văn ngôn cổ điển, biểu thị hành động nghe thấy, nghe kể lại hoặc hay tin; thường xuất hiện trong thành ngữ, ngạn ngữ hoặc văn viết; 'nghe'.",
+      "longExplanation": "'闻' (wén) theo nghĩa gốc trong Hán văn cổ là động từ biểu thị thính giác: nghe, nghe thấy, nghe nói lại (tương đương với '听' hoặc '听说' trong khẩu ngữ hiện đại). Trong tiếng Hán hiện đại, nghĩa này được lưu giữ và sử dụng rộng rãi trong các thành ngữ, quán dụng ngữ cố định (như '百闻不如一见' - trăm nghe không bằng một thấy, '闻名' - nghe tiếng tăm, '听而不闻' - nghe mà như không nghe thấy, '闻所未闻' - chưa từng nghe thấy bao giờ) cũng như trong văn phong tin tức báo chí, thư diện ngữ trang trọng (như '新闻' - tin tức mới nghe được, '闻讯' - nghe được tin báo). Tương đương với 'nghe', 'nghe thấy', 'nghe nói' trong tiếng Việt.",
+      "formation": "闻 + Danh từ (thường trong thành ngữ / từ ghép: 百闻不如一见 / 闻名 / 闻所未闻……)",
+      "examples": [
+        {
+          "translation": "Trăm nghe không bằng một thấy."
+        }
+      ]
+    },
+    "zh_趁_516": {
+      "title": "趁 (Giới từ: Nhân lúc, tranh thủ, thừa dịp)",
+      "shortExplanation": "Giới từ chỉ sự nắm bắt và tận dụng thời cơ, điều kiện thuận lợi hoặc thời điểm thích hợp để thực hiện hành động; 'nhân lúc', 'thừa dịp', 'tranh thủ'.",
+      "longExplanation": "'趁' (chèn) là giới từ dùng để chỉ hành vi nắm bắt, lợi dụng triệt để một điều kiện khách quan, khoảng thời gian ngắn hoặc cơ hội thuận lợi nhất định trước khi tình huống đó thay đổi, nhằm thực hiện một việc mong muốn. Theo sau '趁' thường là cụm từ chỉ thời gian, trạng thái hoặc mệnh đề điều kiện (như '趁热吃' - ăn lúc còn nóng, '趁年轻' - nhân lúc còn trẻ, '趁现在' - tranh thủ lúc này, '趁机' - thừa cơ hội). Câu chứa '趁' thường nêu ra cơ hội ở phân câu trước và hành động cần tranh thủ thực hiện ở phân câu sau. Tương đương với 'nhân lúc', 'thừa dịp', 'tranh thủ' trong tiếng Việt.",
+      "formation": "趁 + Thời gian / Cơ hội / Trạng thái (，Chủ ngữ +) Động từ",
+      "examples": [
+        {
+          "translation": "Nhân lúc phim còn chưa bắt đầu, tôi đi mua hai chai nước khoáng."
+        }
+      ]
+    },
+    "zh_V不起_517": {
+      "title": "Động từ + 不起 (Bổ ngữ khả năng: Không nổi, không kham nổi (về tiền bạc, sức chịu đựng, tư cách))",
+      "shortExplanation": "Dạng phủ định của bổ ngữ khả năng 'Động từ + 得起', biểu thị không có đủ tiền bạc, năng lực, địa vị hoặc sức chịu đựng để thực hiện hành động; 'không nổi', 'không kham nổi'.",
+      "longExplanation": "'Động từ + 不起' (bù qǐ) là kết cấu bổ ngữ khả năng phủ định phổ biến. Cấu trúc này thường dùng trong 3 trường hợp chính: (1) Chỉ điều kiện kinh tế, tiền bạc không đủ khả năng chi trả, mua sắm (như '买不起' - không đủ tiền mua nổi, '住不起' - không đủ tiền thuê/ở nổi, '吃不起' - không đủ tiền ăn nổi); (2) Chỉ sức chịu đựng về mặt tâm lý, thể xác hoặc hậu quả vượt quá giới hạn chịu nổi (như '经不起' - không chịu nổi thử thách, '受不起' - không gánh nổi, '伤不起' - không chịu nổi tổn thương); (3) Mang hàm ý coi thường, xem nhẹ (như '看不起' - coi thường, khinh thường). Tương đương với 'không nổi', 'không kham nổi', 'không có tiền để...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 不起 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Nhà anh ấy rất nghèo, không có tiền mua nổi đèn dầu, cứ hễ đến tối là không thể đọc sách."
+        }
+      ]
+    },
+    "zh_V得起_518": {
+      "title": "Động từ + 得起 (Bổ ngữ khả năng: Có đủ khả năng, kham nổi, chịu đựng được, xứng đáng với)",
+      "shortExplanation": "Dạng khẳng định của bổ ngữ khả năng, biểu thị có đủ tài chính, bản lĩnh hoặc sức chịu đựng để gánh vác, vượt qua thử thách; 'kham nổi', 'chịu đựng được', 'xứng đáng'.",
+      "longExplanation": "'Động từ + 得起' (dé qǐ) là kết cấu bổ ngữ khả năng khẳng định (đối lập với 'Động từ + 不起'). Cấu trúc này dùng để biểu thị: (1) Có đủ năng lực kinh tế, tiền tài để trang trải các chi phí đắt đỏ (như '买得起' - mua nổi/đủ tiền mua, '住得起' - có tiền ở/thuê nổi); (2) Có đủ sức bền, phẩm chất, nghị lực để chống chọi và vượt qua được gian nan, thử thách (như '经得起考验' - chịu đựng được thử thách, '经得起批评' - tiếp thu được phê bình, '担得起责任' - gánh vác nổi trách nhiệm); (3) Xứng đáng với sự kỳ vọng, tin cậy (như '对得起' - xứng đáng với / không phụ lòng). Tương đương với 'kham nổi', 'chịu đựng được', 'đủ tiền để...', 'xứng đáng với' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 得起 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Người bạn vượt qua được thử thách của thời gian mới được tính là người bạn thực sự."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_非_503": {
+      "title": "非（接頭辞・否定副詞：非〜・不〜・〜ではない）",
+      "shortExplanation": "名詞や形容詞の前に付く接頭辞として「〜ではない」「非〜」という否定・除外の語を構成し、書き言葉では「不是（〜ではない）」の意の否定詞としても用いられます。",
+      "longExplanation": "「非」（fēi）は古代中国語に由来する否定語で、現代中国語では主に接頭辞（語前要素）として機能します。名詞や形容詞の前に付き、「その性質や範疇に当てはまらない」「正規・合法ではない」という意味の二音節・多音節語を派生させます（例：「非正常」＝異常な・非正常な、「非法」＝違法な、「非正式」＝非公式な、「非金属」＝非金属、「非卖品」＝非売品）。また、格式ばった書き言葉や論説文では単独で「不是（〜ではない）」の意味を表す述語・否定副詞としても用いられます。日本語の接頭語「非〜」「不〜」や「〜ではない」に相当します。",
+      "formation": "非 ＋ 名詞 / 形容詞（複合語を形成：非正常 / 非法 / 非正式など）または 主語 ＋ 非 ＋ 名詞 / 動詞",
+      "examples": [
+        {
+          "translation": "異常な状況（非正常な事態）が発生した際は、慌てないでください。"
+        }
+      ]
+    },
+    "zh_并非_504": {
+      "title": "并非（副詞：決して〜ではない・実は〜というわけではない【否定の強調】）",
+      "shortExplanation": "口語の「并不是」に相当する書き言葉の副詞で、相手の誤解や先入観を強く否定・反論し、「決して〜というわけではない」と事実を正します。",
+      "longExplanation": "「并非」（bìngfēi）は、否定を強める副詞「并」と「不是」に相当する「非」が合わさった書き言葉の表現です。世間一般の先入観、過度な懸念、相手の誤った推測などを真っ向から打ち消し、「実際のところは決してそうではない」と真実を説明する際に用いられます。「但是」「其实」「然而」などの逆接・転換の表現と組み合わされることが多く、論理的で品格のある響きを持ちます。日本語の「決して〜ではない」「実は〜というわけではない」「必ずしも〜ではない」に相当します。",
+      "formation": "主語 ＋ 并非 ＋ 名詞 / 動詞 / 形容詞（＋ のように……）",
+      "examples": [
+        {
+          "translation": "成功とは、時に想像するほど難しいものでは決してない。"
+        }
+      ]
+    },
+    "zh_以_505": {
+      "title": "以（前置詞・接続詞：〜を用いて・〜に基づいて・〜するために）",
+      "shortExplanation": "漢文由来の多義的な介詞（前置詞）・接続詞です。手段・基準・身分（「〜をもって」「〜に基づいて」）や目的（「〜するために」「〜以便」）を表します。",
+      "longExplanation": "「以」（yǐ）は古代中国語から現代の書き言葉・公文書・公式スピーチに広く受け継がれている重要語です。主に2つの文法機能を持ちます。(1) 前置詞（介詞）用法：「用」「拿」「凭」「按照」に相当し、手段・道具・根拠・資格などを導きます（例：「以理服人」道理をもって人を服従させる、「以事实为依据」事実を根拠とする、「以身作则」自ら模範を示す、「以……的名义」〜の名義で）。(2) 接続詞用法：前節の行動を受けて後節の目的を導き、「〜以便（〜できるように）」「〜来（〜するために）」に相当します（例：「深入调查，以查明真相」真相を究明するために綿密な調査を行う）。日本語の「〜をもって」「〜によって」「〜に基づいて」「〜するために」に相当します。",
+      "formation": "主語 ＋ 以 ＋ 名詞（手段・根拠・資格）＋ 動詞 または 行動を表す節 ＋ 以 ＋ 目的を表す節",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_平常_506": {
+      "title": "平常（形容詞：平凡な・普通の・ありふれた）",
+      "shortExplanation": "人や事物の性質がごく普通で、格別な特徴や目立った点がないことを表す形容詞です。否定形「不平常」で「尋常ではない、特別な」という意味でもよく使われます。",
+      "longExplanation": "「平常」（píngcháng）は形容詞として、事物の様子や人の資質がありふれており、特別目新しいところや際立った特徴がない「平凡だ」「普通だ」という意味を表します。名詞を修飾して連体修飾語（定語）となるほか（例：「平常人」普通の人、「平常话」ありふれた言葉）、「相貌平常（容姿が人並みである）」のように述語としても用いられます。また、否定詞「不」を伴った「不平常」の形は、「並外れた」「普通ではない」「歴史的に特別な」という強い称賛や特別感を込めた表現として極めて頻繁に用いられます。日本語の「平凡な」「普通の」「ありふれた」に相当します。",
+      "formation": "（主語 ＋）（很 / 不 ＋）平常（＋ 的 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "王さんにとって、今日は普通ではない（特別な）一日である。"
+        }
+      ]
+    },
+    "zh_平常_507": {
+      "title": "平常（時間名詞・副詞：普段・いつもは・平素）",
+      "shortExplanation": "特別な事態がない日常的な時間・時期を表し、文頭や動詞の前に置いて「普段は」「いつもは」という習慣や常態を表します。",
+      "longExplanation": "「平常」（píngcháng）は時間名詞あるいは時間副詞として機能し、「平时（普段・平生）」とほぼ同義で用いられます。特別な行事や突発的な出来事がない「常日頃」「普段」を指し、長年の習慣やいつもの状態を提示します。文頭または主語の直後に置いて状語（連用修飾語）として働き、今日や今回のような「例外的・特殊な状況」と対比させる文脈（例：「平常总是……，今天却……」普段はいつも…なのに、今日は…）で非常によく使われます。日本語の「普段は」「いつもは」「平素」に相当します。",
+      "formation": "（主語 ＋）平常 ＋（总是 / 经常 ＋）動詞 / 形容詞（または 平常，主語 ＋……）",
+      "examples": [
+        {
+          "translation": "彼は普段はいつも早く来るのに、今日は遅刻してしまった。"
+        }
+      ]
+    },
+    "zh_宁可_508": {
+      "title": "宁可……也……（接続詞：いっそ〜してでも…・むしろ〜を選ぶ）",
+      "shortExplanation": "好ましくない2つの選択肢を比較衡量し、より重大な損失を避けるために進んで一方の不利益を受け入れる決意を表します（「いっそ〜してでも…」「むしろ〜」）。",
+      "longExplanation": "「宁可」（nìngkě）は選択関係を表す接続詞です。どちらを選んでも何らかの負担や苦痛が伴う2つの事態を天秤にかけ、より望ましくない・受け入れがたい最悪の結果を回避するために、あえて自ら一方の困難や犠牲を進んで引き受けるという強い主観的決意を表します。後節では「也不……」「决不……」と呼応して「宁可……，也不……」（〜するくらいなら、いっそ進んで…する）の形で極めて多く用いられます。同義語に「宁愿」「宁肯」があります。日本語の「いっそ〜してでも…」「むしろ〜を選ぶ」「たとえ〜するとしても…」に相当します。",
+      "formation": "主語 ＋ 宁可 ＋ 不利益な選択肢，也 ＋（不 / 决不 ＋）拒絶する選択肢",
+      "examples": [
+        {
+          "translation": "母親として、彼女は自分自身が少々疲れても、子どもに不憫な思いをさせることだけはしたくない。"
+        }
+      ]
+    },
+    "zh_极其_509": {
+      "title": "极其（程度副詞：極めて・極度に・非常に）",
+      "shortExplanation": "程度が極限に達していることを表す格式の高い程度副詞で、主に二音節形容詞や心理動詞を修飾します（「極めて」「この上なく」）。",
+      "longExplanation": "「极其」（jíqí）は、客観的・公式な論述やニュース報道で多用される硬い書き言葉の程度副詞です。「很」や「非常」よりも程度が一段と高く、「極限・最高度に達している」ことを表します。主に二音節の形容詞（例：「极其重要」極めて重要である、「极其复杂」極めて複雑である、「极其危险」極めて危険である）や感情・心理動詞（例：「极其希望」切望する、「极其反感」極度に反感を抱く）を修飾します。日本語の「極めて」「極度に」「この上なく」に相当します。",
+      "formation": "极其 ＋ 二音節形容詞 / 心理動詞",
+      "examples": []
+    },
+    "zh_其余_511": {
+      "title": "其余（代名詞：その他の・残りの・ほか）",
+      "shortExplanation": "全体の中から特定の一部分を除いた「残りの人や物」を指す代名詞です（「その他の」「残りの」）。",
+      "longExplanation": "「其余」（qíyú）は全体から言及済みの特定部分を除外した、残りの部分や人員を総称する代名詞です。文脈上、すでに一部の対象（例：「你们两个人」君たち二人）が提示されていることを前提とし、それに該当しない残余の対象を指します。名詞の前に置かれて連体修飾語（定語）となる形（例：「其余的学生」残りの生徒たち、「其余的资金」残りの資金）のほか、単独で主語や目的語として用いられることもあります。書き言葉・話し言葉の双方で広く使われます。日本語の「残りの」「その他の」「ほかの」に相当します。",
+      "formation": "其余（＋ 的）＋ 名詞（または 其余 ＋ 動詞 / 述語）",
+      "examples": [
+        {
+          "translation": "どうして君たち二人だけしかいないの？残りのクラスメイトたちはどこ？"
+        }
+      ]
+    },
+    "zh_由此可见_512": {
+      "title": "(由此) 可见（接続表現：このことから〜ということがわかる・〜と推知できる）",
+      "shortExplanation": "前述の事実や根拠を受けて後節の冒頭に置き、「このことから分かるように」「これによって〜と見て取れる」と論理的な結論を導きます。",
+      "longExplanation": "「(由此) 可见」（(yóucǐ) kějiàn）は、論理的推論や論文・解説文で多用される接続詞的な慣用句です。「由此（これによって、ここから）」と「可见（〜ということが見て取れる、推知できる）」が組み合わさっており、前節で挙げた具体的な事例、客観的なデータ、あるいは観察された現象を根拠として、そこから導き出される明白な結論や教訓を後節で提示します。文頭に単独で置かれて読点（，）を打つことが一般的です。日本語の「このことから分かるように」「これによって〜と見て取れる」「ここから推して知るべし」に相当します。",
+      "formation": "根拠・事実を表す節，（由此）可见 ＋ 結論を表す節",
+      "examples": [
+        {
+          "translation": "このことから見て取れるように、成功には努力が必要なのだ。"
+        }
+      ]
+    },
+    "zh_N般_513": {
+      "title": "名詞 ＋ 般（比況助詞：〜のような・〜のように）",
+      "shortExplanation": "名詞の直後に付いて「〜のような」「まるで〜のように」という比喩・比況を表す格調高い文語表現です。",
+      "longExplanation": "「般」（bān）は名詞の直後に接続して比況句を構成する助詞（比況助詞）で、口語の「像……一样」に相当する文学的・詩的な表現です。名詞が持つ特徴・性質・美しさに例えて比喩的に描写する際に用いられます。主に助詞「的」を伴って名詞を修飾する連体修飾語（例：「阳光般的温暖」太陽の光のような温もり、「雨后春笋般地出现」雨後の筍のように出現する）や、助詞「地」を伴って動詞を修飾する連用修飾語として使われます。日本語の「〜のような」「〜のごとき」「〜のように」に相当します。",
+      "formation": "名詞 ＋ 般（＋ 的 ＋ 名詞）または 名詞 ＋ 般 ＋ 地 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "彼女の顔には、太陽の光のような明るい笑顔が浮かんだ。"
+        }
+      ]
+    },
+    "zh_闻_514": {
+      "title": "闻（動詞：においをかぐ・かぐ）",
+      "shortExplanation": "現代中国語の日常口語において、鼻を使ってにおいをかぐ（嗅覚を働かせる）動作を表す動詞です（「かぐ」「においをかぐ」）。",
+      "longExplanation": "「闻」（wén）は現代中国語において、鼻でにおいを感知する「かぐ」という意味の一般的な動詞として日常会話から文章語まで幅広く使われます。単独で目的語を取る（例：「闻花香」花の香りをかぐ、「闻味道」においをかぐ）ほか、動作の試みを表す動詞の重ね型「闻一闻」「闻了闻」（ちょっとかいでみる）、また嗅覚による知覚の成立を表す結果補語を伴う「闻到」「闻见」（においがする、においを感知する）の形で極めてよく用いられます。日本語の「（においを）かぐ」に相当します。",
+      "formation": "主語 ＋ 闻（＋ 一闻 / 了闻）（＋ 目的語 / 結果補語：到 / 见）",
+      "examples": [
+        {
+          "translation": "彼は急須（つぼ）のフタを開けてクンクンとかいでみたが、なんと酒だった。"
+        }
+      ]
+    },
+    "zh_闻_515": {
+      "title": "闻（文言動詞：聞く・耳にする・伝え聞く）",
+      "shortExplanation": "古代中国語の本来の語義で「耳で聞く」「伝え聞く」を表し、現代では主に成語や慣用句、書き言葉の中で用いられます（「聞く」「耳にする」）。",
+      "longExplanation": "「闻」（wén）の本来の古義は、聴覚で音や声をとらえる「耳で聞く」「伝え聞く（口語の「听」「听说」に相当）」です。現代中国語ではこの語義は単独の動詞としては成語、ことわざ、熟語、あるいは極めて格式の高い文語表現に化石化して受け継がれています（例：「百闻不如一见」百聞は一見に如かず、「闻名中外」国内外に名を聞こえさせる、「充耳不闻」耳に入っても聞こえないふりをする、「闻所未闻」今までに聞いたこともない）。日本語の「聞く」「伝え聞く」「耳にする」に相当します。",
+      "formation": "闻 ＋ 名詞（成語や固定詞・文語表現：百闻不如一见 / 闻名 / 闻所未闻など）",
+      "examples": [
+        {
+          "translation": "百聞は一見に如かず（百回聞くより一回見る方が確実だ）。"
+        }
+      ]
+    },
+    "zh_趁_516": {
+      "title": "趁（前置詞：〜の機に乗じて・〜のうちに・〜を利用して）",
+      "shortExplanation": "好機や条件、時間的余裕を捉え、状況が変化してしまう前に進んで行動を起こすことを表す介詞（前置詞）です（「〜のうちに」「〜に乗じて」）。",
+      "longExplanation": "「趁」（chèn）は、都合の良い好機、一時的な時間、あるいは客観的条件を積極的に利用して目的の行動を行うことを導く前置詞（介詞）です。後続する事態が変わってしまう前（例：「趁热」温かいうちに、「趁早」早いうちに、「趁年轻」若いうちに）に、素早く行動を起こすニュアンスを持ちます。「趁 ＋ 好機・条件，主語 ＋ 行動」の形で文頭または主語の直前に置かれ、口語から文章語まで極めて頻繁に使われます。日本語の「〜のうちに」「〜に乗じて」「〜の機会を利用して」に相当します。",
+      "formation": "趁 ＋ 時間 / 好機 / 条件（，主語 ＋）動詞",
+      "examples": [
+        {
+          "translation": "映画がまだ始まらないうちに、ミネラルウォーターを2本買いに行ってきます。"
+        }
+      ]
+    },
+    "zh_V不起_517": {
+      "title": "動詞 ＋ 不起（可能補語否定形：〜する余裕がない・〜しきれない・〜に耐えられない）",
+      "shortExplanation": "可能補語の否定形式で、経済的財力・心理的耐性・社会的資格が不足しており、動作を負担・維持できないことを表します（「〜する余裕がない」「〜しきれない」）。",
+      "longExplanation": "「動詞 ＋ 不起」（bù qǐ）は可能補語の代表的な否定表現で、肯定形は「動詞 ＋ 得起」です。主に以下の3つの意味分野で用いられます。(1) 経済的な支払い能力が足りず、出費を負担できない場合（例：「买不起」買う金銭的余裕がない、「住不起」高くて泊まれない / 住めない、「看不起病」診察代が高くて受診できない）；(2) 精神的・肉体的な負担やプレッシャー、試練に耐えきれない場合（例：「经不起考验」試練に耐えられない、「对不起」合わせる顔がない・申し訳ない）；(3) 心理的に見下す慣用句（例：「看不起」見下す・軽蔑する）。日本語の「〜する余裕がない」「〜を買う金がない」「〜に耐えられない」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 不起（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "彼の家はとても貧しく明かり（ランプ）を買う余裕がなかったため、夜になると読書ができなかった。"
+        }
+      ]
+    },
+    "zh_V得起_518": {
+      "title": "動詞 ＋ 得起（可能補語肯定形：〜する余裕がある・〜に耐えられる・立ち向かえる）",
+      "shortExplanation": "可能補語の肯定形式で、経済的余裕があること、あるいは試練・重責・批判に耐え抜く強靭な耐性・資格を備えていることを表します（「〜に耐えられる」「〜する余裕がある」）。",
+      "longExplanation": "「動詞 ＋ 得起」（dé qǐ）は可能補語の肯定形式で、否定形「動詞 ＋ 不起」と対をなします。主に以下の文脈で用いられます。(1) 財力・金銭的余裕があり、高価な商品やサービスを購入・負担できる場合（例：「买得起」買う余裕がある、「住得起五星级酒店」5つ星ホテルに泊まる金がある）；(2) 困難、長期的な試練、プレッシャー、厳しい批判などに耐え抜く実力や品格を備えている場合（例：「经得起考验」試練に耐え抜くことができる、「经得起推敲」厳密な吟味に耐えうる、「担得起重任」大任を背負い切れる）；(3) 相手の恩義や期待に報い、顔向けができる場合（例：「对得起父母」両親に申し訳が立つ・恩に報いる）。日本語の「〜に耐えうる」「〜に耐えられる」「〜する余裕がある」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 得起（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "時間の試練に耐え抜くことができる友人こそが、真の友人と言える。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_非_503": {
+      "title": "非 (접두사·부정 부사: 비~, 아닐 비, ~이 아니다)",
+      "shortExplanation": "명사나 형용사 앞에 붙는 접두사로 쓰여 '그 범주에 속하지 않음'이나 '비~'의 뜻을 나타내며, 서면어에서는 '不是(~이 아니다)'의 뜻을 나타냅니다.",
+      "longExplanation": "'非'(fēi)는 한문에서 유래한 부정형 요소로, 현대 중국어에서는 주로 명사나 형용사 앞에 결합하는 접두사로 널리 쓰입니다. '정상적인 범주나 규정에 부합하지 않음'을 나타내는 파생어를 만들어 내며(예: '非正常' 비정상적인, '非法' 불법의, '非正式' 비공식의, '非金属' 비금속, '非卖品' 비매품), 격식 있는 서면어 논설문에서는 단독으로 '不是(~이 아니다)'를 뜻하는 부정사로 기능하기도 합니다(예: '非同小可' 심상치 않다, '非我所愿' 내가 바란 바가 아니다). 한국어의 접두사 '비(非)~', '~이 아니다'에 해당합니다.",
+      "formation": "非 + 명사 / 형용사 (파생 복합어 형성: 非正常 / 非法 / 非正式 등) 또는 주어 + 非 + 명사 / 동사",
+      "examples": [
+        {
+          "translation": "비정상적인 상황이 발생했을 때 당황하지 마십시오."
+        }
+      ]
+    },
+    "zh_并非_504": {
+      "title": "并非 (부사: 결코 ~한 것은 아니다, 실은 ~이 아니다)",
+      "shortExplanation": "구어의 '并不是'에 해당하는 서면어 부사로, 선입견이나 잘못된 가정을 강하게 부정하여 '결코 ~이 아니다', '실은 ~한 것이 아니다'라는 뜻을 나타냅니다.",
+      "longExplanation": "'并非'(bìngfēi)는 부정의 어기를 강화하는 부사 '并'과 '不是(~이 아니다)'를 뜻하는 문언 요소 '非'가 결합된 서면어 표현입니다. 구어의 '并不是'보다 격조 높은 표현으로, 일반적인 통념이나 상대방의 잘못된 짐작·과장을 반박하며 '실제로는 결코 그렇지 않다'는 진실을 밝힐 때 사용됩니다. '其实'(사실은), '然而'(그러나) 등의 전환 접속사와 긴밀하게 호응합니다. 한국어의 '결코 ~한 것은 아니다', '실은 ~이 아니다', '반드시 ~인 것은 아니다'에 해당합니다.",
+      "formation": "주어 + 并非 + 명사 / 동사 / 형용사 (+ 절)",
+      "examples": [
+        {
+          "translation": "성공은 때때로 상상하는 것만큼 그리 어렵지 않다."
+        }
+      ]
+    },
+    "zh_以_505": {
+      "title": "以 (개사·접속사: ~로써, ~을 가지고, ~에 의거하여, ~하기 위해)",
+      "shortExplanation": "서면어에서 주로 쓰이는 개사 및 접속사로, 수단·도구·근거·자격('~로써', '~에 근거하여')을 나타내거나 행위의 목적('~하기 위해')을 이끕니다.",
+      "longExplanation": "'以'(yǐ)는 고대 한어의 용법을 풍부하게 계승한 서면어 표지어입니다. 크게 두 가지 핵심 용법이 있습니다. 첫째, 개사(전치사)로서 '用'(가지고), '凭'(기대어), '按照'(따라)에 해당하여 수단, 방식, 법적·도덕적 근거, 자격을 이끕니다(예: '以事实为根据' 사실을 근거로 삼다, '以理服人' 이치로써 사람을 설복하다, '以身作则' 몸소 모범을 보이다, '以……为原则' ~을 원칙으로 하다). 둘째, 접속사로서 앞선 행위와 뒤따르는 달성 목적을 연결하여 '以便', '为了'처럼 목적을 나타냅니다(예: '广开言路，以听取民众意见' 백성의 의견을 수렴하고자 언로를 넓히다). 한국어의 '~로써', '~을 가지고', '~에 의하여', '~하기 위해'에 해당합니다.",
+      "formation": "주어 + 以 + 명사(수단 / 근거 / 자격) + 동사 또는 행위 절 + 以 + 목적 절",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_平常_506": {
+      "title": "平常 (형용사: 평범하다, 보통이다, 특이하지 않다)",
+      "shortExplanation": "사물이나 사람의 모습이 평범하여 특이하거나 뛰어난 점이 없음을 나타내는 형용사입니다('평범하다', '보통이다'). 부정형 '不平常'은 '범상치 않다'를 뜻합니다.",
+      "longExplanation": "'平常'(píngcháng)은 형용사로서 어떤 사람의 외모, 재능, 혹은 사물의 상태가 지극히 일반적이고 특별한 구석이 없음을 묘사합니다. 명사 앞에서 관형어로 쓰이거나(예: '平常人' 보통 사람, '平常的事情' 흔하고 평범한 일), 술어로 쓰입니다(예: '他的表现很平常' 그의 활약은 평범했다). 특히 부정사 '不'와 결합한 '不平常'은 '예사롭지 않다', '범상치 않다', '특별한 의미가 있다'는 뜻으로 역사적 기념일이나 비범한 인물을 수식할 때 매우 애용됩니다. 한국어의 '평범하다', '보통이다', '예사롭다'에 해당합니다.",
+      "formation": "(주어 +) (很 / 不 +) 平常 (+ 的 + 명사)",
+      "examples": [
+        {
+          "translation": "샤오왕에게 오늘은 평범하지 않은 특별한 날이다."
+        }
+      ]
+    },
+    "zh_平常_507": {
+      "title": "平常 (시간명사·부사: 평소, 평상시, 대개, 늘)",
+      "shortExplanation": "특별한 일이 없는 일상적인 시간이나 평소의 상태를 가리키며, 동사 앞에 쓰여 '평소에는', '평상시에는'이라는 뜻을 나타냅니다.",
+      "longExplanation": "'平常'(píngcháng)은 시간명사 혹은 부사적 용법으로 쓰여 '平时'(평소)와 마찬가지로 별다른 변고가 없는 평상시나 일상적인 나날을 가리킵니다. 문두나 주어 뒤에서 시간 상황어로 쓰여 일상적으로 지속되어 온 습관이나 정상적인 상황을 나타냅니다. 특히 '오늘'이나 '특정 계기'에 발생한 예외적인 상황과 강하게 대조할 때 자주 쓰입니다(예: '平常总是……，今天却……' 평소에는 늘 …했는데 오늘은 도리어 …하다). 한국어의 '평소(에)', '평상시(에)', '보통 때는'에 해당합니다.",
+      "formation": "(주어 +) 平常 + (总是 / 经常 +) 동사 / 형용사 (또는 平常, 주어 + 동사……)",
+      "examples": [
+        {
+          "translation": "그는 평소에는 늘 일찍 오는데, 오늘은 뜻밖에도 지각했다."
+        }
+      ]
+    },
+    "zh_宁可_508": {
+      "title": "宁可……也…… (접속사: 차라리 ~할지언정 …하겠다 / 하지 않겠다)",
+      "shortExplanation": "두 가지 불리한 조건 중 더 심각한 피해나 후회를 막기 위해, 차라리 한쪽의 고통이나 희생을 감수하겠다는 주관적 결단을 나타냅니다('차라리 ~할지언정').",
+      "longExplanation": "'宁可'(nìngkě)는 선택의 기로에서 득실을 형량할 때 쓰이는 접속사입니다. 두 가지 선택지가 모두 부담스럽거나 불리한 상황에서, 더 나쁜 결과나 원치 않는 사태를 피하기 위해 차라리 비교적 덜한 희생이나 고생을 달게 감수하겠다는 단호한 결의를 나타냅니다. 후속 절에서 보통 '也不……'나 '决不……'와 호응하여 '宁可……，也不……'(차라리 …할망정 결코 …하지는 않겠다)의 복문 구조를 이룹니다. '宁愿', '宁肯'과 뜻이 같습니다. 한국어의 '차라리 ~할지언정', '~하는 편이 낫다'에 해당합니다.",
+      "formation": "주어 + 宁可 + 감수할 선택지, 也 + (不 / 决不 +) 거부할 선택지",
+      "examples": [
+        {
+          "translation": "어머니로서 그녀는 자신이 좀 힘들지언정, 아이를 서운하게 하거나 고생시키고 싶지는 않다."
+        }
+      ]
+    },
+    "zh_极其_509": {
+      "title": "极其 (정도부사: 지극히, 극히, 대단히)",
+      "shortExplanation": "정도가 최고조나 극한에 달했음을 나타내는 격조 높은 서면어 정도부사로, 주로 2음절 형용사나 심리 동사 앞에 쓰입니다('극히', '지극히').",
+      "longExplanation": "'极其'(jíqí)는 사물의 성질이나 상태의 정도가 최고조에 이르렀음을 나타내는 문어체 정도부사입니다. 일반적인 '很'이나 '非常'보다 어기가 한층 무겁고 객관적이며 격조가 높습니다. 주로 2음절 형용사(예: '极其严重' 극히 심각하다, '极其重要' 지극히 중요하다, '极其珍贵' 매우 진귀하다)나 심리 동사(예: '极其厌恶' 몹시 혐오하다, '极其渴望' 간절히 갈망하다)를 수식하여 술어부를 이룹니다. 한국어의 '극히', '지극히', '대단히'에 해당합니다.",
+      "formation": "极其 + 2음절 형용사 / 심리 동사",
+      "examples": []
+    },
+    "zh_其余_511": {
+      "title": "其余 (대명사: 나머지, 그 밖의 것/사람)",
+      "shortExplanation": "전체 집합에서 이미 언급된 특정 대상을 제외한 '남은 부분'이나 '남은 사람들'을 가리키는 대명사입니다('나머지', '그 밖의').",
+      "longExplanation": "'其余'(qíyú)는 전체 대상 가운데 이미 앞서 거론되었거나 제외된 일부를 뺀, 나머지 사람이나 사물을 가리키는 대명사입니다. 명사 앞에서 관형어로서 '其余 (+ 的) + 명사' 형태로 결합하거나(예: '其余的同学' 나머지 학우들, '其余的事' 그 밖의 일), 단독으로 주어나 목적어 자리에 쓰입니다(예: '其余由我负责' 나머지는 내가 책임진다). 한국어의 '나머지', '그 밖의 (것/사람)'에 해당합니다.",
+      "formation": "其余 (+ 的) + 명사 (또는 其余 + 동사 / 술어)",
+      "examples": [
+        {
+          "translation": "어째서 너희 둘뿐이니? 나머지 친구들은 어디 갔어?"
+        }
+      ]
+    },
+    "zh_由此可见_512": {
+      "title": "(由此) 可见 (접속 표현: 이로 보아 알 수 있듯이, 이것으로 미루어 볼 때)",
+      "shortExplanation": "앞에서 제시한 구체적인 사실이나 근거를 바탕으로, 뒷절의 첫머리에서 '이것으로 미루어 보건대 ~임을 알 수 있다'는 결론을 이끕니다.",
+      "longExplanation": "'(由此) 可见'((yóucǐ) kějiàn)은 논설문이나 설명문 등에서 논리적인 귀결을 맺을 때 쓰는 접속 표현입니다. '由此'(이로부터)와 '可见'(~임을 알 수 있다)이 합쳐져, 앞 절에서 진술한 구체적인 현상, 데이터, 경험적 사실을 근거로 삼아 도출되는 명백한 결론, 교훈, 법칙을 뒷절에서 전개합니다. 후속 절의 서두에 위치하여 쉼표를 찍고 쓰이는 경우가 많습니다. 한국어의 '이로 보아 알 수 있듯이', '이것으로 미루어 볼 때', '이에 비추어 보면'에 해당합니다.",
+      "formation": "근거·사실 절, (由此) 可见 + 결론·판단 절",
+      "examples": [
+        {
+          "translation": "이것으로 미루어 볼 때, 성공에는 노력이 필요한 법이다."
+        }
+      ]
+    },
+    "zh_N般_513": {
+      "title": "명사 + 般 (비유 조사: ~와 같은, 마치 ~처럼)",
+      "shortExplanation": "명사 뒤에 붙어 '마치 ~와 같은', '~처럼'이라는 비유를 나타내는 문학적이고 격조 높은 비유 조사입니다.",
+      "longExplanation": "'般'(bān)은 명사 바로 뒤에 결합하여 구어의 '像……一样(~와 같다)'에 해당하는 비유를 나타내는 비황 조사입니다. 문학적인 정취와 서정적인 묘사에서 널리 활용되며, 원관념의 특성을 생생하게 부각합니다. 뒤에 '的'를 붙여 명사를 수식하는 관형어로 쓰이거나(예: '阳光般的笑容' 햇살과 같은 미소, '潮水般的掌声' 밀물과 같은 박수갈채), '地'를 결합하여 동사를 수식하는 부사어로 쓰입니다(예: '飞一般地奔跑' 날아가듯 달리다). 한국어의 '~와 같은', '~ 같은', '~처럼'에 해당합니다.",
+      "formation": "명사 + 般 (+ 的 + 명사) 또는 명사 + 般 + 地 + 동사",
+      "examples": [
+        {
+          "translation": "그녀의 얼굴에 햇살과도 같은 밝은 미소가 번졌다."
+        }
+      ]
+    },
+    "zh_闻_514": {
+      "title": "闻 (동사: 냄새를 맡다)",
+      "shortExplanation": "현대 중국어의 일상생활에서 코로 냄새를 분별하고 맡는 후각적 행위를 나타내는 기본 동사입니다('냄새를 맡다').",
+      "longExplanation": "'闻'(wén)은 현대 중국어에서 코를 이용하여 사물의 냄새나 향기를 맡는 동작을 나타내는 가장 보편적인 동사입니다. 냄새를 나타내는 목적어를 직접 취하거나(예: '闻花香' 꽃향기를 맡다, '闻气味' 냄새를 맡다), 가벼운 동작의 시도를 나타내는 동사 중첩형 '闻一闻', '闻了闻'(한번 맡아 보다), 또는 후각적 인지의 도달을 나타내는 결과보어와 결합한 '闻到', '闻见'(냄새를 맡아내다, 냄새가 나다) 등의 구문으로 대단히 흔히 쓰입니다. 한국어의 '냄새를 맡다', '향을 맡다'에 해당합니다.",
+      "formation": "주어 + 闻 (+ 一闻 / 了闻) (+ 목적어 / 결과보어: 到 / 见)",
+      "examples": [
+        {
+          "translation": "그는 주전자 뚜껑을 열고 냄새를 킁킁 맡아 보더니, 알고 보니 술이라는 것을 알았다."
+        }
+      ]
+    },
+    "zh_闻_515": {
+      "title": "闻 (문언 동사: 듣다, 소문을 듣다)",
+      "shortExplanation": "한문 고유의 원래 의미로서 '귀로 듣다', '소문을 전해 듣다'를 뜻하며, 현대 중국어에서는 주로 사자성어나 격식 있는 관용구 속에 쓰입니다('듣다').",
+      "longExplanation": "'闻'(wén)은 원래 청각을 통해 소리나 소문을 '듣다'(현대 구어의 '听', '听说'에 해당)라는 뜻을 지닌 글자입니다. 현대 중국어에서는 단독 서술어로 쓰이기보다는 사자성어, 고사성어, 격언, 혹은 문어체 복합어 속에 깊숙이 뿌리내려 사용됩니다(예: '百闻不如一见' 백문이 불여일견, '闻名遐迩' 널리 이름을 떨치다, '闻所未闻' 금시초문이다, '充耳不闻' 귀를 막고 들으려 하지 않다). 한국어의 '듣다', '전해 듣다', '풍문을 듣다'에 해당합니다.",
+      "formation": "闻 + 명사 (주로 성어 및 고정 표현: 百闻不如一见 / 闻名 / 闻所未闻 등)",
+      "examples": [
+        {
+          "translation": "백문이 불여일견이다 (백 번 듣는 것이 한 번 보는 것만 못하다)."
+        }
+      ]
+    },
+    "zh_趁_516": {
+      "title": "趁 (개사: ~를 틈타, ~한 기회를 이용하여)",
+      "shortExplanation": "유리한 기회나 짧은 시간, 특정 조건을 포착하여 상황이 바뀌기 전에 어떤 행동을 취함을 이끄는 개사(전치사)입니다('~를 틈타', '~할 때를 노려').",
+      "longExplanation": "'趁'(chèn)은 유리한 기회나 시간적 여유, 혹은 특정한 객관적 조건을 놓치지 않고 포착하여 원하는 동작을 신속히 실행에 옮김을 나타내는 개사입니다. '趁' 뒤에는 시간, 계기, 임시적 상태가 오며(예: '趁热吃' 식기 전에 따뜻할 때 먹다, '趁年轻' 젊었을 때를 틈타, '趁现在' 지금 기회를 보아), 문두나 주어 앞에 놓여 후속 절의 행동을 이끕니다. 한국어의 '~를 틈타', '~한 김에', '~인 동안에 (빨리)'에 해당합니다.",
+      "formation": "趁 + 시간 / 계기 / 조건 (, 주어 +) 동사",
+      "examples": [
+        {
+          "translation": "영화가 아직 시작하지 않은 틈을 타서 생수 두 병을 사 올게요."
+        }
+      ]
+    },
+    "zh_V不起_517": {
+      "title": "동사 + 不起 (가능보어 부정형: ~할 여유가 없다, 감당하지 못하다, 차마 ~하지 못하다)",
+      "shortExplanation": "가능보어의 부정 형식으로, 경제적 형편이나 심리적·육체적 감당 능력이 부족하여 어떤 행위를 할 여력이 안 됨을 나타냅니다('~할 엄두가 안 난다', '~할 형편이 못 되다').",
+      "longExplanation": "'동사 + 不起'(bù qǐ)는 가능보어의 중요한 부정 형식입니다(긍정형은 '동사 + 得起'). 크게 세 가지 상황에서 널리 쓰입니다. 첫째, 재정적·경제적 여력이 부족하여 그 비용을 지불하거나 향유할 능력이 되지 않는 경우(예: '买不起' 살 형편이 안 된다, '住不起' 묵을 돈이 없다, '吃不起' 비싸서 사 먹을 엄두가 안 난다); 둘째, 정신적·육체적 무게나 시련을 견뎌 낼 수 없는 경우(예: '经不起考验' 시험을 견뎌 내지 못하다, '病不起' 앓아누울 여유조차 없다); 셋째, 타인을 낮잡아보거나 미안함을 나타내는 고정 관용 표현(예: '看不起' 얕보다·업신여기다, '对不起' 죄송하다·면목이 없다). 한국어의 '~할 엄두를 못 내다', '~할 형편이 안 되다', '견뎌 내지 못하다'에 해당합니다.",
+      "formation": "주어 + 동사 + 不起 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그의 집은 너무 가난하여 등불을 살 형편이 못 되었기에, 밤만 되면 책을 읽을 수가 없었다."
+        }
+      ]
+    },
+    "zh_V得起_518": {
+      "title": "동사 + 得起 (가능보어 긍정형: 감당해 낼 수 있다, 견뎌 낼 수 있다, ~할 자격이 있다)",
+      "shortExplanation": "가능보어의 긍정 형식으로, 경제적 지불 능력이 충분하거나 시련·비판·책임을 능히 견뎌 내고 감당할 능력이 있음을 나타냅니다('견뎌 낼 수 있다', '~할 여력이 되다').",
+      "longExplanation": "'동사 + 得起'(dé qǐ)는 가능보어의 긍정 구조로, 부정형 '동사 + 不起'와 대비됩니다. 주로 세 가지 용법으로 쓰입니다. 첫째, 경제적 능력이 충분하여 고가의 비용을 무리 없이 감당할 수 있음을 나타냅니다(예: '买得起' 살 여력이 있다, '住得起' 묵을 형편이 되다); 둘째, 시련, 비판, 실패, 책임 등의 무게를 꿋꿋하게 이겨 내고 견뎌 낼 수 있는 내구력이나 담력을 나타냅니다(예: '经得起考验' 시험과 시련을 이겨 낼 수 있다, '输得起' 패배를 담담히 감수할 배짱이 있다, '担得起重任' 막중한 책임을 감당할 수 있다); 셋째, 상대방의 기대와 호의에 부응하여 떳떳함을 나타냅니다(예: '对得起良心' 양심에 부끄럽지 않다). 한국어의 '견뎌 낼 수 있다', '감당해 낼 수 있다', '~할 여력이 되다'에 해당합니다.",
+      "formation": "주어 + 동사 + 得起 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "시간의 시험과 시련을 견뎌 낼 수 있는 친구라야 진정한 친구라고 할 수 있다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_非_503": {
+      "title": "非（构词前缀 / 否定副词：表示否定、不属于、不符合）",
+      "shortExplanation": "多用作构词前缀，置于名词或形容词前表示“非”、“不属于”某范畴；亦可在书面语中用作否定副词，相当于“不是”。",
+      "longExplanation": "“非”（fēi）源于古代汉语，在现代汉语中最常见的用法是充当构词前缀（前加成分），与名词、形容词结合构成新词，表示否定或除外，意指不属于某种性质、标准或范围（如“非正常”、“非法”、“非正式”、“非金属”、“非同寻常”）。此外，在政论、法律及庄重的书面语中，“非”也可单独用作否定副词，相当于“不是”，用于判断句或成语熟语中（如“非敌非友”、“非我所愿”、“非同小可”）。",
+      "formation": "非 + 名词 / 形容词（构成复合词：非正常 / 非法 / 非正式等）或 主语 + 非 + 名词 / 动词",
+      "examples": [
+        {
+          "translation": "出现非正常情况时请不要紧张。"
+        }
+      ]
+    },
+    "zh_并非_504": {
+      "title": "并非（否定副词：并不是、绝非、并不像那样）",
+      "shortExplanation": "书面语否定副词，相当于口语中的“并不是”；用于强调否定语气，驳斥某种误解或成见，澄清事实。",
+      "longExplanation": "“并非”（bìngfēi）由起强调作用的副词“并”与文言否定词“非”（相当于“不是”）结合而成，属书面语色彩浓厚的固定词语，对应口语中的“并不是”。它主要用于针对对方的先入之见、主观臆断或社会普遍存在的误解进行有力反驳与纠正，阐明客观实际情况。常与“其实”、“但是”、“然而”等转折词呼应使用，使行文更具说服力和思辨色彩。",
+      "formation": "主语 + 并非 + 名词 / 动词 / 形容词（+ 想象中那样……）",
+      "examples": [
+        {
+          "translation": "成功有时候并非想象中那么难。"
+        }
+      ]
+    },
+    "zh_以_505": {
+      "title": "以（介词 / 连词：用、拿、凭、按照、以便）",
+      "shortExplanation": "书面语常用虚词。作介词表示凭借、依据、手段或身份（“用、拿、凭”）；作连词连接分句表示目的（“以便、用以”）。",
+      "longExplanation": "“以”（yǐ）是文言文沿用至现代汉语书面语的典型多功能虚词，广泛见于公文、政论、学术著述与成语典故中。主要有两大语法功能：(1) 作介词：相当于现代口语的“用”、“拿”、“凭借”、“按照”。可引出动作的工具或手段（如“以理服人”、“以柔克刚”）、动作的依据与准则（如“以事实为依据”、“以法律为准绳”）、或主体的身份资格（如“以代表的身份发言”）；(2) 作连词：连接前后具有目的关系的谓词短语或分句，相当于“以便”、“来”，引出采取该行动所要达到的目的（如“加强管理以提高效率”、“广泛征求意见以完善方案”）。",
+      "formation": "主语 + 以 + 名词（手段 / 依据 / 身份）+ 动词短语 或 行为分句 + 以 + 目的分句",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_平常_506": {
+      "title": "平常（形容词：普通的、一般化的、不特别的）",
+      "shortExplanation": "形容词，表示事物或人物平平常常、普通平凡，没有奇特或突出之处；否定形式“不平常”常用于表示非同一般、意义重大。",
+      "longExplanation": "“平常”（píngcháng）作形容词时，用于指事物的内容、形式、表现或人的相貌、才能普通、平常，缺乏引人注目的特异之处（如“平常人”、“平常事”、“相貌平常”、“这道菜味道很平常”）。常作定语、谓语。该词在语言交际中极常以否定式“不平常”出现，表示非同寻常、不同凡响、具有重大的纪念意义或特殊影响（如“不平常的一年”、“不平常的经历”）。",
+      "formation": "（主语 +）（很 / 不 +）平常（+ 的 + 名词）",
+      "examples": [
+        {
+          "translation": "对小王来说，今天是一个不平常的日子。"
+        }
+      ]
+    },
+    "zh_平常_507": {
+      "title": "平常（时间名词 / 副词：平时、平常、通常）",
+      "shortExplanation": "指通常、无特殊事情发生的一般时间，用作状语，表示“平时”、“日常情况下”；常用于与特殊情况相对比。",
+      "longExplanation": "“平常”（píngcháng）作时间名词或副词时，语义等同于“平时”，指日常的、一般的时期，不包括假日或突发异常时期。它常置于句首或主语后充当时间状语，表示常规习惯、恒常状态或一般规律。在语用上，极常用于对照句式中，以前述的日常习惯反衬当下的例外情况或反常举动（如“他平常滴酒不沾，今天却喝得大醉”）。",
+      "formation": "（主语 +）平常 +（总是 / 经常 / 都 +）动词 / 形容词（或 平常，主语 + 动词……）",
+      "examples": [
+        {
+          "translation": "他平常总是来得很早，今天却迟到了。"
+        }
+      ]
+    },
+    "zh_宁可_508": {
+      "title": "宁可……也……（关联连词：宁愿、宁肯，宁可……也不……）",
+      "shortExplanation": "连词，用于权衡取舍的复句；在两害相权之下，表示宁愿承受某种不利或牺牲，也绝不容忍更坏的结果出现。",
+      "longExplanation": "“宁可”（nìngkě）是表示选择关系的关联连词。在面临两种都不尽如人意的艰难选择时，说话人经过权衡得失，毅然决定承担前项的困难、辛劳或牺牲，以避免出现后项更不愿意看到的不良后果。在复句中常与后一分句的“也”（常带“不 / 绝不”）配合，构成“宁可……，也（不）……”格式。口语及书面语通用，同义词有“宁愿”、“宁肯”。",
+      "formation": "主语 + 宁可 + 承担的不利条件 / 牺牲，也 +（不 / 决不 +）坚决避免的结果",
+      "examples": [
+        {
+          "translation": "作为母亲，她宁可自己累一点儿，也不想委屈了孩子。"
+        }
+      ]
+    },
+    "zh_极其_509": {
+      "title": "极其（程度副词：非常、极度、极其严重/重要）",
+      "shortExplanation": "程度副词，书面语色彩浓厚，表示程度达到了极点；主要修饰双音节形容词或心理动词；相当于“极度”、“非常”。",
+      "longExplanation": "“极其”（jíqí）是表示极高程度的书面语程度副词，多见于新闻报道、学术论著、政论及正式演讲中。其表意程度高于一般的“很”、“非常”，意指达到了极限或极高点。通常修饰双音节形容词（如“极其重要”、“极其严峻”、“极其微弱”、“极其敏锐”）或表心理意愿的双音节动词（如“极其关注”、“极其重视”），不能修饰单音节词，后边也不能再加“极了”或“得很”。",
+      "formation": "极其 + 双音节形容词 / 心理动词",
+      "examples": []
+    },
+    "zh_其余_511": {
+      "title": "其余（代词：剩下的、其余的人或事物）",
+      "shortExplanation": "代词，指在整体范围中除去已经提及或明确的一部分之外，剩下的人或事物；“剩下的”、“其余的”。",
+      "longExplanation": "“其余”（qíyú）是指示代词，用于在某一确定的整体范围内，指代除去已经列举、提及的一部分人或事物后所剩下的所有部分。可单独作主语、宾语（如“其余由大家讨论决定”、“除了小张，其余都赞成”）；也常后接助词“的”作定语修饰名词（如“其余的人”、“其余的时间”、“其余的资金”）。",
+      "formation": "其余（+ 的）+ 名词（或 其余 + 动词 / 谓语）",
+      "examples": [
+        {
+          "translation": "怎么只有你们两个人？其余的同学呢？"
+        }
+      ]
+    },
+    "zh_由此可见_512": {
+      "title": "（由此）可见（关联词组：由此可以推知、从中可以看出）",
+      "shortExplanation": "关联词组，用于承接前文列举的事实、数据或论据，引出水到渠成的推论或必然结论；“从这里可以看出”。",
+      "longExplanation": "“（由此）可见”（(yóucǐ) kějiàn）是逻辑思辨和论述性语篇中极为常见的连接性短语。“由此”指代前文叙述的事实或理由，“可见”意为“可以推断出 / 能够看出”。常置于复句后一分句句首，在前项列举充分的事实、论据或现象之后，顺理成章地推导归纳出某种普遍规律、客观判断或深刻教训。行文客观严密。",
+      "formation": "事实 / 论据分句，（由此）可见 + 结论 / 判定分句",
+      "examples": [
+        {
+          "translation": "由此可见，成功是需要努力的。"
+        }
+      ]
+    },
+    "zh_N般_513": {
+      "title": "名词 + 般（比况助词：如同、像……一样）",
+      "shortExplanation": "比况助词，附在名词后，表示与该事物相似或相同，相当于口语中的“像……一样”；具浓厚文学色彩。",
+      "longExplanation": "“般”（bān）作为比况助词，紧跟在名词之后构成比况短语，表示形态、性质、神态或动作如同该名词所代表的事物一样，相当于“像……一样”。具有很强的形象感与文学色彩。最常见的用法是后加结构助词“的”充当定语（如“阳光般的温暖”、“珍珠般的泪水”、“雷鸣般的掌声”）；也可后加“地”充当状语修饰动词（如“飞一般地跑去”）。",
+      "formation": "名词 + 般（+ 的 + 名词）或 名词 + 般 + 地 + 动词",
+      "examples": [
+        {
+          "translation": "她的脸上露出了阳光般的笑容。"
+        }
+      ]
+    },
+    "zh_闻_514": {
+      "title": "闻（动词：嗅、用鼻子闻气味）",
+      "shortExplanation": "动词，指用鼻子辨别或吸收气味（嗅觉动作）；相当于口语中的“嗅”、“闻一闻”。",
+      "longExplanation": "“闻”（wén）在现代汉语日常口语及书面语中，最常用的实词义是指用鼻子嗅吸以感觉气味（嗅觉活动）。后边常带表示气味的名词作宾语（如“闻花香”、“闻到了焦味”）；亦常以动词重叠形式“闻一闻”、“闻了闻”表示尝试性或短暂的动作；或与结果补语“到”、“见”结合构成“闻到”、“闻见”，表示嗅觉器官对客观气味的捕获与感知。",
+      "formation": "主语 + 闻（+ 一闻 / 了闻）（+ 宾语 / 结果补语：到 / 见）",
+      "examples": [
+        {
+          "translation": "他把壶盖儿打开，闻了闻，原来是酒。"
+        }
+      ]
+    },
+    "zh_闻_515": {
+      "title": "闻（动词：听见、听闻、听说）",
+      "shortExplanation": "文言保留意义，指用耳朵听、听见、听说；在现代汉语中主要保存在成语、熟语及高雅书面语中；相当于“听”。",
+      "longExplanation": "“闻”（wén）的本义是用耳朵听，表示听觉知觉（相当于现代口语的“听”、“听说”）。在现代汉语中，此义主要凝固并保存在大量成语、典故、熟语或极具文雅色彩的书面语表达中（如“百闻不如一见”、“闻名遐迩”、“闻所未闻”、“充耳不闻”、“骇人听闻”；又如“闻讯赶来”）。与表示嗅觉动作的“闻”（嗅）并存，体现了古今词义的演变与继承。",
+      "formation": "闻 + 名词（多用于成语熟语：百闻不如一见 / 闻名 / 闻所未闻等）",
+      "examples": [
+        {
+          "translation": "百闻不如一见。"
+        }
+      ]
+    },
+    "zh_趁_516": {
+      "title": "趁（介词：利用时间、机会或条件）",
+      "shortExplanation": "介词，引出可以利用的时间、机会或客观有利条件，以便抓住时机采取行动；相当于“趁着”、“利用”。",
+      "longExplanation": "“趁”（chèn）是表示抓住时机或条件的介词。用于引出某种短暂存在的有利时机、时间段或客观状态，表示说话人抓紧在该条件尚未发生改变之前，适时实施某项行为。后边可接名词短语、动词短语或主谓分句（如“趁早”、“趁热”、“趁年轻”、“趁机会”、“趁他不在”）。常用于口语及书面语中，构成“趁……，采取行动”的关联格局。",
+      "formation": "趁 + 时间 / 机会 / 状态短语（，主语 +）动词短语",
+      "examples": [
+        {
+          "translation": "趁电影还没开始，我去买两瓶矿泉水。"
+        }
+      ]
+    },
+    "zh_V不起_517": {
+      "title": "动词 + 不起（可能补语否定式：表示经济、能力或心理上承受不起）",
+      "shortExplanation": "可能补语否定式，表示在财力、承受力、资格或社会地位上负担不起、承担不住；相当于“承担不起”、“经受不住”。",
+      "longExplanation": "“动词 + 不起”（bù qǐ）是常用可能补语结构（肯定形式为“动词 + 得起”）。其语法意义主要涵盖三个层面：(1) 表示财力不足，无力负担某种经济花费（如“买不起”、“住不起”、“坐不起飞机”、“吃不起昂贵的药”）；(2) 表示在生理、心理、信誉或客观后果上承受不住打击与考验（如“经不起折腾”、“担不起这个责任”、“输不起”、“经不起推敲”）；(3) 衍生出特定评价色彩的固定短语（如“看不起”表示轻视蔑视、“对不起”表示内疚歉意）。",
+      "formation": "主语 + 动词 + 不起（+ 宾语）",
+      "examples": [
+        {
+          "translation": "他家里很穷，买不起灯，一到晚上就不能读书。"
+        }
+      ]
+    },
+    "zh_V得起_518": {
+      "title": "动词 + 得起（可能补语肯定式：表示经济、能力或心理上承担得起、经受得住）",
+      "shortExplanation": "可能补语肯定式，表示在经济实力、意志品质或心理承受力上完全有能力负担、经受得住；相当于“承担得起”、“经受得住”。",
+      "longExplanation": "“动词 + 得起”（dé qǐ）是常用可能补语结构（否定形式为“动词 + 不起”）。主要表意功能包括：(1) 表示财力充裕，完全能够负担某种高昂的费用或消费（如“买得起房”、“住得起豪华酒店”）；(2) 表示具备足够的耐力、气度、毅力或定力，能够抵御并经受住漫长的时间、严酷的考验、严厉的批评或挫折打击（如“经得起考验”、“经得起风浪”、“经得起推敲”、“担得起大任”、“输得起”）；(3) 表示对得住良心或不辜负他人的期望与恩义（如“对得起大家对我的信任”）。",
+      "formation": "主语 + 动词 + 得起（+ 宾语）",
+      "examples": [
+        {
+          "translation": "经得起时间考验的朋友才算是真正的朋友。"
+        }
+      ]
+    }
+  }
+}

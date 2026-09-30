@@ -21,7 +21,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   hasCompletedOnboarding: false,
   preferredLevel: 'all',
   hasSeenSubtitleCoachmark: false,
-  fullscreenSubtitleYPercent: 94
+  fullscreenSubtitleYPercent: 96
 };
 
 @Injectable({
@@ -270,10 +270,10 @@ export class SettingsService implements OnDestroy {
         const parsed = JSON.parse(stored) as Partial<UserSettings>;
         const readingDisplayMode = this.getStoredReadingDisplayMode(parsed);
         let fullscreenSubtitleYPercent = parsed.fullscreenSubtitleYPercent;
-        if (fullscreenSubtitleYPercent === 84 || fullscreenSubtitleYPercent === undefined) {
-          fullscreenSubtitleYPercent = 94;
+        if (fullscreenSubtitleYPercent === 84 || fullscreenSubtitleYPercent === 90 || fullscreenSubtitleYPercent === 94 || fullscreenSubtitleYPercent === undefined) {
+          fullscreenSubtitleYPercent = 96;
         } else {
-          fullscreenSubtitleYPercent = Math.max(10, Math.min(95, Math.round(fullscreenSubtitleYPercent)));
+          fullscreenSubtitleYPercent = Math.max(3, Math.min(98.5, Math.round(fullscreenSubtitleYPercent * 10) / 10));
         }
 
         this.settings.set({
@@ -335,13 +335,13 @@ export class SettingsService implements OnDestroy {
   }
 
   setFullscreenSubtitleYPercent(percent: number): void {
-    const clamped = Math.max(16, Math.min(95, Math.round(percent)));
+    const clamped = Math.max(3, Math.min(98.5, Math.round(percent * 10) / 10));
     this.updateSettings({ fullscreenSubtitleYPercent: clamped });
   }
 
   toggleFullscreenSubtitlePosition(): void {
-    const current = this.settings().fullscreenSubtitleYPercent ?? 94;
-    const next = current < 50 ? 94 : 18;
+    const current = this.settings().fullscreenSubtitleYPercent ?? 96;
+    const next = current < 50 ? 96 : 16;
     this.updateSettings({ fullscreenSubtitleYPercent: next });
   }
 

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_이가_0": {
+      "title": "이/가 (Tiểu từ chủ ngữ)",
+      "shortExplanation": "Tiểu từ chủ cách gắn sau danh từ để xác định và chỉ rõ danh từ đó là chủ ngữ của câu.",
+      "longExplanation": "'이/가' là tiểu từ chủ cách cơ bản trong tiếng Hàn, được gắn ngay sau danh từ để biểu thị danh từ đó là chủ ngữ thực hiện hành động hoặc là đối tượng chính của trạng thái trong câu. Nếu danh từ kết thúc bằng phụ âm (có patchim), ta dùng '이'; nếu danh từ kết thúc bằng nguyên âm (không có patchim), ta dùng '가'. '이/가' thường nhấn mạnh vào chính chủ ngữ (trả lời cho câu hỏi 'Ai?', 'Cái gì?'), hoặc dùng khi nêu thông tin mới, miêu tả trạng thái khách quan trước mắt.",
+      "formation": "Danh từ có patchim + 이 / Danh từ không có patchim + 가",
+      "examples": [
+        {
+          "translation": "Tôi ăn táo, nhưng bạn tôi lại thích cam."
+        },
+        {
+          "translation": "Chú cún của tôi nhảy lên trên ghế sofa."
+        },
+        {
+          "translation": "Cuốn sách này là thú vị nhất."
+        },
+        {
+          "translation": "Món ăn mà bạn thích là món gì vậy?"
+        }
+      ]
+    },
+    "ko_은는_1": {
+      "title": "은/는 (Tiểu từ chủ đề / tương phản)",
+      "shortExplanation": "Tiểu từ bổ trợ gắn sau danh từ để xác định chủ đề của câu hoặc biểu thị sự đối chiếu, tương phản.",
+      "longExplanation": "'은/는' là tiểu từ bổ trợ (phụ trợ từ) rất quan trọng trong tiếng Hàn. Khi gắn vào danh từ, nó đưa danh từ đó lên làm chủ đề bàn luận chính của câu ('về phần...', 'còn... thì'). Ngoài ra, '은/는' còn có chức năng biểu thị sự tương phản, đối chiếu giữa hai hay nhiều đối tượng hoặc nội dung khác nhau. Nếu danh từ kết thúc bằng phụ âm (có patchim), dùng '은'; nếu kết thúc bằng nguyên âm (không có patchim), dùng '는'.",
+      "formation": "Danh từ có patchim + 은 / Danh từ không có patchim + 는",
+      "examples": [
+        {
+          "translation": "Tôi là học sinh. Tôi đang học tiếng Hàn."
+        },
+        {
+          "translation": "Bạn tôi thì ở nhà, còn tôi thì ở trường."
+        },
+        {
+          "translation": "Hôm nay trời mưa, nhưng ngày mai trời sẽ quang đãng."
+        },
+        {
+          "translation": "Cái này là sách, còn cái kia là bút chì."
+        }
+      ]
+    },
+    "ko_을를_2": {
+      "title": "을/를 (Tiểu từ tân ngữ)",
+      "shortExplanation": "Tiểu từ mục đích cách gắn sau danh từ để xác định danh từ đó là tân ngữ trực tiếp chịu tác động của hành động.",
+      "longExplanation": "'을/를' là tiểu từ tân ngữ (mục đích cách) trong tiếng Hàn, được gắn sau danh từ để chỉ rõ rằng danh từ đó là đối tượng trực tiếp chịu sự tác động của ngoại động từ đứng phía sau. Nếu danh từ kết thúc bằng phụ âm (có patchim), gắn '을'; nếu danh từ kết thúc bằng nguyên âm (không có patchim), gắn '를'. Trong giao tiếp khẩu ngữ hằng ngày, '을/를' đôi khi có thể được lược bỏ nếu ngữ cảnh đã rõ ràng.",
+      "formation": "Danh từ có patchim + 을 + Động từ / Danh từ không có patchim + 를 + Động từ",
+      "examples": [
+        {
+          "translation": "Mỗi buổi sáng tôi đều uống cà phê."
+        },
+        {
+          "translation": "Tôi đang đọc cuốn sách này."
+        },
+        {
+          "translation": "Tôi muốn đi xem phim."
+        },
+        {
+          "translation": "Chúng tôi muốn giúp đỡ họ."
+        }
+      ]
+    },
+    "ko_아니다_3": {
+      "title": "이/가 아니다 (Không phải là...)",
+      "shortExplanation": "Dạng phủ định của vị từ chỉ định '이다' (là); tương đương với 'không phải là...' trong tiếng Việt.",
+      "longExplanation": "'아니다' là tính từ phủ định trong tiếng Hàn, dùng để phủ định hoàn toàn bản chất, tên gọi, danh tính hoặc thuộc tính của một danh từ (tương đương với cấu trúc phủ định của hệ từ '이다'). Cấu trúc chuẩn luôn đi kèm với tiểu từ chủ ngữ: 'Danh từ + 이/가 아니다'. Ở đuôi câu thân mật lịch sự (해요체), nó biến đổi thành '아니에요'; ở thể trang trọng (하십시오체), nó biến đổi thành '아닙니다'.",
+      "formation": "Danh từ có patchim + 이 아니다 / Danh từ không có patchim + 가 아니다",
+      "examples": [
+        {
+          "translation": "Đó không phải là sách của tôi, đó là sách của bạn tôi."
+        },
+        {
+          "translation": "Chúng ta không hề muộn quá đâu, vẫn còn dư dả thời gian mà."
+        },
+        {
+          "translation": "Công viên tuyệt đẹp này không phải là tự nhiên, mà do con người tạo nên đấy."
+        },
+        {
+          "translation": "Anh ấy không phải là bạn của tôi, chúng tôi chỉ là đồng nghiệp thôi."
+        }
+      ]
+    },
+    "ko_예요이에요_4": {
+      "title": "예요/이에요 (Đuôi câu khẳng định thân mật lịch sự: là...)",
+      "shortExplanation": "Đuôi câu trần thuật thân mật lịch sự (thể 해요) của hệ từ '이다', dùng sau danh từ với nghĩa 'là...'.",
+      "longExplanation": "'예요/이에요' là dạng kết hợp của hệ từ (tiểu từ vị ngữ) '이다' với đuôi câu thân mật lịch sự '어요' trong tiếng Hàn, tương đương với 'là...' trong tiếng Việt. Nó được gắn trực tiếp vào sau danh từ để giới thiệu tên gọi, nghề nghiệp, quốc tịch hoặc bản chất sự vật. Nếu danh từ kết thúc bằng phụ âm (có patchim), dùng '이에요'; nếu danh từ kết thúc bằng nguyên âm (không có patchim), dùng '예요'.",
+      "formation": "Danh từ có patchim + 이에요 / Danh từ không có patchim + 예요",
+      "examples": [
+        {
+          "translation": "Tôi là học sinh."
+        },
+        {
+          "translation": "Người này là bạn của tôi."
+        },
+        {
+          "translation": "Đây là chiếc cặp của tôi."
+        },
+        {
+          "translation": "Sở thích của tôi là đọc sách."
+        }
+      ]
+    },
+    "ko_아요어요여요_5": {
+      "title": "아요/어요/여요 (Đuôi câu thân mật lịch sự thì hiện tại - 해요체)",
+      "shortExplanation": "Đuôi từ kết thúc câu thân mật lịch sự thì hiện tại, gắn sau thân động từ hoặc tính từ.",
+      "longExplanation": "'아요/어요/여요' là vĩ tố kết thúc câu thuộc phong cách thân mật lịch sự (thể 해요 - Haeyo-che), được sử dụng phổ biến nhất trong đời sống thường nhật của người Hàn Quốc. Vĩ tố này dùng cho cả câu trần thuật lẫn câu nghi vấn (khi lên giọng ở cuối câu). Quy tắc chia theo nguyên âm của gốc từ: nếu nguyên âm cuối của gốc động từ/tính từ là nguyên âm dương tính 'ㅏ' hoặc 'ㅗ', kết hợp với '-아요'; đối với các nguyên âm còn lại (nguyên âm âm tính), kết hợp với '-어요'; riêng các từ có đuôi '-하다' sẽ biến đổi thành '-해요' (dạng rút gọn của '하여요').",
+      "formation": "Thân động từ/tính từ có nguyên âm 'ㅏ', 'ㅗ' + 아요 / Thân động từ/tính từ có các nguyên âm khác + 어요 / Gốc có đuôi '하다' -> 해요",
+      "examples": [
+        {
+          "translation": "Tôi đang học tiếng Hàn."
+        },
+        {
+          "translation": "Mẹ tôi nấu những món ăn rất ngon."
+        },
+        {
+          "translation": "Thầy giáo đang dạy cho học sinh về văn hóa Hàn Quốc."
+        },
+        {
+          "translation": "Anh ấy thỉnh thoảng đi dạo vào giờ nghỉ trưa."
+        }
+      ]
+    },
+    "ko_고_6": {
+      "title": "고 (Vĩ tố liên kết: và, rồi...)",
+      "shortExplanation": "Vĩ tố liên kết dùng để nối hai hay nhiều hành động, trạng thái theo quan hệ liệt kê hoặc thứ tự thời gian.",
+      "longExplanation": "'고' là một trong những vĩ tố liên kết (đuôi liên kết câu) cơ bản nhất trong tiếng Hàn, được gắn trực tiếp vào thân động từ hoặc tính từ mà không phụ thuộc vào việc có phụ âm cuối hay không. Nó dùng để liệt kê hai hay nhiều hành động, sự việc song song (tương đương với 'và', 'vừa... vừa...') hoặc diễn tả thứ tự thời gian trước sau của các hành vi ('làm cái này rồi làm cái kia').",
+      "formation": "Thân động từ/tính từ + 고",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi đã đến trường, học bài, và cùng các bạn ăn trưa."
+        },
+        {
+          "translation": "Anh ấy đã nhảy múa, ca hát, và vui chơi rất vui vẻ."
+        },
+        {
+          "translation": "Tôi đã về nhà làm bài tập rồi đọc sách."
+        },
+        {
+          "translation": "Chúng tôi đã ăn trưa xong rồi đi xem phim."
+        }
+      ]
+    },
+    "ko_하고_7": {
+      "title": "하고 (Trợ từ liên kết / đi cùng: và, cùng với)",
+      "shortExplanation": "Trợ từ gắn sau danh từ dùng để nối hai danh từ lại với nhau ('và') hoặc biểu thị hành động cùng ai đó ('cùng với').",
+      "longExplanation": "'하고' là trợ từ liên kết phổ biến trong khẩu ngữ tiếng Hàn, được gắn trực tiếp vào sau danh từ mà không phân biệt có phụ âm cuối hay không. Nó có hai công dụng chủ yếu: kết nối hai hoặc nhiều danh từ mang quan hệ ngang hàng (tương đương 'và'), hoặc đóng vai trò tiểu từ phó từ cách chỉ người đồng hành cùng thực hiện một hành động nào đó (tương đương 'cùng với', 'với').",
+      "formation": "Danh từ 1 + 하고 + Danh từ 2 (hoặc Danh từ + 하고 + Động từ)",
+      "examples": [
+        {
+          "translation": "Tôi đã xem phim và ăn cơm với bạn, rồi sau đó về nhà làm bài tập."
+        },
+        {
+          "translation": "Cuối tuần này tôi đã quyết định đi du lịch cùng gia đình."
+        },
+        {
+          "translation": "Peter và Mary đã cùng nhau đến trường."
+        },
+        {
+          "translation": "Hôm nay tôi dự định đi mua sắm cùng bố."
+        }
+      ]
+    },
+    "ko_으세요euseyoImperativeform_8": {
+      "title": "(으)세요 (Đuôi câu mệnh lệnh, thỉnh dụ lịch sự: hãy..., xin vui lòng...)",
+      "shortExplanation": "Đuôi câu kết thúc tôn kính thân mật, dùng để yêu cầu, khuyên nhủ hoặc đề nghị ai đó làm gì một cách lịch sự.",
+      "longExplanation": "'(으)세요' là vĩ tố kết thúc câu mệnh lệnh và thỉnh dụ mang tính lịch sự, được tạo nên từ sự kết hợp của vĩ tố tôn kính chủ ngữ '-(으)시-' và đuôi câu '-어요'. Cấu trúc này dùng khi yêu cầu, nhờ vả, chỉ dẫn hoặc khuyên bảo đối phương làm một hành động nào đó với thái độ nhã nhặn, tôn trọng ('hãy...', 'xin hãy...', 'vui lòng...'). Nếu thân động từ kết thúc bằng phụ âm (có patchim), gắn '-으세요'; nếu kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' (khi 'ㄹ' gặp 'ㅅ' thì 'ㄹ' bị lược bỏ), gắn '-세요'.",
+      "formation": "Thân động từ có patchim + 으세요 / Thân động từ không có patchim + 세요 (Nếu thân tận cùng bằng 'ㄹ', lược bỏ 'ㄹ' rồi cộng '세요')",
+      "examples": [
+        {
+          "translation": "Hãy cẩn thận khi qua đường nhé, có thể xảy ra tai nạn đấy."
+        },
+        {
+          "translation": "Hãy về nhà rồi uống số thuốc cần phải uống nhé."
+        },
+        {
+          "translation": "Nếu nhận được tin nhắn này thì hãy trả lời ngay nhé."
+        },
+        {
+          "translation": "Hãy gọi điện thoại trước cho những người mà bạn cần gặp vào tối nay."
+        }
+      ]
+    },
+    "ko_으수있다eulsuitdaCando_9": {
+      "title": "(으)ㄹ 수 있다 (Có thể làm gì đó)",
+      "shortExplanation": "Cấu trúc gắn sau thân động từ để biểu thị năng lực cá nhân hoặc khả năng có thể xảy ra của một sự việc; 'có thể'.",
+      "longExplanation": "'(으)ㄹ 수 있다' là cấu trúc biểu thị khả năng cơ bản nhất trong tiếng Hàn, tương đương với 'có thể...' trong tiếng Việt. Cấu trúc này được cấu thành từ vĩ tố định ngữ tương lai '-(으)ㄹ', danh từ phụ thuộc '수' (phương thức, khả năng) và tính từ tồn tại '있다'. Nó dùng để diễn đạt hai ý nghĩa: năng lực chủ quan của chủ thể (biết làm, có khả năng làm) hoặc hoàn cảnh khách quan cho phép hành động diễn ra. Nếu thân động từ có patchim, gắn '-을 수 있다'; nếu không có patchim hoặc tận cùng là 'ㄹ', gắn '-ㄹ 수 있다'. Ngược lại, dạng phủ định (không thể) là '(으)ㄹ 수 없다'.",
+      "formation": "Thân động từ có patchim + 을 수 있다 / Thân động từ không có patchim hoặc có patchim 'ㄹ' + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "Vì cô ấy có thể học tiếng Hàn rất nhanh nên chắc là chỉ sau một tháng có thể thi lấy chứng chỉ TOPIK."
+        },
+        {
+          "translation": "Vì nhà bạn ở gần nên nếu học tập chăm chỉ thì trong vòng một tháng bạn có thể nói tiếng Hàn lưu loát."
+        },
+        {
+          "translation": "Vì tôi hiểu biết rất nhiều về điều đó nên tôi có thể trả lời mọi câu hỏi liên quan."
+        },
+        {
+          "translation": "Nếu bạn cảm thấy khó hiểu thì tôi có thể nói chậm lại một chút."
+        }
+      ]
+    },
+    "ko_으려고euryeogoIntentiontodo_10": {
+      "title": "(으)려고 (Vĩ tố liên kết chỉ ý định, mục đích: để, định làm gì)",
+      "shortExplanation": "Vĩ tố liên kết gắn sau động từ chỉ mục đích hoặc ý định thực hiện một hành động nào đó; 'định...', 'để mà...'.",
+      "longExplanation": "'(으)려고' là vĩ tố liên kết phụ thuộc chỉ mục đích hoặc ý định trong tiếng Hàn, tương đương với 'để', 'nhằm mục đích' hoặc 'định làm gì' trong tiếng Việt. Nó diễn đạt ý định của chủ ngữ ở mệnh đề trước nhằm thực hiện một hành động hoặc tạo nên tiền đề ở mệnh đề sau. Nếu thân động từ có patchim, gắn '-으려고'; nếu không có patchim hoặc có patchim 'ㄹ', gắn '-려고'. Lưu ý: mệnh đề sau không đi cùng các đuôi câu mệnh lệnh như '-(으)세요' hay thỉnh dụ như '-(으)ㅂ시다'.",
+      "formation": "Thân động từ có patchim + 으려고 / Thân động từ không có patchim hoặc có patchim 'ㄹ' + 려고",
+      "examples": [
+        {
+          "translation": "Tôi đã đến Hàn Quốc để học tiếng Hàn."
+        },
+        {
+          "translation": "Chị gái tôi đang tập thể dục để giảm cân."
+        },
+        {
+          "translation": "Các học sinh đang học tập chăm chỉ để vượt qua kỳ thi."
+        },
+        {
+          "translation": "Bố làm việc mỗi ngày nhằm mang lại cuộc sống tốt đẹp cho các con."
+        }
+      ]
+    },
+    "ko_으는다eunneundaInformalstatementendings_11": {
+      "title": "(으)ㄴ/는다 (Đuôi câu trần thuật hiện tại - thể 해라 / thể thường)",
+      "shortExplanation": "Đuôi câu trần thuật thì hiện tại ở thể trung cấp/thể hạ đẳng (해라체), thường dùng trong văn viết, báo chí, nhật ký hoặc khi nói với bạn bè đồng trang lứa, người nhỏ tuổi.",
+      "longExplanation": "'(으)ㄴ/는다' là vĩ tố kết thúc câu trần thuật thì hiện tại thuộc thể 해라 (Haera-che / thể cơ bản không kính ngữ). Vĩ tố này thường xuất hiện trong các bài viết mang tính khách quan như sách báo, tiểu thuyết, nhật ký, báo cáo, hoặc dùng trong khẩu ngữ giữa bạn bè thân thiết cùng trang lứa và người lớn nói với trẻ nhỏ. Quy tắc chia đối với động từ: thân động từ có patchim kết hợp với '-는다', thân động từ không có patchim hoặc có patchim 'ㄹ' (khi đó 'ㄹ' bị lược bỏ) kết hợp với '-ㄴ다'. Đối với tính từ, chỉ cần giữ nguyên thân từ và gắn '-다'.",
+      "formation": "Động từ có patchim + 는다 / Động từ không có patchim + ㄴ다 / Tính từ + 다",
+      "examples": [
+        {
+          "translation": "Hôm nay đúng nửa đêm tôi mới trở về nhà."
+        },
+        {
+          "translation": "Anh ấy nói tiếng Tây Ban Nha rất giỏi."
+        },
+        {
+          "translation": "Cà phê này đậm đặc quá."
+        },
+        {
+          "translation": "Ngày mai chúng tôi sẽ đi đến công viên và đi dã ngoại."
+        }
+      ]
+    },
+    "ko_도_12": {
+      "title": "도 (Tiểu từ: cũng, cả)",
+      "shortExplanation": "Tiểu từ bổ trợ gắn sau danh từ biểu thị sự đồng nhất, bao hàm hoặc nhấn mạnh; tương đương với 'cũng', 'cả'.",
+      "longExplanation": "'도' là một tiểu từ bổ trợ (phụ trợ từ) rất thông dụng trong tiếng Hàn. Khi được gắn vào sau danh từ, đại từ hoặc tiểu từ khác, nó biểu thị rằng đối tượng được nhắc đến có chung đặc điểm, trạng thái hoặc hành động với một đối tượng đã nêu trước đó (tương đương với 'cũng'). Trong nhiều ngữ cảnh mang tính tăng tiến hoặc cường điệu, '도' còn có nghĩa là 'thậm chí', 'ngay cả', 'cả'. Khi '도' được sử dụng, nó thường thay thế cho các tiểu từ chủ cách '이/가' hoặc tân ngữ cách '을/를'.",
+      "formation": "Danh từ/Đại từ + 도",
+      "examples": [
+        {
+          "translation": "Tôi thích cà phê, và bạn tôi cũng thích cà phê."
+        },
+        {
+          "translation": "Cheolsu có thể đá bóng, và Minhee cũng có thể đá bóng."
+        },
+        {
+          "translation": "Bộ phim này rất hay, vì thế cho đến tận bây giờ vẫn có rất nhiều người tiếp tục xem phim này."
+        },
+        {
+          "translation": "Kỳ thi lần này khó quá, nên cả tôi lẫn các bạn đều làm bài không tốt."
+        }
+      ]
+    },
+    "ko_만_13": {
+      "title": "만 (Tiểu từ giới hạn: chỉ, mỗi)",
+      "shortExplanation": "Tiểu từ bổ trợ gắn sau danh từ để giới hạn duy nhất một đối tượng và loại trừ các đối tượng khác; 'chỉ', 'mỗi'.",
+      "longExplanation": "'만' là một tiểu từ bổ trợ (phụ trợ từ) biểu thị sự hạn định duy nhất trong tiếng Hàn, tương đương với 'chỉ', 'mỗi', 'duy nhất' trong tiếng Việt. Nó được gắn sau danh từ hoặc đại từ mà không phụ thuộc vào phụ âm cuối, nhằm nhấn mạnh rằng chỉ có duy nhất đối tượng đó được áp dụng, hoàn toàn loại trừ các đối tượng khác. Giống như '도', khi '만' gắn vào vị trí chủ ngữ hoặc tân ngữ, nó thường thay thế cho '이/가' hoặc '을/를'.",
+      "formation": "Danh từ/Đại từ + 만",
+      "examples": [
+        {
+          "translation": "Tôi chỉ uống cà phê. Tôi không uống trà."
+        },
+        {
+          "translation": "Bạn tôi chỉ biết nói tiếng Hàn thôi. Cậu ấy hoàn toàn không nói được ngôn ngữ nào khác."
+        },
+        {
+          "translation": "Mỗi khi đi hẹn hò tôi chỉ đi xem phim thôi. Tôi hầu như không tham gia các hoạt động khác."
+        },
+        {
+          "translation": "Tháng này để tiết kiệm tiền, tôi chỉ tiêu mỗi tiền xe cộ đi lại. Tôi không hề chi tiêu vào việc gì khác."
+        }
+      ]
+    },
+    "ko_와과_14": {
+      "title": "와/과 (Tiểu từ liên kết / đi cùng dùng cho danh từ: và, cùng với)",
+      "shortExplanation": "Tiểu từ gắn sau danh từ dùng để nối hai danh từ với nhau ('và') hoặc chỉ đối tượng cùng tham gia hành động ('cùng với').",
+      "longExplanation": "'와/과' là tiểu từ liên kết và phó từ cách chỉ sự đồng hành mang phong cách tương đối trang trọng hoặc chuẩn mực trong tiếng Hàn (thường gặp trong văn viết cũng như lời nói lịch sự, so với '하고' hay '(이)랑' thiên về khẩu ngữ). Nó dùng để nối hai danh từ song song ('và') hoặc diễn tả việc làm điều gì đó cùng với ai ('cùng với'). Nếu danh từ trước kết thúc bằng nguyên âm (không có patchim), dùng '와'; nếu danh từ trước kết thúc bằng phụ âm (có patchim), dùng '과'.",
+      "formation": "Danh từ không có patchim + 와 / Danh từ có patchim + 과",
+      "examples": [
+        {
+          "translation": "Tôi đã nô đùa thỏa thích cùng chú cún ở công viên."
+        },
+        {
+          "translation": "Tôi thích ăn bánh mì cùng với cà phê."
+        },
+        {
+          "translation": "Tôi đã cùng học bài với bạn và chiếc bút chì."
+        },
+        {
+          "translation": "Tôi đã đi du lịch cùng với gia đình của mình."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_이가_0": {
+      "title": "이/가 (主格助词)",
+      "shortExplanation": "用于名词之后，表示该名词是句子的主语。",
+      "longExplanation": "'이/가'是韩语中最基本的代词/名词性主格助词，附着在名词后，表明该名词在句中担当主语。当前面名词有收音（底辅音）时用'이'；无收音（以元音结尾）时用'가'。与主题助词'은/는'相比，'이/가'更侧重于强调主语本身（回答'谁'、'什么'），常用于引出新信息、描写眼前即景或在复合句中作小主语。",
+      "formation": "闭音节名词（有收音） + 이 / 开音节名词（无收音） + 가",
+      "examples": [
+        {
+          "translation": "我吃苹果，但朋友喜欢橙子。"
+        },
+        {
+          "translation": "我的小狗跳到了沙发上。"
+        },
+        {
+          "translation": "这本书最有意思。"
+        },
+        {
+          "translation": "你喜欢的食物是什么？"
+        }
+      ]
+    },
+    "ko_은는_1": {
+      "title": "은/는 (主题助词 / 对比添意助词)",
+      "shortExplanation": "用于名词之后，引出句子的主题，或表示强调、对比。",
+      "longExplanation": "'은/는'是韩语中极其重要的添意助词（补助词）。附着在名词后，主要用于表明正在谈论的话题或主题（相当于'至于……'、'说起……'），也可以表示前后两个事物之间的对照与对比。前面名词有收音时接'은'，无收音时接'는'。与纯粹标明语法关系的'이/가'不同，'은/는'更侧重于对话的语境与交际焦点。",
+      "formation": "闭音节名词（有收音） + 은 / 开音节名词（无收音） + 는",
+      "examples": [
+        {
+          "translation": "我是学生。我正在学习韩语。"
+        },
+        {
+          "translation": "朋友在家里，而我在学校。"
+        },
+        {
+          "translation": "今天下雨，明天天气晴朗。"
+        },
+        {
+          "translation": "这是书，那是铅笔。"
+        }
+      ]
+    },
+    "ko_을를_2": {
+      "title": "을/를 (宾格助词)",
+      "shortExplanation": "用于名词之后，表示该名词是他动词（及物动词）的直接宾语。",
+      "longExplanation": "'을/를'是韩语中的宾格助词，附着在名词后面，标明该名词是后续动作行为所直接涉及的对象（即直接宾语）。前面的名词有收音时接'을'，无收音时接'를'。在汉语中通常由动宾语序直接体现，而在韩语的'主-宾-谓'（SOV）语序中，必须依靠宾格助词来标明动作的对象。在口语中，当句意明确时，宾格助词常可省略。",
+      "formation": "闭音节名词（有收音） + 을 + 动词 / 开音节名词（无收音） + 를 + 动词",
+      "examples": [
+        {
+          "translation": "我每天早上都喝咖啡。"
+        },
+        {
+          "translation": "我正在读这本书。"
+        },
+        {
+          "translation": "我想去看电影。"
+        },
+        {
+          "translation": "我们想帮助他们。"
+        }
+      ]
+    },
+    "ko_아니다_3": {
+      "title": "이/가 아니다 (否定判断：不是……)",
+      "shortExplanation": "叙述格助词'이다'的否定形式，表示否定判断，相当于汉语的'不是……'。",
+      "longExplanation": "'아니다'是韩语中专用于名词否定判断的形容词，是肯定判断词'이다'（是……）的反义形式，相当于汉语中的'不是……'。在句型中，前面被否定的名词必须附带主格助词'이/가'，构成'名词 + 이/가 아니다'的固定结构。在非格式体准敬阶（해요体）中变形为'아니에요'，在格式体敬阶（하십시오体）中变形为'아닙니다'。",
+      "formation": "闭音节名词（有收音） + 이 아니다 / 开音节名词（无收音） + 가 아니다",
+      "examples": [
+        {
+          "translation": "这不是我的书，是我朋友的书。"
+        },
+        {
+          "translation": "我们没有太迟，还有充分的时间。"
+        },
+        {
+          "translation": "这个美丽的公园不是天然的，而是人工建造的。"
+        },
+        {
+          "translation": "他不是我的朋友，我们只是同事。"
+        }
+      ]
+    },
+    "ko_예요이에요_4": {
+      "title": "예요/이에요 (非格式体敬语终结词尾：是……)",
+      "shortExplanation": "叙述格助词'이다'在准敬阶（해요体）下的现在时形式，用于名词后表示'是……'。",
+      "longExplanation": "'예요/이에요'是韩语系词（叙述格助词）'이다'与准敬阶终结词尾结合而成的肯定判断形式，相当于汉语中的'是……'。它直接附着在名词之后，常用于日常口语交际中表达礼貌而亲切的陈述或疑问。如果前面的名词有收音（闭音节），用'이에요'；如果前面的名词无收音（开音节），用'예요'。",
+      "formation": "闭音节名词（有收音） + 이에요 / 开音节名词（无收音） + 예요",
+      "examples": [
+        {
+          "translation": "我是学生。"
+        },
+        {
+          "translation": "这位是我的朋友。"
+        },
+        {
+          "translation": "这是我的包。"
+        },
+        {
+          "translation": "我的爱好是看书。"
+        }
+      ]
+    },
+    "ko_아요어요여요_5": {
+      "title": "아요/어요/여요 (非格式体准敬阶现在时终结词尾 - 해요体)",
+      "shortExplanation": "接在动词或形容词词干后，构成日常口语中最常用的礼貌亲切现在时终结词尾。",
+      "longExplanation": "'아요/어요/여요'是韩语非格式体准敬阶（해요体）的现在时终结词尾，广泛应用于日常会话中，既表示尊敬又带有亲切感。它可用于陈述句，也可在语调上扬时构成疑问句。结合规则取决于词干末尾的元音：词干末音节元音为阳性元音'ㅏ'或'ㅗ'时接'-아요'；其他所有阴性元音时接'-어요'；以'-하다'结尾的动词/形容词则变为'-해요'（'하여요'的缩略形式）。",
+      "formation": "含'ㅏ'、'ㅗ'的动词/形容词词干 + 아요 / 含其他元音的动词/形容词词干 + 어요 / '하다'动词/形容词 -> 해요",
+      "examples": [
+        {
+          "translation": "我正在学习韩语。"
+        },
+        {
+          "translation": "我妈妈做非常可口的饭菜。"
+        },
+        {
+          "translation": "老师正在给学生们讲授韩国文化。"
+        },
+        {
+          "translation": "他有时在午餐时间去散步。"
+        }
+      ]
+    },
+    "ko_고_6": {
+      "title": "고 (连接词尾：并列、先后顺序)",
+      "shortExplanation": "接在动词或形容词词干后，用于连接两个或两个以上的分句，表示并列或动作的前后顺序。",
+      "longExplanation": "'고'是韩语中最基础的对等连接词尾之一，直接接在动词或形容词词干之后，不论是否有收音均保持不变。它主要有两种用法：一是表示纯粹的并列或罗列关系，相当于汉语中的'和'、'既……又……'；二是用于连接按时间先后顺序发生的两个或多个动作，相当于'……之后，然后……'。",
+      "formation": "动词/形容词词干 + 고",
+      "examples": [
+        {
+          "translation": "今天我去了学校，学习了功课，并和朋友们一起吃了午饭。"
+        },
+        {
+          "translation": "他跳了舞，唱了歌，玩得很开心。"
+        },
+        {
+          "translation": "我回家做了作业，然后读了书。"
+        },
+        {
+          "translation": "我们吃了午餐，然后去看电影了。"
+        }
+      ]
+    },
+    "ko_하고_7": {
+      "title": "하고 (助词：和、跟、同)",
+      "shortExplanation": "接在名词之后，用于连接两个名词表示'和'，或者表示同某人一起进行某项活动。",
+      "longExplanation": "'하고'是韩语口语中极其常用的连接助词及副词格助词。附着在名词之后，不论有无收音均直接使用。其用法主要有两种：一是连接两个或多个并列的名词，相当于汉语的'和'、'与'；二是与表示人物的名词连用，表示共同进行某动作的伴随对象，相当于汉语的'跟……一起'、'同……'。",
+      "formation": "名词1 + 하고 + 名词2 （或 名词 + 하고 + 动词）",
+      "examples": [
+        {
+          "translation": "我和朋友看了电影吃了饭，然后回家做了作业。"
+        },
+        {
+          "translation": "这个周末我决定和家人一起去旅行。"
+        },
+        {
+          "translation": "彼得和玛丽一起去了学校。"
+        },
+        {
+          "translation": "我今天打算和爸爸去购物。"
+        }
+      ]
+    },
+    "ko_으세요euseyoImperativeform_8": {
+      "title": "(으)세요 (敬阶祈使/劝诱终结词尾：请……)",
+      "shortExplanation": "接在动词词干后，用于礼貌、客气地向对方发出命令、请求或劝告；相当于'请……'。",
+      "longExplanation": "'(으)세요'是韩语中用于客气地向对方发出请求、叮嘱、命令或提出劝告的祈使终结词尾。它由尊敬词缀'-(으)시-'与准敬阶终结词尾'-어요'融合演变而来，语气亲切而庄重。动词词干末尾有收音时接'-으세요'；无收音或以收音'ㄹ'结尾时接'-세요'（此时收音'ㄹ'脱落）。",
+      "formation": "闭音节动词词干（有收音） + 으세요 / 开音节动词词干（无收音） + 세요（收音'ㄹ'词干脱落'ㄹ'后接세요）",
+      "examples": [
+        {
+          "translation": "请小心过马路，可能会发生事故。"
+        },
+        {
+          "translation": "请回家吃该吃的药。"
+        },
+        {
+          "translation": "收到这条短信的话，请回复。"
+        },
+        {
+          "translation": "请提前给今天晚上要见的人打电话。"
+        }
+      ]
+    },
+    "ko_으수있다eulsuitdaCando_9": {
+      "title": "(으)ㄹ 수 있다 (表示能力或可能：能够、可以……)",
+      "shortExplanation": "接在动词词干后，表示具备做某事的能力，或者存在某种客观可能性；相当于'能'、'能够'、'可以'。",
+      "longExplanation": "'(으)ㄹ 수 있다'由定语词尾'-(으)ㄹ'、不完全名词（依存名词）'수'（方法、能力、可能性）以及存在词'있다'构成，是韩语中表示能力或可能性的标准句型，相当于汉语中的'能'、'会'、'可以'。词干末尾有收音时接'-을 수 있다'；无收音或以收音'ㄹ'结尾时接'-ㄹ 수 있다'。其否定形式为'(으)ㄹ 수 없다'（不能、无法）。",
+      "formation": "闭音节动词词干（有收音） + 을 수 있다 / 开音节动词词干（无收音或收音为ㄹ） + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "因为她学韩语非常快，所以应该在一个月内就能参加TOPIK考试。"
+        },
+        {
+          "translation": "既然家就在附近，只要努力学习，一个月之内就能把韩语说得很流利。"
+        },
+        {
+          "translation": "因为我对那件事了解很多，所以能够回答关于它的所有问题。"
+        },
+        {
+          "translation": "如果您觉得难以理解，我可以稍微说得慢一点。"
+        }
+      ]
+    },
+    "ko_으려고euryeogoIntentiontodo_10": {
+      "title": "(으)려고 (表示意图或目的的连接词尾：为了、想要……)",
+      "shortExplanation": "接在动词词干后，连接两个分句，表示主语进行某动作的意图、打算或目的；相当于'为了……'、'打算……'。",
+      "longExplanation": "'(으)려고'是韩语中表示主语内在意图、打算或行动目的的从属连接词尾，相当于汉语中的'为了……'或'打算……'。前半句说明动作的目的，后半句说明为了达成该目的所采取的具体行动。动词词干末尾有收音时接'-으려고'；无收音或收音为'ㄹ'时接'-려고'。注意：后句通常不能使用祈使句（如-(으)세요）或共动句（如-(으)ㅂ시다）。",
+      "formation": "闭音节动词词干（有收音） + 으려고 / 开音节动词词干（无收音或收音为ㄹ） + 려고",
+      "examples": [
+        {
+          "translation": "我为了学习韩语来到了韩国。"
+        },
+        {
+          "translation": "姐姐为了减肥正在运动。"
+        },
+        {
+          "translation": "学生们为了通过考试正在努力学习。"
+        },
+        {
+          "translation": "爸爸每天工作，为了给孩子们提供美好的生活。"
+        }
+      ]
+    },
+    "ko_으는다eunneundaInformalstatementendings_11": {
+      "title": "(으)ㄴ/는다 (基本阶现在时陈述句终结词尾 - 해라体)",
+      "shortExplanation": "接在动词或形容词后，构成基本阶（해라体）现在时陈述句终结词尾；常用于书面语、日记、客观报道或同辈之间。",
+      "longExplanation": "'(으)ㄴ/는다'是韩语格式体基本阶（해라体）的现在时陈述句终结词尾。在语法功能上，它多用于书面语（如书籍、报刊、日记、论文等不特定对象的写作），或者在口语中长辈对晚辈、同龄亲密朋友之间不加客套的交谈。动词词干有收音时接'-는다'；无收音时接'-ㄴ다'（收音为'ㄹ'的词干脱落'ㄹ'后接'-ㄴ다'）。形容词在现在时则直接在词干后接'-다'。",
+      "formation": "动词闭音节词干（有收音） + 는다 / 动词开音节词干（无收音） + ㄴ다 / 形容词词干 + 다",
+      "examples": [
+        {
+          "translation": "我今天午夜回家。"
+        },
+        {
+          "translation": "他的西班牙语说得很好。"
+        },
+        {
+          "translation": "这杯咖啡太浓了。"
+        },
+        {
+          "translation": "我们明天去公园野餐。"
+        }
+      ]
+    },
+    "ko_도_12": {
+      "title": "도 (添意助词：也、连……都)",
+      "shortExplanation": "接在名词、代词或其他助词后，表示包含相同属性或情况（相当于'也'），也可表示强调（相当于'连……都'）。",
+      "longExplanation": "'도'是韩语中高频使用的添意助词（补助词）。它附着在名词、代词或部分助词之后，不论前面有无收音均直接结合。基本意义是表示某事物与前面提及的事物具有相同的性质或动作，相当于汉语的'也'；在强调极端或递进语境下，也可以表示'甚至'、'连……都'。当'도'出现时，通常会代替主格助词'이/가'或宾格助词'을/를'。",
+      "formation": "名词/代词 + 도",
+      "examples": [
+        {
+          "translation": "我喜欢咖啡，朋友也喜欢咖啡。"
+        },
+        {
+          "translation": "哲秀会踢足球，民熙也会踢足球。"
+        },
+        {
+          "translation": "这部电影很有趣，所以至今仍有很多人在看这部电影。"
+        },
+        {
+          "translation": "这次考试很难，所以无论是连我还是朋友们都没考好。"
+        }
+      ]
+    },
+    "ko_만_13": {
+      "title": "만 (添意助词：只、仅、光)",
+      "shortExplanation": "接在名词或代词后，表示限定唯一的范围，排除其他事物；相当于'只'、'仅'、'光'。",
+      "longExplanation": "'만'是韩语中表示排他性唯一定位的添意助词（补助词）。附着在名词、代词之后，不论前面有无收音均直接结合。它强调除了所指的对象之外，不存在其他适用的人、事或物，相当于汉语中的'只'、'仅'、'只有'。在句中充当主语或宾语成分时，'만'通常替代主格助词'이/가'或宾格助词'을/를'。",
+      "formation": "名词/代词 + 만",
+      "examples": [
+        {
+          "translation": "我只喝咖啡。我不喝茶。"
+        },
+        {
+          "translation": "我的朋友只会说韩语。其他语言完全不会说。"
+        },
+        {
+          "translation": "我去约会的时候只去看电影。基本不做其他活动。"
+        },
+        {
+          "translation": "这个月为了省钱，我只花了交通费。其他地方都没有花。"
+        }
+      ]
+    },
+    "ko_와과_14": {
+      "title": "와/과 (名词连接助词：和、与、跟)",
+      "shortExplanation": "附着在名词之后，用于连接两个名词（相当于'和'、'与'），或表示共同行动的对象（相当于'跟……一起'）。",
+      "longExplanation": "'와/과'是韩语中较为标准、规范的名词连接助词与伴随副词格助词，多见于书面语和较正式的口语场合。它既可以用于列举两个或两个以上的对等名词（相当于汉语的'和'、'与'），也可以表示与某人共同进行某动作（相当于'同……'、'跟……一起'，常与'함께'、'같이'搭配）。前面名词无收音时接'와'；有收音时接'과'。",
+      "formation": "开音节名词（无收音） + 와 / 闭音节名词（有收音） + 과",
+      "examples": [
+        {
+          "translation": "我在公园里和小狗一起奔跑玩耍了。"
+        },
+        {
+          "translation": "我喜欢把面包和咖啡放在一起吃。"
+        },
+        {
+          "translation": "我和朋友还有铅笔一起学习了。"
+        },
+        {
+          "translation": "我和我的家人一起去旅行了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_이가_0": {
+      "title": "이/가 (主格助詞：〜が)",
+      "shortExplanation": "名詞の後に付き、その名詞が文の主語であることを表します（日本語の「〜が」に相当）。",
+      "longExplanation": "「이/가」は、名詞の直後に接続してその名詞が文の主語であることを示す主格助詞です。日本語の「〜が」に直接対応します。前の名詞にパッチム（終声）がある場合は「이」を用い、パッチムがない（母音で終わる）場合は「가」を用います。主題を表す「은/는（〜は）」と異なり、「이/가」は主語そのものに焦点を当てたり、新しい情報の導入や眼前の状況を描写したりする際によく使われます。",
+      "formation": "パッチムあり名詞 + 이 / パッチムなし名詞 + 가",
+      "examples": [
+        {
+          "translation": "私はリンゴを食べますが、友達はオレンジが好きです。"
+        },
+        {
+          "translation": "私の犬がソファの上に飛び乗ります。"
+        },
+        {
+          "translation": "この本が一番面白いです。"
+        },
+        {
+          "translation": "あなたが好きなたべものは何ですか？"
+        }
+      ]
+    },
+    "ko_은는_1": {
+      "title": "은/는 (主題・対照の助詞：〜は)",
+      "shortExplanation": "名詞の後に付き、文の主題（話題）を提示したり、対比・対照を表します（日本語の「〜は」に相当）。",
+      "longExplanation": "「은/는」は、名詞の直後に付いて文の主題を取り立てて提示する助詞（補助詞）で、日本語の助詞「〜は」に正確に対応します。「〜について言えば」と話題を提示する働きのほか、二つ以上の事物を対照・対比させるニュアンスも持ちます。直前の名詞にパッチムがある場合は「은」、パッチムがない場合は「는」を接続します。",
+      "formation": "パッチムあり名詞 + 은 / パッチムなし名詞 + 는",
+      "examples": [
+        {
+          "translation": "私は学生です。私は韓国語を勉強しています。"
+        },
+        {
+          "translation": "友達は家にいて、私は学校にいます。"
+        },
+        {
+          "translation": "今日は雨が降り、明日は晴れます。"
+        },
+        {
+          "translation": "これは本で、あれは鉛筆です。"
+        }
+      ]
+    },
+    "ko_을를_2": {
+      "title": "을/를 (目的格助詞：〜を)",
+      "shortExplanation": "名詞の後に付き、その名詞が他動詞の直接の目的語であることを表します（日本語の「〜を」に相当）。",
+      "longExplanation": "「을/를」は、他動詞の直前の名詞に結合して、その名詞が動作の対象（直接目的語）であることを示す目的格助詞です。日本語の助詞「〜を」にそのまま対応します。名詞の最後の音節にパッチムがある場合は「을」を用い、パッチムがない場合は「를」を用います。日常会話では文脈から自明な場合に省略されることもあります。",
+      "formation": "パッチムあり名詞 + 을 + 動詞 / パッチムなし名詞 + 를 + 動詞",
+      "examples": [
+        {
+          "translation": "私は毎朝コーヒーを飲みます。"
+        },
+        {
+          "translation": "私はこの本を読んでいます。"
+        },
+        {
+          "translation": "映画を見に行きたいです。"
+        },
+        {
+          "translation": "私たちは彼らを手助けしたいです。"
+        }
+      ]
+    },
+    "ko_아니다_3": {
+      "title": "이/가 아니다 (〜ではない、〜ではありません)",
+      "shortExplanation": "指定詞「이다（〜である）」の否定形で、名詞を否定して「〜ではない」「〜ではありません」という意味を表します。",
+      "longExplanation": "「아니다」は、事実や身元、所属などを否定する際に用いる否定の形容詞で、肯定の指定詞「이다」の反対語です。日本語の「〜ではない」「〜ではありません」に相当します。直前に否定する名詞に主格助詞「이/가」を取り、「名詞 + 이/가 아니다」の形で用いるのが文法上の基本です。ヘヨ体では「아니에요」、ハムニダ体では「아닙니다」となります。",
+      "formation": "パッチムあり名詞 + 이 아니다 / パッチムなし名詞 + 가 아니다",
+      "examples": [
+        {
+          "translation": "私の本ではありません。それは私の友達の本です。"
+        },
+        {
+          "translation": "私たちは遅すぎたわけではありません。まだ十分に時間があります。"
+        },
+        {
+          "translation": "この美しい公園は自然のものではなく、人間が造ったものです。"
+        },
+        {
+          "translation": "彼は私の友人ではありません。私たちはただの同僚です。"
+        }
+      ]
+    },
+    "ko_예요이에요_4": {
+      "title": "예요/이에요 (丁寧な指定詞語尾：〜です)",
+      "shortExplanation": "指定詞「이다（〜である）」のヘヨ体（丁寧形）で、名詞の後に付いて「〜です」という意味を表します。",
+      "longExplanation": "「예요/이에요」は、名詞を述語にする指定詞「이다」に日常の丁寧な語尾（ヘヨ体）がついた形です。日本語の「〜です」に相当し、親しみを持たせつつ丁寧に話す場面で多用されます。前の名詞の語尾にパッチムがある場合は「이에요」、パッチムがない場合は「예요」を接続します。語尾のイントネーションを上げることで、そのまま疑問文（〜ですか？）としても使えます。",
+      "formation": "パッチムあり名詞 + 이에요 / パッチムなし名詞 + 예요",
+      "examples": [
+        {
+          "translation": "私は学生です。"
+        },
+        {
+          "translation": "この人は私の友達です。"
+        },
+        {
+          "translation": "これは私のカバンです。"
+        },
+        {
+          "translation": "私の趣味は読書です。"
+        }
+      ]
+    },
+    "ko_아요어요여요_5": {
+      "title": "아요/어요/여요 (現在形の丁寧な終止語尾 - ヘヨ体)",
+      "shortExplanation": "動詞や形容詞の語幹に付き、親しみのある丁寧な表現（〜ます、〜です）を作ります。",
+      "longExplanation": "「아요/어요/여요」は、韓国語の日常会話で最も多用される丁寧な終止語尾（ヘヨ体）です。日本語の「〜ます」「〜です」に相当し、平叙文だけでなく、文末のイントネーションを上げることで疑問文（〜ますか？）としても使われます。語幹の最後の母音によって活用形が決まります。陽母音（ㅏ、ㅗ）の場合は「아요」、陰母音（それ以外の母音）の場合は「어요」を接続し、「하다」で終わる動詞や形容詞は「해요（하여요の縮約形）」になります。",
+      "formation": "母音「ㅏ」「ㅗ」で終わる動詞・形容詞語幹 + 아요 / その他の母音で終わる動詞・形容詞語幹 + 어요 / 「하다」動詞・形容詞 → 해요",
+      "examples": [
+        {
+          "translation": "私は韓国語を勉強しています。"
+        },
+        {
+          "translation": "私のお母さんは美味しい料理を作ります。"
+        },
+        {
+          "translation": "先生は生徒たちに韓国文化について教えています。"
+        },
+        {
+          "translation": "彼は昼休みに時々散歩に行きます。"
+        }
+      ]
+    },
+    "ko_고_6": {
+      "title": "고 (並列・生起順序の接続語尾：〜て、〜し)",
+      "shortExplanation": "動詞や形容詞の語幹に付き、二つ以上の動作や状態を並列したり、時間の前後順序を表します。",
+      "longExplanation": "「고」は、二つ以上の用言（動詞・形容詞）をつなぐ代表的な接続語尾です。日本語の「〜て」「〜し」「〜それから」に相当します。語幹にパッチムがあるかないかに関係なく、語幹に直接「고」を接続します。同等の事柄を並列・羅列する働きのほか、ある動作を行ってから次の動作を行うという時間的な継起関係を表す際にも用いられます。",
+      "formation": "動詞・形容詞語幹 + 고",
+      "examples": [
+        {
+          "translation": "私は今日、学校へ行き、勉強して、友達と昼ご飯を食べました。"
+        },
+        {
+          "translation": "彼はダンスを踊り、歌を歌って、楽しく遊びました。"
+        },
+        {
+          "translation": "私は家に帰って宿題をして、本を読みました。"
+        },
+        {
+          "translation": "私たちは昼ご飯を食べて映画を見に行きました。"
+        }
+      ]
+    },
+    "ko_하고_7": {
+      "title": "하고 (助詞：〜と、〜と一緒に)",
+      "shortExplanation": "名詞の後に付き、名詞同士を並列でつなぐ（〜と）か、動作を共にする相手を表します（〜と一緒に）。",
+      "longExplanation": "「하고」は、話し言葉で広く使われる名詞接続助詞・副詞格助詞です。パッチムの有無にかかわらず、そのまま名詞の後ろに接続します。二つ以上の名詞を並列して結びつける「〜と」の意味と、誰かと一緒に動作を行う際の同伴者を表す「〜と（一緒に）」の意味の両方で用いられます。",
+      "formation": "名詞1 + 하고 + 名詞2（または 名詞 + 하고 + 動詞）",
+      "examples": [
+        {
+          "translation": "私は友達と映画を見てご飯を食べ、それから家に帰って宿題をしました。"
+        },
+        {
+          "translation": "今週末は家族と一緒に旅行に行くことに決めました。"
+        },
+        {
+          "translation": "ピーターとメアリーは一緒に学校へ行きました。"
+        },
+        {
+          "translation": "私は今日、お父さんと買い物に行く予定です。"
+        }
+      ]
+    },
+    "ko_으세요euseyoImperativeform_8": {
+      "title": "(으)세요 (丁寧な命令・勧誘・依頼語尾：〜してください)",
+      "shortExplanation": "動詞の語幹に付き、相手に何かを丁寧に依頼・命令・勧める表現（〜してください）。",
+      "longExplanation": "「(으)세요」は、相手に動作を促したり、指示・要請・アドバイスを丁重に行う際に用いられる丁寧な命令・依頼の終止語尾です。日本語の「〜してください」「〜なさってください」に相当します。主体尊敬の語尾「-(으)시-」とヘヨ体「-어요」が合わさった形です。動詞語幹末尾にパッチムがある場合は「으세요」を、パッチムがない場合および「ㄹ」パッチム（脱落規則適用）の場合は「세요」を接続します。",
+      "formation": "パッチムあり動詞語幹 + 으세요 / パッチムなし動詞語幹 + 세요（ㄹパッチム語幹はㄹ脱落後に세요）",
+      "examples": [
+        {
+          "translation": "気をつけて渡ってください、事故が起きるかもしれません。"
+        },
+        {
+          "translation": "家に帰って飲むべき薬を飲んでください。"
+        },
+        {
+          "translation": "このメッセージを受け取ったら返信してください。"
+        },
+        {
+          "translation": "今晩会う予定の人たちに前もって電話してください。"
+        }
+      ]
+    },
+    "ko_으수있다eulsuitdaCando_9": {
+      "title": "(으)ㄹ 수 있다 (能力・可能性の表現：〜することができる)",
+      "shortExplanation": "動詞の語幹に付き、ある動作をする能力があることや、そうした状況が可能であることを表します（〜できる、〜することができる）。",
+      "longExplanation": "「(으)ㄹ 수 있다」は、未来連体形語尾「-(으)ㄹ」に依存名詞「수（手立て・可能性）」と存在詞「있다」が結合した文型で、日本語の「〜ことができる」「〜できる」に相当します。話者や主語の個人的な能力を表す場合と、外部の客観的状況によって可能であることを表す場合の両方に用いられます。語幹末尾にパッチムがある場合は「을 수 있다」、パッチムがない場合や「ㄹ」パッチムの場合は「ㄹ 수 있다」を接続します。否定形は「(으)ㄹ 수 없다（〜できない）」です。",
+      "formation": "パッチムあり動詞語幹 + 을 수 있다 / パッチムなし動詞語幹（またはㄹパッチム語幹） + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "彼女は韓国語をとても速く学ぶことができるので、1か月でTOPIKの試験を受けることができるでしょう。"
+        },
+        {
+          "translation": "家が近いので、一生懸命勉強すれば1か月以内に韓国語を流暢に話すことができます。"
+        },
+        {
+          "translation": "それについてよく知っているので、それに関するすべての質問に答えることができます。"
+        },
+        {
+          "translation": "理解するのが難しいようでしたら、もう少しゆっくり話すことができます。"
+        }
+      ]
+    },
+    "ko_으려고euryeogoIntentiontodo_10": {
+      "title": "(으)려고 (意図・目的の接続語尾：〜しようと、〜するために)",
+      "shortExplanation": "動詞の語幹に付き、ある動作を行おうとする話者の意図や目的を表します（〜しようと、〜するために）。",
+      "longExplanation": "「(으)려고」は、前節で主語の意図・企てや目的を提示し、後節でその目的を達成するための行動を続ける接続語尾です。日本語の「〜しようと」「〜するために」に相当します。動詞語幹末尾にパッチムがある場合は「으려고」を、パッチムがない場合や「ㄹ」パッチムの場合は「려고」を接続します。後節には命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできず、もっぱら平叙文や疑問文が続きます。",
+      "formation": "パッチムあり動詞語幹 + 으려고 / パッチムなし動詞語幹（またはㄹパッチム語幹） + 려고",
+      "examples": [
+        {
+          "translation": "私は韓国語を学ぼうと韓国へ来ました。"
+        },
+        {
+          "translation": "姉は体重を減らそうと運動をしています。"
+        },
+        {
+          "translation": "学生たちは試験に合格しようと一生懸命勉強しています。"
+        },
+        {
+          "translation": "お父さんは子供たちに良い生活を提供しようと毎日働いています。"
+        }
+      ]
+    },
+    "ko_으는다eunneundaInformalstatementendings_11": {
+      "title": "(으)ㄴ/는다 (現在形平叙文終止語尾 - ヘラ体・基本階)",
+      "shortExplanation": "動詞や形容詞に付き、親しい間柄や日記・新聞・書籍などの書き言葉で現在形の客観的な陳述を表す語尾（常体・だ・である調）。",
+      "longExplanation": "「(으)ㄴ/는다」は、韓国語の基本階（ヘラ体）における現在形の平叙文終止語尾です。日本語の「常体（〜だ、〜である、動詞の辞書形）」に相当します。新聞記事、書籍、論文、日記などの不特定多数に向けた文面で客観的に事実を叙述する際や、親しい友人同士、年長者が年少者に話す際に用いられます。動詞の語幹にパッチムがある場合は「는다」、パッチムがない場合は「ㄴ다」（ㄹパッチムは脱落してㄴだ）を接続します。形容詞の現在形では語幹にそのまま「다」が付きます。",
+      "formation": "パッチムあり動詞語幹 + 는다 / パッチムなし動詞語幹 + ㄴ다 / 形容詞語幹 + 다",
+      "examples": [
+        {
+          "translation": "私は今日、真夜中に家に帰る。"
+        },
+        {
+          "translation": "彼はスペイン語が上手だ。"
+        },
+        {
+          "translation": "このコーヒーは濃すぎる。"
+        },
+        {
+          "translation": "私たちは明日、公園へ行ってピクニックをする。"
+        }
+      ]
+    },
+    "ko_도_12": {
+      "title": "도 (取り立て助詞：〜も)",
+      "shortExplanation": "名詞や代名詞の後に付き、同類の事物や事柄を並列・包括して「〜も」という意味を表します。",
+      "longExplanation": "「도」は、名詞や代名詞、他の助詞の後に付いて、前に述べた事柄と同じ状態や動作が当てはまることを表す助詞（補助詞）です。日本語の助詞「〜も」に直接対応します。また、文脈によっては「〜さえも」「〜までも」という強調・極端のニュアンスを表すこともあります。「도」が使われる場合、主格助詞「이/가」や目的格助詞「을/를」は通常脱落して「도」に置き換わります。",
+      "formation": "名詞・代名詞 + 도",
+      "examples": [
+        {
+          "translation": "私はコーヒーが好きで、友達もコーヒーが好きです。"
+        },
+        {
+          "translation": "チョルスはサッカーができますし、ミニもサッカーができます。"
+        },
+        {
+          "translation": "この映画は面白いので、多くの人が今でもこの映画を見続けています。"
+        },
+        {
+          "translation": "今回の試験は難しかったので、私も友達もあまりよくできませんでした。"
+        }
+      ]
+    },
+    "ko_만_13": {
+      "title": "만 (限定の助詞：〜だけ、〜のみ)",
+      "shortExplanation": "名詞や代名詞の後に付き、他のものを排除してそれだけに限定することを表します（〜だけ、〜のみ）。",
+      "longExplanation": "「만」は、他の事物を排除し、その事柄だけに限定・特定する働きを持つ助詞（補助詞）です。日本語の「〜だけ」「〜のみ」に正確に対応します。パッチムの有無にかかわらず名詞に直接接続します。主語や目的語に付く場合、助詞「이/가」や「을/를」に置き換わって単独で用いられるのが一般的です。",
+      "formation": "名詞・代名詞 + 만",
+      "examples": [
+        {
+          "translation": "私はコーヒーだけを飲みます。お茶は飲みません。"
+        },
+        {
+          "translation": "私の友達は韓国語だけが話せます。他の言語は全くできません。"
+        },
+        {
+          "translation": "私はデートをするとき映画だけを見に行きます。他の活動はあまりしません。"
+        },
+        {
+          "translation": "今月はお金を節約しようと交通費だけを使いました。他のところには使いませんでした。"
+        }
+      ]
+    },
+    "ko_와과_14": {
+      "title": "와/과 (名詞の接続助詞：〜と、〜と共に)",
+      "shortExplanation": "名詞の後に付き、二つの名詞を並列で結ぶ（〜と）か、動作を共にする相手を表します（〜と共に）。",
+      "longExplanation": "「와/과」は、名詞同士を結ぶ並列接続助詞、または動作を共にする同伴者を表す副詞格助詞です。日本語の「〜と」「〜と共に」に相当します。「하고」や「(이)랑」に比べてやや改まった響きを持ち、書き言葉や公の会話で好まれます。直前の名詞にパッチムがない（母音で終わる）場合は「와」、パッチムがある（子音で終わる）場合は「과」を接続します。「함께（共に）」や「같이（一緒に）」と呼応して使われることも多くあります。",
+      "formation": "パッチムなし名詞 + 와 / パッチムあり名詞 + 과",
+      "examples": [
+        {
+          "translation": "私は公園で子犬と一緒に駆け回って遊びました。"
+        },
+        {
+          "translation": "私はパンとコーヒーを一緒に飲食することが好きです。"
+        },
+        {
+          "translation": "友達と鉛筆と共に勉強しました。"
+        },
+        {
+          "translation": "私は家族と一緒に旅行へ行きました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_이가_0": {
+      "title": "이/가 (주격 조사)",
+      "shortExplanation": "명사 뒤에 붙어 그 명사가 문장의 주어임을 나타내는 격조사입니다.",
+      "longExplanation": "'이/가'는 체언(명사, 대명사 등) 뒤에 결합하여 그 명사가 문장에서 동작이나 상태의 주체, 즉 주어임을 명시해 주는 주격 조사입니다. 받침이 있는 체언 뒤에는 '이'가 결합하고, 받침이 없는 체언 뒤에는 '가'가 결합합니다. 화제나 대조를 나타내는 보조사 '은/는'과 달리, '이/가'는 주어 자체를 강조하거나 새로운 정보, 눈앞의 구체적인 상황을 서술할 때 주로 사용됩니다.",
+      "formation": "받침 있는 명사 + 이 / 받침 없는 명사 + 가",
+      "examples": [
+        {
+          "translation": "나는 사과를 먹지만, 친구는 오렌지를 좋아해요."
+        },
+        {
+          "translation": "저의 강아지가 소파 위로 뛰어요."
+        },
+        {
+          "translation": "이 책이 가장 재미있어요."
+        },
+        {
+          "translation": "당신이 좋아하는 음식이 무엇인가요?"
+        }
+      ]
+    },
+    "ko_은는_1": {
+      "title": "은/는 (보조사 - 화제, 대조)",
+      "shortExplanation": "명사 뒤에 붙어 이야기의 주제를 제시하거나 두 대상을 비교·대조할 때 쓰는 보조사입니다.",
+      "longExplanation": "'은/는'은 체언 뒤에 붙어 문장에서 화제(이야기하고자 하는 주제)를 드러내거나, 다른 대상과의 차이 및 대조를 나타낼 때 사용하는 대표적인 보조사입니다. 받침이 있는 명사 뒤에는 '은', 받침이 없는 명사 뒤에는 '는'이 결합합니다. 격조사와 달리 문장 성분을 규정하기보다는 문맥상의 뉘앙스(주제 제시, 대조, 강조)를 덧붙여 주는 역할을 합니다.",
+      "formation": "받침 있는 명사 + 은 / 받침 없는 명사 + 는",
+      "examples": [
+        {
+          "translation": "저는 학생입니다. 저는 한국어를 배우고 있습니다."
+        },
+        {
+          "translation": "친구는 집에 있고, 저는 학교에 있습니다."
+        },
+        {
+          "translation": "오늘은 비가 오고, 내일은 맑겠습니다."
+        },
+        {
+          "translation": "이것은 책이고, 저것은 연필입니다."
+        }
+      ]
+    },
+    "ko_을를_2": {
+      "title": "을/를 (목적격 조사)",
+      "shortExplanation": "명사 뒤에 붙어 그 명사가 타동사의 목적어임을 나타내는 격조사입니다.",
+      "longExplanation": "'을/를'은 문장에서 체언 뒤에 결합하여 해당 명사가 서술어(타동사)의 동작이 미치는 대상, 즉 직접 목적어임을 나타내는 목적격 조사입니다. 앞 명사에 받침이 있으면 '을'을 쓰고, 받침이 없으면 '를'을 사용합니다. 구어체 일상 대화에서는 문맥상 의미가 명확할 때 조사가 생략되기도 합니다.",
+      "formation": "받침 있는 명사 + 을 + 동사 / 받침 없는 명사 + 를 + 동사",
+      "examples": [
+        {
+          "translation": "저는 매일 아침 커피를 마셔요."
+        },
+        {
+          "translation": "저는 이 책을 읽고 있어요."
+        },
+        {
+          "translation": "영화를 보러 가고 싶어요."
+        },
+        {
+          "translation": "우리는 그들을 돕고 싶어요."
+        }
+      ]
+    },
+    "ko_아니다_3": {
+      "title": "이/가 아니다 (부정 서술어)",
+      "shortExplanation": "서술격 조사 '이다'의 부정형으로, 어떤 대상이나 상태가 아님을 나타내는 형용사입니다.",
+      "longExplanation": "'아니다'는 체언을 서술어로 만들어 주는 긍정의 서술격 조사 '이다'에 대응하는 부정 표현으로, 문장에서 보어(명사 + 이/가)와 함께 쓰여 '어떤 대상이나 신분, 속성이 아니다'라는 부정 판단을 내릴 때 사용합니다. 기본 결합 형태는 '명사 + 이/가 아니다'이며, 해요체에서는 '아니에요', 하십시오체에서는 '아닙니다'로 활용됩니다.",
+      "formation": "받침 있는 명사 + 이 아니다 / 받침 없는 명사 + 가 아니다",
+      "examples": [
+        {
+          "translation": "제 책이 아니에요, 그것은 제 친구의 책입니다."
+        },
+        {
+          "translation": "우리는 너무 늦지 않았어요, 아직도 충분한 시간이 있어요."
+        },
+        {
+          "translation": "이 아름다운 공원은 자연이 아니에요, 인간이 만든 것입니다."
+        },
+        {
+          "translation": "그는 저의 친구가 아니에요, 우리는 그저 동료일 뿐입니다."
+        }
+      ]
+    },
+    "ko_예요이에요_4": {
+      "title": "예요/이에요 (서술격 조사 종결형 - 해요체)",
+      "shortExplanation": "체언 뒤에 붙어 무엇임을 정중하고 친근하게 나타내는 현재 시제 해요체 서술격 종결어미입니다.",
+      "longExplanation": "'예요/이에요'는 서술격 조사 '이다'의 어간 뒤에 두루높임(해요체) 어미가 결합한 형태로, 일상생활에서 어떤 대상의 정체, 신분, 속성 등을 친근하면서도 예의 바르게 설명하거나 물어볼 때 사용합니다. 앞 체언에 받침이 있으면 '이에요'를 쓰고, 받침이 없으면 '예요'를 씁니다(모음 뒤 '이어요'가 축약된 형태).",
+      "formation": "받침 있는 명사 + 이에요 / 받침 없는 명사 + 예요",
+      "examples": [
+        {
+          "translation": "저는 학생이에요."
+        },
+        {
+          "translation": "이 사람은 제 친구예요."
+        },
+        {
+          "translation": "이것은 제 가방이에요."
+        },
+        {
+          "translation": "제 취미는 독서예요."
+        }
+      ]
+    },
+    "ko_아요어요여요_5": {
+      "title": "아요/어요/여요 (현재 시제 비격식 종결어미 - 해요체)",
+      "shortExplanation": "동사나 형용사 어간 뒤에 붙어 친근하면서도 정중하게 서술하거나 질문할 때 쓰는 비격식 종결어미입니다.",
+      "longExplanation": "'아요/어요/여요'는 한국어의 비격식 존댓말인 '해요체'를 만드는 대표적인 현재 시제 종결어미로, 일상 대화에서 가장 널리 쓰입니다. 평서문과 의문문(끝을 올림) 모두에 두루 쓰입니다. 어간 끝음절의 모음에 따라 결합 형태가 달라집니다. 양성모음('ㅏ', 'ㅗ')인 경우 '-아요'가 결합하고, 그 외의 음성모음인 경우 '-어요'가 결합하며, '하다'가 붙은 용언은 '-해요'('-하여요'의 준말)로 활용됩니다.",
+      "formation": "'ㅏ', 'ㅗ' 모음 어간 + 아요 / 기타 모음 어간 + 어요 / '하다' 용언 어간 -> 해요",
+      "examples": [
+        {
+          "translation": "나는 한국어 공부를 하고 있어요."
+        },
+        {
+          "translation": "우리 엄마는 맛있는 음식을 만들어요."
+        },
+        {
+          "translation": "선생님은 학생들에게 한국 문화에 대해 가르치고 있어요."
+        },
+        {
+          "translation": "그는 점심시간에 가끔 산책하러 가요."
+        }
+      ]
+    },
+    "ko_고_6": {
+      "title": "고 (연결어미 - 나열, 시간적 순서)",
+      "shortExplanation": "동사나 형용사 어간 뒤에 붙어 두 가지 이상의 사실을 나열하거나 동작의 순서를 이어 주는 연결어미입니다.",
+      "longExplanation": "'고'는 앞 절과 뒤 절을 대등하게 이어 주는 대표적인 대등적 연결어미입니다. 용언(동사, 형용사)의 어간에 받침 유무와 상관없이 바로 결합합니다. 둘 이상의 동작이나 상태를 단순히 대등하게 늘어놓는 '나열'의 기능과, 앞의 행위가 일어난 뒤 뒤의 행위가 일어나는 '시간적 순서(계기)'의 기능을 모두 수행합니다.",
+      "formation": "동사/형용사 어간 + 고",
+      "examples": [
+        {
+          "translation": "저는 오늘 학교에 가고, 공부하고, 친구들과 점심을 먹었어요."
+        },
+        {
+          "translation": "그는 춤을 추고, 노래를 하고, 재미있게 놀았어요."
+        },
+        {
+          "translation": "나는 집에 가서 숙제를 하고 책을 읽었어요."
+        },
+        {
+          "translation": "우리는 점심을 먹고 영화를 보러 갔어요."
+        }
+      ]
+    },
+    "ko_하고_7": {
+      "title": "하고 (접속조사 및 부사격 조사 - 와/과, 함께)",
+      "shortExplanation": "명사 뒤에 붙어 두 명사를 대등하게 이어 주거나 어떤 행동을 함께하는 동반자를 나타내는 조사입니다.",
+      "longExplanation": "'하고'는 일상 대화(구어체)에서 널리 쓰이는 조사로, 명사의 받침 유무에 상관없이 결합합니다. 둘 이상의 사물이나 사람을 대등하게 묶어 주는 접속조사('와/과'에 해당)로 쓰이거나, 다른 대상과 함께 어떤 행동을 행함을 나타내는 동반 부사격 조사('~와 함께'에 해당)로 사용됩니다.",
+      "formation": "명사1 + 하고 + 명사2 (또는 명사 + 하고 + 동사)",
+      "examples": [
+        {
+          "translation": "저는 친구하고 영화를 보고 밥을 먹었어요, 그리고 집에 가서 숙제를 했어요."
+        },
+        {
+          "translation": "이번 주말에는 가족하고 여행을 가기로 결정했어요."
+        },
+        {
+          "translation": "피터하고 메리는 함께 학교에 갔어요."
+        },
+        {
+          "translation": "나는 오늘 아빠하고 쇼핑하러 갈 계획이에요."
+        }
+      ]
+    },
+    "ko_으세요euseyoImperativeform_8": {
+      "title": "(으)세요 (정중한 명령·권유 종결어미)",
+      "shortExplanation": "동사 어간 뒤에 붙어 상대방에게 어떤 행동을 정중하게 요청하거나 권유, 지시할 때 쓰는 종결어미입니다.",
+      "longExplanation": "'(으)세요'는 주체높임 선어말어미 '-(으)시-'에 비격식 두루높임 어미 '-어요'가 결합하여 굳어진 형태로, 듣는 이를 높이면서 정중하게 명령하거나 권유, 부탁할 때 사용합니다. 어간에 받침이 있으면 '-으세요'가 결합하고, 받침이 없거나 'ㄹ' 받침인 경우(ㄹ 탈락)에는 '-세요'가 결합합니다.",
+      "formation": "받침 있는 동사 어간 + 으세요 / 받침 없는 동사 어간 + 세요 (ㄹ 받침 어간은 ㄹ 탈락 후 + 세요)",
+      "examples": [
+        {
+          "translation": "조심해서 건너세요, 사고가 날 수 있어요."
+        },
+        {
+          "translation": "집에 돌아가서 먹어야 할 약을 드세요."
+        },
+        {
+          "translation": "이 메시지를 받으면 답장하세요."
+        },
+        {
+          "translation": "오늘 저녁에 만나야 할 사람들에게 미리 전화하세요."
+        }
+      ]
+    },
+    "ko_으수있다eulsuitdaCando_9": {
+      "title": "(으)ㄹ 수 있다 (능력 및 가능 표현)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 일을 할 수 있는 능력이나 가능성이 있음을 나타내는 표현입니다.",
+      "longExplanation": "'(으)ㄹ 수 있다'는 관형사형 어미 '-(으)ㄹ'에 방법이나 가능성을 뜻하는 의존명사 '수', 그리고 존재를 나타내는 형용사 '있다'가 결합한 구문으로, 주어의 주관적인 능력이나 어떤 상황의 객관적인 가능성을 나타냅니다. 어간에 받침이 있으면 '-을 수 있다'가 결합하고, 받침이 없거나 'ㄹ' 받침인 경우에는 '-ㄹ 수 있다'가 결합합니다. 반대 표현은 능력이 없거나 불가능함을 뜻하는 '(으)ㄹ 수 없다'입니다.",
+      "formation": "받침 있는 동사 어간 + 을 수 있다 / 받침 없는 동사 어간(또는 ㄹ 받침 어간) + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "그녀는 한국어를 매우 빠르게 배울 수 있으므로, 한 달 만에 토픽 시험을 볼 수 있을 것입니다."
+        },
+        {
+          "translation": "집이 가까우니까, 열심히 공부하면 한 달 안에 한국어를 유창하게 할 수 있어요."
+        },
+        {
+          "translation": "그것에 대해 많이 알고 있어서, 그에 대한 모든 질문에 답할 수 있어요."
+        },
+        {
+          "translation": "이해하기 어려우시다면, 조금 더 천천히 말할 수 있어요."
+        }
+      ]
+    },
+    "ko_으려고euryeogoIntentiontodo_10": {
+      "title": "(으)려고 (의도·목적의 연결어미)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 행동을 하려는 주어의 의도나 목적을 나타내는 연결어미입니다.",
+      "longExplanation": "'(으)려고'는 앞 절의 행위가 뒤 절의 행위를 유발하는 의도나 목적임을 나타내는 종속적 연결어미입니다. 주어의 의지적 행위를 나타내는 동사에만 결합합니다. 어간에 받침이 있으면 '-으려고'가 결합하고, 받침이 없거나 'ㄹ' 받침인 경우에는 '-려고'가 결합합니다. 뒤 절에는 명령문이나 청유문이 올 수 없는 제약이 있습니다.",
+      "formation": "받침 있는 동사 어간 + 으려고 / 받침 없는 동사 어간(또는 ㄹ 받침 어간) + 려고",
+      "examples": [
+        {
+          "translation": "저는 한국어를 배우려고 한국에 왔어요."
+        },
+        {
+          "translation": "누나는 살을 빼려고 운동하고 있어요."
+        },
+        {
+          "translation": "학생들은 시험에 통과하려고 열심히 공부하고 있어요."
+        },
+        {
+          "translation": "아빠는 아이들에게 좋은 생활을 마련해 주려고 매일 일해요."
+        }
+      ]
+    },
+    "ko_으는다eunneundaInformalstatementendings_11": {
+      "title": "(으)ㄴ/는다 (현재 시제 평서형 종결어미 - 해라체)",
+      "shortExplanation": "동사나 형용사 뒤에 붙어 신문, 책, 일기 등의 서술문이나 손아랫사람, 동년배 친구에게 평서형으로 진술할 때 쓰는 종결어미입니다.",
+      "longExplanation": "'(으)ㄴ/는다'는 격식체 낮춤 등급인 '해라체'의 현재 시제 평서형 종결어미입니다. 책, 신문 기사, 보고서, 일기 등 특정 청자를 염두에 두지 않고 객관적 사실을 기록하는 문어체에서 가장 기본이 되는 어미이며, 구어에서는 나이가 같은 친구나 손아랫사람에게 이야기할 때 쓰입니다. 동사 어간에 받침이 있으면 '-는다', 받침이 없거나 'ㄹ' 받침인 경우(ㄹ 탈락)에는 '-ㄴ다'가 결합합니다. 형용사의 현재형에는 어간 뒤에 그대로 '-다'가 결합합니다.",
+      "formation": "받침 있는 동사 어간 + 는다 / 받침 없는 동사 어간 + ㄴ다 / 형용사 어간 + 다",
+      "examples": [
+        {
+          "translation": "나는 오늘 자정에 집에 돌아온다."
+        },
+        {
+          "translation": "그는 스페인어를 잘한다."
+        },
+        {
+          "translation": "이 커피는 너무 진하다."
+        },
+        {
+          "translation": "우리는 내일 공원에 가서 소풍을 한다."
+        }
+      ]
+    },
+    "ko_도_12": {
+      "title": "도 (보조사 - 포함, 덧붙임, 강조)",
+      "shortExplanation": "체언 뒤에 붙어 이미 어떤 것이 포함되고 그 위에 더해짐을 나타내거나(‘역시’), 강조를 나타내는 보조사입니다.",
+      "longExplanation": "'도'는 체언이나 부사, 다른 조사 뒤에 붙어 어떤 대상이 이미 언급된 대상과 마찬가지로 동일한 상태나 행동을 공유함을 나타내는 대표적인 보조사입니다. 한국어에서 '포함'과 '덧붙임'을 뜻하며, 문맥에 따라 극단적인 예를 들어 강조할 때('심지어')도 쓰입니다. 주격 조사 '이/가'나 목적격 조사 '을/를'과 함께 쓰일 때는 해당 격조사를 대신하여 결합합니다.",
+      "formation": "명사/대명사 + 도",
+      "examples": [
+        {
+          "translation": "나는 커피를 좋아하고, 친구도 커피를 좋아해요."
+        },
+        {
+          "translation": "철수는 축구를 할 수 있어요, 그리고 민희도 축구를 할 수 있어요."
+        },
+        {
+          "translation": "이 영화는 재미있어요, 그래서 많은 사람들이 지금까지도 계속 이 영화를 봐요."
+        },
+        {
+          "translation": "이번 시험은 어려웠어요, 그래서 저도 친구들도 잘 못 봤어요."
+        }
+      ]
+    },
+    "ko_만_13": {
+      "title": "만 (보조사 - 단독, 한정)",
+      "shortExplanation": "체언 뒤에 붙어 다른 것은 배제하고 어떤 대상을 단독으로 한정함을 나타내는 보조사입니다.",
+      "longExplanation": "'만'은 다른 어떤 것도 배제한 채 해당 대상 하나만으로 한정함을 나타내는 대표적인 보조사입니다. 명사의 받침 유무와 상관없이 결합하며, '오직 그것뿐'이라는 독점적·배타적 의미를 지닙니다. 주어나 목적어 자리에 올 때는 통상적으로 주격 조사 '이/가'나 목적격 조사 '을/를'을 생략하고 결합합니다.",
+      "formation": "명사/대명사 + 만",
+      "examples": [
+        {
+          "translation": "저는 커피만 마십니다. 차는 마시지 않아요."
+        },
+        {
+          "translation": "제 친구는 한국어만 할 줄 알아요. 다른 언어는 전혀 못 해요."
+        },
+        {
+          "translation": "저는 데이트를 할 때 영화만 보러 가요. 다른 활동은 잘 안 해요."
+        },
+        {
+          "translation": "이번 달에는 돈을 아끼려고 교통비만 썼어요. 다른 데에는 안 썼어요."
+        }
+      ]
+    },
+    "ko_와과_14": {
+      "title": "와/과 (접속조사 및 부사격 조사 - 대등 연결, 동반)",
+      "shortExplanation": "명사 뒤에 붙어 두 명사를 대등하게 이어 주거나('와/과'), 어떤 행동을 함께하는 동반자를 나타내는 조사입니다.",
+      "longExplanation": "'와/과'는 둘 이상의 명사를 대등하게 묶어 주는 접속조사이자, 다른 대상과 함께 행동함을 나타내는 동반 부사격 조사입니다. 구어체에서 자주 쓰이는 '하고'나 '(이)랑'에 비해 문어적이고 격식 있는 느낌을 줍니다. 앞 명사에 받침이 없으면 '와'가 결합하고, 받침이 있으면 '과'가 결합합니다. 종종 '함께', '같이' 등의 부사와 호응하여 사용됩니다.",
+      "formation": "받침 없는 명사 + 와 / 받침 있는 명사 + 과",
+      "examples": [
+        {
+          "translation": "나는 공원에서 강아지와 뛰어놀았어요."
+        },
+        {
+          "translation": "나는 빵과 커피를 함께 먹는 것을 좋아해요."
+        },
+        {
+          "translation": "친구와 연필과 함께 공부했어요."
+        },
+        {
+          "translation": "나는 내 가족과 여행을 갔어요."
+        }
+      ]
+    }
+  }
+}

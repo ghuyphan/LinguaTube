@@ -1,0 +1,654 @@
+{
+  "vi": {
+    "zh_多亏_487": {
+      "title": "多亏 (Phó từ / Động từ: Nhờ có / May mà / May nhờ)",
+      "shortExplanation": "Biểu thị nhờ có sự giúp đỡ, điều kiện thuận lợi hoặc may mắn mà tránh được rủi ro, tai họa hoặc đạt được kết quả tốt; 'nhờ có', 'may mà'.",
+      "longExplanation": "'多亏' (duōkuī) là phó từ hoặc động từ thường dùng trong khẩu ngữ và văn viết, mang ý nghĩa cảm kích, may mắn. Từ này dùng để nêu ra một nguyên nhân, nhân tố tích cực hoặc sự giúp đỡ quý báu của người khác (hoặc hoàn cảnh may mắn), nhờ đó mà người nói tránh được tổn thất, tai nạn hoặc giải quyết được khó khăn và nhận được kết quả tốt đẹp. Thường kết hợp trong các cặp ngữ khí: '多亏……，才……' (nhờ có... mới...), '多亏……，否则 / 不然 / 要不然……' (may mà... nếu không thì...). Tương đương với 'nhờ có', 'may mà', 'may nhờ' trong tiếng Việt.",
+      "formation": "多亏 + Danh từ / Mệnh đề (，Chủ ngữ + 才 / 就 / 不然……)",
+      "examples": [
+        {
+          "translation": "Nhờ có câu nói này của anh ấy mà mọi người như bừng tỉnh khỏi cơn mê."
+        }
+      ]
+    },
+    "zh_所谓_488": {
+      "title": "所谓 (Tính từ / Từ hạn định: Cái gọi là... / Được gọi là)",
+      "shortExplanation": "Dùng trước danh từ để chỉ 'cái được gọi là'; hoặc dùng để thể hiện thái độ nghi ngờ, mỉa mai, không công nhận tính chuẩn xác của tên gọi; 'cái gọi là'.",
+      "longExplanation": "'所谓' (suǒwèi) là tính từ mang sắc thái thư diện ngữ, gồm '所' (cái mà) và '谓' (nói là, gọi là). Cấu trúc này có hai cách dùng chính: một là dùng một cách trung tính để dẫn dắt, giải thích định nghĩa của một khái niệm chuyên môn hay thuật ngữ (mang nghĩa 'cái mà người ta gọi là...'); hai là thường gặp trong khẩu ngữ và chính luận, đứng trước danh từ (thường đặt trong dấu ngoặc kép) nhằm biểu thị thái độ hoài nghi, châm biếm, phê phán hoặc không thừa nhận, ngụ ý rằng sự vật đó hữu danh vô thực, không xứng đáng với cái tên ấy. Tương đương với 'cái gọi là...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 所谓 (+ 的) + Danh từ (hoặc: 所谓 + Danh từ + ，就是……)",
+      "examples": [
+        {
+          "translation": "Cái gọi là 'tin tức' của anh ta, thật ra chúng tôi đã sớm biết từ lâu rồi!"
+        }
+      ]
+    },
+    "zh_N则VA_489": {
+      "title": "Danh từ + 则 + Động từ / Tính từ (Phó từ chuyển ngoặt, đối chiếu: Còn... thì / Ngược lại thì)",
+      "shortExplanation": "Phó từ '则' đứng sau chủ ngữ của phân câu sau, biểu thị sự tương phản, đối chiếu giữa hai sự vật hoặc hai hành động; 'còn... thì', 'ngược lại'.",
+      "longExplanation": "'则' (zé) ở đây là một phó từ nối mang phong cách văn viết trang trọng. Khi đặt trong cấu trúc 'Danh từ + 则 + Động từ / Tính từ' ở phân câu thứ hai, '则' đứng ngay sau chủ ngữ mới để tạo sự đối sánh rõ rệt với chủ ngữ hoặc tình huống đã nêu ở phân câu trước. Thường đi kèm với liên từ '而' tạo thành kết cấu đối lập '……，而 [Danh từ] 则……' (người kia làm thế này, còn tôi thì làm thế kia). Cấu trúc này giúp câu văn khúc chiết, mạch lạc và mang tính học thuật cao. Tương đương với 'còn... thì', 'ngược lại thì', 'trong khi đó... thì' trong tiếng Việt.",
+      "formation": "Phân câu 1，(而 +) Danh từ / Đại từ + 则 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Sau khi tốt nghiệp trung học, anh ấy đã đi du học nước ngoài, còn tôi thì luôn ở lại trong nước."
+        }
+      ]
+    },
+    "zh_则_490": {
+      "title": "…… 则 …… (Liên từ điều kiện văn ngôn: Hễ... thì... / Nếu... thì... / Có... thì...)",
+      "shortExplanation": "Liên từ mang phong cách thư diện ngữ biểu thị quan hệ điều kiện - kết quả hoặc quy luật tất yếu; 'nếu... thì', 'hễ... là'.",
+      "longExplanation": "'则' (zé) ở đây là liên từ có nguồn gốc từ Hán văn cổ, dùng để liên kết vế điều kiện (giả thiết) và vế kết quả. Khi đặt giữa hai vế, '则' biểu thị rằng một khi điều kiện phía trước xảy ra hoặc được thỏa mãn, thì kết quả phía sau đương nhiên sẽ xuất hiện theo một quy luật khách quan. Cấu trúc này thường được dùng theo từng cặp song hành đối xứng (như 'hễ có điều kiện thì có kết quả' hoặc '有……则……，无……则……'), tạo nên nhịp điệu ngắn gọn, súc tích và trang trọng. Tương đương với 'hễ... thì', 'nếu... thì' trong tiếng Việt.",
+      "formation": "Điều kiện 1 + 则 + Kết quả 1，Điều kiện 2 + 则 + Kết quả 2 (hoặc: Điều kiện + 则 + Kết quả)",
+      "examples": [
+        {
+          "translation": "Mùa đông ở Bắc Kinh, có gió thì lạnh, không có gió thì ấm áp."
+        }
+      ]
+    },
+    "zh_则_491": {
+      "title": "Số từ + 则 (Lượng từ: Mẩu / Bản / Điều / Đoạn / Bài)",
+      "shortExplanation": "Lượng từ dùng cho tin tức, mẩu tin, thông báo, mẩu chuyện ngụ ngôn, quảng cáo hoặc điều khoản; 'mẩu tin', 'bản tin', 'điều'.",
+      "longExplanation": "'则' (zé) ở đây là lượng từ thuộc phong cách thư diện ngữ trang trọng. Nó chuyên dùng để đếm các văn bản, phân đoạn thông tin ngắn độc lập có nội dung hoàn chỉnh, tiêu biểu như: tin tức báo chí ('一则新闻' - một mẩu tin tức), thông báo thông tri ('一则通知' - một bản thông báo), mẩu quảng cáo ('一则广告' - một mẩu quảng cáo), truyện ngụ ngôn ('一则寓言' - một mẩu chuyện ngụ ngôn) hoặc câu chuyện cười ngắn ('一则笑话'). Tương đương với 'mẩu', 'bản', 'bài', 'tin', 'điều' trong tiếng Việt.",
+      "formation": "Số từ + 则 + Danh từ (tin tức / thông báo / quảng cáo / ngụ ngôn / chuyện cười)",
+      "examples": [
+        {
+          "translation": "Trên tờ báo hôm nay có một mẩu tin vô cùng quan trọng."
+        }
+      ]
+    },
+    "zh_为S所V_492": {
+      "title": "为 + Chủ thể hành động + 所 + Động từ (Câu bị động cổ điển: Được / Bị ... bởi ...)",
+      "shortExplanation": "Kết cấu bị động mang phong cách thư diện ngữ trang trọng; '为' dẫn nhập chủ thể gây ra hành động, '所' đứng trước động từ vị ngữ; 'được / bị... bởi...'.",
+      "longExplanation": "'为……所……' (wéi ... suǒ ...) là cấu trúc câu bị động cổ điển bắt nguồn từ Hán ngữ cổ đại, vẫn được sử dụng rộng rãi trong tiếng Hán hiện đại thuộc các văn bản văn học, chính luận, khoa học và tin tức trang trọng. Trong cấu trúc này: '为' đóng vai trò giới từ dẫn nhập chủ thể thực hiện hành vi (tác nhân), còn '所' là trợ từ đặt trực tiếp trước động từ chính nhằm bổ trợ và làm nổi bật tính bị động của hành động. Động từ thường là động từ đơn âm tiết hoặc song âm tiết có tính chuyển tác (như yòng, chēngdào, xīyǐn, zhìfú, pòhuài, liǎojiě). Tương đương với 'được... bởi...', 'bị... làm cho...' trong tiếng Việt.",
+      "formation": "Chủ ngữ (đối tượng chịu tác động) + 为 + Chủ thể hành động + 所 + Động từ",
+      "examples": [
+        {
+          "translation": "Có khoa học rồi, thiên nhiên có thể được con người tận dụng một cách tốt hơn."
+        }
+      ]
+    },
+    "zh_V起_493": {
+      "title": "Động từ + 起 (Bổ ngữ xu hướng / Bổ ngữ kết quả: Bắt đầu làm / Nhắc đến / Hướng lên)",
+      "shortExplanation": "Bổ ngữ biểu thị phương hướng từ dưới lên trên; hoặc biểu thị bắt đầu đề cập, nói tới một chủ đề; 'lên', 'nhắc đến'.",
+      "longExplanation": "'Động từ + 起' (qǐ) là dạng rút gọn của bổ ngữ xu hướng hoặc bổ ngữ kết quả '起来'. Nó mang các ý nghĩa ngữ pháp quan trọng: thứ nhất, chỉ phương hướng chuyển động thực tế từ dưới lên trên (như '举起' - giơ lên, '抬起' - nhấc lên, '升起' - bay lên); thứ hai, thường kết hợp với các động từ tri giác, phát ngôn, tư duy (như '谈起' - bàn luận tới, '说起' - nói tới, '提起' - nhắc đến, '想起' - nhớ ra/nghĩ tới) để biểu thị việc bắt đầu khơi mào hoặc đề cập tới một chủ đề cụ thể trong cuộc đối thoại; thứ ba, biểu thị hành vi khép lại hoặc gắn kết (như '关起门' - đóng cửa lại, '收起' - cất gọn đi). Tương đương với 'lên', 'nhắc đến', 'nói tới' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 起 (+ Tân ngữ)",
+      "examples": []
+    },
+    "zh_V得过_495": {
+      "title": "Động từ + 得过 (Bổ ngữ khả năng: Thắng được / Vượt qua được / Đọ lại được)",
+      "shortExplanation": "Bổ ngữ khả năng biểu thị có năng lực so tài và chiến thắng, vượt qua đối thủ trong một hành động; 'thắng được', 'đọ lại được'.",
+      "longExplanation": "'Động từ + 得过' (dé guò) là kết cấu bổ ngữ khả năng chỉ mức độ cạnh tranh hoặc so sánh năng lực. Trong đó '过' mang ý nghĩa vượt qua, thắng thế. Cấu trúc này khẳng định chủ thể có đủ bản lĩnh, trình độ, năng lực để vượt qua hoặc đánh bại đối phương trong một hành động cụ thể (như '说得过' - nói lý lẽ thắng được/cãi thắng, '打得过' - đánh thắng được/đánh lại được, '跑得过' - chạy nhanh hơn, '比得过' - so bì thắng được). Dạng phủ định tương ứng là 'Động từ + 不过' (không đọ lại, không thắng nổi). Thường dùng trong các ngữ cảnh tranh luận, thi đấu thể thao hoặc so kè bản lĩnh. Tương đương với 'thắng được', 'vượt qua được', 'đọ lại được' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 得过 + Tân ngữ (đối thủ cạnh tranh)",
+      "examples": [
+        {
+          "translation": "Khi bàn luận về chuyện quân sự với người khác, không ai có thể nói lại được anh ấy."
+        }
+      ]
+    },
+    "zh_迟早_496": {
+      "title": "迟早 (Phó từ thời gian: Sớm muộn gì cũng / Trước sau gì cũng)",
+      "shortExplanation": "Biểu thị sự việc nhất định sẽ xảy ra trong tương lai, chỉ là vấn đề thời gian diễn ra sớm hay muộn; 'sớm muộn', 'trước sau gì cũng'.",
+      "longExplanation": "'迟早' (chízǎo) là phó từ chỉ thời gian, kết hợp giữa '迟' (muộn) và '早' (sớm). Từ này dùng để khẳng định một quy luật khách quan hoặc phán đoán chắc chắn rằng một sự việc nhất định sẽ xảy ra hoặc một mục tiêu, kết cục tất yếu sẽ thành hiện thực trong tương lai, chỉ là chưa xác định chính xác thời điểm sớm hay muộn mà thôi. Trong câu, '迟早' làm trạng ngữ đứng trước động từ vị ngữ, thường đi kèm với các phó từ hoặc trợ động từ chỉ xu hướng tất yếu như '会' (sẽ), '都' (đều), '要' (phải). Đồng nghĩa với '早晚'. Tương đương với 'sớm muộn gì cũng', 'trước sau gì cũng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 迟早 + (都 +) 会 / 要 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Cùng với sự phát triển của công nghệ mạng, những vấn đề này sớm muộn gì cũng sẽ được giải quyết."
+        }
+      ]
+    },
+    "zh_再三_497": {
+      "title": "再三 (Phó từ tần suất: Năm lần bảy lượt / Hết lần này đến lần khác / Nhiều lần)",
+      "shortExplanation": "Phó từ biểu thị hành động được thực hiện lặp đi lặp lại nhiều lần với thái độ nghiêm túc, thận trọng; 'năm lần bảy lượt', 'nhiều lần'.",
+      "longExplanation": "'再三' (zàisān) là phó từ chỉ tần suất và mức độ lặp lại mang tính trang trọng, gồm 'tái' (lại) và 'tam' (ba, phiếm chỉ nhiều lần). Từ này nhấn mạnh một hành vi mang ý thức chủ quan cao được thực hiện lặp đi lặp lại nhiều lần với thái độ hết sức thận trọng, tha thiết hoặc kiên trì. Khác với phó từ '屡次' (chỉ số lần xảy ra khách quan), '再三' chuyên đi kèm với các động từ chỉ sự suy nghĩ, dặn dò, đề nghị, khuyên can hoặc nhấn mạnh (như '再三考虑' - suy nghĩ kỹ nhiều lần, '再三叮嘱' - dặn đi dặn lại, '再三强调' - nhấn mạnh nhiều lần, '再三劝阻' - hết lời can ngăn, '再三道歉' - xin lỗi năm lần bảy lượt). Tương đương với 'năm lần bảy lượt', 'nhiều lần', 'hết lần này đến lần khác' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 再三 + Động từ (khuyên can / dặn dò / suy nghĩ / nhấn mạnh...)",
+      "examples": [
+        {
+          "translation": "Mẹ của Triệu Quát đã năm lần bảy lượt khuyên ngăn Triệu Vương bổ nhiệm con trai mình làm đại tướng."
+        }
+      ]
+    },
+    "zh_即_498": {
+      "title": "即 (Động từ phán đoán văn ngôn: Tức là / Chính là / Nghĩa là)",
+      "shortExplanation": "Động từ biểu thị sự phán đoán hoặc giải thích định nghĩa trong phong cách thư diện ngữ trang trọng; tương đương với '就是', 'tức là'.",
+      "longExplanation": "'即' (jí) là động từ phán đoán có nguồn gốc từ Hán văn cổ, rất phổ biến trong văn phong học thuật, khoa học, định nghĩa từ điển và tin tức hiện đại. Nó tương đương với '就是' trong khẩu ngữ, dùng để nối giữa một khái niệm, thuật ngữ, từ ngữ hoặc hiện tượng phía trước với lời giải thích, làm rõ bản chất, nội dung cụ thể ở phía sau. Cấu trúc này làm câu văn trở nên cô đọng, khúc chiết và đậm chất văn phong thư diện ngữ. Tương đương với 'tức là', 'chính là', 'nghĩa là' trong tiếng Việt.",
+      "formation": "Thuật ngữ / Khái niệm + ，即 + Lời giải thích / Mệnh đề",
+      "examples": [
+        {
+          "translation": "'Đán' là một chữ tượng hình, tức là mặt trời mọc lên từ đường chân trời."
+        }
+      ]
+    },
+    "zh_即_499": {
+      "title": "…… 即 …… (Phó từ nối tiếp: Hễ... là lập tức... / Vừa... là... liền)",
+      "shortExplanation": "Phó từ mang phong cách thư diện ngữ biểu thị sự tiếp nối nhanh chóng, tức thì giữa hành động và phản ứng; 'hễ... là...', 'vừa... là... liền'.",
+      "longExplanation": "'即' (jí) ở đây là phó từ nối tiếp thư diện ngữ, tương đương với '就' (thì, là, liền) trong khẩu ngữ. Khi dùng giữa hai hành động hoặc giữa điều kiện và kết quả, '即' biểu thị rằng ngay sau khi tình huống thứ nhất phát sinh thì hành vi thứ hai lập tức diễn ra mà không hề có sự trì hoãn hay ngập ngừng. Cấu trúc này thường kết hợp thành các cấu trúc 4 chữ, thành ngữ hoặc các phân câu đối xứng ngắn gọn, nhịp nhàng (như '不懂即问' - không hiểu là hỏi ngay, '召之即来' - gọi là đến ngay, '稍纵即逝' - hơi lơ là là biến mất ngay, '非此即彼' - không phải cái này thì là cái kia). Tương đương với 'hễ... là lập tức...', 'vừa... là... liền' trong tiếng Việt.",
+      "formation": "Điều kiện / Hành động 1 + 即 + Hành động 2 / Kết quả",
+      "examples": [
+        {
+          "translation": "Không hiểu là hỏi ngay chính là ưu điểm lớn nhất của anh ấy, cũng là nguyên nhân chính dẫn đến thành công của anh."
+        }
+      ]
+    },
+    "zh_个别V_500": {
+      "title": "个别 + Động từ (Phó từ làm trạng ngữ: Riêng lẻ / Từng người một / Riêng biệt)",
+      "shortExplanation": "Từ '个别' làm trạng ngữ đứng trước động từ, biểu thị hành động được thực hiện riêng biệt với từng cá nhân hoặc đơn vị; 'riêng lẻ', 'từng người một'.",
+      "longExplanation": "'个别' (gèbié) khi đóng vai trò trạng ngữ đứng trước động từ vị ngữ, biểu thị phương thức tiến hành hành động mang tính chất riêng biệt, đơn lẻ, làm việc riêng với từng cá nhân thay vì giải quyết chung cho cả tập thể. Cấu trúc này thường đi kèm với các động từ giao tiếp, trao đổi, hướng dẫn như '谈话' (nói chuyện/trao đổi), '辅导' (phụ đạo/kèm cặp), '通知' (thông báo), '处理' (xử lý). Thường xuất hiện trong kết cấu '采取个别……的方式' (áp dụng phương thức... riêng lẻ). Tương đương với 'riêng lẻ', 'từng người một', 'riêng biệt' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (采取 +) 个别 + Động từ (+ 的方式 / 形式)",
+      "examples": [
+        {
+          "translation": "Anh ấy thường áp dụng hình thức trò chuyện riêng với từng người để tìm hiểu tình hình và giải quyết vấn đề."
+        }
+      ]
+    },
+    "zh_个别N_501": {
+      "title": "个别 + Danh từ (Định ngữ: Cá biệt / Một vài / Số ít ngoại lệ)",
+      "shortExplanation": "Từ '个别' làm định ngữ đứng trước danh từ, biểu thị số lượng cực kỳ ít ỏi, mang tính ngoại lệ hiếm hoi trong một tập thể; 'cá biệt', 'một vài'.",
+      "longExplanation": "'个别' (gèbié) khi đóng vai trò định ngữ đứng trước danh từ, mang ý nghĩa chỉ một số lượng rất ít, cực kỳ hiếm thấy hoặc mang tính ngoại lệ đặc biệt trong một tổng thể rộng lớn. Nó thường đối lập với '多数' (đa số), '普遍' (phổ biến) hoặc '大家' (mọi người). Danh từ kết hợp thường chỉ người, hiện tượng, trường hợp, địa điểm (như '个别人' - một vài cá nhân riêng lẻ, '个别现象' - hiện tượng cá biệt, '个别情况' - trường hợp cá biệt, '个别地方' - một vài nơi hiếm hoi). Thường xuất hiện trong cấu trúc loại trừ như '除了个别……以外' (ngoại trừ một số ít... ra). Tương đương với 'cá biệt', 'một vài', 'số ít ngoại lệ' trong tiếng Việt.",
+      "formation": "个别 + Danh từ (người / hiện tượng / trường hợp / nơi chốn)",
+      "examples": [
+        {
+          "translation": "Trừ một vài cá nhân cá biệt ra, cân nặng của đa số mọi người đều bắt đầu tăng từ ngày thứ Bảy."
+        }
+      ]
+    },
+    "zh_非_502": {
+      "title": "非 (Phó từ ngữ khí: Nhất quyết / Khăng khăng / Nằng nặc đòi)",
+      "shortExplanation": "Phó từ biểu thị ý chí kiên quyết, khăng khăng đòi làm một việc gì đó bất chấp sự khuyên ngăn của người khác; 'nhất quyết', 'nằng nặc'.",
+      "longExplanation": "'非' (fēi) ở đây là phó từ ngữ khí biểu thị ý muốn kiên quyết, cố chấp hoặc nằng nặc đòi làm một điều gì đó. Nó nhấn mạnh ý chí chủ quan mạnh mẽ của người nói hoặc chủ ngữ, thường bất chấp hoàn cảnh bất lợi hay sự can ngăn của mọi người xung quanh. Trong khẩu ngữ, '非' rất thường kết hợp với trợ động từ '要' hoặc '得' tạo thành cụm '非要' hoặc '非得' (nhất quyết phải...). Thường đi kèm với phân câu sau diễn tả sự bất lực của người khác hoặc hậu quả tất yếu (như '谁也拦不住' - không ai cản nổi). Tương đương với 'nhất quyết', 'khăng khăng', 'nằng nặc đòi' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 非 (要 / 得) + Động từ / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Anh ta nằng nặc đòi ly hôn, chúng tôi chẳng một ai cản nổi."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_多亏_487": {
+      "title": "多亏（副詞・動詞：〜のおかげで・幸いにも〜のおかげで）",
+      "shortExplanation": "援助や好都合な要因のおかげで、災難や損失を免れたり良好な結果が得られたりしたことへの感謝・安堵を表します（「〜のおかげで」「幸いにも〜」）。",
+      "longExplanation": "「多亏」（duōkuī）は副詞または動詞として機能し、他者からの助け、幸運な出来事、好ましい条件などを導いて、「〜のおかげで」「幸いにも〜のおかげで助かった」という安堵や感謝の気持ちを表します。好ましくない事態を回避できた際によく用いられ、後節で「才……」（〜できてやっと…）、「不然 / 要不然 / 否则……」（さもないと…）などの語句と呼応することが多いです（例：「多亏你提醒，要不然我就忘了」君が思い出させてくれたおかげだ、そうでなければ忘れるところだった）。日本語の「〜のおかげで」「幸いにも〜のおかげで」に相当します。",
+      "formation": "多亏 ＋ 名詞 / 節（，主語 ＋ 才 / 否则 / 要不然……）",
+      "examples": [
+        {
+          "translation": "彼のこの一言のおかげで、人々は夢から覚めたように我に返った。"
+        }
+      ]
+    },
+    "zh_所谓_488": {
+      "title": "所谓（連体詞・形容詞：いわゆる〜・世間で言うところの〜）",
+      "shortExplanation": "名詞の前に置かれ、「いわゆる〜」「世間で言う〜」という意味を表します。用語の解説に用いるほか、皮肉や懐疑のニュアンスを込めて使うことも多いです。",
+      "longExplanation": "「所谓」（suǒwèi）は名詞の前に置かれて連体修飾語（定語）として機能し、「いわゆる」「世間で言うところの」という意味を表します。用法は大きく2つあります。1つは客観的な定義や概念の説明として「人々が〜と呼んでいるもの」を提示する用法（例：「所谓幸福，就是……」いわゆる幸福とは…）。もう1つは皮肉・懐疑・批判を込め、「名ばかりの」「自称〜にすぎない」と本当の価値や信憑性を疑う用法です。この場合、名詞に引用符「“”」が付けられることが多くあります。日本語の「いわゆる」「世に言う」に相当します。",
+      "formation": "（主語 ＋）所谓（＋ 的）＋ 名詞（または 所谓 ＋ 名詞 ＋，就是……）",
+      "examples": [
+        {
+          "translation": "彼が言ういわゆる「ニュース」など、実のところ私たちはとっくに知っていた！"
+        }
+      ]
+    },
+    "zh_N则VA_489": {
+      "title": "名詞 ＋ 则 ＋ 動詞 / 形容詞（対比の副詞：〜の方は…である・〜はというと・一方〜は）",
+      "shortExplanation": "後節の主語の直後に副詞「则」を置き、前節の事柄と明確に対比させて「〜の方は…だ」「一方〜は…だ」と述べます（書き言葉）。",
+      "longExplanation": "「则」（zé）は硬い書き言葉で頻繁に用いられる接続的な副詞です。複文の後節において主語（名詞や代名詞）の直後に置かれ、前節で述べられた人物・事物・行動と明確に対比させる役割を果たします。前節と後節で対照的な2つの主語が並び、後節の頭に接続詞「而」を伴って「……，而 [名詞] 则……」の形で使われることが非常に多いです。口語の「而我呢、他却……」に比べ、文章語としての引き締まった端正な対比表現となります。日本語の「〜の方は…である」「一方〜は…」「これに対して〜は…」に相当します。",
+      "formation": "節1，（而 ＋）名詞 / 代名詞 ＋ 则 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "彼は高校を卒業した後に海外留学したが、一方で私はずっと国内に残っていた。"
+        }
+      ]
+    },
+    "zh_则_490": {
+      "title": "…… 则 ……（接続詞：〜すればすなわち…・〜なら…・〜のときは…【条件接続】）",
+      "shortExplanation": "条件と結果を結ぶ書き言葉の接続詞で、「〜すればすなわち…となる」「〜のときは…である」という論理的・自然な帰結を表します。",
+      "longExplanation": "「则」（zé）は漢文由来の接続詞で、仮定・条件の節と帰結の節を結び付けます。前節で特定の条件を提示し、後節でその条件が満たされた場合に必然的に生じる結果を導きます。現代文では特に成語、ことわざ、および対句表現（例：「物极则反」物極まれば反す、「有则改之，无则加勉」過ちがあれば改め、なければさらに励む）において多用されます。簡潔で引き締まった論理的なリズムを生み出します。日本語の「〜すればすなわち…」「〜のときは…である」「〜ならば…」に相当します。",
+      "formation": "条件1 ＋ 则 ＋ 結果1，条件2 ＋ 则 ＋ 結果2（または 条件 ＋ 则 ＋ 結果）",
+      "examples": [
+        {
+          "translation": "北京の冬は、風が吹けば寒く、風がなければ暖かい。"
+        }
+      ]
+    },
+    "zh_则_491": {
+      "title": "数詞 ＋ 则（量詞：〜件・〜編・〜条【ニュース・広告・寓話などを数える】）",
+      "shortExplanation": "ニュース記事、広告、通知、寓話、小話などの独立した短い文章・記事を数える量詞です（「〜件」「〜編」）。",
+      "longExplanation": "「则」（zé）は書き言葉で用いられる専用の量詞（助数詞）です。まとまった内容を持つ独立した短い文章や公的・商業的な配信記事などを数える際に使われます。代表的な結合名詞として、「新闻」（ニュース）、「消息」（知らせ）、「广告」（広告）、「通告 / 通知」（お知らせ）、「寓言」（寓話）、「笑话」（小話）などがあります。日本語のニュースや広告を数える「1件」「1通」「1編」「1本」などに相当します。",
+      "formation": "数詞 ＋ 则 ＋ 名詞（新闻 / 广告 / 通知 / 寓言 / 故事など）",
+      "examples": [
+        {
+          "translation": "今日の新聞には、非常に重要なニュースが1件掲載されている。"
+        }
+      ]
+    },
+    "zh_为S所V_492": {
+      "title": "为 ＋ 動作主 ＋ 所 ＋ 動詞（文言受身表現：〜によって…される・〜の…するところとなる）",
+      "shortExplanation": "漢文由来の厳粛な受身表現で、「为」が動作主を導き、「所」が動詞の直前に置かれて受身の意味を強調します（「〜によって…される」）。",
+      "longExplanation": "「为……所……」（wéi ... suǒ ...）は古代中国語の受身構文が現代の書き言葉（ニュース・学術論文・公式演説など）に残った格調高い表現です。文頭に受動者（被害・対象）が主語として立ち、「为」が動作の主体（原因・行為者）を導きます。助詞「所」は動詞の直前に置かれ、動詞にかかる受身の結合関係を緊密にします（例：「为大家所熟知」みんなによく知られている、「为客观规律所决定」客観的法則によって決定される）。口語の「被……」に比べて非常に客観的かつ厳粛な響きを持ちます。日本語の「〜によって…される」「〜の…するところとなる」に相当します。",
+      "formation": "主語（被行為者）＋ 为 ＋ 動作主 ＋ 所 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "科学の力があってこそ、大自然は人類によってより良く利用されることができる。"
+        }
+      ]
+    },
+    "zh_V起_493": {
+      "title": "動詞 ＋ 起（方向補語・結果補語：持ち上げる・話題に取り上げる・思い出す）",
+      "shortExplanation": "動作が下方から上方へ向かうこと、または発言・思考動詞に後続して特定の話題を取り上げ始めることを表します（「〜し始める」「〜を取り上げる」）。",
+      "longExplanation": "「動詞 ＋ 起」（qǐ）は、方向補語あるいは結果補語「起来」が短縮された形です。主に2つの文法機能を持っています。1つは空間的な上方への移動を表す用法で、物体を下から上へ持ち上げたり立ち上げたりする動作を示します（例：「抬起」持ち上げる、「举起」掲げる、「升起」昇る）。もう1つは認識・思考・発言を表す動詞（谈、说、提、想など）に付き、特定の話題や記憶を取り上げたり語り始めたりすることを表す用法です（例：「谈起这段往事」この過去の出来事を語り始める、「提起他的名字」彼の名前を口にする）。日本語の「持ち上げる」「〜を取り上げる」「〜について話し始める」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 起（＋ 目的語）",
+      "examples": []
+    },
+    "zh_V得过_495": {
+      "title": "動詞 ＋ 得过（可能補語：〜して勝てる・〜して相手を負かすことができる・太刀打ちできる）",
+      "shortExplanation": "能力や実力で相手に勝ち越せること、競争相手を打ち負かして凌駕できることを表します（「〜して勝てる」「太刀打ちできる」）。",
+      "longExplanation": "「動詞 ＋ 得过」（dé guò）は可能補語の肯定形式です。「过」が「超過する・凌駕する」という意味を担い、競争・対戦・比較の文脈において、主語が相手の実力を上回り、打ち負かす能力を備えていることを表します。よく用いられる組み合わせには、「说得过」（言い負かすことができる）、「打得过」（殴り合いや戦いで勝てる）、「比得过」（比べて勝る）、「跑得过」（より速く走れる）などがあります。否定形は「動詞 ＋ 不过」（太刀打ちできない、勝てない）です。日本語の「〜して勝てる」「打ち負かすことができる」「太刀打ちできる」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 得过 ＋ 目的語（競争相手）",
+      "examples": [
+        {
+          "translation": "軍事のことについて誰かと議論を始めると、彼を言い負かせる人は誰もいない。"
+        }
+      ]
+    },
+    "zh_迟早_496": {
+      "title": "迟早（時間副詞：遅かれ早かれ・いずれ・早晩）",
+      "shortExplanation": "将来のある時点で、ある事態が必ず発生または実現することを確信を持って述べます（「遅かれ早かれ」「いずれは」）。",
+      "longExplanation": "「迟早」（chízǎo）は時間の早遅に関わらず「いずれ確実にその時が来る」という客観的な必然性や話者の強い確信を表す時間副詞です。「迟」（遅い）と「早」（早い）の反義語の組み合わせから成り、時期の早い遅いの差はあっても最終的な結果は変わらないことを示します。述語動詞の前に連用修飾語（状語）として置かれ、通常「会」「都」「要」などの助動詞や副詞と呼応します（例：「真相迟早会大白的」真相はいずれ必ず明らかになる）。類義語に「早晚」があります。日本語の「遅かれ早かれ」「いずれ」「早晩」に相当します。",
+      "formation": "主語 ＋ 迟早 ＋（都 ＋）会 / 要 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "インターネット技術の発展に伴い、これらの問題は遅かれ早かれ解決されるだろう。"
+        }
+      ]
+    },
+    "zh_再三_497": {
+      "title": "再三（頻度副詞：再三にわたって・何度も・幾度となく・重ねて）",
+      "shortExplanation": "同一の行為を慎重に、あるいは強い意志を持って何度も繰り返すことを表します（「再三」「幾度となく」）。",
+      "longExplanation": "「再三」（zàisān）は「二度も三度も、幾重にも」という意味を表す頻度副詞です。単に客観的な回数が多いことを表す「屡次」や「常常」とは異なり、話者や主語が強い意志・慎重さ・熱意を持って同じ行為を何度も繰り返す場面で用いられます。特に思考、勧告、懇願、注意喚起などを表す動詞（考虑、叮嘱、强调、挽留、道歉、劝阻など）を直接修飾します（例：「再三强调」繰り返し強調する、「再三考虑」熟考に熟考を重ねる、「再三嘱咐」重ねて言い含める）。日本語の「再三」「幾度となく」「重ね重ね」「何度も繰り返し」に相当します。",
+      "formation": "主語 ＋ 再三 ＋ 動詞（思考・勧告・要請・強調など）",
+      "examples": [
+        {
+          "translation": "趙括の母は、趙王が自分の息子を大将軍に任命するのを幾度となく必死に諫止した。"
+        }
+      ]
+    },
+    "zh_即_498": {
+      "title": "即（判断動詞：すなわち〜である・〜に他ならない・つまり）",
+      "shortExplanation": "書き言葉で語句の定義や概念の説明を行う判断動詞で、「すなわち〜である」「つまり」を表します（「就是」に相当）。",
+      "longExplanation": "「即」（jí）は文言（漢文）に由来する格調の高い判断動詞で、現代の学術論文、辞書の説明文、公的文書などで頻繁に使用されます。口語の「就是」に相当し、前置された単語・概念・記号に対して、その具体的な意味・本質・内実を直接言い換えたり定義したりする役割を担います。語調を極めて簡潔かつ厳密にする効果があります（例：「知识即力量」知識はすなわち力である、「所谓自律，即克制自己」いわゆる自律とは、すなわち自己を律することである）。日本語の「すなわち〜である」「つまり〜を意味する」に相当します。",
+      "formation": "語句 / 概念 ＋，即 ＋ 説明語句 / 節",
+      "examples": [
+        {
+          "translation": "「旦」は象形文字であり、すなわち太陽が地平線から昇ることを意味している。"
+        }
+      ]
+    },
+    "zh_即_499": {
+      "title": "…… 即 ……（連用副詞：〜すれば直ちに…・〜するとすぐ…・〜したら即座に…）",
+      "shortExplanation": "書き言葉で前後の動作や条件の即時的な推移を表し、「〜すると直ちに…する」「〜なら即座に…」を表します（「就」に相当）。",
+      "longExplanation": "「即」（jí）は時間的・論理的な密接な連続性を表す副詞で、口語の「就」に相当します。2つの動作や状況の間に置かれ、前の事態が生じると間髪を入れずに直ちに次の動作・反応が引き起こされることを示します。四字熟語や対句的な表現に極めてよく組み込まれます（例：「召之即来」呼べば直ちに来る、「稍纵即逝」少し油断するとたちまち消え去る、「不懂即问」分からなければ即座に尋ねる）。文意を極めてテンポよく敏捷に表現する効果があります。日本語の「〜すれば直ちに…」「〜したら即座に…」に相当します。",
+      "formation": "動作1 / 条件 ＋ 即 ＋ 動作2 / 反応",
+      "examples": [
+        {
+          "translation": "分からないことがあればすぐに尋ねるのが彼の最大の長所であり、彼が成功した主因でもある。"
+        }
+      ]
+    },
+    "zh_个别V_500": {
+      "title": "个别 ＋ 動詞（連用修飾語：個別に〜する・一人一人〜する・別々に〜する）",
+      "shortExplanation": "「个别」が動詞の直前に置かれて状語（連用修飾語）となり、全体に対してではなく個人や個別案件に対して個別に動作を行うことを表します（「個別に〜する」）。",
+      "longExplanation": "「个别」（gèbié）が動詞の前に置かれて連用修飾語（状語）として機能する場合、集団を一括して扱うのではなく、一人ひとりの個人や個別のケースに対してそれぞれ別々に動作や対応を行うことを表します。主に面談、指導、連絡、交渉などの行為を表す動詞（谈话、交流、辅导、通知、解决、处理など）を修飾します。しばしば「采取个别……的方式」（個別〜の方式をとる）という形で用いられます。日本語の「個別に〜する」「一人ひとりと〜する」「個別に指導・面談する」に相当します。",
+      "formation": "主語 ＋（采取 ＋）个别 ＋ 動詞（＋ 的方式 / 形式）",
+      "examples": [
+        {
+          "translation": "彼は個別に面談を行う方式をよく採り、状況を把握して問題を解決している。"
+        }
+      ]
+    },
+    "zh_个别N_501": {
+      "title": "个别 ＋ 名詞（連体修飾語：ごく少数の〜・例外的な〜・ごく一部の〜）",
+      "shortExplanation": "名詞の前で定語（連体修飾語）となり、全体の中で極めて少数であることや、例外的な少数の対象を指します（「ごく少数の」「ごく一部の」）。",
+      "longExplanation": "「个别」（gèbié）が名詞を修飾する定語として用いられる場合、「全体の中のほんの少数」「ごくわずかな例外」を意味します。全体的な傾向や「多数」「普遍」と対比される文脈でよく現れます。修飾される名詞には「人」（人）、「情况」（状況・ケース）、「现象」（現象）、「地方」（場所）、「学生」（生徒）などがあります。特に「除了个别……以外」（ごく少数の〜を除いて）という除外の構文で頻繁に用いられます。日本語の「ごく一部の」「ごく少数の」「例外的な」に相当します。",
+      "formation": "个别 ＋ 名詞（人 / 現象 / 状況 / 場所など）",
+      "examples": [
+        {
+          "translation": "ごく一部の例外的な人を除き、多くの人の体重増加は土曜日から始まる。"
+        }
+      ]
+    },
+    "zh_非_502": {
+      "title": "非（語気副詞：どうしても〜と言い張る・頑なに〜しようとする・意地でも〜する）",
+      "shortExplanation": "他人の制止や忠告を聞き入れず、強い意志や固執を持って「どうしても〜する」「頑なに〜と言い張る」様子を表します。",
+      "longExplanation": "「非」（fēi）は語気副詞として述語の前に置かれ、主語が周囲の反対や制止を押し切って、自分の意志や欲求を頑固に押し通そうとするニュアンスを表します。口語では通常、助動詞「要」や「得」を伴って「非要……」「非得……」の形で用いられます。後節にはしばしば「谁也劝不住」（誰も説得できない）、「谁也拦不住」（誰も止められない）といった表現が続き、その強情さや執着の強さが強調されます。日本語の「どうしても〜と言い張る」「頑として〜しようとする」「何としても〜する」に相当します。",
+      "formation": "主語 ＋ 非（要 / 得）＋ 動詞 / 節",
+      "examples": [
+        {
+          "translation": "彼がどうしても離婚すると言い張るので、私たちは誰も引き止めることができなかった。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_多亏_487": {
+      "title": "多亏 (부사·동사: 덕분에, 다행히 ~덕택에)",
+      "shortExplanation": "어떤 유리한 조건이나 타인의 도움 덕분에 화를 면하거나 좋은 결과를 얻었음을 다행스러워하며 감사함을 나타냅니다('~ 덕분에', '다행히 ~해서').",
+      "longExplanation": "'多亏'(duōkuī)는 부사 또는 동사로 쓰이며, 호의적인 조건, 타인의 도움, 혹은 천우신조의 행운 등을 제시하여 '다행히 ~ 덕분에' 위기나 난관을 벗어났음을 나타냅니다. 후속 절에서 종종 '才'(비로소 ~할 수 있었다) 또는 '不然 / 要不然 / 否则'(그렇지 않았더라면 ~했을 것이다)와 호응하여, 그 조건이 없었더라면 큰 손실이나 피해를 보았을 것임을 강조합니다(예: '多亏了你的帮助，要不然真不知道该怎么办' 너의 도움 덕분이야, 안 그랬으면 정말 어쩔 뻔했니). 한국어의 '~ 덕분에', '다행히 ~한 덕택에'에 해당합니다.",
+      "formation": "多亏 + 명사 / 절 (, 주어 + 才 / 否则 / 不然……)",
+      "examples": [
+        {
+          "translation": "그의 이 한마디 덕분에 사람들은 꿈에서 깬 듯 정신을 차렸다."
+        }
+      ]
+    },
+    "zh_所谓_488": {
+      "title": "所谓 (관형사·형용사: 이른바, 소위, 말하자면)",
+      "shortExplanation": "명사 앞에 쓰여 '이른바', '소위'라는 뜻을 나타내며, 개념을 정의하거나 빈정거림·불신을 담아 명목상의 명칭에 불과함을 나타냅니다.",
+      "longExplanation": "'所谓'(suǒwèi)는 '소위(所謂)', 즉 '이른바 말하는 바'라는 뜻으로, 명사 앞에 놓여 관형어 역할을 합니다. 크게 두 가지 맥락에서 쓰입니다. 첫째, 전문 용어나 개념의 정의를 객관적으로 풀이할 때 '사람들이 말하는 ~이란 바로...'라는 뜻으로 쓰입니다(예: '所谓成功，就是不断努力' 소위 성공이란 끊임없는 노력이다). 둘째, 따옴표(“”)와 함께 쓰여 상대방의 주장이나 특정 명칭에 회의, 비판, 풍자의 뉘앙스를 담아 '그들이 말하는 이른바 ~라는 것(실상은 엉터리인 것)'을 지칭할 때 사용됩니다. 한국어의 '이른바', '소위'에 해당합니다.",
+      "formation": "(주어 +) 所谓 (+ 的) + 명사 (또는 所谓 + 명사 +, 就是……)",
+      "examples": [
+        {
+          "translation": "그가 말하는 이른바 '뉴스'라는 것은 사실 우리가 진작부터 알고 있었던 것이다!"
+        }
+      ]
+    },
+    "zh_N则VA_489": {
+      "title": "명사 + 则 + 동사 / 형용사 (대조 부사: ~은/는 반면에, ~쪽은 오히려, 한편 ~는)",
+      "shortExplanation": "후속 절의 주어 뒤에 부사 '则'을 사용하여, 앞 절의 내용과 뚜렷하게 대조를 이루며 '~는 반면에', '~는 오히려'라는 뜻을 나타냅니다(서면어).",
+      "longExplanation": "'则'(zé)은 서면어에서 높은 빈도로 사용되는 접속 부사입니다. 복문의 두 번째 절에서 주어(명사 또는 대명사) 바로 뒤에 위치하여, 앞 절에서 언급된 주어의 행동이나 상황과 선명하게 대조를 이룸을 나타냅니다. 보통 후속 절 서두에 접속사 '而'(그러나, 한편)와 결합하여 '……，而 [명사] 则……'의 구문으로 널리 쓰이며, 두 대상 간의 상반되거나 대등한 차이점을 격조 높고 간결하게 서술합니다. 한국어의 '~은/는 반면에', '~쪽은', '한편 ~는'에 해당합니다.",
+      "formation": "절1, (而 +) 명사 / 대명사 + 则 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "그는 고등학교를 졸업한 후 외국으로 유학을 갔지만, 나는 줄곧 국내에 남아 있었다."
+        }
+      ]
+    },
+    "zh_则_490": {
+      "title": "…… 则 …… (가정·조건 접속사: ~하면 곧 …, ~인즉 …하다)",
+      "shortExplanation": "조건과 결과를 연결하는 서면어 접속사로, '앞의 조건이 충족되면 곧 뒤의 결과가 일어난다'는 필연적 귀결을 나타냅니다('~하면 곧').",
+      "longExplanation": "'则'(zé)은 한문(문언문)에서 유래한 조건 접속사로, '조건'과 그에 따르는 '결과'를 긴밀하게 연결합니다. 앞선 상태나 행위가 성립되면 뒤의 결과가 자연적·논리적 법칙에 따라 반드시 발생함을 나타냅니다. 현대 중국어에서는 주로 격언, 사자성어, 혹은 대구를 이루는 간결한 문언적 표현(예: '有则改之，无则加勉' 잘못이 있으면 고치고 없으면 더욱 힘쓰다, '物极则反' 사물이 극에 달하면 반전된다)에서 널리 쓰입니다. 문장을 압축적이고 단아하게 만드는 기능을 합니다. 한국어의 '~하면 곧 …하다', '~이면 …하게 마련이다'에 해당합니다.",
+      "formation": "조건1 + 则 + 결과1, 조건2 + 则 + 결과2 (또는 조건 + 则 + 결과)",
+      "examples": [
+        {
+          "translation": "베이징의 겨울은 바람이 불면 춥고, 바람이 불지 않으면 따뜻하다."
+        }
+      ]
+    },
+    "zh_则_491": {
+      "title": "수사 + 则 (양사: 건, 편, 개 조항 [뉴스·광고·우화 등을 세는 단위])",
+      "shortExplanation": "뉴스 기사, 광고, 공고, 우화, 짤막한 이야기 등 독립된 짧은 글이나 보도를 세는 서면어 양사입니다('~건', '~편').",
+      "longExplanation": "'则'(zé)은 짧고 완결된 글이나 공적인 단편 보도를 세는 문어체 양사입니다. 주로 신문이나 방송의 보도 기사('一则新闻' 뉴스 한 건), 알림 및 공지('一则通告' 공고 한 건), 상업 광고('一则广告' 광고 한 편), 교훈적 우화나 짤막한 이야기('一则寓言' 우화 한 편) 등을 셀 때 결합합니다. 품격 있는 서면어의 뉘앙스를 지닙니다. 한국어의 '한 건', '한 편', '한 가지'에 해당합니다.",
+      "formation": "수사 + 则 + 명사 (뉴스 / 공고 / 광고 / 우화 / 짧은 이야기)",
+      "examples": [
+        {
+          "translation": "오늘 신문에 대단히 중요한 뉴스 한 편이 실렸다."
+        }
+      ]
+    },
+    "zh_为S所V_492": {
+      "title": "为 + 행위 주체 + 所 + 동사 (문어 피동 구문: ~에 의해 …되다, ~의 …바가 되다)",
+      "shortExplanation": "문언문에서 유래한 격조 높은 피동문 형식으로, '为'가 행위 주체를 이끌고 '所'가 동사 앞에 놓여 피동을 나타냅니다('~에 의해 …되다').",
+      "longExplanation": "'为……所……'(wéi ... suǒ ...)는 고대 한어의 대표적 피동 형식이 현대 격식체 서면어(학술, 언론, 논설 등)에 계승된 문형입니다. 문장의 주어는 동작을 받는 대상(피동자)이 되며, '为'는 행위를 가하는 주체(동작자)를 도입하는 개사 역할을 합니다. 조사의 일종인 '所'는 술어 동사 바로 앞에 결합하여 피동 관계를 긴밀하게 완성합니다(예: '为大家所喜爱' 모든 이에게 사랑받다, '为困难所吓倒' 어려움에 굴복당하다). 구어의 '被'보다 훨씬 엄숙하고 품격 있는 분위기를 자아냅니다. 한국어의 '~에 의해 …되다', '~에게 …당하다', '~의 …하는 바가 되다'에 해당합니다.",
+      "formation": "주어 (행위 대상) + 为 + 행위 주체 + 所 + 동사",
+      "examples": [
+        {
+          "translation": "과학이 있기에 대자연은 인류에 의해 더욱 유용하게 쓰일 수 있다."
+        }
+      ]
+    },
+    "zh_V起_493": {
+      "title": "동사 + 起 (방향보어·결과보어: 위로 들어 올리다, 화제에 올리다, 언급하다)",
+      "shortExplanation": "동작이 아래에서 위로 향함을 나타내거나, 말·생각 관련 동사 뒤에 붙어 특정 화제를 꺼내기 시작함을 나타냅니다('올리다', '~을 언급하다').",
+      "longExplanation": "'동사 + 起'(qǐ)는 방향보어 혹은 결과보어 '起来'의 축약형태로, 다양한 의미를 가집니다. 첫째, 물리적 공간에서 아래에서 위로 향하는 상승 이동을 나타냅니다(예: '抬起头' 고개를 들다, '举起手' 손을 들다). 둘째, 인지·발화·사유를 나타내는 동사(说, 谈, 提, 想 등) 뒤에 결합하여 어떤 기억이나 화제를 대화의 장으로 끄집어내어 이야기를 시작함을 나타냅니다(예: '谈起这件事' 이 일에 대해 이야기를 꺼내다, '提起过去的岁月' 지난 시절을 언급하다). 셋째, 물건을 거두거나 닫는 결속 동작을 나타내기도 합니다. 한국어의 '들어 올리다', '~에 대해 말을 꺼내다 / 언급하다'에 해당합니다.",
+      "formation": "주어 + 동사 + 起 (+ 목적어)",
+      "examples": []
+    },
+    "zh_V得过_495": {
+      "title": "동사 + 得过 (가능보어: ~해서 이길 수 있다, 능가할 수 있다, 당해낼 수 있다)",
+      "shortExplanation": "능력이나 실력 면에서 상대방을 이기거나 능가할 수 있음을 나타내는 가능보어 구문입니다('~해서 이길 수 있다', '상대할 수 있다').",
+      "longExplanation": "'동사 + 得过'(dé guò)는 승부, 대결, 비교의 맥락에서 쓰이는 가능보어 긍정 형식입니다. '过'는 상대방을 능가하여 이긴다는 결과를 의미하며, 주어가 특정 동작을 통해 상대방을 압도하고 승리할 역량이 있음을 나타냅니다. 대표적인 결합으로 '说得过'(말로 이겨먹다/말싸움에서 이길 수 있다), '打得过'(싸워서 이길 수 있다), '跑得过'(더 빨리 달릴 수 있다), '比得过'(견주어 이길 수 있다) 등이 있습니다. 반대되는 부정 형식은 '동사 + 不过'(당해내지 못하다, 이길 수 없다)입니다. 한국어의 '~해서 이길 수 있다', '당해낼 수 있다'에 해당합니다.",
+      "formation": "주어 + 동사 + 得过 + 목적어 (경쟁 상대)",
+      "examples": [
+        {
+          "translation": "남들과 군사 문제에 대해 토론하기 시작하면, 말로 그를 이길 수 있는 사람은 아무도 없다."
+        }
+      ]
+    },
+    "zh_迟早_496": {
+      "title": "迟早 (시간 부사: 조만간, 언젠가는, 조석지간에, 일찍이든 늦든)",
+      "shortExplanation": "시기가 빠르고 늦음의 차이만 있을 뿐, 미래에 특정 사태나 결과가 필연적으로 일어날 것임을 단언합니다('조만간', '언젠가는').",
+      "longExplanation": "'迟早'(chízǎo)는 '늦든 빠르든 간에'라는 의미로, 미래의 어떤 사건이나 결과가 반드시 실현될 것임을 강한 확신을 담아 단언하는 시간 부사입니다. 주어와 술어 사이에 부사어로 위치하며, 필연성을 나타내는 조동사 '会'나 부사 '都', '要'와 함께 빈번하게 어울려 쓰입니다(예: '你迟早会明白我的苦心的' 넌 언젠가는 내 고충을 이해하게 될 거야). 유의어로 '早晚'이 있습니다. 한국어의 '조만간', '언젠가는', '늦든 빠르든', '결국에는'에 해당합니다.",
+      "formation": "주어 + 迟早 + (都 +) 会 / 要 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "인터넷 기술의 발전에 따라, 이러한 문제들은 조만간 모두 해결될 것이다."
+        }
+      ]
+    },
+    "zh_再三_497": {
+      "title": "再三 (빈도 부사: 재삼, 거듭, 몇 번이고, 누차)",
+      "shortExplanation": "어떤 행위를 신중함이나 간절한 뜻을 품고 두 번 세 번 거듭 되풀이함을 나타냅니다('거듭', '몇 번이고').",
+      "longExplanation": "'再三'(zàisān)은 한자어 '재삼(再三)' 그대로, '두 번 세 번 거듭하여'라는 뜻을 지닌 부사입니다. 객관적인 횟수의 빈번함을 나타내는 '屡次'와 달리, 주체의 강한 의지, 신중한 배려, 간곡한 당부 등이 담긴 행위가 반복될 때 사용됩니다. 주로 사유, 권고, 만류, 강조, 부탁을 나타내는 동사(考虑 고려하다, 强调 강조하다, 叮嘱 신신당부하다, 劝阻 만류하다, 挽留 만류하여 붙잡다, 邀请 요청하다 등) 앞에 부사어로 결합합니다(예: '再三思考' 거듭 생각하다, '再三推辞' 누차 사양하다). 한국어의 '재삼', '거듭', '신신당부하여', '몇 번이고'에 해당합니다.",
+      "formation": "주어 + 再三 + 동사 (생각, 만류, 당부, 강조 등)",
+      "examples": [
+        {
+          "translation": "조괄의 어머니는 조나라 왕이 아들을 대장군으로 임명하는 것을 거듭해서 만류했다."
+        }
+      ]
+    },
+    "zh_即_498": {
+      "title": "即 (판단 동사: 곧 ~이다, 즉 ~을 뜻하다)",
+      "shortExplanation": "학술문이나 사전 풀이 등 서면어에서 개념이나 어구의 정의를 밝히는 판단 동사로, '곧 ~이다', '즉'을 나타냅니다('就是'에 상당).",
+      "longExplanation": "'即'(jí)은 한문 유래의 판단 동사로, 현대 중국어의 학술 논문, 사전적 정의, 공식 해설에서 개념을 간명하게 규정할 때 주로 쓰입니다. 구어의 '就是'(바로 ~이다)에 해당하며, 앞에 제시된 어휘나 현상에 대해 그 본질, 정의, 구체적인 내용을 직접 해설하여 이어줍니다. 문장을 간결하고 격식 있게 만드는 효과를 지닙니다(예: '心动即行动' 마음이 움직이면 곧 행동이다, '时间即生命' 시간이 곧 생명이다). 한국어의 '곧 ~이다', '즉 ~을 의미한다'에 해당합니다.",
+      "formation": "어구 / 개념 +, 即 + 설명 어구 / 절",
+      "examples": [
+        {
+          "translation": "'旦(단)'은 상형문자로, 곧 태양이 지평선 위로 떠오르는 것을 뜻한다."
+        }
+      ]
+    },
+    "zh_即_499": {
+      "title": "…… 即 …… (접속 부사: ~하면 곧바로 …하다, ~하자마자 즉시 …하다)",
+      "shortExplanation": "동작 간의 즉각적인 연결을 나타내는 서면어 부사로, 앞의 상황이 발생하면 지체 없이 곧바로 다음 동작이 이어짐을 나타냅니다('就'에 상당).",
+      "longExplanation": "'即'(jí)은 앞선 동작이나 조건에 이어 즉각적인 후속 반응이 뒤따름을 나타내는 서면어 접속 부사입니다. 구어의 '就'(곧, 바로)와 상통하며, 조건과 결과, 혹은 선행 동작과 후행 동작이 한 치의 지체도 없이 밀접하게 일어남을 압축적으로 보여줍니다. 4자 성어나 대구를 이루는 간결한 격식 표현에서 자주 사용됩니다(예: '呼之即来' 부르면 즉시 오다, '触类即通' 하나를 알면 곧바로 두루 통하다, '不懂即问' 모르면 즉각 묻다). 한국어의 '~하면 즉시 …하다', '~하자마자 곧 …하다'에 해당합니다.",
+      "formation": "동작1 / 조건 + 即 + 동작2 / 반응",
+      "examples": [
+        {
+          "translation": "모르는 것이 있으면 즉시 물어보는 것이 그의 가장 큰 장점이자, 그가 성공할 수 있었던 주요 원인이다."
+        }
+      ]
+    },
+    "zh_个别V_500": {
+      "title": "个别 + 동사 (부사어: 개별적으로 ~하다, 따로따로 ~하다, 일대일로 ~하다)",
+      "shortExplanation": "'个别'이 동사 앞에서 부사어로 쓰여, 집단 전체가 아닌 각각의 개인이나 대상을 상대로 개별적으로 행동함을 나타냅니다('개별적으로 ~하다').",
+      "longExplanation": "'个别'(gèbié)이 술어 동사 앞에 놓여 부사어 역할을 할 때, 여러 사람을 한꺼번에 상대하지 않고 한 사람 한 사람에게 개별적·단독적으로 처리를 진행함을 나타냅니다. 주로 상담, 지도, 통지, 대화 등의 소통·관리 동사(谈话 대화하다/면담하다, 辅导 지도하다, 通知 알리다, 处理 처리하다 등)와 결합합니다. 종종 '采取个别……的方式'(개별 ~ 방식을 취하다)의 문형으로 널리 활용됩니다. 한국어의 '개별적으로 ~하다', '따로따로 ~하다', '일대일로 ~하다'에 해당합니다.",
+      "formation": "주어 + (采取 +) 个别 + 동사 (+ 的方式 / 形式)",
+      "examples": [
+        {
+          "translation": "그는 개별 면담 방식을 취하여 상황을 파악하고 문제를 해결하곤 한다."
+        }
+      ]
+    },
+    "zh_个别N_501": {
+      "title": "个别 + 명사 (관형어: 극소수의, 극히 드문, 예외적인 몇몇)",
+      "shortExplanation": "명사 앞에 쓰여 전체 집단 중 '극히 드문 소수', '예외적인 일부'를 가리킵니다('극소수의', '일부의', '예외적인').",
+      "longExplanation": "'个别'(gèbié)이 명사 앞에서 관형어로 쓰일 때, 전체 대다수와 대비되는 '극소수' 또는 '예외적인 특수 사례'를 나타냅니다. '多数'(다수)나 '普遍'(보편적)과 대조적인 성격을 띱니다. 자주 결합하는 명사로는 '人'(사람), '现象'(현상), '情况'(상황/사례), '地方'(곳/지역) 등이 있습니다(예: '个别人' 극소수의 사람, '个别现象' 예외적인 현상). 특히 '除了个别……以外'(소수의 ~를 제외하고는) 형식의 구문에서 널리 쓰입니다. 한국어의 '극소수의', '일부 예외적인', '개별의'에 해당합니다.",
+      "formation": "个别 + 명사 (사람 / 현상 / 상황 / 장소 등)",
+      "examples": [
+        {
+          "translation": "소수의 극소수 사람들을 제외하고, 대다수 사람들의 체중 증가는 토요일부터 시작된다."
+        }
+      ]
+    },
+    "zh_非_502": {
+      "title": "非 (어기 부사: 기어코 ~하겠다고 우기다, 기어이 ~하고야 말다, 한사코)",
+      "shortExplanation": "주위의 만류나 반대에도 불구하고 고집을 부려 '기어코 ~하겠다고 고집하다', '한사코 ~하려 들다'를 나타냅니다.",
+      "longExplanation": "'非'(fēi)는 술어 앞에 쓰이는 어기 부사로, 주어가 남의 충고나 만류를 아랑곳하지 않고 자신의 고집대로 어떤 행동을 관철하려 함을 나타냅니다. 구어에서는 흔히 조동사 '要'나 '得'와 결합하여 '非要', '非得'(기어코 ~하려고 하다)의 형태로 빈번하게 사용됩니다. 뒤따르는 절에는 종종 '누구도 말릴 수 없다'('谁也拦不住') 등의 표현이 이어져, 주어의 강한 고집이나 꺾이지 않는 의지를 부각합니다. 한국어의 '기어코 ~하겠다고 우기다', '한사코 ~하려고 들다', '기어이'에 해당합니다.",
+      "formation": "주어 + 非 (要 / 得) + 동사 / 절",
+      "examples": [
+        {
+          "translation": "그가 기어코 이혼하겠다고 고집을 부려, 우리 중 누구도 말릴 수가 없었다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_多亏_487": {
+      "title": "多亏（副词 / 动词：表示由于别人的帮助或有利因素，避免不幸或得到好处）",
+      "shortExplanation": "表示由于别人的帮助、关照或某种偶然的幸运条件，使得困难得以化解、免受损失或获得良好结局；相当于“幸亏”、“多亏了”。",
+      "longExplanation": "“多亏”（duōkuī）既可作副词也可作动词。用于指出产生积极结果的决定性因素，含有庆幸、感激的感情色彩。后边可接名词、代词或主谓分句，引出帮助者、有利条件或幸运契机。常与后一分句中的“才”、“就”或反面假设连词“要不然”、“不然”、“否则”配合使用，形成紧缩复句或复句结构（如“多亏你提醒了我，否则我就要铸成大错了”）。",
+      "formation": "多亏 + 名词 / 代词 / 分句（，主语 + 才 / 就 / 否则 / 不然……）",
+      "examples": [
+        {
+          "translation": "多亏了他这句话，人们如梦初醒。"
+        }
+      ]
+    },
+    "zh_所谓_488": {
+      "title": "所谓（指示形容词 / 区别词：所说的、所称的；用于概念阐释或含贬义讥讽）",
+      "shortExplanation": "用在名词前作定语，意为“所说的、常说的”；既可用于解释概念术语，也常用于表示不承认、怀疑或讽刺名不副实。",
+      "longExplanation": "“所谓”（suǒwèi）是文言遗留下来的书面语词，由“所”与“谓”（说、称）结合而成，常充当定语。其语义功能主要有二：一是客观用于对某一概念、专门术语下定义或做进一步诠释（如“所谓创新，就是在原有基础上突破”）；二是用于主观评判，常带有质疑、轻蔑、不以为然或讽刺色彩，表示说话人并不认同某种说法，认为该事物名不副实、徒有虚名，被修饰的名词常带引号（如“你所谓的‘朋友’，关键时刻却背叛了你”）。",
+      "formation": "（主语 +）所谓（+ 的）+ 名词（或 所谓 + 名词 +，就是……）",
+      "examples": [
+        {
+          "translation": "他所谓的“新闻”，其实我们早就知道了！"
+        }
+      ]
+    },
+    "zh_N则VA_489": {
+      "title": "名词 + 则 + 动词 / 形容词（连词 / 副词作状语：用于分句主语后，表示转折对比）",
+      "shortExplanation": "副词“则”用在后一分句的主语之后，与前一分句的情况形成鲜明对照；相当于“却”、“而……则”。",
+      "longExplanation": "“则”（zé）作为具有文言色彩的转折连词或副词，常置于复句后一分句的主语（名词或人称代词）之后、谓语动词或形容词之前。它起到提示话题转换和鲜明对比的作用，指出后一主体与前一主体在行为、态度或结局上的不同。常与连词“而”搭配成“……，而 [名词] 则……”格式，使句意严密、对仗工整，多见于书面语、新闻报道及学术政论语体中。",
+      "formation": "分句1，（而 +）名词 / 代词 + 则 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "他高中毕业以后出国留学了，而我则一直留在国内。"
+        }
+      ]
+    },
+    "zh_则_490": {
+      "title": "…… 则 ……（假设 / 条件连词：表示因果顺承或条件关联，相当于“就”、“便”）",
+      "shortExplanation": "连词，连接条件分句和结果分句，表示在某种特定条件或前提下必然产生某种结果；“如果……就……”。",
+      "longExplanation": "“则”（zé）作为文言连词，承接前述条件或假设，引出推导出的必然结果，相当于现代汉语中的“就”、“便”。在现代汉语书面语中，常用于格言、成语、严密的逻辑论述以及结构对称的对偶句式中（如“欲速则不达”、“学而不思则罔，思而不学则殆”）。它使行文极其精炼雅致、节奏分明。",
+      "formation": "条件1 + 则 + 结果1，条件2 + 则 + 结果2（或 条件分句 + 则 + 结果分句）",
+      "examples": [
+        {
+          "translation": "北京的冬天，有风则寒，无风则暖。"
+        }
+      ]
+    },
+    "zh_则_491": {
+      "title": "数词 + 则（量词：用于分项分篇的短文、消息、规条等）",
+      "shortExplanation": "专用于计算短篇新闻、通告、广告、寓言故事、法令规条等的书面语量词；相当于“条”、“篇”。",
+      "longExplanation": "“则”（zé）作量词时，专用于指称有独立篇幅、分段分项的文字或简短报道。常见搭配包括：“一则新闻 / 消息”（用于新闻报道）、“一则广告”（用于商业宣传）、“一则通知 / 声明”（用于官方文书）、“一则寓言 / 笑话”（用于独立的小篇幅故事）、“试则三条”（用于章程规约）。具有浓厚的书面语色彩，显得严谨庄重。",
+      "formation": "数词 + 则 + 名词（新闻 / 消息 / 广告 / 通知 / 寓言 / 故事）",
+      "examples": [
+        {
+          "translation": "今天的报纸上有一则非常重要的新闻。"
+        }
+      ]
+    },
+    "zh_为S所V_492": {
+      "title": "为 + 施事 + 所 + 动词（文言被动句式：表示被动，相当于“被……所……”）",
+      "shortExplanation": "由介词“为”引出施事者、助词“所”置于及物动词前构成的典型文言被动句式，书面语色彩浓厚；相当于“被……”。",
+      "longExplanation": "“为……所……”（wéi ... suǒ ...）是古代汉语沿用至今的典型被动句结构，广泛存在于政论、学术著述、新闻评论及正式公文中。句首为主语（受事者），“为”作介词引出施事者（发出动作的主体），“所”为结构助词置于谓语动词之前，起指代受事并协助构成被动结构的作用。谓语动词多为单音节或双音节及物动词（如“用、知、害、迫、感动、推崇、破坏”等）。相比口语中的“被”字句，该句式更加典雅凝练、庄重严谨。",
+      "formation": "主语（受事者）+ 为 + 施事者 + 所 + 动词",
+      "examples": [
+        {
+          "translation": "有了科学，大自然就可以更好地为人所用。"
+        }
+      ]
+    },
+    "zh_V起_493": {
+      "title": "动词 + 起（趋向补语 / 结果补语：表示向上运动、涉及话题或动作聚合）",
+      "shortExplanation": "作趋向或结果补语，表示动作由下向上移动；或与言语思维类动词结合，表示开始涉及某话题；相当于“……起来”。",
+      "longExplanation": "“动词 + 起”（qǐ）是趋向补语“起来”的简缩形式，具有多重语法表意功能：一是表示空间上的向上运动，动作者使物体自下而上位移（如“抬起头”、“举起手”、“升起旗帜”）；二是与言语交际、认知思维类动词组合（如“谈起、说起、提起、聊起、想起”等），表示由此由彼、触及或涉及某一方面的话题，引出讨论的对象；三是表示使分散的事物聚集或闭合（如“收起行李”、“闭起眼睛”、“关起门来”）。",
+      "formation": "主语 + 动词 + 起（+ 宾语）",
+      "examples": []
+    },
+    "zh_V得过_495": {
+      "title": "动词 + 得过（可能补语：表示在竞争中能够胜过、超过或压倒对方）",
+      "shortExplanation": "由及物动词带可能补语“得过”构成，表示在某方面的能力或较量上足以战胜、胜过或赛过对手；相当于“能赢过”。",
+      "longExplanation": "“动词 + 得过”（dé guò）是表示胜负竞争能力的可能补语肯定形式。“过”在此表示超过、胜出。整个格式表示在某种行为、技巧或实力的竞争对抗中，某人具有超过或压倒对手的充足能力。常见搭配如：“说得过”（在辩论、讲道理上能辩赢对方）、“打得过”（在武力或对抗中能打赢）、“跑得过”（速度能超过）、“比得过”（能比得上甚至超越）。其否定式“动词 + 不过”在生活中更为高频（如“我说不过他”）。",
+      "formation": "主语 + 动词 + 得过 + 宾语（竞争对手 / 比较对象）",
+      "examples": [
+        {
+          "translation": "跟别人谈论起军事来，没有人说得过他。"
+        }
+      ]
+    },
+    "zh_迟早_496": {
+      "title": "迟早（时间副词：表示或早或晚必定发生，相当于“早晚”）",
+      "shortExplanation": "表示事情虽然在具体发生的时间上有早有晚，但最终必定会发生或出现；相当于“早晚”、“终究”。",
+      "longExplanation": "“迟早”（chízǎo）是由反义词素“迟”与“早”复合而成的时间副词。在句中充当状语，修饰动词或谓语分句。用于表达说话人对客观规律或未来事态走向的坚定预判，强调无论过程耗费多少时间，该结果在未来必然会到来。常与情态动词“会”、“要”或副词“都”搭配使用（如“真相迟早会被揭开”、“正义迟早会得到伸张”）。与“早晚”语义基本一致，但书面与口语中均极其常用。",
+      "formation": "主语 + 迟早 +（都 +）会 / 要 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "随着网络技术的发展，这些问题迟早都会得到解决。"
+        }
+      ]
+    },
+    "zh_再三_497": {
+      "title": "再三（频率副词：一次又一次、多次，表示动作行为反复多次进行）",
+      "shortExplanation": "表示一次又一次、反复多次做某事，多用于深思熟虑、言语恳切的提醒劝告或极力挽留；相当于“反复”。",
+      "longExplanation": "“再三”（zàisān）是表示行为重复发生的高频副词，字面意为“两次三次”，引申为多次、反复。在句中充当状语。它与单纯表示客观发生次数多的“屡次”不同，“再三”通常包含主观上的慎重、诚恳、坚持或极力，修饰的动词大多与意愿、言语交流或思维活动相关（如“再三考虑、再三斟酌、再三叮嘱、再三强调、再三劝阻、再三邀请、再三致谢”等）。一般不修饰带有偶然性或无意识的动作。",
+      "formation": "主语 + 再三 + 动词（劝阻 / 叮嘱 / 强调 / 考虑 / 挽留等）",
+      "examples": [
+        {
+          "translation": "赵括的母亲再三阻止赵王任命儿子为大将。"
+        }
+      ]
+    },
+    "zh_即_498": {
+      "title": "即（判断动词：相当于“就是”，用于对概念或语词作明确界定与解释）",
+      "shortExplanation": "具有书面语色彩的判断动词，用在名词或概念后，引出对其意义、本质的具体阐释；相当于“就是”。",
+      "longExplanation": "“即”（jí）是文言文传承至现代汉语的高频判断动词，广泛应用于学术论述、辞书条目释义及新闻评述中。它的语法功能等同于口语中的“就是”，连接前置的概念、词汇、名称与后置的本质特征或具体所指。它使句子结构严谨、语言精辟雅致，常构成名言警句或专业术语的直接定义（如“失败即成功之母”、“知识即财富”）。",
+      "formation": "概念 / 术语 +，即 + 阐释语 / 分句",
+      "examples": [
+        {
+          "translation": "“旦”是象形字，即太阳从地平线上升起。"
+        }
+      ]
+    },
+    "zh_即_499": {
+      "title": "…… 即 ……（承接副词：表示前后动作紧密相连，相当于“就”、“便”）",
+      "shortExplanation": "副词，用在两动作或条件与结果之间，表示紧接着发生、毫不迟疑；相当于“一……就……”、“便”。",
+      "longExplanation": "“即”（jí）在此处充当承接副词，功能等同于现代口语中的“就”或“便”。它置于相连的两个动词、形容词或小分句之间，表示前一情况一旦出现，后一动作或状态便以极快速度即刻发生，毫无停顿或间隔。该句式在现代汉语中多保留于成语、习语及四字结构等精炼格式中（如“一触即发”、“闻过即改”、“召之即来”、“稍纵即逝”、“不懂即问”）。",
+      "formation": "动作1 / 前提 + 即 + 动作2 / 反应",
+      "examples": [
+        {
+          "translation": "不懂即问是他最大的优点，也是他成功的主要原因。"
+        }
+      ]
+    },
+    "zh_个别V_500": {
+      "title": "个别 + 动词（形容词作状语：表示逐个、单独进行某动作，相当于“单独”、“个别地”）",
+      "shortExplanation": "“个别”放在动词前作状语，表示不采取集体方式，而是针对个人或单个对象单独进行某种活动；相当于“单独”。",
+      "longExplanation": "“个别”（gèbié）作状语直接修饰动词谓语时，表述动作实施的方式与范围。强调该项行为是一对一、逐个分别施加于个体，而非面向群体统一开展。常见修饰带有沟通、交流、辅导或处理性质的动词（如“个别谈话、个别辅导、个别通知、个别交待、个别解决”等）。常与“采取……的方式”结构搭配，体现管理或教育工作中细致、针对性的工作方法。",
+      "formation": "主语 +（采取 +）个别 + 动词（+ 的方式 / 形式）",
+      "examples": [
+        {
+          "translation": "他经常采取个别谈话的方式了解情况和解决问题。"
+        }
+      ]
+    },
+    "zh_个别N_501": {
+      "title": "个别 + 名词（区别词作定语：表示极少数的、特殊的、非普遍的）",
+      "shortExplanation": "用在名词前作定语，修饰数量极少、个别的对象或具有例外性质的事物；相当于“极少数的”。",
+      "longExplanation": "“个别”（gèbié）作定语直接修饰名词时，具有界定数量极少或具有特殊例外的语法意义。它与“多数”、“绝大多数”或“普遍”形成鲜明对比，表示该事物并不代表整体，只是偶然、局部的极少数个例。常见的中心语有名词“人、情况、现象、问题、学生、地区”等（如“这只是个别现象，不必惊慌”）。在“除了个别……以外，绝大多数……”这类排除限制句式中出现频率极高。",
+      "formation": "个别 + 名词（人 / 现象 / 情况 / 地方等）",
+      "examples": [
+        {
+          "translation": "除了个别人以外，多数人体重的增加会从周六开始。"
+        }
+      ]
+    },
+    "zh_非_502": {
+      "title": "非（语气副词：表示坚决、固执或执意要怎样，相当于“非要”、“执意”）",
+      "shortExplanation": "用在动词前作状语，表示态度坚决、固执己见，不听劝阻偏要去做某事；相当于“一定要”、“执意”。",
+      "longExplanation": "“非”（fēi）在此处充当语气副词，表示极强的主观意愿和固执态度。强调当事人往往不顾别人的劝阻、反对或客观不利条件，执意、偏偏要按自己的意志行事。口语中常与助动词“要”、“得”连用，构成“非要”、“非得”（如“他非要去，谁也劝不住”）。常带有略带埋怨、无奈或突出其固执性格的语气色彩。",
+      "formation": "主语 + 非（要 / 得）+ 动词 / 分句",
+      "examples": [
+        {
+          "translation": "他非要离婚，我们谁拦也拦不住。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_아직_30": {
+      "title": "아직 (Vẫn, chưa)",
+      "shortExplanation": "Phó từ biểu thị hành động hoặc trạng thái vẫn đang tiếp diễn hoặc chưa hoàn thành tính đến thời điểm hiện tại; tương đương với 'vẫn', 'chưa'.",
+      "longExplanation": "'아직' là phó từ rất phổ biến trong tiếng Hàn, dùng để chỉ một tình huống, trạng thái hoặc hành động vẫn duy trì liên tục và chưa có sự thay đổi tính đến hiện tại. Trong tiếng Việt, '아직' có thể dịch là 'vẫn' hoặc 'vẫn còn' khi đi với câu khẳng định (như '아직 하고 있다' - vẫn đang làm), và dịch là 'chưa' hoặc 'vẫn chưa' khi kết hợp với các cấu trúc phủ định (như '아직 안 했다', '아직 못 했다' - vẫn chưa làm).",
+      "formation": "아직 + Động từ / Tính từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa thể hiểu tiếng Hàn một cách hoàn hảo. Tôi cần phải tiếp tục luyện tập."
+        },
+        {
+          "translation": "Dù có thể tự mình quyết định, nhưng tôi vẫn đang suy nghĩ kỹ về vấn đề đó."
+        },
+        {
+          "translation": "Tôi vẫn chưa xem bộ phim đó. Tôi dự định sẽ xem vào cuối tuần này."
+        },
+        {
+          "translation": "Tôi vẫn chưa ăn trưa nữa. Bụng tôi đói cồn cào rồi."
+        }
+      ]
+    },
+    "ko_때_31": {
+      "title": "때 (Khi, lúc, thời điểm)",
+      "shortExplanation": "Danh từ / danh từ phụ thuộc chỉ thời gian hoặc khoảnh khắc xảy ra một hành động, trạng thái; tương đương với 'khi', 'lúc', 'hồi'.",
+      "longExplanation": "'때' là từ chỉ thời điểm, thời khắc hoặc một khoảng thời gian cụ thể mà hành vi hay trạng thái diễn ra. Khi kết hợp với danh từ, '때' đứng ngay sau danh từ (như '방학 때' - lúc nghỉ hè, '식사 때' - lúc dùng bữa, '첫 만남 때' - lúc gặp nhau lần đầu). Khi kết hợp với động từ hoặc tính từ, nó đi kèm với định từ '-(으)ㄹ 때' để diễn tả 'khi làm gì' hoặc 'lúc như thế nào' (như '웃을 때' - khi cười, '시간이 없을 때' - khi không có thời gian).",
+      "formation": "Danh từ + 때 / Thân động từ/tính từ + (으)ㄹ 때",
+      "examples": [
+        {
+          "translation": "Tôi đã muốn học tiếng Hàn từ khi còn nhỏ."
+        },
+        {
+          "translation": "Mỗi khi cô ấy mỉm cười, tôi cảm thấy thực sự hạnh phúc."
+        },
+        {
+          "translation": "Tôi sẽ không bao giờ có thể quên được anh ấy vào lần đầu gặp gỡ."
+        },
+        {
+          "translation": "Cuối tuần này tôi muốn đi du lịch, nhưng khi không có thời gian thì nên làm thế nào đây?"
+        }
+      ]
+    },
+    "ko_으려고하다euryeogohadaIntendtodo_32": {
+      "title": "(으)려고 하다 (Định làm gì, dự định làm gì)",
+      "shortExplanation": "Cấu trúc diễn tả ý định, dự định hoặc kế hoạch thực hiện một hành động trong tương lai của chủ ngữ; tương đương với 'định...', 'dự định...'.",
+      "longExplanation": "'-(으)려고 하다' là cấu trúc biểu thị ý định, mục đích hoặc kế hoạch làm một việc gì đó của chủ ngữ trong tương lai gần. Cấu trúc này được tạo thành từ vĩ tố liên kết chỉ mục đích '-(으)려고' kết hợp với động từ '하다'. Nếu thân động từ kết thúc bằng phụ âm (có patchim, ngoại trừ 'ㄹ'), ta gắn '-으려고 하다'; nếu thân động từ kết thúc bằng nguyên âm hoặc patchim 'ㄹ', ta gắn '-려고 하다'. Ngoài ra, khi dùng với hiện tượng tự nhiên (như '비가 오려고 하다'), cấu trúc này còn biểu thị trạng thái sắp sửa xảy ra ('trời dường như sắp mưa').",
+      "formation": "Thân động từ có patchim (trừ ㄹ) + 으려고 하다 / Thân động từ không có patchim hoặc có patchim ㄹ + 려고 하다",
+      "examples": [
+        {
+          "translation": "Tôi định sẽ nỗ lực để giỏi tiếng Hàn hơn. Tôi dự định luyện tập thật nhiều để nâng cao năng lực."
+        },
+        {
+          "translation": "Vì trời có vẻ sắp mưa nên tôi định mang theo ô. Tôi muốn phòng ngừa cảm cúm."
+        },
+        {
+          "translation": "Tôi dự định đi du lịch cùng bạn bè. Chúng tôi muốn cùng nhau tạo nên những kỷ niệm thật đẹp."
+        },
+        {
+          "translation": "Cô ấy định chuẩn bị cho đám cưới vào tháng sau. Cô ấy muốn mọi thứ đều phải thật hoàn hảo."
+        }
+      ]
+    },
+    "ko_처럼_33": {
+      "title": "처럼 (Như, giống như)",
+      "shortExplanation": "Trợ từ so sánh gắn sau danh từ để biểu thị hình dáng, đặc tính hoặc mức độ tương đồng; tương đương với 'như', 'giống như'.",
+      "longExplanation": "'처럼' là trợ từ so sánh trong tiếng Hàn, được gắn trực tiếp vào sau danh từ mà không phân biệt danh từ đó có patchim hay không. Trợ từ này dùng để biểu thị đối tượng đứng trước là chuẩn mực so sánh, ngụ ý rằng hành động, trạng thái hoặc tính chất của chủ ngữ giống hệt hoặc tương tự như đối tượng đó ('như...', 'giống như...'). '처럼' thường xuyên xuất hiện trong các biện pháp so sánh tu từ, ví von hình tượng lẫn các cách diễn đạt thông dụng hằng ngày.",
+      "formation": "Danh từ + 처럼",
+      "examples": [
+        {
+          "translation": "Anh ấy trông dũng mãnh như một chú sư tử, nhưng thực tế thì không mạnh mẽ đến thế."
+        },
+        {
+          "translation": "Người bạn của chúng tôi luôn tỏa sáng như một vì sao. Cậu ấy là người được tất cả mọi người yêu quý."
+        },
+        {
+          "translation": "Cô ấy khiêu vũ uyển chuyển như một cánh bướm. Thật sự rất đẹp và tao nhã."
+        },
+        {
+          "translation": "Anh ấy đã bay vút lên cao như một con chim đại bàng. Cú bay đó quả thực vô cùng ấn tượng."
+        }
+      ]
+    },
+    "ko_같이_34": {
+      "title": "같이 (Cùng nhau / Giống như)",
+      "shortExplanation": "Phó từ biểu thị sự cùng nhau thực hiện hành động, thường kết hợp với trợ từ '와/과' hoặc '(이)랑'; ngoài ra còn là trợ từ so sánh tương tự '처럼'.",
+      "longExplanation": "'같이' vừa có chức năng là một phó từ vừa có chức năng là một trợ từ trong tiếng Hàn. Với vai trò phó từ biểu thị hành động chung ('cùng nhau'), '같이' thường đi sau cụm danh từ gắn trợ từ liên kết '-(와/과) 같이' hoặc '-(이)랑 같이' để nhấn mạnh việc cùng làm điều gì đó với người khác. Ngoài ra, khi gắn trực tiếp vào sau danh từ không có khoảng trắng, '같이' đóng vai trò là trợ từ so sánh tương đương với '처럼', mang ý nghĩa 'như', 'giống như'.",
+      "formation": "Danh từ + 와/과/랑 같이 (Cùng với) / Danh từ + 같이 (Giống như)",
+      "examples": [
+        {
+          "translation": "Tôi đã đi xem phim cùng với bạn của mình. Thật sự rất vui!"
+        },
+        {
+          "translation": "Ngày mai tất cả chúng tôi đã quyết định sẽ cùng nhau ra công viên dã ngoại."
+        },
+        {
+          "translation": "Nếu nấu ăn cùng mẹ, tôi luôn có thể làm ra những món ăn ngon hơn."
+        },
+        {
+          "translation": "Học cùng gia sư mang lại cho tôi rất nhiều sự giúp ích."
+        }
+      ]
+    },
+    "ko_이랑irangWith_35": {
+      "title": "(이)랑 (Với, cùng với, và)",
+      "shortExplanation": "Trợ từ khẩu ngữ gắn sau danh từ dùng để liệt kê danh từ ('và') hoặc biểu thị đối tượng cùng thực hiện hành động ('với', 'cùng với').",
+      "longExplanation": "'(이)랑' là trợ từ liên kết hoặc trợ từ cùng hành động rất thông dụng trong giao tiếp hằng ngày của người Hàn Quốc. Khi dùng để nối hai hay nhiều danh từ, nó mang nghĩa là 'và'. Khi đi cùng danh từ chỉ người hay động vật trong câu diễn tả hành động, nó biểu thị làm việc gì đó 'cùng với' đối tượng đó. Nếu danh từ kết thúc bằng phụ âm (có patchim), ta dùng '이랑'; nếu danh từ kết thúc bằng nguyên âm (không có patchim), ta dùng '랑'. So với '-(와/과)' mang tính văn viết, '(이)랑' mang sắc thái thân mật, tự nhiên trong khẩu ngữ.",
+      "formation": "Danh từ có patchim + 이랑 / Danh từ không có patchim + 랑",
+      "examples": [
+        {
+          "translation": "Tôi đã đi xem phim với bạn, bộ phim đó rất hay."
+        },
+        {
+          "translation": "Hôm qua tôi đã cùng mẹ đi chợ, chúng tôi đã mua rất nhiều thực phẩm."
+        },
+        {
+          "translation": "Tôi đã chơi ở công viên với em tôi, chúng tôi đã rất vui vẻ."
+        },
+        {
+          "translation": "Vào giờ nghỉ trưa hôm nay tôi đã nghe nhạc cùng bạn, bài nhạc ấy hay tuyệt vời."
+        }
+      ]
+    },
+    "ko_그런데_36": {
+      "title": "그런데 (Thế nhưng, nhưng mà, tuy nhiên / Nhân tiện)",
+      "shortExplanation": "Phó từ liên kết dùng để diễn tả sự đối lập, nghịch cảm giữa hai câu ('thế nhưng', 'nhưng') hoặc dùng để chuyển đổi chủ đề nói chuyện ('nhân tiện').",
+      "longExplanation": "'그런데' là phó từ liên kết rất phổ biến trong tiếng Hàn, thường đứng ở đầu câu thứ hai. Nó có hai vai trò chính: thứ nhất là diễn đạt sự chuyển tiếp tương phản, đối chiếu kết quả không ngờ so với tiền đề ở câu trước ('thế nhưng', 'tuy nhiên', 'nhưng mà'); thứ hai là dùng để chuyển hướng câu chuyện sang một chủ đề mới một cách tự nhiên ('nhân tiện', 'à này'). Trong khẩu ngữ, người Hàn đôi khi rút gọn '그런데' thành '근데'.",
+      "formation": "Câu trước. 그런데 + Câu sau",
+      "examples": [
+        {
+          "translation": "Ban đầu bài tập đó có vẻ dễ dàng, thế nhưng khi làm thực tế thì lại rất khó."
+        },
+        {
+          "translation": "Môn thể thao tôi yêu thích nhất là bóng rổ, thế nhưng bạn tôi lại chẳng thích bóng rổ một chút nào."
+        },
+        {
+          "translation": "Hôm qua tôi đã đến rạp chiếu phim, thế nhưng bộ phim đã bắt đầu mất rồi."
+        },
+        {
+          "translation": "Bạn tôi đã giới thiệu chiếc quần jean này cho tôi, nhưng mà nó lại không hợp với phong cách của tôi."
+        }
+      ]
+    },
+    "ko_그래서_37": {
+      "title": "그래서 (Vì vậy, cho nên, thế nên)",
+      "shortExplanation": "Phó từ liên kết biểu thị quan hệ nguyên nhân - kết quả; câu trước nêu nguyên nhân, câu sau nêu kết quả dẫn tới; tương đương với 'vì vậy', 'cho nên'.",
+      "longExplanation": "'그래서' là phó từ liên kết chỉ quan hệ nhân quả rất quen thuộc trong tiếng Hàn. Từ này đứng ở đầu câu sau để biểu thị rằng sự việc xảy ra ở câu sau là kết quả tất yếu, lý do hoặc hệ quả nảy sinh từ tình huống được nêu ở câu trước. Trong tiếng Việt, '그래서' có nghĩa là 'vì vậy', 'cho nên', 'thế nên' hoặc 'do đó'. Nó giúp liên kết hai phát ngôn rời nhau thành một mạch lập luận hoặc kể chuyện chặt chẽ.",
+      "formation": "Câu trước (Nguyên nhân/Lý do). 그래서 + Câu sau (Kết quả)",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi định ăn uống đơn giản thôi, nhưng bạn tôi lại mang đồ ăn ngon đến. Vì vậy tôi đã ăn rất nhiều."
+        },
+        {
+          "translation": "Tôi thích đọc sách. Cho nên mỗi tháng tôi đọc nhiều cuốn sách."
+        },
+        {
+          "translation": "Hôm qua tôi đã học bài quá nhiều. Thế nên hôm nay tôi phải nghỉ ngơi thôi."
+        },
+        {
+          "translation": "Cuối tuần tôi ngủ nướng tới muộn không dậy nổi. Vì thế mà loáng cái đã đến tận trưa rồi."
+        }
+      ]
+    },
+    "ko_그리고_38": {
+      "title": "그리고 (Và, rồi thì, sau đó)",
+      "shortExplanation": "Phó từ liên kết dùng để nối các câu hoặc hành động diễn ra liên tiếp hoặc liệt kê thông tin bổ sung; tương đương với 'và', 'rồi thì', 'sau đó'.",
+      "longExplanation": "'그리고' là phó từ liên kết cơ bản nhất trong tiếng Hàn, dùng để kết nối hai hay nhiều sự việc. Nó có hai công năng chính: thứ nhất là liệt kê các sự vật, trạng thái hoặc thông tin song song bổ sung cho nhau ('và', 'cũng như'); thứ hai là diễn tả các hành động xảy ra nối tiếp nhau theo trình tự thời gian ('rồi thì', 'sau đó'). '그리고' có thể đứng ở đầu câu để nối câu mới với câu trước, hoặc dùng để liên kết các vế câu trong văn kể chuyện.",
+      "formation": "Câu 1. 그리고 + Câu 2",
+      "examples": [
+        {
+          "translation": "Tôi đã đến trường, rồi nghe giảng, rồi ăn trưa cùng bạn bè."
+        },
+        {
+          "translation": "Tôi đã chơi trò chơi điện tử, rồi buồn ngủ nên đi ngủ, sau đó lại tiếp tục chơi tiếp."
+        },
+        {
+          "translation": "Tôi đã uống một ly cà phê, rồi đến thư viện, sau đó ngồi học bài."
+        },
+        {
+          "translation": "Tôi đã gặp bạn, rồi cùng xem phim, sau đó trở về nhà."
+        }
+      ]
+    },
+    "ko_아어여_39": {
+      "title": "아/어/여 주다 (Làm cho, giúp cho...)",
+      "shortExplanation": "Cấu trúc bổ trợ động từ gắn sau thân động từ để biểu thị hành động được thực hiện nhằm mang lại lợi ích hoặc giúp đỡ người khác; tương đương với 'làm... cho', 'làm... giúp'.",
+      "longExplanation": "'-아/어/여 주다' là cấu trúc bổ trợ động từ rất quan trọng trong tiếng Hàn, biểu thị chủ ngữ thực hiện một hành động nào đó vì quyền lợi, sự giúp đỡ hoặc sự quan tâm hướng đến đối tượng khác ('làm giúp', 'làm cho'). Vĩ tố kết nối phụ thuộc vào nguyên âm của thân động từ: nếu kết thúc bằng 'ㅏ' hoặc 'ㅗ', dùng '-아 주다'; các nguyên âm khác dùng '-어 주다'; động từ chứa '하다' chuyển thành '해 주다'. Khi người nhận hành động là người bề trên hoặc cần tôn kính, '주다' được thay thế bằng dạng tôn kính là '드리다' ('-아/어/여 드리다'). Khi chủ thể là người bề trên làm cho mình, thường dùng '-아/어/여 주시다'.",
+      "formation": "Thân động từ + 아/어/여 주다 (Tôn kính người nhận: 아/어/여 드리다 / Tôn kính người làm: 아/어/여 주시다)",
+      "examples": [
+        {
+          "translation": "Tôi đã tổng hợp lại vở ghi bài giảng rồi gửi qua email cho bạn."
+        },
+        {
+          "translation": "Sau khi thấy Seomin dọn dẹp, tôi cũng đã phụ giúp một tay dọn dẹp cùng."
+        },
+        {
+          "translation": "Tôi đã rất trăn trở vì một câu hỏi khó, nhưng thầy giáo đã chỉ cho tôi phương pháp giải quyết."
+        },
+        {
+          "translation": "Tôi rất thích nấu những món ngon rồi chuẩn bị bữa tối chu đáo cho bạn bè."
+        }
+      ]
+    },
+    "ko_아어여_40": {
+      "title": "아/어/여 하다 (Biểu lộ cảm xúc, cảm thấy - Động từ hóa tính từ tâm lý)",
+      "shortExplanation": "Cấu trúc gắn sau thân tính từ chỉ cảm xúc, tâm lý để biến tính từ thành động từ, diễn tả cảm xúc được bộc lộ ra bên ngoài (đặc biệt khi chủ ngữ là ngôi thứ ba).",
+      "longExplanation": "'-아/어/여 하다' là cấu trúc ngữ pháp dùng để chuyển đổi tính từ chỉ cảm giác, tâm lý hoặc cảm xúc chủ quan (như '슬프다' - buồn, '무섭다' - sợ, '좋다' - tốt/thích, '부끄럽다' - ngượng ngùng) thành ngoại động từ biểu thị việc bộc lộ cảm xúc ra bên ngoài. Trong tiếng Hàn, người nói thường không thể trực tiếp khẳng định cảm xúc nội tâm của ngôi thứ ba bằng tính từ đơn thuần; do đó, bắt buộc phải dùng '-아/어/여 하다' để mô tả những gì quan sát thấy được từ phản ứng hay hành vi của đối tượng ngôi thứ ba.",
+      "formation": "Thân tính từ cảm xúc/tâm lý + 아/어/여 하다",
+      "examples": [
+        {
+          "translation": "Anh ấy thấy bộ phim quá buồn nên vừa khóc vừa tỏ ra đau buồn."
+        },
+        {
+          "translation": "Đứa bé cảm thấy sợ hãi nên không thích ngủ một mình."
+        },
+        {
+          "translation": "Cô ấy cảm thấy xấu hổ và ngượng ngùng nên đã ngập ngừng không dám bước ra trước đám đông."
+        },
+        {
+          "translation": "Mọi người sau khi nghe tin tức đó đã vô cùng ngạc nhiên và sửng sốt."
+        }
+      ]
+    },
+    "ko_의_41": {
+      "title": "의 (Của - Trợ từ sở hữu cách)",
+      "shortExplanation": "Trợ từ định ngữ (sở hữu cách) gắn sau danh từ đi trước để bổ nghĩa cho danh từ đi sau, biểu thị quan hệ sở hữu, nguồn gốc hoặc thuộc tính; tương đương với 'của'.",
+      "longExplanation": "'의' là trợ từ sở hữu cách (quan hình cách) trong tiếng Hàn, được gắn sau danh từ đứng trước để bổ nghĩa cho danh từ đứng sau, biểu thị mối quan hệ sở hữu, phụ thuộc, quan hệ gia đình hoặc tính chất đặc trưng ('của...'). Dù viết là '의', khi đóng vai trò là trợ từ sở hữu nó thường được phát âm tự nhiên là [에]. Trong khẩu ngữ hằng ngày, '의' thường được lược bỏ nếu ngữ cảnh đã rõ ràng, hoặc kết hợp với đại từ nhân xưng như: '나의' chuyển thành '내', '저의' chuyển thành '제', '너의' chuyển thành '네' (phát âm là [니]).",
+      "formation": "Danh từ đứng trước + 의 + Danh từ đứng sau",
+      "examples": [
+        {
+          "translation": "Đây là cuốn sách của tôi, vì vậy tôi sẽ không đưa cho bất kỳ ai đâu."
+        },
+        {
+          "translation": "Làm ơn, xin đừng chiếm chỗ đậu xe của tôi."
+        },
+        {
+          "translation": "Cô ấy thật sự vô cùng yêu thương chú cún con của mình."
+        },
+        {
+          "translation": "Đây là chiếc đồng hồ đeo tay cũ của bố anh ấy."
+        }
+      ]
+    },
+    "ko_으로euroTotowardbymeansof_42": {
+      "title": "(으)로 (Hướng về, bằng, bằng cách, thành)",
+      "shortExplanation": "Trợ từ phó từ cách đa nghĩa biểu thị phương tiện, công cụ ('bằng'), phương hướng chuyển động ('về phía'), nguyên liệu, hoặc sự biến đổi ('thành').",
+      "longExplanation": "'(으)로' là trợ từ phó từ cách có phạm vi sử dụng rất phong phú trong tiếng Hàn. Các công năng tiêu biểu bao gồm: (1) Biểu thị phương tiện, công cụ, cách thức thực hiện hành động ('bằng xe buýt', 'bằng tiếng Hàn'); (2) Biểu thị phương hướng di chuyển ('về phía trước', 'hướng đến Seoul'); (3) Biểu thị nguyên liệu, chất liệu cấu thành; (4) Biểu thị sự biến đổi trạng thái hoặc tư cách, vai trò ('trở thành', 'với tư cách là'). Nếu danh từ kết thúc bằng phụ âm (ngoại trừ 'ㄹ'), ta dùng '으로'; nếu danh từ kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ', ta dùng '로'.",
+      "formation": "Danh từ có patchim (trừ ㄹ) + 으로 / Danh từ không có patchim hoặc có patchim ㄹ + 로",
+      "examples": [
+        {
+          "translation": "Tôi đến trường bằng tàu điện ngầm vào mỗi buổi sáng."
+        },
+        {
+          "translation": "Bố tôi thể hiện tình yêu thương thông qua các nguyên liệu nấu ăn."
+        },
+        {
+          "translation": "Công ty đó tái chế giấy để sản xuất thành những cuốn sổ tay."
+        },
+        {
+          "translation": "Để mở cửa, tôi tra chìa khóa vào rồi vặn ổ khóa."
+        }
+      ]
+    },
+    "ko_한테에게_43": {
+      "title": "한테/에게 (Cho, với, tới... [Tiểu từ đối tượng tiếp nhận])",
+      "shortExplanation": "Trợ từ chỉ đối tượng hữu tình (người, động vật) tiếp nhận hành động; '에게' mang tính văn viết/chuẩn tắc, '한테' mang tính khẩu ngữ; tương đương với 'cho', 'với', 'tới'.",
+      "longExplanation": "'한테/에게' là trợ từ chỉ đối tượng hướng đến hoặc người tiếp nhận hành động (dữ cách) trong tiếng Hàn. Trợ từ này chỉ được gắn sau danh từ chỉ người hoặc động vật (danh từ hữu tình). '에게' được dùng phổ biến trong cả văn viết, tình huống trang trọng lẫn khẩu ngữ, trong khi '한테' chủ yếu được ưa chuộng trong văn nói giao tiếp hằng ngày. Khi đối tượng tiếp nhận là người lớn tuổi hoặc nhân vật cần tôn kính (như ông bà, cha mẹ, thầy cô), người Hàn thay thế '한테/에게' bằng trợ từ kính ngữ '께'.",
+      "formation": "Danh từ chỉ người/động vật + 한테 (khẩu ngữ) / 에게 (thông dụng, văn viết) (Tôn kính: 께)",
+      "examples": [
+        {
+          "translation": "Hôm qua tôi đã tặng một món quà cho bạn mình."
+        },
+        {
+          "translation": "Tôi muốn trực tiếp cất tiếng cho cô ấy nghe thấy giọng của mình."
+        },
+        {
+          "translation": "Em muốn báo tin vui này cho chị gái biết."
+        },
+        {
+          "translation": "Tôi đã nấu nướng chuẩn bị bữa tối chu đáo cho mẹ."
+        }
+      ]
+    },
+    "ko_한테서에서_44": {
+      "title": "한테서/에서 (Từ ai đó / Từ nơi nào đó - Trợ từ chỉ xuất xứ, điểm xuất phát)",
+      "shortExplanation": "Trợ từ chỉ xuất xứ, nguồn gốc hoặc điểm xuất phát; '한테서' dùng cho người/động vật, '에서' dùng cho địa điểm, cơ quan, tổ chức; tương đương với 'từ'.",
+      "longExplanation": "'한테서' và '에서' là hai trợ từ biểu thị điểm khởi đầu, nguồn gốc hoặc xuất xứ của hành động hay sự vật trong tiếng Hàn. Điểm khác biệt mấu chốt nằm ở loại danh từ đi kèm: '한테서' (hoặc dạng chuẩn/trang trọng hơn là '에게서') được gắn sau danh từ chỉ người hoặc động vật (danh từ hữu tình) để biểu thị nhận được cái gì từ ai đó ('từ bạn bè', 'từ mẹ'); trong khi '에서' được gắn sau danh từ chỉ địa điểm, nơi chốn hoặc tổ chức, cơ quan ('từ thư viện', 'từ Seoul'). Khi đối tượng xuất phát là người bề trên cần tôn kính, người Hàn dùng '께로부터' hoặc '에게서'.",
+      "formation": "Danh từ chỉ người + 한테서 / Danh từ chỉ nơi chốn/tổ chức + 에서 (Chuẩn trang trọng cho người: 에게서 / Kính ngữ: 께로부터)",
+      "examples": [
+        {
+          "translation": "Tôi đã nhận được thư từ một người bạn. Cậu ấy luôn giữ liên lạc rất đều đặn."
+        },
+        {
+          "translation": "Đi ô tô từ Seoul đến Busan mất khoảng bao lâu nhỉ?"
+        },
+        {
+          "translation": "Tôi đã mượn cuốn sách này từ thư viện."
+        },
+        {
+          "translation": "Món ăn đó tôi đã học được từ mẹ của mình."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_아직_30": {
+      "title": "아직（还、尚、还没）",
+      "shortExplanation": "副词，表示某种状态或动作持续至今或尚未完成，相当于汉语的“还”、“依然”、“尚未”、“还没”。",
+      "longExplanation": "“아직”是韩语中表示持续或未完成的常用副词，用以指明某种行为、状态至今仍在延续，或者预期的动作尚未发生。在肯定句或进行时态中常与“-고 있다”或“-는 중이다”连用，表示“仍在……”、“依然……”；而在否定句中则与“안”、“못”或否定词尾“-지 않다/-지 못하다”搭配，构成“아직 안/못……”的形式，相当于汉语的“还没……”、“尚未……”。",
+      "formation": "아직 + 动词 / 形容词 / 名词",
+      "examples": [
+        {
+          "translation": "我目前还不能完全听懂韩语，还需要坚持不懈地练习。"
+        },
+        {
+          "translation": "即使能够做决定，但我现在还在思考那个问题。"
+        },
+        {
+          "translation": "我还没看那部电影，打算周末看。"
+        },
+        {
+          "translation": "我还没吃午饭呢，肚子真饿啊。"
+        }
+      ]
+    },
+    "ko_때_31": {
+      "title": "때（时候、时、之时）",
+      "shortExplanation": "名词/不完全名词，用以表示某一动作或状态发生的特定时间、时刻，相当于汉语的“……的时候”、“……时”。",
+      "longExplanation": "“때”在韩语中表示时间、时刻或特定的时节。既可以直接接在部分表示时间或事件的名词之后（如“방학 때”放假时、“첫 만남 때”初次相遇时），也可以与动词或形容词的定语词尾“-(으)ㄹ”连用，构成“-(으)ㄹ 때”的形式，表示“当……的时候”或“在……状态下”。用于叙述过去已发生的事实、眼前的动作或未来可能发生的情形。",
+      "formation": "名词 + 때 / 动词/形容词词干 + (으)ㄹ 때",
+      "examples": [
+        {
+          "translation": "我从小时候起就一直很想学韩语。"
+        },
+        {
+          "translation": "当那个女孩微笑的时候，我真的感到非常幸福。"
+        },
+        {
+          "translation": "在第一次相遇的时候，我就知道自己永远忘不了他。"
+        },
+        {
+          "translation": "这个周末想去旅行，可在没有时间的时候该怎么办呢？"
+        }
+      ]
+    },
+    "ko_으려고하다euryeogohadaIntendtodo_32": {
+      "title": "(으)려고 하다（打算做……、想要做……、将要……）",
+      "shortExplanation": "表示主语打算、计划做某事，相当于汉语的“打算……”、“想要……”、“准备……”；有时也表示眼前即将发生的征兆。",
+      "longExplanation": "“-(으)려고 하다”由表示意图的连接词尾“-(으)려고”与辅助动词“하다”组合而成，常用于表达说话人或主语即将实施某项行为的打算、主观意图或计划。动词词干有收音（底辅音，ㄹ除外）时接“-으려고 하다”；动词词干无收音或以收音“ㄹ”结尾时接“-려고 하다”。此外，当该句型用于天气等自然现象时（如“비가 오려고 하다”），可表示某种状态即将发生的兆头（“似乎要……”、“看起来快要……”）。",
+      "formation": "闭音节动词词干（有收音，ㄹ除外） + 으려고 하다 / 开音节动词词干或以 ㄹ 结尾的词干 + 려고 하다",
+      "examples": [
+        {
+          "translation": "为了把韩语学得更好，我打算努力下功夫。我计划多加练习来提高自己的水平。"
+        },
+        {
+          "translation": "明天看起来要下雨，我打算带上雨伞，以此来预防感冒。"
+        },
+        {
+          "translation": "我打算和朋友一起去旅行，一起创造美好的回忆。"
+        },
+        {
+          "translation": "她计划下个月开始筹备婚礼，想把所有事情都准备得尽善尽美。"
+        }
+      ]
+    },
+    "ko_처럼_33": {
+      "title": "처럼（像……一样、如同、好似）",
+      "shortExplanation": "格助词，附在名词后，表示性状、动作或程度与前面的事物相似，相当于汉语的“像……一样”、“如同”。",
+      "longExplanation": "“처럼”是韩语中表示比较的比况格助词，直接加在名词之后，无论前面名词有无收音均直接接“처럼”。它以所连接的名词作为参照标准，表示句中的人或事物在形态、性质或动作特征上与该名词非常相似，相当于汉语的“像……一样”、“如同”。在文学修辞的明喻、暗喻以及日常生动的口语表达中被极其广泛地使用。",
+      "formation": "名词 + 처럼",
+      "examples": [
+        {
+          "translation": "他看起来像狮子一样强壮，但实际上并没有那么刚强。"
+        },
+        {
+          "translation": "我们的朋友总是像星星一样闪闪发光，是一位深受大家喜爱的人。"
+        },
+        {
+          "translation": "她翩翩起舞宛如彩蝶，真是既美丽又优雅。"
+        },
+        {
+          "translation": "他如同雄鹰般展翅高飞，那飞行的英姿令人印象极为深刻。"
+        }
+      ]
+    },
+    "ko_같이_34": {
+      "title": "같이（一起、一同 / 像……一样）",
+      "shortExplanation": "主要作为副词表示共同做某事（“一起”、“一同”），常与助词“와/과”或“(이)랑”连用；亦可作格助词表示比况（“如同”）。",
+      "longExplanation": "“같이”在韩语中具有副词和格助词两种核心用法。作为副词时，常与连接助词连用构成“-(와/과) 같이”或“-(이)랑 같이”的形式，强调两人或多人“一起”、“一同”共同参与并完成某项行动；亦可直接单独放在动词前使用。另一方面，当紧接在名词后不留空格时，它充当比况助词，用法和意义均与“처럼”相同，表示“像……一样”。",
+      "formation": "名词 + 와/과/랑 같이（一起） / 名词 + 같이（如同）",
+      "examples": [
+        {
+          "translation": "我和我的朋友一起去看了电影，真的太有趣了！"
+        },
+        {
+          "translation": "明天我们大家决定一起去公园野餐。"
+        },
+        {
+          "translation": "如果和妈妈一起做饭，总能做出更加美味的饭菜。"
+        },
+        {
+          "translation": "和家教老师一起学习的话，能够收获非常大的帮助。"
+        }
+      ]
+    },
+    "ko_이랑irangWith_35": {
+      "title": "(이)랑（和、跟、与）",
+      "shortExplanation": "口语常用助词，接在名词之后，表示并列连接（“和”）或与他人共同进行某事（“跟……一起”）。",
+      "longExplanation": "“(이)랑”是韩语口语中极其高频的连接助词与共同格助词。主要具有两种功能：一是列举两个以上的名词，相当于汉语的“和”、“与”；二是表示动作的共同参与者或伴随者，相当于汉语的“跟……一起”。名词词尾有收音时接“이랑”，无收音时接“랑”。与具有书面语色彩的“와/과”相比，“(이)랑”更显口语化、亲切自然。",
+      "formation": "闭音节名词（有收音） + 이랑 / 开音节名词（无收音） + 랑",
+      "examples": [
+        {
+          "translation": "我和朋友一起看了电影，那部电影很有意思。"
+        },
+        {
+          "translation": "昨天我和妈妈去了菜市场，我们买了很多食材。"
+        },
+        {
+          "translation": "我和弟弟妹妹在公园里玩耍，我们玩得非常开心。"
+        },
+        {
+          "translation": "今天午休时间和朋友一起听了音乐，那音乐太动听了。"
+        }
+      ]
+    },
+    "ko_그런데_36": {
+      "title": "그런데（不过、但是、可是 / 对了、话说回来）",
+      "shortExplanation": "连接副词，主要用于引出与前文相反或出乎意料的内容（“但是”、“可是”），亦可用于转换话题（“不过”、“话说回来”）。",
+      "longExplanation": "“그런데”是韩语中极为核心的句际连接副词，常置于后一个句子的句首。其主要用法包括两方面：一是表示转折或逆接，指出后句的事实与前句的内容形成鲜明对照，或出现了与预期不符的转折，相当于汉语的“但是”、“不过”、“可是”；二是用于自然地转换交谈话题或提出新的背景情况，相当于“对了”、“话说回来”。在口语中常略缩为“근데”。",
+      "formation": "前一分句/句子. 그런데 + 后一分句/句子",
+      "examples": [
+        {
+          "translation": "起初那个作业看起来很简单，但是实际做起来却非常难。"
+        },
+        {
+          "translation": "我最喜欢的运动是篮球，可是我的朋友却一点也不喜欢篮球。"
+        },
+        {
+          "translation": "昨天我去了电影院，不过电影当时已经开场了。"
+        },
+        {
+          "translation": "朋友向我推荐了这条牛仔裤，可是它并不适合我的风格。"
+        }
+      ]
+    },
+    "ko_그래서_37": {
+      "title": "그래서（所以、因此、因而）",
+      "shortExplanation": "连接副词，表示因果承接关系；前句阐述原因，后句承接说明结果，相当于汉语的“所以”、“因此”。",
+      "longExplanation": "“그래서”是韩语中表示前因后果逻辑关系的核心连接副词，位于后一句句首。前句提示动作或事件的原因、理由或背景，而紧随其后的句子则交代由此顺理成章导致的行为、结果或决策。相当于汉语的“所以”、“因此”、“因而”。它能使两句独立的表述自然衔接，多用于叙事、说理与日常对话之中。",
+      "formation": "前一分句/句子（原因）. 그래서 + 后一分句/句子（结果）",
+      "examples": [
+        {
+          "translation": "今天本来想简单吃点，但朋友带了美食过来，所以我吃了很多。"
+        },
+        {
+          "translation": "我很喜欢看书，因此每个月都会读好几本书。"
+        },
+        {
+          "translation": "昨天学习学得太多了，所以今天得好好休息一下了。"
+        },
+        {
+          "translation": "周末睡到很晚起不来，结果一觉醒来就已经到中午了。"
+        }
+      ]
+    },
+    "ko_그리고_38": {
+      "title": "그리고（而且、还有、然后）",
+      "shortExplanation": "连接副词，用于顺接前后两个句子，表示并列补充（“而且”、“还”）或按时间顺序连续发生的行为（“然后”）。",
+      "longExplanation": "“그리고”是韩语中应用极其广泛的基础连接副词。主要有两种核心用法：一是用于并列罗列事物、动作或事实，向听者提供追加补充信息，相当于汉语的“而且”、“还有”；二是按照时间先后顺序交代接连发生的事件或动作，相当于汉语的“然后”、“接着”。常置于后一个句子的句首，使段落叙述流畅连贯。",
+      "formation": "句子1. 그리고 + 句子2",
+      "examples": [
+        {
+          "translation": "我去了学校，接着听了课，然后和朋友们一起吃了午饭。"
+        },
+        {
+          "translation": "我玩了游戏，之后犯困就睡了一觉，醒来后接着又玩了游戏。"
+        },
+        {
+          "translation": "我喝了咖啡，然后去了图书馆，之后在那里认真学习。"
+        },
+        {
+          "translation": "我见了朋友，接着看了电影，然后回到了家中。"
+        }
+      ]
+    },
+    "ko_아어여_39": {
+      "title": "아/어/여 주다（为……做、帮……做、给……做）",
+      "shortExplanation": "辅助动词句型，接在动词词干后，表示为他人提供帮助或施惠于他人，相当于汉语的“为……做”、“帮……做”、“给……做”。",
+      "longExplanation": "“-아/어/여 주다”是由连接词尾“-아/어/여”与辅助动词“주다（给）”结合而成的句型，用于表示动作执行者为了他人的利益或帮助他人而实施某种行为。词干末尾元音为“ㅏ”或“ㅗ”时接“-아 주다”；其他元音接“-어 주다”；以“하다”结尾的动词变为“해 주다”。当动作接受者是长辈或尊者时，须使用谦称形式“-아/어/여 드리다”；而当长辈为晚辈或听者做事时，则使用尊称形式“-아/어/여 주시다”。",
+      "formation": "动词词干 + 아/어/여 주다（敬受谦称：아/어/여 드리다 / 主体尊称：아/어/여 주시다）",
+      "examples": [
+        {
+          "translation": "我整理好了课堂笔记，并通过电子邮件发给了朋友。"
+        },
+        {
+          "translation": "看到徐敏在打扫卫生，我也跟着帮着打扫了一下。"
+        },
+        {
+          "translation": "之前因为一道难题而苦恼，老师为我详细指导了解决方法。"
+        },
+        {
+          "translation": "我喜欢做可口的饭菜，为朋友们准备丰盛的晚餐。"
+        }
+      ]
+    },
+    "ko_아어여_40": {
+      "title": "아/어/여 하다（表现出……的情感、感到……【形容词动词化】）",
+      "shortExplanation": "接在心理、感觉形容词词干后，将其转化为他动词，用于表达客观显现的情感反应，特别用于描述第三人称的情感感受。",
+      "longExplanation": "“-아/어/여 하다”是韩语中极具语言学特色的形容词动词化结构。当修饰人的内在心理感受、情绪或感觉的形容词（如“슬프다”悲伤、“무섭다”害怕、“부끄럽다”害羞）接上“-아/어/여 하다”后，便转化为动词，表示向外界表露、展现出相应的情感或做出相应反应。在韩语规则中，第一人称可直接用形容词表达内心感受，而描写第三人称的情感时，通常必须使用“-아/어/여 하다”，以表明这是说话者通过观察对方外在言行所感知到的情感反应。",
+      "formation": "心理/感觉形容词词干 + 아/어/여 하다",
+      "examples": [
+        {
+          "translation": "他觉得那部电影太悲伤了，又是流泪又是难过伤心。"
+        },
+        {
+          "translation": "孩子感到很害怕，所以讨厌独自一人睡觉。"
+        },
+        {
+          "translation": "她感到害羞不好意思，犹豫着不敢站到大家面前。"
+        },
+        {
+          "translation": "大家听到那个消息后，都表现得极其震惊诧异。"
+        }
+      ]
+    },
+    "ko_의_41": {
+      "title": "의（的【领格助词/属格助词】）",
+      "shortExplanation": "属格助词，附在名词后修饰后接名词，表示所有、所属、从属或属性关系，相当于汉语的“的”。",
+      "longExplanation": "“의”是韩语中唯一的定语格助词（属格助词/领格助词），置于前一名词之后用以修饰后一名词，标明两者之间存在所有权、所属关系、亲属关系或事物属性，相当于汉语中的“的”。虽然标准书写为“의”，但作为助词使用时日常口语常发音为[에]。此外，在口语中“의”经常省略；与人称代词结合时常缩略为缩略词，如“나의”缩略为“내”、“저의”缩略为“제”、“너의”缩略为“네（口语常读作니）”。",
+      "formation": "先行名词 + 의 + 后行名词",
+      "examples": [
+        {
+          "translation": "这是我的书，所以我不会借给任何人的。"
+        },
+        {
+          "translation": "拜托了，请不要占用我的停车位。"
+        },
+        {
+          "translation": "她真的很疼爱自己的那只小狗。"
+        },
+        {
+          "translation": "这是他父亲留下的一块旧手表。"
+        }
+      ]
+    },
+    "ko_으로euroTotowardbymeansof_42": {
+      "title": "(으)로（向、往 / 用、以 / 变为、作为）",
+      "shortExplanation": "多功能副词格助词，表示方向、工具/手段（“用”、“以”）、原料材质、以及变化或资格（“变为”、“作为”）。",
+      "longExplanation": "“(으)로”是韩语中功能极强、用法极其多样的副词格助词。其核心功能包括：① 表示行动进行的方向或目的地（“朝……”、“向……”）；② 表示实施动作所借助的工具、手段、语言或交通方式（“用……”、“乘……”）；③ 表示事物的原料、材料；④ 表示身份、资格或事物形态的转变（“变为……”、“作为……”）。名词词干末尾有收音（辅音，ㄹ除外）时接“으로”；无收音（元音结尾）或以辅音收音“ㄹ”结尾时接“로”。",
+      "formation": "闭音节名词（有收音，ㄹ除外） + 으로 / 开音节名词或收音为 ㄹ 的名词 + 로",
+      "examples": [
+        {
+          "translation": "我每天早晨乘地铁去学校。"
+        },
+        {
+          "translation": "我爸爸用料理的食材来表达他的爱意。"
+        },
+        {
+          "translation": "那家公司回收利用废纸，将其制成笔记本。"
+        },
+        {
+          "translation": "为了开门，我用钥匙转动了门锁。"
+        }
+      ]
+    },
+    "ko_한테에게_43": {
+      "title": "한테/에게（给、向、对【与格助词】）",
+      "shortExplanation": "与格助词，附在有生命的人或动物名词后，表示动作涉及的对象或接受者；“에게”多用于书面语或通用场合，“한테”多用于口语。",
+      "longExplanation": "“한테/에게”是韩语中表示动作承受者或接受对象的副词格助词（与格助词），相当于汉语的“给……”、“向……”、“对……”。它们只能连接有生命的人物或动物名词（有情名词）。其中“에게”适用范围更广，常见于书面语、正式场合以及通用语境；而“한테”则极具口语色彩，广泛用于日常生活会话中。需要特别注意的是，当动作所指向的对象是长辈或需要尊敬的人物时，须使用敬语助词“께”。",
+      "formation": "人物/动物名词 + 한테（口语） / 에게（通用/书面语）（尊敬形式：께）",
+      "examples": [
+        {
+          "translation": "昨天我送了朋友一份礼物。"
+        },
+        {
+          "translation": "我想让她亲耳听到我本人的声音。"
+        },
+        {
+          "translation": "我想把这个好消息告诉姐姐。"
+        },
+        {
+          "translation": "我为母亲悉心准备了晚餐。"
+        }
+      ]
+    },
+    "ko_한테서에서_44": {
+      "title": "한테서/에서（从……那里 / 从……地方【出发点/来源助词】）",
+      "shortExplanation": "表示动作出发点、来源或出处的助词；“한테서”用于人，“에서”用于场所、机构或无生命地点，相当于汉语的“从”、“自”。",
+      "longExplanation": "“한테서”与“에서”是韩语中表示来源、出处或起点的副词格助词。两者在使用对象上有严格的区别：“한테서”（书面语及通用语为“에게서”）必须附着在有生命的人或动物名词后，表示从某人那里得到或学到某事物（“从朋友那里收到信”）；而“에서”则附着在场所、地点、机构或无生命名物之后，表示空间的出发点或出处（“从首尔到釜山”、“从图书馆借书”）。当来源对象是长辈等尊者时，通常使用敬语形式“께로부터”或“에게서”。",
+      "formation": "人物名词 + 한테서 / 场所及机构名词 + 에서（人物通用/书面语：에게서 / 尊敬形式：께로부터）",
+      "examples": [
+        {
+          "translation": "我收到了朋友寄来的信，他总是很热心地和我保持联系。"
+        },
+        {
+          "translation": "从首尔开车到釜山大概需要花多长时间呢？"
+        },
+        {
+          "translation": "这本书是我从图书馆借来的。"
+        },
+        {
+          "translation": "那道菜我是从妈妈那里学会的。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_아직_30": {
+      "title": "아직（まだ・いまだに・なお）",
+      "shortExplanation": "ある状態や動作が現在まで持続していることや、まだ完了していないことを表す副詞で、日本語の「まだ」「いまだに」に相当します。",
+      "longExplanation": "「아직」は、過去から現在に至るまで状態や行為に変化がなく続いていること、あるいは行われるべき動作がまだ行われていないことを表す副詞です。肯定の文脈や進行形（-고 있다など）と共に用いられると「まだ〜している」「いまだに〜だ」という意味になり、否定形（안、못、-지 않다など）と呼応すると「まだ〜していない」「いまだ〜できない」という意味を表します。",
+      "formation": "아직 ＋ 動詞 / 形容詞 / 名詞",
+      "examples": [
+        {
+          "translation": "私はまだ韓国語を完璧には理解できません。継続的な練習が必要です。"
+        },
+        {
+          "translation": "決定することはできても、まだその問題について考えている最中です。"
+        },
+        {
+          "translation": "まだその映画を観ていません。週末に観る予定です。"
+        },
+        {
+          "translation": "まだお昼ご飯を食べていません。とてもお腹が空きました。"
+        }
+      ]
+    },
+    "ko_때_31": {
+      "title": "때（〜の時・〜頃・〜とき）",
+      "shortExplanation": "特定の時間や時期、動作・状態が起きる瞬間を表す名詞（不完全名詞）で、日本語の「〜の時」「〜するとき」に相当します。",
+      "longExplanation": "「때」は、時や時期、ある出来事が生じるタイミングを表す語です。名詞の直後に接続して「〜の時」「〜の頃」（例：방학 때＝休みの時、점심 때＝昼食時、첫 만남 때＝初対面の時）と表現できるほか、動詞や形容詞の連体形語尾「-(으)ㄹ」の後ろに付いて「-(으)ㄹ 때（〜する時、〜な時）」の形で広く使われます。過去・現在・未来のいずれの時点における状況描写にも活用されます。",
+      "formation": "名詞 ＋ 때 / 動詞・形容詞の語幹 ＋ (으)ㄹ 때",
+      "examples": [
+        {
+          "translation": "私は幼い頃から韓国語を習いたがっていました。"
+        },
+        {
+          "translation": "その女性が笑う時、私は本当に幸せな気持ちになります。"
+        },
+        {
+          "translation": "初めて会った時の彼のことを、私は絶対に忘れられないでしょう。"
+        },
+        {
+          "translation": "今週末に旅行へ行きたいのですが、時間がない時はどうすればよいでしょうか？"
+        }
+      ]
+    },
+    "ko_으려고하다euryeogohadaIntendtodo_32": {
+      "title": "(으)려고 하다（〜しようとする・〜するつもりだ・〜しようと思う）",
+      "shortExplanation": "主語がある行動をとろうとする意図や計画を表す表現で、日本語の「〜しようとする」「〜するつもりだ」に相当します。",
+      "longExplanation": "「-(으)려고 하다」は、意図・目的を表す接続語尾「-(으)려고」に動詞「하다」が結合した表現で、主語が将来ある動作を行う計画や明確な意図を持っていることを示します。動詞の語幹末尾にパッチムがある場合（ㄹパッチムを除く）は「-으려고 하다」を接続し、母音で終わる場合または「ㄹ」パッチムで終わる場合は「-려고 하다」を接続します。また、天候などの無意志現象に用いられた場合は「今にも〜しそうだ」という直前の兆候を表すこともあります。",
+      "formation": "パッチムあり動詞の語幹（ㄹを除く） ＋ 으려고 하다 / パッチムなし動詞の語幹およびㄹパッチム動詞の語幹 ＋ 려고 하다",
+      "examples": [
+        {
+          "translation": "私は韓国語をもっと上達させるために努力するつもりです。たくさん練習して実力を伸ばそうと思います。"
+        },
+        {
+          "translation": "明日は雨が降りそうなので傘を持っていこうと思います。風邪を予防するつもりです。"
+        },
+        {
+          "translation": "友達と一緒に旅行へ行こうと思っています。一緒に良い思い出を作ろうとしています。"
+        },
+        {
+          "translation": "彼女は来月に結婚の準備をしようとしています。すべてを完璧に整えるつもりです。"
+        }
+      ]
+    },
+    "ko_처럼_33": {
+      "title": "처럼（〜のように・〜みたいに・〜のごとく）",
+      "shortExplanation": "名詞の後ろに付き、形や状態、性質がその名詞に似ていることを表す比況の格助詞で、日本語の「〜のように」「〜みたいに」に相当します。",
+      "longExplanation": "「처럼」は、体言（名詞）の直後に接続して、前にある名詞を比較の基準とし、動作や状態がそれとよく似ていることを表す格助詞（副詞格助詞）です。直前の名詞のパッチムの有無に関わらずそのまま「처럼」を用います。日常会話での直喩表現から文学的な比喩に至るまで幅広く活用され、日本語の「〜のように」「〜みたいに」と完全に一致します。",
+      "formation": "名詞 ＋ 처럼",
+      "examples": [
+        {
+          "translation": "彼はライオンのように強そうに見えましたが、実際にはそこまで強くはありません。"
+        },
+        {
+          "translation": "私たちの友達はいつも星のように輝いています。みんなから愛される人です。"
+        },
+        {
+          "translation": "彼女は蝶のように踊ります。本当に美しくて優雅です。"
+        },
+        {
+          "translation": "彼はワシのように空高く飛んでいきました。その飛行ぶりは実に印象的でした。"
+        }
+      ]
+    },
+    "ko_같이_34": {
+      "title": "같이（一緒に・共に / 〜のように）",
+      "shortExplanation": "主に動作を共同で行うことを表す副詞（「一緒に」「共に」）として使われ、名詞に直接付いて「〜のように」と比況を表す助詞としても用いられます。",
+      "longExplanation": "「같이」は日常会話で非常によく使われる語で、副詞としての用法と助詞としての用法の2つがあります。副詞としては、助詞と組み合わさった「-(와/과) 같이」や「-(이)랑 같이」の形で「〜と一緒に」「〜と共に」という意味を表し、他者と行動を共にすることを強調します。一方、名詞の直後に分かち書きをせずに直接接続する場合は格助詞として機能し、「처럼」と同様に「〜のように」「〜と同様に」という比況の意味を表します。",
+      "formation": "名詞 ＋ 와/과/랑 같이（一緒に） / 名詞 ＋ 같이（〜のように）",
+      "examples": [
+        {
+          "translation": "友達と一緒に映画を観に行きました。本当に楽しかったです！"
+        },
+        {
+          "translation": "明日は私たちみんなで一緒に公園へ行ってピクニックをすることにしました。"
+        },
+        {
+          "translation": "お母さんと一緒に料理をすると、いつもより美味しい料理が作れます。"
+        },
+        {
+          "translation": "家庭教師の先生と一緒に勉強すると、とても大きな助けになります。"
+        }
+      ]
+    },
+    "ko_이랑irangWith_35": {
+      "title": "(이)랑（〜と・〜と一緒に）",
+      "shortExplanation": "名詞の後ろに付き、並列（「〜と」）や行動を共にする相手（「〜と一緒に」）を表す口語的な助詞です。",
+      "longExplanation": "「(이)랑」は、日常の会話で親しみを持って多用される接続助詞・格助詞です。主に二つの働きがあり、名詞と名詞を並列して繋ぐ「〜と」の意味と、動作を共に行う相手を表す「〜と（一緒に）」の意味を持ちます。直前の名詞にパッチムがある場合は「이랑」を接続し、パッチムがない場合は「랑」を接続します。文章語的な「와/과」に比べて、非常にフランクでカジュアルな響きを持ちます。",
+      "formation": "パッチムあり名詞 ＋ 이랑 / パッチムなし名詞 ＋ 랑",
+      "examples": [
+        {
+          "translation": "私は友達と映画を観ましたが、その映画は面白かったです。"
+        },
+        {
+          "translation": "昨日私はお母さんと市場へ行き、私たちはたくさんの食料品を買いました。"
+        },
+        {
+          "translation": "私は弟（妹）と公園で遊びましたが、私たちはとても楽しかったです。"
+        },
+        {
+          "translation": "今日のお昼休みに友達と音楽を聴きましたが、その曲はとても素晴らしかったです。"
+        }
+      ]
+    },
+    "ko_그런데_36": {
+      "title": "그런데（ところが・でも・しかし / ところで）",
+      "shortExplanation": "前の文と対立・逆接する事実を導く接続副詞（「ところが」「しかし」「でも」）で、話題を切り替える際（「ところで」）にも使われます。",
+      "longExplanation": "「그런데」は、文頭に置かれて前後の文を繋ぐ代表的な接続副詞です。主に2つの機能があり、1つは前文で述べた内容から予期されることとは異なる結果や対比・逆接を提示する用法で、日本語の「ところが」「しかし」「でも」に相当します。もう1つは、会話の方向性を新しい話題へと自然に転換する用法で、「ところで」「さて」に相当します。日常会話のくだけた場面では「근데」と短縮されて発音されることも多いです。",
+      "formation": "先行文. 그런데 ＋ 後続文",
+      "examples": [
+        {
+          "translation": "最初はその課題が簡単そうに見えましたが、ところが実際にやってみるととても難しかったです。"
+        },
+        {
+          "translation": "私が一番好きなスポーツはバスケですが、でも私の友達はバスケがまったく好きではありません。"
+        },
+        {
+          "translation": "昨日映画館へ行きましたが、ところが映画はすでに始まってしまった後でした。"
+        },
+        {
+          "translation": "友達がこのジーンズを勧めてくれましたが、しかし私のスタイルには合っていません。"
+        }
+      ]
+    },
+    "ko_그래서_37": {
+      "title": "그래서（だから・それで・そのため）",
+      "shortExplanation": "前文の原因・理由を受けて後文でその結果を述べる接続副詞で、日本語の「だから」「それで」「そのため」に相当します。",
+      "longExplanation": "「그래서」は、先行する文で原因や理由を提示し、後続する文でその当然の結果や帰結を導き出す順接の接続副詞です。日本語の「だから」「それで」「そのため」に正確に対応します。日常会話から文章表現まで幅広く用いられ、文と文を因果関係によって論理的かつ滑らかに結びつける役割を果たします。",
+      "formation": "先行文（原因・理由）. 그래서 ＋ 後続文（結果）",
+      "examples": [
+        {
+          "translation": "今日は軽めに食べようと思っていたのですが、友達が美味しい食べ物を持ってきてくれました。だからたくさん食べました。"
+        },
+        {
+          "translation": "私は読書が好きです。そのため月に何冊もの本を読みます。"
+        },
+        {
+          "translation": "昨日勉強をしすぎました。だから今日は休まなければなりません。"
+        },
+        {
+          "translation": "週末は遅くまで寝ていて起きられませんでした。それでいつの間にかお昼になってしまいました。"
+        }
+      ]
+    },
+    "ko_그리고_38": {
+      "title": "그리고（そして・それから・それに）",
+      "shortExplanation": "前後の文を繋ぎ、事物の並列・付加（「そして」「それに」）や、時間の経過に伴う動作の連続（「それから」）を表す接続副詞です。",
+      "longExplanation": "「그리고」は、文と文を対等に繋ぐ最も基本的な順接の接続副詞です。主な機能として、2つ以上の事実や情報を並べて追加する並列の用法（「そして」「それに」）と、過去から順を追って行為や出来事が次々に起こることを述べる継起・連続の用法（「それから」「そのあと」）の2通りがあります。物語の展開や手順の説明など、あらゆる文脈で日常的に使われます。",
+      "formation": "文1. 그리고 ＋ 文2",
+      "examples": [
+        {
+          "translation": "私は学校へ行きました、それから授業を受けました、そして友達とお昼ご飯を食べました。"
+        },
+        {
+          "translation": "ゲームをしました、それから眠くなって寝ました、そしてまたゲームをしました。"
+        },
+        {
+          "translation": "私はコーヒーを飲みました、それから図書館へ行きました、そして勉強をしました。"
+        },
+        {
+          "translation": "友達に会いました、それから映画を観ました、そして家に帰ってきました。"
+        }
+      ]
+    },
+    "ko_아어여_39": {
+      "title": "아/어/여 주다（〜てあげる・〜てくれる・〜て差し上げる）",
+      "shortExplanation": "動詞の語幹に付き、他者の利益のために親切に行動することを表す補助動詞表現で、日本語の「〜てあげる」「〜てくれる」に相当します。",
+      "longExplanation": "「-아/어/여 주다」は、接続語尾「-아/어/여」に補助動詞「주다（与える・くれる）」が接続した構文で、相手や他者のために親切や好意をもってある動作を行ったり手助けしたりすることを表します。語幹末尾の母音が陽母音（ㅏ, ㅗ）の場合は「-아 주다」、陰母音の場合は「-어 주다」、「하다」動詞は「해 주다」となります。行為を受ける相手が目上の人である場合は謙譲語の「-아/어/여 드리다（〜て差し上げる）」を用い、目上の人が自分にしてくれる場合は尊敬補助動詞の「-아/어/여 주시다（〜てくださる）」を用います。",
+      "formation": "動詞の語幹 ＋ 아/어/여 주다（謙譲表現：아/어/여 드리다 / 尊敬表現：아/어/여 주시다）",
+      "examples": [
+        {
+          "translation": "私は講義ノートをまとめて友達にメールで送ってあげました。"
+        },
+        {
+          "translation": "ソミンさんが掃除をしてくれているのを見たあと、私も掃除を手伝ってあげました。"
+        },
+        {
+          "translation": "難しい問題のせいで悩んでいたのですが、先生が解決方法を教えてくださいました。"
+        },
+        {
+          "translation": "美味しい料理を作って友達に夕食をふるまってあげるのが好きです。"
+        }
+      ]
+    },
+    "ko_아어여_40": {
+      "title": "아/어/여 하다（〜がる・〜の感情を表す【感情形容詞の動詞化】）",
+      "shortExplanation": "感情や感覚を表す形容詞の語幹に付き、その感情を行動や表情に表していることを示す表現で、主に三人称の感情描写に用いられます（日本語の「〜がる」に相当）。",
+      "longExplanation": "「-아/어/여 하다」は、主観的な感情や心理・感覚を表す形容詞（例：슬프다＝悲しい、무섭다＝怖い、부끄럽다＝恥ずかしい）を動詞化する重要な文型です。日本語の接尾辞「〜がる」（悲しがる、怖がる、恥ずかしがる）に直接対応します。韓国語では、話し手が第三者の内面的な心理を直接断定することができないため、第三者の感情や欲求を客観的に観察して述べる際には必ずこの「-아/어/여 하다」を用いて動詞として表現します。",
+      "formation": "感情・感覚形容詞の語幹 ＋ 아/어/여 하다",
+      "examples": [
+        {
+          "translation": "彼は映画があまりにも悲しくて泣いたり悲しがったりしています。"
+        },
+        {
+          "translation": "子どもが怖がって一人で寝るのを嫌がります。"
+        },
+        {
+          "translation": "彼女は恥ずかしがって人前に出るのをためらいました。"
+        },
+        {
+          "translation": "人々はその知らせを聞いて非常に驚いていました。"
+        }
+      ]
+    },
+    "ko_의_41": {
+      "title": "의（〜の【連体格助詞】）",
+      "shortExplanation": "名詞の後ろに付き、後ろに来る名詞を修飾して所有や所属、関係などを表す連体格助詞で、日本語の「〜の」に相当します。",
+      "longExplanation": "「의」は、体言（名詞）の直後に結合して後ろの名詞を修飾し、所有、所属、親族関係、性質などを表す連体格助詞（属格助詞）です。日本語の助詞「〜の」に完全に一致します。表記は「의」ですが、助詞として機能する際は実際には［에］と発音されるのが一般的です。また日常会話では省略されることも多く、代名詞と結びつく場合は「나의 → 내」「저의 → 제」「너의 → 네（発音は［니］）」のように縮約形が好んで用いられます。",
+      "formation": "先行名詞 ＋ 의 ＋ 後続名詞",
+      "examples": [
+        {
+          "translation": "これは私の本です、だから誰にもあげません。"
+        },
+        {
+          "translation": "お願いします、私の駐車スペースを占領しないでください。"
+        },
+        {
+          "translation": "彼女は自分の子犬を本当にとても愛しています。"
+        },
+        {
+          "translation": "これは彼のお父さんの古い時計です。"
+        }
+      ]
+    },
+    "ko_으로euroTotowardbymeansof_42": {
+      "title": "(으)로（〜へ・〜に向かって / 〜で・〜を使って / 〜に・〜として）",
+      "shortExplanation": "方向（「〜へ」）、手段・道具（「〜で」「〜を使って」）、原料、変化・資格（「〜として」「〜に」）などを幅広く表す多機能な副詞格助詞です。",
+      "longExplanation": "「(으)로」は、極めて多様な文法的機能を担う多機能な副詞格助詞です。主な用法として、① 動作が向かう方向・方角を表す（「〜へ」「〜に向かって」）、② 行動を遂行するための手段・道具・交通機関・言語などを表す（「〜で」「〜によって」）、③ 変化の結果や資格・立場を表す（「〜に変わる」「〜として」）、④ 原料や材料を表す用法があります。名詞の語尾にパッチムがある場合（ㄹパッチムを除く）は「으로」を用い、母音で終わる名詞または「ㄹ」パッチムで終わる名詞には「로」を用います。",
+      "formation": "パッチムあり名詞（ㄹを除く） ＋ 으로 / パッチムなし名詞およびㄹパッチム名詞 ＋ 로",
+      "examples": [
+        {
+          "translation": "私は毎朝地下鉄で学校へ通っています。"
+        },
+        {
+          "translation": "私の父は料理の材料を通して愛を表現します。"
+        },
+        {
+          "translation": "その会社は紙をリサイクルしてノートに作り替えています。"
+        },
+        {
+          "translation": "ドアを開けるために鍵で鍵穴を回します。"
+        }
+      ]
+    },
+    "ko_한테에게_43": {
+      "title": "한테/에게（〜に・〜へ【与格助詞】）",
+      "shortExplanation": "人や動物（有情名詞）の後ろに付き、動作の受け手や対象を表す助詞で、「에게」は文語・一般用、「한테」は親しい口語で使われます（日本語の「〜に」に相当）。",
+      "longExplanation": "「한테/에게」は、人や動物など意思を持つ存在（有情名詞）に接続して、動作が向けられる対象や受け手を示す与格助詞（副詞格助詞）です。日本語の助詞「〜に」「〜へ」に相当します。「에게」は標準的で文章語や改まった場面でも広く使われるのに対し、「한테」は会話や親しい間柄で好まれる口語表現です。また、動作が向けられる相手が目上の人や敬意を払うべき相手である場合は、尊敬の格助詞「께（〜に・〜へ）」を用います。",
+      "formation": "有情名詞（人・動物） ＋ 한테（口語） / 에게（一般・文語）（尊敬表現：께）",
+      "examples": [
+        {
+          "translation": "私は昨日、友達にプレゼントをあげました。"
+        },
+        {
+          "translation": "私の声を直接彼女に聞かせてあげたいです。"
+        },
+        {
+          "translation": "お姉ちゃんに嬉しいニュースを伝えたいです。"
+        },
+        {
+          "translation": "お母さんに夕食の用意をして差し上げました。"
+        }
+      ]
+    },
+    "ko_한테서에서_44": {
+      "title": "한테서/에서（〜から【人から：한테서／場所から：에서】）",
+      "shortExplanation": "出所や起点、出処を表す助詞で、人・動物から受ける場合は「한테서」、場所や組織からの場合は「에서」を用います（日本語の「〜から」に相当）。",
+      "longExplanation": "「한테서」と「에서」は、事物や情報、行動の出所（出処）や空間的起点を示す副詞格助詞です。日本語の「〜から」に相当しますが、接続する名詞の種類によって明確に使い分けられます。「한테서」（より改まった表現は「에게서」）は人や動物など有情名詞について「人から（もらう、聞く、習う）」という人的な出所を表し、「에서」は場所や建物、組織などの無情名詞について「場所から」という空間的・組織的な出発点や出所を表します。なお、敬意を払う目上の人からの出所には「께로부터」や「에게서」を用います。",
+      "formation": "人を表す名詞 ＋ 한테서 / 場所・組織を表す名詞 ＋ 에서（人の一般・文語：에게서 / 尊敬表現：께로부터）",
+      "examples": [
+        {
+          "translation": "友達から手紙をもらいました。彼はいつもマメに連絡をくれます。"
+        },
+        {
+          "translation": "ソウルから釜山まで車でどれくらいかかるでしょうか？"
+        },
+        {
+          "translation": "私はこの本を図書館から借りました。"
+        },
+        {
+          "translation": "その料理はお母さんから教わりました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_아직_30": {
+      "title": "아직 (지속이나 미완료를 나타내는 부사)",
+      "shortExplanation": "어떤 상태나 행동이 지금까지 그대로 지속되거나 아직 이루어지지 않았음을 나타내는 부사입니다.",
+      "longExplanation": "'아직'은 어떤 일이나 상태가 현재까지 끝나지 않고 이어지고 있거나, 기대했던 일이 아직 실현되지 않았음을 나타내는 부사입니다. 긍정문이나 진행형 표현과 함께 쓰이면 '여전히', '계속'의 의미를 가지며, 부정 표현(안, 못, -지 않다, -지 못하다 등)과 함께 호응하여 쓰이면 어떤 동작이 아직 완료되지 않았음을 강조합니다.",
+      "formation": "아직 + 동사 / 형용사 / 명사",
+      "examples": [
+        {
+          "translation": "아직 저는 한국어를 완벽하게 이해하지 못해요. 계속 연습이 필요해요."
+        },
+        {
+          "translation": "결정할 수 있어도, 아직 그 문제에 대해 생각 중이에요."
+        },
+        {
+          "translation": "아직 그 영화를 보지 않았어요. 주말에 볼 예정이에요."
+        },
+        {
+          "translation": "아직 점심을 먹지 않았어요. 배가 너무 고프네요."
+        }
+      ]
+    },
+    "ko_때_31": {
+      "title": "때 (시간이나 특정한 때를 나타내는 명사/의존명사)",
+      "shortExplanation": "특정한 시간, 시기, 또는 어떤 일이나 상태가 일어나는 순간을 나타내는 말입니다.",
+      "longExplanation": "'때'는 일정한 시간이나 시기, 또는 어떠한 행동이나 상태가 일어나는 특정한 순간을 나타내는 명사 또는 의존명사입니다. 명사 뒤에 바로 붙어 '방학 때', '점심 때', '첫 만남 때'와 같이 쓰이기도 하며, 용언(동사/형용사)의 어간 뒤에 관형사형 어미 '-(으)ㄹ'과 결합하여 '-(으)ㄹ 때'의 형태로 '웃을 때', '시간이 없을 때'처럼 어떤 행위나 상황이 일어나는 시점을 나타냅니다.",
+      "formation": "명사 + 때 / 동사·형용사 어간 + (으)ㄹ 때",
+      "examples": [
+        {
+          "translation": "저는 어릴 때부터 한국어를 배우고 싶어했어요."
+        },
+        {
+          "translation": "그 여자가 웃을 때, 저는 정말 행복해요."
+        },
+        {
+          "translation": "첫 만남 때, 그를 절대 잊지 못할 거예요."
+        },
+        {
+          "translation": "이번 주말에 여행을 가고 싶은데, 시간이 없을 때 어떻게 해야 할까요?"
+        }
+      ]
+    },
+    "ko_으려고하다euryeogohadaIntendtodo_32": {
+      "title": "(으)려고 하다 (의도나 계획을 나타내는 표현)",
+      "shortExplanation": "앞으로 어떤 행동을 할 의도나 계획을 가지고 있음을 나타내는 문형입니다.",
+      "longExplanation": "'-(으)려고 하다'는 의도를 나타내는 연결어미 '-(으)려고'에 보조동사 '하다'가 결합한 표현으로, 주어가 어떤 동작을 행하고자 하는 의도나 계획을 가지고 있음을 나타냅니다. 동사 어간 끝에 받침이 있는 경우(ㄹ 제외)에는 '-으려고 하다'를 쓰고, 어간이 모음으로 끝나거나 'ㄹ' 받침으로 끝나는 경우에는 '-려고 하다'를 씁니다. 한편 날씨나 자연 현상 등에 쓰일 때는 어떤 일이 막 일어나려는 징후나 조짐을 나타내기도 합니다.",
+      "formation": "받침 있는 동사 어간(ㄹ 제외) + 으려고 하다 / 받침 없는 동사 어간 및 ㄹ 받침 동사 어간 + 려고 하다",
+      "examples": [
+        {
+          "translation": "저는 한국어를 더 잘하기 위해 노력하려고 합니다. 연습을 많이 해서 실력을 키우려고 해요."
+        },
+        {
+          "translation": "내일 비가 오려고 하니 우산을 챙기려고 해요. 감기를 예방하려고 합니다."
+        },
+        {
+          "translation": "친구와 함께 여행을 가려고 해요. 같이 좋은 추억을 만들려고 합니다."
+        },
+        {
+          "translation": "그녀는 다음 달에 결혼 준비를 하려고 해요. 모든 것을 완벽하게 만들려고 해요."
+        }
+      ]
+    },
+    "ko_처럼_33": {
+      "title": "처럼 (모양이나 특성이 비슷함을 나타내는 격조사)",
+      "shortExplanation": "체언 뒤에 붙어 모양이나 정도가 그 대상과 거의 같거나 비슷함을 나타내는 부사격 조사입니다.",
+      "longExplanation": "'처럼'은 체언(명사, 대명사 등) 뒤에 결합하여 앞말이 나타내는 대상과 모양, 상태, 동작의 양상이 서로 비슷하거나 같음을 나타내는 부사격 조사(비교 부사격 조사)입니다. 받침의 유무에 관계없이 모든 체언 뒤에 그대로 결합합니다. 비유적 표현이나 직유법에서 널리 쓰이며, 대상을 더욱 생생하고 구체적으로 묘사할 때 자주 활용됩니다.",
+      "formation": "명사 + 처럼",
+      "examples": [
+        {
+          "translation": "그는 사자처럼 강해 보였지만, 실제로는 그렇게 강하진 않아요."
+        },
+        {
+          "translation": "우리 친구는 항상 별처럼 빛나요. 모두에게 사랑받는 사람입니다."
+        },
+        {
+          "translation": "그녀는 나비처럼 춤을 춰요. 정말 아름답고 우아해요."
+        },
+        {
+          "translation": "그는 독수리처럼 높이 날아갔어요. 비행이 아주 인상적이었어요."
+        }
+      ]
+    },
+    "ko_같이_34": {
+      "title": "같이 (함께함을 나타내는 부사 / 같음을 나타내는 격조사)",
+      "shortExplanation": "어떤 행동을 다른 사람과 함께함을 나타내는 부사이자, 모양이나 상태가 같음을 나타내는 격조사입니다.",
+      "longExplanation": "'같이'는 품사에 따라 부사와 격조사 두 가지로 쓰입니다. 부사로 쓰일 때는 주로 접속조사와 결합하여 '-(와/과) 같이', '-(이)랑 같이'의 형태로 쓰여 다른 사람과 어떤 행동을 '함께', '더불어' 행함을 나타냅니다. 반면 체언 뒤에 띄어쓰기 없이 바로 붙여 쓸 때는 부사격 조사로서 '처럼'과 마찬가지로 앞말이 나타내는 대상과 모양이나 정도가 서로 같음을 나타냅니다.",
+      "formation": "명사 + 와/과/랑 같이 (함께) / 명사 + 같이 (격조사: 같음)",
+      "examples": [
+        {
+          "translation": "제 친구와 같이 영화를 보러 갔어요. 정말 재미있었어요!"
+        },
+        {
+          "translation": "내일은 우리 모두 같이 공원에 가서 피크닉을 하기로 했어요."
+        },
+        {
+          "translation": "엄마와 같이 요리하면 항상 더 맛있는 음식을 만들 수 있어요."
+        },
+        {
+          "translation": "과외 선생님과 같이 공부하면 많은 도움이 돼요."
+        }
+      ]
+    },
+    "ko_이랑irangWith_35": {
+      "title": "(이)랑 (접속 조사 / 동반의 부사격 조사)",
+      "shortExplanation": "명사 뒤에 붙어 두 대상을 대등하게 이어 주거나, 어떤 행동을 함께하는 상대를 나타내는 구어체 조사입니다.",
+      "longExplanation": "'(이)랑'은 일상 대화(구어체)에서 매우 자주 쓰이는 조사로, 두 가지 주요 기능을 수행합니다. 첫째, 둘 이상의 사물이나 사람을 대등하게 열거하는 접속 조사로서 '와/과', '하고'와 마찬가지로 '그리고'의 뜻을 나타냅니다. 둘째, 어떤 동작을 함께하는 동반의 대상을 나타내는 부사격 조사로서 쓰입니다. 앞말의 끝음절에 받침이 있으면 '이랑'이 붙고, 받침이 없으면 '랑'이 붙습니다.",
+      "formation": "받침 있는 명사 + 이랑 / 받침 없는 명사 + 랑",
+      "examples": [
+        {
+          "translation": "제가 친구랑 영화를 봤어요, 그 영화는 재미있었어요."
+        },
+        {
+          "translation": "어제 저는 엄마랑 시장에 갔어요, 우리는 많은 식료품을 샀어요."
+        },
+        {
+          "translation": "나는 동생이랑 공원에서 놀았어요, 우리는 많이 즐거웠어요."
+        },
+        {
+          "translation": "오늘 점심시간에 친구랑 음악을 들었어요, 그 음악이 너무 좋았어요."
+        }
+      ]
+    },
+    "ko_그런데_36": {
+      "title": "그런데 (화제 전환이나 역접을 나타내는 접속부사)",
+      "shortExplanation": "앞의 내용과 반대되거나 예상 밖의 사실을 이어 주거나, 화제를 다른 방향으로 돌릴 때 쓰는 접속부사입니다.",
+      "longExplanation": "'그런데'는 문장과 문장을 연결하는 대표적인 접속부사입니다. 주로 앞의 문장에서 언급한 사실과 대립되거나 기대와 어긋나는 반전의 결과를 나타낼 때(역접/대조) 사용되며, 대화 중에 지금까지 하던 이야기에서 새로운 화제로 자연스럽게 전환하고자 할 때도 자주 쓰입니다. 일상 대화 구어에서는 '근데'로 줄여서 쓰기도 합니다.",
+      "formation": "앞 문장. 그런데 + 뒷 문장",
+      "examples": [
+        {
+          "translation": "처음에는 그 과제가 쉬워 보였어요, 그런데 실제로 해보니 매우 어려웠어요."
+        },
+        {
+          "translation": "저는 가장 좋아하는 스포츠가 농구인데, 그런데 제 친구는 농구를 전혀 좋아하지 않아요."
+        },
+        {
+          "translation": "어제 영화관에 갔는데, 그런데 영화가 이미 시작된 후였어요."
+        },
+        {
+          "translation": "친구가 이 청바지를 추천해 줬는데, 그런데 제 스타일에 맞지 않아요."
+        }
+      ]
+    },
+    "ko_그래서_37": {
+      "title": "그래서 (인과관계를 나타내는 접속부사)",
+      "shortExplanation": "앞의 내용이 뒤의 내용에 대한 원인이나 이유가 됨을 나타내는 접속부사입니다.",
+      "longExplanation": "'그래서'는 앞 문장의 내용이 뒤 문장의 원인이나 근거가 되고, 뒤 문장이 그로 인한 당연한 결과나 결론임을 나타낼 때 쓰는 인과관계의 접속부사입니다. 두 독립된 문장 사이를 유기적으로 연결하여 말이나 글의 흐름을 자연스럽고 논리적으로 만들어 주며, 일상생활의 대화와 서술문 전반에서 광범위하게 쓰입니다.",
+      "formation": "앞 문장 (원인/이유). 그래서 + 뒷 문장 (결과)",
+      "examples": [
+        {
+          "translation": "오늘은 간단하게 먹으려고 했는데, 친구가 맛있는 음식을 가져왔어요. 그래서 많이 먹었어요."
+        },
+        {
+          "translation": "전 책을 읽는 것을 좋아해요. 그래서 한 달에 여러 권의 책을 읽어요."
+        },
+        {
+          "translation": "어제 공부를 너무 많이 했어요. 그래서 오늘은 쉬어야겠어요."
+        },
+        {
+          "translation": "주말에는 늦게까지 자서 일어나지 못했어요. 그래서 점심이 되어 버렸어요."
+        }
+      ]
+    },
+    "ko_그리고_38": {
+      "title": "그리고 (나열이나 순차적 연결을 나타내는 접속부사)",
+      "shortExplanation": "앞뒤 문장을 대등하게 이어 주거나, 시간적 순서에 따라 일어나는 행동을 차례대로 나열할 때 쓰는 접속부사입니다.",
+      "longExplanation": "'그리고'는 한국어에서 가장 기본적이고 널리 쓰이는 순접의 접속부사입니다. 두 가지 주된 기능이 있는데, 첫째는 둘 이상의 사실이나 정보를 대등하게 나열하여 덧붙이는 기능이며, 둘째는 시간의 흐름에 따라 사건이나 동작이 순차적으로 이어짐을 나타내는 기능입니다. 문장과 문장 사이를 매끄럽게 연결하여 서사의 전개나 일상의 행동 흐름을 구체적으로 전달합니다.",
+      "formation": "문장1. 그리고 + 문장2",
+      "examples": [
+        {
+          "translation": "저는 학교에 갔어요 그리고 수업을 들었어요 그리고 친구들과 점심을 먹었어요."
+        },
+        {
+          "translation": "게임을 했어요 그리고 졸려서 잠을 잤어요 그리고 다시 게임을 했어요."
+        },
+        {
+          "translation": "제가 커피를 마셨어요 그리고 도서관에 갔어요 그리고 공부를 했어요."
+        },
+        {
+          "translation": "친구를 만났어요 그리고 영화를 봤어요 그리고 집에 돌아왔어요."
+        }
+      ]
+    },
+    "ko_아어여_39": {
+      "title": "아/어/여 주다 (남을 위한 배려나 도움을 나타내는 보조용언)",
+      "shortExplanation": "동사 어간 뒤에 붙어 다른 사람을 위하여 어떤 행동을 하거나 도움을 베풂을 나타내는 보조동사 구성입니다.",
+      "longExplanation": "'-아/어/여 주다'는 본동사의 어간 뒤에 연결어미 '-아/어/여'와 보조동사 '주다'가 결합하여, 주어가 다른 대상에게 친절이나 호의를 베풀어 어떤 행동을 해 줌을 나타냅니다. 어간 끝음절 모음이 'ㅏ, ㅗ'이면 '-아 주다', 그 외의 모음이면 '-어 주다', '하다' 동사는 '해 주다'가 됩니다. 행동의 대상이 웃어른인 경우에는 겸양 표현인 '-아/어/여 드리다'를 사용하고, 행위자가 웃어른인 경우에는 주체 높임 표현인 '-아/어/여 주시다'를 씁니다.",
+      "formation": "동사 어간 + 아/어/여 주다 (높임 대상: 아/어/여 드리다 / 주체 높임: 아/어/여 주시다)",
+      "examples": [
+        {
+          "translation": "제가 수업 노트를 정리해서 친구에게 메일로 보내주었어요."
+        },
+        {
+          "translation": "서민이가 청소를 해주는 것을 본 뒤에 저도 청소를 도와주었어요."
+        },
+        {
+          "translation": "어려운 문제 때문에 고민했는데, 선생님이 해결 방법을 알려주셨어요."
+        },
+        {
+          "translation": "맛있는 음식을 만들어서 친구들에게 저녁을 챙겨주는 걸 좋아해요."
+        }
+      ]
+    },
+    "ko_아어여_40": {
+      "title": "아/어/여 하다 (심리 형용사의 동사화 및 감정 표출 표현)",
+      "shortExplanation": "심리나 감정을 나타내는 형용사 어간 뒤에 붙어, 그 감정을 겉으로 드러내거나 제3자의 감정을 객관적으로 서술하는 동사로 바꾸어 주는 표현입니다.",
+      "longExplanation": "'-아/어/여 하다'는 주관적인 감정이나 심리, 감각을 나타내는 형용사(슬프다, 무섭다, 부끄럽다, 좋다 등)에 결합하여 그 감정을 밖으로 표출하는 동작을 나타내는 동사로 파생시키는 문형입니다. 한국어에서는 화자 자신의 내면적 감정은 형용사 그대로 표현할 수 있지만, 타인(제3자)의 내면 감정은 직접 단정할 수 없으므로 겉으로 드러난 행동이나 반응을 관찰하여 서술할 때 반드시 '-아/어/여 하다'를 결합한 동사 형태를 사용해야 합니다.",
+      "formation": "심리/감각 형용사 어간 + 아/어/여 하다",
+      "examples": [
+        {
+          "translation": "그는 영화가 너무 슬퍼서 울기도 하고 슬퍼해요."
+        },
+        {
+          "translation": "아이가 무서워해서 혼자 자는 것을 싫어해요."
+        },
+        {
+          "translation": "그녀는 부끄러워하여 사람들 앞에 나서길 망설였어요."
+        },
+        {
+          "translation": "사람들은 그 소식을 듣고 몹시 놀라워했어요."
+        }
+      ]
+    },
+    "ko_의_41": {
+      "title": "의 (소유나 소속을 나타내는 관형격 조사)",
+      "shortExplanation": "체언 뒤에 붙어 뒤에 오는 명사를 꾸며 주며, 소유, 소속, 관계 등을 나타내는 관형격 조사입니다.",
+      "longExplanation": "'의'는 앞의 체언에 결합하여 뒤에 오는 체언을 수식하도록 만들어 주는 관형격 조사입니다. 두 대상 간의 소유권, 소속, 친족 관계, 기원, 속성 등을 나타내며, 문맥에 따라 필수적이거나 생략되어 쓰이기도 합니다. 표기는 '의'로 하지만 조사로 쓰일 때 표준 발음법상 [에]로 발음하는 것도 허용되며 실제 대화에서도 [에]로 널리 발음됩니다. 인칭대명사와 결합할 때는 '나의 → 내', '저의 → 제', '너의 → 네[니]'와 같이 축약되어 자주 사용됩니다.",
+      "formation": "앞 명사 + 의 + 뒷 명사",
+      "examples": [
+        {
+          "translation": "이것은 나의 책이에요, 그래서 누구에게도 주지 않을 거예요."
+        },
+        {
+          "translation": "부탁드려요, 저의 주차 공간을 차지하지 말아 주세요."
+        },
+        {
+          "translation": "그녀는 그녀의 강아지를 정말 많이 사랑해요."
+        },
+        {
+          "translation": "이것은 그의 아버지의 오래된 시계예요."
+        }
+      ]
+    },
+    "ko_으로euroTotowardbymeansof_42": {
+      "title": "(으)로 (방향, 수단, 도구, 자격, 변화를 나타내는 부사격 조사)",
+      "shortExplanation": "움직임의 방향, 행위의 수단이나 도구, 원료, 신분이나 자격, 변화의 결과 등을 나타내는 다기능 부사격 조사입니다.",
+      "longExplanation": "'(으)로'는 한국어에서 매우 다양한 문법적 기능을 담당하는 대표적인 부사격 조사입니다. 주요 용법으로는 첫째, 어떤 곳을 향해 나아가는 방향이나 지향점을 나타내고('서울로', '오른쪽으로'), 둘째, 어떤 일을 할 때 쓰이는 수단, 도구, 교통수단, 방법, 언어 등을 나타내며('지하철로', '연필로'), 셋째, 물건의 원료나 재료, 넷째, 어떤 신분이나 지위, 자격('대표로'), 다섯째, 어떤 상태나 다른 사물로의 변화 결과('노트북으로')를 나타냅니다. 받침이 있는 체언(ㄹ 받침 제외) 뒤에는 '으로', 받침이 없는 체언이나 'ㄹ' 받침으로 끝나는 체언 뒤에는 '로'가 결합합니다.",
+      "formation": "받침 있는 명사(ㄹ 제외) + 으로 / 받침 없는 명사 및 ㄹ 받침 명사 + 로",
+      "examples": [
+        {
+          "translation": "나는 매일 아침 지하철로 학교에 가요."
+        },
+        {
+          "translation": "우리 아빠는 요리를 재료로 사랑을 표현해요."
+        },
+        {
+          "translation": "그 회사는 종이를 재활용해서 노트북으로 만들어요."
+        },
+        {
+          "translation": "문을 열기 위해 열쇠로 문을 돌려요."
+        }
+      ]
+    },
+    "ko_한테에게_43": {
+      "title": "한테/에게 (행동의 대상을 나타내는 부사격 조사)",
+      "shortExplanation": "사람이나 동물과 같은 유정명사 뒤에 붙어 어떤 행동이 미치는 대상을 나타내는 부사격 조사입니다.",
+      "longExplanation": "'한테'와 '에게'는 사람이나 동물처럼 감정을 가진 존재(유정명사) 뒤에 결합하여 어떤 행위가 미치거나 향하는 대상(여격)을 나타내는 부사격 조사입니다. '에게'는 문어와 구어 모두에서 두루 쓰이는 표준적이고 격식 있는 표현인 반면, '한테'는 일상 회화(구어체)에서 매우 친근하게 자주 사용됩니다. 단, 행위가 도달하는 대상이 웃어른인 경우에는 높임의 부사격 조사인 '께'를 사용하는 것이 원칙입니다.",
+      "formation": "유정명사(사람, 동물) + 한테 (구어) / 에게 (문어/일반) (높임 대상: 께)",
+      "examples": [
+        {
+          "translation": "제가 어제 친구에게 선물을 줬어요."
+        },
+        {
+          "translation": "제 목소리를 직접 그녀에게 들려주고 싶어요."
+        },
+        {
+          "translation": "언니한테 좋은 뉴스를 전하고 싶어요."
+        },
+        {
+          "translation": "어머니한테 저녁 식사를 준비해드렸어요."
+        }
+      ]
+    },
+    "ko_한테서에서_44": {
+      "title": "한테서/에서 (출발점이나 출처를 나타내는 부사격 조사)",
+      "shortExplanation": "어떤 행동이나 상태, 사물이 비롯되는 출발점이나 출처를 나타내는 부사격 조사입니다.",
+      "longExplanation": "'한테서'와 '에서'는 동작이나 사물이 어디로부터 비롯되었는지를 나타내는 출처 및 출발점의 부사격 조사입니다. 두 조사는 결합하는 체언의 성격에 따라 뚜렷이 구별됩니다. '한테서'(문어체 및 표준형은 '에게서')는 사람이나 동물과 같은 유정명사 뒤에 붙어 어떤 대상으로부터 무언가를 받거나 배우는 등의 출처를 나타내며, '에서'는 공간적 장소, 건물, 기관, 단체 등의 무정명사 뒤에 붙어 공간적 출발점이나 출처를 나타냅니다. 출처의 대상이 웃어른인 경우에는 높임 표현인 '께로부터'를 사용합니다.",
+      "formation": "사람 및 동물 명사 + 한테서 / 장소 및 단체 명사 + 에서 (유정명사 일반/문어: 에게서 / 높임 대상: 께로부터)",
+      "examples": [
+        {
+          "translation": "친구한테서 편지를 받았어요. 그는 항상 연락을 잘 해 줘요."
+        },
+        {
+          "translation": "서울에서 부산까지 차로 얼마나 걸릴까요?"
+        },
+        {
+          "translation": "제가 이 책을 도서관에서 빌렸어요."
+        },
+        {
+          "translation": "그 음식은 어머니한테서 배웠어요."
+        }
+      ]
+    }
+  }
+}

@@ -2,4149 +2,7480 @@ import { GrammarTranslation } from '../../../models/grammar.model';
 
 export const GRAMMAR_ZH_KO: Record<string, GrammarTranslation> = {
   "zh_什么_1": {
-    "title": "什么 (what)",
-    "shortExplanation": "what",
-    "longExplanation": "what. Pinyin: shénme",
-    "formation": "shénme"
+    "title": "什么 (무엇, 뭐)",
+    "shortExplanation": "사물이나 사실을 물을 때 사용하는 의문대명사로, 한국어의 '무엇', '뭐'에 해당합니다.",
+    "longExplanation": "'什么'(shénme)는 사물이나 내용을 질문할 때 사용하는 가장 기초적인 의문대명사입니다. 중국어 의문문에서는 영어처럼 의문사를 문장 맨 앞으로 도치시키지 않고, 평서문에서 질문하려는 성분(주어나 목적어) 자리에 '什么'를 그대로 둡니다.",
+    "formation": "주어 + 동사 + 什么? (또는 단독으로 대명사로 사용)",
+    "examples": [
+      {
+        "translation": "이것은 무엇입니까?"
+      }
+    ]
   },
   "zh_什么N_2": {
-    "title": "什么 N (what kind of N)",
-    "shortExplanation": "what kind of N",
-    "longExplanation": "what kind of N. Pinyin: shénme N",
-    "formation": "shénme N"
+    "title": "什么 + 명사 (무슨 ~, 어떤 ~)",
+    "shortExplanation": "의문대명사 '什么'가 명사 앞에 직접 놓여 관형어로 쓰이며, 사물의 종류나 이름을 물을 때 '무슨 ~', '어떤 ~'을 뜻합니다.",
+    "longExplanation": "'什么'(shénme)가 명사 바로 앞에 놓이면 명사를 수식하는 한정어(관형어) 역할을 하여, 대상의 종류, 성질, 명칭 등을 묻는 표현이 됩니다(예: 什么书 - 무슨 책, 什么名字 - 무슨 이름). 일반적으로 명사 사이에 양사를 넣지 않고 바로 연결합니다.",
+    "formation": "什么 + 명사",
+    "examples": [
+      {
+        "translation": "저것은 무슨 책입니까?"
+      }
+    ]
   },
   "zh_不是_3": {
-    "title": "不是 (not to be)",
-    "shortExplanation": "not to be",
-    "longExplanation": "not to be. Pinyin: bùshì",
-    "formation": "bùshì"
+    "title": "不是 (~이/가 아니다)",
+    "shortExplanation": "판단동사 '是'의 부정형으로, 신분·국적·사물의 속성 등을 부정할 때 쓰는 '~이/가 아니다' 표현입니다.",
+    "longExplanation": "'不是'(bù shì)는 부정부사 '不'와 판단동사 '是'가 결합된 형태로, '주어 + 不是 + 명사'의 구조로 쓰여 '주어는 ~이/가 아니다'라는 부정 판단을 나타냅니다. 신분, 국적, 직업, 소속 등을 부정할 때 널리 쓰입니다. 성조 규칙상 제4성인 '是' 앞에서 '不'는 제2성(bú)으로 변조되어 발음됩니다.",
+    "formation": "주어 + 不是 + 명사 / 명사구",
+    "examples": [
+      {
+        "translation": "저는 미국인이 아닙니다."
+      }
+    ]
   },
   "zh_是_4": {
-    "title": "是 (to be)",
-    "shortExplanation": "to be",
-    "longExplanation": "to be. Pinyin: shì",
-    "formation": "shì"
+    "title": "是 (~이다, ~입니다)",
+    "shortExplanation": "주어와 명사를 연결하여 신분, 직업, 속성 등의 동일 관계를 나타내는 판단동사로, 한국어의 '~이다'에 해당합니다.",
+    "longExplanation": "'是'(shì)는 중국어의 대표적인 판단동사(계사)로, 'A 是 B'(A는 B이다)의 형태로 사용되어 주어의 신분, 국적, 직업, 정의 등을 나타냅니다. 단, 한국어나 영어와 달리 단순히 형용사로 서술할 때는 '是'를 쓰지 않고 정도부사(很 등)를 사용합니다.",
+    "formation": "주어 + 是 + 명사 / 명사구",
+    "examples": [
+      {
+        "translation": "그녀는 선생님입니다."
+      }
+    ]
   },
   "zh_吗_5": {
-    "title": "吗? (right?)",
-    "shortExplanation": "right?",
-    "longExplanation": "right?. Pinyin: ma?",
-    "formation": "ma?"
+    "title": "...吗? (의문 조사: ~입니까?, ~인가요?)",
+    "shortExplanation": "평서문 끝에 붙어 '예/아니오'로 대답할 수 있는 의문문을 만드는 어기조사로, 한국어의 '~입니까?', '~인가요?'에 해당합니다.",
+    "longExplanation": "'吗'(ma)는 경성으로 발음되는 의문 어기조사입니다. 완전한 평서문의 맨 끝에 덧붙이기만 하면 단번에 진위 여부를 묻는 의문문(시비의문문)이 완성됩니다. 어순을 도치하거나 별도의 조동사를 추가할 필요 없이 평서문 어순을 그대로 유지합니다.",
+    "formation": "평서문 + 吗?",
+    "examples": [
+      {
+        "translation": "당신은 선생님입니까?"
+      }
+    ]
   },
   "zh_谁_6": {
-    "title": "谁 (who)",
-    "shortExplanation": "who",
-    "longExplanation": "who. Pinyin: shéi",
-    "formation": "shéi"
+    "title": "谁 (누구)",
+    "shortExplanation": "사람을 물을 때 사용하는 의문대명사로, 한국어의 '누구'에 해당합니다.",
+    "longExplanation": "'谁'(shéi 또는 shuí)는 사람의 신원이나 정체를 질문하는 의문대명사입니다. 주어, 목적어, 관형어 자리에 자유롭게 쓰이며, 어순 도치 없이 질문하려는 인물 자리에 위치합니다. 소유 관계를 물을 때는 '谁的'(누구의) 형태로 쓰입니다.",
+    "formation": "주어 + 是 + 谁? 또는 谁 + 술어?",
+    "examples": [
+      {
+        "translation": "그녀는 누구입니까?"
+      }
+    ]
   },
   "zh_哪MN_7": {
-    "title": "哪 M N (which N)",
-    "shortExplanation": "which N",
-    "longExplanation": "which N. Pinyin: nǎ M N",
-    "formation": "nǎ M N"
+    "title": "哪 + 양사 + 명사 (어느 ~, 어떤 것)",
+    "shortExplanation": "의문대명사 '哪' 뒤에 양사와 명사가 이어져 여러 대상 중 특정한 것을 고를 때 쓰는 '어느 ~' 표현입니다.",
+    "longExplanation": "'哪'(nǎ)는 둘 이상의 범위나 대상 중에서 특정 대상을 지목하여 물어볼 때 쓰는 의문사입니다. 중국어 문법 규칙상 명사를 수식할 때 중간에 알맞은 양사를 반드시 수반해야 하므로 '哪 + 양사 + 명사'의 구조를 이룹니다(예: 哪个人 - 어느 사람, 哪本书 - 어느 책).",
+    "formation": "哪 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "어느 사람입니까?"
+      }
+    ]
   },
   "zh_的_8": {
-    "title": "(的) (’s)",
-    "shortExplanation": "’s",
-    "longExplanation": "’s. Pinyin: ( de)",
-    "formation": "( de)"
+    "title": "(的) (구조조사: ~의 [친족·친밀 관계에서의 생략])",
+    "shortExplanation": "소유나 소속을 나타내는 구조조사 '的'로, 가족이나 가까운 인간관계에서는 생략되기도 합니다.",
+    "longExplanation": "'的'(de)는 한정어와 중심어(명사) 사이에 놓여 소유나 소속 관계를 나타내는 대표적인 구조조사로, 한국어의 '~의'에 해당합니다. 하지만 인칭대명사 뒤에 가족, 친척, 친밀한 지인, 선생님 또는 소속 기관이 올 때는 일상 회화에서 '的'를 생략하고 쓰는 경우가 매우 흔합니다(예: 我(的)老师 - 우리 선생님/내 선생님, 我(的)妈妈 - 우리 엄마).",
+    "formation": "한정어 (대명사 / 명사) + (的) + 중심 명사",
+    "examples": [
+      {
+        "translation": "그녀는 저의 선생님입니다."
+      }
+    ]
   },
   "zh_N呢_9": {
-    "title": "N 呢? (what about N?)",
-    "shortExplanation": "what about N?",
-    "longExplanation": "what about N?. Pinyin: N ne?",
-    "formation": "N ne?"
+    "title": "명사 + 呢? (~은/는요?)",
+    "shortExplanation": "명사나 대명사 뒤에 어기조사 '呢'를 붙여 앞서 언급된 내용에 대해 반문할 때 쓰는 '~은/는요?' 표현입니다.",
+    "longExplanation": "'명사/대명사 + 呢?'(ne)는 앞 문맥에서 언급된 화제를 이어받아 다른 대상에 대해 동일한 질문을 되물을 때 쓰는 생략 의문문입니다. 한국어의 '~은/는요?', '~은/는 어때요?'에 해당하며, 서술어를 반복하지 않고도 자연스럽게 질문을 연결할 수 있습니다(예: 我是中国人，你呢? - 저는 중국인인데, 당신은요?). 전후 문맥이 없을 때는 '내 책은 어디 있지?'처럼 소재를 묻는 표현으로 쓰입니다.",
+    "formation": "명사 / 대명사 + 呢?",
+    "examples": [
+      {
+        "translation": "저는 중국인입니다, 당신은요?"
+      }
+    ]
   },
   "zh_几MN_10": {
-    "title": "几 M N (how many N)",
-    "shortExplanation": "how many N",
-    "longExplanation": "how many N. Pinyin: jǐ M N",
-    "formation": "jǐ M N"
+    "title": "几 + 양사 + 명사 (몇 ~, 얼마 [10 이하의 수량])",
+    "shortExplanation": "주로 10 이하의 적은 수량을 물을 때 의문사 '几' 뒤에 양사와 명사를 연결하여 '몇 ~'을 나타냅니다.",
+    "longExplanation": "'几'(jǐ)는 예상되는 수량이 대체로 10 이하일 때 사물이나 사람의 수를 묻는 의문사로, 한국어의 '몇'에 해당합니다(10 이상의 수량이거나 제한이 없을 때는 '多少'를 사용합니다). 중국어 어법상 '几'와 명사 사이에는 반드시 알맞은 양사가 들어가야 합니다(구조: 几 + 양사 + 명사).",
+    "formation": "几 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "당신은 중국어 선생님이 몇 분 계십니까?"
+      }
+    ]
   },
   "zh_一九十九_11": {
-    "title": "一～九十九 (1 ~ 99)",
-    "shortExplanation": "1 ~ 99",
-    "longExplanation": "1 ~ 99. Pinyin: yī～ jiǔ shíjiǔ",
-    "formation": "yī～ jiǔ shíjiǔ"
+    "title": "一～九十九 (1부터 99까지의 숫자)",
+    "shortExplanation": "중국어에서 1부터 99까지의 기수사를 조합하고 표현하는 기본 규칙입니다.",
+    "longExplanation": "중국어의 1부터 99까지의 숫자는 한국어의 한자어 수사 체계와 기본 원리가 동일합니다:\n• 1~10: 一(1), 二(2), 三(3), 四(4), 五(5), 六(6), 七(7), 八(8), 九(9), 十(10).\n• 11~19: '十' 뒤에 1단위 숫자를 연결 (예: 十一 = 11, 十五 = 15).\n• 20~90(십 단위): 숫자 뒤에 '十' 결합 (예: 二十 = 20, 九十 = 90).\n• 21~99: [십의 자리 숫자] + 十 + [일의 자리 숫자] (예: 九十一 = 91).",
+    "formation": "십의 자리 숫자 (2~9) + 十 + 일의 자리 숫자 (1~9)",
+    "examples": [
+      {
+        "translation": "구십일 (91)."
+      }
+    ]
   },
   "zh_AGE了_12": {
-    "title": "AGE 了 (became AGE)",
-    "shortExplanation": "became AGE",
-    "longExplanation": "became AGE. Pinyin: AGE le",
-    "formation": "AGE le"
+    "title": "나이 + 了 (~살이 되었다 [변화의 了])",
+    "shortExplanation": "나이를 나타내는 표현 뒤에 어기조사 '了'를 붙여 새로운 나이에 도달했음을 나타내는 '~살이 되었다', '벌써 ~살이다' 표현입니다.",
+    "longExplanation": "나이를 말할 때 문장 끝에 어기조사 '了'(le)를 붙이면 시간의 경과에 따라 새로운 나이에 이르렀음을 나타내는 '상황의 변화(변화의 了)'를 나타냅니다. 한국어의 '~살이 되었다', '벌써 ~살이다'에 해당하며 특정 나이에 도달했음을 강조합니다.",
+    "formation": "주어 + 수사 + 岁 + 了",
+    "examples": [
+      {
+        "translation": "저는 40살이 되었습니다."
+      }
+    ]
   },
   "zh_多大_13": {
-    "title": "多大 (how old)",
-    "shortExplanation": "how old",
-    "longExplanation": "how old. Pinyin: duōdà",
-    "formation": "duōdà"
+    "title": "多大 (몇 살, 나이가 어떻게 되는지 묻기)",
+    "shortExplanation": "나이를 물을 때 쓰는 의문 표현으로, 동년배나 젊은 사람에게 '몇 살인가요?'라고 물을 때 사용합니다.",
+    "longExplanation": "'多大'(duō dà)는 정도를 묻는 부사 '多'와 형용사 '大'가 결합된 표현으로, 사람의 나이를 질문할 때 널리 사용됩니다. 주로 문말에 어기조사 '了'를 덧붙여 '……多大了?'의 형태로 쓰입니다. 대략 10세 이하의 어린이에게는 '几岁'를, 어르신이나 연장자에게는 정중하게 '多大年纪' 또는 '多大岁数'를 쓰는 것이 예의에 맞습니다.",
+    "formation": "주어 + 多大 (了)?",
+    "examples": [
+      {
+        "translation": "당신의 딸은 몇 살인가요?"
+      }
+    ]
   },
   "zh_会V_14": {
-    "title": "会 V (know how to V)",
-    "shortExplanation": "know how to V",
-    "longExplanation": "know how to V. Pinyin: huì V",
-    "formation": "huì V"
+    "title": "会 + 동사 (조동사: ~할 줄 알다, ~할 수 있다 [학습·습득])",
+    "shortExplanation": "학습이나 훈련을 통해 습득한 능력이나 기술을 나타내는 능원동사 '会'로, '~할 줄 알다', '~할 수 있다'를 뜻합니다.",
+    "longExplanation": "'会'(huì)는 본동사 앞에 놓여 배움이나 후천적인 연습을 거쳐 기술·능력을 갖추었음을 나타내는 조동사(능원동사)입니다. 한국어의 '~할 줄 알다', '~할 수 있다'에 해당합니다(예: 会写 - 쓸 줄 알다, 会游泳 - 수영할 줄 알다). 부정형은 동사 앞에 '不会'를 붙여 '不会 + 동사'(~할 줄 모르다)로 표현합니다.",
+    "formation": "주어 + 会 + 동사",
+    "examples": [
+      {
+        "translation": "저는 쓸 줄 압니다."
+      }
+    ]
   },
   "zh_很_15": {
-    "title": "很 (very)",
-    "shortExplanation": "very",
-    "longExplanation": "very. Pinyin: hěn",
-    "formation": "hěn"
+    "title": "很 + 형용사 (정도부사: 매우, 아주 [형용사 술어문])",
+    "shortExplanation": "형용사 앞에 쓰여 높은 정도를 나타내는 '매우', '아주'라는 뜻을 나타내거나, 형용사 술어문에서 문장의 균형을 잡아주는 역할을 합니다.",
+    "longExplanation": "'很'(hěn)은 중국어에서 가장 널리 쓰이는 정도부사로 형용사 앞에 놓입니다. 기본적으로 '매우', '아주'라는 높은 정도를 나타내지만, 중국어에서는 형용사가 부사 없이 홀로 서술어가 되면 다른 대상과의 비교·대조 뉘앙스를 띠게 되므로, 평서문에서는 어조의 균형을 맞추기 위해 '很'을 약하게 넣어 서술합니다(예: '我很好'는 강한 강조 없이 '저는 잘 지냅니다'라는 뜻으로 흔히 쓰입니다).",
+    "formation": "주어 + 很 + 형용사",
+    "examples": [
+      {
+        "translation": "저는 아주 잘 지냅니다 (저는 잘 지냅니다)."
+      }
+    ]
   },
   "zh_怎么V_16": {
-    "title": "怎么 V (how to V)",
-    "shortExplanation": "how to V",
-    "longExplanation": "how to V. Pinyin: zěnme V",
-    "formation": "zěnme V"
+    "title": "怎么 + 동사 (어떻게 ~하는가 / 방법 묻기)",
+    "shortExplanation": "동작이나 행위의 방법이나 방식을 물을 때 사용하며, '어떻게 ~하는가', '어떻게 ~해요'라는 뜻을 나타냅니다.",
+    "longExplanation": "의문대명사 '怎么(zěnme)'가 동사 앞에 놓여 어떤 동작이나 행위를 실행하는 방법이나 수단을 질문할 때 사용하는 구문입니다. 한국어의 '어떻게 ~해요?', '어떻게 ~합니까?'에 해당합니다.",
+    "formation": "怎么 + 동사",
+    "examples": [
+      {
+        "translation": "이것은 어떻게 읽나요?"
+      }
+    ]
   },
   "zh_月号日星期_17": {
-    "title": "月、号/日、星期 ((telling dates))",
-    "shortExplanation": "(telling dates)",
-    "longExplanation": "(telling dates). Pinyin: yuè、 hào/ rì、 xīngqī",
-    "formation": "yuè、 hào/ rì、 xīngqī"
+    "title": "...月...号/日 星期... (날짜와 요일 표현)",
+    "shortExplanation": "중국어의 날짜 표현 순서로, 큰 단위부터 '월(月) → 일(号/日) → 요일(星期)' 순으로 나타냅니다.",
+    "longExplanation": "중국어에서 날짜를 나타낼 때는 큰 단위에서 작은 단위 순서로 배열하여 '년(年) → 월(月) → 일(号/日) → 요일(星期)' 순으로 표현합니다. 구어(일상 대화)에서는 '일'을 나타낼 때 주로 '号(hào)'를 쓰고, 서면어(문어)에서는 '日(rì)'을 많이 사용합니다. 요일은 '星期(xīngqī)' 뒤에 숫자를 붙여 표현합니다.",
+    "formation": "[숫자]月 + [숫자]号/日 + 星期[숫자/天]",
+    "examples": [
+      {
+        "translation": "9월 2일 목요일"
+      }
+    ]
   },
   "zh_去PLACEV_19": {
-    "title": "去 PLACE V (go to PLACE to do V)",
-    "shortExplanation": "go to PLACE to do V",
-    "longExplanation": "go to PLACE to do V. Pinyin: qù PLACE V",
-    "formation": "qù PLACE V"
+    "title": "去 + 장소 + 동사 (~에 …하러 가다 / 목적의 연동문)",
+    "shortExplanation": "연동문 구조로 목적을 나타내며, '어떤 장소에 ~하러 가다'라는 뜻입니다.",
+    "longExplanation": "둘 이상의 동사가 연이어 쓰이는 연동문의 대표적인 형태로, 특정 장소로 이동하여 어떠한 목적의 행동을 수행함을 나타냅니다. '去(가다) + 장소' 뒤에 목적에 해당하는 동작(동사)을 붙여 한국어의 '~에 …하러 가다'의 의미를 전달합니다.",
+    "formation": "주어 + 去 + 장소 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 공부하러 학교에 갑니다."
+      }
+    ]
   },
   "zh_想_20": {
-    "title": "想 (to want)",
-    "shortExplanation": "to want",
-    "longExplanation": "to want. Pinyin: xiǎng",
-    "formation": "xiǎng"
+    "title": "想 + 동사 (~하고 싶다 / 소망·의향)",
+    "shortExplanation": "조동사(능원동사)로서 소망이나 의향을 나타내며, '~하고 싶다', '~하려고 하다'라는 뜻입니다.",
+    "longExplanation": "능원동사(조동사) '想(xiǎng)'은 동사 앞에 놓여 말하는 사람의 주관적인 바람, 희망 또는 하고자 하는 계획·의향을 나타냅니다. 한국어의 '~하고 싶다'에 해당합니다. 부정을 할 때는 '不想'의 형태를 사용합니다.",
+    "formation": "주어 + 想 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 책을 읽고 싶습니다."
+      }
+    ]
   },
   "zh_多少N_21": {
-    "title": "多少 N (how much N)",
-    "shortExplanation": "how much N",
-    "longExplanation": "how much N. Pinyin: duōshao N",
-    "formation": "duōshao N"
+    "title": "多少 (+ 양사) + 명사 (얼마나 많은 ~ / 수량 묻기)",
+    "shortExplanation": "수량을 묻는 의문대명사로, 대개 10 이상의 수나 범위를 가늠하기 어려울 때 사용하며 '얼마나', '몇'이라는 뜻입니다.",
+    "longExplanation": "의문대명사 '多少(duōshao)'는 사물이나 사람의 수량, 또는 가격 등을 질문할 때 쓰입니다. 10 이하의 적은 수를 묻고 양사를 반드시 동반해야 하는 '几'와 달리, '多少'는 10 이상의 많은 수나 수를 짐작하기 어려울 때 폭넓게 쓰이며, 뒤에 양사를 생략하고 명사를 바로 취할 수도 있습니다.",
+    "formation": "多少 (+ 양사) + 명사",
+    "examples": [
+      {
+        "translation": "당신은 중국어 선생님이 몇 분이나 계십니까?"
+      }
+    ]
   },
   "zh_个_22": {
-    "title": "个 ((measure word))",
-    "shortExplanation": "(measure word)",
-    "longExplanation": "(measure word). Pinyin: gè",
-    "formation": "gè"
+    "title": "个 (가장 대표적인 범용 양사 / 개, 명)",
+    "shortExplanation": "가장 기본적이고 널리 쓰이는 만능 양사로, 사람이나 전용 양사가 없는 사물을 셀 때 두루 사용합니다.",
+    "longExplanation": "양사 '个(gè)'는 현대 중국어에서 가장 흔히 쓰이는 대표적인 일반 양사입니다. 사람(학생, 친구 등)을 셀 때뿐만 아니라 전용 양사가 따로 정해져 있지 않은 구체적인 사물이나 추상적인 개념(문제, 생각 등)을 셀 때 널리 쓰입니다. 수사나 지시대명사(这/那)와 명사 사이에 위치합니다.",
+    "formation": "수사 / 这 / 那 + 个 + 명사",
+    "examples": [
+      {
+        "translation": "학생 다섯 명"
+      }
+    ]
   },
   "zh_口_23": {
-    "title": "口 ((measure word))",
-    "shortExplanation": "(measure word)",
-    "longExplanation": "(measure word). Pinyin: kǒu",
-    "formation": "kǒu"
+    "title": "口 (가족 식구 수를 세는 양사 / 식구)",
+    "shortExplanation": "주로 가족의 인원수(식구)를 셀 때 사용하는 양사입니다.",
+    "longExplanation": "양사 '口(kǒu)'는 일상 대화에서 주로 한 가정의 식구 수나 구성원 인원수를 셀 때 명사 '人' 앞에 쓰입니다(예: 三口人 - 세 식구). 그 외에도 우물, 솥 등 아가리가 있는 물건이나, 한 모금·한 입(一口)과 같이 먹거나 마시는 동작 단위를 나타낼 때도 사용됩니다.",
+    "formation": "수사 + 口 + 人 (또는 해당 명사)",
+    "examples": [
+      {
+        "translation": "우리 집은 다섯 식구입니다."
+      }
+    ]
   },
   "zh_元块_24": {
-    "title": "元／块 ((currency))",
-    "shortExplanation": "(currency)",
-    "longExplanation": "(currency). Pinyin: yuán／ kuài",
-    "formation": "yuán／ kuài"
+    "title": "元／块 (중국 화폐 기본 단위 / 위안)",
+    "shortExplanation": "중국 화폐의 기본 단위로, '元'은 서면어·공식 표현에 쓰이고 '块'는 일상 구어 대화에서 널리 쓰입니다.",
+    "longExplanation": "중국 인민폐(RMB)의 기본 화폐 단위입니다. '元(yuán)'은 공문서나 은행, 공식 가격표 등 서면어에서 주로 쓰이는 공식 명칭입니다. 반면 '块(kuài)'는 실생활 대화나 시장 등 일상 구어에서 가장 널리 쓰이는 표현입니다.",
+    "formation": "수사 + 元 / 块",
+    "examples": [
+      {
+        "translation": "1위안"
+      }
+    ]
   },
   "zh_在_25": {
-    "title": "在 (at)",
-    "shortExplanation": "at",
-    "longExplanation": "at. Pinyin: zài",
-    "formation": "zài"
+    "title": "在 (~에 있다 / 소재 표현)",
+    "shortExplanation": "사람이나 사물이 특정 장소나 위치에 존재함을 나타내는 동사로, '~에 있다'라는 뜻입니다.",
+    "longExplanation": "동사 '在(zài)'는 사람이나 사물이 특정 장소, 공간, 또는 방위 위치에 존재하고 있음을 나타냅니다. 한국어의 '~에 있다'에 해당하며, 부정형은 '不在(~에 없다)'입니다. 기본 어순은 '주어 + 在 + 장소/방위사' 형태를 취합니다.",
+    "formation": "주어 + 在 + 장소 / 방위사",
+    "examples": [
+      {
+        "translation": "그는 의자 밑에 있습니다."
+      }
+    ]
   },
   "zh_哪儿_26": {
-    "title": "哪儿？ (where)",
-    "shortExplanation": "where",
-    "longExplanation": "where. Pinyin: nǎr？",
-    "formation": "nǎr？"
+    "title": "哪儿？ (어디? / 장소를 묻는 의문대명사)",
+    "shortExplanation": "장소나 소재 위치를 물을 때 사용하는 의문대명사로, '어디'라는 뜻입니다.",
+    "longExplanation": "의문대명사 '哪儿(nǎr)'은 위치나 장소를 질문할 때 사용하는 표현으로, 한국어의 '어디'에 해당합니다(중국 북방에서 얼화(儿化)된 형태로 널리 쓰이며, 남방에서는 '哪里(nǎlǐ)'를 많이 씁니다). 동사 '在'와 함께 '在 + 哪儿？' 구조로 쓰여 '~은 어디에 있습니까?'라는 질문으로 매우 흔히 사용됩니다.",
+    "formation": "주어 + 在 + 哪儿？",
+    "examples": [
+      {
+        "translation": "내 컵은 어디에 있나요?"
+      }
+    ]
   },
   "zh_在PLACEV_27": {
-    "title": "在 PLACE V (V at PLACE)",
-    "shortExplanation": "V at PLACE",
-    "longExplanation": "V at PLACE. Pinyin: zài PLACE V",
-    "formation": "zài PLACE V"
+    "title": "在 + 장소 + 동사 (~에서 …하다 / 동작 장소)",
+    "shortExplanation": "개사(전치사) '在'가 장소와 결합하여 동사 앞에서 동작이 행해지는 장소를 나타내며, '~에서 …하다'라는 뜻입니다.",
+    "longExplanation": "개사(전치사) '在(zài)'는 장소 명사와 결합하여 상황어(부사어) 역할을 하며, 반드시 본동사 앞에 위치합니다. 어떤 동작이나 행위가 발생하는 공간이나 장소를 나타내어 한국어의 '~에서 …하다'에 해당합니다.",
+    "formation": "주어 + 在 + 장소 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 친구 집에서 차를 마십니다."
+      }
+    ]
   },
   "zh_Q呢_28": {
-    "title": "Q 呢 (I wonder)",
-    "shortExplanation": "I wonder",
-    "longExplanation": "I wonder. Pinyin: Q ne",
-    "formation": "Q ne"
+    "title": "의문문 + 呢 (의문 어기조사 / 어조 완화·궁금증)",
+    "shortExplanation": "의문문 끝에 붙어 어조를 부드럽게 완화하고, 궁금증이나 확인의 뉘앙스를 더해줍니다.",
+    "longExplanation": "의문대명사(谁, 什么, 哪儿, 怎么 등)가 포함된 의문문의 끝에 어기조사 '呢(ne)'를 덧붙이면 질문하는 말투가 한결 부드럽고 친근해집니다. 또한 말하는 사람의 호기심이나 '도대체 어디에 있는 걸까?', '~일까?' 하는 의아함과 추측의 뉘앙스를 자연스럽게 나타냅니다.",
+    "formation": "의문문 + 呢？",
+    "examples": [
+      {
+        "translation": "그는 어디에 있는 거지?"
+      }
+    ]
   },
   "zh_N呢_29": {
-    "title": "N 呢？ (where is N)",
-    "shortExplanation": "where is N",
-    "longExplanation": "where is N. Pinyin: N ne？",
-    "formation": "N ne？"
+    "title": "명사 + 呢？ (~은 어디에 있나요? / 소재 묻기)",
+    "shortExplanation": "사람이나 사물의 행방이나 소재를 묻는 생략 의문문으로, '~은 어디 갔지?', '~은 어디에 있나요?'라는 뜻입니다.",
+    "longExplanation": "앞선 대화 맥락 없이 단독으로 '명사 + 呢？(ne)' 형태로 쓰이면, 그 대상의 현재 위치나 행방을 묻는 생략 의문문이 됩니다. 이는 '[명사] 在哪儿？(~은 어디에 있습니까?)'와 같은 뜻으로 일상생활에서 매우 자주 쓰입니다.",
+    "formation": "명사 / 대명사 + 呢？",
+    "examples": [
+      {
+        "translation": "내 컵은 어디 있지?"
+      }
+    ]
   },
   "zh_PLACE有N_30": {
-    "title": "PLACE 有 N (there is N at PLACE)",
-    "shortExplanation": "there is N at PLACE",
-    "longExplanation": "there is N at PLACE. Pinyin: PLACE yǒu N",
-    "formation": "PLACE yǒu N"
+    "title": "장소 + 有 + 명사 (~에 …이/가 있다 / 존현문)",
+    "shortExplanation": "특정 장소에 사람이나 사물이 존재함을 나타내는 존현문으로, '~에 …이/가 있다'라는 뜻입니다.",
+    "longExplanation": "중국어에서 존재를 나타내는 존현문의 가장 대표적인 형식입니다. 문두에 장소나 방위사를 배치하고 동사 '有(yǒu)' 뒤에 존재하는 대상(보통 '수사 + 양사 + 명사'의 불특정 대상)을 연결하여, 한국어의 '~에 …이/가 있다'를 나타냅니다.",
+    "formation": "장소 / 방위사 + 有 + (수사 + 양사) + 명사",
+    "examples": [
+      {
+        "translation": "의자 밑에 강아지 한 마리가 있습니다."
+      }
+    ]
   },
   "zh_PLACE没有N_31": {
-    "title": "PLACE 没有 N (there isn’t N at PLACE)",
-    "shortExplanation": "there isn’t N at PLACE",
-    "longExplanation": "there isn’t N at PLACE. Pinyin: PLACE méiyǒu N",
-    "formation": "PLACE méiyǒu N"
+    "title": "장소 + 没有 + 명사 (~에 …이/가 없다 / 존현문의 부정)",
+    "shortExplanation": "존현문의 부정형으로, 특정 장소에 사람이나 사물이 존재하지 않음을 나타내며 '~에 …이/가 없다'라는 뜻입니다.",
+    "longExplanation": "존현문 '장소 + 有 + 명사'의 부정형입니다. 동사 '有' 앞에 '没'을 붙여 '没有(méiyǒu)'로 나타내며, 특정 장소에 어떠한 사람이나 사물도 존재하지 않음을 표현합니다. 한국어의 '~에 …이/가 없다'에 해당하며, 부정형에서는 일반적으로 수량사를 동반하지 않고 명사만 바로 취합니다.",
+    "formation": "장소 / 방위사 + 没有 + 명사",
+    "examples": [
+      {
+        "translation": "여기에는 사람이 없습니다."
+      }
+    ]
   },
   "zh_和_32": {
-    "title": "和 (and)",
-    "shortExplanation": "and",
-    "longExplanation": "and. Pinyin: hé",
-    "formation": "hé"
+    "title": "和 (접속사: ~와/과, ~하고)",
+    "shortExplanation": "명사나 대명사, 명사구를 대등하게 연결하는 접속사로, 한국어의 '~와/과', '~하고'에 해당합니다.",
+    "longExplanation": "'和'(hé)는 명사, 대명사, 명사성 어구를 나란히 연결할 때 사용하는 가장 대표적인 대등 접속사입니다. 여러 대상을 나열할 때는 모점(、)으로 구분하다가 마지막 항목 바로 앞에 '和'를 배치합니다(예: 爸爸、妈妈和我 - 아빠, 엄마 그리고 나). 영어의 'and'나 한국어의 '그리고'와 달리, 두 개의 독립된 절이나 완전한 문장을 연결하는 용도로는 사용할 수 없습니다.",
+    "formation": "명사1 / 대명사1 + 和 + 명사2 / 대명사2",
+    "examples": [
+      {
+        "translation": "아빠, 엄마 그리고 나."
+      }
+    ]
   },
   "zh_能_33": {
-    "title": "能 (can)",
-    "shortExplanation": "can",
-    "longExplanation": "can. Pinyin: néng",
-    "formation": "néng"
+    "title": "能 (능원동사: ~할 수 있다, ~해도 되다 [능력·조건·허가])",
+    "shortExplanation": "객관적 조건의 충족, 신체적 능력, 또는 허가와 부탁을 나타내는 조동사로, '~할 수 있다', '~해도 되다'를 뜻합니다.",
+    "longExplanation": "'能'(néng)은 본동사 앞에 위치하는 조동사(능원동사)입니다. 주된 용법으로는 ① 객관적인 환경이나 조건이 갖추어져서 '~할 수 있다', ② 신체적인 능력이나 회복으로 '~할 수 있다', ③ 의문문에서 상대방의 허가를 구하거나 정중하게 부탁하는 '~해도 될까요?'('我能...吗?')가 있습니다. 부정형은 '不能'(~할 수 없다, ~해서는 안 된다)입니다.",
+    "formation": "주어 + 能 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "제가 여기에 앉아도 될까요?"
+      }
+    ]
   },
   "zh_请V_34": {
-    "title": "请 V (please V)",
-    "shortExplanation": "please V",
-    "longExplanation": "please V. Pinyin: qǐng V",
-    "formation": "qǐng V"
+    "title": "请 + 동사 (부디 ~하세요, ~해 주세요 [정중한 청유·명령])",
+    "shortExplanation": "동사 앞에 붙어 정중한 권유, 청유, 공손한 명령을 나타내며, '부디 ~하십시오', '~해 주세요'에 해당합니다.",
+    "longExplanation": "'请'(qǐng)은 동사 바로 앞에 놓여 상대방에게 어떤 행동을 정중하게 권하거나 요청할 때 쓰입니다(예: 请进 - 들어오세요, 请坐 - 앉으세요, 请喝茶 - 차 드세요). 일상 대화나 비즈니스 등 다양한 상황에서 문장을 부드럽고 예의 바르게 만들어 주는 표현입니다.",
+    "formation": "(주어 +) 请 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "앉으세요 (앉으십시오)."
+      }
+    ]
   },
   "zh_点分_35": {
-    "title": "# 点 # 分 (# hour # minute)",
-    "shortExplanation": "# hour # minute",
-    "longExplanation": "# hour # minute. Pinyin: # diǎn # fēn",
-    "formation": "# diǎn # fēn"
+    "title": "수사 + 点 + (수사 + 分) (시각 표현: ~시 ~분)",
+    "shortExplanation": "구체적인 시각을 나타내는 표현으로, '点'은 '시', '分'은 '분'을 가리킵니다.",
+    "longExplanation": "중국어에서 시각을 나타낼 때는 '수사 + 点(diǎn: 시) + 수사 + 分(fēn: 분)' 어순을 사용합니다. 10분 이상의 두 자리 분 단위일 경우 구어에서는 끝의 '分'을 생략하기도 합니다(예: 十一点十 - 11시 10분). 반면 1분부터 9분까지의 한 자리 분은 가운데에 '零'을 넣어 '八点零五分'(8시 5분)과 같이 읽으며 이때는 '分'을 생략할 수 없습니다. 또한 '2시'는 '二点'이 아닌 '两点'이라고 부릅니다.",
+    "formation": "수사 + 点 (+ 수사 + 分)",
+    "examples": [
+      {
+        "translation": "11시 10분."
+      }
+    ]
   },
   "zh_上午下午_36": {
-    "title": "上午／下午 (AM/PM)",
-    "shortExplanation": "AM/PM",
-    "longExplanation": "AM/PM. Pinyin: shàngwǔ／ xiàwǔ",
-    "formation": "shàngwǔ／ xiàwǔ"
+    "title": "上午 / 下午 (오전 / 오후 [시각 수식어])",
+    "shortExplanation": "구체적인 시각 앞에 놓여 오전(上午)인지 오후(下午)인지를 명확히 구분해 주는 시간 명사입니다.",
+    "longExplanation": "중국어에서 하루 중 시간대를 구분하여 말할 때는 '上午'(shàngwǔ: 오전)나 '下午'(xiàwǔ: 오후)와 같은 시간 어휘를 구체적인 시각 앞에 둡니다. 중국어 시간 표현은 언제나 '큰 단위에서 작은 단위' 순서로 전개되므로, 한국어와 마찬가지로 '오전/오후 + 시각' 어순을 취합니다(예: 下午三点十分 - 오후 3시 10분).",
+    "formation": "上午 / 下午 + 수사 + 点 (+ 수사 + 分)",
+    "examples": [
+      {
+        "translation": "오후 3시 10분."
+      }
+    ]
   },
   "zh_STIMEV_37": {
-    "title": "S TIME V ((time phrase))",
-    "shortExplanation": "(time phrase)",
-    "longExplanation": "(time phrase). Pinyin: S TIME V",
-    "formation": "S TIME V"
+    "title": "주어 + 시간사 + 동사 (시간 상황어가 주어 뒤에 위치하는 어순)",
+    "shortExplanation": "동작이 일어나는 시점을 나타내는 시간 어휘가 주어 뒤, 동사 앞에 놓여 시간 상황어 역할을 하는 기본 문형입니다.",
+    "longExplanation": "중국어 어순의 가장 핵심적인 규칙 중 하나는 '동작이 일어나는 시간은 반드시 동사 앞에 위치한다'는 점입니다. 영어처럼 문장 맨 끝에 둘 수 없습니다. '주어 + 시간사 + 동사' 어순에서는 시간 어휘가 주어 바로 뒤에서 술어 동사를 수식하는 시간 상황어 역할을 합니다(예: 妈妈六点做饭 - 엄마는 6시에 밥을 하신다).",
+    "formation": "주어 + 시간사 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "엄마는 여섯 시에 밥을 하십니다."
+      }
+    ]
   },
   "zh_TIMESV_38": {
-    "title": "TIME S V ((time phrase))",
-    "shortExplanation": "(time phrase)",
-    "longExplanation": "(time phrase). Pinyin: TIME S V",
-    "formation": "TIME S V"
+    "title": "시간사 + 주어 + 동사 (시간 상황어가 문장 맨 앞에 위치하는 어순)",
+    "shortExplanation": "시간을 나타내는 말을 문장 맨 앞(주어 앞)에 두어 전체 배경 시점을 제시하거나 시간을 강조하는 문형입니다.",
+    "longExplanation": "중국어에서 시간 상황어는 주어 뒤뿐만 아니라 문장 맨 앞(주어 앞)에도 위치할 수 있습니다. '시간사 + 주어 + 동사' 어순을 사용하면 문장 전체의 시간적 배경을 먼저 명확히 제시하거나, 특정 시점을 강조하는 효과가 있습니다(예: 七点我吃饭 - 7시에 나는 밥을 먹는다). 주어의 앞이든 뒤이든 상관없이 '동사보다는 항상 앞서야 한다'는 기본 원칙은 동일합니다.",
+    "formation": "시간사 + 주어 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "일곱 시에 저는 밥을 먹습니다."
+      }
+    ]
   },
   "zh_TIME前_39": {
-    "title": "TIME 前 (before TIME)",
-    "shortExplanation": "before TIME",
-    "longExplanation": "before TIME. Pinyin: TIME qián",
-    "formation": "TIME qián"
+    "title": "시점 + 前 (~ 전에, ~ 전까지 [시점·기한])",
+    "shortExplanation": "특정한 시점을 나타내는 어휘 뒤에 '前'이 붙어 그 시점 이전이나 기한을 나타내며, '~ 전에', '~ 전까지'에 해당합니다.",
+    "longExplanation": "'前'(qián)이 요일, 날짜, 시각 등 '구체적인 시점' 바로 뒤에 붙으면 해당 시점보다 앞선 시간대이거나 늦어도 그때까지 마쳐야 하는 기한을 가리킵니다(예: 星期五前 - 금요일 전에 / 금요일 전까지, 五点前 - 5시 전에). 문장 내에서는 주로 동사 앞에 놓여 시간 상황어로 쓰입니다.",
+    "formation": "구체적 시점 + 前",
+    "examples": [
+      {
+        "translation": "금요일 전에 (금요일 전까지)."
+      }
+    ]
   },
   "zh_DURATION前_40": {
-    "title": "DURATION 前 (DURATION ago)",
-    "shortExplanation": "DURATION ago",
-    "longExplanation": "DURATION ago. Pinyin: DURATION qián",
-    "formation": "DURATION qián"
+    "title": "기간 + 前 (~ 전에, 지금으로부터 ~ 전 [과거 경과 시간])",
+    "shortExplanation": "시간의 양을 나타내는 시량사(기간) 뒤에 '前'이 붙어 현재 시점에서 과거로 거슬러 올라간 '~ 전에'를 나타냅니다.",
+    "longExplanation": "특정 시각이 아닌 '3일', '일주일', '한 달'과 같은 시간의 분량(시량사/기간) 뒤에 '前'(qián)이 결합하면, 현재 기준 시점으로부터 얼마만큼 이전이었는지를 나타냅니다. 한국어의 '지금으로부터 ~ 전', '~ 전에'에 해당합니다(예: 一个星期前 - 일주일 전에, 三天前 - 3일 전에).",
+    "formation": "기간 (수사 + 시간 양사) + 前",
+    "examples": [
+      {
+        "translation": "일주일 전 (일주일 전에)."
+      }
+    ]
   },
   "zh_N怎么样_41": {
-    "title": "N 怎么样？ (how is N?)",
-    "shortExplanation": "how is N?",
-    "longExplanation": "how is N?. Pinyin: N zěnmeyàng？",
-    "formation": "N zěnmeyàng？"
+    "title": "명사 / 주어 + 怎么样? (~은/는 어떻습니까? [상태·성질 질문])",
+    "shortExplanation": "의문대명사 '怎么样'이 주어 뒤에 위치하여 사람이나 사물의 상태, 성질, 건강, 진행 상황 등을 묻는 '~은/는 어때요?'를 나타냅니다.",
+    "longExplanation": "'怎么样'(zěnmeyàng)은 상태나 상황, 성질을 질문할 때 사용하는 의문대명사입니다. '주어 + 怎么样?' 형태로 질문하여, 상대방의 건강, 실력, 날씨, 일의 진행 경과 등을 '어떻습니까?', '어때요?'라고 묻습니다. 대답할 때는 주로 정도부사(很, 不太 등)와 형용사를 결합하여 답합니다(예: 你的汉语怎么样？ - 당신의 중국어 실력은 어떻습니까?).",
+    "formation": "명사 / 대명사 + 怎么样?",
+    "examples": [
+      {
+        "translation": "당신의 중국어 실력은 어떻습니까?"
+      }
+    ]
   },
   "zh_的_42": {
-    "title": "(的) ((omission of 的))",
-    "shortExplanation": "(omission of 的)",
-    "longExplanation": "(omission of 的). Pinyin: ( de)",
-    "formation": "( de)"
+    "title": "(的) (소유·소속을 나타내는 구조조사 '的'의 생략)",
+    "shortExplanation": "친족, 신체 부위, 소속 기관 등 주체와 매우 밀접한 관계를 나타낼 때 소유 조사 '的'을 자연스럽게 생략하는 용법입니다.",
+    "longExplanation": "중국어에서 한정어와 중심명사 사이의 소유 관계는 원칙적으로 '的'(de)로 연결합니다. 그러나 신체 부위(我身体 - 내 몸/건강), 가까운 친족(我妈妈 - 우리 엄마), 소속 학교나 회사(我们学校 - 우리 학교)처럼 분리하기 힘든 밀접한 관계일 때는 구어에서 '的'을 생략하는 것이 훨씬 자연스럽습니다(예: 我身体不太好 - 제 몸 상태가 별로 좋지 않습니다).",
+    "formation": "인칭대명사 / 명사 + (的) + 명사 (신체 부위 / 친족 / 소속 등)",
+    "examples": [
+      {
+        "translation": "저는 몸(건강)이 별로 좋지 않습니다."
+      }
+    ]
   },
   "zh_太A了_43": {
-    "title": "太 A (了) (too A)",
-    "shortExplanation": "too A",
-    "longExplanation": "too A. Pinyin: tài A ( le)",
-    "formation": "tài A ( le)"
+    "title": "太 + 형용사 + (了) (너무 ~하다 [지나침·감탄])",
+    "shortExplanation": "정도부사 '太'가 형용사 앞에 오고 문장 끝에 '了'가 호응하여, 정도의 지나침에 대한 불만이나 강한 감탄을 나타냅니다.",
+    "longExplanation": "'太 + 형용사 + (了)'(tài... le)는 정도가 극에 달했음을 나타내는 구문입니다. 크게 두 가지 뉘앙스로 쓰입니다: ① 감당할 수 있는 기준을 초과하여 불만을 표현하는 '너무 ~하다'(예: 太贵了 - 너무 비싸다, 天气太冷了 - 날씨가 너무 춥다); ② 칭찬이나 기쁨을 나타내는 감탄 표현 '정말 ~하다', '아주 ~하다!'(예: 太好了 - 너무 잘됐다!). 긍정 서술문에서는 대개 어기조사 '了'와 함께 호응합니다.",
+    "formation": "주어 + 太 + 형용사 + (了)",
+    "examples": [
+      {
+        "translation": "날씨가 너무 춥습니다."
+      }
+    ]
   },
   "zh_不太A_44": {
-    "title": "(不) 太 A (not too A)",
-    "shortExplanation": "not too A",
-    "longExplanation": "not too A. Pinyin: ( bù) tài A",
-    "formation": "( bù) tài A"
+    "title": "不太 + 형용사 (별로 ~하지 않다, 그리 ~하지 않다 [완곡한 부분 부정])",
+    "shortExplanation": "부정부사 '不'와 '太'가 결합하여 형용사 앞에서 정도를 완화하는 완곡한 부정 표현으로, '별로 ~하지 않다', '그리 ~하지 않다'를 뜻합니다.",
+    "longExplanation": "'不太 + 형용사'(bù tài)는 단정적인 어조를 피하고 부드럽고 완곡하게 표현할 때 사용하는 부분 부정 구문입니다. '不好'(나쁘다/안 좋다)라고 단정적으로 말하는 대신 '不太好'(별로 안 좋다)라고 표현함으로써 어조를 한층 조심스럽고 예의 바르게 만듭니다. 주의할 점으로 긍정 구문인 '太...了'와 달리, 부정문인 '不太 + 형용사' 뒤에는 어기조사 '了'를 붙이지 않습니다.",
+    "formation": "주어 + 不太 + 형용사",
+    "examples": [
+      {
+        "translation": "저는 몸(건강)이 별로 좋지 않습니다."
+      }
+    ]
   },
   "zh_会V_45": {
-    "title": "会 V (will V)",
-    "shortExplanation": "will V",
-    "longExplanation": "will V. Pinyin: huì V",
-    "formation": "huì V"
+    "title": "会 + 동사 (~할 것이다, ~할 가능성이 있다 [추측·미래 실현 가능성])",
+    "shortExplanation": "동사 앞에 쓰여 어떤 일이 장차 실현될 가능성이나 추측을 나타내는 조동사로, '~할 것이다', '~하겠습니까?'에 해당합니다.",
+    "longExplanation": "'会'(huì)는 학습을 통한 능력을 나타내는 것 외에도, 미래에 어떤 일이 일어날 가능성이 있거나 일어날 것으로 예측·판단할 때 사용하는 조동사(능원동사)입니다. 한국어의 '~할 것이다', '~하겠다'에 해당합니다(예: 你会回家吗？ - 집에 돌아올 건가요?, 明天会下雨 - 내일 비가 올 것이다). 부정형은 '不会'(~하지 않을 것이다)입니다.",
+    "formation": "주어 + 会 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "당신은 집에 돌아올 건가요?"
+      }
+    ]
   },
   "zh_喂_46": {
-    "title": "喂 (hello)",
-    "shortExplanation": "hello",
-    "longExplanation": "hello. Pinyin: wèi",
-    "formation": "wèi"
+    "title": "喂 (감탄사: 여보세요 [전화 통화 응답·인사])",
+    "shortExplanation": "전화를 받거나 걸 때 상대방을 확인하고 인사하는 대표적인 감탄사로, 한국어의 '여보세요'에 해당합니다.",
+    "longExplanation": "'喂'는 전화 통화 시 인사말이나 상대방을 부를 때 사용하는 가장 대표적인 감탄사입니다. 통화가 연결되었을 때 주로 제2성(wéi)이나 제4성(wèi)으로 발음하며, 한국어의 '여보세요'처럼 말을 꺼내거나 상대방의 신원을 확인할 때 첫머리에 둡니다(예: 喂，李老师在家吗？ - 여보세요, 이 선생님 댁에 계신가요?). 길에서 사람을 부를 때 '이봐요', '저기요'의 의미로 쓰이기도 합니다.",
+    "formation": "喂, + 안부 인사 / 질문 문장",
+    "examples": [
+      {
+        "translation": "여보세요, 이 선생님 집에 계십니까?"
+      }
+    ]
   },
   "zh_在V呢_47": {
-    "title": "在 V (呢) (V-ing)",
-    "shortExplanation": "V-ing",
-    "longExplanation": "V-ing. Pinyin: zài V ( ne)",
-    "formation": "zài V ( ne)"
+    "title": "在 + 동사 (+ 呢) (~하는 중이다, ~하고 있다 - 동작의 진행)",
+    "shortExplanation": "동사 앞에 부사 '在'를 쓰고 (문장 끝에 어기조사 '呢'를 함께 쓰기도 함), 동작이 현재 진행 중임을 나타내는 '~하고 있다', '~하는 중이다' 표현입니다.",
+    "longExplanation": "'在 + 동사 (+ 呢)'(zài... ne)는 말하는 시점에 어떤 동작이나 행위가 진행되고 있음을 나타내는 대표적인 진행태 구문으로, 한국어의 '~하고 있다', '~하는 중이다'에 해당합니다. 부사 '在'(또는 '正在', '正')가 동사 앞에서 동작의 진행을 나타내며, 문장 끝의 어기조사 '呢'는 진행의 뉘앙스를 보강해 줍니다. '呢'는 생략할 수도 있습니다. 부정형은 '没(有)在 + 동사'를 씁니다.",
+    "formation": "주어 + 在 + 동사 (+ 呢)",
+    "examples": [
+      {
+        "translation": "저는 자고 있습니다."
+      }
+    ]
   },
   "zh_没在V呢_48": {
-    "title": "没 在 V (呢) (not V-ing)",
-    "shortExplanation": "not V-ing",
-    "longExplanation": "not V-ing. Pinyin: méi zài V ( ne)",
-    "formation": "méi zài V ( ne)"
+    "title": "没(有)在 + 동사 (+ 呢) (~하고 있지 않다 - 진행의 부정)",
+    "shortExplanation": "동작 진행 표현의 부정형으로, '在' 앞에 '没' 또는 '没有'를 붙여 '~하고 있지 않다', '~하는 중이 아니다'를 나타냅니다.",
+    "longExplanation": "'没(有)在 + 동사 (+ 呢)'(méi zài... ne)는 동작의 진행을 나타내는 '在 + 동사'의 부정형입니다. 진행 중인 동작을 부정할 때는 '不'를 쓰지 않고 반드시 '没' 또는 '没有'를 사용합니다('不在 + 동사' 형태는 쓰지 않음). 문장 끝에 '呢'를 붙여 상황을 설명하거나 정정하는 뉘앙스를 나타내기도 합니다.",
+    "formation": "주어 + 没(有)在 + 동사 (+ 呢)",
+    "examples": [
+      {
+        "translation": "그들은 텔레비전을 보고 있지 않습니다."
+      }
+    ]
   },
   "zh_1yo_49": {
-    "title": "1 (yāo) ((1 in telephony))",
-    "shortExplanation": "(1 in telephony)",
-    "longExplanation": "(1 in telephony). Pinyin: 1 (yāo)",
-    "formation": "1 (yāo)"
+    "title": "1 (yāo / 幺) (전화번호, 방 번호 등 연속 번호에서 숫자 '1'의 발음)",
+    "shortExplanation": "전화번호, 방 번호, 차량 번호 등을 하나씩 읽을 때 숫자 '1'을 'yī' 대신 혼동을 방지하기 위해 'yāo'로 읽는 용법입니다.",
+    "longExplanation": "중국어에서 전화번호, 호텔 방 번호, 항공편명, 버스 노선 번호 등 일련번호를 한 글자씩 읽을 때, 숫자 '1'을 본래 발음인 'yī' 대신 'yāo'(한자로는 幺)로 발음합니다. 이는 전화 통화 시나 소음 환경에서 '1(yī)'과 '7(qī)'의 발음이 유사하여 발생할 수 있는 혼선을 방지하기 위함입니다.",
+    "formation": "전화번호·방 번호 등의 숫자 '1' → 'yāo(幺)'로 발음",
+    "examples": [
+      {
+        "translation": "138-0156-7749 (숫자 1은 'yāo'로 읽습니다)"
+      }
+    ]
   },
   "zh_V吧_50": {
-    "title": "V 吧。 (feel free to V)",
-    "shortExplanation": "feel free to V",
-    "longExplanation": "feel free to V. Pinyin: V ba。",
-    "formation": "V ba。"
+    "title": "동사 + 吧 (제안·권유·재촉·허락의 어기조사: ~하자, ~하세요)",
+    "shortExplanation": "문장 끝에 어기조사 '吧'를 붙여 제안, 권유, 가벼운 재촉 또는 편하게 ~하라는 허락과 권유를 부드럽게 나타냅니다.",
+    "longExplanation": "어기조사 '吧'(ba)는 문장 끝에 쓰여 제안, 권유, 부드러운 청유나 촉구, 또는 '편하게 ~하세요'라는 허락의 뜻을 전달합니다(예: 走吧 - 갑시다, 坐吧 - 앉으세요). 직설적인 명령 대신 어기를 한결 부드럽고 완곡하게 만들어 상대방에게 친근하고 정중한 느낌을 줍니다.",
+    "formation": "동사 (+ 목적어) + 吧",
+    "examples": [
+      {
+        "translation": "여기 아무도 없으니, 앉으세요."
+      }
+    ]
   },
   "zh_VO了_51": {
-    "title": "V O 了 (have V’ed O)",
-    "shortExplanation": "have V’ed O",
-    "longExplanation": "have V’ed O. Pinyin: V O le",
-    "formation": "V O le"
+    "title": "동사 + 목적어 + 了 (문말 어기조사 '了': 동작의 실현 및 변화)",
+    "shortExplanation": "목적어 뒤 문장 끝에 어기조사 '了'를 붙여 동작이나 사태가 이미 발생·완료되었거나 새로운 변화가 생겼음을 나타냅니다(~했다, ~하게 되었다).",
+    "longExplanation": "'동사 + 목적어 + 了'(le) 구문에서 문장 맨 끝에 놓이는 '了'는 문말 어기조사입니다. 이미 어떤 사건이나 동작이 발생·실현되었음을 서술하거나 보고할 때 쓰이며(예: 他去学校了 - 그는 학교에 갔습니다), 새로운 상황이 생겨났음이나 상태의 변화를 나타내기도 합니다. 부정문에서는 동사 앞에 '没(有)'를 쓰고 문말의 '了'는 삭제합니다.",
+    "formation": "주어 + 동사 + 목적어 + 了",
+    "examples": [
+      {
+        "translation": "그는 학교에 갔습니다."
+      }
+    ]
   },
   "zh_V了O_52": {
-    "title": "V 了 O (have V’ed O)",
-    "shortExplanation": "have V’ed O",
-    "longExplanation": "have V’ed O. Pinyin: V le O",
-    "formation": "V le O"
+    "title": "동사 + 了 + 목적어 (동태조사 '了': 동작의 완료 및 실현)",
+    "shortExplanation": "동사 바로 뒤에 동태조사 '了'를 놓아 동작 자체의 완료나 실현을 나타냅니다. 이때 목적어 앞에는 보통 수량사나 수식어가 붙습니다.",
+    "longExplanation": "'동사 + 了 + 목적어'(le) 구조에서 동사 직후에 붙는 '了'는 동작의 완료나 실현을 나타내는 동태조사(상조사)입니다. 특정 행위가 이미 완수되었음을 강조하며, 뒤따르는 목적어 앞에는 일반적으로 수량사나 한정 수식어(예: 不少, 三本书, 很多)가 함께 쓰입니다(예: 我买了不少衣服 - 옷을 꽤 많이 샀습니다).",
+    "formation": "주어 + 동사 + 了 + 목적어 (보통 수량사·수식어를 동반함)",
+    "examples": [
+      {
+        "translation": "저는 옷을 꽤 많이 샀습니다."
+      }
+    ]
   },
   "zh_没VO_53": {
-    "title": "没 V O (have not V’ed O)",
-    "shortExplanation": "have not V’ed O",
-    "longExplanation": "have not V’ed O. Pinyin: méi V O",
-    "formation": "méi V O"
+    "title": "没(有) + 동사 + 목적어 (과거·완료의 부정: ~하지 않았다, 아직 ~하지 않았다)",
+    "shortExplanation": "동사 앞에 부정부사 '没' 또는 '没有'를 써서 과거에 동작이 일어나지 않았거나 아직 완료되지 않았음을 나타냅니다.",
+    "longExplanation": "'没(有) + 동사 + 목적어'(méi...)는 과거에 어떤 동작이 발생하지 않았거나 행위가 완결되지 않았음을 부정할 때 사용합니다(한국어의 '~하지 않았다', '아직 ~하지 않았다'). 매우 중요한 문법 규칙으로, 부정부사 '没(没有)'로 부정한 문장에서는 완료를 나타내는 조사 '了'를 함께 쓸 수 없습니다(예: '她没去商店了'는 비문이며, '她没去商店'가 바른 문장입니다).",
+    "formation": "주어 + 没(有) + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그녀는 상점에 가지 않았습니다."
+      }
+    ]
   },
   "zh_TIME后_54": {
-    "title": "TIME 后 (after TIME)",
-    "shortExplanation": "after TIME",
-    "longExplanation": "after TIME. Pinyin: TIME hòu",
-    "formation": "TIME hòu"
+    "title": "시점 + 后 (~ 이후, ~ 뒤에)",
+    "shortExplanation": "구체적인 시점 뒤에 방위사 '后'(또는 '以后')를 붙여 그 시점 이후의 시간을 나타냅니다(~ 이후, ~ 뒤).",
+    "longExplanation": "특정 시각, 요일, 날짜 등 기준이 되는 시점 뒤에 '后'(hòu) 또는 '以后'(yǐhòu)를 연결하여 '그 시점 이후', '그 시간 뒤'를 나타냅니다(예: 五点后 - 5시 이후). 문장의 맨 앞이나 주어 뒤에 놓여 시간상황어(부사어) 역할을 합니다.",
+    "formation": "시점(시간·날짜) ＋ 后 / 以后",
+    "examples": [
+      {
+        "translation": "5시 이후 (5시 뒤)"
+      }
+    ]
   },
   "zh_DURATION后_55": {
-    "title": "DURATION 后 (after DURATION)",
-    "shortExplanation": "after DURATION",
-    "longExplanation": "after DURATION. Pinyin: DURATION hòu",
-    "formation": "DURATION hòu"
+    "title": "기간 + 后 (~ 뒤에, ~ 후에 - 시간 경과)",
+    "shortExplanation": "시간의 길이(시량) 뒤에 '后'(또는 '以后')를 붙여 일정한 시간이 지난 후의 시점을 나타냅니다(~ 지난 후, ~ 뒤에).",
+    "longExplanation": "시간의 길이(분, 시간, 일, 년 등 시량 표현) 뒤에 '后'(hòu)나 '以后'를 붙이면 '해당 기간이 경과한 뒤'(예: 四十分钟后 - 40분 뒤에, 两天后 - 이틀 후에)라는 뜻을 나타냅니다. 기준 시점으로부터 일정한 시간이 흐른 뒤 어떤 동작이 일어남을 표현할 때 쓰입니다.",
+    "formation": "기간(시량) ＋ 后 / 以后",
+    "examples": [
+      {
+        "translation": "40분 뒤에"
+      }
+    ]
   },
   "zh_啊_56": {
-    "title": "……啊 ((exclamation))",
-    "shortExplanation": "(exclamation)",
-    "longExplanation": "(exclamation). Pinyin: …… ā",
-    "formation": "…… ā"
+    "title": "...啊 (감탄·동의·친근함의 어기조사: ~네!, ~지!, ~하자!)",
+    "shortExplanation": "문장 끝에 쓰여 감탄, 적극적인 동의, 친근한 확인이나 감정을 실어 전달하는 어기조사입니다.",
+    "longExplanation": "'啊'(a)는 중국어 구어에서 감정과 어기를 풍부하게 해 주는 대표적인 어기조사입니다. 문장 끝이나 단어 뒤에 붙어 감탄, 친근한 권유, 적극적인 호응이나 동의를 나타냅니다(예: 好啊 - 좋아!, 是啊 - 그래/맞아!). 앞 글자의 받침이나 모음 환경에 따라 발음이 'ya', 'wa', 'na' 등으로 자연스럽게 연음 변조되는 음운적 특징이 있습니다.",
+    "formation": "문장 / 단어 + 啊",
+    "examples": [
+      {
+        "translation": "좋아요! 맞아요!"
+      }
+    ]
   },
   "zh_都N_57": {
-    "title": "都 N (both Ns)",
-    "shortExplanation": "both Ns",
-    "longExplanation": "both Ns. Pinyin: dōu N",
-    "formation": "dōu N"
+    "title": "都 + 서술어 / 都 + 是 + 명사 (범위부사: 모두, 다)",
+    "shortExplanation": "복수 주어 뒤, 서술어(동사/형용사, 흔히 '是 + 명사') 앞에 위치하여 앞서 언급된 대상 전체를 아우르는 '모두', '다'를 나타내는 부사입니다.",
+    "longExplanation": "'都'(dōu)는 선행하는 복수나 전체 대상을 총괄하는 범위부사로, 한국어의 '모두', '다'에 해당합니다. 반드시 복수 주어(또는 전체를 가리키는 대상) 뒤에 오며, 서술어(동사, 형용사 또는 '是 + 명사')의 바로 앞에 위치합니다(예: 我们都是中国人 - 우리는 모두 중국인입니다). 영어처럼 문장 앞뒤로 자유롭게 이동하지 않고 동사나 형용사 앞자리에 고정됩니다.",
+    "formation": "주어(복수) + 都 + 是 + 명사 (또는 都 + 서술어)",
+    "examples": [
+      {
+        "translation": "우리는 모두 중국인입니다."
+      }
+    ]
   },
   "zh_S是MANNERV的_58": {
-    "title": "S 是 MANNER V 的 (it is MANNER that S V)",
-    "shortExplanation": "it is MANNER that S V",
-    "longExplanation": "it is MANNER that S V. Pinyin: S shì MANNER V de",
-    "formation": "S shì MANNER V de"
+    "title": "주어 + 是 + 방식·수단 + 동사 + 的 ('是……的' 강조 구문: 방식 및 수단의 강조)",
+    "shortExplanation": "이미 발생한 과거 동작에 대해 어떤 방식, 수단, 방법으로 이루어졌는지를 특정하여 부각시키는 '是……的' 강조 구문입니다.",
+    "longExplanation": "'是……的'(shì... de) 구문은 화자와 청자 모두 해당 동작이 과거에 이미 일어났음을 알고 있는 상황에서, 그 동작의 '방식(어떻게)', '시간(언제)', '장소(어디서)' 등을 초점화하여 강조할 때 쓰입니다. 강조하고자 하는 수단이나 방식 앞에 '是'를 두고 문장 끝에 '的'를 배치합니다(예: 我们是开车来的 - 우리는 차를 몰고[운전해서] 온 것입니다). 긍정문에서는 '是'를 생략하기도 하지만, 부정형은 반드시 '不是……的' 형태로 써야 합니다.",
+    "formation": "주어 + 是 + 방식·수단 + 동사 + 的",
+    "examples": [
+      {
+        "translation": "우리는 운전해서 왔습니다."
+      }
+    ]
   },
   "zh_年_59": {
-    "title": "年 (year)",
-    "shortExplanation": "year",
-    "longExplanation": "year. Pinyin: nián",
-    "formation": "nián"
+    "title": "숫자 + 年 (연도의 표현 및 읽는 법)",
+    "shortExplanation": "연도를 나타낼 때 연도 숫자를 자릿수 단위가 아닌 한 글자씩 차례대로 읽은 뒤 '年'(nián)을 붙입니다.",
+    "longExplanation": "중국어에서 서기 연도를 말할 때는 한국어처럼 '이천십칠 년'과 같이 단위로 묶어 읽지 않고, 각 자릿수의 숫자를 하나씩 낱개로 읽은 다음 끝에 '年'(nián)을 붙입니다(예: 2017년은 'èr líng yī qī nián / 二零一七年'으로 읽음). 숫자 '0'은 'líng(零)'으로 읽습니다. 연·월·일 표현에서 가장 큰 단위로서 항상 맨 앞에 놓입니다.",
+    "formation": "숫자(각 자릿수를 차례대로 읽음) ＋ 年",
+    "examples": [
+      {
+        "translation": "2017년"
+      }
+    ]
   },
   "zh_要_60": {
-    "title": "要 (want to, will)",
-    "shortExplanation": "want to, will",
-    "longExplanation": "want to, will. Pinyin: yào",
-    "formation": "yào"
+    "title": "要 + 동사 (조동사: ~하려고 하다, ~할 것이다, ~하고 싶다)",
+    "shortExplanation": "동사 앞에 쓰여 주체의 강한 의지나 소망(~하려고 하다, ~하고 싶다), 또는 미래의 예정이나 계획(~할 것이다)을 나타내는 조동사입니다.",
+    "longExplanation": "조동사(능원동사) '要'(yào)는 동사 앞에 놓여 행위를 하려는 주체의 확고한 의지나 바람('~하려고 하다', '~하고 싶다')을 나타내며, 단순한 바람을 나타내는 '想'보다 실행 의지가 훨씬 강합니다. 또한 가까운 장래에 일어날 계획이나 예정('~할 것이다')을 표현하기도 합니다. '하고 싶지 않다'는 소망의 부정에는 보통 '不想'을 사용하며, '不要'는 금지('~하지 마라')의 뜻이 되므로 주의해야 합니다.",
+    "formation": "주어 + 要 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "왕팡은 영어를 배우려고 합니다."
+      }
+    ]
   },
   "zh_最_61": {
-    "title": "最 (the most)",
-    "shortExplanation": "the most",
-    "longExplanation": "the most. Pinyin: zuì",
-    "formation": "zuì"
+    "title": "最 + 형용사 / 심리동사 (정도부사: 가장, 제일 - 최상급)",
+    "shortExplanation": "형용사나 심리 상태를 나타내는 동사 앞에 쓰여 비교 대상 가운데 정도가 으뜸임을 나타내는 최상급 부사입니다('가장', '제일').",
+    "longExplanation": "'最'(zuì)는 비교 범위 안에서 상태나 성질의 정도가 가장 높은 극한에 이르렀음을 나타내는 최상급 정도부사로, 한국어의 '가장', '제일'에 해당합니다. 형용사(예: 最漂亮 - 제일 예쁘다, 最好 - 가장 좋다) 또는 감정·심리동사(예: 最喜欢 - 가장 좋아하다)의 바로 앞에 놓여 이를 수식합니다.",
+    "formation": "주어 + 最 + 형용사 / 심리동사",
+    "examples": [
+      {
+        "translation": "그것의 눈이 가장 예쁩니다."
+      }
+    ]
   },
   "zh_几_62": {
-    "title": "几 (several)",
-    "shortExplanation": "several",
-    "longExplanation": "several. Pinyin: jǐ",
-    "formation": "jǐ"
+    "title": "几 + 양사 + 명사 (10 미만의 개략적인 수: 몇, 서너, 얼마간의)",
+    "shortExplanation": "'几'(jǐ)는 10 미만의 불특정한 개수나 수량(개수)을 나타내며, 양사와 명사 앞에 놓여 '몇', '몇몇', '얼마간의'라는 뜻을 나타냅니다.",
+    "longExplanation": "'几'(jǐ)는 10 미만의 수를 묻는 의문사('몇?')로 쓰일 뿐만 아니라, 평서문에서 10 미만의 불특정한 수량(개수, 概数)을 나타내는 수사로도 널리 사용됩니다(한국어의 '몇', '몇몇', '서너'에 해당). 기본 구조는 '几 + 양사 + 명사'이며, 1에서 9 사이의 적은 수량을 어림잡아 나타낼 때 쓰입니다(예: 几本书 - 몇 권의 책, 几个人 - 몇몇 사람, 几天 - 며칠).",
+    "formation": "几 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "책 몇 권."
+      }
+    ]
   },
   "zh_十几_63": {
-    "title": "十几 ((any # from 11 to 19))",
-    "shortExplanation": "(any # from 11 to 19)",
-    "longExplanation": "(any # from 11 to 19). Pinyin: shíjǐ",
-    "formation": "shíjǐ"
+    "title": "十几 + 양사 + 명사 (11에서 19 사이의 개략적인 수: 십 몇, 십여)",
+    "shortExplanation": "'十几'(shíjǐ)는 10보다 크고 20 미만인 11~19 사이의 대략적인 수량('십 몇', '십여')을 나타냅니다.",
+    "longExplanation": "숫자 '十'(10) 바로 뒤에 '几'가 결합된 '十几'(shíjǐ)는 11부터 19까지의 불특정한 수를 나타내는 수량 표현입니다(한국어의 '십여', '십 몇'에 해당). 사물을 셀 때는 '十几 + 양사 + 명사' 어순으로 쓰이며, 양사는 반드시 '十几' 뒤에 위치합니다(예: 十几本书 - 십여 권의 책, 十几个人 - 십여 명의 사람, 十几天 - 십여 일). 20~90을 가리키는 '几十'(수십)과 어순을 혼동하지 않도록 주의해야 합니다.",
+    "formation": "十几 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "십여 권의 책."
+      }
+    ]
   },
   "zh_几十_64": {
-    "title": "几十 (tens of)",
-    "shortExplanation": "tens of",
-    "longExplanation": "tens of. Pinyin: jǐ shí",
-    "formation": "jǐ shí"
+    "title": "几十 + 양사 + 명사 (20에서 90 사이의 수십 단위 개략 수: 몇십, 수십)",
+    "shortExplanation": "'几十'(jǐ shí)은 20에서 90 사이의 십 단위 불특정 수량('몇십', '수십')을 나타냅니다.",
+    "longExplanation": "'十' 앞에 '几'를 둔 '几十'(jǐ shí)은 20부터 90까지의 십 단위 개략적인 수를 나타냅니다(한국어의 '몇십', '수십'에 해당). 양사와 명사를 연결할 때는 '几十 + 양사 + 명사' 어순을 취합니다(예: 几十本书 - 수십 권의 책, 几十个人 - 수십 명의 사람, 几十块钱 - 몇십 위안). 11~19를 가리키는 '十几'와 어순 및 의미가 상반되므로 명확한 구별이 필요합니다.",
+    "formation": "几十 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "수십 권의 책."
+      }
+    ]
   },
   "zh_几多_65": {
-    "title": "# 几/多 (over #)",
-    "shortExplanation": "over #",
-    "longExplanation": "over #. Pinyin: # jǐ/ duō",
-    "formation": "# jǐ/ duō"
+    "title": "수사 + 几 / 多 + 양사 + 명사 (10 이상의 묶음 정수 뒤의 단수 표현: ~ 몇, ~여, ~ 남짓)",
+    "shortExplanation": "20, 30 등 10 단위 이상의 묶음 정수 바로 뒤에 '几'나 '多'를 붙여 양사 앞에 놓으면, 그 수를 조금 넘는 끝수가 있음을 나타냅니다('20 몇 ~', '20여 ~').",
+    "longExplanation": "20, 30, 50, 100 등 10 단위 이상의 딱 떨어지는 정수 뒤에 '几' 또는 '多'를 결합하고 그 뒤에 양사와 명사를 놓아 기준 숫자를 넘는 단수(끝수)를 나타냅니다. '二十几本书'는 21~29 사이의 '20 몇 권의 책'을 의미하고, '二十多本书'는 20을 넘는 '20여 권의 책(20권 남짓한 책)'을 나타냅니다. 정수가 10 단위로 묶이는 수일 때 '几/多'가 양사 앞에 위치한다는 점이 중요합니다.",
+    "formation": "수사(10 이상의 정수) + 几 / 多 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "20 몇 권의 책 / 20여 권의 책."
+      }
+    ]
   },
   "zh_M多月星期_66": {
-    "title": "# M 多 月/星期 (over # of months/weeks)",
-    "shortExplanation": "over # of months/weeks",
-    "longExplanation": "over # of months/weeks. Pinyin: # M duō yuè/ xīngqī",
-    "formation": "# M duō yuè/ xīngqī"
+    "title": "수사 + 양사 + 多 + 명사 (1 단위 미만의 단수를 나타냄: ~ 남짓, ~ 넘게 [양사 뒤의 '多'])",
+    "shortExplanation": "수사가 10 미만일 때 '多'는 양사 뒤에 놓여, 해당 양사 1단위에 못 미치는 자투리 단수('~ 남짓', '~ 넘게')를 나타냅니다.",
+    "longExplanation": "중국어에서 끝수를 나타내는 '多'(duō)의 위치는 수사의 크기에 따라 달라집니다. 수사가 10 미만(1~9)인 경우, '多'는 반드시 양사 뒤, 명사 앞에 놓입니다('수사 + 양사 + 多 + 명사'). 이는 해당 양사 1단위를 채우지 못하는 자투리 시간이 더 붙어 있음을 뜻합니다. 예를 들어 '两个多月'는 2개월을 넘고 3개월은 되지 않는 기간('두 달 남짓 / 두 달 넘게')을 가리키며, '三个多星期'는 3주일을 넘고 4주는 되지 않는 기간('3주일 남짓 / 3주일 넘게')을 의미합니다.",
+    "formation": "수사(10 미만) + 양사 + 多 + 명사 (시간)",
+    "examples": [
+      {
+        "translation": "두 달 남짓, 3주일 남짓."
+      }
+    ]
   },
   "zh_V不VorA不A_67": {
-    "title": "V不V or A不A ((questions))",
-    "shortExplanation": "(questions)",
-    "longExplanation": "(questions). Pinyin: V bùV or A bùA",
-    "formation": "V bùV or A bùA"
+    "title": "동사 + 不 + 동사 / 형용사 + 不 + 형용사 (정반의문문: ~하니 안 하니?, ~합니까?)",
+    "shortExplanation": "동사나 형용사의 긍정형과 부정형을 나란히 연결하여 묻는 정반의문문으로, 문장 끝에 '吗'를 붙이지 않습니다.",
+    "longExplanation": "'동사 + 不 + 동사' 또는 '형용사 + 不 + 형용사'는 술어의 긍정 형식과 부정 형식을 병렬하여 상대방에게 긍정과 부정 중 하나를 선택하여 대답하게 하는 '정반의문문(正反疑问句)'입니다(한국어의 '~하니 안 하니?', '~합니까?'에 해당). 예: 去不去(가니 안 가니 / 가니?), 好不好(좋니 안 좋니 / 좋습니까?). 문장 자체에 이미 의문의 뜻이 완전히 포함되어 있으므로, 문장 끝에 의문조사 '吗'를 덧붙일 수 없습니다.",
+    "formation": "동사 + 不 + 동사 (+ 목적어)? / 형용사 + 不 + 형용사?",
+    "examples": [
+      {
+        "translation": "나는 가게에 가는데, 너 갈래 안 갈래?"
+      }
+    ]
   },
   "zh_是不是_68": {
-    "title": "是不是……？ (Is it true that…?)",
-    "shortExplanation": "Is it true that…?",
-    "longExplanation": "Is it true that…?. Pinyin: shìbùshì……？",
-    "formation": "shìbùshì……？"
+    "title": "是不是……？ (혹시 ~인 거 아니야?, 정말 ~이니? [추측 및 사실 확인])",
+    "shortExplanation": "'是不是'(shìbùshì)를 술어 앞이나 문두에 놓아, 자신이 짐작하고 있는 내용이 맞는지 상대방에게 확인할 때 씁니다.",
+    "longExplanation": "'是不是'(shìbùshì)는 동사 '是'의 정반의문 형식에서 비롯된 표현으로, 말하는 사람이 이미 마음속으로 짐작하고 있거나 추측한 사실에 대해 상대방에게 '혹시 ~인 것 아니니?', '~가 맞지?'라며 확인을 구하거나 동의를 구할 때 사용합니다. 위치가 자유로워 주어와 술어 사이(你是不是喜欢运动？), 문장 맨 앞(是不是……), 또는 문장 맨 끝의 부가 의문 형태로 쓰입니다. 문말에 '吗'는 쓰지 않습니다.",
+    "formation": "주어 + 是不是 + 술어? / 是不是 + 주어 + 술어?",
+    "examples": [
+      {
+        "translation": "너 운동 좋아하는 거 아니야? (너 운동 좋아하지?)"
+      }
+    ]
   },
   "zh_每MN都V_69": {
-    "title": "每 M N (都) V (every N V)",
-    "shortExplanation": "every N V",
-    "longExplanation": "every N V. Pinyin: měi M N ( dōu) V",
-    "formation": "měi M N ( dōu) V"
+    "title": "每 + 양사 + 명사 + (都) + 동사 (매 ~마다 모두 ~하다: 예외 없는 전면적 포괄)",
+    "shortExplanation": "'每'(매, 모든)는 양사·명사와 결합하고 뒤의 부사 '都'(모두)와 호응하여 예외 없이 모두 그러함을 나타냅니다.",
+    "longExplanation": "'每 + 양사 + 명사 + (都) + 동사' 구문은 특정 범위 내의 개별 구성원을 하나하나 열거하면서 '하나도 빠짐없이 모두 ~하다'라는 전면적인 포괄을 나타냅니다. '每'가 개별 대상을 분산하여 가리키기 때문에, 뒤따르는 술어 앞에는 대개 총괄 부사 '都'(dōu)가 호응하여 문장을 이끕니다(예: 你每个星期六(都)工作吗？ - 당신은 토요일마다 다 일합니까?, 每个人都来了 - 모든 사람이 다 왔다). 일상 구어에서 '都'가 생략되기도 하지만, 호응할 때 의미가 더욱 분명해집니다.",
+    "formation": "每 + 양사 + 명사 (+ 都) + 동사",
+    "examples": [
+      {
+        "translation": "당신은 토요일마다 (다) 일하나요?"
+      }
+    ]
   },
   "zh_多A_70": {
-    "title": "多 A (how A)",
-    "shortExplanation": "how A",
-    "longExplanation": "how A. Pinyin: duō A",
-    "formation": "duō A"
+    "title": "多 + 형용사 (정도나 수치를 묻는 표현: 얼마나 ~한가요?, 어느 정도로 ~합니까?)",
+    "shortExplanation": "부사 '多'(duō)를 측정 가능한 형용사(高, 大, 远 등) 앞에 붙여, 구체적인 수치나 정도를 질문합니다.",
+    "longExplanation": "길이, 높이, 무게, 나이 등 측정 가능한 척도를 지닌 형용사(高, 大, 远, 重, 长 등) 앞에 부사 '多'(duō)를 배치하여, '얼마나 ~합니까?', '어느 정도로 ~한가요?'라는 뜻으로 구체적인 수치나 정도를 묻습니다(영어의 how + 형용사 구조에 해당). 예: 他多高？(그 사람 키가 얼마나 되나요?), 你多大？(나이가 어떻게 되세요?), 离这儿有多远？(여기서 얼마나 먼가요?). 질문에 대한 대답으로는 '一米八(1미터 80)'처럼 구체적인 수량 표현을 사용합니다.",
+    "formation": "주어 + 多 + 형용사?",
+    "examples": [
+      {
+        "translation": "그는 키가 얼마나 되나요?"
+      }
+    ]
   },
   "zh_的N_71": {
-    "title": "的 (N) ((omitting nouns after 的))",
-    "shortExplanation": "(omitting nouns after 的)",
-    "longExplanation": "(omitting nouns after 的). Pinyin: de (N)",
-    "formation": "de (N)"
+    "title": "수식어 + 的 (+ 명사 생략) ('的'자 구: 반복되는 중심 명사의 생략)",
+    "shortExplanation": "문맥상 대상을 명확히 알 수 있을 때 '的' 뒤의 중심 명사를 생략하여 '~한 것', '~의 것'을 뜻하는 명사 상당어구를 형성합니다.",
+    "longExplanation": "중국어에서는 피수식어인 중심 명사가 문맥 앞부분에서 이미 언급되었거나 상황상 무엇을 뜻하는지 뻔히 알 수 있을 때, 불필요한 단어 중복을 피하기 위해 '的' 뒤의 중심 명사를 과감히 생략합니다. 이렇게 만들어진 '수식어 + 的' 형태를 '的자 구(的字短语)'라고 하며, 독립된 명사구처럼 쓰여 '~한 것', '~의 것'을 가리킵니다. 예문인 '这个杯子是昨天买的(杯子)'에서 주어로 이미 '杯子(컵)'가 제시되었으므로, 문장 끝의 '杯子'를 생략하여 '어제 산 것'으로 표현하는 것이 훨씬 자연스럽습니다.",
+    "formation": "관형어(수식어) + 的 (+ 생략된 명사)",
+    "examples": [
+      {
+        "translation": "이 컵은 어제 산 (컵)입니다."
+      }
+    ]
   },
   "zh_一下_72": {
-    "title": "一下 (once (quickly/easily))",
-    "shortExplanation": "once (quickly/easily)",
-    "longExplanation": "once (quickly/easily). Pinyin: yīxià",
-    "formation": "yīxià"
+    "title": "동사 + 一下 (동량사: 좀 ~하다, 한번 ~해 보다 [어기를 부드럽게 완곡화])",
+    "shortExplanation": "동사 뒤에 동량사 '一下'(yīxià)를 붙여 동작이 짧은 시간 동안 가볍게 행해짐을 나타내거나, 시도해 봄, 또는 부탁할 때 어조를 부드럽게 완곡화합니다.",
+    "longExplanation": "'동사 + 一下'(yīxià)는 일상 회화에서 매우 빈번하게 쓰이는 동량사 구조입니다. 주된 용법은 세 가지입니다. (1) 동작이 짧은 시간 동안 이루어짐을 표시(예: 等一下 - 잠깐 기다리다, 看一下 - 잠깐 보다). (2) 시험 삼아 어떤 행동을 시도해 봄을 표시(예: 尝一下 - 맛 좀 보다). (3) 상대방에게 부탁이나 심부름을 청할 때 직설적인 명령조를 부드럽게 누그러뜨려 친근하고 정중한 어기를 조성함(예: 你去给老师送一下报纸 - 선생님께 신문 좀 가져다 드리고 오세요).",
+    "formation": "동사 + 一下 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "선생님께 신문 좀 가져다 드리고 오세요."
+      }
+    ]
   },
   "zh_真_73": {
-    "title": "真 (very, truly)",
-    "shortExplanation": "very, truly",
-    "longExplanation": "very, truly. Pinyin: zhēn",
-    "formation": "zhēn"
+    "title": "真 + 형용사 / 심리동사 (감탄을 나타내는 정도부사: 정말 ~, 참으로 ~)",
+    "shortExplanation": "부사 '真'(zhēn)은 형용사나 심리동사 앞에 쓰여 문말의 감탄조사 '啊' 등과 함께 '정말 ~하다', '참 ~하구나'라는 진심 어린 감탄을 나타냅니다.",
+    "longExplanation": "정도부사 '真'(zhēn)은 주로 감탄문에서 쓰여, 말하는 사람이 눈앞의 사실을 접하고 마음에 와닿은 진솔한 감탄, 칭찬, 놀라움 등의 정서를 표현합니다(한국어의 '정말 ~하다', '참 ~하구나'에 해당). 형용사나 심리 상태를 나타내는 동사(喜欢, 漂亮, 高兴 등) 앞에 놓이며, 문장 끝에는 통상 감탄의 어기조사인 '啊'(ā)나 '呀'(ya)를 동반합니다(예: 牛奶真好喝啊！ - 우유가 정말 맛있네요!). 단순한 사실적 정도 묘사인 '很'과 달리 강한 주관적 영탄의 뉘앙스를 지닙니다.",
+    "formation": "주어 + 真 + 형용사 / 심리동사 (+ 啊 / 呀)!",
+    "examples": [
+      {
+        "translation": "우유가 정말 맛있네요!"
+      }
+    ]
   },
   "zh_O是SV的_74": {
-    "title": "O 是 S V 的 (it’s S who V’ed O)",
-    "shortExplanation": "it’s S who V’ed O",
-    "longExplanation": "it’s S who V’ed O. Pinyin: O shì S V de",
-    "formation": "O shì S V de"
+    "title": "목적어 + 是 + 주어 + 동사 + 的 ('是……的' 강조 구문: 동작 수행 주체의 강조)",
+    "shortExplanation": "목적어를 문두로 내세워 화제화하고 '是……的' 구문을 사용하여, 해당 동작을 완수한 '주체(누가 했는지)'를 특별히 강조합니다.",
+    "longExplanation": "'是……的'(shì... de) 구문은 이미 발생·완료된 과거의 사실을 전제로 하여, 그 행위의 시간, 장소, 방식 또는 '누가 그 행위를 했는가(행위 주체)'를 콕 집어 강조할 때 쓰입니다. 동작의 대상인 목적어를 화제로 삼아 문두에 배치하고 '목적어 + 是 + 주어 + 동사 + 的' 어순을 취하면, '이 사물을 동사한 사람은 바로 주어다'라는 점이 두드러지게 강조됩니다(예: 这本书是我买的 - 이 책은 제가 산 것입니다 / 이 책을 산 건 바로 저예요). 부정 형태는 '不是'를 사용합니다(这本书不是我买的).",
+    "formation": "목적어 + 是 + 주어 + 동사 + 的",
+    "examples": [
+      {
+        "translation": "이 책은 제가 산 것입니다."
+      }
+    ]
   },
   "zh_的时候_75": {
-    "title": "……的时候 (the time when …)",
-    "shortExplanation": "the time when …",
-    "longExplanation": "the time when …. Pinyin: …… de shíhou",
-    "formation": "…… de shíhou"
+    "title": "……的时候 (~할 때, ~의 때 [어떤 동작이나 상태가 일어나는 시점])",
+    "shortExplanation": "나이, 시간 명사, 동사구, 절 뒤에 '……的时候'(de shíhou)를 붙여 '~할 때', '~ 시절'이라는 시간 부사어를 만듭니다.",
+    "longExplanation": "'……的时候'(de shíhou)는 특정 동작이나 상황, 사건이 발생하는 시점이나 시기를 나타내는 가장 기초적이고 대표적인 시간 표현입니다(한국어의 '~할 때', '~ 시절', '~ 때'에 해당). 나이(18岁的时候 - 18살 때), 동사구(吃饭的时候 - 밥 먹을 때), 주술 구조의 절(我在大学的时候 - 내가 대학에 다닐 때) 뒤에 자유롭게 연결되어 문장 앞이나 주어 바로 뒤에서 시간 부사어 역할을 담당합니다.",
+    "formation": "시간사 / 동사구 / 절 + 的时候",
+    "examples": [
+      {
+        "translation": "저는 18살 때 베이징에 와 본 적이 있습니다."
+      }
+    ]
   },
   "zh_已经VA了_76": {
-    "title": "已经 V/A 了 (already V/A)",
-    "shortExplanation": "already V/A",
-    "longExplanation": "already V/A. Pinyin: yǐjīng V/A le",
-    "formation": "yǐjīng V/A le"
+    "title": "已经 + 동사 / 형용사 + 了 (이미 ~했다, 벌써 ~하게 되었다 [동작 완료 및 상태의 실현])",
+    "shortExplanation": "부사 '已经'(yǐjīng)과 문말 조사 '了'(le)가 호응하여, 동작이 이미 완료되었거나 사태가 이미 특정 단계에 이르렀음을 나타냅니다.",
+    "longExplanation": "'已经……了'(yǐjīng... le) 구문은 어떤 행위가 이미 완료되었거나 사태의 변화가 이미 발생했음을 나타냅니다(한국어의 '이미 ~했다', '벌써 ~하게 되었다'에 해당). 부사 '已经'이 술어 앞에 놓이고 문장 끝의 어기조사 '了'와 긴밀하게 호응합니다. '我已经工作两年多了'와 같이 시량보어가 함께 쓰이면, 해당 동작이 과거부터 시작되어 현재까지 이미 그 시간만큼 지속되어 왔음을 나타냅니다.",
+    "formation": "주어 + 已经 + 동사 / 형용사 (+ 목적어 / 보어) + 了",
+    "examples": [
+      {
+        "translation": "저는 이미 2년 넘게 일했습니다."
+      }
+    ]
   },
   "zh_就_77": {
-    "title": "就 (just V then)",
-    "shortExplanation": "just V then",
-    "longExplanation": "just V then. Pinyin: jiù",
-    "formation": "jiù"
+    "title": "就 (그러면, 그렇다면 [상황에 따른 귀결·해결책])",
+    "shortExplanation": "앞 문장의 상황이나 조건을 받아 후속 절의 동사 앞에 놓여 '그러면 ~하다', '그렇다면 ~해라'와 같이 자연스러운 결론이나 해결책을 이끄는 부사입니다.",
+    "longExplanation": "'就'(jiù)는 앞선 상황이나 가정 조건(주로 '如果/要是'와 호응하거나 생략됨)을 바탕으로, 뒷절에서 그에 따른 당연한 결론, 결정, 조언을 제시할 때 쓰입니다. 문말 어기조사 '吧'와 함께 쓰이면 '그렇다면 ~해라', '그럼 ~하자'처럼 부드러운 권유나 제안의 뉘앙스를 나타냅니다.",
+    "formation": "(조건/상황 + ) 就 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "가기 싫으면 그냥 집에서 쉬어."
+      }
+    ]
   },
   "zh_还A_78": {
-    "title": "还 A (somewhat A)",
-    "shortExplanation": "somewhat A",
-    "longExplanation": "somewhat A. Pinyin: hái A",
-    "formation": "hái A"
+    "title": "还 + 형용사 (그럭저럭 ~하다, 그런대로 ~하다)",
+    "shortExplanation": "부사 '还'가 형용사 앞에 놓여 기준이나 기대에 어느 정도 부합하여 그럭저럭 받아들일 만함을 나타냅니다.",
+    "longExplanation": "'还'(hái)는 주로 긍정적 의미의 형용사(好, 行, 不错 등) 앞에 쓰여 아주 뛰어나지는 않지만 봐줄 만하거나 어느 정도 만족할 만한 수준임을 나타냅니다. 완벽하지는 않아도 '그럭저럭 괜찮다', '그런대로 볼만하다'와 같이 겸손하거나 무난한 평가를 전할 때 널리 쓰입니다.",
+    "formation": "주어 + 还 + 형용사",
+    "examples": [
+      {
+        "translation": "어제 시험은 그럭저럭 괜찮았어요."
+      }
+    ]
   },
   "zh_有点儿A_79": {
-    "title": "有点儿 A (a bit A)",
-    "shortExplanation": "a bit A",
-    "longExplanation": "a bit A. Pinyin: yǒudiǎnr A",
-    "formation": "yǒudiǎnr A"
+    "title": "有点儿 + 형용사 (조금 ~하다, 약간 ~하다 [부정적·불만족])",
+    "shortExplanation": "부사어 '有点儿'이 형용사 앞에 놓여 화자의 마음에 들지 않거나 부정적인 상황에 대해 '약간 ~하다', '조금 ~하다'라는 뉘앙스를 나타냅니다.",
+    "longExplanation": "'有点儿'(yǒudiǎnr, 구어에서는 '有点'으로도 자주 축약됨)은 형용사나 심리동사 앞에 위치하여 미미한 정도를 나타냅니다. 특징적인 점은 대체로 춥거나(冷), 피곤하거나(累), 비싼(贵) 상황처럼 화자에게 불만족스럽거나 불편한 감정을 자아내는 소극적·부정적 문맥에 주로 쓰인다는 점입니다. 객관적 수량이나 비교 차이를 나타내며 형용사 뒤에 놓이는 '一点儿'(예: 便宜一点儿 - 좀 더 싸다)과 구별해야 합니다.",
+    "formation": "주어 + 有点儿 + 형용사 / 심리동사",
+    "examples": [
+      {
+        "translation": "오늘 날씨가 좀 춥네요."
+      }
+    ]
   },
   "zh_怎么_80": {
-    "title": "怎么 (how come)",
-    "shortExplanation": "how come",
-    "longExplanation": "how come. Pinyin: zěnme",
-    "formation": "zěnme"
+    "title": "怎么 (어째서, 왜 [놀라움·의아함을 담은 이유 질문])",
+    "shortExplanation": "술어 앞에 위치하여 원인이나 이유를 묻는 의문대명사로, 화자의 놀라움, 의아함, 뜻밖이라는 뉘앙스를 담고 있습니다.",
+    "longExplanation": "'怎么'(zěnme)는 동사나 형용사 등 술어 앞에 쓰여 '어째서', '왜', '무슨 이유로'라는 뜻으로 이유를 묻습니다. 단순하고 객관적인 원인을 묻는 '为什么'와 달리, '怎么'는 기대와 다르거나 예상 밖의 일에 대해 고개를 갸웃거리며 놀라거나 의아해하는 주관적 감정이 짙게 묻어나는 특징이 있습니다.",
+    "formation": "주어 + 怎么 + 술어(동사 / 형용사 / 부정 표현)?",
+    "examples": [
+      {
+        "translation": "너 왜 기분이 안 좋아?"
+      }
+    ]
   },
   "zh_NMM都_81": {
-    "title": "N M M 都 (every N)",
-    "shortExplanation": "every N",
-    "longExplanation": "every N. Pinyin: N M M dōu",
-    "formation": "N M M dōu"
+    "title": "명사 + 양사 중첩 + 都 (하나하나 모두 ~, 저마다 다 ~)",
+    "shortExplanation": "양사를 중첩(AA)하고 부사 '都'와 호응시켜 '모두 다', '하나하나 남김없이 ~하다'라는 전칭 강조를 나타냅니다.",
+    "longExplanation": "중국어에서 단음절 양사는 '个个'(하나하나/사람마다), '天天'(날마다), '张张'(장마다)처럼 겹쳐 써서 '모든', '각각의'라는 전체 포괄의 의미를 나타낼 수 있습니다. 명사 뒤에 놓이거나 단독으로 주어 역할을 하며, 예외 없이 전부 그러함을 나타내므로 술어 앞에는 반드시 포괄 부사인 '都'가 함께 쓰입니다.",
+    "formation": "(명사 + ) 양사 중첩 + 都 + 술어",
+    "examples": [
+      {
+        "translation": "학생들 모두가 다 매우 기뻐합니다."
+      }
+    ]
   },
   "zh_因为所以_82": {
-    "title": "因为……所以…… (because… so…)",
-    "shortExplanation": "because… so…",
-    "longExplanation": "because… so…. Pinyin: yīnwèi…… suǒyǐ……",
-    "formation": "yīnwèi…… suǒyǐ……"
+    "title": "因为……所以…… (왜냐하면 ~하기 때문에, 그래서 ~하다 [인과 관계])",
+    "shortExplanation": "원인을 이끄는 접속사 '因为'와 결과를 이끄는 '所以'가 짝을 이루어 '원인 때문에 결과가 발생하다'라는 명확한 인과 관계를 나타냅니다.",
+    "longExplanation": "'因为……所以……'(yīnwèi... suǒyǐ...)는 중국어의 가장 표준적인 인과 복문 호응 구문입니다. '因为'가 이끄는 앞 절에서 사태의 원인이나 동기를 제시하고, '所以'가 이끄는 뒷 절에서 그에 따른 필연적인 결과나 결론을 밝힙니다. 구어에서는 둘 중 하나를 생략하기도 하지만, 완전한 호응 형식을 갖추면 논리적인 인과 흐름이 분명해집니다.",
+    "formation": "因为 + 원인/이유, 所以 + 결과",
+    "examples": [
+      {
+        "translation": "맛이 없기 때문에 나는 안 먹는다."
+      }
+    ]
   },
   "zh_还V_83": {
-    "title": "还 V (still V-ing)",
-    "shortExplanation": "still V-ing",
-    "longExplanation": "still V-ing. Pinyin: hái V",
-    "formation": "hái V"
+    "title": "还 + 동사 (아직도 ~하고 있다, 여전히 ~하다 [동작·상태 지속])",
+    "shortExplanation": "부사 '还'가 동사 앞에 놓여 이전부터 진행되던 동작이나 상태가 기준 시점에도 끝나지 않고 여전히 계속됨을 나타냅니다.",
+    "longExplanation": "'还'(hái)는 동작이나 상태의 지속을 나타내는 부사입니다. 동사 앞(진행을 나타내는 '在'와 자주 결합하여 '还在'의 형태를 취함)에 놓여, 행동이 멈추지 않고 그대로 이어지고 있음을 나타냅니다. 특히 시간 표현과 함께 쓰일 때 '벌써 ~인데도 아직까지 ~하고 있다'처럼 예상이나 기대보다 늦게까지 지속되고 있음을 강조합니다.",
+    "formation": "주어 + 还 (+ 在) + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "8시인데 그는 아직도 자고 있다."
+      }
+    ]
   },
   "zh_还没V_84": {
-    "title": "还没 V (still haven’t V’ed)",
-    "shortExplanation": "still haven’t V’ed",
-    "longExplanation": "still haven’t V’ed. Pinyin: hái méi V",
-    "formation": "hái méi V"
+    "title": "还没 + 동사 (아직 ~하지 않았다 [미완료·미발생])",
+    "shortExplanation": "부사 '还'와 부정사 '没(有)'가 동사 앞에 결합하여 어떤 동작이 기준 시점까지 아직 이루어지지 않았음을 나타냅니다.",
+    "longExplanation": "'还没'(hái méi, 온전한 형태는 '还没有')은 동사 앞에 놓여 마땅히 이루어졌거나 기대했던 행동이 말하는 시점까지 아직 실행되지 않았음을 나타내는 표현입니다. 단순히 행동을 안 했다는 사실만 밝히는 '没'에 비해, '还'가 결합됨으로써 '진작 했어야 하는데 아직까지 안 하고 있다' 또는 '앞으로 할 예정이다'라는 시간적 여운과 기대를 내포합니다.",
+    "formation": "주어 + 还没(有) + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "너 왜 아직도 밥을 안 먹었니?"
+      }
+    ]
   },
   "zh_TIME就V_85": {
-    "title": "TIME 就 V (V as early as TIME)",
-    "shortExplanation": "V as early as TIME",
-    "longExplanation": "V as early as TIME. Pinyin: TIME jiù V",
-    "formation": "TIME jiù V"
+    "title": "시간사 + 就 + 동사 (벌써 ~에 ~했다 [이른 시간·신속함 강조])",
+    "shortExplanation": "시간 표현 뒤에 부사 '就'를 붙여 동작이 예상이나 기준보다 '이르다', '빠르다'는 화자의 주관적 강조를 나타냅니다.",
+    "longExplanation": "'就'(jiù)가 시간사 뒤, 동사 앞에 오면 화자가 보기에 어떤 일이나 행동이 통상적인 기준이나 예상보다 매우 일찍, 신속하게 일어났음을 강조합니다. 한국어로는 '벌써 ~에 ~했다', '~부터 이미 ~했다'에 해당합니다. 이미 일어난 일일 경우 문말에 변화·완료의 '了'를 함께 쓰는 경우가 많으며, 늦음을 나타내는 '才'와 대조를 이룹니다.",
+    "formation": "주어 + 시간사 + 就 + 동사(+ 목적어)(+ 了)",
+    "examples": [
+      {
+        "translation": "학생들은 일찍이 7시 반에 벌써 교실에 왔습니다."
+      }
+    ]
   },
   "zh_N1离N2DISTANCE_86": {
-    "title": "N1 离 N2 DISTANCE (N1 is DISTANCE away from N2)",
-    "shortExplanation": "N1 is DISTANCE away from N2",
-    "longExplanation": "N1 is DISTANCE away from N2. Pinyin: N1 lí N2 DISTANCE",
-    "formation": "N1 lí N2 DISTANCE"
+    "title": "장소1 + 离 + 장소2 + 거리 (A는 B에서 ~ 떨어져 있다 [공간적 거리])",
+    "shortExplanation": "개사(전치사) '离'를 사용하여 두 지점 사이의 공간적 거리를 나타내며, '장소1은 장소2로부터 (얼마나) 떨어져 있다'를 뜻합니다.",
+    "longExplanation": "'离'(lí)는 기준이 되는 지점이나 시점으로부터의 거리와 격차를 나타내는 전치사입니다. '장소1 + 离 + 장소2 + 거리/정도'의 형태로 쓰여 두 장소 사이의 물리적 거리를 표현합니다. 서술어 부분에는 구체적인 수치(예: 20多公里 - 20여 킬로미터)가 오거나 '很远'(아주 멀다), '很近'(아주 가깝다)과 같은 형용사가 사용됩니다.",
+    "formation": "장소1 + 离 + 장소2 + 거리(수사 + 양사 / 远 / 近)",
+    "examples": [
+      {
+        "translation": "학교는 공항에서 20여 킬로미터 떨어져 있습니다."
+      }
+    ]
   },
   "zh_呢_87": {
-    "title": "……呢! ((adding emphasis))",
-    "shortExplanation": "(adding emphasis)",
-    "longExplanation": "(adding emphasis). Pinyin: …… ne!",
-    "formation": "…… ne!"
+    "title": "……呢! (어기조사: ~하고 있는걸!, ~하고 있단 말이야! [상황 강조·주의 환기])",
+    "shortExplanation": "평서문이나 진행문 끝에 붙는 어기조사 '呢'로, 상황이 지속되고 있음을 강조하여 상대방의 주의를 환기시킵니다.",
+    "longExplanation": "문말 어기조사 '呢'(ne)는 긍정 진술문(특히 '在', '还在' 등 동작의 지속을 나타내는 부사와 함께 쓰임) 끝에 놓여, 현재 상황이 사실 그대로 진행 중임을 확인하고 강조하는 작용을 합니다. 듣는 사람에게 '그는 지금 여전히 ~하고 있단 말이야!'처럼 어떤 사실을 일깨워 주거나 주의를 환기시키는 생동감 있는 감정 어기를 담아냅니다.",
+    "formation": "평서문(주로 在 / 还在 수반) + 呢!",
+    "examples": [
+      {
+        "translation": "그는 아직도 공부하고 있단 말이야!"
+      }
+    ]
   },
   "zh_好吗_88": {
-    "title": "……好吗? (…okay?)",
-    "shortExplanation": "…okay?",
-    "longExplanation": "…okay?. Pinyin: …… hǎo ma?",
-    "formation": "…… hǎo ma?"
+    "title": "……好吗? (~해도 될까요?, ~해 줄래요? [동의 구하기·정중한 제안])",
+    "shortExplanation": "문장 끝에 '好吗?'를 덧붙여 자신의 제안이나 부탁에 대해 상대방의 동의와 의향을 정중하게 묻는 표현입니다.",
+    "longExplanation": "'……好吗?'(hǎo ma?)는 청유문이나 명령문, 제안문 끝에 부가되는 의문 형식입니다. 일방적으로 지시하거나 요구하지 않고, '그렇게 해도 괜찮겠습니까?', '~해 주실 수 있나요?'와 같이 상대방의 의사를 존중하며 부드럽고 다정하게 허락이나 동의를 구할 때 널리 쓰입니다.",
+    "formation": "제안 / 요청 문장 + 好吗?",
+    "examples": [
+      {
+        "translation": "내일 오후에 나한테 전화 좀 해 줄래?"
+      }
+    ]
   },
   "zh_再V_89": {
-    "title": "再 V (again)",
-    "shortExplanation": "again",
-    "longExplanation": "again. Pinyin: zài V",
-    "formation": "zài V"
+    "title": "再 + 동사 (다시 ~하다, 한 번 더 ~하다 [미래 동작의 반복])",
+    "shortExplanation": "부사 '再'가 동사 앞에 위치하여 앞으로 일어날 동작의 반복이나, 상대방에게 동작을 다시 하도록 권유할 때 '다시 ~하다'를 뜻합니다.",
+    "longExplanation": "'再'(zài)는 동사 앞에서 동작의 재시도나 반복을 나타내는 부사입니다. 이미 지나간 과거의 반복을 나타내는 '又'와 달리, '再'는 아직 실행되지 않은 미래의 반복 또는 상대방에게 한 번 더 행동할 것을 요청·제안하는 맥락에서 사용됩니다(예: 再看一遍 - 다시 한 번 보다, 再见 - 또 만나요).",
+    "formation": "주어 + 再 + 동사(+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "이 책을 한 번 더 살펴보세요."
+      }
+    ]
   },
   "zh_再V_90": {
-    "title": "再 V (then)",
-    "shortExplanation": "then",
-    "longExplanation": "then. Pinyin: zài V",
-    "formation": "zài V"
+    "title": "동작1 + 再 + 동작2 (~하고 나서 ~하다, 그런 다음 ~하다 [순서 표현])",
+    "shortExplanation": "뒤따르는 동사 앞에 부사 '再'를 써서, 앞선 동작이나 상황이 완료된 이후에 비로소 다음 동작을 진행함을 나타냅니다.",
+    "longExplanation": "'再'(zài)는 행동의 순차적 연결을 나타내는 부사 기능도 합니다. '동작1 + 再 + 동작2' 구조에서 앞선 행동(동작1)이 먼저 완결되거나 정리된 후, 그 뒤에 이어 비로소 다음 행동(동작2)을 취함을 의미합니다(예: 吃完饭再走 - 밥 다 먹고 나서 가다). 한국어로는 '~하고 나서 ~하다', '~한 뒤에 비로소 ~하다'로 해석됩니다.",
+    "formation": "동작1 + 再 + 동작2",
+    "examples": [
+      {
+        "translation": "내가 좀 생각해 보고 나서 너한테 알려줄게."
+      }
+    ]
   },
   "zh_TIME再V_91": {
-    "title": "TIME 再 V (V only until TIME)",
-    "shortExplanation": "V only until TIME",
-    "longExplanation": "V only until TIME. Pinyin: TIME zài V",
-    "formation": "TIME zài V"
+    "title": "시간사 + 再 + 동사 (~에 가서야 ~하다, ~가 되어서야 비로소 ~하다 [동작의 연기])",
+    "shortExplanation": "시간사 뒤에 부사 '再'를 두어 행동을 지금 당장 하지 않고 특정 시점까지 미루어 두었다가 그때 행함을 나타냅니다.",
+    "longExplanation": "'시간사 + 再 + 동사' 구문은 어떤 행위를 당장 하지 않고 유보해 두었다가 지정된 시간이 되어서야 비로소 실행에 옮김을 뜻합니다(예: 我明天再去 - 나는 내일이나 되어서 갈 것이다 / 내일 가겠다). 동작의 시점을 미래의 특정 때로 미루어 정하는 뉘앙스를 자연스럽게 전달합니다.",
+    "formation": "주어 + 시간사 + 再 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 내일이 되어서야 갈 거예요 (내일 갈게요)."
+      }
+    ]
   },
   "zh_请让叫OV_92": {
-    "title": "请/让/叫 O V (invite/let/ask O to V)",
-    "shortExplanation": "invite/let/ask O to V",
-    "longExplanation": "invite/let/ask O to V. Pinyin: qǐng/ ràng/ jiào O V",
-    "formation": "qǐng/ ràng/ jiào O V"
+    "title": "请 / 让 / 叫 + 목적어 + 동사 (겸어문: ~에게 ~하도록 초대하다/시키다/하게 하다)",
+    "shortExplanation": "사역성 동사인 '请'(초대하다/부탁하다), '让'(~하게 하다/~하도록 시키다), '叫'(~에게 시키다/부르다)를 사용하여 대상에게 어떤 행동을 하도록 권하거나 시키는 겸어문 구문입니다.",
+    "longExplanation": "중국어의 겸어문(兼语句)은 앞선 동사의 목적어가 동시에 뒤따르는 동사의 주어(동작 수행자) 역할을 겸하는 문장 형태입니다. 대표적인 동사로 정중한 초대나 부탁을 나타내는 '请'(qǐng), 허가나 사역을 나타내는 '让'(ràng), 구어에서 흔히 어떤 행동을 시키거나 명령할 때 쓰는 '叫'(jiào)가 있습니다. 한국어의 '~에게 턱을 내다/대접하다', '~에게 ~하라고 시키다' 등에 상응합니다.",
+    "formation": "주어 + 请 / 让 / 叫 + 목적어(겸어) + 동사(+ 기타 성분)",
+    "examples": [
+      {
+        "translation": "내가 너한테 밥 한 끼 살게 (식사 대접할게)."
+      }
+    ]
   },
   "zh_VV_93": {
-    "title": "V V (V for a bit)",
-    "shortExplanation": "V for a bit",
-    "longExplanation": "V for a bit. Pinyin: V V",
-    "formation": "V V"
+    "title": "동사 중첩 (동사의 거듭 쓰기: 좀 ~해 보다 [짧은 시간·시도·어기 완화])",
+    "shortExplanation": "단음절 동사를 중첩하여 동작의 지속 시간이 짧거나 시험 삼아 가볍게 해 봄을 나타내며, 부드러운 어기를 전달합니다.",
+    "longExplanation": "중국어 단음절 동사는 '看看'(보다), '听听'(듣다), '想想'(생각하다)처럼 두 번 거듭 쓰는 중첩이 가능합니다. 중첩된 두 번째 글자는 대개 경성(가볍고 짧은 소리)으로 발음됩니다. 이 구문은 행동이 짧은 시간 동안 이루어지거나 시험 삼아 한 번 해본다는 의미를 지니며, 명령이나 요청의 문장에서 상대방에게 강요하는 느낌을 줄여 부드럽고 친근한 뉘앙스를 부여합니다.",
+    "formation": "주어 + 동사 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "이 옷들 몇 벌 좀 봐봐."
+      }
+    ]
   },
   "zh_V一V_94": {
-    "title": "V一V (V for a bit)",
-    "shortExplanation": "V for a bit",
-    "longExplanation": "V for a bit. Pinyin: V yīV",
-    "formation": "V yīV"
+    "title": "동사 + 一 + 동사 (동사 사이에 '一'을 넣는 중첩: 한번 ~해 보다, 좀 ~해 보다)",
+    "shortExplanation": "단음절 동사 사이에 수사 '一'을 삽입한 형태로, 어떤 동작을 짧게 시도해 보거나 가볍게 시험 삼아 함을 나타냅니다.",
+    "longExplanation": "단음절 동사의 중첩 형태 중 가운데에 '一'을 넣는 구조(예: 看一看, 听一听, 想一想)는 직접 겹쳐 쓰는 형태와 의미상 대등합니다. 동작을 한 번 가볍게 시도해 보거나 짧은 시간 동안 실행함을 나타내며, 상대방에게 무엇을 권유할 때 완곡하고 부드러운 어조를 형성합니다. 한국어로는 '한번 ~해 보다', '좀 ~해 보다'로 자연스럽게 번역됩니다.",
+    "formation": "주어 + 동사 + 一 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "이 옷 몇 벌을 한번 살펴보세요."
+      }
+    ]
   },
   "zh_Vresult_95": {
-    "title": "V result ((result complements))",
-    "shortExplanation": "(result complements)",
-    "longExplanation": "(result complements). Pinyin: V result",
-    "formation": "V result"
+    "title": "동사 + 결과보어 (동작의 결과·달성 표시)",
+    "shortExplanation": "동사 바로 뒤에 또 다른 동사나 형용사를 결과보어로 붙여, 그 동작을 행한 결과 어떤 상태에 도달했거나 목적을 달성했음을 나타냅니다.",
+    "longExplanation": "중국어의 결과보어(结果补语)는 동사 직후에 틈 없이 결합하여 동작의 최종 결과나 귀결을 명시하는 문법 요소입니다. 주요 결과보어로는 '到/见'(보고 듣는 감각의 도달 및 포착), '完'(동작의 끝마침), '好'(만족스럽고 확실한 완료), '懂'(이해에 도달), '错/对'(틀림/맞음) 등이 있습니다. 실제 동작이 행해져 결과가 발생했음을 나타내므로 대개 완료를 나타내는 조사 '了'와 함께 쓰입니다.",
+    "formation": "주어 + 동사 + 결과보어(+ 목적어)(+ 了)",
+    "examples": [
+      {
+        "translation": "나 네 여자친구 봤어."
+      }
+    ]
   },
   "zh_没Vresult_96": {
-    "title": "没 V result ((result complements))",
-    "shortExplanation": "(result complements)",
-    "longExplanation": "(result complements). Pinyin: méi V result",
-    "formation": "méi V result"
+    "title": "没(有) + 동사 + 결과보어 (결과보어의 부정: ~하지 못했다, ~한 결과에 도달하지 못했다)",
+    "shortExplanation": "동사 앞에 부정사 '没(有)'를 두어 동작에 따른 결과가 발생하지 않았거나 도달하지 못했음을 나타냅니다. 완료의 '了'는 함께 쓰지 않습니다.",
+    "longExplanation": "중국어에서 결과보어가 쓰인 문장을 부정할 때는 '不'가 아닌 '没' 또는 '没有'를 동사 앞에 위치시켜 '그 행동을 한 결과에 도달하지 못했다'는 사실을 나타냅니다. 중요한 규칙으로, '没(有)'로 결과를 부정할 때는 완료나 실현을 나타내는 조사 '了'를 절대로 문말에 함께 쓰지 않아야 합니다.",
+    "formation": "주어 + 没(有) + 동사 + 결과보어(+ 목적어)",
+    "examples": [
+      {
+        "translation": "나 네 여자친구 못 봤어."
+      }
+    ]
   },
   "zh_从N1到N2_97": {
-    "title": "从 N1 到 N2 (from N1 to N2)",
-    "shortExplanation": "from N1 to N2",
-    "longExplanation": "from N1 to N2. Pinyin: cóng N1 dào N2",
-    "formation": "cóng N1 dào N2"
+    "title": "从 + 명사1 + 到 + 명사2 (~에서 ~까지, ~부터 ~에 이르기까지 [범위 포괄])",
+    "shortExplanation": "개사(전치사) '从'과 '到'가 짝을 이루어 대상, 공간, 시간 등의 시작점부터 끝점까지의 포괄적 범위를 나타냅니다.",
+    "longExplanation": "'从……到……'(cóng... dào...)는 기준점과 도달점을 아우르는 전치사 호응 구문입니다. 공간적 이동 경로(어디에서 어디까지)나 시간대(몇 시부터 몇 시까지)뿐 아니라, 예문처럼 '노인부터 어린아이에 이르기까지'와 같이 특정 인물 집단이나 사물의 전체 범위를 포괄할 때도 광범위하게 쓰입니다. 전 범위에 두루 해당함을 나타내므로 술어 앞에는 대개 포괄 부사인 '都'가 함께 쓰입니다.",
+    "formation": "从 + 명사1 + 到 + 명사2(+ 都) + 술어",
+    "examples": [
+      {
+        "translation": "노인부터 아이에 이르기까지 모두 사과 먹는 것을 좋아한다."
+      }
+    ]
   },
   "zh_第MN_98": {
-    "title": "第 # M N (#-th N)",
-    "shortExplanation": "#-th N",
-    "longExplanation": "#-th N. Pinyin: dì # M N",
-    "formation": "dì # M N"
+    "title": "第 + 수사 + 양사 + 명사 (제~번째의 … [서수 표현])",
+    "shortExplanation": "수사 앞에 접두사 '第'를 붙이고 알맞은 양사를 결합하여 '제~번째의 …'라는 순서와 차례를 나타냅니다.",
+    "longExplanation": "중국어에서 일반 기수(하나, 둘, 셋)를 순서를 가리키는 서수(첫째, 둘째, 셋째)로 바꿀 때는 수사 앞에 접두사 '第'(dì)를 붙입니다. 뒤따르는 명사를 수식할 때는 반드시 '第 + 수사 + 양사 + 명사'의 어순을 지켜야 하며, 양사를 생략하지 않습니다(예: 第四件事 - 네 번째 일, 第一个问题 - 첫 번째 질문).",
+    "formation": "第 + 수사 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "네 번째 일은 아직 하지 않았습니다."
+      }
+    ]
   },
   "zh_不要别V_99": {
-    "title": "不要/别 V (don’t do V)",
-    "shortExplanation": "don’t do V",
-    "longExplanation": "don’t do V. Pinyin: bùyào/ bié V",
-    "formation": "bùyào/ bié V"
+    "title": "不要 / 别 + 동사 (부정 명령·금지: ~하지 마라, ~하지 마세요)",
+    "shortExplanation": "동사 앞에 '不要' 또는 '别'을 붙여 상대방에게 어떤 행동을 하지 말라고 권고하거나 금지·만류하는 부정 명령문입니다.",
+    "longExplanation": "'不要'(bùyào)와 '别'(bié)은 청자에게 특정 행동을 하지 말 것을 요구하는 부정 명령 표현입니다. 회화에서는 한 음절로 간결한 '别'이 매우 흔하게 사용됩니다. 동사 앞에 놓여 '~하지 마라', '~해서는 안 된다'라는 뜻을 나타내며, 어조에 따라 가벼운 당부나 조언부터 엄격한 금지나 주의 환기까지 두루 쓰입니다.",
+    "formation": "(주어 + ) 不要 / 别 + 동사(+ 목적어)!",
+    "examples": [
+      {
+        "translation": "휴대폰 하지 마 (휴대폰 갖고 놀지 마)!"
+      }
+    ]
   },
   "zh_不要别V了_100": {
-    "title": "不要/别 V 了 (stop doing V)",
-    "shortExplanation": "stop doing V",
-    "longExplanation": "stop doing V. Pinyin: bùyào/ bié V le",
-    "formation": "bùyào/ bié V le"
+    "title": "不要 / 别 + 동사 + 了 (이제 그만 ~해라, 더 이상 ~하지 마라 [진행 중인 동작 중지])",
+    "shortExplanation": "문말에 변화의 어기조사 '了'를 붙여, 현재 이미 진행 중인 동작이나 상태를 '더 이상 계속하지 말고 멈춰라'라고 제지합니다.",
+    "longExplanation": "'不要/别……了' 구문은 단순한 사전 금지가 아니라, 청자가 실제로 이미 하고 있는 행동을 겨냥하여 '이제 그만 멈춰라'라고 요구하는 표현입니다. 문말의 '了'는 이전의 상태(행동 중)에서 새로운 상태(행동 중지)로의 전환을 유도하는 변화의 뉘앙스를 담고 있습니다. 한국어로는 '이제 그만 ~해', '더 이상 ~하지 마'에 해당합니다.",
+    "formation": "(주어 + ) 不要 / 别 + 동사(+ 목적어) + 了!",
+    "examples": [
+      {
+        "translation": "이제 그만 휴대폰 좀 봐 (휴대폰 그만 만져)!"
+      }
+    ]
   },
   "zh_对NA_101": {
-    "title": "对 N A (Is A for N)",
-    "shortExplanation": "Is A for N",
-    "longExplanation": "Is A for N. Pinyin: duì N A",
-    "formation": "duì N A"
+    "title": "对 + 명사 + 형용사 (~에 대해 ~하다, ~에 있어서 ~하다 [대상과 평가])",
+    "shortExplanation": "개사(전치사) '对'로 대상이나 범위를 이끌고, 뒤에 형용사나 평가 술어를 결합하여 '~에 대해 유익하다/좋다' 등 영향과 성질을 나타냅니다.",
+    "longExplanation": "'对'(duì)는 어떤 작용이나 태도, 평가가 향하는 대상을 도입하는 전치사입니다. '对 + 명사(구) + 형용사(구)' 구문에서 서술어로는 '有帮助'(도움이 되다), '有好处'(유익하다), '有用'(쓸모 있다), '严格'(엄격하다) 등의 표현이 자주 호응하여, 특정 사안이 해당 대상에게 어떤 긍정적·부정적 영향이나 효용을 지니는지 밝힙니다. 한국어로는 '~에 대해/있어서 유익하다', '~에게 도움이 되다'로 풀이됩니다.",
+    "formation": "(주어 + ) 对 + 명사 / 명사구 + 형용사 / 서술어",
+    "examples": [
+      {
+        "translation": "중국어를 배우는 것은 중국에서 일하는 데 도움이 된다."
+      }
+    ]
   },
   "zh_SV的N_102": {
-    "title": "S V 的 N (the N which S V’ed)",
-    "shortExplanation": "the N which S V’ed",
-    "longExplanation": "the N which S V’ed. Pinyin: S V de N",
-    "formation": "S V de N"
+    "title": "주어 + 동사 + 的 + 명사 (주술 구조 관형어: ~가 한 … [수식절])",
+    "shortExplanation": "'주어 + 동사'로 이루어진 절이 구조조사 '的'을 통해 뒤따르는 명사를 수식하여 '~가 한 …'이라는 관형어(수식어) 역할을 합니다.",
+    "longExplanation": "중국어의 모든 수식어(관형어)는 피수식어인 명사 중심어 '앞'에 위치한다는 절대적 어순 규칙이 있습니다. 절 단위의 온전한 주술 관계(주어+동사)가 뒤의 명사를 한정하거나 묘사할 때는 연결 고리로 구조조사 '的'(de)를 반드시 사용합니다. 이는 한국어의 '~가 한 (명사)', 영어의 관계사절 수식에 해당하며, 복잡한 사물이나 사람을 특정할 때 매우 자주 쓰입니다.",
+    "formation": "(소주어 + 동사) + 的 + 중심 명사",
+    "examples": [
+      {
+        "translation": "우리 엄마가 만든 밥은 정말 맛있다."
+      }
+    ]
   },
   "zh_N1比N2A_103": {
-    "title": "N1 比 N2 A (N2 is more A than N1)",
-    "shortExplanation": "N2 is more A than N1",
-    "longExplanation": "N2 is more A than N1. Pinyin: N1 bǐ N2 A",
-    "formation": "N1 bǐ N2 A"
+    "title": "명사1 + 比 + 명사2 + 형용사 (比 비교문: 두 대상 간의 우세 비교)",
+    "shortExplanation": "개사(전치사) '比'를 사용하여 두 대상을 비교하며, '명사1이 명사2보다 더 ~하다'라는 우세 비교를 나타냅니다.",
+    "longExplanation": "'比'(bǐ)를 사용하는 문장은 중국어의 가장 대표적인 비교문 형식입니다. 어순은 '명사1 + 比 + 명사2 + 형용사'로, 명사1의 성질이나 상태가 명사2보다 더 우세함을 나타냅니다. 학습 시 가장 주의해야 할 규칙은 술어로 쓰인 형용사 앞에 절대적 정도부사인 '很', '非常', '太', '真' 등을 결합할 수 없다는 점입니다(예: '哥哥比姐姐很高'는 비문이며, 반드시 '哥哥比姐姐高'로 씀).",
+    "formation": "명사1 + 比 + 명사2 + 형용사",
+    "examples": [
+      {
+        "translation": "오빠(형)가 누나(언니)보다 키가 더 크다."
+      }
+    ]
   },
   "zh_N1没有N2A_104": {
-    "title": "N1 没有 N2 A (N2 is not as A than N1)",
-    "shortExplanation": "N2 is not as A than N1",
-    "longExplanation": "N2 is not as A than N1. Pinyin: N1 méiyǒu N2 A",
-    "formation": "N1 méiyǒu N2 A"
+    "title": "명사1 + 没有 + 명사2 + 형용사 (没有 비교문: ~만큼 …하지 않다 [열등 비교])",
+    "shortExplanation": "'没有'를 사용하여 두 대상을 비교하며, '명사1은 명사2만큼 ~하지 못하다'라는 열등 비교나 정도의 미달을 나타냅니다.",
+    "longExplanation": "'没有'(méiyǒu) 비교문은 '명사1 + 没有 + 명사2 + (这么/那么) + 형용사'의 형태로 쓰여, 명사1의 정도나 수치가 명사2의 수준에 미치지 못함을 나타내는 구문입니다. 한국어의 '~은/는 ~만큼 …하지 않다', '~보다 덜 …하다'에 대응합니다. 회화에서는 형용사 앞에 흔히 지시대명사인 '那么'(그렇게)나 '这么'(이렇게)를 덧붙여 미달하는 정도의 격차를 강조합니다.",
+    "formation": "명사1 + 没有 + 명사2(+ 这么 / 那么) + 형용사",
+    "examples": [
+      {
+        "translation": "오빠(형)는 누나(언니)만큼 키가 크지 않다."
+      }
+    ]
   },
   "zh_可能_105": {
-    "title": "可能 (probably)",
-    "shortExplanation": "probably",
-    "longExplanation": "probably. Pinyin: kěnéng",
-    "formation": "kěnéng"
+    "title": "可能 (부사/능원동사: 아마 ~일 것이다, ~일지도 모른다 [추측·가능성])",
+    "shortExplanation": "술어 앞이나 주어 앞에 쓰여 어떤 사실이나 상황의 실현 가능성에 대해 '아마 ~일 것이다', '~일지도 모른다'라는 화자의 짐작과 추측을 나타냅니다.",
+    "longExplanation": "'可能'(kěnéng)은 부사 또는 조동사(능원동사) 역할을 하며, 사태의 가능성이나 개연성을 추량할 때 사용됩니다. 주어의 앞 혹은 주어와 술어 사이에 자유롭게 놓이며, 확신하지 못하는 일에 대해 조심스럽게 추측을 제기하는 어기를 전달합니다. 부정형과 함께 쓰일 때는 대개 '可能不/没……'의 형태를 취하여 '아마 ~하지 못할 것이다', '어쩌면 ~하지 않을지도 모른다'를 뜻합니다.",
+    "formation": "주어 + 可能 + 술어(동사 / 형용사) (또는: 可能 + 주어 + 술어)",
+    "examples": [
+      {
+        "translation": "그녀는 아마 노래를 부를 줄 모를 것이다."
+      }
+    ]
   },
   "zh_V得A_106": {
-    "title": "V 得 A ((using adverbs))",
-    "shortExplanation": "(using adverbs)",
-    "longExplanation": "(using adverbs). Pinyin: V dé A",
-    "formation": "V dé A"
+    "title": "동사 + 得 + 형용사 (상태보어: 동작의 양태·수준·결과 평가)",
+    "shortExplanation": "동사 뒤에 구조조사 '得'를 붙이고 형용사를 결합하여, 동작이 이루어지는 상태나 수준, 속도 등을 묘사하고 평가합니다.",
+    "longExplanation": "중국어의 상태보어(状态补语, 또는 정도보어)는 '동사 + 得 + 형용사구'의 구조를 취하며, 이미 실행되었거나 통상적으로 이루어지는 동작이 '어떠한 상태로', '어느 정도의 수준으로' 행해지는지를 평가할 때 쓰입니다. 상태보어로 쓰이는 형용사 앞에는 대개 '很'(매우), '非常'(대단히) 등의 정도부사가 함께 붙는 것이 자연스럽습니다(예: '跑得快' 단독보다는 '跑得很快' 형태가 일반적임).",
+    "formation": "주어 + 동사 + 得 + (정도부사 + ) 형용사",
+    "examples": [
+      {
+        "translation": "나는 달리기가 매우 빠르다 (달리는 속도가 매우 빠르다)."
+      }
+    ]
   },
   "zh_VOV得A_107": {
-    "title": "V O V 得 A ((using adverbs))",
-    "shortExplanation": "(using adverbs)",
-    "longExplanation": "(using adverbs). Pinyin: V O V dé A",
-    "formation": "V O V dé A"
+    "title": "동사 + 목적어 + 동사 + 得 + 형용사 (목적어가 있는 동사의 상태보어·동작 평가)",
+    "shortExplanation": "목적어를 수반하는 동사의 동작 상태나 능력, 결과의 정도를 묘사·평가할 때 동사를 중복하여 사용합니다.",
+    "longExplanation": "중국어에서 동사가 목적어를 가지고 있고, '得'를 사용하는 상태보어(정도보어)를 붙여 동작이 '어떠한지'(잘하는지, 빠른지 등) 구체적으로 묘사·평가할 때는 '동사 + 목적어 + 동사 + 得 + 형용사' 형태로 동사를 한 번 더 반복해야 합니다 (예: 唱歌唱得很好 - 노래를 아주 잘 부른다). 구어에서는 목적어가 화제화되어 문장 앞부분으로 나갈 경우 첫 번째 동사를 생략하기도 합니다.",
+    "formation": "주어 + 동사 + 목적어 + 동사 + 得 + (부사 + ) 형용사",
+    "examples": [
+      {
+        "translation": "언니(누나)는 노래를 아주 잘 부릅니다."
+      }
+    ]
   },
   "zh_VOV得比NA_108": {
-    "title": "V (O V) 得 比 N A (V (O) more A than N)",
-    "shortExplanation": "V (O) more A than N",
-    "longExplanation": "V (O) more A than N. Pinyin: V (O V) dé bǐ N A",
-    "formation": "V (O V) dé bǐ N A"
+    "title": "동사(+ 목적어 + 동사) + 得 + 比 + 명사 + 형용사 (상태보어를 수반하는 비교문 ['得' 뒤에 비교 대상 위치])",
+    "shortExplanation": "동작의 양태나 결과의 정도를 비교할 때, '得' 바로 뒤에 비교 구문인 '比 + 명사'를 놓아 '~하는 정도가 …보다 더 ~하다'를 나타냅니다.",
+    "longExplanation": "상태보어(정도보어)가 포함된 비교문 표현 중 하나로, 비교를 나타내는 개사구 '比 + 명사(비교 대상)'가 보어 자리인 '得' 뒤에 위치합니다 ('주어 + 동사(+ 목적어 + 동사) + 得 + 比 + 비교 대상 + 형용사'). 동작을 수행하는 수준이나 속도, 결과 등을 다른 대상과 비교하여 차이를 나타낼 때 자주 사용됩니다. 목적어가 있는 경우 동사를 중복하거나 첫 번째 동사를 생략할 수 있습니다.",
+    "formation": "주어 + 동사(+ 목적어 + 동사) + 得 + 比 + 명사(비교 대상) + 형용사",
+    "examples": [
+      {
+        "translation": "그는 나보다 (중국어를) 배우는 것이 빠릅니다."
+      }
+    ]
   },
   "zh_比NVOV得A_109": {
-    "title": "比 N V (O V) 得 A (V (O) more A than N)",
-    "shortExplanation": "V (O) more A than N",
-    "longExplanation": "V (O) more A than N. Pinyin: bǐ N V (O V) dé A",
-    "formation": "bǐ N V (O V) dé A"
+    "title": "比 + 명사 + 동사(+ 목적어 + 동사) + 得 + 형용사 (상태보어를 수반하는 비교문 [동사 앞에 '比' 위치])",
+    "shortExplanation": "동작의 수준이나 결과를 비교할 때, 비교 개사구인 '比 + 명사'를 동사 앞의 상황어 자리에 놓아 표현합니다.",
+    "longExplanation": "상태보어(정도보어)가 쓰인 비교문의 또 다른 주요 형식입니다. 이 구조에서는 개사구 '比 + 명사(비교 대상)'가 주어 뒤이자 본동사 앞의 부사어(상황어) 자리에 위치합니다 ('주어 + 比 + 비교 대상 + 동사(+ 목적어 + 동사) + 得 + 형용사'). '得' 뒤에 '比'를 두는 형식과 의미상 거의 동일하며, 두 표현 모두 자연스럽게 쓰입니다.",
+    "formation": "주어 + 比 + 명사(비교 대상) + 동사(+ 목적어 + 동사) + 得 + 형용사",
+    "examples": [
+      {
+        "translation": "그는 나보다 (중국어를) 배우는 것이 빠릅니다."
+      }
+    ]
   },
   "zh_V着O_110": {
-    "title": "V 着 O (V-ing O)",
-    "shortExplanation": "V-ing O",
-    "longExplanation": "V-ing O. Pinyin: V zhe O",
-    "formation": "V zhe O"
+    "title": "동사 + 着 + 목적어 (동작이나 상태의 지속: ~하고 있다, ~한 채로 있다)",
+    "shortExplanation": "동사 뒤에 동태조사 '着'를 붙여 동작이나 그 동작으로 인한 상태가 계속 유지되고 있음을 나타냅니다.",
+    "longExplanation": "동태조사 '着'(zhe)는 동사 바로 뒤에 쓰여 동작이나 그 동작의 결과로 형성된 상태가 지속되고 있음(지속태)을 나타냅니다 (예: 穿着西服 - 양복을 입고 있다, 拿着铅笔 - 연필을 쥐고 있다). '在 / 正在'가 동작의 동적인 '진행' 자체에 초점을 맞춘다면, '着'는 옷을 입고 있거나 물건을 들고 있는 등 정적인 '상태의 지속'을 나타내는 데 주로 쓰입니다.",
+    "formation": "주어 + 동사 + 着 + 목적어",
+    "examples": [
+      {
+        "translation": "그들은 정장(양복)을 입고 있습니다."
+      }
+    ]
   },
   "zh_没V着O_111": {
-    "title": "没 V 着 O (not V-ing O)",
-    "shortExplanation": "not V-ing O",
-    "longExplanation": "not V-ing O. Pinyin: méi V zhe O",
-    "formation": "méi V zhe O"
+    "title": "没(有) + 동사 + 着 + 목적어 (상태 지속의 부정: ~하고 있지 않다)",
+    "shortExplanation": "상태의 지속을 나타내는 '동사 + 着'의 부정형으로, 동사 앞에 '没' 또는 '没有'를 사용하여 '~하고 있지 않다'를 나타냅니다.",
+    "longExplanation": "'동사 + 着'으로 나타내는 동작이나 상태의 지속을 부정할 때는 반드시 부정부사 '没' 또는 '没有'를 동사 앞에 사용합니다 ('不'는 사용 불가). '주어 + 没(有) + 동사 + 着 + 목적어'의 어순으로 특정 옷을 입고 있지 않거나, 물건을 손에 쥐고 있지 않은 등 해당 상태가 유지되고 있지 않음을 나타냅니다 (예: 他没拿着铅笔 - 그는 연필을 쥐고 있지 않다).",
+    "formation": "주어 + 没(有) + 동사 + 着 + 목적어",
+    "examples": [
+      {
+        "translation": "그는 연필을 쥐고 있지 않습니다."
+      }
+    ]
   },
   "zh_N不是吗_112": {
-    "title": "N 不是……吗？ (is N not…)",
-    "shortExplanation": "is N not…",
-    "longExplanation": "is N not…. Pinyin: N bùshì…… ma？",
-    "formation": "N bùshì…… ma？"
+    "title": "명사 / 대명사 + 不是……吗? (반어문: ~가 아닌가요?, ~이지 않나요?)",
+    "shortExplanation": "당연한 사실을 상기시키거나 확인하여 강하게 긍정할 때 쓰는 반어문 구문으로, '~가 아닌가요?', '~이지 않나요?'를 나타냅니다.",
+    "longExplanation": "'不是……吗?'(bùshì... ma?)는 중국어의 대표적인 반어 의문문 구조입니다. 화자가 이미 알고 있거나 당연하다고 여기는 사실을 상대방에게 확인하거나, 상대방이 잊고 있거나 모순된 태도를 보일 때 이를 환기·강조하기 위해 사용됩니다. 겉으로는 부정 형태를 띠고 있지만 실제로는 강한 긍정의 의미를 전달합니다 (예: 你不是北京人吗? - 너 베이징 사람 아니었어?).",
+    "formation": "주어(명사 / 대명사) + 不是 + 술어 성분(명사구 / 동사구) + 吗?",
+    "examples": [
+      {
+        "translation": "당신은 베이징 사람이 아니었나요? (베이징 사람이지 않나요?)"
+      }
+    ]
   },
   "zh_往DIRECTIONV_113": {
-    "title": "往 DIRECTION V (V toward DIRECTION)",
-    "shortExplanation": "V toward DIRECTION",
-    "longExplanation": "V toward DIRECTION. Pinyin: wǎng DIRECTION V",
-    "formation": "wǎng DIRECTION V"
+    "title": "往 + 방향 + 동사 (~쪽으로, ~방향으로 [동작의 이동 방향])",
+    "shortExplanation": "개사(전치사) '往'이 방위사나 방향 명사와 결합하여 동사 앞에서 동작이 향하는 방향을 나타냅니다; '~쪽으로', '~방향으로'.",
+    "longExplanation": "'往'(wǎng)은 동작이 나아가는 방향을 나타내는 대표적인 이동 방향 개사(전치사)입니다. 방위사나 방향을 나타내는 어휘(东, 南, 西, 北, 前, 左, 右 등)와 결합하여 '往 + 방향 + 동사' 형태로 쓰이며, 뒤따르는 이동 동작의 목표 방향을 지시합니다. 길을 안내하거나 시선·이동의 방향을 말할 때 매우 널리 쓰입니다 (예: 往东走 - 동쪽으로 가다, 往前走 - 앞으로 가다).",
+    "formation": "주어 + 往 + 방향어/방위사 + 동사",
+    "examples": [
+      {
+        "translation": "여기서부터 계속 동쪽으로 걸어가세요."
+      }
+    ]
   },
   "zh_V过_114": {
-    "title": "V 过 (V’ed before)",
-    "shortExplanation": "V’ed before",
-    "longExplanation": "V’ed before. Pinyin: V guò",
-    "formation": "V guò"
+    "title": "동사 + 过 (경험태: ~한 적이 있다, ~해 보았다)",
+    "shortExplanation": "동사 바로 뒤에 동태조사 '过'를 붙여 과거에 그 동작을 해 본 경험이 있음을 나타냅니다; '~한 적이 있다'.",
+    "longExplanation": "동태조사 '过'(guo)는 동사 뒤에 결합하여 과거에 해당 동작을 최소 한 번 이상 겪어 보았음(경험태)을 나타냅니다 (예: 去过中国 - 중국에 가 본 적이 있다). 동작이 과거에 일어났고 현재는 이미 종료되었음을 전제로 하며, 동작의 단순 완료나 변화를 나타내는 '了'와 달리 주어가 겪은 경험에 초점을 둡니다.",
+    "formation": "주어 + 동사 + 过(+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 중국에 가 본 적이 있습니다."
+      }
+    ]
   },
   "zh_没有V过_115": {
-    "title": "没有 V 过 (haven’t V’ed)",
-    "shortExplanation": "haven’t V’ed",
-    "longExplanation": "haven’t V’ed. Pinyin: méiyǒu V guò",
-    "formation": "méiyǒu V guò"
+    "title": "没(有) + 동사 + 过 (경험의 부정: ~한 적이 없다, 해 본 적 없다)",
+    "shortExplanation": "경험태 '동사 + 过'의 부정형으로, 동사 앞에 '没' 또는 '没有'를 사용하여 과거에 한 번도 그 동작을 겪어본 적이 없음을 나타냅니다.",
+    "longExplanation": "과거의 경험을 나타내는 '동사 + 过'를 부정할 때는 반드시 동사 앞에 부정부사 '没' 또는 '没有'를 사용합니다 ('不'는 사용 불가). '주어 + 没(有) + 동사 + 过 + 목적어' 어순으로 '지금껏 ~해 본 적이 없다'는 사실을 전달합니다. 의미를 강조하기 위해 부사 '从来'(여태껏, 이제껏)와 함께 '从来没(有)……过' 형태로 자주 쓰입니다 (예: 他们没有来过我家 - 그들은 우리 집에 온 적이 없다).",
+    "formation": "주어 + 没(有) + 동사 + 过(+ 목적어)",
+    "examples": [
+      {
+        "translation": "그들은 우리 집에 와 본 적이 없습니다."
+      }
+    ]
   },
   "zh_虽然但是_116": {
-    "title": "虽然……但是 (although…)",
-    "shortExplanation": "although…",
-    "longExplanation": "although…. Pinyin: suīrán…… dànshì",
-    "formation": "suīrán…… dànshì"
+    "title": "虽然……但是…… (역접 접속사 호응: 비록 ~이지만, 그러나 …하다)",
+    "shortExplanation": "양보와 역접 관계를 나타내는 대표적인 접속사 호응 구문으로, '비록 ~이지만, 하지만 …하다'를 나타냅니다.",
+    "longExplanation": "'虽然……但是……'(suīrán... dànshì...)는 중국어에서 전후 문장의 역접(전환) 관계를 나타낼 때 가장 기본이 되는 접속사 결합입니다. 앞 절에 '虽然'을 써서 어떠한 전제나 양보의 상황을 인정하고, 뒷 절에 '但是'(또는 '可是', '但')를 배치하여 앞의 내용과 상반되거나 예상 밖의 결과를 이끌어냅니다. '虽然'은 앞 절 주어의 앞이나 뒤 모두에 위치할 수 있습니다.",
+    "formation": "虽然 + 절1, 但是 + 절2",
+    "examples": [
+      {
+        "translation": "비록 맑은 날씨이지만, 그래도 여전히 매우 춥습니다."
+      }
+    ]
   },
   "zh_V过次O_117": {
-    "title": "V 过 # 次 O (V’ed O # times)",
-    "shortExplanation": "V’ed O # times",
-    "longExplanation": "V’ed O # times. Pinyin: V guò # cì O",
-    "formation": "V guò # cì O"
+    "title": "동사 + 过 + 수사 + 次 + 목적어 (동량보어: 일반 사물 목적어 앞에 횟수 배치)",
+    "shortExplanation": "일반 사물 목적어를 수반할 때 동작의 횟수를 나타내는 동량보어(수사 + 次)를 '过'와 목적어 사이에 넣어 '~을 몇 번 해 본 적이 있다'를 나타냅니다.",
+    "longExplanation": "중국어에서 동작이 일어난 횟수를 보충하는 성분을 '동량보어'라고 합니다. 목적어가 일반 사물이나 일인 경우, 횟수를 나타내는 '수사 + 次(또는 遍, 趟 등)'는 통상 '过' 바로 뒤이자 목적어 앞자리에 놓입니다 ('주어 + 동사 + 过 + 수사 + 次 + 목적어'). 이를 통해 과거에 해당 동작을 몇 차례 경험했는지를 구체적인 수치로 표현합니다 (예: 坐过三次飞机 - 비행기를 세 번 타 본 적이 있다).",
+    "formation": "주어 + 동사 + 过 + 수사 + 次 + 목적어(사물 명사)",
+    "examples": [
+      {
+        "translation": "그들은 비행기를 세 번 타 본 적이 있습니다."
+      }
+    ]
   },
   "zh_V过PLACE次_118": {
-    "title": "V 过 PLACE # 次 (V’ed to PLACE # times)",
-    "shortExplanation": "V’ed to PLACE # times",
-    "longExplanation": "V’ed to PLACE # times. Pinyin: V guò PLACE # cì",
-    "formation": "V guò PLACE # cì"
+    "title": "동사 + 过 + 장소 + 수사 + 次 (동량보어: 장소 목적어를 수반하는 횟수 표현)",
+    "shortExplanation": "목적어가 장소나 처소 명사일 때, 동작의 횟수를 나타내는 동량보어(수사 + 次)는 장소 목적어의 뒤나 앞 모두에 위치할 수 있습니다.",
+    "longExplanation": "중국어에서 목적어가 국가나 도시 등 장소·처소를 나타내는 명사(처소 목적어)인 경우, 횟수를 나타내는 동량보어의 위치는 매우 유연합니다. '동사 + 过 + 장소 + 수사 + 次'(예: 去过中国三次)처럼 장소 뒤에 동량보어를 둘 수도 있고, '동사 + 过 + 수사 + 次 + 장소'(예: 来过三次中国)처럼 동량보어 뒤에 장소를 둘 수도 있습니다. 두 어순 모두 자연스럽고 널리 사용됩니다.",
+    "formation": "주어 + 동사 + 过 + 장소 명사 + 수사 + 次 (또는: 주어 + 동사 + 过 + 수사 + 次 + 장소 명사)",
+    "examples": [
+      {
+        "translation": "우리는 중국에 세 번 와 본 적이 있습니다."
+      }
+    ]
   },
   "zh_TIME就要V了_119": {
-    "title": "TIME (就) 要 V 了 (about to V in TIME)",
-    "shortExplanation": "about to V in TIME",
-    "longExplanation": "about to V in TIME. Pinyin: TIME ( jiù) yào V le",
-    "formation": "TIME ( jiù) yào V le"
+    "title": "시간 + (就)要 + 동사 + 了 (임박태: [특정 시간에] 곧 ~할 것이다)",
+    "shortExplanation": "구체적인 시간 어휘와 함께 쓰여, 가까운 미래의 특정 시점에 어떤 동작이나 사건이 임박하여 발생함을 나타냅니다; '곧 ~할 예정이다'.",
+    "longExplanation": "'(시간 + ) (就)要……了'는 가까운 미래에 어떤 사태가 발생하려 함을 나타내는 임박태(임박 완료) 구문입니다. 여기서 매우 중요한 문법 규칙은, 문장에 '下个星期(다음 주)', '明天(내일)'과 같은 구체적인 시간 부사어가 명시되어 있을 때는 '快要……了'를 쓸 수 없으며, 반드시 '(就)要……了'를 사용해야 한다는 점입니다. '就'를 넣으면 동작이 그 시점에 이르러 신속하게 발생함을 한층 더 강조합니다.",
+    "formation": "(주어 + ) 시간사(+ 주어) + (就)要 + 동사(+ 목적어) + 了",
+    "examples": [
+      {
+        "translation": "다음 주에 우리는 곧 시험을 칩니다."
+      }
+    ]
   },
   "zh_都TIMEAV了_120": {
-    "title": "都 TIME/A/V 了 (It’s already TIME, is already A, has already V’ed)",
-    "shortExplanation": "It’s already TIME, is already A, has already V’ed",
-    "longExplanation": "It’s already TIME, is already A, has already V’ed. Pinyin: dōu TIME/A/V le",
-    "formation": "dōu TIME/A/V le"
+    "title": "都 + 시간 / 형용사 / 동사 + 了 (강조·재촉·불만: 벌써 ~이다, 이미 ~했다)",
+    "shortExplanation": "'벌써/이미 ~이다'의 뜻으로, 시간이 늦었거나 정도가 심함을 강조하며 재촉이나 가벼운 불만·원망의 어기를 나타냅니다.",
+    "longExplanation": "'都……了'(dōu... le)는 구어에서 감정을 실어 강조할 때 매우 빈번하게 쓰이는 구문입니다. 의미상 '已经……了'(이미 ~했다)와 유사하지만, 단순 사실 전달을 넘어 시간이 너무 늦었거나, 수량이 많거나, 나이가 많다는 등의 상황에 대해 화자의 주관적인 느낌(답답함, 재촉, 불만, 책망)을 강하게 드러냅니다 (예: 都8点了，快点儿起床吧 - 벌써 8시야, 빨리 일어나!).",
+    "formation": "주어 + 都 + 시간사 / 형용사 / 동사구 + 了",
+    "examples": [
+      {
+        "translation": "벌써 8시야, 얼른 일어나!"
+      }
+    ]
   },
   "zh_V好_121": {
-    "title": "V 好 (done V-ing)",
-    "shortExplanation": "done V-ing",
-    "longExplanation": "done V-ing. Pinyin: V hǎo",
-    "formation": "V hǎo"
+    "title": "동사 + 好 (결과보어: ~을 다 끝마치다, 잘 ~해 두다 [완료 및 만족스러운 결과])",
+    "shortExplanation": "동사 뒤에 결과보어로 '好'를 사용하여 동작이 완료되었을 뿐만 아니라 만족스럽고 온전하게 잘 마무리되었거나 준비가 완료되었음을 나타냅니다.",
+    "longExplanation": "중국어에서 '好'가 결과보어로 동사 바로 뒤에 쓰일 때('동사 + 好'), 단순히 동작이 끝났음만을 나타내는 '完'과 달리, 동작의 결과가 만족스럽게 완성되었거나 준비가 완벽하게 갖추어졌음을 나타냅니다 (예: 饭做好了 - 밥이 다 되었다, 准备好了 - 준비가 다 끝났다, 想好了 - 생각을 다 정리했다). 부정형은 '没(有) + 동사 + 好' 형태를 취하여 '아직 다 ~하지 못했다'를 나타냅니다.",
+    "formation": "주어 + 동사 + 好(+ 목적어)",
+    "examples": [
+      {
+        "translation": "밥이 아직 다 되지 않았으니, 잠시만 기다려 주세요."
+      }
+    ]
   },
   "zh_一MN也都不V_122": {
-    "title": "一 + M + N + 也／都 + 不 + V (not V even one N)",
-    "shortExplanation": "not V even one N",
-    "longExplanation": "not V even one N. Pinyin: yī + M + N + yě／ dōu + bù + V",
-    "formation": "yī + M + N + yě／ dōu + bù + V"
+    "title": "一 + 양사 + 명사 + 也 / 都 + 不 / 没 + 동사 (완전 부정: 하나도 ~하지 않다, 조금도 ~않다)",
+    "shortExplanation": "최소 단위인 '一 + 양사' 뒤에 '也 / 都'와 부정사를 결합하여 '하나도 ~하지 않다', '전혀 ~않다'라는 완전 부정을 나타냅니다.",
+    "longExplanation": "중국어에서 완전 부정을 강조할 때 가장 널리 쓰이는 기본 구문입니다. 가장 작은 수량 단위인 '一 + 양사 + 명사'를 '也' 또는 '都' 앞에 배치하고, 그 뒤에 부정부사 '不'(의지나 일반적 습관의 부정) 또는 '没'(과거 사실이나 완료의 부정)과 동사를 연결하여 '단 하나조차도 ~하지 않는다'는 점을 강조합니다 (예: 我一个苹果也不吃 - 나는 사과를 한 개도 먹지 않는다, 他一句话也没说 - 그는 한마디도 하지 않았다).",
+    "formation": "주어 + 一 + 양사 + 명사 + 也 / 都 + 不 / 没 + 동사",
+    "examples": [
+      {
+        "translation": "저는 사과를 한 개도 먹지 않습니다."
+      }
+    ]
   },
   "zh_那_123": {
-    "title": "那 (so then)",
-    "shortExplanation": "so then",
-    "longExplanation": "so then. Pinyin: nà",
-    "formation": "nà"
+    "title": "那 (접속사: 그럼, 그렇다면, 그러면 [앞선 상황을 받아 결론 도출])",
+    "shortExplanation": "문두나 주어 앞에 위치하는 접속사 '那'로, 앞서 언급된 상황이나 상대방의 말을 근거로 삼아 '그렇다면', '그럼' 하고 결론이나 결정을 이끌어냅니다.",
+    "longExplanation": "접속사 '那'(nà, 구어에서는 '那么'로도 자주 쓰임)는 뒷 절의 첫머리나 주어 앞에 위치하여 앞 절의 상황, 조건, 상대방의 발언을 이어받습니다. 이를 전제로 하여 자연스럽게 도출되는 판단, 결과, 제안 또는 주어의 결심을 이끌어낼 때 사용하며, 한국어의 '그렇다면', '그럼', '그러면'에 해당합니다 (예: 你不去，那我也不去了 - 네가 안 간다면 그럼 나도 안 갈래).",
+    "formation": "절1, 那 + (주어 + ) 절2",
+    "examples": [
+      {
+        "translation": "네가 안 간다면, 그럼 나도 안 갈래."
+      }
+    ]
   },
   "zh_那也_124": {
-    "title": "那也 (but still)",
-    "shortExplanation": "but still",
-    "longExplanation": "but still. Pinyin: nà yě",
-    "formation": "nà yě"
+    "title": "那也 (그렇다고 해도, 그래도, 그렇다 하더라도 [구어 양보·반론])",
+    "shortExplanation": "상대방의 이유나 주장을 일단 수긍하면서도 '그렇다고 해서 ~해서는 안 된다', '그래도 역시 ~하다'라고 반박하거나 충고하는 구어 표현입니다.",
+    "longExplanation": "'那也'(nà yě)는 일상 구어에서 상대방의 변명이나 이미 끝마친 사정을 인정하면서도, 그것이 지나친 행동의 핑계가 될 수는 없음을 꼬집으며 '그렇다고 하더라도 ~해서는 안 된다', '그래도 그건 아니지'라는 뉘앙스로 반론이나 주의를 줄 때 쓰는 양보·전환 구문입니다 (예: A: 我早就复习好了。B: 那也不能一直玩儿啊 - A: 나 복습 일찌감치 다 끝냈어. B: 그렇다고 계속 놀기만 해서는 안 되지).",
+    "formation": "那也 + 조동사 / 부사 + 동사구",
+    "examples": [
+      {
+        "translation": "A: 나 일찌감치 복습 다 끝냈어. B: 그렇다고 계속 놀기만 해서는 안 되지."
+      }
+    ]
   },
   "zh_V1了就V2_126": {
-    "title": "V1了就 V2 (V2 as soon as V1)",
-    "shortExplanation": "V2 as soon as V1",
-    "longExplanation": "V2 as soon as V1. Pinyin: V1 le jiù V2",
-    "formation": "V1 le jiù V2"
+    "title": "동사1 + 了 + 就 + 동사2 (동작의 긴밀한 계기: ~하고 나면 곧바로 …하다)",
+    "shortExplanation": "제1동작이 완료되자마자 지체 없이 제2동작이 곧바로 이어짐을 나타내는 긴밀한 동작 연쇄 구문입니다.",
+    "longExplanation": "'동사1 + 了 + 就 + 동사2'는 두 가지 동작이나 사건이 시간적으로 매우 긴밀하게 연속해서 발생함을 나타냅니다. 첫 번째 동사 뒤의 동태조사 '了'는 앞선 동작의 완료를 표시하며, 두 번째 동사 앞의 부사 '就'는 앞 동작이 끝나자마자 즉시 다음 동작이 일어남을 나타냅니다. 앞뒤 절의 주어는 동일할 수도 있고, 서로 다를 수도 있습니다 (예: 爸爸回来了我们就吃饭 - 아빠가 돌아오시면 우리는 바로 밥을 먹을 거야).",
+    "formation": "(주어1 + ) 동사1 + 了 (+ 목적어1), (주어2 + ) 就 + 동사2 (+ 목적어2)",
+    "examples": [
+      {
+        "translation": "아빠가 돌아오시면 우리는 바로 밥을 먹을 거예요."
+      }
+    ]
   },
   "zh_V来去_127": {
-    "title": "V 来／去 ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V lái／ qù",
-    "formation": "V lái／ qù"
+    "title": "동사 + 来 / 去 (단순방향보어: ~해 오다 / ~해 가다 [동작의 이동 방향])",
+    "shortExplanation": "동사 뒤에 '来' 또는 '去'를 붙여 동작이 화자 쪽으로 다가오는지('来'), 화자에게서 멀어지는지('去')를 나타냅니다.",
+    "longExplanation": "중국어에서 '来'(lái)와 '去'(qù)가 이동을 나타내는 동사 뒤에 결합하면 '단순방향보어'가 됩니다. '来'는 동작이 화자가 위치한 기준점을 향해 '가까워지는' 방향성을 나타내고, '去'는 화자의 위치로부터 '멀어지는' 방향성을 나타냅니다 (예: 上来 - 화자가 위층에 있을 때 '올라오다', 上去 - 화자가 아래층에 있을 때 '올라가다'; 进来 - 들어오다, 进去 - 들어가다).",
+    "formation": "주어 + 동사 + 来 / 去",
+    "examples": [
+      {
+        "translation": "우리는 위층에서 너를 기다리고 있으니, 어서 올라오렴."
+      }
+    ]
   },
   "zh_Vsomewhere来去_128": {
-    "title": "V somewhere 来／去 ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V somewhere lái／ qù",
-    "formation": "V somewhere lái／ qù"
+    "title": "동사 + 장소 + 来 / 去 (장소 목적어를 수반하는 방향보어 [장소는 반드시 '来 / 去' 앞에 위치])",
+    "shortExplanation": "동사의 목적어가 장소(처소)를 나타내는 어휘인 경우, 목적어는 반드시 동사와 방향보어 '来 / 去' 사이에 배치해야 합니다.",
+    "longExplanation": "중국어 방향보어의 가장 핵심적이고 엄격한 문법 규칙 중 하나입니다. 동작의 목적어가 장소나 처소를 나타내는 명사(家, 宿舍, 教室, 医院 등)일 때는, 해당 장소 목적어를 반드시 동사와 '来 / 去' 사이에 배치하여 '동사 + 장소 + 来 / 去'의 어순을 지켜야 합니다. 장소 목적어를 '来 / 去' 뒤에 놓는 것은 비문입니다 (옳은 표현: 朋友回家去了, 틀린 표현: *朋友回去了家).",
+    "formation": "주어 + 동사 + 장소 명사 + 来 / 去 (+ 了)",
+    "examples": [
+      {
+        "translation": "친구는 집으로 돌아갔습니다."
+      }
+    ]
   },
   "zh_VO来去_129": {
-    "title": "V O 来／去 ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V O lái／ qù",
-    "formation": "V O lái／ qù"
+    "title": "동사 + 목적어(사물) + 来 / 去 (일반 사물 목적어를 수반하는 방향보어 [목적어를 '来 / 去' 앞에 배치])",
+    "shortExplanation": "목적어가 일반 사물 명사일 때, 목적어를 동사와 방향보어('来 / 去') 사이에 놓아 표현할 수 있으며 명령이나 예정된 동작에 자주 쓰입니다.",
+    "longExplanation": "방향보어 '来 / 去'가 일반 사물 목적어(장소가 아닌 물건 등)와 결합할 때 쓸 수 있는 두 가지 어순 중 첫 번째 형식입니다. 목적어를 동사와 방향보어 사이에 배치하여 '동사 + 목적어 + 来 / 去'의 어순을 이룹니다. 이 어순은 아직 동작이 완료되지 않은 상태에서 무언가를 가져오거나 가지고 가도록 지시, 요청, 계획할 때 흔히 사용됩니다.",
+    "formation": "주어 + (조동사 + ) 동사 + 목적어(사물 명사) + 来 / 去",
+    "examples": [
+      {
+        "translation": "내일 숙제를 가져와야 합니다."
+      }
+    ]
   },
   "zh_V来去O_130": {
-    "title": "V 来／去 O ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V lái／ qù O",
-    "formation": "V lái／ qù O"
+    "title": "동사 + 来 / 去 + 목적어(사물) (일반 사물 목적어를 수반하는 방향보어 [목적어를 '来 / 去' 뒤에 배치])",
+    "shortExplanation": "목적어가 일반 사물 명사일 때, '来 / 去' 바로 뒤에 목적어를 배치할 수도 있으며 동사와 방향보어가 한 덩어리로 결합합니다.",
+    "longExplanation": "사물 목적어를 수반하는 방향보어의 두 번째 어순 형식입니다. 목적어를 '来 / 去' 뒤에 배치하여 '동사 + 来 / 去 + 목적어' 구조를 만듭니다. 이때 동사와 방향보어가 밀접하게 결합하여 '带来'(가져오다), '拿去'(가져가다), '买来'(사 오다)처럼 하나의 복합적인 동사 단위처럼 기능합니다. 일상 구어에서 목적어를 앞에 두는 방식과 함께 매우 자연스럽고 널리 사용됩니다.",
+    "formation": "주어 + (조동사 + ) 동사 + 来 / 去 + 목적어(사물 명사)",
+    "examples": [
+      {
+        "translation": "내일 숙제를 가져오세요 (가져와야 합니다)."
+      }
+    ]
   },
   "zh_能吗_131": {
-    "title": "能……吗？ (how can you…?)",
-    "shortExplanation": "how can you…?",
-    "longExplanation": "how can you…?. Pinyin: néng…… ma？",
-    "formation": "néng…… ma？"
+    "title": "能……吗? (반어문: 어떻게 ~할 수 있겠는가?, ~할 수 있겠어?)",
+    "shortExplanation": "능원의동사(조동사) '能'을 사용한 반어문으로, 긍정 의문문의 형식을 빌려 '결코 ~할 수 없다'는 강한 부정을 나타냅니다.",
+    "longExplanation": "'能……吗?'(néng... ma?)는 중국어에서 질책, 반박, 훈계의 뉘앙스를 담아 반어적으로 표현할 때 매우 자주 쓰이는 구조입니다. 겉으로는 조동사 '能'을 써서 '가능한가?'라고 묻지만, 실제 의미는 '도저히 그렇게 될 수 없다'는 단호한 부정을 전달합니다. 상대방이 노력도 하지 않으면서 결과를 바라거나 불합리한 행동을 할 때 꼬집어 말하는 표현입니다.",
+    "formation": "(주어 + ) 能 + 동사구 / 형용사구 + 吗?",
+    "examples": [
+      {
+        "translation": "너 숙제도 안 하고 연습도 안 하는데, 어떻게 중국어를 잘 배울 수 있겠니?"
+      }
+    ]
   },
   "zh_N1还是N2_132": {
-    "title": "N1 还是 N2 ? (N1 or N2 ?)",
-    "shortExplanation": "N1 or N2 ?",
-    "longExplanation": "N1 or N2 ?. Pinyin: N1 háishi N2 ?",
-    "formation": "N1 háishi N2 ?"
+    "title": "명사1 / 구1 + 还是 + 명사2 / 구2? (선택의문문: ~인가요, 아니면 …인가요?)",
+    "shortExplanation": "의문문에서 접속사 '还是'를 사용하여 둘 이상의 대상을 나열하고, 상대방에게 어느 하나를 선택하도록 묻습니다.",
+    "longExplanation": "'还是'(háishi)는 의문문에서 둘 이상의 선택 항목을 대등하게 연결하여 'A인가요, 아니면 B인가요?'라고 묻는 선택의문문의 대표적인 접속사입니다. 중국어 문법에서 매우 중요한 핵심은, 상대방에게 선택을 요구하는 의문문에서는 반드시 '还是'를 사용해야 하며 '或者'를 사용해서는 안 된다는 점입니다 (예: 你要喝咖啡还是喝茶? - 커피를 마실래요, 아니면 차를 마실래요?).",
+    "formation": "(주어 + ) 선택항목1 + 还是 + 선택항목2?",
+    "examples": [
+      {
+        "translation": "커피를 마실래요, 아니면 차를 마실래요?"
+      }
+    ]
   },
   "zh_N1或者N2_133": {
-    "title": "N1 或者 N2 (either N1 or N21)",
-    "shortExplanation": "either N1 or N21",
-    "longExplanation": "either N1 or N21. Pinyin: N1 huòzhě N2",
-    "formation": "N1 huòzhě N2"
+    "title": "명사1 / 구1 + 或者 + 명사2 / 구2 (평서문의 선택 접속사: ~이거나, 또는, 혹은)",
+    "shortExplanation": "평서문에서 접속사 '或者'를 사용하여 'A이거나 B', 'A 또는 B'처럼 여러 가지 선택 사항이나 가능성을 나열합니다.",
+    "longExplanation": "'或者'(huòzhě)는 주로 평서문에서 둘 이상의 대등한 선택지나 일어날 수 있는 가능성을 연결하는 접속사입니다. 상대방에게 선택을 요구하는 질문에 쓰이는 '还是'와 달리, '或者'는 사실을 서술하거나 조건을 제시할 때 사용된다는 점에서 문법적으로 뚜렷이 구분됩니다 (예: 天冷了或者工作累了的时候，喝杯热茶很舒服 - 날씨가 춥거나 일하느라 피곤할 때, 따뜻한 차 한 잔을 마시면 아주 편안합니다).",
+    "formation": "선택항목1 + 或者 + 선택항목2",
+    "examples": [
+      {
+        "translation": "날씨가 춥거나 일하느라 피곤할 때, 따뜻한 차 한 잔을 마시면 아주 편안합니다."
+      }
+    ]
   },
   "zh_N1还是N2_134": {
-    "title": "N1 还是 N2 (N1 or N2 (in question-like clauses))",
-    "shortExplanation": "N1 or N2 (in question-like clauses)",
-    "longExplanation": "N1 or N2 (in question-like clauses). Pinyin: N1 háishi N2",
-    "formation": "N1 háishi N2"
+    "title": "절1 + 还是 + 절2 (간접의문절 속의 '还是': ~할지 아니면 …할지 [미결정·고민의 선택])",
+    "shortExplanation": "문장 전체는 평서문 종결이라도, '생각 중이다', '모르겠다', '결정 못 했다' 등의 동사 뒤에 오는 의문·미정의 목적어 절에서는 반드시 '还是'를 사용합니다.",
+    "longExplanation": "문장 끝에 물음표가 아닌 마침표가 찍히는 평서문 형태라 하더라도, '想'(생각하다), '知道'(알다), '决定'(결정하다), '考虑'(고려하다) 등의 동사 뒤에 붙는 목적어 절이 'A인지 아니면 B인지'와 같은 의문이나 미결정의 고민을 내포하고 있을 때는 '或者'가 아닌 '还是'를 사용해야 합니다. 이는 간접의문문 역할을 하는 특수 구문입니다 (예: 我还没想好去爬山还是去看电影 - 등산을 갈지 아니면 영화를 보러 갈지 아직 결정하지 못했다).",
+    "formation": "주어 + 인지·미결정 동사구 + 선택지1 + 还是 + 선택지2",
+    "examples": [
+      {
+        "translation": "등산을 갈지 아니면 영화를 보러 갈지 아직 결정하지 못했습니다."
+      }
+    ]
   },
   "zh_PLACEV着N_135": {
-    "title": "PLACE + V + 着 + N (There is N V’ed in PLACE.)",
-    "shortExplanation": "There is N V’ed in PLACE.",
-    "longExplanation": "There is N V’ed in PLACE.. Pinyin: PLACE + V + zhe + N",
-    "formation": "PLACE + V + zhe + N"
+    "title": "장소 + 동사 + 着 + 명사 (존현문/존재문: ~에 …이 ~되어 있다 [정적인 존재 상태])",
+    "shortExplanation": "장소 어휘를 문두에 두고 '동사 + 着'를 연결하여 특정 공간에 사물이나 사람이 어떤 상태로 놓여/존재하고 있는지를 묘사합니다.",
+    "longExplanation": "중국어의 대표적인 존현문(존재문) 구문입니다. 공간이나 장소를 나타내는 어휘가 문두에 주어로 쓰이고, 동사 뒤에 지속을 나타내는 동태조사 '着'가 붙은 후 존재의 주체가 되는 명사가 뒤따릅니다 ('장소 + 동사 + 着 + 명사'). 특정 장소에 어떤 사물이나 사람이 지속적이고 정적인 상태로 존재하고 있음을 객관적으로 묘사할 때 사용됩니다 (예: 放着 - 놓여 있다, 挂着 - 걸려 있다). 뒤따르는 명사는 대개 수량사가 붙은 불특정 명사입니다 (예: 桌子上放着一杯咖啡 - 탁자 위에 커피 한 잔이 놓여 있다).",
+    "formation": "장소 명사 + 동사 + 着 + (수사 + 양사 + ) 명사",
+    "examples": [
+      {
+        "translation": "탁자 위에 커피 한 잔이 놓여 있습니다."
+      }
+    ]
   },
   "zh_PLACE没V着N_136": {
-    "title": "PLACE + 没 + V + 着 + N (There is not N V’ed in PLACE.)",
-    "shortExplanation": "There is not N V’ed in PLACE.",
-    "longExplanation": "There is not N V’ed in PLACE.. Pinyin: PLACE + méi + V + zhe + N",
-    "formation": "PLACE + méi + V + zhe + N"
+    "title": "장소 + 没(有) + 동사 + 着 + 명사 (존현문의 부정형: ~에 …이 ~되어 있지 않다)",
+    "shortExplanation": "존현문(존재문)의 부정 형식으로, 동사 앞에 '没' 또는 '没有'를 배치하여 특정 장소에 해당 사물이 그런 상태로 존재하지 않음을 나타냅니다.",
+    "longExplanation": "지속의 동태조사 '着'를 사용한 존현문을 부정할 때는 동사 앞에 반드시 부정부사 '没' 또는 '没有'를 붙입니다 ('不'는 사용 불가). '장소 + 没(有) + 동사 + 着 + 명사' 어순으로 어떤 장소에 물건이 놓여 있지 않거나 걸려 있지 않음을 객관적으로 나타냅니다. 중요한 문법적 특징으로, 부정문에서는 명사 앞의 수량사(一杯 등)를 생략하고 명사만 단독으로 쓰는 것이 자연스럽습니다 (예: 桌子上没放着咖啡 - 탁자 위에 커피가 놓여 있지 않다).",
+    "formation": "장소 명사 + 没(有) + 동사 + 着 + 명사",
+    "examples": [
+      {
+        "translation": "탁자 위에 커피가 놓여 있지 않습니다."
+      }
+    ]
   },
   "zh_会VA的_137": {
-    "title": "会 + V / A + (的） (will V, will be A)",
-    "shortExplanation": "will V, will be A",
-    "longExplanation": "will V, will be A. Pinyin: huì + V / A + ( de）",
-    "formation": "huì + V / A + ( de）"
+    "title": "会 + 동사 / 형용사 + (的) (가능성·추측의 확신: 분명 ~할 것이다, ~하게 될 것이다)",
+    "shortExplanation": "능원의동사(조동사) '会'와 문장 끝의 어기조사 '的'가 어우러져 미래의 일에 대한 높은 실현 가능성이나 확신을 나타냅니다; '~할 거야', '~하기 마련이다'.",
+    "longExplanation": "능원의동사 '会'(huì)는 학습을 통한 능력을 나타내는 것 외에도, 미래의 일이나 어떤 상황이 일어날 가능성·추측(~할 것이다)을 나타내는 중요한 용법이 있습니다. 문장 끝에 어기조사 '的'를 덧붙인 '会……的' 구조는 화자의 확신, 장담, 또는 경고나 조언의 어기를 한층 강화하여 '틀림없이 그렇게 될 것이다'라는 뉘앙스를 부여합니다 (예: 你穿得那么少，会感冒的 - 옷을 그렇게 얇게 입으면 감기 걸려요).",
+    "formation": "주어 + 会 + 동사 / 형용사 (+ 목적어) + (的)",
+    "examples": [
+      {
+        "translation": "옷을 그렇게 얇게 입으면 감기 걸려요."
+      }
+    ]
   },
   "zh_又又_138": {
-    "title": "又……又…… (not only… but also…)",
-    "shortExplanation": "not only… but also…",
-    "longExplanation": "not only… but also…. Pinyin: yòu…… yòu……",
-    "formation": "yòu…… yòu……"
+    "title": "又……又…… (~하기도 하고 ~하기도 하다, 또 ~하고 또 ~하다)",
+    "shortExplanation": "두 가지 성질이나 동작이 동시에 병존함을 나타내며, '~하기도 하고 ~하기도 하다', '~하고 또 ~하다'의 의미를 나타냅니다.",
+    "longExplanation": "‘又……又……’는 한 주체에 두 가지 성질, 상태, 혹은 동작이 동시에 존재함을 나타내는 병렬 호응 구조입니다. ‘又’ 뒤에는 주로 같은 품사(형용사 또는 동사)가 오며, 감정적 색채나 뉘앙스(긍정적인 것끼리 또는 부정적인 것끼리)가 일치해야 합니다(예: ‘又大又甜’ - 크고도 달다, ‘又累又渴’ - 피곤하기도 하고 목이 마르기도 하다). 긍정적인 의미와 부정적인 의미를 섞어서 쓸 수 없습니다. 한국어의 '~하기도 하고 ~하기도 하다', '~하면서 또 ~하다'에 해당합니다.",
+    "formation": "주어 + 又 + 형용사1 / 동사1 + 又 + 형용사2 / 동사2",
+    "examples": [
+      {
+        "translation": "이 수박은 크기도 하고 달기도 합니다."
+      }
+    ]
   },
   "zh_V1着V2_139": {
-    "title": "V1 + 着 + V2 (V1-ing while V2-ing)",
-    "shortExplanation": "V1-ing while V2-ing",
-    "longExplanation": "V1-ing while V2-ing. Pinyin: V1 + zhe + V2",
-    "formation": "V1 + zhe + V2"
+    "title": "동사1 + 着 + (목적어1 + ) 동사2 (동작1을 부대상황/방식으로 하여 동작2를 진행함: ~한 채로 ~하다, ~하면서 ~하다)",
+    "shortExplanation": "첫 번째 동사 뒤에 동태조사 '着'을 붙여, 동작1의 지속 상태를 수단·자세·부대상황으로 삼아 주된 동작2를 행함을 나타냅니다.",
+    "longExplanation": "‘동사1 + 着 + (목적어1 + ) 동사2’는 연동문의 한 형태로, 동사1 뒤에 동태조사 ‘着’을 결합하여 첫 번째 동작이나 상태가 지속되는 가운데 두 번째 주동작(동사2)을 수행함을 나타냅니다. 즉 동작1이 동작2의 방식, 자세, 부대상황을 설명하는 상황어 역할을 합니다(예: ‘站着说话’ - 서서 말하다, ‘听着音乐看书’ - 음악을 들으며 책을 읽다, ‘吃着苹果写作业’ - 사과를 먹으면서 숙제를 하다). 한국어의 '~한 채로 ~하다', '~하면서 ~하다'에 대응합니다.",
+    "formation": "주어 + 동사1 + 着 + (목적어1 + ) 동사2 + (목적어2)",
+    "examples": [
+      {
+        "translation": "남동생은 사과를 먹으면서 숙제를 하고 있습니다."
+      }
+    ]
   },
   "zh_A了_140": {
-    "title": "A 了 (become A)",
-    "shortExplanation": "become A",
-    "longExplanation": "become A. Pinyin: A le",
-    "formation": "A le"
+    "title": "형용사 + 了 (상태의 변화: ~해졌다, ~하게 되었다)",
+    "shortExplanation": "형용사 뒤에 어기조사 '了'를 사용하여 이전 상태와 달라진 새로운 상태나 변화가 발생했음을 나타냅니다.",
+    "longExplanation": "형용사(또는 정도부사가 붙은 형용사구) 뒤에 어기조사 '了'가 오면, 과거의 상태에서 새로운 상태로 바뀌었음(사태의 변화)을 나타냅니다. 예를 들어 ‘天气冷了’(날씨가 추워졌다 - 이전엔 춥지 않았음), ‘身体好一些了’(몸이 좀 나아졌다)처럼 이전과 비교하여 어떤 성질이나 상태의 전환을 표현합니다. 이는 동작의 완료가 아닌 사태나 국면의 변화를 나타내는 어기조사의 대표적 용법입니다. 한국어의 '~해졌다', '~하게 되었다'에 대응합니다.",
+    "formation": "주어 + (정도부사 + ) 형용사 + 了",
+    "examples": [
+      {
+        "translation": "어제 감기약을 먹어서 지금은 좀 나아졌습니다."
+      }
+    ]
   },
   "zh_V了_141": {
-    "title": "V 了 ((didn’t V but) now V)",
-    "shortExplanation": "(didn’t V but) now V",
-    "longExplanation": "(didn’t V but) now V. Pinyin: V le",
-    "formation": "V le"
+    "title": "동사구 + 了 (상황의 변화: 이전에는 하지 않았거나 못했으나 이제는 ~하게 되다)",
+    "shortExplanation": "문장 끝의 어기조사 '了'를 사용하여 이전과 상황이 달라져 이제 그 동작을 하게 되었거나 할 수 있게 되었음을 나타냅니다.",
+    "longExplanation": "동사 술어문 문말에 쓰이는 어기조사 ‘了’는 이전 상태에서 벗어나 새로운 동작이나 상황이 개시되었음(사태의 변화)을 나타냅니다. 즉 ‘이전에는 하지 않았거나 할 수 없었지만, 지금은 하게 되었다/할 수 있게 되었다’는 의미를 갖습니다. 특히 ‘现在(지금)’이나 능원동사(可以, 能, 会 등)와 함께 쓰여 ‘이제는 ~할 수 있게 되었다’, ‘이제 ~한다’라는 변화를 뚜렷하게 전달합니다(예: ‘现在我可以穿漂亮的裙子了’ - 전에는 입지 못했지만 이제는 예쁜 치마를 입을 수 있게 되었다). 동작의 완료를 나타내는 동태조사 ‘了’와 구별됩니다.",
+    "formation": "(시간 + ) 주어 + (능원동사 + ) 동사 + (목적어 + ) 了",
+    "examples": [
+      {
+        "translation": "이제 저는 예쁜 치마를 입을 수 있게 되었습니다."
+      }
+    ]
   },
   "zh_越来越A了_142": {
-    "title": "越来越 + A + (了) (more and more A)",
-    "shortExplanation": "more and more A",
-    "longExplanation": "more and more A. Pinyin: yuèláiyuè + A + ( le)",
-    "formation": "yuèláiyuè + A + ( le)"
+    "title": "越来越 + 형용사 + (了) (점점 더 ~해지다, 갈수록 ~하다)",
+    "shortExplanation": "부사 '越来越'를 형용사 앞에 사용하여 시간이 흐름에 따라 그 성질이나 정도가 점차 심화됨을 나타냅니다.",
+    "longExplanation": "‘越来越 + 형용사 + (了)’ 구조는 시간의 경과에 따라 상태나 성질의 정도가 점진적으로 심화되거나 고조됨을 나타내는 구문입니다. 문장 끝의 어기조사 ‘了’는 상태의 변화를 더욱 명확히 해 줍니다. 주의할 점은 ‘越来越’ 자체가 이미 점증적인 정도를 포함하고 있으므로 뒤에 ‘很’, ‘非常’, ‘太’와 같은 정도부사를 중복해서 쓸 수 없다는 것입니다(오문: *越来越很帅). 한국어의 '갈수록 ~하다', '점점 더 ~해지다'에 해당합니다.",
+    "formation": "주어 + (시간 + ) 越来越 + 형용사 + (了)",
+    "examples": [
+      {
+        "translation": "너 요즘 점점 더 잘생겨지는구나."
+      }
+    ]
   },
   "zh_V得RESULT_143": {
-    "title": "V + 得 + RESULT (can V to RESULT)",
-    "shortExplanation": "can V to RESULT",
-    "longExplanation": "can V to RESULT. Pinyin: V + dé + RESULT",
-    "formation": "V + dé + RESULT"
+    "title": "동사 + 得 + 결과보어 (가능보어 긍정형: ~해서 …할 수 있다)",
+    "shortExplanation": "동사와 결과보어 사이에 구조조사 '得'를 넣어, 조건이나 능력상 동작을 통해 해당 결과를 실현할 수 있음을 나타내는 가능보어의 긍정형입니다.",
+    "longExplanation": "중국어의 가능보어는 주관적 능력이나 객관적 조건에 따라 동작이 어떤 결과에 도달할 수 있는지 여부를 나타냅니다. 긍정형은 동사와 결과보어 사이에 '得'를 삽입하여 ‘동사 + 得 + 결과보어’ 형태를 취하며, ‘~해서 (결과를) 이룰 수 있다’는 뜻을 가집니다 (예: ‘看得清楚’ - 똑똑히 볼 수 있다, ‘听得懂’ - 알아들을 수 있다, ‘做得到’ - 해낼 수 있다). 목적어가 있을 때는 보어 뒤에 두거나 문장 앞으로 화제화하여 놓습니다.",
+    "formation": "주어 + 동사 + 得 + 결과보어 + (목적어)",
+    "examples": [
+      {
+        "translation": "저는 저 한자가 또렷하게 잘 보입니다."
+      }
+    ]
   },
   "zh_V得DIRECTION_144": {
-    "title": "V + 得 + DIRECTION (can V to DIRECTION)",
-    "shortExplanation": "can V to DIRECTION",
-    "longExplanation": "can V to DIRECTION. Pinyin: V + dé + DIRECTION",
-    "formation": "V + dé + DIRECTION"
+    "title": "동사 + 得 + 방향보어 (방향 가능보어 긍정형: ~하여 올라올/들어갈 수 있다)",
+    "shortExplanation": "동사와 방향보어 사이에 '得'를 넣어, 어떤 방향으로 동작을 진행하여 이동할 수 있는 능력이나 조건이 됨을 나타냅니다.",
+    "longExplanation": "동사와 방향보어(단순방향보어 ‘来/去’ 또는 복합방향보어 ‘上来/进去’ 등) 사이에 구조조사 ‘得’를 결합하면 방향을 나타내는 가능보어 긍정형이 됩니다. 주관적 체력이나 객관적 환경이 허락되어 해당 방향으로 이동하는 동작을 해낼 수 있음을 나타냅니다(예: ‘上得来’ - 올라올 수 있다, ‘进得去’ - 들어갈 수 있다, ‘爬得上去’ - 기어올라갈 수 있다). 의문조사 ‘吗’와 결합하여 가능 여부를 묻는 의문문으로도 자주 사용됩니다.",
+    "formation": "주어 + 동사 + 得 + 방향보어 + (목적어)",
+    "examples": [
+      {
+        "translation": "건물이 이렇게 높은데, 당신은 올라올 수 있겠어요?"
+      }
+    ]
   },
   "zh_V不result_145": {
-    "title": "V + 不 + result (cannot V to RESULT)",
-    "shortExplanation": "cannot V to RESULT",
-    "longExplanation": "cannot V to RESULT. Pinyin: V + bù + result",
-    "formation": "V + bù + result"
+    "title": "동사 + 不 + 결과보어 (가능보어 부정형: ~해서 …할 수 없다)",
+    "shortExplanation": "동사와 결과보어 사이에 부정부사 '不'를 넣어, 능력이나 상황의 제약으로 인해 그 결과에 도달할 수 없음을 나타냅니다.",
+    "longExplanation": "‘동사 + 不 + 결과보어’는 가능보어의 부정 형식입니다. 주관적 능력이나 객관적 조건이 미치지 못하여 동작을 해도 그 결과를 실현할 수 없을 때 사용됩니다(예: ‘找不到’ - 찾을 수 없다/못 찾겠다, ‘看不清’ - 잘 보이지 않는다, ‘听不懂’ - 알아듣지 못한다, ‘做不完’ - 다 끝낼 수 없다). 일상 회화에서 가능보어는 긍정형보다 이 부정형이 훨씬 더 빈번하게 쓰입니다.",
+    "formation": "주어 + 동사 + 不 + 결과보어 + (목적어)",
+    "examples": [
+      {
+        "translation": "저는 좋은 식당을 찾을 수가 없습니다."
+      }
+    ]
   },
   "zh_V不direction_146": {
-    "title": "V + 不 + direction (cannot V to DIRECTION)",
-    "shortExplanation": "cannot V to DIRECTION",
-    "longExplanation": "cannot V to DIRECTION. Pinyin: V + bù + direction",
-    "formation": "V + bù + direction"
+    "title": "동사 + 不 + 방향보어 (방향 가능보어 부정형: ~하여 올라갈/들어갈 수 없다)",
+    "shortExplanation": "동사와 방향보어 사이에 부정부사 '不'를 결합하여, 장애나 체력적 한계 등으로 인해 해당 방향으로 이동할 수 없음을 나타냅니다.",
+    "longExplanation": "‘동사 + 不 + 방향보어’는 방향보어를 사용한 가능보어의 부정 형식입니다. 공간적 장애(너무 높음, 좁음 등)나 주관적 신체 조건(피로, 힘 부족 등)으로 인해 특정 방향으로 향하는 이동 동작을 완수할 수 없음을 나타냅니다(예: ‘上不去’ - 올라갈 수 없다/못 올라가겠다, ‘进不去’ - 들어갈 수 없다, ‘过不去’ - 건너갈 수 없다, ‘回不来’ - 돌아올 수 없다). 한국어의 '~하여 갈/올 수 없다'에 해당합니다.",
+    "formation": "주어 + 동사 + 不 + 방향보어 + (목적어)",
+    "examples": [
+      {
+        "translation": "건물이 너무 높아서 저는 올라갈 수가 없습니다."
+      }
+    ]
   },
   "zh_N呢_147": {
-    "title": "N 呢? (where is N?)",
-    "shortExplanation": "where is N?",
-    "longExplanation": "where is N?. Pinyin: N ne?",
-    "formation": "N ne?"
+    "title": "명사 + 呢? (소재·행방의 질문: ~은/는 어디에 있나요?, ~은/는요?)",
+    "shortExplanation": "명사나 대명사 바로 뒤에 어기조사 '呢'를 붙여 술어를 생략한 의문문을 만들어 사람이나 사물의 행방과 위치를 묻습니다.",
+    "longExplanation": "명사 또는 대명사 뒤에 어기조사 ‘呢’를 직접 붙인 생략 의문문 구조로, 어떤 대상의 현재 소재나 위치를 묻는 표현입니다. 이는 ‘~在哪儿？(~은 어디에 있습니까?)’와 같은 의미를 갖는 간결하고 친근한 구어체 표현입니다(예: ‘你的书呢？’ - 네 책은 어디 있니?, ‘爸爸呢？’ - 아빠는 어디 계셔?). 한국어의 '~은/는 어디 있나요?', '~은/는요?'에 대응합니다.",
+    "formation": "명사 / 대명사 + 呢?",
+    "examples": [
+      {
+        "translation": "너의 책은 어디에 있니?"
+      }
+    ]
   },
   "zh_刚V_148": {
-    "title": "刚 V (just V)",
-    "shortExplanation": "just V",
-    "longExplanation": "just V. Pinyin: gāng V",
-    "formation": "gāng V"
+    "title": "刚 + 동사 (부사: 방금 ~했다, 막 ~한 참이다)",
+    "shortExplanation": "부사 '刚'을 동사 앞에 두어, 어떤 동작이나 사건이 일어난 지 얼마 되지 않았음(방금, 막)을 나타냅니다.",
+    "longExplanation": "‘刚’은 동사 바로 앞에 쓰이는 시간 부사로, 동작이나 사건이 일어난 시점이 말하는 시점(또는 기준 시점)으로부터 얼마 지나지 않았음(화자의 주관적 느낌상 시간이 매우 짧음)을 나타냅니다. 부사이므로 반드시 주어 뒤, 동사 바로 앞에 와야 하며 문장 맨 앞(주어 앞)에는 올 수 없습니다(시간명사인 ‘刚才’와의 핵심적 차이점). 동사 뒤에 ‘完’, ‘好’ 등의 결과보어와 자주 결합하여 ‘막 ~을 끝마쳤다’는 의미로 쓰입니다(예: ‘刚做完’ - 막 다 했다, ‘刚到’ - 방금 도착했다). 한국어의 '방금 ~했다', '막 ~했다'에 대응합니다.",
+    "formation": "주어 + 刚 + 동사 + (결과보어 + 목적어)",
+    "examples": [
+      {
+        "translation": "아들이 방금 숙제를 다 끝냈습니다."
+      }
+    ]
   },
   "zh_刚才_149": {
-    "title": "刚才 (moments ago)",
-    "shortExplanation": "moments ago",
-    "longExplanation": "moments ago. Pinyin: gāngcái",
-    "formation": "gāngcái"
+    "title": "刚才 (시간명사: 방금, 아까, 조금 전)",
+    "shortExplanation": "시간명사 '刚才'는 말하는 시점 직전의 짧은 시간(아까, 조금 전)을 가리키며, 주어 앞이나 뒤에 모두 놓일 수 있습니다.",
+    "longExplanation": "부사인 ‘刚’과 달리 ‘刚才’는 품사가 ‘시간명사’입니다. 말하는 시점으로부터 얼마 떨어지지 않은 객관적인 직전의 과거 시점(몇 분 전, 조금 전)을 가리키며, 한국어의 ‘아까’, ‘조금 전’, ‘방금’에 해당합니다. 시간명사이기 때문에 문장 내 위치가 자유로워 주어 앞(문두)이나 주어 뒤에 모두 위치할 수 있습니다(예: ‘刚才儿子在做作业’ / ‘儿子刚才在做作业’ 둘 다 가능). 또한 ‘在 + 동사’와 결합하여 ‘아까 ~하고 있었다’와 같이 과거 특정 시점에 진행 중이던 동작을 서술할 때도 자주 쓰입니다.",
+    "formation": "刚才 + 주어 + 술어 / 주어 + 刚才 + 술어",
+    "examples": [
+      {
+        "translation": "조금 전(아까)에 아들은 숙제를 하고 있었습니다."
+      }
+    ]
   },
   "zh_V了DURATIONO_150": {
-    "title": "V + 了 + DURATION + O (V’ed O for DURATION)",
-    "shortExplanation": "V’ed O for DURATION",
-    "longExplanation": "V’ed O for DURATION. Pinyin: V + le + DURATION + O",
-    "formation": "V + le + DURATION + O"
+    "title": "동사 + 了 + 시량보어 + 목적어 (시량보어: ~동안 …을 했다, 과거 동작의 지속 시간과 완료)",
+    "shortExplanation": "동사 뒤에 동태조사 '了'와 동작 지속 시간(시량보어)을 놓아, 과거에 어떤 동작이 일정 시간 동안 지속되었고 현재는 이미 종료되었음을 나타냅니다.",
+    "longExplanation": "‘동사 + 了 + 시량보어 + (的 + ) 목적어’는 목적어가 있는 동작이 얼마 동안 지속되었는지를 표현하는 시량보어 구문입니다. 매우 중요한 문법적 특징은, 문장 끝에 두 번째 ‘了’가 없기 때문에 해당 동작이 과거에 그 시간 동안 지속된 후 ‘현재는 이미 종료되었음’을 나타낸다는 점입니다 (예: ‘我们坐了一个小时公共汽车’ - 우리는 한 시간 동안 버스를 탔다. 지금은 이미 버스에서 내렸음을 의미함). 문장 끝에도 ‘了’가 붙어 ‘현재까지도 동작이 계속 진행 중임’을 나타내는 구문과 엄격히 구별해야 합니다.",
+    "formation": "주어 + 동사 + 了 + 시량보어 + (的 + ) 목적어",
+    "examples": [
+      {
+        "translation": "우리는 한 시간 동안 버스를 탔습니다."
+      }
+    ]
   },
   "zh_V了DURATIONO了_151": {
-    "title": "V + 了 + DURATION + O + 了 (have been V-ing O for DURATION)",
-    "shortExplanation": "have been V-ing O for DURATION",
-    "longExplanation": "have been V-ing O for DURATION. Pinyin: V + le + DURATION + O + le",
-    "formation": "V + le + DURATION + O + le"
+    "title": "동사 + 了 + 시량보어 + 목적어 + 了 (동작의 지속: ~동안 …을 해오고 있으며 지금도 계속하고 있다)",
+    "shortExplanation": "동사 뒤와 문장 끝에 모두 '了'를 사용하여, 과거부터 해당 기간 동안 지속되어 온 동작이 현재까지도 계속 이어지고 있음을 나타냅니다.",
+    "longExplanation": "‘동사 + 了 + 시량보어 + (的 + ) 목적어 + 了’ 구문은 동사 뒤의 동태조사 ‘了’와 문말의 어기조사 ‘了’가 함께 쓰이는 구조입니다. 문장 끝에 있는 ‘了’가 결정적인 역할을 하여, 과거에 시작된 동작이 해당 시간 동안 지속되어 왔을 뿐만 아니라 ‘말하는 현재 시점에서도 그 동작이 중단되지 않고 계속 진행 중임’을 나타냅니다 (예: ‘我学习了一年汉语了’ - 나는 중국어를 1년 동안 공부해 오고 있고 지금도 계속 배우는 중이다). 문말에 ‘了’가 없는 완료 구문과 대비되는 대표적인 동작 지속형 표현입니다.",
+    "formation": "주어 + 동사 + 了 + 시량보어 + (的 + ) 목적어 + 了",
+    "examples": [
+      {
+        "translation": "저는 중국어를 1년 동안 공부해 왔고 (지금도) 계속 배우고 있습니다."
+      }
+    ]
   },
   "zh_对N感兴趣有兴趣_152": {
-    "title": "对 N 感兴趣/有兴趣 (interested in N)",
-    "shortExplanation": "interested in N",
-    "longExplanation": "interested in N. Pinyin: duì N gǎnxìngqù/ yǒuxìngqù",
-    "formation": "duì N gǎnxìngqù/ yǒuxìngqù"
+    "title": "对 + 명사 + 感兴趣 / 有兴趣 (개사 구문: ~에 흥미가 있다, 관심을 가지다)",
+    "shortExplanation": "개사(전치사) '对'로 대상을 이끌어 '〜에 대해 흥미·관심이 있다'는 의미를 나타냅니다.",
+    "longExplanation": "‘对 + 명사 + 感兴趣 / 有兴趣’ 구문은 어떤 대상, 분야, 사물, 활동 등에 대해 관심이나 호감을 가지고 있음을 표현할 때 사용됩니다. 개사 ‘对’가 대상(명사)을 이끌어 상황어(부사어)를 형성하고, 뒤이어 ‘感兴趣’(흥미를 느끼다) 또는 ‘有兴趣’(흥미가 있다)를 수식합니다. ‘아주’, ‘매우’ 등 정도를 강조할 때 부사(很, 非常, 特别 등)는 ‘对’ 앞이 아니라 반드시 ‘感兴趣/有兴趣’ 바로 앞에 놓아야 합니다(예: ‘对中国电影很感兴趣’). 부정형은 ‘对……不感兴趣’ 또는 ‘对……没有兴趣’입니다. 한국어의 '~에 흥미가 있다', '~에 관심이 있다'에 해당합니다.",
+    "formation": "주어 + 对 + 명사(대상) + (정도부사 + ) 感兴趣 / 有兴趣",
+    "examples": [
+      {
+        "translation": "그들은 중국 영화에 관심(흥미)이 있습니다."
+      }
+    ]
   },
   "zh_对N没兴趣_153": {
-    "title": "对 N 没兴趣 (not interested in N)",
-    "shortExplanation": "not interested in N",
-    "longExplanation": "not interested in N. Pinyin: duì N méi xìngqù",
-    "formation": "duì N méi xìngqù"
+    "title": "对 + 명사 + 没兴趣 (~에 관심이 없다, ~에 흥미가 없다)",
+    "shortExplanation": "개사 '对'로 대상을 이끌고 '没兴趣'(또는 '没有兴趣')를 뒤이어 써서, 어떤 대상이나 분야에 관심이나 흥미가 없음을 나타냅니다.",
+    "longExplanation": "‘对 + 명사 + 没兴趣’(또는 ‘没有兴趣’)는 ‘对……有兴趣/感兴趣’의 부정 형식으로, 특정 인물, 사물, 분야, 활동에 대해 전혀 호기심이나 관심이 없음을 나타냅니다. 개사 ‘对’(~에 대해)가 이끄는 명사구가 상황어로 술어인 ‘没兴趣’ 앞에 놓입니다. 정도를 강조할 때는 ‘一点儿也/都没兴趣’(조금도 관심이 없다)처럼 표현하기도 합니다. 한국어의 '~에 관심이 없다', '~에 흥미가 없다'에 해당합니다.",
+    "formation": "주어 + 对 + 명사(대상) + 没兴趣 / 没有兴趣",
+    "examples": [
+      {
+        "translation": "그들은 중국 영화에 관심이 없습니다."
+      }
+    ]
   },
   "zh_半_154": {
-    "title": "半 (half hour)",
-    "shortExplanation": "half hour",
-    "longExplanation": "half hour. Pinyin: bàn",
-    "formation": "bàn"
+    "title": "수사 + 点 + 半 (시각 표현: ~시 반)",
+    "shortExplanation": "시간을 나타내는 단위인 '点' 바로 뒤에 '半'을 붙여, 정각에서 30분이 지난 '몇 시 반'을 나타냅니다.",
+    "longExplanation": "중국어에서 시각을 말할 때 ‘半’은 30분을 뜻하며, 시간 단위인 ‘点(시)’ 뒤에 직접 붙여 ‘수사 + 点 + 半’의 형태로 쓰입니다(예: ‘七点半’ - 7시 반, ‘十二点半’ - 12시 반). 이는 특정 시점(시각)을 나타내는 표현으로, 지속 시간(기간)을 나타내는 ‘半个小时(30분 동안, 반 시간)’과 구별됩니다. 한국어의 '~시 반'에 해당합니다.",
+    "formation": "수사 + 点 + 半",
+    "examples": [
+      {
+        "translation": "지금은 7시 반입니다."
+      }
+    ]
   },
   "zh_一刻_155": {
-    "title": "一刻 (quarter hour (when telling time))",
-    "shortExplanation": "quarter hour (when telling time)",
-    "longExplanation": "quarter hour (when telling time). Pinyin: yī kè",
-    "formation": "yī kè"
+    "title": "수사 + 点 + 一刻 (시각 표현: ~시 15분)",
+    "shortExplanation": "시간 단위인 '点' 뒤에 '一刻'를 결합하여 15분을 가리키는 시각(~시 15분)을 나타냅니다.",
+    "longExplanation": "중국어 시각 표현에서 ‘刻’은 15분을 단위로 하는 시간 단위입니다. ‘一刻’은 15분을 뜻하므로 ‘수사 + 点 + 一刻’의 형태로 쓰여 ‘몇 시 15분’을 나타냅니다(예: ‘七点一刻’ - 7시 15분, ‘十点一刻’ - 10시 15분). 참고로 30분은 ‘*两刻’라 하지 않고 ‘半’을 쓰며, 45분은 보통 ‘差一刻’(~시 15분 전)이나 ‘四十五分’으로 표현합니다. 한국어의 '~시 15분'에 해당합니다.",
+    "formation": "수사 + 点 + 一刻",
+    "examples": [
+      {
+        "translation": "지금은 7시 15분입니다."
+      }
+    ]
   },
   "zh_一刻钟_156": {
-    "title": "一刻钟 (quarter hour (duration))",
-    "shortExplanation": "quarter hour (duration)",
-    "longExplanation": "quarter hour (duration). Pinyin: yī kè zhōng",
-    "formation": "yī kè zhōng"
+    "title": "一刻钟 (시량 표현: 15분 동안, 15분간)",
+    "shortExplanation": "'一刻钟'은 지속되는 시간의 길이(시량)를 나타내며, '15분 동안'이라는 의미로 동사 뒤에서 시량보어로 쓰입니다.",
+    "longExplanation": "시각의 특정 시점(15분)을 나타내는 ‘一刻’과 달리, ‘一刻钟’은 ‘15분간 / 15분 동안’이라는 지속 시간(시량)을 가리킵니다. 문장에서는 주로 동사(또는 동사 + 了) 뒤에 놓여 시량보어 역할을 하며, 어떤 동작이나 상태가 15분 동안 진행되었음을 표현합니다(예: ‘迟到了一刻钟’ - 15분 지각했다, ‘等了一刻钟’ - 15분 동안 기다렸다, ‘休息一刻钟’ - 15분 쉬다). 한국어의 '15분간', '15분 동안'에 대응합니다.",
+    "formation": "동사 + (了 + ) 一刻钟",
+    "examples": [
+      {
+        "translation": "너 15분이나 지각했어."
+      }
+    ]
   },
   "zh_差ch_157": {
-    "title": "差 (chà) (to (when telling time))",
-    "shortExplanation": "to (when telling time)",
-    "longExplanation": "to (when telling time). Pinyin: chà (chà)",
-    "formation": "chà (chà)"
+    "title": "差 + 분 / 一刻 + 수사 + 点 (시각 표현: ~시 …분 전)",
+    "shortExplanation": "'부족하다/모자라다'를 뜻하는 '差'를 사용하여 다음 정각까지 몇 분이 남았는지를 나타내는 시각 표현(~시 …분 전)입니다.",
+    "longExplanation": "중국어에서 ‘差(chà)’는 본래 ‘모자라다, 부족하다’라는 뜻으로, 시각 표현에서는 다음 정각까지 남은 분(minute) 수를 나타낼 때 씁니다. 기본 어순은 ‘差 + 분(또는 一刻) + 다음 시각 + 点’으로, ‘몇 시 …분 전’을 뜻합니다(예: ‘差一刻八点’ - 8시 15분 전 / 7시 45분, ‘差五分十点’ - 10시 5분 전 / 9시 55분). ‘八点差一刻’처럼 시각을 앞에 두기도 합니다. 한국어의 '~시 …분 전'에 해당합니다.",
+    "formation": "(已经 + ) 差 + 분 / 一刻 + 수사 + 点 + (了)",
+    "examples": [
+      {
+        "translation": "벌써 8시 15분 전이에요!"
+      }
+    ]
   },
   "zh_再V_158": {
-    "title": "再 V (again (later))",
-    "shortExplanation": "again (later)",
-    "longExplanation": "again (later). Pinyin: zài V",
-    "formation": "zài V"
+    "title": "再 + 동사 (미래·미실현 동작의 반복: 또 ~하다, 다시 ~하다)",
+    "shortExplanation": "부사 '再'를 동사 앞에 사용하여, 아직 일어나지 않은 동작이나 사건이 미래에 다시 반복되거나 지속됨을 나타냅니다.",
+    "longExplanation": "부사 ‘再’는 동사 바로 앞에 놓여, 동작이나 상태가 앞으로(미래나 미실현의 시점에) 다시 반복되거나 지속해서 행해질 것임을 나타냅니다(예: ‘明天再去’ - 내일 또 가다, ‘请再说一遍’ - 다시 한 번 말씀해 주세요). 핵심 문법 포인트로 ‘再’와 ‘又’의 차이가 중요한데, ‘再’는 아직 발생하지 않은 미래의 반복을 나타내는 반면, ‘又’는 이미 발생한 과거의 반복을 나타냅니다. 한국어의 '다시 ~하다', '(앞으로) 또 ~하다'에 대응합니다.",
+    "formation": "주어 + (시간 + / 还 / 要 + ) 再 + 동사 + (목적어)",
+    "examples": [
+      {
+        "translation": "저는 내일 다시 가서 보려고 합니다."
+      }
+    ]
   },
   "zh_又V_159": {
-    "title": "又 V ((did) again)",
-    "shortExplanation": "(did) again",
-    "longExplanation": "(did) again. Pinyin: yòu V",
-    "formation": "yòu V"
+    "title": "又 + 동사 (과거·기실현 동작의 반복: 또 ~했다, 다시 ~했다)",
+    "shortExplanation": "부사 '又'를 동사 앞에 사용하여, 과거에 어떤 동작이나 사건이 이미 또다시 일어났음(기실현의 반복)을 나타냅니다.",
+    "longExplanation": "부사 ‘又’는 동사 앞에 놓여, 이미 과거에 동작이나 사건이 반복되어 발생했음을 나타냅니다. 아직 일어나지 않은 미래의 반복을 나타내는 ‘再’와 대립되며, 이미 완료되었거나 일어난 일에 쓰입니다. 특히 의문사 ‘怎么’와 결합한 ‘怎么又……了’ 구문에서는 화자의 불만, 어이없음, 안타까움, 질책 등의 감정적 어기가 진하게 드러납니다(예: ‘你今天怎么又迟到了?’ - 너 오늘 왜 또 지각했니?). 한국어의 '(이미) 또 ~했다', '다시 ~했다'에 해당합니다.",
+    "formation": "주어 + (시간 + ) (怎么 + ) 又 + 동사 + (목적어 + 了)",
+    "examples": [
+      {
+        "translation": "너 오늘 왜 또 지각했어?"
+      }
+    ]
   },
   "zh_SQ1就Q2_160": {
-    "title": "S + Q1 + 就 + Q2 ((S acts in a way so that the answer to Q1 is the same as the answer to Q2.))",
-    "shortExplanation": "(S acts in a way so that the answer to Q1 is the same as the answer to Q2.)",
-    "longExplanation": "(S acts in a way so that the answer to Q1 is the same as the answer to Q2.). Pinyin: S + Q1 + jiù + Q2",
-    "formation": "S + Q1 + jiù + Q2"
+    "title": "주어 + 의문사1 + 就 + 의문사2 (임의·자유 표현: ~하는 것은 무엇이든 ~하다, ~하는 대로 ~하다)",
+    "shortExplanation": "부사 '就' 앞뒤에 동일한 의문사를 호응시켜, 앞선 조건이나 뜻에 따라 원하는 대로 자유롭게 행동함을 나타냅니다.",
+    "longExplanation": "‘주어 + 의문사1 + 就 + 의문사2’ 구문은 동일한 의문대명사(什么, 哪儿, 谁, 怎么 등)를 부사 ‘就’의 앞과 뒤에 중복하여 호응시키는 의문사의 비의문(임의 지칭) 용법입니다. 앞 절의 의문사가 임의의 조건이나 소망을 제시하면, 뒤 절의 ‘就 + 의문사’는 그 조건에 상응하여 그대로 실행함을 나타냅니다(예: ‘想吃什么就吃什么’ - 먹고 싶은 것은 무엇이든 먹는다, ‘想去哪儿就去哪儿’ - 가고 싶은 곳이면 어디든 간다, ‘想怎么做就怎么做’ - 하고 싶은 대로 한다). 한국어의 '~하는 것은 무엇이든 ~하다', '~하는 대로 ~하다'에 해당합니다.",
+    "formation": "주어 + (동사1 + ) 의문사 + 就 + (동사2 + ) 의문사",
+    "examples": [
+      {
+        "translation": "저는 마시고 싶은 것은 무엇이든 마십니다."
+      }
+    ]
   },
   "zh_S1QS2就Q_161": {
-    "title": "S1 + Q + S2 + 就 + Q ((S2 acts in a way that the answer to Q is true for both S1 and S2.))",
-    "shortExplanation": "(S2 acts in a way that the answer to Q is true for both S1 and S2.)",
-    "longExplanation": "(S2 acts in a way that the answer to Q is true for both S1 and S2.). Pinyin: S1 + Q + S2 + jiù + Q",
-    "formation": "S1 + Q + S2 + jiù + Q"
+    "title": "주어1 + 의문사 + 주어2 + 就 + 의문사 (호응 표현: 주어1이 ~하는 것을 주어2도 그대로 ~하다)",
+    "shortExplanation": "서로 다른 두 주어 사이에 같은 의문사를 호응시켜, 주어2가 주어1의 선택이나 행동에 맞춰 그대로 따름을 나타냅니다.",
+    "longExplanation": "‘주어1 + 의문사 + 주어2 + 就 + 의문사’는 두 개의 서로 다른 주어가 등장하는 의문사 임의 지칭 호응 구문입니다. 앞 절에서 주어1이 선택하거나 행동한 내용(什么, 哪儿, 怎么 등)을 기준으로 삼아, 뒤 절의 주어2가 부사 ‘就’를 통해 그와 완전히 동일하게 행동함을 나타냅니다. 즉 주어2가 주어1의 결정에 전적으로 따르고 동조함을 표현합니다(예: ‘你喝什么我就喝什么’ - 네가 마시는 걸 나도 마실게, ‘你去哪儿我就去哪儿’ - 네가 가는 곳이면 나도 갈게). 한국어의 '네가 ~하는 대로 나도 ~하다', '~가 하는 것은 무엇이든 따라서 ~하다'에 해당합니다.",
+    "formation": "주어1 + (동사1 + ) 의문사 + 주어2 + 就 + (동사2 + ) 의문사",
+    "examples": [
+      {
+        "translation": "네가 마시는 걸로 나도 마실게."
+      }
+    ]
   },
   "zh_越V1A1越V2A2_162": {
-    "title": "越 V1/A1 越 V2/A2 (the more V1/A1 the more V2/A2)",
-    "shortExplanation": "the more V1/A1 the more V2/A2",
-    "longExplanation": "the more V1/A1 the more V2/A2. Pinyin: yuè V1/A1 yuè V2/A2",
-    "formation": "yuè V1/A1 yuè V2/A2"
+    "title": "越 + 동사1 / 형용사1 + 越 + 동사2 / 형용사2 (비례 점증 표현: ~할수록 더욱 ~하다)",
+    "shortExplanation": "부사 '越……越……'을 사용하여 앞의 동작이나 상태의 정도가 더해짐에 비례하여 뒤의 정도 역시 갈수록 심화됨을 나타냅니다.",
+    "longExplanation": "‘越……越……’ 구문은 두 사건 간의 비례적 인과 및 점증 관계를 나타내는 복합 부사 호응 구조입니다. ‘越’ 뒤에는 각각 동사나 형용사가 결합하여, ‘앞의 조건이나 행동이 심화되면 될수록 뒤의 결과나 상태 역시 더욱 그러해진다’는 뜻을 전달합니다(예: ‘越聊越开心’ - 이야기할수록 더욱 즐거워지다, ‘雨越下越大’ - 비가 내릴수록 점점 더 거세지다, ‘越快越好’ - 빠르면 빠를수록 좋다). 주어가 하나일 수도 있고 둘일 수도 있습니다. 한국어의 '~하면 할수록 더욱 ~하다'에 대응합니다.",
+    "formation": "(주어 + ) 越 + 동사1 / 형용사1 + 越 + 동사2 / 형용사2",
+    "examples": [
+      {
+        "translation": "우리는 이야기를 나눌수록 더욱 즐거워졌습니다."
+      }
+    ]
   },
   "zh_N1跟N2一样_163": {
-    "title": "N1 跟 N2 一样 (N1 is like N2)",
-    "shortExplanation": "N1 is like N2",
-    "longExplanation": "N1 is like N2. Pinyin: N1 gēn N2 yīyàng",
-    "formation": "N1 gēn N2 yīyàng"
+    "title": "명사1 + 跟 + 명사2 + 一样 (동등 비교: 명사1은 명사2와 같다, ~와 마찬가지이다)",
+    "shortExplanation": "개사 '跟'(또는 '和')과 '一样'을 결합하여, 두 대상의 성질·모습·상태가 서로 같거나 매우 유사함을 나타냅니다.",
+    "longExplanation": "‘명사1 + 跟 + 명사2 + 一样’은 두 대상 간의 유사성이나 동일성을 나타내는 기본 동등 비교 구문입니다. 개사 ‘跟’(~와/과, ‘和’나 ‘同’으로 대체 가능)이 비교의 기준 대상을 이끌고, ‘一样(같다)’이 술어로 작용하여 ‘명사1은 명사2와 같다/똑같다/마치 ~와 같다’는 뜻을 나타냅니다(예: ‘你的眼睛跟大熊猫一样’ - 너의 눈은 판다와 똑같다/판다 눈 같다, ‘这辆车跟那辆一样’ - 이 차는 저 차와 같다). 부정형은 ‘跟……不一样’(~와 같지 않다/다르다)입니다. 한국어의 '~와/과 같다', '~와 마찬가지이다'에 대응합니다.",
+    "formation": "명사1 + 跟 / 和 + 명사2 + 一样",
+    "examples": [
+      {
+        "translation": "너의 눈은 판다 눈처럼 똑같아."
+      }
+    ]
   },
   "zh_N1跟N2一样A_164": {
-    "title": "N1 跟 N2 一样 A (N1 is as A as N2)",
-    "shortExplanation": "N1 is as A as N2",
-    "longExplanation": "N1 is as A as N2. Pinyin: N1 gēn N2 yīyàng A",
-    "formation": "N1 gēn N2 yīyàng A"
+    "title": "명사1 + 跟 + 명사2 + 一样 + 형용사 (동등 비교: 명사1은 명사2만큼 ~하다, ~와 똑같이 ~하다)",
+    "shortExplanation": "'跟……一样' 뒤에 형용사를 결합하여, 특정한 성질이나 속성에 있어서 두 대상의 정도가 대등함을 나타냅니다.",
+    "longExplanation": "‘명사1 + 跟 + 명사2 + 一样 + 형용사’는 구체적인 비교 기준(키, 크기, 난이도, 아름다움 등)을 명시하여 두 대상의 정도가 동등함을 나타내는 비교 구문입니다. ‘跟’(~와/과, ‘和’로 대체 가능)이 이끄는 명사구에 ‘一样(마찬가지로)’이 붙어 뒤에 오는 형용사를 수식합니다(예: ‘儿子跟爸爸一样高’ - 아들은 아버지와 키가 똑같이 크다/아버지 만큼 키가 크다, ‘今天跟昨天一样冷’ - 오늘은 어제만큼 춥다). 부정문에서는 통상 ‘没有……那么/这么 + 형용사’가 더 자주 쓰입니다. 한국어의 '~만큼 ~하다', '~와 똑같이 ~하다'에 대응합니다.",
+    "formation": "명사1 + 跟 / 和 + 명사2 + 一样 + 형용사",
+    "examples": [
+      {
+        "translation": "아들은 아버지 만큼 키가 큽니다."
+      }
+    ]
   },
   "zh_没有N这么那么A_165": {
-    "title": "没有 N (这么/那么) A (not as A as N)",
-    "shortExplanation": "not as A as N",
-    "longExplanation": "not as A as N. Pinyin: méiyǒu N ( zhème/ nàme) A",
-    "formation": "méiyǒu N ( zhème/ nàme) A"
+    "title": "명사1 + 没有 + 명사2 + (这么 / 那么 + ) 형용사 (열등 비교: 명사1은 명사2만큼 ~하지 않다)",
+    "shortExplanation": "'没有'를 사용하여 비교 기준을 이끌고, 주어의 정도가 기준 대상의 수준에 미치지 못함을 나타내는 열등 비교 구문입니다.",
+    "longExplanation": "‘명사1 + 没有 + 명사2 + (这么/那么 + ) 형용사’는 중국어에서 가장 보편적으로 쓰이는 열등 비교(부정 비교) 형식입니다. 명사1의 성질이나 상태가 비교 기준인 명사2의 정도에 미치지 못함을 나타냅니다. 형용사 앞에 정도를 가리키는 지시대명사 ‘那么’(그렇게, 그만큼)나 ‘这么’(이렇게, 이만큼)를 자주 덧붙여 기준 대상의 높은 수준을 생생하게 부각합니다(예: ‘我的汉语没有他那么好’ - 내 중국어는 그 사람만큼 그렇게 유창하지 못하다, ‘今天没有昨天那么冷’ - 오늘은 어제만큼 춥지 않다). 한국어의 '~은/는 ~만큼 …하지 않다', '~만 못하다'에 대응합니다.",
+    "formation": "명사1 + 没有 + 명사2 + (这么 / 那么 + ) 형용사",
+    "examples": [
+      {
+        "translation": "제 중국어는 그 사람만큼 그렇게 유창하지 않아요."
+      }
+    ]
   },
   "zh_A一点儿一些_166": {
-    "title": "A 一点儿/一些 (A little more A)",
-    "shortExplanation": "A little more A",
-    "longExplanation": "A little more A. Pinyin: A yīdiǎnr/ yīxiē",
-    "formation": "A yīdiǎnr/ yīxiē"
+    "title": "형용사 + 一点儿 / 一些 (수량보어: 조금 더 ~하다, 약간 ~하다)",
+    "shortExplanation": "형용사 뒤에 '一点儿' 또는 '一些'를 붙여 차이가 근소함을 나타내며, '조금 더 ~하다', '약간 더 ~하다'의 의미를 나타내는 차이 수량보어입니다.",
+    "longExplanation": "‘형용사 + 一点儿 / 一些’는 형용사 뒤에 수량 표현을 결합하여 두 대상 간의 정도 차이가 미세함을 나타내는 수량보어(차이보어) 구조입니다. ‘比’자 비교문에서 ‘명사1 + 比 + 명사2 + 형용사 + 一点儿/一些’ 형태로 널리 쓰여 ‘명사1이 명사2보다 약간 더 …하다’는 뜻을 나타냅니다(예: ‘大山比大卫矮一点儿’ - 다산은 데이비드보다 키가 조금 더 작다, ‘这件比那件贵一点儿’ - 이것이 저것보다 약간 더 비싸다). 또한 희망이나 요구를 나타낼 때도 단독으로 쓰입니다(예: ‘便宜一点儿’ - 좀 더 싸게 해주세요). 형용사 앞에 놓여 불만을 나타내는 ‘有一点儿 + 형용사’와는 어순 및 어기가 전혀 다르므로 주의해야 합니다. 한국어의 '조금 더 ~하다', '약간 ~하다'에 대응합니다.",
+    "formation": "(명사1 + 比 + 명사2 + ) 형용사 + 一点儿 / 一些",
+    "examples": [
+      {
+        "translation": "다산은 데이비드보다 키가 조금 더 작습니다."
+      }
+    ]
   },
   "zh_A得多多了_167": {
-    "title": "A 得多/多了 (much more A)",
-    "shortExplanation": "much more A",
-    "longExplanation": "much more A. Pinyin: A dé duō/ duō le",
-    "formation": "A dé duō/ duō le"
+    "title": "형용사 + 得多 / 多了 (정도보어: 훨씬 더 ~하다, 대단히 ~하다)",
+    "shortExplanation": "형용사 뒤에 '得多' 또는 '多了'를 결합하여, 두 대상 간의 격차나 정도의 차이가 매우 큼을 나타내는 정도보어(차이보어)입니다.",
+    "longExplanation": "‘형용사 + 得多 / 多了’는 두 대상 간의 수준이나 정도의 차이가 현저하게 큼을 나타내는 정도보어 구조입니다. 주로 ‘比’자 비교문에서 ‘명사1 + 比 + 명사2 + 형용사 + 得多/多了’ 형태로 쓰여 ‘명사1이 명사2보다 훨씬 더 …하다’는 뜻을 나타냅니다(예: ‘今天的作业比昨天多得多’ - 오늘의 숙제는 어제보다 훨씬 더 많다, ‘他比我大得多’ - 그는 나보다 나이가 훨씬 많다, ‘病好多了’ - 병이 훨씬 나아졌다). 주의할 점은 ‘比’ 비교문에서는 형용사 앞에 ‘很’, ‘非常’, ‘真’과 같은 정도부사를 사용할 수 없으므로, 격차가 큼을 나타내고자 할 때는 반드시 형용사 뒤에 ‘得多’나 ‘多了’를 보어로 써야 한다는 것입니다. 한국어의 '훨씬 더 ~하다', '비교가 안 될 만큼 ~하다'에 대응합니다.",
+    "formation": "(명사1 + 比 + 명사2 + ) 형용사 + 得多 / 多了",
+    "examples": [
+      {
+        "translation": "오늘 숙제는 어제보다 훨씬 더 많습니다."
+      }
+    ]
   },
   "zh_1_168": {
-    "title": "# #+1 (# or #+1)",
-    "shortExplanation": "# or #+1",
-    "longExplanation": "# or #+1. Pinyin: # #+1",
-    "formation": "# #+1"
+    "title": "수사 + (수사 + 1) + 양사 + 명사 (인접한 두 수사를 이용한 개수 표현: 한둘, 서넛 등)",
+    "shortExplanation": "연속하는 두 수사를 나란히 놓고 양사와 명사를 연결하여 대략적인 수량(개수, 概數)을 나타냅니다.",
+    "longExplanation": "중국어에서 대략적인 수량이나 어림수를 나타낼 때, 크기가 인접한 연속된 두 수사를 나란히 배열하여 씁니다(예: ‘一两’ - 한둘/하나둘, ‘两三’ - 두셋, ‘三四’ - 서넛, ‘七八’ - 일고여덟 등). 특히 ‘1’과 ‘2’가 결합할 때 ‘2’는 ‘二’ 대신 ‘两’을 써서 반드시 ‘一两’으로 표현해야 합니다(*一二는 불가). 십 단위에서도 ‘二三十’(이삼십), ‘七八十’(칠팔십)과 같이 응용됩니다. 한국어의 '한두 개', '서너 시간', '두세 명'과 같은 어림수 표현에 대응합니다.",
+    "formation": "수사 + (수사 + 1) + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "저는 매일 한두 시간씩 중국어를 공부합니다."
+      }
+    ]
   },
   "zh_把了_169": {
-    "title": "把 + Ｏ + Ｖ + 了 (V’ed the O)",
-    "shortExplanation": "V’ed the O",
-    "longExplanation": "V’ed the O. Pinyin: bǎ + Ｏ + Ｖ + le",
-    "formation": "bǎ + Ｏ + Ｖ + le"
+    "title": "把 + 목적어 + 동사 + 了 (처치문: 목적어를 ~했다, ~해 버렸다)",
+    "shortExplanation": "개사 '把'를 사용하여 동작의 대상(목적어)을 동사 앞으로 이끌어내고, 뒤에 '了'를 붙여 해당 대상을 어떻게 처치·완료했는지를 나타냅니다.",
+    "longExplanation": "‘把’자문(처치문)은 개사 ‘把’를 통해 동작의 구체적인 대상(이미 특정된 목적어)을 동사 앞으로 끌어와, 그 대상을 어떻게 처리하고 어떤 변화나 결과가 생겼는지를 강조하는 문형입니다. ‘把’자문의 동사는 단독으로 쓰일 수 없으며 뒤에 반드시 기타 성분이 와야 하는데, 이 패턴에서는 완료나 변화를 나타내는 ‘了’가 결합하여 ‘목적어를 ~했다 / ~해 버렸다’라는 완료된 사태를 표현합니다(예: ‘我把钱包忘了’ - 지갑을 깜빡 잊어버렸다). 한국어의 '~을/를 ...했다 / ...해 버렸다'에 대응합니다.",
+    "formation": "주어 + 把 + 목적어(특정 대상) + 동사 + 了",
+    "examples": [
+      {
+        "translation": "저는 지갑을 깜빡 잊어버렸어요."
+      }
+    ]
   },
   "zh_不要别没把了_170": {
-    "title": "不要/别/没把 + Ｏ + Ｖ + 了 (don’t/don’t/haven’t V’ed the O)",
-    "shortExplanation": "don’t/don’t/haven’t V’ed the O",
-    "longExplanation": "don’t/don’t/haven’t V’ed the O. Pinyin: bùyào/ bié/ méi bǎ + Ｏ + Ｖ + le",
-    "formation": "bùyào/ bié/ méi bǎ + Ｏ + Ｖ + le"
+    "title": "不要 / 别 / 没 + 把 + 목적어 + 동사 + (了) (‘把’자문의 부정형: ~을/를 ...하지 마라, ~을/를 ...하지 않았다)",
+    "shortExplanation": "부정부사 '别', '不要'(금지: ~하지 마라)나 '没'(미완료: ~하지 않았다)을 개사 '把' 앞에 놓아, '把'자문의 동작을 금지하거나 어떤 처치가 행해지지 않았음을 나타냅니다.",
+    "longExplanation": "‘把’자문에서 부정의 의미를 나타낼 때, 부정부사(‘别’, ‘不要’, ‘没/没有’ 등)는 반드시 개사 ‘把’ 바로 앞에 위치해야 하며, 동사 앞에 둘 수 없습니다. 금지나 경고를 나타내는 ‘别把 / 不要把 + 목적어 + 동사 + 了’ 구조에서 문말의 ‘了’는 바람직하지 않은 결과나 사태가 일어나는 것을 미연에 방지하도록 경각심을 일깨우는 어기조사로 쓰입니다(예: ‘别把手机忘了’ - 휴대폰 잊어버리지 마라). 한편 ‘没把……’는 과거에 어떤 처치 행위가 이루어지지 않았거나 결과에 도달하지 못했음을 진술합니다. 한국어의 '~을/를 ...하지 마라', '~을/를 ...하지 않았다'에 해당합니다.",
+    "formation": "주어 + 不要 / 别 / 没 + 把 + 목적어 + 동사 + (了 / 보어)",
+    "examples": [
+      {
+        "translation": "휴대폰 잊어버리지 마."
+      }
+    ]
   },
   "zh_左右_171": {
-    "title": "# 左右 (approximately #)",
-    "shortExplanation": "approximately #",
-    "longExplanation": "approximately #. Pinyin: # zuǒyòu",
-    "formation": "# zuǒyòu"
+    "title": "수사(+ 양사 + 명사) / 시점 + 左右 (어림수·대략의 시점 표현: ~쯤, ~가량, ~전후)",
+    "shortExplanation": "수량사나 시각, 나이 등의 뒤에 '左右'를 붙여 기준 수치의 앞뒤를 아우르는 어림수(~쯤, ~가량, ~전후)를 나타냅니다.",
+    "longExplanation": "‘左右(zuǒyòu)’는 개수(대략의 수량)나 어림잡은 시점을 나타내는 어휘로, 수량사나 시각, 연령, 금액 등의 바로 뒤에 놓입니다. 제시된 수치를 기준으로 그보다 약간 많거나 적음을 나타내며, 우리말의 ‘~쯤’, ‘~가량’, ‘~전후’에 해당합니다(예: ‘十点左右’ - 10시쯤, ‘三十岁左右’ - 서른 살가량, ‘一百块左右’ - 백 위안 안팎). 한국어와 마찬가지로 반드시 수량 표현의 뒤에 위치한다는 특징이 있습니다.",
+    "formation": "수사(+ 양사 + 명사) / 시점 + 左右",
+    "examples": [
+      {
+        "translation": "주말에 저는 보통 10시쯤 일어납니다."
+      }
+    ]
   },
   "zh_就VA_172": {
-    "title": "就 V/A (just (better than expected))",
-    "shortExplanation": "just (better than expected)",
-    "longExplanation": "just (better than expected). Pinyin: jiù V/A",
-    "formation": "jiù V/A"
+    "title": "就 + 동사 / 형용사 (부사 '就': 예상보다 빠르고 쉬움을 나타냄: 벌써 ~, ~하자마자 곧 ~)",
+    "shortExplanation": "부사 '就'를 동사나 형용사 앞에 사용하여, 동작이나 사건이 화자의 기대보다 일찍, 빠르게, 혹은 수월하게 이루어짐을 나타냅니다.",
+    "longExplanation": "중국어 부사 ‘就(jiù)’는 동사나 형용사 앞에 놓여, 어떤 동작이나 사태의 발생이 말하는 이의 예상이나 기준보다 ‘이르고, 빠르고, 수월하며, 시간이 적게 걸린다’는 주관적 평가를 나타냅니다. 시간사나 적은 수량 뒤에 붙어 ‘벌써 ~했다’, ‘~만에 곧바로 ~하다’라는 의미를 강조합니다(예: ‘坐飞机一个小时就到了’ - 비행기를 타면 1시간 만에 바로 도착한다, ‘他七点就来了’ - 그는 7시에 벌써 왔다). 이는 일이 늦고 오래 걸리며 어렵게 성사됨을 나타내는 부사 ‘才’와 완벽한 대조를 이룹니다.",
+    "formation": "시간 / 조건 + 就 + 동사 / 형용사 + (목적어 / 了)",
+    "examples": [
+      {
+        "translation": "비행기를 타면 한 시간 만에 도착해요."
+      }
+    ]
   },
   "zh_才VA_173": {
-    "title": "才 V/A (just (worse than expected))",
-    "shortExplanation": "just (worse than expected)",
-    "longExplanation": "just (worse than expected). Pinyin: cái V/A",
-    "formation": "cái V/A"
+    "title": "才 + 동사 / 형용사 (부사 '才': 예상보다 늦고 더딤을 나타냄: 겨우 ~, 이제야 ~)",
+    "shortExplanation": "부사 '才'를 동사나 형용사 앞에 사용하여, 동작이나 사태가 화자의 기대보다 늦게, 더디게, 혹은 힘들게 일어남을 나타냅니다.",
+    "longExplanation": "중국어 부사 ‘才(cái)’는 동사나 형용사 앞에 놓여, 동작이나 사태의 발생이 말하는 이의 기준이나 기대보다 ‘늦고, 오래 걸리며, 힘겹게 성사되었다’는 주관적 인식을 드러냅니다(예: ‘你怎么才来？’ - 왜 이제야 온 거야?, ‘做了五个小时才做完’ - 5시간이나 걸려서야 겨우 다 끝냈다). 말하는 이의 답답함, 불만, 혹은 안도감 등이 담겨 있습니다. 주의할 점으로, ‘就’와 달리 ‘才’가 쓰인 술어 뒤에는 원칙적으로 완료를 나타내는 조사 ‘了’를 붙이지 않습니다. 한국어의 '겨우 ~하다', '이제서야 비로소 ~하다'에 대응합니다.",
+    "formation": "주어 / 시간(늦은 시점) + 才 + 동사 / 형용사 + (목적어)",
+    "examples": [
+      {
+        "translation": "어째서 이제야 온 거야? (왜 이렇게 늦었어?)"
+      }
+    ]
   },
   "zh_把OV在到PLACE_174": {
-    "title": "把 + O + V + 在/到 +  PLACE (V’d the O to PLACE)",
-    "shortExplanation": "V’d the O to PLACE",
-    "longExplanation": "V’d the O to PLACE. Pinyin: bǎ + O + V + zài/ dào + PLACE",
-    "formation": "bǎ + O + V + zài/ dào + PLACE"
+    "title": "把 + 목적어 + 동사 + 在 / 到 + 장소 (‘把’자문 + 장소 결과보어: 목적어를 장소에 ~해 두다/이동시키다)",
+    "shortExplanation": "'把'자문과 '在/到 + 장소' 보어를 결합하여, 동작을 통해 목적어를 특정 장소에 머무르게 하거나 도달·이동시킨 결과를 나타냅니다.",
+    "longExplanation": "‘把 + 목적어 + 동사 + 在/到 + 장소’는 ‘把’자문(처치문)에서 가장 널리 쓰이는 기본 패턴 중 하나입니다. 동작이 목적어에 가해진 결과 그 대상이 어디에 안착하거나 도달했는지(장소적 귀착점)를 ‘在/到 + 장소’로 나타냅니다. ‘在 + 장소’는 동작 후 대상이 그 장소에 머물거나 정착함을 강조하고(예: ‘把照片放在包里’ - 사진을 가방 안에 넣다/두다), ‘到 + 장소’는 대상이 목적지까지 도달·이동했음을 강조합니다(예: ‘把行李送到房间’ - 짐을 방으로 배달하다). 문말에는 흔히 완료를 나타내는 ‘了’가 결합합니다.",
+    "formation": "주어 + 把 + 목적어 + 동사 + 在 / 到 + 장소 + (了)",
+    "examples": [
+      {
+        "translation": "제가 사진을 네 가방 안에 넣어 두었어."
+      }
+    ]
   },
   "zh_VmotionV来去_175": {
-    "title": "V + motion V + 来/去 ((compound complements of direction))",
-    "shortExplanation": "(compound complements of direction)",
-    "longExplanation": "(compound complements of direction). Pinyin: V + motion V + lái/ qù",
-    "formation": "V + motion V + lái/ qù"
+    "title": "동사 + 이동동사 + 来 / 去 (복합방향보어: ~해 오다 / ~해 가다)",
+    "shortExplanation": "본동사 뒤에 방향동사(上, 下, 进, 出, 回, 过, 起)와 '来/去'가 결합한 복합방향보어를 두어, 동작이 향하는 구체적인 이동 방향(화자 쪽으로 오는지, 멀어지는지)을 나타냅니다.",
+    "longExplanation": "복합방향보어는 7개의 방향동사(上, 下, 进, 出, 回, 过, 起) 뒤에 ‘来’(화자에게 가까워짐) 또는 ‘去’(화자에게서 멀어짐)를 붙여 만든 13가지 조합(上来/上去, 下来/下去, 进来/进去, 出来/出去, 回来/回去, 过来/过去, 起来)을 본동사 뒤에 보어로 결합하는 문법입니다. 동작을 행함에 따른 물리적인 이동의 궤적과 방향을 나타냅니다(예: ‘送过去’ - 건네어 보내다/갖다 주다, ‘跑过来’ - 뛰어 이쪽으로 오다, ‘拿出来’ - 꺼내어 오다). 한국어의 '~해 오다', '~해 가다', '~해 들어가다/나오다' 등에 대응합니다.",
+    "formation": "주어 + 동사 + (上 / 下 / 进 / 出 / 回 / 过 / 起) + 来 / 去 + (목적어)",
+    "examples": [
+      {
+        "translation": "내일 우리 다 같이 선물을 건네주러 갑시다."
+      }
+    ]
   },
   "zh_一边V1一边V2_176": {
-    "title": "一边 + V1 + 一边 + V2 (V1 while V2)",
-    "shortExplanation": "V1 while V2",
-    "longExplanation": "V1 while V2. Pinyin: yībiān + V1 + yībiān + V2",
-    "formation": "yībiān + V1 + yībiān + V2"
+    "title": "一边 + 동사 1 + 一边 + 동사 2 (동시 동작: ~하면서 ~하다)",
+    "shortExplanation": "'一边……一边……'을 사용하여 동일한 주어가 두 가지 동작을 동시에 병행하여 진행함을 나타냅니다.",
+    "longExplanation": "‘一边 + 동사 1 + 一边 + 동사 2’는 같은 주체가 두 가지 동작을 동시에 진행하고 있음을 나타내는 대표적인 병렬 구문입니다. 구어에서는 ‘一’를 생략하고 ‘边……边……’으로 자주 쓰입니다(예: ‘他一边唱歌一边跳舞’ - 그는 노래를 부르면서 춤을 춘다, ‘一边看电视一边吃饭’ - 텔레비전을 보면서 밥을 먹다). 두 동작이 시간상으로 겹쳐서 일어남을 뜻하며, 한국어의 '~하면서 ~하다'에 대응합니다.",
+    "formation": "주어 + 一边 + 동사 1 + 一边 + 동사 2",
+    "examples": [
+      {
+        "translation": "그는 노래를 부르면서 춤을 춥니다."
+      }
+    ]
   },
   "zh_把OVresult_177": {
-    "title": "把 + O + V + result (V the O until RESULT)",
-    "shortExplanation": "V the O until RESULT",
-    "longExplanation": "V the O until RESULT. Pinyin: bǎ + O + V + result",
-    "formation": "bǎ + O + V + result"
+    "title": "把 + 목적어 + 동사 + 결과보어 (‘把’자문 + 결과보어: 목적어를 ~하여 …한 상태로 만들다)",
+    "shortExplanation": "'把'자문의 동사 뒤에 결과보어(干净, 完, 好, 坏, 破 등)를 결합하여, 동작의 영향으로 목적어가 어떤 최종적인 결과나 상태에 도달했는지를 나타냅니다.",
+    "longExplanation": "‘把’자문(처치문)에서 동사 뒤에 결과보어를 수반하는 구조는 처치의 목적과 결과를 분명히 밝혀주는 가장 전형적인 형태입니다. ‘把’자문에서는 동사가 단독으로 쓰이지 못하고 처치의 결과적 상태를 반드시 보충해야 하므로, 형용사나 동사로 된 결과보어(‘干净’ - 깨끗하게, ‘完’ - 다, ‘好’ - 잘/말끔히, ‘坏’ - 망가지게 등)가 동사 바로 뒤에 붙습니다(예: ‘我把衣服洗干净了’ - 옷을 깨끗이 빨았다, ‘他把作业做完了’ - 그는 숙제를 다 마쳤다). 한국어의 '~을/를 ...하여 ...하게 만들다'에 대응합니다.",
+    "formation": "주어 + 把 + 목적어 + 동사 + 결과보어 + (了)",
+    "examples": [
+      {
+        "translation": "저는 옷을 깨끗하게 빨았어요."
+      }
+    ]
   },
   "zh_把OVdirection_178": {
-    "title": "把 + O + V + direction (V the O to DIRECTION)",
-    "shortExplanation": "V the O to DIRECTION",
-    "longExplanation": "V the O to DIRECTION. Pinyin: bǎ + O + V + direction",
-    "formation": "bǎ + O + V + direction"
+    "title": "把 + 목적어 + 동사 + 방향보어 (‘把’자문 + 방향보어: 목적어를 ~한 방향으로 이동시키다)",
+    "shortExplanation": "'把'자문의 동사 뒤에 방향보어(过来, 过去, 进来, 出去, 回去 등)를 연결하여, 동작을 가함으로써 목적어가 어느 방향으로 공간 이동했는지를 나타냅니다.",
+    "longExplanation": "‘把 + 목적어 + 동사 + 방향보어’ 구문은 처치 동작의 결과로 목적어가 공간 내에서 어느 방향으로 이동했는지를 구체적으로 밝히는 표현입니다. 동사 뒤에 단순 또는 복합 방향보어가 결합하여, 동작의 영향으로 목적어가 화자 쪽으로 다가오거나(‘来’) 멀어지는(‘去’) 등의 이동 방향을 나타냅니다(예: ‘他把水果拿过来了’ - 그는 과일을 이쪽으로 가져왔다, ‘把行李搬上去’ - 짐을 위로 옮기다). 한국어의 '~을/를 ...해 오다/가다/내보내다' 등에 대응합니다.",
+    "formation": "주어 + 把 + 목적어 + 동사 + 방향보어 + (了)",
+    "examples": [
+      {
+        "translation": "그는 과일을 이쪽으로 가져왔어요."
+      }
+    ]
   },
   "zh_先再又然后_179": {
-    "title": "先……再/又……然后…… (First, then, then, …)",
-    "shortExplanation": "First, then, then, …",
-    "longExplanation": "First, then, then, …. Pinyin: xiān…… zài/ yòu…… ránhòu……",
-    "formation": "xiān…… zài/ yòu…… ránhòu……"
+    "title": "先……再 / 又……然后…… (동작 순서 표현: 먼저 ~하고, 이어서/다시 ~한 뒤, 그다음에 ~하다)",
+    "shortExplanation": "'先……再/又……然后……'을 사용하여 시간의 흐름에 따른 일련의 동작이나 사건의 순서를 순차적으로 나열합니다.",
+    "longExplanation": "이 구문은 여러 동작이 시간적 선후 관계에 따라 연속적으로 일어나는 과정을 논리적으로 설명할 때 쓰입니다. ‘先’은 맨 처음 이루어지는 동작(우선/먼저)을 이끌고, ‘再’나 ‘又’는 그에 이어지는 다음 동작을 연결합니다(아직 일어나지 않은 계획이나 미래의 순서에는 ‘再’를, 과거에 이미 일어난 연속 행위에는 ‘又’를 씁니다). 그리고 ‘然后’는 그 뒤에 이어지는 최종적 단계나 결과(그 다음에/그런 후에)를 나타냅니다. 마지막 절에 ‘才’를 더하면 긴 과정을 거쳐 ‘비로소 ~하게 되었다’는 뉘앙스가 강조됩니다.",
+    "formation": "주어 + 先 + 동사 1 / 절 1 + 再 / 又 + 동사 2 / 절 2 + 然后 + (才 + ) 동사 3 / 절 3",
+    "examples": [
+      {
+        "translation": "저는 먼저 버스를 탔고, 또 지하철을 탄 뒤에야 샤오강의 집에 도착했습니다."
+      }
+    ]
   },
   "zh_除了N以外_180": {
-    "title": "除了 N 以外 (except N)",
-    "shortExplanation": "except N",
-    "longExplanation": "except N. Pinyin: chúle N yǐwài",
-    "formation": "chúle N yǐwài"
+    "title": "除了 + 명사 + 以外 (제외 표현: ~을/를 제외하고는, ~ 말고는)",
+    "shortExplanation": "'除了……以外'를 사용하여 특정 명사를 전체에서 제외하고, '그것을 제외한 나머지는 모두 ~하다'라는 배제·제외의 의미를 나타냅니다.",
+    "longExplanation": "‘除了 + 명사 + 以外’(‘以外’는 흔히 생략 가능)는 어떤 인물이나 대상을 전체 범위에서 빼내는 ‘제외’를 나타내는 대표적인 개사 구문입니다. 뒷부분에는 보통 ‘都’(모두), ‘全’(전부), ‘别的’(다른 것) 등의 어휘가 호응하여, 해당 명사 하나를 제외하고는 나머지가 모두 일정한 상태나 동작에 해당함을 진술합니다(예: ‘除了这个汉字以外，别的我都认识’ - 이 한자를 제외하고는 다른 것은 내가 다 안다, ‘除了小王以外，大家都去了’ - 샤오왕 말고는 모두 갔다). 한국어의 '~을/를 제외하고', '~ 말고는'에 대응합니다.",
+    "formation": "除了 + 명사 + 以外, (주어 + ) 都 / 全 / 别的……",
+    "examples": [
+      {
+        "translation": "이 한자 외에는 다른 것은 제가 다 압니다."
+      }
+    ]
   },
   "zh_除了以外还_181": {
-    "title": "除了……(以外)，还…… (not only…, but also…)",
-    "shortExplanation": "not only…, but also…",
-    "longExplanation": "not only…, but also…. Pinyin: chúle……( yǐwài)， hái……",
-    "formation": "chúle……( yǐwài)， hái……"
+    "title": "除了……(以外)，还 / 也…… (추가·누가 표현: ~ 외에도, 게다가 ~도)",
+    "shortExplanation": "'除了……(以外)'에 부사 '还'나 '也'를 호응시켜, '기존의 것 외에 추가로 다른 것도 포함된다'라는 첨가·추가의 의미를 나타냅니다.",
+    "longExplanation": "‘除了……(以外)，还/也……’는 ‘~을 제외하고 모두’를 뜻하는 배제 구문(‘除了……都’)과 달리, ‘기존의 것 외에도 덧붙여 다른 것도 그러하다’라는 첨가·누가(累加)를 나타냅니다. 앞 절에서 제시한 내용에 더하여 뒷 절에서 부사 ‘还’(더, 또)나 ‘也’(도)를 사용하여 또 다른 사실이나 능력을 추가합니다(예: ‘上网除了看新闻以外，还可以听音乐’ - 인터넷은 뉴스를 보는 것 외에도 음악을 들을 수도 있다, ‘他除了会说汉语以外，还会说日语’ - 그는 중국어를 할 줄 아는 것 외에 일본어도 할 줄 안다). 한국어의 '~ 외에도 (더) ~하다', '~뿐만 아니라 ~도'에 대응합니다.",
+    "formation": "除了 + 명사 / 동사 / 절 + (以外), (주어 + ) 还 / 也 + 동사 / 술어",
+    "examples": [
+      {
+        "translation": "인터넷은 뉴스를 보는 것 외에도 음악을 들을 수도 있습니다."
+      }
+    ]
   },
   "zh_什么_182": {
-    "title": "什么 (any)",
-    "shortExplanation": "any",
-    "longExplanation": "any. Pinyin: shénme",
-    "formation": "shénme"
+    "title": "什么 (의문대명사의 허지·부정 용법: 무언가, 무슨 ~라도, 어떤)",
+    "shortExplanation": "의문대명사 '什么'를 구체적인 질문이 아닌, 막연한 불특정 대상('무언가', '어떤 것')을 가리키는 허지(虛指) 용법으로 사용합니다.",
+    "longExplanation": "중국어 의문대명사 ‘什么’는 ‘무엇’을 묻는 직접적인 의문사 외에도, 불특정하거나 막연한 대상을 가리키는 허지(虛指) 또는 부정(不定) 용법으로 자주 쓰입니다. 의문문이나 완곡한 평서문에서 구체적인 대상을 굳이 밝히지 않고 ‘무언가’, ‘무슨 ~라도’의 의미로 부드럽게 쓰입니다(예: ‘周末你有什么打算吗？’ - 주말에 무슨 계획이라도 있으세요?, ‘我想喝点儿什么’ - 나 뭐 좀 마시고 싶어, ‘他好像在找什么’ - 그는 뭔가를 찾고 있는 것 같다). 한국어의 '무언가', '어떤', '무슨'에 대응합니다.",
+    "formation": "주어 + 동사 + (点儿 + ) 什么 + (명사) + (吗 / 呢)",
+    "examples": [
+      {
+        "translation": "주말에 무슨 계획이라도 있으세요?"
+      }
+    ]
   },
   "zh_A极了_183": {
-    "title": "A 极了 (extremely A)",
-    "shortExplanation": "extremely A",
-    "longExplanation": "extremely A. Pinyin: A jíle",
-    "formation": "A jíle"
+    "title": "형용사 + 极了 (정도보어: 극히 ~하다, 너무나 ~하다)",
+    "shortExplanation": "형용사(또는 일부 심리 동사) 뒤에 '极了'를 붙여 성질, 상태, 감정의 정도가 극에 달했음을 나타내는 정도보어 표현입니다.",
+    "longExplanation": "‘형용사 + 极了’(jíle)는 구어에서 자주 쓰이는 정도보어 구문으로, ‘极’이 극치에 도달했음을 의미하여 어떤 특성이나 심리적 상태가 최고조에 이르렀음을 강조합니다. 형용사뿐만 아니라 ‘喜欢’(좋아하다), ‘讨厌’(싫어하다), ‘高兴’(기쁘다)과 같은 심리 동사 뒤에도 결합할 수 있습니다. 이 표현을 쓸 때는 형용사 앞에 ‘很’, ‘非常’과 같은 정도부사를 중복해서 쓰지 않아야 합니다. 우리말의 ‘극도로 ~하다’, ‘너무나 ~하다’, ‘~하기 이를 데 없다’에 해당합니다.",
+    "formation": "주어 + 형용사 / 심리 동사 + 极了",
+    "examples": [
+      {
+        "translation": "오늘 날씨가 너무나도 춥습니다."
+      }
+    ]
   },
   "zh_如果的话就_184": {
-    "title": "如果……(的话), 就…… (if …, then…)",
-    "shortExplanation": "if …, then…",
-    "longExplanation": "if …, then…. Pinyin: rúguǒ……( dehuà), jiù……",
-    "formation": "rúguǒ……( dehuà), jiù……"
+    "title": "如果……(的话)，就…… (가정 복문: 만약 ~라면, 곧 ~하다)",
+    "shortExplanation": "앞 절에서 가정 조건(만약 ~라면)을 제시하고, 뒤 절에서 그에 따른 결과나 대처 방안(~하다)을 이끄는 가정 복문 구문입니다.",
+    "longExplanation": "‘如果……(的话)，就……’(rúguǒ…… dehuà, jiù……)는 중국어에서 가정과 결과를 연결하는 대표적인 복문 구조입니다. 앞 절에 접속사 ‘如果’(만약 ~라면)를 쓰고 절 끝에 ‘的话’를 덧붙여 가설적인 상황을 제시합니다(‘的话’는 생략 가능). 뒤 절에서는 부사 ‘就’(그러면, 곧)를 술어 앞에 두어 그 조건에서 파생되는 결론, 행동, 제안 등을 나타냅니다. 한국어의 ‘만약 ~라면, (그렇다면) ~하다/하자’와 같습니다.",
+    "formation": "如果 + 가설절 + (的话)，(주어 + ) 就 + 결과절",
+    "examples": [
+      {
+        "translation": "만약 너무 피곤하다면 좀 쉬세요."
+      }
+    ]
   },
   "zh_A得CLAUSE_185": {
-    "title": "A + 得 + CLAUSE (so A that + CLAUSE)",
-    "shortExplanation": "so A that + CLAUSE",
-    "longExplanation": "so A that + CLAUSE. Pinyin: A + dé + CLAUSE",
-    "formation": "A + dé + CLAUSE"
+    "title": "형용사 + 得 + 절 (상태/정도보어: …할 정도로 ~하다, 너무 ~해서 …하다)",
+    "shortExplanation": "형용사 뒤에 구조조사 '得'를 쓰고 뒤에 절을 이어, 그 성질이나 상태의 심한 정도나 그로 인한 결과를 구체적으로 묘사하는 정도보어/상태보어 구문입니다.",
+    "longExplanation": "‘형용사 + 得 + 절’ 구조는 형용사가 나타내는 상태나 성질의 정도가 매우 깊어 그 결과로 어떤 사태나 행동이 유발되었음을 설명하는 보어 문형입니다. 구조조사 ‘得’(de)가 형용사와 뒤의 보어절을 긴밀하게 연결해주며, 뒤에 오는 절 전체가 앞의 형용사의 심각한 정도나 구체적인 파급 결과를 생생하게 서술합니다. 한국어의 ‘너무 ~해서 …하다’, ‘…할 정도로 ~하다’에 해당합니다.",
+    "formation": "주어 + 형용사 + 得 + 보어절(결과/정도)",
+    "examples": [
+      {
+        "translation": "아들은 퇴근하자마자 잠이 들 정도로 지쳤습니다."
+      }
+    ]
   },
   "zh_AA的_186": {
-    "title": "A + A + 的 (A (with characteristics))",
-    "shortExplanation": "A (with characteristics)",
-    "longExplanation": "A (with characteristics). Pinyin: A + A + de",
-    "formation": "A + A + de"
+    "title": "단음절 형용사 중첩 + 的 (AA的: 생생한 묘사 표현)",
+    "shortExplanation": "1음절 형용사를 'AA + 的' 형태로 중첩하여 사물이나 사람의 생김새, 색상 등을 생생하고 친근하며 귀여운 느낌으로 묘사합니다.",
+    "longExplanation": "중국어에서 1음절 형용사를 겹쳐 쓰는 ‘AA + 的’(예: 小小的, 黑黑的, 圆圆的) 구조는 대상의 특성이나 상태를 감각적이고 생동감 있게 묘사할 때 사용됩니다. 객관적인 서술보다는 화자의 애정이 담긴 친근함, 부드러움, 귀여움 등의 어조를 자아냅니다. 이미 형태 자체에 묘사적인 강한 어감이 내포되어 있으므로 앞에는 ‘很’이나 ‘非常’ 같은 정도부사를 붙일 수 없습니다. 우리말의 ‘작고 앙증맞은’, ‘새까만’, ‘동글동글한’ 등에 해당합니다.",
+    "formation": "명사 + 단음절 형용사 중첩(AA형) + 的",
+    "examples": [
+      {
+        "translation": "그녀는 코가 오뚝하니 작고, 머리카락은 새까맣습니다."
+      }
+    ]
   },
   "zh_VV_187": {
-    "title": "V + V (V for a bit)",
-    "shortExplanation": "V for a bit",
-    "longExplanation": "V for a bit. Pinyin: V + V",
-    "formation": "V + V"
+    "title": "동사 중첩 (동사 + 동사: 좀 ~해 보다, 가볍게 ~하다)",
+    "shortExplanation": "동사를 거듭 써서 동작이 짧은 시간 동안 가볍게 행해짐을 나타내거나, 시험 삼아 시도해 봄(시행), 혹은 어투를 부드럽게 완화할 때 쓰입니다.",
+    "longExplanation": "동사의 중첩 형태인 ‘동사 + 동사’(1음절 동사의 AA형: 看看, 想想; 2음절 동사의 ABAB형: 检查检查, 休息休息)는 다음과 같은 의미를 나타냅니다: (1) 동작의 지속 시간이 짧음, (2) 시험 삼아 한번 해봄, (3) 제안, 권유, 부탁을 할 때 완곡하고 부드러운 어감을 형성함. 중첩 시 뒤에 오는 음절은 주로 경성으로 가볍게 발음합니다. 한국어의 ‘좀 ~해 보다’, ‘가볍게 ~하다’와 유사합니다.",
+    "formation": "단음절 동사 중첩(AA형) 또는 2음절 동사 중첩(ABAB형)",
+    "examples": [
+      {
+        "translation": "제가 병원에 데려가서 검사를 좀 받게 해 드릴게요."
+      }
+    ]
   },
   "zh_Q都_188": {
-    "title": "Q + 都 (Q-ever)",
-    "shortExplanation": "Q-ever",
-    "longExplanation": "Q-ever. Pinyin: Q + dōu",
-    "formation": "Q + dōu"
+    "title": "의문사 + 都 (임의지칭: 무엇이든, 누구든 다)",
+    "shortExplanation": "의문대명사(什么, 谁, 哪儿 등) 뒤에 부사 '都'(또는 '也')를 결합하여 예외 없이 전체를 아우르는 임의지칭(任指)을 나타냅니다.",
+    "longExplanation": "‘의문사 + 都/也’ 구조는 중국어에서 의문대명사를 의문 목적이 아닌 전면 포괄(임의지칭)의 용법으로 사용하는 대표적인 문형입니다. ‘什么’(무엇), ‘谁’(누구), ‘哪儿’(어디), ‘什么时候’(언제) 등의 의문사가 부사 ‘都’와 호응하면 긍정문에서 ‘모두 다, 어느 것이나 다’라는 뜻을 지니며, 부정문에서 ‘也/都’와 함께 쓰이면 전면 부정을 나타냅니다(예: ‘谁都知道’ - 누구라도 다 안다, ‘什么都不买’ - 아무것도 안 산다). 한국어의 ‘무엇이든 다’, ‘누구든 다’에 해당합니다.",
+    "formation": "주어 + 의문사 + (명사) + 都 / 也 + 술어(동사 / 형용사)",
+    "examples": [
+      {
+        "translation": "샤오강은 무엇이든 다 잘 먹습니다."
+      }
+    ]
   },
   "zh_只要就_189": {
-    "title": "只要……就…… (as long as)",
-    "shortExplanation": "as long as",
-    "longExplanation": "as long as. Pinyin: zhǐyào…… jiù……",
-    "formation": "zhǐyào…… jiù……"
+    "title": "只要……，就…… (충분조건 복문: ~하기만 하면 곧 …하다)",
+    "shortExplanation": "앞 절에서 충분조건(~하기만 하면)을 제시하고, 뒤 절에서 그 조건만 충족되면 그 결과가 반드시 따름(곧 …하다)을 나타내는 조건 복문 구문입니다.",
+    "longExplanation": "‘只要……，就……’(zhǐyào……, jiù……)는 충분조건을 나타내는 대표적인 접속 표현입니다. 앞 절에 ‘只要’(오직 ~하기만 하면)를 써서 필요한 최소한의 조건이나 충분조건을 제시하고, 뒤 절에서 부사 ‘就’(곧, 바로)로 호응하여 그 조건이 성립될 때 뒤따르는 필연적인 결과나 다짐을 나타냅니다. 유일한 필수 조건을 나타내는 ‘只有……才……’(~해야만 비로소 …하다)와는 뉘앙스 차이가 있습니다. 한국어의 ‘~하기만 하면 (곧) …하다’에 해당합니다.",
+    "formation": "只要 + 조건절，(주어 + ) 就 + 결과절",
+    "examples": [
+      {
+        "translation": "시간이 있기만 하면 반드시 당신과 함께 여행을 갈 것입니다."
+      }
+    ]
   },
   "zh_关于_190": {
-    "title": "关于 (about)",
-    "shortExplanation": "about",
-    "longExplanation": "about. Pinyin: guānyú",
-    "formation": "guānyú"
+    "title": "关于 + 명사 (개사: ~에 관하여, ~에 대하여)",
+    "shortExplanation": "개사 '关于'(guānyú)를 명사나 명사구 앞에 써서 화제의 중심이 되는 주제나 관련 범위를 제시합니다.",
+    "longExplanation": "개사 ‘关于’는 문장 전체에서 논의하고자 하는 대상이나 사건, 범위를 이끌어내는 데 쓰입니다. ‘关于 + 명사’ 구조는 주로 다음과 같이 활용됩니다: (1) 문장 맨 앞에 놓여 전체 문장의 주제를 환기하는 상황어 역할(쉼표를 동반하는 경우가 많음), (2) 뒤에 구조조사 ‘的’를 동반하여 다른 명사를 수식하는 관형어 역할(예: 关于这个项目的报告 - 이 프로젝트에 관한 보고서), (3) 책이나 기사, 논문의 제목으로 쓰임. 어떤 대상에 대한 태도나 직접적인 행위의 지향점을 나타내는 ‘对于’와는 구별하여 사용해야 합니다. 한국어의 ‘~에 관하여’, ‘~에 대해(서)’에 해당합니다.",
+    "formation": "关于 + 명사 / 명사구，주어 + 술어 (또는: 关于 + 명사 + 的 + 중심명사)",
+    "examples": [
+      {
+        "translation": "이 일에 관해서는, 저희는 아직 결정하지 못했습니다."
+      }
+    ]
   },
   "zh_V出来_191": {
-    "title": "V + 出来 (V and produce an outcome)",
-    "shortExplanation": "V and produce an outcome",
-    "longExplanation": "V and produce an outcome. Pinyin: V + chūlái",
-    "formation": "V + chūlái"
+    "title": "동사 + 出来 (복합방향보어 파생용법: ~해 내다, 결과물의 생성)",
+    "shortExplanation": "동사 뒤에 복합방향보어 '出来'를 붙여, 동작을 통해 새로운 결과물이 생겨나거나 구체적인 형체로 만들어짐(무에서 유로의 창출)을 나타냅니다.",
+    "longExplanation": "‘동사 + 出来’(chūlái)는 방향보어 ‘出来’의 파생적 용법 중 하나로, 동작을 행함으로써 어떤 결과물이 밖으로 드러나거나 새롭게 창조·완성됨(무에서 유로의 변화)을 나타냅니다. 예를 들어 ‘写出来’(써내다), ‘想出来’(생각해 내다), ‘做出来’(만들어 내다), ‘画出来’(그려 내다)처럼 내면이나 머릿속에 머물러 있던 것이 구체적인 결과물로 표현되어 나올 때 씁니다. 가능보어 형태인 ‘V + 得 + 出来’나 ‘V + 不 + 出来’로도 활발히 쓰입니다. 한국어의 ‘~해 내다’, ‘써내다/만들어 내다’에 해당합니다.",
+    "formation": "주어 + 동사 + 出来 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "이 글자를 써낼 수 있나요?"
+      }
+    ]
   },
   "zh_V出来_192": {
-    "title": "V + 出来 (V and recognize)",
-    "shortExplanation": "V and recognize",
-    "longExplanation": "V and recognize. Pinyin: V + chūlái",
-    "formation": "V + chūlái"
+    "title": "동사 + 出来 (복합방향보어 파생용법: 감각을 통해 알아채다, 식별하다)",
+    "shortExplanation": "지각 동사(看, 听, 闻, 尝 등) 뒤에 '出来'를 결합하여 감각이나 지각 활동을 통해 대상을 구별해 내거나 알아차림을 나타냅니다.",
+    "longExplanation": "복합방향보어 ‘出来’의 파생 용법으로, 시각·청각·후각·미각 등의 감각 기관이나 인식 작용을 통해 숨겨진 사실, 대상의 정체, 차이점을 식별하고 알아차릴 때 사용됩니다. 대표적인 예로 ‘听出来’(듣고 알아채다/알아듣다), ‘看出来’(보고 알아차리다), ‘认出来’(알아보다), ‘闻出来’(냄새 맡고 알아맞히다) 등이 있습니다. 가능보어 형태인 ‘看得出来’(보고 알 수 있다), ‘听不出来’(들어도 분간할 수 없다)로도 매우 자주 쓰입니다. 한국어의 ‘듣고/보고 알아차리다’, ‘알아채다’, ‘구별해 내다’에 해당합니다.",
+    "formation": "주어 + 지각 동사 + 出来 + (了) (+ 목적어)",
+    "examples": [
+      {
+        "translation": "듣고 알아차렸나요? 이것은 누구의 목소리인가요?"
+      }
+    ]
   },
   "zh_V下来_193": {
-    "title": "V + 下来 (V down)",
-    "shortExplanation": "V down",
-    "longExplanation": "V down. Pinyin: V + xiàlai",
-    "formation": "V + xiàlai"
+    "title": "동사 / 형용사 + 下来 (복합방향보어 파생용법: ~해지다, 가라앉다, 느려지다)",
+    "shortExplanation": "동사나 형용사 뒤에 복합방향보어 '下来'를 붙여, 상태가 활동적인 것에서 정적인 것으로, 빠름에서 느림으로 점차 안정되거나 가라앉음을 나타냅니다.",
+    "longExplanation": "‘동사/형용사 + 下来’(xiàlai)는 방향보어 ‘下来’의 파생적 용법으로, 격렬하거나 빠른 동작·상태가 점차 누그러지며 평온하고 정적인 상태로 이행함을 표현합니다. 흔히 쓰이는 예로 ‘慢下来’(느려지다/차분해지다), ‘停下来’(멈춰 서다), ‘安静下来’(조용해지다), ‘冷静下来’(침착해지다) 등이 있습니다. 아울러 동작의 결과를 고정시켜 남겨두는 ‘记下来’(적어 두다), ‘拍下来’(사진으로 찍어 남기다)의 의미로도 쓰입니다. 한국어의 ‘~해지다’, ‘가라앉다’, ‘멈추어 서다’에 해당합니다.",
+    "formation": "주어 + 동사 / 형용사 + 下来",
+    "examples": [
+      {
+        "translation": "시간이 정말 천천히 흘러갔으면 좋겠습니다."
+      }
+    ]
   },
   "zh_想起来_194": {
-    "title": "想起来 (to recall)",
-    "shortExplanation": "to recall",
-    "longExplanation": "to recall. Pinyin: xiǎngqilai",
-    "formation": "xiǎngqilai"
+    "title": "想起来 (동보 어휘: 생각나다, 기억이 떠오르다)",
+    "shortExplanation": "과거의 기억이나 잊고 있던 사실이 머릿속에 다시 떠오름을 나타내며, 가능보어 부정형인 '想不起来'(생각나지 않다)로도 매우 자주 쓰입니다.",
+    "longExplanation": "‘想起来’(xiǎngqilai)는 동사 ‘想’에 방향보어 ‘起来’가 결합된 표현으로, 잊고 있던 과거의 기억, 이름, 사실 등이 의식 위로 떠오를 때 쓰입니다. 회화에서는 특히 가능보어 형태인 ‘想得起来’(생각해 낼 수 있다/기억나다)와 ‘想不起来’(기억나지 않다/도무지 떠오르지 않는다)의 쓰임이 매우 활발합니다. 새로운 아이디어나 해결책을 머릿속에서 짜내는 ‘想出来’(생각해 내다)와 혼동하지 않도록 주의해야 합니다. 한국어의 ‘기억나다’, ‘생각나다’, ‘떠오르다’에 해당합니다.",
+    "formation": "주어 + 想起来 (+ 목적어) / 주어 + 想得起来 / 想不起来 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그의 이름이 도무지 생각나지 않습니다."
+      }
+    ]
   },
   "zh_看起来看上去_195": {
-    "title": "看起来/看上去 (to seem)",
-    "shortExplanation": "to seem",
-    "longExplanation": "to seem. Pinyin: kànqǐlái/ kànshangqu",
-    "formation": "kànqǐlái/ kànshangqu"
+    "title": "看起来 / 看上去 (외관 평가 관용 표현: 보아하니 ~인 것 같다, 보기에 ~해 보이다)",
+    "shortExplanation": "문장 앞이나 술어 앞에 놓여 겉모습이나 외양, 상황을 관찰하여 주관적인 판단이나 인상을 나타냅니다.",
+    "longExplanation": "‘看起来’(kànqǐlái)와 ‘看上去’(kànshangqu)는 눈에 보이는 외양이나 상태를 바탕으로 추측과 인상을 나타내는 관용적인 표현입니다. 문두에 쓰여 전체 상황에 대한 관찰과 판단을 이끌거나, 주어와 술어 사이에 위치하여 특정 인물이나 사물의 외모, 나이, 기분, 분위기 등을 평가할 때 사용됩니다. 두 표현은 대체로 통용되나, ‘看上去’는 눈으로 확인되는 시각적 외양(나이, 안색 등)에 더욱 밀착되어 쓰이고, ‘看起来’는 시각적 외양뿐만 아니라 정황을 바탕으로 한 논리적 추론에도 광범위하게 쓰입니다. 한국어의 ‘보기에 ~하다’, ‘겉보기에 ~인 것 같다’에 해당합니다.",
+    "formation": "(주어 + ) 看起来 / 看上去 + 형용사 / 동사구 / 절",
+    "examples": [
+      {
+        "translation": "그는 보기에 마흔 살이 넘은 것 같아 보입니다."
+      }
+    ]
   },
   "zh_使叫让OAV_196": {
-    "title": "使/叫/让 + O + A/V (make O A/V)",
-    "shortExplanation": "make O A/V",
-    "longExplanation": "make O A/V. Pinyin: shǐ/ jiào/ ràng + O + A/V",
-    "formation": "shǐ/ jiào/ ràng + O + A/V"
+    "title": "使 / 叫 / 让 + 목적어 + 형용사 / 동사 (사동 겸어문: ~로 하여금 …하게 하다, ~를 …하게 만들다)",
+    "shortExplanation": "사동 동사인 '使', '叫', '让'을 사용하여 어떤 원인이나 주체가 대상(겸어)에게 특정한 감정·상태의 변화를 일으키거나 동작을 행하도록 함을 나타내는 겸어문 구조입니다.",
+    "longExplanation": "‘使/叫/让 + 목적어 + 형용사/동사’는 중국어의 대표적인 사동 겸어문입니다. ‘使/叫/让’의 목적어가 뒤따르는 형용사나 동사의 의미상 주어 역할을 동시에 수행하므로 ‘겸어’라고 부릅니다. 어감과 문체에 따른 구분이 중요합니다: (1) ‘使’는 문어체적이며 격식 있는 표현으로, 주로 추상적인 사물이나 사건이 주어가 되어 심리적 감정이나 객관적 결과를 유발할 때 쓰입니다. (2) ‘让’과 ‘叫’는 구어체에서 널리 쓰이며, 사람에게 시키거나 허락하는 일상적인 사동을 나타냅니다. 한국어의 ‘~로 하여금 …하게 하다’, ‘~를 …하게 만들다’에 해당합니다.",
+    "formation": "주어(원인/주체) + 使 / 叫 / 让 + 목적어(겸어) + 형용사 / 동사",
+    "examples": [
+      {
+        "translation": "독서는 저를 행복하게 해 줍니다."
+      }
+    ]
   },
   "zh_O被叫让SV_197": {
-    "title": "O + 被/叫/让 + S + V (O is V’ed by S)",
-    "shortExplanation": "O is V’ed by S",
-    "longExplanation": "O is V’ed by S. Pinyin: O + bèi/ jiào/ ràng + S + V",
-    "formation": "O + bèi/ jiào/ ràng + S + V"
+    "title": "목적어(동작의 대상) + 被 / 叫 / 让 + 동작주 + 동사 (피동문: ~에게 …당하다, ~에 의해 …되다)",
+    "shortExplanation": "개사 '被', '叫', '让'으로 행위자(동작주)를 이끌어 문두의 대상이 어떤 행위나 피해를 입었음을 나타내는 피동문(수동태) 구문입니다.",
+    "longExplanation": "‘동작의 대상 + 被/叫/让 + 동작주 + 동사’는 중국어의 가장 보편적인 피동문 문형입니다. 동작의 영향을 받는 대상(수사/목적어)이 문장의 맨 앞에 주어로 놓입니다. 각 개사의 특성은 다음과 같습니다: (1) ‘被’는 구어와 문어 모두에서 널리 쓰이며, 행위자를 생략할 수 있습니다(예: 照相机被拿走了). (2) ‘叫’와 ‘让’은 구어체 전용 피동 표식으로, 뒤에 반드시 동작주가 와야 합니다(동작주를 모를 때는 ‘让/叫人’처럼 ‘人’을 씀). 피동문의 동사 뒤에는 대개 결과보어, 방향보어나 ‘了’ 같은 부가 성분이 필수적으로 동반됩니다. 한국어의 ‘~에게 …당하다’, ‘~에 의해 …되다’에 해당합니다.",
+    "formation": "목적어(동작의 대상) + 被 / 叫 / 让 + 동작주 + 동사 + 부가 성분",
+    "examples": [
+      {
+        "translation": "제 카메라를 누가 가져가 버렸나요?"
+      }
+    ]
   },
   "zh_O不没被叫让SV_198": {
-    "title": "O + 不/没 + 被/叫/让 + S + V (O is not V’ed by S)",
-    "shortExplanation": "O is not V’ed by S",
-    "longExplanation": "O is not V’ed by S. Pinyin: O + bù/ méi + bèi/ jiào/ ràng + S + V",
-    "formation": "O + bù/ méi + bèi/ jiào/ ràng + S + V"
+    "title": "목적어 + 不 / 没 + 被 / 叫 / 让 + 동작주 + 동사 (피동문의 부정형)",
+    "shortExplanation": "중국어 피동문(피동표지 '被', '叫', '让')의 부정 표현으로, 부정부사 '不'나 '没(有)'는 반드시 피동개사 앞에 위치해야 합니다.",
+    "longExplanation": "중국어에서 피동문(‘被/叫/让’을 사용하는 문장)을 부정할 때는 부정부사 ‘不’(의지, 습관, 미래 부정) 또는 ‘没(有)’(과거 사실이나 완료의 부정)를 반드시 피동을 나타내는 개사 ‘被/叫/让’의 ‘앞’에 두어야 합니다. 피동개사 뒤나 동사 바로 앞에 부정사를 두는 것은 문법적 오류입니다(예: ❌ 问题被没解决 → ✔️ 问题没被解决). 조동사(能, 应该 등)나 시간부사(还, 已经 등) 역시 피동개사 앞에 위치합니다. 한국어의 ‘~에 의해 …되지 않았다’, ‘아직 …되지 못했다’에 해당합니다.",
+    "formation": "목적어(피동 대상) + 不 / 没(有) + 被 / 叫 / 让 + (동작주) + 동사 + 기타 성분",
+    "examples": [
+      {
+        "translation": "문제는 아직 해결되지 않았어요."
+      }
+    ]
   },
   "zh_只有才_199": {
-    "title": "只有……才…… (only if)",
-    "shortExplanation": "only if",
-    "longExplanation": "only if. Pinyin: zhǐyǒu…… cái……",
-    "formation": "zhǐyǒu…… cái……"
+    "title": "只有……，才…… (필수조건 복문: 오직 ~해야만 비로소 …하다)",
+    "shortExplanation": "앞 절에서 유일무이하고 필수적인 조건(오직 ~해야만)을 제시하고, 뒤 절에서 부사 '才'와 호응하여 그 조건이 충족되어야 비로소 결과가 실현됨(비로소 …하다)을 나타냅니다.",
+    "longExplanation": "‘只有……，才……’(zhǐyǒu…… cái……)는 유일한 필수조건을 나타내는 대표적인 복문 접속 구조입니다. ‘只有’(오직 ~해야만)는 앞 절에서 결과 실현을 위한 절대적인 전제 조건을 한정하며, 뒤 절의 부사 ‘才’(비로소, 겨우)와 어우러져 ‘그 유일한 조건이 충족된 뒤에야 비로소 후속 사태가 성립할 수 있음’을 강조합니다. 단순한 충분조건을 나타내는 ‘只要……就……’(~하기만 하면 곧 …하다)와 구별되며, 조건이 갖춰지지 않으면 결코 결과가 발생할 수 없음을 내포합니다. 한국어의 ‘오직 ~해야만 비로소 …할 수 있다’에 해당합니다.",
+    "formation": "只有 + 필수조건절，(주어 + ) 才 + 결과절",
+    "examples": [
+      {
+        "translation": "숙제를 다 끝내야만 비로소 텔레비전을 볼 수 있습니다."
+      }
+    ]
   },
   "zh_不仅也还而且_200": {
-    "title": "不仅……也/还/而且…… (Not only… but also…)",
-    "shortExplanation": "Not only… but also…",
-    "longExplanation": "Not only… but also…. Pinyin: bùjǐn…… yě/ hái/ érqiě……",
-    "formation": "bùjǐn…… yě/ hái/ érqiě……"
+    "title": "주어 + 不仅……，也 / 还 / 而且…… (동일 주어 점진 복문: ~할 뿐만 아니라 …도)",
+    "shortExplanation": "앞뒤 두 절의 주어가 동일할 때 사용하는 점진 복문 구문입니다. 주어를 '不仅' 앞에 두고, 앞 절의 사실에 더하여 뒤 절의 내용까지 아울러 지님(~뿐만 아니라 …도)을 나타냅니다.",
+    "longExplanation": "‘不仅……，也/还/而且……’(bùjǐn…… yě/ hái/ érqiě……)는 앞 절의 내용에 한 걸음 더 나아가 범위나 정도를 심화시키는 점진(누가) 복문의 대표적 표현입니다. 두 절의 ‘주어가 서로 같을 때’는 주어가 반드시 접속사 ‘不仅’의 ‘앞’에 놓입니다(주어 + 不仅……). ‘不仅’(…뿐만 아니라)으로 첫 번째 사실을 제시한 뒤, 뒤 절에서 부사 ‘也’(…도), ‘还’(또한), 혹은 접속사 ‘而且’(게다가)와 호응하여 부가적인 사실이나 더 높은 차원의 행동을 덧붙입니다. 한국어의 ‘~는 …일 뿐만 아니라 또한 …하다’에 해당합니다.",
+    "formation": "주어 + 不仅 + 절1，也 / 还 / 而且 + 절2",
+    "examples": [
+      {
+        "translation": "저는 영화 〈타이타닉〉을 보았을 뿐만 아니라, 〈노팅힐〉도 보았습니다."
+      }
+    ]
   },
   "zh_不仅S1S2也_201": {
-    "title": "不仅 S1……，S2 也…… (Not only S1…, S2 also…)",
-    "shortExplanation": "Not only S1…, S2 also…",
-    "longExplanation": "Not only S1…, S2 also…. Pinyin: bùjǐn S1……，S2 yě……",
-    "formation": "bùjǐn S1……，S2 yě……"
+    "title": "不仅 + 주어1……，주어2 + 也 / 还…… (상이한 주어 점진 복문: 주어1뿐만 아니라 주어2도)",
+    "shortExplanation": "앞뒤 두 절의 주어가 서로 다를 때 사용하는 점진 복문 구문입니다. 접속사 '不仅'은 반드시 주어1의 앞(문두)에 위치해야 하며, 주어2 뒤에 '也'나 '还'가 호응합니다.",
+    "longExplanation": "‘不仅 + 주어1……，주어2 + 也……’는 두 절의 주어가 서로 다를 때 사물의 포괄 범위나 주체를 점진적으로 확장하는 복문 구조입니다. 매우 중요한 문법 규칙으로, 앞뒤 절의 ‘주어가 서로 다를 경우’ 접속사 ‘不仅’(또는 不但)은 반드시 첫 번째 주어 앞(문장 맨 앞)에 놓여야 합니다(❌ 주어1 + 不仅…… 이 아닌 ✔️ 不仅 + 주어1……). 뒤 절에서는 두 번째 주어 바로 뒤에 부사 ‘也’(…도 역시)나 ‘还’를 두어 호응을 이룹니다. 한국어의 ‘[주어1]뿐만 아니라, [주어2]도 …하다’에 해당합니다.",
+    "formation": "不仅 + 주어1 + 술어1，주어2 + 也 / 还 + 술어2",
+    "examples": [
+      {
+        "translation": "마크가 영화 〈노팅힐〉을 보았을 뿐만 아니라, 저 역시 〈노팅힐〉을 보았습니다."
+      }
+    ]
   },
   "zh_从来不V_202": {
-    "title": "从来不 V (never V)",
-    "shortExplanation": "never V",
-    "longExplanation": "never V. Pinyin: cóngláibù V",
-    "formation": "cóngláibù V"
+    "title": "从来不 + 동사 (부사: 여태껏 절대 ~하지 않는다, 평소 습관의 부정)",
+    "shortExplanation": "부사 '从来不'(cónglái bù)를 동사 앞에 사용하여, 과거부터 지금까지의 확고한 습관, 생활 신조, 원칙상 '결코 ~하지 않는다'를 나타냅니다.",
+    "longExplanation": "‘从来不 + 동사’는 ‘지금까지 죽 ~하지 않는다’, ‘결코 ~하는 법이 없다’라는 뜻으로, 과거부터 현재에 이르기까지 일관되게 지켜온 일상적인 습관, 가치관, 행동 원칙을 부정할 때 쓰입니다. 과거의 일회성 경험 부정을 나타내는 ‘从来没……过’(여태껏 한 번도 ~해 본 적이 없다)와 달리, ‘从来不’는 현재와 미래에도 지속되는 평소의 지속적인 행동 양식이나 불변의 규칙을 부정합니다. 한국어의 ‘여태껏 절대 ~하지 않는다’, ‘평소에 결코 ~하지 않는다’에 해당합니다.",
+    "formation": "주어 + (시간) + 从来不 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 점심때 결코 낮잠을 자지 않습니다."
+      }
+    ]
   },
   "zh_从来没VA过_203": {
-    "title": "从来没 V/A 过 (never have V’ed, never have been A)",
-    "shortExplanation": "never have V’ed, never have been A",
-    "longExplanation": "never have V’ed, never have been A. Pinyin: cóngláiméi V/A guò",
-    "formation": "cóngláiméi V/A guò"
+    "title": "从来没(有) + 동사 / 형용사 + 过 (부사: 지금까지 한 번도 ~해 본 적이 없다 / 이토록 ~한 적이 없다)",
+    "shortExplanation": "부사 '从来没(有)'와 동태조사 '过'를 호응시켜, 과거부터 현재까지 어떤 동작을 겪어본 적이 전혀 없거나 어떤 상태에 이른 적이 결코 없음을 나타내는 경험의 전면 부정 표현입니다.",
+    "longExplanation": "‘从来没(有) + 동사/형용사 + 过’(cóngláiméi…… guò)는 과거의 경험을 완전히 부정하는 구문입니다. 동사와 결합할 때는 ‘지금까지 한 번도 ~해 본 적이 없다’(예: 从来没去过 - 가 본 적이 없다)는 절대적 미경험을 나타내며, 형용사(보통 ‘这么’, ‘那么’ 등과 결합)와 쓰일 때는 ‘지금까지 이토록 ~해 본 적이 없다’(예: 从来没这么高兴过)처럼 감정이나 상태가 과거에 유례없는 수준에 도달했음을 감탄적으로 표현합니다. 불변의 습관을 부정하는 ‘从来不’와 뚜렷하게 구별됩니다. 한국어의 ‘여태껏 한 번도 ~해 본 적이 없다’, ‘지금껏 이렇게 ~한 적이 없다’에 해당합니다.",
+    "formation": "주어 + 从来没(有) + 동사 / 형용사 + 过 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그의 부모님은 지금까지 이토록 기뻐하신 적이 한 번도 없었습니다."
+      }
+    ]
   },
   "zh_刚刚刚V_204": {
-    "title": "刚/刚刚 V (just V’ed)",
-    "shortExplanation": "just V’ed",
-    "longExplanation": "just V’ed. Pinyin: gāng/ gānggang V",
-    "formation": "gāng/ gānggang V"
+    "title": "刚 / 刚刚 + 동사 (시간부사: 방금 ~했다, 막 ~한 참이다)",
+    "shortExplanation": "시간부사 '刚' 또는 '刚刚'를 동사 앞에 사용하여, 화자의 주관적 인식상 동작이나 변화가 일어난 지 얼마 지나지 않았음(~한 지 얼마 안 됨, 막 ~함)을 나타냅니다.",
+    "longExplanation": "‘刚 / 刚刚 + 동사’(gāng / gānggang)는 어떤 동작이나 사건이 발생한 지 얼마 되지 않았음을 나타내는 시간부사입니다. ‘刚’의 핵심적인 특징은 시간 경과에 대한 ‘화자의 주관적인 판단’이 개입된다는 점입니다. 객관적으로 몇 분 전의 일뿐만 아니라, 몇 주 전이나 지난달, 작년에 발생한 일이라 하더라도 화자가 느끼기에 ‘얼마 되지 않았다’고 생각하면 자유롭게 사용할 수 있습니다(예: 我上个月刚结婚 - 지난달에 막 결혼했다). 품사가 부사이므로 반드시 ‘주어 뒤, 동사 앞’에 위치해야 하며 문두에는 올 수 없습니다(시간명사 ‘刚才’와의 결정적 차이). 한국어의 ‘막 ~했다’, ‘~한 지 얼마 안 되었다’에 해당합니다.",
+    "formation": "주어 + (시간) + 刚 / 刚刚 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 지난달에 막 결혼했습니다."
+      }
+    ]
   },
   "zh_刚VDURATION_205": {
-    "title": "刚 + V + DURATION (have V’ed for just DURATION)",
-    "shortExplanation": "have V’ed for just DURATION",
-    "longExplanation": "have V’ed for just DURATION. Pinyin: gāng + V + DURATION",
-    "formation": "gāng + V + DURATION"
+    "title": "주어 + 刚 + 동사 + 시간 수량사 (기간의 짧음 강조: ~한 지 겨우 …밖에 안 되었다)",
+    "shortExplanation": "부사 '刚' 뒤에 동사와 시량사(기간 표현)를 연결하여, 어떤 동작이나 상태가 시작된 이래 경과한 시간이 화자의 체감상 '겨우 …에 불과하다(매우 짧다)'를 나타냅니다.",
+    "longExplanation": "‘주어 + 刚 + 동사 + 시간 수량사(시량보어)’ 구조는 어떤 동작이나 상태가 지속된 기간이 화자의 주관적 기준에서 아직 매우 짧음을 강조할 때 쓰입니다. ‘刚’(막, 겨우)이 ‘一个月’(한 달), ‘几天’(며칠) 등의 시간 수량 표현과 어우러져 ‘~한 지 이제 겨우 …에 지나지 않는다’, ‘시작된 지 얼마 안 되었다’는 뉘앙스를 강하게 풍깁니다. 예문 ‘他刚来一个月’은 그가 이곳에 온 지 아직 한 달밖에 되지 않아 얼마 안 되었다는 느낌을 전합니다. 한국어의 ‘~한 지 겨우 …밖에 안 되다’, ‘막 ~해서 …가 되었다’에 해당합니다.",
+    "formation": "주어 + 刚 + 동사 + (목적어) + 시간 수량사 / 기간 표현",
+    "examples": [
+      {
+        "translation": "그는 온 지 겨우 한 달밖에 되지 않았습니다."
+      }
+    ]
   },
   "zh_刚才_206": {
-    "title": "刚才 (moments ago)",
-    "shortExplanation": "moments ago",
-    "longExplanation": "moments ago. Pinyin: gāngcái",
-    "formation": "gāngcái"
+    "title": "刚才 (시간명사: 방금, 아까, 방금 전)",
+    "shortExplanation": "말하는 시점 바로 직전의 몇 분 전(객관적 과거 시점)을 가리키는 시간명사로, '아까', '방금 전'의 뜻을 나타냅니다. 문두나 주어 뒤 모두에 놓일 수 있습니다.",
+    "longExplanation": "‘刚才’(gāngcái)는 발화 시점 직전의 얼마 되지 않은 객관적인 물리적 시간(주로 몇 분~십수 분 전)을 가리키는 ‘시간명사’입니다. 부사인 ‘刚’과 뚜렷이 구별되는 명사적 특성을 가집니다: (1) 주어 앞(문장 맨 앞)이나 주어 뒤에 모두 자유롭게 놓여 상황어로 쓰일 수 있음(‘刚才我……’와 ‘我刚才……’ 둘 다 가능), (2) 개사의 목적어가 될 수 있음(예: 比刚才好 - 아까보다 낫다), (3) ‘刚才的事’(아까 일)처럼 ‘的’를 동반하여 관형어로 다른 명사를 수식할 수 있음. 또한 ‘刚’이 주관적으로 몇 달 전 일에도 쓰일 수 있는 것과 달리, ‘刚才’는 오직 객관적으로 직전의 짧은 시간에만 사용됩니다. 한국어의 ‘아까’, ‘방금 전’에 해당합니다.",
+    "formation": "(주어 + ) 刚才 (+ 주어) + 술어(동사 / 형용사)",
+    "examples": [
+      {
+        "translation": "아까 저는 이메일 한 통을 받았습니다."
+      }
+    ]
   },
   "zh_即使也_207": {
-    "title": "即使……也…… (even if…, still…)",
-    "shortExplanation": "even if…, still…",
-    "longExplanation": "even if…, still…. Pinyin: jíshǐ…… yě……",
-    "formation": "jíshǐ…… yě……"
+    "title": "即使……，也…… (가설양보 복문: 설령 ~할지라도, (그래도) …하다)",
+    "shortExplanation": "앞 절에서 극단적이거나 불리한 상황을 한 걸음 양보하여 가정(설령 ~할지라도)하고, 뒤 절에서 부사 '也'로 호응하여 그 조건에 구애받지 않고 결과나 행동이 변함없음((그래도) …하다)을 나타냅니다.",
+    "longExplanation": "‘即使……，也……’(jíshǐ…… yě……)는 가설 양보를 나타내는 대표적인 복문 구문입니다. 앞 절에 접속사 ‘即使’(설령 ~라 할지라도, 비록 ~일망정)를 사용하여 극단적이거나 불리한 가설 조건을 한 걸음 물러서서 인정·제시합니다. 뒤 절에서는 부사 ‘也’(그래도, 역시)를 술어 앞에 두어, 그러한 상황에도 불구하고 주체의 확고한 의지나 본래의 결론, 객관적 결과가 조금도 흔들리지 않고 성립됨을 역설합니다. 아직 발생하지 않은 미래의 가정은 물론, 현실의 사실을 양보하는 맥락에서도 두루 쓰입니다. 한국어의 ‘설령 ~라 하더라도 (여전히) …하다’에 해당합니다.",
+    "formation": "即使 + 양보 가설절，(주어 + ) 也 + 주절",
+    "examples": [
+      {
+        "translation": "설령 겨울에 매우 춥더라도, 그는 매일 운동장에 가서 달리기를 합니다."
+      }
+    ]
   },
   "zh_在N上_208": {
-    "title": "(在) N 上 (with regard to N)",
-    "shortExplanation": "with regard to N",
-    "longExplanation": "with regard to N. Pinyin: ( zài) N shàng",
-    "formation": "( zài) N shàng"
+    "title": "(在) + 명사 + 上 (개사구: ~ 방면에서, ~ 면에 있어서)",
+    "shortExplanation": "추상명사의 앞뒤에 '(在)……上'을 둘러싸서 개사구를 이루며, 논의하고자 하는 범위, 관점, 영역을 한정하여 제시합니다(~의 면에서, ~ 방면에서).",
+    "longExplanation": "‘(在) + 명사 + 上’(zài…… shàng)은 어떤 판단이나 서술이 적용되는 구체적인 범위나 측면을 한정할 때 쓰는 격틀 구조입니다. 명사 자리에 ‘爱好’(취미), ‘工作’(일/업무), ‘学习’(공부), ‘生活’(생활), ‘性格’(성격)과 같은 추상명사가 들어가 ‘~라는 방면에서’, ‘~라는 관점에 있어서’라는 뜻을 나타냅니다. 구어에서는 앞의 개사 ‘在’를 생략하고 ‘명사 + 上’(예: 工作上, 性格上) 형태로도 매우 빈번하게 사용됩니다. 통상 문장 맨 앞이나 주어 뒤에 놓여 문장 전체의 상황어(배경 화제 제시) 역할을 합니다. 한국어의 ‘~ 면에서’, ‘~ 방면에서는’, ‘~에 있어서는’에 해당합니다.",
+    "formation": "(在 + ) 추상명사 + 上，주어 + 술어",
+    "examples": [
+      {
+        "translation": "취미 방면에서는, 제가 어머니를 더 많이 닮았습니다."
+      }
+    ]
   },
   "zh_正好_209": {
-    "title": "正好 (just right)",
-    "shortExplanation": "just right",
-    "longExplanation": "just right. Pinyin: zhènghǎo",
-    "formation": "zhènghǎo"
+    "title": "正好 (형용사/부사: 딱 맞다, 알맞다, 마침 때마침)",
+    "shortExplanation": "크기, 수량, 정도 등이 과하거나 부족함 없이 완벽하게 어우러짐(딱 알맞다)을 나타내는 형용사이거나, 타이밍이 절묘하게 들어맞음(마침 때맞춰)을 나타내는 부사입니다.",
+    "longExplanation": "‘正好’(zhènghǎo)는 형용사와 부사의 두 가지 주요한 용법으로 활발하게 쓰입니다: (1) 형용사 용법: 옷의 치수, 수량, 시간, 온도, 정도 등이 크지도 작지도 않고 완벽히 적절함을 나타내어 술어로 기능합니다(예문: 衣服大小正好 - 옷 크기가 딱 알맞다; 不多不少，正好 - 많지도 적지도 않고 딱 맞다). (2) 부사 용법: 타이밍이나 기회가 매우 우연하고도 시의적절하게 맞아떨어짐(‘마침 때마침’, ‘공교롭게도’)을 나타내어 술어 앞에 놓입니다(예: 我正好有空 - 마침 시간이 있다). 한국어의 ‘딱 맞다’, ‘알맞다’, ‘마침 좋다’에 해당합니다.",
+    "formation": "주어 + (크기 / 수량 / 시기...) + 正好",
+    "examples": [
+      {
+        "translation": "옷 크기가 딱 맞습니다."
+      }
+    ]
   },
   "zh_V得正好_210": {
-    "title": "V 得正好 (V’ed at just the right time)",
-    "shortExplanation": "V’ed at just the right time",
-    "longExplanation": "V’ed at just the right time. Pinyin: V dé zhènghǎo",
-    "formation": "V dé zhènghǎo"
+    "title": "주어 + 동사 + 得正好 (상태보어: 마침 딱 알맞게 ~하다, 때맞춰 ~하다)",
+    "shortExplanation": "동사 뒤에 구조조사 '得'와 상태보어 '正好'를 결합하여, 동작이 이루어진 시점이나 상황이 절묘할 정도로 시의적절하고 적합함(마침 딱 알맞은 때에 ~하다)을 나타냅니다.",
+    "longExplanation": "‘동사 + 得正好’(V dé zhènghǎo)는 구조조사 ‘得’를 매개로 형용사 ‘正好’가 상태보어로 쓰인 구문입니다. 어떤 행동이나 사태가 발생한 시기가 화자의 입장에서 더할 나위 없이 훌륭하고 유익한 최적의 순간이었음을 긍정적으로 평가할 때 씁니다. 가장 대표적인 결합은 ‘来’(오다)와 쓰여 ‘你来得正好’(마침 정말 잘 왔다, 때맞춰 잘 왔다)처럼 상대방의 등장을 반기거나 도움을 요청할 수 있는 절호의 순간임을 드러내는 경우입니다. 한국어의 ‘마침 때맞춰 ~하다’, ‘딱 알맞은 때에 ~하다’에 해당합니다.",
+    "formation": "주어 + 동사 + 得正好",
+    "examples": [
+      {
+        "translation": "마침 때맞춰 아주 잘 오셨네요."
+      }
+    ]
   },
   "zh_NN差不多_211": {
-    "title": "N & N 差不多 (N & N are about the same)",
-    "shortExplanation": "N & N are about the same",
-    "longExplanation": "N & N are about the same. Pinyin: N & N chàbuduō",
-    "formation": "N & N chàbuduō"
+    "title": "명사1 + 和 / 跟 + 명사2 + 差不多 (비교 표현: ~와 …은 거의 비슷하다, 큰 차이가 없다)",
+    "shortExplanation": "개사 '和'나 '跟'으로 연결된 두 대상이나 그 속성이 서로 큰 차이 없이 '거의 엇비슷함'을 나타내는 술어 형용사 구문입니다.",
+    "longExplanation": "‘명사1 + 和/跟 + 명사2 + 差不多’(N & N chàbuduō)는 두 사람, 사물 또는 그들의 성질·속성을 대비하여 서로 간의 간극이 거의 존재하지 않음을 서술하는 비교 문형입니다. 여기서 ‘差不多’는 형용사로서 술어 역할을 하며, ‘차이가 거의 없다’, ‘대동소이하다’, ‘비슷비슷하다’라는 의미를 나타냅니다. 두 개체를 주어로 통째로 묶어 서술할 수도 있고(예: 他们俩的水平差不多 - 두 사람의 수준은 엇비슷하다), 예문처럼 특정 속성을 비교하는 구문(这辆车的颜色和那辆车的颜色差不多)으로도 널리 쓰입니다. 한국어의 ‘~와 …은 거의 비슷하다’, ‘큰 차이가 없다’에 해당합니다.",
+    "formation": "명사1 + 和 / 跟 + 명사2 + 差不多 (또는: 명사1 + 和 + 명사2 + 的 + 특성/성질 + 差不多)",
+    "examples": [
+      {
+        "translation": "이 차의 색깔과 저 차의 색깔은 거의 비슷합니다."
+      }
+    ]
   },
   "zh_差不多_212": {
-    "title": "差不多 # (about #)",
-    "shortExplanation": "about #",
-    "longExplanation": "about #. Pinyin: chàbuduō #",
-    "formation": "chàbuduō #"
+    "title": "差不多 + 수사 + 양사 (개수 부사: 약 ~, 대략 ~, 거의 ~)",
+    "shortExplanation": "부사 '差不多'를 수량 표현(수사 + 양사) 앞에 사용하여, 수량·금액·나이·시간 등이 그 수치에 매우 근접함(약, 대략)을 나타내는 개수(대략의 수) 표현입니다.",
+    "longExplanation": "수량사(수사 + 양사) 앞에 놓이는 ‘差不多’는 어림수를 나타내는 개수(概數) 부사로 쓰입니다. 실제의 수량이나 가격, 시간, 거리 등이 제시된 수치에 거의 근접해 있음을 나타내며, 우리말의 ‘약’, ‘대략’, ‘거의’에 해당합니다. 예문 ‘这台电脑差不多5000块’(이 컴퓨터는 대략 5,000위안이다)처럼 가격의 어림셈은 물론, ‘差不多十个人’(약 10명), ‘差不多两岁’(거의 두 살)처럼 다양한 사물의 수치 평가에 두루 활용됩니다. ‘大概’와 유사하게 쓰이면서도 구어에서 매우 친근하고 자연스럽게 사용되는 표현입니다.",
+    "formation": "주어 + (술어 + ) 差不多 + 수사 + 양사 (+ 명사)",
+    "examples": [
+      {
+        "translation": "이 컴퓨터는 대략 5,000위안쯤 합니다."
+      }
+    ]
   },
   "zh_差不多A_213": {
-    "title": "差不多 A (about A)",
-    "shortExplanation": "about A",
-    "longExplanation": "about A. Pinyin: chàbuduō A",
-    "formation": "chàbuduō A"
+    "title": "差不多 + 형용사 (부사: 거의 ~하다, 대략 ~하다)",
+    "shortExplanation": "부사 '差不多'가 형용사(또는 '一样高'와 같은 형용사구) 앞에 놓여 성질이나 상태의 차이가 거의 없이 대등함을 나타냅니다('거의 ~하다', '비슷하게 ~하다').",
+    "longExplanation": "'差不多'(chàbuduō)는 부사로서 형용사 앞에 쓰여 대상 간의 차이가 아주 적어 거의 같거나 특정 기준치에 근접함을 의미합니다. 비교 구문 '跟……差不多一样……'(~와 거의 비슷하게 …하다) 형태로 매우 자주 결합하여 쓰입니다. 한국어의 '거의 ~하다', '대략 비슷하게 ~하다'에 해당합니다.",
+    "formation": "주어 + (跟 + 비교 대상 + ) 差不多 + (一样 + ) 형용사",
+    "examples": [
+      {
+        "translation": "딸의 키는 저와 거의 비슷하게 큽니다."
+      }
+    ]
   },
   "zh_差不多V_214": {
-    "title": "差不多 V (about V’ed)",
-    "shortExplanation": "about V’ed",
-    "longExplanation": "about V’ed. Pinyin: chàbuduō V",
-    "formation": "chàbuduō V"
+    "title": "差不多 + 동사 (부사: 거의 ~했다, 대강 다 ~했다)",
+    "shortExplanation": "부사 '差不多'가 동사 앞에 쓰여 어떤 동작이나 업무가 거의 마무리 단계에 이르렀음('거의 다 ~했다')을 나타냅니다.",
+    "longExplanation": "'差不多'(chàbuduō)가 동사 앞에 쓰이면 동작의 진행 정도가 완성에 매우 근접하여 거의 끝나가는 상태를 나타냅니다. 보통 '干完'(다 하다), '做好'(다 만들다/준비하다)와 같이 결과보어나 어기조사 '了'를 동반하는 경우가 많습니다. 한국어의 '거의 다 ~했다', '대충 다 마쳤다'에 해당합니다.",
+    "formation": "주어 + 差不多 + 동사 (+ 결과보어 + 了)",
+    "examples": [
+      {
+        "translation": "일은 거의 다 끝냈습니다."
+      }
+    ]
   },
   "zh_几乎_215": {
-    "title": "几乎 # (almost #)",
-    "shortExplanation": "almost #",
-    "longExplanation": "almost #. Pinyin: jīhū #",
-    "formation": "jīhū #"
+    "title": "几乎 + 수량사 (부사: 거의 ~에 달하다, 거의 ~ 가까이 되다)",
+    "shortExplanation": "부사 '几乎'가 수량 표현 앞에 쓰여 실제 수치나 금액이 그 기준치에 거의 육박함('거의 ~에 달하다')을 나타냅니다.",
+    "longExplanation": "'几乎'(jīhū)가 수량구(수사+양사) 앞에 결합하면 실제 수량이나 가격이 완벽히 그 수치에 도달하지는 않았더라도 매우 근접하여 거의 그에 필적함을 나타냅니다. 보통 액수가 크거나 수량이 많음을 은연중에 강조할 때 사용됩니다. 한국어의 '거의 ~에 육박하다', '거의 ~ 가까이 되다'에 해당합니다.",
+    "formation": "주어 + 几乎 + 수사 + 양사 (+ 명사)",
+    "examples": [
+      {
+        "translation": "이 컴퓨터는 거의 5000위안에 달합니다."
+      }
+    ]
   },
   "zh_几乎A_216": {
-    "title": "几乎 A (almost)",
-    "shortExplanation": "almost",
-    "longExplanation": "almost. Pinyin: jīhū A",
-    "formation": "jīhū A"
+    "title": "几乎 + 형용사 (부사: 거의 ~하다, 거의 다름없다)",
+    "shortExplanation": "부사 '几乎'가 형용사 앞에 놓여 성질이나 상태가 거의 완전한 수준에 도달하여 차이가 거의 없음('거의 ~하다')을 나타냅니다.",
+    "longExplanation": "'几乎'(jīhū)가 형용사를 수식할 때는 대상의 특성이나 상태가 어떤 기준이나 극한에 거의 도달하여 오차가 거의 없음을 나타냅니다(예: 相当 - 상당하다/대등하다, 一样 - 같다). 구어적인 '差不多'에 비해 다소 격식 있고 서면어적인 느낌을 줍니다. 한국어의 '거의 ~하다', '거의 다름없다'에 해당합니다.",
+    "formation": "주어 + 几乎 + 형용사",
+    "examples": [
+      {
+        "translation": "얻은 것과 잃은 것이 거의 대등합니다."
+      }
+    ]
   },
   "zh_几乎V_217": {
-    "title": "几乎 V (almost)",
-    "shortExplanation": "almost",
-    "longExplanation": "almost. Pinyin: jīhū V",
-    "formation": "jīhū V"
+    "title": "几乎 + 동사 (부사: 하마터면 ~할 뻔하다, 거의 ~하다)",
+    "shortExplanation": "부사 '几乎'가 동사 앞에 쓰여 하마터면 어떤 일이 벌어질 뻔했거나('하마터면 ~할 뻔하다'), 동작의 영향이 거의 전체에 미침을 나타냅니다.",
+    "longExplanation": "'几乎'(jīhū)가 동사 앞에 쓰일 때는 (1) 조금만 잘못했으면 바람직하지 않은 사태가 일어날 뻔했으나 실제로는 일어나지 않았음을 나타내거나('差点儿'과 유사, 예: 几乎忘了 - 하마터면 잊을 뻔했다), (2) 동작의 진행이나 범위가 거의 전부를 차지함을 나타냅니다. 한국어의 '하마터면 ~할 뻔하다', '거의 ~할 지경이다'에 해당합니다.",
+    "formation": "주어 + 几乎 + 동사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "이 일에 대해 하마터면 너에게 말해 주는 것을 깜빡 잊을 뻔했어."
+      }
+    ]
   },
   "zh_尽管_218": {
-    "title": "尽管 (although)",
-    "shortExplanation": "although",
-    "longExplanation": "although. Pinyin: jǐnguǎn",
-    "formation": "jǐnguǎn"
+    "title": "尽管……，可是 / 但是…… (양보 접속사: 비록 ~임에도 불구하고, 그러나 ~하다)",
+    "shortExplanation": "접속사 '尽管'을 앞 절에 두어 이미 일어난 사실을 인정(비록 ~하지만)하고, 뒤 절에서 '可是', '但是' 등과 호응하여 역접의 결과(그러나 ~하다)를 이끕니다.",
+    "longExplanation": "'尽管'(jǐnguǎn)은 양보와 전환을 나타내는 접속사입니다. 앞 절에서 명백히 존재하는 객관적 사실을 먼저 긍정하며 양보하고, 뒤 절에서는 '但是', '可是', '却' 등과 짝을 이루어 일반적인 상식이나 예측과는 상반되는 상황을 진술합니다. 가상의 상황을 전제하는 '即使'와 달리, '尽管'은 현실로 확인된 사실에 사용됩니다. 한국어의 '비록 ~함에도 불구하고', '비록 ~하지만'에 해당합니다.",
+    "formation": "尽管 + 사실·양보절，可是 / 但是 + 역접절",
+    "examples": [
+      {
+        "translation": "비록 오늘 날씨가 매우 춥지만, 그는 옷을 아주 얇게 입었습니다."
+      }
+    ]
   },
   "zh_虽然尽管却_219": {
-    "title": "(虽然/尽管) …… 却 ((although)… but)",
-    "shortExplanation": "(although)… but",
-    "longExplanation": "(although)… but. Pinyin: ( suīrán/ jǐnguǎn) …… què",
-    "formation": "( suīrán/ jǐnguǎn) …… què"
+    "title": "(虽然 / 尽管) …… 却…… (역접 부사 호응: (비록) ~하지만, 오히려/도리어 ~하다)",
+    "shortExplanation": "앞 절에 '虽然'이나 '尽管'(생략 가능)을 두고, 뒤 절의 주어 뒤에 역접 부사 '却'을 배치하여 예측과 다른 대조적인 결과나 끈기를 나타냅니다.",
+    "longExplanation": "‘(虽然/尽管) …… 却……’ 구문은 앞선 조건과 뒤의 행동 사이에 뚜렷한 대비가 존재함을 나타냅니다. 앞 절의 접속사 ‘虽然’이나 ‘尽管’은 종종 생략되기도 하지만, 뒤 절의 ‘却’(què)은 접속사가 아닌 부사이므로 반드시 주어 뒤, 술어 앞에 위치해야 합니다(주어 + 却 + 술어). ‘但是’와 함께 쓰여 어조를 한층 강화하기도 합니다. 한국어의 ‘(비록) ~하지만, (오히려) ~하다’에 해당합니다.",
+    "formation": "(虽然 / 尽管 + ) 절1，주어 + 却 + 술어",
+    "examples": [
+      {
+        "translation": "(비록) 업무가 매우 바쁘지만, 그녀들은 매일 꾸준히 운동을 합니다."
+      }
+    ]
   },
   "zh_而_220": {
-    "title": "而 (and/but)",
-    "shortExplanation": "and/but",
-    "longExplanation": "and/but. Pinyin: ér",
-    "formation": "ér"
+    "title": "而 (접속사: 그리고, 또한, 한편 / 반면에)",
+    "shortExplanation": "접속사 '而'(ér)는 두 개의 절이나 단어를 연결하여 병렬·첨가('그리고', '또한')나 대조·전환('한편', '반면에')을 나타내는 격식 있는 표현입니다.",
+    "longExplanation": "'而'는 문어적 색채가 짙은 다기능 접속사입니다. 주요 기능으로는 (1) 병렬 및 누가지속: 앞뒤 사실을 동등하게 나열하거나 덧붙임('그리고', '또한'), (2) 대조 및 역접: 두 가지 서로 다른 사실이나 측면을 대비시킴('그러나', '한편으로는'), (3) 인과 관계 연결 등이 있습니다. 문맥에 따라 순접과 역접 모두로 자연스럽게 전환됩니다. 한국어의 '그리고', '또한', '한편 ~도'에 해당합니다.",
+    "formation": "절1 / 어구1 + ，+ 而 + 절2 / 어구2",
+    "examples": [
+      {
+        "translation": "듣기와 말하기 능력은 매우 중요하며, 아울러 한자를 쓰는 능력 또한 중요합니다."
+      }
+    ]
   },
   "zh_挺A的_221": {
-    "title": "挺 A 的 (quite A)",
-    "shortExplanation": "quite A",
-    "longExplanation": "quite A. Pinyin: tǐng A de",
-    "formation": "tǐng A de"
+    "title": "挺 + 형용사 / 심리 동사 + 的 (구어: 꽤 ~하다, 제법 ~하다)",
+    "shortExplanation": "구어체 구조인 '挺……的'(tǐng... de)는 형용사나 심리 동사와 결합하여 그 정도가 제법 높음('꽤 ~하다', '상당히 ~하다')을 친근하게 나타냅니다.",
+    "longExplanation": "‘挺……的’는 중국인들의 일상 회화에서 매우 즐겨 쓰이는 정도 표현입니다. 부사 ‘挺’은 ‘꽤, 제법, 퍽’의 뜻을 지니며, 문말의 조사 ‘的’는 어기를 부드럽게 완화하면서 화자의 주관적 긍정 어조를 확인시켜 줍니다. 형용사뿐 아니라 ‘喜欢’(좋아하다), ‘想’(그리워하다) 등의 심리 동사와도 자주 어울립니다. 한국어의 ‘꽤 ~하다’, ‘제법 ~하다’에 해당합니다.",
+    "formation": "주어 + 挺 + 형용사 / 심리 동사 (+ 목적어) + 的",
+    "examples": [
+      {
+        "translation": "저는 이곳을 꽤 좋아합니다."
+      }
+    ]
   },
   "zh_本来VA_222": {
-    "title": "本来 V/A (originally V/A)",
-    "shortExplanation": "originally V/A",
-    "longExplanation": "originally V/A. Pinyin: běnlái V/A",
-    "formation": "běnlái V/A"
+    "title": "本来 + 동사 / 형용사 (부사: 원래는 ~하다, 당초에는 ~하다)",
+    "shortExplanation": "부사 '本来'(běnlái)가 동사나 형용사 앞에 놓여 본래의 의도나 당초의 상태를 나타내며, 뒤에 '但是', '现在' 등이 이어져 상황이 달라졌음을 드러냅니다.",
+    "longExplanation": "'本来'는 부사로서 '원래는', '당초에는'이라는 의미를 갖습니다. 과거 시점의 원래 계획, 생각, 혹은 본래 사물이 지녔던 성질을 언급할 때 쓰이며, 뒤 절에 '但是'(하지만), '可是'(그러나), '现在'(지금은) 등과 함께 쓰여 당초의 계획과 현재의 결과가 달라졌음을 대조할 때 매우 흔히 사용됩니다. 한국어의 '원래는 ~하려 했으나', '당초에는 ~했다'에 해당합니다.",
+    "formation": "주어 + 本来 + 동사 / 형용사，但是 / 可是 + 현재 상태 및 변화",
+    "examples": [
+      {
+        "translation": "그녀는 원래 언론학을 전공하고 싶어 했지만, 지금은 법학을 공부하고 있습니다."
+      }
+    ]
   },
   "zh_本来就VA_223": {
-    "title": "本来就 V/A (V/A in the first place)",
-    "shortExplanation": "V/A in the first place",
-    "longExplanation": "V/A in the first place. Pinyin: běnlái jiù V/A",
-    "formation": "běnlái jiù V/A"
+    "title": "本来就 + 동사 / 형용사 (당연함의 강조: 원래부터 ~하다, 애당초 ~해야 마땅하다)",
+    "shortExplanation": "'本来就'(běnlái jiù)는 동사나 형용사 앞에 결합하여 어떤 이치나 규범이 원래부터 당연하고 자명함('원래부터 ~하다', '애초에 ~인 법이다')을 강력하게 강조합니다.",
+    "longExplanation": "‘本来’에 강조를 나타내는 부사 ‘就’가 결합된 ‘本来就’는 상식, 도리, 당연한 법칙 등을 내세워 ‘누가 뭐래도 처음부터 당연히 그러하다’는 강한 확신과 주장을 나타냅니다. 주로 ‘应该’(마땅히 ~해야 한다), ‘不应该’(~해서는 안 된다) 등과 결합하여 규칙이나 의무를 환기시킬 때 쓰입니다. 한국어의 ‘원래부터 ~인 것이다’, ‘애당초 당연히 ~해야 한다’에 해당합니다.",
+    "formation": "주어 + 本来就 + 동사(应该 / 不应该 등) / 형용사",
+    "examples": [
+      {
+        "translation": "학생은 애당초 수업에 지각해서는 안 되는 법입니다."
+      }
+    ]
   },
   "zh_另另外另外的N_224": {
-    "title": "另/另外/另外的 + # + N (another # N)",
-    "shortExplanation": "another # N",
-    "longExplanation": "another # N. Pinyin: lìng/ lìngwài/ lìngwài de + # + N",
-    "formation": "lìng/ lìngwài/ lìngwài de + # + N"
+    "title": "另 / 另外 / 另外的 + 수사 + 양사 + 명사 (관형 수식: 또 다른 한 ~, 다른 ~)",
+    "shortExplanation": "'另', '另外', '另外的'를 수량사(수사+양사)와 명사 앞에 놓아 이미 언급된 것 외의 또 다른 대상('또 다른 한 ~', '다른 ~')을 가리킵니다.",
+    "longExplanation": "'另'(lìng)과 '另外'(lìngwài)는 이미 거론된 대상 범위 이외의 다른 사물이나 사람을 가리킬 때 수량사 앞에 쓰입니다. '另'은 뒤에 곧바로 수량사(주로 '一' + 양사)가 이어지며 조사 '的'를 붙이지 않는 반면, '另外'는 '另外 + 수량사' 또는 '另外的 + 수량사 + 명사' 형태를 모두 취할 수 있습니다. 한국어의 '또 다른 한 권의 ~', '다른 ~'에 해당합니다.",
+    "formation": "주어 + 동사 + 另 / 另外 / 另外的 + 수사 + 양사 + 명사",
+    "examples": [
+      {
+        "translation": "그는 또 다른 한 권의 책을 꺼냈습니다."
+      }
+    ]
   },
   "zh_另外的其他的别的N_225": {
-    "title": "另外的/其他的/别的 N (other N)",
-    "shortExplanation": "other N",
-    "longExplanation": "other N. Pinyin: lìngwài de/ qítā de/ biéde N",
-    "formation": "lìngwài de/ qítā de/ biéde N"
+    "title": "另外的 / 其他的 / 别的 + 명사 (관형 수식: 다른 ~, 그 밖의 ~)",
+    "shortExplanation": "지시·대명 표현 '另外的', '其他的', '别的'가 명사 앞에 놓여 거론된 대상 이외의 것들('다른 ~', '그 밖의 ~')을 수식합니다.",
+    "longExplanation": "‘另外的’(lìngwài de), ‘其他的’(qítā de), ‘别的’(biéde)는 모두 명사 앞에서 수식어로 쓰여 지금 다루고 있는 대상 외의 ‘다른 사물이나 사람’을 가리킵니다. ‘别的’는 가장 구어적인 표현으로 일상 대화에서 널리 쓰이며, ‘其他的’는 일정 범위 내의 나머지 대상을 가리킬 때 즐겨 쓰이고, ‘另外的’는 별개로 존재하는 대상을 지칭할 때 사용됩니다. 한국어의 ‘다른 ~’, ‘그 밖의 ~’에 해당합니다.",
+    "formation": "另外的 / 其他的 / 别的 + 명사",
+    "examples": [
+      {
+        "translation": "이 책은 보지 마시고, 다른 책들을 보세요."
+      }
+    ]
   },
   "zh_另另外V_226": {
-    "title": "另/另外 V (V another)",
-    "shortExplanation": "V another",
-    "longExplanation": "V another. Pinyin: lìng/ lìngwài V",
-    "formation": "lìng/ lìngwài V"
+    "title": "另 / 另外 + 동사 (부사: 따로 ~하다, 추가로 더 ~하다)",
+    "shortExplanation": "부사 '另' 또는 '另外'가 동사 앞에 쓰여 기존 동작 외에 별도로 행하거나 추가하여 행함('따로 ~하다', '추가로 더 ~하다')을 나타냅니다.",
+    "longExplanation": "'另'(lìng)과 '另外'(lìngwài)는 부사로서 동사 앞에 위치하여, (1) 기존에 이루어진 행동 외에 부가적으로 무언가를 더 행함('따로 더 ~하다', '추가로 ~하다'), (2) 대상, 방법, 장소를 바꾸어 별도로 행함(예: 另想办法 - 다른 방법을 생각하다, 另外找人 - 다른 사람을 찾다)을 나타냅니다. '另'은 주로 1음절 동사와 결합하는 경향이 강하며, '另外'는 자유롭게 쓰입니다. 한국어의 '따로 ~하다', '추가로 더 ~해 주다'에 해당합니다.",
+    "formation": "주어 + 另 / 另外 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그는 나에게 따로 30위안을 더 주었습니다."
+      }
+    ]
   },
   "zh_另外_227": {
-    "title": "另外，…… (In addition, …)",
-    "shortExplanation": "In addition, …",
-    "longExplanation": "In addition, …. Pinyin: lìngwài，……",
-    "formation": "lìngwài，……"
+    "title": "另外，…… (접속사: 그 밖에, 게다가, 아울러)",
+    "shortExplanation": "접속사 '另外'를 문두나 절의 처음에 단독으로 두고(보통 쉼표 동반) 앞서 언급한 내용 외에 새로운 사실이나 당부 사항을 덧붙입니다('그 밖에', '게다가').",
+    "longExplanation": "'另外'(lìngwài)가 문두에 독립적으로 쓰일 때는 문장 접속사 역할을 수행합니다. 앞 문장에서 진술한 내용 외에 다른 정보, 추가적인 주의 사항, 혹은 새로운 화제를 부가적으로 제시할 때 사용됩니다. 뒤에 쉼표(，)를 찍어 호흡을 가다듬는 것이 특징입니다. 한국어의 '그 밖에', '게다가', '아울러'에 해당합니다.",
+    "formation": "절1. 另外，(주어 + ) 보충절",
+    "examples": [
+      {
+        "translation": "과일을 많이 드세요. 그 밖에, 물을 많이 마시는 것도 잊지 마시고요."
+      }
+    ]
   },
   "zh_首先其次_228": {
-    "title": "首先……其次…… (First… second…)",
-    "shortExplanation": "First… second…",
-    "longExplanation": "First… second…. Pinyin: shǒuxiān…… qícì……",
-    "formation": "shǒuxiān…… qícì……"
+    "title": "首先……，其次…… (접속사 호응: 먼저 ~하고 다음으로 ~하다 / 첫째로 ~, 둘째로 ~)",
+    "shortExplanation": "접속 표현 '首先……，其次……'를 사용하여 일의 순서나 논점의 우선순위를 차례대로 나열합니다('우선 ~하고 다음으로 ~하다', '첫째로 ~, 둘째로 ~').",
+    "longExplanation": "'首先……，其次……'(shǒuxiān... qícì...)는 사물의 순서, 진행 절차, 논증의 우선순위를 논리적으로 진술할 때 쓰이는 접속사 호응 구문입니다. '首先'으로 가장 먼저 행해야 할 사항이나 가장 핵심적인 논점을 제시하고, '其次'로 그 다음 순위의 항목이나 대안을 이어서 제시합니다. 서면어나 격식 있는 대화에서 자주 쓰입니다. 한국어의 '우선 ~하고 다음으로 ~하다', '첫째로 ~, 둘째로 ~'에 해당합니다.",
+    "formation": "(주어 + ) 首先 + 절1，其次 + 절2",
+    "examples": [
+      {
+        "translation": "면접을 볼 때는 우선 단정한 옷을 입어야 하고, 다음으로 긴장하지 말아야 합니다."
+      }
+    ]
   },
   "zh_不管_229": {
-    "title": "不管 (no matter)",
-    "shortExplanation": "no matter",
-    "longExplanation": "no matter. Pinyin: bùguǎn",
-    "formation": "bùguǎn"
+    "title": "不管……，都 / 也…… (접속사: ~에 관계없이, 어떤 ~라도 다)",
+    "shortExplanation": "접속사 '不管'을 앞 절에 두어 어떤 조건이나 상황에서도 뒤 절의 결과가 변함없음(무조건)을 나타냅니다('~에 관계없이', '~이든 아니든 모두').",
+    "longExplanation": "'不管'(bùguǎn)은 무조건적인 조건을 나타내는 접속사입니다. 앞 절에 의문사(什么, 谁, 怎么 등), 선택 표현(……还是……), 정반 형식(去不去, 好不好 등)을 수반하여 모든 가능성을 포괄하고, 뒤 절에서는 부사 '都'나 '也'와 결합하여 어떤 상황에서도 결론이 바뀌지 않음을 선언합니다. 비슷한 뜻의 '无论'보다 구어적인 느낌이 강합니다. 한국어의 '~에 상관없이', '어떤 ~이든 간에 모두'에 해당합니다.",
+    "formation": "不管 + 의문사 / 선택의문 / 정반형식 (+ 명사) ，주어 + 都 / 也 + 서술어",
+    "examples": [
+      {
+        "translation": "어떤 영화이든 관계없이, 저는 다 보는 것을 좋아합니다."
+      }
+    ]
   },
   "zh_以为_230": {
-    "title": "以为 (to believe falsely)",
-    "shortExplanation": "to believe falsely",
-    "longExplanation": "to believe falsely. Pinyin: yǐwéi",
-    "formation": "yǐwéi"
+    "title": "以为 (동사: ~인 줄 알았다, 착각하여 ~라고 생각하다)",
+    "shortExplanation": "동사 '以为'는 화자가 주관적으로 그렇게 생각했으나, 실제로는 사실과 다르거나 착각이었음('~인 줄 알았다')을 나타냅니다.",
+    "longExplanation": "'以为'(yǐwéi)는 주관적인 지레짐작이나 착각을 나타내는 동사입니다. 말하는 사람이 과거에 어떠한 사실이나 상황을 사실이라고 믿었으나, 나중에 그것이 틀렸거나 오해였음이 밝혀진 상황에서 사용합니다. 뒤 절에 '其实'(사실은)이나 '原来'(알고 보니) 등이 이어져 진실을 바로잡는 경우가 흔합니다. 객관적인 견해나 의견을 제시하는 '认为'와 구별해야 합니다. 한국어의 '~인 줄로만 알았다', '~라고 생각했는데 (실은 아니었다)'에 해당합니다.",
+    "formation": "주어 + 以为 + 오인한 내용의 절 (，其实 / 原来 + 사실의 절)",
+    "examples": [
+      {
+        "translation": "그 물건이 나에게 주는 것인 줄 알았는데, 사실은 아빠에게 드리는 것이었습니다."
+      }
+    ]
   },
   "zh_原来本来_231": {
-    "title": "原来/本来 (originally)",
-    "shortExplanation": "originally",
-    "longExplanation": "originally. Pinyin: yuánlái/ běnlái",
-    "formation": "yuánlái/ běnlái"
+    "title": "原来 / 本来 (부사: 원래, 애초에, 당초에는)",
+    "shortExplanation": "'原来'와 '本来'는 모두 어떤 변화가 일어나기 전의 최초 상태나 당초의 계획·수량('원래는', '애초에')을 나타냅니다.",
+    "longExplanation": "'原来'(yuánlái)와 '本来'(běnlái)는 어떤 사태나 상황이 바뀌기 전의 초기 상태, 당초의 예정이나 규격을 나타낼 때 부사로서 술어 앞에 쓰입니다. 그 후 상황의 변화나 계획의 수정이 뒤따랐음을 나타낼 때 흔히 쓰입니다. (참고로 '原来'는 '알고 보니'라는 깨달음의 뜻이 있고, '本来'는 '당연히 ~해야 한다'는 당위의 뜻이 별도로 존재하지만, 시간적인 '원래/애초'의 의미는 서로 통용됩니다). 한국어의 '원래는', '당초에는', '애초에'에 해당합니다.",
+    "formation": "(주어 + ) 原来 / 本来 + 동사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "원래는 12시간이 걸리는 일이었습니다."
+      }
+    ]
   },
   "zh_原来clause_232": {
-    "title": "原来 clause (it turns out)",
-    "shortExplanation": "it turns out",
-    "longExplanation": "it turns out. Pinyin: yuánlái clause",
-    "formation": "yuánlái clause"
+    "title": "原来 + 절 (부사: 알고 보니 ~였구나, 하마터면 몰랐는데 실은 ~이다)",
+    "shortExplanation": "부사 '原来'를 절 앞에 두어 이전에는 알지 못했던 사실이나 원인을 새롭게 깨닫고 이해했음('알고 보니 ~였구나', '알고 보니까')을 나타냅니다.",
+    "longExplanation": "'原来'(yuánlái)는 이전에는 몰랐던 사실, 내막, 원인을 비로소 발견하거나 깨달았을 때 쓰여 감탄이나 납득의 뉘앙스를 드러냅니다. 앞 절에서 '我以为……'(~인 줄 알았다) 등으로 착각이나 의문을 제시하고, 뒤 절에서 '原来……啊!'(알고 보니 ~였구나!)로 진상을 밝히는 구문이 매우 대표적입니다. ※이 '진상 규명/깨달음'의 의미로는 '本来'로 대체할 수 없습니다. 한국어의 '알고 보니 ~였구나', '알고 보니까 ~이다'에 해당합니다.",
+    "formation": "(오인·추측절 ，) (주어 + ) 原来 + 진실의 절 (+ 어기조사 啊 / 呢)",
+    "examples": [
+      {
+        "translation": "누가 방을 청소해 주었나 했더니, 알고 보니 너였구나!"
+      }
+    ]
   },
   "zh_本来就VA_233": {
-    "title": "本来就 V/A ((see 4.03.2))",
-    "shortExplanation": "(see 4.03.2)",
-    "longExplanation": "(see 4.03.2). Pinyin: běnlái jiù V/A",
-    "formation": "běnlái jiù V/A"
+    "title": "本来就 + 동사 / 형용사 (부사: 원래부터 ~하다, 마땅히 ~하다)",
+    "shortExplanation": "'本来就'가 동사나 형용사 앞에 쓰여 본래부터 상태나 성질이 그러했거나, 마땅히 그래야 하는 일임을 강조합니다('원래부터 ~하다', '당연히 ~하다').",
+    "longExplanation": "'本来就'(běnlái jiù)는 동사나 형용사 앞에 결합하여 어떤 사실이나 상황이 애초부터 그러했거나, 상식이나 도리상 너무나도 당연한 일임을 강조하는 구문입니다. 일의 원인을 설명하거나 상대방의 불평에 대해 '원래 그런 것이다'라고 반박할 때 자주 사용됩니다(예: 这道题本来就不难 - 이 문제는 원래 어렵지 않다; 他本来就该去 - 그는 원래 당연히 가야 한다). 한국어의 '원래부터 ~하다', '애당초 ~하다', '마땅히 ~해야 한다'에 해당합니다.",
+    "formation": "주어 + 本来就 + 동사 / 형용사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "-"
+      }
+    ]
   },
   "zh_并不并没VA_234": {
-    "title": "并不/并没 V/A ((emphasize the negative))",
-    "shortExplanation": "(emphasize the negative)",
-    "longExplanation": "(emphasize the negative). Pinyin: bìngbù/ bìng méi V/A",
-    "formation": "bìngbù/ bìng méi V/A"
+    "title": "并不 / 并没 + 동사 / 형용사 (부정 강조: 결코 ~하지 않다, 전혀 ~하지 않다)",
+    "shortExplanation": "부사 '并'을 부정사 '不'나 '没' 앞에 두어 상대방의 선입견이나 잘못된 예상을 반박하며 부정의 어기를 강하게 나타냅니다('결코 ~하지 않다', '전혀 ~가 아니다').",
+    "longExplanation": "'并不 / 并没'(bìng bù / bìng méi)은 부정의 어기를 강하게 두드러지게 하는 표현입니다. 다른 사람의 오해, 추측, 혹은 일반적인 통념과는 달리 '사실은 전혀 그렇지 않다'는 뉘앙스를 담아 반박할 때 쓰입니다. '并不'는 성질, 상태, 심리 동사, 현재나 미래의 의지를 부정할 때 쓰이고, '并没'는 과거 동작의 미발생이나 사실 유무를 부정할 때 쓰입니다. 문맥상 '但是'(그러나)나 '其实'(사실은)과 자주 호응합니다. 한국어의 '결코 ~하지 않다', '전혀 ~가 아니다', '별로 ~하지 않다'에 해당합니다.",
+    "formation": "주어 + (但是 / 其实 + ) 并不 / 并没 + 동사 / 형용사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "모두들 밖이 춥다고 하지만, 저는 전혀 춥다고 느끼지 않습니다."
+      }
+    ]
   },
   "zh_按照N_235": {
-    "title": "按照 N (according to N)",
-    "shortExplanation": "according to N",
-    "longExplanation": "according to N. Pinyin: ànzhào N",
-    "formation": "ànzhào N"
+    "title": "按照 + 명사 (개사: ~에 따라, ~대로, ~에 의거하여)",
+    "shortExplanation": "개사(전치사) '按照'가 명사 앞에 놓여 행동이나 업무의 준거가 되는 기준, 계획, 규칙('~에 따라', '~대로')을 제시합니다.",
+    "longExplanation": "'按照'(ànzhào)는 행동을 취하거나 일을 진행할 때 따라야 할 방침, 표준, 계획, 규칙 등을 이끄는 개사입니다. 뒤에는 计划(계획), 规定(규정), 要求(요구), 习惯(습관) 등의 명사가 오며, 이미 정해진 지침이나 양식에서 벗어나지 않고 충실히 실행함을 뜻합니다. 논리적 추론이나 판단의 근거를 주로 나타내는 '根据'에 비해, '按照'는 정해진 규격대로 '이행함'을 강조합니다. 한국어의 '~에 따라', '~대로', '~에 의거하여'에 해당합니다.",
+    "formation": "주어 + 按照 + 명사 / 명사구 + 동사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "우리는 여전히 원래의 계획대로 진행합니다."
+      }
+    ]
   },
   "zh_甚至VA_236": {
-    "title": "甚至 V/A (even V/A)",
-    "shortExplanation": "even V/A",
-    "longExplanation": "even V/A. Pinyin: shènzhì V/A",
-    "formation": "shènzhì V/A"
+    "title": "甚至 + 동사 / 형용사 (부사·접속사: 심지어 ~하기까지 하다, ~조차 하다)",
+    "shortExplanation": "'甚至'가 동사나 형용사 앞에 쓰여 상식이나 예상을 뛰어넘는 극단적인 사례를 제시함으로써 상황의 심각성이나 열의를 강조합니다('심지어 ~하기까지 하다').",
+    "longExplanation": "'甚至'(shènzhì)는 점층(점진) 관계를 나타내는 접속사이자 부사입니다. 앞선 진술보다 한 걸음 더 나아간 의외의 사실이나 극단적인 예시를 들어, 정도가 극에 달했음을 나타냅니다. 극단적 사태를 강조하는 '连……都/也' 구문과 함께 쓰이기도 합니다. 한국어의 '심지어 ~하기까지 하다', '~조차 하다', '심한 경우에는 ~하다'에 해당합니다.",
+    "formation": "절1 ，(주어 + ) 甚至 + 동사 / 형용사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "그는 일을 매우 열심히 해서, 심지어 밥 먹는 것조차 잊어버렸습니다."
+      }
+    ]
   },
   "zh_肯定VA_237": {
-    "title": "肯定 V/A (certainly V/A)",
-    "shortExplanation": "certainly V/A",
-    "longExplanation": "certainly V/A. Pinyin: kěndìng V/A",
-    "formation": "kěndìng V/A"
+    "title": "肯定 + 동사 / 형용사 (부사: 틀림없이 ~하다, 분명히 ~하다)",
+    "shortExplanation": "부사 '肯定'이 동사나 형용사 앞에 놓여 말하는 사람의 확신에 찬 판단을 나타냅니다('틀림없이 ~하다', '분명히 ~하다').",
+    "longExplanation": "'肯定'(kěndìng)이 부사로 술어(동사나 형용사) 앞에 쓰이면 어떠한 상황이나 결과에 대해 한 치의 의심도 없이 확신하고 있음을 나타냅니다. '一定'과 유사하지만 주관적인 확신과 단정의 어감이 한층 두드러집니다. 한국어의 '틀림없이 ~하다', '분명히 ~하다', '확실히 ~이다'에 해당합니다.",
+    "formation": "주어 + 肯定 + 동사 / 형용사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "운동은 신체 건강에 분명히 도움이 됩니다."
+      }
+    ]
   },
   "zh_肯定_238": {
-    "title": "肯定 (certain)",
-    "shortExplanation": "certain",
-    "longExplanation": "certain. Pinyin: kěndìng",
-    "formation": "kěndìng"
+    "title": "肯定 (동사: 확신하다, 단언하다)",
+    "shortExplanation": "동사 '肯定'은 어떠한 사실이나 결과에 대해 조금의 의심도 없이 굳게 믿고 단언함을 나타냅니다('확신하다', '단언하다').",
+    "longExplanation": "'肯定'(kěndìng)이 동사로 쓰이면 특정 상황에 대해 절대적인 확신을 가지고 인정하거나 단정 짓는 심리 작용을 가리킵니다. 흔히 조동사 '能'이나 '可以'와 결합하여 '能肯定'(확신할 수 있다)의 형태로 쓰이며, 뒤에 확신의 대상이 되는 절을 목적어로 취합니다. 부사 용법과 달리 동사 술어로서 역할을 합니다. 한국어의 '확신하다', '단언하다', '장담하다'에 해당합니다.",
+    "formation": "주어 + (能 / 可以 + ) 肯定 + ，+ 확신하는 내용의 절",
+    "examples": [
+      {
+        "translation": "장위안이 반드시 올 것이라고 저는 확신할 수 있습니다."
+      }
+    ]
   },
   "zh_肯定的_239": {
-    "title": "肯定的 (affirmative, positive)",
-    "shortExplanation": "affirmative, positive",
-    "longExplanation": "affirmative, positive. Pinyin: kěndìng de",
-    "formation": "kěndìng de"
+    "title": "肯定的 (형용사: 긍정적이다, 승낙하다)",
+    "shortExplanation": "'肯定的'은 형용사(또는 的 구조)로서 대답이나 태도가 찬성, 승낙, 긍정의 성격을 띠고 있음('긍정적이다', '동의하다')을 나타냅니다.",
+    "longExplanation": "'肯定的'(kěndìng de)은 찬성하거나 수긍하는 성질을 나타내는 형용사적 용법입니다('否定的'의 반대). 흔히 '是肯定的'의 형태로 쓰여 답변, 태도, 결정 등이 '예'라는 승낙을 의미하거나 동의하는 방향임을 나타냅니다. 한국어의 '긍정적이다', '찬성하는 쪽이다', '수락하다'에 해당합니다.",
+    "formation": "주어 (대답 / 태도 / 결과) + 是肯定的",
+    "examples": [
+      {
+        "translation": "그의 대답은 긍정적이었습니다(즉, 찬성 또는 승낙이었습니다)."
+      }
+    ]
   },
   "zh_再说_240": {
-    "title": "再说 (talk about it / deal with it until a later time)",
-    "shortExplanation": "talk about it / deal with it until a later time",
-    "longExplanation": "talk about it / deal with it until a later time. Pinyin: zàishuō",
-    "formation": "zàishuō"
+    "title": "……再说 (동사구: 나중에 생각하자, ~하고 나서 다시 얘기하자)",
+    "shortExplanation": "'再说'를 문장 끝이나 특정 시점 조건 뒤에 두어 즉각적인 결정이나 논의를 미루고 나중에 처리하자고 할 때 씁니다('나중에 다시 얘기하자', '그때 가서 보자').",
+    "longExplanation": "'再说'(zàishuō)는 구어에서 당면한 사안에 대한 결정이나 실행을 일단 뒤로 보류할 때 쓰이는 표현입니다. 흔히 앞서 특정한 시기나 조건(예: 考完 - 시험이 끝난 뒤, 明天 - 내일)을 제시하고, 어기조사 '吧'와 결합하여 '그 일이 끝나고 난 뒤에 다시 의논하자'는 뜻을 전합니다. 한국어의 '~하고 나서 나중에 생각하자', '그때 가서 다시 얘기하자', '일단 미루어 두자'에 해당합니다.",
+    "formation": "(이유절 ，) 시간 조건 / 완료 행동 + 再说 (+ 吧)",
+    "examples": [
+      {
+        "translation": "지금은 공부하느라 바쁘니, 시험 끝나고 나서 다시 이야기하자."
+      }
+    ]
   },
   "zh_再说_241": {
-    "title": "再说 (besides)",
-    "shortExplanation": "besides",
-    "longExplanation": "besides. Pinyin: zàishuō",
-    "formation": "zàishuō"
+    "title": "再说 (접속사: 게다가, 더군다나, 게다가 또)",
+    "shortExplanation": "접속사 '再说'이 뒤 절의 처음에 놓여 앞선 내용에 더해 또 다른 이유나 상황을 덧붙여 설명할 때 씁니다('게다가', '더군다나', '거기다가').",
+    "longExplanation": "'再说'(zàishuō)은 뒤 절의 앞에 쓰여 이미 제시된 이유나 사실에 보충하여 또 다른 유력한 근거나 배경을 덧붙이는 접속사입니다. 비슷한 뜻을 가진 '况且'나 '而且'에 비해 일상 구어에서 매우 친근하게 애용됩니다. 한국어의 '게다가', '더군다나', '거기다가'에 해당합니다.",
+    "formation": "절1 ，再说 + ，+ 보충 이유의 절",
+    "examples": [
+      {
+        "translation": "졸업 후에 다들 너무 바쁘고, 게다가 많은 학우들이 같은 도시에 살지 않습니다."
+      }
+    ]
   },
   "zh_实际的_242": {
-    "title": "实际的 (real)",
-    "shortExplanation": "real",
-    "longExplanation": "real. Pinyin: shíjì de",
-    "formation": "shíjì de"
+    "title": "实际的 + 명사 (관형어: 실제의 ~, 현실의 ~)",
+    "shortExplanation": "'实际的'가 명사 앞에 관형어로 쓰여 상상, 이론, 광고와 대조되는 현실에 존재하는 객관적 실체('실제의 ~', '현실의 ~')를 나타냅니다.",
+    "longExplanation": "'实际'(shíjì)는 객관적인 현실에 부합하거나 실재함을 뜻하는 형용사입니다. 구조조사 '的'와 결합하여 '实际的'(관형어) 형태로 명사(东西, 情况, 问题 등) 앞에 놓여, 광고나 생각 속의 이미지와 대비되는 '실제적인 것'임을 부각합니다. 한국어의 '실제의 ~', '실물인 ~', '현실의 ~'에 해당합니다.",
+    "formation": "实际的 + 명사 (+ 서술어)",
+    "examples": [
+      {
+        "translation": "실제 물건은 광고에 나온 것과 다릅니다."
+      }
+    ]
   },
   "zh_实际_243": {
-    "title": "实际 (reality)",
-    "shortExplanation": "reality",
-    "longExplanation": "reality. Pinyin: shíjì",
-    "formation": "shíjì"
+    "title": "实际 (명사/형용사: 실제, 현실, 실질적)",
+    "shortExplanation": "명사로서 객관적인 사실이나 현실을 가리키며, 형용사로서 실제적이거나 실질적인 상황을 나타냅니다('실제', '현실', '실질적').",
+    "longExplanation": "'实际'(shíjì)는 명사와 형용사로 쓰입니다. (1) 명사로 쓰일 때는 이론이나 상상에 대비되는 객관적인 현실이나 실정을 가리킵니다(예: '脱离实际' 현실에서 벗어나다, '跟实际不一样' 실제와 다르다). (2) 형용사로 쓰일 때는 공허하지 않고 구체적이며 현실에 부합함을 나타냅니다(예: '实际行动' 실제적인 행동, '实际问题' 실질적인 문제). 한국어의 '실제', '현실', '실질적'에 해당합니다.",
+    "formation": "주어 + 跟 / 与 + 实际 + 不一样 / 符合",
+    "examples": [
+      {
+        "translation": "광고는 실제와 다릅니다."
+      }
+    ]
   },
   "zh_实际上_244": {
-    "title": "实际上 (in reality)",
-    "shortExplanation": "in reality",
-    "longExplanation": "in reality. Pinyin: shíjìshàng",
-    "formation": "shíjìshàng"
+    "title": "实际上 (접속부사: 사실상, 실제로는, 실은)",
+    "shortExplanation": "문장 앞이나 주어 뒤에 쓰여 겉으로 드러난 모습이나 예상과 달리, 실제 상황이나 진실이 어떠한지를 밝힐 때 씁니다('실제로는', '사실상', '실은').",
+    "longExplanation": "'实际上'(shíjìshang)은 문장 맨 앞이나 주어 뒤에 놓여 접속부사처럼 기능합니다. 겉보기 상태나 세간의 평판, 이전의 추측과는 달리 실제 객관적인 상황이나 본질이 어떠한지를 밝혀줄 때 씁니다. '其实'(사실은)과 뜻이 매우 비슷하지만 '实际上'가 좀 더 객관적이고 논리적인 어감을 띱니다. 한국어의 '실제로는', '사실상', '실은'에 해당합니다.",
+    "formation": "절 1, 实际上 + 절 2 (또는: 주어 + 实际上 + 술어)",
+    "examples": [
+      {
+        "translation": "광고는 그럴듯하게 말하지만, 실제로는 꼭 좋다고 할 수는 없습니다."
+      }
+    ]
   },
   "zh_对来说_245": {
-    "title": "对……来说 (for, as for)",
-    "shortExplanation": "for, as for",
-    "longExplanation": "for, as for. Pinyin: duì…… láishuō",
-    "formation": "duì…… láishuō"
+    "title": "对……来说 (개사구: ~에게 있어서, ~의 입장에서 보면)",
+    "shortExplanation": "문두나 주어 앞에 두어, 특정 인물의 입장이나 관점에서 사안을 바라볼 때 씁니다('~에게 있어서', '~의 입장에서 보면').",
+    "longExplanation": "'对 + 대상 + 来说'(duì... láishuō)은 특정 인물이나 집단의 관점, 입장, 또는 기준을 제시하고 그 대상에게 해당 사건이나 조건이 어떤 의미나 가치, 난이도를 가지는지 설명하는 대표적인 개사 틀 구문입니다. 문장 맨 앞에 놓여 문장 전체를 수식하는 경우가 많으며, 서면어에서는 '对……而言'으로 대체되기도 합니다. 한국어의 '~에게 있어서는', '~의 입장에서 보면'에 해당합니다.",
+    "formation": "对 + 명사 / 대명사 + 来说, 주어 + 술어",
+    "examples": [
+      {
+        "translation": "저에게 있어서는 배움의 기회가 더 중요합니다."
+      }
+    ]
   },
   "zh_特别_246": {
-    "title": "特别 (very much, extremely)",
-    "shortExplanation": "very much, extremely",
-    "longExplanation": "very much, extremely. Pinyin: tèbié",
-    "formation": "tèbié"
+    "title": "特别 + 형용사 / 심리동사 (정도부사: 특히, 매우, 각별히)",
+    "shortExplanation": "형용사나 심리동사 앞에 놓여, 상태나 감정의 정도가 보통의 수준을 훨씬 뛰어넘음을 강조합니다('특히 ~하다', '매우 ~하다').",
+    "longExplanation": "'特别'(tèbié)이 정도부사로 쓰일 때는 형용사(예: 好, 漂亮, 像)나 심리동사(예: 喜欢, 感谢, 关心) 바로 앞에 위치합니다. 일반적인 수준이나 기준치를 확연히 넘어서 유독 두드러지거나 남다름을 강조합니다. '非常'(매우)이나 '格外'(유달리)와 유사하게 쓰입니다. 한국어의 '특히 ~하다', '유난히 ~하다', '대단히 ~하다'에 해당합니다.",
+    "formation": "주어 + 特别 + 형용사 / 심리동사",
+    "examples": [
+      {
+        "translation": "따님이 어르신을 특히 많이 닮았네요."
+      }
+    ]
   },
   "zh_特别尤其_247": {
-    "title": "特别/尤其 (especially, particularly)",
-    "shortExplanation": "especially, particularly",
-    "longExplanation": "especially, particularly. Pinyin: tèbié/ yóuqí",
-    "formation": "tèbié/ yóuqí"
+    "title": "特别 / 尤其 (접속부사: 특히, 유독, 그중에서도)",
+    "shortExplanation": "전체 범위나 여러 대상 중에서 특정 항목이나 대표적인 예를 유독 돋보이게 지목할 때 '特别(是)' 또는 '尤其(是)'를 씁니다('특히 ~', '유독 ~', '그중에서도 ~').",
+    "longExplanation": "'特别'와 '尤其'는 뒷절 쉼표 뒤에 놓여 종종 '特别是', '尤其是' 형태로 쓰입니다. 앞 절에서 포괄적인 상황이나 전체 대상을 언급한 다음, 그중에서 가장 두드러지거나 대표적인 부분 하나를 콕 집어 부각시킬 때 활용합니다. '尤其'가 '特别'보다 조금 더 격식 있고 서면어다운 느낌을 줍니다. 한국어의 '특히 ~는', '유독 ~', '그중에서도 특히 ~'에 해당합니다.",
+    "formation": "총괄절, 特别是 / 尤其是 + 명사 / 강조 대상",
+    "examples": [
+      {
+        "translation": "따님이 어르신을 정말 꼭 닮았네요, 특히 눈이 붕어빵이에요."
+      }
+    ]
   },
   "zh_特别的_248": {
-    "title": "特别的 (special)",
-    "shortExplanation": "special",
-    "longExplanation": "special. Pinyin: tèbié de",
-    "formation": "tèbié de"
+    "title": "特别的 + 명사 (형용사 관형어: 특별한 ~, 특수한 ~)",
+    "shortExplanation": "형용사 '特别' 뒤에 구조조사 '的'가 붙어 명사를 수식하며, 일반적이거나 평범한 것과는 구별되는 고유하고 특이한 성질을 나타냅니다('특별한 ~', '남다른 ~').",
+    "longExplanation": "'特别'(tèbié)은 형용사로서 '보통과 다르다', '독특하다', '특수하다'라는 뜻을 지닙니다. 구조조사 '的'와 결합하여 '特别的 + 명사'의 관형어 구조를 형성하면, 해당 명사가 지닌 속성이 평범하지 않고 유별나거나 중요한 의미를 지님을 밝힙니다(예: '特别的要求' 특별한 요구, '特别的日子' 특별한 날, '特别的礼物' 특별한 선물). 한국어의 '특별한 ~', '남다른 ~'에 해당합니다.",
+    "formation": "特别的 + 명사",
+    "examples": [
+      {
+        "translation": "저에게 한 가지 특별한 요구 사항이 있습니다."
+      }
+    ]
   },
   "zh_竟然VA_249": {
-    "title": "竟然 V/A ((expressing surprise))",
-    "shortExplanation": "(expressing surprise)",
-    "longExplanation": "(expressing surprise). Pinyin: jìngrán V/A",
-    "formation": "jìngrán V/A"
+    "title": "竟然 + 동사 / 형용사 (어기부사: 뜻밖에도 ~, 놀랍게도 ~, 설마 ~하다니)",
+    "shortExplanation": "동사나 형용사 앞에 놓여, 어떤 일이나 상태가 화자의 상식이나 예상을 크게 벗어나 '뜻밖에도 ~하다', '설마 ~할 줄이야'라는 놀라움과 의외성을 나타냅니다.",
+    "longExplanation": "'竟然'(jìngrán)은 강한 의외성과 놀라움을 표현하는 어기부사입니다. 술어(동사나 형용사) 바로 앞에 놓여, 사태의 결과가 화자의 상식적인 기대나 예측을 빗나가 도저히 상상하지 못했던 방식으로 일어났음을 강조합니다(예: '竟然不知道' 설마 모르다니, '竟然考了第一名' 뜻밖에도 1등을 하다니). '居然'과 의미가 매우 유사합니다. 한국어의 '뜻밖에도 ~하다', '설마 ~하다니', '놀랍게도 ~하다'에 해당합니다.",
+    "formation": "주어 + 竟然 + 동사 / 형용사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "이 노래 정말 좋아서 요즘 엄청 유행하는데, 네가 설마 안 들어봤다고?"
+      }
+    ]
   },
   "zh_倍_250": {
-    "title": "# 倍 (# times)",
-    "shortExplanation": "# times",
-    "longExplanation": "# times. Pinyin: # bèi",
-    "formation": "# bèi"
+    "title": "수사 + 倍 (양사: ~배)",
+    "shortExplanation": "수사 뒤에 양사 '倍'를 결합하여 특정 수량이 기준량의 몇 배에 달하는지 배수를 나타냅니다('~배').",
+    "longExplanation": "'倍'(bèi)는 배수를 나타내는 전용 양사입니다. (1) 기준량과의 배수 비교를 나타낼 때: 'A 是 B 的 X 倍'(A는 B의 X배이다). (2) 수량의 증가 폭을 나타낼 때: '增加了一倍'(한 배 늘어났다 = 두 배가 되었다). 주의할 점은 중국어에서 '倍'는 수량이 곱절로 늘어나거나 많아질 때만 쓰이며, 감소할 때는 쓸 수 없습니다(감소할 때는 분수나 백분율 사용). 한국어의 '~배'에 해당합니다.",
+    "formation": "수사 + 倍 (예: 대상 1 + 是 + 대상 2 + 的 + 수사 + 倍)",
+    "examples": [
+      {
+        "translation": "2의 5배는 10입니다."
+      }
+    ]
   },
   "zh_值得V_251": {
-    "title": "值得 V (is worth)",
-    "shortExplanation": "is worth",
-    "longExplanation": "is worth. Pinyin: zhíde V",
-    "formation": "zhíde V"
+    "title": "值得 + 동사 (조동사적 동사: ~할 가치가 있다, ~해 볼 만하다)",
+    "shortExplanation": "동사(주로 2음절 동사)를 연결하여, 그 행동을 실행할 만한 충분한 가치나 의의가 있음을 나타냅니다('~할 만한 가치가 있다', '~해 볼 만하다').",
+    "longExplanation": "'值得'(zhíde)는 어떤 행위나 대상의 가치를 긍정적으로 평가하는 동사입니다. 뒤에 주로 2음절 동작 동사(예: 考虑 고려하다, 学习 배우다, 参观 참관하다, 信任 신뢰하다)를 취하여, 그 일에 시간이나 돈, 노력을 들일 만한 충분한 대가와 의의가 있음을 나타냅니다. 부정형은 '不值得'(~할 가치가 없다)입니다. 한국어의 '~할 만한 가치가 있다', '~할 가치가 충분하다'에 해당합니다.",
+    "formation": "주어 + (很 / 都) 值得 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "이것 좀 보세요, 가격 면에서 보나 품질 면에서 보나 모두 충분히 고려해 볼 만한 가치가 있습니다."
+      }
+    ]
   },
   "zh_值值得_252": {
-    "title": "值/值得 (is worth it)",
-    "shortExplanation": "is worth it",
-    "longExplanation": "is worth it. Pinyin: zhí/ zhíde",
-    "formation": "zhí/ zhíde"
+    "title": "值 / 值得 (서술어 용법: 가치가 있다, 수지가 맞다, 아깝지 않다)",
+    "shortExplanation": "단독으로 문장 끝 술어로 사용하여, 노력이나 희생을 치를 만큼 수지타산이 맞거나 가치가 있는지를 판정합니다(부정형 '不值 / 不值得': '가치가 없다', '손해다', '아깝다').",
+    "longExplanation": "'值'(zhí)과 '值得'(zhíde)는 뒤에 다른 동사 없이 단독으로 술어가 될 수 있습니다. 이때는 들인 노력이나 감정, 대가가 결과물과 비교해 수지가 맞는지, 손해는 아닌지를 주관적으로 판단하는 의미를 갖습니다. 특히 구어에서는 부정형인 '不值'나 '不值得'가 매우 자주 쓰이며, 사소한 일에 마음을 쓰거나 대가를 치르는 것이 '아깝다', '손해다', '그럴 가치가 없다'는 어감을 나타냅니다. 한국어의 '수지맞다', '가치가 있다' 또는 '(부정으로) 그럴 가치가 없다', '아깝다', '손해다'에 해당합니다.",
+    "formation": "주어 + (很) 值 / 值得 (또는: 주어 + 不值 / 不值得)",
+    "examples": [
+      {
+        "translation": "늘 사소한 일로 화내지 마세요, 그럴 가치도 없어요(손해예요)."
+      }
+    ]
   },
   "zh_值_253": {
-    "title": "值 $ (is worth $)",
-    "shortExplanation": "is worth $",
-    "longExplanation": "is worth $. Pinyin: zhí $",
-    "formation": "zhí $"
+    "title": "值 + 금액 (동사: ~의 가치/값이 나가다, ~원 상당이다)",
+    "shortExplanation": "타동사 '值' 뒤에 구체적인 금액을 목적어로 취하여, 해당 물품이 금전적으로 어느 정도의 가격이나 가치에 달하는지를 나타냅니다('~의 값이 나가다', '~원 상당이다').",
+    "longExplanation": "'值'(zhí)은 금전적 가치를 나타내는 타동사로 쓰입니다. 바로 뒤에 금액을 나타내는 수량 표현(예: 五十块 50위안, 一千块 1000위안)을 취하여, 특정 물건이 지닌 정당한 시장 가격이나 금전적 가치가 얼마인지를 표시합니다. 단순히 판매가를 뜻하는 '卖'(얼마에 팔다)와 달리, '그 물건 자체에 그만한 가치가 있다'는 점에 방점이 찍힙니다. 한국어의 '~의 값이 나가다', '~원 상당이다'에 해당합니다.",
+    "formation": "명사(물품) + 值 + 금액(수사 + 화폐 양사)",
+    "examples": [
+      {
+        "translation": "이 손목시계는 50위안의 가치가 나갑니다."
+      }
+    ]
   },
   "zh_其中_254": {
-    "title": "其中 (among them)",
-    "shortExplanation": "among them",
-    "longExplanation": "among them. Pinyin: qízhōng",
-    "formation": "qízhōng"
+    "title": "其中 (방위명사/대명사: 그중, 그 가운데)",
+    "shortExplanation": "앞서 제시된 전체 범위나 집합의 내부 및 그에 속한 일부분을 가리킵니다('그중', '그 가운데').",
+    "longExplanation": "'其中'(qízhōng)은 대명사적 기능을 겸하는 방위명사입니다. 앞 문장이나 앞 구절에서 이미 거론된 복수의 대상, 집합, 혹은 전체 상황을 가리키며 '그 범위의 안' 혹은 '그 가운데 속한 일부분'을 뜻합니다. 단독으로 뒷절의 주어 자리에 쓰이거나 '其中的 + 명사'(그중의 ~) 형태로 명사를 수식하는 관형어로도 널리 활용됩니다. 한국어의 '그중', '그 가운데'에 해당합니다.",
+    "formation": "전체 범위, (주어 + ) 其中 (+ 的 + 명사) + 술어",
+    "examples": [
+      {
+        "translation": "우리는 책을 읽을 줄 알아야 할 뿐만 아니라, 그중에서 좋은 책을 골라 읽을 줄도 알아야 합니다."
+      }
+    ]
   },
   "zh_在SITUATION下_255": {
-    "title": "(在) SITUATION 下 (under SITUATION)",
-    "shortExplanation": "under SITUATION",
-    "longExplanation": "under SITUATION. Pinyin: ( zài) SITUATION xià",
-    "formation": "( zài) SITUATION xià"
+    "title": "(在)……下 (개사구: ~한 상황/조건 하에서, ~의 도움 아래)",
+    "shortExplanation": "특정 동작이나 사태가 일어나는 배경, 조건, 상황(또는 타인의 지도나 도움)을 나타냅니다('~한 상황 하에서', '~의 상황 속에서').",
+    "longExplanation": "'(在)……下'((zài)... xià)는 동작이나 변화가 일어나는 전제 조건이나 배경을 제시하는 대표적인 개사 틀 구문입니다. (1) 객관적인 상황이나 환경을 나타낼 때: '情况'(상황), '条件'(조건), '背景'(배경) 등의 명사가 결합하여 '在一般情况下'(일반적인 상황 하에서는), '在这种条件下'(이러한 조건 속에서)처럼 쓰입니다. (2) 사람의 도움, 지도, 영향력을 나타낼 때: '在老师的帮助下'(선생님의 도움 아래), '在大家的努力下'(모두의 노력 끝에)처럼 쓰입니다. 개사 '在'는 생략이 가능합니다. 한국어의 '~한 상황에서', '~한 조건 하에', '~의 도움 아래'에 해당합니다.",
+    "formation": "(在 + ) 상황 / 조건을 나타내는 명사 + 下, 주어 + 술어",
+    "examples": [
+      {
+        "translation": "일반적인 상황에서는, 돈을 많이 쓰면 쓸수록 사는 물건도 그만큼 좋아지기 마련입니다."
+      }
+    ]
   },
   "zh_估计可能CLAUSE_256": {
-    "title": "估计/可能 CLAUSE (perhaps CLAUSE)",
-    "shortExplanation": "perhaps CLAUSE",
-    "longExplanation": "perhaps CLAUSE. Pinyin: gūjì/ kěnéng CLAUSE",
-    "formation": "gūjì/ kěnéng CLAUSE"
+    "title": "估计 / 可能 + 절 (동사/부사: 짐작건대 아마 ~일 것이다, 어쩌면 ~일지도 모른다)",
+    "shortExplanation": "절의 맨 앞에 두어, 화자의 주관적인 추측이나 판단을 문장 전체에 걸쳐 제시합니다('짐작하건대 아마 ~일 것이다', '어쩌면 ~일지도 모른다').",
+    "longExplanation": "'估计'(gūjì)와 '可能'(kěnéng)이 절 전체를 이끌며 추측의 어기를 나타내는 용법입니다. (1) '估计'는 본래 '추측하다, 어림잡다'라는 뜻의 동사로, 객관적인 단서나 경험에 근거하여 '짐작건대 ~일 것이다'라는 판단을 전개합니다. (2) '可能'은 '아마도, 어쩌면'이라는 개연성을 나타내는 부사로 쓰입니다. 문장 앞에 이들을 두면 단정적인 어조를 누그러뜨리고 신중하게 자신의 생각을 표출할 수 있습니다. 한국어의 '짐작하건대 아마 ~일 것이다', '어쩌면 ~일지도 모른다'에 해당합니다.",
+    "formation": "절 1, 估计 / 可能 + 절 2 (추측절)",
+    "examples": [
+      {
+        "translation": "샤오왕에게 가서 물어보셨나요? 짐작건대 그 친구라면 아마 방법이 있을 거예요."
+      }
+    ]
   },
   "zh_估计可能V_257": {
-    "title": "估计/可能 V (perhaps V)",
-    "shortExplanation": "perhaps V",
-    "longExplanation": "perhaps V. Pinyin: gūjì/ kěnéng V",
-    "formation": "gūjì/ kěnéng V"
+    "title": "估计 / 可能 + 동사 (부사어: 아마 ~할 것이다, 어쩌면 ~인 모양이다)",
+    "shortExplanation": "동사 술어 바로 앞에 부사어로 두어, 해당 동작이나 상태 또는 그 원인을 추측합니다('아마 ~일 것이다', '어쩌면 ~할 것 같다').",
+    "longExplanation": "'估计'(gūjì)와 '可能'(kěnéng)이 동사(특히 계사 '是' 등) 바로 앞에 놓여 부사어로서 기능하는 용법입니다. 특정 동작의 실행 여부나 상황의 원인, 배경에 대해 100% 단정 짓지 않고 '아마 ~일 것이다', '어쩌면 ~인 것 같다'며 조심스럽게 추측할 때 쓰입니다(예: '估计是天气太干' 아마 날씨가 너무 건조해서인 것 같다). 한국어의 '아마 ~일 것이다', '어쩌면 ~인 모양이다'에 해당합니다.",
+    "formation": "주어 + 估计 / 可能 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "저는 아직 북방의 기후에 익숙하지 않은데, 아마 날씨가 너무 건조해서인 것 같습니다."
+      }
+    ]
   },
   "zh_可能的N_258": {
-    "title": "可能的 N (probable)",
-    "shortExplanation": "probable",
-    "longExplanation": "probable. Pinyin: kěnéng de N",
-    "formation": "kěnéng de N"
+    "title": "可能的 + 명사 (형용사 관형어: 가능한 ~, 가능성 있는 ~)",
+    "shortExplanation": "형용사 '可能' 뒤에 구조조사 '的'가 붙어 명사를 수식하며, 실현될 가능성이나 개연성이 있음을 나타냅니다('가능한 ~', '있을 법한 ~').",
+    "longExplanation": "'可能'(kěnéng)은 부사나 조동사, 명사뿐만 아니라 형용사로도 쓰입니다. 구조조사 '的'와 결합하여 '可能的 + 명사'의 관형어 형태를 취하면, 어떤 상황이나 원인, 결과 등이 일어날 확률이나 개연성이 존재함을 수식합니다. 특히 '最可能的原因'(가장 유력한 원인), '可能的结果'(가능한 결과)처럼 '最'(가장)나 '极'(지극히) 등의 부사와 함께 자주 쓰입니다. 한국어의 '가능한 ~', '있음 직한 ~', '유력한 ~'에 해당합니다.",
+    "formation": "(最 / 极 + ) 可能的 + 명사",
+    "examples": [
+      {
+        "translation": "그가 이렇게 며칠 동안 수업에 오지 않은 가장 유력한 원인은 바로 귀국했기 때문이다."
+      }
+    ]
   },
   "zh_来不及_259": {
-    "title": "来不及 (be too late)",
-    "shortExplanation": "be too late",
-    "longExplanation": "be too late. Pinyin: láibují",
-    "formation": "láibují"
+    "title": "来不及 (가능보어 부정형: 시간이 맞지 않다, 늦다, 손쓸 틈이 없다)",
+    "shortExplanation": "시간이 촉박하거나 이미 때를 놓쳐서 어떤 동작을 할 여유가 없음을 나타냅니다('시간이 안 맞다', '늦다', '손쓸 수 없다').",
+    "longExplanation": "'来不及'(láibují)는 '来得及'(시간이 넉넉하여 댈 수 있다)의 부정 형태인 관용적 가능보어 구조입니다. 남은 시간이 부족하거나 상황이 이미 지나가 버려 어떤 행동을 취하기에 너무 늦었음을 나타냅니다. 단독으로 술어가 되어 '来不及了'(이미 늦었다) 형태로 자주 쓰이며, 동사 앞에 놓여 '~할 틈이 없다', '~하기에 늦다'를 의미하기도 합니다(예: '来不及说' 말할 겨를이 없다, '来不及吃早饭' 아침밥을 먹을 시간이 없다). 한국어의 '시간이 늦다', '때를 놓치다', '손쓸 틈이 없다'에 해당합니다.",
+    "formation": "(주어 + ) 来不及 (+ 동사 / 목적어) (+ 了)",
+    "examples": [
+      {
+        "translation": "건강에 문제가 생기고 나면, 후회해도 이미 늦습니다."
+      }
+    ]
   },
   "zh_VVO_260": {
-    "title": "V + V + O (VO for a bit (reduplication))",
-    "shortExplanation": "VO for a bit (reduplication)",
-    "longExplanation": "VO for a bit (reduplication). Pinyin: V + V + O",
-    "formation": "V + V + O"
+    "title": "동사 + 동사 + 목적어 (이합사 중첩 AAB 형식: 가볍게 좀 ~하다)",
+    "shortExplanation": "동사-목적어 결합 구조인 '이합사'의 동사 부분만 중첩하는 AAB 형식으로, 동작의 지속 시간이 짧거나 가볍게 해 봄을 나타냅니다('좀 ~하다', '한번 ~해 보다').",
+    "longExplanation": "중국어에서 '동사 + 목적어' 구조로 이루어진 이합사(예: 散步, 游泳, 睡觉, 跳舞, 聊天)는 동작을 중첩할 때 동사 성분만 두 번 겹쳐 쓰는 'AAB 형식'(동사 + 동사 + 목적어)을 취합니다(예: '散步' → '散散步', '游泳' → '游游泳', '睡觉' → '睡睡觉', '聊天' → '聊聊天'). 이는 동작의 시간이 길지 않거나, 시험 삼아 해 보거나, 부담 없이 여유롭게 진행됨을 의미하며 어기를 부드럽게 완화시켜 줍니다. 한국어의 '좀 ~하다', '잠깐 ~해 보다', '가볍게 ~하다'에 해당합니다.",
+    "formation": "동사 + 동사 + 목적어 (이합사 AAB 중첩)",
+    "examples": [
+      {
+        "translation": "우리 점심 먹고 나서 근처 공원에 산책이나 좀 하러 가자."
+      }
+    ]
   },
   "zh_V了VO_261": {
-    "title": "V + 了 + V + O (V’ed O for a bit (reduplication))",
-    "shortExplanation": "V’ed O for a bit (reduplication)",
-    "longExplanation": "V’ed O for a bit (reduplication). Pinyin: V + le + V + O",
-    "formation": "V + le + V + O"
+    "title": "동사 + 了 + 동사 + 목적어 (완료 동작의 중첩 형태: 조금 ~했다, 잠깐 ~해보았다)",
+    "shortExplanation": "중첩되는 동사 사이에 동태조사 '了'를 넣어, 과거에 짧은 시간 동안 가볍게 완료된 동작을 나타냅니다('좀 ~했다', '잠깐 ~을 해보았다').",
+    "longExplanation": "과거에 발생했거나 완료된 동작에 대해, 오랜 시간 각잡고 한 것이 아니라 '잠깐 동안 가볍게 해보았다'는 뉘앙스를 부여할 때 동사 사이에 완료의 동태조사 '了'를 결합하여 '동사 + 了 + 동사 + 목적어' 구조를 만듭니다(예: '睡了睡觉' 잠을 좀 잤다, '游了游泳' 수영을 좀 했다, '做了做作业' 숙제를 조금 했다). 주말에 보낸 일과나 일상적인 일들을 여유롭게 나열하여 설명할 때 자주 애용됩니다. 한국어의 '조금 ~했다', '잠깐 ~을 해보았다'에 해당합니다.",
+    "formation": "주어 + 동사 + 了 + 동사 + 목적어",
+    "examples": [
+      {
+        "translation": "일요일에 나는 낮잠도 좀 자고, 수영도 좀 하고, 숙제도 조금 했습니다."
+      }
+    ]
   },
   "zh_要是_262": {
-    "title": "要是 (if)",
-    "shortExplanation": "if",
-    "longExplanation": "if. Pinyin: yàoshi",
-    "formation": "yàoshi"
+    "title": "要是 (가정 접속사: 만약 ~라면, 혹시 ~한다면)",
+    "shortExplanation": "구어에서 가정 조건을 제시할 때 쓰는 접속사로, 종종 절 끝의 '的话'나 뒷절의 '就 / 那么'와 호응합니다('만약 ~라면', '~한다면').",
+    "longExplanation": "'要是'(yàoshi)는 가정 조건을 이끄는 대표적인 구어체 접속사로, '如果'나 '假如'보다 한층 더 자연스럽고 친근한 일상 회화 어감을 지닙니다. 앞 절의 첫머리에 놓여 가상의 상황이나 전제를 이끌며, 조건절 끝에 '的话'를 덧붙여 '要是……的话' 틀을 자주 형성합니다. 뒷절에서는 '就'(그러면)나 '那么'(그렇다면) 등과 호응하여 그 조건에 따른 결과나 태도를 나타냅니다. 한국어의 '만약 ~라면', '~거든', '~한다면'에 해당합니다.",
+    "formation": "要是 + 조건절 (+ 的话), (那么 / 就) + 결과절",
+    "examples": [
+      {
+        "translation": "만약 품질이 좋다면, 가격이 조금 비싸도 상관없습니다."
+      }
+    ]
   },
   "zh_既又也还_263": {
-    "title": "既..... 又/也/还…… (not only… but also…)",
-    "shortExplanation": "not only… but also…",
-    "longExplanation": "not only… but also…. Pinyin: jì..... yòu/ yě/ hái……",
-    "formation": "jì..... yòu/ yě/ hái……"
+    "title": "既…… 又 / 也 / 还…… (병렬 상관접속문: ~하기도 하고 또 ~하기도 하다, ~할 뿐만 아니라 ~하다)",
+    "shortExplanation": "동일한 주체에 대해 두 가지 성질, 작용 또는 동작이 동시에 병존함을 나타냅니다('~하기도 하고 또 ~하기도 하다', '~인 데다 ~하기까지 하다').",
+    "longExplanation": "'既……又 / 也 / 还……'(jì... yòu / yě / hái...)는 대등한 문법 성분(형용사, 동사구 등)을 연결하여, 한 대상에 두 가지 장점이나 특징, 작용이 동시에 갖추어져 있음을 나타내는 상관 병렬 구문입니다. 연결되는 두 항목은 대체로 성격의 방향성이 일치해야 합니다(둘 다 긍정적이거나 둘 다 부정적). 가장 대표적인 조합은 '既……又……'이며, '也'나 '还'를 사용하면 뒷부분에 부가적이거나 점층적인 의미가 살짝 실립니다. 한국어의 '~하기도 하고 또 ~하기도 하다', '~한 데다 ~하기까지 하다'에 해당합니다.",
+    "formation": "주어 + 既 + 술어 1, 又 / 也 / 还 + 술어 2",
+    "examples": [
+      {
+        "translation": "산책은 몸을 움직일 수도 있고, 또 다이어트도 할 수 있습니다."
+      }
+    ]
   },
   "zh_使OAV_264": {
-    "title": "使 O A/V (make O A/V)",
-    "shortExplanation": "make O A/V",
-    "longExplanation": "make O A/V. Pinyin: shǐ O A/V",
-    "formation": "shǐ O A/V"
+    "title": "使 + 목적어 + 형용사/동사 (겸어문·사동 구문: ~로 하여금 …하게 만들다)",
+    "shortExplanation": "사동사 '使'를 사용하여 원인이나 수단이 대상에 영향을 주어 특정 행동을 하게 하거나 상태를 변화시킴을 나타냅니다('~로 하여금 …하게 만들다', '~하게 하다').",
+    "longExplanation": "'使'(shǐ)는 대표적인 사동동사로서 겸어문을 형성합니다('使'의 목적어가 뒤에 오는 술어의 주어 역할을 겸함). '원인/수단 + 使 + 목적어 + 동사/형용사' 구조로 쓰여, 어떤 사물이나 조치가 특정 대상에게 작용하여 마음이나 상태, 행동의 변화를 초래함을 객관적으로 서술합니다. 구어에서 흔히 쓰는 '让'이나 '叫'에 비해 한층 더 논리적이고 격식 있는 서면어적 색채를 띱니다. 한국어의 '~로 하여금 …하게 하다', '…하게 만들다'에 해당합니다.",
+    "formation": "원인 / 수단 + 使 + 목적어 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "어떻게 해야 그녀가 나를 좋아하게 만들 수 있을까요?"
+      }
+    ]
   },
   "zh_只要就_265": {
-    "title": "只要……(就)…… (as long as… (then)…)",
-    "shortExplanation": "as long as… (then)…",
-    "longExplanation": "as long as… (then)…. Pinyin: zhǐyào……( jiù)……",
-    "formation": "zhǐyào……( jiù)……"
+    "title": "只要……(就)…… (충분조건 상관접속문: ~하기만 하면 (곧) …하다)",
+    "shortExplanation": "충분조건을 제시하는 틀 구문으로, 그 조건만 충족되면 필연적으로 뒤의 결과가 실현됨을 나타냅니다('~하기만 하면 …하다', '~만 하면 곧 …하다').",
+    "longExplanation": "'只要……(就)……'(zhǐyào... jiù...)는 충분조건 관계를 나타내는 대표적인 복문 상관 구문입니다. 앞 절에서 '只要'를 통해 충족해야 할 조건을 제시하고, 뒷 절에서는 부사 '就'와 호응하여 해당 조건만 갖추어지면 뒤따르는 결과나 목적이 무조건 실현될 수 있음을 강조합니다. 유일한 필요조건을 뜻하는 '只有……才……'(오직 ~해야만 비로소 …하다)와 달리, '이 조건만으로도 충분하다'는 점을 부각합니다. 한국어의 '~하기만 하면 (곧) …하다', '~기만 하면 언제든 …하다'에 해당합니다.",
+    "formation": "只要 + 충분조건절, (就) + 결과절",
+    "examples": [
+      {
+        "translation": "이번에 네가 준비만 잘하면, 분명 멋진 경기를 펼칠 수 있을 거야."
+      }
+    ]
   },
   "zh_可不是_266": {
-    "title": "可不是！ (No kidding!)",
-    "shortExplanation": "No kidding!",
-    "longExplanation": "No kidding!. Pinyin: kěbushì！",
-    "formation": "kěbushì！"
+    "title": "可不是！ (감탄사·구어 맞장구: 그렇고말고! / 내 말이 그 말이야!)",
+    "shortExplanation": "대화 중 독립적으로 쓰여 상대방의 의견이나 감상에 대해 깊은 공감과 적극적인 동의를 나타냅니다('그렇고말고!', '내 말이 바로 그 말이야!').",
+    "longExplanation": "'可不是！'(kěbushì!) 또는 '可不是吗！'는 일상 회화에서 매우 빈번하게 쓰이는 감탄형 관용 응답 어구입니다. 상대방이 건넨 말이나 감탄, 의견에 대해 '전적으로 동의한다', '어쩜 그렇게 맞는 말을 하느냐'라며 적극적으로 맞장구를 칠 때 활용합니다. 시간의 무상함이나 어떤 사실에 대한 공통된 감회를 나눌 때 주로 문두에 단독으로 사용됩니다. 한국어의 '그렇고말고!', '내 말이 그 말이야!', '정말이지 그래!'에 해당합니다.",
+    "formation": "화자 A의 발언. 화자 B: 可不是！ + 공감 내용",
+    "examples": [
+      {
+        "translation": "A: 우리가 졸업한 지 벌써 10년이나 되었다니 생각도 못 했네. B: 그렇고말고! 시간이 너무 빨리 흘렀어, 다들 정말 보고 싶다."
+      }
+    ]
   },
   "zh_因此_268": {
-    "title": "因此 (therefore)",
-    "shortExplanation": "therefore",
-    "longExplanation": "therefore. Pinyin: yīncǐ",
-    "formation": "yīncǐ"
+    "title": "因此 (인과 접속사: 따라서, 그러므로, 그렇기 때문에)",
+    "shortExplanation": "뒷절의 첫머리에 쓰여, 앞 절에서 언급한 원인이나 사실에 바탕을 둔 필연적인 결과나 결론을 이끕니다('따라서', '그러므로', '이 때문에').",
+    "longExplanation": "'因此'(yīncǐ)는 원인과 결과를 이어주는 대표적인 서면어 접속사입니다. 한자의 구성상 '因'(~로 인하여)과 '此'(이것)가 결합한 것으로, '이 일로 말미암아', '그렇기 때문에'라는 뜻을 나타냅니다. 앞 절에서 어떤 사유나 배경을 설명한 뒤, 뒷절 맨 앞에 '因此'를 두어 그로부터 자연스럽게 도출되는 결과나 판단을 서술합니다. 앞 절에 '因为'가 쓰이지 않아도 단독으로 인과관계를 완성할 수 있습니다. 한국어의 '따라서', '그러므로', '이로 인해'에 해당합니다.",
+    "formation": "원인절, 因此 + 결과절",
+    "examples": [
+      {
+        "translation": "나는 그와 알고 지낸 지 오랜 세월이 흘렀고, 따라서 그의 성격을 매우 잘 이해하고 있습니다."
+      }
+    ]
   },
   "zh_往往_269": {
-    "title": "往往 (usually, often)",
-    "shortExplanation": "usually, often",
-    "longExplanation": "usually, often. Pinyin: wǎngwǎng",
-    "formation": "wǎngwǎng"
+    "title": "往往 (빈도·경향 부사: 으레 ~하기 마련이다, 왕왕 ~하다, 대체로)",
+    "shortExplanation": "일정한 조건이나 규칙적인 상황 속에서 어떤 현상이나 행동이 발생하기 쉬운 경향이나 법칙성을 나타냅니다('으레 ~하다', '왕왕 ~하다').",
+    "longExplanation": "'往往'(wǎngwǎng)은 과거의 경험이나 일정한 환경적 조건 아래에서, 어떤 사안이나 동작이 규칙적으로 자주 일어나는 경향성을 띨 때 쓰는 부사입니다. 단순 횟수의 잦음만을 가리키는 '常常'(늘, 자주)과 달리, '往往'은 특정한 전제 조건이나 배경 맥락을 동반하는 경우가 많으며, 미래의 계획이나 주관적인 희망에는 쓸 수 없습니다. 한국어의 '으레 ~하곤 하다', '왕왕 ~하다', '대개 ~하기 마련이다'에 해당합니다.",
+    "formation": "주어 + (조건 / 배경 + ) 往往 + 술어",
+    "examples": [
+      {
+        "translation": "여성들이 옷 색상을 선택하는 것은 으레 그들의 성격과 관련이 있기 마련입니다."
+      }
+    ]
   },
   "zh_经常常_270": {
-    "title": "经常/常 (often)",
-    "shortExplanation": "often",
-    "longExplanation": "often. Pinyin: jīngcháng/ cháng",
-    "formation": "jīngcháng/ cháng"
+    "title": "经常 / 常 (빈도부사: 자주, 늘, 흔히)",
+    "shortExplanation": "동사 앞에 놓여 어떤 동작이나 상태가 반복적으로 자주 일어남을 나타냅니다('자주', '늘', '흔히').",
+    "longExplanation": "'经常'(jīngcháng)과 그 단음절 형태인 '常'(cháng)은 동작이나 현상의 발생 빈도가 높음을 나타내는 가장 대표적인 빈도부사입니다. 과거의 습관, 현재의 반복적 일상, 미래의 계획 등에 두루 쓰일 수 있습니다. 특정 조건이나 규칙성을 요하는 '往往'과 달리, 개인의 취향이나 주관적 의지에 의한 빈번한 행동에도 자연스럽게 쓰입니다. 부정형은 '不经常' 또는 '不常'(자주 ~하지 않는다)입니다. 한국어의 '자주 ~하다', '늘 ~하다', '흔히 ~하다'에 해당합니다.",
+    "formation": "주어 + 经常 / 常 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "대학교에 다닐 때 저는 운동을 무척 좋아해서, 자주 농구나 축구를 하곤 했습니다."
+      }
+    ]
   },
   "zh_难道_271": {
-    "title": "难道 (could it be that)",
-    "shortExplanation": "could it be that",
-    "longExplanation": "could it be that. Pinyin: nándào",
-    "formation": "nándào"
+    "title": "难道 (어기부사: 설마 ~라는 말인가, 대체 ~란 말인가)",
+    "shortExplanation": "반어의문문에서 문두나 주어 앞에 쓰여, 놀람, 의구심, 또는 힐난의 반어적 어기를 대폭 강화합니다('설마 ~라는 말인가', '대체 ~란 말인가').",
+    "longExplanation": "'难道'(nándào)는 반어문(수사의문문)에 쓰여 반문의 어기를 한층 더 강조하는 대표적인 어기부사입니다. 문장 맨 앞이나 주어 뒤에 위치하며, 문말에 어기조사 '吗'나 '了'와 자주 호응합니다. 긍정형 '难道……'은 강한 부정을 내포하고, 부정형 '难道不……'은 '어찌 그렇지 않겠는가'라는 강력한 긍정을 나타냅니다. 상식에 어긋나는 상황에 대해 의아해하거나 상대를 힐책하고 따져 물을 때 주로 쓰입니다. 한국어의 '설마 ~라는 말인가?', '대체 ~란 말인가?'에 해당합니다.",
+    "formation": "难道 + (주어 + ) 술어 (+ 吗 / 了)?",
+    "examples": [
+      {
+        "translation": "어째서 또 이렇게 비스킷이랑 초콜릿을 많이 샀어? 설마 다이어트 안 하기로 한 거야?"
+      }
+    ]
   },
   "zh_通过_272": {
-    "title": "通过 (through)",
-    "shortExplanation": "through",
-    "longExplanation": "through. Pinyin: tōngguò",
-    "formation": "tōngguò"
+    "title": "通过 (개사: ~을 통해, ~에 의하여, ~를 거쳐)",
+    "shortExplanation": "목적을 달성하기 위한 수단, 매개체, 방법 등을 이끌어 결과를 얻는 경로를 나타냅니다('~을 통해', '~에 의해').",
+    "longExplanation": "'通过'(tōngguò)가 개사(전치사)로 쓰일 때는 특정한 목적이나 결과를 이루기 위한 수단, 방법, 또는 매개 인물·기관을 이끕니다(예: '通过朋友介绍' 친구의 소개를 통해, '通过努力' 노력을 통해, '通过考试' 시험을 거쳐). 사건이 겪어낸 시간이나 과정 자체에 초점을 맞추는 '经过'와 달리, '通过'는 어떤 목적을 이루기 위한 '수단성'이나 '도구적 경로'를 부각한다는 점에 차이가 있습니다. 한국어의 '~을 통해', '~에 의해', '~를 거쳐서'에 해당합니다.",
+    "formation": "通过 + 수단 / 매개 / 방법, (주어 + ) 결과절 (또는: 주어 + 通过 + 수단 + 술어)",
+    "examples": [
+      {
+        "translation": "어떠한 성공이든 모두 노력을 통해서만 얻어낼 수 있습니다."
+      }
+    ]
   },
   "zh_经过_273": {
-    "title": "经过 (after having gone through)",
-    "shortExplanation": "after having gone through",
-    "longExplanation": "after having gone through. Pinyin: jīngguò",
-    "formation": "jīngguò"
+    "title": "经过 (개사: ~을 거쳐, ~을 겪은 뒤에, ~의 과정을 지나)",
+    "shortExplanation": "시간의 경과나 사태의 발전 과정, 혹은 겪어낸 일련의 경험을 제시하여 그에 따른 결과를 이끕니다('~을 거쳐', '~을 겪은 끝에').",
+    "longExplanation": "'经过'(jīngguò)가 개사(전치사)로 쓰일 때는 어떤 결과나 현재 상태에 이르기까지 겪어낸 '시간의 흐름', '체험의 축적', 또는 '상황의 전개 과정'을 이끕니다. 뒤에 '之后'나 '以后'를 동반하여 '经过……之后(以后)'(…을 거친 뒤에) 형태로 자주 활용됩니다. 수단이나 매개 방식을 나타내는 '通过'와 구별되며, '经过'는 험난한 시험이나 일정한 발전 과정 그 자체를 통과해 왔음을 부각합니다. 한국어의 '~을 거쳐', '~을 겪은 끝에', '~의 과정을 지나'에 해당합니다.",
+    "formation": "经过 + 과정 / 체험 / 시간 경과 (+ 之后 / 以后), 주어 + 술어",
+    "examples": [
+      {
+        "translation": "수차례의 실패를 겪은 끝에, 그는 마침내 성공을 거두었습니다."
+      }
+    ]
   },
   "zh_通过_274": {
-    "title": "通过 (pass through)",
-    "shortExplanation": "pass through",
-    "longExplanation": "pass through. Pinyin: tōngguò",
-    "formation": "tōngguò"
+    "title": "通过 (동사: 통과하다, 지나가다)",
+    "shortExplanation": "동사로서 길이나 특정 공간을 한쪽 끝에서 다른 쪽 끝으로 가로질러 지나가거나 통행함을 나타냅니다('통과하다', '지나가다').",
+    "longExplanation": "'通过'(tōngguò)가 이동을 나타내는 동사로 쓰일 때는 길, 다리, 좁은 통로, 검문소 등의 물리적 공간을 뚫고 지나가거나 건너가는 행위를 뜻합니다(예: '通过大桥' 큰 다리를 건너다, '通过海关' 세관을 통과하다, '步行通过' 걸어서 지나가다). 한국어의 '통과하다', '지나가다', '가로지르다'에 해당합니다.",
+    "formation": "이동 방식(步行 / 开车…) + 通过 (+ 장소)",
+    "examples": [
+      {
+        "translation": "이 거리는 걸어서만 지나갈 수 있습니다."
+      }
+    ]
   },
   "zh_经过_275": {
-    "title": "经过 (pass by)",
-    "shortExplanation": "pass by",
-    "longExplanation": "pass by. Pinyin: jīngguò",
-    "formation": "jīngguò"
+    "title": "经过 (동사: 지나가다, 거쳐 가다)",
+    "shortExplanation": "동사로서 목적지로 향하는 도중에 특정 장소를 지나치거나 거쳐 감을 나타냅니다('지나가다', '거치다', '들르다').",
+    "longExplanation": "'经过'(jīngguò)가 이동 동사로 쓰일 때는 목적지로 가는 길에 특정 장소나 위치를 통과하거나 지나침을 의미합니다(예: '经过北京' 베이징을 거쳐 가다, '经过超市' 마트를 지나가다, '正好经过' 마침 지나가다). 공간을 뚫고 통과하는 뉘앙스의 '通过'와 달리, 이동 경로상에 있는 경유지를 강조합니다. 한국어의 '지나가다', '지나치다', '거쳐 가다'에 해당합니다.",
+    "formation": "주어 + 经过 + 장소 / 지점",
+    "examples": [
+      {
+        "translation": "마침 여기를 지나가던 길이라, 들러서 안부 좀 전하려고 왔어요."
+      }
+    ]
   },
   "zh_通过_276": {
-    "title": "通过 (to pass (an exam, interview or resolution))",
-    "shortExplanation": "to pass (an exam, interview or resolution)",
-    "longExplanation": "to pass (an exam, interview or resolution). Pinyin: tōngguò",
-    "formation": "tōngguò"
+    "title": "通过 (동사: 합격하다, 통과하다, 가결되다)",
+    "shortExplanation": "동사로서 일정한 기준이나 심사를 통과하여 시험/면접에 합격하거나, 안건/법안이 승인·가결됨을 나타냅니다('합격하다', '통과하다', '가결되다').",
+    "longExplanation": "'通过'(tōngguò)는 추상적인 기준이나 심사를 만족시키는 행위를 나타내는 동사입니다. (1) 시험, 면접, 검사 등을 거쳐 기준을 통과하거나 합격함을 뜻합니다(예: '通过考试' 시험에 합격하다, '通过面试' 면접을 통과하다, '通过体检' 신체검사를 통과하다). (2) 법안, 결의안, 제안 등이 공식적으로 채택되거나 가결됨을 뜻합니다(예: '通过方案' 방안을 통과시키다, '通过决议' 결의안이 가결되다). 한국어의 '합격하다', '통과하다', '패스하다', '가결되다'에 해당합니다.",
+    "formation": "주어 + 通过 + 시험 / 면접 / 기준 / 안건",
+    "examples": [
+      {
+        "translation": "저는 그 회사의 면접에 합격했습니다."
+      }
+    ]
   },
   "zh_经过_277": {
-    "title": "经过 (the whole story)",
-    "shortExplanation": "the whole story",
-    "longExplanation": "the whole story. Pinyin: jīngguò",
-    "formation": "jīngguò"
+    "title": "经过 (명사: 전말, 경위, 과정)",
+    "shortExplanation": "명사로서 어떤 일의 시작부터 끝까지의 진행 과정이나 내막을 가리킵니다('전말', '경위', '과정').",
+    "longExplanation": "'经过'(jīngguò)가 명사로 쓰일 때는 사건이나 일이 발생하여 전개되고 마무리되기까지의 전체적인 과정과 구체적인 줄거리를 뜻합니다(예: '事情的经过' 일의 전말/경위, '事故经过' 사고 경위, '了解经过' 경위를 파악하다). 문장에서 주로 목적어나 관형어로 사용됩니다. 한국어의 '전말', '경위', '자초지종', '과정'에 해당합니다.",
+    "formation": "사건 / 명사 + 的 + 经过",
+    "examples": [
+      {
+        "translation": "샤오왕이 저에게 사건의 전말(경위)을 말해 주었습니다."
+      }
+    ]
   },
   "zh_可是_278": {
-    "title": "可是 (but)",
-    "shortExplanation": "but",
-    "longExplanation": "but. Pinyin: kěshì",
-    "formation": "kěshì"
+    "title": "可是 (접속사: 하지만, 그러나, 그렇지만)",
+    "shortExplanation": "역접 관계를 나타내는 접속사로, 뒷절의 처음에 놓여 앞절의 내용과 상반되거나 대조되는 사실을 이끕니다('하지만', '그러나', '그렇지만').",
+    "longExplanation": "'可是'(kěshì)는 대조나 역접의 의미를 나타내는 대표적인 접속사입니다. 앞 절에서 언급한 내용과 상반되는 사실, 결과, 또는 의외의 상황을 뒷절에서 전개할 때 사용합니다. '但是'와 의미가 거의 같지만, '可是'가 구어체에서 더 친근하고 부드러운 어감을 띠는 경우가 많습니다. 앞 절의 '虽然'(비록 ~이지만)과 호응하여 '虽然……，可是……' 형태로도 자주 쓰입니다. 한국어의 '하지만', '그러나', '그렇지만', '그런데'에 해당합니다.",
+    "formation": "절 1，可是 + 절 2 (또는: 虽然 + 절 1，可是 + 절 2)",
+    "examples": [
+      {
+        "translation": "당시 그녀의 부모님과 친척들은 모두 지지하지 않았지만, 그녀는 자신의 선택을 고수했습니다."
+      }
+    ]
   },
   "zh_结果_279": {
-    "title": "结果 (result)",
-    "shortExplanation": "result",
-    "longExplanation": "result. Pinyin: jiéguǒ",
-    "formation": "jiéguǒ"
+    "title": "结果 (명사: 결과, 성과)",
+    "shortExplanation": "명사로서 어떠한 행동, 조사, 경기 등의 최종적인 결말이나 상태를 나타냅니다('결과', '성과').",
+    "longExplanation": "'结果'(jiéguǒ)가 명사로 쓰일 때는 어떤 일이나 행동, 실험, 조사 등이 진행된 뒤 최종적으로 나타난 상태나 수치, 성과를 가리킵니다(예: '调查结果' 조사 결과, '考试结果' 시험 결과, '比赛结果' 경기 결과, '最终结果' 최종 결과). 문장에서 주어, 목적어, 관형어로 폭넓게 사용됩니다. 한국어의 '결과', '성과'에 해당합니다.",
+    "formation": "명사 / 동사 + 结果 (예: 调查 / 比赛 / 考试 / 实验 + 结果)",
+    "examples": [
+      {
+        "translation": "조사 결과를 제출해 주십시오."
+      }
+    ]
   },
   "zh_结果_280": {
-    "title": "结果…… (As a result, …)",
-    "shortExplanation": "As a result, …",
-    "longExplanation": "As a result, …. Pinyin: jiéguǒ……",
-    "formation": "jiéguǒ……"
+    "title": "结果…… (접속사: 그 결과, 결국)",
+    "shortExplanation": "접속사로서 뒷절의 처음에 놓여 앞절의 행동이나 상황으로 인해 초래된 최종적인 결말을 이끕니다('그 결과', '결국').",
+    "longExplanation": "'结果'(jiéguǒ)는 문장을 연결하는 접속사로도 자주 쓰입니다. 앞 절에서 기술된 원인이나 행동의 추이에 따라 발생한 최종적인 귀결이나 결말을 뒷절 서두에서 제시합니다. 긍정적인 성과뿐만 아니라 부정적이거나 예상 밖의 결과에도 자연스럽게 사용할 수 있습니다. 한국어의 '그 결과', '결국', '결과적으로'에 해당합니다.",
+    "formation": "원인·행동을 나타내는 절，结果 + 결과를 나타내는 절",
+    "examples": [
+      {
+        "translation": "지난 학기에 그는 매우 열심히 공부했고, 그 결과 시험에 합격했습니다."
+      }
+    ]
   },
   "zh_上_281": {
-    "title": "上 # (over #)",
-    "shortExplanation": "over #",
-    "longExplanation": "over #. Pinyin: shàng #",
-    "formation": "shàng #"
+    "title": "上 + 큰 수사 (동사/부사: ~에 달하다, ~을 넘다, 수백/수천의)",
+    "shortExplanation": "'百', '千', '万' 등 큰 수량 단위 앞에 쓰여 수량이 그 수준에 도달하거나 초과함을 강조합니다('~에 달하다', '~을 넘다', '수백/수천의').",
+    "longExplanation": "'上'(shàng)이 큰 수량 단위(百 백, 千 천, 万 만, 亿 억 등) 앞에 놓이면, 그 수치에 이르거나 넘어서는 막대한 수량을 강조하는 역할을 합니다(예: '上百人' 수백 명에 달하는 사람, '上千斤' 수천 근에 달하다, '上百年' 수백 년에 이르는). 수량이 대단히 많거나 규모가 큼, 혹은 기간이 유구함을 나타낼 때 애용됩니다. 한국어의 '~에 달하다', '~에 이르다', '~을 넘어서다', '수(백/천/만)의'에 해당합니다.",
+    "formation": "上 + 큰 수량 단위(百 / 千 / 万 / 亿) + 양사 / 명사",
+    "examples": [
+      {
+        "translation": "이 도시의 지하철은 이미 백 년이 넘는 역사를 지니고 있습니다."
+      }
+    ]
   },
   "zh_不过_282": {
-    "title": "不过 (nevertheless)",
-    "shortExplanation": "nevertheless",
-    "longExplanation": "nevertheless. Pinyin: bùguò",
-    "formation": "bùguò"
+    "title": "不过 (접속사: 다만, 그러나, 그렇지만, 단지)",
+    "shortExplanation": "가벼운 역접이나 보충 설명을 이끄는 접속사로, 뒷절 서두에 놓여 앞절에 대한 완곡한 대조나 제한을 나타냅니다('다만', '그러나', '그렇지만').",
+    "longExplanation": "'不过'(bùguò)가 접속사로 쓰일 때는 '但是'나 '可是'보다 전환의 어조가 다소 부드럽고 완곡합니다. 앞 절의 내용을 전면 부인하기보다는, 부분적인 수정이나 보충 설명, 예외적인 상황을 뒷절에서 덧붙일 때 애용됩니다. 문어와 구어에서 두루 사용됩니다. 한국어의 '다만', '그러나', '그렇지만', '단지 ~할 따름이다'에 해당합니다.",
+    "formation": "절 1，不过 + 절 2",
+    "examples": [
+      {
+        "translation": "원래는 변호사가 되고 싶었지만, 나중에 자신이 뉴스(언론)에 더 관심이 있다는 것을 알게 되었습니다."
+      }
+    ]
   },
   "zh_不过V_283": {
-    "title": "不过 V (only V)",
-    "shortExplanation": "only V",
-    "longExplanation": "only V. Pinyin: bùguò V",
-    "formation": "bùguò V"
+    "title": "不过 + 동사 (부사: 그저 ~에 불과하다, 단지 ~할 뿐이다)",
+    "shortExplanation": "동사 앞에 쓰이는 부사로, 어떤 동작이나 상태가 극히 일부분에 머물며 대단치 않음을 나타냅니다('그저 ~에 불과하다', '단지 ~했을 뿐이다').",
+    "longExplanation": "'不过'(bùguò)가 동사 술어 앞에 부사로 쓰일 때는 '只'(오직)나 '只不过'(단지 ~에 지나지 않다)와 마찬가지로 동작의 범위가 매우 한정적이며 별다른 중요성을 갖지 않음을 완곡히 표현합니다. 문말에 '罢了'나 '而已'(~에 불과하다)와 함께 호응하여 어감을 한층 강조하기도 합니다. 한국어의 '그저 ~에 불과하다', '단지 ~했을 뿐이다'에 해당합니다.",
+    "formation": "주어 + 不过 + 동사 (+ 목적어) (+ 罢了 / 而已)",
+    "examples": [
+      {
+        "translation": "우리는 그저 업무적인 문제에 대해 약간 이야기했을 뿐이고, 다른 것은 전혀 이야기하지 않았습니다."
+      }
+    ]
   },
   "zh_确实_284": {
-    "title": "确实 (indeed)",
-    "shortExplanation": "indeed",
-    "longExplanation": "indeed. Pinyin: quèshí",
-    "formation": "quèshí"
+    "title": "确实 (부사: 확실히, 정말로, 과연)",
+    "shortExplanation": "서술어 앞에 놓이는 부사로, 어떤 사실이나 상황이 틀림없이 객관적 진실임을 긍정하며 강조합니다('확실히', '정말로', '과연').",
+    "longExplanation": "'确实'(quèshí)는 어떤 사실, 판단, 성질이 객관적 진실에 부합하여 의심의 여지가 없음을 나타내는 부사입니다. 동사, 형용사 또는 '是...' 구문 앞에 위치하여 단언하거나 수긍하는 어감을 전달합니다. 앞 절에서 '确实'로 사실을 인정한 후 뒷절에서 '但是/但'으로 조건을 다는 문맥에서도 흔히 활용됩니다. 한국어의 '확실히', '정말로', '과연', '틀림없이'에 해당합니다.",
+    "formation": "주어 + 确实 + 서술어 (동사 / 형용사 / 是…)",
+    "examples": [
+      {
+        "translation": "사랑이 결혼의 중요한 이유인 것은 확실하지만, 사랑만으로는 충분하지 않습니다."
+      }
+    ]
   },
   "zh_在S看来_285": {
-    "title": "在 S 看来 (the way S see it)",
-    "shortExplanation": "the way S see it",
-    "longExplanation": "the way S see it. Pinyin: zài S kànlai",
-    "formation": "zài S kànlai"
+    "title": "在……看来 (개사구: ~가 보기에, ~의 생각으로는)",
+    "shortExplanation": "문두 또는 주어 앞에 위치하여 특정 주체의 입장이나 관점에서 바라본 견해를 나타냅니다('~가 보기에', '~의 생각으로는', '~의 입장에서는').",
+    "longExplanation": "'在 + 주체(명사 / 대명사) + 看来'(zài... kànlai)는 특정한 사람이나 집단의 시각, 입장, 관점을 제시하는 전치사(개사) 표현입니다. 이 구문 뒤에 이어지는 절에서는 해당 주체의 주관적인 판단, 의견, 평가가 서술됩니다(예: '在我看来' 내가 보기에, '在专家看来' 전문가의 관점에서는). 한국어의 '~가 보기에', '~의 관점에서는', '~의 생각으로는'에 해당합니다.",
+    "formation": "在 + 명사 / 대명사 (주체) + 看来，판단 절",
+    "examples": [
+      {
+        "translation": "많은 사람들이 보기에, 대중음악을 듣는 것은 그저 젊은이들의 취미일 뿐입니다."
+      }
+    ]
   },
   "zh_由于_286": {
-    "title": "由于…… (because …)",
-    "shortExplanation": "because …",
-    "longExplanation": "because …. Pinyin: yóuyú……",
-    "formation": "yóuyú……"
+    "title": "由于…… (접속사: ~로 인하여, ~ 때문에, ~ 덕분에)",
+    "shortExplanation": "원인이나 이유를 이끄는 접속사로, 앞절 서두에 놓여 객관적인 원인을 밝히고 뒷절의 결과로 연결합니다('~로 인하여', '~ 때문에', '~ 덕분에').",
+    "longExplanation": "'由于'(yóuyú)는 인과관계의 원인을 나타내는 대표적인 접속사로, '因为'에 비해 격식 있고 객관적인 문어체적 성격이 강합니다. 문장의 앞부분에 위치하여 어떤 상황이나 사건이 발생하게 된 객관적인 배경과 사유를 이끌며, 뒷절에서 '因此', '所以', '因而' 등과 자연스럽게 호응합니다. 한국어의 '~로 인하여', '~ 때문에', '~의 덕분으로'에 해당합니다.",
+    "formation": "由于 + 원인 절 / 어구，(因此 / 所以 +) 결과 절",
+    "examples": [
+      {
+        "translation": "우리의 공동 노력 덕분에, 임무가 예정보다 일찍 완수되었습니다."
+      }
+    ]
   },
   "zh_由于N_287": {
-    "title": "由于 N (due to N)",
-    "shortExplanation": "due to N",
-    "longExplanation": "due to N. Pinyin: yóuyú N",
-    "formation": "yóuyú N"
+    "title": "由于 + 명사 (개사: ~의 사유로, ~로 인해, ~ 때문에)",
+    "shortExplanation": "명사나 명사구 바로 앞에 쓰이는 전치사(개사)로, 뒤따르는 결과의 직접적인 원인이나 사유를 제시합니다('~의 사유로', '~로 인해', '~ 때문에').",
+    "longExplanation": "'由于'(yóuyú)가 전치사(개사)로 쓰일 때는 명사나 명사구를 바로 뒤에 취하여 원인을 나타내는 전치사구를 이룹니다(예: '由于天气原因' 날씨 사유로 인하여, '由于种种原因' 여러 가지 이유로, '由于工作需要' 업무상의 필요로 인해). 문장의 맨 앞이나 주어 뒤에 놓여 문장 전체를 수식하는 부사어 역할을 담당합니다. 한국어의 '~의 사유로', '~로 인해', '~ 때문에'에 해당합니다.",
+    "formation": "由于 + 명사 / 명사구，주어 + 서술어",
+    "examples": [
+      {
+        "translation": "여러 가지 원인으로 인해, 우리는 기존 계획을 부득이하게 변경해야 했습니다."
+      }
+    ]
   },
   "zh_比如_288": {
-    "title": "比如…… (for example, ……)",
-    "shortExplanation": "for example, ……",
-    "longExplanation": "for example, ……. Pinyin: bǐrú……",
-    "formation": "bǐrú……"
+    "title": "比如…… (동사/접속사: 예를 들면, 예컨대)",
+    "shortExplanation": "앞서 언급한 포괄적인 설명이나 주장에 대해 구체적인 실례를 들어 설명할 때 쓰입니다('예를 들면', '예컨대').",
+    "longExplanation": "'比如'(bǐrú)는 동사 또는 접속어로서, 앞 절에서 언급한 총괄적 내용이나 일반적 명제에 대해 이해를 돕기 위한 구체적인 예시를 제시할 때 사용합니다. '比如' 뒤에는 단어, 구, 혹은 완전한 문장이 올 수 있으며, 나열의 끝에 '等'이나 '等等'(~ 등)을 덧붙여 마무리하는 경우가 많습니다. 한국어의 '예를 들면', '예컨대', '가령'에 해당합니다.",
+    "formation": "총괄적인 설명，比如 + 구체적인 예시 1, 예시 2 (+ 等 / 等等)",
+    "examples": [
+      {
+        "translation": "여행을 떠나기 전에 몇 군데를 갈지, 차편은 어떻게 이용할지 등과 같은 계획을 미리 세우는 것이 가장 좋습니다."
+      }
+    ]
   },
   "zh_连O也都V_289": {
-    "title": "连 O 也/都 V (even V O)",
-    "shortExplanation": "even V O",
-    "longExplanation": "even V O. Pinyin: lián O yě/ dōu V",
-    "formation": "lián O yě/ dōu V"
+    "title": "连 + 목적어 + 也/都 + 동사 (~조차도/까지도 …하다)",
+    "shortExplanation": "목적어를 '连' 뒤로 도치시켜 '连……也/都……' 구문을 통해 극단적인 대상을 강조합니다('~조차도/까지도 …하다').",
+    "longExplanation": "'连……也/都……'(lián... yě/ dōu...)는 극단적이거나 의외의 사례를 들어 어떤 사실을 두드러지게 강조하는 대표적인 강조 구문입니다. 목적어가 '连'의 뒤(문장 맨 앞 또는 주어 뒤)로 나와 위치할 때, '그 정도로 어려운/극단적인 대상까지도 능히 해내다(또는 하지 못하다)'라는 의미를 전달합니다. 한국어의 '~조차도 …하다', '~까지도 다 …하다'에 해당합니다.",
+    "formation": "(주어 +) 连 + 목적어 + 也 / 都 + 동사",
+    "examples": [
+      {
+        "translation": "당신 정말 대단하네요, 중국어 신문까지 다 읽고 이해할 수 있다니요."
+      }
+    ]
   },
   "zh_连S也都V_290": {
-    "title": "连 S 也/都 V (even S V)",
-    "shortExplanation": "even S V",
-    "longExplanation": "even S V. Pinyin: lián S yě/ dōu V",
-    "formation": "lián S yě/ dōu V"
+    "title": "连 + 주어 + 也/都 + 동사 (~조차도/마저도 …하다)",
+    "shortExplanation": "주어 앞에 '连'을 두어 가장 대표적이거나 극단적인 주체를 내세워 상황을 강조합니다('~조차도/마저도 …하다').",
+    "longExplanation": "'连……也/都……' 구문에서 '连'이 주어 바로 앞에 놓이는 형태로, 가장 기본적이거나 당연해야 할 주체를 극단적인 예로 들어 '이 주체조차 이러할진대 다른 대상은 말할 것도 없다'는 뉘앙스를 나타냅니다. 주로 가정문이나 반어문에서 강력한 설득력을 발휘합니다. 한국어의 '~조차도 …하다', '~마저도 …하다'에 해당합니다.",
+    "formation": "连 + 주어 + 也 / 都 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "만약 너 자신조차도 스스로를 좋아하지 않는다면, 어떻게 다른 사람이 너를 좋아하게 만들 수 있겠니?"
+      }
+    ]
   },
   "zh_否则_291": {
-    "title": "否则 (if not, otherwise)",
-    "shortExplanation": "if not, otherwise",
-    "longExplanation": "if not, otherwise. Pinyin: fǒuzé",
-    "formation": "fǒuzé"
+    "title": "否则 (접속사: 그렇지 않으면, 안 그러면)",
+    "shortExplanation": "반대의 가정을 나타내는 접속사로, 뒷절 처음에 놓여 '만약 그렇지 않다면'이라는 결과나 추론을 이끕니다('그렇지 않으면', '안 그러면').",
+    "longExplanation": "'否则'(fǒuzé)는 '如果不是这样'(만약 그렇지 않다면)의 의미를 지닌 접속사로, 서면어 및 정중한 구어에서 널리 쓰입니다. 앞 절의 내용이나 조건이 성립하지 않을 경우 발생할 부정적인 결과, 또는 앞선 사실을 뒷받침하는 반대 상황의 추론을 뒷절에서 전개합니다. 한국어의 '그렇지 않으면', '그렇지 않다면', '아니라면'에 해당합니다.",
+    "formation": "절 1，否则 + 절 2 (반대 가정에 따른 결과 / 추론)",
+    "examples": [
+      {
+        "translation": "그는 분명 중요한 용건이 있어서 당신을 찾는 걸 거예요. 그렇지 않다면 이렇게 여러 번 전화를 걸어오지 않았을 테니까요."
+      }
+    ]
   },
   "zh_无论不管Q都_292": {
-    "title": "无论/不管 Q 都 (regardless of Q)",
-    "shortExplanation": "regardless of Q",
-    "longExplanation": "regardless of Q. Pinyin: wúlùn/ bùguǎn Q dōu",
-    "formation": "wúlùn/ bùguǎn Q dōu"
+    "title": "无论/不管 + 의문사 + 都 (무엇이든/어디든 간에 모두…)",
+    "shortExplanation": "앞절에서 '无论/不管'에 의문사나 선택 형식을 이끌고, 뒷절에서 '都'와 호응하여 어떤 조건에서도 결과가 변함없음을 나타냅니다('어떠하든 간에 모두…', '~에 상관없이 다…').",
+    "longExplanation": "'无论'(wúlùn, 서면어적)과 '不管'(bùguǎn, 구어적)은 무조건의 양보 관계를 나타내는 대표적인 접속사입니다. 앞 절에 의문대명사(什么, 谁, 哪儿, 怎么 등)나 정반/선택 형식(A还是B, 긍정 부정 중복 형식 등)을 포함하여 전제 조건을 열어두고, 뒷절에서 부사 '都'(또는 '也')와 어우러져 '어떠한 상황이나 조건이든 예외 없이 결과는 동일하다'는 뜻을 강조합니다. 한국어의 '어떻게/무엇을/누가 ~하든 간에 다…', '~에 관계없이 모두…'에 해당합니다.",
+    "formation": "无论 / 不管 + 의문사 / 선택 형식 + 都 + 동사 / 형용사",
+    "examples": []
   },
   "zh_然而_294": {
-    "title": "然而 (but)",
-    "shortExplanation": "but",
-    "longExplanation": "but. Pinyin: rán'ér",
-    "formation": "rán'ér"
+    "title": "然而 (접속사: 그러나, 하지만, 그렇지만)",
+    "shortExplanation": "서면어에서 주로 쓰이는 역접 접속사로, 뒷절의 처음에 놓여 앞선 내용과 상반되는 사실이나 결과를 나타냅니다('그러나', '하지만', '그렇지만').",
+    "longExplanation": "'然而'(rán'ér)은 문어체(서면어)적인 색채가 강한 역접 접속사입니다. 문장의 앞부분이나 뒷절의 서두에 위치하여, 앞 절에서 진술한 내용이나 기대와는 상반되는 사실, 뜻밖의 반전, 또는 상반된 견해를 제시할 때 사용합니다. '但是'나 '可是'에 비해 격식 있고 문어적인 뉘앙스를 풍깁니다. 한국어의 '그러나', '하지만', '그렇지만'에 해당합니다.",
+    "formation": "절 1，然而 + 절 2",
+    "examples": []
   },
   "zh_同时_298": {
-    "title": "同时…… (at the same time, …)",
-    "shortExplanation": "at the same time, …",
-    "longExplanation": "at the same time, …. Pinyin: tóngshí……",
-    "formation": "tóngshí……"
+    "title": "同时…… (접속사/부사: 동시에…, 그와 동시에…)",
+    "shortExplanation": "뒷절 처음에 놓여 두 가지 동작이나 상태가 병행되거나 또 다른 측면이 덧붙여짐을 나타냅니다('동시에…', '그와 동시에…').",
+    "longExplanation": "'同时'(tóngshí)가 뒷절의 문두에 쓰일 때는 접속사 또는 접속 부사로서의 역할을 하여, 앞 절의 일과 같은 시간대에 또 다른 상황이 함께 발생함을 나타내거나, 한 걸음 더 나아가 대등하게 부가되는 내용을 이어줍니다(앞 절의 내용뿐 아니라 '동시에 또한 …하다'). 뒷절에서 대개 '也'나 '还'와 호응합니다. 한국어의 '동시에…', '그와 동시에…', '아울러…'에 해당합니다.",
+    "formation": "절 1，同时（也 / 还） + 절 2",
+    "examples": [
+      {
+        "translation": "독서는 지식을 풍부하게 해 주며, 동시에 당신의 감정 또한 풍부하게 만들어 줍니다."
+      }
+    ]
   },
   "zh_的同时_299": {
-    "title": "……的同时 (at the same time when…)",
-    "shortExplanation": "at the same time when…",
-    "longExplanation": "at the same time when…. Pinyin: …… de tóngshí",
-    "formation": "…… de tóngshí"
+    "title": "……的同时 (~하는 동시에, ~함과 동시에)",
+    "shortExplanation": "동사구나 절 뒤에 붙어 어떤 동작이나 상태가 진행되는 것과 동시에 다른 일이 함께 이루어짐을 나타냅니다('~하는 동시에', '~함과 아울러').",
+    "longExplanation": "'……的同时'(…… de tóngshí)는 동사구 또는 절의 뒤에 결합하여(앞에 '在'가 함께 쓰이기도 함), 특정 행위나 상태가 펼쳐지는 동일한 시점에 또 다른 행동이나 사건이 병행되고 있음을 나타내는 구문입니다. 단순히 물리적인 시간의 일치뿐 아니라, '어떤 일을 진행하는 한편으로 다른 일도 해내다'라는 병행 및 상호 연계의 뉘앙스를 전달합니다. 한국어의 '~하는 동시에', '~함과 동시에', '~하는 한편'에 해당합니다.",
+    "formation": "(在 +) 동사 / 절 + 的同时，주어 + 也 / 还…",
+    "examples": [
+      {
+        "translation": "중국어를 배우는 동시에, 저는 중국의 문화에 대해서도 이해하게 되었습니다."
+      }
+    ]
   },
   "zh_并并且V_300": {
-    "title": "并/并且 V (and V)",
-    "shortExplanation": "and V",
-    "longExplanation": "and V. Pinyin: bìng/ bìngqiě V",
-    "formation": "bìng/ bìngqiě V"
+    "title": "并/并且 + 동사 (접속사: 그리고, 아울러, 게다가)",
+    "shortExplanation": "동일한 주어를 가진 동사구나 술어를 연결하여, 동작의 병렬, 연속, 또는 더 깊은 진전을 나타냅니다('그리고', '아울러', '게다가').",
+    "longExplanation": "'并'(bìng)과 '并且'(bìngqiě)는 동일 주어에 속하는 둘 이상의 동사구 및 서술어를 결합하는 접속사입니다. 두 행위가 나란히 병행되거나 순차적으로 이어짐을 나타낼 뿐만 아니라, 뒤따르는 동작이 앞선 동작보다 한층 더 발전되거나 보완되는 심화·점층 관계를 이끌어 냅니다. 단음절인 '并'은 주로 서면어에서 동사구를 긴밀히 결합할 때 쓰이며, '并且'는 긴 절이나 문장 연결에도 두루 사용됩니다. 한국어의 '그리고', '동시에', '아울러', '게다가'에 해당합니다.",
+    "formation": "동사 1 / 절 1，并 / 并且 + 동사 2",
+    "examples": []
   },
   "zh_再也_303": {
-    "title": "再……也...... (no matter how… still…)",
-    "shortExplanation": "no matter how… still…",
-    "longExplanation": "no matter how… still…. Pinyin: zài…… yě......",
-    "formation": "zài…… yě......"
+    "title": "再……也…… (아무리 ~해도 역시/더는 …할 수 없다)",
+    "shortExplanation": "양보 가정을 나타내는 구문으로, 아무리 행동을 거듭하거나 정도가 극에 달해도 결과는 바꿀 수 없음을 나타냅니다('아무리 ~해도 …하다').",
+    "longExplanation": "'再……也……'(zài... yě...)는 극단적인 양보 조건을 설정하는 표현입니다. '再' 뒤에 동사나 형용사가 이어져 '행위를 아무리 더 반복하더라도' 혹은 '상태의 정도가 아무리 극치에 이를지라도'라는 한계 상황을 상정한 뒤, 뒷절에서 '也'와 부정형(无法, 不能, 不会 등)을 결합하여 '그럼에도 불구하고 결과는 달라지지 않는다'는 단정적 결론을 내립니다. 한국어의 '아무리 ~해도 (역시) …할 수 없다', '설령 ~할지라도 …하다'에 해당합니다.",
+    "formation": "再 + 동사 / 형용사 + 也 + 부정 / 동사",
+    "examples": [
+      {
+        "translation": "일은 이미 일어났으니, 네가 아무리 후회해도 되돌릴 수 없어. 그만 속상해해."
+      }
+    ]
   },
   "zh_对于N_304": {
-    "title": "对于 N (regarding N)",
-    "shortExplanation": "regarding N",
-    "longExplanation": "regarding N. Pinyin: duìyú N",
-    "formation": "duìyú N"
+    "title": "对于 + 명사 (개사: ~에 대하여, ~에 관해서는)",
+    "shortExplanation": "태도나 평가, 조치의 대상이 되는 사물이나 논점을 이끄는 전치사(개사)입니다('~에 대하여', '~에 관해서는', '~에 대해 말하자면').",
+    "longExplanation": "'对于'(duìyú)는 어떤 대상이나 사안, 현상을 제기하여 그에 대한 태도나 견해, 조치 등을 진술할 때 쓰이는 개사(전치사)입니다. '对于 + 명사' 어구가 문장 맨 앞에 놓여 전체 문장의 화제를 제시하거나, 주어와 서술어 사이에 놓여 상황어로 쓰입니다. '对'에 비해 서면어적 성격이 짙으며, 단순한 동작의 방향성보다는 '사안이나 연구 대상에 대한 평가·처치'를 객관적으로 다룰 때 적합합니다. 한국어의 '~에 대하여', '~에 관해서는', '~의 입장에서 보면'에 해당합니다.",
+    "formation": "对于 + 명사 / 명사구，주어… (또는: 주어 + 对于 + 명사…)",
+    "examples": []
   },
   "zh_关于N_307": {
-    "title": "关于 N (about N)",
-    "shortExplanation": "about N",
-    "longExplanation": "about N. Pinyin: guānyú N",
-    "formation": "guānyú N"
+    "title": "关于 + 명사 (개사: ~에 관하여, ~에 대한)",
+    "shortExplanation": "어떤 사안의 범위나 주제, 화제를 제기하는 전치사(개사)입니다('~에 관하여', '~에 대해', '~에 관한').",
+    "longExplanation": "'关于'(guānyú)는 논의의 주제나 언급 대상의 범위를 명시하는 개사(전치사)입니다. (1) '关于 + 명사' 형태로 문장의 맨 처음에 놓여 전체 담화의 화제를 제시하는 상황어로 쓰이거나, (2) '关于 + 명사 + 的 + 중심명사' 형태로 명사를 꾸미는 관형어로 자주 쓰입니다(예: '关于环境保护的会议' 환경 보호에 관한 회의). 대상에 대한 조치나 태도를 나타내는 '对于'와 달리, '关于'는 주제나 사안의 범위 자체를 제시하는 데 중점이 있습니다. 한국어의 '~에 관하여', '~에 대해', '~에 관한'에 해당합니다.",
+    "formation": "关于 + 명사 / 사건，주어… (또는: 关于 + 명사 + 的 + 명사)",
+    "examples": [
+      {
+        "translation": "이번 조사 계획에 관해서, 매니저는 불명확한 점이 매우 많다고 말했습니다."
+      }
+    ]
   },
   "zh_MMN都_308": {
-    "title": "M + M + (N) + 都 (every N)",
-    "shortExplanation": "every N",
-    "longExplanation": "every N. Pinyin: M + M + (N) + dōu",
-    "formation": "M + M + (N) + dōu"
+    "title": "양사 첩어 + (명사) + 都 (하나하나의 ~마다 모두… / 어느 ~나 다…)",
+    "shortExplanation": "단음절 양사를 겹쳐 쓰고(AA형) '都'와 호응하여, 예외 없이 모든 개별 구성원을 포괄함을 나타냅니다('어느 ~나 모두 다…', '하나하나의 ~마다 전부…').",
+    "longExplanation": "중국어의 단음절 양사를 'AA' 형태로 중첩하면(예: 件件, 个个, 本本, 张张, 人人, 天天 등) '모든', '하나하나의 낱낱'이라는 전면적인 총괄의 의미를 지니게 됩니다. 주어 자리에서 명사를 동반하거나 단독으로 쓰이며, 서술어 앞에서 부사 '都'와 반드시 호응하여 '어떠한 예외도 없이 각각의 대상 모두가 그러하다'는 점을 강하게 부각합니다. 한국어의 '하나하나의 ~마다 모두 다…', '어느 ~나 전부…'에 해당합니다.",
+    "formation": "양사 + 양사 (+ 명사) + 都 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "하나하나의 작은 일도 모두 한 번의 배움의 기회로 여겨져야 합니다."
+      }
+    ]
   },
   "zh_相反_309": {
-    "title": "相反，…… (on the other hand, …)",
-    "shortExplanation": "on the other hand, …",
-    "longExplanation": "on the other hand, …. Pinyin: xiāngfǎn，……",
-    "formation": "xiāngfǎn，……"
+    "title": "相反，…… (접속사/부사: 반대로…, 그와 반대로…)",
+    "shortExplanation": "뒷절 문두에 쓰여 앞 절의 내용과 정반대되는 상황이나 결과를 선명하게 대조합니다('반대로…', '그와 반대로…', '오히려…').",
+    "longExplanation": "'相反'(xiāngfǎn)이 뒷절의 첫머리에 놓일 때(대개 뒤에 쉼표가 붙음)는 접속 부사로서의 역할을 하여, 앞선 내용과 전적으로 반대되는 국면이나 사실을 제시합니다. 앞 절에서 어떤 통념, 부정적인 상황, 혹은 빗나간 예상을 기술한 후, '그렇지 않고 오히려 반대로 이러하다'라는 극명한 대조를 나타낼 때 효과적으로 쓰입니다. 한국어의 '반대로…', '그와 반대로…', '오히려…'에 해당합니다.",
+    "formation": "절 1。相反，+ 절 2 (또는: 절 1，相反 + 절 2)",
+    "examples": []
   },
   "zh_和跟N相反_314": {
-    "title": "和/跟 N 相反 (to be the opposite of N)",
-    "shortExplanation": "to be the opposite of N",
-    "longExplanation": "to be the opposite of N. Pinyin: hé/ gēn N xiāngfǎn",
-    "formation": "hé/ gēn N xiāngfǎn"
+    "title": "和/跟 + 명사 + 相反 (~와 정반대이다, ~와 반대이다)",
+    "shortExplanation": "주어가 비교 대상이 되는 사물, 생각, 결과 등과 정반대의 양상을 띰을 나타내는 표현입니다('~와 정반대이다', '~와 반대이다').",
+    "longExplanation": "'和/跟 + 명사 + 相反'(hé/ gēn... xiāngfǎn)은 어떤 주어의 성질, 사태, 결과가 비교 대상과 완전히 상반됨을 명시하는 구문입니다. '和/跟' 뒤에는 일반 명사뿐 아니라 '想的'(생각했던 것), '预想的'(예상했던 것)과 같은 명사화 어구가 자주 쓰입니다. '相反' 앞에 '完全'(완전히), '正好'(딱/마침), '几乎'(거의)와 같은 부사를 덧붙여 상반되는 정도를 강조합니다. 한국어의 '~와 정반대이다', '~와 반대이다'에 해당합니다.",
+    "formation": "주어 + 和 / 跟 + 명사 / 생각·예상 + 相反",
+    "examples": [
+      {
+        "translation": "조사 결과는 그들이 생각했던 것과 거의 완전히 정반대였습니다."
+      }
+    ]
   },
   "zh_大概也许VA_315": {
-    "title": "大概/也许 V/A (probably/perhaps V/A)",
-    "shortExplanation": "probably/perhaps V/A",
-    "longExplanation": "probably/perhaps V/A. Pinyin: dàgài/ yěxǔ V/A",
-    "formation": "dàgài/ yěxǔ V/A"
+    "title": "大概/也许 + 동사/형용사 (부사: 아마도, 어쩌면 ~일 것이다)",
+    "shortExplanation": "동사나 형용사 앞에 놓여 추측이나 가능성을 나타내는 부사입니다('아마도', '어쩌면', '대략').",
+    "longExplanation": "'大概'(dàgài)와 '也许'(yěxǔ)는 동작이나 상태의 발생 가능성에 대한 추측 및 짐작을 나타내는 부사로, 술어인 동사나 형용사 앞에 놓여 상황어로 쓰입니다. '大概'는 객관적인 정황에 바탕을 둔 비교적 신빙성 높은 추측을 나타내어 '아마', '십중팔구'의 뜻을 지니며, 수량 앞에서 '대략'이라는 어림수를 나타내기도 합니다. 반면 '也许'는 확신하지 못하는 막연한 가능성을 열어두어 '어쩌면 ~일지도 모른다'는 뉘앙스를 풍깁니다. 한국어의 '아마도', '어쩌면', '대략'에 해당합니다.",
+    "formation": "주어 + 大概 / 也许 + 동사 / 형용사",
+    "examples": []
   },
   "zh_大概的N_317": {
-    "title": "大概的 N (approximate N)",
-    "shortExplanation": "approximate N",
-    "longExplanation": "approximate N. Pinyin: dàgài de N",
-    "formation": "dàgài de N"
+    "title": "大概的 + 명사 (관형어: 대략적인, 대강의, 어림잡은)",
+    "shortExplanation": "명사 앞에 '的'와 함께 쓰여 세부사항이나 수치가 정밀하지 않고 대략적임을 나타냅니다('대략적인', '대강의', '어림잡은').",
+    "longExplanation": "'大概'(dàgài) 뒤에 구조조사 '的'를 붙여 명사를 수식하는 관형어로 사용하면, 엄밀하고 정확하지 않고 전체적인 윤곽이나 수치가 대략적인 상태를 나타냅니다(예: '大概的数字' 대략적인 수치, '大概的情况' 대강의 상황, '大概的想法' 대강의 생각). 한국어의 '대략적인', '대강의', '대체의', '어림잡은'에 해당합니다.",
+    "formation": "大概的 + 명사 (数字 / 范围 / 想法 / 情况 등)",
+    "examples": [
+      {
+        "translation": "대략적인 숫자를 저에게 알려 주세요."
+      }
+    ]
   },
   "zh_大概_318": {
-    "title": "大概 # (about #)",
-    "shortExplanation": "about #",
-    "longExplanation": "about #. Pinyin: dàgài #",
-    "formation": "dàgài #"
+    "title": "大概 + 수사 (부사: 대략, 약, 대강)",
+    "shortExplanation": "수사나 수량 표현 앞에 놓여 수량이나 시간이 정확하지 않고 어림잡은 것임을 나타냅니다('대략', '약', '대강').",
+    "longExplanation": "'大概'(dàgài)는 추측이나 어림을 나타내는 부사로서, 수사, 양사 또는 시간 표현의 바로 앞에 위치하여 정밀한 수치가 아닌 개략적인 수량임을 나타냅니다(예: '大概五个人' 약 5명, '大概三点' 대략 3시, '大概两个星期' 약 2주). 한국어의 '대략', '약', '대강', '어림잡아'에 해당합니다.",
+    "formation": "大概 + 수사 (+ 양사 + 명사)",
+    "examples": []
   },
   "zh_偶尔_320": {
-    "title": "偶尔 (occasionally)",
-    "shortExplanation": "occasionally",
-    "longExplanation": "occasionally. Pinyin: ǒu'ěr",
-    "formation": "ǒu'ěr"
+    "title": "偶尔 (빈도부사: 가끔, 이따금, 때때로)",
+    "shortExplanation": "발생 빈도가 매우 낮음을 나타내는 부사로, 동작이나 상태가 가끔씩만 일어남을 뜻합니다('가끔', '이따금', '어쩌다 한 번').",
+    "longExplanation": "'偶尔'(ǒu'ěr)는 빈도가 매우 낮음을 나타내는 부사로, '常常'(자주)의 반대말이며 '有时候'(때로는)보다도 일어나는 횟수가 적은 뉘앙스를 풍깁니다. 어떤 행동이나 상황이 일상적이지 않고 어쩌다 한 번씩 일어남을 나타냅니다(예: '偶尔去一次' 어쩌다 한 번 가다, '偶尔看电影' 가끔 영화를 보다). 주어 뒤 또는 문두에 놓여 술어를 수식합니다. 한국어의 '가끔', '이따금', '때때로', '어쩌다 한 번'에 해당합니다.",
+    "formation": "주어 + 偶尔 + 동사 / 술어 (또는: 偶尔 + 주어 + 동사)",
+    "examples": []
   },
   "zh_由SV_322": {
-    "title": "由 S V (V’ed by S)",
-    "shortExplanation": "V’ed by S",
-    "longExplanation": "V’ed by S. Pinyin: yóu S V",
-    "formation": "yóu S V"
+    "title": "由 + 행위자 + 동사 (개사: ~가 담당하다, ~에 의해 행해지다)",
+    "shortExplanation": "개사 '由'를 사용하여 행위의 주체나 담당자를 이끌어, 누가 그 일이나 책임을 맡는지를 명시합니다('~가 맡다', '~에 의해 이루어지다').",
+    "longExplanation": "개사 '由'(yóu)는 동작을 수행하는 사람, 기관 등 책임 주체를 도입하는 역할을 합니다. 어떤 임무나 결정, 비용 부담, 행사 주관 등을 누가 책임지고 처리하는지를 강조할 때 쓰입니다(예: '由他负责' 그가 책임을 지다, '由校长主持' 교장 선생님이 주재하다, '由我们决定' 우리가 결정하다). 한국어의 '~가 (담당/주관)하다', '~에 의해 (행해지다)'에 해당합니다.",
+    "formation": "(사물 / 안건 +) 由 + 행위자 / 담당자 + 동사 (+ 목적어)",
+    "examples": []
   },
   "zh_进行_324": {
-    "title": "进行 (to proceed)",
-    "shortExplanation": "to proceed",
-    "longExplanation": "to proceed. Pinyin: jìnxíng",
-    "formation": "jìnxíng"
+    "title": "进行 (자동사: 진행되다, 열리다, 실시되다)",
+    "shortExplanation": "자동사로서 회의나 시합, 행사 등이 현재 진행 중이거나 계속해서 거행됨을 나타냅니다('진행되다', '열리다', '실시되다').",
+    "longExplanation": "'进行'(jìnxíng)이 목적어를 취하지 않는 자동사로 쓰일 때는 회의, 경기, 의식, 프로젝트 등의 공식적인 활동이 실제로 전개되거나 예정대로 계속해서 이루어지고 있는 상태를 나타냅니다(예: '会议正在进行' 회의가 진행 중이다, '比赛继续进行' 경기가 계속 진행되다, '顺利进行' 순조롭게 진행되다). 주로 '正在', '继续', '顺利' 등의 부사와 함께 쓰입니다. 한국어의 '진행되다', '열리다', '실시되다'에 해당합니다.",
+    "formation": "행사 / 활동 (会议 / 比赛 / 仪式 등) (+ 正在 / 继续 / 顺利 등) + 进行",
+    "examples": [
+      {
+        "translation": "10시 30분에 회의가 계속해서 진행됩니다."
+      }
+    ]
   },
   "zh_进行O_325": {
-    "title": "进行 O (to carry out O)",
-    "shortExplanation": "to carry out O",
-    "longExplanation": "to carry out O. Pinyin: jìnxíng O",
-    "formation": "jìnxíng O"
+    "title": "进行 + 목적어 (형식동사: ~을 실시하다, ~을 진행하다)",
+    "shortExplanation": "형식동사로서 뒤에 2음절 동작성 동사를 목적어로 수반하여 격식 있게 행동이나 조사·연구 등을 '실시하다', '진행하다'를 나타냅니다('~을 실시하다', '~을 진행하다').",
+    "longExplanation": "'进行'(jìnxíng)은 형식동사로 쓰여, 뒤에 동작성과 지속성을 지닌 2음절 동사(명사화된 목적어)를 이끌어 공적인 행동이나 조사를 본격적으로 집행함을 나타냅니다(예: '进行观察' 관찰을 진행하다, '进行调查' 조사를 실시하다, '进行讨论' 토론을 벌이다, '进行研究' 연구를 진행하다). 격식 있는 서면어나 공식적인 담화에서 주로 쓰이며, 1음절 동사나 순수 구체 명사(예: 사과, 옷 등)는 목적어로 취할 수 없습니다. 한국어의 '~을 진행하다', '~을 실시하다', '~을 벌이다'에 해당합니다.",
+    "formation": "주어 + 进行 + 목적어 (2음절 동작성 동사: 观察 / 调查 / 讨论 / 研究 등)",
+    "examples": [
+      {
+        "translation": "관찰을 진행하다 (관찰을 실시하다)"
+      }
+    ]
   },
   "zh_随着N_326": {
-    "title": "随着 N (with N (as N happens))",
-    "shortExplanation": "with N (as N happens)",
-    "longExplanation": "with N (as N happens). Pinyin: suízhe N",
-    "formation": "suízhe N"
+    "title": "随着 + 명사 (개사: ~에 따라, ~함에 따라, ~와 더불어)",
+    "shortExplanation": "개사로서 문두에 놓여 어떤 상황의 변화나 발전에 수반하여 다른 상황도 함께 변해 감을 나타냅니다('~에 따라', '~함에 따라', '~와 더불어').",
+    "longExplanation": "개사 '随着'(suízhe)는 주로 첫 번째 절의 첫머리에 쓰여, 시간의 흐름이나 사물의 발전·변화를 나타내는 명사구를 이끕니다. 앞선 변화나 발전이 진행됨에 따라 뒤이어 일어나는 상황도 그에 발맞추어 상응하게 변함을 나타냅니다(예: '随着经济的发展' 경제가 발전함에 따라, '随着科技的进步' 과학기술의 진보와 더불어, '随着时间的推移' 시간의 흐름에 따라, '随着年龄的增长' 나이가 들어감에 따라). 한국어의 '~에 따라', '~함에 따라', '~와 더불어'에 해당합니다.",
+    "formation": "随着 + 변화·발전을 나타내는 명사구 (经济的发展 / 科技的进步 / 时间的推移 등)，주어 + 술어",
+    "examples": []
   },
   "zh_够_328": {
-    "title": "够 (sufficient)",
-    "shortExplanation": "sufficient",
-    "longExplanation": "sufficient. Pinyin: gòu",
-    "formation": "gòu"
+    "title": "够 (형용사·술어: 충분하다, 넉넉하다, 족하다)",
+    "shortExplanation": "형용사 또는 술어로서 수량이나 조건이 필요를 만족시키기에 충분함을 나타냅니다('충분하다', '넉넉하다', 부정형은 '不够'로 '모자라다', '부족하다').",
+    "longExplanation": "'够'(gòu)는 술어나 형용사로 단독 사용되어 돈, 시간, 인원, 물자 등이 필요한 기준을 충족하고 있음을 나타냅니다(예: '时间够' 시간이 충분하다, '人手够' 일손이 넉넉하다, '条件不够' 조건이 불충분하다). 부정 형태인 '不够'(모자라다, 부족하다)도 매우 자주 쓰입니다. 한국어의 '충분하다', '넉넉하다', '족하다'에 해당합니다.",
+    "formation": "명사 (돈 / 시간 / 인원 등) (+ 부사) + 够 / 不够",
+    "examples": [
+      {
+        "translation": "돈이 모자랍니다 (부족합니다)."
+      }
+    ]
   },
   "zh_V够_329": {
-    "title": "V 够 (#) (V (and fulfill) #)",
-    "shortExplanation": "V (and fulfill) #",
-    "longExplanation": "V (and fulfill) #. Pinyin: V gòu (#)",
-    "formation": "V gòu (#)"
+    "title": "동사 + 够 (+ 수량) (결과보어: 정해진 수량을 다 채워 ~하다, 실컷 ~하다)",
+    "shortExplanation": "'够'가 결과보어로 쓰여, 동작이 정해진 시간이나 수량의 기준치를 충분히 채우거나 만족할 만큼 행해졌음을 나타냅니다('충분히 ~하다', '~을 다 채우다').",
+    "longExplanation": "'够'(gòu)가 동사 뒤에 붙어 결과보어로 쓰이면, 해당 동작을 통해 요구되는 시간, 수치, 분량을 완벽하게 채웠음을 나타냅니다(예: '睡够八小时' 8시간을 푹 자다/채워 자다, '赚够了钱' 돈을 충분히 벌었다, '学够学分' 필요한 학점을 다 채웠다). 수량사 없이 쓰일 경우('玩够了', '吃够了') 실컷 즐겨 만족했거나 질릴 정도임을 나타내기도 합니다. 한국어의 '~을 충분히/다 채워 하다', '실컷 ~하다'에 해당합니다.",
+    "formation": "동사 + 够 (+ 수사 + 양사 / 명사)",
+    "examples": [
+      {
+        "translation": "수면 시간이 너무 긴 것도 좋지 않으니, 보통 8시간만 충분히 자면 됩니다."
+      }
+    ]
   },
   "zh_够A_330": {
-    "title": "够 A ((good) enough)",
-    "shortExplanation": "(good) enough",
-    "longExplanation": "(good) enough. Pinyin: gòu A",
-    "formation": "gòu A"
+    "title": "够 + 형용사 (+ 的了) (정도부사: 충분히 ~하다, 상당히 ~하다, 꽤 ~하다)",
+    "shortExplanation": "정도부사로서 형용사 앞에 놓여 상태나 정도가 이미 충분히 높거나 한도에 달했음을 강조합니다('충분히 ~하다', '상당히 ~하다').",
+    "longExplanation": "'够'(gòu)가 정도부사로 쓰여 형용사 앞에 놓이면, 그 성질이나 상태의 정도가 매우 높음을 나타내며 '挺'(꽤, 매우)이나 '相当'(상당히)과 유사한 기능을 합니다. 구어에서 문말에 '的' 또는 '的了'와 어울려 감탄, 고충, 불평 등의 강한 감정을 표현할 때 자주 쓰입니다(예: '已经够重了' 이미 충분히 무겁다, '够累的' 꽤나 피곤하다, '够朋友' 참 의리 있다). 한국어의 '충분히 ~하다', '상당히/꽤 ~하다', '너무 ~하다'에 해당합니다.",
+    "formation": "(주어 +) (已经 +) 够 + 형용사 (+ 的 / 的了)",
+    "examples": [
+      {
+        "translation": "이것들을 담을 필요 없어요, 상자가 이미 충분히 무겁단 말이에요!"
+      }
+    ]
   },
   "zh_以N_331": {
-    "title": "以 N (with N (speed, standard))",
-    "shortExplanation": "with N (speed, standard)",
-    "longExplanation": "with N (speed, standard). Pinyin: yǐ N",
-    "formation": "yǐ N"
+    "title": "以 + 명사 (개사: ~의 속도/태도로, ~를 가지고, ~로써)",
+    "shortExplanation": "개사로서 속도, 기준, 태도, 수단 등을 나타내는 명사를 이끌어 어떠한 태도나 기준으로 행동하는지를 나타냅니다('~로', '~의 (속도/태도)로', '~를 가지고').",
+    "longExplanation": "개사 '以'(yǐ)는 격식 있는 서면어나 정중한 표현에서 주로 쓰이며, 속도, 태도, 기준, 방식 등의 명사구를 이끌어 행동을 취하는 수단이나 기준, 태도를 명시합니다(예: '以最快的速度' 가장 빠른 속도로, '以认真的态度' 진지한 태도로, '以优异的成绩' 우수한 성적으로, '以国家标准' 국가 표준에 따라). 한국어의 '~의 (속도/태도)로', '~를 가지고', '~로써'에 해당합니다.",
+    "formation": "주어 + 以 + 명사 (속도 / 기준 / 태도 / 방식 등) + 동사",
+    "examples": [
+      {
+        "translation": "매니저님 안심하십시오, 제가 반드시 가장 빠른 속도로 완수하겠습니다."
+      }
+    ]
   },
   "zh_以N1为N2_332": {
-    "title": "以 N1 为 N2 (consider N1 as N2)",
-    "shortExplanation": "consider N1 as N2",
-    "longExplanation": "consider N1 as N2. Pinyin: yǐ N1 wéi N2",
-    "formation": "yǐ N1 wéi N2"
+    "title": "以 + 명사 1 + 为 + 명사 2 (고정 구문: 명사 1을 명사 2로 삼다, 명사 1을 명사 2로 여기다)",
+    "shortExplanation": "고정 구문으로서 명사 1을 명사 2로 삼거나, 명사 1을 본보기나 기초로 여김을 나타냅니다('~을 ~로 삼다', '~을 ~로 여기다').",
+    "longExplanation": "'以……为……'(yǐ... wéi...)는 고대 한어에서 유래한 격식 있는 고정 구문으로, 명사 1을 명사 2로 대우하거나 명사 1을 기준, 모범, 기본 바탕으로 삼음을 나타냅니다(예: '以历史为镜子' 역사를 거울로 삼다, '以人为本' 사람을 근본으로 삼다, '以他为榜样' 그를 본보기로 삼다, '以此为基础' 이것을 기초로 삼다). 서면어, 사훈, 슬로건, 격언 등에서 널리 활용됩니다. 한국어의 '~을 ~로 삼다', '~을 ~로 여기다'에 해당합니다.",
+    "formation": "주어 + 以 + 명사 1 + 为 + 명사 2",
+    "examples": [
+      {
+        "translation": "우리는 역사를 거울로 삼아야 합니다."
+      }
+    ]
   },
   "zh_以_333": {
-    "title": "以 (in order to)",
-    "shortExplanation": "in order to",
-    "longExplanation": "in order to. Pinyin: yǐ",
-    "formation": "yǐ"
+    "title": "以 (접속사: ~하기 위해, ~하고자, ~함으로써)",
+    "shortExplanation": "접속사로서 두 절이나 동사구를 이어 앞선 행동을 취하는 목적을 이끕니다('~하기 위해', '~하고자', '~함으로써').",
+    "longExplanation": "접속사 '以'(yǐ)는 앞선 행위와 뒤따르는 목적을 연결하는 역할을 하며, 앞 절의 행동이 뒤 절의 목적을 달성하기 위한 것임을 나타냅니다(예: '送礼物以表示感谢' 감사를 표하기 위해 선물을 보내다, '制定规则以保证安全' 안전을 보장하기 위해 규칙을 제정하다). 구어의 '来'나 '为了'보다 격식 있는 서면어의 뉘앙스를 풍깁니다. 한국어의 '~하기 위해', '~하고자', '~함으로써'에 해당합니다.",
+    "formation": "행동을 나타내는 절 / 동사구 + 以 + 목적을 나타내는 절 / 동사구",
+    "examples": [
+      {
+        "translation": "그녀는 감사를 표하기 위해 선물을 보내왔습니다."
+      }
+    ]
   },
   "zh_既然_334": {
-    "title": "既然 (now that)",
-    "shortExplanation": "now that",
-    "longExplanation": "now that. Pinyin: jìrán",
-    "formation": "jìrán"
+    "title": "既然…… (접속사: 기왕 ~한 이상, ~인 바에야)",
+    "shortExplanation": "앞절의 첫머리에 놓여 이미 기정사실이 된 전제를 제시하고, 뒷절에서 '就', '那' 등과 호응하여 마땅한 결론이나 제안을 이끕니다('기왕 ~한 이상', '~인 바에야').",
+    "longExplanation": "'既然'(jìrán)은 추론적 인과관계를 나타내는 접속사로서 문두에 위치합니다. 이미 발생하여 기정사실이 되었거나 쌍방이 모두 인정하는 객관적 전제를 먼저 밝히고, 뒷절에서 '就'(그럼), '那'(그렇다면), '也' 등의 부사와 호응하여 그에 상응하는 마땅한 결론, 충고, 제안, 조치를 이끕니다(예: '既然来了，就多玩几天' 기왕 왔으니 며칠 더 놀다 가라, '既然决定了，就不要后悔' 일단 결정한 이상 후회하지 마라). 한국어의 '기왕 ~한 이상', '~인 바에야', '~한 바에는'에 해당합니다.",
+    "formation": "既然 + 기정사실·전제，(주어 +) 就 / 那 + 결론·제안을 나타내는 절",
+    "examples": []
   },
   "zh_于是_336": {
-    "title": "于是…… (consequently…)",
-    "shortExplanation": "consequently…",
-    "longExplanation": "consequently…. Pinyin: yúshì……",
-    "formation": "yúshì……"
+    "title": "于是…… (접속사: 그리하여, 그러자, 이에, 그래서)",
+    "shortExplanation": "뒷절의 첫머리에 놓여 앞선 상황이나 사건을 이어받아 다음 행동이나 결과가 자연스럽게 즉각 이어짐을 나타냅니다('그리하여', '그러자', '이에').",
+    "longExplanation": "'于是'(yúshì)는 사건의 순차적인 전개와 자연스러운 인과관계를 나타내는 접속사로서 뒷절의 첫머리에 쓰입니다. 앞 절에서 발생한 상황이나 원인을 바탕으로, 그 직후에 다음 행동이나 사건이 자연스러운 귀결로서 잇따라 발생했음을 서술할 때 사용됩니다(예: '大家都很赞成，于是决定立即执行' 모두가 크게 찬성하여, 그리하여 즉시 실행하기로 결정했다; '外边突然下雨，于是演出推迟了' 밖에 갑자기 비가 내려, 그러자 공연이 연기되었다). 논리적 원인과 결과를 직접적으로 밝히는 '所以'와 달리, '于是'는 서사적 흐름에서 사건이 잇달아 일어나는 시간적 순차성을 더 강하게 나타냅니다. 한국어의 '그리하여', '그러자', '이에', '그래서'에 해당합니다.",
+    "formation": "절 1，于是 + 절 2",
+    "examples": []
   },
   "zh_因此_338": {
-    "title": "因此…… (therefore…)",
-    "shortExplanation": "therefore…",
-    "longExplanation": "therefore…. Pinyin: yīncǐ……",
-    "formation": "yīncǐ……"
+    "title": "因此…… (인과 접속사: 따라서, 그러므로, 그렇기 때문에……)",
+    "shortExplanation": "뒷절의 첫머리에 쓰여 앞 절의 원인이나 상황으로부터 필연적으로 도출되는 결과나 결론을 이끕니다('따라서', '그러므로', '이로 인해').",
+    "longExplanation": "'因此'(yīncǐ)는 원인과 결과를 맺어주는 대표적인 격식체 서면어 접속사입니다. 한자 뜻대로 '因'(~로 인하여)과 '此'(이것)가 결합되어 '이 일로 말미암아', '그 때문에'라는 인과관계를 나타냅니다. 앞 절에서 어떤 사유나 정황을 밝힌 뒤, 뒷절 맨 앞에 '因此'를 두어 그로부터 자연스럽게 파생된 행동이나 결과를 서술합니다. 앞 절에 '因为'가 없어도 단독으로 사용 가능합니다. 한국어의 '따라서', '그러므로', '이 때문에', '그로 인해'에 해당합니다.",
+    "formation": "원인절, 因此 + 결과절",
+    "examples": [
+      {
+        "translation": "어릴 적에 그는 자주 앓았기 때문에, 그래서 매일 달리기를 하러 가며 몸을 단련했습니다."
+      }
+    ]
   },
   "zh_什么的_339": {
-    "title": "什么的 (and stuff like that)",
-    "shortExplanation": "and stuff like that",
-    "longExplanation": "and stuff like that. Pinyin: shénmede",
-    "formation": "shénmede"
+    "title": "什么的 (조사: ~라든가 ~등, ~따위, ~같은 것)",
+    "shortExplanation": "명사나 동사구를 나열한 뒤 끝에 붙여, 그와 비슷한 종류의 사물이나 행동이 더 있음을 구어체로 나타냅니다('~라든가', '~등', '~따위', '~같은 것').",
+    "longExplanation": "'什么的'(shénmede)는 일상 구어에서 매우 애용되는 조사로, 둘 이상의 명사나 동사구를 열거한 맨 뒤에 붙어 미처 다 나열하지 못한 동종의 것들이 더 있음을 나타냅니다. 서면어적인 '等等'(등등)과 기능은 같으나 훨씬 부드럽고 자연스러운 생활 밀착형 어감을 줍니다(예: '买点儿苹果、橘子什么的' 사과나 귤 같은 걸 좀 사다, '看书、散步什么的' 독서나 산책 같은 걸 하다). 한국어의 '~라든가 ~등', '~따위', '~같은 것', '~등등'에 해당합니다.",
+    "formation": "명사 1 / 동사구 1、명사 2 / 동사구 2 + 什么的",
+    "examples": [
+      {
+        "translation": "내일 놀러 나가려면 비스킷이나 빵 같은 것들을 좀 사야 해."
+      }
+    ]
   },
   "zh_V起来_340": {
-    "title": "V 起来 (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "동사 + 起来 (복합방향보어: 위로 향하는 동작, ~하기 시작하다, ~해 보면)",
+    "shortExplanation": "동사 뒤에 쓰여 ① 아래에서 위로 향하는 이동, ② 동작이나 상태의 개시와 지속(~하기 시작하다), ③ 특정 관점에서의 평가(~해 보면)를 나타냅니다.",
+    "longExplanation": "'起来'(qǐlai)는 동사 뒤에 결합하는 복합방향보어로, 크게 세 가지 주요 용법이 있습니다: ① 실제 공간상 아래에서 위로 향하는 동작(예: '站起来' 일어서다, '拿起来' 집어 들다, '抬起来' 들어 올리다); ② 어떤 동작이나 상태가 시작되어 지속적으로 전개됨(예: '笑起来' 웃기 시작하다, '热起来' 더워지다); 이때 목적어가 있으면 '동사 + 起 + 목적어 + 来'의 어순으로 목적어가 중간에 들어갑니다(예: '唱起歌来' 노래를 부르기 시작하다, '下起雨来' 비가 내리기 시작하다); ③ 감각이나 경험을 통해 어떤 대상을 판단·평가함(예: '看起来' 보아하니/보기에, '听起来' 듣기에, '这道题做起来很难' 이 문제는 풀어 보면 어렵다). 한국어의 '~하기 시작하다', '~해 보면', '일어서다/들어 올리다'에 해당합니다.",
+    "formation": "동사 + 起来 (목적어가 있을 때: 동사 + 起 + 목적어 + 来)",
+    "examples": []
   },
   "zh_想起来_342": {
-    "title": "想起来 (remember, call to mind)",
-    "shortExplanation": "remember, call to mind",
-    "longExplanation": "remember, call to mind. Pinyin: xiǎngqilai",
-    "formation": "xiǎngqilai"
+    "title": "想起来 (동보 어휘: 생각나다, 기억이 떠오르다)",
+    "shortExplanation": "과거의 기억이나 잊고 있던 사실이 머릿속에 다시 떠오름을 나타내며, 가능보어 부정형인 '想不起来'(생각나지 않다)로도 매우 자주 쓰입니다.",
+    "longExplanation": "'想起来'(xiǎngqilai)는 동사 '想'에 방향보어 '起来'가 결합된 표현으로, 잊고 있던 과거의 기억, 이름, 사실 등이 의식 위로 떠오를 때 쓰입니다. 회화에서는 특히 가능보어 형태인 '想得起来'(생각해 낼 수 있다/기억나다)와 '想不起来'(기억나지 않다/도무지 떠오르지 않는다)의 쓰임이 매우 활발합니다. 새로운 아이디어나 해결책을 머릿속에서 짜내는 '想出来'(생각해 내다)와 구별해야 합니다. 한국어의 '생각나다', '기억나다', '떠오르다'에 해당합니다.",
+    "formation": "주어 + 想起来 (+ 목적어) / 주어 + 想得起来 / 想不起来 (+ 목적어)",
+    "examples": []
   },
   "zh_弄AO_344": {
-    "title": "弄 A O (cause O to be A)",
-    "shortExplanation": "cause O to be A",
-    "longExplanation": "cause O to be A. Pinyin: nòng A O",
-    "formation": "nòng A O"
+    "title": "弄 + 형용사 + 목적어 (결과보어: ~을 …하게 만들다, 망가뜨리다/더럽히다)",
+    "shortExplanation": "동사 '弄' 뒤에 형용사(결과보어)와 목적어를 직접 연결하여, 부주의 등으로 인해 목적어를 원치 않는 부정적인 상태로 만들어 버림을 나타냅니다('망가뜨리다', '더럽히다', '잃어버리다').",
+    "longExplanation": "'弄'(nòng)은 손이나 행동을 가하여 무언가를 처리하거나 만지는 구어체 동작 동사입니다. '弄' 뒤에 결과보어 역할을 하는 형용사('坏' 망가지다, '脏' 더러워지다, '破' 찢어지다, '丢' 잃어버리다, '乱' 어지럽히다 등)와 목적어가 연이어 오면, 부주의나 조작 미숙으로 대상을 바람직하지 않은 상태에 빠뜨렸음을 의미합니다(예: '弄坏沙发' 소파를 망가뜨리다, '弄脏衣服' 옷을 더럽히다, '弄丢钥匙' 열쇠를 잃어버리다, '弄破书页' 책장을 찢다). 주로 의도치 않은 부정적 결과나 실수에 대해 쓰입니다. 한국어의 '~을 망가뜨리다', '~을 더럽히다', '~을 잃어버리다'에 해당합니다.",
+    "formation": "주어 + (别 / 不要 +) 弄 + 형용사 (坏 / 脏 / 破 / 丢 / 乱 등) + 목적어 (+ 了)",
+    "examples": [
+      {
+        "translation": "옮길 때 좀 조심해서 소파를 망가뜨리지 않도록 해."
+      }
+    ]
   },
   "zh_弄得OCLAUSE_345": {
-    "title": "弄得 O CLAUSE (make O CLAUSE)",
-    "shortExplanation": "make O CLAUSE",
-    "longExplanation": "make O CLAUSE. Pinyin: nòng dé O CLAUSE",
-    "formation": "nòng dé O CLAUSE"
+    "title": "弄得 + 목적어 + 절 / 술어 (상태보어: ~을 …한 지경으로 만들다, ~하게 만들다)",
+    "shortExplanation": "'弄得' 뒤에 목적어와 절을 이끌어, 앞선 행동이나 일로 인해 대상을 곤란하거나 불쾌한 상태에 빠뜨렸음을 나타냅니다('~을 …하게 만들다', '~의 탓에 …한 꼴이 되다').",
+    "longExplanation": "'弄得'(nòng de)는 상태보어를 이끄는 표현으로, 앞 절의 행동이나 상황으로 인해 야기된 성가시거나 유쾌하지 못한 결과·국면을 목적어 및 서술절로 묘사합니다(예: '弄得大家都很尴尬' 모두를 아주 어색하게 만들다, '弄得满屋子都是烟' 온 방을 연기로 가득 차게 만들다, '弄得我不知所措' 나를 어찌할 바 모르게 만들다). 주로 불만, 짜증, 당혹스러움을 내포하며, 의도치 않게 상황이 꼬이거나 기분을 망쳤을 때 자주 쓰입니다. 한국어의 '~을 …한 지경으로 만들다', '~하게 만들어 버리다', '~의 탓에 …하게 되다'에 해당합니다.",
+    "formation": "원인이 되는 행위 / 상황, 弄得 + 목적어 + 절 / 술어",
+    "examples": [
+      {
+        "translation": "매일 이런 사소한 일로 그녀를 꾸짖다 보니, 우리 둘 다 기분이 안 좋아지게 되었습니다."
+      }
+    ]
   },
   "zh_千万不能不要别V_346": {
-    "title": "千万不能/不要/别 V (make sure not to V)",
-    "shortExplanation": "make sure not to V",
-    "longExplanation": "make sure not to V. Pinyin: qiānwàn bùnéng/ bùyào/ bié V",
-    "formation": "qiānwàn bùnéng/ bùyào/ bié V"
+    "title": "千万 + 不能 / 不要 / 别 + 동사 (강조 부사: 절대로 ~하지 마라, 결코 ~해서는 안 된다)",
+    "shortExplanation": "부사 '千万'을 부정 표현 '不能 / 不要 / 别'과 결합하여 동사 앞에 놓음으로써, 상대방에게 절대 어떤 행동을 하지 말 것을 간곡히 당부하거나 엄중히 경고합니다('절대로 ~하지 마라', '부디 ~하지 마라').",
+    "longExplanation": "'千万'(qiānwàn)은 간절한 당부나 엄중한 경계를 나타내는 어기부사로, '천만 뜻밖' 할 때처럼 '만에 하나라도', '무슨 일이 있어도'라는 어감을 지닙니다. 부정사 '别'(~하지 마라), '不要'(~해서는 안 된다), '不能'(~할 수 없다)과 함께 쓰여 상대방이 특정 행동을 저지르지 않도록 극도로 강조하여 금지하거나 타이릅니다(예: '千万别忘了' 부디 절대 잊지 마라, '千万不要大意' 절대로 방심해서는 안 된다, '千万不能喝' 절대 마셔서는 안 된다). 한국어의 '절대로 ~하지 마라', '결코 ~해서는 안 된다', '부디 ~하지 말아라'에 해당합니다.",
+    "formation": "주어 + 千万 + 不能 / 不要 / 别 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그녀의 생일날이 되어서야 이 선물을 전해 줄 생각이니, 지금은 절대 그녀에게 말하지 마."
+      }
+    ]
   },
   "zh_一定要得VA_347": {
-    "title": "一定要/得 V/A (must V, must be A)",
-    "shortExplanation": "must V, must be A",
-    "longExplanation": "must V, must be A. Pinyin: yīdìngyào/ dé V/A",
-    "formation": "yīdìngyào/ dé V/A"
+    "title": "一定要 / 得 + 동사 / 형용사 (연용 표현: 반드시 ~해야 한다, 꼭 ~해야 한다)",
+    "shortExplanation": "부사 '一定'과 조동사 '要 / 得'을 결합하여, 확고한 결심이나 불가피한 의무, 필수적인 요건을 강하게 강조합니다('반드시 ~해야 한다', '꼭 ~해야 한다').",
+    "longExplanation": "확신을 나타내는 부사 '一定'(yīdìng) 뒤에 당위와 필요를 나타내는 능원동사 '要'(yào) 또는 '得'(děi)가 붙은 형태로, 동사나 형용사 앞에 놓입니다. 단순히 '要'나 '得'만 쓸 때보다 어조가 훨씬 강해져서 주체의 확고한 의지나 결의, 반드시 지켜야 할 의무나 지침을 역설합니다(예: '你一定要来' 너 꼭 와야 해, '一定要注意安全' 반드시 안전에 유의해야 한다, '一定要成功' 반드시 성공해야 한다, '一定要认真' 반드시 진지해야 한다). 한국어의 '반드시 ~해야 한다', '꼭 ~해야만 한다'에 해당합니다.",
+    "formation": "주어 + 一定要 / 一定得 + 동사 / 형용사 (+ 목적어)",
+    "examples": []
   },
   "zh_一定会VA_350": {
-    "title": "一定(会) V/A (definitely V/A)",
-    "shortExplanation": "definitely V/A",
-    "longExplanation": "definitely V/A. Pinyin: yīdìng( huì) V/A",
-    "formation": "yīdìng( huì) V/A"
+    "title": "一定(会) + 동사 / 형용사 (부사·조동사 결합: 반드시 ~할 것이다, 틀림없이 ~할 것이다)",
+    "shortExplanation": "부사 '一定'과 조동사 '会'를 결합하여 동사나 형용사 앞에 놓음으로써, 미래에 대한 확고한 예측이나 굳은 다짐·약속을 나타냅니다('반드시 ~할 것이다', '틀림없이 ~할 것이다').",
+    "longExplanation": "'一定'(yīdìng)과 미래의 실현 가능성을 나타내는 조동사 '会'(huì)가 결합하여 쓰이면, 말하는 이의 강력한 확신에 찬 추측이나 진심 어린 약속을 나타냅니다(예: '我一定会努力' 저는 반드시 노력할 것입니다, '你一定会成功的' 당신은 틀림없이 성공할 것입니다, '明天一定会暖和起来' 내일은 분명 따뜻해질 것이다). 의무나 당위를 나타내는 '一定要'와 달리, '一定会'는 사태의 필연적인 도래나 실현을 단언하는 뉘앙스를 지닙니다. 한국어의 '반드시/꼭 ~할 것이다', '틀림없이 ~할 것이다'에 해당합니다.",
+    "formation": "주어 + 一定(会) + 동사 / 형용사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "응원과 격려에 감사드리며, 저는 반드시 계속해서 노력하겠습니다."
+      }
+    ]
   },
   "zh_不一定_351": {
-    "title": "不一定 (not necessarily)",
-    "shortExplanation": "not necessarily",
-    "longExplanation": "not necessarily. Pinyin: bùyīdìng",
-    "formation": "bùyīdìng"
+    "title": "不一定 (부분부정 부사: 꼭 ~한 것은 아니다, 반드시 ~인 것은 아니다)",
+    "shortExplanation": "필연성이나 절대성을 부분적으로 부정하여, 꼭 그렇다고 단정할 수 없거나 예외가 존재함을 나타냅니다('꼭 ~한 것은 아니다', '반드시 ~인 것은 아니다').",
+    "longExplanation": "'不一定'(bùyīdìng)은 사태의 절대적인 필연성을 부정하는 부분부정 표현입니다. 상식적인 통념이나 상대방의 단정에 대해 반드시 그런 결과로 이어지는 것은 아님을 지적할 때 쓰입니다(예: '贵的不一定好' 비싼 것이 꼭 좋은 것은 아니다, '个子高不一定力气大' 키가 크다고 해서 반드시 힘이 센 것은 아니다, '明天我不一定在家' 내일 내가 꼭 집에 있으리라는 법은 없다). 단독으로 '不一定'(글쎄, 꼭 그렇지는 않아/모르는 일이야)처럼 짤막한 답변으로도 매우 자주 쓰입니다. 한국어의 '꼭 ~한 것은 아니다', '반드시 ~인 것은 아니다', '그렇지 않을 수도 있다'에 해당합니다.",
+    "formation": "주어 + 不一定 + 술어 (동사 / 형용사 / 주술구) / 단독 응답: 不一定",
+    "examples": [
+      {
+        "translation": "키가 크다고 해서 반드시 힘이 센 것은 아닙니다."
+      }
+    ]
   },
   "zh_一定的_352": {
-    "title": "一定的 (some, a certain)",
-    "shortExplanation": "some, a certain",
-    "longExplanation": "some, a certain. Pinyin: yīdìng de",
-    "formation": "yīdìng de"
+    "title": "一定的 + 명사 (관형어: 일정한, 어느 정도의, 상당한)",
+    "shortExplanation": "명사 앞에 '的'와 함께 쓰여, 어떤 기준치나 상당한 수준·분량에 도달해 있음을 나타냅니다('일정한', '어느 정도의', '상당한').",
+    "longExplanation": "'一定'(yīdìng)이 구조조사 '的'를 수반하여 명사를 수식하는 관형어로 쓰일 때는 부사 '반드시'의 뜻이 아니라, '상당한 수준에 이른', '특정하게 정해진'이라는 의미를 가집니다(예: '有一定的基础' 일정한 기초가 있다, '需要一定的时间' 어느 정도의 시간이 필요하다, '产生一定的影响' 상당한 영향을 미치다, '保持一定的距离' 일정한 거리를 유지하다). 주로 추상명사 앞에 붙어 무시할 수 없을 만큼의 분량이나 능력을 구비하고 있음을 객관적으로 서술합니다. 한국어의 '일정한', '어느 정도의', '상당한'에 해당합니다.",
+    "formation": "(동사: 有 / 达到 / 产生 등 +) 一定的 + 명사 (基础 / 影响 / 难度 / 时间 / 距离 등)",
+    "examples": [
+      {
+        "translation": "만약 일정한 언어 기초가 갖추어져 있다면, 외국에 나가서 외국어를 배우는 것이 가장 좋은 선택입니다."
+      }
+    ]
   },
   "zh_来V_353": {
-    "title": "来 V ((verb prefix, indicating the verb hasn’t happened))",
-    "shortExplanation": "(verb prefix, indicating the verb hasn’t happened)",
-    "longExplanation": "(verb prefix, indicating the verb hasn’t happened). Pinyin: lái V",
-    "formation": "lái V"
+    "title": "来 + 동사 (자발적 동작 개시: (내가) ~하겠다, 맡아서 ~하다, 나서서 ~하다)",
+    "shortExplanation": "동사 앞에 '来'를 놓아 공간 이동이 아닌, 자신이 자진해서 그 행동을 맡아 하거나 솔선하여 시도하겠다는 적극적인 의사를 나타냅니다('내가 ~할게', '나서서 ~하다').",
+    "longExplanation": "'来'(lái)가 다른 동사 앞에 놓일 때는 물리적으로 '오다'라는 뜻이 아니라, 동작을 적극적으로 자청하거나 주도적으로 솔선하여 실행하겠다는 태도를 나타냅니다(예: '我来做' 제가 하겠습니다, '我来帮你' 내가 도와줄게, '你来试试' 네가 한번 해 봐, '今天我来请客' 오늘은 내가 한턱낼게). 일상 대화에서 남을 돕거나 책임을 맡을 때 상대방에게 친근하고 능동적인 어조를 부여합니다. 한국어의 '(자진해서) ~하겠다', '내가 ~할게', '맡아서 ~하다'에 해당합니다.",
+    "formation": "주어 + 来 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "이 소파가 이렇게 크니, 제가 나서서 여러분과 함께 들어 올릴게요."
+      }
+    ]
   },
   "zh_通过用N来V_354": {
-    "title": "通过/用 N 来 V (V through N)",
-    "shortExplanation": "V through N",
-    "longExplanation": "V through N. Pinyin: tōngguò/ yòng N lái V",
-    "formation": "tōngguò/ yòng N lái V"
+    "title": "通过 / 用 + 명사 + 来 + 동사 (수단·목적 구문: ~을 통해 / ~을 써서 …하다)",
+    "shortExplanation": "개사 '通过'(~을 통해)나 '用'(~을 사용하여)으로 수단과 경로를 제시하고, '来'(그로써)를 연결하여 목적 동작을 실현함을 나타냅니다('~을 통해 …하다', '~을 사용하여 …하다').",
+    "longExplanation": "수단이나 경로를 이끄는 개사 '通过'(과정·매개) 또는 '用'(도구·재료) 뒤에 명사를 배치하고, 접속 기능을 하는 '来'를 통해 궁극적인 목적을 나타내는 동사구로 이어지는 구문입니다. 어떤 결과나 목적을 달성하기 위해 어떠한 수단과 방식을 활용하는지를 논리정연하게 표현합니다(예: '通过阅读来提高汉语水平' 독서를 통해 중국어 실력을 향상시키다, '用事实来证明一切' 사실로써 모든 것을 증명하다, '通过沟通来化解矛盾' 소통을 통해 갈등을 해소하다). 한국어의 '~을 통해/통하여 …하다', '~을 써서/이용하여 …하다'에 해당합니다.",
+    "formation": "주어 + 通过 / 用 + 명사 (수단 / 도구 / 매개) + 来 + 동사 (+ 목적어)",
+    "examples": []
   },
   "zh_左右_356": {
-    "title": "# 左右 (around #)",
-    "shortExplanation": "around #",
-    "longExplanation": "around #. Pinyin: # zuǒyòu",
-    "formation": "# zuǒyòu"
+    "title": "수사(+ 양사 + 명사) / 시점 + 左右 (어림수 표현: ~가량, ~안팎, ~전후, ~쯤)",
+    "shortExplanation": "수량사나 시각, 연령 등의 뒤에 '左右'를 덧붙여 기준 수치의 앞뒤를 아우르는 대략적인 수량이나 시점(~쯤, ~가량, ~전후)을 나타냅니다.",
+    "longExplanation": "'左右'(zuǒyòu)는 대략적인 수치나 시점을 나타내는 어림수(개수) 표현으로, 수량사나 시각, 나이, 금액 등의 바로 뒤에 놓입니다. 제시된 기준 수치보다 약간 많거나 적음을 나타내며, 우리말의 '~가량', '~안팎', '~전후', '~쯤'에 해당합니다(예: '十点左右' 10시쯤, '三十岁左右' 서른 살가량, '一百块左右' 100위안 안팎, '五个小时左右' 다섯 시간 정도). 반드시 수량 표현의 뒤에 위치한다는 어순상의 특징이 있습니다.",
+    "formation": "수사(+ 양사 + 명사) / 시점 + 左右",
+    "examples": []
   },
   "zh_可VA了_359": {
-    "title": "可 V/A 了 (really A/V)",
-    "shortExplanation": "really A/V",
-    "longExplanation": "really A/V. Pinyin: kě V/A le",
-    "formation": "kě V/A le"
+    "title": "可 + 형용사 / 동사 + 了 (감탄 부사 구문: 정말 ~하다, 아주 ~하다, 어찌나 ~한지)",
+    "shortExplanation": "부사 '可'를 형용사나 심리동사 앞에 두고 문말의 '了'와 호응시켜, 정도가 대단히 높음을 감탄을 담아 강조합니다('정말 ~하다', '아주 ~하다', '참으로 ~하다').",
+    "longExplanation": "'可'(kě)는 생생한 구어에서 정도의 극치를 강조하는 어기부사입니다. 문장 끝의 어기조사 '了'와 어우러져 '可 + 형용사 / 심리동사 + 了' 형식을 취하며, 어떤 상태나 심경의 강도가 매우 두드러짐을 실감 나게 표현합니다(예: '今天天气可热了' 오늘 날씨가 정말 덥다, '这儿的风景可美了' 이곳의 경치가 참으로 아름답다, '听到消息后他可高兴了' 소식을 듣고 그는 어찌나 기뻐했는지 모른다, '这道题可难了' 이 문제는 아주 어렵다). '很'이나 '非常'과 같은 단순 서술 부사보다 감정이 풍부하게 실린 감탄의 뉘앙스를 지닙니다. 한국어의 '정말 ~하다', '아주 ~하다', '참으로 ~하다'에 해당합니다.",
+    "formation": "주어 + 可 + 형용사 / 심리동사 + 了",
+    "examples": [
+      {
+        "translation": "오늘 날씨가 정말 덥네요."
+      }
+    ]
   },
   "zh_可Q_360": {
-    "title": "可 Q (Q on earth?)",
-    "shortExplanation": "Q on earth?",
-    "longExplanation": "Q on earth?. Pinyin: kě Q",
-    "formation": "kě Q"
+    "title": "可 + 의문사 (어기부사: 도대체, 대체 어쩌면 좋을까)",
+    "shortExplanation": "의문대명사 앞에 놓여 조급함, 난처함, 불안감, 걱정 등의 감정을 강조하며 반문하거나 해답을 갈구합니다('도대체', '대체 어쩌면').",
+    "longExplanation": "'可'(kě)는 어기부사로서 의문대명사(예: '怎么', '怎么办', '谁', '哪儿' 등) 바로 앞에 쓰여 의문의 어기를 한층 강화합니다. 난감하거나 다급한 상황에 직면했을 때 당혹감, 걱정, 안타까움의 심정을 절실하게 드러내며 '도대체 어찌해야 하는가'라는 뉘앙스를 풍깁니다(예: '这可怎么办？' 이걸 도대체 어쩌면 좋지?, '你可到哪儿去找他？' 걔를 도대체 어디 가서 찾는단 말인가?). 한국어의 '도대체', '대체', '정말이지 (어쩌나)'에 해당합니다.",
+    "formation": "주어 + 可 + 의문사 (怎么 / 怎么办 / 谁 / 哪儿 등) (+ 어기조사)",
+    "examples": [
+      {
+        "translation": "다음 주면 비자를 발급받으러 대사관에 가야 하는데, 이걸 도대체 어쩌면 좋죠?"
+      }
+    ]
   },
   "zh_可V_361": {
-    "title": "可 V (indeed)",
-    "shortExplanation": "indeed",
-    "longExplanation": "indeed. Pinyin: kě V",
-    "formation": "kě V"
+    "title": "可 + 동사 / 형용사 (어기부사: 정말로, 참으로, 그야말로)",
+    "shortExplanation": "동사(특히 '是')나 형용사 앞에 쓰여 긍정의 어기를 한층 강조합니다('정말로', '참으로', '그야말로', '확실히').",
+    "longExplanation": "'可'(kě)는 긍정의 어기를 강화하는 어기부사로서, 동사(특히 '是'와 결합한 '可是')나 형용사 앞에 놓여 화자의 확신이나 주관적인 평가를 강하게 표출합니다. '确实'(확실히), '实在'(실로), '真是'(정말)와 같은 뜻으로, 어떤 사실이나 특성이 두드러짐을 강조합니다(예: '这可是个好机会' 이건 그야말로 좋은 기회다, '今天可真累' 오늘은 정말이지 피곤하다, '我可不知道' 난 정말이지 모른다). 한국어의 '정말로', '참으로', '그야말로', '확실히'에 해당합니다.",
+    "formation": "주어 + 可 + 是 / 동사 / 형용사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "이건 정말이지 큰 문제라서, 저도 잘 모르겠습니다."
+      }
+    ]
   },
   "zh_怕害怕_362": {
-    "title": "怕/害怕 (to be afraid)",
-    "shortExplanation": "to be afraid",
-    "longExplanation": "to be afraid. Pinyin: pà/ hàipà",
-    "formation": "pà/ hàipà"
+    "title": "怕 / 害怕 (심리동사: 두려워하다, 무서워하다, 걱정하다)",
+    "shortExplanation": "심리동사로서 위험, 난관 또는 원치 않는 나쁜 결과를 두려워하거나 걱정함을 나타냅니다('두려워하다', '무서워하다', '걱정되다').",
+    "longExplanation": "'怕'(pà)와 '害怕'(hàipà)는 모두 두려움이나 불안, 우려를 나타내는 심리동사입니다. '害怕'는 구체적인 사물이나 위험(예: 어둠, 개, 실패 등)에 대한 본능적인 공포심을 표현할 때 자주 쓰이며, '怕'는 공포뿐만 아니라 나쁜 상황이 일어날까 봐 '걱정하다, 염려하다'의 뜻으로 폭넓게 쓰입니다(예: '怕迟到' 늦을까 봐 걱정하다, '怕生病' 병에 걸릴까 두려워하다). 뒤에 명사, 동사 또는 절을 목적어로 취할 수 있습니다. 한국어의 '두려워하다', '무서워하다', '걱정스럽다', '~할까 봐 겁나다'에 해당합니다.",
+    "formation": "주어 + 怕 / 害怕 (+ 명사 / 동사 / 절)",
+    "examples": [
+      {
+        "translation": "제 업무 경험이 아직 비교적 적어서, 그 일을 끝마치지 못할까 봐 두렵습니다(걱정스럽습니다)."
+      }
+    ]
   },
   "zh_恐怕_363": {
-    "title": "恐怕…… (I guess I’m afraid…)",
-    "shortExplanation": "I guess I’m afraid…",
-    "longExplanation": "I guess I’m afraid…. Pinyin: kǒngpà……",
-    "formation": "kǒngpà……"
+    "title": "恐怕…… (어기부사: 아마 ~일 것이다, 염려컨대 ~인 듯하다)",
+    "shortExplanation": "부사로서 문두나 술어 앞에 쓰여, 마음에 차지 않거나 걱정스러운 상황에 대한 추측을 완곡하게 나타냅니다('아마 ~일 것이다', '염려스럽게도 ~인 것 같다').",
+    "longExplanation": "'恐怕'(kǒngpà)는 어기부사로, 문장의 맨 앞이나 주어 뒤 술어 앞에 위치합니다. 좋지 않은 상황이나 상대방의 기대에 어긋나는 결과를 예상할 때 직설적인 단정을 피하고 추측의 어조로 조심스럽고 완곡하게 전달하는 역할을 합니다(예: '恐怕来不及了' 아마 늦을 것 같다, '恐怕不行' 아무래도 안 될 것 같다). 한국어의 '아마 ~일 것이다', '염려스럽게도 ~인 듯하다', '아무래도 ~인 것 같다'에 해당합니다.",
+    "formation": "(주어 +) 恐怕 + 절 / 술어구",
+    "examples": [
+      {
+        "translation": "제 대답을 다 들으셨으니, 아마 당신은 이미 제 답을 아셨을 것 같네요."
+      }
+    ]
   },
   "zh_怕恐怕V_364": {
-    "title": "怕/恐怕 V (probably I’m afraid)",
-    "shortExplanation": "probably I’m afraid",
-    "longExplanation": "probably I’m afraid. Pinyin: pà/ kǒngpà V",
-    "formation": "pà/ kǒngpà V"
+    "title": "怕 / 恐怕 + 동사 (어림부사: 아마 ~는 될 것이다, 어림잡아 ~에 달하다)",
+    "shortExplanation": "수량이나 시간을 수반하는 동사('有', '超过' 등) 앞에 놓여, 수치나 기간에 대한 어림과 추측을 나타냅니다('아마 ~는 될 것이다', '어림잡아').",
+    "longExplanation": "'怕'(pà) 또는 '恐怕'(kǒngpà)가 '有'(있다/되다), '超过'(넘다), '要'(걸리다) 등의 동사와 수량·시간 표현 앞에 위치하면 수치나 기간에 대한 화자의 대략적인 추측과 어림을 나타냅니다. 정확한 계량은 아니지만 '아마 그 정도는 충분히 될 것이다'라는 뉘앙스를 전달합니다(예: '离开怕有二十天了' 떠난 지 아마 20일은 되었을 것이다, '恐怕要花上千块' 아마 천 위안은 들 것이다). 한국어의 '아마 ~는 될 것이다', '어림잡아 ~에 이르다', '얼추 ~는 되다'에 해당합니다.",
+    "formation": "주어 + 怕 / 恐怕 + 동사 (有 / 超过 / 要 등) + 수량사 / 시간 표현",
+    "examples": [
+      {
+        "translation": "그 사람이 이곳을 떠난 지 아마 20일은 족히 되었을 것입니다."
+      }
+    ]
   },
   "zh_到底_365": {
-    "title": "到底 (to the end)",
-    "shortExplanation": "to the end",
-    "longExplanation": "to the end. Pinyin: dàodǐ",
-    "formation": "dàodǐ"
+    "title": "동사 + 到底 (보어: 끝까지, 끝장을 보다, 끝까지 해내다)",
+    "shortExplanation": "동사 뒤에 쓰여 행동을 중간에 포기하지 않고 목적지나 최종 결과에 도달할 때까지 철저히 지속함을 나타냅니다('끝까지', '끝장을 보다').",
+    "longExplanation": "'到底'(dàodǐ)가 동사 뒤에 쓰여 일종의 보어 역할을 할 때, '밑바닥에 도달하다'라는 본래의 의미에서 파생되어 행동을 끝까지 포기하지 않고 관철함을 나타냅니다. '동사 + 到底' 구성은 확고한 결심을 가지고 어떤 동작을 최종 결말이 날 때까지 철저하게 지속함을 강조합니다(예: '坚持到底' 끝까지 버티다/견지하다, '调查到底' 끝까지 조사하다, '进行到底' 끝까지 진행하다, '逛到底' 끝까지 쇼핑하다). 한국어의 '끝까지', '끝장을 보다', '철저하게 끝마치다'에 해당합니다.",
+    "formation": "주어 + 동사 (+ 목적어 + 동사) + 到底 (또는: 동사 + 到底)",
+    "examples": [
+      {
+        "translation": "오늘 내가 반드시 너와 끝까지 쇼핑해 줄 테니, 꼭 마음에 드는 옷을 사게 해 줄게."
+      }
+    ]
   },
   "zh_到底Q_366": {
-    "title": "到底 Q (in the world)",
-    "shortExplanation": "in the world",
-    "longExplanation": "in the world. Pinyin: dàodǐ Q",
-    "formation": "dàodǐ Q"
+    "title": "到底 + 의문사 (부사: 도대체, 대체, 도대체 어떻게 된 일인가)",
+    "shortExplanation": "의문문에서 쓰여 진상을 끝까지 캐묻거나 상대방의 명확한 의도를 다그치는 어기를 강조합니다('도대체', '대체').",
+    "longExplanation": "'到底'(dàodǐ)는 부사로서 의문사가 포함된 의문문이나 정반의문문(예: '去不去' 등)에 쓰입니다. 어떤 사안의 진상을 철저히 밝혀내려 하거나, 상대방의 결단과 생각을 더 이상 미루지 말고 분명히 밝히라고 재촉할 때 사용합니다(예: '你到底去不去？' 너 도대체 갈 거야 안 갈 거야?, '到底是谁干的？' 도대체 누가 한 짓인가?, '到底怎么了？' 대체 어떻게 된 일이야?). 한국어의 '도대체', '대체', '대관절'에 해당합니다.",
+    "formation": "(주어 +) 到底 (+ 주어 +) 의문사 / 의문절 (+ 어기조사)",
+    "examples": [
+      {
+        "translation": "도대체 어떻게 할 생각인 거야?"
+      }
+    ]
   },
   "zh_拿来说_367": {
-    "title": "拿……来说 (take… for example)",
-    "shortExplanation": "take… for example",
-    "longExplanation": "take… for example. Pinyin: ná…… láishuō",
-    "formation": "ná…… láishuō"
+    "title": "拿……来说 (개사구: ~를 예로 들자면, ~로 말할 것 같으면)",
+    "shortExplanation": "특정 인물이나 사물을 전형적인 예로 이끌어내어 자신의 견해나 사실을 설명합니다('~를 예로 들면', '~로 말하자면').",
+    "longExplanation": "'拿……来说'(ná ... láishuō)는 고정 개사구로, 주로 문두에 놓여 구체적인 실례를 도입합니다. '拿' 뒤에 인물, 단체, 사건 등의 명사나 대명사를 넣어 '~를 구체적인 본보기로 들어 말하자면'이라는 전제를 세우고, 뒷절에서 그에 대한 구체적인 상황이나 주장을 설명합니다(예: '拿中国来说' 중국을 예로 들자면, '拿年轻人来说' 젊은이들을 예로 들자면, '拿我来说' 저를 예로 들면). 한국어의 '~를 예로 들면', '~를 두고 말하자면', '~에 대해 말하자면'에 해당합니다.",
+    "formation": "拿 + 명사 / 대명사 + 来说，설명하는 절",
+    "examples": [
+      {
+        "translation": "저를 예로 들자면, 저는 벌써 10년 동안 중국어를 배웠습니다."
+      }
+    ]
   },
   "zh_敢V_368": {
-    "title": "敢 V (to dare to V)",
-    "shortExplanation": "to dare to V",
-    "longExplanation": "to dare to V. Pinyin: gǎn V",
-    "formation": "gǎn V"
+    "title": "敢 + 동사 (능원동사: 감히 ~하다, ~할 용기가 있다)",
+    "shortExplanation": "능원동사(조동사)로서 동사 앞에 놓여 용기와 자신감을 가지고 행동함을 나타냅니다('감히 ~하다', '~할 용기가 있다').",
+    "longExplanation": "'敢'(gǎn)은 능원동사로서 동사 앞에 쓰여, 위험이나 어려움에 굴하지 않고 행동을 취할 만한 용기와 배짱이 있음을 나타냅니다(예: '敢作敢当' 자기가 한 일에 책임을 지다, '你敢去吗？' 너 갈 용기 있어?). 부정형인 '不敢'은 두려움이나 조심스러움 때문에 감히 행동하지 못하거나, 겸손함을 표할 때 널리 쓰입니다(예: '不敢当' 천만의 말씀입니다, '不敢说' 감히 말하지 못하다). 한국어의 '감히 ~하다', '~할 용기가 있다', (부정형) '감히 ~하지 못하다'에 해당합니다.",
+    "formation": "주어 + (不 / 也) + 敢 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "아무도 그의 험담을 감히 하지 못합니다."
+      }
+    ]
   },
   "zh_倒_369": {
-    "title": "倒 (to pour)",
-    "shortExplanation": "to pour",
-    "longExplanation": "to pour. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒 (동사［4성 dào］: 따르다, 붓다, 쏟다, 비우다)",
+    "shortExplanation": "동사(4성 dào)로서 용기를 기울여 액체를 따르거나 내용물을 쏟아 비우는 동작을 나타냅니다('따르다', '붓다', '버리다').",
+    "longExplanation": "'倒'가 4성(dào)으로 발음될 때는 용기를 기울여 물, 차, 술 등의 액체를 컵에 따르거나, 쓰레기 등을 쏟아버리는 행위를 나타내는 타동사로 쓰입니다(예: '倒水' 물을 따르다, '倒茶' 차를 따르다, '倒垃圾' 쓰레기를 버리다). 3성(dǎo)으로 발음될 때 '넘어지다, 쓰러지다, 도산하다'의 뜻을 나타내는 것과 엄격히 구별해야 합니다. 한국어의 '(물을) 따르다', '붓다', '(쓰레기를) 쏟아 비우다/버리다'에 해당합니다.",
+    "formation": "주어 + 倒 (+ 대상 / 수량사) + 액체·쓰레기 등의 명사 (水 / 茶 / 垃圾 등)",
+    "examples": [
+      {
+        "translation": "제가 물 한 잔 따라 드릴게요."
+      }
+    ]
   },
   "zh_倒_370": {
-    "title": "倒 (to reverse)",
-    "shortExplanation": "to reverse",
-    "longExplanation": "to reverse. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒 (동사 / 부사［4성 dào］: 거꾸로 하다, 뒤집다, 후진하다)",
+    "shortExplanation": "동사 또는 부사(4성 dào)로서 전후, 상하의 순서나 방향을 반대로 뒤집거나 후진함을 나타냅니다('거꾸로 하다', '뒤집다', '후진하다').",
+    "longExplanation": "'倒'가 4성(dào)으로 쓰일 때는 상하, 전후 또는 순서의 방향이 정상적인 배치와 정반대가 되게 하거나, 뒤로 물러서서 이동하는 동작을 나타냅니다(예: '倒车' 차를 후진하다, '倒着走' 뒷걸음질 치다, '倒过来' 거꾸로 뒤집다, '挂倒了' 거꾸로 걸렸다). 방향보어인 '过来', '过去' 등과 결합하여 순서나 위아래를 역순으로 바꿈을 나타낼 때 자주 사용됩니다. 한국어의 '거꾸로 하다', '뒤집다', '반대로 하다', '후진하다'에 해당합니다.",
+    "formation": "倒 + 방향보어 (过来 / 过去 등) (또는: 倒着 + 동사)",
+    "examples": [
+      {
+        "translation": "“사랑해(我爱你)”를 거꾸로 뒤집으면 바로 “너 나 사랑해(你爱我)”가 됩니다."
+      }
+    ]
   },
   "zh_S倒V_371": {
-    "title": "S 倒 V (although S V)",
-    "shortExplanation": "although S V",
-    "longExplanation": "although S V. Pinyin: S dǎo V",
-    "formation": "S dǎo V"
+    "title": "주어 + 倒 / 倒是 + 술어 (양보부사: ~하기는 하다만, 그렇기는 한데)",
+    "shortExplanation": "부사로서 술어 앞에 쓰여, 앞의 사실이나 장점을 일단 인정한 뒤 뒤이어 상반되는 난관이나 전환을 제기합니다('~하기는 하다만', '그렇기는 한데').",
+    "longExplanation": "'倒'(dào)는 어기부사로 쓰여(흔히 '倒是'의 형태로), 양보와 전환의 어기를 나타냅니다. 앞 절에서 어떤 사실이나 상대방의 말을 일단 수긍하고 긍정(양보)한 뒤, 뒤이어 '可是', '但是', '可' 등과 함께 다른 측면의 반대되는 사실이나 어려움을 지적하며 초점을 전환합니다(예: '去倒是可以，就是没空' 가는 것은 괜찮다만 시간이 없다, '说得倒是容易，做起来难' 말하기야 쉽다만 행동하기는 어렵다, '便宜倒是便宜' 싸기는 싸지만). 한국어의 '~하기는 하다만', '~이기는 한데 (실제로는)', '말이야 그렇지만'에 해당합니다.",
+    "formation": "주어 + 倒 / 倒是 + 술어 1，(可是 / 但是 / 可 +) 술어 2",
+    "examples": [
+      {
+        "translation": "네가 말하기야 쉽지, 실제로 해 보려면 참 어렵단다!"
+      }
+    ]
   },
   "zh_干gn_372": {
-    "title": "干 (gān) (dry)",
-    "shortExplanation": "dry",
-    "longExplanation": "dry. Pinyin: gàn (gān)",
-    "formation": "gàn (gān)"
+    "title": "干 (gān) (형용사 / 결과보어: 마르다, 건조하다, 물기를 없애다)",
+    "shortExplanation": "형용사 또는 결과보어(1성 gān)로서 수분이 없고 바짝 마른 상태나 완전히 말리는 결과를 나타냅니다('마르다', '건조하다', '말리다').",
+    "longExplanation": "'干'이 1성(gān)으로 발음되면 형용사로서 수분이나 습기가 빠져 마르고 건조한 상태를 나타냅니다(예: '衣服干了' 옷이 말랐다, '干毛巾' 마른 수건, '天气很干' 날씨가 매우 건조하다). 또한 '擦'(닦다), '晒'(햇볕에 말리다), '吹'(바람으로 말리다) 등의 동사 뒤에 결과보어로 쓰여 동작을 통해 대상의 물기를 완전히 제거하여 바짝 마르게 함을 나타냅니다(예: '擦干' 닦아서 말리다, '吹干' 드라이기로 말리다, '晒干' 햇볕에 바짝 말리다). 4성(gàn: 일하다)의 발음과 주의해서 구별해야 합니다. 한국어의 '마르다', '건조하다', '(물기를) 닦아 말리다'에 해당합니다.",
+    "formation": "동사 + 干 (결과보어) (또는: 명사 + 很 / 已经 + 干)",
+    "examples": [
+      {
+        "translation": "머리카락을 닦아서 말리세요."
+      }
+    ]
   },
   "zh_干gn_373": {
-    "title": "干 (gàn) (to do)",
-    "shortExplanation": "to do",
-    "longExplanation": "to do. Pinyin: gàn (gàn)",
-    "formation": "gàn (gàn)"
+    "title": "干 (gàn) (동사［구어］: 하다, 일하다, 종사하다)",
+    "shortExplanation": "구어 동사(4성 gàn)로서 어떤 일이나 활동을 '하다', '일하다'를 나타냅니다('하다', '일하다', '행하다').",
+    "longExplanation": "'干'이 4성(gàn)으로 발음되면 구어에서 널리 쓰이는 동사로서 표준어의 '做'(하다)와 같은 뜻을 지닙니다. 어떤 업무나 활동에 종사하거나 육체적·정신적 노동을 행함을 생동감 있게 표현합니다(예: '你在干什么？' 너 뭐 하고 있니?, '干活儿' 일을 하다/노동하다, '好好干' 열심히 일하다, '干得不错' 잘해내다). 1성(gān: 마르다)과 구별해야 합니다. 한국어의 '하다', '일하다', '벌이다'에 해당합니다.",
+    "formation": "주어 + 干 + 목적어 (什么 / 活儿 / 工作 등)",
+    "examples": [
+      {
+        "translation": "너 지금 뭐 하고 있니?"
+      }
+    ]
   },
   "zh_趟_374": {
-    "title": "# 趟 (# times (of trips))",
-    "shortExplanation": "# times (of trips)",
-    "longExplanation": "# times (of trips). Pinyin: # tàng",
-    "formation": "# tàng"
+    "title": "수사 + 趟 (동량사: 번 걸음, 차례, 번 왕복)",
+    "shortExplanation": "동량사(4성 tàng)로서 사람이나 교통수단이 어딘가를 오가는 왕복 횟수나 발걸음의 횟수를 셉니다('번', '차례', '번 걸음').",
+    "longExplanation": "'趟'(tàng)은 왕복이나 이동의 횟수를 나타내는 동량사입니다. '去'(가다), '来'(오다), '跑'(뛰다/다녀오다), '走'(걸어가다) 등 이동을 나타내는 동사 뒤에 쓰여, 특정 목적지에 다녀오는 행위의 횟수나 번거로운 발걸음의 횟수를 나타냅니다(예: '去了一趟北京' 베이징에 한 번 다녀왔다, '跑了两趟' 두 번이나 다녀왔다, '白跑一趟' 헛걸음하다, '走一趟' 한 번 다녀오다). 한국어의 '번 (걸음)', '차례', '번 왕복'에 해당합니다.",
+    "formation": "동사 (去 / 来 / 走 / 跑 등) + 수사 + 趟 (+ 장소 명사)",
+    "examples": []
   },
   "zh_次_377": {
-    "title": "# 次 (No. # (bus/train route))",
-    "shortExplanation": "No. # (bus/train route)",
-    "longExplanation": "No. # (bus/train route). Pinyin: # cì",
-    "formation": "# cì"
+    "title": "수사 / 노선번호 + 次 (양사 / 접미사: ~호, ~번, ~차 편)",
+    "shortExplanation": "기차나 버스 등의 운행 번호(차편 번호) 뒤에 쓰여 특정 노선이나 운행 편수를 가리킵니다('~호', '~번 버스/열차').",
+    "longExplanation": "'次'(cì)는 기차('列车'), 고속철('高铁'), 시내버스('公交车') 등의 운행 번호(중국어의 '车次') 뒤에 결합하여 해당 운행 편수나 노선 번호를 나타내는 접미사 겸 양사로 쓰입니다(예: '502次公交车' 502번 버스, 'G1次列车' G1호 고속열차, 'T109次特快' T109편 특급열차). 한국어의 열차나 버스의 '~호 (열차)', '~번 (버스)', '~회차'에 해당합니다.",
+    "formation": "수사 / 운행 번호 + 次 (+ 교통수단 명사: 公交车 / 列车 / 火车 등)",
+    "examples": [
+      {
+        "translation": "502번 버스가 곧 도착합니다."
+      }
+    ]
   },
   "zh_为了V1而V2_378": {
-    "title": "为了 V1 而 V2 (V2 in order to V1)",
-    "shortExplanation": "V2 in order to V1",
-    "longExplanation": "V2 in order to V1. Pinyin: wèile V1 ér V2",
-    "formation": "wèile V1 ér V2"
+    "title": "为了 + 동사1 + 而 + 동사2 (접속 표현: 동사1하기 위해 동사2하다)",
+    "shortExplanation": "목적을 나타내는 개사 '为了'와 접속사 '而'가 호응하여, 동사1이라는 목적을 달성하고자 동사2라는 행동을 취함을 나타냅니다('~하기 위해 ~하다').",
+    "longExplanation": "'为了 + 동사1 + 而 + 동사2'는 목적과 행위를 긴밀하게 연결하는 문형입니다. 개사 '为了'(wèile)가 달성하고자 하는 목표나 취지(동사1)를 이끌고, 접속사 '而'(ér)가 그 목적을 위해 기울이는 구체적인 행위나 노력(동사2)을 이어 줍니다. 서면어나 격식 있는 표현에서 자주 쓰이며 강한 목적의식을 드러냅니다(예: '为了实现梦想而努力奋斗' 꿈을 실현하기 위해 노력 분투하다, '为了生存而奔波' 생존을 위해 분주히 뛰어다니다). 한국어의 '~하기 위해 ~하다', '~하고자 ~을(를) 행하다'에 해당합니다.",
+    "formation": "(주어 +) 为了 + 동사1 (+ 목적어) + (주어 +) 而 + 동사2 (+ 목적어)",
+    "examples": []
   },
   "zh_为了N而V_381": {
-    "title": "为了 N 而 V (V for N)",
-    "shortExplanation": "V for N",
-    "longExplanation": "V for N. Pinyin: wèile N ér V",
-    "formation": "wèile N ér V"
+    "title": "为了 + 명사 + 而 + 동사 (개사구/접속 표현: 명사를 위해 동사하다)",
+    "shortExplanation": "개사 '为了' 뒤에 목표나 추구 대상이 되는 명사가 오고, 접속사 '而'를 통해 그를 위해 행하는 동작을 연결합니다('~을 위해 ~하다').",
+    "longExplanation": "'为了 + 명사 + 而 + 동사'는 개사 '为了'(wèile)가 추구하는 대상이나 이익, 가치(명사)를 제시하고, 접속사 '而'(ér)가 그 대상을 얻거나 지키기 위해 수행하는 행위(동사)를 연결하는 구조입니다(예: '为了和平而努力' 평화를 위해 노력하다, '为了生存而竞争' 생존을 위해 경쟁하다, '为了胜利而拼搏' 승리를 위해 분투하다). 문어체적인 격식을 갖춘 표현입니다. 한국어의 '~을(를) 위해 ~하다', '~을(를) 목적으로 ~을 행하다'에 해당합니다.",
+    "formation": "주어 + 为了 + 명사 + 而 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "식물은 햇빛, 공기, 물을 위해 서로 경쟁합니다."
+      }
+    ]
   },
   "zh_仍然VA_382": {
-    "title": "仍然 V/A (still V/A)",
-    "shortExplanation": "still V/A",
-    "longExplanation": "still V/A. Pinyin: réngrán V/A",
-    "formation": "réngrán V/A"
+    "title": "仍然 + 동사 / 형용사 (부사: 여전히, 아직도, 변함없이)",
+    "shortExplanation": "부사로서 동사나 형용사 앞에 쓰여 상황이나 동작이 변함없이 종전대로 지속되고 있음을 나타냅니다('여전히', '아직도', '변함없이').",
+    "longExplanation": "'仍然'(réngrán)은 상태나 동작의 변함없는 지속을 나타내는 부사로, '依然'(여전히), '还是'(여전히/그래도)와 의미가 통하며 비교적 격식 있는 어감을 띱니다. 시간의 흐름이나 주변 환경의 변화, 혹은 어떤 악조건에도 불구하고 이전의 상황·성질·행동이 그대로 유지됨을 나타냅니다(예: '仍然坚持' 여전히 견지하다, '仍然有效' 아직도 유효하다, '仍然很漂亮' 여전히 아름답다). '即使/就算……也……'(비록 ~할지라도)와 같은 양보 구문과 자주 호응합니다. 한국어의 '여전히', '아직도', '변함없이'에 해당합니다.",
+    "formation": "주어 (+ 即使 / 虽然 등) + 仍然 + 동사 / 형용사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "수 킬로미터 깊이의 해저라 할지라도 여전히 물체를 볼 수 있습니다."
+      }
+    ]
   },
   "zh_是否_383": {
-    "title": "是否 (if, whether)",
-    "shortExplanation": "if, whether",
-    "longExplanation": "if, whether. Pinyin: shìfǒu",
-    "formation": "shìfǒu"
+    "title": "是否…… (부사/접속사: ~인지 아닌지, ~여부, 과연 ~인가)",
+    "shortExplanation": "구어의 '是不是'에 해당하는 서면어로, 술어 앞에 쓰여 긍정과 부정의 양측 가능성을 제시합니다('~인지 아닌지', '~여부').",
+    "longExplanation": "'是否'(shìfǒu)는 한문 투의 긍정('是')과 부정('否')이 결합된 표현으로, 구어의 정반의문사 '是不是'(~인가 아닌가)에 해당하는 격식 있는 서면어입니다. 술어(동사나 형용사) 앞에 위치하거나 '知道'(알다), '确定'(확정하다), '考虑'(고려하다), '怀疑'(의심하다) 등의 인지 동사가 이끄는 목적어 절 안에서 쓰여, 사실의 진위나 성립 여부를 나타냅니다(예: '是否同意' 동의하는지 여부, '是否合格' 합격 여부/합격인지 아닌지, '是否属实' 사실인지 아닌지). 한국어의 '~인지 아닌지', '~여부', '~하는지의 여부'에 해당합니다.",
+    "formation": "주어 + (不知道 / 不确定 등 +) 是否 + 술어 (동사 / 형용사)",
+    "examples": [
+      {
+        "translation": "하지만 그 아이가 이렇게 어린데, 이 책을 과연 읽고 이해할 수 있을지 저는 잘 모르겠습니다."
+      }
+    ]
   },
   "zh_受不了_384": {
-    "title": "受不了 (tolerate)",
-    "shortExplanation": "tolerate",
-    "longExplanation": "tolerate. Pinyin: shòubùliǎo",
-    "formation": "shòubùliǎo"
+    "title": "受不了 (가능보어: 견딜 수 없다, 참을 수 없다, 못 참겠다)",
+    "shortExplanation": "가능보어 부정형으로서 육체적 고통, 열악한 환경, 혹은 타인의 무리한 언행 등을 더 이상 인내하거나 견뎌내지 못함을 나타냅니다('견딜 수 없다', '못 참겠다').",
+    "longExplanation": "'受不了'(shòubùliǎo)는 견디다·받아들이다를 뜻하는 '受' 뒤에 가능보어 부정형 '不了'가 결합된 관용구로, '受得了'(견딜 수 있다)의 반대말입니다. 무더위·추위·통증과 같은 신체적 고통이나 과도한 피로, 또는 상대방의 무례하고 짜증스러운 언행이나 상황을 더 이상 인내심을 갖고 감당해 내지 못할 때 씁니다(예: '受不了这种热天' 이런 더운 날씨는 못 참겠다, '受不了他的脾气' 그의 성미는 견딜 수가 없다, '累得受不了' 지쳐서 죽을 지경이다). 한국어의 '견딜 수 없다', '참을 수 없다', '~못 견디겠다'에 해당합니다.",
+    "formation": "주어 + (真 / 实在 등 +) 受不了 (+ 목적어: 사람 / 사물 / 상황)",
+    "examples": [
+      {
+        "translation": "나 정말 너한테 두 손 두 발 다 들었어(더는 못 참겠어), 도대체 쇼핑을 얼마나 더 할 셈이니?"
+      }
+    ]
   },
   "zh_接着V_385": {
-    "title": "接着 V (continue to V)",
-    "shortExplanation": "continue to V",
-    "longExplanation": "continue to V. Pinyin: jiēzhe V",
-    "formation": "jiēzhe V"
+    "title": "接着 + 동사 (부사: 이어서 ~하다, 계속해서 ~하다)",
+    "shortExplanation": "부사로서 동사 앞에 쓰여 이전 동작에 뒤이어 곧바로 행동을 계속하거나, 앞선 행위를 이어받아 실행함을 나타냅니다('이어서 ~하다', '계속해서 ~하다').",
+    "longExplanation": "'接着'(jiēzhe)는 동사 앞에 놓이는 부사로, 어떤 동작이 중단되지 않고 그대로 이어지거나, 앞선 동작이 끝난 직후 곧바로 다음 동작으로 넘어감을 나타냅니다. 또한 다른 사람의 행동을 바통 터치하듯 이어받아 계속 진행할 때도 쓰입니다(예: '接着说' 계속해서 말하다, '接着干' 계속해서 일하다, '接着看' 이어서 보다/읽다, '你休息一下，我接着做' 넌 좀 쉬어, 내가 이어서 할게). 한국어의 '이어서 ~하다', '계속해서 ~하다', '뒤이어 ~하다'에 해당합니다.",
+    "formation": "주어 + 接着 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "너 이 책 다 읽고 나서 일단 돌려주지(반납하지) 마, 내가 이어서 읽을게."
+      }
+    ]
   },
   "zh_接着_386": {
-    "title": "接着 (then)",
-    "shortExplanation": "then",
-    "longExplanation": "then. Pinyin: jiēzhe",
-    "formation": "jiēzhe"
+    "title": "接着…… (접속사: 뒤이어, 이어서, 그 다음에 곧바로)",
+    "shortExplanation": "접속사로서 뒷절의 앞머리에 쓰여, 앞선 사건에 뒤이어 다음 사건이 시간 순서대로 일어남을 나타냅니다('뒤이어', '이어서', '그 다음에').",
+    "longExplanation": "'接着'(jiēzhe)는 두 절을 잇는 접속사로, '然后'(그리고 나서)나 '紧接着'(곧이어)과 유사하게 선행 사건이 발생한 직후 다음 사건이 시간적 순서에 따라 잇달아 전개됨을 나타냅니다(예: '大家鼓完掌，接着主持人走上台' 모두 박수를 쳤고, 이어서 사회자가 무대로 올라왔다). 뒷절에서 부사 '又'(또)나 '就'(곧)와 자주 호응하여 사건 전개의 신속함과 매끄러운 연속성을 강조합니다. 한국어의 '뒤이어', '이어서', '그 다음에 곧바로'에 해당합니다.",
+    "formation": "절1, 接着 (+ 주어) (+ 又 / 就) + 절2",
+    "examples": [
+      {
+        "translation": "그는 졸업 후 고향에서 1년간 일했고, 뒤이어 또 베이징대학교 대학원에 합격하여 석사 과정을 밟았습니다."
+      }
+    ]
   },
   "zh_除此以外_387": {
-    "title": "除此以外 (other than that)",
-    "shortExplanation": "other than that",
-    "longExplanation": "other than that. Pinyin: chú cǐ yǐwài",
-    "formation": "chú cǐ yǐwài"
+    "title": "除此以外…… (접속 표현: 이 외에, 이 밖에는, 이것을 제외하고는)",
+    "shortExplanation": "고정 접속 표현으로 문두에 쓰여, 앞서 언급한 내용을 제외하거나 그 외의 다른 사항을 덧붙입니다('이 외에', '이 밖에는').",
+    "longExplanation": "'除此以外'(chú cǐ yǐwài)는 '除此之外'와 같은 뜻의 접속 어구로, 문장의 맨 앞이나 접속사 뒤에 놓입니다. 여기서 '此'(이것)는 앞 문장에서 서술된 사실이나 조건을 가리킵니다. 크게 두 가지 맥락으로 쓰이는데, 첫째는 제외의 의미로 앞서 말한 점을 빼고 나면 다른 것은 거의 없음을 나타내고(예: '除此以外再找不到……'), 둘째는 부가의 의미로 앞선 내용 외에 다른 것이 더 있음을 나타냅니다(예: '除此以外还有……'). 한국어의 '이 외에는', '이 밖에는', '이것 말고는'에 해당합니다.",
+    "formation": "선행문, (但 / 而且 등 +) 除此以外 (+ 주어) + 후행절",
+    "examples": [
+      {
+        "translation": "그와 남동생은 같은 날에 태어나서 형제 둘이 생김새가 매우 닮았지만, 그것 이외에는 다른 공통점을 거의 찾아볼 수 없습니다."
+      }
+    ]
   },
   "zh_把N1叫作N2_388": {
-    "title": "把 N1 叫作 N2 (call N1 N2)",
-    "shortExplanation": "call N1 N2",
-    "longExplanation": "call N1 N2. Pinyin: bǎ N1 jiàozuò N2",
-    "formation": "bǎ N1 jiàozuò N2"
+    "title": "把 + 명사1 + 叫作 + 명사2 (把자문: 명사1을 명사2라고 부르다/칭하다)",
+    "shortExplanation": "'把'자문을 사용하여 대상(명사1)을 앞으로 이끌어내고, 그에 대한 호칭이나 명칭(명사2)을 부여함을 나타냅니다('명사1을 명사2라고 부르다').",
+    "longExplanation": "'把 + 명사1 + 叫作 + 명사2'는 처치문인 '把'자문에 '叫作'(~라고 부르다/~로 칭하다)이 결합된 형태입니다. 특정 대상(명사1)을 '把' 뒤에 배치하고, 그 대상에 붙여진 별칭, 관습적 호칭, 비유적 명칭 또는 개념적 정의(명사2)를 '叫作' 뒤에 위치시킵니다(예: '把这种现象叫作……' 이런 현상을 ~라고 부르다, '把黄河叫作母亲河' 황허를 어머니의 강이라 부르다). 사회적 약속이나 관습적인 명명 방식을 기술할 때 널리 쓰입니다. 한국어의 '~을(를) ~라고 부르다', '~을(를) ~라고 칭하다'에 해당합니다.",
+    "formation": "주어 + 把 + 명사1 + 叫作 + 명사2 (호칭 / 명칭 / 별명)",
+    "examples": [
+      {
+        "translation": "중국인들은 황허(황하)를 \"어머니의 강\"이라고 부릅니다."
+      }
+    ]
   },
   "zh_无论不管Q都_389": {
-    "title": "(无论/不管) Q 都 (no matter Q)",
-    "shortExplanation": "no matter Q",
-    "longExplanation": "no matter Q. Pinyin: ( wúlùn/ bùguǎn) Q dōu",
-    "formation": "( wúlùn/ bùguǎn) Q dōu"
+    "title": "(无论 / 不管) + 의문사 + 都…… (무조건 접속사: 누구/무엇이든 간에 다 ~하다)",
+    "shortExplanation": "무조건을 나타내는 접속사 '无论/不管'이 의문대명사 및 부사 '都'와 호응하여, 어떤 경우에도 예외 없이 성립함을 나타냅니다('어떤 ~라도 모두').",
+    "longExplanation": "'(无论/不管) + 의문사 + 都……'는 어떤 전제나 조건 하에서도 결론이 흔들리지 않음을 나타내는 무조건 복문 구조입니다. '不管'은 일상 구어에서 애용되고, '无论'은 격식 있는 서면어에 어울립니다. 뒤에 의문대명사('谁' 누구, '什么' 무엇, '哪儿' 어디, '怎么' 어떻게, '什么时候' 언제 등)를 수반하고 뒷절에서 부사 '都'(모두) 또는 '也'(도)와 호응하여, \"어떤 대상이나 상황이든 불문하고 예외 없이 동일하다\"는 사실이나 규율을 천명합니다(예: '无论谁都……' 그 누구라 할지라도 다……, '不管发生什么都……' 무슨 일이 일어나든 다……). 한국어의 '누구/무엇이든 간에 모두 ~하다', '어떠한 ~라도 다 ~하다'에 해당합니다.",
+    "formation": "(无论 / 不管) + 의문사 (谁 / 什么 / 哪儿 / 怎么 등) + (주어 +) 都 / 也 + 술어",
+    "examples": [
+      {
+        "translation": "괜찮아요, 사과하실 필요 없어요. 누구라도 부주의해서 잘못 기재할 때가 있는 법이니까요."
+      }
+    ]
   },
   "zh_V上_390": {
-    "title": "V 上 (get to V)",
-    "shortExplanation": "get to V",
-    "longExplanation": "get to V. Pinyin: V shàng",
-    "formation": "V shàng"
+    "title": "동사 + 上 (결과보어 / 가능보어: 기회를 얻어 ~하다, ~에 도달하다, ~을 누리다)",
+    "shortExplanation": "동사 뒤에 붙어 목적 달성, 기회의 획득 또는 혜택의 향유를 나타냅니다(가능보어 형태 '동사 + 得上 / 不上'로 쓰여 '~을 누리다/맛보다' 또는 '~하지 못하다').",
+    "longExplanation": "'上'(shàng)이 동사 뒤에 결합하여 결과보어 또는 가능보어로 쓰일 때, 어떤 목적이나 이상에 도달하거나, 바람직한 기회나 혜택을 얻어 누림을 나타냅니다(예: '考上大学' 대학에 합격하다, '过上好日子' 좋은 생활을 누리게 되다, '住上新房' 새집에 살게 되다). 특히 가능보어 형식인 '동사 + 得上' (~할 기회를 얻다/누릴 수 있다) 및 '동사 + 不上' (~할 기회를 얻지 못하다/~을 못 누리다/놓치다) 구조로 일상 구어에서 매우 자주 쓰입니다(예: '吃不上' 얻어먹지 못하다, '赶不上' 제때 타지 못하다, '用不上' 쓰지 못하다). 한국어의 '~에 합격하다', '기회를 얻어 ~하다', '(가능보어) ~을 맛보다/누리다/놓치다'에 해당합니다.",
+    "formation": "주어 + 동사 + (得 / 不) + 上 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "보아하니 오늘은 양고기 만두를 못 얻어먹게 생겼네요(먹기 글렀네요)."
+      }
+    ]
   },
   "zh_V出来_391": {
-    "title": "V 出来 (V out (an outcome is produced))",
-    "shortExplanation": "V out (an outcome is produced)",
-    "longExplanation": "V out (an outcome is produced). Pinyin: V chūlái",
-    "formation": "V chūlái"
+    "title": "동사 + 出来 (방향보어의 파생용법: 성과를 내다, 만들어 내다, 알아채다)",
+    "shortExplanation": "방향보어의 추상적 파생용법으로, 동작이나 노력을 통해 새로운 성과물, 아이디어 등을 완성하여 세상에 '만들어 내거나' 식별해 냄을 나타냅니다('~해 내다', '~을 만들어 내다').",
+    "longExplanation": "'出来'(chūlái)가 동사 뒤에 결합하여 방향보어의 파생적 의미로 쓰일 때, 단순한 공간적 이동을 넘어 동작과 노력을 거쳐 새로운 결과물이나 작품, 해결책, 생각 등을 '무에서 유로' 창조하여 밖으로 끄집어내거나 완성함을 나타냅니다(예: '做出来' 만들어 내다, '想出来' 생각해 내다, '写出来' 써내다, '研究出来' 연구 개발해 내다). 아울러 오감을 통해 감추어진 진상이나 차이를 식별·분별해 냄('看出来' 알아채다/알아보다, '听出来' 듣고 알아차리다)을 나타내기도 합니다. 한국어의 '~해 내다', '~을 만들어 내다', '~을 생각해 내다'에 해당합니다.",
+    "formation": "주어 + 동사 + (得 / 不) + 出来 (+ 목적어: 성과물 / 결과 / 아이디어)",
+    "examples": []
   },
   "zh_总的来说_393": {
-    "title": "总的来说 (overall)",
-    "shortExplanation": "overall",
-    "longExplanation": "overall. Pinyin: zǒngdeláishuō",
-    "formation": "zǒngdeláishuō"
+    "title": "总的来说…… (삽입어/담화 표지: 전반적으로 말해서, 대체로, 총체적으로 보면)",
+    "shortExplanation": "문두나 주어 뒤에 쓰여 세부 사항을 총괄하여 전반적인 평가나 결론을 요약·제시합니다('전반적으로 말해서', '대체로 보아').",
+    "longExplanation": "'总的来说'(zǒng de lái shuō)은 담화 표지이자 삽입구로서, 문장의 맨 앞이나 주어 뒤에 위치하여 전반적인 상황을 아우르는 총평을 이끕니다. 지엽적인 단점이나 개별적인 변수를 종합적으로 감안하여 \"크게 보았을 때\", \"대체로 말해서\"라는 뉘앙스로 결론이나 평가를 내릴 때 사용합니다(예: '总的来说，这次活动办得很成功' 종합적으로 볼 때 이번 행사는 매우 성공적이었다, '总的来说，利大于弊' 전반적으로 득이 실보다 크다). 한국어의 '전반적으로 말해서', '총체적으로 보아', '대체로', '종합해 보면'에 해당합니다.",
+    "formation": "(주어 +) 总的来说, (+ 주어 +) 종합적인 평가나 서술",
+    "examples": [
+      {
+        "translation": "이 회사는 전반적으로 말해서 꽤 괜찮은 편입니다."
+      }
+    ]
   },
   "zh_在于_394": {
-    "title": "在于 (is all about)",
-    "shortExplanation": "is all about",
-    "longExplanation": "is all about. Pinyin: zàiyú",
-    "formation": "zàiyú"
+    "title": "在于…… (동사: ~에 있다, ~에 달려 있다, 본질은 ~이다)",
+    "shortExplanation": "서면어 동사로서 사물의 핵심 본질, 성공의 열쇠, 또는 근본적인 원인이 어디에 있는지를 명시합니다('~에 있다', '~에 달려 있다').",
+    "longExplanation": "'在于'(zàiyú)는 서면어 성격이 강한 동사로, 존재를 뜻하는 '在'와 전치사 '于'(~에)가 융합된 표현입니다. 어떤 현상의 본질, 규율의 원리, 성공의 관건, 또는 문제의 근본 원인이 어디에 소재하는지를 밝힐 때 쓰입니다(예: '生命在于运动' 생명은 운동에 있다/생명의 본질은 움직임에 있다, '成功的关键在于坚持' 성공의 관건은 꾸준함에 있다, '原因在于缺少经验' 원인은 경험 부족에 있다). 한국어의 '~에 있다', '~에 달려 있다', '~에 기인하다'에 해당합니다.",
+    "formation": "주어 (사물 / 현상 / 핵심) + 在于 + 목적어 (본질 / 관건 / 원인 등)",
+    "examples": [
+      {
+        "translation": "사람들은 흔히 \"생명은 운동(움직임)에 있다\"라고 말합니다."
+      }
+    ]
   },
   "zh_V1着V1着V2了_395": {
-    "title": "V1 着 V1 着 V2了 (V2’ed while V1-ing)",
-    "shortExplanation": "V2’ed while V1-ing",
-    "longExplanation": "V2’ed while V1-ing. Pinyin: V1 zhe V1 zhe V2 le",
-    "formation": "V1 zhe V1 zhe V2 le"
+    "title": "동사1 + 着 + 동사1 + 着 + (就) + 동사2 + 了 (~하고 있다가 문득 ~하다, ~하던 중에 그만 ~하다)",
+    "shortExplanation": "동사1의 동작이 지속되거나 반복되는 도중에, 예기치 않게 동사2의 동작이나 새로운 상황 변화가 발생함을 나타냅니다('~하다가 문득 ~하다', '~하는 중에 그만 ~하다').",
+    "longExplanation": "'동사1 + 着 + 동사1 + 着 + 동사2 + 了' 구조는 동일한 동사를 중첩하고 지속을 나타내는 동태조사 '着'을 결합하여, 어떤 동작이 얼마 동안 끊임없이 계속 진행되고 있음을 나타냅니다. 그러한 지속 과정 속에서 생각지도 못했던 새로운 동작이나 상태의 변화(동사2)가 갑자기 발생했음을 표현합니다. 동사2 앞에는 종종 부사 '就'가 쓰여 변화의 급격함이나 자연스러운 발생을 강조합니다(예: '走着走着就迷路了' 걷다가 길을 잃었다, '听着听着就睡着了' 듣다가 그만 잠이 들었다). 한국어의 '~하고 있다가 (문득/갑자기) ~하다', '~하던 중에 그만 ~해 버리다'에 해당합니다.",
+    "formation": "주어 + 동사1 + 着 + 동사1 + 着 + (就) + 동사2 + 了",
+    "examples": [
+      {
+        "translation": "그녀는 이야기를 하다가 그만 피식 웃음을 터뜨렸다."
+      }
+    ]
   },
   "zh_一就_396": {
-    "title": "一……就…… (as soon as … then …)",
-    "shortExplanation": "as soon as … then …",
-    "longExplanation": "as soon as … then …. Pinyin: yī…… jiù……",
-    "formation": "yī…… jiù……"
+    "title": "一……就…… (접속사: ~하자마자 곧 ~하다, ~하기만 하면 바로 ~하다)",
+    "shortExplanation": "앞선 동작이나 사건이 일어나자마자 뒤이어 다른 동작이나 사건이 신속하게 연속적으로 이어짐을 나타냅니다('~하자마자 바로 ~하다').",
+    "longExplanation": "'一……就……'(yī ... jiù ...)는 시간적으로 매우 밀접하게 이어지는 두 동작의 연속적 발생을 나타내는 접속 구문입니다. 앞 절의 동작이나 사건이 완료되거나 발생하자마자 조금의 틈도 없이 뒷 절의 동작이 곧바로 이어짐을 나타냅니다. 두 절의 주어가 같을 수도 있고 다를 수도 있으며, 주어가 다를 때는 두 번째 주어 뒤에 '就'가 옵니다(예: '我一到北京就给你打电话' 내가 베이징에 도착하자마자 바로 너에게 전화할게). 한국어의 '~하자마자 곧 ~하다', '~하기가 무섭게 바로 ~하다'에 해당합니다.",
+    "formation": "주어 + 一 + 동사1 / 절1 + 就 + 동사2 / 절2 (주어가 다를 때: 주어1 + 一 + 동사1, 주어2 + 就 + 동사2)",
+    "examples": [
+      {
+        "translation": "그녀는 집에 돌아오자마자 바로 텔레비전을 본다."
+      }
+    ]
   },
   "zh_一就_397": {
-    "title": "一……就…… (每次只要)",
-    "shortExplanation": "每次只要",
-    "longExplanation": "每次只要. Pinyin: yī…… jiù……",
-    "formation": "yī…… jiù……"
+    "title": "一……就…… (규칙적 조건: ~하기만 하면 늘 ~하다, ~할 때마다 으레 ~하다)",
+    "shortExplanation": "어떤 조건이 성립될 때마다 어김없이 일정한 결과나 습관적 반응이 발생함을 나타냅니다('~하기만 하면 늘 ~하다', '~할 때마다 으레 ~하다').",
+    "longExplanation": "'一……就……'(yī ... jiù ...)는 규칙적인 조건과 습관적 결과의 연쇄('每次只要……就……')를 나타낼 때도 자주 사용됩니다. 특정한 상황이나 조건이 갖추어지기만 하면 예외 없이 매번 동일한 결과나 생리적·심리적 반응이 뒤따름을 의미합니다(예: '我一上台就心慌' 나는 무대에 서기만 하면 가슴이 두근거린다, '他一喝酒就脸红' 그는 술을 마시기만 하면 얼굴이 붉어진다). 한국어의 '~하기만 하면 으레 ~하다', '~할 때마다 어김없이 ~하다'에 해당합니다.",
+    "formation": "주어 + 一 + 동사1 / 조건절 + 就 + 동사2 / 결과절",
+    "examples": [
+      {
+        "translation": "아들은 어렸을 때 말만 꺼내면 으레 얼굴을 붉히곤 했다."
+      }
+    ]
   },
   "zh_究竟Q_398": {
-    "title": "究竟 Q (Q exactly)",
-    "shortExplanation": "Q exactly",
-    "longExplanation": "Q exactly. Pinyin: jiūjìng Q",
-    "formation": "jiūjìng Q"
+    "title": "究竟 + 의문사 (부사: 도대체, 과연, 대관절)",
+    "shortExplanation": "의문사가 있는 의문문에서 쓰여 사안의 진상이나 확실한 해답을 끝까지 캐묻는 어기를 나타냅니다('도대체', '과연').",
+    "longExplanation": "'究竟'(jiūjìng)은 부사로서 의문대명사(예: '什么', '谁', '哪', '怎么', '为什么' 등)나 선택의문문과 함께 쓰여 의문의 어조를 한층 강화합니다. 모호하거나 미궁에 빠진 사실의 본질을 명확히 밝혀내고자 '도대체 사실이 어떠한가', '과연 무엇이 옳은가'를 파고들며 질문할 때 사용합니다. '到底'와 의미가 거의 같지만, '究竟'은 구어뿐만 아니라 문어체나 격식 있는 담화에서도 널리 쓰이며 보다 진지한 탐구의 뉘앙스를 지닙니다(예: '究竟发生了什么事？' 도대체 무슨 일이 벌어진 것인가?, '究竟谁能胜任？' 과연 누가 적임자인가?). 한국어의 '도대체', '과연', '대관절'에 해당합니다.",
+    "formation": "(주어 +) 究竟 (+ 주어 +) 의문사 (谁 / 什么 / 哪 / 怎么 등) + 서술어 (+ 어기조사)",
+    "examples": [
+      {
+        "translation": "도대체 어느 계절에 여행을 가는 것이 비교적 좋을까요?"
+      }
+    ]
   },
   "zh_V起来_399": {
-    "title": "V 起(来) (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qǐ( lái)",
-    "formation": "V qǐ( lái)"
+    "title": "동사 + 起(来) (방향보어: 아래에서 위로 들어 올리다, 일어서다)",
+    "shortExplanation": "방향보어로서 동작이 아래에서 위를 향하여 물리적으로 이동하거나 들어 올려짐을 나타냅니다('들어 올리다', '일어서다', '치켜들다').",
+    "longExplanation": "'起' 또는 '起来'(qǐ / qǐlái)는 동사 뒤에 붙어 방향보어의 본래 공간적 의미를 나타냅니다. 즉 사람이나 물체가 아래에서 위쪽 방향으로 움직이거나 들어 올려지는 동작을 나타냅니다(반대 방향은 '下来'). '拿'(쥐다/들다), '站'(서다), '抬'(들다), '举'(들다/올리다) 등의 동사와 주로 결합합니다. 목적어가 있을 때는 '把' 자문을 쓰거나 목적어가 '起'와 '来' 사이에 위치할 수 있습니다(예: '拿起笔来' 펜을 집어 들다, '站起来' 일어서다, '抬起头' 고개를 들다). 한국어의 '집어 들다', '들어 올리다', '일어서다', '~해 올리다'에 해당합니다.",
+    "formation": "주어 + (把 + 목적어 +) 동사 + 起(来) (또는: 동사 + 起 + 목적어 + 来)",
+    "examples": [
+      {
+        "translation": "먼저 책상 위의 물건들을 집어 들어주세요, 제가 다 닦은 뒤에 다시 내려놓으세요."
+      }
+    ]
   },
   "zh_V起来_400": {
-    "title": "V 起来 (to start to V)",
-    "shortExplanation": "to start to V",
-    "longExplanation": "to start to V. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "동사 / 형용사 + 起来 (파생방향보어: ~하기 시작하다, ~해지기 시작하다)",
+    "shortExplanation": "동작이나 새로운 상태가 시작되어 지속적으로 발전해 나감을 나타냅니다('~하기 시작하다', '~해지다').",
+    "longExplanation": "'起来'(qǐlai)가 동사나 형용사 뒤에 쓰여 파생 방향보어로 쓰일 때, 어떤 동작이나 상태의 개시와 지속을 나타냅니다. 즉 잠잠하던 상태에서 벗어나 어떤 동작이 비로소 시작되어 앞으로 계속 이어짐을 강조합니다(예: '唱起来' 노래를 부르기 시작하다, '笑起来' 웃음을 터뜨리다, '哭起来' 울기 시작하다, '热起来' 더워지기 시작하다). 동사가 목적어를 가질 때는 목적어가 '起'와 '来' 사이에 위치합니다(예: '下起雨来' 비가 내리기 시작하다, '打起球来' 공을 치기 시작하다). 한국어의 '~하기 시작하다', '~해지기 시작하다', '~을 터뜨리다'에 해당합니다.",
+    "formation": "주어 + 동사 + 起来 + 了 (목적어가 있을 때: 동사 + 起 + 목적어 + 来)",
+    "examples": [
+      {
+        "translation": "샤오왕이 또 노래를 부르기 시작했다."
+      }
+    ]
   },
   "zh_V起来_401": {
-    "title": "V 起来 (seems like, sounds like)",
-    "shortExplanation": "seems like, sounds like",
-    "longExplanation": "seems like, sounds like. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "지각동사 + 起来 (평가·인상: ~해 보면 ~하다, ~하기에는 ~하다)",
+    "shortExplanation": "지각동사('看', '听', '尝', '闻' 등) 뒤에 쓰여, 특정 감각이나 관점에서 평가하거나 느낀 인상을 나타냅니다('들어 보면', '보아하니', '맛을 보면').",
+    "longExplanation": "'起来'(qǐlai)는 감각이나 지각을 나타내는 동사(예: '看' 보다, '听' 듣다, '尝' 맛보다, '闻' 냄새 맡다, '摸' 만지다, '想' 생각하다, '做' 해보다 등) 뒤에 결합하여, 그 동작을 통해 직접 느끼거나 판단한 주관적 인상이나 평가를 표현합니다(예: '看起来很年轻' 보기에 매우 젊어 보인다, '尝起来有点甜' 맛을 보니 약간 달콤하다, '做起来很难' 막상 해 보면 꽤 어렵다). 한국어의 '~해 보면', '듣자하니 ~같다', '보기에 ~하다'에 해당합니다.",
+    "formation": "주어 + 동사 (看 / 听 / 尝 / 闻 / 想 등) + 起来 + 형용사 / 평가 표현 (像……一样 등)",
+    "examples": [
+      {
+        "translation": "상하이 말은 들어 보면 꼭 외국어 같다."
+      }
+    ]
   },
   "zh_说起O_402": {
-    "title": "说起 O (speaking of O)",
-    "shortExplanation": "speaking of O",
-    "longExplanation": "speaking of O. Pinyin: shuōqǐ O",
-    "formation": "shuōqǐ O"
+    "title": "说起 + 목적어 (화제 도입: ~로 말할 것 같으면, ~에 대해 이야기하자면)",
+    "shortExplanation": "문두에 쓰여 특정 화제나 대상을 꺼내어 그에 대한 생각, 기억, 평가를 이야기할 때 쓰입니다('~로 말하자면', '~에 대해 말하자면').",
+    "longExplanation": "'说起'(shuōqǐ)는 문장의 맨 앞이나 절의 첫머리에 놓여 새로운 대화의 화제를 꺼내거나 이야기를 도입할 때 사용하는 표현입니다. 뒤에 화제가 되는 명사나 목적어를 이끌어 '~에 관해 이야기를 꺼내자면', '~로 말할 것 같으면'이라는 배경을 제시한 뒤, 뒷부분에서 화자의 생각, 특별한 기억, 경험담 등을 서술합니다(예: '说起这件往事' 이 지난 일에 대해 이야기하자면, '说起中文' 중국어로 말하자면). 한국어의 '~로 말할 것 같으면', '~에 대해 말하자면', '~이야기가 나와서 말인데'에 해당합니다.",
+    "formation": "说起 + 목적어 / 화제 명사，후속 서술절",
+    "examples": [
+      {
+        "translation": "먹을거리에 대해 이야기하자면, 제게 가장 깊은 인상을 남긴 것은 바로 후난 요리입니다."
+      }
+    ]
   },
   "zh_如何_403": {
-    "title": "如何 (how)",
-    "shortExplanation": "how",
-    "longExplanation": "how. Pinyin: rúhé",
-    "formation": "rúhé"
+    "title": "如何 (의문대명사: 어떻게, 어찌, 어떠한 방식으로)",
+    "shortExplanation": "동사 앞에 놓여 방식, 수단, 상태의 양상을 격식 있게 묻거나 서술합니다('어떻게', '어찌', '어떠한 방식으로').",
+    "longExplanation": "'如何'(rúhé)는 문어체나 격식 있는 표현에서 주로 쓰이는 의문대명사로, 구어의 '怎么'나 '怎样'에 해당합니다. 동사 앞에 위치하여 어떤 동작을 진행하는 구체적인 방식, 수단 또는 양태를 묻거나 나타낼 때 쓰입니다(예: '如何解决' 어떻게 해결할 것인가, '如何提高汉语水平' 어떻게 중국어 실력을 향상시킬 것인가). 또한 간접의문절에서 사태의 진행 양상을 서술할 때도 빈번히 사용됩니다. 한국어의 '어떻게', '어찌', '어떠한 방식으로'에 해당합니다.",
+    "formation": "주어 + (是 +) 如何 + 동사 (+ 목적어) (+ 的)",
+    "examples": [
+      {
+        "translation": "심사위원은 첫 번째 부부에게 둘이 어떻게 금실 좋게 사랑하며 지내는지 이야기해 보라고 했다."
+      }
+    ]
   },
   "zh_如何_404": {
-    "title": "如何 (how is)",
-    "shortExplanation": "how is",
-    "longExplanation": "how is. Pinyin: rúhé",
-    "formation": "rúhé"
+    "title": "명사 / 절 + 如何？ (서술어: 어떠한가?, 어떠한 상태인가?)",
+    "shortExplanation": "문말이나 술어 자리에 쓰여 상황, 결과, 상태 또는 상대방의 의견을 정중하고 격식 있게 묻습니다('어떠한가?', '어떠합니까?').",
+    "longExplanation": "'如何'(rúhé)가 문장의 끝이나 술어 위치에 놓이면 구어의 '怎么样'에 해당하며, 어떤 일의 진행 상황, 결과, 성과 또는 상대방의 생각이나 견해를 물어볼 때 사용됩니다(예: '近况如何？' 근황이 어떠신가요?, '效果如何？' 효과가 어떠한가요?, '你意下如何？' 당신의 생각은 어떠십니까?). 설문 조사, 공식 통계, 비즈니스 보고서 등 격식 있는 자리에서 품격 있게 질문을 던질 때 널리 쓰입니다. 한국어의 '어떠한가요?', '어떠합니까?', '어떠한 상태인가요?'에 해당합니다.",
+    "formation": "주어 (상황 / 결과 / 의견 등을 나타내는 명사) + 如何？",
+    "examples": [
+      {
+        "translation": "'80년대생(바링허우)'들의 월수입 상황은 어떠한가요?"
+      }
+    ]
   },
   "zh_怎么_405": {
-    "title": "怎么，…… ((expression of surprise))",
-    "shortExplanation": "(expression of surprise)",
-    "longExplanation": "(expression of surprise). Pinyin: zěnme，……",
-    "formation": "zěnme，……"
+    "title": "怎么，…… (감탄·놀람의 어기: 아니, 어라, 설마 ~란 말인가)",
+    "shortExplanation": "문두에 단독으로 쓰여 뜻밖의 상황에 대한 큰 놀라움, 당혹감, 의외의 심정을 나타냅니다('아니', '어라', '설마').",
+    "longExplanation": "'怎么'(zěnme)가 문장 맨 앞에 독립적으로 놓이고 쉼표로 분리되어 쓰이면, 일종의 감탄사처럼 기능하여 예상치 못한 상황에 대한 놀라움과 의외성, 의아함을 나타냅니다. 화자의 생각이나 기대와 전혀 다른 사실을 마주했을 때 '아니, 이게 어떻게 된 일이지?', '설마 그럴 리가'라는 감정을 드러내며 상대방에게 반문합니다(예: '怎么，你反悔了？' 아니, 마음이 바뀐 거야?, '怎么，还没修好？' 어라, 아직도 다 안 고쳤어?). 한국어의 '아니', '어라', '뭐라고', '설마'에 해당합니다.",
+    "formation": "怎么，놀람이나 의아함을 나타내는 절 (?!)",
+    "examples": [
+      {
+        "translation": "아니, 나를 못 알아보는 거야?!"
+      }
+    ]
   },
   "zh_靠_406": {
-    "title": "靠 (to lean)",
-    "shortExplanation": "to lean",
-    "longExplanation": "to lean. Pinyin: kào",
-    "formation": "kào"
+    "title": "靠 (동작동사: 기대다, 등을 기대다, 기대어 서다)",
+    "shortExplanation": "몸이나 사물을 벽, 책상, 의자 등의 지지대에 기대어 몸의 무게를 싣는 동작이나 자세를 나타냅니다('기대다', '기대어서다').",
+    "longExplanation": "'靠'(kào)는 신체나 물체를 벽, 책상, 기둥, 등받이 등 단단한 지지대에 기울여 몸의 무게를 지탱하는 자세를 나타내는 구체적인 동작동사입니다. 주로 지속을 나타내는 '着'이나 결과보어 '在'와 함께 결합하여 '靠着……', '靠在……上'의 형태로 쓰입니다(예: '靠在墙上' 벽에 기대다, '靠在沙发上看书' 소파에 기대어 책을 읽다). 한국어의 '기대다', '등을 기대다', '몸을 기대다'에 해당합니다.",
+    "formation": "주어 + 靠着 / 靠在 + 지지대 명사 (桌子 / 墙 / 沙发 등) (+ 동작동사)",
+    "examples": [
+      {
+        "translation": "왕 선생님은 책상에 기댄 채 강의하는 것을 좋아하신다."
+      }
+    ]
   },
   "zh_靠_407": {
-    "title": "靠 (beside)",
-    "shortExplanation": "beside",
-    "longExplanation": "beside. Pinyin: kào",
-    "formation": "kào"
+    "title": "靠 + 장소 / 방향 (공간동사: ~쪽의, ~에 인접한, ~에 가까운)",
+    "shortExplanation": "특정 장소나 사물, 방위에 바짝 붙어 있거나 인접해 있는 공간적 위치를 나타냅니다('~쪽의', '~ 가까이의').",
+    "longExplanation": "'靠'(kào)는 공간적으로 특정한 기준점, 사물 또는 방위에 가까이 접근해 있거나 바짝 붙어 있는 위치 관계를 나타냅니다. 장소나 방위 명사와 직접 결합하여 관형어나 부사어로 널리 쓰입니다(예: '靠窗' 창가 쪽, '靠门' 문 쪽, '靠海' 바다와 인접한, '靠左走' 왼쪽으로 붙어서 걷다). 특히 좌석, 방, 건물 등의 위치를 지정할 때 자주 쓰입니다. 한국어의 '~ 쪽의', '~ 가의', '~에 붙은', '~에 인접한'에 해당합니다.",
+    "formation": "靠 + 장소 / 방위 명사 (窗 / 门 / 海 / 右 등) (+ 的 + 명사)",
+    "examples": [
+      {
+        "translation": "제 좌석은 17번이고, 창가 쪽 좌석입니다."
+      }
+    ]
   },
   "zh_靠_408": {
-    "title": "靠 (to depend)",
-    "shortExplanation": "to depend",
-    "longExplanation": "to depend. Pinyin: kào",
-    "formation": "kào"
+    "title": "靠 (추상동사: 의지하다, 기대다, 덕택에 살아가다)",
+    "shortExplanation": "다른 사람의 도움이나 자신의 능력, 수단에 의지하여 살아가거나 목적을 달성함을 나타냅니다('의지하다', '기대다', '~에 힘입다').",
+    "longExplanation": "'靠'(kào)는 추상적 의미로서 타인의 조력, 자신의 실력, 근면함 또는 특정 수단에 의지하여 생활을 꾸려가거나 과업을 달성함을 나타냅니다(예: '靠自己' 스스로에게 의지하다, '靠打工挣学费' 아르바이트에 기대어 학비를 벌다, '全靠大家支持' 전적으로 여러분의 지지 덕분이다). 속담 '在家靠父母，出门靠朋友'(집에서는 부모에게 기대고, 집을 나서면 친구에게 의지한다)는 이 용법의 대표적인 예입니다. 한국어의 '의지하다', '기대다', '힘입다', '~ 덕택으로 살아가다'에 해당합니다.",
+    "formation": "주어 + 靠 + 명사 / 대명사 (의지의 대상 / 수단 / 능력) (+ 동사)",
+    "examples": [
+      {
+        "translation": "집에서는 부모에게 의지하고, 집 밖에서는 친구에게 의지한다."
+      }
+    ]
   },
   "zh_居然_409": {
-    "title": "居然 ((See 竟然))",
-    "shortExplanation": "(See 竟然)",
-    "longExplanation": "(See 竟然). Pinyin: jūrán",
-    "formation": "jūrán"
+    "title": "居然 (어기부사: 뜻밖에도, 놀랍게도, 설마 ~하다니)",
+    "shortExplanation": "술어 앞에 쓰여 사실이나 결과가 예상이나 상식을 완전히 벗어나 뜻밖임을 나타냅니다('뜻밖에도', '놀랍게도', '설마 ~하다니').",
+    "longExplanation": "'居然'(jūrán)은 주어 뒤, 서술어 앞에 놓이는 어기부사로, 어떤 일의 전개나 결과가 화자의 예상이나 통념과 완전히 달라 매우 의외이고 놀라움을 나타냅니다. 상황에 따라 감탄이나 찬양을 드러내기도 하고, 기가 막힘, 실망, 질책의 어조를 띠기도 합니다(예: '他居然不知道这件事' 그 사람이 뜻밖에도 이 일을 모르고 있다니, '你居然通过了面试' 네가 놀랍게도 면접에 통과했구나). '竟然'과 의미와 쓰임이 거의 같습니다. 한국어의 '뜻밖에도', '놀랍게도', '설마 ~하다니', '어처구니없게도'에 해당합니다.",
+    "formation": "주어 + 居然 + (也 / 都) + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "이렇게 간단한 문제를 네가 설마 못 푼단 말이야?"
+      }
+    ]
   },
   "zh_以来_410": {
-    "title": "以来 (since)",
-    "shortExplanation": "since",
-    "longExplanation": "since. Pinyin: yǐlái",
-    "formation": "yǐlái"
+    "title": "……以来 (명사 / 절 + 以来: ~ 이래로, ~ 이후로, ~부터 지금까지)",
+    "shortExplanation": "과거의 특정한 시점, 역사적 사건 또는 절 뒤에 쓰여, 그때부터 현재(혹은 기준 시점)에 이르는 전 기간을 나타냅니다('~ 이래로', '~ 이후로').",
+    "longExplanation": "'以来'(yǐlái)는 과거의 시간적 기준점 뒤에 결합하는 시간 명사입니다. 과거의 특정한 시점, 사건, 혹은 동작이나 사건의 발생을 나타내는 절 뒤에 붙어, 그 기점으로부터 지금까지 중단 없이 지속된 시간의 경과를 나타냅니다. 문장에서는 주로 부사어로 쓰여 그 기간 동안 일어난 현저한 변화나 지속적인 상황을 뒷받침합니다(예: '长期以来' 오랫동안, '自古以来' 예로부터, '大学毕业以来' 대학 졸업 이래로). 한국어의 '~ 이래로', '~ 이후로', '~부터 지금까지'에 해당합니다.",
+    "formation": "시간 기점 (명사 / 역사적 사건 / 동사구 / 절) + 以来, 주절 (변화나 지속을 나타내는 절)",
+    "examples": [
+      {
+        "translation": "개혁개방 이래로 중국에는 거대한 변화가 일어났다."
+      }
+    ]
   },
   "zh_临_411": {
-    "title": "临 (adjacent to)",
-    "shortExplanation": "adjacent to",
-    "longExplanation": "adjacent to. Pinyin: lín",
-    "formation": "lín"
+    "title": "临 + 장소 명사 (공간동사: ~에 면하다, ~에 맞닿다, ~ 쪽을 향하다)",
+    "shortExplanation": "건물이나 사물이 길거리, 강, 바다 등의 공간에 바로 맞닿아 있거나 마주보고 있는 위치 관계를 나타냅니다('~에 면하다', '~에 맞닿은').",
+    "longExplanation": "'临'(lín)이 공간적 위치를 나타내는 동사로 쓰일 때는 도로, 수면, 바다, 창문 등과 바로 인접해 있거나 정면으로 마주하고 있음을 의미합니다. '临街'(길가에 면하다), '临海'(바다를 마주하다), '临水'(물가에 닿아 있다), '临窗'(창가에 붙어 있다)처럼 장소나 지형을 나타내는 명사와 직접 결합하여 명사를 꾸미는 관형어나 서술어로 널리 쓰입니다(예: '临街的店铺' 길가에 면한 가게, '临海的房间' 바다가 보이는 방). 한국어의 '~에 면하다', '~을 마주보다', '~ 쪽으로 면해 있는'에 해당합니다.",
+    "formation": "临 + 장소 / 공간 명사 (街 / 水 / 海 / 河 등) (+ 的 + 명사)",
+    "examples": [
+      {
+        "translation": "나는 길가에 면해 있지 않은 집을 한 채 사고 싶은데, 그래야 너무 시끄럽지 않을 것이다."
+      }
+    ]
   },
   "zh_临_412": {
-    "title": "临 (just before)",
-    "shortExplanation": "just before",
-    "longExplanation": "just before. Pinyin: lín",
-    "formation": "lín"
+    "title": "临 + 동사 (시간개사: ~하기 직전에, 막 ~하려던 참에, ~에 임하여)",
+    "shortExplanation": "어떤 동작이나 사건이 일어나기 바로 직전의 시점을 나타내며, '막 ~하기 직전에', '~할 무렵에'라는 뜻을 나타냅니다.",
+    "longExplanation": "'临'(lín)이 시간적 의미로 쓰일 때는 개사 혹은 시간성을 띤 동사로서, 어떤 행위나 사건이 발생하기 바로 직전의 찰나를 가리킵니다. '快要'(곧 ~하려 하다) 혹은 '到……的时候'(~할 때가 되다)의 뜻을 가지며, '走'(떠나다), '睡'(자다), '考'(시험을 보다), '出发'(출발하다), '别'(이별하다) 등의 단음절·다음절 동사와 결합하여 문장의 시간부사어를 구성합니다(예: '临走' 떠나기 직전에, '临睡前' 잠들기 직전에, '临考' 시험을 앞두고). 한국어의 '~하기 직전에', '막 ~하려 할 때', '~에 임하여'에 해당합니다.",
+    "formation": "临 + 동사 (走 / 睡 / 考 / 出发 등) (+ 시간 명사 / 时 / 的时候), 주어 + 서술어",
+    "examples": [
+      {
+        "translation": "떠나기 직전인 그날, 아버지는 고향에서 급히 올라와 우리를 배웅해 주셨다."
+      }
+    ]
   },
   "zh_立刻_413": {
-    "title": "立刻 (immediately)",
-    "shortExplanation": "immediately",
-    "longExplanation": "immediately. Pinyin: lìkè",
-    "formation": "lìkè"
+    "title": "立刻 (시간부사: 즉시, 곧바로, 당장, 바로)",
+    "shortExplanation": "서술어 앞에 놓여 시간적인 지체나 지연 없이 어떤 행동이나 상태의 변화가 즉시 일어남을 나타냅니다('즉시', '곧바로').",
+    "longExplanation": "'立刻'(lìkè)는 동작이나 사태가 조금의 틈도 없이 즉각적으로 일어남을 나타내는 시간부사입니다. 주어 뒤, 술어(동사 또는 형용사) 앞에 위치하여 선행 상황이 발생하자마자 찰나의 지체도 없이 후속 조치나 감정·상태의 반응이 뒤따름을 강조합니다. '马上'과 뜻이 유사하지만 '立刻'는 시간적 즉시성이 더욱 엄격하고 신속하며, 문어와 구어 모두에서 두루 쓰입니다(예: '立刻出发' 즉시 출발하다, '立刻回答' 즉각 답변하다, '立刻停止' 즉시 멈추다). 한국어의 '곧바로', '즉시', '당장', '순식간에'에 해당합니다.",
+    "formation": "주어 + (시간절 +) 立刻 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "우리가 돌아왔을 때, 즉시 집의 따스함을 느꼈다."
+      }
+    ]
   },
   "zh_包括_414": {
-    "title": "包括 (to include)",
-    "shortExplanation": "to include",
-    "longExplanation": "to include. Pinyin: bāokuò",
-    "formation": "bāokuò"
+    "title": "包括 (동사: 포함하다, 포괄하다, 들어 있다)",
+    "shortExplanation": "어떤 전체 범위나 총액 속에 특정한 구성 요소나 하위 항목이 들어 있음을 나타냅니다('포함하다', '포괄하다').",
+    "longExplanation": "'包括'(bāokuò)는 타동사로서, 어떤 집합, 전체, 혹은 일정한 영역 안에 구체적인 구성원, 하위 부문, 또는 구체적 항목들이 함께 아우러져 들어가 있음을 나타냅니다. 목적어로 나열된 세부 요소나 명사구를 수반합니다(예: '房租包括水电网费' 월세에는 수도·전기·인터넷 비용이 포함되어 있다, '包括他在内' 그를 포함하여). 내면적·추상적인 함의를 강조하는 '包含'에 비해, '包括'는 실질적이고 객관적인 범위의 내포를 표현할 때 주로 쓰입니다. 한국어의 '~을 포함하다', '~이 들어가다', '~을 망라하다'에 해당합니다.",
+    "formation": "주어 (전체 / 범위) + 包括 + 목적어 (포함되는 구성 요소나 하위 항목)",
+    "examples": [
+      {
+        "translation": "중국어 기능 교육은 듣기, 말하기, 읽기, 쓰기의 네 가지 방면을 포함한다."
+      }
+    ]
   },
   "zh_各自_415": {
-    "title": "各自 (each by themselves)",
-    "shortExplanation": "each by themselves",
-    "longExplanation": "each by themselves. Pinyin: gèzì",
-    "formation": "gèzì"
+    "title": "各自 (대명사: 각자, 제각기, 저마다, 각자의)",
+    "shortExplanation": "집단 내의 각 개인이나 각 방면이 개별적으로 독립된 행동을 취함을 나타냅니다('각자', '제각기', '저마다').",
+    "longExplanation": "'各自'(gèzì)는 여럿으로 구성된 집단이나 쌍방의 구성원에 대해 '각 사람 자신' 혹은 '각각의 편'을 가리키는 대명사입니다. 주로 서술어 동사 앞에 놓여 부사어로 쓰여 '각자가 저마다 따로 행동하다'라는 의미를 나타내거나, '各自的' 형태로 명사 앞에 놓여 관형어로 쓰입니다(예: '各自回房间' 각자 방으로 돌아가다, '各自努力' 제각기 노력하다, '尊重各自的选择' 각자의 선택을 존중하다). 집단 내부의 개별성과 분리된 행동을 강조합니다. 한국어의 '각자', '제각기', '저마다', '각자의'에 해당합니다.",
+    "formation": "주어 (복수 / 쌍방 / 집단) + 各自 + 동사 (+ 목적어) / (+ 的 + 명사)",
+    "examples": [
+      {
+        "translation": "하프타임 휴식 시간이 되자, 시합 양 팀의 선수들은 각자 경기장 밖으로 돌아가 휴식을 취했다."
+      }
+    ]
   },
   "zh_勿_416": {
-    "title": "勿 (do not)",
-    "shortExplanation": "do not",
-    "longExplanation": "do not. Pinyin: wù",
-    "formation": "wù"
+    "title": "(请)勿 + 동사 (부정부사: ~하지 마시오, 삼가 주십시오, 결코 ~하지 말 것)",
+    "shortExplanation": "문어체 부정부사로, 금지나 경고를 나타내어 특정 행동을 하지 말도록 강력히 권고하거나 제지합니다('~하지 마시오', '~을 삼가십시오').",
+    "longExplanation": "'勿'(wù)는 고풍스럽고 격식 있는 문어체 부정부사로, 구어의 '不要'나 '别'에 해당합니다. 동사 앞에 놓여 특정 행위를 하지 말 것을 권고하거나 금지하는 역할을 합니다. 공공장소의 안내 표지판, 경고문, 규칙 조항 등에서 주로 쓰이며, 정중한 청유를 나타내는 '请'과 결합하여 '请勿……'(삼가 주십시오, ~하지 마시기 바랍니다)의 형태로 가장 널리 활용됩니다(예: '请勿吸烟' 흡연을 삼가 주십시오, '请勿触碰' 만지지 마시오, '切勿酒驾' 결코 음주운전을 하지 말 것). 한국어의 '~하지 마시오', '~을 삼가 주십시오', '~ 말 것'에 해당합니다.",
+    "formation": "(请 +) 勿 + 동사 (+ 목적어 / 보어)",
+    "examples": [
+      {
+        "translation": "관계자 외 출입을 금합니다 (직원이 아니면 들어오지 마십시오)."
+      }
+    ]
   },
   "zh_时刻_417": {
-    "title": "时刻 (moment)",
-    "shortExplanation": "moment",
-    "longExplanation": "moment. Pinyin: shíkè",
-    "formation": "shíkè"
+    "title": "时刻 (명사: 순간, 시각, 고비, 중대한 시점)",
+    "shortExplanation": "특정한 시점, 특히 일의 성패나 운명을 좌우하는 매우 중대한 고비나 결정적인 순간을 가리킵니다('순간', '시각', '결정적 시점').",
+    "longExplanation": "'时刻'(shíkè)이 명사로 쓰일 때는 특정한 시간적 순간이나 계기, 특히 일의 진전 과정에서 승패나 운명이 갈리는 전환점이 되는 중대한 고비나 순간을 뜻합니다. 흔히 '关键'(결정적인), '最后'(마지막), '历史'(역사적인), '紧要'(긴요한), '幸福'(행복한) 등의 수식어를 동반하여 전치사 '在'와 함께 구체적인 시간 배경을 만듭니다(예: '关键时刻' 결정적인 순간/정초의 고비, '历史时刻' 역사적 순간, '危急时刻' 위급한 시점). 한국어의 '순간', '결정적 시각', '고비', '때'에 해당합니다.",
+    "formation": "(在 +) 수식어 (最后 / 关键 / 历史 / 紧要 등) + 时刻",
+    "examples": [
+      {
+        "translation": "마지막 순간에 그는 팀을 위해 결정적인 골을 넣었다."
+      }
+    ]
   },
   "zh_时刻时时刻刻_418": {
-    "title": "时刻，时时刻刻 (at all times)",
-    "shortExplanation": "at all times",
-    "longExplanation": "at all times. Pinyin: shíkè， shíshíkèkè",
-    "formation": "shíkè， shíshíkèkè"
+    "title": "时刻 / 时时刻刻 (부사: 항상, 언제나, 매 순간, 시시각각, 한시도 쉬지 않고)",
+    "shortExplanation": "서술어 앞에 놓여 어떤 행위나 의식 상태가 단 한순간도 끊이지 않고 지속됨을 나타냅니다('항상', '언제나', '매 순간').",
+    "longExplanation": "'时刻'(shíkè)이 부사로 쓰이거나 AABB 형태의 중첩형인 '时时刻刻'(shíshíkèkè)으로 쓰이면, '항상', '매 순간', '시시각각'의 뜻을 나타냅니다. 주로 주어 뒤, 서술어 앞에 위치하여 주의력, 경각심, 마음가짐, 준비 태세 등이 한순간도 나태해지거나 중단되지 않고 언제나 유지되고 있음을 강조합니다. '提醒'(일깨우다), '记住'(명심하다), '保持'(유지하다), '准备'(준비하다) 등의 동사와 긴밀하게 결합합니다(예: '时刻准备着' 늘 준비하고 있다, '时时刻刻注意安全' 매 순간 안전에 유의하다). 한국어의 '항상', '언제나', '매 순간', '한시도 잊지 않고'에 해당합니다.",
+    "formation": "주어 + 时刻 / 时时刻刻 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "업무 중에 그는 언제나 스스로에게 '승객의 안전이 가장 중요하다'고 일깨운다."
+      }
+    ]
   },
   "zh_至今_419": {
-    "title": "至今 (to this day)",
-    "shortExplanation": "to this day",
-    "longExplanation": "to this day. Pinyin: zhìjīn",
-    "formation": "zhìjīn"
+    "title": "至今 (시간부사: 지금까지, 오늘날에 이르기까지, 지금까지도, 아직껏)",
+    "shortExplanation": "과거의 어느 시점부터 현재에 이르기까지 일정한 상태나 사실이 변함없이 계속 지속됨을 나타냅니다('지금까지', '오늘에 이르기까지').",
+    "longExplanation": "'至今'(zhìjīn)은 개사 '至'(이르다)와 명사 '今'(오늘)이 결합된 시간 부사어로, '오늘에 이르기까지', '지금까지'('直到现在')라는 뜻을 갖습니다. 문두에 놓이거나 주어 뒤, 서술어 앞에 놓여 문장의 시간적 범위를 확정 짓습니다. 뒤에 '还'(아직), '仍'(여전히), '已经'(이미), '未'(아직 ~않다), '没'(~하지 않았다) 등의 부사와 빈번하게 호응하여, 오랜 시간이 흐른 지금까지도 여전히 상황이 변치 않았거나 어떠한 동작이 아직 실현되지 못했음을 강조합니다(예: '至今未解决' 지금까지 해결되지 못했다, '至今记忆犹新' 지금까지도 기억이 생생하다). 한국어의 '지금까지', '오늘에 이르기까지', '아직껏'에 해당합니다.",
+    "formation": "(주어 +) 至今 (+ 주어 +) (还 / 仍 / 已经 / 未 / 没) + 동사",
+    "examples": [
+      {
+        "translation": "나는 베이징에서 태어나고 자랐으며, 지금까지도 떠나 본 적이 없다."
+      }
+    ]
   },
   "zh_顶_420": {
-    "title": "顶 ((measure word for hats))",
-    "shortExplanation": "(measure word for hats)",
-    "longExplanation": "(measure word for hats). Pinyin: dǐng",
-    "formation": "dǐng"
+    "title": "顶 (양사: ~개, ~모, ~채: 모자, 텐트, 모기장 등을 세는 양사)",
+    "shortExplanation": "모자나 텐트, 모기장처럼 머리에 쓰거나 꼭대기 지붕이 있는 사물을 세는 단위 양사입니다('~개', '~채').",
+    "longExplanation": "'顶'(dǐng)이 양사로 쓰일 때는 모자처럼 머리에 착용하는 물건이나, 텐트·모기장·가마처럼 위쪽에 덮개나 꼭대기가 솟아 있는 구조물을 세는 데 쓰입니다. 수사나 지시대명사('这', '那') 뒤에 놓여 명사를 수식합니다(예: '一顶帽子' 모자 한 개, '这顶新帽子' 이 새 모자, '一顶蚊帐' 모기장 한 채, '搭了一顶帐篷' 텐트 하나를 치다). 한국어의 사물을 세는 단위인 '~개', '~모(모자)', '~채(텐트·장막)' 등에 해당합니다.",
+    "formation": "수사 / 지시대명사 (这 / 那) + 顶 + 명사 (帽子 / 帐篷 / 蚊帐 / 轿子 등)",
+    "examples": [
+      {
+        "translation": "내 이 새 모자 어때 보여요?"
+      }
+    ]
   },
   "zh_顶_421": {
-    "title": "顶 (the top of)",
-    "shortExplanation": "the top of",
-    "longExplanation": "the top of. Pinyin: dǐng",
-    "formation": "dǐng"
+    "title": "顶 (장소명사: 꼭대기, 정수리, 정상, 머리 위)",
+    "shortExplanation": "신체나 사물의 가장 높은 부위, 정수리나 꼭대기를 나타냅니다('꼭대기', '정수리', '정상').",
+    "longExplanation": "'顶'(dǐng)이 명사로 쓰일 때는 사람의 신체나 자연물, 건축물 등의 가장 높은 윗부분, 맨 꼭대기를 의미합니다. 사람이나 지형, 사물을 나타내는 명사 뒤에 직접 결합하여 복합어를 이룹니다(예: '头顶' 정수리/머리 꼭대기, '山顶' 산꼭대기/정상, '屋顶' 지붕/옥상, '塔顶' 탑 꼭대기). 한국어의 '꼭대기', '정수리', '정상', '맨 위'에 해당합니다.",
+    "formation": "명사 (头 / 山 / 屋 / 塔 등) + 顶",
+    "examples": [
+      {
+        "translation": "손을 머리 위로 높이 들어 올려 주십시오."
+      }
+    ]
   },
   "zh_顶_422": {
-    "title": "顶 (to lift)",
-    "shortExplanation": "to lift",
-    "longExplanation": "to lift. Pinyin: dǐng",
-    "formation": "dǐng"
+    "title": "顶 (동작동사: 머리로 떠받치다, 들어 올리다, 이다, 들이받다)",
+    "shortExplanation": "머리나 뿔, 어깨 등을 사용하여 물건을 아래에서 위로 떠받치거나 머리 위에 이고 지탱함을 나타냅니다('머리로 들어 올리다', '떠받치다', '이다').",
+    "longExplanation": "'顶'(dǐng)이 동작동사로 쓰일 때는 머리, 이마, 뿔, 어깨 등을 도구로 삼아 물체를 아래에서 위쪽으로 힘껏 밀어 올리거나 떠받치는 동작을 가리킵니다. 흔히 방향보어 '起'와 결합하여 '顶起'(들어 올리다, 떠받치다)의 형태로 쓰이며, 축구의 헤딩이나 머리에 짐을 이고 나르는 행위 등을 묘사할 때 자주 쓰입니다(예: '用头顶球' 머리로 공을 받다/헤딩하다, '头上顶着一盆水' 머리 위에 물동이를 이고 있다). 한국어의 '머리로 들어 올리다', '떠받치다', '(머리에) 이다', '들이받다'에 해당합니다.",
+    "formation": "주어 + (用 + 신체 부위 +) 顶(起) + 목적어 (무거운 물건 / 무게)",
+    "examples": [
+      {
+        "translation": "그는 머리를 써서 20근(약 10kg) 무게의 물건을 들어 올릴 수 있다."
+      }
+    ]
   },
   "zh_顶着_423": {
-    "title": "顶着 (against)",
-    "shortExplanation": "against",
-    "longExplanation": "against. Pinyin: dǐng zhe",
-    "formation": "dǐng zhe"
+    "title": "顶着 (동사구 / 연용수식: ~을 무릅쓰고, ~을 맞서 뚫고, ~을 헤치며, ~에 굴하지 않고)",
+    "shortExplanation": "눈비, 폭풍, 혹한 등의 악천후나 거센 압박, 비판 등의 역경을 정면으로 맞서 견뎌내며 행동함을 나타냅니다('~을 무릅쓰고', '~에 맞서').",
+    "longExplanation": "'顶着'(dǐng zhe)은 동사 '顶'에 지속을 나타내는 '着'이 결합된 표현으로, 살을 에는 혹한, 폭설, 거센 비바람 등의 혹독한 자연 조건이나 거대한 사회적·심리적 압박, 비판 등에 맞닥뜨려 그것을 피하지 않고 정면으로 맞서서 뚫고 나아가는 모습을 생생하게 묘사합니다. 뒤따르는 주된 행동의 부사어로 주로 쓰입니다(예: '顶着烈日劳作' 따가운 뙤약볕을 무릅쓰고 일하다, '顶着狂风前行' 거센 바람을 뚫고 전진하다, '顶着压力坚持下去' 압박을 이겨내고 끝까지 견지하다). 한국어의 '~을 무릅쓰고', '~을 뚫고', '~에 맞서 헤치며'에 해당합니다.",
+    "formation": "주어 + 顶着 + 역경 / 악천후 / 압박 명사 (大雪 / 狂风 / 烈日 / 压力 등) + 동사",
+    "examples": [
+      {
+        "translation": "날씨가 매우 추웠으나, 자로는 함박눈을 맞서 뚫고 앞으로 걸어갔다."
+      }
+    ]
   },
   "zh_得很得不行得不得了_424": {
-    "title": "……得很/得不行/得不得了 (very/so/extremely)",
-    "shortExplanation": "very/so/extremely",
-    "longExplanation": "very/so/extremely. Pinyin: …… dehěn/ dé bùxíng/ dé bùdéliǎo",
-    "formation": "…… dehěn/ dé bùxíng/ dé bùdéliǎo"
+    "title": "형용사 / 심리동사 + 得很 / 得不行 / 得不得了 (정도보어: 매우 ~하다, ~해 죽겠다, 견딜 수 없이 ~하다, 더할 나위 없이 ~하다)",
+    "shortExplanation": "형용사나 심리 상태를 나타내는 동사 뒤에 쓰여 정도가 극에 달했거나 감당하기 힘들 정도로 대단함을 나타냅니다('매우 ~하다', '~해 죽겠다', '~해서 견딜 수 없다').",
+    "longExplanation": "'得很'(dehěn), '得不行'(de bùxíng), '得不得了'(de bùdéliǎo)는 형용사나 심리동사 뒤에 놓여 정도가 극도로 높음을 나타내는 대표적인 정도보어들입니다. '非常', '极了'와 뜻이 통하지만 훨씬 더 생생하고 풍부한 구어적 감정을 드러냅니다.\n1. '……得很': 성질이나 상태의 정도가 '대단히, 몹시' 높음을 나타냅니다(예: '好得很' 매우 좋다, '冷得很' 대단히 춥다).\n2. '……得不行': 어떠한 상태가 극도에 달해 도저히 견딜 수 없거나 주체하기 힘들 지경임을 나타냅니다(예: '困得不行' 졸려 죽겠다, '累得不行' 힘들어 죽겠다).\n3. '……得不得了': 감정이나 느낌이 주체할 수 없을 정도로 말할 수 없이 극에 달했음을 나타냅니다(예: '高兴得不得了' 좋아서 어쩔 줄을 모르다/더할 나위 없이 기쁘다, '疼得不得了' 아파 죽겠다).\n한국어의 '매우 ~하다', '~해 죽겠다', '~해 견딜 수 없다', '이루 말할 수 없이 ~하다'에 해당합니다.",
+    "formation": "주어 + 형용사 / 심리동사 + 得很 / 得不行 / 得不得了",
+    "examples": [
+      {
+        "translation": "이곳이 이렇게 번화하니, 아이들은 매우 기뻐한다 / 기뻐 죽을 지경이다 / 말할 수 없이 기뻐한다."
+      }
+    ]
   },
   "zh_反而_425": {
-    "title": "反而 (actually (opposite to what one expects))",
-    "shortExplanation": "actually (opposite to what one expects)",
-    "longExplanation": "actually (opposite to what one expects). Pinyin: fǎn'ér",
-    "formation": "fǎn'ér"
+    "title": "反而 (부사: 오히려, 반대로, 도리어)",
+    "shortExplanation": "일반적인 예상, 상식 또는 본래 의도와는 완전히 반대되는 결과나 상황이 발생함을 나타냅니다('오히려', '도리어', '반대로').",
+    "longExplanation": "'反而'(fǎn'ér)는 주로 뒷절의 주어 뒤나 서술어 앞에 쓰이는 부사로, 사태의 결과나 상황의 발전이 일반적인 예상, 기대, 상식과는 정반대로 흘러갔음을 나타냅니다. 앞 절의 조건이나 상황을 고려할 때 마땅히 예상되는 방향이 아니라, 전혀 뜻밖의 방향으로 전개될 때 '오히려', '도리어'의 뉘앙스를 드러냅니다. 종종 '不但没/不但不……，反而……'(~하지 않았을 뿐만 아니라 오히려 ~하다), '虽然……，但……反而……'(비록 ~하지만 도리어 ~하다) 등의 복문 접속 형태와 호응하여 사용됩니다. 한국어의 '오히려', '도리어', '반대로'에 해당합니다.",
+    "formation": "절1 (전제 상황), (주어 +) 反而 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "대도시의 삶은 비록 매우 다채롭고 신나지만, 평생을 시골에서 살아오신 부모님께는 오히려 잘 적응되지 않을 수 있습니다."
+      }
+    ]
   },
   "zh_从而_426": {
-    "title": "从而 (consequently)",
-    "shortExplanation": "consequently",
-    "longExplanation": "consequently. Pinyin: cóng'ér",
-    "formation": "cóng'ér"
+    "title": "从而 (접속사: 그리하여, 이로써, 그 결과, 이로부터)",
+    "shortExplanation": "앞 절의 방법, 행동, 원인을 바탕으로 뒷절에서 직접적인 결과나 목적이 자연스럽게 도출됨을 나타내는 문어체 접속사입니다('이로써', '그리하여', '그 결과').",
+    "longExplanation": "'从而'(cóng'ér)는 문어체에서 자주 쓰이는 접속사로, 두 분절을 연결합니다. 앞선 절에서 방법, 수단, 조치 또는 원인을 제시하고, 뒷절에서는 그에 따라 파생되는 필연적인 결과나 궁극적으로 달성하게 되는 목적을 이끌어 냅니다. 즉 인과관계와 목적 관계가 유기적으로 결합된 표현입니다(예: '加强交流，从而增进彼此的了解' 교류를 강화하여 이로써 상호 이해를 증진하다). 한국어의 '이로써', '그리하여', '그로 인해', '그 결과'에 해당합니다.",
+    "formation": "절1 (원인 / 수단 / 조치), 从而 + 절2 (결과 / 목적)",
+    "examples": [
+      {
+        "translation": "시합 전에 마음의 준비를 잘해 두면 선수의 부담감을 줄일 수 있고, 그리하여 시합에서 승리를 거둘 수 있습니다."
+      }
+    ]
   },
   "zh_V于N_427": {
-    "title": "V 于 N (V in N)",
-    "shortExplanation": "V in N",
-    "longExplanation": "V in N. Pinyin: V yú N",
-    "formation": "V yú N"
+    "title": "동사 + 于 + 명사 (개사: ~에, ~에서 【시간·장소】)",
+    "shortExplanation": "문어체 개사 '于'가 동사 뒤에 쓰여 보어를 이루며, 동작이나 사건이 일어난 시간 또는 장소를 이끕니다(현대 중국어의 '在'에 해당).",
+    "longExplanation": "'于'(yú)는 문언문(고문)에서 유래한 격식 있는 문어체 개사(전치사)로, 동사 뒤에 놓여 시간이나 장소를 이끄는 보어로 기능합니다. 현대 중국어 구어의 '在'에 해당하며, '成立'(설립되다), '出生'(태어나다), '发生'(발생하다), '位于'(위치하다), '建'(건설되다) 등의 동사와 결합하여 고정된 격식 표현을 형성합니다(예: '出生于北京' 베이징에서 태어나다, '位于市中心' 도심에 위치하다). 한국어의 '~에 (창립되다)', '~에서 (발생하다)'에 해당합니다.",
+    "formation": "주어 + 동사 (成立 / 出生 / 发生 / 位于 등) + 于 + 명사 (시간 / 장소)",
+    "examples": [
+      {
+        "translation": "이 회사는 1997년에 설립되었습니다."
+      }
+    ]
   },
   "zh_V于N_428": {
-    "title": "V 于 N (V to N)",
-    "shortExplanation": "V to N",
-    "longExplanation": "V to N. Pinyin: V yú N",
-    "formation": "V yú N"
+    "title": "동사 + 于 + 명사 (개사: ~에게, ~에, ~을 향해 【동작의 대상】)",
+    "shortExplanation": "문어체 개사 '于'가 동사 뒤에 쓰여 동작이 향하는 대상이나 상대를 이끕니다(현대 중국어의 '向', '对', '给'에 해당).",
+    "longExplanation": "'于'(yú)는 동사 뒤에 결합하여 동작의 작용 대상, 상대방 또는 지향점을 이끄는 보어로 쓰입니다. 현대 중국어 구어의 '向'(~를 향해), '对'(~에 대해), '给'(~에게)에 해당합니다. 품격 있는 문어체 표현에서 널리 쓰이며, '求助于'(~에게 도움을 청하다), '致力于'(~에 진력하다/헌신하다), '取决于'(~에 달려 있다), '归功于'(~에게 공을 돌리다) 등 고정된 어구로 자주 사용됩니다. 한국어의 '~에게 (도움을 청하다)', '~에 (바치다)'에 해당합니다.",
+    "formation": "주어 + 동사 (求助 / 致力 / 忠 / 取决 등) + 于 + 명사 (대상 / 상대방)",
+    "examples": [
+      {
+        "translation": "리밍은 어쩔 도리가 없어, 지배인으로 있는 옛 동창 왕펑에게 도움을 청할 수밖에 없었다."
+      }
+    ]
   },
   "zh_V于N_429": {
-    "title": "V 于 N (V from N)",
-    "shortExplanation": "V from N",
-    "longExplanation": "V from N. Pinyin: V yú N",
-    "formation": "V yú N"
+    "title": "동사 + 于 + 명사 (개사: ~에서, ~로부터 【출처·기원】)",
+    "shortExplanation": "문어체 개사 '于'가 동사 뒤에 쓰여 출처, 기원, 출신 배경을 이끕니다(현대 중국어의 '从', '自'에 해당).",
+    "longExplanation": "'于'(yú)는 동사 뒤에 결합하여 사물의 기원, 발생의 근원, 출처 또는 인물의 출신 성분을 나타내는 보어로 기능합니다. 현대 중국어 구어의 '从'(~로부터), '自'(~에서)에 해당합니다. '出身于'(~ 출신이다), '来源于 / 源于'(~에서 기원하다/유래하다), '取材于'(~에서 소재를 취하다), '产生于'(~에서 발생하다) 등 서술적이고 품격 있는 표현에서 필수적으로 사용됩니다. 한국어의 '~에서 (유래하다)', '~ 출신이다', '~로부터'에 해당합니다.",
+    "formation": "주어 + 동사 (出身 / 来源 / 取材 / 诞生 등) + 于 + 명사 (출처 / 출신 / 기원)",
+    "examples": [
+      {
+        "translation": "그는 지식인 가정 출신입니다."
+      }
+    ]
   },
   "zh_A于N_430": {
-    "title": "A 于 N (A to N)",
-    "shortExplanation": "A to N",
-    "longExplanation": "A to N. Pinyin: A yú N",
-    "formation": "A yú N"
+    "title": "형용사 + 于 + 명사 (개사: ~에, ~에 대하여, ~에 있어서 【영향의 대상】)",
+    "shortExplanation": "문어체 개사 '于'가 형용사 뒤에 쓰여, 그 성질이나 상태가 미치는 대상이나 영역을 이끕니다('~에', '~에 도움이 되다', '~에 유익하다').",
+    "longExplanation": "'于'(yú)는 형용사 또는 형용사적 성격의 어구 뒤에 결합하여 그 성질이 작용하거나 영향을 미치는 대상 및 방면을 나타내는 보어로 기능합니다. 현대 중국어 구어의 '对……（有好处/有影响）'에 해당합니다. '有助于'(~에 도움이 되다), '有益于'(~에 유익하다), '有害于'(~에 해롭다), '不利于'(~에 불리하다), '善于'(~에 능숙하다), '便于'(~하기에 편리하다) 등 서면어에서 매우 정형화된 어구로 자주 쓰입니다. 한국어의 '~에 (도움이 되다)', '~에 있어서', '~에 대하여'에 해당합니다.",
+    "formation": "주어 + 형용사 (有助于 / 有益 / 有害 / 不利 / 善 / 便 등) + 于 + 명사",
+    "examples": [
+      {
+        "translation": "운동은 건강에 도움이 됩니다."
+      }
+    ]
   },
   "zh_A于N_431": {
-    "title": "A 于 N (A from/than N)",
-    "shortExplanation": "A from/than N",
-    "longExplanation": "A from/than N. Pinyin: A yú N",
-    "formation": "A yú N"
+    "title": "형용사 + 于 + 명사 (비교 개사: ~와(다르다), ~보다(…하다))",
+    "shortExplanation": "문어체 개사 '于'가 형용사 뒤에 쓰여 비교의 기준이나 차이의 대상을 이끕니다(구어의 '跟……不同'이나 '比'에 해당).",
+    "longExplanation": "'于'(yú)는 형용사 뒤에 결합하여 비교의 기준이나 대비 대상을 이끄는 보어로 사용됩니다. '不同'(다르다)과 결합할 때는 '跟/与……不同'(~와 다르다)의 뜻을 나타내며, 수량이나 정도를 나타내는 형용사(예: '高' 높다, '低' 낮다, '多' 많다, '少' 적다, '大' 크다, '优' 우수하다 등)와 결합할 때는 비교문 '比'(~보다 더 …하다)의 뜻을 나타냅니다(예: '高于去年同期' 작년 동기보다 높다, '不同于以往' 이전과 다르다). 학술, 경제, 보도 등 품격 있는 문어체에서 매우 빈번하게 사용됩니다. 한국어의 '~와 (다르다)', '~보다 (크다/높다)'에 해당합니다.",
+    "formation": "주어 + 형용사 (不同 / 高 / 低 / 大 / 优 등) + 于 + 명사 (비교 대상)",
+    "examples": [
+      {
+        "translation": "수생 동물은 육지 동물과 다릅니다."
+      }
+    ]
   },
   "zh_V为wiN_432": {
-    "title": "V 为 (wéi) N (V into N)",
-    "shortExplanation": "V into N",
-    "longExplanation": "V into N. Pinyin: V wéi (wéi) N",
-    "formation": "V wéi (wéi) N"
+    "title": "동사 + 为 (wéi) + 명사 (변화 보어: ~로 변하다, ~이 되다, ~로 전환되다)",
+    "shortExplanation": "'为'(2성: wéi)가 동사 뒤에서 결과보어로 쓰여, 사물이 다른 성질, 형태, 상태로 바뀌거나 전환됨을 나타냅니다('~로 변하다', '~이 되다').",
+    "longExplanation": "이 구문에서 '为'는 2성(wéi)으로 발음되며, 현대어의 '成'(~이 되다) 또는 '变成'(~로 바뀌다)에 해당합니다. 변화나 전이를 나타내는 동사(예: '变' 변하다, '化' 화하다, '转' 전환되다, '改' 바꾸다, '降' 떨어지다 등) 뒤에 붙어 결과보어 역할을 하며, 어떤 사물이나 상태가 일련의 작용을 거쳐 새로운 성질, 모습, 상태로 탈바꿈했음을 나타냅니다(예: '化为力量' 힘으로 승화되다, '转为优势' 우세로 돌아서다, '改为主演' 주연으로 바뀌다). 한국어의 '~로 변하다', '~이 되다', '~로 전환되다'에 해당합니다.",
+    "formation": "주어 + 동사 (变 / 化 / 转 / 改 등) + 为 + 명사 (변화된 결과)",
+    "examples": [
+      {
+        "translation": "스트레스도 원동력으로 바뀔 수 있습니다."
+      }
+    ]
   },
   "zh_V为wiN_433": {
-    "title": "V 为 (wéi) N (V as N)",
-    "shortExplanation": "V as N",
-    "longExplanation": "V as N. Pinyin: V wéi (wéi) N",
-    "formation": "V wéi (wéi) N"
+    "title": "동사 + 为 (wéi) + 명사 (판단·호칭 보어: ~라고 부르다, ~로 여기다, ~로 삼다)",
+    "shortExplanation": "'为'(2성: wéi)가 동사 뒤에 쓰여, 어떤 대상을 특정한 호칭, 자격, 신분으로 인정하거나 규정함을 나타냅니다('~라고 부르다', '~로 여기다').",
+    "longExplanation": "이 구문에서 '为'는 2성(wéi)으로 발음되며, '~로 삼다', '~로 여기다'라는 뜻의 '当作' 또는 '作为'에 해당합니다. 호칭, 평가, 판단, 선출 등을 나타내는 동사(예: '称' 부르다, '视' 보다/여기다, '认' 인정하다, '选' 뽑다, '奉' 받들다 등) 뒤에 붙어, 대상을 어떻게 규정하고 명명하는지 나타냅니다. 특히 '称其为……'(그것을 ~라고 부르다), '视……为……'(~를 …로 간주하다), '选为……'(~로 선출하다) 등의 구문으로 자주 활용됩니다. 한국어의 '~라고 부르다', '~로 여기다', '~로 간주하다'에 해당합니다.",
+    "formation": "주어 + 동사 (称 / 视 / 认 / 选 등) + (대명사 / 명사 +) 为 + 명사 (호칭 / 규정)",
+    "examples": [
+      {
+        "translation": "그가 보기에, 일이 없는 삶은 결코 진정한 삶이라고 부를 수 없다."
+      }
+    ]
   },
   "zh_V起来_434": {
-    "title": "V 起来 (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "동사 + 起来 (집중·축적의 파생방향보어: 모으다, 축적하다, 뭉치다)",
+    "shortExplanation": "파생방향보어 '起来'가 흩어져 있던 사람, 사물, 힘 등이 한곳으로 집중되거나 차곡차곡 축적됨을 나타냅니다('모아두다', '축적하다', '뭉치다').",
+    "longExplanation": "'起来'(qǐlai)가 동사 뒤에 쓰여 파생 방향보어로 기능할 때, '집중', '취합', '축적'의 의미를 나타냅니다. 분산되어 있거나 따로 떨어져 있던 사물, 인력, 자금, 정보 등이 어떤 동작을 통해 하나로 결집되거나 모여서 쌓이는 과정을 묘사합니다(예: '积蓄起来' 모아두다/축적하다, '集中起来' 집중시키다/한데 모으다, '团结起来' 똘똘 뭉치다/결속하다, '组织起来' 조직하다). 한국어의 '~해 모으다', '~해 축적하다', '한데 뭉치다'에 해당합니다.",
+    "formation": "주어 + 동사 (积蓄 / 集中 / 组织 / 团结 / 存 등) + 起来",
+    "examples": [
+      {
+        "translation": "지하수가 축적되어 모이면서, 점점 더 양이 많아집니다."
+      }
+    ]
   },
   "zh_藏起来躲起来_435": {
-    "title": "藏起来/躲起来 (V away)",
-    "shortExplanation": "V away",
-    "longExplanation": "V away. Pinyin: cáng qilai/ duǒ qilai",
-    "formation": "cáng qilai/ duǒ qilai"
+    "title": "藏起来 / 躲起来 (은폐·보관의 파생방향보어: 숨다, 숨기다, 감추다)",
+    "shortExplanation": "파생방향보어 '起来'가 '藏'(숨기다)이나 '躲'(숨다)와 결합하여, 사람이나 사물이 다른 사람의 눈에 띄지 않도록 몸을 숨기거나 감춤을 나타냅니다('숨다', '숨기다').",
+    "longExplanation": "'起来'(qǐlai)는 '은폐'나 '보관'을 나타내는 파생 방향보어로도 널리 쓰입니다. '藏'(숨기다/감추다), '躲'(몸을 피하다/숨다), '收'(거두다/치우다), '遮'(가리다) 등의 동사 뒤에 결합하여, 사람이나 물건을 남의 시선이 닿지 않는 은밀한 곳으로 이동시켜 보이지 않게 감추거나 피신시키는 상태를 완성합니다(예: '躲起来' 숨어버리다, '藏起来' 숨겨두다/감추다, '把东西收起来' 물건을 보이지 않게 치워두다). 한국어의 '숨다', '숨어버리다', '감추다', '숨겨두다'에 해당합니다.",
+    "formation": "주어 + (把 + 목적어 +) 藏 / 躲 / 收 + 起来",
+    "examples": [
+      {
+        "translation": "류리는 자신이 잘못했다는 것을 알고는, 숨어버려서 감히 나를 만나지 못하고 있다."
+      }
+    ]
   },
   "zh_替_436": {
-    "title": "替 (to replace)",
-    "shortExplanation": "to replace",
-    "longExplanation": "to replace. Pinyin: tì",
-    "formation": "tì"
+    "title": "替 + 명사 / 대명사 + 동사 (개사: ~를 대신하여, ~ 대신에, ~를 위해)",
+    "shortExplanation": "개사 '替'가 사람을 나타내는 명사나 대명사 앞에 쓰여, 그 사람을 대신하거나 대리하여 어떤 동작을 수행함을 나타냅니다('~를 대신해서', '~ 대신').",
+    "longExplanation": "'替'(tì)는 개사(전치사)로서 명사나 대명사 앞에 놓여 부사어(상어)를 형성합니다. 본인이 직접 수행할 수 없는 상황에서 다른 사람이 그 사람을 대신하여, 혹은 대리인의 자격으로 어떤 행동을 하거나 심부름을 해 줄 때 쓰입니다(예: '替我向大家问好' 나를 대신해 모두에게 안부를 전해줘, '替他付钱' 그를 대신해 돈을 내주다). 한국어의 '~를 대신하여', '~ 대신에', '~ 대신 해 주다'에 해당합니다.",
+    "formation": "주어 + 替 + 명사 / 대명사 (대행 대상) + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "외할아버지를 뵈면, 절 대신해서 안부 좀 전해 주세요."
+      }
+    ]
   },
   "zh_替_437": {
-    "title": "替 (on behalf of)",
-    "shortExplanation": "on behalf of",
-    "longExplanation": "on behalf of. Pinyin: tì",
-    "formation": "tì"
+    "title": "替 + 명사 / 대명사 + 심리형용사·동사 (개사: ~의 일로, ~를 위해, ~의 입장에서 【공감·동조】)",
+    "shortExplanation": "개사 '替'가 심리형용사나 감정동사 앞에 쓰여, 상대방의 처지에 깊이 공감하여 자기 일처럼 기뻐하거나 걱정함을 나타냅니다('~의 일로 기뻐하다', '~를 위해 걱정하다').",
+    "longExplanation": "'替'(tì)가 감정이나 심리상태를 나타내는 어구(예: '高兴' 기뻐하다, '担心' 걱정하다, '着急' 애태우다/조바심내다, '难过' 슬퍼하다 등)와 결합할 때, 상대방의 입장에 서서 감정을 공유하고 공감함을 나타냅니다. 즉 다른 사람의 경사나 곤경을 마치 자신의 일인 것처럼 여기며 '그 사람을 위해 기뻐해 주다', '그 사람의 일로 애가 타다'라는 정서적 유대감을 표현합니다(예: '大家都在替你高兴' 모두가 네 일처럼 기뻐하고 있어, '我真替你捏一把汗' 내가 다 식은땀이 나더라). 한국어의 '~의 일로 (기뻐하다)', '~를 위해 (기뻐하다/걱정하다)', '~ 대신 (애태우다)'에 해당합니다.",
+    "formation": "주어 + 替 + 명사 / 대명사 (공감 대상) + 심리형용사 / 동사 (高兴 / 担心 / 着急 등)",
+    "examples": [
+      {
+        "translation": "리양이 유학을 가게 되어, 우리는 모두 그를 위해 함께 기뻐해 주고 있습니다."
+      }
+    ]
   },
   "zh_说不定_438": {
-    "title": "说不定 (uncertain)",
-    "shortExplanation": "uncertain",
-    "longExplanation": "uncertain. Pinyin: shuōbudìng",
-    "formation": "shuōbudìng"
+    "title": "说不定 (서술어: 확실하지 않다, 정해지지 않았다, 장담할 수 없다)",
+    "shortExplanation": "술어 자리에 쓰여, 시간이나 사안의 결과 등이 아직 확정되지 않아 단정할 수 없음을 나타냅니다('확실하지 않다', '미정이다', '장담할 수 없다').",
+    "longExplanation": "'说不定'(shuōbudìng)은 문장에서 서술어로 기능할 수 있으며, 특히 부사 '还'와 함께 결합하여 '还说不定'의 형태로 빈번히 쓰입니다. 어떤 계획, 출발 시간, 성패 또는 사태의 향방이 아직 최종적으로 결정되지 않았거나 불확실하여 확실하게 장담할 수 없는 상태('아직 알 수 없다', '확정되지 않았다')를 의미합니다(예: '能不能去还说不定' 갈 수 있을지는 아직 미정이다). 한국어의 '확실하지 않다', '아직 정해지지 않았다', '장담할 수 없다'에 해당합니다.",
+    "formation": "주어 (시간 / 계획 / 사태) + (还 +) 说不定",
+    "examples": [
+      {
+        "translation": "이 일은 지배인이 이미 동의했지만, 출발 시간은 아직 확실하지 않습니다."
+      }
+    ]
   },
   "zh_说不定_439": {
-    "title": "说不定 (maybe)",
-    "shortExplanation": "maybe",
-    "longExplanation": "maybe. Pinyin: shuōbudìng",
-    "formation": "shuōbudìng"
+    "title": "说不定 (부사: 어쩌면, 혹시, 뜻밖에 ~일지도 모른다)",
+    "shortExplanation": "부사로서 주어 앞이나 서술어 앞에 쓰여, 어떤 상황이나 결과가 일어날 가능성을 추측합니다('어쩌면', '혹시', '~일지도 모른다').",
+    "longExplanation": "'说不定'(shuōbudìng)은 부사로서 문장 첫머리(주어 앞)나 주어 뒤·서술어 앞에 놓여, 어떤 가능성에 대한 화자의 추측과 짐작을 나타냅니다. '也许'(아마도)나 '可能'(어쩌면)과 유사하며, 확정할 수는 없지만 어떤 상황이 발생할 충분한 개연성이 있음을 유연하게 제시할 때 쓰입니다(예: '你再去问问，说不定能找到' 다시 가서 물어봐, 어쩌면 찾을 수 있을지도 몰라; '说不定他明天就回来了' 어쩌면 그가 내일 당장 돌아올지도 모른다). 한국어의 '어쩌면', '혹시', '뜻밖에 ~일지도 모른다'에 해당합니다.",
+    "formation": "(주어 +) 说不定 (+ 주어 +) 서술어 / 절",
+    "examples": []
   },
   "zh_N似的_441": {
-    "title": "N 似的 (like N)",
-    "shortExplanation": "like N",
-    "longExplanation": "like N. Pinyin: N shìde",
-    "formation": "N shìde"
+    "title": "명사 + 似的 (조사: 마치 ~인 것 같다, ~처럼, ~같이)",
+    "shortExplanation": "명사나 어구 뒤에 붙어 모양이나 상태가 비슷함을 나타내는 비유 조사입니다('마치 ~같다', '~처럼').",
+    "longExplanation": "'似的'(shìde)는 명사, 대명사 또는 어구 뒤에 붙어 그것과 비슷하거나 동일함을 나타내는 비유 조사입니다. 문장 앞부분의 '像', '好像', '仿佛' 등과 함께 호응하여 '像……似的' 또는 '好像……似的' 구조로 매우 자주 사용되며, 생생한 비유적 묘사를 완성합니다. 한국어의 '마치 ~와 같다', '마치 ~인 것처럼', '~같이'에 해당합니다.",
+    "formation": "(像 / 好像 / 仿佛 +) 명사 / 어구 + 似的",
+    "examples": [
+      {
+        "translation": "저는 이것이 사실이라는 게 믿기지 않아, 마치 꿈을 꾸는 것 같았습니다."
+      }
+    ]
   },
   "zh_A得什么似的_442": {
-    "title": "A 得什么似的 (so A (to an extreme))",
-    "shortExplanation": "so A (to an extreme)",
-    "longExplanation": "so A (to an extreme). Pinyin: A dé shénme shìde",
-    "formation": "A dé shénme shìde"
+    "title": "형용사 + 得什么似的 (정도보어: 말도 못하게 ~하다, 둘도 없이 ~하다, 아주 ~해 죽겠다)",
+    "shortExplanation": "형용사 뒤에 쓰여 그 상태나 정도가 비할 데 없이 극심함을 과장되게 나타내는 구어 정도보어입니다('말도 못하게 ~하다', '엄청나게 ~하다').",
+    "longExplanation": "'得什么似的'(dé shénme shìde)는 구어에서 감정이나 상태의 극치를 생생하고 과장되게 묘사하는 정도보어 관용 표현입니다. 성질이나 감정을 나타내는 형용사 및 심리 동사(累, 忙, 高兴, 气, 乐 등) 뒤에 쓰여, 그 상태가 도저히 무엇이라 형용할 수 없을 정도로 지극함(극단적인 수준)을 나타냅니다. 한국어의 '말도 못하게 ~하다', '엄청나게 ~하다', '~해 죽겠다'에 해당합니다.",
+    "formation": "형용사 / 심리 동사 + 得什么似的",
+    "examples": [
+      {
+        "translation": "그는 무거운 노트북 가방을 메고 지하철에 시달리며 출퇴근하더니, 퇴근하고 집에 돌아와서는 말도 못하게 피곤해했습니다."
+      }
+    ]
   },
   "zh_纷纷V_443": {
-    "title": "纷纷 V (V in quick succession)",
-    "shortExplanation": "V in quick succession",
-    "longExplanation": "V in quick succession. Pinyin: fēnfēn V",
-    "formation": "fēnfēn V"
+    "title": "纷纷 + 동사 (부사: 잇따라, 저마다, 너도나도, 줄지어)",
+    "shortExplanation": "많은 사람이나 사물이 잇따라 계속해서 어떤 동작을 취함을 나타내는 부사입니다('잇따라', '너도나도', '줄지어').",
+    "longExplanation": "'纷纷'(fēnfēn)은 동사 앞에 놓이는 부사로, 다수의 사람이나 사물(주어는 반드시 복수형이거나 집단 명사)이 하나둘씩 연이어 계속해서 어떤 행동을 하거나 사건이 꼬리를 물고 일어남을 나타냅니다. '너도나도 앞다투어 ~하다', '줄지어 ~하다' 등의 의미를 지닙니다. 한국어의 '잇따라', '저마다', '너도나도', '줄지어'에 해당합니다.",
+    "formation": "주어 (복수·집단) + 纷纷 + 동사",
+    "examples": [
+      {
+        "translation": "비가 쏟아질 것 같자, 길 위의 사람들은 너도나도 앞다투어 집으로 달려갔습니다."
+      }
+    ]
   },
   "zh_瞎_444": {
-    "title": "瞎 (blind)",
-    "shortExplanation": "blind",
-    "longExplanation": "blind. Pinyin: xiā",
-    "formation": "xiā"
+    "title": "瞎 (형용사 / 동사: 눈이 멀다, 실명하다, 시력을 잃다)",
+    "shortExplanation": "시력을 잃어 앞을 보지 못하는 상태이거나 실명함을 나타냅니다('눈이 멀다', '실명하다').",
+    "longExplanation": "'瞎'(xiā)의 본래 의미는 시력을 잃어 앞을 보지 못하는 상태이거나 눈이 머는 것을 의미하는 형용사 또는 동사입니다. 술어로 쓰여 '眼睛瞎了'(눈이 멀었다)처럼 쓰이거나, 관형어로 명사 앞에 놓여 '瞎子'(맹인, 시각장애인)와 같이 사람이나 대상을 수식합니다. 한국어의 '눈이 멀다', '실명하다', '장님이 되다'에 해당합니다.",
+    "formation": "(眼睛 +) 瞎 (+ 了) / 瞎 + 명사",
+    "examples": [
+      {
+        "translation": "어느 날, 그는 군사들에게 코끼리 한 마리와 태어날 때부터 눈이 먼 사람 몇 명을 찾아오라고 명령했습니다."
+      }
+    ]
   },
   "zh_瞎_445": {
-    "title": "瞎 (thoughtlessly)",
-    "shortExplanation": "thoughtlessly",
-    "longExplanation": "thoughtlessly. Pinyin: xiā",
-    "formation": "xiā"
+    "title": "瞎 + 동사 (부사: 쓸데없이, 함부로, 무턱대고, 헛되이)",
+    "shortExplanation": "동사 앞에 놓여 아무런 근거와 목적 없이 무턱대고 행동하거나 쓸데없는 짓을 함을 나타내는 부사입니다('쓸데없이', '함부로', '무턱대고').",
+    "longExplanation": "'瞎'(xiā)은 파생적 의미로서 동사 앞에 놓이는 부사로 쓰입니다. 타당한 근거, 목적 또는 계획 없이 무턱대고 아무렇게나 행동하거나 헛수고를 하는 모습을 나타냅니다. '瞎说'(헛소리하다, 함부로 말하다), '瞎想'(엉뚱한 생각을 하다), '瞎操心 / 瞎担心'(쓸데없이 헛걱정하다), '瞎忙'(헛바쁘다) 등 일상 회화에서 널리 쓰입니다. 한국어의 '쓸데없이', '함부로', '무턱대고', '괜히'에 해당합니다.",
+    "formation": "(别 / 不用 +) 瞎 + 동사",
+    "examples": [
+      {
+        "translation": "그 사람이 알아서 방법을 찾아낼 테니, 너는 그 사람 대신 쓸데없이 헛걱정하지 마라."
+      }
+    ]
   },
   "zh_分别_446": {
-    "title": "分别 (to separate)",
-    "shortExplanation": "to separate",
-    "longExplanation": "to separate. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别 (동사 / 명사: 헤어지다, 이별하다, 작별하다, 이별)",
+    "shortExplanation": "서로 떨어져 헤어지거나 이별함을 나타내는 동사이자 그 이별을 뜻하는 명사입니다('헤어지다', '작별하다', '이별').",
+    "longExplanation": "'分别'(fēnbié)은 동사로서 함께 있던 사람들이 서로 떨어져 헤어지거나 작별하는 것을 뜻합니다('离别', '分开'에 상당). 문맥에 따라 명사화되어 '헤어짐', '작별', '이별' 자체를 가리키기도 합니다. 정든 친구나 동료와의 이별을 묘사할 때 자주 쓰입니다. 한국어의 '헤어지다', '작별하다', '이별하다'에 해당합니다.",
+    "formation": "주어 + 分别 / 分别 + 是...",
+    "examples": [
+      {
+        "translation": "헤어짐은 잠시일 뿐이며, 우리는 앞으로 반드시 다시 만날 것입니다."
+      }
+    ]
   },
   "zh_分别_447": {
-    "title": "分别 (difference)",
-    "shortExplanation": "difference",
-    "longExplanation": "difference. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别 (명사: 차이, 구별, 다른 점)",
+    "shortExplanation": "사물들 사이의 차이점이나 다른 점을 나타내는 명사입니다('차이', '구별', '다른 점').",
+    "longExplanation": "'分别'(fēnbié)은 명사로서 둘 이상의 대상 사이에 존재하는 차이나 다른 점, 구별을 나타냅니다. '区别', '差异'와 유의어로 쓰이며, 주로 '有什么分别'(무슨 차이가 있는가), '没有分别'(차이가 없다) 등의 형태로 자주 사용됩니다. 한국어의 '차이', '구별', '다른 점'에 해당합니다.",
+    "formation": "(……和……) 有 / 没有 + 分别 / 有什么分别",
+    "examples": [
+      {
+        "translation": "저는 이 두 가지 방법 사이에 어떤 차이가 있는지 잘 모르겠습니다."
+      }
+    ]
   },
   "zh_分别_448": {
-    "title": "分别 (separately)",
-    "shortExplanation": "separately",
-    "longExplanation": "separately. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别 + 동사 (부사: 따로따로, 개별적으로, 각자)",
+    "shortExplanation": "동작을 한꺼번에 묶어서 하지 않고 각 대상별로 따로따로 행함을 나타내는 부사입니다('따로따로', '개별적으로').",
+    "longExplanation": "'分别'(fēnbié)은 동사 앞에 놓이는 부사로, 여러 대상을 하나로 묶지 않고 각각 개별적으로, 독립적으로 나누어 동작을 실행함을 나타냅니다. '따로따로', '각각 나누어서'의 의미를 지닙니다. 한국어의 '따로따로', '개별적으로', '각자'에 해당합니다.",
+    "formation": "주어 + 分别 + 동사 + 목적어",
+    "examples": [
+      {
+        "translation": "제가 그 일에 대해 두 사람에게 따로따로 물어보았는데, 그들의 말은 모두 똑같았습니다."
+      }
+    ]
   },
   "zh_分别_449": {
-    "title": "分别 (respectively)",
-    "shortExplanation": "respectively",
-    "longExplanation": "respectively. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别 (부사: 각각 순서대로, 저마다 차례대로, 각기)",
+    "shortExplanation": "앞뒤에 나열된 대상들이 순서대로 일대일 대응함을 나타내는 부사입니다('각각 순서대로', '각기').",
+    "longExplanation": "'分别'(fēnbié)은 부사로서 앞뒤에 열거된 복수의 항목들이 순서에 따라 일대일로 상응하거나 대응함을 나타냅니다(영어의 'respectively'에 해당). 즉 첫째 항목은 앞선 내용에, 둘째 항목은 뒤선 내용에 대응됨을 명확히 밝힐 때 쓰이며, 설명문이나 학술문에서 빈번히 활용됩니다. 한국어의 '각각 (순서대로)', '각기', '저마다 대응하여'에 해당합니다.",
+    "formation": "명사1 和 명사2 + 分别 + 是 / 동사 + 내용1 和 내용2",
+    "examples": [
+      {
+        "translation": "사암과 역암은 각각 모래와 자갈이 굳어져 형성된 생성물입니다."
+      }
+    ]
   },
   "zh_根_450": {
-    "title": "根 ((measure word))",
-    "shortExplanation": "(measure word)",
-    "longExplanation": "(measure word). Pinyin: gēn",
-    "formation": "gēn"
+    "title": "수사 + 根 + 명사 (양사: 가닥, 개, 자루, 개비 【가늘고 긴 사물】)",
+    "shortExplanation": "줄 모양이나 막대 모양처럼 가늘고 길쭉한 사물을 세는 양사입니다('가닥', '개', '자루').",
+    "longExplanation": "'根'(gēn)은 가늘고 길쭉한 형태의 막대형, 원통형 또는 줄·실 형태의 사물을 세는 단위 양사입니다. 주로 '绳子'(밧줄), '头发'(머리카락), '针'(바늘), '木棍'(막대기), '手指'(손가락), '骨头'(뼈), '香蕉'(바나나), '烟'(담배) 등과 결합합니다. 한국어의 '가닥', '자루', '개', '개비' 등에 해당합니다.",
+    "formation": "수사 + 根 + 명사 (가늘고 긴 사물)",
+    "examples": [
+      {
+        "translation": "꼬리를 만져 본 맹인은 코끼리가 한 가닥의 밧줄 같다고 말했습니다."
+      }
+    ]
   },
   "zh_根_451": {
-    "title": "根 (root)",
-    "shortExplanation": "root",
-    "longExplanation": "root. Pinyin: gēn",
-    "formation": "gēn"
+    "title": "根 (명사: 뿌리, 근본, 근원)",
+    "shortExplanation": "식물의 뿌리, 또는 사물의 근본이나 근원을 나타내는 명사입니다('뿌리', '근본').",
+    "longExplanation": "'根'(gēn)은 명사로서 식물이 흙 속으로 뻗어 수분과 양분을 흡수하고 줄기를 지탱하는 '뿌리'를 가리킵니다. 또한 의미가 확장되어 사물의 근본, 근원, 바탕을 비유적으로 가리키기도 합니다('根本', '根源', '扎根' 등). 한국어의 '뿌리', '근원', '근본'에 해당합니다.",
+    "formation": "명사 (식물·사물) + 的 + 根",
+    "examples": [
+      {
+        "translation": "이 나무의 뿌리는 굵고도 깁니다."
+      }
+    ]
   },
   "zh_便_452": {
-    "title": "便 (then)",
-    "shortExplanation": "then",
-    "longExplanation": "then. Pinyin: biàn",
-    "formation": "biàn"
+    "title": "便 + 동사 / 형용사 (서면어 부사: 곧, 바로, 즉시, ~하게 되다)",
+    "shortExplanation": "구어의 '就'에 해당하는 서면어 부사로, 앞선 일에 이어 바로 뒤따라 발생하거나 자연스러운 결과를 나타냅니다('곧', '바로', '~하게 되다').",
+    "longExplanation": "'便'(biàn)은 주로 서면어(글말)에서 쓰이는 부사로, 구어의 '就'(jiù)에 대응합니다. 뒷절의 동사나 형용사 앞에 놓여, 앞 절의 동작이나 사건에 뒤이어 곧바로 다음 사건이 일어나거나, 앞선 원인·조건으로부터 자연스럽게 결과가 도출됨을 나타냅니다. 문장을 간결하고 격조 있게 만듭니다. 한국어의 '곧', '바로', '즉시', '~하게 되다'에 해당합니다.",
+    "formation": "절1 (전제·원인), (주어 +) 便 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "윗집에서 새로 피아노를 들이는 바람에, 우리 집에는 곧바로 소음과 부산함이 늘어났습니다."
+      }
+    ]
   },
   "zh_倒反倒_453": {
-    "title": "倒/反倒 (contrary to logic)",
-    "shortExplanation": "contrary to logic",
-    "longExplanation": "contrary to logic. Pinyin: dǎo/ fǎndào",
-    "formation": "dǎo/ fǎndào"
+    "title": "倒 / 反倒 (부사: 오히려, 반대로, 도리어)",
+    "shortExplanation": "상식, 도리, 일반적인 예상이나 의도와는 완전히 반대되는 결과가 생겨남을 나타내는 부사입니다('오히려', '반대로', '도리어').",
+    "longExplanation": "'倒'(dào)와 '反倒'(fǎndào)는 뒷절의 술어 앞에 쓰이는 전환 부사로, 일의 진행이나 결과가 일반적인 상식, 이치, 기대 또는 원래 의도와는 정반대의 방향으로 흘러갔음을 나타냅니다. '反而'와 의미상 거의 같으며, '反倒'는 반전과 의외성의 뉘앙스가 조금 더 뚜렷합니다. 좋은 의도로 한 일이 도리어 화가 되거나, 당연히 그러해야 할 상태와 반대의 일이 벌어질 때 주로 사용됩니다. 한국어의 '오히려', '반대로', '도리어'에 해당합니다.",
+    "formation": "절1 (전제 상황), (주어 +) 倒 / 反倒 + 동사 / 형용사",
+    "examples": []
   },
   "zh_倒_455": {
-    "title": "倒 (despite all)",
-    "shortExplanation": "despite all",
-    "longExplanation": "despite all. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒 / 倒是 (부사: ~하기는 ~하다만, 과연 ~하기는 한데 【양보】)",
+    "shortExplanation": "양보를 나타내는 부사로, 우선 한 가지 사실이나 장점을 인정해 둔 뒤 뒷절에서 부족한 점이나 결점을 지적합니다('~하기는 하다만', '과연 ~하지만').",
+    "longExplanation": "'倒'(dào) 또는 '倒是'(dàoshi)는 양보의 어기를 나타내는 부사입니다. 앞 절에서 먼저 상대방의 의견이나 대상의 한 가지 측면(장점이나 긍정적인 사실)을 '과연 ~하기는 하다', '~인 것은 맞다'라며 일단 수긍하여 인정한 후, 뒷절에서 '就是', '只是', '但是' 등을 사용하여 미흡한 점, 단점 또는 아쉬운 점을 덧붙입니다. 직설적인 비판을 피하고 완곡하게 지적할 때 유용합니다. 한국어의 '~하기는 하다만', '~이긴 한데'에 해당합니다.",
+    "formation": "(주어 +) 倒 / 倒是 + 동사 / 형용사, (就是 / 只是 / 但是 +) 절2",
+    "examples": [
+      {
+        "translation": "품질은 정말 좋기는 한데, 다만 가격이 너무 비싼 게 흠입니다."
+      }
+    ]
   },
   "zh_倒_456": {
-    "title": "倒 (for crying out loud)",
-    "shortExplanation": "for crying out loud",
-    "longExplanation": "for crying out loud. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒 / 倒是 (부사: 어서, 어디 한번, 도대체 【재촉·추궁】)",
+    "shortExplanation": "명령문이나 의문문에서 상대방의 대답이나 행동을 재촉하거나, 답답함과 추궁의 어조를 드러내는 부사입니다('어서', '어디 한번', '도대체').",
+    "longExplanation": "'倒'(dào) 또는 '倒是'(dàoshi)는 화자의 조급함, 불만, 혹은 강한 재촉과 추궁의 어기를 나타내는 부사입니다. 상대방이 대답을 미루거나 행동을 주저할 때 '어서 말해 보아라', '빨리 해 보아라' 하고 재촉하거나, 반어적 의문문에서 '네가 안 하면 도대체 누가 하겠느냐'며 따져 물을 때 사용됩니다. 한국어의 '어서', '빨리', '어디 한번 ~해 봐라', '도대체'에 해당합니다.",
+    "formation": "주어 + 倒 / 倒是 + 동사 (+ 목적어 / 어 보다)",
+    "examples": [
+      {
+        "translation": "어디 한번 말해 보시죠, 이 일에 당신이 책임을 안 지면 도대체 누가 책임을 진단 말입니까?"
+      }
+    ]
   },
   "zh_V来V去_457": {
-    "title": "V 来 V 去 (V around)",
-    "shortExplanation": "V around",
-    "longExplanation": "V around. Pinyin: V lái V qù",
-    "formation": "V lái V qù"
+    "title": "동사 + 来 + 동사 + 去 (동작의 반복·왕복: 이리저리 ~하다, 자꾸 ~하다, 오락가락하다)",
+    "shortExplanation": "동일한 단음절 동사를 '来'와 '去' 사이에 반복하여, 같은 동작을 이리저리 반복하거나 이쪽저쪽으로 왔다 갔다 함을 나타냅니다('이리저리 ~하다', '자꾸 ~하다').",
+    "longExplanation": "'V 来 V 去'(V lái V qù)는 구어에서 자주 쓰이는 동사 중첩 구문입니다. 공간 이동을 나타내는 동사(跑, 走, 飞 등)와 결합하면 특정한 방향 없이 이리저리 왔다 갔다 하거나 분주하게 돌아다니는 상태를 묘사합니다(예: '跑来跑去' 이리저리 뛰어다니다, '走来走去' 서성거리다/왔다 갔다 하다). 또한 생각이나 관찰, 선택을 나타내는 동사(想, 看, 挑 등)와 결합하면 어떤 결론에 이르지 못한 채 같은 동작이나 고민을 되풀이함을 나타냅니다(예: '想来想去' 생각하고 또 생각하다/이리저리 궁리하다, '挑来挑去' 고르고 또 고르다). 한국어의 '이리저리 ~하다', '~하고 또 ~하다', '이쪽저쪽 왔다 갔다 하다'에 해당합니다.",
+    "formation": "주어 + 동사 + 来 + 동사 + 去",
+    "examples": [
+      {
+        "translation": "강아지가 자신의 꼬리를 쫓으며 잔디밭 위를 이리저리 뛰어다닌다."
+      }
+    ]
   },
   "zh_要不不然要不然_458": {
-    "title": "要不/不然/要不然 (otherwise)",
-    "shortExplanation": "otherwise",
-    "longExplanation": "otherwise. Pinyin: yàobù/ bùrán/ yàobùrán",
-    "formation": "yàobù/ bùrán/ yàobùrán"
+    "title": "要不 / 不然 / 要不然 (반대 가정 접속사: 그렇지 않으면, 안 그러면, 아니면)",
+    "shortExplanation": "후속 절의 앞에 쓰여, 앞 절의 상황과 반대로 가정할 때 발생할 수 있는 부정적인 결과나 바람직하지 못한 사태를 이끕니다('그렇지 않으면', '안 그러면').",
+    "longExplanation": "'要不'(yàobù), '不然'(bùrán), '要不然'(yàobùrán)은 반대 가정을 나타내는 접속사로, 복문의 두 번째 절 서두에 놓입니다. 앞 절에서 실제 발생한 긍정적 사실이나 반드시 취해야 할 행동을 언급한 뒤, '그렇지 않다면 / 그렇지 않았더라면'이라는 반대 조건을 제시하여 초래되었을 부정적인 결과나 손실을 서술합니다. '不然'은 서면어와 구어 모두에 쓰이며, '要不'와 '要不然'은 일상 대화(구어)에서 특히 널리 사용됩니다(예: '快点儿，要不然来不及了' 서둘러, 안 그러면 늦어). 한국어의 '그렇지 않으면', '안 그러면', '아니면'에 해당합니다.",
+    "formation": "절1 (사실·조건), 要不 / 不然 / 要不然 + 절2 (부정적 결과·가정)",
+    "examples": [
+      {
+        "translation": "다행히 너를 만났지, 그렇지 않았으면 나 오늘 분명 지각했을 거야."
+      }
+    ]
   },
   "zh_要不不然要不然_459": {
-    "title": "要不/不然/要不然 (why not try)",
-    "shortExplanation": "why not try",
-    "longExplanation": "why not try. Pinyin: yàobù/ bùrán/ yàobùrán",
-    "formation": "yàobù/ bùrán/ yàobùrán"
+    "title": "要不 / 不然 / 要不然 (제안·권유: 아니면 차라리 ~하는 게 어때, 그럼 차라리)",
+    "shortExplanation": "후속 절의 서두에 쓰여, 부드럽고 완곡한 어조로 다른 대안이나 해결책을 제안할 때 사용합니다('아니면', '차라리 ~하는 게 어때').",
+    "longExplanation": "'要不'(yàobù), '不然'(bùrán), '要不然'(yàobùrán)은 문제 상황이나 곤란한 처지에 직면했을 때, 상대를 배려하며 완곡하게 새로운 대안이나 해결책을 제안(상담)하는 표현으로도 쓰입니다. 앞 절에서 상황이나 이유를 제시한 뒤, '아니면 이렇게 하는 것은 어떨까?', '차라리 ~하자'라는 뜻으로 부드럽게 권유합니다. 문장 끝에 어기조사 '吧'를 동반하여 제안의 어조를 한층 부드럽게 만드는 경우가 많습니다. 구어에서는 '要不'와 '要不然'이 주도적으로 쓰입니다. 한국어의 '아니면 (차라리)', '그렇지 않으면 ~하는 편이 어때'에 해당합니다.",
+    "formation": "절1 (상황·이유), 要不 / 不然 / 要不然 + 주어 + 동사구 (+ 吧)",
+    "examples": [
+      {
+        "translation": "오늘 너무 늦었으니, 아니면 내일 출발하는 게 어때요?"
+      }
+    ]
   },
   "zh_彼此V_460": {
-    "title": "彼此 V (each other)",
-    "shortExplanation": "each other",
-    "longExplanation": "each other. Pinyin: bǐcǐ V",
-    "formation": "bǐcǐ V"
+    "title": "彼此 + 동사 (상호 부사어: 서로 ~하다, 피차 ~하다)",
+    "shortExplanation": "대명사 '彼此'가 동사 앞에서 부사어로 쓰여, 양방이 서로에게 상호 동작을 행함을 나타냅니다('서로 ~하다', '피차 ~하다').",
+    "longExplanation": "'彼此'(bǐcǐ)는 양쪽 쌍방(이쪽과 저쪽)을 가리키는 대명사로, 술어 동사 앞에 놓여 상호 작용을 나타내는 부사어 역할을 합니다. 주어는 반드시 복수이거나 상호 관계를 맺고 있는 두 대상을 가리키며, 뒤따르는 동사는 상호 간의 행위를 나타내는 2음절 동사(帮助 돕다, 信任 신뢰하다, 了解 이해하다, 尊重 존중하다, 照顾 돌보다 등)가 주로 쓰입니다. '互相'(서로)과 의미가 매우 유사하지만, '彼此'는 두 당사자 간의 대등한 쌍방 관계를 한층 강조하는 뉘앙스가 있습니다. 한국어의 '서로 ~하다', '피차 ~하다'에 해당합니다.",
+    "formation": "주어 (복수/쌍방) + 彼此 + 동사",
+    "examples": [
+      {
+        "translation": "좋은 친구는 서로 도와야 합니다."
+      }
+    ]
   },
   "zh_彼此_461": {
-    "title": "彼此 ((pronoun for 2 people))",
-    "shortExplanation": "(pronoun for 2 people)",
-    "longExplanation": "(pronoun for 2 people). Pinyin: bǐcǐ",
-    "formation": "bǐcǐ"
+    "title": "彼此 (대명사: 서로, 피차, 쌍방, 양자)",
+    "shortExplanation": "두 당사자(이쪽과 저쪽) 쌍방을 가리키는 대명사로, 주로 관형어(彼此的), 목적어, 주어로 쓰입니다('서로의', '피차의', '양측').",
+    "longExplanation": "'彼此'(bǐcǐ)는 '이쪽'(此)과 '저쪽'(彼)을 아울러 가리키는 대명사로, 두 사람 혹은 두 집단의 양쪽 쌍방을 가리킵니다. 동사를 수식하는 부사어 용법 외에도 독립적인 대명사로서 관형어(彼此的 + 명사), 목적어, 주어 역할을 수행합니다. 특히 '彼此的 ＋ 명사' 형식으로 쓰여 두 사람 사이의 소유나 관계를 나타낼 때 흔히 쓰입니다(예: '彼此的爱好' 서로의 취미, '彼此的了解' 상호 간의 이해, '拉近彼此的距离' 서로의 거리를 좁히다). 또한 사자성어 '不分彼此'(너 나 할 것 없이 한집안 같다)처럼 목적어로도 사용됩니다. 한국어의 '서로의', '피차', '양자 간'에 해당합니다.",
+    "formation": "彼此 (+ 的) + 명사 (또는 주어·목적어)",
+    "examples": [
+      {
+        "translation": "우리 서로의 취미는 같습니다."
+      }
+    ]
   },
   "zh_彼此彼此_462": {
-    "title": "彼此彼此 (about the same)",
-    "shortExplanation": "about the same",
-    "longExplanation": "about the same. Pinyin: bǐcǐbǐcǐ",
-    "formation": "bǐcǐbǐcǐ"
+    "title": "彼此彼此 (관용구: 피장파장이다, 오십보백보이다, 도긴개긴이다, 서로 마찬가지다)",
+    "shortExplanation": "대명사 '彼此'를 중첩한 구어 관용구로, 두 사람의 수준, 처지, 실력 등이 엇비슷하여 별반 다를 바 없음을 나타냅니다('피차일반이다', '피장파장이다').",
+    "longExplanation": "'彼此彼此'(bǐcǐbǐcǐ)는 구어에서 빈번하게 쓰이는 정형화된 관용 표현입니다. 두 사람의 능력, 성적, 처지, 결점 등이 엇비슷하여 누가 낫고 못할 것이 없음을 의미합니다. 주된 화용 기능은 두 가지입니다. 첫째, 상대방의 칭찬에 대해 겸양의 뜻을 표하며 '저나 당신이나 마찬가지입니다(피차일반입니다)'라고 대답할 때 씁니다. 둘째, 친한 사이에 상대가 자신을 놀리거나 지적할 때 '너나 나나 똑같다(피장파장이다 / 도긴개긴이다)'라며 맞받아칠 때 사용합니다. 한국어의 '피장파장이다', '도긴개긴이다', '오십보백보이다', '피차일반이다'에 해당합니다.",
+    "formation": "주어 (우리 둘 / 쌍방) + 彼此彼此 (또는 단독 응답구로 사용)",
+    "examples": [
+      {
+        "translation": "우리 둘 다 피장파장이야, 나도 너보다 그림을 크게 잘 그리는 것도 아닌걸."
+      }
+    ]
   },
   "zh_算_463": {
-    "title": "算 (counts as)",
-    "shortExplanation": "counts as",
-    "longExplanation": "counts as. Pinyin: suàn",
-    "formation": "suàn"
+    "title": "算 (동사: ~로 치다, ~로 간주하다, ~로 셈하다)",
+    "shortExplanation": "어떤 사물이나 상황을 특정한 자격, 기준에 도달한 것으로 인정하거나, 임시로 그러한 것으로 규정함을 나타냅니다('~로 치다', '~인 셈 치다').",
+    "longExplanation": "동사 '算'(suàn)은 '계산하다'라는 본래 의미에서 파생되어, 어떤 대상을 특정한 자격이나 범주에 드는 것으로 인정하거나 그렇게 평가함을 나타냅니다. 또한 예문처럼 어떤 사실이나 행동을 잠정적으로 '그렇게 한 셈 치다', '~로 간주하다'라고 처리할 때도 널리 사용됩니다(흔히 '就算……'이나 '算作'의 형태로 쓰임). 객관적인 평가 구문(예: '这算不了什么' 이건 아무것도 아니다, '他算是一个人才' 그는 인재라고 할 만하다)과 임시 규정 구문 모두에 자주 쓰입니다. 한국어의 '~로 치다', '~인 셈 치다', '~라고 보다/간주하다'에 해당합니다.",
+    "formation": "주어 + (就 +) 算 + 동사구 / 명사구 / 절",
+    "examples": [
+      {
+        "translation": "이 돈은 내가 너한테 빌려준 셈 칠 테니, 나중에 돈이 생기면 그때 나한테 갚아."
+      }
+    ]
   },
   "zh_V了掉算了_464": {
-    "title": "V 了/掉 算了 (might as well V)",
-    "shortExplanation": "might as well V",
-    "longExplanation": "might as well V. Pinyin: V le/ diào suànle",
-    "formation": "V le/ diào suànle"
+    "title": "동사 + 了 / 掉 + 算了 (체념과 단념의 결단: 차라리 ~해 버리고 말지, 그냥 ~해 버려)",
+    "shortExplanation": "동사 뒤에 결과보어 '了'나 '掉'가 오고 뒤이어 '算了'가 붙어, 더 이상 미련을 두지 않고 차라리 그 동작을 행하여 끝내버리겠다는 결단이나 체념을 나타냅니다('~해 버리고 말지 뭐').",
+    "longExplanation": "'算了'(suànle)는 '그만두다', '됐다'라는 의미로 일을 종결짓거나 체념할 때 쓰이는 표현입니다. '동사 + 了/掉 + 算了' 구문은 더 이상 미련을 갖거나 고민하지 않고, 차라리 그 행동을 실행해서 골치 아픈 문제를 매듭짓거나 털어버리겠다는 체념 섞인 결단을 나타냅니다. 주로 물건을 처분하거나 관계를 정리할 때 자주 쓰입니다(예: '扔掉算了' 그냥 버려버리고 말지, '卖了算了' 차라리 팔아버려라, '删掉算了' 그냥 지워버려). 한국어의 '차라리 ~해 버리고 말지', '그냥 ~해 버려라'에 해당합니다.",
+    "formation": "주어 + (把 + 목적어 +) 동사 + 了 / 掉 + 算了",
+    "examples": [
+      {
+        "translation": "고작 빈 병 하나일 뿐이잖아? 그냥 버려버리고 말지 뭐."
+      }
+    ]
   },
   "zh_作为N_465": {
-    "title": "作为 N (as N)",
-    "shortExplanation": "as N",
-    "longExplanation": "as N. Pinyin: zuòwéi N",
-    "formation": "zuòwéi N"
+    "title": "作为 + 명사 (개사: ~로서, ~의 신분으로, ~의 입장에서)",
+    "shortExplanation": "신분, 자격, 지위, 역할을 나타내는 명사 앞에 쓰여, 그러한 자격이나 입장에서 사물을 대하거나 행동함을 나타냅니다('~로서', '~의 입장에서').",
+    "longExplanation": "'作为'(zuòwéi)는 개사(전치사)로 쓰여, 인물의 신분, 직책, 자격, 또는 사물의 속성을 이끌어 문장 앞부분에서 부사어로 기능합니다. '어떤 자격이나 입장에 서서'라는 전제를 제시하며, 이어지는 본문에서는 그 자격에 걸맞은 행동, 책임, 태도 또는 고유한 특징이 서술됩니다(예: '作为一名学生' 학생으로서, '作为队长' 주장으로서). 격식 있는 문어와 일상 구어 모두에서 광범위하게 쓰입니다. 한국어의 '~로서'(신분·자격), '~의 입장에서'에 해당합니다.",
+    "formation": "作为 + 명사 (신분 / 자격 / 역할), 주어 + 술어",
+    "examples": [
+      {
+        "translation": "대작가이자 위대한 학자로서, 루쉰은 음식에 매우 조예가 깊었다(까다로웠다)."
+      }
+    ]
   },
   "zh_曾经_466": {
-    "title": "曾经 (once)",
-    "shortExplanation": "once",
-    "longExplanation": "once. Pinyin: céngjīng",
-    "formation": "céngjīng"
+    "title": "曾经 (시간부사: 일찍이, 이전에, 한때 ~했었다)",
+    "shortExplanation": "동사 앞에 쓰여, 과거의 어떤 시점에 동작이나 상태가 일어난 적이 있으며 현재는 이미 종료되었음을 나타냅니다('일찍이', '이전에 ~한 적이 있다').",
+    "longExplanation": "'曾经'(céngjīng)은 과거의 행위나 경험을 나타내는 시간부사입니다. 술어 동사 앞에 놓이며, 동태조사 '过'나 '了'와 자주 호응합니다. 과거의 특정 시기에 그 행동을 실행했거나 그러한 상태가 존재했으나, 현재는 이미 끝나 더 이상 지속되지 않음을 명확히 서술합니다. 격조 높은 서면어뿐 아니라 표준적인 구어에서도 널리 활용됩니다. 부정형으로는 문어에서 '不曾', 구어에서 '从来没有' 등이 쓰입니다. 한국어의 '일찍이', '이전에', '예전에 (~한 적이 있다)'에 해당합니다.",
+    "formation": "주어 + 曾经 + 동사 (+ 过 / 了)",
+    "examples": [
+      {
+        "translation": "공자는 일찍이 제자들을 데리고 14년 동안 제국을 유람하며 자신의 사상을 전파했다."
+      }
+    ]
   },
   "zh_毕竟_467": {
-    "title": "毕竟 (after all)",
-    "shortExplanation": "after all",
-    "longExplanation": "after all. Pinyin: bìjìng",
-    "formation": "bìjìng"
+    "title": "毕竟 (부사: 결국, 어쨌든, 뭐니 뭐니 해도, 결국에는)",
+    "shortExplanation": "여러 우여곡절을 거친 뒤의 최종 귀결이나, 부인할 수 없는 근본적인 원인·이유를 강조할 때 쓰입니다('결국', '뭐니 뭐니 해도', '어쨌든').",
+    "longExplanation": "'毕竟'(bìjìng)은 어기부사로, 다양한 상황이나 변수를 고려하더라도 결국 도달하게 되는 결론이나 가장 근본적인 사실을 강조합니다. 주요 화용 기능은 두 가지입니다. 첫째, 온갖 시련이나 어려움을 겪었음에도 불구하고 마침내 얻어낸 최종 결과를 긍정적으로 강조할 때 쓰입니다(예: 예문처럼 '비록 어려웠지만 결국 완수했다'). 둘째, '그는 어쨌든 아직 아이잖아'처럼 용서하거나 이해할 수밖에 없는 근본적인 이유나 본질적 속성을 짚을 때 쓰입니다. 한국어의 '결국', '어찌 되었든', '뭐니 뭐니 해도', '따지고 보면'에 해당합니다.",
+    "formation": "(접속사 +) 주어 + 毕竟 + 술어 (또는 문두에서: 毕竟 + 문장)",
+    "examples": [
+      {
+        "translation": "우리가 많은 어려움을 겪긴 했지만, 어찌 되었든 결국 임무를 완수했습니다."
+      }
+    ]
   },
   "zh_逐渐_468": {
-    "title": "逐渐 (gradually)",
-    "shortExplanation": "gradually",
-    "longExplanation": "gradually. Pinyin: zhújiàn",
-    "formation": "zhújiàn"
+    "title": "逐渐 (부사: 점차, 서서히, 점진적으로, 차츰차츰)",
+    "shortExplanation": "시간의 흐름에 따라 정도, 수량, 상태가 순차적으로 조금씩 점진적으로 변화해 감을 나타내는 부사입니다('점차', '서서히').",
+    "longExplanation": "'逐渐'(zhújiàn)은 사물의 발전이나 상태의 변화가 급작스럽지 않고 단계적으로 차근차근 진행됨을 나타내는 부사입니다. 변화를 나타내는 동사나 형용사(恢复 회복되다, 适应 적응하다, 减少 줄다, 改善 개선되다 등) 앞에 놓여 부사어 역할을 합니다. 구어에서 쓰이는 '渐渐'이나 '慢慢'보다 서면어적 색채가 짙으며, 논설문이나 보도 기사 등 공식적인 문맥에서 빈번히 사용됩니다. 한국어의 '점차', '서서히', '차츰', '점진적으로'에 해당합니다.",
+    "formation": "주어 + 逐渐 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "먹이가 점점 줄어들자, 노인은 원숭이들의 식사량을 점차 제한할 수밖에 없었다."
+      }
+    ]
   },
   "zh_或许_469": {
-    "title": "或许 (maybe)",
-    "shortExplanation": "maybe",
-    "longExplanation": "maybe. Pinyin: huòxǔ",
-    "formation": "huòxǔ"
+    "title": "或许 (부사: 어쩌면, 혹시, 아마도, 이를테면)",
+    "shortExplanation": "어떤 상황이 발생할 가능성에 대해 단정하지 않고 조심스럽게 추측함을 나타내는 부사입니다('어쩌면', '혹시').",
+    "longExplanation": "'或许'(huòxǔ)는 추측과 불확실한 판단을 나타내는 부사로, 주어 앞이나 서술어 앞에 놓여 쓰입니다. 화자가 100% 확신할 수는 없지만 그럴 가능성이 충분히 존재한다고 여길 때 조심스럽게 의견이나 예상을 제시하는 역할을 합니다. 구어의 '也许'나 '可能'과 의미가 유사하나, '或许'는 보다 세련되고 차분한 서면어적 뉘앙스를 지닙니다. 한국어의 '어쩌면', '혹시', '아마도 (~일지도 모른다)'에 해당합니다.",
+    "formation": "(주어 +) 或许 (+ 주어 +) 술어",
+    "examples": [
+      {
+        "translation": "예전에는 그녀가 당신을 지지하지 않았지만, 어쩌면 이번에는 변화가 있을지도 모릅니다."
+      }
+    ]
   },
   "zh_V过来_470": {
-    "title": "V 过来 (V and recover)",
-    "shortExplanation": "V and recover",
-    "longExplanation": "V and recover. Pinyin: V guòlái",
-    "formation": "V guòlái"
+    "title": "동사 / 형용사 + 过来 (파생방향보어: 정신이 들다, 원래 상태로 회복되다, 되돌아오다)",
+    "shortExplanation": "파생방향보어 '过来'가 동사나 형용사 뒤에 쓰여, 혼미하거나 비정상적이거나 그릇된 상태에서 정상적이고 올바른 상태로 회복됨을 나타냅니다('되돌아오다', '회복되다', '정신이 들다').",
+    "longExplanation": "'过来'(guòlai)는 방향보어의 파생 용법으로 쓰일 때 '회복'이나 '정상화'를 나타냅니다. 혼수상태, 질병, 피로, 착각, 그릇된 상태 등 부정적이고 비정상적인 상황에서 벗어나, 의식을 되찾거나 건강하고 맑은 정상 상태로 돌아오는 변화를 묘사합니다. '醒'(깨다), '清醒'(맑아지다/정신을 차리다), '缓'(숨을 돌리다), '救'(살려내다), '改'(고치다) 등의 어휘 뒤에 결합하여 쓰입니다(예: '苏醒过来' 의식을 되찾다, '缓过来了' 기운을 차렸다). 한국어의 '되돌아오다', '회복하다', '정신이 들다'에 해당합니다.",
+    "formation": "주어 + 동사 / 형용사 (醒 / 清醒 / 缓 / 救 / 改 등) + 过来",
+    "examples": [
+      {
+        "translation": "한참이 지나서야 머리가 비로소 맑아져 정신이 돌아왔다."
+      }
+    ]
   },
   "zh_V得过来V不过来_471": {
-    "title": "V 得过来 / V 不过来 (can finish V / cannot finish V)",
-    "shortExplanation": "can finish V / cannot finish V",
-    "longExplanation": "can finish V / cannot finish V. Pinyin: V dé guòlái / V bùguò lái",
-    "formation": "V dé guòlái / V bùguò lái"
+    "title": "동사 + 得过来 / 不过来 (가능보어: 다 감당해 내다 / 다 감당해 내지 못하다, 다 ~해 낼 수 있다 / 없다)",
+    "shortExplanation": "일의 양이나 대상의 수가 너무 많아서 주어진 시간이나 능력 안에서 다 감당해 내거나 처리할 수 있는지 여부를 나타내는 가능보어입니다('다 ~할 수 있다 / 없다', '~해 내지 못하다').",
+    "longExplanation": "'V 得过来'와 부정형 'V 不过来'는 업무량, 과업, 혹은 대상의 수량이 방대할 때 시간적·체력적·능력적으로 그것을 모두 처리하고 감당해 낼 수 있는지를 나타내는 가능보어 구문입니다. 긍정형 'V得过来'는 '전부 다 처리해 낼 수 있다', 부정형 'V不过来'는 '양이 너무 많아서 도저히 다 감당하지 못하다, 손이 미치지 못하다'라는 뜻을 나타냅니다. 실생활에서는 주로 부정형이나 반어 의문문 형식으로 압도적인 일거리나 수량을 묘사할 때 자주 쓰입니다(예: '忙不过来' 너무 바빠서 손이 모자라다, '数不过来' 다 셀 수 없을 만큼 많다, '看不过来' 다 볼 수가 없다, '照顾不过来' 다 돌볼 수가 없다). 한국어의 '다 ~해 낼 수 있다 / 없다', '다 감당해 내다 / 감당하지 못하다'에 해당합니다.",
+    "formation": "주어 + (목적어 +) 동사 + 得过来 / 不过来",
+    "examples": [
+      {
+        "translation": "하늘의 별이 저렇게 많은데, 누가 다 셀 수 있겠어요?"
+      }
+    ]
   },
   "zh_所_472": {
-    "title": "所 ((measure word for institutions))",
-    "shortExplanation": "(measure word for institutions)",
-    "longExplanation": "(measure word for institutions). Pinyin: suǒ",
-    "formation": "suǒ"
+    "title": "所 (양사: 학교, 병원, 기관, 주택 등을 세는 단위)",
+    "shortExplanation": "학교, 병원, 연구소 등 공공 기관이나 기관 시설, 주택 건물을 셀 때 쓰이는 양사입니다('곳', '개교', '채').",
+    "longExplanation": "'所'(suǒ)는 학교, 병원, 연구원, 관공서 등 제도적 기관이나 단독 건물·가옥을 세는 전문 양사입니다(예: '一所大学' 한 대학교, '一所医院' 한 병원, '一所学校' 한 학교, '一所房子' 집 한 채). 일반적인 범용 양사 '个'보다 격식 있고 정중한 어감을 줍니다. 한국어의 '~곳', '~채', '~개교' 등에 해당합니다.",
+    "formation": "수사 + 所 + 명사 (학교 / 병원 / 기관 / 건물 등)",
+    "examples": [
+      {
+        "translation": "그는 베이징의 한 대학교 출신이다."
+      }
+    ]
   },
   "zh_S所V的_473": {
-    "title": "S + (所) + V + 的 (what S V)",
-    "shortExplanation": "what S V",
-    "longExplanation": "what S V. Pinyin: S + ( suǒ) + V + de",
-    "formation": "S + ( suǒ) + V + de"
+    "title": "주어 + (所) + 동사 + 的 (주어가 동사하는 바, 주어가 ~한 것)",
+    "shortExplanation": "조사 '所'를 동사 앞에 두고 끝의 '的'과 호응시켜, 주어가 행한 동작의 대상이나 내용을 명사절로 나타내는 서면어 격식 표현입니다('~하는 바', '~한 것').",
+    "longExplanation": "'주어 + (所) + 동사 + 的'(주어 + suǒ + 동사 + de)은 주로 학술문, 논설, 뉴스 보도 등 격식 있는 서면어에서 쓰이는 구문입니다. 타동사(주로 2음절 동사) 앞에 조사 '所'를 삽입하고 뒤에 '的'을 연결하여, 전체가 문장에서 주어나 목적어 역할을 하는 명사성 성분을 형성합니다. 주어가 행하는 행위의 대상, 결과 또는 내용을 가리키며, 구어에서는 보통 '所'를 생략하지만 '所'를 넣으면 훨씬 문어적이고 격조 높은 문장이 됩니다. 한국어의 '주어가 ~하는 바', '주어가 ~한 것(내용)'에 해당합니다.",
+    "formation": "주어 + (所 +) 동사 + 的 (+ 명사)",
+    "examples": [
+      {
+        "translation": "산수화가 표현하는 바는 바로 인간과 자연의 관계이다."
+      }
+    ]
   },
   "zh_有所V_474": {
-    "title": "有所 V (has/have V’ed)",
-    "shortExplanation": "has/have V’ed",
-    "longExplanation": "has/have V’ed. Pinyin: yǒusuǒ V",
-    "formation": "yǒusuǒ V"
+    "title": "有所 + 동사 (어느 정도 ~가 있다, 다소 ~되다, 얼마간 ~하다)",
+    "shortExplanation": "2음절 동사 앞에 놓여, 어떤 변화나 발전, 동작이 일정한 정도나 범위에 이르렀음을 나타내는 서면어 표현입니다('어느 정도 ~하다', '다소 ~되다').",
+    "longExplanation": "'有所 + 동사'(yǒusuǒ + 동사)는 논문, 보고서, 기사 등 격식 있는 서면어에서 자주 활용되는 구조입니다. 변화나 발전을 나타내는 2음절 동사(提高 향상되다, 改善 개선되다, 增加 증가하다, 改变 변화하다, 了解 이해가 있다 등) 앞에 쓰여 부사어 역할을 합니다. 극단적이진 않지만 명확히 일정한 수준이나 방향으로 진전·변화가 발생했음을 객관적으로 기술할 때 쓰입니다. 한국어의 '어느 정도 ~되다', '다소 ~하다', '얼마간의 ~가 있다'에 해당합니다.",
+    "formation": "주어 + 有所 + 동사 (2음절 동사)",
+    "examples": [
+      {
+        "translation": "나이가 들어감에 따라 여성의 직장 내 행복감이 어느 정도 향상되었다."
+      }
+    ]
   },
   "zh_无所V_475": {
-    "title": "无所 V (have nothing to V)",
-    "shortExplanation": "have nothing to V",
-    "longExplanation": "have nothing to V. Pinyin: wú suǒ V",
-    "formation": "wú suǒ V"
+    "title": "无所 + 동사 (아무것도 ~할 것이 없다, 전혀 ~하지 않다, 온통 ~하다)",
+    "shortExplanation": "2음절 동사 앞에 놓여, 동작이 미치는 대상이 전혀 없거나 전면적인 부정을 나타내는 격식 있는 서면어·고사성어 표현입니다('전혀 ~할 것이 없다', '무엇 하나 ~하지 않다').",
+    "longExplanation": "'无所 + 동사'(wú suǒ + 동사)는 고전 한문 양식에서 유래한 정중하고 품격 있는 서면어 구조로, 많은 성어와 관용어에 쓰입니다. 2음절 동사 앞에 쓰여 '해당 동작이 미치는 대상이나 까닭이 전혀 존재하지 않음'을 의미합니다. 대표적으로 '无所畏惧'(어떤 것도 두려워하지 않다), '无所不知'(모르는 것이 전혀 없다), '无所事事'(하는 일 없이 빈둥거리다), '无所顾忌'(거리낌이 전혀 없다) 등이 있습니다. 전면적인 부정이나 거침없는 태도를 강조합니다. 한국어의 '아무것도 ~할 것이 없다', '전혀 ~하지 않다'에 해당합니다.",
+    "formation": "주어 + 无所 + 동사 (2음절 동사)",
+    "examples": [
+      {
+        "translation": "진리를 굳게 지킨다면 그 어떤 것도 두려워할 것이 없다."
+      }
+    ]
   },
   "zh_与N相当_476": {
-    "title": "与 N 相当 (equivalent to N)",
-    "shortExplanation": "equivalent to N",
-    "longExplanation": "equivalent to N. Pinyin: yǔ N xiāngdāng",
-    "formation": "yǔ N xiāngdāng"
+    "title": "与 + 명사 + 相当 (형용사 술어: ~와 대등하다, ~와 맞먹다, ~와 동등하다)",
+    "shortExplanation": "'相当'이 형용사 술어로 쓰이고 개사 '与'(또는 '跟', '和')와 호응하여, 양자의 수량, 수준, 조건 등이 서로 대등함을 나타냅니다('~와 맞먹다', '~와 대등하다').",
+    "longExplanation": "'与 + 명사 + 相当'(yǔ 명사 xiāngdāng)에서 '相当'은 '서로 대등하다, 맞먹다'라는 뜻의 형용사 술어입니다. 전치사(개사) '与'(구어에서는 '跟', '和')로 비교 대상을 이끌어, 주어와 해당 대상의 수치, 능력, 자격, 영향력 등이 대등하거나 엇비슷함을 객관적으로 서술합니다. 보고서나 과학 논문, 통계 분석 등 정중한 서면어에서 빈번히 사용됩니다. 한국어의 '~와 맞먹다', '~와 대등하다', '~와 동등한 수준이다'에 해당합니다.",
+    "formation": "주어 + 与 / 跟 / 和 + 명사 + 相当",
+    "examples": [
+      {
+        "translation": "운전 중 통화를 하는 사람의 반응 속도는 음주자와 맞먹는다."
+      }
+    ]
   },
   "zh_相当于N_477": {
-    "title": "相当于 N (equivalent to N)",
-    "shortExplanation": "equivalent to N",
-    "longExplanation": "equivalent to N. Pinyin: xiāngdāngyú N",
-    "formation": "xiāngdāngyú N"
+    "title": "相当于 + 명사 (동사구: ~에 상당하다, ~와 맞먹다, ~에 해당하다)",
+    "shortExplanation": "동사 '相当'에 개사 '于'가 결합된 형태로, 수량, 가치, 역할 등이 목적어 명사와 대등함을 나타냅니다('~에 상당하다', '~에 해당하다').",
+    "longExplanation": "'相当于 + 명사'(xiāngdāngyú 명사)는 타동사 역할을 하는 고정 표현입니다. 뒤에 명사나 수량구를 목적어로 취하여, 주어의 크기, 금액, 비율, 기능 등이 목적어와 동등한 가치나 수준을 가짐을 나타냅니다. 화폐 환산, 수치 비교, 지위나 역할의 대등성 등을 서술할 때 매우 폭넓게 쓰입니다. 한국어의 '~에 상당하다', '~와 맞먹다', '~에 해당하다'에 해당합니다.",
+    "formation": "주어 + 相当于 + 명사 / 수량구",
+    "examples": [
+      {
+        "translation": "이 새가 하루에 먹는 해충은 자신의 체중과 맞먹는다."
+      }
+    ]
   },
   "zh_相当_478": {
-    "title": "相当 (quite)",
-    "shortExplanation": "quite",
-    "longExplanation": "quite. Pinyin: xiāngdāng",
-    "formation": "xiāngdāng"
+    "title": "相当 + 형용사 / 심리동사 (정도부사: 상당히, 꽤, 매우)",
+    "shortExplanation": "정도부사로서 형용사나 심리동사 앞에 놓여, 상태나 감정의 정도가 매우 높음을 나타냅니다('상당히', '꽤', '매우').",
+    "longExplanation": "'相当'(xiāngdāng)은 형용사나 심리동사(满意 만족하다, 严重 심각하다, 丰富 풍부하다, 困难 어렵다 등) 앞에 쓰이는 정도부사입니다. 일반적인 기준을 넘어 정도가 꽤 높음을 객관적이고 점잖은 어조로 나타냅니다. '比较'(비교적)보다 정도가 강하며 '很'(매우)이나 '十分'(대단히)과 유사한 수준이지만 한층 서면어적이고 세련된 느낌을 줍니다. 한국어의 '상당히', '꽤', '매우'에 해당합니다.",
+    "formation": "주어 + 相当 + 형용사 / 심리동사",
+    "examples": [
+      {
+        "translation": "음식 맛이 정말 훌륭하고 서비스도 세심해서 저는 상당히 만족스럽습니다."
+      }
+    ]
   },
   "zh_相当_479": {
-    "title": "相当 (considerable)",
-    "shortExplanation": "considerable",
-    "longExplanation": "considerable. Pinyin: xiāngdāng",
-    "formation": "xiāngdāng"
+    "title": "相当 + 수량 표현 / 명사 (관형어: 상당한, 적지 않은, 꽤 많은)",
+    "shortExplanation": "수량 표현이나 범위를 나타내는 말 앞에 놓여 관형어 역할을 하며, 수량이나 규모가 결코 적지 않고 무시할 수 없을 정도로 큼을 나타냅니다('상당한', '적지 않은').",
+    "longExplanation": "'相当'(xiāngdāng)은 수량 표현이나 범위 관련 어구와 결합하여 뒤따르는 명사를 수식하는 관형어로 사용됩니다. 자주 쓰이는 대표적 표현으로는 '相当一部分'(상당수의, 적지 않은 부분의), '相当数量'(상당한 수량), '相当长的时间'(상당히 긴 시간), '相当规模'(상당한 규모) 등이 있습니다. 수치나 비중이 상당하여 눈여겨보아야 할 수준임을 나타냅니다. 한국어의 '상당한', '적지 않은', '꽤 많은 수의'에 해당합니다.",
+    "formation": "相当 + 一部分 / 수량 표현 (+ 的) + 명사",
+    "examples": [
+      {
+        "translation": "상당수의 사람들은 소득의 많고 적음을 행복의 기준으로 여긴다."
+      }
+    ]
   },
   "zh_数sh_480": {
-    "title": "数 (shǔ) (to count)",
-    "shortExplanation": "to count",
-    "longExplanation": "to count. Pinyin: shǔ (shǔ)",
-    "formation": "shǔ (shǔ)"
+    "title": "数 (shǔ) (동사: 세다, 셈하다, 계산하다)",
+    "shortExplanation": "제3성(shǔ)으로 발음되는 동사로, 사람이나 사물의 수를 하나씩 헤아려 세는 동작을 나타냅니다('세다', '헤아리다').",
+    "longExplanation": "'数'가 제3성인 'shǔ'로 발음될 때는 사람이나 사물의 수량을 하나하나 헤아리는 구체적인 동작을 나타내는 동사입니다(예: '数数' 수를 세다, '数钱' 돈을 세다, '数了一下' 한번 세어 보았다). 제4성으로 발음되는 'shù'(숫자, 몇몇)와는 성조 및 품사가 엄격히 구분됩니다. 한국어의 '세다', '헤아리다', '셈하다'에 해당합니다.",
+    "formation": "주어 + 数 (+ 了 / 一下) (+ 목적어)",
+    "examples": [
+      {
+        "translation": "내가 대충 세어 보았는데, 차 안에 학생이 32명 있다."
+      }
+    ]
   },
   "zh_数sh_481": {
-    "title": "数 (shǔ) (to be reckoned as)",
-    "shortExplanation": "to be reckoned as",
-    "longExplanation": "to be reckoned as. Pinyin: shǔ (shǔ)",
-    "formation": "shǔ (shǔ)"
+    "title": "数 (shǔ) (동사: 으뜸으로 꼽히다, 손꼽히다, 단연 첫째이다)",
+    "shortExplanation": "비교나 열거의 맥락에서 쓰여, 특정한 기준에서 가장 두드러지거나 뛰어난 대상을 첫머리로 손꼽음을 나타냅니다('손꼽히다', '단연 으뜸이다').",
+    "longExplanation": "'数'(shǔ)는 여러 대상 가운데 어떤 특성이나 기준에 비추어 볼 때 가장 두드러진 대상을 으뜸으로 지목할 때 쓰이는 동사입니다. 주로 구어에서 '就数……'(단연 ~를 꼽을 수 있다), '要数……'(손꼽자면 ~이다), '数得着'(손가락 안에 꼽히다) 등의 형태로 자주 쓰입니다. 특정 분야나 집단에서 단연 1위로 손꼽히는 인물이나 사물을 지목할 때 사용됩니다. 한국어의 '으뜸으로 꼽히다', '손꼽히다', '단연 ~이다'에 해당합니다.",
+    "formation": "비교 범위 (最……), (那 / 就 / 要 +) 数 + 명사 (가장 뛰어난 대상)",
+    "examples": [
+      {
+        "translation": "우리 반에서 달리기가 가장 빠른 사람을 꼽자면, 단연 리양이다."
+      }
+    ]
   },
   "zh_数sh_482": {
-    "title": "数 (shù) (several)",
-    "shortExplanation": "several",
-    "longExplanation": "several. Pinyin: shǔ (shù)",
-    "formation": "shǔ (shù)"
+    "title": "数 (shù) + 양사 (수사: 수~, 몇~, 여러~)",
+    "shortExplanation": "제4성(shù)으로 발음되는 수사로, 서면어에서 양사나 시간·단위 명사 앞에 쓰여 불특정한 소수(몇몇)를 나타냅니다('수~', '몇~').",
+    "longExplanation": "'数'가 제4성인 'shù'로 발음될 때는 구어의 '几'(몇)에 상응하는 격조 높은 서면어 수사 역할을 합니다. 양사나 시간, 수량 단위 앞에 직접 결합하여 '数小时'(수 시간), '数日'(수일/며칠), '数年'(수년), '数次'(수차례), '数万'(수만)과 같이 불특정의 적은 수(대략 몇 개/몇 사람)를 간결하게 표현합니다. 공문서, 학술 논문, 보도 자료 등에 즐겨 쓰입니다. 한국어의 접두사 '수~(數~)', '몇~'에 해당합니다.",
+    "formation": "数 + 양사 / 단위 명사",
+    "examples": [
+      {
+        "translation": "이곳 여름철의 뇌우는 보통 수 시간 혹은 그보다 더 오랜 시간 동안 지속될 수 있다."
+      }
+    ]
   },
   "zh_以及_483": {
-    "title": "以及 (and)",
-    "shortExplanation": "and",
-    "longExplanation": "and. Pinyin: yǐjí",
-    "formation": "yǐjí"
+    "title": "以及 (접속사: 및, 그리고, 아울러, ~와/과)",
+    "shortExplanation": "명사나 명사구를 대등하게 연결하는 품격 있는 서면어 접속사로, 열거의 마지막 항목이나 부차적인 대상을 이끌 때 쓰입니다('및', '그리고').",
+    "longExplanation": "'以及'(yǐjí)는 명사나 명사성 어구를 나열할 때 쓰이는 격식 있는 서면어 접속사입니다. 여러 대상을 열거할 때 쉼표(、)로 연결하다가 마지막 항목 바로 앞에 놓여 항목들을 매듭짓습니다. 구어의 '和'나 '跟'에 비해 공식적이고 정중한 느낌을 줍니다. 또한 '以及' 앞에는 주된 대상이 오고, '以及' 뒤에는 상대적으로 부차적이거나 보충적인 대상이 놓이는 경우가 많다는 특징이 있습니다. 공문서나 뉴스 보도, 발표문 등에서 자주 사용됩니다. 한국어의 '및', '그리고', '아울러 ~도'에 해당합니다.",
+    "formation": "명사1, 명사2 + 以及 + 명사3 (마지막/부차적 항목)",
+    "examples": [
+      {
+        "translation": "학교 지도부와 교사 및 일부 학생 대표들이 공연을 관람했다."
+      }
+    ]
   },
   "zh_程度_484": {
-    "title": "程度 (degree)",
-    "shortExplanation": "degree",
-    "longExplanation": "degree. Pinyin: chéngdù",
-    "formation": "chéngdù"
+    "title": "程度 (명사: 정도, 수준, 단계)",
+    "shortExplanation": "사물의 발전 단계나 상태의 깊이, 수준을 나타내는 명사로, '어떠한 정도에 이르다/도달하다'의 형식으로 자주 쓰입니다('정도', '수준').",
+    "longExplanation": "'程度'(chéngdù)는 사물의 변화, 상황의 심각성, 수준의 높낮이 등이 도달한 단계를 나타내는 명사입니다. 주로 '发展到 / 达到 + (형용사 + 的) + 程度'(~한 정도까지 발전하다/이르다), '在某种程度上'(어느 정도는/일정한 수준에서는) 등의 구문으로 자주 활용됩니다. 객관적인 수준이나 사태의 진전 경계를 설명할 때 적합합니다. 한국어의 '정도', '수준', '지경'에 해당합니다.",
+    "formation": "주어 + 发展到 / 达到 + (형용사 + 的) + 程度",
+    "examples": [
+      {
+        "translation": "문제가 이미 매우 심각한 정도에까지 이르렀다."
+      }
+    ]
   },
   "zh_更何况_485": {
-    "title": "(更)何况 (let alone)",
-    "shortExplanation": "let alone",
-    "longExplanation": "let alone. Pinyin: ( gèng) hékuàng",
-    "formation": "( gèng) hékuàng"
+    "title": "(更)何况 (점층 접속사: 하물며, 더군다나, ~은 말할 것도 없고)",
+    "shortExplanation": "후속 절 서두에 쓰여 앞 절의 사실보다 한 단계 더 나아간 당연한 근거나 대상을 제시하는 점층 접속사입니다('하물며', '더군다나').",
+    "longExplanation": "'(更)何况'((gèng) hékuàng)은 앞 절의 내용보다 더욱 분명하고 당연한 사유나 대상을 이끌어내는 점층 접속사입니다. 가장 대표적인 호응 구문은 '连……都 / 也……，(更)何况……呢?'(~조차도 그러한데, 하물며 ~야 더 말할 나위 있겠는가?)입니다. 극단적이거나 기본적인 대상을 앞 절에서 언급한 뒤, 후속 절에서 한층 더한 대상을 제시하여 반문함으로써 결론의 명백함을 강조합니다. 문장 끝에는 흔히 어기조사 '呢'가 호응합니다. 한국어의 '하물며', '더군다나', '~는 말할 것도 없고'에 해당합니다.",
+    "formation": "连 + 명사1 + 都 / 也 + 술어, (更)何况 + 명사2 (+ 呢)?",
+    "examples": [
+      {
+        "translation": "선수들조차 만족하지 못하는데, 하물며 경기를 관람하는 팬들이야 오죽하겠는가?"
+      }
+    ]
   },
   "zh_何必_486": {
-    "title": "何必 (What for? Why do you have to…?)",
-    "shortExplanation": "What for? Why do you have to…?",
-    "longExplanation": "What for? Why do you have to…?. Pinyin: hébì",
-    "formation": "hébì"
+    "title": "何必 (반어 부사: 굳이 ~할 필요가 무엇인가, 하필, 어찌 꼭 ~해야 하는가)",
+    "shortExplanation": "동사 앞에 놓여 반어의 어조로 '굳이 그렇게 할 필요가 없다', '쓸데없는 일이다'라는 뜻을 나타내어 상대를 말리거나 조언할 때 씁니다('굳이 ~할 필요가 있는가').",
+    "longExplanation": "'何必'(hébì)는 반어적 뉘앙스를 지닌 어기부사로, '왜 굳이 꼭 ~해야 하는가(그럴 필요가 전혀 없다)'라는 의미를 나타냅니다. 상대방이 불필요하게 애를 쓰거나 수고를 들이는 것을 만류하고, 더 간편한 방법이 있음을 완곡하게 조언하거나 반문할 때 매우 자주 쓰입니다. 문장 끝에는 흔히 의문·반어의 어기조사 '呢'가 호응합니다. 한국어의 '굳이 ~할 필요가 무엇인가', '하필 왜 ~하는가', '~할 것까지야 없지 않은가'에 해당합니다.",
+    "formation": "주어 + 何必 + 동사구 (+ 呢)?",
+    "examples": [
+      {
+        "translation": "네가 굳이 직접 배달까지 갈 필요가 뭐가 있니? 택배를 부르면 바로 해결될 텐데."
+      }
+    ]
   },
   "zh_多亏_487": {
-    "title": "多亏 (thanks to)",
-    "shortExplanation": "thanks to",
-    "longExplanation": "thanks to. Pinyin: duōkuī",
-    "formation": "duōkuī"
+    "title": "多亏 (부사·동사: 덕분에, 다행히 ~덕택에)",
+    "shortExplanation": "어떤 유리한 조건이나 타인의 도움 덕분에 화를 면하거나 좋은 결과를 얻었음을 다행스러워하며 감사함을 나타냅니다('~ 덕분에', '다행히 ~해서').",
+    "longExplanation": "'多亏'(duōkuī)는 부사 또는 동사로 쓰이며, 호의적인 조건, 타인의 도움, 혹은 천우신조의 행운 등을 제시하여 '다행히 ~ 덕분에' 위기나 난관을 벗어났음을 나타냅니다. 후속 절에서 종종 '才'(비로소 ~할 수 있었다) 또는 '不然 / 要不然 / 否则'(그렇지 않았더라면 ~했을 것이다)와 호응하여, 그 조건이 없었더라면 큰 손실이나 피해를 보았을 것임을 강조합니다(예: '多亏了你的帮助，要不然真不知道该怎么办' 너의 도움 덕분이야, 안 그랬으면 정말 어쩔 뻔했니). 한국어의 '~ 덕분에', '다행히 ~한 덕택에'에 해당합니다.",
+    "formation": "多亏 + 명사 / 절 (, 주어 + 才 / 否则 / 不然……)",
+    "examples": [
+      {
+        "translation": "그의 이 한마디 덕분에 사람들은 꿈에서 깬 듯 정신을 차렸다."
+      }
+    ]
   },
   "zh_所谓_488": {
-    "title": "所谓 (so-called)",
-    "shortExplanation": "so-called",
-    "longExplanation": "so-called. Pinyin: suǒwèi",
-    "formation": "suǒwèi"
+    "title": "所谓 (관형사·형용사: 이른바, 소위, 말하자면)",
+    "shortExplanation": "명사 앞에 쓰여 '이른바', '소위'라는 뜻을 나타내며, 개념을 정의하거나 빈정거림·불신을 담아 명목상의 명칭에 불과함을 나타냅니다.",
+    "longExplanation": "'所谓'(suǒwèi)는 '소위(所謂)', 즉 '이른바 말하는 바'라는 뜻으로, 명사 앞에 놓여 관형어 역할을 합니다. 크게 두 가지 맥락에서 쓰입니다. 첫째, 전문 용어나 개념의 정의를 객관적으로 풀이할 때 '사람들이 말하는 ~이란 바로...'라는 뜻으로 쓰입니다(예: '所谓成功，就是不断努力' 소위 성공이란 끊임없는 노력이다). 둘째, 따옴표(“”)와 함께 쓰여 상대방의 주장이나 특정 명칭에 회의, 비판, 풍자의 뉘앙스를 담아 '그들이 말하는 이른바 ~라는 것(실상은 엉터리인 것)'을 지칭할 때 사용됩니다. 한국어의 '이른바', '소위'에 해당합니다.",
+    "formation": "(주어 +) 所谓 (+ 的) + 명사 (또는 所谓 + 명사 +, 就是……)",
+    "examples": [
+      {
+        "translation": "그가 말하는 이른바 '뉴스'라는 것은 사실 우리가 진작부터 알고 있었던 것이다!"
+      }
+    ]
   },
   "zh_N则VA_489": {
-    "title": "N 则 V/A (whereas N V)",
-    "shortExplanation": "whereas N V",
-    "longExplanation": "whereas N V. Pinyin: N zé V/A",
-    "formation": "N zé V/A"
+    "title": "명사 + 则 + 동사 / 형용사 (대조 부사: ~은/는 반면에, ~쪽은 오히려, 한편 ~는)",
+    "shortExplanation": "후속 절의 주어 뒤에 부사 '则'을 사용하여, 앞 절의 내용과 뚜렷하게 대조를 이루며 '~는 반면에', '~는 오히려'라는 뜻을 나타냅니다(서면어).",
+    "longExplanation": "'则'(zé)은 서면어에서 높은 빈도로 사용되는 접속 부사입니다. 복문의 두 번째 절에서 주어(명사 또는 대명사) 바로 뒤에 위치하여, 앞 절에서 언급된 주어의 행동이나 상황과 선명하게 대조를 이룸을 나타냅니다. 보통 후속 절 서두에 접속사 '而'(그러나, 한편)와 결합하여 '……，而 [명사] 则……'의 구문으로 널리 쓰이며, 두 대상 간의 상반되거나 대등한 차이점을 격조 높고 간결하게 서술합니다. 한국어의 '~은/는 반면에', '~쪽은', '한편 ~는'에 해당합니다.",
+    "formation": "절1, (而 +) 명사 / 대명사 + 则 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "그는 고등학교를 졸업한 후 외국으로 유학을 갔지만, 나는 줄곧 국내에 남아 있었다."
+      }
+    ]
   },
   "zh_则_490": {
-    "title": "……则…… (if… then…)",
-    "shortExplanation": "if… then…",
-    "longExplanation": "if… then…. Pinyin: …… zé……",
-    "formation": "…… zé……"
+    "title": "…… 则 …… (가정·조건 접속사: ~하면 곧 …, ~인즉 …하다)",
+    "shortExplanation": "조건과 결과를 연결하는 서면어 접속사로, '앞의 조건이 충족되면 곧 뒤의 결과가 일어난다'는 필연적 귀결을 나타냅니다('~하면 곧').",
+    "longExplanation": "'则'(zé)은 한문(문언문)에서 유래한 조건 접속사로, '조건'과 그에 따르는 '결과'를 긴밀하게 연결합니다. 앞선 상태나 행위가 성립되면 뒤의 결과가 자연적·논리적 법칙에 따라 반드시 발생함을 나타냅니다. 현대 중국어에서는 주로 격언, 사자성어, 혹은 대구를 이루는 간결한 문언적 표현(예: '有则改之，无则加勉' 잘못이 있으면 고치고 없으면 더욱 힘쓰다, '物极则反' 사물이 극에 달하면 반전된다)에서 널리 쓰입니다. 문장을 압축적이고 단아하게 만드는 기능을 합니다. 한국어의 '~하면 곧 …하다', '~이면 …하게 마련이다'에 해당합니다.",
+    "formation": "조건1 + 则 + 결과1, 조건2 + 则 + 결과2 (또는 조건 + 则 + 결과)",
+    "examples": [
+      {
+        "translation": "베이징의 겨울은 바람이 불면 춥고, 바람이 불지 않으면 따뜻하다."
+      }
+    ]
   },
   "zh_则_491": {
-    "title": "# 则 ((measure word for stories))",
-    "shortExplanation": "(measure word for stories)",
-    "longExplanation": "(measure word for stories). Pinyin: # zé",
-    "formation": "# zé"
+    "title": "수사 + 则 (양사: 건, 편, 개 조항 [뉴스·광고·우화 등을 세는 단위])",
+    "shortExplanation": "뉴스 기사, 광고, 공고, 우화, 짤막한 이야기 등 독립된 짧은 글이나 보도를 세는 서면어 양사입니다('~건', '~편').",
+    "longExplanation": "'则'(zé)은 짧고 완결된 글이나 공적인 단편 보도를 세는 문어체 양사입니다. 주로 신문이나 방송의 보도 기사('一则新闻' 뉴스 한 건), 알림 및 공지('一则通告' 공고 한 건), 상업 광고('一则广告' 광고 한 편), 교훈적 우화나 짤막한 이야기('一则寓言' 우화 한 편) 등을 셀 때 결합합니다. 품격 있는 서면어의 뉘앙스를 지닙니다. 한국어의 '한 건', '한 편', '한 가지'에 해당합니다.",
+    "formation": "수사 + 则 + 명사 (뉴스 / 공고 / 광고 / 우화 / 짧은 이야기)",
+    "examples": [
+      {
+        "translation": "오늘 신문에 대단히 중요한 뉴스 한 편이 실렸다."
+      }
+    ]
   },
   "zh_为S所V_492": {
-    "title": "为 S 所 V (is V’ed by S)",
-    "shortExplanation": "is V’ed by S",
-    "longExplanation": "is V’ed by S. Pinyin: wéi S suǒ V",
-    "formation": "wéi S suǒ V"
+    "title": "为 + 행위 주체 + 所 + 동사 (문어 피동 구문: ~에 의해 …되다, ~의 …바가 되다)",
+    "shortExplanation": "문언문에서 유래한 격조 높은 피동문 형식으로, '为'가 행위 주체를 이끌고 '所'가 동사 앞에 놓여 피동을 나타냅니다('~에 의해 …되다').",
+    "longExplanation": "'为……所……'(wéi ... suǒ ...)는 고대 한어의 대표적 피동 형식이 현대 격식체 서면어(학술, 언론, 논설 등)에 계승된 문형입니다. 문장의 주어는 동작을 받는 대상(피동자)이 되며, '为'는 행위를 가하는 주체(동작자)를 도입하는 개사 역할을 합니다. 조사의 일종인 '所'는 술어 동사 바로 앞에 결합하여 피동 관계를 긴밀하게 완성합니다(예: '为大家所喜爱' 모든 이에게 사랑받다, '为困难所吓倒' 어려움에 굴복당하다). 구어의 '被'보다 훨씬 엄숙하고 품격 있는 분위기를 자아냅니다. 한국어의 '~에 의해 …되다', '~에게 …당하다', '~의 …하는 바가 되다'에 해당합니다.",
+    "formation": "주어 (행위 대상) + 为 + 행위 주체 + 所 + 동사",
+    "examples": [
+      {
+        "translation": "과학이 있기에 대자연은 인류에 의해 더욱 유용하게 쓰일 수 있다."
+      }
+    ]
   },
   "zh_V起_493": {
-    "title": "V 起 (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qǐ",
-    "formation": "V qǐ"
+    "title": "동사 + 起 (방향보어·결과보어: 위로 들어 올리다, 화제에 올리다, 언급하다)",
+    "shortExplanation": "동작이 아래에서 위로 향함을 나타내거나, 말·생각 관련 동사 뒤에 붙어 특정 화제를 꺼내기 시작함을 나타냅니다('올리다', '~을 언급하다').",
+    "longExplanation": "'동사 + 起'(qǐ)는 방향보어 혹은 결과보어 '起来'의 축약형태로, 다양한 의미를 가집니다. 첫째, 물리적 공간에서 아래에서 위로 향하는 상승 이동을 나타냅니다(예: '抬起头' 고개를 들다, '举起手' 손을 들다). 둘째, 인지·발화·사유를 나타내는 동사(说, 谈, 提, 想 등) 뒤에 결합하여 어떤 기억이나 화제를 대화의 장으로 끄집어내어 이야기를 시작함을 나타냅니다(예: '谈起这件事' 이 일에 대해 이야기를 꺼내다, '提起过去的岁月' 지난 시절을 언급하다). 셋째, 물건을 거두거나 닫는 결속 동작을 나타내기도 합니다. 한국어의 '들어 올리다', '~에 대해 말을 꺼내다 / 언급하다'에 해당합니다.",
+    "formation": "주어 + 동사 + 起 (+ 목적어)",
+    "examples": []
   },
   "zh_V得过_495": {
-    "title": "V 得过 (can V and overcome)",
-    "shortExplanation": "can V and overcome",
-    "longExplanation": "can V and overcome. Pinyin: V dé guò",
-    "formation": "V dé guò"
+    "title": "동사 + 得过 (가능보어: ~해서 이길 수 있다, 능가할 수 있다, 당해낼 수 있다)",
+    "shortExplanation": "능력이나 실력 면에서 상대방을 이기거나 능가할 수 있음을 나타내는 가능보어 구문입니다('~해서 이길 수 있다', '상대할 수 있다').",
+    "longExplanation": "'동사 + 得过'(dé guò)는 승부, 대결, 비교의 맥락에서 쓰이는 가능보어 긍정 형식입니다. '过'는 상대방을 능가하여 이긴다는 결과를 의미하며, 주어가 특정 동작을 통해 상대방을 압도하고 승리할 역량이 있음을 나타냅니다. 대표적인 결합으로 '说得过'(말로 이겨먹다/말싸움에서 이길 수 있다), '打得过'(싸워서 이길 수 있다), '跑得过'(더 빨리 달릴 수 있다), '比得过'(견주어 이길 수 있다) 등이 있습니다. 반대되는 부정 형식은 '동사 + 不过'(당해내지 못하다, 이길 수 없다)입니다. 한국어의 '~해서 이길 수 있다', '당해낼 수 있다'에 해당합니다.",
+    "formation": "주어 + 동사 + 得过 + 목적어 (경쟁 상대)",
+    "examples": [
+      {
+        "translation": "남들과 군사 문제에 대해 토론하기 시작하면, 말로 그를 이길 수 있는 사람은 아무도 없다."
+      }
+    ]
   },
   "zh_迟早_496": {
-    "title": "迟早 (sooner or later)",
-    "shortExplanation": "sooner or later",
-    "longExplanation": "sooner or later. Pinyin: chízǎo",
-    "formation": "chízǎo"
+    "title": "迟早 (시간 부사: 조만간, 언젠가는, 조석지간에, 일찍이든 늦든)",
+    "shortExplanation": "시기가 빠르고 늦음의 차이만 있을 뿐, 미래에 특정 사태나 결과가 필연적으로 일어날 것임을 단언합니다('조만간', '언젠가는').",
+    "longExplanation": "'迟早'(chízǎo)는 '늦든 빠르든 간에'라는 의미로, 미래의 어떤 사건이나 결과가 반드시 실현될 것임을 강한 확신을 담아 단언하는 시간 부사입니다. 주어와 술어 사이에 부사어로 위치하며, 필연성을 나타내는 조동사 '会'나 부사 '都', '要'와 함께 빈번하게 어울려 쓰입니다(예: '你迟早会明白我的苦心的' 넌 언젠가는 내 고충을 이해하게 될 거야). 유의어로 '早晚'이 있습니다. 한국어의 '조만간', '언젠가는', '늦든 빠르든', '결국에는'에 해당합니다.",
+    "formation": "주어 + 迟早 + (都 +) 会 / 要 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "인터넷 기술의 발전에 따라, 이러한 문제들은 조만간 모두 해결될 것이다."
+      }
+    ]
   },
   "zh_再三_497": {
-    "title": "再三 (repeatedly)",
-    "shortExplanation": "repeatedly",
-    "longExplanation": "repeatedly. Pinyin: zàisān",
-    "formation": "zàisān"
+    "title": "再三 (빈도 부사: 재삼, 거듭, 몇 번이고, 누차)",
+    "shortExplanation": "어떤 행위를 신중함이나 간절한 뜻을 품고 두 번 세 번 거듭 되풀이함을 나타냅니다('거듭', '몇 번이고').",
+    "longExplanation": "'再三'(zàisān)은 한자어 '재삼(再三)' 그대로, '두 번 세 번 거듭하여'라는 뜻을 지닌 부사입니다. 객관적인 횟수의 빈번함을 나타내는 '屡次'와 달리, 주체의 강한 의지, 신중한 배려, 간곡한 당부 등이 담긴 행위가 반복될 때 사용됩니다. 주로 사유, 권고, 만류, 강조, 부탁을 나타내는 동사(考虑 고려하다, 强调 강조하다, 叮嘱 신신당부하다, 劝阻 만류하다, 挽留 만류하여 붙잡다, 邀请 요청하다 등) 앞에 부사어로 결합합니다(예: '再三思考' 거듭 생각하다, '再三推辞' 누차 사양하다). 한국어의 '재삼', '거듭', '신신당부하여', '몇 번이고'에 해당합니다.",
+    "formation": "주어 + 再三 + 동사 (생각, 만류, 당부, 강조 등)",
+    "examples": [
+      {
+        "translation": "조괄의 어머니는 조나라 왕이 아들을 대장군으로 임명하는 것을 거듭해서 만류했다."
+      }
+    ]
   },
   "zh_即_498": {
-    "title": "即 (that is)",
-    "shortExplanation": "that is",
-    "longExplanation": "that is. Pinyin: jí",
-    "formation": "jí"
+    "title": "即 (판단 동사: 곧 ~이다, 즉 ~을 뜻하다)",
+    "shortExplanation": "학술문이나 사전 풀이 등 서면어에서 개념이나 어구의 정의를 밝히는 판단 동사로, '곧 ~이다', '즉'을 나타냅니다('就是'에 상당).",
+    "longExplanation": "'即'(jí)은 한문 유래의 판단 동사로, 현대 중국어의 학술 논문, 사전적 정의, 공식 해설에서 개념을 간명하게 규정할 때 주로 쓰입니다. 구어의 '就是'(바로 ~이다)에 해당하며, 앞에 제시된 어휘나 현상에 대해 그 본질, 정의, 구체적인 내용을 직접 해설하여 이어줍니다. 문장을 간결하고 격식 있게 만드는 효과를 지닙니다(예: '心动即行动' 마음이 움직이면 곧 행동이다, '时间即生命' 시간이 곧 생명이다). 한국어의 '곧 ~이다', '즉 ~을 의미한다'에 해당합니다.",
+    "formation": "어구 / 개념 +, 即 + 설명 어구 / 절",
+    "examples": [
+      {
+        "translation": "'旦(단)'은 상형문자로, 곧 태양이 지평선 위로 떠오르는 것을 뜻한다."
+      }
+    ]
   },
   "zh_即_499": {
-    "title": "……即…… (if… then…)",
-    "shortExplanation": "if… then…",
-    "longExplanation": "if… then…. Pinyin: …… jí……",
-    "formation": "…… jí……"
+    "title": "…… 即 …… (접속 부사: ~하면 곧바로 …하다, ~하자마자 즉시 …하다)",
+    "shortExplanation": "동작 간의 즉각적인 연결을 나타내는 서면어 부사로, 앞의 상황이 발생하면 지체 없이 곧바로 다음 동작이 이어짐을 나타냅니다('就'에 상당).",
+    "longExplanation": "'即'(jí)은 앞선 동작이나 조건에 이어 즉각적인 후속 반응이 뒤따름을 나타내는 서면어 접속 부사입니다. 구어의 '就'(곧, 바로)와 상통하며, 조건과 결과, 혹은 선행 동작과 후행 동작이 한 치의 지체도 없이 밀접하게 일어남을 압축적으로 보여줍니다. 4자 성어나 대구를 이루는 간결한 격식 표현에서 자주 사용됩니다(예: '呼之即来' 부르면 즉시 오다, '触类即通' 하나를 알면 곧바로 두루 통하다, '不懂即问' 모르면 즉각 묻다). 한국어의 '~하면 즉시 …하다', '~하자마자 곧 …하다'에 해당합니다.",
+    "formation": "동작1 / 조건 + 即 + 동작2 / 반응",
+    "examples": [
+      {
+        "translation": "모르는 것이 있으면 즉시 물어보는 것이 그의 가장 큰 장점이자, 그가 성공할 수 있었던 주요 원인이다."
+      }
+    ]
   },
   "zh_个别V_500": {
-    "title": "个别 V (individually V, separately V)",
-    "shortExplanation": "individually V, separately V",
-    "longExplanation": "individually V, separately V. Pinyin: gèbié V",
-    "formation": "gèbié V"
+    "title": "个别 + 동사 (부사어: 개별적으로 ~하다, 따로따로 ~하다, 일대일로 ~하다)",
+    "shortExplanation": "'个别'이 동사 앞에서 부사어로 쓰여, 집단 전체가 아닌 각각의 개인이나 대상을 상대로 개별적으로 행동함을 나타냅니다('개별적으로 ~하다').",
+    "longExplanation": "'个别'(gèbié)이 술어 동사 앞에 놓여 부사어 역할을 할 때, 여러 사람을 한꺼번에 상대하지 않고 한 사람 한 사람에게 개별적·단독적으로 처리를 진행함을 나타냅니다. 주로 상담, 지도, 통지, 대화 등의 소통·관리 동사(谈话 대화하다/면담하다, 辅导 지도하다, 通知 알리다, 处理 처리하다 등)와 결합합니다. 종종 '采取个别……的方式'(개별 ~ 방식을 취하다)의 문형으로 널리 활용됩니다. 한국어의 '개별적으로 ~하다', '따로따로 ~하다', '일대일로 ~하다'에 해당합니다.",
+    "formation": "주어 + (采取 +) 个别 + 동사 (+ 的方式 / 形式)",
+    "examples": [
+      {
+        "translation": "그는 개별 면담 방식을 취하여 상황을 파악하고 문제를 해결하곤 한다."
+      }
+    ]
   },
   "zh_个别N_501": {
-    "title": "个别 N (only a few N (as an exception))",
-    "shortExplanation": "only a few N (as an exception)",
-    "longExplanation": "only a few N (as an exception). Pinyin: gèbié N",
-    "formation": "gèbié N"
+    "title": "个别 + 명사 (관형어: 극소수의, 극히 드문, 예외적인 몇몇)",
+    "shortExplanation": "명사 앞에 쓰여 전체 집단 중 '극히 드문 소수', '예외적인 일부'를 가리킵니다('극소수의', '일부의', '예외적인').",
+    "longExplanation": "'个别'(gèbié)이 명사 앞에서 관형어로 쓰일 때, 전체 대다수와 대비되는 '극소수' 또는 '예외적인 특수 사례'를 나타냅니다. '多数'(다수)나 '普遍'(보편적)과 대조적인 성격을 띱니다. 자주 결합하는 명사로는 '人'(사람), '现象'(현상), '情况'(상황/사례), '地方'(곳/지역) 등이 있습니다(예: '个别人' 극소수의 사람, '个别现象' 예외적인 현상). 특히 '除了个别……以外'(소수의 ~를 제외하고는) 형식의 구문에서 널리 쓰입니다. 한국어의 '극소수의', '일부 예외적인', '개별의'에 해당합니다.",
+    "formation": "个别 + 명사 (사람 / 현상 / 상황 / 장소 등)",
+    "examples": [
+      {
+        "translation": "소수의 극소수 사람들을 제외하고, 대다수 사람들의 체중 증가는 토요일부터 시작된다."
+      }
+    ]
   },
   "zh_非_502": {
-    "title": "非 (to insist on)",
-    "shortExplanation": "to insist on",
-    "longExplanation": "to insist on. Pinyin: fēi",
-    "formation": "fēi"
+    "title": "非 (어기 부사: 기어코 ~하겠다고 우기다, 기어이 ~하고야 말다, 한사코)",
+    "shortExplanation": "주위의 만류나 반대에도 불구하고 고집을 부려 '기어코 ~하겠다고 고집하다', '한사코 ~하려 들다'를 나타냅니다.",
+    "longExplanation": "'非'(fēi)는 술어 앞에 쓰이는 어기 부사로, 주어가 남의 충고나 만류를 아랑곳하지 않고 자신의 고집대로 어떤 행동을 관철하려 함을 나타냅니다. 구어에서는 흔히 조동사 '要'나 '得'와 결합하여 '非要', '非得'(기어코 ~하려고 하다)의 형태로 빈번하게 사용됩니다. 뒤따르는 절에는 종종 '누구도 말릴 수 없다'('谁也拦不住') 등의 표현이 이어져, 주어의 강한 고집이나 꺾이지 않는 의지를 부각합니다. 한국어의 '기어코 ~하겠다고 우기다', '한사코 ~하려고 들다', '기어이'에 해당합니다.",
+    "formation": "주어 + 非 (要 / 得) + 동사 / 절",
+    "examples": [
+      {
+        "translation": "그가 기어코 이혼하겠다고 고집을 부려, 우리 중 누구도 말릴 수가 없었다."
+      }
+    ]
   },
   "zh_非_503": {
-    "title": "非 (not, un-)",
-    "shortExplanation": "not, un-",
-    "longExplanation": "not, un-. Pinyin: fēi",
-    "formation": "fēi"
+    "title": "非 (접두사·부정 부사: 비~, 아닐 비, ~이 아니다)",
+    "shortExplanation": "명사나 형용사 앞에 붙는 접두사로 쓰여 '그 범주에 속하지 않음'이나 '비~'의 뜻을 나타내며, 서면어에서는 '不是(~이 아니다)'의 뜻을 나타냅니다.",
+    "longExplanation": "'非'(fēi)는 한문에서 유래한 부정형 요소로, 현대 중국어에서는 주로 명사나 형용사 앞에 결합하는 접두사로 널리 쓰입니다. '정상적인 범주나 규정에 부합하지 않음'을 나타내는 파생어를 만들어 내며(예: '非正常' 비정상적인, '非法' 불법의, '非正式' 비공식의, '非金属' 비금속, '非卖品' 비매품), 격식 있는 서면어 논설문에서는 단독으로 '不是(~이 아니다)'를 뜻하는 부정사로 기능하기도 합니다(예: '非同小可' 심상치 않다, '非我所愿' 내가 바란 바가 아니다). 한국어의 접두사 '비(非)~', '~이 아니다'에 해당합니다.",
+    "formation": "非 + 명사 / 형용사 (파생 복합어 형성: 非正常 / 非法 / 非正式 등) 또는 주어 + 非 + 명사 / 동사",
+    "examples": [
+      {
+        "translation": "비정상적인 상황이 발생했을 때 당황하지 마십시오."
+      }
+    ]
   },
   "zh_并非_504": {
-    "title": "并非 (not)",
-    "shortExplanation": "not",
-    "longExplanation": "not. Pinyin: bìngfēi",
-    "formation": "bìngfēi"
+    "title": "并非 (부사: 결코 ~한 것은 아니다, 실은 ~이 아니다)",
+    "shortExplanation": "구어의 '并不是'에 해당하는 서면어 부사로, 선입견이나 잘못된 가정을 강하게 부정하여 '결코 ~이 아니다', '실은 ~한 것이 아니다'라는 뜻을 나타냅니다.",
+    "longExplanation": "'并非'(bìngfēi)는 부정의 어기를 강화하는 부사 '并'과 '不是(~이 아니다)'를 뜻하는 문언 요소 '非'가 결합된 서면어 표현입니다. 구어의 '并不是'보다 격조 높은 표현으로, 일반적인 통념이나 상대방의 잘못된 짐작·과장을 반박하며 '실제로는 결코 그렇지 않다'는 진실을 밝힐 때 사용됩니다. '其实'(사실은), '然而'(그러나) 등의 전환 접속사와 긴밀하게 호응합니다. 한국어의 '결코 ~한 것은 아니다', '실은 ~이 아니다', '반드시 ~인 것은 아니다'에 해당합니다.",
+    "formation": "주어 + 并非 + 명사 / 동사 / 형용사 (+ 절)",
+    "examples": [
+      {
+        "translation": "성공은 때때로 상상하는 것만큼 그리 어렵지 않다."
+      }
+    ]
   },
   "zh_以_505": {
-    "title": "以 ((see 4.14.2 “以”))",
-    "shortExplanation": "(see 4.14.2 “以”)",
-    "longExplanation": "(see 4.14.2 “以”). Pinyin: yǐ",
-    "formation": "yǐ"
+    "title": "以 (개사·접속사: ~로써, ~을 가지고, ~에 의거하여, ~하기 위해)",
+    "shortExplanation": "서면어에서 주로 쓰이는 개사 및 접속사로, 수단·도구·근거·자격('~로써', '~에 근거하여')을 나타내거나 행위의 목적('~하기 위해')을 이끕니다.",
+    "longExplanation": "'以'(yǐ)는 고대 한어의 용법을 풍부하게 계승한 서면어 표지어입니다. 크게 두 가지 핵심 용법이 있습니다. 첫째, 개사(전치사)로서 '用'(가지고), '凭'(기대어), '按照'(따라)에 해당하여 수단, 방식, 법적·도덕적 근거, 자격을 이끕니다(예: '以事实为根据' 사실을 근거로 삼다, '以理服人' 이치로써 사람을 설복하다, '以身作则' 몸소 모범을 보이다, '以……为原则' ~을 원칙으로 하다). 둘째, 접속사로서 앞선 행위와 뒤따르는 달성 목적을 연결하여 '以便', '为了'처럼 목적을 나타냅니다(예: '广开言路，以听取民众意见' 백성의 의견을 수렴하고자 언로를 넓히다). 한국어의 '~로써', '~을 가지고', '~에 의하여', '~하기 위해'에 해당합니다.",
+    "formation": "주어 + 以 + 명사(수단 / 근거 / 자격) + 동사 또는 행위 절 + 以 + 목적 절",
+    "examples": [
+      {
+        "translation": "-"
+      }
+    ]
   },
   "zh_平常_506": {
-    "title": "平常 (ordinary)",
-    "shortExplanation": "ordinary",
-    "longExplanation": "ordinary. Pinyin: píngcháng",
-    "formation": "píngcháng"
+    "title": "平常 (형용사: 평범하다, 보통이다, 특이하지 않다)",
+    "shortExplanation": "사물이나 사람의 모습이 평범하여 특이하거나 뛰어난 점이 없음을 나타내는 형용사입니다('평범하다', '보통이다'). 부정형 '不平常'은 '범상치 않다'를 뜻합니다.",
+    "longExplanation": "'平常'(píngcháng)은 형용사로서 어떤 사람의 외모, 재능, 혹은 사물의 상태가 지극히 일반적이고 특별한 구석이 없음을 묘사합니다. 명사 앞에서 관형어로 쓰이거나(예: '平常人' 보통 사람, '平常的事情' 흔하고 평범한 일), 술어로 쓰입니다(예: '他的表现很平常' 그의 활약은 평범했다). 특히 부정사 '不'와 결합한 '不平常'은 '예사롭지 않다', '범상치 않다', '특별한 의미가 있다'는 뜻으로 역사적 기념일이나 비범한 인물을 수식할 때 매우 애용됩니다. 한국어의 '평범하다', '보통이다', '예사롭다'에 해당합니다.",
+    "formation": "(주어 +) (很 / 不 +) 平常 (+ 的 + 명사)",
+    "examples": [
+      {
+        "translation": "샤오왕에게 오늘은 평범하지 않은 특별한 날이다."
+      }
+    ]
   },
   "zh_平常_507": {
-    "title": "平常 (usually)",
-    "shortExplanation": "usually",
-    "longExplanation": "usually. Pinyin: píngcháng",
-    "formation": "píngcháng"
+    "title": "平常 (시간명사·부사: 평소, 평상시, 대개, 늘)",
+    "shortExplanation": "특별한 일이 없는 일상적인 시간이나 평소의 상태를 가리키며, 동사 앞에 쓰여 '평소에는', '평상시에는'이라는 뜻을 나타냅니다.",
+    "longExplanation": "'平常'(píngcháng)은 시간명사 혹은 부사적 용법으로 쓰여 '平时'(평소)와 마찬가지로 별다른 변고가 없는 평상시나 일상적인 나날을 가리킵니다. 문두나 주어 뒤에서 시간 상황어로 쓰여 일상적으로 지속되어 온 습관이나 정상적인 상황을 나타냅니다. 특히 '오늘'이나 '특정 계기'에 발생한 예외적인 상황과 강하게 대조할 때 자주 쓰입니다(예: '平常总是……，今天却……' 평소에는 늘 …했는데 오늘은 도리어 …하다). 한국어의 '평소(에)', '평상시(에)', '보통 때는'에 해당합니다.",
+    "formation": "(주어 +) 平常 + (总是 / 经常 +) 동사 / 형용사 (또는 平常, 주어 + 동사……)",
+    "examples": [
+      {
+        "translation": "그는 평소에는 늘 일찍 오는데, 오늘은 뜻밖에도 지각했다."
+      }
+    ]
   },
   "zh_宁可_508": {
-    "title": "宁可 (would rather)",
-    "shortExplanation": "would rather",
-    "longExplanation": "would rather. Pinyin: nìngkě",
-    "formation": "nìngkě"
+    "title": "宁可……也…… (접속사: 차라리 ~할지언정 …하겠다 / 하지 않겠다)",
+    "shortExplanation": "두 가지 불리한 조건 중 더 심각한 피해나 후회를 막기 위해, 차라리 한쪽의 고통이나 희생을 감수하겠다는 주관적 결단을 나타냅니다('차라리 ~할지언정').",
+    "longExplanation": "'宁可'(nìngkě)는 선택의 기로에서 득실을 형량할 때 쓰이는 접속사입니다. 두 가지 선택지가 모두 부담스럽거나 불리한 상황에서, 더 나쁜 결과나 원치 않는 사태를 피하기 위해 차라리 비교적 덜한 희생이나 고생을 달게 감수하겠다는 단호한 결의를 나타냅니다. 후속 절에서 보통 '也不……'나 '决不……'와 호응하여 '宁可……，也不……'(차라리 …할망정 결코 …하지는 않겠다)의 복문 구조를 이룹니다. '宁愿', '宁肯'과 뜻이 같습니다. 한국어의 '차라리 ~할지언정', '~하는 편이 낫다'에 해당합니다.",
+    "formation": "주어 + 宁可 + 감수할 선택지, 也 + (不 / 决不 +) 거부할 선택지",
+    "examples": [
+      {
+        "translation": "어머니로서 그녀는 자신이 좀 힘들지언정, 아이를 서운하게 하거나 고생시키고 싶지는 않다."
+      }
+    ]
   },
   "zh_极其_509": {
-    "title": "极其 (extremely)",
-    "shortExplanation": "extremely",
-    "longExplanation": "extremely. Pinyin: jíqí",
-    "formation": "jíqí"
+    "title": "极其 (정도부사: 지극히, 극히, 대단히)",
+    "shortExplanation": "정도가 최고조나 극한에 달했음을 나타내는 격조 높은 서면어 정도부사로, 주로 2음절 형용사나 심리 동사 앞에 쓰입니다('극히', '지극히').",
+    "longExplanation": "'极其'(jíqí)는 사물의 성질이나 상태의 정도가 최고조에 이르렀음을 나타내는 문어체 정도부사입니다. 일반적인 '很'이나 '非常'보다 어기가 한층 무겁고 객관적이며 격조가 높습니다. 주로 2음절 형용사(예: '极其严重' 극히 심각하다, '极其重要' 지극히 중요하다, '极其珍贵' 매우 진귀하다)나 심리 동사(예: '极其厌恶' 몹시 혐오하다, '极其渴望' 간절히 갈망하다)를 수식하여 술어부를 이룹니다. 한국어의 '극히', '지극히', '대단히'에 해당합니다.",
+    "formation": "极其 + 2음절 형용사 / 심리 동사",
+    "examples": []
   },
   "zh_其余_511": {
-    "title": "其余 (the rest)",
-    "shortExplanation": "the rest",
-    "longExplanation": "the rest. Pinyin: qíyú",
-    "formation": "qíyú"
+    "title": "其余 (대명사: 나머지, 그 밖의 것/사람)",
+    "shortExplanation": "전체 집합에서 이미 언급된 특정 대상을 제외한 '남은 부분'이나 '남은 사람들'을 가리키는 대명사입니다('나머지', '그 밖의').",
+    "longExplanation": "'其余'(qíyú)는 전체 대상 가운데 이미 앞서 거론되었거나 제외된 일부를 뺀, 나머지 사람이나 사물을 가리키는 대명사입니다. 명사 앞에서 관형어로서 '其余 (+ 的) + 명사' 형태로 결합하거나(예: '其余的同学' 나머지 학우들, '其余的事' 그 밖의 일), 단독으로 주어나 목적어 자리에 쓰입니다(예: '其余由我负责' 나머지는 내가 책임진다). 한국어의 '나머지', '그 밖의 (것/사람)'에 해당합니다.",
+    "formation": "其余 (+ 的) + 명사 (또는 其余 + 동사 / 술어)",
+    "examples": [
+      {
+        "translation": "어째서 너희 둘뿐이니? 나머지 친구들은 어디 갔어?"
+      }
+    ]
   },
   "zh_由此可见_512": {
-    "title": "(由此) 可见 (This shows that)",
-    "shortExplanation": "This shows that",
-    "longExplanation": "This shows that. Pinyin: ( yóucǐ) kějiàn",
-    "formation": "( yóucǐ) kějiàn"
+    "title": "(由此) 可见 (접속 표현: 이로 보아 알 수 있듯이, 이것으로 미루어 볼 때)",
+    "shortExplanation": "앞에서 제시한 구체적인 사실이나 근거를 바탕으로, 뒷절의 첫머리에서 '이것으로 미루어 보건대 ~임을 알 수 있다'는 결론을 이끕니다.",
+    "longExplanation": "'(由此) 可见'((yóucǐ) kějiàn)은 논설문이나 설명문 등에서 논리적인 귀결을 맺을 때 쓰는 접속 표현입니다. '由此'(이로부터)와 '可见'(~임을 알 수 있다)이 합쳐져, 앞 절에서 진술한 구체적인 현상, 데이터, 경험적 사실을 근거로 삼아 도출되는 명백한 결론, 교훈, 법칙을 뒷절에서 전개합니다. 후속 절의 서두에 위치하여 쉼표를 찍고 쓰이는 경우가 많습니다. 한국어의 '이로 보아 알 수 있듯이', '이것으로 미루어 볼 때', '이에 비추어 보면'에 해당합니다.",
+    "formation": "근거·사실 절, (由此) 可见 + 결론·판단 절",
+    "examples": [
+      {
+        "translation": "이것으로 미루어 볼 때, 성공에는 노력이 필요한 법이다."
+      }
+    ]
   },
   "zh_N般_513": {
-    "title": "N 般 (like N)",
-    "shortExplanation": "like N",
-    "longExplanation": "like N. Pinyin: N bān",
-    "formation": "N bān"
+    "title": "명사 + 般 (비유 조사: ~와 같은, 마치 ~처럼)",
+    "shortExplanation": "명사 뒤에 붙어 '마치 ~와 같은', '~처럼'이라는 비유를 나타내는 문학적이고 격조 높은 비유 조사입니다.",
+    "longExplanation": "'般'(bān)은 명사 바로 뒤에 결합하여 구어의 '像……一样(~와 같다)'에 해당하는 비유를 나타내는 비황 조사입니다. 문학적인 정취와 서정적인 묘사에서 널리 활용되며, 원관념의 특성을 생생하게 부각합니다. 뒤에 '的'를 붙여 명사를 수식하는 관형어로 쓰이거나(예: '阳光般的笑容' 햇살과 같은 미소, '潮水般的掌声' 밀물과 같은 박수갈채), '地'를 결합하여 동사를 수식하는 부사어로 쓰입니다(예: '飞一般地奔跑' 날아가듯 달리다). 한국어의 '~와 같은', '~ 같은', '~처럼'에 해당합니다.",
+    "formation": "명사 + 般 (+ 的 + 명사) 또는 명사 + 般 + 地 + 동사",
+    "examples": [
+      {
+        "translation": "그녀의 얼굴에 햇살과도 같은 밝은 미소가 번졌다."
+      }
+    ]
   },
   "zh_闻_514": {
-    "title": "闻 (to smell)",
-    "shortExplanation": "to smell",
-    "longExplanation": "to smell. Pinyin: wén",
-    "formation": "wén"
+    "title": "闻 (동사: 냄새를 맡다)",
+    "shortExplanation": "현대 중국어의 일상생활에서 코로 냄새를 분별하고 맡는 후각적 행위를 나타내는 기본 동사입니다('냄새를 맡다').",
+    "longExplanation": "'闻'(wén)은 현대 중국어에서 코를 이용하여 사물의 냄새나 향기를 맡는 동작을 나타내는 가장 보편적인 동사입니다. 냄새를 나타내는 목적어를 직접 취하거나(예: '闻花香' 꽃향기를 맡다, '闻气味' 냄새를 맡다), 가벼운 동작의 시도를 나타내는 동사 중첩형 '闻一闻', '闻了闻'(한번 맡아 보다), 또는 후각적 인지의 도달을 나타내는 결과보어와 결합한 '闻到', '闻见'(냄새를 맡아내다, 냄새가 나다) 등의 구문으로 대단히 흔히 쓰입니다. 한국어의 '냄새를 맡다', '향을 맡다'에 해당합니다.",
+    "formation": "주어 + 闻 (+ 一闻 / 了闻) (+ 목적어 / 결과보어: 到 / 见)",
+    "examples": [
+      {
+        "translation": "그는 주전자 뚜껑을 열고 냄새를 킁킁 맡아 보더니, 알고 보니 술이라는 것을 알았다."
+      }
+    ]
   },
   "zh_闻_515": {
-    "title": "闻 (to hear)",
-    "shortExplanation": "to hear",
-    "longExplanation": "to hear. Pinyin: wén",
-    "formation": "wén"
+    "title": "闻 (문언 동사: 듣다, 소문을 듣다)",
+    "shortExplanation": "한문 고유의 원래 의미로서 '귀로 듣다', '소문을 전해 듣다'를 뜻하며, 현대 중국어에서는 주로 사자성어나 격식 있는 관용구 속에 쓰입니다('듣다').",
+    "longExplanation": "'闻'(wén)은 원래 청각을 통해 소리나 소문을 '듣다'(현대 구어의 '听', '听说'에 해당)라는 뜻을 지닌 글자입니다. 현대 중국어에서는 단독 서술어로 쓰이기보다는 사자성어, 고사성어, 격언, 혹은 문어체 복합어 속에 깊숙이 뿌리내려 사용됩니다(예: '百闻不如一见' 백문이 불여일견, '闻名遐迩' 널리 이름을 떨치다, '闻所未闻' 금시초문이다, '充耳不闻' 귀를 막고 들으려 하지 않다). 한국어의 '듣다', '전해 듣다', '풍문을 듣다'에 해당합니다.",
+    "formation": "闻 + 명사 (주로 성어 및 고정 표현: 百闻不如一见 / 闻名 / 闻所未闻 등)",
+    "examples": [
+      {
+        "translation": "백문이 불여일견이다 (백 번 듣는 것이 한 번 보는 것만 못하다)."
+      }
+    ]
   },
   "zh_趁_516": {
-    "title": "趁 (while (an opportunity exists))",
-    "shortExplanation": "while (an opportunity exists)",
-    "longExplanation": "while (an opportunity exists). Pinyin: chèn",
-    "formation": "chèn"
+    "title": "趁 (개사: ~를 틈타, ~한 기회를 이용하여)",
+    "shortExplanation": "유리한 기회나 짧은 시간, 특정 조건을 포착하여 상황이 바뀌기 전에 어떤 행동을 취함을 이끄는 개사(전치사)입니다('~를 틈타', '~할 때를 노려').",
+    "longExplanation": "'趁'(chèn)은 유리한 기회나 시간적 여유, 혹은 특정한 객관적 조건을 놓치지 않고 포착하여 원하는 동작을 신속히 실행에 옮김을 나타내는 개사입니다. '趁' 뒤에는 시간, 계기, 임시적 상태가 오며(예: '趁热吃' 식기 전에 따뜻할 때 먹다, '趁年轻' 젊었을 때를 틈타, '趁现在' 지금 기회를 보아), 문두나 주어 앞에 놓여 후속 절의 행동을 이끕니다. 한국어의 '~를 틈타', '~한 김에', '~인 동안에 (빨리)'에 해당합니다.",
+    "formation": "趁 + 시간 / 계기 / 조건 (, 주어 +) 동사",
+    "examples": [
+      {
+        "translation": "영화가 아직 시작하지 않은 틈을 타서 생수 두 병을 사 올게요."
+      }
+    ]
   },
   "zh_V不起_517": {
-    "title": "V 不起 (cannot)",
-    "shortExplanation": "cannot",
-    "longExplanation": "cannot. Pinyin: V bù qǐ",
-    "formation": "V bù qǐ"
+    "title": "동사 + 不起 (가능보어 부정형: ~할 여유가 없다, 감당하지 못하다, 차마 ~하지 못하다)",
+    "shortExplanation": "가능보어의 부정 형식으로, 경제적 형편이나 심리적·육체적 감당 능력이 부족하여 어떤 행위를 할 여력이 안 됨을 나타냅니다('~할 엄두가 안 난다', '~할 형편이 못 되다').",
+    "longExplanation": "'동사 + 不起'(bù qǐ)는 가능보어의 중요한 부정 형식입니다(긍정형은 '동사 + 得起'). 크게 세 가지 상황에서 널리 쓰입니다. 첫째, 재정적·경제적 여력이 부족하여 그 비용을 지불하거나 향유할 능력이 되지 않는 경우(예: '买不起' 살 형편이 안 된다, '住不起' 묵을 돈이 없다, '吃不起' 비싸서 사 먹을 엄두가 안 난다); 둘째, 정신적·육체적 무게나 시련을 견뎌 낼 수 없는 경우(예: '经不起考验' 시험을 견뎌 내지 못하다, '病不起' 앓아누울 여유조차 없다); 셋째, 타인을 낮잡아보거나 미안함을 나타내는 고정 관용 표현(예: '看不起' 얕보다·업신여기다, '对不起' 죄송하다·면목이 없다). 한국어의 '~할 엄두를 못 내다', '~할 형편이 안 되다', '견뎌 내지 못하다'에 해당합니다.",
+    "formation": "주어 + 동사 + 不起 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그의 집은 너무 가난하여 등불을 살 형편이 못 되었기에, 밤만 되면 책을 읽을 수가 없었다."
+      }
+    ]
   },
   "zh_V得起_518": {
-    "title": "V 得起 (can stand/tolerate)",
-    "shortExplanation": "can stand/tolerate",
-    "longExplanation": "can stand/tolerate. Pinyin: V dé qǐ",
-    "formation": "V dé qǐ"
+    "title": "동사 + 得起 (가능보어 긍정형: 감당해 낼 수 있다, 견뎌 낼 수 있다, ~할 자격이 있다)",
+    "shortExplanation": "가능보어의 긍정 형식으로, 경제적 지불 능력이 충분하거나 시련·비판·책임을 능히 견뎌 내고 감당할 능력이 있음을 나타냅니다('견뎌 낼 수 있다', '~할 여력이 되다').",
+    "longExplanation": "'동사 + 得起'(dé qǐ)는 가능보어의 긍정 구조로, 부정형 '동사 + 不起'와 대비됩니다. 주로 세 가지 용법으로 쓰입니다. 첫째, 경제적 능력이 충분하여 고가의 비용을 무리 없이 감당할 수 있음을 나타냅니다(예: '买得起' 살 여력이 있다, '住得起' 묵을 형편이 되다); 둘째, 시련, 비판, 실패, 책임 등의 무게를 꿋꿋하게 이겨 내고 견뎌 낼 수 있는 내구력이나 담력을 나타냅니다(예: '经得起考验' 시험과 시련을 이겨 낼 수 있다, '输得起' 패배를 담담히 감수할 배짱이 있다, '担得起重任' 막중한 책임을 감당할 수 있다); 셋째, 상대방의 기대와 호의에 부응하여 떳떳함을 나타냅니다(예: '对得起良心' 양심에 부끄럽지 않다). 한국어의 '견뎌 낼 수 있다', '감당해 낼 수 있다', '~할 여력이 되다'에 해당합니다.",
+    "formation": "주어 + 동사 + 得起 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "시간의 시험과 시련을 견뎌 낼 수 있는 친구라야 진정한 친구라고 할 수 있다."
+      }
+    ]
   },
   "zh_支_519": {
-    "title": "支 (to prop up, to support)",
-    "shortExplanation": "to prop up, to support",
-    "longExplanation": "to prop up, to support. Pinyin: zhī",
-    "formation": "zhī"
+    "title": "支 (동사: 버티다, 괴다, 지탱하다, 받치다, 치다)",
+    "shortExplanation": "손이나 버팀목 등을 밑에 대어 넘어지거나 쓰러지지 않도록 떠받치거나 기둥을 세우는 동작을 나타냅니다('괴다', '받치다', '버티다').",
+    "longExplanation": "'支'(zhī)는 손, 팔, 지팡이, 버팀목 등을 물체 아래에 대어 아래로 쓰러지거나 무너지지 않도록 힘으로 떠받치는 동작을 나타내는 동사입니다. 신체적인 동작에서 턱이나 머리를 괴거나(예: '支着脑袋' 머리를 괴다, '支着下巴' 턱을 괴다, '支着身子' 몸을 일으켜 버티다) 지팡이를 짚는 행위(예: '支着拐杖'), 또는 뼈대를 세워 천막을 치는 행위(예: '支帐篷' 텐트를 치다) 등에 널리 쓰입니다. 지속을 나타내는 동태조사 '着'나 방향보어 '起 / 起来'와 결합하는 경우가 많습니다. 한국어의 '괴다', '받치다', '떠받치다', '(텐트를) 치다'에 해당합니다.",
+    "formation": "주어 + 支 + (着 / 起 / 起来 +) 목적어 (머리 / 턱 / 지팡이 / 텐트 등)",
+    "examples": [
+      {
+        "translation": "그는 두 손을 책상 위에 올려놓고 머리를 괸 채 이런저런 생각을 하고 있었다."
+      }
+    ]
   },
   "zh_支_520": {
-    "title": "支 ((measure word for guns, songs, or armies))",
-    "shortExplanation": "(measure word for guns, songs, or armies)",
-    "longExplanation": "(measure word for guns, songs, or armies). Pinyin: zhī",
-    "formation": "zhī"
+    "title": "수사 + 支 (양사: 자루, 곡, 부대, 팀 [총, 펜, 노래, 군대 등을 세는 단위])",
+    "shortExplanation": "총이나 펜 등 가늘고 긴 물건, 노래나 악곡, 또는 군대나 팀 등 조직된 집단을 세는 양사입니다('~자루', '~곡', '~개 부대').",
+    "longExplanation": "'支'(zhī)는 여러 범주의 사물을 계량하는 다목적 양사입니다. 주로 다음과 같은 세 가지 경우에 쓰입니다. 첫째, 총기류나 필기구, 양초 등 가늘고 기다란 막대 모양의 물건을 셀 때(예: '一支枪' 총 한 자루, '一支笔' 펜 한 자루, '一支蜡烛' 초 한 자루). 둘째, 노래나 악곡을 셀 때(예: '一支歌' 노래 한 곡, '一支乐曲' 악곡 한 곡). 셋째, 조직이나 대오를 갖춘 군대나 팀, 선단 등을 셀 때(예: '一支军队' 군대 한 개 부대, '一支队伍' 대오 한 부대, '一支探险队' 탐험대 한 팀). 한국어의 '자루', '곡', '개 부대', '팀' 등에 해당합니다.",
+    "formation": "수사 + 支 + 명사 (총 / 펜 / 노래 / 군대 / 팀 등)",
+    "examples": [
+      {
+        "translation": "그에게 총 열 자루만 준다면, 그는 군대 한 부대를 곧바로 조직해 낼 수 있다."
+      }
+    ]
   },
   "zh_凭_521": {
-    "title": "凭 (to reply on)",
-    "shortExplanation": "to reply on",
-    "longExplanation": "to reply on. Pinyin: píng",
-    "formation": "píng"
+    "title": "凭 (개사·동사: ~에 기대다, ~에 의지하다, ~에 근거하여, ~으로)",
+    "shortExplanation": "경험, 실력, 근거, 자격 등을 행동의 근거이자 바탕으로 삼음을 나타냅니다('~에 의지하여', '~을 바탕으로', '~에 기대어').",
+    "longExplanation": "'凭'(píng)은 개사(전치사) 또는 동사로 쓰이며, 어떤 객관적 근거, 자격, 증거, 개인의 역량이나 경험 등을 행위의 발판이자 수단으로 삼음을 나타냅니다. 대표적인 결합으로 '凭经验'(경험에 의지하다), '凭本事'(본인의 실력으로), '凭票入场'(입장권 소지자에 한해 입장하다) 등이 있습니다. '단지 ~에만 의지하다'라는 뜻을 나타낼 때 한정 부사 '光', '单', '就'와 결합하여 '光凭……', '单凭……', '就凭……' 형태로 빈번하게 활용됩니다. 한국어의 '~에 의지하다', '~에 기대다', '~에 근거하여', '~의 힘으로'에 해당합니다.",
+    "formation": "주어 + (光 / 单 / 就 +) 凭 + 명사 (경험 / 능력 / 표 / 증거 등) + 동사구",
+    "examples": [
+      {
+        "translation": "일을 할 때는 경험에만 기댈 수는 없으며, 새로운 혁신 또한 필요하다."
+      }
+    ]
   },
   "zh_硬V_522": {
-    "title": "硬 V (by brute force)",
-    "shortExplanation": "by brute force",
-    "longExplanation": "by brute force. Pinyin: yìng V",
-    "formation": "yìng V"
+    "title": "硬 + 동사 (부사: 억지로 ~하다, 기어이 ~하다, 이를 악물고 ~하다)",
+    "shortExplanation": "어려움, 고통, 내키지 않는 마음을 억누르고 이를 악물거나 억지로 힘을 내어 해당 동작을 해냄을 나타냅니다('억지로 ~하다', '무리해서 ~하다').",
+    "longExplanation": "'硬'(yìng)은 동사 앞에 놓여 부사어로 쓰이며, 고통스럽거나 어렵고 마음이 내키지 않는 극단적인 상황에서도 이를 악물고 억지로 힘을 내어 해당 행위를 감행함을 나타냅니다. 인내나 육체적 버팀, 음식 섭취 등과 관련된 동사와 자주 어울립니다(예: '硬喝' 억지로 마시다, '硬撑' 억지로 버티다, '硬咽' 억지로 삼키다, '硬挤' 억지로 비집고 들어가다). 한국어의 '억지로 ~하다', '이를 악물고 ~하다', '무리해서 ~하다'에 해당합니다.",
+    "formation": "주어 + 硬 + 동사 (+ 보어 / 목적어)",
+    "examples": [
+      {
+        "translation": "한약이 좀 썼지만, 그는 그래도 이를 악물고 억지로 들이켰다."
+      }
+    ]
   },
   "zh_硬V_523": {
-    "title": "硬 V (to insist on V-ing)",
-    "shortExplanation": "to insist on V-ing",
-    "longExplanation": "to insist on V-ing. Pinyin: yìng V",
-    "formation": "yìng V"
+    "title": "硬 (要) + 동사 (부사: 기어코 ~하려 들다, 굳이 ~하겠다고 우기다, 기어이)",
+    "shortExplanation": "남의 만류나 반대에도 아랑곳하지 않고, 고집스럽게 자신의 뜻대로 밀어붙이려 함을 나타냅니다('기어코 ~하려 하다', '굳이 ~하겠다고 우기다').",
+    "longExplanation": "'硬'(yìng)은 남의 충고, 반대, 제지를 무시하고 완고하게 자신의 고집대로 어떤 행동을 관철하려 드는 주관적 고집을 나타내는 부사입니다. 조동사 '要'와 빈번하게 결합하여 '硬要 + 동사'(기어이 ~하겠다고 우기다) 형태로 매우 널리 쓰이며, '硬说'(굳이 ~라고 우기다)처럼 억지 주장을 펴는 동사와도 잘 어울립니다. 상대방의 통제나 만류를 거부하는 반항적·고집스러운 뉘앙스를 풍깁니다. 한국어의 '기어코 ~하려 들다', '굳이 ~하겠다고 고집부리다', '기어이 ~하다'에 해당합니다.",
+    "formation": "주어 + 硬 (要) + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "내가 그를 가지 못하게 말렸는데도, 그는 기어코 가겠다고 우겼다."
+      }
+    ]
   },
   "zh_偶然的_524": {
-    "title": "偶然的 (accidental (opportunity))",
-    "shortExplanation": "accidental (opportunity)",
-    "longExplanation": "accidental (opportunity). Pinyin: ǒurán de",
-    "formation": "ǒurán de"
+    "title": "偶然的 + 명사 (형용사 관형어: 우연한 ~, 뜻밖의 ~)",
+    "shortExplanation": "명사 앞에서 관형어로 쓰여, 사전에 계획되거나 필연적인 것이 아니라 예기치 않게 일어난 일이나 기회를 나타냅니다('우연한', '뜻밖의').",
+    "longExplanation": "'偶然'(ǒurán)은 '必然'(필연)의 반의어로, 정해진 법칙이나 사전 계획 없이 예기치 않게 발생하는 성질을 나타내는 형용사입니다. 구조조사 '的'와 결합하여 '偶然的 + 명사' 형태로 명사를 꾸미는 관형어 역할을 하며, 만남, 기회, 발견, 사건 등의 명사와 자주 어울립니다(예: '偶然的相遇' 우연한 만남, '偶然的机会' 뜻밖의 기회, '偶然的发现' 우연한 발견, '偶然的成功' 어쩌다 얻은 성공). 한국어의 '우연한 ~', '뜻밖의 ~', '어쩌다 마주친 ~'에 해당합니다.",
+    "formation": "偶然的 + 명사 (만남 / 기회 / 발견 / 사건 등)",
+    "examples": [
+      {
+        "translation": "그것은 하나의 우연한 만남이었다."
+      }
+    ]
   },
   "zh_偶然V_525": {
-    "title": "偶然 V (occasionally)",
-    "shortExplanation": "occasionally",
-    "longExplanation": "occasionally. Pinyin: ǒurán V",
-    "formation": "ǒurán V"
+    "title": "偶然 + 동사 (부사: 어쩌다, 때때로, 가끔, 이따금)",
+    "shortExplanation": "동사 앞에 부사어로 쓰여, 어떤 동작이나 현상이 항상 일어나는 것이 아니라 이따금, 때때로 일어남을 나타냅니다('어쩌다', '가끔', '이따금').",
+    "longExplanation": "'偶然'(ǒurán)은 동사 앞에 놓여 부사어 역할을 하며, 빈도가 매우 낮아 '가끔', '이따금', '때때로' 발생함을 나타냅니다(빈도 부사 '偶尔'와 상통). 일상적인 주된 행위의 틈바구니에서 예기치 않게 불쑥 일어나는 동작을 서술할 때 자주 쓰이며, 보통 '也'나 '会'와 호응하여 '偶然也会……'(가끔은 ~하기도 한다)의 형태로 매우 친숙하게 결합합니다. 한국어의 '이따금', '가끔', '때때로', '어쩌다 한번'에 해당합니다.",
+    "formation": "주어 + 偶然 + (也 / 会 +) 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그녀는 세타를 짜는 데 몰두하고 있으면서도, 이따금 눈을 들어 벽에 걸린 괘종시계를 쳐다보곤 했다."
+      }
+    ]
   },
   "zh_尽快V_526": {
-    "title": "尽快 V (as soon as possible)",
-    "shortExplanation": "as soon as possible",
-    "longExplanation": "as soon as possible. Pinyin: jǐnkuài V",
-    "formation": "jǐnkuài V"
+    "title": "尽快 + 동사 (부사: 가능한 한 빨리 ~하다, 조속히 ~하다, 신속하게 ~하다)",
+    "shortExplanation": "동사 앞에 부사어로 쓰여, 지체 없이 최대한 빠른 시간 내에 해당 동작을 실행할 것을 요구하거나 나타냅니다('가능한 한 빨리', '조속히').",
+    "longExplanation": "'尽快'(jǐnkuài: '尽'의 표준 성조는 제3성)는 시간과 속도를 나타내는 부사로, '최대한 서둘러서'라는 뜻을 지닙니다. 술어 동사 앞에 놓여, 시간을 최대한 단축하여 신속하고 지체 없이 일을 처리함을 나타냅니다. 업무 지시, 공적인 공지, 비즈니스 서신, 긴급한 부탁 등에서 매우 빈번하게 사용됩니다(예: '尽快回复' 가능한 한 빨리 답장하다, '尽快处理' 조속히 처리하다, '尽快查明' 신속히 규명하다). 한국어의 '가능한 한 빨리', '조속히', '신속하게', '하루빨리'에 해당합니다.",
+    "formation": "주어 + 尽快 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "신제품에 약간의 문제가 생겼으니, 당신과 옌 매니저가 가능한 한 빨리 이 일을 상의하도록 하세요."
+      }
+    ]
   },
   "zh_一旦V_527": {
-    "title": "一旦 V (once (something happens))",
-    "shortExplanation": "once (something happens)",
-    "longExplanation": "once (something happens). Pinyin: yīdàn V",
-    "formation": "yīdàn V"
+    "title": "一旦 + 동사 (가정 접속사: 일단 ~하면, 한번 ~하게 되면, 만일 ~할 경우)",
+    "shortExplanation": "불확정적인 미래의 가정을 나타내는 서면어 접속사로, 어떤 사태가 일단 발생하면 돌이킬 수 없거나 중대한 결과가 이어짐을 나타냅니다('일단 ~하면').",
+    "longExplanation": "'一旦'(yīdàn)은 가정을 나타내는 격식 있는 서면어 접속사로, 앞 절의 머리에 놓여 '만약 어느 날 갑자기 ~하게 된다면', '일단 한번 ~하기만 하면'이라는 조건을 제시합니다. 대개 돌이키기 어렵거나 파급 효과가 막대한 중대한 사태를 전제로 할 때 자주 쓰이며, 뒤 절에서는 보통 부사 '就'(곧), '便'(바로), '会'(~하게 되다)와 호응하여 피할 수 없는 필연적 결과를 이끌어냅니다(예: '机会一旦失去，就很难再得' 기회는 일단 잃어버리면 다시 얻기 어렵다). 한국어의 '일단 ~하면', '한번 ~하기만 하면', '만일 ~할 경우'에 해당합니다.",
+    "formation": "(주어 +) 一旦 + 동사 / 절, (주어 +) 就 / 便 / 会……",
+    "examples": []
   },
   "zh_难免_529": {
-    "title": "难免 (inevitable)",
-    "shortExplanation": "inevitable",
-    "longExplanation": "inevitable. Pinyin: nánmiǎn",
-    "formation": "nánmiǎn"
+    "title": "难免 (형용사·부사: 피하기 어렵다, 면하기 어렵다, 불가피하다)",
+    "shortExplanation": "객관적인 조건이나 정황상 불리한 상황이나 실수가 생기는 것을 완전히 피할 수는 없음을 나타냅니다('피하기 어렵다', '불가피하다').",
+    "longExplanation": "'难免'(nánmiǎn)은 '면하기 어렵다'라는 뜻의 형용사 또는 부사입니다. 객관적인 상황, 초기 단계의 미숙함, 혹은 피할 수 없는 조건으로 인해 부정적이거나 바람직하지 못한 결과가 발생하는 것은 자연스럽고 필연적이어서 면하기 어려움을 나타냅니다. 문장 끝에서 서술어로 '是难免的'(피하기 어려운 일이다)의 형태로 자주 쓰이며, 부사어로서 술어 앞에 놓여 '难免会……'(불가피하게 ~하게 마련이다) 형태로도 널리 쓰입니다. 한국어의 '피하기 어렵다', '면하기 어렵다', '불가피하다'에 해당합니다.",
+    "formation": "주어 + 是难免的 (또는 주어 + 难免 + [会 +] 동사 / 형용사)",
+    "examples": [
+      {
+        "translation": "막 일을 시작했을 때는 이런 실수가 불가피한 법이다."
+      }
+    ]
   },
   "zh_自从TIME_530": {
-    "title": "自从 TIME (since TIME)",
-    "shortExplanation": "since TIME",
-    "longExplanation": "since TIME. Pinyin: zìcóng TIME",
-    "formation": "zìcóng TIME"
+    "title": "自从 + 시점 / 절 (시간 개사: ~한 이래로, ~부터, ~한 뒤로 줄곧)",
+    "shortExplanation": "과거의 특정 시점이나 사건을 변화의 출발점으로 이끌어내어, 그때부터 현재까지 이어지는 상태나 변화를 나타냅니다('~이래로', '~부터').",
+    "longExplanation": "'自从'(zìcóng)은 과거의 특정 시점이나 동작을 기점(시작점)으로 도입하는 시간 개사(전치사)입니다. 주로 뒤에 '以后'(이후), '以来'(이래), '起'(부터) 등의 방위사 및 시간 명사와 호응하여 '自从……以后', '自从……以来', '自从……起'의 구조를 이룹니다. 앞 절에서 제시한 과거의 전환점 이후, 주어의 상태나 상황이 계속해서 변하거나 지속되어 왔음을 후속 절에서 서술합니다. 한국어의 '~한 이래로', '~부터', '~한 뒤로 줄곧'에 해당합니다.",
+    "formation": "自从 + 시점 / 과거의 절 (+ 以后 / 以来 / 起), 주어 + 서술어",
+    "examples": [
+      {
+        "translation": "내가 베이징에 온 이래로, 몸이 갈수록 좋아졌다."
+      }
+    ]
   },
   "zh_一致_531": {
-    "title": "一致 (in agreement)",
-    "shortExplanation": "in agreement",
-    "longExplanation": "in agreement. Pinyin: yīzhì",
-    "formation": "yīzhì"
+    "title": "一致 (형용사: 일치하다, 맞다, 같다)",
+    "shortExplanation": "의견, 견해, 보조, 목표 등이 서로 어긋나지 않고 똑같이 맞아떨어짐을 서술어로 나타냅니다('일치하다', '같다').",
+    "longExplanation": "'一致'(yīzhì)는 둘 이상의 주체 간에 의견, 생각, 관점, 태도, 목표 등이 모순되거나 갈라지지 않고 하나로 조화롭게 부합함을 나타내는 형용사입니다. 서술어 위치에 서서 주어의 상태를 설명하며, 주로 '意见'(의견), '看法'(견해), '步调'(발걸음/보조), '目标'(목표) 등의 명사와 어울립니다. 부정형인 '不一致'(일치하지 않다, 엇갈리다)의 형태로도 매우 널리 쓰입니다. 한국어의 '일치하다', '뜻이 맞다', '하나가 되다'에 해당합니다.",
+    "formation": "주어 (의견 / 생각 / 관점 등) + (不 +) 一致",
+    "examples": [
+      {
+        "translation": "그들의 의견은 일치하지 않는다."
+      }
+    ]
   },
   "zh_一致V_532": {
-    "title": "一致 V (unanimously)",
-    "shortExplanation": "unanimously",
-    "longExplanation": "unanimously. Pinyin: yīzhì V",
-    "formation": "yīzhì V"
+    "title": "一致 + 동사 (부사: 일치하여, 만장일치로, 한목소리로, 다 같이)",
+    "shortExplanation": "집단 구성원 전원이 이견 없이 동일한 판단이나 결정을 내리거나 한마음으로 행동함을 나타냅니다('만장일치로', '일치하여', '한목소리로').",
+    "longExplanation": "'一致'(yīzhì)는 복수의 사람이나 집단 주어 뒤에서 부사어로 쓰여, 모든 구성원이 단 한 사람의 이견도 없이 동일한 견해를 표명하거나 일치된 결정을 내림을 나타냅니다. 주로 판단, 의결, 표결, 발언을 나타내는 술어 동사와 결합합니다(예: '一致认为' 만장일치로 ~라고 여기다, '一致通过' 만장일치로 통과시키다, '一致同意' 전원 일치로 동의하다, '一致决定' 한뜻으로 결정하다). 공식 회의나 학술 및 언론 보도에서 품격 있게 쓰입니다. 한국어의 '만장일치로', '일치하여', '한목소리로', '뜻을 모아'에 해당합니다.",
+    "formation": "주어 (복수 / 집단) + 一致 + 동사 (생각하다 / 통과시키다 / 동의하다 / 결정하다 등)",
+    "examples": [
+      {
+        "translation": "전문가들은 이것이 성공적인 제품이라는 데 일치된 의견을 보였다(만장일치로 판단했다)."
+      }
+    ]
   },
   "zh_某MN_533": {
-    "title": "某 (M) N (certain)",
-    "shortExplanation": "certain",
-    "longExplanation": "certain. Pinyin: mǒu (M) N",
-    "formation": "mǒu (M) N"
+    "title": "某 (+ 양사) + 명사 (부정 대명사: 어떤 ~, 모 ~, 어느 ~ [익명·불특정 지정])",
+    "shortExplanation": "사람, 사물, 장소, 시간 등의 이름을 구체적으로 밝힐 필요가 없거나 익명으로 처리하고자 할 때 쓰는 대명사입니다('어떤 ~', '모 ~').",
+    "longExplanation": "'某'(mǒu)는 특정 대상(인물, 장소, 사물, 시기, 분야 등)을 가리키되, 이름을 굳이 명시할 필요가 없거나 사생활 보호·보안 등의 이유로 구체적으로 밝히지 않고자 할 때 사용하는 부정지칭 대명사입니다. 명사 앞에 직접 결합하기도 하고(예: '某人' 모 씨/어떤 사람, '某地' 모처/어느 곳, '某事' 어떤 일), 양사를 매개로 하여 결합하기도 합니다(예: '某个方面' 어떤 방면/특정 분야, '某一所大学' 모 대학). 한국어의 '어떤 ~', '어느 ~', '모 ~(모 씨, 모처)'에 해당합니다.",
+    "formation": "某 (+ 양사) + 명사 (사람 / 장소 / 방면 / 사물 등)",
+    "examples": [
+      {
+        "translation": "어떤 방면의 훈련을 진행하면, 그 방면의 능력을 향상시킬 수 있다."
+      }
+    ]
   },
   "zh_某某_534": {
-    "title": "某某 (so-and-so)",
-    "shortExplanation": "so-and-so",
-    "longExplanation": "so-and-so. Pinyin: mǒumǒu",
-    "formation": "mǒumǒu"
+    "title": "某某 (대명사: 아무개, 누구누구, 모 씨, 모모 [익명 표기])",
+    "shortExplanation": "사람의 성명이나 단체명 등을 구체적으로 명시하지 않고 가명이나 익명으로 대체하여 가리키는 대명사입니다('아무개', '누구누구', '모 씨').",
+    "longExplanation": "'某某'(mǒumǒu)는 사람의 이름, 관공서, 기업 등의 명칭을 직접 밝히지 않고 가명이나 익명으로 대신할 때 사용하는 대칭 대명사입니다. 법적 문서나 보도에서 사생활을 보호하기 위해 성 뒤에 붙여 쓰거나(예: '张某某' 장 아무개/장 모 씨), 구체적인 대상 없이 '아무개'라는 표본으로 인용할 때 단독으로 씁니다. 유적지 등에 낙서할 때 흔히 쓰이는 '某某到此一游'(아무개 다녀가다)가 대표적인 예입니다. 한국어의 '아무개', '누구누구', '아무아무개', '모 씨'에 해당합니다.",
+    "formation": "某某 (또는 성 + 某某 / 某某 + 조직·명사)",
+    "examples": [
+      {
+        "translation": "벽에 '아무개 이곳에 다녀가다'라고 낙서하는 행위는 비문명적이고 몰지각한 짓이다."
+      }
+    ]
   },
   "zh_name某某某_535": {
-    "title": "name 某/某某 (placeholder for a name)",
-    "shortExplanation": "placeholder for a name",
-    "longExplanation": "placeholder for a name. Pinyin: name mǒu/ mǒumǒu",
-    "formation": "name mǒu/ mǒumǒu"
+    "title": "성씨 + 某 / 某某 (대명사: ~ 모 씨, ~ 아무개, 모[某])",
+    "shortExplanation": "사람의 성씨 뒤에 붙어, 실명을 직접 밝히기 곤란하거나 굳이 밝힐 필요가 없는 인물을 익명으로 가리키는 대명사입니다('~ 모 씨', '~ 아무개').",
+    "longExplanation": "'某'(mǒu) 또는 첩어 형태인 '某某'(mǒumǒu)는 사람의 성씨 바로 뒤에 결합하여(예: '李某', '张某某') 구체적인 실명을 대신하여 익명으로 가리키는 대명사로 쓰입니다. 뉴스 보도, 사건·사고 기사, 사법 재판 기록, 공문서 등에서 개인의 프라이버시를 보호해야 하거나, 일반적인 예시문에서 굳이 특정인의 실명을 거론할 필요가 없을 때 널리 활용됩니다. 한국어의 '~ 모 씨', '~ 아무개'에 해당합니다.",
+    "formation": "성씨 + 某 / 某某 (또는 신분·직책 명사 + 성씨 + 某 / 某某)",
+    "examples": [
+      {
+        "translation": "회사 영업 사원 이 모 씨는 이 말을 듣고 몹시 기뻐했다."
+      }
+    ]
   },
   "zh_幸亏_536": {
-    "title": "幸亏…… (thankfully…)",
-    "shortExplanation": "thankfully…",
-    "longExplanation": "thankfully…. Pinyin: xìngkuī……",
-    "formation": "xìngkuī……"
+    "title": "幸亏 (부사·접속사: 다행히, 천만다행으로, 덕분에)",
+    "shortExplanation": "다행스러운 조건이나 적절한 대처 덕분에 위험이나 손실, 불리한 결과를 가까스로 모면했음을 나타냅니다('다행히', '천만다행으로').",
+    "longExplanation": "'幸亏'(xìngkuī)는 부사 또는 접속사로 문두나 주어 뒤에 쓰여, 뜻밖의 요행이나 시의적절한 조치, 주변의 도움 덕분에 심각한 피해나 불행한 결말을 모면할 수 있었음을 안도하며 나타냅니다. 후속 절에서는 긍정적 결과를 강조하는 '才'나, 그렇지 않았을 경우의 위험을 가정하는 '否则', '要不然', '不然'(그렇지 않았다면) 등과 긴밀하게 호응합니다. 한국어의 '다행히', '천만다행으로', '덕분에 ~을 모면했다'에 해당합니다.",
+    "formation": "幸亏 + 절 / 동사구 , (否则 / 要不然 / 才 +) 결과절",
+    "examples": []
   },
   "zh_行动_538": {
-    "title": "行动 (activity, action)",
-    "shortExplanation": "activity, action",
-    "longExplanation": "activity, action. Pinyin: xíngdòng",
-    "formation": "xíngdòng"
+    "title": "行动 (명사: 행동, 활동, 조치, 작전)",
+    "shortExplanation": "어떤 목적을 달성하기 위해 실제로 실천에 옮기는 구체적인 행위, 활동, 조치나 작전을 가리킵니다('행동', '활동', '조치').",
+    "longExplanation": "'行动'(xíngdòng)은 명사로서 일정한 방침이나 목표 아래 실제로 실행에 옮기는 구체적인 행위나 실천, 조직적인 활동, 혹은 군사·보안 작전을 가리킵니다. 말이나 생각에 머무르지 않고 현실에서 실행함을 뜻하며, '采取行动'(조치를 취하다/행동에 나서다), '付诸行动'(행동에 옮기다), '实际行动'(실제 행동), '行动计划'(행동 계획), '军事行动'(군사 작전) 등의 표현으로 널리 사용됩니다. 한국어의 '행동', '활동', '조치', '작전'에 해당합니다.",
+    "formation": "주어 + (采取 / 付诸 +) 行动 (또는 관형어 + 行动)",
+    "examples": []
   },
   "zh_行动_540": {
-    "title": "行动 (move around)",
-    "shortExplanation": "move around",
-    "longExplanation": "move around. Pinyin: xíngdòng",
-    "formation": "xíngdòng"
+    "title": "行动 (동사·명사: 거동하다, 몸을 움직이다, 거동, 신체 동작)",
+    "shortExplanation": "사람이 걷거나 서고 앉는 등 몸을 움직이는 신체적인 거동이나 보행을 나타냅니다('거동하다', '몸을 움직이다', '거동').",
+    "longExplanation": "'行动'(xíngdòng)은 동사 또는 명사로서 사람이 걷고 이동하거나 일상적으로 몸을 움직이는 신체적 거동이나 동작 자체를 가리킵니다. 주로 질병, 부상, 노환 등으로 인한 신체적 움직임의 상태를 서술할 때 쓰이며, '行动不便'(거동이 불편하다), '行动敏捷'(몸놀림이 민첩하다), '行动迟缓'(동작이 굼뜨다), '自由行动'(자유롭게 거동하다) 등의 술어 및 보어 결합으로 매우 자주 사용됩니다. 한국어의 '거동하다', '몸을 움직이다', '거동'에 해당합니다.",
+    "formation": "주어 + 行动 + 不便 / 敏捷 / 迟缓 (거동이 불편하다/민첩하다 등)",
+    "examples": [
+      {
+        "translation": "그는 운동하다가 부상을 입어서 거동이 불편하다."
+      }
+    ]
   },
   "zh_行动_541": {
-    "title": "行动 (act)",
-    "shortExplanation": "act",
-    "longExplanation": "act. Pinyin: xíngdòng",
-    "formation": "xíngdòng"
+    "title": "行动 (자동사: 행동하다, 움직이다, 활동하다)",
+    "shortExplanation": "목적이나 계획을 가지고 실제로 몸소 행동을 개시하거나 활동함을 나타냅니다('행동하다', '움직이다').",
+    "longExplanation": "'行动'(xíngdòng)은 자동사로서 생각이나 말에 머물지 않고 실제로 발을 떼어 실천에 착수하거나, 일정한 방식에 따라 활동을 전개함을 뜻합니다. 행동의 방식이나 양태를 나타내는 부사어와 자주 어울리며, '单独行动'(단독으로 행동하다), '秘密行动'(비밀리에 움직이다), '共同行动'(공동으로 행동하다), '行动起来'(행동에 나서다) 등의 형태로 자주 쓰입니다. 한국어의 '행동하다', '움직이다', '활동하다'에 해당합니다.",
+    "formation": "주어 + (부사어: 单独 / 秘密 / 共同 +) 行动",
+    "examples": [
+      {
+        "translation": "어떤 조류는 단독으로 행동하는 것을 좋아한다."
+      }
+    ]
   },
   "zh_义务_542": {
-    "title": "义务 (obligation)",
-    "shortExplanation": "obligation",
-    "longExplanation": "obligation. Pinyin: yìwù",
-    "formation": "yìwù"
+    "title": "义务 (명사: 의무, 책무, 마땅히 해야 할 책임)",
+    "shortExplanation": "법률이나 도덕상 마땅히 행해야 하는 책임이나 직분을 나타냅니다('의무', '책무').",
+    "longExplanation": "'义务'(yìwù)는 명사로서 법률의 규정이나 사회적 도덕 규범에 의해 개인이 마땅히 이행해야 할 책임이나 본분을 뜻합니다('权利'(권리)의 상대 개념). 주로 '承担义务'(의무를 짊어지다), '履行义务'(의무를 이행하다), '尽义务'(의무를 다하다)처럼 동사의 목적어로 쓰여 책임 완수를 나타냅니다. 한국어의 '의무', '책무', '도리'에 해당합니다.",
+    "formation": "주어 + (履行 / 尽 / 承担 +) 义务 (또는 명사 + 的 + 义务)",
+    "examples": [
+      {
+        "translation": "고향을 건설하는 일은 모두에게 책임이 있으니, 우리 또한 이 의무를 짊어져야 한다."
+      }
+    ]
   },
   "zh_义务_543": {
-    "title": "义务 (compulsory)",
-    "shortExplanation": "compulsory",
-    "longExplanation": "compulsory. Pinyin: yìwù",
-    "formation": "yìwù"
+    "title": "义务 + 명사 (관형어: 자원봉사의, 무보수의, 공익의 / 의무의)",
+    "shortExplanation": "명사 앞에서 관형어로 쓰여 대가를 받지 않고 공공을 위해 자발적으로 봉사하는 활동, 또는 법적 의무 제도를 나타냅니다('무보수의', '자원봉사의', '공익의').",
+    "longExplanation": "'义务'(yìwù)는 명사 앞에서 관형어 역할을 하여 크게 두 가지 의미 범주를 이룹니다. 첫째는 보수나 대가를 일절 바라지 않고 공익과 사회를 위해 자발적으로 헌신·봉사하는 성격을 나타냅니다(예: '义务劳动' 무보수 공익 근로/자원봉사 활동, '义务献血' 자발적 무보수 헌혈, '义务咨询' 무료 공익 상담). 둘째는 국가 법률에 따라 의무적으로 이행하도록 규정된 제도적 성격을 나타냅니다(예: '义务教育' 의무 교육). 한국어의 '무보수의', '자원봉사의', '공익의', '의무~'에 해당합니다.",
+    "formation": "义务 + 명사 (劳动 / 教育 / 献血 / 诊疗 등)",
+    "examples": [
+      {
+        "translation": "우리는 매 학기 적어도 세 번 이상 무보수 공익 노동(봉사 활동)에 참여해야 한다."
+      }
+    ]
   },
   "zh_朝_544": {
-    "title": "朝 (toward)",
-    "shortExplanation": "toward",
-    "longExplanation": "toward. Pinyin: cháo",
-    "formation": "cháo"
+    "title": "朝 (개사: ~을 향해, ~ 쪽으로, ~에게)",
+    "shortExplanation": "동작이 향하는 구체적인 방위, 장소나 대상을 이끄는 개사입니다('~을 향해', '~ 쪽으로').",
+    "longExplanation": "'朝'(cháo)는 개사(전치사)로서 방향, 처소, 또는 인칭 명사 앞에 놓여 동작이 지향하는 공간적 방위나 대상을 이끌어 동사를 수식하는 부사어 역할을 합니다(개사 '向'과 거의 동일한 쓰임). 신체의 이동(예: '朝前走' 앞으로 걷다), 시선이나 표정의 방향(예: '朝窗外看' 창밖을 내다보다, '朝他招手' 그를 향해 손을 흔들다)을 명확하게 한정합니다. 한국어의 '~을 향해', '~ 쪽으로', '~에게'에 해당합니다.",
+    "formation": "주어 + 朝 + 방향·장소·대상 + 동사구",
+    "examples": []
   },
   "zh_朝_546": {
-    "title": "朝 (to face toward)",
-    "shortExplanation": "to face toward",
-    "longExplanation": "to face toward. Pinyin: cháo",
-    "formation": "cháo"
+    "title": "朝 (동사: ~을 향하다, ~쪽으로 향해 있다, ~에 면하다)",
+    "shortExplanation": "건물, 문, 창문 등의 전면이 특정한 방위나 방향을 마주보고 있음을 나타내는 동사입니다('~을 향하다', '~에 면하다').",
+    "longExplanation": "'朝'(cháo)는 타동사로서 건축물, 대문, 창문, 방 또는 신체의 정면이 특정 방위나 방향을 정면으로 마주보고 있음을 나타냅니다. 특히 건물의 좌향이나 채광 방향을 서술할 때 빈번하게 쓰이며, '坐北朝南'(북을 등지고 남향으로 앉다), '坐西朝东'(서쪽에 앉아 동쪽을 향하다), '窗户朝南'(창문이 남향이다)처럼 방위사와 결합하여 고정된 배치를 표현합니다. 한국어의 '~을 향해 있다', '~에 면하다', '~향이다'에 해당합니다.",
+    "formation": "명사 (문 / 창문 / 방 / 건물 등) + 朝 + 방위명사 (东 / 南 / 西 / 北 등)",
+    "examples": [
+      {
+        "translation": "우리 학교의 정문은 서쪽에 위치하여 동쪽을 향하고 있다."
+      }
+    ]
   },
   "zh_简直_547": {
-    "title": "简直 (practically, in essence)",
-    "shortExplanation": "practically, in essence",
-    "longExplanation": "practically, in essence. Pinyin: jiǎnzhí",
-    "formation": "jiǎnzhí"
+    "title": "简直 (부사: 그야말로, 거의, 완전히, 꼭 ~나 다름없다)",
+    "shortExplanation": "강한 과장과 감탄의 어기를 띠며, 어떤 상태가 거의 그 지경에 이르렀거나 그와 진배없음을 나타냅니다('그야말로', '완전히').",
+    "longExplanation": "'简直'(jiǎnzhí)은 부사로서 서술어 앞에 놓여 강렬한 과장, 놀라움, 감탄을 담아 어떤 상황이나 성질이 극단적인 정도에 달하여 '그야말로 ~나 다름없다', '완전히 ~이다'라고 단정할 때 쓰입니다. '是'(이다), '像'(같다), '太'(너무), '不敢'(감히 ~하지 못하다) 등과 매우 긴밀하게 호응하며, '简直是奇迹'(그야말로 기적이다), '简直不可思议'(도저히 상상조차 할 수 없다) 등의 형태로 빈번하게 활용됩니다. 한국어의 '그야말로', '거의', '완전히', '꼭 ~나 진배없다'에 해당합니다.",
+    "formation": "주어 + 简直 + (是 / 像 / 不敢 +) 서술어 (동사구 / 형용사구)",
+    "examples": [
+      {
+        "translation": "선장은 그야말로 미쳐버린 것이나 다름없다!"
+      }
+    ]
   },
   "zh_来_548": {
-    "title": "来 (over)",
-    "shortExplanation": "over",
-    "longExplanation": "over. Pinyin: lái",
-    "formation": "lái"
+    "title": "来 (조사·개수사: 약, 대략, ~가량, ~남짓, ~안팎)",
+    "shortExplanation": "수사 또는 양사 뒤에 붙어 수량이 대략 그 수치 언저리임을 나타내는 개수 조사입니다('~가량', '~남짓', '~안팎').",
+    "longExplanation": "'来'(lái)는 수사나 양사 뒤에 쓰여 정확하지 않은 대략적인 수량(개수, '左右'와 유사)을 나타내는 조사입니다. 어순상의 규칙이 명확한데, ① 10, 20, 100 등 십 단위 이상의 정수 뒤에서는 양사 앞에 위치하여 '수사 + 来 + 양사 + 명사' 형태를 취하고(예: '二十来岁' 스무 살 안팎, '三十来个' 서른 개가량), ② 10 미만의 단수 뒤에 도량형이나 양사가 올 때는 양사 뒤에 위치하여 '수사 + 양사 + 来 + 명사/형용사' 형태를 취합니다(예: '五斤来重' 5근 남짓한 무게, '两米来长' 2미터가량의 길이). 한국어의 '약', '대략', '~가량', '~남짓', '~안팎'에 해당합니다.",
+    "formation": "수사 (10의 배수 등) + 来 + 양사 + 명사 (또는 수사 + 양사 + 来 + 명사 / 형용사)",
+    "examples": [
+      {
+        "translation": "그는 거의 매일 5근 남짓 나가는 큰 물고기를 낚을 수 있다."
+      }
+    ]
   },
   "zh_一来是二来是_549": {
-    "title": "一来(是)……二来(是)…… (First… secondly…)",
-    "shortExplanation": "First… secondly…",
-    "longExplanation": "First… secondly…. Pinyin: yīlái( shì)…… èrlái( shì)……",
-    "formation": "yīlái( shì)…… èrlái( shì)……"
+    "title": "一来(是)……二来(是)…… (접속사: 한편으로는 ~하고 다른 한편으로는 ~하다 / 첫째는 ~이고 둘째는 ~이다)",
+    "shortExplanation": "어떤 행위나 결정을 내리게 된 두 가지 대등한 원인, 이유, 목적을 차례대로 병렬 열거할 때 씁니다('첫째는 ~이고 둘째는 ~이다').",
+    "longExplanation": "'一来(是)……二来(是)……'(yīlái (shì)... èrlái (shì)...)는 어떤 행동이나 결정을 촉발한 두 가지 핵심적인 원인, 이유, 혹은 목적을 병렬적으로 나열하여 밝히는 접속사 표현입니다('一则……二则……'과 동일한 구조). 논리적 정연함을 부여하며, 일상 구어에서는 문맥에 따라 '是'나 '来'를 자유롭게 생략하여 '一是……二是……' 형태로도 널리 쓰입니다. 한국어의 '첫째는 ~ 때문이고 둘째는 ~ 때문이다', '한편으로는 ~하고 다른 한편으로는 ~하다'에 해당합니다.",
+    "formation": "주어 + 一来(是) + 이유·목적 1 , 二来(是) + 이유·목적 2",
+    "examples": [
+      {
+        "translation": "제가 이곳에 여러분을 뵈러 온 것은, 첫째로는 여러분께 과일을 전해 드리기 위함이고, 둘째로는 명절을 보내는 데 다른 어려움은 없으신지 살펴보기 위함입니다."
+      }
+    ]
   },
   "zh_至于_550": {
-    "title": "至于 (as for)",
-    "shortExplanation": "as for",
-    "longExplanation": "as for. Pinyin: zhìyú",
-    "formation": "zhìyú"
+    "title": "至于 (개사: ~에 관해서는, ~에 대해서는, ~에 이르러서는 [화제 전환])",
+    "shortExplanation": "뒷문장의 머리에 놓여, 앞서 말한 내용과 관련된 또 다른 대상이나 새로운 화제로 말을 자연스럽게 돌릴 때 씁니다('~에 관해서는', '~에 대해서는').",
+    "longExplanation": "'至于'(zhìyú)는 개사로서 후속 절의 첫머리에 놓여, 앞에서 이미 언급한 내용과 연관성을 지닌 또 다른 측면이나 새로운 화제로 초점을 이동시킬 때 사용됩니다('关于', '说到'와 상통). 사안의 여러 갈래를 항목별로 분리하여 명확하게 밝힐 때 유용하며, 한국어의 '~에 관해서는', '~에 대해서는', '~로 말하자면'에 해당합니다.",
+    "formation": "절 1 , 至于 + 명사 / 화제절 , 설명절",
+    "examples": [
+      {
+        "translation": "우리는 내년에 결혼하기로 결정했는데, 구체적인 날짜에 관해서는 더 상의해 보아야 한다."
+      }
+    ]
   },
   "zh_至于_551": {
-    "title": "至于 (go so far as)",
-    "shortExplanation": "go so far as",
-    "longExplanation": "go so far as. Pinyin: zhìyú",
-    "formation": "zhìyú"
+    "title": "至于 (동사: ~ 지경에 이르다, ~할 정도이다 [주로 부정문 '不至于'로 쓰여 '~할 정도는 아니다'])",
+    "shortExplanation": "사태가 심각하거나 극단적인 지경에 이름 나타내는 동사로, 대개 부정형 '不至于' 형태로 쓰여 '~할 정도는 아니다'를 나타냅니다.",
+    "longExplanation": "'至于'(zhìyú)는 타동사로서 사태나 행동이 특정한 심각한 경지나 부정적이고 극단적인 결말에까지 도달함을 나타냅니다. 현대 중국어 구어와 문어에서는 거의 대부분 부정사 '不'와 결합한 '不至于'(~할 정도는 아니다, ~하는 지경에까지는 이르지 않다)나 반어형인 '何至于'(어찌 ~할 지경에 이르겠는가)의 꼴로 쓰입니다. 상대방의 지나친 염려를 덜어주거나 사태가 최악으로 치닫지 않을 것임을 확언할 때 쓰입니다. 한국어의 '~할 지경은 아니다', '~할 정도는 아니다'에 해당합니다.",
+    "formation": "주어 + (不 / 何 / 哪 +) 至于 + 동사구 / 절",
+    "examples": [
+      {
+        "translation": "그가 거짓말까지 할 지경은 아니다(거짓말을 할 정도는 아니다)."
+      }
+    ]
   },
   "zh_总算_552": {
-    "title": "总算 (finally)",
-    "shortExplanation": "finally",
-    "longExplanation": "finally. Pinyin: zǒngsuàn",
-    "formation": "zǒngsuàn"
+    "title": "总算 (부사: 마침내, 드디어, 겨우, 가까스로)",
+    "shortExplanation": "오랜 시간 기다리거나 우여곡절과 고생 끝에, 바라던 결과가 마침내 실현되었음을 나타냅니다('마침내', '드디어', '겨우').",
+    "longExplanation": "'总算'(zǒngsuàn)은 서술어 앞에 놓이는 부사로서, 오랜 기다림이나 온갖 우여곡절, 노력 끝에 오랜 소원이나 목적하던 결과가 마침내 성취되었음을 나타냅니다(마음속의 짐을 덜어낸 듯한 안도감과 기쁨이 담겨 있으며, '终于', '好不容易'와 유사). 한편 다른 문맥에서는 완벽하지는 않으나 '대체로 그만하면 됐다', '그나마 다행이다'라는 소극적 긍정의 의미로 쓰이기도 합니다. 한국어의 '마침내', '드디어', '겨우', '가까스로'에 해당합니다.",
+    "formation": "주어 + 总算 + 서술어 (동사구 / 형용사구) (+ 了)",
+    "examples": [
+      {
+        "translation": "소통을 거치고 나서야 대감독도 마침내 제대로 이해하게 되었다."
+      }
+    ]
   },
   "zh_总算_553": {
-    "title": "总算 (finally)",
-    "shortExplanation": "finally",
-    "longExplanation": "finally. Pinyin: zǒngsuàn",
-    "formation": "zǒngsuàn"
+    "title": "总算 (부사: 마침내, 겨우, 가까스로, 어쨌든 결국)",
+    "shortExplanation": "오랜 시간이나 우여곡절, 노력 끝에 바람이 마침내 이루어졌거나, 미흡한 조건 속에서도 안도할 만한 최소한의 결과를 얻었음을 나타냅니다('마침내', '겨우', '어쨌든').",
+    "longExplanation": "“总算”(zǒngsuàn)은 술어 동사나 형용사 앞에 놓이는 부사로, 긴 시간이나 많은 고난과 우여곡절을 겪은 뒤 마침내 어떤 바람이나 결과가 달성되었음을 나타냅니다. 특히 불만족스럽거나 열악한 상황 속에서도 '그래도 다행히 최소한의 결과는 얻었다'는 식의 안도감, 다행스러움, 만족감을 강하게 나타낼 때 자주 쓰입니다. 비슷한 의미의 “终于”가 객관적인 노력의 결실이나 사실의 완성을 강조한다면, “总算”은 화자의 '휴, 다행이다'라는 주관적인 안도의 정서가 짙게 묻어납니다. 한국어의 '마침내', '겨우', '가까스로', '어쨌든 다행히'에 해당합니다.",
+    "formation": "주어 + (但 / 可是 +) 总算 + 동사구 / 절",
+    "examples": [
+      {
+        "translation": "비록 이 호텔이 썩 좋지는 않지만, 그래도 어쨌든 잘 곳은 생겼다."
+      }
+    ]
   },
   "zh_V下来_554": {
-    "title": "V 下来 (V down)",
-    "shortExplanation": "V down",
-    "longExplanation": "V down. Pinyin: V xiàlai",
-    "formation": "V xiàlai"
+    "title": "동사 + 下来 (방향보어 파생용법: 고정되다, 결정되다, 가라앉다, 기록해 두다)",
+    "shortExplanation": "동작을 통해 상태가 유동적이고 불확실한 상태에서 고정·안정된 상태로 정착되거나, 기록으로 남겨짐을 나타내는 방향보어의 파생용법입니다('~해 두다', '~되어 정해지다').",
+    "longExplanation": "“下来”(xiàlai)는 본래의 물리적 공간 이동(위에서 말하는 쪽으로 내려옴)에서 나아가 다양한 추상적 의미를 나타내는 방향보어로 널리 쓰입니다. 주요 쓰임은 다음과 같습니다: ① 사물이나 상황이 변화·유동적인 상태에서 벗어나 고정되고 정지하며 확정되는 상태로 귀결됨(예: “定下来” 확정되다/결정되다, “停下来” 멈춰 서다, “静下来” 진정되다/차분해지다). ② 행위를 통해 정보나 순간을 고정하여 보존·기록함(예: “记下来” 적어 두다, “拍下来” 찍어 두다). 예문의 “定下来”는 날짜나 계획 등이 최종적으로 매듭지어져 결정되었음을 의미합니다. 한국어의 '~해 두다', '~되어 정해지다', '~해 가라앉다'에 해당합니다.",
+    "formation": "주어 + 동사 + 下来 (+ 了 / 吗)",
+    "examples": [
+      {
+        "translation": "당신의 논문은 대략 언제쯤 발표되나요? 확정되었나요?"
+      }
+    ]
   },
   "zh_舍得_555": {
-    "title": "舍得 (willing (to to let go))",
-    "shortExplanation": "willing (to to let go)",
-    "longExplanation": "willing (to to let go). Pinyin: shěde",
-    "formation": "shěde"
+    "title": "舍得 (동사: 아까워하지 않다, 아낌없이 내주다, 선뜻 포기하다)",
+    "shortExplanation": "돈, 시간, 아끼는 물건 등을 내주거나 쓰는 것을 아깝게 여기지 않고 기꺼이 내놓거나 포기할 수 있음을 나타냅니다('아까워하지 않다', '선뜻 내주다').",
+    "longExplanation": "“舍得”(shěde)는 '버리다, 내주다'라는 뜻의 “舍”에 가능의 의미가 더해진 심리 동사입니다. 재물, 시간, 정력, 또는 자신이 아끼는 소중한 물건을 남에게 주거나 소비할 때, 아깝다거나 서운한 마음 없이 기꺼이 포기하거나 내줄 용의가 있음을 나타냅니다(반의어는 “舍不得”). 뒤에 동사구를 취하여 “舍得花钱”(돈을 아낌없이 쓰다), “舍得下功夫”(공을 들이는 데 아까워하지 않다)처럼 자주 쓰입니다. 의문문 “你舍得吗?”는 '차마 아깝지 않니?', '선뜻 내줄 수 있겠니?'라는 뉘앙스를 담고 있습니다. 한국어의 '아까워하지 않다', '아낌없이 내주다', '선뜻 손에서 놓다'에 해당합니다.",
+    "formation": "주어 + 舍得 (+ 목적어 / 동사구)",
+    "examples": [
+      {
+        "translation": "네가 가장 좋아하는 장난감을 어린아이에게 선물로 준다니, 너 아깝지 않니?"
+      }
+    ]
   },
   "zh_舍不得_556": {
-    "title": "舍不得 (unwilling (to to let go))",
-    "shortExplanation": "unwilling (to to let go)",
-    "longExplanation": "unwilling (to to let go). Pinyin: shěbude",
-    "formation": "shěbude"
+    "title": "舍不得 (동사: 아까워하다, 차마 ~하지 못하다, 서운해하다, 아쉬워하다)",
+    "shortExplanation": "아끼고 사랑하는 마음이나 미련 때문에 차마 헤어지지 못하거나, 돈이나 물건을 쓰는 것이 아까워 망설이는 마음을 나타냅니다('아까워하다', '차마 못하다').",
+    "longExplanation": "“舍不得”(shěbude)는 “舍得”의 부정 형태로, 일상생활에서 정서적 애착이나 아쉬움을 나타낼 때 가장 흔히 쓰이는 심리 동사 중 하나입니다. 사람이나 장소에 대한 정이 깊어 차마 떠나지 못하고 발길을 돌리기 아쉬워하는 감정(예: “舍不得离开” 헤어지기 아쉬워하다, “舍不得你” 너와 헤어지기 섭섭하다), 혹은 물건이나 돈이 너무 아까워서 먹지도 쓰지도 못하는 감정(예: “舍不得花钱” 돈을 아까워하다, “舍不得吃” 아까워서 못 먹다)을 두루 표현합니다. 한국어의 '아까워하다', '차마 ~하지 못하다', '서운해하다', '아쉬워하다'에 해당합니다.",
+    "formation": "주어 + 舍不得 (+ 목적어 / 동사구)",
+    "examples": [
+      {
+        "translation": "어떤 사람들은 재미있고 유익한 일에 돈을 쓰는 것을 아까워한다."
+      }
+    ]
   },
   "zh_从此_557": {
-    "title": "从此 (since then)",
-    "shortExplanation": "since then",
-    "longExplanation": "since then. Pinyin: cóngcǐ",
-    "formation": "cóngcǐ"
+    "title": "从此 (부사: 그로부터, 그 후로, 그때부터, 이후로)",
+    "shortExplanation": "어떤 사건이나 시점을 전환점이자 출발점으로 삼아, 그때 이후로 새로운 상황이 시작되거나 지속됨을 나타냅니다('그로부터', '그때부터 줄곧').",
+    "longExplanation": "“从此”(cóngcǐ)는 개사 “从”(~부터)과 지시대명사 “此”(이것, 이때)가 결합한 시간 부사로, 문두에 오거나 주어 앞뒤에 놓입니다. 특정 사건, 깨달음, 역사적 계기를 시발점으로 삼아 '그때부터 지금까지 줄곧', '그 이후로 내내' 어떤 행동을 지속하거나 새로운 상태로 접어들었음을 서술할 때 쓰입니다. 전기의 일화나 옛이야기, 소설 등에서 인물의 인생 전환점을 묘사할 때 대단히 빈번하게 활용됩니다. 뒷문장에 “最后”(마침내), “终于”(결국) 등과 호응하여 결말을 맺는 경우가 많습니다. 한국어의 '그로부터', '그 후로', '그때부터', '이후로'에 해당합니다.",
+    "formation": "(계기 / 사건 ，) 从此 + 주어 + 술어 (또는 주어 + 从此 + 술어)",
+    "examples": [
+      {
+        "translation": "그 후로 이백은 각고의 노력을 기울여 공부했고, 마침내 위대한 시인이 되었다."
+      }
+    ]
   },
   "zh_假设_558": {
-    "title": "假设…… (suppose …)",
-    "shortExplanation": "suppose …",
-    "longExplanation": "suppose …. Pinyin: jiǎshè……",
-    "formation": "jiǎshè……"
+    "title": "假设…… (접속사: 가령 ~라면, 만약 ~라고 가정하면, 설령)",
+    "shortExplanation": "가정의 조건을 제시하는 접속사로, 아직 현실에서 일어나지 않은 상황이나 가상의 전제를 설정하여 결과나 대책을 논할 때 씁니다('가령 ~라면', '만일 ~라고 가정하면').",
+    "longExplanation": "“假设”(jiǎshè)는 접속사로 절의 앞머리에 놓여, 아직 실현되지 않았거나 현실과 다른 가상의 전제를 설정함을 나타냅니다(“假如”, “如果”, “假使”와 상통). 청자에게 뜻밖의 비상 상황에 대한 대처 방안을 되묻거나, 논리적인 추론과 가설 검증을 펼칠 때 자주 쓰입니다. 가정절 끝에 조사 “的话”나 어기조사 “呢”를 덧붙여 말맛을 부드럽게 하거나 의문의 어조를 살릴 수 있으며, 이어지는 절에서는 대책이나 귀결을 묻습니다. 한국어의 '가령 ~라면', '만약 ~라고 가정하면', '설사 ~한다고 해도'에 해당합니다.",
+    "formation": "假设 + 가정절 (+ 的话 / 呢) ，(주어 +) 결과 / 대책 의문문",
+    "examples": [
+      {
+        "translation": "만약 네 돈을 다 써버렸다고 가정해 보면 어떨까? 넌 어떻게 해야 하겠니?"
+      }
+    ]
   },
   "zh_假设_559": {
-    "title": "假设 (supposition)",
-    "shortExplanation": "supposition",
-    "longExplanation": "supposition. Pinyin: jiǎshè",
-    "formation": "jiǎshè"
+    "title": "假设 (명사: 가설, 가정, 전제)",
+    "shortExplanation": "어떤 사실이나 현상을 설명하기 위해 잠정적으로 세운 과학적 추측이나 논리적 전제를 나타내는 명사입니다('가설', '가정').",
+    "longExplanation": "“假设”(jiǎshè)는 명사로 쓰일 때, 일정한 근거나 논리에 바탕을 두고 세운 아직 완전히 입증되지 않은 과학적 추측이나 학술적 명제(즉 '가설')를 가리킵니다. 흔히 쓰이는 연어 결합으로는 “提出假设”(가설을 제기하다), “证明假设”(가설을 증명하다), “检验假设”(가설을 검증하다) 등이 있습니다. 문장 안에서 주어나 목적어로 널리 쓰이며, 학술 논문, 과학 탐구, 논리적 토론 등 격식 있는 상황에서 핵심 개념어로 빈번히 등장합니다. 한국어의 '가설', '가정'에 해당합니다.",
+    "formation": "주어 / 관형어 + 假设 (또는 提出 / 证明 / 验证 + 假设)",
+    "examples": [
+      {
+        "translation": "선생님께서 당시 세우셨던 가설은 이미 옳았음이 증명되었습니다."
+      }
+    ]
   },
   "zh_堆_560": {
-    "title": "堆 (a pile, a heap)",
-    "shortExplanation": "a pile, a heap",
-    "longExplanation": "a pile, a heap. Pinyin: duī",
-    "formation": "duī"
+    "title": "堆 (명사: 더미, 무더기, 덤불, 산)",
+    "shortExplanation": "흙이나 자재, 물건 따위가 한곳에 쌓여 무더기를 이룬 더미나 산을 가리키는 명사입니다('더미', '무더기').",
+    "longExplanation": "“堆”(duī)는 명사로 쓰일 때, 사물이나 흙, 쓰레기 등이 한곳에 집중적으로 쌓여 봉긋하게 솟아오른 '더미'나 '무더기' 자체를 가리킵니다. 명사 뒤에 접미사처럼 직접 붙어 복합명사를 이루는 경우가 매우 흔합니다(예: “土堆” 흙더미, “草堆” 짚더미, “垃圾堆” 쓰레기더미, “建筑材料堆” 건축 자재 더미). (한편 양사로 쓰여 “一堆东西”처럼 한 무더기의 사물을 셀 수도 있습니다). 예문의 “建筑材料堆”는 건축 자재가 무더기로 쌓여 있는 현장이나 그 덩어리 자체를 지칭하는 명사적 쓰임입니다. 한국어의 '~더미', '무더기'에 해당합니다.",
+    "formation": "명사 (흙 / 풀 / 쓰레기 / 자재 등) + 堆 (또는 수사 + 堆 + 명사)",
+    "examples": [
+      {
+        "translation": "공장 옆에 건축 자재 더미가 하나 있다."
+      }
+    ]
   },
   "zh_堆_561": {
-    "title": "堆 (to pile, to heap)",
-    "shortExplanation": "to pile, to heap",
-    "longExplanation": "to pile, to heap. Pinyin: duī",
-    "formation": "duī"
+    "title": "堆 (동사: 쌓다, 쌓아 두다, 쌓이다, 처박아 두다)",
+    "shortExplanation": "물건이나 부품 등을 한곳에 겹쳐서 모아 놓거나 어지럽게 쌓아 두는 동작과 상태를 나타내는 동사입니다('쌓다', '쌓아 두다').",
+    "longExplanation": "“堆”(duī)는 동사로 쓰여 물품, 자재, 짐 등을 한곳에 모아 겹쳐 쌓아 올리거나 쌓아 두는 동작을 나타냅니다. 개사 “在”와 빈번하게 호응하여 “堆在 + 장소”(~에 쌓아 두다, ~에 쌓여 있다) 형태의 존현문이나 결과 표현을 구성합니다(예: “把东西堆在门口” 물건을 문 앞에 쌓아 두다, “堆雪人” 눈사람을 뭉쳐 쌓다). 어지럽게 널려 있거나 자리를 차지해 방해된다는 불만 섞인 어조로 쓰이기도 합니다. 한국어의 '쌓다', '쌓아 두다', '무더기로 쌓이다'에 해당합니다.",
+    "formation": "주어 + 堆 + 在 / 满 + 장소 (또는 堆 + 목적어)",
+    "examples": [
+      {
+        "translation": "이 부품들은 어째서 다 여기에 쌓여 있는 거지?"
+      }
+    ]
   },
   "zh_不如NA_562": {
-    "title": "不如 N A (not as A as N)",
-    "shortExplanation": "not as A as N",
-    "longExplanation": "not as A as N. Pinyin: bùrú N A",
-    "formation": "bùrú N A"
+    "title": "不如 + 명사 + 형용사 (비교 구문: ~만큼 …하지 못하다, ~만 못하다)",
+    "shortExplanation": "어떤 속성이나 수준 면에서, 주어가 비교 대상인 명사의 기준에 미치지 못함을 나타내는 비교 구문입니다('~만큼 …하지 못하다', '~보다 못하다').",
+    "longExplanation": "“不如”(bùrú)를 활용한 전형적인 비교 구문으로, '주어 + 不如 + 비교 대상(명사) + 형용사' 형태로 사용됩니다. 비교의 기준이 되는 명사 뒤에 형용사를 두어 특정 측면의 정도를 계량하며, 주어가 해당 성질이나 수치에서 비교 대상에 미치지 못함을 서술합니다. 부사 “还”(오히려, 심지어)와 함께 쓰여 “还不如……” 구조를 취할 때는, 합산하거나 큰 규모임에도 불구하고 단일 개체에조차 못 미친다는 의외성과 커다란 격차를 부각시킵니다. 한국어의 '~만큼 …하지 못하다', '~만 못하다'에 해당합니다.",
+    "formation": "주어 + (还 +) 不如 + 비교 대상(명사) + 형용사",
+    "examples": [
+      {
+        "translation": "세 집의 영업액을 모두 합쳐도 그 집 한 곳만큼 높지 못하다."
+      }
+    ]
   },
   "zh_与其不如_563": {
-    "title": "(与其)……不如…… (rather than… it’s better to)",
-    "shortExplanation": "rather than… it’s better to",
-    "longExplanation": "rather than… it’s better to. Pinyin: ( yǔqí)…… bùrú……",
-    "formation": "( yǔqí)…… bùrú……"
+    "title": "(与其)……不如…… (선택 복문 접속사: ~하느니 차라리 …하는 편이 낫다)",
+    "shortExplanation": "두 가지 선택지를 저울질하여 비교한 뒤, 전자보다 후자가 훨씬 유익하고 바람직하다고 판단하여 후자를 선택함을 나타냅니다('~하느니 차라리 …하는 편이 낫다').",
+    "longExplanation": "“(与其)……不如……”(yǔqí... bùrú...)는 두 가지 방안을 비교 검토하여 취사선택할 때 쓰는 대표적인 편정 선택 복문 구문입니다. 전반부의 “与其” 뒤에는 버리거나 가치가 적은 비효율적인 방안을 제시하고, 후반부의 “不如” 뒤에는 화자가 적극적으로 권장하거나 더 낫다고 판단하는 대안을 내세웁니다. 구어에서는 앞의 “与其”를 생략하고 뒤의 “不如”만으로 표현하기도 합니다. 한국어의 '~하느니 차라리 …하는 것이 낫다', '~하기보다는 차라리 …하자'에 해당합니다.",
+    "formation": "(与其 +) 앞의 대안 ，不如 + 뒤의 대안",
+    "examples": [
+      {
+        "translation": "집에만 틀어박혀 있느니 차라리 밖에 나가 산책이라도 하는 편이 낫다."
+      }
+    ]
   },
   "zh_干脆V_564": {
-    "title": "干脆 V (simply, quick and dirty)",
-    "shortExplanation": "simply, quick and dirty",
-    "longExplanation": "simply, quick and dirty. Pinyin: gāncuì V",
-    "formation": "gāncuì V"
+    "title": "干脆 + 동사 (부사: 아예, 차라리, 딱 잘라, 화끈하게)",
+    "shortExplanation": "이것저것 재거나 망설이지 않고, 차라리 직접적이고 근본적인 방안을 시원스럽게 실행해 버림을 나타냅니다('아예', '차라리', '딱 잘라').",
+    "longExplanation": "“干脆”(gāncuì)는 동사 앞에 놓여 부사어로 쓰이며, “索性”(아예, 차라리)과 상통합니다. 미적거리거나 망설이는 태도를 버리고, 문제의 뿌리를 뽑거나 가장 직관적이고 극단적인 해결책을 단호하게 감행함을 나타냅니다. 조언, 제안, 결단의 맥락에서 자주 등장합니다(예: “干脆别去了” 아예 가지 마라, “干脆辞职” 딱 잘라 사직하다). 한국어의 '아예', '차라리', '화끈하게', '딱 잘라 ~하다'에 해당합니다.",
+    "formation": "주어 + (建议 / 不如 +) 干脆 + 동사구",
+    "examples": [
+      {
+        "translation": "많은 친척과 친구들은 그에게 아예 다른 서점 세 곳을 몰아내 무너뜨리라고 제안했다."
+      }
+    ]
   },
   "zh_干脆_565": {
-    "title": "干脆 (decisive)",
-    "shortExplanation": "decisive",
-    "longExplanation": "decisive. Pinyin: gāncuì",
-    "formation": "gāncuì"
+    "title": "干脆 (형용사: 시원스럽다, 명쾌하다, 단호하다, 거침없다)",
+    "shortExplanation": "말이나 행동, 태도가 망설임이나 미적거림 없이 명쾌하고 시원시원함을 나타내는 형용사입니다('시원스럽다', '단호하다').",
+    "longExplanation": "“干脆”(gāncuì)는 형용사로 쓰여 사람의 성격, 말투, 행동 처리 방식이 우물쭈물하지 않고 시원스럽고 깔끔하며 단호함을 나타냅니다(반의어는 “拖泥带水” 질질 끌다, “犹豫” 망설이다). 술어나 관형어로도 쓰이지만, 상태보어 “得” 뒤에 놓여 “答应得很干脆”(아주 시원스럽게 승낙하다), “回答得很干脆”(거침없이 시원하게 대답하다) 형태로 매우 널리 활용됩니다. 한국어의 '시원스럽다', '명쾌하다', '단호하다', '거침없다'에 해당합니다.",
+    "formation": "주어 + 동사 + 得 + (很 / 非常 +) 干脆 (또는 干脆的 + 명사)",
+    "examples": [
+      {
+        "translation": "내가 그에게 도움을 청하자, 그는 아주 시원스럽게 승낙했다."
+      }
+    ]
   },
   "zh_万一_566": {
-    "title": "万一 (in the unlikely case where)",
-    "shortExplanation": "in the unlikely case where",
-    "longExplanation": "in the unlikely case where. Pinyin: wànyī",
-    "formation": "wànyī"
+    "title": "万一 (접속사·부사: 만에 하나, 만일, 혹시라도, 어쩌다가)",
+    "shortExplanation": "일어날 확률은 극히 희박하지만, 혹시라도 일어날 경우 큰 손실이나 위험을 초래할 수 있는 돌발 상황을 가정할 때 씁니다('만에 하나', '만일').",
+    "longExplanation": "“万一”(wànyī)는 글자 그대로 '만분의 일'에 불과할 정도로 발생 가능성이 극히 적지만, 만에 하나 발생할 경우 큰 피해나 위험, 차질을 빚을 수 있는 불리한 돌발 사태를 가정할 때 쓰는 접속사 혹은 부사입니다. 조건절의 앞머리나 술어 앞에 놓여 뜻밖의 위험을 환기하며, 뒷문장에서는 “就”, “会”, “有可能” 등과 어울려 일어날 수 있는 사태의 심각성을 경고합니다. 한국어의 '만에 하나', '만일', '혹시라도', '어쩌다 실수로'에 해당합니다.",
+    "formation": "(만약 +) 万一 + 동사구 / 절 ，(주어 +) 就 / 有可能 + 결과",
+    "examples": [
+      {
+        "translation": "달걀을 모두 한 바구니에 담아 둔다면, 만에 하나 조심하지 않았을 때 전부 깨져 버릴 가능성이 있다."
+      }
+    ]
   },
   "zh_万一_567": {
-    "title": "万一 (unlikely case, mishap)",
-    "shortExplanation": "unlikely case, mishap",
-    "longExplanation": "unlikely case, mishap. Pinyin: wànyī",
-    "formation": "wànyī"
+    "title": "万一 (명사: 만일의 사태, 뜻밖의 변고, 불의의 사고)",
+    "shortExplanation": "극히 드물게 발생하지만 막대한 피해를 줄 수 있는 뜻밖의 변고나 돌발 사고 자체를 가리키는 명사입니다('만일의 사태', '불의의 사고').",
+    "longExplanation": "“万一”(wànyī)는 명사로 쓰일 때, 좀처럼 일어나지 않지만 한 번 터지면 걷잡을 수 없는 피해를 몰고 오는 '만일의 사태', '뜻밖의 사고', '비상시의 변고' 자체를 의미합니다. 관용적인 속담이나 고정 격식으로 대단히 자주 쓰이며, 가장 대표적인 예가 “以防万一”(만일의 사태에 대비하다)와 “不怕一万，就怕万一”(만 번의 평상시보다 한 번의 만일의 사태가 두렵다)입니다. 문장 내에서 “怕”(두려워하다)나 “防”(대비하다)의 목적어로 흔히 쓰입니다. 한국어의 '만일의 사태', '뜻밖의 사고', '불의의 변고'에 해당합니다.",
+    "formation": "(만 번은 두렵지 않으나，오직 / ~에 대비하여 +) 万一 (또는 万一 + 의 발생)",
+    "examples": [
+      {
+        "translation": "평소의 만 번은 두렵지 않으나, 오직 단 한 번의 만일의 사태가 두려울 뿐이다."
+      }
+    ]
   },
   "zh_无意中无意地_568": {
-    "title": "无意中/无意地 (accidentally)",
-    "shortExplanation": "accidentally",
-    "longExplanation": "accidentally. Pinyin: wúyìzhōng/ wúyì dì",
-    "formation": "wúyìzhōng/ wúyì dì"
+    "title": "无意中 / 无意地 (부사어: 무심코, 우연히, 뜻하지 않게, 부지불식간에)",
+    "shortExplanation": "사전에 계획하거나 의도하지 않은 상태에서 우연히 또는 무의식중에 행동이 행해지거나 결과가 발생했음을 나타냅니다('무심코', '우연히', '뜻밖에').",
+    "longExplanation": "“无意中”(wúyìzhōng)과 “无意地”(wúyì dì)는 모두 문장에서 동사 앞에 놓여 부사어(상어)로 쓰입니다. 동작을 행하는 주체에게 사전에 품은 의도나 목적의식이 전혀 없었으며, 단지 우연한 기회나 무심결에 행동이 이루어지고 어떤 결과가 초래되었음을 나타냅니다. “无意中”은 우연히 일어난 상황적 배경에 무게중심이 있고, “无意地”는 의도 없이 행해진 동작의 양태에 초점이 있습니다. 무심코 물건을 발견하거나 우연히 어떤 사실을 알게 되었을 때 자주 사용됩니다. 한국어의 '무심코', '우연히', '뜻하지 않게', '부지불식간에'에 해당합니다.",
+    "formation": "주어 + (在 + 동작 / 상황 + 时，) 无意中 / 无意地 + 동사구",
+    "examples": [
+      {
+        "translation": "그녀는 화단을 정리하던 중, 무심코/우연히 이 귀걸이를 발견했다."
+      }
+    ]
   },
   "zh_无意_569": {
-    "title": "无意 (no intention to)",
-    "shortExplanation": "no intention to",
-    "longExplanation": "no intention to. Pinyin: wúyì",
-    "formation": "wúyì"
+    "title": "无意 (조동사적 용법 / 부사: ~할 의도가 없다, ~할 생각이 없다, ~할 뜻이 없다)",
+    "shortExplanation": "마음속에 어떤 행동을 하려는 의도나 목적의식이 전혀 없음을 나타냅니다('~할 생각이 없다', '~할 의도가 없다').",
+    "longExplanation": "“无意”(wúyì)는 '없을 무(无)'와 '뜻 의(意)'가 결합한 표현으로, 동사구 앞에 놓여 조동사적 또는 부사적으로 쓰입니다. 주어가 어떤 행위를 하려는 주관적인 의도나 악의, 욕심을 전혀 지니고 있지 않음을 명확히 밝힐 때 사용됩니다(예: “无意伤害” 상처 줄 의도가 없다, “无意冒犯” 무례를 범할 생각이 없다, “无意隐瞒” 숨길 의도가 없다). “无意中”이 사건의 우연한 발생을 나타내는 반면, “无意”는 행위자의 내면적 동기나 의사의 부재를 분명하게 선언하는 데 초점이 있습니다. 한국어의 '~할 의도가 없다', '~할 생각이 없다', '~할 뜻이 없다'에 해당합니다.",
+    "formation": "주어 + 无意 + 동사구",
+    "examples": [
+      {
+        "translation": "그는 그 누구도 상처 입힐 의도가 전혀 없다."
+      }
+    ]
   },
   "zh_有利_570": {
-    "title": "有利 (to be beneficial)",
-    "shortExplanation": "to be beneficial",
-    "longExplanation": "to be beneficial. Pinyin: yǒulì",
-    "formation": "yǒulì"
+    "title": "有利 (형용사 / 동사: 유리하다, 도움이 되다, 유익하다, 이롭다)",
+    "shortExplanation": "어떤 조건이나 사물이 이익이나 긍정적인 효과를 가져다주어 발전에 도움이 됨을 나타냅니다('유리하다', '이롭다', '도움이 되다').",
+    "longExplanation": "“有利”(yǒulì)는 이익이나 긍정적 결과를 낳는 데 보탬이 되는 우호적 조건을 갖추고 있음을 나타내는 형용사(또는 술어적 결합)입니다(반의어는 “不利”). 현대 한어에서는 개사 “于”와 결합한 고정 구조 “有利于 + 대상 / 동작구”(‘~에 유리하다’, ‘~하는 데 도움이 되다’)나, “对……有利”(‘~에 유리하다’)의 형태로 매우 자주 쓰입니다. 또한 “有利条件”(유리한 조건), “有利地位”(유리한 위치)처럼 명사를 수식하는 관형어로도 널리 활용됩니다. 학술, 정책, 건강, 비즈니스 등 다양한 분야에서 긍정적 기여도를 논할 때 필수적인 표현입니다. 한국어의 '유리하다', '이롭다', '도움이 되다', '~에 유익하다'에 해당합니다.",
+    "formation": "주어 / 사물 + 有利于 + 동사구 / 명사 (또는 对 + 대상 + 有利)",
+    "examples": [
+      {
+        "translation": "적당한 스트레스는 우리가 양호한 컨디션을 유지하는 데 이롭다."
+      }
+    ]
   },
   "zh_的确_571": {
-    "title": "的确 (indeed)",
-    "shortExplanation": "indeed",
-    "longExplanation": "indeed. Pinyin: díquè",
-    "formation": "díquè"
+    "title": "的确 (부사: 확실히, 정말로, 과연, 틀림없이)",
+    "shortExplanation": "어떤 사실이나 판단이 객관적으로 명백하고 조금도 틀림없음을 강하게 긍정하고 확인하는 부사입니다('확실히', '정말로', '과연').",
+    "longExplanation": "“的确”(díquè)는 문장에서 술어(동사, 형용사 또는 판단 표현) 앞에 위치하는 부사로, 부사어(상어) 역할을 합니다. 객관적인 사안이나 다른 사람의 견해가 사실과 완전히 부합하여 조금의 의심도 없음을 확고하게 긍정할 때 사용됩니다. 자신의 직접적인 견문이나 체험을 통해 '소문대로 과연 그렇다', '정말로 듣던 대로다'라며 맞장구를 치거나 수긍하는 맥락에서 매우 빈번하게 활용됩니다(예: “的确如此” 확실히 그러하다, “的确很棒” 정말로 훌륭하다). 한국어의 '확실히', '정말로', '과연', '틀림없이'에 해당합니다.",
+    "formation": "주어 + 的确 + 술어 (동사 / 형용사 / 是……)",
+    "examples": []
   },
   "zh_嗯_573": {
-    "title": "嗯 (Yep)",
-    "shortExplanation": "Yep",
-    "longExplanation": "Yep. Pinyin: èn",
-    "formation": "èn"
+    "title": "嗯 (제4성 / 경성의 감탄사: 응, 그래, 네, 어)",
+    "shortExplanation": "제4성(또는 경성)으로 발음되는 감탄사로, 부름에 대답하거나 상대방의 질문에 긍정·승낙의 대답을 할 때 씁니다('응', '그래', '네').",
+    "longExplanation": "“嗯”이 제4성(èn) 혹은 경성으로 발음될 때는 일상 구어에서 가장 흔하게 쓰이는 응답의 감탄사입니다. 단독으로 문두에 놓여 다른 사람의 부름에 화답하거나, 상대방의 질문에 대해 사실임을 확인해 주고 긍정·동의·수락의 뜻을 표할 때 사용됩니다(예: “嗯，好的” 응, 좋아; “嗯，知道了” 응, 알겠어; “嗯，吃了” 응, 먹었어). 음조가 짧고 낮게 가라앉는 안정적인 어조를 띱니다. 한국어의 '응', '그래', '어', '네'에 해당합니다.",
+    "formation": "(부름 / 질문 ，) 嗯 ，+ 응답구 / 긍정문",
+    "examples": [
+      {
+        "translation": "A: 밥 먹었어? B: 응, 먹었어."
+      }
+    ]
   },
   "zh_嗯_574": {
-    "title": "嗯？ (Huh?)",
-    "shortExplanation": "Huh?",
-    "longExplanation": "Huh?. Pinyin: èn？",
-    "formation": "èn？"
+    "title": "嗯？ (제2성의 감탄사: 어? 잉? 응? 어라? 뭐라고?)",
+    "shortExplanation": "제2성으로 말끝을 올려 발음하는 감탄사로, 뜻밖의 상황에 대한 의아함, 의문, 놀라움을 나타냅니다('어?', '응?', '어라?').",
+    "longExplanation": "“嗯” 뒤에 물음표가 붙어 제2성(én)으로 음을 올려 발음될 때는, 화자가 뜻밖의 이상한 점을 감지했거나 예상과 다른 상황을 마주하여 의혹과 놀라움을 느낄 때 터져 나오는 감탄사입니다. 자기도 모르게 고개를 갸우뚱하며 의아해하는 심리를 생생하게 드러내며, 보통 뒤이어 의심을 품은 의문문이나 자문자답이 이어집니다(예: “嗯？难道是我记错了?” 어? 설마 내가 잘못 기억한 건가?, “嗯？他人呢?” 잉? 그 사람 어디 갔지?). 한국어의 '어?', '응?', '어라?', '잉?'에 해당합니다.",
+    "formation": "嗯？ + 의문문 / 추측문",
+    "examples": [
+      {
+        "translation": "어? 설마 내가 잘못 기억하고 있는 건가?"
+      }
+    ]
   },
   "zh_嗯_575": {
-    "title": "嗯！ (Man…!)",
-    "shortExplanation": "Man…!",
-    "longExplanation": "Man…!. Pinyin: èn！",
-    "formation": "èn！"
+    "title": "嗯！ (강조·영탄의 감탄사: 어라! 야! 저런! 아니!)",
+    "shortExplanation": "어조를 강하게 실어 느낌표를 동반하는 감탄사로, 상대방의 의외의 행동이나 상황에 대한 놀라움, 가벼운 타박, 재촉 등을 나타냅니다('어라!', '아니!', '야!').",
+    "longExplanation": "“嗯!” 뒤에 느낌표가 붙을 때는 강한 어기와 감정을 실어 내뱉는 감탄사로 쓰입니다. 마땅히 그러해야 할 상식이나 기대에 어긋나는 상황을 목격했을 때 화자가 느끼는 당혹감, 놀라움, 혹은 상대방에 대한 가벼운 핀잔이나 재촉의 뉘앙스를 담아냅니다(예: “嗯！你怎么还没走啊？” 어라! 너 왜 아직도 안 가고 있는 거야?). 주의를 환기하면서도 어처구니없어하는 어조를 생생하게 표현합니다. 한국어의 '어라!', '아니!', '야!', '저런!'에 해당합니다.",
+    "formation": "嗯！ + 반문 / 놀람의 의문문 / 핀잔의 문장",
+    "examples": [
+      {
+        "translation": "어라! 너 왜 아직도 안 가고 있는 거야?"
+      }
+    ]
   },
   "zh_轻易地V_576": {
-    "title": "轻易地 V (easily)",
-    "shortExplanation": "easily",
-    "longExplanation": "easily. Pinyin: qīngyì dì V",
-    "formation": "qīngyì dì V"
+    "title": "轻易地 + 동사 (부사어: 손쉽게, 수월하게, 아주 쉽게, 수포로)",
+    "shortExplanation": "어떤 동작이나 과제가 아무런 어려움이나 힘들이지 않고 매우 원활하고 쉽게 달성됨을 나타냅니다('손쉽게', '수월하게', '아주 쉽게').",
+    "longExplanation": "“轻易地”(qīngyì dì)는 형용사 “轻易”(쉽다, 수월하다) 뒤에 구조조사 “地”가 결합하여 동사를 수식하는 전형적인 부사어 구조입니다. 주로 긍정문에서 뛰어난 능력이나 유리한 조건 덕분에 많은 노력이나 정력을 들이지 않고도 목적하는 행동을 매우 원활하고 신속하게 해냄을 묘사합니다(예: “轻易地记住” 수월하게 외우다, “轻易地打败对手” 상대를 손쉽게 꺾다). 흔히 정도부사 “很”(매우)과 어우러져 “很轻易地……” 형태로 자주 쓰입니다. 한국어의 '손쉽게', '수월하게', '아주 쉽게', '어렵지 않게'에 해당합니다.",
+    "formation": "주어 + (수월하게 / 다 +) 轻易地 + 동사구",
+    "examples": [
+      {
+        "translation": "그는 무엇을 배우든 아주 손쉽게 기억할 수 있다."
+      }
+    ]
   },
   "zh_轻易V_577": {
-    "title": "轻易 V (frivolously)",
-    "shortExplanation": "frivolously",
-    "longExplanation": "frivolously. Pinyin: qīngyì V",
-    "formation": "qīngyì V"
+    "title": "轻易 + 동사 (부사: 경솔하게, 함부로, 선뜻, 쉽사리【주로 부정문에서 사용】)",
+    "shortExplanation": "태도가 경솔하고 신중하지 못함을 나타내거나, 부정 형태('不轻易……')로 쓰여 '함부로 ~하지 않다', '쉽사리 ~하지 않다'라는 신중함과 굳은 의지를 나타냅니다('경솔하게', '쉽사리').",
+    "longExplanation": "“轻易”(qīngyì)가 조사 없이 동사 앞에 직접 놓여 부사로 쓰일 때는 매사에 깊이 생각하지 않고 경솔하거나 대수롭지 않게 여기는 태도를 나타냅니다. 특히 “不轻易 + 동사”나 “从不轻易 + 동사”처럼 부정 부사와 결합한 형태로 대단히 많이 쓰이는데, 이때는 '함부로 ~하지 않다', '경솔하게 ~하지 않다', '쉽사리 ~하지 않다'라는 뜻으로 주어의 매우 신중하고 책임감 있는 태도나 흔들리지 않는 굳은 의지를 표현합니다(예: “不轻易放弃” 쉽사리 포기하지 않다, “不轻易表态” 함부로 입장을 밝히지 않다). 한국어의 '경솔하게', '함부로', '선뜻', '쉽사리(~하지 않다)'에 해당합니다.",
+    "formation": "주어 + (从不 / 不 +) 轻易 + 동사구",
+    "examples": [
+      {
+        "translation": "그는 결코 쉽게 결정 내리지 않으며, 일단 결정하면 경솔하게 바꾸지 않는다."
+      }
+    ]
   },
   "zh_密切_578": {
-    "title": "密切 (closely)",
-    "shortExplanation": "closely",
-    "longExplanation": "closely. Pinyin: mìqiè",
-    "formation": "mìqiè"
+    "title": "密切 (부사적 용법: 밀접하게, 긴밀히, 긴밀하게)",
+    "shortExplanation": "동사 앞에 놓여 양자 간의 연계, 상호 관계, 협력이 매우 깊고 빈틈없이 밀착되어 있음을 나타냅니다('밀접하게', '긴밀히').",
+    "longExplanation": "“密切”(mìqiè)는 동사 앞에서 부사어(상어)로 쓰여, 사물 간의 상관관계나 사람들 사이의 유대 및 협력이 대단히 끈끈하고 깊숙함을 나타냅니다. 가장 대표적이고 빈번한 연어 표현으로는 “与 / 和……密切相关”(‘~와 밀접하게 관련되다’), “密切配合”(‘긴밀히 협조하다’), “密切关注”(‘예의주시하다, 긴밀히 지켜보다’) 등이 있습니다. 신문 기사, 학술 논문, 공적 담화 등에서 두 영역이나 요소 간의 필연적이고 강력한 상관관계를 밝힐 때 핵심적으로 구사됩니다. 한국어의 '밀접하게', '긴밀히', '깊이'에 해당합니다.",
+    "formation": "주어 + 与 / 和 + 대상 + 密切 + 동사구 (相关 / 配合 / 关注 등)",
+    "examples": [
+      {
+        "translation": "오염은 우리의 일상생활과 밀접하게 관련되어 있다."
+      }
+    ]
   },
   "zh_密切_579": {
-    "title": "密切 (close (in relationship))",
-    "shortExplanation": "close (in relationship)",
-    "longExplanation": "close (in relationship). Pinyin: mìqiè",
-    "formation": "mìqiè"
+    "title": "密切 (형용사: 친밀하다, 긴밀하다, 가깝다, 막역하다)",
+    "shortExplanation": "사람 사이의 교제나 조직 간의 관계가 매우 친밀하고 두터우며 가까움을 나타내는 형용사입니다('친밀하다', '긴밀하다').",
+    "longExplanation": "“密切”(mìqiè)는 형용사로 쓰여 인간관계, 교류, 또는 왕래가 매우 가깝고 돈독한 상태를 묘사합니다. 문장 안에서는 주로 술어로 기능하여 “关系密切”(관계가 친밀하다), “来往密切”(왕래가 잦고 친밀하다) 형태로 쓰이며, 비교문이나 변화문에서 “比先前密切了”(‘이전보다 더 친밀해졌다’), “日益密切”(‘날로 긴밀해지다’)처럼 유대의 심화를 서술합니다. 사적인 우정부터 국가 간의 외교적 친선 관계에 이르기까지 폭넓게 활용됩니다. 한국어의 '친밀하다', '긴밀하다', '가깝다', '돈독하다'에 해당합니다.",
+    "formation": "주어(관계 / 왕래) + (比…… +) 密切 (+ 了)",
+    "examples": [
+      {
+        "translation": "그 후로 두 사람의 왕래는 이전보다 더욱 긴밀해졌다."
+      }
+    ]
   },
   "zh_密切_580": {
-    "title": "密切 (to strengthen)",
-    "shortExplanation": "to strengthen",
-    "longExplanation": "to strengthen. Pinyin: mìqiè",
-    "formation": "mìqiè"
+    "title": "密切 (타동사적 용법: 긴밀하게 하다, 굳게 묶다, 결속을 다지다, 긴밀히 하다)",
+    "shortExplanation": "어떤 사업이나 정책 등이 양자 사이의 연계나 관계를 한층 더 돈독하고 긴밀하게 만들어 줌을 나타내는 사동적 동사입니다('긴밀하게 하다', '결속을 강화하다').",
+    "longExplanation": "“密切”(mìqiè)는 타동사로 기능하여 '관계를 더욱 긴밀하게 만들다', '유대를 강화하다'라는 사동(使動)의 의미를 나타낼 수 있습니다. 교통수단의 개통, 교역 활성화, 문화 교류 정책 등이 주어로 오며, 그 결과로 뒤에 “联系”(연계)나 “关系”(관계) 등을 목적어로 취합니다(예: “密切了联系” 연계를 긴밀하게 하였다, “密切了往来” 왕래를 더욱 활성화하였다). 흔히 정도부사 “大大”(크게, 대폭) 및 동태조사 “了”와 호응하여 극적인 유대 강화 효과를 강조합니다. 한국어의 '긴밀하게 하다', '결속을 다지다', '유대를 강화하다'에 해당합니다.",
+    "formation": "주어 + (大大 +) 密切 + 了 + 수식어 + 的联系 / 关系",
+    "examples": [
+      {
+        "translation": "이 철도는 서남 지역과 수도 간의 연계를 크게 긴밀하게 만들었다."
+      }
+    ]
   },
   "zh_尽量jnling_581": {
-    "title": "尽量 (jǐnliàng) (as … as possible)",
-    "shortExplanation": "as … as possible",
-    "longExplanation": "as … as possible. Pinyin: jǐnliàng (jǐnliàng)",
-    "formation": "jǐnliàng (jǐnliàng)"
+    "title": "尽量 (jǐnliàng) (부사: 될 수 있는 대로, 가능한 한, 최대한, 극력)",
+    "shortExplanation": "제3성(jǐn)으로 발음되는 부사로, 주어진 객관적 조건이나 능력의 한도 내에서 최선을 다해 힘씀을 나타냅니다('가능한 한', '최대한', '될 수 있는 대로').",
+    "longExplanation": "“尽量”이 제3성(jǐnliàng)으로 발음될 때는 문장에서 동사구를 수식하는 부사로 쓰입니다. 자신이 처한 조건이나 역량이 허용하는 한도 안에서 최대치에 도달하도록 온 힘을 기울임을 나타냅니다. 흔히 “尽量多……”(‘최대한 많이 ~하다’), “尽量少……”(‘가급적 적게 ~하다’), “尽量不要……”(‘되도록 ~하지 않다’) 등의 구조로 결합하여 바람직한 행동을 권장하거나 자제를 당부할 때 자주 활용됩니다. 한편 제4성인 “尽量”(jìnliàng)은 '한도에 도달하다, 양껏 마시다'를 뜻하는 동사적 용법이므로 성조와 품사 구분에 주의해야 합니다. 한국어의 '될 수 있는 대로', '가능한 한', '최대한', '가급적'에 해당합니다.",
+    "formation": "(주어 +) 尽量 (+ 多 / 少 / 别 +) 동사구",
+    "examples": [
+      {
+        "translation": "최대한 자전거를 많이 타고 대중교통을 많이 이용하도록 하라."
+      }
+    ]
   },
   "zh_逐步_582": {
-    "title": "逐步 (step by step)",
-    "shortExplanation": "step by step",
-    "longExplanation": "step by step. Pinyin: zhúbù",
-    "formation": "zhúbù"
+    "title": "逐步 (부사: 점차, 단계적으로, 차츰차츰, 한 걸음 한 걸음)",
+    "shortExplanation": "동작이나 사물의 변화가 일정한 계획과 순서에 따라 차근차근 단계적으로 진전됨을 나타냅니다('단계적으로', '차츰차츰', '한 걸음씩').",
+    "longExplanation": "“逐步”(zhúbù)는 문장에서 술어 동사 앞에 놓이는 부사로, 일이나 사태의 진전이 명확한 순서와 단계를 밟아가며 한 걸음씩 착실하게 진행됨을 나타냅니다. 시간의 흐름에 따라 자연스럽게 번져가는 변화를 묘사하는 “逐渐”(점점, 차차)과 달리, “逐步”는 인위적인 계획성, 로드맵, 정책적 의도에 기반하여 단계를 나누어 차근차근 실행에 옮기는 맥락에서 주로 쓰입니다(예: “逐步解决” 단계적으로 해결하다, “逐步实现” 점차 실현해 나가다, “逐步推广” 점진적으로 보급하다). 사회 개혁, 국가 정책, 프로젝트 추진 과정 등을 서술할 때 매우 필수적인 표현입니다. 한국어의 '단계적으로', '점차', '차근차근', '차츰차츰'에 해당합니다.",
+    "formation": "(주어 +) 逐步 + 동사구 / 변화의 술어",
+    "examples": [
+      {
+        "translation": "에너지 소비 구조를 조정하여 점차 재생에너지로 전환해 나간다."
+      }
+    ]
   },
   "zh_照常_583": {
-    "title": "照常 (as usual)",
-    "shortExplanation": "as usual",
-    "longExplanation": "as usual. Pinyin: zhàocháng",
-    "formation": "zhàocháng"
+    "title": "照常 (부사 / 형용사 / 술어: 평소대로, 평상시처럼, 여느 때와 다름없이, 정상대로)",
+    "shortExplanation": "주변 환경이나 특별한 사정에 굴하지 않고, 일이나 활동이 평소의 규칙과 습관대로 변함없이 진행됨을 나타냅니다('평소대로', '정상대로', '여느 때처럼').",
+    "longExplanation": "“照常”(zhàocháng)은 '통상적인 관례를 따르다'라는 의미를 지닌 단어로, 동사 앞에서 부사어(상어)로 쓰이거나(“照常营业” 정상 영업하다, “照常上班” 평소대로 출근하다), 주어 뒤에서 서술어로 쓰입니다(“一切照常” 모든 것이 여느 때와 다름없다). 주변에 전쟁, 악천후, 위기 등 심상치 않은 이변이 발생했음에도 불구하고 일상생활이나 업무 체계가 조금도 흔들리지 않고 평소의 상태를 굳건히 유지하고 있음을 부각할 때 매우 효과적으로 사용됩니다. 한국어의 '평소대로', '평상시처럼', '여느 때와 다름없이', '정상대로'에 해당합니다.",
+    "formation": "(~임에도 불구하고,) 주어 + (一切 +) 照常 (또는 照常 + 동사구)",
+    "examples": [
+      {
+        "translation": "비록 전쟁이 임박해 있지만, 이곳의 일상생활은 모든 것이 평소와 다름없다."
+      }
+    ]
   },
   "zh_难怪怪不得_584": {
-    "title": "难怪/怪不得 (no wonder)",
-    "shortExplanation": "no wonder",
-    "longExplanation": "no wonder. Pinyin: nánguài/ guàibude",
-    "formation": "nánguài/ guàibude"
+    "title": "难怪 / 怪不得 (부사: 어쩐지 ~더라, 과연 ~할 만하다, 그러니 ~하지)",
+    "shortExplanation": "어떤 사실의 원인이나 사정을 알고 나서 비로소 의문이 풀려 당연하다고 여기며 이상하게 생각하지 않음을 나타냅니다('어쩐지 ~더라', '그러니 ~하지').",
+    "longExplanation": "“难怪”(nánguài)와 “怪不得”(guàibude)는 앞서 일어난 일이나 결과의 원인·배경을 뒤늦게 깨닫고 나서 '어쩐지 그렇더라니', '이유를 알고 보니 전혀 이상할 게 없구나' 하고 납득할 때 쓰는 부사입니다. 대개 복문의 뒤 절 머리에 놓여 앞 절에서 제시된 원인을 바탕으로 '과연 그러기에 그런 결과가 나왔다'는 뉘앙스를 전달합니다. 두 단어는 서로 바꾸어 쓸 수 있습니다. 한국어의 '어쩐지 ~하더라니', '그러기에 ~하지', '과연 ~할 만하다'에 해당합니다.",
+    "formation": "원인·배경 ，难怪 / 怪不得 + 결과",
+    "examples": [
+      {
+        "translation": "서랍이 정말 어지럽혀져 있네, 어쩐지 항상 물건을 못 찾더라니."
+      }
+    ]
   },
   "zh_难怪怪不得_585": {
-    "title": "难怪/怪不得 (understandable)",
-    "shortExplanation": "understandable",
-    "longExplanation": "understandable. Pinyin: nánguài/ guàibude",
-    "formation": "nánguài/ guàibude"
+    "title": "这也难怪 / 怪不得 (술어적 표현: 그도 무리가 아니다, 탓할 수 없다, 그럴 만도 하다)",
+    "shortExplanation": "상대방의 처지나 사정을 감안하면 그 행동이나 결과가 충분히 이해할 만하며, 결코 탓하거나 책망할 수 없음을 나타냅니다('그도 그럴 만하다', '탓할 것도 없다').",
+    "longExplanation": "여기서의 “难怪”와 “怪不得”는 앞선 부사 용법과 달리 독립된 술어처럼 쓰이며, 주로 “这也难怪”(그것도 무리가 아니다)나 “这也怪不得”(그것도 탓할 수 없다)의 형태로 쓰입니다. 본래 '탓하다, 책망하다'라는 뜻의 “怪”에 '하기 어렵다/할 수 없다'는 부정의 의미가 결합되어, '사정을 알고 보니 탓하기 어렵다, 비난할 수 없다'는 뜻을 나타냅니다. 상대방의 바쁜 사정이나 부득이한 처지를 헤아려 깊은 이해와 동정, 너그러운 포용을 표할 때 씁니다. 한국어의 '그도 그럴 만하다', '탓할 게 못 된다', '무리도 아니다'에 해당합니다.",
+    "formation": "상황·행동 ，（这也 +）难怪 / 怪不得 ，이유·해명",
+    "examples": [
+      {
+        "translation": "그는 여태껏 아이 일에는 전혀 신경을 쓰지 않는다. 하지만 그도 그럴 만한 게, 그렇게 바쁜데 무슨 시간이 있겠는가."
+      }
+    ]
   },
   "zh_与其倒不如_586": {
-    "title": "与其……(倒)不如…… (Instead of… it’s better to…)",
-    "shortExplanation": "Instead of… it’s better to…",
-    "longExplanation": "Instead of… it’s better to…. Pinyin: yǔqí……( dǎo) bùrú……",
-    "formation": "yǔqí……( dǎo) bùrú……"
+    "title": "与其……(倒)不如…… (선택 접속사구: ~하느니 차라리 ~하는 편이 낫다, ~하기보다는 차라리 ~하다)",
+    "shortExplanation": "두 가지 선택지를 저울질하여 비교한 뒤, 전자를 버리고 후자를 택하는 편이 훨씬 낫다고 판단할 때 쓰는 선택 접속사 구문입니다('~하느니 차라리 ~하는 편이 낫다').",
+    "longExplanation": "“与其……(倒)不如……”(yǔqí……(dǎo) bùrú……)는 두 가지 대안을 견주어 본 뒤, 어느 한쪽을 버리고 다른 한쪽을 적극적으로 취하는 선택 복문의 대표적인 접속 구문입니다. “与其”가 이끄는 앞 절에는 비효율적이거나 탐탁지 않다고 여기는 선택지가 놓이고, “不如” 또는 어기를 강화하는 부사 “倒”가 결합된 “(倒)不如”가 이끄는 뒤 절에는 화자가 더 바람직하고 합리적이라고 여기는 최선의 대안이 제시됩니다. 한국어의 '~하느니 차라리 ~하는 편이 낫다', '~하기보다는 오히려 ~하는 게 낫겠다'에 해당합니다.",
+    "formation": "与其 + 버릴 방안 ，(倒)不如 + 취할 대안",
+    "examples": []
   },
   "zh_总之_588": {
-    "title": "总之 (In short)",
-    "shortExplanation": "In short",
-    "longExplanation": "In short. Pinyin: zǒngzhī",
-    "formation": "zǒngzhī"
+    "title": "总之 (접속사: 어쨌든, 요컨대, 한마디로 말해서, 총괄적으로)",
+    "shortExplanation": "앞서 열거한 여러 가지 내용이나 구체적인 사안들을 포괄하여, 핵심을 한마디로 요약하거나 결론을 내릴 때 쓰는 접속사입니다('요컨대', '어쨌든', '한마디로').",
+    "longExplanation": "“总之”(zǒngzhī)는 앞서 여러 사실이나 예시, 복잡한 사정을 길게 나열한 뒤, 세부적인 것을 털어내고 가장 핵심적인 요지나 결론을 하나로 묶어 압축해 말할 때 쓰는 접속사입니다. 문두 또는 주어 앞에 위치하여 복잡한 나열을 단번에 정리해 주는 역할을 합니다. 또한 어떤 난관이나 조건이 있든 간에 '어쨌든 간에 이러하다'라는 확고한 입장을 표명할 때도 흔히 쓰입니다. 한국어의 '요컨대', '한마디로 말하면', '어쨌든', '총체적으로'에 해당합니다.",
+    "formation": "구체적 예시·상황 나열 …… 总之 + 요약절 / 결론",
+    "examples": [
+      {
+        "translation": "상하이, 난징, 항저우에 가고 싶다…… 어쨌든 남쪽 지방으로 한 바퀴 둘러보고 싶다."
+      }
+    ]
   },
   "zh_V过_589": {
-    "title": "V 过 (V away)",
-    "shortExplanation": "V away",
-    "longExplanation": "V away. Pinyin: V guò",
-    "formation": "V guò"
+    "title": "동사 + 过 (방향보어 파생용법: 몸이나 방향을 돌리다, 돌아서다)",
+    "shortExplanation": "동작을 통해 몸이나 신체 부위, 물체가 바라보는 방향을 다른 쪽으로 돌리거나 등지는 것을 나타내는 방향보어 용법입니다('돌리다', '돌아서다').",
+    "longExplanation": "방향보어 “过”(guò)는 '지나가다'라는 원래의 뜻에서 나아가, 동작에 의해 몸 전체나 신체의 일부, 물건의 방향이 반대쪽이나 다른 쪽으로 방향을 틀어 바뀌는 것을 나타냅니다. 특히 “转”(돌다), “扭”(틀다), “回”(돌아보다) 등의 동사와 어울려 “转过身”(몸을 돌리다), “扭过头”(고개를 돌리다)처럼 자주 쓰입니다. 몸의 일부를 나타내는 목적어는 대개 보어 뒤에 놓입니다. 상대방을 마주하기 꺼리거나 대화를 거부할 때 등지는 동작을 생생하게 표현합니다. 한국어의 '몸을 돌리다', '돌아서다', '고개를 돌리다'에 해당합니다.",
+    "formation": "주어 + 동사 + 过 + 신체 부위 목적어 (身 / 头 / 脸)",
+    "examples": [
+      {
+        "translation": "그는 몸을 돌려 돌아서더니, 한마디 말도 하지 않았다."
+      }
+    ]
   },
   "zh_V过_590": {
-    "title": "V 过 (V over, V by)",
-    "shortExplanation": "V over, V by",
-    "longExplanation": "V over, V by. Pinyin: V guò",
-    "formation": "V guò"
+    "title": "동사 + 过 (방향보어 파생용법: 뇌리를 스치다, 번쩍 스쳐 지나가다)",
+    "shortExplanation": "빛이나 그림자, 생각, 감정 등이 눈앞이나 머릿속을 눈 깜짝할 사이에 휙 스치며 지나가는 것을 나타냅니다('스치다', '번쩍 스쳐 지나가다').",
+    "longExplanation": "“过”(guò)는 물리적 공간뿐 아니라 사람의 의식이나 시야를 번개처럼 빠르게 통과해 지나가는 궤적을 묘사하는 방향보어로 쓰입니다. “闪”(번쩍이다), “掠”(스치다), “划”(가르다) 등의 동사와 어울려 “脑子里闪过……”(머릿속에 ~가 번쩍 스쳐 지나가다), “眼前掠过……”(눈앞을 ~가 스치고 가다)와 같은 감각적이고 생동감 넘치는 문장에 자주 쓰입니다. 짧은 순간 떠올랐다 사라지는 생각이나 순간적인 표정의 변화를 나타낼 때 쓰입니다. 한국어의 '(뇌리를) 스치다', '번쩍 스쳐 지나가다', '흘깃 지나가다'에 해당합니다.",
+    "formation": "장소 (머릿속 / 눈앞) + 동사 + 过 (+ 了) + 목적어 (생각 / 빛 / 감정)",
+    "examples": [
+      {
+        "translation": "짧은 몇 분 동안, 내 머릿속에는 수많은 생각이 스쳐 지나갔다."
+      }
+    ]
   },
   "zh_V开_591": {
-    "title": "V 开 (V open)",
-    "shortExplanation": "V open",
-    "longExplanation": "V open. Pinyin: V kāi",
-    "formation": "V kāi"
+    "title": "동사 + 开 (결과·방향보어: 활짝 펴다, 벌리다, 열어젖히다, 분리하다)",
+    "shortExplanation": "동작을 통해 오므라져 있거나 닫혀 있던 물체나 신체가 활짝 열리고 펼쳐지거나, 서로 떨어져 분리됨을 나타내는 보어 용법입니다('벌리다', '펼치다', '열어젖히다').",
+    "longExplanation": "“开”(kāi)는 보어로서 본래의 '열다'라는 뜻에서 확장되어, 닫혀 있거나 움츠러들어 있던 사물이나 신체가 동작에 의해 사방으로 활짝 펼쳐지거나 분리되는 상태를 나타냅니다. “张”(벌리다), “打”(열다), “睁”(눈을 뜨다), “拉”(당기다), “解”(풀다) 등의 동사와 어울려 “张开手臂”(팔을 벌리다), “张开嘴”(입을 벌리다), “睁开眼睛”(눈을 크게 뜨다)처럼 쓰입니다. 신체의 일부나 물건이 웅크린 상태에서 시원하게 확장되는 동작을 잘 나타냅니다. 한국어의 '벌리다', '펼치다', '열다', '풀어놓다'에 해당합니다.",
+    "formation": "주어 + 동사 + 开 (+ 목적어 / 신체 부위)",
+    "examples": [
+      {
+        "translation": "원숭이가 갑자기 벌떡 일어서더니, 팔을 활짝 벌려 사육사를 꼭 껴안았다."
+      }
+    ]
   },
   "zh_赶快_592": {
-    "title": "赶快 (quickly, urgently)",
-    "shortExplanation": "quickly, urgently",
-    "longExplanation": "quickly, urgently. Pinyin: gǎnkuài",
-    "formation": "gǎnkuài"
+    "title": "赶快 (부사: 서둘러, 얼른, 어서 빨리, 지체 없이)",
+    "shortExplanation": "시간을 지체하지 않고 일각을 다투어 서둘러 행동에 착수해야 함을 나타내는 부사입니다('서둘러', '얼른', '빨리').",
+    "longExplanation": "“赶快”(gǎnkuài)는 '시간을 다투다'라는 뜻의 “赶”과 '빠르다'라는 뜻의 “快”가 결합된 시간 부사로, 술어 동사 앞에 놓여 지체하지 않고 속도를 내어 서둘러 행동함을 나타냅니다. 마감이나 기한이 임박했거나 응급 상황이 발생했을 때 시간을 아끼며 재빠르게 대처해야 함을 나타낼 때 자주 쓰입니다(예: “得赶快找房子” 얼른 방을 구해야 한다, “赶快叫救护车” 빨리 구급차를 불러라). 한국어의 '서둘러', '얼른', '어서 빨리', '지체 없이'에 해당합니다.",
+    "formation": "주어 + (得 / 要 +) 赶快 + 동사구",
+    "examples": [
+      {
+        "translation": "다음 달에 이사를 가야 해서, 서둘러 집을 알아봐야 한다."
+      }
+    ]
   },
   "zh_片_593": {
-    "title": "片 (a piece of)",
-    "shortExplanation": "a piece of",
-    "longExplanation": "a piece of. Pinyin: piàn",
-    "formation": "piàn"
+    "title": "片 (양사: 한 조각, 한 점, 한 자락, 한 점의 - 구름, 잎, 조각 등)",
+    "shortExplanation": "얇고 평평한 물체나, 하늘에 두둥실 뜬 한 덩이의 자연 경관(구름 등)을 셀 때 쓰는 양사입니다('한 점', '한 자락', '한 조각').",
+    "longExplanation": "“片”(piàn)은 사물의 형태적 특징을 포착한 다채로운 양사입니다. 원래는 얇고 납작하게 썰어 낸 조각이나 판 형태의 사물(예: “一片树叶” 나뭇잎 한 장, “一片面包” 빵 한 조각, “一片药” 알약 한 알)을 셀 때 쓰이며, 나아가 하늘에 뭉게뭉게 흩어져 떠 있는 구름 같은 자연물(예: “一片云” 한 점의 구름 / 구름 한 자락)을 셀 때도 쓰입니다. 주로 “一片”의 형태로 쓰여 시각적으로 얇고 가벼운 느낌을 전합니다. 한국어의 '한 조각', '한 점', '한 자락', '한 장'에 해당합니다.",
+    "formation": "수사 (一) + 片 + 명사 (구름 / 잎 / 빵 / 알약 등)",
+    "examples": [
+      {
+        "translation": "하늘에 구름 한 자락이 두둥실 떠 있다."
+      }
+    ]
   },
   "zh_片_594": {
-    "title": "片 (a wave of)",
-    "shortExplanation": "a wave of",
-    "longExplanation": "a wave of. Pinyin: piàn",
-    "formation": "piàn"
+    "title": "片 (양사: 한바탕의, 온통 뒤덮인, 일대의 - 환호·박수 소리, 풍경, 분위기)",
+    "shortExplanation": "환호성이나 박수 소리가 넓은 공간에 일제히 울려 퍼지는 모양, 또는 일대에 펼쳐진 정경이나 분위기를 나타내는 양사입니다('한바탕의', '일대의', '온통 뒤덮인').",
+    "longExplanation": "“片”(piàn)은 추상적이거나 공간적으로 널리 퍼져 나가는 현상을 수식하는 양사로도 널리 쓰입니다. 특히 여러 사람이 동시에 내어 일정한 공간을 가득 메우는 소리를 나타낼 때 매우 흔히 사용됩니다(예: “一片欢呼声” 한바탕의 열렬한 환호성, “一片掌声” 우레와 같은 일제의 박수 소리). 그 밖에도 넓게 펼쳐진 풍경(예: “一片汪洋” 끝없는 망망대해)이나 공간을 감도는 분위기(예: “一片寂静” 온전한 고요), 진실한 마음(예: “一片好意” 한 조각의 온정) 등을 표현할 때 쓰입니다. 한국어의 '한바탕의', '일대의', '온통 뒤덮인'에 해당합니다.",
+    "formation": "동사 + 一片 + 명사 (환호 소리 / 박수 소리 / 풍경 / 마음 등)",
+    "examples": [
+      {
+        "translation": "학생들은 그 말을 듣고, 열렬한 환호성을 한바탕 터뜨렸다."
+      }
+    ]
   },
   "zh_根本negative_595": {
-    "title": "根本 + negative (at all)",
-    "shortExplanation": "at all",
-    "longExplanation": "at all. Pinyin: gēnběn + negative",
-    "formation": "gēnběn + negative"
+    "title": "根本 + 부정사 (부사: 전혀 ~않다, 애초에 ~않다, 아예 ~못하다)",
+    "shortExplanation": "부정사(不, 没 등)의 앞에 놓여 부정의 어조를 철저히 강화하며, 뿌리부터 완전히 아니거나 애초부터 불가능함을 강조합니다('전혀 ~않다', '아예 ~못하다').",
+    "longExplanation": "“根本”(gēnběn)이 부정사(“不”, “没” 또는 가능보어의 부정형) 앞에 놓이면, 사물의 본질이나 출발점부터 그러한 사실·상태·능력이 완전히 부재함을 못 박아 말하는 극도의 전면 부정 표현이 됩니다(예: “根本不知道” 전혀 알지 못하다, “根本没有用” 아예 쓸모가 없다, “根本做不到” 애초에 해낼 수가 없다). 화자의 단호한 어조나 불만, 체념 등의 감정이 강하게 실립니다. 한국어의 '전혀 ~않다', '아예 ~못하다', '애초에 ~가 아니다'에 해당합니다.",
+    "formation": "주어 + 根本 + (就 +) 부정사 (不 / 没 / 불능보어 등) + 술어",
+    "examples": [
+      {
+        "translation": "나는 자신이 시험 문제를 전혀 읽고 이해하지 못한다는 사실을 깨달았다."
+      }
+    ]
   },
   "zh_根本_596": {
-    "title": "根本 (root cause, fundamental)",
-    "shortExplanation": "root cause, fundamental",
-    "longExplanation": "root cause, fundamental. Pinyin: gēnběn",
-    "formation": "gēnběn"
+    "title": "根本 (명사: 근본, 근원, 바탕, 본질, 뿌리)",
+    "shortExplanation": "사물의 존립이나 발전의 가장 밑바탕이 되는 근원, 본질, 토대를 가리키는 명사입니다('근본', '뿌리', '토대').",
+    "longExplanation": "명사로서의 “根本”(gēnběn)은 나무의 '뿌리(根)'와 '밑동(本)'이라는 원초적 어원에서 비롯되어, 사물이 성립되고 발전하는 데 가장 바탕이 되는 결정적인 토대나 근원, 본질을 뜻합니다. 주로 국가 정책, 도덕률, 인간됨의 본질을 논하는 격조 높은 문맥에서 쓰이며, “教育是国家的根本”(교육은 국가의 근본이다)처럼 판단동사 “是”의 목적어로 쓰이거나 “抓住根本”(근본을 붙잡다), “本末倒置”(본말이 전도되다)와 같이 핵심 대상을 지칭합니다. 한국어의 '근본', '뿌리', '토대', '바탕'에 해당합니다.",
+    "formation": "주어 + 是 + (수식어 +) 根本 (또는 동사 + 根本)",
+    "examples": [
+      {
+        "translation": "교육은 국가의 근본이다."
+      }
+    ]
   },
   "zh_根本肯定_597": {
-    "title": "根本 肯定 (completely)",
-    "shortExplanation": "completely",
-    "longExplanation": "completely. Pinyin: gēnběn kěndìng",
-    "formation": "gēnběn kěndìng"
+    "title": "根本 (긍정형 부사: 근본적으로, 발본색원하여, 철저히, 뿌리째)",
+    "shortExplanation": "긍정문에서 동사 앞에 놓여, 미봉책이 아니라 문제의 뿌리부터 발본색원하여 철저하고 온전하게 처리함을 나타냅니다('근본적으로', '철저히').",
+    "longExplanation": "부사 “根本”(gēnběn)이 긍정 서술문에서 쓰일 때는 주로 “解决”(해결하다), “改变”(바꾸다), “消除”(없애다)와 같은 완결적이고 긍정적인 변화를 뜻하는 동사 앞에 놓입니다. 표면적인 임기응변이나 미봉책에 그치는 것이 아니라, 문제의 발원지이자 가장 깊은 뿌리를 파고들어 완벽하고 철저하게 처리했음을 의미합니다(예: “事情已经根本解决了” 일이 이미 근본적으로 완전히 해결되었다). 한국어의 '근본적으로', '발본색원하여', '뿌리째', '철저히'에 해당합니다.",
+    "formation": "주어 + (已经 +) 根本 + 동사 (解决 / 改变 / 消除 등) + 了",
+    "examples": [
+      {
+        "translation": "일이 이미 근본적으로 철저하게 해결되었다."
+      }
+    ]
   },
   "zh_根本就是_598": {
-    "title": "根本(就)是 (simply)",
-    "shortExplanation": "simply",
-    "longExplanation": "simply. Pinyin: gēnběn( jiù) shì",
-    "formation": "gēnběn( jiù) shì"
+    "title": "根本(就)是 (강조 연어: 애초에 ~이다, 완전히 ~이다, 그야말로 ~이다)",
+    "shortExplanation": "상대방의 행동이나 사태의 본질을 꿰뚫어 보고, '애초부터 완전히 ~이다', '그야말로 다름 아닌 ~이다'라고 단호하게 판정하는 강조 표현입니다('애초에 ~이다', '완전히 ~이다').",
+    "longExplanation": "“根本(就)是”(gēnběn (jiù) shì)는 본질을 나타내는 부사 “根本”과 단정을 강화하는 “就”, 판단 동사 “是”가 어우러진 관용적 결합입니다. 상대방이 둘러대는 핑계나 겉치레를 꿰뚫어 보고, 그 이면에 도사린 진짜 의도나 사태의 본질을 거침없이 들추어내며 단정 지을 때 씁니다(예: “他根本就是在故意找麻烦” 그는 애초에 고의로 트집을 잡고 있는 것에 불과하다). 화자의 분노나 냉철한 비판, 단호한 확신이 뚜렷이 드러납니다. 한국어의 '애초에 ~이다', '완전히 ~이다', '그야말로 ~에 불과하다'에 해당합니다.",
+    "formation": "주어 + 根本(就)是 + (在 +) 술어 / 동사구 / 명사구",
+    "examples": [
+      {
+        "translation": "그는 애초에 고의로 우리를 곤란하게 만들며 트집을 잡고 있는 것이다."
+      }
+    ]
   },
   "zh_除非否则_599": {
-    "title": "除非……否则…… (unless)",
-    "shortExplanation": "unless",
-    "longExplanation": "unless. Pinyin: chúfēi…… fǒuzé……",
-    "formation": "chúfēi…… fǒuzé……"
+    "title": "除非……否则…… (호응 접속사: ~하지 않는 한…… 그렇지 않으면 ~이다, 오직 ~해야만 한다, 안 그러면 ~이다)",
+    "shortExplanation": "앞 절에서 유일무이한 필수 선결 조건을 제시하고, 만약 그 조건이 충족되지 않으면 뒤 절의 부정적이거나 원치 않는 결과가 초래됨을 나타내는 구문입니다('~하지 않는 한, 그렇지 않으면 ~이다').",
+    "longExplanation": "“除非……否则……”(chúfēi…… fǒuzé……)는 유일한 필수 요건을 제시하는 조건 복문의 대표적인 상관 접속사입니다. “除非”가 이끄는 앞 절에는 어떠한 목표를 달성하거나 난국을 타개하기 위해 반드시 충족되어야만 하는 '유일무이한 전제 조건'이 제시되고, “否则”(그렇지 않으면)가 이끄는 뒤 절에는 그 조건이 이행되지 않을 경우 초래될 부정적인 파국이나 불가능한 상황이 명시됩니다. 엄중한 경고, 협상 조건, 기한 설정 등에서 강력한 당위성을 부여할 때 씁니다. 한국어의 '~하지 않는 한, 그렇지 않으면 ~이다', '오직 ~해야만 한다, 안 그러면 ~이다'에 해당합니다.",
+    "formation": "除非 + 유일한 필수 조건 ，否则 + 부정적 귀결",
+    "examples": [
+      {
+        "translation": "나에게 한 주일을 더 주지 않는 한, 우리는 임무를 완수할 수 없습니다."
+      }
+    ]
   },
   "zh_除非才_600": {
-    "title": "(除非)……才…… (unless)",
-    "shortExplanation": "unless",
-    "longExplanation": "unless. Pinyin: ( chúfēi)…… cái……",
-    "formation": "( chúfēi)…… cái……"
+    "title": "(除非)……才…… (조건 접속 표현: ~해야만 비로소 ~하다, ~해야 겨우 ~하다)",
+    "shortExplanation": "어떤 결과를 얻기 위한 유일무이한 필수 조건을 나타내며, 오직 그 조건이 충족되어야만 비로소 뒤의 일이 일어남을 나타냅니다('~해야만 비로소 ~하다').",
+    "longExplanation": "“(除非)……才……”((chúfēi)…… cái……)는 “只有……才……”와 마찬가지로 어떤 결과가 발생하기 위한 유일한 필수 전제 조건을 이끄는 조건 복문 구문입니다. 앞 절의 “除非”는 유일한 조건을 제시하며(생략 가능), 뒤 절의 부사 “才”는 '그 조건이 갖추어져야 비로소/겨우 일어난다'는 엄격한 한정 관계를 맺습니다. 한국어의 '~해야만 비로소 ~하다', '~해야 겨우 ~할 수 있다'에 해당합니다.",
+    "formation": "(除非 +) 유일한 조건 ，주어 + 才 + 술어 / 결과",
+    "examples": [
+      {
+        "translation": "네가 내 조건을 받아들여야만, 비로소 너에게 가르쳐 줄 것이다."
+      }
+    ]
   },
   "zh_除非_601": {
-    "title": "除非 (except)",
-    "shortExplanation": "except",
-    "longExplanation": "except. Pinyin: chúfēi",
-    "formation": "chúfēi"
+    "title": "除非 (전치사적 용법: ~을 제외하고는, ~말고는)",
+    "shortExplanation": "유일한 예외 대상을 이끌어 내어, '그 대상을 제외하고는 (아무도 ~할 수 없다 / 어떤 것도 ~하지 않다)'라는 전면 부정과 호응합니다('~을 제외하고는', '~말고는').",
+    "longExplanation": "“除非”(chúfēi)는 “除了……以外”와 유사하게 명사나 인칭 대명사 앞에 놓여 유일한 예외 인물이나 사물을 제시하는 역할을 합니다. 뒤따르는 문장에는 주로 “没人”(아무도 없다), “都不”(모두 ~않다)와 같은 전면 부정 표현이 이어져, 오직 그 대상만이 유일하게 해당 조건을 충족하거나 능력을 지니고 있음을 역설합니다. 한국어의 '~을 제외하고는', '~말고는 (아무도 ~않다)'에 해당합니다.",
+    "formation": "화제 / 주어 ，除非 + 예외 대상 ，전면 부정 표현 (没人 / 都不) + 술어",
+    "examples": [
+      {
+        "translation": "이런 기계는 리양을 제외하고는 아무도 잘 고칠 수 없다."
+      }
+    ]
   },
   "zh_V1得O直V2_602": {
-    "title": "V1 得 (O) 直 V2 (V1 O so much that O V2)",
-    "shortExplanation": "V1 O so much that O V2",
-    "longExplanation": "V1 O so much that O V2. Pinyin: V1 dé (O) zhí V2",
-    "formation": "V1 dé (O) zhí V2"
+    "title": "동사1 + 得 (+ 목적어 +) 直 + 동사2 (정도보어 표현: 너무 ~해서 연신/줄곧 ~하다, ~한 나머지 계속 ~하다)",
+    "shortExplanation": "동사1이나 감정의 정도가 극에 달하여 그 결과 억누를 수 없는 신체적 반응이나 동작인 동사2를 쉴 새 없이 계속하게 됨을 나타냅니다('너무 ~해서 연신 ~하다').",
+    "longExplanation": "“동사1 + 得 (+ 목적어 +) 直 + 동사2”는 감정이나 신체 상태가 극단적인 정도에 이르렀음을 나타내는 정도·상태보어의 관용 구문입니다. 동사1(주로 气-화나다, 乐-즐겁다, 急-조급하다, 疼-아프다, 累-지치다 등 심리·상태 동사)의 자극이 너무 강한 나머지, 부사 “直”(줄곧, 연신, 쉴 새 없이)가 수식하는 동사2(发抖-떨다, 喘气-헐떡이다, 流汗-땀 흘리다 등 억제하기 힘든 신체적 행동)를 멈추지 않고 계속해서 행하게 됨을 실감 나게 묘사합니다. 목적어 자리에 인칭대명사가 들어가 동작의 주체를 명확히 하기도 합니다. 한국어의 '너무 ~해서 연신/줄곧 ~하다', '~한 나머지 계속 ~해 대다'에 해당합니다.",
+    "formation": "주어 + 동사 / 형용사1 + 得 (+ 목적어 +) 直 + 동사2",
+    "examples": [
+      {
+        "translation": "아버지는 아들이 집을 팔았다는 말을 듣고는, 너무 화가 난 나머지 (온몸을) 부들부들 떨었다."
+      }
+    ]
   },
   "zh_直到_603": {
-    "title": "直到 (untill)",
-    "shortExplanation": "untill",
-    "longExplanation": "untill. Pinyin: zhídào",
-    "formation": "zhídào"
+    "title": "直到 (개사: ~에 이르기까지, ~까지 줄곧, ~이 되어서야 비로소)",
+    "shortExplanation": "시간이나 공간의 한도를 나타내어, 어떤 상태나 동작이 그 시점까지 줄곧 이어져 오고 있거나 그 시점에 이르러서야 비로소 깨달았음을 나타냅니다('~에 이르기까지', '~까지 줄곧').",
+    "longExplanation": "“直到”(zhídào)는 '줄곧, 곧장'을 뜻하는 “直”와 '이르다'를 뜻하는 “到”가 합쳐진 개사(전치사)로, 시간 명사나 시점을 나타내는 구 앞에 놓여 동작이나 심리 상태가 지속되어 온 한계 시점을 이끕니다. 문두에 쓰여 과거부터 그 시점까지 어떤 인식이 변함없이 이어지고 있음을 나타내거나, 뒤 절의 부사 “才”와 어울려 '그때가 되어서야 비로소 알게 되었다'는 뉘앙스를 풍기기도 합니다. 한국어의 '~에 이르기까지', '~까지 줄곧', '~이 되어서야'에 해당합니다.",
+    "formation": "直到 + 시간 / 도달 시점 ，주어 + (也 / 还 / 才 +) 술어",
+    "examples": [
+      {
+        "translation": "오늘에 이르기까지도, 나는 그가 당시에 왜 그렇게 크게 화를 냈는지 도무지 이해하지 못한다."
+      }
+    ]
   },
   "zh_反正_604": {
-    "title": "反正 (anyway)",
-    "shortExplanation": "anyway",
-    "longExplanation": "anyway. Pinyin: fǎnzhèng",
-    "formation": "fǎnzhèng"
+    "title": "反正 (부사: 어차피, 어쨌든, 아무튼, 어떻게 되든 간에)",
+    "shortExplanation": "상황이나 전제, 다른 사람의 행동이 어떻게 변하든 간에, 자신의 확고한 태도나 객관적인 사실은 아무런 영향을 받지 않고 변함없음을 나타냅니다('어차피', '어쨌든', '아무튼').",
+    "longExplanation": "“反正”(fǎnzhèng)은 반대(反)든 정방향(正)이든 '어느 쪽으로 가든 결과는 마찬가지다'라는 어감을 지닌 부사입니다. 흔히 앞 절의 무조건 접속사 “不管”(상관없이), “无论”(어찌 되었든)과 호응하여 복문의 뒤 절 머리에 놓입니다. 주변 상황이나 타인의 의사가 어떻게 돌아가든 간에, 자신의 결심이나 사실의 귀결은 이미 확고부동하여 결코 바뀌지 않음을 단호하게 표현할 때 씁니다. 한국어의 '어차피', '어쨌든 간에', '아무튼', '어떻게 되든'에 해당합니다.",
+    "formation": "(不管 / 无论 + 조건 / 상황 …… ，) 反正 + 확고한 결심 / 사실",
+    "examples": [
+      {
+        "translation": "너희들 중 누가 가든 간에, 어차피 나는 가지 않을 것이다."
+      }
+    ]
   },
   "zh_点_605": {
-    "title": "# 点 ## (# point ##)",
-    "shortExplanation": "# point ##",
-    "longExplanation": "# point ##. Pinyin: # diǎn ##",
-    "formation": "# diǎn ##"
+    "title": "수사 + 点 + 수사 (소수 읽는 법: ~점 ~)",
+    "shortExplanation": "중국어에서 소수를 읽는 방식입니다. “点”(diǎn)이 소수점에 해당하며, 소수점 앞은 정수로, 소수점 뒤는 각 자릿수의 숫자를 하나씩 개별적으로 읽습니다('~점 ~').",
+    "longExplanation": "중국어 소수 표현은 “정수 부분 수사 + 点(diǎn) + 소수점 이하 숫자들”의 구조로 이루어집니다. 여기서 “点”은 소수점(.)을 가리킵니다. 읽는 방법은 정수 부분의 경우 일반적인 기수법에 따라 읽고(예: 三, 二十五), 소수점 이하의 자릿수는 십이나 백 등의 단위 명칭을 붙이지 않고 각 자릿수의 숫자를 하나씩 낱개로 순서대로 읽습니다(예: “三点一四” sān diǎn yī sì = 3.14; 0은 líng, 1은 yī, 2는 èr로 발음). 한국어의 '~점 ~(삼 점 일 사)'에 해당합니다.",
+    "formation": "정수부 수사 + 点 + 소수점 이하 개별 숫자",
+    "examples": [
+      {
+        "translation": "3.14 (삼 점 일 사)."
+      }
+    ]
   },
   "zh_1分之2_606": {
-    "title": "#1 分之 #2 (#2 #1-th (fraction))",
-    "shortExplanation": "#2 #1-th (fraction)",
-    "longExplanation": "#2 #1-th (fraction). Pinyin: #1 fēnzhī #2",
-    "formation": "#1 fēnzhī #2"
+    "title": "분모 + 分之 + 분자 (분수 읽는 법: ~분의 ~)",
+    "shortExplanation": "중국어에서 분수를 나타내는 방식입니다. '분모 + 分之 + 분자'의 어순으로 쓰이며, 한국어의 '~분의 ~'와 완벽하게 어순이 일치합니다.",
+    "longExplanation": "중국어의 분수 표현법은 “분모 수사 + 分之(fēnzhī) + 분자 수사”의 어순을 취합니다. 한자 “分之”는 고대 한어의 문법에서 유래한 것으로, 전체를 몇(분모) 개로 나눈 것(分) 중의(之) 몇 개(분자)라는 뜻을 나타냅니다. 한국어의 '5분의 1'과 마찬가지로 분모가 앞에 오고 분자가 뒤에 오므로 어순이 완전히 동일합니다(예: “五分之一” wǔ fēn zhī yī = 5분의 1; “四分之三” sì fēn zhī sān = 4분의 3).",
+    "formation": "분모 수사 + 分之 + 분자 수사",
+    "examples": [
+      {
+        "translation": "5분의 1 (1/5)."
+      }
+    ]
   },
   "zh_百分之_607": {
-    "title": "百分之 # (# percent)",
-    "shortExplanation": "# percent",
-    "longExplanation": "# percent. Pinyin: bǎifēnzhī #",
-    "formation": "bǎifēnzhī #"
+    "title": "百分之 + 수사 (퍼센트·백분율 읽는 법: ~퍼센트, ~프로)",
+    "shortExplanation": "중국어에서 백분율(%, 퍼센트)을 나타내는 표현 방식입니다. “百分之”를 먼저 말하고 뒤에 구체적인 숫자를 붙입니다('~퍼센트', '~프로').",
+    "longExplanation": "“百分之 + 수사”(bǎifēnzhī #)는 중국어에서 퍼센트(백분율)를 나타내는 고정된 표준 구문입니다. 분수 구조에서 분모를 100(“百”)으로 고정한 형태로, '100으로 나눈 것 중의 몇'이라는 뜻입니다. 한국어에서는 숫자를 먼저 말하고 '9퍼센트', '50프로'와 같이 단위를 뒤에 붙이지만, 중국어는 정반대로 반드시 “百分之”를 앞에 두고 구체적인 숫자를 뒤에 배치합니다(예: “百分之九” bǎi fēn zhī jiǔ = 9%, “百分之百” bǎi fēn zhī bǎi = 100%). 한국어의 '~퍼센트(%)'에 해당합니다.",
+    "formation": "百分之 + 수치 수사",
+    "examples": [
+      {
+        "translation": "9퍼센트 (9%)."
+      }
+    ]
   },
   "zh_甲乙丙丁_608": {
-    "title": "甲乙丙丁 (A, B, C, D (series))",
-    "shortExplanation": "A, B, C, D (series)",
-    "longExplanation": "A, B, C, D (series). Pinyin: jiǎyǐ bǐng dīng",
-    "formation": "jiǎyǐ bǐng dīng"
+    "title": "甲乙丙丁 (순서·대명 부호: 갑, 을, 병, 정 / 갑측, 을측, A, B, C, D)",
+    "shortExplanation": "십간(十干)의 처음 네 글자로, 순서, 등급, 또는 계약서 등에서 거래 당사자(갑, 을, 병, 정)나 가상의 대상(A, B, C, D)을 지칭하는 부호입니다.",
+    "longExplanation": "“甲、乙、丙、丁”(jiǎ, yǐ, bǐng, dīng)은 전통 십간(天干)의 첫 네 글자로, 현대 중국어에서도 영문 알파벳 A, B, C, D처럼 순서, 등급, 또는 당사자를 나타내는 대명 부호로 광범위하게 쓰입니다. 가장 대표적인 쓰임새는 법률 문서나 상업 계약서에서 계약 주체를 지칭하는 “甲方”(갑측, 발주처)과 “乙方”(을측, 수주처)입니다. 이 밖에도 성적이나 품질의 등급(甲等, 乙等), 사안의 가상 행위자(갑과 을)를 나타낼 때 두루 활용됩니다. 한국어의 '갑, 을, 병, 정', '갑측, 을측', '당사자 A, B'에 해당합니다.",
+    "formation": "甲 / 乙 / 丙 / 丁 (+ 方 / 等 / 类)",
+    "examples": [
+      {
+        "translation": "만약 을(乙)측이 동의한다면, 갑(甲)측은 제품을 예정보다 앞당겨 을측에 인도할 수 있다."
+      }
+    ]
   },
   "zh_顺着_609": {
-    "title": "顺(着) (along)",
-    "shortExplanation": "along",
-    "longExplanation": "along. Pinyin: shùn( zhe)",
-    "formation": "shùn( zhe)"
+    "title": "顺(着) (개사: ~을 따라서, ~을 타고, ~대로)",
+    "shortExplanation": "길, 강, 표면, 방향 등을 나타내는 명사를 이끌어, 동작이나 흐름이 그 궤적이나 표면을 따라 이동함을 나타냅니다('~을 따라서', '~을 타고').",
+    "longExplanation": "“顺(着)”(shùn(zhe))은 물리적인 경로나 표면, 방향을 이끄는 방향 개사(전치사)입니다. 길, 강줄기, 벽, 또는 사람의 얼굴이나 신체 표면을 나타내는 명사와 결합하여 '그 궤적이나 굴곡을 따라 순방향으로 흘러가거나 나아감'을 나타냅니다. 예를 들어 “顺着这条路”(이 길을 따라서), “汗水顺着脸往下流”(땀방울이 얼굴을 타고 흘러내리다)처럼 공간적 이동에 쓰이며, “顺着他的意思”(그의 뜻에 따라서)처럼 추상적인 의도나 사고의 흐름에 순응함을 나타내기도 합니다. 한국어의 '~을 따라서', '~을 타고 (흘러내리다)', '~대로'에 해당합니다.",
+    "formation": "주어 + 顺(着) + 경로 / 표면 / 방향 + 이동 동사",
+    "examples": [
+      {
+        "translation": "땀방울이 그의 얼굴을 타고 주르륵 흘러내렸다."
+      }
+    ]
   },
   "zh_自_610": {
-    "title": "自 (from)",
-    "shortExplanation": "from",
-    "longExplanation": "from. Pinyin: zì",
-    "formation": "zì"
+    "title": "自 (서면어 개사: ~로부터, ~에서부터)",
+    "shortExplanation": "공간, 시간, 범위의 출발점을 나타내는 격식 있는 서면어 개사로, 구어의 “从”에 해당합니다('~로부터', '~에서부터').",
+    "longExplanation": "“自”(zì)는 동작이나 상태가 시작되는 시간적·공간적 기점을 이끄는 서면어 개사(전치사)로, 현대 일상 구어의 “从”(cóng)에 해당합니다. 격식 있는 문체, 학술 논문, 보도 기사에서 매우 선호되며, 공간적 이동이나 방향을 나타낼 때는 “自……向……”(~에서 ~쪽으로), “自……至……”(~에서 ~에 이르기까지)와 같이 짝을 이루어 자주 쓰입니다. 시간의 시점을 나타낼 때도 “自古以来”(예로부터), “自……起”(~부터)처럼 널리 쓰입니다. 한국어의 '~로부터', '~에서부터', '~에서'에 해당합니다.",
+    "formation": "自 + 기점 (시간 / 장소) (+ 向 / 至 + 종점 / 방향) + 술어",
+    "examples": [
+      {
+        "translation": "조류는 지구가 북극에서 남극으로 향하는 자극의 자기력선을 감지해 낼 수 있다."
+      }
+    ]
   },
   "zh_把V着_611": {
-    "title": "把……V 着 ((imperative))",
-    "shortExplanation": "(imperative)",
-    "longExplanation": "(imperative). Pinyin: bǎ……V zhe",
-    "formation": "bǎ……V zhe"
+    "title": "把 + 목적어 + 동사 + 着 (처치문 명령·지시 표현: ~을 ~해 두어라, ~을 지니고 가거라)",
+    "shortExplanation": "처치문(把자문)에 지속 조사 “着”가 결합하여, 상대방에게 물건을 챙겨 가도록 하거나 특정 상태를 계속 유지하도록 권하거나 지시할 때 씁니다('~을 챙겨 가라', '~해 두어라').",
+    "longExplanation": "“把 + 목적어 + 동사 + 着”(bǎ……V zhe) 구문은 대상에 대한 처치를 나타내는 '把자문' 뒤에 상태의 지속을 나타내는 동태조사 “着”를 연결한 표현입니다. 일상 회화의 명령문이나 당부·조언의 문맥에서 매우 빈번하게 사용됩니다. 청자에게 물건을 몸에 지니거나 챙겨 둔 상태를 유지하도록 권고할 때(예: “你把书带着” 책을 챙겨 가거라, “把伞拿着” 우산을 들고 가거라), 혹은 사물을 특정 상태로 지속시켜 두라고 지시할 때(예: “把门开着” 문을 열어 두어라) 쓰입니다. 한국어의 '~을 챙겨 가거라', '~을 지니고 있거라', '~해 두어라'에 해당합니다.",
+    "formation": "주어 + 把 + 목적어 + 동사 + 着",
+    "examples": [
+      {
+        "translation": "너 책 챙겨 가거라 (책을 지니고 가거라)."
+      }
+    ]
   },
   "zh_把O给V了_612": {
-    "title": "把 O (给) V 了 (have V’ed the O)",
-    "shortExplanation": "have V’ed the O",
-    "longExplanation": "have V’ed the O. Pinyin: bǎ O ( gěi) V le",
-    "formation": "bǎ O ( gěi) V le"
+    "title": "把 + 목적어 + (给) + 동사 + 了 (처치문 어기 강화: ~을 완전히 ~해 버리다, 깜빡 ~해 버렸다)",
+    "shortExplanation": "把자문에서 동사 앞에 '给'를 덧붙여 처치의 어기를 강화하며, 동작이 철저히 완료되었거나 무심코 유감스러운 결과를 초래했음을 나타냅니다('~을 싹 ~해 버리다', '깜빡 ~해 버렸다').",
+    "longExplanation": "“把 + 목적어 + (给) + 동사 + 了”는 일상 구어의 처치문(把자문)에서 술어 동사 바로 앞에 조사 성격의 “给”를 삽입하여 처치의 뉘앙스를 한층 강조하는 관용 구문입니다. 여기서의 “给”는 '주다'라는 본뜻이 아니라, 동작 처치가 단번에 철저히 이루어졌음을 나타내거나 실수·망각 등으로 인해 뜻하지 않은 결과가 발생했음을 생생하게 부각시키는 역할을 합니다(예: “把这事给忘了” 이 일을 깜빡 잊어버렸다, “把手机给弄丢了” 휴대전화를 잃어버리고 말았다). “给”가 들어가면 말하는 이의 아차 하는 감정이나 일처리의 완결성이 훨씬 더 또렷해집니다. 한국어의 '~을 깜빡 ~해 버리다', '~을 싹 ~해 치우다'에 해당합니다.",
+    "formation": "주어 + 把 + 목적어 + (给 +) 동사 + 了",
+    "examples": [
+      {
+        "translation": "내가 이 일을 (깜빡) 잊어버리고 말았다."
+      }
+    ]
   },
   "zh_给_613": {
-    "title": "给 ((See 被))",
-    "shortExplanation": "(See 被)",
-    "longExplanation": "(See 被). Pinyin: gěi",
-    "formation": "gěi"
+    "title": "给 (피동 개사: ~에게 ~당하다, ~에 의해 ~되다, 被에 해당)",
+    "shortExplanation": "구어에서 피동문(수동태)을 이끄는 개사로 쓰이며, “被”(bèi), “叫”(jiào), “让”(ràng)과 마찬가지로 동작을 가한 행위자(원인)를 이끕니다('~에게 ~당하다').",
+    "longExplanation": "“给”(gěi)는 현대 중국어 일상 구어에서 피동을 나타내는 개사(전치사)로 빈번히 활용되며, 문법적 기능은 “被”(bèi)나 “叫”(jiào), “让”(ràng)과 동일합니다. 문장의 주어로는 행동의 영향을 받는 대상(피해자 또는 사물)이 오고, “给 + 동작 가해자 + 동사 + 기타 성분(보어 또는 了)”의 구조를 이룹니다. 주로 도난, 파손, 손실 등 화자에게 불리하거나 바람직하지 못한 피해 상황을 말할 때 매우 흔히 사용되어 불만이나 아쉬움의 뉘앙스를 풍깁니다. 한국어의 '~에게 ~당하다', '~에 의해 ~해지다'에 해당합니다.",
+    "formation": "주어 (피동 대상) + 给 + 가해자 / 행위자 + 동사 + 보어 / 了",
+    "examples": [
+      {
+        "translation": "내 휴대전화는 도둑에게 도난당했다 (도둑이 훔쳐 가 버렸다)."
+      }
+    ]
   },
   "zh_何不_614": {
-    "title": "何不 (why not)",
-    "shortExplanation": "why not",
-    "longExplanation": "why not. Pinyin: hébù",
-    "formation": "hébù"
+    "title": "何不 (반어적 부사어: 어찌 ~하지 않는가, ~하는 편이 낫지 않은가, ~해 보는 게 어때서)",
+    "shortExplanation": "반어 의문문의 형식을 빌려 상대방에게 좋은 방안을 적극적으로 제안하거나 권유, 조언할 때 씁니다('어찌 ~하지 않는가', '~하면 어떨까').",
+    "longExplanation": "“何不”(hébù)는 고대 한어에서 유래한 격조 높은 반어 표현으로, '어찌/왜'를 뜻하는 “何”와 부정사 “不”가 결합하여 '어찌하여 ~하지 않는가'라는 뜻을 나타냅니다. 술어 동사 앞에 놓이며 문말에는 흔히 어기조사 “呢”를 동반합니다. 실제로는 이유를 따져 묻는 것이 아니라, '당연히 그렇게 하는 편이 훨씬 좋다', '~해 보는 것이 가장 합리적이다'라는 강한 긍정적 권유와 매력적인 제안, 유익한 조언을 전달합니다. 구어와 서면어 모두에서 세련되고 설득력 있는 어조로 쓰입니다. 한국어의 '어찌 ~하지 않는가', '~해 보는 것이 어때서', '~하는 게 낫지 않은가'에 해당합니다.",
+    "formation": "상황 / 이유 ，(주어 +) 何不 + 제안 동작 (+ 呢) ？",
+    "examples": [
+      {
+        "translation": "날씨가 이렇게 좋은데, 밖에 나가서 좀 놀다 오는 게 어때서 그러니?"
+      }
+    ]
   },
   "zh_何尝_615": {
-    "title": "何尝 (why wouldn’t)",
-    "shortExplanation": "why wouldn’t",
-    "longExplanation": "why wouldn’t. Pinyin: hécháng",
-    "formation": "hécháng"
+    "title": "何尝 (반어 부사: 어찌 ~했겠는가, 결코 ~한 적이 없다, 어찌 ~하지 않았겠는가)",
+    "shortExplanation": "반어문에 쓰여 사실과 정반대임을 역설적으로 강조하며 강한 부정이나 강한 긍정(\"何尝不/没\" 형태)을 나타내는 부사입니다('어찌 ~했겠는가', '어찌 ~하지 않았겠는가').",
+    "longExplanation": "“何尝”(hécháng)은 반어 의문문에서 쓰여 말하고자 하는 바를 한층 강렬하게 반문·강조하는 부사입니다. 문장 끝의 어기조사 “呢”와 자주 호응합니다. 크게 두 가지 패턴으로 나뉩니다. ① 부정 형식과 결합한 “何尝不 / 何尝没”는 이중부정을 통해 아주 강한 긍정을 드러냅니다(예: “我何尝不想……”＝'내가 어찌 사고 싶지 않았겠는가, 사실은 몹시 사고 싶지만 사정이 여의치 않을 뿐이다'). ② 일반 긍정 서술과 결합할 때는 사실에 대한 단호한 부정 반박을 나타냅니다(예: '내가 언제 그런 말을 했던가, 결코 한 적 없다'). 한국어의 '어찌 ~했겠는가', '어찌 ~하지 않았겠는가(정말 ~하고 싶었다)', '결코 ~한 적이 없다'에 해당합니다.",
+    "formation": "주어 + 何尝 + 不 / 没 + 동사 / 형용사 + 목적어 + (呢)？ ｜ 주어 + 何尝 + 동사 + (呢)？",
+    "examples": [
+      {
+        "translation": "내가 어찌 큰 집을 사고 싶지 않았겠습니까? (사실은 간절히 사고 싶었습니다)."
+      }
+    ]
   },
   "zh_何至于_616": {
-    "title": "何至于 (why must)",
-    "shortExplanation": "why must",
-    "longExplanation": "why must. Pinyin: hé zhìyú",
-    "formation": "hé zhìyú"
+    "title": "何至于 (반어 부사: 어찌 그 지경까지 이르겠는가, 어찌 그렇게까지 ~하겠는가)",
+    "shortExplanation": "반어 어기를 사용하여, 사태가 그렇게까지 심각하거나 극단적인 지경에 이를 이유가 없으며 그토록 과도하게 반응할 필요가 없음을 나타냅니다('어찌 그 지경까지 가겠는가', '뭘 그리도 ~한단 말인가').",
+    "longExplanation": "“何至于”(hé zhìyú)는 의문사 “何”(어찌)와 “至于”(~의 지경에 이르다)가 결합된 반어 부사어입니다. 대개 술어 앞이나 뒤 절 머리에 놓여 문말의 “呢”와 호응하며, 상황이나 사태가 그렇게까지 심각한 지경에 이를 리가 없는데 왜 그렇게 지나치게 화를 내거나 비관하는지 반문할 때 씁니다. 상대방의 지나친 분노나 과민 반응을 진정시키고 달래는 맥락에서 자주 활용됩니다. 한국어의 '어찌 그 지경까지 이르겠는가', '뭘 그렇게까지 ~한단 말인가', '그 정도로까지 ~할 일은 아니다'에 해당합니다.",
+    "formation": "주어 + 何至于 + 동사구 / 절 + (呢)？",
+    "examples": [
+      {
+        "translation": "당신이 어찌 그렇게까지 크게 화를 낼 것까지 있겠어요?"
+      }
+    ]
   },
   "zh_V了个RESULT_617": {
-    "title": "V 了个 RESULT (V to RESULT)",
-    "shortExplanation": "V to RESULT",
-    "longExplanation": "V to RESULT. Pinyin: V le gè RESULT",
-    "formation": "V le gè RESULT"
+    "title": "동사 + 了个 + 결과보어 (구어 관용 형식: 실컷 ~했다, 말끔히 ~해 버렸다, 한바탕 통쾌하게 ~하다)",
+    "shortExplanation": "동작을 끝까지 철저히 하여 실컷 만족감을 맛보았거나, 어떠한 철저하고 극단적인 상태·결과에 도달했음을 생동감 있게 묘사하는 구어 관용 표현입니다('실컷 ~했다', '말끔히 ~해 버렸다').",
+    "longExplanation": "“동사 + 了个 + 형용사 / 결과보어”는 현대 중국어 구어에서 동작의 상태와 결과를 아주 구성지고 생생하게 그려내는 대표적인 관용 문형입니다. 여기서의 “个”는 본래의 사물을 세는 양사적 의미가 완전히 탈색(허화)된 것으로, 어조를 고르고 뒤따르는 보어의 의미를 한층 부각해 주는 음절 충전 및 어기 강화 기능을 수행합니다. 주로 ① 동작을 아주 통쾌하고 남김없이 행하여 마음껏 만족을 누릴 때(예: “喝了个痛快”＝실컷 통쾌하게 마셨다, “玩了个够”＝질리도록 놀았다), ② 어떠한 당혹스럽거나 극단적인 결과가 발생했을 때(예: “吃了个精光”＝말끔히 다 먹어 치웠다, “闹了个大笑话”＝큰 웃음거리가 되고 말았다) 널리 쓰입니다. 한국어의 '실컷 ~했다', '한바탕 통쾌하게 ~했다', '아주 말끔히 ~해 버렸다'에 해당합니다.",
+    "formation": "주어 + 동사 + 了个 + 형용사 / 결과보어 (痛快 / 精光 / 饱 등)",
+    "examples": [
+      {
+        "translation": "우리는 아주 통쾌하게 실컷 마셨다."
+      }
+    ]
   },
   "zh_据说_618": {
-    "title": "据说…… (It is said that…)",
-    "shortExplanation": "It is said that…",
-    "longExplanation": "It is said that…. Pinyin: jùshuō……",
-    "formation": "jùshuō……"
+    "title": "据说…… (삽입어: 듣자 하니 ~라 한다, 전해지는 바에 따르면, 소문에 의하면)",
+    "shortExplanation": "문두나 주어 앞에 놓여, 뒤따르는 서술 내용이 제3자에게 전해 들은 소문이나 간접적인 보도에 근거한 전언(傳言)임을 나타내는 표현입니다('듣자 하니 ~라 한다', '전하는 바에 따르면').",
+    "longExplanation": "“据说”(jùshuō)는 근거를 나타내는 “据”(의거하다)와 “说”(말하다)이 결합된 표현으로, 다른 사람에게서 전해 들은 말이나 세간에 떠도는 풍문을 화제로 이끌어낼 때 쓰는 대표적인 전언 삽입어입니다. 문장의 맨 앞이나 주어 앞에 쉼표와 함께 쓰이며, 진술하는 내용이 화자가 직접 목격하거나 검증한 사실이 아니라 간접 정보에 불과함을 밝혀주는 구실을 합니다. 따라서 객관적 유보의 뉘앙스를 담고 있습니다. 한국어의 '듣자 하니 ~라 한다', '전해지는 말에 따르면', '소문에 의하면'에 해당합니다.",
+    "formation": "据说 ，+ 절 / 문장",
+    "examples": [
+      {
+        "translation": "듣자 하니, 그는 젊었을 때 혼자서 아프리카의 대삼림에 가 본 적이 있다고 한다."
+      }
+    ]
   },
   "zh_因而_619": {
-    "title": "因而 (therefore)",
-    "shortExplanation": "therefore",
-    "longExplanation": "therefore. Pinyin: yīn'ér",
-    "formation": "yīn'ér"
+    "title": "因而 (접속사: 그러므로, 그 때문에, 따라서, 그 결과)",
+    "shortExplanation": "앞 절의 원인이나 객관적 조건을 받아, 그로 인해 초래된 필연적인 결과나 귀결을 뒤 절에서 이끌어내는 서면어 접속사입니다('그러므로', '그 때문에', '따라서').",
+    "longExplanation": "“因而”(yīn'ér)는 원인을 뜻하는 “因”과 순접 접속의 “而”가 합쳐진 인과 관계 접속사로, 학술문이나 논설문, 격식 있는 서면어에서 주로 사용됩니다. 복문의 뒤 절 머리에 놓여 앞 절에서 제시한 원인이나 사실이 직접적인 계기가 되어 자연스럽게 뒤 절의 결과로 이어졌음을 논리적으로 규명합니다. 일상 구어의 “所以”에 비해 문체적 격조가 높으며, 통상 앞 절에 “因为”를 쓰지 않고 단독으로 인과적 계승 관계를 밝힙니다. 한국어의 '그러므로', '그 때문에', '따라서', '그 결과'에 해당합니다.",
+    "formation": "원인·전제절 ，因而 + 결과절",
+    "examples": [
+      {
+        "translation": "이 강은 하도가 매우 좁아, 그로 인해 홍수가 발생하기 쉽다."
+      }
+    ]
   },
   "zh_也_620": {
-    "title": "也 (still)",
-    "shortExplanation": "still",
-    "longExplanation": "still. Pinyin: yě",
-    "formation": "yě"
+    "title": "也 (양보 부사: ~해도 역시, 설령 ~할지라도 그래도 ~해야 한다)",
+    "shortExplanation": "가정 양보 복문의 뒤 절에서 쓰여, 앞 절의 불리한 조건이나 반대되는 의향에도 불구하고 뒤 절의 결정이나 방침이 확고부동하게 관철됨을 나타내는 부사입니다('~해도 역시 ~해야 한다').",
+    "longExplanation": "여기서의 “也”(yě)는 단순한 병렬의 '도'가 아니라, 가정이나 양보를 내포한 복문에서 귀결의 불변성과 당위성을 강조하는 부사입니다. 앞 절에 “即使”, “就算”, “哪怕”(설령 ~할지라도)이 명시되거나 생략된 채 부정적·비우호적 상황이 놓일 때, 뒤 절에서 “也”를 받쳐 써서 '설사 네 마음이 내키지 않거나 상황이 불리하더라도, 정해진 의무나 결과는 결코 피할 수 없으며 그대로 이행되어야 한다'는 단호한 입장을 드러냅니다. 한국어의 '~하더라도 (그래도) ~해야 한다', '~일지라도 역시 ~하다'에 해당합니다.",
+    "formation": "(가정·양보절) ，주어 + 也 + 술어 (得 / 要 / 会 등)",
+    "examples": [
+      {
+        "translation": "하기 싫어도 해야만 한다."
+      }
+    ]
   },
   "zh_再也_621": {
-    "title": "再……也…… (no matter how)",
-    "shortExplanation": "no matter how",
-    "longExplanation": "no matter how. Pinyin: zài…… yě……",
-    "formation": "zài…… yě……"
+    "title": "再……也…… (양보 구문: 아무리 ~해도 역시 ~하다, 아무리 ~할지라도 반드시 ~하겠다)",
+    "shortExplanation": "정도의 극치를 가정한 양보 상관 구문으로, 사물의 성질이나 동작의 정도가 아무리 극단에 달하더라도 뒤 절의 결심·사실·결과가 결코 흔들리지 않음을 나타냅니다('아무리 ~해도 ~하다').",
+    "longExplanation": "“再……也……”(zài…… yě……)는 정도의 극한을 한계까지 밀어붙여 양보의 전제로 삼는 필수 문형입니다. “再” 뒤에는 형용사나 심리 동사가 놓여 '더 이상 어찌할 수 없을 만큼 극한으로 ~하더라도'라는 양보적 가정을 설정하고, 뒤 절의 “也”는 그에 맞서 '그 어떤 극한의 조건 속에서도 마땅히 이행해야 할 과업이나 의지는 결코 변하지 않는다'는 불굴의 의지나 불변의 법칙을 못 박아 선언합니다. 난관을 극복하려는 굳은 결의를 표명할 때 널리 쓰입니다. 한국어의 '아무리 ~해도 (역시) ~하다', '비록 아무리 ~할지언정 ~하겠다'에 해당합니다.",
+    "formation": "주어 + 再 + 형용사 / 동사 + 也 + 술어 / 결론",
+    "examples": [
+      {
+        "translation": "내가 아무리 피곤하더라도 숙제는 다 끝마쳐야 한다."
+      }
+    ]
   },
   "zh_巴不得_622": {
-    "title": "巴不得 (be only too eager to)",
-    "shortExplanation": "be only too eager to",
-    "longExplanation": "be only too eager to. Pinyin: bābude",
-    "formation": "bābude"
+    "title": "巴不得 (심리 동사: 간절히 바라다, ~하기만을 몹시 고대하다, 바라 마지않다)",
+    "shortExplanation": "바람직한 일이나 좋은 결과가 속히 실현되기를 간절하고 애타게 고대함을 나타내는 구어 심리 동사입니다('간절히 바라다', '~하기만을 몹시 고대하다').",
+    "longExplanation": "“巴不得”(bābude)는 간절히 바라다는 뜻을 지닌 “巴”에서 파생된 심리 동사로, 뒤에 대개 절 형태의 목적어를 거느리고 옵니다. 어떤 긍정적이고 좋은 상황이나 관계의 개선이 하루빨리 이루어지기를 손꼽아 애타게 기다리는 화자의 간절한 소망을 생생하게 표현합니다. 비현실적이고 극단적인 과장성이 짙은 “恨不得”와 비교할 때, “巴不得”는 일상에서 충분히 실현 가능한 바람직한 희망 사항에 대해 쓰이는 것이 특징입니다. 한국어의 '간절히 바라다', '~하기만을 몹시 고대하다', '바라 마지않다'에 해당합니다.",
+    "formation": "주어 + 巴不得 + 동사구 / 목적어절",
+    "examples": [
+      {
+        "translation": "그들이 정말로 화해해서 이제부터는 화목하게 살아가기를 나는 간절히 바라고 있다."
+      }
+    ]
   },
   "zh_别提多了_623": {
-    "title": "别提多……了 (indescribably)",
-    "shortExplanation": "indescribably",
-    "longExplanation": "indescribably. Pinyin: bié tíduō…… le",
-    "formation": "bié tíduō…… le"
+    "title": "别提多……了 (구어 관용 구문: 이루 말할 수 없이 ~하다, 얼마나 ~한지 말도 못 하다, 더할 나위 없이 ~하다)",
+    "shortExplanation": "정도가 극에 달하여 말로 다 형용할 수 없을 정도임을 감탄과 과장을 담아 표현하는 구어 관용 구문입니다('얼마나 ~한지 말도 못 하다', '이루 말할 수 없이 ~하다').",
+    "longExplanation": "“别提多……了”(bié tíduō…… le)는 '말을 꺼낼 필요조차 없다'는 뜻의 “别提”와 정도의 심화를 나타내는 “多……了”가 어우러진 대표적인 구어 감탄 구문입니다. 가운데에는 대개 긍정적인 성질을 띤 형용사나 심리 동사가 들어가며, 그 사태나 성격이 어찌나 두드러지고 대단한지 이루 필설로 다 묘사할 수 없을 만큼 극한에 이르렀음을 생동감 있게 칭찬하거나 과장할 때 씁니다. 한국어의 '얼마나 ~한지 말도 못 한다', '이루 말할 수 없이 ~하다', '더할 나위 없이 ~하다'에 해당합니다.",
+    "formation": "주어 / 사안 ，别提多 + 형용사 / 심리동사 + 了",
+    "examples": [
+      {
+        "translation": "이 사람이 일 처리하는 것은 얼마나 책임감이 넘치는지 말도 못 할 정도입니다."
+      }
+    ]
   },
   "zh_具有语体差别的同义词_624": {
-    "title": "具有语体差别的同义词 (synonyms that differ by style)",
-    "shortExplanation": "synonyms that differ by style",
-    "longExplanation": "synonyms that differ by style. Pinyin: jùyǒu yǔ tǐ chà biéde tóngyìcí",
-    "formation": "jùyǒu yǔ tǐ chà biéde tóngyìcí"
+    "title": "具有语体差别的同义词 (문체론적 유의어: 구어체와 서면어체의 차이를 지닌 동의어 쌍)",
+    "shortExplanation": "기본적인 문법적·어휘적 의미는 동일하지만, 일상 회화(구어체)에 쓰이는 단어와 격식 있는 문장이나 문학(서면어체·문어체)에 쓰이는 단어로 뚜렷하게 나뉘는 어휘 현상입니다.",
+    "longExplanation": "고급 중국어 학습에서 “具有语体差别的同义词”(어체 차이를 지닌 동의어)는 문맥과 어조를 조절하는 핵심 어휘 규범입니다. 의미 내용이나 담당하는 문법 기능은 근본적으로 같으나, 일상생활의 친근하고 자연스러운 소통에 쓰이는 '구어체(口语体)' 어휘와 신문 기사, 공문서, 문학작품 등 격식 있고 장중한 문맥에 쓰이는 '서면어체(书面语体)' 어휘가 엄격히 구별됩니다. 대표적인 짝으로는 부사의 “就”(구어) ↔ “便”(서면어), 발화 동사의 “说”(구어) ↔ “道”(서면어·고풍), 처치 개사의 “把”(구어) ↔ “将”(서면어) 등이 있습니다. 적절한 격식과 장면에 맞춰 어휘를 구사하는 분별력이 요구됩니다.",
+    "formation": "구어체 어휘 (就 / 说 / 把 / 爸爸 / 商量 등) ↔ 서면어체 어휘 (便 / 道 / 将 / 父亲 / 磋商 등)",
+    "examples": [
+      {
+        "translation": "그는 곧 대답하여 말했다, \"이 반지를 가져가시오.\"라고. (여기서 '便 / 道 / 将'은 서면어·문어체 표현이고, '就 / 说 / 把'는 구어체 표현임)."
+      }
+    ]
   },
   "zh_恨不得_625": {
-    "title": "恨不得 (to wish (badly))",
-    "shortExplanation": "to wish (badly)",
-    "longExplanation": "to wish (badly). Pinyin: hènbude",
-    "formation": "hènbude"
+    "title": "恨不得 (심리 동사: ~하고 싶어 안달이다, 마음 같아서는 당장이라도 ~하고 싶다, ~하지 못해 애가 타다)",
+    "shortExplanation": "현실적으로 어렵거나 불가능한 일임에도 초조하고 다급한 마음에 과장하여 '당장이라도 그렇게 하고 싶다'고 애태우며 갈망함을 나타내는 동사입니다('~하고 싶어 안달이다').",
+    "longExplanation": "“恨不得”(hènbude)의 “恨”은 원망이나 증오가 아니라 '원하는 대로 하지 못해 몹시 안타깝고 애가 타다'라는 뜻입니다. 따라서 물리적·능력적 한계 때문에 불가능하다는 것을 알면서도, 마음이 너무나 다급하고 간절한 나머지 '당장이라도 날개를 달고 날아가고 싶다'거나 '한 입에 다 삼켜버리고 싶다'처럼 과장된 행동을 간절히 바라는 심리 상태를 묘사합니다. 대개 뒤에 과장성을 띤 동사구나 절을 목적어로 동반합니다. 한국어의 '~하고 싶어 안달이다', '~하지 못해 애가 타다', '마음 같아서는 당장이라도 ~하고 싶다'에 해당합니다.",
+    "formation": "주어 + 恨不得 + 동사구 / 목적어절 (과장적이거나 실현하기 어려운 소망)",
+    "examples": [
+      {
+        "translation": "일이 바쁠 때 그녀는 혼자서 두 사람 몫의 일을 다 해치우고 싶어 안달이었다."
+      }
+    ]
   },
   "zh_顿时_626": {
-    "title": "顿时 (suddenly)",
-    "shortExplanation": "suddenly",
-    "longExplanation": "suddenly. Pinyin: dùnshí",
-    "formation": "dùnshí"
+    "title": "顿时 (시간 부사: 순식간에, 즉시, 이내, 곧바로)",
+    "shortExplanation": "어떤 계기나 자극에 촉발되어 상황이나 심리가 눈 깜짝할 사이에 급변하였음을 나타내는 시간 부사로, 오직 과거의 일에만 쓰입니다('순식간에', '즉시', '이내').",
+    "longExplanation": "“顿时”(dùnshí)은 앞선 원인이나 사건의 자극을 받아 새로운 상태, 감정, 분위기가 일순간에 걷잡을 수 없이 일어났음을 나타내는 격조 높은 서면어 시간 부사입니다. 문학적인 묘사나 과거 회고 담화에서 매우 즐겨 쓰입니다. 문법적으로 가장 유의해야 할 점은, “顿时”은 이미 발생한 과거의 사실을 서술할 때만 쓰이며, 미래의 계획이나 명령·청유문(이때는 “马上”이나 “立刻”를 씀)에는 절대 사용할 수 없다는 점입니다. 한국어의 '순식간에', '즉시', '그 즉시', '이내'에 해당합니다.",
+    "formation": "계기·직전의 상황 ，顿时 + 주어 + 술어 (또는: 주어 + 顿时 + 술어)",
+    "examples": [
+      {
+        "translation": "의사의 말을 듣자, 순식간에 그의 마음속에는 다시금 희망이 타올랐다."
+      }
+    ]
   },
   "zh_不由得_627": {
-    "title": "不由得 (can’t help but to)",
-    "shortExplanation": "can’t help but to",
-    "longExplanation": "can’t help but to. Pinyin: bùyóude",
-    "formation": "bùyóude"
+    "title": "不由得 (부사: 자기도 모르게, 어느덧, 절로 ~하게 되다, ~하지 않을 수 없다)",
+    "shortExplanation": "스스로의 이성이나 의지로 억누를 수 없어, 감정이나 심리적 반응이 무의식중에 저절로 터져 나오거나 일어남을 나타내는 부사입니다('자기도 모르게', '절로 ~하다').",
+    "longExplanation": "“不由得”(bùyóude)는 '자신의 뜻대로 되지 않는다'는 어원에서 출발한 부사로, “不由自主”(자기도 모르게), “禁不住”(참지 못하고)와 유사합니다. 주로 걱정하다, 웃음을 터뜨리다, 눈물을 흘리다, 탄식하다 등 심리 반응이나 생리적 감정을 나타내는 동사구 앞에 쓰여, 어떤 상황에 직면했을 때 화자의 통제를 벗어나 무의식적이고 자연스럽게 감정이 북받쳐 오르는 정황을 나타냅니다. 한국어의 '자기도 모르게', '절로 ~하게 되다', '어느덧', '~하지 않을 수 없다'에 해당합니다.",
+    "formation": "주어 + 不由得 + 심리동사구 / 감정 표현",
+    "examples": [
+      {
+        "translation": "리펑이 병을 앓는 채로 경기에 출전했으니, 나는 자기도 모르게 은근히 걱정이 되었다."
+      }
+    ]
   },
   "zh_V番_628": {
-    "title": "V # 番 (V’ed # times over)",
-    "shortExplanation": "V’ed # times over",
-    "longExplanation": "V’ed # times over. Pinyin: V # fān",
-    "formation": "V # fān"
+    "title": "동사 + (수사 +) 番 (동량사: 한바탕 ~하다, 한 차례 꼼꼼히 ~하다, 한동안 ~을 치러 내다)",
+    "shortExplanation": "동작의 횟수를 나타내는 동량사로 쓰여, 일정한 시간과 공을 들여 한바탕 충분히 과정을 치르거나 꼼꼼하게 진행함을 나타냅니다('한바탕 ~하다', '한 차례 꼼꼼히 ~하다').",
+    "longExplanation": "“番”(fān)이 동량사로 쓰일 때는 주로 수사 “一”(때로는 “几”)과 어울려 “동사 + 一番”의 형식으로 술어 뒤에서 동량보어 역할을 합니다. 단순히 횟수만을 건조하게 세는 “次”나 처음부터 끝까지의 전 과정을 훑는 “遍”과 달리, “番”은 그 동작을 수행하는 데 상당한 정성이나 시간, 고심, 혹은 우여곡절이 들어갔음을 부각합니다(예: “打量一番”＝찬찬히 한 차례 뜯어보다, “思考一番”＝한참을 깊이 고민하다, “折腾一番”＝한바탕 씨름하다). 한국어의 '한바탕 ~하다', '한 차례 꼼꼼히 ~해 보다', '한동안 ~을 치르다'에 해당합니다.",
+    "formation": "주어 + 동사 (+ 목적어) + 수사 (一 / 几) + 番",
+    "examples": [
+      {
+        "translation": "그는 나를 아래위로 한 차례 훑어보더니, 목구멍까지 올라왔던 말을 도로 삼켰다."
+      }
+    ]
   },
   "zh_番_629": {
-    "title": "番 ((measure word for tumultuous events))",
-    "shortExplanation": "(measure word for tumultuous events)",
-    "longExplanation": "(measure word for tumultuous events). Pinyin: fān",
-    "formation": "fān"
+    "title": "番 (명량사: 몇 차례의 ~, 한 줄기의 ~, 고난·풍파·정성 등을 세는 단위)",
+    "shortExplanation": "추상명사 앞에 놓이는 명량사로, 우여곡절과 시련에 찬 인생 역정이나 온 정성을 다한 고심·호의 등의 단위를 셀 때 쓰입니다('몇 차례의 ~', '한 줄기 ~').",
+    "longExplanation": "“番”(fān)이 명량사로 쓰일 때는 주로 “一” 또는 “几”와 결합하여(“一番”, “几番”) 뒤따르는 추상명사를 수식합니다. 셀 수 없는 심리적·과정적 실체를 하나의 의미 있는 단위로 묶어주는 역할을 하며, 크게 두 갈래의 문맥에서 즐겨 쓰입니다. ① 삶의 모진 풍파, 시련, 곡절 등을 나타내는 명사와 어울려 파란만장한 고난의 과정을 묘사할 때(예: “几番风雨”＝몇 차례의 비바람·시련, “几番波折”＝몇 번의 우여곡절); ② 정성 어린 호의, 각고의 고심, 숭고한 포부 등 온 마음을 쏟아부은 대상을 가리킬 때(예: “一番好意”＝한 줄기 따뜻한 호의, “一番苦心”＝남다른 고심, “一番事业”＝하나의 큰 사업). 문체적으로 매우 전아하고 품격 있는 표현입니다. 한국어의 '몇 차례의 ~', '한 줄기 ~', '몇 번의 풍파'에 해당합니다.",
+    "formation": "수사 (一 / 几) + 番 + 추상명사 (风雨 / 波折 / 苦心 / 好意 / 事业 등)",
+    "examples": [
+      {
+        "translation": "몇 차례의 거센 풍파를 겪고 나서야 그는 비로소 인생의 가치를 깨달았다."
+      }
+    ]
   },
   "zh_翻番_630": {
-    "title": "翻 (#) 番 (multiply # times)",
-    "shortExplanation": "multiply # times",
-    "longExplanation": "multiply # times. Pinyin: fān (#) fān",
-    "formation": "fān (#) fān"
+    "title": "翻 (#) 番 (동사: 배로 늘어나다, 2배가 되다, 2의 n제곱 배로 급증하다)",
+    "shortExplanation": "수량이 기존의 갑절(2배)로 늘어나거나, 중간에 수사를 넣어 2의 거듭제곱 배로 급증함을 나타내는 수량 동사 표현입니다('배로 늘어나다', '갑절이 되다').",
+    "longExplanation": "“翻番”(fānfān)은 경제 뉴스, 통계 지표, 일상 대화에서 생산량이나 소득 등이 폭발적으로 증가했음을 나타낼 때 널리 쓰이는 표현입니다. 단독으로 “翻番” 또는 “翻了一番”이라고 쓰이면 기존 수량에서 한 번 배가된 것, 즉 '2배로 늘어나다(갑절이 되다)'를 뜻합니다. 만약 중간에 수사를 넣어 “翻两番”이라고 하면 2의 2제곱인 '4배', “翻三番”은 2의 3제곱인 '8배'로 증가함을 뜻하는 기하급수적 배증 방식을 따릅니다. 한국어의 '배로 늘어나다', '갑절이 되다', '두 배가 되다'에 해당합니다.",
+    "formation": "주어 + (已经 / 将) + 翻番 + (了) ｜ 주어 + 翻了 + 수사 + 番",
+    "examples": [
+      {
+        "translation": "5년 전과 비교하여 대다수 사람들의 급여는 이미 두 배로 늘어났습니다."
+      }
+    ]
   },
   "zh_过于_631": {
-    "title": "过于 (too)",
-    "shortExplanation": "too",
-    "longExplanation": "too. Pinyin: guòyú",
-    "formation": "guòyú"
+    "title": "过于 (부사: 지나치게, 너무나, 과도하게)",
+    "shortExplanation": "사물의 상태나 행동의 정도가 적절한 기준이나 한도를 넘어섰음을 나타내는 정도부사입니다. 주로 형용사나 심리동사 앞에 쓰여 부정적이거나 바람직하지 못한 결과를 시사합니다('지나치게', '너무').",
+    "longExplanation": "“过于”(guòyú)는 한자 ‘過(지날 과)’와 ‘于(어조사 어)’가 합쳐진 부사로, 구어의 “太”에 비해 한층 격식 있고 정제된 서면어 및 격식체 구어 표현입니다. 정도나 수위가 마땅한 한계선이나 적정 기준을 초과했음을 나타내며, 주로 2음절 형용사(예: 匆忙, 紧张, 严格, 悲观)나 심리동사를 수식합니다. 지나친 과열이나 극단성이 초래하는 부정적 영향, 당혹감, 안타까움의 뉘앙스를 내포하며, 충고나 객관적 지적의 맥락에서 자주 쓰입니다. 한국어의 '지나치게', '너무나', '과도하게'에 해당합니다.",
+    "formation": "주어 + 过于 + 형용사 / 심리동사 ｜ 동사 + 得 + 过于 + 형용사",
+    "examples": [
+      {
+        "translation": "그는 너무나 황급하게 나오는 바람에, 뜻밖에도 휴대전화를 챙겨 오는 것을 잊어버렸다."
+      }
+    ]
   },
   "zh_着呢_632": {
-    "title": "着呢 (state + emphasis)",
-    "shortExplanation": "state + emphasis",
-    "longExplanation": "state + emphasis. Pinyin: zhene",
-    "formation": "zhene"
+    "title": "着呢 (어기조사: ~하고 있는걸요, 아주 ~하답니다, ~한걸요)",
+    "shortExplanation": "형용사나 동사 뒤에 붙는 생생한 구어 어기조사입니다. ① 정도가 매우 높음을 강조하거나('아주 ~하답니다'), ② 어떤 상태가 여전히 지속되고 있음을 상대방에게 일깨워 주며 넌지시 알려 주는 기능을 합니다('~하고 있는걸요').",
+    "longExplanation": "“着呢”(zhene)는 북방 구어의 풍부한 맛을 지닌 종결 어기 결합 표현입니다. 크게 두 가지 용법으로 쓰입니다. ① 형용사나 심리동사 뒤에 놓여 정도가 매우 심함을 친근하고 단정적으로 드러냅니다. 이때는 “很”이나 “极了”와 유사하지만, 상대방이 잘 모르고 있거나 과소평가하고 있는 사실을 깨우쳐 주는 뉘앙스가 한층 강합니다(예: “好着呢”＝아주 잘 지내고 있는걸요, “忙着呢”＝눈코 뜰 새 없이 바쁘답니다). ② 동사 뒤에 지속을 나타내는 동태조사 “着”와 어기조사 “呢”가 결합하여, 어떤 객관적 상태가 계속 유지되고 있음을 가볍게 확인·일깨워 주는 용법입니다(예: “空着呢”＝비어 있는걸요). 한국어의 '아주 ~하답니다', '~하고 있는걸요', '~한걸요'에 해당합니다.",
+    "formation": "주어 + 형용사 / 동사 + 着呢 ｜ 주어 + 동사 + 着 + (목적어) + 呢",
+    "examples": [
+      {
+        "translation": "여기 앉으세요, 이 자리는 비어 있는걸요."
+      }
+    ]
   },
   "zh_乘机_633": {
-    "title": "乘机 (take this opportunity and)",
-    "shortExplanation": "take this opportunity and",
-    "longExplanation": "take this opportunity and. Pinyin: chéngjī",
-    "formation": "chéngjī"
+    "title": "乘机 (부사어: 틈을 타서, 기회를 틈타, 겸사겸사, 이 기회에)",
+    "shortExplanation": "유리한 기회나 여건을 포착하여, 그 틈이나 기회를 살려 목적하는 행동을 행함을 나타내는 부사적 성분입니다('기회를 틈타', '이 기회에', '틈을 타서').",
+    "longExplanation": "“乘机”(chéngjī)는 ‘乘(탈 승, 편승할 승)’과 ‘机(기회 기)’가 결합한 낱말로, 주로 술어 동사 앞에 놓여 부사어로 기능합니다. 마침 마련된 절호의 계기나 상황적 틈을 적극적으로 이용하여 특정 행위를 수행함을 나타냅니다. 출장이나 방문 등을 계기로 짬을 내어 관광이나 사적 용무를 처리하는 긍정적·중립적 맥락(예: 출장 간 김에 명소를 둘러보다)은 물론, 혼란이나 허점을 틈타 부당한 이득을 챙기거나 도망치는 부정적 맥락(예: 혼란을 틈타 침입하다)에서도 두루 사용됩니다. 한국어의 '기회를 틈타', '틈을 타서', '이 기회에', '겸사겸사'에 해당합니다.",
+    "formation": "주어 + (可以 / 会 / 想) + 乘机 + 동사구",
+    "examples": [
+      {
+        "translation": "이번 베이징 출장에 우리는 이 기회를 틈타 만리장성을 한번 유람할 수 있습니다."
+      }
+    ]
   },
   "zh_不料_634": {
-    "title": "不料 (who would have thought)",
-    "shortExplanation": "who would have thought",
-    "longExplanation": "who would have thought. Pinyin: bùliào",
-    "formation": "bùliào"
+    "title": "不料 (접속사: 뜻밖에도, 생각지도 못하게, 미처 생각지 못하게)",
+    "shortExplanation": "예상이나 사전 기대와는 전혀 다른 엉뚱하고 뜻밖의 사태가 발생했음을 나타내는 전환 접속사입니다. 뒤 절 머리에 놓여 '뜻밖에도', '생각지도 못하게'의 뜻을 나타냅니다.",
+    "longExplanation": "“不料”(bùliào)는 ‘不(아니 불)’과 ‘料(헤아릴 료, 예측하다)’가 합쳐진 접속사로, 서면어와 구어에서 폭넓게 쓰입니다. 복문의 뒤쪽 절 머리에 놓이며(흔히 절 내부의 부사 “却”나 “倒”와 어울려 역접의 기세를 강화함), 앞 절에서 품었던 의도나 당연한 기대와는 완전히 어긋나는 뜻밖의 결과나 당혹스러운 반전이 일어났음을 나타냅니다. 예상치 못한 실패, 돌발 사태, 상대방의 뜻밖의 오해나 격한 반응을 서술하며 놀라움과 안타까움을 드러낼 때 자주 활용됩니다. 한국어의 '뜻밖에도', '생각지도 못하게', '예상외로', '미처 헤아리지 못하게'에 해당합니다.",
+    "formation": "앞선 의도·전제의 절 ，不料 + (주어 +) (却 / 倒 +) 뜻밖의 사태의 절",
+    "examples": [
+      {
+        "translation": "나는 그저 그녀에게 농담을 한 번 건네려 했을 뿐인데, 뜻밖에도 그녀가 진짜로 화를 냈다."
+      }
+    ]
   },
   "zh_未免太A了_635": {
-    "title": "未免+太+A+了 (can’t say it’s not too A)",
-    "shortExplanation": "can’t say it’s not too A",
-    "longExplanation": "can’t say it’s not too A. Pinyin: wèimiǎn+ tài+A+ le",
-    "formation": "wèimiǎn+ tài+A+ le"
+    "title": "未免 + 太 + 형용사 + 了 (부사 구문: 아무래도 너무 ~하다, 과연 너무 ~하다고 하지 않을 수 없다)",
+    "shortExplanation": "사태나 행동의 정도가 도를 지나쳐 도저히 변명할 수 없음을 완곡하면서도 분명하게 지적하는 비판·평가 구문입니다('아무리 그래도 너무 ~하다').",
+    "longExplanation": "“未免+太+형용사+了”(wèimiǎn tài ... le)는 비판이나 불만의 어조를 격식 있게 표현할 때 즐겨 쓰이는 구문입니다. “未免”(면하기 어렵다, ~라고 하지 않을 수 없다)은 어기를 완곡하게 만들어 주는 부사이지만, 극단적 정도를 나타내는 “太……了”와 결합하면 '어떻게 객관적으로 보아도 도가 지나쳐 두둔해 주기 어렵다', '아무리 그렇다 하더라도 정도가 너무 심하다'라는 확고한 불만과 지적의 뜻을 띱니다. 늑장 대처, 지나친 무례함, 지나치게 가혹한 기준 등을 비판할 때 자주 쓰입니다. 한국어의 '아무리 그래도 너무 ~하다', '아무래도 너무 ~하다고 하지 않을 수 없다'에 해당합니다.",
+    "formation": "주어 / 행위 + 未免 + 太 + 형용사 + 了",
+    "examples": [
+      {
+        "translation": "경찰이 도착했을 때는 아무리 그래도 너무 늦었다고 하지 않을 수 없었다."
+      }
+    ]
   },
   "zh_未免有些有点A_636": {
-    "title": "未免+有些/有点+A (can’t say it’s not a bit A)",
-    "shortExplanation": "can’t say it’s not a bit A",
-    "longExplanation": "can’t say it’s not a bit A. Pinyin: wèimiǎn+ yǒuxiē/ yǒudiǎn+A",
-    "formation": "wèimiǎn+ yǒuxiē/ yǒudiǎn+A"
+    "title": "未免 + 有些/有点 + 형용사 (부사 구문: 다소 ~한 감이 있다, 약간은 ~하다고 하지 않을 수 없다)",
+    "shortExplanation": "부정적인 평가나 아쉬움을 매우 정중하고 완곡하게 에둘러 전달하는 완곡 비판 구문입니다('다소 ~한 감이 있다', '조금은 ~하다고 하지 않을 수 없다').",
+    "longExplanation": "“未免+有些/有点+형용사”(wèimiǎn yǒuxiē/yǒudiǎn ...)는 상대방의 기분을 상하게 하지 않으면서도 미흡하거나 부적절한 점을 짚어 낼 때 쓰는 대단히 정중한 어법 장치입니다. “未免太……了”가 도를 넘은 상황에 대한 노골적인 불만을 담는다면, “有些/有点”(약간, 다소)을 결합한 이 형식은 비판의 강도를 한 단계 낮추어 '전적으로 잘못되었다기보다는 조금은 과하거나 서운한 구석이 있다'는 뉘앙스를 자아냅니다. 주로 失礼(실례되다), 勉强(무리하다), 草率(경솔하다), 遗憾(유감스럽다) 등과 결합합니다. 한국어의 '다소 ~한 감이 있다', '조금은 ~하다고 하지 않을 수 없다'에 해당합니다.",
+    "formation": "주어 / 행위 + 未免 + 有些 / 有点 + 형용사",
+    "examples": [
+      {
+        "translation": "그의 제안을 거절하는 것은 다소 결례가 되는 감이 없지 않다."
+      }
+    ]
   },
   "zh_仅仅只不过而已_637": {
-    "title": "仅仅/只不过……而已 (only)",
-    "shortExplanation": "only",
-    "longExplanation": "only. Pinyin: jǐnjǐn/ zhǐbuguò…… éryǐ",
-    "formation": "jǐnjǐn/ zhǐbuguò…… éryǐ"
+    "title": "仅仅 / 只不过……而已 (호응 구문: 단지 ~에 불과하다, 그저 ~일 뿐이다)",
+    "shortExplanation": "범위나 정도가 극히 제한되어 있으며 대단하거나 심각한 것이 아님을 한정하여 나타내는 호응 구문입니다('단지 ~에 불과하다', '그저 ~일 뿐이다').",
+    "longExplanation": "“仅仅 / 只不过……而已”(jǐnjǐn / zhǐbuguò ... éryǐ)는 앞뒤 성분이 호응하여 한정과 축소의 뉘앙스를 확고히 하는 문형입니다. 앞쪽에서 “仅仅”(오직, 단지)이나 “只不过”(그저 ~에 지나지 않다)가 서술 대상을 소박한 범위로 한정 짓고, 문장 끝의 “而已”(따름이다, 뿐이다)가 이를 받아 '그 이상의 대단한 의미나 숨은 뜻은 없다'고 단정합니다. 상대방의 과대평가를 불식시키거나 겸손을 표할 때, 혹은 사태를 가볍게 진정시킬 때 널리 쓰입니다. 한국어의 '단지 ~에 불과하다', '그저 ~일 따름이다', '겨우 ~에 지나지 않는다'에 해당합니다.",
+    "formation": "주어 + 仅仅 / 只不过 + (是) + 명사구 / 동사구 + 而已",
+    "examples": [
+      {
+        "translation": "그의 본업은 경찰관이고, 소설 쓰기는 단지 그의 여가 취미에 불과할 뿐이다."
+      }
+    ]
   },
   "zh_固然_638": {
-    "title": "固然 (granted)",
-    "shortExplanation": "granted",
-    "longExplanation": "granted. Pinyin: gùrán",
-    "formation": "gùrán"
+    "title": "固然 (양보 접속사: 물론 ~이기는 하지만, 기왕에 ~한 것은 사실이나)",
+    "shortExplanation": "앞 절에서 어떤 사실이나 장점을 당연한 것으로 인정하여 양보한 뒤, 뒤 절에서 전환이나 보충의 실질적 주장을 전개하는 서면어 접속사입니다('물론 ~이기는 하지만').",
+    "longExplanation": "“固然”(gùrán)은 논설문이나 격식 있는 담화에서 논리를 정연하게 펼칠 때 애용되는 대표적 양보 접속사입니다. 복문의 앞쪽 절에 놓여 특정 조건이나 사실의 정당성을 일단 흔쾌히 인정합니다(‘그 점은 본래 그러하며 틀림없는 사실이다’). 그러나 진정한 방점은 뒤쪽 절에 실려 있으며, 보통 “但是”, “但”, “也”, “却” 등과 결합하여 '그렇다고 해서 다른 측면을 간과할 수는 없다'거나 '반드시 그것만이 유일한 길은 아니다'라는 반전·보충의 핵심 견해를 도출합니다. 균형 잡힌 시각을 드러내어 설득력을 높이는 기능을 합니다. 한국어의 '물론 ~이기는 하지만', '~인 것은 사실이나'에 해당합니다.",
+    "formation": "전제 인정절 (+ 固然 + 술어) ，但是 / 也 / 却 + 전환·보충절",
+    "examples": [
+      {
+        "translation": "대학에 합격하는 것이 물론 좋기는 하지만, 합격하지 못했다고 해서 출구가 아예 없는 것도 아니다."
+      }
+    ]
   },
   "zh_无非_639": {
-    "title": "无非 (simply)",
-    "shortExplanation": "simply",
-    "longExplanation": "simply. Pinyin: wúfēi",
-    "formation": "wúfēi"
+    "title": "无非 (부사: 다름 아닌 ~이다, 기껏해야 ~에 불과하다, 단지 ~일 뿐이다)",
+    "shortExplanation": "사물의 동기나 본질이 일정한 범위나 원인을 벗어나지 않음을 꿰뚫어 단정적으로 나타내는 부사입니다('다름 아닌 ~이다', '단지 ~일 뿐이다').",
+    "longExplanation": "“无非”(wúfēi)는 부정어 ‘无(없을 무)’와 ‘非(아닐 비)’가 결합하여 '그것 말고는 다른 것이 없다'는 이중부정의 강한 한정을 나타내는 부사입니다. 종종 “无非是”, “无非想”, “无非为了”의 꼴로 쓰입니다. 겉보기에 거창하거나 복잡해 보이는 행동의 이면을 간파하여, '따지고 보면 그 본질이나 목적은 아주 단순하고 뻔한 것에 지나지 않는다'는 객관적·현실적 판단을 내릴 때 사용합니다. 군더더기를 걷어내고 사안의 핵심 동기를 직시하게 하는 뉘앙스를 지닙니다. 한국어의 '다름 아닌 ~이다', '기껏해야 ~일 뿐이다', '단지 ~하고자 함에 지나지 않는다'에 해당합니다.",
+    "formation": "주어 + 无非 + (是) + (想 / 为了 / 동사구 / 명사구)",
+    "examples": [
+      {
+        "translation": "그가 이토록 열심히 일하는 것은, 다름 아니라 돈을 좀 더 벌어 처자식이 더욱 안락하게 살 수 있도록 해 주고 싶어서일 뿐이다."
+      }
+    ]
   },
   "zh_唯独_640": {
-    "title": "唯独 (only)",
-    "shortExplanation": "only",
-    "longExplanation": "only. Pinyin: wéidú",
-    "formation": "wéidú"
+    "title": "唯独 (부사: 유독, 오직 ~만, 유일하게 ~만)",
+    "shortExplanation": "전체 집단 가운데서 특정 대상 하나만을 유일한 예외로 두드러지게 떼어내어 대조하는 부사입니다('유독', '오직 ~만').",
+    "longExplanation": "“唯独”(wéidú)는 ‘唯(오직 유)’와 ‘独(홀로 독)’이 결합하여 강력한 배타적 한정을 나타내는 부사입니다. 문장 안에서 특정 명사나 대명사 앞에 놓여, 그 대상이 전체의 일반적인 흐름이나 상황과 완전히 동떨어진 '유일한 예외'임을 뚜렷하게 부각합니다. 앞 절이나 뒤 절에 “大家”, “都”, “所有人”처럼 전체를 포괄하는 표현이 동반되어 극적인 명암 대비를 이룹니다. 모두가 참여했는데 그 사람만 빠졌다거나, 다른 것들은 다 괜찮은데 유독 그것 하나만 문제를 일으킨다는 식의 아쉬움, 의아함, 특별함을 드러낼 때 즐겨 쓰입니다. 한국어의 '유독', '오직 ~만', '유일하게 ~만'에 해당합니다.",
+    "formation": "전체 / 모두 + 都... ，唯独 + 특정 대상 + (술어) ｜ 唯独 + 특정 대상 + 술어",
+    "examples": [
+      {
+        "translation": "그 여행에 다른 사람들은 모두 다 갔는데, 유독 당신만 가지 못했습니다."
+      }
+    ]
   },
   "zh_明明_641": {
-    "title": "明明 (obviously)",
-    "shortExplanation": "obviously",
-    "longExplanation": "obviously. Pinyin: míngmíng",
-    "formation": "míngmíng"
+    "title": "明明 (어기 부사: 분명히, 명백히, 뻔히, 엄연히)",
+    "shortExplanation": "사실이 손바닥 보듯 명명백백하여 도저히 부인할 수 없음을 강조하는 부사입니다. 상대방의 거짓말이나 발뺌을 따져 묻거나 반박할 때 자주 쓰입니다('분명히', '뻔히', '명백히').",
+    "longExplanation": "“明明”(míngmíng)은 ‘明(밝을 명)’ 자가 첩어로 쓰인 어기부사로, 객관적 진상이나 사실이 너무나도 뚜렷하여 의심의 여지가 전혀 없음을 나타냅니다. 주로 술어 앞에 위치하며, 눈앞에 뻔히 드러나 있는 사실을 상대방이 억지로 부정하려 들거나 왜곡할 때, 혹은 겉과 속이 다른 모순된 태도를 보일 때 강한 반박, 따짐, 불만의 감정을 실어 발언하는 문맥에서 위력을 발휘합니다. 뒤 절에 반어문(“哪里是……啊”)이나 의문문(“怎么会……”)이 자연스럽게 따라붙어 논박의 효과를 배가합니다. 한국어의 '분명히', '명백히', '뻔히', '엄연히'에 해당합니다.",
+    "formation": "주어 + 明明 + 是 / 동사 / 형용사 ，+ 반어·반박절",
+    "examples": [
+      {
+        "translation": "네가 부른 것은 명백히 유행가인데, 어디가 경극이란 말인가?"
+      }
+    ]
   },
   "zh_大不了_642": {
-    "title": "大不了…… (If the worst came to the worst, …)",
-    "shortExplanation": "If the worst came to the worst, …",
-    "longExplanation": "If the worst came to the worst, …. Pinyin: dàbùliǎo……",
-    "formation": "dàbùliǎo……"
+    "title": "大不了…… (구어 부사: 기껏해야 ~하면 그만이다, 최악이라 해 봐야 ~하면 된다)",
+    "shortExplanation": "최악의 상황이나 극단적인 결과를 상정하며, '아무리 나빠 봐야 기껏 그 정도에 불과하니 두려울 것 없다'는 대범하고 담담한 태도를 나타내는 구어 부사입니다('기껏해야 ~하면 된다').",
+    "longExplanation": "“大不了”(dàbùliǎo)는 구어에서 두려움을 떨쳐내고 배짱을 부리거나 상대를 위로할 때 자주 쓰는 표현입니다. 복문의 뒤쪽 절 머리에 놓여, '설령 가장 불리하거나 최악인 결과가 닥치더라도, 기껏해야 이 정도의 대가를 치르면 그뿐이다'라는 식의 결단과 초연함을 드러냅니다. 실패나 손실의 가능성을 쿨하게 받아들이며 “不要紧”(괜찮다), “没关系”(상관없다) 등과 자연스럽게 호응합니다. 한국어의 '기껏해야 ~하면 그만이다', '최악이라 해 봐야 ~하면 된다', '까짓것 ~하면 되지'에 해당합니다.",
+    "formation": "불리한 전제·위기의 절 ，大不了 + (주어 +) 최악의 대처 행동",
+    "examples": [
+      {
+        "translation": "실패해도 괜찮아, 기껏해야 처음부터 다시 시작하면 그만이지."
+      }
+    ]
   },
   "zh_大不了的_643": {
-    "title": "大不了的 (big deal)",
-    "shortExplanation": "big deal",
-    "longExplanation": "big deal. Pinyin: dàbùliǎo de",
-    "formation": "dàbùliǎo de"
+    "title": "大不了的 (관용 표현: 대단한 일, 대수로운 일, 큰일)",
+    "shortExplanation": "주로 부정문(\"没什么大不了的\")이나 반어문(\"有什么大不了的\")에 쓰여, 사태가 사소하고 대수롭지 않아 전혀 걱정하거나 문제 삼을 필요가 없음을 나타내는 구어 관용 표현입니다('대단한 일', '대수로운 일').",
+    "longExplanation": "“大不了的”(dàbùliǎo de)는 형용사적 의미를 띤 관용구로, 사안의 중요도나 심각성을 가볍게 털어버릴 때 쓰입니다. 거의 대부분 부정 형태인 “没什么 / 没有什么大不了的”(별것 아니다, 대수로운 일 아니다)나 반어 형태인 “有什么大不了的？”(그게 뭐 그리 대단한 일이라고 그래?)로 활용됩니다. 주변에서 어떤 일을 두고 호들갑을 떨거나 지나치게 걱정할 때 안심시키거나, 본인이 겪은 역경이나 실수를 대수롭지 않게 넘기며 털털한 성격을 드러낼 때 매우 유용합니다. 한국어의 '대단한 일', '대수로운 일', '큰일'에 해당합니다.",
+    "formation": "(주어 +) 没什么 / 没有什么 + 大不了的 ｜ 有什么 + 大不了的 + (呢 / 啊)？",
+    "examples": [
+      {
+        "translation": "키스 한 번 한 게 뭐 그리 대단한 일이라고 그래요?"
+      }
+    ]
   },
   "zh_V于PLACE_644": {
-    "title": "V 于 PLACE (V in PLACE)",
-    "shortExplanation": "V in PLACE",
-    "longExplanation": "V in PLACE. Pinyin: V yú PLACE",
-    "formation": "V yú PLACE"
+    "title": "동사 + 于 + 장소 (개사 보어 구문: [장소]에서 [동사]하다, [장소]에 위치하다/산출되다)",
+    "shortExplanation": "동사 뒤에 개사 '于'와 장소 명사를 이끌어 동작이나 사물이 발생·소재하는 장소를 나타내는 품격 있는 서면어 보어 구문입니다('[장소]에서 ~하다').",
+    "longExplanation": "“동사 + 于 + 장소”는 한문(고전 중국어)의 어순과 문형을 계승한 전형적인 서면어 개사 보어 구조입니다. 현대 구어에서는 보통 “在 + 장소 + 동사”의 어순을 취하지만, 격식 있는 보도, 학술 논문, 백과사전식 서술에서는 동사 뒤에 “于 + 장소”를 후치 보어로 두어 문장을 간결하고 고풍스럽게 압축합니다. 여기서의 “于”는 구어의 “在”(~에서, ~에)에 해당하며, 사물의 산지, 탄생지, 발생 장소를 우아하게 명시합니다. 주로 产(산출되다), 生(태어나다), 位(위치하다), 发源(발원하다) 등 단음절 기원·소재 동사와 결합하여 고정 격식을 이룹니다. 한국어의 '[장소]에서 ~하다', '[장소]에 나다/위치하다'에 해당합니다.",
+    "formation": "주어 + 동사 (产 / 生 / 止 등) + 于 + 장소 명사 / 지역명",
+    "examples": [
+      {
+        "translation": "유명한 서호 용정차는 저장성 서호 일대에서 산출됩니다."
+      }
+    ]
   },
   "zh_A于V_645": {
-    "title": "A 于 V (A to V)",
-    "shortExplanation": "A to V",
-    "longExplanation": "A to V. Pinyin: A yú V",
-    "formation": "A yú V"
+    "title": "형용사 + 于 + 동사 (서면어 관용 구문: 용감하게 ~하다, ~하기를 잘하다, 기꺼이 ~하다)",
+    "shortExplanation": "격식 있는 서면어에서 특정 형용사에 개사·접미사 '于'가 결합하여 뒤따르는 동사구를 이끌며, 특정 행위에 대한 주체의 태도, 성향, 난이도를 나타내는 문형입니다('용감하게 ~하다', '~하기에 능하다').",
+    "longExplanation": "“형용사 + 于 + 동사”는 현대 중국어 서면어에서 문장을 간결하고 우아하게 다듬어 주는 대표적인 관용 구문입니다. 개사(전치사) 또는 접미적 기능을 하는 “于”가 특정 형용사와 결합하여 어휘화된 상태로 뒤의 동작(동사구)을 목적어로 취합니다. 결합할 수 있는 형용사는 대체로 정해져 있으며, 널리 쓰이는 형태로는 “勇于”(용감하게 ~하다, 책임을 지다), “敢于”(두려움 없이 과감하게 ~하다), “善于”(~하는 데 능숙하다, 잘하다), “乐于”(기꺼이 ~하다, 즐겨 돕다), “易于”(~하기 쉽다), “难于”(~하기 어렵다), “便于”(~하기 편리하다), “急于”(성급하게 ~하려 들다) 등이 있습니다. 한국어의 '용감하게 ~하다', '과감히 ~하다', '기꺼이 ~하다', '~하기 쉽다'에 해당합니다.",
+    "formation": "주어 + 형용사(勇 / 善 / 乐 / 敢 / 易 / 难 / 便 / 急 등) + 于 + 동사 + 목적어",
+    "examples": [
+      {
+        "translation": "결정을 내릴 때는 용감하게 책임을 짊어질 필요가 있다."
+      }
+    ]
   },
   "zh_致使_646": {
-    "title": "致使 (to cause)",
-    "shortExplanation": "to cause",
-    "longExplanation": "to cause. Pinyin: zhìshǐ",
-    "formation": "zhìshǐ"
+    "title": "致使 (겸어 동사·접속사: ~를 초래하다, ~로 하여금 ~하게 만들다, 그 결과 ~가 되다)",
+    "shortExplanation": "격식 있는 서면어에서 앞선 원인이나 과실로 인해 뒤따르는 부정적·불리한 결과나 실패가 초래되었음을 나타내는 사역 동사이자 인과 접속사입니다('초래하다', '~라는 결과를 낳다').",
+    "longExplanation": "“致使”(zhìshǐ)는 ‘도달하게 하다’라는 뜻의 “致”와 사역의 “使”가 결합된 전형적인 서면어 사역 어휘입니다. 통솔하는 문형상 겸어문의 사역 술어로 쓰이거나 복문의 뒤 절 머리에서 인과 접속사로 쓰입니다. 이 단어의 가장 중요한 어법적 특성은 뒤에 이끌려 나오는 결과가 대체로 화자가 원치 않는 불행한 사태, 실패, 착오, 심각한 재난이나 손실 등 소극적이고 부정적인 성격을 띤다는 점입니다(긍정적인 발전에는 “使”나 “促进” 등을 씀). 한국어의 '~를 초래하다', '~로 하여금 (부정적인 결과를) 겪게 하다', '그 결과 ~라는 지경에 이르게 하다'에 해당합니다.",
+    "formation": "원인·과실의 사태 + 致使 + 대상(명사) + 부정적 결과(동사구 / 절)",
+    "examples": [
+      {
+        "translation": "그의 부주의는 실험 실패를 초래했다."
+      }
+    ]
   },
   "zh_并非_647": {
-    "title": "并非 (not (with emphasis, see “并”4.04.3))",
-    "shortExplanation": "not (with emphasis, see “并”4.04.3)",
-    "longExplanation": "not (with emphasis, see “并”4.04.3). Pinyin: bìngfēi",
-    "formation": "bìngfēi"
+    "title": "并非 (강조 부정 부사: 결코 ~가 아니다, 결코 ~한 것은 아니다, 절대로 ~가 아니다)",
+    "shortExplanation": "격식 있는 서면어에서 부정을 강화하는 어기 부사 '并'과 부정 판단사 '非(=不是)'가 결합하여, 통념이나 오해를 단호하게 바로잡고 반박할 때 쓰는 표현입니다('결코 ~가 아니다').",
+    "longExplanation": "“并非”(bìngfēi)는 어기를 강화하는 부사 “并”과 부정의 뜻을 지닌 “非”(不是에 해당)가 합쳐진 격식 높은 서면어 부정 표현입니다. 명사구, 형용사, 동사구 혹은 절의 머리에 놓여 통상적인 지레짐작이나 겉보기 현상, 상대방의 오판을 지적하면서 '실제 상황은 결코 그렇지 않다'는 점을 논리적이고 단호하게 밝힐 때 씁니다. 일반 구어의 단순 부정인 “不是”에 비해 반박과 해명의 어기가 훨씬 묵직하고 강력합니다. 한국어의 '결코 ~가 아니다', '결코 ~한 것은 아니다', '결코 ~라고는 할 수 없다'에 해당합니다.",
+    "formation": "주어 + 并非 + 명사 / 형용사 / 동사구 / 절",
+    "examples": [
+      {
+        "translation": "샤오왕과 같은 젊은이는 결코 소수가 아니다."
+      }
+    ]
   },
   "zh_对N而言_648": {
-    "title": "对 N 而言 (for N (see 4.05.4 “对……来说”))",
-    "shortExplanation": "for N (see 4.05.4 “对……来说”)",
-    "longExplanation": "for N (see 4.05.4 “对……来说”). Pinyin: duì N éryán",
-    "formation": "duì N éryán"
+    "title": "对 + 명사 + 而言 (개사 틀 구문: ~에 있어서는, ~의 입장에서 말하자면, ~에게 있어서)",
+    "shortExplanation": "논설문이나 격식 있는 서면어에서 판단이나 주장의 관점·기준이 되는 주체나 대상을 제시하는 개사 구조입니다. 구어의 '对……来说'에 상당합니다('~에게 있어서는', '~의 입장에서 보면').",
+    "longExplanation": "“对……而言”(duì... éryán)은 고전 한문의 어기를 계승한 대표적인 서면어 개사 틀 구조입니다. 개사 “对”가 평가나 판단의 기준이 되는 인물, 집단, 국가, 사물 등을 이끌고, 고문투의 “而言”(~에 대해 말하자면)이 이를 받쳐 줍니다. 대개 문장의 맨 앞에 놓여 쉼표로 분리되며, '다른 주체가 아닌 바로 그 대상의 입장과 특수한 상황에서 살펴볼 때, 뒤따르는 결론이나 정책 방향이 필연적으로 적용된다'는 관점을 설정하는 기능을 수행합니다. 일상 구어의 “对……来说”와 의미상 완전히 일치하지만 훨씬 지적이고 중후한 문체적 느낌을 줍니다. 한국어의 '~에게 있어서는', '~의 입장에서 말하자면', '~의 관점에서 보면'에 해당합니다.",
+    "formation": "对 + 명사 / 명사구 + 而言 ，+ 판단·주장 절",
+    "examples": [
+      {
+        "translation": "오늘날의 중국에 있어서 경제 발전은 반드시 지속 가능한 발전의 길을 견지해야 한다."
+      }
+    ]
   },
   "zh_有关N_649": {
-    "title": "有关 N (about N)",
-    "shortExplanation": "about N",
-    "longExplanation": "about N. Pinyin: yǒuguān N",
-    "formation": "yǒuguān N"
+    "title": "有关 + 명사 (관형 수식 어구: ~에 관한, ~와 관련된, ~에 대한)",
+    "shortExplanation": "명사 앞에 놓여 뒤따르는 중심 명사를 수식하며, 특정 대상이나 범위, 사안과 밀접한 연관이 있음을 나타내는 서면어 표현입니다('~에 관한', '~와 관련된').",
+    "longExplanation": "“有关”(yǒuguān)은 ‘관계가 있다’라는 뜻에서 파생되어 개사(전치사) 또는 관형 수식어로 광범위하게 쓰이는 어휘입니다. 가장 전형적인 문법 기능은 “有关 + 명사 (+ 的) + 중심 명사”의 틀로 쓰여 뒤따르는 명사의 주제, 영역, 범위를 한정해 주는 관형어 역할입니다(예: “有关服饰问题的资料”＝복식 문제에 관한 자료, “有关部门”＝관계 부서). 또한 문장 머리에서 화제 범위를 제시하는 부사어로도 쓰입니다. 한국어의 '~에 관한', '~와 관련된', '~에 대한'에 해당합니다.",
+    "formation": "有关 + 명사 (+ 的) + 중심 명사 ｜ 有关 + 명사 ，+ 절",
+    "examples": [
+      {
+        "translation": "그는 복식 문제에 관한 방대한 자료를 열람했다."
+      }
+    ]
   },
   "zh_和N有关_650": {
-    "title": "和 N 有关 (related to N)",
-    "shortExplanation": "related to N",
-    "longExplanation": "related to N. Pinyin: hé N yǒuguān",
-    "formation": "hé N yǒuguān"
+    "title": "和 / 与 + 명사 + 有关 (술어 구문: ~와 관련이 있다, ~와 관계가 있다, ~에 기인하다)",
+    "shortExplanation": "개사 '和', '与', '跟'을 사용하여 대상 명사를 이끌고, 주어가 해당 대상과 상호 연관성, 인과관계 또는 영향 관계를 맺고 있음을 서술하는 문형입니다('~와 관련이 있다').",
+    "longExplanation": "“和 / 与 / 跟 + 명사 + 有关”은 현대 중국어에서 두 대상 간의 객관적 상관성이나 유기적 연계를 논리적으로 설명할 때 가장 기본적으로 쓰이는 술어 구문입니다. 일상 회화에서는 “和”나 “跟”이 자연스럽고, 학술 논문이나 격식 있는 글에서는 “与”가 널리 애용됩니다. 주어의 원인, 배경, 속성을 해명할 때 핵심 술어로 기능하며, “有密切关系”(밀접한 관계가 있다), “直接有关”(직접적으로 관련되다), “毫无关系”(전혀 무관하다)처럼 수식어나 변형 형태가 풍부하게 활용됩니다. 한국어의 '~와 관련이 있다', '~와 관계가 깊다', '~에 영향을 받다'에 해당합니다.",
+    "formation": "주어 + 和 / 与 / 跟 + 명사 + 有关",
+    "examples": [
+      {
+        "translation": "중국의 어문(국어) 교육은 예로부터 글자 익히기를 중시해 왔는데, 이는 물론 한자의 특징과 관련이 있다."
+      }
+    ]
   },
   "zh_不瞒你说_651": {
-    "title": "不瞒你说 (actually)",
-    "shortExplanation": "actually",
-    "longExplanation": "actually. Pinyin: bù mán nǐ shuō",
-    "formation": "bù mán nǐ shuō"
+    "title": "不瞒你说 (구어 삽입어: 숨김없이 말하자면, 솔직히 털어놓고 말해서, 사실대로 말하자면)",
+    "shortExplanation": "일상 대화에서 상대방에게 깊은 신뢰를 보이며 마음속 진실, 속마음, 혹은 남에게 쉽게 털어놓지 못할 사실을 밝힐 때 쓰는 전형적인 구어 삽입어입니다('숨김없이 말해서', '솔직히 말하자면').",
+    "longExplanation": "“不瞒你说”(bù mán nǐ shuō)는 ‘당신에게 속이거나 숨기지 않고 말하자면’이라는 직역 그대로, 친근하고 솔직한 구어 담화에서 자주 쓰이는 상투적 삽입 어구입니다. 문장 첫머리에 쉼표와 함께 놓여, 듣는 이와의 심리적 거리를 좁히고 자신이 지금부터 꺼내는 말이 겉치레나 거짓이 아닌 순수한 속마음이자 숨겨둔 진실임을 알리는 윤활유 구실을 합니다. 화자의 진솔함과 상대에 대한 신뢰를 극대화하는 화용론적 효과를 갖습니다. 한국어의 '숨김없이 말하자면', '솔직히 털어놓고 말해서', '사실대로 말씀드리자면'에 해당합니다.",
+    "formation": "不瞒你说 ，+ 절 / 문장 (진실·속마음 진술)",
+    "examples": [
+      {
+        "translation": "솔직히 털어놓고 말하자면, 이 문제에 대해 저는 이렇게 생각하고 있습니다."
+      }
+    ]
   },
   "zh_说真的说实在的_652": {
-    "title": "说真的/说实在的 (indeed, truthfully)",
-    "shortExplanation": "indeed, truthfully",
-    "longExplanation": "indeed, truthfully. Pinyin: shuō zhēn de/ shuō shízài de",
-    "formation": "shuō zhēn de/ shuō shízài de"
+    "title": "说真的 / 说实在的 (구어 삽입어: 정말이지, 솔직히 말해서, 사실대로 말하자면, 진짜로)",
+    "shortExplanation": "농담이나 빈말이 아니라, 가슴속 깊은 곳에서 우러나온 진솔한 소회나 객관적인 실상을 진지하게 밝힐 때 문두에 쓰는 구어 삽입 표현입니다('정말이지', '솔직히 말해서').",
+    "longExplanation": "“说真的”(shuō zhēn de)와 “说实在的”(shuō shízài de)는 현대 중국어 일상 대화에서 가장 널리 쓰이는 본심 토로형 담화 표지입니다. 문두에 쉼표와 함께 놓여, 뒤이어 나오는 발언이 체면치레나 과장이 아닌 진지하고 절실한 속마음임을 확인시켜 주는 구실을 합니다. 뜻밖의 깨달음을 얻었을 때의 깊은 감탄, 진솔한 조언, 혹은 냉철한 현실 진단 등을 말할 때 분위기를 환기하며 집중도를 높여 줍니다. “说实在的”가 약간 더 소박하고 진중한 느낌을 줍니다. 한국어의 '정말이지', '솔직히 까놓고 말해서', '진짜로 말인데', '사실대로 말하자면'에 해당합니다.",
+    "formation": "说真的 / 说实在的 ，+ 절 / 문장 (진지한 감회·평가 진술)",
+    "examples": [
+      {
+        "translation": "정말이지, 이번에는 참으로 아이가 나에게 한 수 가르쳐 준 셈이다."
+      }
+    ]
   },
   "zh_通红雪白_653": {
-    "title": "通红、雪白 (very red, very white)",
-    "shortExplanation": "very red, very white",
-    "longExplanation": "very red, very white. Pinyin: tōnghóng、 xuěbái",
-    "formation": "tōnghóng、 xuěbái"
+    "title": "상태형용사 (通红, 雪白 등: 새빨갛다, 새하얗다, 칠흑 같다 - 극치의 색채와 성상)",
+    "shortExplanation": "앞선 형태소가 비유나 극한의 정도를 부여하여 사물의 색채나 상태를 생생하게 묘사하는 특수 상태형용사입니다. 이미 단어 자체에 절대적인 고도가 포함되어 있어 '很' 등의 정도부사 수식을 받을 수 없습니다('새빨갛다', '새하얗다').",
+    "longExplanation": "“通红”(새빨갛다, 발갛게 달아오르다), “雪白”(눈처럼 하얗다, 새하얗다), “漆黑”(칠흑같이 어둡다), “冰凉”(얼음장처럼 차갑다), “笔直”(곧게 뻗다) 등은 중국어 문법에서 ‘상태형용사’라 불리는 독특한 어휘군입니다. 앞의 음절이 뒤의 기본 형용사를 수식하여 극한의 순도나 시각적 생동감을 불어넣는 구조를 띱니다. 문법적으로 가장 유의해야 할 원칙은, 이 단어들 자체가 이미 ‘더할 나위 없이 극단적인 정도’를 담고 있으므로 “很”, “非常”, “太”와 같은 정도부사의 수식을 일절 받을 수 없다는 점입니다. 주로 동사 뒤에서 정도나 상태를 나타내는 보어로 쓰이거나(예: “脸憋得通红”), “的”를 수반하여 명사를 수식하는 관형어로 활발히 쓰입니다. 한국어의 '새빨갛다', '새하얗다', '새까맣다', '얼음장 같다'에 해당합니다.",
+    "formation": "주어 + (동사 + 得 +) 通红 / 雪白 / 漆黑 / 笔直 ｜ 通红 / 雪白 + 的 + 명사",
+    "examples": [
+      {
+        "translation": "나는 숨이 막혀 얼굴이 새빨갛게 상기되었다."
+      }
+    ]
   },
   "zh_说VA就VA_654": {
-    "title": "说 V/A 就 V/A (V without thinking, be A without thinking)",
-    "shortExplanation": "V without thinking, be A without thinking",
-    "longExplanation": "V without thinking, be A without thinking. Pinyin: shuō V/A jiù V/A",
-    "formation": "shuō V/A jiù V/A"
+    "title": "说 + 동사/형용사 + 就 + 동사/형용사 (구어 관용 형식: ~한다고 대뜸 ~해 버리다, 말이 떨어지기 무섭게 ~하다)",
+    "shortExplanation": "동작의 결행이 조금의 망설임도 없이 즉각적으로 이루어지거나, 사태의 변화가 예고도 없이 돌연하고 제멋대로 일어남을 생생하게 나타내는 구어 표현입니다('~한다고 바로 ~해 버리다', '대뜸 ~하다').",
+    "longExplanation": "“说 V/A 就 V/A”는 현대 중국어 구어에서 감정의 진폭을 아주 사실적으로 드러내는 대표적인 반복 패턴입니다. 동일한 동사나 형용사를 앞뒤에 배치하고 부사 “就”로 결합하여, 말이 입 밖으로 나오기가 무섭게 즉시 행동으로 직결되거나 사태가 눈 깜짝할 사이에 급변하는 양상을 그립니다. 대개 두 가지 맥락에서 활용됩니다. ① 결단력이 대단하여 주저 없이 실행에 옮길 때(예: “说走就走”＝말이 떨어지자마자 바로 떠나다, “说干就干”＝하겠다고 마음먹으면 즉각 행동하다); ② 너무나 즉흥적이고 무책임하게 상황을 뒤엎거나 변덕을 부려 상대방이 어이없고 놀라울 때(예: “怎么说不干就不干了？”＝어떻게 그만둔다고 대뜸 관둬 버릴 수가 있니?). 한국어의 '~한다고 바로 ~해 버리다', '말이 떨어지기 무섭게 ~하다', '대뜸 ~하다'에 해당합니다.",
+    "formation": "주어 + 说 + 동사 / 형용사 + 就 + 동사 / 형용사 (+ 了)",
+    "examples": [
+      {
+        "translation": "참 좋은 직장인데, 어째서 대뜸 그만둔다고 바로 그만둬 버린 거야?"
+      }
+    ]
   },
   "zh_VA得要命_655": {
-    "title": "V/A 得要命 (V so much one could die, so A one could die)",
-    "shortExplanation": "V so much one could die, so A one could die",
-    "longExplanation": "V so much one could die, so A one could die. Pinyin: V/A dé yàomìng",
-    "formation": "V/A dé yàomìng"
+    "title": "동사 / 형용사 + 得要命 (정도보어 구문: 죽을 지경이다, 죽을 만큼 ~하다, ~해 미치겠다)",
+    "shortExplanation": "신체적 감각, 심리적 상태, 고통 등의 정도가 극도에 달하여 도저히 견디기 힘들 만큼 극심함을 과장되게 나타내는 구어 정도보어 구문입니다('죽을 지경이다', '죽을 만큼 ~하다').",
+    "longExplanation": "“동사 / 형용사 + 得要命”은 현대 중국어 구어에서 감각의 강도를 극적으로 과장하여 전달하는 대표적인 정도보어 술어 형식입니다. “要命”(목숨을 앗아갈 듯하다, 죽을 지경이다)이라는 표현이 구조조사 “得” 뒤에 보어로 결합함으로써, 어떤 상태나 심리적 압박이 거의 한계점에 도달해 감당할 수 없을 정도임을 생생하게 그려냅니다. 피로, 통증, 배고픔, 외로움 등 부정적이거나 견디기 어려운 육체·정신적 고통을 묘사할 때 주로 쓰이며(예: “累得要命”＝힘들어 죽겠다, “疼得要命”＝아파 죽을 지경이다, “空虚得要命”＝허전해 미치겠다), 간혹 열렬한 호감을 나타낼 때 쓰이기도 합니다. 한국어의 '죽을 지경이다', '죽을 만큼 ~하다', '~해 미치겠다'에 해당합니다.",
+    "formation": "주어 + 형용사 / 심리동사 + 得要命",
+    "examples": [
+      {
+        "translation": "다섯 시간 동안 휴대폰을 만지지 않았더니, 허전해 죽을 지경이었다."
+      }
+    ]
   },
   "zh_以至于_656": {
-    "title": "以至 (于) (as a result)",
-    "shortExplanation": "as a result",
-    "longExplanation": "as a result. Pinyin: yǐzhì ( yú)",
-    "formation": "yǐzhì ( yú)"
+    "title": "以至 (于) (접속사: ~에까지 이르다, 그 결과 ~하다, 그리하여 ~의 지경에 도달하다)",
+    "shortExplanation": "시간, 수량, 정도, 범위의 지속적인 연장과 심화를 나타내거나, 앞 절의 전제와 축적으로 인해 도달하게 된 최종적인 결과나 경지를 이끄는 서면어 접속사입니다('~에까지 이르다', '그리하여').",
+    "longExplanation": "“以至(于)”(yǐzhì / yǐzhìyú)는 한문 투의 전통을 지닌 품격 있는 인과·점진 접속사입니다. 크게 두 가지 용법으로 구분됩니다. ① 시간, 수량, 등급, 범위가 순차적으로 확대되어 어떤 극단적인 한계점이나 종착지에 닿음을 나타낼 때 쓰입니다(예: “以至于今”＝오늘날에 이르기까지); ② 복문의 뒤 절 머리에서 앞 절의 조건이나 오랜 축적, 부단한 노력에 힘입어 빚어진 놀라운 성과나 필연적 귀결을 도출할 때 쓰입니다. 특히 재앙이나 과실로 인한 참담한 결과에만 국한되어 쓰이는 “以致”와 달리, “以至(于)”는 긍정적인 번영, 찬란한 지속, 중립적 현상에도 폭넓게 활용됩니다. 한국어의 '~에까지 이르다', '그리하여 (마침내) ~하다', '~한 나머지 ~하게 되다'에 해당합니다.",
+    "formation": "원인·전제절 ，以至(于) + 결과·도달 단계의 절",
+    "examples": [
+      {
+        "translation": "중국의 음식 문화는 여러 나라의 뛰어난 점을 두루 흡수하여, 그리하여 오늘날까지 찬란한 번영을 누리고 있다."
+      }
+    ]
   },
   "zh_即便_657": {
-    "title": "即便 (even if)",
-    "shortExplanation": "even if",
-    "longExplanation": "even if. Pinyin: jíbiàn",
-    "formation": "jíbiàn"
+    "title": "即便 (양보 접속사: 설령 ~할지라도, 비록 ~일지라도, 가령 ~하더라도)",
+    "shortExplanation": "격식 있는 서면어에서 쓰이는 가설 양보 접속사로, 앞 절에서 극단적이거나 불리한 조건을 가정한 뒤 뒤 절의 '也'와 호응하여 결론이나 원칙이 흔들리지 않음을 나타냅니다('설령 ~할지라도').",
+    "longExplanation": "“即便”(jíbiàn)은 논설문이나 서면어에서 주로 구사되는 격조 높은 가설 양보 접속사입니다. 일상 구어의 “即使”, “就算”, “哪怕”와 뜻이 같지만 문체적 격식이 훨씬 높습니다. 복문의 앞 절 머리나 주어 뒤에 놓여 불리한 사정, 주관에 반하는 조건, 혹은 극단적인 가능성을 한 걸음 물러서서 인정합니다. 이어지는 뒤 절에서는 부사 “也”와 긴밀히 호응하여, '설사 그러한 극단적이고 불리한 전제가 참일지라도, 우리가 마땅히 견지해야 할 도리, 처분, 판단은 결코 흔들리지 않는다'는 확고한 입장을 개진합니다. 한국어의 '설령 ~할지라도', '비록 ~일지라도', '가령 ~하더라도'에 해당합니다.",
+    "formation": "(주어 +) 即便 + 가정 양보절 ，(주어 +) 也 + 술어 / 결론절",
+    "examples": [
+      {
+        "translation": "그녀는 최근 기분이 좋지 않으니, 설령 다소 억지를 부리더라도 당신이 너그럽게 용서해 주어야 한다."
+      }
+    ]
   },
   "zh_所在_658": {
-    "title": "所在 (where … lies)",
-    "shortExplanation": "where … lies",
-    "longExplanation": "where … lies. Pinyin: suǒzài",
-    "formation": "suǒzài"
+    "title": "……所在 (추상 명사: ~의 소재, ~의 본질이 깃든 곳, ~의 근본이 있는 곳)",
+    "shortExplanation": "논설문 등 서면어에서 '根本', '关键', '价值', '魅力' 등의 추상 어휘 뒤에 결합하여, 사물의 가치, 본질, 원인 등이 궁극적으로 귀결되고 내재하는 핵심 소재를 나타냅니다('~의 소재', '~가 깃든 곳').",
+    "longExplanation": "“所在”(suǒzài)의 추상적 용법은 고전 한문의 구조에서 유래한 고풍스럽고 중후한 명사적 쓰임입니다. 구체적인 지리적 장소를 가리키는 것이 아니라, 어떤 이념, 철학적 가치, 힘의 원천, 갈등의 매듭 등이 '어디에 머무르고 있는가'를 밝혀 주는 개념적 귀착점을 지칭합니다. 가장 널리 쓰이는 결합 형태로는 “根本所在”(근본이 있는 곳, 근본 소재), “关键所在”(핵심이 깃든 곳, 문제의 요체), “价值所在”(가치의 진정한 소재), “魅力所在”(매력의 원천) 등이 있습니다. 주로 문장에서 “是……根本所在”의 형태로 술어부를 이루어, 사태의 가장 본질적인 속성을 규정할 때 탁월한 설득력을 발휘합니다. 한국어의 '~의 소재(所在)', '~가 있는 곳', '~의 본질·핵심이 깃든 곳'에 해당합니다.",
+    "formation": "주어 + 是 + 속성·수식어(根本 / 关键 / 价值 / 意义 등) + 所在",
+    "examples": [
+      {
+        "translation": "사람을 길러내는 것은 교육의 입각점이자 교육 가치의 근본 소재이며, 교육 본연의 기능이다."
+      }
+    ]
   },
   "zh_所在_659": {
-    "title": "所在 (place)",
-    "shortExplanation": "place",
-    "longExplanation": "place. Pinyin: suǒzài",
-    "formation": "suǒzài"
+    "title": "所在 (구체 명사: 장소, 곳, 거처, 풍치 있는 터전 - 서면어)",
+    "shortExplanation": "문학적이고 격조 높은 서면어 명사로, 구체적인 장소, 처소, 혹은 빼어난 풍광을 지닌 고장을 가리킵니다. 통상적인 '地方'에 비해 우아하고 아늑한 어감을 지닙니다('장소', '곳', '터전').",
+    "longExplanation": "“所在”(suǒzài)가 구체적인 공간 명사로 쓰일 때는 고전 산문이나 문학적인 기행문에서 우아한 품격을 자아내는 표현입니다. 일상 구어에서 흔히 쓰는 “地方”(곳, 장소)을 대신하여 쓰이며, 단순히 물리적인 위치만을 가리키기보다는 서정적이고 아늑하며 풍치가 빼어난 '자연의 품'이나 '안식처'로서의 뉘앙스를 물씬 풍깁니다. 통상적으로 “风景秀丽、气候宜人的所在”(풍경이 수려하고 기후가 온화한 곳)처럼 수려한 자연미를 묘사하는 정태적 관형 수식어를 대동하여 목적어나 중심어로 쓰입니다. 또한 공문서 등에서는 “所在地”(소재지)처럼 결합어로도 익숙합니다. 한국어의 '장소', '곳', '터전', '처소'에 해당합니다.",
+    "formation": "풍경·환경을 묘사하는 관형어 + 的 + 所在",
+    "examples": [
+      {
+        "translation": "그는 경치가 수려하고 기후가 쾌적한 곳을 선택했다."
+      }
+    ]
   },
   "zh_统统_660": {
-    "title": "统统 (all)",
-    "shortExplanation": "all",
-    "longExplanation": "all. Pinyin: tǒngtǒng",
-    "formation": "tǒngtǒng"
+    "title": "统统 (범위 부사: 모조리, 깡그리, 온통, 하나도 빠짐없이 전부)",
+    "shortExplanation": "앞서 열거되거나 제시된 모든 대상을 하나도 남김없이 통틀어 아우르며, 어떤 예외도 없이 전적으로 그러함을 단호하게 강조하는 범위 부사입니다('모조리', '전부 다').",
+    "longExplanation": "“统统”(tǒngtǒng)은 사물이나 인물의 범위를 남김없이 총괄하는 강조형 범위 부사입니다. 일반적인 총괄 부사인 “都”나 “全部”에 비해 '단 하나도 빼놓지 않고 전부 쓸어 담듯이'라는 철저성과 단호한 어감이 훨씬 두드러집니다. 문법적으로는 주어나 문두로 전치된 목적어 뒤에 놓여 술어 동사나 형용사를 앞에서 수식하는 부사어 역할을 합니다. 구어에서는 얼화(儿化)하여 “统统儿”로 발음되기도 하며, 일상 회화는 물론 서면어에서도 두루 쓰입니다. 주로 여러 항목을 나열한 뒤 이를 한꺼번에 받아 칠 때 자주 쓰입니다. 한국어의 '모조리', '깡그리', '남김없이 전부', '죄다'에 해당합니다.",
+    "formation": "명사(주어 / 문두로 전치된 목적어) + 统统 + 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "영화관이든 술집이든, 모조리 그와는 인연이 없는 곳이었다."
+      }
+    ]
   },
   "zh_以A为B_661": {
-    "title": "以 A 为 B (regard A as B)",
-    "shortExplanation": "regard A as B",
-    "longExplanation": "regard A as B. Pinyin: yǐ A wéi B",
-    "formation": "yǐ A wéi B"
+    "title": "以……为…… (서면어 틀 구문: 전자를 후자로 삼다, 전자를 후자의 기본 축으로 정하다)",
+    "shortExplanation": "고전 한문의 격조 높은 문형을 계승한 서면어 표현으로, 전자를 근거·대상·수단으로 삼아 후자라는 성격, 지위, 기준으로 규정하거나 대우함을 나타냅니다('~을 …로 삼다').",
+    "longExplanation": "“以……为……”(yǐ... wéi...)는 고문(古文)의 어법에서 유래하여 현대 중국어의 학술 논문, 시사 평론, 정책 문서 등에서 중추적으로 애용되는 관용 구조입니다. 개사 “以”가 주체적인 대상, 수단, 재료, 행동을 이끌고, “为”(wéi)가 그것이 가리키는 규정, 목표, 본질, 역할을 이끕니다. “以……为主”(전자를 위주로 하다), “以……为辅”(후자를 보조로 하다), “以此为契机”(이를 계기로 삼다), “以人为本”(사람을 근본으로 삼다)과 같이 수많은 현대 성어와 전문 어휘의 근간이 됩니다. 문장을 압축적이면서도 논리정연하게 가다듬어 주는 역할을 합니다. 한국어의 '~을 …로 삼다', '~을 …로 여기다', '~을 …로 규정하다'에 해당합니다.",
+    "formation": "주어 + 以 + 명사 / 동사구(전항) + 为 + 명사 / 형용사(후항)",
+    "examples": [
+      {
+        "translation": "고급 단계의 중국어 학습은 독해를 통한 지식 흡수를 주축으로 삼고, 문법 학습을 보조로 삼아야 한다."
+      }
+    ]
   },
   "zh_该V就得V_662": {
-    "title": "该 V (就)(得) V (if one should V then one must V)",
-    "shortExplanation": "if one should V then one must V",
-    "longExplanation": "if one should V then one must V. Pinyin: gāi V ( jiù)( dé) V",
-    "formation": "gāi V ( jiù)( dé) V"
+    "title": "该……就得…… (구어 동사 반복 구문: ~해야 할 때는 마땅히 ~해야 한다, 해야 할 일은 해야만 한다)",
+    "shortExplanation": "동일한 동사를 반복하여, 객관적인 상황이나 규칙상 그래야 마땅하다면 피하지 말고 당연히 그 행동을 실행해야 한다는 불가피성과 당위성을 나타내는 생생한 구어 표현입니다.",
+    "longExplanation": "“该 + 동사 + (就) + (得) + 동사”(gāi... jiù děi...)는 일상생활에서 어떤 일의 당연한 귀결이나 현실적인 원칙을 강조할 때 쓰는 구어 문형입니다. 앞의 “该”는 ‘마땅히 ~할 때가 되다, ~해야 옳다’라는 정당성을 나타내고, 뒤의 “得”(děi)는 ‘반드시 ~해야 한다’라는 실제적 당위와 필연성을 나타냅니다. 같은 동사를 두 번 연속 사용함으로써 '때가 되거나 사정이 그러하다면, 두말할 것 없이 해야 할 행동을 그대로 이행할 수밖에 없다'는 현실 순응적 태도나 확고한 방침을 드러냅니다. 예를 들어 “该花就得花”(쓸 땐 써야 한다), “该休息就得休息”(쉴 땐 쉬어야지)처럼 쓰입니다. 한국어의 '~해야 할 때는 마땅히 ~해야 한다', '~할 땐 군말 없이 ~하는 법이다'에 해당합니다.",
+    "formation": "(주어 +) 该 + 동사 + (就) + (得 / 要) + 동사",
+    "examples": [
+      {
+        "translation": "중국은 명절이나 연휴 때 상점이 가장 바빠서 전혀 쉬지 못하며, 문을 열어야 할 때는 마땅히 열어야만 한다."
+      }
+    ]
   },
   "zh_不妨V_663": {
-    "title": "不妨 V (it won’t hurt to V)",
-    "shortExplanation": "it won’t hurt to V",
-    "longExplanation": "it won’t hurt to V. Pinyin: bùfáng V",
-    "formation": "bùfáng V"
+    "title": "不妨 + 동사 (어기 부사: ~해 봐도 괜찮다, ~하는 것도 나쁘지 않다, 얼마든지 ~해도 좋다)",
+    "shortExplanation": "상대방에게 어떤 행동을 부드럽게 권유하거나 제안할 때 쓰는 부사로, '그렇게 한다고 해서 아무런 지장이나 해가 될 것이 없으니 한번 시도해 보라'는 뜻을 나타냅니다.",
+    "longExplanation": "“不妨”(bùfáng)은 부정사 “不”와 지장·방해를 뜻하는 “妨”이 합쳐진 완곡한 어기의 부사입니다. 동사 앞에 놓여 '그 행동을 실행하는 데 아무런 걸림돌이나 부정적 영향이 없으며, 시도해 보는 편이 오히려 긍정적이고 유리하다'는 권유나 제안을 나타냅니다. 강요나 일방적인 지시의 어조를 덜어내고 상대방을 배려하며 부드럽게 조언할 때 널리 쓰여, 일상 대화는 물론 서면어에서도 우아한 문체로 자주 활용됩니다. 한국어의 '~해 보아도 무방하다', '~하는 것도 괜찮다', '거리낌 없이 ~해 보아라'에 해당합니다.",
+    "formation": "(주어 +) 不妨 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "어떤 의견이 있든, 솔직하게 터놓고 말씀해 보셔도 좋습니다."
+      }
+    ]
   },
   "zh_务必_664": {
-    "title": "务必 (must)",
-    "shortExplanation": "must",
-    "longExplanation": "must. Pinyin: wùbì",
-    "formation": "wùbì"
+    "title": "务必 (지시 부사: 반드시, 기필코, 꼭 ~하도록 하십시오)",
+    "shortExplanation": "공식 통지나 규정, 엄격한 지시문에서 특정 행동을 어김없이 확실하게 실행할 것을 엄중하게 요구할 때 쓰는 지시 부사입니다('반드시', '꼭').",
+    "longExplanation": "“务必”(wùbì)는 힘쓸 무(务)와 반드시 필(必)이 어우러진 격식 높은 지시 부사입니다. 술어 동사 앞에 위치하여, 뒤따르는 동작이나 지침을 조금의 소홀함이나 어긋남 없이 반드시 완수해야 함을 단호하게 촉구합니다. 주로 공문서, 안전 수칙, 긴급 지침서, 상급자가 하급자에게 내리는 지시 등 격식과 구속력이 요구되는 공적인 담화에서 집중적으로 사용됩니다. 사적인 결심이나 일반적 다짐에도 두루 쓰이는 “一定要”에 비해, “务必”는 상대방에 대한 규범적이고 준엄한 요구의 뉘앙스가 훨씬 강합니다. 한국어의 '반드시', '기필코', '꼭 (~해야 한다/하시기 바랍니다)'에 해당합니다.",
+    "formation": "(주어 +) 务必 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "비행기가 이륙하기 전에는 반드시 안전벨트를 바르게 착용해 주십시오."
+      }
+    ]
   },
   "zh_鉴于_665": {
-    "title": "鉴于 (in view of)",
-    "shortExplanation": "in view of",
-    "longExplanation": "in view of. Pinyin: jiànyú",
-    "formation": "jiànyú"
+    "title": "鉴于 (개사·접속사: ~을 감안하여, ~에 비추어 볼 때, ~라는 점을 고려하여)",
+    "shortExplanation": "객관적인 현실, 직면한 문제점, 또는 교훈을 전제 배경으로 제시하고, 이를 신중하게 고려하여 후속 판단이나 대책을 결정할 때 쓰는 격조 높은 서면어 표현입니다('~에 감안하여').",
+    "longExplanation": "“鉴于”(jiànyú)는 거울삼아 비추어 보다라는 뜻의 “鉴”과 개사 “于”가 결합된 대표적인 공문서·학술 논설문 어휘입니다. 통상 문장의 맨 앞에 놓여 뒤따르는 쉼표와 함께 쓰이며, 현존하는 심각한 상황, 객관적 난관, 법률적 근거, 사회적 요구 등을 이끕니다. 이를 전제로 삼아 후속 분구에서는 그에 부응하는 합리적인 방책, 방침의 제정, 정책적 결단 등을 도출합니다. 단순한 이유나 원인을 나타내는 “因为”와 달리, 여러 요소를 종합적으로 통찰하고 숙고하여 내린 판단이라는 중후한 논리적 무게감을 부여합니다. 한국어의 '~에 비추어', '~을 감안하여', '~라는 점을 깊이 고려하여'에 해당합니다.",
+    "formation": "鉴于 + 명사 / 절(객관적 배경·현실 상황) ，+ 주절(대책·결정·조치)",
+    "examples": [
+      {
+        "translation": "농촌 교사가 심각하게 부족하다는 실정에 비추어, 그는 대학을 졸업한 후 농촌으로 내려가 교사가 되기로 결심했다."
+      }
+    ]
   },
   "zh_便于_666": {
-    "title": "便于 (easy to)",
-    "shortExplanation": "easy to",
-    "longExplanation": "easy to. Pinyin: biànyú",
-    "formation": "biànyú"
+    "title": "便于 + 동사 (서면어 연어: ~하기 편리하도록, ~하기 수월하게, ~에 용이하다)",
+    "shortExplanation": "앞 절에서 취한 조치, 서술 방식, 설계 등이 뒤따르는 특정 행동을 수월하고 막힘없이 진행할 수 있도록 편의를 제공함을 나타내는 서면어 표현입니다('~하기에 편리하다', '~하기 쉽도록').",
+    "longExplanation": "“便于”(biànyú)는 형용사 “便”(편리하다)과 개사 “于”가 긴밀히 결합하여 어휘화된 서면어 표현입니다. 주로 복문의 뒤 절 머리에 놓여 동사구를 목적어로 취합니다. 앞 절에서 취한 방식, 배치, 제도적 설계 등이 뒤따르는 행위를 실행하는 데 있어 시간적·공간적·인지적 장애를 줄여 주며, 그 동작이 원활하게 이루어지도록 돕는 목적이나 효과를 지니고 있음을 명시합니다. 학술 저작, 제품 사용 설명서, 정책 입안 안내문 등 실용적이고 논리적인 텍스트에서 널리 활용됩니다. 한국어의 '~하기 편하게', '~하기 수월하도록', '~에 용이하다'에 해당합니다.",
+    "formation": "선행 절(방식·조치·설계) + ，+ 便于 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "대중 과학 글은 독자가 쉽게 이해할 수 있도록 간결하고 알기 쉽게 쓰여야 한다."
+      }
+    ]
   },
   "zh_犹如N一般般A_667": {
-    "title": "犹如 N (一般/般) A (as A as N (metaphorically))",
-    "shortExplanation": "as A as N (metaphorically)",
-    "longExplanation": "as A as N (metaphorically). Pinyin: yóurú N ( yībān/ bān) A",
-    "formation": "yóurú N ( yībān/ bān) A"
+    "title": "犹如 + 명사 + (一般 / 般) + 형용사 (수사적 비유 구문: 마치 ~와도 같이 …하다, 흡사 ~처럼 …하다)",
+    "shortExplanation": "문학적이고 격조 높은 비유 구문으로, '犹如'로 생생한 비유 대상을 이끌고 '一般/般'과 호응시켜 후속 형용사나 상태의 극단적인 정도를 인상적으로 묘사합니다('마치 ~처럼 …하다').",
+    "longExplanation": "“犹如 + 명사 + (一般 / 般) + 형용사 / 동사구”(yóurú... yībān / bān...)는 문학적 묘사나 감정 표현에서 극적인 효과를 자아내는 대표적인 수사 비유 틀 구조입니다. 서면어 비유사인 “犹如”(마치 ~와 같다)가 화산 폭발, 폭풍우 등과 같은 강렬한 심상(명사)을 이끌고, 뒤에 조사 성격의 “一般” 혹은 “般”(~처럼, ~듯이)이 따라붙습니다. 이 비유 어구가 후속 형용사나 술어 동사를 수식하여, 주어의 상태나 감정의 격렬함이 비유 대상에 필적할 만큼 걷잡을 수 없음을 생생하게 부각시킵니다. 한국어의 '마치 ~와도 같이 …하다', '흡사 ~마냥 …하기 그지없다'에 해당합니다.",
+    "formation": "주어 + 犹如 + 명사 / 비유 대상 ＋ (一般 / 般) + 형용사 / 동사구",
+    "examples": [
+      {
+        "translation": "회사의 저질 불량품은 소비자들을 몹시 분노하게 만들었으며, 고객들의 분노는 마치 화산 폭발처럼 통제하기 어려웠다."
+      }
+    ]
   },
   "zh_和相比_668": {
-    "title": "和……相比 (compared to…)",
-    "shortExplanation": "compared to…",
-    "longExplanation": "compared to…. Pinyin: hé…… xiāngbǐ",
-    "formation": "hé…… xiāngbǐ"
+    "title": "和……相比 (비교 개사 틀 구문: ~와 비교하면, ~에 비해, ~와 견주어 볼 때)",
+    "shortExplanation": "비교의 기준이 되는 시점, 대상, 현상을 제시하고, 뒤따르는 주절에서 그 차이점이나 변화의 추이를 서술하는 대표적인 비교 구문입니다('~와 비교하면').",
+    "longExplanation": "“和……相比”(hé... xiāngbǐ)는 두 대상 간의 속성, 규모 또는 시기적 변화를 대조할 때 사용하는 가장 표준적인 비교 틀 구조입니다. 개사 “和”(서면어에서는 “与”나 “同”, 일상 구어에서는 “跟”)가 비교의 준거가 되는 과거의 시점이나 기준 대상을 이끌고, 뒤에 “相比”(서로 비교하다)가 붙어 구를 마무리합니다. 대개 문장 앞머리에 위치하여 쉼표로 분리되며, 뒤따르는 본문에서 “更”(더욱), “多”(많다), “不同”(다르다) 등의 표현과 어우러져 격차나 발전 추세를 논리정연하게 밝혀 줍니다. 시사 논평, 학술 보고서, 일상 대화 등에서 널리 쓰입니다. 한국어의 '~와 비교하면', '~에 비해', '~와 견주어'에 해당합니다.",
+    "formation": "和 / 与 / 跟 / 同 + 명사 / 절(비교 기준) + 相比 ，+ 비교 결과 절",
+    "examples": [
+      {
+        "translation": "10년 전과 비교하면, 사람들은 훨씬 더 많은 직업 선택의 과정을 거쳐야만 한다."
+      }
+    ]
   },
   "zh_一MM_669": {
-    "title": "一 + M + M (one batch after another)",
-    "shortExplanation": "one batch after another",
-    "longExplanation": "one batch after another. Pinyin: yī + M + M",
-    "formation": "yī + M + M"
+    "title": "一 + 양사 + 양사 (양사 중첩 구문: 줄지어 끊임없이, 떼를 지어, 연이어 무수히)",
+    "shortExplanation": "수사 '一' 뒤에 동일한 양사를 중첩하여 사용하여, 사물이나 인물이 끊이지 않고 잇달아 대거 출현하거나 무리를 이루는 다량성과 연속성을 생동감 있게 묘사합니다.",
+    "longExplanation": "“一 + 양사 + 양사”(yī + 양사 + 양사)는 중국어에서 수량의 방대함과 행렬의 연속성을 회화적으로 그려내는 독특한 양사 중첩 문형입니다. 형태상으로는 숫자 “一”을 취하고 있지만, 실제 의미는 결코 단수가 아니라 '줄줄이 꼬리를 물고', '물밀듯이 잇달아'라는 복수의 연속적 출현을 강조합니다. 흔히 쓰이는 예로 “一拨拨”(무리 지어 끊임없이 몰려오는 사람들), “一批批”(연이어 쏟아지는 무수한 무리/물자), “一群群”(떼를 지은 무리들), “一阵阵”(연달아 밀려드는 바람·파도) 등이 있습니다. 보통 “的”를 수반하여 명사를 수식하는 관형어로 쓰이거나 부사어로 기능하여 시각적이고 역동적인 느낌을 전달합니다. 한국어의 '줄줄이', '줄을 이어 연신', '떼를 지어 무수히'에 해당합니다.",
+    "formation": "수사(一) + 양사 + 양사(+ 的) + 명사(또는 부사어)",
+    "examples": [
+      {
+        "translation": "매일 같이 수많은 동종 업계 사람들이 무리를 지어 잇달아 시찰과 견학을 온다."
+      }
+    ]
   },
   "zh_难以V_670": {
-    "title": "难以 V (hard to)",
-    "shortExplanation": "hard to",
-    "longExplanation": "hard to. Pinyin: nányǐ V",
-    "formation": "nányǐ V"
+    "title": "难以 + 동사 (서면어 연어: ~하기 어렵다, 도저히 ~할 수 없다, ~하기 힘들다)",
+    "shortExplanation": "격조 높은 서면어에서 인지, 판단, 심리, 언어적 표현을 나타내는 2음절 동사 앞에 놓여, 그 동작을 수행하기가 극도로 어렵거나 사실상 불가능에 가까움을 단정적으로 나타냅니다.",
+    "longExplanation": "“难以”(nányǐ)는 형용사 “难”(어렵다)과 고문투의 개사 “以”가 굳어진 전형적인 고급 서면어 연어입니다. 구어의 평이한 표현인 “很难”과 달리, 지적이고 엄정한 어기를 띠며 문장을 한층 세련되게 다듬어 줍니다. 주로 인지, 예측, 감정 수용을 나타내는 2음절 동사와 결합하는 강한 결합 친화성을 보입니다. 대표적인 예로 “难以想象”(상상하기 어렵다), “难以置信”(믿기 힘들다), “难以预料”(예측하기 어렵다), “难以接受”(받아들이기 힘들다), “难以忘怀”(잊기 어렵다) 등이 있습니다. 주체의 단순한 무능력이 아니라 사안 자체의 엄중함이나 불확실성으로 인해 동작의 실행이 가로막혀 있음을 엄밀하게 진술합니다. 한국어의 '~하기 어렵다', '~하기 난망하다', '도저히 ~하기 힘들다'에 해당합니다.",
+    "formation": "(주어 +) 难以 + 2음절 동사(인지 / 판단 / 예측 / 감정)",
+    "examples": [
+      {
+        "translation": "그가 성공을 거둘 수 있을지의 여부는 아직 예측하기 어렵다."
+      }
+    ]
   },
   "zh_免得_671": {
-    "title": "免得 (lest)",
-    "shortExplanation": "lest",
-    "longExplanation": "lest. Pinyin: miǎnde",
-    "formation": "miǎnde"
+    "title": "免得 (접속사: ~하지 않도록, ~하는 수고를 덜기 위해, ~하는 일이 없도록)",
+    "shortExplanation": "뒤 절의 머리에 놓여, 앞 절의 사전 예방 조치나 행동을 통해 번거롭고 불필요한 일이나 부정적인 결과를 미연에 방지하고자 함을 나타내는 접속사입니다('~하지 않도록').",
+    "longExplanation": "“免得”(miǎnde)는 모면하다는 뜻의 “免”과 구조조사 “得”가 어우러져 형성된 목적·인과 접속사입니다. 복문의 뒤 절 맨 앞에 놓여 선행 절의 행위 목적을 규명합니다. 즉, 앞 절에서 미리 수고를 감수하거나 철저한 대비 조치를 취하는 까닭이 '뒤따르는 낭패, 헛걸음, 중복 작업, 혹은 골치 아픈 사태를 모면하기 위함'임을 직관적으로 드러냅니다. 구어에서는 “省得”와 상통하며, 한층 격식 있는 서면어의 “以免”에 해당하여 구어와 문어 전반에서 매우 폭넓게 애용됩니다. 한국어의 '~하지 않도록', '~하는 수고를 피하기 위해', '~하는 낭패를 면하도록'에 해당합니다.",
+    "formation": "선행 절(사전 대비 조치) + ，+ 免得 + 후행 절(회피하려는 불편·부정적 사태)",
+    "examples": [
+      {
+        "translation": "내일 또다시 나와야 하는 번거로움을 피하기 위해, 오늘은 다들 조금 늦게 퇴근하더라도 일을 전부 끝내 놓읍시다."
+      }
+    ]
   },
   "zh_时而时而_672": {
-    "title": "时而……时而…… (sometimes… sometimes…)",
-    "shortExplanation": "sometimes… sometimes…",
-    "longExplanation": "sometimes… sometimes…. Pinyin: shí'ér…… shí'ér……",
-    "formation": "shí'ér…… shí'ér……"
+    "title": "时而……时而…… (대칭 병렬 상관 구문: 때로는 ~하고 때로는 ~하다, 어떤 때는 ~했다가 어떤 때는 ~하다)",
+    "shortExplanation": "문학적 정취가 깃든 상관 병렬 문형으로, 상태, 색채, 동작 등이 고정되지 않고 시시각각 번갈아 나타나며 다채롭게 변화하는 모습을 생생하게 묘사합니다.",
+    "longExplanation": "“时而……时而……”(shí'ér... shí'ér...)는 고전어의 향기를 간직한 대표적인 수사적 대칭 병렬 구문입니다. ‘때’를 뜻하는 “时”와 접속사 “而”가 어우러진 “时而”를 두 번 이상 거듭 사용하여, 주어의 성향, 색상, 날씨, 심리 상태 등이 짧은 시간 동안 둘 이상의 서로 다른 양상 사이를 빠르게 교차하며 변모하는 과정을 역동적으로 서술합니다. “时而” 뒤에는 대개 서로 대조되거나 다채로운 변화를 보이는 형용사 또는 동사구가 짝을 맞추어 배열됩니다. 서경문이나 소설의 시각적 묘사에서 탁월한 예술적 감흥을 발휘합니다. 한국어의 '때로는 ~하고 때로는 ~하다', '어느 때는 ~했다가도 또 어느 때는 ~하다'에 해당합니다.",
+    "formation": "주어 + 时而 + 형용사 / 동사 1 ，+ 时而 + 형용사 / 동사 2 (+ 时而 + 형용사 / 동사 3)",
+    "examples": [
+      {
+        "translation": "햇살 아래 나비의 빛깔은 눈부시게 선명하여, 때로는 황금빛이었다가, 때로는 에메랄드빛이었다가, 이따금씩은 보라색에서 푸른색으로 변하곤 했다."
+      }
+    ]
   },
   "zh_时而_673": {
-    "title": "时而 (from time to time)",
-    "shortExplanation": "from time to time",
-    "longExplanation": "from time to time. Pinyin: shí'ér",
-    "formation": "shí'ér"
+    "title": "时而 (시간 부사: 이따금, 때때로, 가끔씩)",
+    "shortExplanation": "단독으로 술어 동사 앞에 쓰여, 어떤 동작이나 현상이 계속 이어지는 것은 아니지만 시간의 흐름 속에서 이따금씩 불쑥 나타남을 그윽하게 묘사하는 서면어 시간 부사입니다('이따금', '때때로').",
+    "longExplanation": "“时而”(shí'ér)는 짝을 이루지 않고 단독으로 쓰일 때, 품격 있는 서면어 시간 부사로 기능합니다. 주어와 술어 동사 사이에 놓여, 특정 행위나 울음소리, 기상 변화 등이 상시적인 것은 아니지만 '어느 순간 문득', '간헐적으로 잊을 만하면 한 번씩' 일어남을 서정적으로 드러냅니다. 일상 구어의 “有时”(때때로)나 “偶尔”(어쩌다)에 해당하지만, 문장에 한층 짙은 감상과 문학적인 깊이를 실어 줍니다. 주로 소설의 묘사 단락이나 회상문 등에서 감정을 자아내는 장치로 애용됩니다. 한국어의 '이따금', '때때로', '간혹', '어쩌다 한 번씩'에 해당합니다.",
+    "formation": "주어 + 时而 + 동사구",
+    "examples": [
+      {
+        "translation": "주인이 세상을 떠난 뒤, 그 개는 지난날의 활기를 잃어버린 채 이따금씩 가슴 아픈 울음소리를 내곤 했다."
+      }
+    ]
   },
   "zh_不禁V_674": {
-    "title": "不禁 V (can’t help but to V)",
-    "shortExplanation": "can’t help but to V",
-    "longExplanation": "can’t help but to V. Pinyin: bùjīn V",
-    "formation": "bùjīn V"
+    "title": "不禁 + 동사 (정태 부사: 저도 모르게 ~하다, 참지 못하고 ~하다, ~을 금치 못하다)",
+    "shortExplanation": "외부의 자극이나 예기치 못한 소식을 접했을 때, 솟구치는 감정이나 자연스러운 신체 반응을 억누르지 못하고 '자신도 모르게 불쑥 행동으로 드러남'을 나타내는 부사입니다.",
+    "longExplanation": "“不禁”(bùjīn)은 견디다, 억제하다라는 뜻을 지닌 “禁”(jīn)에 부정사가 결합된 전형적인 심리 묘사 부사입니다. 주어와 술어 사이에 놓여, 인간의 본능적인 감정의 파동이나 자제할 수 없는 충동을 표현합니다. 뒤따르는 동사로는 감정의 고조, 심리적 전율, 무의식적인 신체 반응(예: “落泪” 눈물을 흘리다, “笑起来” 웃음을 터뜨리다, “打哆嗦” 떨다, “兴奋起来” 흥분하다 등)이 긴밀하게 호응합니다. 이성적인 통제력을 넘어설 만큼 감정의 울림이나 자극이 직접적이고 강렬했음을 실감 나게 전합니다. 한국어의 '자신도 모르게 ~하다', '차마 ~하지 않을 수 없다', '~을 금치 못하다'에 해당합니다.",
+    "formation": "(주어 +) 不禁 + 동사(감정 / 심리 반응 / 무의식적 행동)",
+    "examples": [
+      {
+        "translation": "이 소식을 전해 듣자, 사람들은 저도 모르게 흥분을 감추지 못하고 가슴이 뛰기 시작했다."
+      }
+    ]
   },
   "zh_无不V_675": {
-    "title": "无不 V (there is nothing that doesn’t V)",
-    "shortExplanation": "there is nothing that doesn’t V",
-    "longExplanation": "there is nothing that doesn’t V. Pinyin: wúbù V",
-    "formation": "wúbù V"
+    "title": "无不 + 동사 (서면어 이중 부정 부사: ~하지 않는 것이 없다, 모두 예외 없이 ~하다)",
+    "shortExplanation": "격식 있는 서면어에서 '无'와 '不'의 이중 부정을 통해 강한 긍정을 나타내며, 어떠한 예외도 없이 모든 대상이 그러한 동작이나 영향을 받는다는 점을 강조합니다('~하지 않는 것이 없다', '모두 다 ~하다').",
+    "longExplanation": "“无不”(wúbù)는 문언문(고전 한문)의 어감을 그대로 이어받은 대표적인 서면어 이중 부정 구문입니다. '없다'는 뜻의 “无”와 '아니다'라는 뜻의 “不”가 결합하여 '하지 않는 것이 없다', 즉 '모두가 예외 없이 그러하다'라는 절대적 긍정의 의미를 강조합니다. 주로 술어 동사, 동사구 혹은 형용사 앞에 놓여 특정 범위 내의 모든 인물이나 사물이 빠짐없이 해당 동작의 영향을 받거나 그 상태에 도달해 있음을 단호하게 서술합니다. 일반 구어에서 쓰이는 “都”나 “全”에 비해 문체에 웅장하고 깊은 감탄의 여운을 부여하며, 논설문, 학술 보고서, 품격 있는 문학 작품에서 빈번히 사용됩니다.",
+    "formation": "주어 + 无不 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "당신의 일언일행과 일거수일투족은 주위 사람들에게 빠짐없이 영향을 미치고 있다."
+      }
+    ]
   },
   "zh_换句话说也就是说_676": {
-    "title": "换句话说/(也)就是说 (in other words)",
-    "shortExplanation": "in other words",
-    "longExplanation": "in other words. Pinyin: huànjùhuàshuō/( yě) jiùshìshuō",
-    "formation": "huànjùhuàshuō/( yě) jiùshìshuō"
+    "title": "换句话说 / (也)就是说 (전환 접속 어구: 다시 말해서, 환언하면, 즉, 바꾸어 말하면)",
+    "shortExplanation": "앞서 언급한 내용을 알기 쉽게 다른 말로 바꾸어 표현하거나, 핵심 요지를 명확히 짚어 요약할 때 사용하는 대표적인 환언 접속 어구입니다('다시 말해서', '바꾸어 말하면', '즉').",
+    "longExplanation": "“换句话说”(huànjùhuàshuō)와 “(也)就是说”((yě)jiùshìshuō)는 담화나 글에서 앞 문장의 내용을 다른 관점이나 쉬운 어휘로 다시 풀어 설명할 때 쓰는 핵심 담화 표지입니다. 앞 절에 다소 추상적이거나 전문적인 내용, 은유적 표현이 제시되었을 때, 이를 보다 명확하고 직관적인 문장으로 바꾸어 정리하거나 필연적인 결론을 도출하기 위해 뒷절 머리에 놓입니다. “换句话说”는 순수한 '언어적 표현의 치환(바꾸어 말하자면)'에 방점이 찍혀 있고, “也就是说”는 '논리적 의미의 귀결(즉, ~라는 뜻이다)'에 무게가 실립니다. 일상 회화는 물론 학술 논문, 비즈니스 프레젠테이션 등 격식 있는 자리에서도 두루 쓰입니다.",
+    "formation": "절1 。/ ， 换句话说 / (也)就是说 ，+ 절2 (환언·요약)",
+    "examples": [
+      {
+        "translation": "모든 국가는 타국과 화목하게 공존해야 한다. 다시 말해서(즉), 국가는 마음 내키는 대로 행동해서는 안 된다."
+      }
+    ]
   },
   "zh_为S所V_677": {
-    "title": "为 S 所 V (V’ed by S)",
-    "shortExplanation": "V’ed by S",
-    "longExplanation": "V’ed by S. Pinyin: wéi S suǒ V",
-    "formation": "wéi S suǒ V"
+    "title": "为 + 동작주 + 所 + 동사 (서면어 피동 구문: ~에게 …당하다, ~에 의해 …되다)",
+    "shortExplanation": "고전 한문에서 유래한 대표적인 서면어 피동 구문입니다. 개사 '为'가 동작을 가하는 행위자(동작주)를 이끌고, 보조사 '所'가 술어 동사 앞에 놓여 피동 관계를 확고히 나타냅니다('~에 의해 …되다', '~에게 …받다').",
+    "longExplanation": "“为……所……”(wéi... suǒ...)는 고대 한문의 수동 구문 형식을 온전히 간직하고 있는 품격 높은 현대 서면어 피동 구문입니다. 개사 “为”가 동작의 주체(행위자)를 이끌고, 구조 보조사 “所”가 타동사 술어 바로 앞에 놓여 주어가 그 동작의 영향 아래 놓여 있음을 명시합니다. 현대 중국어 일상 구어에서 쓰이는 “被” 피동문이 주로 피해나 손실 등 부정적인 뉘앙스를 풍기는 경우가 많은 것과 대조적으로, “为……所……”는 격조가 높고 중립적이어서 감동, 매료, 중시, 환영 등 긍정적이거나 미학적인 문맥에서 폭넓게 쓰입니다(예: “为……所感动”＝~에게 감동받다, “为……所吸引”＝~에 매료되다, “为……所重视”＝~에게 중시되다).",
+    "formation": "주어(피동자) + 为 + 동작주(행위자) + 所 + 동사",
+    "examples": [
+      {
+        "translation": "이 영화 속 인물들에게 감동을 받지 않은 사람은 단 한 명도 없다."
+      }
+    ]
   },
   "zh_足以_678": {
-    "title": "足以 (is enough to)",
-    "shortExplanation": "is enough to",
-    "longExplanation": "is enough to. Pinyin: zúyǐ",
-    "formation": "zúyǐ"
+    "title": "足以 (서면어 조동사·부사: 충분히 ~할 수 있다, ~하기에 족하다, 충분히 ~하다)",
+    "shortExplanation": "조건, 근거, 역량, 수량 등이 어떤 결과나 행위를 실현하기에 온전히 충족되어 있음을 나타내는 품격 있는 서면어 어휘입니다('충분히 ~할 수 있다', '~하기에 족하다'). 부정형은 '不足以'입니다.",
+    "longExplanation": "“足以”(zúyǐ)는 ‘넉넉하다, 족하다’라는 뜻의 “足”과 ‘~로써’라는 뜻의 “以”가 합쳐진 대표적인 서면어 조동사적 표현입니다. 동사구나 절 앞에 놓여 주어가 갖춘 조건, 역량, 증거, 명분, 수량 등이 후속 동작이나 결과를 이루어 내기에 '완전히 차고 넘친다'는 점을 논리적으로 밝힙니다. 특히 부정형인 “不足以 + 동사”(결코 ~하기에 족하지 않다, ~하기에는 턱없이 부족하다)는 법률, 정치, 논설문 등에서 근거나 대응이 불충분함을 엄격하게 논박할 때 필수적인 관용 표현으로 쓰입니다(예: “不足以平民愤”＝민분을 가라앉히기에는 턱없이 모자라다, “不足以服众”＝대중을 승복시키기에 부족하다).",
+    "formation": "주어(조건·근거·역량) + (不)足以 + 동사 + 목적어",
+    "examples": [
+      {
+        "translation": "이런 악인을 엄벌에 처하지 않는다면 성난 민심을 가라앉히기에 턱없이 부족하다."
+      }
+    ]
   },
   "zh_东M西M_679": {
-    "title": "东 # M 西 # M (one here and one there, willy nilly)",
-    "shortExplanation": "one here and one there, willy nilly",
-    "longExplanation": "one here and one there, willy nilly. Pinyin: dōng # M xī # M",
-    "formation": "dōng # M xī # M"
+    "title": "东 + 수사 + 양사 + 西 + 수사 + 양사 (구어 사자 구문: 여기저기 조금씩 ~하다, 두서없이 이리저리 ~하다)",
+    "shortExplanation": "방위명사 '东'과 '西'에 수량사(주로 '一 + 양사')를 결합하여, 동작이나 사물이 한곳에 집중되지 않고 여기저기 산만하게 흩어져 있거나 두서없이 마구잡이로 이루어짐을 나타내는 생생한 구어 구문입니다('이리저리 조금씩', '두서없이 이것저것').",
+    "longExplanation": "“东 + 수사 + 양사 + 西 + 수사 + 양사”는 일상 대화에서 행위의 산만함이나 두서없음을 생생하게 묘사하는 대칭형 사자 구어 구문입니다. 여기서 '동(东)'과 '서(西)'는 실제 방위를 가리키는 것이 아니라 '이곳저곳', '제각각 분산된 방향'을 뜻하며, 수사 자리에는 십중팔구 '一(하나)'이 들어갑니다. 통상 양태 조사 “地”를 수반하여 부사어로 쓰이며, 뒤따르는 핵심 동작을 다채롭게 꾸며 줍니다. 대표적인 관용 결합으로는 “东一句西一句”(두서없이 이 말 저 말 횡설수설하다), “东看一眼西看一眼”(이리저리 두리번거리다), “东凑一点西凑一点”(여기저기서 찔끔찔끔 끌어모으다) 등이 있습니다. 체계나 일관성이 결여되어 있거나 건성으로 대처하는 모양새를 생생하게 포착해 냅니다.",
+    "formation": "주어 + 东 + 一 + 양사 + 西 + 一 + 양사 (+ 地) + 동사",
+    "examples": [
+      {
+        "translation": "손님이 아직 돌아가지 않아서, 나는 하는 수 없이 그와 이 말 저 말 두서없이 나누며 어색함을 달래려 말을 지어냈다."
+      }
+    ]
   },
   "zh_V中zhng_680": {
-    "title": "V 中 (zhòng) (V on the mark)",
-    "shortExplanation": "V on the mark",
-    "longExplanation": "V on the mark. Pinyin: V zhōng (zhòng)",
-    "formation": "V zhōng (zhòng)"
+    "title": "동사 + 中 (zhòng) (결과보어: 명중하다, 맞히다, 적중하다)",
+    "shortExplanation": "동사 바로 뒤에 '中'(4성: zhòng)을 결과보어로 붙여, 그 동작(쏘다, 때리다, 맞추다, 알아맞히다 등)이 조준한 목표나 과녁에 정확하게 들어맞았음을 나타냅니다('맞히다', '명중하다'). 가능보어 형태는 '동사 + 得中 / 동사 + 不中'입니다.",
+    "longExplanation": "“동사 + 中(zhòng)” 구문에서 “中”은 반드시 4성(zhòng)으로 발음되며, '과녁에 맞다, 적중하다'라는 뜻을 지닌 대표적인 결과보어로 기능합니다. 일정한 표적이나 목적을 겨냥하는 동작 동사 뒤에 결합하여 행위가 정확히 타깃에 도달했음을 나타냅니다(예: “射中”＝명중시키다, “击中”＝타격하다, 급소를 찌르다, “打中”＝때려 맞히다, “猜中”＝알아맞히다). 또한 보어 구조 사이에 '得'나 '不'를 넣어 가능보어로 확장할 수 있는데, 예문의 “打不中”은 '때려도 맞지 않는다, 도저히 맞힐 수가 없다'라는 뜻을 나타냅니다. 1성으로 발음되는 “中(zhōng: 가운데, 진행 중)”과의 발음 및 용법 구분이 필수적입니다.",
+    "formation": "주어 + 동사 + (得 / 不) + 中 (zhòng) (+ 목적어)",
+    "examples": [
+      {
+        "translation": "파리 한 마리가 날아와서 사람들이 손을 뻗어 잡으려 했으나, 매번 맞히지를 못했다."
+      }
+    ]
   },
   "zh_中zhngN_681": {
-    "title": "中 (zhòng) N (hit by N)",
-    "shortExplanation": "hit by N",
-    "longExplanation": "hit by N. Pinyin: zhōng (zhòng) N",
-    "formation": "zhōng (zhòng) N"
+    "title": "中 (zhòng) + 명사 (타동사 구문: ~에 걸리다, ~에 중독되다, ~에 당첨되다, 맞다)",
+    "shortExplanation": "동사 '中'(4성: zhòng)이 명사 목적어를 직접 수반하여, 독극물·질병·흉탄 등의 해악에 걸려 피해를 입거나(中毒, 中暑, 中弹), 복권이나 입찰 등에 당첨·선정됨을 나타냅니다('~에 걸리다', '~에 중독되다', '~에 당첨되다').",
+    "longExplanation": "“中 + 명사” 구문에서 “中”은 4성(zhòng)으로 발음되는 타동사로 기능하며, 목적어 명사와 결합하여 고도의 어휘화(합성어화) 과정을 거친 형태가 많습니다. 크게 두 가지 의미 범주로 나뉩니다. 첫째는 해로운 물질이나 급작스러운 질병, 함정 등에 직접적으로 노출되어 피해를 입는 경우입니다: “中毒”(독에 중독되다, 식중독에 걸리다), “中暑”(더위를 먹다, 열사병에 걸리다), “中风”(뇌졸중에 걸리다), “中弹”(총알을 맞다), “中计”(함정에 빠지다). 둘째는 추첨이나 입찰, 시험 등에서 당첨되거나 합격하는 경우입니다: “中奖”(당첨되다), “中标”(낙찰되다). 1성인 “中(zhōng)”과 확실하게 구별하여 인지해야 합니다.",
+    "formation": "주어 + 中 (zhòng) + 명사 (毒 / 暑 / 风 / 弹 / 计 / 奖 / 标 등)",
+    "examples": [
+      {
+        "translation": "이 버섯은 먹으면 안 된다, 먹었다가는 중독될 수 있다."
+      }
+    ]
   },
   "zh_姑且_682": {
-    "title": "姑且 (for now)",
-    "shortExplanation": "for now",
-    "longExplanation": "for now. Pinyin: gūqiě",
-    "formation": "gūqiě"
+    "title": "姑且 (양보 부사: 우선, 일단, 아쉬운 대로 ~해 두다, 가령 ~라고 치다)",
+    "shortExplanation": "현 상황에서 마땅한 대안이나 완전한 결론이 나오지 않아 '우선 임시로 그렇게 해 두다', '일단 한 발 물러서서 받아들이다'라는 일시적 타협이나 양보를 나타내는 부사입니다('우선', '일단은', '잠정적으로').",
+    "longExplanation": "“姑且”(gūqiě)는 완벽한 해결책이나 근본적인 결말은 아니지만, 현재 처한 여건상 한 발 물러서서 임시방편으로 타협하거나 잠정 조치를 취할 때 쓰는 대표적인 양보 부사입니다. '잠시 눈감아 주다'라는 어감의 “姑”와 '잠정적으로'라는 뜻의 “且”가 어우러져, '일단 불만족스럽더라도 현 상태를 받아들이고 후일을 도모한다'는 심리적 유예 상태를 담아냅니다. 따라서 뒷문장에는 대개 “然后再慢慢……”(그 후에 천천히 ~하자)와 같이 차후 대책을 모색하는 내용이 자연스럽게 호응합니다. 자주 쓰이는 관용구로는 “姑且先……”(우선은 먼저 ~하다), “姑且不论 / 姑且不提”(일단 논외로 치고) 등이 있습니다.",
+    "formation": "주어 + 姑且 (+ 先) + 동사 (+ 목적어) ，+ 然后 / 以后 + 절",
+    "examples": [
+      {
+        "translation": "이 일은 자네가 우선 일단 수락해 두고, 그 후에 천천히 방도를 강구해 보게나."
+      }
+    ]
   },
   "zh_随即_683": {
-    "title": "随即 (as soon as)",
-    "shortExplanation": "as soon as",
-    "longExplanation": "as soon as. Pinyin: suíjí",
-    "formation": "suíjí"
+    "title": "随即 (시간 부사·접속 어구: 곧이어, 바로 뒤이어, 즉각, 그 즉시)",
+    "shortExplanation": "앞선 동작이나 사건이 완료되자마자 조금의 지체도 없이 뒤이은 사태가 곧바로 발생함을 나타내는 격조 높은 시간 부사입니다('곧이어', '뒤이어 즉시', '곧바로').",
+    "longExplanation": "“随即”(suíjí)는 신문 기사, 공식 보고서, 서사 문학 등 격식 있는 글에서 시간의 급박한 전개를 나타낼 때 매우 즐겨 쓰이는 서면어 시간 부사입니다. '따르다'라는 뜻의 “随”와 '즉시'라는 뜻의 “即”가 결합되어, 선행 행위가 종결됨과 거의 동시에 후속 사태가 틈을 두지 않고 곧바로 이어짐을 명확히 전달합니다. 일상 구어의 “马上”이나 “立刻”가 화자의 주관적인 서두름이나 촉박한 의지를 강조하는 편이라면, “随即”는 사건의 추이를 객관적이고 매끄럽게 연결해 주는 역사적·서사적 서술 기능을 수행합니다. 한국어의 '곧이어', '뒤이어 즉각', '그 즉시'에 해당합니다.",
+    "formation": "사건1 ，(주어 +) 随即 + 사건2 (동사 + 목적어)",
+    "examples": [
+      {
+        "translation": "예수께서 세례를 받으시고 곧이어 물 위로 올라오셨다."
+      }
+    ]
   },
   "zh_宁愿_684": {
-    "title": "宁愿 (would rather)",
-    "shortExplanation": "would rather",
-    "longExplanation": "would rather. Pinyin: nìngyuàn",
-    "formation": "nìngyuàn"
+    "title": "宁愿 (선택 부사·접속사: 차라리 ~하겠다, 기꺼이 ~할지언정, 비록 ~하더라도)",
+    "shortExplanation": "두 가지 선택지를 저울질한 뒤, 비록 대가나 손해를 치르더라도 더 본질적인 가치나 목표를 지키기 위해 '차라리 이쪽을 택하겠다'라는 주체적 결단을 나타냅니다('차라리 ~하겠다', '기꺼이 ~할지언정').",
+    "longExplanation": "“宁愿”(nìngyuàn)는 선택 복문에서 양자 간의 득실을 면밀히 비교한 후 주관적 결단을 내릴 때 사용하는 핵심 부사·접속사입니다. '차라리'를 뜻하는 “宁”과 '바라다, 자원하다'라는 뜻의 “愿”이 합쳐져, “宁可”보다 화자의 내면적 소망과 적극적인 선택 의지가 한층 돋보입니다. 비록 비용이 더 들거나 고통이 따를지언정, 품질, 안전, 신의, 자존심 등 더 본질적인 대의를 지키기 위해 기꺼이 대가를 감내하겠다는 확고한 태도를 표현합니다. 대표적인 상관 호응 구조로는 “宁愿……，也要……”(차라리 대가를 치르더라도 기필코 ~하겠다)와 “宁愿……，也不……”(차라리 손해를 볼지언정 결코 ~하지는 않겠다)가 있습니다.",
+    "formation": "주어 + 宁愿 + 감내할 대가(동사구/절) ，+ 也要 / 也不 + 지키고자 하는 목적/거부",
+    "examples": [
+      {
+        "translation": "우리는 돈을 조금 더 쓰는 한이 있더라도 품질이 우수한 것을 사야 한다."
+      }
+    ]
   },
   "zh_N归N_685": {
-    "title": "N 归 N (although N is N)",
-    "shortExplanation": "although N is N",
-    "longExplanation": "although N is N. Pinyin: N guī N",
-    "formation": "N guī N"
+    "title": "명사 + 归 + 명사 (양보 구획 구문: ~는 ~이고, ~는 그것대로 치더라도, ~와 별개로)",
+    "shortExplanation": "동일한 명사를 '归' 앞뒤로 반복 사용하여 '앞선 사안 자체는 인정하지만, 그것이 뒤따르는 원칙이나 선을 넘어서는 안 된다'라며 명확한 한계와 구분을 짓는 양보 구문입니다('~는 ~이고', '~는 그것대로 치더라도').",
+    "longExplanation": "“명사 + 归 + 명사”는 동일한 명사를 반복하여 선행 사안의 독립성을 인정하면서도 뒤이어 엄격한 제한선을 긋는 대표적인 양보 구문입니다(“동사 + 归 + 동사”와 원리가 동일함). '귀속되다'라는 뜻의 “归” 앞뒤로 동일한 명사(주로 “开玩笑”, “工作”, “私交”, “生意” 등 인간관계나 행동 영역을 가리키는 어휘)를 배치합니다. 문장의 핵심 논리는 'A라는 행위 자체의 정당성이나 자연스러움은 한 발 물러서 인정하되, 그것이 도를 넘어서거나 다른 원칙을 훼손해서는 결코 안 된다'라는 분명한 경계선 설정에 있습니다. 뒷절에는 으레 “但”, “但是”, “千万别” 등의 역접 접속사나 금지어가 호응합니다. 한국어의 '~는 ~이고', '~는 그것대로 둔다 치더라도', '~와 다른 문제는 별개다'에 해당합니다.",
+    "formation": "명사 + 归 + 명사 ，但 / 但是 + 경계·경고 절",
+    "examples": [
+      {
+        "translation": "친구 사이에 장난은 장난이라 치더라도, 결코 도를 지나쳐서는 안 된다."
+      }
+    ]
   },
   "zh_进而_686": {
-    "title": "进而 (and then)",
-    "shortExplanation": "and then",
-    "longExplanation": "and then. Pinyin: jìn'ér",
-    "formation": "jìn'ér"
+    "title": "进而 (서면어 점진 누가 접속사: 나아가, 한 걸음 더 나아가, 더 진전되어)",
+    "shortExplanation": "논설문이나 학술적 서면어에서 앞선 단계의 기초나 경험 위에 한 차원 더 깊거나 넓은 단계로 사태를 발전·심화시켜 나아감을 나타내는 대표적인 점진 접속사입니다('나아가', '한 걸음 더 나아가').",
+    "longExplanation": "“进而”(jìn'ér)는 학술 논문, 사설, 정책 문서 등에서 논리적인 단계적 심화를 전개할 때 핵심적으로 쓰이는 서면어 점진 접속사입니다. '나아가다'라는 뜻의 “进”과 접속사 “而”가 합쳐져 형성되었습니다. 단순히 시간상의 전후 관계만을 나열하는 “然后”나 “接着”과 달리, “进而”는 앞 절의 행위나 성취를 디딤돌 삼아 보다 높은 차원, 보다 광범위한 영역, 보다 근본적인 질적 도약으로 행위나 사태를 한 단계 더 진전시킬 때 쓰입니다. 인식의 심화, 인간의 자기 개조, 산업 발전, 제도 혁신 등을 논술하는 문맥에서 절대적으로 애용됩니다. 한국어의 '나아가', '한 걸음 더 나아가', '이에 따라 더욱 진전되어'에 해당합니다.",
+    "formation": "절1 (기초·전 단계) ，进而 + 절2 (심화·발전 단계)",
+    "examples": [
+      {
+        "translation": "인간은 실천 속에서 환경의 영향을 받아들이고, 나아가 자기 자신을 개조해 나가는 것이다."
+      }
+    ]
   },
   "zh_得以V_687": {
-    "title": "得以 V (be enabled to V)",
-    "shortExplanation": "be enabled to V",
-    "longExplanation": "be enabled to V. Pinyin: déyǐ V",
-    "formation": "déyǐ V"
+    "title": "得以 + 동사 (서면어 조동사적 표현: 덕분에 ~할 수 있게 되다, 힘입어 ~가 가능해지다)",
+    "shortExplanation": "앞선 유리한 조건, 배려, 또는 특정 사유 덕분에 주어가 뒷절의 동작을 실현할 수 있는 기회나 가능성을 얻게 되었음을 나타내는 격조 높은 서면어 문형입니다('덕분에 ~할 수 있게 되다', '~가 가능해지다').",
+    "longExplanation": "“得以”(déyǐ)는 ‘얻다, 할 수 있다’라는 뜻의 “得”과 ‘~로써’라는 뜻의 “以”가 합쳐진 품격 높은 서면어 조동사적 표현입니다. 주로 2음절 술어 동사 바로 앞에 놓여, '앞서 제시된 특별한 배려, 유리한 조건, 시대적 혜택, 혹은 노력에 힘입어, 결코 쉽지 않았던 어떤 바람이나 권리가 온전히 실현될 수 있었다'라는 긍정적인 성취와 안도의 과정을 보여줍니다. 자주 결합하는 술어로는 “得以解决”(원만히 해결될 수 있었다), “得以延续”(이어질 수 있었다), “得以免除”(면제받을 수 있었다) 등이 있으며, 부정적이거나 불행한 결과에는 쓰이지 않습니다. 한국어의 '덕분에 ~할 수 있게 되다', '~의 기회를 얻다', '~함에 이를 수 있었다'에 해당합니다.",
+    "formation": "조건·원인 ，(주어 +) 得以 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그는 나이가 어린 덕분에 처벌을 면할 수 있었다."
+      }
+    ]
   },
   "zh_偏偏V_689": {
-    "title": "偏偏 V (just V, to insist on V)",
-    "shortExplanation": "just V, to insist on V",
-    "longExplanation": "just V, to insist on V. Pinyin: piānpiān V",
-    "formation": "piānpiān V"
+    "title": "偏偏 + 동사 (어기 부사: 굳이 ~하려 들다, 기어코 ~하다, 기어이 고집부려 ~하다)",
+    "shortExplanation": "주변 사람들의 간곡한 만류나 상식적인 규범을 보란 듯이 거스르고, 오기를 부리며 '기어코 ~하려 들다', '굳이 고집부려 ~하다'라는 고집스럽고 반항적인 주관적 태도를 나타내는 어기 부사입니다('기어이', '굳이 고집을 부려').",
+    "longExplanation": "“偏偏”(piānpiān)는 '기울어지다, 정상 궤도를 벗어나다'라는 뜻의 “偏”을 중첩하여 주관적인 반항심과 고집스러움을 강조하는 대표적인 어기 부사입니다. 행동 동사나 조동사(“要”, “想”, “不” 등) 앞에 놓여 주위 사람들의 거듭된 만류, 객관적인 위험 경고, 혹은 사회적 통념에 보란 듯이 역행하는 주어의 완고한 행태를 생생하게 포착합니다. 앞 절에서 '주변 사람들이 모두 말렸다'라는 상황이 제시되고, 뒷절에서 “偏偏”을 통해 '그럼에도 불구하고 기어이 하겠다고 우겼다'라는 강렬한 대조를 이룹니다. 화자의 답답함, 비판, 어이없음 등의 감정이 짙게 배어 있습니다. 한국어의 '굳이 ~하려 들다', '기어코 고집을 부려 ~하다', '하지 말라는데도 기어이 하다'에 해당합니다.",
+    "formation": "주어 + 偏偏 (+ 要 / 想 / 不) + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그곳은 너무 위험해서 모두가 가지 말라고 만류했건만, 그는 기어코 가겠다고 고집을 부렸다."
+      }
+    ]
   },
   "zh_偏偏CLAUSE_690": {
-    "title": "偏偏 CLAUSE ((CLAUSE is an undesirable occurence by chance))",
-    "shortExplanation": "(CLAUSE is an undesirable occurence by chance)",
-    "longExplanation": "(CLAUSE is an undesirable occurence by chance). Pinyin: piānpiān CLAUSE",
-    "formation": "piānpiān CLAUSE"
+    "title": "偏偏 + 절 (어기 부사: 하필이면, 공교롭게도, 얄궂게도, 때마침 운 없게도)",
+    "shortExplanation": "자신의 의도나 기대와는 정반대로, 하필이면 가장 곤란하고 부적절한 순간에 원치 않는 불운한 일이 돌발하여 차질이 빚어졌음을 탄식조로 나타내는 어기 부사입니다('하필이면', '공교롭게도', '얄궂게도').",
+    "longExplanation": "“偏偏 + 절”은 주체의 고집을 나타내는 앞선 패턴과 달리, '객관적 시점의 공교로운 불일치와 운명의 얄궂음'을 한탄할 때 쓰는 용법입니다. 흔히 앞 절의 “正当……时 / 正要……的时候”(한창 ~하고 있던 바로 그 순간에)와 긴밀히 맞물려 쓰이며, 뒷절 전체를 꾸며 줍니다. 당사자가 바라는 이상적인 평온이나 일정과 정면으로 배치되게, 하필이면 가장 방해받고 싶지 않은 결정적 타이밍에 성가신 사건(전화 벨소리, 손님 방문, 비바람 등)이 불쑥 터져 나왔을 때의 답답함과 황당함을 생생하게 드러냅니다. 한국어의 '하필이면', '공교롭게도', '얄궂게도 바로 그때'에 해당합니다.",
+    "formation": "正当 / 正在 + 사건1 + 的时候 / 时 ，偏偏 + 곤혹·낭패 절",
+    "examples": [
+      {
+        "translation": "내가 막 자리에 앉아 저녁을 먹으려던 바로 그 순간에, 얄궂게도 전화가 걸려 왔다."
+      }
+    ]
   },
   "zh_况且_691": {
-    "title": "况且 (besides)",
-    "shortExplanation": "besides",
-    "longExplanation": "besides. Pinyin: kuàngqiě",
-    "formation": "kuàngqiě"
+    "title": "况且 (점진 접속사: 게다가, 더군다나, 하물며, 더욱이)",
+    "shortExplanation": "뒷절의 머리에 쓰여 앞 절에서 제시한 근거 외에 또 다른 결정적인 이유나 상황을 덧붙임으로써 결론이나 주장의 타당성을 한층 더 강화하는 접속사입니다('게다가', '더군다나', '하물며').",
+    "longExplanation": "“况且”(kuàngqiě)는 복문에서 앞선 내용에 새로운 이유나 조건을 더할 때 사용하는 점진 접속사입니다. 주로 뒷절의 첫머리에 놓여, 이미 언급된 근거나 전제에 더해 또 하나의 유력한 논거를 보충함으로써 화자의 판단, 주장 또는 결정에 확고한 설득력을 부여합니다. 뒷절 내부에서는 흔히 부사 “又”, “也”, “还” 등과 호응하여 “况且……又/也……”의 형태로 긴밀하게 결합합니다. 단순히 사실을 병렬적으로 추가하는 “而且”와 달리, “况且”는 논리적인 '이유 및 명분의 보충'에 초점이 맞추어져 있어 청자를 설득하거나 자신의 행위가 지극히 합당함을 강조할 때 강력한 효과를 발휘합니다.",
+    "formation": "절1 ，况且 (+ 주어) + 又 / 也 / 还 + 술어(동사 / 형용사)",
+    "examples": [
+      {
+        "translation": "이 집은 교통이 편리하고 근처에 서점도 있으며, 게다가 방세도 비싸지 않으니 정말 이보다 더 알맞을 수가 없다."
+      }
+    ]
   },
   "zh_大TIME_692": {
-    "title": "大 TIME ((emphasize on TIME))",
-    "shortExplanation": "(emphasize on TIME)",
-    "longExplanation": "(emphasize on TIME). Pinyin: dà TIME",
-    "formation": "dà TIME"
+    "title": "大 + 시간명사 (구어 시간 강조 구문: 대낮에, 한밤중에, 꼭두새벽부터, 한겨울에 - 시간의 극단성 및 부적절함 강조)",
+    "shortExplanation": "접두사적으로 '大'를 특정 시간명사(白天, 半夜, 清早, 冬天, 过年 등) 앞에 붙여, 시간대가 지닌 정점의 성격을 부각하거나 그 시간에 그런 행동을 하는 것이 지극히 부적절하고 대담하며 뜻밖임을 강조하는 생생한 구어 구문입니다('대낮에', '한밤중에', '한겨울에').",
+    "longExplanation": "“大 + 시간명사”는 일상 구어에서 발화자의 정서적 충격, 불만, 놀라움 등을 생생하게 담아내는 강조 구문입니다. 여기서 “大”는 물리적인 크기가 아니라 해당 시간대가 가진 특성이 극에 달했음을 나타냅니다. 주로 “白天”(대낮), “半夜”(야밤), “清早”(이른 아침), “冬天”(겨울), “热天”(더운 날), “过年”(명절 대목) 등의 명사와 결합합니다. 대개 '남들의 눈이 번연히 살아 있는 시간' 혹은 '상식적으로 그런 일을 해서는 안 될 극단적인 시점'에 어떠한 사건이 버젓이 발생했거나 부적절한 행위가 자행되었음을 꼬집을 때 쓰입니다. 대표적으로 “大白天”(대낮에, 백주대낮에), “大半夜”(야심한 밤중에), “大冬天”(그 추운 한겨울에)과 같은 조합이 널리 쓰이며, 한국어의 '대낮에', '한밤중에', '새벽부터' 등의 뉘앙스와 정확히 상통합니다.",
+    "formation": "(주어 +) 大 + 시간명사 (白天 / 半夜 / 清早 / 冬天 / 过年 등) + 술어(동사 / 형용사)",
+    "examples": [
+      {
+        "translation": "그 자동차는 백주대낮에 다른 사람에게 도난당하고 말았다."
+      }
+    ]
   },
   "zh_与其V倒不如V_693": {
-    "title": "(与其) V 倒不如 V (rather than V, it’s better to V)",
-    "shortExplanation": "rather than V, it’s better to V",
-    "longExplanation": "rather than V, it’s better to V. Pinyin: ( yǔqí) V dǎo bùrú V",
-    "formation": "( yǔqí) V dǎo bùrú V"
+    "title": "(与其) + 동사1 / 절1 + 倒不如 + 동사2 / 절2 (선택 취사 복문: ~하느니 차라리 ~하는 편이 낫다, ~하기보다는 도리어 ~하는 것이 낫다)",
+    "shortExplanation": "두 가지 방안을 비교 형량하여 앞선 방안을 버리고 뒤의 대안을 적극적으로 택함을 나타내는 선택 취사 구문입니다. 부사 '倒'가 반전의 어기를 더하여 '차라리 뒤의 방안을 택하는 것이 훨씬 합리적이다'라는 단호한 판단을 나타냅니다.",
+    "longExplanation": "“(与其)……倒不如……”는 두 가지 선택지 사이에서 저울질한 끝에 한쪽을 단호히 배제하고 다른 쪽을 채택하는 대표적인 비교 선택 복문(取舍复句)입니다. 통상 앞 절의 “与其”(구어에서는 생략 가능)가 비효율적이거나 탐탁지 않은 선택지를 이끌고, 뒷절의 “倒不如”가 보다 실속 있고 현명한 대안을 제시합니다. 특히 “不如” 앞에 개입된 부사 “倒”는 일반적인 통념이나 미련을 떨쳐버리고 발상을 전환함을 나타내는 역접·강조의 뉘앙스를 지녀, '그렇게 애를 쓰거나 손해를 보느니 도리어 차라리 이렇게 하는 편이 백번 낫다'는 화자의 확고하고 실리적인 태도를 부각합니다. 한국어의 '~하느니 차라리 ~하는 편이 낫다', '~하기보다는 아예 ~하는 게 낫다'에 정확히 부합합니다.",
+    "formation": "(与其 +) 동사1 / 절1 ，倒不如 (+ 주어) + 동사2 / 절2",
+    "examples": []
   },
   "zh_以免_695": {
-    "title": "以免 (为了避免)",
-    "shortExplanation": "为了避免",
-    "longExplanation": "为了避免. Pinyin: yǐmiǎn",
-    "formation": "yǐmiǎn"
+    "title": "以免 (목적 접속사: ~하지 않도록, ~을 피하기 위해, ~하지 않게끔)",
+    "shortExplanation": "뒷절의 머리에 쓰여 앞 절의 예방 조치를 취하는 목적이 어떠한 부정적이거나 바람직하지 못한 결과를 방지하기 위함임을 나타내는 격식 있는 목적 접속사입니다('~하지 않도록', '~을 면하기 위해').",
+    "longExplanation": "“以免”(yǐmiǎn)은 ‘~로써’라는 뜻의 “以”와 ‘면하다, 피하다’라는 뜻의 “免”이 결합된 대표적인 반면 목적(反面目的) 접속사입니다. 앞 절에서 어떠한 주의나 예방적 조치를 취하는 이유가, 바로 뒤이어 언급될 해로운 결과나 사고, 손실 등을 사전에 방지하기 위한 것임을 분명히 밝힙니다. 일상 구어에서 흔히 쓰이는 “免得”나 “省得”와 의미는 같으나, “以免”은 보다 격조 높고 정중한 서면어 색채를 띠고 있어 공공 안내문, 안전 수칙, 의료 지침, 공문서 등에서 표준적으로 채택됩니다. 한국어의 '~하지 않도록', '~을 피하고자', '~되지 않게끔'에 완벽히 대응합니다.",
+    "formation": "행동 절1 ，以免 + 방지할 결과 절2",
+    "examples": [
+      {
+        "translation": "감기에 걸렸을 때는 다른 사람에게 전염시키지 않도록 가급적 공공장소 출입을 자제해야 한다."
+      }
+    ]
   },
   "zh_嫌_696": {
-    "title": "嫌 (dislike, have a strong negative opinion about)",
-    "shortExplanation": "dislike, have a strong negative opinion about",
-    "longExplanation": "dislike, have a strong negative opinion about. Pinyin: xián",
-    "formation": "xián"
+    "title": "嫌 (심리 동사: 못마땅해하다, 싫어하다, ~하다고 불평하다, 꺼리다, 흠잡다)",
+    "shortExplanation": "어떤 대상이나 상황의 결점·부족한 점에 대해 주관적인 불만이나 거부감을 품고 '마음에 안 들어 하다', '~하다고 흠잡다/불평하다', '꺼리다'라는 의미를 나타내는 타동사입니다.",
+    "longExplanation": "“嫌”(xián)은 사물이나 사람의 어떤 측면이 마음에 들지 않아 거부하거나 불평하는 심리적 태도를 나타내는 대표적인 평가·심리 동사입니다. 목적어로 형용사구, 동사구, 혹은 주술절을 취하여 불만의 구체적인 내용이나 원인을 직접 이끕니다. 대표적인 형태는 다음과 같습니다: ① “嫌 + 형용사”(너무 ~하다고 꺼리다/싫어하다, 예: “嫌贵”＝비싸다고 꺼리다, “嫌麻烦”＝귀찮아하다, “嫌脏”＝더럽다고 꺼리다); ② “嫌 + 대상 + 술어절”(대상이 ~하다고 불평하다, 예: “嫌他走得慢”＝그가 너무 느리게 걷는다고 타박하다, “嫌菜不好吃”＝음식이 맛없다고 투덜대다). 객관적인 비판이라기보다는 화자 자신의 까다로운 기준이나 주관적인 불만을 생생하게 표출할 때 즐겨 쓰입니다.",
+    "formation": "주어 + 嫌 (+ 대상) + 형용사 / 불만 내용 절",
+    "examples": [
+      {
+        "translation": "모두들 이 여행 계획이 그다지 합리적이지 못하다고 불만을 나타냈다."
+      }
+    ]
   },
   "zh_动不动就V_697": {
-    "title": "动不动就 V (on a whim)",
-    "shortExplanation": "on a whim",
-    "longExplanation": "on a whim. Pinyin: dòngbudòng jiù V",
-    "formation": "dòngbudòng jiù V"
+    "title": "动不动就 + 동사 (관용 부사 구문: 걸핏하면 ~하다, 툭하면 ~하다, 조금만 뭐해도 금세 ~하다)",
+    "shortExplanation": "사소한 자극이나 이유에도 불구하고 바람직하지 못한 행동이나 감정 반응(화내기, 울기, 아프기 등)이 너무나 쉽게, 빈번하게 유발됨을 나타내는 생생한 구어 관용구입니다('걸핏하면 ~하다', '툭하면 ~하다').",
+    "longExplanation": "“动不动就 + 동사”는 일상 대화에서 특정 행위가 뚜렷한 명분 없이 몹시 빈번하고 손쉽게 일어남을 불만스럽게 표현하는 관용 구문입니다. 문자 그대로는 '조금이라도 움직이기만 하면'이라는 뜻에서 유래하여, 극히 하찮은 계기만 주어져도 반사적으로 반응함을 나타냅니다. 주로 뒤따르는 동사로는 짜증 내기, 화내기(“发脾气”), 울기(“哭”), 조급해하기(“着急”), 결근하기 등 다소 부정적이거나 통제되지 않는 감정 표출 및 돌발 행동이 옵니다. 화자의 탄식, 불만, 어이없음의 뉘앙스를 강하게 풍기며, 한국어의 '툭하면 ~하다', '걸핏하면 ~하다', '조금만 수틀리면 ~하다'와 정확히 일치합니다.",
+    "formation": "주어 + 动不动就 + 동사 (부정적 동작·심리 반응)",
+    "examples": [
+      {
+        "translation": "그는 최근 일이 바쁘고 스트레스가 심해서 걸핏하면 조급해하고 버럭 화를 낸다."
+      }
+    ]
   },
   "zh_甲乙丙丁_698": {
-    "title": "甲乙丙丁 (A, B, C, D (series))",
-    "shortExplanation": "A, B, C, D (series)",
-    "longExplanation": "A, B, C, D (series). Pinyin: jiǎyǐ bǐng dīng",
-    "formation": "jiǎyǐ bǐng dīng"
+    "title": "甲乙丙丁 (순서 표기·가명 체계: 갑, 을, 병, 정 - A, B, C, D에 상당하는 순차·등급 표기 및 당사자 대칭)",
+    "shortExplanation": "십간(十干)의 첫 네 글자에서 유래하여, 공문서·계약서·시험 등에서 순서나 등급(영어의 A, B, C, D에 해당)을 매기거나 계약 당사자 및 가상의 불특정 인물을 지칭할 때 사용하는 표준적인 순서·대명 표현입니다('갑, 을, 병, 정').",
+    "longExplanation": "“甲、乙、丙、丁”(jiǎ, yǐ, bǐng, dīng)은 고대 중국의 십간(十天干) 중 앞선 네 글자로, 현대 중국어에서도 공문서, 법률 계약, 일상생활 전반에 걸쳐 핵심적인 순서 및 가칭 체계로 기능합니다. 주된 용법은 크게 세 가지로 나뉩니다: ① 순차 및 등급 매기기: 영어의 A, B, C, D에 해당하는 순서 표기로서 객관식 문항의 보기, 성적 등급(갑등, 을등 등), 순차적 항목 열거에 표준적으로 쓰입니다; ② 계약 및 법률상의 당사자 지칭: '갑(甲方)', '을(乙方)'과 같이 계약 주체를 객관적으로 호칭할 때 필수적입니다; ③ 일반 불특정 인물의 비유: “甲乙丙丁”은 한국어의 '갑남을녀'나 '행인 A, B'처럼 아무런 개성 없는 길거리의 불특정 행인이나 모르는 타인을 가리키는 구어적 관용구로도 활용됩니다.",
+    "formation": "명사 (항목 / 등급 / 대상) : 甲 / 乙 / 丙 / 丁",
+    "examples": [
+      {
+        "translation": "갑, 을, 병, 정은 하나의 순서 배열로서, 영어의 A, B, C, D에 해당한다."
+      }
+    ]
   },
   "zh_加以V_699": {
-    "title": "加以 V (proceed with V)",
-    "shortExplanation": "proceed with V",
-    "longExplanation": "proceed with V. Pinyin: jiāyǐ V",
-    "formation": "jiāyǐ V"
+    "title": "加以 + 동사 (서면어 형식동사 구문: ~을 가하다, ~을 행하다, ~을 진행하다)",
+    "shortExplanation": "격식 있는 서면어에서 2음절 동작성 동사 앞에 놓여, 앞서 제시된 대상에 대해 특정한 조치나 처리를 가함을 나타내는 대표적인 형식동사입니다('~을 가하다', '~을 행하다', '~을 진행하다').",
+    "longExplanation": "“加以”(jiāyǐ)는 현대 중국어의 학술 논문, 신문 사설, 공식 보고서 등에서 문장에 품격과 균형감을 부여하기 위해 사용하는 전형적인 형식동사(形式动词)입니다. 그 자체로는 구체적인 동작 내용을 갖지 않고, 반드시 뒤에 2음절 타동사(연구, 해결, 분석, 비판, 제한, 보호, 개조 등)를 동반하여 문법적 술어 틀을 완성합니다. 처리의 대상이 되는 사물이나 문제는 통상 주어로 놓여 있거나 개사 “对”, “对于”에 의해 문두로 이끌려 나오는 것이 정형화된 어순입니다. 단순히 일반 동사만 쓰는 것에 비해 격조 높은 공적 어감을 띠며, 한국어의 '~에 연구를 가하다(진행하다)', '~에 분석을 행하다'와 같은 조어적 기능에 부합합니다.",
+    "formation": "(对 / 对于 + 대상 ，) 주어 + (认真 / 进一步 +) 加以 + 2음절 동사",
+    "examples": [
+      {
+        "translation": "당신의 의견과 제안에 대해서 우리는 진지하게 연구를 진행할 것입니다."
+      }
+    ]
   },
   "zh_大大远远V_700": {
-    "title": "大大/远远 V (V by far)",
-    "shortExplanation": "V by far",
-    "longExplanation": "V by far. Pinyin: dàdà/ yuǎnyuǎn V",
-    "formation": "dàdà/ yuǎnyuǎn V"
+    "title": "大大 / 远远 + 동사 (정도부사 첩어 구문: 크게 ~하다, 훨씬 ~을 초과하다, 아득히 능가하다)",
+    "shortExplanation": "형용사 '大'와 '远'의 첩어형 부사가 변화, 비교, 초월을 나타내는 동사(超出, 超过, 提高 등) 앞에 놓여, 정도가 지극히 심하거나 두 대상 사이의 격차가 압도적으로 큼을 나타냅니다('크게', '훨씬', '아득히 능가하다').",
+    "longExplanation": "“大大”(dàdà)와 “远远”(yuǎnyuǎn)은 각각 형용사 “大”와 “远”이 중첩되어 파생된 고유의 강조형 정도부사입니다. 주로 비교, 초월, 격차, 질적 변화를 나타내는 동사구(예: “超出”＝뛰어넘다, “超过”＝초과하다, “提高”＝높이다, “落后”＝뒤처지다 등)의 앞에 놓여 술어를 강렬하게 수식합니다. “大大”는 변화의 폭이나 규모가 막대함('대폭', '크나크게')을 부각하며, “远远”은 기준선이나 예상치와의 거리 및 격차가 도저히 비견할 수 없을 만큼 아득히 벌어져 있음('훨씬', '까마득히')을 생생하게 드러냅니다. 일상 구어는 물론 학술 및 비즈니스 보고서에서도 객관적·주관적 격차를 단호하게 서술할 때 즐겨 쓰입니다.",
+    "formation": "주어 + 大大 / 远远 + 동사 (超出 / 超过 / 提高 / 改善 등) (+ 목적어)",
+    "examples": [
+      {
+        "translation": "당신의 능력은 우리의 상상을 훨씬(크게) 뛰어넘었습니다."
+      }
+    ]
   },
   "zh_远远不没VA_701": {
-    "title": "远远 + 不/没 + V/A (far from V-ing, far from A)",
-    "shortExplanation": "far from V-ing, far from A",
-    "longExplanation": "far from V-ing, far from A. Pinyin: yuǎnyuǎn + bù/ méi + V/A",
-    "formation": "yuǎnyuǎn + bù/ méi + V/A"
+    "title": "远远 + 不 / 没 + 동사 / 형용사 (강조 부정 구문: 훨씬 못 미치다, 도저히 ~할 수 없다, 아직 까마득히 모자라다)",
+    "shortExplanation": "첩어 부사 '远远'이 부정사 '不' 또는 '没'과 결합하여, 현재의 상태·역량·조건이 기준치나 목표치에 비해 턱없이 모자라고 거리가 아득히 멀다는 점을 엄중하게 나타냅니다('훨씬 못 미치다', '도저히 ~할 수 없다').",
+    "longExplanation": "“远远 + 不 / 没 + 동사 / 형용사” 구문은 현 상태와 요구되는 기준 사이의 현격한 실력 차이나 조건의 미달을 단호하게 밝히는 강조 부정 구조입니다. “远远”이 격차의 아득함을 드러내고, 뒤이어 부정사 “不”(능원동사나 형용사를 동반) 혹은 “没”(미달성)이 결합하여, 단순한 부정을 넘어 '이상적인 표준에 도달하려면 아직도 까마득히 멀었다'는 깊은 아쉬움이나 냉정한 현실 인식을 표출합니다. 상용되는 결합으로는 “远远不够”(턱없이 부족하다), “远远不如”(훨씬 못하다), “远远不能胜任”(도저히 감당할 수 없다), “远远没有达到”(아직 턱없이 미치지 못했다) 등이 있습니다. 엄격한 평가나 자기성찰의 맥락에서 필수적인 표현입니다.",
+    "formation": "주어 + 远远 + 不 / 没(有) + 조동사 / 동사 / 형용사",
+    "examples": [
+      {
+        "translation": "당신의 현재 지식과 능력은 당신이 꿈꾸는 이상적인 직무를 감당하기에는 턱없이(훨씬) 부족합니다."
+      }
+    ]
   },
   "zh_紧缩句_702": {
-    "title": "紧缩句 ((omitting “if” words))",
-    "shortExplanation": "(omitting “if” words)",
-    "longExplanation": "(omitting “if” words). Pinyin: jǐnsuō jù",
-    "formation": "jǐnsuō jù"
+    "title": "紧缩句 (긴축문: 가정 접속사 생략 및 부사 직결을 통한 긴박·단호 구문)",
+    "shortExplanation": "복문에서 쓰이는 가정 접속사(要是, 如果 등)나 절 사이의 쉼표를 과감히 생략하고 부사 '就' 등으로 앞뒤 절을 단단히 압축하여, 긴박한 상황이나 단호한 경고·명령을 나타내는 문장 형식입니다('긴축문').",
+    "longExplanation": "“紧缩句”(긴축문)은 중국어 통사론의 독특한 구조적 특성으로, 원래 두 개의 절로 나뉘어 연결되는 복문의 논리적 관계(가정-결과, 조건-귀결)를 단문처럼 긴밀하게 축약한 형태를 가리킵니다. 앞 절에 올 만한 가정 접속사(예: “要是”, “如果”)를 과감히 생략하고, 절 사이의 숨 고르기나 쉼표를 없앤 채 부사 “就”, “也”, “才” 등을 매개로 두 동작을 번개처럼 직결합니다. 이러한 긴축적 처리를 통해 발화의 속도감이 극대화되며, 긴박한 명령, 일촉즉발의 위협, 단호한 경고(“不站住我就开枪了”＝안 멈추면 바로 쏜다)의 분위기가 생생하게 분출됩니다. 실생활 구어 및 긴박한 극적 상황에서 강력한 전달력을 발휘합니다.",
+    "formation": "(要是 / 如果 +) 술어1 ，(주어2 +) 就 + 술어2",
+    "examples": [
+      {
+        "translation": "거기 서! (만약) 서지 않으면, 바로 총을 쏘겠다!"
+      }
+    ]
   },
   "zh_特意_703": {
-    "title": "特意 (on purpose)",
-    "shortExplanation": "on purpose",
-    "longExplanation": "on purpose. Pinyin: tèyì",
-    "formation": "tèyì"
+    "title": "特意 (목적 부사: 특별히, 일부러, 정성을 들여 일부러, 유독)",
+    "shortExplanation": "어떤 명확하고 특별한 목적이나 상대를 위해, 우연이 아니라 정성과 노력을 기울여 행동에 나섰음을 나타내는 긍정적 뉘앙스의 목적 부사입니다('특별히', '일부러', '애써').",
+    "longExplanation": "“特意”(tèyì)는 술어 동사 앞에 놓여 행위가 지나가는 길에 무심코 이루어진 것이 아니라, '오직 그 목적이나 대상을 위해 각별한 관심과 정성을 들여 의도적으로 행해진 것'임을 강조하는 부사입니다. 악의나 불순한 의도를 가지고 남에게 피해를 주는 'わざと(일부러)'에 해당하는 “故意”와 달리, “特意”는 늘 성의, 배려, 친절, 열정 등 긍정적이고 따뜻한 맥락에서 사용됩니다. 예를 들어 멀리서 찾아와 준 손님을 위해 특별히 음식을 준비하거나, 공무 중에 시간을 내어 의미 있는 장소를 방문하는 등의 상황에 더없이 잘 어울립니다. 한국어의 '특별히', '일부러 시간을 내어', '애써'에 정확히 부합합니다.",
+    "formation": "주어 + 特意 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그해 나는 톈진으로 출장을 갔다가, 특별히 베이징을 거쳐 우회하여 원명원에 다녀왔다."
+      }
+    ]
   },
   "zh_即将_704": {
-    "title": "即将 (about)",
-    "shortExplanation": "about",
-    "longExplanation": "about. Pinyin: jíjiāng",
-    "formation": "jíjiāng"
+    "title": "即将 (서면어 시간 부사: 곧, 머지않아, 바야흐로 ~하려 하다, 눈앞에 닥치다)",
+    "shortExplanation": "격식 있는 서면어에서 술어 동사 앞에 놓여, 어떠한 중요한 사건이나 새로운 단계가 머지않은 가까운 미래에 곧 실현될 것임을 나타내는 시간 부사입니다('곧', '머지않아', '바야흐로 ~하려 하다').",
+    "longExplanation": "“即将”(jíjiāng)은 ‘곧, 즉시’를 뜻하는 “即”와 ‘장차, 미래’를 뜻하는 “将”이 어우러진 대표적인 품격 높은 서면어 시간 부사입니다. 주어와 술어 동사 사이에 위치하여, 제시된 사태의 발생 시점이 코앞으로 다가왔음을 엄숙하고 명확하게 예고합니다. 일상 구어에서 쓰이는 “快要”나 “马上”에 비해 문체에 웅장한 무게감과 공식적인 권위를 부여하기 때문에 뉴스 보도문, 성명서, 기념사, 졸업 연설 등 공적인 담화에서 광범위하게 애용됩니다. 주로 “即将到来”(곧 도래하다), “即将开幕”(머지않아 개막하다), “即将迎来”(바야흐로 맞이하려 하다)와 같이 새로운 국면의 시작을 알릴 때 정형화되어 쓰입니다.",
+    "formation": "주어 + 即将 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "우리는 이미 학업을 마치고 곧 일터로 나아가 인생의 새로운 한 페이지를 시작하려 한다."
+      }
+    ]
   },
   "zh_能V就V_705": {
-    "title": "能 + V + 就 + V (V if possible)",
-    "shortExplanation": "V if possible",
-    "longExplanation": "V if possible. Pinyin: néng + V + jiù + V",
-    "formation": "néng + V + jiù + V"
+    "title": "能 + 동사 + 就 + 동사 (구어 반복 관용 구문: 할 수 있으면 되도록 ~하다, 가능한 한 ~하다, 되는 대로 ~해 두다)",
+    "shortExplanation": "동일한 동사를 반복하여 '조건이 허락하는 한 가급적 그 동작을 실천하는 것이 바람직하다'라는 실리적이고 융통성 있는 태도를 나타내는 일상 구어 관용구입니다('할 수 있으면 되도록 ~하다').",
+    "longExplanation": "“能 + 동사 + 就 + 동사”는 일상 대화에서 실용성과 절약, 융통성을 강조할 때 입버릇처럼 쓰이는 대칭형 동사 반복 구문입니다. 조동사 “能”(할 수 있다) 뒤에 동사를 두고, 이어지는 접속 부사 “就”(곧, 바로) 뒤에 동일한 동사를 되풀이하여 배치함으로써 '조건만 충족된다면 미루지 말고 가급적 그 방향으로 처리하자'는 현실적인 권고를 나타냅니다. 낭비를 줄이고 불필요한 번거로움을 피하려는 생활의 지혜가 담겨 있어, “能省就省”(아낄 수 있는 건 최대한 아끼다), “能修就修”(고칠 수 있으면 최대한 고쳐 쓰다), “能去就去”(갈 수 있으면 되도록 가다)와 같이 폭넓게 응용됩니다.",
+    "formation": "주어 + 能 + 동사 + 就 + 동사",
+    "examples": [
+      {
+        "translation": "이 휴대전화는 쓴 지 얼마 되지 않았으니, 고칠 수 있으면 되도록 고쳐 쓰고 가급적 새것으로 바꾸지 마라."
+      }
+    ]
   },
   "zh_别说_706": {
-    "title": "别说 (let alone)",
-    "shortExplanation": "let alone",
-    "longExplanation": "let alone. Pinyin: bié shuō",
-    "formation": "bié shuō"
+    "title": "别说……，就是 / 连……也…… (양보 점진 구문: ~은커녕, ~은 말할 것도 없고, 심지어 ~조차도)",
+    "shortExplanation": "앞 절에서 기준이 높은 대상을 '말할 필요도 없다'며 당연한 전제로 제쳐두고, 뒷절에서 '就是(심지어)'나 '连'을 통해 더 기본적이고 사소한 것조차 그러하다고 극단적인 대조를 이루며 강조하는 구문입니다('~은커녕, 심지어 ~조차').",
+    "longExplanation": "“别说……，就是 / 连……也 / 都……”는 대화나 서사문에서 궁핍한 처지나 극한의 상황을 극적으로 부각할 때 쓰이는 대표적인 양보 점진(让步递进) 구문입니다. 앞 절의 “别说”(말할 것도 없다, ~은커녕)은 구어의 “甭说”이나 “不用说”과 일맥상통하며, 우선 한 차원 높은 대상이나 사치스러운 조건을 당연한 전제로 열외에 둡니다. 이어 뒷절에서는 “就是”(설령 ~일지라도)나 “连”(심지어 ~조차)과 부사 “也/都”를 긴밀히 결합하여 최하위의 기본 요소마저 결핍되거나 아껴야 하는 처지임을 강조합니다. '촛불은커녕 등잔 기름조차도 아껴 써야 했다'와 같이, 두 사물 사이의 격차를 극대화하여 독자의 공감과 몰입을 이끌어 냅니다.",
+    "formation": "别说 + 사물A(고수준·사치품) (了) ，就是 / 连 + 사물B(최소한의 사물) + 也 / 都 + 술어",
+    "examples": [
+      {
+        "translation": "밤에 책을 읽을 때 촛불은커녕 등잔 기름조차도 아껴 가며 써야만 했다."
+      }
+    ]
   },
   "zh_V1V1V2V2_707": {
-    "title": "V1V1V2V2 ((repeated action))",
-    "shortExplanation": "(repeated action)",
-    "longExplanation": "(repeated action). Pinyin: V1V1V2V2",
-    "formation": "V1V1V2V2"
+    "title": "동사1동사1동사2동사2 (동사의 AABB형 중첩: ~하고 …하며 떠들썩함, 반복적이고 생생한 동작 묘사)",
+    "shortExplanation": "두 개의 단음절 동사를 AABB 형태로 중첩하여 동작이 잇달아 반복되거나 일상적으로 편안하게 이루어지는 모습을 생동감 있게 묘사합니다('치고받고 장난치다', '부딪치고 까지다').",
+    "longExplanation": "“동사1동사1동사2동사2”는 현대 중국어 구어에서 동작의 반복과 다채로운 양태를 한 폭의 그림처럼 생생하게 표현하는 대표적인 AABB형 동사 중첩 구조입니다. 병렬 관계를 이루는 두 개의 단음절 동사(또는 '打闹', '磕碰', '吵闹' 등의 병렬 복합어)를 각각 두 번씩 겹쳐 씀으로써 형성됩니다(예: 打打闹闹, 磕磕碰碰, 吵吵闹闹, 摇摇晃晃). 문장 속에서 술어는 물론 주어, 상황어(부사어), 관형어로도 자유롭게 쓰입니다. 이 구문은 개별 동작을 단순히 나열하는 것을 넘어, 동작이 끊임없이 유쾌하게 이어지거나 일상적으로 가볍게 발생하는 성질을 강조하며, 대수롭지 않거나 자연스러운 일로 받아들이는 화자의 너그러운 어감을 담아냅니다.",
+    "formation": "동사1동사1동사2동사2 (예: 打打闹闹, 磕磕碰碰, 吵吵闹闹)",
+    "examples": [
+      {
+        "translation": "아이들은 원래 치고받고 장난치는 걸 좋아하니, 이리저리 부딪치고 넘어지는 건 불가피한 일이야. 며칠 지나면 괜찮아지니까 걱정하지 마."
+      }
+    ]
   },
   "zh_左MN右MN_708": {
-    "title": "左 # M N 右 # M N (one N after another)",
-    "shortExplanation": "one N after another",
-    "longExplanation": "one N after another. Pinyin: zuǒ # M N yòu # M N",
-    "formation": "zuǒ # M N yòu # M N"
+    "title": "左 + 수사 + 양사 + 명사 + 右 + 수사 + 양사 + 명사 (구어 빈번 반복 강조 구문: 이쪽저쪽에서 연달아 ~하다, 쉴 새 없이 꼬리를 물고 ~하다)",
+    "shortExplanation": "방위사 '左'와 '右'에 수량사(주로 '一 + 양사')를 결합하여 특정 사물이나 동작이 꼬리에 꼬리를 물고 쉴 새 없이 빗발치듯 이어지는 모습을 묘사합니다('연달아', '빗발치듯').",
+    "longExplanation": "“左 + 수사 + 양사 + 명사 + 右 + 수사 + 양사 + 명사”(실제 구어에서는 주로 “左一个……右一个……”의 형태)는 일상 대화에서 특정 행위나 사건이 빈번하고 끈질기게 되풀이되는 양상을 과장하여 생생하게 나타내는 대칭형 구어 구문입니다. 여기서 '左'와 '右'는 물리적인 좌우 방향을 가리키는 것이 아니라 사방에서 쉴 틈 없이 밀려드는 모습을 상징하며, 수사로는 거의 예외 없이 숫자 '一'이 쓰입니다. 대개 구조 조사 '地'를 수반하여 술어 동사를 수식하는 상황어(부사어)로 기능합니다(예: “左一个电话右一个电话地催”＝전화를 연달아 걸어 대며 재촉하다, “左一声谢谢右一声感激”＝연신 고맙다고 인사하다). 어떤 행위가 집요하게 쏟아져 들어와 어쩔 줄 모르거나 성가셔하는 화자의 심리를 고스란히 담아냅니다.",
+    "formation": "(주어 +) 左 + (수사 +) 양사 + 명사 + 右 + (수사 +) 양사 + 명사 (+ 地 + 동사)",
+    "examples": [
+      {
+        "translation": "어머니는 빗발치듯 연달아 전화를 걸어 대며 그에게 집에 빨리 들어오라고 재촉했다."
+      }
+    ]
   },
   "zh_莫非难道不成_709": {
-    "title": "莫非/难道 …… 不成 (could it be that)",
-    "shortExplanation": "could it be that",
-    "longExplanation": "could it be that. Pinyin: mòfēi/ nándào …… bùchéng",
-    "formation": "mòfēi/ nándào …… bùchéng"
+    "title": "莫非 / 难道 …… 不成 (반어 및 강한 추측 의문 구문: 설마 ~란 말인가, 정녕 ~라는 것인가)",
+    "shortExplanation": "문두의 추측·반어 부사 '莫非' 또는 '难道'와 문말 어기조사 '不成'이 호응하여, 믿기 힘든 상황에 대한 깊은 의구심, 경악, 혹은 강력한 반어적 질책을 나타냅니다('설마 ~란 말인가', '정녕 ~라는 말인가').",
+    "longExplanation": "“莫非……不成”과 “难道……不成”은 현대 중국어에서 화자의 강력한 의혹과 충격, 혹은 도저히 납득할 수 없는 사태에 대한 반문을 나타내는 대표적인 호응식 의문 구문입니다. 문두의 “莫非”는 주로 불길하거나 뜻밖의 상황을 조심스레 짚어내는 강한 추측을 유도하고, “难道”는 상식적으로 용납하기 어려운 현실에 맞서는 단호한 반어적 어기를 이끕니다. 문장 맨 끝의 “不成”은 어기조사로서 앞선 부사와 호응하여 '설마 진짜 그러한 것은 아니겠지', '만약 그렇다면 말도 안 된다'라는 배척과 반문의 뉘앙스를 최고조로 끌어올립니다. 황망한 자문자답이나 상대방을 매섭게 추궁하는 문맥에서 주로 쓰입니다.",
+    "formation": "莫非 / 难道 + 절 / 술어 + 不成 ?",
+    "examples": [
+      {
+        "translation": "그는 깜짝 놀라 머릿속이 새하얘졌다. 설마 사기라도 당했단 말인가?"
+      }
+    ]
   },
   "zh_一个N_710": {
-    "title": "一个 N (with a…)",
-    "shortExplanation": "with a…",
-    "longExplanation": "with a…. Pinyin: yī gè N",
-    "formation": "yī gè N"
+    "title": "一个 + 명사 (돌발 동작 양태 구문: 한바탕 홱/우당탕 ~하다, 몸을 한 번 획 움직여 ~하다)",
+    "shortExplanation": "'一个' 뒤에 신체 동작이나 반사적 움직임을 나타내는 명사(跟头, 激灵, 转身, 踉跄 등)를 결합하여, 동작이 눈 깜짝할 사이에 돌발적이고 완전하게 이루어지는 양태를 묘사합니다('몸을 홱 돌려', '곤두박질치며').",
+    "longExplanation": "“一个 + 명사”는 신체의 즉각적인 반응이나 돌발적인 동작 양태를 술어 앞에서 역동적으로 묘사하는 특수 상황어(부사어) 구조입니다. 결합하는 명사는 일반 사물이 아닌, 동작성과 체태를 내포하는 특정 어휘군으로 제한됩니다(예: 跟头 [곤두박질], 激灵 [흠칫 놀람/몸서리], 转身 [몸을 홱 돌림], 踉跄 [비틀거림]). 이 구조는 단순히 횟수가 '한 번'임을 세는 차원을 넘어, 동작이 지체 없이 단숨에, 그리고 전신으로 일어났음을 강조하여 문장에 강렬한 시각적 효과와 긴박감을 불어넣습니다(예: “一个转身溜走了”＝몸을 홱 돌려 냅다 달아났다, “一个激灵惊醒了”＝흠칫 몸서리를 치며 화들짝 깨어났다).",
+    "formation": "주어 + 一个 + 명사 (신체 동작 명사: 跟头, 激灵, 转身, 踉跄 등) + 동사 (+ 보어)",
+    "examples": [
+      {
+        "translation": "그는 손으로 난간을 붙잡지 못해, 거꾸로 곤두박질치며 굴러떨어졌다."
+      }
+    ]
   },
   "zh_了个A_711": {
-    "title": "(了) 个 A (to the extent that it became A)",
-    "shortExplanation": "to the extent that it became A",
-    "longExplanation": "to the extent that it became A. Pinyin: ( le) gè A",
-    "formation": "( le) gè A"
+    "title": "(了) 个 + 형용사 (구어 결과·정도 강조 구문: 완전히 …해 버리다, 아주 철저하게 …한 지경에 이르다)",
+    "shortExplanation": "동사와 형용사(또는 사자성어) 사이에 조사 '(了)个'를 삽입하여, 동작이 초래한 결과나 상태의 정도가 극에 달해 완전히 그러한 상태가 되었음을 과장되고 생생하게 묘사합니다('완전히 …해 버리다', '…하게 산산조각 나다').",
+    "longExplanation": "“동사 + (了) 个 + 형용사 / 성어”는 현대 중국어 구어에서 동작의 극적인 종결 상태나 그로 인한 철저한 영향을 생동감 넘치게 드러내는 특수 보어 구문입니다. 여기서 “了”는 동작의 실현을 나타내고, 가볍게 경성으로 발음되는 “个”는 본래의 양사적 수량 의미를 상실한 채 형용사 술어를 이끄는 구조·어기 조사의 성격을 띱니다. 뒤에 결합하는 형용사나 4자 성어는 사태가 더 이상 돌이킬 수 없을 만큼 극단적이거나 완벽한 결과에 도달했음을 나타냅니다(예: “摔了个粉碎”＝내던져 산산조각을 내다, “输了个精光”＝한 푼도 남김없이 몽땅 털리다, “闹了个大红脸”＝얼굴이 새빨개지며 망신을 당하다, “弄了个一清二楚”＝명명백백하게 밝혀내다). 화자의 깊은 탄식, 놀라움, 혹은 강렬한 인상을 담아냅니다.",
+    "formation": "동사 + (了) 个 + 형용사 / 사자성어 (예: 粉碎, 精光, 大红脸, 酩酊大醉)",
+    "examples": [
+      {
+        "translation": "그는 아끼던 바이올린을 내던져 산산조각을 내버렸다."
+      }
+    ]
   },
   "zh_向来VA_712": {
-    "title": "向来 V/A (always have (been) V/A)",
-    "shortExplanation": "always have (been) V/A",
-    "longExplanation": "always have (been) V/A. Pinyin: xiànglái V/A",
-    "formation": "xiànglái V/A"
+    "title": "向来 + 동사 / 형용사 (시간 부사: 원래부터 죽, 줄곧, 여태껏 늘 ~하다)",
+    "shortExplanation": "과거부터 현재에 이르기까지 어떤 성품, 습관, 원칙 혹은 상태가 변함없이 일관되게 지속되어 왔음을 나타내는 시간 부사입니다('여태껏 늘', '원래부터 줄곧', '예로부터').",
+    "longExplanation": "“向来”(xiànglái)는 과거에서 현재에 걸친 긴 시간 동안 주어의 태도, 성격, 행동 양식 등이 한결같이 유지되어 왔음을 밝히는 표준적인 시간 부사입니다. 술어 동사나 형용사 앞에 놓여 상황어(부사어)로 쓰입니다. 글자 그대로 '과거로부터(向) 지금까지 이어져 왔다(来)'는 뜻을 지니며, 사람의 됨됨이를 평할 때 “向来忠厚”(늘 충직하다), “向来随和”(성품이 한결같이 원만하다)처럼 애용되며, 확고한 신념이나 관례를 밝힐 때 “向来如此”(예로부터 늘 이래 왔다), “向来不赞成”(줄곧 찬성하지 않아 왔다)처럼 쓰입니다. “从来”나 “一向”과 유사하지만, 보다 안정적이고 격조 있는 어감을 지니며 오랜 시간 동안 형성된 불변의 본질적 특성을 강조합니다.",
+    "formation": "주어 + 向来 + 동사 / 형용사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그들은 예로부터 늘 충직하고 성실하며 처세가 진솔했다."
+      }
+    ]
   },
   "zh_预先_713": {
-    "title": "预先 (ahead of time)",
-    "shortExplanation": "ahead of time",
-    "longExplanation": "ahead of time. Pinyin: yùxiān",
-    "formation": "yùxiān"
+    "title": "预先 (시간 부사: 미리, 사전에, 사전에 앞서서)",
+    "shortExplanation": "어떤 일이나 사건이 발생하기에 앞서 미리 준비하거나 알리거나 예측해 두는 행위를 나타내는 시간 부사입니다('사전에', '미리', '앞서서').",
+    "longExplanation": "“预先”(yùxiān)는 사전에(预) 먼저(先) 어떠한 조치나 계획, 혹은 예상을 선행하여 실행함을 나타내는 대표적인 시간 부사입니다. 주로 술어 동사나 동사구 앞에 놓여 상황어(부사어)로 기능합니다. 업무 처리나 일상 계획에서 “预先通知”(사전에 알리다), “预先准备”(미리 준비하다), “预先防范”(사전에 방지하다) 등과 같이 빈번하게 결합합니다. 아울러 예문과 같이 부정 형식인 “预先都没料到 / 预先都没有想到”(사전에 아무도 짐작조차 못 했다)의 꼴로 쓰일 경우, 사태의 결과가 가져다준 엄청난 반향이나 뜻밖의 전개에 대한 화자와 대중의 깊은 경탄을 효과적으로 부각합니다.",
+    "formation": "(주어 +) 预先 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "사전에 그 누구도 미처 생각지 못했으나, 이번 회화 전시회가 이토록 폭발적인 인기를 끌 줄은 몰랐다."
+      }
+    ]
   },
   "zh_CLAUSE1也好CLAUSE2也罢_714": {
-    "title": "CLAUSE1 也好 CLAUSE2 也罢 (it doesn’t matter whether CLAUSE1 or CLAUSE2)",
-    "shortExplanation": "it doesn’t matter whether CLAUSE1 or CLAUSE2",
-    "longExplanation": "it doesn’t matter whether CLAUSE1 or CLAUSE2. Pinyin: CLAUSE1 yě hǎo CLAUSE2 yěbà",
-    "formation": "CLAUSE1 yě hǎo CLAUSE2 yěbà"
+    "title": "절1 也好 절2 也罢 (병렬 양보 접속 구문: ~이든 …이든 간에, ~하든 …하든 관계없이)",
+    "shortExplanation": "두 가지 이상의 서로 다른 조건이나 상황을 병렬로 나열하여, 그 어떤 경우에 해당할지라도 뒤따르는 귀결이나 결론에는 아무런 차이가 없음을 나타내는 양보 접속 표현입니다('~이든 …이든 간에', '~하든 …하든 간에').",
+    "longExplanation": "“절1 也好 절2 也罢”(상황에 따라 “……也好……也好” 혹은 “……也罢……也罢”로 대칭을 이루기도 함)는 복문에서 서로 다른 대안이나 대립되는 전제를 폭넓게 아우르며 양보하는 대표적인 접속 틀입니다. 각 분절이나 어구 뒤에 “也好”와 “也罢”를 덧붙여 '전자이든 후자이든 가릴 것 없이 모두 인정한다'는 전제를 세웁니다. 그 후 이어지는 주절에서는 “都”나 “全” 등의 부사와 결합하여, 어떠한 선택지에서도 예외 없이 성립하는 객관적 진리, 보편적 규칙, 혹은 흔들림 없는 원칙을 도출합니다. 구어와 서면어 모두에서 자연스럽게 활용되며 논지를 객관적이고 설득력 있게 전개할 때 유용합니다.",
+    "formation": "절1 也好 , 절2 也罢 , + 주절 (불변의 귀결·원칙)",
+    "examples": [
+      {
+        "translation": "자동차를 운전하든 자전거를 타든, 주행 중에 통화하는 것은 주의력과 순발력에 악영향을 미친다."
+      }
+    ]
   },
   "zh_不时_715": {
-    "title": "不时 (from time to time)",
-    "shortExplanation": "from time to time",
-    "longExplanation": "from time to time. Pinyin: bùshí",
-    "formation": "bùshí"
+    "title": "不时 (빈도·시간 부사: 때때로, 이따금씩, 간간이, 심심찮게)",
+    "shortExplanation": "짧은 시간 간격을 두고 특정한 동작, 소리, 현상 등이 단속적으로 끊임없이 되풀이되는 양상을 나타내는 빈도·시간 부사입니다('간간이', '이따금씩', '때때로').",
+    "longExplanation": "“不时”(bùshí)는 문학적 묘사나 생생한 서술에서 감각적인 현장의 소리와 동작을 섬세하게 표현하는 대표적인 빈도·시간 부사입니다. 정해진 때가 없이 수시로 일어난다는 의미에서 비롯되어, 술어 동사 앞에서 상황어(부사어)로 쓰입니다. 특히 배경 소리의 출현이나 인물의 반복적인 행동을 포착할 때 “不时传来……”(간간이 들려오다), “不时望向窗外”(이따금 창밖을 내다보다), “不时点头”(연신 고개를 끄덕이다)와 같이 활발히 쓰입니다. 단순히 가끔 일어남을 뜻하는 “偶尔”에 비해, “不时”는 동작이나 자극이 현재 진행 중인 상황 속에서 비교적 잦은 간격으로 틈틈이 끼어드는 연속적 생동감을 풍깁니다.",
+    "formation": "(주어 +) 不时 (+ 地) + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "간간이 들려오는 새 울음소리는 우리에게 새로운 하루가 다시 시작되었음을 일깨워 준다."
+      }
+    ]
   },
   "zh_多多少少_716": {
-    "title": "多多少少 (more or less)",
-    "shortExplanation": "more or less",
-    "longExplanation": "more or less. Pinyin: duōduōshǎoshǎo",
-    "formation": "duōduōshǎoshǎo"
+    "title": "多多少少 (정도 부사·중첩어: 다소, 다소간, 얼마간, 많든 적든 간에)",
+    "shortExplanation": "'多少'의 AABB형 중첩 형태로, 수량이나 정도 면에서 전혀 없지 않고 어느 정도 존재함을 나타내며 단정적인 어투를 부드럽게 완화해 주는 정도 부사입니다('다소간', '얼마간', '많든 적든').",
+    "longExplanation": "“多多少少”(duōduōshǎoshǎo)는 '다소, 얼마간'을 뜻하는 형용사/부사 “多少”가 AABB 형태로 중첩된 어휘입니다. 술어 동사나 형용사 앞에서 상황어(부사어)로 기능하며, 사물의 수량이나 정도가 완전히 배제되지 않고 '어느 정도는 유효하게 존재한다'는 사실을 드러냅니다. 중첩을 통해 표현에 온건함과 객관성을 더해주며, 극단적이거나 성급한 단정을 피하고 사태를 신중하게 평가하는 완충 작용을 합니다(예: “多多少少有些道理”＝다소간 일리가 있다, “多多少少带有点偏见”＝얼마간 편견이 섞여 있다). 일상 회화와 비평문에서 두루 애용됩니다.",
+    "formation": "주어 + 多多少少 + 동사 / 형용사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "그의 말에는 다소간 진실이 담겨 있다."
+      }
+    ]
   },
   "zh_逐M_717": {
-    "title": "逐 M (one by one)",
-    "shortExplanation": "one by one",
-    "longExplanation": "one by one. Pinyin: zhú M",
-    "formation": "zhú M"
+    "title": "逐 + 양사 (서면어 부사어 구문: 하나하나, 차례차례 개별적으로, ~별로 순차적으로)",
+    "shortExplanation": "격식 있는 서면어에서 '逐(차례로, 낱낱이)'에 양사를 결합하여, 동작이나 점검이 단위별로 하나도 빠짐없이 차례대로 꼼꼼히 진행됨을 나타내는 부사어 구조입니다('하나하나', '순차적으로', '항목별로').",
+    "longExplanation": "“逐 + 양사”(zhú + 양사)는 공문서, 보도자료, 학술 연구 등 격조 높은 문체에서 애용되는 대표적인 서면어 상황어(부사어) 구조입니다. 고전 한문에서 유래한 “逐”은 '순서에 따라 차례차례, 낱낱이'라는 뜻을 지니며, 단위 양사와 결합하여 동작의 철저성과 순차성을 부각합니다. 대표적인 결합형으로 “逐个 / 逐一”(하나하나, 일일이), “逐条”(한 조항씩 차례로), “逐项”(항목별로 빠짐없이), “逐年”(해마다 순차적으로), “逐句”(한 문장 한 문장 꼼꼼히) 등이 있습니다. 일반 구어의 “一个个地”에 비해 군더더기 없이 간결하며, 누락 없이 빈틈없이 일을 처리하는 공적이고 엄격한 뉘앙스를 담아냅니다.",
+    "formation": "주어 + 逐 + 양사 + 동사 (+ 목적어)",
+    "examples": [
+      {
+        "translation": "우기가 다가오고 있으므로 안전상 취약 요소를 배제하기 위해 저수지를 하나하나 꼼꼼히 점검해야 한다."
+      }
+    ]
   },
   "zh_归根到底_718": {
-    "title": "归根到底 (after all)",
-    "shortExplanation": "after all",
-    "longExplanation": "after all. Pinyin: guīgēndàodǐ",
-    "formation": "guīgēndàodǐ"
+    "title": "归根到底 (성어 연어·접속 부사어: 결국, 근본적으로 따져 보면, 귀결하자면)",
+    "shortExplanation": "지엽적인 현상이나 겉모습을 배제하고, 사안의 가장 깊은 뿌리와 본질, 혹은 궁극적인 원인을 짚어 결론을 내릴 때 사용하는 대표적인 사자성어 부사 표현입니다('결국 따지고 보면', '근본적으로는').",
+    "longExplanation": "“归根到底”(guīgēndàodǐ, 동의 성어로 “归根结底”도 널리 쓰임)는 문제의 궁극적 본질과 핵심 원인을 날카롭게 통찰하여 제시하는 핵심적인 성어형 담화 표지입니다. 글자 그대로 '뿌리로 돌아가고 바닥까지 가닿는다'는 뜻에서 유래하여, 복잡다단한 표면적 요소를 걷어내고 가장 본질적인 결론이나 귀착점을 매듭지을 때 쓰입니다. 문두에 독립하여 쉼표를 동반하거나 주어와 술어 사이에 삽입되어 문장 전체를 수식합니다. 논설문이나 시사 비평에서 논지를 확고하게 매듭짓거나, 일상에서 삶의 본질적 가치를 환기시킬 때 강력한 설득력을 발휘합니다.",
+    "formation": "(주어 +) 归根到底 + 술어 / 归根到底 , 절 (본질적 결론)",
+    "examples": [
+      {
+        "translation": "운동과 체력 관리는 결국 따지고 보면 자기 자신의 일이니, 건성으로 때우는 것은 실상 스스로를 속이는 짓이다."
+      }
+    ]
   },
   "zh_哪怕_719": {
-    "title": "哪怕 (even if)",
-    "shortExplanation": "even if",
-    "longExplanation": "even if. Pinyin: nǎpà",
-    "formation": "nǎpà"
+    "title": "哪怕 (양보 가정 접속사: 비록 ~일지라도, 설령 ~라 할지라도, 단지 ~뿐이라도)",
+    "shortExplanation": "극한의 가설이나 최소한의 조건, 혹은 가장 가혹한 상황을 전제로 이끌어내어, 그러한 처지일지라도 주절의 결단이나 결과에는 흔들림이 없음을 강조하는 양보 가정 접속사입니다('설령 ~라 할지라도', '비록 ~일망정').",
+    "longExplanation": "“哪怕”(nǎpà)는 의문사 “哪”와 동사 “怕”(두려워하다)가 융합된 어휘로, '설령 무엇을 두려워하랴', 즉 '어떤 극단적인 고난이나 미미한 조건이 닥칠지라도'라는 강렬한 양보 가정을 유도하는 대표적인 접속사입니다. 복문에서 주로 전제절 머리에 놓이며, 뒷절의 “也”, “都”, “还要” 등과 긴밀히 호응하여 악조건 속에서도 결코 꺾이지 않는 확고한 의지나 필연적인 결과를 단호하게 서술합니다. 아울러 예문에서처럼 주절 뒤에 보충적·후치적으로 배치되어 “……，哪怕……”(설령 ~일지라도)의 형태로 쓰이며 확고한 결의나 진정성을 극적으로 각인시키는 역할을 하기도 합니다.",
+    "formation": "哪怕 + 극한의 가정 조건 , (주어 +) 也 / 都 + 귀결절 / 주절 , 哪怕 + 조건절",
+    "examples": [
+      {
+        "translation": "안심하십시오, 저희는 설령 한 줄기 희망만 남아 있을지라도 온 힘을 다해 환자를 살려낼 것입니다."
+      }
+    ]
   },
   "zh_反之_720": {
-    "title": "反之 (on the contrary)",
-    "shortExplanation": "on the contrary",
-    "longExplanation": "on the contrary. Pinyin: fǎnzhī",
-    "formation": "fǎnzhī"
+    "title": "反之 (대조 접속사: 반대로, 이와 반대로, 그와 역으로 상황이 전개된다면)",
+    "shortExplanation": "격조 높은 서면어 접속사로, '이와 반대로', '만약 상황이 역전된다면'의 뜻을 지니며 앞서 진술한 조건이나 사실과 정반대되는 전제 및 결과를 대칭적으로 이끌어냅니다('반대로', '이와 달리').",
+    "longExplanation": "“反之”(fǎnzhī)는 고전 문언문의 지시대명사 용법을 계승한 품격 높은 서면어 대조 접속사입니다. '반대되다'라는 뜻의 “反”과 앞 문장의 조건·상황 전체를 받는 대명사 “之”가 어우러져 '이와 정반대로 뒤집어 말하자면'이라는 논리적 전환을 단 두 글자로 압축합니다. 주로 앞 절에서 긍정적 조건에 따른 긍정적 결과를 설명한 뒤, 뒷절 머리에 “反之”를 배치하여 부정적 조건에 따른 부정적 결과를 엄정하게 대립시키는 양방향 대칭 구문을 이룹니다. 논문, 경제 보고서, 정책 사설 등에서 양면적 인과 관계를 빈틈없이 증명할 때 불가결하게 쓰입니다.",
+    "formation": "절1 。/ ， 反之 ，+ 절2 (대조적 결과)",
+    "examples": [
+      {
+        "translation": "경제가 발전하여 백성들의 소득이 늘어나면 소비 여력이 커지고, 반대로 그렇지 못하면 소비 여력이 떨어지게 된다."
+      }
+    ]
   },
   "zh_VA1的VA1VA2的VA2_721": {
-    "title": "V/A1 的 V/A1，V/A2 的 V/A2 (some V/A1, some V/A2)",
-    "shortExplanation": "some V/A1, some V/A2",
-    "longExplanation": "some V/A1, some V/A2. Pinyin: V/A1 de V/A1，V/A2 de V/A2",
-    "formation": "V/A1 de V/A1，V/A2 de V/A2"
+    "title": "동사 / 형용사1 的 동사 / 형용사1 ， 동사 / 형용사2 的 동사 / 형용사2 (대비 열거 묘사 구문: ~한 것은 ~하고 …한 것은 …하다, 어떤 것은 ~하고 어떤 것은 …하다)",
+    "shortExplanation": "동사나 형용사에 조사 '的'를 붙여 명사화한 후 동일한 어휘를 술어로 반복하는 대칭적 리듬 구문을 병렬시켜, 여러 대상이 각양각색의 상태를 띠거나 제각기 다른 행동을 펼치는 다채로운 광경을 묘사합니다('어떤 것은 ~하고 어떤 것은 …하다', '~하는 자는 ~하고 …하는 자는 …하다').",
+    "longExplanation": "“동사 / 형용사1 的 동사 / 형용사1 ， 동사 / 형용사2 的 동사 / 형용사2”는 대상의 다양성과 생동감 넘치는 군상의 정경을 리드미컬하게 포착하는 대구적 묘사 구문입니다. 선행하는 “동사/형용사 + 的”가 해당 성질이나 행위를 지닌 특정 집단(‘~한 것들 / ~하는 사람들’)을 지칭하고, 뒤이어 동일한 동사/형용사가 재차 술어로 놓여 각자의 속성을 생생히 구현합니다. 다양한 색채의 어우러짐(예: “红的红，绿的绿”＝붉은 것은 붉고 푸른 것은 푸르다), 인물들의 각기 다른 행보(예: “走的走，留的留”＝떠날 사람은 떠나고 남을 사람은 남다, “哭的哭，笑的笑”＝우는 사람이 있는가 하면 웃는 사람도 있다) 등을 한 폭의 수채화처럼 펼쳐 보입니다.",
+    "formation": "주어 (전체) + , 동사 / 형용사1 的 동사 / 형용사1 , 동사 / 형용사2 的 동사 / 형용사2",
+    "examples": [
+      {
+        "translation": "과수원에 들어서자 나무 한가득 열린 복숭아가 보였는데, 붉은 것은 붉고 푸른 것은 푸르러 참으로 아름다웠다."
+      }
+    ]
   },
   "zh_一时_722": {
-    "title": "一时 (momentarily)",
-    "shortExplanation": "momentarily",
-    "longExplanation": "momentarily. Pinyin: yīshí",
-    "formation": "yīshí"
+    "title": "一时 (부사/시간명사: 한순간, 일시적으로, 그 순간에, 홧김에)",
+    "shortExplanation": "극히 짧은 시간이나 어떤 특정한 순간을 나타내며, 순간적인 감정이나 충동으로 인한 행동, 또는 일시적이어서 당장 해결하거나 떠올리기 어려운 상태를 나타냅니다('한순간에', '순간적으로', '일시적으로').",
+    "longExplanation": "“一时”(yīshí)는 시간명사이자 시간부사로 널리 쓰이는 표현입니다. 크게 두 가지 주요 용법이 있습니다. 첫째, 어떤 특정한 짧은 순간이나 당시의 갑작스러운 감정 상태를 나타냅니다. '一时冲动'(한순간의 충동), '一时糊涂'(순간적인 착각), '一时心急'(순간적인 조급함)처럼 우발적인 심리 상태에서 비롯된 행동을 수식합니다. 둘째, '당분간' 또는 '일시적으로'의 뜻으로, '一时想不起来'(당장 퍼뜩 생각이 안 나다), '一时无法解决'(일시적으로 해결할 수 없다)와 같이 현재 상황에서 즉시 처리하거나 바꾸기 어려운 임시 상태를 표현합니다. 문장에서는 주로 술어 동사나 형용사 앞에 놓여 상황어(부사어) 역할을 합니다.",
+    "formation": "(주어 +) 一时 + 동사/형용사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "그녀는 순간적으로 마음이 너무 조급한 나머지, 문조차 잠그지 않고 집 밖으로 뛰쳐나갔다."
+      }
+    ]
   },
   "zh_CLAUSES尚且V_723": {
-    "title": "(CLAUSE) S 尚且 V (even (CLAUSE) S V)",
-    "shortExplanation": "even (CLAUSE) S V",
-    "longExplanation": "even (CLAUSE) S V. Pinyin: (CLAUSE) S shàngqiě V",
-    "formation": "(CLAUSE) S shàngqiě V"
+    "title": "(절 +) 주어 + 尚且 + 동사 (점층적 양보 구문: ~조차도 오히려 이러하거늘, 하물며 ~임에랴)",
+    "shortExplanation": "서면어에서 주로 쓰이는 양보 부사 '尚且'를 사용하여, 보다 유리한 조건이나 일반적인 사례를 한 걸음 물러나 제시함으로써, 더 불리하거나 다른 상황에서는 두말할 나위가 없음을 역설합니다('~조차도 오히려 이러하다').",
+    "longExplanation": "“尚且”(shàngqiě)는 문어체와 논설문에서 논리적 설득력을 극대화할 때 즐겨 쓰이는 점층적 양보 부사 겸 접속사입니다. '(절 +) 주어 + 尚且 + 동사' 구조에서는 먼저 조건이 유리한 상황이나 당연히 통용될 법한 기준을 한 발 물러서서 인정하며 제시합니다. 그런 다음 대조되는 절이나 '何况'(하물며), '更不用说'(말할 것도 없이) 등이 이끄는 후속 절로 연결하여, '이러한 조건에서도 상황이 이러할진대, 조건이 더 나빠진다면 결과는 더더욱 불 보듯 뻔하다'는 결론을 매우 강력하고 엄숙한 어조로 부각합니다.",
+    "formation": "(절 +) 주어 + 尚且 + 동사/술어 , (대조절/何况 + 주어 + 술어)",
+    "examples": [
+      {
+        "translation": "경제가 성장할 때조차 이 기업이 이 지경인데, 경제 침체기가 오면 기업에는 틀림없이 생존의 위기가 닥칠 것이다."
+      }
+    ]
   },
   "zh_当年当时当代_724": {
-    "title": "当年、当时、当代 (at that time)",
-    "shortExplanation": "at that time",
-    "longExplanation": "at that time. Pinyin: dāngnián、 dāngshí、 dāngdài",
-    "formation": "dāngnián、 dāngshí、 dāngdài"
+    "title": "当年、当时、当代 (시간명사의 변별: 그 시절/그 당시/동시대·현대)",
+    "shortExplanation": "'当'이 결합된 세 가지 시간명사의 구분. '当年'은 지나간 먼 과거의 그 시절이나 전성기, '当时'는 사건이 일어난 바로 그 시점, '当代'는 우리가 살고 있는 현대·당대를 가리킵니다.",
+    "longExplanation": "“当年”, “当时”, “当代”는 모두 한자 '当'을 공유하지만 가리키는 시간대와 정서적 어감이 명확히 다릅니다.\n1. “当年”(dāngnián): 이미 아득히 지나간 과거의 시절이나 젊은 날, 호시절을 회고하는 뉘앙스를 담고 있습니다(예: '当年勇' 옛날의 용맹, '当年的一场大火' 그 옛날의 큰 화재). '그 시절의 그 사람'처럼 지나간 과거와 현재의 대비를 나타낼 때 흔히 쓰입니다.\n2. “当时”(dāngshí): 어떤 특정한 사건이나 정황이 일어났던 바로 '그때', '그 시점'을 객관적으로 지칭합니다(예: '当时的情况' 당시의 상황, '当时他在现场' 그 당시 그는 현장에 있었다).\n3. “当代”(dāngdài): 바로 지금 우리가 살아가고 있는 시대나 현대(동시대)를 의미하며, 역사·문화·문학 등의 시대 구분에 주로 쓰입니다(예: '当代文学' 당대/현대 문학, '当代年轻人' 현대의 청년들).",
+    "formation": "当年 / 当时 / 当代(+ 的) + 명사 ; (주어 +) 当时 / 当年 + 술어",
+    "examples": [
+      {
+        "translation": "그는 이미 그 옛날 시절의 그 사람이 아니다."
+      }
+    ]
   },
   "zh_终究_725": {
-    "title": "终究 (after all)",
-    "shortExplanation": "after all",
-    "longExplanation": "after all. Pinyin: zhōngjiū",
-    "formation": "zhōngjiū"
+    "title": "终究 (부사: 결국, 어차피, 아무래도, 결국에는)",
+    "shortExplanation": "온갖 우여곡절이나 변화를 겪고 난 뒤 도달하게 되는 불가피한 결말이나 변하지 않는 본질을 단정적으로 나타냅니다('결국에는', '어차피', '따지고 보면').",
+    "longExplanation": "“终究”(zhōngjiū)는 '마침내 끝까지 추구하다'라는 어원에서 비롯된 부사로, 아무리 상황이 달라지거나 변수가 생긴다 해도 사물의 근본적인 본질이나 피할 수 없는 최종 결과는 바뀌지 않음을 역설합니다. 문장에서는 주로 주어 뒤, 술어(동사, 형용사 또는 판단사 '是') 앞에 놓여 상황어로 쓰입니다. '毕竟'(결국, 따지고 보면), '终归'(결국은)와 유사하지만, “终究”는 온갖 변화 끝에 귀결되는 객관적 법칙성과 불가피한 결말을 단호하게 밝히는 어감이 강합니다.",
+    "formation": "(주어 +) 终究 + 是 / 동사 / 형용사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "고양이는 결국 어디까지나 동물인지라, 동물이 다급해지면 사람을 무는 것 또한 흔히 있는 일이다."
+      }
+    ]
   },
   "zh_愈愈_726": {
-    "title": "愈……愈…… (the more… the more…)",
-    "shortExplanation": "the more… the more…",
-    "longExplanation": "the more… the more…. Pinyin: yù…… yù……",
-    "formation": "yù…… yù……"
+    "title": "愈……愈…… (점층 호응 구문: ~하면 할수록 더욱 …하다, 갈수록 더 …해지다)",
+    "shortExplanation": "구어의 '越……越……'에 해당하는 격조 높은 서면어 점층 구문으로, 앞선 조건이나 시간이 진전됨에 비례하여 뒤따르는 정도나 감정 또한 한층 더 심화됨을 나타냅니다.",
+    "longExplanation": "“愈……愈……”(yù... yù...)는 현대 중국어의 대표적인 서면어 점층 상관 구조로, 일상 구어의 “越……越……”와 의미상 동등하지만 훨씬 정중하고 문학적인 문채를 띱니다. 한자 '愈'는 '더욱 유' 자로, 앞 구절에 제시된 행동의 지속, 시간의 경과, 조건의 심화에 맞물려 뒷구절의 심리 상태, 행동 강도, 사물의 성질이 정비례하여 더욱 짙어짐을 표현합니다. 문맥에 따라 '愈是……(就)愈是……' 형태로 쓰여 강조의 뉘앙스를 한층 배가시키기도 합니다.",
+    "formation": "(주어 +) 愈(+ 是) + 술어1 , (주어 +) (就) 愈(+ 是) + 술어2",
+    "examples": [
+      {
+        "translation": "세화(새해 그림) 장사를 오래 하면 할수록, 그는 세화에 대해 더욱더 깊은 애정을 느끼게 되었다."
+      }
+    ]
   },
   "zh_一经_727": {
-    "title": "一经 (once)",
-    "shortExplanation": "once",
-    "longExplanation": "once. Pinyin: yī jīng",
-    "formation": "yī jīng"
+    "title": "一经 (접속부사: 일단 ~하기만 하면, 한 번 ~를 거치면 즉시, ~하자마자)",
+    "shortExplanation": "법률, 공문서, 규정 등에서 주로 쓰이는 격식 있는 서면어로, 어떤 절차나 행위를 한 번 거치기만 하면 곧바로 상응하는 효력이나 조치가 발생함을 나타냅니다('일단 ~되면', '한 번 ~를 거치면').",
+    "longExplanation": "“一经”(yī jīng)은 규정, 계약서, 공고문, 논설문 등에서 빈번히 활용되는 엄격한 문어체 접속부사입니다. '단 한 번'(一) 어떤 단계나 절차를 '거치다'(经)라는 의미를 결합하여, 주로 2음절 동사(예: 决定, 发现, 查实, 批准, 采纳 등) 앞에 붙어 쓰입니다. 일단 해당 절차나 행위가 완료되기만 하면 그에 따른 결과나 이행 의무가 즉각적으로 뒤따르며 되돌릴 수 없음을 규범적으로 선언할 때 사용됩니다.",
+    "formation": "一经 + 2음절 동사 , (주어 +) 就 / 必须 + 술어",
+    "examples": [
+      {
+        "translation": "지도부는 중대한 사안에 대해 결정을 내린다. 일단 결정이 내려지면, 그룹의 구성원들은 반드시 함께 이를 준수해야 한다."
+      }
+    ]
   },
   "zh_本着N_728": {
-    "title": "本着 N (based on)",
-    "shortExplanation": "based on",
-    "longExplanation": "based on. Pinyin: běnzhe N",
-    "formation": "běnzhe N"
+    "title": "本着 + 명사 (개사/전치사구: ~의 정신·원칙에 입각하여, ~을 바탕으로, ~에 의거하여)",
+    "shortExplanation": "행동의 지도 이념이나 기본 지침을 이끄는 격조 높은 전치사(개사)로, '정신', '원칙', '취지', '태도' 등의 명사를 목적어로 취하여 그러한 준칙에 따라 행동함을 나타냅니다.",
+    "longExplanation": "“本着”(běnzhe)는 외교 문서, 공식 회담, 언론 보도 등에서 행동의 기본 방침과 사상적 출발점을 밝힐 때 애용되는 격식 있는 개사(전치사)입니다. '근본으로 삼다'라는 뜻의 '本'에 지속을 나타내는 '着'이 결합하여, 뒤에 오는 명사를 행위의 확고한 지도 원리로 삼고 있음을 보여줍니다. 목적어로는 '精神'(정신), '原则'(원칙), '宗旨'(취지), '态度'(태도) 등의 추상명사가 주로 오며(예: '本着公平公正的原则' 공평하고 공정한 원칙에 입각하여), 문장 전체에서 본동사 앞의 상황어(부사어)로 기능하여 행동의 당위성과 철학적 근거를 부여합니다.",
+    "formation": "(주어 +) 本着 + 명사(정신, 원칙, 취지, 태도) + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "양국의 협상 대표는 상호 양해와 양보의 정신에 입각하여, 수년간 끌어온 문제를 원만히 해결하였다."
+      }
+    ]
   },
   "zh_为起见_729": {
-    "title": "为……起见 (for the sake of)",
-    "shortExplanation": "for the sake of",
-    "longExplanation": "for the sake of. Pinyin: wéi…… qǐjiàn",
-    "formation": "wéi…… qǐjiàn"
+    "title": "为……起见 (목적 틀 구문: ~을 도모하고자, ~을 감안하여, 안전/편의를 기하기 위해)",
+    "shortExplanation": "어떤 조치를 취하는 목적이나 신중한 배려의 이유를 제시하는 격식 있는 구문으로, '안전', '신중', '편의' 등의 어휘와 함께 쓰여 만전을 기함을 나타냅니다.",
+    "longExplanation": "“为……起见”(wèi... qǐjiàn)은 어떤 행동이나 결정의 배경이 되는 목적과 신중한 고려 사항을 명시하는 문어적 틀 구조입니다. '为'는 목적을 이끌고, '起见'은 '어떠한 견지나 착안점에서 출발함'을 뜻합니다. 둘 사이에 들어가는 표현은 주로 안전성, 신중함, 편의성, 공정성을 나타내는 어휘들로 채워집니다(대표적인 예: '为安全起见' 안전을 도모하고자, '为慎重起见' 신중을 기하기 위해, '为方便起见' 편의상, '为公平起见' 공정을 기하고자). 문두에 쓰이거나 본술어 앞에 위치하여 취해진 사전 조치나 권고의 타당한 이유를 밝혀줍니다.",
+    "formation": "为 + 명사/형용사/동사구 + 起见 , (주어 +) 술어",
+    "examples": [
+      {
+        "translation": "식기를 구매한 후에는 안전을 기하기 위해 먼저 식기 소독 처리를 진행할 수 있다."
+      }
+    ]
   },
   "zh_暂且_730": {
-    "title": "暂且 (for now)",
-    "shortExplanation": "for now",
-    "longExplanation": "for now. Pinyin: zànqiě",
-    "formation": "zànqiě"
+    "title": "暂且 (시간부사: 우선은, 당분간은, 잠정적으로, 일단은)",
+    "shortExplanation": "현재 여건이 마땅치 않거나 어쩔 수 없는 상황에서, 근본적인 처리는 나중으로 미루고 우선 임시로 사태를 수습하거나 놓아둠을 나타냅니다('우선은', '당분간은').",
+    "longExplanation": "“暂且”(zànqiě)는 '잠시'(暂)와 '우선 그러하다'(且)가 결합된 시간부사입니다. 주로 동사 앞에 놓여 상황어로 쓰이며, 당장의 여건이 무르익지 않았거나 별다른 도리가 없는 상황에서, '우선은 잠정적으로 이렇게 처리해 두고 본격적인 대책은 차후로 미루자'는 의미를 전달합니다. '姑且'(우선은 ~하기로 하고)나 '暂时'(잠시, 일시적으로)와 비슷하지만, “暂且”는 지금 당장의 불가피한 현실을 받아들여 취하는 잠정적 유예 조치의 뉘앙스가 두드러집니다.",
+    "formation": "(주어 +) 暂且 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "며칠 일하더니 샤오왕은 더 이상 일하고 싶어 하지 않았다. 사람들은 어찌할 방법이 없어, 우선은 그의 뜻대로 내버려 둘 수밖에 없었다."
+      }
+    ]
   },
   "zh_屡次_731": {
-    "title": "屡次 (repeatedly)",
-    "shortExplanation": "repeatedly",
-    "longExplanation": "repeatedly. Pinyin: lǚcì",
-    "formation": "lǚcì"
+    "title": "屡次 (빈도부사: 누차, 여러 차례, 거듭, 번번이)",
+    "shortExplanation": "격식 있는 서면어 빈도부사로, 어떤 행위나 사건이 거듭해서 수없이 발생함을 강조하며, 특히 반복되는 시도, 실패, 경고 등의 문맥에 자주 쓰입니다('누차', '여러 차례 거듭').",
+    "longExplanation": "“屡次”(lǚcì)는 글말이나 격식체 담화에서 애용되는 빈도부사입니다. '자주 루(屡)'와 '차례 차(次)'가 결합된 어휘로, 문장에서는 동사 앞에 놓여 수식어로 쓰입니다. 단순히 횟수가 많음을 객관적으로 알리는 '多次'(여러 번)에 비해, “屡次”는 '그렇게 여러 번 거듭되었음에도 불구하고'라는 집요한 반복성이나 사건의 무게감을 부각하는 뉘앙스를 지닙니다. 따라서 '屡次失败'(거듭된 실패), '屡次劝阻'(누차 만류하다), '屡次违反'(여러 차례 위반하다)처럼 끊임없는 시도나 실패, 과오 등이 반복되는 정황을 서술할 때 매우 생생한 강조 효과를 냅니다.",
+    "formation": "(주어 +) 屡次 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "여러 차례 창업에 도전했으나 번번이 쓰라린 실패를 맛본 사람들은 늘 '창업에 비결이 있는가?'를 알고 싶어 한다."
+      }
+    ]
   },
   "zh_依据_732": {
-    "title": "依据 (basis)",
-    "shortExplanation": "basis",
-    "longExplanation": "basis. Pinyin: yījù",
-    "formation": "yījù"
+    "title": "依据 (명사: 근거, 바탕, 법적 근거, 기준)",
+    "shortExplanation": "어떤 판단이나 결정, 조치의 정당성을 뒷받침해 주는 확실한 기준, 사실, 법적 토대를 가리키는 명사입니다('근거', '토대').",
+    "longExplanation": "“依据”(yījù)가 명사로 쓰일 때는 행위나 주장을 합리화하고 증명하는 객관적인 '근거'나 '기반'을 의미합니다. 문장에서는 '有'(있다), '缺乏'(결여되다), '作为'(~로 삼다) 등의 동사 뒤에서 목적어로 빈번히 쓰이며, '法律依据'(법적 근거), '事实依据'(사실적 근거), '理论依据'(이론적 근거), '科学依据'(과학적 근거)처럼 다양한 수식어(관형어)의 수식을 받아 어떤 조치의 합법성과 타당성을 가늠하는 핵심 개념으로 기능합니다.",
+    "formation": "(주어 + 有 / 无 / 缺乏 +) (관형어 +) 依据",
+    "examples": [
+      {
+        "translation": "당신들이 이렇게 행동하는 데에 법적인 근거가 있습니까?"
+      }
+    ]
   },
   "zh_依据_733": {
-    "title": "依据 (based on)",
-    "shortExplanation": "based on",
-    "longExplanation": "based on. Pinyin: yījù",
-    "formation": "yījù"
+    "title": "依据 + 명사 (개사/전치사구: ~에 근거하여, ~에 바탕을 두고, ~에 따라)",
+    "shortExplanation": "객관적인 사실이나 법칙, 시장의 수요 등을 준거틀로 삼아 행동이나 판단을 전개함을 나타내는 문어체 전치사(개사)입니다('~에 근거하여', '~에 기반하여').",
+    "longExplanation": "“依据”(yījù)가 개사(전치사)로 쓰일 때는 '根据'(~에 의거하여)나 '按照'(~에 따라)와 같은 뜻을 나타내되, 학술적이거나 공식적인 어조를 띱니다. 뒤에 명사나 명사구를 이끌고 와 개사구를 이루며(예: '依据市场需求' 시장 수요에 근거하여, '依据法律规定' 법률 규정에 따라, '依据客观规律' 객관적 법칙에 입각하여), 본동사 앞에서 상황어(부사어)로 기능합니다. 자의적인 판단이 아닌 객관적이고 필연적인 준칙을 전제로 삼아 일을 추진해야 함을 역설할 때 핵심적으로 쓰입니다.",
+    "formation": "(주어 +) 依据 + 명사/명사구 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "창업은 반드시 시장의 수요에 근거해야만 하니, 이는 영원한 진리이다."
+      }
+    ]
   },
   "zh_任意_734": {
-    "title": "任意 (arbitrary)",
-    "shortExplanation": "arbitrary",
-    "longExplanation": "arbitrary. Pinyin: rènyì",
-    "formation": "rènyì"
+    "title": "任意 (부사/형용사: 제멋대로, 함부로, 임의로, 자의적으로)",
+    "shortExplanation": "규율이나 계약 등의 구애를 받지 않고 순전히 자신의 뜻대로 행동함을 나타냅니다. 부사로서 동사 앞에 쓰일 때는 규칙을 어기고 '제멋대로', '함부로' 행동한다는 부정적·경계적 맥락에 자주 쓰입니다.",
+    "longExplanation": "“任意”(rènyì)는 '뜻(意)에 내맡기다(任)'라는 어원에서 나온 단어로, 부사와 형용사로 쓰입니다. 부사로서 술어 동사 앞에 놓일 때에는 정해진 규정, 계약, 질서 따위를 무시하고 전적으로 개인의 주관적 편의나 욕구에 따라 '제멋대로', '자의적으로' 행동함을 뜻합니다. 따라서 '不能任意……'(함부로 ~해서는 안 된다), '不得任意……'(자의적으로 ~할 수 없다)와 같이 규약 준수를 강조하는 금지·제한 구문에서 단골로 활용됩니다(예: '任意反悔' 제멋대로 말을 바꾸다/번복하다, '任意挥霍' 함부로 낭비하다). 한편 과학이나 수학 등에서는 '임의의'라는 중립적 관형사 용법으로도 쓰입니다.",
+    "formation": "(주어 +) (不能 / 不得 / 严禁 +) 任意 + 동사(+ 목적어)",
+    "examples": [
+      {
+        "translation": "계약이 일단 효력을 발휘하면, 어느 일방도 제멋대로 마음을 바꾸거나 번복할 수 없다."
+      }
+    ]
   },
   "zh_尚未_735": {
-    "title": "尚未 (not yet)",
-    "shortExplanation": "not yet",
-    "longExplanation": "not yet. Pinyin: shàngwèi",
-    "formation": "shàngwèi"
+    "title": "尚未 (부정부사: 아직 ~하지 못하다, 아직 ~하지 않았다, 아직 …않은)",
+    "shortExplanation": "구어의 '还没有'에 해당하는 격식 있는 문어체 부정부사로, 현재 시점이나 기준 시점에 이르기까지 특정 동작이나 상태가 아직 실현되지 않았음을 나타냅니다('아직 ~하지 않다').",
+    "longExplanation": "“尚未”(shàngwèi)는 학술 논문, 신문 기사, 공식 보고서 등에서 정중하고 객관적인 진술을 위해 즐겨 쓰는 서면어 부정부사입니다. '아직 상(尚)'과 '아닐 미(未)'가 결합된 표현으로, 일상 구어의 '还没有'를 격식 있게 치환한 것입니다. 술어 동사나 동사구 앞에 놓여 상황어(부사어)로 기능하며, 언급되는 시점에 도달할 때까지 특정 사건의 발생, 목표의 달성, 사물의 인지 등이 여전히 이루어지지 않은 상태임을 공식적으로 선언합니다(예: '尚未完成' 아직 완성되지 못하다, '尚未解决' 아직 해결되지 않다, '尚未公开' 아직 공개되지 않다).",
+    "formation": "(주어 +) 尚未 + 동사/동사구(+ 목적어)",
+    "examples": [
+      {
+        "translation": "이른바 잠재적 시장이란, 아직 사람들에게 인식되지 않은 시장을 말한다."
+      }
+    ]
   },
   "zh_把放在眼里_736": {
-    "title": "(把)……放在眼里 (take … seriously)",
-    "shortExplanation": "take … seriously",
-    "longExplanation": "take … seriously. Pinyin: ( bǎ)…… fàngzàiyǎnlǐ",
-    "formation": "( bǎ)…… fàngzàiyǎnlǐ"
+    "title": "(把)……放在眼里 (관용표현: 안중에 두다, 중요하게 여기다——주로 부정형으로 쓰여 '안중에 두지 않다, 대수롭지 않게 여기다, 얕보다')",
+    "shortExplanation": "글자 그대로는 '안중에 두다(중시하다)'라는 뜻이나, 실제 어법에서는 거의 절대적으로 부정형(不放在眼里, 没把…放在眼里)으로 쓰여, 난관이나 상대를 철저히 무시하거나 가소롭게 여기는 태도를 나타냅니다('안중에 두지 않다', '거들떠보지도 않다').",
+    "longExplanation": "“(把)……放在眼里”는 생동감 넘치는 구어 관용구입니다. 본래 의미는 '누군가나 무언가를 눈 안(안중)에 두다', 즉 마음에 두고 존중하거나 두려워한다는 뜻입니다. 그러나 실제 언어생활에서는 95% 이상 부정 형태인 '不把……放在眼里', '没把……放在眼里', 또는 목적어를 문두로 도치시킨 '……根本不放在眼里'(도무지 안중에 두지 않다) 형태로만 압도적으로 쓰입니다. 경쟁 상대나 눈앞의 곤경을 대수롭지 않은 사소한 일로 치부하며 코웃음 치는 대범함, 또는 상대를 멸시하고 안하무인으로 구는 오만한 태도를 매우 생생하게 묘사합니다.",
+    "formation": "(주어 +) (不 / 没) 把 + 명사 + 放在眼里 / (명사 +) 주어 + (根本 / 毫不) 不放在眼里",
+    "examples": [
+      {
+        "translation": "이까짓 조그만 어려움 따위는 그녀는 애초에 전혀 안중에도 두지 않았다."
+      }
+    ]
   },
   "zh_不无_737": {
-    "title": "不无 (not without)",
-    "shortExplanation": "not without",
-    "longExplanation": "not without. Pinyin: bùwú",
-    "formation": "bùwú"
+    "title": "不无 (~이/가 없는 것은 아니다 / 적잖이 ~하다 / 없지 않다)",
+    "shortExplanation": "이중 부정(부정부사 '不' + '无')을 통해 완곡한 긍정을 나타내는 서면어 표현으로, 어느 정도나 일부분 존재함을 조심스럽게 인정하는 '~이/가 없는 것은 아니다', '없지 않다', '적잖이 ~가 있다'를 뜻합니다.",
+    "longExplanation": "“不无”(bùwú)는 부정부사 '不'와 존재를 부정하는 '无'(没有에 해당)가 결합된 이중 부정(이중 부정을 통한 완곡한 긍정)의 격식 있는 서면어(문어체) 표현입니다. 직설적으로 '有'(있다)라고 긍정하는 것에 비해 표현을 한층 완곡하고 조심스러우며 절제된 어조로 나타내어, '어느 정도 그러한 면이 있다', '완전히 없다고 할 수는 없다'라는 뉘앙스를 전달합니다. 주로 추상명사(道理, 关系, 裨益 등)나 심리·감정 상태를 나타내는 어휘(遗憾, 担心, 得意 등) 앞에 놓여 술어나 상황어(부사어)로 쓰입니다. 대표적인 연어로는 '不无道理'(일리가 없지 않다 / 일리가 있다), '不无关系'(관계가 없지 않다), '不无遗憾'(다소 아쉬움이 남다 / 유감스러운 면이 없지 않다), '不无裨益'(적잖은 도움이 되다) 등이 있습니다.",
+    "formation": "주어 + 不无 + 추상명사 / 명사구 (또는 심리·감정 어휘: 道理, 遗憾, 关系, 裨益, 担心, 得意 등)",
+    "examples": [
+      {
+        "translation": "그녀는 월급이 적다고 말하는데, 이 말도 일리가 없지는 않다(일리가 있는 말이다)."
+      }
+    ]
   }
 };

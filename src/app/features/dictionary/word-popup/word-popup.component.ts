@@ -20,7 +20,7 @@ import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, IconComponent, BottomSheetComponent, OptionPickerComponent, EmptyStateComponent],
   templateUrl: './word-popup.component.html',
-  styleUrl: './word-popup.component.scss'
+  styleUrls: ['./word-popup.component.scss']
 })
 export class WordPopupComponent implements OnDestroy {
   private platformId = inject(PLATFORM_ID);

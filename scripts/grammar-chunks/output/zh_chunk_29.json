@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_V来V去_457": {
+      "title": "Động từ + 来 + Động từ + 去 (Hành động lặp đi lặp lại: ... đi ... lại / qua lại / tới lui)",
+      "shortExplanation": "Cấu trúc lặp lại động từ với '来' và '去', biểu thị hành động diễn ra lặp đi lặp lại nhiều lần, qua lại liên tục không ngừng hoặc suy đi tính lại nhiều lần.",
+      "longExplanation": "'V 来 V 去' (V lái V qù) là kết cấu lặp động từ thường dùng trong khẩu ngữ. Hai động từ ở hai vị trí là cùng một động từ đơn âm tiết (chỉ động tác có thể lặp lại hoặc chuyển động không gian, như 跑, 走, 飞, 看, 想, 问...). Cấu trúc này có hai nét nghĩa chính: một là biểu thị động tác di chuyển trong không gian qua lại nhiều lần, tới lui liên tục (như '跑来跑去' - chạy qua chạy lại, '走来走去' - đi đi lại lại); hai là biểu thị hành động được thực hiện lặp đi lặp lại nhiều lần nhằm mục đích tìm kiếm giải pháp hoặc suy ngẫm kỹ càng (như '想来想去' - suy đi tính lại, '看来看去' - nhìn tới nhìn lui/ngắm nghía mãi, '挑来挑去' - chọn tới chọn lui). Thường mang sắc thái tiêu tốn thời gian hoặc chưa có kết quả dứt khoát. Tương đương với '... đi ... lại', 'qua lại', 'tới lui' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 来 + Động từ + 去",
+      "examples": [
+        {
+          "translation": "Chú chó con đuổi theo cái đuôi của mình, chạy qua chạy lại trên bãi cỏ."
+        }
+      ]
+    },
+    "zh_要不不然要不然_458": {
+      "title": "要不 / 不然 / 要不然 (Liên từ giả thiết ngược: Nếu không thì / Bằng không / Không thì)",
+      "shortExplanation": "Liên từ dùng ở đầu phân câu sau, biểu thị giả thiết nếu không như tình huống ở phân câu trước thì sẽ xảy ra hậu quả hoặc kết quả không mong muốn; 'nếu không thì', 'bằng không'.",
+      "longExplanation": "'要不' (yàobù), '不然' (bùrán) và '要不然' (yàobùrán) là các liên từ biểu thị quan hệ giả thiết ngược lại, dùng nối tiếp giữa hai phân câu. Phân câu trước nêu ra một sự việc, hành động hoặc điều kiện đã diễn ra hay cần phải làm; phân câu sau dùng '要不 / 不然 / 要不然' đưa ra một giả định trái ngược (tức 'nếu không phải như vậy' hoặc 'nếu không làm như vậy') để dẫn tới một kết quả không hay, bất lợi hoặc đáng tiếc. Trong đó, '不然' mang sắc thái hơi trang trọng hơn, còn '要不' và '要不然' mang đậm phong cách khẩu ngữ hàng ngày. Tương đương với 'nếu không thì', 'bằng không', 'không thì' trong tiếng Việt.",
+      "formation": "Phân câu 1 (sự thật / điều kiện)，要不 / 不然 / 要不然 + Phân câu 2 (hậu quả không mong muốn nếu không làm như phân câu 1)",
+      "examples": [
+        {
+          "translation": "May mà gặp được bạn, nếu không thì hôm nay tôi chắc chắn bị muộn rồi."
+        }
+      ]
+    },
+    "zh_要不不然要不然_459": {
+      "title": "要不 / 不然 / 要不然 (Đưa ra gợi ý, đề xuất: Hay là / Hoặc là / Hay là thế này)",
+      "shortExplanation": "Dùng ở đầu phân câu để đưa ra một phương án, lời đề nghị hoặc gợi ý lựa chọn khác với giọng điệu thương lượng, nhẹ nhàng; 'hay là', 'hoặc là'.",
+      "longExplanation": "'要不' (yàobù), '不然' (bùrán), '要不然' (yàobùrán) trong ngữ cảnh này được dùng như một phương thức đưa ra kiến nghị hoặc giải pháp thay thế mang tính chất bàn bạc, thương lượng. Khi gặp một tình huống khó khăn, bất tiện hoặc cần đề xuất ý kiến, người nói dùng từ này để mở đầu cho một phương án mới một cách uyển chuyển, lịch sự. Cuối câu thường có thêm trợ từ ngữ khí '吧' để tăng tính gợi ý, thân mật. Trong cách dùng này, '要不' và '要不然' được sử dụng phổ biến nhất trong khẩu ngữ. Tương đương với 'hay là', 'hay là thế này', 'hoặc là' trong tiếng Việt.",
+      "formation": "Phân câu 1 (nêu tình huống / lý do)，要不 / 不然 / 要不然 + Chủ ngữ + Động từ / Mệnh đề (+ 吧)",
+      "examples": [
+        {
+          "translation": "Hôm nay muộn quá rồi, hay là ngày mai bạn hãy đi."
+        }
+      ]
+    },
+    "zh_彼此V_460": {
+      "title": "彼此 + Động từ (Đại từ làm trạng ngữ: Lẫn nhau / Cùng nhau / Cho nhau)",
+      "shortExplanation": "Đại từ xưng hô '彼此' làm trạng ngữ đứng trước động từ song âm tiết, biểu thị hành động tương hỗ giữa hai bên; 'lẫn nhau', 'cho nhau'.",
+      "longExplanation": "'彼此' (bǐcǐ) là đại từ chỉ hai bên đối ứng (bên này và bên kia, cả đôi bên). Khi đứng trực tiếp trước động từ vị ngữ, '彼此' giữ vai trò trạng ngữ chỉ tính chất tương hỗ của hành động. Động từ đi sau thường là động từ song âm tiết biểu thị mối quan hệ hoặc hành vi tương tác giữa người với người (như 帮助 - giúp đỡ, 了解 - tìm hiểu/hiểu rõ, 信任 - tin tưởng, 尊重 - tôn trọng, 照顾 - chăm sóc, 关心 - quan tâm). Nó diễn tả cả hai phía đều làm hành động đó cho đối phương. Tương đương với 'lẫn nhau', 'qua lại', 'cho nhau' trong tiếng Việt.",
+      "formation": "Chủ ngữ (số nhiều / đôi bên) + 彼此 + Động từ",
+      "examples": [
+        {
+          "translation": "Bạn bè tốt nên giúp đỡ lẫn nhau."
+        }
+      ]
+    },
+    "zh_彼此_461": {
+      "title": "彼此 (Đại từ chỉ định / xưng hô: Đôi bên / Hai bên / Của nhau)",
+      "shortExplanation": "Đại từ chỉ cả hai bên (người này và người kia), thường đảm nhiệm vai trò định ngữ (彼此的), chủ ngữ hoặc tân ngữ trong câu; 'đôi bên', 'hai bên'.",
+      "longExplanation": "'彼此' (bǐcǐ) là đại từ biểu thị quan hệ hai bên đối ứng, gồm cả 'bên này' (此) và 'bên kia' (彼). Khác với khi làm trạng ngữ đứng trước động từ (như '彼此帮助'), ở đây '彼此' đóng vai trò danh từ/đại từ thực thụ trong câu: thường làm định ngữ kèm trợ từ '的' (như '彼此的爱好' - sở thích của nhau, '彼此的感情' - tình cảm của đôi bên, '彼此的距离' - khoảng cách giữa hai người), hoặc làm tân ngữ (như '不分彼此' - không phân biệt bên này bên kia, coi như một nhà). Tương đương với 'đôi bên', 'hai bên', 'của nhau' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 彼此 (+ 的) + Danh từ (hoặc làm Chủ ngữ / Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Sở thích của hai chúng tôi giống nhau."
+        }
+      ]
+    },
+    "zh_彼此彼此_462": {
+      "title": "彼此彼此 (Thành ngữ khẩu ngữ: Cũng như nhau cả thôi / Đôi bên như nhau / Kẻ tám lạng người nửa cân)",
+      "shortExplanation": "Cụm từ cố định thường dùng trong giao tiếp khẩu ngữ, biểu thị đôi bên có tình trạng, trình độ, hoàn cảnh hoặc kết quả tương đương nhau; 'cũng như nhau cả thôi'.",
+      "longExplanation": "'彼此彼此' (bǐcǐbǐcǐ) là dạng trùng điệp của đại từ '彼此', tạo thành một quán dụng ngữ rất sinh động trong khẩu ngữ tiếng Hán. Nó được dùng để chỉ tình huống mà hai bên đều như nhau, không ai hơn ai kém, trình độ hay cảnh ngộ tương đương nhau. Thường dùng trong hai hoàn cảnh: một là câu nói khách khí khiêm tốn đáp lại lời khen của đối phương (mang ý 'bạn quá khen, thực ra hai ta ngang nhau thôi'); hai là dùng trong lời nói đùa vui, trêu chọc nhau (mang ý 'anh chê tôi thì anh cũng chẳng khá hơn đâu, đôi bên như nhau cả'). Tương đương với 'cũng như nhau cả thôi', 'kẻ tám lạng người nửa cân', 'đôi bên như một' trong tiếng Việt.",
+      "formation": "Chủ ngữ (hai người / đôi bên) + 彼此彼此 (hoặc đứng độc lập làm câu đối đáp)",
+      "examples": [
+        {
+          "translation": "Hai chúng ta cũng như nhau cả thôi, tôi vẽ cũng chẳng hơn bạn được bao nhiêu."
+        }
+      ]
+    },
+    "zh_算_463": {
+      "title": "算 (Động từ phán đoán: Coi như / Tính là / Được xem là)",
+      "shortExplanation": "Động từ biểu thị sự nhận định, quy ước hoặc công nhận một người, sự vật đạt đến tiêu chuẩn hay được đối xử như một trường hợp nào đó; 'coi như', 'tính là'.",
+      "longExplanation": "'算' (suàn) ở đây là động từ phán đoán mang ý nghĩa coi là, tính là, được công nhận là. Nó dùng để khẳng định một tính chất, mức độ hoặc danh phận nào đó được công nhận, hoặc dùng để tạm quy ước một việc gì đó theo một hướng cụ thể (thường đi với '就算' - coi như là, '算作' - xem như là, '算得上' - có thể coi là). Cấu trúc này diễn tả ý 'quy ước tạm thời là như vậy' hoặc 'đạt đến tư cách/tiêu chuẩn để được tính là...'. Tương đương với 'coi như', 'tính là', 'được xem là' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (就 +) 算 + (Chủ ngữ 2 +) Động từ / Danh từ / Phân câu",
+      "examples": [
+        {
+          "translation": "Số tiền này coi như tôi cho bạn vay, tương lai lúc nào có thì trả lại tôi sau."
+        }
+      ]
+    },
+    "zh_V了掉算了_464": {
+      "title": "Động từ + 了 / 掉 + 算了 (Thôi ... phứt đi cho xong / Đành ... đi cho rồi)",
+      "shortExplanation": "Động từ kết hợp với bổ ngữ kết quả '了' hoặc '掉' rồi thêm '算了', biểu thị quyết định dứt khoát giải quyết một việc cho xong chuyện, không bận tâm đến nữa; '... đi cho rồi', '... cho xong'.",
+      "longExplanation": "'算了' (suànle) vốn là đoản ngữ mang ý nghĩa 'thôi bỏ đi, thôi không tính tới nữa, kết thúc ở đây'. Khi kết hợp sau cấu trúc 'Động từ + 了/掉' (như '扔掉算了' - vứt đi cho xong, '退了算了' - trả lại cho rồi, '卖了算了' - bán quách đi cho xong, '吃掉算了' - ăn nốt đi cho rồi), toàn bộ cấu trúc biểu đạt một quyết định mang tính buông bỏ, dứt khoát thực hiện một hành động nào đó để kết thúc sự phiền toái, không cần phải so đo, cân nhắc thêm nữa. Tương đương với '... phứt đi cho xong', '... cho rồi', 'thôi đành ... cho xong chuyện' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (把 + Tân ngữ +) Động từ + 了 / 掉 + 算了",
+      "examples": [
+        {
+          "translation": "Chẳng phải chỉ là một cái chai rỗng thôi sao? Vứt đi cho xong."
+        }
+      ]
+    },
+    "zh_作为N_465": {
+      "title": "作为 + Danh từ (Giới từ chỉ tư cách / thân phận: Với tư cách là / Là một... / Xét về vai trò...)",
+      "shortExplanation": "Dẫn nhập thân phận, tư cách, địa vị hoặc tính chất của người hay sự vật làm xuất phát điểm để đưa ra nhận xét hoặc hành vi; 'với tư cách là', 'là một'.",
+      "longExplanation": "'作为' (zuòwéi) được dùng như một giới từ chỉ thân phận, tư cách hoặc góc độ nhìn nhận. Cụm '作为 + Danh từ' thường đứng ở đầu câu làm trạng ngữ, nêu rõ cương vị, chức trách, danh phận xã hội (như bác sĩ, thầy giáo, nhà văn, người làm cha mẹ...) hoặc bản chất, công dụng của sự vật. Qua đó, phân câu chính tiếp theo sẽ bàn luận về nghĩa vụ, đặc điểm, quan điểm hoặc hành động tương xứng với thân phận hay vị thế đó. Tương đương với 'với tư cách là', 'với vai trò là', 'là một...' trong tiếng Việt.",
+      "formation": "作为 + Danh từ (thân phận / tư cách / vai trò)，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Với tư cách là một đại văn hào, một học giả uyên bác, Lỗ Tấn rất sành ăn."
+        }
+      ]
+    },
+    "zh_曾经_466": {
+      "title": "曾经 (Phó từ thời gian: Đã từng / Từng / Trước kia từng)",
+      "shortExplanation": "Phó từ đứng trước động từ, biểu thị một hành động hoặc tình huống đã từng phát sinh trong quá khứ và hiện tại không còn tiếp diễn; 'từng', 'đã từng'.",
+      "longExplanation": "'曾经' (céngjīng) là phó từ chỉ thời gian mang sắc thái trang trọng, thường dùng trong cả văn viết và lời nói chuẩn mực. Nó đứng trước động từ (thường đi kèm với trợ từ động thái '过' hoặc '了') để khẳng định một hành động, trải nghiệm hoặc trạng thái nào đó đã từng xuất hiện ở một thời điểm trong quá khứ nhưng nay đã chấm dứt hoàn toàn. Cấu trúc phủ định thường dùng '不曾' (văn viết) hoặc '从来没有' (khẩu ngữ). Tương đương với 'đã từng', 'từng', 'trước kia từng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 曾经 + Động từ (+ 过 / 了) (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Khổng Tử từng dẫn theo học trò chu du các nước trong suốt 14 năm để truyền bá tư tưởng của mình."
+        }
+      ]
+    },
+    "zh_毕竟_467": {
+      "title": "毕竟 (Phó từ ngữ khí: Rốt cuộc / Dù sao thì / Nói cho cùng)",
+      "shortExplanation": "Phó từ biểu thị việc truy tìm đến tận cùng bản chất, kết luận chung quy lại hoặc lý do căn bản nhất không thể phủ nhận; 'rốt cuộc', 'dù sao thì'.",
+      "longExplanation": "'毕竟' (bìjìng) là phó từ ngữ khí thường dùng để nhấn mạnh kết luận tất yếu, chân lý căn bản hoặc nguyên nhân cốt lõi sau khi đã trải qua mọi khó khăn, suy xét đa chiều. Có hai trường hợp sử dụng điển hình: Một là sau khi trải qua nhiều trắc trở hoặc biến cố, cuối cùng đạt được một kết quả (như trong câu 'mặc dù khó khăn nhưng rốt cuộc đã hoàn thành'); hai là dùng để nêu lên một sự thật hiển nhiên hoặc nguyên nhân căn bản không thể thay đổi để giải thích hoặc tha thứ cho ai đó (như 'anh ấy dù sao cũng chỉ là một đứa trẻ'). Tương đương với 'rốt cuộc', 'dù sao thì', 'nói cho cùng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (nhưng / tuy nhiên +) 毕竟 + Vị ngữ (hoặc: 毕竟 + Chủ ngữ + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Tuy chúng tôi đã gặp phải rất nhiều khó khăn, nhưng rốt cuộc cũng đã hoàn thành nhiệm vụ."
+        }
+      ]
+    },
+    "zh_逐渐_468": {
+      "title": "逐渐 (Phó từ chỉ phương thức / thời gian: Dần dần / Từng bước / Dần dà)",
+      "shortExplanation": "Phó từ biểu thị sự biến đổi về số lượng, mức độ hoặc trạng thái diễn ra một cách từ từ, tuần tự theo thời gian; 'dần dần', 'từng bước'.",
+      "longExplanation": "'逐渐' (zhújiàn) là phó từ mang phong cách văn viết tao nhã, biểu thị sự thay đổi hoặc phát triển của sự vật theo tiến trình thời gian một cách êm thấm, có trật tự và từng bước một. Nó dùng để miêu tả một quá trình tiệm tiến, không diễn ra đột ngột hay tức thì, thường đứng trước động từ hoặc tính từ biểu thị sự biến hóa (như 提高 - nâng cao, 习惯 - quen dần, 恢复 - phục hồi, 减少 - giảm bớt...). Tương đương với 'dần dần', 'từng bước', 'dần dà' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 逐渐 + Động từ / Tính từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Thức ăn ngày càng ít đi, ông lão buộc phải dần dần hạn chế khẩu phần ăn của bầy khỉ."
+        }
+      ]
+    },
+    "zh_或许_469": {
+      "title": "或许 (Phó từ phỏng đoán: Có lẽ / Có thể / Biết đâu chừng / Họa chăng)",
+      "shortExplanation": "Phó từ biểu thị sự suy đoán không chắc chắn về một khả năng có thể phát sinh; tương đương với '也许', '可能', nghĩa là 'có lẽ', 'biết đâu'.",
+      "longExplanation": "'或许' (huòxǔ) là phó từ phỏng đoán mang sắc thái trang nhã, thường dùng trong cả khẩu ngữ văn nhã lẫn văn viết. Nó biểu thị sự nhận định của người nói về một khả năng có thể xảy ra nhưng không dám khẳng định hoàn toàn. '或许' có thể đứng trước chủ ngữ hoặc sau chủ ngữ (trước vị ngữ). Thường dùng khi đưa ra quan điểm dè dặt, mềm mỏng hoặc dự đoán về tương lai. Tương đương với 'có lẽ', 'có thể', 'biết đâu chừng' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 或许 (+ Chủ ngữ +) Động từ / Tính từ / Phân câu",
+      "examples": [
+        {
+          "translation": "Tuy trước đây cô ấy không ủng hộ bạn, nhưng có lẽ lần này sẽ có sự thay đổi."
+        }
+      ]
+    },
+    "zh_V过来_470": {
+      "title": "Động từ / Tính từ + 过来 (Bổ ngữ xu hướng mở rộng: Hồi phục / Tỉnh lại / Trở lại trạng thái bình thường)",
+      "shortExplanation": "Bổ ngữ xu hướng phái sinh '过来' đứng sau động từ hoặc tính từ, biểu thị sự chuyển biến trở lại trạng thái tỉnh táo, bình thường, tích cực hoặc khỏe mạnh ban đầu; 'lại', 'trở lại'.",
+      "longExplanation": "'过来' (guòlai) khi đóng vai trò bổ ngữ xu hướng phái sinh (mở rộng) có ý nghĩa diễn tả sự hồi phục hoặc chuyển biến tích cực. Nó biểu thị người hoặc trạng thái từ trạng thái bất thường, nguy hiểm, mê man, tiêu cực hoặc lệch lạc quay trở lại trạng thái bình thường, tỉnh táo, khỏe mạnh hoặc đúng đắn ban đầu. Thường kết hợp với các động từ/tính từ như '醒' (tỉnh), '明白' (hiểu ra), '清醒' (tỉnh táo), '缓' (hồi sức), '救' (cứu sống), '改' (sửa đổi)... Tương đương với 'lại', 'trở lại', 'hồi phục lại' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ / Tính từ (醒 / 清醒 / 缓 / 救 / 改...) + 过来",
+      "examples": [
+        {
+          "translation": "Mãi một hồi lâu sau, đầu óc mới tỉnh táo trở lại."
+        }
+      ]
+    },
+    "zh_V得过来V不过来_471": {
+      "title": "Động từ + 得过来 / 不过来 (Bổ ngữ khả năng: Làm xuể / Không làm xuể, kham nổi / không kham nổi)",
+      "shortExplanation": "Bổ ngữ khả năng biểu thị khả năng có thể hoàn thành, ứng phó hoặc đảm đương hết khối lượng công việc, số lượng sự vật quá nhiều hay không; '... xuể / không ... xuể'.",
+      "longExplanation": "'V 得过来' và thể phủ định 'V 不过来' là cấu trúc bổ ngữ khả năng chỉ mức độ kham nổi, ứng phó nổi trước khối lượng công việc, nhiệm vụ hoặc số lượng sự vật quá lớn trong một thời gian nhất định. Thể khẳng định 'V 得过来' mang nghĩa có đủ thời gian, sức lực hoặc khả năng để làm hết, quản hết; thể phủ định 'V 不过来' biểu thị số lượng quá nhiều hoặc việc quá dồn dập khiến một người không thể cáng đáng, làm xuể hoặc xoay xở kịp (như '忙不过来' - bận không xuể, '数不过来' - đếm không xuể, '看不过来' - nhìn không xuể, '照顾不过来' - chăm sóc không xuể). Tương đương với 'làm xuể / không làm xuể', 'kham nổi / không kham nổi' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Tân ngữ / Số lượng nhiều +) Động từ + 得过来 / 不过来",
+      "examples": [
+        {
+          "translation": "Ngôi sao trên trời nhiều như thế, ai mà đếm cho xuể được chứ?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_V来V去_457": {
+      "title": "動詞 ＋ 来 ＋ 動詞 ＋ 去（動作の反復・往復：行ったり来たりする・あちこち〜する・あれこれ〜する）",
+      "shortExplanation": "同一の単音節動詞を「来」と「去」で挟み、同一の動作を何度も繰り返したり、あちこちを行き来したり、あれこれ考え巡らせたりすることを表します（「行ったり来たり」「あれこれ〜する」）。",
+      "longExplanation": "「V 来 V 去」（V lái V qù）は、同じ単音節動詞を「来」と「去」の間に繰り返して用いる口語表現です。主に2つの用法があります。1つは空間的な往復・移動を表す動詞（走、跑、飛、游など）を用いて「あちこち行き来する」「行ったり来たり走り回る」様子を表す用法（例：「走来走去」歩き回る、「跑来跑去」走り回る）。もう1つは思考や判断を表す動詞（想、看、挑、商量など）を用いて「何度も繰り返し行う」「あれこれ考えあぐねる」様子を表す用法です（例：「想来想去」あれこれ考え巡らせる、「挑来挑去」あれこれ選び迷う）。日本語の「あちこち〜し回る」「行ったり来たり〜する」「あれこれ〜する」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 来 ＋ 動詞 ＋ 去",
+      "examples": [
+        {
+          "translation": "子犬は自分のしっぽを追いかけて、芝生の上をあちこち走り回っている。"
+        }
+      ]
+    },
+    "zh_要不不然要不然_458": {
+      "title": "要不 / 不然 / 要不然（接続詞：そうでなければ・さもないと・でないと【反面仮定】）",
+      "shortExplanation": "後節の冒頭に用いられ、前節と反対の状況を仮定して、好ましくない結果や事態を導きます（「そうでなければ」「さもないと」）。",
+      "longExplanation": "「要不」（yàobù）、「不然」（bùrán）、「要不然」（yàobùrán）は、事実に反する仮定を表す接続詞で、複文の後節の先頭に置かれます。前節で現実の状況や満たすべき条件を述べ、後節で「もしそうでなければ」「さもなければ」と反対の仮定を立てて、その結果生じるであろう好ましくない事態・損害・失敗を提示します。「不然」はやや書き言葉の響きを持ち、「要不」「要不然」は口語で非常によく使われます（例：「快走吧，要不然就赶不上车了」早く行こう、さもないと電車に間に合わなくなる）。日本語の「そうでなければ」「さもないと」「でないと」に相当します。",
+      "formation": "節1（事実・必要条件），要不 / 不然 / 要不然 ＋ 節2（好ましくない結果）",
+      "examples": [
+        {
+          "translation": "あなたに会えて本当によかった、そうでなければ今日は絶対に遅刻していたところだ。"
+        }
+      ]
+    },
+    "zh_要不不然要不然_459": {
+      "title": "要不 / 不然 / 要不然（提案・助言：いっそのこと〜してはどうか・それとも・いっそ）",
+      "shortExplanation": "後節の先頭で用いられ、相談や提案の柔らかな口調で、別の解決策や代替案を提示します（「いっそのこと〜してはどうか」「それなら」）。",
+      "longExplanation": "「要不」（yàobù）、「不然」（bùrán）、「要不然」（yàobùrán）は、相手に対して控えめに提案やアドバイスを行ったり、新たな代替案を示したりする際にも用いられます。現状の都合や問題点を述べた後、「それならいっそ…してはどうだろう」「あるいは…にしようか」と相談のニュアンスを込めて切り出す表現です。文末に語気助詞の「吧」を伴うことが多く、口調を和らげる効果があります。口語では「要不」や「要不然」が特に頻繁に使われます。日本語の「いっそのこと〜したらどうですか」「それなら〜しては」「あるいは」に相当します。",
+      "formation": "節1（現状・理由），要不 / 不然 / 要不然 ＋ 提案（〜吧）",
+      "examples": [
+        {
+          "translation": "今日はもう遅すぎるから、いっそのこと明日出発したらどうですか。"
+        }
+      ]
+    },
+    "zh_彼此V_460": {
+      "title": "彼此 ＋ 動詞（連用修飾語：互いに〜する・お互いに〜し合う）",
+      "shortExplanation": "代名詞「彼此」が連用修飾語（状語）として動詞の前に置かれ、双方が相手に対して相互に動作を行うことを表します（「お互いに〜する」「互いに〜し合う」）。",
+      "longExplanation": "「彼此」（bǐcǐ）は双方（こちらとあちら、お互い）を指す代名詞です。動詞の直前に置かれて状語（連用修飾語）として機能し、関係する二者（または双方）が互いに相手に対して同じ行為や働きかけを行うことを表します。後続する動詞は通常、人間関係における相互作用を表す2音節動詞（帮助、信任、了解、尊重、支持、关怀など）が用いられます。現代中国語の「互相」とほぼ同義ですが、「彼此」は「両者・双方」という対比的な意識がより明確に含まれます。日本語の「互いに〜する」「お互いに〜し合う」に相当します。",
+      "formation": "主語（複数・双方）＋ 彼此 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "親友同士は互いに助け合うべきです。"
+        }
+      ]
+    },
+    "zh_彼此_461": {
+      "title": "彼此（代名詞：お互い・双方・両者・二人の間）",
+      "shortExplanation": "二者（こちらとあちら）の双方を指す代名詞で、主に連体修飾語（定語：彼此的）や目的語、主語として用いられます（「お互いの」「双方の」）。",
+      "longExplanation": "「彼此」（bǐcǐ）は「彼（あちら）」と「此（こちら）」からなる人称代名詞で、当事者である2人（または2つの側）の双方を指します。状語として動詞を修飾するだけでなく、実体的な代名詞として主語、目的語、あるいは連体修飾語（定語）として機能します。特に「彼此的 ＋ 名詞」（例：「彼此的爱好」お互いの趣味、「彼此的距离」双方の距離、「彼此的关系」二人の関係）の形で頻繁に用いられます。また成語「不分彼此」（水臭い仲ではない、お互い様である）のように目的語としても使われます。日本語の「お互い」「双方」「お互いの〜」に相当します。",
+      "formation": "彼此 ＋（的 ＋）名詞（または主語・目的語）",
+      "examples": [
+        {
+          "translation": "私たちお互いの趣味は同じです。"
+        }
+      ]
+    },
+    "zh_彼此彼此_462": {
+      "title": "彼此彼此（慣用表現：お互い様だ・五十歩百歩だ・どっちもどっちだ）",
+      "shortExplanation": "代名詞「彼此」を重ねた口語の慣用句で、双方の実力、状況、条件などが大差なく同等であることを表します（「お互い様」「どっちもどっち」）。",
+      "longExplanation": "「彼此彼此」（bǐcǐbǐcǐ）は口語で非常によく使われる慣用表現です。二者の置かれた状況、技術のレベル、待遇、欠点などが「双方とも似たようなものであり、たいして差がない」ことを示します。主に2つの文脈で使われます。1つは相手から褒められたり感謝されたりした際に謙遜して「いえいえ、お互い様ですよ（あなたも同じくらい素晴らしいですよ）」と返す場面。もう1つは親しい間柄で相手のからかいや指摘に対して「お前だって同じだろう（どっちもどっちだ、五十歩百歩だ）」と応じる場面です。日本語の「お互い様だ」「五十歩百歩だ」「どっちもどっちだ」に相当します。",
+      "formation": "主語（二人・双方）＋ 彼此彼此（または単独で応答句として使用）",
+      "examples": [
+        {
+          "translation": "私たちは二人ともお互い様ですよ、私の絵もあなたより大して上手なわけではありません。"
+        }
+      ]
+    },
+    "zh_算_463": {
+      "title": "算（動詞：〜と見なす・〜ということにしておく・〜に相当する）",
+      "shortExplanation": "人や事物を特定の資格・基準・状態に達していると認めるか、あるいは仮にそのように取り扱うことを表します（「〜と見なす」「〜ということにする」）。",
+      "longExplanation": "動詞「算」（suàn）は本来の「計算する」という意味から派生し、「〜と見なす」「〜に数えられる」「〜という扱いにする」という判断・認可・仮定の意を表します。主に2通りの文脈で使われます。1つは客観的な基準に照らして「〜と言ってよい」「〜の部類に入る」と評価する場合（例：「他算得上是一位好老师」彼は良い先生と言える）。もう1つは例文のように「仮に〜という扱いにしておく」「〜ということにして取り決める」という取り決めを表す場合です（「就算……」の形で使われることも多い）。日本語の「〜と見なす」「〜ということにしておく」「〜と数える」に相当します。",
+      "formation": "主語 ＋（就 ＋）算 ＋（目的語・節）",
+      "examples": [
+        {
+          "translation": "このお金は私があなたに貸したものということにしておきますから、将来お金ができたら返してください。"
+        }
+      ]
+    },
+    "zh_V了掉算了_464": {
+      "title": "動詞 ＋ 了 / 掉 ＋ 算了（思い切り・諦めの決定：〜してしまえばいい・いっそ〜して済ませてしまおう）",
+      "shortExplanation": "動詞に結果補語「了」「掉」を伴い、末尾に「算了」を置くことで、あれこれ悩まずにいっそのこと片付けてしまおうという割り切った気持ちを表します（「〜してしまえ」「〜して済ませよう」）。",
+      "longExplanation": "「算了」（suànle）は本来「もういい、おしまいにする、諦める」という意味を表します。「動詞 ＋ 了/掉 ＋ 算了」の形で用いられると、これ以上迷ったり執着したりするのをやめ、いっそのことその動作を行って問題を清算・解決してしまおうという割り切った態度、あるいは半ば諦めの決断を表します。特に物を手放す、処分する、妥協する場面で多用されます（例：「卖掉算了」いっそ売ってしまおう、「扔掉算了」捨ててしまえばいい、「分了算了」別れてしまおう）。日本語の「いっそ〜してしまえ」「〜して済ませてしまおう」に相当します。",
+      "formation": "主語 ＋（把 ＋ 目的語 ＋）動詞 ＋ 了 / 掉 ＋ 算了",
+      "examples": [
+        {
+          "translation": "たかが空き瓶じゃないか。捨ててしまえばいいんだ（捨ててしまえ）。"
+        }
+      ]
+    },
+    "zh_作为N_465": {
+      "title": "作为 ＋ 名詞（介詞：〜として・〜の立場で・〜たるもの）",
+      "shortExplanation": "名詞の前に置かれ、身分、資格、立場、または事物の本質を提示し、それに応じた性質や言動を導きます（「〜として」「〜の立場から」）。",
+      "longExplanation": "「作为」（zuòwéi）は介詞（前置詞）として用いられ、後ろに身分・立場・資格・肩書きを表す名詞（または名詞句）を伴って連用修飾語（状語）を形成します。文頭に置かれることが多く、「ある身分や立場にある者として」「〜という役割から見て」という前提条件・視点を提示します。後続の主文では、その身分にふさわしい行動、責任、あるいは顕著な特徴・態度が述べられます（例：「作为一名教师」一人の教師として、「作为父母」親たるもの）。日本語の「〜として」「〜の立場で」「〜たるもの」に相当します。",
+      "formation": "作为 ＋ 名詞（身分・資格・立場），主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "偉大な作家であり碩学である魯迅は、食に対して非常にこだわりを持っていた。"
+        }
+      ]
+    },
+    "zh_曾经_466": {
+      "title": "曾经（時間副詞：かつて・以前・昔〜したことがある）",
+      "shortExplanation": "動詞の前に置かれ、ある動作や状態が過去において発生・存在したことがあり、現在はすでに終了していることを表します（「かつて」「以前」）。",
+      "longExplanation": "「曾经」（céngjīng）は過去の経験や事実を表す時間副詞です。動詞の前に置かれ、しばしば動態助詞の「过」や「了」と呼応します。過去のある時期にその行為や状態が確かに存在したが、現在はすでに完了して継続していないことを明確に示します。「从前」や「过去」などの時間名詞と異なり、純粋な修飾副詞として動詞を修飾します。書き言葉やスピーチで非常によく用いられ、格調高い響きを持ちます。日本語の「かつて」「以前〜したことがある」「昔」に相当します。",
+      "formation": "主語 ＋ 曾经 ＋ 動詞（＋ 过 / 了）",
+      "examples": [
+        {
+          "translation": "孔子はかつて弟子たちを連れて14年間諸国を巡り歩き、自らの思想を広めました。"
+        }
+      ]
+    },
+    "zh_毕竟_467": {
+      "title": "毕竟（副詞：何といっても・やはり・所詮・結局のところ）",
+      "shortExplanation": "紆余曲折を経た最終的な結論や、否定できない根本的な原因・事実を強調します（「何といっても」「結局のところ」「やはり」）。",
+      "longExplanation": "「毕竟」（bìjìng）は、様々な事情や曲折を考慮した上で、最終的な帰結や最も本質的で動かしがたい事実を提示・強調する副詞です。主に2つの用法があります。1つは例文のように「多くの障害や紆余曲折があったものの、最終的には成し遂げた」という結果を強調する用法。もう1つは「彼は何といってもまだ子どもだから（大目に見るべきだ）」のように、事態を判断・理解する上での根本的な理由や拠って立つ事実を提示する用法です。日本語の「何といっても」「やはり」「結局のところ」に相当します。",
+      "formation": "（しかし ＋）主語 ＋ 毕竟 ＋ 述語（または文頭で：毕竟 ＋ 文）",
+      "examples": [
+        {
+          "translation": "私たちは多くの困難に直面しましたが、何といっても（やはり）任務をやり遂げました。"
+        }
+      ]
+    },
+    "zh_逐渐_468": {
+      "title": "逐渐（副詞：次第に・徐々に・だんだんと）",
+      "shortExplanation": "動作、性質、状態が時間の経過とともに段階を追って少しずつ変化していく様子を表す副詞です（「次第に」「だんだん」「徐々に」）。",
+      "longExplanation": "「逐渐」（zhújiàn）は、程度や数量、状態の変化が時間の推移に伴って一段階ずつ緩やかに進行することを表す副詞です。書き言葉寄りの表現で、急激な変化ではなく、順序を追って自然に変化が深まっていくプロセスを叙述します。変化を表す動詞（恢复、适应、减少、扩大など）や形容詞の前に置かれて連用修飾語（状語）となります。口語の「渐渐」や「慢慢」に比べて格式が高く、説明文や論説文、報道などで多用されます。日本語の「次第に」「徐々に」「だんだんと」に相当します。",
+      "formation": "主語 ＋ 逐渐 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "食べ物がますます少なくなり、老人はサルの食べる量を次第に制限せざるを得なくなった。"
+        }
+      ]
+    },
+    "zh_或许_469": {
+      "title": "或许（副詞：ひょっとすると・あるいは・もしかしたら）",
+      "shortExplanation": "事態の可能性について推測を表す副詞で、断定を避けつつある可能性を示唆します（「ひょっとすると」「もしかしたら」）。",
+      "longExplanation": "「或许」（huòxǔ）は推測や不確実な判断を表す副詞です。主語の前または動詞（述語）の前に置かれ、「断定はできないが、そのような可能性も十分にあり得る」という控えめな推定を表します。口語表現の「也许」や「可能」と意味上ほぼ同等ですが、「或许」はやや書き言葉の落ち着いたトーンを帯びており、文学作品や論説、丁寧な会話で好まれます。文末に「也说不定」や「（……的）可能」と呼応することもあります。日本語の「ひょっとすると」「もしかしたら」「あるいは」に相当します。",
+      "formation": "（主語 ＋）或许（＋ 主語 ＋）述語",
+      "examples": [
+        {
+          "translation": "以前は彼女はあなたを支持しませんでしたが、ひょっとすると今回は状況が変わるかもしれません。"
+        }
+      ]
+    },
+    "zh_V过来_470": {
+      "title": "動詞 / 形容詞 ＋ 过来（派生方向補語：正気に戻る・回復する・正常な状態に戻る）",
+      "shortExplanation": "派生方向補語「过来」が動詞や形容詞の後ろに置かれ、異常・不調・昏睡・誤った状態から正常・健康・覚醒した状態へと回復することを表します（「〜に戻る」「正気を取り戻す」）。",
+      "longExplanation": "「过来」（guòlai）は派生方向補語として用いられる際、「好ましくない状態（気絶、混乱、病気、過ちなど）から、好ましい正常な状態（覚醒、回復、健康、正しい認識など）へと戻る」という回復・好転のプロセスを表します。「醒」（目が覚める）、「清醒」（意識がはっきりする）、「救」（救命する）、「缓」（息を吹き返す）、「改」（改心する）などの動詞・形容詞と結びついて固定的な表現を作ります（例：「抢救过来了」救命に成功して一息ついた、「改过来了」誤りを正した）。日本語の「〜に戻る」「正気を取り戻す」「回復する」に相当します。",
+      "formation": "主語 ＋ 動詞 / 形容詞（醒 / 清醒 / 缓 / 救 / 改など）＋ 过来",
+      "examples": [
+        {
+          "translation": "しばらく経ってから、頭がようやくはっきりと冴えてきた。"
+        }
+      ]
+    },
+    "zh_V得过来V不过来_471": {
+      "title": "動詞 ＋ 得过来 / 不过来（可能補語：〜しきれる / 〜しきれない・対応しきれない）",
+      "shortExplanation": "数量が多すぎたり仕事量が膨大だったりして、時間や能力の面で最後まで処理・対応しきれるかどうかを表す可能補語です（「〜しきれる」「〜しきれない」）。",
+      "longExplanation": "「V得过来」およびその否定形「V不过来」は、時間や体力、人手の限界に対して、対象となる事物や業務の量が非常に多い状況で用いられる可能補語です。肯定形「V得过来」は「十分に対応しきれる、すべてこなせる」ことを意味し、否定形「V不过来」は「量が多すぎて手が回らない、すべて処理しきれない、対応しきれない」ことを表します。特に否定形「V不过来」や反語文で頻繁に用いられます（例：「忙不过来」忙しくて手が回らない、「看不过来」見きれないほど多い、「照顾不过来」世話が行き届かない、「数不过来」数え切れない）。日本語の「〜しきれる」「〜しきれない」「手が回らない」に相当します。",
+      "formation": "主語 ＋（多量な対象 ＋）動詞 ＋ 得过来 / 不过来",
+      "examples": [
+        {
+          "translation": "空の星があんなにたくさんあるのに、誰が数え切れるというのでしょうか。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_V来V去_457": {
+      "title": "동사 + 来 + 동사 + 去 (동작의 반복·왕복: 이리저리 ~하다, 자꾸 ~하다, 오락가락하다)",
+      "shortExplanation": "동일한 단음절 동사를 '来'와 '去' 사이에 반복하여, 같은 동작을 이리저리 반복하거나 이쪽저쪽으로 왔다 갔다 함을 나타냅니다('이리저리 ~하다', '자꾸 ~하다').",
+      "longExplanation": "'V 来 V 去'(V lái V qù)는 구어에서 자주 쓰이는 동사 중첩 구문입니다. 공간 이동을 나타내는 동사(跑, 走, 飞 등)와 결합하면 특정한 방향 없이 이리저리 왔다 갔다 하거나 분주하게 돌아다니는 상태를 묘사합니다(예: '跑来跑去' 이리저리 뛰어다니다, '走来走去' 서성거리다/왔다 갔다 하다). 또한 생각이나 관찰, 선택을 나타내는 동사(想, 看, 挑 등)와 결합하면 어떤 결론에 이르지 못한 채 같은 동작이나 고민을 되풀이함을 나타냅니다(예: '想来想去' 생각하고 또 생각하다/이리저리 궁리하다, '挑来挑去' 고르고 또 고르다). 한국어의 '이리저리 ~하다', '~하고 또 ~하다', '이쪽저쪽 왔다 갔다 하다'에 해당합니다.",
+      "formation": "주어 + 동사 + 来 + 동사 + 去",
+      "examples": [
+        {
+          "translation": "강아지가 자신의 꼬리를 쫓으며 잔디밭 위를 이리저리 뛰어다닌다."
+        }
+      ]
+    },
+    "zh_要不不然要不然_458": {
+      "title": "要不 / 不然 / 要不然 (반대 가정 접속사: 그렇지 않으면, 안 그러면, 아니면)",
+      "shortExplanation": "후속 절의 앞에 쓰여, 앞 절의 상황과 반대로 가정할 때 발생할 수 있는 부정적인 결과나 바람직하지 못한 사태를 이끕니다('그렇지 않으면', '안 그러면').",
+      "longExplanation": "'要不'(yàobù), '不然'(bùrán), '要不然'(yàobùrán)은 반대 가정을 나타내는 접속사로, 복문의 두 번째 절 서두에 놓입니다. 앞 절에서 실제 발생한 긍정적 사실이나 반드시 취해야 할 행동을 언급한 뒤, '그렇지 않다면 / 그렇지 않았더라면'이라는 반대 조건을 제시하여 초래되었을 부정적인 결과나 손실을 서술합니다. '不然'은 서면어와 구어 모두에 쓰이며, '要不'와 '要不然'은 일상 대화(구어)에서 특히 널리 사용됩니다(예: '快点儿，要不然来不及了' 서둘러, 안 그러면 늦어). 한국어의 '그렇지 않으면', '안 그러면', '아니면'에 해당합니다.",
+      "formation": "절1 (사실·조건), 要不 / 不然 / 要不然 + 절2 (부정적 결과·가정)",
+      "examples": [
+        {
+          "translation": "다행히 너를 만났지, 그렇지 않았으면 나 오늘 분명 지각했을 거야."
+        }
+      ]
+    },
+    "zh_要不不然要不然_459": {
+      "title": "要不 / 不然 / 要不然 (제안·권유: 아니면 차라리 ~하는 게 어때, 그럼 차라리)",
+      "shortExplanation": "후속 절의 서두에 쓰여, 부드럽고 완곡한 어조로 다른 대안이나 해결책을 제안할 때 사용합니다('아니면', '차라리 ~하는 게 어때').",
+      "longExplanation": "'要不'(yàobù), '不然'(bùrán), '要不然'(yàobùrán)은 문제 상황이나 곤란한 처지에 직면했을 때, 상대를 배려하며 완곡하게 새로운 대안이나 해결책을 제안(상담)하는 표현으로도 쓰입니다. 앞 절에서 상황이나 이유를 제시한 뒤, '아니면 이렇게 하는 것은 어떨까?', '차라리 ~하자'라는 뜻으로 부드럽게 권유합니다. 문장 끝에 어기조사 '吧'를 동반하여 제안의 어조를 한층 부드럽게 만드는 경우가 많습니다. 구어에서는 '要不'와 '要不然'이 주도적으로 쓰입니다. 한국어의 '아니면 (차라리)', '그렇지 않으면 ~하는 편이 어때'에 해당합니다.",
+      "formation": "절1 (상황·이유), 要不 / 不然 / 要不然 + 주어 + 동사구 (+ 吧)",
+      "examples": [
+        {
+          "translation": "오늘 너무 늦었으니, 아니면 내일 출발하는 게 어때요?"
+        }
+      ]
+    },
+    "zh_彼此V_460": {
+      "title": "彼此 + 동사 (상호 부사어: 서로 ~하다, 피차 ~하다)",
+      "shortExplanation": "대명사 '彼此'가 동사 앞에서 부사어로 쓰여, 양방이 서로에게 상호 동작을 행함을 나타냅니다('서로 ~하다', '피차 ~하다').",
+      "longExplanation": "'彼此'(bǐcǐ)는 양쪽 쌍방(이쪽과 저쪽)을 가리키는 대명사로, 술어 동사 앞에 놓여 상호 작용을 나타내는 부사어 역할을 합니다. 주어는 반드시 복수이거나 상호 관계를 맺고 있는 두 대상을 가리키며, 뒤따르는 동사는 상호 간의 행위를 나타내는 2음절 동사(帮助 돕다, 信任 신뢰하다, 了解 이해하다, 尊重 존중하다, 照顾 돌보다 등)가 주로 쓰입니다. '互相'(서로)과 의미가 매우 유사하지만, '彼此'는 두 당사자 간의 대등한 쌍방 관계를 한층 강조하는 뉘앙스가 있습니다. 한국어의 '서로 ~하다', '피차 ~하다'에 해당합니다.",
+      "formation": "주어 (복수/쌍방) + 彼此 + 동사",
+      "examples": [
+        {
+          "translation": "좋은 친구는 서로 도와야 합니다."
+        }
+      ]
+    },
+    "zh_彼此_461": {
+      "title": "彼此 (대명사: 서로, 피차, 쌍방, 양자)",
+      "shortExplanation": "두 당사자(이쪽과 저쪽) 쌍방을 가리키는 대명사로, 주로 관형어(彼此的), 목적어, 주어로 쓰입니다('서로의', '피차의', '양측').",
+      "longExplanation": "'彼此'(bǐcǐ)는 '이쪽'(此)과 '저쪽'(彼)을 아울러 가리키는 대명사로, 두 사람 혹은 두 집단의 양쪽 쌍방을 가리킵니다. 동사를 수식하는 부사어 용법 외에도 독립적인 대명사로서 관형어(彼此的 + 명사), 목적어, 주어 역할을 수행합니다. 특히 '彼此的 ＋ 명사' 형식으로 쓰여 두 사람 사이의 소유나 관계를 나타낼 때 흔히 쓰입니다(예: '彼此的爱好' 서로의 취미, '彼此的了解' 상호 간의 이해, '拉近彼此的距离' 서로의 거리를 좁히다). 또한 사자성어 '不分彼此'(너 나 할 것 없이 한집안 같다)처럼 목적어로도 사용됩니다. 한국어의 '서로의', '피차', '양자 간'에 해당합니다.",
+      "formation": "彼此 (+ 的) + 명사 (또는 주어·목적어)",
+      "examples": [
+        {
+          "translation": "우리 서로의 취미는 같습니다."
+        }
+      ]
+    },
+    "zh_彼此彼此_462": {
+      "title": "彼此彼此 (관용구: 피장파장이다, 오십보백보이다, 도긴개긴이다, 서로 마찬가지다)",
+      "shortExplanation": "대명사 '彼此'를 중첩한 구어 관용구로, 두 사람의 수준, 처지, 실력 등이 엇비슷하여 별반 다를 바 없음을 나타냅니다('피차일반이다', '피장파장이다').",
+      "longExplanation": "'彼此彼此'(bǐcǐbǐcǐ)는 구어에서 빈번하게 쓰이는 정형화된 관용 표현입니다. 두 사람의 능력, 성적, 처지, 결점 등이 엇비슷하여 누가 낫고 못할 것이 없음을 의미합니다. 주된 화용 기능은 두 가지입니다. 첫째, 상대방의 칭찬에 대해 겸양의 뜻을 표하며 '저나 당신이나 마찬가지입니다(피차일반입니다)'라고 대답할 때 씁니다. 둘째, 친한 사이에 상대가 자신을 놀리거나 지적할 때 '너나 나나 똑같다(피장파장이다 / 도긴개긴이다)'라며 맞받아칠 때 사용합니다. 한국어의 '피장파장이다', '도긴개긴이다', '오십보백보이다', '피차일반이다'에 해당합니다.",
+      "formation": "주어 (우리 둘 / 쌍방) + 彼此彼此 (또는 단독 응답구로 사용)",
+      "examples": [
+        {
+          "translation": "우리 둘 다 피장파장이야, 나도 너보다 그림을 크게 잘 그리는 것도 아닌걸."
+        }
+      ]
+    },
+    "zh_算_463": {
+      "title": "算 (동사: ~로 치다, ~로 간주하다, ~로 셈하다)",
+      "shortExplanation": "어떤 사물이나 상황을 특정한 자격, 기준에 도달한 것으로 인정하거나, 임시로 그러한 것으로 규정함을 나타냅니다('~로 치다', '~인 셈 치다').",
+      "longExplanation": "동사 '算'(suàn)은 '계산하다'라는 본래 의미에서 파생되어, 어떤 대상을 특정한 자격이나 범주에 드는 것으로 인정하거나 그렇게 평가함을 나타냅니다. 또한 예문처럼 어떤 사실이나 행동을 잠정적으로 '그렇게 한 셈 치다', '~로 간주하다'라고 처리할 때도 널리 사용됩니다(흔히 '就算……'이나 '算作'의 형태로 쓰임). 객관적인 평가 구문(예: '这算不了什么' 이건 아무것도 아니다, '他算是一个人才' 그는 인재라고 할 만하다)과 임시 규정 구문 모두에 자주 쓰입니다. 한국어의 '~로 치다', '~인 셈 치다', '~라고 보다/간주하다'에 해당합니다.",
+      "formation": "주어 + (就 +) 算 + 동사구 / 명사구 / 절",
+      "examples": [
+        {
+          "translation": "이 돈은 내가 너한테 빌려준 셈 칠 테니, 나중에 돈이 생기면 그때 나한테 갚아."
+        }
+      ]
+    },
+    "zh_V了掉算了_464": {
+      "title": "동사 + 了 / 掉 + 算了 (체념과 단념의 결단: 차라리 ~해 버리고 말지, 그냥 ~해 버려)",
+      "shortExplanation": "동사 뒤에 결과보어 '了'나 '掉'가 오고 뒤이어 '算了'가 붙어, 더 이상 미련을 두지 않고 차라리 그 동작을 행하여 끝내버리겠다는 결단이나 체념을 나타냅니다('~해 버리고 말지 뭐').",
+      "longExplanation": "'算了'(suànle)는 '그만두다', '됐다'라는 의미로 일을 종결짓거나 체념할 때 쓰이는 표현입니다. '동사 + 了/掉 + 算了' 구문은 더 이상 미련을 갖거나 고민하지 않고, 차라리 그 행동을 실행해서 골치 아픈 문제를 매듭짓거나 털어버리겠다는 체념 섞인 결단을 나타냅니다. 주로 물건을 처분하거나 관계를 정리할 때 자주 쓰입니다(예: '扔掉算了' 그냥 버려버리고 말지, '卖了算了' 차라리 팔아버려라, '删掉算了' 그냥 지워버려). 한국어의 '차라리 ~해 버리고 말지', '그냥 ~해 버려라'에 해당합니다.",
+      "formation": "주어 + (把 + 목적어 +) 동사 + 了 / 掉 + 算了",
+      "examples": [
+        {
+          "translation": "고작 빈 병 하나일 뿐이잖아? 그냥 버려버리고 말지 뭐."
+        }
+      ]
+    },
+    "zh_作为N_465": {
+      "title": "作为 + 명사 (개사: ~로서, ~의 신분으로, ~의 입장에서)",
+      "shortExplanation": "신분, 자격, 지위, 역할을 나타내는 명사 앞에 쓰여, 그러한 자격이나 입장에서 사물을 대하거나 행동함을 나타냅니다('~로서', '~의 입장에서').",
+      "longExplanation": "'作为'(zuòwéi)는 개사(전치사)로 쓰여, 인물의 신분, 직책, 자격, 또는 사물의 속성을 이끌어 문장 앞부분에서 부사어로 기능합니다. '어떤 자격이나 입장에 서서'라는 전제를 제시하며, 이어지는 본문에서는 그 자격에 걸맞은 행동, 책임, 태도 또는 고유한 특징이 서술됩니다(예: '作为一名学生' 학생으로서, '作为队长' 주장으로서). 격식 있는 문어와 일상 구어 모두에서 광범위하게 쓰입니다. 한국어의 '~로서'(신분·자격), '~의 입장에서'에 해당합니다.",
+      "formation": "作为 + 명사 (신분 / 자격 / 역할), 주어 + 술어",
+      "examples": [
+        {
+          "translation": "대작가이자 위대한 학자로서, 루쉰은 음식에 매우 조예가 깊었다(까다로웠다)."
+        }
+      ]
+    },
+    "zh_曾经_466": {
+      "title": "曾经 (시간부사: 일찍이, 이전에, 한때 ~했었다)",
+      "shortExplanation": "동사 앞에 쓰여, 과거의 어떤 시점에 동작이나 상태가 일어난 적이 있으며 현재는 이미 종료되었음을 나타냅니다('일찍이', '이전에 ~한 적이 있다').",
+      "longExplanation": "'曾经'(céngjīng)은 과거의 행위나 경험을 나타내는 시간부사입니다. 술어 동사 앞에 놓이며, 동태조사 '过'나 '了'와 자주 호응합니다. 과거의 특정 시기에 그 행동을 실행했거나 그러한 상태가 존재했으나, 현재는 이미 끝나 더 이상 지속되지 않음을 명확히 서술합니다. 격조 높은 서면어뿐 아니라 표준적인 구어에서도 널리 활용됩니다. 부정형으로는 문어에서 '不曾', 구어에서 '从来没有' 등이 쓰입니다. 한국어의 '일찍이', '이전에', '예전에 (~한 적이 있다)'에 해당합니다.",
+      "formation": "주어 + 曾经 + 동사 (+ 过 / 了)",
+      "examples": [
+        {
+          "translation": "공자는 일찍이 제자들을 데리고 14년 동안 제국을 유람하며 자신의 사상을 전파했다."
+        }
+      ]
+    },
+    "zh_毕竟_467": {
+      "title": "毕竟 (부사: 결국, 어쨌든, 뭐니 뭐니 해도, 결국에는)",
+      "shortExplanation": "여러 우여곡절을 거친 뒤의 최종 귀결이나, 부인할 수 없는 근본적인 원인·이유를 강조할 때 쓰입니다('결국', '뭐니 뭐니 해도', '어쨌든').",
+      "longExplanation": "'毕竟'(bìjìng)은 어기부사로, 다양한 상황이나 변수를 고려하더라도 결국 도달하게 되는 결론이나 가장 근본적인 사실을 강조합니다. 주요 화용 기능은 두 가지입니다. 첫째, 온갖 시련이나 어려움을 겪었음에도 불구하고 마침내 얻어낸 최종 결과를 긍정적으로 강조할 때 쓰입니다(예: 예문처럼 '비록 어려웠지만 결국 완수했다'). 둘째, '그는 어쨌든 아직 아이잖아'처럼 용서하거나 이해할 수밖에 없는 근본적인 이유나 본질적 속성을 짚을 때 쓰입니다. 한국어의 '결국', '어찌 되었든', '뭐니 뭐니 해도', '따지고 보면'에 해당합니다.",
+      "formation": "(접속사 +) 주어 + 毕竟 + 술어 (또는 문두에서: 毕竟 + 문장)",
+      "examples": [
+        {
+          "translation": "우리가 많은 어려움을 겪긴 했지만, 어찌 되었든 결국 임무를 완수했습니다."
+        }
+      ]
+    },
+    "zh_逐渐_468": {
+      "title": "逐渐 (부사: 점차, 서서히, 점진적으로, 차츰차츰)",
+      "shortExplanation": "시간의 흐름에 따라 정도, 수량, 상태가 순차적으로 조금씩 점진적으로 변화해 감을 나타내는 부사입니다('점차', '서서히').",
+      "longExplanation": "'逐渐'(zhújiàn)은 사물의 발전이나 상태의 변화가 급작스럽지 않고 단계적으로 차근차근 진행됨을 나타내는 부사입니다. 변화를 나타내는 동사나 형용사(恢复 회복되다, 适应 적응하다, 减少 줄다, 改善 개선되다 등) 앞에 놓여 부사어 역할을 합니다. 구어에서 쓰이는 '渐渐'이나 '慢慢'보다 서면어적 색채가 짙으며, 논설문이나 보도 기사 등 공식적인 문맥에서 빈번히 사용됩니다. 한국어의 '점차', '서서히', '차츰', '점진적으로'에 해당합니다.",
+      "formation": "주어 + 逐渐 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "먹이가 점점 줄어들자, 노인은 원숭이들의 식사량을 점차 제한할 수밖에 없었다."
+        }
+      ]
+    },
+    "zh_或许_469": {
+      "title": "或许 (부사: 어쩌면, 혹시, 아마도, 이를테면)",
+      "shortExplanation": "어떤 상황이 발생할 가능성에 대해 단정하지 않고 조심스럽게 추측함을 나타내는 부사입니다('어쩌면', '혹시').",
+      "longExplanation": "'或许'(huòxǔ)는 추측과 불확실한 판단을 나타내는 부사로, 주어 앞이나 서술어 앞에 놓여 쓰입니다. 화자가 100% 확신할 수는 없지만 그럴 가능성이 충분히 존재한다고 여길 때 조심스럽게 의견이나 예상을 제시하는 역할을 합니다. 구어의 '也许'나 '可能'과 의미가 유사하나, '或许'는 보다 세련되고 차분한 서면어적 뉘앙스를 지닙니다. 한국어의 '어쩌면', '혹시', '아마도 (~일지도 모른다)'에 해당합니다.",
+      "formation": "(주어 +) 或许 (+ 주어 +) 술어",
+      "examples": [
+        {
+          "translation": "예전에는 그녀가 당신을 지지하지 않았지만, 어쩌면 이번에는 변화가 있을지도 모릅니다."
+        }
+      ]
+    },
+    "zh_V过来_470": {
+      "title": "동사 / 형용사 + 过来 (파생방향보어: 정신이 들다, 원래 상태로 회복되다, 되돌아오다)",
+      "shortExplanation": "파생방향보어 '过来'가 동사나 형용사 뒤에 쓰여, 혼미하거나 비정상적이거나 그릇된 상태에서 정상적이고 올바른 상태로 회복됨을 나타냅니다('되돌아오다', '회복되다', '정신이 들다').",
+      "longExplanation": "'过来'(guòlai)는 방향보어의 파생 용법으로 쓰일 때 '회복'이나 '정상화'를 나타냅니다. 혼수상태, 질병, 피로, 착각, 그릇된 상태 등 부정적이고 비정상적인 상황에서 벗어나, 의식을 되찾거나 건강하고 맑은 정상 상태로 돌아오는 변화를 묘사합니다. '醒'(깨다), '清醒'(맑아지다/정신을 차리다), '缓'(숨을 돌리다), '救'(살려내다), '改'(고치다) 등의 어휘 뒤에 결합하여 쓰입니다(예: '苏醒过来' 의식을 되찾다, '缓过来了' 기운을 차렸다). 한국어의 '되돌아오다', '회복하다', '정신이 들다'에 해당합니다.",
+      "formation": "주어 + 동사 / 형용사 (醒 / 清醒 / 缓 / 救 / 改 등) + 过来",
+      "examples": [
+        {
+          "translation": "한참이 지나서야 머리가 비로소 맑아져 정신이 돌아왔다."
+        }
+      ]
+    },
+    "zh_V得过来V不过来_471": {
+      "title": "동사 + 得过来 / 不过来 (가능보어: 다 감당해 내다 / 다 감당해 내지 못하다, 다 ~해 낼 수 있다 / 없다)",
+      "shortExplanation": "일의 양이나 대상의 수가 너무 많아서 주어진 시간이나 능력 안에서 다 감당해 내거나 처리할 수 있는지 여부를 나타내는 가능보어입니다('다 ~할 수 있다 / 없다', '~해 내지 못하다').",
+      "longExplanation": "'V 得过来'와 부정형 'V 不过来'는 업무량, 과업, 혹은 대상의 수량이 방대할 때 시간적·체력적·능력적으로 그것을 모두 처리하고 감당해 낼 수 있는지를 나타내는 가능보어 구문입니다. 긍정형 'V得过来'는 '전부 다 처리해 낼 수 있다', 부정형 'V不过来'는 '양이 너무 많아서 도저히 다 감당하지 못하다, 손이 미치지 못하다'라는 뜻을 나타냅니다. 실생활에서는 주로 부정형이나 반어 의문문 형식으로 압도적인 일거리나 수량을 묘사할 때 자주 쓰입니다(예: '忙不过来' 너무 바빠서 손이 모자라다, '数不过来' 다 셀 수 없을 만큼 많다, '看不过来' 다 볼 수가 없다, '照顾不过来' 다 돌볼 수가 없다). 한국어의 '다 ~해 낼 수 있다 / 없다', '다 감당해 내다 / 감당하지 못하다'에 해당합니다.",
+      "formation": "주어 + (목적어 +) 동사 + 得过来 / 不过来",
+      "examples": [
+        {
+          "translation": "하늘의 별이 저렇게 많은데, 누가 다 셀 수 있겠어요?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_V来V去_457": {
+      "title": "动词 + 来 + 动词 + 去（动词重叠格式，表示动作反复进行或来回往复）",
+      "shortExplanation": "由相同的单音节动词与“来”、“去”组合，表示动作在一定空间内来回往复，或某一动作反复多次进行。",
+      "longExplanation": "“V来V去”（V lái V qù）是口语中常用的动词重叠固定格式。中间所嵌动词通常为相同的单音节动词。主要有两种表意功能：一是用于表示空间位移的动词（如“跑、走、飞、游、转”等），表示动作没有固定方向地来回往返、四处移动（如“走来走去”、“飞来飞去”）；二是用于思维、观察、挑选类动词（如“想、看、挑、问、查”等），表示某一行为反复多次进行，常带有犹豫不决、耗费时间或多方权衡的意味（如“想来想去”、“挑来挑去”、“看来看去”）。",
+      "formation": "主语 + 动词 + 来 + 动词 + 去",
+      "examples": [
+        {
+          "translation": "小狗追着自己的尾巴，在草地上跑来跑去。"
+        }
+      ]
+    },
+    "zh_要不不然要不然_458": {
+      "title": "要不 / 不然 / 要不然（连词：反面假设，相当于“如果不这样的话”）",
+      "shortExplanation": "连词，用在后一分句句首，从反面假设某种情况，引出如果不那样做将会出现的不良后果；相当于“如果不这样就……”。",
+      "longExplanation": "“要不”（yàobù）、“不然”（bùrán）和“要不然”（yàobùrán）都是表示反面假设的连词。常用于复句的后一分句句首，连接前后两个分句。前一分句提出某种积极事实、现有条件或必须采取的行动，后一分句则假设如果不符合前述情况，将会产生消极、不利或令人遗憾的后果。“不然”书面语和口语均可使用，而“要不”、“要不然”则更多见于日常口语交流（如“你快去医院看看吧，要不然病情会加重的”）。",
+      "formation": "分句1（事实 / 行动），要不 / 不然 / 要不然 + 分句2（反面假设导致的不良结果）",
+      "examples": [
+        {
+          "translation": "还好碰见你了，要不/不然/要不然我今天肯定要迟到了。"
+        }
+      ]
+    },
+    "zh_要不不然要不然_459": {
+      "title": "要不 / 不然 / 要不然（表示商量、提议：不如、或者、要不这样）",
+      "shortExplanation": "用在分句开头，以商量、委婉的语气提出另一种选择、替代方案或建议；相当于“不如”、“或者”。",
+      "longExplanation": "“要不”（yàobù）、“不然”（bùrán）和“要不然”（yàobùrán）还常用作提出建议或协商解决办法的关联词语。在遇到某种客观限制或不便时，说话人以此引出一种新的替代选择，语气委婉商量，给对方留出考虑的余地。句子末尾常搭配语气助词“吧”，使语气更加亲切温和。在此类用法中，口语里以“要不”和“要不然”最为常用（如“外面雨太大了，要不咱们打车去吧”）。",
+      "formation": "分句1（说明情况 / 客观原因），要不 / 不然 / 要不然 + 建议分句（+ 吧）",
+      "examples": [
+        {
+          "translation": "今天太晚了，要不/不然/要不然你明天再走吧。"
+        }
+      ]
+    },
+    "zh_彼此V_460": {
+      "title": "彼此 + 动词（人称代词作状语，表示双方互相对待的动作行为）",
+      "shortExplanation": "代词“彼此”放在动词前作状语，表示双方相互、彼此对待的关系；相当于“互相”。",
+      "longExplanation": "“彼此”（bǐcǐ）是指代双方（这一方和那一方）的人称代词。在句中作状语置于动词前时，修饰动作行为的交互性，表示双方之间存在相互的动作或态度。后面常接表示人际交往或心理互动的双音节动词（如“帮助、了解、尊重、信任、照顾、包容”等）。其语义功能与“互相”相近，但“彼此”在构词上更突显“彼”与“此”两方的对应与对等（如“彼此尊重”、“彼此关怀”）。",
+      "formation": "主语（双方 / 复数）+ 彼此 + 动词（双音节动作动词）",
+      "examples": [
+        {
+          "translation": "好朋友应该彼此帮助。"
+        }
+      ]
+    },
+    "zh_彼此_461": {
+      "title": "彼此（人称代词：双方、彼此之间、你我之间）",
+      "shortExplanation": "指代双方的人称代词，主要在句中充当定语（彼此的）、主语或宾语；表示“双方的、相互之间的”。",
+      "longExplanation": "“彼此”（bǐcǐ）是由“彼”（那一方）和“此”（这一方）构成的指代双方的代词。除了作状语修饰动词外，它还常作为体词性成分在句中充当定语、主语或宾语。最典型的用法是作定语，修饰名词中心语（通常带“的”），如“彼此的观点”、“彼此的生活”、“增进彼此的感情”、“拉近彼此的距离”等；亦可充当成语或习惯表达的宾语，如“不分彼此”（关系极亲密，不分你我）。",
+      "formation": "彼此（+ 的）+ 名词（或充当主语 / 宾语）",
+      "examples": [
+        {
+          "translation": "我们彼此的爱好相同。"
+        }
+      ]
+    },
+    "zh_彼此彼此_462": {
+      "title": "彼此彼此（熟语 / 口语常用套语：大家都一样，常用于客套谦虚或戏谑回应）",
+      "shortExplanation": "代词“彼此”的重叠形式，常作谓语或独立成句，表示双方情况、程度或水平差不多，无甚差别；“彼此一样”。",
+      "longExplanation": "“彼此彼此”（bǐcǐbǐcǐ）是汉语口语中高频出现的熟语。表示双方在水平、状况、遭遇或缺点等方面完全对等、不相上下。其语用情境主要有两种：一是用于社交应酬中的谦逊客套，在受到对方赞美、夸奖时，以此回应表示“大家都一样，彼此半斤八两，我并不比您高明”；二是用在熟人、朋友之间相互打趣调侃，对方指出自己的不足时，以此反驳表示“你我也差不多，彼此彼此”。既可作分句的谓语，也可以单独成句。",
+      "formation": "双方 / 咱们俩 + 彼此彼此（或独立作应答语）",
+      "examples": [
+        {
+          "translation": "咱们俩彼此彼此，我画得比你好不了多少。"
+        }
+      ]
+    },
+    "zh_算_463": {
+      "title": "算（动词：表示承认、认定或当作某种性质、状态看待）",
+      "shortExplanation": "动词，表示认作、当作、折合，即把某人或某事物归入某种范围、资格或暂时作为某种情况来处理；“算是”、“当作”。",
+      "longExplanation": "“算”（suàn）在此表示肯定判断与认定。它不再表示数学上的“计算”，而是指将某种事物、行为或数额视作、认同为某种性质或归属。用法主要有两种：一是根据标准进行评定，表示具备了某种资格或程度（如“这样才算合格”、“他算得上一个好学者”）；二是表示暂且把事情当作某种性质来协商或处理（常与“就”搭配连用成“就算”），在双方之间确立一种虚拟的认知关系（如“这顿饭就算我请你的”）。",
+      "formation": "主语 +（就 +）算 +（动词短语 / 名词短语 / 小句）",
+      "examples": [
+        {
+          "translation": "这钱就算我借给你的，将来你有了的时候再还我。"
+        }
+      ]
+    },
+    "zh_V了掉算了_464": {
+      "title": "动词 + 了 / 掉 + 算了（表示拿定主意，索性采取某行动以求省事、了结）",
+      "shortExplanation": "动词后接表示完成或脱离的结果补语“了”、“掉”，再加“算了”，表示不再犹豫执着，索性通过采取该行动来彻底了结事情；“索性……得了”。",
+      "longExplanation": "“算了”（suànle）本义为作罢、不再计较。“动词 + 了/掉 + 算了”是一个非常地道的口语惯用结构。说话人面对令人纠结、麻烦或价值不大的事物时，拿定主意，抱着索性放手、快刀斩乱麻的态度，采取行动予以处置，从而结束纠缠，含有“索性……算了/得了”的语意（如“扔掉算了”、“卖了算了”、“吃了算了”、“删掉算了”）。",
+      "formation": "主语 +（把 + 宾语 +）动词 + 了 / 掉 + 算了",
+      "examples": [
+        {
+          "translation": "不就是一个空瓶子吗？扔掉算了。"
+        }
+      ]
+    },
+    "zh_作为N_465": {
+      "title": "作为 + 名词（介词：从某种身份、地位、资格或角度出发看待问题）",
+      "shortExplanation": "介词，引出人物的身份、资格、地位或事物的属性、角度，以此作为评价或行为的前提；相当于“以……的身份/资格”。",
+      "longExplanation": "“作为”（zuòwéi）用作介词时，后接表示身份、职位、资格、角色或事物属性的名词性词组，构成介宾短语作状语，常置于句首。它表明说话人立足于某种特定的社会角色或观察基准，进而引出与该身份相符的义务、行为方式、特殊态度或评价判断（如“作为一名医生，救死扶伤是天职”、“作为朋友，我必须提醒你”）。语体庄重且应用广泛。",
+      "formation": "作为 + 名词（身份 / 资格 / 属性），主语 + 谓语",
+      "examples": [
+        {
+          "translation": "作为大作家、大学问家，鲁迅对吃很讲究。"
+        }
+      ]
+    },
+    "zh_曾经_466": {
+      "title": "曾经（时间副词：表示从前有过某种行为或情况，现已结束）",
+      "shortExplanation": "时间副词，置于动词前，表示某种动作、经历或状态在过去发生过，现在已经结束；相当于“以前、从前”。",
+      "longExplanation": "“曾经”（céngjīng）是表示过去经历的时间副词。用在谓语动词之前作状语，常与动态助词“过”或“了”配合使用。强调某种情况或行为在过去的某个时间段内确实发生过、存在过，但该状态如今已经完结并不再持续。多用于记叙往事、传记历史、回忆经历等语境，具有较强的叙述感和典雅的语体色彩。书面语否定式常作“未曾”或“不曾”，口语常作“从来没有”。",
+      "formation": "主语 + 曾经 + 动词（+ 过 / 了）+（宾语）",
+      "examples": [
+        {
+          "translation": "孔子曾经带着学生周游各国14年，传播他的思想。"
+        }
+      ]
+    },
+    "zh_毕竟_467": {
+      "title": "毕竟（语气副词：表示追根究底所得的结论或强调根本原因）",
+      "shortExplanation": "语气副词，表示追究到最后得出的确定结论，或强调无论如何也不容忽视的根本原因、实质；相当于“到底、终归”。",
+      "longExplanation": "“毕竟”（bìjìng）是强调客观本质与必然结果的语气副词。常用于两种语境：一是虽然经历波折、困难或存在不利条件，但最终还是达成了积极结果，强调事态的最终归宿（相当于“到底、终于”）；二是用来摆出不可否认的客观事实或根本原因，作为解释某种现象、原谅某人或进行宽慰的前提（如“他毕竟还是个孩子，不懂事也是难免的”）。书面语和口语中均极其常用。",
+      "formation": "主语 + 毕竟 + 谓语（或置于分句句首：毕竟……）",
+      "examples": [
+        {
+          "translation": "虽然我们遇到了很多困难，但毕竟完成了任务。"
+        }
+      ]
+    },
+    "zh_逐渐_468": {
+      "title": "逐渐（副词：表示程度或数量随时间逐步渐进地变化）",
+      "shortExplanation": "副词，置于动词或形容词前，表示动作、状态或程度随着时间的推移逐步、有序地慢慢发展变化；相当于“渐渐、逐步”。",
+      "longExplanation": "“逐渐”（zhújiàn）是表示时间渐进和状态演变的副词。它强调事物的发展不是突发性、跳跃性的，而是顺应时间序列，由浅入深、由小到大、一步一步地缓慢变化。常用来修饰具有渐变特征的动词或形容词（如“逐渐适应”、“逐渐恢复”、“逐渐减少”、“逐渐普及”）。相较于口语色彩浓厚的“渐渐”、“慢慢”，“逐渐”具有鲜明的书面语色彩，广泛应用于新闻述评、学术著作及各类正式文献中。",
+      "formation": "主语 + 逐渐 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "食物越来越少，老人不得不逐渐限制猴子的食量。"
+        }
+      ]
+    },
+    "zh_或许_469": {
+      "title": "或许（语气副词：表示推测、估计，相当于“也许、可能”）",
+      "shortExplanation": "语气副词，表示对情况的推测和估计，带有不确定的语气；相当于“也许、说不定”。",
+      "longExplanation": "“或许”（huòxǔ）是表示推测和揣测的语气副词。可置于主语之前或主谓之间作状语。说话人对某一事实、可能性或未来演变不作绝对判断，而是留有余地地表达估量，语气委婉含蓄。在语义上与“也许”、“可能”相当，但在语体风格上比“也许”更显书卷气和典雅文质，常见于文学叙述、政论文及知识阶层的书信交流中。",
+      "formation": "（主语 +）或许（+ 主语 +）谓语短语",
+      "examples": [
+        {
+          "translation": "虽然以前她不支持你，但或许这次会有变化。"
+        }
+      ]
+    },
+    "zh_V过来_470": {
+      "title": "动词 / 形容词 + 过来（引申方向补语：由不正常、消极状态恢复到正常、积极状态）",
+      "shortExplanation": "趋向补语“过来”的引申用法，用在动词或形容词后，表示人或事物由昏迷、疲惫、异常或错误状态转变、恢复到清醒、健康或正常状态。",
+      "longExplanation": "“过来”（guòlai）充当引申趋向补语时，具有独特的表意功能：表示事物由一种不正常、消极、偏差或危险的状态转向正常、积极、良好或健康的状态。常用于指意识恢复、体力复原、改过自新等语境。常见的搭配动词和形容词有：“醒过来”（恢复知觉）、“清醒过来”（大脑恢复理智）、“缓过来”（体力或情绪缓和）、“救过来”（挽救生命脱险）、“改过来”（纠正错误回归正确）等。",
+      "formation": "主语 + 动词 / 形容词（醒 / 清醒 / 缓 / 救 / 活 / 改等）+ 过来",
+      "examples": [
+        {
+          "translation": "过了半天，脑子才清醒过来。"
+        }
+      ]
+    },
+    "zh_V得过来V不过来_471": {
+      "title": "动词 + 得过来 / 不过来（可能补语：表示在时间、精力上面对众多事物能否应付、照应或处理完）",
+      "shortExplanation": "可能补语结构，表示因事情或对象数量极多，在时间、能力或精力上能够全部应付完成（得过来），还是无法全部照应处理（不过来）。",
+      "longExplanation": "“V得过来”及其否定式“V不过来”是由趋向补语“过来”构成的可能补语格式。主要用于事物数量极其繁多、事务过于繁忙的语境。肯定式“V得过来”表示在有限的时间与精力内能够全部处理、应付完；否定式“V不过来”则表示数量过多、负担过重，凭借现有人力或时间根本应付不完、照顾不周。口语中尤以否定形式和反问句最为常用，如“忙不过来”（事务繁多手脚不够用）、“数不过来”（数量极多无法尽数）、“看不过来”（目不暇接）、“照顾不过来”（精力有限顾及不到）。",
+      "formation": "主语 +（宾语 / 数量多 +）动词 + 得过来 / 不过来",
+      "examples": [
+        {
+          "translation": "天上的星星那么多，谁数得过来呀？"
+        }
+      ]
+    }
+  }
+}

@@ -48,7 +48,8 @@ import {
   SEEK_STEP,
   FullscreenDocument,
   FullscreenElement,
-  ScreenOrientationWithLock
+  ScreenOrientationWithLock,
+  DEFAULT_FS_SUBTITLE_BOTTOM_Y
 } from './video-player.constants';
 import { GestureHandlerService, GestureEvent } from './services/gesture-handler.service';
 import { KeyboardShortcutService, KeyboardShortcutEvent } from '../../../core/services';
@@ -97,6 +98,8 @@ export class VideoPlayerComponent implements OnDestroy {
     if (!dur || dur <= 0) return 0;
     return Math.min(100, Math.max(0, (this.youtube.currentTime() / dur) * 100));
   });
+
+  readonly defaultFsSubtitleBottomY = DEFAULT_FS_SUBTITLE_BOTTOM_Y;
 
   // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
@@ -273,6 +276,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Seeking State (managed by ProgressBarComponent, tracked here for visibility)
   isDragging = signal(false);
+  isSubtitleDragging = signal(false);
 
   readonly progressBarComponent = viewChild(ProgressBarComponent);
   readonly settingsPopup = viewChild<ElementRef<HTMLElement>>('settingsPopup');
@@ -536,7 +540,7 @@ export class VideoPlayerComponent implements OnDestroy {
     });
 
     // Wire up keyboard shortcuts
-    this.keyboardShortcuts.setFsPopupVisibleCallback(() => this.fsPopupVisible());
+    this.keyboardShortcuts.setFsPopupVisibleCallback(() => this.fsPopupVisible() || this.fsGrammarPopupVisible());
     this.keyboardShortcuts.events$.pipe(takeUntilDestroyed()).subscribe(event => {
       this.ngZone.run(() => {
         this.handleKeyboardEvent(event);
@@ -646,7 +650,11 @@ export class VideoPlayerComponent implements OnDestroy {
         break;
       case 'toggle-fullscreen':
         if (event.data.action === 'close-popup') {
-          this.closeFsPopup();
+          if (this.fsGrammarPopupVisible()) {
+            this.closeFsGrammarPopup();
+          } else if (this.fsPopupVisible()) {
+            this.closeFsPopup();
+          }
         } else if (event.data.action === 'exit-fullscreen' || event.data.action === 'toggle') {
           this.toggleFullscreen();
         }
@@ -677,10 +685,27 @@ export class VideoPlayerComponent implements OnDestroy {
         this.toggleFullscreenSubtitlePosition();
         break;
       case 'nudge-subtitle-position': {
-        const current = this.settings.settings().fullscreenSubtitleYPercent ?? 94;
-        const delta = event.data.direction === 'up' ? -5 : 5;
-        const clamped = Math.max(16, Math.min(95, current + delta));
-        this.settings.setFullscreenSubtitleYPercent(clamped);
+        const current = this.settings.settings().fullscreenSubtitleYPercent ?? DEFAULT_FS_SUBTITLE_BOTTOM_Y;
+        const direction = event.data.direction;
+        let next: number;
+        if (direction === 'up') {
+          if (current > 55) {
+            next = Math.max(55, current - 5);
+          } else if (current > 45) {
+            next = 45; // Jump across center dead zone
+          } else {
+            next = Math.max(3, current - 5);
+          }
+        } else {
+          if (current < 45) {
+            next = Math.min(45, current + 5);
+          } else if (current < 55) {
+            next = 55; // Jump across center dead zone
+          } else {
+            next = Math.min(98.5, current + 5);
+          }
+        }
+        this.settings.setFullscreenSubtitleYPercent(next);
         break;
       }
       case 'cycle-font-size':
@@ -712,8 +737,13 @@ export class VideoPlayerComponent implements OnDestroy {
     const isFs = !!(doc.fullscreenElement || doc.webkitFullscreenElement);
     this.isFullscreen.set(isFs);
     this.fullscreenChanged.emit(isFs);
-    if (!isFs && this.fsPopupVisible()) {
-      this.closeFsPopup();
+    if (!isFs) {
+      if (this.fsPopupVisible()) {
+        this.closeFsPopup();
+      }
+      if (this.fsGrammarPopupVisible()) {
+        this.closeFsGrammarPopup();
+      }
     }
   }
 
@@ -723,7 +753,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   onMouseLeave() {
     // Simple version - CSS handles desktop vs mobile via pointer-events
-    if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+    if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.fsGrammarPopupVisible() && !this.isDragging() && !this.isSubtitleDragging()) {
       this.areControlsVisible.set(false);
       this.isVolumeSliderVisible.set(false);
       if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
@@ -739,7 +769,7 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   private startControlsAutoHide() {
-    if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible()) {
+    if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.fsGrammarPopupVisible() && !this.isDragging() && !this.isSubtitleDragging()) {
       this.hideControlsAfterDelay(3000);
     }
   }
@@ -751,7 +781,7 @@ export class VideoPlayerComponent implements OnDestroy {
     this.controlsTimeout = setTimeout(() => {
       // Re-enter zone for the check and update
       this.ngZone.run(() => {
-        if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.isDragging()) {
+        if (this.youtube.intendedPlayingState() && !this.isPlayerSettingsOpen() && !this.fsPopupVisible() && !this.fsGrammarPopupVisible() && !this.isDragging() && !this.isSubtitleDragging()) {
           this.areControlsVisible.set(false);
           this.isVolumeSliderVisible.set(false);
           if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
@@ -1253,6 +1283,10 @@ export class VideoPlayerComponent implements OnDestroy {
           const newState = !this.isFullscreen();
           this.isFullscreen.set(newState);
           this.fullscreenChanged.emit(newState);
+          if (!newState) {
+            if (this.fsPopupVisible()) this.closeFsPopup();
+            if (this.fsGrammarPopupVisible()) this.closeFsGrammarPopup();
+          }
           return;
         }
 
@@ -1267,6 +1301,10 @@ export class VideoPlayerComponent implements OnDestroy {
       const newState = !this.isFullscreen();
       this.isFullscreen.set(newState);
       this.fullscreenChanged.emit(newState);
+      if (!newState) {
+        if (this.fsPopupVisible()) this.closeFsPopup();
+        if (this.fsGrammarPopupVisible()) this.closeFsGrammarPopup();
+      }
     }
   }
 
@@ -1276,6 +1314,12 @@ export class VideoPlayerComponent implements OnDestroy {
 
   onFullscreenWordClick(token: Token, sentence: string, event: Event): void {
     event.stopPropagation();
+
+    // Mutual exclusivity: close any active grammar popup first
+    if (this.fsGrammarPopupVisible()) {
+      this.closeFsGrammarPopup();
+    }
+
     this.youtube.acquirePauseLock('fs-word-lookup');
 
     if (!this.isFullscreen()) {
@@ -1286,7 +1330,6 @@ export class VideoPlayerComponent implements OnDestroy {
     this.fsSelectedWord.set(token);
     this.fsSelectedSentence.set(sentence);
     this.fsPopupVisible.set(true);
-    this.showControls();
   }
 
   closeFsPopup(): void {
@@ -1304,10 +1347,14 @@ export class VideoPlayerComponent implements OnDestroy {
     event.stopPropagation();
     const match = this.getFsGrammarMatchForToken(index);
     if (match) {
+      // Mutual exclusivity: close any active word popup first
+      if (this.fsPopupVisible()) {
+        this.closeFsPopup();
+      }
+
       this.youtube.acquirePauseLock('fs-grammar-lookup');
       this.fsSelectedGrammarPattern.set(match.pattern);
       this.fsGrammarPopupVisible.set(true);
-      this.showControls();
     }
   }
 
@@ -1366,6 +1413,14 @@ export class VideoPlayerComponent implements OnDestroy {
   }
 
   closeVideo(): void {
+    if (this.fsPopupVisible()) {
+      this.closeFsPopup();
+    }
+    if (this.fsGrammarPopupVisible()) {
+      this.closeFsGrammarPopup();
+    }
+    this.youtube.releasePauseLock('fs-subtitle-drag');
+
     // Reset playback and clear video state first so showLearnHome never transitions true -> false -> true
     this.youtube.reset();
     this.playerView.reset();
@@ -1404,6 +1459,16 @@ export class VideoPlayerComponent implements OnDestroy {
 
   toggleFullscreenSubtitlePosition(): void {
     this.settings.toggleFullscreenSubtitlePosition();
+  }
+
+  onSubtitleDragStarted(): void {
+    this.isSubtitleDragging.set(true);
+    this.clearControlsTimeout();
+  }
+
+  onSubtitleDragEnded(): void {
+    this.isSubtitleDragging.set(false);
+    this.startControlsAutoHide();
   }
 
   // ============================================
@@ -1560,6 +1625,14 @@ export class VideoPlayerComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.isDestroyed = true;
+    if (this.fsPopupVisible()) {
+      this.closeFsPopup();
+    }
+    if (this.fsGrammarPopupVisible()) {
+      this.closeFsGrammarPopup();
+    }
+    this.youtube.releasePauseLock('fs-subtitle-drag');
+
     if (this.waitForElementTimeout) {
       clearTimeout(this.waitForElementTimeout);
       this.waitForElementTimeout = null;

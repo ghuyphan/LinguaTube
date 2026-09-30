@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Subject, Observable } from 'rxjs';
 import { YoutubeService } from '../../features/video/youtube.service';
 import { QuizService } from '../../features/video/quiz.service';
+import { BottomSheetService } from '../../services/bottom-sheet.service';
 import { SEEK_STEP, ARROW_SEEK_STEP, FRAME_STEP } from '../../features/video/video-player/video-player.constants';
 
 export type KeyboardShortcutEvent =
@@ -35,6 +36,7 @@ export class KeyboardShortcutService implements OnDestroy {
     private ngZone = inject(NgZone);
     private youtube = inject(YoutubeService);
     private quiz = inject(QuizService);
+    private bottomSheet = inject(BottomSheetService);
 
     private eventSubject = new Subject<KeyboardShortcutEvent>();
     readonly events$: Observable<KeyboardShortcutEvent> = this.eventSubject.asObservable();
@@ -130,6 +132,11 @@ export class KeyboardShortcutService implements OnDestroy {
 
         // 4. Escape handling
         if (event.code === 'Escape') {
+            // If multiple bottom sheets are stacked (e.g. OptionPicker on top of WordPopup),
+            // allow BottomSheetService to close the top sheet first rather than dismissing the whole popup.
+            if (this.bottomSheet.depth > 1) {
+                return false;
+            }
             if (activeFsPopup) {
                 this.emitEvent({ type: 'toggle-fullscreen', data: { action: 'close-popup' } });
                 return true;

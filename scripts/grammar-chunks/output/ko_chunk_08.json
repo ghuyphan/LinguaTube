@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_을를_26": {
+      "title": "~을/를 빼다 (Ngoại trừ, trừ ... ra)",
+      "shortExplanation": "Biểu thị việc loại trừ một đối tượng, hành động hoặc sự vật nào đó ra khỏi một tập hợp hay phạm vi.",
+      "longExplanation": "'~을/를 빼다' (trong khẩu ngữ thường dùng ở dạng '~을/를 빼고' hoặc '~을/를 빼고요') mang ý nghĩa 'ngoại trừ', 'trừ ... ra', dùng để biểu thị việc loại bỏ một người, sự vật hoặc hành động ra khỏi một phạm vi hay tổng thể nào đó. Đứng trước là danh từ (hoặc cụm danh từ hóa dạng '-는 것을'), đi kèm tiểu từ tân ngữ '을/를' và động từ '빼다' (trừ đi, bỏ ra).",
+      "formation": "Danh từ có patchim + 을 빼다 / Danh từ không có patchim + 를 빼다 (khẩu ngữ: Danh từ + 을/를 빼고)",
+      "examples": [
+        {
+          "translation": "Anh ấy chẳng làm gì cả, ngoại trừ việc vẽ tranh."
+        },
+        {
+          "translation": "Tất cả học sinh đều tập thể dục sau giờ học, trừ tôi ra vì tôi bị ốm."
+        },
+        {
+          "translation": "Tôi thích tất cả các loại trái cây, ngoại trừ quả anh đào."
+        },
+        {
+          "translation": "Cho đến nay tôi đã xem tất cả các phim, trừ phim hài."
+        }
+      ]
+    },
+    "ko_을를_27": {
+      "title": "-(으)ㄹ 수 있다 (Có thể làm gì)",
+      "shortExplanation": "Vĩ tố kết thúc câu biểu thị năng lực của chủ ngữ hoặc tính khả thi của một hành động, sự việc ('có thể').",
+      "longExplanation": "'-(으)ㄹ 수 있다' là cấu trúc biểu thị khả năng hoặc tính khả thi trong tiếng Hàn, tương đương với 'có thể' trong tiếng Việt. Cấu trúc này chỉ rõ rằng chủ ngữ có đủ năng lực để làm việc gì đó hoặc hoàn cảnh khách quan cho phép hành động có thể diễn ra. Thân động từ kết thúc bằng phụ âm (ngoại trừ ㄹ) kết hợp với '-을 수 있다'; thân động từ kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' kết hợp với '-ㄹ 수 있다'. Trái nghĩa là '-(으)ㄹ 수 없다' (không thể).",
+      "formation": "Thân động từ (kết thúc bằng phụ âm trừ ㄹ) + 을 수 있다 / Thân động từ (kết thúc bằng nguyên âm hoặc ㄹ) + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "Chúng ta có thể giải quyết vấn đề này. Tôi nghĩ rằng nếu mọi người cùng hợp tác thì hoàn toàn có thể làm được."
+        },
+        {
+          "translation": "Tôi nghĩ ngày mai mình có thể tham gia cuộc họp đó, may là tôi không có lịch trình nào khác."
+        },
+        {
+          "translation": "Nếu bạn học bơi thì một ngày nào đó bạn sẽ có thể bơi lội thỏa thích, cứ nỗ lực là làm được thôi."
+        },
+        {
+          "translation": "Nếu chăm chỉ học tiếng Hàn thì cậu ấy sẽ có thể đỗ kỳ thi TOPIK, và nhất định sẽ thành công."
+        }
+      ]
+    },
+    "ko_을를_28": {
+      "title": "~을/를 통해(서) (Thông qua, qua)",
+      "shortExplanation": "Biểu thị phương tiện, phương pháp, người trung gian hoặc kênh mà qua đó một hành động được thực hiện.",
+      "longExplanation": "'~을/를 통해(서)' gắn sau danh từ để biểu thị phương tiện, con đường, người trung gian hoặc môi trường mà qua đó người nói học hỏi, truyền đạt thông tin hoặc đạt được một mục tiêu nào đó (tương đương 'thông qua', 'qua'). Danh từ có patchim kết hợp với '을 통해(서)', danh từ không có patchim kết hợp với '를 통해(서)'.",
+      "formation": "Danh từ có patchim + 을 통해(서) / Danh từ không có patchim + 를 통해(서)",
+      "examples": [
+        {
+          "translation": "Tôi đã học tiếng Hàn thông qua phim truyền hình, vì thế tôi tiếp thu các cách diễn đạt tự nhiên hơn."
+        },
+        {
+          "translation": "Chúng tôi đã điều chỉnh lịch họp thông qua email. Quản lý thời gian theo cách đó hiệu quả hơn nhiều."
+        },
+        {
+          "translation": "Anh ấy thường bộc lộ cảm xúc thông qua âm nhạc. Âm nhạc là phương tiện giao tiếp tốt nhất đối với anh ấy."
+        },
+        {
+          "translation": "Thông qua các bức ảnh, chúng ta có thể thấu hiểu và đồng cảm với cuộc sống thường nhật của người khác."
+        }
+      ]
+    },
+    "ko_을까_29": {
+      "title": "-(으)ㄹ까 (Nhé?, liệu rằng...?)",
+      "shortExplanation": "Vĩ tố kết thúc câu nghi vấn dùng để rủ rê, đề xuất đối phương cùng làm gì ('nhé?') hoặc tự hỏi, phỏng đoán ('nhỉ?', 'liệu rằng?').",
+      "longExplanation": "'-(으)ㄹ까' là vĩ tố kết thúc câu nghi vấn dạng thân mật (thêm '요' thành '-(으)ㄹ까요' mang sắc thái lịch sự). Cấu trúc này thường dùng trong hai trường hợp chính: (1) Rủ rê, đề xuất đối phương cùng làm một việc gì đó ('Chúng mình... nhé?'); (2) Biểu thị sự phân vân, phỏng đoán hoặc tự hỏi bản thân về một việc nào đó ('Liệu có... không nhỉ?'). Thân động từ kết thúc bằng phụ âm (trừ ㄹ) kết hợp với '-을까', kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' kết hợp với '-ㄹ까'.",
+      "formation": "Thân động từ (kết thúc bằng phụ âm trừ ㄹ) + 을까 / Thân động từ (kết thúc bằng nguyên âm hoặc ㄹ) + ㄹ까",
+      "examples": [
+        {
+          "translation": "Cuối tuần này chúng mình đi cắm trại thử nhé?"
+        },
+        {
+          "translation": "Ngày mai xem phim nhé?"
+        },
+        {
+          "translation": "Tối nay chúng mình đi ăn tối ở nhà hàng nhé?"
+        },
+        {
+          "translation": "Học xong ở trung tâm thì tụi mình cùng nhau học bài nhé?"
+        }
+      ]
+    },
+    "ko_을래_30": {
+      "title": "-(으)ㄹ래(요) (Muốn làm gì, sẽ làm gì)",
+      "shortExplanation": "Vĩ tố kết thúc câu khẩu ngữ dùng để bày tỏ ý định, mong muốn của người nói hoặc hỏi ý muốn của đối phương.",
+      "longExplanation": "'-(으)ㄹ래(요)' là vĩ tố kết thúc câu thân mật trong khẩu ngữ tiếng Hàn, dùng để: (1) Thể hiện ý muốn hoặc quyết định của bản thân người nói ('Tôi muốn...', 'Tôi sẽ...'); (2) Khi dùng ở dạng câu hỏi, dùng để hỏi nhẹ nhàng ý muốn của người nghe ('Cậu có muốn... không?'). Thân động từ kết thúc bằng phụ âm (ngoại trừ ㄹ) kết hợp với '-을래(요)'; thân động từ kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' kết hợp với '-ㄹ래(요)'. Thêm '요' vào cuối câu để biểu thị sự lịch sự.",
+      "formation": "Thân động từ (kết thúc bằng phụ âm trừ ㄹ) + 을래(요) / Thân động từ (kết thúc bằng nguyên âm hoặc ㄹ) + ㄹ래(요)",
+      "examples": [
+        {
+          "translation": "Tối nay tôi muốn đi xem phim. Cậu cũng muốn đi cùng không?"
+        },
+        {
+          "translation": "Tôi muốn ăn tối ở nhà. So với ăn ngoài thì tôi thích cơm nhà hơn."
+        },
+        {
+          "translation": "Cuối tuần này tôi muốn đi leo núi cùng bạn bè. Tôi cảm thấy mình cần phải vận động một chút."
+        },
+        {
+          "translation": "Từ ngày mai tôi muốn bắt đầu ăn kiêng. Dạo gần đây hình như tôi bị tăng cân nhiều rồi."
+        }
+      ]
+    },
+    "ko_을지라도_31": {
+      "title": "-(으)ㄹ지라도 (Cho dù... đi chăng nữa)",
+      "shortExplanation": "Vĩ tố liên kết nhượng bộ mạnh, biểu thị rằng dù điều kiện ở vế trước có xảy ra thì vế sau vẫn diễn ra hoặc không hề thay đổi.",
+      "longExplanation": "'-(으)ㄹ지라도' là vĩ tố liên kết mang tính nhượng bộ mạnh, thường dùng trong văn viết hoặc văn phong trang trọng, tương đương với 'cho dù... đi chăng nữa', 'dù có... thì...'. Cấu trúc này nhấn mạnh rằng dù giả định hoặc sự thật ở vế trước có khó khăn, bất lợi hay như thế nào thì kết quả, hành động hay quyết tâm ở vế sau vẫn giữ nguyên. Thân động từ hoặc tính từ kết thúc bằng phụ âm (trừ ㄹ) kết hợp với '-을지라도'; kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' kết hợp với '-ㄹ지라도'.",
+      "formation": "Thân động từ/tính từ (kết thúc bằng phụ âm trừ ㄹ) + 을지라도 / Thân động từ/tính từ (kết thúc bằng nguyên âm hoặc ㄹ) + ㄹ지라도",
+      "examples": [
+        {
+          "translation": "Cho dù vấn đề có khó khăn đi chăng nữa thì xin đừng bỏ cuộc. Rốt cuộc rồi bạn cũng sẽ giải quyết được thôi."
+        },
+        {
+          "translation": "Dù cuốn sách này có đắt đi chăng nữa, vì rất cần thiết nên nhất định tôi phải mua."
+        },
+        {
+          "translation": "Cho dù kỳ thi có khó đến đâu, nếu chăm chỉ ôn tập thì chắc chắn sẽ có kết quả tốt."
+        },
+        {
+          "translation": "Cho dù thời tiết có lạnh giá, vì đã có hẹn với bạn bè nên tôi nhất định phải ra ngoài."
+        }
+      ]
+    },
+    "ko_을지언정_32": {
+      "title": "-(으)ㄹ지언정 (Thà... còn hơn, cho dù... thì cũng)",
+      "shortExplanation": "Vĩ tố liên kết nhượng bộ diễn tả thái độ kiên quyết chấp nhận vế trước hoặc đối chiếu nhượng bộ ('cho dù... thì cũng', 'thà... còn hơn').",
+      "longExplanation": "'-(으)ㄹ지언정' là vĩ tố liên kết mang sắc thái nhượng bộ trang trọng hoặc biểu thị thái độ kiên quyết: (1) Diễn tả ý 'cho dù chấp nhận tình huống vế trước thì vế sau vẫn giữ vững sự quan trọng'; (2) Thường mang cấu trúc 'thà chấp nhận điều xấu ở vế trước còn hơn làm điều tồi tệ hơn ở vế sau' (tương đương 'thà... chứ không...'). Thân động từ hoặc tính từ có phụ âm cuối (trừ ㄹ) kết hợp với '-을지언정', không có phụ âm cuối hoặc kết thúc bằng 'ㄹ' kết hợp với '-ㄹ지언정'.",
+      "formation": "Thân động từ/tính từ (kết thúc bằng phụ âm trừ ㄹ) + 을지언정 / Thân động từ/tính từ (kết thúc bằng nguyên âm hoặc ㄹ) + ㄹ지언정",
+      "examples": [
+        {
+          "translation": "Dù có thi trượt đi chăng nữa thì việc tiếp tục nỗ lực hướng về mục tiêu vẫn là điều quan trọng."
+        },
+        {
+          "translation": "Dù rằng mùa xuân đã đến rồi nhưng thời tiết vẫn còn rất lạnh."
+        },
+        {
+          "translation": "Dù căn phòng có rộng rãi, nếu không dọn dẹp thì cũng sẽ trở nên bừa bộn thôi."
+        },
+        {
+          "translation": "Dù tôi có gọi điện cho cô ấy đi nữa thì cũng chẳng biết cô ấy có bắt máy hay không."
+        }
+      ]
+    },
+    "ko_이_33": {
+      "title": "~이/가 되다 (Trở thành, biến thành, đến lúc)",
+      "shortExplanation": "Đi sau danh từ để biểu thị sự biến đổi trạng thái, chuyển biến về nghề nghiệp, tư cách, thời gian hoặc tính chất ('trở thành').",
+      "longExplanation": "'~이/가 되다' gắn ngay sau danh từ để biểu thị sự biến đổi về trạng thái, tính chất, thời gian, tuổi tác hoặc chức vụ/nghề nghiệp của một đối tượng, tương đương với 'trở thành', 'biến thành', 'đến (mùa/lúc)' trong tiếng Việt. Danh từ kết thúc bằng phụ âm (có patchim) kết hợp với '이 되다', danh từ kết thúc bằng nguyên âm (không patchim) kết hợp với '가 되다'. Dạng phủ định là '~이/가 안 되다'.",
+      "formation": "Danh từ có patchim + 이 되다 / Danh từ không có patchim + 가 되다",
+      "examples": [
+        {
+          "translation": "Khi trời sang thu, thời tiết trở lạnh nên tôi cảm thấy áo len dệt kim là thực sự cần thiết."
+        },
+        {
+          "translation": "Hồi còn học đại học tôi từng muốn trở thành luật sư, nhưng lên cao học tôi lại nảy ra suy nghĩ muốn trở thành giáo sư."
+        },
+        {
+          "translation": "Vì học cùng các bạn nên tôi đang dần trở thành một học sinh tốt hơn."
+        },
+        {
+          "translation": "Vết xước trên mặt cuối cùng đã biến thành một vết sẹo lớn."
+        }
+      ]
+    },
+    "ko_이나_34": {
+      "title": "~(이)나 (Hoặc là, hay là, chọn đại)",
+      "shortExplanation": "Trợ từ biểu thị sự lựa chọn giữa các đối tượng ('hoặc là', 'hay là'), hoặc biểu thị sự lựa chọn tạm thời, không tối ưu ('đành... vậy').",
+      "longExplanation": "'~(이)나' là trợ từ đa năng trong tiếng Hàn. Khi liên kết hai hay nhiều danh từ, nó mang ý nghĩa lựa chọn một trong các phương án ('hoặc là', 'hay là'). Ngoài ra, khi đi một mình với danh từ trước động từ, nó biểu thị ý nghĩa chọn tạm một phương án thứ yếu khi không có lựa chọn nào tốt hơn ('làm tạm cái này vậy'). Danh từ có patchim kết hợp với '이나', không có patchim kết hợp với '나'.",
+      "formation": "Danh từ có patchim + 이나 / Danh từ không có patchim + 나",
+      "examples": [
+        {
+          "translation": "Cuối tuần này chúng tôi sẽ đi xem phim, hoặc là chỉ ở nhà chơi game thôi."
+        },
+        {
+          "translation": "Tôi muốn vừa uống cà phê hay trà gì đó vừa nghỉ ngơi một chút."
+        },
+        {
+          "translation": "Hôm nay hay ngày mai, lúc nào cũng đều được cả."
+        },
+        {
+          "translation": "Tháng này tôi định đi du lịch, hoặc không thì ở nhà đọc sách thư giãn."
+        }
+      ]
+    },
+    "ko_이라도_35": {
+      "title": "~(이)라도 (Dù là... đi nữa, ít nhất thì)",
+      "shortExplanation": "Trợ từ biểu thị sự chấp nhận một phương án phụ, tạm bợ hoặc tối thiểu khi không có lựa chọn lý tưởng nhất ('dù là', 'ít nhất thì').",
+      "longExplanation": "'~(이)라도' là trợ từ gắn sau danh từ, biểu thị sự nhượng bộ, chấp nhận một phương án tạm thời có thể chấp nhận được khi lựa chọn tốt nhất không thể thực hiện, tương đương với 'dù là...', 'ít nhất thì...'. Cấu trúc này mang sắc thái 'dù không phải là điều tốt nhất nhưng như thế này cũng tạm được'. Danh từ kết thúc bằng phụ âm kết hợp với '이라도', kết thúc bằng nguyên âm kết hợp với '라도'.",
+      "formation": "Danh từ có patchim + 이라도 / Danh từ không có patchim + 라도",
+      "examples": [
+        {
+          "translation": "Dù giá cả đắt đỏ đi nữa, tôi cũng phải mua ít đồ ăn ở đằng kia ăn tạm. Bởi vì không ăn thì sẽ chẳng có sức."
+        },
+        {
+          "translation": "Hôm nay lịch trình rất bận rộn, nhưng ít nhất bữa tối tôi cũng phải ăn cho đàng hoàng."
+        },
+        {
+          "translation": "Tính cách anh ấy không tốt lắm, nhưng ít nhất công việc làm tốt nên vẫn là người quan trọng trong nhóm."
+        },
+        {
+          "translation": "Dù nghe nói kỳ thi khó, thì ít nhất tôi cũng phải nắm bắt được tình hình đang diễn ra ở mức độ nào đó."
+        }
+      ]
+    },
+    "ko_이랑_36": {
+      "title": "~(이)랑 (Và, cùng với)",
+      "shortExplanation": "Tiểu từ liên kết trong khẩu ngữ dùng để nối các danh từ ('và') hoặc chỉ đối tượng cùng thực hiện hành động ('cùng với').",
+      "longExplanation": "'~(이)랑' là tiểu từ liên kết thông dụng trong giao tiếp hằng ngày của người Hàn Quốc. Cấu trúc có hai chức năng chính: (1) Nối hai hay nhiều danh từ với nhau mang nghĩa 'và'; (2) Đi cùng với người hoặc đối tượng để biểu thị 'cùng với' (thường đi kèm với '같이' hoặc '함께'). Tiểu từ này thân mật hơn '과/와' và '하고'. Danh từ kết thúc bằng phụ âm (có patchim) kết hợp với '이랑', danh từ kết thúc bằng nguyên âm (không patchim) kết hợp với '랑'.",
+      "formation": "Danh từ có patchim + 이랑 / Danh từ không có patchim + 랑",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi đã đi xem phim cùng với bạn."
+        },
+        {
+          "translation": "Tôi đã gọi cà phê và bánh ngọt."
+        },
+        {
+          "translation": "Chị gái và tôi đã mặc quần áo giống nhau."
+        },
+        {
+          "translation": "Bố và mẹ tôi đang sống ở Seoul."
+        }
+      ]
+    },
+    "ko_이래_37": {
+      "title": "~이래(로) (Kể từ khi, từ đó đến nay)",
+      "shortExplanation": "Biểu thị mốc thời gian bắt đầu trong quá khứ mà từ đó sự việc, tình trạng kéo dài liên tục cho đến hiện tại ('kể từ khi').",
+      "longExplanation": "'~이래(로)' gắn sau danh từ mốc thời gian hoặc sau dạng định từ thì quá khứ của động từ ('-(으)ㄴ 이래로'), biểu thị một thời điểm bắt đầu trong quá khứ mà trạng thái hoặc hành động tiếp diễn liên tục kể từ thời điểm đó cho tới nay (tương đương 'kể từ khi', 'từ dạo đó đến nay'). Đi kèm tiểu từ '로' ('이래로') giúp nhấn mạnh thêm tính liên tục của khoảng thời gian.",
+      "formation": "Động từ dạng định từ quá khứ (-(으)ㄴ) + 이래(로) / Danh từ chỉ thời gian + 이래(로)",
+      "examples": [
+        {
+          "translation": "Kể từ khi tôi sinh ra đến giờ, đây là mùa đông lạnh nhất mà tôi từng trải qua."
+        },
+        {
+          "translation": "Đây là lần đầu tiên tôi gặp lại anh ấy kể từ khi anh ấy tốt nghiệp."
+        },
+        {
+          "translation": "Kể từ khi chuyển nhà đến đây, tôi chưa kết bạn được với ai nên cảm thấy hơi cô đơn."
+        },
+        {
+          "translation": "Kể từ lúc tan sở đến giờ tôi cứ bận rộn suốt nên chưa nghỉ ngơi được chút nào."
+        }
+      ]
+    },
+    "ko_이므로_38": {
+      "title": "-(으)므로 / ~(이)므로 (Vì... nên, do...)",
+      "shortExplanation": "Vĩ tố liên kết chỉ nguyên nhân, lý do mang tính trang trọng và khách quan ('vì... nên', 'do...').",
+      "longExplanation": "'-(으)므로 / ~(이)므로' là vĩ tố liên kết biểu thị nguyên nhân, lý do trong văn viết, tin tức thời sự, thông báo hoặc các bài phát biểu trang trọng, tương đương với 'vì... nên', 'do...'. Cấu trúc này nêu lên một nguyên nhân mang tính khách quan, logic dẫn đến kết quả ở vế sau. Với động từ/tính từ: thân từ kết thúc bằng phụ âm (trừ ㄹ) kết hợp với '-으므로', kết thúc bằng nguyên âm hoặc 'ㄹ' kết hợp với '-므로'. Với danh từ: có patchim kết hợp với '이므로', không có patchim kết hợp với '므로'. Lưu ý: sau cấu trúc này không dùng câu mệnh lệnh hay thỉnh dụ.",
+      "formation": "Thân động từ/tính từ (kết thúc bằng phụ âm trừ ㄹ) + 으므로 / Thân động từ/tính từ (kết thúc bằng nguyên âm hoặc ㄹ) + 므로 / Danh từ + (이)므로",
+      "examples": [
+        {
+          "translation": "Hôm nay trời mưa nên tôi đã mang theo ô."
+        },
+        {
+          "translation": "Vì cô ấy đạt thành tích xuất sắc nên mọi người đều kinh ngạc."
+        },
+        {
+          "translation": "Vì công việc này khó nên phải làm cẩn thận."
+        },
+        {
+          "translation": "Do tình hình nghiêm trọng nên xin đừng hoãn việc điều trị sang ngày mai."
+        }
+      ]
+    },
+    "ko_이어서_39": {
+      "title": "-아/어서 / ~(이)어서 (Vì... nên, rồi thì)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả nguyên nhân - kết quả ('vì... nên') hoặc trình tự hai hành động diễn ra liên tiếp ('rồi, rồi thì').",
+      "longExplanation": "'-아/어서' (với danh từ là '~(이)어서') là vĩ tố liên kết cơ bản và cực kỳ phổ biến trong tiếng Hàn với hai chức năng chính: (1) Chỉ nguyên nhân - kết quả: vế trước là lý do dẫn đến sự việc ở vế sau ('vì... nên'); (2) Chỉ trình tự thời gian gắn liền: hành động ở vế trước diễn ra trước rồi nối tiếp hành động ở vế sau trong cùng một tiến trình ('làm... rồi làm...'). Nếu nguyên âm cuối của thân động từ/tính từ là 'ㅏ, ㅗ', kết hợp với '-아서'; các nguyên âm còn lại kết hợp với '-어서'; động từ kết thúc bằng '하다' chuyển thành '해서'. Với danh từ: có patchim kết hợp với '이어서', không patchim kết hợp với '여서'.",
+      "formation": "Thân động từ/tính từ có nguyên âm ㅏ, ㅗ + 아서 / Các nguyên âm còn lại + 어서 / 하다 -> 해서 / Danh từ + (이)어서",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi về nhà sớm rồi đọc sách. Sau đó tôi đi ngủ ngay."
+        },
+        {
+          "translation": "Sáng nay trời mưa nên khó ra ngoài, vì thế tôi đã nghỉ ngơi ở nhà."
+        },
+        {
+          "translation": "Tôi đã đi gặp bạn và chúng tôi cùng nhau ăn những món ăn ngon."
+        },
+        {
+          "translation": "Tôi thấy một chú mèo và vì nó quá dễ thương nên tôi đã chụp một bức ảnh."
+        }
+      ]
+    },
+    "ko_이지만_40": {
+      "title": "-지만 / ~(이)지만 (Nhưng, tuy... nhưng)",
+      "shortExplanation": "Vĩ tố liên kết tương phản dùng để nối hai vế câu có nội dung đối lập hoặc trái ngược nhau ('nhưng', 'tuy... nhưng').",
+      "longExplanation": "'-지만' (sau danh từ là '~(이)지만') là vĩ tố liên kết biểu thị sự tương phản rất phổ biến trong tiếng Hàn, tương đương với 'nhưng', 'tuy... nhưng' trong tiếng Việt. Cấu trúc này liên kết hai vế câu, trong đó vế sau đưa ra một sự thật, tình huống hoặc ý kiến trái ngược so với nội dung đã nêu ở vế trước. Thân động từ và tính từ gắn trực tiếp với '-지만' mà không phụ thuộc vào patchim. Với danh từ: có patchim kết hợp với '이지만', không có patchim kết hợp với '지만'. Cấu trúc này cũng có thể kết hợp với các vĩ tố thì quá khứ (dạng '-았/었지만').",
+      "formation": "Thân động từ/tính từ + 지만 / Danh từ có patchim + 이지만 / Danh từ không có patchim + 지만 / Thân từ + 았/었지만",
+      "examples": [
+        {
+          "translation": "Thời tiết thực sự rất đẹp, nhưng tôi lại không có thời gian ra ngoài."
+        },
+        {
+          "translation": "Tôi rất thích bánh pizza, nhưng vì đang ăn kiêng nên không thể ăn được."
+        },
+        {
+          "translation": "Bài hát này rất nổi tiếng, nhưng tôi lại không thích cho lắm."
+        },
+        {
+          "translation": "Bạn tôi đã hứa sẽ cho tôi tiền, nhưng tôi vẫn chưa nhận được."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_을를_26": {
+      "title": "~을/를 빼다（除了……之外、除去）",
+      "shortExplanation": "表示从某个群体、范围或整体中排除某人、某物或某事，“除了……之外”。",
+      "longExplanation": "“~을/를 빼다”（口语中常以“~을/를 빼고”或“~을/를 빼고요”的形式出现）相当于汉语的“除了……之外”、“除去……”。接在名词（或动词名物化形式“-는 것을”）后面，表示在整体或某一范围中排除该项。名词有收音时接“을 빼다”，无收音时接“를 빼다”。",
+      "formation": "闭音节名词（有收音） + 을 빼다 / 开音节名词（无收音） + 를 빼다（日常口语常用：名词 + 을/를 빼고）",
+      "examples": [
+        {
+          "translation": "他除了画画以外，什么都没做。"
+        },
+        {
+          "translation": "除了我因为生病没参加外，所有学生放学后都做了运动。"
+        },
+        {
+          "translation": "除了樱桃以外，我喜欢所有的水果。"
+        },
+        {
+          "translation": "到目前为止所有类型的电影我都看过，唯独喜剧除外。"
+        }
+      ]
+    },
+    "ko_을를_27": {
+      "title": "-(으)ㄹ 수 있다（能、可以、会）",
+      "shortExplanation": "表示具备做某事的能力，或者存在某种情况发生的可能性，“能、可以、会”。",
+      "longExplanation": "“-(으)ㄹ 수 있다”是韩语中表示能力或可能性的惯用型，相当于汉语的“能”、“可以”、“会”。它既可以表示主语自身具备某种技能或体力去完成某动作，也可以表示客观条件允许某事实现。动词词干末尾有收音（除ㄹ外）接“-을 수 있다”；词干末尾无收音或以收音“ㄹ”结尾时接“-ㄹ 수 있다”。其反义表达为“-(으)ㄹ 수 없다（不能、无法）”。",
+      "formation": "动词词干（除ㄹ外的收音） + 을 수 있다 / 动词词干（无收音或ㄹ收音） + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "我们能解决这个问题。我认为只要大家齐心协力，是完全可能的。"
+        },
+        {
+          "translation": "我想我明天能参加那个会议，幸好没有别的安排。"
+        },
+        {
+          "translation": "如果你学会游泳，总有一天能自由自在地畅游，只要努力就可以做到。"
+        },
+        {
+          "translation": "只要他努力学习韩语，就能通过TOPIK考试，而且一定会成功。"
+        }
+      ]
+    },
+    "ko_을를_28": {
+      "title": "~을/를 통해(서)（通过、经由）",
+      "shortExplanation": "表示进行某事或达成某种目的所借助的媒介、途径或手段，“通过、经由”。",
+      "longExplanation": "“~을/를 통해(서)”接在名词后，表示通过某种媒介、渠道、经验或方法来实现某个行为或获取某种结果，相当于汉语的“通过……”、“经由……”。名词有收音时接“을 통해(서)”，无收音时接“를 통해(서)”。口语中常添加“서”强化介词性质。",
+      "formation": "闭音节名词（有收音） + 을 통해(서) / 开音节名词（无收音） + 를 통해(서)",
+      "examples": [
+        {
+          "translation": "我是通过韩剧学习韩语的，所以表达掌握得更加自然。"
+        },
+        {
+          "translation": "我们通过电子邮件调整了会议日程，这样管理时间效率高多了。"
+        },
+        {
+          "translation": "他常常通过音乐来表达情感。对他来说，音乐是最好的沟通手段。"
+        },
+        {
+          "translation": "通过照片，我们能够理解并共鸣他人的日常生活。"
+        }
+      ]
+    },
+    "ko_을까_29": {
+      "title": "-(으)ㄹ까（……好吗？要不要……？）",
+      "shortExplanation": "用于非正式口语中提出建议、征求对方意见（“……好吗？”），或表达说话者的推测与自问。",
+      "longExplanation": "“-(으)ㄹ까”是用于熟人或平辈之间的疑问形终结词尾（加上“요”变为更礼貌的“-(으)ㄹ까요”）。主要有两个用法：一是向听话者提议共同做某事或征求对方意见，相当于汉语的“……好吗？”、“要不要……？”；二是表示说话者内心的推测或自我疑问，“会不会……呢？”。动词词干末尾有收音（除ㄹ外）接“-을까”；词干无收音或以“ㄹ”收音结尾时接“-ㄹ까”。",
+      "formation": "动词词干（除ㄹ外的收音） + 을까 / 动词词干（无收音或ㄹ收音） + ㄹ까",
+      "examples": [
+        {
+          "translation": "我们这个周末去露营好吗？"
+        },
+        {
+          "translation": "明天看电影吗？"
+        },
+        {
+          "translation": "今晚在餐厅吃晚饭好不好？"
+        },
+        {
+          "translation": "补习班结束后一起学习好吗？"
+        }
+      ]
+    },
+    "ko_을래_30": {
+      "title": "-(으)ㄹ래(요)（想要、打算、……吗？）",
+      "shortExplanation": "用于日常口语中表达自己的意愿、打算，或亲切地询问对方的意向（“想……”、“要……”）。",
+      "longExplanation": "“-(으)ㄹ래(요)”是韩语日常口语中高频使用的终结词尾。在陈述句中，用于表达说话人自己的意愿或主观打算（“我想……”、“我要……”）；在疑问句中，用于亲近的人之间温和地询问对方的想法或提议（“你要不要……？”）。动词词干末尾有收音（除ㄹ外）接“-을래(요)”；词干无收音或以“ㄹ”收音结尾时接“-ㄹ래(요)”。加上“요”时更显礼貌。",
+      "formation": "动词词干（除ㄹ外的收音） + 을래(요) / 动词词干（无收音或ㄹ收音） + ㄹ래(요)",
+      "examples": [
+        {
+          "translation": "我今晚想去看电影。你也想一起去吗？"
+        },
+        {
+          "translation": "我想在家里吃晚饭。比起在外面吃，我更喜欢家常饭。"
+        },
+        {
+          "translation": "这个周末我想和朋友们去爬山，感觉我也该运动一下了。"
+        },
+        {
+          "translation": "我打算从明天开始节食减肥。最近好像长了不少肉。"
+        }
+      ]
+    },
+    "ko_을지라도_31": {
+      "title": "-(으)ㄹ지라도（即使……也、哪怕……也）",
+      "shortExplanation": "表示强烈的让步，强调无论前半句出现何种困难或情况，后半句的事实或决心都不受影响。",
+      "longExplanation": "“-(으)ㄹ지라도”是表示强烈让步的连接词尾，多用于书面语或较为正式的表达中，相当于汉语的“即使……也……”、“哪怕……也……”。它强调无论前文假设的条件多么极端、不利或已成事实，后文的结论、意志或必然结果都绝不动摇。动词/形容词词干有收音（除ㄹ外）接“-을지라도”；词干无收音或以“ㄹ”收音结尾时接“-ㄹ지라도”。名词后接“(이)ㄹ지라도”。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 을지라도 / 动词/形容词词干（无收音或ㄹ收音） + ㄹ지라도",
+      "examples": [
+        {
+          "translation": "即使问题再难，也请不要放弃。最终一定能够解决的。"
+        },
+        {
+          "translation": "哪怕这本书很贵，因为非常需要，我也一定要买下来。"
+        },
+        {
+          "translation": "即使考试很难，只要认真复习，就一定会取得成果。"
+        },
+        {
+          "translation": "哪怕天气寒冷，因为和朋友有约定，我也必须得出门。"
+        }
+      ]
+    },
+    "ko_을지언정_32": {
+      "title": "-(으)ㄹ지언정（哪怕……也、宁愿……也不）",
+      "shortExplanation": "表示强烈的让步或坚决的对照取舍，“哪怕……也”、“宁可……决不”。",
+      "longExplanation": "“-(으)ㄹ지언정”是带有较强书面语色彩的让步连接词尾。主要有两种用法：一是表示即使承认前项极端或不利的事实，后项的基本态度或真理依然成立（“哪怕……也”）；二是常用于表达坚决的选择意志，宁可接受前项较差的处境，也绝不容忍后项更不愿发生的事情（“宁可……决不”）。动词/形容词词干有收音（除ㄹ外）接“-을지언정”；词干无收音或以“ㄹ”收音结尾时接“-ㄹ지언정”。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 을지언정 / 动词/形容词词干（无收音或ㄹ收音） + ㄹ지언정",
+      "examples": [
+        {
+          "translation": "即使考试落榜，继续朝着目标努力才是最重要的。"
+        },
+        {
+          "translation": "虽然春天已经到来了，但天气依然十分寒冷。"
+        },
+        {
+          "translation": "房间再大，如果不收拾的话也会变得一团糟。"
+        },
+        {
+          "translation": "哪怕我给她打电话，也不知道她会不会接听。"
+        }
+      ]
+    },
+    "ko_이_33": {
+      "title": "~이/가 되다（变成、成为、到……）",
+      "shortExplanation": "接在名词后，表示事物发生状态、身份、性质、时间或年龄等的转变，“变成、成为”。",
+      "longExplanation": "“~이/가 되다”是韩语中表示转变的核心句型，相当于汉语的“成为”、“变成”、“到了……（季节/时间）”。前面的名词是转变之后的结果状态。名词末尾有收音时接“이 되다”，无收音时接“가 되다”。当用于表达未能转变或不够资格时，使用否定形式“~이/가 안 되다”。",
+      "formation": "闭音节名词（有收音） + 이 되다 / 开音节名词（无收音） + 가 되다",
+      "examples": [
+        {
+          "translation": "到了秋天天气变冷，就会切身感受到确实需要针织衫。"
+        },
+        {
+          "translation": "本科时我想成为一名律师，但到了研究生阶段，我萌生了想当教授的想法。"
+        },
+        {
+          "translation": "和朋友们一起学习，我正逐渐成为一个更优秀的学生。"
+        },
+        {
+          "translation": "脸上的抓痕最终变成了一块大疤痕。"
+        }
+      ]
+    },
+    "ko_이나_34": {
+      "title": "~(이)나（或者、还是、哪怕……也行）",
+      "shortExplanation": "用于名词后，表示在多种事物中进行选择（“或者、还是”），或表示退而求其次的选择。",
+      "longExplanation": "“~(이)나”是韩语中用途广泛的补助词。在列举两个或以上的名词时，表示在二者或多者之间任选其一，相当于汉语的“或者”、“还是”；当单独接在某一动作对象后时，常带有退而求其次的心态，表示“没有更好的选择，做做这个也行”。名词末尾有收音时接“이나”，无收音时接“나”。",
+      "formation": "闭音节名词（有收音） + 이나 / 开音节名词（无收音） + 나",
+      "examples": [
+        {
+          "translation": "我们周末要么去看电影，要么就在家玩玩游戏。"
+        },
+        {
+          "translation": "我想喝点咖啡或者茶，顺便休息一下。"
+        },
+        {
+          "translation": "今天或者明天，任何时候都可以。"
+        },
+        {
+          "translation": "这个月我打算要么去旅行，要么就在家里看看书休息一下。"
+        }
+      ]
+    },
+    "ko_이라도_35": {
+      "title": "~(이)라도（哪怕是……也、哪怕……也好）",
+      "shortExplanation": "表示退而求其次的选择，或者退一步承认最低限度的要求，“哪怕是……也”、“哪怕……也好”。",
+      "longExplanation": "“~(이)라도”是接在名词等体词后的补助词，表示在无法满足最理想条件的情况下，退而求其次接受次选方案，或者表示底线、最低限度的要求。相当于汉语的“哪怕是……也好”、“哪怕……也”、“至少……”。名词有收音时接“이라도”，无收音时接“라도”。",
+      "formation": "闭音节名词（有收音） + 이라도 / 开音节名词（无收音） + 라도",
+      "examples": [
+        {
+          "translation": "虽然价格昂贵，但我哪怕买那边的食物吃也好。因为不吃的话就没力气了。"
+        },
+        {
+          "translation": "今天日程非常忙碌，但至少晚饭得好好吃一顿才行。"
+        },
+        {
+          "translation": "虽然他脾气不怎么样，但至少工作干得好，所以在团队里是个重要人物。"
+        },
+        {
+          "translation": "就算说考试很难，我也至少得在一定程度上掌握目前的进展情况。"
+        }
+      ]
+    },
+    "ko_이랑_36": {
+      "title": "~(이)랑（和、跟、同）",
+      "shortExplanation": "用于日常口语中连接名词（“和”），或表示与某人共同进行某动作（“跟……一起”）。",
+      "longExplanation": "“~(이)랑”是韩语口语中非常亲切且高频使用的助词，主要有两个用法：一是连接两个或以上的名词，相当于汉语的“和”、“跟”；二是表示共同进行动作的伴随对象，相当于“和/跟……一起”（常与“같이”、“함께”搭配）。相比于“과/와”更具口语色彩。名词末尾有收音时接“이랑”，无收音时接“랑”。",
+      "formation": "闭音节名词（有收音） + 이랑 / 开音节名词（无收音） + 랑",
+      "examples": [
+        {
+          "translation": "今天我和朋友一起去看电影了。"
+        },
+        {
+          "translation": "我点了咖啡和蛋糕。"
+        },
+        {
+          "translation": "姐姐和我穿了同一件衣服。"
+        },
+        {
+          "translation": "爸爸和妈妈生活在首尔。"
+        }
+      ]
+    },
+    "ko_이래_37": {
+      "title": "~이래(로)（……以来、从……起）",
+      "shortExplanation": "表示从过去的某一特定时间点或事件发生起，某种状态一直持续至今（“……以来”）。",
+      "longExplanation": "“~이래(로)”接在表示过去时间的名词或动词过去时定语形“-(으)ㄴ”后，表示以过去的某一事件或时间为起点，某种情况或状态持续发展至今，相当于汉语的“自……以来”、“从……起至今”。加上助词“로”（이래로）时更强调时间的延续性。",
+      "formation": "动词过去时定语形（-(으)ㄴ） + 이래(로) / 时间名词 + 이래(로)",
+      "examples": [
+        {
+          "translation": "这是我出生以来经历过的最寒冷的冬天。"
+        },
+        {
+          "translation": "这是他毕业以来我们第一次见面。"
+        },
+        {
+          "translation": "搬家过来以来因为没交到朋友，感到有些孤单。"
+        },
+        {
+          "translation": "下班以来一直忙个不停，根本没能休息。"
+        }
+      ]
+    },
+    "ko_이므로_38": {
+      "title": "-(으)므로 / ~(이)므로（因为……所以、由于）",
+      "shortExplanation": "表示客观原因或理由的书面语连接词尾，“因为……所以”、“由于”。",
+      "longExplanation": "“-(으)므로 / ~(이)므로”是韩语中常用于正式书面语、新闻报道、公告或演讲的表示原因和理由的连接词尾，相当于汉语的“因为……所以……”、“由于……”。它侧重于陈述客观、明确的事实根据与逻辑因果。动词/形容词词干有收音（除ㄹ外）接“-으므로”；无收音或以“ㄹ”收音结尾时接“-므로”。名词有收音接“이므로”，无收音接“므로”。注意：后句不能接命令句或共动句。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 으므로 / 动词/形容词词干（无收音或ㄹ收音） + 므로 / 名词 + (이)므로",
+      "examples": [
+        {
+          "translation": "今天因为下雨，所以我带了雨伞。"
+        },
+        {
+          "translation": "因为她取得了优异的成绩，所以大家都大吃一惊。"
+        },
+        {
+          "translation": "因为这项工作难度大，所以必须小心谨慎地进行。"
+        },
+        {
+          "translation": "由于情况十分严重，请不要把治疗推迟到明天。"
+        }
+      ]
+    },
+    "ko_이어서_39": {
+      "title": "-아/어서 / ~(이)어서（因为……所以、然后、接着）",
+      "shortExplanation": "表示前后两个动作的时间先后顺序（“然后、接着”），或表示因果关系（“因为……所以”）。",
+      "longExplanation": "“-아/어서”（接在名词后为“~(이)어서”）是韩语中使用极广的基础连接词尾，主要有两大核心用法：一是表示紧密相连的动作先后顺序，前一动作是后一动作的前提或背景（“做了……然后……”）；二是表示前后分句的因果关系，前句是后句的原因或理由（“因为……所以……”）。动词/形容词词干末尾元音为“ㅏ, ㅗ”时接“-아서”；其他元音接“-어서”；以“하다”结尾的变为“해서”。接在名词后时，有收音接“이어서”，无收音接“여서”。",
+      "formation": "动词/形容词词干（阳性元音ㅏ, ㅗ） + 아서 / 其他元音 + 어서 / 하다变为해서 / 名词 + (이)어서",
+      "examples": [
+        {
+          "translation": "我今天早早回到家看了书。然后马上就睡着了。"
+        },
+        {
+          "translation": "今天早上下雨所以很不方便外出，于是我就在家里休息了。"
+        },
+        {
+          "translation": "我去见了朋友，还一起吃了美味的食物。"
+        },
+        {
+          "translation": "我看到了一只小猫，因为太可爱了就拍了张照片。"
+        }
+      ]
+    },
+    "ko_이지만_40": {
+      "title": "-지만 / ~(이)지만（虽然……但是、可是）",
+      "shortExplanation": "表示对立或转折关系的连接词尾，用于连接内容相互对照的两个分句（“虽然……但是”）。",
+      "longExplanation": "“-지만”（接在名词后为“~(이)지만”）是韩语中最常用的表示转折与对照的连接词尾，相当于汉语的“虽然……但是……”、“可是”。它将两个分句连接起来，后句陈述与前句事实或性质相反、相对立的情况。接在动词、形容词词干后时，无需考虑收音直接接“-지만”；接在过去时制词尾后接“-았/었지만”。接在名词后时，有收音接“이지만”，无收音接“지만”。",
+      "formation": "动词/形容词词干 + 지만 / 闭音节名词（有收音） + 이지만 / 开音节名词（无收音） + 지만 / 过去时制词尾 + 았/었지만",
+      "examples": [
+        {
+          "translation": "天气真的很好，但我没有时间出门。"
+        },
+        {
+          "translation": "我喜欢披萨，但因为减肥所以不能吃。"
+        },
+        {
+          "translation": "这首歌很有名，但我并不怎么喜欢。"
+        },
+        {
+          "translation": "朋友答应借我钱，但我到现在还没拿到。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_을를_26": {
+      "title": "~을/를 빼다（〜を除いて、〜以外）",
+      "shortExplanation": "あるグループや全体から特定の人や物事を除外することを表します（「〜を除いて」「〜以外」）。",
+      "longExplanation": "「~을/를 빼다」（会話では主に「~을/를 빼고」や「~을/를 빼고요」の形で使われます）は、「〜を除いて」「〜を抜いて」「〜以外」という意味を表し、全体や一定の範囲の中から特定の対象を除外する際に用いられます。パッチムのある名詞には「을 빼다」、パッチムのない名詞には「를 빼다」を接続します。",
+      "formation": "パッチムあり名詞 + 을 빼다 ／ パッチムなし名詞 + 를 빼다（日常会話：名詞 + 을/를 빼고）",
+      "examples": [
+        {
+          "translation": "彼は絵を描くこと以外は何もしていません。"
+        },
+        {
+          "translation": "私が病気だったことを除いて、生徒全員が放課後に運動をしました。"
+        },
+        {
+          "translation": "チェリーを除いて、私はすべての果物が好きです。"
+        },
+        {
+          "translation": "今までのところ、コメディ映画を除いてすべての映画を見ました。"
+        }
+      ]
+    },
+    "ko_을를_27": {
+      "title": "-(으)ㄹ 수 있다（〜できる、〜することが可能だ）",
+      "shortExplanation": "動作を行う能力があることや、ある事態が生じる可能性があることを表します（「〜できる」）。",
+      "longExplanation": "「-(으)ㄹ 수 있다」は、主語がその動作を行う能力や技術を持っていることや、状況的にそれが可能であることを表す表現で、日本語の「〜できる」「〜することができる」に相当します。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을 수 있다」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ 수 있다」を接続します。反対の意味を表す表現には「-(으)ㄹ 수 없다（〜できない）」があります。",
+      "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을 수 있다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "私たちはこの問題を解決できます。みんなで協力すれば十分に可能だと思います。"
+        },
+        {
+          "translation": "私は明日その会議に出席できそうです。幸い他に予定がないからです。"
+        },
+        {
+          "translation": "水泳を習えば、いつか自由自在に泳げるようになりますよ。努力すれば可能です。"
+        },
+        {
+          "translation": "彼が韓国語を一生懸命勉強すれば、TOPIK試験に合格できるはずですし、きっと成功するでしょう。"
+        }
+      ]
+    },
+    "ko_을를_28": {
+      "title": "~을/를 통해(서)（〜を通じて、〜を通して）",
+      "shortExplanation": "手段や媒体、媒介となるものを表し、「〜を通じて」「〜を通して」という意味を表します。",
+      "longExplanation": "「~을/를 통해(서)」は名詞の後に付き、ある行為や目的を達成するための手段、媒介、経路などを表す表現です。日本語の「〜を通じて」「〜を通して」に相当します。パッチムのある名詞には「을 통해(서)」、パッチムのない名詞には「를 통해(서)」を接続します。日常会話では「서」を付けた「~을/를 통해서」の形も非常によく使われます。",
+      "formation": "パッチムあり名詞 + 을 통해(서) ／ パッチムなし名詞 + 를 통해(서)",
+      "examples": [
+        {
+          "translation": "私は韓国語をドラマを通じて学びました。そのため表現をより自然に身につけることができました。"
+        },
+        {
+          "translation": "私たちはメールを通じて会議の日程を調整しました。時間管理がはるかに効率的でした。"
+        },
+        {
+          "translation": "彼は音楽を通じて感情を表現することが多いです。音楽は彼にとって最高のコミュニケーション手段です。"
+        },
+        {
+          "translation": "写真を通じて、私たちは他の人々の日常生活を理解し共感することができます。"
+        }
+      ]
+    },
+    "ko_을까_29": {
+      "title": "-(으)ㄹ까（〜しようか、〜だろうか）",
+      "shortExplanation": "親しい間柄で相手に提案・勧誘したり（「〜しようか」）、自分の推測や疑問を表したりする終結語尾です。",
+      "longExplanation": "「-(으)ㄹ까」は、友人や年下に対して提案や勧誘をしたり、相手の意向を尋ねたりする際に使われる終結語尾です（丁寧形は「-(으)ㄹ까요」）。日本語の「〜しようか」「〜する？」に相当します。また、疑問文で話し手の推測や自問（「〜だろうか」）を表す用法もあります。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을까」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ까」を接続します。",
+      "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을까 ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ까",
+      "examples": [
+        {
+          "translation": "私たち今週末キャンプに行ってみようか？"
+        },
+        {
+          "translation": "明日映画を見ようか？"
+        },
+        {
+          "translation": "今晩レストランで夕飯を食べようか？"
+        },
+        {
+          "translation": "塾が終わった後、一緒に勉強しようか？"
+        }
+      ]
+    },
+    "ko_을래_30": {
+      "title": "-(으)ㄹ래(요)（〜する、〜したい、〜する？）",
+      "shortExplanation": "会話で自分の意志や希望を表したり、相手の意向を尋ねたりする終結語尾です（「〜する」「〜したい」）。",
+      "longExplanation": "「-(으)ㄹ래(요)」は、日常会話でよく使われる終結語尾です。平叙文では話し手自身の意志や希望（「〜するよ」「〜したい」）を表し、疑問文では相手の意向を親しく尋ねる表現（「〜する？」「〜しない？」）になります。動詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을래(요)」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ래(요)」を接続します。親しい間柄では「-을래」、丁寧に言う場合は「-을래요」を用います。",
+      "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 을래(요) ／ 動詞の語幹（母音またはㄹパッチム） ＋ ㄹ래(요)",
+      "examples": [
+        {
+          "translation": "私は今夜映画を見に行くよ。君も一緒に行く？"
+        },
+        {
+          "translation": "私は家で夕飯を食べたいです。外食するより家庭料理のほうが好きなんです。"
+        },
+        {
+          "translation": "私は今週末に友達と登山に行きたいな。少し運動もしなきゃいけない気がして。"
+        },
+        {
+          "translation": "私は明日からダイエットを始めるよ。最近かなり太った気がするんだ。"
+        }
+      ]
+    },
+    "ko_을지라도_31": {
+      "title": "-(으)ㄹ지라도（〜だとしても、〜であっても）",
+      "shortExplanation": "強い譲歩を表し、前節の条件や状況にかかわらず後節の事実や意志が変わらないことを示します（「たとえ〜であっても」）。",
+      "longExplanation": "「-(으)ㄹ지라도」は、前節で述べた状況や仮定を認めつつも、後節の事態や話し手の強い決意に影響を与えないことを表す譲歩の接続語尾です。文章語や改まった場面で好んで使われ、日本語の「たとえ〜であっても」「〜だとしても」に相当します。動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을지라도」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ지라도」を接続します。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지라도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지라도",
+      "examples": [
+        {
+          "translation": "たとえ問題が困難であっても諦めないでください。最後にはきっと解決できるはずです。"
+        },
+        {
+          "translation": "この本が高価だとしても、絶対に必要なので必ず買わなければなりません。"
+        },
+        {
+          "translation": "試験が難しいとしても、一生懸命勉強すれば必ず成果が出るはずです。"
+        },
+        {
+          "translation": "たとえ天気が寒くても、友達との約束があるので必ず出かけなければなりません。"
+        }
+      ]
+    },
+    "ko_을지언정_32": {
+      "title": "-(으)ㄹ지언정（〜であっても、〜するくらいならいっそ）",
+      "shortExplanation": "強い譲歩や対比を表し、「たとえ〜であっても」「〜することはあっても（〜はしない）」という意味を示します。",
+      "longExplanation": "「-(으)ㄹ지언정」は文章語的で改まった譲歩の接続語尾です。前節の不利な事実や極端な状況を一旦認めた上で後節の重要性を強調したり（「たとえ〜であっても」）、「前節のような不利益を被ることはあっても、決して後節のようなことはしない（〜するくらいならいっそ）」という強い意志・対比を表します。動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-을지언정」、パッチムがない場合または「ㄹ」パッチムの場合は「-ㄹ지언정」を接続します。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을지언정 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ지언정",
+      "examples": [
+        {
+          "translation": "たとえ試験に落ちたとしても、目標に向かって努力し続けることが大切です。"
+        },
+        {
+          "translation": "もう春が来たとはいえ、まだまだ天気がとても寒いですね。"
+        },
+        {
+          "translation": "部屋が広いとしても、片付けなければめちゃくちゃになってしまうでしょう。"
+        },
+        {
+          "translation": "彼女に電話をかけるとしても、彼女が出るか出ないかは分かりません。"
+        }
+      ]
+    },
+    "ko_이_33": {
+      "title": "~이/가 되다（〜になる）",
+      "shortExplanation": "名詞の後に接続し、状態、身分、職業、時間・季節などが変化することを表します（「〜になる」）。",
+      "longExplanation": "「~이/가 되다」は名詞の直後に付き、ある状態や身分、職業、性質、季節や時間が別の状態へと変化・移行することを表します。日本語の「〜になる」に直接対応する極めて基本的な表現です。直前の名詞にパッチムがある場合は「이 되다」、パッチムがない場合は「가 되다」を用います。変化が成立しないことを表す場合は否定の「~이/가 안 되다」を用います。",
+      "formation": "パッチムあり名詞 + 이 되다 ／ パッチムなし名詞 + 가 되다",
+      "examples": [
+        {
+          "translation": "秋になると天気が寒くなるので、ニットが必ず必要だと感じるようになります。"
+        },
+        {
+          "translation": "学部生の時は弁護士になりたかったのですが、大学院では教授になりたいという思いが湧きました。"
+        },
+        {
+          "translation": "友達と一緒に勉強しているので、だんだんより良い学生になっています。"
+        },
+        {
+          "translation": "顔にできた傷が、結局大きな傷跡になってしまいました。"
+        }
+      ]
+    },
+    "ko_이나_34": {
+      "title": "~(이)나（〜か、〜でも、〜または）",
+      "shortExplanation": "名詞の後に接続し、複数の選択肢を列挙したり（「〜か」「〜または」）、次善の策として選んだりする助詞です。",
+      "longExplanation": "「~(이)나」は、名詞に接続して「〜か」「〜または」という意味で選択肢を提示する助詞です（「A이나 B」など）。また、ほかに適当な選択肢がないため消極的に「〜でも」と選ぶニュアンス（例：ゲームでもする、本でも読む）を表すこともあります。直前の名詞にパッチムがある場合は「이나」、パッチムがない場合は「나」を用います。",
+      "formation": "パッチムあり名詞 + 이나 ／ パッチムなし名詞 + 나",
+      "examples": [
+        {
+          "translation": "私たちは週末に映画を見に行くか、家でゲームでもするつもりです。"
+        },
+        {
+          "translation": "コーヒーかお茶でも飲みながら少し休みたいです。"
+        },
+        {
+          "translation": "今日でも明日でもいつでも構いません。"
+        },
+        {
+          "translation": "今月は旅行に行くか、そうでなければ家で本でも読みながら休もうと思います。"
+        }
+      ]
+    },
+    "ko_이라도_35": {
+      "title": "~(이)라도（〜でも、せめて〜だけでも）",
+      "shortExplanation": "最善ではないが、次善の策として選ぶことや、最低限の条件を表します（「〜でも」「せめて〜だけでも」）。",
+      "longExplanation": "「~(이)라도」は名詞の直後に付き、理想的・最善ではないものの、それに次ぐ妥協案として受け入れるニュアンス（「〜でも」「せめて〜だけでも」）を表す助詞です。最低限これだけでも満たしたいという気持ちを表す際によく使われます。前の名詞にパッチムがある場合は「이라도」、パッチムがない場合は「라도」を用います。",
+      "formation": "パッチムあり名詞 + 이라도 ／ パッチムなし名詞 + 라도",
+      "examples": [
+        {
+          "translation": "この高い値段にもかかわらず、せめてあそこの食べ物だけでも買って食べなければなりません。食べないと力が出ないですから。"
+        },
+        {
+          "translation": "今日の日程はとても忙しいですが、せめて夕飯だけでもちゃんと食べなければならないと思います。"
+        },
+        {
+          "translation": "彼の性格はいまいちですが、せめて仕事だけでもしっかりやるのでチームで重要な人物です。"
+        },
+        {
+          "translation": "試験が難しいとしても、せめて周囲の状況だけでもどの程度把握しておかなければなりません。"
+        }
+      ]
+    },
+    "ko_이랑_36": {
+      "title": "~(이)랑（〜と、〜と一緒に）",
+      "shortExplanation": "会話で名詞と名詞をつなげたり（「〜と」）、動作を共にする相手を表したりする助詞です（「〜と一緒に」）。",
+      "longExplanation": "「~(이)랑」は、日常の会話で非常によく用いられる助詞です。名詞同士を並列でつないで「〜と」という意味を表す用法と、人と一緒に何かを行う際に「〜と（一緒に）」という意味を表す用法の2つがあります。「~와/과」に比べてくだけた親しい口語表現です。直前の名詞にパッチムがある場合は「이랑」、パッチムがない場合は「랑」を接続します。",
+      "formation": "パッチムあり名詞 + 이랑 ／ パッチムなし名詞 + 랑",
+      "examples": [
+        {
+          "translation": "今日友達と映画を見に行きました。"
+        },
+        {
+          "translation": "私はコーヒーとケーキを注文しました。"
+        },
+        {
+          "translation": "姉と私は同じ服を着ました。"
+        },
+        {
+          "translation": "お父さんとお母さんはソウルに住んでいらっしゃいます。"
+        }
+      ]
+    },
+    "ko_이래_37": {
+      "title": "~이래(로)（〜以来、〜から）",
+      "shortExplanation": "過去の時点や出来事を起点とし、現在までその状態がずっと続いていることを表します（「〜以来」）。",
+      "longExplanation": "「~이래(로)」は、時を表す名詞や動詞の過去連体形「-(으)ㄴ」に接続し、過去の出来事・時点を起点として現在に至るまである状態が継続していることを表します。日本語の「〜以来」「〜て以来」に相当します。助詞「로」を伴った「~이래로」の形でも非常によく用いられ、継続の意味合いが強調されます。",
+      "formation": "動詞の過去連体形（-(으)ㄴ） ＋ 이래(로) ／ 時を表す名詞 ＋ 이래(로)",
+      "examples": [
+        {
+          "translation": "私が生まれて以来、こんなに寒い冬は初めてです。"
+        },
+        {
+          "translation": "彼が学校を卒業して以来、初めて会いました。"
+        },
+        {
+          "translation": "引っ越して来て以来、友達ができなくて少し寂しいです。"
+        },
+        {
+          "translation": "退勤して以来ずっと忙しくて休むことができませんでした。"
+        }
+      ]
+    },
+    "ko_이므로_38": {
+      "title": "-(으)므로 / ~(이)므로（〜であるから、〜なので、〜につき）",
+      "shortExplanation": "改まった文章や公的な場面で客観的な理由・原因を表す接続語尾です（「〜であるため」「〜につき」）。",
+      "longExplanation": "「-(으)므로 / ~(이)므로」は、ニュース、論説文、公的な通知文や案内放送などで客観的な原因や理由を述べる際に用いられる格式の高い接続語尾です。日本語の「〜であるため」「〜なので」「〜につき」に相当します。動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-으므로」、パッチムがない場合または「ㄹ」パッチムの場合は「-므로」を接続します。名詞にはパッチムの有無に応じて「이므로 / 므로」を接続します。後ろの節に命令文や勧誘文を続けることはできません。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으므로 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 므로 ／ 名詞 ＋ (이)므로",
+      "examples": [
+        {
+          "translation": "本日雨が降っているため、傘を持ってきました。"
+        },
+        {
+          "translation": "彼女が良い成績を収めたため、みんなが驚きました。"
+        },
+        {
+          "translation": "この作業は難しいため、気をつけて行わなければなりません。"
+        },
+        {
+          "translation": "状況が深刻であるため、明日へ治療を先延ばしにしないでください。"
+        }
+      ]
+    },
+    "ko_이어서_39": {
+      "title": "-아/어서 / ~(이)어서（〜て、〜ので、〜から）",
+      "shortExplanation": "動作の先行・連続関係（「〜してから」「〜して」）や、原因・理由（「〜ので」「〜から」）を表す接続語尾です。",
+      "longExplanation": "「-아/어서」（名詞に付く場合は「~(이)어서」）は、韓国語で最も頻繁に使われる接続語尾の一つです。主な用法として、(1) 前の動作を行ってからその状態のまま次の動作を行う「先行・連続」（〜て、〜してから）、(2) 前節が後節の直接的な原因・理由となる「原因・理由」（〜ので、〜から）の2つがあります。用言の語幹末尾の母音が「ㅏ, ㅗ」の場合は「-아서」、それ以外の母音の場合は「-어서」、「하다」は「해서」になります。名詞に付く場合はパッチムに応じて「이어서 / 여서」となります。",
+      "formation": "動詞・形容詞の語幹（母音ㅏ, ㅗ） ＋ 아서 ／ その他母音 ＋ 어서 ／ 하다は해서 ／ 名詞 ＋ (이)어서",
+      "examples": [
+        {
+          "translation": "私は今日早く家に帰って本を読みました。それからすぐに眠りにつきました。"
+        },
+        {
+          "translation": "今朝雨が降って出かけるのが大変だったので、家で休みました。"
+        },
+        {
+          "translation": "友達に会いに行って、おいしい食べ物を一緒に食べました。"
+        },
+        {
+          "translation": "猫を見かけたのですが、とても可愛くて写真を撮りました。"
+        }
+      ]
+    },
+    "ko_이지만_40": {
+      "title": "-지만 / ~(이)지만（〜けれど、〜が、〜だが）",
+      "shortExplanation": "前節と後節で対照的・逆接的な内容をつなぐ接続語尾です（「〜けれど」「〜が」）。",
+      "longExplanation": "「-지만」（名詞に付く場合は「~(이)지만」）は、2つの対照的な事実や逆接の関係を接続する極めて基本的な接続語尾です。日本語の「〜けれど」「〜が」「〜ですが」に相当します。動詞・形容詞の語幹にはパッチムの有無に関係なくそのまま「-지만」が付きます。過去形「-았/었지만」にも接続できます。名詞に付く場合は、パッチムがある名詞には「이지만」、パッチムがない名詞には「지만」を接続します。",
+      "formation": "動詞・形容詞の語幹 ＋ 지만 ／ パッチムあり名詞 ＋ 이지만 ／ パッチムなし名詞 ＋ 지만 ／ 過去形語幹 ＋ 았/었지만",
+      "examples": [
+        {
+          "translation": "天気は本当に良いけれど、外出する時間がありません。"
+        },
+        {
+          "translation": "私はピザが好きですが、ダイエット中なので食べられません。"
+        },
+        {
+          "translation": "この歌は有名ですが、私はあまり好きではありません。"
+        },
+        {
+          "translation": "友達が私にお金をくれると約束したけれど、まだ受け取っていません。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_을를_26": {
+      "title": "~을/를 빼다 (제외 표현)",
+      "shortExplanation": "어떤 전체나 집단, 범위에서 특정한 대상을 제외함을 나타냅니다.",
+      "longExplanation": "'~을/를 빼다'는 특정 대상이나 행동을 전체 범위나 집단에서 제외할 때 사용하는 표현으로, 일상 대화에서는 주로 '을/를 빼고'나 '을/를 빼고요'의 형태로 자주 쓰입니다. 명사 끝에 받침이 있으면 '을 빼다', 받침이 없으면 '를 빼다'가 결합하며, 동사 뒤에서는 '-는 것을 빼고'의 형태로 사용됩니다.",
+      "formation": "받침 있는 명사 + 을 빼다 / 받침 없는 명사 + 를 빼다 (주로 명사 + 을/를 빼고)",
+      "examples": [
+        {
+          "translation": "그는 아무것도 하지 않았어요, 그림 그리는 것을 빼고 말이죠."
+        },
+        {
+          "translation": "모든 학생이 방과 후에 운동을 했어요, 제가 아팠던 것을 빼고 말이죠."
+        },
+        {
+          "translation": "저는 모든 과일을 좋아해요, 체리를 빼고요."
+        },
+        {
+          "translation": "지금까지 모든 영화를 다 봤어요, 코미디를 빼고요."
+        }
+      ]
+    },
+    "ko_을를_27": {
+      "title": "-(으)ㄹ 수 있다 (가능·능력 표현)",
+      "shortExplanation": "어떤 행동을 할 수 있는 능력이나 가능성이 있음을 나타냅니다.",
+      "longExplanation": "'-(으)ㄹ 수 있다'는 주어가 어떤 행동을 할 능력이 있거나 어떤 상황이 일어날 가능성이 있음을 나타내는 관용 표현입니다. 동사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-을 수 있다'를 쓰고, 받침이 없거나 'ㄹ' 받침으로 끝나면 '-ㄹ 수 있다'를 씁니다. 반대 의미를 나타낼 때는 '-(으)ㄹ 수 없다'를 사용합니다.",
+      "formation": "동사 어간(ㄹ 제외 받침) + 을 수 있다 / 동사 어간(받침 없음, ㄹ 받침) + ㄹ 수 있다",
+      "examples": [
+        {
+          "translation": "우리는 이 문제를 해결할 수 있어요. 모두 함께 협력하면 충분히 가능하다고 생각해요."
+        },
+        {
+          "translation": "나는 내일 그 회의에 참석할 수 있을 것 같아요, 다행히 다른 일정이 없거든요."
+        },
+        {
+          "translation": "당신이 수영을 배우면 언젠가 자유자재로 수영할 수 있을 거예요, 노력하면 가능합니다."
+        },
+        {
+          "translation": "그는 한국어를 열심히 공부하면 TOPIK 시험을 패스할 수 있을 것입니다, 그리고 꼭 성공할 거예요."
+        }
+      ]
+    },
+    "ko_을를_28": {
+      "title": "~을/를 통해(서) (경로·수단 표현)",
+      "shortExplanation": "어떤 일이나 행위를 이루게 하는 매개체나 수단, 경로를 나타냅니다.",
+      "longExplanation": "'~을/를 통해(서)'는 어떤 매개물, 수단, 방법 또는 경로를 거쳐서 특정 목적을 달성하거나 정보를 얻음을 나타내는 표현입니다. 받침이 있는 명사 뒤에는 '을 통해(서)'를 결합하고, 받침이 없는 명사 뒤에는 '를 통해(서)'를 결합합니다. 대화에서는 '을/를 통해서'의 형태도 널리 쓰입니다.",
+      "formation": "받침 있는 명사 + 을 통해(서) / 받침 없는 명사 + 를 통해(서)",
+      "examples": [
+        {
+          "translation": "저는 한국어를 드라마를 통해 배웠어요. 그래서 표현을 좀 더 자연스럽게 익혔어요."
+        },
+        {
+          "translation": "우리는 이메일을 통해 회의 일정을 조정했어요. 시간 관리가 훨씬 효율적이더라고요."
+        },
+        {
+          "translation": "그는 음악을 통해 감정을 표현하곤 해요. 음악은 그에게 가장 좋은 소통 수단이에요."
+        },
+        {
+          "translation": "사진을 통해 우리는 다른 사람들의 일상생활을 이해하고 공감할 수 있어요."
+        }
+      ]
+    },
+    "ko_을까_29": {
+      "title": "-(으)ㄹ까 (제안·의문 종결어미)",
+      "shortExplanation": "상대방에게 어떤 행동을 제안하거나 의견을 물을 때, 또는 스스로 추측하여 물을 때 쓰는 종결어미입니다.",
+      "longExplanation": "'-(으)ㄹ까'는 주로 반말 대화에서 상대방에게 함께 무언가를 하자고 제안하거나 상대의 의사를 물어볼 때('-(으)ㄹ까요'의 친근한 형태), 또는 화자 스스로 의문이나 추측을 품고 자문할 때 쓰이는 의문형 종결어미입니다. 동사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-을까'를 쓰고, 받침이 없거나 'ㄹ' 받침으로 끝나면 '-ㄹ까'를 씁니다.",
+      "formation": "동사 어간(ㄹ 제외 받침) + 을까 / 동사 어간(받침 없음, ㄹ 받침) + ㄹ까",
+      "examples": [
+        {
+          "translation": "우리 이번 주말에 캠핑을 가볼까?"
+        },
+        {
+          "translation": "내일 영화를 볼까?"
+        },
+        {
+          "translation": "오늘 저녁에 식당에서 저녁을 먹을까?"
+        },
+        {
+          "translation": "학원 끝나고 나서 같이 공부할까?"
+        }
+      ]
+    },
+    "ko_을래_30": {
+      "title": "-(으)ㄹ래(요) (의사·의향 종결어미)",
+      "shortExplanation": "대화에서 자신의 의지나 바람을 나타내거나, 상대방의 의향을 물어볼 때 쓰는 종결어미입니다.",
+      "longExplanation": "'-(으)ㄹ래(요)'는 구어체에서 화자의 의지나 희망을 나타내거나('~할래'), 상대방에게 가볍게 의향을 물어보며 권유할 때('~할래?') 사용하는 종결어미입니다. 동사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-을래(요)'를 결합하고, 받침이 없거나 'ㄹ' 받침으로 끝나면 '-ㄹ래(요)'를 결합합니다. 존댓말로 사용할 때는 끝에 '요'를 붙입니다.",
+      "formation": "동사 어간(ㄹ 제외 받침) + 을래(요) / 동사 어간(받침 없음, ㄹ 받침) + ㄹ래(요)",
+      "examples": [
+        {
+          "translation": "나는 오늘 밤 영화 보러 갈래. 너도 같이 갈래?"
+        },
+        {
+          "translation": "저는 집에서 저녁을 먹을래요. 외식하는 것보다 집밥이 더 좋아요."
+        },
+        {
+          "translation": "나는 이번 주말에 친구들과 등산 갈래. 좀 운동도 해야 할 것 같아서."
+        },
+        {
+          "translation": "나는 내일부터 다이어트를 시작할래. 최근에 살이 많이 찐 것 같아요."
+        }
+      ]
+    },
+    "ko_을지라도_31": {
+      "title": "-(으)ㄹ지라도 (강한 양보 연결어미)",
+      "shortExplanation": "앞 절의 상황을 인정하더라도 뒤 절의 사실이나 의지에는 변함이 없음을 나타내는 양보 연결어미입니다.",
+      "longExplanation": "'-(으)ㄹ지라도'는 앞선 내용의 사실이나 가정을 인정하면서도, 그것이 뒤 절의 결과나 결심에 아무런 방해가 되지 않음을 나타내는 강한 양보의 연결어미입니다. 주로 격식적인 표현이나 글말에서 자주 쓰이며, 동사나 형용사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-을지라도'를, 받침이 없거나 'ㄹ' 받침이면 '-ㄹ지라도'를 씁니다. 명사 뒤에는 '(이)ㄹ지라도'가 옵니다.",
+      "formation": "동사/형용사 어간(ㄹ 제외 받침) + 을지라도 / 동사/형용사 어간(받침 없음, ㄹ 받침) + ㄹ지라도",
+      "examples": [
+        {
+          "translation": "문제가 어려울지라도 포기하지 마세요. 결국에는 해결할 수 있을 거예요."
+        },
+        {
+          "translation": "이 책이 비쌀지라도 꼭 필요해서 반드시 사야겠어요."
+        },
+        {
+          "translation": "시험이 어려울지라도 열심히 공부하면 분명 성과가 있을 거예요."
+        },
+        {
+          "translation": "날씨가 추울지라도 친구들과 약속이 있으니 꼭 나가야 해요."
+        }
+      ]
+    },
+    "ko_을지언정_32": {
+      "title": "-(으)ㄹ지언정 (강한 양보·대조 연결어미)",
+      "shortExplanation": "앞 절의 사실을 인정하거나 극단적인 상황을 감수하더라도 뒤 절의 태도나 사실은 확고함을 나타냅니다.",
+      "longExplanation": "'-(으)ㄹ지언정'은 앞 절의 조건이나 상황을 인정하면서도 뒤 절의 사실이나 태도가 흔들리지 않음을 나타내거나, '차라리 앞의 것을 감수할망정 뒤의 것은 결코 하지 않겠다'는 식의 비장한 태도나 대조를 나타내는 문어체적 연결어미입니다. 동사나 형용사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-을지언정'을, 받침이 없거나 'ㄹ' 받침이면 '-ㄹ지언정'을 결합합니다.",
+      "formation": "동사/형용사 어간(ㄹ 제외 받침) + 을지언정 / 동사/형용사 어간(받침 없음, ㄹ 받침) + ㄹ지언정",
+      "examples": [
+        {
+          "translation": "시험에 떨어질지언정 목표를 향해 계속 노력하는 것이 중요합니다."
+        },
+        {
+          "translation": "벌써 봄이 왔을지언정 아직 날씨가 많이 춥네요."
+        },
+        {
+          "translation": "방이 클지언정 정리하지 않으면 엉망이 될 거예요."
+        },
+        {
+          "translation": "그녀에게 전화할지언정 그녀가 받을지 안 받을지는 모르겠어요."
+        }
+      ]
+    },
+    "ko_이_33": {
+      "title": "~이/가 되다 (변화·변전 표현)",
+      "shortExplanation": "명사 뒤에 결합하여 상태, 신분, 자격, 시간 등이 다른 상태로 변화함을 나타냅니다.",
+      "longExplanation": "'~이/가 되다'는 주어나 어떤 대상이 새로운 신분, 직업, 상태, 시간, 계절 등으로 바뀌거나 도달함을 나타내는 문형입니다. 앞의 명사 끝에 받침이 있으면 '이 되다'를 쓰고, 받침이 없으면 '가 되다'를 씁니다. 그러한 상태에 도달하지 못함을 나타낼 때는 부정형인 '~이/가 안 되다'를 씁니다.",
+      "formation": "받침 있는 명사 + 이 되다 / 받침 없는 명사 + 가 되다",
+      "examples": [
+        {
+          "translation": "가을이 되니까 날씨가 추워져서 니트웨어가 꼭 필요하다고 느끼게 돼요."
+        },
+        {
+          "translation": "학부생 때는 변호사가 되고 싶었는데, 대학원에서는 교수가 되고 싶다는 생각이 들었어요."
+        },
+        {
+          "translation": "친구들과 함께 공부를 하니까 점점 더 좋은 학생이 되고 있어요."
+        },
+        {
+          "translation": "얼굴에 난 흠집이 결국 큰 흉터가 되었어요."
+        }
+      ]
+    },
+    "ko_이나_34": {
+      "title": "~(이)나 (선택·차선 보조사)",
+      "shortExplanation": "둘 이상의 대상 중 하나를 선택함을 나타내거나, 마음에 썩 차지는 않지만 차선책을 선택함을 나타내는 보조사입니다.",
+      "longExplanation": "'~(이)나'는 체언 뒤에 붙어 여러 대상 중 어느 하나를 선택함을 나타내거나('커피나 차', '오늘이나 내일'), 딱히 더 좋은 것이 없어 차선책으로 선택함을 나타낼 때('게임이나 하다', '책이나 읽다') 사용되는 보조사입니다. 받침이 있는 체언 뒤에는 '이나'가 결합하고, 받침이 없는 체언 뒤에는 '나'가 결합합니다.",
+      "formation": "받침 있는 명사 + 이나 / 받침 없는 명사 + 나",
+      "examples": [
+        {
+          "translation": "우리는 주말에 영화를 보러 가거나, 집에서 게임이나 할 거예요."
+        },
+        {
+          "translation": "커피나 차나 마시면서 좀 쉬고 싶어요."
+        },
+        {
+          "translation": "오늘이나 내일이나 아무 때나 괜찮아요."
+        },
+        {
+          "translation": "이번 달에는 여행을 가거나, 아니면 집에서 책이나 읽으면서 쉬려고 해요."
+        }
+      ]
+    },
+    "ko_이라도_35": {
+      "title": "~(이)라도 (차선·최소한 보조사)",
+      "shortExplanation": "가장 마음에 드는 것이 없을 때 차선책으로 만족하거나, 최소한의 요구 조건을 나타내는 보조사입니다.",
+      "longExplanation": "'~(이)라도'는 체언 뒤에 붙어 최선이 아닌 차선의 선택을 수용함을 나타내거나('물이라도 마시다'), 최소한의 조건을 제시할 때('조금이라도') 쓰이는 보조사입니다. 받침이 있는 체언 뒤에는 '이라도'가 결합하고, 받침이 없는 체언 뒤에는 '라도'가 결합합니다.",
+      "formation": "받침 있는 명사 + 이라도 / 받침 없는 명사 + 라도",
+      "examples": [
+        {
+          "translation": "이 비싼 가격에도 불구하고 저기 음식이라도 사 먹어야겠어요. 안 먹으면 힘이 없을 테니까요."
+        },
+        {
+          "translation": "오늘 일정이 아주 바쁘지만, 저녁이라도 제대로 먹어야 할 것 같아요."
+        },
+        {
+          "translation": "그의 성격이 별로지만 일이라도 잘해서 팀에서 중요한 사람이에요."
+        },
+        {
+          "translation": "시험이 어렵다고 해도 돌아가는 상황이라도 어느 정도 파악은 해야겠어요."
+        }
+      ]
+    },
+    "ko_이랑_36": {
+      "title": "~(이)랑 (접속·공동 격조사)",
+      "shortExplanation": "일상 구어에서 명사와 명사를 이어 주거나(와/과), 함께 행동하는 대상을 나타내는 조사입니다.",
+      "longExplanation": "'~(이)랑'은 일상 대화에서 두 개 이상의 명사를 대등하게 이어 줄 때(접속 조사)나, 행동을 함께하는 동반 대상을 나타낼 때(부사격 조사) 쓰이는 친근한 조사입니다. 격식체인 '와/과'에 비해 부드럽고 편안한 느낌을 줍니다. 받침이 있는 체언 뒤에는 '이랑'이 결합하고, 받침이 없는 체언 뒤에는 '랑'이 결합합니다.",
+      "formation": "받침 있는 명사 + 이랑 / 받침 없는 명사 + 랑",
+      "examples": [
+        {
+          "translation": "오늘 친구랑 영화를 보러 갔어요."
+        },
+        {
+          "translation": "저는 커피랑 케이크를 주문했어요."
+        },
+        {
+          "translation": "언니랑 저는 같은 옷을 입었어요."
+        },
+        {
+          "translation": "아빠랑 엄마는 서울에서 살고 계세요."
+        }
+      ]
+    },
+    "ko_이래_37": {
+      "title": "~이래(로) (기점·지속 표현)",
+      "shortExplanation": "과거의 어떤 일이나 시점을 기준으로 하여 지금까지 지속됨을 나타내는 표현입니다.",
+      "longExplanation": "'~이래(로)'는 과거의 특정한 사건이나 시점을 시작점으로 삼아, 그때부터 지금까지 어떤 상태나 상황이 계속해서 이어지고 있음을 나타냅니다. 동사의 과거 관형사형 '-(으)ㄴ 이래(로)'의 형태로 자주 쓰이며, 시간 명사 뒤에 직접 결합하기도 합니다. '로'가 붙은 '이래로'는 지속의 의미를 더 강조합니다.",
+      "formation": "동사 과거 관형사형(-(으)ㄴ) + 이래(로) / 시간 명사 + 이래(로)",
+      "examples": [
+        {
+          "translation": "제가 태어난 이래 이렇게 추운 겨울은 처음이에요."
+        },
+        {
+          "translation": "그가 학교를 졸업한 이래로 처음 만났어요."
+        },
+        {
+          "translation": "이사 온 이래로 친구를 못 사귀어서 좀 외로워요."
+        },
+        {
+          "translation": "퇴근한 이래 계속 바빠서 쉬지 못했어요."
+        }
+      ]
+    },
+    "ko_이므로_38": {
+      "title": "-(으)므로 / ~(이)므로 (이유·원인 연결어미)",
+      "shortExplanation": "공식적인 글이나 격식 있는 자리에서 어떤 일의 객관적인 원인이나 이유를 나타내는 연결어미입니다.",
+      "longExplanation": "'-(으)므로 / ~(이)므로'는 주로 논설문, 공고문, 뉴스 등 격식 있는 글말에서 앞선 사실이 뒤 절의 명확한 이유나 근거가 됨을 나타내는 연결어미입니다. 동사 및 형용사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-으므로', 받침이 없거나 'ㄹ' 받침이면 '-므로'를 쓰며, 체언 뒤에는 '(이)므로'가 결합합니다. 뒤 절에 명령형이나 청유형이 올 수 없습니다.",
+      "formation": "동사/형용사 어간(ㄹ 제외 받침) + 으므로 / 동사/형용사 어간(받침 없음, ㄹ 받침) + 므로 / 명사 + (이)므로",
+      "examples": [
+        {
+          "translation": "오늘 비가 오므로 우산을 가져왔어요."
+        },
+        {
+          "translation": "그녀는 좋은 성적을 받았으므로 모두가 놀랐어요."
+        },
+        {
+          "translation": "이 작업은 어려우므로 조심해서 해야 합니다."
+        },
+        {
+          "translation": "상황이 심각하므로 내일로 치료를 미루지 마세요."
+        }
+      ]
+    },
+    "ko_이어서_39": {
+      "title": "-아/어서 / ~(이)어서 (시간적 선후·이유 연결어미)",
+      "shortExplanation": "앞뒤 행위가 시간적으로 밀접하게 이어짐을 나타내거나(선후), 앞선 사실이 뒤 절의 이유가 됨을 나타냅니다.",
+      "longExplanation": "'-아/어서'(명사 뒤에서는 '~(이)어서')는 한국어에서 가장 기본적이고 널리 쓰이는 연결어미입니다. 크게 두 가지 역할을 합니다: (1) 앞 동작이 이루어진 뒤 그 상태를 이어받아 뒤 동작이 일어남을 나타내는 '시간적 선후 관계'(와서 책을 읽다); (2) 앞 절이 뒤 절의 원인이나 이유가 됨을 나타내는 '이유·원인 관계'(비가 와서 힘들다, 귀여워서 찍다). 어간 끝 모음이 'ㅏ, ㅗ'이면 '-아서', 그 밖의 모음이면 '-어서', '하다'는 '해서'로 바뀌며, 체언 뒤에는 '(이)어서'가 결합합니다.",
+      "formation": "동사/형용사 어간(모음 ㅏ, ㅗ) + 아서 / 그 외 모음 + 어서 / 하다 -> 해서 / 명사 + (이)어서",
+      "examples": [
+        {
+          "translation": "저는 오늘 일찍 집에 와서 책을 읽었어요. 그리고 나서 바로 잠들었어요."
+        },
+        {
+          "translation": "오늘 아침에 비가 와서 나가기 힘들었고, 그래서 집에서 쉬었어요."
+        },
+        {
+          "translation": "친구를 만나러 갔는데, 맛있는 음식을 같이 먹었어요."
+        },
+        {
+          "translation": "고양이를 봤는데 너무 귀여워서 사진을 찍었어요."
+        }
+      ]
+    },
+    "ko_이지만_40": {
+      "title": "-지만 / ~(이)지만 (대조·역접 연결어미)",
+      "shortExplanation": "앞 절과 뒤 절의 내용이 서로 상반되거나 대조적임을 나타내는 연결어미입니다.",
+      "longExplanation": "'-지만'(명사 뒤에서는 '~(이)지만')은 앞선 내용과 상반되거나 대조되는 사실을 뒤에 이어 줄 때 쓰는 대표적인 역접의 연결어미입니다. 동사나 형용사 어간에는 받침 유무에 상관없이 바로 '-지만'이 결합하며, 과거 시제 어미 뒤에는 '-았/었지만'의 형태로 결합합니다. 체언(명사) 뒤에서는 받침이 있으면 '이지만', 받침이 없으면 '지만'을 씁니다.",
+      "formation": "동사/형용사 어간 + 지만 / 받침 있는 명사 + 이지만 / 받침 없는 명사 + 지만 / 과거 시제 어미 + 았/었지만",
+      "examples": [
+        {
+          "translation": "날씨가 정말 좋지만, 외출할 시간이 없어요."
+        },
+        {
+          "translation": "저는 피자를 좋아하지만, 다이어트 때문에 먹을 수 없어요."
+        },
+        {
+          "translation": "이 노래는 유명하지만, 저는 별로 좋아하지 않아요."
+        },
+        {
+          "translation": "친구가 저에게 돈을 준다고 약속했지만, 아직 못 받았어요."
+        }
+      ]
+    }
+  }
+}

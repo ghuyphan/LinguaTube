@@ -60,7 +60,7 @@
                             [attr.aria-label]="(token.isGrammar ? 'Grammar pattern: ' : 'Look up word: ') + token.surface"
                             (click)="token.isGrammar ? onGrammarClick($index, $event) : onWordClick(token, cue.text)">
                             @if (showReadingAnnotation()) {
-                                @if (token.rubyParts && token.rubyParts.length > 0) {
+                                @if (!prefersRomanized() && token.rubyParts && token.rubyParts.length > 0) {
                                     @for (part of token.rubyParts; track $index) {
                                         @if (part.reading) {
                                         <ruby>{{ part.text }}<rt aria-hidden="true">{{ part.reading }}</rt></ruby>
@@ -84,38 +84,38 @@
 
                 </div>
 
-                @if (settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())) {
-                <div class="subtitle-translation-wrapper">
-                    @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
-                    <div class="subtitle-translation subtitle-translation--loading" [attr.aria-label]="i18n.t('subtitle.translating')">
-                        <div class="dual-sub-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                <div class="subtitle-translation-wrapper" [class.is-expanded]="settings.settings().showDualSubtitles && ['ja', 'zh', 'ko', 'en'].includes(effectiveLanguage())">
+                    <div class="subtitle-translation-inner">
+                        @if ((subtitles.isDualSubLoading() || isTranslatingDual()) && !cueTranslations().has(cue.id)) {
+                        <div class="subtitle-translation subtitle-translation--loading" [attr.aria-label]="i18n.t('subtitle.translating')">
+                            <div class="dual-sub-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
+                        } @else {
+                        @if (cueTranslations().get(cue.id); as translation) {
+                        @if (translation.trim() !== cue.text.trim()) {
+                        <div class="subtitle-translation subtitle-fade-in">
+                            {{ translation }}
+                        </div>
+                        } @else {
+                        <div class="subtitle-translation subtitle-translation--empty"></div>
+                        }
+                        } @else if (toastType() === 'error' && toastMessage()) {
+                        <div class="subtitle-translation subtitle-translation--error subtitle-fade-in">
+                            <app-icon name="alert-circle" [size]="14" />
+                            <span>{{ toastMessage() || i18n.t('subtitle.translationFailed') || 'Translation failed'
+                                }}</span>
+                        </div>
+                        } @else {
+                        <!-- Reserve space even if empty/failed -->
+                        <div class="subtitle-translation subtitle-translation--empty"></div>
+                        }
+                        }
                     </div>
-                    } @else {
-                    @if (cueTranslations().get(cue.id); as translation) {
-                    @if (translation.trim() !== cue.text.trim()) {
-                    <div class="subtitle-translation subtitle-fade-in">
-                        {{ translation }}
-                    </div>
-                    } @else {
-                    <div class="subtitle-translation subtitle-translation--empty"></div>
-                    }
-                    } @else if (toastType() === 'error' && toastMessage()) {
-                    <div class="subtitle-translation subtitle-translation--error subtitle-fade-in">
-                        <app-icon name="alert-circle" [size]="14" />
-                        <span>{{ toastMessage() || i18n.t('subtitle.translationFailed') || 'Translation failed'
-                            }}</span>
-                    </div>
-                    } @else {
-                    <!-- Reserve space even if empty/failed -->
-                    <div class="subtitle-translation subtitle-translation--empty"></div>
-                    }
-                    }
                 </div>
-                }
             </div>
             } @else {
             <div class="subtitle-empty">

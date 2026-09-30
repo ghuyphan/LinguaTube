@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_대로_37": {
+      "title": "~대로 (Theo, đúng như, y như)",
+      "shortExplanation": "Biểu thị hành động được thực hiện đúng theo phương pháp, quy tắc, kế hoạch hoặc giữ nguyên trạng thái vốn có ('theo...', 'đúng như...', 'y như...').",
+      "longExplanation": "'~대로' là trợ từ (khi đi sau danh từ) hoặc cấu trúc phụ từ liên kết (khi đi sau định ngữ động từ '-(으)ㄴ/는 대로') dùng để chỉ việc làm theo đúng những gì đã được chỉ dẫn, dự định hoặc xảy ra y như trạng thái vốn có. Cấu trúc này nhấn mạnh sự tuân thủ chính xác theo một khuôn mẫu, chỉ dẫn hoặc kế hoạch ban đầu mà không làm khác đi.",
+      "formation": "Danh từ + 대로 / Thân động từ + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "Tôi đã thử giải bài toán theo đúng như giáo viên hướng dẫn, nhưng vẫn chưa hiểu rõ lắm."
+        },
+        {
+          "translation": "Tôi đọc cuốn sách đúng như chị gái giới thiệu và thấy đó là một cuốn sách rất thú vị mang nhiều ý nghĩa sâu sắc."
+        },
+        {
+          "translation": "Chúng tôi tiếp tục chuyến du lịch theo đúng như kế hoạch và đã được chiêm ngưỡng nhiều địa danh nổi tiếng."
+        },
+        {
+          "translation": "Khi tận mắt nhìn thấy cảnh sắc y như trong ảnh chụp, cảnh đẹp đến nỗi khiến tâm trạng tôi trở nên rất tuyệt vời."
+        }
+      ]
+    },
+    "ko_대로_38": {
+      "title": "~대로 하다 (Làm theo, làm đúng như đã dặn)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động chính xác theo lời đã dặn, quy tắc hoặc hướng dẫn ('làm theo...', 'làm đúng như...').",
+      "longExplanation": "'~대로 하다' nhấn mạnh việc làm theo đúng một cách tuyệt đối những gì người khác đã chỉ bảo, quy định trong tài liệu, hoặc lời khuyên đã được đưa ra. Cấu trúc này thường đi kèm sau danh từ (như 'kế hoạch', 'công thức') hoặc sau mệnh đề định ngữ quá khứ/hiện tại ('말씀하신 대로', '지시한 대로') để biểu thị sự tuân thủ nghiêm ngặt.",
+      "formation": "Danh từ + 대로 하다 / Thân động từ + -(으)ㄴ/는 대로 하다",
+      "examples": [
+        {
+          "translation": "Mẹ bảo tôi buổi sáng thức dậy nhất định phải ăn cơm. Vì thế tôi làm đúng theo lời mẹ dặn rồi mới đi học."
+        },
+        {
+          "translation": "Nếu nấu ăn theo đúng công thức trong sách dạy nấu ăn thì lúc nào cũng có thể hoàn thành món ăn rất ngon miệng."
+        },
+        {
+          "translation": "Nếu bạn học theo đúng như những gì giáo viên đã nhấn mạnh, bạn sẽ có thể đạt điểm cao trong kỳ thi."
+        },
+        {
+          "translation": "Nhờ tập thể dục mỗi ngày và ăn uống đủ chất đúng như lời bố mẹ dặn, sức khỏe của tôi đã tốt lên rất nhiều."
+        }
+      ]
+    },
+    "ko_대로이면_39": {
+      "title": "~대로이면 (Nếu đúng như... / Nếu theo đúng...)",
+      "shortExplanation": "Biểu thị giả định hoặc điều kiện căn cứ vào lời nói, kế hoạch hoặc thông tin đã biết ('nếu đúng như...', 'nếu theo đúng...').",
+      "longExplanation": "'~대로이면' là sự kết hợp giữa danh từ phụ thuộc hoặc trợ từ '대로', trợ từ vị ngữ '이-' và vĩ tố liên kết giả định '-면' (thường dùng trong văn nói là '~대로라면'). Cấu trúc này dùng để đặt ra giả thiết rằng nếu một thông tin, tin đồn, kế hoạch hay lời ai đó nói quả đúng như vậy thì một kết quả hoặc suy đoán ở vế sau sẽ ứng nghiệm.",
+      "formation": "Danh từ + 대로이면 (hoặc 대로라면) / Thân động từ + -(으)ㄴ/는 대로이면 (hoặc 대로라면)",
+      "examples": [
+        {
+          "translation": "Nếu đúng như chủ quán gà rán nói, thì món được ưa chuộng nhất ở đây là gà rán sốt cay."
+        },
+        {
+          "translation": "Nếu theo đúng kế hoạch của bạn thì tối nay chúng ta có thể xem phim rồi nhỉ."
+        },
+        {
+          "translation": "Nếu đúng như Min-su nói thì nghe đâu kỳ thi này rất khó."
+        },
+        {
+          "translation": "Nếu đúng như Heung-min đã thú thật mọi chuyện, thì từ nay về sau anh ấy sẽ không tái phạm sai lầm như vậy nữa."
+        }
+      ]
+    },
+    "ko_도록_40": {
+      "title": "~도록 (Để, sao cho, đến mức)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả mục đích, kết quả hướng tới hoặc mức độ của hành động ('để...', 'sao cho...', 'đến mức...').",
+      "longExplanation": "'~도록' là vĩ tố liên kết gắn sau thân động từ hoặc tính từ, dùng để chỉ mục đích mà hành động ở vế sau hướng tới nhằm làm cho trạng thái hoặc hành vi ở vế trước thành hiện thực ('để cho...', 'sao cho...'). Ngoài ra, nó cũng có thể diễn tả mức độ hoặc giới hạn thời gian ('đến mức...', 'cho đến khi...').",
+      "formation": "Thân động từ / Thân tính từ + -도록",
+      "examples": [
+        {
+          "translation": "Chúng tôi quyết định đi vườn thú đêm để có thể ngắm các loài động vật ăn đêm."
+        },
+        {
+          "translation": "Xin hãy giảng bài thật chậm rãi sao cho tất cả chúng tôi đều có thể hiểu được."
+        },
+        {
+          "translation": "Tôi quét sân định kỳ để lá rụng được dọn sạch nhanh chóng."
+        },
+        {
+          "translation": "Tôi đã đóng chặt cửa sổ lại để gió mưa không tràn vào trong nhà."
+        }
+      ]
+    },
+    "ko_도록_41": {
+      "title": "~도록 하다 (Bảo làm gì, yêu cầu làm gì, cố gắng làm cho)",
+      "shortExplanation": "Biểu thị việc sai khiến, thúc đẩy ai đó làm gì hoặc bản thân nỗ lực đảm bảo một việc xảy ra ('bảo ai làm...', 'khiến cho...', 'cố gắng để...').",
+      "longExplanation": "'~도록 하다' là cấu trúc mang ý nghĩa sai khiến hoặc chỉ thị gián tiếp, dùng khi chủ thể khiến người khác hành động hoặc chủ động tạo điều kiện để một kết quả nhất định xảy ra. Khi dùng cho bản thân ở ngôi thứ nhất ('-도록 하겠습니다'), nó mang sắc thái quyết tâm và cam kết lịch sự ('tôi sẽ cố gắng làm...').",
+      "formation": "Thân động từ / Thân tính từ + -도록 하다",
+      "examples": [
+        {
+          "translation": "Tôi luôn nhắc nhở và đôn đốc các học sinh chăm chú nghe giảng trong giờ học."
+        },
+        {
+          "translation": "Công ty đang tạo điều kiện để các nhân viên tan làm sớm."
+        },
+        {
+          "translation": "Cô ấy đã trông chừng cẩn thận để lũ trẻ về đến nhà an toàn."
+        },
+        {
+          "translation": "Mẹ bắt chúng tôi phải ăn rau mỗi ngày."
+        }
+      ]
+    },
+    "ko_도록이면_42": {
+      "title": "도록이면 / 되도록이면 (Nếu có thể, cố gắng hết mức có thể)",
+      "shortExplanation": "Diễn tả nguyện vọng, lời khuyên hoặc cố gắng thực hiện điều gì trong phạm vi có thể ('nếu có thể...', 'cố gắng...').",
+      "longExplanation": "'도록이면' (thường dùng chuẩn là '되도록이면') mang ý nghĩa 'nếu có thể được thì...' hoặc 'trong chừng mực có thể'. Cấu trúc này dùng để thể hiện mong muốn, lời đề nghị nhẹ nhàng hoặc ý chí của người nói rằng hãy ưu tiên thực hiện một hành vi nào đó nếu điều kiện cho phép, tương đương với 'càng... càng tốt' hoặc 'nếu được thì cố gắng'.",
+      "formation": "Phó từ đứng đầu câu / Thân động từ + -도록이면",
+      "examples": [
+        {
+          "translation": "Nếu có thể, tôi đang cố gắng ăn các món ăn tốt cho sức khỏe."
+        },
+        {
+          "translation": "Nếu được thì xin hãy trả lời thư sớm giúp tôi nhé."
+        },
+        {
+          "translation": "Nếu có thể thì nên tập thể dục mỗi ngày mới duy trì được sức khỏe."
+        },
+        {
+          "translation": "Nếu được thì tốt nhất là đừng trì hoãn mà hãy làm bài tập ngay."
+        }
+      ]
+    },
+    "ko_든지_43": {
+      "title": "~든지 (Dù là... hay là..., bất kể)",
+      "shortExplanation": "Trợ từ hoặc vĩ tố liên kết biểu thị sự lựa chọn không giới hạn, bất kể phương án nào cũng đều được ('dù là... hay là...', 'bất kể...').",
+      "longExplanation": "'~든지' là vĩ tố liên kết hoặc trợ từ thể hiện sự lựa chọn giữa hai hay nhiều đối tượng, hành động mà không có sự phân biệt hay câu nệ. Người nói muốn diễn đạt rằng cho dù rơi vào trường hợp nào đi chăng nữa thì kết quả hay thái độ ở vế sau vẫn không hề thay đổi.",
+      "formation": "Danh từ + (이)든지 / Thân động từ / Thân tính từ + -든지",
+      "examples": [
+        {
+          "translation": "Dù là du lịch theo đoàn hay du lịch tự túc, tôi đều yêu thích bất kỳ hình thức du lịch nào."
+        },
+        {
+          "translation": "Dù đã tốn nhiều thời gian hay tiêu tốn nhiều tiền bạc để giải quyết vấn đề này, thì mọi nỗ lực ấy đều rất xứng đáng."
+        },
+        {
+          "translation": "Cho dù anh ấy sống ở Seoul hay sống ở Busan, thì ở đâu anh ấy cũng sẽ hạnh phúc thôi."
+        },
+        {
+          "translation": "Dù làm việc ở công ty này hay làm việc ở công ty khác, tôi đều sẽ cố gắng hết mình ở bất cứ nơi đâu."
+        }
+      ]
+    },
+    "ko_든지_44": {
+      "title": "~든지 ~든지 (Hoặc là... hoặc là..., hay là... hay là...)",
+      "shortExplanation": "Liệt kê các hành động hoặc đối tượng tương đương để lựa chọn một trong số đó ('hoặc là... hoặc là...', 'hay là...').",
+      "longExplanation": "'~든지 ~든지' dùng để liệt kê hai hay nhiều khả năng hành động, lựa chọn khác nhau để người nghe hoặc bản thân người nói tùy ý quyết định. Cấu trúc này thường đi kèm với từ nối '아니면' (hoặc là) ở vế sau, mang ý nghĩa 'làm cái này hay làm cái kia cũng được', để ngỏ quyền quyết định cho đối phương.",
+      "formation": "Danh từ + (이)든지 Danh từ + (이)든지 / Thân động từ + -든지 (아니면) Thân động từ + -든지",
+      "examples": [
+        {
+          "translation": "Cuối tuần này tôi dự định hoặc là đi xem phim, hoặc là ở nhà nghỉ ngơi."
+        },
+        {
+          "translation": "Tôi vẫn chưa quyết định được tối nay nên ăn pizza hay là ăn gà rán."
+        },
+        {
+          "translation": "Bây giờ bạn về nhà hay ở lại thêm chút nữa thì cứ tùy ý nhé, thế nào cũng được cả."
+        },
+        {
+          "translation": "Dù là gọi điện thoại hay gửi tin nhắn, bạn nhất định phải liên lạc với cô ấy đấy."
+        }
+      ]
+    },
+    "ko_라도_45": {
+      "title": "~라도 (Dù chỉ là, ít nhất thì, cho dù)",
+      "shortExplanation": "Trợ từ biểu thị sự lựa chọn tuy không phải là tốt nhất nhưng vẫn chấp nhận được như một phương án tối thiểu ('dù chỉ là...', 'ít nhất thì...').",
+      "longExplanation": "'~라도' là trợ từ gắn sau danh từ, phó từ hoặc thân từ, mang ý nghĩa nhượng bộ. Nó chỉ ra một phương án tuy không phải là lý tưởng nhất hay mong muốn nhất nhưng vẫn có thể chấp nhận được như mức tối thiểu (còn hơn không), tương đương với 'dù là...', 'ít nhất thì...'. Khi gắn sau dạng giả định cũng có thể mang nghĩa 'cho dù'.",
+      "formation": "Danh từ + (이)라도 / Thân động từ / Thân tính từ + -아/어-라도 (hoặc Danh từ hóa + -(이)라도)",
+      "examples": [
+        {
+          "translation": "Nếu bạn không thể làm việc này thì ít nhất hãy giúp đỡ tôi một chút nhé."
+        },
+        {
+          "translation": "Anh ấy đã không tham gia lớp học, nhưng chí ít thì cũng phải đọc sách chứ."
+        },
+        {
+          "translation": "Dù đã thi trượt nhưng ít nhất tôi sẽ thử cố gắng thêm một lần nữa."
+        },
+        {
+          "translation": "Dù không muốn đi xem phim, nhưng nếu bạn bè thích thì ít nhất tôi cũng sẽ đi cùng họ."
+        }
+      ]
+    },
+    "ko_라든지_46": {
+      "title": "~(이)라든지 (Chẳng hạn như, hay là, như là)",
+      "shortExplanation": "Trợ từ liệt kê đưa ra các ví dụ tiêu biểu hoặc phương án tham khảo ('chẳng hạn như...', 'như là...', 'hay là...').",
+      "longExplanation": "'~(이)라든지' là trợ từ liên kết dùng để nêu ra một vài ví dụ đại diện trong số nhiều đối tượng hoặc hành động có thể có. Người nói đưa ra các ví dụ này nhằm gợi ý hoặc tham khảo mà không giới hạn chỉ ở những đối tượng được kể tên, tương đương với 'chẳng hạn như... hay là...', 'như là...'.",
+      "formation": "Danh từ + (이)라든지 (Danh từ + (이)라든지) / Thân động từ + -라든지",
+      "examples": [
+        {
+          "translation": "Chẳng hạn như cà phê hay là trà, bạn có muốn uống loại đồ uống nào không?"
+        },
+        {
+          "translation": "Dù là được bảo học ở thư viện hay đọc sách ở nhà, tôi lúc nào cũng học hỏi được rất nhiều điều."
+        },
+        {
+          "translation": "Như là đi du lịch hay tìm một sở thích mới, có rất nhiều việc bạn có thể thử làm để tìm kiếm niềm vui."
+        },
+        {
+          "translation": "Chẳng hạn như táo hay là lê, bạn thích loại nào nhất trong số các loại trái cây?"
+        }
+      ]
+    },
+    "ko_라면_47": {
+      "title": "~(이)라면 / ~다면 (Nếu là, nếu quả thật là, giá như)",
+      "shortExplanation": "Vĩ tố liên kết hoặc hình thái giả định biểu thị điều kiện giả định hoặc ước muốn trái với thực tế ('nếu là...', 'nếu quả thật là...').",
+      "longExplanation": "'~(이)라면' dùng sau danh từ mang nghĩa 'nếu là...' (như '내가 천재라면'), còn khi kết hợp sau động từ/tính từ thì thường ở dạng rút gọn từ câu trần thuật giả định '-다고 하면' -> '-다면' hoặc quá khứ '-았/었다면'. Cấu trúc này dùng để đặt ra một giả thiết mang tính tưởng tượng, suy đoán hoặc tiếc nuối về một điều kiện chưa xảy ra hay trái ngược với thực tế.",
+      "formation": "Danh từ + (이)라면 / Thân tính từ + -다면 / Thân động từ + -ㄴ/는다면 (hoặc quá khứ -았/었다면)",
+      "examples": [
+        {
+          "translation": "Nếu bạn đã biết trước sự thật đó, sao bạn không nói cho tôi biết chứ?"
+        },
+        {
+          "translation": "Nếu ngày mai trời mưa, chắc tôi phải mang theo ô mới được."
+        },
+        {
+          "translation": "Nếu tôi là một thiên tài, tôi đã có thể giải quyết vấn đề này một cách dễ dàng rồi."
+        },
+        {
+          "translation": "Nếu bạn muốn đi xem phim, tối nay chúng ta cùng đi nhé?"
+        }
+      ]
+    },
+    "ko_라면서_48": {
+      "title": "~(ㄴ/는)다면서 / ~라면서 (Nói là... thế mà lại, bảo là... nhưng)",
+      "shortExplanation": "Diễn tả sự mâu thuẫn giữa lời nói, tuyên bố ban đầu với hành động thực tế diễn ra ngay sau đó ('nói là... thế mà lại...').",
+      "longExplanation": "'~라면서' (hoặc '-(ㄴ/는)다면서') là sự kết hợp giữa hình thức trích dẫn gián tiếp '-(ㄴ/는)다고 하다 / -(이)라고 하다' với vĩ tố liên kết đồng thời/đối lập '-(으)면서'. Cấu trúc này dùng để phê phán, châm biếm hoặc chỉ ra sự mâu thuẫn khôi hài khi ai đó (hoặc chính mình) miệng thì nói/tuyên bố một đằng, nhưng hành động thực tế lại hoàn toàn trái ngược.",
+      "formation": "Thân động từ + -(ㄴ/는)다면서 / Thân tính từ + -다면서 / Danh từ + -(이)라면서 (hoặc thì tương lai/ý chí: -겠다면서)",
+      "examples": [
+        {
+          "translation": "Cậu ấy bảo là sẽ học bài thế mà lại cứ tiếp tục chơi game suốt."
+        },
+        {
+          "translation": "Cô ấy nói là sẽ tiết kiệm tiền thế mà bây giờ lại đang đi mua sắm túi bụi."
+        },
+        {
+          "translation": "Tôi cứ miệng nói phải giảm cân mà ngày nào cũng ăn toàn đồ ngọt."
+        },
+        {
+          "translation": "Bố tôi bảo là sẽ bỏ thuốc lá thế mà đến giờ vẫn còn đang hút thuốc."
+        }
+      ]
+    },
+    "ko_려고_49": {
+      "title": "~(으)려고 (Để, định, nhằm mục đích)",
+      "shortExplanation": "Vĩ tố liên kết chỉ ý định, mục đích của chủ ngữ khi thực hiện hành động ở vế sau ('để...', 'định...').",
+      "longExplanation": "'~(으)려고' là vĩ tố liên kết gắn sau thân động từ, dùng để chỉ mục đích hoặc ý đồ của hành động: chủ ngữ thực hiện hành động ở vế sau là nhằm để đạt được mục tiêu nêu ở vế trước ('làm A để làm B'). Lưu ý rằng cấu trúc này chủ yếu dùng khi chủ ngữ của hai vế đồng nhất và không kết hợp với câu mệnh lệnh hay thỉnh dụ.",
+      "formation": "Thân động từ (kết thúc bằng phụ âm) + -으려고 / Thân động từ (kết thúc bằng nguyên âm hoặc phụ âm ㄹ) + -려고",
+      "examples": [
+        {
+          "translation": "Để nói giỏi tiếng Hàn, ngày nào tôi cũng chăm chỉ học tiếng Hàn."
+        },
+        {
+          "translation": "Tôi tập thể dục để giảm cân và đã cố gắng cắt giảm lượng calo."
+        },
+        {
+          "translation": "Tôi đã học rất nhiều để làm tốt bài thi lần này, và đã cố gắng đi ngủ sớm."
+        },
+        {
+          "translation": "Để làm cho mẹ vui lòng, ngày nào tôi cũng dọn dẹp phòng ốc và nấu những món ăn ngon cho mẹ."
+        }
+      ]
+    },
+    "ko_려고_50": {
+      "title": "~(으)려고 하다 (Định làm gì, có ý định làm gì)",
+      "shortExplanation": "Biểu thị ý định, kế hoạch của chủ ngữ chuẩn bị thực hiện một hành động nào đó trong tương lai gần ('định...', 'có ý định...').",
+      "longExplanation": "'~(으)려고 하다' kết hợp vĩ tố chỉ mục đích '-(으)려고' với trợ động từ '하다' để biểu thị dự định hoặc ý định làm một việc gì đó. Khi chia ở thì quá khứ '-(으)려고 했다' (như trong các câu ví dụ), nó thường diễn tả một dự định ban đầu nhưng rốt cuộc đã bị cản trở hoặc không thể thực hiện được do hoàn cảnh khách quan.",
+      "formation": "Thân động từ (kết thúc bằng phụ âm) + -으려고 하다 / Thân động từ (kết thúc bằng nguyên âm hoặc phụ âm ㄹ) + -려고 하다",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi đã định đến trường, nhưng vì trời mưa nên không thể đi được."
+        },
+        {
+          "translation": "Chú tôi đã định ngày mai đến nhà chúng tôi chơi, nhưng vì xe bị hỏng nên không đến được."
+        },
+        {
+          "translation": "Tôi đã định gọi điện cho bạn, nhưng vì điện thoại hết pin nên không gọi được."
+        },
+        {
+          "translation": "Tôi đã định cùng bạn bè đi xem phim, nhưng vì vé đã bán hết sạch nên không thể xem được."
+        }
+      ]
+    },
+    "ko_려는데_51": {
+      "title": "~(으)려는데 (Đang định... thì, có ý định... nhưng)",
+      "shortExplanation": "Vĩ tố liên kết diễn tả bối cảnh người nói đang có ý định làm gì thì gặp một tình huống nảy sinh hoặc cản trở ('đang định... thì...', 'có ý định... nhưng...').",
+      "longExplanation": "'~(으)려는데' là dạng rút gọn của '-(으)려고 하는데', kết hợp giữa ý định '-(으)려고 하다' và vĩ tố liên kết gợi mở bối cảnh '-(으)ㄴ/는데'. Cấu trúc này dùng khi người nói đưa ra ý định của mình như một bối cảnh tiền đề, và ở vế sau thường trình bày một trở ngại, thắc mắc hoặc tình huống phát sinh liên quan.",
+      "formation": "Thân động từ (kết thúc bằng phụ âm) + -으려는데 / Thân động từ (kết thúc bằng nguyên âm hoặc phụ âm ㄹ) + -려는데",
+      "examples": [
+        {
+          "translation": "Tôi đang định đến hiệu sách mua sách thì trời mưa to quá, chắc có lẽ không đi được rồi."
+        },
+        {
+          "translation": "Tôi đang định chuẩn bị bữa tối thì lại thiếu nguyên liệu cần thiết, chắc là phải đi chợ mua đồ rồi."
+        },
+        {
+          "translation": "Tôi định tặng quà cho bạn nhưng vẫn đang băn khoăn không biết nên tặng món quà gì."
+        },
+        {
+          "translation": "Tôi định cuối tuần này đi xem phim nhưng tất cả các vé đều đã được đặt kín rồi nên có lẽ không xem được."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_대로_37": {
+      "title": "~대로（按照、正如、照……那样）",
+      "shortExplanation": "表示按照某种方式、规则、指示行事，或者与先前的状态完全一致（“按照……”、“正如……”、“照着……那样”）。",
+      "longExplanation": "“~대로”作助词直接接在名词后，或以“-(으)ㄴ/는 대로”接在动词词干后作为冠字形依存结构使用。表示某种行为严格遵循已有的指示、计划、规则或客观事实进行，不作任何改变；也可以表示事物“保持原样、照旧”。相当于汉语的“按照……”、“照……那样”、“正如……”。",
+      "formation": "名词 + 대로 / 动词词干 + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "虽然我按照老师教的方法去解题了，但还是不太能理解。"
+        },
+        {
+          "translation": "照着姐姐推荐的那样读了那本书，发现是一本蕴含深刻寓意的有趣之书。"
+        },
+        {
+          "translation": "我们按照制订好的计划继续旅行，观赏了许多标志性景观。"
+        },
+        {
+          "translation": "亲眼所见到的景色正如照片里所展现的那样，美得让人心情大好。"
+        }
+      ]
+    },
+    "ko_대로_38": {
+      "title": "~대로 하다（照着做、按……做）",
+      "shortExplanation": "表示丝毫不差地按照别人的话、指示、规则或方法去行动（“照着做”、“按……去做”）。",
+      "longExplanation": "“~대로 하다”强调不折不扣地按照前面提到的命令、教导、规则或配方付诸行动。可以接在名词后构成“名词 + 대로 하다”，也可以接在动词冠字形后构成“动词词干 + -(으)ㄴ/는 대로 하다”。常用于表达听从长辈教导、遵循操作指南或落实计划。",
+      "formation": "名词 + 대로 하다 / 动词词干 + -(으)ㄴ/는 대로 하다",
+      "examples": [
+        {
+          "translation": "妈妈说早晨起床一定要吃早饭。所以我照着妈妈说的那样吃了饭才去上学。"
+        },
+        {
+          "translation": "如果按照烹饪书上的食谱来做菜，总能做得十分美味。"
+        },
+        {
+          "translation": "如果按照老师强调的要点去学习，考试中一定能取得好成绩。"
+        },
+        {
+          "translation": "按照父母说的那样每天锻炼身体并吃有营养的食物，健康状况变得好多了。"
+        }
+      ]
+    },
+    "ko_대로이면_39": {
+      "title": "~대로이면（如果照……所说、要是按照……的话）",
+      "shortExplanation": "表示以某种说法、计划或信息为前提的假设条件（“如果正如……所说”、“要是按照……的话”）。",
+      "longExplanation": "“~대로이면”由表示依据的“대로”、叙述格助词“이-”以及表示假设的连接词尾“-면”结合而成（口语中亦常作“~대로라면”）。用于在听闻某种传言、他人意见或既定计划时提出假设：“如果事实确实正如所说的那样”，后句往往推导出会发生的后果或结论。",
+      "formation": "名词 + 대로이면（或 대로라면）/ 动词词干 + -(으)ㄴ/는 대로이면（或 대로라면）",
+      "examples": [
+        {
+          "translation": "如果正如炸鸡店老板所说的那样，这里最受欢迎的菜单据说是调味炸鸡。"
+        },
+        {
+          "translation": "要是按照你的计划，今晚我们就能去看电影了呢。"
+        },
+        {
+          "translation": "如果正如民秀说的那样，据说这次考试非常难。"
+        },
+        {
+          "translation": "如果正如兴慜坦白交待的一切那样，他今后就不会再犯这样的错误了。"
+        }
+      ]
+    },
+    "ko_도록_40": {
+      "title": "~도록（为了、以便、使之能够）",
+      "shortExplanation": "连接词尾，表示动作的目的、企图，或是促使某种结果或程度得以实现（“为了……”、“以便……”、“使……”）。",
+      "longExplanation": "“~도록”是连接词尾，接在动词或形容词词干后。主要用于表示后句动作的目的或意图，即为了让前句所述的状态或动作成为现实而付出努力或采取措施，相当于汉语的“为了让……”、“以便……”、“使得……”。在某些语境下也可以表示达到某种程度或时间界限。",
+      "formation": "动词词干 / 形容词词干 + -도록",
+      "examples": [
+        {
+          "translation": "为了观赏夜行性动物，我们决定去参加夜间野生动物园之旅。"
+        },
+        {
+          "translation": "请您讲课讲得慢一些，以便我们大家都能听得懂。"
+        },
+        {
+          "translation": "我定期打扫院子，以便落叶能被尽快清理干净。"
+        },
+        {
+          "translation": "我把窗户紧紧关上，以防风雨刮进来。"
+        }
+      ]
+    },
+    "ko_도록_41": {
+      "title": "~도록 하다（让……、使……、要求……）",
+      "shortExplanation": "表示指使、要求某人做某事，或者努力确保达成某种预期结果（“让……”、“使……”、“确保……”）。",
+      "longExplanation": "“~도록 하다”接在动词或形容词词干后，常用于间接使动或指示，意为促使他人采取某种行动，或努力促成某种状态的产生。在第一人称做出郑重承诺时（如“-도록 하겠습니다”），表示自己下定决心必定做好某事（相当于“我一定保证做到……”）。",
+      "formation": "动词词干 / 形容词词干 + -도록 하다",
+      "examples": [
+        {
+          "translation": "我总是引导并要求学生们认真听课。"
+        },
+        {
+          "translation": "公司正在推行让员工们早点下班的措施。"
+        },
+        {
+          "translation": "她确保了孩子们安全到家。"
+        },
+        {
+          "translation": "妈妈每天都让我们一定要吃蔬菜。"
+        }
+      ]
+    },
+    "ko_도록이면_42": {
+      "title": "도록이면 / 되도록이면（尽可能、尽量、如果可以的话）",
+      "shortExplanation": "表示在条件允许的情况下，尽量、尽可能达成某种愿望或付诸行动（“尽可能”、“尽量”、“如果可以的话”）。",
+      "longExplanation": "“도록이면”（日常口语中常作为“되도록이면”的略语使用）表示在可能的前提下尽量去做某事。常置于句首作副词性成分，表达说话人委婉的提议、希望或自身的努力意向，相当于汉语的“尽量……”、“尽可能……”、“如果可行的话”。",
+      "formation": "作副词置于句首 / 动词词干 + -도록이면",
+      "examples": [
+        {
+          "translation": "如果可以的话，我正在努力吃有益健康的食物。"
+        },
+        {
+          "translation": "如果可以的话，请尽快给我回复。"
+        },
+        {
+          "translation": "尽可能每天都坚持运动，才能保持身体健康。"
+        },
+        {
+          "translation": "如果可能的话，最好不要拖延作业，而是立刻完成。"
+        }
+      ]
+    },
+    "ko_든지_43": {
+      "title": "~든지（无论……还是……、不管……都）",
+      "shortExplanation": "助词或连接词尾，列举两种或多种可能选项，表示无论选择哪一个都不受影响（“无论……还是……”、“不管……”）。",
+      "longExplanation": "“~든지”作为助词接在名词后，或作为连接词尾接在动词、形容词词干后。用于列举两个或多个平行选项，强调说话人对选项之间没有特定偏好或不作限制，无论哪一种情况成立，后句的结论、态度或事实都同样适用，相当于汉语的“不管……还是……”、“无论是……”。",
+      "formation": "名词 + (이)든지 / 动词词干 / 形容词词干 + -든지",
+      "examples": [
+        {
+          "translation": "无论是跟团游还是个人自由行，任何形式的旅行我都喜欢。"
+        },
+        {
+          "translation": "为了解决这个问题，不管是耗费了大量时间还是花了很多钱，所有的努力都是值得的。"
+        },
+        {
+          "translation": "不管他是住在首尔还是住在釜山，他在哪里都会过得很幸福。"
+        },
+        {
+          "translation": "无论是在这家公司工作还是在别的公司工作，我在哪里都会竭尽全力。"
+        }
+      ]
+    },
+    "ko_든지_44": {
+      "title": "~든지 ~든지（要么……要么……、或者……或者……）",
+      "shortExplanation": "并列罗列两种或多种可供选择的方案（“要么……要么……”、“或者……或者……”）。",
+      "longExplanation": "“~든지 ~든지”通过连续使用连接词尾“-든지”，罗列出供选择的平行选项，常与“아니면”（或者）搭配使用。表示不论做这一项还是做那一项都可以，将最终决定的权利交给听者或交由实际情况定夺，相当于汉语的“要么……要么……”、“或者……或者……”。",
+      "formation": "名词 + (이)든지 名词 + (이)든지 / 动词词干 + -든지 (아니면) 动词词干 + -든지",
+      "examples": [
+        {
+          "translation": "这个周末我打算要么去看电影，要么就在家休息。"
+        },
+        {
+          "translation": "晚餐菜单是吃披萨还是吃炸鸡，我到现在还没决定好。"
+        },
+        {
+          "translation": "现在是回家还是再多待一会儿，你随自己的心意都可以。"
+        },
+        {
+          "translation": "不管是给她打电话还是发信息，你都必须跟她取得联系。"
+        }
+      ]
+    },
+    "ko_라도_45": {
+      "title": "~라도（哪怕是、哪怕……也好、起码）",
+      "shortExplanation": "补助词，表示虽然不是最理想的选择，但作为次选或起码的要求也是可以接受的（“哪怕是……”、“起码……”、“好歹”）。",
+      "longExplanation": "“~라도”接在名词、副词等成分后，表示退而求其次的妥协态度。它暗示所提出的事物虽不完全尽如人意，但作为最低限度的底线还是能令人满意的，相当于汉语的“哪怕是……”、“起码……”、“好歹……也好”。",
+      "formation": "名词 + (이)라도 / 动词词干 + -아/어-라도（或 动词名词形 + -(이)라도）",
+      "examples": [
+        {
+          "translation": "如果你无法承担这项工作，哪怕帮我一点忙也好。"
+        },
+        {
+          "translation": "他虽然没有参加课堂，但好歹也应该把书读一读啊。"
+        },
+        {
+          "translation": "虽然考试落榜了，但起码我还要再试一次。"
+        },
+        {
+          "translation": "就算我不想去看电影，但如果朋友们很喜欢的话，哪怕只是陪着我也一起去。"
+        }
+      ]
+    },
+    "ko_라든지_46": {
+      "title": "~(이)라든지（例如……啦、……什么的、或是……之类的）",
+      "shortExplanation": "连接助词，罗列出若干具有代表性的事例作为参考或选项（“例如……啦”、“……之类的”）。",
+      "longExplanation": "“~(이)라든지”作为连接助词，常接在名词后或间接引语词尾后，用于列举几个典型的例子。说话人借助罗列的事例来举例说明，并不将范围局限于所列举的事物，相当于汉语的“例如……啦……啦”、“……之类的”。",
+      "formation": "名词 + (이)라든지 / 动词词干 + -라든지",
+      "examples": [
+        {
+          "translation": "比如咖啡啦茶啦，您想喝点什么饮品吗？"
+        },
+        {
+          "translation": "无论是在图书馆学习，还是在家里看书什么的，我都一直学到了很多知识。"
+        },
+        {
+          "translation": "比如去旅行啦、寻找新爱好啦，为了寻找乐趣可以尝试做的事情有很多。"
+        },
+        {
+          "translation": "像苹果啦梨啦之类的水果中，您最喜欢哪一种？"
+        }
+      ]
+    },
+    "ko_라면_47": {
+      "title": "~(이)라면 / ~다면（要是……的话、如果是……）",
+      "shortExplanation": "表示假设条件的词尾，用于提出假设、推测或与现实相反的虚拟设想（“如果是……”、“要是……的话”）。",
+      "longExplanation": "“~(이)라면”接在名词后表示“如果是……”；接在动词或形容词后时，多为间接引语假设形“-다고 하면”的缩略形式“-다면”或过去时假设“-았/었다면”。用于设想某种假设情况，并在此前提下推导后续的结果或看法，常带有虚拟、假设或遗憾的语气。",
+      "formation": "名词 + (이)라면 / 形容词词干 + -다면 / 动词词干 + -ㄴ/는다면（过去时为 -았/었다면）",
+      "examples": [
+        {
+          "translation": "如果你早就知道了那个事实，为什么不告诉我呢？"
+        },
+        {
+          "translation": "如果明天真要下雨的话，我得带上雨伞了。"
+        },
+        {
+          "translation": "如果我是个天才，就能轻松解决这个问题了。"
+        },
+        {
+          "translation": "如果你想去看电影，我们晚上一起去怎么样？"
+        }
+      ]
+    },
+    "ko_라면서_48": {
+      "title": "~(ㄴ/는)다면서 / ~라면서（口口声声说……却、嘴上说……还）",
+      "shortExplanation": "表示实际行动与之前亲口所说的话或宣告大相径庭，带有讽刺、反差或自嘲语气（“嘴上说……却……”、“口口声声说……还……”）。",
+      "longExplanation": "“~라면서”（或动词/形容词间接引语缩略形“-(ㄴ/는)다면서”）由间接引语和表示同时或转折的连接词尾“-(으)면서”结合而成。用于指出说话人自身或他人的言行不一，前面引用所宣称的内容，后面揭露与之截然相反的实际举动，多带有埋怨、责备或戏谑的色彩。",
+      "formation": "动词词干 + -(ㄴ/는)다면서 / 形容词词干 + -다면서 / 名词 + -(이)라면서（意志/未来时常用 -겠다면서）",
+      "examples": [
+        {
+          "translation": "他嘴上说着要学习，却一直在玩游戏。"
+        },
+        {
+          "translation": "她口口声声说要省钱，现在却在尽情购物。"
+        },
+        {
+          "translation": "我一边嚷嚷着必须减肥，一边却每天都在吃甜食。"
+        },
+        {
+          "translation": "我父亲嘴上说要戒烟，可到现在还在抽烟。"
+        }
+      ]
+    },
+    "ko_려고_49": {
+      "title": "~(으)려고（为了、打算、意图）",
+      "shortExplanation": "连接词尾，表示后句动作的目的或意图（“为了……”、“打算……”）。",
+      "longExplanation": "“~(으)려고”接在动词词干后，用于表达主语实施后句动作所抱有的目的或打算，即为了达成前句的目标而进行后句的行为。前后两个分句的主语通常必须一致，且后句不能使用命令句或共动句。",
+      "formation": "动词词干（有收音闭音节）+ -으려고 / 动词词干（无收音开音节或收音为 ㄹ）+ -려고",
+      "examples": [
+        {
+          "translation": "为了学好韩语，我每天都在学习韩语。"
+        },
+        {
+          "translation": "为了减肥我坚持运动，并且努力减少卡路里的摄入。"
+        },
+        {
+          "translation": "为了这次考试能考好我学了很久，并努力早点睡觉。"
+        },
+        {
+          "translation": "为了让妈妈高兴，我每天打扫房间，还给她做好吃的饭菜。"
+        }
+      ]
+    },
+    "ko_려고_50": {
+      "title": "~(으)려고 하다（打算……、正想要……）",
+      "shortExplanation": "表示主语打算或意图进行某项动作（“打算……”、“想要……”、“正要……”）。",
+      "longExplanation": "“~(으)려고 하다”由意图连接词尾“-(으)려고”与辅助动词“하다”组合而成，用于表示近期的打算、计划或意向。当以过去时“-(으)려고 했다”出现时，常表示原本打算去做某事，但由于突发状况或客观阻碍而未能如愿实现。",
+      "formation": "动词词干（有收音闭音节）+ -으려고 하다 / 动词词干（无收音开音节或收音为 ㄹ）+ -려고 하다",
+      "examples": [
+        {
+          "translation": "我今天本打算去学校的，但因为下雨没能去成。"
+        },
+        {
+          "translation": "叔叔明天本来打算来我们家的，但因为车坏了没能来。"
+        },
+        {
+          "translation": "我本来打算给你打电话的，但因为手机电量耗尽了没打成。"
+        },
+        {
+          "translation": "本来打算和朋友们一起看电影的，但因为票售罄了没能看上。"
+        }
+      ]
+    },
+    "ko_려는데_51": {
+      "title": "~(으)려는데（正打算……却、想要……但是）",
+      "shortExplanation": "连接词尾，表示正打算做某事作为背景，后句引出面临的阻碍、疑问或相关事态（“正打算……却……”、“正要……但是……”）。",
+      "longExplanation": "“~(으)려는데”是“-(으)려고 하는데”的缩略形式，由表示意图的“-(으)려고 하다”与提示背景的连接词尾“-는데”结合而成。常用于说话人说明自己正打算采取某种行动，以此作为谈话的铺垫，随后在后分句引出遇到的困难、阻碍或者需要解决的问题。",
+      "formation": "动词词干（有收音闭音节）+ -으려는데 / 动词词干（无收音开音节或收音为 ㄹ）+ -려는데",
+      "examples": [
+        {
+          "translation": "我正打算去书店买书，但雨下得太大了，估计是去不成了。"
+        },
+        {
+          "translation": "我正准备做晚饭，但需要的食材不够，看来得先去趟超市买菜了。"
+        },
+        {
+          "translation": "我打算送朋友一件礼物，但还在犹豫到底送什么好。"
+        },
+        {
+          "translation": "本打算这个周末去看电影，但所有的票都被预订空了，可能看不成了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_대로_37": {
+      "title": "~대로（〜の通りに、〜のままに）",
+      "shortExplanation": "ある方法や規則、指示、計画などに寸分たがわず従うことや、元の状態のままであることを表します（「〜の通りに」「〜のままに」）。",
+      "longExplanation": "「~대로」は、名詞に直接付く助詞、または動詞の連体形語尾に続く「-(으)ㄴ/는 대로」の形で用いられ、以前に示された指示・計画・状況に厳密に従って行動すること、あるいは「元の状態のまま」であることを表します。日本語の「〜の通りに」「〜に従って」「〜のまま」に相当します。",
+      "formation": "名詞 + 대로 / 動詞語幹 + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "先生が教えてくれた通りに問題を解いてみましたが、まだよく理解できません。"
+        },
+        {
+          "translation": "姉が薦めてくれた通りに本を読んでみたら、深い意味が込められた面白い本でした。"
+        },
+        {
+          "translation": "私たちが計画した通りに旅行を続けながら、色々なランドマークを見ることができました。"
+        },
+        {
+          "translation": "写真に見える景色そのままに実際に見たら、あまりにも美しくて気分がとても良くなりました。"
+        }
+      ]
+    },
+    "ko_대로_38": {
+      "title": "~대로 하다（〜の通りにする、〜に従って行う）",
+      "shortExplanation": "言われたことや指示、規則、基準などに寸分違わず従って行動することを表します（「〜の通りにする」「言われた通りにやる」）。",
+      "longExplanation": "「~대로 하다」は、相手の言った言葉、アドバイス、レシピ、規則などに正確に従って行動を実行することを強調する表現です。名詞に直接付くか、動詞の連体形（「말씀하신 대로」「지시한 대로」など）の後に「하다」が続く形で広く用いられます。",
+      "formation": "名詞 + 대로 하다 / 動詞語幹 + -(으)ㄴ/는 대로 하다",
+      "examples": [
+        {
+          "translation": "母は朝起きたら必ずご飯を食べるようにと言いました。だから私は母の言った通りにしてから学校へ行きます。"
+        },
+        {
+          "translation": "料理本のレシピ通りに料理を作れば、いつでも美味しく仕上げることができます。"
+        },
+        {
+          "translation": "先生が強調された通りに勉強すれば、試験で良い点数を取ることができるはずです。"
+        },
+        {
+          "translation": "両親が言った通りに毎日運動し、栄養のある食事をとったところ、健康がずっと良くなりました。"
+        }
+      ]
+    },
+    "ko_대로이면_39": {
+      "title": "~대로이면（〜の通りなら、〜の言う通りであれば）",
+      "shortExplanation": "誰かの言葉や計画、情報がその通りであると仮定する条件を表します（「〜の通りなら」「〜の言う通りであれば」）。",
+      "longExplanation": "「~대로이면」は、基準や通りの「대로」に指定詞「이-」と仮定の接続語尾「-면」が結合した表現です（日常会話では「~대로라면」の形も非常によく用いられます）。伝え聞いた話や計画、噂などが「もしその通りだとすれば」という前提を置き、その場合に予想される結果や判断を後節で述べます。",
+      "formation": "名詞 + 대로이면（または 대로라면）/ 動詞語幹 + -(으)ㄴ/는 대로이면（または 대로라면）",
+      "examples": [
+        {
+          "translation": "チキン屋の社長が言った通りなら、ここで一番人気のあるメニューはヤンニョムチキンだそうです。"
+        },
+        {
+          "translation": "君の計画通りなら、今夜映画を見ることができそうですね。"
+        },
+        {
+          "translation": "ミンスが言った通りなら、この試験はとても難しいそうです。"
+        },
+        {
+          "translation": "フンミンが全てを正直に言った通りなら、彼は今後このようなミスをしないはずです。"
+        }
+      ]
+    },
+    "ko_도록_40": {
+      "title": "~도록（〜するように、〜できるように）",
+      "shortExplanation": "目的や目標、またはある結果に至る程度を表す接続語尾です（「〜するように」「〜できるように」）。",
+      "longExplanation": "「~도록」は動詞や形容詞の語幹に付く接続語尾で、後節の動作がある目標や目的（前節の内容）を達成するために行われることを表します。「〜するように」「〜できるために」という意味で広く使われ、相手に指示や依頼をする際や、ある状態に至るまでの程度を示す際にも用いられます。",
+      "formation": "動詞語幹 / 形容詞語幹 + -도록",
+      "examples": [
+        {
+          "translation": "夜行性動物を見られるように、ナイトサファリに行くことにしました。"
+        },
+        {
+          "translation": "私たちみんなが理解できるように、講義をゆっくり進めてください。"
+        },
+        {
+          "translation": "落ち葉が早く片付くように、定期的に庭を掃きました。"
+        },
+        {
+          "translation": "雨風が入ってこないように、窓をしっかり閉めておきました。"
+        }
+      ]
+    },
+    "ko_도록_41": {
+      "title": "~도록 하다（〜するようにする、〜させる）",
+      "shortExplanation": "誰かに指示・働きかけて行動させたり、ある状態が確実に実現するよう努めたりすることを表します（「〜するようにする」「〜させる」）。",
+      "longExplanation": "「~도록 하다」は、相手に働きかけて特定の行動を取らせる使役的な意味合いや、ある望ましい結果・状態が確実に達成されるように措置を講じることを表します。また、一人称が主語で「-도록 하겠습니다」と使われる場合は、「必ず〜するように努めます」という丁寧な決意表明になります。",
+      "formation": "動詞語幹 / 形容詞語幹 + -도록 하다",
+      "examples": [
+        {
+          "translation": "私はいつも学生たちが真面目に授業を聞くように指導しています。"
+        },
+        {
+          "translation": "会社では社員たちが早く退勤できるように促しています。"
+        },
+        {
+          "translation": "彼女は子どもたちが安全に家に着くように配慮しました。"
+        },
+        {
+          "translation": "母は私たちが毎日野菜を食べるようにさせました。"
+        }
+      ]
+    },
+    "ko_도록이면_42": {
+      "title": "도록이면 / 되도록이면（できれば、なるべく、可能な限り）",
+      "shortExplanation": "可能であればそうしたいという希望や、相手に対する婉曲な要請・アドバイスを表します（「できれば」「なるべく」「可能な限り」）。",
+      "longExplanation": "「도록이면」（標準的には「되도록이면」の縮約・口語的用法）は、「できることなら」「可能な限り」という意味を表します。文頭に置いて副詞的に用いられることが多く、話し手の希望や心がけ、あるいは相手に負担をかけないよう配慮しながら促す柔らかい助言・要望のニュアンスを持ちます。",
+      "formation": "文頭の副詞的用法 / 動詞語幹 + -도록이면",
+      "examples": [
+        {
+          "translation": "できれば健康に良い食べ物を食べるように努力しています。"
+        },
+        {
+          "translation": "可能であれば早めに返信をお願いします。"
+        },
+        {
+          "translation": "なるべく毎日運動してこそ、健康を維持することができます。"
+        },
+        {
+          "translation": "できれば宿題を後回しにせず、すぐにやるのが良いです。"
+        }
+      ]
+    },
+    "ko_든지_43": {
+      "title": "~든지（〜であれ〜であれ、〜だろうと〜だろうと）",
+      "shortExplanation": "複数の選択肢や可能性を並べ、どれであっても関係なく当てはまることを表します（「〜であれ〜であれ」「〜だろうと〜だろうと」）。",
+      "longExplanation": "「~든지」は助詞として名詞に付くか、接続語尾として動詞や形容詞の語幹に付きます。複数の事柄や選択肢を提示し、「どちらを選んでも構わない」「どれであっても結果に影響はない」という無条件・無差別のニュアンスを表します。日本語の「〜であれ〜であれ」「〜だろうが〜だろうが」に相当します。",
+      "formation": "名詞 + (이)든지 / 動詞語幹 / 形容詞語幹 + -든지",
+      "examples": [
+        {
+          "translation": "団体旅行であれ個人旅行であれ、私はどんな形態の旅行でも好きです。"
+        },
+        {
+          "translation": "この問題を解決するために多くの時間を費やしたにせよ、多くのお金を使ったにせよ、その全ての努力には価値がありました。"
+        },
+        {
+          "translation": "彼がもしソウルに住んでいようと釜山に住んでいようと、彼はどこででも幸せでしょう。"
+        },
+        {
+          "translation": "この会社で勤務しようと別の会社で勤務しようと、私はどこででも最善を尽くします。"
+        }
+      ]
+    },
+    "ko_든지_44": {
+      "title": "~든지 ~든지（〜するなり〜するなり、〜か〜か）",
+      "shortExplanation": "複数の選択肢を並列し、その中からいずれかを選択することを表します（「〜するなり〜するなり」「〜か〜か」）。",
+      "longExplanation": "「~든지 ~든지」は、接続語尾「-든지」を重ねて複数の代替案を並べ立て、「〜するなり、〜するなり」と相手に選択肢を委ねたり、自分の予定を並列したりする表現です。後節に「아니면（それとも）」を伴って使われることも多く、どちらの行動を取っても構わない自由度を示します。",
+      "formation": "名詞 + (이)든지 名詞 + (이)든지 / 動詞語幹 + -든지 (아니면) 動詞語幹 + -든지",
+      "examples": [
+        {
+          "translation": "今度の週末は映画を見に行くなり、あるいは家で休むなりする計画です。"
+        },
+        {
+          "translation": "夕食のメニューにピザを食べるか、それともチキンを食べるか、まだ決められずにいます。"
+        },
+        {
+          "translation": "今家に帰るなり、それとももう少し残るなり、思い通りにして構いませんよ。"
+        },
+        {
+          "translation": "彼女に電話をかけるなり、あるいはメッセージを送るなりして、必ず連絡を取らなければなりません。"
+        }
+      ]
+    },
+    "ko_라도_45": {
+      "title": "~라도（〜だけでも、〜であっても、せめて〜でも）",
+      "shortExplanation": "最善ではないものの、妥協案や最低限の希望として受け入れることを表す助詞です（「せめて〜でも」「〜だけでも」）。",
+      "longExplanation": "「~라도」は名詞や副詞の後に付く補助詞で、最善の選択肢ではないものの、「ないよりはまし」「せめてこれだけでも」という最低限の譲歩や妥協を表します。日本語の「せめて〜でも」「〜だけでも」「〜であっても」に相当します。",
+      "formation": "名詞 + (이)라도 / 動詞語幹 + -아/어-라도（または 語幹 + -(으)ㄹ지라도）",
+      "examples": [
+        {
+          "translation": "この仕事ができないのなら、せめて手助けだけでもしてください。"
+        },
+        {
+          "translation": "彼は授業に参加しませんでしたが、せめて本だけでも読むべきでした。"
+        },
+        {
+          "translation": "試験には落ちてしまいましたが、せめてもう一度挑戦だけでもしてみます。"
+        },
+        {
+          "translation": "映画を見に行きたくなくても、友達が好きだと言うなら、せめて一緒に行くだけでも行きます。"
+        }
+      ]
+    },
+    "ko_라든지_46": {
+      "title": "~(이)라든지（〜とか〜とか、〜だの〜だの、〜など）",
+      "shortExplanation": "代表的な例をいくつか挙げて例示する助詞です（「〜とか〜とか」「〜など」）。",
+      "longExplanation": "「~(이)라든지」は、名詞や引用表現の後に付き、複数の具体例を並べて例示する並立助詞です。挙げられた事物だけでなく、それらに類する同種のもの全般を念頭に置きながら、「〜とか〜とか」「〜など」と例を挙げるニュアンスを持ちます。",
+      "formation": "名詞 + (이)라든지 / 動詞語幹 + -라든지",
+      "examples": [
+        {
+          "translation": "コーヒーとかお茶とか、何かお飲み物を召し上がりますか？"
+        },
+        {
+          "translation": "図書館で勉強しろだの家で本を読めだの言われますが、私はいつも多くのことを学んでいます。"
+        },
+        {
+          "translation": "旅行をするとか新しい趣味を探してみるとか、楽しみを見つけるためにできることはたくさんあります。"
+        },
+        {
+          "translation": "リンゴとかナシとか、果物の中でどれが一番好きですか？"
+        }
+      ]
+    },
+    "ko_라면_47": {
+      "title": "~(이)라면 / ~다면（〜なら、もし〜だとしたら）",
+      "shortExplanation": "仮定の条件を表し、現実とは異なる仮定や推測に基づく状況を述べる表現です（「〜なら」「もし〜だとしたら」）。",
+      "longExplanation": "「~(이)라면」は名詞に付いて「もし〜なら」を意味し、動詞や形容詞に付く場合は間接引用の縮約形「-다면」や過去仮定「-았/었다면」として広く使われます。仮定の状況や事実に反する仮定（反実仮想）を提示し、その前提のもとで成立する結果や願望を後節で述べます。",
+      "formation": "名詞 + (이)라면 / 形容詞語幹 + -다면 / 動詞語幹 + -ㄴ/는다면（過去形は -았/었다면）",
+      "examples": [
+        {
+          "translation": "あなたがその事実を先に知っていたのなら、なぜ私に話してくれなかったのですか？"
+        },
+        {
+          "translation": "明日雨が降るというのなら、傘を用意しなければなりませんね。"
+        },
+        {
+          "translation": "私が天才なら、この問題を簡単に解決できるでしょうに。"
+        },
+        {
+          "translation": "映画を見に行きたいなら、夜に一緒に行きましょうか？"
+        }
+      ]
+    },
+    "ko_라면서_48": {
+      "title": "~(ㄴ/는)다면서 / ~라면서（〜と言いながら、〜と言っておきながら）",
+      "shortExplanation": "前に言った言葉や公言と、実際の行動が食い違っている矛盾や言行不一致を表します（「〜と言っておきながら」「〜だと言いながら」）。",
+      "longExplanation": "「~라면서」（または用言の引用縮約形「-(ㄴ/는)다면서」）は、間接引用表現に同時・逆接の接続語尾「-(으)면서」が結合した文型です。口では「〜する」と言っていながら、実際にはそれと正反対の行動を取っている矛盾を指摘したり、呆れや軽い皮肉、あるいは自嘲を込めて述べる際に用いられます。",
+      "formation": "動詞語幹 + -(ㄴ/는)다면서 / 形容詞語幹 + -다면서 / 名詞 + -(이)라면서（意志・未来形：-겠다면서）",
+      "examples": [
+        {
+          "translation": "彼は勉強すると言っておきながら、ずっとゲームをしています。"
+        },
+        {
+          "translation": "彼女はお金を節約すると言いながら、今ショッピングをしています。"
+        },
+        {
+          "translation": "私はダイエットをしなければならないと言いながら、毎日甘いものを食べています。"
+        },
+        {
+          "translation": "うちの父は禁煙すると言っておきながら、今でもタバコを吸っています。"
+        }
+      ]
+    },
+    "ko_려고_49": {
+      "title": "~(으)려고（〜しようと、〜するために）",
+      "shortExplanation": "ある行動を起こす目的や意図を表す接続語尾です（「〜しようと」「〜するために」）。",
+      "longExplanation": "「~(으)려고」は動詞の語幹に付き、後節の動作を行う目的や話し手の意図を表します。「〜しようとして」「〜するために」という意味になり、前節と後節の主語は同一でなければなりません。また、後節に命令形や勧誘形を用いることはできません。",
+      "formation": "動詞語幹（パッチムあり）+ -으려고 / 動詞語幹（パッチムなし・パッチム ㄹ）+ -려고",
+      "examples": [
+        {
+          "translation": "韓国語が上手になろうと、毎日韓国語を勉強しています。"
+        },
+        {
+          "translation": "ダイエットをしようと運動し、カロリーを減らそうと努力しました。"
+        },
+        {
+          "translation": "今回の試験で良い結果を出そうとたくさん勉強し、早く寝ようと努力しました。"
+        },
+        {
+          "translation": "お母さんを喜ばせてあげようと、毎日部屋を片付け、美味しい料理を作って差し上げました。"
+        }
+      ]
+    },
+    "ko_려고_50": {
+      "title": "~(으)려고 하다（〜しようとする、〜するつもりだ）",
+      "shortExplanation": "ある行動を起こそうとする主語の意図や計画を表します（「〜しようとする」「〜するつもりだ」）。",
+      "longExplanation": "「~(으)려고 하다」は、意図を表す接続語尾「-(으)려고」に補助動詞「하다」が結合した文型で、主語がこれからある行動をしようと意図・計画していることを表します。過去形「-(으)려고 했다」の形で用いられると、「〜しようとしたが、予期せぬ事情でできなかった」という未達成の意図を述べる文脈で極めてよく使われます。",
+      "formation": "動詞語幹（パッチムあり）+ -으려고 하다 / 動詞語幹（パッチムなし・パッチム ㄹ）+ -려고 하다",
+      "examples": [
+        {
+          "translation": "私は今日学校に行こうとしましたが、雨が降ったため行くことができませんでした。"
+        },
+        {
+          "translation": "叔父は明日うちに来る予定でしたが、車が故障して来られなくなりました。"
+        },
+        {
+          "translation": "私はあなたに電話をかけようとしましたが、バッテリーが切れてしまって電話できませんでした。"
+        },
+        {
+          "translation": "友達と一緒に映画を見ようとしましたが、チケットが売り切れて見られませんでした。"
+        }
+      ]
+    },
+    "ko_려는데_51": {
+      "title": "~(으)려는데（〜しようとしているところだが、〜するつもりなのだが）",
+      "shortExplanation": "ある行動をしようとしている状況を背景・前置きとして提示し、それに伴う状況や障害を後節で述べます（「〜しようとしているところだが」「〜するつもりなのだが」）。",
+      "longExplanation": "「~(으)려는데」は「-(으)려고 하는데」の縮約形です。意図を表す文型に背景提示の接続語尾「-는데」が結びついており、「ちょうど〜しようとしているところだが」と前置きした上で、後節でその意図を妨げる状況（雨、材料不足、チケット完売など）や相談・疑問を提示する際に頻繁に用いられます。",
+      "formation": "動詞語幹（パッチムあり）+ -으려는데 / 動詞語幹（パッチムなし・パッチム ㄹ）+ -려는데",
+      "examples": [
+        {
+          "translation": "本を買いに本屋へ行こうとしているところですが、雨があまりにもひどく降っているので、たぶん行けそうにありません。"
+        },
+        {
+          "translation": "夕食の準備をしようとしているところですが、必要な材料が足りないので買い出しに行かなければならなさそうです。"
+        },
+        {
+          "translation": "友達にプレゼントをあげようと思っているのですが、どんなプレゼントをあげるべきかまだ悩んでいる最中です。"
+        },
+        {
+          "translation": "今週末に映画を見に行こうとしているのですが、全てのチケットが予約されてしまって見られそうにありません。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_대로_37": {
+      "title": "~대로 (따라서·그대로)",
+      "shortExplanation": "어떤 모양이나 방식, 지시나 규칙 등에 어김없이 따르거나 본래 상태 그대로임을 나타내는 표현입니다 ('~대로', '-(으)ㄴ/는 대로').",
+      "longExplanation": "'~대로'는 명사 뒤에 붙는 보조사로 쓰이거나, 동사의 관형사형 뒤에 연결되어 '-(으)ㄴ/는 대로'의 형태로 사용됩니다. 앞에 제시된 지시, 계획, 상태 따위를 표준이나 모범으로 삼아 조금도 어긋남 없이 따르거나, 어떤 상태가 본래 있던 그대로임을 나타냅니다.",
+      "formation": "명사 + 대로 / 동사 어간 + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "선생님이 가르쳐 준 대로 문제를 풀어 보았지만, 아직 이해가 잘 안 돼요."
+        },
+        {
+          "translation": "언니가 추천해 준 대로 책을 읽어봤더니 깊은 뜻이 담긴 재미있는 책이었어요."
+        },
+        {
+          "translation": "우리가 계획한 대로 여행을 계속하면서 여러 랜드마크를 볼 수 있었어요."
+        },
+        {
+          "translation": "사진에 보이는 경치대로 실제로 보니까 너무 아름다워서 기분이 좋아졌어요."
+        }
+      ]
+    },
+    "ko_대로_38": {
+      "title": "~대로 하다 (지시나 말에 따름)",
+      "shortExplanation": "남이 말한 바나 정해진 규칙, 지시 따위에 조금도 어김없이 그대로 실행함을 나타내는 표현입니다 ('~대로 하다').",
+      "longExplanation": "'~대로 하다'는 다른 사람의 말, 조언, 또는 매뉴얼이나 규칙을 정확하게 따라 행동에 옮김을 강조하는 표현입니다. 명사 뒤에 '대로 하다'가 직접 붙거나, 동사의 관형사형 뒤에 붙어 '말씀하신 대로 하다', '지시한 대로 하다' 등의 형태로 널리 쓰입니다.",
+      "formation": "명사 + 대로 하다 / 동사 어간 + -(으)ㄴ/는 대로 하다",
+      "examples": [
+        {
+          "translation": "엄마는 아침에 일어나서 꼭 밥을 먹으라고 했어요. 그래서 저는 엄마가 말씀하신 대로 하고 학교에 가요."
+        },
+        {
+          "translation": "요리책의 레시피대로 음식을 만들면 언제나 맛있게 완성할 수 있어요."
+        },
+        {
+          "translation": "선생님이 강조하신 대로 공부하면 시험에서 좋은 점수를 받을 수 있을 거예요."
+        },
+        {
+          "translation": "부모님이 말씀하신 대로 매일 운동하고, 영양가 있는 음식을 먹으니까 건강이 훨씬 좋아졌어요."
+        }
+      ]
+    },
+    "ko_대로이면_39": {
+      "title": "~대로이면 (전제나 조건의 가정)",
+      "shortExplanation": "말한 바나 계획, 소문 등이 사실 그대로라고 가정할 때 사용하는 조건 표현입니다 ('~대로이면', '~대로라면').",
+      "longExplanation": "'~대로이면'은 '대로'에 서술격 조사 '이-'와 조건의 연결어미 '-면'이 결합된 표현으로, 일상 대화에서는 '~대로라면'으로도 자주 교체되어 쓰입니다. 다른 사람의 말, 계획, 소문 따위를 전제로 삼아 '만약 그 내용이 사실 그대로라면'이라는 가정을 두고, 그에 따르는 귀결이나 추측을 뒤 절에 제시합니다.",
+      "formation": "명사 + 대로이면 (또는 대로라면) / 동사 어간 + -(으)ㄴ/는 대로이면 (또는 대로라면)",
+      "examples": [
+        {
+          "translation": "치킨집 사장님이 말한 대로이면, 여기서 가장 인기 있는 메뉴는 양념치킨이래요."
+        },
+        {
+          "translation": "네 계획대로이면, 오늘 밤에 영화를 볼 수 있겠네요."
+        },
+        {
+          "translation": "민수가 말한 대로이면, 이 시험은 아주 어렵다고 해요."
+        },
+        {
+          "translation": "흥민이가 모든 것을 솔직하게 말한 대로이면, 그는 앞으로 이런 실수를 하지 않을 거예요."
+        }
+      ]
+    },
+    "ko_도록_40": {
+      "title": "~도록 (목적·정도·도달점)",
+      "shortExplanation": "뒤 절 행위의 목적이나 도달해야 할 상태, 또는 기준이 되는 정도를 나타내는 연결어미입니다 ('~도록').",
+      "longExplanation": "'~도록'은 동사나 형용사 어간 뒤에 붙는 연결어미로, 앞 절의 내용이 뒤 절의 행동이 지향하는 목표나 결과가 됨을 나타냅니다. 즉 '앞 절의 상태가 되게끔' 뒤 절의 행동을 취함을 뜻하며, 문맥에 따라 시간의 도달점이나 어떤 정도에 이름('지치도록 일하다')을 나타내기도 합니다.",
+      "formation": "동사 어간 / 형용사 어간 + -도록",
+      "examples": [
+        {
+          "translation": "야행성 동물들을 보도록 야간 사파리에 가기로 했어요."
+        },
+        {
+          "translation": "우리 모두가 이해할 수 있도록 강의를 천천히 해 주세요."
+        },
+        {
+          "translation": "낙엽이 빨리 치워지도록 주기적으로 마당을 쓸었어요."
+        },
+        {
+          "translation": "비바람이 들어오지 않도록 창문을 꼭 닫아 두었어요."
+        }
+      ]
+    },
+    "ko_도록_41": {
+      "title": "~도록 하다 (사동·지시·노력 유도)",
+      "shortExplanation": "다른 사람에게 어떤 행동을 하도록 유도하거나 지시하며, 또는 어떤 상태가 실현되도록 힘씀을 나타내는 문형입니다 ('~도록 하다').",
+      "longExplanation": "'~도록 하다'는 동사나 형용사 어간 뒤에 붙어, 주어가 다른 대상에게 어떤 행동을 취하게 하거나 일정한 상황을 조성하도록 이끄는 간접 사동의 뜻을 나타냅니다. 화자 자신이 주어일 때는 강한 다짐이나 정중한 약속('-도록 하겠습니다')의 의미로도 널리 쓰입니다.",
+      "formation": "동사 어간 / 형용사 어간 + -도록 하다",
+      "examples": [
+        {
+          "translation": "저는 항상 학생들이 성실하게 수업을 듣도록 해요."
+        },
+        {
+          "translation": "회사에서는 직원들이 일찍 퇴근하도록 하고 있어요."
+        },
+        {
+          "translation": "그녀는 아이들이 안전하게 집에 도착하도록 했어요."
+        },
+        {
+          "translation": "엄마는 우리가 매일 채소를 먹도록 했어요."
+        }
+      ]
+    },
+    "ko_도록이면_42": {
+      "title": "도록이면 / 되도록이면 (가능한 한·가급적)",
+      "shortExplanation": "가능한 형편이나 범위 안에서 가급적 그렇게 하기를 바라는 마음을 나타내는 표현입니다 ('되도록이면', '도록이면').",
+      "longExplanation": "'도록이면'은 주로 구어에서 '되도록이면'의 준말처럼 쓰이며, 형편이 허락하는 한 어떤 행동을 우선적으로 실천하고자 하거나 상대방에게 완곡하게 권유할 때 사용합니다. 부사적으로 문장 앞에 놓여 '가급적', '될 수 있는 대로'의 뜻을 나타냅니다.",
+      "formation": "문두 부사적 용법 / 동사 어간 + -도록이면",
+      "examples": [
+        {
+          "translation": "도록이면 건강에 좋은 음식을 먹으려고 노력하고 있어요."
+        },
+        {
+          "translation": "도록이면 빨리 답장해 주세요."
+        },
+        {
+          "translation": "도록이면 매일 운동을 해야 건강을 유지할 수 있어요."
+        },
+        {
+          "translation": "도록이면 숙제를 미루지 않고 바로 하는 게 좋아요."
+        }
+      ]
+    },
+    "ko_든지_43": {
+      "title": "~든지 (선택과 무관함)",
+      "shortExplanation": "어느 것을 선택해도 상관없음을 나타내거나 여러 가지 중 하나를 자유롭게 고를 수 있음을 나타내는 연결어미 및 조사입니다 ('~든지').",
+      "longExplanation": "'~든지'는 명사 뒤에 붙는 보조사나 용언 어간 뒤에 붙는 연결어미로 쓰입니다. 둘 이상의 대상을 나열하면서 어느 쪽을 선택하더라도 관계없거나 상관하지 않음을 나타냅니다. 뒷말에는 주로 '상관없다', '괜찮다', '좋다'와 같은 무관함의 서술어가 잘 어울립니다.",
+      "formation": "명사 + (이)든지 / 동사 어간 / 형용사 어간 + -든지",
+      "examples": [
+        {
+          "translation": "단체여행이든지 개인여행이든지, 저는 어떤 형태의 여행이든 좋아해요."
+        },
+        {
+          "translation": "이 문제를 해결하기 위해 많은 시간을 들였든지 많은 돈을 썼든지, 그 모든 노력은 가치가 있었어요."
+        },
+        {
+          "translation": "그가 만약 서울에 산다든지 부산에 산다든지, 그는 어디서든 행복할 거예요."
+        },
+        {
+          "translation": "이 회사에서 근무한다든지 다른 회사에서 근무한다든지, 저는 어디서든지 최선을 다하겠습니다."
+        }
+      ]
+    },
+    "ko_든지_44": {
+      "title": "~든지 ~든지 (대안의 나열과 선택)",
+      "shortExplanation": "선택할 수 있는 둘 이상의 동작이나 상태를 나열하여 어느 쪽이든 상관없이 선택함을 나타내는 연결어미입니다 ('~든지 ~든지').",
+      "longExplanation": "'~든지 ~든지'는 연결어미 '-든지'를 겹쳐 사용하여 청자나 주어에게 복수의 선택지를 제시할 때 쓰입니다. 보통 '아니면'과 함께 어우러져 쓰이며, 제시된 대안 중 어느 것을 골라도 괜찮다는 융통성 있는 태도를 나타냅니다.",
+      "formation": "명사 + (이)든지 명사 + (이)든지 / 동사 어간 + -든지 (아니면) 동사 어간 + -든지",
+      "examples": [
+        {
+          "translation": "이번 주말에는 영화를 보러 가든지, 아니면 집에서 쉬든지 할 계획이에요."
+        },
+        {
+          "translation": "저녁 메뉴로 피자를 먹을 든지, 아니면 치킨을 먹을 든지 아직 결정하지 못했어요."
+        },
+        {
+          "translation": "지금 집에 가든지, 아니면 조금 더 머무르든지 마음대로 해도 괜찮아요."
+        },
+        {
+          "translation": "그녀에게 전화하든지 아니면 메시지를 보내든지, 반드시 연락을 해야 해요."
+        }
+      ]
+    },
+    "ko_라도_45": {
+      "title": "~라도 (차선책·최소한의 선택)",
+      "shortExplanation": "제일 마음에 차는 것은 아니지만 아쉬운 대로 차선책이나 최소한의 한도로 받아들임을 나타내는 보조사입니다 ('~라도').",
+      "longExplanation": "'~라도'는 명사나 부사류 뒤에 붙는 보조사로, 최선은 아니지만 최소한의 요구 조건이나 양보의 대상으로서 그만하면 족함을 나타냅니다. '없으면 아쉬운 대로 이것이라도'라는 뜻을 담아 양보와 차선의 뉘앙스를 강하게 풍깁니다.",
+      "formation": "명사 + (이)라도 / 용언 어간 + -아/어-라도",
+      "examples": [
+        {
+          "translation": "이 일을 할 수 없다면, 도움이라도 주세요."
+        },
+        {
+          "translation": "그는 수업에 참여하지 않았지만, 책이라도 읽었어야 했습니다."
+        },
+        {
+          "translation": "시험에 떨어졌지만, 다시 시도라도 해보겠습니다."
+        },
+        {
+          "translation": "영화를 보러 가고 싶지 않아도, 친구들이 영화를 좋아한다면 함께라도 갈게요."
+        }
+      ]
+    },
+    "ko_라든지_46": {
+      "title": "~(이)라든지 (대표적 예시의 나열)",
+      "shortExplanation": "대표가 될 만한 여러 가지 대상을 예로 들어 나열할 때 사용하는 연결 조사입니다 ('~(이)라든지').",
+      "longExplanation": "'~(이)라든지'는 명사나 인용형 어미 뒤에 붙어, 생각나는 대표적인 예들을 몇 가지 뽑아 늘어놓을 때 씁니다. 나열된 대상들에만 국한되지 않고 그와 유사한 여러 가능성들이 열려 있음을 암시하며, 대화에서 부드럽게 제안하거나 묻는 맥락에 자주 쓰입니다.",
+      "formation": "명사 + (이)라든지 / 동사 어간 + -라든지",
+      "examples": [
+        {
+          "translation": "커피라든지 차라든지, 어떤 음료라도 마시겠어요?"
+        },
+        {
+          "translation": "도서관에서 공부하라든지 집에서 책을 읽으라든지, 저는 항상 많이 배우고 있어요."
+        },
+        {
+          "translation": "여행하라든지 새로운 취미를 찾아보라든지, 즐거움을 찾기 위해 해 볼 수 있는 일이 많아요."
+        },
+        {
+          "translation": "사과라든지 배라든지, 과일 중에서 어떤 것을 제일 좋아하세요?"
+        }
+      ]
+    },
+    "ko_라면_47": {
+      "title": "~(이)라면 / ~다면 (가정·조건)",
+      "shortExplanation": "어떤 사실을 가정하거나 실현 가능성이 희박한 상황을 전제로 삼을 때 쓰는 조건 표현입니다 ('~(이)라면', '~다면').",
+      "longExplanation": "'~(이)라면'은 명사 뒤에 붙어 '만약 ~라면'의 가정을 나타내며, 용언 뒤에서는 간접화법 가정형인 '-다고 하면'이 줄어든 '-다면'이나 과거형 가정 '-았/었다면'으로 쓰입니다. 아직 일어나지 않은 일이나 사실과 반대되는 일을 가상으로 설정하고 뒤 절에 그에 따른 생각이나 결과를 진술합니다.",
+      "formation": "명사 + (이)라면 / 형용사 어간 + -다면 / 동사 어간 + -ㄴ/는다면 (과거형: -았/었다면)",
+      "examples": [
+        {
+          "translation": "당신이 그 사실을 먼저 알았다면, 왜 저에게 말해주지 않았어요?"
+        },
+        {
+          "translation": "내일 비가 오라면 우산을 챙겨야겠어요."
+        },
+        {
+          "translation": "내가 천재라면 이 문제를 쉽게 해결할 수 있을 텐데요."
+        },
+        {
+          "translation": "영화를 보러 가고 싶다면 저녁에 같이 갈까요?"
+        }
+      ]
+    },
+    "ko_라면서_48": {
+      "title": "~(ㄴ/는)다면서 / ~라면서 (언행 불일치·반대의 행동)",
+      "shortExplanation": "자신이나 다른 사람이 말한 주장·의도와 실제 행동이 정반대로 어긋남을 나타내는 연결어미입니다 ('~라면서', '-(ㄴ/는)다면서').",
+      "longExplanation": "'~라면서'는 간접인용 어미에 '-(으)면서'가 결합된 축약 표현으로, 주로 '-(ㄴ/는)다면서', '-겠다면서' 등의 형태로 쓰입니다. 앞 절에서 공언하거나 약속한 말과 뒤 절의 실제 행동이 서로 모순될 때, 이에 대한 지적, 타박, 핀잔, 혹은 자조적인 한탄의 뉘앙스를 나타냅니다.",
+      "formation": "동사 어간 + -(ㄴ/는)다면서 / 형용사 어간 + -다면서 / 명사 + -(이)라면서 (의지형: -겠다면서)",
+      "examples": [
+        {
+          "translation": "그가 공부를 하겠다면서 계속 게임을 하고 있어요."
+        },
+        {
+          "translation": "그녀는 돈을 절약하겠다면서 지금 쇼핑을 하고 있어요."
+        },
+        {
+          "translation": "나는 다이어트를 해야 한다면서 매일 달콤한 음식을 먹고 있어요."
+        },
+        {
+          "translation": "우리 아버지는 흡연을 그만두겠다면서 아직도 담배를 피우고 있어요."
+        }
+      ]
+    },
+    "ko_려고_49": {
+      "title": "~(으)려고 (의도·목적)",
+      "shortExplanation": "어떤 행동을 할 의도나 목적을 가지고 뒤 절의 행위를 함을 나타내는 연결어미입니다 ('~(으)려고').",
+      "longExplanation": "'~(으)려고'는 동사 어간 뒤에 붙어, 뒤 절의 행위가 앞 절의 목적이나 의도를 이루기 위해 이루어짐을 나타냅니다. 앞 절과 뒤 절의 주어가 같아야 하며, 뒤 절에는 청유형이나 명령형 문장이 올 수 없습니다.",
+      "formation": "동사 어간(받침 있음) + -으려고 / 동사 어간(받침 없음·ㄹ 받침) + -려고",
+      "examples": [
+        {
+          "translation": "한국어를 잘하려고 매일 한국어를 공부하고 있어요."
+        },
+        {
+          "translation": "다이어트를 하려고 운동하고, 칼로리를 줄이려고 노력했어요."
+        },
+        {
+          "translation": "이번 시험을 잘 보려고 많이 공부했고, 일찍 자려고 노력했습니다."
+        },
+        {
+          "translation": "엄마를 기쁘게 해드리려고 매일 방을 치우고, 맛있는 음식을 만들어 드렸어요."
+        }
+      ]
+    },
+    "ko_려고_50": {
+      "title": "~(으)려고 하다 (의도·계획)",
+      "shortExplanation": "주어가 어떤 행동을 할 의도나 계획을 가지고 있음을 나타내는 문형입니다 ('~(으)려고 하다').",
+      "longExplanation": "'~(으)려고 하다'는 의도를 나타내는 연결어미 '-(으)려고'에 보조동사 '하다'가 결합된 형태입니다. 주어의 가까운 미래 계획이나 결심을 나타내며, 과거형인 '-(으)려고 했다'로 쓰일 때는 본래 그럴 생각이었으나 예기치 못한 사정이나 방해로 인해 실행하지 못했음을 나타내는 경우가 많습니다.",
+      "formation": "동사 어간(받침 있음) + -으려고 하다 / 동사 어간(받침 없음·ㄹ 받침) + -려고 하다",
+      "examples": [
+        {
+          "translation": "저는 오늘 학교에 가려고 했는데, 비가 와서 갈 수 없었어요."
+        },
+        {
+          "translation": "삼촌은 내일 우리 집에 오려고 했지만, 차가 고장 나서 오지 못했어요."
+        },
+        {
+          "translation": "나는 당신에게 전화를 하려고 했어요, 하지만 배터리가 다 되어서 전화를 못했어요."
+        },
+        {
+          "translation": "친구들과 함께 영화를 보려고 했지만 표가 매진되어 보지 못했습니다."
+        }
+      ]
+    },
+    "ko_려는데_51": {
+      "title": "~(으)려는데 (의도 제시·배경 상황)",
+      "shortExplanation": "어떤 행동을 하려고 하는 의도나 계획을 배경으로 제시하고, 그에 따른 상황이나 걸림돌을 뒤 절에 이을 때 쓰는 연결어미입니다 ('~(으)려는데').",
+      "longExplanation": "'~(으)려는데'는 '-(으)려고 하는데'의 준말로, 의도의 보조동사 구성에 배경의 연결어미 '-는데'가 결합된 형태입니다. 화자가 무언가를 시도하거나 계획하고 있는 바로 그 시점의 상황을 전제로 삼아, 뒤 절에 이를 가로막는 상황(비가 옴, 재료 부족, 매진 등)이나 고민거리를 제시할 때 주로 쓰입니다.",
+      "formation": "동사 어간(받침 있음) + -으려는데 / 동사 어간(받침 없음·ㄹ 받침) + -려는데",
+      "examples": [
+        {
+          "translation": "책을 사러 서점에 가려는데 비가 너무 많이 와서 아마 못 갈 것 같아요."
+        },
+        {
+          "translation": "디너를 준비하려는데 필요한 재료가 부족해서 장을 보러 가야 할 것 같아요."
+        },
+        {
+          "translation": "친구에게 선물을 주려는데 무슨 선물을 줄지 아직 고민 중이에요."
+        },
+        {
+          "translation": "이번 주말에 영화를 보러 가려는데 모든 표가 예약돼서 못 볼 것 같아요."
+        }
+      ]
+    }
+  }
+}

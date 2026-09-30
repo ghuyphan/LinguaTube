@@ -1,0 +1,654 @@
+{
+  "vi": {
+    "zh_反而_425": {
+      "title": "反而 (Phó từ chuyển ngoặt: Trái lại / Ngược lại / Ngược lại còn...)",
+      "shortExplanation": "Phó từ biểu thị sự việc phát triển trái ngược hoàn toàn với dự liệu thông thường, lẽ thường hoặc mục đích ban đầu; 'trái lại', 'ngược lại', 'lại còn'.",
+      "longExplanation": "'反而' (fǎn'ér) là phó từ liên kết ngữ nghĩa thường dùng ở phân câu sau. Nó biểu thị kết quả, tình huống hoặc diễn biến của sự việc phát triển ngược hẳn với lẽ thường tình, trái với mong đợi, quy luật tự nhiên hoặc dự tính ban đầu của mọi người. Cấu trúc này thường đi liền sau các liên từ chuyển ngoặt hoặc nhượng bộ như '不但不/不但没……，反而……' (chẳng những không... trái lại còn...), '虽然……，但……反而……' (tuy... nhưng ngược lại...). Tương đương với 'trái lại', 'ngược lại', 'ngược lại còn' trong tiếng Việt.",
+      "formation": "Phân câu 1 (tiền đề / tình huống)，(nhưng / tuy nhiên +) Chủ ngữ + 反而 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Cuộc sống ở thành phố lớn tuy rất sôi động phong phú, nhưng bố mẹ cả đời sống ở nông thôn ngược lại sẽ không quen thích nghi được."
+        }
+      ]
+    },
+    "zh_从而_426": {
+      "title": "从而 (Liên từ nhân quả - mục đích: Từ đó / Qua đó / Nhờ đó mà / Do đó)",
+      "shortExplanation": "Liên từ văn viết nối hai phân câu, biểu thị phân câu trước là phương pháp hoặc nguyên nhân, phân câu sau là kết quả tất nhiên hoặc mục đích đạt được; 'từ đó', 'nhờ đó mà'.",
+      "longExplanation": "'从而' (cóng'ér) là liên từ mang sắc thái trang trọng, văn viết, dùng để liên kết hai phân câu. Phân câu đi trước thường nêu ra phương pháp, hành động, điều kiện hoặc nguyên nhân; phân câu đi sau nêu lên kết quả thuận đà tự nhiên phát sinh hoặc mục đích tiếp theo đạt được nhờ phương pháp, điều kiện đó (kết hợp cả ý nghĩa 'từ đó' và 'do đó'). Tương đương với 'từ đó', 'qua đó', 'nhờ đó mà', 'kết quả là' trong tiếng Việt.",
+      "formation": "Phân câu 1 (nguyên nhân / hành động / phương pháp)，从而 + Phân câu 2 (kết quả / mục đích)",
+      "examples": [
+        {
+          "translation": "Chuẩn bị tâm lý tốt trước trận đấu có thể giảm bớt áp lực cho vận động viên, từ đó giành được chiến thắng trong cuộc thi."
+        }
+      ]
+    },
+    "zh_V于N_427": {
+      "title": "Động từ + 于 + Danh từ (Giới từ chỉ thời gian / địa điểm: Vào / Tại / Ở / Lúc)",
+      "shortExplanation": "Giới từ văn viết '于' đứng sau động từ làm bổ ngữ, dẫn nhập thời gian hoặc địa điểm diễn ra hành động; tương đương với '在', nghĩa là 'vào', 'tại', 'ở'.",
+      "longExplanation": "'于' (yú) là giới từ mang đậm phong cách văn ngôn và văn viết trang trọng. Khi đứng sau các động từ (như 成立 - thành lập, 出生 - sinh ra, 发生 - xảy ra, 位于 - tọa lạc, 毕业 - tốt nghiệp...), '于' kết hợp với danh từ chỉ thời gian hoặc nơi chốn phía sau để tạo thành cụm giới từ làm bổ ngữ cho động từ. Cấu trúc này tương đương với '在' trong khẩu ngữ hiện đại. Tương đương với 'vào (năm/tháng/ngày)', 'tại', 'ở' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (成立 / 出生 / 发生 / 位于 / 毕业...) + 于 + Danh từ (thời gian / địa điểm)",
+      "examples": [
+        {
+          "translation": "Công ty này được thành lập vào năm 1997."
+        }
+      ]
+    },
+    "zh_V于N_428": {
+      "title": "Động từ + 于 + Danh từ (Giới từ chỉ đối tượng tiếp nhận / mục tiêu: Đến / Cho / Với / Vào)",
+      "shortExplanation": "Giới từ văn viết '于' đứng sau động từ để dẫn nhập đối tượng, mục tiêu tác động của hành động; tương đương với '向', '对', nghĩa là 'tới', 'cho', 'với'.",
+      "longExplanation": "'于' (yú) đứng sau một số động từ để dẫn nhập đối tượng hoặc mục tiêu mà động tác hướng đến, tương đương với các giới từ '向' (hướng về/tới), '对' (đối với) hoặc '给' (cho) trong khẩu ngữ. Cấu trúc này thường thấy trong các cụm động từ cố định mang phong cách văn viết trang nhã như: '求助于' (tìm sự giúp đỡ từ/cầu cứu tới), '求教于' (thỉnh giáo), '致力于' (cống hiến cho/dốc sức vào), '归功于' (quy công cho/nhờ vào), '取决于' (phụ thuộc vào). Tương đương với 'đến', 'cho', 'vào', 'với', 'từ' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (求助 / 致力于 / 忠 / 问 / 献...) + 于 + Danh từ (đối tượng / mục tiêu / người tiếp nhận)",
+      "examples": [
+        {
+          "translation": "Lý Minh không còn cách nào khác, đành phải cầu cứu tới người bạn học cũ Vương Phong đang làm giám đốc."
+        }
+      ]
+    },
+    "zh_V于N_429": {
+      "title": "Động từ + 于 + Danh từ (Giới từ chỉ nguồn gốc / xuất xứ: Từ / Bắt nguồn từ)",
+      "shortExplanation": "Giới từ văn viết '于' đứng sau động từ để dẫn nhập nguồn gốc, xuất xứ, điểm xuất phát; tương đương với '从', '自', nghĩa là 'từ', 'xuất phát từ'.",
+      "longExplanation": "'于' (yú) đứng sau một số động từ để dẫn nhập nguồn gốc, xuất thân, bối cảnh bắt đầu hoặc nơi sản sinh ra sự vật, tương đương với các giới từ '从' (từ) hoặc '自' (từ/tự) trong tiếng Hán hiện đại. Cấu trúc này thường thấy trong các cụm kết hợp chặt chẽ như '出身于' (xuất thân từ), '来源于' (bắt nguồn từ), '取材于' (lấy tài liệu/chất liệu từ), '产生于' (nảy sinh từ). Tương đương với 'từ', 'xuất thân từ', 'bắt nguồn từ' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (出身 / 来源 / 取材 / 源...) + 于 + Danh từ (nguồn gốc / xuất thân / căn nguyên)",
+      "examples": [
+        {
+          "translation": "Anh ấy xuất thân từ một gia đình trí thức."
+        }
+      ]
+    },
+    "zh_A于N_430": {
+      "title": "Tính từ + 于 + Danh từ (Giới từ chỉ phương diện chịu tác động: Đối với / Cho / Có lợi cho)",
+      "shortExplanation": "Giới từ văn viết '于' đứng sau tính từ biểu thị phương diện, đối tượng chịu tác động hoặc hưởng lợi ích; 'đối với', 'cho', 'có lợi cho'.",
+      "longExplanation": "'于' (yú) đứng sau một số tính từ hoặc cụm từ mang tính chất tính từ biểu thị phương diện, đối tượng mà tính chất đó hướng tới hoặc tạo ra ảnh hưởng. Cấu trúc này thường thấy trong các cụm biểu thị sự có ích, bất lợi, thuận tiện hoặc sở trường như: '有助于' (có lợi cho/giúp ích đối với), '有益于' (có ích cho), '有害于' (có hại cho), '不利于' (bất lợi đối với), '便于' (thuận tiện cho), '善于' (giỏi về/khéo về). Tương đương với 'đối với', 'cho', 'có lợi cho' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Tính từ (有助于 / 有益 / 有害 / 不利 / 善 / 便...) + 于 + Danh từ",
+      "examples": [
+        {
+          "translation": "Vận động có ích cho sức khỏe."
+        }
+      ]
+    },
+    "zh_A于N_431": {
+      "title": "Tính từ + 于 + Danh từ (Giới từ so sánh: Khác với / Hơn / So với)",
+      "shortExplanation": "Giới từ văn viết '于' đứng sau tính từ biểu thị sự so sánh, đối chiếu (khác biệt hoặc hơn/kém); tương đương với '跟……（不同）' hoặc '比', nghĩa là 'khác với', 'hơn'.",
+      "longExplanation": "'于' (yú) đứng sau các tính từ so sánh biểu thị quan hệ đối chiếu, dị biệt hoặc mức độ hơn kém giữa hai sự vật. Khi đi với các tính từ như '不同' (khác), nó tương đương với '跟/与……不同' (khác với). Khi đi với các tính từ chỉ số lượng, mức độ hoặc phẩm chất (như 高 - cao, 大 - lớn, 多 - nhiều, 少 - ít, 优 - tốt hơn, 劣 - kém hơn...), '于' tương đương với từ so sánh '比' (hơn/so với). Cấu trúc này thường thấy trong văn bản khoa học, tin tức và văn viết trang trọng. Tương đương với 'khác với', 'hơn so với' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Tính từ (不同 / 高 / 低 / 大 / 小 / 优 / 劣...) + 于 + Danh từ (đối tượng so sánh)",
+      "examples": [
+        {
+          "translation": "Động vật thủy sinh khác với động vật trên cạn."
+        }
+      ]
+    },
+    "zh_V为wiN_432": {
+      "title": "Động từ + 为 (wéi) + Danh từ (Bổ ngữ biến đổi: Biến thành / Hóa thành / Chuyển thành)",
+      "shortExplanation": "Động từ kết hợp với '为' (đọc thanh 2: wéi) làm bổ ngữ biểu thị sự biến đổi, chuyển hóa thành một trạng thái hoặc sự vật mới; 'biến thành', 'chuyển thành'.",
+      "longExplanation": "'为' trong cấu trúc này được phát âm là 'wéi' (thanh 2), tương đương với '成' (chéng) hoặc '成为' (trở thành/biến thành). Khi đứng sau các động từ chỉ sự thay đổi, vận động (như 变 - biến, 化 - hóa, 转 - chuyển, 改 - sửa đổi, 降 - hạ...), nó đóng vai trò bổ ngữ kết quả biểu thị người hoặc sự vật trải qua một quá trình tác động hoặc diễn biến và biến đổi thành một sự vật, trạng thái hay hình thái mới. Tương đương với 'biến thành', 'hóa thành', 'chuyển thành', 'trở thành' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (变 / 化 / 转 / 改 / 降...) + 为 + Danh từ (kết quả biến đổi)",
+      "examples": [
+        {
+          "translation": "Áp lực cũng có thể biến thành động lực."
+        }
+      ]
+    },
+    "zh_V为wiN_433": {
+      "title": "Động từ + 为 (wéi) + Danh từ (Bổ ngữ phán đoán / xưng định: Coi là / Xem là / Gọi là)",
+      "shortExplanation": "Động từ kết hợp với '为' (đọc thanh 2: wéi) biểu thị sự phán đoán, nhận định hoặc định danh; 'coi là', 'xem là', 'gọi là'.",
+      "longExplanation": "'为' trong cấu trúc này phát âm là 'wéi' (thanh 2), mang ý nghĩa 'làm', 'là', tương đương với '作' (zuò) hoặc '当作' (dàngzuò). Khi kết hợp sau các động từ biểu thị nhận thức, phán đoán, xưng hô hoặc bổ nhiệm (như 称 - gọi/xưng, 视 - coi, 认 - nhận, 选 - bầu/chọn, 奉 - tôn phụng...), nó dùng để xác định tính chất, danh phận hoặc tên gọi của đối tượng (thường gặp dạng '称……为……' - gọi... là..., '称其为' - gọi cái đó là..., '视……为……' - coi... là...). Tương đương với 'gọi là', 'xem là', 'coi là' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (称 / 视 / 认 / 选 / 奉...) + (Đại từ / Danh từ +) 为 + Danh từ (danh xưng / định danh)",
+      "examples": [
+        {
+          "translation": "Theo quan điểm của anh ấy, một cuộc sống không có công việc thì không thể gọi là một cuộc sống đích thực."
+        }
+      ]
+    },
+    "zh_V起来_434": {
+      "title": "Động từ + 起来 (Bổ ngữ xu hướng mở rộng: Gom lại / Tích lũy lại / Tập trung lại)",
+      "shortExplanation": "Bổ ngữ xu hướng mở rộng '起来' biểu thị hành động làm cho người hoặc sự vật từ phân tán tập hợp, tích tụ hoặc gom góp lại một chỗ; 'lại', 'tích lũy lại'.",
+      "longExplanation": "'起来' (qǐlai) khi làm bổ ngữ xu hướng mở rộng có ý nghĩa biểu thị sự tập hợp, tích tụ hoặc dồn lại. Nó diễn tả hành động làm cho các sự vật, thông tin, lực lượng hoặc của cải vốn ở trạng thái phân tán, riêng lẻ được gom góp, tích tụ hoặc hợp nhất lại thành một khối hoặc số lượng lớn (ví dụ: '积蓄起来' - tích lũy lại, '集中起来' - tập trung lại, '团结起来' - đoàn kết lại, '组织起来' - tổ chức lại). Tương đương với 'lại', 'tích lũy lại', 'gom góp lại', 'tụ lại' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (积蓄 / 集中 / 组织 / 团结 / 收 / 存...) + 起来",
+      "examples": [
+        {
+          "translation": "Nước ngầm được tích lũy lại, càng tích tụ lại càng nhiều thêm."
+        }
+      ]
+    },
+    "zh_藏起来躲起来_435": {
+      "title": "藏起来 / 躲起来 (Bổ ngữ xu hướng mở rộng: Trốn đi / Giấu đi / Ẩn mình / Cất kỹ)",
+      "shortExplanation": "Bổ ngữ xu hướng '起来' kết hợp với động từ như '藏' (giấu) hoặc '躲' (trốn) biểu thị việc ẩn nấp, cất giấu để không bị phát hiện hoặc không lộ diện; 'trốn đi', 'giấu đi'.",
+      "longExplanation": "'起来' (qǐlai) khi kết hợp với các động từ mang tính chất che giấu hoặc ẩn nấp (như '藏' - giấu, '躲' - trốn, '收' - cất, '遮' - che...) đóng vai trò bổ ngữ xu hướng mở rộng mang ý nghĩa ẩn giấu, giữ kín hoặc thu cất. Nó biểu thị hành động làm cho người hoặc vật được đưa vào nơi kín đáo, khuất tầm nhìn nhằm mục đích tránh né, không để lộ ra ngoài hoặc cất giữ cẩn thận (ví dụ: '藏起来' - giấu đi, '躲起来' - trốn đi, '收起来' - cất đi/thu dọn lại). Tương đương với 'trốn đi', 'giấu đi', 'ẩn mình đi' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (把 + Tân ngữ +) 藏 / 躲 / 收 + 起来 (hoặc: 藏 / 躲 + 起 + Tân ngữ + 来)",
+      "examples": [
+        {
+          "translation": "Lưu Lệ biết mình làm sai nên trốn đi không dám gặp tôi."
+        }
+      ]
+    },
+    "zh_替_436": {
+      "title": "替 + Danh từ / Đại từ + Động từ (Giới từ đại diện: Thay / Thay mặt / Hộ / Giùm)",
+      "shortExplanation": "Giới từ '替' dẫn nhập đối tượng mà mình làm thay, đại diện hoặc làm giùm một hành động; 'thay', 'thay mặt', 'giùm', 'hộ'.",
+      "longExplanation": "'替' (tì) là giới từ đứng trước danh từ hoặc đại từ chỉ người, kết hợp tạo thành cụm giới từ làm trạng ngữ đứng trước vị ngữ động từ. Nó dùng để chỉ hành động được thực hiện thay thế cho ai đó, đại diện cho người khác làm việc gì, hoặc làm hộ, làm giùm cho người khác khi họ không trực tiếp làm được (ví dụ: '替我请假' - xin nghỉ phép giùm tôi, '替他开车' - lái xe thay anh ấy, '替我问好' - gửi lời hỏi thăm thay tôi). Tương đương với 'thay', 'thay mặt', 'giùm', 'hộ' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 替 + Danh từ / Đại từ (người được làm thay) + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Khi gặp ông ngoại, xin hãy gửi lời hỏi thăm của cháu đến ông giúp cháu nhé."
+        }
+      ]
+    },
+    "zh_替_437": {
+      "title": "替 + Danh từ / Đại từ + Tính từ tâm lý (Giới từ đồng cảm: Cho / Thay cho [mừng cho, lo cho])",
+      "shortExplanation": "Giới từ '替' đứng trước người được quan tâm, biểu thị sự đồng cảm, đặt mình vào vị trí của người đó để vui mừng, lo lắng hoặc sốt ruột thay cho họ; 'mừng cho', 'lo cho'.",
+      "longExplanation": "'替' (tì) trong cấu trúc này đi với các tính từ hoặc động từ chỉ tâm lý, cảm xúc (như 高兴 - mừng, 担心 - lo lắng, 着急 - sốt ruột, 难过 - buồn bã, 捏一把汗 - toát mồ hôi hột...). Nó dùng để dẫn nhập đối tượng mà người nói đang đặt mình vào hoàn cảnh của họ để cùng chia sẻ cảm xúc, cảm thấy vui mừng giùm hoặc lo âu, ái ngại thay cho người đó. Tương đương với 'mừng cho', 'vui thay cho', 'lo cho', 'sốt ruột thay cho' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 替 + Danh từ / Đại từ (người được đồng cảm) + Tính từ tâm lý (高兴 / 担心 / 着急 / 难过...)",
+      "examples": [
+        {
+          "translation": "Lý Dương sắp đi du học rồi, tất cả chúng tôi đều thấy mừng cho cậu ấy."
+        }
+      ]
+    },
+    "zh_说不定_438": {
+      "title": "说不定 (Vị ngữ: Chưa chắc chắn / Còn chưa biết chừng / Chưa định rõ)",
+      "shortExplanation": "Làm vị ngữ trong câu, biểu thị sự việc, thời gian hoặc tình huống chưa được ấn định chắc chắn, chưa thể nói trước; 'chưa biết chừng', 'chưa chắc'.",
+      "longExplanation": "'说不定' (shuōbudìng) khi đảm nhiệm chức năng vị ngữ trong câu (thường đi sau phó từ '还' tạo thành '还说不定') mang ý nghĩa chỉ một sự việc, kế hoạch, thời gian hoặc kết quả còn chưa được quyết định dứt khoát, vẫn còn bỏ ngỏ hoặc chưa thể khẳng định chắc chắn (tương đương với '难说' - khó nói, '还不能确定' - còn chưa thể khẳng định). Tương đương với 'chưa chắc chắn', 'chưa biết chừng', 'còn chưa định' trong tiếng Việt.",
+      "formation": "Chủ ngữ (kế hoạch / thời gian / tình huống) + (还 +) 说不定",
+      "examples": [
+        {
+          "translation": "Chuyện này giám đốc đã đồng ý rồi, chỉ là thời gian xuất phát thì vẫn chưa chắc chắn."
+        }
+      ]
+    },
+    "zh_说不定_439": {
+      "title": "说不定 (Phó từ phỏng đoán: Có khi / Biết đâu chừng / Khéo lại / Có lẽ)",
+      "shortExplanation": "Phó từ biểu thị sự phỏng đoán, ước chừng về một khả năng có thể xảy ra; tương đương với '也许', '可能', nghĩa là 'có khi', 'biết đâu'.",
+      "longExplanation": "'说不定' (shuōbudìng) khi dùng làm phó từ đứng trước chủ ngữ hoặc trước vị ngữ, dùng để biểu thị sự phỏng đoán, suy đoán của người nói về một khả năng có thể phát sinh. Nó chỉ ra rằng một tình huống nào đó tuy chưa chắc chắn nhưng hoàn toàn có xác suất xảy ra, tương đương với '也许' (có lẽ), '可能' (có thể) trong tiếng Hán (ví dụ: '你去找找他，说不定他知道' - bạn đi tìm anh ấy thử xem, biết đâu anh ấy lại biết; '明天说不定会下雨' - ngày mai khéo lại mưa). Tương đương với 'có khi', 'biết đâu chừng', 'có lẽ', 'khéo mà' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 说不定 (+ Chủ ngữ +) Động từ / Tính từ / Phân câu",
+      "examples": []
+    }
+  },
+  "ja": {
+    "zh_反而_425": {
+      "title": "反而（副詞：かえって・逆に・反対に）",
+      "shortExplanation": "常識的な予想や期待、本来の意図とは逆転した結果になることを表します（「かえって」「逆に」「反対に」）。",
+      "longExplanation": "「反而」（fǎn'ér）は副詞として後続の節で用いられ、事態の推移や結果が一般的な常識、当初の予想、あるいは目的とは正反対の方向に発展したことを示します。前節で述べた事柄や前提に対して「普通ならこうなるはずなのに、それとは裏腹に…」「かえって／逆に…」という逆転のニュアンスを強く表します。「不但不……，反而……」（〜しないどころか、かえって…）や「虽然……，但……反而……」（〜であるのに、かえって…）のような複文の呼応形式で頻繁に用いられます。日本語の「かえって」「逆に」「反対に」に相当します。",
+      "formation": "節1（前提・前置き），（主語 ＋）反而 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "大都会の生活はとても刺激的で素晴らしいものですが、田舎で生涯を過ごしてきた両親にとっては、かえって馴染めないかもしれません。"
+        }
+      ]
+    },
+    "zh_从而_426": {
+      "title": "从而（接続詞：それによって・その結果・ひいては）",
+      "shortExplanation": "前節で述べた方法や行動、原因を受けて、後節でその結果やさらに進んだ目的が達成されることを表す書き言葉の接続詞です（「それによって」「その結果」）。",
+      "longExplanation": "「从而」（cóng'ér）は書き言葉で用いられる接続詞で、二つの節を接続します。前半の節が前提となる方法・手段・原因・行動を提示し、後半の節がそれに基づいて自然に導き出される直接的な結果や、達成される更なる目的・効果を表します（「从……而……」に由来）。因果関係と目的・発展の関係を併せ持つ表現です（例：「提高产品质量，从而增强市场竞争力」＝製品の品質を向上させ、それによって市場競争力を強化する）。日本語の「それによって」「その結果」「〜し、それゆえに」に相当します。",
+      "formation": "節1（方法・原因・行動），从而 ＋ 節2（結果・目的）",
+      "examples": [
+        {
+          "translation": "試合前にメンタル面の準備をしっかりと整えることで選手のプレッシャーを軽減でき、その結果として試合の勝利を収めることができる。"
+        }
+      ]
+    },
+    "zh_V于N_427": {
+      "title": "動詞 ＋ 于 ＋ 名詞（介詞：〜に・〜において・〜で【時・場所】）",
+      "shortExplanation": "書き言葉の介詞「于」が動詞の後ろで補語となり、動作や出来事が発生した時間や場所を導きます（現代中国語の「在」に相当）。",
+      "longExplanation": "「于」（yú）は古文（文言文）に由来する格調高い介詞（前置詞）で、動詞の後ろに置かれて場所や時間を導く補語を形成します。現代中国語の口語における「在」に相当し、「成立（設立される）」、「出生（生まれる）」、「发生（発生する）」、「位于（位置する）」、「毕业（卒業する）」などの動詞と緊密に結合して慣用句的に用いられます（例：「鲁迅出生于绍兴」＝魯迅は紹興に生まれた、「事故发生于深夜」＝事故は深夜に発生した）。日本語の「〜に（設立される）」「〜において（発生する）」に相当します。",
+      "formation": "主語 ＋ 動詞（成立 / 出生 / 发生 / 位于など）＋ 于 ＋ 名詞（時間 / 場所）",
+      "examples": [
+        {
+          "translation": "この会社は1997年に設立されました。"
+        }
+      ]
+    },
+    "zh_V于N_428": {
+      "title": "動詞 ＋ 于 ＋ 名詞（介詞：〜に・〜に対して・〜に向かって【対象・相手】）",
+      "shortExplanation": "書き言葉の介詞「于」が動詞の後ろで対象・相手を導きます（現代中国語の「向」「对」「给」に相当）。",
+      "longExplanation": "「于」（yú）は動詞の後ろに置かれて補語となり、動作が向けられる相手、対象、または目標を導きます。口語の「向」（〜に向かって）、「对」（〜に対して）、「给」（〜に）に相当します。格調高い書き言葉表現として定着しており、「求助于」（〜に助けを求める）、「致力于」（〜に力を注ぐ・尽力する）、「取决于」（〜によって決まる・〜次第である）、「献身于」（〜に身を捧げる）などの形で慣用的に広く用いられます。日本語の「〜に（助けを求める）」「〜に対して」「〜に向かって」に相当します。",
+      "formation": "主語 ＋ 動詞（求助 / 致力 / 归功 / 忠など）＋ 于 ＋ 名詞（対象・相手）",
+      "examples": [
+        {
+          "translation": "李明はどうしようもなく、支配人を務めている同級生の王峰に助けを求めるしかなかった。"
+        }
+      ]
+    },
+    "zh_V于N_429": {
+      "title": "動詞 ＋ 于 ＋ 名詞（介詞：〜から・〜の出身である【出所・起源】）",
+      "shortExplanation": "書き言葉の介詞「于」が動詞の後ろで出所、起源、由来、出身などを導きます（現代中国語の「从」「自」に相当）。",
+      "longExplanation": "「于」（yú）は動詞の後ろに置かれて補語となり、事物の起源、出所、由来、または人の出自や出身を導きます。口語の「从」や「自」（〜から）に相当します。「出身于」（〜の出身である）、「来源于 / 源于」（〜に由来する・源を発する）、「取材于」（〜に題材を取る）、「产生于」（〜から生じる）などの動詞と結びついて固定的な文語表現を形成します。日本語の「〜から（生じる）」「〜の出身である」「〜に由来する」に相当します。",
+      "formation": "主語 ＋ 動詞（出身 / 来源 / 取材 / 诞生など）＋ 于 ＋ 名詞（出所・起源・出自）",
+      "examples": [
+        {
+          "translation": "彼は知識人（インテリ）家庭の出身です。"
+        }
+      ]
+    },
+    "zh_A于N_430": {
+      "title": "形容詞 ＋ 于 ＋ 名詞（介詞：〜にとって・〜に対して・〜に【対象・影響】）",
+      "shortExplanation": "書き言葉の介詞「于」が形容詞の後ろに置かれ、その性質が及ぶ対象や影響を受ける領域を導きます（「〜にとって」「〜に対して」）。",
+      "longExplanation": "「于」（yú）は形容詞や形容詞的表現の後ろに置かれて補語となり、その性質・状態が向けられる対象や、影響を及ぼす相手・領域を導きます。口語の「对……有……」（〜にとって…がある）に相当します。「有助于」（〜の助けとなる・役立つ）、「有益于」（〜にとって有益である）、「有害于」（〜にとって有害である）、「不利于」（〜に不利である）、「善于」（〜に長けている・得意である）、「便于」（〜に便利である）などの固定的な慣用表現として多用されます。日本語の「〜にとって（有益である）」「〜に対して」「〜に（役立つ）」に相当します。",
+      "formation": "主語 ＋ 形容詞（有助于 / 有益 / 有害 / 不利 / 善 / 便など）＋ 于 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "運動は健康に役立ちます（健康にとって有益です）。"
+        }
+      ]
+    },
+    "zh_A于N_431": {
+      "title": "形容詞 ＋ 于 ＋ 名詞（比較の介詞：〜と（異なる）・〜より（…である））",
+      "shortExplanation": "書き言葉の介詞「于」が形容詞の後ろに置かれ、比較や差異の対象を表します（口語の「跟……不同」や「比」に相当）。",
+      "longExplanation": "「于」（yú）は形容詞の後ろに置かれて補語となり、比較の基準や相違の対象を導きます。「不同」（異なる）と結びつく場合は「跟 / 与……不同」（〜と異なる）を意味し、程度や数量を表す形容詞（「高」「低」「多」「少」「大」「小」「优」など）と結びつく場合は比較の「比」（〜より…である）を意味します（例：「高于平均水平」＝平均水準を上回る、「优于过去」＝過去より優れている）。学術論文や報道、公的文書などで好まれる格調高い表現です。日本語の「〜と（異なる）」「〜より（高い・多い・優れる）」に相当します。",
+      "formation": "主語 ＋ 形容詞（不同 / 高 / 低 / 大 / 优など）＋ 于 ＋ 名詞（比較対象）",
+      "examples": [
+        {
+          "translation": "水生動物は陸生動物とは異なります。"
+        }
+      ]
+    },
+    "zh_V为wiN_432": {
+      "title": "動詞 ＋ 为 (wéi) ＋ 名詞（変化補語：〜に変わる・〜になる・〜へと変化する）",
+      "shortExplanation": "「为」（第2声：wéi）が動詞の後ろで結果補語となり、事物がある状態や性質から別のものへと変化・転換することを表します（「〜に変わる」「〜になる」）。",
+      "longExplanation": "ここでの「为」は第2声「wéi」と発音され、「成（〜になる）」や「变成（〜に変わる）」に相当します。変化や推移を表す動詞（「变」＝変わる、「化」＝化す、「转」＝転じる、「改」＝改める、「降」＝下がるなど）の後ろに置かれて結果補語として機能し、事物や事態が別の新しい形態、性質、役割へと移り変わったことを示します（例：「化为乌有」＝水泡に帰す・灰燼に帰す、「转为晴天」＝晴れへと変わる、「降为副职」＝副職に降格される）。日本語の「〜に変わる」「〜になる」「〜へと転じる」に相当します。",
+      "formation": "主語 ＋ 動詞（变 / 化 / 转 / 改など）＋ 为 ＋ 名詞（変化後の状態・事物）",
+      "examples": [
+        {
+          "translation": "プレッシャーもまた原動力へと変えることができます。"
+        }
+      ]
+    },
+    "zh_V为wiN_433": {
+      "title": "動詞 ＋ 为 (wéi) ＋ 名詞（判断・呼称補語：〜と呼ぶ・〜と見なす・〜とする）",
+      "shortExplanation": "「为」（第2声：wéi）が動詞の後ろで呼称や判断、位置づけを導きます（「〜と呼ぶ」「〜と見なす」「〜とする」）。",
+      "longExplanation": "ここでの「为」は第2声「wéi」と発音され、意味は「作（〜とする）」や「当作（〜と見なす）」に相当します。認識・判断・評価・呼称・選出を表す動詞（「称」＝称する・呼ぶ、「视」＝見なす、「认」＝認める、「选」＝選ぶ、「奉」＝奉じるなど）の後ろに置かれ、その対象をどのように位置づけ、何と呼ぶかという結果や規定を表します。よく「称（其）为……」（それを〜と呼ぶ）や「视……为……」（〜を…と見なす）の形で文語的・論理的に用いられます。日本語の「〜と呼ぶ」「〜と見なす」「〜と位置づける」に相当します。",
+      "formation": "主語 ＋ 動詞（称 / 视 / 认 / 选など）＋（代名詞 / 名詞 ＋）为 ＋ 名詞（呼称・位置づけ）",
+      "examples": [
+        {
+          "translation": "彼の考えでは、仕事のない生活はとても「生活」と呼ぶことはできない。"
+        }
+      ]
+    },
+    "zh_V起来_434": {
+      "title": "動詞 ＋ 起来（集中の派生方向補語：〜して集める・〜してまとめる・蓄える）",
+      "shortExplanation": "派生方向補語「起来」が、分散していた事物や人、力を一箇所に集約・蓄積・結束させることを表します（「集める」「まとめる」「蓄える」）。",
+      "longExplanation": "「起来」（qǐlai）が動詞の後ろに置かれて派生方向補語となる場合、「集中・集約・蓄積」のニュアンスを表す用法があります。散らばっていた事物、人員、財貨、情報などが、動作を通じて一箇所に寄り集まり、一つにまとまったり蓄えられたりする状態を描写します（例：「积蓄起来」＝蓄える・蓄積する、「集中起来」＝集中させる・集約する、「团结起来」＝結束する、「组织起来」＝組織する）。日本語の「〜して集める」「〜してまとめる」「〜して蓄える」に相当します。",
+      "formation": "主語 ＋ 動詞（积蓄 / 集中 / 组织 / 团结 / 存など）＋ 起来",
+      "examples": [
+        {
+          "translation": "地下水が蓄えられ、蓄積されるにつれてますます量が増えていきます。"
+        }
+      ]
+    },
+    "zh_藏起来躲起来_435": {
+      "title": "藏起来 / 躲起来（隠蔽・収蔵の派生方向補語：隠れる・隠す・しまい込む）",
+      "shortExplanation": "派生方向補語「起来」が「藏」（隠す）や「躲」（隠れる）と結びつき、人や物を人目に触れない安全な場所へ隠したり身を潜めたりすることを表します（「隠れる」「隠す」）。",
+      "longExplanation": "「起来」（qǐlai）は「隠蔽」や「収蔵」のニュアンスを持つ派生方向補語としても機能します。「藏」（隠す・仕舞う）や「躲」（身を隠す・避ける）などの動詞と結びつくことで、人や物が人目につかない場所、外部から遮断された空間へと移動し、見つからないように隠れたり保管されたりする動作の結果を表します（例：「躲起来」＝隠れる・身を隠す、「藏起来」＝隠す・隠しておく、「收起来」＝片付けて仕舞い込む）。日本語の「隠れる」「隠しておく」「身を隠す」に相当します。",
+      "formation": "主語 ＋（把 ＋ 目的語 ＋）藏 / 躲 / 收 ＋ 起来",
+      "examples": [
+        {
+          "translation": "劉麗は自分が悪いことをしたと自覚しているので、隠れて私に会おうとしません。"
+        }
+      ]
+    },
+    "zh_替_436": {
+      "title": "替 ＋ 名詞 / 代名詞 ＋ 動詞（介詞：〜の代わりに・〜に代わって・〜の代理で）",
+      "shortExplanation": "介詞「替」が人の名詞や代名詞の前に置かれ、その人に代わって動作を行うことを表します（「〜の代わりに」「〜に代わって」）。",
+      "longExplanation": "「替」（tì）は介詞（前置詞）として人名や代名詞の前に置かれ、介詞句を形成して連用修飾語（状語）として機能します。何らかの事情で本人が直接できない動作を「その人に代わって」「〜の代理で」、あるいは「〜の代わりに」行うことを示します（例：「替我保密」＝私の代わりに秘密にしておいて、「替他值班」＝彼の代わりに当直をする）。口語・書面語を問わず極めて高頻度で用いられます。日本語の「〜の代わりに」「〜に代わって」「〜に成り代わって」に相当します。",
+      "formation": "主語 ＋ 替 ＋ 名詞 / 代名詞（代行の対象）＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "おじいさんに会ったら、私の代わりによろしくお伝えください。"
+        }
+      ]
+    },
+    "zh_替_437": {
+      "title": "替 ＋ 名詞 / 代名詞 ＋ 心理形容詞・動詞（介詞：〜のことを思って・〜の身になって【共感】）",
+      "shortExplanation": "介詞「替」が心理を表す形容詞や動詞の前に置かれ、相手の立場に身を置いて共感・同情・心配・祝福することを表します（「〜のことを（喜ぶ）」「〜の身になって」）。",
+      "longExplanation": "「替」（tì）が心理状態や感情を表す形容詞・動詞（「高兴」＝喜ぶ・嬉しい、「担心」＝心配する、「着急」＝焦る・気をもむ、「难过」＝辛く思うなど）の前に置かれる場合、相手の立場や境遇に我が身を重ねて共感するニュアンスを表します。単なる行為の代行ではなく、「相手の身になって自分のことのように喜ぶ」「相手のことを思ってハラハラ・心配する」という温かい情愛や関心を伝えます（例：「替你捏一把汗」＝君の代わりに冷や汗をかく・ハラハラする、「大家都在替你担心」＝みんなが君のことを心配している）。日本語の「〜のことを（喜ぶ・心配する）」「〜の身になって」に相当します。",
+      "formation": "主語 ＋ 替 ＋ 名詞 / 代名詞（共感の対象）＋ 心理形容詞 / 動詞（高兴 / 担心 / 着急など）",
+      "examples": [
+        {
+          "translation": "李陽が留学することになり、私たちはみんな彼のことを心から喜んでいます。"
+        }
+      ]
+    },
+    "zh_说不定_438": {
+      "title": "说不定（述語：定かではない・まだ決まっていない・確実ではない）",
+      "shortExplanation": "述語として用いられ、日時や状況、結果などがまだ確定しておらず、はっきりとは言えない状態を表します（「定かではない」「まだ決まっていない」）。",
+      "longExplanation": "「说不定」（shuōbudìng）は文の述語として機能することがあり、特によく副詞「还」を伴って「还说不定」の形で用いられます。事態や計画、出発日時、成否などが現時点で未確定であり、確実に予測したり断定したりすることができない状態（「まだ何とも言えない」「はっきり決まっていない」「未定である」）を客観的に述べます（例：「成不成还说不定」＝うまくいくかどうかはまだ定かではない）。日本語の「定かではない」「まだ決まっていない」「断言できない」に相当します。",
+      "formation": "主語（時間・計画・状況）＋（还 ＋）说不定",
+      "examples": [
+        {
+          "translation": "この件はマネージャーがすでに同意してくれましたが、出発の時間だけはまだ定かではありません。"
+        }
+      ]
+    },
+    "zh_说不定_439": {
+      "title": "说不定（副詞：もしかすると・ひょっとしたら・〜かもしれない）",
+      "shortExplanation": "副詞として主語の前または述語の前に置かれ、ある事態が生じる可能性を推測・推量します（「もしかすると」「ひょっとしたら」）。",
+      "longExplanation": "「说不定」（shuōbudìng）は副詞として用いられ、文頭（主語の前）または主語の後ろ・述語の前に置かれます。ある事柄が発生する可能性を推測・推量する語気を表し、「也许」（もしかしたら）や「可能」（恐らく）とほぼ同義です。確証はないものの、十分に起こり得る事態や予想を控えめに、あるいは可能性として提示する際に使われます（例：「说不定他已经到了」＝もしかすると彼はもう到着しているかもしれない、「明天说不定会下雪」＝明日はひょっとしたら雪が降るかもしれない）。日本語の「もしかすると」「ひょっとしたら」「〜かもしれない」に相当します。",
+      "formation": "（主語 ＋）说不定（＋ 主語 ＋）述語 / 節",
+      "examples": []
+    }
+  },
+  "ko": {
+    "zh_反而_425": {
+      "title": "反而 (부사: 오히려, 반대로, 도리어)",
+      "shortExplanation": "일반적인 예상, 상식 또는 본래 의도와는 완전히 반대되는 결과나 상황이 발생함을 나타냅니다('오히려', '도리어', '반대로').",
+      "longExplanation": "'反而'(fǎn'ér)는 주로 뒷절의 주어 뒤나 서술어 앞에 쓰이는 부사로, 사태의 결과나 상황의 발전이 일반적인 예상, 기대, 상식과는 정반대로 흘러갔음을 나타냅니다. 앞 절의 조건이나 상황을 고려할 때 마땅히 예상되는 방향이 아니라, 전혀 뜻밖의 방향으로 전개될 때 '오히려', '도리어'의 뉘앙스를 드러냅니다. 종종 '不但没/不但不……，反而……'(~하지 않았을 뿐만 아니라 오히려 ~하다), '虽然……，但……反而……'(비록 ~하지만 도리어 ~하다) 등의 복문 접속 형태와 호응하여 사용됩니다. 한국어의 '오히려', '도리어', '반대로'에 해당합니다.",
+      "formation": "절1 (전제 상황), (주어 +) 反而 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "대도시의 삶은 비록 매우 다채롭고 신나지만, 평생을 시골에서 살아오신 부모님께는 오히려 잘 적응되지 않을 수 있습니다."
+        }
+      ]
+    },
+    "zh_从而_426": {
+      "title": "从而 (접속사: 그리하여, 이로써, 그 결과, 이로부터)",
+      "shortExplanation": "앞 절의 방법, 행동, 원인을 바탕으로 뒷절에서 직접적인 결과나 목적이 자연스럽게 도출됨을 나타내는 문어체 접속사입니다('이로써', '그리하여', '그 결과').",
+      "longExplanation": "'从而'(cóng'ér)는 문어체에서 자주 쓰이는 접속사로, 두 분절을 연결합니다. 앞선 절에서 방법, 수단, 조치 또는 원인을 제시하고, 뒷절에서는 그에 따라 파생되는 필연적인 결과나 궁극적으로 달성하게 되는 목적을 이끌어 냅니다. 즉 인과관계와 목적 관계가 유기적으로 결합된 표현입니다(예: '加强交流，从而增进彼此的了解' 교류를 강화하여 이로써 상호 이해를 증진하다). 한국어의 '이로써', '그리하여', '그로 인해', '그 결과'에 해당합니다.",
+      "formation": "절1 (원인 / 수단 / 조치), 从而 + 절2 (결과 / 목적)",
+      "examples": [
+        {
+          "translation": "시합 전에 마음의 준비를 잘해 두면 선수의 부담감을 줄일 수 있고, 그리하여 시합에서 승리를 거둘 수 있습니다."
+        }
+      ]
+    },
+    "zh_V于N_427": {
+      "title": "동사 + 于 + 명사 (개사: ~에, ~에서 【시간·장소】)",
+      "shortExplanation": "문어체 개사 '于'가 동사 뒤에 쓰여 보어를 이루며, 동작이나 사건이 일어난 시간 또는 장소를 이끕니다(현대 중국어의 '在'에 해당).",
+      "longExplanation": "'于'(yú)는 문언문(고문)에서 유래한 격식 있는 문어체 개사(전치사)로, 동사 뒤에 놓여 시간이나 장소를 이끄는 보어로 기능합니다. 현대 중국어 구어의 '在'에 해당하며, '成立'(설립되다), '出生'(태어나다), '发生'(발생하다), '位于'(위치하다), '建'(건설되다) 등의 동사와 결합하여 고정된 격식 표현을 형성합니다(예: '出生于北京' 베이징에서 태어나다, '位于市中心' 도심에 위치하다). 한국어의 '~에 (창립되다)', '~에서 (발생하다)'에 해당합니다.",
+      "formation": "주어 + 동사 (成立 / 出生 / 发生 / 位于 등) + 于 + 명사 (시간 / 장소)",
+      "examples": [
+        {
+          "translation": "이 회사는 1997년에 설립되었습니다."
+        }
+      ]
+    },
+    "zh_V于N_428": {
+      "title": "동사 + 于 + 명사 (개사: ~에게, ~에, ~을 향해 【동작의 대상】)",
+      "shortExplanation": "문어체 개사 '于'가 동사 뒤에 쓰여 동작이 향하는 대상이나 상대를 이끕니다(현대 중국어의 '向', '对', '给'에 해당).",
+      "longExplanation": "'于'(yú)는 동사 뒤에 결합하여 동작의 작용 대상, 상대방 또는 지향점을 이끄는 보어로 쓰입니다. 현대 중국어 구어의 '向'(~를 향해), '对'(~에 대해), '给'(~에게)에 해당합니다. 품격 있는 문어체 표현에서 널리 쓰이며, '求助于'(~에게 도움을 청하다), '致力于'(~에 진력하다/헌신하다), '取决于'(~에 달려 있다), '归功于'(~에게 공을 돌리다) 등 고정된 어구로 자주 사용됩니다. 한국어의 '~에게 (도움을 청하다)', '~에 (바치다)'에 해당합니다.",
+      "formation": "주어 + 동사 (求助 / 致力 / 忠 / 取决 등) + 于 + 명사 (대상 / 상대방)",
+      "examples": [
+        {
+          "translation": "리밍은 어쩔 도리가 없어, 지배인으로 있는 옛 동창 왕펑에게 도움을 청할 수밖에 없었다."
+        }
+      ]
+    },
+    "zh_V于N_429": {
+      "title": "동사 + 于 + 명사 (개사: ~에서, ~로부터 【출처·기원】)",
+      "shortExplanation": "문어체 개사 '于'가 동사 뒤에 쓰여 출처, 기원, 출신 배경을 이끕니다(현대 중국어의 '从', '自'에 해당).",
+      "longExplanation": "'于'(yú)는 동사 뒤에 결합하여 사물의 기원, 발생의 근원, 출처 또는 인물의 출신 성분을 나타내는 보어로 기능합니다. 현대 중국어 구어의 '从'(~로부터), '自'(~에서)에 해당합니다. '出身于'(~ 출신이다), '来源于 / 源于'(~에서 기원하다/유래하다), '取材于'(~에서 소재를 취하다), '产生于'(~에서 발생하다) 등 서술적이고 품격 있는 표현에서 필수적으로 사용됩니다. 한국어의 '~에서 (유래하다)', '~ 출신이다', '~로부터'에 해당합니다.",
+      "formation": "주어 + 동사 (出身 / 来源 / 取材 / 诞生 등) + 于 + 명사 (출처 / 출신 / 기원)",
+      "examples": [
+        {
+          "translation": "그는 지식인 가정 출신입니다."
+        }
+      ]
+    },
+    "zh_A于N_430": {
+      "title": "형용사 + 于 + 명사 (개사: ~에, ~에 대하여, ~에 있어서 【영향의 대상】)",
+      "shortExplanation": "문어체 개사 '于'가 형용사 뒤에 쓰여, 그 성질이나 상태가 미치는 대상이나 영역을 이끕니다('~에', '~에 도움이 되다', '~에 유익하다').",
+      "longExplanation": "'于'(yú)는 형용사 또는 형용사적 성격의 어구 뒤에 결합하여 그 성질이 작용하거나 영향을 미치는 대상 및 방면을 나타내는 보어로 기능합니다. 현대 중국어 구어의 '对……（有好处/有影响）'에 해당합니다. '有助于'(~에 도움이 되다), '有益于'(~에 유익하다), '有害于'(~에 해롭다), '不利于'(~에 불리하다), '善于'(~에 능숙하다), '便于'(~하기에 편리하다) 등 서면어에서 매우 정형화된 어구로 자주 쓰입니다. 한국어의 '~에 (도움이 되다)', '~에 있어서', '~에 대하여'에 해당합니다.",
+      "formation": "주어 + 형용사 (有助于 / 有益 / 有害 / 不利 / 善 / 便 등) + 于 + 명사",
+      "examples": [
+        {
+          "translation": "운동은 건강에 도움이 됩니다."
+        }
+      ]
+    },
+    "zh_A于N_431": {
+      "title": "형용사 + 于 + 명사 (비교 개사: ~와(다르다), ~보다(…하다))",
+      "shortExplanation": "문어체 개사 '于'가 형용사 뒤에 쓰여 비교의 기준이나 차이의 대상을 이끕니다(구어의 '跟……不同'이나 '比'에 해당).",
+      "longExplanation": "'于'(yú)는 형용사 뒤에 결합하여 비교의 기준이나 대비 대상을 이끄는 보어로 사용됩니다. '不同'(다르다)과 결합할 때는 '跟/与……不同'(~와 다르다)의 뜻을 나타내며, 수량이나 정도를 나타내는 형용사(예: '高' 높다, '低' 낮다, '多' 많다, '少' 적다, '大' 크다, '优' 우수하다 등)와 결합할 때는 비교문 '比'(~보다 더 …하다)의 뜻을 나타냅니다(예: '高于去年同期' 작년 동기보다 높다, '不同于以往' 이전과 다르다). 학술, 경제, 보도 등 품격 있는 문어체에서 매우 빈번하게 사용됩니다. 한국어의 '~와 (다르다)', '~보다 (크다/높다)'에 해당합니다.",
+      "formation": "주어 + 형용사 (不同 / 高 / 低 / 大 / 优 등) + 于 + 명사 (비교 대상)",
+      "examples": [
+        {
+          "translation": "수생 동물은 육지 동물과 다릅니다."
+        }
+      ]
+    },
+    "zh_V为wiN_432": {
+      "title": "동사 + 为 (wéi) + 명사 (변화 보어: ~로 변하다, ~이 되다, ~로 전환되다)",
+      "shortExplanation": "'为'(2성: wéi)가 동사 뒤에서 결과보어로 쓰여, 사물이 다른 성질, 형태, 상태로 바뀌거나 전환됨을 나타냅니다('~로 변하다', '~이 되다').",
+      "longExplanation": "이 구문에서 '为'는 2성(wéi)으로 발음되며, 현대어의 '成'(~이 되다) 또는 '变成'(~로 바뀌다)에 해당합니다. 변화나 전이를 나타내는 동사(예: '变' 변하다, '化' 화하다, '转' 전환되다, '改' 바꾸다, '降' 떨어지다 등) 뒤에 붙어 결과보어 역할을 하며, 어떤 사물이나 상태가 일련의 작용을 거쳐 새로운 성질, 모습, 상태로 탈바꿈했음을 나타냅니다(예: '化为力量' 힘으로 승화되다, '转为优势' 우세로 돌아서다, '改为主演' 주연으로 바뀌다). 한국어의 '~로 변하다', '~이 되다', '~로 전환되다'에 해당합니다.",
+      "formation": "주어 + 동사 (变 / 化 / 转 / 改 등) + 为 + 명사 (변화된 결과)",
+      "examples": [
+        {
+          "translation": "스트레스도 원동력으로 바뀔 수 있습니다."
+        }
+      ]
+    },
+    "zh_V为wiN_433": {
+      "title": "동사 + 为 (wéi) + 명사 (판단·호칭 보어: ~라고 부르다, ~로 여기다, ~로 삼다)",
+      "shortExplanation": "'为'(2성: wéi)가 동사 뒤에 쓰여, 어떤 대상을 특정한 호칭, 자격, 신분으로 인정하거나 규정함을 나타냅니다('~라고 부르다', '~로 여기다').",
+      "longExplanation": "이 구문에서 '为'는 2성(wéi)으로 발음되며, '~로 삼다', '~로 여기다'라는 뜻의 '当作' 또는 '作为'에 해당합니다. 호칭, 평가, 판단, 선출 등을 나타내는 동사(예: '称' 부르다, '视' 보다/여기다, '认' 인정하다, '选' 뽑다, '奉' 받들다 등) 뒤에 붙어, 대상을 어떻게 규정하고 명명하는지 나타냅니다. 특히 '称其为……'(그것을 ~라고 부르다), '视……为……'(~를 …로 간주하다), '选为……'(~로 선출하다) 등의 구문으로 자주 활용됩니다. 한국어의 '~라고 부르다', '~로 여기다', '~로 간주하다'에 해당합니다.",
+      "formation": "주어 + 동사 (称 / 视 / 认 / 选 등) + (대명사 / 명사 +) 为 + 명사 (호칭 / 규정)",
+      "examples": [
+        {
+          "translation": "그가 보기에, 일이 없는 삶은 결코 진정한 삶이라고 부를 수 없다."
+        }
+      ]
+    },
+    "zh_V起来_434": {
+      "title": "동사 + 起来 (집중·축적의 파생방향보어: 모으다, 축적하다, 뭉치다)",
+      "shortExplanation": "파생방향보어 '起来'가 흩어져 있던 사람, 사물, 힘 등이 한곳으로 집중되거나 차곡차곡 축적됨을 나타냅니다('모아두다', '축적하다', '뭉치다').",
+      "longExplanation": "'起来'(qǐlai)가 동사 뒤에 쓰여 파생 방향보어로 기능할 때, '집중', '취합', '축적'의 의미를 나타냅니다. 분산되어 있거나 따로 떨어져 있던 사물, 인력, 자금, 정보 등이 어떤 동작을 통해 하나로 결집되거나 모여서 쌓이는 과정을 묘사합니다(예: '积蓄起来' 모아두다/축적하다, '集中起来' 집중시키다/한데 모으다, '团结起来' 똘똘 뭉치다/결속하다, '组织起来' 조직하다). 한국어의 '~해 모으다', '~해 축적하다', '한데 뭉치다'에 해당합니다.",
+      "formation": "주어 + 동사 (积蓄 / 集中 / 组织 / 团结 / 存 등) + 起来",
+      "examples": [
+        {
+          "translation": "지하수가 축적되어 모이면서, 점점 더 양이 많아집니다."
+        }
+      ]
+    },
+    "zh_藏起来躲起来_435": {
+      "title": "藏起来 / 躲起来 (은폐·보관의 파생방향보어: 숨다, 숨기다, 감추다)",
+      "shortExplanation": "파생방향보어 '起来'가 '藏'(숨기다)이나 '躲'(숨다)와 결합하여, 사람이나 사물이 다른 사람의 눈에 띄지 않도록 몸을 숨기거나 감춤을 나타냅니다('숨다', '숨기다').",
+      "longExplanation": "'起来'(qǐlai)는 '은폐'나 '보관'을 나타내는 파생 방향보어로도 널리 쓰입니다. '藏'(숨기다/감추다), '躲'(몸을 피하다/숨다), '收'(거두다/치우다), '遮'(가리다) 등의 동사 뒤에 결합하여, 사람이나 물건을 남의 시선이 닿지 않는 은밀한 곳으로 이동시켜 보이지 않게 감추거나 피신시키는 상태를 완성합니다(예: '躲起来' 숨어버리다, '藏起来' 숨겨두다/감추다, '把东西收起来' 물건을 보이지 않게 치워두다). 한국어의 '숨다', '숨어버리다', '감추다', '숨겨두다'에 해당합니다.",
+      "formation": "주어 + (把 + 목적어 +) 藏 / 躲 / 收 + 起来",
+      "examples": [
+        {
+          "translation": "류리는 자신이 잘못했다는 것을 알고는, 숨어버려서 감히 나를 만나지 못하고 있다."
+        }
+      ]
+    },
+    "zh_替_436": {
+      "title": "替 + 명사 / 대명사 + 동사 (개사: ~를 대신하여, ~ 대신에, ~를 위해)",
+      "shortExplanation": "개사 '替'가 사람을 나타내는 명사나 대명사 앞에 쓰여, 그 사람을 대신하거나 대리하여 어떤 동작을 수행함을 나타냅니다('~를 대신해서', '~ 대신').",
+      "longExplanation": "'替'(tì)는 개사(전치사)로서 명사나 대명사 앞에 놓여 부사어(상어)를 형성합니다. 본인이 직접 수행할 수 없는 상황에서 다른 사람이 그 사람을 대신하여, 혹은 대리인의 자격으로 어떤 행동을 하거나 심부름을 해 줄 때 쓰입니다(예: '替我向大家问好' 나를 대신해 모두에게 안부를 전해줘, '替他付钱' 그를 대신해 돈을 내주다). 한국어의 '~를 대신하여', '~ 대신에', '~ 대신 해 주다'에 해당합니다.",
+      "formation": "주어 + 替 + 명사 / 대명사 (대행 대상) + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "외할아버지를 뵈면, 절 대신해서 안부 좀 전해 주세요."
+        }
+      ]
+    },
+    "zh_替_437": {
+      "title": "替 + 명사 / 대명사 + 심리형용사·동사 (개사: ~의 일로, ~를 위해, ~의 입장에서 【공감·동조】)",
+      "shortExplanation": "개사 '替'가 심리형용사나 감정동사 앞에 쓰여, 상대방의 처지에 깊이 공감하여 자기 일처럼 기뻐하거나 걱정함을 나타냅니다('~의 일로 기뻐하다', '~를 위해 걱정하다').",
+      "longExplanation": "'替'(tì)가 감정이나 심리상태를 나타내는 어구(예: '高兴' 기뻐하다, '担心' 걱정하다, '着急' 애태우다/조바심내다, '难过' 슬퍼하다 등)와 결합할 때, 상대방의 입장에 서서 감정을 공유하고 공감함을 나타냅니다. 즉 다른 사람의 경사나 곤경을 마치 자신의 일인 것처럼 여기며 '그 사람을 위해 기뻐해 주다', '그 사람의 일로 애가 타다'라는 정서적 유대감을 표현합니다(예: '大家都在替你高兴' 모두가 네 일처럼 기뻐하고 있어, '我真替你捏一把汗' 내가 다 식은땀이 나더라). 한국어의 '~의 일로 (기뻐하다)', '~를 위해 (기뻐하다/걱정하다)', '~ 대신 (애태우다)'에 해당합니다.",
+      "formation": "주어 + 替 + 명사 / 대명사 (공감 대상) + 심리형용사 / 동사 (高兴 / 担心 / 着急 등)",
+      "examples": [
+        {
+          "translation": "리양이 유학을 가게 되어, 우리는 모두 그를 위해 함께 기뻐해 주고 있습니다."
+        }
+      ]
+    },
+    "zh_说不定_438": {
+      "title": "说不定 (서술어: 확실하지 않다, 정해지지 않았다, 장담할 수 없다)",
+      "shortExplanation": "술어 자리에 쓰여, 시간이나 사안의 결과 등이 아직 확정되지 않아 단정할 수 없음을 나타냅니다('확실하지 않다', '미정이다', '장담할 수 없다').",
+      "longExplanation": "'说不定'(shuōbudìng)은 문장에서 서술어로 기능할 수 있으며, 특히 부사 '还'와 함께 결합하여 '还说不定'의 형태로 빈번히 쓰입니다. 어떤 계획, 출발 시간, 성패 또는 사태의 향방이 아직 최종적으로 결정되지 않았거나 불확실하여 확실하게 장담할 수 없는 상태('아직 알 수 없다', '확정되지 않았다')를 의미합니다(예: '能不能去还说不定' 갈 수 있을지는 아직 미정이다). 한국어의 '확실하지 않다', '아직 정해지지 않았다', '장담할 수 없다'에 해당합니다.",
+      "formation": "주어 (시간 / 계획 / 사태) + (还 +) 说不定",
+      "examples": [
+        {
+          "translation": "이 일은 지배인이 이미 동의했지만, 출발 시간은 아직 확실하지 않습니다."
+        }
+      ]
+    },
+    "zh_说不定_439": {
+      "title": "说不定 (부사: 어쩌면, 혹시, 뜻밖에 ~일지도 모른다)",
+      "shortExplanation": "부사로서 주어 앞이나 서술어 앞에 쓰여, 어떤 상황이나 결과가 일어날 가능성을 추측합니다('어쩌면', '혹시', '~일지도 모른다').",
+      "longExplanation": "'说不定'(shuōbudìng)은 부사로서 문장 첫머리(주어 앞)나 주어 뒤·서술어 앞에 놓여, 어떤 가능성에 대한 화자의 추측과 짐작을 나타냅니다. '也许'(아마도)나 '可能'(어쩌면)과 유사하며, 확정할 수는 없지만 어떤 상황이 발생할 충분한 개연성이 있음을 유연하게 제시할 때 쓰입니다(예: '你再去问问，说不定能找到' 다시 가서 물어봐, 어쩌면 찾을 수 있을지도 몰라; '说不定他明天就回来了' 어쩌면 그가 내일 당장 돌아올지도 모른다). 한국어의 '어쩌면', '혹시', '뜻밖에 ~일지도 모른다'에 해당합니다.",
+      "formation": "(주어 +) 说不定 (+ 주어 +) 서술어 / 절",
+      "examples": []
+    }
+  },
+  "zh": {
+    "zh_反而_425": {
+      "title": "反而（副词：表示出乎意料，事情的发展与常理相反）",
+      "shortExplanation": "副词，表示事态的发展与正常的常理、预期或意愿相反；表示“反而、反倒、不仅不……反而……”。",
+      "longExplanation": "“反而”（fǎn'ér）作副词，通常置于后一分句的主语之后、谓语动词或形容词之前。它用来表示某种情况或结果与情理之中理应出现的倾向截然相反，出乎一般人的意料，具有鲜明的逆转转折语气。常与转折连词或让步连词搭配使用，构成“不但不/没……，反而……”、“虽然……，但……反而……”等紧缩句或复文格式（如“吃了药不仅没好，反而更严重了”、“他不仅不生气，反而笑了”）。",
+      "formation": "分句1（前提 / 铺垫），（主语 +）反而 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "大城市的生活虽然很精彩，但一辈子生活在农村的父母反而会不适应。"
+        }
+      ]
+    },
+    "zh_从而_426": {
+      "title": "从而（书面语连词：上文是原因或方法，下文是结果或目的）",
+      "shortExplanation": "书面语连词，连接两个分句，表示引出行动、方法所带来的必然结果或进一步达到的目的；表示“从而、以此、进而”。",
+      "longExplanation": "“从而”（cóng'ér）是具有典雅书面语色彩的连词，用于连接前后两个分句。前一分句提出某种手段、方法、举措或原因，后一分句则紧承上文，引出由此自然产生的结果、效果或进一步要达到的积极目的。它既含有承接原因的意味，又兼有引出结果和目的的作用，结构紧凑逻辑严密（如“改进生产工艺，从而降低生产成本”、“加强体育锻炼，从而提高身体素质”）。",
+      "formation": "分句1（原因 / 手段 / 行动），从而 + 分句2（结果 / 目的）",
+      "examples": [
+        {
+          "translation": "比赛前做好思想准备可以减少运动员的压力，从而取得比赛的成功。"
+        }
+      ]
+    },
+    "zh_V于N_427": {
+      "title": "动词 + 于 + 名词（介词引进时间或处所，相当于“在”）",
+      "shortExplanation": "书面语介词“于”置于动词后引出时间或地点做补语，相当于现代汉语口语的“在”；表示“在某时、在某地”。",
+      "longExplanation": "“于”（yú）源于文言文，是典雅的书面语介词。用在动词（如“成立”、“出生”、“发生”、“位于”、“毕业”、“建”等）之后充当介词补语，引出动作行为发生的时间或处所，相当于口语中的“在”。这种结构多见于新闻报道、人物传记、正式公告及学术文献中，具有庄重凝练的语体色彩（如“鲁迅出生于浙江绍兴”、“该剧院建于上世纪初”）。",
+      "formation": "主语 + 动词（成立 / 出生 / 发生 / 位于 / 毕业等）+ 于 + 名词（时间 / 处所）",
+      "examples": [
+        {
+          "translation": "这家公司成立于1997年。"
+        }
+      ]
+    },
+    "zh_V于N_428": {
+      "title": "动词 + 于 + 名词（介词引进动作的对象或目标，相当于“向、对、给”）",
+      "shortExplanation": "书面语介词“于”置于动词后引出动作指向的对象、受事或目标；相当于现代汉语的“向、对、给”。",
+      "longExplanation": "“于”（yú）在动词后充当介词补语，用于引出动作施加的对象、目标或接受者，相当于口语中的“向”、“对”或“给”。这一结构常与特定的书面语动词凝固成高频词组，如“求助于”（向某人求助）、“求教于”（向某人请教）、“致力于”（献力于）、“服务于”（为……服务）、“取决于”（由……决定）等，体现了书面语精确简练的特征。",
+      "formation": "主语 + 动词（求助 / 致力于 / 忠 / 问 / 献等）+ 于 + 名词（对象 / 目标 / 接受者）",
+      "examples": [
+        {
+          "translation": "李明没办法，只好求助于当经理的老同学王峰。"
+        }
+      ]
+    },
+    "zh_V于N_429": {
+      "title": "动词 + 于 + 名词（介词引进来源、出处或起点，相当于“从、自”）",
+      "shortExplanation": "书面语介词“于”置于动词后引出动作或事物的来源、出处或起点；相当于现代汉语的“从、自”。",
+      "longExplanation": "“于”（yú）在动词后作介词补语，用于引出事物产生的根源、原料出处、历史渊源或人物的家庭出身、生活背景，相当于口语中的“从”或“自”。常见于书面语固有搭配，如“出身于”（出生于何种家庭背景）、“来源于 / 源于”（从……产生而来）、“取材于”（以……为素材）、“诞生于”（从……产生）等，表达精炼概括。",
+      "formation": "主语 + 动词（出身 / 来源 / 取材 / 诞生等）+ 于 + 名词（来源 / 出处 / 背景）",
+      "examples": [
+        {
+          "translation": "他出身于知识分子家庭。"
+        }
+      ]
+    },
+    "zh_A于N_430": {
+      "title": "形容词 + 于 + 名词（介词引进性质、状态所涉及的对象或方面，相当于“对”）",
+      "shortExplanation": "书面语介词“于”置于形容词后引出其性状所涉及的范围、对象或受影响的方面；相当于“对、对于”。",
+      "longExplanation": "“于”（yú）用在形容词或带有形容词性的结构之后作补语，用以引出该性状所指向的对象、受影响的人或事物、或适用的领域，相当于口语中的“对”或“对于”。常用于表达利弊、优劣、适宜与否等评价，形成高度固化的书面语构词，如“有助于”（对……有帮助）、“有益于”（对……有益）、“有害于”（对……有害）、“不利于”（对……不利）、“善于”（在某方面擅长）、“便于”（方便于）等，行文凝练精当。",
+      "formation": "主语 + 形容词（有助于 / 有益 / 有害 / 不利 / 善 / 便等）+ 于 + 名词",
+      "examples": [
+        {
+          "translation": "运动有助于健康。"
+        }
+      ]
+    },
+    "zh_A于N_431": {
+      "title": "形容词 + 于 + 名词（比较介词：表示差异或程度比较，相当于“跟……不同”或“比”）",
+      "shortExplanation": "书面语介词“于”置于形容词后引出比较的基准或对照对象；相当于“跟/与……不同”或“比”。",
+      "longExplanation": "“于”（yú）置于形容词后充当介词补语，用于表示两事物之间的差异对照或程度、数量上的比较。当与“不同”搭配时，相当于“跟/与……不同”，表示事物属性存在差别；当与单音节形容词（如“高”、“低”、“大”、“小”、“多”、“少”、“长”、“优”等）搭配时，相当于“比……更……”，用于客观比较数量、程度或品质的高下（如“高于平均水平”、“多于十人”、“优于传统方案”）。具有高度精炼的书面语特征。",
+      "formation": "主语 + 形容词（不同 / 高 / 低 / 大 / 小 / 优等）+ 于 + 名词（比较对象）",
+      "examples": [
+        {
+          "translation": "水生动物不同于陆地动物。"
+        }
+      ]
+    },
+    "zh_V为wiN_432": {
+      "title": "动词 + 为 (wéi) + 名词（结果补语：表示发展、转化成为某种新事物或新状态）",
+      "shortExplanation": "“为”（读第二声 wéi）置于动词后充当结果补语，表示事物经过变化转变成为了新的形态或状态；相当于“成、变成”。",
+      "longExplanation": "此处的“为”读阳平（第二声 wéi），词义相当于“成”或“成为”。它用在表示变化、转化、改造的动词（如“变”、“化”、“转”、“改”、“降”等）之后作结果补语，引出变化后的新事物、新身份或新状态。这种结构常见于成语和书面语中，用来准确描绘事物的质变、功能的更替或性质的飞跃（如“化为力量”、“转为顺差”、“改为线上进行”）。",
+      "formation": "主语 + 动词（变 / 化 / 转 / 改 / 降等）+ 为 + 名词（转化后的结果）",
+      "examples": [
+        {
+          "translation": "压力也可以变为动力。"
+        }
+      ]
+    },
+    "zh_V为wiN_433": {
+      "title": "动词 + 为 (wéi) + 名词（认定或称谓补语：表示看待、命名或认同为何种事物）",
+      "shortExplanation": "“为”（读第二声 wéi）置于动词后表示认定、称呼、当作某种身份或事物；相当于“当作、看作、称作”。",
+      "longExplanation": "此处的“为”读阳平（第二声 wéi），词义相当于“作”或“当作”。它常跟在表示称谓、判断、评价、选派的动词（如“称”、“视”、“认”、“选”、“奉”等）之后充当补语，引出对特定事物的定性、称呼或身份认定。最常见句式为“称（其）为……”（称它为……）、“视……为……”（把……看作……）、“认贼为父”等，多用于表达理性分析、客观评价或定名定义。",
+      "formation": "主语 + 动词（称 / 视 / 认 / 选 / 奉等）+（代词 / 名词 +）为 + 名词（称谓 / 定性）",
+      "examples": [
+        {
+          "translation": "在他看来，没有工作的生活就不能称其为生活。"
+        }
+      ]
+    },
+    "zh_V起来_434": {
+      "title": "动词 + 起来（引申趋向补语：表示分散的人或事物聚集、积累或集中到一起）",
+      "shortExplanation": "引申趋向补语“起来”，表示通过动作使人、财物或力量由分散转为聚集、集中或积累；表示“聚集、积攒、集合”。",
+      "longExplanation": "“起来”（qǐlai）作引申趋向补语时，可以表示将原本分散、孤立的人员、事物、财富、力量或信息，通过某种动作行为聚集或归拢在一起，形成规模或整体。常与表示积攒、归拢、联合的动词搭配使用，如“积蓄起来”（积存）、“集中起来”（收拢）、“组织起来”（组建）、“团结起来”（凝聚）、“存起来”（储蓄）等，生动体现了由散到整、由少到多的聚集过程。",
+      "formation": "主语 + 动词（积蓄 / 集中 / 组织 / 团结 / 存等）+ 起来",
+      "examples": [
+        {
+          "translation": "地下水积蓄起来，越积越多。"
+        }
+      ]
+    },
+    "zh_藏起来躲起来_435": {
+      "title": "藏起来 / 躲起来（引申趋向补语：表示通过动作使人或事物隐匿、避开、不被发现）",
+      "shortExplanation": "引申趋向补语“起来”与“藏”、“躲”等动词搭配，表示使人或物隐蔽、遮蔽、收藏起来而不暴露在外；表示“隐蔽、躲藏”。",
+      "longExplanation": "“起来”（qǐlai）作引申趋向补语时，具有表示“隐匿”、“封闭”或“收藏”的语法意义。当它与“藏”（隐蔽、存放）、“躲”（避开、隐藏）、“收”（收拾、存放）、“遮”（遮盖）等动词结合时，表示动作的结果是使人、物品或秘密置于隐秘处、不公开的处所或视线不及之处，以达到防备、避让或妥善保全的目的（如“躲起来不敢见人”、“把贵重物品藏起来”、“把玩具收起来”）。",
+      "formation": "主语 +（把 + 宾语 +）藏 / 躲 / 收 + 起来",
+      "examples": [
+        {
+          "translation": "刘丽知道自己做得不对，躲起来不敢见我。"
+        }
+      ]
+    },
+    "zh_替_436": {
+      "title": "替 + 名词 / 代词 + 动词（介词：引进替代的对象，表示代替、代为）",
+      "shortExplanation": "介词“替”置于人称名词或代词前，引出被替代的对象，表示“代替、代为、代办”。",
+      "longExplanation": "“替”（tì）作介词，用来引出动作的替代对象，置于谓语动词前作状语。它表示说话人或行为主体代替别人去做某件事、为别人代劳或代表某人行事（如“替我请假”、“替他值班”、“替大家谢谢你”）。口语和书面语中都极其常用，既体现人际间的相互协作与代劳，也常用于委托他人传达问候或心意。",
+      "formation": "主语 + 替 + 名词 / 代词（被替代者）+ 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "见了外公，请替我向他问好。"
+        }
+      ]
+    },
+    "zh_替_437": {
+      "title": "替 + 名词 / 代词 + 心理形容词/动词（介词：表示设身处地为对方着想、感同身受）",
+      "shortExplanation": "介词“替”用在心理情感类词语前，表示设身处地站在对方的立场上，为对方感到高兴、担忧或难过；表示“为……感到”。",
+      "longExplanation": "“替”（tì）与表示情感、心理反应的动词或形容词（如“高兴”、“担心”、“着急”、“难过”、“捏一把汗”等）搭配使用时，表示说话人把对方的事情当作自己的事情一样来感受，体现出强烈的共情与关切。它不是物理动作上的代替，而是一种心理上的情感共鸣与感同身受（如“真替你捏了一把汗”、“大家都在替他着急”、“我很替你感到骄傲”）。",
+      "formation": "主语 + 替 + 名词 / 代词（共情关切的对象）+ 心理形容词 / 动词（高兴 / 担心 / 着急等）",
+      "examples": [
+        {
+          "translation": "李阳要去留学了，我们都替他高兴。"
+        }
+      ]
+    },
+    "zh_说不定_438": {
+      "title": "说不定（作谓语：表示难以断定、尚不确定或尚未决定）",
+      "shortExplanation": "作谓语，表示时间、安排或事情的结果还没有完全确定下来，难下定论；相当于“说不准、还不确定”。",
+      "longExplanation": "“说不定”（shuōbudìng）可直接充当句子的谓语，经常与副词“还”连用构成“还说不定”。它用来客观表达某种计划、出发时间、最终归宿或成败结果在现阶段仍然处于悬而未决、不可确定的状态，说话人无法给出明确断言（相当于“还不能肯定”、“还是个未知数”、“说不准”）。",
+      "formation": "主语（时间 / 事情 / 计划）+（还 +）说不定",
+      "examples": [
+        {
+          "translation": "这事儿经理已经同意了，只是出发的时间还说不定。"
+        }
+      ]
+    },
+    "zh_说不定_439": {
+      "title": "说不定（副词：表示推测估计，相当于“也许、可能”）",
+      "shortExplanation": "副词，置于主语前后，用于对某种可能性的推断与估计；相当于“也许、可能”。",
+      "longExplanation": "“说不定”（shuōbudìng）充当副词时，置于句首（主语前）或主语后、谓语前。它用来表示说话人对某种事态、变化或结果的推测与估计，相当于“也许”或“可能”。虽然说话人并没有十足的把握，但认为该情况存在较大的发生概率或转机（如“你再去问问他，说不定他知道”、“明天说不定能赶上好天气”）。口语中使用非常普遍。",
+      "formation": "（主语 +）说不定（+ 主语 +）谓语 / 分句",
+      "examples": []
+    }
+  }
+}

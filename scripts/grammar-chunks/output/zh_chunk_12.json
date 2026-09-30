@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_1_168": {
+      "title": "Số từ + (Số từ + 1) + Lượng từ + Danh từ (Biểu thị ước lượng bằng hai số từ liền kề: một hai, ba bốn...)",
+      "shortExplanation": "Đặt hai số từ liền kề nhau kết hợp với lượng từ và danh từ để biểu thị số lượng ước lượng xấp xỉ; tương đương 'một hai', 'ba bốn' trong tiếng Việt.",
+      "longExplanation": "Trong tiếng Trung, để biểu thị số lượng ước chừng hoặc xấp xỉ, người ta thường dùng hai số từ liền kề nhau (như '一两', '两三', '三四', '七八', '八九') đặt trước lượng từ và danh từ theo kết cấu 'Số từ + (Số từ + 1) + Lượng từ + Danh từ'. Khi hai số từ là 1 và 2 đứng liền kề, số 2 bắt buộc dùng '两' chứ không dùng '二' (nói '一两个', không nói *一二个). Đối với các số hàng chục, có thể dùng '二三十', '七八十' v.v. Tương đương với cách nói 'một hai...', 'ba bốn...', 'vài ba...' trong tiếng Việt.",
+      "formation": "Số từ + (Số từ + 1) + Lượng từ + Danh từ",
+      "examples": [
+        {
+          "translation": "Mỗi ngày tôi học tiếng Trung khoảng một hai tiếng đồng hồ."
+        }
+      ]
+    },
+    "zh_把了_169": {
+      "title": "把 + Tân ngữ + Động từ + 了 (Câu chữ 把 biểu thị xử lý hoàn thành: đã làm gì với đối tượng)",
+      "shortExplanation": "Dùng giới từ '把' đưa tân ngữ lên trước động từ kết hợp trợ từ ngữ khí/động thái '了' ở cuối để diễn tả hành động xử lý đã tác động xong lên đối tượng, dẫn đến một kết quả hoặc thay đổi.",
+      "longExplanation": "Câu chữ 把 (câu xử lý) là một cấu trúc ngữ pháp đặc biệt trong tiếng Trung. Giới từ '把' đem đối tượng chịu tác động (tân ngữ xác định) đặt lên trước động từ vị ngữ, nhấn mạnh hành động xử lý và sự chi phối đối với đối tượng đó. Đi sau động từ bắt buộc phải có thành phần khác chứ không thể đứng đơn độc; trong cấu trúc này, trợ từ '了' đặt sau động từ hoặc cuối câu để biểu thị hành động đã hoàn tất hoặc dẫn đến trạng thái mới. Thường dùng khi người nói muốn nhấn mạnh việc tân ngữ đã bị thay đổi, di chuyển hoặc xử lý thế nào (ví dụ: '我把钱包忘了' - Tôi quên mất ví rồi, '他把作业写完了' - Cậu ấy đã viết xong bài tập rồi).",
+      "formation": "Chủ ngữ + 把 + Tân ngữ (Đối tượng xác định) + Động từ + 了",
+      "examples": [
+        {
+          "translation": "Tôi quên mất ví tiền rồi."
+        }
+      ]
+    },
+    "zh_不要别没把了_170": {
+      "title": "不要 / 别 / 没 + 把 + Tân ngữ + Động từ + (了) (Dạng phủ định của câu chữ 把: Đừng... / Không... đối với tân ngữ)",
+      "shortExplanation": "Đặt phó từ phủ định '别', '不要' (đừng...) hoặc '没' (chưa, không...) trước giới từ '把' để khuyên ngăn, cảnh báo không làm việc gì hoặc biểu thị hành động chưa xử lý tân ngữ.",
+      "longExplanation": "Trong câu chữ 把, các phó từ phủ định như '别', '不要' (dùng trong câu cầu khiến, mệnh lệnh mang nghĩa 'đừng...') hoặc '没 / 没有' (dùng cho hành vi chưa xảy ra hoặc chưa hoàn thành) bắt buộc phải đứng TRƯỚC giới từ '把', tuyệt đối không được đặt sau động từ. Khi dùng '别把 / 不要把 + Tân ngữ + Động từ + 了', từ '了' ở cuối thường đóng vai trò là trợ từ ngữ khí cảnh báo hoặc nhắc nhở tránh một kết quả xấu không mong muốn (như '别把手机忘了' - Đừng để quên điện thoại đấy nhé, '不要把杯子摔了' - Đừng làm rơi vỡ cốc nhé). Còn đối với '没把', nó biểu thị sự việc chưa được xử lý đến kết quả nào đó. Tương đương với 'đừng...', 'chưa...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 不要 / 别 / 没 + 把 + Tân ngữ + Động từ + (了 / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Đừng quên điện thoại đấy nhé."
+        }
+      ]
+    },
+    "zh_左右_171": {
+      "title": "Số từ (+ Lượng từ + Danh từ) / Mốc thời gian + 左右 (Khoảng, chừng: biểu thị con số hoặc thời điểm xấp xỉ)",
+      "shortExplanation": "Từ '左右' (tả hữu) được đặt ngay sau số từ, lượng từ hoặc từ chỉ thời gian để biểu thị số lượng hoặc mốc thời gian xấp xỉ (khoảng, chừng...).",
+      "longExplanation": "Trong tiếng Trung, '左右' (zuǒyòu) là từ chỉ độ ước lượng, luôn được đặt ở SAU từ ngữ chỉ số lượng, tuổi tác, chiều cao, cân nặng hoặc mốc thời gian để biểu thị con số xấp xỉ, không tuyệt đối chính xác (dao động trên dưới con số đó). Ví dụ: '十点左右' (khoảng 10 giờ), '三十岁左右' (khoảng 30 tuổi), '一千块左右' (khoảng 1000 tệ), '五个人左右' (chừng 5 người). Lưu ý về vị trí: trong tiếng Việt từ 'khoảng/chừng' đứng trước số từ, nhưng '左右' trong tiếng Trung bắt buộc phải đứng SAU. Tương đương với 'khoảng...', 'chừng...', 'tầm...' trong tiếng Việt.",
+      "formation": "Số từ (+ Lượng từ + Danh từ) / Thời gian + 左右",
+      "examples": [
+        {
+          "translation": "Cuối tuần tôi thường thức dậy vào khoảng 10 giờ."
+        }
+      ]
+    },
+    "zh_就VA_172": {
+      "title": "就 + Động từ / Tính từ (Phó từ '就': sớm, nhanh, thuận lợi hơn dự kiến - đã... rồi / là... ngay)",
+      "shortExplanation": "Phó từ '就' đặt trước động từ hoặc tính từ biểu thị hành động hoặc trạng thái diễn ra sớm, nhanh chóng, dễ dàng, mất ít thời gian hoặc thuận lợi hơn so với dự kiến; 'chỉ... là...', 'đã... rồi'.",
+      "longExplanation": "Trong ngữ pháp tiếng Trung, phó từ '就' (jiù) mang ngữ khí biểu thị hành vi, sự việc diễn ra sớm hơn, nhanh hơn hoặc thuận lợi hơn so với mong đợi của người nói. Thường đứng sau từ ngữ chỉ thời gian hoặc số lượng ít ỏi để nhấn mạnh tính chất mau chóng hoặc tốn ít thời gian công sức (ví dụ: '坐飞机一个小时就到了' - Đi máy bay chỉ một tiếng là đã đến nơi rồi; '他七点就来了' - Anh ấy 7 giờ đã đến rồi). Đây là điểm ngữ pháp đối lập trực tiếp với phó từ '才' (biểu thị muộn màng, tốn nhiều thời gian, khó khăn hơn dự kiến). Tương đương với 'đã...', 'chỉ... là...', 'ngay...' trong tiếng Việt.",
+      "formation": "Thời gian / Điều kiện + 就 + Động từ / Tính từ + (Tân ngữ / 了)",
+      "examples": [
+        {
+          "translation": "Đi máy bay chỉ một tiếng đồng hồ là đến nơi rồi."
+        }
+      ]
+    },
+    "zh_才VA_173": {
+      "title": "才 + Động từ / Tính từ (Phó từ '才': muộn, chậm, khó khăn hơn dự kiến - mãi mới... / mới...)",
+      "shortExplanation": "Phó từ '才' đặt trước động từ hoặc tính từ biểu thị hành động xảy ra muộn màng, tốn nhiều thời gian, chậm chạp hoặc không thuận lợi như mong đợi; 'mãi mới...', 'mới...'.",
+      "longExplanation": "Phó từ '才' (cái) được dùng trước động từ hoặc tính từ để biểu thị sự việc, hành động diễn ra muộn, chậm, tốn nhiều thời gian và công sức, hoặc trễ hơn nhiều so với dự tính của người nói. Thường mang sắc thái sốt ruột, than phiền hoặc nhấn mạnh sự muộn màng (ví dụ: '你怎么才来？' - Sao giờ này cậu mới đến thế?; '我等了两个小时他才来' - Tôi đợi suốt hai tiếng đồng hồ anh ấy mới đến). Khác với '就' (thường đi với '了'), câu dùng '才' ở vế sau thường KHÔNG dùng trợ từ '了' biểu thị hoàn thành động tác. Tương đương với 'mãi mới...', 'đến tận... mới...' trong tiếng Việt.",
+      "formation": "Chủ ngữ / Thời gian (muộn) + 才 + Động từ / Tính từ + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Sao bây giờ bạn mới đến thế? (Sao bạn đến muộn vậy?)"
+        }
+      ]
+    },
+    "zh_把OV在到PLACE_174": {
+      "title": "把 + Tân ngữ + Động từ + 在 / 到 + Nơi chốn (Câu chữ 把 kết hợp bổ ngữ chỉ nơi chốn: đặt, để, chuyển... đối tượng ở/vào đâu)",
+      "shortExplanation": "Dùng câu chữ '把' kết hợp với động từ và cụm giới từ chỉ nơi chốn '在 / 到 + Nơi chốn' làm bổ ngữ để biểu thị hành động làm đối tượng dịch chuyển hoặc lưu lại tại một vị trí cụ thể.",
+      "longExplanation": "Đây là một dạng phổ biến và rất điển hình của câu chữ 把: kết hợp với bổ ngữ chỉ kết quả/phương hướng nơi chốn ('在/到 + Nơi chốn'). Trong cấu trúc này, hành động tác động lên tân ngữ khiến cho tân ngữ đó thay đổi vị trí hoặc cố định tại một địa điểm mới: '在 + Nơi chốn' nhấn mạnh tân ngữ lưu lại, dừng lại hoặc định vị tại vị trí đó (ví dụ: '把照片放在包里' - để ảnh trong túi); '到 + Nơi chốn' nhấn mạnh điểm đến hoặc đích đến của sự dịch chuyển (ví dụ: '把车开到学校' - lái xe đến trường). Cuối câu thường có '了' để biểu thị việc xử lý đã hoàn thành.",
+      "formation": "Chủ ngữ + 把 + Tân ngữ + Động từ + 在 / 到 + Nơi chốn + (了)",
+      "examples": [
+        {
+          "translation": "Tôi để tấm ảnh vào trong túi của bạn rồi."
+        }
+      ]
+    },
+    "zh_VmotionV来去_175": {
+      "title": "Động từ + Động từ xu hướng + 来 / 去 (Bổ ngữ xu hướng kép: qua lại, lên xuống, ra vào... hướng về/rời xa)",
+      "shortExplanation": "Kết hợp động từ chính với động từ chỉ phương hướng (上, 下, 进, 出, 回, 过, 起) và '来 / 去' tạo thành bổ ngữ xu hướng kép, biểu thị phương hướng cụ thể của hành động so với vị trí của người nói.",
+      "longExplanation": "Trong tiếng Trung, bổ ngữ xu hướng kép (复合趋向补语) được tạo thành bởi một động từ xu hướng đơn (như 上, 下, 进, 出, 回, 过, 起) kết hợp với '来' hoặc '去' (tạo thành: 上来/上去, 下来/下去, 进来/进去, 出来/出去, 回来/回去, 过来/过去, 起来). Khi đứng sau động từ chính, cụm này bổ nghĩa cho phương hướng di chuyển cụ thể của động tác: dùng '来' khi hành động hướng về phía người nói (hoặc đối tượng được quy ước), dùng '去' khi hành động rời xa người nói (ví dụ: '送过去' - gửi qua bên kia, '走出来' - bước ra đây, '带回来' - mang về đây). Tương đương với các từ chỉ phương hướng như 'qua đó', 'lại đây', 'vào trong', 'ra ngoài' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + (上 / 下 / 进 / 出 / 回 / 过 / 起) + 来 / 去 + (Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Ngày mai chúng mình cùng mang quà gửi qua đó nhé."
+        }
+      ]
+    },
+    "zh_一边V1一边V2_176": {
+      "title": "一边 + Động từ 1 + 一边 + Động từ 2 (Vừa... vừa...: tiến hành song song hai hành động)",
+      "shortExplanation": "Dùng liên từ/phó từ sóng đôi '一边……一边……' nối hai động từ hoặc cụm động từ để biểu thị cùng một chủ thể tiến hành đồng thời hai hành động; 'vừa... vừa...'.",
+      "longExplanation": "Cấu trúc song song '一边 + Động từ 1 + 一边 + Động từ 2' (trong khẩu ngữ thường có thể giản lược thành '边……边……') dùng để diễn tả hai hành động hoặc trạng thái diễn ra song song cùng một lúc do cùng một chủ thể thực hiện (ví dụ: '一边听音乐一边看书' - vừa nghe nhạc vừa đọc sách; '一边吃饭一边聊天' - vừa ăn cơm vừa trò chuyện). Hai hành động này thường có tính chất tương đương hoặc bổ trợ lẫn nhau. Tương đương với kết cấu 'vừa... vừa...', 'đồng thời...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 一边 + Động từ 1 + 一边 + Động từ 2",
+      "examples": [
+        {
+          "translation": "Anh ấy vừa hát vừa nhảy múa."
+        }
+      ]
+    },
+    "zh_把OVresult_177": {
+      "title": "把 + Tân ngữ + Động từ + Bổ ngữ kết quả (Câu chữ 把 mang bổ ngữ kết quả: tác động lên đối tượng đạt kết quả ra sao)",
+      "shortExplanation": "Dùng câu chữ '把' kết hợp với bổ ngữ kết quả (như 干净, 完, 错, 好, 破...) đặt sau động từ để biểu thị hành động xử lý tác động làm biến đổi tân ngữ đến một kết quả hoặc trạng thái cụ thể.",
+      "longExplanation": "Trong câu chữ 把, vị ngữ động từ bắt buộc phải có thành phần bổ trợ phía sau, và bổ ngữ kết quả (结果补语) là một trong những thành phần bổ trợ phổ biến nhất. Bổ ngữ kết quả (thường là hình dung từ/tính từ hoặc động từ như 干净 - sạch, 完 - xong, 错 - sai, 好 - xong/tốt, 破 - rách, 坏 - hỏng) đặt ngay sau động từ chính để làm rõ tình trạng, kết quả phát sinh trên đối tượng sau khi chịu tác động của hành động. Ví dụ: '把衣服洗干净了' (giặt quần áo sạch sẽ rồi), '把作业写完了' (viết xong bài tập rồi), '把他打哭了' (đánh cho cậu ấy khóc). Cuối câu thường có '了' để khẳng định trạng thái kết quả đó.",
+      "formation": "Chủ ngữ + 把 + Tân ngữ + Động từ + Bổ ngữ kết quả + (了)",
+      "examples": [
+        {
+          "translation": "Tôi đã giặt sạch quần áo rồi."
+        }
+      ]
+    },
+    "zh_把OVdirection_178": {
+      "title": "把 + Tân ngữ + Động từ + Bổ ngữ xu hướng (Câu chữ 把 mang bổ ngữ xu hướng: làm dịch chuyển đối tượng theo hướng nào)",
+      "shortExplanation": "Dùng câu chữ '把' kết hợp với bổ ngữ xu hướng (đơn hoặc kép như 过来, 过去, 进来, 出去, 拿来...) đặt sau động từ để biểu thị hành động làm đối tượng di chuyển theo một hướng cụ thể.",
+      "longExplanation": "Trong câu chữ 把, khi động từ chính kết hợp với bổ ngữ xu hướng (趋向补语), cấu trúc này diễn tả hành động xử lý đã làm cho đối tượng dịch chuyển trong không gian theo một hướng nhất định (hướng về phía người nói với '来' hoặc rời xa với '去'). Ví dụ: '把水果拿过来' (mang hoa quả lại đây), '把书带回去' (mang sách về lại), '把椅子搬出去' (dọn ghế ra ngoài). Cấu trúc này làm rõ sự di dời của tân ngữ thông qua động tác. Thường có '了' ở cuối để biểu thị hành động di dời đã diễn ra.",
+      "formation": "Chủ ngữ + 把 + Tân ngữ + Động từ + Bổ ngữ xu hướng + (了)",
+      "examples": [
+        {
+          "translation": "Anh ấy mang hoa quả lại đây rồi."
+        }
+      ]
+    },
+    "zh_先再又然后_179": {
+      "title": "先……再 / 又……然后…… (Trước tiên... rồi... sau đó...: liên từ biểu thị thứ tự hành động)",
+      "shortExplanation": "Dùng tổ hợp liên từ/phó từ '先……再/又……然后……' để liệt kê thứ tự tuần tự trước sau của các hành động hoặc sự việc diễn ra theo tiến trình thời gian.",
+      "longExplanation": "Cấu trúc thứ tự hành động '先……再/又……然后……' dùng để miêu tả một chuỗi hành vi hoặc sự việc diễn ra theo trình tự thời gian liên tiếp. Trong đó: '先' (trước tiên) đứng ở hành động khởi đầu; '再' hoặc '又' biểu thị hành động tiếp theo (dùng '再' cho sự việc trong tương lai hoặc chưa hoàn thành, dùng '又' cho sự việc đã liên tiếp xảy ra trong quá khứ); '然后' (sau đó) dẫn ra bước tiếp nối hoặc giai đoạn cuối cùng trong chuỗi hành động (thường kết hợp với '才' ở phân câu cuối nếu tốn nhiều công sức để hoàn thành). Tương đương với 'trước tiên... rồi... sau đó...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 先 + Động từ 1 / Mệnh đề 1 + 再 / 又 + Động từ 2 / Mệnh đề 2 + 然后 + (才 + ) Động từ 3 / Mệnh đề 3",
+      "examples": [
+        {
+          "translation": "Trước tiên tôi đi xe buýt, rồi lại đi tàu điện ngầm, sau đó mới đến được nhà Tiểu Cương."
+        }
+      ]
+    },
+    "zh_除了N以外_180": {
+      "title": "除了 + Danh từ + 以外 (Ngoại trừ: trừ... ra, ngoài... ra)",
+      "shortExplanation": "Dùng kết cấu '除了……以外' kết hợp với danh từ để biểu thị sự loại trừ, mang nghĩa 'ngoại trừ đối tượng này ra thì tất cả các đối tượng khác đều...'; thường đi kèm '都' hoặc '别的' ở vế sau.",
+      "longExplanation": "Cấu trúc giới từ '除了 + Danh từ + 以外' (từ '以外' có thể lược bớt thành '除了……') dùng để biểu đạt ý loại trừ (trừ trường hợp này ra). Trong phân câu phía sau, câu thường đi cùng các từ như '都', '全', '别' để khẳng định rằng ngoài đối tượng được đề cập ở vế trước bị loại trừ ra, thì tất cả những đối tượng còn lại đều có chung đặc điểm hoặc hành vi (ví dụ: '除了这个汉字以外，别的我都认识' - Ngoại trừ chữ Hán này ra, những chữ khác tôi đều biết; '除了小王以外，大家都来了' - Trừ Tiểu Vương ra thì mọi người đều đã đến). Cần phân biệt với cấu trúc loại trừ bổ sung '除了……还/也' (ngoài... ra còn...). Tương đương với 'ngoại trừ...', 'trừ... ra' trong tiếng Việt.",
+      "formation": "除了 + Danh từ + 以外，(Chủ ngữ + ) 都 / 全 / 别的……",
+      "examples": [
+        {
+          "translation": "Ngoài chữ Hán này ra, những chữ khác tôi đều biết cả."
+        }
+      ]
+    },
+    "zh_除了以外还_181": {
+      "title": "除了……(以外)，还 / 也…… (Ngoài... ra còn...: biểu thị sự bổ sung, tăng tiến)",
+      "shortExplanation": "Dùng kết cấu '除了……(以外)' kết hợp với phó từ '还' hoặc '也' ở vế sau để biểu thị ngoài đối tượng/hành động đã nêu ra, còn có thêm những đối tượng/hành động khác; 'ngoài... ra còn...'.",
+      "longExplanation": "Khác với cấu trúc loại trừ mang nghĩa 'ngoại trừ... ra thì đều...' (kết hợp với '都'), cấu trúc '除了……(以外)，还/也……' lại biểu thị sự dung nạp, bổ sung thêm (ngoài việc thứ nhất ra thì còn có thêm việc thứ hai). Vế thứ nhất đưa ra một nội dung nền tảng, và vế thứ hai dùng '还' (còn) hoặc '也' (cũng) để bổ sung thêm một nội dung khác cùng loại. Tương đương với ý nghĩa 'không chỉ... mà còn...', 'bên cạnh... thì còn...' (ví dụ: '上网除了看新闻以外，还可以听音乐' - Lên mạng ngoài xem tin tức ra còn có thể nghe nhạc; '他除了会说汉语，还会说英语' - Ngoài tiếng Trung ra anh ấy còn biết nói tiếng Anh). Tương đương với 'ngoài... ra còn...' trong tiếng Việt.",
+      "formation": "除了 + Danh từ / Động từ / Mệnh đề + (以外)，(Chủ ngữ + ) 还 / 也 + Động từ / Vị ngữ",
+      "examples": [
+        {
+          "translation": "Lên mạng ngoài việc xem tin tức ra, còn có thể nghe nhạc nữa."
+        }
+      ]
+    },
+    "zh_什么_182": {
+      "title": "什么 (Đại từ nghi vấn dùng phiếm chỉ / hư chỉ: cái gì đó, bất kỳ cái gì)",
+      "shortExplanation": "Đại từ nghi vấn '什么' được dùng phi nghi vấn (hư chỉ / phiếm chỉ) trong câu hỏi hoặc câu trần thuật để biểu thị một sự vật không xác định hoặc không cần nói rõ; 'gì đó', 'bất kỳ... nào'.",
+      "longExplanation": "Trong tiếng Trung, ngoài chức năng là đại từ nghi vấn để hỏi ('cái gì?'), '什么' (shénme) còn có cách dùng hư chỉ (虚指) hoặc phiếm chỉ (泛指). Khi dùng hư chỉ trong câu nghi vấn hoặc trần thuật nhẹ nhàng, '什么' mang ý nghĩa chỉ một đối tượng chưa xác định hoặc mơ hồ, không nhất thiết phải nói rõ tên (như '有什么打算吗' - có kế hoạch gì không, '我想买点儿什么' - tôi muốn mua cái gì đó, '他好像在找什么' - dường như anh ấy đang tìm cái gì đó). Khi dùng phiếm chỉ kết hợp với '都 / 也', nó mang nghĩa bất kỳ thứ gì ('什么都喜欢' - cái gì cũng thích). Tương đương với từ 'gì đó', 'gì' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + (点儿 + ) 什么 + (Danh từ) + (吗 / 呢)",
+      "examples": [
+        {
+          "translation": "Cuối tuần bạn có kế hoạch gì chưa?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_1_168": {
+      "title": "数詞 ＋（数詞＋1）＋ 量詞 ＋ 名詞（隣り合う2つの数詞による概数表現：1、2個・3、4個など）",
+      "shortExplanation": "連続する2つの数詞を並べて量詞と名詞を後続させ、「1、2個」「3、4個」のように大体の数量（概数）を表します。",
+      "longExplanation": "中国語では、隣り合う2つの数詞を続けて並べることで、数量のおおよその目安（概数）を表すことができます（例：「一两」＝1、2、「两三」＝2、3、「三四」＝3、4、「七八」＝7、8など）。特に「1」と「2」が並ぶ場合、「2」には「二」ではなく「两」を用いて「一两」と言います（*一二とは言いません）。また十の位でも「二三十」「七八十」のように用いることができます。日本語の「1、2時間」「3、4人」「2、3個」といった表現に相当します。",
+      "formation": "数詞 ＋（数詞＋1）＋ 量詞 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "私は毎日1、2時間中国語を勉強しています。"
+        }
+      ]
+    },
+    "zh_把了_169": {
+      "title": "把 ＋ 目的語 ＋ 動詞 ＋ 了（「把」構文：目的語を〜した・〜してしまった）",
+      "shortExplanation": "介詞「把」を用いて目的語を動詞の前に引き出し、文末や動詞の後に「了」を伴って、その対象に対して処置を施し終えたこと（処置の完了や結果）を表します。",
+      "longExplanation": "「把」構文（処置文）は、介詞「把」によって動作の対象（特定された目的語）を動詞の前に導き、「その対象に対してどのような処置・働きかけを行い、どのような結果・変化が生じたか」を強調する中国語特有の文型です。「把」構文の動詞は単独では用いられず、必ず何らかの付加成分を必要とします。本構文では完了・変化を表す「了」を伴い、「〜を…した」「〜を…してしまった」という完了や予期せぬ結果を表します（例：「我把钱包忘了」＝財布を忘れてしまった）。",
+      "formation": "主語 ＋ 把 ＋ 目的語（特定のもの） ＋ 動詞 ＋ 了",
+      "examples": [
+        {
+          "translation": "私は財布を忘れてしまいました。"
+        }
+      ]
+    },
+    "zh_不要别没把了_170": {
+      "title": "不要 / 别 / 没 ＋ 把 ＋ 目的語 ＋ 動詞 ＋（了）（「把」構文の否定形：〜を…するな・〜を…しなかった）",
+      "shortExplanation": "否定の副詞「别」「不要」（〜するな）や「没」（〜しなかった）を「把」の前に置き、「把」構文の動作を制止したり未完了であることを表します。",
+      "longExplanation": "「把」構文を否定する場合、否定詞（「别」「不要」「没/没有」など）は必ず介詞「把」の直前に置かなければならず、動詞の前に置いてはならないという厳格な規則があります。禁止や注意喚起を表す「别把……動詞＋了」「不要把……動詞＋了」の構文では、文末の「了」は好ましくない事態・結果の発生を警戒・喚起する語気助詞として機能します（例：「别把手机忘了」＝スマホを忘れないでね、「不要把衣服弄脏了」＝服を汚さないで）。一方、「没把……」は過去に処置を行わなかったことや所期の変化に至らなかったことを表します。",
+      "formation": "主語 ＋ 不要 / 别 / 没 ＋ 把 ＋ 目的語 ＋ 動詞 ＋（了 / 補語）",
+      "examples": [
+        {
+          "translation": "スマホを忘れないでね。"
+        }
+      ]
+    },
+    "zh_左右_171": {
+      "title": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右（概数表現：〜ごろ・〜前後・〜ぐらい）",
+      "shortExplanation": "数量詞や時刻・年齢などの後ろに「左右」を置き、「〜前後」「〜ぐらい」「〜ごろ」というおおよその数値や時点（概数）を表します。",
+      "longExplanation": "「左右（zuǒyòu）」は概数（おおよその数や時間）を表す後置修飾の語句で、数量詞、時間、年齢、金銭などの後ろに直接置かれます。基準となる数値の上下・前後にある程度幅があることを示します（例：「十点左右」＝10時ごろ、「三十岁左右」＝30歳前後・30歳くらい、「一百块左右」＝100元前後）。日本語の「〜ぐらい」「〜前後」「〜ごろ」に対応しますが、必ず数値の後ろに置かれる点に注意が必要です。",
+      "formation": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右",
+      "examples": [
+        {
+          "translation": "週末、私は普段10時ごろに起きます。"
+        }
+      ]
+    },
+    "zh_就VA_172": {
+      "title": "就 ＋ 動詞 / 形容詞（副詞「就」：早く・あっさり実現することを表す：もう〜・〜すればすぐ〜）",
+      "shortExplanation": "副詞「就」を動詞や形容詞の前に置き、動作や事態が予想よりも早く、短時間で、容易に実現した（または実現する）ことを表します。",
+      "longExplanation": "副詞「就」は動詞述語の前に置かれ、ある動作や事態が「話者の予想よりも早い、所要時間が短い、あっさりと容易に進む」というニュアンスを表します。時間量や時点の後に置かれて「たった〜でもう着いた」「〜時には早くも〜した」と強調する際によく使われます（例：「坐飞机一个小时就到了」＝飛行機なら1時間で着いてしまう、「他八点就来了」＝彼は8時には早くもやって来た）。事態の実現が遅く困難であることを表す副詞「才」と明確に対比される重要文法です。",
+      "formation": "時間 / 条件 ＋ 就 ＋ 動詞 / 形容詞 ＋（目的語 / 了）",
+      "examples": [
+        {
+          "translation": "飛行機に乗ればたった1時間で着きます。"
+        }
+      ]
+    },
+    "zh_才VA_173": {
+      "title": "才 ＋ 動詞 / 形容詞（副詞「才」：遅く・困難の末に実現することを表す：やっと〜・今ごろになって〜）",
+      "shortExplanation": "副詞「才」を動詞や形容詞の前に置き、動作や事態の実現が話者の予想よりも遅く、時間がかかり、困難であったことを表します。",
+      "longExplanation": "副詞「才」は動詞述語の前に置かれ、動作や事態の発生が「予想よりも遅い、所要時間が長い、やっとのことで実現した」という話し手の主観的ニュアンス（不満・焦燥・安堵など）を表します（例：「你怎么才来？」＝どうして今ごろになってやっと来たの？、「我等了三个小时他才来」＝3時間待って彼がようやくやって来た）。注意すべき文法規則として、副詞「就」とは異なり、「才」を用いる文の動詞後には完了の「了」を伴わないのが普通です。日本語の「やっと〜した」「今ごろになってようやく〜した」に相当します。",
+      "formation": "主語 / 時間（遅い時点） ＋ 才 ＋ 動詞 / 形容詞 ＋（目的語）",
+      "examples": [
+        {
+          "translation": "どうして今ごろになってやっと来たの？（どうしてそんなに遅かったの？）"
+        }
+      ]
+    },
+    "zh_把OV在到PLACE_174": {
+      "title": "把 ＋ 目的語 ＋ 動詞 ＋ 在 / 到 ＋ 場所（「把」構文＋場所補語：目的語を場所へ〜する・〜に置く）",
+      "shortExplanation": "「把」構文に「在/到 ＋ 場所」という場所補語を組み合わせ、動作によって目的語の所在を移動させたり定着させたりした結果を表します。",
+      "longExplanation": "「把 ＋ 目的語 ＋ 動詞 ＋ 在/到 ＋ 場所」は、「把」構文（処置文）の極めて代表的な構文形式の一つです。動作が目的語に及んだ結果、その対象がどこに移動・静止したかという「結果の所在場所」を「在/到 ＋ 場所」によって明示します。「在 ＋ 場所」は対象がその場所に定着・残存することを強調し（例：「把照片放在包里」＝写真をバッグの中に入れる）、「到 ＋ 場所」は対象がその場所へと到達・移動したことを強調します（例：「把车开到门口」＝車を入り口まで運転していく）。文末に「了」を伴って完了を表すのが一般的です。",
+      "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 在 / 到 ＋ 場所 ＋（了）",
+      "examples": [
+        {
+          "translation": "私は写真をあなたのバッグの中に入れました。"
+        }
+      ]
+    },
+    "zh_VmotionV来去_175": {
+      "title": "動詞 ＋ 移動動詞 ＋ 来 / 去（複合方向補語：〜して上がって/下りて/入って/出て/戻って/渡ってくる/行く）",
+      "shortExplanation": "本動詞の直後に方向を表す動詞（上、下、进、出、回、过、起）と「来/去」を組み合わせた複合方向補語を置き、動作の移動する具体的方向（話し手に近づくか遠ざかるか）を表します。",
+      "longExplanation": "複合方向補語は、単純方向動詞（上、下、进、出、回、过、起）に「来」（話し手に向かって近づく）または「去」（話し手から離れて遠ざかる）が結合した形（上来/上去、下来/下去、进来/进去、出来/出去、回来/回去、过来/过去、起来）を指します。本動詞の後ろに置かれ、動作に伴う物や人の移動の物理的方向性を精密に描写します（例：「送过去」＝届けていく・向こうへ送る、「跑过来」＝走ってこちらへ来る、「拿出来」＝取り出してこちらへ持ってくる）。日本語の「〜してくる」「〜していく」の複合的な方向表現に相当します。",
+      "formation": "主語 ＋ 動詞 ＋（上 / 下 / 进 / 出 / 回 / 过 / 起）＋ 来 / 去 ＋（目的語）",
+      "examples": [
+        {
+          "translation": "明日、私たちが一緒にプレゼントを届けていきましょう。"
+        }
+      ]
+    },
+    "zh_一边V1一边V2_176": {
+      "title": "一边 ＋ 動詞1 ＋ 一边 ＋ 動詞2（並行動作：〜しながら〜する）",
+      "shortExplanation": "「一边……一边……」を用いて2つの動詞を結び、同一の主語が2つの動作を同時に並行して行うこと（〜しながら〜する）を表します。",
+      "longExplanation": "「一边 ＋ 動詞1 ＋ 一边 ＋ 動詞2」は、同一の動作主が2つの行為を同時に進行させていることを表す代表的な接続表現です。日常会話では「一」を省略して「边……边……」と言うこともよくあります（例：「他一边唱歌一边跳舞」＝彼は歌いながら踊っている、「一边听音乐一边做作业」＝音楽を聴きながら宿題をする）。日本語の動詞連用形＋「〜ながら〜する」に直結する重要文法です。",
+      "formation": "主語 ＋ 一边 ＋ 動詞1 ＋ 一边 ＋ 動詞2",
+      "examples": [
+        {
+          "translation": "彼は歌いながら踊っています。"
+        }
+      ]
+    },
+    "zh_把OVresult_177": {
+      "title": "把 ＋ 目的語 ＋ 動詞 ＋ 結果補語（「把」構文＋結果補語：目的語を〜して…の状態にする）",
+      "shortExplanation": "「把」構文の動詞の直後に結果補語（干净、完、好、破、坏など）を置き、動作を施した結果として目的語がどのような状態になったかを表します。",
+      "longExplanation": "「把」構文（処置文）において、動詞の後ろに結果補語を接続する形式は最も基本的かつ多用されるパターンです。「把」構文の動詞は単独では成り立たず、処置の結果を明示する必要があるため、形容詞や動詞からなる結果補語（干净＝きれいに、完＝すっかり終える、好＝きちんと仕上げる、错＝間違える、坏＝壊すなど）が直結します（例：「我把衣服洗干净了」＝服をきれいに洗い上げた、「他把杯子打破了」＝彼はコップを割ってしまった）。日本語の「〜を…の状態にする/してしまう」に相当します。",
+      "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 結果補語（形容詞 / 動詞）＋（了）",
+      "examples": [
+        {
+          "translation": "私は服をきれいに洗いました。"
+        }
+      ]
+    },
+    "zh_把OVdirection_178": {
+      "title": "把 ＋ 目的語 ＋ 動詞 ＋ 方向補語（「把」構文＋方向補語：目的語を〜の方向へ移動させる）",
+      "shortExplanation": "「把」構文の動詞の直後に方向補語（过来、过去、进来、出去、拿来など）を置き、動作を通じて目的語がどの方向へ空間的に移動したかを表します。",
+      "longExplanation": "「把 ＋ 目的語 ＋ 動詞 ＋ 方向補語」は、「把」構文（処置文）の極めて重要なバリエーションです。動詞の後ろに方向補語（単純方向補語または複合方向補語）を置くことで、処置動作の結果として目的語（物や人）が空間的にどの方向へ移動したかを明示します。例えば「把水果拿过来了」（果物を持ってこちらに来た）、「把垃圾拿出去」（ゴミを外へ持っていく）のように、対象の空間的移動の方向性が生き生きと描写されます。",
+      "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 方向補語（単一 / 複合）＋（了）",
+      "examples": [
+        {
+          "translation": "彼は果物を持ってこちらに来ました。"
+        }
+      ]
+    },
+    "zh_先再又然后_179": {
+      "title": "先……再 / 又……然后……（動作の順序表現：まず〜し、それから〜し、そのあと〜する）",
+      "shortExplanation": "「先……再/又……然后……」を用いて複数の動作を時間的な順序に従って順番に並べ、「まず〜して、次に〜して、その後に〜する」という時間的順序を表します。",
+      "longExplanation": "この構文は、一連の動作や出来事が時間の経過に沿ってどのように進んだか（または進むか）を順を追って述べる複文構造です。「先」は最初の動作（まず〜）を示し、「再」または「又」はそれに続く次の動作を示します（未実現・将来の手順には「再」、過去に実際に起きた連続動作には「又」が選ばれます）。そして「然后」は最終的な段階や後続の事態（そのあと〜、そうして〜）を導きます。最後の節に「才」が添えられると、「そのあとようやく〜できた」という達成のニュアンスが加わります。",
+      "formation": "主語 ＋ 先 ＋ 動詞1 / 節1 ＋ 再 / 又 ＋ 動詞2 / 節2 ＋ 然后 ＋（才 ＋ ）動詞3 / 節3",
+      "examples": [
+        {
+          "translation": "私はまずバスに乗り、それから地下鉄に乗り、そうしてやっと小剛の家に着きました。"
+        }
+      ]
+    },
+    "zh_除了N以外_180": {
+      "title": "除了 ＋ 名詞 ＋ 以外（除外表現：〜を除いて・〜のほかに）",
+      "shortExplanation": "「除了……以外」を用いて特定の事物を除外し、「その名詞を除いては、ほかのものは皆〜である」という除外の意を表します。",
+      "longExplanation": "「除了 ＋ 名詞 ＋ 以外」（「以外」は省略されることもあります）は、ある人や事物を対象全体の中から取り除く「除外」を表す代表的な介詞構造です。後続の文節には通常「都（皆）」「全（すべて）」「别的（ほかの）」といった語句が呼応し、除外されたもの以外のすべてについて同じ状況や性質が成り立つことを述べます（例：「除了这个汉字以外，别的我都认识」＝この漢字を除いて、他のものは皆読めます、「除了他以外，大家都在」＝彼を除いて、みんな揃っている）。日本語の「〜を除いて」「〜のほかは」に相当します。",
+      "formation": "除了 ＋ 名詞 ＋ 以外、（主語 ＋ ）都 / 全 / 别的……",
+      "examples": [
+        {
+          "translation": "この漢字を除いて、他のものは全部知っています。"
+        }
+      ]
+    },
+    "zh_除了以外还_181": {
+      "title": "除了……（以外），还 / 也……（付加・累加表現：〜のほかに、さらに〜も）",
+      "shortExplanation": "「除了……（以外）」に副詞「还」や「也」を呼応させ、「〜のほかに（も）、さらに…もある/する」という付加・累加の意を表します。",
+      "longExplanation": "「除了……（以外），还/也……」は、排除・除外を表す「除了……都」とは異なり、「ある事柄に加えて、別の事柄も追加して含まれる」という累加・追加を表す構文です。前節で挙げた基本事項に加えて、後節で「还（さらに、まだ）」や「也（〜も）」を用いて別の事項を付け足します（例：「上网除了看新闻以外，还可以听音乐」＝ネットはニュースを見るだけでなく音楽を聴くこともできる、「除了英语以外，他还会说法语」＝英語のほかにフランス語も話せる）。日本語の「〜のほかに…も」「〜だけでなく…も」に相当します。",
+      "formation": "除了 ＋ 名詞 / 動詞 / 節 ＋（以外）、（主語 ＋ ）还 / 也 ＋ 動詞 / 述語",
+      "examples": [
+        {
+          "translation": "インターネットはニュースを見る以外に、音楽を聴くこともできます。"
+        }
+      ]
+    },
+    "zh_什么_182": {
+      "title": "什么（疑問代名詞の虚指・不定用法：何か・これといった〜）",
+      "shortExplanation": "疑問代名詞「什么」を具体的な質問ではなく「何か」「これといった〜」という不特定の事物（虚指）を表すために用います。",
+      "longExplanation": "「什么」は通常「何」と事物を尋ねる疑問詞ですが、疑問文や平叙文において具体的な特定を避けて「何か」「これといって〜」という漠然とした不特定のもの（虚指用法）を表すことができます。例えば「周末你有什么打算吗？」（週末、何か予定はありますか？）では、具体的な答えを厳密に問うのではなく「何かしらの計画があるか」を柔らかく尋ねています（ほかにも「我想吃点儿什么」＝何か食べたい、「他好像在找什么」＝彼は何かを探しているようだ、など）。日本語の「何か」「どんな〜でも」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋（点儿 ＋ ）什么 ＋（名詞）＋（吗 / 呢）",
+      "examples": [
+        {
+          "translation": "週末、何か予定はありますか？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_1_168": {
+      "title": "수사 + (수사 + 1) + 양사 + 명사 (인접한 두 수사를 이용한 개수 표현: 한둘, 서넛 등)",
+      "shortExplanation": "연속하는 두 수사를 나란히 놓고 양사와 명사를 연결하여 대략적인 수량(개수, 概數)을 나타냅니다.",
+      "longExplanation": "중국어에서 대략적인 수량이나 어림수를 나타낼 때, 크기가 인접한 연속된 두 수사를 나란히 배열하여 씁니다(예: ‘一两’ - 한둘/하나둘, ‘两三’ - 두셋, ‘三四’ - 서넛, ‘七八’ - 일고여덟 등). 특히 ‘1’과 ‘2’가 결합할 때 ‘2’는 ‘二’ 대신 ‘两’을 써서 반드시 ‘一两’으로 표현해야 합니다(*一二는 불가). 십 단위에서도 ‘二三十’(이삼십), ‘七八十’(칠팔십)과 같이 응용됩니다. 한국어의 '한두 개', '서너 시간', '두세 명'과 같은 어림수 표현에 대응합니다.",
+      "formation": "수사 + (수사 + 1) + 양사 + 명사",
+      "examples": [
+        {
+          "translation": "저는 매일 한두 시간씩 중국어를 공부합니다."
+        }
+      ]
+    },
+    "zh_把了_169": {
+      "title": "把 + 목적어 + 동사 + 了 (처치문: 목적어를 ~했다, ~해 버렸다)",
+      "shortExplanation": "개사 '把'를 사용하여 동작의 대상(목적어)을 동사 앞으로 이끌어내고, 뒤에 '了'를 붙여 해당 대상을 어떻게 처치·완료했는지를 나타냅니다.",
+      "longExplanation": "‘把’자문(처치문)은 개사 ‘把’를 통해 동작의 구체적인 대상(이미 특정된 목적어)을 동사 앞으로 끌어와, 그 대상을 어떻게 처리하고 어떤 변화나 결과가 생겼는지를 강조하는 문형입니다. ‘把’자문의 동사는 단독으로 쓰일 수 없으며 뒤에 반드시 기타 성분이 와야 하는데, 이 패턴에서는 완료나 변화를 나타내는 ‘了’가 결합하여 ‘목적어를 ~했다 / ~해 버렸다’라는 완료된 사태를 표현합니다(예: ‘我把钱包忘了’ - 지갑을 깜빡 잊어버렸다). 한국어의 '~을/를 ...했다 / ...해 버렸다'에 대응합니다.",
+      "formation": "주어 + 把 + 목적어(특정 대상) + 동사 + 了",
+      "examples": [
+        {
+          "translation": "저는 지갑을 깜빡 잊어버렸어요."
+        }
+      ]
+    },
+    "zh_不要别没把了_170": {
+      "title": "不要 / 别 / 没 + 把 + 목적어 + 동사 + (了) (‘把’자문의 부정형: ~을/를 ...하지 마라, ~을/를 ...하지 않았다)",
+      "shortExplanation": "부정부사 '别', '不要'(금지: ~하지 마라)나 '没'(미완료: ~하지 않았다)을 개사 '把' 앞에 놓아, '把'자문의 동작을 금지하거나 어떤 처치가 행해지지 않았음을 나타냅니다.",
+      "longExplanation": "‘把’자문에서 부정의 의미를 나타낼 때, 부정부사(‘别’, ‘不要’, ‘没/没有’ 등)는 반드시 개사 ‘把’ 바로 앞에 위치해야 하며, 동사 앞에 둘 수 없습니다. 금지나 경고를 나타내는 ‘别把 / 不要把 + 목적어 + 동사 + 了’ 구조에서 문말의 ‘了’는 바람직하지 않은 결과나 사태가 일어나는 것을 미연에 방지하도록 경각심을 일깨우는 어기조사로 쓰입니다(예: ‘别把手机忘了’ - 휴대폰 잊어버리지 마라). 한편 ‘没把……’는 과거에 어떤 처치 행위가 이루어지지 않았거나 결과에 도달하지 못했음을 진술합니다. 한국어의 '~을/를 ...하지 마라', '~을/를 ...하지 않았다'에 해당합니다.",
+      "formation": "주어 + 不要 / 别 / 没 + 把 + 목적어 + 동사 + (了 / 보어)",
+      "examples": [
+        {
+          "translation": "휴대폰 잊어버리지 마."
+        }
+      ]
+    },
+    "zh_左右_171": {
+      "title": "수사(+ 양사 + 명사) / 시점 + 左右 (어림수·대략의 시점 표현: ~쯤, ~가량, ~전후)",
+      "shortExplanation": "수량사나 시각, 나이 등의 뒤에 '左右'를 붙여 기준 수치의 앞뒤를 아우르는 어림수(~쯤, ~가량, ~전후)를 나타냅니다.",
+      "longExplanation": "‘左右(zuǒyòu)’는 개수(대략의 수량)나 어림잡은 시점을 나타내는 어휘로, 수량사나 시각, 연령, 금액 등의 바로 뒤에 놓입니다. 제시된 수치를 기준으로 그보다 약간 많거나 적음을 나타내며, 우리말의 ‘~쯤’, ‘~가량’, ‘~전후’에 해당합니다(예: ‘十点左右’ - 10시쯤, ‘三十岁左右’ - 서른 살가량, ‘一百块左右’ - 백 위안 안팎). 한국어와 마찬가지로 반드시 수량 표현의 뒤에 위치한다는 특징이 있습니다.",
+      "formation": "수사(+ 양사 + 명사) / 시점 + 左右",
+      "examples": [
+        {
+          "translation": "주말에 저는 보통 10시쯤 일어납니다."
+        }
+      ]
+    },
+    "zh_就VA_172": {
+      "title": "就 + 동사 / 형용사 (부사 '就': 예상보다 빠르고 쉬움을 나타냄: 벌써 ~, ~하자마자 곧 ~)",
+      "shortExplanation": "부사 '就'를 동사나 형용사 앞에 사용하여, 동작이나 사건이 화자의 기대보다 일찍, 빠르게, 혹은 수월하게 이루어짐을 나타냅니다.",
+      "longExplanation": "중국어 부사 ‘就(jiù)’는 동사나 형용사 앞에 놓여, 어떤 동작이나 사태의 발생이 말하는 이의 예상이나 기준보다 ‘이르고, 빠르고, 수월하며, 시간이 적게 걸린다’는 주관적 평가를 나타냅니다. 시간사나 적은 수량 뒤에 붙어 ‘벌써 ~했다’, ‘~만에 곧바로 ~하다’라는 의미를 강조합니다(예: ‘坐飞机一个小时就到了’ - 비행기를 타면 1시간 만에 바로 도착한다, ‘他七点就来了’ - 그는 7시에 벌써 왔다). 이는 일이 늦고 오래 걸리며 어렵게 성사됨을 나타내는 부사 ‘才’와 완벽한 대조를 이룹니다.",
+      "formation": "시간 / 조건 + 就 + 동사 / 형용사 + (목적어 / 了)",
+      "examples": [
+        {
+          "translation": "비행기를 타면 한 시간 만에 도착해요."
+        }
+      ]
+    },
+    "zh_才VA_173": {
+      "title": "才 + 동사 / 형용사 (부사 '才': 예상보다 늦고 더딤을 나타냄: 겨우 ~, 이제야 ~)",
+      "shortExplanation": "부사 '才'를 동사나 형용사 앞에 사용하여, 동작이나 사태가 화자의 기대보다 늦게, 더디게, 혹은 힘들게 일어남을 나타냅니다.",
+      "longExplanation": "중국어 부사 ‘才(cái)’는 동사나 형용사 앞에 놓여, 동작이나 사태의 발생이 말하는 이의 기준이나 기대보다 ‘늦고, 오래 걸리며, 힘겹게 성사되었다’는 주관적 인식을 드러냅니다(예: ‘你怎么才来？’ - 왜 이제야 온 거야?, ‘做了五个小时才做完’ - 5시간이나 걸려서야 겨우 다 끝냈다). 말하는 이의 답답함, 불만, 혹은 안도감 등이 담겨 있습니다. 주의할 점으로, ‘就’와 달리 ‘才’가 쓰인 술어 뒤에는 원칙적으로 완료를 나타내는 조사 ‘了’를 붙이지 않습니다. 한국어의 '겨우 ~하다', '이제서야 비로소 ~하다'에 대응합니다.",
+      "formation": "주어 / 시간(늦은 시점) + 才 + 동사 / 형용사 + (목적어)",
+      "examples": [
+        {
+          "translation": "어째서 이제야 온 거야? (왜 이렇게 늦었어?)"
+        }
+      ]
+    },
+    "zh_把OV在到PLACE_174": {
+      "title": "把 + 목적어 + 동사 + 在 / 到 + 장소 (‘把’자문 + 장소 결과보어: 목적어를 장소에 ~해 두다/이동시키다)",
+      "shortExplanation": "'把'자문과 '在/到 + 장소' 보어를 결합하여, 동작을 통해 목적어를 특정 장소에 머무르게 하거나 도달·이동시킨 결과를 나타냅니다.",
+      "longExplanation": "‘把 + 목적어 + 동사 + 在/到 + 장소’는 ‘把’자문(처치문)에서 가장 널리 쓰이는 기본 패턴 중 하나입니다. 동작이 목적어에 가해진 결과 그 대상이 어디에 안착하거나 도달했는지(장소적 귀착점)를 ‘在/到 + 장소’로 나타냅니다. ‘在 + 장소’는 동작 후 대상이 그 장소에 머물거나 정착함을 강조하고(예: ‘把照片放在包里’ - 사진을 가방 안에 넣다/두다), ‘到 + 장소’는 대상이 목적지까지 도달·이동했음을 강조합니다(예: ‘把行李送到房间’ - 짐을 방으로 배달하다). 문말에는 흔히 완료를 나타내는 ‘了’가 결합합니다.",
+      "formation": "주어 + 把 + 목적어 + 동사 + 在 / 到 + 장소 + (了)",
+      "examples": [
+        {
+          "translation": "제가 사진을 네 가방 안에 넣어 두었어."
+        }
+      ]
+    },
+    "zh_VmotionV来去_175": {
+      "title": "동사 + 이동동사 + 来 / 去 (복합방향보어: ~해 오다 / ~해 가다)",
+      "shortExplanation": "본동사 뒤에 방향동사(上, 下, 进, 出, 回, 过, 起)와 '来/去'가 결합한 복합방향보어를 두어, 동작이 향하는 구체적인 이동 방향(화자 쪽으로 오는지, 멀어지는지)을 나타냅니다.",
+      "longExplanation": "복합방향보어는 7개의 방향동사(上, 下, 进, 出, 回, 过, 起) 뒤에 ‘来’(화자에게 가까워짐) 또는 ‘去’(화자에게서 멀어짐)를 붙여 만든 13가지 조합(上来/上去, 下来/下去, 进来/进去, 出来/出去, 回来/回去, 过来/过去, 起来)을 본동사 뒤에 보어로 결합하는 문법입니다. 동작을 행함에 따른 물리적인 이동의 궤적과 방향을 나타냅니다(예: ‘送过去’ - 건네어 보내다/갖다 주다, ‘跑过来’ - 뛰어 이쪽으로 오다, ‘拿出来’ - 꺼내어 오다). 한국어의 '~해 오다', '~해 가다', '~해 들어가다/나오다' 등에 대응합니다.",
+      "formation": "주어 + 동사 + (上 / 下 / 进 / 出 / 回 / 过 / 起) + 来 / 去 + (목적어)",
+      "examples": [
+        {
+          "translation": "내일 우리 다 같이 선물을 건네주러 갑시다."
+        }
+      ]
+    },
+    "zh_一边V1一边V2_176": {
+      "title": "一边 + 동사 1 + 一边 + 동사 2 (동시 동작: ~하면서 ~하다)",
+      "shortExplanation": "'一边……一边……'을 사용하여 동일한 주어가 두 가지 동작을 동시에 병행하여 진행함을 나타냅니다.",
+      "longExplanation": "‘一边 + 동사 1 + 一边 + 동사 2’는 같은 주체가 두 가지 동작을 동시에 진행하고 있음을 나타내는 대표적인 병렬 구문입니다. 구어에서는 ‘一’를 생략하고 ‘边……边……’으로 자주 쓰입니다(예: ‘他一边唱歌一边跳舞’ - 그는 노래를 부르면서 춤을 춘다, ‘一边看电视一边吃饭’ - 텔레비전을 보면서 밥을 먹다). 두 동작이 시간상으로 겹쳐서 일어남을 뜻하며, 한국어의 '~하면서 ~하다'에 대응합니다.",
+      "formation": "주어 + 一边 + 동사 1 + 一边 + 동사 2",
+      "examples": [
+        {
+          "translation": "그는 노래를 부르면서 춤을 춥니다."
+        }
+      ]
+    },
+    "zh_把OVresult_177": {
+      "title": "把 + 목적어 + 동사 + 결과보어 (‘把’자문 + 결과보어: 목적어를 ~하여 …한 상태로 만들다)",
+      "shortExplanation": "'把'자문의 동사 뒤에 결과보어(干净, 完, 好, 坏, 破 등)를 결합하여, 동작의 영향으로 목적어가 어떤 최종적인 결과나 상태에 도달했는지를 나타냅니다.",
+      "longExplanation": "‘把’자문(처치문)에서 동사 뒤에 결과보어를 수반하는 구조는 처치의 목적과 결과를 분명히 밝혀주는 가장 전형적인 형태입니다. ‘把’자문에서는 동사가 단독으로 쓰이지 못하고 처치의 결과적 상태를 반드시 보충해야 하므로, 형용사나 동사로 된 결과보어(‘干净’ - 깨끗하게, ‘完’ - 다, ‘好’ - 잘/말끔히, ‘坏’ - 망가지게 등)가 동사 바로 뒤에 붙습니다(예: ‘我把衣服洗干净了’ - 옷을 깨끗이 빨았다, ‘他把作业做完了’ - 그는 숙제를 다 마쳤다). 한국어의 '~을/를 ...하여 ...하게 만들다'에 대응합니다.",
+      "formation": "주어 + 把 + 목적어 + 동사 + 결과보어 + (了)",
+      "examples": [
+        {
+          "translation": "저는 옷을 깨끗하게 빨았어요."
+        }
+      ]
+    },
+    "zh_把OVdirection_178": {
+      "title": "把 + 목적어 + 동사 + 방향보어 (‘把’자문 + 방향보어: 목적어를 ~한 방향으로 이동시키다)",
+      "shortExplanation": "'把'자문의 동사 뒤에 방향보어(过来, 过去, 进来, 出去, 回去 등)를 연결하여, 동작을 가함으로써 목적어가 어느 방향으로 공간 이동했는지를 나타냅니다.",
+      "longExplanation": "‘把 + 목적어 + 동사 + 방향보어’ 구문은 처치 동작의 결과로 목적어가 공간 내에서 어느 방향으로 이동했는지를 구체적으로 밝히는 표현입니다. 동사 뒤에 단순 또는 복합 방향보어가 결합하여, 동작의 영향으로 목적어가 화자 쪽으로 다가오거나(‘来’) 멀어지는(‘去’) 등의 이동 방향을 나타냅니다(예: ‘他把水果拿过来了’ - 그는 과일을 이쪽으로 가져왔다, ‘把行李搬上去’ - 짐을 위로 옮기다). 한국어의 '~을/를 ...해 오다/가다/내보내다' 등에 대응합니다.",
+      "formation": "주어 + 把 + 목적어 + 동사 + 방향보어 + (了)",
+      "examples": [
+        {
+          "translation": "그는 과일을 이쪽으로 가져왔어요."
+        }
+      ]
+    },
+    "zh_先再又然后_179": {
+      "title": "先……再 / 又……然后…… (동작 순서 표현: 먼저 ~하고, 이어서/다시 ~한 뒤, 그다음에 ~하다)",
+      "shortExplanation": "'先……再/又……然后……'을 사용하여 시간의 흐름에 따른 일련의 동작이나 사건의 순서를 순차적으로 나열합니다.",
+      "longExplanation": "이 구문은 여러 동작이 시간적 선후 관계에 따라 연속적으로 일어나는 과정을 논리적으로 설명할 때 쓰입니다. ‘先’은 맨 처음 이루어지는 동작(우선/먼저)을 이끌고, ‘再’나 ‘又’는 그에 이어지는 다음 동작을 연결합니다(아직 일어나지 않은 계획이나 미래의 순서에는 ‘再’를, 과거에 이미 일어난 연속 행위에는 ‘又’를 씁니다). 그리고 ‘然后’는 그 뒤에 이어지는 최종적 단계나 결과(그 다음에/그런 후에)를 나타냅니다. 마지막 절에 ‘才’를 더하면 긴 과정을 거쳐 ‘비로소 ~하게 되었다’는 뉘앙스가 강조됩니다.",
+      "formation": "주어 + 先 + 동사 1 / 절 1 + 再 / 又 + 동사 2 / 절 2 + 然后 + (才 + ) 동사 3 / 절 3",
+      "examples": [
+        {
+          "translation": "저는 먼저 버스를 탔고, 또 지하철을 탄 뒤에야 샤오강의 집에 도착했습니다."
+        }
+      ]
+    },
+    "zh_除了N以外_180": {
+      "title": "除了 + 명사 + 以外 (제외 표현: ~을/를 제외하고는, ~ 말고는)",
+      "shortExplanation": "'除了……以外'를 사용하여 특정 명사를 전체에서 제외하고, '그것을 제외한 나머지는 모두 ~하다'라는 배제·제외의 의미를 나타냅니다.",
+      "longExplanation": "‘除了 + 명사 + 以外’(‘以外’는 흔히 생략 가능)는 어떤 인물이나 대상을 전체 범위에서 빼내는 ‘제외’를 나타내는 대표적인 개사 구문입니다. 뒷부분에는 보통 ‘都’(모두), ‘全’(전부), ‘别的’(다른 것) 등의 어휘가 호응하여, 해당 명사 하나를 제외하고는 나머지가 모두 일정한 상태나 동작에 해당함을 진술합니다(예: ‘除了这个汉字以外，别的我都认识’ - 이 한자를 제외하고는 다른 것은 내가 다 안다, ‘除了小王以外，大家都去了’ - 샤오왕 말고는 모두 갔다). 한국어의 '~을/를 제외하고', '~ 말고는'에 대응합니다.",
+      "formation": "除了 + 명사 + 以外, (주어 + ) 都 / 全 / 别的……",
+      "examples": [
+        {
+          "translation": "이 한자 외에는 다른 것은 제가 다 압니다."
+        }
+      ]
+    },
+    "zh_除了以外还_181": {
+      "title": "除了……(以外)，还 / 也…… (추가·누가 표현: ~ 외에도, 게다가 ~도)",
+      "shortExplanation": "'除了……(以外)'에 부사 '还'나 '也'를 호응시켜, '기존의 것 외에 추가로 다른 것도 포함된다'라는 첨가·추가의 의미를 나타냅니다.",
+      "longExplanation": "‘除了……(以外)，还/也……’는 ‘~을 제외하고 모두’를 뜻하는 배제 구문(‘除了……都’)과 달리, ‘기존의 것 외에도 덧붙여 다른 것도 그러하다’라는 첨가·누가(累加)를 나타냅니다. 앞 절에서 제시한 내용에 더하여 뒷 절에서 부사 ‘还’(더, 또)나 ‘也’(도)를 사용하여 또 다른 사실이나 능력을 추가합니다(예: ‘上网除了看新闻以外，还可以听音乐’ - 인터넷은 뉴스를 보는 것 외에도 음악을 들을 수도 있다, ‘他除了会说汉语以外，还会说日语’ - 그는 중국어를 할 줄 아는 것 외에 일본어도 할 줄 안다). 한국어의 '~ 외에도 (더) ~하다', '~뿐만 아니라 ~도'에 대응합니다.",
+      "formation": "除了 + 명사 / 동사 / 절 + (以外), (주어 + ) 还 / 也 + 동사 / 술어",
+      "examples": [
+        {
+          "translation": "인터넷은 뉴스를 보는 것 외에도 음악을 들을 수도 있습니다."
+        }
+      ]
+    },
+    "zh_什么_182": {
+      "title": "什么 (의문대명사의 허지·부정 용법: 무언가, 무슨 ~라도, 어떤)",
+      "shortExplanation": "의문대명사 '什么'를 구체적인 질문이 아닌, 막연한 불특정 대상('무언가', '어떤 것')을 가리키는 허지(虛指) 용법으로 사용합니다.",
+      "longExplanation": "중국어 의문대명사 ‘什么’는 ‘무엇’을 묻는 직접적인 의문사 외에도, 불특정하거나 막연한 대상을 가리키는 허지(虛指) 또는 부정(不定) 용법으로 자주 쓰입니다. 의문문이나 완곡한 평서문에서 구체적인 대상을 굳이 밝히지 않고 ‘무언가’, ‘무슨 ~라도’의 의미로 부드럽게 쓰입니다(예: ‘周末你有什么打算吗？’ - 주말에 무슨 계획이라도 있으세요?, ‘我想喝点儿什么’ - 나 뭐 좀 마시고 싶어, ‘他好像在找什么’ - 그는 뭔가를 찾고 있는 것 같다). 한국어의 '무언가', '어떤', '무슨'에 대응합니다.",
+      "formation": "주어 + 동사 + (点儿 + ) 什么 + (명사) + (吗 / 呢)",
+      "examples": [
+        {
+          "translation": "주말에 무슨 계획이라도 있으세요?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_1_168": {
+      "title": "数词 +（数词 + 1）+ 量词 + 名词（相邻两个数字连用表示概数）",
+      "shortExplanation": "将两个相邻的基数词连在一起使用，后面接量词和名词，用来表示大概的、不确定的数量。",
+      "longExplanation": "在汉语中，相邻两个数词连用是表达概数（不确定数量）的最常用方法之一（如“一两”、“两三”、“三四”、“五六”、“七八”、“八九”）。需要特别注意的是，当数字“1”和“2”连用时，数字“2”必须使用“两”，说成“一两”（如“一两本书”、“一两个小时”），而不能说成*“一二”。在十位数或百位数中也可以连用，如“二三十”、“七八十”。",
+      "formation": "数词 +（数词 + 1）+ 量词 + 名词",
+      "examples": [
+        {
+          "translation": "我每天学习一两个小时汉语。"
+        }
+      ]
+    },
+    "zh_把了_169": {
+      "title": "把 + 宾语 + 动词 + 了（“把”字句：表示对某事物施加动作并产生完成结果）",
+      "shortExplanation": "用介词“把”将动作的对象（确定的宾语）提前到动词前面，并在句尾或动词后加“了”，表示对该事物进行了处置并已产生结果。",
+      "longExplanation": "“把”字句是汉语中用于表达“处置”意义的核心句式。它通过介词“把”将受事成分（通常是已知或特指的名词短语）置于谓语动词之前，强调主语对该事物的支配、处置以及使其发生的变化或产生的结果。“把”字句中的动词不能单独出现，后面必须带有补充说明成分；在此结构中，加上动态或语气助词“了”，表示动作已经完成或某种结果状态已经出现（如“我把钱包忘了”、“他把作业写完了”）。",
+      "formation": "主语 + 把 + 确定的宾语 + 动词 + 了",
+      "examples": [
+        {
+          "translation": "我把钱包忘了。"
+        }
+      ]
+    },
+    "zh_不要别没把了_170": {
+      "title": "不要 / 别 / 没 + 把 + 宾语 + 动词 +（了）（“把”字句的否定与禁止句式）",
+      "shortExplanation": "否定副词“别”、“不要”（表示禁止）或“没”（表示未发生）必须放在介词“把”的前面，用以制止动作或说明未对事物进行处置。",
+      "longExplanation": "在“把”字句中，如果需要表达否定或禁止，否定副词（如“别”、“不要”、“没/没有”）必须一律置于介词“把”之前，绝对不能放在谓语动词前。在祈使句“别把/不要把……动词 + 了”中，句尾的“了”起到提示、警告的作用，用于告诫对方防止发生某种不良后果（如“别把手机忘了”、“不要把杯子碰倒了”）。若用“没把……”，则用于陈述过去未曾实施该处置行为或未达到某种结果。",
+      "formation": "主语 + 不要 / 别 / 没 + 把 + 确定的宾语 + 动词 +（了 / 补语）",
+      "examples": [
+        {
+          "translation": "别把手机忘了。"
+        }
+      ]
+    },
+    "zh_左右_171": {
+      "title": "数词（+ 量词 + 名词）/ 时间词 + 左右（概数词：表示数量或时间的大致范围）",
+      "shortExplanation": "“左右”放在数词、数量短语或时间词之后，表示在某一基准数字上下浮动的大致数量或时间（相当于“前后”、“上下”）。",
+      "longExplanation": "“左右”是汉语中表示概数的常用词，必须后置于具体的数字、数量短语、年龄、价格或时间点之后，用以说明实际数值在该基准数字的上下不远处（如“十点左右”表示10点前后，“三十岁左右”表示30岁上下，“五百块左右”表示大约五百元）。它与前置的“大约”、“大概”在位置上有所不同，但可以结合使用以强化估计语气（如“大概十点左右”）。",
+      "formation": "数词（+ 量词 + 名词）/ 时间词 + 左右",
+      "examples": [
+        {
+          "translation": "周末我一般十点左右起床。"
+        }
+      ]
+    },
+    "zh_就VA_172": {
+      "title": "就 + 动词 / 形容词（时间副词：表示动作发生得早、快、顺利或时间短）",
+      "shortExplanation": "副词“就”置于动词或形容词前，表示动作或事情发生得早、速度快、进行顺利，或者所耗费的时间比预期的要短。",
+      "longExplanation": "在汉语中，副词“就”常用于动词谓语前，带有说话人主观评价色彩，用来强调事情发生得“早、快、容易、顺利”，或者耗费的时间很少（如“坐飞机一个小时就到了”、“他早上六点就起床了”）。它常与表示短时间、年轻或小数量的词语搭配，与强调动作发生得“晚、慢、费时、艰难”的副词“才”形成强烈的语义对应。",
+      "formation": "时间 / 条件 + 就 + 动词 / 形容词 +（宾语 / 了）",
+      "examples": [
+        {
+          "translation": "坐飞机一个小时就到了。"
+        }
+      ]
+    },
+    "zh_才VA_173": {
+      "title": "才 + 动词 / 形容词（时间副词：表示动作发生得晚、慢、费时或不容易）",
+      "shortExplanation": "副词“才”置于动词或形容词前，表示动作或事情发生得迟缓、耗费时间长、难度大，比说话人预期的要晚得多。",
+      "longExplanation": "在汉语中，副词“才”常用于动词谓语前，带有说话人主观评价色彩，用来强调事情发生得“晚、慢、艰难、费时”（如“你怎么才来？”表示觉得对方来得太晚了；“学了三年才学会”表示学得很不容易、耗时很长）。需要注意的是，句中含有表示动作发生得晚的“才”时，动词后面通常不能带表示完成的动态助词“了”（不能说成*“你怎么才来了”）。与副词“就”的早、快形成鲜明对照。",
+      "formation": "主语 / 偏晚的时间 + 才 + 动词 / 形容词 +（宾语）",
+      "examples": [
+        {
+          "translation": "你怎么才来？"
+        }
+      ]
+    },
+    "zh_把OV在到PLACE_174": {
+      "title": "把 + 宾语 + 动词 + 在 / 到 + 处所（“把”字句带处所补语：表示动作使事物处于或移动至某处）",
+      "shortExplanation": "在“把”字句中后接“在/到 + 处所”作为补语，表示通过该处置动作，使事物停留、固定在某处或转移到达了新的地点。",
+      "longExplanation": "“把 + 宾语 + 动词 + 在/到 + 处所”是“把”字句最常用的基本句型之一。谓语动词后带“在/到 + 处所”短语充当结果补语，说明由于动作的影响，受事对象在空间位置上发生了怎样的变化与归宿。“在 + 处所”侧重强调动作之后事物停留在某处、定位于某处（如“把照片放在你包里”、“把字写在黑板上”）；“到 + 处所”则侧重强调动作使事物位移至某目的地（如“把车开到学校”、“把信送到邮局”）。句尾常带“了”表示动作已产生此种位置结果。",
+      "formation": "主语 + 把 + 确定的宾语 + 动词 + 在 / 到 + 处所词 +（了）",
+      "examples": [
+        {
+          "translation": "我把照片放在你包里了。"
+        }
+      ]
+    },
+    "zh_VmotionV来去_175": {
+      "title": "动词 + 趋向动词 + 来 / 去（复合趋向补语：表示动作趋向说话人或离开说话人）",
+      "shortExplanation": "在谓语动词后连接趋向动词（上、下、进、出、回、过、起）与“来/去”构成的复合趋向补语，用以明确动作的具体位移方向。",
+      "longExplanation": "复合趋向补语由八个单音节趋向动词中的七个（上、下、进、出、回、过、起）分别与“来”或“去”组合而成（如“上来/上去”、“下来/下去”、“进来/进去”、“出来/出去”、“回来/回去”、“过来/过去”、“起来”）。放在谓语动词之后充当补语，表示动作带动人或事物移动的准确方向。使用“来”表示位移朝向说话人或说话人关注的基准点，使用“去”表示位移背离说话人或基准点（如“送过去”表示把礼物送到对方那里、“走过来”表示朝说话人走来）。",
+      "formation": "主语 + 动词 +（上 / 下 / 进 / 出 / 回 / 过 / 起）+ 来 / 去 +（宾语）",
+      "examples": [
+        {
+          "translation": "明天我们一起把礼物送过去。"
+        }
+      ]
+    },
+    "zh_一边V1一边V2_176": {
+      "title": "一边 + 动词1 + 一边 + 动词2（关联词：表示两个动作同时进行）",
+      "shortExplanation": "连用“一边……一边……”连接两个动词或动词短语，表示同一个主体在同一时间内同时进行两项不同的动作。",
+      "longExplanation": "“一边……一边……”是汉语中表示并列动作同时发生的经典关联结构。两个“一边”后面分别跟两个动词或动词短语，表明两种动作是在同一时间段内平行推进的（如“他一边唱歌一边跳舞”、“一边看书一边听音乐”）。在口语中，前面的数词“一”经常可以省略，简说为“边……边……”（如“边走边聊”）。",
+      "formation": "主语 + 一边 + 动词1 + 一边 + 动词2",
+      "examples": [
+        {
+          "translation": "他一边唱歌一边跳舞。"
+        }
+      ]
+    },
+    "zh_把OVresult_177": {
+      "title": "把 + 宾语 + 动词 + 结果补语（“把”字句带结果补语：表示动作使事物产生某种结果状态）",
+      "shortExplanation": "在“把”字句的谓语动词后接形容词或动词充当结果补语（如干净、完、好、破、坏等），表示动作处置使受事事物达到了明确的结果状态。",
+      "longExplanation": "“把”字句强调主语对客观事物的处置及其产生的影响，因此谓语动词后不能是单个动词，必须带有表示处置结果的补足成分。其中带结果补语（通常由形容词或动词充当，如“洗干净”、“吃完”、“修好”、“打破”）是“把”字句中最核心、最常见的句式之一。它精确地说明了动作施加于宾语之后，宾语呈现出何种新的性状、状态或结局（如“我把衣服洗干净了”、“他把信写好了”）。句末通常带有语气助词“了”。",
+      "formation": "主语 + 把 + 确定的宾语 + 动词 + 结果补语 +（了）",
+      "examples": [
+        {
+          "translation": "我把衣服洗干净了。"
+        }
+      ]
+    },
+    "zh_把OVdirection_178": {
+      "title": "把 + 宾语 + 动词 + 趋向补语（“把”字句带趋向补语：表示动作使事物产生空间位移）",
+      "shortExplanation": "在“把”字句的谓语动词后接单纯或复合趋向补语（如过来、过去、进来、出去、回来等），表示处置动作带动事物向特定方向发生了位移。",
+      "longExplanation": "“把 + 宾语 + 动词 + 趋向补语”是“把”字句中说明物体空间转移的标准结构。通过在动词后附加趋向补语，生动展现了动作对宾语施加影响后，事物随之产生的位置迁移与运动趋向（如“他把水果拿过来了”、“请把桌子搬出去”、“我把书带回去了”）。句末带“了”常表示位移行为已经完成。",
+      "formation": "主语 + 把 + 确定的宾语 + 动词 + 趋向补语 +（了）",
+      "examples": [
+        {
+          "translation": "他把水果拿过来了。"
+        }
+      ]
+    },
+    "zh_先再又然后_179": {
+      "title": "先……再 / 又……然后……（承接复句：表示动作进行的先后时间顺序）",
+      "shortExplanation": "连用“先……再/又……然后……”按照时间先后次序叙述一系列相继发生的动作或步骤（表示“首先……接着……随后……”）。",
+      "longExplanation": "“先……再/又……然后……”是汉语中用于表达事件时间先后承接关系的多重关联句式。“先”标示最先发生的第一阶段动作；“再”或“又”引出承接的第二阶段动作（其中“再”多用于未发生的事情或将来的安排，而“又”多用于已完成的过去连续经历）；“然后”则引出最后阶段的动作或结果。若在最后分句加上副词“才”，则进一步凸显出经过前面诸多周折后最终得以实现的语气（如“我先坐了公共汽车，又坐了地铁，然后才到小刚家”）。",
+      "formation": "主语 + 先 + 动词1 / 分句1 + 再 / 又 + 动词2 / 分句2 + 然后 +（才 + ）动词3 / 分句3",
+      "examples": [
+        {
+          "translation": "我先坐了公共汽车，又坐了地铁，然后才到小刚家。"
+        }
+      ]
+    },
+    "zh_除了N以外_180": {
+      "title": "除了 + 名词 + 以外（介词短语：表示除外，排除特定对象）",
+      "shortExplanation": "用“除了……以外”把特定的人或事物排除在总体之外，后文常与“都”、“全”或“别的”呼应，表示“除了此项之外，其余皆同”。",
+      "longExplanation": "“除了 + 名词 + 以外”是汉语中表达“排除”概念的核心介词框架（口语中“以外”常可省略）。它将介词引出的名词成分从叙述的总范围中单独剔除出来，后半句通常使用“都”、“全”或代词“别的”来进行总括，用以表明除该特定成分以外，总体中的其余所有成员都具备某种相同的特征或情况（如“除了这个汉字以外，别的我都认识”、“除了星期天以外，每天都要上班”）。需注意与表示附加累加的“除了……还/也……”区分开来。",
+      "formation": "除了 + 名词 + 以外，（主语 + ）都 / 全 / 别的……",
+      "examples": [
+        {
+          "translation": "除了这个汉字以外，别的我都认识。"
+        }
+      ]
+    },
+    "zh_除了以外还_181": {
+      "title": "除了……（以外），还 / 也……（递进累加复句：表示除某项之外，还有其它）",
+      "shortExplanation": "用“除了……（以外）”与副词“还”或“也”呼应，表示在已有的人事物或情况之外，再加上另外的人事物（表示“不但……而且……”）。",
+      "longExplanation": "“除了……（以外），还/也……”是汉语中表达累加补充关系的常用关联句式，其语用功能在于“合二为一、在此之外另有增加”。它与表示单纯排除的“除了……都……”有着本质区别：后者是排他性的，而前者则是包容递进性的。前半句提出一个既有的基准事物，后半句用“还”或“也”引出补充加入的另一个事物或行为（如“上网除了看新闻以外，还可以听音乐”、“他除了会打篮球，还会踢足球”）。相当于“不仅……而且……”。",
+      "formation": "除了 + 名词 / 动词 / 分句 +（以外），（主语 + ）还 / 也 + 动词 / 谓语",
+      "examples": [
+        {
+          "translation": "上网除了看新闻(以外)，还可以听音乐。"
+        }
+      ]
+    },
+    "zh_什么_182": {
+      "title": "什么（疑问代词的不定指/虚指用法：表示不确定或无须说出的事物）",
+      "shortExplanation": "疑问代词“什么”不用于直接提问，而是用来指代不确定、不具体或不必明说的人或事物（相当于“某种”、“什么东西”）。",
+      "longExplanation": "“什么”除了充当疑问代词表示特指提问（“这是什么？”）之外，在汉语口语中经常用作虚指（非疑问用法）。用于疑问句或陈述句中，指代不确定、模棱两可或说话人不想/无需明确指出的事物，使语气委婉自然（如“周末你有什么打算吗？”表示询问是否有某种打算，而非直接质问；“我想买点儿什么”表示有消费意图但未确定具体商品；“你是不是有什么心事？”）。与连用“都/也”表示任指的结构有所区别。",
+      "formation": "主语 + 动词 +（点儿 + ）什么 +（名词）+（吗 / 呢）",
+      "examples": [
+        {
+          "translation": "周末你有什么打算吗？"
+        }
+      ]
+    }
+  }
+}

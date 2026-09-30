@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_总算_553": {
+      "title": "总算 (Phó từ: Cuối cùng cũng / Rốt cuộc cũng / Dù sao cũng)",
+      "shortExplanation": "Phó từ biểu thị sau một thời gian dài, nhiều khó khăn hoặc chờ đợi thì nguyện vọng cuối cùng cũng đạt được; hoặc trong hoàn cảnh chưa như ý thì đạt được kết quả an ủi; \"cuối cùng cũng\", \"rốt cuộc cũng\".",
+      "longExplanation": "“总算” (zǒngsuàn) là phó từ thường đứng trước vị ngữ động từ hoặc tính từ, biểu thị một kết quả hoặc nguyện vọng cuối cùng đã được thực hiện sau một khoảng thời gian dài, trải qua nhiều nỗ lực hoặc trắc trở. Từ này cũng biểu thị ý may mắn, giải tỏa hoặc cảm thấy an ủi khi đạt được một kết quả cơ bản chấp nhận được giữa hoàn cảnh chưa hoàn hảo. Khác với “终于” (nhấn mạnh tính tất yếu sau nỗ lực), “总算” thường mang sắc thái nhẹ nhõm, may mắn, trút được gánh nặng. Tương đương với \"cuối cùng cũng\", \"rốt cuộc cũng\", \"dù sao cũng... rồi\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (dàn / kěshì +) 总算 + Động từ / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Tuy khách sạn này không tốt lắm, nhưng cuối cùng cũng có một chỗ để ngủ rồi."
+        }
+      ]
+    },
+    "zh_V下来_554": {
+      "title": "Động từ + 下来 (Bổ ngữ xu hướng: Định hình / Cố định lại / Ổn định / Ghi nhận lại)",
+      "shortExplanation": "Bổ ngữ xu hướng biểu thị sự chuyển biến từ trạng thái vận động, biến đổi sang trạng thái cố định, ngưng đọng, ổn định hoặc được ghi chép, quyết định dứt khoát; \"lại\", \"xuống\".",
+      "longExplanation": "“下来” (xiàlai) ngoài ý nghĩa phương hướng không gian (hướng từ trên xuống người nói), còn là một bổ ngữ xu hướng có nhiều nghĩa phái sinh quan trọng trong ngữ pháp tiếng Hán. Khi đi sau các động từ như “定” (quyết định), “记” (ghi nhớ), “停” (dừng), “静” (yên tĩnh), “拍” (chụp ảnh), nó biểu thị: một sự vật hay trạng thái từ biến động, bất định chuyển sang cố định, ổn định, xác định dứt khoát (như “定下来” - chốt lại/quyết định xong, “静下来” - lắng dịu lại, “停下来” - dừng hẳn lại); hoặc biểu thị hành động ghi chép, lưu trữ thông tin (như “写下来” - viết lại, “记下来” - ghi chép lại). Tương đương với \"lại\", \"xuống\", \"xong\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 下来 (+ 了 / 吗)",
+      "examples": [
+        {
+          "translation": "Luận văn của bạn khoảng khi nào thì đăng? Đã quyết định chốt xong chưa?"
+        }
+      ]
+    },
+    "zh_舍得_555": {
+      "title": "舍得 (Động từ: Nỡ / Sẵn lòng bỏ ra / Không tiếc / Chịu chi)",
+      "shortExplanation": "Động từ biểu thị sẵn lòng hy sinh, bỏ ra hoặc cho đi tiền của, thời gian, đồ vật quý báu mà không cảm thấy xót xa hay tiếc nuối; \"nỡ\", \"không tiếc\", \"sẵn lòng\".",
+      "longExplanation": "“舍得” (shěde) là động từ tâm lý, cấu tạo từ “舍” (từ bỏ, cho đi) và “得”. Từ này biểu thị thái độ rộng lượng, hào phóng, sẵn sàng bỏ ra hoặc từ bỏ tiền của, công sức, thời gian hoặc những đồ vật yêu thích mà không tiếc nuối, xót của hay do dự (trái nghĩa với “舍不得” - không nỡ, tiếc rẻ). Thường dùng trong các câu hỏi lựa chọn, câu hỏi tu từ hoặc kết hợp với động từ khác như “舍得花钱” (sẵn lòng chi tiền), “舍得下功夫” (không tiếc công sức), “舍得放弃” (sẵn lòng buông bỏ). Tương đương với \"nỡ\", \"không tiếc\", \"sẵn lòng cho đi\", \"chịu chi\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 舍得 (+ Tân ngữ / Động từ + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Đem món đồ chơi bạn thích nhất tặng cho em nhỏ, bạn có nỡ không?"
+        }
+      ]
+    },
+    "zh_舍不得_556": {
+      "title": "舍不得 (Động từ: Tiếc / Không nỡ / Tiếc rẻ / Không đành lòng)",
+      "shortExplanation": "Động từ biểu thị vì yêu quý, trân trọng hoặc tiếc của mà không nỡ rời xa, không đành lòng từ bỏ hoặc không dám tiêu xài; \"không nỡ\", \"tiếc rẻ\", \"không đành lòng\".",
+      "longExplanation": "“舍不得” (shěbude) là dạng phủ định của “舍得”, mang ý nghĩa tâm lý rất phổ biến và sâu sắc trong tiếng Hán. Từ này biểu thị trạng thái cảm xúc luyến tiếc, xót xa, không đành lòng hoặc tiếc của khi phải chia tay người thân, rời xa nơi chốn gắn bó, hoặc khi phải bỏ ra tiền của, thời gian, công sức (như “舍不得花钱” - tiếc tiền, “舍不得离开” - không nỡ rời đi, “舍不得吃” - tiếc không dám ăn). Thường đi kèm trực tiếp với động từ hoặc mệnh đề chỉ hành động tiêu hao, chia ly. Tương đương với \"không nỡ\", \"tiếc\", \"tiếc rẻ\", \"không đành lòng\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 舍不得 (+ Tân ngữ / Động từ + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Có một số người không nỡ đem tiền tiêu vào những việc thú vị."
+        }
+      ]
+    },
+    "zh_从此_557": {
+      "title": "从此 (Phó từ: Kể từ đó / Từ đó trở đi / Kể từ đây)",
+      "shortExplanation": "Phó từ biểu thị lấy một thời điểm hoặc sự kiện cụ thể làm mốc khởi đầu, từ đó về sau mở ra một trạng thái hay quá trình mới; \"kể từ đó\", \"từ đó về sau\".",
+      "longExplanation": "“从此” (cóngcǐ) cấu tạo từ giới từ “从” (từ) và đại từ “此” (này, đây/đó), có vai trò như một phó từ liên kết thời gian, thường đứng ở đầu câu hoặc đầu phân câu. Từ này lấy một thời điểm, một biến cố hoặc một sự ngộ ra cụ thể làm ranh giới, biểu thị rằng từ mốc thời gian đó trở đi, một tình hình mới, thói quen mới hoặc chuỗi hành động kiên trì được bắt đầu và tiếp diễn liên tục (như “从此刻苦用功” - từ đó chăm chỉ dùi mài, “从此过上了幸福的生活” - từ đó sống cuộc đời hạnh phúc). Thường kết hợp với các từ ngữ chỉ kết cục như “最后” (cuối cùng), “终于” (rốt cuộc). Tương đương với \"từ đó\", \"từ đó về sau\", \"kể từ đấy\" trong tiếng Việt.",
+      "formation": "(Sự kiện / Mốc thời gian ，) 从此 + Chủ ngữ + Vị ngữ (hoặc: Chủ ngữ + 从此 + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Kể từ đó Lý Bạch chăm chỉ dùi mài, cuối cùng đã trở thành một nhà thơ vĩ đại."
+        }
+      ]
+    },
+    "zh_假设_558": {
+      "title": "假设…… (Liên từ giả thiết: Giả sử... / Giả dụ... / Nếu như...)",
+      "shortExplanation": "Liên từ biểu thị điều kiện giả định, dùng ở đầu phân câu để nêu ra một tình huống giả định nhằm suy xét kết quả hoặc phương án xử lý; \"giả sử\", \"giả dụ\".",
+      "longExplanation": "“假设” (jiǎshè) ở đây đóng vai trò là một liên từ nối các vế câu điều kiện giả thiết (đồng nghĩa với “假如”, “假使”, “如果”). Từ này đứng ở đầu mệnh đề thứ nhất để đặt ra một tình huống giả định chưa xảy ra trong thực tế (hoặc trái ngược với hiện thực) nhằm dẫn dắt người nghe cùng suy ngẫm, dự trù hậu quả hoặc bàn luận về đối sách ứng phó. Cuối phân câu giả thiết thường có thể đi kèm ngữ khí từ “的话” hoặc “呢”. Thường xuất hiện trong các bài luận, tình huống chất vấn hoặc suy đoán logic. Tương đương với \"giả sử\", \"giả dụ\", \"nếu như\", \"ví thử\" trong tiếng Việt.",
+      "formation": "假设 + Mệnh đề giả thiết (+ 的话 / 呢) ，(Chủ ngữ +) Kết quả / Câu hỏi ứng phó",
+      "examples": [
+        {
+          "translation": "Giả sử tiền của bạn tiêu hết rồi thì sao? Bạn phải làm thế nào đây?"
+        }
+      ]
+    },
+    "zh_假设_559": {
+      "title": "假设 (Danh từ: Giả thuyết / Giả định / Dự tưởng)",
+      "shortExplanation": "Danh từ biểu thị luận điểm, suy đoán hoặc giả định khoa học được đặt ra dựa trên cơ sở nhất định nhưng chưa được chứng minh hoàn toàn; \"giả thuyết\", \"giả định\".",
+      "longExplanation": "“假设” (jiǎshè) ở đây là một danh từ chỉ khái niệm trừu tượng trong học thuật hoặc tư duy logic. Từ này biểu thị một giả thuyết khoa học, một sự suy đoán có căn cứ hoặc tiền đề giả định được đưa ra nhằm giải thích các hiện tượng khách quan và chờ đợi thực nghiệm kiểm chứng tính đúng đắn (như “科学假设” - giả thuyết khoa học, “提出假设” - đưa ra giả thuyết, “证明假设” - chứng minh giả thuyết). Trong câu, từ này có thể làm chủ ngữ, tân ngữ hoặc định ngữ. Tương đương với \"giả thuyết\", \"giả định\" trong tiếng Việt.",
+      "formation": "Chủ ngữ / Định ngữ + 假设 (hoặc: 提出 / 证明 / 验证 + 假设)",
+      "examples": [
+        {
+          "translation": "Giả thuyết năm xưa của ngài đã được chứng minh là đúng đắn."
+        }
+      ]
+    },
+    "zh_堆_560": {
+      "title": "堆 (Danh từ / Hậu tố danh từ: Đống / Gò / Đụn / Bãi)",
+      "shortExplanation": "Danh từ hoặc hậu tố danh từ chỉ vật thể được chất đống, tích tụ lại thành từng đống, gò nhô cao; \"đống\", \"gò\", \"chồng\".",
+      "longExplanation": "“堆” (duī) khi làm danh từ thường chỉ một khối lượng lớn đồ vật, rác rưởi, đất cát được dồn lại thành đụn, đống nhô cao trên mặt đất. Từ này thường kết hợp trực tiếp sau tên gọi của sự vật để tạo thành danh từ ghép hoặc cụm danh từ chỉ nơi tích tụ vật liệu (như “土堆” - đống đất/gò đất, “草堆” - đống rơm rạ, “垃圾堆” - bãi rác/đống rác, “建筑材料堆” - đống vật liệu xây dựng). Ngoài ra, “堆” cũng là một lượng từ rất phổ biến (như “一堆书” - một đống sách). Trong câu ví dụ này, “堆” đóng vai trò là danh từ trung tâm chỉ đống vật liệu. Tương đương với \"đống\", \"chồng\", \"gò\" trong tiếng Việt.",
+      "formation": "Danh từ (đất / rơm / rác / vật liệu...) + 堆 (hoặc: Số từ + 堆 + Danh từ)",
+      "examples": [
+        {
+          "translation": "Bên cạnh nhà máy có một đống vật liệu xây dựng."
+        }
+      ]
+    },
+    "zh_堆_561": {
+      "title": "堆 (Động từ: Chất đống / Xếp đống / Chồng chất / Đùn lại)",
+      "shortExplanation": "Động từ biểu thị hành động dồn tụ, tích trữ hoặc xếp chồng nhiều đồ vật lên nhau tại một vị trí; \"chất đống\", \"xếp đống\", \"chồng chất\".",
+      "longExplanation": "“堆” (duī) khi làm động từ biểu thị hành vi gom góp, chất dồn hoặc xếp chồng nhiều vật thể lên nhau một cách lộn xộn hoặc thành cụm tại một địa điểm (như “堆雪人” - đắp người tuyết, “堆放货物” - chất xếp hàng hóa). Thường kết hợp với giới từ nơi chốn “在” tạo thành kết cấu “堆在 + Nơi chốn” (chất đống ở...), hoặc mang bổ ngữ kết quả “满” (đầy) tạo thành “堆满” (chất đầy). Từ này đôi khi mang sắc thái phàn nàn, nhắc nhở vì đồ đạc bừa bộn cản trở không gian. Tương đương với \"chất đống\", \"xếp đống\", \"đắp\", \"chất\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 堆 + 在 / 满 + Nơi chốn (hoặc: 堆 + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Những linh kiện này sao đều chất đống ở đây thế này?"
+        }
+      ]
+    },
+    "zh_不如NA_562": {
+      "title": "不如 + Danh từ + Tính từ (Cấu trúc so sánh: Không... bằng / Chẳng bằng)",
+      "shortExplanation": "Cấu trúc so sánh hơn kém biểu thị đối tượng được so sánh không đạt đến mức độ hoặc tiêu chuẩn của đối tượng làm chuẩn về một phương diện nào đó; \"không... bằng\", \"chẳng bằng\".",
+      "longExplanation": "“不如” (bùrú) cấu thành kết cấu so sánh phổ biến: “Chủ thể so sánh + 不如 + Đối tượng làm chuẩn (Danh từ) + Tính từ” (hoặc “Chủ thể so sánh + còn không bằng + Đối tượng làm chuẩn + Tính từ”). Trong cấu trúc này, danh từ đứng sau “不如” là đối tượng làm tiêu chuẩn so sánh, còn tính từ phía sau biểu thị thuộc tính hay phương diện được đem ra đo lường (như “高” - cao, “快” - nhanh, “大” - to). Cấu trúc này khẳng định chủ thể so sánh không thể bì kịp hoặc đạt tới mức độ của đối tượng làm chuẩn về phương diện đó. Thường đi kèm với phó từ “还” (còn) để tăng cường ngữ khí ngạc nhiên hoặc tương phản mạnh mẽ. Tương đương với \"không... bằng\", \"chẳng... bằng\", \"không... như\" trong tiếng Việt.",
+      "formation": "Chủ thể so sánh + (还 +) 不如 + Đối tượng so sánh (Danh từ) + Tính từ",
+      "examples": [
+        {
+          "translation": "Doanh thu của cả ba nhà cộng lại mà còn không cao bằng một mình nhà anh ấy."
+        }
+      ]
+    },
+    "zh_与其不如_563": {
+      "title": "(与其)……不如…… (Liên từ lựa chọn: Thay vì... chi bằng... / Thà rằng... còn hơn...)",
+      "shortExplanation": "Cặp liên từ so sánh lựa chọn, biểu thị sau khi cân nhắc giữa hai phương án thì quyết định bỏ phương án trước mà chọn phương án sau vì thỏa đáng hơn; \"thay vì... chi bằng...\", \"thà... còn hơn\".",
+      "longExplanation": "“(与其)……不如……” (yǔqí... bùrú...) là cấu trúc liên từ quan hệ thuộc loại câu phức lựa chọn thiên lệch trong ngữ pháp tiếng Hán. Cấu trúc này dùng để so sánh, cân nhắc kỹ lưỡng giữa hai hành vi hoặc sự lựa chọn. Vế trước “与其” dẫn ra phương án kém thỏa đáng, tẻ nhạt hoặc mang lại ít giá trị hơn; vế sau “不如” dẫn ra phương án được đánh giá là tốt hơn, bổ ích hơn, hợp lý hơn và được khuyến khích thực hiện. Trong khẩu ngữ, “与其” đôi khi có thể lược bỏ, chỉ dùng “不如”. Tương đương với \"thay vì... chi bằng...\", \"thà rằng... còn hơn...\" trong tiếng Việt.",
+      "formation": "(与其 +) Phương án thứ nhất ，不如 + Phương án thứ hai",
+      "examples": [
+        {
+          "translation": "Thay vì ở lì trong nhà, chi bằng ra ngoài đi dạo một chút."
+        }
+      ]
+    },
+    "zh_干脆V_564": {
+      "title": "干脆 + Động từ (Phó từ: Dứt khoát / Thẳng tay / Cứ dứt khoát làm... cho xong)",
+      "shortExplanation": "Phó từ làm trạng ngữ, biểu thị hành động dứt khoát, dứt điểm, không vòng vo do dự mà chọn biện pháp trực tiếp, triệt để nhất; \"dứt khoát\", \"thẳng tay\", \"chi bằng cứ... luôn\".",
+      "longExplanation": "“干脆” (gāncuì) ở đây làm phó từ đứng trước động từ vị ngữ (tương đương nghĩa với “索性”). Từ này biểu thị thái độ quyết đoán, dứt điểm, cắt đứt sự dùng dằng, lằng nhằng hoặc do dự để tiến hành một biện pháp nhanh gọn, trực diện và triệt để nhất nhằm giải quyết dứt điểm vấn đề (như “干脆放弃” - dứt khoát từ bỏ, “干脆直接去” - dứt khoát đi thẳng tới đó, “干脆辞职” - dứt khoát xin nghỉ việc). Thường xuất hiện trong lời khuyên, đề xuất hoặc khi đưa ra quyết sách lớn. Tương đương với \"dứt khoát\", \"thẳng tay\", \"chi bằng cứ... luôn cho xong\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (建议 / 想 +) 干脆 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Nhiều người thân bạn bè khuyên anh ấy dứt khoát chèn ép đánh sập luôn ba hiệu sách kia."
+        }
+      ]
+    },
+    "zh_干脆_565": {
+      "title": "干脆 (Tính từ: Dứt khoát / Sảng khoái / Thẳng thắn / Nhanh gọn)",
+      "shortExplanation": "Tính từ miêu tả lời nói, cử chỉ hoặc tác phong sảng khoái, dứt khoát, rành mạch, không hề do dự hay lòng vòng; \"dứt khoát\", \"sảng khoái\".",
+      "longExplanation": "“干脆” (gāncuì) khi làm tính từ dùng để miêu tả tính cách, thái độ, cách ăn nói hoặc cách xử lý công việc mau lẹ, rành mạch, rõ ràng, dứt khoát, không do dự, vòng vo hay lề mề (trái nghĩa với “拖泥带水” - dây dưa nhấc nhớm, “犹豫” - do dự). Thường làm vị ngữ, định ngữ (như “干脆的回答” - câu trả lời dứt khoát), hoặc đứng sau bổ ngữ trạng thái “得” (như “答应得很干脆” - nhận lời rất sảng khoái/dứt khoát). Tương đương với \"dứt khoát\", \"sảng khoái\", \"thẳng thắn\", \"nhanh gọn\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 得 + (很 / 非常 +) 干脆 (hoặc: 干脆的 + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tôi nhờ anh ấy giúp đỡ, anh ấy nhận lời rất dứt khoát."
+        }
+      ]
+    },
+    "zh_万一_566": {
+      "title": "万一 (Liên từ / Phó từ: Vạn nhất / Ngộ nhỡ / Chẳng may / Lỡ như)",
+      "shortExplanation": "Liên từ hoặc phó từ giả thiết, chỉ tình huống bất trắc ngẫu nhiên có xác suất xảy ra rất nhỏ nhưng có thể gây hậu quả nghiêm trọng; \"ngộ nhỡ\", \"chẳng may\", \"lỡ như\".",
+      "longExplanation": "“万一” (wànyī) là liên từ hoặc phó từ chỉ điều kiện giả định đặc biệt trong tiếng Hán. Từ này dùng để nêu ra một sự việc bất ngờ, ngẫu nhiên với xác suất xảy ra cực kỳ thấp (ví von \"một trong một vạn\"), nhưng nếu xảy ra thì sẽ mang lại tổn thất, rủi ro hoặc hậu quả bất lợi (như “万一下雨” - ngộ nhỡ trời mưa, “万一失败” - lỡ như thất bại). Thường đứng ở đầu mệnh đề điều kiện hoặc trước động từ vị ngữ, và mệnh đề kết quả phía sau thường đi kèm với “就” (thì), “可能” (có thể), “会” (sẽ). Tương đương với \"vạn nhất\", \"ngộ nhỡ\", \"chẳng may\", \"lỡ như\" trong tiếng Việt.",
+      "formation": "(Nếu như +) 万一 + Động từ / Mệnh đề ，(Chủ ngữ +) 就 / 会 / 有可能……",
+      "examples": [
+        {
+          "translation": "Nếu như trứng gà đều để chung vào một chiếc giỏ, ngộ nhỡ không cẩn thận thì có khả năng sẽ vỡ tan hết."
+        }
+      ]
+    },
+    "zh_万一_567": {
+      "title": "万一 (Danh từ: Điều bất trắc / Chuyện vạn nhất / Tình huống ngộ nhỡ)",
+      "shortExplanation": "Danh từ chỉ tình huống rủi ro, tai nạn hoặc sự cố bất ngờ tuy hiếm khi xảy ra nhưng có thể dẫn tới hậu quả khó lường; \"điều bất trắc\", \"chuyện vạn nhất\".",
+      "longExplanation": "“万一” (wànyī) ở đây được dùng như một danh từ trừu tượng chỉ một biến cố nguy hiểm, sự cố bất trắc hoặc trường hợp ngẫu nhiên rủi ro (thường dùng trong các thành ngữ, tục ngữ cố định như “不怕一万，就怕万一” - không sợ một vạn sự việc bình thường, chỉ sợ một điều bất trắc; hoặc “以防万一” - để phòng ngừa điều bất trắc). Trong câu, “万一” có thể làm tân ngữ cho động từ “怕” (sợ) hoặc giới từ “防” (phòng ngừa). Tương đương với \"điều bất trắc\", \"sự cố ngoài ý muốn\", \"chuyện ngộ nhỡ\", \"vạn nhất\" trong tiếng Việt.",
+      "formation": "(Không sợ một vạn ，chỉ sợ / Để phòng +) 万一 (hoặc: 万一 + xảy ra)",
+      "examples": [
+        {
+          "translation": "Không sợ một vạn tình huống bình thường, chỉ sợ một điều bất trắc xảy ra."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_总算_553": {
+      "title": "总算（副詞：やっとのことで・どうにかこうにか・何とか・ようやく）",
+      "shortExplanation": "長い時間や多くの困難・紆余曲折を経て、最終的に願望が達成されたこと、または不十分ながらも安堵できる結果に達したことを表します（「やっと」「どうにか」「何とか」）。",
+      "longExplanation": "「总算」（zǒngsuàn）は述語の動詞や形容詞の前に置かれる副詞です。長い時間や紆余曲折、多大な努力の末に願望や結果がようやく実現したことを表します。また、全体としては不満や不便が残る状況にあっても、最低限のラインはクリアできたことに対する安堵感や幸運に思う気持ち（「何とか〜できた」というニュアンス）を込めて使われることが非常に多いです。類義語の「终于」が客観的な成り行きや努力の末の結末に重きを置くのに対し、「总算」は話者のホッとした主観的な気持ちや安堵感が色濃く反映されます。日本語の「やっと」「ようやく」「どうにかこうにか」「何とか」に相当します。",
+      "formation": "主語 ＋（但 / 可是 ＋）总算 ＋ 動詞句 / 節",
+      "examples": [
+        {
+          "translation": "このホテルはあまり良くないけれど、どうにかこうにか寝る場所は確保できた。"
+        }
+      ]
+    },
+    "zh_V下来_554": {
+      "title": "動詞 ＋ 下来（方向補語の派生用法：定まる・固定する・落ち着く・記録にとどめる）",
+      "shortExplanation": "動作によって状態が動き・変化から固定・静止へと安定すること、または決着・記録されることを表す方向補語の引伸用法です（「〜して決まる」「〜しておく」「〜して落ち着く」）。",
+      "longExplanation": "「下来」（xiàlai）は本来の空間的な移動（高い所から話し手に向かって下りてくる）から派生し、様々な抽象的意味を表す方向補語として用いられます。主に以下のような意味を表します：① 動的な状態や不確定な状況から、静止・固定・安定した状態へと移行すること（例：「定下来」決まる・確定する、「静下来」落ち着く、「停下来」立ち止まる・止まる）。② 動作を通じて情報や事実を固定して保存・記録すること（例：「记下来」書き留める、「拍下来」写真に収める）。例文の「定下来」は日程や方針が確定・決定したことを示します。日本語の「〜して定まる」「〜して落ち着く」「〜して確定する」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 下来（＋ 了 / 吗）",
+      "examples": [
+        {
+          "translation": "あなたの論文は大体いつ頃発表されますか？もう決まりましたか？"
+        }
+      ]
+    },
+    "zh_舍得_555": {
+      "title": "舍得（動詞：惜しまない・手放すのを惜しまない・思い切って出す）",
+      "shortExplanation": "お金、時間、愛着のある物などを手放したり使ったりすることを惜しまず、進んで差し出す・決断することを表します（「惜しまない」「思い切って〜する」）。",
+      "longExplanation": "「舍得」（shěde）は、「捨てる・手放す」を意味する「舍」に可能補語の要素が結びついた心理動詞です。お金、労力、時間、あるいは愛着のある大切な物について、惜しい・もったいない・未練があると感じることなく、思い切って手放したり使ったりすることに対して前向き・容認できる態度を表します（対義語は「舍不得」）。「舍得花钱」（お金を惜しみなく使う）、「舍得下功夫」（労を惜しまず工夫を凝らす）などの形で動詞句を伴うことも多いです。疑問文「你舍得吗？」では「思い切って手放せる？ / 惜しくないの？」と問いかけるニュアンスになります。日本語の「惜しまない」「思い切って手放す」「気前よく出す」に相当します。",
+      "formation": "主語 ＋ 舍得（＋ 目的語 / 動詞句）",
+      "examples": [
+        {
+          "translation": "一番気に入っているおもちゃをよその子にあげるなんて、あなた惜しくないの？"
+        }
+      ]
+    },
+    "zh_舍不得_556": {
+      "title": "舍不得（動詞：手放すのが惜しい・名残惜しい・もったいなくて〜できない・心残りである）",
+      "shortExplanation": "愛着や未練があるため、別れを惜しんだり、お金や物を費やすのがもったいなくて思い切れない気持ちを表します（「名残惜しい」「惜しくて〜できない」）。",
+      "longExplanation": "「舍不得」（shěbude）は「舍得」の否定形にあたる心理動詞で、日常会話で極めて高い頻度で使われます。対象に対する強い愛着、慈しみ、あるいは物惜しみの気持ちから、人や場所と別れるのを名残惜しく思ったり（例：「舍不得离开」名残惜しくて離れられない）、金銭や貴重な物を消費することに強い抵抗・もったいなさを感じたりする（例：「舍不得吃」もったいなくて食べられない、「舍不得花钱」お金を惜しんで使えない）心情を表します。日本語の「名残惜しい」「もったいなくて〜できない」「手放すのが惜しい」「思い切れない」に相当します。",
+      "formation": "主語 ＋ 舍不得（＋ 目的語 / 動詞句）",
+      "examples": [
+        {
+          "translation": "お金をもったいながって、面白いことや有意義なことにお金を使えない人もいる。"
+        }
+      ]
+    },
+    "zh_从此_557": {
+      "title": "从此（副詞：それ以来・これ以後・それからというもの）",
+      "shortExplanation": "ある時点や出来事を契機・出発点として、それ以降新たな状況が始まったり継続したりすることを表します（「それ以来」「それからというもの」）。",
+      "longExplanation": "「从此」（cóngcǐ）は介詞「从」（〜から）と指示代名詞「此」（これ、その時）が融合した副詞（連語）で、文頭や主語の前後に置かれます。ある特定の出来事、転機、または体験を出発点として設定し、「その時以来」「それ以降」ずっとある行動が継続したり、人生の局面が大きく変わったりしたことを叙述します。物語や伝記、回想録などで人生の重要な転換点を描写する際に非常によく使われます（例：「从此开始新生活」それ以来新しい生活が始まった）。日本語の「それ以来」「それからというもの」「これ以後」に相当します。",
+      "formation": "（出来事 / 契機 ，）从此 ＋ 主語 ＋ 述語（または 主語 ＋ 从此 ＋ 述語）",
+      "examples": [
+        {
+          "translation": "それ以来、李白は熱心に勉学に励み、最後には偉大な詩人となった。"
+        }
+      ]
+    },
+    "zh_假设_558": {
+      "title": "假设……（接続詞：仮に〜としたら・もし〜ならば・仮定すると）",
+      "shortExplanation": "仮定の状況を提示する接続詞で、実際には起こっていない事態や反事実を想定してその対策や結果を問いかける際に用います（「仮に〜としたら」「もし〜なら」）。",
+      "longExplanation": "「假设」（jiǎshè）は接続詞として節の先頭に置かれ、まだ現実には生じていない事態や可能性の低い事象を思考上の前提として設定します（「假如」「如果」「假使」と同義）。聞き手に対して想定外の事態への心構えや対応策を問いかけたり、論理的な思考実験を行ったりする文脈で頻繁に使われます。節末に語気助詞「的话」や「呢」を伴うことが多く、後続節では「该怎么办」「会怎样」のように結果や対策が論じられます。日本語の「仮に〜としたら」「もし〜ならば」「〜だと仮定して」に相当します。",
+      "formation": "假设 ＋ 仮定節（＋ 的话 / 呢），（主語 ＋）結果節 / 疑問文",
+      "examples": [
+        {
+          "translation": "仮にお金を使い果たしてしまったとしたらどうする？どうすべきだと思う？"
+        }
+      ]
+    },
+    "zh_假设_559": {
+      "title": "假设（名詞：仮説・想定・前提）",
+      "shortExplanation": "事実や理論に基づいて立てられた、まだ完全には実証されていない学術的推測や前提条件を表す名詞です（「仮説」「想定」）。",
+      "longExplanation": "「假设」（jiǎshè）は名詞として用いられる場合、自然科学、社会科学、あるいは論理的思考において、ある現象を説明するために便宜的に立てられた検証待ちの命題や推測（「仮説」）を指します。よく用いられるコロケーションには「提出假设」（仮説を立てる / 提起する）、「证实假设」（仮説を実証する）、「推翻假设」（仮説を覆す）などがあります。文中では主語や目的語として機能します。日本語の「仮説」「想定」「仮定」に相当します。",
+      "formation": "主語 / 連体修飾語 ＋ 假设（または 提出 / 证明 / 验证 ＋ 假设）",
+      "examples": [
+        {
+          "translation": "あなたが当時立てられた仮説は、すでに正しいことが証明されました。"
+        }
+      ]
+    },
+    "zh_堆_560": {
+      "title": "堆（名詞：山・積み重ね・堆積物）",
+      "shortExplanation": "土砂や材料などが積み上げられて盛り上がった「山」「堆積した塊」を表す名詞です（「〜の山」「堆積」）。",
+      "longExplanation": "「堆」（duī）は名詞として用いられる場合、物や土砂などが一か所に集積されてできた盛り上がりや山を指します。名詞の語尾に直接結合して複合名詞を形成することが多く、「土堆」（土の山 / 塚）、「草堆」（干し草の山）、「垃圾堆」（ゴミの山 / ゴミ捨て場）、「材料堆」（資材置き場 / 資材の山）のように用いられます（なお、「一堆东西」のように量詞としても多用されます）。例文の「建筑材料堆」は、建設資材がうず高く積まれた場所・山そのものを表す名詞用法です。日本語の「〜の山」「塚」「堆積」に相当します。",
+      "formation": "名詞（土 / 草 / ごみ / 資材など）＋ 堆（または 数詞 ＋ 堆 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "工場の隣に建設資材の山が一つある。"
+        }
+      ]
+    },
+    "zh_堆_561": {
+      "title": "堆（動詞：積み上げる・山積みにする・積み重なる・放り出しておく）",
+      "shortExplanation": "物資や品物を一か所に重ねて置く、または雑然と積み重なっている動作・状態を表す動詞です（「積み上げる」「山積みにする」）。",
+      "longExplanation": "「堆」（duī）は動詞として用いられ、物品や道具などを一か所に積み重ねたり、集めて山盛りに置いたりする行為を表します。介詞「在」と結びついて「堆在 ＋ 場所」（〜に山積みになっている / 乱雑に積まれている）という存現構文・処置構文を形成することが非常に多いです（例：「零件堆在车间里」部品が作業場に積んである、「堆雪人」雪だるまを作る / 積み上げる）。しばしば整理されておらず邪魔になっているという不満や疑問のニュアンスを伴います。日本語の「積み上げる」「山積みにする」「積み重なる」に相当します。",
+      "formation": "主語 ＋ 堆 ＋ 在 / 满 ＋ 場所（または 堆 ＋ 目的語）",
+      "examples": [
+        {
+          "translation": "これらの部品はどうして全部ここに山積みになっているの？"
+        }
+      ]
+    },
+    "zh_不如NA_562": {
+      "title": "不如 ＋ 名詞 ＋ 形容詞（比較構文：〜ほど…ではない・〜には及ばない）",
+      "shortExplanation": "ある性質やレベルの面で、主語が比較対象の基準に及ばない・劣っていることを表す比較構文です（「〜ほど…ではない」「〜に及ばない」）。",
+      "longExplanation": "「不如」（bùrú）を用いた代表的な比較構文で、「主語 ＋ 不如 ＋ 比較対象（名詞）＋ 形容詞」の形で用いられます。「不如」の直後に置かれる名詞を比較の基準とし、末尾の形容詞（「高」「大」「快」など）が表す度合いや水準において、主語がその対象に達しないこと（劣っていること）を表します。「主語はその対象ほど〜ではない」を意味します。「还」（〜でさえ、むしろ）などの副詞と呼応して「还不如……高」となる場合、意外性や落差の激しさを際立たせる語気（「3社合わせてもなお1社に及ばない」）が強調されます。日本語の「〜ほど…ではない」「〜には及ばない」に相当します。",
+      "formation": "主語 ＋（还 ＋）不如 ＋ 比較対象（名詞）＋ 形容詞",
+      "examples": [
+        {
+          "translation": "3社の売上高を全部合わせても、彼の店1社ほど高くはない（及ばない）。"
+        }
+      ]
+    },
+    "zh_与其不如_563": {
+      "title": "（与其）……不如……（選択複文接続詞：〜するくらいなら、むしろ…するほうがましだ）",
+      "shortExplanation": "2つの選択肢を比較衡量し、前者を退けて後者のほうがより良い・賢明であると判断して選ぶことを表す複文の相関表現です（「〜するよりはむしろ…のほうがよい」）。",
+      "longExplanation": "「与其……不如……」（yǔqí... bùrú...）は選択を表す複文の典型的な呼応接続表現です。話者が2つの行動や方針を比較検討した結果、前節の事柄を取りやめ・否定し、後節の事柄のほうが価値が高く、適切で有意義であると判断してそちらを選択する意図を表します。「与其」は口語において省略されることもあります。日本語の「〜するくらいなら、むしろ…するほうがよい」「〜するよりは…のほうがましだ」に相当します。",
+      "formation": "（与其 ＋）選択肢（前項） ，不如 ＋ 選択肢（後項）",
+      "examples": [
+        {
+          "translation": "家にじっとしているくらいなら、むしろ外へ散歩に出かけるほうがましだ。"
+        }
+      ]
+    },
+    "zh_干脆V_564": {
+      "title": "干脆 ＋ 動詞（副詞：いっそのこと・思い切って・きっぱりと）",
+      "shortExplanation": "あれこれ迷ったり手加減したりせず、思い切って直接的・根本的な行動に出ることを表す副詞です（「いっそのこと」「思い切って」）。",
+      "longExplanation": "「干脆」（gāncuì）は動詞の前に置かれて副詞として働き、「索性」（いっそのこと）と同義で用いられます。中途半端な妥協や躊躇、曖昧さを断ち切り、思い切って根本的・直接的な手段に打って出る態度を表します。提案や助言、あるいは重大な腹括りの場面で頻繁に使われます（例：「干脆辞职」いっそのこと会社を辞める、「干脆说明白」きっぱりと白黒つける）。日本語の「いっそのこと」「思い切って」「きっぱりと〜する」に相当します。",
+      "formation": "主語 ＋（建议 / 不如 ＋）干脆 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "多くの親戚や友人は、彼にいっそのこと他の3軒の書店を潰してしまえと提案した。"
+        }
+      ]
+    },
+    "zh_干脆_565": {
+      "title": "干脆（形容詞：あっさりした・歯切れのよい・さっぱりとした・明快な）",
+      "shortExplanation": "言動や態度が明快で歯切れがよく、ぐずぐずためらったり未練を残したりしない性質を表す形容詞です（「あっさりした」「さっぱりした」「明快な」）。",
+      "longExplanation": "「干脆」（gāncuì）は形容詞として、人の性格、話し方、行動のスタイルが率直で明快、かつ歯切れがよいさまを表します。遠回しな言い方をせず、未練や躊躇がなく、即座に白黒をつける態度を形容します（対義語は「拖泥带水」ぐずぐずしている、「犹豫」躊躇する）。様態補語「得」を伴って「答应得很干脆」（快く即答する、あっさりと引き受ける）や、定語として「干脆的性格」（さっぱりした性格）のように多用されます。日本語の「あっさりした」「歯切れのよい」「さっぱりとした」「即座の」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 得 ＋（很 / 非常 ＋）干脆（または 干脆的 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "私が彼に手助けを頼むと、彼はとてもあっさりと快く引き受けてくれた。"
+        }
+      ]
+    },
+    "zh_万一_566": {
+      "title": "万一（接続詞・副詞：万が一・もし万一・万が一にも）",
+      "shortExplanation": "発生する確率は極めて低いものの、万が一現実に起きてしまったら重大な危険や不都合を招く事態を想定する表現です（「万が一」「もし万が一」）。",
+      "longExplanation": "「万一」（wànyī）は接続詞または副詞として機能し、文字通り「一万分の一」という極めて低い確率の事態を想定する際に用いられます。特に、望ましくない事故、危険、失敗など、悪い結果をもたらす突発的なアクシデントを仮定する場合に専ら用いられます。節頭または述語動詞の直前に置かれ、後続の文で「就」（〜になってしまう）、「有可能」（可能性がある）などの結果予測を導きます。日本語の「万が一」「もし万が一」「万一にも」に相当します。",
+      "formation": "（如果 ＋）万一 ＋ 動詞節 ，（主語 ＋）就 / 有可能 ＋ 結果",
+      "examples": [
+        {
+          "translation": "卵を全部一つのカゴに入れておくと、万が一不注意があった場合に全部割れてしまう可能性がある。"
+        }
+      ]
+    },
+    "zh_万一_567": {
+      "title": "万一（名詞：万一の事態・不測の事故・不慮の出来事）",
+      "shortExplanation": "めったに起こらないが重大な損害をもたらす可能性のある不測の事態や災難そのものを指す名詞です（「万一の事態」「不慮の事故」）。",
+      "longExplanation": "「万一」（wànyī）は名詞として用いられる場合、極めて稀ではあるものの、万が一発生したときに致命的な損害をもたらす事故、災難、緊急事態そのものを指します。慣用句や成句表現として固定化して使われることが非常に多く、代表例として「以防万一」（万一に備える）や諺の「不怕一万，就怕万一」（一万回の日常は恐れずとも、たった一度の万一の不測の事態こそ恐れるべきだ＝備えあれば憂いなし）が挙げられます。文中では「防」（防ぐ）や「怕」（恐れる）の目的語として機能します。日本語の「万一の事態」「不測の事態」「万一の事故」に相当します。",
+      "formation": "以防 / 就怕 ＋ 万一（または 万一 ＋ の発生）",
+      "examples": [
+        {
+          "translation": "普段のありふれたことは恐くないが、ただ一度の万一の事態（不測の事故）こそが恐ろしい。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_总算_553": {
+      "title": "总算 (부사: 마침내, 겨우, 가까스로, 어쨌든 결국)",
+      "shortExplanation": "오랜 시간이나 우여곡절, 노력 끝에 바람이 마침내 이루어졌거나, 미흡한 조건 속에서도 안도할 만한 최소한의 결과를 얻었음을 나타냅니다('마침내', '겨우', '어쨌든').",
+      "longExplanation": "“总算”(zǒngsuàn)은 술어 동사나 형용사 앞에 놓이는 부사로, 긴 시간이나 많은 고난과 우여곡절을 겪은 뒤 마침내 어떤 바람이나 결과가 달성되었음을 나타냅니다. 특히 불만족스럽거나 열악한 상황 속에서도 '그래도 다행히 최소한의 결과는 얻었다'는 식의 안도감, 다행스러움, 만족감을 강하게 나타낼 때 자주 쓰입니다. 비슷한 의미의 “终于”가 객관적인 노력의 결실이나 사실의 완성을 강조한다면, “总算”은 화자의 '휴, 다행이다'라는 주관적인 안도의 정서가 짙게 묻어납니다. 한국어의 '마침내', '겨우', '가까스로', '어쨌든 다행히'에 해당합니다.",
+      "formation": "주어 + (但 / 可是 +) 总算 + 동사구 / 절",
+      "examples": [
+        {
+          "translation": "비록 이 호텔이 썩 좋지는 않지만, 그래도 어쨌든 잘 곳은 생겼다."
+        }
+      ]
+    },
+    "zh_V下来_554": {
+      "title": "동사 + 下来 (방향보어 파생용법: 고정되다, 결정되다, 가라앉다, 기록해 두다)",
+      "shortExplanation": "동작을 통해 상태가 유동적이고 불확실한 상태에서 고정·안정된 상태로 정착되거나, 기록으로 남겨짐을 나타내는 방향보어의 파생용법입니다('~해 두다', '~되어 정해지다').",
+      "longExplanation": "“下来”(xiàlai)는 본래의 물리적 공간 이동(위에서 말하는 쪽으로 내려옴)에서 나아가 다양한 추상적 의미를 나타내는 방향보어로 널리 쓰입니다. 주요 쓰임은 다음과 같습니다: ① 사물이나 상황이 변화·유동적인 상태에서 벗어나 고정되고 정지하며 확정되는 상태로 귀결됨(예: “定下来” 확정되다/결정되다, “停下来” 멈춰 서다, “静下来” 진정되다/차분해지다). ② 행위를 통해 정보나 순간을 고정하여 보존·기록함(예: “记下来” 적어 두다, “拍下来” 찍어 두다). 예문의 “定下来”는 날짜나 계획 등이 최종적으로 매듭지어져 결정되었음을 의미합니다. 한국어의 '~해 두다', '~되어 정해지다', '~해 가라앉다'에 해당합니다.",
+      "formation": "주어 + 동사 + 下来 (+ 了 / 吗)",
+      "examples": [
+        {
+          "translation": "당신의 논문은 대략 언제쯤 발표되나요? 확정되었나요?"
+        }
+      ]
+    },
+    "zh_舍得_555": {
+      "title": "舍得 (동사: 아까워하지 않다, 아낌없이 내주다, 선뜻 포기하다)",
+      "shortExplanation": "돈, 시간, 아끼는 물건 등을 내주거나 쓰는 것을 아깝게 여기지 않고 기꺼이 내놓거나 포기할 수 있음을 나타냅니다('아까워하지 않다', '선뜻 내주다').",
+      "longExplanation": "“舍得”(shěde)는 '버리다, 내주다'라는 뜻의 “舍”에 가능의 의미가 더해진 심리 동사입니다. 재물, 시간, 정력, 또는 자신이 아끼는 소중한 물건을 남에게 주거나 소비할 때, 아깝다거나 서운한 마음 없이 기꺼이 포기하거나 내줄 용의가 있음을 나타냅니다(반의어는 “舍不得”). 뒤에 동사구를 취하여 “舍得花钱”(돈을 아낌없이 쓰다), “舍得下功夫”(공을 들이는 데 아까워하지 않다)처럼 자주 쓰입니다. 의문문 “你舍得吗?”는 '차마 아깝지 않니?', '선뜻 내줄 수 있겠니?'라는 뉘앙스를 담고 있습니다. 한국어의 '아까워하지 않다', '아낌없이 내주다', '선뜻 손에서 놓다'에 해당합니다.",
+      "formation": "주어 + 舍得 (+ 목적어 / 동사구)",
+      "examples": [
+        {
+          "translation": "네가 가장 좋아하는 장난감을 어린아이에게 선물로 준다니, 너 아깝지 않니?"
+        }
+      ]
+    },
+    "zh_舍不得_556": {
+      "title": "舍不得 (동사: 아까워하다, 차마 ~하지 못하다, 서운해하다, 아쉬워하다)",
+      "shortExplanation": "아끼고 사랑하는 마음이나 미련 때문에 차마 헤어지지 못하거나, 돈이나 물건을 쓰는 것이 아까워 망설이는 마음을 나타냅니다('아까워하다', '차마 못하다').",
+      "longExplanation": "“舍不得”(shěbude)는 “舍得”의 부정 형태로, 일상생활에서 정서적 애착이나 아쉬움을 나타낼 때 가장 흔히 쓰이는 심리 동사 중 하나입니다. 사람이나 장소에 대한 정이 깊어 차마 떠나지 못하고 발길을 돌리기 아쉬워하는 감정(예: “舍不得离开” 헤어지기 아쉬워하다, “舍不得你” 너와 헤어지기 섭섭하다), 혹은 물건이나 돈이 너무 아까워서 먹지도 쓰지도 못하는 감정(예: “舍不得花钱” 돈을 아까워하다, “舍不得吃” 아까워서 못 먹다)을 두루 표현합니다. 한국어의 '아까워하다', '차마 ~하지 못하다', '서운해하다', '아쉬워하다'에 해당합니다.",
+      "formation": "주어 + 舍不得 (+ 목적어 / 동사구)",
+      "examples": [
+        {
+          "translation": "어떤 사람들은 재미있고 유익한 일에 돈을 쓰는 것을 아까워한다."
+        }
+      ]
+    },
+    "zh_从此_557": {
+      "title": "从此 (부사: 그로부터, 그 후로, 그때부터, 이후로)",
+      "shortExplanation": "어떤 사건이나 시점을 전환점이자 출발점으로 삼아, 그때 이후로 새로운 상황이 시작되거나 지속됨을 나타냅니다('그로부터', '그때부터 줄곧').",
+      "longExplanation": "“从此”(cóngcǐ)는 개사 “从”(~부터)과 지시대명사 “此”(이것, 이때)가 결합한 시간 부사로, 문두에 오거나 주어 앞뒤에 놓입니다. 특정 사건, 깨달음, 역사적 계기를 시발점으로 삼아 '그때부터 지금까지 줄곧', '그 이후로 내내' 어떤 행동을 지속하거나 새로운 상태로 접어들었음을 서술할 때 쓰입니다. 전기의 일화나 옛이야기, 소설 등에서 인물의 인생 전환점을 묘사할 때 대단히 빈번하게 활용됩니다. 뒷문장에 “最后”(마침내), “终于”(결국) 등과 호응하여 결말을 맺는 경우가 많습니다. 한국어의 '그로부터', '그 후로', '그때부터', '이후로'에 해당합니다.",
+      "formation": "(계기 / 사건 ，) 从此 + 주어 + 술어 (또는 주어 + 从此 + 술어)",
+      "examples": [
+        {
+          "translation": "그 후로 이백은 각고의 노력을 기울여 공부했고, 마침내 위대한 시인이 되었다."
+        }
+      ]
+    },
+    "zh_假设_558": {
+      "title": "假设…… (접속사: 가령 ~라면, 만약 ~라고 가정하면, 설령)",
+      "shortExplanation": "가정의 조건을 제시하는 접속사로, 아직 현실에서 일어나지 않은 상황이나 가상의 전제를 설정하여 결과나 대책을 논할 때 씁니다('가령 ~라면', '만일 ~라고 가정하면').",
+      "longExplanation": "“假设”(jiǎshè)는 접속사로 절의 앞머리에 놓여, 아직 실현되지 않았거나 현실과 다른 가상의 전제를 설정함을 나타냅니다(“假如”, “如果”, “假使”와 상통). 청자에게 뜻밖의 비상 상황에 대한 대처 방안을 되묻거나, 논리적인 추론과 가설 검증을 펼칠 때 자주 쓰입니다. 가정절 끝에 조사 “的话”나 어기조사 “呢”를 덧붙여 말맛을 부드럽게 하거나 의문의 어조를 살릴 수 있으며, 이어지는 절에서는 대책이나 귀결을 묻습니다. 한국어의 '가령 ~라면', '만약 ~라고 가정하면', '설사 ~한다고 해도'에 해당합니다.",
+      "formation": "假设 + 가정절 (+ 的话 / 呢) ，(주어 +) 결과 / 대책 의문문",
+      "examples": [
+        {
+          "translation": "만약 네 돈을 다 써버렸다고 가정해 보면 어떨까? 넌 어떻게 해야 하겠니?"
+        }
+      ]
+    },
+    "zh_假设_559": {
+      "title": "假设 (명사: 가설, 가정, 전제)",
+      "shortExplanation": "어떤 사실이나 현상을 설명하기 위해 잠정적으로 세운 과학적 추측이나 논리적 전제를 나타내는 명사입니다('가설', '가정').",
+      "longExplanation": "“假设”(jiǎshè)는 명사로 쓰일 때, 일정한 근거나 논리에 바탕을 두고 세운 아직 완전히 입증되지 않은 과학적 추측이나 학술적 명제(즉 '가설')를 가리킵니다. 흔히 쓰이는 연어 결합으로는 “提出假设”(가설을 제기하다), “证明假设”(가설을 증명하다), “检验假设”(가설을 검증하다) 등이 있습니다. 문장 안에서 주어나 목적어로 널리 쓰이며, 학술 논문, 과학 탐구, 논리적 토론 등 격식 있는 상황에서 핵심 개념어로 빈번히 등장합니다. 한국어의 '가설', '가정'에 해당합니다.",
+      "formation": "주어 / 관형어 + 假设 (또는 提出 / 证明 / 验证 + 假设)",
+      "examples": [
+        {
+          "translation": "선생님께서 당시 세우셨던 가설은 이미 옳았음이 증명되었습니다."
+        }
+      ]
+    },
+    "zh_堆_560": {
+      "title": "堆 (명사: 더미, 무더기, 덤불, 산)",
+      "shortExplanation": "흙이나 자재, 물건 따위가 한곳에 쌓여 무더기를 이룬 더미나 산을 가리키는 명사입니다('더미', '무더기').",
+      "longExplanation": "“堆”(duī)는 명사로 쓰일 때, 사물이나 흙, 쓰레기 등이 한곳에 집중적으로 쌓여 봉긋하게 솟아오른 '더미'나 '무더기' 자체를 가리킵니다. 명사 뒤에 접미사처럼 직접 붙어 복합명사를 이루는 경우가 매우 흔합니다(예: “土堆” 흙더미, “草堆” 짚더미, “垃圾堆” 쓰레기더미, “建筑材料堆” 건축 자재 더미). (한편 양사로 쓰여 “一堆东西”처럼 한 무더기의 사물을 셀 수도 있습니다). 예문의 “建筑材料堆”는 건축 자재가 무더기로 쌓여 있는 현장이나 그 덩어리 자체를 지칭하는 명사적 쓰임입니다. 한국어의 '~더미', '무더기'에 해당합니다.",
+      "formation": "명사 (흙 / 풀 / 쓰레기 / 자재 등) + 堆 (또는 수사 + 堆 + 명사)",
+      "examples": [
+        {
+          "translation": "공장 옆에 건축 자재 더미가 하나 있다."
+        }
+      ]
+    },
+    "zh_堆_561": {
+      "title": "堆 (동사: 쌓다, 쌓아 두다, 쌓이다, 처박아 두다)",
+      "shortExplanation": "물건이나 부품 등을 한곳에 겹쳐서 모아 놓거나 어지럽게 쌓아 두는 동작과 상태를 나타내는 동사입니다('쌓다', '쌓아 두다').",
+      "longExplanation": "“堆”(duī)는 동사로 쓰여 물품, 자재, 짐 등을 한곳에 모아 겹쳐 쌓아 올리거나 쌓아 두는 동작을 나타냅니다. 개사 “在”와 빈번하게 호응하여 “堆在 + 장소”(~에 쌓아 두다, ~에 쌓여 있다) 형태의 존현문이나 결과 표현을 구성합니다(예: “把东西堆在门口” 물건을 문 앞에 쌓아 두다, “堆雪人” 눈사람을 뭉쳐 쌓다). 어지럽게 널려 있거나 자리를 차지해 방해된다는 불만 섞인 어조로 쓰이기도 합니다. 한국어의 '쌓다', '쌓아 두다', '무더기로 쌓이다'에 해당합니다.",
+      "formation": "주어 + 堆 + 在 / 满 + 장소 (또는 堆 + 목적어)",
+      "examples": [
+        {
+          "translation": "이 부품들은 어째서 다 여기에 쌓여 있는 거지?"
+        }
+      ]
+    },
+    "zh_不如NA_562": {
+      "title": "不如 + 명사 + 형용사 (비교 구문: ~만큼 …하지 못하다, ~만 못하다)",
+      "shortExplanation": "어떤 속성이나 수준 면에서, 주어가 비교 대상인 명사의 기준에 미치지 못함을 나타내는 비교 구문입니다('~만큼 …하지 못하다', '~보다 못하다').",
+      "longExplanation": "“不如”(bùrú)를 활용한 전형적인 비교 구문으로, '주어 + 不如 + 비교 대상(명사) + 형용사' 형태로 사용됩니다. 비교의 기준이 되는 명사 뒤에 형용사를 두어 특정 측면의 정도를 계량하며, 주어가 해당 성질이나 수치에서 비교 대상에 미치지 못함을 서술합니다. 부사 “还”(오히려, 심지어)와 함께 쓰여 “还不如……” 구조를 취할 때는, 합산하거나 큰 규모임에도 불구하고 단일 개체에조차 못 미친다는 의외성과 커다란 격차를 부각시킵니다. 한국어의 '~만큼 …하지 못하다', '~만 못하다'에 해당합니다.",
+      "formation": "주어 + (还 +) 不如 + 비교 대상(명사) + 형용사",
+      "examples": [
+        {
+          "translation": "세 집의 영업액을 모두 합쳐도 그 집 한 곳만큼 높지 못하다."
+        }
+      ]
+    },
+    "zh_与其不如_563": {
+      "title": "(与其)……不如…… (선택 복문 접속사: ~하느니 차라리 …하는 편이 낫다)",
+      "shortExplanation": "두 가지 선택지를 저울질하여 비교한 뒤, 전자보다 후자가 훨씬 유익하고 바람직하다고 판단하여 후자를 선택함을 나타냅니다('~하느니 차라리 …하는 편이 낫다').",
+      "longExplanation": "“(与其)……不如……”(yǔqí... bùrú...)는 두 가지 방안을 비교 검토하여 취사선택할 때 쓰는 대표적인 편정 선택 복문 구문입니다. 전반부의 “与其” 뒤에는 버리거나 가치가 적은 비효율적인 방안을 제시하고, 후반부의 “不如” 뒤에는 화자가 적극적으로 권장하거나 더 낫다고 판단하는 대안을 내세웁니다. 구어에서는 앞의 “与其”를 생략하고 뒤의 “不如”만으로 표현하기도 합니다. 한국어의 '~하느니 차라리 …하는 것이 낫다', '~하기보다는 차라리 …하자'에 해당합니다.",
+      "formation": "(与其 +) 앞의 대안 ，不如 + 뒤의 대안",
+      "examples": [
+        {
+          "translation": "집에만 틀어박혀 있느니 차라리 밖에 나가 산책이라도 하는 편이 낫다."
+        }
+      ]
+    },
+    "zh_干脆V_564": {
+      "title": "干脆 + 동사 (부사: 아예, 차라리, 딱 잘라, 화끈하게)",
+      "shortExplanation": "이것저것 재거나 망설이지 않고, 차라리 직접적이고 근본적인 방안을 시원스럽게 실행해 버림을 나타냅니다('아예', '차라리', '딱 잘라').",
+      "longExplanation": "“干脆”(gāncuì)는 동사 앞에 놓여 부사어로 쓰이며, “索性”(아예, 차라리)과 상통합니다. 미적거리거나 망설이는 태도를 버리고, 문제의 뿌리를 뽑거나 가장 직관적이고 극단적인 해결책을 단호하게 감행함을 나타냅니다. 조언, 제안, 결단의 맥락에서 자주 등장합니다(예: “干脆别去了” 아예 가지 마라, “干脆辞职” 딱 잘라 사직하다). 한국어의 '아예', '차라리', '화끈하게', '딱 잘라 ~하다'에 해당합니다.",
+      "formation": "주어 + (建议 / 不如 +) 干脆 + 동사구",
+      "examples": [
+        {
+          "translation": "많은 친척과 친구들은 그에게 아예 다른 서점 세 곳을 몰아내 무너뜨리라고 제안했다."
+        }
+      ]
+    },
+    "zh_干脆_565": {
+      "title": "干脆 (형용사: 시원스럽다, 명쾌하다, 단호하다, 거침없다)",
+      "shortExplanation": "말이나 행동, 태도가 망설임이나 미적거림 없이 명쾌하고 시원시원함을 나타내는 형용사입니다('시원스럽다', '단호하다').",
+      "longExplanation": "“干脆”(gāncuì)는 형용사로 쓰여 사람의 성격, 말투, 행동 처리 방식이 우물쭈물하지 않고 시원스럽고 깔끔하며 단호함을 나타냅니다(반의어는 “拖泥带水” 질질 끌다, “犹豫” 망설이다). 술어나 관형어로도 쓰이지만, 상태보어 “得” 뒤에 놓여 “答应得很干脆”(아주 시원스럽게 승낙하다), “回答得很干脆”(거침없이 시원하게 대답하다) 형태로 매우 널리 활용됩니다. 한국어의 '시원스럽다', '명쾌하다', '단호하다', '거침없다'에 해당합니다.",
+      "formation": "주어 + 동사 + 得 + (很 / 非常 +) 干脆 (또는 干脆的 + 명사)",
+      "examples": [
+        {
+          "translation": "내가 그에게 도움을 청하자, 그는 아주 시원스럽게 승낙했다."
+        }
+      ]
+    },
+    "zh_万一_566": {
+      "title": "万一 (접속사·부사: 만에 하나, 만일, 혹시라도, 어쩌다가)",
+      "shortExplanation": "일어날 확률은 극히 희박하지만, 혹시라도 일어날 경우 큰 손실이나 위험을 초래할 수 있는 돌발 상황을 가정할 때 씁니다('만에 하나', '만일').",
+      "longExplanation": "“万一”(wànyī)는 글자 그대로 '만분의 일'에 불과할 정도로 발생 가능성이 극히 적지만, 만에 하나 발생할 경우 큰 피해나 위험, 차질을 빚을 수 있는 불리한 돌발 사태를 가정할 때 쓰는 접속사 혹은 부사입니다. 조건절의 앞머리나 술어 앞에 놓여 뜻밖의 위험을 환기하며, 뒷문장에서는 “就”, “会”, “有可能” 등과 어울려 일어날 수 있는 사태의 심각성을 경고합니다. 한국어의 '만에 하나', '만일', '혹시라도', '어쩌다 실수로'에 해당합니다.",
+      "formation": "(만약 +) 万一 + 동사구 / 절 ，(주어 +) 就 / 有可能 + 결과",
+      "examples": [
+        {
+          "translation": "달걀을 모두 한 바구니에 담아 둔다면, 만에 하나 조심하지 않았을 때 전부 깨져 버릴 가능성이 있다."
+        }
+      ]
+    },
+    "zh_万一_567": {
+      "title": "万一 (명사: 만일의 사태, 뜻밖의 변고, 불의의 사고)",
+      "shortExplanation": "극히 드물게 발생하지만 막대한 피해를 줄 수 있는 뜻밖의 변고나 돌발 사고 자체를 가리키는 명사입니다('만일의 사태', '불의의 사고').",
+      "longExplanation": "“万一”(wànyī)는 명사로 쓰일 때, 좀처럼 일어나지 않지만 한 번 터지면 걷잡을 수 없는 피해를 몰고 오는 '만일의 사태', '뜻밖의 사고', '비상시의 변고' 자체를 의미합니다. 관용적인 속담이나 고정 격식으로 대단히 자주 쓰이며, 가장 대표적인 예가 “以防万一”(만일의 사태에 대비하다)와 “不怕一万，就怕万一”(만 번의 평상시보다 한 번의 만일의 사태가 두렵다)입니다. 문장 내에서 “怕”(두려워하다)나 “防”(대비하다)의 목적어로 흔히 쓰입니다. 한국어의 '만일의 사태', '뜻밖의 사고', '불의의 변고'에 해당합니다.",
+      "formation": "(만 번은 두렵지 않으나，오직 / ~에 대비하여 +) 万一 (또는 万一 + 의 발생)",
+      "examples": [
+        {
+          "translation": "평소의 만 번은 두렵지 않으나, 오직 단 한 번의 만일의 사태가 두려울 뿐이다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_总算_553": {
+      "title": "总算（副词：终于、到底、好不容易，表示愿望最终实现或感到欣慰庆幸）",
+      "shortExplanation": "副词作状语，表示经过相当长的时间、很大周折或努力之后某种愿望最终得以实现；或在不如意的情况下得到基本满意的结果而感到欣慰；相当于“终于”、“好不容易”、“好在”。",
+      "longExplanation": "“总算”（zǒngsuàn）在句中充当状语，主要有两种语义重心：一是表示经过长时间的拖延、等待或克服重重波折与困难后，某种期待或愿望最终得以兑现（如“雨总算停了”）；二是在客观条件不尽如人意的情况下，勉强达到某种基本要求，从而产生侥幸、宽慰或知足的情感（如“虽然丢了钱包，但总算人没受伤”）。与侧重客观陈述事理进程的“终于”相比，“总算”更富于说话人主观上松了一口气、如释重负的欣慰语气。",
+      "formation": "主语 +（但 / 可是 +）总算 + 动词短语 / 分句",
+      "examples": [
+        {
+          "translation": "虽然这家宾馆不太好，但总算有个睡觉的地方了。"
+        }
+      ]
+    },
+    "zh_V下来_554": {
+      "title": "动词 + 下来（趋向补语引申用法：表示固定、确定、静止或记录保存）",
+      "shortExplanation": "趋向补语的引申用法，表示动作使事物由动态、变动或未定转向静止、固定、明确；或使信息得以记录保存；相当于“定住”、“留存”。",
+      "longExplanation": "“下来”（xiàlai）用作动词后的趋向补语时，除了表示由高处向说话人方向移动的空间实义外，还具有丰富的引申虚化用法。主要包括：一是表示事物随动作由活动变到静止、由分散变到固定或由游移转向确立，如“定下来”（方案或时间拍板确定）、“停下来”（停止运动）、“静下来”（心情平复）；二是表示通过某种行为将事实、画面或信息固定并保留下来，如“记下来”、“写下来”、“拍下来”。在“定下来了吗”中，着重表现计划由商讨、不确定状态最终落实成案。",
+      "formation": "主语 + 动词 + 下来（+ 了 / 吗）",
+      "examples": [
+        {
+          "translation": "你的论文大概什么时候发表？定下来了吗？"
+        }
+      ]
+    },
+    "zh_舍得_555": {
+      "title": "舍得（动词：不吝惜、不心疼，愿意付出或割舍心爱之物及财力）",
+      "shortExplanation": "动词，表示愿意割舍心爱的人事物，或不吝惜财物、时间、精力等去付出；相当于“不心疼”、“愿意拿出”。",
+      "longExplanation": "“舍得”（shěde）是表示心理态度的及物动词（反义词为“舍不得”），指主观上克服了留恋、心疼或吝啬的情绪，愿意放弃、送出心爱的东西，或者毫不吝惜地投入金钱、时间与精力。常带名词宾语（如“舍得这点钱”），也常带谓词性宾语（如“舍得花功夫”、“舍得吃苦”）。在日常交际或疑问句中，常单独作谓语或置于句末以询问对方是否有决心割爱（如“你舍得吗？”即询问是否舍得放弃或割爱）。",
+      "formation": "主语 + 舍得（+ 宾语 / 动词短语）",
+      "examples": [
+        {
+          "translation": "把你最喜欢的玩具送给小朋友，你舍得吗？"
+        }
+      ]
+    },
+    "zh_舍不得_556": {
+      "title": "舍不得（动词：心疼、吝惜、不忍离开或不忍割舍）",
+      "shortExplanation": "动词，表示因深爱、顾惜或吝惜而不忍心舍弃、耗费财物，或不忍与人事物分离；相当于“不忍”、“心疼”、“舍不得用”。",
+      "longExplanation": "“舍不得”（shěbude）是现代汉语中最常用的心理动词之一，表达强烈的惜别、爱怜或顾惜情感。主要表现在两个方面：一是感情上的不忍分离与眷恋（如“舍不得离开家乡”、“舍不得朋友走”）；二是物质资源上的心疼与不舍得耗费（如“舍不得吃、舍不得穿”、“舍不得花钱买书”）。常带体词性或谓词性宾语。在具体语境中，它既可以体现出勤俭节约，也可以体现出守财或目光狭隘。",
+      "formation": "主语 + 舍不得（+ 宾语 / 动词短语）",
+      "examples": [
+        {
+          "translation": "有些人舍不得把钱花在有意思的事情上。"
+        }
+      ]
+    },
+    "zh_从此_557": {
+      "title": "从此（副词：从这个时候起、打这儿起，表示以此为转折起点开启新阶段）",
+      "shortExplanation": "副词（介词结构），指示以某事、某时刻或转折点为开端，自此以后开始持续某种状态或行动；相当于“从这时起”、“自此”。",
+      "longExplanation": "“从此”（cóngcǐ）由介词“从”与指示代词“此”（指代上文提及的时间、事件或契机）组合而成，通常充当句首状语或位于主语之后。它明确标志着一个历史性或决定性的转折起点，表明自该节点之后，事态发生了持续性的变化，形成了新的风貌、习惯或状态（如“从此踏上了求学之路”、“从此一蹶不振”）。在叙事性文体、传记故事和寓言典故中极常用来承上启下，后半句往往伴随着“最终”、“最后”、“终于”等表结果的词语。",
+      "formation": "（前文事件 ，）从此 + 主语 + 谓语（或：主语 + 从此 + 谓语）",
+      "examples": [
+        {
+          "translation": "从此李白刻苦用功，最后成了一位伟大的诗人。"
+        }
+      ]
+    },
+    "zh_假设_558": {
+      "title": "假设……（连词：如果、假使、倘若，提出未实现的前提以推想后果）",
+      "shortExplanation": "连词，用在分句之首提出某种假定或设想的情况，以引导对后续结果、对策的探讨与设问；相当于“如果”、“假使”。",
+      "longExplanation": "“假设”（jiǎshè）作连词时，用于假设复句的前偏句，引出一个尚未发生、可能发生或纯属假想的事实前提（用法同“假如”、“假使”、“如果”）。其后分句可紧接疑问代词或设问句，用来启发听者思考突发险情下的应对预案（如“假设发生火灾，我们该怎么逃生”），也可引出条件成立后的逻辑推论。句尾常搭配语气词“的话”或“呢”以增强对话语气。书面语与较严肃的思辨语境中极为常见。",
+      "formation": "假设 + 假设分句（+ 的话 / 呢），（主语 +）后果 / 疑问对策句",
+      "examples": [
+        {
+          "translation": "假设你的钱用完了呢？你该怎么办呢？"
+        }
+      ]
+    },
+    "zh_假设_559": {
+      "title": "假设（名词：假说、科学推测、未经完全证实的前提推断）",
+      "shortExplanation": "名词，指根据客观事实或理论推导所提出的、尚待实践检验与实证的科学推断或命题设想；相当于“假说”、“设想”。",
+      "longExplanation": "“假设”（jiǎshè）作名词时，是科学研究与逻辑学中的专业术语，指研究者为了解释某种自然或社会现象，依据已掌握的事实线索做出的推测性解释或理论构想。这种假设必须通过实验、调查或逻辑推导加以证实或证伪。在句中常充当主语、宾语或定语，极常与“提出”、“验证”、“证实”、“推翻”等动词形成动宾搭配（如“提出大胆的假设”、“大胆假设，小心求证”）。",
+      "formation": "主语 / 定语 + 假设（或：提出 / 证明 / 验证 + 假设）",
+      "examples": [
+        {
+          "translation": "您当年的假设已经被证明是对的。"
+        }
+      ]
+    },
+    "zh_堆_560": {
+      "title": "堆（名词：由物件聚积累叠而成的垛或堆积物）",
+      "shortExplanation": "名词，指聚积累叠在一起成堆的物品或隆起的聚积物；相当于“垛”、“堆积体”。",
+      "longExplanation": "“堆”（duī）用作名词时，指累积在一起形成隆起状态的物体团块或堆积处。常常与具体事物名词紧密结合构成复合名词，如“土堆”（小土包）、“草堆”（草垛）、“雪堆”（堆积的雪团）、“垃圾堆”以及例句中的“建筑材料堆”（堆放建筑用材的集料堆）。此外，“堆”还可以活用为量词（如“一堆乱麻”、“一堆人”），但在此处明确作为表示实物的中心名词出现。",
+      "formation": "名词（土 / 草 / 垃圾 / 材料）+ 堆（或：数词 + 堆 + 名词）",
+      "examples": [
+        {
+          "translation": "工厂旁边有一个建筑材料堆。"
+        }
+      ]
+    },
+    "zh_堆_561": {
+      "title": "堆（动词：累聚、叠放、堆积，把事物聚放在一处）",
+      "shortExplanation": "动词，表示把较多的物件聚集、叠压放置或堆积存放在某处；相当于“累积”、“叠放”、“堆砌”。",
+      "longExplanation": "“堆”（duī）作及物或不及物动词，指将散落的材料、物品或零件集中叠放成垛。常用构式为“堆在 + 处所”或“堆满 + 处所”（如“满桌子堆着书”、“杂物堆在走廊里”），也可用于人工垒砌筑造（如“堆雪人”、“堆沙堡”）。在日常口语的疑问句中，常带有陈设不整洁、阻碍通行或保管不善的指责、讶异语气（如例句“零件怎么都堆在这儿”）。",
+      "formation": "主语 + 堆 + 在 / 满 + 处所（或：堆 + 宾语）",
+      "examples": [
+        {
+          "translation": "这些零件怎么都堆在这儿啊？"
+        }
+      ]
+    },
+    "zh_不如NA_562": {
+      "title": "不如 + 名词 + 形容词（比较句式：在某项属性上达不到比较对象的程度）",
+      "shortExplanation": "比较句式，表示主语在形容词所代表的特定属性或程度上不及比较对象；相当于“比不上……那样……”。",
+      "longExplanation": "“不如”（bùrú）在此构成引申比较句式，结构为“主语 +（还 +）不如 + 比较对象（名词）+ 形容词”。其中“不如”充当比较标记，后随基准项与表维度的形容词（如“高、快、好、强”）。整句表达主语在某项指标上未能达到比较对象的水准，客观上处于劣势或低位。常常搭配副词“还”，构成“加起来还不如……”，以此衬托出极大的反差或令人意外的差距，极富修辞说服力。",
+      "formation": "主语 +（还 +）不如 + 比较对象（名词）+ 形容词",
+      "examples": [
+        {
+          "translation": "三家的营业额加起来还不如他一家高。"
+        }
+      ]
+    },
+    "zh_与其不如_563": {
+      "title": "（与其）……不如……（选择复句关联词：权衡利弊后舍前取后）",
+      "shortExplanation": "选择复句关联词，在两者权衡比较之后，舍弃在前一项所列的较差方案，而选取在后一项更加有利、明智的举措；相当于“与其……宁可……”。",
+      "longExplanation": "“与其……不如……”（yǔqí... bùrú...）是偏正选择复句的核心关联词。“与其”引导说话人认为价值不高、缺乏意义或被动消极的前项选择；“不如”则引出说话人所赞同、更积极合理且具有优先性的后项选择。两者形成鲜明的对照与取舍。在口语表达中，“与其”有时可以省略，仅用“不如”直接提出更优建议（如“走回去？不如坐地铁”）。书面语与演讲、议论文中极常用以阐发观点。",
+      "formation": "（与其 +）前项分句 ，不如 + 后项分句",
+      "examples": [
+        {
+          "translation": "与其待在家里，不如去外边走走。"
+        }
+      ]
+    },
+    "zh_干脆V_564": {
+      "title": "干脆 + 动词（副词：索性、直截了当，毫不犹豫地采取直接行动）",
+      "shortExplanation": "副词作状语，表示不再犹豫、迁就或拖泥带水，索性采取最直接、最彻底的办法去行动；相当于“索性”、“痛快地”。",
+      "longExplanation": "“干脆”（gāncuì）在动词前充当状语时，意义同“索性”。它表示在面临纠葛、两难或繁琐局面的情况下，当事人打消顾虑与迟疑，采取干净利落、一步到位的手段去解决问题或达成目的。常见于提出建议、做出决断的语境中（如“干脆重做一遍”、“干脆取消计划”）。与形容词用法的“干脆”（爽朗明快）相比，这里的副词用法着重强调动作决策上的彻底性与果断性。",
+      "formation": "主语 +（建议 / 不如 +）干脆 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "许多亲朋好友建议他干脆把另三家书店挤垮。"
+        }
+      ]
+    },
+    "zh_干脆_565": {
+      "title": "干脆（形容词：直截了当、爽快、利落，形容言行态度毫不拖泥带水）",
+      "shortExplanation": "形容词，形容言语、态度或办事风格直截了当、爽朗利落，毫无迟疑或含糊；相当于“爽快”、“痛快”。",
+      "longExplanation": "“干脆”（gāncuì）作形容词时，刻画人的个性、言谈举止或处事风范。它指做事不拐弯抹角、不闪烁其词，也没有犹豫不决的情绪，而是干净利索、迅速明确地给出表态（反义词为“犹豫”、“拖泥带水”）。常作谓语、定语（如“干脆利落的回答”）或用在状态补语“得”字结构中（如“答应得很干脆”、“拒绝得很干脆”）。具有褒义的赞许色彩。",
+      "formation": "主语 + 动词 + 得 +（很 / 相当 +）干脆（或：干脆的 + 名词）",
+      "examples": [
+        {
+          "translation": "我求他帮忙，他答应得很干脆。"
+        }
+      ]
+    },
+    "zh_万一_566": {
+      "title": "万一（连词 / 副词：万一、倘若有极罕见的意外，表极小概率的假设）",
+      "shortExplanation": "连词或副词，用于假设极少发生但可能造成重大危险或损失的偶然意外情况；相当于“假使发生意外”、“万分之一的可能”。",
+      "longExplanation": "“万一”（wànyī）源自“万分之一”的比喻，在句中充当连词或副词引出假设。它所设定的前提通常具有两个鲜明特征：一是发生概率极低，属于非常态的偶发事件；二是该事件往往带有负面、不利或危险的性质（如“万一有危险”、“万一下大雨”）。常与“如果”、“要是”呼应，后分句常带有“就”、“可能”、“怎么办”等词，用以警示潜在风险，提醒提前防范。",
+      "formation": "（如果 +）万一 + 动词短语 / 分句，（主语 +）就 / 会 / 有可能……",
+      "examples": [
+        {
+          "translation": "如果鸡蛋都放在一个篮子里，万一不小心就有可能全部打碎。"
+        }
+      ]
+    },
+    "zh_万一_567": {
+      "title": "万一（名词：不测风云、意外变故、万一的险情事故）",
+      "shortExplanation": "名词，指极少发生但可能导致严重后果的意外突发事故、变故或险情；相当于“万一的变故”、“意外事故”。",
+      "longExplanation": "“万一”（wànyī）用作名词时，指代某种潜伏的、概率极低却极具破坏力的意外事故或危险事态。最常见于固定凝固结构或民间熟语中，例如“以防万一”（防备意外事态的发生）以及俗语“不怕一万，就怕万一”（其中的“一万”代表常态下的万无一失或大概率事件，而“万一”则指不可预测的小概率凶险变故）。在句中通常作“防”、“怕”等动词的宾语。",
+      "formation": "以防 / 就怕 + 万一（或：防备 + 万一）",
+      "examples": [
+        {
+          "translation": "不怕一万，就怕万一。"
+        }
+      ]
+    }
+  }
+}

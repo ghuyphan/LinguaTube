@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_이라면_97": {
+      "title": "~(이)라면 (Nếu là, giả sử là)",
+      "shortExplanation": "Biểu thị điều kiện hoặc tình huống giả định 'nếu là...' gắn sau danh từ.",
+      "longExplanation": "'~(이)라면' là cấu trúc giả định gắn vào sau danh từ, dùng để đặt ra một tình huống hoặc thân phận giả định ('nếu là...', 'giả sử là...'). Nếu danh từ kết thúc bằng phụ âm (có phụ âm cuối) thì kết hợp với '-이라면', nếu kết thúc bằng nguyên âm (không có phụ âm cuối) thì kết hợp với '-라면'. Thường dùng để nêu lên một tiền đề và dẫn dắt tới suy nghĩ, thắc mắc hoặc hành động ở mệnh đề phía sau.",
+      "formation": "Danh từ (có phụ âm cuối) + 이라면 / (không có phụ âm cuối) + 라면",
+      "examples": [
+        {
+          "translation": "Nếu nơi đây thực sự là danh lam thắng cảnh nổi tiếng thì tại sao lại vắng vẻ thế này?"
+        },
+        {
+          "translation": "Nếu thực sự xảy ra chuyện như vậy, tôi sẽ phải suy nghĩ xem nên đối phó thế nào."
+        },
+        {
+          "translation": "Nếu muốn nghỉ học, em nên suy nghĩ xem tương lai mình sẽ định hướng ra sao."
+        },
+        {
+          "translation": "Nếu cậu là bạn của tôi, tại sao lại phản bội tôi và đi rêu rao những chuyện xấu với các bạn khác?"
+        }
+      ]
+    },
+    "ko_이래_98": {
+      "title": "~이래 (Như thế này, thế này)",
+      "shortExplanation": "Dạng chia của tính từ '이러하다', dùng để diễn đạt tình trạng, hành vi 'như thế này', 'cứ thế này'.",
+      "longExplanation": "'~이래' là dạng chia giản lược của tính từ '이러하다' (như thế này), thường xuất hiện trong các cấu trúc như '이래서는' (cứ như thế này thì...), '이래 있으면' (nếu cứ thế này...). Dùng để miêu tả tình trạng, phong độ hay cách thức hiện tại của sự vật, sự việc, qua đó người nói đưa ra nhận xét, đánh giá hoặc dự đoán hệ quả.",
+      "formation": "Dạng chia của tính từ 이러하다 (thường gặp: 이래서는, 이래 있으면 등)",
+      "examples": [
+        {
+          "translation": "Thời tiết cứ như thế này thì không thể đi chơi được rồi."
+        },
+        {
+          "translation": "Nếu tôi cứ như thế này thì có lẽ sẽ trở nên nổi tiếng mất."
+        },
+        {
+          "translation": "Ngôi nhà này cứ như thế này thì không thể nào bán được."
+        },
+        {
+          "translation": "Cậu mà cứ giữ phong độ như thế này thì chắc chắn có thể gặt hái thành tích xuất sắc với tư cách là một vận động viên đấy."
+        }
+      ]
+    },
+    "ko_이랑_99": {
+      "title": "~(이)랑 (Và, với, cùng với)",
+      "shortExplanation": "Trợ từ nối danh từ, biểu thị sự liên kết liệt kê ('và') hoặc đối tượng cùng hành động ('cùng với').",
+      "longExplanation": "'~(이)랑' là trợ từ dùng phổ biến trong khẩu ngữ tiếng Hàn, có hai chức năng chính: thứ nhất là liệt kê hai hay nhiều danh từ với ý nghĩa 'và'; thứ hai là biểu thị đối tượng cùng tham gia hành động với chủ ngữ với ý nghĩa 'cùng với' (thường kết hợp với '같이' hoặc '함께'). Danh từ có phụ âm cuối kết hợp với '-이랑', danh từ không có phụ âm cuối kết hợp với '-랑'. Mang sắc thái thân mật, tự nhiên.",
+      "formation": "Danh từ (có phụ âm cuối) + 이랑 / (không có phụ âm cuối) + 랑",
+      "examples": [
+        {
+          "translation": "Tôi dự định sẽ đi xem phim cùng với bạn."
+        },
+        {
+          "translation": "Chúng tôi đã gọi pizza và gà rán."
+        },
+        {
+          "translation": "Tôi đã mua quần áo ở trung tâm mua sắm cùng với chị gái."
+        },
+        {
+          "translation": "Tôi đang nuôi cả mèo và chó."
+        }
+      ]
+    },
+    "ko_이러하다_100": {
+      "title": "~이러하다 (Như thế này, thế này)",
+      "shortExplanation": "Tính từ chỉ định biểu thị trạng thái, tính chất hoặc tình huống 'như thế này', 'như vầy'.",
+      "longExplanation": "'이러하다' (dạng rút gọn là '이렇다') là tính từ chỉ định trong tiếng Hàn, dùng để miêu tả tình trạng, tính chất, thái độ hoặc sự việc có đặc điểm 'như thế này' (ở ngay trước mắt hoặc liên quan trực tiếp đến người nói). Thường kết hợp với các vĩ tố liên kết (như '-더니', '-다니', '-다 보니') để trình bày hoàn cảnh thực tế, từ đó dẫn ra cảm xúc, nhận định hoặc kết quả tương ứng.",
+      "formation": "Tính từ 이러하다 + Vĩ tố liên kết (như 이러하더니, 이러하다니, 이러하다 보니, 이러하다고 하다 등)",
+      "examples": [
+        {
+          "translation": "Thái độ của bạn ấy cứ như thế này nên tất cả mọi người đều hoang mang bối rối."
+        },
+        {
+          "translation": "Thế giới dạo này lại ra nông nỗi như thế này, thật khó mà tin nổi."
+        },
+        {
+          "translation": "Hành vi của cô ấy cứ như thế này mãi nên đã đánh mất lòng tin của mọi người."
+        },
+        {
+          "translation": "Nghe nói anh ấy lại như thế này khiến tôi thực sự rất thất vọng."
+        }
+      ]
+    },
+    "ko_이런그런저런_101": {
+      "title": "~이런 / 그런 / 저런 (Như thế này / thế đó / thế kia, loại này / loại đó / loại kia)",
+      "shortExplanation": "Định từ chỉ định đứng trước danh từ, biểu thị 'loại này', 'loại đó', 'loại kia' hoặc 'như thế này/đó/kia'.",
+      "longExplanation": "'~이런/그런/저런' là các định từ chỉ định (quán từ) đứng trực tiếp trước danh từ để bổ nghĩa về tính chất, trạng thái hoặc chủng loại. Trong đó: '이런' chỉ sự vật/tình huống gần người nói ('như thế này', 'loại này'); '그런' chỉ sự việc gần người nghe hoặc vừa được đề cập ('như thế đó', 'loại đó'); '저런' chỉ sự việc ở xa cả hai người hoặc mang sắc thái cảm thán ('như thế kia', 'loại kia').",
+      "formation": "이런 / 그런 / 저런 + Danh từ",
+      "examples": [
+        {
+          "translation": "Trong tình huống như thế này, tôi không biết phải đối phó ra sao nữa."
+        },
+        {
+          "translation": "Tôi không thích bầu không khí kiểu như thế đó."
+        },
+        {
+          "translation": "Nếu tôi mặc bộ quần áo kiểu kia thì người ta sẽ nghĩ thế nào nhỉ?"
+        },
+        {
+          "translation": "Tôi không nên có những suy nghĩ như thế này mới phải."
+        }
+      ]
+    },
+    "ko_이므로_102": {
+      "title": "~(으)므로 / -(이)므로 (Vì, do, bởi vì)",
+      "shortExplanation": "Vĩ tố liên kết trang trọng biểu thị nguyên nhân, lý do rõ ràng trong văn viết hoặc phát biểu chính thức ('vì', 'do').",
+      "longExplanation": "'~(으)므로 / -(이)므로' là vĩ tố liên kết trang trọng dùng trong văn viết, báo chí, tài liệu học thuật hoặc các bài phát biểu chính thức, dùng để nêu nguyên nhân, lý do khách quan dẫn đến kết quả ở mệnh đề sau ('vì...', 'do...'). Danh từ kết hợp với '-(이)므로'; thân động từ hoặc tính từ có phụ âm cuối kết hợp với '-으므로', không có phụ âm cuối hoặc kết thúc bằng phụ âm ㄹ kết hợp với '-므로'. Vế sau không đi cùng câu mệnh lệnh hay thỉnh dụ.",
+      "formation": "Danh từ + (이)므로 | Thân động từ / Thân tính từ + -(으)므로",
+      "examples": [
+        {
+          "translation": "Vì ngày mai là thứ Hai nên tối nay chúng ta phải đi ngủ sớm."
+        },
+        {
+          "translation": "Vì điểm số thấp nên anh ấy không thể nhận học bổng từ giáo sư, dẫn đến việc gặp khó khăn về tài chính."
+        },
+        {
+          "translation": "Do không có thời gian nên chúng tôi phải thu hẹp bữa tối lại."
+        },
+        {
+          "translation": "Do năng lực làm việc của nhân viên đó rất kém nên chúng tôi đã đưa ra cảnh cáo đối với anh ta."
+        }
+      ]
+    },
+    "ko_이야_103": {
+      "title": "~(이)야 (Là, đấy, đó - thể thân mật)",
+      "shortExplanation": "Đuôi câu trần thuật hoặc xác nhận ở thể thân mật (banmal), gắn sau danh từ để biểu thị 'là...', 'đấy/đó'.",
+      "longExplanation": "'~(이)야' là đuôi câu thân mật không kính ngữ (banmal) của trợ từ vị ngữ '-(이)다' (là), gắn vào sau danh từ hoặc danh từ phụ thuộc (như '것 + 이야 -> 거야'). Danh từ có phụ âm cuối kết hợp với '-이야', danh từ không có phụ âm cuối kết hợp với '-야'. Được dùng trong giao tiếp hằng ngày giữa bạn bè thân thiết, người bằng tuổi hoặc nói với người nhỏ tuổi hơn để trần thuật hoặc khẳng định một sự việc. Không dùng với người lớn tuổi.",
+      "formation": "Danh từ (có phụ âm cuối) + 이야 / (không có phụ âm cuối) + 야 | Định ngữ + 거야",
+      "examples": [
+        {
+          "translation": "Tôi cứ tưởng mình đói bụng nhưng không phải; tôi đã mua gimbap về rồi và giờ không đói nữa."
+        },
+        {
+          "translation": "Hôm nay thời tiết thật đẹp, trời trong xanh và có thể ngắm nhìn bầu trời quang đãng."
+        },
+        {
+          "translation": "Đây là nhà của mình đấy, hơi nhỏ một chút nhưng ấm cúng và thoải mái."
+        },
+        {
+          "translation": "Hóa ra cậu thực sự thích nó đó hả, cảm ơn vì đã nói cho mình biết nhé."
+        }
+      ]
+    },
+    "ko_이지만_104": {
+      "title": "~(이)지만 / -지만 (Tuy... nhưng, nhưng mà)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị sự tương phản, đối lập giữa hai mệnh đề ('tuy... nhưng', 'nhưng').",
+      "longExplanation": "'~(이)지만 / -지만' là vĩ tố liên kết thông dụng gắn vào thân động từ, tính từ hoặc danh từ (thông qua trợ từ vị ngữ '-(이)다'), dùng để nối hai mệnh đề có ý nghĩa tương phản hoặc nhượng bộ ('tuy... nhưng...', 'nhưng'). Mệnh đề trước thừa nhận một sự thật hay trạng thái, nhưng mệnh đề sau lại đưa ra một kết quả hoặc thông tin bất ngờ, trái ngược. Có thể kết hợp với các thì quá khứ, tương lai (-았/었지만, -겠지만).",
+      "formation": "Danh từ + (이)지만 | Thân động từ / Thân tính từ + -지만",
+      "examples": [
+        {
+          "translation": "Bình thường tôi thuộc tuýp ít khi xem phim truyền hình nhưng bộ phim này thú vị quá nên nhất định tôi phải xem."
+        },
+        {
+          "translation": "Hôm nay thời tiết đẹp nhưng vì bận rộn nên có lẽ tôi không ra ngoài được."
+        },
+        {
+          "translation": "Bạn còn trẻ nhưng đã tích lũy được rất nhiều kinh nghiệm rồi đấy."
+        },
+        {
+          "translation": "Tôi tuy là trưởng nhóm nhưng không tự mình quyết định mọi chuyện một mình đâu."
+        }
+      ]
+    },
+    "ko_이후_105": {
+      "title": "~이후 / -(으)ㄴ 이후 (Kể từ sau khi, sau khi)",
+      "shortExplanation": "Danh từ chỉ mốc thời gian hoặc cấu trúc định ngữ biểu thị khoảng thời gian 'kể từ sau khi' một sự kiện diễn ra.",
+      "longExplanation": "'이후' (Hán-Hàn: 以後) biểu thị khoảng thời gian tính từ một mốc thời điểm hoặc một sự kiện nào đó trở về sau ('sau khi', 'kể từ sau khi'). Thường gắn trực tiếp sau danh từ (Danh từ + 이후) hoặc kết hợp với cấu trúc định ngữ thì quá khứ của động từ (-(으)ㄴ 이후). Thường đi kèm trợ từ '로' thành '이후로' để nhấn mạnh khoảng thời gian kéo dài liên tục từ sự kiện đó cho tới nay.",
+      "formation": "Danh từ + 이후(로) | Thân động từ + -(으)ㄴ 이후(로)",
+      "examples": [
+        {
+          "translation": "Đây là lần đầu tiên tôi tụ tập cùng bạn bè kể từ sau khi tốt nghiệp cấp hai."
+        },
+        {
+          "translation": "Kể từ sau khi cô ấy chuyển lên thành phố, tôi chưa từng gặp lại cô ấy lần nào."
+        },
+        {
+          "translation": "Kể từ sau bữa sáng tới giờ tôi chưa ăn thêm thứ gì cả."
+        },
+        {
+          "translation": "Kể từ sau cuộc họp tôi vẫn tiếp tục làm việc ở văn phòng."
+        }
+      ]
+    },
+    "ko_인즉_106": {
+      "title": "~인즉 / -(으)ㄴ즉 (Nói cách khác là, tức là, xét cho cùng thì)",
+      "shortExplanation": "Vĩ tố liên kết hoặc quán ngữ liên kết dùng để diễn giải lại, làm sáng tỏ bản chất của sự việc ở vế trước ('tức là', 'nói cách khác').",
+      "longExplanation": "'~인즉' (kết hợp của trợ từ vị ngữ '이다' với vĩ tố liên kết '-(으)ㄴ즉') được dùng để diễn giải rõ hơn nguyên nhân, bản chất hoặc hệ quả tất yếu của sự việc đã nêu trước đó, tương đương với 'tức là', 'nói cách khác', 'xét cho cùng thì'. Cấu trúc này thường đứng đầu câu hoặc giữa hai mệnh đề nhằm làm sáng tỏ ý nghĩa thực sự của tình huống ('nếu làm rõ ngọn ngành thì là...'). Dạng nhấn mạnh thường dùng là '인즉슨'.",
+      "formation": "Mệnh đề / Danh từ + 인즉 | Thân động từ / Thân tính từ + -(으)ㄴ즉",
+      "examples": [
+        {
+          "translation": "Công việc này thực sự rất khó; nói cách khác là nếu không phải chuyên gia thì không thể hoàn thành tốt được."
+        },
+        {
+          "translation": "Cô ấy ngày mai sẽ kết hôn, tức là cô ấy không còn độc thân nữa."
+        },
+        {
+          "translation": "Nhân viên bảo tàng đã không cho phép tôi vào cửa; tức là tôi đã vi phạm quy định."
+        },
+        {
+          "translation": "Chúng tôi đã tham gia vào nghiên cứu; nói cách khác là chúng tôi đã có đóng góp nhất định về mặt học thuật."
+        }
+      ]
+    },
+    "ko_자_107": {
+      "title": "~자 (Cùng làm... nhé, đi nào - thể thân mật)",
+      "shortExplanation": "Vĩ tố kết thúc câu thỉnh dụ ở thể thân mật (banmal), dùng để rủ rê, đề xuất đối phương cùng làm việc gì ('...nhé', '...đi').",
+      "longExplanation": "'~자' là vĩ tố kết thúc câu thỉnh dụ (đề nghị) ở phong cách thân mật không kính ngữ (banmal), gắn trực tiếp vào thân động từ. Dùng để rủ rê, đề xuất đối phương cùng thực hiện một hành động nào đó với người nói, tương đương với 'cùng làm... nhé', 'đi nào' trong tiếng Việt. Chỉ sử dụng với bạn bè đồng trang lứa thân thiết hoặc người nhỏ tuổi hơn; tuyệt đối không dùng với người lớn tuổi.",
+      "formation": "Thân động từ + 자",
+      "examples": [
+        {
+          "translation": "Thời tiết đẹp quá, chúng mình cùng đi leo núi đi!"
+        },
+        {
+          "translation": "Hôm nay là Chủ nhật nên chúng ta hãy đến nhà thờ cầu nguyện nhé."
+        },
+        {
+          "translation": "Ăn cơm xong xuôi rồi, giờ tụi mình đến quán cà phê uống một tách cà phê đi."
+        },
+        {
+          "translation": "Đã là một ngày dài và mệt mỏi rồi, giờ chúng mình cùng chơi một ván board game rồi nghỉ ngơi cho thoải mái đi."
+        }
+      ]
+    },
+    "ko_자마자_108": {
+      "title": "~자마자 (Ngay sau khi, vừa mới... thì đã...)",
+      "shortExplanation": "Vĩ tố liên kết gắn vào thân động từ, biểu thị một hành động xảy ra ngay lập tức sau khi hành động trước kết thúc ('vừa mới... thì đã...', 'ngay sau khi').",
+      "longExplanation": "'~자마자' là vĩ tố liên kết nối hai mệnh đề, diễn tả hành động ở mệnh đề sau diễn ra ngay tức thì sau khi hành động ở mệnh đề trước vừa kết thúc, khoảng cách thời gian giữa hai hành động gần như bằng không. Tương đương với 'ngay sau khi', 'vừa mới... thì...' trong tiếng Việt. Gắn trực tiếp vào thân động từ bất kể có hay không có phụ âm cuối, và không kết hợp với đuôi chỉ thì quá khứ ở vế trước (thì được biểu thị ở vị từ cuối câu).",
+      "formation": "Thân động từ + 자마자",
+      "examples": [
+        {
+          "translation": "Tôi vừa về đến nhà là chuẩn bị bữa ăn ngay, vì quá đói bụng và muốn ăn cái gì đó liền."
+        },
+        {
+          "translation": "Mẹ vừa cúp điện thoại là tôi đi ngủ ngay, vì hôm qua ngủ muộn quá nên người rất mệt mỏi."
+        },
+        {
+          "translation": "Anh ấy vừa thức dậy là uống cà phê ngay; anh ấy nói rằng buổi sáng không có cà phê thì không thể bắt đầu công việc được."
+        },
+        {
+          "translation": "Trời vừa đổ mưa là tôi cầm ô đến thư viện ngay, vì tôi đã quyết định đi tìm tài liệu cho buổi học."
+        }
+      ]
+    },
+    "ko_전에전까지_109": {
+      "title": "~기 전에 / ~기 전까지 (Trước khi... / Cho đến trước khi...)",
+      "shortExplanation": "Biểu thị một hành động xảy ra trước một mốc thời gian/hành động khác ('trước khi') hoặc tiếp diễn cho tới tận mốc thời điểm đó ('cho đến trước khi').",
+      "longExplanation": "'~기 전에' và '~기 전까지' gắn sau thân động từ (hoặc danh từ + 전) để xác định mốc thời gian liên quan đến một hành động. Trong đó, '~기 전에' diễn tả một hành vi xảy ra trước một hành động hay sự kiện nào đó ('trước khi làm gì'). Còn '~기 전까지' kết hợp trợ từ hạn định '까지' (đến tận) nhấn mạnh một hành động, trạng thái kéo dài liên tục cho tới tận thời điểm sự việc sau diễn ra ('cho đến tận trước khi...').",
+      "formation": "Thân động từ + -기 전에 / -기 전까지 | Danh từ + 전에 / 전까지",
+      "examples": [
+        {
+          "translation": "Tôi ăn bữa sáng trước khi đến trường."
+        },
+        {
+          "translation": "Cô ấy sẽ liên lạc cho đến trước khi đi làm; có lẽ bạn hãy đợi cho đến khi có cuộc gọi nhé."
+        },
+        {
+          "translation": "Chúng ta phải thu dọn hành lý trước khi tàu hỏa đến nơi."
+        },
+        {
+          "translation": "Hãy cẩn thận cho đến khi chúng tôi trở về nhà nhé."
+        }
+      ]
+    },
+    "ko_정도_110": {
+      "title": "~정도 / -(으)ㄹ 정도 (Khoảng, chừng, mức độ)",
+      "shortExplanation": "Gắn sau danh từ chỉ số lượng để biểu thị số lượng ước chừng ('khoảng', 'chừng'), hoặc sau thân từ để biểu thị mức độ ('đến mức').",
+      "longExplanation": "'정도' (Hán-Hàn: 程度) được dùng với hai nét nghĩa chính: Thứ nhất, khi đứng sau danh từ chỉ số lượng, thời gian hay mức giá, nó biểu thị con số ước chừng, xấp xỉ, tương đương với 'khoảng', 'chừng', 'tầm' trong tiếng Việt. Thứ hai, khi kết hợp với định ngữ tương lai '-(으)ㄹ 정도(로)', nó biểu thị mức độ cao của một hành động hay trạng thái ('đến mức mà...', 'chừng nào...').",
+      "formation": "Danh từ chỉ số lượng + 정도 | Thân động từ / Thân tính từ + -(으)ㄹ 정도(로)",
+      "examples": [
+        {
+          "translation": "Để giải quyết vấn đề này có lẽ sẽ mất khoảng một tiếng đồng hồ."
+        },
+        {
+          "translation": "Nếu thực sự xem bộ phim đó thì chắc đã mất khoảng bốn tiếng đồng hồ rồi."
+        },
+        {
+          "translation": "Để hoàn thành bài tập này cần khoảng thời gian một tháng."
+        },
+        {
+          "translation": "Muốn đánh giá thành quả của anh ấy thì phải xem xét ít nhất 10 yếu tố trở lên, và việc này đòi hỏi khoảng một giờ đồng hồ."
+        }
+      ]
+    },
+    "ko_제_111": {
+      "title": "~제 (Tuy... nhưng, dẫu rằng)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị sự nhượng bộ hoặc đối lập, diễn tả kết quả thực tế trái ngược với điều kiện phía trước ('mặc dù... nhưng', 'dẫu rằng').",
+      "longExplanation": "'~제' là vĩ tố liên kết gắn vào thân động từ hoặc tính từ, dùng để biểu thị sự nhượng bộ hoặc tương phản giữa hai vế câu ('tuy... nhưng...', 'dẫu rằng...'). Cấu trúc này diễn đạt rằng mặc dù điều kiện hoặc sự thật ở vế trước đã xảy ra, nhưng kết quả hoặc hành động ở vế sau lại khác biệt so với mong đợi thông thường, tương tự như '-지만' hay '-되'. Thường mang sắc thái biểu cảm đặc trưng trong ngữ cảnh văn học hoặc khẩu ngữ vùng miền.",
+      "formation": "Thân động từ / Thân tính từ + 제",
+      "examples": [
+        {
+          "translation": "Dù bị ốm nhưng cô ấy vẫn tiếp tục làm việc."
+        },
+        {
+          "translation": "Em trai tuy còn nhỏ tuổi nhưng có rất nhiều việc có thể giao phó cho em ấy."
+        },
+        {
+          "translation": "Mặc dù trời đổ mưa nhưng tôi vẫn ra ngoài."
+        },
+        {
+          "translation": "Đề thi tuy khó nhưng vì là môn học tôi yêu thích nên tôi đã làm bài một cách rất thích thú."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_이라면_97": {
+      "title": "~(이)라면（如果是……、要是……的话）",
+      "shortExplanation": "接在名词后，用于设定假定的情况或身份（“如果是……”、“要是……的话”）。",
+      "longExplanation": "“~(이)라면”是接在名词后面的假定表现，用于设想某种假设性的事实、身份或情况，相当于汉语的“如果是……”、“要是……的话”。前面的名词有收音时接“-이라면”，无收音时接“-라면”。说话人借此提出假设性前提，并在后一分句引出相应的疑问、对策或判断。",
+      "formation": "名词（有收音）+ 이라면 /（无收音）+ 라면",
+      "examples": [
+        {
+          "translation": "如果这里真的是著名的旅游景点，为什么会这么没人呢？"
+        },
+        {
+          "translation": "如果真发生了那种事，我得好好思考该如何应对。"
+        },
+        {
+          "translation": "如果想退学，就得好好考虑一下该如何规划未来。"
+        },
+        {
+          "translation": "如果你是我的朋友，为什么要背叛我还在别的同学面前说我的坏话？"
+        }
+      ]
+    },
+    "ko_이래_98": {
+      "title": "~이래（这样、如此、像这样）",
+      "shortExplanation": "形容词“이러하다（这样、如此）”的活用形式，用于表示状态或做法“像这样”、“如此”。",
+      "longExplanation": "“~이래”是形容词“이러하다（这样、如此）”在非格式体中的活用缩略形式，常与“-서는”、“- 있으면”等结合，指代眼前所呈现的某种状态、表现或做法（“像这样……”、“要是这样下去……”）。说话人常借此对当前的情势发表看法，或推论随之而来的结果。",
+      "formation": "形容词 이러하다 的活用形（如 이래서는、이래 있으면 等）",
+      "examples": [
+        {
+          "translation": "天气像这样的话，根本没法出去玩。"
+        },
+        {
+          "translation": "我要是继续这样下去，感觉会出名的。"
+        },
+        {
+          "translation": "这房子成这样的话，根本卖不出去。"
+        },
+        {
+          "translation": "你要是像这样保持下去，作为运动员一定能取得出色的成绩。"
+        }
+      ]
+    },
+    "ko_이랑_99": {
+      "title": "~(이)랑（和、跟、同）",
+      "shortExplanation": "口语助词，接在名词后，表示并列列举（“和”）或共同做事的伴随对象（“跟……一起”）。",
+      "longExplanation": "“~(이)랑”是韩语日常口语中极为常用的助词。主要有两种用法：一是并列连接两个或多个名词，表示“和”、“与”；二是接在人或动物名词后，表示共同进行某项活动的伴随对象，相当于“跟……一起”（常与“같이”、“함께”连用）。名词有收音时接“-이랑”，无收音时接“-랑”。语调轻松亲切。",
+      "formation": "名词（有收音）+ 이랑 /（无收音）+ 랑",
+      "examples": [
+        {
+          "translation": "我打算和朋友一起去看电影。"
+        },
+        {
+          "translation": "我们点了披萨和炸鸡。"
+        },
+        {
+          "translation": "我和姐姐在商场买了衣服。"
+        },
+        {
+          "translation": "我养了猫，也养了狗。"
+        }
+      ]
+    },
+    "ko_이러하다_100": {
+      "title": "~이러하다（如此、这样、这般）",
+      "shortExplanation": "指示形容词，用于表达事物的状态、性质或态度“像这样”、“如此”。",
+      "longExplanation": "“이러하다”（缩略形为“이렇다”）是韩语中的指示形容词，用于指代事物、状态、情况或态度如同眼前所见这般，相当于汉语的“如此”、“这样”、“这般”。常与各种连接词尾结合（如“-더니”、“-다니”、“-다 보니”等），用于说明现状并引出后续的感慨、惊讶或结果。",
+      "formation": "形容词 이러하다 + 连接词尾（如 이러하더니、이러하다니、이러하다 보니 等）",
+      "examples": [
+        {
+          "translation": "朋友的态度竟然如此，大家都感到十分慌张。"
+        },
+        {
+          "translation": "如今世道竟然这般，真叫人难以置信。"
+        },
+        {
+          "translation": "她的行为总是这样，导致失去了人们的信任。"
+        },
+        {
+          "translation": "听说他是这样的人，真的让人很失望。"
+        }
+      ]
+    },
+    "ko_이런그런저런_101": {
+      "title": "~이런 / 그런 / 저런（这种、那种、那样的）",
+      "shortExplanation": "冠形词，置于名词前，分别表示“这样的”、“那样的”、“那种（离双方都远的）”。",
+      "longExplanation": "“이런/그런/저런”是韩语中的指示冠形词，置于名词前起修饰限定作用，表示事物的类别、性质或状态。其中，“이런”指离说话人近的“这种/这样的”；“그런”指离听话人近或前文提及的“那种/那样的”；“저런”指离说话人和听话人都较远的“那种/那样的”（有时带有感叹语气）。",
+      "formation": "이런 / 그런 / 저런 + 名词",
+      "examples": [
+        {
+          "translation": "在这种情况之下，真不知道该如何应对。"
+        },
+        {
+          "translation": "我不喜欢那种氛围。"
+        },
+        {
+          "translation": "要是穿那种衣服，别人会怎么看我呢？"
+        },
+        {
+          "translation": "我不应该抱有这种想法。"
+        }
+      ]
+    },
+    "ko_이므로_102": {
+      "title": "~(으)므로 / -(이)므로（因为、由于）",
+      "shortExplanation": "书面语或正式场合的连接词尾，用于提示客观明确的原因或根据（“因为……”、“由于……”）。",
+      "longExplanation": "“~(으)므로 / -(이)므로”是常用于正式书面语、公文、学术论著或正式新闻报道中的连接词尾，表示前项是后项的客观原因、根据或理由，相当于汉语的“因为……”、“由于……”。名词接“-(이)므로”；动词/形容词词干有收音接“-으므로”，无收音或以ㄹ收音结尾接“-므로”。后句通常不使用命令句或共动句。",
+      "formation": "名词 + (이)므로 | 动词 / 形容词词干 + -(으)므로",
+      "examples": [
+        {
+          "translation": "因为明天是周一，所以今晚必须早点睡觉。"
+        },
+        {
+          "translation": "由于学分太低无法拿到教授的奖学金，他在经济上遇到了困难。"
+        },
+        {
+          "translation": "由于我们没有时间，所以必须简化晚饭。"
+        },
+        {
+          "translation": "鉴于该员工业务能力极差，我们向他发出了警告。"
+        }
+      ]
+    },
+    "ko_이야_103": {
+      "title": "~(이)야（是、就是、啦——非格式体平语终结词尾）",
+      "shortExplanation": "接在名词或依存名词后，用于平语日常对话中陈述事实或进行说明（“是……”、“就是啦”）。",
+      "longExplanation": "“~(이)야”是体词谓格助词“-(이)다”的非格式体平语（非敬语）终结形式。接在名词或依存名词（如“것 + 이야 -> 거야”）后，用于关系亲密的平辈、晚辈之间，向对方告知事实或加以确认，相当于汉语的“是……”、“就是啦”。名词有收音接“-이야”，无收音接“-야”。绝不能对长辈使用。",
+      "formation": "名词（有收音）+ 이야 /（无收音）+ 야 | 冠形词形 + 거야",
+      "examples": [
+        {
+          "translation": "我还以为自己饿了，其实并不是；我买了紫菜包饭，现在不饿了。"
+        },
+        {
+          "translation": "今天天气真好，天空蔚蓝又晴朗。"
+        },
+        {
+          "translation": "这里就是我家啦，虽然有点小，但温馨又舒服。"
+        },
+        {
+          "translation": "原来你真的很喜欢这个呀，谢谢你告诉我。"
+        }
+      ]
+    },
+    "ko_이지만_104": {
+      "title": "~(이)지만 / -지만（虽然……但是……、可是）",
+      "shortExplanation": "连接词尾，用于连接具有对立、转折关系的两个分句（“虽然……但是……”、“可是”）。",
+      "longExplanation": "“~(이)지만 / -지만”是韩语中最基础也是最常用的转折连接词尾，接在名词（体词谓词形）或动词、形容词词干后面，表示前后两个分句在内容上形成对立、转折或对照，相当于汉语的“虽然……但是……”、“……，不过……”。前项承认某种事实，后项提出相反或不受其约束的情况。可与过去时、将来时词尾连用（如 -았/었지만, -겠지만）。",
+      "formation": "名词 + (이)지만 | 动词 / 形容词词干 + -지만",
+      "examples": [
+        {
+          "translation": "平时我属于不太看电视剧的类型，但这部剧太有意思了，一定要看一看。"
+        },
+        {
+          "translation": "今天天气虽然很好，但因为太忙，恐怕出不去了。"
+        },
+        {
+          "translation": "你虽然年轻，却已经拥有了很多经验呢。"
+        },
+        {
+          "translation": "我虽然是组长，但并不会独自做所有的决定。"
+        }
+      ]
+    },
+    "ko_이후_105": {
+      "title": "~이후 / -(으)ㄴ 이후（……之后、自……以后）",
+      "shortExplanation": "接在名词或动词冠形词形后，表示某一时间点或事件之后的时期（“……之后”、“自……以来”）。",
+      "longExplanation": "“이후（以後）”用于表示自某个基准时间点或特定事件发生以后的持续时间段，相当于汉语的“……以后”、“自……以来”、“……之后”。常直接接在名词后（名词 + 이후），或者与动词过去时定语词尾连用（-(으)ㄴ 이후）。常加上助词“로”形成“이후로”，进一步强调从该事件起直至目前的持续状态。",
+      "formation": "名词 + 이후(로) | 动词词干 + -(으)ㄴ 이후(로)",
+      "examples": [
+        {
+          "translation": "这是自初中毕业之后，第一次和朋友们聚在一起。"
+        },
+        {
+          "translation": "自从她搬到城市去以后，我就再也没见过她。"
+        },
+        {
+          "translation": "自早饭以后，我什么东西都没吃过。"
+        },
+        {
+          "translation": "会议结束之后，我就一直在办公室里继续工作。"
+        }
+      ]
+    },
+    "ko_인즉_106": {
+      "title": "~인즉 / -(으)ㄴ즉（也就是说、换言之、究其原因）",
+      "shortExplanation": "连接词尾或副词性用法，用于进一步解释、换言重申前项事实的本质（“也就是说”、“换言之”）。",
+      "longExplanation": "“~인즉”（体词谓格助词“이다”后接连接词尾“-(으)ㄴ즉”）常用于对前文所述的内容进行补充阐述、揭示实质或归纳结论，相当于汉语的“也就是说”、“换句话说”、“究其实质”。说话人借此对情况加以说明和阐清。也常以“인즉슨”的形式出现，强调探究事情原委后得出的核心解释。",
+      "formation": "分句 / 名词 + 인즉 | 动词 / 形容词词干 + -(으)ㄴ즉",
+      "examples": [
+        {
+          "translation": "这项工作非常困难，也就是说，如果不是专家就无法妥善完成。"
+        },
+        {
+          "translation": "她明天就要结婚了，换言之，她不再是单身了。"
+        },
+        {
+          "translation": "博物馆工作人员没有允许我入场，也就是说，我违反了规定。"
+        },
+        {
+          "translation": "我们参与了这项研究，换言之，我们在学术上做出了某种贡献。"
+        }
+      ]
+    },
+    "ko_자_107": {
+      "title": "~자（……吧、一起……吧——非格式体平语共动词尾）",
+      "shortExplanation": "动词词尾，用于平语中向对方提议共同做某事（“……吧”、“一起……吧”）。",
+      "longExplanation": "“~자”是接在动词词干后面的非格式体平语（非敬语）共动句终结词尾，用于向关系亲密的朋友、晚辈提议一起做某事，相当于汉语的“……吧”、“咱们一起……吧”。只适用于亲密的同辈或晚辈之间，对长辈或上级使用属于极其失礼的行为。",
+      "formation": "动词词干 + 자",
+      "examples": [
+        {
+          "translation": "天气这么好，我们去山上爬山吧。"
+        },
+        {
+          "translation": "今天是周日，去教堂做礼拜祈祷吧。"
+        },
+        {
+          "translation": "饭都吃完了，现在去咖啡馆喝杯咖啡吧。"
+        },
+        {
+          "translation": "漫长而疲惫的一天结束了，现在玩个桌游好好放松一下吧。"
+        }
+      ]
+    },
+    "ko_자마자_108": {
+      "title": "~자마자（刚……就……、一……就……）",
+      "shortExplanation": "连接词尾，接在动词词干后，表示前一个动作刚结束，后一个动作紧接着立刻发生（“一……就……”）。",
+      "longExplanation": "“~자마자”是韩语中表示紧接关系的连接词尾，接在动词词干后面，表示前项动作一旦完成，后项动作便毫无时差地紧接着发生，相当于汉语的“一……就……”、“刚……就……”。无论动词词干是否有收音均直接接“-자마자”。前句不能使用过去时词尾“-았/었-”，时态统一在后句句尾体现。",
+      "formation": "动词词干 + 자마자",
+      "examples": [
+        {
+          "translation": "我一回到家就立刻准备做饭，因为实在太饿了，想马上吃上东西。"
+        },
+        {
+          "translation": "妈妈刚挂断电话我就去睡觉了，因为昨天睡得太晚，身体感觉很疲倦。"
+        },
+        {
+          "translation": "他一醒来就喝咖啡，他说早上没有咖啡就没办法开始工作。"
+        },
+        {
+          "translation": "刚一下雨我就拿着雨伞去了图书馆，因为决定去查找上课要用的资料。"
+        }
+      ]
+    },
+    "ko_전에전까지_109": {
+      "title": "~기 전에 / ~기 전까지（在……之前、直到……之前为止）",
+      "shortExplanation": "接在动词词干或名词后，分别表示某事发生“在……之前”，或某状态持续“直到……之前为止”。",
+      "longExplanation": "“~기 전에”和“~기 전까지”是表示时间先后与界限的句型，接在动词词干（-기 전에）或名词（名词 + 전에）后面。“~기 전에”表示在某动作或事件发生之前完成了另一动作，相当于汉语的“在……之前”；而“~기 전까지”则加入了表示终点的助词“까지”，强调某种动作或状态一直持续进行，直至某一事件发生前夕，相当于“直到……之前为止”。",
+      "formation": "动词词干 + -기 전에 / -기 전까지 | 名词 + 전에 / 전까지",
+      "examples": [
+        {
+          "translation": "我在去学校之前吃早餐。"
+        },
+        {
+          "translation": "她会在上班之前跟你联系的，大概请等到她联系为止吧。"
+        },
+        {
+          "translation": "在火车到达之前，我们必须收拾好行李。"
+        },
+        {
+          "translation": "在我们回家之前，请务必多加小心。"
+        }
+      ]
+    },
+    "ko_정도_110": {
+      "title": "~정도 / -(으)ㄹ 정도（大约、左右、……的程度）",
+      "shortExplanation": "接在数量词或动词定语后，表示大概的数量估算（“左右”、“大约”）或达到的程度（“到……的地步”）。",
+      "longExplanation": "“정도（程度）”是韩语中非常高频的表达，主要有两种用法：第一，接在表示数量、时间或金额的名词后面，表示估算的大致数量或范围，相当于汉语的“大约”、“左右”、“上下”；第二，与动词或形容词的定语词尾结合形成“-(으)ㄹ 정도(로)”，表示某种动作或状态所达到的极高程度，相当于“到了……的程度”、“甚至能……”。",
+      "formation": "数量词 / 名词 + 정도 | 动词 / 形容词词干 + -(으)ㄹ 정도(로)",
+      "examples": [
+        {
+          "translation": "解决这个问题大概需要花一个小时左右。"
+        },
+        {
+          "translation": "如果真的看了那部电影，应该要花四个小时左右。"
+        },
+        {
+          "translation": "要想完成这项作业，需要一个月左右的时间。"
+        },
+        {
+          "translation": "要评价他的成果，至少需要考量10项以上的要素，这大约需要一个小时的时间。"
+        }
+      ]
+    },
+    "ko_제_111": {
+      "title": "~제（虽然……但是……、尽管……却……）",
+      "shortExplanation": "连接词尾，接在用言词干后，表示转折或让步关系（“虽然……但是……”、“尽管……”）。",
+      "longExplanation": "“~제”是接在动词或形容词词干后面的连接词尾，用于表示转折与让步关系，相当于汉语的“虽然……但是……”、“尽管……却……”。它表明尽管存在前项所陈述的情况或条件，后项却出现了出乎意料或不受其影响的结果，功能类似于“-지만”或“-되”。在文学作品或特定口语语境中常体现出独特的转折修辞色彩。",
+      "formation": "动词 / 形容词词干 + 제",
+      "examples": [
+        {
+          "translation": "她虽然身体不舒服，但还是继续坚持工作。"
+        },
+        {
+          "translation": "弟弟虽然年纪还小，但有很多事情可以托付给他做。"
+        },
+        {
+          "translation": "尽管下着雨，我还是出门了。"
+        },
+        {
+          "translation": "考试题虽然很难，但因为是我喜欢的科目，所以解答得非常开心。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_이라면_97": {
+      "title": "~(이)라면（もし〜なら、〜であれば）",
+      "shortExplanation": "名詞に付き、ある立場や状況を仮定して表します（「もし〜なら」「〜であれば」）。",
+      "longExplanation": "「~(이)라면」は名詞の後に付き、「もし〜なら」「〜であれば」と仮定の状況や身分、前提を提示する表現です。パッチムがある名詞には「-이라면」、パッチムがない名詞には「-라면」が付きます。特定の状況を仮定した上で、それに対する疑問、判断、対応などを後節で展開する際によく使われます。",
+      "formation": "名詞（パッチム有）+ 이라면 /（パッチム無）+ 라면",
+      "examples": [
+        {
+          "translation": "ここが本当に有名な観光名所なら、なぜこんなに人がいないのですか？"
+        },
+        {
+          "translation": "本当にそんなことが起きたら、どう対処すべきか悩まなければなりませんね。"
+        },
+        {
+          "translation": "学校を辞めたいのなら、将来をどのように設計するか考えてみるべきでしょう。"
+        },
+        {
+          "translation": "お前が私の友達なら、なぜ私を裏切って他の友達に悪口を言いふらしたのか？"
+        }
+      ]
+    },
+    "ko_이래_98": {
+      "title": "~이래（このように、こんな風で、こんな調子で）",
+      "shortExplanation": "形容詞「이러하다（このようだ）」の活用形で、「このように」「こんな風で」と現在の状態や様子を表します。",
+      "longExplanation": "「~이래」は形容詞「이러하다（このようだ、こうである）」の活用・縮約形で、「이래서는（こんな風では、こうであっては）」「이래 있으면（こうしていれば）」などの連用形でよく用いられます。目の前にある状態や態度、様子が「こんな風だ」と示し、それに対する評価や懸念、今後の見通しを述べる際に使われます。",
+      "formation": "形容詞「이러하다」の活用形（이래서는、이래 있으면 など）",
+      "examples": [
+        {
+          "translation": "天気がこんな状態では遊びに行くことができません。"
+        },
+        {
+          "translation": "私がこのままでいれば、有名になりそうです。"
+        },
+        {
+          "translation": "この家がこんな風では売ることができないよ。"
+        },
+        {
+          "translation": "君がこんな調子でいれば、スポーツ選手として優れた成果を収めることができそうだね。"
+        }
+      ]
+    },
+    "ko_이랑_99": {
+      "title": "~(이)랑（〜と、〜と一緒に）",
+      "shortExplanation": "名詞に付き、並列（「〜と」）や動作を共にする相手（「〜と一緒に」）を表す口語助詞です。",
+      "longExplanation": "「~(이)랑」は日常の会話で頻繁に使われる助詞です。名詞を並列して「〜と」と繋ぐ用法と、一緒に行動する相手を示して「〜と（一緒に）」を表す用法があります（しばしば「같이」「함께」を伴います）。直前の名詞にパッチムがある場合は「-이랑」、パッチムがない場合は「-랑」が付きます。親しみやすい口語的な響きを持ちます。",
+      "formation": "名詞（パッチム有）+ 이랑 /（パッチム無）+ 랑",
+      "examples": [
+        {
+          "translation": "私は友達と一緒に映画を見に行く予定です。"
+        },
+        {
+          "translation": "私たちはピザとチキンを注文しました。"
+        },
+        {
+          "translation": "私は姉と一緒にショッピングモールで服を買いました。"
+        },
+        {
+          "translation": "私は猫も犬も飼っています。"
+        }
+      ]
+    },
+    "ko_이러하다_100": {
+      "title": "~이러하다（このようだ、こうである、このようなものだ）",
+      "shortExplanation": "事物の状態や態度、状況が「このようである」「こうだ」と指し示す指示形容詞です。",
+      "longExplanation": "「이러하다」（縮約形は「이렇だ」）は、物事の様子、性質、態度、状況などが話し手の目の前にある通り「このようだ」「こうである」と指し示す指示形容詞です。日本語の「このようだ」「こうだ」に相当します。「-더니」「-다니」「-다 보니」などの接続語尾と結びついて、現状を指摘し、それに対する驚きや失望、結果を述べる際によく用いられます。",
+      "formation": "形容詞「이러하다」+ 接続語尾（이러하더니、이러하다니、이러하다 보니 など）",
+      "examples": [
+        {
+          "translation": "友達の態度があまりにもこのようであったため、みんな当惑しました。"
+        },
+        {
+          "translation": "最近の世の中がこのようであるとは、信じがたいですね。"
+        },
+        {
+          "translation": "彼女の行動がこのようであったため、人々の信頼を失ってしまいました。"
+        },
+        {
+          "translation": "彼がこのようであると聞くと、本当に失望します。"
+        }
+      ]
+    },
+    "ko_이런그런저런_101": {
+      "title": "~이런 / 그런 / 저런（このような、そのような、あのような、こんな、そんな、あんな）",
+      "shortExplanation": "名詞の前に置かれ、種類や状態を修飾する指示冠形詞です（「こんな」「そんな」「あんな」）。",
+      "longExplanation": "「이런 / 그런 / 저런」は名詞を直接修飾する指示冠形詞（連体詞）です。対象の種類、性質、状態を表します。「이런」は話し手に近い「こんな、このような」を、「그런」は聞き手に近い、または既に言及された「そんな、そのような」を、「저런」は両者から遠いものや感嘆のニュアンスを含む「あんな、あのような」を表します。",
+      "formation": "이런 / 그런 / 저런 + 名詞",
+      "examples": [
+        {
+          "translation": "このような状況ではどのように対処すべきか分かりません。"
+        },
+        {
+          "translation": "そのような雰囲気が好きではありません。"
+        },
+        {
+          "translation": "あんな服を着たらどう思われるでしょうか？"
+        },
+        {
+          "translation": "こんな考えはしないようにしなければなりませんね。"
+        }
+      ]
+    },
+    "ko_이므로_102": {
+      "title": "~(으)므로 / -(이)므로（〜であるから、〜のため、〜ゆえに）",
+      "shortExplanation": "書き言葉や公式な場で、客観的な原因や明確な理由を表す格調高い接続語尾です（「〜のため」「〜ゆえに」）。",
+      "longExplanation": "「~(으)므로 / -(이)므로」は、公的な文書、論文、ニュース、演説などの書き言葉や改まった場で多用される接続語尾です。前節が後節の客観的な原因、理由、根拠であることを表し、日本語の「〜のため」「〜ゆえに」「〜であるから」に相当します。名詞には「-(이)므로」、動詞・形容詞の語幹にはパッチムに応じて「-(으)므로」が付きます。文末に命令形や勧誘形を続けることはできません。",
+      "formation": "名詞 + (이)므로 | 動詞・形容詞語幹 + -(으)므로",
+      "examples": [
+        {
+          "translation": "明日は月曜日であるため、今夜は早く就寝しなければなりません。"
+        },
+        {
+          "translation": "彼は単位が低く教授から奨学金をもらうことができなかったため、金銭的な問題がありました。"
+        },
+        {
+          "translation": "私たちは時間がないため、夕食を簡略化しなければなりません。"
+        },
+        {
+          "translation": "その社員は業務能力が極めて不良であるため、私たちは彼に警告を発しました。"
+        }
+      ]
+    },
+    "ko_이야_103": {
+      "title": "~(이)야（〜だよ、〜なんだ、〜さ——パンマルの終結語尾）",
+      "shortExplanation": "名詞に付き、親しい間柄で「〜だよ」「〜なんだ」と説明・断定する親称（パンマル）の終結語尾です。",
+      "longExplanation": "「~(이)야」は指定詞「-(이)다」のパンマル（くだけた平叙文・ため口）終結語尾です。名詞や連体形「것 + 이야 -> 거야」に付き、事実を相手に伝えたり断定したりする際に用いられ、日本語の「〜だよ」「〜なんだ」「〜さ」に相当します。パッチムがある名詞には「-이야」、パッチムがない名詞には「-야」が付きます。友人同士や年下の相手に用いられ、目上の人には使えません。",
+      "formation": "名詞（パッチム有）+ 이야 /（パッチム無）+ 야 | 連体形 + 거야",
+      "examples": [
+        {
+          "translation": "お腹が空いていると思ったけれど違ったよ。キンパを買ってきたから、もうお腹は空いていないよ。"
+        },
+        {
+          "translation": "今日はずいぶん天気がいいね。空が澄んでいて青い空が見えるよ。"
+        },
+        {
+          "translation": "ここが僕の家だよ。少し小さいけれど、居心地が良くて落ち着くんだ。"
+        },
+        {
+          "translation": "君が本当に好きなんだね、教えてくれてありがとう。"
+        }
+      ]
+    },
+    "ko_이지만_104": {
+      "title": "~(이)지만 / -지만（〜だけれども、〜だが、〜ですが）",
+      "shortExplanation": "前節と後節が対比・逆接の関係にあることを表す接続語尾です（「〜だけれども」「〜だが」）。",
+      "longExplanation": "「~(이)지만 / -지만」は、動詞や形容詞の語幹、または名詞（指定詞「-(이)다」）に付き、前節と後節の内容が対立したり逆接の関係にあることを表す代表的な接続語尾です。日本語の「〜だけれども」「〜ですが」「〜ものの」に相当します。前節で事実や前提を認めつつ、後節でそれに相反する事実を展開します。過去形「-았/었지만」や推量「-겠지만」とも結びつきます。",
+      "formation": "名詞 + (이)지만 | 動詞・形容詞語幹 + -지만",
+      "examples": [
+        {
+          "translation": "普段はドラマをあまり見ない方ですが、このドラマは興味深いのでぜひ見なければなりません。"
+        },
+        {
+          "translation": "今日は天気が良いですが、忙しくて出かけられそうにありません。"
+        },
+        {
+          "translation": "あなたは若いですが、すでに多くの経験を持っていますね。"
+        },
+        {
+          "translation": "私はチーム長ですが、すべての決定を一人でするわけではありません。"
+        }
+      ]
+    },
+    "ko_이후_105": {
+      "title": "~이후 / -(으)ㄴ 이후（〜以後、〜以降、〜して以来）",
+      "shortExplanation": "名詞や動詞連体形に付き、ある時点や出来事の後の期間を表します（「〜以後」「〜して以来」）。",
+      "longExplanation": "「이후（以後）」は、特定の時点や出来事を基準として、それより後の時間や期間を表す表現です。日本語の「〜以後」「〜以降」「〜して以来」に相当します。名詞の直後に付くか、動詞の過去連体形「-(으)ㄴ 이후」の形で用いられます。助詞「로」を伴った「이후로」の形をとることも多く、ある出来事を契機としてその状態が継続しているニュアンスを強調します。",
+      "formation": "名詞 + 이후(로) | 動詞語幹 + -(으)ㄴ 이후(로)",
+      "examples": [
+        {
+          "translation": "中学校の卒業以来、初めて友達と集まりました。"
+        },
+        {
+          "translation": "彼女が都会に引っ越して以来、彼女に会ったことがありません。"
+        },
+        {
+          "translation": "朝食以後、何も食べていません。"
+        },
+        {
+          "translation": "会議の後から、オフィスで仕事を続けています。"
+        }
+      ]
+    },
+    "ko_인즉_106": {
+      "title": "~인즉 / -(으)ㄴ즉（つまり、言い換えれば、その真相は）",
+      "shortExplanation": "前に述べた内容を分かりやすく言い直したり、その真相や本質を要約して提示したりする表現です（「つまり」「言い換えれば」）。",
+      "longExplanation": "「~인즉」（指定詞「이다」の語幹に接続語尾「-(으)ㄴ즉」が付いた形）は、前に述べた内容について改めて分かりやすく言い直したり、その真相や本質を要約して提示したりする際に用いられる表現です。日本語の「つまり」「言い換えれば」「事の真相は」に相当します。文頭に置いて接続副詞のように用いることも多く、強調形として「인즉슨」の形もよく使われます。",
+      "formation": "節・名詞 + 인즉 | 動詞・形容詞語幹 + -(으)ㄴ즉",
+      "examples": [
+        {
+          "translation": "この作業は本当に難しいです。つまり、専門家でなければ適切にやり遂げることができません。"
+        },
+        {
+          "translation": "彼女は明日結婚します。言い換えれば、彼女はもう独身ではありません。"
+        },
+        {
+          "translation": "博物館の職員は私が入場することを許可しませんでした。つまり、私は規定に違反したのです。"
+        },
+        {
+          "translation": "私たちは研究に参加しました。言い換えれば、私たちは何らかの学術的な貢献をしたということです。"
+        }
+      ]
+    },
+    "ko_자_107": {
+      "title": "~자（〜しよう、〜しようぜ——パンマルの勧誘語尾）",
+      "shortExplanation": "動詞語幹に付き、親しい相手に一緒にある行動をしようと提案・勧誘する親称（パンマル）の終結語尾です（「〜しよう」）。",
+      "longExplanation": "「~자」は動詞の語幹に直接付くパンマル（ため口）の勧誘形終結語尾です。親しい友人や同年代、または年下の相手に対して「〜しよう」「〜しようぜ」と一緒に行動することを提案する際に用いられます。目上の人や改まった場では使えません（丁寧形は「-(으)ㅂ시다」や「-(으)시죠」などを用います）。",
+      "formation": "動詞語幹 + 자",
+      "examples": [
+        {
+          "translation": "天気がとても良いから、僕たち山へ登山に行こう。"
+        },
+        {
+          "translation": "今日は日曜日だから、教会に行って祈ろう。"
+        },
+        {
+          "translation": "ご飯は全部食べたから、もうコーヒーを一杯飲みにカフェに行こう。"
+        },
+        {
+          "translation": "長くて退屈な一日だったから、もうボードゲームを一つプレイしてゆっくり休もう。"
+        }
+      ]
+    },
+    "ko_자마자_108": {
+      "title": "~자마자（〜するやいなや、〜するとすぐ、〜してすぐに）",
+      "shortExplanation": "動詞語幹に付き、前の動作が終わるとすぐに次の動作が続くことを表す接続語尾です（「〜するやいなや」「〜するとすぐ」）。",
+      "longExplanation": "「~자마자」は動詞の語幹に付き、前節の動作が完了した直後に間髪入れず後節の動作や事態が起きることを表す接続語尾です。日本語の「〜するやいなや」「〜するとすぐ」「〜してすぐに」に相当します。語幹のパッチムの有無に関わらず「-자마자」がそのまま付きます。前節には時制を表す「-았/었-」を入れず、文末の述語で全体の時制を表します。",
+      "formation": "動詞語幹 + 자마자",
+      "examples": [
+        {
+          "translation": "私は家に帰ってくるやいなや食事の準備をしました。とてもお腹が空いていてすぐに食べたかったからです。"
+        },
+        {
+          "translation": "母が電話を切るやいなや私は眠りにつきました。昨日は寝るのが遅すぎたのでとても疲れていました。"
+        },
+        {
+          "translation": "彼は起きるとすぐにコーヒーを飲みます。朝にコーヒーがないと仕事を始められないと言っています。"
+        },
+        {
+          "translation": "雨が降るやいなや傘を持って図書館へ行きました。授業の資料を探すことに決めたからです。"
+        }
+      ]
+    },
+    "ko_전에전까지_109": {
+      "title": "~기 전에 / ~기 전까지（〜する前に、〜する前までに、〜する時まで）",
+      "shortExplanation": "動詞語幹や名詞に付き、ある行動が起こる前であること（「〜する前に」）や、その時点まで継続すること（「〜する前までに」）を表します。",
+      "longExplanation": "「~기 전에」と「~기 전까지」は、時間の前後関係や期限を表す表現です。動詞の語幹に名詞化語尾「-기」が付いて「-기 전에（〜する前に）」、または期限・継続を表す助詞「까지」を伴って「-기 전까지（〜する前までに、〜する時まで）」の形で用いられます。「~기 전에」はある事態の前に別の動作を行う点を指し、「~기 전까지」はその時点に至るまで状態や動作が継続することを強調します。名詞の後には「名詞 + 전에 / 전까지」が直接付きます。",
+      "formation": "動詞語幹 + -기 전에 / -기 전까지 | 名詞 + 전에 / 전까지",
+      "examples": [
+        {
+          "translation": "私は学校へ行く前に朝食を食べます。"
+        },
+        {
+          "translation": "彼女は出勤する前までに連絡します。おそらく連絡が来るまで待っていてください。"
+        },
+        {
+          "translation": "列車が到着する前に荷物をまとめなければなりません。"
+        },
+        {
+          "translation": "私たちが家に帰ってくる時まで気をつけてください。"
+        }
+      ]
+    },
+    "ko_정도_110": {
+      "title": "~정도 / -(으)ㄹ 정도（〜くらい、〜程度、〜ほど）",
+      "shortExplanation": "数量や時間、動詞連体形に付き、おおよその数量（「〜くらい」「〜程度」）や達する度合い（「〜するほど」）を表します。",
+      "longExplanation": "「정도（程度）」は、数量詞や名詞の後に付いておおよその分量、時間、数量を見積もって表す表現で、日本語の「〜くらい」「〜ほど」「〜程度」に相当します。また動詞や形容詞の未来連体形と結びついて「-(으)ㄹ 정도(로)」の形をとると、ある状態や動作が到達した極限の度合いを表し、「〜するほど」「〜するくらい」という意味を表します。",
+      "formation": "数量詞・名詞 + 정도 | 動詞・形容詞語幹 + -(으)ㄹ 정도(로)",
+      "examples": [
+        {
+          "translation": "この問題を解決するには1時間くらいかかりそうです。"
+        },
+        {
+          "translation": "本当に映画を観たのなら、4時間程度かかったはずです。"
+        },
+        {
+          "translation": "この課題を完了するには1か月程度の時間が必要です。"
+        },
+        {
+          "translation": "彼の成果を評価するには最低10項目以上の要素を考慮しなければならず、これには約1時間ほどの時間が求められます。"
+        }
+      ]
+    },
+    "ko_제_111": {
+      "title": "~제（〜だけれども、〜だが、〜にもかかわらず）",
+      "shortExplanation": "用言の語幹に付き、前節の条件にもかかわらず後節で予期せぬ結果が生じることを表す接続語尾です（「〜だけれども」「〜だが」）。",
+      "longExplanation": "「~제」は動詞や形容詞の語幹に付く接続語尾で、前節の状況や事実にもかかわらず、後節でそれに相反する結果や予想とは異なる行動が生じることを表します。日本語の「〜だけれども」「〜だが」「〜にもかかわらず」に相当し、「-지만」や「-되」と類似した逆接・譲歩の機能を持ちます。文学的な表現や特定の語脈において独特の対比的なニュアンスを表す際に用いられます。",
+      "formation": "動詞・形容詞語幹 + 제",
+      "examples": [
+        {
+          "translation": "彼女は具合が悪かったですが、仕事を続けました。"
+        },
+        {
+          "translation": "弟は幼いですが、彼に任せられる仕事がたくさんあります。"
+        },
+        {
+          "translation": "雨が降っていましたが、私は外出しました。"
+        },
+        {
+          "translation": "試験問題は難しかったですが、大好きな科目だったので楽しく解くことができました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_이라면_97": {
+      "title": "~(이)라면 (조건·가정)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 상황이나 자격을 가상으로 설정함을 나타내는 표현입니다 ('만약 ~라면').",
+      "longExplanation": "'~(이)라면'은 명사 뒤에 붙어 어떤 대상이나 신분, 상황을 가상으로 설정할 때 쓰는 조건·가정 표현입니다. 받침이 있는 명사 뒤에는 '-이라면', 받침이 없는 명사 뒤에는 '-라면'이 붙습니다. 특정 전제를 가정하고 그에 따른 의문, 판단, 행동 등을 뒤 절에서 이끌어낼 때 널리 쓰입니다.",
+      "formation": "명사 (받침 있음) + 이라면 / (받침 없음) + 라면",
+      "examples": [
+        {
+          "translation": "여기가 정말로 유명한 관광 명소라면 왜 이렇게 사람이 없나요?"
+        },
+        {
+          "translation": "정말로 그런 일이 있다면 어떻게 대처해야 할지 고민해봐야겠어요."
+        },
+        {
+          "translation": "학교를 그만두고 싶다면 미래를 어떻게 설계할지 생각해봐야 할 거예요."
+        },
+        {
+          "translation": "네가 내 친구라면 왜 나를 배신하고 다른 친구들에게 나쁜 이야기를 퍼뜨렸니?"
+        }
+      ]
+    },
+    "ko_이래_98": {
+      "title": "~이래 (이러하여, 이런 상태임)",
+      "shortExplanation": "형용사 '이러하다'의 활용형으로, 현재의 모양이나 상태가 '이러함'을 나타냅니다.",
+      "longExplanation": "'~이래'는 형용사 '이러하다'에 어미 '-어'가 결합하여 줄어든 형태로, 주로 '이래서는', '이래 있으면' 등의 구성으로 쓰입니다. 목전의 상황, 상태, 행동 따위가 '이와 같다'고 지목하며, 그러한 상태가 이어질 때 빚어질 결과나 그에 대한 평가를 서술할 때 사용됩니다.",
+      "formation": "형용사 '이러하다'의 활용형 (이래서는, 이래 있으면 등)",
+      "examples": [
+        {
+          "translation": "날씨가 이래서는 놀러 갈 수가 없어요."
+        },
+        {
+          "translation": "내가 이래 있으면 유명해질 것 같아요."
+        },
+        {
+          "translation": "이 집이 이래서는 팔 수가 없어."
+        },
+        {
+          "translation": "자네가 이래서는 운동선수로 출중한 성과를 이룰 수 있을 것 같군."
+        }
+      ]
+    },
+    "ko_이랑_99": {
+      "title": "~(이)랑 (접속·동반 조사)",
+      "shortExplanation": "둘 이상의 명사를 나열하거나('와/과'), 행동을 함께하는 대상을 나타내는 구어체 조사입니다.",
+      "longExplanation": "'~(이)랑'은 일상 대화에서 자주 쓰이는 조사로, 둘 이상의 사물을 대등하게 이어 '와/과'의 뜻을 나타내거나 어떤 동작을 함께하는 상대를 가리켜 '~와/과 함께'의 뜻을 나타냅니다. 받침이 있는 체언 뒤에는 '-이랑', 받침이 없는 체언 뒤에는 '-랑'이 붙으며, 구어에서 친근하고 격식 없는 느낌을 줍니다.",
+      "formation": "명사 (받침 있음) + 이랑 / (받침 없음) + 랑",
+      "examples": [
+        {
+          "translation": "저는 친구랑 같이 영화를 보러 갈 계획이에요."
+        },
+        {
+          "translation": "우리는 피자랑 치킨을 주문했어요."
+        },
+        {
+          "translation": "저는 언니랑 쇼핑몰에서 옷을 샀어요."
+        },
+        {
+          "translation": "나는 고양이랑 개랑 키우고 있어요."
+        }
+      ]
+    },
+    "ko_이러하다_100": {
+      "title": "~이러하다 (지시 형용사)",
+      "shortExplanation": "사물의 상태, 모양, 성질, 태도 따위가 이와 같음을 나타내는 지시 형용사입니다.",
+      "longExplanation": "'이러하다'는 '이렇다'의 본말로, 사물의 모양, 성질, 형편이나 사람의 태도가 눈앞에 보이는 바와 같음을 나타내는 지시 형용사입니다. 다양한 연결어미(-더니, -다니, -다 보니 등)와 결합하여 어떤 상태나 사정이 '이러함'을 들어 말하고, 그에 따른 놀라움, 실망, 결과 따위를 표현할 때 널리 쓰입니다.",
+      "formation": "형용사 '이러하다' + 연결어미 (이러하더니, 이러하다니, 이러하다 보니 등)",
+      "examples": [
+        {
+          "translation": "친구의 태도가 너무 이러하더니 모두가 당황했어요."
+        },
+        {
+          "translation": "요즘 세상이 이러하다니 믿기 어렵네요."
+        },
+        {
+          "translation": "그녀의 행동이 이러하다 보니 사람들의 신뢰를 잃었어요."
+        },
+        {
+          "translation": "그가 이러하다고 하니 정말 실망스러워요."
+        }
+      ]
+    },
+    "ko_이런그런저런_101": {
+      "title": "~이런 / 그런 / 저런 (지시 관형사)",
+      "shortExplanation": "명사 앞에 놓여 사물의 상태, 모양, 종류를 가리키는 관형사입니다 ('이러한', '그러한', '저러한').",
+      "longExplanation": "'이런/그런/저런'은 체언 앞에 쓰여 사물의 상태, 모양, 성질, 종류를 지목하여 한정하는 관형사입니다. '이런'은 화자에게 가깝거나 화자가 직접 겪은 대상('이러한')을, '그런'은 청자에게 가깝거나 앞에서 말한 대상('그러한')을, '저런'은 둘 모두에게서 멀리 있거나 감탄의 뜻을 띤 대상('저러한')을 가리킵니다.",
+      "formation": "이런 / 그런 / 저런 + 명사",
+      "examples": [
+        {
+          "translation": "이런 상황에서는 어떻게 대처해야 할지 모르겠어요."
+        },
+        {
+          "translation": "그런 분위기를 좋아하지 않아요."
+        },
+        {
+          "translation": "저런 옷을 입으면 어떻게 생각할까요?"
+        },
+        {
+          "translation": "이런 생각을 하지 말아야겠어요."
+        }
+      ]
+    },
+    "ko_이므로_102": {
+      "title": "~(으)므로 / -(이)므로 (원인·이유)",
+      "shortExplanation": "앞 절이 뒤 절의 명확한 이유나 근거가 됨을 나타내는 격식적인 문어체 연결어미입니다.",
+      "longExplanation": "'~(으)므로 / -(이)므로'는 공적 문서, 논문, 보도문 등 격식 있는 문어체에서 주로 쓰이며, 앞 절이 뒤 절의 사태에 대한 객관적인 원인, 이유, 논리적 근거가 됨을 나타내는 연결어미입니다. 체언 뒤에는 '-(이)므로', 용언 어간 뒤에는 자음/모음 받침에 따라 '-(으)므로'가 결합합니다. 뒤 절에 명령문이나 청유문이 올 수 없습니다.",
+      "formation": "명사 + (이)므로 | 동사/형용사 어간 + -(으)므로",
+      "examples": [
+        {
+          "translation": "내일은 월요일이므로 오늘 밤에 일찍 잠에 들어야 합니다."
+        },
+        {
+          "translation": "그는 학점이 낮아서 교수님께 장학금을 받을 수 없었기 때문에 금전적인 문제가 있었어요."
+        },
+        {
+          "translation": "우리는 시간이 없기 때문에 저녁 식사를 축소해야 합니다."
+        },
+        {
+          "translation": "그 직원은 업무 능력이 매우 불량이므로 우리는 그에게 경고를 발했습니다."
+        }
+      ]
+    },
+    "ko_이야_103": {
+      "title": "~(이)야 (서술격 조사 해체 종결어미)",
+      "shortExplanation": "명사 뒤에 붙어 친근한 관계에서 어떤 사실을 단정하거나 서술하는 해체(반말) 종결 표현입니다.",
+      "longExplanation": "'~(이)야'는 서술격 조사 '이다'의 어간에 어미 '-아'가 결합한 해체(반말) 종결 표현으로, 체언이나 의존명사('것' + '이야' -> '거야') 뒤에 붙어 사실을 친근하게 서술하거나 확인해 줄 때 쓰입니다. 받침이 있는 체언 뒤에는 '-이야', 받침이 없는 체언 뒤에는 '-야'가 붙습니다. 동년배의 친구나 손아래 사람에게 쓰는 표현이며, 윗사람에게는 쓸 수 없습니다.",
+      "formation": "명사 (받침 있음) + 이야 / (받침 없음) + 야 | 관형사형 + 거야",
+      "examples": [
+        {
+          "translation": "나는 배가 고프다고 생각했더니 아니었어, 김밥을 사 왔어, 이제 배가 고프지 않아."
+        },
+        {
+          "translation": "오늘 날씨가 참 좋아, 하늘이 맑고 파란 하늘이 보여."
+        },
+        {
+          "translation": "여기가 내 집이야, 조금 작지만 아늑하고 편안해."
+        },
+        {
+          "translation": "네가 진짜로 좋아하는 거야, 말해 줘서 고마워."
+        }
+      ]
+    },
+    "ko_이지만_104": {
+      "title": "~(이)지만 / -지만 (역접·대조의 연결어미)",
+      "shortExplanation": "앞 절과 뒤 절의 내용이 상반되거나 대조적임을 나타내는 연결어미입니다 ('~하지만', '~임에도 불구하고').",
+      "longExplanation": "'~(이)지만 / -지만'은 체언 뒤 또는 용언 어간 뒤에 붙어, 앞 절의 사실을 인정하면서도 뒤 절에서 그와 상반되거나 대조적인 사실을 이을 때 쓰는 대표적인 역접 연결어미입니다. 체언 뒤에는 '-(이)지만'이, 동사·형용사 어간 뒤에는 '-지만'이 붙으며, 선어말어미 '-았/었-', '-겠-' 뒤에도 자연스럽게 결합합니다.",
+      "formation": "명사 + (이)지만 | 동사/형용사 어간 + -지만",
+      "examples": [
+        {
+          "translation": "평소에 드라마를 잘 안 보는 편이지만 이 드라마는 흥미로워서 꼭 봐야겠어요."
+        },
+        {
+          "translation": "오늘 날씨가 좋지만 바빠서 나가지 못할 것 같아요."
+        },
+        {
+          "translation": "당신은 젊지만 이미 많은 경험을 가지고 있네요."
+        },
+        {
+          "translation": "제가 팀장이지만 모든 결정을 혼자서 하지는 않아요."
+        }
+      ]
+    },
+    "ko_이후_105": {
+      "title": "~이후 / -(으)ㄴ 이후 (시점·경과)",
+      "shortExplanation": "특정 기준 시점이나 사건이 일어난 뒤의 시간을 나타내는 명사 및 연결 표현입니다 ('~한 뒤', '~한 이래').",
+      "longExplanation": "'이후(以後)'는 특정한 기준 시점이나 일이 일어난 때로부터 그 뒤의 시간적 범위를 나타냅니다. 명사 뒤에 직접 결합하거나 동사의 과거 관형사형 뒤에 '-(으)ㄴ 이후'의 형태로 쓰여, 어떤 사건을 계기로 하여 그 이후 지속되는 상태나 변화를 서술합니다. 조사 '로'가 붙은 '이후로'의 구성으로 쓰여 시간의 경과를 한층 강조하기도 합니다.",
+      "formation": "명사 + 이후(로) | 동사 어간 + -(으)ㄴ 이후(로)",
+      "examples": [
+        {
+          "translation": "중학교 졸업 이후로 처음으로 친구들과 모였어요."
+        },
+        {
+          "translation": "그녀가 도시에 이사 간 이후로 그녀를 본 적이 없어요."
+        },
+        {
+          "translation": "아침 식사 이후로 아무것도 먹지 않았어요."
+        },
+        {
+          "translation": "회의 이후로 사무실에서 일을 계속하고 있어요."
+        }
+      ]
+    },
+    "ko_인즉_106": {
+      "title": "~인즉 / -(으)ㄴ즉 (설명·환언)",
+      "shortExplanation": "앞의 내용을 다시 풀어서 설명하거나 그 본질 및 사정을 밝힐 때 쓰는 연결 표현입니다 ('즉', '다시 말해').",
+      "longExplanation": "'~인즉'은 서술격 조사 '이다'의 어간에 어미 '-(으)ㄴ즉'이 결합한 형태로, 앞에서 서술한 사실의 본질이나 실상을 뒤에서 다시 알기 쉽게 바꾸어 설명하거나 결론지어 말할 때 쓰입니다. '즉', '다시 말해서', '그 까닭을 따져 보면'의 뜻을 나타내며, 부사처럼 문두에 쓰여 사정이나 이유를 차근차근 밝힐 때 널리 활용됩니다. 강조형으로 '인즉슨'도 자주 쓰입니다.",
+      "formation": "절 / 명사 + 인즉 | 동사/형용사 어간 + -(으)ㄴ즉",
+      "examples": [
+        {
+          "translation": "이 작업이 정말 어려워요, 인즉, 전문가가 아니면 제대로 해낼 수 없습니다."
+        },
+        {
+          "translation": "그녀는 내일 결혼합니다, 인즉, 그녀는 더 이상 독신이 아닙니다."
+        },
+        {
+          "translation": "박물관 직원은 저를 입장하게 허락하지 않았습니다. 인즉, 저는 규정을 위반했습니다."
+        },
+        {
+          "translation": "우리는 연구에 참여하였습니다, 인즉, 우리는 어떤 학문적인 기여를 했습니다."
+        }
+      ]
+    },
+    "ko_자_107": {
+      "title": "~자 (해라체 청유형 종결어미)",
+      "shortExplanation": "동사 어간 뒤에 붙어 듣는 이에게 함께 어떤 행동을 할 것을 권유하는 해라체(반말) 청유형 종결어미입니다.",
+      "longExplanation": "'~자'는 동사 어간 뒤에 붙어, 화자가 청자에게 어떤 행동을 함께하자고 권유하거나 제안할 때 쓰는 해라체(반말) 청유형 종결어미입니다. 친한 친구나 손아래 사람에게 편하게 쓰는 표현으로, 주어인 '우리'가 자주 생략됩니다. 웃어른이나 격식을 차려야 하는 자리에서는 쓸 수 없으며, 이때는 '-(으)ㅂ시다'나 '-(으)시지요' 등을 씁니다.",
+      "formation": "동사 어간 + 자",
+      "examples": [
+        {
+          "translation": "날씨가 너무 좋으니까 우리 산에 등산하러 가자."
+        },
+        {
+          "translation": "오늘이 일요일이므로 교회에 가서 기도하자."
+        },
+        {
+          "translation": "밥은 다 먹었으니 이제 커피 한 잔 마시러 카페에 가자."
+        },
+        {
+          "translation": "길고 지루한 하루였으니 이제 보드게임 하나 플레이하며 편히 쉬자."
+        }
+      ]
+    },
+    "ko_자마자_108": {
+      "title": "~자마자 (즉각적 연속의 연결어미)",
+      "shortExplanation": "앞의 동작이 끝나자마자 뒤의 동작이 잇달아 바로 일어남을 나타내는 연결어미입니다 ('~하자마자', '~함과 동시에').",
+      "longExplanation": "'~자마자'는 동사 어간 뒤에 붙어, 앞 절의 행위나 사건이 끝난 바로 그 직후에 뒤 절의 행위가 시간적 간격 없이 연이어 일어남을 나타내는 연결어미입니다. 동사 어간의 받침 유무에 관계없이 '-자마자'가 그대로 붙으며, 앞 절에는 시제 선어말어미('-았/었-')를 쓰지 않고 문장의 맨 끝 서술어에서 시제를 나타냅니다.",
+      "formation": "동사 어간 + 자마자",
+      "examples": [
+        {
+          "translation": "저는 집에 돌아오자마자 식사를 준비했어요, 왜냐하면 너무 배고파서 바로 음식을 먹고 싶었기 때문이에요."
+        },
+        {
+          "translation": "엄마가 전화를 끊자마자 잠을 청하러 갔어요, 어제는 너무 늦게 잠들었기 때문에 기분이 피곤했어요."
+        },
+        {
+          "translation": "그는 일어나자마자 커피를 마셔요, 그는 아침에 커피 없이 일을 시작할 수 없다고 말해요."
+        },
+        {
+          "translation": "비가 오자마자 우산을 들고 도서관에 갔어요, 왜냐하면 수업 자료를 찾기로 결정했기 때문이에요."
+        }
+      ]
+    },
+    "ko_전에전까지_109": {
+      "title": "~기 전에 / ~기 전까지 (시간적 선후 및 한계)",
+      "shortExplanation": "어떤 동작이나 사건이 일어나기 이전 시점을 나타내거나('~기 전에'), 그 시점까지 상태가 지속됨('~기 전까지')을 나타냅니다.",
+      "longExplanation": "'~기 전에'와 '~기 전까지'는 동사 어간에 명사형 어미 '-기'가 붙은 뒤 시간 명사 '전'과 조사 '에/까지'가 결합한 표현입니다. '~기 전에'는 어떤 행위나 사건이 발생하기 이전의 시점에 다른 행동을 함을 뜻하며, '~기 전까지'는 뒤의 사태가 발생하기 직전까지 앞의 상태나 행동이 계속 이어짐을 강조하여 나타냅니다. 명사 뒤에는 직접 '명사 + 전(에/까지)'의 형태로 결합합니다.",
+      "formation": "동사 어간 + -기 전에 / -기 전까지 | 명사 + 전에 / 전까지",
+      "examples": [
+        {
+          "translation": "저는 학교에 가기 전에 아침을 먹어요."
+        },
+        {
+          "translation": "그녀는 출근하기 전까지 연락할게요. 아마 연락 올 때까지 기다리세요."
+        },
+        {
+          "translation": "기차가 도착하기 전에 짐을 싸야 해요."
+        },
+        {
+          "translation": "우리가 집에 돌아오기 전까지 조심하세요."
+        }
+      ]
+    },
+    "ko_정도_110": {
+      "title": "~정도 / -(으)ㄹ 정도 (수량의 어림 및 정도)",
+      "shortExplanation": "수량이나 시간 명사 뒤에 붙어 대략의 분량을 나타내거나('~쯤', '~가량'), 도달한 기준·한도를 나타냅니다.",
+      "longExplanation": "'정도(程度)'는 명사나 수량사 뒤에 붙어 수량, 시간, 크기 등이 대략 그만큼에 이름(어림)을 나타내어 '쯤', '가량'의 뜻을 나타냅니다. 또한 용언의 어간 뒤에 관형사형 어미와 결합하여 '-(으)ㄹ 정도(로)'의 구성으로 쓰일 때는 어떠한 동작이나 상태가 미치는 표준이나 한도, 심한 정도를 나타내기도 합니다.",
+      "formation": "수량 명사 + 정도 | 동사/형용사 어간 + -(으)ㄹ 정도(로)",
+      "examples": [
+        {
+          "translation": "이 문제를 해결하는 데는 한 시간쯤 정도 걸릴 것 같아요."
+        },
+        {
+          "translation": "진짜로 영화를 봤다면 네 시간 정도가 걸렸을 것이에요."
+        },
+        {
+          "translation": "이 과제를 완료하려면 한 달 정도의 시간이 필요합니다."
+        },
+        {
+          "translation": "그의 성과를 평가하려면 최소한 10가지 이상의 요소를 고려해야 하고 이것은 대략 한 시간 정도의 시간을 요구합니다."
+        }
+      ]
+    },
+    "ko_제_111": {
+      "title": "~제 (양보·대립의 연결어미)",
+      "shortExplanation": "용언 어간 뒤에 붙어 앞 절의 상황에도 불구하고 뒤 절에서 그와 상반되거나 기대와 다른 사태가 일어남을 나타내는 연결어미입니다.",
+      "longExplanation": "'~제'는 동사나 형용사 어간 뒤에 붙어 대립이나 양보의 뜻을 나타내는 연결어미입니다. 앞 절의 조건이나 상황을 인정하면서도 뒤 절에서는 그와 상반되거나 예상 밖의 사실이 일어남을 서술할 때 쓰이며, 의미상 '-지만'이나 '-되'와 유사합니다. 특유의 어감으로 앞뒤 사실의 대비를 두드러지게 표현할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + 제",
+      "examples": [
+        {
+          "translation": "그녀가 아프제 일을 계속했어요."
+        },
+        {
+          "translation": "동생이 어리제 그에게 맡길 수 있는 일이 많아요."
+        },
+        {
+          "translation": "비가 내리제 나는 외출했어요."
+        },
+        {
+          "translation": "시험 문제가 어렵제, 제가 좋아하는 과목이었기 때문에 재미있게 풀었어요."
+        }
+      ]
+    }
+  }
+}

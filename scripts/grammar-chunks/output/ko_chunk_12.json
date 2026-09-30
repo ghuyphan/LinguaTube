@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko__86": {
+      "title": "-(으)려고 하다 (Định, dự định làm gì, cố gắng làm gì)",
+      "shortExplanation": "Cấu trúc biểu thị ý định, kế hoạch sẽ thực hiện một hành động nào đó trong tương lai hoặc nỗ lực để đạt được mục tiêu ('định', 'dự định', 'muốn').",
+      "longExplanation": "'-(으)려고 하다' là cấu trúc ngữ pháp dùng để biểu đạt ý định, dự định hoặc kế hoạch làm một việc gì đó trong tương lai của chủ ngữ (tương đương với 'định...', 'dự định làm...' trong tiếng Việt). Ngoài ra cấu trúc này còn có thể dùng để diễn đạt sự nỗ lực, cố gắng hướng tới một mục tiêu cụ thể. Dạng quá khứ '-(으)려고 했다' thường diễn tả dự định đã ấp ủ nhưng có thể chưa thực hiện được hoặc bị gián đoạn.",
+      "formation": "Thân động từ (có patchim trừ ㄹ) + 으려고 하다 / Thân động từ (không có patchim hoặc có patchim ㄹ) + 려고 하다",
+      "examples": [
+        {
+          "translation": "Tôi luyện tập rất nhiều mỗi ngày để cố gắng nói tiếng Hàn giỏi hơn."
+        },
+        {
+          "translation": "Mẹ tôi học nấu ăn vì muốn chuẩn bị một bữa tối thật ngon."
+        },
+        {
+          "translation": "Em tôi định tập thể dục mỗi ngày để phát triển chiều cao tốt hơn."
+        },
+        {
+          "translation": "Tôi đã cập nhật điện thoại để định dùng thử ứng dụng mới mà bạn tôi giới thiệu."
+        }
+      ]
+    },
+    "ko__87": {
+      "title": "-(으)리라 (Chắc là..., ắt hẳn sẽ...)",
+      "shortExplanation": "Vĩ tố kết thúc câu mang sắc thái trang trọng, văn viết dùng để biểu thị sự suy đoán, phán đoán chắc chắn của người nói về một sự việc ('chắc sẽ', 'ắt hẳn là').",
+      "longExplanation": "'-(으)리라' là vĩ tố kết thúc câu cổ điển hoặc mang tính trang trọng, văn phong viết, dùng để biểu thị sự suy đoán, dự cảm của người nói về một sự việc trong tương lai hoặc chưa xảy ra (tương đương 'chắc là...', 'ắt sẽ...'). Ngoài ra, khi chủ ngữ là ngôi thứ nhất trong độc thoại, cấu trúc này còn có thể biểu thị ý chí, quyết tâm sắt đá ('nhất định sẽ làm'). Trong các câu trích dẫn gián tiếp, nó thường kết hợp với '생각하다', '예상하다', '믿다'.",
+      "formation": "Thân động từ/tính từ (có patchim trừ ㄹ) + 으리라 / Thân động từ/tính từ (không có patchim hoặc có patchim ㄹ) + 리라",
+      "examples": [
+        {
+          "translation": "Tôi nghĩ có lẽ ngày mai anh ấy sẽ đi làm."
+        },
+        {
+          "translation": "Tôi tin chắc rằng điểm thi cuối kỳ của mình ắt sẽ rất tốt."
+        },
+        {
+          "translation": "Tôi nghĩ rằng trời chắc sẽ mưa nên đã mang theo ô."
+        },
+        {
+          "translation": "Tôi đã dự đoán rằng mình chắc sẽ được thăng chức nhanh chóng ở công ty."
+        }
+      ]
+    },
+    "ko__88": {
+      "title": "-(으)실 거예요 (Chắc là [người lớn] sẽ..., [người lớn] sẽ...)",
+      "shortExplanation": "Kết hợp giữa vĩ tố kính ngữ '-(으)시-' và đuôi câu tương lai/suy đoán '-(으)ㄹ 거예요' để phỏng đoán lịch sự về hành động hoặc trạng thái của đối tượng được tôn kính.",
+      "longExplanation": "'-(으)실 거예요' là sự kết hợp giữa vĩ tố tôn kính chủ ngữ '-(으)시-' và đuôi kết thúc câu biểu thị tương lai hoặc suy đoán '-(으)ㄹ 거예요'. Cấu trúc này dùng để diễn đạt dự định trong tương lai của người bề trên một cách cung kính, hoặc đưa ra sự phỏng đoán lịch sự về hành động, trạng thái của đối tượng đáng được tôn kính (bố mẹ, thầy cô, cấp trên...).",
+      "formation": "Thân động từ/tính từ (có patchim trừ ㄹ) + 으실 거예요 / Thân động từ/tính từ (không có patchim hoặc có patchim ㄹ) + 실 거예요",
+      "examples": [
+        {
+          "translation": "Mẹ chắc sẽ ra ngoài vào sáng sớm ngày mai, nên bạn hãy chuẩn bị bữa sáng trước nhé."
+        },
+        {
+          "translation": "Thầy giáo chắc hẳn là biết rất rõ về vấn đề này."
+        },
+        {
+          "translation": "Bố mẹ chúng tôi chắc là đang nghĩ tuần sau sẽ đến công ty."
+        },
+        {
+          "translation": "Tổng thống chắc chắn sẽ lại đến thăm nơi này vào năm sau."
+        }
+      ]
+    },
+    "ko__89": {
+      "title": "-(으)면 좋겠다 (Ước gì..., giá như..., nếu... thì tốt biết mấy)",
+      "shortExplanation": "Cấu trúc dùng để biểu đạt mong ước, nguyện vọng tha thiết của người nói về một sự việc hoặc tình huống ('ước gì', 'giá mà').",
+      "longExplanation": "'-(으)면 좋겠다' là cấu trúc ngữ pháp dùng để thể hiện niềm hy vọng, ước muốn của người nói về một sự việc xảy ra trong tương lai hoặc thay đổi một hiện thực nào đó (tương đương 'ước gì...', 'nếu... thì tốt biết mấy'). Dạng quá khứ '-았/었으면 좋겠다' nhấn mạnh mong muốn tha thiết hơn, đôi khi diễn tả ước mơ trái ngược với thực tế ở hiện tại.",
+      "formation": "Thân động từ/tính từ (có patchim trừ ㄹ) + 으면 좋겠다 / Thân động từ/tính từ (không có patchim hoặc có patchim ㄹ) + 면 좋겠다 (hoặc dạng quá khứ: -았/었으면 좋겠다)",
+      "examples": [
+        {
+          "translation": "Ước gì ngày mai thời tiết đẹp. Tôi có kế hoạch ra ngoài nên mong là trời quang mây tạnh."
+        },
+        {
+          "translation": "Giá mà tôi làm bài thi tốt thì tuyệt quá, vì tôi đã bỏ ra rất nhiều công sức."
+        },
+        {
+          "translation": "Ước gì được ăn gà rán, vì tôi cực kỳ thích món gà rán."
+        },
+        {
+          "translation": "Giá như có thể đi du lịch thì tốt biết mấy. Cứ bị giam mình ở nhà chán quá đi thôi."
+        }
+      ]
+    },
+    "ko__90": {
+      "title": "-(으)면서도 (Vừa... lại vừa..., dù... nhưng vẫn...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị hai hành động/trạng thái diễn ra đồng thời nhưng mang tính đối lập, mâu thuẫn hoặc trái với lẽ thường ('vậy mà', 'dù... nhưng').",
+      "longExplanation": "'-(으)면서도' kết hợp vĩ tố đồng thời '-(으)면서' với trợ từ tương phản '도'. Cấu trúc này dùng để diễn tả một hành động hay trạng thái diễn ra đồng thời với một tình huống khác, nhưng nhấn mạnh sự mâu thuẫn, tương phản hoặc trái ngược với lẽ tự nhiên và kỳ vọng thông thường (tương đương 'dù... vậy mà vẫn...', 'vừa... thế nhưng lại...'). Cả hai vế phải cùng chung một chủ ngữ.",
+      "formation": "Thân động từ/tính từ (có patchim trừ ㄹ) + 으면서도 / Thân động từ/tính từ (không có patchim hoặc có patchim ㄹ) + 면서도",
+      "examples": [
+        {
+          "translation": "Anh ấy dù đang tức giận nhưng vẫn nở nụ cười."
+        },
+        {
+          "translation": "Cô ấy dù bị ốm nhưng vẫn đi học."
+        },
+        {
+          "translation": "Dù trời đang mưa nhưng buổi phát sóng vẫn tiếp tục được tiến hành."
+        },
+        {
+          "translation": "Đứa trẻ này vừa xem phim mà trong đầu vẫn luôn ấp ủ kế hoạch đi chơi."
+        }
+      ]
+    },
+    "ko__91": {
+      "title": "-(으)니까 (Vì... nên, do... nên)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị nguyên nhân, lý do chủ quan; đặc biệt thích hợp dùng với câu mệnh lệnh, thỉnh dụ hoặc biểu thị phát hiện mới.",
+      "longExplanation": "'-(으)니까' là vĩ tố liên kết nối hai mệnh đề, dùng để nêu lý do, căn cứ cho mệnh đề sau (tương đương với 'vì... nên...', 'do...'). Khác với '-아/어서', cấu trúc '-(으)니까' thường mang tính chủ quan và có thể kết hợp tự nhiên với các đuôi câu mệnh lệnh ('-(으)세요'), thỉnh dụ ('-(으)ㅂ시다') hoặc rủ rê ('-(으)ㄹ까요'). Ngoài ra, nó cũng có thể diễn tả sự nhận thức, phát hiện sau khi hoàn thành một hành động.",
+      "formation": "Thân động từ/tính từ (có patchim trừ ㄹ) + 으니까 / Thân động từ/tính từ (không có patchim hoặc có patchim ㄹ) + 니까 (quá khứ: -았/었으니까)",
+      "examples": [
+        {
+          "translation": "Vì đã ăn trưa rồi nên bây giờ tôi không thấy đói."
+        },
+        {
+          "translation": "Do đã ghé ngân hàng nên tôi đã có thể rút được tiền."
+        },
+        {
+          "translation": "Tôi đang yên lặng học bài nên xin đừng làm phiền."
+        },
+        {
+          "translation": "Trời đang mưa đấy nên bạn hãy mang theo ô đi nhé."
+        }
+      ]
+    },
+    "ko__92": {
+      "title": "-다 보니 / -(으)다 보니 (Cứ liên tục làm gì thì thấy là..., làm gì một hồi rồi mới thấy...)",
+      "shortExplanation": "Cấu trúc biểu thị việc duy trì, lặp lại một hành động trong quá khứ dẫn đến kết quả hoặc sự nhận thức mới ở vế sau.",
+      "longExplanation": "'-다 보니' (kết hợp từ '-다가 보니') là cấu trúc ngữ pháp dùng khi một hành động được thực hiện liên tục hoặc lặp đi lặp lại trong một khoảng thời gian, và qua quá trình đó người nói tự nhiên nhận ra một điều gì đó hoặc đạt tới một kết quả, trạng thái cụ thể. Vế sau thường miêu tả kết quả diễn ra ngoài dự tính hoặc trải nghiệm cá nhân của người nói.",
+      "formation": "Thân động từ + 다 보니 (thỉnh thoảng dùng dạng quá khứ: -았/었다 보니)",
+      "examples": [
+        {
+          "translation": "Cứ đến sớm thế này nên tôi có thể nghỉ ngơi một lát trước khi bắt đầu."
+        },
+        {
+          "translation": "Tập thể dục đều đặn mỗi ngày trong một tháng thì thấy cân nặng đã giảm đi phần nào."
+        },
+        {
+          "translation": "Chăm chỉ học tập liên tục thì thấy kỹ năng tiếng Hàn của mình tiến bộ dần dần."
+        },
+        {
+          "translation": "Cứ sáng nào cũng dậy sớm nên ăn trưa xong là tôi thấy mệt ngay."
+        }
+      ]
+    },
+    "ko__93": {
+      "title": "-다가 / -(으)다가 (Đang... thì..., rồi lại...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị một hành động hoặc trạng thái đang diễn ra thì bị gián đoạn và chuyển hướng sang một hành động/trạng thái khác.",
+      "longExplanation": "'-다가' là vĩ tố liên kết dùng để diễn tả một hành động hoặc trạng thái đang trong quá trình diễn ra thì dừng lại hoặc bị gián đoạn, nhường chỗ cho một hành động hay sự việc khác chen ngang (tương đương với 'đang... thì...', 'vừa mới... thì bỗng nhiên...'). Hai mệnh đề thường có cùng một chủ ngữ, trừ trường hợp miêu tả các hiện tượng tự nhiên hay ngoại cảnh đột ngột xảy ra.",
+      "formation": "Thân động từ/tính từ + 다가 (thì quá khứ: Thân động từ/tính từ + 았/었다가)",
+      "examples": [
+        {
+          "translation": "Tôi đang đọc sách dở thì ngủ thiếp đi mất nên đã không đọc được phần cuối."
+        },
+        {
+          "translation": "Chúng tôi đang xem phim thì bỗng nhiên mất điện nên không thể xem được đoạn kết."
+        },
+        {
+          "translation": "Anh ấy đang nói chuyện thì bỗng nhiên bật cười lớn làm mọi người đều giật mình."
+        },
+        {
+          "translation": "Tôi đang trên đường về nhà thì tình cờ gặp bạn nên đã đi ăn tối cùng nhau."
+        }
+      ]
+    },
+    "ko__94": {
+      "title": "-던 / -(으)던 (Đã từng..., từng hay...)",
+      "shortExplanation": "Vĩ tố định ngữ hồi tưởng dùng để bổ nghĩa cho danh từ, biểu thị một hành động hoặc trạng thái thường xuyên xảy ra trong quá khứ nhưng nay đã chấm dứt hoặc bị gián đoạn.",
+      "longExplanation": "'-던' là vĩ tố định ngữ dạng hồi tưởng đứng sau động từ hoặc tính từ để bổ nghĩa cho danh từ đi liền sau. Cấu trúc này gợi nhắc lại một thói quen, một trạng thái lặp đi lặp lại trong quá khứ, hoặc một hành động còn dang dở chưa hoàn tất tại thời điểm đó (tương đương với 'đã từng...', 'từng hay làm...' trong tiếng Việt). Nó thường mang hàm ý sự việc trong quá khứ đó hiện tại không còn tiếp diễn nữa.",
+      "formation": "Thân động từ/tính từ + 던 (dạng quá khứ hoàn tất: Thân động từ/tính từ + 았/었던)",
+      "examples": [
+        {
+          "translation": "Hồi nhỏ tôi từng là một đứa trẻ khóc rất nhiều, thế nhưng bây giờ thì hầu như tôi chẳng bao giờ khóc nữa."
+        },
+        {
+          "translation": "Thuở nhỏ anh ấy từng luôn là một người rất thích ăn táo, nhưng giờ đây anh ấy lại ghét táo."
+        },
+        {
+          "translation": "Ở trường chúng tôi từng có một thầy giáo dạy toán mà rất nhiều học sinh không ưa thích."
+        },
+        {
+          "translation": "Bà ấy từng là một người phụ nữ tốt bụng sống ở ngọn núi phía trước, nhưng giờ đây chúng tôi không còn gặp lại bà ấy nữa."
+        }
+      ]
+    },
+    "ko__95": {
+      "title": "-(으)려면 (Nếu muốn..., để có thể...)",
+      "shortExplanation": "Vĩ tố liên kết kết hợp giữa ý định '-(으)려고 하다' và điều kiện '-(으)면', biểu thị điều kiện cần thiết để đạt được một mục tiêu hoặc ý định ('nếu muốn... thì phải...').",
+      "longExplanation": "'-(으)려면' là dạng rút gọn của cấu trúc '-(으)려고 하면', kết hợp giữa ý định làm một việc gì đó và giả định điều kiện. Cấu trúc này dùng khi người nói muốn đặt ra điều kiện, phương thức hoặc yêu cầu bắt buộc ở mệnh đề sau nhằm hiện thực hóa mục tiêu đã nêu ở mệnh đề trước (tương đương 'nếu muốn... thì...'). Mệnh đề sau thường đi kèm các biểu hiện mang tính nghĩa vụ, lời khuyên như '-아/어야 하다', '-(으)세요', '필요하다'.",
+      "formation": "Thân động từ (có patchim trừ ㄹ) + 으려면 / Thân động từ (không có patchim hoặc có patchim ㄹ) + 려면",
+      "examples": [
+        {
+          "translation": "Nếu muốn đỗ kỳ thi tiếng Hàn TOPIK thì bạn phải luyện tập thật nhiều. Nếu không thì sẽ rất khó thành công."
+        },
+        {
+          "translation": "Nếu muốn duy trì vóc dáng đẹp ở phòng tập thì bạn cần kiên trì tập luyện và giữ chế độ ăn uống lành mạnh."
+        },
+        {
+          "translation": "Để có được công việc này thì bạn cần có kinh nghiệm trong lĩnh vực liên quan. Nếu không có thì sẽ thiếu tính cạnh tranh."
+        },
+        {
+          "translation": "Nếu muốn phòng ngừa vấn đề như thế này thì cần có kế hoạch tỉ mỉ hơn. Nếu không chúng ta có thể lại gặp phải rắc rối tương tự."
+        }
+      ]
+    },
+    "ko__96": {
+      "title": "-(으)ㄹ수록 (Càng... càng...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị mức độ của hành động hoặc trạng thái ở vế trước tăng lên thì mức độ ở vế sau cũng tỉ lệ thuận tăng lên theo ('càng... càng...').",
+      "longExplanation": "'-(으)ㄹ수록' là vĩ tố liên kết dùng để diễn tả mối quan hệ tỉ lệ thuận giữa hai mệnh đề: khi một tình huống, hành động hay mức độ ở vế trước ngày càng gia tăng (hoặc biến đổi) thì mức độ ở vế sau cũng biến chuyển sâu sắc hơn tương ứng (tương đương với cấu trúc 'càng... càng...' trong tiếng Việt). Thường kết hợp với '-(으)면 -(으)ㄹ수록' để tăng thêm tính nhấn mạnh.",
+      "formation": "Thân động từ/tính từ (có patchim trừ ㄹ) + 을수록 / Thân động từ/tính từ (không có patchim hoặc có patchim ㄹ) + ㄹ수록",
+      "examples": [
+        {
+          "translation": "Càng tập thể dục thì cơ thể càng khỏe mạnh nên mỗi sáng tôi đều chạy bộ."
+        },
+        {
+          "translation": "Càng học nhiều thì càng có thể đạt được điểm số tốt hơn trong kỳ thi."
+        },
+        {
+          "translation": "Càng ăn nhanh thì càng dễ bị khó tiêu."
+        },
+        {
+          "translation": "Thời gian trôi qua càng lâu thì nỗi nhớ nhung lại càng thêm sâu đậm."
+        }
+      ]
+    },
+    "ko__97": {
+      "title": "-는 중 (Đang trong quá trình..., đang giữa chừng làm gì)",
+      "shortExplanation": "Cấu trúc kết hợp định ngữ '-는' với danh từ phụ thuộc '중' (trung/trong), biểu thị hành động đang được tiến hành hoặc đang diễn ra ngay tại thời điểm nói ('đang trong lúc', 'đang làm gì').",
+      "longExplanation": "'-는 중' (thường kết hợp với tiểu từ hoặc vĩ tố như '-는 중이다', '-는 중이라서') được dùng để chỉ một hành động đang được thực hiện tích cực hoặc đang trong tiến trình diễn ra tại một thời điểm nhất định (tương đương với 'đang trong lúc...', 'đang... giữa chừng'). Nó nhấn mạnh tiến độ đang tiếp diễn của hành động tương tự cấu trúc '-고 있다', nhưng mang tính khách quan và trang trọng hơn. Với danh từ Hán-Hàn chỉ động tác có thể kết hợp trực tiếp dưới dạng 'Danh từ + 중' (ví dụ: 회의 중, 통화 중).",
+      "formation": "Thân động từ + 는 중 (hoặc Danh từ hành động + 중)",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi đang làm bài tập về nhà nên lát nữa tôi sẽ liên lạc lại nhé."
+        },
+        {
+          "translation": "Anh trai tôi hình như đang bận vì đang mải gọi điện thoại với bạn gái."
+        },
+        {
+          "translation": "Mẹ tôi đang liên tục đặt câu hỏi nên tôi không thể tập trung được."
+        },
+        {
+          "translation": "Cô ấy đang xem một bộ phim rất thú vị nên đang cười khúc khích."
+        }
+      ]
+    },
+    "ko__98": {
+      "title": "-(으)ㄴ/는 탓에 (Tại vì..., do... mà dẫn đến hậu quả xấu)",
+      "shortExplanation": "Cấu trúc kết hợp định ngữ với danh từ phụ thuộc '탓' (lỗi, nguyên cớ), chỉ nguyên nhân dẫn đến một kết quả tiêu cực, đáng tiếc hoặc trách cứ ('tại vì... nên mới...').",
+      "longExplanation": "'-(으)ㄴ/는 탓에' là cấu trúc ngữ pháp dùng để nêu ra lý do, nguyên nhân gây ra một kết quả xấu, tai hại hoặc không như mong muốn ở mệnh đề sau (tương đương với 'tại...', 'chỉ vì... mà...'). Từ '탓' vốn mang nghĩa đổ lỗi, trách cứ, do đó cấu trúc này tuyệt đối không dùng cho những kết quả tích cực hay tốt lành (khi muốn nói nguyên nhân đem lại kết quả tốt thì dùng '-(으)ㄴ/는 덕분에').",
+      "formation": "Thân động từ (quá khứ) + 은/ㄴ 탓에 / Thân động từ (hiện tại) + 는 탓에 / Thân tính từ + 은/ㄴ 탓에 / Danh từ + 인 탓에",
+      "examples": [
+        {
+          "translation": "Chặt quá nhiều cây khiến môi trường khu phố chúng tôi trở nên tồi tệ, vì thế mà nhiều người bị đau ốm."
+        },
+        {
+          "translation": "Tại tuần trước tôi ăn quá nhiều nên tuần này cân nặng đã tăng vọt."
+        },
+        {
+          "translation": "Do không luyện tập đầy đủ nên tôi đã không đạt được điểm tốt trong kỳ thi."
+        },
+        {
+          "translation": "Mẹ định đi mua nguyên liệu nhưng vì lỡ chuyến xe buýt cuối cùng nên hôm nay không nấu ăn được."
+        }
+      ]
+    },
+    "ko__99": {
+      "title": "-(으)ㄴ/는데다가 (Không những... mà còn..., thêm vào đó...)",
+      "shortExplanation": "Cấu trúc bổ sung thêm thông tin, diễn tả một hành động hay trạng thái không những đã như thế ở vế trước mà lại còn cộng thêm một đặc điểm cùng tính chất ở vế sau ('không những... mà còn').",
+      "longExplanation": "'-(으)ㄴ/는데다가' kết hợp giữa định ngữ '-(으)ㄴ/는', danh từ phụ thuộc '데' (chỗ, việc, trường hợp) và trợ từ '다가'. Cấu trúc này dùng để bổ sung một sự việc, tính chất khác vào tình huống đã nêu trước đó (tương đương với 'đã... lại còn...', 'không những... mà thêm vào đó...'). Điều quan trọng là tính chất ở hai mệnh đề phải đồng nhất: hoặc là cùng tích cực (khen ngợi), hoặc là cùng tiêu cực (chê trách).",
+      "formation": "Thân tính từ + 은/ㄴ 데다가 / Thân động từ + 는 데다가 (quá khứ: 은/ㄴ 데다가) / Danh từ + 인 데다가",
+      "examples": [
+        {
+          "translation": "Quán cà phê này không những không khí dễ chịu mà hương vị cà phê còn rất tuyệt vời."
+        },
+        {
+          "translation": "Cuốn sách đó không những thú vị mà thêm vào đó lại còn rất bổ ích."
+        },
+        {
+          "translation": "Chiếc điện thoại này giá cả vừa rẻ mà tính năng lại còn đa dạng."
+        },
+        {
+          "translation": "Anh ấy không những tốt bụng mà lại còn thông minh nữa nên ai cũng quý mến."
+        }
+      ]
+    },
+    "ko__100": {
+      "title": "-(으)ㄴ/는데도 불구하고 (Mặc dù... nhưng..., bất chấp...)",
+      "shortExplanation": "Cấu trúc tương phản mạnh mẽ, biểu thị kết quả ở vế sau vẫn diễn ra bất chấp tiền đề hay điều kiện cản trở được nêu ở vế trước ('mặc dù... nhưng vẫn').",
+      "longExplanation": "'-(으)ㄴ/는데도 불구하고' là cấu trúc liên kết biểu thị sự nhượng bộ mạnh trong tiếng Hàn (tương đương với 'mặc dù... nhưng...', 'bất chấp...'). Mệnh đề trước đưa ra một hoàn cảnh, trở ngại hoặc điều kiện mà thông thường sẽ dẫn đến một kết quả khác, nhưng mệnh đề sau lại diễn ra một hành động hoặc kết quả trái ngược hẳn với sự mong đợi hay suy đoán tự nhiên đó. Cấu trúc này mang sắc thái nhấn mạnh hơn so với '-(으)ㄴ/는데도'.",
+      "formation": "Thân tính từ + 은/ㄴ 데도 불구하고 / Thân động từ + 는데도 불구하고 (quá khứ: 았/었는데도 불구하고) / Danh từ + 인데도 불구하고",
+      "examples": [
+        {
+          "translation": "Mặc dù trời mưa nhưng cô ấy vẫn ra ngoài chơi đùa rất vui vẻ."
+        },
+        {
+          "translation": "Bất chấp việc bị ốm, cậu ấy vẫn đi đến trường học."
+        },
+        {
+          "translation": "Dù không đạt được kết quả như mong muốn nhưng chúng tôi vẫn không ngừng nỗ lực."
+        },
+        {
+          "translation": "Mặc dù bài thi rất khó nhưng cậu ấy vẫn làm bài rất tốt."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko__86": {
+      "title": "-(으)려고 하다（打算……、想要……）",
+      "shortExplanation": "表示说话人未来的意图、打算或为了实现某项目标而付出的努力（“打算……”、“想要……”）。",
+      "longExplanation": "“-(으)려고 하다”是韩语中用于表达主语在未来打算或计划进行某种动作的语法结构，相当于汉语的“打算……”、“想要……”或“准备……”。当后接努力动作时，也可表达“为了……而努力”的含义。过去时态“-(으)려고 했다”常用于表达“原本打算做某事，但未能实现或情况发生了改变”。",
+      "formation": "动词词干（除ㄹ外的收音） + 으려고 하다 / 动词词干（无收音或ㄹ收音） + 려고 하다",
+      "examples": [
+        {
+          "translation": "为了把韩语说得更好，我每天都在做大量的练习。"
+        },
+        {
+          "translation": "我妈妈为了准备一顿丰盛美味的晚餐，正在学习料理。"
+        },
+        {
+          "translation": "弟弟为了长得更高，打算每天都坚持锻炼身体。"
+        },
+        {
+          "translation": "为了使用朋友推荐的新应用，我把手机系统更新了。"
+        }
+      ]
+    },
+    "ko__87": {
+      "title": "-(으)리라（想必会……、定会……）",
+      "shortExplanation": "具有书面语色彩的终结词尾，用于对未来的推测、断定或表达坚定的意志（“想必会……”、“定会……”）。",
+      "longExplanation": "“-(으)리라”是韩语中带有书面语或文雅色彩的终结词尾，用于表达说话人对某一状况、事件的推测或预估，相当于汉语的“大概会……”、“想必会……”或“定会……”。在独白语境且主语为第一人称时，它还可以表示说话人坚决的意志。在复合句中常以“-(으)리라 생각하다/예상하다/확신하다”的形式引用。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 으리라 / 动词/形容词词干（无收音或ㄹ收音） + 리라",
+      "examples": [
+        {
+          "translation": "我想他明天大概会来上班吧。"
+        },
+        {
+          "translation": "我确信期末考试的成绩一定会很不错。"
+        },
+        {
+          "translation": "我觉得想必会下雨，所以把雨伞带来了。"
+        },
+        {
+          "translation": "我预料自己在公司里定会迅速得到晋升。"
+        }
+      ]
+    },
+    "ko__88": {
+      "title": "-(으)실 거예요（[长辈/尊长]大概会……、会……）",
+      "shortExplanation": "结合主体尊称词尾“-(으)시-”与推测/将来词尾“-(으)ㄹ 거예요”，用于礼貌地推测长辈的行动或说明其未来的计划。",
+      "longExplanation": "“-(으)실 거예요”由表示尊敬主体的主体尊称词尾“-(으)시-”与表示将来或推测的终结表达“-(으)ㄹ 거예요”结合而成。常用于对长辈、上级或需要尊称的对象进行有根据的礼貌推测，或者恭敬地叙述其在未来的日程与打算。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 으실 거예요 / 动词/形容词词干（无收音或ㄹ收音） + 실 거예요",
+      "examples": [
+        {
+          "translation": "母亲明天一早大概就要出门了，请提前准备好早饭吧。"
+        },
+        {
+          "translation": "老师对这个问题想必了解得非常透彻。"
+        },
+        {
+          "translation": "我们父母大概会觉得下周得去公司上班。"
+        },
+        {
+          "translation": "总统明年想必也会再次访问这里。"
+        }
+      ]
+    },
+    "ko__89": {
+      "title": "-(으)면 좋겠다（要是……就好了、希望能……）",
+      "shortExplanation": "用于表达说话人对某种状况、事情的期望、愿望或期盼（“要是……就好了”、“希望能……”）。",
+      "longExplanation": "“-(으)면 좋겠다”是韩语中表达期望与愿望的常用语法，由表示条件的连接词尾“-(으)면”和形容词“좋겠다”组合而成。相当于汉语的“要是……就好了”或“希望能……”。如果使用过去时态“-았/었으면 좋겠다”，则能表达更加强烈的祈愿，或者表达与当前现实相反的假设性愿望。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 으면 좋겠다 / 动词/形容词词干（无收音或ㄹ收音） + 면 좋겠다（或过去形式：-았/었으면 좋겠다）",
+      "examples": [
+        {
+          "translation": "要是明天天气好就好了。因为我有外出计划，所以希望是个大晴天。"
+        },
+        {
+          "translation": "要是这次考试能考好就好了，毕竟我付出了很多努力。"
+        },
+        {
+          "translation": "真希望能吃上炸鸡啊，因为我实在太喜欢吃炸鸡了。"
+        },
+        {
+          "translation": "要是能去旅行就好了，整天憋在家里实在太无聊了。"
+        }
+      ]
+    },
+    "ko__90": {
+      "title": "-(으)면서도（虽然……却还……、一边……却一边……）",
+      "shortExplanation": "连接词尾，表示前后两个动作或状态同时存在，但彼此对立、矛盾或出乎意料（“明明……却……”、“虽然……但是……”）。",
+      "longExplanation": "“-(으)면서도”是由表示同时进行的连接词尾“-(으)면서”与表示强调或转折的助词“도”结合而成的结构。它不仅表示两个动作或状态同时发生，更侧重强调两者之间的矛盾、对立或不符合常理的反差，相当于汉语的“明明……却……”、“虽然……但是依然……”。前后分句的主语通常需要一致。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 으면서도 / 动词/形容词词干（无收音或ㄹ收音） + 면서도",
+      "examples": [
+        {
+          "translation": "他虽然很生气，但脸上依然带着微笑。"
+        },
+        {
+          "translation": "她虽然身体不舒服，但还是去学校上学了。"
+        },
+        {
+          "translation": "虽然下着雨，但节目直播依然在继续进行。"
+        },
+        {
+          "translation": "这个小孩子一边看电影，一边心里却总在盘算着玩耍的计划。"
+        }
+      ]
+    },
+    "ko__91": {
+      "title": "-(으)니까（因为……所以……、既然……就……）",
+      "shortExplanation": "连接词尾，表示前一分句是后一分句的理由、根据或发现的前提，常与命令句和共动句连用。",
+      "longExplanation": "“-(으)니까”是韩语中表示原因或理由的连接词尾。与“-아/어서”相比，它侧重表达说话人的主观判断、理由依据，并且后句可以自由搭配命令句（“-(으)세요”）、共动句（“-(으)ㅂ시다”）等句型。此外，“-(으)니까”还可以表达在进行了某一动作之后发现了某种事实或结果。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 으니까 / 动词/形容词词干（无收音或ㄹ收音） + 니까（过去时：-았/었으니까）",
+      "examples": [
+        {
+          "translation": "因为吃了午饭，所以现在一点都不觉得饿。"
+        },
+        {
+          "translation": "因为去了银行，所以才能取到钱。"
+        },
+        {
+          "translation": "我正在安静地学习，请不要来打扰我。"
+        },
+        {
+          "translation": "外面正在下雨，请带上一把雨伞吧。"
+        }
+      ]
+    },
+    "ko__92": {
+      "title": "-다 보니 / -(으)다 보니（一直做着……就发现……、做着做着就……）",
+      "shortExplanation": "表示前一动作持续进行或反复发生，从而自然而然产生了后一结果或有了新的认识（“做着做着就……”）。",
+      "longExplanation": "“-다 보니”（源自“-다가 보니”）是韩语中表示持续性经验与发现的语法结构。用于说明前一动作在持续进行或反复发生的过程中，说话人自然地发现了某种事实、体会到某种道理，或者导致了后一情况或结果的产生。后分句通常用于陈述说话人自己的领悟或非刻意产生的结果。",
+      "formation": "动词词干 + 다 보니（偶尔可接过去时：-았/었다 보니）",
+      "examples": [
+        {
+          "translation": "不知不觉来早了，所以在开始之前能稍作休息一下了。"
+        },
+        {
+          "translation": "坚持每天锻炼了一个月，不知不觉体重减轻了一些。"
+        },
+        {
+          "translation": "持之以恒地学习，渐渐发现自己的韩语实力有了提高。"
+        },
+        {
+          "translation": "因为每天早上都很早起床，所以吃完午饭就会马上感到疲倦。"
+        }
+      ]
+    },
+    "ko__93": {
+      "title": "-다가 / -(으)다가（正做着……突然……、……中途……）",
+      "shortExplanation": "连接词尾，表示正在进行的某一动作或状态中断，转而发生另一动作或状态（“正……的时候突然……”）。",
+      "longExplanation": "“-다가”是韩语中非常高频的连接词尾，用于表示某一动作或状态在持续进行的过程中被中断，转变为另一个动作或发生新的情况。相当于汉语的“正做着……中途……”、“……着……着突然……”。前后分句通常为主语一致的同一主体动作转换（自然现象或突发外部事件除外）。过去形态“-았/었다가”则表示前一动作彻底完成之后再转入相反或后续的动作。",
+      "formation": "动词/形容词词干 + 다가（过去时：动词/形容词词干 + 았/었다가）",
+      "examples": [
+        {
+          "translation": "我读着书不知不觉睡着了，所以没能读完最后一部分。"
+        },
+        {
+          "translation": "我们正看着电影，突然停电了，结果没能看到大结局。"
+        },
+        {
+          "translation": "他正说着话突然扑哧笑出声来，把大家都吓了一跳。"
+        },
+        {
+          "translation": "我在回家途中碰巧遇见了朋友，就一起吃了晚饭。"
+        }
+      ]
+    },
+    "ko__94": {
+      "title": "-던 / -(으)던（曾经……的、过去常常……的）",
+      "shortExplanation": "回想形定语词尾，修饰后面的名词，表示过去持续、反复发生或未完成的动作与状态（“曾经……的”）。",
+      "longExplanation": "“-던”是韩语中具有回想色彩的冠形词形（定语）词尾，直接接在动词或形容词词干后修饰随后的名词。它表示回忆过去经常发生、持续进行但现已停止的习惯或状态，也可以表示过去进行但尚未彻底完成的动作，相当于汉语的“曾经……的”、“过去经常……的”。若使用“-았/었던”，则强调过去的动作已经彻底完成或与现实截然不同。",
+      "formation": "动词/形容词词干 + 던（过去回想：动词/形容词词干 + 았/었던）",
+      "examples": [
+        {
+          "translation": "我小时候是个爱哭的孩子，但现在几乎不怎么哭了。"
+        },
+        {
+          "translation": "他小时候总是一个非常喜欢吃苹果的人，可现在却讨厌吃苹果了。"
+        },
+        {
+          "translation": "我们学校曾经有一位很多学生都不太喜欢的数学老师。"
+        },
+        {
+          "translation": "她曾经是一位住在门前山上的和蔼阿姨，但现在再也见不到她了。"
+        }
+      ]
+    },
+    "ko__95": {
+      "title": "-(으)려면（如果想要……、若要……）",
+      "shortExplanation": "连接词尾，由意图“-(으)려고 하다”与条件“-(으)면”缩略而成，表示为达成前句意图或目的所需的必要条件（“如果要……”）。",
+      "longExplanation": "“-(으)려면”是“-(으)려고 하면”的缩约形式，意为“如果想要做某事的话”。它将前分句设定为意图或目标，并在后分句提出实现该目标所必需的前提条件、方法或建议。因此，后半句经常搭配义务表达“-아/어야 하다（必须）”、建议词尾“-(으)세요（请）”或“필요하다（需要）”等。",
+      "formation": "动词词干（除ㄹ外的收音） + 으려면 / 动词词干（无收音或ㄹ收音） + 려면",
+      "examples": [
+        {
+          "translation": "如果想要通过韩语TOPIK考试，就必须多加练习。否则很难取得成功。"
+        },
+        {
+          "translation": "如果想在健身房保持好身材，就必须坚持锻炼并保持健康的饮食习惯。"
+        },
+        {
+          "translation": "要想得到这份工作，就需要相关领域的经验。如果没有，竞争力就会不足。"
+        },
+        {
+          "translation": "如果要防止出现这类问题，就需要制定更周密的计划。否则可能会再次遭遇同样的问题。"
+        }
+      ]
+    },
+    "ko__96": {
+      "title": "-(으)ㄹ수록（越……越……）",
+      "shortExplanation": "连接词尾，表示随着前一动作或状态的程度不断加深，后一情况的程度也成比例加深（“越……越……”）。",
+      "longExplanation": "“-(으)ㄹ수록”是韩语中表示程度正向递进的连接词尾，相当于汉语中的“越……越……”。用于说明随着前一分句的动作进行或状态加深，后一分句的情况也随之发生相应程度的变化。口语和写作中常搭配使用“-(으)면 -(으)ㄹ수록”句型以起到加倍强调的效果。",
+      "formation": "动词/形容词词干（除ㄹ外的收音） + 을수록 / 动词/形容词词干（无收音或ㄹ收音） + ㄹ수록",
+      "examples": [
+        {
+          "translation": "越运动身体就会越健康，所以我每天早晨都在慢跑。"
+        },
+        {
+          "translation": "学习越努力，就越能在考试中取得更好的成绩。"
+        },
+        {
+          "translation": "吃饭吃得越快，就越容易消化不良。"
+        },
+        {
+          "translation": "随着时间不断流逝，思念之情反而愈发深沉。"
+        }
+      ]
+    },
+    "ko__97": {
+      "title": "-는 중（正在……中、正处于……之中）",
+      "shortExplanation": "动词定语词尾“-는”与依存名词“중（中）”连用，表示某一动作正在进行之中（“正在……中”）。",
+      "longExplanation": "“-는 중”常以“-는 중이다”或“-는 중이라서”的形式使用，表示某个动作目前正在进行或处于某种持续的进程当中，相当于汉语的“正在……中”、“正处于……之际”。虽然其基本含义与进行体“-고 있다”相似，但“-는 중이다”更侧重于强调“动作所处的客观过程或状态”。另外，含有动作意义的汉字词名词可以直接接“중”（如：회의 중、통화 중）。",
+      "formation": "动词词干 + 는 중（或 动作性名词 + 중）",
+      "examples": [
+        {
+          "translation": "我现在正在做作业，稍后再跟您联系。"
+        },
+        {
+          "translation": "哥哥好像很忙，因为他正在和女朋友通电话。"
+        },
+        {
+          "translation": "妈妈正在连续不断地提问，搞得我无法集中注意力。"
+        },
+        {
+          "translation": "她正在看一部很有趣的电影，所以正乐呵呵地笑着。"
+        }
+      ]
+    },
+    "ko__98": {
+      "title": "-(으)ㄴ/는 탓에（由于……的缘故、全怪……导致……）",
+      "shortExplanation": "冠形词形词尾与依存名词“탓（过错、由头）”连用，表示由于某种负面原因而导致了不良的后果（“全怪……才导致……”）。",
+      "longExplanation": "“-(으)ㄴ/는 탓에”是韩语中专用于表达不良消极后果的因果句型。名词“탓”含有“推卸过错、归咎于”之意，因此该结构专门用于引出导致不好的结果、不幸或失误的原因，相当于汉语的“全怪……导致……”、“由于……以致于……”。后分句必然跟随消极或令人遗憾的结果，不能用于积极正面的语境（积极原因使用“-(으)ㄴ/는 덕분에”）。",
+      "formation": "动词过去时 + 은/ㄴ 탓에 / 动词现在时 + 는 탓에 / 形容词词干 + 은/ㄴ 탓에 / 名词 + 인 탓에",
+      "examples": [
+        {
+          "translation": "砍伐了太多树木导致我们小区的环境很差，以致于很多人都生病了。"
+        },
+        {
+          "translation": "都怪上周吃得太多，这周体重明显增加了。"
+        },
+        {
+          "translation": "由于练习不够充分，所以考试没能拿到好成绩。"
+        },
+        {
+          "translation": "妈妈本来要去买食材，但因为错过了末班车，所以今天做不了饭了。"
+        }
+      ]
+    },
+    "ko__99": {
+      "title": "-(으)ㄴ/는데다가（不仅……而且……、加上……）",
+      "shortExplanation": "表示在前一动作或情况的基础之上累加另一同向的特征或事实（“不仅……而且……”、“再加上……”）。",
+      "longExplanation": "“-(으)ㄴ/는데다가”是由冠形词形词尾、依存名词“데”以及助词“다가”组合而成的递进句型。表示在前分句所叙述的事情或状态之上，再叠加同性质的其他事情，相当于汉语的“不仅……而且……”、“再加上……”。需要注意的是，前句与后句的情感倾向必须保持一致，即前后必须同为积极正面内容，或同为消极负面内容。",
+      "formation": "形容词词干 + 은/ㄴ 데다가 / 动词现在时 + 는 데다가（过去时：은/ㄴ 데다가） / 名词 + 인 데다가",
+      "examples": [
+        {
+          "translation": "这家咖啡馆不仅氛围很好，而且咖啡味道也非常棒。"
+        },
+        {
+          "translation": "那本书不仅内容有趣，而且还十分有益。"
+        },
+        {
+          "translation": "这部手机不仅价格便宜，而且功能也很丰富多样。"
+        },
+        {
+          "translation": "他不仅性格善良，而且还非常聪明，所以大家都喜欢他。"
+        }
+      ]
+    },
+    "ko__100": {
+      "title": "-(으)ㄴ/는데도 불구하고（尽管……还是……、不顾……）",
+      "shortExplanation": "强转折连接结构，表示不顾前句既有的状况或阻碍，后句依然发生了出乎意料的结果（“尽管……依然……”）。",
+      "longExplanation": "“-(으)ㄴ/는데도 불구하고”是韩语中表示强烈转折与让步的文法表达，相当于汉语的“尽管……还是……”、“不顾……依然……”。前分句提出了一个原本可能阻碍后项发生的客观事实或背景，但后分句却打破常规期待，依然执行了该动作或迎来了相反的结局。相比单纯的“-(으)ㄴ/는데도”，其转折语气更加鲜明和正式。",
+      "formation": "形容词词干 + 은/ㄴ 데도 불구하고 / 动词现在时 + 는데도 불구하고（过去时：았/었는데도 불구하고） / 名词 + 인데도 불구하고",
+      "examples": [
+        {
+          "translation": "尽管下着大雨，她还是跑出去开心地玩耍了一番。"
+        },
+        {
+          "translation": "尽管身体不舒服，他还是坚持去学校上课了。"
+        },
+        {
+          "translation": "尽管未能得到期盼的结果，我们依然没有放弃并继续努力。"
+        },
+        {
+          "translation": "尽管考试非常难，他还是考得很好。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko__86": {
+      "title": "-(으)려고 하다（〜しようとする、〜するつもりだ）",
+      "shortExplanation": "話者の意図や今後の計画、または目標に向かって努力しようとする姿勢を表す表現です（「〜するつもりだ」「〜しようとする」）。",
+      "longExplanation": "「-(으)려고 하다」は、主語が将来ある行動をしようとする意図や計画を表す表現で、日本語の「〜するつもりだ」「〜しようと思っている」「〜しようとする」に相当します。また、ある目的を達成するために努力している最中であるニュアンスを表すこともあります。過去形「-(으)려고 했다」にすると、「〜しようとしたが（できなかった、途中で変わった）」という含みを持つことが多くなります。",
+      "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려고 하다 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려고 하다",
+      "examples": [
+        {
+          "translation": "韓国語をもっと上達させようとして、毎日たくさん練習しています。"
+        },
+        {
+          "translation": "母は美味しい夕食を準備しようと、料理の勉強をしています。"
+        },
+        {
+          "translation": "弟はもっと背を伸ばそうと、毎日運動しようとしています。"
+        },
+        {
+          "translation": "友達が勧めてくれた新しいアプリを使おうとして、スマートフォンをアップデートしました。"
+        }
+      ]
+    },
+    "ko__87": {
+      "title": "-(으)리라（〜だろう、〜であろう）",
+      "shortExplanation": "文語的・格式のある表現で、話者の推測や予想、または強い意志を表す終結語尾です（「〜だろう」「〜であろう」）。",
+      "longExplanation": "「-(으)리라」は、やや改まった場面や文語体で用いられ、話者が未来の事態やある状況について推測・確信することを表す終結語尾です。日本語の「〜だろう」「〜であろう」「〜に違いない」に相当します。主語が一人称で独白的な文脈脈脈では「〜しよう」「必ず〜するぞ」という強い決意を表すこともあります。「-(으)리라 생각하다（〜だろうと思う）」「-(으)리라 확신하다（〜だろうと確信する）」などの形で引用節としてよく使われます。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으리라 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 리라",
+      "examples": [
+        {
+          "translation": "彼は明日きっと出勤するだろうと思います。"
+        },
+        {
+          "translation": "期末試験の成績は良いだろうと確信しています。"
+        },
+        {
+          "translation": "雨が降るだろうと思って傘を持ってきました。"
+        },
+        {
+          "translation": "私は会社で急速に昇進するだろうと予想していました。"
+        }
+      ]
+    },
+    "ko__88": {
+      "title": "-(으)실 거예요（〜されるでしょう、〜なさるはずです）",
+      "shortExplanation": "主体尊敬語尾「-(으)시-」と未来・推量表現「-(으)ㄹ 거예요」を組み合わせ、目上の人の行動や状態を丁寧に推測・表現します。",
+      "longExplanation": "「-(으)실 거예요」は、主語を高める主体尊敬語尾「-(으)시-」に、未来や推量を表す「-(으)ㄹ 거예요」が結合した丁寧な表現です。親、先生、上司など尊敬すべき人物の今後の予定を丁寧に述べたり、その人の行動や状態について「〜されるでしょう」「〜なさるはずです」と礼儀正しく推量する際に用いられます。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으실 거예요 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 실 거예요",
+      "examples": [
+        {
+          "translation": "お母様は明日朝早く出かけられるでしょうから、前もって朝食を準備しておいてください。"
+        },
+        {
+          "translation": "先生はこの問題についてよくご存知のはずです。"
+        },
+        {
+          "translation": "両親はおそらく来週会社に行かれるだろうと考えていらっしゃるはずです。"
+        },
+        {
+          "translation": "大統領は来年もここをご訪問なさるでしょう。"
+        }
+      ]
+    },
+    "ko__89": {
+      "title": "-(으)면 좋겠다（〜ならいいな、〜だといいと思う）",
+      "shortExplanation": "話者の希望や願い、こうあってほしいという願望を表す表現です（「〜だといいな」「〜してほしい」）。",
+      "longExplanation": "「-(으)면 좋겠다」は、条件の接続語尾「-(으)면」に「良い」を意味する「좋다」の推量形が結びついた表現で、日本語の「〜ならいいな」「〜であればいいのに」「〜したい」に相当します。過去形を用いた「-았/었으면 좋겠다」にすると、より切実な願いや、現状とは異なることへの願望（仮定）を表すニュアンスが強まります。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으면 좋겠다 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 면 좋겠다（または過去形：-았/었으면 좋겠다）",
+      "examples": [
+        {
+          "translation": "明日は天気が良ければいいなと思います。出かける予定があるので晴れてほしいです。"
+        },
+        {
+          "translation": "試験で良い結果が出せたらいいな。たくさん努力したんだから。"
+        },
+        {
+          "translation": "チキンが食べられたらいいのに。チキンが大好きだからです。"
+        },
+        {
+          "translation": "旅行に行けたらいいのになあ。家に閉じこもっていて本当に退屈です。"
+        }
+      ]
+    },
+    "ko__90": {
+      "title": "-(으)면서도（〜でありながらも、〜しつつも）",
+      "shortExplanation": "2つの動作や状態が同時に存在しながらも、それらが対照的・矛盾していることを表す接続語尾です（「〜でありながらも」「〜なのに」）。",
+      "longExplanation": "「-(으)면서도」は、同時進行を表す接続語尾「-(으)면서」に対照や強調の助詞「도」が結びついた表現です。2つの動作や状態が同時に起こっていることを表すだけでなく、それらが互いに矛盾していたり、常識的な予想に反しているというニュアンスを強調します。日本語の「〜しながらも」「〜でありながらも」「〜くせに」に相当します。主語は前後で同一である必要があります。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으면서도 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 면서도",
+      "examples": [
+        {
+          "translation": "彼は怒りながらも微笑みを浮かべた。"
+        },
+        {
+          "translation": "彼女は具合が悪かったにもかかわらず学校に行った。"
+        },
+        {
+          "translation": "雨が降っていながらも、放送はそのまま続けられていました。"
+        },
+        {
+          "translation": "この幼い子供は映画を見ながらも、常に遊ぶ計画を立てていた。"
+        }
+      ]
+    },
+    "ko__91": {
+      "title": "-(으)니까（〜だから、〜ので）",
+      "shortExplanation": "理由や原因、判断の根拠を表す接続語尾です。後続節に命令文や勧誘文を用いることができます（「〜だから」「〜ので」）。",
+      "longExplanation": "「-(으)니까」は、前節が後節の理由や根拠であることを表す接続語尾です。「-아/어서」とは異なり、話者の主観的な判断や主張を表す際に多く使われ、後節に「〜してください（-(으)세요）」や「〜しましょう（-(으)ㅂ시다）」といった命令・勧誘・依頼の表現を自由に続けることができます。また、ある行動をした結果、新しい事実を発見・認識したことを表す用法もあります。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 으니까 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ 니까（過去形：-았/었으니까）",
+      "examples": [
+        {
+          "translation": "昼ご飯を食べたから、今はお腹が空いていません。"
+        },
+        {
+          "translation": "銀行に行ったので、お金を引き出すことができました。"
+        },
+        {
+          "translation": "静かに勉強しているところだから、邪魔しないでください。"
+        },
+        {
+          "translation": "雨が降っているから、傘を持って行ってください。"
+        }
+      ]
+    },
+    "ko__92": {
+      "title": "-다 보니 / -(으)다 보니（〜しているうちに、〜してみると）",
+      "shortExplanation": "ある動作を継続・反復しているうちに、自然とある結果に至ったり新しい事実に気づくことを表します（「〜しているうちに」「〜してみると」）。",
+      "longExplanation": "「-다 보니」（「-다가 보니」の縮約形）は、ある行動を継続的または反復して行っているうちに、自然とその結果として新たな状況に至ったり、何らかの事実に気づいたことを表す表現です。日本語の「〜しているうちに」「〜していると、自然と〜になった」に相当します。後節には話者の実感や、意図せず生じた結果が来ることが一般的です。",
+      "formation": "動詞の語幹 ＋ 다 보니（過去形：-았/었다 보니）",
+      "examples": [
+        {
+          "translation": "早く着いたので、始まる前に少し休めそうです。"
+        },
+        {
+          "translation": "1か月間毎日運動しているうちに、体重が少し落ちました。"
+        },
+        {
+          "translation": "こつこつ勉強を続けているうちに、だんだん韓国語の実力が伸びてきました。"
+        },
+        {
+          "translation": "毎朝早く起きていると、昼ご飯を食べたらすぐに疲れが出てしまいます。"
+        }
+      ]
+    },
+    "ko__93": {
+      "title": "-다가 / -(으)다가（〜していて、〜している途中で）",
+      "shortExplanation": "ある動作や状態が続いている途中で中断し、別の動作や事態へと移行することを表す接続語尾です（「〜していて」「〜している途中で」）。",
+      "longExplanation": "「-다가」は、進行中のある動作や状態が途中で中断され、別の動作や新しい状況に移り変わることを表す接続語尾です。日本語の「〜している途中で」「〜しかけて」「〜していて突然〜」に相当します。原則として前後節の主語は同一ですが、停電や天候の急変など外部の突発的な状況が起きる場合には主語が異なることもあります。過去形「-았/었다가」は前のアクションを完了した後に逆の動作に転じる場合などに使われます。",
+      "formation": "動詞・形容詞の語幹 ＋ 다가（過去形：動詞・形容詞の語幹 ＋ 았/었다가）",
+      "examples": [
+        {
+          "translation": "私は本を読んでいる途中で寝落ちしてしまい、最後の部分が読めませんでした。"
+        },
+        {
+          "translation": "私たちは映画を見ていた途中で突然停電になり、結末を見ることができませんでした。"
+        },
+        {
+          "translation": "彼は話している途中で突然吹き出して、みんなを驚かせました。"
+        },
+        {
+          "translation": "家に帰る途中で偶然友達に会って、一緒に夕飯を食べました。"
+        }
+      ]
+    },
+    "ko__94": {
+      "title": "-던 / -(으)던（〜（してい）た、よく〜していた）",
+      "shortExplanation": "過去の回想を表す連体形語尾で、過去に習慣的に行っていたことや、過去の状態・未完了の動作を修飾します（「〜（してい）た」「昔よく〜していた」）。",
+      "longExplanation": "「-던」は、用言の語幹について後ろの名詞を修飾する回想の連体形語尾です。話者が過去の記憶を思い起こし、「以前よく〜していた」「過去に〜だった」という習慣的・継続的な事柄や、過去に行われていて途中で終わった未完了の動作を表します。現在ではその状態が続いていないことを示唆することが多いです。完全に過去に完了・断絶した事柄には「-았/었던」が用いられます。",
+      "formation": "動詞・形容詞の語幹 ＋ 던（過去完了回想：動詞・形容詞の語幹 ＋ 았/었던）",
+      "examples": [
+        {
+          "translation": "私は子供の頃、よく泣く子でした。でも今はほとんど泣きません。"
+        },
+        {
+          "translation": "彼は子供の頃、いつもりんごが好きだった人でした。しかし今は嫌いになっています。"
+        },
+        {
+          "translation": "私たちの学校には、多くの生徒が嫌っていた数学の先生がいました。"
+        },
+        {
+          "translation": "彼女は前の山に住んでいた親切なおばさんでした。でも今では彼女の姿を見ることはできません。"
+        }
+      ]
+    },
+    "ko__95": {
+      "title": "-(으)려면（〜しようとするなら、〜するには）",
+      "shortExplanation": "意図「-(으)려고 하다」と条件「-(으)면」の縮約形で、ある目的を達成するために必要な条件や方法を提示する接続語尾です（「〜するには」「〜しようとするなら」）。",
+      "longExplanation": "「-(으)려면」は「-(으)려고 하면」が縮まった形で、日本語の「〜しようとするなら」「〜するためには」に相当します。前節で目標や意図を掲げ、後節でその目標を達成するために必要な条件、アドバイス、必須事項を提示します。そのため、後節には「-아/어야 하다（〜しなければならない）」「-(으)세요（〜してください）」「필요하다（必要だ）」などの表現がよく続きます。",
+      "formation": "動詞の語幹（ㄹ以外のパッチムあり） ＋ 으려면 ／ 動詞の語幹（母音またはㄹパッチム） ＋ 려면",
+      "examples": [
+        {
+          "translation": "韓国語のTOPIK試験に合格しようとするなら、たくさん練習しなければなりません。そうでなければ成功するのは難しいです。"
+        },
+        {
+          "translation": "スポーツジムで体型を維持するには、着実に運動して健康的な食生活を維持しなければなりません。"
+        },
+        {
+          "translation": "この仕事に就くには、関連分野での経験が必要です。それがなければ競争力が不足するでしょう。"
+        },
+        {
+          "translation": "このような問題を防ごうとするなら、もう少し綿密な計画が必要です。そうでなければ同じ問題を再び経験することになりかねません。"
+        }
+      ]
+    },
+    "ko__96": {
+      "title": "-(으)ㄹ수록（〜すればするほど、〜であるほど）",
+      "shortExplanation": "前の動作や状態の程度が進むにつれて、それに比例して後ろの事態の程度も増すことを表す接続語尾です（「〜すればするほど」）。",
+      "longExplanation": "「-(으)ㄹ수록」は、前節の行動や状態の程度が深まるのに伴い、後節の事態の程度もそれに比例して増大していくことを表す接続語尾です。日本語の「〜すればするほど」「〜であるほど、ますます〜」に相当します。強調のために「-(으)면 -(으)ㄹ수록（〜すればするほど）」という形で重ねて使われることも非常に多いです。",
+      "formation": "動詞・形容詞の語幹（ㄹ以外のパッチムあり） ＋ 을수록 ／ 動詞・形容詞の語幹（母音またはㄹパッチム） ＋ ㄹ수록",
+      "examples": [
+        {
+          "translation": "運動をすればするほど健康になるので、毎朝ジョギングをしています。"
+        },
+        {
+          "translation": "勉強をたくさんすればするほど、試験でより良い点数を取ることができます。"
+        },
+        {
+          "translation": "食べ物を早く食べるほど、消化がうまくいかなくなることがあります。"
+        },
+        {
+          "translation": "時間が経てば経つほど、恋しさがより深まっていきます。"
+        }
+      ]
+    },
+    "ko__97": {
+      "title": "-는 중（〜している最中、〜の途中）",
+      "shortExplanation": "動詞の現在連体形語尾「-는」と依存名詞「중（中）」が結びつき、ある動作が進行中・実施中であることを表します（「〜している最中だ」）。",
+      "longExplanation": "「-는 중」は、通常「-는 중이다（〜している最中だ）」「-는 중이라서（〜している最中なので）」の形で用いられ、ある動作がまさに進行中・継続中であることを表す文法です。日本語の「〜している最中だ」「〜の途中だ」に相当します。進行形「-고 있다」と意味は近いですが、「-는 중이다」は客観的にその過程の真っ只中にあることを強調するニュアンスがあります。また、動作性の漢字名詞には直接「名詞 ＋ 중」と接続することもできます（例：회의 중、통화 중）。",
+      "formation": "動詞の語幹 ＋ 는 중（または 動作名詞 ＋ 중）",
+      "examples": [
+        {
+          "translation": "私は今宿題をしている最中なので、後でご連絡します。"
+        },
+        {
+          "translation": "兄は彼女と電話中なので忙しいようです。"
+        },
+        {
+          "translation": "母がずっと質問をしている最中なので、なかなか集中できません。"
+        },
+        {
+          "translation": "彼女は面白い映画を見ている最中で、だから笑っているのです。"
+        }
+      ]
+    },
+    "ko__98": {
+      "title": "-(으)ㄴ/는 탓에（〜のせいで、〜したせいで）",
+      "shortExplanation": "連体形語尾と原因・責任を表す依存名詞「탓（せい）」が結合し、好ましくない結果や否定的な事態を招いた原因を表します（「〜のせいで」）。",
+      "longExplanation": "「-(으)ㄴ/는 탓에」は、後節に起こった悪い結果や不運、失敗の原因・理由を表す表現で、日本語の「〜のせいで」「〜したせいで」に相当します。「탓」自体に過失や責任を押し付ける意味合いがあるため、後節には必ず否定的な事態や残念な結果が続きます。良い結果や肯定的な事態には使うことができず、その場合は「-(으)ㄴ/는 덕분에（〜のおかげで）」を用います。",
+      "formation": "動詞過去 ＋ 은/ㄴ 탓에 ／ 動詞現在 ＋ 는 탓에 ／ 形容詞 ＋ 은/ㄴ 탓에 ／ 名詞 ＋ 인 탓에",
+      "examples": [
+        {
+          "translation": "木を切りすぎたせいで町の環境が悪化し、多くの人が体調を崩しています。"
+        },
+        {
+          "translation": "先週食べ過ぎたせいで、今週体重が増えてしまいました。"
+        },
+        {
+          "translation": "十分な練習をしなかったせいで、試験で良い点数が取れませんでした。"
+        },
+        {
+          "translation": "母が材料を買いに行かなければならなかったのに、終電（最終バス）を逃したせいで今日は料理ができません。"
+        }
+      ]
+    },
+    "ko__99": {
+      "title": "-(으)ㄴ/는데다가（〜な上に、〜である上に）",
+      "shortExplanation": "前節で述べた事柄や性質に加えて、さらに同性質の別の事柄が重なることを表す累積・累加の表現です（「〜な上に」「〜だけでなくさらに」）。",
+      "longExplanation": "「-(으)ㄴ/는데다가」は、連体形語尾に依存名詞「데（ところ、こと）」と助詞「다가」が結合した表現で、日本語の「〜な上に」「〜である上」「〜に加えて」に相当します。前節の事実にさらに別の事実を付け加えて強調する際に用いられます。注意点として、前節と後節は同じ評価の方向性（プラスとプラス、またはマイナスとマイナス）で揃える必要があります。",
+      "formation": "形容詞 ＋ 은/ㄴ 데다가 ／ 動詞現在 ＋ 는 데다가（過去：은/ㄴ 데다가） ／ 名詞 ＋ 인 데다가",
+      "examples": [
+        {
+          "translation": "このカフェは雰囲気が良い上に、コーヒーの味も素晴らしいです。"
+        },
+        {
+          "translation": "その本は面白い上に、有益でさえあります。"
+        },
+        {
+          "translation": "この携帯電話は価格が手頃な上に、機能も多様です。"
+        },
+        {
+          "translation": "彼は優しい上に頭も良いので、みんな彼が好きです。"
+        }
+      ]
+    },
+    "ko__100": {
+      "title": "-(으)ㄴ/는데도 불구하고（〜にもかかわらず、〜であるにもかかわらず）",
+      "shortExplanation": "前節の状況や障害にもかかわらず、予想や期待に反して後節の事態が起きることを表す強い逆接表現です（「〜にもかかわらず」）。",
+      "longExplanation": "「-(으)ㄴ/는데도 불구하고」は、強い譲歩と逆接を表す表現で、日本語の「〜にもかかわらず」「〜であるのに」に相当します。前節で障害となる状況や前提を提示し、通常ならその影響を受けるはずであるにもかかわらず、後節ではその予想に反した行動や結果が成立することを強調します。単なる「-(으)ㄴ/는데도」に比べて、より強調された格式のあるニュアンスを持ちます。",
+      "formation": "形容詞 ＋ 은/ㄴ 데도 불구하고 ／ 動詞現在 ＋ 는데도 불구하고（過去：았/었는데도 불구하고） ／ 名詞 ＋ 인데도 불구하고",
+      "examples": [
+        {
+          "translation": "雨が降っているにもかかわらず、彼女は外に出て楽しく遊びました。"
+        },
+        {
+          "translation": "彼は体調が悪かったにもかかわらず、学校に行きました。"
+        },
+        {
+          "translation": "望む結果が得られなかったにもかかわらず、私たちは努力を続けました。"
+        },
+        {
+          "translation": "試験が難しかったにもかかわらず、彼はよくできました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko__86": {
+      "title": "-(으)려고 하다 (의도·계획 표현)",
+      "shortExplanation": "미래에 어떤 행동을 하려는 의도나 계획, 또는 어떤 목적을 이루기 위해 노력함을 나타냅니다.",
+      "longExplanation": "'-(으)려고 하다'는 주어가 미래에 어떤 동작을 실행에 옮기려는 의도나 결심, 계획을 표현할 때 쓰는 문법입니다. 또한 어떤 목표를 달성하기 위해 적극적으로 시도하거나 노력하는 태도를 나타내기도 합니다. 과거형 '-(으)려고 했다'는 원래 하려던 계획이었으나 실행하지 못했거나 상황이 바뀌었음을 나타낼 때 주로 사용됩니다.",
+      "formation": "동사 어간(ㄹ 제외 받침) + 으려고 하다 / 동사 어간(받침 없음, ㄹ 받침) + 려고 하다",
+      "examples": [
+        {
+          "translation": "저는 한국어를 더 잘하려고 매일 연습을 많이 해요."
+        },
+        {
+          "translation": "우리 어머니는 맛있는 저녁 식사를 준비하려고 요리 공부를 하세요."
+        },
+        {
+          "translation": "동생은 키가 더 크기 위해 매일 운동을 하려고 해요."
+        },
+        {
+          "translation": "친구가 추천해 준 새로운 앱을 사용하려고 휴대전화를 업데이트했어요."
+        }
+      ]
+    },
+    "ko__87": {
+      "title": "-(으)리라 (추측·의지 종결어미)",
+      "shortExplanation": "격식체나 문어체에서 미래의 일이나 상황에 대한 화자의 추측 또는 강한 의지를 나타냅니다.",
+      "longExplanation": "'-(으)리라'는 문어체나 예스러운 어조에서 주로 사용되는 종결어미로, 미래의 상황이나 상태에 대해 화자가 강하게 추측함을 나타냅니다. 또한 주어가 1인칭일 때는 독백이나 다짐의 맥락에서 굳은 결의나 의지를 표현하기도 합니다. 주로 '-(으)리라 생각하다', '-(으)리라 믿다', '-(으)리라 예상하다'와 같은 인용 표현으로 자주 쓰입니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 으리라 / 동사·형용사 어간(받침 없음, ㄹ 받침) + 리라",
+      "examples": [
+        {
+          "translation": "그가 아마 내일 출근하리라 생각해요."
+        },
+        {
+          "translation": "기말고사 성적이 좋으리라 확신하고 있어요."
+        },
+        {
+          "translation": "비가 오리라 생각해서 우산을 챙겨 왔어요."
+        },
+        {
+          "translation": "저는 회사에서 빠르게 승진하리라 예상했어요."
+        }
+      ]
+    },
+    "ko__88": {
+      "title": "-(으)실 거예요 (존칭 추측·미래 종결어미)",
+      "shortExplanation": "주체 높임 선어말어미 '-(으)시-'와 미래·추측 표현 '-(으)ㄹ 거예요'가 결합하여 웃어른의 행동이나 상태를 정중하게 추측하거나 전달합니다.",
+      "longExplanation": "'-(으)실 거예요'는 주어를 높이는 주체 높임 선어말어미 '-(으)시-'와 미래의 일이나 상황을 정중하게 추측하는 '-(으)ㄹ 거예요'가 합쳐진 형태입니다. 부모님, 선생님, 상사 등 존대해야 할 대상의 향후 일정이나 행동, 상태에 대해 예의를 갖추어 추측하거나 설명할 때 씁니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 으실 거예요 / 동사·형용사 어간(받침 없음, ㄹ 받침) + 실 거예요",
+      "examples": [
+        {
+          "translation": "어머니는 내일 아침 일찍 나가실 거예요. 미리 아침밥을 준비해 두세요."
+        },
+        {
+          "translation": "선생님께서는 이 문제에 대해 많이 알고 계실 거예요."
+        },
+        {
+          "translation": "우리 부모님께서는 아마 다음 주에 회사에 가실 거라고 생각하실 거예요."
+        },
+        {
+          "translation": "대통령께서는 내년에도 여기를 방문하실 거예요."
+        }
+      ]
+    },
+    "ko__89": {
+      "title": "-(으)면 좋겠다 (바람·희망 표현)",
+      "shortExplanation": "어떤 일이나 상태가 이루어지기를 바라는 소망이나 기대를 나타냅니다.",
+      "longExplanation": "'-(으)면 좋겠다'는 조건의 연결어미 '-(으)면'과 '좋겠다'가 결합하여 화자가 미래의 상황이나 사건에 대해 품고 있는 바람이나 희망을 드러낼 때 씁니다. 과거 시제 형태인 '-았/었으면 좋겠다'를 쓰면 훨씬 간절한 바람을 나타내거나 현재 상황과 반대되는 일에 대한 아쉬운 소망을 표현할 수 있습니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 으면 좋겠다 / 동사·형용사 어간(받침 없음, ㄹ 받침) + 면 좋겠다 (과거형: -았/었으면 좋겠다)",
+      "examples": [
+        {
+          "translation": "내일 날씨가 좋으면 좋겠어요. 외출 계획이 있어서 맑은 하늘이었으면 해요."
+        },
+        {
+          "translation": "시험을 잘 보면 좋겠다. 많은 노력을 들였거든요."
+        },
+        {
+          "translation": "치킨을 먹으면 좋겠다. 치킨을 너무 좋아해서요."
+        },
+        {
+          "translation": "여행을 갈 수 있으면 좋겠다. 집에 갇혀 있어서 너무 지루해."
+        }
+      ]
+    },
+    "ko__90": {
+      "title": "-(으)면서도 (동시·대립 연결어미)",
+      "shortExplanation": "두 가지 행동이나 상태가 동시에 일어나면서도 서로 상반되거나 모순됨을 나타냅니다.",
+      "longExplanation": "'-(으)면서도'는 두 가지 동작이나 상태의 공존을 나타내는 연결어미 '-(으)면서'에 보조사 '도'가 결합된 형태입니다. 앞 절과 뒤 절의 내용이 동시에 성립하면서도 서로 대립되거나 모순되고, 일반적인 기대와 어긋나는 상황을 강조할 때 사용합니다. 원칙적으로 앞뒤 절의 주어가 동일해야 합니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 으면서도 / 동사·형용사 어간(받침 없음, ㄹ 받침) + 면서도",
+      "examples": [
+        {
+          "translation": "그는 화가 나면서도 미소를 지었다."
+        },
+        {
+          "translation": "그녀는 몸이 아프면서도 학교에 갔다."
+        },
+        {
+          "translation": "비가 오면서도 방송은 계속해서 진행 중이었어요."
+        },
+        {
+          "translation": "이 어린아이는 영화를 보면서도 언제나 놀기 위한 계획을 세우고 있었다."
+        }
+      ]
+    },
+    "ko__91": {
+      "title": "-(으)니까 (이유·판단 근거 연결어미)",
+      "shortExplanation": "앞 절이 뒤 절의 이유나 판단의 근거임을 나타내며, 뒤 절에 명령문이나 청유문이 올 수 있습니다.",
+      "longExplanation": "'-(으)니까'는 앞 절의 내용이 뒤 절의 이유, 원인, 또는 판단의 근거가 됨을 나타내는 연결어미입니다. 객관적 사실을 진술하는 '-아/어서'와 달리 화자의 주관적 판단이나 주장에 자주 쓰이며, 뒤 절에 명령문('-(으)십시오', '-(으)세요')이나 청유문('-(으)ㅂ시다', '-(으)ㄹ까요')이 자연스럽게 올 수 있습니다. 또한 어떤 행동을 한 뒤 새로운 사실을 발견했을 때도 사용됩니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 으니까 / 동사·형용사 어간(받침 없음, ㄹ 받침) + 니까 (과거 시제: -았/었으니까)",
+      "examples": [
+        {
+          "translation": "점심을 먹었으니까 지금은 배가 고프지 않아요."
+        },
+        {
+          "translation": "은행에 갔으니까 돈을 인출할 수 있었어요."
+        },
+        {
+          "translation": "조용히 공부하고 있으니까 방해하지 마세요."
+        },
+        {
+          "translation": "비가 오고 있으니까 우산을 챙겨 가세요."
+        }
+      ]
+    },
+    "ko__92": {
+      "title": "-다 보니 / -(으)다 보니 (지속 경험과 깨달음)",
+      "shortExplanation": "어떤 동작을 지속하거나 반복하다 보니 자연스럽게 뒤의 결과에 이르거나 새로운 사실을 깨닫게 됨을 나타냅니다.",
+      "longExplanation": "'-다 보니'('-다가 보니'의 줄임 표현)는 앞 절의 동작을 계속 진행하거나 반복하는 과정에서 어떤 사실을 새로이 깨닫게 되거나, 자연스럽게 뒤 절과 같은 결과에 도달했음을 나타내는 문법입니다. 주로 화자의 직접적인 경험이나 의도하지 않은 상태의 변화를 설명할 때 사용됩니다.",
+      "formation": "동사 어간 + 다 보니 (간혹 과거 시제: -았/었다 보니)",
+      "examples": [
+        {
+          "translation": "빨리 오다 보니 시작하기 전에 잠시 쉴 수 있겠어요."
+        },
+        {
+          "translation": "한 달 동안 매일 운동하다 보니 체중이 좀 빠졌어요."
+        },
+        {
+          "translation": "꾸준히 공부하다 보니 점점 한국어 실력이 늘었어요."
+        },
+        {
+          "translation": "매일 아침 일찍 일어나다 보니 점심을 먹으면 바로 피곤해져요."
+        }
+      ]
+    },
+    "ko__93": {
+      "title": "-다가 / -(으)다가 (동작 중단과 전환 연결어미)",
+      "shortExplanation": "진행 중이던 어떤 행동이나 상태가 중단되고 다른 행동이나 상태로 전환됨을 나타냅니다.",
+      "longExplanation": "'-다가'는 어떤 행위나 상태가 지속되던 도중에 중단되고 다른 동작이나 상황으로 바뀜을 나타내는 연결어미입니다. 원칙적으로 앞 절과 뒤 절의 주어가 동일한 경우가 많으며, 어떤 행동을 하던 도중에 돌발적인 상황이 생기거나 다른 행동으로 옮겨갈 때 씁니다. 과거 시제 형태인 '-았/었다가'는 앞의 동작이 완전히 끝난 후 그 상태에서 반대되는 행동이나 다른 상황으로 바뀔 때 쓰입니다.",
+      "formation": "동사·형용사 어간 + 다가 (과거 시제: 동사·형용사 어간 + 았/었다가)",
+      "examples": [
+        {
+          "translation": "나는 책을 읽다가 잠이 들어 버려서 마지막 부분을 읽지 못했어요."
+        },
+        {
+          "translation": "우리는 영화를 보다가 갑자기 전기가 나가서 끝부분을 볼 수 없었어요."
+        },
+        {
+          "translation": "그는 말하다가 갑자기 웃음을 터뜨려서 모두를 놀라게 했어요."
+        },
+        {
+          "translation": "난 집에 가다가 친구와 우연히 만나서 함께 저녁을 먹었어요."
+        }
+      ]
+    },
+    "ko__94": {
+      "title": "-던 / -(으)던 (과거 회상 관형사형 어미)",
+      "shortExplanation": "과거에 지속되거나 반복되던 행동, 또는 완료되지 않은 과거의 상태를 회상하여 뒤의 명사를 수식합니다.",
+      "longExplanation": "'-던'은 용언 어간 뒤에 붙어 과거의 일이나 상태를 회상하며 뒤따르는 명사를 꾸며 주는 관형사형 전성어미입니다. 과거에 습관적으로 반복되던 행동, 일정 기간 지속되었던 상태, 또는 하다가 중단되어 미완료된 상태였음을 나타냅니다. 대개 그 상태가 현재까지 이어지지 않고 달라졌음을 암시합니다. 과거에 완전히 완료되어 현재와 단절된 일은 '-았/었던'을 씁니다.",
+      "formation": "동사·형용사 어간 + 던 (과거 완료 회상: 동사·형용사 어간 + 았/었던)",
+      "examples": [
+        {
+          "translation": "나는 어릴 때 많이 울던 아이였어요. 그런데 지금은 거의 울지 않아요."
+        },
+        {
+          "translation": "그는 어렸을 때 언제나 사과를 좋아하던 사람이었어요. 하지만 지금은 사과를 싫어해요."
+        },
+        {
+          "translation": "우리 학교에는 많은 학생들이 수학을 싫어하던 선생님이 계셨어요."
+        },
+        {
+          "translation": "그녀는 앞산에 살던 친절한 아주머니였습니다. 하지만 이젠 그녀를 볼 수 없어요."
+        }
+      ]
+    },
+    "ko__95": {
+      "title": "-(으)려면 (의도 조건 연결어미)",
+      "shortExplanation": "'-(으)려고 하면'의 줄임말로, 앞 절의 의도나 목적을 이루기 위해 충족되어야 하는 필수 조건을 나타냅니다.",
+      "longExplanation": "'-(으)려면'은 의도를 나타내는 '-(으)려고 하다'와 조건을 나타내는 '-(으)면'이 결합된 '-(으)려고 하면'의 준말입니다. 앞 절에 이루고자 하는 목표나 계획을 제시하고, 뒤 절에는 그 목적을 달성하기 위한 필수 조건이나 방법, 권고를 나타냅니다. 따라서 뒤 절에는 의무를 나타내는 '-아/어야 하다', 조언이나 명령인 '-(으)세요', 필요성을 나타내는 '필요하다' 등이 자주 옵니다.",
+      "formation": "동사 어간(ㄹ 제외 받침) + 으려면 / 동사 어간(받침 없음, ㄹ 받침) + 려면",
+      "examples": [
+        {
+          "translation": "한국어 TOPIK 시험에 합격하려면 많이 연습해야 합니다. 그렇지 않으면 성공하기 어려워요."
+        },
+        {
+          "translation": "헬스클럽에서 몸매를 유지하려면 꾸준히 운동하고 건강한 식단을 유지해야 해요."
+        },
+        {
+          "translation": "이 직업을 얻으려면 관련 분야에서의 경험이 필요해요. 없으면 경쟁력이 부족할 거예요."
+        },
+        {
+          "translation": "이런 문제를 방지하려면 좀 더 세심한 계획이 필요해요. 그렇지 않으면 같은 문제를 또 겪을 수 있어요."
+        }
+      ]
+    },
+    "ko__96": {
+      "title": "-(으)ㄹ수록 (비례적 심화 연결어미)",
+      "shortExplanation": "앞 절의 행동이나 상태의 정도가 더해짐에 따라 뒤 절의 상황이나 정도도 비례하여 커짐을 나타냅니다.",
+      "longExplanation": "'-(으)ㄹ수록'은 앞선 상황이나 행위의 정도가 더해감에 따라 그에 비례하여 뒤따르는 결과나 상태의 정도도 함께 심화됨을 나타내는 연결어미입니다. 어떤 일의 양이나 빈도가 늘어남에 따른 변화를 표현할 때 쓰이며, 강조를 위해 '-(으)면 -(으)ㄹ수록' 형태로 짝을 맞추어 사용하기도 합니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 을수록 / 동사·형용사 어간(받침 없음, ㄹ 받침) + ㄹ수록",
+      "examples": [
+        {
+          "translation": "운동을 할수록 건강해지니까 매일 아침에 조깅하고 있어요."
+        },
+        {
+          "translation": "공부를 많이 할수록 시험에서 더 좋은 점수를 받을 수 있어요."
+        },
+        {
+          "translation": "음식을 빨리 먹을수록 소화가 잘 안 될 수 있어요."
+        },
+        {
+          "translation": "시간이 지날수록 그리움이 더 깊어져요."
+        }
+      ]
+    },
+    "ko__97": {
+      "title": "-는 중 (진행·과정 표현)",
+      "shortExplanation": "동사 어간에 현재 관형사형 어미 '-는'과 의존명사 '중(中)'이 결합하여 어떤 동작이 한창 진행되고 있는 과정임을 나타냅니다.",
+      "longExplanation": "'-는 중'은 주로 '-는 중이다', '-는 중이라서' 등의 형태로 쓰여 어떤 동작이 현재 시점에 지속적으로 이루어지고 있는 진행의 국면에 있음을 나타냅니다. 진행상 표현인 '-고 있다'와 유사하지만, '-는 중이다'는 어떤 일의 '과정의 한가운데'에 놓여 있다는 객관적 진행 상태를 좀 더 선명하게 부각합니다. 동작성 한자어 명사 뒤에는 직접 '명사 + 중' 형태로 결합할 수도 있습니다(예: 회의 중, 통화 중).",
+      "formation": "동사 어간 + 는 중 (또는 동작성 명사 + 중)",
+      "examples": [
+        {
+          "translation": "저는 지금 숙제를 하는 중이라서 나중에 연락드릴게요."
+        },
+        {
+          "translation": "오빠는 여자친구와 통화하는 중이라서 바쁜 것 같아요."
+        },
+        {
+          "translation": "우리 엄마는 계속 질문하시는 중이라서 집중이 잘 안 돼요."
+        },
+        {
+          "translation": "그녀는 재미있는 영화를 보는 중이라서 웃고 있어요."
+        }
+      ]
+    },
+    "ko__98": {
+      "title": "-(으)ㄴ/는 탓에 (부정적 원인 표현)",
+      "shortExplanation": "관형사형 어미와 의존명사 '탓'이 결합하여 부정적이거나 원치 않는 결과가 발생한 까닭이나 핑계를 나타냅니다.",
+      "longExplanation": "'-(으)ㄴ/는 탓에'는 어떤 잘못이나 나쁜 결과, 불만족스러운 상황이 생겨난 원인을 나타내는 표현입니다. 의존명사 '탓'은 구실이나 잘못을 가리키므로, 뒤 절에는 반드시 부정적인 사건이나 유감스러운 결과가 이어집니다. 따라서 긍정적이거나 바람직한 결과에는 쓸 수 없으며, 좋은 결과에는 '-(으)ㄴ/는 덕분에'를 사용합니다.",
+      "formation": "동사 과거 + 은/ㄴ 탓에 / 동사 현재 + 는 탓에 / 형용사 + 은/ㄴ 탓에 / 명사 + 인 탓에",
+      "examples": [
+        {
+          "translation": "나무를 너무 많이 베어서 우리 동네의 환경이 나빠진 탓에 사람들이 많이 아파요."
+        },
+        {
+          "translation": "지난주에 너무 많이 먹은 탓에 이번 주에 체중이 늘었어요."
+        },
+        {
+          "translation": "연습을 충분히 하지 않은 탓에 시험에서 좋은 점수를 받지 못했어요."
+        },
+        {
+          "translation": "엄마가 재료를 사러 가야 했는데 막차를 놓친 탓에 오늘은 요리를 못 해요."
+        }
+      ]
+    },
+    "ko__99": {
+      "title": "-(으)ㄴ/는데다가 (누적·첨가 연결표현)",
+      "shortExplanation": "앞 절의 사실이나 상태에 더하여 뒤 절의 사실이 추가로 보태어짐을 나타냅니다.",
+      "longExplanation": "'-(으)ㄴ/는데다가'는 관형사형 어미와 의존명사 '데', 조사 '다가'가 어우러져 앞 절의 일이나 상태에 더해 다른 특성이나 사실이 추가됨을 나타내는 문법입니다. 주로 앞의 긍정적인 내용에는 뒤에도 긍정적인 내용이, 부정적인 내용에는 부정적인 내용이 덧붙여져 맥락의 일관성을 유지해야 합니다.",
+      "formation": "형용사 어간 + 은/ㄴ 데다가 / 동사 현재 + 는 데다가 (동사 과거: 은/ㄴ 데다가) / 명사 + 인 데다가",
+      "examples": [
+        {
+          "translation": "이 카페는 분위기도 좋은 데다가 커피 맛도 훌륭해요."
+        },
+        {
+          "translation": "그 책은 재미있는 데다가 유익하기까지 해요."
+        },
+        {
+          "translation": "이 휴대전화는 가격이 저렴한 데다가 기능도 다양해요."
+        },
+        {
+          "translation": "그는 착한 데다가 똑똑하기까지 해서 모두가 그를 좋아해요."
+        }
+      ]
+    },
+    "ko__100": {
+      "title": "-(으)ㄴ/는데도 불구하고 (양보·역접 강조 표현)",
+      "shortExplanation": "앞 절의 조건이나 상황에 구애받지 않고, 상식적인 기대와는 다른 결과가 뒤 절에서 일어남을 강조합니다.",
+      "longExplanation": "'-(으)ㄴ/는데도 불구하고'는 앞 절의 불리한 조건이나 장애가 되는 상황에도 얽매이지 않고 뒤 절의 행동이나 사건이 일어남을 나타내는 강한 양보와 역접의 표현입니다. 앞 절의 내용으로 볼 때 당연히 예상되는 결과와는 정반대되는 상황이 뒤따를 때 쓰이며, 단순한 '-(으)ㄴ/는데도'에 비해 역접의 의미를 더욱 강조하는 문어적이고 격식 있는 느낌을 줍니다.",
+      "formation": "형용사 어간 + 은/ㄴ 데도 불구하고 / 동사 현재 + 는데도 불구하고 (과거: 았/었는데도 불구하고) / 명사 + 인데도 불구하고",
+      "examples": [
+        {
+          "translation": "비가 오는데도 불구하고 그녀는 나가서 신나게 놀았어요."
+        },
+        {
+          "translation": "그는 몸이 아픈데도 불구하고 학교에 갔어요."
+        },
+        {
+          "translation": "원하는 결과를 얻지 못했는데도 불구하고 우리는 계속 노력했어요."
+        },
+        {
+          "translation": "시험이 어려운데도 불구하고 그는 시험을 잘 봤어요."
+        }
+      ]
+    }
+  }
+}

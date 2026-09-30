@@ -112,3 +112,17 @@ export const PLAYBACK_SPEEDS: PlaybackSpeed[] = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 
 
 export const FONT_SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 export type FontSize = typeof FONT_SIZES[number];
+
+// ============================================
+// FULLSCREEN SUBTITLE POSITION CONSTANTS
+// ============================================
+
+/** Default bottom Y percentage for fullscreen subtitles (cinematic resting margin) */
+export const DEFAULT_FS_SUBTITLE_BOTTOM_Y = 96;
+
+/** Default top Y percentage for fullscreen subtitles */
+export const DEFAULT_FS_SUBTITLE_TOP_Y = 16;
+
+/** Movement threshold in pixels before engaging active drag mode (prevents tap jitter) */
+export const FS_SUBTITLE_DRAG_THRESHOLD_PX = 8;
+

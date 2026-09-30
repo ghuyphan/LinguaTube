@@ -42,7 +42,7 @@
   @if (youtube.currentVideo() || isLoading() || youtube.pendingVideoId()) {
   <div class="video-container" #videoContainer [class.is-fullscreen]="isFullscreen()"
     [class.is-miniplayer]="isMiniplayer()"
-    [class.controls-visible]="areControlsVisible()"
+    [class.controls-visible]="areControlsVisible() && !isSubtitleDragging()"
     [class.animate-enter]="stateTransition() === 'to-video'"
     (click)="isMiniplayer() && onMiniplayerClick($event)">
 
@@ -157,11 +157,11 @@
     }
 
     <!-- Player Vignette Backdrop (Darkens when controls are visible) -->
-    <div class="player-vignette" [class.visible]="areControlsVisible()"></div>
+    <div class="player-vignette" [class.visible]="areControlsVisible() && !isSubtitleDragging()"></div>
 
     <!-- Center Controls -->
     <app-center-controls [isReady]="youtube.isReady()" [isPlaying]="youtube.isPlaying()"
-      [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible()"
+      [isBuffering]="youtube.isBuffering()" [isEnded]="youtube.isEnded()" [areControlsVisible]="areControlsVisible() && !isSubtitleDragging()"
       [hasPlaylist]="hasPlaylist()" [canPlayPrev]="canPlayPrev()" [canPlayNext]="canPlayNext()"
       [playPauseFeedback]="playPauseFeedback()" [playPauseFeedbackIcon]="playPauseFeedbackIcon()"
       [volumeFeedback]="volumeFeedback()" [volumeFeedbackIcon]="volumeFeedbackIcon()"
@@ -170,7 +170,7 @@
       (replayClicked)="onReplayClick($event)" (prevClicked)="playlistPrev.emit()" (nextClicked)="playlistNext.emit()" />
 
     <!-- Mini Progress Bar -->
-    <div class="mini-progress" [class.visible]="!areControlsVisible()"
+    <div class="mini-progress" [class.visible]="!areControlsVisible() && !isSubtitleDragging()"
       [style.--progress]="progressPercentage()" (pointerdown)="startSeeking($event)">
       <div class="mini-progress-mask">
         <div class="mini-progress__fill"></div>
@@ -182,15 +182,17 @@
     @if (isFullscreen()) {
     <app-fullscreen-subtitle [currentCue]="subtitles.currentCue()" [tokens]="fullscreenTokens()"
       [language]="activeSubtitleLanguage()" [subtitlesVisible]="subtitles.subtitlesVisible()"
-      [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible()"
-      [fsPopupVisible]="fsPopupVisible()" [fontSizeClass]="fontSizeClass()"
-      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? 94"
+      [isTokenizing]="subtitles.isTokenizing()" [areControlsVisible]="areControlsVisible() && !isSubtitleDragging()"
+      [fsPopupVisible]="fsPopupVisible() || fsGrammarPopupVisible()" [fontSizeClass]="fontSizeClass()"
+      [yPercent]="settings.settings().fullscreenSubtitleYPercent ?? defaultFsSubtitleBottomY"
       [showDualSubtitles]="settings.settings().showDualSubtitles" [isDualSubLoading]="subtitles.isDualSubLoading()"
       [currentTranslation]="currentTranslation()" [grammarMatches]="fsGrammarMatches()"
       (wordClicked)="onFullscreenComponentWordClick($event)"
       (grammarClicked)="onFsGrammarClick($event.index, $event.event)"
       (positionCommitted)="onSubtitlePositionCommitted($event)"
-      (togglePosition)="toggleFullscreenSubtitlePosition()" />
+      (togglePosition)="toggleFullscreenSubtitlePosition()"
+      (dragStarted)="onSubtitleDragStarted()"
+      (dragEnded)="onSubtitleDragEnded()" />
     }
 
     <!-- Fullscreen Word Popup -->
@@ -550,7 +552,7 @@
 
     <!-- Custom Controls -->
     @if (!isMiniplayer()) {
-    <div class="custom-controls" [class.controls-hidden]="!areControlsVisible()">
+    <div class="custom-controls" [class.controls-hidden]="!areControlsVisible() || isSubtitleDragging()">
       <!-- Progress Bar -->
       <app-progress-bar (seekStarted)="onSeekStarted()" (seekEnded)="onSeekEnded($event)" #progressBarComponent>
       </app-progress-bar>

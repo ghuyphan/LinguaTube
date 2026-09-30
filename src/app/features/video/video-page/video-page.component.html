@@ -393,7 +393,7 @@
 }
 
 <!-- Word popup -->
-@defer (when selectedWord()) {
+@if (selectedWord()) {
 <app-word-popup [selectedWord]="selectedWord()" [currentSentence]="currentSentence()" (closed)="onWordPopupClosed()" />
 }
 

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_부터_15": {
+      "title": "부터 (Từ, bắt đầu từ)",
+      "shortExplanation": "Trợ từ chỉ thời gian hoặc không gian bắt đầu một hành động, trạng thái; tương đương với 'từ', 'bắt đầu từ'.",
+      "longExplanation": "'부터' là trợ từ chỉ mốc xuất phát về thời gian, không gian, hoặc thứ tự bắt đầu của một sự việc, hành động. Trong tiếng Việt, '부터' tương đương với 'từ', 'bắt đầu từ'. Trợ từ này thường đi kèm với các danh từ chỉ thời gian (như '오늘부터' - từ hôm nay, '내일부터' - từ ngày mai) và thường kết hợp thành cặp '부터... 까지' (từ... đến...).",
+      "formation": "Danh từ + 부터",
+      "examples": [
+        {
+          "translation": "Tôi sẽ bắt đầu ăn kiêng từ hôm nay, vì vậy tôi sẽ không ăn đồ ngọt nữa."
+        },
+        {
+          "translation": "Từ trẻ em đến người lớn, tất cả mọi người đều có thể thưởng thức bộ phim này."
+        },
+        {
+          "translation": "Chúng ta phải bắt đầu làm việc lại từ ngày mai, vì vậy hôm nay hãy nghỉ ngơi thật thoải mái nhé."
+        },
+        {
+          "translation": "Tôi đã bắt đầu học tiếng Hàn từ mùa hè năm ngoái, nên giờ tôi có thể nói được một chút rồi."
+        }
+      ]
+    },
+    "ko_까지_16": {
+      "title": "까지 (Đến, tới, cho đến)",
+      "shortExplanation": "Trợ từ chỉ giới hạn kết thúc về thời gian, không gian, số lượng hoặc mức độ; tương đương với 'đến', 'cho đến', 'tới'.",
+      "longExplanation": "'까지' là trợ từ chỉ điểm kết thúc hoặc giới hạn cuối cùng của một phạm vi trong tiếng Hàn, tương đương với 'đến', 'cho đến' hoặc 'tới' trong tiếng Việt. Trợ từ này được sử dụng rất phổ biến với các danh từ chỉ thời gian (như '내일까지' - cho đến ngày mai), địa điểm (như '서울까지' - đến Seoul) cũng như số lượng hoặc mức độ. Khi kết hợp với '부터', cấu trúc '부터... 까지' mang nghĩa 'từ... đến...'.",
+      "formation": "Danh từ + 까지",
+      "examples": [
+        {
+          "translation": "Học kỳ đầu tiên kéo dài tổng cộng sáu tháng, tức là từ tháng một đến tháng sáu."
+        },
+        {
+          "translation": "Mỗi ngày tôi đều thức dậy sớm vào buổi sáng và làm việc đến 10 giờ tối."
+        },
+        {
+          "translation": "Hôm nay tôi chỉ có tối đa 5.000 won nên đành phải nhịn bữa tối."
+        },
+        {
+          "translation": "Xin vui lòng ghi vào báo cáo tất cả nội dung bao gồm cả những việc đã làm cho đến nay."
+        }
+      ]
+    },
+    "ko_아어여서_17": {
+      "title": "아/어/여서 (Vì... nên..., do... nên...)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả nguyên nhân, lý do của mệnh đề đi sau; tương đương với 'vì... nên...', 'do... nên...'.",
+      "longExplanation": "'-아/어/여서' là vĩ tố liên kết biểu thị nguyên nhân hoặc lý do dẫn đến hành động hoặc trạng thái ở vế sau. Vĩ tố này gắn trực tiếp vào thân động từ hoặc tính từ. Cách kết hợp phụ thuộc vào nguyên âm cuối của thân từ: nếu nguyên âm cuối là 'ㅏ' hoặc 'ㅗ' thì kết hợp với '-아서'; các nguyên âm còn lại kết hợp với '-어서'; động từ kết thúc bằng '하다' chuyển thành '해서'. Lưu ý: mệnh đề đi sau '-아/어/여서' không được dùng câu mệnh lệnh (-으세요) hoặc thỉnh dụ (-ㅂ시다).",
+      "formation": "Thân động từ/tính từ + 아/어/여서",
+      "examples": [
+        {
+          "translation": "Bên ngoài trời mưa nên tôi bị cảm, vì vậy tôi đã không thể đến trường."
+        },
+        {
+          "translation": "Vì anh ấy đói bụng nên tôi đã chuẩn bị món ăn nhẹ."
+        },
+        {
+          "translation": "Vì mải xem phim không có thời gian nên tôi hoàn toàn không làm được chút bài tập nào."
+        },
+        {
+          "translation": "Vì nghĩ rằng tiết học khó nên ngày nào tôi cũng chăm chỉ học tập."
+        }
+      ]
+    },
+    "ko_으면eumyeonIfwhen_18": {
+      "title": "(으)면 (Nếu... thì..., khi... thì...)",
+      "shortExplanation": "Vĩ tố liên kết giả định dùng để biểu thị điều kiện hoặc giả định; tương đương với 'nếu... thì...', 'khi... thì...'.",
+      "longExplanation": "'-(으)면' là vĩ tố liên kết dùng để nêu ra một điều kiện, giả thiết hoặc một tình huống xảy ra thường xuyên. Vế trước đưa ra điều kiện, và vế sau diễn tả kết quả hay hành động xảy ra khi thỏa mãn điều kiện đó. Nếu thân động từ/tính từ kết thúc bằng phụ âm (có phụ âm cuối, ngoại trừ 'ㄹ') thì gắn '-으면'; nếu kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' thì gắn '-면'.",
+      "formation": "Thân động từ/tính từ + (으)면",
+      "examples": [
+        {
+          "translation": "Nếu có thời gian, tôi muốn học tiếng Hàn mỗi ngày."
+        },
+        {
+          "translation": "Nếu thời tiết đẹp, tôi sẽ đi leo núi."
+        },
+        {
+          "translation": "Nếu thấy mệt thì đi ngủ sớm là tốt nhất."
+        },
+        {
+          "translation": "Nếu vượt qua bài kiểm tra này, tôi có thể nhập học vào trường."
+        }
+      ]
+    },
+    "ko_너무_19": {
+      "title": "너무 (Quá, rất)",
+      "shortExplanation": "Phó từ chỉ mức độ dùng để nhấn mạnh tính chất, trạng thái vượt quá mức bình thường; 'quá', 'rất'.",
+      "longExplanation": "'너무' là phó từ chỉ mức độ trong tiếng Hàn, thường đứng trước tính từ hoặc động từ nhằm nhấn mạnh mức độ vượt trội, thái quá hoặc cực kỳ sâu sắc của một đặc điểm, trạng thái hay hành động. Ban đầu '너무' chủ yếu mang nghĩa tiêu cực ('quá mức', 'thái quá'), nhưng trong tiếng Hàn hiện đại, từ này được dùng rộng rãi cho cả ý nghĩa tích cực lẫn tiêu cực với nghĩa 'rất', 'quá', 'cực kỳ'.",
+      "formation": "너무 + Tính từ/Động từ",
+      "examples": [
+        {
+          "translation": "Món này ngon quá nên tôi đã ăn hết sạch, không để lại được chút nào cho người khác."
+        },
+        {
+          "translation": "Bộ phim này hay quá nên tôi đã xem tận ba lần rồi mà vẫn muốn xem lại."
+        },
+        {
+          "translation": "Cô ấy xinh đẹp quá nên tôi ước gì ngày nào cũng được nhìn thấy cô ấy, nhưng cô ấy lại không hề biết tôi."
+        },
+        {
+          "translation": "Bánh pizza ngon quá nên tuần nào tôi cũng ăn, nhưng từ giờ chắc tôi phải giảm bớt lại một chút."
+        }
+      ]
+    },
+    "ko_많이_20": {
+      "title": "많이 (Nhiều)",
+      "shortExplanation": "Phó từ chỉ số lượng lớn, tần suất cao hoặc mức độ nhiều; tương đương với 'nhiều' trong tiếng Việt.",
+      "longExplanation": "'많이' là phó từ bắt nguồn từ tính từ '많다' (nhiều), dùng để bổ nghĩa cho động từ hoặc tính từ nhằm biểu thị số lượng dồi dào, mức độ sâu sắc hoặc tần suất diễn ra dày đặc của một hành động, trạng thái. Trong tiếng Việt, '많이' tương đương với 'nhiều', thường đứng trước vị ngữ mà nó tu sức (ví dụ: '많이 먹다' - ăn nhiều, '많이 바쁘다' - rất bận/bận nhiều).",
+      "formation": "많이 + Động từ/Tính từ",
+      "examples": [
+        {
+          "translation": "Tôi cần nhiều bạn bè nên thường có xu hướng đi ra ngoài gặp gỡ mọi người."
+        },
+        {
+          "translation": "Bạn đã xem bộ phim đó chưa? Tôi đã cười rất nhiều đấy!"
+        },
+        {
+          "translation": "Dạo này công việc bận rộn nhiều nên tôi muốn đi nghỉ phép."
+        },
+        {
+          "translation": "Cô ấy luôn tập thể dục nhiều nên trông rất khỏe mạnh."
+        }
+      ]
+    },
+    "ko_조금_21": {
+      "title": "조금 (Một chút, một ít, hơi)",
+      "shortExplanation": "Phó từ chỉ số lượng ít hoặc mức độ nhẹ; tương đương với 'một chút', 'một ít', 'hơi'.",
+      "longExplanation": "'조금' là phó từ chỉ số lượng nhỏ, mức độ nhẹ hoặc khoảng cách ngắn trong tiếng Hàn. Từ này có thể bổ nghĩa cho cả động từ và tính từ, giúp giảm nhẹ sắc thái hoặc làm cho câu nói trở nên nhẹ nhàng, lịch sự hơn (ví dụ: '조금 쉬다' - nghỉ một chút, '조금 춥다' - hơi lạnh). Trong khẩu ngữ thân mật, '조금' thường được rút gọn thành '좀'.",
+      "formation": "조금 + Động từ/Tính từ",
+      "examples": [
+        {
+          "translation": "Tâm trạng tôi không tốt. Tôi cần phải nghỉ ngơi một chút."
+        },
+        {
+          "translation": "Phòng hơi tối. Xin hãy bật đèn giúp tôi."
+        },
+        {
+          "translation": "Hành lý nặng quá. Tôi nghĩ có lẽ phải giảm bớt đi một chút."
+        },
+        {
+          "translation": "Cô ấy biết một chút tiếng Hàn nên có thể giao tiếp đơn giản được."
+        }
+      ]
+    },
+    "ko_다_22": {
+      "title": "다 (Tất cả, hết, toàn bộ)",
+      "shortExplanation": "Phó từ chỉ tính toàn bộ, trọn vẹn hoặc sự hoàn tất của một hành động, trạng thái; 'tất cả', 'hết'.",
+      "longExplanation": "'다' là phó từ trong tiếng Hàn biểu thị sự toàn bộ, đầy đủ không chừa lại gì, hoặc sự hoàn tất triệt để của một hành động. Khi đứng trước động từ, '다' nhấn mạnh rằng hành vi đã được thực hiện xong xuôi toàn diện (tương đương với '...hết', 'xong hết' trong tiếng Việt). Nó cũng có thể bổ nghĩa cho danh từ hay mệnh đề để chỉ toàn bộ người, vật hay sự việc có liên quan.",
+      "formation": "다 + Động từ/Tính từ",
+      "examples": [
+        {
+          "translation": "Tôi đã đọc hết tất cả sách học tiếng Hàn rồi, nên giờ không biết phải đọc gì nữa."
+        },
+        {
+          "translation": "Chúng tôi xem hết bộ phim rồi mới trở về nhà."
+        },
+        {
+          "translation": "Khi đến Hàn Quốc, cô ấy đã nói rằng mình thích tất cả các món ăn Hàn Quốc."
+        },
+        {
+          "translation": "Tôi đã mua hết thực phẩm cho tuần này về rồi, vì thế trong bếp không còn một chỗ trống nào cả."
+        }
+      ]
+    },
+    "ko_으는데eunneundeButhowever_23": {
+      "title": "(으)ㄴ/는데 (Nhưng, tuy nhiên / thì... mà...)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả sự đối lập, tương phản hoặc làm tiền đề giới thiệu bối cảnh; 'nhưng', 'thế mà'.",
+      "longExplanation": "'-(으)ㄴ/는데' là vĩ tố liên kết đa dụng trong tiếng Hàn. Mẫu câu này thường dùng để diễn tả sự tương phản, đối chiếu giữa vế trước và vế sau (tương đương với 'nhưng', 'tuy nhiên' trong tiếng Việt), hoặc dùng để gợi mở hoàn cảnh, bối cảnh làm tiền đề cho câu nói tiếp theo. Quy tắc kết hợp: Động từ ở thì hiện tại gắn với '-는데'; tính từ kết thúc bằng nguyên âm gắn với '-ㄴ데', kết thúc bằng phụ âm gắn với '-은데'; thì quá khứ của cả động từ và tính từ đều gắn với '-았/었는데'; danh từ gắn với '-인/인데'.",
+      "formation": "Động từ + 는데 / Tính từ + (으)ㄴ데 / Danh từ + 인데",
+      "examples": [
+        {
+          "translation": "Hôm nay thời tiết đẹp nhưng tôi chỉ muốn ở nhà."
+        },
+        {
+          "translation": "Anh ấy rất tốt bụng nhưng đôi khi lại quá thẳng thắn đến mức gây tổn thương cho người khác."
+        },
+        {
+          "translation": "Tôi đã học tiếng Hàn lâu rồi, mặc dù vậy nhưng vẫn còn rất nhiều thiếu sót."
+        },
+        {
+          "translation": "Bộ quần áo này đẹp nhưng không phải là phong cách của tôi."
+        }
+      ]
+    },
+    "ko_아어야_24": {
+      "title": "아/어야 하다/되다 (Phải, cần phải)",
+      "shortExplanation": "Cấu trúc biểu thị nghĩa vụ, bổn phận hoặc sự cần thiết phải làm gì đó; tương đương với 'phải', 'cần phải'.",
+      "longExplanation": "'-아/어야 하다/되다' là cấu trúc biểu thị tính tất yếu, nghĩa vụ hoặc điều bắt buộc phải thực hiện. Cấu trúc này gắn vào thân động từ hoặc tính từ: nếu nguyên âm cuối của thân từ là 'ㅏ' hoặc 'ㅗ' thì gắn '-아야 하다/되다'; các nguyên âm khác gắn '-어야 하다/되다'; động từ kết thúc bằng '하다' chuyển thành '해야 하다/되다'. Trong khẩu ngữ hàng ngày, '되다' thường được dùng thay cho '하다' để diễn tả tính tự nhiên hơn.",
+      "formation": "Thân động từ/tính từ + 아/어/여야 하다 (hoặc 되다)",
+      "examples": [
+        {
+          "translation": "Có nhiều bài học như thế này nên chúng ta phải bắt đầu nhanh chóng. Nếu không, thời gian sẽ không đủ và chúng ta không thể hoàn thành mọi thứ được."
+        },
+        {
+          "translation": "Vì cuối tuần có kỳ thi nên tôi phải chuẩn bị ngay từ bây giờ. Nếu không học đủ nhiều thì có thể sẽ thi trượt mất."
+        },
+        {
+          "translation": "Ngày mai tôi phải đến công ty từ sáng sớm. Có một cuộc họp quan trọng nên tôi nhất định phải tham dự."
+        },
+        {
+          "translation": "Vào mùa hè chỉ số chống nắng rất quan trọng, vì vậy trước khi ra ngoài bạn phải thoa kem chống nắng. Nếu không làn da có thể bị tổn thương đấy."
+        }
+      ]
+    },
+    "ko_안_25": {
+      "title": "안 (Không - phủ định ngắn)",
+      "shortExplanation": "Phó từ phủ định đặt trước động từ hoặc tính từ; tương đương với 'không' trong tiếng Việt.",
+      "longExplanation": "'안' là phó từ phủ định ngắn (dạng viết gọn của '아니'), được đặt ngay trước động từ hoặc tính từ để phủ định hành động, ý chí hoặc trạng thái (ví dụ: '안 가다' - không đi, '안 예쁘다' - không đẹp). Đối với các động từ có cấu trúc 'Danh từ + 하다' (như '공부하다', '운동하다'), '안' thường được chèn vào giữa danh từ và động từ '하다' (ví dụ: '공부 안 하다', '운동 안 하다').",
+      "formation": "안 + Động từ/Tính từ (hoặc Danh từ + 안 하다)",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa ngủ. Vẫn còn việc chưa làm xong."
+        },
+        {
+          "translation": "Bạn tôi không ăn cá hồi. Cô ấy không thích cá."
+        },
+        {
+          "translation": "Bạn chưa xem bộ phim đó sao? Thật sự rất hay đấy, nhất định bạn phải xem nhé."
+        },
+        {
+          "translation": "Tôi thật sự không thích người đó, bởi vì anh ta lúc nào cũng nói dối."
+        }
+      ]
+    },
+    "ko_못_26": {
+      "title": "못 (Không thể)",
+      "shortExplanation": "Phó từ phủ định biểu thị sự bất khả năng, thiếu năng lực hoặc hoàn cảnh không cho phép; tương đương với 'không thể'.",
+      "longExplanation": "'못' là phó từ phủ định chỉ sự bất khả năng, đặt trực tiếp trước động từ hành động để diễn tả rằng người nói không đủ khả năng về thể chất, tâm lý hoặc do hoàn cảnh khách quan cản trở nên không thể thực hiện được hành động đó (khác với '안' là không làm do ý chí chủ quan). Với các động từ dạng 'Danh từ + 하다', '못' thường đứng giữa danh từ và động từ '하다' (ví dụ: '수영 못 하다', '운전 못 하다').",
+      "formation": "못 + Động từ (hoặc Danh từ + 못 하다)",
+      "examples": [
+        {
+          "translation": "Hôm nay quá mệt mỏi nên tôi đã không thể ngủ sớm được."
+        },
+        {
+          "translation": "Cô ấy quá lo lắng và căng thẳng nên đã không thể ăn cơm được."
+        },
+        {
+          "translation": "Mưa rơi nhiều quá nên chúng tôi đã không thể đi đến công viên giải trí được."
+        },
+        {
+          "translation": "Tôi đến quá muộn nên đã không thể tham dự cuộc họp."
+        }
+      ]
+    },
+    "ko_아어여_27": {
+      "title": "아/어/여 보다 (Thử làm gì / từng làm gì)",
+      "shortExplanation": "Cấu trúc bổ trợ biểu thị sự thử nghiệm một hành động mới hoặc trải nghiệm đã từng làm gì đó; 'thử...', 'từng...'.",
+      "longExplanation": "'-아/어/여 보다' là cấu trúc kết hợp động từ phụ trợ '보다' vào thân động từ chính để biểu thị: (1) Thử làm một việc gì đó để xem kết quả ra sao ('thử làm...'); (2) Khi chia ở thì quá khứ ('-아/어/여 봤다'), biểu thị kinh nghiệm hoặc trải nghiệm trong quá khứ ('đã từng làm...'). Thân động từ có nguyên âm 'ㅏ, ㅗ' gắn với '-아 보다'; các nguyên âm khác gắn với '-어 보다'; '하다' chuyển thành '해 보다'.",
+      "formation": "Thân động từ + 아/어/여 보다",
+      "examples": [
+        {
+          "translation": "Nếu không biết phải giải quyết vấn đề này như thế nào thì hãy thử làm theo cách của tôi một lần xem sao."
+        },
+        {
+          "translation": "Nếu bạn chưa từng làm kim chi bao giờ thì hãy thử làm một lần xem. Thật sự rất dễ và thú vị đấy."
+        },
+        {
+          "translation": "Trước đây tôi đã từng thử học tiếng Hàn nhưng giờ chẳng nhớ được chút gì cả."
+        },
+        {
+          "translation": "Tôi đã thử học theo phương pháp này và kết quả rất tốt."
+        }
+      ]
+    },
+    "ko_지금_28": {
+      "title": "지금 (Bây giờ, hiện tại)",
+      "shortExplanation": "Danh từ hoặc phó từ chỉ thời điểm hiện tại; tương đương với 'bây giờ', 'hiện tại', 'ngay lúc này'.",
+      "longExplanation": "'지금' là từ chỉ thời gian trong tiếng Hàn, vừa có thể làm danh từ vừa có thể làm phó từ, dùng để chỉ thời điểm người nói đang nói hoặc khoảng thời gian hiện tại diễn ra sự việc. Từ này tương đương với 'bây giờ', 'ngay lúc này', 'hiện nay' trong tiếng Việt. '지금' thường được đặt ở đầu câu hoặc ngay trước động từ để nhấn mạnh tính thời điểm tức thì.",
+      "formation": "지금 + Mệnh đề/Động từ (hoặc đi cùng trợ từ: 지금은, 지금부터)",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi phải đến trường. Tiết học sẽ bắt đầu ngay thôi."
+        },
+        {
+          "translation": "Bây giờ trời đang mưa. Tôi nghĩ bạn nên mang theo ô thì tốt hơn."
+        },
+        {
+          "translation": "Bây giờ tôi đang làm bài tập về nhà. Tôi sẽ gọi lại cho bạn sau nhé."
+        },
+        {
+          "translation": "Nếu bây giờ bạn đến nhà tôi thì chúng ta có thể cùng nhau dùng bữa."
+        }
+      ]
+    },
+    "ko_이미_29": {
+      "title": "이미 (Đã, rồi, sẵn rồi)",
+      "shortExplanation": "Phó từ biểu thị hành động hoặc tình huống đã xảy ra trước thời điểm nói hoặc sớm hơn dự định; 'đã', 'rồi'.",
+      "longExplanation": "'이미' là phó từ trong tiếng Hàn biểu thị sự việc, trạng thái hoặc hành động đã diễn ra và hoàn tất từ trước thời điểm nói hoặc trước một mốc thời gian quy định, tương đương với 'đã', 'sẵn rồi' trong tiếng Việt. '이미' thường đi kèm với các động từ chia ở thì quá khứ hoặc trạng thái hoàn thành để nhấn mạnh sự việc đã rồi và không thể thay đổi.",
+      "formation": "이미 + Động từ (thường ở thì quá khứ hoặc hoàn thành)",
+      "examples": [
+        {
+          "translation": "Vì bạn đã xem bộ phim đó rồi, nên việc đi xem lại nữa thì có ý nghĩa gì chứ?"
+        },
+        {
+          "translation": "Tôi đã ăn tối rồi, nên bạn cứ ăn tối một mình đi nhé."
+        },
+        {
+          "translation": "Vì năm ngoái tôi đã bán sạch cổ phiếu của công ty đó rồi, nên bây giờ không có bất kỳ tổn thất nào cả."
+        },
+        {
+          "translation": "Khi tôi đến nơi này, mặt trời đã mọc lên sẵn rồi."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_부터_15": {
+      "title": "부터（从……起、从……开始）",
+      "shortExplanation": "表示时间、空间或次序的起点，相当于汉语的“从”、“从……起”、“由”。",
+      "longExplanation": "“부터”是表示起点的助词，附在名词之后，用以指出时间、空间或动作开始的界限或次序起点，相当于汉语的“从”、“由……开始”。常与表示时间的词语连用（如“오늘부터”从今天起），也常与表示终点的助词“까지”（到）呼应，构成“부터... 까지”（从……到……）的格式。",
+      "formation": "名词 + 부터",
+      "examples": [
+        {
+          "translation": "我打算从今天开始节食减肥，所以再也不吃甜食了。"
+        },
+        {
+          "translation": "从儿童到大人，所有人都能享受这部电影。"
+        },
+        {
+          "translation": "我们从明天开始又得干活了，所以今天好好休息吧。"
+        },
+        {
+          "translation": "我是从去年夏天开始学韩语的，所以现在能说一点点了。"
+        }
+      ]
+    },
+    "ko_까지_16": {
+      "title": "까지（到……、截至、连……也）",
+      "shortExplanation": "表示时间、空间、数量或程度的终点与界限，相当于汉语的“到”、“截至”。",
+      "longExplanation": "“까지”是表示终点与范围极限的助词，附在名词之后，用以指出时间、空间、数量或动作的终点，相当于汉语的“到”、“截至”、“至”。常与时间词语（如“내일까지”到明天为止）、地点词语（如“서울까지”到首尔）连用。此外，它常与表示起点的助词“부터”（从）搭配，构成“부터... 까지”（从……到……）的形式。",
+      "formation": "名词 + 까지",
+      "examples": [
+        {
+          "translation": "第一学期总共为期六个月，即从一月到六月。"
+        },
+        {
+          "translation": "我每天早晨起得很早，一直工作到晚上10点。"
+        },
+        {
+          "translation": "今天我身上最多只有五千韩元，所以只能不吃晚饭了。"
+        },
+        {
+          "translation": "请把包括至今为止所做的事情在内的全部内容写进报告里。"
+        }
+      ]
+    },
+    "ko_아어여서_17": {
+      "title": "아/어/여서（因为……所以……、由于）",
+      "shortExplanation": "表示前一分句是后一分句的原因或由来的连接词尾，相当于“因为……所以……”、“由于”。",
+      "longExplanation": "“-아/어/여서”是表示原因、理由的连接词尾，附在动词或形容词词干后，说明产生后一分句情况的前提或根据。词尾的形态变化遵循阴阳元音规律：词干末音节元音为“ㅏ”或“ㅗ”时接“-아서”；其余元音接“-어서”；以“하다”结尾的词变为“해서”。需要注意的是，“-아/어/여서”后面不能接命令句（-(으)세요）或共动句（-(으)ㅂ시다），且通常不在前半句加过去时态词尾“-았/었-”。",
+      "formation": "动词/形容词词干 + 아/어/여서",
+      "examples": [
+        {
+          "translation": "外面下雨让我感冒了，所以没能去上学。"
+        },
+        {
+          "translation": "他肚子饿了，所以我准备了点心。"
+        },
+        {
+          "translation": "光顾着看电影没有时间，结果作业一点儿都没能做。"
+        },
+        {
+          "translation": "因为觉得课程很难，所以我每天都在努力学习。"
+        }
+      ]
+    },
+    "ko_으면eumyeonIfwhen_18": {
+      "title": "(으)면（如果……就……、要是……的话）",
+      "shortExplanation": "表示假设或条件的连接词尾，相当于汉语的“如果……就……”、“要是……的话”。",
+      "longExplanation": "“-(으)면”是表示条件或假设的连接词尾，附在动词或形容词词干后。前一分句设立某种假设或前提条件，后一分句说明在此条件下产生的结果、事实或说话人的意图。词干末尾有收音（除“ㄹ”外）时接“-으면”；无收音或收音为“ㄹ”时接“-면”。",
+      "formation": "动词/形容词词干 + (으)면",
+      "examples": [
+        {
+          "translation": "如果有时间的话，我想每天都学韩语。"
+        },
+        {
+          "translation": "要是天气好的话，我就去山上登山。"
+        },
+        {
+          "translation": "如果疲累的话，早点睡比较好。"
+        },
+        {
+          "translation": "如果通过这次测试，我就可以入学了。"
+        }
+      ]
+    },
+    "ko_너무_19": {
+      "title": "너무（太、非常、过于）",
+      "shortExplanation": "表示程度过高或极其深沉的副词，相当于汉语的“太”、“非常”、“过于”。",
+      "longExplanation": "“너무”是修饰形容词或动词的程度副词，用以强调某种性质、状态或动作达到了极高的程度甚至超出了常规界限。传统用法中多用于带有负面意味的消极语境（意为“过于”、“太……”），而在现代日常韩语中，无论积极还是消极语境均被极其广泛地使用，相当于“太……了”、“非常”、“十分”。",
+      "formation": "너무 + 形容词/动词",
+      "examples": [
+        {
+          "translation": "这个太好吃了，以至于我全部吃光了，没能给别人剩下一点儿。"
+        },
+        {
+          "translation": "这部电影太有趣了，我已经看了足足三次，现在依然还想看。"
+        },
+        {
+          "translation": "她太漂亮了，如果我每天都能见到她就好了，可她并不认识我。"
+        },
+        {
+          "translation": "比萨饼太好吃了，所以我每周都吃，不过感觉从现在起得减少一点儿了。"
+        }
+      ]
+    },
+    "ko_많이_20": {
+      "title": "많이（多、很多、大量地）",
+      "shortExplanation": "表示数量多、程度深或频次高的高频副词，相当于汉语的“多”、“很多”、“大量地”。",
+      "longExplanation": "“많이”是由形容词“많다”（多）衍生而来的副词，通常置于动词或形容词之前作状语，用以修饰动作或状态，表示数量充足、程度深厚或频次频繁。相当于汉语的“很多”、“多多地”、“大量地”（例如：“많이 먹다”多吃、“많이 아프다”病得很厉害、“많이 웃다”笑了好一阵）。",
+      "formation": "많이 + 动词/形容词",
+      "examples": [
+        {
+          "translation": "因为我需要很多朋友，所以平时经常四处去结识大家。"
+        },
+        {
+          "translation": "你看过那部电影了吗？我当时笑了好一阵呢！"
+        },
+        {
+          "translation": "最近工作非常忙碌，所以很想去休假。"
+        },
+        {
+          "translation": "她总是保持大量的运动，所以看起来很健康。"
+        }
+      ]
+    },
+    "ko_조금_21": {
+      "title": "조금（稍微、一点点、少许）",
+      "shortExplanation": "表示数量少、时间短或程度浅的副词，相当于汉语的“稍微”、“一点点”、“略微”。",
+      "longExplanation": "“조금”是表示数量少或程度微弱的副词，既可以修饰形容词弱化语气（如“조금 춥다”有点冷），也可以修饰动词表示简短或少量的动作（如“조금 쉬다”歇一会儿）。在口语中，“조금”常被缩略为“좀”，以使请求或表达更加委婉、礼貌。",
+      "formation": "조금 + 动词/形容词",
+      "examples": [
+        {
+          "translation": "我心情不太好，需要稍微休息一下。"
+        },
+        {
+          "translation": "房间有点暗，请把灯打开吧。"
+        },
+        {
+          "translation": "行李太重了，感觉好像得稍微精简减少一点儿。"
+        },
+        {
+          "translation": "她懂一点韩语，所以能够进行简单的日常对话。"
+        }
+      ]
+    },
+    "ko_다_22": {
+      "title": "다（都、全、全都）",
+      "shortExplanation": "表示全部、毫无遗漏或动作彻底完成的副词，相当于汉语的“全”、“都”、“完全”。",
+      "longExplanation": "“다”作副词时，表示涉及范围的整体性与完全性，指代全部事物、人员或动作的彻底完成，相当于汉语的“都”、“全”、“全都”、“完全”。置于动词前时，强调该动作已经全部处理完毕或消耗殆尽（例如：“다 먹었다”全吃完了、“다 읽었다”全读完了）。",
+      "formation": "다 + 动词/形容词",
+      "examples": [
+        {
+          "translation": "我把学韩语的书全看完了，所以现在不知道该看什么才好了。"
+        },
+        {
+          "translation": "我们把电影全部看完之后才回了家。"
+        },
+        {
+          "translation": "她来到韩国后说自己喜欢所有的韩国食物。"
+        },
+        {
+          "translation": "我把这周的食材全都买回来了，所以厨房里一个空位都没有了。"
+        }
+      ]
+    },
+    "ko_으는데eunneundeButhowever_23": {
+      "title": "(으)ㄴ/는데（但是、可是、而【转折与背景铺垫】）",
+      "shortExplanation": "表示转折对照或提示前文背景事实的连接词尾，相当于“但是”、“可是”、“然而”。",
+      "longExplanation": "“-(으)ㄴ/는데”是韩语中应用极广的连接词尾，主要用于两种情况：其一是表示前后两句话内容的转折与对立（相当于“但是”、“可是”）；其二是作为说明后一分句的背景情况或铺垫前提。形态结合规则：动词现在时后接“-는데”；形容词词干无收音接“-ㄴ데”，有收音接“-은데”；动词和形容词过去时后统一接“-았/었는데”；名词后接“-인/인데”。",
+      "formation": "动词 + 는데 / 形容词 + (으)ㄴ데 / 名词 + 인데",
+      "examples": [
+        {
+          "translation": "今天天气很好，可我只想待在家里。"
+        },
+        {
+          "translation": "他非常亲切善良，但有时过于直率，难免会伤到别人。"
+        },
+        {
+          "translation": "我学韩语的时间已经很长了，即便如此，却依然还有很多不足之处。"
+        },
+        {
+          "translation": "这件衣服挺漂亮的，但不是我的风格。"
+        }
+      ]
+    },
+    "ko_아어야_24": {
+      "title": "아/어야 하다/되다（必须、应该、得）",
+      "shortExplanation": "表示义务、必要性或责任的句型，相当于汉语的“必须”、“应该”、“得”。",
+      "longExplanation": "“-아/어야 하다/되다”是表示当为性、义务或必须具备某种条件的语法格式，附在动词或形容词词干后。词尾按元音和谐规律变化：词干末音节为“ㅏ”或“ㅗ”时接“-아야 하다”；其余元音接“-어야 하다”；“하다”变为“해야 하다”。在日常会话中，“하다”常可由“되다”替换，表达事物或行动的理所当然与必要性。",
+      "formation": "动词/形容词词干 + 아/어/여야 하다（或 되다）",
+      "examples": [
+        {
+          "translation": "有这么多内容要学，我们必须赶快开始。否则时间不够，所有事情就完不成了。"
+        },
+        {
+          "translation": "因为周末有考试，所以我现在就得开始准备。如果不学那么多的话，可能会考砸。"
+        },
+        {
+          "translation": "明天早上我得早早去公司。因为有重要的会议，必须一定要出席。"
+        },
+        {
+          "translation": "夏天防晒指数很重要，所以出门前必须涂抹防晒霜。要不然皮肤可能会受损。"
+        }
+      ]
+    },
+    "ko_안_25": {
+      "title": "안（不、没【短形否定】）",
+      "shortExplanation": "置于动词或形容词前表示意愿或事实否定的短形否定副词，相当于汉语的“不”、“没”。",
+      "longExplanation": "“안”是副词“아니”的缩略形式，直接放在动词或形容词的前面充当状语，构成主观意愿或客观状态的短形否定，相当于汉语的“不”、“没有”。需要注意，对于“名词 + 하다”形式的复合动词（如“공부하다”、“일하다”），“안”通常置于名词与动词“하다”之间（如“공부(를) 안 하다”、“일(을) 안 하다”）。",
+      "formation": "안 + 动词/形容词（或 名词 + 안 하다）",
+      "examples": [
+        {
+          "translation": "我还睡不着（还没有睡）。因为还有工作剩下没做完。"
+        },
+        {
+          "translation": "我朋友不吃三文鱼。她不喜欢吃鱼类。"
+        },
+        {
+          "translation": "你还没看那部电影吗？真的很精彩，一定要看一看啊。"
+        },
+        {
+          "translation": "我是真的不喜欢那个人，因为他总是在撒谎。"
+        }
+      ]
+    },
+    "ko_못_26": {
+      "title": "못（不能、没能、无法【能力/环境的客观否定】）",
+      "shortExplanation": "置于动词前表示主观能力不足或客观外界条件不允许的否定副词，相当于汉语的“不能”、“没能”、“无法”。",
+      "longExplanation": "“못”是表示能力限制或客观障碍的否定副词，直接置于主动词之前，指主语由于能力不足、健康条件受限或外部环境阻碍而无法完成某项动作（区别于表示主观不想做的“안”）。对于“名词 + 하다”形式的复合动词，通常将“못”置于名词与动词“하다”之间（如“수영을 못 하다”不会游泳、“일을 못 하다”做不了工作）。",
+      "formation": "못 + 动词（或 名词 + 못 하다）",
+      "examples": [
+        {
+          "translation": "今天太疲倦了，以至于我没能早早入睡。"
+        },
+        {
+          "translation": "她非常担心且压力很大，所以饭都没能吃下。"
+        },
+        {
+          "translation": "雨下得实在太大了，我们没法去游乐园。"
+        },
+        {
+          "translation": "我来得太晚了，所以没能参加上会议。"
+        }
+      ]
+    },
+    "ko_아어여_27": {
+      "title": "아/어/여 보다（尝试做……、曾经做过……）",
+      "shortExplanation": "由辅助动词“보다”构成的句型，表示试着做某事（尝试）或曾做过某事（经历）。",
+      "longExplanation": "“-아/어/여 보다”是将辅助动词“보다”附在主动词词干后构成的语法格式，具有两种核心用法：一是表示试探性地实施某动作（相当于“试着做做看”、“尝试一下”）；二是当使用过去时态“-아/어/여 봤다”时，表示经历过某种事情（相当于“曾经做过……”）。词干末元音为“ㅏ, ㅗ”接“-아 보다”；其余元音接“-어 보다”；“하다”变为“해 보다”。",
+      "formation": "动词词干 + 아/어/여 보다",
+      "examples": [
+        {
+          "translation": "如果不知道该如何解决这个问题，不妨照我的方式试着做一次看看。"
+        },
+        {
+          "translation": "如果从来没有腌过泡菜的话，请试着做一次吧。真的很简单而且很有趣。"
+        },
+        {
+          "translation": "以前虽然尝试学过韩语，但现在完全想不起来了。"
+        },
+        {
+          "translation": "我试过用这种方法学习，结果非常理想。"
+        }
+      ]
+    },
+    "ko_지금_28": {
+      "title": "지금（现在、此刻、当下）",
+      "shortExplanation": "表示当前说话时刻或现阶段的时间词，相当于汉语的“现在”、“此刻”、“如今”。",
+      "longExplanation": "“지금”（只今/现在）在韩语中兼具名词与副词性质，用于指称说话人说话时的时刻或当下的时间段，相当于汉语的“现在”、“此时此刻”。在句中常作为状语置于句首或谓语动词之前，以强调动作或状态正在发生，也可与各种助词组合（如“지금은”现在呢、“지금부터”从现在起）。",
+      "formation": "지금 + 分句/谓语（或接助词：지금은, 지금부터）",
+      "examples": [
+        {
+          "translation": "我现在得去学校了。课马上就要开始了。"
+        },
+        {
+          "translation": "现在正下着雨呢。带把雨伞去应该会比较好。"
+        },
+        {
+          "translation": "我现在正在做作业。稍后我再给你打电话吧。"
+        },
+        {
+          "translation": "要是你现在来我家的话，我们就可以一起用餐了。"
+        }
+      ]
+    },
+    "ko_이미_29": {
+      "title": "이미（已经、早已）",
+      "shortExplanation": "表示动作或状态在此前早已发生并完成的时间副词，相当于汉语的“已经”、“早已”。",
+      "longExplanation": "“이미”是表示完成与既成事实的副词，通常置于谓语动词之前，用以表明某动作或事态在说话时刻之前或在某一基准时间之前早已发生完毕，强调结果的既定性与不可逆转。相当于汉语的“已经”、“早已”，常与过去时态搭配使用。",
+      "formation": "이미 + 动词（常与过去时态连用）",
+      "examples": [
+        {
+          "translation": "因为你已经看过了那部电影，再去重新看一次又有什么意义呢？"
+        },
+        {
+          "translation": "我已经吃过晚饭了，你请自己一个人吃晚饭吧。"
+        },
+        {
+          "translation": "因为去年就已经把那家公司的股票卖掉了，所以现在没有任何损失。"
+        },
+        {
+          "translation": "当我来到这里的时候，太阳早已升起了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_부터_15": {
+      "title": "부터（〜から・〜から始めて）",
+      "shortExplanation": "時間や空間、順序の出発点や始まりを表す助詞で、日本語の「〜から」に相当します。",
+      "longExplanation": "「부터」は体言（名詞）の後ろについて、時間、場所、順序などの起点（始まり）を表す助詞です。日本語の「〜から」に相当します。特に時間を表す語句（例：「오늘부터」＝今日から、「내일부터」＝明日から）と共によく用いられ、到着点を表す「까지」（〜まで）と組み合わせて「〜부터 〜까지」（〜から〜まで）の形で頻出します。",
+      "formation": "名詞 ＋ 부터",
+      "examples": [
+        {
+          "translation": "私は今日からダイエットを始める予定なので、甘いものはもう食べないつもりです。"
+        },
+        {
+          "translation": "子どもから大人まで、誰もがこの映画を楽しむことができます。"
+        },
+        {
+          "translation": "私たちは明日からまた仕事を始めなければならないので、今日はゆっくり休んでください。"
+        },
+        {
+          "translation": "私は去年の夏から韓国語を勉強し始めたので、今は少し話せます。"
+        }
+      ]
+    },
+    "ko_까지_16": {
+      "title": "까지（〜まで）",
+      "shortExplanation": "時間や空間、数量、範囲の終了点や限度を表す助詞で、日本語の「〜まで」に相当します。",
+      "longExplanation": "「까지」は体言（名詞）の後ろについて、時間、場所、数量、程度などの到達点や限度（終わり）を表す助詞です。日本語の「〜まで」に相当します。時間表現（例：「내일까지」＝明日まで）や場所表現（例：「서울까지」＝ソウルまで）などに広く使われ、起点を示す「부터」（〜から）と組み合わせて「〜부터 〜까지」（〜から〜まで）という形でよく用いられます。",
+      "formation": "名詞 ＋ 까지",
+      "examples": [
+        {
+          "translation": "第1学期は全部で6か月間です。つまり、1月から6月までです。"
+        },
+        {
+          "translation": "私は毎朝早く起きて、夜10時まで働きます。"
+        },
+        {
+          "translation": "今日はお金が5千ウォンまでしかなくて、夕食を抜くことになってしまいました。"
+        },
+        {
+          "translation": "今までに行った作業を含めて、すべての内容を報告書に書いてください。"
+        }
+      ]
+    },
+    "ko_아어여서_17": {
+      "title": "아/어/여서（〜て・〜ので・〜から【原因・理由】）",
+      "shortExplanation": "先行節が後続節の原因や理由であることを表す接続語尾で、日本語の「〜ので」「〜て」「〜から」に相当します。",
+      "longExplanation": "「-아/어/여서」は動詞や形容詞の語幹について、前の事柄が後ろの事柄の原因や理由であることを表す接続語尾です。語幹の母音が陽母音（ㅏ, ㅗ）の場合は「-아서」、陰母音の場合は「-어서」をつけ、「하다」で終わる動詞・形容詞は「해서」になります。注意点として、「-아/어/여서」の節には過去形（-았/었-）をつけることができず、また後続節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできません。",
+      "formation": "動詞・形容詞の語幹 ＋ 아/어/여서",
+      "examples": [
+        {
+          "translation": "外で雨が降って風邪をひいてしまい、そのため学校に行けませんでした。"
+        },
+        {
+          "translation": "彼がお腹を空かせていたので、おやつを用意しました。"
+        },
+        {
+          "translation": "映画を見ていて時間がなかったので、宿題が全くできませんでした。"
+        },
+        {
+          "translation": "授業が難しいと思うので、毎日一生懸命勉強しています。"
+        }
+      ]
+    },
+    "ko_으면eumyeonIfwhen_18": {
+      "title": "(으)면（〜なら・〜ば・〜たら【仮定・条件】）",
+      "shortExplanation": "条件や仮定を表す接続語尾で、日本語の「〜なら」「〜ば」「〜たら」に相当します。",
+      "longExplanation": "「-(으)면」は動詞や形容詞の語幹について、前節で条件や仮定を提示し、後節でその条件が満たされた場合の結果や行動を述べる接続語尾です。語幹末尾にパッチムがある場合（ㄹパッチムを除く）は「-으면」がつき、パッチムがない場合やㄹパッチムの場合は「-면」がつきます。",
+      "formation": "動詞・形容詞の語幹 ＋ (으)면",
+      "examples": [
+        {
+          "translation": "時間があれば、私は毎日韓国語を勉強したいです。"
+        },
+        {
+          "translation": "天気が良ければ、私は山へ登山に行くつもりです。"
+        },
+        {
+          "translation": "疲れているなら、早く寝るのが良いですよ。"
+        },
+        {
+          "translation": "このテストに合格すれば、私は学校に入学できます。"
+        }
+      ]
+    },
+    "ko_너무_19": {
+      "title": "너무（あまりにも・すごく・とても）",
+      "shortExplanation": "程度が過度であることや極めて高いことを表す副詞で、日本語の「あまりにも」「すごく」「とても」に相当します。",
+      "longExplanation": "「너무」は形容詞や動詞を修飾して、状態や動作の程度が基準や限度を超えて甚だしいことを表す程度副詞です。元々は「あまりにも〜（すぎる）」という否定的な過度さを表す言葉でしたが、現代の日常会話では肯定的な表現でも「とても」「すごく」「めちゃくちゃ」の意味で日常的によく用いられています。",
+      "formation": "너무 ＋ 形容詞/動詞",
+      "examples": [
+        {
+          "translation": "これはあまりにも美味しくて全部食べてしまい、他の人のために残しておくことができませんでした。"
+        },
+        {
+          "translation": "この映画はとても面白くて私はすでに3回も見ましたが、今でもまた見たいです。"
+        },
+        {
+          "translation": "彼女がとても綺麗なので私は毎日彼女を見られればいいのにと思いますが、彼女は私のことを知りません。"
+        },
+        {
+          "translation": "ピザがすごく美味しくて毎週食べていますが、これからは少し減らさなければならないと思います。"
+        }
+      ]
+    },
+    "ko_많이_20": {
+      "title": "많이（たくさん・多く・いっぱい）",
+      "shortExplanation": "数量が多いことや程度・頻度が高いことを表す副詞で、日本語の「たくさん」「多く」「いっぱい」に相当します。",
+      "longExplanation": "「많이」は形容詞「많다」（多い）の副詞形で、動詞や形容詞の前に置かれて、分量や数量が多いこと、または動作や状態の程度・頻度が著しいことを表します。日本語の「たくさん」「大いに」「多く」に相当し、日常会話で極めて頻繁に使用されます（例：「많이 먹어요」＝たくさん食べます、「일이 많이 바빠요」＝仕事がとても忙しいです）。",
+      "formation": "많이 ＋ 動詞/形容詞",
+      "examples": [
+        {
+          "translation": "私は友達がたくさん必要なので、いつも人と会いに出かける方です。"
+        },
+        {
+          "translation": "あの映画を見ましたか？私はたくさん笑いました！"
+        },
+        {
+          "translation": "最近仕事がとても忙しいので、休暇を取りたいです。"
+        },
+        {
+          "translation": "彼女はいつもたくさん運動しているので、健康そうに見えます。"
+        }
+      ]
+    },
+    "ko_조금_21": {
+      "title": "조금（少し・ちょっと）",
+      "shortExplanation": "分量や程度、時間がわずかであることを表す副詞で、日本語の「少し」「ちょっと」に相当します。",
+      "longExplanation": "「조금」は動詞や形容詞の前に置かれ、数量や分量が少ないこと、程度がわずかであること、あるいは時間が短いことを表す副詞です。日本語の「少し」「ちょっと」「わずかに」に相当します。日常会話では口語として「좀」に縮約されることも多く、依頼や断りの場面で表現を和らげるためにもよく使われます。",
+      "formation": "조금 ＋ 動詞/形容詞",
+      "examples": [
+        {
+          "translation": "気分が良くありません。少し休む必要があります。"
+        },
+        {
+          "translation": "部屋が少し暗いです。明かりをつけてください。"
+        },
+        {
+          "translation": "荷物が重すぎます。少し減らさなければならないようです。"
+        },
+        {
+          "translation": "彼女は韓国語を少し知っているので、簡単な会話なら可能です。"
+        }
+      ]
+    },
+    "ko_다_22": {
+      "title": "다（全部・すべて・すっかり）",
+      "shortExplanation": "全体やすべて、または動作の完了・徹底を表す副詞で、日本語の「全部」「すべて」「すっかり」に相当します。",
+      "longExplanation": "「다」は副詞として用いられ、余すところなく全てが含まれていることや、動作が最後まで完全にやり遂げられた状態を表します。日本語の「全部」「すべて」「すっかり」「残らず」に相当します。動詞の前に置かれて「すべて〜し終えた」という完了や消費のニュアンスを強調することがよくあります（例：「다 먹었어요」＝全部食べました、「숙제를 다 했어요」＝宿題を全部やりました）。",
+      "formation": "다 ＋ 動詞/形容詞",
+      "examples": [
+        {
+          "translation": "私は韓国語を勉強する本をすべて読み終えたので、もう次は何を読めばいいかわかりません。"
+        },
+        {
+          "translation": "私たちは映画を最後まで全部見てから家に帰りました。"
+        },
+        {
+          "translation": "彼女は韓国に来て、韓国料理は全部好きだと言いました。"
+        },
+        {
+          "translation": "今週の食料品をすべて買って帰ってきたので、台所には空いているスペースが一つもありません。"
+        }
+      ]
+    },
+    "ko_으는데eunneundeButhowever_23": {
+      "title": "(으)ㄴ/는데（〜だが・〜けれど・〜のに【逆接・前提】）",
+      "shortExplanation": "前後の対比や逆接を表したり、後ろの文の背景・前提を提示する接続語尾で、日本語の「〜が」「〜けれど」「〜のに」に相当します。",
+      "longExplanation": "「-(으)ㄴ/는데」は、対比・逆接（〜だが、〜けれど）を表したり、後続文の内容に対する前置きや背景説明（〜のだけど、〜のところ）を行う接続語尾です。接続形態：動詞の現在形には「-는데」、形容詞の語幹でパッチムがない場合は「-ㄴ데」、パッチムがある場合は「-은데」がつきます。過去形には動詞・形容詞を問わず「-았/었는데」を用い、体言（名詞）には「-인/인데」がつきます。",
+      "formation": "動詞 ＋ 는데 / 形容詞 ＋ (으)ㄴ데 / 名詞 ＋ 인데",
+      "examples": [
+        {
+          "translation": "今日天気は良いですが、私は家にだけいたいです。"
+        },
+        {
+          "translation": "彼はとても親切ですが、たまに素直すぎて人を傷つけてしまうことがあります。"
+        },
+        {
+          "translation": "私は韓国語の勉強を長くしてきたにもかかわらず、まだ至らないところが多いです。"
+        },
+        {
+          "translation": "この服は綺麗ですが、私の好みではありません。"
+        }
+      ]
+    },
+    "ko_아어야_24": {
+      "title": "아/어야 하다/되다（〜しなければならない・〜すべきだ）",
+      "shortExplanation": "義務や当為、必要性を表す構文で、日本語の「〜しなければならない」「〜すべきだ」に相当します。",
+      "longExplanation": "「-아/어야 하다/되다」は動詞や形容詞の語幹について、ある行動を行う義務があることや、そうしなければならない必要性を表す必須文型です。語幹の母音が陽母音（ㅏ, ㅗ）の場合は「-아야 하다」、陰母音の場合は「-어야 하다」、「하다」で終わる動詞は「해야 하다」になります。会話では「하다」の代わりに「되다」も頻繁に用いられます（例：「가야 돼요」＝行かなければなりません）。",
+      "formation": "動詞・形容詞の語幹 ＋ 아/어/여야 하다（または 되다）",
+      "examples": [
+        {
+          "translation": "このように勉強することがたくさんあるので、私たちは早く始めなければなりません。そうでないと時間が足りず、すべてを終わらせることができません。"
+        },
+        {
+          "translation": "週末に試験があるので、私は今から準備しなければなりません。それだけ勉強しないと試験に落ちてしまうかもしれません。"
+        },
+        {
+          "translation": "明日会社に朝早く行かなければなりません。重要な会議があるので必ず出席しなければなりません。"
+        },
+        {
+          "translation": "夏はSPFが重要なので、外出する前に日焼け止めを塗らなければなりません。そうしないと肌が傷んでしまうことがあります。"
+        }
+      ]
+    },
+    "ko_안_25": {
+      "title": "안（〜ない・〜しない【短形否定】）",
+      "shortExplanation": "動詞や形容詞の前に置いて否定の意味を表す短形否定の副詞で、日本語の「〜ない」「〜しない」に相当します。",
+      "longExplanation": "「안」は「아니」の短縮形で、動詞や形容詞の直前に置かれてその動作や状態を打ち消す短形否定の副詞です（例：「안 가요」＝行きません、「안 예뻐요」＝可愛くないです）。話者の意志による不実行や単純な状態否定を表します。なお、「名詞 ＋ 하다」型の動詞（例：「공부하다」）を否定する場合は、「공부를 안 하다」のように「名詞」と「하다」の間に「안」を挟むのが一般的です。",
+      "formation": "안 ＋ 動詞/形容詞（または 名詞 ＋ 안 하다）",
+      "examples": [
+        {
+          "translation": "私はまだ寝ていません。まだ仕事が残っています。"
+        },
+        {
+          "translation": "私の友達はサーモンを食べません。彼女は魚が好きではありません。"
+        },
+        {
+          "translation": "あなたはその映画を見ていないのですか？本当に面白いので、ぜひ見るべきです。"
+        },
+        {
+          "translation": "私はあの人のことが本当に好きではありません。いつも嘘をつくからです。"
+        }
+      ]
+    },
+    "ko_못_26": {
+      "title": "못（〜できない・〜かねる【不可能・能力否定】）",
+      "shortExplanation": "能力の不足や外部の事情によって動作を行えないことを表す副詞で、日本語の「〜できない」「〜（し）かねる」に相当します。",
+      "longExplanation": "「못」は動詞の直前に置かれて、能力不足や体調、あるいは外的な状況・事情のせいでその動作を行うことが不可能であることを表す副詞です（話者の意志でしない「안」とは区別されます）。「名詞 ＋ 하다」型の動詞の場合、「운전을 못 하다」（運転ができない）のように名詞と「하다」の間に「못」を挟んで表現するのが自然です。",
+      "formation": "못 ＋ 動詞（または 名詞 ＋ 못 하다）",
+      "examples": [
+        {
+          "translation": "今日はあまりにも疲れていて、早く眠ることができませんでした。"
+        },
+        {
+          "translation": "彼女はとても心配してストレスを感じていたため、ご飯を食べられませんでした。"
+        },
+        {
+          "translation": "雨があまりにもひどく降ったので、私たちは遊園地に行くことができませんでした。"
+        },
+        {
+          "translation": "あまりにも遅く到着したため、会議に出席できませんでした。"
+        }
+      ]
+    },
+    "ko_아어여_27": {
+      "title": "아/어/여 보다（〜してみる・〜したことがある【試行・経験】）",
+      "shortExplanation": "試みに動作を行ってみること（試行）や、過去にそれを行った経験を表す補助動詞構文で、「〜してみる」「〜したことがある」に相当します。",
+      "longExplanation": "「-아/어/여 보다」は動詞の語幹について、ある行動を試しにやってみること（試行・お試し）や、過去形（-아/어/여 봤다）を伴って過去にその行為をしたことがあるという経験を表します。日本語の「〜してみる」「〜したことがある」に相当します。陽母音語幹には「-아 보다」、陰母音語幹には「-어 보다」、「하다」動詞には「해 보다」が接続します。",
+      "formation": "動詞の語幹 ＋ 아/어/여 보다",
+      "examples": [
+        {
+          "translation": "この問題をどのように解決すべきか分からなければ、私のやり方で一度やってみてください。"
+        },
+        {
+          "translation": "キムチを作ってみたことがないなら、一度試してみてください。本当に簡単で面白いですよ。"
+        },
+        {
+          "translation": "以前韓国語を習ってみましたが、全く覚えていません。"
+        },
+        {
+          "translation": "この方法で勉強してみましたが、結果がとても良かったです。"
+        }
+      ]
+    },
+    "ko_지금_28": {
+      "title": "지금（今・現在）",
+      "shortExplanation": "発話の時点や現在の瞬間を表す時間詞で、日本語の「今」「現在」に相当します。",
+      "longExplanation": "「지금」は名詞または副詞として機能し、話し手が話しているまさにその時点や現段階を表します。日本語の「今」「現在」「ただいま」に相当します。文頭や動詞の直前に置かれて現在の時点を強調したり、「지금은」「지금부터」のように助詞を伴って時間的枠組みを提示します。",
+      "formation": "지금 ＋ 節/述語（または助詞を伴う：지금은, 지금부터）",
+      "examples": [
+        {
+          "translation": "今学校に行かなければなりません。授業がもうすぐ始まります。"
+        },
+        {
+          "translation": "今雨が降っています。傘を持って行った方がいいと思います。"
+        },
+        {
+          "translation": "今宿題をしています。後で電話しますね。"
+        },
+        {
+          "translation": "今うちの家に来てくだされば、一緒に食事ができますよ。"
+        }
+      ]
+    },
+    "ko_이미_29": {
+      "title": "이미（すでに・もう・とっくに）",
+      "shortExplanation": "動作や事態が基準となる時よりも前に完了していることを表す副詞で、日本語の「すでに」「もう」「とっくに」に相当します。",
+      "longExplanation": "「이미」は話し手が話している時点やある基準となる時点よりも前に、すでにその行為や状態が完了・成立していることを表す時間副詞です。日本語の「すでに」「もう」「とっくに」に相当します。多くの場合、過去形や完了・継続を表す表現と共に用いられ、事態が既成事実であることを強調します。",
+      "formation": "이미 ＋ 動詞（主に過去形や完了表現）",
+      "examples": [
+        {
+          "translation": "あなたはすでにその映画を見たのだから、また見に行くことに何の意味があるのでしょうか？"
+        },
+        {
+          "translation": "私はすでに夕食を食べましたので、あなたは一人で召し上がってください。"
+        },
+        {
+          "translation": "去年にすでにその会社の株式を売却したので、今では何の損失もありません。"
+        },
+        {
+          "translation": "ここに来たとき、太陽はすでに昇っていました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_부터_15": {
+      "title": "부터 (시작점, 출발점을 나타내는 조사)",
+      "shortExplanation": "어떤 행동이나 상태, 시간, 공간, 순서 등의 시작이나 출발점을 나타내는 조사입니다.",
+      "longExplanation": "'부터'는 명사 뒤에 붙어 시간, 공간, 순서 등의 출발점이나 시작을 나타내는 보조사입니다. 어떤 동작이나 상태가 시작되는 기준점을 제시할 때 주로 쓰이며, 흔히 '오늘부터', '내일부터'와 같이 시간 명사와 결합합니다. 끝점을 나타내는 조사 '까지'와 어울려 '부터... 까지'의 형태로도 매우 자주 사용됩니다.",
+      "formation": "명사 + 부터",
+      "examples": [
+        {
+          "translation": "나는 오늘부터 다이어트를 시작할 거예요, 그래서 단 것은 더 이상 먹지 않을 거예요."
+        },
+        {
+          "translation": "어린이부터 어른까지 모두 이 영화를 즐길 수 있어요."
+        },
+        {
+          "translation": "우리는 내일부터 다시 일을 시작해야 해요, 그러니 오늘은 푹 쉬세요."
+        },
+        {
+          "translation": "나는 작년 여름부터 한국어를 공부하기 시작했어요, 그래서 이제 조금은 할 수 있어요."
+        }
+      ]
+    },
+    "ko_까지_16": {
+      "title": "까지 (도달점, 한계를 나타내는 조사)",
+      "shortExplanation": "시간, 공간, 수량, 정도의 끝점이나 한계를 나타내는 조사입니다.",
+      "longExplanation": "'까지'는 명사 뒤에 붙어 어떤 일이나 행동, 상태가 미치는 시간적·공간적 끝점이나 범위를 나타내는 보조사입니다. '내일까지', '서울까지'처럼 시간이나 장소 명사 뒤에 쓰여 '어디까지 이름'을 나타내며, 수량이나 정도의 한계를 나타내기도 합니다. 시작을 나타내는 조사 '부터'와 짝을 이루어 '부터... 까지'의 형태로 자주 쓰입니다.",
+      "formation": "명사 + 까지",
+      "examples": [
+        {
+          "translation": "첫 번째 학기는 총 여섯 달 동안이에요. 즉, 1월부터 6월까지입니다."
+        },
+        {
+          "translation": "저는 매일 아침 일찍 일어나서 밤 10시까지 일합니다."
+        },
+        {
+          "translation": "오늘은 돈이 오천 원까지밖에 없어서 저녁을 거르게 됐어요."
+        },
+        {
+          "translation": "지금까지 한 일을 포함해서 모든 내용을 보고서에 적어주세요."
+        }
+      ]
+    },
+    "ko_아어여서_17": {
+      "title": "아/어/여서 (원인이나 이유를 나타내는 연결어미)",
+      "shortExplanation": "앞 절의 내용이 뒤 절의 일에 대한 원인이나 이유가 됨을 나타내는 연결어미입니다.",
+      "longExplanation": "'-아/어/여서'는 동사나 형용사의 어간 뒤에 붙어 앞 절이 뒤 절의 원인이나 핑계, 이유가 됨을 나타내는 연결어미입니다. 어간 끝음절의 모음이 'ㅏ, ㅗ'인 양성모음일 때는 '-아서', 그 밖의 음절일 때는 '-어서', '하다'가 붙는 용언일 때는 '해서'로 활용합니다. 앞 절에는 과거 시제 선어말어미 '-았/었-'을 결합할 수 없으며, 뒤 절에는 명령형('-(으)십시오', '-(으)세요')이나 청유형('-(으)ㅂ시다', '-(으)자') 문장을 쓸 수 없다는 제약이 있습니다.",
+      "formation": "동사/형용사 어간 + 아/어/여서",
+      "examples": [
+        {
+          "translation": "밖에 비가 와서 감기에 걸렸어요, 그래서 학교에 못 갔어요."
+        },
+        {
+          "translation": "그는 배가 고파서 간식을 준비했어요."
+        },
+        {
+          "translation": "영화를 보느라고 시간이 없어서 숙제를 전혀 못 했어요."
+        },
+        {
+          "translation": "수업이 어렵다고 생각해서 매일 열심히 공부하고 있어요."
+        }
+      ]
+    },
+    "ko_으면eumyeonIfwhen_18": {
+      "title": "(으)면 (조건이나 가정을 나타내는 연결어미)",
+      "shortExplanation": "어떤 일이나 상태에 대한 조건이나 가정을 나타내는 연결어미입니다.",
+      "longExplanation": "'-(으)면'은 동사나 형용사의 어간 뒤에 붙어 앞 절의 내용이 뒤 절의 사실이나 행동이 이루어지는 데 필요한 조건이나 가정이 됨을 나타내는 연결어미입니다. 어간 끝에 받침이 있을 때(단, 'ㄹ' 받침 제외)는 '-으면'을 붙이고, 받침이 없거나 'ㄹ' 받침으로 끝날 때는 '-면'을 붙입니다.",
+      "formation": "동사/형용사 어간 + (으)면",
+      "examples": [
+        {
+          "translation": "시간이 있으면, 저는 매일 한국어를 공부하고 싶어요."
+        },
+        {
+          "translation": "날씨가 좋으면 나는 산에 등산하러 갈 거야."
+        },
+        {
+          "translation": "피곤하면 일찍 자는 것이 좋아요."
+        },
+        {
+          "translation": "이 테스트를 통과하면, 나는 학교에 입학할 수 있어요."
+        }
+      ]
+    },
+    "ko_너무_19": {
+      "title": "너무 (정도가 지나침이나 매우 큼을 나타내는 부사)",
+      "shortExplanation": "일정한 기준을 넘어서 정도가 지나치거나 아주 심함을 나타내는 부사입니다.",
+      "longExplanation": "'너무'는 형용사나 동사 앞에 쓰여 어떤 상태나 행동의 정도가 일정한 한도를 넘어서 지나침을 나타내는 정도부사입니다. 본래는 부정적인 상황에서 '지나치게'의 의미로 주로 쓰였으나, 현대 국어에서는 긍정적인 상황에서도 '매우', '아주', '정말'의 뜻으로 폭넓게 표준어로 인정되어 널리 사용되고 있습니다.",
+      "formation": "너무 + 형용사/동사",
+      "examples": [
+        {
+          "translation": "이것은 너무 맛있어서 제가 모두 먹어버렸어요. 다른 사람들을 위해 남겨두지 못했습니다."
+        },
+        {
+          "translation": "이 영화는 너무 재미있어서 저는 이미 세 번이나 봤어요. 아직도 다시 보고 싶어요."
+        },
+        {
+          "translation": "그녀가 너무 예뻐서 저는 매일 그녀를 볼 수 있으면 좋겠어요, 하지만 그녀는 저를 몰라요."
+        },
+        {
+          "translation": "피자가 너무 맛있어서 저는 매주 먹어요, 하지만 이제부터는 조금 줄여야 될 것 같아요."
+        }
+      ]
+    },
+    "ko_많이_20": {
+      "title": "많이 (수량이나 정도가 큼을 나타내는 부사)",
+      "shortExplanation": "수량, 분량, 정도나 빈도가 큼을 나타내는 부사입니다.",
+      "longExplanation": "'많이'는 형용사 '많다'에서 파생된 부사로, 주로 용언(동사나 형용사) 앞에 놓여 수나 양, 분량이 기준보다 넘치게 넉넉하거나 어떤 행동이나 상태의 정도, 빈도가 큼을 나타냅니다. 일상 회화에서 동작이나 성질의 풍부함을 꾸며줄 때 매우 자주 쓰입니다.",
+      "formation": "많이 + 동사/형용사",
+      "examples": [
+        {
+          "translation": "저는 친구가 많이 필요해서 항상 사람들을 만나러 다니는 편이에요."
+        },
+        {
+          "translation": "그 영화를 봤어요? 저는 많이 웃었어요!"
+        },
+        {
+          "translation": "요즘 일이 많이 바빠서 휴가를 가고 싶어요."
+        },
+        {
+          "translation": "그녀는 항상 많이 운동해서 건강해 보이세요."
+        }
+      ]
+    },
+    "ko_조금_21": {
+      "title": "조금 (적은 분량이나 약한 정도를 나타내는 부사)",
+      "shortExplanation": "분량, 수량, 시간이나 정도가 많지 않고 적음을 나타내는 부사입니다.",
+      "longExplanation": "'조금'은 적은 분량이나 수량, 짧은 시간, 또는 낮은 정도를 나타내는 부사입니다. 용언 앞에 붙어 동작의 완화나 상태의 약함을 나타내며, 상대방에게 부탁이나 완곡한 표현을 할 때도 자주 쓰입니다. 일상 구어에서는 줄임말인 '좀'으로도 매우 널리 사용됩니다.",
+      "formation": "조금 + 동사/형용사",
+      "examples": [
+        {
+          "translation": "기분이 안 좋아요. 조금 쉴 필요가 있어요."
+        },
+        {
+          "translation": "방이 조금 어둡습니다. 불을 켜주세요."
+        },
+        {
+          "translation": "짐이 너무 무거워요. 조금 줄여야 할 것 같아요."
+        },
+        {
+          "translation": "그녀는 한국어를 조금 알아요, 그래서 간단한 대화는 가능해요."
+        }
+      ]
+    },
+    "ko_다_22": {
+      "title": "다 (남김없이 모두임을 나타내는 부사)",
+      "shortExplanation": "어떤 범위나 행동에서 남김없이 모두이거나 온전하게 끝남을 나타내는 부사입니다.",
+      "longExplanation": "'다'는 어떤 수량이나 범위에 속하는 대상이 남김없이 전체임을 나타내거나, 동작이나 상태가 온전히 끝나거나 완전히 이루어졌음을 나타내는 부사입니다. 동사 앞에 놓여 행위의 완전한 종료나 소진을 강조할 때 특히 자주 사용됩니다.",
+      "formation": "다 + 동사/형용사",
+      "examples": [
+        {
+          "translation": "저는 한국어를 공부하는 책을 다 읽었어요, 그래서 이제 뭐 읽을지 모르겠어요."
+        },
+        {
+          "translation": "우리 영화를 다 보고 나서야 집에 돌아갔어요."
+        },
+        {
+          "translation": "그녀는 한국에 오면서 한국 음식을 다 좋아한다고 말했어요."
+        },
+        {
+          "translation": "이번 주 식료품을 다 사 왔어요, 그래서 주방에는 빈 칸이 하나도 없어요."
+        }
+      ]
+    },
+    "ko_으는데eunneundeButhowever_23": {
+      "title": "(으)ㄴ/는데 (대조나 배경 제시의 연결어미)",
+      "shortExplanation": "앞뒤 내용의 대조·역접을 나타내거나 뒤 절에 대한 배경과 상황을 미리 제시하는 연결어미입니다.",
+      "longExplanation": "'-(으)ㄴ/는데'는 뒤 절의 내용을 전개하기 위해 앞 절에서 미리 배경 상황이나 전제를 설명하거나, 앞뒤 절의 사실이 서로 상반·대조됨을 나타내는 연결어미입니다. 동사 현재형 뒤에는 '-는데', 형용사 어간에 받침이 없으면 '-ㄴ데', 받침이 있으면 '-은데'가 붙습니다. 과거형 뒤에는 품사와 상관없이 '-았/었는데'가 쓰이며, 서술격 조사 '이다' 뒤에는 '-인데'가 결합합니다.",
+      "formation": "동사 + 는데 / 형용사 + (으)ㄴ데 / 명사 + 인데",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 좋은데, 저는 집에만 있고 싶어요."
+        },
+        {
+          "translation": "그는 매우 친절한데, 가끔은 너무 솔직해서 상처를 줄 때가 있어요."
+        },
+        {
+          "translation": "저는 한국어 공부를 오래 했는데도 불구하고 아직 많이 부족해요."
+        },
+        {
+          "translation": "이 옷은 예쁜데, 제 스타일이 아니에요."
+        }
+      ]
+    },
+    "ko_아어야_24": {
+      "title": "아/어야 하다/되다 (당위나 의무를 나타내는 표현)",
+      "shortExplanation": "마땅히 그래야 하거나 꼭 행해야 할 의무와 필요성을 나타내는 문형입니다.",
+      "longExplanation": "'-아/어야 하다/되다'는 동사나 형용사의 어간 뒤에 붙어 어떤 동작을 행하거나 특정 상태가 되는 것이 의무적이거나 필연적임을 나타내는 표현입니다. 어간 모음이 'ㅏ, ㅗ'이면 '-아야 하다', 그 밖의 모음이면 '-어야 하다', '하다'로 끝나는 용언이면 '해야 하다'가 결합합니다. 구어에서는 '하다' 대신 '되다'를 써서 '-아/어야 되다'의 형태도 매우 자연스럽게 널리 쓰입니다.",
+      "formation": "동사/형용사 어간 + 아/어/여야 하다 (또는 되다)",
+      "examples": [
+        {
+          "translation": "이렇게 많은 공부가 있으니까, 우리는 빨리 시작해야 해요. 그렇지 않으면 시간이 부족해서 모든 것을 끝낼 수 없어요."
+        },
+        {
+          "translation": "주말에 시험이 있으므로 저는 지금부터 준비해야 해요. 그만큼 공부하지 않으면 시험에 실패할 수 있어요."
+        },
+        {
+          "translation": "내일 회사에 아침 일찍 가야 해요. 중요한 회의가 있어서 꼭 참석해야 해요."
+        },
+        {
+          "translation": "여름에는 SPF가 중요하니까, 밖에 나가기 전에 자외선 차단제를 발라야 해요. 안 그러면 피부가 상할 수 있어요."
+        }
+      ]
+    },
+    "ko_안_25": {
+      "title": "안 (단형 부정 부사)",
+      "shortExplanation": "용언 앞에 놓여 주체의 의지나 단순 사실을 부정하는 부정부사입니다.",
+      "longExplanation": "'안'은 부사 '아니'의 준말로, 동사나 형용사 앞에 놓여 행위 주체의 의지나 어떤 상태를 부인하는 단형 부정 표현입니다. '안 가다', '안 먹다', '안 좋다'처럼 용언을 직접 수식합니다. 다만 '명사+하다' 형태의 동사(예: '공부하다', '운동하다')를 부정할 때는 대개 '명사'와 '하다' 사이에 '안'을 넣어 '공부 안 하다', '운동 안 하다'로 쓰는 것이 자연스럽습니다.",
+      "formation": "안 + 동사/형용사 (또는 명사 + 안 하다)",
+      "examples": [
+        {
+          "translation": "저는 아직 안 자요. 아직 일이 남았어요."
+        },
+        {
+          "translation": "내 친구는 연어를 안 먹어요. 그녀는 생선을 좋아하지 않아요."
+        },
+        {
+          "translation": "너는 그 영화를 안 봤어요? 정말 재미있어요, 꼭 봐야 해요."
+        },
+        {
+          "translation": "제가 그 사람을 진짜 안 좋아해요, 그는 항상 거짓말을 하니까요."
+        }
+      ]
+    },
+    "ko_못_26": {
+      "title": "못 (능력이나 상황의 불가를 나타내는 부사)",
+      "shortExplanation": "주체의 능력 부족이나 외부 상황 때문에 어떤 동작을 할 수 없음을 나타내는 부정부사입니다.",
+      "longExplanation": "'못'은 주로 동사 앞에 놓여 행위 주체의 능력이 모자라거나 외부 조건·상황의 방해로 인하여 어떤 행위를 온전히 해낼 수 없음을 나타내는 부정부사입니다. 주관적 의사에 따라 하지 않는 '안'과 구별됩니다. '명사+하다' 형태의 동사에서는 '수영 못 하다', '운전 못 하다'처럼 명사 뒤에 '못'을 놓아 결합하는 것이 일반적입니다.",
+      "formation": "못 + 동사 (또는 명사 + 못 하다)",
+      "examples": [
+        {
+          "translation": "오늘은 너무 피곤해서 저는 일찍 잠을 못 잤어요."
+        },
+        {
+          "translation": "그녀는 많이 걱정하고 스트레스를 받아서 밥을 못 먹었어요."
+        },
+        {
+          "translation": "비가 너무 많이 와서 우리는 놀이공원에 갈 수가 없었어요."
+        },
+        {
+          "translation": "저는 너무 늦게 와서 회의에 참석을 못 했어요."
+        }
+      ]
+    },
+    "ko_아어여_27": {
+      "title": "아/어/여 보다 (시도나 경험을 나타내는 보조동사 표현)",
+      "shortExplanation": "어떤 행동을 시험 삼아 해 봄(시도)이나 과거의 경험을 나타내는 보조동사 구성입니다.",
+      "longExplanation": "'-아/어/여 보다'는 동사 어간 뒤에 보조동사 '보다'가 붙어, 어떤 행동을 시험 삼아 시도해 보거나(예: '한번 입어 보세요'), 과거 시제 형태('-아/어/여 봤다')로 쓰여 과거에 그러한 일을 겪은 적이 있음을 나타내는 표현입니다. 어간 끝음절 모음이 'ㅏ, ㅗ'이면 '-아 보다', 그 밖의 모음이면 '-어 보다', '하다'로 끝나는 동사는 '해 보다'로 결합합니다.",
+      "formation": "동사 어간 + 아/어/여 보다",
+      "examples": [
+        {
+          "translation": "이 문제를 어떻게 해결할지 모르겠으면, 제 방식대로 한 번 해보아요."
+        },
+        {
+          "translation": "김치를 만들어 본 적이 없다면, 한 번 시도해 보세요. 정말 쉽고 재미있어요."
+        },
+        {
+          "translation": "예전에 한국어를 배워 보았지만, 전혀 기억이 안 나요."
+        },
+        {
+          "translation": "이 방법으로 공부해 보았는데, 결과가 아주 좋았어요."
+        }
+      ]
+    },
+    "ko_지금_28": {
+      "title": "지금 (현재의 순간이나 때를 나타내는 명사/부사)",
+      "shortExplanation": "말하고 있는 바로 이때나 현재의 순간을 가리키는 시간 표현입니다.",
+      "longExplanation": "'지금'은 명사와 부사로 모두 쓰이며, 말하는 바로 이 순간이나 현재의 시점을 가리킵니다. 문장의 맨 앞이나 용언 앞에 놓여 어떤 일이나 상태가 현재 진행 중이거나 당장 이루어져야 함을 강조합니다. '지금은', '지금부터', '지금까지'처럼 다양한 조사와 결합하여 시간의 기준점을 제시하기도 합니다.",
+      "formation": "지금 + 절/서술어 (또는 조사 결합: 지금은, 지금부터)",
+      "examples": [
+        {
+          "translation": "지금 학교에 가야 해요. 수업이 곧 시작될 거예요."
+        },
+        {
+          "translation": "지금 비가 오고 있어요. 우산을 가져가는 게 좋을 것 같아요."
+        },
+        {
+          "translation": "지금 숙제를 하고 있어요. 나중에 전화할게요."
+        },
+        {
+          "translation": "지금 저희 집에 오시면 식사를 같이 할 수 있어요."
+        }
+      ]
+    },
+    "ko_이미_29": {
+      "title": "이미 (이전에 벌써 이루어졌음을 나타내는 부사)",
+      "shortExplanation": "어떤 일이나 상태가 기준이 되는 때보다 앞서 벌써 이루어졌음을 나타내는 시간부사입니다.",
+      "longExplanation": "'이미'는 말하는 때나 기준이 되는 특정 시점보다 앞서서 어떤 상태나 동작이 벌써 온전히 이루어졌음을 나타내는 시간부사입니다. 주로 과거 시제나 완료를 나타내는 서술어와 함께 쓰이며, 돌이킬 수 없는 기정사실임을 강조할 때 자주 사용됩니다.",
+      "formation": "이미 + 동사 (주로 과거형/완료형과 결합)",
+      "examples": [
+        {
+          "translation": "너는 이미 그 영화를 보았기 때문에, 또 보러 가는 게 무슨 의미가 있나요?"
+        },
+        {
+          "translation": "저는 이미 저녁을 먹었으니, 당신은 혼자 저녁을 드세요."
+        },
+        {
+          "translation": "작년에 이미 그 회사 주식을 팔았기 때문에, 이제는 아무런 손실도 없어요."
+        },
+        {
+          "translation": "이곳에 왔을 때, 해는 이미 떠 있었어요."
+        }
+      ]
+    }
+  }
+}

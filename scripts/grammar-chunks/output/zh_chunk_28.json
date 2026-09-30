@@ -1,0 +1,654 @@
+{
+  "vi": {
+    "zh_N似的_441": {
+      "title": "Danh từ + 似的 (Trợ từ so sánh: Giống như / Tựa như / Cứ như là... vậy)",
+      "shortExplanation": "Trợ từ đặt sau danh từ hoặc cụm từ biểu thị sự tương đồng, thường đi kèm với '像', '好像', '仿佛' ở phía trước; 'như', 'tựa như', 'cứ như... vậy'.",
+      "longExplanation": "'似的' (thường đọc là shìde, trong văn thơ đôi khi đọc sìde) là trợ từ so sánh đứng sau danh từ, đại từ hoặc cụm đoản ngữ để tạo thành cụm trợ từ biểu thị sự giống nhau về hình thái, trạng thái hoặc tính chất giữa hai đối tượng. Cấu trúc này thường kết hợp nhịp nhàng với các phó từ hoặc động từ so sánh ở phía trước như '像' (xiàng), '好像' (hǎoxiàng), '仿佛' (fǎngfú), tạo thành dạng cố định '像……似的' hoặc '好像……似的'. Tương đương với 'như...', 'giống như...', 'cứ như là... vậy' trong tiếng Việt.",
+      "formation": "(像 / 好像 / 仿佛 +) Danh từ / Cụm từ + 似的",
+      "examples": [
+        {
+          "translation": "Tôi không dám tin đây là sự thật, cứ như đang nằm mơ vậy."
+        }
+      ]
+    },
+    "zh_A得什么似的_442": {
+      "title": "Tính từ + 得什么似的 (Bổ ngữ trình độ cực độ: ... ơi là ... / ... đến mức không tả nổi / Vô cùng...)",
+      "shortExplanation": "Bổ ngữ trình độ khẩu ngữ biểu thị trạng thái hoặc mức độ đạt đến mức tột cùng, không gì sánh bằng; '... ơi là ...', '... không tả xiết'.",
+      "longExplanation": "'得什么似的' (dé shénme shìde) là cấu trúc bổ ngữ trình độ mang tính khẩu ngữ sinh động và cường điệu cao. Nó đứng sau tính từ miêu tả tính chất hoặc động từ biểu thị trạng thái tâm lý (như 累 - mệt, 忙 - bận, 高兴 - mừng rỡ, 气 - tức giận, 美 - đẹp đẽ...), biểu thị mức độ sâu sắc hoặc mãnh liệt đến mức dường như không từ ngữ nào có thể lột tả hết được. Tương đương với 'vô cùng...', 'hết sức...', '... ơi là ...', '... đến không tả nổi' trong tiếng Việt.",
+      "formation": "Tính từ / Động từ tâm lý + 得什么似的",
+      "examples": [
+        {
+          "translation": "Anh ấy đeo chiếc ba lô đựng máy tính nặng trịch chen chúc trên tàu điện ngầm, tan làm về đến nhà mệt ơi là mệt."
+        }
+      ]
+    },
+    "zh_纷纷V_443": {
+      "title": "纷纷 + Động từ (Phó từ: Nối tiếp nhau / Đua nhau / Lần lượt / Dồn dập)",
+      "shortExplanation": "Phó từ biểu thị nhiều người hoặc sự vật nối tiếp nhau thực hiện một hành động trong khoảng thời gian ngắn; 'lần lượt', 'đua nhau', 'nườm nượp'.",
+      "longExplanation": "'纷纷' (fēnfēn) là phó từ đứng trước động từ. Nó biểu thị số lượng nhiều người hoặc sự vật (chủ ngữ nhất thiết phải ở số nhiều hoặc là danh từ tập thể) tiếp nối nhau thực hiện một động tác, hết người này đến người khác không ngớt, hoặc sự việc diễn ra dồn dập, rải rác nhưng liên tục. Tương đương với 'lần lượt', 'tiếp nhau', 'đua nhau', 'tấp nập', 'nối đuôi nhau' trong tiếng Việt.",
+      "formation": "Chủ ngữ (số nhiều / tập thể) + 纷纷 + Động từ",
+      "examples": [
+        {
+          "translation": "Trời sắp đổ mưa rồi, những người đi đường đua nhau chạy vội về nhà."
+        }
+      ]
+    },
+    "zh_瞎_444": {
+      "title": "瞎 (Tính từ / Động từ: Mù / Mất thị lực / Hỏng mắt)",
+      "shortExplanation": "Tính từ hoặc động từ chỉ trạng thái mắt bị mất thị lực, không nhìn thấy được; 'mù', 'hỏng mắt'.",
+      "longExplanation": "'瞎' (xiā) có nghĩa gốc là mất đi thị lực, mắt bị mù, không thể nhìn thấy ánh sáng hoặc sự vật xung quanh. Từ này có thể dùng làm vị ngữ (như 眼睛瞎了 - mắt đã mù), làm định ngữ cho danh từ (như 瞎子 - người mù, 瞎马 - ngựa mù), hoặc làm động từ (bị mù). Tương đương với 'mù', 'mất thị lực', 'hỏng mắt' trong tiếng Việt.",
+      "formation": "(眼睛 +) 瞎 (+ 了) / 瞎 + Danh từ",
+      "examples": [
+        {
+          "translation": "Một ngày nọ, ông ấy sai các binh lính đi tìm một con voi và một vài người bị mù bẩm sinh đem về."
+        }
+      ]
+    },
+    "zh_瞎_445": {
+      "title": "瞎 + Động từ (Phó từ: Mù quáng / Lung tung / Vô cớ / Bừa bãi / Hão)",
+      "shortExplanation": "Phó từ đứng trước động từ biểu thị hành động không có căn cứ, không có mục đích, mù quáng hoặc vô ích; 'mù quáng', 'bừa bãi', 'lung tung'.",
+      "longExplanation": "'瞎' (xiā) là phó từ đứng trước động từ. Nó mang ý nghĩa phái sinh biểu thị hành vi thực hiện một cách mù quáng, lung tung, bừa bãi, thiếu cơ sở thực tế hoặc hoàn toàn không mang lại hiệu quả thiết thực. Thường đi kèm với các động từ chỉ suy nghĩ, nói năng hoặc hành động như: '瞎说' (nói bừa, nói nhảm), '瞎想' (nghĩ ngợi lung tung), '瞎操心 / 瞎担心' (lo hão, lo bò trắng răng), '瞎闹' (làm loạn vô cớ). Tương đương với 'mù quáng', 'vô cớ', 'lung tung', 'bừa bãi' trong tiếng Việt.",
+      "formation": "(别 / 不用 +) 瞎 + Động từ",
+      "examples": [
+        {
+          "translation": "Anh ấy sẽ tự có cách giải quyết thôi, bạn đừng có lo lắng vô cớ thay cho anh ấy nữa."
+        }
+      ]
+    },
+    "zh_分别_446": {
+      "title": "分别 (Động từ / Danh từ: Chia tay / Từ biệt / Xa cách / Sự ly biệt)",
+      "shortExplanation": "Động từ biểu thị sự rời xa nhau sau thời gian gắn bó, hoặc danh từ chỉ sự ly biệt, xa cách; 'chia tay', 'từ biệt'.",
+      "longExplanation": "'分别' (fēnbié) là động từ chỉ hành động rời xa nhau của hai hay nhiều người sau khi cùng ở chung một nơi hoặc gắn bó trong một khoảng thời gian, tương đương với '离别' (ly biệt) hay '分开' (chia tay). Từ này cũng có thể được danh từ hóa để chỉ cuộc chia tay, sự xa cách. Thường dùng trong bối cảnh tình cảm bạn bè, người thân chia tay trước khi lên đường. Tương đương với 'chia tay', 'từ biệt', 'xa cách' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 分别 / 分别 + 是...",
+      "examples": [
+        {
+          "translation": "Chia tay chỉ là tạm thời thôi, sau này chúng ta nhất định sẽ gặp lại nhau."
+        }
+      ]
+    },
+    "zh_分别_447": {
+      "title": "分别 (Danh từ: Sự khác biệt / Điểm khác nhau / Sai khác)",
+      "shortExplanation": "Danh từ chỉ sự khác nhau hoặc ranh giới phân biệt giữa các sự vật, đối tượng; 'sự khác biệt', 'điểm khác nhau'.",
+      "longExplanation": "'分别' (fēnbié) đóng vai trò là danh từ, mang ý nghĩa là sự sai khác, điểm bất đồng hoặc ranh giới phân biệt giữa hai hay nhiều đối tượng, tương đương với '区别' (khác biệt) hoặc '不同之处'. Thường xuất hiện trong các cấu trúc như '有什么分别' (có điểm gì khác nhau), '……和……没有分别' (không có gì khác biệt). Tương đương với 'sự khác biệt', 'điểm khác nhau' trong tiếng Việt.",
+      "formation": "(……和……) 有 / 没有 + 分别 / 有什么分别",
+      "examples": [
+        {
+          "translation": "Tôi không biết giữa hai cách làm này có điểm gì khác nhau cả."
+        }
+      ]
+    },
+    "zh_分别_448": {
+      "title": "分别 + Động từ (Phó từ: Riêng rẽ / Tách biệt / Từng người một / Độc lập)",
+      "shortExplanation": "Phó từ biểu thị hành động được thực hiện riêng biệt, độc lập cho từng đối tượng chứ không làm cùng nhau; 'riêng rẽ', 'tách biệt'.",
+      "longExplanation": "'分别' (fēnbié) là phó từ đứng trước động từ. Nó biểu thị hành động được thực hiện một cách riêng rẽ, độc lập, từng người hoặc từng việc một cách phân tách chứ không làm chung một chỗ hay cùng một lúc. Tương đương với 'riêng rẽ', 'độc lập', 'tách biệt', 'từng người một' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 分别 + Động từ + Tân ngữ",
+      "examples": [
+        {
+          "translation": "Tôi đã tìm hỏi riêng hai người về chuyện này, cách nói của họ đều hoàn toàn giống nhau."
+        }
+      ]
+    },
+    "zh_分别_449": {
+      "title": "分别 (Phó từ đối ứng: Lần lượt là / Tương ứng là / Theo thứ tự là)",
+      "shortExplanation": "Phó từ biểu thị mối quan hệ tương ứng đối chiếu một-một giữa hai danh sách sự vật theo đúng thứ tự liệt kê; 'lần lượt là', 'tương ứng là'.",
+      "longExplanation": "'分别' (fēnbié) là phó từ biểu thị mối quan hệ tương ứng từng đôi một theo thứ tự giữa các đối tượng ở hai vế câu. Tức là đối tượng thứ nhất ở vế trước tương ứng với nội dung thứ nhất ở vế sau, đối tượng thứ hai tương ứng với nội dung thứ hai (tương đương 'respectively' trong tiếng Anh). Thường đi liền với '是' hoặc các động từ chỉ số liệu, xuất xứ. Tương đương với 'lần lượt là', 'tương ứng là', 'theo thứ tự là' trong tiếng Việt.",
+      "formation": "Danh từ 1 和 Danh từ 2 + 分别 + 是 / Động từ + Nội dung 1 和 Nội dung 2",
+      "examples": [
+        {
+          "translation": "Đá cát kết và đá cuội kết lần lượt là sản phẩm đông kết của cát và sỏi."
+        }
+      ]
+    },
+    "zh_根_450": {
+      "title": "Số từ + 根 + Danh từ (Lượng từ: Sợi / Que / Cây / Cọng / Thanh)",
+      "shortExplanation": "Lượng từ dùng cho các đồ vật thon dài, dạng que, thanh hoặc sợi (dây thừng, kim, tóc, gậy, chuối...); 'sợi', 'que', 'cây'.",
+      "longExplanation": "'根' (gēn) là lượng từ chuyên dùng cho các sự vật có hình dáng thon dài, hình que, hình trụ mảnh hoặc dạng sợi. Các danh từ thường kết hợp với '根' bao gồm: dây thừng (绳子), sợi tóc (头发), cây kim (针), que củi (木棍), ngón tay (手指), khúc xương (骨头), điếu thuốc (烟), cây chuối/quả chuối (香蕉)... Tương đương với 'sợi', 'que', 'cây', 'cọng', 'thanh' trong tiếng Việt.",
+      "formation": "Số từ + 根 + Danh từ (vật thon dài / sợi / que / thanh)",
+      "examples": [
+        {
+          "translation": "Người khiếm thị sờ trúng phần đuôi nói rằng con voi giống như một sợi dây thừng."
+        }
+      ]
+    },
+    "zh_根_451": {
+      "title": "根 (Danh từ: Rễ cây / Gốc rễ / Cội nguồn / Căn nguyên)",
+      "shortExplanation": "Danh từ chỉ bộ phận rễ của thực vật hút dinh dưỡng dưới đất, hoặc nghĩa chuyển chỉ cội nguồn, gốc rễ của sự vật; 'rễ', 'gốc rễ'.",
+      "longExplanation": "'根' (gēn) là danh từ có nghĩa gốc chỉ rễ cây, bộ phận của thực vật phát triển trong đất để hút nước và dưỡng chất, nâng đỡ thân cây. Nghĩa mở rộng và trừu tượng của nó chỉ cội nguồn, gốc rễ, nguồn gốc ban đầu hoặc căn bản của sự vật hiện tượng (như 根本 - căn bản, 根源 - căn nguyên, 扎根 - cắm rễ). Tương đương với 'rễ', 'gốc rễ', 'căn nguyên' trong tiếng Việt.",
+      "formation": "Danh từ (thực vật / sự vật) + 的 + 根",
+      "examples": [
+        {
+          "translation": "Rễ của cái cây này vừa to vừa dài."
+        }
+      ]
+    },
+    "zh_便_452": {
+      "title": "便 + Động từ / Tính từ (Phó từ văn viết: Liền / Bèn / Thì / Ngay)",
+      "shortExplanation": "Phó từ văn viết tương đương với '就', đứng trước vị ngữ biểu thị hành động diễn ra nối tiếp ngay sau hoặc là kết quả tất nhiên của tình huống trước; 'liền', 'bèn', 'thì'.",
+      "longExplanation": "'便' (biàn) là phó từ mang phong cách văn viết trang trọng, tương đương với '就' (jiù) trong khẩu ngữ. Khi đứng trước động từ hoặc tính từ trong phân câu sau, '便' biểu thị: (1) Hành động xảy ra nhanh chóng, tiếp nối ngay tức khắc sau sự việc ở phân câu trước; (2) Kết quả nảy sinh một cách đương nhiên, thuận lý thành chương từ điều kiện hoặc tiền đề đã nêu. Tương đương với 'liền', 'bèn', 'thì', 'ngay lập tức' trong tiếng Việt.",
+      "formation": "Phân câu 1 (tiền đề / sự kiện)，(Chủ ngữ +) 便 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Tầng trên mới mua một chiếc đàn piano, nhà chúng tôi bèn có thêm một chút ồn ào bất an."
+        }
+      ]
+    },
+    "zh_倒反倒_453": {
+      "title": "倒 / 反倒 (Phó từ chuyển ngoặt: Trái lại / Ngược lại / Ngược đời)",
+      "shortExplanation": "Phó từ biểu thị tình huống hoặc kết quả diễn ra hoàn toàn ngược lại với lẽ thường tình, mong muốn hoặc suy đoán tự nhiên; 'trái lại', 'ngược lại'.",
+      "longExplanation": "'倒' (dào) hoặc '反倒' (fǎndào) là phó từ chuyển ngoặt đứng trước vị ngữ ở phân câu sau. Chúng dùng để nhấn mạnh sự việc, hiện tượng phát triển theo chiều hướng hoàn toàn đối lập với quy luật thông thường, trái ngược với dự đoán ban đầu hay mong ước của mọi người. Nghĩa tương đương với '反而' (fǎn'ér). '反倒' mang ngữ khí chuyển ngoặt bất ngờ và mạnh mẽ hơn một chút so với '倒'. Tương đương với 'trái lại', 'ngược lại', 'đằng này lại...' trong tiếng Việt.",
+      "formation": "Phân câu 1 (tiền đề)，(Chủ ngữ +) 倒 / 反倒 + Động từ / Tính từ",
+      "examples": []
+    },
+    "zh_倒_455": {
+      "title": "倒 / 倒是 (Phó từ nhượng bộ: Thì có... thật / Quả thực / Được cái là...)",
+      "shortExplanation": "Phó từ biểu thị sự nhượng bộ, thừa nhận một mặt tích cực hoặc sự thật trước khi chuyển ngoặt sang nêu khuyết điểm; 'thì... thật', 'được cái'.",
+      "longExplanation": "'倒' (dào) hoặc '倒是' (dàoshi) là phó từ biểu thị sự nhượng bộ có điều kiện. Trong phân câu trước, người nói dùng '倒 / 倒是' để khẳng định, thừa nhận một ưu điểm, mặt tích cực hoặc một sự thật khách quan (như chất lượng tốt, người nhiệt tình...). Sau đó, phân câu đi sau sẽ dùng các từ chuyển ngoặt như '就是' (chỉ có điều là), '只是' (nhưng mà), '但是' (nhưng) để chỉ ra nhược điểm, hạn chế hay điều chưa được thỏa đáng. Tương đương với 'thì... thật đấy nhưng...', 'được cái là... chỉ tội...', 'quả thực là... có điều' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 倒 / 倒是 + Động từ / Tính từ，(nhưng / chỉ có điều là +) Phân câu 2",
+      "examples": [
+        {
+          "translation": "Chất lượng thì tốt thật đấy, chỉ có điều giá cả đắt quá."
+        }
+      ]
+    },
+    "zh_倒_456": {
+      "title": "倒 / 倒是 (Phó từ ngữ khí: Mau... xem / Thử... xem nào / Rốt cuộc thì... [thúc giục, chất vấn])",
+      "shortExplanation": "Phó từ dùng trong câu nghi vấn hoặc cầu khiến để biểu thị sự thúc giục, sốt ruột, bất bình hoặc chất vấn; 'mau', 'thử... xem nào', 'rốt cuộc'.",
+      "longExplanation": "'倒' (dào) hoặc '倒是' (dàoshi) là phó từ ngữ khí thường dùng trong câu cầu khiến, thúc giục hoặc câu hỏi tu từ, chất vấn. Nó diễn tả tâm trạng sốt ruột, nôn nóng, bức xúc hoặc không kiên nhẫn nổi của người nói đối với thái độ dùng dằng, im lặng hoặc thoái thác của đối phương. Nó có tác dụng thúc giục đối phương phải lập tức đưa ra câu trả lời, hành động hoặc giải thích rõ ràng ('nói mau xem', 'rốt cuộc thì...'). Tương đương với 'thử... xem nào', 'mau... đi chứ', 'rốt cuộc thì...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 倒 / 倒是 + Động từ (+ Tân ngữ / Xem thử)",
+      "examples": [
+        {
+          "translation": "Bạn thử nói ra xem nào, việc này mà bạn không chịu trách nhiệm thì ai chịu trách nhiệm đây?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_N似的_441": {
+      "title": "名詞 ＋ 似的（助詞：〜のようだ・まるで〜みたいだ）",
+      "shortExplanation": "名詞や語句の後に付き、ある事物や状態に類似していることを表す比況助詞です（「〜のようだ」「〜みたいだ」）。",
+      "longExplanation": "「似的」（shìde）は比況助詞として名詞、代名詞、あるいはフレーズの直後に置かれ、「〜のようだ」「〜そっくりだ」という意味を表します。文頭や述語部分に「像」「好像」「仿佛」などの語を伴い、「像……似的」や「好像……似的」（まるで〜のようだ）という呼応形式で用いられることが非常に一般的です。比喩表現として外見、様子、心理状態などを生き生きと描写する際に活躍します。日本語の「（まるで）〜のようだ」「〜みたいだ」に相当します。",
+      "formation": "（像 / 好像 / 仿佛 ＋）名詞 / フレーズ ＋ 似的",
+      "examples": [
+        {
+          "translation": "これが真実だとは信じられず、まるで夢を見ているかのようでした。"
+        }
+      ]
+    },
+    "zh_A得什么似的_442": {
+      "title": "形容詞 ＋ 得什么似的（程度補語：この上なく〜だ・〜でたまらない・ものすごく〜だ）",
+      "shortExplanation": "形容詞の後に付き、その程度が言葉では言い表せないほど極めて高いことを誇張して表す口語の程度補語です（「ものすごく〜だ」「〜でたまらない」）。",
+      "longExplanation": "「得什么似的」（dé shénme shìde）は口語で多用される誇張的な程度補語表現です。状態を表す形容詞や感情を表す心理動詞（「累」「忙」「高兴」「急」など）の後ろに置かれ、その状態や感情が「何か例えようもないほど凄まじい」「この上なく極限に達している」ことを生き生きと表現します。「累得什么似的」（疲れ果てて死にそうだ）、「高兴得什么似的」（嬉しくて飛び上がりそうだ）のように使われます。日本語の「ものすごく〜だ」「この上なく〜だ」「〜でたまらない」に相当します。",
+      "formation": "形容詞 / 心理動詞 ＋ 得什么似的",
+      "examples": [
+        {
+          "translation": "彼は重いパソコンバッグを背負って満員地下鉄に揺られ、仕事が終わって帰宅すると、この上なく疲れ果てていました。"
+        }
+      ]
+    },
+    "zh_纷纷V_443": {
+      "title": "纷纷 ＋ 動詞（副詞：次々と・続々と・こぞって）",
+      "shortExplanation": "多くの人や物が次から次へと引き続いて同じ動作を行うことを表す副詞です（「次々と」「続々と」「こぞって」）。",
+      "longExplanation": "「纷纷」（fēnfēn）は副詞として動詞の前に置かれ、主語となる多くの人々や事物（主語は必ず複数または集団を表す名詞）が、途切れることなく次々と引き続いて動作を行う様子を表します。「人々が相次いで〜する」「競うようにして〜する」という情景を生き生きと叙述します。日本語の「次から次へと」「続々と」「相次いで」「こぞって」に相当します。",
+      "formation": "主語（複数・集団） ＋ 纷纷 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "雨が降りそうになり、道行く人々は次々と競うように家へ走って帰りました。"
+        }
+      ]
+    },
+    "zh_瞎_444": {
+      "title": "瞎（形容詞 / 動詞：目が見えない・盲目である・失明する）",
+      "shortExplanation": "視力を失って物が見えない状態、あるいは失明することを表します（「目が見えない」「盲目である」）。",
+      "longExplanation": "「瞎」（xiā）の本義は、目が見えないこと、視力を失っていること、あるいは失明することを表す形容詞または動詞です。述語として「眼睛瞎了」（目が潰れた、失明した）のように用いられたり、名詞の前に付いて連体修飾語（「瞎子」目の見えない人、盲人など）となったりします。日本語の「目が見えない」「盲目である」「失明する」に相当します。",
+      "formation": "（眼睛 ＋）瞎（＋ 了）/ 瞎 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "ある日、王は兵士たちに命じて、一頭の象と生まれつき目の見えない人たちを何人か連れて来させました。"
+        }
+      ]
+    },
+    "zh_瞎_445": {
+      "title": "瞎 ＋ 動詞（副詞：やたらと・みだりに・無駄に・わけもなく）",
+      "shortExplanation": "動詞の前に付き、根拠や目的もなく、無闇に、あるいは無駄に行動することを表す副詞です（「やたらと」「みだりに」「わけもなく」）。",
+      "longExplanation": "「瞎」（xiā）は派生義として動詞の前で副詞として用いられます。明確な根拠や目的を持たず、無分別に、あるいは無駄に行動することを示します。「瞎说」（出任せを言う）、「瞎想」（余計な邪推をする、あれこれ思い悩む）、「瞎担心 / 瞎操心」（取り越し苦労をする）、「瞎忙」（空回りして無駄に忙しい）などの形で頻繁に用いられます。日本語の「やたらと」「見境なく」「みだりに」「無駄に」「わけもなく」に相当します。",
+      "formation": "（别 / 不用 ＋）瞎 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "彼は自分でなんとか方法を考えるでしょうから、あなたが代わりに無駄な心配（取り越し苦労）をする必要はありません。"
+        }
+      ]
+    },
+    "zh_分别_446": {
+      "title": "分别（動詞 / 名詞：別れる・別離・離別する）",
+      "shortExplanation": "互いに離れて別れ別れになること、あるいは別離そのものを表します（「別れる」「離別する」）。",
+      "longExplanation": "「分别」（fēnbié）は動詞として、同じ場所にいた人同士が互いに離れて別れること、別離することを意味します（「离别」や「分开」に相当）。また名詞として「別れ」「離別」そのものを指すこともできます。友人や家族との旅立ちや惜別の場面でよく用いられます。日本語の「別れる」「離れる」「別離（する）」に相当します。",
+      "formation": "主語 ＋ 分别 / 分别 ＋ 是…",
+      "examples": [
+        {
+          "translation": "別れは一時的なものです。私たちは将来きっとまた再会できます。"
+        }
+      ]
+    },
+    "zh_分别_447": {
+      "title": "分别（名詞：違い・相違点・区別）",
+      "shortExplanation": "事物間の相違点や違い、区別を表す名詞です（「違い」「相違点」「区別」）。",
+      "longExplanation": "「分别」（fēnbié）は名詞として用いられ、二つ以上の事物の間にある違い、差異、あるいは区別を表します。「区别」や「不同之处」とほぼ同義です。「有什么分别」（どのような違いがあるのか）や「没有分别」（違いがない）などのパターンでよく使われます。日本語の「違い」「差異」「区別」に相当します。",
+      "formation": "（……和……）有 / 没有 ＋ 分别 / 有什么分别",
+      "examples": [
+        {
+          "translation": "私にはこれら二つのやり方にどのような違いがあるのか分かりません。"
+        }
+      ]
+    },
+    "zh_分别_448": {
+      "title": "分别 ＋ 動詞（副詞：別々に・個別に・それぞれ単独で）",
+      "shortExplanation": "動作を一括してではなく、それぞれ別個に、単独で行うことを表す副詞です（「別々に」「個別に」）。",
+      "longExplanation": "「分别」（fēnbié）は動詞を修飾する副詞として、複数の対象に対して動作を一括して行うのではなく、一つ一つ別々に、個別に切り離して行うことを表します。「各自」「単独で」「個別に」というニュアンスを含みます。日本語の「別々に」「個別に」「それぞれ単独で」に相当します。",
+      "formation": "主語 ＋ 分别 ＋ 動詞 ＋ 目的語",
+      "examples": [
+        {
+          "translation": "私はその件について二人の人に別々に尋ねてみましたが、彼らの話はどちらも全く同じでした。"
+        }
+      ]
+    },
+    "zh_分别_449": {
+      "title": "分别（副詞：それぞれ順に・それぞれ対応して・めいめい）",
+      "shortExplanation": "前後の二つの項目群が、順序に従って一対一に対応していることを表す副詞です（「それぞれ順に」「それぞれ〜である」）。",
+      "longExplanation": "「分别」（fēnbié）は副詞として、列挙された二組の事柄が一対一で順序通りに対応している関係を示します（英語の「respectively」に相当）。「項目Aと項目Bは、それぞれ順に〜と〜である」というように、前後の要素を正しく対応させて説明する学術的文章や説明文で非常に多く用いられます。日本語の「それぞれ順に」「それぞれ対応して」「各々」に相当します。",
+      "formation": "名詞1 和 名詞2 ＋ 分别 ＋ 是 / 動詞 ＋ 内容1 和 内容2",
+      "examples": [
+        {
+          "translation": "砂岩と礫岩は、それぞれ順に砂と小石が固結してできた産物です。"
+        }
+      ]
+    },
+    "zh_根_450": {
+      "title": "数詞 ＋ 根 ＋ 名詞（量詞：〜本・〜筋・〜本【細長い物】）",
+      "shortExplanation": "ひも状や棒状など、細くて長い形状の事物を数える量詞です（「〜本」「〜筋」）。",
+      "longExplanation": "「根」（gēn）は細長い棒状、円筒状、またはひも状・繊維状の物体を数えるための量詞です。よく用いられる組み合わせには、「绳子」（ロープ、縄）、「头发」（髪の毛）、「针」（針）、「木棍」（木の棒）、「香蕉」（バナナ）、「骨头」（骨）、「手指」（指）、「烟」（タバコ）などがあります。日本語の「〜本」「〜筋」に相当します。",
+      "formation": "数詞 ＋ 根 ＋ 名詞（細長い棒状・ひも状のもの）",
+      "examples": [
+        {
+          "translation": "尻尾を触った盲人は、象は一本の縄のようだと言いました。"
+        }
+      ]
+    },
+    "zh_根_451": {
+      "title": "根（名詞：根・植物の根・物事の根本・根源）",
+      "shortExplanation": "植物の根、または物事の根本や起源・出所を表す名詞です（「根」「根本」）。",
+      "longExplanation": "「根」（gēn）は名詞として、植物が土壌中に伸ばして水分や栄養分を吸収する「根」を指します。また比喩的・抽象的な用法として、物事の根元、根幹、根源、根本的な拠り所を指すこともできます（「根本」「根源」「寻根」など）。日本語の「根」「根本」「ルーツ」に相当します。",
+      "formation": "名詞（植物・事物） ＋ 的 ＋ 根",
+      "examples": [
+        {
+          "translation": "この木の根は太くて長いです。"
+        }
+      ]
+    },
+    "zh_便_452": {
+      "title": "便 ＋ 動詞 / 形容詞（書き言葉の副詞：すぐに・たちまち・〜となる・〜すれば…だ）",
+      "shortExplanation": "口語の「就」に相当する書き言葉の副詞で、前の事態を受けてすぐに次の事態が生じることや、当然の結果を表します（「すぐに」「たちまち」「〜となる」）。",
+      "longExplanation": "「便」（biàn）は書面語で多用される副詞で、口語の「就」に相当します。後続の節の動詞や形容詞の前に置かれ、(1) 前節の事態に引き続いてすぐに動作や状況が生じること、(2) 前節の条件や原因から当然の結果として導かれることを表します。文章に簡潔で引き締まった格調高い響きを与えます。日本語の「すぐに」「たちまち」「即座に」「〜となる」「〜すれば…だ」に相当します。",
+      "formation": "節1（前提・原因），（主語 ＋）便 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "上の階に新しいピアノが置かれたことで、我が家にはたちまち騒がしさが増してしまいました。"
+        }
+      ]
+    },
+    "zh_倒反倒_453": {
+      "title": "倒 / 反倒（副詞：かえって・逆に・反対に）",
+      "shortExplanation": "通常の常識、道理、事前の予想や意図とは正反対の結果になることを表す副詞です（「かえって」「逆に」）。",
+      "longExplanation": "「倒」（dào）および「反倒」（fǎndào）は後続の節で述語の前に置かれる副詞で、物事の成り行きや結果が通常の常識、筋道、事前の予測、あるいは期待とは真逆に展開したことを示します。「反而」とほぼ同義であり、「反倒」の方がやや語気が強く対比が鮮明になります。「良かれと思ってやったのに、かえって事態が悪化した」といった逆転の文脈で多用されます。日本語の「かえって」「逆に」「反対に」に相当します。",
+      "formation": "節1（前提・前置き），（主語 ＋）倒 / 反倒 ＋ 動詞 / 形容詞",
+      "examples": []
+    },
+    "zh_倒_455": {
+      "title": "倒 / 倒是（副詞：〜は〜だが・確かに〜ではあるが【譲歩】）",
+      "shortExplanation": "譲歩を表す副詞で、まずある事実や長所を一応肯定した上で、後節で逆接の語を用いて欠点や不足点を述べます（「〜は〜だが」「確かに〜ではある」）。",
+      "longExplanation": "「倒」（dào）または「倒是」（dàoshi）は譲歩のニュアンスを表す副詞です。前節でまず相手の意見やある事実、物事の一面（長所や肯定的な面）を「確かに〜ではある」「〜なのは事実だが」と素直に認めた上で、後節に「就是」「只是」「但是」などの逆接の接続詞を伴い、問題点、不満、あるいは欠点を提示します。会話を和らげつつ控えめに不満や対比を述べる効果があります。日本語の「〜は確かに〜だが」「〜ではあるものの」に相当します。",
+      "formation": "（主語 ＋）倒 / 倒是 ＋ 動詞 / 形容詞，（就是 / 只是 / 但是 ＋）節2",
+      "examples": [
+        {
+          "translation": "品質は確かにとても良いのですが、ただ値段が高すぎます。"
+        }
+      ]
+    },
+    "zh_倒_456": {
+      "title": "倒 / 倒是（副詞：さっさと・一体・早く〜してみなさい【催促・詰問】）",
+      "shortExplanation": "命令文、疑問文、反語文で用いられ、相手に行動や返答を急かしたり、焦りや詰問の語気を強めたりする副詞です（「さっさと〜しろ」「一体〜なのか」）。",
+      "longExplanation": "「倒」（dào）または「倒是」（dàoshi）は話し手の焦燥感、不満、あるいは強い催促・詰問の語気を表す副詞です。相手がぐずぐずして口を開かなかったり態度を明らかにしないときに、「さっさと話せ」「早くやってみろ」と行動を急かしたり、反語文や疑問文で「なら一体誰がやるというのか」と相手を問い詰めたりする場面で用いられます。日本語の「さっさと〜してみろ」「早く〜しなさい」「一体〜だというのか」に相当します。",
+      "formation": "主語 ＋ 倒 / 倒是 ＋ 動詞（＋ 目的語 / てみる）",
+      "examples": [
+        {
+          "translation": "さあ言ってみなさいよ、この件であなたが責任を取らないなら、一体誰が取るというのですか？"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_N似的_441": {
+      "title": "명사 + 似的 (조사: 마치 ~인 것 같다, ~처럼, ~같이)",
+      "shortExplanation": "명사나 어구 뒤에 붙어 모양이나 상태가 비슷함을 나타내는 비유 조사입니다('마치 ~같다', '~처럼').",
+      "longExplanation": "'似的'(shìde)는 명사, 대명사 또는 어구 뒤에 붙어 그것과 비슷하거나 동일함을 나타내는 비유 조사입니다. 문장 앞부분의 '像', '好像', '仿佛' 등과 함께 호응하여 '像……似的' 또는 '好像……似的' 구조로 매우 자주 사용되며, 생생한 비유적 묘사를 완성합니다. 한국어의 '마치 ~와 같다', '마치 ~인 것처럼', '~같이'에 해당합니다.",
+      "formation": "(像 / 好像 / 仿佛 +) 명사 / 어구 + 似的",
+      "examples": [
+        {
+          "translation": "저는 이것이 사실이라는 게 믿기지 않아, 마치 꿈을 꾸는 것 같았습니다."
+        }
+      ]
+    },
+    "zh_A得什么似的_442": {
+      "title": "형용사 + 得什么似的 (정도보어: 말도 못하게 ~하다, 둘도 없이 ~하다, 아주 ~해 죽겠다)",
+      "shortExplanation": "형용사 뒤에 쓰여 그 상태나 정도가 비할 데 없이 극심함을 과장되게 나타내는 구어 정도보어입니다('말도 못하게 ~하다', '엄청나게 ~하다').",
+      "longExplanation": "'得什么似的'(dé shénme shìde)는 구어에서 감정이나 상태의 극치를 생생하고 과장되게 묘사하는 정도보어 관용 표현입니다. 성질이나 감정을 나타내는 형용사 및 심리 동사(累, 忙, 高兴, 气, 乐 등) 뒤에 쓰여, 그 상태가 도저히 무엇이라 형용할 수 없을 정도로 지극함(극단적인 수준)을 나타냅니다. 한국어의 '말도 못하게 ~하다', '엄청나게 ~하다', '~해 죽겠다'에 해당합니다.",
+      "formation": "형용사 / 심리 동사 + 得什么似的",
+      "examples": [
+        {
+          "translation": "그는 무거운 노트북 가방을 메고 지하철에 시달리며 출퇴근하더니, 퇴근하고 집에 돌아와서는 말도 못하게 피곤해했습니다."
+        }
+      ]
+    },
+    "zh_纷纷V_443": {
+      "title": "纷纷 + 동사 (부사: 잇따라, 저마다, 너도나도, 줄지어)",
+      "shortExplanation": "많은 사람이나 사물이 잇따라 계속해서 어떤 동작을 취함을 나타내는 부사입니다('잇따라', '너도나도', '줄지어').",
+      "longExplanation": "'纷纷'(fēnfēn)은 동사 앞에 놓이는 부사로, 다수의 사람이나 사물(주어는 반드시 복수형이거나 집단 명사)이 하나둘씩 연이어 계속해서 어떤 행동을 하거나 사건이 꼬리를 물고 일어남을 나타냅니다. '너도나도 앞다투어 ~하다', '줄지어 ~하다' 등의 의미를 지닙니다. 한국어의 '잇따라', '저마다', '너도나도', '줄지어'에 해당합니다.",
+      "formation": "주어 (복수·집단) + 纷纷 + 동사",
+      "examples": [
+        {
+          "translation": "비가 쏟아질 것 같자, 길 위의 사람들은 너도나도 앞다투어 집으로 달려갔습니다."
+        }
+      ]
+    },
+    "zh_瞎_444": {
+      "title": "瞎 (형용사 / 동사: 눈이 멀다, 실명하다, 시력을 잃다)",
+      "shortExplanation": "시력을 잃어 앞을 보지 못하는 상태이거나 실명함을 나타냅니다('눈이 멀다', '실명하다').",
+      "longExplanation": "'瞎'(xiā)의 본래 의미는 시력을 잃어 앞을 보지 못하는 상태이거나 눈이 머는 것을 의미하는 형용사 또는 동사입니다. 술어로 쓰여 '眼睛瞎了'(눈이 멀었다)처럼 쓰이거나, 관형어로 명사 앞에 놓여 '瞎子'(맹인, 시각장애인)와 같이 사람이나 대상을 수식합니다. 한국어의 '눈이 멀다', '실명하다', '장님이 되다'에 해당합니다.",
+      "formation": "(眼睛 +) 瞎 (+ 了) / 瞎 + 명사",
+      "examples": [
+        {
+          "translation": "어느 날, 그는 군사들에게 코끼리 한 마리와 태어날 때부터 눈이 먼 사람 몇 명을 찾아오라고 명령했습니다."
+        }
+      ]
+    },
+    "zh_瞎_445": {
+      "title": "瞎 + 동사 (부사: 쓸데없이, 함부로, 무턱대고, 헛되이)",
+      "shortExplanation": "동사 앞에 놓여 아무런 근거와 목적 없이 무턱대고 행동하거나 쓸데없는 짓을 함을 나타내는 부사입니다('쓸데없이', '함부로', '무턱대고').",
+      "longExplanation": "'瞎'(xiā)은 파생적 의미로서 동사 앞에 놓이는 부사로 쓰입니다. 타당한 근거, 목적 또는 계획 없이 무턱대고 아무렇게나 행동하거나 헛수고를 하는 모습을 나타냅니다. '瞎说'(헛소리하다, 함부로 말하다), '瞎想'(엉뚱한 생각을 하다), '瞎操心 / 瞎担心'(쓸데없이 헛걱정하다), '瞎忙'(헛바쁘다) 등 일상 회화에서 널리 쓰입니다. 한국어의 '쓸데없이', '함부로', '무턱대고', '괜히'에 해당합니다.",
+      "formation": "(别 / 不用 +) 瞎 + 동사",
+      "examples": [
+        {
+          "translation": "그 사람이 알아서 방법을 찾아낼 테니, 너는 그 사람 대신 쓸데없이 헛걱정하지 마라."
+        }
+      ]
+    },
+    "zh_分别_446": {
+      "title": "分别 (동사 / 명사: 헤어지다, 이별하다, 작별하다, 이별)",
+      "shortExplanation": "서로 떨어져 헤어지거나 이별함을 나타내는 동사이자 그 이별을 뜻하는 명사입니다('헤어지다', '작별하다', '이별').",
+      "longExplanation": "'分别'(fēnbié)은 동사로서 함께 있던 사람들이 서로 떨어져 헤어지거나 작별하는 것을 뜻합니다('离别', '分开'에 상당). 문맥에 따라 명사화되어 '헤어짐', '작별', '이별' 자체를 가리키기도 합니다. 정든 친구나 동료와의 이별을 묘사할 때 자주 쓰입니다. 한국어의 '헤어지다', '작별하다', '이별하다'에 해당합니다.",
+      "formation": "주어 + 分别 / 分别 + 是...",
+      "examples": [
+        {
+          "translation": "헤어짐은 잠시일 뿐이며, 우리는 앞으로 반드시 다시 만날 것입니다."
+        }
+      ]
+    },
+    "zh_分别_447": {
+      "title": "分别 (명사: 차이, 구별, 다른 점)",
+      "shortExplanation": "사물들 사이의 차이점이나 다른 점을 나타내는 명사입니다('차이', '구별', '다른 점').",
+      "longExplanation": "'分别'(fēnbié)은 명사로서 둘 이상의 대상 사이에 존재하는 차이나 다른 점, 구별을 나타냅니다. '区别', '差异'와 유의어로 쓰이며, 주로 '有什么分别'(무슨 차이가 있는가), '没有分别'(차이가 없다) 등의 형태로 자주 사용됩니다. 한국어의 '차이', '구별', '다른 점'에 해당합니다.",
+      "formation": "(……和……) 有 / 没有 + 分别 / 有什么分别",
+      "examples": [
+        {
+          "translation": "저는 이 두 가지 방법 사이에 어떤 차이가 있는지 잘 모르겠습니다."
+        }
+      ]
+    },
+    "zh_分别_448": {
+      "title": "分别 + 동사 (부사: 따로따로, 개별적으로, 각자)",
+      "shortExplanation": "동작을 한꺼번에 묶어서 하지 않고 각 대상별로 따로따로 행함을 나타내는 부사입니다('따로따로', '개별적으로').",
+      "longExplanation": "'分别'(fēnbié)은 동사 앞에 놓이는 부사로, 여러 대상을 하나로 묶지 않고 각각 개별적으로, 독립적으로 나누어 동작을 실행함을 나타냅니다. '따로따로', '각각 나누어서'의 의미를 지닙니다. 한국어의 '따로따로', '개별적으로', '각자'에 해당합니다.",
+      "formation": "주어 + 分别 + 동사 + 목적어",
+      "examples": [
+        {
+          "translation": "제가 그 일에 대해 두 사람에게 따로따로 물어보았는데, 그들의 말은 모두 똑같았습니다."
+        }
+      ]
+    },
+    "zh_分别_449": {
+      "title": "分别 (부사: 각각 순서대로, 저마다 차례대로, 각기)",
+      "shortExplanation": "앞뒤에 나열된 대상들이 순서대로 일대일 대응함을 나타내는 부사입니다('각각 순서대로', '각기').",
+      "longExplanation": "'分别'(fēnbié)은 부사로서 앞뒤에 열거된 복수의 항목들이 순서에 따라 일대일로 상응하거나 대응함을 나타냅니다(영어의 'respectively'에 해당). 즉 첫째 항목은 앞선 내용에, 둘째 항목은 뒤선 내용에 대응됨을 명확히 밝힐 때 쓰이며, 설명문이나 학술문에서 빈번히 활용됩니다. 한국어의 '각각 (순서대로)', '각기', '저마다 대응하여'에 해당합니다.",
+      "formation": "명사1 和 명사2 + 分别 + 是 / 동사 + 내용1 和 내용2",
+      "examples": [
+        {
+          "translation": "사암과 역암은 각각 모래와 자갈이 굳어져 형성된 생성물입니다."
+        }
+      ]
+    },
+    "zh_根_450": {
+      "title": "수사 + 根 + 명사 (양사: 가닥, 개, 자루, 개비 【가늘고 긴 사물】)",
+      "shortExplanation": "줄 모양이나 막대 모양처럼 가늘고 길쭉한 사물을 세는 양사입니다('가닥', '개', '자루').",
+      "longExplanation": "'根'(gēn)은 가늘고 길쭉한 형태의 막대형, 원통형 또는 줄·실 형태의 사물을 세는 단위 양사입니다. 주로 '绳子'(밧줄), '头发'(머리카락), '针'(바늘), '木棍'(막대기), '手指'(손가락), '骨头'(뼈), '香蕉'(바나나), '烟'(담배) 등과 결합합니다. 한국어의 '가닥', '자루', '개', '개비' 등에 해당합니다.",
+      "formation": "수사 + 根 + 명사 (가늘고 긴 사물)",
+      "examples": [
+        {
+          "translation": "꼬리를 만져 본 맹인은 코끼리가 한 가닥의 밧줄 같다고 말했습니다."
+        }
+      ]
+    },
+    "zh_根_451": {
+      "title": "根 (명사: 뿌리, 근본, 근원)",
+      "shortExplanation": "식물의 뿌리, 또는 사물의 근본이나 근원을 나타내는 명사입니다('뿌리', '근본').",
+      "longExplanation": "'根'(gēn)은 명사로서 식물이 흙 속으로 뻗어 수분과 양분을 흡수하고 줄기를 지탱하는 '뿌리'를 가리킵니다. 또한 의미가 확장되어 사물의 근본, 근원, 바탕을 비유적으로 가리키기도 합니다('根本', '根源', '扎根' 등). 한국어의 '뿌리', '근원', '근본'에 해당합니다.",
+      "formation": "명사 (식물·사물) + 的 + 根",
+      "examples": [
+        {
+          "translation": "이 나무의 뿌리는 굵고도 깁니다."
+        }
+      ]
+    },
+    "zh_便_452": {
+      "title": "便 + 동사 / 형용사 (서면어 부사: 곧, 바로, 즉시, ~하게 되다)",
+      "shortExplanation": "구어의 '就'에 해당하는 서면어 부사로, 앞선 일에 이어 바로 뒤따라 발생하거나 자연스러운 결과를 나타냅니다('곧', '바로', '~하게 되다').",
+      "longExplanation": "'便'(biàn)은 주로 서면어(글말)에서 쓰이는 부사로, 구어의 '就'(jiù)에 대응합니다. 뒷절의 동사나 형용사 앞에 놓여, 앞 절의 동작이나 사건에 뒤이어 곧바로 다음 사건이 일어나거나, 앞선 원인·조건으로부터 자연스럽게 결과가 도출됨을 나타냅니다. 문장을 간결하고 격조 있게 만듭니다. 한국어의 '곧', '바로', '즉시', '~하게 되다'에 해당합니다.",
+      "formation": "절1 (전제·원인), (주어 +) 便 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "윗집에서 새로 피아노를 들이는 바람에, 우리 집에는 곧바로 소음과 부산함이 늘어났습니다."
+        }
+      ]
+    },
+    "zh_倒反倒_453": {
+      "title": "倒 / 反倒 (부사: 오히려, 반대로, 도리어)",
+      "shortExplanation": "상식, 도리, 일반적인 예상이나 의도와는 완전히 반대되는 결과가 생겨남을 나타내는 부사입니다('오히려', '반대로', '도리어').",
+      "longExplanation": "'倒'(dào)와 '反倒'(fǎndào)는 뒷절의 술어 앞에 쓰이는 전환 부사로, 일의 진행이나 결과가 일반적인 상식, 이치, 기대 또는 원래 의도와는 정반대의 방향으로 흘러갔음을 나타냅니다. '反而'와 의미상 거의 같으며, '反倒'는 반전과 의외성의 뉘앙스가 조금 더 뚜렷합니다. 좋은 의도로 한 일이 도리어 화가 되거나, 당연히 그러해야 할 상태와 반대의 일이 벌어질 때 주로 사용됩니다. 한국어의 '오히려', '반대로', '도리어'에 해당합니다.",
+      "formation": "절1 (전제 상황), (주어 +) 倒 / 反倒 + 동사 / 형용사",
+      "examples": []
+    },
+    "zh_倒_455": {
+      "title": "倒 / 倒是 (부사: ~하기는 ~하다만, 과연 ~하기는 한데 【양보】)",
+      "shortExplanation": "양보를 나타내는 부사로, 우선 한 가지 사실이나 장점을 인정해 둔 뒤 뒷절에서 부족한 점이나 결점을 지적합니다('~하기는 하다만', '과연 ~하지만').",
+      "longExplanation": "'倒'(dào) 또는 '倒是'(dàoshi)는 양보의 어기를 나타내는 부사입니다. 앞 절에서 먼저 상대방의 의견이나 대상의 한 가지 측면(장점이나 긍정적인 사실)을 '과연 ~하기는 하다', '~인 것은 맞다'라며 일단 수긍하여 인정한 후, 뒷절에서 '就是', '只是', '但是' 등을 사용하여 미흡한 점, 단점 또는 아쉬운 점을 덧붙입니다. 직설적인 비판을 피하고 완곡하게 지적할 때 유용합니다. 한국어의 '~하기는 하다만', '~이긴 한데'에 해당합니다.",
+      "formation": "(주어 +) 倒 / 倒是 + 동사 / 형용사, (就是 / 只是 / 但是 +) 절2",
+      "examples": [
+        {
+          "translation": "품질은 정말 좋기는 한데, 다만 가격이 너무 비싼 게 흠입니다."
+        }
+      ]
+    },
+    "zh_倒_456": {
+      "title": "倒 / 倒是 (부사: 어서, 어디 한번, 도대체 【재촉·추궁】)",
+      "shortExplanation": "명령문이나 의문문에서 상대방의 대답이나 행동을 재촉하거나, 답답함과 추궁의 어조를 드러내는 부사입니다('어서', '어디 한번', '도대체').",
+      "longExplanation": "'倒'(dào) 또는 '倒是'(dàoshi)는 화자의 조급함, 불만, 혹은 강한 재촉과 추궁의 어기를 나타내는 부사입니다. 상대방이 대답을 미루거나 행동을 주저할 때 '어서 말해 보아라', '빨리 해 보아라' 하고 재촉하거나, 반어적 의문문에서 '네가 안 하면 도대체 누가 하겠느냐'며 따져 물을 때 사용됩니다. 한국어의 '어서', '빨리', '어디 한번 ~해 봐라', '도대체'에 해당합니다.",
+      "formation": "주어 + 倒 / 倒是 + 동사 (+ 목적어 / 어 보다)",
+      "examples": [
+        {
+          "translation": "어디 한번 말해 보시죠, 이 일에 당신이 책임을 안 지면 도대체 누가 책임을 진단 말입니까?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_N似的_441": {
+      "title": "名词 + 似的（助词：表示比拟，相当于“……一样”）",
+      "shortExplanation": "比况助词，用在名词或词组后面，表示跟某种事物或情况相似；常与“像、好像、仿佛”搭配使用，相当于“……一样”。",
+      "longExplanation": "“似的”（shìde）是比况助词，置于名词、代词或短语之后，用来比拟人或事物的状态、情景，表示两者相似或相同。常与前面的“像”、“好像”、“仿佛”呼应，构成“像/好像……似的”格式，其语法作用和语义相当于“像……一样”。在口语和文学描写中十分常用，能使叙述和比喻更加形象生动。",
+      "formation": "（像 / 好像 / 仿佛 +）名词 / 短语 + 似的",
+      "examples": [
+        {
+          "translation": "我简直不敢相信这是真实发生的，就好像在做梦一样。"
+        }
+      ]
+    },
+    "zh_A得什么似的_442": {
+      "title": "形容词 + 得什么似的（程度补语：极言程度深，相当于“得不得了”）",
+      "shortExplanation": "口语程度补语，用于形容词或心理动词后，极力夸张地说明某种状态达到了极点；相当于“……极了”、“……得不得了”。",
+      "longExplanation": "“得什么似的”（dé shénme shìde）是口语中具有鲜明夸张色彩的程度补语格式。常置于性质形容词或心理动词（如“累、忙、高兴、急、美、气”等）之后，表示该状态或情绪已经达到了无以复加、难以用言语具体描摹的地步。具有生动通俗的情感色彩，相当于“……极了”、“……得要命”、“……得不得了”。",
+      "formation": "形容词 / 心理动词 + 得什么似的",
+      "examples": [
+        {
+          "translation": "他背着沉甸甸的电脑包挤地铁，下班一回到家就累得不行，疲惫到了极点。"
+        }
+      ]
+    },
+    "zh_纷纷V_443": {
+      "title": "纷纷 + 动词（副词：表示许多人或事物接二连三地做某事）",
+      "shortExplanation": "副词，用在动词前，表示许多人或事物接二连三、接连不断地发生或进行某种动作；相当于“接连不断”、“一个接一个”。",
+      "longExplanation": "“纷纷”（fēnfēn）作副词，修饰谓语动词。要求主语必须是复数或指代多数人或事物的集合名词。它表示多数人或事物在短时间内接连不断、前前后后地采取行动或发生变化，呈现出一种连续不断、纷至沓来的动态场面。常用于描写人群的反应或自然现象，如“纷纷发表意见”、“落叶纷纷”。",
+      "formation": "主语（复数 / 集体名词） + 纷纷 + 动词",
+      "examples": [
+        {
+          "translation": "快要下雨了，路上的行人纷纷急忙跑回家去。"
+        }
+      ]
+    },
+    "zh_瞎_444": {
+      "title": "瞎（形容词 / 动词：眼睛失明、看不见东西）",
+      "shortExplanation": "形容词或动词，指眼睛丧失视觉能力，无法看清物体；即“失明、眼睛瞎”。",
+      "longExplanation": "“瞎”（xiā）的本义是指眼睛丧失视力、失明，看不见东西。既可以作为谓语形容词或动词（如“眼睛瞎了”），也可以直接作定语修饰名词（如“瞎子”、“瞎子摸象”）。在日常交际和叙事中用来客观表述失明的生理状态。",
+      "formation": "（眼睛 +）瞎（+ 了）/ 瞎 + 名词",
+      "examples": [
+        {
+          "translation": "有一天，他命士兵们去找来一头大象和几位一出生就双目失明的人。"
+        }
+      ]
+    },
+    "zh_瞎_445": {
+      "title": "瞎 + 动词（副词：盲目地、没有根据或徒劳地做某事）",
+      "shortExplanation": "副词，用在动词前，表示动作毫无依据、没有条理、盲目或毫无效果；相当于“盲目地、胡乱地、白白地”。",
+      "longExplanation": "“瞎”（xiā）由失明的本义引申为副词，置于动词之前，表示行为毫无根据、漫无目的、胡乱盲目或白费力气。常见搭配包括“瞎说”（胡说）、“瞎想”（胡思乱想）、“瞎担心 / 瞎操心”（徒劳白费心思）、“瞎逛”（毫无目的地乱逛）。常用于劝阻或否定语境中，带有口语色彩。",
+      "formation": "（别 / 不用 +）瞎 + 动词",
+      "examples": [
+        {
+          "translation": "他自己会有办法解决的，你就别替他盲目地白担心了。"
+        }
+      ]
+    },
+    "zh_分别_446": {
+      "title": "分别（动词 / 名词：离别、相互分开）",
+      "shortExplanation": "动词或名词，表示相聚在一起的人彼此分开、离开；即“离别、分开”。",
+      "longExplanation": "“分别”（fēnbié）作动词时，指原本在一起的人互相分开、远离或告别，相当于“离别”、“分开”。它也可以名物化作主语或宾语，指代离别的情境或事件。多用于亲友或同事之间的告别叙述，语气典雅稳重。",
+      "formation": "主语 + 分别 / 分别 + 是……",
+      "examples": [
+        {
+          "translation": "分别只是暂时的，我们将来一定会再次相聚。"
+        }
+      ]
+    },
+    "zh_分别_447": {
+      "title": "分别（名词：区别、差异、不同之处）",
+      "shortExplanation": "名词，指不同事物之间的差别或不同点；相当于“区别、差异”。",
+      "longExplanation": "“分别”（fēnbié）作名词时，表示事物之间的差等、区别或异同，与“区别”、“差异”同义。常用于“有分别”、“没有分别”、“有什么分别”等句式中，用来辨析两个或多个方案、事物、观点之间的异同。",
+      "formation": "（……和……）有 / 没有 + 分别 / 有什么分别",
+      "examples": [
+        {
+          "translation": "我不知道这两种做法之间究竟有什么区别和差异。"
+        }
+      ]
+    },
+    "zh_分别_448": {
+      "title": "分别 + 动词（副词：各自、分头、单独地做某事）",
+      "shortExplanation": "副词，用在动词前，表示动作不是合在一起进行，而是各自、分头、单独地进行；相当于“各自、分头”。",
+      "longExplanation": "“分别”（fēnbié）作副词修饰谓语动词时，表示分头进行、各自处理，动作在不同的主体或客体上独立分开展开，而不是集中在一起进行。常与多数宾语或联合主体连用，如“分别进行调查”、“分别征求意见”。",
+      "formation": "主语 + 分别 + 动词 + 宾语",
+      "examples": [
+        {
+          "translation": "我各自单独找了两个人打听这件事情，他们的说法完全一致。"
+        }
+      ]
+    },
+    "zh_分别_449": {
+      "title": "分别（副词：表示一并列举的事物按顺序各自对应）",
+      "shortExplanation": "副词，表示上文列举的事物与下文陈述的内容按顺序一一对应；相当于“各自、依次各是”。",
+      "longExplanation": "“分别”（fēnbié）作副词时，常用于说明两组并列事物之间的一一对应关系，即前者对应前项，后者对应后项（相当于英语中的“respectively”）。常与判断动词“是”或表数据的动词连用，常见于书面语、科学报告及客观阐述中。",
+      "formation": "名词1 和 名词2 + 分别 + 是 / 动词 + 内容1 和 内容2",
+      "examples": [
+        {
+          "translation": "砂岩与砾岩分别是沙子与砾石经过固结作用后形成的产物。"
+        }
+      ]
+    },
+    "zh_根_450": {
+      "title": "数词 + 根 + 名词（量词：用于细长条状或柱状事物）",
+      "shortExplanation": "量词，专门用于计算细长、条状、棒状或线索状的物体；相当于“根、根条”。",
+      "longExplanation": "“根”（gēn）作量词，用于计量细长形态的物体。常与“绳子、头发、针、木棍、骨头、手指、香蕉、香烟、黄瓜”等名词搭配。是现代汉语中极其高频的核心物量词之一。",
+      "formation": "数词 + 根 + 名词（细长、条状、棒状物）",
+      "examples": [
+        {
+          "translation": "摸到大象尾巴的盲人说道，大象看起来就像是一根粗绳子。"
+        }
+      ]
+    },
+    "zh_根_451": {
+      "title": "根（名词：植物的根系、事物的本源或根基）",
+      "shortExplanation": "名词，本义指高等植物生长在泥土里吸收养分水分的器官，引申为事物的本源、根基；即“根部、根本”。",
+      "longExplanation": "“根”（gēn）作名词，本义指植物深入地下吸收水分无机盐并起到固定作用的根部器官。引申指事物的根底、基础、本源或起始点，如“树根”、“牙根”、“落叶归根”、“寻根问底”。是构词能力极强的基本词汇。",
+      "formation": "名词（植物 / 事物） + 的 + 根",
+      "examples": [
+        {
+          "translation": "这棵大树的根部粗壮而深长。"
+        }
+      ]
+    },
+    "zh_便_452": {
+      "title": "便 + 动词 / 形容词（书面语副词：表示顺承或结果，相当于“就”）",
+      "shortExplanation": "书面语副词，置于动词或形容词前，表示顺承前面情况立即发生，或承接前因产生必然结果；相当于“就”。",
+      "longExplanation": "“便”（biàn）是书面语色彩浓厚的副词，用法和意义相当于口语中的“就”。置于后一分句的谓语动词或形容词之前，通常表示两种语法意义：一是承接前述动作或事件，表示紧接着发生（即“随即、立即”）；二是表示顺理成章、顺理成章地产生某种状态或结果。常使语句结构紧凑典雅。",
+      "formation": "分句1（前提 / 原因），（主语 +）便 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "楼上新购置了一架钢琴，我们家随即就增添了几分不安宁与嘈杂。"
+        }
+      ]
+    },
+    "zh_倒反倒_453": {
+      "title": "倒 / 反倒（副词：表示与常理或预想相反，相当于“反而”）",
+      "shortExplanation": "转折副词，表示事情的发展或结果与常理、常情、主观意愿或最初预期截然相反；相当于“反而、反倒”。",
+      "longExplanation": "“倒”（dào）和“反倒”（fǎndào）是用于后一分句的副词，表示结果或情况与情理之中理应出现的结局正相违背，出人意料。两者词义与“反而”基本相同，其中“反倒”的逆转语气更加明确鲜明。常用于表达出乎意料的事态转变，如出于好心却办了坏事，或者前句提供了某种条件，结果不但没顺向发展，倒呈现出反向状态。",
+      "formation": "分句1（前提 / 铺垫），（主语 +）倒 / 反倒 + 动词 / 形容词",
+      "examples": []
+    },
+    "zh_倒_455": {
+      "title": "倒 / 倒是（副词：表示让步，先肯定一方面，后文转折指出不足）",
+      "shortExplanation": "副词，表示让步语气；先承认或肯定事物某方面的长处或事实，后一分句再转折指出缺陷或不足；相当于“……倒是……，不过/就是……”。",
+      "longExplanation": "“倒”（dào）或“倒是”（dàoshi）常用于表示转折前的让步语气。说话人在前一分句中首先肯定、认可某种事实或某方面的优点（如质量好、态度诚恳等），然后在后一分句紧跟着用“就是”、“只是”、“但是”、“不过”等转折连词，指出不足之处、缺陷或遗憾。这种表达委婉客观，避免了绝对化的判断。",
+      "formation": "（主语 +）倒 / 倒是 + 动词 / 形容词，（就是 / 只是 / 但是 +）分句2",
+      "examples": [
+        {
+          "translation": "质量确实挺不错，只不过就是价格定得太昂贵了。"
+        }
+      ]
+    },
+    "zh_倒_456": {
+      "title": "倒 / 倒是（副词：表示催促、急躁或追问反诘语气）",
+      "shortExplanation": "语气副词，常用于祈使句、疑问句或反问句中，表示催促对方尽快表态或行动，带有不耐烦或质问语气；相当于“究竟、快点”。",
+      "longExplanation": "“倒”（dào）或“倒是”（dàoshi）用作语气副词，常出现在祈使、催促或反诘疑问的语境中。当对方犹犹豫豫、保持沉默或拖延回避时，说话人用“倒/倒是”来加重催促和追问的分量，表达出急躁、不满或要求明确答复的情绪（如“你倒是快说呀！”、“他倒是想去，可去得成吗？”）。",
+      "formation": "主语 + 倒 / 倒是 + 动词（+ 宾语 / 试试看）",
+      "examples": [
+        {
+          "translation": "你倒是开口说清楚啊，这件事如果你不负责任，究竟该由谁来负责？"
+        }
+      ]
+    }
+  }
+}

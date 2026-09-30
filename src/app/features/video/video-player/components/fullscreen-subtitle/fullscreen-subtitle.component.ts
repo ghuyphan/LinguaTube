@@ -13,6 +13,10 @@ import { CommonModule } from '@angular/common';
 import { GrammarMatch, SubtitleCue, SupportedLearningLanguage, Token } from '../../../../../models';
 import { SettingsService, I18nService } from '../../../../../core/services';
 import { VocabularyService } from '../../../../vocabulary';
+import {
+    DEFAULT_FS_SUBTITLE_BOTTOM_Y,
+    FS_SUBTITLE_DRAG_THRESHOLD_PX
+} from '../../video-player.constants';
 
 /**
  * FullscreenSubtitleComponent
@@ -30,29 +34,25 @@ import { VocabularyService } from '../../../../vocabulary';
     <div class="fullscreen-subtitle" 
       [class.controls-visible]="areControlsVisible()" 
       [class.is-top]="isTop()"
-      [class.is-near-bottom]="isNearBottom()"
-      [class.is-user-placed]="isUserPlaced()"
       [class.is-dragging]="isDragging()"
       [ngClass]="fontSizeClass()"
       [class.popup-open]="fsPopupVisible()" 
-      [class.has-content]="subtitlesVisible() && !!currentCue()"
+      [class.has-content]="subtitlesVisible() && !!activeCue()"
       [style.--sub-y]="yPercent()">
       
-      @if (subtitlesVisible() && currentCue(); as cue) {
+      @if (subtitlesVisible() && activeCue(); as cue) {
         <div class="fs-subtitle-card" (click)="$event.stopPropagation()">
           <!-- Centered Horizontal Drag Handle Bar -->
-          <div class="fs-drag-handle-bar"
+          <button type="button"
+            class="fs-drag-handle-bar"
             (pointerdown)="onHandlePointerDown($event)"
-            (touchstart)="$event.stopPropagation()"
-            (click)="$event.stopPropagation()"
-            role="button"
-            tabindex="0"
-            [attr.aria-label]="isTop() ? (i18n.t('player.moveSubtitleBottom') || 'Move subtitle to bottom (tap or drag)') : (i18n.t('player.moveSubtitleTop') || 'Move subtitle to top (tap or drag)')"
-            [title]="isTop() ? (i18n.t('player.moveSubtitleBottom') || 'Tap to move to bottom, or drag to reposition') : (i18n.t('player.moveSubtitleTop') || 'Tap to move to top, or drag to reposition')"
+            (click)="onHandleClick($event)"
+            [attr.aria-label]="handleAriaLabel()"
+            [title]="handleTitle()"
             (keydown.enter)="onHandleKeyToggle($event)"
             (keydown.space)="onHandleKeyToggle($event)">
-            <div class="fs-drag-pill"></div>
-          </div>
+            <span class="fs-drag-pill"></span>
+          </button>
 
           <div class="fs-subtitle-content">
             <div class="fs-subtitle-text" [class]="'text-' + language()">
@@ -86,7 +86,7 @@ import { VocabularyService } from '../../../../vocabulary';
                       (click)="onWordClick(vt.token, cue.text, vt.index, $event)">
                       
                       @if (showReadingAnnotation()) {
-                        @if (vt.rubyParts && vt.rubyParts.length > 0) {
+                        @if (!prefersRomanized() && vt.rubyParts && vt.rubyParts.length > 0) {
                           @for (part of vt.rubyParts; track $index) {
                             @if (part.reading) {
                               <ruby>{{ part.text }}<rt aria-hidden="true">{{ part.reading }}</rt></ruby>
@@ -109,8 +109,8 @@ import { VocabularyService } from '../../../../vocabulary';
             </div>
 
             <!-- Dual Subtitles -->
-            @if (showDualSubtitles()) {
-              <div class="fs-subtitle-translation-wrapper">
+            <div class="fs-subtitle-translation-wrapper" [class.is-expanded]="showDualSubtitles()">
+              <div class="fs-subtitle-translation-inner">
                 @if (isDualSubLoading() && !currentTranslation()) {
                   <div class="fs-subtitle-translation fs-subtitle-translation--loading" [attr.aria-label]="i18n.t('subtitle.translating') || 'Translating subtitle...'">
                     <div class="fs-dual-sub-dots">
@@ -127,7 +127,7 @@ import { VocabularyService } from '../../../../vocabulary';
                   <div class="fs-subtitle-translation fs-subtitle-translation--empty"></div>
                 }
               </div>
-            }
+            </div>
           </div>
         </div>
       }
@@ -150,7 +150,7 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     fsPopupVisible = input<boolean>(false);
     fontSizeClass = input<string>('text-medium');
     subtitlesVisible = input<boolean>(true);
-    yPercent = input<number>(94);
+    yPercent = input<number>(DEFAULT_FS_SUBTITLE_BOTTOM_Y);
 
     // Dual Subtitle Inputs
     showDualSubtitles = input<boolean>(false);
@@ -165,19 +165,43 @@ export class FullscreenSubtitleComponent implements OnDestroy {
     grammarClicked = output<{ index: number; event: MouseEvent }>();
     positionCommitted = output<number>();
     togglePosition = output<void>();
+    dragStarted = output<void>();
+    dragEnded = output<void>();
 
     // Drag State
     isDragging = signal(false);
-    isUserPlaced = signal(false);
     private dragStartY = 0;
     private hasMoved = false;
     private cleanupDragListeners: (() => void) | null = null;
     private currentSubEl: HTMLElement | null = null;
+    private lastActiveCue: SubtitleCue | null = null;
+
+    // Preserves last cue during dragging so silence between cues never causes the card to unmount mid-drag
+    readonly activeCue = computed(() => {
+        const cue = this.currentCue();
+        if (cue) {
+            this.lastActiveCue = cue;
+            return cue;
+        }
+        return this.isDragging() ? this.lastActiveCue : null;
+    });
 
     // Computed
-    isTop = computed(() => this.yPercent() < 50);
-    isNearBottom = computed(() => this.yPercent() > 68);
-    showReadingAnnotation = computed(() => this.settings.showReadingAnnotation(this.language()));
+    readonly isTop = computed(() => this.yPercent() < 50);
+    readonly showReadingAnnotation = computed(() => this.settings.showReadingAnnotation(this.language()));
+    readonly prefersRomanized = computed(() => this.settings.prefersRomanizedReading(this.language()));
+
+    readonly handleAriaLabel = computed(() => {
+        const key = this.isTop() ? 'player.moveSubtitleBottom' : 'player.moveSubtitleTop';
+        const fallback = this.isTop() ? 'Move subtitle to bottom (tap or drag)' : 'Move subtitle to top (tap or drag)';
+        return this.i18n.t(key) || fallback;
+    });
+
+    readonly handleTitle = computed(() => {
+        const key = this.isTop() ? 'player.moveSubtitleBottom' : 'player.moveSubtitleTop';
+        const fallback = this.isTop() ? 'Tap to move to bottom, or drag to reposition' : 'Tap to move to top, or drag to reposition';
+        return this.i18n.t(key) || fallback;
+    });
 
     readonly grammarTokenIndices = computed(() => {
         const matches = this.grammarMatches();
@@ -231,6 +255,14 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         this.startDrag(event);
     }
 
+    onHandleClick(event: MouseEvent): void {
+        event.stopPropagation();
+        // Screen readers / assistive technology fire synthetic clicks with detail === 0
+        if (event.detail === 0) {
+            this.togglePosition.emit();
+        }
+    }
+
     onHandleKeyToggle(event: Event): void {
         event.stopPropagation();
         event.preventDefault();
@@ -251,15 +283,23 @@ export class FullscreenSubtitleComponent implements OnDestroy {
         } catch {}
 
         this.dragStartY = event.clientY;
-        const startYPercent = this.yPercent();
         this.hasMoved = false;
 
         const container = handle.closest('.video-container') as HTMLElement | null;
         const containerHeight = container?.clientHeight || window.innerHeight;
+        const subRect = subEl.getBoundingClientRect();
+        const containerRect = container ? container.getBoundingClientRect() : { top: 0, bottom: containerHeight };
 
-        // Dynamic pixel bounds to allow continuous vertical placement in [16%, 95%]
-        const minDeltaY = ((16 - startYPercent) / 100) * containerHeight;
-        const maxDeltaY = ((95 - startYPercent) / 100) * containerHeight;
+        // Current rendered positions in pixels relative to container top
+        const currentTopPx = subRect.top - containerRect.top;
+        const currentBottomPx = subRect.bottom - containerRect.top;
+
+        // Guaranteed safety bounds: Top edge never goes off-screen (at least 14px from top)
+        const minDeltaY = 14 - currentTopPx;
+
+        // Bottom clearance: 16px min margin (matches --min-bottom-margin in CSS)
+        const bottomMarginPx = 16;
+        const maxDeltaY = (containerHeight - bottomMarginPx) - currentBottomPx;
 
         let latestDeltaY = 0;
 
@@ -267,11 +307,14 @@ export class FullscreenSubtitleComponent implements OnDestroy {
             if (moveEvent.pointerId !== event.pointerId) return;
 
             const rawDeltaY = moveEvent.clientY - this.dragStartY;
-            if (Math.abs(rawDeltaY) > 5) {
-                if (!this.hasMoved) {
-                    this.hasMoved = true;
-                    this.ngZone.run(() => this.isDragging.set(true));
-                }
+            // Require intentional drag distance before engaging drag state, preventing accidental drag triggers on tap
+            if (!this.hasMoved) {
+                if (Math.abs(rawDeltaY) <= FS_SUBTITLE_DRAG_THRESHOLD_PX) return;
+                this.hasMoved = true;
+                this.ngZone.run(() => {
+                    this.isDragging.set(true);
+                    this.dragStarted.emit();
+                });
             }
 
             latestDeltaY = Math.max(minDeltaY, Math.min(maxDeltaY, rawDeltaY));
@@ -285,46 +328,61 @@ export class FullscreenSubtitleComponent implements OnDestroy {
                 handle.releasePointerCapture(upEvent.pointerId);
             } catch {}
 
+            const hadMoved = this.hasMoved;
+            const finalDelta = latestDeltaY;
             this.cleanupDragListeners?.();
             this.cleanupDragListeners = null;
 
-            subEl.style.removeProperty('--drag-y');
-
             this.ngZone.run(() => {
                 this.isDragging.set(false);
+                if (hadMoved) {
+                    this.dragEnded.emit();
+                    const isNowTop = (currentTopPx + currentBottomPx + 2 * finalDelta) / 2 < containerHeight / 2;
+                    let targetPercent: number;
 
-                if (!this.hasMoved) {
-                    // Tap or click on handle: toggle between Top (18%) and Bottom (94%)
-                    this.isUserPlaced.set(false);
-                    this.togglePosition.emit();
-                } else {
-                    // Continuous free drag: commit exact percentage with full give
-                    this.isUserPlaced.set(true);
-                    const deltaPercent = (latestDeltaY / containerHeight) * 100;
-                    const targetPercent = Math.max(16, Math.min(95, Math.round(startYPercent + deltaPercent)));
+                    if (isNowTop) {
+                        const topPercent = ((currentTopPx + finalDelta) / containerHeight) * 100;
+                        targetPercent = Math.max(3, Math.min(45, Math.round(topPercent * 10) / 10));
+                    } else {
+                        const bottomPercent = ((currentBottomPx + finalDelta) / containerHeight) * 100;
+                        const maxPercent = ((containerHeight - bottomMarginPx) / containerHeight) * 100;
+                        targetPercent = Math.max(55, Math.min(Math.round(maxPercent * 10) / 10, Math.round(bottomPercent * 10) / 10));
+                    }
+
+                    subEl.classList.toggle('is-top', isNowTop);
+                    subEl.style.setProperty('--sub-y', `${targetPercent}`);
                     this.positionCommitted.emit(targetPercent);
+                } else {
+                    this.togglePosition.emit();
                 }
+                subEl.style.removeProperty('--drag-y');
             });
+        };
+
+        const onWindowBlur = () => {
+            onPointerUp(event);
         };
 
         this.ngZone.runOutsideAngular(() => {
             window.addEventListener('pointermove', onPointerMove);
             window.addEventListener('pointerup', onPointerUp);
             window.addEventListener('pointercancel', onPointerUp);
+            window.addEventListener('blur', onWindowBlur);
         });
 
         this.cleanupDragListeners = () => {
             window.removeEventListener('pointermove', onPointerMove);
             window.removeEventListener('pointerup', onPointerUp);
             window.removeEventListener('pointercancel', onPointerUp);
-            if (this.currentSubEl) {
-                this.currentSubEl.style.removeProperty('--drag-y');
-                this.currentSubEl = null;
-            }
+            window.removeEventListener('blur', onWindowBlur);
         };
     }
 
     ngOnDestroy(): void {
+        if (this.isDragging()) {
+            this.dragEnded.emit();
+        }
+        this.currentSubEl?.style.removeProperty('--drag-y');
         this.cleanupDragListeners?.();
         this.cleanupDragListeners = null;
     }

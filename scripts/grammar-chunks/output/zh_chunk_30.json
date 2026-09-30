@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_所_472": {
+      "title": "所 (Lượng từ: Cơ quan, trường học, bệnh viện, nhà cửa...)",
+      "shortExplanation": "Lượng từ dùng cho các cơ quan, tổ chức, trường học, bệnh viện, viện nghiên cứu hoặc công trình kiến trúc nhà ở.",
+      "longExplanation": "'所' (suǒ) là lượng từ chuyên dùng để đếm các đơn vị sự nghiệp, cơ quan tổ chức, cơ sở giáo dục, y tế hoặc công trình kiến trúc nhà ở (như '一所大学' - một trường đại học, '一所医院' - một bệnh viện, '一所学校' - một ngôi trường, '一所研究所' - một viện nghiên cứu, '一所房子' - một ngôi nhà). Thường mang sắc thái quy chuẩn, trang trọng hơn so với lượng từ thông dụng '个'. Tương đương với 'ngôi', 'trường', 'viện', 'căn' trong tiếng Việt.",
+      "formation": "Số từ + 所 + Danh từ (trường học / bệnh viện / cơ quan / nhà ở)",
+      "examples": [
+        {
+          "translation": "Anh ấy đến từ một trường đại học ở Bắc Kinh."
+        }
+      ]
+    },
+    "zh_S所V的_473": {
+      "title": "Chủ ngữ + (所) + Động từ + 的 (Cái mà / Điều mà... làm/biểu hiện)",
+      "shortExplanation": "Trợ từ '所' đặt trước động từ vị ngữ và kết hợp với '的' ở cuối, tạo thành cụm danh từ chỉ sự vật, đối tượng mà hành động hướng tới; mang sắc thái văn viết trang trọng.",
+      "longExplanation": "Kết cấu 'Chủ ngữ + (所) + Động từ + 的' (Chủ ngữ + suǒ + Động từ + de) là cấu trúc định ngữ danh từ hóa mang đậm phong cách văn viết trang trọng. Trong đó, '所' là trợ từ được đặt ngay trước động từ (thường là động từ cập vật song âm tiết) có chủ ngữ làm chủ thể hành động. Toàn bộ cụm 'Chủ ngữ + 所 + Động từ + 的' đóng vai trò như một cụm danh từ làm chủ ngữ hoặc tân ngữ trong câu, biểu thị 'điều mà / thứ mà / nội dung mà chủ ngữ thực hiện'. Trong khẩu ngữ hàng ngày, '所' thường được lược bỏ, nhưng trong văn bản học thuật, tin tức, nghị luận, việc thêm '所' làm tăng tính trang trọng, nhã nhặn của câu văn. Tương đương với 'điều mà...', 'cái mà...', 'những gì mà...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (所 +) Động từ + 的 (+ Danh từ trung tâm)",
+      "examples": [
+        {
+          "translation": "Điều mà tranh sơn thủy thể hiện chính là mối quan hệ giữa con người và thiên nhiên."
+        }
+      ]
+    },
+    "zh_有所V_474": {
+      "title": "有所 + Động từ (Có phần... / Đã có sự... / Đạt được mức độ nhất định)",
+      "shortExplanation": "Kết cấu văn viết đứng trước động từ song âm tiết, biểu thị sự việc có phát sinh, biến đổi hoặc đạt đến một mức độ, phương diện nhất định; 'có phần...', 'đã có sự...'.",
+      "longExplanation": "'有所 + Động từ' (yǒusuǒ + Động từ) là cấu trúc cố định mang phong cách văn viết trang trọng, thường dùng trong báo chí, báo cáo kinh tế, xã hội và nghiên cứu học thuật. '有所' đóng vai trò trạng ngữ đứng trước các động từ song âm tiết (chỉ sự biến đổi, hành vi hoặc phát triển, như 提高 - nâng cao, 改善 - cải thiện, 增加 - tăng thêm, 改变 - thay đổi, 了解 - tìm hiểu, 准备 - chuẩn bị). Cấu trúc này biểu thị sự việc đã diễn ra ở một phạm vi nhất định hoặc có sự chuyển biến đáng ghi nhận (dù không nhất thiết là mức độ tuyệt đối). Tương đương với 'có phần...', 'có sự...', 'đạt được mức độ... nhất định' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 有所 + Động từ (song âm tiết biểu thị biến đổi / phát triển)",
+      "examples": [
+        {
+          "translation": "Cùng với sự gia tăng về độ tuổi, cảm giác hạnh phúc nơi công sở của phụ nữ đã có phần nâng cao."
+        }
+      ]
+    },
+    "zh_无所V_475": {
+      "title": "无所 + Động từ (Không có gì để... / Hoàn toàn không... / Chẳng có gì phải...)",
+      "shortExplanation": "Kết cấu văn viết cổ nhã đứng trước động từ song âm tiết, biểu thị hoàn toàn không có đối tượng để thực hiện hành vi, hoặc hoàn toàn không có gì phải e ngại, vướng bận.",
+      "longExplanation": "'无所 + Động từ' (wú suǒ + Động từ) là cấu trúc phủ định mang đậm tính văn ngôn và thư diện ngữ, thường xuất hiện trong các thành ngữ, quán dụng ngữ cố định hoặc văn phong chính luận trang trọng. '无所' đứng trước các động từ song âm tiết (như 畏惧 - sợ hãi, 不知 - không biết, 不能 - không thể làm, 事事 - làm việc sự vụ, 顾忌 - kiêng dè, 作为 - làm nên chuyện). Nó mang ý nghĩa 'không có điều gì là...', 'hoàn toàn không có gì để...', thể hiện sự phủ định tuyệt đối. Ví dụ: '无所畏惧' (không có gì phải sợ hãi), '无所谓' (chẳng có gì đáng bận tâm / sao cũng được), '无所事事' (nhàn rỗi không làm việc gì). Tương đương với 'không có gì phải...', 'hoàn toàn không...', 'không điều gì là không...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 无所 + Động từ (song âm tiết)",
+      "examples": [
+        {
+          "translation": "Nếu bạn kiên trì chân lý thì hoàn toàn không có gì phải sợ hãi cả."
+        }
+      ]
+    },
+    "zh_与N相当_476": {
+      "title": "与 + Danh từ + 相当 (Tính từ vị ngữ: Tương đương với... / Ngang bằng với...)",
+      "shortExplanation": "'相当' làm vị ngữ kết hợp với giới từ '与', biểu thị hai bên có mức độ, số lượng, năng lực hoặc điều kiện ngang bằng, tương đương nhau.",
+      "longExplanation": "Trong cấu trúc '与 + Danh từ + 相当' (yǔ Danh từ xiāngdāng), '相当' đóng vai trò là một tính từ làm vị ngữ (có thể thay '与' bằng các giới từ đồng nghĩa như '跟', '和'). Cấu trúc này dùng để so sánh hai đối tượng, biểu thị chúng có trình độ, số lượng, điều kiện hoặc sức mạnh ngang ngửa nhau, không bên nào vượt trội hơn hẳn. Mang sắc thái trang trọng, khách quan, thường gặp trong các bài báo cáo, phân tích số liệu khoa học và văn bản học thuật. Tương đương với 'tương đương với...', 'ngang bằng với...', 'ngang ngửa với...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 与 / 跟 / 和 + Danh từ + 相当",
+      "examples": [
+        {
+          "translation": "Tốc độ phản ứng của người vừa lái xe vừa nghe điện thoại tương đương với người say rượu."
+        }
+      ]
+    },
+    "zh_相当于N_477": {
+      "title": "相当于 + Danh từ (Động từ mang giới từ: Tương đương với... / Bằng với...)",
+      "shortExplanation": "Động từ '相当' kết hợp với giới từ '于' mang tân ngữ, biểu thị về số lượng, giá trị hoặc vai trò tương đương, bằng với một đối tượng nào đó.",
+      "longExplanation": "'相当于 + Danh từ' (xiāngdāngyú Danh từ) là kết cấu động từ - giới từ cố định. Trong đó, '相当于' đóng vai trò như một ngoại động từ trực tiếp nhận danh từ/cụm danh từ làm tân ngữ phía sau. Nó biểu thị số lượng, tỷ lệ, giá trị quy đổi hoặc chức năng của chủ ngữ ngang bằng hoặc tương đương với đối tượng được nhắc đến. Thường dùng trong việc quy đổi tiền tệ, đo lường dung lượng, so sánh tỷ lệ sinh học hoặc đối chiếu tương đương. Tương đương với 'tương đương với...', 'bằng với...', 'ngang bằng với...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 相当于 + Danh từ / Cụm danh từ",
+      "examples": [
+        {
+          "translation": "Lượng sâu bọ mà loài chim này ăn trong một ngày tương đương với trọng lượng cơ thể của chính nó."
+        }
+      ]
+    },
+    "zh_相当_478": {
+      "title": "相当 + Tính từ / Động từ tâm lý (Phó từ mức độ: Khá / Rất / Hết sức)",
+      "shortExplanation": "Phó từ chỉ mức độ cao, đứng trước tính từ hoặc động từ tâm lý; tương đương với '很', '十分', 'tương đối', 'khá là', 'rất'.",
+      "longExplanation": "'相当' (xiāngdāng) trong trường hợp này là phó từ chỉ mức độ cao. Nó đứng trực tiếp trước tính từ hoặc động từ biểu thị trạng thái tâm lý (như 满意 - hài lòng, 喜欢 - thích, 丰富 - phong phú, 困难 - khó khăn, 复杂 - phức tạp, 成功 - thành công). Mức độ của '相当' cao hơn '比较' (khá) và tương đương với '很' hoặc '十分' (rất, vô cùng), nhưng mang sắc thái khách quan, chừng mực và trang trọng hơn. Tương đương với 'khá', 'rất', 'hết sức', 'tương đối' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 相当 + Tính từ / Động từ tâm lý",
+      "examples": [
+        {
+          "translation": "Hương vị món ăn ngon tuyệt, phục vụ cũng chu đáo, tôi rất hài lòng."
+        }
+      ]
+    },
+    "zh_相当_479": {
+      "title": "相当 + Lượng từ / Cụm số lượng (Định ngữ: Không nhỏ / Đáng kể / Tương đối lớn)",
+      "shortExplanation": "Đứng trước cụm số lượng hoặc từ chỉ phạm vi để làm định ngữ, biểu thị số lượng hoặc quy mô đạt đến mức độ tương đối lớn, không thể xem nhẹ; 'đáng kể', 'không ít'.",
+      "longExplanation": "'相当' (xiāngdāng) trong kết cấu này kết hợp với cụm từ chỉ số lượng hoặc tỷ lệ (như '相当一部分' - một bộ phận không nhỏ/đáng kể, '相当数量' - số lượng đáng kể, '相当规模' - quy mô tương đối lớn, '相当长的时间' - một khoảng thời gian khá dài) để làm định ngữ bổ nghĩa cho danh từ phía sau. Nó biểu thị số lượng, tỷ lệ hoặc mức độ đó là đáng kể, có tầm ảnh hưởng và không thể bỏ qua. Tương đương với 'đáng kể', 'không nhỏ', 'tương đối lớn', 'khá nhiều' trong tiếng Việt.",
+      "formation": "相当 + 一部分 / 数量 / 规模 / Cụm số lượng + Danh từ",
+      "examples": [
+        {
+          "translation": "Một bộ phận không nhỏ mọi người lấy mức thu nhập làm tiêu chuẩn của hạnh phúc."
+        }
+      ]
+    },
+    "zh_数sh_480": {
+      "title": "数 (shǔ) (Động từ: Đếm / Điểm danh / Tính số lượng)",
+      "shortExplanation": "Động từ phát âm là 'shǔ', biểu thị hành động đếm từng số một, tính toán số lượng người hoặc vật.",
+      "longExplanation": "'数' khi phát âm là thanh ba (shǔ) đóng vai trò là một động từ thực thụ, mang nghĩa là đếm từng đơn vị một để xác định số lượng người, đồ vật hoặc sự việc (như '数数' - đếm số, '数钱' - đếm tiền, '数人数' - đếm sĩ số, '数一下' - đếm thử một lượt). Khác với khi đọc thanh bốn (shù) mang nghĩa là số từ/danh từ 'con số'. Tương đương với 'đếm', 'tính số lượng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 数 (+ 了 / 一下) (+ Tân ngữ: con số / số lượng)",
+      "examples": [
+        {
+          "translation": "Tôi đại khái đếm qua một lượt, trên xe có 32 học sinh."
+        }
+      ]
+    },
+    "zh_数sh_481": {
+      "title": "数 (shǔ) (Động từ: Nổi trội nhất là / Đứng đầu là / Phải kể đến)",
+      "shortExplanation": "Động từ phát âm là 'shǔ', dùng trong việc so sánh liệt kê để chỉ người hoặc vật nổi trội nhất, đứng đầu bảng; thường kết hợp thành '就数...', '要数...'.",
+      "longExplanation": "'数' (shǔ) trong cấu trúc này là động từ dùng để chỉ sự so sánh, đánh giá nhằm nêu bật đối tượng xuất sắc, nổi bật nhất trong một tập thể hay phạm vi nhất định. Thường kết hợp trong các quán ngữ khẩu ngữ như '就数...' (nổi bật nhất phải kể đến...), '要数...' (nếu nói đến... thì đứng đầu là...), '数得着' (được xếp vào hàng nổi tiếng/nổi bật). Diễn đạt ý tôn vinh hoặc chỉ rõ người/sự vật đứng số một trong tiêu chí được nhắc tới. Tương đương với 'phải kể đến', 'đứng đầu là', 'nổi bật nhất là' trong tiếng Việt.",
+      "formation": "Phân câu nêu tiêu chí so sánh (最...)，(那 / 就 / 要 +) 数 + Danh từ (người / sự vật nổi bật nhất)",
+      "examples": [
+        {
+          "translation": "Nếu nói về người chạy nhanh nhất lớp chúng tôi, thì phải kể đến Lý Dương."
+        }
+      ]
+    },
+    "zh_数sh_482": {
+      "title": "数 (shù) + Lượng từ / Danh từ đo lường (Số từ: Vài / Mấy / Hàng...)",
+      "shortExplanation": "Số từ phát âm là 'shù', dùng trong văn viết đứng trước lượng từ hoặc danh từ thời gian, đơn vị đo lường; biểu thị số lượng không xác định khoảng vài, mấy; 'vài', 'mấy'.",
+      "longExplanation": "'数' khi phát âm là thanh bốn (shù) đóng vai trò là một số từ phiếm chỉ trong văn viết (tương đương với '几' trong khẩu ngữ). Nó đứng trực tiếp trước các lượng từ hoặc danh từ đơn vị đo lường, thời gian (như '数日' - vài ngày, '数月' - vài tháng, '数年' - vài năm, '数小时' - vài giờ, '数次' - vài lần, '数千' - vài nghìn/hàng nghìn, '数万人' - hàng vạn người). Cấu trúc này mang sắc thái trang trọng, học thuật và ngắn gọn của văn thư diện ngữ. Tương đương với 'vài', 'mấy', 'hàng...' trong tiếng Việt.",
+      "formation": "数 + Lượng từ / Danh từ đo lường (thời gian / số đếm)",
+      "examples": [
+        {
+          "translation": "Cơn mưa rào mùa hè ở đây thông thường có thể kéo dài vài giờ đồng hồ hoặc thời gian lâu hơn nữa."
+        }
+      ]
+    },
+    "zh_以及_483": {
+      "title": "以及 (Liên từ đẳng lập: Cùng với / Và / Cũng như)",
+      "shortExplanation": "Liên từ văn viết dùng nối các từ, cụm từ đẳng lập; thường dẫn ra thành phần thứ yếu hoặc thành phần liệt kê cuối cùng.",
+      "longExplanation": "'以及' (yǐjí) là liên từ biểu thị quan hệ liên hợp đẳng lập, chủ yếu dùng trong văn viết trang trọng, công văn báo chí và diễn văn chính thức. Nó dùng để nối các danh từ hoặc cụm danh từ đẳng lập với nhau. Trong chuỗi liệt kê gồm nhiều đối tượng, '以及' thường đặt trước đối tượng cuối cùng. Đáng chú ý, các thành phần đứng trước '以及' thường là đối tượng chính hoặc quan trọng hơn, còn thành phần đứng sau '以及' thường mang tính bổ sung, thứ yếu hoặc có phạm vi nhỏ hơn. Không dùng '以及' để nối hai mệnh đề độc lập có quan hệ nguyên nhân - kết quả. Tương đương với 'cùng với', 'và', 'cũng như' trong tiếng Việt.",
+      "formation": "Danh từ 1、Danh từ 2 + 以及 + Danh từ 3 (thành phần sau cùng / bổ sung)",
+      "examples": [
+        {
+          "translation": "Lãnh đạo, giáo viên của nhà trường cùng với một số đại biểu học sinh đã theo dõi buổi biểu diễn."
+        }
+      ]
+    },
+    "zh_程度_484": {
+      "title": "程度 (Danh từ: Mức độ / Trình độ)",
+      "shortExplanation": "Danh từ chỉ cấp bậc, giới hạn hoặc tình trạng phát triển của sự vật; thường dùng trong kết cấu 'đạt đến / phát triển đến mức độ...'.",
+      "longExplanation": "'程度' (chéngdù) là danh từ chỉ mức độ, trình độ hoặc giới hạn đạt tới của một trạng thái, tính chất hoặc sự việc. Nó thường xuất hiện trong các kết cấu định lượng hoặc bổ ngữ như '达到 / 发展到 + (Tính từ + 的) + 程度' (đạt đến / phát triển tới mức độ...), '在某种程度上' (ở một mức độ nào đó), '程度很深' (mức độ rất sâu sắc). Cấu trúc này dùng để diễn đạt ranh giới, cấp độ phát triển của một sự việc cụ thể. Tương đương với 'mức độ', 'trình độ', 'chừng mực' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 发展到 / 达到 + (Tính từ + 的) + 程度",
+      "examples": [
+        {
+          "translation": "Vấn đề đã phát triển tới mức độ hết sức nghiêm trọng."
+        }
+      ]
+    },
+    "zh_更何况_485": {
+      "title": "(更)何况 (Liên từ tăng tiến: Huống hồ / Huống chi / Huống chi là)",
+      "shortExplanation": "Liên từ dùng ở đầu phân câu sau, biểu thị mối quan hệ tăng tiến rõ rệt; thường kết hợp thành '连...都..., (更)何况...呢' để nhấn mạnh điều hiển nhiên; 'huống hồ', 'huống chi'.",
+      "longExplanation": "'(更)何况' ((gèng) hékuàng) là liên từ biểu thị quan hệ tăng tiến sâu sắc. Nó thường dùng ở phân câu sau để bổ sung một lý do hoặc đối tượng có tính chất rõ rệt, hiển nhiên hơn nhiều so với đối tượng ở phân câu trước. Thường đi kèm với cấu trúc nhấn mạnh '连……都 / 也……，(更)何况……呢' (ngay cả... còn..., huống hồ... sao?). Ngoài ra, '何况' cũng có thể đứng ở vế sau để bổ sung thêm một lý do mang tính quyết định nhằm thuyết phục người nghe. Phía sau thường mang ngữ khí phản vấn với trợ từ '呢'. Tương đương với 'huống hồ', 'huống chi', 'nói chi đến' trong tiếng Việt.",
+      "formation": "连 + Danh từ 1 + 都 / 也 + Vị ngữ，(更)何况 + Danh từ 2 (+ 呢)？",
+      "examples": [
+        {
+          "translation": "Đến cả các vận động viên còn không hài lòng, huống hồ là những người hâm mộ theo dõi trận đấu?"
+        }
+      ]
+    },
+    "zh_何必_486": {
+      "title": "何必 (Phó từ phản vấn: Hà tất / Việc gì phải / Cần gì phải)",
+      "shortExplanation": "Phó từ ngữ khí phản vấn đứng trước động từ, biểu thị ý nghĩa không cần thiết phải làm như vậy; 'việc gì phải', 'cần gì phải', 'hà tất'.",
+      "longExplanation": "'何必' (hébì) là phó từ ngữ khí mang giọng điệu phản vấn sâu sắc, tương đương với '为什么一定要' (tại sao nhất thiết phải...) hoặc '用不着' (không cần thiết/không cần làm vậy). Nó đứng trước vị ngữ động từ, dùng để nhắc nhở, khuyên can hoặc phản bác, cho rằng một hành động nào đó là dư thừa, phiền toái hoặc không đáng phải bỏ công sức ra làm. Cuối câu thường kết hợp với trợ từ ngữ khí '呢' để làm tăng âm hưởng phản vấn và khuyên nhủ. Tương đương với 'việc gì phải', 'hà tất phải', 'cần gì phải' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 何必 + Động từ / Cụm động từ (+ 呢)？",
+      "examples": [
+        {
+          "translation": "Bạn việc gì phải tự mình đi giao một chuyến chứ? Gọi một shipper chuyển phát nhanh không phải là được rồi sao?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_所_472": {
+      "title": "所（量詞：学校・病院・機関・住宅などを数える単位）",
+      "shortExplanation": "学校、病院、研究機関などの公共機関や施設、住宅などを数える際に用いる量詞です（「〜校」「〜棟」「〜軒」）。",
+      "longExplanation": "「所」（suǒ）は、教育機関、医療機関、公的機関、あるいは独立した建物・住居などを数える専用の量詞です（例：「一所大学」1つの大学、「一所医院」1軒の病院、「一所小学」1つの小学校、「一所房子」1軒の家）。一般的な量詞「个」よりもフォーマルで規範的な表現として用いられます。日本語の「校」「軒」「棟」「施設」などに相当します。",
+      "formation": "数詞 ＋ 所 ＋ 名詞（学校・病院・機関・建物など）",
+      "examples": [
+        {
+          "translation": "彼は北京のある大学の出身です。"
+        }
+      ]
+    },
+    "zh_S所V的_473": {
+      "title": "主語 ＋（所）＋ 動詞 ＋ 的（主語が動詞するところのもの・主語が〜するもの・こと）",
+      "shortExplanation": "助詞「所」を動詞の前に置き、末尾の「的」と呼応させて「主語が〜するところの（もの・こと）」という名詞節を作る書き言葉の改まった構文です。",
+      "longExplanation": "「主語 ＋（所）＋ 動詞 ＋ 的」（主語 ＋ suǒ ＋ 動詞 ＋ de）は、書き言葉やフォーマルなスピーチで頻繁に用いられる格調高い構文です。「所」は主語と他動詞（多くは2音節動詞）の間に置かれ、動作の対象となる事柄を名詞化します。この句全体が主語や目的語となり、「主語が〜するところのもの（内容・事物・結果）」という意味を表します。日常会話では「所」を省いて単に「主語 ＋ 動詞 ＋ 的」と言うことが多いですが、「所」を加えることで論理的で品格のある文体になります。日本語の「〜の（〜した）ところの…」「〜が〜するもの・こと」に相当します。",
+      "formation": "主語 ＋（所 ＋）動詞 ＋ 的（＋ 名詞）",
+      "examples": [
+        {
+          "translation": "山水画が表現しているのは、人と自然の関係です。"
+        }
+      ]
+    },
+    "zh_有所V_474": {
+      "title": "有所 ＋ 動詞（いくらか〜する・ある程度〜がある・〜が見られる）",
+      "shortExplanation": "2音節動詞の前に置かれ、ある程度の変化や進展、働きかけが生じていることを表す書き言葉の表現です（「いくらか〜がある」「ある程度〜する」）。",
+      "longExplanation": "「有所 ＋ 動詞」（yǒusuǒ ＋ 動詞）は、ニュース報道、報告書、学術論文などで頻出する格調高い書面語の連用修飾表現です。変化や動作を表す2音節動詞（提高 向上する、改善 改善する、增加 増加する、改变 変わる、有所準備 準備がある など）の直前に置かれます。程度が極端に高いわけではないものの、「確かにその方向での変化や進展が一定程度認められる」ことを客観的・控えめに述べる際に好まれます。日本語の「いくらか〜が見られる」「ある程度〜する」「幾分〜がある」に相当します。",
+      "formation": "主語 ＋ 有所 ＋ 動詞（2音節の変化・発展動詞）",
+      "examples": [
+        {
+          "translation": "年齢が上がるにつれて、女性の職場における幸福感はある程度向上しています。"
+        }
+      ]
+    },
+    "zh_无所V_475": {
+      "title": "无所 ＋ 動詞（何一つ〜するものがない・少しも〜しない・全く〜を恐れない）",
+      "shortExplanation": "2音節動詞の前に置かれ、「〜すべき対象が何もない」「全く〜しない」という絶対的な否定を表す書き言葉・成語表現です。",
+      "longExplanation": "「无所 ＋ 動詞」（wú suǒ ＋ 動詞）は文言文（漢文）に由来する格式の高い書面語表現で、成語や固定フレーズとしても多用されます。2音節動詞の前に置かれ、「その動作が及ぶ対象や理由が全く存在しない」ことを表します。例えば「无所畏惧」（何ものも恐れない）、「无所不知」（知らぬことは何一つない）、「无所事事」（何一つすることなくぶらぶら過ごす）、「无所作为」（何の成果もあげられない）などがあります。完全な否定や徹底した状態を強調する際に用いられます。日本語の「何一つ〜するものがない」「全く〜しない」「少しも〜を恐れない」に相当します。",
+      "formation": "主語 ＋ 无所 ＋ 動詞（2音節動詞）",
+      "examples": [
+        {
+          "translation": "真理を堅持するのであれば、何ものをも恐れることはありません。"
+        }
+      ]
+    },
+    "zh_与N相当_476": {
+      "title": "与 ＋ 名詞 ＋ 相当（形容詞述語：〜と同等である・〜に匹敵する・〜と互角である）",
+      "shortExplanation": "「相当」が形容詞述語となり、介詞「与」（または「跟」「和」）と呼応して、双方の数量・レベル・条件などが同等であることを表します。",
+      "longExplanation": "「与 ＋ 名詞 ＋ 相当」（yǔ 名詞 xiāngdāng）において、「相当」は「匹敵している、同等である」を意味する形容詞述語として機能します。「与」（あるいは口語の「跟」「和」）を用いて比較対象を導き、主語と対象が数量、規模、水準、能力などの面で互角・同格であることを示します。学術論文や調査報告書、ニュースなどで客観的なデータや状態を比較する際によく用いられます。日本語の「〜と同等である」「〜に匹敵する」「〜とほぼ等しい」に相当します。",
+      "formation": "主語 ＋ 与 / 跟 / 和 ＋ 名詞 ＋ 相当",
+      "examples": [
+        {
+          "translation": "運転中に通話している人の反応速度は、飲酒運転者と同等です。"
+        }
+      ]
+    },
+    "zh_相当于N_477": {
+      "title": "相当于 ＋ 名詞（動詞句：〜に相当する・〜に匹敵する・〜に値する）",
+      "shortExplanation": "動詞「相当」に介詞「于」が結合した形で、数量、価値、役割などが目的語の名詞と同等であることを表します（「〜に相当する」）。",
+      "longExplanation": "「相当于 ＋ 名詞」（xiāngdāngyú 名詞）は、動詞「相当」と前置詞「于」が一体化した動詞句パターンです。後ろに直接目的語（名詞・数量句など）を取り、「主語の数値・価値・役割・地位が〜と同等である、〜に換算できる」という意味を表します。通貨の換算、数量の比較、比喩的な例え、機能の対比などで非常によく用いられます。日本語の「〜に相当する」「〜に匹敵する」「〜と同じくらいである」に相当します。",
+      "formation": "主語 ＋ 相当于 ＋ 名詞 / 数量句",
+      "examples": [
+        {
+          "translation": "この鳥が1日に食べる害虫の量は、自らの体重に匹敵します。"
+        }
+      ]
+    },
+    "zh_相当_478": {
+      "title": "相当 ＋ 形容詞 / 心理動詞（程度副詞：かなり・相当に・ずいぶん）",
+      "shortExplanation": "程度副詞として形容詞や心理動詞の前に置かれ、度合いが著しく高いことを表します（「かなり」「相当に」「ずいぶん」）。",
+      "longExplanation": "「相当」（xiāngdāng）は、度合いの高さを表す程度副詞です。形容詞や心理動詞（满意、喜欢、严重、复杂、精彩、困难など）の直前に置かれ、その状態や感情の度合いが通常を大きく上回っていることを示します。「比较」（わりと）よりも程度が高く、「很」や「十分」に近い強さですが、客観的で知的な響きを持ちます。日本語の「かなり」「相当に」「ずいぶん」「非常に」に相当します。",
+      "formation": "主語 ＋ 相当 ＋ 形容詞 / 心理動詞",
+      "examples": [
+        {
+          "translation": "料理の味は最高で、接客も行き届いており、私はかなり満足しています。"
+        }
+      ]
+    },
+    "zh_相当_479": {
+      "title": "相当 ＋ 数量・数量表現（連体修飾語：かなりの・相当な数の・少なからぬ）",
+      "shortExplanation": "数量表現や範囲を表す語の前に置かれて連体修飾語（定語）となり、数量や規模が決して少なくなく、無視できない程度に達していることを表します（「かなりの」「相当な」）。",
+      "longExplanation": "「相当」（xiāngdāng）は数量句や名詞を修飾する定語（連体修飾語）としても頻繁に用いられます。典型的な組み合わせとして「相当一部分」（かなりの部分、少なからぬ人々）、「相当数量」（相当な数量）、「相当规模」（かなりの規模）、「相当长的时间」（かなりの長期間）などがあります。数量や比率が大きく、重視すべき水準に達していることを客観的に述べます。日本語の「かなりの」「相当な数の」「少なからぬ」に相当します。",
+      "formation": "相当 ＋ 一部分 / 数量詞句 / 名詞（＋ 的 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "かなりの数の人々が、収入の多寡を幸福の基準としています。"
+        }
+      ]
+    },
+    "zh_数sh_480": {
+      "title": "数（shǔ）（動詞：数える・計算する）",
+      "shortExplanation": "第3声（shǔ）で発音される動詞で、人や物の数を1つずつ数える動作を表します（「数える」）。",
+      "longExplanation": "「数」が第3声「shǔ」で読まれる場合、数・数量を1つずつ順番に数え上げる動作を表す動詞になります（例：「数数」数を数える、「数钱」お金を数える、「数了一下」ちょっと数えてみた）。第4声で読まれる「shù」（名詞の「数・数字」、数詞の「数〜」）とは品詞および声調が明確に区別されます。日本語の「数える」「計算する」に相当します。",
+      "formation": "主語 ＋ 数（＋ 了 / 一下）＋ 目的語",
+      "examples": [
+        {
+          "translation": "大体数えてみましたが、車内には32人の学生がいます。"
+        }
+      ]
+    },
+    "zh_数sh_481": {
+      "title": "数（shǔ）（動詞：筆頭に挙げられる・一番である・屈指である）",
+      "shortExplanation": "比較や列挙の中で用いられ、ある範囲内で最も際立っている人や物事を筆頭として挙げることを表します（「〜が一番だ」「筆頭に数えられる」）。",
+      "longExplanation": "「数」（shǔ）が第3声で読まれる際、「比較検討した結果、最も傑出しているものとして真っ先に挙げる」という意味の動詞としても用いられます。特によく使われる構文パターンとして「（要说……）就数……」（…といえば何といっても〜が筆頭だ）や「要数……最……」（〜が最も…だ）、「数得着 / 数不上」（屈指の存在である／数えるほどではない）などがあります。日本語の「〜が一番だ」「〜が筆頭に挙げられる」「〜を一番に数える」に相当します。",
+      "formation": "（条件・比較節，）那 / 就 / 要 ＋ 数 ＋ 名詞（最も優れた対象）",
+      "examples": [
+        {
+          "translation": "うちのクラスで足が一番速い人といえば、何といっても李陽です。"
+        }
+      ]
+    },
+    "zh_数sh_482": {
+      "title": "数（shù）＋ 量詞（数詞：数〜・いくつかの・数個の）",
+      "shortExplanation": "第4声（shù）で発音される数詞で、書き言葉において量詞や時間の単位の前に置かれ、不特定の少数（いくつか）を表します（「数〜」）。",
+      "longExplanation": "「数」が第4声「shù」で読まれる場合、口語の「几」に相当する書き言葉の不特定数詞として機能します。量詞や時間・空間の単位名詞の直前に置かれ、「数日、数ヶ月、数年、数回、数千、数万」のように「いくつかの、数〜」という意味を表します（例：「数小时」数時間、「数千人」数千人）。フォーマルな報告、公的文書、学術的叙述において非常に好んで用いられます。日本語の接頭辞「数〜」（数時間、数日間、数回）に相当します。",
+      "formation": "数 ＋ 量詞 / 単位名詞（時間・数量など）",
+      "examples": [
+        {
+          "translation": "この地域の夏の夕立は、通常数時間またはそれ以上の時間にわたって続くことがあります。"
+        }
+      ]
+    },
+    "zh_以及_483": {
+      "title": "以及（接続詞：および・ならびに・そして・〜並びに）",
+      "shortExplanation": "並列の語や句を繋ぐ格調高い書き言葉の接続詞で、列挙の最後の項目や、補足的・二次的な項目を導く際に用いられます（「および」「ならびに」）。",
+      "longExplanation": "「以及」（yǐjí）は、名詞や名詞句の並列関係を表すフォーマルな書き言葉の接続詞です。複数の要素を列挙する際、読点（、）で並べられた最後の項目の直前に置かれます。「和」よりも公式で改まった響きを持ちます。また語用論的特徴として、「以及」の前に主要な事物（重点）が置かれ、「以及」の後に付随的・従属的な項目、あるいは範囲の異なる補足項目が置かれる傾向があります。公文書、報道、学術論文などで多用されます。日本語の「および」「ならびに」「〜ならびに…」に相当します。",
+      "formation": "名詞1、名詞2 ＋ 以及 ＋ 名詞3（最後の項目・付随的項目）",
+      "examples": [
+        {
+          "translation": "学校の指導部、教員、および一部の学生代表が公演を鑑賞しました。"
+        }
+      ]
+    },
+    "zh_程度_484": {
+      "title": "程度（名詞：程度・度合い・レベル・段階）",
+      "shortExplanation": "物事の発達段階や状態の度合い、水準を表す名詞で、「〜の程度に達する／至る」などの形でよく用いられます（「程度」「度合い」）。",
+      "longExplanation": "「程度」（chéngdù）は、事物や現象の進行状況、状態の深刻さ、水準の高さなどを表す名詞です。「发展到 / 达到 ＋（形容詞 ＋ 的）程度」（〜の程度にまで発展する／達する）や「在某种程度上」（ある程度において）などのコロケーションで多用されます。事態がどの段階や深刻度にあるのかを客観的に示す際に用いられます。日本語の「程度」「度合い」「レベル」に相当します。",
+      "formation": "主語 ＋ 发展到 / 达到 ＋（形容詞 ＋ 的）程度",
+      "examples": [
+        {
+          "translation": "問題はすでに極めて深刻な程度にまで発展してしまっています。"
+        }
+      ]
+    },
+    "zh_更何况_485": {
+      "title": "(更)何况（接続詞：まして・なおさら〜だ・いわんや〜をや）",
+      "shortExplanation": "後節の冒頭に置かれ、前節よりも一層条件や理由が顕著であることを示し、当然の帰結を導く累加・漸進の接続詞です（「まして」「なおさら」）。",
+      "longExplanation": "「(更)何况」（(gèng) hékuàng）は、強い漸進・累加関係を表す接続詞です。典型的な構文として「连……都 / 也……，(更)何况……呢？」（…でさえ〜なのだから、まして…はなおさらだ／いわんや…をや）という反語的な呼応関係を形成します。前節で極端な事例を挙げて「それですらこうなのだから」と述べ、後節でより明白な理由や対象を提示して結論の自明性を強調します。文末には反語を強める語気助詞「呢」を伴うのが一般的です。日本語の「まして」「なおさら〜だ」「いわんや〜をや」に相当します。",
+      "formation": "连 ＋ 名詞1 ＋ 都 / 也 ＋ 述語，(更)何况 ＋ 名詞2（＋ 呢）？",
+      "examples": [
+        {
+          "translation": "選手たちでさえ不満を抱いているのに、まして試合を見ているファンならなおさらではないでしょうか。"
+        }
+      ]
+    },
+    "zh_何必_486": {
+      "title": "何必（反語副詞：どうして〜する必要があろうか・何も〜しなくてもいいではないか）",
+      "shortExplanation": "動詞の前に置かれ、反語の口調で「そのようにする必要はまったくない」「無駄なことだ」と相手をたしなめたり助言したりします（「何も〜しなくてもいい」「どうして〜する必要があるのか」）。",
+      "longExplanation": "「何必」（hébì）は、反語の強い語気を持つ副詞です。動詞述語の直前に置かれ、「なぜわざわざそんなことをする必要があるのか（そんなことをする必要は全くない）」という反語的な意味を表します。話し手が相手の無駄な苦労、過度な心配、過剰な行動を思いとどまらせたり、もっと手軽な代替案を促したりする際によく用いられます。文末には反語の語気助詞「呢」を伴うのが一般的です。日本語の「どうして〜する必要があろうか」「何もわざわざ〜しなくてもいいではないか」に相当します。",
+      "formation": "主語 ＋ 何必 ＋ 動詞述語（＋ 呢）？",
+      "examples": [
+        {
+          "translation": "何もわざわざ自分で届けに行く必要はないでしょう。宅配便を頼めばそれで済むではありませんか。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_所_472": {
+      "title": "所 (양사: 학교, 병원, 기관, 주택 등을 세는 단위)",
+      "shortExplanation": "학교, 병원, 연구소 등 공공 기관이나 기관 시설, 주택 건물을 셀 때 쓰이는 양사입니다('곳', '개교', '채').",
+      "longExplanation": "'所'(suǒ)는 학교, 병원, 연구원, 관공서 등 제도적 기관이나 단독 건물·가옥을 세는 전문 양사입니다(예: '一所大学' 한 대학교, '一所医院' 한 병원, '一所学校' 한 학교, '一所房子' 집 한 채). 일반적인 범용 양사 '个'보다 격식 있고 정중한 어감을 줍니다. 한국어의 '~곳', '~채', '~개교' 등에 해당합니다.",
+      "formation": "수사 + 所 + 명사 (학교 / 병원 / 기관 / 건물 등)",
+      "examples": [
+        {
+          "translation": "그는 베이징의 한 대학교 출신이다."
+        }
+      ]
+    },
+    "zh_S所V的_473": {
+      "title": "주어 + (所) + 동사 + 的 (주어가 동사하는 바, 주어가 ~한 것)",
+      "shortExplanation": "조사 '所'를 동사 앞에 두고 끝의 '的'과 호응시켜, 주어가 행한 동작의 대상이나 내용을 명사절로 나타내는 서면어 격식 표현입니다('~하는 바', '~한 것').",
+      "longExplanation": "'주어 + (所) + 동사 + 的'(주어 + suǒ + 동사 + de)은 주로 학술문, 논설, 뉴스 보도 등 격식 있는 서면어에서 쓰이는 구문입니다. 타동사(주로 2음절 동사) 앞에 조사 '所'를 삽입하고 뒤에 '的'을 연결하여, 전체가 문장에서 주어나 목적어 역할을 하는 명사성 성분을 형성합니다. 주어가 행하는 행위의 대상, 결과 또는 내용을 가리키며, 구어에서는 보통 '所'를 생략하지만 '所'를 넣으면 훨씬 문어적이고 격조 높은 문장이 됩니다. 한국어의 '주어가 ~하는 바', '주어가 ~한 것(내용)'에 해당합니다.",
+      "formation": "주어 + (所 +) 동사 + 的 (+ 명사)",
+      "examples": [
+        {
+          "translation": "산수화가 표현하는 바는 바로 인간과 자연의 관계이다."
+        }
+      ]
+    },
+    "zh_有所V_474": {
+      "title": "有所 + 동사 (어느 정도 ~가 있다, 다소 ~되다, 얼마간 ~하다)",
+      "shortExplanation": "2음절 동사 앞에 놓여, 어떤 변화나 발전, 동작이 일정한 정도나 범위에 이르렀음을 나타내는 서면어 표현입니다('어느 정도 ~하다', '다소 ~되다').",
+      "longExplanation": "'有所 + 동사'(yǒusuǒ + 동사)는 논문, 보고서, 기사 등 격식 있는 서면어에서 자주 활용되는 구조입니다. 변화나 발전을 나타내는 2음절 동사(提高 향상되다, 改善 개선되다, 增加 증가하다, 改变 변화하다, 了解 이해가 있다 등) 앞에 쓰여 부사어 역할을 합니다. 극단적이진 않지만 명확히 일정한 수준이나 방향으로 진전·변화가 발생했음을 객관적으로 기술할 때 쓰입니다. 한국어의 '어느 정도 ~되다', '다소 ~하다', '얼마간의 ~가 있다'에 해당합니다.",
+      "formation": "주어 + 有所 + 동사 (2음절 동사)",
+      "examples": [
+        {
+          "translation": "나이가 들어감에 따라 여성의 직장 내 행복감이 어느 정도 향상되었다."
+        }
+      ]
+    },
+    "zh_无所V_475": {
+      "title": "无所 + 동사 (아무것도 ~할 것이 없다, 전혀 ~하지 않다, 온통 ~하다)",
+      "shortExplanation": "2음절 동사 앞에 놓여, 동작이 미치는 대상이 전혀 없거나 전면적인 부정을 나타내는 격식 있는 서면어·고사성어 표현입니다('전혀 ~할 것이 없다', '무엇 하나 ~하지 않다').",
+      "longExplanation": "'无所 + 동사'(wú suǒ + 동사)는 고전 한문 양식에서 유래한 정중하고 품격 있는 서면어 구조로, 많은 성어와 관용어에 쓰입니다. 2음절 동사 앞에 쓰여 '해당 동작이 미치는 대상이나 까닭이 전혀 존재하지 않음'을 의미합니다. 대표적으로 '无所畏惧'(어떤 것도 두려워하지 않다), '无所不知'(모르는 것이 전혀 없다), '无所事事'(하는 일 없이 빈둥거리다), '无所顾忌'(거리낌이 전혀 없다) 등이 있습니다. 전면적인 부정이나 거침없는 태도를 강조합니다. 한국어의 '아무것도 ~할 것이 없다', '전혀 ~하지 않다'에 해당합니다.",
+      "formation": "주어 + 无所 + 동사 (2음절 동사)",
+      "examples": [
+        {
+          "translation": "진리를 굳게 지킨다면 그 어떤 것도 두려워할 것이 없다."
+        }
+      ]
+    },
+    "zh_与N相当_476": {
+      "title": "与 + 명사 + 相当 (형용사 술어: ~와 대등하다, ~와 맞먹다, ~와 동등하다)",
+      "shortExplanation": "'相当'이 형용사 술어로 쓰이고 개사 '与'(또는 '跟', '和')와 호응하여, 양자의 수량, 수준, 조건 등이 서로 대등함을 나타냅니다('~와 맞먹다', '~와 대등하다').",
+      "longExplanation": "'与 + 명사 + 相当'(yǔ 명사 xiāngdāng)에서 '相当'은 '서로 대등하다, 맞먹다'라는 뜻의 형용사 술어입니다. 전치사(개사) '与'(구어에서는 '跟', '和')로 비교 대상을 이끌어, 주어와 해당 대상의 수치, 능력, 자격, 영향력 등이 대등하거나 엇비슷함을 객관적으로 서술합니다. 보고서나 과학 논문, 통계 분석 등 정중한 서면어에서 빈번히 사용됩니다. 한국어의 '~와 맞먹다', '~와 대등하다', '~와 동등한 수준이다'에 해당합니다.",
+      "formation": "주어 + 与 / 跟 / 和 + 명사 + 相当",
+      "examples": [
+        {
+          "translation": "운전 중 통화를 하는 사람의 반응 속도는 음주자와 맞먹는다."
+        }
+      ]
+    },
+    "zh_相当于N_477": {
+      "title": "相当于 + 명사 (동사구: ~에 상당하다, ~와 맞먹다, ~에 해당하다)",
+      "shortExplanation": "동사 '相当'에 개사 '于'가 결합된 형태로, 수량, 가치, 역할 등이 목적어 명사와 대등함을 나타냅니다('~에 상당하다', '~에 해당하다').",
+      "longExplanation": "'相当于 + 명사'(xiāngdāngyú 명사)는 타동사 역할을 하는 고정 표현입니다. 뒤에 명사나 수량구를 목적어로 취하여, 주어의 크기, 금액, 비율, 기능 등이 목적어와 동등한 가치나 수준을 가짐을 나타냅니다. 화폐 환산, 수치 비교, 지위나 역할의 대등성 등을 서술할 때 매우 폭넓게 쓰입니다. 한국어의 '~에 상당하다', '~와 맞먹다', '~에 해당하다'에 해당합니다.",
+      "formation": "주어 + 相当于 + 명사 / 수량구",
+      "examples": [
+        {
+          "translation": "이 새가 하루에 먹는 해충은 자신의 체중과 맞먹는다."
+        }
+      ]
+    },
+    "zh_相当_478": {
+      "title": "相当 + 형용사 / 심리동사 (정도부사: 상당히, 꽤, 매우)",
+      "shortExplanation": "정도부사로서 형용사나 심리동사 앞에 놓여, 상태나 감정의 정도가 매우 높음을 나타냅니다('상당히', '꽤', '매우').",
+      "longExplanation": "'相当'(xiāngdāng)은 형용사나 심리동사(满意 만족하다, 严重 심각하다, 丰富 풍부하다, 困难 어렵다 등) 앞에 쓰이는 정도부사입니다. 일반적인 기준을 넘어 정도가 꽤 높음을 객관적이고 점잖은 어조로 나타냅니다. '比较'(비교적)보다 정도가 강하며 '很'(매우)이나 '十分'(대단히)과 유사한 수준이지만 한층 서면어적이고 세련된 느낌을 줍니다. 한국어의 '상당히', '꽤', '매우'에 해당합니다.",
+      "formation": "주어 + 相当 + 형용사 / 심리동사",
+      "examples": [
+        {
+          "translation": "음식 맛이 정말 훌륭하고 서비스도 세심해서 저는 상당히 만족스럽습니다."
+        }
+      ]
+    },
+    "zh_相当_479": {
+      "title": "相当 + 수량 표현 / 명사 (관형어: 상당한, 적지 않은, 꽤 많은)",
+      "shortExplanation": "수량 표현이나 범위를 나타내는 말 앞에 놓여 관형어 역할을 하며, 수량이나 규모가 결코 적지 않고 무시할 수 없을 정도로 큼을 나타냅니다('상당한', '적지 않은').",
+      "longExplanation": "'相当'(xiāngdāng)은 수량 표현이나 범위 관련 어구와 결합하여 뒤따르는 명사를 수식하는 관형어로 사용됩니다. 자주 쓰이는 대표적 표현으로는 '相当一部分'(상당수의, 적지 않은 부분의), '相当数量'(상당한 수량), '相当长的时间'(상당히 긴 시간), '相当规模'(상당한 규모) 등이 있습니다. 수치나 비중이 상당하여 눈여겨보아야 할 수준임을 나타냅니다. 한국어의 '상당한', '적지 않은', '꽤 많은 수의'에 해당합니다.",
+      "formation": "相当 + 一部分 / 수량 표현 (+ 的) + 명사",
+      "examples": [
+        {
+          "translation": "상당수의 사람들은 소득의 많고 적음을 행복의 기준으로 여긴다."
+        }
+      ]
+    },
+    "zh_数sh_480": {
+      "title": "数 (shǔ) (동사: 세다, 셈하다, 계산하다)",
+      "shortExplanation": "제3성(shǔ)으로 발음되는 동사로, 사람이나 사물의 수를 하나씩 헤아려 세는 동작을 나타냅니다('세다', '헤아리다').",
+      "longExplanation": "'数'가 제3성인 'shǔ'로 발음될 때는 사람이나 사물의 수량을 하나하나 헤아리는 구체적인 동작을 나타내는 동사입니다(예: '数数' 수를 세다, '数钱' 돈을 세다, '数了一下' 한번 세어 보았다). 제4성으로 발음되는 'shù'(숫자, 몇몇)와는 성조 및 품사가 엄격히 구분됩니다. 한국어의 '세다', '헤아리다', '셈하다'에 해당합니다.",
+      "formation": "주어 + 数 (+ 了 / 一下) (+ 목적어)",
+      "examples": [
+        {
+          "translation": "내가 대충 세어 보았는데, 차 안에 학생이 32명 있다."
+        }
+      ]
+    },
+    "zh_数sh_481": {
+      "title": "数 (shǔ) (동사: 으뜸으로 꼽히다, 손꼽히다, 단연 첫째이다)",
+      "shortExplanation": "비교나 열거의 맥락에서 쓰여, 특정한 기준에서 가장 두드러지거나 뛰어난 대상을 첫머리로 손꼽음을 나타냅니다('손꼽히다', '단연 으뜸이다').",
+      "longExplanation": "'数'(shǔ)는 여러 대상 가운데 어떤 특성이나 기준에 비추어 볼 때 가장 두드러진 대상을 으뜸으로 지목할 때 쓰이는 동사입니다. 주로 구어에서 '就数……'(단연 ~를 꼽을 수 있다), '要数……'(손꼽자면 ~이다), '数得着'(손가락 안에 꼽히다) 등의 형태로 자주 쓰입니다. 특정 분야나 집단에서 단연 1위로 손꼽히는 인물이나 사물을 지목할 때 사용됩니다. 한국어의 '으뜸으로 꼽히다', '손꼽히다', '단연 ~이다'에 해당합니다.",
+      "formation": "비교 범위 (最……), (那 / 就 / 要 +) 数 + 명사 (가장 뛰어난 대상)",
+      "examples": [
+        {
+          "translation": "우리 반에서 달리기가 가장 빠른 사람을 꼽자면, 단연 리양이다."
+        }
+      ]
+    },
+    "zh_数sh_482": {
+      "title": "数 (shù) + 양사 (수사: 수~, 몇~, 여러~)",
+      "shortExplanation": "제4성(shù)으로 발음되는 수사로, 서면어에서 양사나 시간·단위 명사 앞에 쓰여 불특정한 소수(몇몇)를 나타냅니다('수~', '몇~').",
+      "longExplanation": "'数'가 제4성인 'shù'로 발음될 때는 구어의 '几'(몇)에 상응하는 격조 높은 서면어 수사 역할을 합니다. 양사나 시간, 수량 단위 앞에 직접 결합하여 '数小时'(수 시간), '数日'(수일/며칠), '数年'(수년), '数次'(수차례), '数万'(수만)과 같이 불특정의 적은 수(대략 몇 개/몇 사람)를 간결하게 표현합니다. 공문서, 학술 논문, 보도 자료 등에 즐겨 쓰입니다. 한국어의 접두사 '수~(數~)', '몇~'에 해당합니다.",
+      "formation": "数 + 양사 / 단위 명사",
+      "examples": [
+        {
+          "translation": "이곳 여름철의 뇌우는 보통 수 시간 혹은 그보다 더 오랜 시간 동안 지속될 수 있다."
+        }
+      ]
+    },
+    "zh_以及_483": {
+      "title": "以及 (접속사: 및, 그리고, 아울러, ~와/과)",
+      "shortExplanation": "명사나 명사구를 대등하게 연결하는 품격 있는 서면어 접속사로, 열거의 마지막 항목이나 부차적인 대상을 이끌 때 쓰입니다('및', '그리고').",
+      "longExplanation": "'以及'(yǐjí)는 명사나 명사성 어구를 나열할 때 쓰이는 격식 있는 서면어 접속사입니다. 여러 대상을 열거할 때 쉼표(、)로 연결하다가 마지막 항목 바로 앞에 놓여 항목들을 매듭짓습니다. 구어의 '和'나 '跟'에 비해 공식적이고 정중한 느낌을 줍니다. 또한 '以及' 앞에는 주된 대상이 오고, '以及' 뒤에는 상대적으로 부차적이거나 보충적인 대상이 놓이는 경우가 많다는 특징이 있습니다. 공문서나 뉴스 보도, 발표문 등에서 자주 사용됩니다. 한국어의 '및', '그리고', '아울러 ~도'에 해당합니다.",
+      "formation": "명사1, 명사2 + 以及 + 명사3 (마지막/부차적 항목)",
+      "examples": [
+        {
+          "translation": "학교 지도부와 교사 및 일부 학생 대표들이 공연을 관람했다."
+        }
+      ]
+    },
+    "zh_程度_484": {
+      "title": "程度 (명사: 정도, 수준, 단계)",
+      "shortExplanation": "사물의 발전 단계나 상태의 깊이, 수준을 나타내는 명사로, '어떠한 정도에 이르다/도달하다'의 형식으로 자주 쓰입니다('정도', '수준').",
+      "longExplanation": "'程度'(chéngdù)는 사물의 변화, 상황의 심각성, 수준의 높낮이 등이 도달한 단계를 나타내는 명사입니다. 주로 '发展到 / 达到 + (형용사 + 的) + 程度'(~한 정도까지 발전하다/이르다), '在某种程度上'(어느 정도는/일정한 수준에서는) 등의 구문으로 자주 활용됩니다. 객관적인 수준이나 사태의 진전 경계를 설명할 때 적합합니다. 한국어의 '정도', '수준', '지경'에 해당합니다.",
+      "formation": "주어 + 发展到 / 达到 + (형용사 + 的) + 程度",
+      "examples": [
+        {
+          "translation": "문제가 이미 매우 심각한 정도에까지 이르렀다."
+        }
+      ]
+    },
+    "zh_更何况_485": {
+      "title": "(更)何况 (점층 접속사: 하물며, 더군다나, ~은 말할 것도 없고)",
+      "shortExplanation": "후속 절 서두에 쓰여 앞 절의 사실보다 한 단계 더 나아간 당연한 근거나 대상을 제시하는 점층 접속사입니다('하물며', '더군다나').",
+      "longExplanation": "'(更)何况'((gèng) hékuàng)은 앞 절의 내용보다 더욱 분명하고 당연한 사유나 대상을 이끌어내는 점층 접속사입니다. 가장 대표적인 호응 구문은 '连……都 / 也……，(更)何况……呢?'(~조차도 그러한데, 하물며 ~야 더 말할 나위 있겠는가?)입니다. 극단적이거나 기본적인 대상을 앞 절에서 언급한 뒤, 후속 절에서 한층 더한 대상을 제시하여 반문함으로써 결론의 명백함을 강조합니다. 문장 끝에는 흔히 어기조사 '呢'가 호응합니다. 한국어의 '하물며', '더군다나', '~는 말할 것도 없고'에 해당합니다.",
+      "formation": "连 + 명사1 + 都 / 也 + 술어, (更)何况 + 명사2 (+ 呢)?",
+      "examples": [
+        {
+          "translation": "선수들조차 만족하지 못하는데, 하물며 경기를 관람하는 팬들이야 오죽하겠는가?"
+        }
+      ]
+    },
+    "zh_何必_486": {
+      "title": "何必 (반어 부사: 굳이 ~할 필요가 무엇인가, 하필, 어찌 꼭 ~해야 하는가)",
+      "shortExplanation": "동사 앞에 놓여 반어의 어조로 '굳이 그렇게 할 필요가 없다', '쓸데없는 일이다'라는 뜻을 나타내어 상대를 말리거나 조언할 때 씁니다('굳이 ~할 필요가 있는가').",
+      "longExplanation": "'何必'(hébì)는 반어적 뉘앙스를 지닌 어기부사로, '왜 굳이 꼭 ~해야 하는가(그럴 필요가 전혀 없다)'라는 의미를 나타냅니다. 상대방이 불필요하게 애를 쓰거나 수고를 들이는 것을 만류하고, 더 간편한 방법이 있음을 완곡하게 조언하거나 반문할 때 매우 자주 쓰입니다. 문장 끝에는 흔히 의문·반어의 어기조사 '呢'가 호응합니다. 한국어의 '굳이 ~할 필요가 무엇인가', '하필 왜 ~하는가', '~할 것까지야 없지 않은가'에 해당합니다.",
+      "formation": "주어 + 何必 + 동사구 (+ 呢)?",
+      "examples": [
+        {
+          "translation": "네가 굳이 직접 배달까지 갈 필요가 뭐가 있니? 택배를 부르면 바로 해결될 텐데."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_所_472": {
+      "title": "所（量词：用于学校、医院、机关单位及房屋等）",
+      "shortExplanation": "量词，用于学校、医院、科研机构等企事业单位，或者成座的房屋建筑。",
+      "longExplanation": "“所”（suǒ）是现代汉语中用于计算机构或建筑物的专用量词。常见搭配包括教育机构（如“一所大学”、“一所小学”）、医疗或科研机构（如“一所医院”、“一所研究所”）、机关单位以及成套房屋（如“一所房子”）。相比通用量词“个”，“所”在语体上更加正式规范。",
+      "formation": "数词 + 所 + 名词（学校 / 医院 / 机关 / 住宅等）",
+      "examples": [
+        {
+          "translation": "他来自北京的一所大学。"
+        }
+      ]
+    },
+    "zh_S所V的_473": {
+      "title": "主语 + (所) + 动词 + 的（助词“所”与“的”呼应，构成指代事物的名词性短语）",
+      "shortExplanation": "助词“所”放在动词前面，与后面的“的”相呼应，组成名词性短语，表示动作的支配对象或涉及的事项；具书面语色彩。",
+      "longExplanation": "“主语 + (所) + 动词 + 的”（主语 + suǒ + 动词 + de）是现代汉语书面语中常见的句法结构。助词“所”置于及物动词（多为双音节动词，如“表现、需要、指出、规定”等）之前，与句尾的“的”相配合，整体构成指代动作承受对象或内容的名词性成分，常在句中充当主语或宾语。日常口语中多单用“主语 + 动词 + 的”，加入“所”字则使文气更加典雅、庄重、严谨。",
+      "formation": "主语 + (所 +) 动词 + 的 (+ 中心语)",
+      "examples": [
+        {
+          "translation": "山水画(所)表现的是人与自然的关系。"
+        }
+      ]
+    },
+    "zh_有所V_474": {
+      "title": "有所 + 动词（书面语格式，表示产生了一定程度的变化或进展）",
+      "shortExplanation": "置于双音节动词前作状语，表示某种变化、发展或动作达到了一定的程度或范围；相当于“有一点”、“在一定程度上”。",
+      "longExplanation": "“有所 + 动词”（yǒusuǒ + 动词）是常用于新闻报道、调查报告和学术文章的典型书面语格式。“有所”置于表示变化、改善、增减等意义的双音节动词之前（如“提高、改善、增加、下降、改变、了解、体现”等），表示动作行为具有一定的实际内容，或者事物在某种程度上发生了积极或明确的变化。表达严谨、客观，带有克制的学术与书面语态。",
+      "formation": "主语 + 有所 + 动词（双音节动作或变化动词）",
+      "examples": [
+        {
+          "translation": "随着年龄的增大，女性的职场幸福感有所提高。"
+        }
+      ]
+    },
+    "zh_无所V_475": {
+      "title": "无所 + 动词（文雅书面语格式，表示没有什么可……的，全无、毫无）",
+      "shortExplanation": "置于双音节动词前，表示动作行为所涉及的对象全无，或表示全面的否定；常用于成语或庄重的书面语体中。",
+      "longExplanation": "“无所 + 动词”（wú suǒ + 动词）源于文言格式，是极具表现力的书面语固定结构。副词性结构“无所”置于及物动词或心理动词前，意为“没有什么所……的”，常构成带有强调色彩的固定词组或成语。如“无所畏惧”（什么都不怕）、“无所不知”（什么都知道）、“无所事事”（闲着什么事都不干）、“无所作为”（没有任何成就）。在现代汉语中，常用于表达坚定、无拘无束或全无所依的状态。",
+      "formation": "主语 + 无所 + 动词（双音节及物/心理动词）",
+      "examples": [
+        {
+          "translation": "你要是坚持真理就可以无所畏惧。"
+        }
+      ]
+    },
+    "zh_与N相当_476": {
+      "title": "与 + 名词 + 相当（形容词作谓语，表示彼此在水平、数量或程度上相匹敌、差不多）",
+      "shortExplanation": "“相当”作形容词谓语，与介词“与”（或“跟”、“和”）搭配，表示两者在条件、水平、数量上互相对等、不相上下。",
+      "longExplanation": "“与 + 名词 + 相当”（yǔ 名词 xiāngdāng）是表示对比等同的常用结构。在此格式中，“相当”是形容词，意为“相差不多、相抵、对等”，充当句子谓语；由介词“与”（口语中也可用“跟”、“和”）引出对比的参照物。该结构常用于科学分析、调查报告和事实阐述中，用于客观说明两者的比率、程度、水平或力量旗鼓相当。",
+      "formation": "主语 + 与 / 跟 / 和 + 名词 + 相当",
+      "examples": [
+        {
+          "translation": "开车打电话的人的反应速度与醉酒者相当。"
+        }
+      ]
+    },
+    "zh_相当于N_477": {
+      "title": "相当于 + 名词（动介结合结构，表示在数量、价值或作用上等同于、相匹敌）",
+      "shortExplanation": "动词“相当”与介词“于”结合，直接带宾语，表示在数量、价值、比率或地位上与后项大致相同或相当。",
+      "longExplanation": "“相当于 + 名词”（xiāngdāngyú 名词）是现代汉语中常用的动介融合式动词短语。整体直接作谓语，后接名词、数量短语或代词作宾语。常用于数值折算、比喻对应、事物功能类比或比率说明，指出主语在分量、价值或功能上等于后接的事物。如“一美元相当于多少人民币”、“这笔钱相当于他三年的工资”。",
+      "formation": "主语 + 相当于 + 名词 / 数量短语",
+      "examples": [
+        {
+          "translation": "这种鸟一天所食的害虫相当于自己的体重。"
+        }
+      ]
+    },
+    "zh_相当_478": {
+      "title": "相当 + 形容词 / 心理动词（程度副词，表示程度深，相当于“很”、“十分”）",
+      "shortExplanation": "程度副词，用在形容词或表示心理状态的动词前，表示程度达到较高的水平；相当于“很”、“十分”。",
+      "longExplanation": "“相当”（xiāngdāng）作程度副词时，置于形容词或心理动词（如“满意、喜欢、严重、困难、丰富、复杂”等）前面充当状语。其表示的程度高于“比较”，与“很”、“十分”相当，但语意更为客观、严谨，多用于陈述事实或理性评价，书面语和口语中均十分常用。",
+      "formation": "主语 + 相当 + 形容词 / 心理动词",
+      "examples": [
+        {
+          "translation": "菜的味道好极了，服务也周到，我相当满意。"
+        }
+      ]
+    },
+    "zh_相当_479": {
+      "title": "相当 + 数量短语 / 名词（作定语，表示数量相当多或程度可观，相当于“相当大的”、“不可忽视的”）",
+      "shortExplanation": "置于数量词语或表范围的词前作定语，表示数量、规模或程度达到相当大的、不可忽视的地步；相当于“不可小觑的”、“可观的”。",
+      "longExplanation": "“相当”（xiāngdāng）常用于修饰数量短语或范围名词，充当句中的定语。最典型的搭配是“相当一部分”（相当多的一部分人/事物），此外还常搭配“相当数量”、“相当规模”、“相当长的时期”等。它指出所涉及的人数、物量或时间已达到相当可观的程度，具有统计或分析上的显著意义，常用于学术论文、新闻社论及社会调查中。",
+      "formation": "相当 + 一部分 / 数量短语 (+ 的) + 名词",
+      "examples": [
+        {
+          "translation": "相当一部分人会以收入多少作为幸福的标准。"
+        }
+      ]
+    },
+    "zh_数sh_480": {
+      "title": "数（shǔ）（动词：计算数目、逐一点数）",
+      "shortExplanation": "读作第三声（shǔ）时为动词，表示一个一个地计算数目或点清数量；相当于“点数”、“算数目”。",
+      "longExplanation": "多音字“数”读作上声（shǔ）时，是表示具体动作行为的及物动词，指查点数目、计算多寡。常用搭配包括“数数（shǔ shù）”、“数钱”、“数人数”、“数了一下”等。与读去声（shù）时充当名词（数目、数学）或数词（表示若干）形成清晰的词性与语义对立。",
+      "formation": "主语 + 数（+ 了 / 一下）(+ 宾语)",
+      "examples": [
+        {
+          "translation": "我大概数了一下，车上有32个学生。"
+        }
+      ]
+    },
+    "zh_数sh_481": {
+      "title": "数（shǔ）（动词：列举、比较，认为最突出；就数……/要数……）",
+      "shortExplanation": "读作第三声（shǔ），在比较或列举中表示某人或某事物最为突出、名列前茅；相当于“算做最……”。",
+      "longExplanation": "动词“数”（shǔ）在此用法中引申为“比较并评定为最突出、最优秀”。常用于口语固定的比较性句式中，典型搭配为“（要说……）就数……”、“要数……最……”或“数得上 / 数得着”（算得上出众）。说话人以此将某一特定对象从整体中单独提出来，强调其在某项特长、技能或特征上居于榜首。",
+      "formation": "（比较范围 / 前提，）那 / 就 / 要 + 数 + 名词（最突出的人或物）",
+      "examples": [
+        {
+          "translation": "要说我们班跑得最快的，那就数李阳了。"
+        }
+      ]
+    },
+    "zh_数sh_482": {
+      "title": "数（shù）+ 量词（数词：表示几、若干，多用于书面语）",
+      "shortExplanation": "读作第四声（shù）时充当数词，用在量词或表时间、度量衡的词前，表示不定的数目，相当于口语中的“几”。",
+      "longExplanation": "多音字“数”读作去声（shù）时，除了作名词表示“数目”外，还常用作表示不定数目的数词。在书面语中直接与量词或时间、度量单位结合，相当于口语中的“几”（如“数日”即几天、“数年”即几年、“数小时”即几个小时、“数万人”即几万人）。这种用法文风典雅凝练，多见于新闻公文、学术论著和史籍叙事中。",
+      "formation": "数 + 量词 / 时间与度量单位名词",
+      "examples": [
+        {
+          "translation": "这里夏季的雷阵雨一般可持续数小时或者更久的时间。"
+        }
+      ]
+    },
+    "zh_以及_483": {
+      "title": "以及（连词：连接并列的名词性成分，引出最后或次要的并列项）",
+      "shortExplanation": "连词，用于连接并列的词或短语，多用于书面语；通常置于列举的最后一项之前，或引出处于次要地位的成分。",
+      "longExplanation": "“以及”（yǐjí）是用于表示并列联合关系的书面语连词。通常连接名词、代词或名词性短语。在用法上，当列举多个并列事物时，“以及”常放在最后两项之间，相当于“和”；同时在语意层次上，“以及”前面往往是主要的人或事物，后面常连接次要的、派生的或补充性的对象。其语体色彩庄重正式，广泛用于政论、新闻、报告及学术文献中。",
+      "formation": "名词1、名词2 + 以及 + 名词3（并列末项 / 次要补充项）",
+      "examples": [
+        {
+          "translation": "学校的领导、教师以及一些学生代表观看了演出。"
+        }
+      ]
+    },
+    "zh_程度_484": {
+      "title": "程度（名词：表示事物发展变化的水平、阶段或达到的界限）",
+      "shortExplanation": "名词，表示事物的属性、状态或发展过程所达到的水平、分量或界限；常用于“达到……的程度”等句式中。",
+      "longExplanation": "“程度”（chéngdù）是表示度量与阶段的名词。常与“达到、发展到、严重到”等谓语动词搭配，构成“动词 + 到了 + 形容词短语 + 的程度”，用以精确描绘事物的发展或恶化到达了何种具体境地。此外，也常见于“在某种程度上”、“视情况的严重程度而定”等书面语介词短语中，具有高度的概括性与书面语色彩。",
+      "formation": "主语 + 发展到 / 达到 + (形容词 + 的) + 程度",
+      "examples": [
+        {
+          "translation": "问题已经发展到了十分严重的程度。"
+        }
+      ]
+    },
+    "zh_更何况_485": {
+      "title": "(更)何况（连词：反问或递进语气，引出更为显而易见的情理，相当于“何况”、“更不用说”）",
+      "shortExplanation": "连词，用在后一分句，表示递进关系；常与“连……都……”呼应，以反问语气引出更加明显、理所当然的事实。",
+      "longExplanation": "“（更）何况”（(gèng) hékuàng）是表示递进关系的关联连词。常见于反问句式，典型搭配为“连……都/也……，（更）何况……呢？”。前一分句先举出尚且如此的极端或前置事例，后一分句则引出根据常情常理更为显豁的事实，进一步强化结论的不言自明。此外，“何况”也可以在陈述句后分句中追加一层更有说服力、更重要的理由。语气强烈，逻辑说服力充沛。",
+      "formation": "连 + 名词1 + 都 / 也 + 谓语，(更)何况 + 名词2 (+ 呢)？",
+      "examples": [
+        {
+          "translation": "连运动员都不满意，更何况看比赛的球迷呢？"
+        }
+      ]
+    },
+    "zh_何必_486": {
+      "title": "何必（语气副词：用反问语气表示用不着如此，何须、何苦）",
+      "shortExplanation": "语气副词，放在动词前，用反问语气表示某种行为完全没有必要，相当于“用不着”、“为什么一定要”。",
+      "longExplanation": "“何必”（hébì）是表示反问语气的常用副词。置于动词或动词性短语前充当状语，用来指出某人没有必要多费周折或过度操劳，言下之意是“完全用不着这么做”。说话人常用此语来进行劝解、宽慰或提出更为简便的替代方案，语气中带有体谅或劝止的意味。句尾通常带疑问语气助词“呢”以加强反诘呼应。",
+      "formation": "主语 + 何必 + 动词短语 (+ 呢)？",
+      "examples": [
+        {
+          "translation": "你何必亲自送一趟呢？叫个快递不就行了？"
+        }
+      ]
+    }
+  }
+}

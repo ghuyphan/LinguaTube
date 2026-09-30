@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_何尝_615": {
+      "title": "何尝 (Phó từ phản vấn: Đâu có / Nào có / Đâu phải không)",
+      "shortExplanation": "Phó từ dùng trong câu phản vấn để nhấn mạnh phủ định hoặc khẳng định (với \"何尝不/没\"); biểu thị sự thật thực tế hoàn toàn trái ngược với bề ngoài; \"đâu có\", \"nào có\", \"đâu phải không\".",
+      "longExplanation": "“何尝” (hécháng) là phó từ thường gặp trong văn viết và khẩu ngữ trang trọng, chuyên dùng trong các câu hỏi phản vấn (thường đi kèm trợ từ ngữ khí “呢” ở cuối câu) để củng cố ngữ khí khẳng định hoặc phủ định. Cụ thể có hai cách dùng: ① Khi đi với dạng phủ định “何尝不 / 何尝没”, nó tạo thành phủ định kép để nhấn mạnh ý khẳng định mạnh mẽ (ví dụ: “我何尝不想……” nghĩa là 'tôi nào phải không muốn, thực ra trong lòng tôi tha thiết muốn nhưng do hoàn cảnh không cho phép'); ② Khi đi ở dạng khẳng định thông thường, nó dùng câu hỏi tu từ để bác bỏ hoặc phủ định hoàn toàn một nhận định (ví dụ: “我何尝说过这话？” nghĩa là 'tôi có bao giờ nói lời này đâu!'). Tương đương với \"đâu có\", \"nào có\", \"đâu phải không\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 何尝 + 不 / 没 + Động từ / Tính từ + Tân ngữ + (呢)？ ｜ Chủ ngữ + 何尝 + Động từ + (呢)？",
+      "examples": [
+        {
+          "translation": "Tôi nào có phải không muốn mua một ngôi nhà lớn cơ chứ?"
+        }
+      ]
+    },
+    "zh_何至于_616": {
+      "title": "何至于 (Phó từ phản vấn: Làm gì đến mức / Đâu đến nỗi / Làm sao đến mức)",
+      "shortExplanation": "Phó từ phản vấn biểu thị sự việc không đến mức nghiêm trọng, tồi tệ hoặc cực đoan như vậy; dùng để khuyên can hoặc bày tỏ sự khó hiểu; \"làm gì đến mức\", \"đâu đến nỗi\".",
+      "longExplanation": "“何至于” (hé zhìyú) là từ ngữ phản vấn được cấu tạo từ phó từ nghi vấn “何” (sao, làm gì) và động từ “至于” (đến mức, đến nỗi). Cấu trúc này thường đứng trước vị ngữ hoặc phân câu thứ hai trong câu hỏi tu từ (thường đi với “呢” ở cuối câu), mang hàm ý: tình thế khách quan hay mức độ sự việc vốn dĩ không hề nghiêm trọng hay tồi tệ đến thế, hoàn toàn không cần thiết phải phản ứng thái quá, bi quan hoặc cực đoan như vậy. Thường dùng trong lời khuyên ngăn người khác không nên quá tức giận, lo âu hoặc làm lớn chuyện. Tương đương với \"làm gì đến mức...\", \"đâu đến nỗi...\", \"làm sao mà phải...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 何至于 + Cụm động từ / Mệnh đề + (呢)？",
+      "examples": [
+        {
+          "translation": "Bạn làm gì đến mức phải nổi giận đùng đùng như vậy cơ chứ?"
+        }
+      ]
+    },
+    "zh_V了个RESULT_617": {
+      "title": "Động từ + 了个 + Bổ ngữ kết quả (Kết cấu khẩu ngữ: ... một cách thỏa thuê / đã đời / triệt để)",
+      "shortExplanation": "Kết cấu khẩu ngữ sinh động diễn tả động tác được thực hiện một cách triệt để, thỏa thích, đã đời hoặc dẫn đến một kết quả trọn vẹn, bất ngờ; \"... một trận đã đời\", \"... đến mức thỏa thuê\".",
+      "longExplanation": "Kết cấu “Động từ + 了个 + Tính từ / Bổ ngữ kết quả” là một cấu trúc ngữ pháp vô cùng đặc sắc và sinh động trong khẩu ngữ tiếng Hán. Trong đó, từ “个” (gè) đã bị hư hóa hoàn toàn về mặt ngữ pháp, không còn làm lượng từ đếm số lượng nữa mà đóng vai trò đệm âm và tăng cường ngữ khí cho bổ ngữ đứng sau. Cấu trúc này thường đi kèm với các tính từ hoặc ngữ kết quả chỉ mức độ tột cùng, trạng thái thỏa mãn cảm xúc hoặc kết cục triệt để, chẳng hạn như “喝了个痛快” (uống một trận thỏa thuê), “吃了个精光” (ăn sạch sành sanh), “闹了个大红脸” (ngượng chín cả mặt). Tương đương với \"... một trận đã đời / thỏa thích\", \"làm cho... một cách triệt để\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 了个 + Tính từ / Bổ ngữ kết quả (痛快 / 精光 / 饱 / 底朝天...)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã uống một chầu thỏa thích đã đời."
+        }
+      ]
+    },
+    "zh_据说_618": {
+      "title": "据说…… (Thành phần chêm xen: Nghe nói... / Tương truyền... / Theo tin cho biết...)",
+      "shortExplanation": "Thành phần chêm xen đứng đầu câu biểu thị thông tin được thuật lại từ người khác hoặc dựa trên tin đồn, bản thân người nói không trực tiếp chứng kiến; \"nghe nói\", \"nghe đâu\".",
+      "longExplanation": "“据说” (jùshuō) là một ngữ chêm xen (hoặc quán dụng ngữ dẫn xuất thông tin) rất phổ biến trong cả văn viết và đàm thoại hàng ngày. Nó được ghép bởi “据” (căn cứ vào, dựa theo) và “说” (nói, thuật lại), mang nghĩa đen là “căn cứ theo lời người ta nói”. Khi đứng ở đầu câu hoặc trước chủ ngữ, nó có tác dụng thông báo rõ cho người nghe rằng nội dung sau đó là gián tiếp tiếp nhận qua lời đồn đại, sự chuyển thuật của người khác hoặc tin tức truyền thông, người nói không hoàn toàn đảm bảo tính xác thực 100% của câu chuyện. Tương đương với \"nghe nói...\", \"nghe đâu...\", \"tương truyền rằng...\" trong tiếng Việt.",
+      "formation": "据说 ，+ Phân câu / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Nghe nói khi còn trẻ, anh ấy từng một mình đến khu rừng già châu Phi."
+        }
+      ]
+    },
+    "zh_因而_619": {
+      "title": "因而 (Liên từ: Do đó / Vì vậy / Cho nên - quan hệ nhân quả)",
+      "shortExplanation": "Liên từ văn viết biểu thị quan hệ nhân quả và tiếp nối, đứng đầu phân câu sau để chỉ ra kết quả trực tiếp sinh ra từ nguyên nhân ở phân câu trước; \"do đó\", \"vì vậy\".",
+      "longExplanation": "“因而” (yīn'ér) là một liên từ nối câu ghép mang tính chất nhân quả rất phổ biến trong văn phong học thuật, nghị luận và tin tức trang trọng. Nó là sự kết hợp giữa “因” (bởi vì) và “而” (mà, từ đó). Khác với từ nối khẩu ngữ “所以”, “因而” không đơn thuần chỉ ra kết quả, mà nó còn nhấn mạnh sự tiếp nối tự nhiên và trực tiếp theo quy luật nhân quả: chính nhờ/do tiền đề được nêu ở phân câu trước mà tự nhiên dẫn tới hệ quả tất yếu ở phân câu sau. Thường đứng đầu phân câu thứ hai, không cần kết hợp với “因为”. Tương đương với \"do đó\", \"vì vậy\", \"cho nên\" trong tiếng Việt.",
+      "formation": "Nguyên nhân / Tiền đề ，因而 + Kết quả / Hệ quả",
+      "examples": [
+        {
+          "translation": "Lòng con sông này rất hẹp, do đó rất dễ xảy ra lũ lụt."
+        }
+      ]
+    },
+    "zh_也_620": {
+      "title": "也 (Phó từ nhượng bộ: Vẫn / Cứ / Cũng phải)",
+      "shortExplanation": "Phó từ dùng trong phân câu chỉ kết quả của câu giả thiết nhượng bộ, biểu thị dù điều kiện tiền đề có nghịch lý hoặc không thuận lợi thì quyết định hay sự thật vẫn cứ tiếp tục; \"vẫn\", \"cũng phải\".",
+      "longExplanation": "“也” (yě) trong cấu trúc câu phức nhượng bộ (thường đi liền sau vế giả thiết có hoặc lược bỏ liên từ “即使”, “就算”, “哪怕”, “不……”) đóng vai trò là phó từ nhấn mạnh tính bất biến của kết quả. Nó khẳng định rằng: cho dù hoàn cảnh ở vế trước có tồi tệ, ý muốn cá nhân có phản đối hay điều kiện có trở ngại đến đâu, thì hành động hoặc yêu cầu ở vế sau vẫn bắt buộc phải thực hiện hoặc vẫn diễn ra đúng như dự định mà không có bất kỳ ngoại lệ nào. Tương đương với \"vẫn\", \"dù sao cũng phải\", \"cũng phải\" trong tiếng Việt.",
+      "formation": "(Dù / Cho dù +) Phân câu giả thiết nhượng bộ ，Chủ ngữ + 也 + Vị ngữ (得 / 要 / 会...)",
+      "examples": [
+        {
+          "translation": "Bạn không muốn làm thì cũng phải làm."
+        }
+      ]
+    },
+    "zh_再也_621": {
+      "title": "再……也…… (Cấu trúc nhượng bộ: Dù có... đến mấy cũng... / Cho dù... thế nào cũng...)",
+      "shortExplanation": "Cấu trúc câu phức nhượng bộ biểu thị mức độ cực điểm: dù mức độ tính chất hoặc hành động có lên cao đến đâu thì kết quả, quyết tâm hoặc sự thật ở vế sau vẫn kiên định không đổi; \"dù... đến mấy cũng\".",
+      "longExplanation": "“再……也……” (zài…… yě……) là một kết cấu biểu thị ý nghĩa giả thiết nhượng bộ vô cùng đắt giá trong tiếng Hán. Trong đó, “再” đứng trước tính từ hoặc động từ tâm lý mang nghĩa 'cho dù có... thêm nữa, dù mức độ có tăng tiến đến cực hạn'; còn “也” đứng ở phân câu sau để biểu thị rằng: sự nâng cao tột cùng về mức độ ấy hoàn toàn không thể làm lay chuyển được quyết tâm, kết quả hoặc phương châm hành động đã định sẵn. Cấu trúc này thường dùng để bộc lộ ý chí kiên cường vượt qua khó khăn, hoặc khẳng định một chân lý tuyệt đối không bị lay chuyển bởi ngoại cảnh. Tương đương với \"dù có... đến mấy cũng...\", \"cho dù... thế nào đi nữa cũng...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 再 + Tính từ / Động từ + 也 + Vị ngữ / Kết quả",
+      "examples": [
+        {
+          "translation": "Tôi dù có mệt đến mấy cũng phải làm cho xong bài tập."
+        }
+      ]
+    },
+    "zh_巴不得_622": {
+      "title": "巴不得 (Động từ tâm lý: Chỉ mong sao / Nôn nóng mong muốn / Khát khao tha thiết)",
+      "shortExplanation": "Động từ biểu thị tâm trạng mong mỏi vô cùng tha thiết một sự việc tốt đẹp hoặc kết quả như ý sớm xảy ra; thường mang phân câu làm tân ngữ; \"chỉ mong sao\", \"ước gì\".",
+      "longExplanation": "“巴不得” (bābude) là một động từ tâm lý khẩu ngữ rất đặc sắc, được cấu thành từ “巴” (trông ngóng, tha thiết) và “不得”. Từ này chuyên dùng để diễn tả tâm trạng cực kỳ nôn nóng, sốt ruột và khao khát một mong ước tốt đẹp, một chuyển biến thuận lợi hay một kết quả hạnh phúc sẽ nhanh chóng trở thành hiện thực. Phía sau “巴不得” hầu như luôn đi kèm một mệnh đề phân câu đóng vai trò tân ngữ giải thích nội dung mong mỏi. Khác với “恨不得” (thường dùng cho những khao khát phi thực tế hoặc phóng đại), “巴不得” hướng đến những điều hoàn toàn có hy vọng xảy ra trong thực tế đời thường. Tương đương với \"chỉ mong sao...\", \"rất mong mỏi...\", \"ước gì...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 巴不得 + Cụm động từ / Mệnh đề tân ngữ",
+      "examples": [
+        {
+          "translation": "Tôi chỉ mong sao họ có thể thực sự làm lành với nhau, từ nay về sau sống những chuỗi ngày hòa thuận."
+        }
+      ]
+    },
+    "zh_别提多了_623": {
+      "title": "别提多……了 (Cấu trúc khẩu ngữ: Khỏi phải nói... đến mức nào / Cực kỳ / Vô cùng)",
+      "shortExplanation": "Cấu trúc khẩu ngữ dùng để diễn tả mức độ đạt đến đỉnh điểm, không thể dùng lời lẽ nào diễn tả xiết; mang sắc thái tán thán, khen ngợi hoặc cường điệu sinh động; \"khỏi phải nói... đến mức nào\".",
+      "longExplanation": "“别提多……了” (bié tíduō…… le) là một mẫu câu cảm thán cố định rất đặc trưng của khẩu ngữ Bắc Kinh và tiếng Hán phổ thông. Từ “别提” mang nghĩa đen là 'đừng nhắc đến nữa / không cần phải nói thêm', kết hợp với “多……了” để tạo nên ý nghĩa phóng đại: sự việc hay phẩm chất đó xuất sắc, nổi bật hoặc mãnh liệt đến mức không lời nào có thể diễn tả hết được. Thường đi kèm với các tính từ tích cực (như 高兴, 精彩, 负责, 漂亮) hoặc một số động từ tâm lý. Dùng để bộc lộ sự thán phục, ngợi khen hoặc ấn tượng sâu sắc không thốt nên lời. Tương đương với \"khỏi phải nói... đến mức nào\", \"vô cùng...\", \"cực kỳ...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ / Sự việc ，别提多 + Tính từ / Động từ tâm lý + 了",
+      "examples": [
+        {
+          "translation": "Người này làm việc, tận tâm và trách nhiệm khỏi phải nói."
+        }
+      ]
+    },
+    "zh_具有语体差别的同义词_624": {
+      "title": "具有语体差别的同义词 (Ngữ pháp - Phong cách học: Cặp từ đồng nghĩa phân biệt theo phong cách khẩu ngữ và văn viết)",
+      "shortExplanation": "Hiện tượng từ vựng - tu từ trong tiếng Hán: các cặp từ có ý nghĩa ngữ pháp và từ vựng tương đương nhưng phân chia rõ rệt về phong cách sử dụng (khẩu ngữ đời thường đối lập văn viết trang trọng).",
+      "longExplanation": "Trong tiếng Hán cao cấp, “具有语体差别的同义词” (các từ đồng nghĩa mang sắc thái phong cách khác biệt) là một hiện tượng ngữ pháp - ngữ phong rất quan trọng. Nhiều cặp từ biểu thị cùng một ý nghĩa ngữ pháp hoặc hành vi, nhưng một từ thuộc phong cách khẩu ngữ (khẩu ngữ thể - tự nhiên, thân mật, dùng trong giao tiếp sinh hoạt) còn từ kia thuộc phong cách văn viết hoặc văn ngôn cổ (thư diện ngữ thể - trang trọng, nghiêm túc, dùng trong văn học, công văn, tin tức). Điển hình như: liên từ/phó từ “就” (khẩu ngữ) ↔ “便” (văn viết); động từ dẫn lời thoại “说” (khẩu ngữ) ↔ “道” (văn học cổ); giới từ xử lý “把” (khẩu ngữ) ↔ “将” (văn viết trang trọng). Người học cần nắm vững ngữ cảnh để vận dụng chuẩn xác, tránh lẫn lộn phong cách.",
+      "formation": "Từ khẩu ngữ (như 就 / 说 / 把 / 爸爸 / 商量) ↔ Từ văn viết (như 便 / 道 / 将 / 父亲 / 磋商)",
+      "examples": [
+        {
+          "translation": "Anh ấy liền trả lời rằng: 'Hãy cầm chiếc nhẫn này đi đi.' (trong đó '便 / 道 / 将' thuộc văn phong viết trang trọng, còn '就 / 说 / 把' thuộc khẩu ngữ đời thường)."
+        }
+      ]
+    },
+    "zh_恨不得_625": {
+      "title": "恨不得 (Động từ tâm lý: Ước gì / Chỉ hận không thể / Nôn nóng muốn... đến tột cùng)",
+      "shortExplanation": "Động từ biểu thị tâm trạng cực kỳ nôn nóng, sốt ruột khao khát thực hiện một điều gì đó vượt quá khả năng thực tế hoặc mang tính phóng đại; \"ước gì\", \"chỉ hận không thể\".",
+      "longExplanation": "“恨不得” (hènbude) là một động từ tâm lý mang tính cường điệu rất cao trong tiếng Hán. Từ “恨” ở đây không mang nghĩa hận thù, mà mang nghĩa là tiếc nuối, day dứt, căm ghét sự bất lực của bản thân vì không thể làm được ngay lập tức (“hận không thể”). Do đó, “恨不得” biểu đạt một khát vọng bộc phát vô cùng mãnh liệt, cháy bỏng, muốn vượt qua mọi giới hạn về thời gian, không gian hoặc năng lực sinh lý của con người để làm ngay một việc gì đó (ví dụ: “恨不得生出一对翅膀飞过去” - ước gì mọc ra đôi cánh bay ngay đến đó, “恨不得一口吃下去” - muốn nuốt chửng ngay một miếng). Phía sau thường mang một cụm động từ hoặc phân câu có tính chất phóng đại làm tân ngữ. Tương đương với \"ước gì...\", \"chỉ hận không thể...\", \"nôn nóng muốn... đến tột cùng\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 恨不得 + Cụm động từ / Mệnh đề tân ngữ (thường mang tính phóng đại, phi thực tế)",
+      "examples": [
+        {
+          "translation": "Khi công việc bận rộn, cô ấy ước gì một mình có thể gánh vác phần việc của hai người."
+        }
+      ]
+    },
+    "zh_顿时_626": {
+      "title": "顿时 (Phó từ thời gian: Ngay lập tức / Bỗng chốc / Tức thì - dùng trong trần thuật quá khứ)",
+      "shortExplanation": "Phó từ thời gian chỉ dùng trong trần thuật sự việc đã qua, biểu thị dưới tác động của một nguyên nhân hay kích thích, tình thế hoặc cảm xúc lập tức biến đổi trong chớp mắt; \"ngay lập tức\", \"bỗng chốc\".",
+      "longExplanation": "“顿时” (dùnshí) là một phó từ chỉ thời gian rất tao nhã trong văn học và trần thuật văn viết tiếng Hán. Nó chỉ ra rằng dưới sự tác động của một nguyên nhân, một tin tức hoặc một kích thích bên ngoài xuất hiện ở trước đó, một trạng thái tâm lý mới, một hiện tượng hay một cảnh tượng đã lập tức bùng phát hoặc chuyển biến hoàn toàn trong khoảnh khắc ngắn ngủi. Điểm then chốt quan trọng nhất về ngữ pháp: “顿时” CHỈ DÙNG ĐỂ THUẬT LẠI SỰ VIỆC ĐÃ DIỄN RA TRONG QUÁ KHỨ, tuyệt đối không dùng cho tương lai hay câu mệnh lệnh (nếu là tương lai phải dùng “马上” hoặc “立刻”). Tương đương với \"ngay lập tức\", \"bỗng chốc\", \"thoắt cái\", \"tức thì\" trong tiếng Việt.",
+      "formation": "Nguyên nhân / Kích thích khởi phát ，顿时 + Chủ ngữ + Vị ngữ (hoặc: Chủ ngữ + 顿时 + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Nghe xong lời bác sĩ, ngay lập tức, trong lòng anh ấy lại nhen nhóm lên tia hy vọng."
+        }
+      ]
+    },
+    "zh_不由得_627": {
+      "title": "不由得 (Phó từ tâm lý: Không kìm được / Bất giác / Tự nhiên nảy sinh cảm xúc)",
+      "shortExplanation": "Phó từ biểu thị cảm xúc, suy nghĩ hoặc phản xạ tự nhiên trào dâng trong lòng mà bản thân không sao kiềm chế hoặc kiểm soát được; \"không kìm được\", \"bất giác\".",
+      "longExplanation": "“不由得” (bùyóude) là một phó từ chỉ trạng thái tâm lý rất quen thuộc, tương đương với “不由自主” (không tự chủ được) hay “禁不住” (không nén nổi). Nó được dùng đứng trước các động từ chỉ hoạt động tâm lý, cảm xúc hoặc phản ứng cơ thể (như 担心, 笑了, 流泪, 感慨). Cấu trúc này làm nổi bật tính chất tự phát và bột phát không cưỡng lại được của tâm lý: trước một tình huống cụ thể khách quan, chủ thể dù muốn hay không cũng tự khắc sinh ra phản ứng nội tâm đó một cách vô thức. Tương đương với \"không kìm được\", \"bất giác\", \"tự nhiên thấy...\", \"không khỏi...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 不由得 + Cụm động từ tâm lý / Cảm xúc",
+      "examples": [
+        {
+          "translation": "Lý Bằng mang bệnh ra sân thi đấu, tôi không khỏi có chút lo lắng."
+        }
+      ]
+    },
+    "zh_V番_628": {
+      "title": "Động từ + (Số từ +) 番 (Động lượng từ: ... một phen / một hồi / một lượt chu đáo)",
+      "shortExplanation": "Lượng từ cho động tác (động lượng từ), đứng sau động từ để chỉ động tác được tiến hành một lượt tỉ mỉ, trải qua một quá trình hoặc tốn nhiều tâm sức; \"... một phen\", \"... một hồi\".",
+      "longExplanation": "“番” (fān) khi làm động lượng từ thường kết hợp với số từ “一” (hoặc “几”) đứng sau động từ làm bổ ngữ động lượng (kết cấu “Động từ + 一番”). Khác với động lượng từ phổ thông “次” (chỉ thuần túy đếm số lần) hay “遍” (chỉ tính từ đầu đến cuối một quy trình), “一番” mang sắc thái nhấn mạnh vào quá trình hành động: đòi hỏi phải tiêu tốn một khoảng thời gian, công sức, sự suy nghĩ chín chắn hoặc trải qua một chuỗi thao tác công phu (ví dụ: “打量一番” - ngắm nghía đánh giá một hồi, “思考一番” - suy nghĩ kỹ một phen, “折腾一番” - đánh vật lăn lộn một hồi). Tương đương với \"... một phen\", \"... một hồi\", \"... một lượt kỹ càng\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (+ Tân ngữ) + Số từ (一 / 几) + 番 (hoặc: Động từ + 了 + Số từ (一) + 番 + Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Anh ấy nhìn đánh giá tôi một hồi, lời đã đến bên miệng lại thôi không nói nữa."
+        }
+      ]
+    },
+    "zh_番_629": {
+      "title": "番 (Danh lượng từ: Phen / Đợt / Tràng / Tấm lòng - dùng cho trải nghiệm, thử thách, tâm ý)",
+      "shortExplanation": "Lượng từ dùng cho danh từ trừu tượng, thường đi kèm với các từ chỉ nỗi gian truân, sóng gió thử thách, tâm huyết hoặc lời chỉ bảo ân cần; \"phen\", \"đợt\", \"tấm (lòng)\".",
+      "longExplanation": "“番” (fān) khi làm danh lượng từ (kết hợp với số từ “几” hoặc “一”, tạo thành “几番”, “一番”) chuyên dùng để định lượng cho các danh từ trừu tượng mang tính quá trình. Nó thường xuất hiện trong hai nhóm ngữ nghĩa chính: ① Dùng cho những sự việc, trải nghiệm trải qua nhiều gian truân, trắc trở, thăng trầm thử thách (như “几番风雨” - bao phen mưa gió bão bùng, “几番波折” - bao phen gập ghềnh); ② Dùng cho những lời tâm huyết, tấm lòng tốt đẹp hoặc sự cống hiến hết mình (như “一番好意” - một tấm lòng tốt, “一番苦心” - một phen khổ tâm, “一番事业” - một sự nghiệp lớn). Mang âm hưởng rất trang trọng, hàm súc và giàu chất văn học. Tương đương với \"phen\", \"đợt\", \"tấm (lòng)\" trong tiếng Việt.",
+      "formation": "Số từ (一 / 几) + 番 + Danh từ trừu tượng (风雨 / 波折 / 苦心 / 好意 / 话 / 事业...)",
+      "examples": [
+        {
+          "translation": "Trải qua bao phen mưa gió bão bùng, anh ấy mới thấu hiểu được giá trị của cuộc đời."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_何尝_615": {
+      "title": "何尝（反語副詞：どうして〜だろうか・〜しないわけではない・かつて〜したことがあろうか）",
+      "shortExplanation": "反語文において強い否定や肯定（「何尝不 / 没」の二重否定）を表し、事実は外見や想像とは正反対であることを強調する副詞です（「どうして〜だろうか」「決して〜ないわけではない」）。",
+      "longExplanation": "「何尝」（hécháng）は、反語の語気を通じて事実を力強く反駁・主張する副詞です。文末の語気助詞「呢」としばしば呼応します。用法には大きく分けて2通りあります。① 否定形を伴う「何尝不 / 何尝没」の形では、二重否定によって強い肯定の意を表します（例：「我何尝不想……」＝『私が買いたくないわけがあるだろうか、いや本当はずっと買いたいのだ』と、願望を抱きつつも境遇ゆえに叶わない悔しさをにじませる）；② 肯定形を受ける場合は、「誰がそんなことを言ったというのか（決して言っていない）」のように全否定の反語となります。日本語の「どうして〜だろうか（いや〜ではない）」「決して〜しないわけではない」に相当します。",
+      "formation": "主語 ＋ 何尝 ＋ 不 / 没 ＋ 動詞 / 形容詞 ＋ 目的語 ＋（呢）？ ｜ 主語 ＋ 何尝 ＋ 動詞 ＋（呢）？",
+      "examples": [
+        {
+          "translation": "私だって大きな家を買いたくないわけがありません（本当はずっと買いたいのです）。"
+        }
+      ]
+    },
+    "zh_何至于_616": {
+      "title": "何至于（反語副詞：どうしてそこまで〜する必要があろうか・何もそこまで〜しなくても）",
+      "shortExplanation": "反語の語気を用いて、事態がそれほど深刻・極端な段階に立ち至るはずがないこと、またはそこまで過剰に反応する必要がないことを表します（「何もそこまで〜しなくても」「どうしてそこまで〜になるのか」）。",
+      "longExplanation": "「何至于」（hé zhìyú）は、疑問詞「何」と動詞「至于」（〜に立ち至る、〜の段階に及ぶ）が組み合わさった反語表現です。述語の前、または後続節の文頭に置かれ、事態の深刻さや感情の振れ幅が常軌を逸していることに対して、「客観的にはそこまでの事態ではないはずだ」「なぜそこまで極端な態度をとるのか」と反問します。相手の激しい怒り、過度の悲観、過敏な反応をなだめたり制止したりする口語・書面語で多用されます。文末にはよく「呢」を伴います。日本語の「何もそこまで〜しなくても」「どうしてそこまで〜する必要があろうか」に相当します。",
+      "formation": "主語 ＋ 何至于 ＋ 動詞句 / 節 ＋（呢）？",
+      "examples": [
+        {
+          "translation": "あなたも何もそこまでひどく腹を立てる必要はないでしょう。"
+        }
+      ]
+    },
+    "zh_V了个RESULT_617": {
+      "title": "動詞 ＋ 了个 ＋ 結果補語（口語構文：すっかり〜した・思いきり〜し尽くした・〜という結果に終わった）",
+      "shortExplanation": "動作がとことん徹底的に行われて心ゆくまで満足したこと、あるいはある極端な結果や結末に至ったさまを生き生きと誇張して描写する口語表現です（「心ゆくまで〜した」「すっかり〜してしまった」）。",
+      "longExplanation": "「動詞 ＋ 了个 ＋ 形容詞 / 結果補語」は、中国語の日常会話で多用される極めて表現力豊かな慣用構文です。ここでの「个」は本来の個数を数える量詞としての意味を完全に失って虚化しており、語調を整え、直後の補語を際立たせて強い感情を込める働きを担っています。主として2つのニュアンスで使われます：① 心ゆくまで徹底的に動作を行って爽快感を味わう場合（例：「喝了个痛快」＝心ゆくまで浴びるほど飲んだ、「玩了个尽兴」＝とことん遊び尽くした）；② 予想外の極端な結末や事態に至る場合（例：「吃了个精光」＝すっかり平らげた、「碰了个钉子」＝手酷く断られた）。日本語の「思いきり〜した」「すっかり〜し尽くした」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 了个 ＋ 形容詞 / 結果補語（痛快 / 精光 / 饱 など）",
+      "examples": [
+        {
+          "translation": "私たちは心ゆくまで浴びるほど痛快に飲んだ。"
+        }
+      ]
+    },
+    "zh_据说_618": {
+      "title": "据说……（挿入語：〜だそうだ・伝えられるところによれば・噂によると）",
+      "shortExplanation": "文頭や主語の前に置かれ、後続の内容が他者からの伝聞や噂、間接的な情報に基づくものであることを示す挿入表現です（「〜だそうだ」「伝えられるところによると」）。",
+      "longExplanation": "「据说」（jùshuō）は「〜によると」を意味する「据」と「話す」の「说」からなる表現で、他者からの伝聞や世間の噂を話題として導入する際の前置き（挿入語）として広く用いられます。文頭または主語の直前に置かれ、話し手自身がその事態を直接見聞き・体験したわけではなく、第三者や報道からの情報として耳にした内容であることを明示します。そのため、話の内容に対する自らの責任をある程度留保するニュアンスも持ちます。日本語の「伝えられるところによれば〜だそうだ」「噂によると」「話に聞くところでは」に相当します。",
+      "formation": "据说 ，＋ 節・文",
+      "examples": [
+        {
+          "translation": "伝えられるところによれば、彼は若い頃、たった一人でアフリカの大森林に行ったことがあるそうだ。"
+        }
+      ]
+    },
+    "zh_因而_619": {
+      "title": "因而（接続詞：それゆえに・したがって・その結果・〜のために）",
+      "shortExplanation": "前文で述べられた原因や前提を受けて、後文でその直接の帰結・結果を導き出す書面語接続詞です（「それゆえに」「したがって」「その結果」）。",
+      "longExplanation": "「因而」（yīn'ér）は、「因」（〜に起因して）と「而」（そして、それによって）から成る因果関係を表す接続詞で、主として改まった書面語や論説文、報道文で用いられます。複文の後続節の冒頭に置かれ、先行節に示された事情や客観的条件が直接の原因となって後続の結果が生じたことを論理的に繋ぎます。「所以」と似ていますが、「因而」は前文と後文の因果的継起（前進発展）の筋道をより引き締まった文体で示す特徴があり、通常は「因为」と重ねて使わずに単独で用いられます。日本語の「それゆえに」「したがって」「そのため」に相当します。",
+      "formation": "原因・前提の節 ，因而 ＋ 結果・事態の節",
+      "examples": [
+        {
+          "translation": "この川は川幅が非常に狭く、それゆえに水害が発生しやすい。"
+        }
+      ]
+    },
+    "zh_也_620": {
+      "title": "也（譲歩副詞：〜だとしてもやはり・〜でも〜せざるを得ない・それでもなお）",
+      "shortExplanation": "仮定・譲歩の複文の後続節で用いられ、前文で提示された不利な条件や意志に反する事態があっても、後文の事態や決定が揺るぎなく貫かれることを示します（「〜でも〜しなければならない」「やはり〜だ」）。",
+      "longExplanation": "ここでの「也」（yě）は単なる並列の「〜も」ではなく、仮定譲歩文の後件において事態の不変性や義務の強制を強調する副詞です。先行節には「即使」「哪怕」「就算」（たとえ〜だとしても）が置かれるか、あるいは無標識で反対の意志や悪条件が提示されます。そして後件で「也」を用いて、「仮に前件のような不本意な状況があろうとも、後件の結果や要求は免れることができない、やはり遂行されねばならない」という強い確定的な語気を含意します。日本語の「〜であっても（やはり）〜しなければならない」「〜でも〜せざるを得ない」に相当します。",
+      "formation": "（仮定・譲歩節） ，主語 ＋ 也 ＋ 述語（得 / 要 / 会 など）",
+      "examples": [
+        {
+          "translation": "やりたくなくても、やはりやらなければならない。"
+        }
+      ]
+    },
+    "zh_再也_621": {
+      "title": "再……也……（譲歩構文：どんなに〜でも〜・いくら〜しようとも〜）",
+      "shortExplanation": "極限の程度を仮定する譲歩構文で、度合いがどれほど極限に達しようとも、後件の決意・事実・結論が一切揺るがないことを強調します（「どんなに〜でも〜だ」「いくら〜しても〜」）。",
+      "longExplanation": "「再……也……」（zài…… yě……）は、極めて高い程度を仮定して後件の必然性を際立たせる代表的な譲歩構文です。「再」の直後には形容詞または動詞が置かれ、「これ以上ないほど〜であっても」「いくら〜の度合いを極めようとも」という極限の条件を提示します。後節の「也」はそれを受けて、「いかなる極限状態にあろうとも、達成すべき目標や決定事項は微動だにしない」という固い意志や揺るぎない結論を導き出します。困難をものともせず前進する意志の表明や、不変の法則を断言する際に頻用されます。日本語の「どんなに〜でも〜」「いくら〜しようとも〜」に相当します。",
+      "formation": "主語 ＋ 再 ＋ 形容詞 / 動詞 ＋ 也 ＋ 述語 / 結論",
+      "examples": [
+        {
+          "translation": "どんなに疲れていても、宿題を最後までやり終えなければならない。"
+        }
+      ]
+    },
+    "zh_巴不得_622": {
+      "title": "巴不得（心理動詞：〜したくてたまらない・〜することを切望する・〜であればと願ってやまない）",
+      "shortExplanation": "望ましい良い結果や事態の好転が実現することを、心から強く熱望し待ち望む気持ちを表す口語動詞です（「〜したくてたまらない」「〜することを切に願う」）。",
+      "longExplanation": "「巴不得」（bābude）は、心から待ち望むことを意味する動詞「巴」に由来する心理動詞で、日常会話で極めて高い頻度で用いられます。通常、後ろに文や動詞句を目的語として従え、「好ましい事態が一刻も早く現実になってほしい」「そうであればどんなに嬉しいことか」という強い切望や待ち焦がれる心情を描写します。「恨不得」（現実離れした切羽詰まった願望）と比べると、「巴不得」は現実的に十分に実現可能な前向きで明るい願いに対して使われる傾向があります。日本語の「〜することを切に願っている」「〜してほしくてたまらない」「〜であればと願ってやまない」に相当します。",
+      "formation": "主語 ＋ 巴不得 ＋ 動詞句 / 目的語節",
+      "examples": [
+        {
+          "translation": "彼らが本当に仲直りして、これからは仲睦まじく暮らしていってくれることを、私は切に願っています。"
+        }
+      ]
+    },
+    "zh_别提多了_623": {
+      "title": "别提多……了（口語固定構文：言うまでもなく極めて〜だ・言葉にできないほど〜だ）",
+      "shortExplanation": "程度が極点に達していて言葉では言い尽くせないさまを誇張・感嘆して表す口語の慣用表現です（「言うまでもなく極めて〜だ」「言葉にできないほど〜だ」）。",
+      "longExplanation": "「别提多……了」（bié tíduō…… le）は、「口に出して言うまでもない、語る必要もない」を意味する「别提」と、高い程度を表す「多……了」が合体した口語の強調・感嘆構文です。真ん中には形容詞や心理動詞が挟まれ、「その素晴らしさや度合いの甚だしさは、言葉で説明し尽くせないほど極限に達している」という強い感嘆と賞賛の語気を表します。とりわけ相手の働きぶり、美しい光景、嬉しい気分などを生き生きと褒め称えたり誇張したりする際に使われます。日本語の「言うまでもなく非常に〜だ」「言葉に尽くせないほど〜だ」「この上なく〜だ」に相当します。",
+      "formation": "主語 / 事柄 ，别提多 ＋ 形容詞 / 心理動詞 ＋ 了",
+      "examples": [
+        {
+          "translation": "この人の仕事ぶりといったら、言うまでもなく本当に責任感があります。"
+        }
+      ]
+    },
+    "zh_具有语体差别的同义词_624": {
+      "title": "具有语体差别的同义词（文体論的類義語：口語体と書面語体・雅語の語体差をもつ同義語対）",
+      "shortExplanation": "語彙的・文法的な基本意味はほぼ同じでありながら、日常会話（口語体）で使われる語と、改まった文章や文学作品（書面語体・文語）で使われる語とに明瞭に分かれる同義語現象です。",
+      "longExplanation": "高級中国語における「具有语体差别的同义词」（文体差を持つ類義語・同義語）とは、意味機能は共通しているものの、使用される文体スタイル（語体色彩）が明確に区別される単語の対比現象を指します。日常のくだけた会話で用いられる「口語体（口语体）」の語彙に対し、論文・公文書・格調高い文学表現で好まれる「書面語体（书面语体）」や文言（古文）由来の語彙が対応しています。代表例として、副詞の「就」（口語）と「便」（書面語）、発話動詞の「说」（口語）と「道」（書面・文芸）、処置介詞の「把」（口語）と「将」（書面語）などが挙げられます。場面や文章の格調に応じてこれらを正しく使い分けることが求められます。",
+      "formation": "口語体の語（就 / 说 / 把 / 爸爸 / 商量 など）↔ 書面語体の語（便 / 道 / 将 / 父亲 / 磋商 など）",
+      "examples": [
+        {
+          "translation": "彼はすぐに答えて言った、『この指輪を持っていきなさい』と。（『便 / 道 / 将』は格調高い書面語体、『就 / 说 / 把』は身近な口語体）。"
+        }
+      ]
+    },
+    "zh_恨不得_625": {
+      "title": "恨不得（心理動詞：今すぐ〜したい思いでいっぱいだ・〜できればよいのにと焦る・〜したくてたまらない）",
+      "shortExplanation": "現実には困難・不可能なことでも、焦燥感に駆られて「今すぐそうしたい、そうできればどんなによいか」と極度に切望する心理を表す誇張的動詞です（「〜したくてたまらない」「〜できればよいのに」）。",
+      "longExplanation": "「恨不得」（hènbude）の「恨」は怨恨の意味ではなく、「〜できないのがもどかしくてたまらない、歯がゆい」という残念・悔恨の情を表します。したがって全体で、「身体的・物理的な制約を飛び越えて、今すぐ不可能を可能にしたい」と激しい焦燥感に駆られる極限の心理状態を描写します。後ろには動詞句や小文を従え、現実離れした誇張的な願望（例：「翼を生やして飛んでいきたい」「一口で丸呑みしたい」）や、一人で何人分もの仕事をこなしたいという切迫した心理を生き生きと表現します。日本語の「今すぐ〜したくてたまらない」「〜できればよいのにと歯がゆく思う」「〜したくて気が狂いそうだ」に相当します。",
+      "formation": "主語 ＋ 恨不得 ＋ 動詞句 / 目的語節（実現困難・誇張的な願望）",
+      "examples": [
+        {
+          "translation": "仕事が忙しいとき、彼女は一人で二人分の仕事をこなしたい思いでいっぱいだった。"
+        }
+      ]
+    },
+    "zh_顿时_626": {
+      "title": "顿时（時間副詞：たちまち・とたんに・瞬く間に・直ちに）",
+      "shortExplanation": "あるきっかけや刺激に促されて、状況や感情が一瞬にしてガラリと一変したことを表す書面語副詞です。過去の事態の叙述にのみ用いられます（「たちまち」「とたんに」）。",
+      "longExplanation": "「顿时」（dùnshí）は、直前の条件や出来事の刺激を受けて、新たな事態・感情・光景が瞬く間に発生・転換したことを叙述する時間副詞です。文学作品や物語の語り口で頻用されます。極めて重要な文法規則として、「顿时」は過去にすでに起こった客観的な事態の描写に限定して用いられ、未来の予定や命令文・依頼文（その場合は「马上」や「立刻」を使用）には決して使えません。日本語の「たちまち」「とたんに」「瞬く間に」「忽ちのうちに」に相当します。",
+      "formation": "きっかけ・直前の事態 ，顿时 ＋ 主語 ＋ 述語（または：主語 ＋ 顿时 ＋ 述語）",
+      "examples": [
+        {
+          "translation": "医師の言葉を聞いて、瞬く間に彼の胸の中に再び希望の火が燃え上がった。"
+        }
+      ]
+    },
+    "zh_不由得_627": {
+      "title": "不由得（副詞：思わず〜してしまう・知らず知らずのうちに〜になる・〜せずにはいられない）",
+      "shortExplanation": "自身の理性や意志ではコントロールできず、感情や生理的反応が無意識のうちに自然と湧き上がってしまうさまを表す副詞です（「思わず〜してしまう」「知らず知らずのうちに」）。",
+      "longExplanation": "「不由得」（bùyóude）は、「自分自身ではどうにも抑えられない」という意味の副詞で、「不由自主」「禁不住」とほぼ同義です。後ろには感情、心理活動、あるいは不随意な身体的反応を表す動詞（心配する、笑い出す、涙を流す、感嘆するなど）が続き、ある客観的事態を目の当たりにした際に、自らの理性を超えて無意識に感情がこみ上げてきてしまう状態をリアルに描写します。日本語の「思わず〜してしまう」「自ずと〜になる」「〜せずにはいられない」に相当します。",
+      "formation": "主語 ＋ 不由得 ＋ 心理動詞句 / 感情表現",
+      "examples": [
+        {
+          "translation": "李朋は病気をおして試合に出場したので、私は思わず心配になってしまった。"
+        }
+      ]
+    },
+    "zh_V番_628": {
+      "title": "動詞 ＋（数詞 ＋）番（動量詞：ひとしきり〜する・一通りじっくり〜する・〜の手間をかける）",
+      "shortExplanation": "動量詞として動詞の後ろに置かれ、動作が一定の手間や時間をかけて一通り念入りに行われること、またはひとしきり展開されることを表します（「ひとしきり〜する」「一通り〜する」）。",
+      "longExplanation": "「番」（fān）が動量詞として機能する場合、通常は数詞「一」（まれに「几」）を伴って「動詞 ＋ 一番」の形で述語動詞の動量補語となります。単に回数を数える「次」や、初めから終わりまでの通読・反復を示す「遍」とは明確に異なり、「番」は動作のプロセスに相当の時間や思考、念入りな工夫や苦労が伴っているニュアンスを色濃く含みます（例：「打量一番」＝上から下までじっくり品定めする、「商量一番」＝膝を突き合わせてひとしきり相談する）。日本語の「ひとしきり〜する」「一通りじっくり〜する」「ひとしきり〜を費やす」に相当します。",
+      "formation": "主語 ＋ 動詞（＋ 目的語）＋ 数詞（一 / 几）＋ 番",
+      "examples": [
+        {
+          "translation": "彼は私を上から下までひとしきり品定めするように眺め、喉元まで出かかった言葉をまた飲み込んだ。"
+        }
+      ]
+    },
+    "zh_番_629": {
+      "title": "番（名量詞：幾重もの・一通りの〜・波乱に満ちた経験や情意を数える）",
+      "shortExplanation": "名量詞として抽象名詞の前に置かれ、紆余曲折に満ちた試練や経験、または丹精込めた努力や真心のまとまりを数えるのに用いられます（「幾重もの〜」「ひとかたならぬ〜」）。",
+      "longExplanation": "「番」（fān）が名量詞として使われる場合、数詞の「一」や「几」と結びつき（「一番」「几番」）、名詞の前に置かれてその事物のまとまりを修飾します。具体的な物質ではなく、主として以下の2種類の抽象名詞に対して用いられます：① 幾重にも重なる試練、波乱万丈の経験、苦難の道のり（例：「几番风雨」＝幾度もの風雨・試練、「几番折磨」＝幾重もの苦難）；② 丹精込めて注がれた心血、真摯な善意、大いなる志（例：「一番好意」＝ひとかたならぬ好意、「一番苦心」＝並々ならぬ苦心、「一番事业」＝ひとつの大事業）。非常に格調高く文芸的な響きを帯びた表現です。日本語の「幾度もの〜」「ひとかたならぬ〜」「一通りの〜」に相当します。",
+      "formation": "数詞（一 / 几）＋ 番 ＋ 抽象名詞（风雨 / 波折 / 苦心 / 好意 / 事业 など）",
+      "examples": [
+        {
+          "translation": "幾度もの試練と風雨を乗り越えて、彼は初めて人生の真の価値を理解した。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_何尝_615": {
+      "title": "何尝 (반어 부사: 어찌 ~했겠는가, 결코 ~한 적이 없다, 어찌 ~하지 않았겠는가)",
+      "shortExplanation": "반어문에 쓰여 사실과 정반대임을 역설적으로 강조하며 강한 부정이나 강한 긍정(\"何尝不/没\" 형태)을 나타내는 부사입니다('어찌 ~했겠는가', '어찌 ~하지 않았겠는가').",
+      "longExplanation": "“何尝”(hécháng)은 반어 의문문에서 쓰여 말하고자 하는 바를 한층 강렬하게 반문·강조하는 부사입니다. 문장 끝의 어기조사 “呢”와 자주 호응합니다. 크게 두 가지 패턴으로 나뉩니다. ① 부정 형식과 결합한 “何尝不 / 何尝没”는 이중부정을 통해 아주 강한 긍정을 드러냅니다(예: “我何尝不想……”＝'내가 어찌 사고 싶지 않았겠는가, 사실은 몹시 사고 싶지만 사정이 여의치 않을 뿐이다'). ② 일반 긍정 서술과 결합할 때는 사실에 대한 단호한 부정 반박을 나타냅니다(예: '내가 언제 그런 말을 했던가, 결코 한 적 없다'). 한국어의 '어찌 ~했겠는가', '어찌 ~하지 않았겠는가(정말 ~하고 싶었다)', '결코 ~한 적이 없다'에 해당합니다.",
+      "formation": "주어 + 何尝 + 不 / 没 + 동사 / 형용사 + 목적어 + (呢)？ ｜ 주어 + 何尝 + 동사 + (呢)？",
+      "examples": [
+        {
+          "translation": "내가 어찌 큰 집을 사고 싶지 않았겠습니까? (사실은 간절히 사고 싶었습니다)."
+        }
+      ]
+    },
+    "zh_何至于_616": {
+      "title": "何至于 (반어 부사: 어찌 그 지경까지 이르겠는가, 어찌 그렇게까지 ~하겠는가)",
+      "shortExplanation": "반어 어기를 사용하여, 사태가 그렇게까지 심각하거나 극단적인 지경에 이를 이유가 없으며 그토록 과도하게 반응할 필요가 없음을 나타냅니다('어찌 그 지경까지 가겠는가', '뭘 그리도 ~한단 말인가').",
+      "longExplanation": "“何至于”(hé zhìyú)는 의문사 “何”(어찌)와 “至于”(~의 지경에 이르다)가 결합된 반어 부사어입니다. 대개 술어 앞이나 뒤 절 머리에 놓여 문말의 “呢”와 호응하며, 상황이나 사태가 그렇게까지 심각한 지경에 이를 리가 없는데 왜 그렇게 지나치게 화를 내거나 비관하는지 반문할 때 씁니다. 상대방의 지나친 분노나 과민 반응을 진정시키고 달래는 맥락에서 자주 활용됩니다. 한국어의 '어찌 그 지경까지 이르겠는가', '뭘 그렇게까지 ~한단 말인가', '그 정도로까지 ~할 일은 아니다'에 해당합니다.",
+      "formation": "주어 + 何至于 + 동사구 / 절 + (呢)？",
+      "examples": [
+        {
+          "translation": "당신이 어찌 그렇게까지 크게 화를 낼 것까지 있겠어요?"
+        }
+      ]
+    },
+    "zh_V了个RESULT_617": {
+      "title": "동사 + 了个 + 결과보어 (구어 관용 형식: 실컷 ~했다, 말끔히 ~해 버렸다, 한바탕 통쾌하게 ~하다)",
+      "shortExplanation": "동작을 끝까지 철저히 하여 실컷 만족감을 맛보았거나, 어떠한 철저하고 극단적인 상태·결과에 도달했음을 생동감 있게 묘사하는 구어 관용 표현입니다('실컷 ~했다', '말끔히 ~해 버렸다').",
+      "longExplanation": "“동사 + 了个 + 형용사 / 결과보어”는 현대 중국어 구어에서 동작의 상태와 결과를 아주 구성지고 생생하게 그려내는 대표적인 관용 문형입니다. 여기서의 “个”는 본래의 사물을 세는 양사적 의미가 완전히 탈색(허화)된 것으로, 어조를 고르고 뒤따르는 보어의 의미를 한층 부각해 주는 음절 충전 및 어기 강화 기능을 수행합니다. 주로 ① 동작을 아주 통쾌하고 남김없이 행하여 마음껏 만족을 누릴 때(예: “喝了个痛快”＝실컷 통쾌하게 마셨다, “玩了个够”＝질리도록 놀았다), ② 어떠한 당혹스럽거나 극단적인 결과가 발생했을 때(예: “吃了个精光”＝말끔히 다 먹어 치웠다, “闹了个大笑话”＝큰 웃음거리가 되고 말았다) 널리 쓰입니다. 한국어의 '실컷 ~했다', '한바탕 통쾌하게 ~했다', '아주 말끔히 ~해 버렸다'에 해당합니다.",
+      "formation": "주어 + 동사 + 了个 + 형용사 / 결과보어 (痛快 / 精光 / 饱 등)",
+      "examples": [
+        {
+          "translation": "우리는 아주 통쾌하게 실컷 마셨다."
+        }
+      ]
+    },
+    "zh_据说_618": {
+      "title": "据说…… (삽입어: 듣자 하니 ~라 한다, 전해지는 바에 따르면, 소문에 의하면)",
+      "shortExplanation": "문두나 주어 앞에 놓여, 뒤따르는 서술 내용이 제3자에게 전해 들은 소문이나 간접적인 보도에 근거한 전언(傳言)임을 나타내는 표현입니다('듣자 하니 ~라 한다', '전하는 바에 따르면').",
+      "longExplanation": "“据说”(jùshuō)는 근거를 나타내는 “据”(의거하다)와 “说”(말하다)이 결합된 표현으로, 다른 사람에게서 전해 들은 말이나 세간에 떠도는 풍문을 화제로 이끌어낼 때 쓰는 대표적인 전언 삽입어입니다. 문장의 맨 앞이나 주어 앞에 쉼표와 함께 쓰이며, 진술하는 내용이 화자가 직접 목격하거나 검증한 사실이 아니라 간접 정보에 불과함을 밝혀주는 구실을 합니다. 따라서 객관적 유보의 뉘앙스를 담고 있습니다. 한국어의 '듣자 하니 ~라 한다', '전해지는 말에 따르면', '소문에 의하면'에 해당합니다.",
+      "formation": "据说 ，+ 절 / 문장",
+      "examples": [
+        {
+          "translation": "듣자 하니, 그는 젊었을 때 혼자서 아프리카의 대삼림에 가 본 적이 있다고 한다."
+        }
+      ]
+    },
+    "zh_因而_619": {
+      "title": "因而 (접속사: 그러므로, 그 때문에, 따라서, 그 결과)",
+      "shortExplanation": "앞 절의 원인이나 객관적 조건을 받아, 그로 인해 초래된 필연적인 결과나 귀결을 뒤 절에서 이끌어내는 서면어 접속사입니다('그러므로', '그 때문에', '따라서').",
+      "longExplanation": "“因而”(yīn'ér)는 원인을 뜻하는 “因”과 순접 접속의 “而”가 합쳐진 인과 관계 접속사로, 학술문이나 논설문, 격식 있는 서면어에서 주로 사용됩니다. 복문의 뒤 절 머리에 놓여 앞 절에서 제시한 원인이나 사실이 직접적인 계기가 되어 자연스럽게 뒤 절의 결과로 이어졌음을 논리적으로 규명합니다. 일상 구어의 “所以”에 비해 문체적 격조가 높으며, 통상 앞 절에 “因为”를 쓰지 않고 단독으로 인과적 계승 관계를 밝힙니다. 한국어의 '그러므로', '그 때문에', '따라서', '그 결과'에 해당합니다.",
+      "formation": "원인·전제절 ，因而 + 결과절",
+      "examples": [
+        {
+          "translation": "이 강은 하도가 매우 좁아, 그로 인해 홍수가 발생하기 쉽다."
+        }
+      ]
+    },
+    "zh_也_620": {
+      "title": "也 (양보 부사: ~해도 역시, 설령 ~할지라도 그래도 ~해야 한다)",
+      "shortExplanation": "가정 양보 복문의 뒤 절에서 쓰여, 앞 절의 불리한 조건이나 반대되는 의향에도 불구하고 뒤 절의 결정이나 방침이 확고부동하게 관철됨을 나타내는 부사입니다('~해도 역시 ~해야 한다').",
+      "longExplanation": "여기서의 “也”(yě)는 단순한 병렬의 '도'가 아니라, 가정이나 양보를 내포한 복문에서 귀결의 불변성과 당위성을 강조하는 부사입니다. 앞 절에 “即使”, “就算”, “哪怕”(설령 ~할지라도)이 명시되거나 생략된 채 부정적·비우호적 상황이 놓일 때, 뒤 절에서 “也”를 받쳐 써서 '설사 네 마음이 내키지 않거나 상황이 불리하더라도, 정해진 의무나 결과는 결코 피할 수 없으며 그대로 이행되어야 한다'는 단호한 입장을 드러냅니다. 한국어의 '~하더라도 (그래도) ~해야 한다', '~일지라도 역시 ~하다'에 해당합니다.",
+      "formation": "(가정·양보절) ，주어 + 也 + 술어 (得 / 要 / 会 등)",
+      "examples": [
+        {
+          "translation": "하기 싫어도 해야만 한다."
+        }
+      ]
+    },
+    "zh_再也_621": {
+      "title": "再……也…… (양보 구문: 아무리 ~해도 역시 ~하다, 아무리 ~할지라도 반드시 ~하겠다)",
+      "shortExplanation": "정도의 극치를 가정한 양보 상관 구문으로, 사물의 성질이나 동작의 정도가 아무리 극단에 달하더라도 뒤 절의 결심·사실·결과가 결코 흔들리지 않음을 나타냅니다('아무리 ~해도 ~하다').",
+      "longExplanation": "“再……也……”(zài…… yě……)는 정도의 극한을 한계까지 밀어붙여 양보의 전제로 삼는 필수 문형입니다. “再” 뒤에는 형용사나 심리 동사가 놓여 '더 이상 어찌할 수 없을 만큼 극한으로 ~하더라도'라는 양보적 가정을 설정하고, 뒤 절의 “也”는 그에 맞서 '그 어떤 극한의 조건 속에서도 마땅히 이행해야 할 과업이나 의지는 결코 변하지 않는다'는 불굴의 의지나 불변의 법칙을 못 박아 선언합니다. 난관을 극복하려는 굳은 결의를 표명할 때 널리 쓰입니다. 한국어의 '아무리 ~해도 (역시) ~하다', '비록 아무리 ~할지언정 ~하겠다'에 해당합니다.",
+      "formation": "주어 + 再 + 형용사 / 동사 + 也 + 술어 / 결론",
+      "examples": [
+        {
+          "translation": "내가 아무리 피곤하더라도 숙제는 다 끝마쳐야 한다."
+        }
+      ]
+    },
+    "zh_巴不得_622": {
+      "title": "巴不得 (심리 동사: 간절히 바라다, ~하기만을 몹시 고대하다, 바라 마지않다)",
+      "shortExplanation": "바람직한 일이나 좋은 결과가 속히 실현되기를 간절하고 애타게 고대함을 나타내는 구어 심리 동사입니다('간절히 바라다', '~하기만을 몹시 고대하다').",
+      "longExplanation": "“巴不得”(bābude)는 간절히 바라다는 뜻을 지닌 “巴”에서 파생된 심리 동사로, 뒤에 대개 절 형태의 목적어를 거느리고 옵니다. 어떤 긍정적이고 좋은 상황이나 관계의 개선이 하루빨리 이루어지기를 손꼽아 애타게 기다리는 화자의 간절한 소망을 생생하게 표현합니다. 비현실적이고 극단적인 과장성이 짙은 “恨不得”와 비교할 때, “巴不得”는 일상에서 충분히 실현 가능한 바람직한 희망 사항에 대해 쓰이는 것이 특징입니다. 한국어의 '간절히 바라다', '~하기만을 몹시 고대하다', '바라 마지않다'에 해당합니다.",
+      "formation": "주어 + 巴不得 + 동사구 / 목적어절",
+      "examples": [
+        {
+          "translation": "그들이 정말로 화해해서 이제부터는 화목하게 살아가기를 나는 간절히 바라고 있다."
+        }
+      ]
+    },
+    "zh_别提多了_623": {
+      "title": "别提多……了 (구어 관용 구문: 이루 말할 수 없이 ~하다, 얼마나 ~한지 말도 못 하다, 더할 나위 없이 ~하다)",
+      "shortExplanation": "정도가 극에 달하여 말로 다 형용할 수 없을 정도임을 감탄과 과장을 담아 표현하는 구어 관용 구문입니다('얼마나 ~한지 말도 못 하다', '이루 말할 수 없이 ~하다').",
+      "longExplanation": "“别提多……了”(bié tíduō…… le)는 '말을 꺼낼 필요조차 없다'는 뜻의 “别提”와 정도의 심화를 나타내는 “多……了”가 어우러진 대표적인 구어 감탄 구문입니다. 가운데에는 대개 긍정적인 성질을 띤 형용사나 심리 동사가 들어가며, 그 사태나 성격이 어찌나 두드러지고 대단한지 이루 필설로 다 묘사할 수 없을 만큼 극한에 이르렀음을 생동감 있게 칭찬하거나 과장할 때 씁니다. 한국어의 '얼마나 ~한지 말도 못 한다', '이루 말할 수 없이 ~하다', '더할 나위 없이 ~하다'에 해당합니다.",
+      "formation": "주어 / 사안 ，别提多 + 형용사 / 심리동사 + 了",
+      "examples": [
+        {
+          "translation": "이 사람이 일 처리하는 것은 얼마나 책임감이 넘치는지 말도 못 할 정도입니다."
+        }
+      ]
+    },
+    "zh_具有语体差别的同义词_624": {
+      "title": "具有语体差别的同义词 (문체론적 유의어: 구어체와 서면어체의 차이를 지닌 동의어 쌍)",
+      "shortExplanation": "기본적인 문법적·어휘적 의미는 동일하지만, 일상 회화(구어체)에 쓰이는 단어와 격식 있는 문장이나 문학(서면어체·문어체)에 쓰이는 단어로 뚜렷하게 나뉘는 어휘 현상입니다.",
+      "longExplanation": "고급 중국어 학습에서 “具有语体差别的同义词”(어체 차이를 지닌 동의어)는 문맥과 어조를 조절하는 핵심 어휘 규범입니다. 의미 내용이나 담당하는 문법 기능은 근본적으로 같으나, 일상생활의 친근하고 자연스러운 소통에 쓰이는 '구어체(口语体)' 어휘와 신문 기사, 공문서, 문학작품 등 격식 있고 장중한 문맥에 쓰이는 '서면어체(书面语体)' 어휘가 엄격히 구별됩니다. 대표적인 짝으로는 부사의 “就”(구어) ↔ “便”(서면어), 발화 동사의 “说”(구어) ↔ “道”(서면어·고풍), 처치 개사의 “把”(구어) ↔ “将”(서면어) 등이 있습니다. 적절한 격식과 장면에 맞춰 어휘를 구사하는 분별력이 요구됩니다.",
+      "formation": "구어체 어휘 (就 / 说 / 把 / 爸爸 / 商量 등) ↔ 서면어체 어휘 (便 / 道 / 将 / 父亲 / 磋商 등)",
+      "examples": [
+        {
+          "translation": "그는 곧 대답하여 말했다, \"이 반지를 가져가시오.\"라고. (여기서 '便 / 道 / 将'은 서면어·문어체 표현이고, '就 / 说 / 把'는 구어체 표현임)."
+        }
+      ]
+    },
+    "zh_恨不得_625": {
+      "title": "恨不得 (심리 동사: ~하고 싶어 안달이다, 마음 같아서는 당장이라도 ~하고 싶다, ~하지 못해 애가 타다)",
+      "shortExplanation": "현실적으로 어렵거나 불가능한 일임에도 초조하고 다급한 마음에 과장하여 '당장이라도 그렇게 하고 싶다'고 애태우며 갈망함을 나타내는 동사입니다('~하고 싶어 안달이다').",
+      "longExplanation": "“恨不得”(hènbude)의 “恨”은 원망이나 증오가 아니라 '원하는 대로 하지 못해 몹시 안타깝고 애가 타다'라는 뜻입니다. 따라서 물리적·능력적 한계 때문에 불가능하다는 것을 알면서도, 마음이 너무나 다급하고 간절한 나머지 '당장이라도 날개를 달고 날아가고 싶다'거나 '한 입에 다 삼켜버리고 싶다'처럼 과장된 행동을 간절히 바라는 심리 상태를 묘사합니다. 대개 뒤에 과장성을 띤 동사구나 절을 목적어로 동반합니다. 한국어의 '~하고 싶어 안달이다', '~하지 못해 애가 타다', '마음 같아서는 당장이라도 ~하고 싶다'에 해당합니다.",
+      "formation": "주어 + 恨不得 + 동사구 / 목적어절 (과장적이거나 실현하기 어려운 소망)",
+      "examples": [
+        {
+          "translation": "일이 바쁠 때 그녀는 혼자서 두 사람 몫의 일을 다 해치우고 싶어 안달이었다."
+        }
+      ]
+    },
+    "zh_顿时_626": {
+      "title": "顿时 (시간 부사: 순식간에, 즉시, 이내, 곧바로)",
+      "shortExplanation": "어떤 계기나 자극에 촉발되어 상황이나 심리가 눈 깜짝할 사이에 급변하였음을 나타내는 시간 부사로, 오직 과거의 일에만 쓰입니다('순식간에', '즉시', '이내').",
+      "longExplanation": "“顿时”(dùnshí)은 앞선 원인이나 사건의 자극을 받아 새로운 상태, 감정, 분위기가 일순간에 걷잡을 수 없이 일어났음을 나타내는 격조 높은 서면어 시간 부사입니다. 문학적인 묘사나 과거 회고 담화에서 매우 즐겨 쓰입니다. 문법적으로 가장 유의해야 할 점은, “顿时”은 이미 발생한 과거의 사실을 서술할 때만 쓰이며, 미래의 계획이나 명령·청유문(이때는 “马上”이나 “立刻”를 씀)에는 절대 사용할 수 없다는 점입니다. 한국어의 '순식간에', '즉시', '그 즉시', '이내'에 해당합니다.",
+      "formation": "계기·직전의 상황 ，顿时 + 주어 + 술어 (또는: 주어 + 顿时 + 술어)",
+      "examples": [
+        {
+          "translation": "의사의 말을 듣자, 순식간에 그의 마음속에는 다시금 희망이 타올랐다."
+        }
+      ]
+    },
+    "zh_不由得_627": {
+      "title": "不由得 (부사: 자기도 모르게, 어느덧, 절로 ~하게 되다, ~하지 않을 수 없다)",
+      "shortExplanation": "스스로의 이성이나 의지로 억누를 수 없어, 감정이나 심리적 반응이 무의식중에 저절로 터져 나오거나 일어남을 나타내는 부사입니다('자기도 모르게', '절로 ~하다').",
+      "longExplanation": "“不由得”(bùyóude)는 '자신의 뜻대로 되지 않는다'는 어원에서 출발한 부사로, “不由自主”(자기도 모르게), “禁不住”(참지 못하고)와 유사합니다. 주로 걱정하다, 웃음을 터뜨리다, 눈물을 흘리다, 탄식하다 등 심리 반응이나 생리적 감정을 나타내는 동사구 앞에 쓰여, 어떤 상황에 직면했을 때 화자의 통제를 벗어나 무의식적이고 자연스럽게 감정이 북받쳐 오르는 정황을 나타냅니다. 한국어의 '자기도 모르게', '절로 ~하게 되다', '어느덧', '~하지 않을 수 없다'에 해당합니다.",
+      "formation": "주어 + 不由得 + 심리동사구 / 감정 표현",
+      "examples": [
+        {
+          "translation": "리펑이 병을 앓는 채로 경기에 출전했으니, 나는 자기도 모르게 은근히 걱정이 되었다."
+        }
+      ]
+    },
+    "zh_V番_628": {
+      "title": "동사 + (수사 +) 番 (동량사: 한바탕 ~하다, 한 차례 꼼꼼히 ~하다, 한동안 ~을 치러 내다)",
+      "shortExplanation": "동작의 횟수를 나타내는 동량사로 쓰여, 일정한 시간과 공을 들여 한바탕 충분히 과정을 치르거나 꼼꼼하게 진행함을 나타냅니다('한바탕 ~하다', '한 차례 꼼꼼히 ~하다').",
+      "longExplanation": "“番”(fān)이 동량사로 쓰일 때는 주로 수사 “一”(때로는 “几”)과 어울려 “동사 + 一番”의 형식으로 술어 뒤에서 동량보어 역할을 합니다. 단순히 횟수만을 건조하게 세는 “次”나 처음부터 끝까지의 전 과정을 훑는 “遍”과 달리, “番”은 그 동작을 수행하는 데 상당한 정성이나 시간, 고심, 혹은 우여곡절이 들어갔음을 부각합니다(예: “打量一番”＝찬찬히 한 차례 뜯어보다, “思考一番”＝한참을 깊이 고민하다, “折腾一番”＝한바탕 씨름하다). 한국어의 '한바탕 ~하다', '한 차례 꼼꼼히 ~해 보다', '한동안 ~을 치르다'에 해당합니다.",
+      "formation": "주어 + 동사 (+ 목적어) + 수사 (一 / 几) + 番",
+      "examples": [
+        {
+          "translation": "그는 나를 아래위로 한 차례 훑어보더니, 목구멍까지 올라왔던 말을 도로 삼켰다."
+        }
+      ]
+    },
+    "zh_番_629": {
+      "title": "番 (명량사: 몇 차례의 ~, 한 줄기의 ~, 고난·풍파·정성 등을 세는 단위)",
+      "shortExplanation": "추상명사 앞에 놓이는 명량사로, 우여곡절과 시련에 찬 인생 역정이나 온 정성을 다한 고심·호의 등의 단위를 셀 때 쓰입니다('몇 차례의 ~', '한 줄기 ~').",
+      "longExplanation": "“番”(fān)이 명량사로 쓰일 때는 주로 “一” 또는 “几”와 결합하여(“一番”, “几番”) 뒤따르는 추상명사를 수식합니다. 셀 수 없는 심리적·과정적 실체를 하나의 의미 있는 단위로 묶어주는 역할을 하며, 크게 두 갈래의 문맥에서 즐겨 쓰입니다. ① 삶의 모진 풍파, 시련, 곡절 등을 나타내는 명사와 어울려 파란만장한 고난의 과정을 묘사할 때(예: “几番风雨”＝몇 차례의 비바람·시련, “几番波折”＝몇 번의 우여곡절); ② 정성 어린 호의, 각고의 고심, 숭고한 포부 등 온 마음을 쏟아부은 대상을 가리킬 때(예: “一番好意”＝한 줄기 따뜻한 호의, “一番苦心”＝남다른 고심, “一番事业”＝하나의 큰 사업). 문체적으로 매우 전아하고 품격 있는 표현입니다. 한국어의 '몇 차례의 ~', '한 줄기 ~', '몇 번의 풍파'에 해당합니다.",
+      "formation": "수사 (一 / 几) + 番 + 추상명사 (风雨 / 波折 / 苦心 / 好意 / 事业 등)",
+      "examples": [
+        {
+          "translation": "몇 차례의 거센 풍파를 겪고 나서야 그는 비로소 인생의 가치를 깨달았다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_何尝_615": {
+      "title": "何尝（反问副词：哪里、何曾，用反问表示强烈的否定或肯定）",
+      "shortExplanation": "副词作状语，用于反问句中加强语气，表示实际情况并非如此；后接否定形式则表示强烈的肯定，相当于“哪里”、“何曾”。",
+      "longExplanation": "“何尝”（hécháng）是带有浓厚书面语色彩的副词，专用于反问句中（句末常带“呢”），通过反诘语调来强调事实真相。其用法主要有两种：① 后接否定副词形成“何尝不 / 何尝没”，构成双重否定表示强烈的肯定。常用于因客观现实阻碍而未能如愿的语境中，带有无奈、叹惋的感情色彩（如“我何尝不想……”意为“我心里其实非常想……”）；② 后接肯定形式，表示坚决的否定，意在驳斥对方的不实之词（如“我何尝说过这话？”意即“我何曾说过，根本没说过”）。",
+      "formation": "主语 + 何尝 + 不 / 没 + 动词 / 形容词 + 宾语 +（呢）？ ｜ 主语 + 何尝 + 动词 +（呢）？",
+      "examples": [
+        {
+          "translation": "我哪里是不想买大房子呢？（其实心里非常想买，只是条件不允许而已）。"
+        }
+      ]
+    },
+    "zh_何至于_616": {
+      "title": "何至于（反问副词：何必至于、哪里用得着达到某种严重地步）",
+      "shortExplanation": "副词作状语，用反诘语气表示事情断不至于发展到某种严重、糟糕的恶劣地步，或者完全用不着做出过激反应；相当于“哪里至于”、“何必至于”。",
+      "longExplanation": "“何至于”（hé zhìyú）由疑问代词“何”与动词“至于”组合而成，常用于反问句中充当状语（句末多带语气词“呢”）。它所传达的深层语意是：客观情况本来并不那么严重，矛盾也没有激化到不可调和的程度，因此根本不必采取极端行动或产生过激的情绪反应。常用于劝解、安抚他人，劝阻对方不要过分动怒、悲伤或小题大做。相当于“怎么会至于”、“何必落到如此地步”。",
+      "formation": "主语 + 何至于 + 动词短语 / 分句 +（呢）？",
+      "examples": [
+        {
+          "translation": "你哪里用得着生这么大的气呢？（事情并不大，何必动这么大肝火）。"
+        }
+      ]
+    },
+    "zh_V了个RESULT_617": {
+      "title": "动词 + 了个 + 结果补语/形容词（口语格式：极言动作之痛快、彻底或特定结局）",
+      "shortExplanation": "口语常用述补格式，动词后带“了个”引出情态或结果补语，生动逼真地表现动作进行得淋漓尽致、痛快彻底或产生了某种特定结局；相当于“痛痛快快地……了一场”。",
+      "longExplanation": "“动词 + 了个 + 结果补语/形容词”是汉语口语中极富表现力的述补格式。结构中的“个”并非量词，而是已经完全虚化，起着衬音、舒缓语调并强化后续补语情感色彩的作用。该结构通常用于两种情境：① 表现动作进行得极为尽兴、彻底，主体获得了极大的情感释放或满足（如“喝了个痛快”、“玩了个尽兴”）；② 描述某种极端的、往往带有戏剧性或出人意料的结果状态（如“吃了个精光”、“碰了个钉子”、“落了个空”）。句中充当补语的多为双音节或单音节状态形容词。",
+      "formation": "主语 + 动词 + 了个 + 形容词 / 结果补语（痛快 / 精光 / 饱等）",
+      "examples": [
+        {
+          "translation": "我们痛痛快快、毫无顾忌地喝了一场。"
+        }
+      ]
+    },
+    "zh_据说_618": {
+      "title": "据说……（插入语：转述传闻，相当于“听人说”、“传言”）",
+      "shortExplanation": "插入语，用于句首或主语前，表示后文所陈述的内容是间接转述自他人的话语、传闻或消息报道，并非说话人亲历；相当于“听别人说”。",
+      "longExplanation": "“据说”（jùshuō）由“根据、依据”之义的“据”与动词“说”复合而成，常以句首插入语的形式出现（后常加逗号停顿）。它的功能是指明信息的来源属于间接听闻、社会传闻或未经完全证实的第三方叙述。使用“据说”能够使陈述客观化，委婉地表明说话人对该事件的真实性与确凿度保留一定的解释空间，不承担绝对保真的责任。广泛应用于口语交际、新闻报道及文学叙述中。",
+      "formation": "据说 ，+ 分句 / 句子",
+      "examples": [
+        {
+          "translation": "听别人说，他年轻的时候曾经孤身一人去过非洲的原始大森林。"
+        }
+      ]
+    },
+    "zh_因而_619": {
+      "title": "因而（连词：表示因果承接，相当于“因此”、“所以”）",
+      "shortExplanation": "连词，常用于书面语复句的后一分句句首，表示由于前文所陈述的原因或前提，直接导致了后文结果的产生；相当于“因此”、“所以”。",
+      "longExplanation": "“因而”（yīn'ér）是由表示起因的“因”和表示顺承的“而”构成的合音连词，带有浓厚的书面语风格。它连接因果复句的后一分句，兼有“表达原因”与“顺承发展”的双重语法功能。与口语化的“所以”相比，“因而”更着重于揭示因果链条的必然发展逻辑，即前项的事实或条件自然而然地推导出了后项的结局。在现代汉语标准规范中，“因而”通常独立用于后分句句首，前一分句一般不再与“因为”重叠使用。",
+      "formation": "原因 / 事实分句 ，因而 + 结果分句",
+      "examples": [
+        {
+          "translation": "这条河的河床十分狭窄，因而极易引发洪涝灾害。"
+        }
+      ]
+    },
+    "zh_也_620": {
+      "title": "也（副词：用于让步句后项，表示即使在前述情况下也依然如此）",
+      "shortExplanation": "副词作状语，用于让步复句的后一分句，表示在前述不利条件、相反意志或退一步设想的情况下，后述的结果、决定或要求依然不可更改；相当于“照样”、“仍旧”。",
+      "longExplanation": "此处的“也”（yě）是用在让步假设复句后项中的典型副词。前一分句往往带有隐含或显性的让步连词（如“即使”、“哪怕”、“就算”、“不想……”），提出一种与常理相左或极不情愿的主观意愿/客观阻碍。后一分句紧承“也”，以极其坚决的口吻表明：前述的任何阻力或反向意愿都不能动摇既定的要求、责任或规律，事情依然必须照旧进行（常与“得”、“要”、“必须”连用）。体现出不容置疑、不依人的意志为转移的坚定语气。",
+      "formation": "（让步假设分句） ，主语 + 也 + 谓语（得 / 要 / 会等）",
+      "examples": [
+        {
+          "translation": "哪怕你心里不想做，也照样必须去做。"
+        }
+      ]
+    },
+    "zh_再也_621": {
+      "title": "再……也……（关联格式：表示极大程度的让步，相当于“无论多么……也……”）",
+      "shortExplanation": "表示极大程度让步的关联句式，强调无论性质或动作的程度达到何种极致的地步，后项所确定的态度、决心或既成事实都绝不会动摇；相当于“无论多么……也……”。",
+      "longExplanation": "“再……也……”（zài…… yě……）是汉语中用于表达极度让步的经典句式。“再”置于形容词或动词之前，意为“即便程度加深到极点、再怎么……”；后一分句以副词“也”呼应，表明后项的决心、结论或责任具有绝对的不可逆转性，绝不因前项条件之严酷或程度之极端而发生任何妥协或动摇。常用于克服重重险阻、表达钢铁般坚毅决心的语境中。",
+      "formation": "主语 + 再 + 形容词 / 动词 + 也 + 谓语 / 结论",
+      "examples": [
+        {
+          "translation": "无论我身体有多么疲惫，也一定要把作业全部写完。"
+        }
+      ]
+    },
+    "zh_巴不得_622": {
+      "title": "巴不得（心理动词：迫切盼望，多带分句作宾语）",
+      "shortExplanation": "心理动词，表示极其迫切、热切地盼望某种好的事情、良好愿望或关系缓和得以实现；多带分句充当宾语，相当于“非常希望”、“恨不能立刻实现”。",
+      "longExplanation": "“巴不得”（bābude）是汉语口语中使用频率极高的心理动词。“巴”含有“期盼、盼望”之义。“巴不得”后通常直接引出一个动词短语或完整分句作其宾语，用以生动展现说话人对某件合乎心意的美事抱有极强烈的渴望与期许。与多带有夸张、绝望或非现实色彩的“恨不得”相比，“巴不得”所期盼的内容通常属于现实中完全有可能达成、且对当事人或他人大有裨益的良性愿望。语带亲切、诚挚的热望之情。",
+      "formation": "主语 + 巴不得 + 动词短语 / 宾语分句",
+      "examples": [
+        {
+          "translation": "我极其迫切地盼望他们俩能真正重归于好，从今往后和和美美地过日子。"
+        }
+      ]
+    },
+    "zh_别提多了_623": {
+      "title": "别提多……了（固定格式：表示程度达到了极点，难以用言语形容）",
+      "shortExplanation": "口语常用固定格式，形容词或心理动词嵌入其中，表示事物的性质或某种状态达到了极点，非语言所能尽述；带有强烈的赞赏、感叹与夸张语气。",
+      "longExplanation": "“别提多……了”（bié tíduō…… le）是现代汉语口语中富有感染力的感叹句式。“别提”字面意义为“不用提了、不必多言”，它与“多……了”相呼应，极言某种性质、状态或情感之深厚、突出，已经到了言语难以形容的崇高或极致境界。中间常嵌入具有鲜明褒义倾向的形容词（如“负责”、“高兴”、“漂亮”、“热闹”）或心理动词，体现出说话人发自肺腑的由衷赞美与生动描摹。",
+      "formation": "主语 / 事项 ，别提多 + 形容词 / 心理动词 + 了",
+      "examples": [
+        {
+          "translation": "这个人办起事来，责任心强到了难以言表的极高程度。"
+        }
+      ]
+    },
+    "zh_具有语体差别的同义词_624": {
+      "title": "具有语体差别的同义词（修辞与语体现象：口语色彩与书面语色彩不同的同义词配对）",
+      "shortExplanation": "词汇与修辞现象，指理性意义与语法功能基本相同，但分别带有鲜明的口语语体色彩或书面语体（含文言、庄重风格）色彩的同义词对应现象。",
+      "longExplanation": "“具有语体差别的同义词”是现代汉语词汇修辞与高级语法中的重要概念。这类词语所表达的客观概念或语法意义大体一致，但它们所适应的交际场合与文体风格却截然不同。一类属于“口语语体”，通俗易懂、亲切自然，多用于日常无拘束的口头会话；另一类属于“书面语体”（常吸收了古代文言词素），典雅庄重、凝练严谨，多用于正式公文、新闻报道、学术论著或古典文学叙述中。例如：连词/副词“就”（口语）与“便”（书面）；引出话语的动词“说”（口语）与“道”（书面/文艺）；处置介词“把”（口语）与“将”（书面）；名词“爸爸”（口语）与“父亲”（书面/正式）。掌握语体差异是衡量汉语高阶表达得体性的重要标志。",
+      "formation": "口语色彩词语（如 就 / 说 / 把 / 爸爸 / 商量）↔ 书面语色彩词语（如 便 / 道 / 将 / 父亲 / 磋商）",
+      "examples": [
+        {
+          "translation": "他随即答道：“把这枚戒指拿去吧。”（例句中“便/道/将”具有浓郁的书面语色彩，而“就/说/把”则属于典型的口语色彩）。"
+        }
+      ]
+    },
+    "zh_恨不得_625": {
+      "title": "恨不得（心理动词：极度焦急地渴望实现某种难以实现之事，带有夸张意味）",
+      "shortExplanation": "心理动词，表示心中极其焦急、迫切地希望实现某种往往由于客观限制而难以或不可能实现的事情；后接带有强烈夸张色彩的短语或小句作宾语。",
+      "longExplanation": "“恨不得”（hènbude）字面意为“恨自己不能够”。其中的“恨”并非仇恨之义，而是指因能力或条件达不到而深感遗憾、懊恼与焦躁。因此，“恨不得”专用于生动描摹人在某种极端焦急、兴奋或迫切的情境下，巴望能突破现实的物理、生理或时间限制去达成某种心愿（如“恨不得插上翅膀飞过去”、“恨不得一口吞下”）。它所支配的宾语成分往往具有很强的夸张性或非现实性，与着眼于美好现实期待的“巴不得”形成鲜明对照。",
+      "formation": "主语 + 恨不得 + 动词短语 / 宾语分句（多带有夸张或难以实现的愿望）",
+      "examples": [
+        {
+          "translation": "在工作极其忙碌的时候，她急切地盼着自己一个人能顶两个人干活。"
+        }
+      ]
+    },
+    "zh_顿时_626": {
+      "title": "顿时（时间副词：立刻、刹那间，多用于叙述过去发生的变化）",
+      "shortExplanation": "时间副词作状语，表示在某种外部刺激、原因或条件的引发下，情况、情绪或场面在极短的时间内立刻出现或发生转变；只能用于叙述过去发生的事情。",
+      "longExplanation": "“顿时”（dùnshí）带有鲜明的书面语叙事色彩。它表示某种新的现象、心理活动或环境氛围紧随着前述诱因在霎时间迅速展开。在现代汉语语法体系中，“顿时”具有严格的语用限制：它只能用于叙述过去已经发生并完成的客观情况，着重展现时空转换与情绪起伏的迅疾；绝不能用于指向未来的计划、假设或祈使语气中（面向未来的应使用“马上”、“立刻”）。",
+      "formation": "诱因 / 前置情况 ，顿时 + 主语 + 谓语（或：主语 + 顿时 + 谓语）",
+      "examples": [
+        {
+          "translation": "听完医生这番话，刹那间，他的心中重新燃起了希望的火焰。"
+        }
+      ]
+    },
+    "zh_不由得_627": {
+      "title": "不由得（副词：情不自禁、不由自主地产生某种情感或反应）",
+      "shortExplanation": "副词作状语，表示人的情感、心理反应或生理动作无法由自己的意志所控制，自然而然、情不自禁地萌生出来；相当于“禁不住”、“不由自主地”。",
+      "longExplanation": "“不由得”（bùyóude）由“由不得自己”缩略引申而来，属于表达主观心理状态的常用副词。它通常修饰表心理活动、情绪起伏或偶发反应的动词短语（如“担心”、“笑起来”、“掉下眼泪”、“赞叹”等）。其深层语义特征在于强调主体在受到外界特定情境的触发后，内心情感奔涌而出，非理智所能强行遏制或掩饰。在叙事写人、描摹细腻心理由此具有极佳的表达效果。",
+      "formation": "主语 + 不由得 + 心理动词短语 / 情感反应",
+      "examples": [
+        {
+          "translation": "李朋带病上场去参加比赛，我不禁暗暗替他感到有些担忧。"
+        }
+      ]
+    },
+    "zh_V番_628": {
+      "title": "动词 +（数词 +）番（动量词：表示动作经历了一番过程或耗费心力）",
+      "shortExplanation": "动量词作补语，常与数词“一”（或“几”）连用置于动词后，表示动作、行为经过了充分、深入的一番过程，往往含有耗费时间、心力或仔细推敲的意味；相当于“……了一遍/一番”。",
+      "longExplanation": "“番”（fān）充当动量词时，构成“动词 + 一番”格式，用作动量补语。与单纯计算机械重复次数的“次”或侧重全程完整性的“遍”截然不同，“番”侧重于展现动作实施过程中的深度、耗时以及所倾注的精力与心血。常见搭配多为伴随深思熟虑、审视观察或反复交涉的动词（如“打量一番”、“思考一番”、“讨论一番”、“折腾一番”）。体现出动作行为不是敷衍了事，而是扎扎实实经历了一整段认真投入的过程。",
+      "formation": "主语 + 动词（+ 宾语）+ 数词（一 / 几）+ 番",
+      "examples": [
+        {
+          "translation": "他上上下下仔细打量了我一遍，到了嘴边的话又咽了回去。"
+        }
+      ]
+    },
+    "zh_番_629": {
+      "title": "番（名量词：用于修饰波折坎坷的经历、费尽心力的过程或抽象情意）",
+      "shortExplanation": "名量词，常与“一”或“几”连用置于抽象名词前，用于修饰充满曲折艰辛的经历、耗费心血的付出或真挚的情意；相当于“几度”、“一段”。",
+      "longExplanation": "“番”（fān）充当名量词时，构成“数词（常用‘一’或‘几’）+ 番 + 名词”结构，专门用于修饰具有历时性、曲折性或深厚心力投入的抽象名词。其语义范畴主要涵盖两个方向：① 表现历经重重磨难、坎坷考验的波折人生经历（如“几番风雨”、“几番曲折”），形象地展现出生活历程如潮汐风浪般反复冲刷的沉重感；② 用于修饰凝结了个人真情实感、良苦用心或宏图远虑的抽象事物（如“一番好意”、“一番苦心”、“一番话”、“一番宏伟事业”）。兼具古雅庄重的修辞色彩与深刻的哲理性。",
+      "formation": "数词（一 / 几）+ 番 + 抽象名词（风雨 / 波折 / 苦心 / 好意 / 事业等）",
+      "examples": [
+        {
+          "translation": "历经了几次波折与坎坷的洗礼，他才真正领悟到了人生的价值所在。"
+        }
+      ]
+    }
+  }
+}

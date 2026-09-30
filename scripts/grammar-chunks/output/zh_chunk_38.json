@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_除非才_600": {
+      "title": "(除非)……才…… (Liên từ điều kiện duy nhất: Chỉ khi... mới... / Trừ phi... mới...)",
+      "shortExplanation": "Biểu thị điều kiện tiên quyết duy nhất cần phải có để đạt được kết quả; chỉ khi thỏa mãn điều kiện trước thì kết quả sau mới có thể thực hiện được (\"chỉ khi... mới...\", \"trừ phi... mới...\").",
+      "longExplanation": "“(除非)……才……” ((chúfēi)…… cái……) là kết cấu câu phức điều kiện duy nhất trong tiếng Hán, có ý nghĩa và công dụng tương đương với cấu trúc “只有……才……”. Trong đó, “除非” dẫn ra điều kiện tiên quyết bắt buộc phải đáp ứng (điều kiện duy nhất), và “才” đứng trước vị ngữ ở phân câu sau để chỉ ra rằng chỉ dưới tiền đề của điều kiện này thì hành động hoặc kết quả mong đợi mới phát sinh. Trong khẩu ngữ, “除非” có thể được lược bỏ nhưng “才” là thành phần bắt buộc. Tương đương với \"chỉ khi... mới...\", \"trừ phi... mới...\" trong tiếng Việt.",
+      "formation": "(除非 +) Điều kiện duy nhất ，Chủ ngữ + 才 + Hành động / Kết quả",
+      "examples": [
+        {
+          "translation": "(Chỉ khi / Trừ phi) bạn đồng ý điều kiện của tôi, tôi mới nói cho bạn biết."
+        }
+      ]
+    },
+    "zh_除非_601": {
+      "title": "除非 (Giới từ / Liên từ: Ngoại trừ / Trừ... ra / Ngoại trừ đối tượng duy nhất)",
+      "shortExplanation": "Dùng để đưa ra đối tượng cá biệt duy nhất được ngoại lệ, theo sau thường là phân câu phủ định toàn thể biểu thị ngoài đối tượng này ra thì không ai hoặc không gì có thể làm được; \"ngoại trừ\", \"trừ ra\".",
+      "longExplanation": "“除非” (chúfēi) khi dùng độc lập trước danh từ, đại từ hoặc cụm danh từ mang ý nghĩa bài trừ, loại trừ một ngoại lệ duy nhất, tương tự như “除了……以外”. Trong kết cấu này, vế sau thường đi kèm với những từ phủ định toàn bộ như “没人” (không ai), “都不” (đều không), “无法” (không thể), nhằm nhấn mạnh rằng đối tượng được nêu sau “除非” là trường hợp duy nhất có ngoại lệ hoặc có khả năng thực hiện việc đó. Tương đương với \"ngoại trừ\", \"trừ... ra\", \"chỉ có... mới...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ / Sự vật ，除非 + Đối tượng ngoại lệ ，Từ phủ định (没人 / 都不) + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Loại máy móc này, ngoại trừ Lý Dương ra thì chẳng ai sửa tốt được."
+        }
+      ]
+    },
+    "zh_V1得O直V2_602": {
+      "title": "Động từ 1 + 得 (+ Tân ngữ) + 直 + Động từ 2 (Bổ ngữ mức độ: ... đến mức cứ liên tục / không ngừng...)",
+      "shortExplanation": "Biểu thị động tác hoặc cảm xúc thứ nhất đạt đến mức độ cực hạn, dẫn đến việc chủ thể liên tục hoặc không ngừng thực hiện một phản ứng sinh lý hay hành động thứ hai; \"... đến mức cứ liên tục...\".",
+      "longExplanation": "Cấu trúc “Động từ 1 + 得 (+ Tân ngữ) + 直 + Động từ 2” là một dạng bổ ngữ trạng thái / mức độ đặc sắc trong tiếng Hán. Trong đó, động từ 1 (thường là động từ chỉ tâm lý, cảm xúc hoặc trạng thái sinh lý như tức giận, mừng rỡ, đau đớn, sốt ruột, mệt mỏi) đạt đến mức độ rất cao; phó từ “直” mang ý nghĩa \"liên tục không ngừng, cứ dồn dập\"; và động từ 2 diễn tả hành vi thể chất hoặc biểu hiện sinh lý bộc phát không kìm nén được (như run rẩy, toát mồ hôi, thở dốc, giậm chân). Tân ngữ là đại từ hoặc danh từ chỉ người có thể xuất hiện để làm rõ chủ thể của hành động thứ hai. Tương đương với \"... đến nỗi cứ liên tục...\", \"... đến mức không ngừng...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ / Tính từ 1 + 得 (+ Tân ngữ +) 直 + Động từ 2",
+      "examples": [
+        {
+          "translation": "Người cha nghe nói con trai đã bán nhà, tức giận đến mức (ông ấy) run rẩy cả người."
+        }
+      ]
+    },
+    "zh_直到_603": {
+      "title": "直到 (Giới từ: Cho đến khi / Mãi cho đến / Tận đến)",
+      "shortExplanation": "Giới từ dùng trước danh từ thời gian, mốc thời điểm hoặc địa điểm để biểu thị hành động, trạng thái hoặc tình huống kéo dài liên tục cho tới tận mốc đó; \"mãi cho đến\", \"tận đến\".",
+      "longExplanation": "“直到” (zhídào) là giới từ chỉ giới hạn thời gian hoặc không gian, được tạo thành từ “直” (thẳng, liên tục) và “到” (đến). Thường đứng đầu câu hoặc trước vị ngữ, kết hợp với từ ngữ chỉ thời gian (như “今天” - hôm nay, “现在” - bây giờ, “昨天深夜” - đêm muộn hôm qua) hoặc mệnh đề chỉ sự kiện để làm trạng ngữ chỉ thời gian. Cấu trúc này nhấn mạnh tính liên tục không đứt đoạn của trạng thái hoặc một nhận thức kéo dài suốt từ quá khứ cho tới tận thời điểm được đề cập. Vế sau thường đi kèm với “也” (cũng), “才” (mới), hoặc “还” (vẫn). Tương đương với \"mãi cho đến\", \"cho đến tận\", \"tận tới\" trong tiếng Việt.",
+      "formation": "直到 + Thời gian / Mốc thời điểm ，Chủ ngữ + (也 / 还 / 才 +) Vị ngữ",
+      "examples": [
+        {
+          "translation": "Cho đến tận hôm nay, tôi vẫn không hiểu vì sao khi đó anh ấy lại nổi trận lôi đình lớn như vậy."
+        }
+      ]
+    },
+    "zh_反正_604": {
+      "title": "反正 (Phó từ: Dù sao thì / Dù thế nào đi nữa / Đằng nào thì)",
+      "shortExplanation": "Phó từ biểu thị bất kể tình huống, điều kiện hay quyết định của người khác có biến đổi ra sao thì kết quả, sự thật hoặc thái độ kiên định của bản thân vẫn không thay đổi; \"dù sao thì\", \"đằng nào thì\".",
+      "longExplanation": "“反正” (fǎnzhèng) là phó từ ngữ khí rất phổ biến trong tiếng Hán, kết hợp từ “反” (mặt trái/ngược) và “正” (mặt phải/xuôi), mang nghĩa đen là \"dù ngược hay xuôi thì cũng thế\". Thường đứng ở đầu phân câu kết luận, rất hay đi kèm cặp với các liên từ vô điều kiện như “不管” (bất kể), “无论” (cho dù). Từ này dùng để khẳng định một ý chí dứt khoát, một sự thật hiển nhiên hoặc một kết quả chắc chắn sẽ diễn ra mà không hề bị dao động bởi bất kỳ yếu tố ngoại cảnh nào. Tương đương với \"dù sao thì\", \"dù thế nào đi nữa\", \"đằng nào thì\" trong tiếng Việt.",
+      "formation": "(不管 / 无论 + Điều kiện …… ，) 反正 + Quyết định / Kết quả kiên định",
+      "examples": [
+        {
+          "translation": "Bất kể ai trong các bạn đi chăng nữa, dù sao đi nữa tôi cũng sẽ không đi."
+        }
+      ]
+    },
+    "zh_点_605": {
+      "title": "Số từ + 点 + Số từ (Cách đọc số thập phân: ... phẩy...)",
+      "shortExplanation": "Cách biểu đạt số thập phân trong tiếng Hán; chữ “点” (diǎn) tương ứng với dấu phẩy thập phân; phần nguyên đọc theo số đếm thông thường, phần thập phân đọc từng chữ số đơn lẻ; \"... phẩy...\".",
+      "longExplanation": "Trong tiếng Hán, số thập phân được đọc theo công thức “Số phần nguyên + 点 (diǎn) + Các chữ số phần thập phân”. Trong đó, chữ “点” đóng vai trò là dấu chấm/phẩy thập phân. Quy tắc đọc: Phần nguyên đứng trước “点” được đọc như một số tự nhiên thông thường (như 三 - ba, 二十五 - hai mươi lăm); các chữ số đứng sau “点” được đọc tuần tự từng chữ số một cách riêng rẽ chứ không ghép hàng chục, hàng trăm (ví dụ: “三点一四” sān diǎn yī sì = 3,14; số 0 đọc là líng, số 1 đọc là yī, số 2 đọc là èr). Tương đương với cách đọc \"... phẩy...\" trong tiếng Việt.",
+      "formation": "Số phần nguyên + 点 + Từng chữ số phần thập phân",
+      "examples": [
+        {
+          "translation": "Ba phẩy một bốn (3,14)."
+        }
+      ]
+    },
+    "zh_1分之2_606": {
+      "title": "Mẫu số + 分之 + Tử số (Cách đọc phân số: ... phần...)",
+      "shortExplanation": "Cách biểu đạt phân số trong tiếng Hán; mẫu số đứng trước “分之” (fēnzhī), tử số đứng sau; tương đương với cách đọc \"... phần...\" trong tiếng Việt.",
+      "longExplanation": "Trong tiếng Hán, phân số được biểu thị theo cấu trúc ngược lại so với tiếng Việt: “Mẫu số + 分之 (fēnzhī) + Tử số”. Chữ “分” có nghĩa là chia ra, “之” là trợ từ kết cấu mang nghĩa \"của\"; cấu trúc này bắt nguồn từ tư duy ngữ pháp Hán cổ: \"chia làm [Mẫu số] phần, lấy [Tử số] phần trong đó\". Ví dụ: “五分之一” (wǔ fēn zhī yī) có mẫu số là 5, tử số là 1, tức là phân số 1/5, đọc trong tiếng Việt là \"một phần năm\". Cần đặc biệt chú ý thứ tự: người học tiếng Hán rất dễ nhầm lẫn đặt tử số lên trước nếu không nắm vững quy tắc này. Tương đương với cách nói phân số \"... phần...\" trong tiếng Việt.",
+      "formation": "Mẫu số + 分之 + Tử số",
+      "examples": [
+        {
+          "translation": "Một phần năm (1/5)."
+        }
+      ]
+    },
+    "zh_百分之_607": {
+      "title": "百分之 + Số từ (Cách đọc phần trăm: ... phần trăm)",
+      "shortExplanation": "Cách biểu đạt tỷ lệ phần trăm (%) trong tiếng Hán; “百分之” (bǎifēnzhī) đứng trước, con số phần trăm đứng sau; tương đương với \"... phần trăm\" trong tiếng Việt.",
+      "longExplanation": "“百分之 + Số từ” (bǎifēnzhī #) là cấu trúc chuẩn để biểu đạt phần trăm (%) trong tiếng Hán. Đây thực chất là trường hợp đặc biệt của cấu trúc phân số với mẫu số cố định là 100 (“百”). Trong khi tiếng Việt nói con số trước rồi thêm \"phần trăm\" ở phía sau (ví dụ: \"chín phần trăm\" = 9%), thì tiếng Hán luôn đặt “百分之” ở đằng trước rồi mới phát âm con số cụ thể ở phía sau (ví dụ: “百分之九” bǎi fēn zhī jiǔ = 9%, “百分之五十” bǎi fēn zhī wǔshí = 50%, “百分之百” bǎi fēn zhī bǎi = 100%). Tương đương với cách nói \"... phần trăm (%)\" trong tiếng Việt.",
+      "formation": "百分之 + Số từ (con số phần trăm)",
+      "examples": [
+        {
+          "translation": "Chín phần trăm (9%)."
+        }
+      ]
+    },
+    "zh_甲乙丙丁_608": {
+      "title": "甲、乙、丙、丁 (Danh từ / Ký hiệu thứ tự: Giáp, Ất, Bính, Đinh / Bên A, Bên B, Bên C, Bên D)",
+      "shortExplanation": "Bốn thiên can đầu tiên dùng để đánh số thứ tự, phân loại các bên trong hợp đồng pháp lý (Bên A, Bên B) hoặc xếp loại thứ bậc (A, B, C, D); \"Giáp, Ất, Bính, Đinh\", \"Bên A, Bên B\".",
+      "longExplanation": "“甲、乙、丙、丁” (jiǎ, yǐ, bǐng, dīng) là bốn can đầu tiên trong hệ thống Thập Thiên Can cổ truyền của Trung Hoa. Trong tiếng Hán hiện đại, bốn chữ này được sử dụng tương đương như các chữ cái A, B, C, D trong bảng chữ cái Latinh để đánh số thứ tự, phân hạng hoặc định danh các đối tượng độc lập. Ứng dụng phổ biến nhất là trong văn bản hợp đồng pháp lý và thương mại: “甲方” (jiǎfāng - Bên A), “乙方” (yǐfāng - Bên B), “丙方” (bǐngfāng - Bên C). Ngoài ra còn dùng để chỉ các phương án lựa chọn, xếp loại học lực/chất lượng hoặc đặt tên cho các nhân vật tượng trưng trong câu chuyện/ví dụ. Tương đương với \"Giáp, Ất, Bính, Đinh\" hoặc \"Bên A, Bên B, Bên C, Bên D\" trong tiếng Việt.",
+      "formation": "甲 / 乙 / 丙 / 丁 (+ 方 / Loại / Hạng) + Danh từ",
+      "examples": [
+        {
+          "translation": "Nếu bên B đồng ý, bên A có thể giao trước sản phẩm cho bên B."
+        }
+      ]
+    },
+    "zh_顺着_609": {
+      "title": "顺(着) (Giới từ: Men theo / Dọc theo / Xuôi theo / Theo)",
+      "shortExplanation": "Giới từ kết hợp với từ chỉ tuyến đường, bề mặt hoặc phương hướng, biểu thị phương hướng di chuyển hoặc sự lan tỏa của động tác dọc theo quỹ đạo đó; \"men theo\", \"dọc theo\", \"theo\".",
+      "longExplanation": "“顺(着)” (shùn(zhe)) là giới từ chỉ phương hướng và tuyến đường di chuyển trong tiếng Hán. Trong đó, “顺” có nghĩa là thuận theo, xuôi theo; trợ từ “着” gắn theo sau để biểu thị trạng thái liên tục. Giới từ ngữ này đứng trước danh từ chỉ con đường, bờ sông, phương hướng hoặc bề mặt cơ thể (như “顺着这条路” - dọc theo con đường này, “顺着脸” - men theo gò má, “顺着风向” - xuôi theo chiều gió), đóng vai trò trạng ngữ bổ nghĩa cho động từ di chuyển ở phía sau. Ngoài nghĩa không gian cụ thể, nó còn mở rộng sang nghĩa trừu tượng: nương theo manh mối, mạch suy nghĩ hoặc ý muốn của người khác (“顺着思路”, “顺着他的意思”). Tương đương với \"men theo\", \"dọc theo\", \"xuôi theo\", \"theo\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 顺(着) + Tuyến đường / Bề mặt / Phương hướng + Động từ di chuyển",
+      "examples": [
+        {
+          "translation": "Mồ hôi men theo gò má anh ấy chảy dài xuống dưới."
+        }
+      ]
+    },
+    "zh_自_610": {
+      "title": "自 (Giới từ văn viết: Từ / Kể từ / Bắt đầu từ)",
+      "shortExplanation": "Giới từ trang trọng trong văn viết biểu thị điểm xuất phát về mặt không gian, thời gian hoặc phạm vi; tương đương với “从” (cóng); \"từ\", \"kể từ\".",
+      "longExplanation": "“自” (zì) là giới từ chỉ khởi điểm mang đậm màu sắc văn ngôn và văn phong trang trọng, tương đương với “从” trong khẩu ngữ hiện đại. Khi dùng chỉ không gian hoặc phương hướng, nó thường kết hợp với các giới từ chỉ đích đến tạo thành kết cấu đối xứng thanh nhã như “自……向……” (từ... hướng về...), “自……至……” (từ... đến...), “自……往……” (từ... sang...). Ngoài ra, “自” còn dùng phổ biến để chỉ mốc khởi đầu của thời gian (như “自古以来” - từ xưa đến nay, “自昨天起” - kể từ ngày hôm qua). Thường xuất hiện trong văn bản khoa học, tin tức báo chí, văn học hoặc diễn ngôn pháp lý. Tương đương với \"từ\", \"kể từ\", \"bắt đầu từ\" trong tiếng Việt.",
+      "formation": "自 + Khởi điểm (thời gian / nơi chốn) (+ 向 / 至 / 到 + Điểm đến) + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Loài chim có thể cảm nhận được các đường sức từ từ cực bắc hướng về cực nam của trái đất."
+        }
+      ]
+    },
+    "zh_把V着_611": {
+      "title": "把 + Tân ngữ + Động từ + 着 (Cấu trúc câu chữ 把 mệnh lệnh: Hãy cầm/giữ... theo / Hãy làm... đi)",
+      "shortExplanation": "Kết hợp câu chữ 把 với trợ từ động thái “着”, dùng trong câu mệnh lệnh, dặn dò hoặc nhắc nhở đối phương hãy đem theo, giữ gìn hoặc duy trì trạng thái của sự vật; \"hãy mang theo...\", \"cứ giữ lấy...\".",
+      "longExplanation": "Kết cấu “把 + Tân ngữ + Động từ + 着” (bǎ……V zhe) là sự phối hợp độc đáo giữa câu chữ “把” (câu xử trí) và trợ từ trạng thái “着” (biểu thị sự duy trì liên tục của trạng thái hoặc hành động). Thường dùng trong các câu cầu khiến, khuyên nhủ hoặc căn dặn mang tính dứt khoát nhưng nhẹ nhàng giữa những người thân thiết. Khi người nói dặn đối phương mang theo vật gì đó bên mình (như “把书带着” - hãy mang sách theo, “把伞拿着” - cầm sẵn cái ô theo) hoặc yêu cầu giữ nguyên vị trí/tình trạng của đồ vật (như “把门开着” - cứ để cửa mở), cấu trúc này nhấn mạnh việc duy trì trạng thái sở hữu hoặc kiểm soát đối với vật đó trong suốt quá trình tiếp theo. Tương đương với \"hãy mang... theo\", \"cứ giữ... lấy\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 把 + Tân ngữ + Động từ + 着",
+      "examples": [
+        {
+          "translation": "Bạn hãy mang theo sách bên mình đi."
+        }
+      ]
+    },
+    "zh_把O给V了_612": {
+      "title": "把 + Tân ngữ + (给) + Động từ + 了 (Câu chữ 把 tăng cường ngữ khí: Đã làm... mất rồi / Đem... xử lý xong)",
+      "shortExplanation": "Chêm từ “给” vào trước động từ trong câu chữ 把 nhằm tăng cường ngữ khí xử trí, thường diễn tả hành động đã hoàn tất trọn vẹn, bất cẩn để xảy ra hoặc mang kết quả không mong muốn; \"đã... mất rồi\", \"quên béng mất\".",
+      "longExplanation": "Cấu trúc “把 + Tân ngữ + (给) + Động từ + 了” là một biến thể nhấn mạnh rất đặc trưng trong khẩu ngữ của câu chữ 把. Ở đây, từ “给” không mang nghĩa cho/tặng mà đóng vai trò như một trợ từ tăng cường ngữ khí xử trí, đặt ngay trước động từ chính. Nó thường xuất hiện trong hai ngữ cảnh: ① Diễn tả một hành vi lỡ đãng, bất cẩn hoặc sơ suất dẫn đến hậu quả không như ý muốn (ví dụ: “把这事给忘了” - quên béng mất chuyện này rồi, “把手机给弄丢了” - làm mất điện thoại mất rồi); ② Nhấn mạnh động tác đã được xử lý triệt để, dứt điểm (ví dụ: “把作业给写完了” - đã viết xong sạch bài tập rồi). Có thể có hoặc không có “给”, nhưng khi có “给” thì sắc thái cảm xúc và tính hoàn tất được tô đậm rõ rệt. Tương đương với \"đã... mất rồi\", \"lỡ... mất rồi\", \"quên béng đi\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 把 + Tân ngữ + (给 +) Động từ + 了",
+      "examples": [
+        {
+          "translation": "Tôi quên béng mất chuyện này rồi."
+        }
+      ]
+    },
+    "zh_给_613": {
+      "title": "给 (Giới từ câu bị động: Bị / Được - tương đương chữ 被)",
+      "shortExplanation": "Giới từ dùng trong khẩu ngữ dẫn ra tác nhân gây ra hành động, tương đương với “被” (bèi) hoặc “让” (ràng) trong câu bị động; \"bị\", \"được\".",
+      "longExplanation": "“给” (gěi) trong khẩu ngữ tiếng Hán cận đại và hiện đại thường được dùng như một giới từ bị động, hoàn toàn tương đương với chữ “被” (bèi), “叫” (jiào) hoặc “让” (ràng). Trong câu bị động chữ “给”, chủ ngữ là đối tượng tiếp nhận hành động (thụ sự), theo sau là “给 + Tác nhân gây ra hành động + Động từ + Thành phần khác (như 了 hoặc bổ ngữ)”. Cấu trúc này phần lớn biểu thị những sự việc không may mắn, gặp tổn thất hoặc bị động bất lợi đối với chủ thể (ví dụ: “手机给小偷偷走了” - điện thoại bị trộm lấy cắp mất, “衣服给淋湿了” - quần áo bị dầm ướt). Tương đương với \"bị\", \"được\" trong câu bị động tiếng Việt.",
+      "formation": "Chủ ngữ (vật bị tác động) + 给 + Tác nhân gây ra hành động + Động từ + Bổ ngữ / 了",
+      "examples": [
+        {
+          "translation": "Điện thoại của tôi bị kẻ trộm lấy cắp mất rồi."
+        }
+      ]
+    },
+    "zh_何不_614": {
+      "title": "何不 (Phó từ tu từ: Sao không / Cớ sao không / Tại sao không / Tội gì mà không)",
+      "shortExplanation": "Phó từ mang màu sắc văn nhã dùng trong câu hỏi tu từ để đưa ra lời gợi ý, khuyên nhủ hoặc đề xuất một giải pháp hợp tình hợp lý; \"sao không...\", \"cớ sao không...\".",
+      "longExplanation": "“何不” (hébù) là từ ngữ bắt nguồn từ Hán cổ, gồm “何” (cớ gì, tại sao) và “不” (không), mang nghĩa \"tại sao lại không\". Thường đứng trước động từ hoặc đầu phân câu trong các câu hỏi tu từ, cuối câu thường đi kèm với trợ từ ngữ khí “呢” (ne). Người nói dùng hình thức phản vấn phủ định này không phải để truy cứu nguyên nhân, mà là để đưa ra một lời đề xuất, gợi ý vô cùng hào hứng, thỏa đáng hoặc một lời khuyên chân thành, khuyến khích đối phương nên thực hiện hành động đó (ví dụ: “何不去试试？” - sao không đi thử xem?, “何不出去走走？” - sao không ra ngoài đi dạo?). Mang sắc thái thanh lịch, văn nhã và đầy sức thuyết phục. Tương đương với \"sao không...\", \"cớ sao không...\", \"tội gì không...\" trong tiếng Việt.",
+      "formation": "Hoàn cảnh / Lý do ，(Chủ ngữ +) 何不 + Động từ / Hành động đề xuất (+ 呢) ？",
+      "examples": [
+        {
+          "translation": "Thời tiết đẹp như thế này, sao không ra ngoài dạo chơi một chuyến nhỉ?"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_除非才_600": {
+      "title": "(除非)……才……（条件接続表現：〜してこそ初めて〜する・〜してやっと〜できる）",
+      "shortExplanation": "唯一無二の必須条件を提示し、その条件を満たしてこそ初めて結果の事態が実現することを表します（「〜してこそ初めて」「〜してやっと」）。",
+      "longExplanation": "「(除非)……才……」（(chúfēi)…… cái……）は、「只有……才……」と同様に、ある事態が成立するための唯一の前提条件を導く条件複文の構文です。前節の「除非」は省かれることもありますが、後節の副詞「才」は必須であり、「その条件が揃って初めて／やっと〜できる」という強い限定のニュアンスを表します。日本語の「〜してこそ初めて〜する」「〜してやっと〜できる」「〜でなければ〜しない」に相当します。",
+      "formation": "(除非 ＋) 唯一の条件 ，主語 ＋ 才 ＋ 動詞句 / 結果",
+      "examples": [
+        {
+          "translation": "（君が）私の条件をのんでくれてこそ初めて、君に教えてあげよう。"
+        }
+      ]
+    },
+    "zh_除非_601": {
+      "title": "除非（前置詞的用法：〜を除いては・〜以外には）",
+      "shortExplanation": "唯一の例外となる人や事物を提示し、「その人／事物を除いては（誰も〜できない・どれも〜ではない）」という全面否定と呼応します（「〜を除いては」「〜以外には」）。",
+      "longExplanation": "「除非」（chúfēi）は「除了……以外」と同様に、名詞や人名などの前に置かれて唯一の例外を抜き出す働きをします。後続の文には「没人」（誰も〜ない）、「都不」（どれも〜ない）といった全面否定の表現が呼応し、「その例外となる対象を除いては、ほかに誰も〜できる者はいない」と強く主張する文脈で用いられます。日本語の「〜を除いては」「〜以外には（誰も〜ない）」に相当します。",
+      "formation": "話題 / 主語 ，除非 ＋ 例外となる対象 ，否定表現（没人 / 都不） ＋ 述語",
+      "examples": [
+        {
+          "translation": "この手の機械は、李陽を除いては誰もきちんと修理できない。"
+        }
+      ]
+    },
+    "zh_V1得O直V2_602": {
+      "title": "動詞1 ＋ 得（＋ 目的語 ＋）直 ＋ 動詞2（様態・程度補語：あまりに〜してしきりに〜する・〜のあまりずっと〜している）",
+      "shortExplanation": "動作1や感情の度合いが極限に達した結果、その反動として動作2をしきりに・絶え間なく行い続けるさまを表します（「あまりに〜してしきりに〜する」）。",
+      "longExplanation": "「動詞1 ＋ 得（＋ 目的語 ＋）直 ＋ 動詞2」は、感情や生理的感覚の高まりを表す程度補語の慣用表現です。動詞1（「气」「乐」「急」「疼」「累」など心理や感覚を表す動詞・形容詞）が著しい高まりに達し、副詞「直」（絶え間なく、ずっと、しきりに）に修飾された動詞2（「发抖」震える、「流汗」汗を流す、「喘气」あえぐなど抑えられない身体的反応）を連続して引き起こす様子を生き生きと活写します。目的語として人称代名詞などを挟むこともあります。日本語の「あまりに〜でしきりに〜する」「〜のあまりひっきりなしに〜している」に相当します。",
+      "formation": "主語 ＋ 動詞 / 形容詞1 ＋ 得（＋ 目的語 ＋）直 ＋ 動詞2",
+      "examples": [
+        {
+          "translation": "父親は息子が家を売ったと聞いて、あまりの怒りに（体が）ガタガタと震え続けた。"
+        }
+      ]
+    },
+    "zh_直到_603": {
+      "title": "直到（介詞：〜に至るまで・〜になってやっと・〜までずっと）",
+      "shortExplanation": "時間や空間の限度を表し、ある事態や心理状態がその時点までずっと継続していること、またはその時点になってようやく判明したことを表します（「〜に至るまで」「〜になってようやく」）。",
+      "longExplanation": "「直到」（zhídào）は、「直」（まっすぐ、途切れず）と「到」（至る）からなる介詞（前置詞）で、時間詞や出来事を表す節の前に置かれて時間の到達点や継続の限界を示します。文頭に置かれて「〜に至るまでずっと……である」と状態の持続を強調したり、後続節の「才」と呼応して「〜になって初めて……した」と事態の遅延・遅い実現を表したりします。日本語の「〜に至るまで（ずっと）」「〜になってやっと」「〜の時まで」に相当します。",
+      "formation": "直到 ＋ 時間 / 限界時点 ，主語 ＋（也 / 还 / 才 ＋）述語",
+      "examples": [
+        {
+          "translation": "今日に至るまで、私は彼があの時なぜあんなに激怒したのか理解できない。"
+        }
+      ]
+    },
+    "zh_反正_604": {
+      "title": "反正（副詞：いずれにせよ・どうせ・どっちみち・どう転んでも）",
+      "shortExplanation": "前提や条件、他人の意向がどうであろうと、結果や自分の意志・客観的事実には微塵も変わりがないことを強調する副詞です（「いずれにせよ」「どうせ」「どっちみち」）。",
+      "longExplanation": "「反正」（fǎnzhèng）は表（正）と裏（反）の双方を含意し、「どちらに転んでも結局は同じだ」という強い確信や決意を表明する副詞です。「不管……」「无论……」（〜であろうと）などの無条件複文の後続節で多用され、外的な状況や他人の選択がどうであれ、自分の態度や既定の事実はいささかも揺るがないことを主張します。日本語の「いずれにせよ」「どうせ」「どっちみち」「どう転んでも」に相当します。",
+      "formation": "（不管 / 无论 ＋ 状況・条件 …… ，）反正 ＋ 確固たる意志 / 揺るぎない結論",
+      "examples": [
+        {
+          "translation": "あなたがたの誰が行こうとも、どっちみち私は行きません。"
+        }
+      ]
+    },
+    "zh_点_605": {
+      "title": "数詞 ＋ 点 ＋ 数詞（小数の読み方：〜点〜）",
+      "shortExplanation": "中国語における小数の読み方です。「点」（diǎn）が小数点（ポイント）に相当し、小数点以下は数字を1桁ずつ読み上げます（「〜点〜」）。",
+      "longExplanation": "中国語で小数を表す際は、「整数部分の数詞 ＋ 点（diǎn） ＋ 小数点以下の数字」の語順で表記・発音します。「点」は小数点（ポイント）を表します。読み方の規則として、小数点の前の整数部分は通常の整数の数え方（三、二十五など）で読み、小数点の後の数字は桁（十、百など）をつけずに1桁ずつ数字そのものの音（yī, èr, sān...）で順に読み上げます（例：「三点一四」sān diǎn yī sì ＝ 3.14、「零点五」líng diǎn wǔ ＝ 0.5）。日本語の「〜点〜（さん・てん・いち・よん）」に相当します。",
+      "formation": "整数部の数詞 ＋ 点 ＋ 小数部の一桁ごとの数字",
+      "examples": [
+        {
+          "translation": "3.14（さん・てん・いち・よん）。"
+        }
+      ]
+    },
+    "zh_1分之2_606": {
+      "title": "分母 ＋ 分之 ＋ 分子（分数の表現法：〜分の〜）",
+      "shortExplanation": "中国語における分数の読み方です。「分母 ＋ 分之 ＋ 分子」の語順で表し、日本語の「〜分の〜」と語順が完全に一致します。",
+      "longExplanation": "中国語で分数を表す際は、「分母の数詞 ＋ 分之（fēnzhī） ＋ 分子の数詞」という語順をとります。語源的には古典中国語の「〜（分母）に分かつことの〜（分子）」に由来し、全体をいくつに等分したうちのいくつに当たるかを示します。日本語の「5分の1（5ぶんの1）」と全く同じ語順（分母が先、分子が後）になるため、直感的に理解しやすい表現です（例：「五分之一」wǔ fēn zhī yī ＝ 5分の1、「三分之二」sān fēn zhī èr ＝ 3分の2）。",
+      "formation": "分母の数詞 ＋ 分之 ＋ 分子の数詞",
+      "examples": [
+        {
+          "translation": "5分の1（1/5）。"
+        }
+      ]
+    },
+    "zh_百分之_607": {
+      "title": "百分之 ＋ 数詞（パーセント・百分率の表現法：〜パーセント）",
+      "shortExplanation": "中国語におけるパーセント（％・百分率）の表し方です。「百分之 ＋ 数字」の語順で表現します（「〜パーセント」）。",
+      "longExplanation": "「百分之 ＋ 数詞」（bǎifēnzhī #）は、パーセント（百分率、％）を表す中国語の定型表現です。分数の基本構文「分母 ＋ 分之 ＋ 分子」において分母を「百」に固定した形であり、「100分の〜」という意味を表します。日本語では「9パーセント」「50パーセント」のように数字を先に言いますが、中国語では必ず「百分之」を先に発音し、その後に具体的な数値を続けます（例：「百分之九」bǎi fēn zhī jiǔ ＝ 9％、「百分之五十」 ＝ 50％、「百分之百」 ＝ 100％）。日本語の「〜パーセント（％）」に相当します。",
+      "formation": "百分之 ＋ 数値の数詞",
+      "examples": [
+        {
+          "translation": "9パーセント（9%）。"
+        }
+      ]
+    },
+    "zh_甲乙丙丁_608": {
+      "title": "甲・乙・丙・丁（順序・代名記号：甲・乙・丙・丁・当事者A・B・第1・第2）",
+      "shortExplanation": "十干の最初の4文字を用いて、順序、等級、または契約書における当事者（甲・乙・丙・丁、A・B・C・D）を表す表現です。",
+      "longExplanation": "「甲、乙、丙、丁」（jiǎ, yǐ, bǐng, dīng）は、古代の十干（天干）の最初の4つに由来し、現代中国語でもアルファベットのA、B、C、Dと同様に、順序、等級、あるいは契約当事者の仮称として広く用いられます。最も代表的なのがビジネス契約書や法的文書における呼称で、「甲方」（jiǎfāng ＝ 甲・発注者側・第1当事者）、「乙方」（yǐfāng ＝ 乙・受注者側・第2当事者）のように使われます。また、等級（甲等、乙等）や選択肢の記号、例文中の不特定の人物A、Bを表す際にも用いられます。日本語の「甲・乙・丙・丁」「A社・B社」「第1・第2」に相当します。",
+      "formation": "甲 / 乙 / 丙 / 丁（＋ 方 / 等 / 类）",
+      "examples": [
+        {
+          "translation": "乙（B側）が同意すれば、甲（A側）は前倒しで製品を乙に引き渡すことができる。"
+        }
+      ]
+    },
+    "zh_顺着_609": {
+      "title": "顺(着)（介詞：〜に沿って・〜づたいに・〜に従って）",
+      "shortExplanation": "道、川、表面、方向などを表す名詞を導き、動作や流動がその軌道に沿って進むさまを表します（「〜に沿って」「〜づたいに」）。",
+      "longExplanation": "「顺(着)」（shùn(zhe))は、進路・経路や追従する方向を示す介詞（前置詞）です。道や川、壁、身体の表面（頬、腕など）を表す名詞を伴い、「〜に沿って」「〜づたいに」「〜の通りに」動作が移動することを表します（例：「顺着这条街」この通りに沿って、「汗水顺着脸往下流」汗が頬を伝って流れ落ちる）。また、具象的な空間のみならず、「顺着他的话」彼の話の成り行きに従って、「顺着思路」思考の流れに沿って、のように抽象的な文脈でも用いられます。日本語の「〜に沿って」「〜づたいに」「〜を伝って」に相当します。",
+      "formation": "主語 ＋ 顺(着) ＋ 経路 / 表面 / 方向 ＋ 移動動詞",
+      "examples": [
+        {
+          "translation": "汗が彼の頬を伝って下へと流れ落ちた。"
+        }
+      ]
+    },
+    "zh_自_610": {
+      "title": "自（書面語介詞：〜より・〜から）",
+      "shortExplanation": "起点（空間・時間・範囲）を表す格式高い書面語の介詞で、口語の「从」に相当します（「〜より」「〜から」）。",
+      "longExplanation": "「自」（zì）は、時間・空間・範囲の出発点や拠って立つ起点を導く書面語介詞（前置詞）です。現代中国語の日常会話で使われる「从」（cóng）の文語表現に当たり、科学論文、ニュース報道、公文書などで好んで用いられます。空間表現では「自……向……」（〜より〜へ向けて）、「自……至……」（〜より〜に至るまで）のように目的地点を示す語と美しく対句をなすことが多く、時間表現では「自古以来」（古より）、「自……起」（〜より）のように始点を示します。日本語の「〜より」「〜から」に相当します。",
+      "formation": "自 ＋ 起点（場所 / 時間） （＋ 向 / 至 ＋ 到達点） ＋ 述語",
+      "examples": [
+        {
+          "translation": "鳥類は、地球の北から南へと向かう磁極の磁力線を感知することができる。"
+        }
+      ]
+    },
+    "zh_把V着_611": {
+      "title": "把 ＋ 目的語 ＋ 動詞 ＋ 着（把構文の命令・指示表現：〜を〜しておきなさい・〜を持って行きなさい）",
+      "shortExplanation": "処置文（把構文）に持続の助詞「着」が結びつき、相手に物を持参させたり、ある状態を維持させたりする指示・助言を表します（「〜を持っていなさい」「〜しておきなさい」）。",
+      "longExplanation": "「把 ＋ 目的語 ＋ 動詞 ＋ 着」（bǎ……V zhe）は、対象をどう扱うかを表す把構文に、動作・状態の持続を表すアスペクト助詞「着」を付加した構文です。日常会話の命令文やアドバイスで非常によく用いられ、話し手が聞き手に対して「物を持参した状態を保つ」「物を手に取っておく」といった状態の維持を指示・催促します（例：「你把书带着」本を持って行きなさい、「把雨伞拿着」傘を持っていなさい、「把门开着」ドアを開けたままにしておきなさい）。日本語の「〜を持って行きなさい」「〜を〜しておきなさい」に相当します。",
+      "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 着",
+      "examples": [
+        {
+          "translation": "本を持って行きなさい（本を携帯しておきなさい）。"
+        }
+      ]
+    },
+    "zh_把O给V了_612": {
+      "title": "把 ＋ 目的語 ＋（给 ＋）動詞 ＋ 了（把構文の強調用法：〜をすっかり〜してしまった・うっかり〜した）",
+      "shortExplanation": "把構文の動詞の前に助詞「给」を挿入し、処置の語気を強めて「完全に〜してしまった」「うっかり〜してしまった」という完了や不本意なニュアンスを表します（「すっかり〜した」「うっかり〜してしまった」）。",
+      "longExplanation": "「把 ＋ 目的語 ＋（给 ＋）動詞 ＋ 了」は、口語の把構文（処置文）において動詞の直前に「给」を挟み込むことで処置の語気を強化する構文です。ここでの「给」は「与える」という意味ではなく、動作が徹底的になされたこと、あるいはうっかり不本意な結果（過失や忘却など）を引き起こしてしまったことを強調する強意助詞として機能します（例：「把这事给忘了」そのことをすっかり忘れてしまった、「把钥匙给丢了」鍵をなくしてしまった）。「给」を添えることで話し手の悔恨、驚き、あるいはスッキリやり遂げたという感情が鮮明に伝わります。日本語の「すっかり〜してしまった」「うっかり〜してしまった」に相当します。",
+      "formation": "主語 ＋ 把 ＋ 目的語 ＋（给 ＋）動詞 ＋ 了",
+      "examples": [
+        {
+          "translation": "私はこのことを（すっかり）忘れてしまっていました。"
+        }
+      ]
+    },
+    "zh_给_613": {
+      "title": "给（受身の介詞：〜に〜される・〜に〜をやられる・被に相当）",
+      "shortExplanation": "口語において受動文（受け身構文）を導く介詞として用いられ、「被」「让」「叫」と同様に動作の行為者（被害の原因）を導きます（「〜に〜される」）。",
+      "longExplanation": "「给」（gěi）は現代中国語の日常口語において、「被」（bèi）、「让」（ràng）、「叫」（jiào）と並ぶ受動の介詞（前置詞）として非常に広く用いられます。主語には動作の受け手（被害者や被影響物）が立ち、「给 ＋ 動作の主体（加害者・原因） ＋ 動詞 ＋ その他（補語や「了」）」の語順をとります。多くの場合、盗難、損害、故障など話し手にとって不快・不利益・不本意な事態に見舞われた際に用いられ、被害感情を生々しく訴えかけます（例：「手机给小偷偷走了」携帯を泥棒に盗まれた）。日本語の「〜に〜される」「〜に〜をやられる」に相当します。",
+      "formation": "主語（被害対象） ＋ 给 ＋ 行為者 ＋ 動詞 ＋ 補語 / 了",
+      "examples": [
+        {
+          "translation": "私の携帯電話は泥棒に盗まれてしまった。"
+        }
+      ]
+    },
+    "zh_何不_614": {
+      "title": "何不（反語的副詞句：〜したらどうか・どうして〜しないのか・〜するに越したことはない）",
+      "shortExplanation": "反語の形式を用いて前向きな提案や勧誘、アドバイスを行う表現です（「〜したらどうか」「どうして〜しないのか」）。",
+      "longExplanation": "「何不」（hébù）は古代漢語に由来する表現で、「何」（どうして・なぜ）と否定詞「不」（〜しない）が合わさった反語的副詞句です。述語動詞の前に置かれ、文末には語気助詞「呢」を伴うことがよくあります。形式上は「なぜ〜しないのか」という反語疑問文の形をとりますが、実質的には「ぜひ〜してみてはどうか」「〜するのが最善の策だ」という積極的な提案、助言、勧誘のニュアンスを表します。口語でも少し改まった響きや知的・洗練されたニュアンスを添えることができます。日本語の「〜したらどうですか」「どうして〜しないのですか」「〜してみてはいかがですか」に相当します。",
+      "formation": "状況・理由 ，（主語 ＋）何不 ＋ 提案する動詞句（＋ 呢）？",
+      "examples": [
+        {
+          "translation": "こんなに天気がいいのだから、外へ遊びに出かけたらどうですか。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_除非才_600": {
+      "title": "(除非)……才…… (조건 접속 표현: ~해야만 비로소 ~하다, ~해야 겨우 ~하다)",
+      "shortExplanation": "어떤 결과를 얻기 위한 유일무이한 필수 조건을 나타내며, 오직 그 조건이 충족되어야만 비로소 뒤의 일이 일어남을 나타냅니다('~해야만 비로소 ~하다').",
+      "longExplanation": "“(除非)……才……”((chúfēi)…… cái……)는 “只有……才……”와 마찬가지로 어떤 결과가 발생하기 위한 유일한 필수 전제 조건을 이끄는 조건 복문 구문입니다. 앞 절의 “除非”는 유일한 조건을 제시하며(생략 가능), 뒤 절의 부사 “才”는 '그 조건이 갖추어져야 비로소/겨우 일어난다'는 엄격한 한정 관계를 맺습니다. 한국어의 '~해야만 비로소 ~하다', '~해야 겨우 ~할 수 있다'에 해당합니다.",
+      "formation": "(除非 +) 유일한 조건 ，주어 + 才 + 술어 / 결과",
+      "examples": [
+        {
+          "translation": "네가 내 조건을 받아들여야만, 비로소 너에게 가르쳐 줄 것이다."
+        }
+      ]
+    },
+    "zh_除非_601": {
+      "title": "除非 (전치사적 용법: ~을 제외하고는, ~말고는)",
+      "shortExplanation": "유일한 예외 대상을 이끌어 내어, '그 대상을 제외하고는 (아무도 ~할 수 없다 / 어떤 것도 ~하지 않다)'라는 전면 부정과 호응합니다('~을 제외하고는', '~말고는').",
+      "longExplanation": "“除非”(chúfēi)는 “除了……以外”와 유사하게 명사나 인칭 대명사 앞에 놓여 유일한 예외 인물이나 사물을 제시하는 역할을 합니다. 뒤따르는 문장에는 주로 “没人”(아무도 없다), “都不”(모두 ~않다)와 같은 전면 부정 표현이 이어져, 오직 그 대상만이 유일하게 해당 조건을 충족하거나 능력을 지니고 있음을 역설합니다. 한국어의 '~을 제외하고는', '~말고는 (아무도 ~않다)'에 해당합니다.",
+      "formation": "화제 / 주어 ，除非 + 예외 대상 ，전면 부정 표현 (没人 / 都不) + 술어",
+      "examples": [
+        {
+          "translation": "이런 기계는 리양을 제외하고는 아무도 잘 고칠 수 없다."
+        }
+      ]
+    },
+    "zh_V1得O直V2_602": {
+      "title": "동사1 + 得 (+ 목적어 +) 直 + 동사2 (정도보어 표현: 너무 ~해서 연신/줄곧 ~하다, ~한 나머지 계속 ~하다)",
+      "shortExplanation": "동사1이나 감정의 정도가 극에 달하여 그 결과 억누를 수 없는 신체적 반응이나 동작인 동사2를 쉴 새 없이 계속하게 됨을 나타냅니다('너무 ~해서 연신 ~하다').",
+      "longExplanation": "“동사1 + 得 (+ 목적어 +) 直 + 동사2”는 감정이나 신체 상태가 극단적인 정도에 이르렀음을 나타내는 정도·상태보어의 관용 구문입니다. 동사1(주로 气-화나다, 乐-즐겁다, 急-조급하다, 疼-아프다, 累-지치다 등 심리·상태 동사)의 자극이 너무 강한 나머지, 부사 “直”(줄곧, 연신, 쉴 새 없이)가 수식하는 동사2(发抖-떨다, 喘气-헐떡이다, 流汗-땀 흘리다 등 억제하기 힘든 신체적 행동)를 멈추지 않고 계속해서 행하게 됨을 실감 나게 묘사합니다. 목적어 자리에 인칭대명사가 들어가 동작의 주체를 명확히 하기도 합니다. 한국어의 '너무 ~해서 연신/줄곧 ~하다', '~한 나머지 계속 ~해 대다'에 해당합니다.",
+      "formation": "주어 + 동사 / 형용사1 + 得 (+ 목적어 +) 直 + 동사2",
+      "examples": [
+        {
+          "translation": "아버지는 아들이 집을 팔았다는 말을 듣고는, 너무 화가 난 나머지 (온몸을) 부들부들 떨었다."
+        }
+      ]
+    },
+    "zh_直到_603": {
+      "title": "直到 (개사: ~에 이르기까지, ~까지 줄곧, ~이 되어서야 비로소)",
+      "shortExplanation": "시간이나 공간의 한도를 나타내어, 어떤 상태나 동작이 그 시점까지 줄곧 이어져 오고 있거나 그 시점에 이르러서야 비로소 깨달았음을 나타냅니다('~에 이르기까지', '~까지 줄곧').",
+      "longExplanation": "“直到”(zhídào)는 '줄곧, 곧장'을 뜻하는 “直”와 '이르다'를 뜻하는 “到”가 합쳐진 개사(전치사)로, 시간 명사나 시점을 나타내는 구 앞에 놓여 동작이나 심리 상태가 지속되어 온 한계 시점을 이끕니다. 문두에 쓰여 과거부터 그 시점까지 어떤 인식이 변함없이 이어지고 있음을 나타내거나, 뒤 절의 부사 “才”와 어울려 '그때가 되어서야 비로소 알게 되었다'는 뉘앙스를 풍기기도 합니다. 한국어의 '~에 이르기까지', '~까지 줄곧', '~이 되어서야'에 해당합니다.",
+      "formation": "直到 + 시간 / 도달 시점 ，주어 + (也 / 还 / 才 +) 술어",
+      "examples": [
+        {
+          "translation": "오늘에 이르기까지도, 나는 그가 당시에 왜 그렇게 크게 화를 냈는지 도무지 이해하지 못한다."
+        }
+      ]
+    },
+    "zh_反正_604": {
+      "title": "反正 (부사: 어차피, 어쨌든, 아무튼, 어떻게 되든 간에)",
+      "shortExplanation": "상황이나 전제, 다른 사람의 행동이 어떻게 변하든 간에, 자신의 확고한 태도나 객관적인 사실은 아무런 영향을 받지 않고 변함없음을 나타냅니다('어차피', '어쨌든', '아무튼').",
+      "longExplanation": "“反正”(fǎnzhèng)은 반대(反)든 정방향(正)이든 '어느 쪽으로 가든 결과는 마찬가지다'라는 어감을 지닌 부사입니다. 흔히 앞 절의 무조건 접속사 “不管”(상관없이), “无论”(어찌 되었든)과 호응하여 복문의 뒤 절 머리에 놓입니다. 주변 상황이나 타인의 의사가 어떻게 돌아가든 간에, 자신의 결심이나 사실의 귀결은 이미 확고부동하여 결코 바뀌지 않음을 단호하게 표현할 때 씁니다. 한국어의 '어차피', '어쨌든 간에', '아무튼', '어떻게 되든'에 해당합니다.",
+      "formation": "(不管 / 无论 + 조건 / 상황 …… ，) 反正 + 확고한 결심 / 사실",
+      "examples": [
+        {
+          "translation": "너희들 중 누가 가든 간에, 어차피 나는 가지 않을 것이다."
+        }
+      ]
+    },
+    "zh_点_605": {
+      "title": "수사 + 点 + 수사 (소수 읽는 법: ~점 ~)",
+      "shortExplanation": "중국어에서 소수를 읽는 방식입니다. “点”(diǎn)이 소수점에 해당하며, 소수점 앞은 정수로, 소수점 뒤는 각 자릿수의 숫자를 하나씩 개별적으로 읽습니다('~점 ~').",
+      "longExplanation": "중국어 소수 표현은 “정수 부분 수사 + 点(diǎn) + 소수점 이하 숫자들”의 구조로 이루어집니다. 여기서 “点”은 소수점(.)을 가리킵니다. 읽는 방법은 정수 부분의 경우 일반적인 기수법에 따라 읽고(예: 三, 二十五), 소수점 이하의 자릿수는 십이나 백 등의 단위 명칭을 붙이지 않고 각 자릿수의 숫자를 하나씩 낱개로 순서대로 읽습니다(예: “三点一四” sān diǎn yī sì = 3.14; 0은 líng, 1은 yī, 2는 èr로 발음). 한국어의 '~점 ~(삼 점 일 사)'에 해당합니다.",
+      "formation": "정수부 수사 + 点 + 소수점 이하 개별 숫자",
+      "examples": [
+        {
+          "translation": "3.14 (삼 점 일 사)."
+        }
+      ]
+    },
+    "zh_1分之2_606": {
+      "title": "분모 + 分之 + 분자 (분수 읽는 법: ~분의 ~)",
+      "shortExplanation": "중국어에서 분수를 나타내는 방식입니다. '분모 + 分之 + 분자'의 어순으로 쓰이며, 한국어의 '~분의 ~'와 완벽하게 어순이 일치합니다.",
+      "longExplanation": "중국어의 분수 표현법은 “분모 수사 + 分之(fēnzhī) + 분자 수사”의 어순을 취합니다. 한자 “分之”는 고대 한어의 문법에서 유래한 것으로, 전체를 몇(분모) 개로 나눈 것(分) 중의(之) 몇 개(분자)라는 뜻을 나타냅니다. 한국어의 '5분의 1'과 마찬가지로 분모가 앞에 오고 분자가 뒤에 오므로 어순이 완전히 동일합니다(예: “五分之一” wǔ fēn zhī yī = 5분의 1; “四分之三” sì fēn zhī sān = 4분의 3).",
+      "formation": "분모 수사 + 分之 + 분자 수사",
+      "examples": [
+        {
+          "translation": "5분의 1 (1/5)."
+        }
+      ]
+    },
+    "zh_百分之_607": {
+      "title": "百分之 + 수사 (퍼센트·백분율 읽는 법: ~퍼센트, ~프로)",
+      "shortExplanation": "중국어에서 백분율(%, 퍼센트)을 나타내는 표현 방식입니다. “百分之”를 먼저 말하고 뒤에 구체적인 숫자를 붙입니다('~퍼센트', '~프로').",
+      "longExplanation": "“百分之 + 수사”(bǎifēnzhī #)는 중국어에서 퍼센트(백분율)를 나타내는 고정된 표준 구문입니다. 분수 구조에서 분모를 100(“百”)으로 고정한 형태로, '100으로 나눈 것 중의 몇'이라는 뜻입니다. 한국어에서는 숫자를 먼저 말하고 '9퍼센트', '50프로'와 같이 단위를 뒤에 붙이지만, 중국어는 정반대로 반드시 “百分之”를 앞에 두고 구체적인 숫자를 뒤에 배치합니다(예: “百分之九” bǎi fēn zhī jiǔ = 9%, “百分之百” bǎi fēn zhī bǎi = 100%). 한국어의 '~퍼센트(%)'에 해당합니다.",
+      "formation": "百分之 + 수치 수사",
+      "examples": [
+        {
+          "translation": "9퍼센트 (9%)."
+        }
+      ]
+    },
+    "zh_甲乙丙丁_608": {
+      "title": "甲乙丙丁 (순서·대명 부호: 갑, 을, 병, 정 / 갑측, 을측, A, B, C, D)",
+      "shortExplanation": "십간(十干)의 처음 네 글자로, 순서, 등급, 또는 계약서 등에서 거래 당사자(갑, 을, 병, 정)나 가상의 대상(A, B, C, D)을 지칭하는 부호입니다.",
+      "longExplanation": "“甲、乙、丙、丁”(jiǎ, yǐ, bǐng, dīng)은 전통 십간(天干)의 첫 네 글자로, 현대 중국어에서도 영문 알파벳 A, B, C, D처럼 순서, 등급, 또는 당사자를 나타내는 대명 부호로 광범위하게 쓰입니다. 가장 대표적인 쓰임새는 법률 문서나 상업 계약서에서 계약 주체를 지칭하는 “甲方”(갑측, 발주처)과 “乙方”(을측, 수주처)입니다. 이 밖에도 성적이나 품질의 등급(甲等, 乙等), 사안의 가상 행위자(갑과 을)를 나타낼 때 두루 활용됩니다. 한국어의 '갑, 을, 병, 정', '갑측, 을측', '당사자 A, B'에 해당합니다.",
+      "formation": "甲 / 乙 / 丙 / 丁 (+ 方 / 等 / 类)",
+      "examples": [
+        {
+          "translation": "만약 을(乙)측이 동의한다면, 갑(甲)측은 제품을 예정보다 앞당겨 을측에 인도할 수 있다."
+        }
+      ]
+    },
+    "zh_顺着_609": {
+      "title": "顺(着) (개사: ~을 따라서, ~을 타고, ~대로)",
+      "shortExplanation": "길, 강, 표면, 방향 등을 나타내는 명사를 이끌어, 동작이나 흐름이 그 궤적이나 표면을 따라 이동함을 나타냅니다('~을 따라서', '~을 타고').",
+      "longExplanation": "“顺(着)”(shùn(zhe))은 물리적인 경로나 표면, 방향을 이끄는 방향 개사(전치사)입니다. 길, 강줄기, 벽, 또는 사람의 얼굴이나 신체 표면을 나타내는 명사와 결합하여 '그 궤적이나 굴곡을 따라 순방향으로 흘러가거나 나아감'을 나타냅니다. 예를 들어 “顺着这条路”(이 길을 따라서), “汗水顺着脸往下流”(땀방울이 얼굴을 타고 흘러내리다)처럼 공간적 이동에 쓰이며, “顺着他的意思”(그의 뜻에 따라서)처럼 추상적인 의도나 사고의 흐름에 순응함을 나타내기도 합니다. 한국어의 '~을 따라서', '~을 타고 (흘러내리다)', '~대로'에 해당합니다.",
+      "formation": "주어 + 顺(着) + 경로 / 표면 / 방향 + 이동 동사",
+      "examples": [
+        {
+          "translation": "땀방울이 그의 얼굴을 타고 주르륵 흘러내렸다."
+        }
+      ]
+    },
+    "zh_自_610": {
+      "title": "自 (서면어 개사: ~로부터, ~에서부터)",
+      "shortExplanation": "공간, 시간, 범위의 출발점을 나타내는 격식 있는 서면어 개사로, 구어의 “从”에 해당합니다('~로부터', '~에서부터').",
+      "longExplanation": "“自”(zì)는 동작이나 상태가 시작되는 시간적·공간적 기점을 이끄는 서면어 개사(전치사)로, 현대 일상 구어의 “从”(cóng)에 해당합니다. 격식 있는 문체, 학술 논문, 보도 기사에서 매우 선호되며, 공간적 이동이나 방향을 나타낼 때는 “自……向……”(~에서 ~쪽으로), “自……至……”(~에서 ~에 이르기까지)와 같이 짝을 이루어 자주 쓰입니다. 시간의 시점을 나타낼 때도 “自古以来”(예로부터), “自……起”(~부터)처럼 널리 쓰입니다. 한국어의 '~로부터', '~에서부터', '~에서'에 해당합니다.",
+      "formation": "自 + 기점 (시간 / 장소) (+ 向 / 至 + 종점 / 방향) + 술어",
+      "examples": [
+        {
+          "translation": "조류는 지구가 북극에서 남극으로 향하는 자극의 자기력선을 감지해 낼 수 있다."
+        }
+      ]
+    },
+    "zh_把V着_611": {
+      "title": "把 + 목적어 + 동사 + 着 (처치문 명령·지시 표현: ~을 ~해 두어라, ~을 지니고 가거라)",
+      "shortExplanation": "처치문(把자문)에 지속 조사 “着”가 결합하여, 상대방에게 물건을 챙겨 가도록 하거나 특정 상태를 계속 유지하도록 권하거나 지시할 때 씁니다('~을 챙겨 가라', '~해 두어라').",
+      "longExplanation": "“把 + 목적어 + 동사 + 着”(bǎ……V zhe) 구문은 대상에 대한 처치를 나타내는 '把자문' 뒤에 상태의 지속을 나타내는 동태조사 “着”를 연결한 표현입니다. 일상 회화의 명령문이나 당부·조언의 문맥에서 매우 빈번하게 사용됩니다. 청자에게 물건을 몸에 지니거나 챙겨 둔 상태를 유지하도록 권고할 때(예: “你把书带着” 책을 챙겨 가거라, “把伞拿着” 우산을 들고 가거라), 혹은 사물을 특정 상태로 지속시켜 두라고 지시할 때(예: “把门开着” 문을 열어 두어라) 쓰입니다. 한국어의 '~을 챙겨 가거라', '~을 지니고 있거라', '~해 두어라'에 해당합니다.",
+      "formation": "주어 + 把 + 목적어 + 동사 + 着",
+      "examples": [
+        {
+          "translation": "너 책 챙겨 가거라 (책을 지니고 가거라)."
+        }
+      ]
+    },
+    "zh_把O给V了_612": {
+      "title": "把 + 목적어 + (给) + 동사 + 了 (처치문 어기 강화: ~을 완전히 ~해 버리다, 깜빡 ~해 버렸다)",
+      "shortExplanation": "把자문에서 동사 앞에 '给'를 덧붙여 처치의 어기를 강화하며, 동작이 철저히 완료되었거나 무심코 유감스러운 결과를 초래했음을 나타냅니다('~을 싹 ~해 버리다', '깜빡 ~해 버렸다').",
+      "longExplanation": "“把 + 목적어 + (给) + 동사 + 了”는 일상 구어의 처치문(把자문)에서 술어 동사 바로 앞에 조사 성격의 “给”를 삽입하여 처치의 뉘앙스를 한층 강조하는 관용 구문입니다. 여기서의 “给”는 '주다'라는 본뜻이 아니라, 동작 처치가 단번에 철저히 이루어졌음을 나타내거나 실수·망각 등으로 인해 뜻하지 않은 결과가 발생했음을 생생하게 부각시키는 역할을 합니다(예: “把这事给忘了” 이 일을 깜빡 잊어버렸다, “把手机给弄丢了” 휴대전화를 잃어버리고 말았다). “给”가 들어가면 말하는 이의 아차 하는 감정이나 일처리의 완결성이 훨씬 더 또렷해집니다. 한국어의 '~을 깜빡 ~해 버리다', '~을 싹 ~해 치우다'에 해당합니다.",
+      "formation": "주어 + 把 + 목적어 + (给 +) 동사 + 了",
+      "examples": [
+        {
+          "translation": "내가 이 일을 (깜빡) 잊어버리고 말았다."
+        }
+      ]
+    },
+    "zh_给_613": {
+      "title": "给 (피동 개사: ~에게 ~당하다, ~에 의해 ~되다, 被에 해당)",
+      "shortExplanation": "구어에서 피동문(수동태)을 이끄는 개사로 쓰이며, “被”(bèi), “叫”(jiào), “让”(ràng)과 마찬가지로 동작을 가한 행위자(원인)를 이끕니다('~에게 ~당하다').",
+      "longExplanation": "“给”(gěi)는 현대 중국어 일상 구어에서 피동을 나타내는 개사(전치사)로 빈번히 활용되며, 문법적 기능은 “被”(bèi)나 “叫”(jiào), “让”(ràng)과 동일합니다. 문장의 주어로는 행동의 영향을 받는 대상(피해자 또는 사물)이 오고, “给 + 동작 가해자 + 동사 + 기타 성분(보어 또는 了)”의 구조를 이룹니다. 주로 도난, 파손, 손실 등 화자에게 불리하거나 바람직하지 못한 피해 상황을 말할 때 매우 흔히 사용되어 불만이나 아쉬움의 뉘앙스를 풍깁니다. 한국어의 '~에게 ~당하다', '~에 의해 ~해지다'에 해당합니다.",
+      "formation": "주어 (피동 대상) + 给 + 가해자 / 행위자 + 동사 + 보어 / 了",
+      "examples": [
+        {
+          "translation": "내 휴대전화는 도둑에게 도난당했다 (도둑이 훔쳐 가 버렸다)."
+        }
+      ]
+    },
+    "zh_何不_614": {
+      "title": "何不 (반어적 부사어: 어찌 ~하지 않는가, ~하는 편이 낫지 않은가, ~해 보는 게 어때서)",
+      "shortExplanation": "반어 의문문의 형식을 빌려 상대방에게 좋은 방안을 적극적으로 제안하거나 권유, 조언할 때 씁니다('어찌 ~하지 않는가', '~하면 어떨까').",
+      "longExplanation": "“何不”(hébù)는 고대 한어에서 유래한 격조 높은 반어 표현으로, '어찌/왜'를 뜻하는 “何”와 부정사 “不”가 결합하여 '어찌하여 ~하지 않는가'라는 뜻을 나타냅니다. 술어 동사 앞에 놓이며 문말에는 흔히 어기조사 “呢”를 동반합니다. 실제로는 이유를 따져 묻는 것이 아니라, '당연히 그렇게 하는 편이 훨씬 좋다', '~해 보는 것이 가장 합리적이다'라는 강한 긍정적 권유와 매력적인 제안, 유익한 조언을 전달합니다. 구어와 서면어 모두에서 세련되고 설득력 있는 어조로 쓰입니다. 한국어의 '어찌 ~하지 않는가', '~해 보는 것이 어때서', '~하는 게 낫지 않은가'에 해당합니다.",
+      "formation": "상황 / 이유 ，(주어 +) 何不 + 제안 동작 (+ 呢) ？",
+      "examples": [
+        {
+          "translation": "날씨가 이렇게 좋은데, 밖에 나가서 좀 놀다 오는 게 어때서 그러니?"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_除非才_600": {
+      "title": "(除非)……才……（条件复句关联词：只有满足该条件才能实现结果）",
+      "shortExplanation": "表示唯一的条件，相当于“只有……才……”，强调前一分句是后一分句结果得以实现的唯一前提；“只有……才……”、“除非……才……”。",
+      "longExplanation": "“(除非)……才……”（(chúfēi)…… cái……）是表示必要条件的紧缩句或复句句式，其语义等同于“只有……才……”。“除非”引出后文结果得以成立的不可或缺的唯一条件，后一分句必须使用副词“才”与之呼应，表明唯有在此种前提下某种情况才会发生。“除非”在口语中经常可以省去，只用“……才……”即可表达同样强调必要条件的意思。",
+      "formation": "(除非 +) 唯一条件 ，主语 + 才 + 动作 / 结果",
+      "examples": [
+        {
+          "translation": "除非你答应我的条件，我才告诉你。"
+        }
+      ]
+    },
+    "zh_除非_601": {
+      "title": "除非（介词/连词：除……之外、唯独）",
+      "shortExplanation": "引出唯一的例外对象，后文多与“没人”、“都不”、“无法”等全面否定词呼应，表示除了该对象之外别无他人；相当于“除了……以外”。",
+      "longExplanation": "“除非”（chúfēi）在此用法中相当于介词短语“除了……（以外）”，用在名词、人名或代词前，引出一个独特的例外。后续分句通常带有全称否定词（如“没人”、“谁也无法”、“都不可能”），以此反衬出所引出的对象是唯一具备该项特质、能力或享受此项豁免的人或事物，起到了极强的强调作用。",
+      "formation": "话题 / 主语 ，除非 + 例外对象 ，全称否定句（没人 / 都不 / 无法 + 谓语）",
+      "examples": [
+        {
+          "translation": "这种机器，除了李阳之外，没人修得好。"
+        }
+      ]
+    },
+    "zh_V1得O直V2_602": {
+      "title": "动词1 + 得 (+ 宾语 +) 直 + 动词2（情态/程度补语结构：表示因程度极深而不住地做某动作）",
+      "shortExplanation": "表示某种心理状态、情感或生理感受达到了极点，以致身体不由自主地连续做出某种反应动作；“……得直……”。",
+      "longExplanation": "“动词1 + 得 (+ 宾语 +) 直 + 动词2”是汉语中表示极端程度的情态补语结构。动词1多为表示心理、情绪或感知觉的动词/形容词（如“气”、“乐”、“疼”、“急”、“冷”等）；副词“直”充当动词2的状语，表示“不停地、一个劲儿地、连续不断地”；动词2则多为生理或肢体本能的外部表现动作（如“发抖”、“冒汗”、“打哆嗦”、“喘粗气”等）。括号中的宾语通常为人称代词，用以指明发生生理反应的主体。整个结构生动形象，富有口语色彩。",
+      "formation": "主语 + 动词 / 形容词1 + 得 (+ 宾语 +) 直 + 动词2",
+      "examples": [
+        {
+          "translation": "父亲听说儿子卖了房子，气得直发抖。"
+        }
+      ]
+    },
+    "zh_直到_603": {
+      "title": "直到（介词：表示一直延续到某个时间点或处所）",
+      "shortExplanation": "介词，后接时间词语或事件，表示动作、状态或心理认识一直持续延续到特定的时间终点；相当于“一直到……（为止）”。",
+      "longExplanation": "“直到”（zhídào）由表示连续不断的“直”和表示到达的“到”组合而成，常置于句首充当时间状语。它引出动作、某种心理认知或某一客观状态持续延续的终点界限。后一分句常与“也”、“还”配合表示状态一如既往没有改变；或与副词“才”配合，强调某种结果出现得非常晚，直到此时才得以实现或察觉。书面语与口语均极常用。",
+      "formation": "直到 + 时间词 / 时点 ，主语 +（也 / 还 / 才 +）谓语",
+      "examples": [
+        {
+          "translation": "直到今天，我也不明白他当时为什么发那么大脾气。"
+        }
+      ]
+    },
+    "zh_反正_604": {
+      "title": "反正（副词：无论如何、横竖、反正都是如此）",
+      "shortExplanation": "副词，用在后一分句，表示无论情况如何变化或条件怎样，结论、态度或既定事实始终不变；相当于“无论如何”、“横竖”。",
+      "longExplanation": "“反正”（fǎnzhèng）由“正反两方面结果都一样”引申而来，是口语和书面语中极其高频的语气副词。常置于分句句首或主语后，常与表示无条件关系的关联词（如“不管”、“无论”、“任凭”）呼应配合。说话人借此表达出一种不容置疑、毫不动摇的鲜明立场，或者陈述一个不受外界干扰的客观事实。相当于“横竖”、“不管怎样都……”。",
+      "formation": "(不管 / 无论 + 各种情况 …… ，) 反正 + 坚定态度 / 确定事实",
+      "examples": [
+        {
+          "translation": "不管你们谁去，反正我不会去。"
+        }
+      ]
+    },
+    "zh_点_605": {
+      "title": "数词 + 点 + 数词（小数读法：表示小数点的读法）",
+      "shortExplanation": "表示小数的读法，“点”代表小数点，点前按整数读法认读，点后逐位念出每个数字；“……点……”。",
+      "longExplanation": "在现代汉语中，小数的认读格式为“整数部分 + 点（diǎn） + 小数部分”。语素“点”对应书面上的小数点符号。读数规则为：位于“点”前面的整数部分按正常整数的读数方法认读；位于“点”后面的小数部分，则不带数位单位，必须将各个数字按顺序单独念出（如“3.14”读作“三点一四”，“0.05”读作“零点零五”）。",
+      "formation": "整数部分数词 + 点 + 小数部分依次逐位数字",
+      "examples": [
+        {
+          "translation": "三点一四（3.14）。"
+        }
+      ]
+    },
+    "zh_1分之2_606": {
+      "title": "分母 + 分之 + 分子（分数的读法：表示几分之几）",
+      "shortExplanation": "汉语中分数的标准表达法，先读分母，后接“分之”，最后读分子；“……分之……”。",
+      "longExplanation": "在现代汉语中，分数的表达遵循“分母数词 + 分之（fēnzhī） + 分子数词”的固定结构。其中的“分之”源自文言结构，“分”指等分，“之”相当于代词或助词，全句字面意为“分为……份之中的……份”。例如“五分之一”（1/5）代表将整体分为五份，取其中的一份。需特别注意与英语等先读分子后读分母的语言相区别。",
+      "formation": "分母数词 + 分之 + 分子数词",
+      "examples": [
+        {
+          "translation": "五分之一（1/5）。"
+        }
+      ]
+    },
+    "zh_百分之_607": {
+      "title": "百分之 + 数词（百分比读法：表示百分之几）",
+      "shortExplanation": "表示百分比（%）的固定读法，先读“百分之”，后接具体的数值；相当于“……%”。",
+      "longExplanation": "“百分之 + 数词”（bǎifēnzhī #）是现代汉语中表示百分比（百分率）的标准读法。该结构本质上是分母为100的分数表达式，即“一百等份之中的若干份”。认读时，必须先读固定词缀“百分之”，然后再读出具体的整数、小数或分数值（如“百分之九”即9%，“百分之零点五”即0.5%，“百分之百”即100%）。与许多将百分比符号置于数字之后的语言在语序上有所不同。",
+      "formation": "百分之 + 具体的数词",
+      "examples": [
+        {
+          "translation": "百分之九（9%）。"
+        }
+      ]
+    },
+    "zh_甲乙丙丁_608": {
+      "title": "甲乙丙丁（序数/代称符号：天干前四位，表示次序、等级或合同双方代称）",
+      "shortExplanation": "天干的前四位，用作序数代号、等级划分或法律文书中指代当事各方（甲方、乙方）；相当于英文中的“A、B、C、D”。",
+      "longExplanation": "“甲、乙、丙、丁”（jiǎ, yǐ, bǐng, dīng）源自中国传统的“天干”。在现代汉语中，常被用作表示顺序（第一、第二、第三、第四）、评定等级（甲等、乙等）或作为选择题、分类项的代号。尤其广泛应用于法律、商业合同及正规协议中，用“甲方”、“乙方”、“丙方”来确切指代合同的签订各方。此外在数学题目或论述文中，也常用来指称假定的人物或事物。",
+      "formation": "甲 / 乙 / 丙 / 丁（+ 方 / 等 / 级 / 类）",
+      "examples": [
+        {
+          "translation": "如果乙方同意，甲方可以提前把产品交给乙方。"
+        }
+      ]
+    },
+    "zh_顺着_609": {
+      "title": "顺(着)（介词：沿着某路线、表面或方向）",
+      "shortExplanation": "介词，引出路线、物体表面、方向或思路，表示动作或移动沿着该轨迹同向进行；相当于“沿着”、“遵照”。",
+      "longExplanation": "“顺(着)”（shùn(zhe)）是表示轨迹和朝向的空间介词。“顺”本义为同向、遵从，加上动态助词“着”后介词化。它后接表示道路、河流、物理表面（如面部、墙面）或特定方向的名词，充当状语，修饰后续的移动性动词，表示人、物体或液体的流动依附着既有的轮廓顺势行进。引申用于抽象语境中，表示依照某种思路、线索或他人意志（如“顺着这个线索查下去”、“顺着他的意思说”）。",
+      "formation": "主语 + 顺(着) + 路径 / 表面 / 方向 + 移动动词",
+      "examples": [
+        {
+          "translation": "汗水顺着他的脸往下流。"
+        }
+      ]
+    },
+    "zh_自_610": {
+      "title": "自（书面语介词：从、打从，引出时间、空间或范围的起点）",
+      "shortExplanation": "书面语介词，引出时间、空间、起点或来源，相当于口语中的“从”；常与“向”、“至”、“到”等搭配使用。",
+      "longExplanation": "“自”（zì）在现代汉语中保留了文言虚词的用法，是具有较强典雅书面语色彩的介词，其意义和功能与口语中的“从”（cóng）完全等同。常用于政论文、学术论著、科技说明文及新闻报道中。用于空间时，常构成“自……向……”、“自……至……”、“自……往……”等固定呼应格式，标明位移运动的源头起点与目标朝向；用于时间时，常见搭配有“自古”、“自……以来”、“自……起”等。",
+      "formation": "自 + 起点（时间 / 处所）（+ 向 / 至 / 到 + 终点 / 方向） + 谓语",
+      "examples": [
+        {
+          "translation": "鸟类能觉察得出地球自北向南磁极的磁力线。"
+        }
+      ]
+    },
+    "zh_把V着_611": {
+      "title": "把 + 宾语 + 动词 + 着（把字句表祈使/叮嘱：令某物保持某种动作或持有状态）",
+      "shortExplanation": "把字句与助词“着”结合，多用于祈使句或叮嘱提醒中，要求对方随身携带、持有某物或使事物保持某种状态；“把……拿着/带着”。",
+      "longExplanation": "“把……动词 + 着”（bǎ……V zhe）是把字句的一种常见活用格式。动词后面加上表示动作或状态持续的动态助词“着”，常出现在口语中的祈使、吩咐或叮嘱句中。其语用目的主要有两种：一是吩咐对方随身带上、拿好某物，在后续的时间或路途中保持持有状态（如“把书带着”、“把雨伞拿着”）；二是要求使某物体保持开、关、放等静态持续状态（如“把门开着”、“把灯亮着”）。体现出亲切而具体的交待语气。",
+      "formation": "主语 + 把 + 宾语 + 动词 + 着",
+      "examples": [
+        {
+          "translation": "你把书带着。"
+        }
+      ]
+    },
+    "zh_把O给V了_612": {
+      "title": "把 + 宾语 + (给) + 动词 + 了（把字句中“给”的加强处置语气用法）",
+      "shortExplanation": "在把字句的谓语动词前加入介词/助词“给”，用以加强处置动作的语气，多表示动作已彻底完成，或带有失误、遗憾的色彩；“把……给……了”。",
+      "longExplanation": "“把 + 宾语 + (给) + 动词 + 了”是现代汉语口语把字句中极具表现力的格式。句中的“给”在此处已虚化为语气助词，不表示“给予”，专门用在动词前加强处置的语气。这种句式往往带有两类感情色彩：一是表示某种意想不到的过失、遗忘或不良后果（如“把钥匙给弄丢了”、“把这事给忘了”），突出说话人的懊恼或无奈；二是表示动作处理得干脆利落、彻底完成（如“把饭给吃了”、“把作业给写完了”）。在现代汉语语法中，“把”与“给”的配合极为常见。",
+      "formation": "主语 + 把 + 宾语 + (给 +) 动词 + 了",
+      "examples": [
+        {
+          "translation": "我把这事(给)忘了。"
+        }
+      ]
+    },
+    "zh_给_613": {
+      "title": "给（被动介词：表被动，相当于“被”、“叫”、“让”）",
+      "shortExplanation": "口语介词，引出施事者（动作发出者），构成被动句，语义和功能相当于“被”或“让”；常表遭受不快或损失。",
+      "longExplanation": "“给”（gěi）在现代汉语口语中常常充当被动介词，其语法作用等同于“被”、“叫”、“让”。其基本句式为“受事主语 + 给 + 施事者 + 动词 + 补语/了”。这种句式多用于叙述对主语不利、带来损失或令人不快的消极事件（如东西被偷、被打碎、被淋湿等），带有鲜明的口语色彩与生活气息。有时甚至施事者可以省略，直接说“东西给丢了”。在语法教学中常归入被动句系统。",
+      "formation": "主语（受事） + 给 + 施事者 + 动词 + 补语 / 了",
+      "examples": [
+        {
+          "translation": "我的手机给小偷偷走了。"
+        }
+      ]
+    },
+    "zh_何不_614": {
+      "title": "何不（反问副词：为什么不、曷不，用于提出建设性建议）",
+      "shortExplanation": "反问形式的文雅词语，形式上表示“为什么不”，实质上用于向对方提出积极的建议、主张或热情的劝告；相当于“为什么不……呢”。",
+      "longExplanation": "“何不”（hébù）保留了文言反问句式，由疑问代词“何”（为何、为什么）和否定副词“不”组合而成。常置于动词谓语前，句末常带疑问语气助词“呢”。它表面上是用疑问句追问“为何不采取某种行动”，实际上却包含着极强的倾向性和肯定语气，意在热情地向对方提出一个非常合理、令人愉悦或富有建设性的建议，鼓励对方采取该项行动。语调委婉而富有文雅色彩。",
+      "formation": "情境 / 前提 ，(主语 +) 何不 + 建议行动 (+ 呢) ？",
+      "examples": [
+        {
+          "translation": "天气这么好，何不出去玩儿玩儿呢？"
+        }
+      ]
+    }
+  }
+}

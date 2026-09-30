@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_마다_58": {
+      "title": "~마다 (Mỗi, cứ mỗi, mọi...)",
+      "shortExplanation": "Trợ từ kết hợp sau danh từ biểu thị sự việc diễn ra lặp đi lặp lại một cách đều đặn theo từng khoảng thời gian hoặc áp dụng đồng đều cho từng cá thể, đối tượng ('mỗi...', 'cứ mỗi...').",
+      "longExplanation": "'~마다' là trợ từ (tiểu từ) gắn sau danh từ chỉ thời gian (như ngày, tuần, buổi sáng) hoặc danh từ thông thường để biểu thị ý nghĩa 'mỗi', 'cứ mỗi', 'từng'. Nó thể hiện một hành vi, trạng thái hay hiện tượng nào đó diễn ra định kỳ, đều đặn theo chu kỳ đó (như 'mỗi buổi sáng', 'cứ cuối tuần'), hoặc áp dụng không loại trừ cho mọi cá thể trong một tập hợp (như 'mỗi người', 'từng cái chai').",
+      "formation": "Danh từ + 마다",
+      "examples": [
+        {
+          "translation": "Tôi tập thể dục vào mỗi buổi sáng. Đó là một thói quen thực sự cần thiết cho sức khỏe."
+        },
+        {
+          "translation": "Nơi này cứ vào giờ ăn trưa là lại đông nghẹt người nên rất khó tìm chỗ ngồi."
+        },
+        {
+          "translation": "Mẹ tôi cứ mỗi cuối tuần là lại dọn dẹp tổng vệ sinh nhà cửa mà không hề nghỉ ngơi."
+        },
+        {
+          "translation": "Trong túi xách, bên cạnh mỗi một bình nước đều có một gói đồ ăn vặt nhỏ."
+        }
+      ]
+    },
+    "ko_만_59": {
+      "title": "~만 (Chỉ, chỉ riêng, duy nhất)",
+      "shortExplanation": "Trợ từ hạn định gắn sau danh từ (hoặc đại từ) để biểu thị sự giới hạn duy nhất vào đối tượng đó, loại trừ tất cả các đối tượng khác ('chỉ...', 'chỉ riêng...').",
+      "longExplanation": "'~만' là trợ từ hạn định phổ biến bậc nhất trong tiếng Hàn, tương đương với 'chỉ' trong tiếng Việt. Khi kết hợp với danh từ, đại từ hoặc tiểu từ khác, nó giới hạn phạm vi vào đúng sự vật hay đối tượng được nhắc đến và loại trừ toàn bộ những thứ còn lại. Trong câu, '~만' có thể thay thế các trợ từ chủ ngữ ('-이/가') hoặc trợ từ tân ngữ ('-을/를'), hoặc có thể đi kèm sau các trợ từ chỉ vị trí, thời gian ('-에만', '-에서만').",
+      "formation": "Danh từ + 만",
+      "examples": [
+        {
+          "translation": "Tôi chỉ uống cà phê thôi. Hoàn toàn không uống bất kỳ loại đồ uống nào khác."
+        },
+        {
+          "translation": "Chỉ có mình tôi biết sự thật đó thôi. Những người khác dường như đều không biết."
+        },
+        {
+          "translation": "Cuối tuần này tôi chỉ định nghỉ ngơi thôi. Tôi không định làm việc gì khác cả."
+        },
+        {
+          "translation": "Anh ấy chỉ đi gặp bạn bè thôi chứ không hề gặp gia đình."
+        }
+      ]
+    },
+    "ko_만_60": {
+      "title": "~만 하다 (Vừa đủ, thỏa đáng, vừa tầm, chỉ việc...)",
+      "shortExplanation": "Cấu trúc biểu thị mức độ, kích thước hoặc trạng thái đạt mức vừa vặn, thỏa đáng, đủ điều kiện hoặc chỉ cần đáp ứng ở mức độ đó là phù hợp ('vừa đủ...', 'thỏa đáng', 'vừa tầm').",
+      "longExplanation": "'~만 하다' được sử dụng theo nhiều nét nghĩa tinh tế trong tiếng Hàn: (1) Khi kết hợp sau danh từ, nó so sánh độ lớn hoặc mức độ tương đương ('bằng chừng ấy', 'đạt tầm'); (2) Khi đi với động từ (thường ở dạng '-기만 하다' hoặc liên kết với '-(으)ㄹ 만하다'), nó diễn tả trạng thái vừa khít, vừa vặn hoặc thỏa đáng để thực hiện một việc gì đó mà không cần thêm nữa. Nó thể hiện sự vừa đủ, thích hợp với một điều kiện nhất định.",
+      "formation": "Thân động từ/Tính từ + 만 하다 (hoặc -기만 하다 / -(으)ㄹ 만하다), Danh từ + 만 하다",
+      "examples": [
+        {
+          "translation": "Tôi nghĩ lượng chừng này là vừa đủ rồi. Không cần thêm nữa đâu."
+        },
+        {
+          "translation": "Khi thức ăn quá nóng, bạn có thể cho thêm nước vào để vừa tầm ăn được."
+        },
+        {
+          "translation": "Vì đã ôn thi đầy đủ rồi nên hôm nay chỉ cần nghỉ ngơi là vừa thỏa đáng."
+        },
+        {
+          "translation": "Bản nhạc này êm dịu đến mức không hề gây phân tâm, nên vừa làm việc vừa nghe là vừa hay."
+        }
+      ]
+    },
+    "ko_만큼_61": {
+      "title": "~만큼 (Bằng, như, chừng nào... chừng nấy, đến mức)",
+      "shortExplanation": "Trợ từ hoặc danh từ phụ thuộc biểu thị mức độ, số lượng hoặc trạng thái tương đương với đối tượng làm chuẩn được nêu ra trước đó ('bằng với...', 'đến mức...', 'bao nhiêu... bấy nhiêu').",
+      "longExplanation": "'~만큼' là từ tố chỉ mức độ tương đương rất phổ biến trong tiếng Hàn. Khi đứng sau danh từ, nó đóng vai trò là trợ từ (tiểu từ); khi đứng sau các vĩ tố định từ (-(으)ㄴ, -는, -(으)ㄹ), nó đóng vai trò là danh từ phụ thuộc. Cấu trúc này diễn đạt sự so sánh ngang bằng hoặc tỉ lệ thuận: mức độ của hành động/trạng thái ở vế sau tương xứng hoàn toàn với chuẩn mực được đặt ra ở vế trước.",
+      "formation": "Danh từ + 만큼, Thân động từ/Tính từ + -(으)ㄴ/는/(으)ㄹ 만큼",
+      "examples": [
+        {
+          "translation": "Anh ấy muốn nhận được mức thù lao tương xứng với năng lực thực sự của mình."
+        },
+        {
+          "translation": "Bạn nỗ lực bao nhiêu thì kết quả sẽ đi theo bấy nhiêu."
+        },
+        {
+          "translation": "Cô ấy có thể hát hay chẳng kém gì người khác."
+        },
+        {
+          "translation": "Món ăn này ngon đúng như vẻ ngoài bắt mắt của nó."
+        }
+      ]
+    },
+    "ko_며면서_62": {
+      "title": "~며 / ~면서 (Vừa... vừa..., đồng thời, trong khi...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị hai hành động hoặc trạng thái diễn ra đồng thời cùng một lúc ('vừa... vừa...'), hoặc kết nối liệt kê hai sự việc cùng tồn tại song song.",
+      "longExplanation": "'~며' và '~면서' (khi có phụ âm cuối dùng '-으며 / -으면서') là các vĩ tố liên kết phổ biến diễn tả sự đồng thời. Điểm đặc trưng là chủ ngữ của cả hai mệnh đề phải là một cá thể đang thực hiện hai hành vi cùng một lúc ('vừa nghe nhạc vừa đọc sách'). Ngoài ra, cấu trúc này còn có thể dùng để liệt kê hai tư cách, hai đặc tính của cùng một chủ thể (như 'vừa là giáo viên vừa là nhà văn').",
+      "formation": "Thân động từ/Tính từ (có phụ âm cuối: -으며 / -으면서; không có phụ âm cuối: -며 / -면서)",
+      "examples": [
+        {
+          "translation": "Khi về nhà, tôi vừa nghe nhạc vừa kiểm tra tin nhắn."
+        },
+        {
+          "translation": "Trước khi nhập học, tôi vừa chăm chỉ học tập lại vừa tích cực tham gia các hoạt động khác."
+        },
+        {
+          "translation": "Tôi thích vừa xem phim vừa ăn bắp rang bơ."
+        },
+        {
+          "translation": "Tôi thuộc tuýp người vừa tập thể dục vừa xem thời sự. Đồng thời tôi cũng tìm kiếm thêm thông tin sức khỏe."
+        }
+      ]
+    },
+    "ko_면_63": {
+      "title": "~면 (Nếu, hễ... thì, khi...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị điều kiện tiền đề hoặc giả định; nếu mệnh đề trước xảy ra thì mệnh đề sau sẽ được thực hiện ('nếu...', 'hễ... thì...').",
+      "longExplanation": "'-(으)면' là vĩ tố chỉ điều kiện nền tảng và căn bản nhất trong ngữ pháp tiếng Hàn. Nó gắn sau thân động từ hoặc tính từ để tạo thành mệnh đề điều kiện: nếu nội dung ở vế trước được đáp ứng hay xảy ra, thì vế sau sẽ diễn ra như một hệ quả tất yếu, một dự định hoặc một lời khuyên. Cấu trúc này dùng cho các tình huống giả định thực tế, quy luật tự nhiên, hoặc thói quen có tính lặp lại.",
+      "formation": "Thân động từ/Tính từ (có phụ âm cuối: -으면 / không có phụ âm cuối: -면), Danh từ + (이)면",
+      "examples": [
+        {
+          "translation": "Ngày mai nếu trời mưa, chúng tôi sẽ không đi ra công viên đâu."
+        },
+        {
+          "translation": "Nếu thấy nhớ người ấy thì bạn hãy gọi điện thoại đi."
+        },
+        {
+          "translation": "Nếu học tập chăm chỉ thì bạn hoàn toàn có thể thi đỗ."
+        },
+        {
+          "translation": "Nếu lỡ chuyến xe buýt cuối cùng thì chúng ta phải bắt taxi thôi."
+        }
+      ]
+    },
+    "ko_면_64": {
+      "title": "~면 어때(요) (Hay là... xem sao?, Nếu... thì thấy thế nào?)",
+      "shortExplanation": "Cấu trúc dùng để đưa ra một gợi ý, đề xuất nhẹ nhàng hoặc thăm dò ý kiến, phản ứng của đối phương về một phương án hành động ('nếu... thì thế nào?').",
+      "longExplanation": "'~면 어때(요)' là sự kết hợp giữa vĩ tố điều kiện '-면' và từ nghi vấn '어때' (thế nào). Cấu trúc này dùng trong giao tiếp thường nhật để đề xuất một hành động, giải pháp thay thế hoặc một ý tưởng mới một cách mềm mỏng, không áp đặt, đồng thời tôn trọng và hỏi ý kiến của người nghe xem họ cảm thấy phương án đó ra sao.",
+      "formation": "Thân động từ/Tính từ (có phụ âm cuối: -으면 / không có phụ âm cuối: -면) + 어때(요)",
+      "examples": [
+        {
+          "translation": "Thời tiết đẹp thế này, hay là chúng mình ra công viên chơi đi?"
+        },
+        {
+          "translation": "Trông bạn có vẻ nhiều lo lắng quá. Hay là tạm thời đến phòng tập thể dục vận động một chút xem sao?"
+        },
+        {
+          "translation": "Bạn bảo không có thời gian ư? Vậy thì gọi đồ ăn giao tận nơi xem thế nào?"
+        },
+        {
+          "translation": "Vấn đề này giải quyết theo cách này thì thấy thế nào?"
+        }
+      ]
+    },
+    "ko_면서도_65": {
+      "title": "~면서도 (Mặc dù... nhưng lại..., ấy thế mà vẫn...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị sự tương phản, mâu thuẫn giữa hai sự việc; dù vế trước đang diễn ra nhưng vế sau lại tồn tại một hành động hoặc trạng thái trái ngược ('mặc dù... nhưng vẫn...').",
+      "longExplanation": "'~면서도' là sự kết hợp giữa vĩ tố đồng thời '-면서' và trợ từ nhấn mạnh '-도' (cũng). Cấu trúc này dùng khi hai sự thật cùng đồng thời tồn tại trên một chủ thể, nhưng giữa chúng lại có sự đối lập, nghịch lý hoặc khó hiểu so với lẽ thông thường. Nó nhấn mạnh sự ngạc nhiên hoặc cảm thán trước sự cùng tồn tại của hai vế đối nghịch nhau.",
+      "formation": "Thân động từ/Tính từ (có phụ âm cuối: -으면서도 / không có phụ âm cuối: -면서도), Danh từ + (이)면서도",
+      "examples": [
+        {
+          "translation": "Thật đáng ngạc nhiên là cô ấy vừa đi làm lại vừa tiếp tục việc học ở trường, ấy thế mà thành tích học tập lúc nào cũng xuất sắc."
+        },
+        {
+          "translation": "Bộ phim này tuy được thực hiện một cách gian nan, nhưng nội dung vừa thú vị lại vừa mang tính giáo dục sâu sắc."
+        },
+        {
+          "translation": "Dù ngày nào cũng phải tăng ca nhưng anh ấy vẫn duy trì được sức khỏe và lúc nào cũng tràn đầy năng lượng."
+        },
+        {
+          "translation": "Mặc dù đang là mùa đông nhưng thời tiết lại ấm áp, rất thích hợp cho các hoạt động ngoài trời."
+        }
+      ]
+    },
+    "ko_밖에_66": {
+      "title": "~밖에 (Chỉ..., ngoài... ra không còn)",
+      "shortExplanation": "Trợ từ hạn định luôn đi kèm với vị từ phủ định (như 없다, 모르다, 안, 못), biểu thị rằng ngoài đối tượng được nhắc đến thì không còn bất kỳ sự lựa chọn nào khác ('chỉ...', 'ngoài... ra không').",
+      "longExplanation": "'~밖에' là trợ từ hạn định mang tính phủ định trong tiếng Hàn. Khác với '~만' (có thể đi với câu khẳng định), '~밖에' bắt buộc phải kết hợp với động từ hoặc tính từ mang hình thức phủ định (như '안', '못', '없다', '모르다'). Ý nghĩa gốc là 'ở bên ngoài của X thì không có gì', từ đó nhấn mạnh ý niệm rằng đối tượng đó là lựa chọn duy nhất, không còn phương án hay sự vật nào khác nữa.",
+      "formation": "Danh từ + 밖에 + Vị từ phủ định (안 / 못 / 없다 / 모르다...)",
+      "examples": [
+        {
+          "translation": "Tôi chỉ uống cà phê thôi. Vì tôi không có nhu cầu uống các loại đồ uống khác."
+        },
+        {
+          "translation": "Để chuẩn bị cho kỳ thi này hình như chỉ có mỗi mình tôi. Những người khác chẳng ai chuẩn bị cả."
+        },
+        {
+          "translation": "Cô ấy chỉ nhớ mỗi ngày sinh nhật của mình thôi. Nghe nói mọi ngày quan trọng khác cô ấy đều quên hết rồi."
+        },
+        {
+          "translation": "Tôi chỉ ăn mỗi bánh pizza. Các món ăn khác chẳng ngon chút nào."
+        }
+      ]
+    },
+    "ko_부터_67": {
+      "title": "~부터 (Từ, bắt đầu từ)",
+      "shortExplanation": "Trợ từ biểu thị điểm khởi đầu, điểm xuất phát về mặt thời gian, thứ tự hoặc vị trí không gian của một hành động hay trạng thái ('từ...', 'bắt đầu từ...').",
+      "longExplanation": "'~부터' là trợ từ chỉ khởi điểm rất quan trọng trong tiếng Hàn, tương đương với 'từ' trong tiếng Việt. Khi kết hợp với các danh từ chỉ thời gian (như hôm nay, tuần này, 9 giờ) hoặc thứ tự (như việc này, số 1), nó xác định chính xác thời điểm hoặc mốc bắt đầu diễn ra sự việc. Khi nói về không gian (nơi chốn), '~부터' cũng có thể được dùng, thường đi kèm thành cặp với '~까지' (đến).",
+      "formation": "Danh từ + 부터",
+      "examples": [
+        {
+          "translation": "Tôi đi làm từ 7 giờ sáng."
+        },
+        {
+          "translation": "Tôi dự định lên kế hoạch cho chuyến du lịch bắt đầu từ cuối tuần này."
+        },
+        {
+          "translation": "Đi bằng tàu hỏa từ Seoul đến Busan mất mấy tiếng đồng hồ vậy?"
+        },
+        {
+          "translation": "Tôi đã bắt đầu đem lòng yêu mến đất nước Hàn Quốc từ năm 2012."
+        }
+      ]
+    },
+    "ko_부터_68": {
+      "title": "~부터 ~까지 (Từ... đến..., từ... cho tới...)",
+      "shortExplanation": "Cấu trúc biểu thị phạm vi trọn vẹn từ điểm khởi đầu cho đến điểm kết thúc về mặt thời gian, không gian hoặc số lượng ('từ... đến...').",
+      "longExplanation": "'~부터 ~까지' là cấu trúc kết hợp biểu thị một khoảng phạm vi hoàn chỉnh: '~부터' đánh dấu khởi điểm bắt đầu, còn '~까지' đánh dấu đích đến hoặc giới hạn kết thúc. Cấu trúc này thường được dùng rộng rãi cho thời gian (từ mấy giờ đến mấy giờ), phạm vi số lượng (từ 1 đến 10), và cả không gian địa lý (từ đâu đến đâu). Lưu ý rằng đối với địa điểm thuần túy, người Hàn cũng hay dùng cặp '~에서 ~까지'.",
+      "formation": "Danh từ 1 + 부터 + Danh từ 2 + 까지",
+      "examples": [
+        {
+          "translation": "Tôi làm việc từ 8 giờ sáng cho đến 6 giờ tối."
+        },
+        {
+          "translation": "Tôi đã đi bộ từ nhà bạn tôi đến tận trường học."
+        },
+        {
+          "translation": "Bạn hãy thử đếm từ 1 đến 10 xem nào."
+        },
+        {
+          "translation": "Tôi định sẽ đi du lịch từ cuối tuần này cho tới cuối tuần sau."
+        }
+      ]
+    },
+    "ko_사이_69": {
+      "title": "~사이 (Giữa, khoảng giữa, mối quan hệ giữa...)",
+      "shortExplanation": "Danh từ chỉ khoảng cách không gian hoặc thời gian nằm ở giữa hai đối tượng, hoặc chỉ mối quan hệ tương hỗ tình cảm giữa người với người ('ở giữa...', 'mối quan hệ giữa...').",
+      "longExplanation": "'사이' là danh từ đa nghĩa có thể dùng để diễn đạt: (1) Khoảng cách không gian hoặc khoảng thời gian nằm xen giữa hai mốc xác định (thường có trợ từ '-에' theo sau: 'giữa sáng và trưa'); (2) Mối quan hệ, tình cảm giao hảo giữa hai người hoặc hai tập thể (như 'saiga jota' - quan hệ tốt, hòa thuận; 'saiga an jota' - quan hệ bất hòa). Cấu trúc thường gặp là 'A와/과 B 사이' hoặc 'Danh từ + 사이'.",
+      "formation": "Danh từ 1 + 와/과 + Danh từ 2 + 사이 / Danh từ + 사이",
+      "examples": [
+        {
+          "translation": "Khoảng cách giữa Seoul và Busan là khoảng 325 km."
+        },
+        {
+          "translation": "Dạo này mối quan hệ giữa tôi và người bạn ấy không được tốt, nên chúng tôi không liên lạc với nhau."
+        },
+        {
+          "translation": "Việc ăn nhẹ vào khoảng giữa bữa sáng và bữa trưa là rất quan trọng."
+        },
+        {
+          "translation": "Trong suốt dịp cuối tuần, mối quan hệ giữa tôi và bố mẹ đã trở nên tốt đẹp hơn rất nhiều."
+        }
+      ]
+    },
+    "ko_세요_70": {
+      "title": "~세요 (Hãy..., xin hãy..., hãy cùng...)",
+      "shortExplanation": "Vĩ tố kết thúc câu kính ngữ thân mật dùng để yêu cầu, mệnh lệnh một cách lịch sự, nhã nhặn ('xin hãy...'), hoặc rủ rê, khuyên bảo đối phương một cách tôn trọng.",
+      "longExplanation": "'-(으)세요' là sự kết hợp giữa vĩ tố kính ngữ chủ thể '-(으)시-' và vĩ tố kết thúc câu thân mật '-어요'. Nó được sử dụng cực kỳ rộng rãi trong giao tiếp lịch sự thường nhật để: (1) Đưa ra lời yêu cầu, mệnh lệnh hoặc hướng dẫn lịch thiệp đối với đối phương ('xin vui lòng...', 'hãy...'); (2) Đưa ra lời mời mọc, đề xuất thân thiện ('hãy cùng đi nhé'). Vì có chứa yếu tố kính ngữ nên cấu trúc này thể hiện sự tôn trọng tối đa đối với người nghe.",
+      "formation": "Thân động từ (có phụ âm cuối: -으세요 / không có phụ âm cuối: -세요)",
+      "examples": [
+        {
+          "translation": "Làm ơn hãy giữ trật tự giùm, ở đây có nhiều người đang học bài lắm."
+        },
+        {
+          "translation": "Hãy cùng đi ăn trưa nhé. Tôi biết một quán ăn rất ngon đấy."
+        },
+        {
+          "translation": "Bây giờ bạn hãy tập trung học đi. Kỳ thi chẳng còn bao lâu nữa đâu."
+        },
+        {
+          "translation": "Xin hãy đi theo tôi. Tôi sẽ dẫn đường để bạn không bị lạc."
+        }
+      ]
+    },
+    "ko_아어_71": {
+      "title": "~아/어 보다 (Thử làm..., thử nghiệm...)",
+      "shortExplanation": "Cấu trúc bổ trợ biểu thị việc người nói thử thực hiện một hành động nào đó để xem kết quả ra sao ('thử làm...'), hoặc dùng để diễn tả trải nghiệm.",
+      "longExplanation": "'~아/어 보다' là cấu trúc kết hợp giữa vĩ tố liên kết '-아/어' và trợ động từ '보다' (nhìn/xem). Nghĩa cơ bản của cấu trúc này là thực hiện một hành vi mang tính thăm dò, thử nghiệm xem trải nghiệm đó ra sao (tương đương với 'thử... xem sao' trong tiếng Việt). Ngoài ra, khi dùng ở thì quá khứ ('-아/어 봤다'), nó còn mang nghĩa diễn tả kinh nghiệm từng trải qua trong đời.",
+      "formation": "Thân động từ (nguyên âm dương ㅏ/ㅗ: -아 보다; các nguyên âm khác: -어 보다; 하다 -> 해 보다)",
+      "examples": [
+        {
+          "translation": "Tôi định thử học tiếng Hàn xem sao, có vẻ như sẽ rất thú vị đấy."
+        },
+        {
+          "translation": "Bây giờ tôi định thử ăn thịt xem thế nào, tôi tò mò không biết nó có mùi vị ra sao."
+        },
+        {
+          "translation": "Tôi đã quyết định thử sức với công việc mới này, tôi nghĩ việc thử thách bản thân là một điều rất tốt."
+        },
+        {
+          "translation": "Hôm nay tôi đã thử tham gia chuyến tham quan có hướng dẫn viên đầu tiên, và đó là một trải nghiệm vô cùng thú vị."
+        }
+      ]
+    },
+    "ko_아어_72": {
+      "title": "~아/어 버리다 (Lỡ... mất rồi, xong xuôi hết cả)",
+      "shortExplanation": "Cấu trúc bổ trợ biểu thị một hành động đã hoàn tất hoàn toàn, dứt điểm; thường mang sắc thái tiếc nuối, hối tiếc ('lỡ... mất rồi') hoặc trút bỏ nhẹ nhõm ('xong xuôi hết').",
+      "longExplanation": "'~아/어 버리다' là cấu trúc kết hợp giữa vĩ tố liên kết '-아/어' và trợ động từ '버리다' (vứt bỏ). Cấu trúc này biểu thị một hành vi đã kết thúc triệt để không còn gì vương lại. Về mặt cảm xúc, nó thường mang hai sắc thái tâm lý rõ rệt: (1) Thể hiện sự tiếc nuối, xót xa, buồn bã vì việc ngoài ý muốn đã lỡ xảy ra ('đánh rơi mất', 'lỡ nói ra mất rồi'); (2) Thể hiện sự nhẹ nhõm, thanh thản vì đã giải quyết dứt điểm một gánh nặng ('làm xong phăng hết cả bài tập').",
+      "formation": "Thân động từ (nguyên âm dương ㅏ/ㅗ: -아 버리다; các nguyên âm khác: -어 버리다; 하다 -> 해 버리다)",
+      "examples": [
+        {
+          "translation": "Tôi đã làm xong hết bài tập về nhà quá nhanh, bây giờ chẳng còn gì để làm nữa cả."
+        },
+        {
+          "translation": "Hôm qua đội bóng của chúng tôi bị thua trong trận đấu nên tôi đã bị các đồng nghiệp trong công ty chê cười trêu chọc."
+        },
+        {
+          "translation": "Người bạn ấy đã lỡ buông lời nói dối để trêu tôi, vì thế mà tâm trạng tôi chẳng vui chút nào."
+        },
+        {
+          "translation": "Buổi sáng tôi đã lỡ xuất phát quá sớm, nhưng vì tắc đường nên đã phải chôn chân rất nhiều thời gian trên đường."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_마다_58": {
+      "title": "~마다（每、每个、凡是……都）",
+      "shortExplanation": "补助词，接在名词后，表示某种动作或情况按照一定的时间周期规律重复发生，或适用于该类别的每一个个体（“每……”、“凡是……都”）。",
+      "longExplanation": "“~마다”是接在表示时间的名词（如早晨、周末、每年）或普通事物名词后的补助词，相当于汉语的“每”、“各个”、“凡是”。它强调无一例外地包含全部个体，或者某种动作、状态在特定的时间间隔内周期性、规律性地反复出现（如“每天早晨”、“每逢周末”）。",
+      "formation": "名词 + 마다",
+      "examples": [
+        {
+          "translation": "我每天早晨都会运动。这是为了健康必不可少的习惯。"
+        },
+        {
+          "translation": "这里一到午饭时间人就会变多，所以很难占到座位。"
+        },
+        {
+          "translation": "我们妈妈每个周末都不休息，进行大扫除。"
+        },
+        {
+          "translation": "包里每只水瓶旁边都放着一份小零食。"
+        }
+      ]
+    },
+    "ko_만_59": {
+      "title": "~만（只、仅仅、唯独）",
+      "shortExplanation": "补助词，接在名词或代词后，表示排他性的限定，将范围严格局限于该对象，相当于汉语的“只”、“仅仅”、“唯独”。",
+      "longExplanation": "“~만”是表示排他性独占或限定范围的补助词。接在体词（名词、代词、数词）之后，表示把事态排除在其他事物之外，只单独适用于所指称的对象。在句中常可替代主格助词（-이/가）或宾格助词（-을/를），也可以与其他助词复合使用（如“-에서만”、“-에게만”），语气明确而果断。",
+      "formation": "名词 + 만",
+      "examples": [
+        {
+          "translation": "我只喝了咖啡。其他饮料一点也没喝。"
+        },
+        {
+          "translation": "唯独我知道那个事实。其他人好像都不知道呢。"
+        },
+        {
+          "translation": "这个周末我只打算好好休息。别的事情都不打算做。"
+        },
+        {
+          "translation": "他只去见了朋友们，并没有见家人。"
+        }
+      ]
+    },
+    "ko_만_60": {
+      "title": "~만 하다（正好、刚好够……、堪当、只消……）",
+      "shortExplanation": "惯用型，表示程度、大小或状态达到了恰当、充足或刚刚好的水平（“正好……”、“刚好够……”、“适宜于……”）。",
+      "longExplanation": "“~만 하다”在韩语中可用于多重语境：接在名词后表示大小或程度的相当（“有……那么大/相当”）；而在与动词或状态搭配时（如口语中的“-기만 하다”或与“-(으)ㄹ 만하다”关联），则表达某一标准或限度已经充分、适度，刚好满足了行动或容纳的条件，无需再行增加。它强调事态刚刚好、恰如其分。",
+      "formation": "动词/形容词词干 + 만 하다（或 -기만 하다 / -(으)ㄹ 만하다），名词 + 만 하다",
+      "examples": [
+        {
+          "translation": "我觉得这个分量正好足够了。再也不需要更多了。"
+        },
+        {
+          "translation": "饭菜太烫的时候加点水，就可以调得刚好适口了。"
+        },
+        {
+          "translation": "考试复习已经很充分了，所以今天只要好好休息就足够了。"
+        },
+        {
+          "translation": "这首音乐很安静不会分散注意力，所以一边工作一边听听正好合适。"
+        }
+      ]
+    },
+    "ko_만큼_61": {
+      "title": "~만큼（像……一样、如同……那般、有多……就有多……）",
+      "shortExplanation": "补助词或不完全名词（依存名词），表示程度、数量或状态与前面的基准相当，相当于汉语的“如同……一样”、“有多……就有多……”。",
+      "longExplanation": "“~만큼”主要具备两种语法身份：直接附于名词之后充当补助词；接在冠形词尾（定语词尾 -(으)ㄴ/는/(으)ㄹ）后充当不完全名词。它表示后文的事态在分量、程度或规模上与前文所确立的标准达成等同，或者两者呈正比例同步增长（如“付出多少努力，就收获多少成果”）。",
+      "formation": "名词 + 만큼，动词/形容词冠形词形（-(으)ㄴ/는/(으)ㄹ） + 만큼",
+      "examples": [
+        {
+          "translation": "他希望拿到与自己实力相称的报酬。"
+        },
+        {
+          "translation": "你付出了多少努力，就会换来多少成果。"
+        },
+        {
+          "translation": "她歌唱得像其他人一样优秀。"
+        },
+        {
+          "translation": "这道菜如同看起来的那样美味。"
+        }
+      ]
+    },
+    "ko_며면서_62": {
+      "title": "~며 / ~면서（一边……一边……、同时……）",
+      "shortExplanation": "连接词尾，表示同一主语在同一时间同时进行两个动作（“一边……一边……”），或同时兼具两种状态与身份。",
+      "longExplanation": "“~며”与“~면서”（词干末尾有收音时接“-으며 / -으면서”）是表示动作或状态共时性的连接词尾。它的核心功能是表示由同一动作主体在同一时间段内同时开展两项活动（如“边走边聊”、“边吃爆米花边看电影”）。此外，也可以用于连接两个并列的事实或多重社会身份（如“既是学者又是作家”）。",
+      "formation": "动词/形容词词干（有收音：-으며 / -으면서；无收音：-며 / -면서）",
+      "examples": [
+        {
+          "translation": "回家的时候，我一边听音乐一边查看信息。"
+        },
+        {
+          "translation": "在入学之前，我一边努力学习，一边还积极参加了其他活动。"
+        },
+        {
+          "translation": "我喜欢一边看电影一边吃爆米花。"
+        },
+        {
+          "translation": "我习惯一边运动一边看新闻，同时还会查找一些健康资讯。"
+        }
+      ]
+    },
+    "ko_면_63": {
+      "title": "~면（如果……的话、要是……就）",
+      "shortExplanation": "连接词尾，表示前节是后节得以成立的先决条件或假设前提（“如果……”、“要是……就……”）。",
+      "longExplanation": "“-(으)면”是韩语中最基础也是最核心的条件连接词尾。接在动词、形容词词干或体词谓词形后，表示前句是后句行为或状态的假设条件、常规规律或时间契机。当假设条件得到满足时，后句便随之引出相应的结果、推论、劝诱或指令。",
+      "formation": "动词/形容词词干（有收音：-으면 / 无收音：-면），名词 + (이)면",
+      "examples": [
+        {
+          "translation": "如果明天下雨的话，我们就不去公园了。"
+        },
+        {
+          "translation": "要是想念那个人的话，就给他打电话吧。"
+        },
+        {
+          "translation": "多用功学习的话，就能通过考试。"
+        },
+        {
+          "translation": "要是错过了末班车，就必须得坐出租车了。"
+        }
+      ]
+    },
+    "ko_면_64": {
+      "title": "~면 어때(요)（要是……怎么样？、不如……如何？）",
+      "shortExplanation": "征询与提议句式，接在动词词干后，用于委婉地提出某种方案、建议或征求对方的意见看法（“要是……怎么样？”、“不如……吧？”）。",
+      "longExplanation": "“~면 어때(요)”由条件连接词尾“-(으)면”与疑问形容词“어때（怎么样）”结合而成。说话人在对话中针对当下的处境，提出一项新方案或替代选择，并借此探询对方的意向与感受。其语气轻松、商榷，既不强加于人，又能温和地推动行动的达成。",
+      "formation": "动词/形容词词干（有收音：-으면 / 无收音：-면） + 어때(요)",
+      "examples": [
+        {
+          "translation": "天气这么好，我们去公园玩怎么样？"
+        },
+        {
+          "translation": "看起来你烦恼很多呢。不如暂时去健身房运动一下如何？"
+        },
+        {
+          "translation": "你说没有时间？那叫外卖送餐怎么样？"
+        },
+        {
+          "translation": "这个问题我们这样来解决怎么样？"
+        }
+      ]
+    },
+    "ko_면서도_65": {
+      "title": "~면서도（明明……却还……、尽管……但也……）",
+      "shortExplanation": "连接词尾，表示前节与后节两件事态并存，但在情理上却存在矛盾或相反的对照关系（“明明……却……”、“一边……一边却……”）。",
+      "longExplanation": "“~면서도”由同时连接词尾“-면서”与强调助词“-도”复合而成。它不仅表示两个动作或状态在同一主体上同时发生，而且着重凸显两者之间的反差、悖论或出乎意料的矛盾性。常用于表达说话人对某种超乎常理的反差现象所感到的惊叹、感慨或不解。",
+      "formation": "动词/形容词词干（有收音：-으면서도 / 无收音：-면서도），名词 + (이)면서도",
+      "examples": [
+        {
+          "translation": "令人惊讶的是，她一边工作却还一边坚持学业，而且成绩一直都很拔尖。"
+        },
+        {
+          "translation": "这部电影拍摄虽然历经艰难，但内容有趣的同时又兼具深刻的教育意义。"
+        },
+        {
+          "translation": "他即使每天加班，却依然能保持健康，并且总是活力四射。"
+        },
+        {
+          "translation": "虽然是冬天，天气却很暖和，非常适合进行户外活动。"
+        }
+      ]
+    },
+    "ko_밖에_66": {
+      "title": "~밖에（除了……之外只有、只……）",
+      "shortExplanation": "补助词，后必须搭配否定谓语（如없다, 모르다, 안, 못等），表示除了该事物之外别无选择，强调唯一的排他性（“只能……”、“只有……”）。",
+      "longExplanation": "“~밖에”是极具特色的否定搭配补助词。其字面含义为“在……之外”，但语法上强制要求后续谓语必须是否定形式（如없다、안하다、못하다等），通过双重否定的逻辑强力表达“除此以外别无他物”的积极唯一性。相比于普通的肯定限定“~만”，“~밖에”的排他语气和别无选择的无奈感或必然性要强烈得多。",
+      "formation": "名词 + 밖에 + 否定谓语（안 / 못 / 없다 / 모르다等）",
+      "examples": [
+        {
+          "translation": "我除了咖啡什么都不喝。因为完全没有喝其他饮料的必要。"
+        },
+        {
+          "translation": "为了准备这次考试，似乎只有我一个人。因为其他人全都没做准备呢。"
+        },
+        {
+          "translation": "她除了自己的生日以外什么都不记得。听说其他重要的日子全都忘光了。"
+        },
+        {
+          "translation": "我只吃了披萨。其他食物实在是不合胃口。"
+        }
+      ]
+    },
+    "ko_부터_67": {
+      "title": "~부터（从……、自……起）",
+      "shortExplanation": "格助词或补助词，接在名词后，表示时间、顺序或空间位置的起始点（“从……”、“从……开始”）。",
+      "longExplanation": "“~부터”是表示“起点”的核心助词。主要用于接在时间名词（如“从下周开始”、“从7点起”）或次序名词之后，标示某项行为、状态或过程的肇始基准点。在表示空间的起点时，虽然也可以使用“~부터”，但往往与表示终点的“~까지”协同成对出现。",
+      "formation": "名词 + 부터",
+      "examples": [
+        {
+          "translation": "我从早上7点开始去上班。"
+        },
+        {
+          "translation": "我打算从这个周末开始规划旅行。"
+        },
+        {
+          "translation": "坐火车从首尔到釜山需要多少个小时？"
+        },
+        {
+          "translation": "我从2012年起就深爱上了韩国。"
+        }
+      ]
+    },
+    "ko_부터_68": {
+      "title": "~부터 ~까지（从……到……、自……至……）",
+      "shortExplanation": "区间构式，由起点助词“부터”与终点助词“까지”搭配而成，标示时间、空间或数量的起止范围（“从……到……”）。",
+      "longExplanation": "“~부터 ~까지”是韩语中表示界限与范围的最常用构式。前项接起始界标，后项接终止界标，完整涵盖了时间跨度（从几点到几点）、空间距离（从某地到某地）或数字范围（从1到10）。在表达纯粹物理空间移动时，常可与“-에서 ~까지”互换使用。",
+      "formation": "名词1 + 부터 + 名词2 + 까지",
+      "examples": [
+        {
+          "translation": "我从早上8点工作到晚上6点。"
+        },
+        {
+          "translation": "我从朋友家一直步行走到了学校。"
+        },
+        {
+          "translation": "请试着从1数到10吧。"
+        },
+        {
+          "translation": "我打算从这周末到下周末去旅行。"
+        }
+      ]
+    },
+    "ko_사이_69": {
+      "title": "~사이（之间、期间、关系）",
+      "shortExplanation": "名词，表示两者之间的空间距离、时间跨度，或者人与人之间的交往关系与交情（“……之间”、“关系”）。",
+      "longExplanation": "“사이”具有三项核心语义：一是表示空间上的间隔与距离（如“首尔与釜山之间”）；二是表示两段时间节点当中的夹空时期（如“早餐与午餐之间”）；三是抽象地指代人与人、团体与团体之间的交情与人际关系（如“사이가 좋다 关系融洽”、“사이가 멀어지다 关系疏远”）。常以“A와/과 B 사이”或名词定语的形式构成短语。",
+      "formation": "名词1 + 와/과 + 名词2 + 사이 / 名词 + 사이",
+      "examples": [
+        {
+          "translation": "首尔与釜山之间的距离大约是325公里。"
+        },
+        {
+          "translation": "因为最近和朋友关系不太好，所以都没有联络。"
+        },
+        {
+          "translation": "在早餐和午餐之间吃点点心是很重要的。"
+        },
+        {
+          "translation": "周末期间我和父母之间的关系变得融洽了许多。"
+        }
+      ]
+    },
+    "ko_세요_70": {
+      "title": "~세요（请……、请您……）",
+      "shortExplanation": "敬语非格式体终结词尾，接在动词词干后，用于礼貌客气地向对方发出请求、指令、劝告或温和的提议（“请……”、“请您……”）。",
+      "longExplanation": "“-(으)세요”是由主体尊称词尾“-(으)시-”与非格式体终结词尾“-어요”融合而成的常用敬语表达。在现代口语中被极高频地用于祈使句和劝诱句：向对话方发出彬彬有礼的嘱托、指示或邀请（如“请进”、“请用茶”）。语气兼具亲切与敬重，是日常交际中最为标准适度的礼貌表达。",
+      "formation": "动词词干（有收音：-으세요 / 无收音：-세요）",
+      "examples": [
+        {
+          "translation": "请务必保持安静，这里有很多人正在学习呢。"
+        },
+        {
+          "translation": "一起去吃午饭吧。我知道一家味道很棒的餐厅。"
+        },
+        {
+          "translation": "现在快请学习吧。距离考试没剩多少时间了。"
+        },
+        {
+          "translation": "请跟我来。我会为您带路以免走丢。"
+        }
+      ]
+    },
+    "ko_아어_71": {
+      "title": "~아/어 보다（试着……、尝一尝、体验……）",
+      "shortExplanation": "补助动词构式，接在动词词干后，表示尝试做某事以观察其效果或获得体验（“试着……做”、“尝尝看……”）。",
+      "longExplanation": "“~아/어 보다”由连接词尾“-아/어”与补助动词“보다（看）”复合而成。其核心语法功能是表达尝试性的实践行动，即通过亲自进行某一动作来体验其过程或探知结果（相当于汉语的“试一试”、“做做看”）。此外，当以过去时形式“-아/어 봤다”出现时，还用于表达人生阅历和经验（“曾经做过某事”）。",
+      "formation": "动词词干（阳性元音 ㅏ, ㅗ: -아 보다；其他阴性元音: -어 보다；하다 -> 해 보다）",
+      "examples": [
+        {
+          "translation": "我打算尝试学习一下韩语，感觉会很有趣呢。"
+        },
+        {
+          "translation": "我现在打算尝尝看肉类，很好奇到底会是什么滋味。"
+        },
+        {
+          "translation": "我决定去挑战一下这份新工作，我认为勇于挑战自我是一件好事。"
+        },
+        {
+          "translation": "今天我第一次体验了有导游陪同的观光游览，是一段非常有趣的经历。"
+        }
+      ]
+    },
+    "ko_아어_72": {
+      "title": "~아/어 버리다（……掉了、……光了、遗憾地……了）",
+      "shortExplanation": "补助动词构式，表示某动作已经彻底完成并不留余地，通常伴随说话人遗憾、惋惜的心理感受，或事情了结后的轻松解脱感。",
+      "longExplanation": "“~아/어 버리다”由连接词尾“-아/어”与补助动词“버리다（丢弃）”结合而成。它不仅表示一个动作行为的彻底终结与终了，更重点融入了说话人强烈的心理色彩：一方面多用于因非本意事件的发生而感到懊悔、惋惜或遗憾（如“把钥匙弄丢了”、“说漏嘴了”）；另一方面也可用于表达卸下重担后的轻松释怀感（如“一口气把作业全写完了”）。",
+      "formation": "动词词干（阳性元音 ㅏ, ㅗ: -아 버리다；其他阴性元音: -어 버리다；하다 -> 해 버리다）",
+      "examples": [
+        {
+          "translation": "我太快就把作业全做完了，现在什么事情都没得做了。"
+        },
+        {
+          "translation": "昨天在足球比赛中我们队输掉了，结果遭到了公司同事们的起哄嘲弄。"
+        },
+        {
+          "translation": "朋友当成玩笑对我撒了谎，因此我的心情很不好。"
+        },
+        {
+          "translation": "我早晨早早地就出发了，却因为交通堵塞在路上耽搁了大量时间。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_마다_58": {
+      "title": "~마다（〜ごとに、〜たびに、〜のたびに、どの〜も）",
+      "shortExplanation": "名詞の後について、一定の時間間隔で何かが規則的・周期的に繰り返されることや、すべての対象に漏れなく当てはまることを表す助詞です（「〜ごとに」「〜のたび」「どの〜も」）。",
+      "longExplanation": "「~마다」は、時間を表す名詞（朝、週末、日など）や一般的な名詞の後ろに付く助詞で、日本語の「〜ごとに」「〜たびに」「どの〜も」に相当します。特定の時間間隔で同じ出来事や行為が規則的に反復される様子や、ある集合に含まれる全ての対象の一つひとつに例外なく該当する様子を表します。",
+      "formation": "名詞 ＋ 마다",
+      "examples": [
+        {
+          "translation": "私は毎朝運動をしています。健康のために欠かせない習慣です。"
+        },
+        {
+          "translation": "ここは昼休みになるたびに人が多くなり、席を取るのが大変です。"
+        },
+        {
+          "translation": "母は週末ごとに休むことなく大掃除をします。"
+        },
+        {
+          "translation": "バッグの中には水筒ごとに小さな間食が一つずつ入っています。"
+        }
+      ]
+    },
+    "ko_만_59": {
+      "title": "~만（〜だけ、〜のみ、〜ばかり）",
+      "shortExplanation": "名詞や代名詞の後について、それ以外のものを排除し、その対象だけに限定することを表す助詞です（「〜だけ」「〜のみ」）。",
+      "longExplanation": "「~만」は限定を表す補助詞で、日本語の「〜だけ」「〜のみ」に相当します。他の選択肢や対象を排除して、その特定の対象だけに限るという排他的なニュアンスを表します。主格助詞（-이/가）や目的格助詞（-을/를）に代わって用いられることが多く、他の副詞格助詞と結合して「-에만（〜にだけ）」「-에서만（〜でだけ）」といった形でも頻繁に使われます。",
+      "formation": "名詞 ＋ 만",
+      "examples": [
+        {
+          "translation": "私はコーヒーだけを飲みました。他の飲み物は全く飲みませんでした。"
+        },
+        {
+          "translation": "私だけがその事実を知っています。他の人たちは知らないようでした。"
+        },
+        {
+          "translation": "今週末は休むことだけを考えています。他のことはしないつもりです。"
+        },
+        {
+          "translation": "彼は友達にだけ会いに行き、家族には会いませんでした。"
+        }
+      ]
+    },
+    "ko_만_60": {
+      "title": "~만 하다（ちょうど良い、〜に値する、〜だけで十分だ）",
+      "shortExplanation": "程度や数量、状態がある基準にちょうど適していることや、十分満たされていることを表す表現です（「ちょうど〜くらいだ」「〜だけで十分だ」）。",
+      "longExplanation": "「~만 하다」は、名詞について大きさがそれと同等であることを表す用法（「〜ほどの大きさだ」）のほか、動詞や形容詞と結びついて（「-기만 하다」や「-(으)ㄹ 만하다」と関連して）、ある行為をするのに状態や分量がちょうど適している、あるいはそれだけで十分に事足りる状態を表します。「過不足なく適度である」「ちょうどよい」というニュアンスを込めて用いられます。",
+      "formation": "動詞・形容詞の語幹 ＋ 만 하다（または -기만 하다 / -(으)ㄹ 만하다）、名詞 ＋ 만 하다",
+      "examples": [
+        {
+          "translation": "このくらいの分量ならちょうどいいと思います。これ以上は必要ありません。"
+        },
+        {
+          "translation": "食べ物が熱すぎるときは水を足して、ちょうど食べられる程度にすることができます。"
+        },
+        {
+          "translation": "試験勉強は十分にやったので、今日は休養を取るだけで十分です。"
+        },
+        {
+          "translation": "この音楽は邪魔にならないほど静かなので、仕事をしながら聴くのにちょうどいいですね。"
+        }
+      ]
+    },
+    "ko_만큼_61": {
+      "title": "~만큼（〜ほど、〜くらい、〜と同じくらい、〜だけ）",
+      "shortExplanation": "名詞や連体形の後について、程度や数量、状態が前の基準と同等であることを表します（「〜ほど」「〜くらい」「〜の分だけ」）。",
+      "longExplanation": "「~만큼」は、体言（名詞）に直接付く場合は助詞として、動詞・形容詞の連体形（-(으)ㄴ/는/(으)ㄹ）に付く場合は依存名詞（形式名詞）として機能します。前節で提示された基準や分量と同じ程度であることを示し、「〜と同じくらい」「努力した分だけ」のように、事態が正比例して対応することを表す際にも非常によく用いられます。",
+      "formation": "名詞 ＋ 만큼、動詞・形容詞の連体形（-(으)ㄴ/는/(으)ㄹ） ＋ 만큼",
+      "examples": [
+        {
+          "translation": "彼は自分の実力に見合うだけの報酬を受け取りたがっています。"
+        },
+        {
+          "translation": "あなたが努力した分だけ、結果がついてくるはずです。"
+        },
+        {
+          "translation": "彼女は他の人たちと同じくらい上手に歌うことができます。"
+        },
+        {
+          "translation": "この料理は見かけに違わずおいしいです。"
+        }
+      ]
+    },
+    "ko_며면서_62": {
+      "title": "~며 / ~면서（〜しながら、〜しつつ、〜でありながら）",
+      "shortExplanation": "同一の主語が二つの動作を同時に行うこと（「〜しながら」）や、二つの状態・資格が並行して存在することを表す接続語尾です。",
+      "longExplanation": "「~며」「~면서」（パッチムがある場合は「-으며 / -으면서」）は、同時並行を表す代表的な接続語尾です。主語が同一であることが原則で、一つの主体が同時に二つの動作を行う様子（「音楽を聴きながらメッセージを確認する」など）を表します。また動作だけでなく、「教師でありながら作家でもある」のように二重の身分や性質を並列して述べる際にも用いられます。",
+      "formation": "動詞・形容詞の語幹（パッチム有：-으며 / -으면서；パッチム無：-며 / -면서）",
+      "examples": [
+        {
+          "translation": "家に帰るとき、音楽を聴きながらメッセージを確認します。"
+        },
+        {
+          "translation": "学校に入学する前、一生懸命勉強しながら他の活動にも参加しました。"
+        },
+        {
+          "translation": "映画を見ながらポップコーンを食べるのが好きです。"
+        },
+        {
+          "translation": "運動しながらニュースを見るほうです。同時に健康情報も調べたりします。"
+        }
+      ]
+    },
+    "ko_면_63": {
+      "title": "~면（〜（す）れば、〜なら、〜たら）",
+      "shortExplanation": "前節が後節の条件や仮定であることを表す最も基本的な接続語尾です（「〜ば」「〜たら」「〜なら」）。",
+      "longExplanation": "「-(으)면」は、韓国語における条件・仮定を表す最も基本的かつ代表的な接続語尾です。動詞や形容詞の語幹について、「もし前節の事態が成り立つならば、後節の事態が生じる・これを行う」という関係を示します。一般的な仮定だけでなく、「春になれば花が咲く」のような恒常的条件や規則的な習慣、契機を表す際にも日常的に使われます。",
+      "formation": "動詞・形容詞の語幹（パッチム有：-으면 / パッチム無：-면）、名詞 ＋ (이)면",
+      "examples": [
+        {
+          "translation": "明日雨が降れば、私たちは公園に行きません。"
+        },
+        {
+          "translation": "会いたいならその人に電話をしてください。"
+        },
+        {
+          "translation": "たくさん勉強すれば試験に合格できます。"
+        },
+        {
+          "translation": "最終バスを逃したらタクシーに乗らなければなりません。"
+        }
+      ]
+    },
+    "ko_면_64": {
+      "title": "~면 어때(요)（〜したらどう？、〜するのはどうですか？）",
+      "shortExplanation": "提案や提案に対する相手の意向を尋ねる表現で、「〜したらどう？」「〜してみたらどうですか？」と相手に柔らかく勧める際に用います。",
+      "longExplanation": "「~면 어때(요)」は、条件の接続語尾「-(으)면」と状態を尋ねる疑問形「어때（どう）」が組み合わさった慣用語尾です。相手に対して「こうしてみるのはどうだろうか」と代替案や新しい行動を提案し、その反応や意見を優しく伺う際に用いられます。押し付けがましくない親和的なニュアンスを持ちます。",
+      "formation": "動詞・形容詞の語幹（パッチム有：-으면 / パッチム無：-면） ＋ 어때(요)",
+      "examples": [
+        {
+          "translation": "天気がいいから、私たち公園で遊ぶのはどう？"
+        },
+        {
+          "translation": "悩みが多そうに見えるよ。少しジムに行って運動してみたらどう？"
+        },
+        {
+          "translation": "時間がないんですか？それなら出前を取ってみたらどうですか？"
+        },
+        {
+          "translation": "この問題をこのように解決してみるのはどうでしょうか？"
+        }
+      ]
+    },
+    "ko_면서도_65": {
+      "title": "~면서도（〜でありながらも、〜していながら、〜なのに）",
+      "shortExplanation": "二つの動作や状態が同時に存在しながらも、それらが互いに矛盾したり対比を成したりしていることを表す接続語尾です（「〜でありながらも」「〜なのに」）。",
+      "longExplanation": "「~면서도」（パッチムがある場合は「-으면서도」）は、同時の「-면서」に強調の助詞「-도（〜も）」が付いた形です。一つの主体の中に相反する二つの事実や態度が並存している様子を浮き彫りにし、「〜のくせに」「〜していながらも実は…」といった意外性、逆接、矛盾のニュアンスを際立たせる際に用いられます。",
+      "formation": "動詞・形容詞の語幹（パッチム有：-으면서도 / パッチム無：-면서도）、名詞 ＋ (이)면서도",
+      "examples": [
+        {
+          "translation": "彼女は驚くべきことに、働きながらも学校の勉強を続けています。それなのにいつも成績は極めて優秀なほうです。"
+        },
+        {
+          "translation": "この映画は苦労して作られましたが、面白くもありながら教訓的な内容を含んでいます。"
+        },
+        {
+          "translation": "彼は健康を維持しながらも毎日残業をしています。それなのにいつも活気に溢れています。"
+        },
+        {
+          "translation": "冬でありながらも天気が暖かく、アウトドア活動をするのに適しています。"
+        }
+      ]
+    },
+    "ko_밖에_66": {
+      "title": "~밖에（〜しか（〜ない）、〜のほかに（〜ない））",
+      "shortExplanation": "名詞の後について、必ず後続節に否定表現を伴い、その対象以外には存在しない・それしか選択肢がないことを強調する助詞です（「〜しか…ない」）。",
+      "longExplanation": "「~밖에」は、日本語の「〜しか（…ない）」に完全に一致する否定呼応の助詞です。後続する述語には必ず否定形（없다, 모르다, 안, 못 など）が伴わなければならず、「その対象の外側には何もない」という直義から転じて、「それだけが唯一である」「それ以外の道はない」という強い限定や余儀なさを表します。肯定文で使える「~만」よりも切迫したニュアンスを持ちます。",
+      "formation": "名詞 ＋ 밖에 ＋ 否定述語（안 / 못 / 없다 / 모르다 など）",
+      "examples": [
+        {
+          "translation": "私はコーヒーしか飲みません。他の飲み物は飲む必要がないからです。"
+        },
+        {
+          "translation": "この試験を準備するためには私しかいないようです。他の人たちは準備しませんでしたから。"
+        },
+        {
+          "translation": "彼女は自分の誕生日しか覚えていません。他の重要な日付は忘れてしまったそうです。"
+        },
+        {
+          "translation": "私はピザしか食べませんでした。他の食べ物はおいしくなかったのです。"
+        }
+      ]
+    },
+    "ko_부터_67": {
+      "title": "~부터（〜から、〜から始めて）",
+      "shortExplanation": "名詞の後について、時間、順序、空間などの起点・出発点を表す助詞です（「〜から」「〜より」）。",
+      "longExplanation": "「~부터」は、動作や状態が始まる起点を表す代表的な助詞で、日本語の「〜から」に相当します。特に時間を表す名詞（「7時から」「今週末から」）や順序を表す名詞（「初めから」「易しいものから」）の後ろによく付き、物事の開始点を明確に指示します。空間的な出発点を表す際にも、「~까지（〜まで）」とセットで用いられることが多くあります。",
+      "formation": "名詞 ＋ 부터",
+      "examples": [
+        {
+          "translation": "私は朝7時から仕事に行きます。"
+        },
+        {
+          "translation": "今週末から旅行の計画を立てようと思っています。"
+        },
+        {
+          "translation": "ソウルから釜山まで列車で何時間かかりますか。"
+        },
+        {
+          "translation": "2012年から韓国を愛するようになりました。"
+        }
+      ]
+    },
+    "ko_부터_68": {
+      "title": "~부터 ~까지（〜から〜まで）",
+      "shortExplanation": "起点と終点を表す二つの助詞が対になり、時間、空間、数量などの範囲や区間を包括して表します（「〜から〜まで」）。",
+      "longExplanation": "「~부터 ~까지」は、物事の始まりを示す「부터」と終わりを示す「까지」が呼応した構文で、日本語の「〜から〜まで」に直結します。何時から何時までといった時間の区間、ある地点からある地点までの空間的な広がり、1から10までの数値的範囲などを包括的に示す際に最も基礎的かつ普遍的に用いられます。",
+      "formation": "名詞1 ＋ 부터 ＋ 名詞2 ＋ 까지",
+      "examples": [
+        {
+          "translation": "私は朝8時から夕方6時まで働きます。"
+        },
+        {
+          "translation": "友達の家から学校まで歩いて行きました。"
+        },
+        {
+          "translation": "1から10まで数えてみてください。"
+        },
+        {
+          "translation": "今週末から来週末まで旅行に行こうと思っています。"
+        }
+      ]
+    },
+    "ko_사이_69": {
+      "title": "~사이（〜の間、〜のあいだ、仲・関係）",
+      "shortExplanation": "二つの対象の間に位置する空間的距離や時間的間隔を表すほか、人と人との人間関係や間柄を表す名詞です（「〜の間」「仲」）。",
+      "longExplanation": "「사이」は多面的な意味を持つ名詞です。（1）物理的な空間の隔たり（「都市と都市の間」）、（2）時間の合間・インターバル（「朝食と昼食の間」）、（3）人と人との情緒的な間柄や交友関係（「사이가 좋다 仲が良い」「사이가 나쁘다 仲が悪い」）を表します。日常会話では助詞「-에（〜に）」と結びついて時間を表したり、「-가/이」と結びついて関係性の良し悪しを述べたりします。",
+      "formation": "名詞1 ＋ 와/과 ＋ 名詞2 ＋ 사이 / 名詞 ＋ 사이",
+      "examples": [
+        {
+          "translation": "ソウルと釜山の間の距離は約325kmです。"
+        },
+        {
+          "translation": "友達と仲があまり良くないので、最近は連絡をしていません。"
+        },
+        {
+          "translation": "朝食と昼食の間に間食をとることが大切です。"
+        },
+        {
+          "translation": "週末の間に両親との仲がとても良くなりました。"
+        }
+      ]
+    },
+    "ko_세요_70": {
+      "title": "~세요（〜（し）てください、〜なさい、〜しましょう）",
+      "shortExplanation": "丁寧で親しみのある敬語の終結語尾で、相手に丁寧に依頼や指示、勧めをする際に用います（「〜してください」「〜なさってください」）。",
+      "longExplanation": "「-(으)세요」は、主体尊敬の接尾辞「-(으)시-」にヘヨ体の終結語尾「-어요」が融合した敬語表現です。日常会話において相手を尊重しながら、指示、懇願、助言、依頼を行う際の最も標準的で親和的な表現です。「どうぞ〜してください」「〜しましょう」といった相手への思いやりと敬意がこもった柔らかいニュアンスを持ちます。",
+      "formation": "動詞の語幹（パッチム有：-으세요 / パッチム無：-세요）",
+      "examples": [
+        {
+          "translation": "どうか静かにしてください。ここで勉強している人が大勢います。"
+        },
+        {
+          "translation": "一緒にお昼を食べに行きましょう。おいしいお店を知っているんです。"
+        },
+        {
+          "translation": "今勉強してください。試験までもうあまり時間がありません。"
+        },
+        {
+          "translation": "私について来てください。道に迷わないようご案内します。"
+        }
+      ]
+    },
+    "ko_아어_71": {
+      "title": "~아/어 보다（〜してみる、〜してみようとする）",
+      "shortExplanation": "動詞の語幹について、新しい経験や結果を確かめるために試しにその行為を行ってみることを表す補助動詞構文です（「〜してみる」）。",
+      "longExplanation": "「~아/어 보다」は、動詞に接続して「試しに〜してみる」「〜してみて様子を伺う」という意味を表す補助用言です。何かを初めて体験しようとする意図や試みを表すほか、過去形「-아/어 봤다」の形をとることで、「〜したことがある」という過去の経験を表す表現としても広く機能します。",
+      "formation": "動詞の語幹（陽母音 ㅏ/ㅗ：-아 보다；陰母音：-어 보다；하다 語幹：해 보다）",
+      "examples": [
+        {
+          "translation": "私は韓国語の勉強をしてみようと思っています。面白そうですね。"
+        },
+        {
+          "translation": "私はこれからお肉を食べてみようと思います。どんな味なのか気になります。"
+        },
+        {
+          "translation": "私はこの新しい仕事をしてみることに決めました。挑戦することは良いことだと思います。"
+        },
+        {
+          "translation": "今日初めてガイドツアーを試してみましたが、とても楽しい経験でした。"
+        }
+      ]
+    },
+    "ko_아어_72": {
+      "title": "~아/어 버리다（〜してしまう、〜してしまった）",
+      "shortExplanation": "動作が完全に完了したことを表す補助動詞構文で、物事が完全に終わってすっきりした気持ちや、取り返しのつかない事態に対する後悔・残念な気持ちを表します（「〜してしまう」）。",
+      "longExplanation": "「~아/어 버리다」は、動詞について動作が跡形もなく完全に完了したことを表す表現で、日本語の「〜してしまう」「〜してしまった」に相当します。心理的ニュアンスとして、(1) 想定外の結果や不本意な事態に対する残念さ・遺憾・後悔の気持ちを込める場合と、(2) 負担だった事柄を完全にやり遂げて肩の荷が下りたすっきり感を表す場合の両方で用いられます。",
+      "formation": "動詞の語幹（陽母音 ㅏ/ㅗ：-아 버리다；陰母音：-어 버리다；하다 語幹：해 버리다）",
+      "examples": [
+        {
+          "translation": "私は宿題をあまりにも早く終わらせてしまって、もうこれ以上やることがありません。"
+        },
+        {
+          "translation": "昨日のサッカーの試合で私たちのチームが負けてしまい、会社の同僚たちからからかわれました。"
+        },
+        {
+          "translation": "友達が私に冗談で嘘をついてしまったので、私は気分が良くありません。"
+        },
+        {
+          "translation": "私は朝早くに出発してしまったのですが、交通渋滞のせいで道で多くの時間を過ごしました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_마다_58": {
+      "title": "~마다 (주기적 반복·망라의 보조사)",
+      "shortExplanation": "시간을 나타내는 명사나 일반 명사 뒤에 붙어, 어떤 일이 일정한 주기로 규칙적으로 되풀이되거나 대상의 낱낱에 모두 해당함을 나타내는 보조사입니다.",
+      "longExplanation": "'~마다'는 명사 뒤에 결합하여 '하나도 빠짐없이 모두'라는 망라의 뜻을 나타내거나, 특정 시간 단위 뒤에 쓰여 어떤 동작이나 사건이 주기적·규칙적으로 반복됨을 나타내는 보조사입니다. 시간 명사(예: 아침, 주말, 해)와 어울려 일정한 시간 간격에 따른 일상적 반복을 표현하거나, 일반 명사 뒤에서 개별 대상 전체를 아우를 때 널리 쓰입니다.",
+      "formation": "명사 + 마다",
+      "examples": [
+        {
+          "translation": "나는 매일 아침마다 운동을 해요. 건강을 위해 꼭 필요한 습관이에요."
+        },
+        {
+          "translation": "이곳은 점심시간마다 사람이 많아져서 자리를 잡기 힘들어요."
+        },
+        {
+          "translation": "우리 엄마는 주말마다 쉬지 않고 대청소를 해요."
+        },
+        {
+          "translation": "가방 안에는 물병마다 작은 간식이 하나씩 들어 있어요."
+        }
+      ]
+    },
+    "ko_만_59": {
+      "title": "~만 (한정·단독의 보조사)",
+      "shortExplanation": "명사나 대명사 뒤에 붙어 다른 것은 배제하고 오직 그 대상 하나만으로 한정함을 나타내는 보조사입니다 ('오직', '단지').",
+      "longExplanation": "'~만'은 체언(명사, 대명사, 수사) 뒤에 붙어 어떤 대상을 다른 것과 구별하여 배타적으로 한정하는 뜻을 나타내는 대표적인 보조사입니다. 주격 조사(-이/가)나 목적격 조사(-을/를)의 자리에 단독으로 쓰이거나, 부사격 조사 뒤에 결합하여('-에만', '-에서만', '-에게만') 특정 범위나 대상만을 유일하게 지칭하는 기능을 합니다.",
+      "formation": "명사 + 만",
+      "examples": [
+        {
+          "translation": "저는 커피만 마셨어요. 다른 음료는 전혀 마시지 않았어요."
+        },
+        {
+          "translation": "나만 그 사실을 알고 있어요. 다른 사람들은 모르더라고요."
+        },
+        {
+          "translation": "이번 주말에는 휴식만 취할 생각이에요. 다른 건 안 하려고요."
+        },
+        {
+          "translation": "그는 친구들만 만나러 갔고, 가족은 만나지 않았어요."
+        }
+      ]
+    },
+    "ko_만_60": {
+      "title": "~만 하다 (정도·적합·충족의 보조형용사/구성)",
+      "shortExplanation": "어떤 사물의 크기나 분량, 상태가 일정한 수준에 꼭 알맞거나 충분함을 나타내는 표현입니다 ('딱 적당하다', '충분하다').",
+      "longExplanation": "'~만 하다'는 명사 뒤에 붙어 크기나 한도가 그에 견줄 만함을 나타내거나(예: '집채만 하다'), 용언과 어우러져('-기만 하다' 혹은 '-(으)ㄹ 만하다' 맥락) 특정 동작이나 조건을 수행하기에 과부족 없이 꼭 알맞고 충분함을 나타냅니다. 상황이나 양이 더 이상의 추가가 필요 없을 만큼 온당하거나 딱 들어맞는 상태를 묘사할 때 유용하게 쓰입니다.",
+      "formation": "동사·형용사 어간 + 만 하다 (또는 -기만 하다 / -(으)ㄹ 만하다), 명사 + 만 하다",
+      "examples": [
+        {
+          "translation": "이 정도 양이면 딱 만 하다고 생각해요. 더 이상 필요 없어요."
+        },
+        {
+          "translation": "음식이 너무 뜨거울 때는 물을 넣어서 딱 먹기만 하게 만들 수 있어요."
+        },
+        {
+          "translation": "시험 공부는 충분히 했으니 오늘은 휴식만 하면 될 만 해요."
+        },
+        {
+          "translation": "이 음악은 방해가 안 될 정도로 조용해서 일하면서 듣기만 하네요."
+        }
+      ]
+    },
+    "ko_만큼_61": {
+      "title": "~만큼 (동등한 정도·비례의 보조사·의존명사)",
+      "shortExplanation": "명사 뒤나 관형사형 어미 뒤에 쓰여, 앞의 대상과 비슷한 정도나 한도, 혹은 그에 상응하는 비례를 나타냅니다 ('~정도로', '~한 분량만큼').",
+      "longExplanation": "'~만큼'은 체언 뒤에 직접 붙을 때는 보조사로, 관형사형 어미 뒤에 쓰일 때는 의존명사로 기능합니다. 앞말이 가리키는 사물의 수량이나 정도에 미침을 나타내거나, 앞 절의 행위나 조건에 정비례하여 뒤 절의 결과가 뒤따름을 표시합니다. '노력한 만큼 얻는다'처럼 자격, 가치, 분량의 동등함을 자연스럽게 표현합니다.",
+      "formation": "명사 + 만큼, 동사·형용사 어간 + -(으)ㄴ/는/(으)ㄹ 만큼",
+      "examples": [
+        {
+          "translation": "그는 자신의 실력만큼 보수를 받고 싶어해요."
+        },
+        {
+          "translation": "당신이 노력한 만큼 결과가 따라올 거예요."
+        },
+        {
+          "translation": "그녀는 남들만큼 노래를 잘 부를 수 있어요."
+        },
+        {
+          "translation": "이 음식은 보이는 만큼 맛있어요."
+        }
+      ]
+    },
+    "ko_며면서_62": {
+      "title": "~며 / ~면서 (동시 동작·상태 겸유의 연결어미)",
+      "shortExplanation": "한 주체가 두 가지 이상의 동작을 동시에 행하거나('~하면서'), 둘 이상의 상태나 자격을 아울러 지니고 있음을 나타내는 연결어미입니다.",
+      "longExplanation": "'~며'와 '~면서'(받침 있는 어간 뒤에서는 '-으며 / -으면서')는 동일한 주어가 둘 이상의 행위를 같은 시간에 함께 진행함을 나타내는 동시 동작의 연결어미입니다. '음악을 들으면서 걷다'처럼 두 행동이 겹쳐 일어남을 뜻하며, 나아가 한 인물이나 대상이 두 가지 자격이나 속성을 겸하고 있음을 병렬적으로 제시할 때도 쓰입니다.",
+      "formation": "동사·형용사 어간(받침 有: -으며 / -으면서; 받침 無: -며 / -면서)",
+      "examples": [
+        {
+          "translation": "집에 갈 때 음악을 들으면서 메시지를 확인해요."
+        },
+        {
+          "translation": "학교에 입학하기 전에 열심히 공부하면서도 다른 활동들에도 참여했어요."
+        },
+        {
+          "translation": "영화를 보면서 팝콘을 먹는 걸 좋아해요."
+        },
+        {
+          "translation": "운동하면서 뉴스를 보는 편이에요. 동시에 건강 정보도 찾아봐요."
+        }
+      ]
+    },
+    "ko_면_63": {
+      "title": "~면 (조건·가정의 연결어미)",
+      "shortExplanation": "앞 절의 사실이 뒤 절의 내용이 이루어지기 위한 조건이거나 가상의 전제임을 나타내는 연결어미입니다 ('만약 ~한다면').",
+      "longExplanation": "'-(으)면'은 한국어에서 가장 기본적이고 널리 쓰이는 조건·가정의 연결어미입니다. 동사나 형용사 어간 뒤에 붙어, 앞 절의 사태가 성립하거나 충족될 때 뒤 절의 결과나 행위, 판단이 뒤따름을 나타냅니다. 단순한 가상적 조건 설정뿐만 아니라, 반복적인 습관이나 일반적인 규칙, 자연법칙을 기술할 때도 널리 활용됩니다.",
+      "formation": "동사·형용사 어간(받침 有: -으면 / 받침 無: -면), 명사 + (이)면",
+      "examples": [
+        {
+          "translation": "내일 비가 오면, 우리는 공원에 가지 않을 거예요."
+        },
+        {
+          "translation": "보고 싶으면 그 사람에게 전화하세요."
+        },
+        {
+          "translation": "많이 공부하면 시험에 붙을 수 있어요."
+        },
+        {
+          "translation": "마지막 버스를 놓치면 택시를 타야 돼요."
+        }
+      ]
+    },
+    "ko_면_64": {
+      "title": "~면 어때(요) (제안·의견 타진의 구성)",
+      "shortExplanation": "상대방에게 어떤 행동이나 대안을 부드럽게 권유하거나 제안하며 그의 생각이나 의향을 물을 때 쓰는 표현입니다 ('~하는 건 어떨까?').",
+      "longExplanation": "'~면 어때(요)'는 조건의 연결어미 '-(으)면' 뒤에 의견을 묻는 형용사 '어때'가 이어진 관용적 표현입니다. 대화 상황에서 상대방에게 새로운 방안이나 선택지를 권하거나 제시하면서, 그에 대한 상대방의 반응이나 의견을 조심스럽고 다정하게 타진할 때 즐겨 쓰입니다.",
+      "formation": "동사·형용사 어간(받침 有: -으면 / 받침 無: -면) + 어때(요)",
+      "examples": [
+        {
+          "translation": "날씨가 좋으니까, 우리 공원에서 놀면 어때?"
+        },
+        {
+          "translation": "걱정이 많아 보여. 잠시 체육관에 가서 운동하면 어때?"
+        },
+        {
+          "translation": "시간이 없다고요? 그럼 음식을 배달하면 어때?"
+        },
+        {
+          "translation": "이 문제를 어떻게 해결하면 어때?"
+        }
+      ]
+    },
+    "ko_면서도_65": {
+      "title": "~면서도 (대립·모순 병존의 연결어미)",
+      "shortExplanation": "동일한 주체에게서 두 가지 사실이나 행위가 동시에 일어나지만, 서로 상반되거나 모순된 관계에 있음을 나타내는 연결어미입니다 ('~하면서도 한편으로는').",
+      "longExplanation": "'~면서도'(받침 있는 어간 뒤에서는 '-으면서도')는 동시 연결어미 '-면서'에 강조의 보조사 '-도'가 결합된 형태입니다. 앞 절의 상태나 행위가 진행되는 가운데 그것과 어울리지 않거나 모순되는 또 다른 상태나 행동이 뒤 절에 공존함을 부각할 때 쓰입니다. 상식적으로 양립하기 힘든 두 국면이 함께 성립하는 데서 오는 놀라움이나 감탄의 뉘앙스를 자연스럽게 풍깁니다.",
+      "formation": "동사·형용사 어간(받침 有: -으면서도 / 받침 無: -면서도), 명사 + (이)면서도",
+      "examples": [
+        {
+          "translation": "그녀는 놀랍게도 일하면서도 학교 공부를 계속하고 있어요. 그런데 항상 성적이 뛰어난 편이에요."
+        },
+        {
+          "translation": "이 영화는 어렵게 만들어졌지만, 재미있으면서도 교훈적인 내용을 담고 있어요."
+        },
+        {
+          "translation": "그는 건강을 유지하면서도 매일 야근을 해요. 그런데도 항상 활기가 넘쳐요."
+        },
+        {
+          "translation": "겨울이면서도 날씨가 따뜻해서, 아웃도어 활동하기에 좋아요."
+        }
+      ]
+    },
+    "ko_밖에_66": {
+      "title": "~밖에 (유일 한정·부정 호응의 보조사)",
+      "shortExplanation": "명사 뒤에 붙고 반드시 뒤에 부정의 서술어(없다, 모르다, 안, 못 등)가 호응하여, 그것 이외에는 다른 선택의 여지가 없음을 강조하는 보조사입니다 ('오직 ~뿐').",
+      "longExplanation": "'~밖에'는 본래 '바깥'을 뜻하는 실질 형태소에서 유래한 보조사로, 반드시 부정어(없다, 안, 못, 모르다 등)를 거느려야 하는 통사적 제약을 지닙니다. '그것 이외의 다른 것은 존재하지 않는다'라는 배타적 전제를 통해, 제시된 대상이 화자에게 유일무이한 것이거나 피할 수 없는 유일한 선택임을 강력하게 드러냅니다.",
+      "formation": "명사 + 밖에 + 부정 서술어 (안 / 못 / 없다 / 모르다 등)",
+      "examples": [
+        {
+          "translation": "나는 커피밖에 마시지 않아. 다른 음료는 마실 필요가 없어서."
+        },
+        {
+          "translation": "이 시험을 준비하기 위해서는 나밖에 없는 것 같아. 다른 사람들은 준비하지 않았거든."
+        },
+        {
+          "translation": "그녀는 자신의 생일밖에 기억하지 못해. 다른 중요한 일자들은 잊어버렸대."
+        },
+        {
+          "translation": "나는 피자밖에 안 먹었어. 다른 음식은 맛이 없더라고."
+        }
+      ]
+    },
+    "ko_부터_67": {
+      "title": "~부터 (시간·순서·공간의 출발점 보조사)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 동작이나 상태가 시작되는 시간, 순서, 공간적 출발점을 나타내는 보조사입니다 ('~에서 시작하여').",
+      "longExplanation": "'~부터'는 어떤 사태나 행동이 비롯되는 첫 시점이나 출발하는 순서적 단초를 나타내는 보조사입니다. 시간 명사(예: 아침, 오늘, 몇 시) 뒤에 쓰여 행위의 시작 시간을 명시하거나, 순서 명사 뒤에서 우선적으로 행해야 할 순번을 지정할 때 널리 쓰입니다. 공간 명사와 어울릴 때는 대개 종점을 나타내는 '까지'와 짝을 이루어 구간의 시발점을 나타냅니다.",
+      "formation": "명사 + 부터",
+      "examples": [
+        {
+          "translation": "저는 아침 7시부터 일하러 가요."
+        },
+        {
+          "translation": "이번 주말부터 여행을 계획하려고 해요."
+        },
+        {
+          "translation": "서울부터 부산까지 기차로 몇 시간 걸리나요?"
+        },
+        {
+          "translation": "2012년부터 코리아를 사랑하게 됐어요."
+        }
+      ]
+    },
+    "ko_부터_68": {
+      "title": "~부터 ~까지 (시간·공간·수량의 시작과 끝 범위)",
+      "shortExplanation": "출발점을 나타내는 '부터'와 종점을 나타내는 '까지'가 호응하여, 시간·공간·수량의 전체 구간 범위를 나타내는 구성입니다 ('~에서 ~까지').",
+      "longExplanation": "'~부터 ~까지'는 어떤 일이나 상태의 시발점과 도달점을 동시에 묶어 제시하는 범위 표현입니다. 시간의 시점과 종점(예: 몇 시부터 몇 시까지), 공간적 구간의 시종점(예: 어디부터 어디까지), 수량이나 서열의 시작과 끝(예: 1부터 10까지)을 총체적으로 아우를 때 쓰이며, 일상 언어생활에서 매우 빈번하게 사용됩니다.",
+      "formation": "명사1 + 부터 + 명사2 + 까지",
+      "examples": [
+        {
+          "translation": "나는 아침 8시부터 저녁 6시까지 일해요."
+        },
+        {
+          "translation": "친구 집부터 학교까지 걸어갔어요."
+        },
+        {
+          "translation": "1부터 10까지 세어 보세요."
+        },
+        {
+          "translation": "이번 주말부터 다음 주말까지 여행을 가려고 해요."
+        }
+      ]
+    },
+    "ko_사이_69": {
+      "title": "~사이 (공간적 간격·시간적 틈·인간관계의 명사)",
+      "shortExplanation": "두 대상의 물리적 거리나 시간적 간격을 나타내거나, 사람과 사람 사이의 사귐과 유대 관계를 나타내는 명사입니다 ('~의 간격', '관계').",
+      "longExplanation": "'사이'는 공간·시간·인간관계의 세 범주에서 쓰이는 다의적 명사입니다. 첫째는 두 지점 사이의 공간적 간격이며, 둘째는 어떤 시점과 시점 사이에 놓인 시간적 틈이나 기간입니다. 셋째는 사람들 사이에 맺어진 친밀도나 교제 관계를 뜻하여 '사이가 좋다/나쁘다'와 같이 관용적으로 매우 빈번하게 사용됩니다.",
+      "formation": "명사1 + 와/과 + 명사2 + 사이 / 명사 + 사이",
+      "examples": [
+        {
+          "translation": "서울과 부산 사이 거리는 약 325km예요."
+        },
+        {
+          "translation": "친구와 사이가 안 좋아서 요즘 연락을 안 해요."
+        },
+        {
+          "translation": "아침과 점심 사이에 간식을 먹는 게 중요해요."
+        },
+        {
+          "translation": "주말 동안 부모님과의 사이가 많이 좋아졌어요."
+        }
+      ]
+    },
+    "ko_세요_70": {
+      "title": "~세요 (정중한 명령·권유의 종결어미)",
+      "shortExplanation": "동사 어간 뒤에 붙어 상대방에게 어떤 행동을 정중하게 요청하거나 공손히 명령·권유할 때 쓰는 해요체 높임 종결어미입니다 ('~해 주세요', '~하십시오').",
+      "longExplanation": "'-(으)세요'는 주체높임의 선어말어미 '-(으)시-'에 비격식 예사높임의 종결어미 '-어요'가 축약된 형태입니다. 일상 구어체 대화에서 상대방을 공경하고 배려하면서 특정한 행동을 하도록 부드럽게 지시하거나 권유, 청유할 때 가장 표준적이고 친근하게 쓰이는 어미입니다.",
+      "formation": "동사 어간(받침 有: -으세요 / 받침 無: -세요)",
+      "examples": [
+        {
+          "translation": "제발 조용히 하세요, 여기서 공부하는 사람들이 많아요."
+        },
+        {
+          "translation": "같이 점심 먹으러 가세요. 제가 맛있는 식당을 알아요."
+        },
+        {
+          "translation": "지금 공부하세요. 시험이 얼마 안 남았어요."
+        },
+        {
+          "translation": "저를 따라 오세요. 길을 잃지 않도록 안내해 드릴게요."
+        }
+      ]
+    },
+    "ko_아어_71": {
+      "title": "~아/어 보다 (시도·경험의 보조용언)",
+      "shortExplanation": "동사 뒤에 연결되어 어떤 행동을 시험 삼아 시도해 보거나('~해 보다'), 과거의 경험을 나타내는 보조용언 구성입니다.",
+      "longExplanation": "'~아/어 보다'는 본동사의 어간에 보조동사 '보다'가 어우러져, 어떤 행위를 시험 삼아 실제로 행하여 결과를 알아보거나 새로운 도전을 시도함을 나타냅니다. 나아가 과거시제 '-았/었-'과 결합하여 '-아/어 보았다'의 꼴을 이룰 때는 삶의 이력에서 우러나온 경험의 유무를 진술하는 데 널리 활용됩니다.",
+      "formation": "동사 어간(양성모음 ㅏ, ㅗ: -아 보다; 음성모음: -어 보다; 하다 -> 해 보다)",
+      "examples": [
+        {
+          "translation": "저는 한국어 공부를 해 보려고 합니다, 재미있을 것 같아요."
+        },
+        {
+          "translation": "나는 이제 고기를 먹어 보려고 합니다, 그것이 어떤 맛인지 궁금해요."
+        },
+        {
+          "translation": "저는 이 새로운 일을 해 보려고 결정했습니다, 도전하는 것이 좋다고 생각합니다."
+        },
+        {
+          "translation": "오늘 첫 가이드 투어를 시도해 보았어요, 그리고 재미있는 경험이었어요."
+        }
+      ]
+    },
+    "ko_아어_72": {
+      "title": "~아/어 버리다 (완료·유감·해도의 보조용언)",
+      "shortExplanation": "동사 뒤에 연결되어 어떤 행동이 완전히 끝나서 남은 것이 없음을 나타내며, 아쉬움·유감이나 부담을 털어낸 후련함을 담아냅니다 ('~해 버리다').",
+      "longExplanation": "'~아/어 버리다'는 동사의 어간에 보조동사 '버리다'가 결합하여 동작의 철저한 완결과 종결을 나타냅니다. 화자의 심리적 태도와 밀접하게 연관되어, (1) 원치 않던 사태가 발생하여 느끼는 안타까움, 섭섭함, 후회나 유감의 정서(예: '비밀을 말해 버렸다'), (2) 부담스러운 과업을 깔끔하게 해치운 데서 오는 홀가분함과 후련함(예: '숙제를 끝내 버렸다')을 풍부하게 전합니다.",
+      "formation": "동사 어간(양성모음 ㅏ, ㅗ: -아 버리다; 음성모음: -어 버리다; 하다 -> 해 버리다)",
+      "examples": [
+        {
+          "translation": "저는 숙제를 너무 빨리 해버렸어요, 이제 더 이상 할게 없어요."
+        },
+        {
+          "translation": "어제 축구 경기에서 우리 팀이 져 버려서 회사 동료들에게 야유를 받았어요."
+        },
+        {
+          "translation": "친구가 나에게 농담으로 거짓말을 해버렸어요, 그래서 저는 기분이 좋지 않아요."
+        },
+        {
+          "translation": "나는 아침에 일찍 출발해 버렸는데, 교통체증 때문에 길에서 많은 시간을 보냈어요."
+        }
+      ]
+    }
+  }
+}

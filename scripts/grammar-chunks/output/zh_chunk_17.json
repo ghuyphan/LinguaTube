@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_实际_243": {
+      "title": "实际 (Danh từ / Tính từ: Thực tế / Thực tiễn)",
+      "shortExplanation": "Dùng làm danh từ chỉ thực tế khách quan, hoặc tính từ chỉ sự cụ thể, phù hợp với sự thật khách quan; 'thực tế', 'thực tiễn'.",
+      "longExplanation": "'实际' (shíjì) có thể làm danh từ hoặc tính từ: (1) Khi làm danh từ, chỉ tình hình hoặc sự vật có thật trong đời sống khách quan, đối lập với lý thuyết hay ảo tưởng (ví dụ: '脱离实际' - thoát ly thực tế, '跟实际不一样' - không giống với thực tế); (2) Khi làm tính từ, chỉ sự việc cụ thể, thực tiễn, có hiệu quả thiết thực (ví dụ: '实际行动' - hành động thực tế, '实际问题' - vấn đề thực tế). Tương đương với 'thực tế', 'thực tiễn' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 跟 / 与 + 实际 + 不一样 / 符合",
+      "examples": [
+        {
+          "translation": "Quảng cáo không giống với thực tế."
+        }
+      ]
+    },
+    "zh_实际上_244": {
+      "title": "实际上 (Phó từ liên kết: Trên thực tế / Thực ra)",
+      "shortExplanation": "Đứng đầu câu hoặc sau chủ ngữ để chuyển hướng ý câu, chỉ rõ bản chất sự thật đối lập với vẻ bề ngoài hay nhận định ban đầu; 'thực tế là', 'trên thực tế', 'thực ra'.",
+      "longExplanation": "'实际上' (shíjìshang) đóng vai trò như một phó từ liên kết hoặc ngữ liên kết đầu câu, dùng để đính chính, làm rõ hoặc bổ sung sự thật khách quan trái ngược với những gì người ta nhìn thấy bề ngoài, nghe đồn hoặc dự đoán trước đó. Thường tương đương với '其实' (kỳ thực) nhưng mang phong thái văn phong khách quan, trung tính hơn. Tương đương với 'trên thực tế', 'thực ra thì', 'thực chất' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，实际上 + Mệnh đề 2 (hoặc: Chủ ngữ + 实际上 + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Quảng cáo nói thì hay, nhưng trên thực tế chưa chắc đã tốt."
+        }
+      ]
+    },
+    "zh_对来说_245": {
+      "title": "对……来说 (Giới từ: Đối với... mà nói / Xét từ góc độ...)",
+      "shortExplanation": "Đặt ở đầu câu hoặc trước vị ngữ, dùng để nêu ra chủ thể nhận định; 'đối với... mà nói', 'xét từ góc độ của...'.",
+      "longExplanation": "Cấu trúc '对 + Đối tượng + 来说' (duì... láishuō) là mẫu câu quen thuộc dùng để xác định góc độ, lập trường hoặc trải nghiệm chủ quan của một đối tượng cụ thể (người, tập thể, hoặc sự vật). Theo sau cấu trúc này là lời nhận xét, đánh giá hoặc cảm nghĩ về tầm quan trọng, mức độ khó dễ, giá trị của sự việc đối với đối tượng đó. Trong văn bản trang trọng có thể dùng '对……而言' (duì... éryán). Tương đương với 'đối với... mà nói', 'với... thì...' trong tiếng Việt.",
+      "formation": "对 + Danh từ / Đại từ + 来说，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Đối với tôi mà nói, cơ hội học tập quan trọng hơn."
+        }
+      ]
+    },
+    "zh_特别_246": {
+      "title": "特别 + Tính từ / Động từ tâm lý (Phó từ mức độ: Đặc biệt... / Vô cùng...)",
+      "shortExplanation": "Đứng trước tính từ hoặc động từ chỉ tâm lý/trạng thái để nhấn mạnh mức độ cao vượt trội; 'đặc biệt...', 'vô cùng...', 'hết sức...'.",
+      "longExplanation": "'特别' (tèbié) khi đóng vai trò là phó từ chỉ mức độ sẽ đứng trước tính từ (như 好, 漂亮, 像) hoặc động từ biểu thị tâm lý, cảm xúc (như 喜欢, 感谢, 关心). Nó diễn tả mức độ vượt qua mức bình thường rất nhiều, mang sắc thái khen ngợi, cảm thán hoặc làm nổi bật tính chất đặc thù. Có thể dùng thay thế cho '非常' hay '格外'. Tương đương với 'đặc biệt...', 'vô cùng...', 'hết sức...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 特别 + Tính từ / Động từ tâm lý",
+      "examples": [
+        {
+          "translation": "Con gái của bác trông đặc biệt giống bác."
+        }
+      ]
+    },
+    "zh_特别尤其_247": {
+      "title": "特别 / 尤其 (Phó từ liên kết: Đặc biệt là / Nhất là...)",
+      "shortExplanation": "Dùng để nêu bật một đối tượng cụ thể hoặc trường hợp điển hình nhất trong một phạm vi đã nhắc đến; thường kết hợp thành '特别是', '尤其是'; 'đặc biệt là...', 'nhất là...'.",
+      "longExplanation": "'特别' (tèbié) và '尤其' (yóuqí) khi dùng để liên kết thường đứng ở vế sau của câu, sau dấu phẩy, thường đi kèm với chữ '是' tạo thành '特别是' hoặc '尤其是'. Cấu trúc này dùng khi vế trước đã nêu một nhận định chung hoặc một nhóm đối tượng, sau đó người nói muốn trích xuất riêng một chi tiết, một bộ phận nổi bật nhất để nhấn mạnh. So với '特别', '尤其' có phong cách trang trọng và thiên về văn viết hơn một chút. Tương đương với 'đặc biệt là...', 'nhất là...', 'riêng...' trong tiếng Việt.",
+      "formation": "Mệnh đề khái quát，特别是 / 尤其是 + Danh từ / Bộ phận nổi bật",
+      "examples": [
+        {
+          "translation": "Con gái của bác trông thật giống bác, đặc biệt là / nhất là đôi mắt."
+        }
+      ]
+    },
+    "zh_特别的_248": {
+      "title": "特别的 + Danh từ (Tính từ làm định ngữ: ...đặc biệt / ...riêng biệt)",
+      "shortExplanation": "'特别' làm tính từ kết hợp với trợ từ kết cấu '的' đứng trước danh từ để bổ nghĩa, biểu thị tính chất khác biệt, đặc thù, khác với thông thường; '...đặc biệt'.",
+      "longExplanation": "'特别' (tèbié) khi đóng vai trò tính từ có ý nghĩa là 'khác thường, độc đáo, đặc thù'. Khi kết hợp với '的' thành cụm '特别的 + Danh từ', nó làm định ngữ để làm rõ rằng sự vật đó không tầm thường, có những tính chất, yêu cầu hoặc ý nghĩa riêng biệt so với mặt bằng chung (ví dụ: '特别的要求' - yêu cầu đặc biệt, '特别的日子' - ngày đặc biệt, '特别的礼物' - món quà đặc biệt). Tương đương với '...đặc biệt', '...riêng biệt' trong tiếng Việt.",
+      "formation": "特别的 + Danh từ",
+      "examples": [
+        {
+          "translation": "Tôi có một yêu cầu đặc biệt."
+        }
+      ]
+    },
+    "zh_竟然VA_249": {
+      "title": "竟然 + Động từ / Tính từ (Phó từ ngữ khí: Lại có thể... / Không ngờ lại...)",
+      "shortExplanation": "Đứng trước động từ hoặc tính từ để diễn tả sự việc xảy ra hoàn toàn bất ngờ, không ngờ tới, nằm ngoài sức tưởng tượng của người nói; 'không ngờ lại...', 'lại có thể...'.",
+      "longExplanation": "'竟然' (jìngrán) là phó từ ngữ khí biểu thị sự bất ngờ mạnh mẽ. Nó đứng trước vị ngữ (động từ hoặc tính từ) để nhấn mạnh rằng một hành động, sự tình hay hiện tượng đã xảy ra hoàn toàn trái với quy luật bình thường, trái với dự liệu của người nói hoặc số đông (ví dụ: '竟然没听过' - không ngờ lại chưa từng nghe, '竟然考了第一名' - không ngờ lại đỗ thủ khoa). Mang sắc thái kinh ngạc, có thể tích cực hoặc tiêu cực tùy ngữ cảnh. Đồng nghĩa với '居然'. Tương đương với 'không ngờ lại...', 'ai mà ngờ...', 'lại có thể...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 竟然 + Động từ / Tính từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Bài hát này cực kỳ hay, dạo này đang rất thịnh hành, cậu mà lại chưa từng nghe qua sao?"
+        }
+      ]
+    },
+    "zh_倍_250": {
+      "title": "Số từ + 倍 (Lượng từ đo lường: Gấp... lần)",
+      "shortExplanation": "Lượng từ '倍' đứng sau số từ dùng để biểu thị bội số, số lần gấp lên của một đại lượng; 'gấp... lần'.",
+      "longExplanation": "'倍' (bèi) là lượng từ chuyên dụng biểu thị bội số trong tiếng Trung: (1) Biểu thị công thức toán học cơ bản: 'A 是 B 的 X 倍' (A gấp X lần B); (2) Biểu thị sự gia tăng số lượng: '增加 / 提高了一倍' (tăng thêm 1 lần, tức là gấp đôi). Lưu ý: '倍' trong tiếng Trung chỉ dùng cho sự gia tăng hoặc bằng bội số nguyên/thập phân, không dùng cho sự giảm sút (giảm sút thì dùng phân số hoặc phần trăm). Tương đương với 'gấp... lần', 'bội số' trong tiếng Việt.",
+      "formation": "Số từ + 倍 (ví dụ: Đối tượng 1 + 是 + Đối tượng 2 + 的 + Số từ + 倍)",
+      "examples": [
+        {
+          "translation": "Hai gấp năm lần là mười."
+        }
+      ]
+    },
+    "zh_值得V_251": {
+      "title": "值得 + Động từ (Động từ năng nguyện: Đáng để... / Xứng đáng...)",
+      "shortExplanation": "Đứng trước động từ (thường là động từ hai âm tiết) biểu thị hành động đó có giá trị, mang lại lợi ích xứng đáng để thực hiện; 'đáng để...', 'bõ công...'.",
+      "longExplanation": "'值得' (zhíde) là động từ biểu thị sự đánh giá về giá trị. Khi kết hợp với một động từ ở phía sau (thường là động từ trừu tượng 2 âm tiết như 考虑 - cân nhắc, 学习 - học hỏi, 参观 - tham quan, 推荐 - giới thiệu), nó chỉ ra rằng kết quả hoặc trải nghiệm thu được hoàn toàn xứng đáng với thời gian, tiền bạc hoặc công sức bỏ ra. Phủ định là '不值得'. Tương đương với 'đáng để...', 'xứng đáng để...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (很 / 都) 值得 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Bác xem cái này xem, dù là nhìn từ góc độ giá cả hay chất lượng, thì đều rất đáng để cân nhắc đấy ạ."
+        }
+      ]
+    },
+    "zh_值值得_252": {
+      "title": "值 / 值得 (Tính từ / Động từ vị ngữ: Đáng giá / Bõ công)",
+      "shortExplanation": "Dùng độc lập làm vị ngữ ở cuối câu để đánh giá một hành vi hay sự việc có bõ công, có đáng giá hay không; thường dùng ở thể phủ định '不值 / 不值得' (không đáng / chả bõ).",
+      "longExplanation": "'值' (zhí) hoặc '值得' (zhíde) có thể đứng độc lập làm thành phần vị ngữ, không cần động từ đi kèm phía sau. Khi dùng như vậy, từ này đóng vai trò đánh giá xem cái giá phải trả (về tâm trạng, tiền bạc, thời gian, sức lực) có tương xứng hay không. Cực kỳ phổ biến trong khẩu ngữ ở dạng phủ định '不值' hoặc '不值得', mang hàm ý 'chẳng bõ', 'không đáng để hao tâm tổn sức vì chuyện cỏn con'. Tương đương với 'đáng giá', 'bõ công' hoặc 'chẳng bõ', 'không đáng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (很) 值 / 值得 (hoặc: Chủ ngữ + 不值 / 不值得)",
+      "examples": [
+        {
+          "translation": "Đừng lúc nào cũng bực mình vì mấy chuyện vặt vãnh, không đáng đâu."
+        }
+      ]
+    },
+    "zh_值_253": {
+      "title": "值 + Số tiền (Động từ: Trị giá... tiền / Đáng giá...)",
+      "shortExplanation": "Động từ '值' nhận tân ngữ là số tiền cụ thể để chỉ giá trị bằng tiền của một đồ vật; 'trị giá...', 'đáng giá...'.",
+      "longExplanation": "'值' (zhí) dùng như một ngoại động từ chỉ giá trị tiền tệ. Khi kết hợp với cụm từ chỉ số tiền (như 五十块, 一千元, 两百万), cấu trúc này biểu thị giá trị định lượng thực tế hoặc ước lượng của một tài sản hay đồ vật nào đó. Khác với '卖' (bán với giá), '值' nhấn mạnh vào giá trị nội tại hoặc giá trị tương xứng của đồ vật. Tương đương với 'đáng giá...', 'trị giá...' trong tiếng Việt.",
+      "formation": "Danh từ (vật phẩm) + 值 + Số từ + Lượng từ tiền tệ",
+      "examples": [
+        {
+          "translation": "Chiếc đồng hồ đeo tay này đáng giá 50 tệ."
+        }
+      ]
+    },
+    "zh_其中_254": {
+      "title": "其中 (Danh từ chỉ phương vị / Đại từ: Trong đó / Trong số đó)",
+      "shortExplanation": "Dùng để chỉ một phần hoặc các đối tượng cụ thể nằm trong một tập hợp, phạm vi tổng thể đã nêu trước đó; 'trong đó', 'trong số đó'.",
+      "longExplanation": "'其中' (qízhōng) là danh từ chỉ phương vị có chức năng như đại từ chỉ định phạm vi. Nó luôn quy chiếu về một tập thể, một số lượng hay một tình huống tổng thể đã được đề cập ở câu trước hoặc vế trước. Thường đứng độc lập ở đầu vế câu sau, hoặc kết hợp thành cụm định ngữ '其中的 + Danh từ' (những... trong số đó). Tương đương với 'trong đó', 'trong số đó', 'ở trong đó' trong tiếng Việt.",
+      "formation": "Phạm vi tổng thể，(Chủ ngữ + ) 其中 (+ 的 + Danh từ) + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Chúng ta không những phải biết đọc sách, mà còn phải biết chọn lọc những cuốn sách hay trong số đó để đọc."
+        }
+      ]
+    },
+    "zh_在SITUATION下_255": {
+      "title": "(在)……下 (Cụm giới từ: Trong hoàn cảnh... / Dưới điều kiện... / Dưới sự...)",
+      "shortExplanation": "Dùng để nêu rõ điều kiện, bối cảnh, hoàn cảnh hoặc sự giúp đỡ, chỉ đạo của người khác mà một sự việc được diễn ra; 'trong hoàn cảnh...', 'dưới sự...'.",
+      "longExplanation": "Cấu trúc '(在)……下' ((zài)... xià) là một kết cấu giới từ chỉ điều kiện hoặc hoàn cảnh: (1) Chỉ điều kiện, hoàn cảnh khách quan: thường đi với '情况' (tình hình), '条件' (điều kiện), '背景' (bối cảnh), ví dụ: '在一般情况下' (trong tình huống thông thường), '在这种条件下' (dưới điều kiện này); (2) Chỉ sự tác động, giúp đỡ hoặc lãnh đạo của con người: ví dụ '在老师的帮助下' (dưới sự giúp đỡ của thầy cô), '在大家的努力下' (dưới sự nỗ lực của mọi người). Giới từ '在' ở đầu cấu trúc có thể lược bỏ trong khẩu ngữ. Tương đương với 'trong hoàn cảnh...', 'dưới điều kiện...', 'dưới sự...' trong tiếng Việt.",
+      "formation": "(在 + ) Danh từ chỉ tình huống / điều kiện + 下，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Trong tình huống thông thường, bạn càng bỏ nhiều tiền ra thì đồ mua được cũng càng tốt."
+        }
+      ]
+    },
+    "zh_估计可能CLAUSE_256": {
+      "title": "估计 / 可能 + Mệnh đề (Động từ / Phó từ ước đoán: Ước tính là... / Có lẽ là...)",
+      "shortExplanation": "Đứng ở đầu một mệnh đề để đưa ra lời phán đoán, phỏng đoán về một sự tình; 'ước tính là...', 'có lẽ là...'.",
+      "longExplanation": "'估计' (gūjì) và '可能' (kěnéng) khi đứng trước cả một mệnh đề đóng vai trò dẫn dắt lời suy đoán: (1) '估计' vốn là động từ có nghĩa là 'ước tính, ước lượng, dự đoán', khi đứng trước mệnh đề mang hàm ý người nói căn cứ vào tình hình thực tế để đưa ra phán đoán có cơ sở; (2) '可能' là phó từ hoặc tính từ biểu thị khả năng xảy ra, 'có thể, có lẽ'. Khi đứng trước cả một phân câu, chúng giúp làm giảm bớt tính khẳng định tuyệt đối, khiến câu nói khách quan, nhã nhặn hơn. Tương đương với 'ước tính...', 'chắc là...', 'có lẽ...' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，估计 / 可能 + Mệnh đề 2 (Mệnh đề phán đoán)",
+      "examples": [
+        {
+          "translation": "Cậu đã đi hỏi thử Tiểu Vương chưa? Chắc là cậu ấy sẽ có cách giải quyết đấy."
+        }
+      ]
+    },
+    "zh_估计可能V_257": {
+      "title": "估计 / 可能 + Động từ (Trạng ngữ ước đoán: Chắc là... / Có lẽ là...)",
+      "shortExplanation": "Đóng vai trò trạng ngữ đứng trước động từ để biểu thị sự phỏng đoán về một hành động, trạng thái hoặc nguyên nhân; 'chắc là...', 'có lẽ là...'.",
+      "longExplanation": "'估计' (gūjì) và '可能' (kěnéng) khi đứng trực tiếp trước động từ (rất thường kết hợp với động từ hệ từ '是' thành '估计是' hoặc '可能不是') giữ chức năng trạng ngữ chỉ sự ước đoán, phỏng đoán lý do hoặc diễn biến của hành động. Người nói không dám khẳng định chắc chắn 100% mà chỉ dựa trên cảm nhận, hiện tượng để giải thích sự việc. Tương đương với 'chắc là...', 'có lẽ là...', 'khả năng là...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 估计 / 可能 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi vẫn chưa quen với khí hậu phương Bắc, chắc là do thời tiết quá khô hanh."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_实际_243": {
+      "title": "实际（名詞・形容詞：実際・現実・実質的）",
+      "shortExplanation": "名詞として客観的な事実や現実を指し、形容詞として具体的・実用的であることを表します（「実際」「現実」「実質的」）。",
+      "longExplanation": "「实际」（shíjì）は名詞および形容詞として幅広く用いられます。(1)名詞としては、理論や空想に対する客観的な現実・実情を指します（例：「脱离实际」＝現実から遊離する、「跟实际不一样」＝実際と異なる）。(2)形容詞としては、実用的・具体的で現実に即していることを表します（例：「实际行动」＝実際の行動、「实际问题」＝現実的な問題）。日本語の「実際」「現実」「実質的」に相当します。",
+      "formation": "主語 ＋ 跟 / 与 ＋ 实际 ＋ 不一样 / 符合",
+      "examples": [
+        {
+          "translation": "広告は実際とは異なります。"
+        }
+      ]
+    },
+    "zh_实际上_244": {
+      "title": "实际上（接続副詞：実際には・実のところ）",
+      "shortExplanation": "文頭または主語の直後に置き、表面的な見かけや事前の予想に反して、真実はどうであるかを述べる際に用います（「実際には」「実のところ」）。",
+      "longExplanation": "「实际上」（shíjìshang）は、文頭や主語の直後に置かれる接続副詞として機能します。表面的な様子や事前の見通し、人々の評判などと異なり、客観的な事実や本質がどうであるかを明確に説明・訂正する際に使われます。「其实」（実は）とほぼ同義ですが、「实际上」の方がより客観的で改まったニュアンスを持ちます。日本語の「実際には」「実のところ」「事実は」に相当します。",
+      "formation": "節1，实际上 ＋ 節2（または：主語 ＋ 实际上 ＋ 述語）",
+      "examples": [
+        {
+          "translation": "広告では耳障りの良いことが言われていますが、実際には必ずしも良いとは限りません。"
+        }
+      ]
+    },
+    "zh_对来说_245": {
+      "title": "对……来说（前置詞構文：〜にとって・〜の見地から言えば）",
+      "shortExplanation": "文頭または主語の前に置き、ある人物の立場や視点から見てどうであるかを提示します（「〜にとって」「〜から言えば」）。",
+      "longExplanation": "「对 + 対象 + 来说」（duì... láishuō）は、特定の人物や組織、事物などの立場・視点を提示し、その対象から見て事態がどのような意味や価値、難易度を持つかを述べる構文です。文頭に置かれて文全体の前提となることが多く、書き言葉では「对……而言」に言い換えることもできます。日本語の「〜にとって」「〜の立場からすると」に相当します。",
+      "formation": "对 ＋ 名詞 / 代名詞 ＋ 来说，主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "私にとって、学ぶ機会の方がより大切です。"
+        }
+      ]
+    },
+    "zh_特别_246": {
+      "title": "特别 ＋ 形容詞 / 心理動詞（程度副詞：特に・非常に・格別に）",
+      "shortExplanation": "形容詞や心理動詞の前に置き、その程度が並外れて高く特別であることを強調します（「特に〜」「非常に〜」）。",
+      "longExplanation": "「特别」（tèbié）が程度副詞として機能する場合、形容詞（好、漂亮、像など）や心理動詞（喜欢、想念、关心など）の直前に置かれます。状態や程度が普通と著しく異なり際立っていること、並外れていることを強調します。「非常」や「格外」とほぼ同様に用いられます。日本語の「特に〜」「とても〜」「格別に〜」に相当します。",
+      "formation": "主語 ＋ 特别 ＋ 形容詞 / 心理動詞",
+      "examples": [
+        {
+          "translation": "娘さんはお母様（お父様）に特によく似ていらっしゃいますね。"
+        }
+      ]
+    },
+    "zh_特别尤其_247": {
+      "title": "特别 / 尤其（接続副詞：特に・取り分け・なかでも）",
+      "shortExplanation": "全体の中で特定の項目や典型的な例を際立たせて引き合いに出す際に、「特别（是）」や「尤其（是）」を用います（「特に〜」「とりわけ〜」「なかでも〜」）。",
+      "longExplanation": "「特别」と「尤其」は、文の後半（読点の後）に置かれ、しばしば「特别是」「尤其是」の形で用いられます。前の節で全体的な状況やグループ全般について言及した後、その中から最も際立った具体例や部分を強調・抽出して提示する役割を持ちます。「尤其」の方が「特别」に比べてより書き言葉的で改まった響きを帯びます。日本語の「特に〜」「とりわけ〜」「なかでも〜」に相当します。",
+      "formation": "総括節，特别是 / 尤其是 ＋ 名詞 / 強調部分",
+      "examples": [
+        {
+          "translation": "娘さんは本当にお母様（お父様）にそっくりですね、特に目が似ています。"
+        }
+      ]
+    },
+    "zh_特别的_248": {
+      "title": "特别的 ＋ 名詞（形容詞限定用法：特別な〜・特殊な〜）",
+      "shortExplanation": "形容詞「特别」に構造助詞「的」を付け、名詞を修飾して並外れて異なっていることや特殊・専用であることを表します（「特別な〜」「特殊な〜」）。",
+      "longExplanation": "「特别」（tèbié）は形容詞として「普通とは違う」「独特である」「特殊である」という意味を持ちます。構造助詞「的」を伴って「特别的 ＋ 名詞」の形をとると、連体修飾語（定語）として機能し、その事物が一般的・通常のものとは異なり、独自の特徴や重要性を持っていることを示します（例：「特别的要求」＝特別な要求、「特别的日子」＝特別な記念日、「特别的礼物」＝特別なプレゼント）。日本語の「特別な〜」「格別の〜」に相当します。",
+      "formation": "特别的 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "私には一つ特別な要望があります。"
+        }
+      ]
+    },
+    "zh_竟然VA_249": {
+      "title": "竟然 ＋ 動詞 / 形容詞（語気副詞：なんと〜・まさか〜・思いがけず）",
+      "shortExplanation": "動詞や形容詞の前に置き、事態が話者の予想や常識を大きく超えていて、「なんと〜」「まさか〜」と驚きや意外さを表します。",
+      "longExplanation": "「竟然」（jìngrán）は、強い意外性や驚愕を表す語気副詞です。述語（動詞または形容詞）の直前に置かれ、事態が話者の常識や予期と正反対の結果になったこと、あるいは起こりそうもないことが実際に起きてしまったことを際立たせます（例：「竟然不知道」＝なんと知らないとは、「竟然考了第一名」＝まさか1位を取るなんて）。「居然」とほぼ同じ意味で用いられます。日本語の「なんと〜」「まさか〜」「思いがけず〜」に相当します。",
+      "formation": "主語 ＋ 竟然 ＋ 動詞 / 形容詞（＋ 目的語 / 補語）",
+      "examples": [
+        {
+          "translation": "この曲はとても良くて最近すごく流行っているのに、まさか聴いたことがないの？"
+        }
+      ]
+    },
+    "zh_倍_250": {
+      "title": "数詞 ＋ 倍（量詞：〜倍）",
+      "shortExplanation": "数詞の後に量詞「倍」を置き、ある数量が基準の何倍にあたるかという倍数を表します（「〜倍」）。",
+      "longExplanation": "「倍」（bèi）は倍数を表す専門の量詞です。(1)基準との比較関係を示す場合：「A 是 B 的 X 倍」（AはBのX倍である）。(2)数値の増加を表す場合：「增加了一倍」（1倍増えた＝2倍になった）。なお、中国語の「倍」は増加や掛け算にのみ用いられ、減少・削減には使えません（減少には分数やパーセンテージを用います）。日本語の「〜倍」に相当します。",
+      "formation": "数詞 ＋ 倍（例：対象1 ＋ 是 ＋ 対象2 ＋ 的 ＋ 数詞 ＋ 倍）",
+      "examples": [
+        {
+          "translation": "2の5倍は10です。"
+        }
+      ]
+    },
+    "zh_值得V_251": {
+      "title": "值得 ＋ 動詞（助動詞的動詞：〜する価値がある・〜するに値する）",
+      "shortExplanation": "動詞（主に2音節動詞）の前に置き、その行動を行うに十分な価値や意義があることを表します（「〜する価値がある」「〜するに値する」）。",
+      "longExplanation": "「值得」（zhíde）は、物事の価値を肯定的に評価する動詞です。後ろに動詞（主に「考虑」「学习」「去」「买」などの行為）を伴い、時間・金銭・労力を投じるだけの十分な見返りや意味があることを表します。否定形は「不值得」（〜する価値がない）となります。日本語の「〜する価値がある」「〜してみる価値がある」「〜するに値する」に相当します。",
+      "formation": "主語 ＋ (很 / 都) 值得 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "こちらをご覧になってみてください。価格の面から見ても品質から見ても、十分に検討する価値がありますよ。"
+        }
+      ]
+    },
+    "zh_值值得_252": {
+      "title": "值 / 值得（述語用法：割に合う・価値がある）",
+      "shortExplanation": "単独で文末の述語として用い、労力や犠牲に見合うだけの価値・収支が釣り合っているかを判定します（否定形「不值 / 不值得」＝「割に合わない」「馬鹿らしい」）。",
+      "longExplanation": "「值」（zhí）と「值得」（zhíde）は、後ろに動詞を従えずに単独で述語になることができます。この用法では、費やしたエネルギー・時間・感情が結果や対象と釣り合っているかどうか（引き合うか・割に合うか）を主観的にジャッジします。特に口語では否定の「不值」「不值得」が多用され、「損である」「馬鹿馬鹿しい」「腹を立てるだけ損だ」というニュアンスを表します。日本語の「割に合う」「価値がある」「（否定で）割に合わない、損だ」に相当します。",
+      "formation": "主語 ＋ (很) 值 / 值得（または：主語 ＋ 不值 / 不值得）",
+      "examples": [
+        {
+          "translation": "ちょっとした些細なことでいちいち腹を立てないでください、損ですよ（割に合いません）。"
+        }
+      ]
+    },
+    "zh_值_253": {
+      "title": "值 ＋ 金額（動詞：〜の値段がする・〜の値打ちがある）",
+      "shortExplanation": "及物動詞「值」の直後に具体的な金額を置き、その物品がいくらの金銭的価値・価格に相当するかを表します（「〜の値段がする」「〜相当の価値がある」）。",
+      "longExplanation": "「值」（zhí）は金銭的価値を表す他動詞として用いられます。直後に金額を表す数量表現（五十块、一万円など）を伴い、その品物の正当な市場価値や評価額がいくらであるかを示します。「卖」（〜の価格で売る）と異なり、「その物自体にそれだけの価値が備わっている」という価値そのものに焦点を当てます。日本語の「〜の値段がする」「〜の値打ちがある」に相当します。",
+      "formation": "名詞（物品） ＋ 值 ＋ 金額（数詞 ＋ 通貨量詞）",
+      "examples": [
+        {
+          "translation": "この腕時計は50元の値打ちがあります。"
+        }
+      ]
+    },
+    "zh_其中_254": {
+      "title": "其中（方位名詞・代名詞：その中・そのうち）",
+      "shortExplanation": "前文ですでに提示された全体的な範囲や集合の内部を指し示します（「その中」「そのうち」）。",
+      "longExplanation": "「其中」（qízhōng）は代名詞的な機能を持つ方位名詞です。前の文やすぐ前の節で挙げられた人や物、出来事といった全体（集合）を指し、「その中」「その範囲内」という意味を表します。文頭に置いて「そのうち、〜」と後続の節を導いたり、「其中的 ＋ 名詞」（その中の〜）の形で連体修飾語として使われたりします。日本語の「その中」「そのうち」に相当します。",
+      "formation": "全体範囲，(主語 ＋ ) 其中 (＋ 的 ＋ 名詞) ＋ 述語",
+      "examples": [
+        {
+          "translation": "私たちはただ本を読むだけでなく、その中から良書を選び取って読む術も身につけなければなりません。"
+        }
+      ]
+    },
+    "zh_在SITUATION下_255": {
+      "title": "(在)……下（前置詞構文：〜の状況下で・〜のもとで）",
+      "shortExplanation": "ある動作や事態が生じる条件・状況・背景（あるいは指導や助け）を提示します（「〜の状況下で」「〜のもとで」）。",
+      "longExplanation": "「(在)……下」（(zài)... xià）は、動作や変化が生じる前提条件や環境を示す前置詞・方位詞の呼応構文です。(1)客観的な状況・環境を表す場合：「情况」「条件」「环境」などの名詞が入り、「在一般情况下」（一般的な状況下では）、「在这样的条件下」（このような条件のもとでは）のように用いられます。(2)人の指導や支援、影響下を表す場合：「在老师的帮助下」（先生の指導・援助のもとで）、「在大家的努力下」（皆の努力のもとで）となります。前置詞「在」はしばしば省略されます。日本語の「〜の状況下で」「〜のもとで」に相当します。",
+      "formation": "(在 ＋ ) 状況 / 条件を表す名詞 ＋ 下，主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "一般的な状況下では、お金を多くかければかけるほど、買う品物も良くなります。"
+        }
+      ]
+    },
+    "zh_估计可能CLAUSE_256": {
+      "title": "估计 / 可能 ＋ 節（動詞・副詞：おそらく〜・推測するに〜）",
+      "shortExplanation": "節の先頭に置き、話者の推測や見立てを提示します（「おそらく〜だろう」「推測するに〜」）。",
+      "longExplanation": "「估计」（gūjì）と「可能」（kěnéng）を節全体の前に置く構文です。(1)「估计」はもともと「見積もる・推測する」という動詞で、現状の根拠に基づいて「私の見立てでは〜だろう」と見込みを述べる働きをします。(2)「可能」は「可能性としてあり得る・おそらく」という意味の副詞／能願動詞で、推測を表します。節の冒頭にこれらを置くことで、断定を避けて柔らかく推測を伝えることができます。日本語の「おそらく〜だろう」「推測するに〜」に相当します。",
+      "formation": "節1，估计 / 可能 ＋ 節2（推測節）",
+      "examples": [
+        {
+          "translation": "王さんに尋ねてみましたか？おそらく彼なら何か良い方法があるはずです。"
+        }
+      ]
+    },
+    "zh_估计可能V_257": {
+      "title": "估计 / 可能 ＋ 動詞（状語：たぶん〜する・おそらく〜である）",
+      "shortExplanation": "動詞述語の直前に状語（連用修飾語）として置き、その動作や状態、あるいは原因を推測します（「たぶん〜である」「おそらく〜する」）。",
+      "longExplanation": "「估计」（gūjì）および「可能」（kěnéng）が動詞（特に繋辞動詞「是」など）の直前に置かれて状語（副詞句）として機能する用法です。動作の生起や事態の原因、理由について、断定を避けて「たぶん〜だろう」「おそらく〜のせいだろう」と推し量るニュアンスを添えます（例：「估计是天气太干」＝たぶん天気が乾燥しすぎているのだろう）。日本語の「たぶん〜だろう」「おそらく〜だと思われる」に相当します。",
+      "formation": "主語 ＋ 估计 / 可能 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "私はまだ北方の気候に慣れていません、たぶん天気が乾燥しすぎているからだと思います。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_实际_243": {
+      "title": "实际 (명사/형용사: 실제, 현실, 실질적)",
+      "shortExplanation": "명사로서 객관적인 사실이나 현실을 가리키며, 형용사로서 실제적이거나 실질적인 상황을 나타냅니다('실제', '현실', '실질적').",
+      "longExplanation": "'实际'(shíjì)는 명사와 형용사로 쓰입니다. (1) 명사로 쓰일 때는 이론이나 상상에 대비되는 객관적인 현실이나 실정을 가리킵니다(예: '脱离实际' 현실에서 벗어나다, '跟实际不一样' 실제와 다르다). (2) 형용사로 쓰일 때는 공허하지 않고 구체적이며 현실에 부합함을 나타냅니다(예: '实际行动' 실제적인 행동, '实际问题' 실질적인 문제). 한국어의 '실제', '현실', '실질적'에 해당합니다.",
+      "formation": "주어 + 跟 / 与 + 实际 + 不一样 / 符合",
+      "examples": [
+        {
+          "translation": "광고는 실제와 다릅니다."
+        }
+      ]
+    },
+    "zh_实际上_244": {
+      "title": "实际上 (접속부사: 사실상, 실제로는, 실은)",
+      "shortExplanation": "문장 앞이나 주어 뒤에 쓰여 겉으로 드러난 모습이나 예상과 달리, 실제 상황이나 진실이 어떠한지를 밝힐 때 씁니다('실제로는', '사실상', '실은').",
+      "longExplanation": "'实际上'(shíjìshang)은 문장 맨 앞이나 주어 뒤에 놓여 접속부사처럼 기능합니다. 겉보기 상태나 세간의 평판, 이전의 추측과는 달리 실제 객관적인 상황이나 본질이 어떠한지를 밝혀줄 때 씁니다. '其实'(사실은)과 뜻이 매우 비슷하지만 '实际上'가 좀 더 객관적이고 논리적인 어감을 띱니다. 한국어의 '실제로는', '사실상', '실은'에 해당합니다.",
+      "formation": "절 1, 实际上 + 절 2 (또는: 주어 + 实际上 + 술어)",
+      "examples": [
+        {
+          "translation": "광고는 그럴듯하게 말하지만, 실제로는 꼭 좋다고 할 수는 없습니다."
+        }
+      ]
+    },
+    "zh_对来说_245": {
+      "title": "对……来说 (개사구: ~에게 있어서, ~의 입장에서 보면)",
+      "shortExplanation": "문두나 주어 앞에 두어, 특정 인물의 입장이나 관점에서 사안을 바라볼 때 씁니다('~에게 있어서', '~의 입장에서 보면').",
+      "longExplanation": "'对 + 대상 + 来说'(duì... láishuō)은 특정 인물이나 집단의 관점, 입장, 또는 기준을 제시하고 그 대상에게 해당 사건이나 조건이 어떤 의미나 가치, 난이도를 가지는지 설명하는 대표적인 개사 틀 구문입니다. 문장 맨 앞에 놓여 문장 전체를 수식하는 경우가 많으며, 서면어에서는 '对……而言'으로 대체되기도 합니다. 한국어의 '~에게 있어서는', '~의 입장에서 보면'에 해당합니다.",
+      "formation": "对 + 명사 / 대명사 + 来说, 주어 + 술어",
+      "examples": [
+        {
+          "translation": "저에게 있어서는 배움의 기회가 더 중요합니다."
+        }
+      ]
+    },
+    "zh_特别_246": {
+      "title": "特别 + 형용사 / 심리동사 (정도부사: 특히, 매우, 각별히)",
+      "shortExplanation": "형용사나 심리동사 앞에 놓여, 상태나 감정의 정도가 보통의 수준을 훨씬 뛰어넘음을 강조합니다('특히 ~하다', '매우 ~하다').",
+      "longExplanation": "'特别'(tèbié)이 정도부사로 쓰일 때는 형용사(예: 好, 漂亮, 像)나 심리동사(예: 喜欢, 感谢, 关心) 바로 앞에 위치합니다. 일반적인 수준이나 기준치를 확연히 넘어서 유독 두드러지거나 남다름을 강조합니다. '非常'(매우)이나 '格外'(유달리)와 유사하게 쓰입니다. 한국어의 '특히 ~하다', '유난히 ~하다', '대단히 ~하다'에 해당합니다.",
+      "formation": "주어 + 特别 + 형용사 / 심리동사",
+      "examples": [
+        {
+          "translation": "따님이 어르신을 특히 많이 닮았네요."
+        }
+      ]
+    },
+    "zh_特别尤其_247": {
+      "title": "特别 / 尤其 (접속부사: 특히, 유독, 그중에서도)",
+      "shortExplanation": "전체 범위나 여러 대상 중에서 특정 항목이나 대표적인 예를 유독 돋보이게 지목할 때 '特别(是)' 또는 '尤其(是)'를 씁니다('특히 ~', '유독 ~', '그중에서도 ~').",
+      "longExplanation": "'特别'와 '尤其'는 뒷절 쉼표 뒤에 놓여 종종 '特别是', '尤其是' 형태로 쓰입니다. 앞 절에서 포괄적인 상황이나 전체 대상을 언급한 다음, 그중에서 가장 두드러지거나 대표적인 부분 하나를 콕 집어 부각시킬 때 활용합니다. '尤其'가 '特别'보다 조금 더 격식 있고 서면어다운 느낌을 줍니다. 한국어의 '특히 ~는', '유독 ~', '그중에서도 특히 ~'에 해당합니다.",
+      "formation": "총괄절, 特别是 / 尤其是 + 명사 / 강조 대상",
+      "examples": [
+        {
+          "translation": "따님이 어르신을 정말 꼭 닮았네요, 특히 눈이 붕어빵이에요."
+        }
+      ]
+    },
+    "zh_特别的_248": {
+      "title": "特别的 + 명사 (형용사 관형어: 특별한 ~, 특수한 ~)",
+      "shortExplanation": "형용사 '特别' 뒤에 구조조사 '的'가 붙어 명사를 수식하며, 일반적이거나 평범한 것과는 구별되는 고유하고 특이한 성질을 나타냅니다('특별한 ~', '남다른 ~').",
+      "longExplanation": "'特别'(tèbié)은 형용사로서 '보통과 다르다', '독특하다', '특수하다'라는 뜻을 지닙니다. 구조조사 '的'와 결합하여 '特别的 + 명사'의 관형어 구조를 형성하면, 해당 명사가 지닌 속성이 평범하지 않고 유별나거나 중요한 의미를 지님을 밝힙니다(예: '特别的要求' 특별한 요구, '特别的日子' 특별한 날, '特别的礼物' 특별한 선물). 한국어의 '특별한 ~', '남다른 ~'에 해당합니다.",
+      "formation": "特别的 + 명사",
+      "examples": [
+        {
+          "translation": "저에게 한 가지 특별한 요구 사항이 있습니다."
+        }
+      ]
+    },
+    "zh_竟然VA_249": {
+      "title": "竟然 + 동사 / 형용사 (어기부사: 뜻밖에도 ~, 놀랍게도 ~, 설마 ~하다니)",
+      "shortExplanation": "동사나 형용사 앞에 놓여, 어떤 일이나 상태가 화자의 상식이나 예상을 크게 벗어나 '뜻밖에도 ~하다', '설마 ~할 줄이야'라는 놀라움과 의외성을 나타냅니다.",
+      "longExplanation": "'竟然'(jìngrán)은 강한 의외성과 놀라움을 표현하는 어기부사입니다. 술어(동사나 형용사) 바로 앞에 놓여, 사태의 결과가 화자의 상식적인 기대나 예측을 빗나가 도저히 상상하지 못했던 방식으로 일어났음을 강조합니다(예: '竟然不知道' 설마 모르다니, '竟然考了第一名' 뜻밖에도 1등을 하다니). '居然'과 의미가 매우 유사합니다. 한국어의 '뜻밖에도 ~하다', '설마 ~하다니', '놀랍게도 ~하다'에 해당합니다.",
+      "formation": "주어 + 竟然 + 동사 / 형용사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "이 노래 정말 좋아서 요즘 엄청 유행하는데, 네가 설마 안 들어봤다고?"
+        }
+      ]
+    },
+    "zh_倍_250": {
+      "title": "수사 + 倍 (양사: ~배)",
+      "shortExplanation": "수사 뒤에 양사 '倍'를 결합하여 특정 수량이 기준량의 몇 배에 달하는지 배수를 나타냅니다('~배').",
+      "longExplanation": "'倍'(bèi)는 배수를 나타내는 전용 양사입니다. (1) 기준량과의 배수 비교를 나타낼 때: 'A 是 B 的 X 倍'(A는 B의 X배이다). (2) 수량의 증가 폭을 나타낼 때: '增加了一倍'(한 배 늘어났다 = 두 배가 되었다). 주의할 점은 중국어에서 '倍'는 수량이 곱절로 늘어나거나 많아질 때만 쓰이며, 감소할 때는 쓸 수 없습니다(감소할 때는 분수나 백분율 사용). 한국어의 '~배'에 해당합니다.",
+      "formation": "수사 + 倍 (예: 대상 1 + 是 + 대상 2 + 的 + 수사 + 倍)",
+      "examples": [
+        {
+          "translation": "2의 5배는 10입니다."
+        }
+      ]
+    },
+    "zh_值得V_251": {
+      "title": "值得 + 동사 (조동사적 동사: ~할 가치가 있다, ~해 볼 만하다)",
+      "shortExplanation": "동사(주로 2음절 동사)를 연결하여, 그 행동을 실행할 만한 충분한 가치나 의의가 있음을 나타냅니다('~할 만한 가치가 있다', '~해 볼 만하다').",
+      "longExplanation": "'值得'(zhíde)는 어떤 행위나 대상의 가치를 긍정적으로 평가하는 동사입니다. 뒤에 주로 2음절 동작 동사(예: 考虑 고려하다, 学习 배우다, 参观 참관하다, 信任 신뢰하다)를 취하여, 그 일에 시간이나 돈, 노력을 들일 만한 충분한 대가와 의의가 있음을 나타냅니다. 부정형은 '不值得'(~할 가치가 없다)입니다. 한국어의 '~할 만한 가치가 있다', '~할 가치가 충분하다'에 해당합니다.",
+      "formation": "주어 + (很 / 都) 值得 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "이것 좀 보세요, 가격 면에서 보나 품질 면에서 보나 모두 충분히 고려해 볼 만한 가치가 있습니다."
+        }
+      ]
+    },
+    "zh_值值得_252": {
+      "title": "值 / 值得 (서술어 용법: 가치가 있다, 수지가 맞다, 아깝지 않다)",
+      "shortExplanation": "단독으로 문장 끝 술어로 사용하여, 노력이나 희생을 치를 만큼 수지타산이 맞거나 가치가 있는지를 판정합니다(부정형 '不值 / 不值得': '가치가 없다', '손해다', '아깝다').",
+      "longExplanation": "'值'(zhí)과 '值得'(zhíde)는 뒤에 다른 동사 없이 단독으로 술어가 될 수 있습니다. 이때는 들인 노력이나 감정, 대가가 결과물과 비교해 수지가 맞는지, 손해는 아닌지를 주관적으로 판단하는 의미를 갖습니다. 특히 구어에서는 부정형인 '不值'나 '不值得'가 매우 자주 쓰이며, 사소한 일에 마음을 쓰거나 대가를 치르는 것이 '아깝다', '손해다', '그럴 가치가 없다'는 어감을 나타냅니다. 한국어의 '수지맞다', '가치가 있다' 또는 '(부정으로) 그럴 가치가 없다', '아깝다', '손해다'에 해당합니다.",
+      "formation": "주어 + (很) 值 / 值得 (또는: 주어 + 不值 / 不值得)",
+      "examples": [
+        {
+          "translation": "늘 사소한 일로 화내지 마세요, 그럴 가치도 없어요(손해예요)."
+        }
+      ]
+    },
+    "zh_值_253": {
+      "title": "值 + 금액 (동사: ~의 가치/값이 나가다, ~원 상당이다)",
+      "shortExplanation": "타동사 '值' 뒤에 구체적인 금액을 목적어로 취하여, 해당 물품이 금전적으로 어느 정도의 가격이나 가치에 달하는지를 나타냅니다('~의 값이 나가다', '~원 상당이다').",
+      "longExplanation": "'值'(zhí)은 금전적 가치를 나타내는 타동사로 쓰입니다. 바로 뒤에 금액을 나타내는 수량 표현(예: 五十块 50위안, 一千块 1000위안)을 취하여, 특정 물건이 지닌 정당한 시장 가격이나 금전적 가치가 얼마인지를 표시합니다. 단순히 판매가를 뜻하는 '卖'(얼마에 팔다)와 달리, '그 물건 자체에 그만한 가치가 있다'는 점에 방점이 찍힙니다. 한국어의 '~의 값이 나가다', '~원 상당이다'에 해당합니다.",
+      "formation": "명사(물품) + 值 + 금액(수사 + 화폐 양사)",
+      "examples": [
+        {
+          "translation": "이 손목시계는 50위안의 가치가 나갑니다."
+        }
+      ]
+    },
+    "zh_其中_254": {
+      "title": "其中 (방위명사/대명사: 그중, 그 가운데)",
+      "shortExplanation": "앞서 제시된 전체 범위나 집합의 내부 및 그에 속한 일부분을 가리킵니다('그중', '그 가운데').",
+      "longExplanation": "'其中'(qízhōng)은 대명사적 기능을 겸하는 방위명사입니다. 앞 문장이나 앞 구절에서 이미 거론된 복수의 대상, 집합, 혹은 전체 상황을 가리키며 '그 범위의 안' 혹은 '그 가운데 속한 일부분'을 뜻합니다. 단독으로 뒷절의 주어 자리에 쓰이거나 '其中的 + 명사'(그중의 ~) 형태로 명사를 수식하는 관형어로도 널리 활용됩니다. 한국어의 '그중', '그 가운데'에 해당합니다.",
+      "formation": "전체 범위, (주어 + ) 其中 (+ 的 + 명사) + 술어",
+      "examples": [
+        {
+          "translation": "우리는 책을 읽을 줄 알아야 할 뿐만 아니라, 그중에서 좋은 책을 골라 읽을 줄도 알아야 합니다."
+        }
+      ]
+    },
+    "zh_在SITUATION下_255": {
+      "title": "(在)……下 (개사구: ~한 상황/조건 하에서, ~의 도움 아래)",
+      "shortExplanation": "특정 동작이나 사태가 일어나는 배경, 조건, 상황(또는 타인의 지도나 도움)을 나타냅니다('~한 상황 하에서', '~의 상황 속에서').",
+      "longExplanation": "'(在)……下'((zài)... xià)는 동작이나 변화가 일어나는 전제 조건이나 배경을 제시하는 대표적인 개사 틀 구문입니다. (1) 객관적인 상황이나 환경을 나타낼 때: '情况'(상황), '条件'(조건), '背景'(배경) 등의 명사가 결합하여 '在一般情况下'(일반적인 상황 하에서는), '在这种条件下'(이러한 조건 속에서)처럼 쓰입니다. (2) 사람의 도움, 지도, 영향력을 나타낼 때: '在老师的帮助下'(선생님의 도움 아래), '在大家的努力下'(모두의 노력 끝에)처럼 쓰입니다. 개사 '在'는 생략이 가능합니다. 한국어의 '~한 상황에서', '~한 조건 하에', '~의 도움 아래'에 해당합니다.",
+      "formation": "(在 + ) 상황 / 조건을 나타내는 명사 + 下, 주어 + 술어",
+      "examples": [
+        {
+          "translation": "일반적인 상황에서는, 돈을 많이 쓰면 쓸수록 사는 물건도 그만큼 좋아지기 마련입니다."
+        }
+      ]
+    },
+    "zh_估计可能CLAUSE_256": {
+      "title": "估计 / 可能 + 절 (동사/부사: 짐작건대 아마 ~일 것이다, 어쩌면 ~일지도 모른다)",
+      "shortExplanation": "절의 맨 앞에 두어, 화자의 주관적인 추측이나 판단을 문장 전체에 걸쳐 제시합니다('짐작하건대 아마 ~일 것이다', '어쩌면 ~일지도 모른다').",
+      "longExplanation": "'估计'(gūjì)와 '可能'(kěnéng)이 절 전체를 이끌며 추측의 어기를 나타내는 용법입니다. (1) '估计'는 본래 '추측하다, 어림잡다'라는 뜻의 동사로, 객관적인 단서나 경험에 근거하여 '짐작건대 ~일 것이다'라는 판단을 전개합니다. (2) '可能'은 '아마도, 어쩌면'이라는 개연성을 나타내는 부사로 쓰입니다. 문장 앞에 이들을 두면 단정적인 어조를 누그러뜨리고 신중하게 자신의 생각을 표출할 수 있습니다. 한국어의 '짐작하건대 아마 ~일 것이다', '어쩌면 ~일지도 모른다'에 해당합니다.",
+      "formation": "절 1, 估计 / 可能 + 절 2 (추측절)",
+      "examples": [
+        {
+          "translation": "샤오왕에게 가서 물어보셨나요? 짐작건대 그 친구라면 아마 방법이 있을 거예요."
+        }
+      ]
+    },
+    "zh_估计可能V_257": {
+      "title": "估计 / 可能 + 동사 (부사어: 아마 ~할 것이다, 어쩌면 ~인 모양이다)",
+      "shortExplanation": "동사 술어 바로 앞에 부사어로 두어, 해당 동작이나 상태 또는 그 원인을 추측합니다('아마 ~일 것이다', '어쩌면 ~할 것 같다').",
+      "longExplanation": "'估计'(gūjì)와 '可能'(kěnéng)이 동사(특히 계사 '是' 등) 바로 앞에 놓여 부사어로서 기능하는 용법입니다. 특정 동작의 실행 여부나 상황의 원인, 배경에 대해 100% 단정 짓지 않고 '아마 ~일 것이다', '어쩌면 ~인 것 같다'며 조심스럽게 추측할 때 쓰입니다(예: '估计是天气太干' 아마 날씨가 너무 건조해서인 것 같다). 한국어의 '아마 ~일 것이다', '어쩌면 ~인 모양이다'에 해당합니다.",
+      "formation": "주어 + 估计 / 可能 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "저는 아직 북방의 기후에 익숙하지 않은데, 아마 날씨가 너무 건조해서인 것 같습니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_实际_243": {
+      "title": "实际（名词/形容词：指客观存在的事物或情况）",
+      "shortExplanation": "用作名词指客观存在的事物、情况或现实；用作形容词指合乎事实、实事求是的，表示“实际、现实”。",
+      "longExplanation": "“实际”（shíjì）兼具名词与形容词两种词性：(1) 作名词时，指客观存在的事物或实情，与理论、想象相对应，常作主语或宾语（如“脱离实际”、“符合实际”、“跟实际不一样”）；(2) 作形容词时，指具体、合乎事实或讲究实效，常作定语或谓语（如“实际行动”、“实际工作”、“想法很实际”）。",
+      "formation": "主语 + 跟 / 与 + 实际 + 不一样 / 符合",
+      "examples": [
+        {
+          "translation": "广告宣传和实际情况并不一样。"
+        }
+      ]
+    },
+    "zh_实际上_244": {
+      "title": "实际上（副词/连词：事实上、其实）",
+      "shortExplanation": "置于句子开头或主语之后，表示转折或递进，指出事物背后的真实情况与表面或预期不同，“事实上 / 其实”。",
+      "longExplanation": "“实际上”（shíjìshang）作副词，常置于句首或主语后，用于揭示客观事实的真相，往往与前文所提到的表面现象、传闻或主观推测形成转折与对照。它与“其实”用法相近，但“实际上”更具书面语色彩和客观分析的语气，表示“从实际情况来看、事实上”。",
+      "formation": "分句1，实际上 + 分句2（或：主语 + 实际上 + 谓语）",
+      "examples": [
+        {
+          "translation": "广告说得很动听，但实际上并不一定真有那么好。"
+        }
+      ]
+    },
+    "zh_对来说_245": {
+      "title": "对……来说（介词框架：表示从某人的角度或立场来看）",
+      "shortExplanation": "置于句首或主语前，引出评判的立场、角度或主体，“对……而言 / 在……看来”。",
+      "longExplanation": "“对 + 人/事物 + 来说”（duì... láishuō）是现代汉语中非常常用的介词框式结构，用来引出观察、评价某一事物的出发点、立场或角度。后面通常紧接对该对象而言具有怎样意义、价值、难易或感受的评价分句。书面语中也可表述为“对……而言”。",
+      "formation": "对 + 名词 / 代词 + 来说，主语 + 谓语",
+      "examples": [
+        {
+          "translation": "从我的立场来看，学习的机会更加重要。"
+        }
+      ]
+    },
+    "zh_特别_246": {
+      "title": "特别 + 形容词 / 心理动词（程度副词：格外、非常、十分）",
+      "shortExplanation": "置于形容词或心理动词之前，表示程度异乎寻常，相当于“格外、非常、十分”。",
+      "longExplanation": "“特别”（tèbié）充当程度副词时，置于形容词（如“特别好”、“特别像”）或心理动词（如“特别喜欢”、“特别重视”）前，修饰谓语成分，强调程度非同一般、异于常态，兼具客观描述与主观赞叹语气，相当于“非常”、“格外”。",
+      "formation": "主语 + 特别 + 形容词 / 心理动词",
+      "examples": [
+        {
+          "translation": "您的女儿模样长得格外像您。"
+        }
+      ]
+    },
+    "zh_特别尤其_247": {
+      "title": "特别 / 尤其（副词：表示进一步强调或突出其中某一项）",
+      "shortExplanation": "用于在前文整体情况的背景下，重点凸显其中最具代表性或最突出的一项（常与“是”连用为“特别是 / 尤其是”）。",
+      "longExplanation": "“特别”与“尤其”在句中充当连结副词时，常出现在后一分句，且常与动词“是”连用构成“特别是……”或“尤其是……”。它们的作用是在前文泛指的整体范围或普遍情况中，专门抽引出最为突出、典型或重要的个体或局部进行着重强调。“尤其”的书面语色彩比“特别”更浓厚。",
+      "formation": "概括分句，特别是 / 尤其是 + 名词 / 重点突出部分",
+      "examples": [
+        {
+          "translation": "您女儿的长相真像您，特别是眼睛那一部分。"
+        }
+      ]
+    },
+    "zh_特别的_248": {
+      "title": "特别的 + 名词（形容词作定语：与众不同的、特殊的）",
+      "shortExplanation": "形容词“特别”后接结构助词“的”作定语修饰名词，表示与一般事物不同、具有独特性或专属性，“特别的 / 特殊的”。",
+      "longExplanation": "“特别”（tèbié）用作形容词时，意义为“不一般的、独特的、与众不同的”。通过结构助词“的”连接名词，构成“特别的 + 名词”定中结构，修饰限制中心词，说明该事物具有与常态不同的专属性、独特性或特殊意义（如“特别的要求”、“特别的经历”、“特别的意义”）。",
+      "formation": "特别的 + 名词",
+      "examples": [
+        {
+          "translation": "我这里有一条特殊的要求想提出来。"
+        }
+      ]
+    },
+    "zh_竟然VA_249": {
+      "title": "竟然 + 动词 / 形容词（语气副词：出乎意料、居然）",
+      "shortExplanation": "置于动词或形容词前，表示事情的发展或结果大大出乎意料，带有强烈的不可思议或惊讶语气，“居然 / 没想到”。",
+      "longExplanation": "“竟然”（jìngrán）是表示转折与惊异的语气副词，常置于动词或形容词性谓语前，用于突出某件事的发生、发展或最终结果完全超出了常理推断或说话人的预料，相当于“居然”、“想不到”。多用于感叹句或带有反问口吻的疑问句中，带有鲜明的情感色彩。",
+      "formation": "主语 + 竟然 + 动词 / 形容词（+ 宾语 / 补语）",
+      "examples": [
+        {
+          "translation": "这首歌非常好听，最近到处都很流行，你居然一次都没听过？"
+        }
+      ]
+    },
+    "zh_倍_250": {
+      "title": "数词 + 倍（量词：表示倍数）",
+      "shortExplanation": "量词“倍”与数词连用，用于计算数目增加的倍数或比较两个数量的倍数关系，“……倍”。",
+      "longExplanation": "“倍”（bèi）是表示倍数的量词。(1) 表示乘法或对应倍数关系，基本句型为“事物甲是事物乙的几倍”；(2) 表示数量增加的幅度，如“增加/增长了一倍”（即增加了原数额的一倍，变成原来的两倍）。需要注意的是，汉语中的“倍”只能用于数量的增加或正向比较，表示数量减少时不能使用“倍”，而应使用分数或百分比。",
+      "formation": "数词 + 倍（例如：事物甲 + 是 + 事物乙 + 的 + 数词 + 倍）",
+      "examples": [
+        {
+          "translation": "数字二的五倍等于十。"
+        }
+      ]
+    },
+    "zh_值得V_251": {
+      "title": "值得 + 动词（动词：值得做某事）",
+      "shortExplanation": "带双音节动词作宾语，表示某件事有价值、有意义，值得去付出精力或代价实施，“值得……”。",
+      "longExplanation": "“值得”（zhíde）作为表示评价的动词，后面常接双音节动词或动宾短语（如“考虑”、“学习”、“深思”、“买”），表示做出该动作或承担该结果是合算的、有积极回报或重大意义的，付出代价是相称的。否定式为“不值得”。",
+      "formation": "主语 + (很 / 都) 值得 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "您看一下这款产品，不论是从价格层面还是质量来看，都很值得认真考虑。"
+        }
+      ]
+    },
+    "zh_值值得_252": {
+      "title": "值 / 值得（单用作谓语：合算、有价值）",
+      "shortExplanation": "可单独置于句末作谓语，评价某件事是否划算、合算，常用于否定句“不值 / 不值得”，表示代价太大而不合算。",
+      "longExplanation": "“值”或“值得”可以直接充当谓语中心语，后面不带其他动词宾语。这种用法通常用来主观权衡付出的代价（如时间、精力、情绪、金钱）与所得是否相抵。口语中极常用于否定式“不值”或“不值得”，用以劝慰他人不要为琐事消耗精力，相当于“划不来、不合算、没必要”。",
+      "formation": "主语 + (很) 值 / 值得（或：主语 + 不值 / 不值得）",
+      "examples": [
+        {
+          "translation": "不要老是为了这么一点鸡毛蒜皮的小事发火，根本不划算。"
+        }
+      ]
+    },
+    "zh_值_253": {
+      "title": "值 + 金额（及物动词：价值、值……钱）",
+      "shortExplanation": "及物动词“值”直接接具体的金额数量词作宾语，表示物品本身所具有的客观金钱价值或市场价格，“值多少钱”。",
+      "longExplanation": "“值”（zhí）用作及物动词，后接表示金额的数量短语（如“五十块”、“几千元”），表示该物品或资产在市场上应有的身价、折合的客观价格或等值金额。它侧重于物品所蕴含的实际价值，强调“物有所值”的对应度。",
+      "formation": "名词（物品） + 值 + 金额短语（数词 + 货币量词）",
+      "examples": [
+        {
+          "translation": "这只手表的实际价值差不多是五十块钱。"
+        }
+      ]
+    },
+    "zh_其中_254": {
+      "title": "其中（方位名词/代词：指在上述范围或群体之中）",
+      "shortExplanation": "用于指代前面已经提及的总体范围、集体或整体当中的一部分或某一方面，“在里面 / 那当中”。",
+      "longExplanation": "“其中”（qízhōng）是指代某一整体范围内部的方位代词。它承接前文所提到的人群、事物或集合概念，指示处于该群体内部的某些成员、局部或某种具体情况。常置于分句主语位置，或构成“其中的 + 名词”结构充当定语，具有承上启下的语篇衔接作用。",
+      "formation": "整体范围，(主语 + ) 其中 (+ 的 + 名词) + 谓语",
+      "examples": [
+        {
+          "translation": "我们不仅要懂得看书，更要懂得从那些书籍中挑选出优质的好书来阅读。"
+        }
+      ]
+    },
+    "zh_在SITUATION下_255": {
+      "title": "(在)……下（介词框架：在某种情况、条件或指导帮助下）",
+      "shortExplanation": "中间填入表示情况、条件、环境或指导帮助的名词短语，引出动作发生的背景或前提条件，“在……情况下 / 在……指导下”。",
+      "longExplanation": "“(在)……下”（(zài)... xià）是现代汉语常用的介词框架，用于引出动作行为赖以发生的条件、背景或外在环境：(1) 表示客观条件或情境，常搭配“情况、条件、背景”等（如“在一般情况下”、“在困难条件下”）；(2) 表示在某人的引导、支持、帮助下产生某种结果（如“在老师的帮助下”、“在大家的共同努力下”）。在句中通常作状语，介词“在”有时可省去。",
+      "formation": "(在 + ) 表示情况/条件的名词短语 + 下，主语 + 谓语",
+      "examples": [
+        {
+          "translation": "通常情况下，你投入的花销越多，所购得的物品品质往往也就越好。"
+        }
+      ]
+    },
+    "zh_估计可能CLAUSE_256": {
+      "title": "估计 / 可能 + 分句（动词/副词引导推测分句：大概、推想）",
+      "shortExplanation": "位于分句句首，用来对某种尚未确定的情况或未来发展做出主观推测或估量，“推想起来 / 大概”。",
+      "longExplanation": "“估计”（gūjì）与“可能”（kěnéng）充当句子成分置于整个分句之前。(1) “估计”本为动词，表示根据现有根据或经验做出推断，相当于“依我看 / 推算起来”；(2) “可能”为表或然性的副词，表示某种情况有存在的几率。放在分句开头引出推断内容，能缓和绝对断定的语气，显得更加委婉客观。",
+      "formation": "分句1，估计 / 可能 + 分句2（推测分句）",
+      "examples": [
+        {
+          "translation": "你去问过小王了吗？我推测他大概会有解决办法。"
+        }
+      ]
+    },
+    "zh_估计可能V_257": {
+      "title": "估计 / 可能 + 动词（状语：推测可能发生的动作或状态）",
+      "shortExplanation": "在句中直接充当状语修饰动词谓语（常搭配联系动词“是”），对动作的发生、事物的原因或状态进行推测，“大概是 / 可能是”。",
+      "longExplanation": "“估计”或“可能”直接置于动词前面作状语（特别是与系动词“是”连用构成“估计是 / 可能是”），用以说明或推断某种状态、原因或即将发生的动作。说话者并不把话说满，而是根据眼前观察到的表象或既往经验做出合情合理的推测，语气和缓、留有余地。",
+      "formation": "主语 + 估计 / 可能 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "我还不太适应北方的气候条件，大概是因为这边的空气实在太干燥了。"
+        }
+      ]
+    }
+  }
+}

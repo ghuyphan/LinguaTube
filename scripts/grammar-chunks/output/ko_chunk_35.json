@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_하면_142": {
+      "title": "~하면 할수록 (Càng... thì càng...)",
+      "shortExplanation": "Biểu thị sự biến đổi theo tỷ lệ thuận hoặc nghịch giữa hai vế; mức độ của hành động hoặc trạng thái ở vế trước càng tăng thì kết quả ở vế sau càng tăng theo ('càng... thì càng...').",
+      "longExplanation": "'~하면 할수록' (dạng đầy đủ là '-(으)면 -(으)ㄹ수록') là cấu trúc ngữ pháp dùng để diễn tả mối quan hệ tỷ lệ giữa hai sự việc: khi hành động hoặc mức độ của trạng thái ở vế trước càng tiến triển hay tăng thêm, thì hành động hoặc trạng thái ở vế sau cũng thay đổi tương ứng theo chiều hướng đó, tương đương với cấu trúc 'càng... càng...' trong tiếng Việt. Khi dùng, có thể giản lược vế đầu '-(으)면' chỉ còn '-(으)ㄹ수록'.",
+      "formation": "Thân động từ / Thân tính từ + -(으)면 + Thân động từ / Thân tính từ + -(으)ㄹ수록 (hoặc Danh từ + -(이)면 -(이)ㄹ수록)",
+      "examples": [
+        {
+          "translation": "Tôi cảm thấy càng học tiếng Hàn thì lại càng thấy thú vị hơn, bởi vì tôi có thể hiểu sâu hơn về văn hóa và lịch sử của Hàn Quốc."
+        },
+        {
+          "translation": "Ở trong ngôi nhà này, càng đọc sách tôi lại càng tích lũy được nhiều kiến thức nên lúc nào tôi cũng thích đọc sách."
+        },
+        {
+          "translation": "Càng nấu nướng thì tôi càng có thêm tự tin, vì vậy tôi luôn thử nghiệm những công thức nấu ăn mới."
+        },
+        {
+          "translation": "Dường như càng dành thời gian ở bên cô ấy thì tôi lại càng yêu cô ấy nhiều hơn, bởi vì tính cách của cô ấy thực sự rất cuốn hút."
+        }
+      ]
+    },
+    "ko_Expressing_0": {
+      "title": "Diễn tả nguyên nhân / lý do (~(으)니까 / -아/어서 / -(으)니)",
+      "shortExplanation": "Các vĩ tố liên kết dùng để nối kết hai mệnh đề nhằm biểu thị nguyên nhân, lý do dẫn đến kết quả ở mệnh đề sau ('vì... nên...', 'do...').",
+      "longExplanation": "Trong tiếng Hàn, các cấu trúc vĩ tố liên kết như '~니까/(으)니까', '-아/어서', và '-(으)니' là các hình thức cơ bản nhất để diễn đạt nguyên nhân hoặc căn cứ dẫn đến sự việc ở mệnh đề sau, tương đương với 'vì', 'do', 'bởi vì' trong tiếng Việt. Trong đó, '-아/어서' dùng cho lý do khách quan và không đi cùng câu mệnh lệnh hay rủ rê; còn '-(으)니까' thường nhấn mạnh lý do chủ quan của người nói và có thể kết hợp thoải mái với đuôi câu mệnh lệnh, thỉnh dụ; '-(으)니' mang sắc thái văn phong trang trọng, gợi mở lý do.",
+      "formation": "Thân động từ / Thân tính từ + -(으)니까 / -아/어서 / -(으)니 | Danh từ + -(이)니까 / -(이)라서 / -(이)니",
+      "examples": [
+        {
+          "translation": "Vì anh ấy lúc nào cũng học hành chăm chỉ nên tôi nghĩ cậu ấy sẽ dễ dàng vượt qua kỳ thi TOPIK."
+        },
+        {
+          "translation": "Tôi đã rất muốn đi du lịch, nhưng vì không có tiền nên không thể đi được."
+        },
+        {
+          "translation": "Anh ấy đã xin nghỉ ốm nên không đến công ty rồi."
+        },
+        {
+          "translation": "Vì trời mưa nên tôi đã hủy việc ra ngoài."
+        }
+      ]
+    },
+    "ko_남짓_1": {
+      "title": "~남짓 (Hơn... một chút, xấp xỉ, tầm khoảng)",
+      "shortExplanation": "Gắn sau từ chỉ số lượng, thời gian hoặc cự ly để biểu thị con số ước chừng nhỉnh hơn một chút hoặc xấp xỉ mức đó ('hơn... một chút', 'khoảng chừng').",
+      "longExplanation": "'~남짓' là một từ biểu thị ước lượng số lượng (hậu tố hoặc danh từ phụ thuộc) gắn trực tiếp sau các danh từ chỉ số đếm, thời gian, khoảng cách hay tiền bạc, dùng để chỉ số lượng thực tế hơi vượt quá mức chuẩn đó một chút hoặc xấp xỉ mức độ được nêu ra, tương đương với 'khoảng chừng hơn... một chút', 'tầm...'. Thường dùng khi đưa ra con số phỏng đoán chứ không phải số liệu chính xác tuyệt đối.",
+      "formation": "Từ chỉ số lượng / thời gian / tiền bạc + 남짓",
+      "examples": [
+        {
+          "translation": "Tôi đã mất khoảng một tuần hơn một chút để đọc xong cuốn sách này."
+        },
+        {
+          "translation": "Trong chuyến du lịch lần này tôi đã tiêu khoảng hơn 100.000 won một chút."
+        },
+        {
+          "translation": "Có vẻ như bọn trẻ chỉ mất khoảng tầm 10 phút hơn một chút là đã đến trường."
+        },
+        {
+          "translation": "Đi bộ từ công ty về nhà mất khoảng hơn một tiếng đồng hồ một chút."
+        }
+      ]
+    },
+    "ko_내내_2": {
+      "title": "~내내 (Suốt, trong suốt)",
+      "shortExplanation": "Gắn sau danh từ chỉ khoảng thời gian để biểu thị một hành động hoặc trạng thái diễn ra liên tục, không dứt từ đầu đến cuối ('suốt', 'trong suốt').",
+      "longExplanation": "'~내내' là phó từ hoặc từ bổ trợ gắn trực tiếp sau danh từ chỉ thời gian (như 하루, 일주일, 일 년, 방학, 수업), diễn tả một sự việc, hành động hay trạng thái nào đó kéo dài liên tục, xuyên suốt từ đầu tới cuối toàn bộ khoảng thời gian được nhắc tới mà không hề bị gián đoạn, tương đương với 'suốt', 'trong suốt cả...' trong tiếng Việt.",
+      "formation": "Danh từ chỉ thời gian + 내내",
+      "examples": [
+        {
+          "translation": "Ở trường, chúng tôi đã phải lắng nghe thầy giáo giảng giải trong suốt cả tiết học."
+        },
+        {
+          "translation": "Ngày hôm đó trời mưa suốt cả ngày nên nếu không có ô thì không thể nào ra ngoài được."
+        },
+        {
+          "translation": "Kỳ nghỉ hè, chúng tôi đã vui chơi ở bãi biển suốt cả một ngày."
+        },
+        {
+          "translation": "Trong đám cưới của mình, anh ấy đã khiêu vũ suốt cả đêm."
+        }
+      ]
+    },
+    "ko_네요_3": {
+      "title": "~네요 (Ồ... quá, thế cơ à - Thể hiện sự ngạc nhiên, cảm thán)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng để bộc lộ cảm thán, ngạc nhiên hoặc nhận thức mới mẻ của người nói ngay tại thời điểm chứng kiến sự việc ('...quá', '...thế nhỉ').",
+      "longExplanation": "'~네요' là vĩ tố kết thúc câu thân mật lịch sự gắn sau thân động từ hoặc tính từ, dùng để biểu lộ cảm xúc ngạc nhiên, sự cảm thán hoặc điều tâm đắc mà người nói vừa mới trực tiếp mắt thấy, tai nghe hay trải nghiệm được tại hiện trường. Cấu trúc này làm cho lời nói thêm phần tự nhiên, bộc lộ sự thấu hiểu hay đồng cảm nhẹ nhàng với đối phương.",
+      "formation": "Thân động từ / Thân tính từ + 네요 | Danh từ + (이)네요",
+      "examples": [
+        {
+          "translation": "Hôm nay thời tiết đẹp thật đấy, ánh nắng ấm áp làm tâm trạng tôi thấy tốt hơn hẳn."
+        },
+        {
+          "translation": "Chiếc bánh kem này ngon quá, đây là lần đầu tiên tôi ăn thử loại bánh này đấy."
+        },
+        {
+          "translation": "Con chúng ta lớn nhanh thật đấy, trong quá trình lớn khôn bé đang học hỏi được bao nhiêu điều."
+        },
+        {
+          "translation": "Đột nhiên trời lại đổ mưa thế này, tôi không mang theo ô nên chẳng thể nào tránh mưa được."
+        }
+      ]
+    },
+    "ko_노릇이다_4": {
+      "title": "~노릇이다 (Đóng vai trò là, làm phận... / Thật là tình cảnh...)",
+      "shortExplanation": "Biểu thị việc đảm nhận một vai trò, phận sự bất đắc dĩ của ai đó hoặc diễn tả một tình cảnh éo le, khó xử ('đóng vai trò là...', 'làm phận...').",
+      "longExplanation": "'~노릇이다' kết hợp từ danh từ '노릇' (vai trò, phận sự, công việc, tình cảnh) với trợ từ vị ngữ '이다'. Cấu trúc này thường dùng trong hai trường hợp chính: (1) một người hay sự vật phải đứng ra gánh vác, đảm nhiệm vai trò hay bổn phận vốn không phải của mình một cách bất đắc dĩ hoặc tạm thời (như 'bố 노릇', 'thầy giáo 노릇'); (2) đi sau định ngữ để than thở về một tình huống éo le, kỳ quặc hay đáng thương ('thật là tình cảnh...').",
+      "formation": "Danh từ (Vai trò, chức danh) + 노릇이다 (hoặc 노릇을 하다)",
+      "examples": [
+        {
+          "translation": "Hôm nay vì thầy giáo bị ốm nên tôi sẽ đóng vai trò là thầy giáo thay thế."
+        },
+        {
+          "translation": "Bố đi công tác vắng nhà nên mẹ phải gánh luôn cả vai trò của bố."
+        },
+        {
+          "translation": "Cuốn tạp chí này đóng vai trò như một quyển sách hướng dẫn du lịch."
+        },
+        {
+          "translation": "Cô ấy nghĩ rằng việc đóng vai trò một người chị thì tốt hơn là chỉ làm bạn bè."
+        }
+      ]
+    },
+    "ko_느라고_5": {
+      "title": "~느라고 (Vì mải làm gì nên... - Dẫn đến kết quả tiêu cực)",
+      "shortExplanation": "Vĩ tố liên kết chỉ nguyên nhân: do mải mê hoặc dồn hết thời gian làm hành động ở vế trước nên dẫn đến kết quả tiêu cực, bất lợi ở vế sau ('vì mải...', 'do bận...').",
+      "longExplanation": "'~느라고' là vĩ tố liên kết gắn sau thân động từ, dùng để diễn tả rằng chủ ngữ đã tiêu tốn toàn bộ thời gian, sức lực vào hành động phía trước, dẫn đến việc không thể làm được việc khác hoặc gây ra một hậu quả ngoài ý muốn, mệt mỏi, bất tiện ở vế sau. Hai mệnh đề phải có cùng một chủ ngữ, và động từ ở vế trước phải là hành động có chủ ý của con người.",
+      "formation": "Thân động từ + 느라고 (hoặc 느라)",
+      "examples": [
+        {
+          "translation": "Tôi vì mải chuẩn bị cho kỳ thi TOPIK nên đã thức học bài đến tận rạng sáng."
+        },
+        {
+          "translation": "Chúng tôi vì mải hoàn thành dự án mà suốt hai ngày qua gần như không hề chợp mắt."
+        },
+        {
+          "translation": "Cậu ấy vì mải chuẩn bị cho cuộc thi nên đã bỏ cả bữa ăn."
+        },
+        {
+          "translation": "Mẹ đã phải làm việc vất vả đến tận đêm khuya để lo cho tôi được học đại học."
+        }
+      ]
+    },
+    "ko_는데다가_6": {
+      "title": "~는데다가 (Không những... mà lại còn, đã thế lại thêm...)",
+      "shortExplanation": "Biểu thị sự cộng dồn thông tin tương đồng: sự việc ở vế trước đã xảy ra, vế sau lại có thêm một đặc điểm hay tình huống tương tự bổ sung vào ('không những... mà còn...').",
+      "longExplanation": "'~는데다가' là cấu trúc liên kết kết hợp định ngữ với danh từ phụ thuộc '데' và trợ từ '다가'. Cấu trúc này dùng để diễn đạt ý rằng ngoài tình huống, trạng thái đã được nêu ở vế trước, lại còn có thêm một tình huống hay yếu tố khác cùng chiều hướng (cùng là điểm tốt hoặc cùng là điểm xấu) chồng chất thêm vào, tương đương với 'không những... mà còn...', 'đã vậy lại còn...'.",
+      "formation": "Thân động từ + 는데다가 | Thân tính từ + -(으)ㄴ데다가 | Danh từ + 인데다가",
+      "examples": [
+        {
+          "translation": "Thành tích học tập của cậu ấy không những xuất sắc mà năng khiếu thể thao cũng vô cùng nổi bật."
+        },
+        {
+          "translation": "Hôm nay trong người tôi không được khỏe, đã thế thời tiết lại còn rất lạnh nữa."
+        },
+        {
+          "translation": "Quán cà phê đó không những có không gian đẹp mà hương vị cà phê cũng vô cùng tuyệt vời."
+        },
+        {
+          "translation": "Có tầm nhìn rộng mở vốn đã là một ưu điểm, cậu ấy lại còn nói tiếng Hàn rất giỏi nữa."
+        }
+      ]
+    },
+    "ko_는측에서_7": {
+      "title": "~는 측에서 (Dưới góc độ của, đứng về phía...)",
+      "shortExplanation": "Dùng để nêu ra lập trường, quan điểm hoặc góc nhìn cụ thể của một đối tượng khi xem xét, đánh giá vấn đề ('dưới góc độ của...', 'về phía...').",
+      "longExplanation": "'~는 측에서' (hoặc 'Danh từ + 의 측에서') kết hợp danh từ '측' (phía, bề, phương diện) với trợ từ vị trí/xuất xứ '에서'. Cấu trúc này thường đi kèm với các động từ nhận thức như '볼 때' (khi nhìn nhận) hay '본다면' (nếu xét từ) để nêu rõ góc nhìn, lập trường riêng biệt của một cá nhân, nhóm người hoặc góc độ chuyên môn khi nhận định, bình phẩm về một hiện tượng hay tình huống nào đó.",
+      "formation": "Danh từ + (의) 측에서 (볼 때 / 본다면)",
+      "examples": [
+        {
+          "translation": "Đứng từ góc độ của các em học sinh mà nhìn thì bài tập về nhà quá nhiều tạo nên một áp lực nặng nề."
+        },
+        {
+          "translation": "Dưới góc độ của các nhà kinh tế học, tiền kỹ thuật số có thể gây ảnh hưởng sâu sắc đến nền kinh tế thực."
+        },
+        {
+          "translation": "Nếu nhìn từ góc độ của bác sĩ thì món gà rán có thể mang lại tác hại xấu cho sức khỏe."
+        },
+        {
+          "translation": "Nếu xét từ góc nhìn của một người mẹ thì đứa con của mình lúc nào cũng là tuyệt vời nhất."
+        }
+      ]
+    },
+    "ko_더라도_8": {
+      "title": "~더라도 (Dù cho, dẫu cho... thì cũng...)",
+      "shortExplanation": "Vĩ tố liên kết nhượng bộ giả định: dù cho tình huống ở vế trước có xảy ra đi chăng nữa thì kết quả hay quyết định ở vế sau vẫn không thay đổi ('dù cho... thì cũng...').",
+      "longExplanation": "'~더라도' là vĩ tố liên kết dùng để giả định một điều kiện mang tính nhượng bộ mạnh mẽ. Cấu trúc này mang ý nghĩa rằng cho dù có công nhận sự thật hoặc khả năng xảy ra của tình huống vế trước, thậm chí là ở mức độ cực đoan nhất, thì nội dung, kết luận hoặc hành động ở vế sau vẫn được giữ nguyên và không hề bị lay chuyển, tương đương với 'dù cho... thì...', 'cho dẫu...'. Mang sắc thái giả định mạnh hơn '-아/어도'.",
+      "formation": "Thân động từ / Thân tính từ + 더라도 | Danh từ + (이)더라도",
+      "examples": [
+        {
+          "translation": "Dù cho bạn có đầu tư nhiều thời gian đến đâu đi nữa, nhưng nếu kết quả không thỏa đáng thì sẽ ra sao?"
+        },
+        {
+          "translation": "Dù tôi có học suốt cả ngày trời nhưng nếu thi trượt thì mọi nỗ lực của tôi cũng đều hóa thành vô ích."
+        },
+        {
+          "translation": "Dù bạn có nỗ lực nhiều đến thế nào nhưng nếu không đạt được mục tiêu đó thì cảm giác sẽ thế nào đây?"
+        },
+        {
+          "translation": "Dù tôi có làm việc nhiều đến nhường nào mà tiền bạc vẫn không tích cóp được thì mệt mỏi lắm."
+        }
+      ]
+    },
+    "ko_다니_9": {
+      "title": "~다니 (Không ngờ là... / Đến mức... cơ đấy - Bày tỏ sự sửng sốt, khó tin)",
+      "shortExplanation": "Vĩ tố dùng để bộc lộ cảm xúc kinh ngạc, không ngờ tới hoặc khó tin trước một sự thật hay thông tin vừa được chứng kiến hoặc nghe thấy ('không ngờ là...', '...cơ đấy').",
+      "longExplanation": "'~다니' là hình thức rút gọn của cấu trúc trích dẫn gián tiếp kết hợp với vĩ tố cảm thán '-니' ('-다고 하니' -> '-다니'). Người nói sử dụng cấu trúc này để bày tỏ sự ngạc nhiên, sửng sốt, thán phục hoặc không thể tin nổi trước một sự việc, hành vi hay tin tức vừa mới tiếp nhận, tương đương với 'không ngờ rằng...', 'ai mà tin được là... cơ chứ'.",
+      "formation": "Động từ + -ㄴ/는다니 | Tính từ + -다니 | Danh từ + -(이)라니 | Quá khứ: -았/었다니",
+      "examples": [
+        {
+          "translation": "Tôi hoàn toàn không thể tin nổi chuyện bố tôi ngày mai lại phải vội vã lên đường đi ra nước ngoài."
+        },
+        {
+          "translation": "Cậu thật sự đã giải quyết được vấn đề nan giải thế này thì quả thực là quá đỗi kinh ngạc."
+        },
+        {
+          "translation": "Kế hoạch ban đầu vốn dĩ sẽ thay đổi, vậy mà nghe bảo anh ấy sẽ trở thành trưởng nhóm này làm tôi không tài nào tin được."
+        },
+        {
+          "translation": "Biết bao nhiêu người đã háo hức mong đợi, thế mà buổi biểu diễn lại bị hủy bỏ thì thật là đáng tiếc."
+        }
+      ]
+    },
+    "ko_답게_10": {
+      "title": "~답게 (Xứng đáng với, đúng chất, ra dáng)",
+      "shortExplanation": "Biểu thị tính chất, tư cách hoặc hành vi hoàn toàn tương xứng, đúng với bản chất và giá trị vốn có của đối tượng ('xứng đáng là...', 'đúng chất...', 'ra dáng...').",
+      "longExplanation": "'~답게' được cấu tạo từ tiếp vĩ ngữ '-답다' (mang đầy đủ phẩm chất, tư cách xứng đáng với danh xưng) kết hợp với vĩ tố phó từ hóa '-게'. Cấu trúc này gắn sau danh từ để miêu tả hành động hay trạng thái diễn ra một cách chuẩn mực, đúng phong thái và giá trị tiêu biểu mà danh từ đó vốn dĩ phải có, tương đương với 'đúng chất...', 'xứng danh là...', 'ra dáng...' trong tiếng Việt.",
+      "formation": "Danh từ + 답게",
+      "examples": [
+        {
+          "translation": "Đúng chất một cầu thủ bóng đá chuyên nghiệp, anh ấy rất am hiểu cách điều khiển bóng một cách điêu luyện."
+        },
+        {
+          "translation": "Xứng danh là một học sinh chăm học, cậu ấy đã có thể giải bài toán một cách dễ dàng."
+        },
+        {
+          "translation": "Đúng tầm một nhà thiết kế hàng hiệu, từng chi tiết nhỏ trên trang phục của cô ấy đều được hoàn thiện một cách hoàn hảo."
+        },
+        {
+          "translation": "Đúng phong thái một đầu bếp dày dạn kinh nghiệm, anh ấy xử lý các nguyên liệu nấu ăn một cách vô cùng nhanh nhẹn."
+        }
+      ]
+    },
+    "ko_대로_11": {
+      "title": "~대로 (Theo như, đúng theo...)",
+      "shortExplanation": "Biểu thị việc thực hiện hành động hoàn toàn tuân theo chỉ dẫn, quy tắc, nguyên trạng hoặc sự thật đã định sẵn ('theo như...', 'đúng theo...').",
+      "longExplanation": "'~대로' có thể là một trợ từ bổ trợ gắn trực tiếp sau danh từ, hoặc là một danh từ phụ thuộc đứng sau định ngữ của động từ hay tính từ. Cấu trúc này diễn đạt ý nghĩa làm một việc gì đó y hệt, chuẩn xác theo đúng trạng thái ban đầu, theo lời dặn, quy chuẩn hoặc theo diễn biến thực tế vốn có, tương đương với 'theo như...', 'đúng theo...' trong tiếng Việt.",
+      "formation": "Danh từ + 대로 | Động từ + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "Đúng theo chỉ dẫn là phải tập thể dục mỗi ngày, sáng nào tôi cũng thức dậy tập thể dục."
+        },
+        {
+          "translation": "Phải vận hành máy móc đúng theo những gì đã được ghi rõ trong sách hướng dẫn."
+        },
+        {
+          "translation": "Tôi đã chăm chỉ học tập đúng theo lời mẹ dặn dò, và nhờ thế thành tích học tập đã rất tốt."
+        },
+        {
+          "translation": "Toàn bộ cửa sổ của tòa nhà đã được lắp đặt hoàn hảo theo đúng như bản vẽ thiết kế."
+        }
+      ]
+    },
+    "ko_던데_12": {
+      "title": "~던데 (Thấy bảo là... / Tôi thấy... mà - Hồi tưởng kinh nghiệm quá khứ)",
+      "shortExplanation": "Vĩ tố dùng khi hồi tưởng lại sự việc bản thân từng chứng kiến hoặc trải nghiệm trong quá khứ để làm tiền đề, bối cảnh cho câu nói tiếp theo ('tôi nhớ là...', 'thấy bảo là...').",
+      "longExplanation": "'~던데' là vĩ tố liên kết (hoặc kết thúc câu) kết hợp giữa tiền vĩ tố hồi tưởng '-더-' và vĩ tố gợi mở bối cảnh '-ㄴ데'. Cấu trúc này được dùng khi người nói nhớ lại một sự thật, cảnh tượng hoặc hành vi mà chính mình đã trực tiếp trải qua trong quá khứ, rồi lấy đó làm bối cảnh gợi mở để đưa ra nhận xét, đặt câu hỏi, đưa ra lời khuyên hoặc nêu sự tương phản so với hiện tại.",
+      "formation": "Thân động từ / Thân tính từ + 던데 | Danh từ + (이)던데 | Quá khứ: -았/었던데",
+      "examples": [
+        {
+          "translation": "Nghe Cheolsu kể lại thì hồi đó cậu ấy từng là một học sinh luôn học tập rất chăm chỉ ở trường."
+        },
+        {
+          "translation": "Tôi nhớ nhà hàng đó từng bán món ăn rất ngon miệng, nhưng dạo gần đây thì không còn như vậy nữa."
+        },
+        {
+          "translation": "Trước kia sáng nào bố cũng chăm chỉ tập thể dục, nhưng dạo này thì bố không làm vậy nữa."
+        },
+        {
+          "translation": "Lần đầu gặp mặt tôi thấy anh ấy rất đỗi thân thiện, thế nhưng bây giờ thì chẳng còn như vậy nữa."
+        }
+      ]
+    },
+    "ko_도록_13": {
+      "title": "~도록 하다 (Cố gắng làm sao để..., hãy bảo đảm là...)",
+      "shortExplanation": "Biểu thị sự quyết tâm thực hiện hành động nhằm đạt được mục tiêu, hoặc đưa ra chỉ thị, yêu cầu ai đó bảo đảm thực hiện điều gì ('cố gắng làm sao để...', 'hãy chú ý...').",
+      "longExplanation": "'~도록 하다' là cấu trúc kết hợp giữa vĩ tố liên kết chỉ mục đích, kết quả '-도록' với trợ động từ '하다'. Khi chủ ngữ là ngôi thứ nhất, cấu trúc này thể hiện ý chí, lời hứa hẹn hoặc sự quyết tâm nỗ lực hết mình để đạt được một kết quả nhất định ('tôi sẽ cố gắng làm sao để...'). Khi dùng ở thể mệnh lệnh hoặc thỉnh dụ, nó mang sắc thái lịch sự yêu cầu hay nhắc nhở đối phương chú ý bảo đảm thực hiện hành động đó.",
+      "formation": "Thân động từ + -(으)도록 하다",
+      "examples": [
+        {
+          "translation": "Tôi nhất định sẽ giải quyết ổn thỏa việc này, xin mọi người đừng quá lo lắng."
+        },
+        {
+          "translation": "Chúng tôi sẽ nỗ lực hết mình để quý khách hàng có thể cảm thấy hài lòng nhất."
+        },
+        {
+          "translation": "Xin hãy lái xe thật chậm rãi để các em nhỏ có thể đến trường một cách an toàn."
+        },
+        {
+          "translation": "Tôi sẽ nói thật chậm rãi để mọi người đều có thể hiểu rõ từng chi tiết."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_하면_142": {
+      "title": "~하면 할수록（越……越……）",
+      "shortExplanation": "表示随前项程度的加深，后项结果也成比例地相应加深或变化（“越……越……”）。",
+      "longExplanation": "“~하면 할수록”（完整形态为“-(으)면 -(으)ㄹ수록”）是韩语中表示正比或反比递进关系的语法结构。用于说明随着前项动作或状态程度的不断加剧、积累，后项所涉及的事态也随之发生同比例的变化，相当于汉语的“越……越……”。在实际使用中，前半部分的条件分句“-(으)면”有时可以省略，只保留后半部分的“-(으)ㄹ수록”。",
+      "formation": "动词/形容词词干 + -(으)면 + 动词/形容词词干 + -(으)ㄹ수록（或 名词 + -(이)면 -(이)ㄹ수록）",
+      "examples": [
+        {
+          "translation": "我觉得韩语越学越觉得有趣，因为能够更加深入地了解韩国的文化与历史。"
+        },
+        {
+          "translation": "在这个家里书读得越多就越能学到丰富的知识，所以我一直都非常享受读书。"
+        },
+        {
+          "translation": "做料理做得越多就越有自信心，所以我总是喜欢尝试各种新的食谱。"
+        },
+        {
+          "translation": "和她相处的时间越长，似乎就越深爱她，因为她的性格真的太有魅力了。"
+        }
+      ]
+    },
+    "ko_Expressing_0": {
+      "title": "表达原因/理由（~(으)니까 / -아/어서 / -(으)니）",
+      "shortExplanation": "用于连接前后两个分句，表示引出后项结果的原因、根据或理由（“因为……所以……”、“既然……”）。",
+      "longExplanation": "在韩语中，“~(으)니까”、“-아/어서”以及“-(으)니”是表示原因与理由的最基础连接词尾。其中，“-아/어서”多用于客观因果陈述，后句不能接命令句或共动句；而“~(으)니까”更偏重于说话人主观认定的理由或发现的事实，后句可自由接命令句或共动句；“-(으)니”则多用于书面语或说明前情理由，语气较为客气温和。",
+      "formation": "动词/形容词词干 + -(으)니까 / -아/어서 / -(으)니 | 名词 + -(이)니까 / -(이)라서 / -(이)니",
+      "examples": [
+        {
+          "translation": "因为他平时总是非常刻苦地学习，所以我觉得他应该能轻松通过TOPIK考试。"
+        },
+        {
+          "translation": "原本很想去旅行的，但是因为没有钱所以没能去成。"
+        },
+        {
+          "translation": "他既然已经请了病假，所以今天就没来公司呢。"
+        },
+        {
+          "translation": "因为下起了大雨，所以我取消了外出的计划。"
+        }
+      ]
+    },
+    "ko_남짓_1": {
+      "title": "~남짓（……多、余、左右）",
+      "shortExplanation": "接在表示数量、时间或金额的词语后，表示略多于该基准数或大致相当的概数（“……多”、“……左右”）。",
+      "longExplanation": "“~남짓”是韩语中表示概数的词尾或依存名词，直接附在表示数量、时间长度、距离或金额的名词之后，表示实际数量略微超过基准值一些，或在此基准附近徘徊，相当于汉语的“……多一点”、“……余”、“大约……左右”。多用于提供大致估算而非精确数字的场合。",
+      "formation": "数量词 / 时间名词 / 金额词 + 남짓",
+      "examples": [
+        {
+          "translation": "我读完这本书花了一周多一点的时间。"
+        },
+        {
+          "translation": "这次旅行我一共花了大约十万韩元出头。"
+        },
+        {
+          "translation": "孩子们走到学校好像花了大约十分钟多一点。"
+        },
+        {
+          "translation": "从公司步行到家里大概需要花一个小时多一点。"
+        }
+      ]
+    },
+    "ko_내내_2": {
+      "title": "~내내（整整、一直、自始至终）",
+      "shortExplanation": "接在表示时间的名词后，强调某一动作或状态在该时间段内持续不断、自始至终（“整整……”、“一整……都……”）。",
+      "longExplanation": "“~내내”是副词性表现，直接接在表示时间段的名词（如一天、一周、一年、整个假期、整节课等）之后，表示某种动作、行为或客观状态从该时间段的起始一直不间断地延续到结束，自始至终没有停歇，相当于汉语的“整整……”、“一整……都……”、“始终……”。",
+      "formation": "时间名词 + 내내",
+      "examples": [
+        {
+          "translation": "在学校里，整节课期间我们都必须认真听老师的讲解。"
+        },
+        {
+          "translation": "那天一整天都在下雨，没带雨伞的话根本没办法出门。"
+        },
+        {
+          "translation": "暑假期间，我们在海边整整玩耍了一整天。"
+        },
+        {
+          "translation": "在他的婚礼上，他整整跳了一整晚的舞。"
+        }
+      ]
+    },
+    "ko_네요_3": {
+      "title": "~네요（……啊、真……呢 - 感叹与新体会）",
+      "shortExplanation": "终结词尾，用于表达说话人亲身观察、体验时所感受到的轻微惊讶、感叹或新发现（“真……呢”、“……啊”）。",
+      "longExplanation": "“~네요”是接在动词或形容词词干后的略带敬意的非正式终结词尾。主要用于说话人对自己刚亲眼看到、亲耳听到或亲身体会到的事实表达即时的感叹、由衷的赞叹或意料之外的惊讶，使语气显得自然、亲切且生动，相当于汉语的“真……啊”、“……呢”。",
+      "formation": "动词/形容词词干 + 네요 | 名词 + (이)네요",
+      "examples": [
+        {
+          "translation": "今天的天气真好啊，温暖的阳光让人的心情都跟着变好了。"
+        },
+        {
+          "translation": "这款蛋糕真是太美味了，这是我第一次品尝这款蛋糕呢。"
+        },
+        {
+          "translation": "咱们的孩子长得可真快啊，在长大的过程中学到了不少本领呢。"
+        },
+        {
+          "translation": "突然下起雨来了呢，因为没带伞所以完全躲不开雨。"
+        }
+      ]
+    },
+    "ko_노릇이다_4": {
+      "title": "~노릇이다（充当……角色、尽……本分 / 真是令人……的处境）",
+      "shortExplanation": "表示不得已代行某种职责、充当某种角色，或在修饰语后感叹某种令人无奈、尴尬的处境（“充当……角色”、“尽……本分”）。",
+      "longExplanation": "“~노릇이다”由名词“노릇”（差事、角色、行当、处境）与体词谓词形“이다”组合而成。通常有两种常见用法：（1）表示某人或某物承担起某种本非固有、临时或不得已的角色与职责（如“当父亲的职责”、“客串老师”）；（2）接在动词或形容词的定语形后，表示事情落入了一种令人匪夷所思、无可奈何或啼笑皆非的窘迫境地。",
+      "formation": "名词（身份、角色） + 노릇이다（或 노릇을 하다）",
+      "examples": [
+        {
+          "translation": "今天因为老师身体不适，所以将由我来暂代老师的职责。"
+        },
+        {
+          "translation": "爸爸去出差了，所以妈妈不得不兼顾充当爸爸的角色。"
+        },
+        {
+          "translation": "这本杂志起到了旅游指南的作用。"
+        },
+        {
+          "translation": "比起做单纯的朋友，她觉得充当大姐姐的角色照顾大家更好。"
+        }
+      ]
+    },
+    "ko_느라고_5": {
+      "title": "~느라고（因为忙于……而…… - 导致消极后果）",
+      "shortExplanation": "连接词尾，表示由于前项动作消耗了大量时间精力，导致未能兼顾其他事情或引发不良结果（“因为忙着……而……”）。",
+      "longExplanation": "“~느라고”是表示消极因果关系的连接词尾，接在动词词干后。强调主语由于全身心投入于前项的主观意志行动，耗费了时间和心力，从而导致后项的事情无法顺利进行，或招致疲倦、迟到、耽误等消极不利的后果。使用时前后分句的主语必须保持一致，且前项只能使用意志动词。",
+      "formation": "动词词干 + 느라고（或 느라）",
+      "examples": [
+        {
+          "translation": "我因为忙着准备TOPIK考试，一直用功学习到了凌晨。"
+        },
+        {
+          "translation": "我们因为忙着赶完这项工程，两天时间里几乎没怎么合过眼。"
+        },
+        {
+          "translation": "他因为全力备战比赛，连饭都顾不上吃给耽搁了。"
+        },
+        {
+          "translation": "母亲为了供我上大学，一直辛辛苦苦工作到深夜。"
+        }
+      ]
+    },
+    "ko_는데다가_6": {
+      "title": "~는데다가（不仅……而且还……、再加上……）",
+      "shortExplanation": "表示在前项情况的基础上又重叠了同方向的另一种情况，具有递进增补意味（“不仅……而且……”、“再加上……”）。",
+      "longExplanation": "“~는데다가”是由定语词尾、依存名词“데”（处、方面）和助词“다가”（添入）构成的惯用型。用于在前项所叙述的事实或特征之上，进一步叠加具有相同倾向（同为优点或同为缺点）的新情况，相当于汉语的“不仅……而且再加上……”、“不但……甚至……”，起到强化语气的递进作用。",
+      "formation": "动词 + 는데다가 | 形容词 + -(으)ㄴ데다가 | 名词 + 인데다가",
+      "examples": [
+        {
+          "translation": "他的学业成绩不仅非常优秀，而且体育运动能力也格外突出。"
+        },
+        {
+          "translation": "我今天不仅身体不太舒服，再加上外面的天气也非常寒冷。"
+        },
+        {
+          "translation": "那家咖啡馆不仅室内氛围格调优雅，而且咖啡的口感也极其出色。"
+        },
+        {
+          "translation": "眼界开阔本就是个难得的优点，再加上他的韩语也说得非常流利。"
+        }
+      ]
+    },
+    "ko_는측에서_7": {
+      "title": "~는 측에서（从……的角度来看、就……方面而言）",
+      "shortExplanation": "用于引出特定主体、阶层或专门领域的立场与视点，作为评价或观察事物的基准（“从……的角度看”、“就……而言”）。",
+      "longExplanation": "“~는 측에서”（或“名词 + 의 측에서”）由表示方向、立场的名词“측”（方、侧）与副词格助词“에서”构成。通常后接“볼 때”（在看来）或“본다면”（若来看），用于明确阐述某一个人群、社会角色或专业学者在看待特定问题时所持有的独特立场与视点，相当于汉语的“从……的角度来看”、“站在……的立场上”。",
+      "formation": "名词 + (의) 측에서（볼 때 / 본다면）",
+      "examples": [
+        {
+          "translation": "站在学生的立场来看，作业布置得实在太多了，令人感到很有负担。"
+        },
+        {
+          "translation": "从经济学家的专业视角来看，数字货币可能会对实体经济产生深远影响。"
+        },
+        {
+          "translation": "如果从医生的角度来看，常吃炸鸡可能会对身体健康造成危害。"
+        },
+        {
+          "translation": "若是站在母亲的视角来看，自己的孩子无论何时永远都是最出色的。"
+        }
+      ]
+    },
+    "ko_더라도_8": {
+      "title": "~더라도（即使……也、哪怕……也）",
+      "shortExplanation": "假设让步连接词尾：即使前项假设的极端情况发生，后项的结果或态度也绝不改变（“哪怕……也……”、“即便……也……”）。",
+      "longExplanation": "“~더라도”是表达强烈假设让步的连接词尾，接在动词或形容词词干后。其语义在于：即使退一步承认前项所假设的条件成立，哪怕是极其严苛或极端的事态，后项所阐述的事实、说话人的决心或客观结果依然坚定不移，不会受到丝毫动摇。比起“-아/어도”，其让步假设的语气更为鲜明强烈。",
+      "formation": "动词/形容词词干 + 더라도 | 名词 + (이)더라도",
+      "examples": [
+        {
+          "translation": "哪怕你投入了再多的时间，可如果最终结果无法令人满意的话又能怎样呢？"
+        },
+        {
+          "translation": "即便我整整学习了一整天，要是考试依然落榜，我的所有努力也会付诸东流。"
+        },
+        {
+          "translation": "哪怕你付出了无比艰辛的努力，要是没能实现那个目标，又该是怎样的一种心情呢？"
+        },
+        {
+          "translation": "无论我如何拼命工作，要是依然攒不下钱来，日子真的会过得很心酸。"
+        }
+      ]
+    },
+    "ko_다니_9": {
+      "title": "~다니（竟然……、居然…… - 表示惊讶与难以置信）",
+      "shortExplanation": "用于对刚刚获知的消息或目睹的事实表达强烈的震惊、意外或难以置信之情（“竟然……”、“居然……”）。",
+      "longExplanation": "“~다니”是间接引语词尾与感叹连接词尾“-니”相融合的缩略表达（源自“-다고 하니”）。当说话人接触到出乎意料的事实、令人惊愕的传闻或难以想象的现状时，以此结构来直接抒发内心的震惊、感慨、困惑或由衷赞赏，相当于汉语中的“居然会……”、“竟然听说……”。",
+      "formation": "动词 + -ㄴ/는다니 | 形容词 + -다니 | 名词 + -(이)라니 | 过去时: -았/었다니",
+      "examples": [
+        {
+          "translation": "听说我们父亲明天就要紧急出国出差，这实在太突然了让人简直无法置信。"
+        },
+        {
+          "translation": "你居然真的把如此棘手的难题给顺利解决了，实在太令人赞叹了。"
+        },
+        {
+          "translation": "原先的计划本就会有变动，可听说他竟然要担当这个团队的领队，真让人不敢相信。"
+        },
+        {
+          "translation": "有那么多人此前都在满怀期待，演出居然被取消了，真是太遗憾了。"
+        }
+      ]
+    },
+    "ko_답게_10": {
+      "title": "~답게（名副其实地、像模像样地、不愧是……）",
+      "shortExplanation": "接在名词后，表示其言行举止或性质特征完全配得上该身份、资格或本质（“名副其实地”、“像个……样”）。",
+      "longExplanation": "“~답게”由接尾词“-답다”（具备应有的资格与典型品格）与副词形词尾“-게”组合而成。附加在名词之后，用于形容主体的行为规范、精神面貌或客观状态完全符合其身份所代表的公认水准与期待，相当于汉语中的“像个真正的……那样”、“名副其实地”、“不愧是……”。",
+      "formation": "名词 + 답게",
+      "examples": [
+        {
+          "translation": "真不愧是职业足球运动员，他非常精通如何娴熟自如地掌控足球。"
+        },
+        {
+          "translation": "像个勤奋求学的学生那样，他轻而易举地就解答出了这道复杂的数学题。"
+        },
+        {
+          "translation": "名副其实的高端品牌设计师，她设计出的服装在每一个细微之处都制作得极其完美。"
+        },
+        {
+          "translation": "尽显经验丰富的大厨风范，他能够极其麻利熟练地处理各种烹饪食材。"
+        }
+      ]
+    },
+    "ko_대로_11": {
+      "title": "~대로（按照、照着、正如……那样）",
+      "shortExplanation": "表示后项的行为或事态完全遵照既定的规则、指示、原状或事实去执行（“按照……”、“照着……”）。",
+      "longExplanation": "“~대로”既可作为添意助词直接接在名词后，也可作为依存名词置于定语词尾之后。用于明确表达后项的举动或事物的形成过程毫无偏差地严格遵循前项所给予的指令、图纸规范、客观现状或说话人的嘱托，相当于汉语中的“按照……”、“遵照……”、“正如……所指示的”。",
+      "formation": "名词 + 대로 | 动词 + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "正如每天都要坚持锻炼的指示那样，我每天清晨都在按部就班地运动。"
+        },
+        {
+          "translation": "必须严格按照操作手册上记录的标准程序来启动这台机器。"
+        },
+        {
+          "translation": "我照着妈妈嘱咐的那样认真用功学习了，因此这次的学业成绩非常理想。"
+        },
+        {
+          "translation": "这栋大楼的所有窗户都已经严格按照设计图纸完美无缺地安装完毕了。"
+        }
+      ]
+    },
+    "ko_던데_12": {
+      "title": "~던데（我看……呢、听说……呢 - 回想与提示前情）",
+      "shortExplanation": "连接词尾，说话人回忆起过去亲身经历或目睹的见闻，以此作为话题的背景或引出转折对比（“我看……呢”、“之前分明……”）。",
+      "longExplanation": "“~던데”是由回想先语末词尾“-더-”与提示背景的连接词尾“-ㄴ데”熔铸而成的表达形式。说话人调动过往的直接经验，回想自己当初亲眼所见、亲身感受到的事实或情景，并将其作为谈话的前提或背景抛出，多用于引出后续的提问、建议、感叹，或与眼前的反常现状构成鲜明对比。",
+      "formation": "动词/形容词词干 + 던데 | 名词 + (이)던데 | 过去时: -았/었던데",
+      "examples": [
+        {
+          "translation": "听我们哲洙提起过，说那个人以前在学校里一直都是个学习格外勤奋的学生呢。"
+        },
+        {
+          "translation": "我记得那家餐厅以前做菜挺美味可口的，可是最近却大不如前了。"
+        },
+        {
+          "translation": "爸爸以前每天早晨都会坚持锻炼身体，可最近却不再那样做了。"
+        },
+        {
+          "translation": "初次见面的时候我觉得他为人格外亲切友善，然而如今却变得判若两人。"
+        }
+      ]
+    },
+    "ko_도록_13": {
+      "title": "~도록 하다（务必使……、努力做到……、请……）",
+      "shortExplanation": "表示说话人下定决心努力达成某个目的，或向他人提出叮嘱与要求，务必促成某种结果（“努力做到……”、“请务必……”）。",
+      "longExplanation": "“~도록 하다”是由表目的与结果程度的连接词尾“-도록”与补助动词“하다”构成的结构。当主语为第一人称时，用于郑重表达说话人为了达成特定目的而将全力以赴的决心或承诺（“我一定设法做好……”）；当用于祈使句或劝告句时，则用于温和而明确地要求、敦促对方务必确保某项任务落实到位。",
+      "formation": "动词词干 + -(으)도록 하다",
+      "examples": [
+        {
+          "translation": "这件事情我一定会负责妥善解决好的，请各位千万不要担心。"
+        },
+        {
+          "translation": "为了能让广大客户发自内心地满意，我们将竭尽全力提供最好的服务。"
+        },
+        {
+          "translation": "为了确保孩子们能够平平安安地抵达学校，请务必放慢车速慢行驾驶。"
+        },
+        {
+          "translation": "为了让在场的每一个人都能清晰听懂，我会放慢语速逐句说明。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_하면_142": {
+      "title": "~하면 할수록（〜すればするほど）",
+      "shortExplanation": "前項の動作や状態の度合いが進むにつれて、それに比例して後項の事態も変化することを表します（「〜すればするほど」）。",
+      "longExplanation": "「~하면 할수록」（完全な形は「-(으)면 -(으)ㄹ수록」）は、ある動作や状態の程度が増加（または減少）するのに伴い、それに比例して後項の出来事も変化することを表す文法構文です。日本語の「〜すればするほど」「〜であればあるほど」に相当します。文脈によっては前半の仮定条件「-(으)면」を省き、単に「-(으)ㄹ수록」の形だけで用いられることもあります。",
+      "formation": "動詞・形容詞語幹 + -(으)면 + 動詞・形容詞語幹 + -(으)ㄹ수록（または 名詞 + -(이)면 -(이)ㄹ수록）",
+      "examples": [
+        {
+          "translation": "韓国語は勉強すればするほど、韓国の文化や歴史をより深く理解できるようになるので、ますます面白くなっていく気がします。"
+        },
+        {
+          "translation": "この家の中で本を読めば読むほど多くの知識を得られるので、私はいつも読書を楽しんでいます。"
+        },
+        {
+          "translation": "料理をすればするほど自信がついてくるので、私はいつも新しいレシピに挑戦しています。"
+        },
+        {
+          "translation": "彼女と一緒に時間を過ごせば過ごすほど、彼女のことをもっと愛するようになる気がします。彼女の性格が本当に魅力的だからです。"
+        }
+      ]
+    },
+    "ko_Expressing_0": {
+      "title": "原因・理由の表現（~(으)니까 / -아/어서 / -(으)니）",
+      "shortExplanation": "文と文をつなぎ、後項の出来事や判断を引き起こす原因や理由を表す接続表現です（「〜だから」「〜ので」）。",
+      "longExplanation": "韓国語において「~(으)니까」「-아/어서」「-(으)니」は原因や理由を表す代表的な接続語尾です。「-아/어서」は客観的な因果関係を表す際に用いられ、後続節に命令文や勧誘文を置くことができません。一方、「~(으)니까」は話し手の主観的な判断や相手への働きかけの根拠を表し、命令文や勧誘文と自然に共起します。「-(으)니」は文章語的で改まった響きを持ち、前置きや理由を提示する際に用いられます。",
+      "formation": "動詞・形容詞語幹 + -(으)니까 / -아/어서 / -(으)니 | 名詞 + -(이)니까 / -(이)라서 / -(이)니",
+      "examples": [
+        {
+          "translation": "彼はいつも一生懸命に勉強しているので、TOPIKの試験に楽々と合格すると思います。"
+        },
+        {
+          "translation": "旅行に行きたかったのですが、お金がなかったので行くことができませんでした。"
+        },
+        {
+          "translation": "彼は病気休暇を取ったので、会社に来なかったのですね。"
+        },
+        {
+          "translation": "雨が降ってきたので、外出を取りやめにしました。"
+        }
+      ]
+    },
+    "ko_남짓_1": {
+      "title": "~남짓（〜余り、〜足らず、〜程度）",
+      "shortExplanation": "数量、時間、金額を表す語の後に付き、その基準値を少し超える程度、またはその前後の概数であることを表します（「〜余り」「〜ちょっと」）。",
+      "longExplanation": "「~남짓」は数量、時間、距離、金額などの表現に直接付く接尾語的・依存名詞的表現で、ある基準となる数量をわずかに超えていること、またはその前後の概算数値であることを示します。日本語の「〜余り」「〜ちょっと」「〜足らず」に相当し、厳密な正確さではなく大まかな見当や概数を述べる際に重宝されます。",
+      "formation": "数量詞 / 時間名詞 / 金額表現 + 남짓",
+      "examples": [
+        {
+          "translation": "私がこの本を読み終えるのに一週間余りかかりました。"
+        },
+        {
+          "translation": "今回の旅行では10万ウォン足らずを使いました。"
+        },
+        {
+          "translation": "子供たちが学校に到着するまでに10分余りかかったようです。"
+        },
+        {
+          "translation": "会社から自宅まで歩いて1時間ちょっとかかります。"
+        }
+      ]
+    },
+    "ko_내내_2": {
+      "title": "~내내（〜中ずっと、始終、終始）",
+      "shortExplanation": "時間を表す名詞の後に付き、その期間の最初から最後まで動作や状態が途切れることなく継続することを表します（「〜中ずっと」「終始」）。",
+      "longExplanation": "「~내내」は時間を表す名詞（하루、일주일、일 년、수업、방학など）に直接接続し、その期間の初めから終わりまである動作や状態が絶え間なく続いていることを強調する副詞的表現です。日本語の「〜中ずっと」「一貫して」「終始〜」に相当し、長時間の継続性をありありと描写します。",
+      "formation": "時間名詞 + 내내",
+      "examples": [
+        {
+          "translation": "学校では授業中ずっと先生の説明を聞いていなければなりませんでした。"
+        },
+        {
+          "translation": "その日は一日中雨が降り続いていたので、傘なしでは外出できませんでした。"
+        },
+        {
+          "translation": "夏休みに私たちは海辺で一日中遊び明かしました。"
+        },
+        {
+          "translation": "自分の結婚式で、彼は夜通しダンスを踊っていました。"
+        }
+      ]
+    },
+    "ko_네요_3": {
+      "title": "~네요（〜ですね、〜だなあ - 感嘆と新事実の自覚）",
+      "shortExplanation": "直接見聞きしたり体験したりして新たに知った事実に対する感嘆や驚きを表す終結語尾です（「〜ですね」「〜だなあ」）。",
+      "longExplanation": "「~네요」は用言の語幹に付く丁寧な終結語尾です。話し手がその場で直接見たり聞いたり体験したりして初めて知った事実について、率直な驚きや感嘆、感銘を表す際に用いられます。会話を生き生きとさせ、相手に対して共感や親しみのある印象を与えるニュアンスを持ちます。",
+      "formation": "動詞・形容詞語幹 + 네요 | 名詞 + (이)네요",
+      "examples": [
+        {
+          "translation": "今日は本当に天気が良いですね。日差しが暖かくて気分が晴れやかになりました。"
+        },
+        {
+          "translation": "このケーキはとても美味しいですね。私、今回初めてこのケーキを食べてみました。"
+        },
+        {
+          "translation": "うちの子は本当に成長が早いですね。こうして大きくなりながら多くのことを学んでいます。"
+        },
+        {
+          "translation": "急に雨が降ってきましたね。傘を持ってこなかったので雨を避けることができませんでした。"
+        }
+      ]
+    },
+    "ko_노릇이다_4": {
+      "title": "~노릇이다（〜役を務める、〜の立場だ / 〜な事態だ）",
+      "shortExplanation": "本来の職務とは異なる役割を代理・担当すること、または修飾語を受けてやりきれない・困惑した境遇を表現します（「〜役だ」「〜な事態だ」）。",
+      "longExplanation": "「~노릇이다」は、役回りや職務、境遇を意味する名詞「노릇」に指定詞「이다」が付いた構文です。主に二通りの用法があります。（1）本来の自分の本分ではない役割や職責を状況に迫られて引き受けたり代理で務めたりすること（「親役」「先生役」）；（2）用言の連体形の後ろに付き、呆れたり困惑したりするような不条理でやりきれない状況や巡り合わせを嘆く表現です。",
+      "formation": "名詞（身分・役割） + 노릇이다（または 노릇을 하다）",
+      "examples": [
+        {
+          "translation": "今日は先生が体調を崩されたので、私が先生役を務めることになります。"
+        },
+        {
+          "translation": "お父さんが出張に行ったので、お母さんが父親役を担っています。"
+        },
+        {
+          "translation": "この雑誌は旅行ガイドの役目をしっかりと果たしています。"
+        },
+        {
+          "translation": "彼女は友達というよりはお姉さん役を引き受けてあげるのが良いと考えています。"
+        }
+      ]
+    },
+    "ko_느라고_5": {
+      "title": "~느라고（〜するのに追われて、〜していて - 否定的結果の原因）",
+      "shortExplanation": "前項の動作に多くの時間や労力を費やした結果、他のことができなかったり否定的な事態が生じたりした原因を表します（「〜するのに忙しくて」）。",
+      "longExplanation": "「~느라고」は動詞の語幹に接続する原因・理由の接続語尾です。主語がある意志的な行動に時間や心力を取られていたため、別の予定が果たせなかったり、過労や遅刻などの好ましくない結果を招いたりした際に用いられます。前節と後節の主語は同一でなければならず、前節には必ず意志動詞が来ます。",
+      "formation": "動詞語幹 + 느라고（または 느라）",
+      "examples": [
+        {
+          "translation": "私はTOPIK試験の準備をするのに追われて、明け方まで勉強しました。"
+        },
+        {
+          "translation": "私たちはプロジェクトを完成させるのに忙しくて、この2日間ほとんど眠れませんでした。"
+        },
+        {
+          "translation": "彼は大会の準備に追われて食事を抜いてしまいました。"
+        },
+        {
+          "translation": "母は私を大学に進学させるために、夜遅くまで一生懸命に働いてくださいました。"
+        }
+      ]
+    },
+    "ko_는데다가_6": {
+      "title": "~는데다가（〜な上に、〜だけでなくその上）",
+      "shortExplanation": "前項の事実や特徴に加えて、さらに同傾向の新たな事柄が重なることを表します（「〜な上に」「〜だけでなくさらに」）。",
+      "longExplanation": "「~는데다가」は連体形語尾に依存名詞「데」（点・場所）と助詞「다가」（付加）が結合した表現です。前項で述べた状態や事実に加えて、さらに同じ方向性（良いことならさらに良いこと、悪いことならさらに悪いこと）の別の事実が重畳して付け加わることを表し、日本語の「〜である上に」「〜だけでなくその上」に相当します。",
+      "formation": "動詞 + 는데다가 | 形容詞 + -(으)ㄴ데다가 | 名詞 + 인데다가",
+      "examples": [
+        {
+          "translation": "彼の学業成績は優秀である上に、運動能力もずば抜けています。"
+        },
+        {
+          "translation": "私は今日体調が優れない上に、天気も非常に冷え込んでいますね。"
+        },
+        {
+          "translation": "あのカフェは店内の雰囲気も素敵な上に、コーヒーの味わいも素晴らしいですね。"
+        },
+        {
+          "translation": "視野が広いこと自体が長所である上に、彼は韓国語も極めて流暢に話せますね。"
+        }
+      ]
+    },
+    "ko_는측에서_7": {
+      "title": "~는 측에서（〜の立場からすると、〜の観点から見れば）",
+      "shortExplanation": "特定の人物、集団、あるいは専門分野の視座や立場を提示し、事態を判断する基準を示します（「〜の立場からすると」「〜の側から見れば」）。",
+      "longExplanation": "「~는 측에서」（または「名詞 + 의 측에서」）は、側や観点を意味する名詞「측（側）」に副詞格助詞「에서」が付いた構文です。多くは「볼 때（見るとき）」や「본다면（見るならば）」を伴い、ある特定の人々や専門的立場から物事を観察・評価する際の独自の視角を明示します。日本語の「〜の立場から言えば」「〜の観点から見ると」に相当します。",
+      "formation": "名詞 + (의) 측에서（볼 때 / 본다면）",
+      "examples": [
+        {
+          "translation": "学生たちの側から見ると、宿題が多すぎて大きな負担に感じられます。"
+        },
+        {
+          "translation": "経済学者の観点からすると、デジタル通貨は実体経済に甚大な影響を及ぼす可能性があります。"
+        },
+        {
+          "translation": "医師の立場から見れば、フライドチキンは健康に害を及ぼす恐れがあります。"
+        },
+        {
+          "translation": "母親の立場から見れば、我が子はいつだって最高に輝いているものです。"
+        }
+      ]
+    },
+    "ko_더라도_8": {
+      "title": "~더라도（たとえ〜ても、〜だとしても）",
+      "shortExplanation": "仮定譲歩の接続語尾：前項で極端な条件を仮定しても、後項の結論や決意、客観的事実は左右されないことを表します（「たとえ〜としても」）。",
+      "longExplanation": "「~더라도」は強い仮定譲歩を表す接続語尾で、用言の語幹に接続します。仮に前項の事態が実際に成立したり、どれほど極端で過酷な条件であったりしても、後項で述べる話し手の意志や行動、あるいは生じる客観的な結果には何の影響も及ばないことを強調します。「-아/어도」に比べて仮定譲歩の意味合いが一段と際立ちます。",
+      "formation": "動詞・形容詞語幹 + 더라도 | 名詞 + (이)더라도",
+      "examples": [
+        {
+          "translation": "あなたがいくら多くの時間を投資したとしても、その結果に満足できなければどうでしょうか。"
+        },
+        {
+          "translation": "たとえ一日中勉強したとしても、試験に落ちてしまえば私の努力は水の泡になってしまう。"
+        },
+        {
+          "translation": "君がどれほど努力したとしても、その目標を達成できなければどうなるだろうか。"
+        },
+        {
+          "translation": "いくら働いてもお金が貯まらなければ、生きていくのは辛いです。"
+        }
+      ]
+    },
+    "ko_다니_9": {
+      "title": "~다니（〜だなんて、〜するとは - 驚き・意外・感嘆）",
+      "shortExplanation": "見聞きした情報や目の前の事実に対して、強い驚きや疑念、感嘆の情を表します（「〜だなんて」「〜とは信じられない」）。",
+      "longExplanation": "「~다니」は、間接引用の語尾に感嘆・提示の接続語尾「-니」が融合した縮約表現です（「-다고 하니」の縮約形）。話し手が耳にした情報や目の当たりにした出来事が予想外であったり、あまりにも驚くべき内容であったりする際に、信じられないという驚愕や意外性、あるいは感銘の念を率直に表します。",
+      "formation": "動詞 + -ㄴ/는다니 | 形容詞 + -다니 | 名詞 + -(이)라니 | 過去形: -았/었다니",
+      "examples": [
+        {
+          "translation": "私たちの父が明日急きょ海外へ旅立つだなんて、まったく信じられません。"
+        },
+        {
+          "translation": "君が本当にこんなに難しい問題を解決しただなんて、実に驚きです。"
+        },
+        {
+          "translation": "当初の計画が変わる予定とはいえ、彼がこのチームのリーダーになるだなんて信じられない。"
+        },
+        {
+          "translation": "大勢の人たちが楽しみに期待していたのに、公演が中止になってしまうだなんて残念です。"
+        }
+      ]
+    },
+    "ko_답게_10": {
+      "title": "~답게（〜らしく、〜にふさわしく）",
+      "shortExplanation": "名詞の後に付き、その身分や資格、事物の本質に実にふさわしく振る舞う様子を表します（「〜らしく」「〜にふさわしく」）。",
+      "longExplanation": "「~답게」は、その名詞に値する典型的な品格や資格を備えていることを表す接尾辞「-답다」に副詞形語尾「-게」が付いた表現です。名詞の直後に接続し、その立場や役割に期待される標準的な基準や美徳にぴったり合致した行動や状態であることを肯定的に表現します。",
+      "formation": "名詞 + 답게",
+      "examples": [
+        {
+          "translation": "プロサッカー選手らしく、彼はボールを巧みに扱う方法を実によく心得ていました。"
+        },
+        {
+          "translation": "勉学に励む学生らしく、彼は数学の問題を難なく解くことができました。"
+        },
+        {
+          "translation": "高級ブランドのデザイナーらしく、彼女の服は細部に至るまで完璧に仕立てられていました。"
+        },
+        {
+          "translation": "経験豊かな料理人らしく、彼は手早く調理の食材を扱うことができました。"
+        }
+      ]
+    },
+    "ko_대로_11": {
+      "title": "~대로（〜のとおりに、〜のままに）",
+      "shortExplanation": "前項の指示、規則、原状、またはありのままの事実に厳密に従って後項の動作を行うことを表します（「〜のとおりに」）。",
+      "longExplanation": "「~대로」は名詞に直接付く助詞、または動詞・形容詞の連体形に後続する依存名詞として機能します。前項で示された指示内容、マニュアルの規定、設計図、あるいは目にした事実のありのままの姿に少しのズレもなく従い、それに沿って後項の行動を進めることを表します。",
+      "formation": "名詞 + 대로 | 動詞 + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "毎日運動しなさいという指示どおりに、毎朝運動を実践しています。"
+        },
+        {
+          "translation": "マニュアルに書かれているとおりに、機械を作動させなければなりません。"
+        },
+        {
+          "translation": "お母さんが言ったとおりに一生懸命勉強し、その結果成績も大変良かったです。"
+        },
+        {
+          "translation": "建物のすべての窓は設計図どおりに完璧に設置されました。"
+        }
+      ]
+    },
+    "ko_던데_12": {
+      "title": "~던데（〜だったけれど、〜していたようだけど - 回想と背景提示）",
+      "shortExplanation": "話し手が過去に直接見聞き・体験した事実を思い起こし、それを後続の談話の前提や背景として提示します（「〜だったけれど」「〜していたよ」）。",
+      "longExplanation": "「~던데」は、過去の回想を表す先語末語尾「-더-」と背景を提示する接続語尾「-ㄴ데」が合わさった表現です。話し手が自らの過去の直接経験に基づいて、かつて目撃した情景や知った事実を回想しながら後続の文の背景・前提として提示します。相手への質問、勧誘、あるいは現在とのコントラストを示す際によく用いられます。",
+      "formation": "動詞・形容詞語幹 + 던데 | 名詞 + (이)던데 | 過去形: -았/었던데",
+      "examples": [
+        {
+          "translation": "うちのチョルスが話していたけれど、彼は学校でいつも熱心に勉強していた学生だったそうだよ。"
+        },
+        {
+          "translation": "あのレストランはかつて美味しい料理を出していたけれど、最近はそうでもないね。"
+        },
+        {
+          "translation": "お父さんは以前は毎朝運動していたけれど、最近はそうしていませんね。"
+        },
+        {
+          "translation": "最初の出会いでは彼はとても親切だったけれど、でも今はそうではありません。"
+        }
+      ]
+    },
+    "ko_도록_13": {
+      "title": "~도록 하다（〜するようにする、〜するように計らう）",
+      "shortExplanation": "ある目的を達成するために努める意志を表したり、相手に対して所定の事態が実現するよう指示・勧告したりします（「〜するようにする」）。",
+      "longExplanation": "「~도록 하다」は、目的や結果、程度を表す接続語尾「-도록」に補助動詞「하다」が結合した文法構文です。話し手自身が主語の場合は、ある望ましい結果をもたらすために全力を尽くすという固い意志や約束を丁寧に表明します（「〜するようにいたします」）。一方、命令や勧誘の文脈では、相手に配慮しつつ確実に特定の行動を取らせるための指示・依頼表現となります。",
+      "formation": "動詞語幹 + -(으)도록 하다",
+      "examples": [
+        {
+          "translation": "私がこの件をきちんと解決するようにいたしますので、ご心配なさらないでください。"
+        },
+        {
+          "translation": "お客様にご満足いただけるよう、私たちは最善を尽くしてまいります。"
+        },
+        {
+          "translation": "子供たちが安全に学校に着けるよう、車の運転はゆっくり行ってください。"
+        },
+        {
+          "translation": "皆がよく理解できるように、落ち着いてゆっくりとお話しいたします。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_하면_142": {
+      "title": "~하면 할수록 (비례적 증가·변화)",
+      "shortExplanation": "앞 절의 동작이나 상태의 정도가 더해짐에 따라 뒤 절의 일도 그에 비례하여 커지거나 변화함을 나타내는 연결 표현입니다 ('-(으)면 -(으)ㄹ수록').",
+      "longExplanation": "'~하면 할수록'(기본형 '-(으)면 -(으)ㄹ수록')은 어떤 일이나 상태의 정도가 깊어지거나 누적됨에 비례하여 다른 일이나 상태도 그에 발맞추어 점진적으로 증대되거나 변화함을 나타내는 문법 표현입니다. 문맥에 따라 앞의 조건절 '-(으)면'을 생략하고 '-(으)ㄹ수록' 형태로만 줄여 쓰기도 합니다.",
+      "formation": "동사/형용사 어간 + -(으)면 + 동사/형용사 어간 + -(으)ㄹ수록 (또는 명사 + -(이)면 -(이)ㄹ수록)",
+      "examples": [
+        {
+          "translation": "저는 한국어를 공부하면 할수록 더 재미있어지는 것 같아요, 한국의 문화와 역사를 더 깊이 이해할 수 있게 되니까요."
+        },
+        {
+          "translation": "이 집안에서 책을 읽으면 읽을수록 더 많은 지식을 얻을 수 있어서 저는 항상 책 읽는 것을 즐깁니다."
+        },
+        {
+          "translation": "요리를 하면 할수록 자신감이 더 생긴다, 그래서 나는 항상 새로운 요리법을 시도해 본다."
+        },
+        {
+          "translation": "그녀와 함께 시간을 보내면 보낼수록 그녀를 더 사랑하게 되는 것 같아요, 그녀의 성격이 정말 매력적이니까요."
+        }
+      ]
+    },
+    "ko_Expressing_0": {
+      "title": "원인·이유의 연결어미 (~(으)니까 / -아/어서 / -(으)니)",
+      "shortExplanation": "앞 절이 뒤 절의 결과나 판단에 대한 원인, 이유, 혹은 근거가 됨을 나타내는 대표적인 연결어미들입니다.",
+      "longExplanation": "한국어에서 원인이나 이유를 나타내는 가장 대표적인 연결어미로는 '-(으)니까', '-아/어서', '-(으)니'가 있습니다. '-아/어서'는 주로 객관적인 인과관계를 나타내며 뒤에 명령문이나 청유문이 올 수 없습니다. 반면에 '-(으)니까'는 화자의 주관적 판단이나 발견, 권유의 근거를 나타내어 명령문, 청유문과 자유롭게 어울립니다. '-(으)니'는 주로 문어체나 격식 있는 담화에서 이유를 부드럽게 제시할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)니까 / -아/어서 / -(으)니 | 명사 + -(이)니까 / -(이)라서 / -(이)니",
+      "examples": [
+        {
+          "translation": "그는 항상 열심히 공부하니까 TOPIK 시험을 쉽게 통과할 것 같아요."
+        },
+        {
+          "translation": "여행을 가고 싶었는데, 돈이 없어서 가지 못했어요."
+        },
+        {
+          "translation": "그는 병가를 냈으니 회사에 안 왔네요."
+        },
+        {
+          "translation": "비가 내려서 외출을 취소했어요."
+        }
+      ]
+    },
+    "ko_남짓_1": {
+      "title": "~남짓 (수량·시간의 어림)",
+      "shortExplanation": "수량, 시간, 금액, 거리 등을 나타내는 말 뒤에 붙어, 기준 수량을 조금 넘거나 그에 가까운 정도임을 나타냅니다 ('~남짓').",
+      "longExplanation": "'~남짓'은 수량이나 시간, 길이, 무게, 금액 등을 나타내는 명사 또는 수사 뒤에 붙는 접미사 혹은 의존명사적 표현으로, 제시된 기준 수량보다 조금 더 많거나 그 정도에 거의 다다랐음을 나타내는 어림수 표현입니다. 정확한 수치를 알 수 없거나 대략적인 추산치를 말할 때 유용하게 쓰입니다.",
+      "formation": "수량 / 시간 / 금액 명사 + 남짓",
+      "examples": [
+        {
+          "translation": "제가 이 책을 다 읽는 데 일주일 남짓 걸렸어요."
+        },
+        {
+          "translation": "이번 여행에 10만 원 남짓 썼어요."
+        },
+        {
+          "translation": "아이들이 학교에 도착하기까지 10분 남짓 걸린 것 같아요."
+        },
+        {
+          "translation": "회사에서 집까지 걸어서 한 시간 남짓 걸려요."
+        }
+      ]
+    },
+    "ko_내내_2": {
+      "title": "~내내 (기간 전체의 지속)",
+      "shortExplanation": "시간이나 기간을 나타내는 명사 뒤에 붙어, 그 기간의 처음부터 끝까지 어떤 상태나 행위가 중단 없이 지속됨을 나타냅니다 ('~내내').",
+      "longExplanation": "'~내내'는 '하루', '일주일', '일 년', '수업', '방학' 등 시간이나 특정 기간을 나타내는 명사 뒤에 직접 결합하여, 그 기간의 시작부터 마침까지 어떠한 행동이나 사건, 기상 현상이 줄곧 끊이지 않고 지속됨을 강조하는 부사적 표현입니다.",
+      "formation": "시간 명사 + 내내",
+      "examples": [
+        {
+          "translation": "학교에서는 수업 내내 선생님의 설명을 귀 기울여 들어야 했습니다."
+        },
+        {
+          "translation": "그날은 비가 내내 와서 우산 없이는 밖으로 나갈 수 없었어요."
+        },
+        {
+          "translation": "여름휴가 때 우리는 바닷가에서 하루 내내 신나게 놀았습니다."
+        },
+        {
+          "translation": "자신의 결혼식에서 그는 밤 내내 즐겁게 춤을 추었습니다."
+        }
+      ]
+    },
+    "ko_네요_3": {
+      "title": "~네요 (직접 경험한 사실에 대한 감탄·자각)",
+      "shortExplanation": "화자가 직접 경험하거나 목격하여 새롭게 알게 된 사실에 대해 감탄이나 가벼운 놀라움을 나타내는 종결어미입니다 ('~네요').",
+      "longExplanation": "'~네요'는 동사나 형용사의 어간 또는 서술격 조사 뒤에 붙는 종결어미입니다. 화자가 대화 현장에서 직접 보거나 듣거나 체험하여 새롭게 인식하게 된 사실을 두고 감탄하거나 경탄의 감정을 자연스럽고 정중하게 드러낼 때 사용합니다. 상대방에게 친근하고 부드러운 인상을 줍니다.",
+      "formation": "동사/형용사 어간 + 네요 | 명사 + (이)네요",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 정말 좋네요, 따스한 햇볕이 비치니 기분이 절로 좋아졌어요."
+        },
+        {
+          "translation": "이 케이크가 너무 맛있네요, 저는 이번에 처음으로 이 케이크를 먹어봤어요."
+        },
+        {
+          "translation": "우리 아이가 참 빨리 크네요, 이렇게 커 가면서 많은 것을 배우고 있어요."
+        },
+        {
+          "translation": "갑자기 소나기가 오네요, 우산을 가져오지 않아서 비를 피할 수가 없었어요."
+        }
+      ]
+    },
+    "ko_노릇이다_4": {
+      "title": "~노릇이다 (역할·구실 수행 / 기막힌 처지)",
+      "shortExplanation": "어떤 직분이나 역할, 구실을 맡아 행함을 나타내거나, 관형사형 어미 뒤에 쓰여 난처하고 기가 막힌 처지를 한탄할 때 씁니다 ('~노릇이다').",
+      "longExplanation": "'~노릇이다'는 직책, 구실, 역할 또는 처지를 뜻하는 명사 '노릇'에 서술격 조사 '이다'가 결합된 형태입니다. 주로 두 가지로 쓰입니다. 첫째, 상황상 부득이하게 본래 자신의 직분이 아닌 다른 사람의 역할이나 직책을 대신 맡아서 수행함을 나타냅니다(선생 노릇, 부모 노릇). 둘째, 관형사형 어미 뒤에서 어처구니없고 딱한 사정이나 난처한 처지를 강조할 때 쓰입니다.",
+      "formation": "명사(역할·직분) + 노릇이다 (또는 노릇을 하다)",
+      "examples": [
+        {
+          "translation": "오늘은 선생님이 편찮으셔서 제가 임시로 선생님 노릇을 하게 될 것입니다."
+        },
+        {
+          "translation": "아빠가 출장을 가셨으니 엄마가 든든한 아빠 노릇을 하고 계십니다."
+        },
+        {
+          "translation": "이 잡지는 알찬 여행 가이드 노릇을 톡톡히 해 줍니다."
+        },
+        {
+          "translation": "그녀는 친구보다는 듬직한 언니 노릇을 해주는 게 더 좋다고 생각해."
+        }
+      ]
+    },
+    "ko_느라고_5": {
+      "title": "~느라고 (어떤 일에 집중하느라 부정적 결과 초래)",
+      "shortExplanation": "앞 절의 행동에 시간과 노력을 쏟느라 다른 일을 하지 못했거나 부정적인 결과가 초래되었음을 나타내는 연결어미입니다 ('~느라고').",
+      "longExplanation": "'~느라고'는 동사 어간 뒤에 붙어, 주어가 어떤 의지적 행동에 온 힘이나 시간을 집중하여 쏟아붓느라 다른 마땅한 일을 챙기지 못했거나 피로, 지각 등 원치 않는 불리한 결과가 생겨났음을 나타내는 인과관계의 연결어미입니다. 앞뒤 절의 주어는 반드시 같아야 하며, 앞 절에는 오직 사람의 의지적 행위를 나타내는 동사만 올 수 있습니다.",
+      "formation": "동사 어간 + 느라고 (또는 느라)",
+      "examples": [
+        {
+          "translation": "저는 토픽 시험을 준비하느라고 새벽까지 밤을 새워 공부했어요."
+        },
+        {
+          "translation": "우리는 프로젝트를 기한 내에 마치느라고 이틀 동안 잠을 거의 자지 못했어요."
+        },
+        {
+          "translation": "그는 대회 준비에 몰두하느라고 제때 식사하는 것도 거르고 말았어요."
+        },
+        {
+          "translation": "어머니는 저를 대학교에 보내느라 밤늦게까지 궂은일을 마다치 않고 일하셨어요."
+        }
+      ]
+    },
+    "ko_는데다가_6": {
+      "title": "~는데다가 (상황의 중첩·첨가)",
+      "shortExplanation": "앞 절의 사실이나 상태에 더하여 그와 같은 방향의 사실이 덧붙여짐을 나타내는 연결 표현입니다 ('~는데다가').",
+      "longExplanation": "'~는데다가'는 용언의 관형사형 어미 뒤에 의존명사 '데'와 조사 '다가'가 결합된 형태입니다. 앞 절에서 이미 언급한 내용에 덧붙여 그와 유사한 성격(긍정적인 것은 긍정적인 것끼리, 부정적인 것은 부정적인 것끼리)의 사실이나 특성이 추가로 가중됨을 나타내며, 우리말의 '뿐만 아니라 그 위에 더하여'라는 점층적 의미를 가집니다.",
+      "formation": "동사 + 는데다가 | 형용사 + -(으)ㄴ데다가 | 명사 + 인데다가",
+      "examples": [
+        {
+          "translation": "그의 성적이 대단히 우수한 데다가, 운동 신경과 능력도 매우 탁월해요."
+        },
+        {
+          "translation": "저는 오늘 몸 컨디션이 안 좋은 데다가, 날씨마저 무척이나 춥네요."
+        },
+        {
+          "translation": "그 카페는 아늑한 분위기도 좋은 데다가, 커피 맛도 아주 훌륭하네요."
+        },
+        {
+          "translation": "안목이 넓은 것 자체가 큰 장점인 데다가, 한국어 구사 능력도 매우 뛰어나네요."
+        }
+      ]
+    },
+    "ko_는측에서_7": {
+      "title": "~는 측에서 (특정 관점이나 입장의 제시)",
+      "shortExplanation": "특정 인물, 집단, 혹은 전문 분야의 입장이나 시각을 전제하여 대상을 판단하고 관찰함을 나타냅니다 ('~측에서 볼 때/본다면').",
+      "longExplanation": "'~는 측에서'(또는 '명사 + 의 측에서')는 방향이나 입장을 나타내는 명사 '측(側)'에 부사격 조사 '에서'가 결합된 표현입니다. 흔히 '볼 때'나 '본다면'과 함께 쓰여, 특정 집단이나 개인이 서 있는 고유한 위치와 관점, 시야에 입각하여 어떤 사실이나 정책, 현상을 평가하고 바라봄을 명확하게 제시할 때 사용합니다.",
+      "formation": "명사 + (의) 측에서 (볼 때 / 본다면)",
+      "examples": [
+        {
+          "translation": "학생들의 측에서 볼 때, 과제가 너무 과도하게 많아서 큰 부담으로 다가옵니다."
+        },
+        {
+          "translation": "경제학자의 측에서 볼 때 디지털 화폐는 실물 경제 전반에 막대한 영향을 미칠 수 있습니다."
+        },
+        {
+          "translation": "의사의 측에서 본다면 튀긴 치킨은 건강에 해로울 수 있습니다."
+        },
+        {
+          "translation": "엄마의 측에서 본다면, 자기 아이는 언제나 세상에서 가장 소중하고 제일이지요."
+        }
+      ]
+    },
+    "ko_더라도_8": {
+      "title": "~더라도 (가정적 양보의 연결어미)",
+      "shortExplanation": "앞 절의 극단적인 조건이나 사실을 가정하여 인정하더라도, 뒤 절의 결과나 의지는 변함없음을 나타냅니다 ('~더라도').",
+      "longExplanation": "'~더라도'는 동사나 형용사 어간 뒤에 붙어 강한 가정적 양보를 나타내는 연결어미입니다. 설령 앞 절의 가정이 실제로 실현되거나 아무리 혹독하고 극단적인 상황에 처하더라도, 뒤 절에서 표현하는 화자의 결단, 행동, 혹은 객관적인 사실이나 결과에는 아무런 변동이나 영향이 미치지 않음을 강조합니다. '-아/어도'보다 가정 양보의 어조가 훨씬 강합니다.",
+      "formation": "동사/형용사 어간 + 더라도 | 명사 + (이)더라도",
+      "examples": [
+        {
+          "translation": "당신이 아무리 시간을 많이 투자하더라도 그 결과가 만족스럽지 않다면 무슨 소용이 있겠습니까?"
+        },
+        {
+          "translation": "나는 하루 종일 열심히 공부하더라도 시험에서 떨어지면 내 노력이 무용지물이 되어버릴 거야."
+        },
+        {
+          "translation": "네가 얼마나 뼈를 깎는 노력을 하더라도 그 목표를 이루지 못한다면 어떨까요?"
+        },
+        {
+          "translation": "나는 아무리 밤낮으로 일해도 돈이 모이지 않는다면 너무나 힘들어요."
+        }
+      ]
+    },
+    "ko_다니_9": {
+      "title": "~다니 (놀라움·의외성·감탄의 감정 표출)",
+      "shortExplanation": "새롭게 듣거나 본 사실에 대해 큰 놀라움, 의외성, 감탄, 혹은 믿기 힘든 심정을 나타내는 감탄적 어미입니다 ('~다니').",
+      "longExplanation": "'~다니'는 간접화법을 나타내는 인용어미와 감탄의 연결어미 '-니'가 결합하여 굳어진 축약 표현입니다('-다고 하니'의 줄임). 화자가 직접 전해 들은 소식이나 목격한 상황이 자신의 상식이나 예상과 크게 달라 놀랍거나 기가 막힐 때, 또는 대단하다고 깊이 탄복할 때 사용하는 생생한 감정 표출 문법입니다.",
+      "formation": "동사 + -ㄴ/는다니 | 형용사 + -다니 | 명사 + -(이)라니 | 과거: -았/었다니",
+      "examples": [
+        {
+          "translation": "우리 아버지가 내일 급하게 해외로 출장을 떠나신다니 전혀 믿기지가 않아요."
+        },
+        {
+          "translation": "네가 진짜로 이렇게 난해한 문제를 해결해 냈다니 정말 놀랍기 그지없습니다."
+        },
+        {
+          "translation": "원래 계획이 바뀔 예정이긴 해도, 그 사람이 이 팀의 리더가 될 거라니 믿어지지 않아."
+        },
+        {
+          "translation": "그토록 많은 사람들이 손꼽아 기대하고 있었는데, 공연이 전격 취소되다니 너무 아쉽네요."
+        }
+      ]
+    },
+    "ko_답게_10": {
+      "title": "~답게 (본연의 자격·특성에 걸맞음)",
+      "shortExplanation": "명사 뒤에 붙어, 그 명사가 마땅히 갖추어야 할 자격, 품격 또는 본래의 특성에 꼭 들어맞음을 나타냅니다 ('~답게').",
+      "longExplanation": "'~답게'는 명사 뒤에 붙어 '그 명사다운 성질이나 자격이 있음'을 뜻하는 접미사 '-답다'에 부사형 어미 '-게'가 결합된 형태입니다. 어떤 대상이 자신이 지닌 이름, 직분, 신분, 자격에 어울리게 훌륭하고 모범적으로 행동하거나 상태를 유지하고 있음을 긍정적으로 묘사할 때 널리 쓰입니다.",
+      "formation": "명사 + 답게",
+      "examples": [
+        {
+          "translation": "프로 축구 선수답게, 그는 공을 능숙하게 다루는 감각과 기술을 아주 잘 알고 있었습니다."
+        },
+        {
+          "translation": "열심히 공부하는 모범 학생답게, 그는 까다로운 수학 문제를 척척 쉽게 해결해 냈습니다."
+        },
+        {
+          "translation": "명품 디자이너답게, 그녀가 만든 옷은 세부적인 디테일 하나하나까지 완벽하게 완성되어 있었습니다."
+        },
+        {
+          "translation": "노련하고 경험 많은 요리사답게, 그는 요리 식재료를 놀라울 만큼 빠르게 다룰 줄 알았습니다."
+        }
+      ]
+    },
+    "ko_대로_11": {
+      "title": "~대로 (기준·원형에 따름)",
+      "shortExplanation": "어떤 행동이나 사실이 앞선 지시, 규정, 원형 또는 원래의 상태 그대로 온전히 행해짐을 나타냅니다 ('~대로').",
+      "longExplanation": "'~대로'는 체언(명사) 뒤에 직접 붙는 보조사이거나, 용언의 관형사형 어미 뒤에 쓰이는 의존명사입니다. 뒤따르는 행동이나 현상이 사전에 정해진 규칙, 매뉴얼의 지시, 관찰된 사실이나 사물의 원형 그대로 조금의 어긋남 없이 준수되거나 모방되어 이루어짐을 뜻합니다.",
+      "formation": "명사 + 대로 | 동사 + -(으)ㄴ/는 대로",
+      "examples": [
+        {
+          "translation": "매일 운동하라는 의사의 지시대로 매일 아침 거르지 않고 운동을 실천하고 있습니다."
+        },
+        {
+          "translation": "취급 설명서 매뉴얼에 적힌 순서대로, 기계를 정확하게 작동시켜야 합니다."
+        },
+        {
+          "translation": "엄마가 말씀하신 대로 성실하게 공부를 열심히 했고, 그 덕분에 성적도 아주 좋았습니다."
+        },
+        {
+          "translation": "건물의 모든 창문은 설계도에 명시된 치수대로 오차 없이 완벽하게 설치되었습니다."
+        }
+      ]
+    },
+    "ko_던데_12": {
+      "title": "~던데 (과거 회상과 배경 상황 제시)",
+      "shortExplanation": "화자가 과거에 직접 겪거나 목격하여 알게 된 사실을 회상하여, 뒤에 이어질 말의 배경이나 전제로 제시합니다 ('~던데').",
+      "longExplanation": "'~던데'는 과거 회상의 선어말어미 '-더-'와 어떤 사실을 배경으로 이끌어내는 연결어미 '-ㄴ데'가 합쳐진 형태입니다. 화자가 과거의 직접적인 경험(목격, 청취, 체험)을 회상하며 그 사실을 대화의 전제로 제시하여, 뒤따르는 질문이나 제안, 혹은 현재 상황과의 대조나 감탄을 자연스럽게 유도할 때 자주 사용합니다.",
+      "formation": "동사/형용사 어간 + 던데 | 명사 + (이)던데 | 과거: -았/었던데",
+      "examples": [
+        {
+          "translation": "우리 철수가 말하던데, 그는 학창 시절에 항상 독서실에서 열심히 공부하던 학생이었다고 해."
+        },
+        {
+          "translation": "그 레스토랑은 예전에 참 맛있는 음식을 팔던데, 최근에는 주방장이 바뀌었는지 그렇지 않더군요."
+        },
+        {
+          "translation": "아빠는 전에는 매일 아침마다 조깅을 하며 운동하시던데, 요즘은 통 그렇게 하지 않으시네요."
+        },
+        {
+          "translation": "첫 만남에서 그는 무척 친절하고 상냥하던데, 어찌 된 일인지 이제는 전혀 그렇지 않아요."
+        }
+      ]
+    },
+    "ko_도록_13": {
+      "title": "~도록 하다 (목적 달성을 위한 지시·다짐)",
+      "shortExplanation": "목적하는 결과를 이루기 위해 힘쓰겠다는 화자의 굳은 다짐을 나타내거나, 상대방에게 그렇게 하도록 완곡하게 지시·권유합니다 ('~도록 하다').",
+      "longExplanation": "'~도록 하다'는 목적, 결과, 정도를 나타내는 연결어미 '-도록'에 보조동사 '하다'가 결합된 문형입니다. 주어가 1인칭일 때는 어떠한 목표나 결과를 반드시 달성하기 위해 최선의 노력을 기울이겠다는 굳은 의지와 공손한 약속을 표현하며, 청자에게 지시하거나 권유할 때는 '그렇게 되도록 조치하라'는 격식 있고 정중한 명령·권고의 뜻을 전달합니다.",
+      "formation": "동사 어간 + -(으)도록 하다",
+      "examples": [
+        {
+          "translation": "제가 책임지고 이 난관을 잘 해결하도록 하겠습니다, 너무 걱정하지 마세요."
+        },
+        {
+          "translation": "저희 회사를 찾아주시는 고객 한 분 한 분이 만족하실 수 있도록 최선을 다하겠습니다."
+        },
+        {
+          "translation": "아이들이 안전하게 학교 정문에 도착할 수 있도록 스쿨존에서는 차를 천천히 운전하세요."
+        },
+        {
+          "translation": "자리에 계신 모든 분들이 명확하게 이해하실 수 있도록 천천히 또박또박 설명하겠습니다."
+        }
+      ]
+    }
+  }
+}

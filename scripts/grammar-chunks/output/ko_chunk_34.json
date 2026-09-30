@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_게_127": {
+      "title": "~게 하다 (Làm cho, khiến cho [trạng thái])",
+      "shortExplanation": "Gắn sau thân tính từ để biểu thị việc làm cho hoặc khiến cho ai đó/cái gì rơi vào một trạng thái nhất định ('làm cho...', 'khiến cho...').",
+      "longExplanation": "'~게 하다' kết hợp với thân tính từ để diễn tả hành động hay tác động khiến một đối tượng thay đổi hoặc duy trì một trạng thái, cảm xúc nào đó. Cấu trúc này tương đương với 'làm cho...', 'khiến cho...' trong tiếng Việt, biểu thị quan hệ sai khiến mang tính trạng thái.",
+      "formation": "Thân tính từ + 게 하다",
+      "examples": [
+        {
+          "translation": "Cô ấy khiến tôi cảm thấy hạnh phúc."
+        },
+        {
+          "translation": "Đầu bếp làm cho món súp khoai tây này trở nên ngon miệng."
+        },
+        {
+          "translation": "Nhờ mẹ thúc đẩy tôi chuẩn bị kỹ càng mà tôi đã có thể vượt qua kỳ thi."
+        },
+        {
+          "translation": "Nhờ giáo sư giúp tôi tập trung mà tôi đã có thể ghi nhớ toàn bộ thông tin."
+        }
+      ]
+    },
+    "ko_게_128": {
+      "title": "~게 하다 (Bắt, khiến, để cho ai làm gì [hành động])",
+      "shortExplanation": "Gắn sau thân động từ để biểu thị hành động sai khiến, cho phép hoặc bắt buộc ai đó thực hiện một hành động ('bắt...', 'khiến...', 'để cho... làm').",
+      "longExplanation": "'~게 하다' kết hợp với thân động từ hành động để biểu thị ý nghĩa sai khiến (사동), thể hiện việc chủ ngữ tác động, sai bảo, yêu cầu hoặc cho phép đối tượng khác thực hiện một hành động cụ thể. Tương đương với cấu trúc 'bắt ai làm gì', 'cho phép/để ai làm gì' trong tiếng Việt.",
+      "formation": "Thân động từ + 게 하다",
+      "examples": [
+        {
+          "translation": "Vì bạn gái thích cà phê nên mỗi buổi sáng tôi đều để cô ấy uống cà phê."
+        },
+        {
+          "translation": "Vì cha mẹ nghĩ rằng bằng cấp rất quan trọng nên đã bắt con cái tự học một mình."
+        },
+        {
+          "translation": "Vì bạn tôi muốn đi du lịch nước ngoài nên tôi đã giúp cậu ấy đặt vé máy bay."
+        },
+        {
+          "translation": "Thầy giáo đã yêu cầu các học sinh thức dậy sớm."
+        }
+      ]
+    },
+    "ko_키가_129": {
+      "title": "~키가 크다/작다 (Cao / Thấp, lùn [chiều cao])",
+      "shortExplanation": "Cụm từ dùng để miêu tả chiều cao vóc dáng của một người: '키가 크다' là cao ráo và '키가 작다' là thấp bé.",
+      "longExplanation": "'키가 크다' và '키가 작다' là cách diễn đạt đặc trưng trong tiếng Hàn để miêu tả chiều cao cơ thể người, trong đó '키' nghĩa là chiều cao, tầm vóc kết hợp với tính từ '크다' (lớn/cao) hoặc '작다' (nhỏ/thấp). Cụm từ này tương đương với 'cao' và 'thấp/lùn' trong tiếng Việt khi miêu tả ngoại hình.",
+      "formation": "Danh từ (Người) + 은/는/이/가 + 키가 크다 / 작다",
+      "examples": [
+        {
+          "translation": "Người cao nhất trường chúng tôi là Cheolsu lớp tôi đấy."
+        },
+        {
+          "translation": "Cô ấy dáng người cao ráo nên trông như người mẫu vậy."
+        },
+        {
+          "translation": "Tôi có dáng người thấp nên vẫn có thể ngồi vừa ghế dành cho trẻ em."
+        },
+        {
+          "translation": "Tuy anh ấy vóc dáng nhỏ bé nhưng nhân cách lại rất tuyệt vời và rộng lượng."
+        }
+      ]
+    },
+    "ko_키로_130": {
+      "title": "~기로 (Quyết định làm, bằng cách...)",
+      "shortExplanation": "Vĩ tố danh từ hóa '-기' kết hợp với trợ từ phương thức '-로', biểu thị việc định đoạt, quyết định hoặc chọn làm một việc gì đó ('quyết định...', 'bằng cách...').",
+      "longExplanation": "'~기로' được tạo thành bởi vĩ tố biến đổi động từ thành danh từ '-기' và trợ từ chỉ phương hướng/phương thức '-(으)로'. Thường đi kèm với các động từ phán đoán hay quyết định như '하다', '결정하다', '약속하다', '시작하다' để biểu thị việc đưa ra quyết tâm, kế hoạch thực hiện một hành vi, tương đương với 'quyết định làm...', 'hẹn sẽ...' trong tiếng Việt.",
+      "formation": "Thân động từ + 기로 (하다/결정하다/시작하다)",
+      "examples": [
+        {
+          "translation": "Tôi quyết định mỗi sáng sẽ chơi đàn piano một lần, nhờ vậy mà kỹ năng âm nhạc đã tiến bộ."
+        },
+        {
+          "translation": "Chúng tôi đã quyết định giải quyết vụ việc này bằng con đường đối thoại."
+        },
+        {
+          "translation": "Cô ấy bắt đầu việc viết bài vào mỗi thứ Hai hàng tuần, từ đó nâng cao được kỹ năng viết lách."
+        },
+        {
+          "translation": "Tôi đã quyết định tập thể dục mỗi ngày từ năm ngoái, và sức khỏe đã được cải thiện rõ rệt."
+        }
+      ]
+    },
+    "ko_타다_131": {
+      "title": "~타다 (Đi, đón, cưỡi, ngồi [phương tiện giao thông])",
+      "shortExplanation": "Động từ biểu thị hành động đi, ngồi hoặc đón các phương tiện giao thông như xe buýt, tàu điện ngầm, máy bay, taxi, xe đạp ('đi xe', 'ngồi tàu').",
+      "longExplanation": "'타다' là ngoại động từ cơ bản trong tiếng Hàn dùng để chỉ hành vi bước lên, đi hoặc sử dụng một phương tiện giao thông (như xe buýt, taxi, tàu hỏa, máy bay, xe đạp). Cấu trúc kết hợp trực tiếp với danh từ chỉ phương tiện cùng trợ từ tân ngữ '을/를'. Ngoài ra trong các ví dụ thường xuất hiện dạng kết hợp như '타다 보면' (nếu cứ liên tục đi/ngồi phương tiện đó thì...).",
+      "formation": "Danh từ (Phương tiện giao thông) + 을/를 + 타다",
+      "examples": [
+        {
+          "translation": "Vì một tuần tôi đi máy bay tới hai lần nên có vẻ như tôi đã quen với việc bay rồi. Dù sao thì chỗ làm việc cũng ở xa nên tôi thường xuyên phải đi máy bay."
+        },
+        {
+          "translation": "Dù sao thì nếu thường xuyên đạp xe đạp thì thể lực sẽ tốt lên và cũng rất có lợi cho sức khỏe, nên bạn hãy thường xuyên đi xe đạp nhé. Hơn nữa việc đạp xe cũng là một hình thức rèn luyện rất tốt."
+        },
+        {
+          "translation": "Nếu cứ thường xuyên đi taxi như thế này thì có vẻ sẽ tốn rất nhiều tiền. Vì vậy nếu có thể thì bạn nên đi tàu điện ngầm hoặc đi bộ sẽ tốt hơn."
+        },
+        {
+          "translation": "Nếu đi xe buýt một mình vào đêm muộn thế này thì hẳn là sẽ có chút bất an đúng không? Vì thế vào lúc đêm muộn thế này nếu có thể thì đi taxi sẽ tốt hơn."
+        }
+      ]
+    },
+    "ko_테니까_132": {
+      "title": "~테니까 (Vì, do... [dự đoán hoặc ý định làm căn cứ])",
+      "shortExplanation": "Vĩ tố liên kết biểu thị nguyên nhân, lý do dựa trên dự đoán hoặc ý chí, dự định của người nói ('vì...', 'do...', 'tôi sẽ... nên...').",
+      "longExplanation": "'~테니까' (dạng rút gọn của '-(으)ㄹ 터이니까') là vĩ tố liên kết chỉ nguyên nhân hoặc tiền đề. Vế trước thường diễn tả ý chí của người nói hoặc sự phỏng đoán chắc chắn về một tình huống ('vì tôi sẽ làm... nên hãy...', 'vì chắc là... nên hãy...'). Cấu trúc này thường đi kèm với câu mệnh lệnh hoặc rủ rê ở vế sau, mang sắc thái lý do mạnh mẽ hơn so với các vĩ tố chỉ nguyên nhân thông thường.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 테니까",
+      "examples": [
+        {
+          "translation": "Vì bên ngoài trời lạnh nên bạn hãy mặc thêm áo ấm rồi hẵng đi nhé."
+        },
+        {
+          "translation": "Vì tôi ngủ quá muộn nên buổi sáng thức dậy rất mệt mỏi."
+        },
+        {
+          "translation": "Vì đang sống ở Seoul nên thỉnh thoảng tôi lại ra sông Hàn đi dạo."
+        },
+        {
+          "translation": "Vì việc học tiếng Hàn rất thú vị nên ngày nào tôi cũng chăm chỉ học tập."
+        }
+      ]
+    },
+    "ko_토록_133": {
+      "title": "~도록 / ~토록 (Đến mức, cho đến khi, sao cho)",
+      "shortExplanation": "Vĩ tố liên kết phó từ biểu thị mức độ cực độ của một hành động, thời hạn kéo dài hoặc mục đích cần hướng tới ('đến mức...', 'cho đến tận...', 'để mà...').",
+      "longExplanation": "'~토록' (hoặc dạng thường gặp hơn là '-도록') là vĩ tố liên kết phó từ hóa gắn sau thân động từ hoặc tính từ, dùng để chỉ mức độ đạt tới một giới hạn tột cùng ('đến mức mà...'), thời hạn kéo dài ('suốt, cho đến tận khi...'), hoặc mục đích, kết quả hướng tới ('để sao cho...'). Cấu trúc này thường mang sắc thái nhấn mạnh mức độ mãnh liệt hoặc sâu sắc của hành vi.",
+      "formation": "Thân động từ / Thân tính từ + 도록 / 토록",
+      "examples": [
+        {
+          "translation": "Vì muốn dự án thành công nên anh ấy đã nỗ lực đến mức hy sinh cả sức khỏe của bản thân."
+        },
+        {
+          "translation": "Để không bị muộn giờ làm ở công ty, cô ấy đã quyết định thức dậy sớm."
+        },
+        {
+          "translation": "Dân số gia tăng nghiêm trọng đến mức chỗ ở tại đây đã bị thu hẹp lại."
+        },
+        {
+          "translation": "Cái nghèo trở nên cùng cực đến mức kiếm một bát cơm ăn cũng thấy vô cùng khó khăn."
+        }
+      ]
+    },
+    "ko_하게_134": {
+      "title": "~게 되다 (Được, bị, trở nên, hóa ra là [kết quả do hoàn cảnh])",
+      "shortExplanation": "Gắn sau thân động từ để diễn tả một sự việc, hành động tự nhiên xảy ra do hoàn cảnh khách quan bên ngoài tác động chứ không hoàn toàn do chủ ý ban đầu ('được...', 'bị...', 'trở nên...').",
+      "longExplanation": "'~게 되다' là cấu trúc bị động - kết quả được cấu thành bởi vĩ tố phó từ '-게' và trợ động từ '되다'. Cấu trúc này dùng để diễn đạt sự biến chuyển về trạng thái hoặc một tình huống diễn ra do hoàn cảnh xô đẩy, tác động khách quan hay sự thay đổi theo thời gian mà chủ thể không lường trước hoặc không tự quyết định từ đầu. Tương đương với 'được/bị làm gì', 'hóa ra lại...', 'rốt cuộc đành phải...' trong tiếng Việt.",
+      "formation": "Thân động từ + 게 되다",
+      "examples": [
+        {
+          "translation": "Bài tập chất đống nhiều quá nên rốt cuộc tôi đã phải làm bài tập suốt cả kỳ nghỉ cuối tuần."
+        },
+        {
+          "translation": "Bình thường thì tôi sẽ không nói đâu, nhưng hôm qua tình thế xô đẩy nên tôi đã kể hết mọi chuyện cho bạn nghe."
+        },
+        {
+          "translation": "Ban đầu tôi không thích tập thể dục đâu, nhưng vì bạn bè liên tục rủ rê nên rốt cuộc tôi đã đăng ký làm hội viên phòng gym."
+        },
+        {
+          "translation": "Tôi vốn định học bài thi, thế nhưng cuối cùng lại xem một bộ phim truyền hình thú vị."
+        }
+      ]
+    },
+    "ko_하고_135": {
+      "title": "~고 있다 / ~하고 있다 (Đang làm gì [hành động đang tiếp diễn])",
+      "shortExplanation": "Vĩ tố liên kết '-고' kết hợp với trợ động từ '있다' gắn sau thân động từ để diễn tả hành động đang trong quá trình tiến hành ('đang làm...').",
+      "longExplanation": "'~고 있다' (với các động từ đuôi '하다' trở thành '~하고 있다') là cấu trúc diễn tả thì hiện tại tiếp diễn cơ bản trong tiếng Hàn. Cấu trúc này gắn trực tiếp sau thân động từ để biểu đạt một hành động đang diễn ra tại thời điểm nói hoặc một trạng thái/thói quen đang tiếp diễn trong giai đoạn hiện tại, tương đương với 'đang...' trong tiếng Việt.",
+      "formation": "Thân động từ + 고 있다",
+      "examples": [
+        {
+          "translation": "Dạo này tôi đang học tiếng Hàn, vì thế tôi vẫn chưa thể nói một cách hoàn hảo được."
+        },
+        {
+          "translation": "Bây giờ tôi đang ăn trưa, đây là khoảng thời gian nghỉ ngơi ngắn ngủi trong một ngày bận rộn."
+        },
+        {
+          "translation": "Mẹ đang chuẩn bị bữa tối, tôi đang rất mong đợi được thưởng thức những món ăn ngon."
+        },
+        {
+          "translation": "Chú cún con của chúng tôi đang đi dạo ở bên ngoài, bằng cách này nó duy trì được sức khỏe thông qua vận động."
+        }
+      ]
+    },
+    "ko_하고_136": {
+      "title": "~고 나서 / ~하고 나서 (Sau khi làm xong... rồi thì...)",
+      "shortExplanation": "Gắn sau thân động từ để nhấn mạnh việc hoàn thành trọn vẹn hành động vế trước rồi mới tiến hành hành động vế sau ('sau khi làm... xong thì...').",
+      "longExplanation": "'~고 나서' kết hợp sau thân động từ để chỉ trình tự thời gian dứt khoát giữa hai hành động. Nó nhấn mạnh rằng hành động ở vế trước phải được hoàn thành một cách trọn vẹn, dứt điểm rồi hành động ở vế sau mới bắt đầu diễn ra. Tương đương với 'sau khi làm xong... thì...', 'làm... xong rồi mới...' trong tiếng Việt.",
+      "formation": "Thân động từ + 고 나서",
+      "examples": [
+        {
+          "translation": "Sau khi học xong tôi sẽ đi chơi, vì thế tôi phải quản lý thời gian thật tốt."
+        },
+        {
+          "translation": "Sau khi ăn bữa sáng xong tôi mới tập thể dục, làm như vậy thì có thể bắt đầu một ngày mới đầy tràn trề năng lượng."
+        },
+        {
+          "translation": "Sau khi làm xong hết bài tập về nhà thì tôi đã đi xem phim cùng bạn bè, vì thế chúng tôi đã có khoảng thời gian rất vui vẻ."
+        },
+        {
+          "translation": "Sau khi kết thúc cuộc họp xong tôi mới ăn trưa, lúc đó vì đói bụng quá nên tôi đã thấy khá mệt mỏi."
+        }
+      ]
+    },
+    "ko_하고_137": {
+      "title": "~고 싶다 / ~하고 싶다 (Muốn làm gì [nguyện vọng, mong muốn])",
+      "shortExplanation": "Gắn sau thân động từ để bày tỏ mong muốn, ước nguyện hoặc ý định của người nói muốn thực hiện một hành động nào đó ('muốn làm...').",
+      "longExplanation": "'~고 싶다' (với động từ đuôi '하다' là '~하고 싶다') là cấu trúc biểu thị nguyện vọng cơ bản trong tiếng Hàn. Khi chủ ngữ là ngôi thứ nhất (hoặc ngôi thứ hai trong câu hỏi), cấu trúc này gắn sau thân động từ để thể hiện mong ước, khát khao của bản thân, tương đương với 'muốn...' trong tiếng Việt. Khi muốn diễn tả ước muốn của ngôi thứ ba, ta dùng dạng chuyển tiếp '~고 싶어하다'.",
+      "formation": "Thân động từ + 고 싶다",
+      "examples": [
+        {
+          "translation": "Tôi muốn nói tiếng Hàn một cách lưu loát, vì thế ngày nào tôi cũng chăm chỉ học tập."
+        },
+        {
+          "translation": "Tôi rất muốn đi xem buổi hòa nhạc của ca sĩ mà mình yêu thích nhất, thế nhưng thật khó để mua được vé."
+        },
+        {
+          "translation": "Tôi muốn tập thể dục nhiều hơn, nhưng vì quá bận rộn nên không có thời gian."
+        },
+        {
+          "translation": "Tôi muốn học nấu ăn, vì thế tôi đang cân nhắc việc đăng ký một lớp học nấu ăn."
+        }
+      ]
+    },
+    "ko_하기로_138": {
+      "title": "~기로 하다 / ~하기로 하다 (Quyết định làm gì, hẹn nhau làm gì)",
+      "shortExplanation": "Gắn sau thân động từ để biểu thị việc đưa ra quyết định, kế hoạch hoặc hẹn ước cùng nhau thực hiện một hành vi ('quyết định làm...', 'thống nhất làm...').",
+      "longExplanation": "'~기로 하다' là cấu trúc biểu thị sự quyết định hoặc cam kết hành động, được tạo thành từ vĩ tố danh từ hóa '-기', trợ từ phương thức '-로' và động từ '하다'. Thường dùng ở dạng quá khứ '~기로 했다' để biểu thị rằng bản thân hoặc một tập thể đã thảo luận, đồng thuận và đưa ra quyết định sẽ thực hiện một việc gì đó trong tương lai.",
+      "formation": "Thân động từ + 기로 하다 (결정하다)",
+      "examples": [
+        {
+          "translation": "Chúng tôi đã quyết định đi nghỉ phép. Cuối tuần chúng tôi quyết định đi ra bãi biển để nghỉ ngơi thư giãn."
+        },
+        {
+          "translation": "Tôi đã quyết định xem phim. Tối nay tôi quyết định ở nhà xem phim bộ Mỹ."
+        },
+        {
+          "translation": "Cô ấy đã quyết định học tiếng Hàn. Năm nay cô ấy quyết định tham gia một khóa học tiếng Hàn."
+        },
+        {
+          "translation": "Công ty đã quyết định trao tiền thưởng cho nhân viên. Các chủ doanh nghiệp đã quyết định tăng lương cho nhân viên vào năm tới."
+        }
+      ]
+    },
+    "ko_하기는_139": {
+      "title": "~기는 하다 / ~하기는 하다 (Làm thì có làm thật đấy nhưng...)",
+      "shortExplanation": "Gắn sau thân động từ hoặc tính từ để thừa nhận một sự thật ở mức độ nhất định, nhưng vế sau lập tức nêu ra hạn chế hoặc điểm chưa trọn vẹn ('thì có... thật nhưng...').",
+      "longExplanation": "'~기는 하다' (với động từ đuôi '하다' là '~하기는 하다') bao gồm vĩ tố danh từ hóa '-기', trợ từ đối chiếu '-는' và trợ động từ '하다'. Cấu trúc này dùng để công nhận hoặc thừa nhận thực tế rằng bản thân có thực hiện hành động đó (hoặc trạng thái đó có tồn tại), nhưng ngay sau đó thường đi kèm liên từ đối lập ('-지만', '-는데') để chỉ ra những hạn chế, thiếu sót hoặc điều kiện chưa đạt đến mức độ lý tưởng.",
+      "formation": "Thân động từ / Thân tính từ + 기는 하다",
+      "examples": [
+        {
+          "translation": "Nấu ăn thì tôi có nấu đấy, nhưng không phải là nấu ngon đâu."
+        },
+        {
+          "translation": "Lái xe thì anh ấy có lái đấy, nhưng không hề lái xe an toàn chút nào."
+        },
+        {
+          "translation": "Mẹ tôi hiểu tiếng Anh thì có hiểu đấy, nhưng việc nói thì lại thấy khá khó khăn."
+        },
+        {
+          "translation": "Tập thể dục thì tôi có tập đấy, nhưng không tập một cách đều đặn thường xuyên."
+        }
+      ]
+    },
+    "ko_하기보다_140": {
+      "title": "~기보다 / ~하기보다 (So với việc làm... thì thà... hơn, thay vì...)",
+      "shortExplanation": "Gắn sau thân động từ để so sánh hai sự lựa chọn, diễn tả ý thà chọn hành động khác còn hơn là làm hành động này ('thay vì...', 'so với việc... thì... hơn').",
+      "longExplanation": "'~기보다' (thường đi với trợ từ bổ trợ thành '~기보다는') được tạo thành từ vĩ tố danh từ hóa '-기' và trợ từ so sánh '-보다'. Cấu trúc này dùng để đặt lên bàn cân hai phương án hay hành vi khác nhau, nhằm khẳng định rằng phương án vế sau thích hợp, đúng đắn hoặc đáng ưu tiên hơn so với phương án vế trước. Tương đương với 'thay vì làm...', 'so với việc làm... thì...' trong tiếng Việt.",
+      "formation": "Thân động từ + 기보다 (기보다는)",
+      "examples": [
+        {
+          "translation": "So với việc bỏ tiền mua một chú cún con thì tôi khuyên bạn nên nhận nuôi thì hơn."
+        },
+        {
+          "translation": "Thay vì đi taxi thì đi xe buýt sẽ rẻ hơn nhiều."
+        },
+        {
+          "translation": "Thay vì ăn thật nhiều thì việc ăn thực phẩm có chất lượng tốt mới là điều quan trọng hơn."
+        },
+        {
+          "translation": "Tôi nghĩ thà nói thật với bạn bè còn hơn là nói dối."
+        }
+      ]
+    },
+    "ko_하나_141": {
+      "title": "하나 / ~하나 (Tuy nhiên, nhưng mà [liên từ đối lập])",
+      "shortExplanation": "Liên từ hoặc vĩ tố liên kết đối lập dùng để nối hai câu hoặc hai mệnh đề có ý nghĩa tương phản, chuyển ý ('tuy nhiên', 'nhưng mà').",
+      "longExplanation": "'하나' là liên từ nối mang tính văn viết hoặc sắc thái trang trọng, dùng ở đầu câu để nối với câu trước đó và biểu thị ý nghĩa tương phản, chuyển ý ('tuy nhiên', 'song', 'nhưng mà'). Nó cũng có thể xuất hiện dưới dạng vĩ tố liên kết đối lập '-으나 / -하나' (gắn sau thân động từ/tính từ) để kết nối hai mệnh đề đối lập nhau trong cùng một câu, tương tự như 'nhưng', 'tuy... nhưng...'.",
+      "formation": "Mệnh đề trước + . 하나, + Mệnh đề đối lập | Thân động từ / Thân tính từ + (으)나",
+      "examples": [
+        {
+          "translation": "Tôi cứ ngỡ công việc đó đã xong rồi, thế nhưng mọi người vẫn chưa làm xong."
+        },
+        {
+          "translation": "Cô ấy có vẻ xinh đẹp đấy. Tuy nhiên, tính cách lại rất tệ."
+        },
+        {
+          "translation": "Điều này có thể cảm thấy khó khăn, nhưng nếu luyện tập thì sẽ trở nên dễ dàng thôi."
+        },
+        {
+          "translation": "Chúng tôi phải trở về nhà, ngặt nỗi không có xe nên đã phải đi bộ."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_게_127": {
+      "title": "~게 하다（使、让……变得[状态]）",
+      "shortExplanation": "接在形容词词干后，表示致使某人或某物处于某种状态（“使……”、“让……变得……”）。",
+      "longExplanation": "“~게 하다”接在形容词词干之后，表示使动用法，说明通过某种外部作用使特定对象产生状态或情感上的改变，相当于汉语的“使……”、“让……变得……”。强调使对象处于某种形容词所描述的状态。",
+      "formation": "形容词词干 + 게 하다",
+      "examples": [
+        {
+          "translation": "她让我感到很幸福。"
+        },
+        {
+          "translation": "大厨把这道土豆汤做得非常美味。"
+        },
+        {
+          "translation": "多亏妈妈让我做好了准备，我才得以通过考试。"
+        },
+        {
+          "translation": "多亏教授让我集中注意力，我才能够记住所有的信息。"
+        }
+      ]
+    },
+    "ko_게_128": {
+      "title": "~게 하다（让……做、叫……做、使……做）",
+      "shortExplanation": "接在动词词干后，表示使动，指示使唤、命令或允许某人做某事（“让……做”、“叫……做”）。",
+      "longExplanation": "“~게 하다”接在动词词干之后，属于通用的长形使动句式。表示主语通过某种影响、指令或提供便利，促使他人实施某种具体动作，相当于汉语的“让/叫/使/令某人做某事”。既可以表示强迫或指使，也可以表示允许或促成。",
+      "formation": "动词词干 + 게 하다",
+      "examples": [
+        {
+          "translation": "因为女朋友喜欢咖啡，所以我每天早上都让她喝咖啡。"
+        },
+        {
+          "translation": "父母认为学历很重要，所以让孩子们独自学习。"
+        },
+        {
+          "translation": "朋友想去海外旅行，所以我帮他预订了机票。"
+        },
+        {
+          "translation": "老师让学生们早点起床。"
+        }
+      ]
+    },
+    "ko_키가_129": {
+      "title": "~키가 크다/작다（个子高／矮）",
+      "shortExplanation": "用于描述人的身高的常用表达，“키가 크다”表示身材高大，“키가 작다”表示身材矮小。",
+      "longExplanation": "“키가 크다”与“키가 작다”是韩语中描写人物体貌身高的基本习惯搭配。“키”意为“个子、身高”，后接形容词“크다”（大/高）表示“个子高”，“작다”（小/矮）表示“个子矮”。相当于汉语中的“高个子”与“矮个子”。",
+      "formation": "名词（人物） + 은/는/이/가 + 키가 크다 / 작다",
+      "examples": [
+        {
+          "translation": "我们学校个子最高的人是我们班的哲秀。"
+        },
+        {
+          "translation": "她个子很高，看起来像模特一样。"
+        },
+        {
+          "translation": "我个子比较矮，所以现在还能坐儿童座位。"
+        },
+        {
+          "translation": "他虽然个子不高，但感觉人格魅力非常伟大。"
+        }
+      ]
+    },
+    "ko_키로_130": {
+      "title": "~기로（决定做……、按……方式）",
+      "shortExplanation": "动词名词化词尾“-기”与助词“-(으)로”结合，表示决定采取某种行动或作为手段方式（“决定做……”）。",
+      "longExplanation": "“~기로”是由名词化词尾“-기”与表示方向、方式手段的格助词“-(으)로”组合而成。通常与“하다（做）”、“결정하다（决定）”、“약속하다（相约）”、“시작하다（开始）”等动词连用，表示下定决心、达成约定或以某种计划行动，相当于汉语的“决定做……”、“相约做……”。",
+      "formation": "动词词干 + 기로 (하다/결정하다)",
+      "examples": [
+        {
+          "translation": "我决定每天早晨弹一次钢琴，从而提高了音乐水平。"
+        },
+        {
+          "translation": "我们决定通过对话来解决这一事件。"
+        },
+        {
+          "translation": "她开始决定每周一写作，借此提升了写作能力。"
+        },
+        {
+          "translation": "我从去年开始决定每天运动，健康状况有了很大改善。"
+        }
+      ]
+    },
+    "ko_타다_131": {
+      "title": "~타다（坐、乘、骑[交通工具]）",
+      "shortExplanation": "动词，表示搭乘公交车、地铁、出租车、飞机、自行车等各种交通工具（“坐”、“乘”、“骑”）。",
+      "longExplanation": "“타다”是韩语中表示搭乘、乘坐各种交通工具的他动词。对象涵盖公共汽车、出租车、火车、地铁、飞机、轮船以及自行车、摩托车等，前面通常搭配宾格助词“을/를”。在例句中常与连接词尾“-다 보면”（经常做某事就会发现……）连用，表达在长期搭乘或乘坐过程中的体验和感受。",
+      "formation": "名词（交通工具） + 을/를 + 타다",
+      "examples": [
+        {
+          "translation": "因为我一周坐两次飞机，所以感觉自己已经对坐飞机很习惯了。毕竟工作地点离得远，经常得坐飞机。"
+        },
+        {
+          "translation": "常骑自行车的话体力会变好，对健康也很有益处，所以请多骑骑自行车吧。而且骑自行车作为一项运动也非常好。"
+        },
+        {
+          "translation": "要是这么频繁地打出租车，感觉花费会很大。所以如果可能的话，坐地铁或者步行过去可能会更好一些。"
+        },
+        {
+          "translation": "在这么深的夜里一个人坐公交车，难免会觉得有点不安吧？所以在这种深夜时间，可以的话还是打车更好。"
+        }
+      ]
+    },
+    "ko_테니까_132": {
+      "title": "~테니까（因为、既然……就……[打算或推测]）",
+      "shortExplanation": "连接词尾，表示说话人的意志、打算或对情况的推测作为后项的原因或前提（“因为……”、“既然……就……”）。",
+      "longExplanation": "“~테니까”是“-(으)ㄹ 터이니까”的缩略形式，是表示原因和前提的连接词尾。前项表达说话人的打算意志或强烈推测，后项通常引导命令、共动或建议句式，意为“因为我打算……所以请你……”或“既然客观情况会……所以请……”。它比单纯的因果连词更能突出说话人的主观预设与原因关联。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ 테니까",
+      "examples": [
+        {
+          "translation": "外面天气冷，多穿点衣服再出门吧。"
+        },
+        {
+          "translation": "因为睡得太晚了，早上起床特别吃力。"
+        },
+        {
+          "translation": "因为住在首尔，所以偶尔会去汉江边散步。"
+        },
+        {
+          "translation": "因为学韩语很有趣，所以我每天都在努力学习。"
+        }
+      ]
+    },
+    "ko_토록_133": {
+      "title": "~도록 / ~토록（到……程度、直到……、为了……）",
+      "shortExplanation": "副词型连接词尾，表示动作或状态达到的极致程度、时间界限或目的（“到……地步”、“直到……”、“以便……”）。",
+      "longExplanation": "“~토록”（常与“-도록”互换使用）是接在动词或形容词词干后的连接词尾，主要用来强调动作或状态所达到的极限程度（“到了……的程度”），或者表示时间的持续延伸（如“밤새도록/밤새토록 整夜”），以及促成后项结果的目的。带有较强的强调和文学修辞色彩。",
+      "formation": "动词 / 形容词词干 + 도록 / 토록",
+      "examples": [
+        {
+          "translation": "为了让项目取得成功，他努力到了甚至牺牲自身健康的地步。"
+        },
+        {
+          "translation": "为了上班不迟到，她决定早点起床。"
+        },
+        {
+          "translation": "人口剧烈增长，以至于这里的居住空间大幅缩减。"
+        },
+        {
+          "translation": "贫困愈发严重，艰难到了连一碗饭都难以吃上的地步。"
+        }
+      ]
+    },
+    "ko_하게_134": {
+      "title": "~게 되다（变得……、落得……、终于……[由于客观原因]）",
+      "shortExplanation": "接在动词词干后，表示由于外部客观情况或时间推移而自然形成某种局面或结果（“变得……”、“最终……”）。",
+      "longExplanation": "“~게 되다”由副词形词尾“-게”与自动词“되다”结合而成。主要用于表达某项行为或状态并非出自当事人最初的主观意志，而是受外部环境、客观条件或机遇的影响而演变发展出的结果。相当于汉语的“变得……”、“落得……”、“终于能够/只得……”、“落到了……地步”。",
+      "formation": "动词词干 + 게 되다",
+      "examples": [
+        {
+          "translation": "作业堆积得太多，结果我整个周末都落得做作业的境地。"
+        },
+        {
+          "translation": "平时我一般不会说的，但昨天情势所迫，所以把一切都告诉你了。"
+        },
+        {
+          "translation": "起初我讨厌运动，但在朋友的一再劝说下，最终成了健身房的会员。"
+        },
+        {
+          "translation": "我本来打算复习备考的，结果不知不觉看起了有趣的电视剧。"
+        }
+      ]
+    },
+    "ko_하고_135": {
+      "title": "~고 있다 / ~하고 있다（正在做……[动作进行]）",
+      "shortExplanation": "接在动词词干后，表示某个动作正在进行中或状态持续存在（“正在……”、“在……”）。",
+      "longExplanation": "“~고 있다”（与“하다”结合时为“~하고 있다”）是韩语中表示进行体的代表性句式。连接词尾“-고”与辅助动词“있다”连用，表示某一动作在说话时刻正在发生，或者表示在当前时期内持续进行的行为与习惯。相当于汉语的“正在做……”、“一直在……”。",
+      "formation": "动词词干 + 고 있다",
+      "examples": [
+        {
+          "translation": "最近我正在学韩语，所以现在还不能说得很完美。"
+        },
+        {
+          "translation": "我现在正在吃午饭，是忙碌一天中稍作休息的时间。"
+        },
+        {
+          "translation": "妈妈正在准备晚饭，我很期待美味的饭菜。"
+        },
+        {
+          "translation": "我们家的小狗正在外面散步，通过这样的运动来保持健康。"
+        }
+      ]
+    },
+    "ko_하고_136": {
+      "title": "~고 나서 / ~하고 나서（做完……之后、……之后才……）",
+      "shortExplanation": "接在动词词干后，强调前项动作完全结束之后才进行后项动作（“做完……之后”）。",
+      "longExplanation": "“~고 나서”（与“하다”结合时为“~하고 나서”）由连接词尾“-고”与辅助动词“나다”（表示完成）结合助词“-서”构成。它强调前后两个动作之间具有严格的时间先后次序，即前一个动作必须彻底完结之后，后一个动作才能开展。相当于汉语的“在做完……之后”、“先……然后……”。",
+      "formation": "动词词干 + 고 나서",
+      "examples": [
+        {
+          "translation": "学完习之后我打算出去玩，所以得好好管理时间。"
+        },
+        {
+          "translation": "吃完早饭后我才做运动，这样做就能充满活力地开启新的一天。"
+        },
+        {
+          "translation": "做完所有作业后我和朋友们去看了电影，度过了一段愉快的时光。"
+        },
+        {
+          "translation": "开完会后我才吃了午饭，但当时肚子太饿了，觉得很受罪。"
+        }
+      ]
+    },
+    "ko_하고_137": {
+      "title": "~고 싶다 / ~하고 싶다（想做……[表达愿望]）",
+      "shortExplanation": "接在动词词干后，表示说话人想要实施某种行为的主观意愿与希望（“想……”、“想要……”）。",
+      "longExplanation": "“~고 싶다”（动词为“하다”时为“~하고 싶다”）由连接词尾“-고”与辅助形容词“싶다”构成，是韩语中表达第一人称主观愿望的最基本句型（疑问句中可用于第二人称）。相当于汉语的“想做……”、“希望做……”。当表达第三人称的愿望时，需转换为“~고 싶어하다”。",
+      "formation": "动词词干 + 고 싶다",
+      "examples": [
+        {
+          "translation": "我想流利地说韩语，所以每天都在刻苦学习。"
+        },
+        {
+          "translation": "我想去最喜欢的歌手的演唱会，但是票太难买了。"
+        },
+        {
+          "translation": "我很想多做运动，但是太忙了没有时间。"
+        },
+        {
+          "translation": "我想学做饭，所以正在考虑报名烹饪课程。"
+        }
+      ]
+    },
+    "ko_하기로_138": {
+      "title": "~기로 하다 / ~하기로 하다（决定做……、约好做……）",
+      "shortExplanation": "接在动词词干后，表示说话人个人决定做某事，或者集体商定、约好实施某项行动（“决定做……”）。",
+      "longExplanation": "“~기로 하다”由名词化词尾“-기”、格助词“-로”及动词“하다”组合而成。常以过去时“~기로 했다”形式出现，用于表达个人经过思考后的决定，或者双方/多方协商后达成的约定与计划。相当于汉语的“决定做……”、“约好做……”。",
+      "formation": "动词词干 + 기로 하다",
+      "examples": [
+        {
+          "translation": "我们决定去度假。我们商定周末去海边放松休息。"
+        },
+        {
+          "translation": "我决定看电影。今晚我打算在家里看美剧。"
+        },
+        {
+          "translation": "她决定学习韩语。她决定今年去听韩语课程。"
+        },
+        {
+          "translation": "公司决定向员工发放奖金。雇主们决定明年为员工上调年薪。"
+        }
+      ]
+    },
+    "ko_하기는_139": {
+      "title": "~기는 하다 / ~하기는 하다（做倒是做……但是……）",
+      "shortExplanation": "接在动词或形容词词干后，先承认或肯定前项事实，随后在后项转折说明未达理想或存在不足（“……倒是……，但是……”）。",
+      "longExplanation": "“~기는 하다”由名词化词尾“-기”、对比添意助词“-는”以及动词“하다”组合而成。常用于口语和书面语中，说话人首先承认前述行为确实发生过或某种性质确实存在，但紧随其后通常跟转折词尾（如“-는데”、“-지만”），指出其程度不够深入、不全面或并非特别理想。相当于汉语的“做倒是做，可是……”、“好倒是好，就是……”。",
+      "formation": "动词 / 形容词词干 + 기는 하다",
+      "examples": [
+        {
+          "translation": "做饭我倒是做，但做得很一般，并不怎么好吃。"
+        },
+        {
+          "translation": "开车他倒是会开，但开得一点也不安全。"
+        },
+        {
+          "translation": "妈妈英语听懂倒是能听懂，但说起来还是觉得有点吃力。"
+        },
+        {
+          "translation": "运动我倒是做，但并没有坚持规律地去做。"
+        }
+      ]
+    },
+    "ko_하기보다_140": {
+      "title": "~기보다 / ~하기보다（与其……不如……、相比做……更……）",
+      "shortExplanation": "接在动词词干后，对两种选择进行权衡比较，表示与其选择前项不如选择后项（“与其……不如……”）。",
+      "longExplanation": "“~기보다”（常带有强调助词写作“~기보다는”）由名词化词尾“-기”和比较助词“-보다”构成。用于对比两种行为或方案，表明说话人认为后项比前项更加理想、更值得推荐或更有价值。相当于汉语的“与其做……不如做……”、“比起做……更……”。",
+      "formation": "动词词干 + 기보다 (기보다는)",
+      "examples": [
+        {
+          "translation": "比起直接花钱买小狗，我更建议您领养一只。"
+        },
+        {
+          "translation": "比起打出租车，坐公交车要便宜得多。"
+        },
+        {
+          "translation": "比起单纯吃很多，吃品质优良的食物更加重要。"
+        },
+        {
+          "translation": "我认为对朋友与其说谎，不如以诚相告更好。"
+        }
+      ]
+    },
+    "ko_하나_141": {
+      "title": "하나 / ~하나（然而、但是、不过[转折连词]）",
+      "shortExplanation": "转折连接词或连接词尾，用于连接前后两个相互对立或转折的分句与句子（“然而”、“但是”、“不过”）。",
+      "longExplanation": "“하나”常作为转折副词/连词置于句首，用于承接上文并提出相反或具有转折性质的事实，语气较为书面和严肃，相当于汉语的“然而”、“但是”。此外，在谓词词干后也可作为对立连接词尾“-으나 / -하나”使用，在同一个复句中连接两个内容相悖的句子成分。",
+      "formation": "前项分句 + . 하나, + 转折分句 | 动词 / 形容词词干 + (으)나",
+      "examples": [
+        {
+          "translation": "我以为那件事已经办妥了，然而大家却还没有完成。"
+        },
+        {
+          "translation": "她长得挺漂亮的。然而，性格却太差了。"
+        },
+        {
+          "translation": "这个可能感觉挺难的，但是只要多多练习就会变容易的。"
+        },
+        {
+          "translation": "我们本该回家的，可是因为没有车，只得步行。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_게_127": {
+      "title": "~게 하다（〜くする、〜にする[状態の変化]）",
+      "shortExplanation": "形容詞の語幹に付き、人や物をある状態にさせる・変化させることを表します（「〜くする」「〜にする」）。",
+      "longExplanation": "「~게 하다」は形容詞の語幹に接続して使役の意味を表し、人や事物を特定の状態や心情にする、あるいは変化させることを示します。日本語の「〜くする」「〜にする」「〜な状態にさせる」に相当します。",
+      "formation": "形容詞語幹 + 게 하다",
+      "examples": [
+        {
+          "translation": "彼女は私を幸せにしてくれます。"
+        },
+        {
+          "translation": "シェフがこのジャガイモスープを美味しく作ってくれます。"
+        },
+        {
+          "translation": "母が私に準備をさせてくれたおかげで、試験に合格することができました。"
+        },
+        {
+          "translation": "教授が私を集中させてくださったおかげで、すべての情報を覚えることができました。"
+        }
+      ]
+    },
+    "ko_게_128": {
+      "title": "~게 하다（〜させる、〜するようにする[動作の使役]）",
+      "shortExplanation": "動詞の語幹に付き、他の人にその動作をさせる・仕向けることを表す使役表現です（「〜させる」「〜するようにする」）。",
+      "longExplanation": "「~게 하다」は動詞の語幹に接続して、主語が他者に指示、強制、あるいは許可を与えて特定の動作を行わせる使役構文を作ります。日本語の「〜させる」「〜するように仕向ける」に相当し、日常会話から公の表現まで広く使われます。",
+      "formation": "動詞語幹 + 게 하다",
+      "examples": [
+        {
+          "translation": "彼女がコーヒーが好きなので、毎朝コーヒーを飲ませました。"
+        },
+        {
+          "translation": "両親は学歴が重要だと考えて、子供たちに一人で勉強させました。"
+        },
+        {
+          "translation": "友達が海外旅行に行きたがっていたので、私は手伝って航空券を予約させました。"
+        },
+        {
+          "translation": "先生は生徒たちを早く起きさせました。"
+        }
+      ]
+    },
+    "ko_키가_129": {
+      "title": "~키가 크다/작다（背が高い／低い）",
+      "shortExplanation": "人の身長を描写する表現で、「키가 크다」は背が高い、「키가 작다」は背が低いことを表します。",
+      "longExplanation": "「키가 크다」と「키가 작다」は、人の身長（背丈）を表す韓国語の代表的な慣用表現です。「키（身長・背）」に助詞「가」が付き、形容詞「크다（大きい）」で「背が高い」、「작다（小さい）」で「背が低い」という意味になります。",
+      "formation": "名詞（人物） + 은/는/이/가 + 키가 크다 / 작다",
+      "examples": [
+        {
+          "translation": "うちの学校で一番背が高い人は、私たちのクラスのチョルスだよ。"
+        },
+        {
+          "translation": "彼女は背が高くてモデルのように見えます。"
+        },
+        {
+          "translation": "私は背が低いので、今でも子供用の座席を利用できます。"
+        },
+        {
+          "translation": "彼は背が低くても、人間性はとても大きいように思えます。"
+        }
+      ]
+    },
+    "ko_키로_130": {
+      "title": "~기로（〜することに[決定・手段]）",
+      "shortExplanation": "名詞化語尾「-기」に助詞「-(으)로」が付いた形で、何かを行う方針や決定、手段を表します（「〜することに[する/決める]」）。",
+      "longExplanation": "「~기로」は動詞の語幹に名詞化語尾「-기」と方向・手段を表す格助詞「-(으)로」が結合した表現です。主に「하다（する）」「결정하다（決定する）」「약속하다（約束する）」などの動詞と呼応して、「〜することにする」「〜することに決める」という決心や方針の決定を表します。",
+      "formation": "動詞語幹 + 기로 (하다/결정하다)",
+      "examples": [
+        {
+          "translation": "私は毎朝一回ピアノを弾くことにして、音楽の腕を上達させました。"
+        },
+        {
+          "translation": "私たちはこの事件を解決するために対話することに決定しました。"
+        },
+        {
+          "translation": "彼女は毎週月曜日に文章を書くことにして、文章力を伸ばしました。"
+        },
+        {
+          "translation": "私は去年から毎日運動することにし、健康が大きく改善しました。"
+        }
+      ]
+    },
+    "ko_타다_131": {
+      "title": "~타다（乗る[交通機関]）",
+      "shortExplanation": "バス、地下鉄、タクシー、飛行機、自転車などの交通手段に乗ることを表す動詞です（「乗る」）。",
+      "longExplanation": "「타다」はバス、タクシー、地下鉄、飛行機、自転車などの交通機関や乗り物に乗ることを表す他動詞です。通常、乗り物を表す名詞に目的格助詞「을/를」を伴って用いられます。例文では「~타다 보면（乗っていると、乗り続けていると）」のような反復・習慣の接続語尾と組み合わされることも多いです。",
+      "formation": "名詞（乗り物） + 을/를 + 타다",
+      "examples": [
+        {
+          "translation": "私は一週間に二回飛行機に乗っているうちに、飛行機に慣れてきたようです。どうしても職場が遠いので、飛行機に度々乗らなければなりません。"
+        },
+        {
+          "translation": "どうしても自転車に乗っていると体力もつくし、健康にも良いので、頻繁に自転車に乗ってみてください。それに自転車に乗ることは運動としても良いです。"
+        },
+        {
+          "translation": "こんなに頻繁にタクシーに乗っていると、お金がたくさんかかる気がします。ですから可能であれば地下鉄に乗るか、徒歩で行かれるのが良いかと思います。"
+        },
+        {
+          "translation": "こんなに夜遅くにバスに一人で乗っていると、どうしても少し不安になりますよね？ですからこんな遅い時間には、できればタクシーに乗る方が良いです。"
+        }
+      ]
+    },
+    "ko_테니까_132": {
+      "title": "~테니까（〜するから、〜だろうから[意図・推量による理由]）",
+      "shortExplanation": "話し手の意図や強い推測を理由・前提として後項の提案や指示につなげる接続語尾です（「〜するから」「〜だろうから」）。",
+      "longExplanation": "「~테니까」は「-(으)ㄹ 터이니까」の縮約形で、話し手の意志・予定、あるいは強い推量を根拠・前提として後続文につなげる接続語尾です。後項には勧誘文や命令文、提案が続くことが多く、「私が〜するから、あなたは〜して」「〜だろうから、〜しなさい」というニュアンスを表します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 테니까",
+      "examples": [
+        {
+          "translation": "外が寒いので、服をもっと着て出かけてください。"
+        },
+        {
+          "translation": "あまりにも遅く寝たので、朝起きるのが大変でした。"
+        },
+        {
+          "translation": "ソウルに住んでいるので、時々漢江へ散歩に行きます。"
+        },
+        {
+          "translation": "韓国語の勉強が楽しいので、毎日一生懸命勉強しています。"
+        }
+      ]
+    },
+    "ko_토록_133": {
+      "title": "~도록 / ~토록（〜するほど、〜するまでに、〜するように）",
+      "shortExplanation": "動作や状態の極限の度合いや時間的限界、あるいは目的を表す副詞的接続語尾です（「〜するほど」「〜するように」）。",
+      "longExplanation": "「~토록」（「-도록」の強調・変異的表現）は用言の語幹に接続し、ある行動や状態が極限の程度に達していること（「〜するほどに」）、時間の限界（「〜に至るまで」）、または目的（「〜するように」）を表します。感情の深さや状況の過酷さを強調する文脈でしばしば用いられます。",
+      "formation": "動詞・形容詞語幹 + 도록 / 토록",
+      "examples": [
+        {
+          "translation": "彼はプロジェクトを成功させたくて、自分の健康まで犠牲にするほど努力しました。"
+        },
+        {
+          "translation": "彼女は会社に遅刻しないように、早く起きることに決めました。"
+        },
+        {
+          "translation": "人口が著しく増加し、ここで暮らす場所が減ってしまうほどになりました。"
+        },
+        {
+          "translation": "貧しさが深刻になり、ご飯一杯を食べるのも難しいほど過酷でした。"
+        }
+      ]
+    },
+    "ko_하게_134": {
+      "title": "~게 되다（〜することになる、〜するようになる[状況による結果]）",
+      "shortExplanation": "動詞の語幹に付き、本人の意志とは無関係に状況や外部の要因によってある事態に至ったことを表します（「〜することになる」）。",
+      "longExplanation": "「~게 되다」は動詞の語幹に接続し、本人の意図的な計画ではなく、周囲の状況や外部環境の変化、客観的な成り行きによって結果的にその動作を行うようになったことを表します。日本語の「〜することになる」「〜するようになる」に相当し、予期せぬ展開や成り行きを客観的に述べる表現です。",
+      "formation": "動詞語幹 + 게 되다",
+      "examples": [
+        {
+          "translation": "宿題があまりにもたくさん溜まって、結局週末中ずっと宿題をすることになりました。"
+        },
+        {
+          "translation": "普段なら言わないでしょうが、昨日は状況がそうだったので、あなたに全てを話すことになってしまいました。"
+        },
+        {
+          "translation": "最初は運動するのが嫌でしたが、友達がしきりに勧めるので、ジムの会員になることになりました。"
+        },
+        {
+          "translation": "試験勉強をしようと思っていたのに、面白いドラマを見ることになってしまいました。"
+        }
+      ]
+    },
+    "ko_하고_135": {
+      "title": "~고 있다 / ~하고 있다（〜している[動作の進行]）",
+      "shortExplanation": "動詞の語幹に付き、動作が現在進行中であることや継続していることを表します（「〜している」）。",
+      "longExplanation": "「~고 있다」（「하다」動詞の場合は「~하고 있다」）は動詞の語幹に接続して、動作の現在進行や継続を表す代表的な進行形表現です。発話の時点でまさにその動作を行っている最中であることや、最近一定期間継続して行っている習慣などを表し、日本語の「〜している」に相当します。",
+      "formation": "動詞語幹 + 고 있다",
+      "examples": [
+        {
+          "translation": "最近韓国語を学んでいます、だからまだ完璧には話せません。"
+        },
+        {
+          "translation": "今昼ご飯を食べています、忙しい一日の中で少し休む時間です。"
+        },
+        {
+          "translation": "母は夕食の料理を準備しています、美味しい料理を楽しみにしています。"
+        },
+        {
+          "translation": "うちの子犬は外で散歩しています、こうして運動を通じて健康を維持しています。"
+        }
+      ]
+    },
+    "ko_하고_136": {
+      "title": "~고 나서 / ~하고 나서（〜してから、〜し終わってから）",
+      "shortExplanation": "動詞の語幹に付き、前項の動作が完全に完了した後に後項の動作を行うことを強調します（「〜してから」「〜し終わってから」）。",
+      "longExplanation": "「~고 나서」は動詞の語幹に接続し、前の動作が完全に終わったことを確認した上で次の行動へ移るという厳密な時間的順序関係を表します。「-고」単独よりも「前項の終了」が強く強調され、日本語の「〜してから」「〜し終えた後に」に相当します。",
+      "formation": "動詞語幹 + 고 나서",
+      "examples": [
+        {
+          "translation": "勉強してから遊びに行くつもりです、だから時間をうまく管理しなければなりません。"
+        },
+        {
+          "translation": "朝食をとってから運動をします、そうすれば一日を元気に始めることができます。"
+        },
+        {
+          "translation": "宿題を全部終わらせてから友達と映画を見ました、とても楽しい時間を過ごしました。"
+        },
+        {
+          "translation": "会議を終えてから昼ご飯を食べました、お腹が空きすぎて大変でした。"
+        }
+      ]
+    },
+    "ko_하고_137": {
+      "title": "~고 싶다 / ~하고 싶다（〜したい[願望・希望]）",
+      "shortExplanation": "動詞の語幹に付き、話し手の希望や願望を表す代表的な表現です（「〜したい」）。",
+      "longExplanation": "「~고 싶다」（「하다」動詞の場合は「~하고 싶다」）は動詞の語幹に接続して、話し手自身の「〜したい」という願望や意向を表します（疑問文では聞き手の希望を尋ねることもできます）。三人称の願望を表す場合は「~고 싶어하다」の形を用いるという制約があります。日本語の「〜したい」に直接相当します。",
+      "formation": "動詞語幹 + 고 싶다",
+      "examples": [
+        {
+          "translation": "私は韓国語を流暢に話したいです、だから毎日一生懸命勉強しています。"
+        },
+        {
+          "translation": "私が一番好きな歌手のコンサートに行きたいのですが、チケットを手に入れるのが難しいです。"
+        },
+        {
+          "translation": "私はたくさん運動したいのですが、忙しすぎて時間がありません。"
+        },
+        {
+          "translation": "料理を習いたいです、それで料理教室の受講登録を考えています。"
+        }
+      ]
+    },
+    "ko_하기로_138": {
+      "title": "~기로 하다 / ~하기로 하다（〜することにする、〜することに決める）",
+      "shortExplanation": "動詞の語幹に付き、個人または複数人で特定の行動をすることに決心・決定したことを表します（「〜することにする」）。",
+      "longExplanation": "「~기로 하다」は動詞の語幹に名詞化語尾「-기」、助詞「-로」、動詞「하다」が結合した表現です。主に過去形の「~기로 했다」の形で用いられ、個人の決意や関係者同士の話し合いを経て、今後の行動方針を「〜することにした」「〜することに決めた」と述べる際に広く使われます。",
+      "formation": "動詞語幹 + 기로 하다",
+      "examples": [
+        {
+          "translation": "私たちは休暇に行くことに決めました。週末に休養をとりに海辺へ行くことにしました。"
+        },
+        {
+          "translation": "私は映画を見ることに決めたよ。今夜は家でアメリカのドラマを見ることにしたんだ。"
+        },
+        {
+          "translation": "彼女は韓国語を学ぶことに決めました。彼女は今年、韓国語の授業を受けることにしました。"
+        },
+        {
+          "translation": "会社は社員たちにボーナスを支給することに決定した。雇用主たちは来年、社員たちの年俸を引き上げることに決定した。"
+        }
+      ]
+    },
+    "ko_하기는_139": {
+      "title": "~기는 하다 / ~하기는 하다（〜することはするが、〜くはあるが）",
+      "shortExplanation": "用言の語幹に付き、前項の事実をひとまず肯定・承認しつつも、後項で不十分な点や限定を述べる表現です（「〜することはするが」）。",
+      "longExplanation": "「~기는 하다」は用言の語幹に名詞化語尾「-기」、対照の助詞「-는」、用言「하다」が結合した構文です。その動作を行っていることや状態が存在すること自体は認めつつも、後ろに「-지만」「-는데」を伴って、「理想的ではない」「完全ではない」「十分ではない」といった留保や不備を付け加えます。日本語の「〜することはするが（〜ではない）」に相当します。",
+      "formation": "動詞・形容詞語幹 + 기는 하다",
+      "examples": [
+        {
+          "translation": "私は料理をすることはするのですが、美味しく作れるわけではありません。"
+        },
+        {
+          "translation": "彼は運転をすることはするのですが、安全運転ではありません。"
+        },
+        {
+          "translation": "母は英語を理解することはしますが、話すのは少し大変そうです。"
+        },
+        {
+          "translation": "私は運動をすることはしますが、定期的にしているわけではありません。"
+        }
+      ]
+    },
+    "ko_하기보다_140": {
+      "title": "~기보다 / ~하기보다（〜するよりは、〜する代わりに）",
+      "shortExplanation": "動詞の語幹に付き、二つの選択肢を比較して、前項を行うより後項の選択肢の方が望ましいことを表します（「〜するよりは」）。",
+      "longExplanation": "「~기보다」（強調の助詞を伴って「~기보다는」とも言います）は動詞の語幹に名詞化語尾「-기」と比況の助詞「-보다」が結合した表現です。二つの行為を天秤にかけ、前項の動作を行うよりも後項の動作を行う方が好ましい、有益である、あるいは賢明であるという話し手の価値判断を表します。日本語の「〜するよりは」「〜するよりむしろ」に相当します。",
+      "formation": "動詞語幹 + 기보다 (기보다는)",
+      "examples": [
+        {
+          "translation": "子犬を買い与えるよりは、里親として引き取ることをお勧めします。"
+        },
+        {
+          "translation": "タクシーに乗るよりは、バスに乗る方が安いです。"
+        },
+        {
+          "translation": "たくさん食べるよりは、質の良い食べ物を食べることの方が大切です。"
+        },
+        {
+          "translation": "友達に嘘をつくよりは、真実を話す方が良いと思います。"
+        }
+      ]
+    },
+    "ko_하나_141": {
+      "title": "하나 / ~하나（しかし、だが、けれども[逆接接続詞]）",
+      "shortExplanation": "前文と対立・逆接の関係にある内容を導く接続詞、あるいは逆接の接続語尾です（「しかし」「だが」）。",
+      "longExplanation": "「하나」は文頭で用いられて前述の事柄と相反する事態や条件を提示する逆接の接続詞で、文章語的で改まった響きを持ちます。日本語の「しかし」「だが」「けれども」に相当します。また、用言の語幹に付く逆接の接続語尾「-(으)나」と同根の機能として、文中で対立する二つの節を結ぶ働きも持っています。",
+      "formation": "先行節 + . 하나, + 逆接の後続節 | 動詞・形容詞語幹 + (으)나",
+      "examples": [
+        {
+          "translation": "私はその仕事を終えたと思っていたのですが、しかし人々はまだ終わらせていませんでした。"
+        },
+        {
+          "translation": "彼女は綺麗だと思います。しかし、性格がとても悪いです。"
+        },
+        {
+          "translation": "これは難しく感じられるかもしれませんが、しかし練習すれば易しくなるはずです。"
+        },
+        {
+          "translation": "私たちは家に帰らなければならないのに、しかし車がなかったので歩かなければなりませんでした。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_게_127": {
+      "title": "~게 하다 (상태의 사동·유발)",
+      "shortExplanation": "형용사 어간 뒤에 붙어 어떤 대상을 특정한 상태나 기분이 되도록 만듦을 나타내는 사동 표현입니다 ('~게 하다').",
+      "longExplanation": "'~게 하다'는 형용사 어간에 연결어미 '-게'와 보조동사 '하다'가 결합하여, 주어가 어떤 대상에게 작용하여 그 대상을 특정한 상태로 변화시키거나 그러한 상태가 되도록 유도함을 나타내는 사동 구문입니다.",
+      "formation": "형용사 어간 + 게 하다",
+      "examples": [
+        {
+          "translation": "그녀는 저를 행복하게 해 줘요."
+        },
+        {
+          "translation": "주방장이 이 감자 수프를 맛있게 요리해요."
+        },
+        {
+          "translation": "어머니가 저를 잘 준비하게 해 주신 덕분에 시험에 합격할 수 있었어요."
+        },
+        {
+          "translation": "교수님께서 저를 집중할 수 있게 이끌어 주셔서 모든 정보를 기억할 수 있었습니다."
+        }
+      ]
+    },
+    "ko_게_128": {
+      "title": "~게 하다 (행위의 사동·지시)",
+      "shortExplanation": "동사 어간 뒤에 붙어 다른 대상에게 어떤 동작이나 행위를 하도록 시키거나 유도함을 나타내는 사동 표현입니다 ('~게 하다').",
+      "longExplanation": "'~게 하다'는 동사 어간에 결합하여, 주어가 피사동주에게 특정한 행동을 하도록 명령하거나 유도, 허락하는 장형 사동 구문입니다. 고유 사동 접미사('-이/히/리/기/우/구/추-')에 비해 적용 범위가 넓고 보편적으로 쓰입니다.",
+      "formation": "동사 어간 + 게 하다",
+      "examples": [
+        {
+          "translation": "여자친구가 커피를 좋아해서 매일 아침 커피를 마시게 했어요."
+        },
+        {
+          "translation": "부모님께서 학벌이 중요하다고 생각하셔서 아이들을 스스로 공부하게 하셨어요."
+        },
+        {
+          "translation": "친구가 해외여행을 가고 싶어 해서, 제가 도와 비행기 표를 예매하게 도왔습니다."
+        },
+        {
+          "translation": "선생님께서 학생들을 일찍 일어나도록 하셨어요."
+        }
+      ]
+    },
+    "ko_키가_129": {
+      "title": "~키가 크다/작다 (신장의 큼과 작음)",
+      "shortExplanation": "사람의 신장(신체적 신장)을 나타내는 표현으로, 키가 큼과 작음을 묘사할 때 쓰입니다 ('키가 크다/작다').",
+      "longExplanation": "'키가 크다'와 '키가 작다'는 사람의 신체적 키를 나타내는 서술어 구성입니다. 명사 '키'에 주격조사 '가'와 형용사 '크다' 혹은 '작다'가 결합하여 인물의 외형적 특성이나 신장을 나타냅니다.",
+      "formation": "명사(인물) + 은/는/이/가 + 키가 크다 / 작다",
+      "examples": [
+        {
+          "translation": "우리 학교에서 가장 키가 큰 학생은 우리 반 철수야."
+        },
+        {
+          "translation": "그녀는 키가 커서 모델처럼 보여요."
+        },
+        {
+          "translation": "저는 키가 작아서 여전히 어린이 좌석을 이용할 수 있어요."
+        },
+        {
+          "translation": "그는 키는 작지만 그릇과 인품은 참 큰 것 같아요."
+        }
+      ]
+    },
+    "ko_키로_130": {
+      "title": "~기로 (행동의 결정·방침)",
+      "shortExplanation": "명사형 전성어미 '-기'에 부사격 조사 '-(으)로'가 붙어 어떤 행위를 하기로 결정하거나 방향을 정함을 나타냅니다 ('~기로 하다/결정하다').",
+      "longExplanation": "'~기로'는 용언 어간 뒤에 명사형 어미 '-기'와 방법이나 방향을 나타내는 조사 '-(으)로'가 결합한 구조입니다. 뒤에 '하다', '결정하다', '약속하다', '시작하다' 등의 동사가 이어져 어떤 행동을 실천하기로 결심하거나 방침을 세웠음을 나타낼 때 사용됩니다.",
+      "formation": "동사 어간 + 기로 (하다/결정하다)",
+      "examples": [
+        {
+          "translation": "저는 매일 아침 한 번 피아노를 치기로 결심해서 음악 실력을 향상시켰습니다."
+        },
+        {
+          "translation": "우리는 이 사건을 해결하기 위해 대화로 풀어나가기로 결정했습니다."
+        },
+        {
+          "translation": "그녀는 매주 월요일 글을 쓰기로 계획하여 글쓰기 실력을 키웠습니다."
+        },
+        {
+          "translation": "저는 작년부터 매일 운동하기로 마음먹었고, 그 덕분에 건강이 크게 좋아졌습니다."
+        }
+      ]
+    },
+    "ko_타다_131": {
+      "title": "~타다 (교통수단 탑승)",
+      "shortExplanation": "버스, 기차, 비행기, 택시, 자전거 등의 교통수단에 오르거나 이용함을 나타내는 타동사입니다 ('타다').",
+      "longExplanation": "'타다'는 사람이 이동하기 위해 교통수단이나 기계 장치 위에 오르거나 그 속에 들어가는 행위를 나타내는 기본 동사입니다. 대중교통(버스, 지하철), 운송 기기(자전거, 자동차, 배, 비행기) 등의 목적어에 목적격 조사 '을/를'과 함께 쓰이며, 예문에서처럼 '~다 보면'과 연결되어 반복적 경험을 서술할 때도 자주 쓰입니다.",
+      "formation": "명사(교통수단) + 을/를 + 타다",
+      "examples": [
+        {
+          "translation": "저는 일주일에 비행기를 두 번 타다 보니까 비행기에 익숙해진 것 같아요. 직장이 멀어서 비행기를 자주 타야 하거든요."
+        },
+        {
+          "translation": "자전거를 타다 보면 체력도 좋아지고 건강에도 유익하니 자주 타 보세요. 운동으로도 매우 좋습니다."
+        },
+        {
+          "translation": "택시를 이렇게 자주 타다 보면 요금이 많이 나오는 것 같아요. 가능하면 지하철을 타거나 걸어가는 편이 좋겠습니다."
+        },
+        {
+          "translation": "이렇게 늦은 밤에 혼자 버스를 타면 아무래도 불안하지요. 이런 시간에는 택시를 이용하는 편이 더 낫습니다."
+        }
+      ]
+    },
+    "ko_테니까_132": {
+      "title": "~테니까 (의지·추측에 따른 이유 및 전제)",
+      "shortExplanation": "말하는 이의 예정이나 의지, 또는 강한 추측을 이유나 전제로 삼아 뒤 절의 행동을 이끌어내는 연결어미입니다 ('-(으)ㄹ 테니까').",
+      "longExplanation": "'~테니까'는 의존명사 '터'에 서술격 조사 '이다'와 이유의 연결어미 '-(으)니까'가 결합한 '-(으)ㄹ 터이니까'의 준말입니다. 앞 절에서 화자의 의지나 미래의 강한 추측을 제시하고, 이를 바탕으로 뒤 절에서 청자에게 권유, 제안, 명령 등을 할 때 주로 사용됩니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 테니까",
+      "examples": [
+        {
+          "translation": "밖이 추우니 옷을 더 따뜻하게 입고 나가세요."
+        },
+        {
+          "translation": "어젯밤 너무 늦게 자서 아침에 일어나기가 몹시 힘들었어요."
+        },
+        {
+          "translation": "서울에 살고 있어서 가끔 한강으로 산책하러 가곤 해요."
+        },
+        {
+          "translation": "한국어 공부가 무척 즐거워서 매일 열심히 공부하고 있습니다."
+        }
+      ]
+    },
+    "ko_토록_133": {
+      "title": "~도록 / ~토록 (정도·한도·목적의 강조)",
+      "shortExplanation": "어떤 행동이나 상태가 이르는 극한의 정도나 시간적 한계, 또는 목적을 나타내는 부사형 연결어미입니다 ('~도록/토록').",
+      "longExplanation": "'~토록'('-도록'의 거센말 성격 또는 강조적 표현)은 용언 어간 뒤에 붙어, 어떤 상태나 결과에 도달하는 극진한 정도('~할 정도로'), 시간의 한계('어느 시점에 이르기까지'), 혹은 목적을 나타냅니다. 주로 감정이나 노력의 깊이, 고통의 심각성 등을 강하게 부각할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + 도록 / 토록",
+      "examples": [
+        {
+          "translation": "그는 프로젝트를 성공시키기 위해 자신의 건강까지 희생할 정도로 노력했어요."
+        },
+        {
+          "translation": "그녀는 회사에 늦지 않도록 일찍 일어나기로 마음먹었습니다."
+        },
+        {
+          "translation": "인구가 급격히 증가하여 이곳에서 살 수 있는 자리가 줄어들 지경에 이르렀어요."
+        },
+        {
+          "translation": "가난이 몹시 심해져서 밥 한 끼조차 챙겨 먹기 어려울 만큼 힘들었습니다."
+        }
+      ]
+    },
+    "ko_하게_134": {
+      "title": "~게 되다 (외부 상황에 따른 결과·변화)",
+      "shortExplanation": "동사 어간 뒤에 붙어 주어의 주관적 의지와 상관없이 외부의 환경이나 상황에 의해 어떤 상태나 행동에 이르게 됨을 나타냅니다 ('~게 되다').",
+      "longExplanation": "'~게 되다'는 동사 어간에 부사형 연결어미 '-게'와 피동적 성격의 보조동사 '되다'가 결합한 구문입니다. 화자의 직접적인 의도나 계획이 아니라 주변의 여건, 타인의 권유, 객관적 사정의 변화로 인하여 어떤 결과가 자연스럽게 발생하거나 행위를 하게 되었음을 객관적으로 나타냅니다.",
+      "formation": "동사 어간 + 게 되다",
+      "examples": [
+        {
+          "translation": "숙제가 너무 많이 쌓여서 결국 주말 내내 숙제만 붙잡고 있게 되었어요."
+        },
+        {
+          "translation": "평소 같으면 말하지 않았겠지만, 어제는 상황이 그렇게 되어 너에게 모든 것을 털어놓게 되었어."
+        },
+        {
+          "translation": "처음에는 운동하기 싫었는데 친구가 자꾸 권유해서 헬스클럽 회원으로 등록하게 되었습니다."
+        },
+        {
+          "translation": "시험공부를 하려고 책상에 앉았는데, 재미있는 드라마에 빠져 끝까지 보게 되었어요."
+        }
+      ]
+    },
+    "ko_하고_135": {
+      "title": "~고 있다 / ~하고 있다 (동작의 진행·지속)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 동작이 현재 진행 중이거나 일정 기간 지속되고 있음을 나타내는 진행상 표현입니다 ('~고 있다').",
+      "longExplanation": "'~고 있다'('하다' 동사의 경우 '~하고 있다')는 보조적 연결어미 '-고'와 보조동사 '있다'가 결합하여 구성된 진행 시제 표현입니다. 발화 시점에 어떤 행동이 진행되고 있음을 생생하게 나타내거나, 최근 일정 기간 동안 지속적으로 이루어지고 있는 행위나 습관을 나타냅니다.",
+      "formation": "동사 어간 + 고 있다",
+      "examples": [
+        {
+          "translation": "요즘 한국어를 배우고 있는 중이라 아직 유창하게 말하지는 못해요."
+        },
+        {
+          "translation": "지금 점심을 먹고 있어요, 바쁜 하루 중 짬을 낸 휴식 시간입니다."
+        },
+        {
+          "translation": "어머니께서 저녁 식사를 준비하고 계셔서 맛있는 음식을 기대하고 있습니다."
+        },
+        {
+          "translation": "우리 강아지는 밖에서 산책하고 있어요, 산책을 통해 건강을 유지하고 있지요."
+        }
+      ]
+    },
+    "ko_하고_136": {
+      "title": "~고 나서 / ~하고 나서 (행위 완료 후 후속 행동)",
+      "shortExplanation": "동사 어간 뒤에 붙어 앞선 동작이 완전히 끝난 뒤에 뒤의 동작이 이어짐을 명확히 나타내는 연결 표현입니다 ('~고 나서').",
+      "longExplanation": "'~고 나서'는 연결어미 '-고'에 완료의 뜻을 나타내는 보조동사 '나다'와 이유·시간의 연결어미 '-아서/어서'가 결합된 형태입니다. 앞 절의 동작이 완전히 마무리되었음을 전제로 하여 그 직후에 뒤 절의 행위가 일어남을 강조할 때 사용됩니다.",
+      "formation": "동사 어간 + 고 나서",
+      "examples": [
+        {
+          "translation": "공부를 다 마치고 나서 놀러 갈 생각이라 시간을 잘 조절해야 해요."
+        },
+        {
+          "translation": "아침밥을 든든히 먹고 나서 운동을 시작하면 하루를 활기차게 출발할 수 있어요."
+        },
+        {
+          "translation": "숙제를 모두 끝내고 나서 친구들과 함께 영화를 보며 즐거운 시간을 보냈습니다."
+        },
+        {
+          "translation": "회의를 마친 뒤에야 비로소 점심을 먹었는데, 배가 너무 고파서 무척 힘들었어요."
+        }
+      ]
+    },
+    "ko_하고_137": {
+      "title": "~고 싶다 / ~하고 싶다 (화자의 소망·희망)",
+      "shortExplanation": "동사 어간 뒤에 붙어 말하는 이의 바람이나 소망, 어떤 행동을 하고자 하는 욕구를 나타내는 보조형용사 구문입니다 ('~고 싶다').",
+      "longExplanation": "'~고 싶다'('하다' 동사의 경우 '~하고 싶다')는 보조적 연결어미 '-고'와 보조형용사 '싶다'가 결합된 형태입니다. 주로 1인칭 평서문이나 2인칭 의문문에서 주어의 주관적인 희망과 욕구를 표현할 때 쓰입니다. 3인칭 주어의 소망을 서술할 때는 객관화된 형태인 '-고 싶어하다'를 사용해야 합니다.",
+      "formation": "동사 어간 + 고 싶다",
+      "examples": [
+        {
+          "translation": "한국어를 원어민처럼 유창하게 말하고 싶어서 매일 부지런히 공부하고 있습니다."
+        },
+        {
+          "translation": "제가 가장 좋아하는 가수의 콘서트에 꼭 가고 싶지만, 티켓 구하기가 하늘의 별 따기네요."
+        },
+        {
+          "translation": "운동을 많이 하고 싶은 마음은 굴뚝같지만, 일상이 너무 바빠 짬을 내기 어려워요."
+        },
+        {
+          "translation": "요리를 제대로 배워 보고 싶어서 요리 강좌 등록을 진지하게 고민하고 있어요."
+        }
+      ]
+    },
+    "ko_하기로_138": {
+      "title": "~기로 하다 / ~하기로 하다 (결심·약속·방침의 결정)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 행위를 하기로 마음먹거나 여러 사람이 함께 약속·결정했음을 나타내는 표현입니다 ('~기로 하다').",
+      "longExplanation": "'~기로 하다'는 명사형 어미 '-기'와 조사 '-로', 동사 '하다'가 어우러진 관용적 구문입니다. 주로 과거형인 '~기로 했다'의 형태로 사용되며, 개인적인 굳은 결심을 나타내거나 다른 사람과의 합의를 통해 앞으로의 실천 계획을 정했음을 밝힐 때 쓰입니다.",
+      "formation": "동사 어간 + 기로 하다 (결정하다)",
+      "examples": [
+        {
+          "translation": "우리는 이번에 휴가를 떠나기로 결정했어요. 주말에 바닷가로 쉬러 가기로 했습니다."
+        },
+        {
+          "translation": "오늘은 집에서 편하게 영화를 보기로 했어. 밤에 미드를 몰아보기로 결정했거든."
+        },
+        {
+          "translation": "그녀는 한국어를 배우기로 마음먹었습니다. 올해 정규 한국어 강좌를 수강하기로 했어요."
+        },
+        {
+          "translation": "회사 측은 임직원들에게 특별 상여금을 지급하기로 결정했습니다."
+        }
+      ]
+    },
+    "ko_하기는_139": {
+      "title": "~기는 하다 / ~하기는 하다 (사실의 일부 인정과 단서)",
+      "shortExplanation": "용언 어간 뒤에 붙어 앞선 사실을 일단 인정하지만 온전하지 않거나 한계가 있음을 뒤 절에서 덧붙일 때 씁니다 ('~기는 하다').",
+      "longExplanation": "'~기는 하다'는 명사형 어미 '-기'와 대조의 보조사 '-는', 보조용언 '하다'가 결합한 양보적 인정 구문입니다. 화자가 해당 동작을 하거나 상태가 그러함을 긍정하면서도, 뒤이어 '-지만', '-는데' 등의 역접 어미와 함께 불완전성, 불만족, 미흡한 조건 등의 단서를 제시할 때 흔히 사용됩니다.",
+      "formation": "동사/형용사 어간 + 기는 하다",
+      "examples": [
+        {
+          "translation": "제가 요리를 하기는 하는데, 남들에게 자랑할 만큼 맛있게 하지는 못해요."
+        },
+        {
+          "translation": "그 친구가 운전대를 잡기는 하지만 안전하게 운전하는 편은 아니에요."
+        },
+        {
+          "translation": "어머니께서 영어를 알아듣기는 하시지만 유창하게 말씀하시는 건 부담스러워하세요."
+        },
+        {
+          "translation": "운동을 하기는 하지만 규칙적으로 꾸준히 챙겨서 하지는 않아요."
+        }
+      ]
+    },
+    "ko_하기보다_140": {
+      "title": "~기보다 / ~하기보다 (선택과 가치의 비교)",
+      "shortExplanation": "동사 어간 뒤에 붙어 두 가지 행동이나 대안을 비교하여 앞의 것보다 뒤의 행위가 더 낫거나 바람직함을 나타냅니다 ('~기보다(는)').",
+      "longExplanation": "'~기보다'는 명사형 전성어미 '-기'에 비교격 조사 '-보다'가 결합된 형태입니다(보조사 '는'을 붙여 '~기보다는'으로 자주 쓰입니다). 두 가지 선택지를 대조하여 앞 절의 행위를 하기보다는 뒤 절의 행위를 취하는 것이 더 가치 있거나 우선되어야 한다는 판단을 내릴 때 씁니다.",
+      "formation": "동사 어간 + 기보다 (기보다는)",
+      "examples": [
+        {
+          "translation": "어린 강아지를 돈 주고 사 오기보다는 유기견을 입양하는 것을 적극 권해 드려요."
+        },
+        {
+          "translation": "택시를 타기보다는 대중교통인 버스를 이용하는 편이 훨씬 경제적입니다."
+        },
+        {
+          "translation": "음식을 무작정 많이 먹기보다는 영양가 높고 질 좋은 음식을 섭취하는 것이 중요해요."
+        },
+        {
+          "translation": "친구에게 순간을 모면하려 거짓말하기보다는 솔직하게 진실을 털어놓는 편이 훨씬 낫습니다."
+        }
+      ]
+    },
+    "ko_하나_141": {
+      "title": "하나 / ~하나 (문장 간 역접 접속)",
+      "shortExplanation": "앞의 내용과 상반되거나 대립되는 사실을 이끌어낼 때 쓰는 역접의 접속부사 또는 연결어미입니다 ('하나', '-(으)나').",
+      "longExplanation": "'하나'는 앞 문장의 내용을 인정하면서도 그와 대립되거나 예외적인 사실을 덧붙일 때 문두에 쓰이는 역접 접속부사입니다. 다소 문어적이고 격식적인 성격을 띠며 '하지만', '그러나'와 비슷한 뜻을 나타냅니다. 또한 용언 어간 뒤에 직접 붙는 대립적 연결어미 '-(으)나'의 용법과도 긴밀하게 통합니다.",
+      "formation": "앞 절/문장 + . 하나, + 뒷 절/문장 | 동사/형용사 어간 + (으)나",
+      "examples": [
+        {
+          "translation": "나는 그 일이 다 마무리된 줄 알았는데, 그러나 사람들은 아직 끝내지 않았더라고요."
+        },
+        {
+          "translation": "그녀는 외모는 참 예쁜 것 같아요. 하나, 성격이 너무 모나서 안타까워요."
+        },
+        {
+          "translation": "처음에는 낯설고 어렵게 느껴질 수 있으나, 꾸준히 연습하다 보면 곧 익숙해질 겁니다."
+        },
+        {
+          "translation": "우리는 얼른 집으로 돌아가야 했지만, 차편이 마땅치 않아 한참을 걸어야 했습니다."
+        }
+      ]
+    }
+  }
+}

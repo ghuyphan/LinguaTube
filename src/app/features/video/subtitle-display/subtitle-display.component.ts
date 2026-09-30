@@ -162,6 +162,10 @@ export class SubtitleDisplayComponent implements OnDestroy {
     this.settings.showReadingAnnotation(this.effectiveLanguage() as SupportedLearningLanguage)
   );
 
+  prefersRomanized = computed(() =>
+    this.settings.prefersRomanizedReading(this.effectiveLanguage() as SupportedLearningLanguage)
+  );
+
   supportsReadingDisplay = computed(() =>
     this.settings.hasReadingSupport(this.effectiveLanguage() as SupportedLearningLanguage)
   );

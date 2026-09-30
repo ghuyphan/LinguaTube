@@ -1,0 +1,590 @@
+{
+  "vi": {
+    "zh_因此_338": {
+      "title": "因此…… (Liên từ nhân quả: Do đó / Vì vậy / Cho nên……)",
+      "shortExplanation": "Liên từ biểu thị quan hệ nhân quả trong văn viết, đứng ở đầu phân câu sau để biểu thị kết quả hay kết luận rút ra từ tiền đề ở phân câu trước; 'do đó', 'vì vậy', 'cho nên'.",
+      "longExplanation": "'因此' (yīncǐ) là liên từ biểu thị quan hệ nhân quả mang sắc thái trang trọng, thường dùng trong văn viết và khẩu ngữ trang nhã ('因' nghĩa là bởi vì, '此' là điều này, sự việc này). '因此' đứng ở đầu phân câu phía sau, nối tiếp nguyên nhân hay tình huống đã trình bày ở phân câu trước để dẫn ra kết quả tự nhiên hoặc kết luận hợp lý (ví dụ: '小时候经常生病，因此每天都去跑步' - hồi nhỏ hay đau ốm, vì vậy mỗi ngày đều đi chạy bộ; '两人志趣相投，因此成了好朋友' - hai người cùng chí hướng, cho nên đã trở thành bạn thân). Không cần vế trước phải có '因为', '因此' có thể đứng độc lập ở vế sau. Tương đương với 'do đó', 'vì vậy', 'cho nên', 'bởi thế' trong tiếng Việt.",
+      "formation": "Mệnh đề nguyên nhân，因此 + Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Hồi nhỏ anh ấy thường hay đau ốm, vì vậy mỗi ngày đều chạy bộ rèn luyện sức khỏe."
+        }
+      ]
+    },
+    "zh_什么的_339": {
+      "title": "什么的 (Trợ từ liệt kê: Vân vân / Đại loại thế / Những thứ như là...)",
+      "shortExplanation": "Trợ từ khẩu ngữ đặt sau các danh từ hoặc ngữ động từ liệt kê, biểu thị còn những sự vật, hành động tương tự khác chưa kể hết; 'vân vân', 'đại loại như vậy', 'những thứ như thế'.",
+      "longExplanation": "'什么的' (shénmede) là trợ từ thường dùng trong khẩu ngữ hàng ngày, được đặt ở cuối danh sách liệt kê gồm hai hoặc nhiều danh từ, cụm từ hoặc ngữ động từ để biểu thị sự liệt kê chưa đầy đủ (tương tự như '等等' nhưng mang khẩu khí tự nhiên, thân mật hơn trong sinh hoạt). Nó ngụ ý rằng ngoài những thứ vừa kể ra, còn có những đồ vật hoặc sự việc tương tự thuộc cùng nhóm (ví dụ: '买点儿水果、零食什么的' - mua chút hoa quả, đồ ăn vặt này nọ; '周末看看书、听听音乐什么的' - cuối tuần đọc sách, nghe nhạc các kiểu). Tương đương với 'vân vân', 'các thứ', 'đại loại thế', 'những thứ tương tự' trong tiếng Việt.",
+      "formation": "Danh từ 1 / Động từ 1、Danh từ 2 / Động từ 2 + 什么的",
+      "examples": [
+        {
+          "translation": "Ngày mai đi chơi, phải mua chút bánh quy, bánh mì hoặc mấy thứ đại loại thế."
+        }
+      ]
+    },
+    "zh_V起来_340": {
+      "title": "Động từ + 起来 (Bổ ngữ xu hướng / Biểu thị hướng lên, bắt đầu tiếp diễn hoặc góc độ đánh giá)",
+      "shortExplanation": "Đứng sau động từ để chỉ hướng chuyển động từ dưới lên trên, biểu thị hành động bắt đầu và tiếp diễn (bắt đầu... lên), hoặc đưa ra nhận xét, đánh giá từ một giác quan, góc độ.",
+      "longExplanation": "'起来' (qǐlai) là bổ ngữ xu hướng phức hợp đi sau động từ, mang ba nhóm ngữ nghĩa ngữ pháp cốt lõi: (1) Chỉ phương hướng thực tế từ dưới lên trên (ví dụ: '站起来' - đứng dậy, '拿起来' - nhặt lên, '抬起来' - khiêng/nhấc lên); (2) Biểu thị hành động hoặc trạng thái bắt đầu và có xu hướng tiếp diễn, chuyển biến nhanh chóng (ví dụ: '大家笑起来' - mọi người cười òa lên, '天气热起来' - thời tiết bắt đầu nóng lên); nếu có tân ngữ thì tân ngữ thường chèn vào giữa: 'Động từ + 起 + Tân ngữ + 来' (ví dụ: '唱起歌来' - cất tiếng hát, '下起雨来' - trời bắt đầu đổ mưa); (3) Biểu thị sự đánh giá, cảm nhận khi xem xét từ một phương diện nhất định (ví dụ: '看起来' - nhìn bề ngoài thì, '听起来' - nghe có vẻ, '这道菜做起来很复杂' - món này làm thì phức tạp).",
+      "formation": "Động từ + 起来 (nếu có Tân ngữ: Động từ + 起 + Tân ngữ + 来)",
+      "examples": []
+    },
+    "zh_想起来_342": {
+      "title": "想起来 (Cụm động từ: Nhớ ra / Sực nhớ lại)",
+      "shortExplanation": "Cụm động từ biểu thị ký ức hoặc thông tin trong quá khứ bỗng hiện lại trong trí nhớ; dạng khả năng phủ định phổ biến là '想不起来' (không nhớ ra được).",
+      "longExplanation": "'想起来' (xiǎngqilai) là cụm động từ kết hợp với bổ ngữ xu hướng '起来', biểu thị quá trình hồi tưởng khi một ký ức, thông tin, khuôn mặt hoặc tên gọi trong quá khứ từ chỗ bị lãng quên bỗng xuất hiện trở lại trong tâm trí ('nhớ ra', 'sực nhớ'). Trong giao tiếp, cấu trúc này rất thường xuất hiện ở thể bổ ngữ khả năng: '想得起来' (có thể nhớ ra) và '想不起来' (không thể nhớ ra, quên mất). Cần phân biệt rõ với '想出来' (nghĩ ra ý tưởng, sáng kiến mới chưa từng có trước đây). Tương đương với 'nhớ ra', 'sực nhớ' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 想起来 (+ Tân ngữ) / Chủ ngữ + 想得起来 / 想不起来 (+ Tân ngữ)",
+      "examples": []
+    },
+    "zh_弄AO_344": {
+      "title": "弄 + Tính từ + Tân ngữ (Bổ ngữ kết quả: Làm cho... bị...)",
+      "shortExplanation": "Động từ '弄' kết hợp với tính từ làm bổ ngữ kết quả phía sau và theo liền tân ngữ, biểu thị hành động làm cho tân ngữ rơi vào trạng thái nào đó (thường là kết quả tiêu cực, không mong muốn); 'làm hỏng', 'làm bẩn', 'làm mất'.",
+      "longExplanation": "'弄' (nòng) là động từ hành động chỉ sự thao tác, động chạm hoặc xử lý một cách tổng quát. Khi '弄' kết hợp trực tiếp với tính từ làm bổ ngữ kết quả (như '坏' - hỏng, '脏' - bẩn, '破' - rách, '丢' - mất, '乱' - bừa bộn, '湿' - ướt) rồi theo sau là tân ngữ, cấu trúc này diễn tả việc tác động hoặc sơ ý làm cho đối tượng rơi vào một trạng thái cụ thể nào đó (ví dụ: '弄坏沙发' - làm hỏng ghế sofa, '弄脏衣服' - làm bẩn quần áo, '弄丢钥匙' - làm mất chìa khóa, '弄乱头发' - làm rối tóc). Cấu trúc này phần lớn được dùng để miêu tả các kết quả bất lợi, không mong muốn do sơ suất hoặc bất cẩn gây nên. Tương đương với 'làm cho... bị...', 'làm hỏng / bẩn / mất...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (别 / 不要 +) 弄 + Tính từ (坏 / 脏 / 破 / 丢 / 乱 / 湿...) + Tân ngữ (+ 了)",
+      "examples": [
+        {
+          "translation": "Lúc khiêng vác nhớ cẩn thận một chút, đừng làm hỏng ghế sofa đấy."
+        }
+      ]
+    },
+    "zh_弄得OCLAUSE_345": {
+      "title": "弄得 + Tân ngữ + Mệnh đề (Bổ ngữ trạng thái: Khiến cho... / Làm cho... ra nông nỗi...)",
+      "shortExplanation": "'弄得' dẫn ra bổ ngữ trạng thái là một cụm từ hoặc mệnh đề chỉ hậu quả, tình thế dở khóc dở cười hoặc không như ý do hành động ở vế trước gây ra; 'khiến cho...', 'làm cho... thành ra...'.",
+      "longExplanation": "'弄得' (nòng de) là kết cấu động bổ chỉ trạng thái, thường đứng ở đầu vế câu sau hoặc theo sau một hành động cụ thể để dẫn ra tân ngữ và một mệnh đề miêu tả tình cảnh, trạng thái tâm lý hoặc hậu quả phiền toái phát sinh (ví dụ: '弄得我俩心情都不好' - khiến tâm trạng cả hai đứa chúng tôi đều không vui; '弄得大家都很尴尬' - làm cho mọi người đều rất ngượng ngùng; '弄得满地都是水' - làm cho nước lênh láng khắp sàn nhà). Kết cấu này thường mang sắc thái phàn nàn, bất đắc dĩ, chỉ ra một tình thế lộn xộn hoặc khó chịu do một việc làm nào đó gây nên. Tương đương với 'khiến cho...', 'làm cho... ra nông nỗi...', 'khiến... trở nên...' trong tiếng Việt.",
+      "formation": "Hành động / Tình huống，弄得 + Tân ngữ + Mệnh đề / Cụm vị ngữ",
+      "examples": [
+        {
+          "translation": "Ngày nào cũng phê bình cô ấy vì mấy chuyện vặt vãnh này, khiến tâm trạng của cả hai chúng tôi đều chẳng ra sao."
+        }
+      ]
+    },
+    "zh_千万不能不要别V_346": {
+      "title": "千万 + 不能 / 不要 / 别 + Động từ (Phó từ nhấn mạnh: Tuyệt đối không được / Nhất thiết đừng...)",
+      "shortExplanation": "Phó từ '千万' kết hợp với từ phủ định '不能', '不要' hoặc '别' đứng trước động từ để dặn dò, khuyên can hoặc cảnh báo khẩn thiết: 'tuyệt đối không được', 'nhất thiết đừng'.",
+      "longExplanation": "'千万' (qiānwàn) là phó từ ngữ khí dùng để biểu đạt sự tha thiết, dặn dò hoặc cảnh cáo nghiêm túc ('ngàn vạn lần', 'tha thiết mong'). Khi kết hợp với các phó từ phủ định mang nghĩa cấm đoán hoặc khuyên can như '别' (đừng), '不要' (không được, chớ) hoặc '不能' (không thể, không được phép), cấu trúc này biểu thị mức độ nhấn mạnh cực kỳ cao, yêu cầu đối phương dứt khoát không được thực hiện một hành động nào đó (ví dụ: '千万别忘了' - nhất thiết đừng quên đấy; '千万不要大意' - tuyệt đối không được sơ suất; '千万不能告诉别人' - dứt khoát không được nói cho người khác biết). Tương đương với 'tuyệt đối không được', 'nhất thiết đừng', 'dứt khoát chớ có' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 千万 + 不能 / 不要 / 别 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Tôi muốn đợi đến đúng ngày sinh nhật cô ấy mới tặng món quà này, cậu bây giờ tuyệt đối đừng nói cho cô ấy biết nhé."
+        }
+      ]
+    },
+    "zh_一定要得VA_347": {
+      "title": "一定要 / 得 + Động từ / Tính từ (Cụm phó từ - trợ động từ: Nhất định phải / Chắc chắn phải...)",
+      "shortExplanation": "Sự kết hợp giữa phó từ '一定' và trợ động từ '要' hoặc '得' (děi) để nhấn mạnh yêu cầu bắt buộc, nghĩa vụ cần làm hoặc quyết tâm cao độ; 'nhất định phải', 'chắc chắn phải'.",
+      "longExplanation": "'一定' (yīdìng - nhất định, chắc chắn) kết hợp với năng nguyện động từ '要' (cần, phải) hoặc động từ chỉ sự bắt buộc '得' (děi - phải) đứng trước động từ hoặc tính từ, biểu thị một yêu cầu tất yếu, một nghĩa vụ không thể thoái thác hoặc một ý chí, quyết tâm sắt đá của chủ ngữ (ví dụ: '你一定要来' - cậu nhất định phải đến nhé; '一定要成功' - nhất định phải thành công; '一定要注意安全' - nhất định phải chú ý an toàn; '一定要快' - nhất định phải nhanh). Cấu trúc này làm tăng đáng kể sức nặng và mức độ khẩn thiết so với chỉ dùng '要' hay '得' một mình. Tương đương với 'nhất định phải...', 'chắc chắn phải...', 'bắt buộc phải...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 一定要 / 一定得 + Động từ / Tính từ (+ Tân ngữ)",
+      "examples": []
+    },
+    "zh_一定会VA_350": {
+      "title": "一定(会) + Động từ / Tính từ (Phó từ - trợ động từ: Nhất định (sẽ)... / Chắc chắn (sẽ)...)",
+      "shortExplanation": "'一定' kết hợp với trợ động từ '会' đứng trước động từ hoặc tính từ để biểu thị sự dự đoán chắc chắn, lời hứa hẹn hoặc niềm tin vững chắc vào tương lai; 'nhất định sẽ', 'chắc chắn sẽ'.",
+      "longExplanation": "'一定' (yīdìng - nhất định) đứng trước '会' (huì - sẽ) bổ nghĩa cho động từ hoặc tính từ, biểu thị một phán đoán mang tính tất nhiên hoặc một cam kết, quyết tâm thực hiện hành vi trong tương lai (ví dụ: '我一定会继续努力' - tôi nhất định sẽ tiếp tục nỗ lực; '一切都会好起来的，你一定会成功' - mọi chuyện rồi sẽ tốt đẹp, bạn nhất định sẽ thành công; '明天一定会下雨' - ngày mai chắc chắn sẽ mưa). Khác với '一定要' (nhấn mạnh sự bắt buộc phải làm), '一定会' nhấn mạnh vào khả năng xảy ra chắc chắn 100% theo quy luật hoặc qua lời cam kết son sắt. Tương đương với 'nhất định sẽ...', 'chắc chắn sẽ...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 一定(会) + Động từ / Tính từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cảm ơn sự ủng hộ và khích lệ của ngài, tôi nhất định sẽ tiếp tục cố gắng nỗ lực."
+        }
+      ]
+    },
+    "zh_不一定_351": {
+      "title": "不一定 (Phó từ phủ định một phần: Chưa chắc / Không nhất thiết / Chưa hẳn)",
+      "shortExplanation": "Phó từ biểu thị sự phủ định một phần, chỉ tình huống chưa chắc chắn, không mang tính tất yếu tuyệt đối; 'chưa chắc', 'chưa hẳn', 'không nhất thiết'.",
+      "longExplanation": "'不一定' (bù yīdìng) là cụm phó từ phủ định thường gặp, dùng để phủ nhận tính tuyệt đối hoặc tất yếu của một sự việc, nhận định hay hiện tượng (ví dụ: '贵的不一定好' - đắt tiền chưa chắc đã tốt; '个子高不一定力气大' - dáng người cao chưa hẳn đã khỏe; '明天我不一定有空' - ngày mai chưa chắc tôi đã rảnh rỗi). Nó có thể đứng trước vị ngữ làm trạng ngữ, đứng độc lập làm câu trả lời để biểu đạt sự nghi ngại hoặc không dám khẳng định chắc chắn (như khi được hỏi: '他会来吗？' -> '不一定。' - Anh ấy sẽ đến chứ? -> Chưa chắc). Tương đương với 'chưa chắc', 'chưa hẳn', 'không nhất thiết', 'chưa hẳn đã' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 不一定 + Vị ngữ (Động từ / Tính từ / Cụm chủ vị) / Hoặc dùng độc lập: 不一定",
+      "examples": [
+        {
+          "translation": "Dáng người cao chưa chắc sức lực đã khỏe."
+        }
+      ]
+    },
+    "zh_一定的_352": {
+      "title": "一定的 + Danh từ (Tính từ làm định ngữ: ...nhất định / Có mức độ nào đó)",
+      "shortExplanation": "'一定' kết hợp với trợ từ kết cấu '的' đứng trước danh từ làm định ngữ, biểu thị đạt đến một mức độ, trình độ hoặc số lượng tương đối nào đó; 'nhất định', 'chừng mực nào đó'.",
+      "longExplanation": "'一定' (yīdìng) khi làm tính từ đi kèm '的' đứng trước danh từ làm định ngữ không mang nghĩa là 'chắc chắn', mà mang nghĩa là đạt tới một mức độ, quy mô, trình độ hoặc tỷ lệ đáng kể nào đó (ví dụ: '有一定的基础' - có nền tảng nhất định; '产生一定的影响' - tạo ra ảnh hưởng nhất định; '需要一定的时间' - cần một khoảng thời gian nhất định; '具有一定的难度' - có độ khó nhất định). Cấu trúc này thường đi kèm với các danh từ trừu tượng như '基础' (nền tảng), '水平' (trình độ), '规律' (quy luật), '距离' (khoảng cách), '比例' (tỷ lệ). Tương đương với '...nhất định', 'mức độ nhất định', 'chừng mực nào đó' trong tiếng Việt.",
+      "formation": "(Động từ: 有 / 产生 / 达到...) + 一定的 + Danh từ (基础 / 影响 / 难度 / 距离 / 水平...)",
+      "examples": [
+        {
+          "translation": "Nếu như có một nền tảng ngôn ngữ nhất định, thế thì ra nước ngoài học ngoại ngữ là sự lựa chọn tốt nhất."
+        }
+      ]
+    },
+    "zh_来V_353": {
+      "title": "来 + Động từ (Trợ động từ chỉ sự chủ động: Để... làm / Đích thân... làm)",
+      "shortExplanation": "'来' đứng trước động từ để biểu thị sự chủ động xung phong, đề nghị tự nguyện thực hiện hành động hoặc bắt tay vào thử làm; 'để tôi...', 'hãy để... làm'.",
+      "longExplanation": "'来' (lái) khi đứng trước một động từ khác trong khẩu ngữ không nhằm chỉ sự di chuyển 'đến' từ xa tới gần, mà đóng vai trò như một trợ từ / động từ phụ trợ biểu thị ý thức chủ động đảm nhận, đề nghị xung phong hoặc sẵn sàng bắt tay làm một công việc gì đó (ví dụ: '我来做' - để tôi làm cho; '我来帮你' - để tôi giúp bạn; '你来试试' - bạn thử làm xem; '今天我来请客' - hôm nay để tôi mời). Cấu trúc này làm cho lời nói trở nên nhiệt tình, chủ động và tự nhiên trong giao tiếp đời thường. Tương đương với 'để (tôi)...', 'hãy để... làm', 'bắt tay vào...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 来 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Chiếc ghế sofa này to thế này, để tôi giúp các bạn khiêng một tay."
+        }
+      ]
+    },
+    "zh_通过用N来V_354": {
+      "title": "通过 / 用 + Danh từ + 来 + Động từ (Cấu trúc chỉ phương thức - mục đích: Thông qua / Dùng... để...)",
+      "shortExplanation": "Giới từ '通过' hoặc '用' dẫn ra phương tiện, cách thức hoặc công cụ, kết hợp với liên từ '来' ở phía sau để diễn tả việc thông qua hoặc dùng phương tiện đó để đạt được mục đích hành động.",
+      "longExplanation": "Cấu trúc này kết hợp cụm giới từ chỉ phương thức ('通过' - thông qua phương thức, quá trình; hoặc '用' - sử dụng công cụ, vật liệu, sự thật) với liên từ '来' (để, nhằm) đứng trước động từ chỉ mục đích. Toàn câu biểu đạt rõ ràng phương tiện hoặc con đường được áp dụng nhằm thực hiện hóa một mục tiêu cụ thể (ví dụ: '通过阅读来提高汉语水平' - thông qua đọc sách để nâng cao trình độ tiếng Hán; '用事实来证明一切' - dùng sự thật để chứng minh mọi điều; '通过交流来增进了解' - thông qua giao lưu để tăng cường sự hiểu biết). Tương đương với 'thông qua... để...', 'dùng... để...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 通过 / 用 + Danh từ (Phương thức / Công cụ / Căn cứ) + 来 + Động từ (+ Tân ngữ)",
+      "examples": []
+    },
+    "zh_左右_356": {
+      "title": "Số từ (+ Lượng từ) / Mốc thời gian + 左右 (Từ biểu thị ước lượng: Khoảng / Chừng / Độ...)",
+      "shortExplanation": "'左右' (tả hữu) được đặt ở SAU số từ, lượng từ hoặc từ chỉ thời gian để biểu thị con số hoặc thời điểm xấp xỉ; 'khoảng', 'chừng', 'tầm'.",
+      "longExplanation": "Trong tiếng Trung, '左右' (zuǒyòu) là từ chỉ độ ước lượng (ước số), luôn được đặt ở ngay SAU từ ngữ chỉ số lượng, tuổi tác, giá cả hoặc mốc thời gian để biểu thị con số xấp xỉ, dao động trên dưới con số chuẩn đó một chút (ví dụ: '十点左右' - khoảng 10 giờ; '三十岁左右' - tầm 30 tuổi; '一千块左右' - chừng 1000 tệ; '五个小时左右' - khoảng 5 tiếng đồng hồ). Chú ý về vị trí trật tự từ: trong tiếng Việt từ 'khoảng/chừng' thường đứng TRƯỚC số từ, nhưng '左右' trong tiếng Trung bắt buộc phải đứng SAU số lượng từ. Tương đương với 'khoảng...', 'chừng...', 'tầm...', 'độ...' trong tiếng Việt.",
+      "formation": "Số từ (+ Lượng từ + Danh từ) / Mốc thời gian + 左右",
+      "examples": []
+    },
+    "zh_可VA了_359": {
+      "title": "可 + Tính từ / Động từ + 了 (Phó từ ngữ khí cảm thán: Thật là... / Quá đỗi... lắm đấy)",
+      "shortExplanation": "Phó từ '可' đứng trước tính từ hoặc động từ tâm lý, kết hợp với trợ từ ngữ khí '了' ở cuối câu để nhấn mạnh mức độ cực kỳ cao kèm ngữ khí cảm thán; 'thật là...', 'quá chừng', 'lắm đấy'.",
+      "longExplanation": "'可' (kě) làm phó từ nhấn mạnh mức độ cao trong khẩu ngữ sinh động. Khi kết hợp với cấu trúc '可 + Tính từ / Động từ tâm lý + 了', nó diễn đạt cảm xúc tán thán, ngạc nhiên hoặc khẳng định mức độ của tính chất, trạng thái là rất lớn, vượt trội hơn hẳn thông thường (ví dụ: '今天天气可热了' - hôm nay trời nóng thật đấy; '那里的风景可美了' - cảnh sắc nơi đó đẹp tuyệt vời; '大家可高兴了' - mọi người vui mừng khôn xiết; '这道题可难了' - bài này khó dã man). Cấu trúc này mang sắc thái khẩu ngữ thân mật và tình cảm mạnh mẽ hơn hẳn so với các phó từ trung tính như '很' hay '非常'. Tương đương với 'thật là...', 'quá chừng', '...lắm luôn', 'hết sức...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 可 + Tính từ / Động từ tâm lý + 了",
+      "examples": [
+        {
+          "translation": "Hôm nay thời tiết nóng thật đấy!"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_因此_338": {
+      "title": "因此……（因果接続詞：それゆえに・したがって・だからこそ……）",
+      "shortExplanation": "後節の文頭に置き、前節で述べた原因や事情から直接導き出される結果や結論を表します（「それゆえに」「したがって」「そのため」）。",
+      "longExplanation": "「因此」（yīncǐ）は書き言葉や改まった会話で多用される因果関係の接続詞です。「因」（〜により）と「此」（これ・この事情）から成り、「このことによって」「その結果として」という意味合いを持ちます。前節で原因・前提を提示した上で、後節の冒頭に「因此」を置き、導き出される論理的帰結や客観的結果を述べます。前節に「因为」がなくても単独で用いることができます。日本語の「それゆえに」「したがって」「その結果」「だからこそ」に相当します。",
+      "formation": "原因節，因此 ＋ 結果節",
+      "examples": [
+        {
+          "translation": "子供の頃、彼は病気がちだったので、それゆえに毎日ランニングをして体を鍛えていました。"
+        }
+      ]
+    },
+    "zh_什么的_339": {
+      "title": "什么的（助詞：〜とか〜など・〜なんか）",
+      "shortExplanation": "名詞や動詞句などを列挙した末尾に置き、同類の事物や動作がまだ他にもあることを口語的に表します（「〜とか」「〜など」「〜なんか」）。",
+      "longExplanation": "「什么的」（shénmede）は日常会話（口語）で非常によく用いられる助詞で、2つ以上の名詞や動詞フレーズを並べた最後に置かれます。「等等」（〜など）と同様に不完全な列挙を表しますが、よりくだけた親しみのある響きを持ち、「〜とか〜など」「〜や〜なんか」「〜といった類のもの」というニュアンスを添えます（例：「买点儿苹果、香蕉什么的」＝リンゴやバナナとかを買う、「打球、游个泳什么的」＝球技をしたり水泳をしたりなど）。日本語の「〜とか〜など」「〜なんか」「〜といったもの」に相当します。",
+      "formation": "名詞1 / 動詞句1、名詞2 / 動詞句2 ＋ 什么的",
+      "examples": [
+        {
+          "translation": "明日遊びに出かけるから、ビスケットやパンとか（そういったもの）を少し買っておかないといけないね。"
+        }
+      ]
+    },
+    "zh_V起来_340": {
+      "title": "動詞 ＋ 起来（複合方向補語：上方への動作・〜し始める・〜してみると）",
+      "shortExplanation": "動詞の後ろに置き、①上方への移動、②動作・状態の開始と持続（〜し始める）、③ある観点からの評価（〜してみると）を表します。",
+      "longExplanation": "「起来」（qǐlai）は動詞の後ろに接続する複合方向補語で、主に次の3つの用法を持ちます：①物理的に下から上へ向かう動作（例：「站起来」＝立ち上がる、「拿起来」＝手に取る・持ち上げる）；②動作や状態が新たに始まり、そのまま勢いよく継続すること（例：「笑起来」＝笑い出す、「天气热起来了」＝天気が暑くなってきた）；目的語を伴う場合は「動詞 ＋ 起 ＋ 目的語 ＋ 来」の語順になります（例：「唱起歌来」＝歌を歌い始める、「下起雨来」＝雨が降り出す）；③感覚や行為を通じて評価・判断を下すこと（例：「看起来」＝見たところ・〜そうに見える、「听起来」＝聞いた感じでは、「这道菜做起来很容易」＝この料理は作ってみると簡単だ）。日本語の「〜し始める」「〜してみると」「立ち上がる」などに相当します。",
+      "formation": "動詞 ＋ 起来（目的語がある場合：動詞 ＋ 起 ＋ 目的語 ＋ 来）",
+      "examples": []
+    },
+    "zh_想起来_342": {
+      "title": "想起来（動補連語：思い出す・記憶がよみがえる）",
+      "shortExplanation": "過去の記憶や忘れかけていた情報が頭の中によみがえること（思い出す）を表し、可能補語の否定形「想不起来」（思い出せない）としても頻出します。",
+      "longExplanation": "「想起来」（xiǎngqilai）は動詞「想」に方向補語「起来」が結びついた表現で、過去の記憶や経験、名前などの情報が心の中にふと思い出されること（記憶の想起）を表します。実際の会話では可能補語形式が非常に多く用いられ、「想得起来」（思い出せる）や「想不起来」（どうしても思い出せない）として使われます。なお、新しいアイデアや方法を頭の中でひらめく・考案する「想出来」とは明確に区別されます（「想起来」は既知の記憶の再生、「想出来」は未知の創出）。日本語の「思い出す」「思い出せる／思い出せない」に相当します。",
+      "formation": "主語 ＋ 想起来（＋ 目的語） / 主語 ＋ 想得起来 / 想不起来（＋ 目的語）",
+      "examples": []
+    },
+    "zh_弄AO_344": {
+      "title": "弄 ＋ 形容詞 ＋ 目的語（結果補語：〜を…な状態にしてしまう・壊す・汚すなど）",
+      "shortExplanation": "汎用動詞「弄」に形容詞（結果補語）と目的語を続け、意図せず目的語を好ましくない状態にしてしまうことを表します（「〜を壊す」「〜を汚す」）。",
+      "longExplanation": "「弄」（nòng）は手を使って何らかの動作を行う汎用的な口語動詞です。後ろに結果補語となる形容詞（「坏」壊れる、「脏」汚れる、「破」破れる、「丢」紛失する、「乱」散らかるなど）と目的語を直接従えることで、手荒に扱ったり不注意であったりした結果、目的語を望ましくない状態に変化させてしまうことを表します（例：「弄坏沙发」＝ソファを壊してしまう、「弄脏衣服」＝服を汚す、「弄丢钥匙」＝鍵を失くす、「弄破纸」＝紙を破く）。多くの場合、マイナスの結果や過失・失敗に対して用いられます。日本語の「〜を（誤って）壊す」「〜を汚してしまう」「〜を散らかす」に相当します。",
+      "formation": "主語 ＋（别 / 不要 ＋）弄 ＋ 形容詞（坏 / 脏 / 破 / 丢 / 乱など）＋ 目的語（＋ 了）",
+      "examples": [
+        {
+          "translation": "運ぶときは少し気をつけて、ソファを壊さないようにしてくださいね。"
+        }
+      ]
+    },
+    "zh_弄得OCLAUSE_345": {
+      "title": "弄得 ＋ 目的語 ＋ 節 / 述語（様態補語：〜を…な状態にさせてしまう・〜のせいで…になる）",
+      "shortExplanation": "「弄得」の後に目的語と説明節を続け、前節の行動や事態が原因で誰かを気まずい・不快な状況に追い込んでしまうことを表します（「〜のせいで…になる」「〜を…な状態にさせる」）。",
+      "longExplanation": "「弄得」（nòng de）は様態補語を導く動補構造で、前の節で述べられた行為や出来事を受けて、「その結果、目的語（人や周囲）をどのような困った状態・不快な局面に陥らせたか」を後ろの節や述語で詳細に描写します（例：「弄得大家都很尴尬」＝みんなをひどく気まずい思いにさせる、「弄得满地都是水」＝床一面を水浸しにしてしまう、「弄得我一夜没睡好」＝私のせいで一晩中よく眠れなくさせる）。通常、不満、やりきれなさ、当惑などの感情を伴い、好ましくない結果や混乱した事態に対して使われます。日本語の「〜のせいで（人）を…な気分にさせる」「（結果として）〜を…な状態に追い込む」に相当します。",
+      "formation": "原因となる行為 / 事態，弄得 ＋ 目的語 ＋ 節 / 述語",
+      "examples": [
+        {
+          "translation": "毎日こんな些細なことで彼女を叱ってばかりいるので、私たちの二人とも気分が悪くなってしまいます。"
+        }
+      ]
+    },
+    "zh_千万不能不要别V_346": {
+      "title": "千万 ＋ 不能 / 不要 / 别 ＋ 動詞（副詞連用：くれぐれも〜してはいけない・絶対に〜しないで）",
+      "shortExplanation": "副詞「千万」を否定詞「不能 / 不要 / 别」と組み合わせて動詞の前に置き、強い念押しや戒めを表します（「絶対に〜しないで」「くれぐれも〜してはいけない」）。",
+      "longExplanation": "副詞「千万」（qiānwàn）は切実な懇願や強い念押しを表し、「千万 ＋ 否定（不能 / 不要 / 别）＋ 動詞」の形で用いると、相手に対して「何があっても決して〜してはならない」「くれぐれも〜するな」と強く警告・忠告・懇願する表現になります（例：「千万别忘了」＝絶対に忘れないで、「千万不能告诉他」＝彼には絶対に言ってはならない、「千万不要着急」＝決して焦らないで）。口語でも書面でも重大な注意事項を伝える際によく使われます。日本語の「くれぐれも〜しないでください」「決して〜してはならない」「絶対に〜するな」に相当します。",
+      "formation": "主語 ＋ 千万 ＋ 不能 / 不要 / 别 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "彼女の誕生日のその日にこのプレゼントを渡したいので、今は絶対に彼女に言わないでね。"
+        }
+      ]
+    },
+    "zh_一定要得VA_347": {
+      "title": "一定要 / 得 ＋ 動詞 / 形容詞（連用表現：必ず〜しなければならない・どうしても〜する必要がある）",
+      "shortExplanation": "副詞「一定」と助動詞「要 / 得」を組み合わせ、強い決意、義務、あるいは不可欠な条件を強調します（「必ず〜しなければならない」「どうしても〜であるべきだ」）。",
+      "longExplanation": "確実性を表す副詞「一定」（yīdìng）に、必要性・義務を表す助動詞「要」（yào）または「得」（děi）が結びついた表現です。単に「要」や「得」を用いるよりも格段に口調が強まり、主語の固い決意、客観的な強い義務、あるいは何としても満たさなければならない必要条件・基準を強調します（例：「你一定要来」＝あなたは必ず来てください、「一定要注意安全」＝必ず安全に注意しなければならない、「明天一定得早起」＝明日は絶対に早起きしなければならない、「一定要快」＝絶対に迅速でなければならない）。日本語の「必ず〜しなければならない」「どうしても〜する必要がある」「絶対に〜するべきだ」に相当します。",
+      "formation": "主語 ＋ 一定要 / 一定得 ＋ 動詞 / 形容詞（＋ 目的語）",
+      "examples": []
+    },
+    "zh_一定会VA_350": {
+      "title": "一定(会) ＋ 動詞 / 形容詞（副詞・助動詞連用：必ず〜する・きっと〜になるだろう）",
+      "shortExplanation": "副詞「一定」と助動詞「会」を組み合わせ、確信に満ちた将来の予測や強い約束・誓いを表します（「必ず〜する」「きっと〜になるだろう」）。",
+      "longExplanation": "「一定」（yīdìng）と未来の可能性や習得を表す助動詞「会」（huì）が連用され、動詞や形容詞の前に置かれます。「必ず〜するだろう」「絶対に〜になるはずだ」という話者の極めて高い確信、未来への見通し、あるいは誠心誠意の誓約・約束を表明します（例：「我一定会努力」＝必ず努力します、「你一定会成功的」＝あなたはきっと成功するでしょう、「明天一定会放晴」＝明日は絶対に晴れるはずだ）。義務を表す「一定要」とは異なり、「一定会」は未来に事態が確実に実現することを強調します。日本語の「必ず〜する」「きっと〜になる」「絶対に〜してみせる」に相当します。",
+      "formation": "主語 ＋ 一定(会) ＋ 動詞 / 形容詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "ご支持と激励をいただき心より感謝申し上げます。私は必ず引き続き努力してまいります。"
+        }
+      ]
+    },
+    "zh_不一定_351": {
+      "title": "不一定（部分否定副詞：〜とは限らない・必ずしも〜ではない）",
+      "shortExplanation": "事態の絶対性や必然性を部分的に否定し、例外があることや不確実であることを表します（「〜とは限らない」「必ずしも〜ではない」）。",
+      "longExplanation": "「不一定」（bùyīdìng）は絶対性・確実性を否定する部分否定の副詞的表現です。一般的な通念や相手の断定に対し、「必ずしもそうとは言い切れない」「例外も十分にあり得る」という含みを持たせて述べます（例：「贵的不一定好」＝高いものが必ずしも良いとは限らない、「个子高不一定力气大」＝背が高いからといって力が強いとは限らない、「明天我不一定去」＝明日は行くかどうかわからない）。また、会話で「他会同意吗？（彼は賛成するかな？）」に対して「不一定（さあ、どうだろう／そうとは限らないよ）」のように独立した返答としても頻繁に使われます。日本語の「〜とは限らない」「必ずしも〜ではない」に相当します。",
+      "formation": "主語 ＋ 不一定 ＋ 述語（動詞 / 形容詞 / 主述述語）/ 単独使用：不一定",
+      "examples": [
+        {
+          "translation": "背が高いからといって、必ずしも力が強いとは限りません。"
+        }
+      ]
+    },
+    "zh_一定的_352": {
+      "title": "一定的 ＋ 名詞（連体修飾語：一定の・ある程度の・相応の）",
+      "shortExplanation": "名詞の前に「的」を伴って置き、ある水準や数量、度合いに達していることを表します（「一定の」「ある程度の」「相応の」）。",
+      "longExplanation": "「一定」（yīdìng）が形容詞として構造助詞「的」を伴い、名詞を修飾する定語（連体修飾語）となる場合、「必ず」という副詞の意味ではなく、「ある基準や水準を満たしている」「相応の分量や度合いがある」という意味を表します（例：「有一定的基础」＝一定の基礎がある、「需要一定的时间」＝ある程度の時間を要する、「产生一定的影响」＝相応の影響を及ぼす、「保持一定的距离」＝一定の距離を保つ）。抽象名詞を伴うことが多く、無視できない相当のレベルにあることを客観的に示します。日本語の「一定の」「ある程度の」「相応の」に相当します。",
+      "formation": "（動詞：有 / 达到 / 产生など ＋）一定的 ＋ 名詞（基础 / 影响 / 水平 / 距离 / 时间など）",
+      "examples": [
+        {
+          "translation": "もし一定の語学の基礎があるのなら、海外に出て外国語を学ぶのが最も良い選択肢です。"
+        }
+      ]
+    },
+    "zh_来V_353": {
+      "title": "来 ＋ 動詞（主動表現：〜をこちらで引き受ける・進んで〜する・〜してみる）",
+      "shortExplanation": "動詞の前に「来」を置き、自分が進んでその行動を引き受けることや、自発的に取り組む意志を表します（「私が〜します」「〜を引き受ける」）。",
+      "longExplanation": "「来」（lái）が動詞の直前に置かれる場合、空間的な移動（来る）ではなく、話者が自発的・積極的にその行動を自ら名乗り出て引き受ける姿勢や、意気込みを表します（例：「我来做」＝私がやりましょう、「我来帮你」＝私がお手伝いします、「你来试试」＝君がやってみてごらん、「今天我来请客」＝今日のおごりは私に任せて）。相手への申し出を非常に親切かつ積極的なトーンで伝える口語特有の表現です。日本語の「（私に）〜させて」「進んで〜する」「〜を引き受ける」に相当します。",
+      "formation": "主語 ＋ 来 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "このソファはこんなに大きいですから、私が手伝って皆さんと一緒に持ち上げましょう。"
+        }
+      ]
+    },
+    "zh_通过用N来V_354": {
+      "title": "通过 / 用 ＋ 名詞 ＋ 来 ＋ 動詞（手段・目的構文：〜を通して／〜を用いて…する）",
+      "shortExplanation": "介詞「通过」（〜を通して）や「用」（〜を用いて）で手段や媒体を導き、「来」を挟んで後続の動詞（目的や達成目標）へとつなげます（「〜を通して…する」「〜を用いて…を図る」）。",
+      "longExplanation": "介詞「通过」（〜を通じて・媒介として）または「用」（〜を使って・手段として）に手段・媒体を表す名詞を続け、接続詞的な「来」（それによって〜する）を介して目的の動作を結びつける構文です。ある目標や成果を達成するために「何を手がかり・道具・経路とするか」を論理的かつ明確に示します（例：「通过阅读来提高中文水平」＝読書を通して中国語力を高める、「用事实来证明自己的清白」＝事実をもって自身の潔白を証明する、「通过合作来实现共赢」＝協力関係を通じて相互利益を図る）。書き言葉でもフォーマルな会話でも非常に頻出する重要構文です。日本語の「〜を通して…する」「〜を用いて…を行う」に相当します。",
+      "formation": "主語 ＋ 通过 / 用 ＋ 名詞（手段 / 道具 / 経路）＋ 来 ＋ 動詞（＋ 目的語）",
+      "examples": []
+    },
+    "zh_左右_356": {
+      "title": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右（概数表現：〜前後・〜ぐらい・〜ごろ）",
+      "shortExplanation": "数量詞や時刻・年齢などの直後に「左右」を置き、「〜前後」「〜ぐらい」「〜ごろ」というおおよその数値や時点を表します。",
+      "longExplanation": "「左右」（zuǒyòu）は数量や時間のおおよその範囲（概数）を表す後置の修飾語です。具体的な数詞、量詞、時間、年齢、金額などの直後に置かれ、その基準となる数値の前後に多少の幅があることを示します（例：「十点左右」＝10時ごろ、「三十岁左右」＝30歳前後・30歳くらい、「一百块左右」＝100元前後、「五个人左右」＝5人前後）。日本語の「〜前後」「〜ぐらい」「〜ごろ」に対応しますが、中国語では必ず数値の後ろに置かれる点に注意が必要です。",
+      "formation": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右",
+      "examples": []
+    },
+    "zh_可VA了_359": {
+      "title": "可 ＋ 形容詞 / 動詞 ＋ 了（感嘆副詞構文：本当に〜だ・実に〜だ・とても〜だ）",
+      "shortExplanation": "副詞「可」を形容詞や心理動詞の前に置き、文末に語気助詞「了」を伴って、度合いの甚だしさを感情豊かに強調します（「本当に〜だ」「実に〜だ」）。",
+      "longExplanation": "「可」（kě）は生き生きとした日常会話で程度を強く強調する副詞です。文末の語気助詞「了」と呼応して「可 ＋ 形容詞 / 心理動詞 ＋ 了」の枠組みを形成し、「本当に〜だ」「ものすごく〜だ」「実に〜だ」という話者の強い感嘆、驚き、あるいは実感のこもった語気を表します（例：「今天天气可热了」＝今日は本当に暑いですね、「这里的风景可美了」＝ここの景色は実に美しい、「大家可高兴了」＝みんな大喜びだった）。「很」や「非常」に比べて感情の起伏が豊かで、主観的な強調のニュアンスが色濃く出ます。日本語の「本当に〜だ」「実に〜だ」「すごく〜だ」に相当します。",
+      "formation": "主語 ＋ 可 ＋ 形容詞 / 心理動詞 ＋ 了",
+      "examples": [
+        {
+          "translation": "今日の天気は本当に（とても）暑いです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_因此_338": {
+      "title": "因此…… (인과 접속사: 따라서, 그러므로, 그렇기 때문에……)",
+      "shortExplanation": "뒷절의 첫머리에 쓰여 앞 절의 원인이나 상황으로부터 필연적으로 도출되는 결과나 결론을 이끕니다('따라서', '그러므로', '이로 인해').",
+      "longExplanation": "'因此'(yīncǐ)는 원인과 결과를 맺어주는 대표적인 격식체 서면어 접속사입니다. 한자 뜻대로 '因'(~로 인하여)과 '此'(이것)가 결합되어 '이 일로 말미암아', '그 때문에'라는 인과관계를 나타냅니다. 앞 절에서 어떤 사유나 정황을 밝힌 뒤, 뒷절 맨 앞에 '因此'를 두어 그로부터 자연스럽게 파생된 행동이나 결과를 서술합니다. 앞 절에 '因为'가 없어도 단독으로 사용 가능합니다. 한국어의 '따라서', '그러므로', '이 때문에', '그로 인해'에 해당합니다.",
+      "formation": "원인절, 因此 + 결과절",
+      "examples": [
+        {
+          "translation": "어릴 적에 그는 자주 앓았기 때문에, 그래서 매일 달리기를 하러 가며 몸을 단련했습니다."
+        }
+      ]
+    },
+    "zh_什么的_339": {
+      "title": "什么的 (조사: ~라든가 ~등, ~따위, ~같은 것)",
+      "shortExplanation": "명사나 동사구를 나열한 뒤 끝에 붙여, 그와 비슷한 종류의 사물이나 행동이 더 있음을 구어체로 나타냅니다('~라든가', '~등', '~따위', '~같은 것').",
+      "longExplanation": "'什么的'(shénmede)는 일상 구어에서 매우 애용되는 조사로, 둘 이상의 명사나 동사구를 열거한 맨 뒤에 붙어 미처 다 나열하지 못한 동종의 것들이 더 있음을 나타냅니다. 서면어적인 '等等'(등등)과 기능은 같으나 훨씬 부드럽고 자연스러운 생활 밀착형 어감을 줍니다(예: '买点儿苹果、橘子什么的' 사과나 귤 같은 걸 좀 사다, '看书、散步什么的' 독서나 산책 같은 걸 하다). 한국어의 '~라든가 ~등', '~따위', '~같은 것', '~등등'에 해당합니다.",
+      "formation": "명사 1 / 동사구 1、명사 2 / 동사구 2 + 什么的",
+      "examples": [
+        {
+          "translation": "내일 놀러 나가려면 비스킷이나 빵 같은 것들을 좀 사야 해."
+        }
+      ]
+    },
+    "zh_V起来_340": {
+      "title": "동사 + 起来 (복합방향보어: 위로 향하는 동작, ~하기 시작하다, ~해 보면)",
+      "shortExplanation": "동사 뒤에 쓰여 ① 아래에서 위로 향하는 이동, ② 동작이나 상태의 개시와 지속(~하기 시작하다), ③ 특정 관점에서의 평가(~해 보면)를 나타냅니다.",
+      "longExplanation": "'起来'(qǐlai)는 동사 뒤에 결합하는 복합방향보어로, 크게 세 가지 주요 용법이 있습니다: ① 실제 공간상 아래에서 위로 향하는 동작(예: '站起来' 일어서다, '拿起来' 집어 들다, '抬起来' 들어 올리다); ② 어떤 동작이나 상태가 시작되어 지속적으로 전개됨(예: '笑起来' 웃기 시작하다, '热起来' 더워지다); 이때 목적어가 있으면 '동사 + 起 + 목적어 + 来'의 어순으로 목적어가 중간에 들어갑니다(예: '唱起歌来' 노래를 부르기 시작하다, '下起雨来' 비가 내리기 시작하다); ③ 감각이나 경험을 통해 어떤 대상을 판단·평가함(예: '看起来' 보아하니/보기에, '听起来' 듣기에, '这道题做起来很难' 이 문제는 풀어 보면 어렵다). 한국어의 '~하기 시작하다', '~해 보면', '일어서다/들어 올리다'에 해당합니다.",
+      "formation": "동사 + 起来 (목적어가 있을 때: 동사 + 起 + 목적어 + 来)",
+      "examples": []
+    },
+    "zh_想起来_342": {
+      "title": "想起来 (동보 어휘: 생각나다, 기억이 떠오르다)",
+      "shortExplanation": "과거의 기억이나 잊고 있던 사실이 머릿속에 다시 떠오름을 나타내며, 가능보어 부정형인 '想不起来'(생각나지 않다)로도 매우 자주 쓰입니다.",
+      "longExplanation": "'想起来'(xiǎngqilai)는 동사 '想'에 방향보어 '起来'가 결합된 표현으로, 잊고 있던 과거의 기억, 이름, 사실 등이 의식 위로 떠오를 때 쓰입니다. 회화에서는 특히 가능보어 형태인 '想得起来'(생각해 낼 수 있다/기억나다)와 '想不起来'(기억나지 않다/도무지 떠오르지 않는다)의 쓰임이 매우 활발합니다. 새로운 아이디어나 해결책을 머릿속에서 짜내는 '想出来'(생각해 내다)와 구별해야 합니다. 한국어의 '생각나다', '기억나다', '떠오르다'에 해당합니다.",
+      "formation": "주어 + 想起来 (+ 목적어) / 주어 + 想得起来 / 想不起来 (+ 목적어)",
+      "examples": []
+    },
+    "zh_弄AO_344": {
+      "title": "弄 + 형용사 + 목적어 (결과보어: ~을 …하게 만들다, 망가뜨리다/더럽히다)",
+      "shortExplanation": "동사 '弄' 뒤에 형용사(결과보어)와 목적어를 직접 연결하여, 부주의 등으로 인해 목적어를 원치 않는 부정적인 상태로 만들어 버림을 나타냅니다('망가뜨리다', '더럽히다', '잃어버리다').",
+      "longExplanation": "'弄'(nòng)은 손이나 행동을 가하여 무언가를 처리하거나 만지는 구어체 동작 동사입니다. '弄' 뒤에 결과보어 역할을 하는 형용사('坏' 망가지다, '脏' 더러워지다, '破' 찢어지다, '丢' 잃어버리다, '乱' 어지럽히다 등)와 목적어가 연이어 오면, 부주의나 조작 미숙으로 대상을 바람직하지 않은 상태에 빠뜨렸음을 의미합니다(예: '弄坏沙发' 소파를 망가뜨리다, '弄脏衣服' 옷을 더럽히다, '弄丢钥匙' 열쇠를 잃어버리다, '弄破书页' 책장을 찢다). 주로 의도치 않은 부정적 결과나 실수에 대해 쓰입니다. 한국어의 '~을 망가뜨리다', '~을 더럽히다', '~을 잃어버리다'에 해당합니다.",
+      "formation": "주어 + (别 / 不要 +) 弄 + 형용사 (坏 / 脏 / 破 / 丢 / 乱 등) + 목적어 (+ 了)",
+      "examples": [
+        {
+          "translation": "옮길 때 좀 조심해서 소파를 망가뜨리지 않도록 해."
+        }
+      ]
+    },
+    "zh_弄得OCLAUSE_345": {
+      "title": "弄得 + 목적어 + 절 / 술어 (상태보어: ~을 …한 지경으로 만들다, ~하게 만들다)",
+      "shortExplanation": "'弄得' 뒤에 목적어와 절을 이끌어, 앞선 행동이나 일로 인해 대상을 곤란하거나 불쾌한 상태에 빠뜨렸음을 나타냅니다('~을 …하게 만들다', '~의 탓에 …한 꼴이 되다').",
+      "longExplanation": "'弄得'(nòng de)는 상태보어를 이끄는 표현으로, 앞 절의 행동이나 상황으로 인해 야기된 성가시거나 유쾌하지 못한 결과·국면을 목적어 및 서술절로 묘사합니다(예: '弄得大家都很尴尬' 모두를 아주 어색하게 만들다, '弄得满屋子都是烟' 온 방을 연기로 가득 차게 만들다, '弄得我不知所措' 나를 어찌할 바 모르게 만들다). 주로 불만, 짜증, 당혹스러움을 내포하며, 의도치 않게 상황이 꼬이거나 기분을 망쳤을 때 자주 쓰입니다. 한국어의 '~을 …한 지경으로 만들다', '~하게 만들어 버리다', '~의 탓에 …하게 되다'에 해당합니다.",
+      "formation": "원인이 되는 행위 / 상황, 弄得 + 목적어 + 절 / 술어",
+      "examples": [
+        {
+          "translation": "매일 이런 사소한 일로 그녀를 꾸짖다 보니, 우리 둘 다 기분이 안 좋아지게 되었습니다."
+        }
+      ]
+    },
+    "zh_千万不能不要别V_346": {
+      "title": "千万 + 不能 / 不要 / 别 + 동사 (강조 부사: 절대로 ~하지 마라, 결코 ~해서는 안 된다)",
+      "shortExplanation": "부사 '千万'을 부정 표현 '不能 / 不要 / 别'과 결합하여 동사 앞에 놓음으로써, 상대방에게 절대 어떤 행동을 하지 말 것을 간곡히 당부하거나 엄중히 경고합니다('절대로 ~하지 마라', '부디 ~하지 마라').",
+      "longExplanation": "'千万'(qiānwàn)은 간절한 당부나 엄중한 경계를 나타내는 어기부사로, '천만 뜻밖' 할 때처럼 '만에 하나라도', '무슨 일이 있어도'라는 어감을 지닙니다. 부정사 '别'(~하지 마라), '不要'(~해서는 안 된다), '不能'(~할 수 없다)과 함께 쓰여 상대방이 특정 행동을 저지르지 않도록 극도로 강조하여 금지하거나 타이릅니다(예: '千万别忘了' 부디 절대 잊지 마라, '千万不要大意' 절대로 방심해서는 안 된다, '千万不能喝' 절대 마셔서는 안 된다). 한국어의 '절대로 ~하지 마라', '결코 ~해서는 안 된다', '부디 ~하지 말아라'에 해당합니다.",
+      "formation": "주어 + 千万 + 不能 / 不要 / 别 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "그녀의 생일날이 되어서야 이 선물을 전해 줄 생각이니, 지금은 절대 그녀에게 말하지 마."
+        }
+      ]
+    },
+    "zh_一定要得VA_347": {
+      "title": "一定要 / 得 + 동사 / 형용사 (연용 표현: 반드시 ~해야 한다, 꼭 ~해야 한다)",
+      "shortExplanation": "부사 '一定'과 조동사 '要 / 得'을 결합하여, 확고한 결심이나 불가피한 의무, 필수적인 요건을 강하게 강조합니다('반드시 ~해야 한다', '꼭 ~해야 한다').",
+      "longExplanation": "확신을 나타내는 부사 '一定'(yīdìng) 뒤에 당위와 필요를 나타내는 능원동사 '要'(yào) 또는 '得'(děi)가 붙은 형태로, 동사나 형용사 앞에 놓입니다. 단순히 '要'나 '得'만 쓸 때보다 어조가 훨씬 강해져서 주체의 확고한 의지나 결의, 반드시 지켜야 할 의무나 지침을 역설합니다(예: '你一定要来' 너 꼭 와야 해, '一定要注意安全' 반드시 안전에 유의해야 한다, '一定要成功' 반드시 성공해야 한다, '一定要认真' 반드시 진지해야 한다). 한국어의 '반드시 ~해야 한다', '꼭 ~해야만 한다'에 해당합니다.",
+      "formation": "주어 + 一定要 / 一定得 + 동사 / 형용사 (+ 목적어)",
+      "examples": []
+    },
+    "zh_一定会VA_350": {
+      "title": "一定(会) + 동사 / 형용사 (부사·조동사 결합: 반드시 ~할 것이다, 틀림없이 ~할 것이다)",
+      "shortExplanation": "부사 '一定'과 조동사 '会'를 결합하여 동사나 형용사 앞에 놓음으로써, 미래에 대한 확고한 예측이나 굳은 다짐·약속을 나타냅니다('반드시 ~할 것이다', '틀림없이 ~할 것이다').",
+      "longExplanation": "'一定'(yīdìng)과 미래의 실현 가능성을 나타내는 조동사 '会'(huì)가 결합하여 쓰이면, 말하는 이의 강력한 확신에 찬 추측이나 진심 어린 약속을 나타냅니다(예: '我一定会努力' 저는 반드시 노력할 것입니다, '你一定会成功的' 당신은 틀림없이 성공할 것입니다, '明天一定会暖和起来' 내일은 분명 따뜻해질 것이다). 의무나 당위를 나타내는 '一定要'와 달리, '一定会'는 사태의 필연적인 도래나 실현을 단언하는 뉘앙스를 지닙니다. 한국어의 '반드시/꼭 ~할 것이다', '틀림없이 ~할 것이다'에 해당합니다.",
+      "formation": "주어 + 一定(会) + 동사 / 형용사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "응원과 격려에 감사드리며, 저는 반드시 계속해서 노력하겠습니다."
+        }
+      ]
+    },
+    "zh_不一定_351": {
+      "title": "不一定 (부분부정 부사: 꼭 ~한 것은 아니다, 반드시 ~인 것은 아니다)",
+      "shortExplanation": "필연성이나 절대성을 부분적으로 부정하여, 꼭 그렇다고 단정할 수 없거나 예외가 존재함을 나타냅니다('꼭 ~한 것은 아니다', '반드시 ~인 것은 아니다').",
+      "longExplanation": "'不一定'(bùyīdìng)은 사태의 절대적인 필연성을 부정하는 부분부정 표현입니다. 상식적인 통념이나 상대방의 단정에 대해 반드시 그런 결과로 이어지는 것은 아님을 지적할 때 쓰입니다(예: '贵的不一定好' 비싼 것이 꼭 좋은 것은 아니다, '个子高不一定力气大' 키가 크다고 해서 반드시 힘이 센 것은 아니다, '明天我不一定在家' 내일 내가 꼭 집에 있으리라는 법은 없다). 단독으로 '不一定'(글쎄, 꼭 그렇지는 않아/모르는 일이야)처럼 짤막한 답변으로도 매우 자주 쓰입니다. 한국어의 '꼭 ~한 것은 아니다', '반드시 ~인 것은 아니다', '그렇지 않을 수도 있다'에 해당합니다.",
+      "formation": "주어 + 不一定 + 술어 (동사 / 형용사 / 주술구) / 단독 응답: 不一定",
+      "examples": [
+        {
+          "translation": "키가 크다고 해서 반드시 힘이 센 것은 아닙니다."
+        }
+      ]
+    },
+    "zh_一定的_352": {
+      "title": "一定的 + 명사 (관형어: 일정한, 어느 정도의, 상당한)",
+      "shortExplanation": "명사 앞에 '的'와 함께 쓰여, 어떤 기준치나 상당한 수준·분량에 도달해 있음을 나타냅니다('일정한', '어느 정도의', '상당한').",
+      "longExplanation": "'一定'(yīdìng)이 구조조사 '的'를 수반하여 명사를 수식하는 관형어로 쓰일 때는 부사 '반드시'의 뜻이 아니라, '상당한 수준에 이른', '특정하게 정해진'이라는 의미를 가집니다(예: '有一定的基础' 일정한 기초가 있다, '需要一定的时间' 어느 정도의 시간이 필요하다, '产生一定的影响' 상당한 영향을 미치다, '保持一定的距离' 일정한 거리를 유지하다). 주로 추상명사 앞에 붙어 무시할 수 없을 만큼의 분량이나 능력을 구비하고 있음을 객관적으로 서술합니다. 한국어의 '일정한', '어느 정도의', '상당한'에 해당합니다.",
+      "formation": "(동사: 有 / 达到 / 产生 등 +) 一定的 + 명사 (基础 / 影响 / 难度 / 时间 / 距离 등)",
+      "examples": [
+        {
+          "translation": "만약 일정한 언어 기초가 갖추어져 있다면, 외국에 나가서 외국어를 배우는 것이 가장 좋은 선택입니다."
+        }
+      ]
+    },
+    "zh_来V_353": {
+      "title": "来 + 동사 (자발적 동작 개시: (내가) ~하겠다, 맡아서 ~하다, 나서서 ~하다)",
+      "shortExplanation": "동사 앞에 '来'를 놓아 공간 이동이 아닌, 자신이 자진해서 그 행동을 맡아 하거나 솔선하여 시도하겠다는 적극적인 의사를 나타냅니다('내가 ~할게', '나서서 ~하다').",
+      "longExplanation": "'来'(lái)가 다른 동사 앞에 놓일 때는 물리적으로 '오다'라는 뜻이 아니라, 동작을 적극적으로 자청하거나 주도적으로 솔선하여 실행하겠다는 태도를 나타냅니다(예: '我来做' 제가 하겠습니다, '我来帮你' 내가 도와줄게, '你来试试' 네가 한번 해 봐, '今天我来请客' 오늘은 내가 한턱낼게). 일상 대화에서 남을 돕거나 책임을 맡을 때 상대방에게 친근하고 능동적인 어조를 부여합니다. 한국어의 '(자진해서) ~하겠다', '내가 ~할게', '맡아서 ~하다'에 해당합니다.",
+      "formation": "주어 + 来 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "이 소파가 이렇게 크니, 제가 나서서 여러분과 함께 들어 올릴게요."
+        }
+      ]
+    },
+    "zh_通过用N来V_354": {
+      "title": "通过 / 用 + 명사 + 来 + 동사 (수단·목적 구문: ~을 통해 / ~을 써서 …하다)",
+      "shortExplanation": "개사 '通过'(~을 통해)나 '用'(~을 사용하여)으로 수단과 경로를 제시하고, '来'(그로써)를 연결하여 목적 동작을 실현함을 나타냅니다('~을 통해 …하다', '~을 사용하여 …하다').",
+      "longExplanation": "수단이나 경로를 이끄는 개사 '通过'(과정·매개) 또는 '用'(도구·재료) 뒤에 명사를 배치하고, 접속 기능을 하는 '来'를 통해 궁극적인 목적을 나타내는 동사구로 이어지는 구문입니다. 어떤 결과나 목적을 달성하기 위해 어떠한 수단과 방식을 활용하는지를 논리정연하게 표현합니다(예: '通过阅读来提高汉语水平' 독서를 통해 중국어 실력을 향상시키다, '用事实来证明一切' 사실로써 모든 것을 증명하다, '通过沟通来化解矛盾' 소통을 통해 갈등을 해소하다). 한국어의 '~을 통해/통하여 …하다', '~을 써서/이용하여 …하다'에 해당합니다.",
+      "formation": "주어 + 通过 / 用 + 명사 (수단 / 도구 / 매개) + 来 + 동사 (+ 목적어)",
+      "examples": []
+    },
+    "zh_左右_356": {
+      "title": "수사(+ 양사 + 명사) / 시점 + 左右 (어림수 표현: ~가량, ~안팎, ~전후, ~쯤)",
+      "shortExplanation": "수량사나 시각, 연령 등의 뒤에 '左右'를 덧붙여 기준 수치의 앞뒤를 아우르는 대략적인 수량이나 시점(~쯤, ~가량, ~전후)을 나타냅니다.",
+      "longExplanation": "'左右'(zuǒyòu)는 대략적인 수치나 시점을 나타내는 어림수(개수) 표현으로, 수량사나 시각, 나이, 금액 등의 바로 뒤에 놓입니다. 제시된 기준 수치보다 약간 많거나 적음을 나타내며, 우리말의 '~가량', '~안팎', '~전후', '~쯤'에 해당합니다(예: '十点左右' 10시쯤, '三十岁左右' 서른 살가량, '一百块左右' 100위안 안팎, '五个小时左右' 다섯 시간 정도). 반드시 수량 표현의 뒤에 위치한다는 어순상의 특징이 있습니다.",
+      "formation": "수사(+ 양사 + 명사) / 시점 + 左右",
+      "examples": []
+    },
+    "zh_可VA了_359": {
+      "title": "可 + 형용사 / 동사 + 了 (감탄 부사 구문: 정말 ~하다, 아주 ~하다, 어찌나 ~한지)",
+      "shortExplanation": "부사 '可'를 형용사나 심리동사 앞에 두고 문말의 '了'와 호응시켜, 정도가 대단히 높음을 감탄을 담아 강조합니다('정말 ~하다', '아주 ~하다', '참으로 ~하다').",
+      "longExplanation": "'可'(kě)는 생생한 구어에서 정도의 극치를 강조하는 어기부사입니다. 문장 끝의 어기조사 '了'와 어우러져 '可 + 형용사 / 심리동사 + 了' 형식을 취하며, 어떤 상태나 심경의 강도가 매우 두드러짐을 실감 나게 표현합니다(예: '今天天气可热了' 오늘 날씨가 정말 덥다, '这儿的风景可美了' 이곳의 경치가 참으로 아름답다, '听到消息后他可高兴了' 소식을 듣고 그는 어찌나 기뻐했는지 모른다, '这道题可难了' 이 문제는 아주 어렵다). '很'이나 '非常'과 같은 단순 서술 부사보다 감정이 풍부하게 실린 감탄의 뉘앙스를 지닙니다. 한국어의 '정말 ~하다', '아주 ~하다', '참으로 ~하다'에 해당합니다.",
+      "formation": "주어 + 可 + 형용사 / 심리동사 + 了",
+      "examples": [
+        {
+          "translation": "오늘 날씨가 정말 덥네요."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_因此_338": {
+      "title": "因此……（因果连词：因为这个、所以……）",
+      "shortExplanation": "置于后一分句句首，承接前文所陈述的原因或事实，引出推导出的自然结果或结论；表示“因为如此、所以”。",
+      "longExplanation": "“因此”（yīncǐ）是表示因果关系的连词，具有较强的书面语及正式文体色彩。“因”即因为，“此”代指上文所提到的前因或具体情况，合起来即“因为这件事情 / 由于上述原因”。通常紧承前一分句交代的原因，直接置于后一分句的开头，引出事实发展的结果、行为反应或论证结论。前一分句无须搭配“因为”，可单独使用“因此”。",
+      "formation": "原因分句，因此 + 结果分句",
+      "examples": [
+        {
+          "translation": "小时候他经常生病，因此每天都去跑步锻炼身体。"
+        }
+      ]
+    },
+    "zh_什么的_339": {
+      "title": "什么的（助词：表示列举未尽，相当于“等等、之类”）",
+      "shortExplanation": "用在列举的名词或动词短语之后，表示同类的其他事物或动作，具有浓厚的口语色彩；相当于“等等、之类”。",
+      "longExplanation": "“什么的”（shénmede）是汉语口语中高频使用的助词，通常放在两个或两个以上并列举出的词语（名词、代词或动宾短语）之后，表示列举并未穷尽，还有其他同性质的事物或行为（如“买点儿水果、点心什么的”、“周末打打球、游游泳什么的”）。其语义相当于书面语中的“等等”或“之类”，但语气更随和亲切、口语化。",
+      "formation": "名词 1 / 动词短语 1、名词 2 / 动词短语 2 + 什么的",
+      "examples": [
+        {
+          "translation": "明天出去玩儿，得买点儿饼干、面包什么的。"
+        }
+      ]
+    },
+    "zh_V起来_340": {
+      "title": "动词 + 起来（复合趋向补语：表示向上、动作开始并持续、或从某角度评价）",
+      "shortExplanation": "位于动词之后，表示动作由低向高的趋向、动作状态的开始与持续（“……起来”），或表示从某一角度进行感受与评价。",
+      "longExplanation": "“起来”（qǐlai）作复合趋向补语置于动词后，包含三个核心语法引申义：①表示动作在空间上由下往上进行（如“站起来”、“拿起来”、“抬起来”）；②表示动作或状态已经开始并且在继续发展（如“笑起来”、“哭起来”、“天气热起来了”）；若带宾语，宾语通常插入“起”与“来”之间，构成“动词 + 起 + 宾语 + 来”（如“唱起歌来”、“下起雨来”、“聊起天来”）；③表示从某种感觉或角度来评判、估量事物（如“看起来”、“听起来”、“闻起来”、“这首诗读起来朗朗上口”）。",
+      "formation": "动词 + 起来（带宾语时：动词 + 起 + 宾语 + 来）",
+      "examples": []
+    },
+    "zh_想起来_342": {
+      "title": "想起来（动补短语：回忆起过去的事物或记忆）",
+      "shortExplanation": "表示过去储存在记忆中的印象、事情或人名重新浮现于脑海之中；常用于可能补语否定式“想不起来”。",
+      "longExplanation": "“想起来”（xiǎngqilai）是由动词“想”后接趋向补语“起来”构成的动补短语，其语法意义是把过去遗忘的记忆、事物或信息重新唤回意识之中（“回忆起来”）。在口语中，多以可能补语的形式出现，如肯定式“想得起来”（能记起）与否定式“想不起来”（遗忘、记不起）。注意其与“想出来”的区别：“想起来”所指的内容是原本就存在于记忆中的旧事物；而“想出来”指通过思考创造出原来没有的新办法、新点子。",
+      "formation": "主语 + 想起来 (+ 宾语) / 主语 + 想得起来 / 想不起来 (+ 宾语)",
+      "examples": []
+    },
+    "zh_弄AO_344": {
+      "title": "弄 + 形容词 + 宾语（结果补语：使事物处于某种状态，多指不良后果）",
+      "shortExplanation": "动词“弄”后接形容词作结果补语并带宾语，表示因动作或疏忽使事物变成某种状态；多用于表示消极、不如意的结果（如“弄坏、弄脏、弄丢”）。",
+      "longExplanation": "“弄”（nòng）是一个动作含义宽泛的口语及常用动词。当“弄”后直接接形容词（如“坏、脏、破、丢、乱、湿”等）充当结果补语并紧跟宾语时，表示由于某种动作干预或不小心，使得宾语承受了该形容词所描述的状态变化（如“弄坏沙发”、“弄脏衣服”、“弄丢钥匙”、“弄破包装袋”）。此类搭配在日常表达中多用于由于疏忽大意或操作不慎而导致的损坏、污损、遗失等负面、不良后果。",
+      "formation": "主语 +（别 / 不要 +）弄 + 形容词（坏 / 脏 / 破 / 丢 / 乱等）+ 宾语（+ 了）",
+      "examples": [
+        {
+          "translation": "搬的时候要小心点儿，别弄坏沙发了。"
+        }
+      ]
+    },
+    "zh_弄得OCLAUSE_345": {
+      "title": "弄得 + 宾语 + 分句 / 述语（情态补语：致使产生某种尴尬或不良局面）",
+      "shortExplanation": "“弄得”引出情态补语分句，表示某种作为或事情导致某人或局面陷入尴尬、不快或混乱的状态；表示“搞得、致使”。",
+      "longExplanation": "“弄得”（nòng de）是由动词“弄”加上结构助词“得”构成的情态补语标记，通常用于后一分句的开头，引出受到影响的对象（宾语）以及描述该对象所处困境或局面的分句（如“弄得大家都很尴尬”、“弄得满地都是油污”、“弄得我左右为难”）。该结构通常带有无可奈何、抱怨或遗憾的情感色彩，多用于描述非预期的麻烦、混乱局面或负面情绪状态。",
+      "formation": "原因行为 / 事情，弄得 + 宾语 + 分句 / 谓词短语",
+      "examples": [
+        {
+          "translation": "每天因为这些小事批评她，弄得我俩心情都不好。"
+        }
+      ]
+    },
+    "zh_千万不能不要别V_346": {
+      "title": "千万 + 不能 / 不要 / 别 + 动词（语气副词：极力劝阻，切切不要）",
+      "shortExplanation": "副词“千万”与否定词“不能 / 不要 / 别”连用，表示切实的叮嘱、警告或极力劝阻对方切勿做出某种行为；表示“千万别、务必不要”。",
+      "longExplanation": "“千万”（qiānwàn）在此作语气副词，表示极其恳切的叮咛、郑重的嘱咐或严肃的告诫，相当于“无论如何、务必”。与否定副词“别、不要、不能”连用后接动词，构成极为强烈的否定祈使或警示语气，再三嘱咐对方千万不能疏忽或违背（如“千万别迟到”、“千万不要放弃”、“千万不能酒后驾车”）。在人际交往中常用于提醒至关重要的事情或规避风险。",
+      "formation": "主语 + 千万 + 不能 / 不要 / 别 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "我要等她生日那天再送给她这个礼物，你现在千万别告诉她。"
+        }
+      ]
+    },
+    "zh_一定要得VA_347": {
+      "title": "一定要 / 得 + 动词 / 形容词（连用结构：表示坚决的要求、强烈的意愿或客观必要性）",
+      "shortExplanation": "副词“一定”与助动词“要”或“得”（děi）连用，强调坚定的决心、不容推卸的义务或必须达到的标准；表示“必定要、必须”。",
+      "longExplanation": "“一定”（yīdìng）作为表示确定性的副词，与表示意愿、必然要求的能愿动词“要”或“得”（děi）结合，修饰动词或形容词。它比单独使用“要”或“得”语气更加坚定、不容置疑，常用于表达说话人坚决的主观意愿、对听话人提出的郑重叮嘱与要求，或者客观规律决定的必然条件（如“一定要来参加”、“一定要注意身体”、“明天一定得早起”、“一定要快”）。",
+      "formation": "主语 + 一定要 / 一定得 + 动词 / 形容词（+ 宾语）",
+      "examples": []
+    },
+    "zh_一定会VA_350": {
+      "title": "一定(会) + 动词 / 形容词（副词与助动词连用：必然发生、坚定承诺）",
+      "shortExplanation": "副词“一定”与助动词“会”连用，修饰动词或形容词，表示对未来情况极具把握的必然推断或庄重的决心与承诺；表示“必定会、一定会”。",
+      "longExplanation": "“一定”（yīdìng）与表示可能性的助动词“会”（huì）结合使用，用以表达说话人对某种事态发生具有百分之百的把握，或者表达自己坚定不移的誓言与承诺（如“我一定会尽全力”、“你一定会康复的”、“付出努力就一定会见成效”）。与强调责任与行动指令的“一定要”相比，“一定会”更侧重于事物发展的必然结果与未来的确定趋势。",
+      "formation": "主语 + 一定(会) + 动词 / 形容词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "感谢您的支持和鼓励，我一定会继续努力。"
+        }
+      ]
+    },
+    "zh_不一定_351": {
+      "title": "不一定（部分否定副词：未必、不必然）",
+      "shortExplanation": "表示对事情的必然性或确定性加以否定，说明情况存在变数或例外；表示“未必、不一定、不必然”。",
+      "longExplanation": "“不一定”（bùyīdìng）是对绝对必然性进行部分否定的常用表达。用在谓语成分（动词、形容词或主谓短语）前作状语，指出某种条件与结果之间并不存在绝对的对应关系，事物往往存在其他可能性或例外（如“便宜不一定没好货”、“名牌不一定适合你”、“下周我不一定有时间”）。此外，“不一定”也可以单独成句，用作对他人询问的委婉或保留性回答（如“他明天来吗？——不一定”）。",
+      "formation": "主语 + 不一定 + 谓语（动词 / 形容词 / 主谓短语）/ 独立成句：不一定",
+      "examples": [
+        {
+          "translation": "个子高不一定力气大。"
+        }
+      ]
+    },
+    "zh_一定的_352": {
+      "title": "一定的 + 名词（作定语：表示达到相当的程度或数量）",
+      "shortExplanation": "形容词“一定”带结构助词“的”修饰名词作定语，表示事物具备了某种特定的性质，或达到了相当的程度、水准；表示“一定的、相当程度的”。",
+      "longExplanation": "“一定”（yīdìng）作形容词时，常带结构助词“的”充当定语修饰中心语名词。它不表示必然发生的副词意义，而是表示数量、程度、水平达到了某一适度或相当的规模（如“有一定的基础”、“需要一定的时间”、“造成一定的影响”、“保持一定的距离”）。通常与具有程度、规模或度量性质的抽象名词（如“水平、难度、基础、距离、规律、数量”等）搭配使用。",
+      "formation": "（动词：有 / 达到 / 产生等 +）一定的 + 名词（基础 / 影响 / 难度 / 水平 / 距离等）",
+      "examples": [
+        {
+          "translation": "如果有一定的语言基础，那么出国学习外语是最好的选择。"
+        }
+      ]
+    },
+    "zh_来V_353": {
+      "title": "来 + 动词（主动助动：主动承担、主动尝试做出动作）",
+      "shortExplanation": "动词前加“来”，表示说话人主动承担某项行动、自告奋勇或倡导大家动手尝试；表示“让我来做、着手进行”。",
+      "longExplanation": "“来”（lái）置于主要动词之前充当助动词性成分时，并不表示具体的空间位移（“走来”），而是表示说话人积极、主动地要求承担某项任务、给予协助，或鼓励对方付诸行动（如“我来洗碗”、“我来帮你想办法”、“你来尝尝这道菜”、“大家一起来唱这首歌”）。该用法在口语交际中极富亲和力与主动性，使人际沟通更为热情自然。",
+      "formation": "主语 + 来 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "这个沙发这么大，我来帮你们一起抬。"
+        }
+      ]
+    },
+    "zh_通过用N来V_354": {
+      "title": "通过 / 用 + 名词 + 来 + 动词（介词短语表手段目的：借助……以达成……）",
+      "shortExplanation": "介词“通过”或“用”引出所借助的手段、途径或工具，后连用“来”引出预期的目的或后续动作；表示“通过……以……”、“用……来……”。",
+      "longExplanation": "该句式由介词短语（“通过/用……”）与表目的连接的“来”及主要动词配合构成。“通过”侧重于经历某种过程、途径或中介，“用”侧重于使用某种具体的工具、材料或手段；“来”连接在手段与目的动词之间，相当于“以便、用来”，明确体现手段服务于目的的逻辑关系（如“通过阅读来扩大词汇量”、“用事实来证明观点”、“通过对话来增进相互了解”）。在论述文及严密交际表达中广泛应用。",
+      "formation": "主语 + 通过 / 用 + 名词（手段 / 途径 / 工具）+ 来 + 动词（+ 宾语）",
+      "examples": []
+    },
+    "zh_左右_356": {
+      "title": "数词（+ 量词 + 名词）/ 时间词 + 左右（概数词：表示数量或时间的大致范围）",
+      "shortExplanation": "“左右”置于数词、数量短语或时间词之后，表示以该数字为基准上下浮动的概数；相当于“大约、前后、上下”。",
+      "longExplanation": "“左右”（zuǒyòu）是汉语中用于表示概数的典型后置词。它必须紧跟在具体的数字、数量短语、年龄、价格或时间点之后，用以说明实际数值在此基准数上下浮动，并非十分确切（如“十点左右”表示10点前后、“三十岁左右”表示30岁上下、“五百块左右”表示五百元上下）。可与句首的“大概”、“大约”配合使用以进一步强化推测语气。",
+      "formation": "数词（+ 量词 + 名词）/ 时间词 + 左右",
+      "examples": []
+    },
+    "zh_可VA了_359": {
+      "title": "可 + 形容词 / 动词 + 了（语气副词表强调：极为强烈、充满感叹）",
+      "shortExplanation": "副词“可”加在形容词或心理动词前，句末用语气助词“了”相呼应，带有强烈的强调和感叹语气；表示“真是、非常、太……了”。",
+      "longExplanation": "“可”（kě）在口语中作为强调程度的语气副词，通常与句尾的助词“了”搭配使用，构成“可……了”格式。用于形容词或心理动词前，表示事物的性质或某种情感达到了极为显著的程度，带有说话人由衷的赞叹、感慨或夸张生动的表达意图（如“今天天气可热了”、“那里的景色可美了”、“他听了可高兴了”、“这道题可难了”）。相比于中性的“很”或“非常”，该格式具有鲜明生动的口语表达力与饱满的情感色彩。",
+      "formation": "主语 + 可 + 形容词 / 心理动词 + 了",
+      "examples": [
+        {
+          "translation": "今天天气可热了。"
+        }
+      ]
+    }
+  }
+}

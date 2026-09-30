@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_翻番_630": {
+      "title": "翻 (#) 番 (Động từ: Tăng gấp đôi / Tăng theo cấp số nhân 2^n)",
+      "shortExplanation": "Động từ biểu thị số lượng tăng lên gấp đôi (khi đứng riêng) hoặc tăng theo cấp số nhân 2 lũy thừa n (khi chèn số từ ở giữa); \"tăng gấp đôi\", \"tăng gấp bội\".",
+      "longExplanation": "“翻番” (fānfān) là một thuật ngữ số lượng rất thông dụng trong kinh tế, tin tức và đời sống hàng ngày, biểu thị sự tăng trưởng vượt bậc theo cấp số nhân (bội số của 2). Khi dùng độc lập “翻番” hoặc “翻了一番”, nó mang nghĩa là số lượng tăng thêm 1 lần so với cơ sở ban đầu, tức là tăng gấp đôi (2 lần). Khi chèn số từ vào giữa như “翻两番” thì tính theo công thức 2 lũy thừa n (2^2 = tăng gấp 4 lần), “翻三番” (2^3 = tăng gấp 8 lần). Cần chú ý phân biệt: “翻一番” là tăng lên gấp đôi, khác với “增加一倍” về mặt cách biểu đạt nhưng cùng giá trị toán học. Tương đương với \"tăng gấp đôi\", \"tăng gấp bội\", \"nhân lên gấp n lần\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (已经 / 将) + 翻番 + (了) ｜ Chủ ngữ + 翻了 + Số từ + 番",
+      "examples": [
+        {
+          "translation": "So với 5 năm trước, tiền lương của đa số mọi người đã tăng gấp đôi rồi."
+        }
+      ]
+    },
+    "zh_过于_631": {
+      "title": "过于 (Phó từ: Quá / Quá mức / Quá đỗi)",
+      "shortExplanation": "Phó từ chỉ mức độ vượt quá giới hạn bình thường hoặc tiêu chuẩn thích hợp; thường bổ nghĩa cho tính từ hoặc động từ tâm lý mang sắc thái không đồng tình hoặc nhắc nhở; \"quá\", \"quá mức\".",
+      "longExplanation": "“过于” (guòyú) là phó từ chỉ mức độ mang phong cách trang trọng và thư diện hơn so với “太”. Nó được ghép từ “过” (vượt quá) và “于” (ở mức, đối với). “过于” đứng trước tính từ (thường là tính từ song âm tiết như 匆忙, 紧张, 严格, 敏感) hoặc một số động từ tâm lý để chỉ rõ mức độ phát triển của sự vật, hành vi đã vượt quá giới hạn hợp lý hay phạm vi thích đáng, dễ mang lại kết quả bất lợi hoặc không mong muốn. Thường mang sắc thái đánh giá tiêu cực hoặc đưa ra lời khuyên nhủ, phê bình nhẹ nhàng. Tương đương với \"quá\", \"quá mức\", \"quá đỗi\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 过于 + Tính từ / Động từ tâm lý (+ Tân ngữ) ｜ Động từ + 得 + 过于 + Tính từ",
+      "examples": [
+        {
+          "translation": "Anh ấy ra ngoài quá vội vàng, đến nỗi quên cả mang theo điện thoại di động."
+        }
+      ]
+    },
+    "zh_着呢_632": {
+      "title": "着呢 (Trợ từ ngữ khí: ... lắm đấy / ... còn đang đấy - nhấn mạnh trạng thái hoặc mức độ)",
+      "shortExplanation": "Trợ từ ngữ khí đứng cuối câu sau tính từ hoặc động từ: ① Biểu thị mức độ rất cao (thay cho \"很 / 极了\"); ② Biểu thị trạng thái đang tiếp diễn kèm ngữ khí nhắc nhở khẳng định; \"lắm đấy\", \"còn đang... đấy\".",
+      "longExplanation": "“着呢” (zhene) là một trợ từ ngữ khí đặc trưng và rất sinh động của khẩu ngữ tiếng Hán hiện đại. Khi đứng ở cuối phân câu hoặc câu, nó có hai chức năng ngữ pháp chủ yếu: ① Đứng sau tính từ hoặc một số động từ tâm lý để biểu thị mức độ cực kỳ cao, tương đương với “很”, “非常” hoặc “极了”, nhưng mang ngữ khí khẳng định chắc nịnh, tự hào hoặc nhắc nhở đối phương biết một sự thật hiển nhiên (ví dụ: “好着呢” = tốt lắm đấy, “多着呢” = nhiều lắm đấy, “忙着呢” = đang bận tối mắt tối mũi đây); ② Đứng sau động từ mang trợ từ thể “着” để nhấn mạnh một trạng thái khách quan vẫn đang duy trì ổn định, thường dùng để mách bảo hoặc giải tỏa thắc mắc cho người nghe (ví dụ: “空着呢” = còn đang trống đấy, đừng lo). Tương đương với \"... lắm đấy\", \"... còn đang... đấy\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Tính từ / Động từ + 着呢 ｜ Chủ ngữ + Động từ + 着 + (Tân ngữ) + 呢",
+      "examples": [
+        {
+          "translation": "Ngồi ở đây đi, chỗ này còn đang trống đấy."
+        }
+      ]
+    },
+    "zh_乘机_633": {
+      "title": "乘机 (Phó từ / Đoản ngữ: Thừa cơ / Nhân cơ hội / Tranh thủ dịp này)",
+      "shortExplanation": "Phó từ hoặc đoản ngữ trạng ngữ biểu thị việc tận dụng thời cơ, hoàn cảnh thuận lợi sẵn có để thực hiện một hành động dự định hoặc phát sinh; \"thừa cơ\", \"nhân cơ hội\".",
+      "longExplanation": "“乘机” (chéngjī) là một từ kết hợp giữa “乘” (thừa, nhân, lợi dụng) và “机” (cơ hội, thời cơ). Về mặt ngữ pháp, nó đóng vai trò làm trạng ngữ đứng trước vị ngữ động từ trong câu, biểu thị việc chủ thể nắm bắt một điều kiện ngoại cảnh thuận tiện, một khoảng thời gian trống hoặc một thời cơ bất ngờ để tiến hành hành vi. Có thể dùng trong cả ngữ cảnh trung tính/tích cực (như tranh thủ chuyến công tác để tham quan danh lam thắng cảnh) lẫn ngữ cảnh tiêu cực (như kẻ xấu lợi dụng sơ hở, hỗn loạn để mưu lợi bất chính). Tương đương với \"nhân cơ hội này\", \"thừa cơ\", \"tranh thủ dịp\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (可以 / 会 / 想) + 乘机 + Cụm động từ",
+      "examples": [
+        {
+          "translation": "Chuyến công tác Bắc Kinh lần này, chúng ta có thể nhân cơ hội đi tham quan Vạn Lý Trường Thành một chuyến."
+        }
+      ]
+    },
+    "zh_不料_634": {
+      "title": "不料 (Liên từ: Không ngờ / Chẳng ngờ / Ai ngờ - chuyển ý bất ngờ)",
+      "shortExplanation": "Liên từ biểu thị quan hệ chuyển tiếp mang tính đột ngột; đứng đầu phân câu sau để chỉ sự việc diễn ra hoàn toàn trái ngược với dự đoán hoặc dự tính ban đầu; \"không ngờ\", \"chẳng ngờ\".",
+      "longExplanation": "“不料” (bùliào) là một liên từ nối câu ghép rất thông dụng trong cả văn viết và lời nói hàng ngày, được cấu thành từ phó từ phủ định “不” (không) và động từ “料” (dự liệu, đoán trước). Nó thường đứng ở đầu phân câu thứ hai trong câu phức (sau dấu phẩy), thường kết hợp với phó từ “却” hoặc “倒” ở vế sau để tăng cường sắc thái tương phản. Cấu trúc này dùng để diễn tả: diễn biến khách quan hoặc kết quả thực tế xảy ra một cách hết sức đột ngột, hoàn toàn trái ngược với điều mà chủ thể mong đợi, dự tính hoặc trù liệu trước đó, mang lại cảm giác bất ngờ, kinh ngạc hoặc tiếc nuối. Tương đương với \"không ngờ\", \"chẳng ngờ\", \"ngờ đâu\", \"ai dè\" trong tiếng Việt.",
+      "formation": "Phân câu tiền đề / dự tính ，不料 + (Chủ ngữ +) (却 / 倒 +) Phân câu sự việc bất ngờ",
+      "examples": [
+        {
+          "translation": "Tôi chỉ muốn trêu đùa với cô ấy một chút, không ngờ cô ấy lại nổi giận thật."
+        }
+      ]
+    },
+    "zh_未免太A了_635": {
+      "title": "未免 + 太 + Tính từ + 了 (Kết cấu phó từ: E rằng quá... / Không khỏi quá... / Thật là quá...)",
+      "shortExplanation": "Kết cấu phó từ kết hợp với ngữ khí cảm thán, dùng để bày tỏ sự đánh giá không tán đồng, phê bình nhẹ nhàng hoặc cho rằng mức độ sự việc đã đi quá xa; \"e rằng quá...\", \"không khỏi quá...\".",
+      "longExplanation": "“未免+太+Tính từ+了” (wèimiǎn tài ... le) là một cấu trúc ngữ pháp dùng để biểu thị sự đánh giá mang tính chất bất mãn, chê trách hoặc khuyên can một cách lịch sự, nhã nhặn. Trong đó, “未免” (nghĩa gốc là 'không khỏi', 'khó tránh khỏi') đứng trước cụm mức độ “太……了” nhằm làm dịu bớt mức độ gay gắt của lời phê bình, nhưng thực chất bên trong vẫn khẳng định rằng mức độ của tính chất đã vượt quá giới hạn có thể chấp nhận được. Người nói thường dùng cấu trúc này khi thấy hành động, phản ứng hoặc thái độ của ai đó quá đáng, thái quá, chậm trễ hay cực đoan. Tương đương với \"e rằng quá...\", \"không khỏi quá...\", \"thật là quá... rồi đấy\" trong tiếng Việt.",
+      "formation": "Chủ ngữ / Hành vi + 未免 + 太 + Tính từ + 了",
+      "examples": [
+        {
+          "translation": "Khi cảnh sát tới nơi thì e rằng đã quá muộn rồi."
+        }
+      ]
+    },
+    "zh_未免有些有点A_636": {
+      "title": "未免 + 有些/有点(儿) + Tính từ (Kết cấu phó từ: E rằng có phần... / Không khỏi hơi... / Có vẻ hơi...)",
+      "shortExplanation": "Kết cấu phó từ dùng để đưa ra nhận xét, đánh giá phê bình một cách nhẹ nhàng, hòa nhã và tế nhị về một tính chất không tích cực; \"e rằng hơi...\", \"không khỏi có phần...\".",
+      "longExplanation": "“未免+有些/有点+Tính từ” (wèimiǎn yǒuxiē/yǒudiǎn ...) là dạng kết cấu biểu thị sự chê trách, không đồng tình nhưng với ngữ khí hết sức uyển chuyển, chừng mực và có chừng mực trong giao tiếp lịch sự. Khác với “未免太……了” (mang sắc thái phàn nàn rõ rệt hơn), việc dùng “有些” hoặc “有点(儿)” (hơi, có phần) sau “未免” tạo nên một lớp đệm giảm nhẹ, giúp người nói bày tỏ ý kiến phản đối mà không làm đối phương bị mất lòng hay bẽ bàng. Thường kết hợp với các tính từ chỉ thái độ ứng xử hoặc phán đoán tiêu cực như 失礼 (thất lễ), 勉强 (gượng ép), 草率 (qua loa, vội vàng), 过分 (quá đáng). Tương đương với \"e rằng hơi...\", \"không khỏi có phần...\", \"khó tránh có chút...\" trong tiếng Việt.",
+      "formation": "Chủ ngữ / Hành vi + 未免 + 有些 / 有点(儿) + Tính từ",
+      "examples": [
+        {
+          "translation": "Từ chối lời đề nghị của anh ấy thì e rằng có phần hơi thất lễ."
+        }
+      ]
+    },
+    "zh_仅仅只不过而已_637": {
+      "title": "仅仅 / 只不过……而已 (Cấu trúc giới hạn: Chẳng qua chỉ là... mà thôi / Chỉ là... mà thôi)",
+      "shortExplanation": "Cấu trúc biểu thị phạm vi, mức độ bị hạn chế trong một giới hạn nhỏ bé, không đáng kể hoặc không có gì to tát; \"chẳng qua chỉ là... mà thôi\", \"chỉ là... mà thôi\".",
+      "longExplanation": "Cấu trúc “仅仅 / 只不过……而已” (jǐnjǐn / zhǐbuguò ... éryǐ) là mẫu câu phối hợp trước sau để nhấn mạnh tính chất nhỏ bé, bình thường, hạn chế hoặc không quan trọng của một sự vật, hiện tượng. Trong đó, “仅仅” (chỉ, vỏn vẹn) hoặc “只不过” (chẳng qua chỉ là) đứng trước tân ngữ hoặc vị ngữ để khoanh vùng giới hạn; còn “而已” (mà thôi, thế thôi) đứng ở cuối câu mang tính chất gút lại, làm nhẹ đi tầm quan trọng của sự việc. Cấu trúc này thường dùng để đính chính sự hiểu lầm của người khác, tự khiêm tốn về bản thân, hoặc làm giảm nhẹ tính nghiêm trọng của một vấn đề. Tương đương với \"chỉ là... mà thôi\", \"chẳng qua chỉ là... mà thôi\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 仅仅 / 只不过 + (是) + Cụm danh từ / Cụm động từ + 而已",
+      "examples": [
+        {
+          "translation": "Công việc chính của anh ấy là cảnh sát, viết tiểu thuyết chẳng qua chỉ là sở thích lúc rảnh rỗi của anh ấy mà thôi."
+        }
+      ]
+    },
+    "zh_固然_638": {
+      "title": "固然 (Liên từ nhượng bộ: Tuy rằng / Dẫu rằng... (thì đúng là vậy) / Cố nhiên là)",
+      "shortExplanation": "Liên từ nhượng bộ đứng ở phân câu trước để thừa nhận một sự thật hiển nhiên, làm tiền đề dẫn dắt phân câu sau chuyển ngoặt hoặc bổ sung khía cạnh quan trọng hơn; \"tuy rằng... nhưng\", \"cố nhiên\".",
+      "longExplanation": "“固然” (gùrán) là một liên từ nhượng bộ mang màu sắc thư diện và trang trọng rất đặc sắc trong tiếng Hán. Trong câu phức, “固然” đứng ở phân câu thứ nhất nhằm thừa nhận, công nhận một tiền đề, một ưu điểm hoặc một sự thật khách quan là đúng đắn (mang hàm ý 'điều đó thì hiển nhiên đúng rồi, không ai phủ nhận'). Tuy nhiên, mục đích chính của người nói là dùng sự thừa nhận đó làm bàn đạp để dẫn ra ý kiến trọng tâm, phương diện chuyển ngoặt hoặc khía cạnh bổ sung quan trọng hơn ở phân câu thứ hai (thường đi với liên từ “但是”, “但”, “可是”, hoặc phó từ “也”, “却”). Tương đương với \"tuy rằng... nhưng...\", \"cố nhiên là... thế nhưng...\" trong tiếng Việt.",
+      "formation": "Phân câu thừa nhận tiền đề （+ 固然 + Vị ngữ） ，但是 / 也 / 却 + Phân câu chuyển ngoặt hoặc bổ sung",
+      "examples": [
+        {
+          "translation": "Thi đỗ đại học tuy rằng tốt thật đấy, nhưng không đỗ đại học cũng đâu phải là không còn lối thoát nào nữa."
+        }
+      ]
+    },
+    "zh_无非_639": {
+      "title": "无非 (Phó từ: Chẳng qua là / Không ngoài... / Đơn thuần chỉ là)",
+      "shortExplanation": "Phó từ biểu thị sự việc không vượt ra ngoài phạm vi hoặc nguyên nhân nhất định; mang sắc thái quy kết bản chất sự việc về điều đơn giản hoặc không đáng ngạc nhiên; \"chẳng qua là\", \"không ngoài\".",
+      "longExplanation": "“无非” (wúfēi) là một phó từ hạn định mang phong cách thư diện và nghị luận sắc sảo. Được ghép từ hai từ phủ định “无” (không) và “非” (phải, ngoài), nó tạo thành một cấu trúc phủ định kép mang ý nghĩa khẳng định: “không gì khác ngoài...”, “chẳng qua chỉ là...”. Khi đứng trước vị ngữ động từ hoặc nguyên nhân, “无非” có tác dụng chỉ ra điểm mấu chốt, bóc tách vấn đề để cho thấy rằng: sự việc nhìn bề ngoài có vẻ to tát, phức tạp nhưng xét đến cùng thì nguyên nhân, động cơ hay kết quả cũng chỉ gói gọn trong một lý do vô cùng đơn giản, quen thuộc hoặc dễ hiểu. Thường kết hợp với “是” (无非是) hoặc các động từ chỉ mục đích như “想”, “为了”. Tương đương với \"chẳng qua là\", \"không ngoài việc\", \"chỉ là vì\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 无非 + (是) + (想 / 为了 / Cụm động từ / Cụm danh từ)",
+      "examples": [
+        {
+          "translation": "Anh ấy làm việc chăm chỉ như vậy, chẳng qua là muốn kiếm thêm chút tiền để vợ con có cuộc sống thoải mái hơn mà thôi."
+        }
+      ]
+    },
+    "zh_唯独_640": {
+      "title": "唯独 (Phó từ: Duy chỉ có / Riêng chỉ có / Riêng một mình)",
+      "shortExplanation": "Phó từ biểu thị tính ngoại lệ duy nhất, tách biệt một đối tượng cá biệt ra khỏi tổng thể chung; \"duy chỉ có\", \"riêng chỉ có\".",
+      "longExplanation": "“唯独” (wéidú) là một phó từ mang tính chất hạn định và bài tha đặc biệt sâu sắc trong tiếng Hán. Từ này được ghép từ “唯” (chỉ, duy) và “独” (riêng, độc nhất). Về mặt cú pháp, “唯独” thường đứng trước một danh từ, đại từ hoặc ngữ phân câu để làm nổi bật đối tượng đó như một ngoại lệ duy nhất, hoàn toàn khác biệt so với tất cả các đối tượng còn lại trong tập thể. Thường đi cùng với các từ ngữ biểu thị phạm vi toàn thể ở vế khác như “都”, “大家”, “所有人”, “任何” nhằm tạo nên một sự tương phản rõ nét đến ngạc nhiên hoặc tiếc nuối. Tương đương với \"duy chỉ có\", \"riêng chỉ có\", \"chỉ riêng\" trong tiếng Việt.",
+      "formation": "Tổng thể / Mọi người + 都... ，唯独 + Đối tượng đặc biệt + (Vị ngữ) ｜ 唯独 + Đối tượng đặc biệt + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Chuyến du lịch lần ấy mọi người đều đi cả, duy chỉ có bạn là không đi được."
+        }
+      ]
+    },
+    "zh_明明_641": {
+      "title": "明明 (Phó từ: Rõ ràng / Rành rành / Hiển nhiên)",
+      "shortExplanation": "Phó từ biểu thị sự thật hiển nhiên, xác thực và không thể chối cãi; thường dùng trong câu phản vấn, cật vấn hoặc bày tỏ sự ngạc nhiên, bất mãn; \"rõ ràng là\", \"rành rành là\".",
+      "longExplanation": "“明明” (míngmíng) là một phó từ chỉ ngữ khí và sự thật rất giàu biểu cảm trong tiếng Hán. Từ này lặp lại chữ “明” (rõ ràng, sáng tỏ), dùng trước vị ngữ để nhấn mạnh rằng sự việc, tính chất hay chân tướng là vô cùng hiển nhiên, rành rành ngay trước mắt, ai nấy đều thấy rõ mười mươi không thể ngụy biện hay chối cãi. Nó thường xuất hiện trong các ngữ cảnh mang tính đối chiếu, cật vấn hoặc phê phán, chẳng hạn như: đối phương cố tình nói dối, đổi trắng thay đen, hoặc có hành vi mâu thuẫn kỳ quặc với thực tế (thường đi kèm câu phản vấn như “哪里是……啊？” hay “怎么会……呢？”). Tương đương với \"rõ ràng là\", \"rành rành là\", \"mười mươi là\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 明明 + 是 / Động từ / Tính từ ，+ Phân câu phản vấn / cật vấn",
+      "examples": [
+        {
+          "translation": "Bài bạn đang hát rõ ràng là ca khúc nhạc trẻ thịnh hành, làm sao mà là kinh kịch được chứ?"
+        }
+      ]
+    },
+    "zh_大不了_642": {
+      "title": "大不了…… (Phó từ khẩu ngữ: Cùng lắm thì... / Xấu nhất thì... / Giỏi lắm thì...)",
+      "shortExplanation": "Phó từ khẩu ngữ biểu thị thái độ bình thản, không sợ hãi trước tình huống xấu nhất; dự liệu phương án xử lý tột cùng; \"cùng lắm thì\", \"xấu nhất thì\".",
+      "longExplanation": "“大不了” (dàbùliǎo) là một phó từ khẩu ngữ biểu thị trạng thái tâm lý vô cùng khoáng đạt, bất cần hoặc dũng cảm đương đầu với rủi ro. Từ này đứng ở đầu phân câu thứ hai trong câu phức, mang hàm ý: tình thế tồi tệ nhất, hậu quả nghiêm trọng nhất có xảy ra đi chăng nữa thì cũng chỉ đến mức đó là cùng, bản thân hoàn toàn có thể chấp nhận, gánh vác hoặc bắt đầu lại mà không có gì phải sợ hãi hay lo lắng. Thường kết hợp với các vế trước biểu thị nguy cơ như “失败了不要紧” (thất bại cũng chẳng sao), “赶不上车也没关系” (lỡ xe cũng không sao). Tương đương với \"cùng lắm thì...\", \"xấu nhất thì...\", \"giỏi lắm thì...\" trong tiếng Việt.",
+      "formation": "Phân câu tình huống xấu / nguy cơ ，大不了 + (Chủ ngữ +) Biện pháp đối phó xấu nhất",
+      "examples": [
+        {
+          "translation": "Thất bại rồi cũng chẳng sao cả, cùng lắm thì làm lại từ đầu."
+        }
+      ]
+    },
+    "zh_大不了的_643": {
+      "title": "大不了的 (Tính từ ngữ / Quán dụng ngữ: Việc gì to tát / Ghê gớm gì / Chuyện to tát)",
+      "shortExplanation": "Quán dụng ngữ tính từ thường dùng trong câu phủ định hoặc phản vấn; biểu thị sự việc chỉ là chuyện vặt vãnh, bình thường, không đáng để bận tâm hay làm to chuyện; \"gì to tát\", \"ghê gớm gì\".",
+      "longExplanation": "“大不了的” (dàbùliǎo de) là một cụm từ cố định mang tính chất hình dung từ hoặc danh từ hóa, rất thịnh hành trong khẩu ngữ hàng ngày. Cụm từ này hầu như luôn xuất hiện trong các kết cấu phủ định (như “没什么大不了的” = chẳng có gì to tát cả) hoặc câu hỏi phản vấn (như “有什么大不了的？” = có gì to tát cơ chứ?). Nó có chức năng hạ thấp mức độ quan trọng, thu nhỏ tầm ảnh hưởng của một sự kiện, xem đó chỉ là chuyện nhỏ nhặt thường ngày, không đáng để người ta phải cuống cuồng, hoảng sợ, làm ầm ĩ hay xem như tai họa ghê gớm. Thường dùng để an ủi người khác hoặc thể hiện thái độ xem nhẹ, tự tin đối mặt. Tương đương với \"chuyện gì to tát\", \"ghê gớm gì đâu\", \"có gì ghê gớm\" trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 没什么 / 没有什么 + 大不了的 ｜ 有什么 + 大不了的 + (呢 / 啊)？",
+      "examples": [
+        {
+          "translation": "Hôn một cái thì có gì to tát ghê gớm đâu chứ?"
+        }
+      ]
+    },
+    "zh_V于PLACE_644": {
+      "title": "Động từ + 于 + Nơi chốn (Kết cấu giới từ sau động từ: ... ở / tại / từ [Nơi chốn])",
+      "shortExplanation": "Kết cấu giới từ đứng sau động từ mang phong cách văn viết trang trọng; giới từ \"于\" dẫn ra địa điểm, nơi chốn diễn ra hành động hoặc khởi nguồn của sự vật; \"... ở / tại [nơi chốn]\".",
+      "longExplanation": "Kết cấu “Động từ + 于 + Nơi chốn” là một kết cấu giới tân làm bổ ngữ sau động từ mang đậm dấu ấn của ngữ pháp Hán ngữ cổ (văn ngôn), được kế thừa và sử dụng rất rộng rãi trong văn phong khoa học, tin tức, văn học và giao tiếp trang trọng của tiếng Hán hiện đại. Trong kết cấu này, giới từ “于” tương đương với “在” trong khẩu ngữ, có chức năng dẫn xuất địa điểm, không gian nơi động tác được sinh ra, diễn ra hoặc kết thúc (ví dụ: “生于北京” = sinh ra tại Bắc Kinh, “产于浙江” = sản xuất/sinh trưởng tại Chiết Giang, “发生于清朝” = xảy ra vào/ở...). Các động từ đi trước thường là động từ đơn âm tiết mang tính trạng thái, xuất xứ như 产 (sinh sản, sản xuất), 生 (sinh ra), 位于 (nằm ở), 见 (thấy ở), 寄 (gửi tới). Tương đương với \"[động từ] tại / ở / từ [nơi chốn]\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ (产 / 生 / 止 / 落...) + 于 + Danh từ nơi chốn / Khu vực",
+      "examples": [
+        {
+          "translation": "Trà Long Tỉnh Tây Hồ nổi tiếng được sản xuất tại khu vực Tây Hồ của tỉnh Chiết Giang."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_翻番_630": {
+      "title": "翻 (#) 番（動詞：倍増する・2のn乗倍に増える・跳ね上がる）",
+      "shortExplanation": "数量が元の数値の倍（2倍）になること、あるいは中間に数詞を挟んで2の累乗倍（2のn乗倍）に急増することを表す動詞表現です（「倍増する」「何倍にも跳ね上がる」）。",
+      "longExplanation": "「翻番」（fānfān）は、経済ニュースや統計、社会情勢の話題で極めて頻繁に使われる数量動詞です。単独で「翻番」あるいは「翻了一番」と言う場合、基準となる数量から1回倍加すること、すなわち「2倍になる（倍増する）」ことを意味します。中間に数詞を挟む場合（翻 n 番）は「2のn乗倍」を表し、例えば「翻两番」は2の2乗で「4倍になる」、「翻三番」は2の3乗で「8倍になる」という数学的計算に基づきます。急速な経済成長や所得・生産量の飛躍的向上を叙述する際によく用いられます。日本語の「倍増する」「2倍になる」「何倍にも増える」に相当します。",
+      "formation": "主語 ＋（已经 / 将）＋ 翻番 ＋（了） ｜ 主語 ＋ 翻了 ＋ 数詞 ＋ 番",
+      "examples": [
+        {
+          "translation": "5年前と比べて、大多数の人の給料はすでに倍増しました。"
+        }
+      ]
+    },
+    "zh_过于_631": {
+      "title": "过于（副詞：〜に過ぎる・あまりに〜すぎる・過度に）",
+      "shortExplanation": "程度が適正な限界や限度を超えていることを表す程度副詞です。「太」よりも引き締まった文体で、形容詞や心理動詞を修飾します（「あまりに〜すぎる」「過度に〜だ」）。",
+      "longExplanation": "「过于」（guòyú）は、事物の性質や動作の状態が妥当な基準や限度を超過していることを表す副詞で、書面語や改まった口語で好まれます。「太」と似ていますが、「过于」の後ろには二音節の形容詞（例：匆忙、紧张、严格、敏感）や心理動詞が続くことが多く、その過剰さが好ましくない結果や弊害を招いているというニュアンスを含みます。客観的な分析、反省、相手への忠告などの文脈で多用されます。日本語の「あまりに〜すぎる」「過度に〜である」「〜に過ぎる」に相当します。",
+      "formation": "主語 ＋ 过于 ＋ 形容詞 / 心理動詞 ｜ 動詞 ＋ 得 ＋ 过于 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "彼はあまりに慌ただしく出てきたため、なんと携帯電話を持ってくるのを忘れてしまった。"
+        }
+      ]
+    },
+    "zh_着呢_632": {
+      "title": "着呢（語気助詞：〜ているんだよ・とても〜だよ・〜だよったら）",
+      "shortExplanation": "形容詞や動詞の末尾に付く生き生きとした口語助詞です。① 程度が極めて高いことの強調（「とても〜だよ」）；② ある状態が今まさに継続中であることを念押し・提示する働きを持ちます（「〜しているんだよ」）。",
+      "longExplanation": "「着呢」（zhene）は、日常会話で極めて高い頻度で用いられる親しみのある口語表現です。主に2つの用法があります：① 形容詞や心理動詞の後に接続し、「很」や「极了」に匹敵する非常に高い程度を表します。単に程度を述べるだけでなく、「相手が思っている以上に〜なのだ」と誇らしげに主張したり、安心させたりする語気を含みます（例：「好着呢」＝すごく元気だよ・順調だよ、「忙着呢」＝大忙しなんだ）；② 動作の持続を表すアスペクト助詞「着」と語気助詞「呢」が一体となり、客観的な状態が今もそのまま続いていることを相手に気づかせる・念押しする用法です（例：「空着呢」＝席が空いているよ、「开着呢」＝開いているよ）。日本語の「とても〜だよ」「〜しているところだよ」「〜しているんだよ」に相当します。",
+      "formation": "主語 ＋ 形容詞 / 動詞 ＋ 着呢 ｜ 主語 ＋ 動詞 ＋ 着 ＋（目的語）＋ 呢",
+      "examples": [
+        {
+          "translation": "ここに座りなよ、この席は空いているんだから。"
+        }
+      ]
+    },
+    "zh_乘机_633": {
+      "title": "乘机（副詞：この機に乗じて・機会を利用して・ついでに・隙を見て）",
+      "shortExplanation": "都合の良い機会や情勢の隙を捉えて、ある行動を行うことを表す状語（副詞的成分）です（「この機会に乗じて」「ついでに」「機をとらえて」）。",
+      "longExplanation": "「乘机」（chéngjī）は、「乗」（乗じる、利用する）と「机」（機会、好機）から構成される語で、述語動詞の直前に置かれて状語として働きます。眼前に生じた有利な条件、出張などの機会、あるいは相手の油断や混乱といった隙を捉えて、目的とする動作をすかさず実行に移すことを表します。公私のついでに観光や用事を済ませるという前向き・中立的な文脈（例：出張のついでに名所を巡る）にも使えますし、悪漢が機に乗じて利益を貪る・逃走するという否定的な文脈（例：混乱に乗じて悪事を働く）にも広く適用されます。日本語の「機会をとらえて」「この機に乗じて」「ついでに」に相当します。",
+      "formation": "主語 ＋（可以 / 会 / 想）＋ 乘机 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "今回の北京出張では、私たちはこの機に乗じて万里の長城を少し観光することができます。"
+        }
+      ]
+    },
+    "zh_不料_634": {
+      "title": "不料（接続詞：思いがけず・案に相違して・予想外にも・思いのほか）",
+      "shortExplanation": "予想や事前の見通しと全く正反対の事態が突発したことを表す転折接続詞です。後続節の冒頭に置かれ、「思いがけず」「思いのほか」の意を表します。",
+      "longExplanation": "「不料」（bùliào）は、否定詞「不」と「予測する、見通す」を意味する動詞「料」が一体となった接続詞です。複文の後続節の先頭に置かれ（しばしば後ろに「却」や「倒」を伴って対比を強調します）、先行節で意図していた事柄や一般的な予想・前提が、突如として裏切られて予期せぬ結果に終わったことを示します。予期せぬトラブル、相手の意外な反応、自然現象の急変などに対して驚きや当惑、悔しさを込めて語る際に用いられます。日本語の「思いがけず」「案に相違して」「予想外にも」「あに図らんや」に相当します。",
+      "formation": "先行節（意図や前提） ，不料 ＋（主語 ＋）（却 / 倒 ＋）予想外の事態の節",
+      "examples": [
+        {
+          "translation": "私は彼女と少し冗談を言いたかっただけなのだが、思いがけず彼女は怒ってしまった。"
+        }
+      ]
+    },
+    "zh_未免太A了_635": {
+      "title": "未免 ＋ 太 ＋ 形容詞 ＋ 了（副詞構文：いくらなんでも〜すぎる・あまりにも〜と言わざるを得ない）",
+      "shortExplanation": "程度や状況が度を越しており、弁解の余地なく過剰であると判断する評価構文です。控えめな表現を装いつつ、強い不満や批判の語気を含みます（「いくらなんでも〜すぎる」）。",
+      "longExplanation": "「未免＋太＋形容詞＋了」（wèimiǎn tài ... le）は、批判や不満の念を婉曲かつ確実に表明するための極めて重要な構文です。「未免」（〜と言わざるを得ない、免れない）は本来、断定を和らげる語気副詞ですが、極端な程度を表す「太……了」と結びつくことで、「客観的にどう見ても度が過ぎており、かばいようがない」「いくらなんでも限度を超えている」という明瞭な非難や嘆きの意を表します。相手の過剰な要求、無責任な遅延、不当な厳しさなどに対して使われます。日本語の「いくらなんでも〜すぎる」「あまりにも〜と言わざるを得ない」に相当します。",
+      "formation": "主語 / 行為 ＋ 未免 ＋ 太 ＋ 形容詞 ＋ 了",
+      "examples": [
+        {
+          "translation": "警察が駆けつけた時には、いくらなんでも遅すぎたと言わざるを得ない。"
+        }
+      ]
+    },
+    "zh_未免有些有点A_636": {
+      "title": "未免 ＋ 有些/有点 ＋ 形容詞（副詞構文：いささか〜の感がある・少々〜と言わざるを得ない）",
+      "shortExplanation": "否定的な評価や批判を非常に柔らかく、控えめで角の立たない婉曲な表現で述べる副詞構文です（「いささか〜の感がある」「少々〜と言わざるを得ない」）。",
+      "longExplanation": "「未免＋有些/有点＋形容詞」（wèimiǎn yǒuxiē/yǒudiǎn ...）は、批判的な意見を最大限に礼儀正しく、配慮を込めて伝えるための社交的・知的な構文です。「太……了」を用いる場合に比べて批判の度合いがぐっと抑えられ、「いささか〜という気がする」「少々〜と言っては語弊があるかもしれないが、免れない」というニュアンスになります。失礼（失礼だ）、草率（軽率だ）、过分（やりすぎだ）、勉强（無理がある）などの形容詞と結びつき、相手の体面を保ちながらも、その行為の不適切さを穏やかに諭す場面で重宝されます。日本語の「いささか〜の感がある」「少々〜と言わざるを得ない」に相当します。",
+      "formation": "主語 / 行為 ＋ 未免 ＋ 有些 / 有点 ＋ 形容詞",
+      "examples": [
+        {
+          "translation": "彼の提案を拒絶するのは、いささか失礼の感があると言わざるを得ない。"
+        }
+      ]
+    },
+    "zh_仅仅只不过而已_637": {
+      "title": "仅仅 / 只不过……而已（呼応構文：単に〜にすぎない・たかだか〜にすぎない・ただ〜だけだ）",
+      "shortExplanation": "範囲や程度が極めて小さく限定されており、大した重要性を持たないことを強調する呼応構文です（「単に〜にすぎない」「ただ〜であるだけだ」）。",
+      "longExplanation": "「仅仅 / 只不过……而已」（jǐnjǐn / zhǐbuguò ... éryǐ）は、前後の語句が緊密に呼応して限定の意を強調する代表的構文です。文中で「仅仅」（単に〜だけ）または「只不过」（〜にすぎない）が範囲を狭め、文末の「而已」（〜のみ、〜だけだ）がそれを受けて「それ以上の何物でもない」「大げさに捉える必要はない」と締めくくります。他人の過大評価や誤解を解いたり、自身の業績を謙遜したり、物事の影響力を小さく見積もる文脈で好んで用いられます。日本語の「単に〜にすぎない」「ただ〜であるだけだ」「たかだか〜にすぎない」に相当します。",
+      "formation": "主語 ＋ 仅仅 / 只不过 ＋（是）＋ 名詞句 / 動詞句 ＋ 而已",
+      "examples": [
+        {
+          "translation": "彼の本職は警察官であり、小説の執筆は単に彼の余暇の趣味にすぎない。"
+        }
+      ]
+    },
+    "zh_固然_638": {
+      "title": "固然（譲歩接続詞：〜は確かに〜だが・もちろん〜ではあるが・言うまでもなく）",
+      "shortExplanation": "前文で一つの事実や利点を認めて譲歩の前提とし、後文で「但是」「也」「却」などを用いて本論となる逆接・補足の主張を展開する接続詞です（「〜はもちろん〜だが」「確かに〜ではあるが」）。",
+      "longExplanation": "「固然」（gùrán）は、論理的な文章や改まったスピーチで極めて重視される譲歩接続詞です。「固」（もとより、固より）と「然」（しかり）から成り、「それは言うまでもなくその通りである」とまず一方の長所や客観的事実を全面的に肯定します。しかし、話し手の真の論点はそこに留まらず、後続節において「但是」「可是」「也」「却」などと呼応させ、別の見過ごせない重要な側面や反論、新たな活路を提示します。これによって議論に客観性と深みを与え、説得力を高める修辞的効果を持ちます。日本語の「〜は確かに〜だが（しかし）」「もちろん〜ではあるが」に相当します。",
+      "formation": "前提の肯定節（＋ 固然 ＋ 述語） ，但是 / 也 / 却 ＋ 転折・補足節",
+      "examples": [
+        {
+          "translation": "大学に合格するのは確かに良いことには違いないが、合格しなかったからといって活路が全くないわけでもない。"
+        }
+      ]
+    },
+    "zh_无非_639": {
+      "title": "无非（副詞：〜にほかならない・単に〜にすぎない・せいぜい〜だけだ）",
+      "shortExplanation": "事柄の動機や真相が一定の範囲を出ないことを指摘し、本質を端的に見抜いて断定する副詞です（「〜にほかならない」「せいぜい〜にすぎない」）。",
+      "longExplanation": "「无非」（wúfēi）は、否定を表す「无」と「非」が重なり、「〜以外ではない」という強い肯定（限定）を表す書面語副詞です。しばしば「无非是」「无非想」「无非为了」の形で用いられます。一見複雑あるいは大げさに見える事態の真相を冷静に分析し、「突き詰めて言えば、その動機や実態はごくありふれた単純な事柄にすぎない」と本質を簡潔に要約・看破する働きをします。過度な美化や神秘化を排し、身も蓋もない現実的な核心を突く際に用いられます。日本語の「〜にほかならない」「単に〜にすぎない」「つまるところ〜にすぎない」に相当します。",
+      "formation": "主語 ＋ 无非 ＋（是）＋（想 / 为了 / 動詞句 / 名詞句）",
+      "examples": [
+        {
+          "translation": "彼がこれほど身を粉にして働くのも、つまるところもっと金を稼いで妻子をより快適に暮らさせたいからにほかならない。"
+        }
+      ]
+    },
+    "zh_唯独_640": {
+      "title": "唯独（副詞：唯一〜だけ・ただ一人〜だけ・ことさら〜だけ）",
+      "shortExplanation": "全体の中から特定の対象ただ一つ・一人だけを例外として際立たせ、他と対比させる副詞です（「唯一〜だけ」「ただ一人〜だけ」）。",
+      "longExplanation": "「唯独」（wéidú）は、「唯」（ただ〜のみ）と「独」（ひとり、単独）が合わさった副詞で、全体の中で特定の対象だけが唯一の例外として取り残されたり、特別扱いされたりする状況を描写します。文脈上、「大家」「全都」「所有人」といった全体を表す表現と鮮やかなコントラストを成して用いられることが極めて多いのが特徴です。その対象だけが参加できなかった無念さ、あるいはその対象だけが特別に好まれる・嫌われるといった偏りや不公平感を浮き彫りにする際にも効果的に用いられます。日本語の「ただ〜だけ」「唯一〜だけ」「〜に限って」に相当します。",
+      "formation": "全体 / 誰もが ＋ 都… ，唯独 ＋ 特定の対象 ＋（述語） ｜ 唯独 ＋ 特定の対象 ＋ 述語",
+      "examples": [
+        {
+          "translation": "あの旅行にはみんなが行ったのに、ただあなた一人だけが行けなかった。"
+        }
+      ]
+    },
+    "zh_明明_641": {
+      "title": "明明（語気副詞：紛れもなく・明らかに・目に見えて・誰が見ても）",
+      "shortExplanation": "事実が明白で隠しようがないことを強調する副詞です。反論や詰問、あるいは相手の虚偽や理不尽な言い逃れを追及する文脈で頻繁に使われます（「明らかに〜なのに」「紛れもなく〜だ」）。",
+      "longExplanation": "「明明」（míngmíng）は、事実の真偽が白日の下にさらされており、誰の目にも疑いようがないことを強調する語気副詞です。「明」（明らかである）を重ねた語で、述語の前に置かれます。話し手が「現実は誰が見ても紛れもなくこうである」と確信しているにもかかわらず、相手がそれを否定しようとしたり、正反対の嘘をついたり、事実に反するおかしな主張をしていることに対して、強い反発、驚き、詰問の感情を込めて異議を唱える場面で真価を発揮します。反語文や「どうして〜なのか」という疑問文と非常によく呼応します。日本語の「明らかに〜なのに」「紛れもなく〜だ」「誰が見ても〜である」に相当します。",
+      "formation": "主語 ＋ 明明 ＋ 是 / 動詞 / 形容詞 ，＋ 反語・反駁節",
+      "examples": [
+        {
+          "translation": "あなたが歌っているのは明らかに流行歌なのに、どこが京劇なんですか。"
+        }
+      ]
+    },
+    "zh_大不了_642": {
+      "title": "大不了……（口語副詞：せいぜい〜するだけだ・最悪でも〜すればいい・たいしたことはない）",
+      "shortExplanation": "最悪の事態や限界を想定し、「どんなに悪い結果になろうと、せいぜいこれくらいのことだ」と腹をくくって開き直る口語副詞です（「最悪でも〜すればいい」「せいぜい〜するまでだ」）。",
+      "longExplanation": "「大不了……」（dàbùliǎo）は、日常会話で困難や失敗の危機に直面した際に、覚悟を決めたり相手を元気づけたりするために頻用される副詞です。複文の後続節の冒頭に置かれ、「最悪のシナリオを想定しても、たかだかその程度の結末にすぎず、恐れるに足らない」という豪胆で前向きな開き直りの気持ちを表します。先行節で「失敗しても構わない」「文句を言われたって平気だ」といった最悪の前提を受け止め、後続節で「せいぜい最初からやり直すだけだ」「仕事を辞めるまでのことだ」と究極の対処策を提示します。日本語の「最悪でも〜すればいい」「せいぜい〜するだけのことだ」に相当します。",
+      "formation": "最悪の前提・危機の節 ，大不了 ＋（主語 ＋）最悪の場合の対処行動",
+      "examples": [
+        {
+          "translation": "失敗したってたいしたことはない、最悪でも最初からやり直せばいいだけだ。"
+        }
+      ]
+    },
+    "zh_大不了的_643": {
+      "title": "大不了的（慣用表現：大したこと・重大なこと・深刻なこと）",
+      "shortExplanation": "否定文（「没什么大不了的」）や反語文（「有什么大不了的」）で用いられ、物事が取るに足らない些細なことにすぎず、深刻に受け止める必要がないことを表す口語慣用表現です（「たいしたこと」「重大なこと」）。",
+      "longExplanation": "「大不了的」（dàbùliǎo de）は、口語で事態の深刻さを否定・相対化する際に極めて頻出する慣用表現です。形容詞「大不了」に構造助詞「的」が結びつき、名詞的あるいは形容詞的成分として機能します。ほぼ常に否定形式「没什么 / 没有什么大不了的」（たいしたことではない、大した問題ではない）や、反語形式「有什么大不了的？」（何が大したことあるのか、何でもないじゃないか）の形で使われます。問題やトラブルを大げさに騒ぎ立てる人をなだめたり、不安を取り除いたり、あるいは自身が不満や困難を軽やかに受け流す際に用いられます。日本語の「大したこと」「重大な問題」に相当します。",
+      "formation": "（主語 ＋）没什么 / 没有什么 ＋ 大不了的 ｜ 有什么 ＋ 大不了的 ＋（呢 / 啊）？",
+      "examples": [
+        {
+          "translation": "キスをするくらいのことに、何のたいしたことがあるというのか。"
+        }
+      ]
+    },
+    "zh_V于PLACE_644": {
+      "title": "動詞 ＋ 于 ＋ 場所（介詞補語構文：［場所］において・〜で［動詞］する・［場所］に生じる）",
+      "shortExplanation": "動詞の後に介詞「于」と場所名詞を従える格調高い書面語構文です。動作や事態が生じる場所・発生地を導き出します（「［場所］において〜する」「〜で産出する」）。",
+      "longExplanation": "「動詞 ＋ 于 ＋ 場所」は、文言（古典中国語）の文法構造を受け継いだ格式の高い書面語表現です。現代中国語の日常口語における「在 ＋ 場所 ＋ 動詞」という語順とは異なり、動詞の後ろに介詞句「于＋場所」が補語として配置されます。「于」は口語の「在」（〜で、〜において）に相当し、動作が行われる地点、事物の原産地、誕生地、あるいは事態の発生場所を端的に示します。「产于」（〜で産出する）、「生于」（〜で生まれる）、「位于」（〜に位置する）、「见于」（〜に見られる）など、単音節の起源・所在・結果を表す動詞と極めて緊密に結合します。日本語の「［場所］において〜する」「〜に位置する」「〜で産出される」に相当します。",
+      "formation": "主語 ＋ 動詞（产 / 生 / 止 など）＋ 于 ＋ 場所名詞 / 地域名詞",
+      "examples": [
+        {
+          "translation": "有名な西湖龍井茶は、浙江省の西湖一帯で産出されます。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_翻番_630": {
+      "title": "翻 (#) 番 (동사: 배로 늘어나다, 2배가 되다, 2의 n제곱 배로 급증하다)",
+      "shortExplanation": "수량이 기존의 갑절(2배)로 늘어나거나, 중간에 수사를 넣어 2의 거듭제곱 배로 급증함을 나타내는 수량 동사 표현입니다('배로 늘어나다', '갑절이 되다').",
+      "longExplanation": "“翻番”(fānfān)은 경제 뉴스, 통계 지표, 일상 대화에서 생산량이나 소득 등이 폭발적으로 증가했음을 나타낼 때 널리 쓰이는 표현입니다. 단독으로 “翻番” 또는 “翻了一番”이라고 쓰이면 기존 수량에서 한 번 배가된 것, 즉 '2배로 늘어나다(갑절이 되다)'를 뜻합니다. 만약 중간에 수사를 넣어 “翻两番”이라고 하면 2의 2제곱인 '4배', “翻三番”은 2의 3제곱인 '8배'로 증가함을 뜻하는 기하급수적 배증 방식을 따릅니다. 한국어의 '배로 늘어나다', '갑절이 되다', '두 배가 되다'에 해당합니다.",
+      "formation": "주어 + (已经 / 将) + 翻番 + (了) ｜ 주어 + 翻了 + 수사 + 番",
+      "examples": [
+        {
+          "translation": "5년 전과 비교하여 대다수 사람들의 급여는 이미 두 배로 늘어났습니다."
+        }
+      ]
+    },
+    "zh_过于_631": {
+      "title": "过于 (부사: 지나치게, 너무나, 과도하게)",
+      "shortExplanation": "사물의 상태나 행동의 정도가 적절한 기준이나 한도를 넘어섰음을 나타내는 정도부사입니다. 주로 형용사나 심리동사 앞에 쓰여 부정적이거나 바람직하지 못한 결과를 시사합니다('지나치게', '너무').",
+      "longExplanation": "“过于”(guòyú)는 한자 ‘過(지날 과)’와 ‘于(어조사 어)’가 합쳐진 부사로, 구어의 “太”에 비해 한층 격식 있고 정제된 서면어 및 격식체 구어 표현입니다. 정도나 수위가 마땅한 한계선이나 적정 기준을 초과했음을 나타내며, 주로 2음절 형용사(예: 匆忙, 紧张, 严格, 悲观)나 심리동사를 수식합니다. 지나친 과열이나 극단성이 초래하는 부정적 영향, 당혹감, 안타까움의 뉘앙스를 내포하며, 충고나 객관적 지적의 맥락에서 자주 쓰입니다. 한국어의 '지나치게', '너무나', '과도하게'에 해당합니다.",
+      "formation": "주어 + 过于 + 형용사 / 심리동사 ｜ 동사 + 得 + 过于 + 형용사",
+      "examples": [
+        {
+          "translation": "그는 너무나 황급하게 나오는 바람에, 뜻밖에도 휴대전화를 챙겨 오는 것을 잊어버렸다."
+        }
+      ]
+    },
+    "zh_着呢_632": {
+      "title": "着呢 (어기조사: ~하고 있는걸요, 아주 ~하답니다, ~한걸요)",
+      "shortExplanation": "형용사나 동사 뒤에 붙는 생생한 구어 어기조사입니다. ① 정도가 매우 높음을 강조하거나('아주 ~하답니다'), ② 어떤 상태가 여전히 지속되고 있음을 상대방에게 일깨워 주며 넌지시 알려 주는 기능을 합니다('~하고 있는걸요').",
+      "longExplanation": "“着呢”(zhene)는 북방 구어의 풍부한 맛을 지닌 종결 어기 결합 표현입니다. 크게 두 가지 용법으로 쓰입니다. ① 형용사나 심리동사 뒤에 놓여 정도가 매우 심함을 친근하고 단정적으로 드러냅니다. 이때는 “很”이나 “极了”와 유사하지만, 상대방이 잘 모르고 있거나 과소평가하고 있는 사실을 깨우쳐 주는 뉘앙스가 한층 강합니다(예: “好着呢”＝아주 잘 지내고 있는걸요, “忙着呢”＝눈코 뜰 새 없이 바쁘답니다). ② 동사 뒤에 지속을 나타내는 동태조사 “着”와 어기조사 “呢”가 결합하여, 어떤 객관적 상태가 계속 유지되고 있음을 가볍게 확인·일깨워 주는 용법입니다(예: “空着呢”＝비어 있는걸요). 한국어의 '아주 ~하답니다', '~하고 있는걸요', '~한걸요'에 해당합니다.",
+      "formation": "주어 + 형용사 / 동사 + 着呢 ｜ 주어 + 동사 + 着 + (목적어) + 呢",
+      "examples": [
+        {
+          "translation": "여기 앉으세요, 이 자리는 비어 있는걸요."
+        }
+      ]
+    },
+    "zh_乘机_633": {
+      "title": "乘机 (부사어: 틈을 타서, 기회를 틈타, 겸사겸사, 이 기회에)",
+      "shortExplanation": "유리한 기회나 여건을 포착하여, 그 틈이나 기회를 살려 목적하는 행동을 행함을 나타내는 부사적 성분입니다('기회를 틈타', '이 기회에', '틈을 타서').",
+      "longExplanation": "“乘机”(chéngjī)는 ‘乘(탈 승, 편승할 승)’과 ‘机(기회 기)’가 결합한 낱말로, 주로 술어 동사 앞에 놓여 부사어로 기능합니다. 마침 마련된 절호의 계기나 상황적 틈을 적극적으로 이용하여 특정 행위를 수행함을 나타냅니다. 출장이나 방문 등을 계기로 짬을 내어 관광이나 사적 용무를 처리하는 긍정적·중립적 맥락(예: 출장 간 김에 명소를 둘러보다)은 물론, 혼란이나 허점을 틈타 부당한 이득을 챙기거나 도망치는 부정적 맥락(예: 혼란을 틈타 침입하다)에서도 두루 사용됩니다. 한국어의 '기회를 틈타', '틈을 타서', '이 기회에', '겸사겸사'에 해당합니다.",
+      "formation": "주어 + (可以 / 会 / 想) + 乘机 + 동사구",
+      "examples": [
+        {
+          "translation": "이번 베이징 출장에 우리는 이 기회를 틈타 만리장성을 한번 유람할 수 있습니다."
+        }
+      ]
+    },
+    "zh_不料_634": {
+      "title": "不料 (접속사: 뜻밖에도, 생각지도 못하게, 미처 생각지 못하게)",
+      "shortExplanation": "예상이나 사전 기대와는 전혀 다른 엉뚱하고 뜻밖의 사태가 발생했음을 나타내는 전환 접속사입니다. 뒤 절 머리에 놓여 '뜻밖에도', '생각지도 못하게'의 뜻을 나타냅니다.",
+      "longExplanation": "“不料”(bùliào)는 ‘不(아니 불)’과 ‘料(헤아릴 료, 예측하다)’가 합쳐진 접속사로, 서면어와 구어에서 폭넓게 쓰입니다. 복문의 뒤쪽 절 머리에 놓이며(흔히 절 내부의 부사 “却”나 “倒”와 어울려 역접의 기세를 강화함), 앞 절에서 품었던 의도나 당연한 기대와는 완전히 어긋나는 뜻밖의 결과나 당혹스러운 반전이 일어났음을 나타냅니다. 예상치 못한 실패, 돌발 사태, 상대방의 뜻밖의 오해나 격한 반응을 서술하며 놀라움과 안타까움을 드러낼 때 자주 활용됩니다. 한국어의 '뜻밖에도', '생각지도 못하게', '예상외로', '미처 헤아리지 못하게'에 해당합니다.",
+      "formation": "앞선 의도·전제의 절 ，不料 + (주어 +) (却 / 倒 +) 뜻밖의 사태의 절",
+      "examples": [
+        {
+          "translation": "나는 그저 그녀에게 농담을 한 번 건네려 했을 뿐인데, 뜻밖에도 그녀가 진짜로 화를 냈다."
+        }
+      ]
+    },
+    "zh_未免太A了_635": {
+      "title": "未免 + 太 + 형용사 + 了 (부사 구문: 아무래도 너무 ~하다, 과연 너무 ~하다고 하지 않을 수 없다)",
+      "shortExplanation": "사태나 행동의 정도가 도를 지나쳐 도저히 변명할 수 없음을 완곡하면서도 분명하게 지적하는 비판·평가 구문입니다('아무리 그래도 너무 ~하다').",
+      "longExplanation": "“未免+太+형용사+了”(wèimiǎn tài ... le)는 비판이나 불만의 어조를 격식 있게 표현할 때 즐겨 쓰이는 구문입니다. “未免”(면하기 어렵다, ~라고 하지 않을 수 없다)은 어기를 완곡하게 만들어 주는 부사이지만, 극단적 정도를 나타내는 “太……了”와 결합하면 '어떻게 객관적으로 보아도 도가 지나쳐 두둔해 주기 어렵다', '아무리 그렇다 하더라도 정도가 너무 심하다'라는 확고한 불만과 지적의 뜻을 띱니다. 늑장 대처, 지나친 무례함, 지나치게 가혹한 기준 등을 비판할 때 자주 쓰입니다. 한국어의 '아무리 그래도 너무 ~하다', '아무래도 너무 ~하다고 하지 않을 수 없다'에 해당합니다.",
+      "formation": "주어 / 행위 + 未免 + 太 + 형용사 + 了",
+      "examples": [
+        {
+          "translation": "경찰이 도착했을 때는 아무리 그래도 너무 늦었다고 하지 않을 수 없었다."
+        }
+      ]
+    },
+    "zh_未免有些有点A_636": {
+      "title": "未免 + 有些/有点 + 형용사 (부사 구문: 다소 ~한 감이 있다, 약간은 ~하다고 하지 않을 수 없다)",
+      "shortExplanation": "부정적인 평가나 아쉬움을 매우 정중하고 완곡하게 에둘러 전달하는 완곡 비판 구문입니다('다소 ~한 감이 있다', '조금은 ~하다고 하지 않을 수 없다').",
+      "longExplanation": "“未免+有些/有点+형용사”(wèimiǎn yǒuxiē/yǒudiǎn ...)는 상대방의 기분을 상하게 하지 않으면서도 미흡하거나 부적절한 점을 짚어 낼 때 쓰는 대단히 정중한 어법 장치입니다. “未免太……了”가 도를 넘은 상황에 대한 노골적인 불만을 담는다면, “有些/有点”(약간, 다소)을 결합한 이 형식은 비판의 강도를 한 단계 낮추어 '전적으로 잘못되었다기보다는 조금은 과하거나 서운한 구석이 있다'는 뉘앙스를 자아냅니다. 주로 失礼(실례되다), 勉强(무리하다), 草率(경솔하다), 遗憾(유감스럽다) 등과 결합합니다. 한국어의 '다소 ~한 감이 있다', '조금은 ~하다고 하지 않을 수 없다'에 해당합니다.",
+      "formation": "주어 / 행위 + 未免 + 有些 / 有点 + 형용사",
+      "examples": [
+        {
+          "translation": "그의 제안을 거절하는 것은 다소 결례가 되는 감이 없지 않다."
+        }
+      ]
+    },
+    "zh_仅仅只不过而已_637": {
+      "title": "仅仅 / 只不过……而已 (호응 구문: 단지 ~에 불과하다, 그저 ~일 뿐이다)",
+      "shortExplanation": "범위나 정도가 극히 제한되어 있으며 대단하거나 심각한 것이 아님을 한정하여 나타내는 호응 구문입니다('단지 ~에 불과하다', '그저 ~일 뿐이다').",
+      "longExplanation": "“仅仅 / 只不过……而已”(jǐnjǐn / zhǐbuguò ... éryǐ)는 앞뒤 성분이 호응하여 한정과 축소의 뉘앙스를 확고히 하는 문형입니다. 앞쪽에서 “仅仅”(오직, 단지)이나 “只不过”(그저 ~에 지나지 않다)가 서술 대상을 소박한 범위로 한정 짓고, 문장 끝의 “而已”(따름이다, 뿐이다)가 이를 받아 '그 이상의 대단한 의미나 숨은 뜻은 없다'고 단정합니다. 상대방의 과대평가를 불식시키거나 겸손을 표할 때, 혹은 사태를 가볍게 진정시킬 때 널리 쓰입니다. 한국어의 '단지 ~에 불과하다', '그저 ~일 따름이다', '겨우 ~에 지나지 않는다'에 해당합니다.",
+      "formation": "주어 + 仅仅 / 只不过 + (是) + 명사구 / 동사구 + 而已",
+      "examples": [
+        {
+          "translation": "그의 본업은 경찰관이고, 소설 쓰기는 단지 그의 여가 취미에 불과할 뿐이다."
+        }
+      ]
+    },
+    "zh_固然_638": {
+      "title": "固然 (양보 접속사: 물론 ~이기는 하지만, 기왕에 ~한 것은 사실이나)",
+      "shortExplanation": "앞 절에서 어떤 사실이나 장점을 당연한 것으로 인정하여 양보한 뒤, 뒤 절에서 전환이나 보충의 실질적 주장을 전개하는 서면어 접속사입니다('물론 ~이기는 하지만').",
+      "longExplanation": "“固然”(gùrán)은 논설문이나 격식 있는 담화에서 논리를 정연하게 펼칠 때 애용되는 대표적 양보 접속사입니다. 복문의 앞쪽 절에 놓여 특정 조건이나 사실의 정당성을 일단 흔쾌히 인정합니다(‘그 점은 본래 그러하며 틀림없는 사실이다’). 그러나 진정한 방점은 뒤쪽 절에 실려 있으며, 보통 “但是”, “但”, “也”, “却” 등과 결합하여 '그렇다고 해서 다른 측면을 간과할 수는 없다'거나 '반드시 그것만이 유일한 길은 아니다'라는 반전·보충의 핵심 견해를 도출합니다. 균형 잡힌 시각을 드러내어 설득력을 높이는 기능을 합니다. 한국어의 '물론 ~이기는 하지만', '~인 것은 사실이나'에 해당합니다.",
+      "formation": "전제 인정절 (+ 固然 + 술어) ，但是 / 也 / 却 + 전환·보충절",
+      "examples": [
+        {
+          "translation": "대학에 합격하는 것이 물론 좋기는 하지만, 합격하지 못했다고 해서 출구가 아예 없는 것도 아니다."
+        }
+      ]
+    },
+    "zh_无非_639": {
+      "title": "无非 (부사: 다름 아닌 ~이다, 기껏해야 ~에 불과하다, 단지 ~일 뿐이다)",
+      "shortExplanation": "사물의 동기나 본질이 일정한 범위나 원인을 벗어나지 않음을 꿰뚫어 단정적으로 나타내는 부사입니다('다름 아닌 ~이다', '단지 ~일 뿐이다').",
+      "longExplanation": "“无非”(wúfēi)는 부정어 ‘无(없을 무)’와 ‘非(아닐 비)’가 결합하여 '그것 말고는 다른 것이 없다'는 이중부정의 강한 한정을 나타내는 부사입니다. 종종 “无非是”, “无非想”, “无非为了”의 꼴로 쓰입니다. 겉보기에 거창하거나 복잡해 보이는 행동의 이면을 간파하여, '따지고 보면 그 본질이나 목적은 아주 단순하고 뻔한 것에 지나지 않는다'는 객관적·현실적 판단을 내릴 때 사용합니다. 군더더기를 걷어내고 사안의 핵심 동기를 직시하게 하는 뉘앙스를 지닙니다. 한국어의 '다름 아닌 ~이다', '기껏해야 ~일 뿐이다', '단지 ~하고자 함에 지나지 않는다'에 해당합니다.",
+      "formation": "주어 + 无非 + (是) + (想 / 为了 / 동사구 / 명사구)",
+      "examples": [
+        {
+          "translation": "그가 이토록 열심히 일하는 것은, 다름 아니라 돈을 좀 더 벌어 처자식이 더욱 안락하게 살 수 있도록 해 주고 싶어서일 뿐이다."
+        }
+      ]
+    },
+    "zh_唯独_640": {
+      "title": "唯独 (부사: 유독, 오직 ~만, 유일하게 ~만)",
+      "shortExplanation": "전체 집단 가운데서 특정 대상 하나만을 유일한 예외로 두드러지게 떼어내어 대조하는 부사입니다('유독', '오직 ~만').",
+      "longExplanation": "“唯独”(wéidú)는 ‘唯(오직 유)’와 ‘独(홀로 독)’이 결합하여 강력한 배타적 한정을 나타내는 부사입니다. 문장 안에서 특정 명사나 대명사 앞에 놓여, 그 대상이 전체의 일반적인 흐름이나 상황과 완전히 동떨어진 '유일한 예외'임을 뚜렷하게 부각합니다. 앞 절이나 뒤 절에 “大家”, “都”, “所有人”처럼 전체를 포괄하는 표현이 동반되어 극적인 명암 대비를 이룹니다. 모두가 참여했는데 그 사람만 빠졌다거나, 다른 것들은 다 괜찮은데 유독 그것 하나만 문제를 일으킨다는 식의 아쉬움, 의아함, 특별함을 드러낼 때 즐겨 쓰입니다. 한국어의 '유독', '오직 ~만', '유일하게 ~만'에 해당합니다.",
+      "formation": "전체 / 모두 + 都... ，唯独 + 특정 대상 + (술어) ｜ 唯独 + 특정 대상 + 술어",
+      "examples": [
+        {
+          "translation": "그 여행에 다른 사람들은 모두 다 갔는데, 유독 당신만 가지 못했습니다."
+        }
+      ]
+    },
+    "zh_明明_641": {
+      "title": "明明 (어기 부사: 분명히, 명백히, 뻔히, 엄연히)",
+      "shortExplanation": "사실이 손바닥 보듯 명명백백하여 도저히 부인할 수 없음을 강조하는 부사입니다. 상대방의 거짓말이나 발뺌을 따져 묻거나 반박할 때 자주 쓰입니다('분명히', '뻔히', '명백히').",
+      "longExplanation": "“明明”(míngmíng)은 ‘明(밝을 명)’ 자가 첩어로 쓰인 어기부사로, 객관적 진상이나 사실이 너무나도 뚜렷하여 의심의 여지가 전혀 없음을 나타냅니다. 주로 술어 앞에 위치하며, 눈앞에 뻔히 드러나 있는 사실을 상대방이 억지로 부정하려 들거나 왜곡할 때, 혹은 겉과 속이 다른 모순된 태도를 보일 때 강한 반박, 따짐, 불만의 감정을 실어 발언하는 문맥에서 위력을 발휘합니다. 뒤 절에 반어문(“哪里是……啊”)이나 의문문(“怎么会……”)이 자연스럽게 따라붙어 논박의 효과를 배가합니다. 한국어의 '분명히', '명백히', '뻔히', '엄연히'에 해당합니다.",
+      "formation": "주어 + 明明 + 是 / 동사 / 형용사 ，+ 반어·반박절",
+      "examples": [
+        {
+          "translation": "네가 부른 것은 명백히 유행가인데, 어디가 경극이란 말인가?"
+        }
+      ]
+    },
+    "zh_大不了_642": {
+      "title": "大不了…… (구어 부사: 기껏해야 ~하면 그만이다, 최악이라 해 봐야 ~하면 된다)",
+      "shortExplanation": "최악의 상황이나 극단적인 결과를 상정하며, '아무리 나빠 봐야 기껏 그 정도에 불과하니 두려울 것 없다'는 대범하고 담담한 태도를 나타내는 구어 부사입니다('기껏해야 ~하면 된다').",
+      "longExplanation": "“大不了”(dàbùliǎo)는 구어에서 두려움을 떨쳐내고 배짱을 부리거나 상대를 위로할 때 자주 쓰는 표현입니다. 복문의 뒤쪽 절 머리에 놓여, '설령 가장 불리하거나 최악인 결과가 닥치더라도, 기껏해야 이 정도의 대가를 치르면 그뿐이다'라는 식의 결단과 초연함을 드러냅니다. 실패나 손실의 가능성을 쿨하게 받아들이며 “不要紧”(괜찮다), “没关系”(상관없다) 등과 자연스럽게 호응합니다. 한국어의 '기껏해야 ~하면 그만이다', '최악이라 해 봐야 ~하면 된다', '까짓것 ~하면 되지'에 해당합니다.",
+      "formation": "불리한 전제·위기의 절 ，大不了 + (주어 +) 최악의 대처 행동",
+      "examples": [
+        {
+          "translation": "실패해도 괜찮아, 기껏해야 처음부터 다시 시작하면 그만이지."
+        }
+      ]
+    },
+    "zh_大不了的_643": {
+      "title": "大不了的 (관용 표현: 대단한 일, 대수로운 일, 큰일)",
+      "shortExplanation": "주로 부정문(\"没什么大不了的\")이나 반어문(\"有什么大不了的\")에 쓰여, 사태가 사소하고 대수롭지 않아 전혀 걱정하거나 문제 삼을 필요가 없음을 나타내는 구어 관용 표현입니다('대단한 일', '대수로운 일').",
+      "longExplanation": "“大不了的”(dàbùliǎo de)는 형용사적 의미를 띤 관용구로, 사안의 중요도나 심각성을 가볍게 털어버릴 때 쓰입니다. 거의 대부분 부정 형태인 “没什么 / 没有什么大不了的”(별것 아니다, 대수로운 일 아니다)나 반어 형태인 “有什么大不了的？”(그게 뭐 그리 대단한 일이라고 그래?)로 활용됩니다. 주변에서 어떤 일을 두고 호들갑을 떨거나 지나치게 걱정할 때 안심시키거나, 본인이 겪은 역경이나 실수를 대수롭지 않게 넘기며 털털한 성격을 드러낼 때 매우 유용합니다. 한국어의 '대단한 일', '대수로운 일', '큰일'에 해당합니다.",
+      "formation": "(주어 +) 没什么 / 没有什么 + 大不了的 ｜ 有什么 + 大不了的 + (呢 / 啊)？",
+      "examples": [
+        {
+          "translation": "키스 한 번 한 게 뭐 그리 대단한 일이라고 그래요?"
+        }
+      ]
+    },
+    "zh_V于PLACE_644": {
+      "title": "동사 + 于 + 장소 (개사 보어 구문: [장소]에서 [동사]하다, [장소]에 위치하다/산출되다)",
+      "shortExplanation": "동사 뒤에 개사 '于'와 장소 명사를 이끌어 동작이나 사물이 발생·소재하는 장소를 나타내는 품격 있는 서면어 보어 구문입니다('[장소]에서 ~하다').",
+      "longExplanation": "“동사 + 于 + 장소”는 한문(고전 중국어)의 어순과 문형을 계승한 전형적인 서면어 개사 보어 구조입니다. 현대 구어에서는 보통 “在 + 장소 + 동사”의 어순을 취하지만, 격식 있는 보도, 학술 논문, 백과사전식 서술에서는 동사 뒤에 “于 + 장소”를 후치 보어로 두어 문장을 간결하고 고풍스럽게 압축합니다. 여기서의 “于”는 구어의 “在”(~에서, ~에)에 해당하며, 사물의 산지, 탄생지, 발생 장소를 우아하게 명시합니다. 주로 产(산출되다), 生(태어나다), 位(위치하다), 发源(발원하다) 등 단음절 기원·소재 동사와 결합하여 고정 격식을 이룹니다. 한국어의 '[장소]에서 ~하다', '[장소]에 나다/위치하다'에 해당합니다.",
+      "formation": "주어 + 동사 (产 / 生 / 止 등) + 于 + 장소 명사 / 지역명",
+      "examples": [
+        {
+          "translation": "유명한 서호 용정차는 저장성 서호 일대에서 산출됩니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_翻番_630": {
+      "title": "翻 (#) 番（动词：数量加倍、按几何级数成倍增长）",
+      "shortExplanation": "动词，指数量在原有基数上增加一倍（即变为原数的两倍）；中间若插入数词“n”，则表示增加到原有数量的2的n次方倍；相当于“增加了一倍”、“翻倍”。",
+      "longExplanation": "“翻番”（fānfān）是经济学、统计学及日常生活中极其常用的数量变动动词。其本义为数量按原数加倍。单独使用“翻番”或“翻了一番”时，表示数量在原来的基础上增加了一倍，即变为原本的2倍（如原来是100，翻番后即为200）。若在中间插入数词，其计算规则为2的累乘：如“翻两番”为2×2=4倍，“翻三番”为2×2×2=8倍。常用于描写工农业产值、居民收入、物价或业务量的快速飞跃增长。口语中也常与“已经”、“将”配合使用。",
+      "formation": "主语 +（已经 / 将）+ 翻番 +（了） ｜ 主语 + 翻了 + 数词 + 番",
+      "examples": [
+        {
+          "translation": "跟五年前相比，大多数人的工资水平已经实现翻番了。"
+        }
+      ]
+    },
+    "zh_过于_631": {
+      "title": "过于（副词：过分、过度、太）",
+      "shortExplanation": "程度副词，作状语，表示程度超过了客观标准、适当的限度或正常的界限；书面色彩较“太”更浓，多用于否定或消极倾向的语境中；相当于“过分”、“太”。",
+      "longExplanation": "“过于”（guòyú）由动词“过”（超过）与介词“于”（引出基准）凝固而成，是书面语及正式口语中常用的程度副词。常置于双音节形容词（如匆忙、紧张、悲观、严格、敏感）或部分心理动词前充当状语，也可以用于“动词+得+过于+形容词”的补语格式中。它着重强调某种情状、状态已经超出了应有的尺度或合理的平衡点，因而往往伴随着不良的后果、令人遗憾的疏漏或过激的情绪。语气较为客观、冷静，常用于事理剖析、批评指正或经验总结。",
+      "formation": "主语 + 过于 + 形容词 / 心理动词 ｜ 动词 + 得 + 过于 + 形容词",
+      "examples": [
+        {
+          "translation": "他出来得过于匆忙，竟然把随身携带的手机给落下了。"
+        }
+      ]
+    },
+    "zh_着呢_632": {
+      "title": "着呢（语气助词：表示程度极深、或强调状态正在持续）",
+      "shortExplanation": "口语常用句末助词格式：① 附于形容词或心理动词后，表示程度极高，相当于“很”、“极了”；② 附于动词后，强调某种客观状态依然保持或持续，带有提醒、提示对方注意的语气；相当于“……着呢”。",
+      "longExplanation": "“着呢”（zhene）是北方口语及现代标准汉语交际中极具表现力的句尾语气形式。其语法功能主要包含两方面：① 程度补足用法：直接跟在形容词或部分动词之后，表示性状或程度极深，与“很……呢”、“极了”大致相当，但语调更加轻松、亲切且带有不容置疑的确认感（如“好着呢”、“多着呢”、“早着呢”、“忙着呢”），常含有“实际情况比你预料的还要更甚”的意味；② 状态持续兼提示用法：保留动态助词“着”的持续义，并借助“呢”引出说话人所观察到的现状，用以打消听话人的顾虑或进行友善的指引（如“门开着呢”、“位子空着呢”）。",
+      "formation": "主语 + 形容词 / 动词 + 着呢 ｜ 主语 + 动词 + 着 +（宾语）+ 呢",
+      "examples": [
+        {
+          "translation": "就在这儿坐下吧，这个位子还空着呢。"
+        }
+      ]
+    },
+    "zh_乘机_633": {
+      "title": "乘机（状语/副词：趁着机会、借机、利用时机）",
+      "shortExplanation": "作状语，修饰动词谓语，表示利用某种现成的有利条件、偶然的时机或客观局面的空隙，抓紧时机实施某种行为；相当于“趁机”、“借此机会”。",
+      "longExplanation": "“乘机”（chéngjī）由动词“乘”（凭借、利用）与名词“机”（机会、时机）组合而成。在句中常作为状语修饰动词短语。其语义重点在于：主观上有某种行动诉求，恰逢外部环境提供了恰当的契机或时间空档，行为人顺势而为、借力发力。它既可以用于积极或中性的日常语境（如借出差之机顺便旅游访友、借会议之机开展学术交流），也可以用于含有贬义色彩的语境（如乘机作乱、乘机牟利、乘机捣鬼）。词义明确，书面语与口语均通用。",
+      "formation": "主语 +（可以 / 会 / 想）+ 乘机 + 动词短语",
+      "examples": [
+        {
+          "translation": "这次到北京出差，我们正好可以乘机游览一下长城。"
+        }
+      ]
+    },
+    "zh_不料_634": {
+      "title": "不料（连词：没想到、料想不到、出乎意料）",
+      "shortExplanation": "连词，用于转折复句的后一分句句首，表示实际发生的情况与原本的预料、打算或良好的愿望截然相反；相当于“没想到”、“谁知”。",
+      "longExplanation": "“不料”（bùliào）由否定副词“不”与表示预估、推测的动词“料”（料想、预料）组合而成。在句法上常充当转折复句后一分句的关联词，分句内常配合使用副词“却”、“倒”以强化转折反差。它所表达的语用功能是：前一个分句交代了当事人的初衷、打算或常理下的期待，而后一分句所出现的事实却完全脱离了掌控或预想轨道，带来了令人错愕、遗憾、啼笑皆非或措手不及的结果。在叙事性口语和各类文学书面语中均极为常用。",
+      "formation": "意图/原定分句 ，不料 +（主语 +）（却 / 倒 +）意外事实分句",
+      "examples": [
+        {
+          "translation": "我原本只是想跟她开个小玩笑，不料她却真的生气了。"
+        }
+      ]
+    },
+    "zh_未免太A了_635": {
+      "title": "未免 + 太 + 形容词 + 了（副词格式：实在过分、难免太甚，委婉表达批评不赞同）",
+      "shortExplanation": "副词评价格式，将“未免”（不能不说是、难免）与程度结构“太……了”配合使用，对过于极端、不恰当的情状加以委婉而明确的批评或否定；相当于“实在太……了”、“难免过于……”。",
+      "longExplanation": "“未免+太+形容词+了”（wèimiǎn tài ... le）是汉语中用于发表委婉评价、批评或流露不满情绪的高频句式。“未免”本义为“不能不说是”、“实在免不了”，起到垫平语调、表面委婉的作用；而“太……了”则断定性状达到了难以接受的过分程度。二者结合，表面上语气委婉含蓄，实质上却坚定地指明了事态已经逾越了合理的常理与容忍底线，令人无法为其辩解。常用于指出对方做法过火、反应过激、要求过苛或时间拖延过甚等。形容词多选用具有负面消极含义的词语（如迟、过分、自私、小气）。",
+      "formation": "主语 / 行为 + 未免 + 太 + 形容词 + 了",
+      "examples": [
+        {
+          "translation": "警察赶到现场的时候，时间上未免太迟了。"
+        }
+      ]
+    },
+    "zh_未免有些有点A_636": {
+      "title": "未免 + 有些/有点 + 形容词（副词格式：略微有些、难免有些，委婉含蓄地提出批评看法）",
+      "shortExplanation": "副词委婉评价格式，“未免”后带“有些/有点”，用极其客气、中庸的缓和语气指出某种做法在分寸上略有不妥；相当于“难免有些”、“不免有点儿”。",
+      "longExplanation": "“未免+有些/有点+形容词”（wèimiǎn yǒuxiē/yǒudiǎn ...）是得体表达批评或异议的交际句式。相比于“未免太……了”的直白与严厉，“有些/有点”充当了程度缓冲垫，使整个判断由“不可容忍”转变为“稍欠妥当”。说话人借此向对方传达一种善意而温和的保留意见，既顾及了彼此的面子与人际关系的和谐，又清晰地指出了事理上的瑕疵。常与表示失当、消极的形容词搭配（如失礼、过分、轻率、勉强、偏激）。常用于职场沟通、人际交往及评论性语篇中。",
+      "formation": "主语 / 行为 + 未免 + 有些 / 有点 + 形容词",
+      "examples": [
+        {
+          "translation": "断然拒绝他的这番好意建议，未免有些失礼了。"
+        }
+      ]
+    },
+    "zh_仅仅只不过而已_637": {
+      "title": "仅仅 / 只不过……而已（限制呼应格式：只消、单单如此，表示不过如此、没有多大意义）",
+      "shortExplanation": "呼应格式，句中用“仅仅”或“只不过”限制范围或程度，句末用语气词“而已”收束，强调事实极其有限，不值得小题大做或过分看重；相当于“只……罢了”。",
+      "longExplanation": "“仅仅 / 只不过……而已”（jǐnjǐn / zhǐbuguò ... éryǐ）是现代汉语中用于淡化、轻描淡写或明确界限的典型关联句式。“仅仅”和“只不过”作状语，用于缩减事物的范畴或属性，断定其分量之微；句末的语气助词“而已”（文言凝固词，意同“罢了”）则起到画定边界的终结作用，二者遥相呼应，构成了封闭严密的语意场。此格式常用于纠正他人的过度解读、化解紧张气氛、谦逊自抑或指出某事本质上的平淡无奇。书面语与口语均极常见。",
+      "formation": "主语 + 仅仅 / 只不过 +（是）+ 名词性短语 / 动词短语 + 而已",
+      "examples": [
+        {
+          "translation": "他的正式本职工作是警察，写小说仅仅是他的业余爱好而已。"
+        }
+      ]
+    },
+    "zh_固然_638": {
+      "title": "固然（让步连词：承认某种事实，引出转折或补充，相当于“本然”、“诚然”）",
+      "shortExplanation": "连词，用于转折复句的前一分句，先承认某个事实或肯定的前提（表示“确实如此、自然是好”），后一分句常用“但是、可是、也、却”引出相反、相对或补充的意见；相当于“诚然”、“虽说”。",
+      "longExplanation": "“固然”（gùrán）是具有浓厚书面语色彩的让步关联词。“固”意为本来、诚然，“然”意为这样。在论说文或深层对话中，作者先退一步，用“固然”肯定前一分句所指出的优势、常理或客观事实，以显示立论的周全与客观；随即在后一分句通过“但/但是/也/却/退一步说”进行逻辑转折，提出更关键、更辩证的现实考量或真正意图所在。这种“先让步后转折”的结构极大地增强了论辩的严密性与说服力。广泛见于论述类文章、评论及严肃口语中。",
+      "formation": "承认前提分句（+ 固然 + 谓语） ，但是 / 也 / 却 + 转折或补充后分句",
+      "examples": [
+        {
+          "translation": "考上大学固然是一件好事，但没考上大学也绝非就毫无出路了。"
+        }
+      ]
+    },
+    "zh_无非_639": {
+      "title": "无非（副词：不外乎、只不过、顶多是，点明事情的单一真相或动机）",
+      "shortExplanation": "限制副词，作状语，表示范围不超出某个界限，指明事物的实质或根本原因只在于此，没有其他深奥或复杂的内情；相当于“不外乎”、“只不过”。",
+      "longExplanation": "“无非”（wúfēi）是由两个否定词“无”与“非”构成的双重否定凝固词，以否定的形式表达极度确定的肯定含义，即“没有不是……的”、“不外乎……”。在句中多作状语，常与“是”、“想”、“为了”等连用（如“无非是……”、“无非想……”）。它的语用功能在于透过纷繁复杂的表象，直接切中事物最原始、最质朴甚至最赤裸的本质动机，常带有说话人客观冷静、了然于胸甚至略带轻描淡写的语调。常用于分析动机、揭示实质或化解繁复表象。",
+      "formation": "主语 + 无非 +（是）+（想 / 为了 / 动词短语 / 名词性成分）",
+      "examples": [
+        {
+          "translation": "他之所以这么拼命地工作，无非是想多挣些钱，好让老婆孩子过上更舒坦的日子罢了。"
+        }
+      ]
+    },
+    "zh_唯独_640": {
+      "title": "唯独（限制副词：单单、只有、惟独，突出唯一的例外）",
+      "shortExplanation": "副词作状语，用于将某一人或事物从整体范围中单独提引出来，强调其为唯一的例外；相当于“单单”、“唯有”。",
+      "longExplanation": "“唯独”（wéidú）由两个同义语素“唯”（只有）与“独”（独自、单一）复合而成。常置于名词、代词或主语之前，具有极强的排他性与排众性。其典型的句法环境是与表示全称范围的词语（如“都”、“大家”、“所有的”、“凡是”）形成强烈鲜明的对照，将特定客体凸显为全集当中独一无二的特例。语意上往往带有一种特殊的感情色彩，如因遗漏孤立而生的遗憾惋惜、因偏爱而生的特殊优待，或是因独异而生的不可思议。书面语与口语均广泛使用。",
+      "formation": "全体/众人 + 都…… ，唯独 + 特殊对象 +（谓语） ｜ 唯独 + 特殊对象 + 谓语",
+      "examples": [
+        {
+          "translation": "那次出游大家都高高兴兴地去了，唯独你因故未能成行。"
+        }
+      ]
+    },
+    "zh_明明_641": {
+      "title": "明明（语气副词：显然、分明、清清楚楚，用于指责反驳）",
+      "shortExplanation": "语气副词，作状语，强调事实真相清清楚楚、明摆在眼前，不容置疑或狡辩；多用于反驳对方的不实之词、揭穿谎言或质问对方的荒谬行为；相当于“分明”、“显然”。",
+      "longExplanation": "“明明”（míngmíng）是重叠形容词虚化而来的语气副词。常置于动词谓语、判断动词“是”或形容词前充当状语。它的核心语用功能是：确立说话人对客观事实的绝对确信，同时点破某种极其显而易见的真相。通常用于话语交锋、质疑诘问或表达不满反感的语境中，旨在抗议对方指鹿为马、强词夺理、倒打一耙或装聋作哑。常与反问句（如“哪里是……”、“怎么会……”、“何必……”）及转折分句紧密呼应，语气坚定有力，驳斥感极强。",
+      "formation": "主语 + 明明 + 是 / 动词 / 形容词 ，+ 反问句 / 驳诘分句",
+      "examples": [
+        {
+          "translation": "你唱的这首明明是流行歌曲，哪里扯得上是京剧啊？"
+        }
+      ]
+    },
+    "zh_大不了_642": {
+      "title": "大不了……（口语副词：最坏也不过、至多、充其量，表示无所畏惧的决绝态度）",
+      "shortExplanation": "口语副词，用于后一分句句首，设想事情发展到最坏的地步也不过如此，表现出胸有成竹、毫无畏惧的豁达坦然或破釜沉舟的决断；相当于“充其量”、“最坏不过是”。",
+      "longExplanation": "“大不了”（dàbùliǎo）是现代汉语口语中富有豪气与韧性的副词形式。常用于转折或假设复句的后一分句，充当状语。其语用价值在于心理防线的托底：说话人直面最不利的风险、危机或挫折，将最严峻的代价预先摊开来看，从而断定其完全在个人的承受能力之内，因此根本不必畏手畏脚或怨天尤人。前句常配合“……没关系/不要紧/怕什么”，后句紧跟最极端的应急兜底手段（如从头再来、辞职不干、受点责备）。表现出极强的心理抗压感与坦荡气度。",
+      "formation": "不利假设/危机分句 ，大不了 +（主语 +）最坏应对手段/兜底打算",
+      "examples": [
+        {
+          "translation": "创业失败了也没什么要紧的，大不了从头再来一次。"
+        }
+      ]
+    },
+    "zh_大不了的_643": {
+      "title": "大不了的（口语习惯用语：了不起的事、值得大惊小怪的严重之事）",
+      "shortExplanation": "口语常用习惯短语，通常出现在否定句（“没什么大不了的”）或反问句（“有什么大不了的？”）中，表示事情无足轻重、极其寻常，根本用不着小题大做或惊慌失措；相当于“了不起的事”。",
+      "longExplanation": "“大不了的”（dàbùliǎo de）是由“大不了”加上结构助词“的”构成的口语习惯用语，在句中通常作宾语或表语。其句法分布具有鲜明的极性特征：几乎专用于否定结构“没什么/没有什么大不了的”或者反问格式“有什么大不了的（啊/呢）？”。说话人借此表达对眼前所谓“麻烦”、“争议”或“打击”的鄙夷与淡化，认为其不过是鸡毛蒜皮的小事，完全不值得大惊小怪、斤斤计较或患得患失。常用于宽慰他人、缓解紧张人际关系或展示豁达自信的心态。",
+      "formation": "（主语 +）没什么 / 没有什么 + 大不了的 ｜ 有什么 + 大不了的 +（呢 / 啊）？",
+      "examples": [
+        {
+          "translation": "情侣之间接个吻而已，有什么值得大惊小怪的大不了的？"
+        }
+      ]
+    },
+    "zh_V于PLACE_644": {
+      "title": "动词 + 于 + 处所（介词补语格式：在某地发生、产出或处于某地）",
+      "shortExplanation": "书面语传统句式，介词“于”带处所词作动词的后置补语，引出动作行为发生的地点、源头或事物所处的空间方位；相当于“在某地（做某事）”。",
+      "longExplanation": "“动词 + 于 + 处所”是现代汉语书面语承袭古代文言语法而来的典型介词补语结构。与现代口语中常见的“在+处所+动词”状动语序不同，该结构将介词短语后置于谓语动词之后，具有文雅、洗练、庄重的修辞效果。结构中的介词“于”引介行为动作的产生地、着落点或终点，相当于口语中的“在”。多与表示出生、生长、产出、发生、停留、安放等意义的单音节动词紧密搭配，如“生于”（出生在）、“产于”（出产在）、“发源于”（源起在）、“位于”（处在）、“见于”（见载于）。多见于百科词条、学术文献、新闻通讯及典雅的书面语境中。",
+      "formation": "主语 + 动词（产 / 生 / 止 / 落等）+ 于 + 处所名词 / 地名",
+      "examples": [
+        {
+          "translation": "闻名遐迩的西湖龙井茶产于浙江省西湖风景区一带。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_는지_11": {
+      "title": "~는지 모르다 (Không biết là... hay không / không biết liệu...)",
+      "shortExplanation": "Dùng để diễn đạt sự không biết, mơ hồ hoặc không chắc chắn về một sự việc, hành động hay trạng thái nào đó.",
+      "longExplanation": "Cấu trúc '~는지 모르다' được sử dụng để thể hiện sự nghi vấn, không chắc chắn hoặc không biết rõ về một nội dung nào đó ('không biết là... hay không', 'không biết liệu...'). Ở thì hiện tại, động từ kết hợp với '-는지 모르다', tính từ kết hợp với '-(으)ㄴ지 모르다', danh từ kết hợp với '-(이)인지 모르다'. Khi nói về thì quá khứ, cả động từ và tính từ đều kết hợp với '-았/었는지 모르다', và ở thì tương lai hoặc suy đoán là '-(으)ㄹ지 모르다' hoặc '-(으)ㄹ 것인지 모르다'. Cấu trúc này thường đi kèm với các từ để hỏi như 누구 (ai), 언제 (khi nào), 어디 (ở đâu), 무엇 (cái gì), 어떻게 (như thế nào) hoặc biểu thị việc không biết sự việc có diễn ra hay không.",
+      "formation": "Động từ + 는지 모르다 / Tính từ + (으)ㄴ지 모르다 / Quá khứ: Động từ·Tính từ + 았/었는지 모르다 / Tương lai·Suy đoán: Động từ·Tính từ + (으)ㄹ지 모르다 / Danh từ + (이)인지 모르다",
+      "examples": [
+        {
+          "translation": "Tôi không biết liệu hôm nay anh ấy có đến trường hay không."
+        },
+        {
+          "translation": "Tôi không biết cô ấy sẽ mặc bộ trang phục nào."
+        },
+        {
+          "translation": "Tôi không biết anh ấy đã nghe câu chuyện này hay chưa."
+        },
+        {
+          "translation": "Tôi không biết bạn của chúng ta liệu có hạnh phúc ở nơi này hay không."
+        }
+      ]
+    },
+    "ko_는지_12": {
+      "title": "~는지 알다 (Biết là... / biết liệu...)",
+      "shortExplanation": "Dùng để diễn đạt việc biết, hiểu rõ hoặc nắm bắt được thông tin về một sự việc, hành động hay tình huống nào đó.",
+      "longExplanation": "Cấu trúc '~는지 알다' được dùng để biểu thị việc người nói (hoặc chủ ngữ) biết, nắm bắt được một sự việc hoặc câu trả lời cho một nghi vấn nào đó ('biết là...', 'biết liệu...'). Ở thì hiện tại, động từ kết hợp với '-는지 알다', tính từ kết hợp với '-(으)ㄴ지 알다', danh từ kết hợp với '-(이)인지 알다'; thì quá khứ dùng '-았/었는지 알다'; thì tương lai hoặc khả năng dùng '-(으)ㄹ 수 있는지 알다' hoặc '-(으)ㄹ지 알다'. Cấu trúc này thường đi kèm với các từ nghi vấn (như 언제, 어디, 누구, 어떻게, 왜...) hoặc kết hợp trong các dạng phủ định, nghi vấn như '-는지 알아요?', '-는지 알 수 없다'.",
+      "formation": "Động từ + 는지 알다 / Tính từ + (으)ㄴ지 알다 / Quá khứ: Động từ·Tính từ + 았/었는지 알다 / Khả năng·Tương lai: Động từ + (으)ㄹ 수 있는지 알다 / Danh từ + (이)인지 알다",
+      "examples": [
+        {
+          "translation": "Tôi không thể biết được liệu anh ấy có hiểu lời tôi nói hay không."
+        },
+        {
+          "translation": "Tôi muốn biết liệu cô ấy đã đưa ra quyết định hay chưa."
+        },
+        {
+          "translation": "Chúng ta cần phải biết liệu tuần sau có thể gặp nhau được hay không."
+        },
+        {
+          "translation": "Các giáo viên luôn kiểm tra để biết học sinh có giải quyết được bài tập hay không."
+        }
+      ]
+    },
+    "ko_마다_13": {
+      "title": "~마다 (Mỗi / mọi / cứ mỗi)",
+      "shortExplanation": "Trợ từ gắn sau danh từ biểu thị sự lặp lại đều đặn theo chu kỳ hoặc bao hàm toàn bộ từng đối tượng không ngoại lệ ('mỗi', 'cứ mỗi').",
+      "longExplanation": "'~마다' là một trợ từ (tiểu từ) gắn trực tiếp vào sau danh từ, không phân biệt danh từ có phụ âm cuối hay không. Nó dùng để chỉ sự lặp đi lặp lại có tính chu kỳ theo thời gian (ví dụ: 날마다 - mỗi ngày, 아침마다 - mỗi sáng) hoặc bao quát toàn bộ từng cá thể trong một tập thể mà không có ngoại lệ (ví dụ: 사람마다 - mỗi người/ai ai cũng, 나라마다 - mỗi quốc gia). Khi kết hợp với cấu trúc danh từ hóa thời điểm '-(으)ㄹ 때', ta có cụm '-(으)ㄹ 때마다' mang nghĩa 'mỗi khi / mỗi lần... làm gì'.",
+      "formation": "Danh từ + 마다 / Thân động từ·tính từ + (으)ㄹ 때마다",
+      "examples": [
+        {
+          "translation": "Mỗi buổi sáng tôi đều thức dậy sớm để tập thể dục."
+        },
+        {
+          "translation": "Mỗi khi đi du lịch, tôi lại được gặp gỡ những con người mới nên cảm thấy rất thú vị."
+        },
+        {
+          "translation": "Cứ sau mỗi lần bài kiểm tra kết thúc, tôi lại nghỉ ngơi một chút."
+        },
+        {
+          "translation": "Cứ mỗi tuần tôi lại đến thư viện để học tiếng Hàn."
+        }
+      ]
+    },
+    "ko_부터_14": {
+      "title": "~부터 ~까지 (Từ... đến...)",
+      "shortExplanation": "Cặp trợ từ biểu thị điểm bắt đầu ('~부터') và điểm kết thúc ('~까지') của thời gian, không gian, thứ tự hay phạm vi hành động.",
+      "longExplanation": "'~부터 ~까지' là sự kết hợp giữa hai trợ từ '부터' (biểu thị điểm xuất phát, bắt đầu) và '까지' (biểu thị điểm giới hạn, kết thúc). Cấu trúc này thường được dùng nhiều nhất với thời gian (từ mấy giờ đến mấy giờ, từ thứ mấy đến thứ mấy) hoặc thứ tự (từ số 1 đến số 10). Mặc dù đối với không gian, vị trí, tiếng Hàn thường ưu tiên dùng '에서 ~ 까지' (ví dụ: 서울에서 부산까지), nhưng '부터' đôi khi cũng được sử dụng trong khẩu ngữ để nhấn mạnh điểm khởi đầu của một quãng đường hoặc trình tự.",
+      "formation": "Danh từ (thời gian / địa điểm / thứ tự) + 부터 + Danh từ (thời gian / địa điểm / thứ tự) + 까지",
+      "examples": [
+        {
+          "translation": "Chúng tôi làm việc từ thứ Hai đến thứ Sáu."
+        },
+        {
+          "translation": "Giờ nghỉ trưa là từ 12 giờ trưa đến 1 giờ chiều."
+        },
+        {
+          "translation": "Từ Seoul đến Busan đi bằng tàu hỏa mất bao lâu vậy ạ?"
+        },
+        {
+          "translation": "Tôi đã tiến bộ rất nhiều kể từ khi bắt đầu học tiếng Hàn cho đến tận bây giờ."
+        }
+      ]
+    },
+    "ko_아어여_15": {
+      "title": "아/어/여 보이다 (Trông có vẻ... / dường như...)",
+      "shortExplanation": "Dùng sau thân tính từ để diễn đạt phán đoán hoặc cảm nhận bằng mắt về vẻ bề ngoài của đối tượng ('trông có vẻ...').",
+      "longExplanation": "'아/어/여 보이다' gắn vào thân tính từ để biểu thị nhận định mang tính trực quan của người nói về trạng thái hay vẻ ngoài của một người, sự vật hoặc sự việc. Nó mang nghĩa 'trông có vẻ...', 'nhìn có vẻ...', phản ánh cảm giác chủ quan qua thị giác chứ không khẳng định 100% bản chất thực tế. Về mặt kết hợp: nếu nguyên âm cuối của thân tính từ là 'ㅏ' hoặc 'ㅗ', dùng '-아 보이다' (như 좋아 보이다); các nguyên âm khác dùng '-어 보이다' (như 맛있어 보이다, 젊어 보이다); với tính từ đuôi '하다', biến đổi thành '-해 보이다' (như 행복해 보이다, 피곤해 보이다).",
+      "formation": "Thân tính từ (kết thúc bằng nguyên âm ㅏ, ㅗ) + 아 보이다 / Thân tính từ (các nguyên âm khác) + 어 보이다 / Thân tính từ 하다 + 해 보이다",
+      "examples": [
+        {
+          "translation": "Người đó trông có vẻ hạnh phúc nên những người khác cũng thấy vui lây."
+        },
+        {
+          "translation": "Món ăn này trông có vẻ ngon nhưng thực tế lại hơi mặn."
+        },
+        {
+          "translation": "Người đàn ông đó lúc nào trông cũng có vẻ khó chịu, không biết có chuyện gì không nhỉ?"
+        },
+        {
+          "translation": "Bộ quần áo này lúc nhìn trong ảnh thì đẹp, nhưng nhìn thực tế thì trông cũng bình thường thôi."
+        }
+      ]
+    },
+    "ko_아어여_16": {
+      "title": "아/어/여 주다 (Làm gì đó cho ai / giúp ai)",
+      "shortExplanation": "Động từ bổ trợ gắn sau thân động từ biểu thị việc thực hiện hành động nhằm mang lại lợi ích hoặc giúp đỡ cho người khác.",
+      "longExplanation": "'아/어/여 주다' là cấu trúc trợ động từ biểu thị hành động được thực hiện vì lợi ích của người khác ('làm... cho ai', 'làm... giúp ai'). Khi đối tượng nhận hành động là người bề trên hoặc cần được tôn kính, người nói sẽ dùng dạng kính ngữ là '아/어/여 드리다'. Ngược lại, khi người nói yêu cầu người khác làm gì giúp mình, cấu trúc này thường xuất hiện dưới dạng thỉnh cầu mềm mỏng và lịch sự như '아/어/여 주세요' (xin hãy làm giúp tôi) hoặc '아/어/여 주시겠어요?' (anh/chị có thể làm giúp tôi được không?). Cách chia: nguyên âm 'ㅏ, ㅗ' kết hợp với '-아 주다', các nguyên âm khác kết hợp với '-어 주다', và động từ '하다' chuyển thành '-해 주다'.",
+      "formation": "Thân động từ (nguyên âm ㅏ, ㅗ) + 아 주다 / Thân động từ (nguyên âm khác) + 어 주다 / Động từ 하다 + 해 주다 (Kính ngữ: 아/어/여 드리다)",
+      "examples": [
+        {
+          "translation": "Cậu mệt rồi thì để tớ làm bài tập về nhà đó giúp cho nhé."
+        },
+        {
+          "translation": "Đừng lo lắng, bố sẽ bảo vệ cho chúng ta mà."
+        },
+        {
+          "translation": "Trên đường về nhà, bố đã bắt taxi cho chúng tôi."
+        },
+        {
+          "translation": "Tôi đã nấu bữa tối cho mẹ."
+        }
+      ]
+    },
+    "ko_아어여야만_17": {
+      "title": "아/어/여야만 하다 (Bắt buộc phải... / nhất định phải làm gì)",
+      "shortExplanation": "Nhấn mạnh nghĩa vụ bắt buộc, tính tất yếu hoặc điều kiện tiên quyết duy nhất để đạt được kết quả ('nhất định phải... mới được').",
+      "longExplanation": "'아/어/여야만 하다' là hình thức nhấn mạnh của cấu trúc biểu thị nghĩa vụ '아/어/여야 하다', được tạo thành bằng cách thêm trợ từ nhấn mạnh giới hạn '만' (chỉ, duy nhất). Cấu trúc này nhấn mạnh rằng hành động đó là bắt buộc, không thể thay thế và không còn sự lựa chọn nào khác ('nhất thiết phải...', 'bắt buộc phải...'). Ngoài ra, vĩ tố liên kết '아/어/여야만' còn dùng để nối hai vế với ý nghĩa 'chỉ khi làm việc ở vế trước thì vế sau mới có thể xảy ra'. Nguyên âm cuối 'ㅏ, ㅗ' kết hợp với '-아야만 하다', các nguyên âm khác kết hợp với '-어야만 하다', động từ '하다' chuyển thành '-해야만 하다'.",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 아야만 하다 / Thân động từ·tính từ (nguyên âm khác) + 어야만 하다 / Động từ 하다 + 해야만 하다",
+      "examples": [
+        {
+          "translation": "Tất cả học sinh đều nhất định phải chuẩn bị cho kỳ thi, nếu không thì sẽ bị trượt."
+        },
+        {
+          "translation": "Bây giờ tôi phải đi ngay lập tức. Nếu muộn thì sẽ bị lỡ chuyến bay."
+        },
+        {
+          "translation": "Cậu phải hoàn thành xong công việc này thì mới có thể về nhà được."
+        },
+        {
+          "translation": "Chúng ta bắt buộc phải giãn cơ mỗi sáng để duy trì sức khỏe."
+        }
+      ]
+    },
+    "ko_아어여도_18": {
+      "title": "아/어/여도 되다 (Làm gì đó cũng được / được phép làm gì)",
+      "shortExplanation": "Dùng để xin phép hoặc cho phép thực hiện một hành động nào đó ('làm... được không?', 'làm... cũng được').",
+      "longExplanation": "'아/어/여도 되다' được tạo thành từ vĩ tố liên kết nhượng bộ '-아/어/여도' (dù có...) kết hợp với động từ '되다' (được, trở nên ổn). Cấu trúc này dùng để diễn đạt sự cho phép hoặc tán thành một hành động nào đó. Ở dạng câu nghi vấn ('-아/어/여도 돼요?', '-아/어/여도 될까요?'), cấu trúc mang nghĩa xin phép lịch sự ('tôi làm... có được không?'). Ở dạng câu trần thuật, nó khẳng định rằng việc đó hoàn toàn được chấp nhận hoặc không có vấn đề gì ('bạn làm... cũng được'). Dạng phủ định cấm đoán tương ứng là '-아/어/여서는 안 되다' (không được làm...).",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 아도 되다 / Thân động từ·tính từ (nguyên âm khác) + 어도 되다 / Động từ 하다 + 해도 되다 / Danh từ + (이)어도 되다",
+      "examples": [
+        {
+          "translation": "Tôi có thể ngồi vào chỗ này được không ạ? Chỉ được ngồi khi chưa có người khác đặt trước thôi."
+        },
+        {
+          "translation": "Ngày mai tôi dùng Photoshop có được không? Vì dự án của tôi đang cần dùng đến."
+        },
+        {
+          "translation": "Có nơi nào có thể nghe nhạc lớn tiếng được không ạ? Vì tôi rất thích nhạc rock."
+        },
+        {
+          "translation": "Dù trời mưa tôi vẫn có thể đá bóng được. Vì tôi cực kỳ thích mưa."
+        }
+      ]
+    },
+    "ko_아어여서는_19": {
+      "title": "아/어/여서는 안 되다 (Không được làm gì / cấm làm gì)",
+      "shortExplanation": "Biểu thị sự ngăn cấm, không được phép thực hiện một hành động nào đó theo quy định, đạo đức hoặc lẽ thường.",
+      "longExplanation": "'아/어/여서는 안 되다' là mẫu câu thể hiện sự cấm đoán mang tính nghiêm túc, quy phạm. Nó mang nghĩa 'không được làm...', 'không nên làm...'. Trong cấu trúc này, '-아/어/여서' kết hợp với trợ từ nhấn mạnh chủ đề '는' tạo thành '-아/어/여서는' (nếu làm như vậy thì...), kết hợp cùng '안 되다' (sẽ không được/không ổn). Nó thường dùng trong các thông báo quy định công cộng, nguyên tắc làm việc hoặc lời khuyên răn đạo đức. Trong khẩu ngữ hàng ngày, người ta thường rút gọn '-아/어/여서는' thành '-아/어/여선' (ví dụ: 그러면 안 돼 / 해서는 안 돼).",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 아서는 안 되다 / Thân động từ·tính từ (nguyên âm khác) + 어서는 안 되다 / Động từ 하다 + 해서는 안 되다",
+      "examples": [
+        {
+          "translation": "Nhìn vào biển báo này thì ta không được hút thuốc ở đây."
+        },
+        {
+          "translation": "Chúng ta không được lơ là sức khỏe của mình."
+        },
+        {
+          "translation": "Công việc này cần phải làm thật tỉ mỉ, không được làm một cách lơ đãng, bất cẩn."
+        },
+        {
+          "translation": "Vì có bài thi nghe nên giáo viên đã nhấn mạnh rằng không được bật điện thoại."
+        }
+      ]
+    },
+    "ko_아어서_20": {
+      "title": "아/어서 (Vì... nên... / rồi thì...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị nguyên nhân - kết quả ('vì... nên...') hoặc trật tự thời gian diễn ra hai hành động có liên quan chặt chẽ ('rồi').",
+      "longExplanation": "'아/어서' là một trong những vĩ tố liên kết cơ bản và quan trọng nhất trong tiếng Hàn. Cấu trúc có 2 chức năng chính: (1) Biểu thị nguyên nhân - lý do: Vế trước là nguyên nhân dẫn đến kết quả ở vế sau ('vì... nên...'). Chú ý: khi biểu thị lý do, vế trước không kết hợp với thì quá khứ '-았/었-' và đuôi câu không dùng câu mệnh lệnh (-(으)세요) hay rủ rê (-(으)ㅂ시다). (2) Biểu thị liên kết thời gian theo trật tự: Thực hiện hành động trước rồi tiếp tục hành động sau trên cùng một bối cảnh (ví dụ: 식당에 가서 밥을 먹었어요). Nguyên âm 'ㅏ, ㅗ' kết hợp với '-아서', các nguyên âm khác kết hợp với '-어서', và động từ '하다' chuyển thành '-해서'.",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 아서 / Thân động từ·tính từ (nguyên âm khác) + 어서 / Động từ·tính từ 하다 + 해서 / Danh từ + (이)라서",
+      "examples": [
+        {
+          "translation": "Hôm nay vì có nhiều việc nên tôi đã không thể đến trường được."
+        },
+        {
+          "translation": "Vì phòng lạnh nên tôi đã mặc thêm nhiều áo ấm."
+        },
+        {
+          "translation": "Anh ấy chăm chỉ tập thể dục nên duy trì được một cơ thể khỏe mạnh."
+        },
+        {
+          "translation": "Vì chiều cao khiêm tốn nên tôi thấy khó tìm mua áo khoác ngoài."
+        }
+      ]
+    },
+    "ko_았었으면_21": {
+      "title": "았/었으면 좋겠다 (Ước gì... / giá mà... thì tốt biết mấy)",
+      "shortExplanation": "Dùng để bày tỏ mong ước, hy vọng về một tình huống hoặc sự việc trái với hiện thực hoặc mong đợi trong tương lai ('ước gì...', 'giá như...').",
+      "longExplanation": "'았/었으면 좋겠다' là cấu trúc diễn đạt ước muốn hoặc hy vọng chân thành của người nói. Cấu trúc này được kết hợp bởi vĩ tố thì quá khứ '-았/었-', vĩ tố giả định điều kiện '-(으)면' và vị từ '좋겠다' (thì tốt biết mấy). Việc kết hợp với '-았/었-' nhấn mạnh một tình huống giả định khác với thực tế hiện tại, hoặc một ước mơ mạnh mẽ về tương lai mà chưa chắc đã xảy ra. Khi nguyên âm thân từ là 'ㅏ, ㅗ', dùng '-았으면 좋겠다'; các nguyên âm khác dùng '-었으면 좋겠다'; với '하다', dùng '-했으면 좋겠다'.",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 았으면 좋겠다 / Thân động từ·tính từ (nguyên âm khác) + 었으면 좋겠다 / Động từ·tính từ 하다 + 했으면 좋겠다",
+      "examples": [
+        {
+          "translation": "Giá mà có nhiều thời gian thì tốt biết mấy, như thế thì tôi đã có thể đọc nhiều sách hơn rồi."
+        },
+        {
+          "translation": "Ước gì ngày mai trời mưa, có như vậy thì chúng ta mới có thể nghỉ ngơi mát mẻ hơn được."
+        },
+        {
+          "translation": "Giá mà cô ấy hiểu lời tôi hơn thì tốt. Như vậy chúng tôi sẽ có thể chia sẻ ý kiến cùng nhau tốt hơn."
+        },
+        {
+          "translation": "Ước gì cuối tuần này thời tiết đẹp, thế thì chắc là có thể đi dã ngoại được."
+        }
+      ]
+    },
+    "ko_어아야_22": {
+      "title": "아/어야 하다 (Phải làm gì / cần phải làm gì)",
+      "shortExplanation": "Biểu thị tính tất yếu, nghĩa vụ hoặc bổn phận cần phải thực hiện một hành vi nào đó ('phải...', 'cần phải...').",
+      "longExplanation": "'아/어야 하다' là cấu trúc ngữ pháp cơ bản dùng để diễn đạt nghĩa vụ, bổn phận hoặc sự cần thiết khách quan của một hành động. Trong nhiều trường hợp, '하다' có thể được thay thế bằng '되다' tạo thành '아/어야 되다' mang sắc thái mềm mại hơn và được dùng rất phổ biến trong văn nói hàng ngày. Nguyên âm cuối của thân từ là 'ㅏ, ㅗ' kết hợp với '-아야 하다', các nguyên âm khác kết hợp với '-어야 하다', động từ '하다' chuyển thành '-해야 하다'. Khi nói về danh từ, cấu trúc sẽ là '-(이)어야 하다'.",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 아야 하다 / Thân động từ·tính từ (nguyên âm khác) + 어야 하다 / Động từ 하다 + 해야 하다 / Danh từ + (이)어야 하다",
+      "examples": [
+        {
+          "translation": "Vì ngày mai có bài thi nên tối nay tôi phải học bài."
+        },
+        {
+          "translation": "Chúng tôi phải dọn dẹp nhà cửa vào cuối tuần này."
+        },
+        {
+          "translation": "Vì bạn bị cảm cúm rồi nên chắc là phải uống thuốc thôi."
+        },
+        {
+          "translation": "Vì sáng mai phải dậy sớm nên tôi phải đi ngủ ngay bây giờ."
+        }
+      ]
+    },
+    "ko_어아도_23": {
+      "title": "아/어도 (Dù... cho dù... / dẫu có... thì...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị sự nhượng bộ, chỉ ra rằng dù giả thiết ở vế trước có xảy ra thì vế sau vẫn diễn ra hoặc không bị ảnh hưởng ('dù... thì cũng...').",
+      "longExplanation": "'아/어도' là vĩ tố liên kết nhượng bộ, dùng để nối hai vế câu biểu đạt rằng kết quả ở vế sau không phụ thuộc vào tiền đề hay giả định ở vế trước ('cho dù... thì vẫn...'). Cấu trúc này thường đi kèm với các phó từ như '아무리' (dù thế nào chăng nữa) để nhấn mạnh sự nhượng bộ. Nguyên âm cuối của thân từ là 'ㅏ, ㅗ' kết hợp với '-아도', các nguyên âm khác kết hợp với '-어도', động từ '하다' chuyển thành '-해도'. Khi kết hợp với danh từ, dạng sử dụng là '-(이)라도' hoặc '-(이)어도'.",
+      "formation": "Thân động từ·tính từ (nguyên âm ㅏ, ㅗ) + 아도 / Thân động từ·tính từ (nguyên âm khác) + 어도 / Động từ·tính từ 하다 + 해도 / Danh từ + (이)라도 / (이)어도",
+      "examples": [
+        {
+          "translation": "Dù trời có mưa đi nữa thì tôi vẫn sẽ tiếp tục đi bộ, vì đó là cách nhanh nhất."
+        },
+        {
+          "translation": "Dù có nói là mệt mỏi đến đâu thì tôi vẫn phải tiếp tục làm việc, bởi vì tôi cần phải giải quyết xong công việc này."
+        },
+        {
+          "translation": "Cho dù là vấn đề nan giải thì tôi cũng sẽ không từ bỏ mà tiếp tục thử sức, vì tôi vốn yêu thích sự thử thách."
+        },
+        {
+          "translation": "Dẫu kết quả thi cử có không tốt thì tôi vẫn sẽ phấn đấu nhiều hơn. Tôi tin rằng thất bại là mẹ thành công."
+        }
+      ]
+    },
+    "ko_어아_24": {
+      "title": "아/어 버리다 (...mất rồi / làm xong sạch trơn)",
+      "shortExplanation": "Động từ bổ trợ biểu thị hành động đã hoàn tất trọn vẹn, thường đi kèm cảm xúc tiếc nuối, hối hận hoặc ngược lại là cảm giác trút bỏ gánh nặng nhẹ nhõm.",
+      "longExplanation": "'아/어 버리다' là cấu trúc trợ động từ kết hợp với thân động từ để nhấn mạnh một hành vi đã kết thúc hoàn toàn và không còn vương vấn gì. Cấu trúc này thường mang hai sắc thái cảm xúc tùy theo ngữ cảnh: (1) Biểu thị sự tiếc nuối, hối hận hoặc chuyện xảy ra ngoài ý muốn ('lỡ... mất rồi', ví dụ: 놓쳐 버렸어요 - lỡ để tuột mất); (2) Biểu thị cảm giác trút được gánh nặng, giải tỏa tâm trạng nhẹ nhõm sau khi làm xong việc gì khó khăn (ví dụ: 숙제를 다 끝내 버렸어요 - làm xong sạch bài tập rồi, nhẹ cả người). Nguyên âm cuối 'ㅏ, ㅗ' kết hợp với '-아 버리다', các nguyên âm khác kết hợp với '-어 버리다', động từ '하다' chuyển thành '-해 버리다'.",
+      "formation": "Thân động từ (nguyên âm ㅏ, ㅗ) + 아 버리다 / Thân động từ (nguyên âm khác) + 어 버리다 / Động từ 하다 + 해 버리다",
+      "examples": [
+        {
+          "translation": "Tôi đã lỡ để lọt mất chuyến công tác quan trọng nên bị giám đốc mắng."
+        },
+        {
+          "translation": "Bạn tôi làm hỏng mất chiếc túi của tôi nên đồ đạc bên trong bị đổ tung tóe ra hết."
+        },
+        {
+          "translation": "Nếu không đạp phanh thì xe sẽ tông vào nhau và mọi người đều có thể bị thương."
+        },
+        {
+          "translation": "Tôi vô tình nghe phải những lời đó mất rồi nên tâm trạng trở nên rất tồi tệ."
+        }
+      ]
+    },
+    "ko_으면면_25": {
+      "title": "(으)면 (Nếu... thì... / khi...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị điều kiện tiền đề hoặc một tình huống giả định ('nếu... thì...').",
+      "longExplanation": "'(으)면' là vĩ tố liên kết cơ bản và quan trọng nhất để biểu đạt giả định hoặc điều kiện trong tiếng Hàn ('nếu...', 'hễ... thì...'). Vế trước là điều kiện tiền đề để hành động hoặc trạng thái ở vế sau có thể thành hiện thực. Ngoài ra, cấu trúc này còn dùng để chỉ thói quen lặp lại mang tính quy luật tự nhiên ('khi/hễ... thì...'). Quy tắc kết hợp: thân động từ hoặc tính từ có phụ âm cuối (ngoại trừ ㄹ) kết hợp với '-으면'; thân từ không có phụ âm cuối hoặc có phụ âm cuối là 'ㄹ' kết hợp với '-면'. Danh từ kết hợp với '-(이)면'.",
+      "formation": "Thân động từ·tính từ (có phụ âm cuối trừ ㄹ) + 으면 / Thân động từ·tính từ (không phụ âm cuối hoặc phụ âm cuối ㄹ) + 면 / Danh từ + (이)면",
+      "examples": [
+        {
+          "translation": "Nếu trời mưa thì bạn cần mang theo ô dù nhé."
+        },
+        {
+          "translation": "Nếu có thời gian, tôi sẽ thử đọc thêm vài cuốn sách."
+        },
+        {
+          "translation": "Nếu xem phim thì bạn sẽ hiểu dễ dàng hơn đấy."
+        },
+        {
+          "translation": "Nếu thời tiết đẹp thì tôi sẽ ra ngoài đi dạo."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_는지_11": {
+      "title": "~는지 모르다（不知道是否……／不知道是不是……）",
+      "shortExplanation": "用于表示说话者对某种事实、情况或动作不确定、不清楚，相当于“不知道是否……”、“不知道……”。",
+      "longExplanation": "“~는지 모르다”用于表示对某一事实、状态或动作不确定或不知情，相当于汉语的“不知道是否……”、“不知道……”。在现在时态下，动词词干接“-는지 모르다”，形容词词干接“-(으)ㄴ지 모르다”，名词接“-(이)인지 모르다”；过去时态均接“-았/었는지 모르다”；未来时或推测时通常使用“-(으)ㄹ지 모르다”或“-(으)ㄹ 것인지 모르다”。常与“누구（谁）”、“언제（何时）”、“어디（哪里）”、“무엇（什么）”、“어떻게（如何）”等疑问词连用，表达心中的疑问或不确定。",
+      "formation": "动词词干 + 는지 모르다 / 形容词词干 + (으)ㄴ지 모르다 / 过去时：动词·形容词 + 았/었는지 모르다 / 将来·推测：动词·形容词 + (으)ㄹ지 모르다 / 名词 + (이)인지 모르다",
+      "examples": [
+        {
+          "translation": "我不知道他今天会不会来学校。"
+        },
+        {
+          "translation": "我不知道她会穿什么样的衣服。"
+        },
+        {
+          "translation": "我不知道他有没有听过这个故事。"
+        },
+        {
+          "translation": "不知道我们的朋友在这里会不会感到幸福。"
+        }
+      ]
+    },
+    "ko_는지_12": {
+      "title": "~는지 알다（知道是否……／知道……）",
+      "shortExplanation": "用于表示了解、知晓某种情况、事实或动作，相当于“知道是否……”、“知道……”。",
+      "longExplanation": "“~는지 알다”用于表达知道、了解某一事实、信息或情况，相当于汉语的“知道是否……”、“知道……”。现在时态下动词接“-는지 알다”，形容词接“-(으)ㄴ지 알다”，名词接“-(이)인지 알다”；过去时态接“-았/었는지 알다”；将来时或推测接“-(으)ㄹ지 알다”或“-(으)ㄹ 수 있는지 알다”。常与疑问词（如언제, 어디, 누구, 어떻게, 왜等）搭配使用，也常以疑问句或搭配“알 수 없다（无法知晓）”等形式出现。",
+      "formation": "动词词干 + 는지 알다 / 形容词词干 + (으)ㄴ지 알다 / 过去时：动词·形容词 + 았/었는지 알다 / 可能性·将来：动词 + (으)ㄹ 수 있는지 알다 / 名词 + (이)인지 알다",
+      "examples": [
+        {
+          "translation": "我无法得知他是否听懂了我的话。"
+        },
+        {
+          "translation": "我想知道她是否已经做出了决定。"
+        },
+        {
+          "translation": "我们必须了解下周是否能够见面。"
+        },
+        {
+          "translation": "老师们总是进行确认，以便了解学生们是否在解决问题。"
+        }
+      ]
+    },
+    "ko_마다_13": {
+      "title": "~마다（每、每个、各个）",
+      "shortExplanation": "附加在名词后的补助词，表示无一例外的均等包含或有规律的周期重复，相当于“每……”、“各个”。",
+      "longExplanation": "“~마다”是附加在名词后面的补助词，无论名词末尾是否有收音均直接接“마다”。它主要表示两种含义：一是表示时间上的周期性重复（如“날마다（每天）”、“주말마다（每个周末）”）；二是表示包含整体中的每一个个体，无一例外（如“사람마다（每个人）”、“나라마다（每个国家）”）。此外，与“-(으)ㄹ 때”结合成“-(으)ㄹ 때마다”时，表示“每当……的时候”、“每次……时”。",
+      "formation": "名词 + 마다 / 动词·形容词词干 + (으)ㄹ 때마다",
+      "examples": [
+        {
+          "translation": "我每天早上都起得很早去锻炼身体。"
+        },
+        {
+          "translation": "每次去旅行都会结识新朋友，这让我感到非常有趣。"
+        },
+        {
+          "translation": "每次考试结束，我都会稍微休息一下。"
+        },
+        {
+          "translation": "我每周都会去图书馆学习韩语。"
+        }
+      ]
+    },
+    "ko_부터_14": {
+      "title": "~부터 ~까지（从……到……）",
+      "shortExplanation": "表示时间、空间、顺序或动作范围的起点（~부터）和终点（~까지），相当于“从……到……”。",
+      "longExplanation": "“~부터 ~까지”是由表示起点的助词“부터”和表示终点、界限的助词“까지”组合而成的结构，相当于汉语的“从……到……”。主要用于表示时间段（如几点到几点、周一到周五）、序列或顺序（如第一页到第十页）。在表示空间距离或地理位置时，韩语通常更倾向于使用“~에서 ~까지”（如 서울에서 부산까지），但在日常口语中强调某段路程的起点或范围开始时，也可以使用“부터 ~까지”。",
+      "formation": "名词（时间/地点/顺序） + 부터 + 名词（时间/地点/顺序） + 까지",
+      "examples": [
+        {
+          "translation": "我们从周一工作到周五。"
+        },
+        {
+          "translation": "午休时间是从中午12点到1点。"
+        },
+        {
+          "translation": "从首尔坐火车到釜山需要多长时间？"
+        },
+        {
+          "translation": "从我开始学韩语的时候起到现在，进步了很多。"
+        }
+      ]
+    },
+    "ko_아어여_15": {
+      "title": "아/어/여 보이다（看起来……／显得……）",
+      "shortExplanation": "接在形容词词干后，表示说话者通过视觉观察得出的直观感受或推测，相当于“看起来……”、“显得……”。",
+      "longExplanation": "“아/어/여 보이다”通常接在形容词词干之后，表示说话者根据外表所作出的直觉推测或给人的印象，相当于汉语的“看起来……”、“显得……”。它表达的是主观的视觉感受，而非既定的客观事实。结合规则遵循阴阳元音规律：词干末音节元音为“ㅏ、ㅗ”时接“-아 보이다”（如 좋아 보이다）；为其他元音时接“-어 보이다”（如 맛있어 보이다、젊어 보이다）；以“하다”结尾的形容词则变为“-해 보이다”（如 행복해 보이다、피곤해 보이다）。",
+      "formation": "形容词词干（末元音为ㅏ、ㅗ） + 아 보이다 / 形容词词干（其他元音） + 어 보이다 / 하다形容词词干 + 해 보이다",
+      "examples": [
+        {
+          "translation": "那个人看起来很幸福，所以其他人心情也跟着变好了。"
+        },
+        {
+          "translation": "这道菜看起来很好吃，但实际上有点咸。"
+        },
+        {
+          "translation": "那个男人看起来总是心情不好，是有什么问题吗？"
+        },
+        {
+          "translation": "这件衣服在照片上看时很漂亮，但实际一看显得很一般。"
+        }
+      ]
+    },
+    "ko_아어여_16": {
+      "title": "아/어/여 주다（为某人做某事／帮……做）",
+      "shortExplanation": "接在动词词干后的补助动词，表示为他人提供某种帮助或出于好意做某事，相当于“给/为……做某事”。",
+      "longExplanation": "“아/어/여 주다”是表示授受关系的补助动词，附在动词词干后，意为“为他人做某事”或“帮别人做某事”。当受益对象是长辈或需要尊敬的人时，应使用其敬语形式“아/어/여 드리다”。在请求别人帮助自己做某事时，常使用温柔礼貌的表达形式，如“아/어/여 주세요（请帮我……）”或“아/어/여 주시겠어요?（能否帮我……）”。词干末元音为“ㅏ, ㅗ”接“-아 주다”；其他元音接“-어 주다”；以“하다”结尾的动词变为“-해 주다”。",
+      "formation": "动词词干（末元音为ㅏ、ㅗ） + 아 주다 / 动词词干（其他元音） + 어 주다 / 하다动词词干 + 해 주다（敬语：아/어/여 드리다）",
+      "examples": [
+        {
+          "translation": "看你很累，那我来帮你做那份作业吧。"
+        },
+        {
+          "translation": "别担心，我们爸爸会保护我们的。"
+        },
+        {
+          "translation": "在回家的路上，爸爸帮我们叫了出租车。"
+        },
+        {
+          "translation": "我给妈妈做了晚饭。"
+        }
+      ]
+    },
+    "ko_아어여야만_17": {
+      "title": "아/어/여야만 하다（必须……／唯有……才能）",
+      "shortExplanation": "表示强烈的义务、必然性或不可或缺的唯一先决条件，相当于“必须……”、“只有……才行”。",
+      "longExplanation": "“아/어/여야만 하다”是在表示必要义务的“아/어/여야 하다”基础上加上了表示限定、唯一的补助词“만”，用以大幅强化语气，表示“必须”、“必定要”、“非……不可”。它强调该动作是不可避免的绝对义务，或者是实现后文结果的唯一先决条件。在分句连接中，“아/어/여야만”表示“唯有……才……”。词干末元音为“ㅏ, ㅗ”接“-아야만 하다”；其他元音接“-어야만 하다”；以“하다”结尾的动词变为“-해야만 하다”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 아야만 하다 / 动词·形容词词干（其他元音） + 어야만 하다 / 하다动词·形容词词干 + 해야만 하다",
+      "examples": [
+        {
+          "translation": "所有学生都必须认真备考，否则就会不及格。"
+        },
+        {
+          "translation": "我现在必须马上出发。如果迟到了就会赶不上飞机。"
+        },
+        {
+          "translation": "你只有把这件事处理完才能回家。"
+        },
+        {
+          "translation": "我们每天早晨都必须做拉伸运动，这是为了保持健康。"
+        }
+      ]
+    },
+    "ko_아어여도_18": {
+      "title": "아/어/여도 되다（可以……／……也可以）",
+      "shortExplanation": "用于请求许可或给予允许，表示做某事是可以的，相当于“可以……吗？”、“做……也行”。",
+      "longExplanation": "“아/어/여도 되다”由表示让步的连接词尾“-아/어/여도（即使……也）”与动词“되다（行、可以）”组合而成，用于表达许可或认可。疑问句形式（如“-아/어/여도 돼요?”、“-아/어/여도 될까요?”）用于礼貌地征询对方意见、请求允许（“我可以……吗？”）；陈述句形式则表示给予许可或表明某行为是允许的（“可以做……”）。其对应的禁止表达为“-아/어/여서는 안 되다（不可以……）”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 아도 되다 / 动词·形容词词干（其他元音） + 어도 되다 / 하다动词·形容词词干 + 해도 되다 / 名词 + (이)어도 되다",
+      "examples": [
+        {
+          "translation": "我可以坐这个位子吗？只有在没有其他人预订的情况下才可以。"
+        },
+        {
+          "translation": "明天我可以用一下Photoshop吗？因为我的项目需要用到。"
+        },
+        {
+          "translation": "有可以大声听音乐的地方吗？因为我很喜欢摇滚乐。"
+        },
+        {
+          "translation": "就算下雨我也可以踢足球。因为我太喜欢下雨天了。"
+        }
+      ]
+    },
+    "ko_아어여서는_19": {
+      "title": "아/어/여서는 안 되다（不能……／不许……／不可以……）",
+      "shortExplanation": "表示基于规则、法律、道德或常理明确禁止做某事，相当于“不能……”、“不可以……”、“严禁……”。",
+      "longExplanation": "“아/어/여서는 안 되다”用于表达明确的禁止，强调在规则、法律或道德常理上绝对不允许某行为，相当于汉语的“不能做……”、“不可以做……”、“严禁……”。该结构由连接词尾“-아/어/여서”加上强调助词“는”，搭配否定词“안 되다（不行）”构成，字面意思是“如果那样做的话是不行的”。常用于公共标语、规章制度、工作守则或道德训诫中。口语中“-아/어/여서는”常简缩为“-아/어/여선”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 아서는 안 되다 / 动词·形容词词干（其他元音） + 어서는 안 되다 / 하다动词·形容词词干 + 해서는 안 되다",
+      "examples": [
+        {
+          "translation": "看这个指示牌，这里是不允许吸烟的。"
+        },
+        {
+          "translation": "我们绝不能忽视身体健康。"
+        },
+        {
+          "translation": "这项工作必须精密完成，绝不能心不在焉地去做。"
+        },
+        {
+          "translation": "因为听力考试，老师强调绝对不能开手机。"
+        }
+      ]
+    },
+    "ko_아어서_20": {
+      "title": "아/어서（因为……所以……／然后）",
+      "shortExplanation": "连接词尾，表示前后的因果关系（“因为……所以……”）或时间上的前后承接顺序（做完前事接着做后事）。",
+      "longExplanation": "“아/어서”是韩语中最基础且重要的连接词尾之一。主要有两种用法：一是表示原因与理由，前句是后句动作或状态的原因（相当于“因为……所以……”），需要注意的是，表原因时前句不能加过去时词尾“-았/었-”，后句也不能使用命令句或共动句；二是表示时间先后顺序与因果相承，指先完成前一个动作，然后紧接着做后一个动作（前后动作为同一主体的连续行为）。词干末元音为“ㅏ, ㅗ”接“-아서”；其他元音接“-어서”；以“하다”结尾的词变为“-해서”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 아서 / 动词·形容词词干（其他元音） + 어서 / 动词·形容词하다 + 해서 / 名词 + (이)라서",
+      "examples": [
+        {
+          "translation": "今天因为事情太多，所以没能去学校。"
+        },
+        {
+          "translation": "房间很冷，所以我多穿了些衣服。"
+        },
+        {
+          "translation": "他经常运动，因此保持着健康的体魄。"
+        },
+        {
+          "translation": "因为个子矮，买外套挺不容易的。"
+        }
+      ]
+    },
+    "ko_았었으면_21": {
+      "title": "았/었으면 좋겠다（要是……就好了／希望……）",
+      "shortExplanation": "用于表达说话者对某种情况的期盼、愿望或与现实相反的假设，相当于“要是……就好了”、“但愿……”。",
+      "longExplanation": "“았/었으면 좋겠다”用于表达说话者的强烈期盼、心愿或与目前事实相反的假定愿望，相当于汉语的“要是……就好了”、“希望能……”。它由过去时先制词尾“-았/었-”、条件连接词尾“-(으)면”以及形容词推测形“좋겠다（那就好了）”结合而成。使用过去时并非指过去，而是设定一种强烈的虚拟假设，使愿望语气更加真切。词干末元音为“ㅏ, ㅗ”接“-았으면 좋겠다”；其他元音接“-었으면 좋겠다”；以“하다”结尾接“-했으면 좋겠다”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 았으면 좋겠다 / 动词·形容词词干（其他元音） + 었으면 좋겠다 / 하다动词·形容词词干 + 했으면 좋겠다",
+      "examples": [
+        {
+          "translation": "要是有更多时间就好了，那样的话我就能读更多书了。"
+        },
+        {
+          "translation": "真希望明天能下雨，那样我们大概能更凉爽地好好休息了。"
+        },
+        {
+          "translation": "要是她能更理解我的话就好了，那样我们就能更好地交流彼此的想法了。"
+        },
+        {
+          "translation": "希望这个周末天气晴朗，那样我们大概就能去野餐了。"
+        }
+      ]
+    },
+    "ko_어아야_22": {
+      "title": "아/어야 하다（应该……／必须……／得……）",
+      "shortExplanation": "表示理应如此的当为性、义务或必须做某事，相当于“必须……”、“应该……”、“得……”。",
+      "longExplanation": "“아/어야 하다”是韩语中表达义务、责任或必然要求的核心语法，相当于汉语的“必须”、“应该”、“得”。在日常口语中，助动词“하다”常被“되다”替换为“아/어야 되다”，语气更亲切自然。结合规则遵循阴阳元音规律：词干末元音为“ㅏ, ㅗ”接“-아야 하다”；其他元音接“-어야 하다”；以“하다”结尾的动词变为“-해야 하다”。名词后则接“-(이)어야 하다”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 아야 하다 / 动词·形容词词干（其他元音） + 어야 하다 / 하다动词·形容词词干 + 해야 하다 / 名词 + (이)어야 하다",
+      "examples": [
+        {
+          "translation": "因为明天有考试，所以今晚必须学习。"
+        },
+        {
+          "translation": "我们这个周末必须打扫屋子。"
+        },
+        {
+          "translation": "既然你感冒了，就应该吃药了。"
+        },
+        {
+          "translation": "因为明天得早起，所以必须赶快入睡了。"
+        }
+      ]
+    },
+    "ko_어아도_23": {
+      "title": "아/어도（即使……也……／就算……也……）",
+      "shortExplanation": "连接词尾，表示让步或假设，即便前项条件成立，后项结果依然照常进行或不受影响，相当于“即使……也……”、“就算……也……”。",
+      "longExplanation": "“아/어도”是表示让步的连接词尾，用于连接两个分句，表示哪怕承认前项的事实或做出前项的假设，后项的事态依然成立或不受影响，相当于汉语的“即使……也……”、“就算……也……”。经常与副词“아무리（无论多么、哪怕怎样）”搭配使用以加强让步语气。词干末元音为“ㅏ, ㅗ”接“-아도”；其他元音接“-어도”；以“하다”结尾变为“-해도”。名词后通常接“-(이)라도”或“-(이)어도”。",
+      "formation": "动词·形容词词干（末元音为ㅏ、ㅗ） + 아도 / 动词·形容词词干（其他元音） + 어도 / 动词·形容词하다 + 해도 / 名词 + (이)라도 / (이)어도",
+      "examples": [
+        {
+          "translation": "即使下雨我也会继续走过去，因为那是走得最快的办法。"
+        },
+        {
+          "translation": "不管我怎么说累，都必须继续工作，因为我必须把这件工作做完。"
+        },
+        {
+          "translation": "哪怕是难题我也绝不放弃、继续尝试，因为我很喜欢挑战。"
+        },
+        {
+          "translation": "即使考试成绩不理想我也会更加努力，我相信失败是成功之母。"
+        }
+      ]
+    },
+    "ko_어아_24": {
+      "title": "아/어 버리다（……掉了／彻底……了：惋惜或彻底完成）",
+      "shortExplanation": "接在动词后的补助动词，强调动作彻底完成，常带有遗憾、惋惜、意外的心情，或表示卸下重担后的轻松释然。",
+      "longExplanation": "“아/어 버리다”是接在动词词干后的补助动词，用来强调某一动作已经彻底结束，没有留下任何余地。它通常伴随说话者强烈的主观情感，主要有两种情感色彩：一是表达遗憾、后悔、可惜或事情发生得出乎意料（相当于“不小心……了”、“……掉了”，如 놓쳐 버렸어요）；二是表达某件棘手或负担沉重的事情终于完成后内心感受到的轻松与释然（如 다 끝내 버렸어요）。词干末元音为“ㅏ, ㅗ”接“-아 버리다”；其他元音接“-어 버리다”；以“하다”结尾的动词变为“-해 버리다”。",
+      "formation": "动词词干（末元音为ㅏ、ㅗ） + 아 버리다 / 动词词干（其他元音） + 어 버리다 / 하다动词词干 + 해 버리다",
+      "examples": [
+        {
+          "translation": "我遗憾地错过了重要的出差，所以被社长训斥了一顿。"
+        },
+        {
+          "translation": "朋友把我的包弄坏了，里面的东西全洒了出来。"
+        },
+        {
+          "translation": "要是不踩刹车，车子就会撞上去，大家都可能会受伤。"
+        },
+        {
+          "translation": "我不由自主地听到了那番话，所以心情变得非常糟糕。"
+        }
+      ]
+    },
+    "ko_으면면_25": {
+      "title": "(으)면（如果……就……／当……时）",
+      "shortExplanation": "连接词尾，用于设定某种前提条件或假设情境，相当于“如果……就……”、“要是……”。",
+      "longExplanation": "“(으)면”是韩语中表示假设或条件最核心的连接词尾，相当于汉语的“如果……就……”、“要是……的话”。前句提出某种前提条件或假设，后句陈述在满足该条件时会出现的结果、计划或决定。此外，它还可以表示具有普遍规律性或习惯性的事实（相当于“一……就……”、“每当……时”）。结合规则：动词或形容词词干有收音（除ㄹ外）接“-으면”；无收音或收音为“ㄹ”时接“-면”。名词后接“-(이)면”。",
+      "formation": "动词·形容词词干（除ㄹ外的收音） + 으면 / 动词·形容词词干（无收音或ㄹ收音） + 면 / 名词 + (이)면",
+      "examples": [
+        {
+          "translation": "下雨的话就得带雨伞。"
+        },
+        {
+          "translation": "如果有时间的话，我想多读几本书。"
+        },
+        {
+          "translation": "如果看了电影，理解起来会更加容易。"
+        },
+        {
+          "translation": "如果天气好的话，我就出去散散步。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_는지_11": {
+      "title": "~는지 모르다（〜かわからない／〜かどうか知らない）",
+      "shortExplanation": "ある事実や状況について、話し手がよく分からないことや確信がないことを表します。「〜か分からない」「〜か知らない」に相当します。",
+      "longExplanation": "「~는지 모르다」は、ある事実や状況についてよく知らないことや確信が持てないことを表す文法です。日本語の「〜（なの）かわからない」「〜かどうか知らない」に相当します。現在形では動詞語幹に「-는지 모르다」、形容詞語幹に「-(으)ㄴ지 모르다」、名詞に「-(이)인지 모르다」を接続します。過去形では動詞・形容詞ともに「-았/었는지 모르다」、未来形や推測を表す場合は「-(으)ㄹ지 모르다」または「-(으)ㄹ 것인지 모르다」の形をとります。「언제（いつ）」「어디（どこ）」「누구（だれ）」「무엇（何）」などの疑問詞とともに用いられることも多いです。",
+      "formation": "動詞語幹 ＋ 는지 모르다 ／ 形容詞語幹 ＋ (으)ㄴ지 모르다 ／ 過去形：動詞・形容詞 ＋ 았/었는지 모르다 ／ 未来・推測：動詞・形容詞 ＋ (으)ㄹ지 모르다 ／ 名詞 ＋ (이)인지 모르다",
+      "examples": [
+        {
+          "translation": "彼が今日学校に来るかどうか分かりません。"
+        },
+        {
+          "translation": "彼女がどんな服を着るか分かりません。"
+        },
+        {
+          "translation": "彼がこの話を聞いたかどうか分かりません。"
+        },
+        {
+          "translation": "私たちの友達がここで幸せに過ごせるかどうか分かりません。"
+        }
+      ]
+    },
+    "ko_는지_12": {
+      "title": "~는지 알다（〜か知っている／〜かわかる）",
+      "shortExplanation": "ある事実や状況、情報について知っている・把握していることを表します。「〜か知っている」「〜かわかる」に相当します。",
+      "longExplanation": "「~는지 알다」は、ある事実や状況、情報について知っていることや把握していることを表す表現です。日本語の「〜（なの）か知っている」「〜かわかる」に相当します。現在形では動詞語幹に「-는지 알다」、形容詞語幹に「-(으)ㄴ지 알다」、名詞に「-(이)인지 알다」を接続します。過去形は「-았/었는지 알다」、未来・可能形は「-(으)ㄹ 수 있는지 알다」または「-(으)ㄹ지 알다」となります。疑問詞（언제, 어디, 누구, 어떻게など）を伴ったり、「-는지 알 수 없다（〜かわからない）」、「-는지 알아요?（〜か知っていますか）」などの形でも頻繁に用いられます。",
+      "formation": "動詞語幹 ＋ 는지 알다 ／ 形容詞語幹 ＋ (으)ㄴ지 알다 ／ 過去形：動詞・形容詞 ＋ 았/었는지 알다 ／ 可能・未来：動詞 ＋ (으)ㄹ 수 있는지 알다 ／ 名詞 ＋ (이)인지 알다",
+      "examples": [
+        {
+          "translation": "彼が私の言うことを理解しているのか分かりません。"
+        },
+        {
+          "translation": "彼女が決定を下したかどうか知りたいです。"
+        },
+        {
+          "translation": "私たちが来週会えるかどうか確認しなければなりません。"
+        },
+        {
+          "translation": "生徒たちが問題を解決できているか知るために、先生たちは常に確認しています。"
+        }
+      ]
+    },
+    "ko_마다_13": {
+      "title": "~마다（〜ごとに／〜毎に）",
+      "shortExplanation": "名詞の後ろに付いて、例外なくすべてに該当することや、規則的な周期・反復を表す助詞です。「〜ごとに」「〜毎に」に相当します。",
+      "longExplanation": "「~마다」は名詞の直後に付く助詞で、パッチムの有無に関わらずそのまま接続します。時間を表す名詞に付いて規則的な反復や周期を表す用法（例：날마다＝毎日、아침마다＝毎朝）と、ある集団に属する対象を一つ残らず指す用法（例：사람마다＝人それぞれ／人ごとに、나라마다＝国ごとに）があります。また、「-(으)ㄹ 때」と組み合わさった「-(으)ㄹ 때마다」の形では、「〜するたびに／〜する時はいつも」という意味になります。",
+      "formation": "名詞 ＋ 마다 ／ 動詞・形容詞語幹 ＋ (으)ㄹ 때마다",
+      "examples": [
+        {
+          "translation": "私は毎朝早く起きて運動をします。"
+        },
+        {
+          "translation": "旅行に行くたびに新しい人たちに出会えるので、とても興味深いです。"
+        },
+        {
+          "translation": "テストが終わるたびに少しずつ休息をとります。"
+        },
+        {
+          "translation": "1週間ごとに韓国語を勉強するために図書館へ行きます。"
+        }
+      ]
+    },
+    "ko_부터_14": {
+      "title": "~부터 ~까지（〜から〜まで）",
+      "shortExplanation": "時間、空間、順序などの範囲における起点（〜부터）と終点（〜까지）を表す表現です。「〜から〜まで」に相当します。",
+      "longExplanation": "「~부터 ~까지」は、起点（始まり）を表す助詞「부터」と、終点（終わり・限度）を表す助詞「까지」を組み合わせた表現で、日本語の「〜から〜まで」に相当します。主に時間（何時から何時まで、月曜日から金曜日まで）や順序・番号（1番から10番まで）の範囲を表す際によく使われます。空間・場所の移動について述べる場合は通常「~에서 ~까지」を用いますが、口語では「서울부터 부산까지」のように区間の始点を強調して「부터」が使われることもあります。",
+      "formation": "名詞（時間・場所・順序） ＋ 부터 ＋ 名詞（時間・場所・順序） ＋ 까지",
+      "examples": [
+        {
+          "translation": "私たちは月曜日から金曜日まで働きます。"
+        },
+        {
+          "translation": "お昼休みは午後12時から1時までです。"
+        },
+        {
+          "translation": "ソウルから釜山まで電車でどのくらいかかりますか。"
+        },
+        {
+          "translation": "私は韓国語を勉強し始めた時から今まで、大分上達しました。"
+        }
+      ]
+    },
+    "ko_아어여_15": {
+      "title": "아/어/여 보이다（〜そうに見える／〜に見える）",
+      "shortExplanation": "形容詞の語幹に接続し、話し手の視覚的な観察や印象から「〜そうに見える」「〜に見える」と推測・判断することを表します。",
+      "longExplanation": "「아/어/여 보이다」は主に形容詞の語幹に付き、話者が対象の外見や様子を見て感じた直感的な印象や推測を表す表現です。日本語の「〜そうに見える」「〜に見える」に相当します。客観的事実そのものではなく、目に見える様子からの主観的判断を表します。接続規則は陽母音（ㅏ, ㅗ）の語幹には「-아 보이다」（例：좋아 보이다）、陰母音の語幹には「-어 보이다」（例：맛있어 보이다）、そして「하다」形容詞は「-해 보이다」（例：행복해 보이다）となります。",
+      "formation": "形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아 보이다 ／ 形容詞語幹（その他陰母音） ＋ 어 보이다 ／ 하다形容詞語幹 ＋ 해 보이다",
+      "examples": [
+        {
+          "translation": "あの人は幸せそうに見えるので、他の人たちも気分が良くなるじゃないですか。"
+        },
+        {
+          "translation": "この料理はおいしそうに見えますが、実際には少し塩辛かったです。"
+        },
+        {
+          "translation": "その男性はいつも機嫌が悪そうに見えますが、何か問題でもあるのですか。"
+        },
+        {
+          "translation": "この服は写真で見た時は綺麗でしたが、実際に見るといまいちに見えます。"
+        }
+      ]
+    },
+    "ko_아어여_16": {
+      "title": "아/어/여 주다（〜してくれる／〜してあげる）",
+      "shortExplanation": "動詞の語幹に接続し、誰かのために親切や好意でその動作を行うこと（授受表現）を表します。「〜してあげる」「〜してくれる」に相当します。",
+      "longExplanation": "「아/어/여 주다」は動詞の語幹に接続する補助動詞で、他人の利益や親切のためにある動作を行うこと（授受）を表します。日本語の「〜してあげる」「〜してくれる」に相当します。動作の受け手が目上の人や敬意を払うべき相手の場合は、謙譲表現である「아/어/여 드리다（〜して差し上げる）」を用います。また、相手に依頼する際には「아/어/여 주세요（〜してください）」や「아/어/여 주시겠어요?（〜していただけますか）」という丁寧な依頼表現として非常に頻繁に使われます。陽母音語幹には「-아 주다」、陰母音語幹には「-어 주다」、「하다」動詞には「-해 주다」が付きます。",
+      "formation": "動詞語幹（陽母音 ㅏ, ㅗ） ＋ 아 주다 ／ 動詞語幹（その他陰母音） ＋ 어 주다 ／ 하다動詞語幹 ＋ 해 주다（敬語：아/어/여 드리다）",
+      "examples": [
+        {
+          "translation": "疲れているみたいだから、僕がその宿題をやってあげるよ。"
+        },
+        {
+          "translation": "心配しないでください、お父さんが私たちを守ってくれますから。"
+        },
+        {
+          "translation": "家に帰る途中、お父さんがタクシーを捕まえてくれました。"
+        },
+        {
+          "translation": "私は母に夕食を作ってあげました。"
+        }
+      ]
+    },
+    "ko_아어여야만_17": {
+      "title": "아/어/여야만 하다（〜しなければならない／どうしても〜すべきだ）",
+      "shortExplanation": "強い義務や必要性、またはある結果を得るための絶対的な前提条件を強調して表します。「必ず〜しなければならない」「〜してこそ」に相当します。",
+      "longExplanation": "「아/어/여야만 하다」は、義務や必要性を表す「아/어/여야 하다」に、限定を表す助詞「만（〜だけ）」が加わった強調表現です。他の選択肢はなく「必ず〜しなければならない」「絶対に〜すべきだ」という強い義務や切迫感を表します。また、接続語尾「아/어/여야만」の形では「〜してこそ初めて（〜できる）」という不可欠な必須条件を表します。陽母音語幹には「-아야만 하다」、陰母音語幹には「-어야만 하다」、「하다」動詞には「-해야만 하다」が接続します。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아야만 하다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어야만 하다 ／ 하다動詞・形容詞語幹 ＋ 해야만 하다",
+      "examples": [
+        {
+          "translation": "すべての生徒は試験の準備をしなければなりません。そうでなければ失敗してしまいます。"
+        },
+        {
+          "translation": "今すぐ出かけなければなりません。もし遅れたら飛行機に乗り遅れてしまいます。"
+        },
+        {
+          "translation": "あなたはこの仕事を終えてこそ家に帰ることができます。"
+        },
+        {
+          "translation": "私たちは毎朝ストレッチをしなければなりません。健康を維持するためです。"
+        }
+      ]
+    },
+    "ko_아어여도_18": {
+      "title": "아/어/여도 되다（〜してもいい／〜しても構わない）",
+      "shortExplanation": "動作の許可を求めたり、許可を与えたりする表現です。「〜してもいいですか」「〜しても構わない」に相当します。",
+      "longExplanation": "「아/어/여도 되다」は、譲歩を表す接続語尾「-아/어/여도（〜しても）」と「되다（よい、構わない）」が組み合わさった文法で、許可を求めたり与えたりする際に用いられます。疑問形（「-아/어/여도 돼요?」「-아/어/여도 될까요?」）では「〜してもいいですか？」「〜しても構いませんか？」という丁寧な許可伺いになり、平叙形では「〜してもいいです」「〜しても構いません」という許可を表します。禁止を表す反対の表現は「-아/어/여서는 안 되다（〜してはいけない）」です。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아도 되다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어도 되다 ／ 하다動詞・形容詞語幹 ＋ 해도 되다 ／ 名詞 ＋ (이)어도 되다",
+      "examples": [
+        {
+          "translation": "この席に座ってもいいですか。他の人が予約していない場合のみ可能です。"
+        },
+        {
+          "translation": "明日フォトショップを使ってもいいですか。私のプロジェクトに必要なのです。"
+        },
+        {
+          "translation": "大きな音で音楽を聴いてもいい場所はありますか。ロック音楽が好きなんです。"
+        },
+        {
+          "translation": "私は雨が降ってもサッカーをしていいんです。雨がとても好きですから。"
+        }
+      ]
+    },
+    "ko_아어여서는_19": {
+      "title": "아/어/여서는 안 되다（〜してはならない／〜してはいけない）",
+      "shortExplanation": "規則、道徳、常識などに照らし合わせて、ある行為を禁止することを表します。「〜してはならない」「〜してはいけない」に相当します。",
+      "longExplanation": "「아/어/여서는 안 되다」は、法律や規則、社会的道徳、常識などに基づいて、ある動作や行為を強く禁止する表現です。日本語の「〜してはならない」「〜してはいけません」に相当します。接続語尾「-아/어/여서」に対照・主題を表す助詞「는」が付き、否定の「안 되다（いけない）」が続く構造で、「そのように行動しては通用しない・許されない」というニュアンスを持ちます。標識や公的な規則、指導の場面などで多用されます。日常会話では「-아/어/여선 안 되다」と縮約されることもあります。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아서는 안 되다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어서는 안 되다 ／ 하다動詞・形容詞語幹 ＋ 해서는 안 되다",
+      "examples": [
+        {
+          "translation": "この標識を見ると、ここでタバコを吸ってはいけません。"
+        },
+        {
+          "translation": "私たちは健康をおろそかにしてはなりません。"
+        },
+        {
+          "translation": "この作業は精密に行わなければならないので、うわの空でやってはいけません。"
+        },
+        {
+          "translation": "リスニングテストのため、携帯電話をつけてはならないと強調しました。"
+        }
+      ]
+    },
+    "ko_아어서_20": {
+      "title": "아/어서（〜ので・〜て：理由・先行動作）",
+      "shortExplanation": "原因や理由（〜ので、〜て）を表すか、密接に関連する一連の動作の先行動作・順序（〜してから）を表す接続語尾です。",
+      "longExplanation": "「아/어서」は、韓国語で最も基本的かつ重要な接続語尾の一つです。主に2つの用法があります。(1) 原因・理由：前節が後節の理由や原因となることを表します（「〜ので」「〜て」）。注意点として、理由を表す際は前節に過去形語尾（았/었）をつけることができず、また後節に命令形（-(으)세요）や勧誘形（-(으)ㅂ시다）を用いることはできません。(2) 動作の先行順序：前節の動作を行ってから、その状態や結果のまま後節の動作を行うという時間的・密接な順序関係を表します。陽母音語幹には「-아서」、陰母音語幹には「-어서」、「하다」動詞・形容詞には「-해서」が接続します。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아서 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어서 ／ 하다動詞・形容詞語幹 ＋ 해서 ／ 名詞 ＋ (이)라서",
+      "examples": [
+        {
+          "translation": "今日は仕事（用事）が多くて学校に行けませんでした。"
+        },
+        {
+          "translation": "部屋が寒かったので、服をもっとたくさん着ました。"
+        },
+        {
+          "translation": "彼は運動をたくさんしているので、健康な体を維持しています。"
+        },
+        {
+          "translation": "背が低くてコートを買うのが難しかったです。"
+        }
+      ]
+    },
+    "ko_았었으면_21": {
+      "title": "았/었으면 좋겠다（〜たらいいな／〜ばいいのに：願望・希望）",
+      "shortExplanation": "話し手の願望や希望を表し、「〜たらいいな」「〜ばいいのに」に相当します。現実とは異なる状況を仮定して願うニュアンスも持ちます。",
+      "longExplanation": "「았/었으면 좋겠다」は、話し手の強い願いや希望を表す構文で、日本語の「〜（だっ）たらいいな」「〜（すれ）ばいいのに」に相当します。過去を表す先語末語尾「-았/었-」、仮定を表す接続語尾「-(으)면」、そして「좋겠다（良いだろう）」が合わさった形です。過去形が入ることで、現在の事実とは異なる仮想の状況を思い描くニュアンスや、実現を強く願う気持ちが込められます。陽母音語幹には「-았으면 좋겠다」、陰母音語幹には「-었으면 좋겠다」、「하다」用言には「-했으면 좋겠다」を接続します。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 았으면 좋겠다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 었으면 좋겠다 ／ 하다動詞・形容詞語幹 ＋ 했으면 좋겠다",
+      "examples": [
+        {
+          "translation": "時間がたくさんあればいいのに、そうすればもっと多くの本が読めたはずなのに。"
+        },
+        {
+          "translation": "明日雨が降ったらいいな、そうすればもっと涼しく休めると思います。"
+        },
+        {
+          "translation": "彼女が私の言うことをもっと理解してくれたらいいのに。そうすればお互いの意見をもっとうまく分かち合えるはずです。"
+        },
+        {
+          "translation": "今週末は天気が良ければいいですね、そうすればピクニックに行けると思います。"
+        }
+      ]
+    },
+    "ko_어아야_22": {
+      "title": "아/어야 하다（〜しなければならない／〜すべきだ）",
+      "shortExplanation": "義務や必要性、当為性を表し、「〜しなければならない」「〜すべきだ」に相当します。",
+      "longExplanation": "「아/어야 하다」は、義務や必要性、当然すべきことを表す韓国語の代表的な文法で、日本語の「〜しなければならない」「〜すべきだ」に相当します。日常会話では「하다」の代わりに「되다」を用いた「아/어야 되다」の形も頻繁に使われ、より口語的で自然な響きを持ちます。接続法は、陽母音語幹（ㅏ, ㅗ）には「-아야 하다」、陰母音語幹には「-어야 하다」、「하다」動詞には「-해야 하다」が接続します。名詞に付く場合は「-(이)어야 하다」となります。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아야 하다 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어야 하다 ／ 하다動詞・形容詞語幹 ＋ 해야 하다 ／ 名詞 ＋ (이)어야 하다",
+      "examples": [
+        {
+          "translation": "明日試験があるので、今晩勉強しなければなりません。"
+        },
+        {
+          "translation": "私たちは今週末、家を掃除しなければなりません。"
+        },
+        {
+          "translation": "風邪をひいたのだから、薬を飲まなければいけませんね。"
+        },
+        {
+          "translation": "早く起きなければならないので、早く寝なければいけません。"
+        }
+      ]
+    },
+    "ko_어아도_23": {
+      "title": "아/어도（〜ても／〜でも：譲歩）",
+      "shortExplanation": "前節の条件や仮定を認めつつも、後節の事態が影響を受けずに成立することを表す譲歩の接続語尾です。「〜ても」「〜でも」に相当します。",
+      "longExplanation": "「아/어도」は譲歩を表す接続語尾で、前節の事態を仮定または容認しても、後節の内容がそれによって左右されずそのまま成り立つことを示します。日本語の「〜ても」「〜でも」に相当します。程度を強調する副詞「아무리（いくら、どんなに）」と一緒によく用いられます（例：아무리 바빠도＝いくら忙しくても）。陽母音語幹には「-아도」、陰母音語幹には「-어도」、「하다」用言には「-해도」が接続し、名詞には「-(이)라도」または「-(이)어도」が接続します。",
+      "formation": "動詞・形容詞語幹（陽母音 ㅏ, ㅗ） ＋ 아도 ／ 動詞・形容詞語幹（その他陰母音） ＋ 어도 ／ 하다動詞・形容詞語幹 ＋ 해도 ／ 名詞 ＋ (이)라도 ／ (이)어도",
+      "examples": [
+        {
+          "translation": "たとえ雨が降っても私は歩き続けます。それが一番早い方法ですから。"
+        },
+        {
+          "translation": "疲れたといくら言っても私は仕事を続けなければなりません。この仕事を終わらせなければならないからです。"
+        },
+        {
+          "translation": "難しい問題であっても私は諦めずに挑戦し続けます。挑戦が好きですから。"
+        },
+        {
+          "translation": "試験結果が良くなくても私は奮起します。失敗は成功のもとだと考えています。"
+        }
+      ]
+    },
+    "ko_어아_24": {
+      "title": "아/어 버리다（〜してしまう：完了・遺憾・負担解消）",
+      "shortExplanation": "動詞の後ろに付いて動作が完全に終わったことを表し、残念・後悔の気持ちや、逆に負担がなくなってすっきりした気持ちを表します。「〜してしまう」に相当します。",
+      "longExplanation": "「아/어 버리다」は動詞の語幹に接続する補助動詞で、ある動作が完全に完了したことを表します。日本語の「〜してしまう」「〜してしまった」に相当します。この表現には話し手の主観的な心情が強く反映され、主に2つの感情を含みます。(1) 望まない結果に対する後悔、残念、惜しさ、不本意な気持ち（例：놓쳐 버렸어요＝乗り遅れてしまいました）；(2) 重荷や面倒な課題をすべて片付けた後のすっきりした解放感や安心感（例：다 끝내 버렸어요＝全部終わらせてしまいました）。陽母音語幹には「-아 버리다」、陰母音語幹には「-어 버리다」、「하다」動詞には「-해 버리다」が接続します。",
+      "formation": "動詞語幹（陽母音 ㅏ, ㅗ） ＋ 아 버리다 ／ 動詞語幹（その他陰母音） ＋ 어 버리다 ／ 하다動詞語幹 ＋ 해 버리다",
+      "examples": [
+        {
+          "translation": "大切な出張を逃してしまいました、それで社長にひどく怒られました。"
+        },
+        {
+          "translation": "友達が私のカバンを傷つけてしまい、中に入っていた物が全部こぼれてしまいました。"
+        },
+        {
+          "translation": "ブレーキを踏まないと車が衝突してしまい、みんな怪我をする可能性があります。"
+        },
+        {
+          "translation": "思わずその言葉を聞いてしまい、とても嫌な気分になりました。"
+        }
+      ]
+    },
+    "ko_으면면_25": {
+      "title": "(으)면（〜なら／〜ば／〜たら：条件・仮定）",
+      "shortExplanation": "前節である前提条件や仮定を設定し、後節でその帰結を述べる接続語尾です。「〜なら」「〜ば」「〜たら」に相当します。",
+      "longExplanation": "「(으)면」は、条件や仮定を表す韓国語の最も基本的で代表的な接続語尾です。日本語の「〜なら」「〜ば」「〜たら」に相当します。前節で不確定な状況を仮定したり、後節の動作・状態が成立するための前提条件を提示します。また、反復的な日常の習慣や自然な法則（「〜するといつも…」）を表すこともあります。接続規則は、動詞・形容詞の語幹末尾にパッチムがある場合（ㄹ以外）は「-으면」、パッチムがない場合または「ㄹ」パッチムの場合は「-면」を接続します。名詞には「-(이)면」が付きます。",
+      "formation": "動詞・形容詞語幹（ㄹ以外のパッチムあり） ＋ 으면 ／ 動詞・形容詞語幹（パッチムなしまたはㄹパッチム） ＋ 면 ／ 名詞 ＋ (이)면",
+      "examples": [
+        {
+          "translation": "雨が降ったら傘を持ってこなければなりません。"
+        },
+        {
+          "translation": "時間があれば本をもっと読んでみようと思います。"
+        },
+        {
+          "translation": "映画を見れば理解するのがもっと簡単になるでしょう。"
+        },
+        {
+          "translation": "天気が良ければ外に出て散歩します。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_는지_11": {
+      "title": "~는지 모르다 (불확실/의문 표현)",
+      "shortExplanation": "어떤 사실이나 상황에 대해 화자가 잘 알지 못하거나 확신이 없음을 나타냅니다.",
+      "longExplanation": "'~는지 모르다'는 어떤 일이나 사실, 상황에 대해 알지 못하거나 확신할 수 없음을 나타내는 표현입니다. 현재 시제에서 동사는 어간에 '-는지 모르다', 형용사는 '-(으)ㄴ지 모르다', 명사는 '-(이)인지 모르다'가 결합합니다. 과거 시제는 동사와 형용사 모두 '-았/었는지 모르다'를 사용하며, 미래나 추측의 상황에서는 '-(으)ㄹ지 모르다'나 '-(으)ㄹ 것인지 모르다'의 형태로 쓰입니다. '누구', '언제', '어디', '무엇', '어떻게' 등의 의문사와 함께 자주 쓰입니다.",
+      "formation": "동사 어간 + 는지 모르다 / 형용사 어간 + (으)ㄴ지 모르다 / 과거: 동사·형용사 + 았/었는지 모르다 / 미래·추측: 동사·형용사 + (으)ㄹ지 모르다 / 명사 + (이)인지 모르다",
+      "examples": [
+        {
+          "translation": "그가 오늘 학교에 올 것인지 모르겠어요."
+        },
+        {
+          "translation": "그녀가 어떤 옷을 입을지 모르겠어요."
+        },
+        {
+          "translation": "그가 이 이야기를 들었는지 모릅니다."
+        },
+        {
+          "translation": "우리 친구가 이곳에서 행복할지 모르겠어요."
+        }
+      ]
+    },
+    "ko_는지_12": {
+      "title": "~는지 알다 (인지/확인 표현)",
+      "shortExplanation": "어떤 사실이나 상황에 대해 알고 있거나 인식하고 있음을 나타냅니다.",
+      "longExplanation": "'~는지 알다'는 어떤 사실이나 상황, 정보에 대해 알고 있거나 이해하고 있음을 나타내는 문법입니다. 현재 시제에서 동사는 '-는지 알다', 형용사는 '-(으)ㄴ지 알다', 명사는 '-(이)인지 알다'와 결합합니다. 과거 시제는 '-았/었는지 알다', 미래나 가능을 나타낼 때는 '-(으)ㄹ 수 있는지 알다' 또는 '-(으)ㄹ지 알다'의 형태를 취합니다. 의문사와 결합하여 쓰이거나, '-는지 알 수 없다', '-는지 알아요?' 등의 형태로 자주 활용됩니다.",
+      "formation": "동사 어간 + 는지 알다 / 형용사 어간 + (으)ㄴ지 알다 / 과거: 동사·형용사 + 았/었는지 알다 / 가능·미래: 동사 + (으)ㄹ 수 있는지 알다 / 명사 + (이)인지 알다",
+      "examples": [
+        {
+          "translation": "그가 내 말을 이해하는지 알 수 없어요."
+        },
+        {
+          "translation": "그녀가 결정을 내렸는지 알고 싶어요."
+        },
+        {
+          "translation": "우리가 다음 주에 만날 수 있는지 알아야 해요."
+        },
+        {
+          "translation": "학생들이 문제를 해결하는지 알기 위해 선생님들이 항상 확인합니다."
+        }
+      ]
+    },
+    "ko_마다_13": {
+      "title": "~마다 (반복 및 총칭 보조사)",
+      "shortExplanation": "명사 뒤에 붙어 하나도 빠짐없이 모두 포함되거나 일정한 주기마다 반복됨을 나타내는 보조사입니다.",
+      "longExplanation": "'~마다'는 명사 뒤에 직접 결합하는 보조사로, 받침의 유무와 상관없이 '-마다'의 형태로 쓰입니다. 시간 명사에 붙어 일정한 주기나 규칙적인 반복을 나타내거나(예: 날마다, 주말마다), 어떤 무리에 속한 대상을 빠짐없이 낱낱이 가리킬 때(예: 사람마다, 나라마다) 사용됩니다. 또한 '-(으)ㄹ 때'와 결합한 '-(으)ㄹ 때마다'의 형태로 쓰이면 '어떤 일이 일어날 때마다 항상'이라는 뜻을 나타냅니다.",
+      "formation": "명사 + 마다 / 동사·형용사 어간 + (으)ㄹ 때마다",
+      "examples": [
+        {
+          "translation": "저는 매일 아침마다 일찍 일어나서 운동을 합니다."
+        },
+        {
+          "translation": "여행을 갈 때마다 새로운 사람들을 만나서 매우 흥미로워요."
+        },
+        {
+          "translation": "테스트가 끝날 때마다 휴식을 조금씩 취합니다."
+        },
+        {
+          "translation": "일주일마다 한국어를 공부하기 위해 도서관에 갑니다."
+        }
+      ]
+    },
+    "ko_부터_14": {
+      "title": "~부터 ~까지 (시작점과 끝점 조사)",
+      "shortExplanation": "시간, 공간, 순서 등의 범위에서 시작점(~부터)과 끝점(~까지)을 나타내는 조사 표현입니다.",
+      "longExplanation": "'~부터 ~까지'는 어떤 범위의 출발점이나 시작을 나타내는 조사 '부터'와 도달점이나 한계를 나타내는 조사 '까지'가 결합된 형태입니다. 주로 시간의 시작과 끝(몇 시부터 몇 시까지, 월요일부터 금요일까지)이나 순서의 범위(1번부터 10번까지)를 나타낼 때 사용됩니다. 공간이나 장소의 범위를 나타낼 때는 주로 '에서 ~까지'를 쓰지만, 구어에서는 시작 지점을 강조하며 '부터 ~까지'를 쓰기도 합니다.",
+      "formation": "명사(시간/장소/순서) + 부터 + 명사(시간/장소/순서) + 까지",
+      "examples": [
+        {
+          "translation": "우리는 월요일부터 금요일까지 일해요."
+        },
+        {
+          "translation": "점심시간은 오후 12시부터 1시까지예요."
+        },
+        {
+          "translation": "서울부터 부산까지 기차로 얼마나 걸리나요?"
+        },
+        {
+          "translation": "나는 한국어를 공부하기 시작했을 때부터 지금까지 많이 발전했어요."
+        }
+      ]
+    },
+    "ko_아어여_15": {
+      "title": "아/어/여 보이다 (시각적 추측 및 인상 표현)",
+      "shortExplanation": "형용사 어간 뒤에 붙어 겉모습이나 상태를 시각적으로 보고 느끼는 추측이나 인상을 나타냅니다.",
+      "longExplanation": "'아/어/여 보이다'는 주로 형용사 어간 뒤에 결합하여, 말하는 사람이 어떤 대상의 겉모습이나 상태를 보고 주관적으로 느끼는 인상이나 추측을 나타내는 문법입니다. 시각적인 판단을 바탕으로 하므로 실제 사실과 다를 수 있습니다. 어간의 끝 음절 모음이 'ㅏ, ㅗ'인 양성 모음일 때는 '-아 보이다'를 쓰고, 그 외의 음성 모음일 때는 '-어 보이다'를 쓰며, '하다'로 끝나는 형용사는 '-해 보이다'로 활용합니다.",
+      "formation": "형용사 어간(끝 모음 ㅏ, ㅗ) + 아 보이다 / 형용사 어간(그 외 모음) + 어 보이다 / 하다 형용사 어간 + 해 보이다",
+      "examples": [
+        {
+          "translation": "그 사람은 행복해 보여서 다른 사람들도 기분이 좋아지잖아요."
+        },
+        {
+          "translation": "이 음식은 맛있어 보이지만 실제로는 좀 짰어요."
+        },
+        {
+          "translation": "그 남자는 항상 기분이 나쁘게 보이는데 무슨 문제가 있나요?"
+        },
+        {
+          "translation": "이 옷은 사진에서 볼 땐 예뻤는데, 실제로 보니까 그저 그래 보여요."
+        }
+      ]
+    },
+    "ko_아어여_16": {
+      "title": "아/어/여 주다 (수혜 및 도움 보조용언)",
+      "shortExplanation": "동사 어간 뒤에 붙어 다른 사람을 위해 호의를 베풀거나 도움을 주는 행위를 함을 나타내는 보조동사입니다.",
+      "longExplanation": "'아/어/여 주다'는 동사 뒤에 결합하여 다른 사람을 위하여 어떤 행동을 베풂을 나타내는 보조용언입니다. 상대방이나 제3자에게 도움을 주는 상황에서 널리 쓰이며, 동작을 받는 대상이 웃어른이거나 높여야 할 대상인 경우에는 높임 표현인 '아/어/여 드리다'를 사용합니다. 또한 화자가 상대방에게 부탁이나 요청을 할 때 '-아/어/여 주세요'나 '-아/어/여 주시겠어요?'와 같이 공손하고 부드러운 청유의 형태로 자주 활용됩니다. 양성 모음에는 '-아 주다', 음성 모음에는 '-어 주다', '하다' 동사는 '-해 주다'로 결합합니다.",
+      "formation": "동사 어간(끝 모음 ㅏ, ㅗ) + 아 주다 / 동사 어간(그 외 모음) + 어 주다 / 하다 동사 어간 + 해 주다 (높임: 아/어/여 드리다)",
+      "examples": [
+        {
+          "translation": "피곤해서 그럼 내가 그 숙제를 해 줄게."
+        },
+        {
+          "translation": "걱정하지 마세요, 우리 아빠가 우리를 위해 보호해 줄 거예요."
+        },
+        {
+          "translation": "집에 돌아가는 길에 아빠가 택시를 잡아 주었어요."
+        },
+        {
+          "translation": "나는 어머니에게 저녁 식사를 만들어 주었어요."
+        }
+      ]
+    },
+    "ko_아어여야만_17": {
+      "title": "아/어/여야만 하다 (강한 의무 및 필수 조건)",
+      "shortExplanation": "어떤 행동을 반드시 해야 함을 강조하거나, 어떤 결과를 얻기 위한 유일하고 필수적인 조건을 나타냅니다.",
+      "longExplanation": "'아/어/여야만 하다'는 당위나 의무를 나타내는 '-아/어/여야 하다'에 유일성을 강조하는 보조사 '만'이 결합된 표현입니다. 다른 대안이 없으며 반드시 그 행동을 해야 함을 매우 강하게 나타냅니다. 또한 연결어미 형태인 '-아/어/여야만'은 뒤 절의 상황이 성립하기 위해 앞 절의 내용이 반드시 충족되어야 하는 필수 불가결한 유일 조건을 나타낼 때 쓰입니다. 양성 모음에는 '-아야만 하다', 음성 모음에는 '-어야만 하다', '하다' 동사는 '-해야만 하다'로 활용됩니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 아야만 하다 / 동사·형용사 어간(그 외 모음) + 어야만 하다 / 하다 동사·형용사 어간 + 해야만 하다",
+      "examples": [
+        {
+          "translation": "모든 학생들은 시험을 준비해야만 해요. 그렇지 않으면 실패할 것입니다."
+        },
+        {
+          "translation": "지금 당장 나가야만 해요. 만약 늦으면 비행기를 놓칠 것입니다."
+        },
+        {
+          "translation": "너는 이 일을 마무리해야만 집에 갈 수 있어요."
+        },
+        {
+          "translation": "우리는 매일 아침 스트레칭을 해야만 해요. 건강을 유지하기 위해서입니다."
+        }
+      ]
+    },
+    "ko_아어여도_18": {
+      "title": "아/어/여도 되다 (허락 및 용인 표현)",
+      "shortExplanation": "어떤 행동을 해도 괜찮음을 나타내어 허락을 구하거나 허락할 때 쓰는 표현입니다.",
+      "longExplanation": "'아/어/여도 되다'는 양보를 나타내는 연결어미 '-아/어/여도'에 '되다'가 결합된 형태로, 어떤 행위를 하는 것에 대한 허락이나 양해를 구하거나 이를 용인할 때 쓰입니다. 의문형('-아/어/여도 돼요?', '-아/어/여도 될까요?')으로 쓰이면 공손하게 상대방의 허락을 구하는 표현이 되며, 평서형으로 쓰이면 그 행동을 해도 무방함을 나타냅니다. 반대로 금지를 나타낼 때는 '-아/어/여서는 안 되다'를 씁니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 아도 되다 / 동사·형용사 어간(그 외 모음) + 어도 되다 / 하다 동사·형용사 어간 + 해도 되다 / 명사 + (이)어도 되다",
+      "examples": [
+        {
+          "translation": "저는 이 자리에 앉아도 되나요? 다른 사람이 예약하지 않았을 경우에만 가능해요."
+        },
+        {
+          "translation": "내일 포토샵을 사용해도 돼요? 제 프로젝트에 필요하거든요."
+        },
+        {
+          "translation": "크게 음악을 들어도 되는 곳이 있나요? 록 음악을 좋아해서요."
+        },
+        {
+          "translation": "나는 비가 와도 축구를 해도 돼요. 비를 너무 좋아하거든요."
+        }
+      ]
+    },
+    "ko_아어여서는_19": {
+      "title": "아/어/여서는 안 되다 (금지 및 규제 표현)",
+      "shortExplanation": "규칙이나 사회적 규범, 상식에 비추어 볼 때 어떤 행동을 해서는 안 됨을 나타내는 금지 표현입니다.",
+      "longExplanation": "'아/어/여서는 안 되다'는 법률, 규칙, 도덕, 일반적 상식 등에 근거하여 어떤 행위를 엄격히 금지하거나 제한할 때 사용하는 표현입니다. '-아/어/여서'에 강조의 보조사 '는'이 붙고 '안 되다'가 이어져 '그렇게 행동하면 안 된다'는 강한 금지의 의미를 나타냅니다. 공공장소의 안내문, 규정, 훈계의 상황에서 자주 쓰이며, 일상 구어에서는 '-아/어/여선 안 되다'로 줄여 쓰기도 합니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 아서는 안 되다 / 동사·형용사 어간(그 외 모음) + 어서는 안 되다 / 하다 동사·형용사 어간 + 해서는 안 되다",
+      "examples": [
+        {
+          "translation": "이 표지판을 보면, 여기에서 담배를 피워서는 안 돼요."
+        },
+        {
+          "translation": "우리는 건강을 소홀히 해서는 안 됩니다."
+        },
+        {
+          "translation": "이 작업은 정밀하게 해야 해서, 정신없이 해서는 안 돼요."
+        },
+        {
+          "translation": "듣기 테스트 때문에 핸드폰을 켜서는 안 된다고 강조했습니다."
+        }
+      ]
+    },
+    "ko_아어서_20": {
+      "title": "아/어서 (원인·이유 및 선후 관계 연결어미)",
+      "shortExplanation": "앞 절이 뒤 절의 원인이나 이유가 됨을 나타내거나, 시간적 순서에 따라 밀접하게 연결되는 선행 동작을 나타내는 연결어미입니다.",
+      "longExplanation": "'아/어서'는 앞 절과 뒤 절을 긴밀하게 연결하는 대표적인 연결어미로, 크게 두 가지 의미로 사용됩니다. 첫째, 원인이나 이유를 나타내어 앞 절의 사건이나 상태가 뒤 절의 원인이 됨을 나타냅니다. 단, 원인을 나타낼 때 앞 절에는 과거 시제 선어말어미 '-았/었-'을 결합할 수 없으며, 뒤 절에는 명령문이나 청유문이 올 수 없습니다. 둘째, 시간의 선후 관계를 나타내어 앞의 행동을 먼저 하고 그 상태를 유지한 채 뒤의 행동을 이어감을 나타냅니다. 양성 모음에는 '-아서', 음성 모음에는 '-어서', '하다' 용언은 '-해서'로 활용합니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 아서 / 동사·형용사 어간(그 외 모음) + 어서 / 하다 용언 어간 + 해서 / 명사 + (이)라서",
+      "examples": [
+        {
+          "translation": "오늘은 일이 많아서 학교에 가지 못했어요."
+        },
+        {
+          "translation": "방이 추워서 옷을 더 많이 입었어요."
+        },
+        {
+          "translation": "그는 운동을 많이 해서 건강한 몸을 유지하고 있어요."
+        },
+        {
+          "translation": "키가 작아서 외투를 사기 어려웠어요."
+        }
+      ]
+    },
+    "ko_았었으면_21": {
+      "title": "았/었으면 좋겠다 (소망 및 희망 표현)",
+      "shortExplanation": "화자의 간절한 소망이나 기대, 또는 현실과 다른 상황에 대한 바람을 나타내는 표현입니다.",
+      "longExplanation": "'았/었으면 좋겠다'는 어떤 일이 이루어지기를 바라는 화자의 소망이나 기대를 나타내는 표현입니다. 과거 시제 선어말어미 '-았/었-', 가정의 연결어미 '-(으)면', 추측의 보조형용사 '좋겠다'가 결합된 형태입니다. 이때 쓰인 과거 시제는 실제 과거를 가리키는 것이 아니라, 현실과 반대되는 상황을 가정하거나 간절한 바람을 더욱 부각시키는 기능을 합니다. 양성 모음에는 '-았으면 좋겠다', 음성 모음에는 '-었으면 좋겠다', '하다' 용언은 '-했으면 좋겠다'로 활용됩니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 았으면 좋겠다 / 동사·형용사 어간(그 외 모음) + 었으면 좋겠다 / 하다 용언 어간 + 했으면 좋겠다",
+      "examples": [
+        {
+          "translation": "시간이 많았으면 좋겠어요, 그럼 더 많은 책을 읽을 수 있었을 텐데."
+        },
+        {
+          "translation": "내일 비가 왔으면 좋겠어요, 그래야 우리는 더 시원하게 쉴 수 있을 것 같아요."
+        },
+        {
+          "translation": "그녀가 내 말을 더 이해했으면 좋겠다. 그러면 서로의 의견을 더 잘 나눌 수 있을 거예요."
+        },
+        {
+          "translation": "이번 주말에 날씨가 좋았으면 좋겠어요, 그럼 피크닉 갈 수 있을 것 같아요."
+        }
+      ]
+    },
+    "ko_어아야_22": {
+      "title": "아/어야 하다 (당위 및 의무 보조용언)",
+      "shortExplanation": "마땅히 그래야 함을 나타내거나 의무적으로 어떤 행위를 해야 함을 나타내는 보조용언입니다.",
+      "longExplanation": "'아/어야 하다'는 어떤 행동을 마땅히 해야 하거나 의무적으로 실행해야 함을 나타내는 보조용언 구성입니다. 일상 구어에서는 '하다' 대신 '되다'를 쓴 '-아/어야 되다'의 형태로도 매우 자주 사용되며 더 부드러운 느낌을 줍니다. 어간 끝 음절 모음이 'ㅏ, ㅗ'이면 '-아야 하다', 그 외의 모음이면 '-어야 하다', '하다' 동사는 '-해야 하다'로 결합합니다. 명사 뒤에는 '-(이)어야 하다'가 결합합니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 아야 하다 / 동사·형용사 어간(그 외 모음) + 어야 하다 / 하다 동사·형용사 어간 + 해야 하다 / 명사 + (이)어야 하다",
+      "examples": [
+        {
+          "translation": "내일 시험이 있으니까 오늘 밤에 공부해야 합니다."
+        },
+        {
+          "translation": "우리는 이번 주말에 집을 청소해야 해요."
+        },
+        {
+          "translation": "네가 감기에 걸렸으니까 약을 먹어야 하겠어요."
+        },
+        {
+          "translation": "일찍 일어나야 해서 얼른 잠에 들어야 해요."
+        }
+      ]
+    },
+    "ko_어아도_23": {
+      "title": "아/어도 (가정 및 양보 연결어미)",
+      "shortExplanation": "앞 절의 상황을 인정하거나 가정하더라도 뒤 절의 결과나 행동에 영향을 미치지 않음을 나타내는 양보의 연결어미입니다.",
+      "longExplanation": "'아/어도'는 앞 절의 사실을 인정하거나 어떤 상황을 가정하더라도 뒤 절의 사태가 영향을 받지 않고 그대로 실현됨을 나타내는 양보의 연결어미입니다. 어떤 어려움이나 반대 상황에도 굴하지 않음을 나타낼 때 쓰이며, '아무리'와 같은 부사와 호응하여 양보의 뜻을 더욱 강조하기도 합니다. 양성 모음에는 '-아도', 음성 모음에는 '-어도', '하다' 용언은 '-해도'가 결합하며, 명사 뒤에는 '-(이)라도'나 '-(이)어도'의 형태로 결합합니다.",
+      "formation": "동사·형용사 어간(끝 모음 ㅏ, ㅗ) + 아도 / 동사·형용사 어간(그 외 모음) + 어도 / 하다 용언 어간 + 해도 / 명사 + (이)라도 / (이)어도",
+      "examples": [
+        {
+          "translation": "비가 오더라도 저는 계속 걸어갈 거예요. 그게 제일 빠른 방법이거든요."
+        },
+        {
+          "translation": "피곤하다고 아무리 말해도 저는 계속 일해야 해요. 이 일을 끝내야 하거든요."
+        },
+        {
+          "translation": "어려운 문제라도 저는 포기하지 않고 계속 시도할 거예요. 저는 도전을 좋아하거든요."
+        },
+        {
+          "translation": "시험 결과가 좋지 않아도 저는 분발하겠어요. 실패는 성공의 어머니라고 생각해요."
+        }
+      ]
+    },
+    "ko_어아_24": {
+      "title": "아/어 버리다 (동작의 완료 및 심리적 감정 보조용언)",
+      "shortExplanation": "동작이 완전히 끝났음을 나타내며, 그 결과에 대해 아쉬움이나 섭섭함, 후회, 또는 홀가분하고 시원한 감정을 드러내는 보조동사입니다.",
+      "longExplanation": "'아/어 버리다'는 동사 뒤에 붙어 그 동작이 완전히 끝났음을 나타내는 보조동사입니다. 동작의 완료와 함께 화자의 심리적 태도가 반영되는데, 주로 두 가지 뉘앙스로 쓰입니다. 첫째, 의도하지 않았거나 원치 않는 결과가 발생하여 안타까움, 아쉬움, 후회의 감정이 남는 경우(예: 기차를 놓쳐 버렸다, 물건을 잃어버렸다)입니다. 둘째, 부담스러운 일이나 골칫거리를 완전히 해결하여 후련하고 홀가분한 감정이 들 때(예: 숙제를 끝내 버렸다)입니다. 양성 모음에는 '-아 버리다', 음성 모음에는 '-어 버리다', '하다' 동사는 '-해 버리다'로 결합합니다.",
+      "formation": "동사 어간(끝 모음 ㅏ, ㅗ) + 아 버리다 / 동사 어간(그 외 모음) + 어 버리다 / 하다 동사 어간 + 해 버리다",
+      "examples": [
+        {
+          "translation": "제가 중요한 출장을 놓쳐 버렸어요, 그래서 사장님께 혼이 났어요."
+        },
+        {
+          "translation": "친구가 제 가방을 다쳐 버렸어요, 그래서 안에 있던 물건들이 다 쏟아졌어요."
+        },
+        {
+          "translation": "브레이크를 밟지 않으면 차가 충돌해 버려서 모두 다칠 수도 있어요."
+        },
+        {
+          "translation": "저도 모르게 그 말을 들어 버렸어요, 그래서 기분이 아주 안 좋아졌어요."
+        }
+      ]
+    },
+    "ko_으면면_25": {
+      "title": "(으)면 (조건 및 가정 연결어미)",
+      "shortExplanation": "어떤 일에 대한 조건이나 가정을 나타내는 연결어미입니다.",
+      "longExplanation": "'(으)면'은 뒤 절의 사태가 성립하기 위한 조건이나 가정을 나타내는 가장 대표적인 연결어미입니다. 어떤 일이 일어날 가능성이 있는 가상의 상황을 제시하거나, 일정한 조건이 충족되면 반드시 일어나는 일반적인 사실이나 습관적인 행동을 나타낼 때도 씁니다. 동사나 형용사 어간 끝에 'ㄹ'을 제외한 받침이 있으면 '-으면'을 쓰고, 받침이 없거나 'ㄹ' 받침으로 끝나면 '-면'을 씁니다. 명사 뒤에는 '-(이)면'이 결합합니다.",
+      "formation": "동사·형용사 어간(ㄹ 제외 받침) + 으면 / 동사·형용사 어간(받침 없음, ㄹ 받침) + 면 / 명사 + (이)면",
+      "examples": [
+        {
+          "translation": "비가 오면 우산을 가져와야 해요."
+        },
+        {
+          "translation": "시간이 있으면 책을 좀 더 읽어 보겠어요."
+        },
+        {
+          "translation": "영화를 보면 이해가 더 쉬울 거예요."
+        },
+        {
+          "translation": "날씨가 좋으면 나가서 산책하겠습니다."
+        }
+      ]
+    }
+  }
+}

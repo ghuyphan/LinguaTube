@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_하자_148": {
+      "title": "~하자 / ~자마자 (Ngay khi, vừa mới... thì)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị hành động ở vế sau diễn ra ngay tức thì sau khi hành động ở vế trước vừa hoàn thành ('ngay khi...', 'vừa mới... thì').",
+      "longExplanation": "'~자' hoặc dạng nhấn mạnh '~자마자' là vĩ tố liên kết dùng để nối hai mệnh đề, thể hiện tính nối tiếp tức thời: ngay thời điểm hành động ở vế thứ nhất vừa chấm dứt thì hành động ở vế thứ hai lập tức xảy ra. Cấu trúc này không kết hợp với vĩ tố chỉ thời thì (như '-았/었-') ở vế trước mà thời thì được thể hiện ở vế sau.",
+      "formation": "Thân động từ + -자마자 (hoặc -자)",
+      "examples": [
+        {
+          "translation": "Ngay khi tôi vừa mở cửa, chú cún con đã chạy vào."
+        },
+        {
+          "translation": "Vừa mới qua đường xong là tôi bắt taxi đi ngay."
+        },
+        {
+          "translation": "Trời vừa mưa một cái là tôi che ô lên ngay."
+        },
+        {
+          "translation": "Tôi vừa gấp sách lại là cơn buồn ngủ ập đến ngay."
+        }
+      ]
+    },
+    "ko_할_149": {
+      "title": "~(으)ㄹ 것이다 (Sẽ, chắc là sẽ)",
+      "shortExplanation": "Cấu trúc biểu thị dự định, kế hoạch tương lai của người nói, hoặc phỏng đoán chắc chắn về một sự việc sắp xảy ra ('sẽ...', 'chắc là sẽ...').",
+      "longExplanation": "'~(으)ㄹ 것이다' là cấu trúc thì tương lai kết hợp giữa vĩ tố định ngữ thời tương lai '-(으)ㄹ', danh từ phụ thuộc '것' (điều, việc) và trợ từ vị ngữ '이다'. Cấu trúc này có hai chức năng chính: (1) Diễn đạt ý chí, kế hoạch hoặc lời hứa hẹn của chủ ngữ ngôi thứ nhất ('tôi sẽ làm...'); (2) Diễn đạt sự phỏng đoán, dự đoán khách quan của người nói về thời tiết, tình hình hoặc hành động của người khác ('chắc chắn sẽ...'). Trong văn nói thân mật thường rút gọn thành '-(으)ㄹ 거예요'.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 것이다 (kết thúc bằng nguyên âm dùng -ㄹ 것이다, kết thúc bằng phụ âm dùng -을 것이다)",
+      "examples": [
+        {
+          "translation": "Ngày mai trời sẽ mưa, vì vậy chắc là phải mang theo ô."
+        },
+        {
+          "translation": "Tôi sẽ nuôi một chú cún, do đó sẽ cần phải mua đồ dùng cho thú cưng."
+        },
+        {
+          "translation": "Tuần sau tôi sẽ đi xem hòa nhạc ở Hàn Quốc, vì thế tôi sẽ đặt vé trước."
+        },
+        {
+          "translation": "Năm sau tôi sẽ học lên cao học, nên tôi sẽ lập kế hoạch chi tiết."
+        }
+      ]
+    },
+    "ko_할_150": {
+      "title": "~(으)ㄹ 때마다 (Mỗi khi, mỗi lần... lại)",
+      "shortExplanation": "Biểu thị một hành động hoặc trạng thái luôn luôn lặp đi lặp lại vào mỗi lần một tình huống nhất định xảy ra ('mỗi khi...', 'cứ mỗi lần... lại').",
+      "longExplanation": "'~(으)ㄹ 때마다' là sự kết hợp giữa vĩ tố định ngữ '-(으)ㄹ', danh từ chỉ thời gian '때' (khi, lúc) và trợ từ bổ trợ '마다' (mỗi, từng). Cấu trúc này dùng để diễn đạt tính quy luật hoặc sự lặp lại định kỳ: cứ hễ hành động ở vế trước diễn ra thì hành động, trạng thái hoặc cảm xúc ở vế sau lại tất yếu xảy ra theo.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 때마다 (kết thúc bằng nguyên âm dùng -ㄹ 때마다, kết thúc bằng phụ âm dùng -을 때마다); Danh từ + 때마다",
+      "examples": [
+        {
+          "translation": "Mỗi khi ăn mì, anh ấy lại nhớ đến cô ấy, vì cô ấy từng rất thích ăn mì."
+        },
+        {
+          "translation": "Mỗi lần tôi về nhà, chú cún cưng đều chạy ra đón làm tôi cảm thấy vô cùng hạnh phúc."
+        },
+        {
+          "translation": "Mỗi lần nhìn thấy anh ấy, trái tim cô ấy lại bắt đầu đập rộn ràng."
+        },
+        {
+          "translation": "Mỗi khi tôi ghé thăm, bà đều làm món ăn vặt đặc biệt cho tôi nên tôi luôn háo hức mong chờ."
+        }
+      ]
+    },
+    "ko_할_151": {
+      "title": "~(으)ㄹ 만하다 (Đáng để, bõ công làm gì)",
+      "shortExplanation": "Biểu thị một hành động có đủ giá trị, ý nghĩa để thực hiện ('đáng để làm...', 'rất đáng thử'), hoặc một mức độ chấp nhận được ('cũng tạm được').",
+      "longExplanation": "'~(으)ㄹ 만하다' kết hợp giữa vĩ tố định ngữ '-(으)ㄹ' và tính từ phụ thuộc '만하다'. Cấu trúc này dùng để diễn tả rằng một sự việc hoặc đối tượng nào đó rất xứng đáng để bỏ công sức, thời gian trải nghiệm (như 'đáng xem', 'đáng mua', 'đáng đọc'). Ngoài ra, cấu trúc này còn có thể dùng để diễn đạt mức độ vừa đủ hoặc tình trạng vẫn trong ngưỡng có thể chấp nhận được ('cũng chịu đựng được', 'cũng tạm ổn').",
+      "formation": "Thân động từ + -(으)ㄹ 만하다 (kết thúc bằng nguyên âm dùng -ㄹ 만하다, kết thúc bằng phụ âm dùng -을 만하다)",
+      "examples": [
+        {
+          "translation": "Xem bộ phim này không hề lãng phí thời gian mà khá giá trị, đúng là một bộ phim đáng xem."
+        },
+        {
+          "translation": "Cuốn sách đó nội dung phong phú nên rất đáng đọc."
+        },
+        {
+          "translation": "Căn hộ đó rất đáng để sống thử; giao thông thuận tiện lại có đầy đủ tiện nghi."
+        },
+        {
+          "translation": "Chiếc máy ảnh này hơi đắt một chút nhưng chất lượng tốt nên rất đáng mua."
+        }
+      ]
+    },
+    "ko_할_152": {
+      "title": "~(으)ㄹ 수 있다 (Có thể làm gì)",
+      "shortExplanation": "Biểu thị năng lực, kỹ năng của chủ ngữ hoặc tính khả thi của một tình huống ('có thể làm được').",
+      "longExplanation": "'~(으)ㄹ 수 있다' là cấu trúc chỉ khả năng cơ bản và phổ biến nhất trong tiếng Hàn, được tạo thành từ vĩ tố định ngữ '-(으)ㄹ', danh từ phụ thuộc chỉ phương cách/khả năng '수' và tính từ tồn tại '있다' (có). Cấu trúc này dùng để biểu thị: (1) Năng lực hoặc kỹ năng cá nhân của ai đó có thể làm được việc gì; (2) Điều kiện hoặc hoàn cảnh cho phép một sự việc có khả năng xảy ra.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 수 있다 (kết thúc bằng nguyên âm dùng -ㄹ 수 있다, kết thúc bằng phụ âm dùng -을 수 있다)",
+      "examples": [
+        {
+          "translation": "Tôi có thể nói một chút tiếng Hàn, vì thế mà tôi ngày càng quan tâm nhiều đến Hàn Quốc."
+        },
+        {
+          "translation": "Bạn có thể làm theo cách bạn nghĩ. Tôi tin tưởng bạn vì bạn là người hiểu rõ công việc đó nhất."
+        },
+        {
+          "translation": "Đây là việc mà bất kỳ ai cũng có thể làm được một cách dễ dàng nên bạn đừng quá lo lắng."
+        },
+        {
+          "translation": "Cuối tuần nếu có thời gian thì tôi có thể sửa xe ô tô giúp bạn."
+        }
+      ]
+    },
+    "ko_할_153": {
+      "title": "~(으)ㄹ 수 없다 (Không thể làm gì)",
+      "shortExplanation": "Biểu thị sự bất khả năng, thiếu năng lực hoặc hoàn cảnh không cho phép thực hiện một hành động ('không thể làm được').",
+      "longExplanation": "'~(으)ㄹ 수 없다' là hình thức phủ định khả năng, kết hợp giữa vĩ tố định ngữ '-(으)ㄹ', danh từ phụ thuộc '수' và tính từ '없다' (không có). Cấu trúc này dùng để diễn đạt: (1) Bản thân chủ ngữ không đủ khả năng hay trình độ để làm việc gì; (2) Hoàn cảnh khách quan, quy định hoặc lý do bất khả kháng ngăn cản không cho hành động diễn ra ('không thể nào làm được').",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 수 없다 (kết thúc bằng nguyên âm dùng -ㄹ 수 없다, kết thúc bằng phụ âm dùng -을 수 없다)",
+      "examples": [
+        {
+          "translation": "Bây giờ tôi bận quá nên không thể đi ăn cùng các bạn được."
+        },
+        {
+          "translation": "Cô ấy không biết bơi giỏi nên không thể xuống nước một mình được."
+        },
+        {
+          "translation": "Tôi không có năng khiếu nghệ thuật nên không thể vẽ tranh đẹp được."
+        },
+        {
+          "translation": "Bộ phim này đáng sợ quá nên tôi không thể xem lại lần nữa được."
+        }
+      ]
+    },
+    "ko_할_154": {
+      "title": "~(으)ㄹ 줄 알다 (Biết cách làm gì, cứ ngỡ là...)",
+      "shortExplanation": "Biểu thị việc có kỹ năng, hiểu biết cách thức để thực hiện một hành động ('biết làm...'). Trong ngữ cảnh khác, còn có thể mang nghĩa tưởng rằng một việc gì đó xảy ra.",
+      "longExplanation": "'~(으)ㄹ 줄 알다' kết hợp giữa vĩ tố định ngữ '-(으)ㄹ', danh từ phụ thuộc '줄' (phương pháp, cách thức) và động từ '알다' (biết). Cấu trúc này dùng chủ yếu để chỉ việc ai đó đã học tập hoặc có kỹ năng thực tế để thực hiện một công việc (như 'biết chơi đàn', 'biết bơi', 'biết nấu ăn'). Ngược lại, nếu không biết cách làm sẽ dùng '-(으)ㄹ 줄 모르다'. (Lưu ý: khi dùng với thì quá khứ, cấu trúc này còn có nghĩa là 'tưởng rằng...').",
+      "formation": "Thân động từ + -(으)ㄹ 줄 알다 (kết thúc bằng nguyên âm dùng -ㄹ 줄 알다, kết thúc bằng phụ âm dùng -을 줄 알다)",
+      "examples": [
+        {
+          "translation": "Tôi biết chơi đàn piano, nhưng tôi không phải là chuyên gia đâu."
+        },
+        {
+          "translation": "Con chúng tôi bây giờ đã biết tự mình xỏ giày rồi."
+        },
+        {
+          "translation": "Cheolsu lúc nào cũng tỏ ra rất rành rọt cách học những điều mới mẻ."
+        },
+        {
+          "translation": "Chị gái tôi biết nấu ăn rất ngon nên lúc nào cũng làm cho tôi những món ngon miệng."
+        }
+      ]
+    },
+    "ko_할지라도_155": {
+      "title": "~(으)ㄹ지라도 (Cho dù, dẫu cho... thì)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị sự nhượng bộ giả định mang tính trang trọng, dù có thừa nhận giả định ở vế trước thì vế sau vẫn diễn ra mà không bị lay chuyển ('cho dù... đi chăng nữa thì').",
+      "longExplanation": "'~(으)ㄹ지라도' là vĩ tố liên kết mang tính văn viết, trang trọng, kết hợp giữa vĩ tố '-(으)ㄹ지' và trợ từ '라도'. Cấu trúc này dùng để diễn đạt sự nhượng bộ mạnh mẽ: giả định một tình huống cực đoan, khó khăn hoặc bất lợi ở vế trước, nhưng khẳng định rằng sự việc hoặc quyết tâm ở vế sau vẫn không hề thay đổi. Đồng nghĩa với '-(으)ㄹ망정' hoặc mang sắc thái trang trọng hơn '-아/어도'.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ지라도 (kết thúc bằng nguyên âm dùng -ㄹ지라도, kết thúc bằng phụ âm dùng -을지라도)",
+      "examples": [
+        {
+          "translation": "Cho dù có nảy sinh bất kỳ vấn đề nào đi chăng nữa, tôi cũng sẽ luôn dốc hết sức để hoàn thành công việc."
+        },
+        {
+          "translation": "Cho dù ngày mai trời có mưa, tôi vẫn sẽ ra ngoài."
+        },
+        {
+          "translation": "Dẫu cho bạn từng trải qua chuyện như thế, tôi cũng không thể đồng tình thông cảm."
+        },
+        {
+          "translation": "Dù chi phí có đắt đỏ đến đâu, chúng tôi vẫn sử dụng nguyên liệu cao cấp để đảm bảo chất lượng tốt nhất."
+        }
+      ]
+    },
+    "ko_든지_156": {
+      "title": "~든지 ~든지 (Dù là... hay là..., bất kể là...)",
+      "shortExplanation": "Vĩ tố liên kết liệt kê từ hai lựa chọn trở lên, biểu thị rằng dù chọn vế nào thì kết quả hay hành động ở vế sau cũng đều như nhau ('dù là... hay là...').",
+      "longExplanation": "'~든지 ~든지' là vĩ tố liên kết dùng để liệt kê các hành động, trạng thái hoặc đối tượng có thể lựa chọn. Cấu trúc này nhấn mạnh rằng dù lựa chọn phương án nào trong số các phương án được nêu thì sự việc, quyết định hoặc thái độ ở mệnh đề sau vẫn không bị ảnh hưởng và không có sự phân biệt nào. Trong khẩu ngữ thường được nói rút gọn thành '~든 ~든'.",
+      "formation": "Thân động từ / Thân tính từ + -든지 + Thân động từ / Thân tính từ + -든지 (hoặc Danh từ + -(이)든지)",
+      "examples": [
+        {
+          "translation": "Dù cô ấy đến vào tối nay hay sáng mai thì chúng ta cũng đều phải chờ cô ấy."
+        },
+        {
+          "translation": "Dù là giải quyết ngay hay hoãn lại việc này thì quyết định vẫn là ở bạn."
+        },
+        {
+          "translation": "Dù chúng ta thắng hay thua thì việc dốc hết sức mình mới là điều quan trọng nhất."
+        },
+        {
+          "translation": "Dù anh ấy có tham dự hay không tham dự thì cuộc họp vẫn sẽ diễn ra theo đúng lịch trình."
+        }
+      ]
+    },
+    "ko_할_157": {
+      "title": "~(으)ㄹ 텐데 (Chắc là... nên; Đáng lẽ ra thì...)",
+      "shortExplanation": "Biểu thị sự phỏng đoán, dự đoán có căn cứ của người nói về một tình huống tương lai để làm bối cảnh, lý do cho vế sau ('chắc là sẽ... nên'); hoặc diễn tả sự tiếc nuối ('đáng lẽ thì...').",
+      "longExplanation": "'~(으)ㄹ 텐데' là sự kết hợp giữa '-(으)ㄹ 터' (ý định, phỏng đoán) và vĩ tố liên kết '-인데' (đưa ra bối cảnh). Cấu trúc này dùng khi người nói đưa ra một suy đoán, tiên liệu có cơ sở về một sự việc sắp xảy ra, từ đó tạo tiền đề, lời gợi ý hoặc đưa ra bối cảnh cho hành động ở mệnh đề tiếp theo. Nếu đứng ở cuối câu hoặc đi kèm điều kiện giả định quá khứ, cấu trúc này còn diễn tả sự tiếc nuối, lo lắng hoặc kỳ vọng chưa thành.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 텐데 (kết thúc bằng nguyên âm dùng -ㄹ 텐데, kết thúc bằng phụ âm dùng -을 텐데)",
+      "examples": [
+        {
+          "translation": "Ngày mai chắc là trời sẽ mưa đấy, nên tốt nhất là mang theo ô đi."
+        },
+        {
+          "translation": "Nếu xuất phát bây giờ thì chắc sẽ kịp giờ, chứ nếu đến quá muộn thì không được đâu."
+        },
+        {
+          "translation": "Thành tích của cậu ấy rất tốt nên chắc là sẽ nhận được học bổng thôi."
+        },
+        {
+          "translation": "Nếu mà bạn bè giúp đỡ thì chắc đã giải quyết xong vấn đề rồi, chứ một mình thì vất vả lắm."
+        }
+      ]
+    },
+    "ko_함께_158": {
+      "title": "~(와/과) 함께 (Cùng với...)",
+      "shortExplanation": "Phó từ kết hợp với trợ từ đồng hành, biểu thị việc làm một hành động nào đó cùng với một đối tượng khác ('cùng với...').",
+      "longExplanation": "'~와/과 함께' là cấu trúc biểu thị hành động diễn ra đồng hành, trong đó '함께' là phó từ mang nghĩa 'cùng nhau' đi kèm trợ từ liên kết '-와/과' (hoặc '-(이)랑', '-하고'). Cấu trúc này dùng để chỉ một người hoặc đối tượng cùng tham gia thực hiện một hoạt động nào đó. Ngoài ra còn dùng với ý nghĩa 'đồng thời cùng với sự xuất hiện của...'.",
+      "formation": "Danh từ + 와/과 함께 (danh từ kết thúc bằng nguyên âm đi với 와 함께, kết thúc bằng phụ âm đi với 과 함께)",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi đã đi xem phim cùng với các bạn. Bộ phim thực sự rất thú vị và tất cả chúng tôi đều rất vui."
+        },
+        {
+          "translation": "Tôi đã cùng mẹ đi chợ và mua được rất nhiều đồ."
+        },
+        {
+          "translation": "Tôi đã đi du lịch cùng với bạn thân, và ở đó chúng tôi đã chụp được những bức ảnh tuyệt đẹp."
+        },
+        {
+          "translation": "Tôi đã chơi ở công viên cùng với em trai. Chúng tôi đã được nhìn thấy những con vật rất kỳ lạ."
+        }
+      ]
+    },
+    "ko_해_159": {
+      "title": "~아/어 보다 (Thử làm gì, từng làm gì)",
+      "shortExplanation": "Động từ bổ trợ biểu thị việc thử làm một hành động nào đó để trải nghiệm, hoặc biểu thị kinh nghiệm đã từng làm trong quá khứ ('thử làm...', 'từng làm...').",
+      "longExplanation": "'~아/어 보다' là sự kết hợp giữa vĩ tố liên kết '-아/어' và động từ bổ trợ '보다' (nhìn, thấy, thử). Cấu trúc này có hai ý nghĩa lớn: (1) Thử nghiệm: thực hiện một hành vi nào đó lần đầu tiên để xem kết quả ra sao ('thử làm xem sao'); (2) Kinh nghiệm: khi chia ở thì quá khứ '~아/어 봤다', cấu trúc biểu thị người nói đã từng có trải nghiệm làm việc đó trong đời ('đã từng...').",
+      "formation": "Thân động từ + -아/어 보다 (gốc chứa ㅏ, ㅗ dùng -아 보다; gốc khác dùng -어 보다; 하다 chuyển thành 해 보다)",
+      "examples": [
+        {
+          "translation": "Tôi định thử thảo luận bằng tiếng Hàn một lần xem sao, nhưng vì khó nên cần phải luyện tập thêm."
+        },
+        {
+          "translation": "Nhiều người bảo tôi thử nấu món ăn Hàn một lần xem, nên hôm nay tôi đã thử nấu canh kim chi."
+        },
+        {
+          "translation": "Tôi đã định thử dùng phần mềm mới, nhưng vì quá phức tạp nên đành bỏ cuộc."
+        },
+        {
+          "translation": "Dù có tuổi đi chăng nữa tôi vẫn thích thử trải nghiệm những điều mới lạ, vì vậy tôi thường xuyên dự định đi du lịch."
+        }
+      ]
+    },
+    "ko_해_160": {
+      "title": "~아/어 주다 (Làm cho ai đó, giúp ai đó việc gì)",
+      "shortExplanation": "Động từ bổ trợ biểu thị hành động được thực hiện vì lợi ích của người khác ('làm giúp cho...', 'làm cho...').",
+      "longExplanation": "'~아/어 주다' là sự kết hợp giữa vĩ tố liên kết '-아/어' và động từ bổ trợ '주다' (cho, tặng). Cấu trúc này dùng để diễn đạt việc người nói hoặc chủ ngữ thực hiện một hành động nào đó nhằm mang lại lợi ích, sự giúp đỡ hoặc ân huệ cho đối phương hay người thứ ba. Dạng kính ngữ khi làm việc gì đó cho người trên là '~아/어 드리다'.",
+      "formation": "Thân động từ + -아/어 주다 (kính ngữ: -아/어 드리다; gốc chứa ㅏ, ㅗ dùng -아 주다; gốc khác dùng -어 주다; 하다 chuyển thành 해 주다)",
+      "examples": [
+        {
+          "translation": "Vì mẹ bị ốm nên tôi đã nấu bữa tối cho mẹ."
+        },
+        {
+          "translation": "Bạn tôi đã giúp tôi ôn thi nên tôi đã nói lời cảm ơn bạn ấy."
+        },
+        {
+          "translation": "Thầy giáo đã giải thích rất chi tiết về câu hỏi của tôi nên tôi đã hiểu rất rõ."
+        },
+        {
+          "translation": "Em tôi đã bảo rằng sẽ giúp tôi dọn dẹp phòng ốc."
+        }
+      ]
+    },
+    "ko_해야겠다_161": {
+      "title": "~아/어야겠다 (Chắc phải làm, nhất định phải làm)",
+      "shortExplanation": "Biểu thị ý chí kiên quyết, quyết tâm hoặc sự nhận thức rõ ràng của người nói về việc cần thiết phải thực hiện một hành động ('chắc phải...', 'phải làm mới được').",
+      "longExplanation": "'~아/어야겠다' là sự kết hợp giữa cấu trúc điều kiện bắt buộc '-아/어야 하다' (phải làm) và vĩ tố chỉ ý chí, phỏng đoán '-겠-'. Cấu trúc này dùng khi người nói tự nhận thấy tính cấp thiết của một việc nào đó và tự nhủ hoặc tuyên bố quyết tâm của chính mình rằng 'mình chắc chắn phải làm điều này' để giải quyết tình huống.",
+      "formation": "Thân động từ + -아/어야겠다 (gốc chứa ㅏ, ㅗ dùng -아야겠다; gốc khác dùng -어야겠다; 하다 chuyển thành 해야겠다)",
+      "examples": [
+        {
+          "translation": "Nếu bạn cứ tiếp tục không chịu giải quyết công việc đó thì tôi chắc phải làm điều gì đó thôi."
+        },
+        {
+          "translation": "Để không lặp lại sai lầm như thế này nữa thì tôi nhất định phải luyện tập nhiều hơn."
+        },
+        {
+          "translation": "Chúng ta phải nỗ lực nhiều hơn nữa để cải thiện việc giao tiếp với các thành viên trong đội."
+        },
+        {
+          "translation": "Để thi đỗ kỳ thi lần này, tôi chắc chắn phải học tập chăm chỉ hơn nữa."
+        }
+      ]
+    },
+    "ko_해서는_162": {
+      "title": "~아/어서는 안 되다 (Không được phép làm gì, cấm làm)",
+      "shortExplanation": "Biểu thị sự nghiêm cấm, không được phép thực hiện một hành động nào đó vì trái với quy tắc, đạo lý hoặc quy định ('không được phép làm...', 'chớ có làm...').",
+      "longExplanation": "'~아/어서는 안 되다' là cấu trúc cấm đoán mang tính trang trọng và chuẩn mực, kết hợp giữa vĩ tố liên kết '-아/어서', trợ từ nhấn mạnh '-는', phó từ phủ định '안' và động từ '되다' (được). Cấu trúc này dùng để cấm đoán một hành vi hoặc cảnh báo nghiêm khắc rằng nếu làm điều đó thì sẽ không được chấp nhận về mặt luật pháp, quy tắc xã hội, đạo đức hoặc tạo ra hậu quả nghiêm trọng.",
+      "formation": "Thân động từ + -아/어서는 안 되다 (gốc chứa ㅏ, ㅗ dùng -아서는 안 되다; gốc khác dùng -어서는 안 되다; 하다 chuyển thành 해서는 안 되다)",
+      "examples": [
+        {
+          "translation": "Không được sao chép tài liệu đó. Đó là bí mật kinh doanh của công ty."
+        },
+        {
+          "translation": "Trong hoàn cảnh khó khăn chớ có nói dối. Điều đó có thể phá vỡ lòng tin."
+        },
+        {
+          "translation": "Không được gian lận trong kỳ thi. Việc đó sẽ hủy hoại điểm số của bạn."
+        },
+        {
+          "translation": "Không được phản bội bạn bè. Điều đó sẽ phá hủy một mối quan hệ quý giá."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_하자_148": {
+      "title": "~하자 / ~자마자（一……就……、刚……就……）",
+      "shortExplanation": "连接词尾，表示前一分句的动作刚刚完成，后一分句的动作便紧接着立即发生（“一……就……”、“刚……就……”）。",
+      "longExplanation": "“~자”或强调形式“~자마자”是表示前后两个动作紧密相连的连接词尾。说明前项动作一旦结束，后项动作便毫无间隔、紧接着发生。前项分句通常不能附加过去时制词尾“-았/었-”，整句话的时态由后项句末词尾体现。口语中更常用“-자마자”来强烈突出动作的瞬时性。",
+      "formation": "动词词干 + -자마자（或 -자）",
+      "examples": [
+        {
+          "translation": "我刚一把门打开，小狗就跑了进来。"
+        },
+        {
+          "translation": "刚过完马路，我就立刻坐上了出租车。"
+        },
+        {
+          "translation": "天刚一下雨，我就撑起了雨伞。"
+        },
+        {
+          "translation": "我刚合上书本，睡意就涌了上来。"
+        }
+      ]
+    },
+    "ko_할_149": {
+      "title": "~(으)ㄹ 것이다（将要、打算、会）",
+      "shortExplanation": "表示说话者对未来的计划、意志，或者对将来情况的推测与判断（“将要……”、“打算……”、“会……”）。",
+      "longExplanation": "“~(으)ㄹ 것이다”由表示未来时态的定语词尾“-(으)ㄹ”、依存名词“것（事物）”以及体词谓词形助词“이다”组合而成。主要用于两种语境：（1）当主语为第一人称时，表示说话人对未来的明确打算、意志或决心（“我打算……”、“我将要……”）；（2）当主语为第三人称或描写客观事实（如天气）时，表示说话者具有把握的未来推测（“大概会……”、“肯定会……”）。在口语中通常缩略为“-(으)ㄹ 거예요/겁니다”。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ 것이다（开音节接 -ㄹ 것이다，闭音节接 -을 것이다）",
+      "examples": [
+        {
+          "translation": "明天会下雨，所以得带上雨伞。"
+        },
+        {
+          "translation": "我打算养一只小狗，所以得买一些宠物用品。"
+        },
+        {
+          "translation": "下周我打算去韩国看演唱会，所以得提前预订门票。"
+        },
+        {
+          "translation": "明年我打算升读研究生，因此要制定一份详尽的计划。"
+        }
+      ]
+    },
+    "ko_할_150": {
+      "title": "~(으)ㄹ 때마다（每当……的时候、每次……都）",
+      "shortExplanation": "表示某种动作或情况每发生一次，后项的情况就必然重复出现一次（“每当……的时候”、“每次……都”）。",
+      "longExplanation": "“~(으)ㄹ 때마다”由定语词尾“-(으)ㄹ”、表示时间的名词“때（时候）”以及表示“每、各个”的添意助词“마다”组合而成。用于强调前后情况的规律性与周期性重复，即只要前项事件一出现，后项的动作、心理反应或状态便必定随之发生。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ 때마다（开音节接 -ㄹ 때마다，闭音节接 -을 때마다）；名词 + 때마다",
+      "examples": [
+        {
+          "translation": "他每次吃面条的时候都会想起她，因为她曾经特别喜欢吃面条。"
+        },
+        {
+          "translation": "我每次回到家，小狗都会跑来迎接我，让我感到特别幸福。"
+        },
+        {
+          "translation": "每当她看到他的时候，心跳就会不由自主地加速跳动。"
+        },
+        {
+          "translation": "每次我去看望奶奶，奶奶都会为我做特别的零食点心，所以我总是满心期待。"
+        }
+      ]
+    },
+    "ko_할_151": {
+      "title": "~(으)ㄹ 만하다（值得……、还可以）",
+      "shortExplanation": "表示某事具有足够的价值或意义，值得一做（“值得……”、“很值得一试”），或处于尚可接受的程度。",
+      "longExplanation": "“~(으)ㄹ 만하다”由定语词尾“-(으)ㄹ”与辅佐形容词“만하다”结合而成。常接在动词词干后，用来评价某个事物或行为具有充分的价值或推荐意义（如“值得一读”、“值得一看”、“值得购买”）。在某些语境下，它也可以表示事物虽然并非完美，但仍在可以忍受或接受的合理范围内（“还可以”、“过得去”）。",
+      "formation": "动词词干 + -(으)ㄹ 만하다（开音节接 -ㄹ 만하다，闭音节接 -을 만하다）",
+      "examples": [
+        {
+          "translation": "看这部电影绝不是浪费时间，反而很有价值，因为确实是一部值得一看的电影。"
+        },
+        {
+          "translation": "那本书内容很充实，非常值得一读。"
+        },
+        {
+          "translation": "那套公寓挺值得住一住的，交通便利而且配套设施也很完善。"
+        },
+        {
+          "translation": "这台相机虽然价格偏贵，但质量过硬，很值得购买。"
+        }
+      ]
+    },
+    "ko_할_152": {
+      "title": "~(으)ㄹ 수 있다（能、可以、会）",
+      "shortExplanation": "表示主语具备进行某动作的能力，或者客观条件允许某事实现（“能……”、“可以……”、“能够……”）。",
+      "longExplanation": "“~(으)ㄹ 수 있다”由定语词尾“-(으)ㄹ”、表示办法或可能性的依存名词“수”以及存在词“있다（有）”组合而成。韩语中表达“能力”或“可能性”的最核心语法。既可以用来表示某人具备某种技能或本领（如“会说韩语”），也可以用来表示在客观条件或外在环境下某事具有可行性（“可以做到”）。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ 수 있다（开音节接 -ㄹ 수 있다，闭音节接 -을 수 있다）",
+      "examples": [
+        {
+          "translation": "我会说一点点韩语，因此对韩国越来越感兴趣了。"
+        },
+        {
+          "translation": "你可以按照自己的想法去做。因为你对那项工作最了解，所以我完全信任你。"
+        },
+        {
+          "translation": "这是任何人都能轻松完成的事情，所以请不要太担心。"
+        },
+        {
+          "translation": "周末要是有空的话，我可以帮你修理汽车。"
+        }
+      ]
+    },
+    "ko_할_153": {
+      "title": "~(으)ㄹ 수 없다（不能、无法、不会）",
+      "shortExplanation": "表示主语缺乏能力，或者因客观条件、客观阻碍而无法进行某动作（“不能……”、“无法……”）。",
+      "longExplanation": "“~(으)ㄹ 수 없다”由定语词尾“-(으)ㄹ”、依存名词“수”以及否定存在词“없다（没有）”组合而成，是“~(으)ㄹ 수 있다”的否定形式。用于表达主语由于缺乏相应的能力或身体条件而无法完成某事，或者受到外部环境、规章制度等不可抗力因素的限制导致某事绝无可能实现（“不能……”、“没有办法……”）。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ 수 없다（开音节接 -ㄹ 수 없다，闭音节接 -을 수 없다）",
+      "examples": [
+        {
+          "translation": "现在太忙了，所以没法和朋友们一起吃饭。"
+        },
+        {
+          "translation": "她不擅长游泳，所以不能独自下水。"
+        },
+        {
+          "translation": "我缺乏艺术细胞，所以没法画好画。"
+        },
+        {
+          "translation": "这部电影太恐怖了，我再也无法看第二遍了。"
+        }
+      ]
+    },
+    "ko_할_154": {
+      "title": "~(으)ㄹ 줄 알다（会做、懂得怎样做、以为……）",
+      "shortExplanation": "表示掌握了进行某项动作的技能或方法（“会做……”、“懂得怎么……”）；在特定语境下也可表示“以为……”。",
+      "longExplanation": "“~(으)ㄹ 줄 알다”由定语词尾“-(으)ㄹ”、表示方法或道义的依存名词“줄”以及动词“알다（知道）”组合而成。主要用于表达通过后天的学习或经验，掌握了完成某项活动的具体技能或方法（如“会弹琴”、“会游泳”），其否定形式为“-(으)ㄹ 줄 모르다（不会做……）”。在另一种语境下（尤其是带有主观猜测时），该句型也可表达原以为某事属实（“原以为……”）。",
+      "formation": "动词词干 + -(으)ㄹ 줄 알다（开音节接 -ㄹ 줄 알다，闭音节接 -을 줄 알다）",
+      "examples": [
+        {
+          "translation": "我会弹钢琴，但并不是专业水准。"
+        },
+        {
+          "translation": "我们的孩子现在已经懂得自己穿鞋了。"
+        },
+        {
+          "translation": "哲秀似乎总是很懂得如何去吸收学习新知识。"
+        },
+        {
+          "translation": "姐姐很会做菜，所以总是给我做美味的佳肴。"
+        }
+      ]
+    },
+    "ko_할지라도_155": {
+      "title": "~(으)ㄹ지라도（即使……也、哪怕……也）",
+      "shortExplanation": "表示强烈的假设性让步，即使承认前项的极端情况，后项的决心、事实或结果也不会动摇（“哪怕……也……”、“即便……也……”）。",
+      "longExplanation": "“~(으)ㄹ지라도”是由连接词尾“-(으)ㄹ지”与表示让步的助词“라도”结合而成的书面语让步表达。常用于假定某种极端、困难或相反的条件，强调无论前项情况多么不利或难以预料，后项既定的意志、客观事实或应对态度都绝不改变。其语气比一般的“-아/어도”更为郑重、强烈。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ지라도（开音节接 -ㄹ지라도，闭音节接 -을지라도）",
+      "examples": [
+        {
+          "translation": "哪怕发生任何问题，我都一定会全力以赴把工作做完。"
+        },
+        {
+          "translation": "哪怕明天下雨，我也一定要出门。"
+        },
+        {
+          "translation": "即便你经历过那样的事，我也无法同情你。"
+        },
+        {
+          "translation": "哪怕成本再高，为了确保卓越的品质，我们也会使用昂贵的原材料。"
+        }
+      ]
+    },
+    "ko_든지_156": {
+      "title": "~든지 ~든지（无论……还是……、不管……还是……）",
+      "shortExplanation": "连接词尾，列举两种或两种以上的可能性，表示无论选择哪一种，后项的结果或事实都没有分别（“不管……还是……”、“无论……还是……”）。",
+      "longExplanation": "“~든지 ~든지”是表示无条件选择的连接词尾。用于并列列举两个相对立或相关的动作、状态，强调无论前项的情况出现哪一种，后项的决定、处理方式或事态发展都保持不变，不受任何影响。口语中常简略为“~든 ~든”。",
+      "formation": "动词词干 / 形容词词干 + -든지 + 动词词干 / 形容词词干 + -든지（或 名词 + -(이)든지）",
+      "examples": [
+        {
+          "translation": "不管她是今晚到达还是明早到达，我们都必须等她。"
+        },
+        {
+          "translation": "无论你是去解决这件事还是拖延这件事，决定权都在你手里。"
+        },
+        {
+          "translation": "不论我们是赢是输，全力以赴才是最重要的。"
+        },
+        {
+          "translation": "不管他出席与否，会议都将按既定日程照常进行。"
+        }
+      ]
+    },
+    "ko_할_157": {
+      "title": "~(으)ㄹ 텐데（应该会……、可能会……却/因而）",
+      "shortExplanation": "表示说话人基于某种依据推测未来的情况或状态，并以此作为后句的背景、提示或建议（“应该会……，所以……”；“按说会……，却……”）。",
+      "longExplanation": "“~(으)ㄹ 텐데”由表示推测或意志的“-(으)ㄹ 터”与提示背景的连接词尾“-(이)ㄴ데”结合而成。说话者依据当前已知的信息，对未来的情况做出强烈的推测与预想，并将该推测作为后项分句提出建议、劝告或说明行动的背景理由。若配合反事实假设（如“-았/었더라면”）或者置于句尾，则常带有遗憾、惋惜或担忧的语气。",
+      "formation": "动词词干 / 形容词词干 + -(으)ㄹ 텐데（开音节接 -ㄹ 텐데，闭音节接 -을 텐데）",
+      "examples": [
+        {
+          "translation": "明天多半会下雨，最好带上一把雨伞。"
+        },
+        {
+          "translation": "如果现在出发的话应该能赶上时间，可要是到得太晚就不行了。"
+        },
+        {
+          "translation": "他的成绩那么好，应该能拿到奖学金才对。"
+        },
+        {
+          "translation": "要是朋友当时帮了忙的话，本来应该能解决问题的，可一个人实在太吃力了。"
+        }
+      ]
+    },
+    "ko_함께_158": {
+      "title": "~(와/과) 함께（与……一起、同……一同）",
+      "shortExplanation": "表示与某人或某个对象共同参与并完成某项行动（“与……一起”、“同……一同”）。",
+      "longExplanation": "“~와/과 함께”由表示共同伴随的格助词“-와/과”与副词“함께（一起）”组合而成。主要用于接在表示人或动物的名词之后，明确指出与该对象作为同伴共同进行某种动作或活动。口语中常可替换为“-하고 함께”或“-(이)랑 함께”。此外，也可用于抽象事物，表示“随着……一道”。",
+      "formation": "名词 + 와/과 함께（开音节接 와 함께，闭音节接 과 함께）",
+      "examples": [
+        {
+          "translation": "今天我和朋友们一起看了电影，电影非常精彩，大家都很开心。"
+        },
+        {
+          "translation": "我和母亲一起去了菜市场，买回了好多东西。"
+        },
+        {
+          "translation": "我和朋友一起去旅行，在当地拍下了非常棒的照片。"
+        },
+        {
+          "translation": "我和弟弟在公园里玩耍，见到了许多新奇有趣的动物。"
+        }
+      ]
+    },
+    "ko_해_159": {
+      "title": "~아/어 보다（试着做、做做看、尝试）",
+      "shortExplanation": "辅助动词结构，表示尝试进行某种动作，或表示曾经有过某种经历（“试着……”、“尝试……”、“……过”）。",
+      "longExplanation": "“~아/어 보다”由连接词尾“-아/어”与辅助动词“보다（看、尝试）”组合而成。主要有两个核心用法：（1）表示为了体验或验证结果而亲自去“尝试做某事”（如“试着吃吃看”、“试穿一下”）；（2）当使用过去时形态“~아/어 봤다/보았습니다”时，表示过去曾经有过某种人生阅历或经历（相当于汉语的“……过”）。",
+      "formation": "动词词干 + -아/어 보다（阳性元音 ㅏ, ㅗ 接 -아 보다；其余元音接 -어 보다；하다 变为 해 보다）",
+      "examples": [
+        {
+          "translation": "我想尝试用韩语进行一次讨论，但是觉得挺难，还需要多多练习。"
+        },
+        {
+          "translation": "好多人都劝我尝试做一次韩国料理，所以今天我试着煮了泡菜汤。"
+        },
+        {
+          "translation": "我本来打算试着用一下那款新软件，但因为太复杂就放弃了。"
+        },
+        {
+          "translation": "哪怕上了年纪，我也依然喜欢去尝试新的体验，因此我打算经常去旅行看看。"
+        }
+      ]
+    },
+    "ko_해_160": {
+      "title": "~아/어 주다（给……做、帮……做）",
+      "shortExplanation": "辅助动词结构，表示为了他人或为对方的利益而执行某项动作（“给……做”、“帮……做……”）。",
+      "longExplanation": "“~아/어 주다”由连接词尾“-아/어”与辅助动词“주다（给）”组合而成。用于表示行为主体为了使对方或第三者受益，而提供帮助或施惠（“给某人做……”、“帮某人做……”）。如果动作的接受对象是长辈或需要尊敬的人，则应使用其尊敬形态“~아/어 드리다”。",
+      "formation": "动词词干 + -아/어 주다（敬语为 -아/어 드리다；阳性元音接 -아 주다，阴性元音接 -어 주다，하다 变为 해 주다）",
+      "examples": [
+        {
+          "translation": "因为母亲身体不适，所以我为她做了一顿晚饭。"
+        },
+        {
+          "translation": "朋友帮我复习备考，我向他表达了感谢。"
+        },
+        {
+          "translation": "老师对我的疑问进行了详细的解答，使我完全理解了。"
+        },
+        {
+          "translation": "弟弟说会帮我一起打扫房间。"
+        }
+      ]
+    },
+    "ko_해야겠다_161": {
+      "title": "~아/어야겠다（得……了、该……了、一定要……）",
+      "shortExplanation": "表示说话人下定决心或意识到事情的紧迫性，认为自己必须采取行动（“得……了”、“该……了”、“一定要……”）。",
+      "longExplanation": "“~아/어야겠다”由表示必要条件的词尾“-아/어야”结合表示意志或推测的先语末词尾“-겠-”以及终结词尾“-다”组合而成。用于说话人根据当前局势或自身处境，明确下定决断或对自己提出要求，表达“我得行动了”、“我必须得做某事了”的强烈决心与意识。",
+      "formation": "动词词干 + -아/어야겠다（阳性元音接 -아야겠다，阴性元音接 -어야겠다，하다 变为 해야겠다）",
+      "examples": [
+        {
+          "translation": "要是你一直不去着手解决那件事，那我必须得有所行动了。"
+        },
+        {
+          "translation": "为了不再重蹈覆辙，我必须要更加努力地加倍练习。"
+        },
+        {
+          "translation": "为了改善与团队成员之间的沟通交流，我们得多下功夫努力才行了。"
+        },
+        {
+          "translation": "为了通过这次考试，我得更加发奋努力用功读书了。"
+        }
+      ]
+    },
+    "ko_해서는_162": {
+      "title": "~아/어서는 안 되다（不得……、不能……、严禁……）",
+      "shortExplanation": "表示明确的禁止或严肃的告诫，指某种行为在道德、规章或法理上绝不被允许（“不得……”、“绝不能……”）。",
+      "longExplanation": "“~아/어서는 안 되다”由连接词尾“-아/어서”、表示强调的助词“-는”、否定副词“안”以及动词“되다（行、可以）”组合而成。用于宣布法规禁令、行为准则或发出极其严厉的警告，强调如果做出前项动作，将导致严重的不良后果或违背伦理法规，因此绝不可行（“不能……”、“不许……”）。",
+      "formation": "动词词干 + -아/어서는 안 되다（阳性元音接 -아서는 안 되다，阴性元音接 -어서는 안 되다，하다 变为 해서는 안 되다）",
+      "examples": [
+        {
+          "translation": "绝不能复印那份文件，那是企业的机密信息。"
+        },
+        {
+          "translation": "在困境中绝不能说谎，那会破坏彼此的信任。"
+        },
+        {
+          "translation": "在考试中绝对不可作弊，那会毁了你的成绩。"
+        },
+        {
+          "translation": "绝不能背叛朋友，那会破坏珍贵的人际关系。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_하자_148": {
+      "title": "~하자 / ~자마자（〜するやいなや、〜するとすぐ）",
+      "shortExplanation": "前節の動作が完了した直後に、後節の動作が間髪を入れず起こることを表す接続語尾です（「〜するやいなや」「〜するとすぐ」）。",
+      "longExplanation": "「~자」または強調形の「~자마자」は、先行する動作が終わると同時に、後続の動作や出来事が直ちに発生することを示す接続表現です。日本語の「〜するやいなや」「〜するとすぐに」に相当します。前節には過去形語尾（-았/었-）を付けず、時制は文末で表現されます。口語ではより即時性を強調する「-자마자」が非常に頻繁に用いられます。",
+      "formation": "動詞語幹 + -자마자（または -자）",
+      "examples": [
+        {
+          "translation": "ドアを開けるやいなや、子犬が入ってきました。"
+        },
+        {
+          "translation": "道を渡ってすぐ、タクシーに乗りました。"
+        },
+        {
+          "translation": "雨が降るやいなや、傘を差しました。"
+        },
+        {
+          "translation": "本を閉じるやいなや、眠気が襲ってきました。"
+        }
+      ]
+    },
+    "ko_할_149": {
+      "title": "~(으)ㄹ 것이다（〜するつもりだ、〜だろう）",
+      "shortExplanation": "話し手の未来に対する意志や計画、または未来の出来事に対する確信的な推測を表します（「〜するつもりだ」「〜だろう」）。",
+      "longExplanation": "「~(으)ㄹ 것이다」は、未来を表す連体形語尾「-(으)ㄹ」、依存名詞「것（こと・もの）」、指定詞「이다」が結びついた表現です。主語が一人称の場合は未来の強い意志や予定・計画を表し（「〜するつもりだ」「〜する予定だ」）、三人称や客観的状況に対しては話者の確信に近い推測・予測を表します（「〜するだろう」「〜に違いない」）。会話では「-(으)ㄹ 거예요」や「-(으)ㄹ 겁니다」の形で頻繁に使われます。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 것이다（母音語幹には -ㄹ 것이다、子音語幹には -을 것이다）",
+      "examples": [
+        {
+          "translation": "明日は雨が降るだろう。だから傘を持っていくべきだろう。"
+        },
+        {
+          "translation": "子犬を飼うつもりだ。だから子犬用のグッズを買わなければならないだろう。"
+        },
+        {
+          "translation": "来週、韓国でコンサートに行くつもりだ。だからチケットを予約する予定だ。"
+        },
+        {
+          "translation": "来年大学院に進学するつもりだ。だから詳細な計画を立てる予定だ。"
+        }
+      ]
+    },
+    "ko_할_150": {
+      "title": "~(으)ㄹ 때마다（〜するたびに、〜する時はいつも）",
+      "shortExplanation": "ある動作や状況が起きるたびに、常に決まって後節の事態が繰り返されることを表します（「〜するたびに」「〜するごとに」）。",
+      "longExplanation": "「~(으)ㄹ 때마다」は、未来・不確定を表す連体形語尾「-(으)ㄹ」、時を表す名詞「때（時）」、規則的反復を表す補助詞「마다（〜ごと・〜たび）」が結合した構文です。前節の動作や状態が生じるごとに、必ず後節の行為や心理状態が伴って発生するという反復性・規則性を強調します。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 때마다（母音語幹には -ㄹ 때마다、子音語幹には -을 때마다）；名詞 + 때마다",
+      "examples": [
+        {
+          "translation": "彼は麺類を食べるたびに彼女のことを思い出します。彼女が麺好きだったからです。"
+        },
+        {
+          "translation": "私は家に帰るたびに子犬が出迎えてくれるので、とても幸せです。"
+        },
+        {
+          "translation": "彼女は彼を見るたびに、胸がドキドキと速く鼓動し始めます。"
+        },
+        {
+          "translation": "祖母は私が訪ねていくたびに特別なおやつを作ってくれるので、いつも楽しみにしています。"
+        }
+      ]
+    },
+    "ko_할_151": {
+      "title": "~(으)ㄹ 만하다（〜する価値がある、〜に値する）",
+      "shortExplanation": "ある行為をするだけの十分な価値や意義があること（「〜する価値がある」「〜に値する」）、あるいは許容できる範囲にあることを表します。",
+      "longExplanation": "「~(으)ㄹ 만하다」は、連体形語尾「-(으)ㄹ」に補助形容詞「만하다」が結びついた構文です。その行為を行うだけの十分な価値や推薦に足る理由があることを示します（「観る価値がある」「食べる価値がある」「買うに値する」）。また、文脈によっては「まあまあ耐えられる」「一応満足できる」といった許容・妥協のニュアンスを表すこともあります。",
+      "formation": "動詞語幹 + -(으)ㄹ 만하다（母音語幹には -ㄹ 만하다、子音語幹には -을 만하다）",
+      "examples": [
+        {
+          "translation": "この映画を観ることは時間の無駄ではなく、かなり価値がありました。観る価値のある映画だったからです。"
+        },
+        {
+          "translation": "その本は内容が豊かで、読む価値が十分にありました。"
+        },
+        {
+          "translation": "あのアパートは住んでみる価値がありますよ。交通が便利で設備も整っていますから。"
+        },
+        {
+          "translation": "このカメラは少し高価ですが、品質が良いので買う価値があります。"
+        }
+      ]
+    },
+    "ko_할_152": {
+      "title": "~(으)ㄹ 수 있다（〜することができる、〜できる）",
+      "shortExplanation": "動作主の能力やスキル、または客観的な可能性・実現性を表す表現です（「〜することができる」「〜できる」）。",
+      "longExplanation": "「~(으)ㄹ 수 있다」は、未来・可能性の連体形語尾「-(으)ㄹ」、手段や可能性を表す依存名詞「수」、存在詞「있다（ある）」が組み合わさった、韓国語における最も基本的な可能表現です。主体がその行為を実行する能力を持っていること（「〜できる」）、または状況や条件が許してその事態が実現可能であることを表します。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 수 있다（母音語幹には -ㄹ 수 있다、子音語幹には -을 수 있다）",
+      "examples": [
+        {
+          "translation": "私は韓国語を少し話すことができます。そのため韓国への関心が一層深まりました。"
+        },
+        {
+          "translation": "あなたが考えた通りに実行できますよ。あなたがその仕事を一番よく知っているので信頼しています。"
+        },
+        {
+          "translation": "これは誰でも簡単にできる仕事ですから、あまり心配しないでください。"
+        },
+        {
+          "translation": "週末に時間があれば、私が車を修理することができますよ。"
+        }
+      ]
+    },
+    "ko_할_153": {
+      "title": "~(으)ㄹ 수 없다（〜することができない、〜できない）",
+      "shortExplanation": "能力の不足や状況・外部要因の制限により、ある動作を行うことが不可能であることを表します（「〜することができない」「〜できない」）。",
+      "longExplanation": "「~(으)ㄹ 수 없다」は、連体形語尾「-(으)ㄹ」、依存名詞「수」、否定存在詞「없다（ない）」が結合した可能表現の否定形です。話し手や主語が能力的にその動作を行えないこと、あるいは状況や物理的制約によって行動の実行が不可能であることを明確に表します。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 수 없다（母音語幹には -ㄹ 수 없다、子音語幹には -을 수 없다）",
+      "examples": [
+        {
+          "translation": "今はとても忙しいので、友達と一緒に食事をすることができません。"
+        },
+        {
+          "translation": "彼女は水泳が苦手なので、一人で水に入ることができません。"
+        },
+        {
+          "translation": "私は芸術的なセンスがないため、絵を上手に描くことができません。"
+        },
+        {
+          "translation": "この映画は怖すぎるので、私は二度と観ることができません。"
+        }
+      ]
+    },
+    "ko_할_154": {
+      "title": "~(으)ㄹ 줄 알다（〜のやり方を知っている、〜できる、〜かと思う）",
+      "shortExplanation": "ある動作の方法や手順・技術を心得ていること（「〜の仕方を知っている」「〜できる」）を表します。文脈により「〜かと思う・〜とばかり思っていた」の意味にもなります。",
+      "longExplanation": "「~(으)ㄹ 줄 알다」は、連体形語尾「-(으)ㄹ」、方法や道理を表す依存名詞「줄」、動詞「알다（知る・分かる）」が組み合わさった表現です。学習や経験を通じて後天的に得た技術や方法を知っており、それを実行できることを表します（否定形は「-(으)ㄹ 줄 모르다」）。また、別の用法として「〜だとばかり思っていた」という思い込みや予想を表すこともあります。",
+      "formation": "動詞語幹 + -(으)ㄹ 줄 알다（母音語幹には -ㄹ 줄 알다、子音語幹には -을 줄 알다）",
+      "examples": [
+        {
+          "translation": "私はピアノを弾くことができます（弾き方を知っています）。でも専門家ではありません。"
+        },
+        {
+          "translation": "うちの子はもう自分で靴を履くことができます。"
+        },
+        {
+          "translation": "チョルスはいつも新しいことを学ぶ方法をよく知っているようでした。"
+        },
+        {
+          "translation": "姉は料理を上手に作ることができるので、いつも美味しい料理を作ってくれます。"
+        }
+      ]
+    },
+    "ko_할지라도_155": {
+      "title": "~(으)ㄹ지라도（たとえ〜であっても、〜としても）",
+      "shortExplanation": "強い仮定的な譲歩を表す格調高い接続語尾で、前節の極端な状況や困難を仮定しても、後節の意志や事実に影響がないことを示します（「たとえ〜であっても」「〜としても」）。",
+      "longExplanation": "「~(으)ㄹ지라도」は、接続語尾「-(으)ㄹ지」に譲歩の助詞「라도」が結合した、主に文章語や改まった場面で使われる譲歩の接続語尾です。前節で困難や逆境などの極端な条件を仮定しつつ、「たとえその状況が事実だとしても、後節の決意・方針・事実は決して揺るがない」という強い意志や客観的事実を提示します。「-아/어도」よりも固く、強い語感を持ちます。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ지라도（母音語幹には -ㄹ지라도、子音語幹には -을지라도）",
+      "examples": [
+        {
+          "translation": "どんな問題が生じようとも、私は常に全力を尽くして仕事をやり遂げます。"
+        },
+        {
+          "translation": "明日雨が降るとしても、私は外出するつもりです。"
+        },
+        {
+          "translation": "あなたがそのような目に遭ったことがあるとしても、同情はしません。"
+        },
+        {
+          "translation": "コストが高くつくとしても、最高の品質を保証するために高価な材料を使用します。"
+        }
+      ]
+    },
+    "ko_든지_156": {
+      "title": "~든지 ~든지（〜しようと〜しようと、〜であれ〜であれ）",
+      "shortExplanation": "2つ以上の選択肢を並列し、どちらを選ぼうとも後節の結果や事態に差異がないことを表す接続語尾です（「〜であれ〜であれ」「〜するか〜するか」）。",
+      "longExplanation": "「~든지 ~든지」は、複数の動作や状態の可能性を列挙し、そのいずれが選択されたとしても、後節で述べられる判断、結果、状況には何ら影響を与えず無関係であることを示す接続語尾です。日常の会話では縮約形の「~든 ~든」がよく用いられます。",
+      "formation": "動詞語幹 / 形容詞語幹 + -든지 + 動詞語幹 / 形容詞語幹 + -든지（名詞には -(이)든지）",
+      "examples": [
+        {
+          "translation": "彼女が今夜到着しようと明日の朝到着しようと、私たちは彼女を待たなければなりません。"
+        },
+        {
+          "translation": "この問題を解決するにせよ先送りにするにせよ、決断はあなたが下さなければなりません。"
+        },
+        {
+          "translation": "私たちが勝とうが負けようが、最善を尽くすことこそが重要です。"
+        },
+        {
+          "translation": "彼が出席しようと欠席しようと、会議は予定通り進行します。"
+        }
+      ]
+    },
+    "ko_할_157": {
+      "title": "~(으)ㄹ 텐데（〜するはずなのに、〜だろうから）",
+      "shortExplanation": "話し手の推測や予定を前提・背景として提示し、後節で提案や心配、あるいは遺憾の意を表します（「〜するはずなのに」「〜だろうから」）。",
+      "longExplanation": "「~(으)ㄹ 텐데」は、予定や強い推測を表す「-(으)ㄹ 터」に、背景を提示する接続語尾「-ㄴ/인데」が結びついた構文です。話し手が「きっと〜だろう」と強く推測する状況を前節で提示し、それを根拠・背景として後節で忠告、勧誘、懸念などを述べます。過去の反実仮想（-았/었다면）と呼応する場合や文末で終わる場合は、「〜のはずなのに」「〜だろうに」という残念な気持ちや心残りを表します。",
+      "formation": "動詞語幹 / 形容詞語幹 + -(으)ㄹ 텐데（母音語幹には -ㄹ 텐데、子音語幹には -을 텐데）",
+      "examples": [
+        {
+          "translation": "明日は雨が降るでしょうから、傘を持っていくのが良いですよ。"
+        },
+        {
+          "translation": "今出発すれば時間に間に合うはずですが、あまり遅く到着してはいけません。"
+        },
+        {
+          "translation": "彼の成績は優秀なので、きっと奨学金をもらえるはずです。"
+        },
+        {
+          "translation": "友達が手伝ってくれていれば問題を解決できたはずなのに、一人では大変です。"
+        }
+      ]
+    },
+    "ko_함께_158": {
+      "title": "~(와/과) 함께（〜と一緒に、〜とともに）",
+      "shortExplanation": "ある人物や対象と共同で行動を共にすることを表す同伴表現です（「〜と一緒に」「〜とともに」）。",
+      "longExplanation": "「~와/과 함께」は、同伴を表す助詞「-와/과」に副詞「함께（一緒に・共に）」が結びついた表現です。人や生き物を表す名詞に付いて、その対象と行動を共にすることを明示します。口語では「-하고 함께」や「-(이)랑 함께」も同様に使われます。また、抽象名詞に付いて「〜に伴って」「〜とともに」という付随的変化を表すこともあります。",
+      "formation": "名詞 + 와/과 함께（母音終わりには 와 함께、子音終わりには 과 함께）",
+      "examples": [
+        {
+          "translation": "私は今日、友達と一緒に映画を観ました。映画は本当に面白くて、みんなが楽しみました。"
+        },
+        {
+          "translation": "私は母と一緒に市場に行き、本当にたくさんの買い物をしました。"
+        },
+        {
+          "translation": "私は友達と一緒に旅行へ行き、そこでとても素晴らしい写真を撮りました。"
+        },
+        {
+          "translation": "私は弟（妹）と一緒に公園で遊びました。私たちは本当に珍しい動物たちを見ました。"
+        }
+      ]
+    },
+    "ko_해_159": {
+      "title": "~아/어 보다（〜してみる、〜したことがある）",
+      "shortExplanation": "ある行為を試みにやってみる試行を表すか、過去の経験を表す補助動詞表現です（「〜してみる」「〜したことがある」）。",
+      "longExplanation": "「~아/어 보다」は、接続語尾「-아/어」に補助動詞「보다（見る・試す）」が結合した構文です。（1）試しにその動作を実際に行ってみる「試行」（「やってみる」「食べてみる」）；（2）過去形「~아/어 봤다」の形で用いられた場合は、過去にその動作を行ったことがあるという「経験」を表します。",
+      "formation": "動詞語幹 + -아/어 보다（語幹末が ㅏ, ㅗ の場合は -아 보다、それ以外は -어 보다、하다 は 해 보다）",
+      "examples": [
+        {
+          "translation": "私は一度、韓国語で討論をしてみようと思います。しかし難しくて練習が必要です。"
+        },
+        {
+          "translation": "多くの人が一度韓国料理を作ってみてと言ったので、今日はキムチチゲを作ってみました。"
+        },
+        {
+          "translation": "新しいプログラムを使ってみようとしましたが、複雑すぎて諦めました。"
+        },
+        {
+          "translation": "私は年を重ねても新しい経験をしてみることが好きです。だから頻繁に旅行へ行ってみようと思っています。"
+        }
+      ]
+    },
+    "ko_해_160": {
+      "title": "~아/어 주다（〜してくれる、〜してあげる）",
+      "shortExplanation": "他者の利益のために親切に行為を行うこと（授受表現）を表します（「〜してくれる」「〜してあげる」）。",
+      "longExplanation": "「~아/어 주다」は、接続語尾「-아/어」に授受の補助動詞「주다（与える・くれる）」が結びついた表現です。ある人が他人のために親切に行動を施したり、恩恵を与えたりすることを表します（日本語の「〜してあげる」「〜してくれる」に相当）。目上の人に対して行う場合は謙譲形の「~아/어 드리다（〜して差し上げる）」を用います。",
+      "formation": "動詞語幹 + -아/어 주다（目上には -아/어 드리다；語幹末が ㅏ, ㅗ の場合は -아 주다、それ以外は -어 주다、하다 は 해 주다）",
+      "examples": [
+        {
+          "translation": "母が体調を崩していたので、私が夕食を作ってあげました。"
+        },
+        {
+          "translation": "友達が試験勉強を手伝ってくれたので、お礼を言いました。"
+        },
+        {
+          "translation": "先生が私の質問に対して詳しく説明してくださったので、よく理解できました。"
+        },
+        {
+          "translation": "弟（妹）が部屋の掃除を手伝ってくれると言いました。"
+        }
+      ]
+    },
+    "ko_해야겠다_161": {
+      "title": "~아/어야겠다（〜しなきゃ、〜しなければならない、〜しよう）",
+      "shortExplanation": "話し手がその行為の必要性や緊急性を自覚し、自らの強い決意や意志を表す表現です（「〜しなきゃ」「〜しなければ」「〜することにしよう」）。",
+      "longExplanation": "「~아/어야겠다」は、義務・必要条件を表す「-아/어야」に、意志を表す先語末語尾「-겠-」、平叙終結語尾「-다」が結合した表現です。現状を判断した結果、自分がその行動をとるべきだと自覚し、「もう〜しなければならない」「絶対に〜しよう」と自分自身に言い聞かせたり決意を表明したりする際に多用されます。",
+      "formation": "動詞語幹 + -아/어야겠다（語幹末が ㅏ, ㅗ の場合は -아야겠다、それ以外は -어야겠다、하다 は 해야겠다）",
+      "examples": [
+        {
+          "translation": "あなたがその問題に対処し続けないのなら、私が何とかしなければなりませんね。"
+        },
+        {
+          "translation": "このようなミスを繰り返さないためには、もっとたくさん練習しなければいけませんね。"
+        },
+        {
+          "translation": "私たちはチームメンバーとのコミュニケーションを改善するために、もっと努力しなければなりません。"
+        },
+        {
+          "translation": "今回の試験に合格するためには、もっと一生懸命勉強しなければなりませんね。"
+        }
+      ]
+    },
+    "ko_해서는_162": {
+      "title": "~아/어서는 안 되다（〜してはならない、〜してはいけない）",
+      "shortExplanation": "規則、常識、道徳に照らし合わせて、ある行為を禁止したり厳しく戒めたりする表現です（「〜してはならない」「〜してはいけない」）。",
+      "longExplanation": "「~아/어서는 안 되다」は、接続語尾「-아/어서」、強調の助詞「-는」、否定副詞「안」、動詞「되다（よい・できる）」が結合した格式ある禁止表現です。法規、組織の規則、倫理道徳などに反するため、その行為を行うことが許されないことを明示します。公的な規則の提示や、改まった忠告・警告の場で多用されます。",
+      "formation": "動詞語幹 + -아/어서는 안 되다（語幹末が ㅏ, ㅗ の場合は -아서는 안 되다、それ以外は -어서는 안 되다、하다 は 해서는 안 되다）",
+      "examples": [
+        {
+          "translation": "その文書をコピーしてはなりません。企業の機密情報です。"
+        },
+        {
+          "translation": "困難な状況で嘘をついてはなりません。それは信頼を損なうことになりかねません。"
+        },
+        {
+          "translation": "試験で不正行為をしてはなりません。それはあなたの成績を台無しにしてしまいます。"
+        },
+        {
+          "translation": "友達を裏切ってはなりません。それはかけがえのない大切な関係を壊してしまいます。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_하자_148": {
+      "title": "~하자 / ~자마자 (즉시성 연결)",
+      "shortExplanation": "앞 절의 행동이나 사건이 끝나자마자 뒤 절의 행동이 곧바로 이어져 일어남을 나타내는 연결어미입니다 ('~하자마자', '~하자').",
+      "longExplanation": "'~자' 또는 강조 형태인 '~자마자'는 앞 절의 동작이 완료되는 바로 그 순간에 뒤 절의 사건이나 행동이 지체 없이 발생함을 나타내는 연결어미입니다. 앞 절에는 선어말어미 '-았/었-'을 결합할 수 없으며, 시제는 문장의 종결어미에서 나타납니다. 일상 구어에서는 즉시성을 강조하기 위해 '-자마자' 형태가 매우 널리 쓰입니다.",
+      "formation": "동사 어간 + -자마자 (또는 -자)",
+      "examples": [
+        {
+          "translation": "문을 열자마자 강아지가 안으로 뛰어 들어왔어요."
+        },
+        {
+          "translation": "길을 건너자마자 바로 택시를 잡아탔어요."
+        },
+        {
+          "translation": "비가 내리기 시작하자마자 우산을 펼쳐 썼어요."
+        },
+        {
+          "translation": "책을 덮자마자 곧바로 깊은 잠이 쏟아졌어요."
+        }
+      ]
+    },
+    "ko_할_149": {
+      "title": "~(으)ㄹ 것이다 (미래 시제·예정·추측)",
+      "shortExplanation": "화자의 미래 계획이나 의지, 또는 앞으로 일어날 일에 대한 객관적 추측을 나타내는 미래 시제 종결 표현입니다 ('~할 예정이다', '~할 것이다').",
+      "longExplanation": "'~(으)ㄹ 것이다'는 미래나 미완을 나타내는 관형사형 어미 '-(으)ㄹ'에 의존명사 '것', 서술격 조사 '이다'가 결합된 대표적인 미래 표현 구문입니다. 주어가 1인칭일 때는 화자의 결심, 확고한 의도 또는 예정된 계획을 나타내며, 주어가 3인칭이거나 자연 현상일 때는 미래 상황에 대한 화자의 확신에 찬 추측과 판단을 드러냅니다. 일상 회화에서는 구어형인 '-(으)ㄹ 거예요/겁니다'로 주로 쓰입니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ 것이다 (받침 없는 어간: -ㄹ 것이다, 받침 있는 어간: -을 것이다)",
+      "examples": [
+        {
+          "translation": "내일은 비가 내릴 것이다. 그러므로 우산을 챙겨 가야 할 것이다."
+        },
+        {
+          "translation": "강아지를 분양받아 키울 것이다. 따라서 강아지 용품을 미리 구입해야 할 것이다."
+        },
+        {
+          "translation": "다음 주에 한국에서 열리는 콘서트에 갈 것이다. 그래서 티켓을 예매할 것이다."
+        },
+        {
+          "translation": "내년에 대학원에 진학할 것이다. 이를 위해 구체적인 세부 계획을 세울 것이다."
+        }
+      ]
+    },
+    "ko_할_150": {
+      "title": "~(으)ㄹ 때마다 (반복·규칙적 동반)",
+      "shortExplanation": "어떤 행동이나 상황이 일어날 때마다 예외 없이 뒤의 행동이나 반응이 반복됨을 나타내는 표현입니다 ('~할 때마다', '~할 적마다').",
+      "longExplanation": "'~(으)ㄹ 때마다'는 관형사형 어미 '-(으)ㄹ', 시간을 뜻하는 불완전명사 '때', 낱낱의 전부를 뜻하는 보조사 '마다'가 결합된 구문입니다. 앞 절의 조건이나 사건이 발생할 때마다 필연적으로 혹은 습관적으로 뒤 절의 감정, 행동, 상황이 주기적으로 뒤따름을 강조할 때 사용됩니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ 때마다 (받침 없는 어간: -ㄹ 때마다, 받침 있는 어간: -을 때마다); 명사 + 때마다",
+      "examples": [
+        {
+          "translation": "그는 국수를 먹을 때마다 그녀를 떠올리곤 해요. 그녀가 국수를 참 좋아했으니까요."
+        },
+        {
+          "translation": "나는 집에 돌아올 때마다 반려견이 반갑게 맞이해 주어서 무척 행복해요."
+        },
+        {
+          "translation": "그녀는 그 사람을 볼 때마다 가슴이 두근거리며 빠르게 뛰기 시작합니다."
+        },
+        {
+          "translation": "할머니께서는 제가 찾아뵐 때마다 특별한 간식을 손수 만들어 주셔서 늘 기대돼요."
+        }
+      ]
+    },
+    "ko_할_151": {
+      "title": "~(으)ㄹ 만하다 (가치·타당성)",
+      "shortExplanation": "어떤 행동을 해 볼 만한 충분한 가치나 의의가 있음을 나타내거나, 감당할 수 있는 수준임을 나타내는 보조형용사 구문입니다 ('~할 가치가 있다').",
+      "longExplanation": "'~(으)ㄹ 만하다'는 동사 어간에 관형사형 어미 '-(으)ㄹ'과 보조용언 '만하다'가 결합된 형태입니다. 주로 대상이나 행위가 시간이나 노력을 들여 시도해 볼 만한 충분한 가치와 추천할 만한 자격을 지니고 있음을 평가할 때 널리 쓰입니다('볼 만하다', '살 만하다', '읽을 만하다'). 한편으로는 완벽하지는 않더라도 그럭저럭 견디거나 감당할 수 있는 허용의 범위를 나타내기도 합니다.",
+      "formation": "동사 어간 + -(으)ㄹ 만하다 (받침 없는 어간: -ㄹ 만하다, 받침 있는 어간: -을 만하다)",
+      "examples": [
+        {
+          "translation": "이 영화를 감상한 것은 시간 낭비가 아니라 꽤 보람 있었습니다. 충분히 볼 만한 작품이었거든요."
+        },
+        {
+          "translation": "그 책은 전반적인 내용이 유익하고 풍부해서 한 번쯤 읽을 만했습니다."
+        },
+        {
+          "translation": "저 아파트는 한 번쯤 살아 볼 만해요. 대중교통이 무척 편리하고 편의시설이 잘 갖추어져 있거든요."
+        },
+        {
+          "translation": "이 카메라는 가격이 조금 비싸기는 하지만, 품질이 워낙 우수해서 살 만합니다."
+        }
+      ]
+    },
+    "ko_할_152": {
+      "title": "~(으)ㄹ 수 있다 (능력·가능성)",
+      "shortExplanation": "주어의 능력이나 기량, 또는 어떤 일이 일어날 수 있는 객관적인 가능성을 나타내는 기본 가능 표현입니다 ('~할 수 있다').",
+      "longExplanation": "'~(으)ㄹ 수 있다'는 관형사형 어미 '-(으)ㄹ', 방법이나 형편을 나타내는 의존명사 '수', 형용사 '있다'가 결합된 구문입니다. 한국어에서 능력이나 가능성을 나타내는 가장 대표적인 문법으로, 주어가 특정한 지식이나 기술을 갖추어 어떤 일을 해낼 능력이 있음을 나타내거나, 외적 조건 및 정황상 어떤 행위가 실현 가능함을 뜻합니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ 수 있다 (받침 없는 어간: -ㄹ 수 있다, 받침 있는 어간: -을 수 있다)",
+      "examples": [
+        {
+          "translation": "저는 한국어를 조금 구사할 수 있어요. 그래서 한국 문화에 관심이 부쩍 많아졌습니다."
+        },
+        {
+          "translation": "당신이 생각하신 계획대로 실천할 수 있어요. 당신이 그 업무를 가장 잘 아시니 믿겠습니다."
+        },
+        {
+          "translation": "이 일은 누구나 손쉽게 할 수 있는 작업이니 너무 염려하지 마세요."
+        },
+        {
+          "translation": "주말에 여유 시간이 난다면 제가 차를 직접 고칠 수 있습니다."
+        }
+      ]
+    },
+    "ko_할_153": {
+      "title": "~(으)ㄹ 수 없다 (불가능·능력 부족)",
+      "shortExplanation": "주어의 능력 부족이나 외적 여건의 불비로 인해 어떤 행동을 실행할 수 없음을 나타내는 불가능 표현입니다 ('~할 수 없다').",
+      "longExplanation": "'~(으)ㄹ 수 없다'는 관형사형 어미 '-(으)ㄹ', 의존명사 '수', 형용사 '없다'가 결합하여 '-(으)ㄹ 수 있다'의 부정을 이루는 구문입니다. 주어가 특정 기술이나 능력을 보유하지 못해 행동을 수행할 수 없음을 나타내거나, 외적인 방해 요인, 규칙, 시간적 한계 등으로 인하여 어떤 일의 실현이 원천적으로 불가능함을 나타낼 때 널리 쓰입니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ 수 없다 (받침 없는 어간: -ㄹ 수 없다, 받침 있는 어간: -을 수 없다)",
+      "examples": [
+        {
+          "translation": "지금은 일정이 너무 바빠서 친구들과 편안하게 식사할 수 없어요."
+        },
+        {
+          "translation": "그녀는 수영을 잘하지 못해서 혼자 깊은 물속에 들어갈 수 없습니다."
+        },
+        {
+          "translation": "저는 미적 감각이 부족하여 그림을 능숙하게 그릴 수 없어요."
+        },
+        {
+          "translation": "이 공포 영화는 너무 무서워서 저는 다시는 볼 수 없을 것 같아요."
+        }
+      ]
+    },
+    "ko_할_154": {
+      "title": "~(으)ㄹ 줄 알다 (방법 인지·실행 능력)",
+      "shortExplanation": "어떤 행동을 하는 방법이나 기술을 알고 있어 이를 실제로 행할 수 있음을 나타내는 구문입니다 ('~할 줄 알다').",
+      "longExplanation": "'~(으)ㄹ 줄 알다'는 관형사형 어미 '-(으)ㄹ', 방법이나 도리를 뜻하는 의존명사 '줄', 동사 '알다'가 결합된 형태입니다. 주로 배움이나 경험을 통해 체득한 실질적인 행동 방법이나 기술을 알고 있음을 나타낼 때 사용됩니다(반대 표현은 '-(으)ㄹ 줄 모르다'). 한편, 과거의 추측이나 착각을 나타낼 때는 '어떤 사실로 짐작하여 알고 있었다'라는 의미로 쓰이기도 합니다.",
+      "formation": "동사 어간 + -(으)ㄹ 줄 알다 (받침 없는 어간: -ㄹ 줄 알다, 받침 있는 어간: -을 줄 알다)",
+      "examples": [
+        {
+          "translation": "저는 피아노를 칠 줄 알아요. 그렇지만 전문가 수준은 아닙니다."
+        },
+        {
+          "translation": "우리 아이는 이제 혼자 힘으로 신발을 신을 줄 알아요."
+        },
+        {
+          "translation": "철수는 항상 새로운 배움의 요령과 방법을 참 잘 알더라고요."
+        },
+        {
+          "translation": "누나는 요리를 능숙하게 잘할 줄 알아서 늘 맛깔스러운 음식을 만들어 줍니다."
+        }
+      ]
+    },
+    "ko_할지라도_155": {
+      "title": "~(으)ㄹ지라도 (가정적 양보)",
+      "shortExplanation": "앞 절의 부정적이거나 극단적인 조건을 가령 인정하더라도, 뒤 절의 사실이나 결심에는 아무런 영향을 미치지 않음을 나타내는 양보의 연결어미입니다 ('~할지라도', '비록 ~하더라도').",
+      "longExplanation": "'~(으)ㄹ지라도'는 어미 '-(으)ㄹ지'에 양보의 보조사 '라도'가 결합된 문어적 연결어미입니다. 어떤 극단적인 상황이나 어려움이 닥치는 것을 가정하거나 시인하면서도, 뒤 절의 행위나 결의, 객관적 법칙이 전혀 흔들리지 않음을 단호하게 표현할 때 사용됩니다. 일반적인 구어체 양보 어미인 '-아/어도'보다 한층 격식 있고 비장한 느낌을 줍니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ지라도 (받침 없는 어간: -ㄹ지라도, 받침 있는 어간: -을지라도)",
+      "examples": [
+        {
+          "translation": "어떠한 난관과 문제가 발생할지라도 저는 항상 최선을 다하여 과업을 끝마칠 것입니다."
+        },
+        {
+          "translation": "내일 비가 세차게 쏟아질지라도 나는 외출을 감행할 것입니다."
+        },
+        {
+          "translation": "네가 일찍이 그런 고초를 겪은 적이 있을지라도 결코 동정하지 않는다."
+        },
+        {
+          "translation": "원자재 비용이 아무리 높을지라도 최고의 품질을 담보하기 위해 고급 재료를 사용합니다."
+        }
+      ]
+    },
+    "ko_든지_156": {
+      "title": "~든지 ~든지 (무관 선택·나열)",
+      "shortExplanation": "둘 이상의 대안이나 가능성을 나열하여, 어느 쪽을 선택하더라도 뒤 절의 결과나 태도에 상관이 없음을 나타내는 연결어미입니다 ('~하든지 ~하든지').",
+      "longExplanation": "'~든지 ~든지'는 나열된 여러 동작이나 상태 중에서 어느 것이 일어나도 뒤 절의 결단이나 상황에는 차이가 없음을 나타내는 선택의 연결어미입니다. 대립되거나 나열된 항목 중 어느 것을 취하더라도 상관없다는 무차별의 태도를 드러냅니다. 일상 구어에서는 줄임말인 '~든 ~든'으로 흔히 쓰입니다(과거의 회상을 나타내는 '-던지'와 구별해야 합니다).",
+      "formation": "동사 어간 / 형용사 어간 + -든지 + 동사 어간 / 형용사 어간 + -든지 (명사 뒤에는 -(이)든지)",
+      "examples": [
+        {
+          "translation": "그녀가 오늘 밤에 도착하든지 내일 아침에 도착하든지 간에, 우리는 마중 나가 기다려야 합니다."
+        },
+        {
+          "translation": "이 사안을 지금 해결하든지 차일피일 미루든지 간에, 최종 결정은 당신이 내려야 해요."
+        },
+        {
+          "translation": "경기에 출전한 우리가 이기든지 지든지, 매 순간 최선을 다하는 태도가 가장 중요합니다."
+        },
+        {
+          "translation": "그분이 회의에 참석하든지 참석하지 않든지, 회의는 당초 예정대로 차질 없이 진행됩니다."
+        }
+      ]
+    },
+    "ko_할_157": {
+      "title": "~(으)ㄹ 텐데 (추측 배경·아쉬움)",
+      "shortExplanation": "화자의 강한 추측이나 예정을 앞 절의 배경으로 제시하여 뒤 절의 권유, 우려, 행동의 근거로 삼거나 아쉬움을 나타내는 연결 표현입니다 ('~할 텐데', '~일 텐데').",
+      "longExplanation": "'~(으)ㄹ 텐데'는 추측이나 의지를 나타내는 의존명사 '터'에 배경을 제시하는 연결어미 '-(이)ㄴ데'가 결합된 형태입니다. 화자가 정황상 강하게 짐작하는 미래 상황이나 상태를 전제로 내세운 뒤, 이에 어울리는 조언, 제안, 당부를 뒤 절에서 이어나갈 때 흔히 쓰입니다. 한편, 과거의 가정문과 함께 쓰이거나 문말에 여운을 남기며 쓰일 때는 실현되지 못한 기대에 대한 탄식이나 안타까움을 표현합니다.",
+      "formation": "동사 어간 / 형용사 어간 + -(으)ㄹ 텐데 (받침 없는 어간: -ㄹ 텐데, 받침 있는 어간: -을 텐데)",
+      "examples": [
+        {
+          "translation": "내일은 비가 올 텐데, 외출할 때 우산을 챙겨 가는 편이 좋겠습니다."
+        },
+        {
+          "translation": "지금 즉시 출발하면 약속 시간에 맞출 텐데, 너무 늦게 도착해서는 곤란해요."
+        },
+        {
+          "translation": "그 친구는 성적이 워낙 뛰어나니 이번에 장학금을 충분히 받을 텐데요."
+        },
+        {
+          "translation": "친구가 곁에서 도와주었더라면 문제를 거뜬히 해결했을 텐데, 혼자 감당하기에는 버겁네요."
+        }
+      ]
+    },
+    "ko_함께_158": {
+      "title": "~(와/과) 함께 (동반·동행)",
+      "shortExplanation": "어떤 대상을 동반자로 삼아 행동을 같이하거나 함께 어울림을 나타내는 부사적 구문입니다 ('~와/과 함께', '~와/과 같이').",
+      "longExplanation": "'~와/과 함께'는 공동이나 동반을 나타내는 접속 조사 '-와/과'에 부사 '함께'가 결합된 표현입니다. 사람이나 생물을 나타내는 명사 뒤에 붙어 그 대상과 함께 나란히 행동함을 명확히 할 때 사용됩니다. 일상 회화에서는 구어적 조사인 '-하고 함께', '-(이)랑 함께'로도 널리 호환되며, 사물이나 추상명사와 어울려 '어떤 현상이 일어남과 동시에'라는 뜻으로도 쓰입니다.",
+      "formation": "명사 + 와/과 함께 (받침 없는 명사: 와 함께, 받침 있는 명사: 과 함께)",
+      "examples": [
+        {
+          "translation": "나는 오늘 다정한 친구들과 함께 영화를 보았어요. 영화가 정말 흥미진진해서 모두가 즐거워했습니다."
+        },
+        {
+          "translation": "나는 어머니와 함께 전통시장에 다녀왔고, 정말 풍성하게 많은 물건을 샀어요."
+        },
+        {
+          "translation": "나는 절친한 친구와 함께 훌쩍 여행을 떠났고, 그곳에서 아주 멋진 기념사진을 찍었습니다."
+        },
+        {
+          "translation": "나는 동생과 함께 근처 공원에서 신나게 뛰놀았어요. 우리는 참으로 신기한 동물들을 직접 보았습니다."
+        }
+      ]
+    },
+    "ko_해_159": {
+      "title": "~아/어 보다 (시도·경험)",
+      "shortExplanation": "어떤 행동을 시험 삼아 실제로 해 보거나(시도), 과거에 그러한 행동을 겪어 보았음(경험)을 나타내는 보조용언 구문입니다 ('~해 보다').",
+      "longExplanation": "'~아/어 보다'는 동사 어간에 연결어미 '-아/어'와 보조동사 '보다'가 결합된 형태입니다. 주로 두 가지 핵심 의미로 쓰입니다. 첫째, 결과를 알아보기 위해 시험 삼아 어떤 행동을 직접 시도함을 나타내며('먹어 보다', '입어 보다'), 둘째, 과거 시제인 '-아/어 보았다/봤다'의 형태로 쓰여 일생 동안 겪은 유의미한 경험을 나타냅니다.",
+      "formation": "동사 어간 + -아/어 보다 (양성모음 ㅏ, ㅗ 뒤에는 -아 보다, 음성모음 뒤에는 -어 보다, 하다 뒤에는 해 보다)",
+      "examples": [
+        {
+          "translation": "저는 이번 기회에 한국어로 깊이 있는 토론을 해 보려고 합니다. 하지만 아직 어려워서 많은 연습이 필요해요."
+        },
+        {
+          "translation": "주변 사람들이 다들 한국 음식을 직접 해 보라고 권해서, 오늘은 김치찌개를 손수 끓여 보았습니다."
+        },
+        {
+          "translation": "새로 출시된 프로그램을 한 번 사용해 보려고 시도했지만, 조작법이 너무 복잡해서 그만 포기했어요."
+        },
+        {
+          "translation": "저는 나이가 지긋이 들어도 늘 새로운 일에 도전하고 경험해 보는 것을 좋아해요. 그래서 자주 여행을 떠나 보려고 합니다."
+        }
+      ]
+    },
+    "ko_해_160": {
+      "title": "~아/어 주다 (수혜·배려)",
+      "shortExplanation": "다른 사람의 이익이나 편의를 위하여 친절하게 어떠한 행동을 베풀어 줌을 나타내는 수여의 보조동사 구문입니다 ('~해 주다').",
+      "longExplanation": "'~아/어 주다'는 동사 어간에 연결어미 '-아/어'와 보조동사 '주다'가 결합된 표현입니다. 주어가 상대방이나 제3자를 배려하여 그 사람에게 도움이 되는 유익한 행위를 베풀 때 사용됩니다. 행위의 수혜자가 화자보다 높여야 할 윗사람인 경우에는 보조동사 '드리다'를 활용하여 '~아/어 드리다'의 공손한 높임 표현을 취합니다.",
+      "formation": "동사 어간 + -아/어 주다 (높임 표현: -아/어 드리다; 양성모음 뒤에는 -아 주다, 음성모음 뒤에는 -어 주다, 하다 뒤에는 해 주다)",
+      "examples": [
+        {
+          "translation": "어머니께서 몸이 편찮으셔서 제가 정성껏 저녁 식사를 차려 드렸어요."
+        },
+        {
+          "translation": "친구가 시험공부를 헌신적으로 도와주어서 진심으로 고맙다고 전했습니다."
+        },
+        {
+          "translation": "선생님께서 질문에 대해 상세하게 설명해 주셔서 원리를 명확하게 이해할 수 있었어요."
+        },
+        {
+          "translation": "동생이 주말에 방 청소를 흔쾌히 도와줄 거라고 말했습니다."
+        }
+      ]
+    },
+    "ko_해야겠다_161": {
+      "title": "~아/어야겠다 (화자의 결단·실행 의지)",
+      "shortExplanation": "어떤 행동을 마땅히 해야 할 필요성이나 시급함을 자각하고, 이를 실행에 옮기겠다는 화자의 다짐과 단호한 의지를 나타내는 종결 표현입니다 ('~해야겠다').",
+      "longExplanation": "'~아/어야겠다'는 필수적 당위를 나타내는 연결어미 '-아/어야'에 화자의 확고한 의지를 드러내는 선어말어미 '-겠-', 종결어미 '-다'가 결합된 형태입니다. 화자가 직면한 상황을 살핀 뒤 '더 이상 지체하지 않고 반드시 이 일을 스스로 해내야겠다'고 결심하거나 결단을 내릴 때 쓰는 자발적 실천의 의지 표현입니다.",
+      "formation": "동사 어간 + -아/어야겠다 (양성모음 뒤에는 -아야겠다, 음성모음 뒤에는 -어야겠다, 하다 뒤에는 해야겠다)",
+      "examples": [
+        {
+          "translation": "당신이 그 사안을 계속 방치하고 대처하지 않는다면, 차라리 제가 직접 발 벗고 나서야겠어요."
+        },
+        {
+          "translation": "이러한 어처구니없는 실수를 반복하지 않으려면 남들보다 훨씬 더 많이 연습해야겠습니다."
+        },
+        {
+          "translation": "우리는 팀원들과의 원활한 소통을 증진하기 위해 한층 더 성심껏 노력해야겠어요."
+        },
+        {
+          "translation": "이번 자격시험에 반드시 합격하기 위해서는 지금보다 훨씬 더 치열하게 공부해야겠습니다."
+        }
+      ]
+    },
+    "ko_해서는_162": {
+      "title": "~아/어서는 안 되다 (금지·당위적 제재)",
+      "shortExplanation": "도덕, 규칙, 법률상 어떤 행위를 해서는 결코 안 됨을 단호하게 밝히는 엄격한 금지 표현입니다 ('~해서는 안 되다').",
+      "longExplanation": "'~아/어서는 안 되다'는 이유나 조건을 나타내는 연결어미 '-아/어서'에 대조와 강조의 보조사 '-는', 부정부사 '안', 동사 '되다'가 결합된 규범적 금지 구문입니다. 특정 행위를 실행하는 것이 사회 통념, 조직의 규율, 윤리적 기준에 어긋나 허용될 수 없음을 단호하게 경고하거나 원칙으로 천명할 때 사용됩니다.",
+      "formation": "동사 어간 + -아/어서는 안 되다 (양성모음 뒤에는 -아서는 안 되다, 음성모음 뒤에는 -어서는 안 되다, 하다 뒤에는 해서는 안 되다)",
+      "examples": [
+        {
+          "translation": "그 대외비 문서를 무단으로 복사해서는 안 됩니다. 그것은 회사의 핵심 기밀 사항입니다."
+        },
+        {
+          "translation": "아무리 처지가 어려운 상황일지라도 거짓말을 해서는 안 됩니다. 신뢰를 한순간에 무너뜨릴 수 있어요."
+        },
+        {
+          "translation": "시험 중에 결코 부정행위를 해서는 안 됩니다. 그것은 그동안 쌓아 올린 공든 성적을 완전히 망칠 것입니다."
+        },
+        {
+          "translation": "신뢰를 나눈 친구를 배반해서는 안 됩니다. 그것은 인생의 소중한 인간관계를 영영 깨뜨리는 일입니다."
+        }
+      ]
+    }
+  }
+}

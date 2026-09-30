@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_以来_410": {
+      "title": "……以来 (Danh từ thời gian / Mệnh đề + 以来: Kể từ... đến nay / Từ khi... trở lại đây)",
+      "shortExplanation": "Đứng sau mốc thời gian, sự kiện hoặc mệnh đề để biểu thị khoảng thời gian liên tục từ một thời điểm trong quá khứ kéo dài cho tới hiện tại hoặc tới thời điểm đang xét; 'kể từ... đến nay', 'từ khi...'.",
+      "longExplanation": "'以来' (yǐlái) là từ chỉ thời gian thường đứng sau danh từ thời gian, cụm từ chỉ sự kiện lịch sử, động từ hoặc phân câu miêu tả một mốc thời gian bắt đầu trong quá khứ. Cấu trúc này dùng để diễn đạt toàn bộ khoảng thời gian liên tục tính từ mốc đó kéo dài cho tới tận thời điểm hiện tại (hoặc mốc thời gian mà người nói đang đề cập), nhấn mạnh những thay đổi, phát triển hoặc tình trạng diễn ra trong suốt quá trình đó (ví dụ: '长期以来' - từ lâu đến nay, '自古以来' - từ xưa đến nay, '毕业以来' - kể từ khi tốt nghiệp đến nay). Tương đương với 'kể từ... đến nay', 'từ khi... trở lại đây' trong tiếng Việt.",
+      "formation": "Mốc thời gian / Danh từ sự kiện / Động từ / Mệnh đề + 以来，Mệnh đề kết quả / biến chuyển",
+      "examples": [
+        {
+          "translation": "Kể từ khi cải cách mở cửa đến nay, Trung Quốc đã diễn ra những thay đổi to lớn."
+        }
+      ]
+    },
+    "zh_临_411": {
+      "title": "临 + Danh từ nơi chốn (Động từ vị trí: Giáp / Kề sát / Hướng ra / Nằm sát)",
+      "shortExplanation": "Động từ vị trí biểu thị việc ở sát bên, giáp ranh hoặc quay mặt, hướng thẳng ra đường xá, bờ sông, mặt biển; 'giáp', 'kề sát', 'hướng ra'.",
+      "longExplanation": "'临' (lín) khi dùng làm động từ vị trí mang ý nghĩa là kề sát, tiếp giáp, áp sát hoặc quay mặt hướng về một không gian, tuyến đường, nguồn nước nào đó (như đường phố, sông ngòi, biển cả...). Cụm '临 + Danh từ nơi chốn' thường làm định ngữ (thường có '的') để định vị nhà cửa, phòng ốc hoặc làm vị ngữ (ví dụ: '临街' - giáp mặt đường, '临水' - giáp bờ nước, '临海' - hướng ra biển, '临窗' - bên cạnh cửa sổ). Tương đương với 'giáp', 'sát', 'kề sát', 'hướng ra' trong tiếng Việt.",
+      "formation": "临 + Danh từ nơi chốn / Không gian (街 / 水 / 海 / 河...) (+ 的 + Danh từ)",
+      "examples": [
+        {
+          "translation": "Tôi muốn mua một căn nhà không giáp mặt đường, như vậy sẽ không quá ồn ào."
+        }
+      ]
+    },
+    "zh_临_412": {
+      "title": "临 + Động từ (Giới từ / Động từ thời gian: Ngay trước khi... / Sắp sửa... / Đến lúc...)",
+      "shortExplanation": "Biểu thị thời điểm ngay trước khi một hành động sắp sửa bắt đầu hoặc khi chuẩn bị xảy ra một sự việc; 'ngay trước khi', 'sắp sửa', 'đến lúc'.",
+      "longExplanation": "'临' (lín) khi dùng chỉ thời gian đóng vai trò như một giới từ hoặc động từ có tính liên kết thời gian, mang ý nghĩa là ngay sát thời điểm, sắp sửa hoặc vừa đúng lúc chuẩn bị thực hiện một hành vi nào đó (tương đương với '快要' hoặc '到……的时候'). Thường kết hợp trực tiếp với các động từ đơn hoặc cụm từ chỉ hành động (như 走, 睡, 考, 出发, 毕业, 别...) và thường đi kèm với danh từ chỉ thời gian (như 那天, 之前, 之际, 时) tạo thành trạng ngữ chỉ thời gian cho câu (ví dụ: '临睡前' - trước lúc đi ngủ, '临走' - ngay trước khi đi, '临考' - trước lúc thi). Tương đương với 'ngay trước khi', 'sắp sửa', 'đến lúc' trong tiếng Việt.",
+      "formation": "临 + Động từ (走 / 睡 / 考 / 出发...) (+ Danh từ thời gian / 时 / 的时候)，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Vào ngày sắp sửa rời đi, cha đã từ quê vội vã lên tiễn chúng tôi."
+        }
+      ]
+    },
+    "zh_立刻_413": {
+      "title": "立刻 (Phó từ thời gian: Ngay lập tức / Tức khắc / Liền / Ngay)",
+      "shortExplanation": "Phó từ đứng trước động từ hoặc tính từ, biểu thị hành động hoặc phản ứng xảy ra ngay tức thì không chút chần chừ; 'ngay lập tức', 'tức khắc'.",
+      "longExplanation": "'立刻' (lìkè) là phó từ chỉ thời gian đứng trước vị ngữ, dùng để diễn tả một hành động, sự chuyển biến hoặc phản ứng tâm lý phát sinh ngay tức khắc, không có bất kỳ sự chậm trễ hay ngắt quãng nào giữa sự việc trước và sự việc sau (tương đương với '马上'). Thường dùng trong cả văn phong nói lẫn viết trang trọng, nhấn mạnh tính dứt khoát, kịp thời và tức thì của sự việc (ví dụ: '立刻出发' - lập tức xuất phát, '立刻回答' - trả lời ngay lập tức, '立刻停止' - lập tức dừng lại). Tương đương với 'ngay lập tức', 'tức khắc', 'ngay tức thì', 'liền' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Thời gian / Mệnh đề điều kiện +) 立刻 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Khi chúng tôi trở về, ngay lập tức cảm nhận được sự ấm áp của gia đình."
+        }
+      ]
+    },
+    "zh_包括_414": {
+      "title": "包括 (Động từ: Bao gồm / Gồm có / Tính cả)",
+      "shortExplanation": "Động từ biểu thị việc chứa đựng, dung nạp các bộ phận, thành phần hoặc đối tượng cụ thể trong một tổng thể hay phạm vi nhất định; 'bao gồm', 'gồm có'.",
+      "longExplanation": "'包括' (bāokuò) là động từ ngoại động tác, dùng để chỉ một tổng thể, phạm vi, tập hợp lớn bao hàm hoặc dung nạp các thành phần cấu thành, yếu tố con hoặc đối tượng cụ thể bên trong. Phía sau '包括' thường là danh sách liệt kê các thành phần hoặc một danh từ đại diện cho các yếu tố thuộc phạm trù đó (ví dụ: '费用包括水电费' - chi phí bao gồm cả tiền điện nước, '包括我在内' - bao gồm cả tôi trong đó). Cần phân biệt với '包含' (bao hàm - thường dùng cho ý nghĩa trừu tượng, tư tưởng bên trong). Tương đương với 'bao gồm', 'gồm có', 'kể cả' trong tiếng Việt.",
+      "formation": "Chủ ngữ (Tổng thể / Phạm vi) + 包括 + Tân ngữ (Các thành phần liệt kê / Đối tượng cụ thể)",
+      "examples": [
+        {
+          "translation": "Giảng dạy kỹ năng tiếng Trung bao gồm bốn phương diện: nghe, nói, đọc, viết."
+        }
+      ]
+    },
+    "zh_各自_415": {
+      "title": "各自 (Đại từ: Mỗi người tự... / Ai nấy... / Tự mình / Riêng phần mình)",
+      "shortExplanation": "Đại từ chỉ định biểu thị từng cá nhân hoặc mỗi bên trong tập thể tự chịu trách nhiệm, hành động độc lập theo cách của mình; 'mỗi người tự', 'ai nấy'.",
+      "longExplanation": "'各自' (gèzì) là đại từ biểu thị bản thân từng người hoặc từng phương diện trong một tập thể, một nhóm nhiều đối tượng. Cấu trúc này thường đứng trước động từ làm trạng ngữ (với nghĩa 'ai nấy tự làm việc của mình') hoặc đứng trước danh từ làm định ngữ (thường có '的', với nghĩa 'của riêng mỗi người') (ví dụ: '各自回家' - ai nấy tự về nhà mình, '各自表达不同的看法' - mỗi bên tự bày tỏ quan điểm riêng, '各自的特点' - đặc điểm riêng của mỗi cái). Nhấn mạnh tính độc lập, riêng rẽ của từng thành viên trong số đông. Tương đương với 'mỗi người tự', 'ai nấy', 'từng người', 'riêng phần mình' trong tiếng Việt.",
+      "formation": "Chủ ngữ (Tập thể / Số nhiều) + 各自 + Động từ (+ Tân ngữ) / (+ 的 + Danh từ)",
+      "examples": [
+        {
+          "translation": "Đã đến giờ nghỉ giữa hiệp, các cầu thủ hai đội đều tự ai nấy về khu vực ngoài sân để nghỉ ngơi."
+        }
+      ]
+    },
+    "zh_勿_416": {
+      "title": "(请)勿 + Động từ (Phó từ phủ định / nghiêm cấm: Chớ / Đừng / Xin đừng / Không được)",
+      "shortExplanation": "Phó từ phủ định mang sắc thái trang trọng, văn viết, dùng để khuyên can, cấm đoán hoặc yêu cầu không được làm một việc gì đó; 'xin đừng', 'chớ', 'không được'.",
+      "longExplanation": "'勿' (wù) là phó từ mang phong cách văn viết trang trọng, cổ kính, tương đương với '不要' (đừng) hoặc '别' (chớ) trong khẩu ngữ. Từ này đứng trước động từ hoặc cụm động từ, thường dùng trong các thông báo chính thức, quy định công cộng, bảng cảnh báo, khẩu hiệu pháp lý để khuyên răn, nhắc nhở hoặc nghiêm cấm mọi người không được tiến hành một hành vi cụ thể (thường đi kèm với từ lịch sự '请' thành '请勿' - xin đừng, xin miễn) (ví dụ: '请勿吸烟' - xin đừng hút thuốc, '切勿轻信' - tuyệt đối chớ nhẹ dạ cả tin, '闲人勿入' - người không phận sự miễn vào). Tương đương với 'đừng', 'chớ', 'xin đừng', 'miễn' trong tiếng Việt.",
+      "formation": "(请 +) 勿 + Động từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Không phận sự miễn vào (Người không có nhiệm vụ, xin đừng vào trong)."
+        }
+      ]
+    },
+    "zh_时刻_417": {
+      "title": "时刻 (Danh từ: Thời khắc / Khoảnh khắc / Giờ phút quan trọng)",
+      "shortExplanation": "Danh từ chỉ một thời điểm cụ thể, đặc biệt là giai đoạn, thời khắc then chốt mang ý nghĩa quan trọng, bước ngoặt; 'thời khắc', 'khoảnh khắc', 'giờ phút'.",
+      "longExplanation": "'时刻' (shíkè) khi làm danh từ dùng để chỉ một điểm mốc thời gian cụ thể hoặc một khoảnh khắc có ý nghĩa đặc biệt quan trọng, tính chất quyết định trong tiến trình diễn biến của sự việc. Cụm từ thường được bổ nghĩa bởi các tính từ như '最后' (cuối cùng), '关键' (then chốt), '历史' (lịch sử), '紧急' (khẩn cấp), '幸福' (hạnh phúc)... (ví dụ: '关键时刻' - thời khắc then chốt/giờ phút quyết định, '紧急时刻' - lúc khẩn cấp, '历史时刻' - thời khắc lịch sử). Tương đương với 'thời khắc', 'khoảnh khắc', 'giờ phút', 'thời điểm' trong tiếng Việt.",
+      "formation": "(在 +) Định ngữ (最后 / 关键 / 历史 / 紧要...) + 时刻",
+      "examples": [
+        {
+          "translation": "Vào khoảnh khắc cuối cùng, anh ấy đã sút vào bàn thắng quyết định cho đội nhà."
+        }
+      ]
+    },
+    "zh_时刻时时刻刻_418": {
+      "title": "时刻 / 时时刻刻 (Phó từ trạng thái: Luôn luôn / Mọi lúc mọi nơi / Lúc nào cũng / Từng giờ từng phút)",
+      "shortExplanation": "Phó từ đứng trước vị ngữ, biểu thị hành động hoặc trạng thái diễn ra liên tục, thường trực, không ngừng nghỉ một giây phút nào; 'luôn luôn', 'lúc nào cũng'.",
+      "longExplanation": "'时刻' (shíkè) khi đóng vai trò phó từ, hoặc khi được lặp lại dưới dạng AABB là '时时刻刻' (shíshíkèkè), mang ý nghĩa là thường trực, liên tục, mọi lúc mọi nơi, không một phút giây nào lơ là gián đoạn (tương đương với '经常', '每时每刻', '无时无刻'). Cấu trúc này thường đứng trước các động từ tâm lý, nhận thức hoặc hành vi chú ý (như 提醒, 记住, 关注, 准备, 警惕...) để nhấn mạnh tinh thần cảnh giác, ý thức trách nhiệm hoặc sự quan tâm sâu sắc luôn túc trực trong tâm trí (ví dụ: '时刻准备着' - luôn luôn sẵn sàng, '时时刻刻关心大家' - lúc nào cũng quan tâm đến mọi người). Tương đương với 'luôn luôn', 'mọi lúc mọi nơi', 'lúc nào cũng', 'từng giờ từng phút' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 时刻 / 时时刻刻 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Trong công việc, anh ấy lúc nào cũng nhắc nhở bản thân: Sự an toàn của hành khách là điều quan trọng nhất."
+        }
+      ]
+    },
+    "zh_至今_419": {
+      "title": "至今 (Phó từ / Cụm giới từ: Cho đến nay / Đến tận bây giờ / Cho tới nay)",
+      "shortExplanation": "Biểu thị một hành động, trạng thái hoặc sự thật kéo dài từ một mốc thời gian trong quá khứ liên tục cho tới tận thời điểm hiện tại; 'cho đến nay', 'đến tận bây giờ'.",
+      "longExplanation": "'至今' (zhìjīn) là từ chỉ thời gian kết hợp giữa giới từ '至' (đến) và danh từ '今' (nay), có nghĩa là 'cho đến hôm nay', 'tới tận bây giờ' (tương đương với '直到现在'). Cấu trúc này thường đứng ở đầu câu làm trạng ngữ hoặc đứng sau chủ ngữ trước vị ngữ. Nó thường đi kèm với các phó từ như '还', '仍', '已经', '未', '没' để nhấn mạnh sự kéo dài, tính bất biến hoặc tình trạng chưa từng thay đổi của sự việc qua một khoảng thời gian dài (ví dụ: '至今仍未解决' - cho đến nay vẫn chưa được giải quyết, '至今记忆犹新' - đến tận bây giờ vẫn nhớ như in, '至今下落不明' - cho đến nay vẫn bặt vô âm tín). Tương đương với 'cho đến nay', 'đến nay', 'tận bây giờ' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 至今 (+ Chủ ngữ +) (还 / 仍 / 已经 / 未 / 没) + Động từ",
+      "examples": [
+        {
+          "translation": "Tôi sinh ra và lớn lên ở Bắc Kinh, cho đến tận bây giờ vẫn chưa từng rời khỏi nơi này."
+        }
+      ]
+    },
+    "zh_顶_420": {
+      "title": "顶 (Lượng từ: Chiếc / Cái - dùng cho mũ, nón, kiệu, màn...)",
+      "shortExplanation": "Lượng từ chuyên dùng cho mũ nón và các vật dụng có chóp nhọn, vòm che hoặc chụp lên đầu; 'chiếc', 'cái'.",
+      "longExplanation": "'顶' (dǐng) khi làm lượng từ dùng để đếm mũ nón (như 帽子) hoặc các vật thể có chóp nhô lên, có tán vòm che phủ phía trên đầu (như 帐子 - màn/mùng, 蚊帐 - màn chống muỗi, 轿子 - kiệu, 帐篷 - lều trại). Đứng sau số từ hoặc các đại từ chỉ định '这', '那' và đứng trước danh từ (ví dụ: '一顶帽子' - một chiếc mũ, '这顶新帽子' - chiếc mũ mới này, '搭了一顶帐篷' - dựng một chiếc lều). Tương đương với lượng từ 'chiếc', 'cái' trong tiếng Việt.",
+      "formation": "Số từ / Đại từ chỉ định (这 / 那) + 顶 + Danh từ (帽子 / 帐篷 / 蚊帐 / 轿子...)",
+      "examples": [
+        {
+          "translation": "Chiếc mũ mới này của tôi trông thế nào?"
+        }
+      ]
+    },
+    "zh_顶_421": {
+      "title": "顶 (Danh từ vị trí: Đỉnh / Chóp / Nóc / Đỉnh đầu)",
+      "shortExplanation": "Danh từ chỉ phần cao nhất, chóp trên cùng của cơ thể người hoặc vật thể; 'đỉnh', 'chóp', 'nóc'.",
+      "longExplanation": "'顶' (dǐng) khi làm danh từ vị trí biểu thị phần đỉnh, chóp hoặc vị trí cao nhất của một đối tượng. Thường ghép trực tiếp sau danh từ chỉ bộ phận cơ thể hoặc vật thể để tạo thành danh từ chỉ vị trí (ví dụ: '头顶' - đỉnh đầu, '山顶' - đỉnh núi, '屋顶' - mái nhà/nóc nhà, '塔顶' - đỉnh tháp, '树顶' - ngọn cây). Tương đương với 'đỉnh', 'chóp', 'nóc', 'ngọn' trong tiếng Việt.",
+      "formation": "Danh từ (头 / 山 / 屋 / 塔 / 树...) + 顶",
+      "examples": [
+        {
+          "translation": "Xin vui lòng giơ tay qua đỉnh đầu."
+        }
+      ]
+    },
+    "zh_顶_422": {
+      "title": "顶 (Động từ động tác: Đội / Nâng lên / Húc / Chống đỡ bằng đầu hoặc vai)",
+      "shortExplanation": "Động từ biểu thị việc dùng đầu, sừng hoặc cơ thể nâng, đội, đẩy hoặc chống đỡ một vật nặng lên trên; 'đội', 'húc', 'nâng lên'.",
+      "longExplanation": "'顶' (dǐng) khi làm động từ động tác thể hiện hành vi dùng đầu, trán, sừng (đối với động vật) hoặc vai để đội, húc, nâng đỡ hay đẩy một vật nặng từ dưới lên trên. Thường kết hợp với các bổ ngữ xu hướng như '起' (lên), '住' (chắc) (ví dụ: '用头顶球' - dùng đầu đánh đầu bóng, '头顶着重物' - đầu đội vật nặng, '顶起一块石头' - đội/đẩy một tảng đá lên). Tương đương với 'đội', 'nâng bằng đầu', 'húc lên' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (用 + Bộ phận cơ thể +) 顶(起) + Tân ngữ (vật nặng)",
+      "examples": [
+        {
+          "translation": "Anh ấy có thể dùng đầu đội bổng vật nặng 20 cân (khoảng 10 kg) lên."
+        }
+      ]
+    },
+    "zh_顶着_423": {
+      "title": "顶着 (Cụm động từ / Giới từ: Đội mưa tuyết / Ngược gió / Bất chấp / Đương đầu với)",
+      "shortExplanation": "Biểu thị việc dũng cảm tiến bước, đối mặt trực tiếp hoặc bất chấp gió tuyết khắc nghiệt, áp lực lớn hay khó khăn thử thách; 'đội', 'ngược gió', 'bất chấp'.",
+      "longExplanation": "'顶着' (dǐng zhe) kết hợp động từ '顶' với trợ từ trạng thái '着', dùng để diễn tả tư thế hoặc tinh thần lao mình về phía trước, dũng cảm đương đầu và chống chọi trực diện với điều kiện thời tiết khắc nghiệt (như 大雪 - tuyết lớn, 狂风 - gió bão, 烈日 - nắng gắt, 严寒 - giá rét) hoặc áp lực, chỉ trích, khó khăn gay gắt trong xã hội (như 巨大的压力 - áp lực lớn, 批评 - sự phê bình). Thường đóng vai trò làm trạng ngữ cho hành động tiếp theo trong câu (ví dụ: '顶着风雨前行' - đội mưa gió tiến bước, '顶着压力坚持' - bất chấp áp lực kiên trì đến cùng). Tương đương với 'đội (mưa tuyết)', 'ngược (gió)', 'bất chấp', 'đương đầu với' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 顶着 + Danh từ áp lực / Thời tiết khắc nghiệt (大雪 / 狂风 / 烈日 / 压力...) + Động từ",
+      "examples": [
+        {
+          "translation": "Thời tiết vô cùng giá rét, Tử Lộ đội trận tuyết lớn rảo bước tiến về phía trước."
+        }
+      ]
+    },
+    "zh_得很得不行得不得了_424": {
+      "title": "Tính từ / Động từ + 得很 / 得不行 / 得不得了 (Bổ ngữ mức độ: ... vô cùng / ... hết sức / ... không chịu nổi / ... cực kỳ)",
+      "shortExplanation": "Bổ ngữ mức độ đứng sau tính từ hoặc động từ tâm lý, biểu thị tính chất hoặc cảm xúc đạt đến mức độ cực kỳ cao; '... vô cùng', '... không chịu nổi', '... hết sức'.",
+      "longExplanation": "Cụm '得很' (dehěn), '得不行' (de bùxíng), '得不得了' (de bùdéliǎo) đứng sau tính từ hoặc động từ biểu thị trạng thái tâm lý để làm bổ ngữ mức độ, tương đương với '非常', '十分' hoặc '极了' nhưng mang sắc thái khẩu ngữ sinh động và mãnh liệt hơn:\n1. '得很': biểu thị mức độ rất cao, mang tính khẳng định chắc chắn (ví dụ: '好得很' - tốt vô cùng, '累得很' - mệt lắm);\n2. '得不行': nhấn mạnh mức độ cao đến mức không thể chịu đựng nổi hoặc không thể khống chế được (ví dụ: '困得不行' - buồn ngủ rũ rượi/không chịu nổi, '热得不行' - nóng không thể tả);\n3. '得不得了': biểu thị mức độ phi thường, đạt đến tột cùng, không gì sánh bằng (ví dụ: '高兴得不得了' - vui mừng khôn xiết, '疼得不得了' - đau đớn vô cùng).\nTương đương với 'vô cùng', 'cực kỳ', 'hết sức', 'không chịu nổi' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Tính từ / Động từ tâm lý + 得很 / 得不行 / 得不得了",
+      "examples": [
+        {
+          "translation": "Nơi này nhộn nhịp thế này, lũ trẻ vui sướng vô cùng / vui không chịu nổi / vui hết biết."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_以来_410": {
+      "title": "……以来（名詞・節 ＋ 以来：〜以来・〜からこのかた・〜以降）",
+      "shortExplanation": "過去の特定の時点、出来事、または節の後ろに置き、その時点から現在（または基準時）に至るまでの全期間を表します（「〜以来」「〜以降」「〜からこのかた」）。",
+      "longExplanation": "「以来」（yǐlái）は時間の起点の後ろに置かれる時間表現です。過去の特定の時期、歴史的な出来事、あるいは動作や出来事を表す動詞句・節の後ろに接続し、その起点から現在に至るまでの継続的な期間を表します。文中では主に状語（連用修飾語）として用いられ、その期間中に生じた大きな変化や継続している状態を後続の節で述べます（例：「长期以来」＝長年以来、「自古以来」＝古来より、「参加工作以来」＝就職して以来）。日本語の「〜以来」「〜からこのかた」「〜以降」に相当します。",
+      "formation": "時間の起点（名詞 / 歴史的出来事 / 動詞句 / 節）＋ 以来，主文（結果や変化を表す節）",
+      "examples": [
+        {
+          "translation": "改革開放以来、中国には巨大な変化が生じた。"
+        }
+      ]
+    },
+    "zh_临_411": {
+      "title": "临 ＋ 場所名詞（空間動詞：〜に面している・〜に臨む・〜沿いの）",
+      "shortExplanation": "場所や通りのすぐそばに隣接していること、またはそれに向かって面している空間的な位置関係を表します（「〜に面した」「〜沿いの」）。",
+      "longExplanation": "「临」（lín）が空間的な動詞として機能する場合、建物や部屋などが通り、川、海などの空間に近接していること、またはそれらに真正面から向かい合っている（臨んでいる）状態を表します。「临街」（通りに面している）、「临水」（水辺に臨んでいる）、「临海」（海に面している）、「临窗」（窓際である）のように、場所を表す名詞と直接結びついて連体修飾語（名詞を修飾）や述語として頻繁に用いられます。日本語の「〜に面している」「〜沿いの」「〜に臨む」に相当します。",
+      "formation": "临 ＋ 場所 / 空間名詞（街 / 水 / 海 / 河など）（＋ 的 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "通りに面していない家を一軒買いたいです。そうすればあまりうるさくないでしょう。"
+        }
+      ]
+    },
+    "zh_临_412": {
+      "title": "临 ＋ 動詞（時間介詞：〜の間際に・〜の直前に・まさに〜しようとするとき）",
+      "shortExplanation": "動作が行われようとする直前のタイミングを表し、「まさに〜する間際に」「〜しようとするときに」という意味を表します。",
+      "longExplanation": "「临」（lín）は時間の直前性を表す介詞（または時間動詞）として機能し、「快要」（間もなく）や「到……的时候」（〜の時になって）に相当します。ある動作や出来事が発生する直前のギリギリの時点を表し、「走」（出発する）、「睡」（眠る）、「考」（試験を受ける）、「别」（別れる）などの動詞と直接結びついて「临走」（出発の間際に）、「临睡前」（寝る直前に）、「临考」（試験の直前に）のように状語（連用修飾語）を作ります。日本語の「〜の直前に」「〜の間際に」「まさに〜しようとするとき」に相当します。",
+      "formation": "临 ＋ 動詞（走 / 睡 / 考 / 出发など）（＋ 時間名詞 / 时 / 的时候），主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "出発する当日の間際に、父が実家から駆けつけて私たちを見送ってくれた。"
+        }
+      ]
+    },
+    "zh_立刻_413": {
+      "title": "立刻（時間副詞：すぐに・直ちに・即座に・たちまち）",
+      "shortExplanation": "動詞や形容詞の前に置き、事態が少しの時間も遅れることなく直ちに発生することを表します（「すぐに」「直ちに」「即座に」）。",
+      "longExplanation": "「立刻」（lìkè）は時間の即時性を表す副詞で、主語の後ろ・述語（動詞や形容詞）の前に置かれます。ある出来事や先行条件に続いて、時間的な間隔を全く置かずに直ちに後続の動作や状態変化が生じることを表します。「马上」と意味が近いですが、「立刻」はより時間的なタイムラグのなさを厳格に強調し、書き言葉や公の場でも好んで用いられます（例：「立刻出发」＝直ちに出発する、「立刻执行」＝即座に実行する、「立刻停下来」＝直ちに停止する）。日本語の「すぐに」「直ちに」「即座に」「たちまち」に相当します。",
+      "formation": "主語 ＋（時間節 ＋）立刻 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "私たちが帰ってきた時、すぐに家庭の温もりを感じた。"
+        }
+      ]
+    },
+    "zh_包括_414": {
+      "title": "包括（動詞：〜を含む・〜が入っている・〜から成る）",
+      "shortExplanation": "全体や一定の範囲の中に、特定の構成要素や下位項目が含まれていることを表します（「〜を含む」「〜が入っている」）。",
+      "longExplanation": "「包括」（bāokuò）は他動詞として機能し、ある全体、総数、または一定の範囲が、その内部に具体的な構成要素、下位項目、あるいは関係者を含み入れていることを示します。後ろに列挙された要素や名詞を目的語として従えます（例：「学费包括教材费」＝学費には教材費が含まれている、「包括所有会员」＝すべての会員を含む、「包括他在内共有五人」＝彼を含めて計5人）。抽象的な意味合いを深く包み込む「包含」と異なり、「包括」は具体的・客観的な要素の包含・内包を表します。日本語の「〜を含む」「〜が（その中に）入っている」「〜から構成される」に相当します。",
+      "formation": "主語（全体 / 範囲）＋ 包括 ＋ 目的語（含まれる構成要素・列挙項目）",
+      "examples": [
+        {
+          "translation": "中国語の技能教育には、リスニング・スピーキング・リーディング・ライティングの4つの側面が含まれている。"
+        }
+      ]
+    },
+    "zh_各自_415": {
+      "title": "各自（代名詞：各自・それぞれ・めいめい・各自の）",
+      "shortExplanation": "集団の中の各人、あるいは双方の各方面が、それぞれ個別に自身の行動を取ることを表します（「各自」「それぞれ」「めいめい」）。",
+      "longExplanation": "「各自」（gèzì）は代名詞として用いられ、複数の構成員や双方の当事者について「めいめい自分自身」「それぞれ各方面」を指し示します。文中では動詞の前に置いて状語（連用修飾語）として「各自が個別に〜する」という意味を表すか、名詞の前に置いて「各自的……」（各自の〜）という連体修飾語を作ります（例：「各自回家」＝各自家に帰る、「各自表达观点」＝それぞれ意見を述べる、「发挥各自的特长」＝それぞれの長所を発揮する）。全体の各要素が独立して別々に行動することを強調します。日本語の「各自」「それぞれ」「めいめい」「銘々」に相当します。",
+      "formation": "主語（複数 / 双方）＋ 各自 ＋ 動詞（＋ 目的語）/（＋ 的 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "ハーフタイムの時間になり、試合の両チームの選手たちはそれぞれコートの外に戻って休憩した。"
+        }
+      ]
+    },
+    "zh_勿_416": {
+      "title": "（请）勿 ＋ 動詞（否定副詞：〜なかれ・〜しないでください・〜べからず）",
+      "shortExplanation": "書き言葉の否定副詞で、禁止・制止・警告を表し、特定の行為を行わないよう求めます（「〜しないでください」「〜べからず」）。",
+      "longExplanation": "「勿」（wù）は改まった書き言葉（文言調）の否定副詞で、口語の「不要」や「别」に相当します。動詞の前に置かれ、特定の動作を行わないように忠告、制止、あるいは厳格に禁止する意味を表します。公共の標識、注意書き、規則、スローガンなどで極めて多用され、丁寧な要請を表す「请」を伴って「请勿……」（〜なさらないでください）の形で使われることが非常に多いです（例：「请勿拍照」＝撮影はご遠慮ください、「请勿喧哗」＝お静かに願います、「切勿粗心」＝決して油断するなかれ）。日本語の「〜するなかれ」「〜しないでください」「〜べからず」に相当します。",
+      "formation": "（请 ＋）勿 ＋ 動詞（＋ 目的語 / 補語）",
+      "examples": [
+        {
+          "translation": "関係者以外、立ち入りをご遠慮ください（関係者以外立ち入り禁止）。"
+        }
+      ]
+    },
+    "zh_时刻_417": {
+      "title": "时刻（名詞：瞬間・重大な局面・正念場・時・時節）",
+      "shortExplanation": "特定の時点、または事態の展開において重大な意味を持つ決定的な局面や瞬間を表します（「瞬間」「正念場」「時」「重大な時」）。",
+      "longExplanation": "「时刻」（shíkè）が名詞として機能する場合、特定の瞬間や時期、とりわけ物事の勝敗・成否・運命を分けるような極めて重要な局面や節目の時間を指します。「最后」（最後の）、「关键」（決定的な・肝心な）、「历史」（歴史的な）、「紧要」（緊要な）、「幸福」（幸福な）といった修飾語を伴って使われることが非常に多いです（例：「关键时刻」＝決定的な局面・正念場、「历史时刻」＝歴史的瞬間、「危急时刻」＝危急の時）。日本語の「決定的な瞬間」「正念場」「時」「節目」に相当します。",
+      "formation": "（在 ＋）修飾語（最后 / 关键 / 历史 / 紧要など）＋ 时刻",
+      "examples": [
+        {
+          "translation": "最後の瞬間に、彼はチームのために決定的なゴールを決めた。"
+        }
+      ]
+    },
+    "zh_时刻时时刻刻_418": {
+      "title": "时刻 / 时时刻刻（副詞：常に・いつも・片時も絶えず・いついかなる時も）",
+      "shortExplanation": "述語の前に置き、動作や意識が途切れることなく常に維持されていることを表します（「常に」「いつも」「片時も絶えず」）。",
+      "longExplanation": "「时刻」（shíkè）が副詞として用いられる場合、あるいはAABB型に重ねて「时时刻刻」（shíshíkèkè）の形で用いられる場合、「常に」「毎時毎刻」「いつでも」という意味を表します。述語動詞の前に置かれ、意識、警戒心、準備、配慮などが一瞬たりとも緩むことなく持続している様子を強調します。「提醒」（注意を促す）、「记住」（覚えている）、「准备」（備える）、「警惕」（警戒する）などの動詞と相性が非常に良いです（例：「时刻准备着」＝常に準備万端整えている、「时时刻刻想着群众」＝片時も絶えず大衆のことを考えている）。日本語の「常に」「いつも」「片時も絶えず」「四六時中」に相当します。",
+      "formation": "主語 ＋ 时刻 / 时时刻刻 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "仕事中、彼は常日頃から自分自身に言い聞かせている。「乗客の安全が最も大切だ」と。"
+        }
+      ]
+    },
+    "zh_至今_419": {
+      "title": "至今（時間副詞：今日に至るまで・今まで・今なお・今に至っても）",
+      "shortExplanation": "過去のある時点から現在に至るまで、その状態や事実がずっと続いていることを表します（「今日に至るまで」「今まで」「今なお」）。",
+      "longExplanation": "「至今」（zhìjīn）は介詞「至」（至る）と時間詞「今」（現在）が融合した表現で、「現在に至るまで」「今日まで」を意味します。文頭に置くか主語の後ろ・述語の前に置いて状語（連用修飾語）として機能します。「还」「仍」「已经」「未」「没」などの副詞と呼応して用いられることが多く、過去から長い時間が経過した現在に至るまで、ある状況が依然として変化していないことや、依然としてそのままであることを強調します（例：「至今未解决」＝今に至るまで未解決である、「至今仍记忆犹新」＝今なお記憶に新しい、「至今没有下落」＝今に至るまで行方知れずである）。日本語の「今日に至るまで」「今まで」「今なお」「未だに」に相当します。",
+      "formation": "（主語 ＋）至今（＋ 主語 ＋）（还 / 仍 / 已经 / 未 / 没）＋ 動詞",
+      "examples": [
+        {
+          "translation": "私は北京で生まれ育ち、今日に至るまでまだ一度も離れたことがありません。"
+        }
+      ]
+    },
+    "zh_顶_420": {
+      "title": "顶（量詞：〜個・〜つ・〜張：帽子・テント・蚊帳などを数える量詞）",
+      "shortExplanation": "帽子やテント、蚊帳など、頭にかぶせる物や頭上を覆う形状の物を数える量詞です（「〜個」「〜張り」）。",
+      "longExplanation": "「顶」（dǐng）が量詞として機能する場合、帽子をはじめ、頭上にかぶせるものや上部に屋根・天頂部がある構造の物品を数える際に用いられます。「帽子」をはじめ、「帐篷」（テント）、「蚊帐」（蚊帳）、「轿子」（かご）などに適用されます。数詞や指示代名詞（「这」「那」）と結びついて名詞を修飾します（例：「一顶帽子」＝1つの帽子、「这顶帽子」＝この帽子、「搭了一顶帐篷」＝テントをひと張り張った）。日本語の「〜個」「〜つ」「〜張（テント・蚊帳）」に相当します。",
+      "formation": "数詞 / 指示代名詞（这 / 那）＋ 顶 ＋ 名詞（帽子 / 帐篷 / 蚊帐 / 轿子など）",
+      "examples": [
+        {
+          "translation": "私のこの新しい帽子、どうですか？"
+        }
+      ]
+    },
+    "zh_顶_421": {
+      "title": "顶（場所名詞：頂点・てっぺん・山頂・頭頂・屋上）",
+      "shortExplanation": "人体や物体の最も高い位置、てっぺん、頂上部分を表します（「てっぺん」「頂上」「頭上」「いただき」）。",
+      "longExplanation": "「顶」（dǐng）が名詞として機能する場合、人体や物体などの最も高い天頂部分、てっぺんを指します。身体部位や建築物・地形を表す名詞の後ろに直接結びついて複合名詞を作り、「头顶」（頭頂・頭のてっぺん）、「山顶」（山頂）、「屋顶」（屋根・屋上）、「塔顶」（塔の頂）などのように用いられます。日本語の「てっぺん」「頂上」「頭頂」「いただき」に相当します。",
+      "formation": "名詞（头 / 山 / 屋 / 塔など）＋ 顶",
+      "examples": [
+        {
+          "translation": "手を頭の上（頭頂部）より高く挙げてください。"
+        }
+      ]
+    },
+    "zh_顶_422": {
+      "title": "顶（動作動詞：頭や角で持ち上げる・突き上げる・頭上に載せる）",
+      "shortExplanation": "頭、角、体の一部を使って重い物を下から上へと持ち上げたり、頭上に載せて支えたりすることを表します（「持ち上げる」「突き上げる」「頭に載せる」）。",
+      "longExplanation": "「顶」（dǐng）は動作動詞として機能し、頭部や動物の角、あるいは肩や道具などを用いて、下から上に向かって重い物を支え上げたり押し上げたりする動作を表します。方向補語「起」を伴って「顶起」（持ち上げる・押し上げる）や、結果補語「住」を伴って「顶住」（支え止める）などの複合動詞をよく形成します（例：「用头顶球」＝ヘディングする、「头顶着水罐」＝頭の上に水瓶を載せている、「用木棍顶住门」＝棒で突っ張り棒をしてドアを押さえる）。日本語の「（頭などで）持ち上げる」「突き上げる」「頭上に載せる」「突っ張る」に相当します。",
+      "formation": "主語 ＋（用 ＋ 身体部位 ＋）顶(起) ＋ 目的語（重量物）",
+      "examples": [
+        {
+          "translation": "彼は頭を使って20斤（約10kg）の重さの物を持ち上げることができる。"
+        }
+      ]
+    },
+    "zh_顶着_423": {
+      "title": "顶着（連用句：〜を冒して・〜を突いて・〜に立ち向かって・〜をものともせず）",
+      "shortExplanation": "悪天候（吹雪、暴風、炎天下）や過酷なプレッシャー・逆境に正面から立ち向かい、それを押し切って行動することを表します（「〜を冒して」「〜を突いて」「〜に抗して」）。",
+      "longExplanation": "「顶着」（dǐng zhe）は動詞「顶」に持続のアスペクト助詞「着」が付いた形で、過酷な自然現象（「大雪」＝大雪、「狂风」＝暴風、「烈日」＝炎天下など）や、心理的・社会的な重圧（「巨大压力」＝大きな重圧、「批评」＝批判など）に身をさらしながら、それに逆らって前進・奮闘する様子を描写します。文中では後続の動作に対する連用修飾語（状語）として用いられます（例：「顶着烈日工作」＝炎天下を冒して作業する、「顶着狂风前进」＝暴風を突いて前進する、「顶着压力做出决定」＝プレッシャーに抗して決断を下す）。日本語の「〜を冒して」「〜を突いて」「〜をものともせず」「〜に立ち向かって」に相当します。",
+      "formation": "主語 ＋ 顶着 ＋ 過酷な環境 / プレッシャー（大雪 / 狂风 / 烈日 / 压力など）＋ 動詞",
+      "examples": [
+        {
+          "translation": "天気は非常に寒く、子路は大雪を突いて前へと歩みを進めた。"
+        }
+      ]
+    },
+    "zh_得很得不行得不得了_424": {
+      "title": "形容詞 / 心理動詞 ＋ 得很 / 得不行 / 得不得了（程度補語：非常に〜だ・〜てたまらない・とてつもなく〜だ）",
+      "shortExplanation": "形容詞や心理動詞の後ろに置き、程度が極めて高いことや我慢できないほど極限に達していることを表します（「非常に〜だ」「〜でたまらない」「とてつもなく〜だ」）。",
+      "longExplanation": "「得很」（dehěn）、「得不行」（de bùxíng）、「得不得了」（de bùdéliǎo）は、形容詞や心理状態を表す動詞の後ろに置かれて極めて高い程度を表す程度補語です。「非常」「十分」「极了」に相当しますが、口語的で生き生きとした感情の昂りを表現できます。\n1.「〜得很」：程度が非常に高いことを強調します（例：「好得很」＝非常に良い、「累得很」＝とても疲れている）。\n2.「〜得不行」：我慢できないほど、やりきれないほど極端な程度に達していることを表します（例：「困得不行」＝眠くてたまらない、「热得不行」＝暑くてやりきれない）。\n3.「〜得不得了」：並大抵ではないほど甚だしい極限状態を表します（例：「高兴得不得了」＝嬉しくてたまらない・飛び上がるほど嬉しい、「疼得不得了」＝痛くてたまらない）。\n日本語の「非常に〜だ」「〜てたまらない」「死ぬほど〜だ」「この上なく〜だ」に相当します。",
+      "formation": "主語 ＋ 形容詞 / 心理動詞 ＋ 得很 / 得不行 / 得不得了",
+      "examples": [
+        {
+          "translation": "ここはこんなに賑やかで、子どもたちは非常に喜んでいる／嬉しくてたまらない／とてつもなく喜んでいる。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_以来_410": {
+      "title": "……以来 (명사 / 절 + 以来: ~ 이래로, ~ 이후로, ~부터 지금까지)",
+      "shortExplanation": "과거의 특정한 시점, 역사적 사건 또는 절 뒤에 쓰여, 그때부터 현재(혹은 기준 시점)에 이르는 전 기간을 나타냅니다('~ 이래로', '~ 이후로').",
+      "longExplanation": "'以来'(yǐlái)는 과거의 시간적 기준점 뒤에 결합하는 시간 명사입니다. 과거의 특정한 시점, 사건, 혹은 동작이나 사건의 발생을 나타내는 절 뒤에 붙어, 그 기점으로부터 지금까지 중단 없이 지속된 시간의 경과를 나타냅니다. 문장에서는 주로 부사어로 쓰여 그 기간 동안 일어난 현저한 변화나 지속적인 상황을 뒷받침합니다(예: '长期以来' 오랫동안, '自古以来' 예로부터, '大学毕业以来' 대학 졸업 이래로). 한국어의 '~ 이래로', '~ 이후로', '~부터 지금까지'에 해당합니다.",
+      "formation": "시간 기점 (명사 / 역사적 사건 / 동사구 / 절) + 以来, 주절 (변화나 지속을 나타내는 절)",
+      "examples": [
+        {
+          "translation": "개혁개방 이래로 중국에는 거대한 변화가 일어났다."
+        }
+      ]
+    },
+    "zh_临_411": {
+      "title": "临 + 장소 명사 (공간동사: ~에 면하다, ~에 맞닿다, ~ 쪽을 향하다)",
+      "shortExplanation": "건물이나 사물이 길거리, 강, 바다 등의 공간에 바로 맞닿아 있거나 마주보고 있는 위치 관계를 나타냅니다('~에 면하다', '~에 맞닿은').",
+      "longExplanation": "'临'(lín)이 공간적 위치를 나타내는 동사로 쓰일 때는 도로, 수면, 바다, 창문 등과 바로 인접해 있거나 정면으로 마주하고 있음을 의미합니다. '临街'(길가에 면하다), '临海'(바다를 마주하다), '临水'(물가에 닿아 있다), '临窗'(창가에 붙어 있다)처럼 장소나 지형을 나타내는 명사와 직접 결합하여 명사를 꾸미는 관형어나 서술어로 널리 쓰입니다(예: '临街的店铺' 길가에 면한 가게, '临海的房间' 바다가 보이는 방). 한국어의 '~에 면하다', '~을 마주보다', '~ 쪽으로 면해 있는'에 해당합니다.",
+      "formation": "临 + 장소 / 공간 명사 (街 / 水 / 海 / 河 등) (+ 的 + 명사)",
+      "examples": [
+        {
+          "translation": "나는 길가에 면해 있지 않은 집을 한 채 사고 싶은데, 그래야 너무 시끄럽지 않을 것이다."
+        }
+      ]
+    },
+    "zh_临_412": {
+      "title": "临 + 동사 (시간개사: ~하기 직전에, 막 ~하려던 참에, ~에 임하여)",
+      "shortExplanation": "어떤 동작이나 사건이 일어나기 바로 직전의 시점을 나타내며, '막 ~하기 직전에', '~할 무렵에'라는 뜻을 나타냅니다.",
+      "longExplanation": "'临'(lín)이 시간적 의미로 쓰일 때는 개사 혹은 시간성을 띤 동사로서, 어떤 행위나 사건이 발생하기 바로 직전의 찰나를 가리킵니다. '快要'(곧 ~하려 하다) 혹은 '到……的时候'(~할 때가 되다)의 뜻을 가지며, '走'(떠나다), '睡'(자다), '考'(시험을 보다), '出发'(출발하다), '别'(이별하다) 등의 단음절·다음절 동사와 결합하여 문장의 시간부사어를 구성합니다(예: '临走' 떠나기 직전에, '临睡前' 잠들기 직전에, '临考' 시험을 앞두고). 한국어의 '~하기 직전에', '막 ~하려 할 때', '~에 임하여'에 해당합니다.",
+      "formation": "临 + 동사 (走 / 睡 / 考 / 出发 등) (+ 시간 명사 / 时 / 的时候), 주어 + 서술어",
+      "examples": [
+        {
+          "translation": "떠나기 직전인 그날, 아버지는 고향에서 급히 올라와 우리를 배웅해 주셨다."
+        }
+      ]
+    },
+    "zh_立刻_413": {
+      "title": "立刻 (시간부사: 즉시, 곧바로, 당장, 바로)",
+      "shortExplanation": "서술어 앞에 놓여 시간적인 지체나 지연 없이 어떤 행동이나 상태의 변화가 즉시 일어남을 나타냅니다('즉시', '곧바로').",
+      "longExplanation": "'立刻'(lìkè)는 동작이나 사태가 조금의 틈도 없이 즉각적으로 일어남을 나타내는 시간부사입니다. 주어 뒤, 술어(동사 또는 형용사) 앞에 위치하여 선행 상황이 발생하자마자 찰나의 지체도 없이 후속 조치나 감정·상태의 반응이 뒤따름을 강조합니다. '马上'과 뜻이 유사하지만 '立刻'는 시간적 즉시성이 더욱 엄격하고 신속하며, 문어와 구어 모두에서 두루 쓰입니다(예: '立刻出发' 즉시 출발하다, '立刻回答' 즉각 답변하다, '立刻停止' 즉시 멈추다). 한국어의 '곧바로', '즉시', '당장', '순식간에'에 해당합니다.",
+      "formation": "주어 + (시간절 +) 立刻 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "우리가 돌아왔을 때, 즉시 집의 따스함을 느꼈다."
+        }
+      ]
+    },
+    "zh_包括_414": {
+      "title": "包括 (동사: 포함하다, 포괄하다, 들어 있다)",
+      "shortExplanation": "어떤 전체 범위나 총액 속에 특정한 구성 요소나 하위 항목이 들어 있음을 나타냅니다('포함하다', '포괄하다').",
+      "longExplanation": "'包括'(bāokuò)는 타동사로서, 어떤 집합, 전체, 혹은 일정한 영역 안에 구체적인 구성원, 하위 부문, 또는 구체적 항목들이 함께 아우러져 들어가 있음을 나타냅니다. 목적어로 나열된 세부 요소나 명사구를 수반합니다(예: '房租包括水电网费' 월세에는 수도·전기·인터넷 비용이 포함되어 있다, '包括他在内' 그를 포함하여). 내면적·추상적인 함의를 강조하는 '包含'에 비해, '包括'는 실질적이고 객관적인 범위의 내포를 표현할 때 주로 쓰입니다. 한국어의 '~을 포함하다', '~이 들어가다', '~을 망라하다'에 해당합니다.",
+      "formation": "주어 (전체 / 범위) + 包括 + 목적어 (포함되는 구성 요소나 하위 항목)",
+      "examples": [
+        {
+          "translation": "중국어 기능 교육은 듣기, 말하기, 읽기, 쓰기의 네 가지 방면을 포함한다."
+        }
+      ]
+    },
+    "zh_各自_415": {
+      "title": "各自 (대명사: 각자, 제각기, 저마다, 각자의)",
+      "shortExplanation": "집단 내의 각 개인이나 각 방면이 개별적으로 독립된 행동을 취함을 나타냅니다('각자', '제각기', '저마다').",
+      "longExplanation": "'各自'(gèzì)는 여럿으로 구성된 집단이나 쌍방의 구성원에 대해 '각 사람 자신' 혹은 '각각의 편'을 가리키는 대명사입니다. 주로 서술어 동사 앞에 놓여 부사어로 쓰여 '각자가 저마다 따로 행동하다'라는 의미를 나타내거나, '各自的' 형태로 명사 앞에 놓여 관형어로 쓰입니다(예: '各自回房间' 각자 방으로 돌아가다, '各自努力' 제각기 노력하다, '尊重各自的选择' 각자의 선택을 존중하다). 집단 내부의 개별성과 분리된 행동을 강조합니다. 한국어의 '각자', '제각기', '저마다', '각자의'에 해당합니다.",
+      "formation": "주어 (복수 / 쌍방 / 집단) + 各自 + 동사 (+ 목적어) / (+ 的 + 명사)",
+      "examples": [
+        {
+          "translation": "하프타임 휴식 시간이 되자, 시합 양 팀의 선수들은 각자 경기장 밖으로 돌아가 휴식을 취했다."
+        }
+      ]
+    },
+    "zh_勿_416": {
+      "title": "(请)勿 + 동사 (부정부사: ~하지 마시오, 삼가 주십시오, 결코 ~하지 말 것)",
+      "shortExplanation": "문어체 부정부사로, 금지나 경고를 나타내어 특정 행동을 하지 말도록 강력히 권고하거나 제지합니다('~하지 마시오', '~을 삼가십시오').",
+      "longExplanation": "'勿'(wù)는 고풍스럽고 격식 있는 문어체 부정부사로, 구어의 '不要'나 '别'에 해당합니다. 동사 앞에 놓여 특정 행위를 하지 말 것을 권고하거나 금지하는 역할을 합니다. 공공장소의 안내 표지판, 경고문, 규칙 조항 등에서 주로 쓰이며, 정중한 청유를 나타내는 '请'과 결합하여 '请勿……'(삼가 주십시오, ~하지 마시기 바랍니다)의 형태로 가장 널리 활용됩니다(예: '请勿吸烟' 흡연을 삼가 주십시오, '请勿触碰' 만지지 마시오, '切勿酒驾' 결코 음주운전을 하지 말 것). 한국어의 '~하지 마시오', '~을 삼가 주십시오', '~ 말 것'에 해당합니다.",
+      "formation": "(请 +) 勿 + 동사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "관계자 외 출입을 금합니다 (직원이 아니면 들어오지 마십시오)."
+        }
+      ]
+    },
+    "zh_时刻_417": {
+      "title": "时刻 (명사: 순간, 시각, 고비, 중대한 시점)",
+      "shortExplanation": "특정한 시점, 특히 일의 성패나 운명을 좌우하는 매우 중대한 고비나 결정적인 순간을 가리킵니다('순간', '시각', '결정적 시점').",
+      "longExplanation": "'时刻'(shíkè)이 명사로 쓰일 때는 특정한 시간적 순간이나 계기, 특히 일의 진전 과정에서 승패나 운명이 갈리는 전환점이 되는 중대한 고비나 순간을 뜻합니다. 흔히 '关键'(결정적인), '最后'(마지막), '历史'(역사적인), '紧要'(긴요한), '幸福'(행복한) 등의 수식어를 동반하여 전치사 '在'와 함께 구체적인 시간 배경을 만듭니다(예: '关键时刻' 결정적인 순간/정초의 고비, '历史时刻' 역사적 순간, '危急时刻' 위급한 시점). 한국어의 '순간', '결정적 시각', '고비', '때'에 해당합니다.",
+      "formation": "(在 +) 수식어 (最后 / 关键 / 历史 / 紧要 등) + 时刻",
+      "examples": [
+        {
+          "translation": "마지막 순간에 그는 팀을 위해 결정적인 골을 넣었다."
+        }
+      ]
+    },
+    "zh_时刻时时刻刻_418": {
+      "title": "时刻 / 时时刻刻 (부사: 항상, 언제나, 매 순간, 시시각각, 한시도 쉬지 않고)",
+      "shortExplanation": "서술어 앞에 놓여 어떤 행위나 의식 상태가 단 한순간도 끊이지 않고 지속됨을 나타냅니다('항상', '언제나', '매 순간').",
+      "longExplanation": "'时刻'(shíkè)이 부사로 쓰이거나 AABB 형태의 중첩형인 '时时刻刻'(shíshíkèkè)으로 쓰이면, '항상', '매 순간', '시시각각'의 뜻을 나타냅니다. 주로 주어 뒤, 서술어 앞에 위치하여 주의력, 경각심, 마음가짐, 준비 태세 등이 한순간도 나태해지거나 중단되지 않고 언제나 유지되고 있음을 강조합니다. '提醒'(일깨우다), '记住'(명심하다), '保持'(유지하다), '准备'(준비하다) 등의 동사와 긴밀하게 결합합니다(예: '时刻准备着' 늘 준비하고 있다, '时时刻刻注意安全' 매 순간 안전에 유의하다). 한국어의 '항상', '언제나', '매 순간', '한시도 잊지 않고'에 해당합니다.",
+      "formation": "주어 + 时刻 / 时时刻刻 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "업무 중에 그는 언제나 스스로에게 '승객의 안전이 가장 중요하다'고 일깨운다."
+        }
+      ]
+    },
+    "zh_至今_419": {
+      "title": "至今 (시간부사: 지금까지, 오늘날에 이르기까지, 지금까지도, 아직껏)",
+      "shortExplanation": "과거의 어느 시점부터 현재에 이르기까지 일정한 상태나 사실이 변함없이 계속 지속됨을 나타냅니다('지금까지', '오늘에 이르기까지').",
+      "longExplanation": "'至今'(zhìjīn)은 개사 '至'(이르다)와 명사 '今'(오늘)이 결합된 시간 부사어로, '오늘에 이르기까지', '지금까지'('直到现在')라는 뜻을 갖습니다. 문두에 놓이거나 주어 뒤, 서술어 앞에 놓여 문장의 시간적 범위를 확정 짓습니다. 뒤에 '还'(아직), '仍'(여전히), '已经'(이미), '未'(아직 ~않다), '没'(~하지 않았다) 등의 부사와 빈번하게 호응하여, 오랜 시간이 흐른 지금까지도 여전히 상황이 변치 않았거나 어떠한 동작이 아직 실현되지 못했음을 강조합니다(예: '至今未解决' 지금까지 해결되지 못했다, '至今记忆犹新' 지금까지도 기억이 생생하다). 한국어의 '지금까지', '오늘에 이르기까지', '아직껏'에 해당합니다.",
+      "formation": "(주어 +) 至今 (+ 주어 +) (还 / 仍 / 已经 / 未 / 没) + 동사",
+      "examples": [
+        {
+          "translation": "나는 베이징에서 태어나고 자랐으며, 지금까지도 떠나 본 적이 없다."
+        }
+      ]
+    },
+    "zh_顶_420": {
+      "title": "顶 (양사: ~개, ~모, ~채: 모자, 텐트, 모기장 등을 세는 양사)",
+      "shortExplanation": "모자나 텐트, 모기장처럼 머리에 쓰거나 꼭대기 지붕이 있는 사물을 세는 단위 양사입니다('~개', '~채').",
+      "longExplanation": "'顶'(dǐng)이 양사로 쓰일 때는 모자처럼 머리에 착용하는 물건이나, 텐트·모기장·가마처럼 위쪽에 덮개나 꼭대기가 솟아 있는 구조물을 세는 데 쓰입니다. 수사나 지시대명사('这', '那') 뒤에 놓여 명사를 수식합니다(예: '一顶帽子' 모자 한 개, '这顶新帽子' 이 새 모자, '一顶蚊帐' 모기장 한 채, '搭了一顶帐篷' 텐트 하나를 치다). 한국어의 사물을 세는 단위인 '~개', '~모(모자)', '~채(텐트·장막)' 등에 해당합니다.",
+      "formation": "수사 / 지시대명사 (这 / 那) + 顶 + 명사 (帽子 / 帐篷 / 蚊帐 / 轿子 등)",
+      "examples": [
+        {
+          "translation": "내 이 새 모자 어때 보여요?"
+        }
+      ]
+    },
+    "zh_顶_421": {
+      "title": "顶 (장소명사: 꼭대기, 정수리, 정상, 머리 위)",
+      "shortExplanation": "신체나 사물의 가장 높은 부위, 정수리나 꼭대기를 나타냅니다('꼭대기', '정수리', '정상').",
+      "longExplanation": "'顶'(dǐng)이 명사로 쓰일 때는 사람의 신체나 자연물, 건축물 등의 가장 높은 윗부분, 맨 꼭대기를 의미합니다. 사람이나 지형, 사물을 나타내는 명사 뒤에 직접 결합하여 복합어를 이룹니다(예: '头顶' 정수리/머리 꼭대기, '山顶' 산꼭대기/정상, '屋顶' 지붕/옥상, '塔顶' 탑 꼭대기). 한국어의 '꼭대기', '정수리', '정상', '맨 위'에 해당합니다.",
+      "formation": "명사 (头 / 山 / 屋 / 塔 등) + 顶",
+      "examples": [
+        {
+          "translation": "손을 머리 위로 높이 들어 올려 주십시오."
+        }
+      ]
+    },
+    "zh_顶_422": {
+      "title": "顶 (동작동사: 머리로 떠받치다, 들어 올리다, 이다, 들이받다)",
+      "shortExplanation": "머리나 뿔, 어깨 등을 사용하여 물건을 아래에서 위로 떠받치거나 머리 위에 이고 지탱함을 나타냅니다('머리로 들어 올리다', '떠받치다', '이다').",
+      "longExplanation": "'顶'(dǐng)이 동작동사로 쓰일 때는 머리, 이마, 뿔, 어깨 등을 도구로 삼아 물체를 아래에서 위쪽으로 힘껏 밀어 올리거나 떠받치는 동작을 가리킵니다. 흔히 방향보어 '起'와 결합하여 '顶起'(들어 올리다, 떠받치다)의 형태로 쓰이며, 축구의 헤딩이나 머리에 짐을 이고 나르는 행위 등을 묘사할 때 자주 쓰입니다(예: '用头顶球' 머리로 공을 받다/헤딩하다, '头上顶着一盆水' 머리 위에 물동이를 이고 있다). 한국어의 '머리로 들어 올리다', '떠받치다', '(머리에) 이다', '들이받다'에 해당합니다.",
+      "formation": "주어 + (用 + 신체 부위 +) 顶(起) + 목적어 (무거운 물건 / 무게)",
+      "examples": [
+        {
+          "translation": "그는 머리를 써서 20근(약 10kg) 무게의 물건을 들어 올릴 수 있다."
+        }
+      ]
+    },
+    "zh_顶着_423": {
+      "title": "顶着 (동사구 / 연용수식: ~을 무릅쓰고, ~을 맞서 뚫고, ~을 헤치며, ~에 굴하지 않고)",
+      "shortExplanation": "눈비, 폭풍, 혹한 등의 악천후나 거센 압박, 비판 등의 역경을 정면으로 맞서 견뎌내며 행동함을 나타냅니다('~을 무릅쓰고', '~에 맞서').",
+      "longExplanation": "'顶着'(dǐng zhe)은 동사 '顶'에 지속을 나타내는 '着'이 결합된 표현으로, 살을 에는 혹한, 폭설, 거센 비바람 등의 혹독한 자연 조건이나 거대한 사회적·심리적 압박, 비판 등에 맞닥뜨려 그것을 피하지 않고 정면으로 맞서서 뚫고 나아가는 모습을 생생하게 묘사합니다. 뒤따르는 주된 행동의 부사어로 주로 쓰입니다(예: '顶着烈日劳作' 따가운 뙤약볕을 무릅쓰고 일하다, '顶着狂风前行' 거센 바람을 뚫고 전진하다, '顶着压力坚持下去' 압박을 이겨내고 끝까지 견지하다). 한국어의 '~을 무릅쓰고', '~을 뚫고', '~에 맞서 헤치며'에 해당합니다.",
+      "formation": "주어 + 顶着 + 역경 / 악천후 / 압박 명사 (大雪 / 狂风 / 烈日 / 压力 등) + 동사",
+      "examples": [
+        {
+          "translation": "날씨가 매우 추웠으나, 자로는 함박눈을 맞서 뚫고 앞으로 걸어갔다."
+        }
+      ]
+    },
+    "zh_得很得不行得不得了_424": {
+      "title": "형용사 / 심리동사 + 得很 / 得不行 / 得不得了 (정도보어: 매우 ~하다, ~해 죽겠다, 견딜 수 없이 ~하다, 더할 나위 없이 ~하다)",
+      "shortExplanation": "형용사나 심리 상태를 나타내는 동사 뒤에 쓰여 정도가 극에 달했거나 감당하기 힘들 정도로 대단함을 나타냅니다('매우 ~하다', '~해 죽겠다', '~해서 견딜 수 없다').",
+      "longExplanation": "'得很'(dehěn), '得不行'(de bùxíng), '得不得了'(de bùdéliǎo)는 형용사나 심리동사 뒤에 놓여 정도가 극도로 높음을 나타내는 대표적인 정도보어들입니다. '非常', '极了'와 뜻이 통하지만 훨씬 더 생생하고 풍부한 구어적 감정을 드러냅니다.\n1. '……得很': 성질이나 상태의 정도가 '대단히, 몹시' 높음을 나타냅니다(예: '好得很' 매우 좋다, '冷得很' 대단히 춥다).\n2. '……得不行': 어떠한 상태가 극도에 달해 도저히 견딜 수 없거나 주체하기 힘들 지경임을 나타냅니다(예: '困得不行' 졸려 죽겠다, '累得不行' 힘들어 죽겠다).\n3. '……得不得了': 감정이나 느낌이 주체할 수 없을 정도로 말할 수 없이 극에 달했음을 나타냅니다(예: '高兴得不得了' 좋아서 어쩔 줄을 모르다/더할 나위 없이 기쁘다, '疼得不得了' 아파 죽겠다).\n한국어의 '매우 ~하다', '~해 죽겠다', '~해 견딜 수 없다', '이루 말할 수 없이 ~하다'에 해당합니다.",
+      "formation": "주어 + 형용사 / 심리동사 + 得很 / 得不行 / 得不得了",
+      "examples": [
+        {
+          "translation": "이곳이 이렇게 번화하니, 아이들은 매우 기뻐한다 / 기뻐 죽을 지경이다 / 말할 수 없이 기뻐한다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_以来_410": {
+      "title": "……以来（名词 / 动词短语 / 分句 + 以来：表示从过去某一时期延续至今）",
+      "shortExplanation": "置于过去特定的时间点、重大事件或分句之后，表示从过去的某个起点一直延续到目前（或所谈及的时间）的整个时间段；表示“从……到现在”。",
+      "longExplanation": "“以来”（yǐlái）是表示时间区间的方位名词。常附着在指称过去某一特定时刻、历史时期、重大事件或标志性动作的词语或分句之后，用来界定一个从过去某点一直延伸到现在的完整时间跨度。在句中多充当时间状语，引出后文在此期间所发生的巨大变化、持续积累或发展态势（如“长期以来”、“自古以来”、“参加工作以来”、“成家以来”）。书面语和口语中均广泛使用。",
+      "formation": "时间起点（名词 / 重大事件 / 动词短语 / 分句）+ 以来，主句（变化或持续态势）",
+      "examples": [
+        {
+          "translation": "改革开放以来，中国发生了巨大的变化。"
+        }
+      ]
+    },
+    "zh_临_411": {
+      "title": "临 + 处所名词（动词：靠近、面对街道或水面等空间位置）",
+      "shortExplanation": "动词，表示房屋、场所等紧靠着或面对着特定的道路、水域或自然景物；表示“面对、紧挨着、临近”。",
+      "longExplanation": "“临”（lín）充当空间位置动词时，指房屋、建筑或特定位置紧靠、挨着或正对着某处所或景物（如马路、江河、湖泊、窗口等）。常与处所名词结合构成紧凑的词组（如“临街”、“临窗”、“临水”、“临海”、“临江”），在句中主要充当定语修饰房屋建筑，也可作谓语。在购房、租房、挑选酒店房间等生活场景中极常见。",
+      "formation": "临 + 处所 / 空间名词（街 / 水 / 海 / 河等）（+ 的 + 名词）",
+      "examples": [
+        {
+          "translation": "我想买一套不临街的房子，这样不会太吵。"
+        }
+      ]
+    },
+    "zh_临_412": {
+      "title": "临 + 动词（介词：表示紧接在某动作发生之前，相当于“快要、等到……”）",
+      "shortExplanation": "介词或时间动词，表示某一动作即将发生或某一时刻刚刚到来的紧迫关口；相当于“快要……的时候”、“临近”。",
+      "longExplanation": "“临”（lín）用于时间范畴时，表示时间上的临近、紧接或正要发生，相当于“快要……的时候”或“等到……的时候”。常直接与动词搭配构成介宾短语或固定词组（如“临走”、“临睡”、“临考”、“临出发”、“临别”），后面常跟“时”、“前”、“那天”、“之际”等词语，在句中充当时间状语，交代事件发生的紧凑时间背景（如“临睡前喝杯牛奶”、“临出发前检查一下行李”）。书面语和口语中都很常见。",
+      "formation": "临 + 动词（走 / 睡 / 考 / 出发等）（+ 时间名词 / 时 / 的时候），主语 + 谓语",
+      "examples": [
+        {
+          "translation": "临走那天，父亲从老家赶来送我们。"
+        }
+      ]
+    },
+    "zh_立刻_413": {
+      "title": "立刻（时间副词：表示动作或情况紧接着发生，毫无延误）",
+      "shortExplanation": "副词，置于动词或形容词前，表示紧接着某一时刻或事件，不容耽搁地马上做出反应或产生变化；表示“马上、即刻”。",
+      "longExplanation": "“立刻”（lìkè）是表示时间紧迫、紧密承接的副词，充当状语修饰谓语动词或形容词。用来强调后继的行动、心理感受或事物变化在极短的时间内、不容延迟地随之发生，突出反应之迅速和行动之果断（如“立刻行动”、“立刻答复”、“立刻生效”、“立刻离开”）。相比口语色彩浓厚的“马上”，“立刻”更强调时间的绝对即时性，在书面语和正式交际中广泛运用。",
+      "formation": "主语 +（时间 / 前提分句 +）立刻 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "我们回来时，立刻感受到了家的温暖。"
+        }
+      ]
+    },
+    "zh_包括_414": {
+      "title": "包括（动词：包含、总括在一定的范围或总额之内）",
+      "shortExplanation": "动词，表示某个整体、范围或总数中包含着某些具体的分支、要素或成员；表示“包含、算在内”。",
+      "longExplanation": "“包括”（bāokuò）是表示包容、容纳的动词。指把特定的人员、事物、组成部分或下位概念归入、总括在某一整体结构、范围或总额之中。后接列举的具体项目或名词短语作宾语（如“旅游费用包括往返机票”、“包括他在内一共十个人”、“教学内容包括语法和词汇”）。与着重指内在思想、道理或深层含义的“包含”不同，“包括”侧重指在外延上、具体构成要素或范围上的涵盖。",
+      "formation": "主语（整体 / 范围）+ 包括 + 宾语（所包含的组成部分或列举项）",
+      "examples": [
+        {
+          "translation": "汉语技能教学包括听、说、读、写四个方面。"
+        }
+      ]
+    },
+    "zh_各自_415": {
+      "title": "各自（代词：指每个人或每个方面自己这一方）",
+      "shortExplanation": "代词，指多个个体组成的群体中每个人或每个方面各自独立的一方；表示“各人自己、各个方面、各自分别”。",
+      "longExplanation": "“各自”（gèzì）是表示个别、分别的指示代词。指称所谈及的多数人或各方当中的每一个人、每一个团体自己这方面。在句中常作状语修饰动词，表示大家分散、分别、独立地从事各自的行为（如“各自回家”、“各自发表看法”、“各自承担责任”）；也可以后接“的”充当定语，修饰属于各个体的事物（如“各自的特点”、“各自的立场”）。强调个体间的独立互不干扰。",
+      "formation": "主语（多个人 / 双方 / 各方）+ 各自 + 动词（+ 宾语）/（+ 的 + 名词）",
+      "examples": [
+        {
+          "translation": "中场休息时间到了，比赛双方队员各自回场外休息。"
+        }
+      ]
+    },
+    "zh_勿_416": {
+      "title": "（请）勿 + 动词（副词：书面语表示禁止或劝阻，相当于“不要、别”）",
+      "shortExplanation": "书面语否定副词，置于动词前，用于告诫、劝阻或明令禁止某种行为；相当于“不要、别”。",
+      "longExplanation": "“勿”（wù）是具有鲜明文雅庄重色彩的书面语否定副词，在意义上等同于口语中的“不要”或“别”。用于向公众或特定对象提出告诫、禁止或要求克制某种行为。多见于公共告示牌、交通警示、规章守则、律法条文以及正式公文之中。常与表礼貌客气的“请”连用，构成规范温和的敬辞句式“请勿……”（如“请勿喧哗”、“请勿吸烟”、“请勿拍照”、“切勿违章”、“非请勿进”）。",
+      "formation": "（请 +）勿 + 动词（+ 宾语 / 补语）",
+      "examples": [
+        {
+          "translation": "非工作人员，请勿入内。"
+        }
+      ]
+    },
+    "zh_时刻_417": {
+      "title": "时刻（名词：特定的时间，特指具有重大意义的关头或阶段）",
+      "shortExplanation": "名词，指特定的时间点或具有关键性、转折性重大意义的历史关头或瞬间；相当于“关头、时候、瞬间”。",
+      "longExplanation": "“时刻”（shíkè）充当名词时，指特定的某一段短暂时光或时刻点，尤其突出该时间节点所蕴含的重大意义、深远影响或紧张局势。前面经常搭配具有修饰限制作用的形容词或名词（如“关键时刻”、“最后时刻”、“历史时刻”、“紧要时刻”、“危险时刻”、“幸福时刻”）。在句中常与介词“在”组合构成介宾短语作时间状语，强调事件发生在具有决定性影响的历史节骨眼上。",
+      "formation": "（在 +）修饰语（最后 / 关键 / 历史 / 紧要等）+ 时刻",
+      "examples": [
+        {
+          "translation": "在最后时刻，他为本队踢进了关键一球。"
+        }
+      ]
+    },
+    "zh_时刻时时刻刻_418": {
+      "title": "时刻 / 时时刻刻（副词：表示经常、每时每刻、从不间断）",
+      "shortExplanation": "副词，充当状语修饰动词，表示某种意识、状态或行为时刻都在保持，毫无松懈或停顿；相当于“经常、总是、每时每刻”。",
+      "longExplanation": "“时刻”（shíkè）充当状语副词，或重叠为AABB式的“时时刻刻”（shíshíkèkè）时，表示时间上的连续性与不间断性，相当于“常常、每时每刻、随时”。常修饰表示心理警示、思想准备、关注或行动的动词（如“时刻准备着”、“时时刻刻提醒自己”、“时刻保持警惕”、“时时刻刻关心群众”），以表达高度的责任心、持续的警觉意识或深切的关怀。语气坚定，感情色彩强烈。",
+      "formation": "主语 + 时刻 / 时时刻刻 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "工作中，他时时刻刻提醒自已： 乘客的安全是最重要的。"
+        }
+      ]
+    },
+    "zh_至今_419": {
+      "title": "至今（时间副词：表示从过去延续到目前，相当于“直到今天、直到现在”）",
+      "shortExplanation": "时间副词，置于主语前后充当状语，表示从过去的某一时期一直延续到眼下的当下时刻；相当于“直到今天、直到现在”。",
+      "longExplanation": "“至今”（zhìjīn）由介词“至”（到达）与时间词“今”（现今）组合而成，相当于“直到今天”或“直到现在”。在句中充当时间状语，既可置于句首，也可置于主语之后、动词之前。常与副词“还”、“仍”、“已经”、“未”、“没”等搭配使用，着重强调某种事实、情态、状态或尚未解决的局面跨越了漫长的时光历程，时至今日依然保持原样未曾中断（如“至今仍未解决”、“至今下落不明”、“至今记忆犹新”、“至今没有消息”）。书面语和口语中均广泛使用。",
+      "formation": "（主语 +）至今（+ 主语 +）（还 / 仍 / 已经 / 未 / 没）+ 动词",
+      "examples": [
+        {
+          "translation": "我在北京出生、长大，至今还没离开过呢。"
+        }
+      ]
+    },
+    "zh_顶_420": {
+      "title": "顶（量词：用于帽子、帐篷及有顶盖的物品）",
+      "shortExplanation": "物量词，专门用于帽子以及某些具有隆起顶盖、覆盖头顶的物品（如帐子、蚊帐、帐篷、轿子等）。",
+      "longExplanation": "“顶”（dǐng）作为物量词使用时，主要用于计量帽子，以及顶部有凸起盖面、能够罩住上方空间的物品（如“帐子”、“蚊帐”、“帐篷”、“轿子”等）。常与数词或指示代词“这”、“那”组合构成数量短语修饰名词（如“一顶新帽子”、“两顶帐篷”、“挂上一顶蚊帐”）。是现代汉语中描写服饰用具的高频专用量词。",
+      "formation": "数词 / 指示代词（这 / 那）+ 顶 + 名词（帽子 / 帐篷 / 蚊帐 / 轿子等）",
+      "examples": [
+        {
+          "translation": "我这顶新帽子怎么样？"
+        }
+      ]
+    },
+    "zh_顶_421": {
+      "title": "顶（名词：人体或物体的最高部位、最顶部）",
+      "shortExplanation": "方位/处所名词，指人体、物体或建筑物最高凸起的位置；相当于“顶部、头顶、顶端”。",
+      "longExplanation": "“顶”（dǐng）充当空间方位名词时，指人身或特定物体的最上端、最高凸起的部位。通常附着在表示身体部位、地理自然景观或建筑构件的名词后，构成紧密复合名词（如“头顶”、“山顶”、“屋顶”、“塔顶”、“树顶”）。常与动词“举过”、“登上”、“爬到”等搭配使用，用以描摹空间高度的相对关系。",
+      "formation": "名词（头 / 山 / 屋 / 塔等）+ 顶",
+      "examples": [
+        {
+          "translation": "请把手举过头顶。"
+        }
+      ]
+    },
+    "zh_顶_422": {
+      "title": "顶（动作动词：用头、角或支撑物由下向上支撑、擎起）",
+      "shortExplanation": "具体动作动词，表示用头顶、额头、身体或物件由下往上用力支承、顶撞或擎举物体；表示“顶起、用头支撑”。",
+      "longExplanation": "“顶”（dǐng）充当具体动作动词时，指用头、角、肩膀或器物自下而上用力支撑、顶撞或抬举物体。常与趋向补语“起”连用构成“顶起”（如“用头顶起足球”、“顶起千斤顶”），也可表示头上承托着物品（如“头顶着水罐”）。在体育运动（如足球头球）、杂技表演或体力劳动动作描写中极其常见。",
+      "formation": "主语 +（用 + 身体部位 +）顶(起) + 宾语（重物 / 重量）",
+      "examples": [
+        {
+          "translation": "他能用头顶起20斤重的东西。"
+        }
+      ]
+    },
+    "zh_顶着_423": {
+      "title": "顶着（动词短语充当状语：迎着、冒着恶劣天气或巨大压力）",
+      "shortExplanation": "动词短语作状语，表示不畏惧艰难险阻，迎着狂风暴雨、烈日严寒或顶住巨大的外部压力向前行动；表示“冒着、迎着、顶住”。",
+      "longExplanation": "“顶着”（dǐng zhe）由动词“顶”附加动态助词“着”构成，生动表现出迎面迎向阻力、用力抗击外部重负的姿态。常接恶劣自然气象名词（如“大雪”、“狂风”、“烈日”、“风雨”、“严寒”），或指代精神与现实阻碍的抽象名词（如“巨大的压力”、“重重困难”、“舆论批评”），在句中作伴随状语，修饰主句的行动，凸显人物坚韧不拔、迎难而上的刚毅品格（如“顶着狂风前行”、“顶着烈日抢修”、“顶着压力完成了任务”）。",
+      "formation": "主语 + 顶着 + 逆境 / 恶劣天气 / 压力名词（大雪 / 狂风 / 烈日 / 压力等）+ 动词",
+      "examples": [
+        {
+          "translation": "天气非常寒冷，子路顶着大雪往前走。"
+        }
+      ]
+    },
+    "zh_得很得不行得不得了_424": {
+      "title": "形容词 / 心理动词 + 得很 / 得不行 / 得不得了（程度补语：表示程度极高，相当于“非常、极了”）",
+      "shortExplanation": "程度补语，置于形容词或心理动词后，表示性状或情绪感受达到了极其强烈的程度；相当于“非常、十分、极了”。",
+      "longExplanation": "“得很”（dehěn）、“得不行”（de bùxíng）、“得不得了”（de bùdéliǎo）都是放在形容词或表示心理状态的动词后面作程度补语的高频口语句式，用来生动鲜明地表现性状或感受达到了登峰造极、非同一般的程度：\n1.“……得很”：表示程度非常深，语气肯定有力（如“好得很”、“冷得很”、“多得很”）；\n2.“……得不行”：强调某种感受达到了无法忍受、难以自持的极点（如“困得不行”、“累得不行”、“热得不行”）；\n3.“……得不得了”：强调事态或情感程度极其夸张、无以复加，相当于“……得不得了了”（如“高兴得不得了”、“疼得不得了”、“热闹得不得了”）。\n这三种说法都极富口语活力，感情色彩鲜明强烈。",
+      "formation": "主语 + 形容词 / 心理动词 + 得很 / 得不行 / 得不得了",
+      "examples": [
+        {
+          "translation": "这个地方这么热闹，孩子们高兴得很/得不行/得不得了。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_에_88": {
+      "title": "~에 따르다 / ~에 따라(서) (Tùy theo, theo như, dựa vào)",
+      "shortExplanation": "Gắn sau danh từ để biểu thị tiêu chuẩn, căn cứ, điều kiện hoặc nguyên nhân làm biến đổi hoặc quyết định một sự việc ('tùy theo', 'theo như', 'dựa vào').",
+      "longExplanation": "'~에 따르다' (thường dùng trong văn cảnh thực tế dưới dạng '-아/어(서)' là '~에 따라' hoặc '~에 따라서') là cấu trúc biểu thị hành động, kết quả hoặc trạng thái ở vế sau thay đổi, biến chuyển tùy thuộc vào chuẩn mực, quy tắc, hoàn cảnh hay điều kiện của danh từ đứng trước. Khi đi với các danh từ mang tính pháp lý, quy chế như luật lệ, chỉ thị, nguyên tắc, nó mang ý nghĩa 'tuân theo', 'chiếu theo'.",
+      "formation": "Danh từ + 에 따르다 / 에 따라(서)",
+      "examples": [
+        {
+          "translation": "Kiểu cách mặc quần áo đương nhiên sẽ thay đổi tùy theo thời tiết, vào những ngày rất lạnh thì sự ấm áp phải được ưu tiên hơn là thời trang."
+        },
+        {
+          "translation": "Hương vị của món ăn có thể hoàn toàn khác nhau tùy thuộc vào nguyên liệu, nếu sử dụng nguyên liệu tươi ngon thì có thể làm ra món ăn ngon."
+        },
+        {
+          "translation": "Thời gian đến nơi có thể thay đổi tùy theo tình hình giao thông, nếu tắc đường thì có thể sẽ bị đến muộn."
+        },
+        {
+          "translation": "Kết quả sẽ khác biệt tùy vào thực lực của bạn, nếu chăm chỉ học tập thì có thể đạt được kết quả tốt."
+        }
+      ]
+    },
+    "ko_에_89": {
+      "title": "~에 비해 / ~에 비해서 (So với, so sánh với)",
+      "shortExplanation": "Gắn sau danh từ để lấy danh từ đó làm tiêu chuẩn đối chiếu, so sánh mức độ hoặc đặc điểm với một đối tượng khác ('so với').",
+      "longExplanation": "'~에 비해' (hoặc dạng đầy đủ hơn là '~에 비해서') kết hợp với danh từ để biểu thị sự so sánh hoặc đối chiếu giữa hai hay nhiều đối tượng, sự việc. Nó đặt danh từ đi trước làm mốc quy chiếu nhằm làm nổi bật đặc trưng, số lượng, quy mô hoặc mức độ khác biệt của đối tượng ở vế sau. Tương đương với 'so với...', 'so sánh với...' trong tiếng Việt.",
+      "formation": "Danh từ + 에 비해(서)",
+      "examples": [
+        {
+          "translation": "So với Seoul thì thời tiết ở Busan đẹp hơn nên rất thích hợp để đến đó vào mùa hè."
+        },
+        {
+          "translation": "So với rau củ thì tôi ăn nhiều trái cây hơn, vì trái cây ngọt hơn nên tôi thích."
+        },
+        {
+          "translation": "So với thành tích của học kỳ trước thì thành tích học kỳ này đã tiến bộ hơn rất nhiều."
+        },
+        {
+          "translation": "So với cà phê thì trà ít caffein hơn nên có thể uống vào buổi tối."
+        }
+      ]
+    },
+    "ko_에게_90": {
+      "title": "~에게 (Cho ai, tới ai, với ai)",
+      "shortExplanation": "Tiểu từ chỉ đối tượng tiếp nhận hành động, gắn sau danh từ chỉ người hoặc động vật ('cho ai', 'đối với ai', 'tới ai').",
+      "longExplanation": "'~에게' là tiểu từ phó từ chỉ đối tượng tiếp nhận của hành động, chỉ kết hợp với danh từ chỉ người hoặc động vật (danh từ hữu tình). Nó thường xuất hiện cùng các động từ trao nhận hoặc truyền đạt như 주다 (cho, tặng), 보내다 (gửi), 말하다 (nói), 가르치다 (dạy). Trong khẩu ngữ đời thường thân mật, người ta thường dùng '~한테', còn đối với người lớn tuổi hoặc đối tượng cần tôn kính thì dùng tiểu từ kính ngữ '~께'.",
+      "formation": "Danh từ (người, động vật) + 에게",
+      "examples": [
+        {
+          "translation": "Hôm qua tôi đã gửi tin nhắn này cho người bạn, nhưng vẫn chưa có hồi âm."
+        },
+        {
+          "translation": "Thầy giáo đã giao nhiều bài tập cho học sinh, chắc sẽ cần rất nhiều thời gian để hoàn thành tất cả."
+        },
+        {
+          "translation": "Người mẹ đang kể chuyện cho em bé nghe."
+        },
+        {
+          "translation": "Tôi đã tặng quà cho em trai, em ấy trông rất hạnh phúc khi nhận được cuốn sách mới."
+        }
+      ]
+    },
+    "ko_에서_91": {
+      "title": "~에서 (Ở, tại, từ)",
+      "shortExplanation": "Tiểu từ chỉ nơi chốn cụ thể diễn ra hành động ('ở', 'tại') hoặc chỉ điểm xuất phát, nguồn gốc ('từ').",
+      "longExplanation": "'~에서' là tiểu từ phó từ chỉ địa điểm trong tiếng Hàn với hai chức năng quan trọng: thứ nhất là biểu thị không gian nơi một hành động cụ thể đang hoặc đã diễn ra ('ở', 'tại', khác với '~에' chỉ trạng thái tồn tại tĩnh như 있다/없다); thứ hai là chỉ điểm khởi đầu, nguồn gốc hoặc điểm xuất phát của sự di chuyển, hành động ('từ đâu đến'). Trong khẩu ngữ, đôi khi nó được rút gọn thành '~서'.",
+      "formation": "Danh từ (nơi chốn) + 에서",
+      "examples": [
+        {
+          "translation": "Tôi sinh ra ở Seoul. Seoul là nơi đầu tiên tôi hít thở bầu không khí cuộc đời."
+        },
+        {
+          "translation": "Việc học ở trường là điều quan trọng nhất đối với tôi. Vì vậy tôi luôn cố gắng học chăm chỉ."
+        },
+        {
+          "translation": "Tôi đã đón máy bay ở sân bay đi Tokyo. Tokyo tuy là một nơi xa lạ đối với tôi nhưng rất thú vị."
+        },
+        {
+          "translation": "Tôi vừa nghe nhạc vừa học bài ở quán cà phê. Làm như vậy thì tôi có thể học tập một cách vui vẻ."
+        }
+      ]
+    },
+    "ko_에서부터_92": {
+      "title": "~에서부터 ~까지 (Từ... đến..., từ... cho tới...)",
+      "shortExplanation": "Biểu thị phạm vi không gian hoặc thời gian kéo dài từ điểm bắt đầu đến điểm kết thúc ('từ... đến...').",
+      "longExplanation": "'~에서부터' là hình thức kết hợp giữa tiểu từ nơi chốn/nguồn gốc '에서' và trợ từ nhấn mạnh khởi điểm '부터', mang ý nghĩa nhấn mạnh mốc xuất phát về không gian hoặc thời gian. Cấu trúc này thường đi liền với '~까지' (đến, cho tới) để tạo thành cặp tương ứng biểu thị trọn vẹn lộ trình, khoảng thời gian hay phạm vi từ điểm khởi đầu đến điểm kết thúc.",
+      "formation": "Danh từ (thời gian/nơi chốn) + 에서부터 + Danh từ (thời gian/nơi chốn) + 까지",
+      "examples": [
+        {
+          "translation": "Mỗi buổi sáng, tôi tập thể dục từ 7 giờ đến 8 giờ rồi mới đi học."
+        },
+        {
+          "translation": "Chúng tôi đã đi du lịch bằng ô tô từ Seoul đến tận Busan."
+        },
+        {
+          "translation": "Cuối tuần này, tôi nghỉ ngơi từ 5 giờ chiều thứ Bảy cho đến 3 giờ chiều Chủ nhật."
+        },
+        {
+          "translation": "Triển lãm ảnh sẽ diễn ra từ ngày 1 tháng 11 cho đến ngày 30 tháng 11."
+        }
+      ]
+    },
+    "ko_와과_93": {
+      "title": "~와/과 (Và, với, cùng với)",
+      "shortExplanation": "Tiểu từ liên kết hai hay nhiều danh từ ('và') hoặc biểu thị đối tượng cùng tham gia thực hiện hành động ('với', 'cùng với').",
+      "longExplanation": "'~와/과' là trợ từ nối và phó từ cách chuẩn mực trong tiếng Hàn. Với vai trò liên kết, nó kết nối các danh từ ngang hàng tạo thành phép liệt kê ('và'). Với vai trò chỉ đối tượng cùng hành động, nó thường kết hợp với '함께' hoặc '같이' để diễn đạt 'làm gì cùng với ai'. Danh từ kết thúc bằng nguyên âm kết hợp với '와', kết thúc bằng phụ âm kết hợp với '과'. Cấu trúc này mang sắc thái trang trọng, văn phong chuẩn mực hơn so với '~하고' hay '~랑/이랑'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 와 / có phụ âm cuối: + 과)",
+      "examples": [
+        {
+          "translation": "Sáng nay tôi đã ăn cơm, kim chi và sườn nướng."
+        },
+        {
+          "translation": "Tôi đã đi đến rạp chiếu phim cùng với bạn của mình."
+        },
+        {
+          "translation": "Tôi muốn đi mua giày thể thao, quần jean và áo phông."
+        },
+        {
+          "translation": "Cuối tuần này, tôi đã có khoảng thời gian hạnh phúc bên gia đình."
+        }
+      ]
+    },
+    "ko_와과_94": {
+      "title": "~와/과 같다 (Giống như, như là, giống với)",
+      "shortExplanation": "Biểu thị sự tương đồng, so sánh ví von ('như là', 'giống như') hoặc sự đồng nhất về mặt tính chất ('giống với').",
+      "longExplanation": "'~와/과 같다' kết hợp trợ từ so sánh '~와/과' và tính từ '같다' (giống, bằng). Cấu trúc này dùng trong hai ngữ cảnh chính: một là ví von hình ảnh để miêu tả vẻ ngoài hay tính chất của sự vật giống như một đối tượng khác ('như ngôi sao', 'như khách sạn'); hai là khẳng định hai đối tượng có tính chất, nội dung hoặc cách giải quyết tương đương, đồng nhất với nhau. Danh từ không có phụ âm cuối đi với '와 같다', có phụ âm cuối đi với '과 같다'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 와 같다 / có phụ âm cuối: + 과 같다)",
+      "examples": [
+        {
+          "translation": "Đôi mắt của cô ấy đẹp tựa những vì sao, vừa lấp lánh lại vừa kiều diễm."
+        },
+        {
+          "translation": "Trong quá trình trưởng thành, mục tiêu luôn giống như ngôi sao Bắc Cực, luôn chỉ cho tôi phương hướng."
+        },
+        {
+          "translation": "Ký túc xá trường chúng tôi chẳng khác nào khách sạn, vô cùng tiện nghi và đầy đủ cơ sở vật chất."
+        },
+        {
+          "translation": "Bài toán này giống với bài toán trước đó, nó có cách giải tương tự nhau."
+        }
+      ]
+    },
+    "ko_와과_95": {
+      "title": "~와/과 달리 (Khác với, không giống như)",
+      "shortExplanation": "Gắn sau danh từ để biểu thị sự khác biệt hoặc đối chiếu rõ rệt giữa hai đối tượng, tình huống ('khác với', 'không giống như').",
+      "longExplanation": "'~와/과 달리' kết hợp giữa trợ từ so sánh '~와/과' và phó từ '달리' (khác biệt, xuất phát từ tính từ 다르다). Cấu trúc này dùng để làm nổi bật sự đối lập, không tương đồng về mặt đặc điểm, hành động hoặc hoàn cảnh giữa đối tượng đang nói tới so với đối tượng tiêu chuẩn được nhắc đến trước đó. Khi trước nó là một mệnh đề động từ, thường dùng dưới hình thức định từ hóa '~는 것과 달리'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 와 달리 / có phụ âm cuối: + 과 달리) / Động từ + 는 것과 달리",
+      "examples": [
+        {
+          "translation": "Khác với việc ngày nào cũng phải đến công ty, hôm nay tôi đã làm việc tại nhà."
+        },
+        {
+          "translation": "Khác với mùa hè, vào mùa đông vì thời tiết lạnh nên ta phải mặc nhiều quần áo."
+        },
+        {
+          "translation": "Khác với Cheol-woo, Jin-woo học rất giỏi."
+        },
+        {
+          "translation": "Khác với Seoul, mùa đông ở Busan đỡ lạnh hơn."
+        }
+      ]
+    },
+    "ko_을를_96": {
+      "title": "~을/를 통해 / ~을/를 통해서 (Thông qua, qua)",
+      "shortExplanation": "Gắn sau danh từ để biểu thị phương tiện, phương pháp, kinh nghiệm hoặc cầu nối trung gian nhằm đạt được mục đích hay kết quả ('thông qua', 'qua').",
+      "longExplanation": "'~을/를 통해' (thường dùng ở dạng nhấn mạnh hơn là '~을/를 통해서') kết hợp với danh từ để chỉ ra đối tượng trung gian, phương thức, công cụ hoặc quá trình giúp người nói đạt được tri thức, truyền tải tình cảm hoặc gặt hái kết quả nào đó. Tương đương với 'thông qua...', 'qua việc...' trong tiếng Việt. Danh từ không có phụ âm cuối đi với '를 통해', có phụ âm cuối đi với '을 통해'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 를 통해(서) / có phụ âm cuối: + 을 통해(서))",
+      "examples": [
+        {
+          "translation": "Thông qua cuốn sách này, tôi đã có thể thấu hiểu rõ hơn về suy nghĩ và triết lý của ông ấy."
+        },
+        {
+          "translation": "Người đàn ông ấy đã thông qua âm nhạc để bộc lộ cảm xúc của bản thân."
+        },
+        {
+          "translation": "Thông qua giao lưu văn hóa, chúng ta có thể củng cố và tăng cường mối quan hệ với các quốc gia khác."
+        },
+        {
+          "translation": "Qua những chuyến du lịch, tôi đã được trải nghiệm nhiều nền văn hóa và cảnh sắc phong phú."
+        }
+      ]
+    },
+    "ko_이가_97": {
+      "title": "~이/가 되다 (Trở thành, trở nên, thành)",
+      "shortExplanation": "Đi sau danh từ bổ ngữ để biểu thị sự biến đổi, chuyển tiếp sang một trạng thái, thân phận hoặc nghề nghiệp mới ('trở thành', 'thành').",
+      "longExplanation": "'~이/가 되다' là mẫu câu chỉ sự biến hóa cơ bản trong tiếng Hàn. Nội động từ '되다' diễn tả việc chuyển biến thành một trạng thái mới, và danh từ đứng trước nó đóng vai trò bổ ngữ kết hợp với trợ từ bổ cách '이/가'. Cấu trúc này dùng để diễn tả sự thay đổi về chức vụ, nghề nghiệp, độ tuổi, mùa màng hoặc trạng thái. Danh từ có phụ âm cuối đi với '이 되다', không có phụ âm cuối đi với '가 되다'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 가 되다 / có phụ âm cuối: + 이 되다)",
+      "examples": [
+        {
+          "translation": "Trẻ con muốn trở thành người lớn thì cần rất nhiều thời gian."
+        },
+        {
+          "translation": "Cô ấy đã trở thành một ca sĩ vô cùng nổi tiếng."
+        },
+        {
+          "translation": "Hôm nay trời bỗng trở lạnh nên găng tay đã trở nên cần thiết."
+        },
+        {
+          "translation": "Tôi đã chăm chỉ học tập và trở thành một bác sĩ."
+        }
+      ]
+    },
+    "ko_이가_98": {
+      "title": "~이/가 아니다 (Không phải là)",
+      "shortExplanation": "Đi sau danh từ bổ ngữ để phủ định danh từ đó ('không phải là...').",
+      "longExplanation": "'~이/가 아니다' là hình thức phủ định trực tiếp của trợ từ chỉ định vị ngữ '~이다' (là). Trong cấu trúc này, '아니다' là tính từ mang nghĩa phủ định, và danh từ đứng trước đóng vai trò bổ ngữ đi cùng tiểu từ bổ cách '이/가'. Cấu trúc này dùng để xác nhận hoặc khẳng định dứt khoát rằng danh từ phía trước không đúng với bản chất, danh tính hay thực tế của đối tượng. Danh từ có phụ âm cuối kết hợp với '이 아니다', không có phụ âm cuối kết hợp với '가 아니다'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 가 아니다 / có phụ âm cuối: + 이 아니다)",
+      "examples": [
+        {
+          "translation": "Tôi không phải là học sinh, tôi là giáo viên."
+        },
+        {
+          "translation": "Con mèo không phải là đồ thất lạc của chúng tôi, đồ thất lạc của chúng tôi là chú cún con cơ."
+        },
+        {
+          "translation": "Người nấu ăn giỏi không phải là tôi đâu, tôi hoàn toàn chẳng có hoa tay nấu nướng gì cả."
+        },
+        {
+          "translation": "Người đó không phải là học sinh trường chúng tôi, anh ấy là học sinh của trường khác."
+        }
+      ]
+    },
+    "ko_이라도_99": {
+      "title": "~(이)라도 (Dù chỉ là..., ít nhất thì..., kể cả là...)",
+      "shortExplanation": "Trợ từ biểu thị sự chấp nhận một lựa chọn mang tính giải pháp tạm thời, dù chưa phải là tốt nhất ('dù chỉ là...', 'ít nhất thì...').",
+      "longExplanation": "'~(이)라도' là trợ từ chỉ sự nhượng bộ hoặc chọn lựa thứ yếu. Nó ám chỉ rằng đối tượng được nhắc đến có thể không đạt đến sự kỳ vọng hay lý tưởng cao nhất, nhưng trong hoàn cảnh thiếu thốn lựa chọn, việc có được nó vẫn tốt hơn nhiều so với việc không có gì cả. Danh từ có phụ âm cuối kết hợp với '이라도', không có phụ âm cuối kết hợp với '라도'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 라도 / có phụ âm cuối: + 이라도)",
+      "examples": [
+        {
+          "translation": "Dẫu cho điều đó không phải là thứ ta kỳ vọng, nhưng vẫn tốt hơn là chẳng có gì."
+        },
+        {
+          "translation": "Dù chỉ là bức ảnh này thôi, chụp lại thì sau này cũng sẽ trở thành một kỷ niệm đẹp."
+        },
+        {
+          "translation": "Dù hát không hay thì ở phòng karaoke bạn cũng hãy thử hát lấy một bài xem sao."
+        },
+        {
+          "translation": "Dù trong kỳ thi không đạt điểm cao, nhưng nếu bạn đã học được ít nhất những phần mình chưa hiểu thì đó cũng là thành quả lớn rồi."
+        }
+      ]
+    },
+    "ko_이래_100": {
+      "title": "~이래 / ~이래로 (Kể từ, từ sau khi, từ đó đến nay)",
+      "shortExplanation": "Gắn sau danh từ chỉ mốc thời gian/sự kiện hoặc định từ thì quá khứ để biểu thị khoảng thời gian liên tục tính từ một mốc trong quá khứ cho tới nay ('kể từ', 'từ khi').",
+      "longExplanation": "'~이래' (gốc chữ Hán '以來' - Dĩ lai) dùng để diễn đạt khoảng thời gian kéo dài liên tục từ một bước ngoặt, sự kiện hoặc mốc thời gian trong quá khứ cho đến tận thời điểm hiện tại. Nó thường gắn sau danh từ chỉ sự kiện lịch sử hoặc kết hợp cùng vĩ tố định từ quá khứ '-(으)ㄴ 이래'. Để nhấn mạnh tính tiếp diễn của thời gian, trợ từ '로' thường được thêm vào tạo thành '~이래로'.",
+      "formation": "Danh từ + 이래(로) / Thân động từ + -(으)ㄴ 이래(로)",
+      "examples": [
+        {
+          "translation": "Suốt 5 năm kể từ sau khi vụ việc đó xảy ra, tôi chưa từng một lần quay lại nơi ấy."
+        },
+        {
+          "translation": "Lần đầu tiên trong suốt một trăm năm qua, đội bóng đá của trường chúng tôi đã giành ngôi vô địch."
+        },
+        {
+          "translation": "Người ta bảo đã rất lâu rồi mới lại gặp được một người tìm việc tràn đầy nhiệt huyết như thế này."
+        },
+        {
+          "translation": "Kể từ cái ngày tôi đạt điểm cao nhất ở trường, bố mẹ đã vô cùng tự hào về tôi."
+        }
+      ]
+    },
+    "ko_이랑_101": {
+      "title": "~(이)랑 (Và, với, cùng với)",
+      "shortExplanation": "Trợ từ thân mật trong văn nói, dùng để liệt kê danh từ ('và') hoặc chỉ đối tượng cùng làm việc gì đó ('với', 'cùng với').",
+      "longExplanation": "'~(이)랑' là tiểu từ kết nối khẩu ngữ vô cùng phổ biến trong đời sống hàng ngày của người Hàn Quốc. Về chức năng ngữ pháp, nó đảm nhận vai trò liệt kê danh từ ('và') hoặc biểu thị người đồng hành cùng thực hiện hành động ('cùng với ai', thường đi cùng '같이' hoặc '함께'). Nó mang sắc thái thân mật, tự nhiên và gần gũi hơn nhiều so với '~와/과'. Danh từ có phụ âm cuối đi với '이랑', không có phụ âm cuối đi với '랑'.",
+      "formation": "Danh từ (không có phụ âm cuối: + 랑 / có phụ âm cuối: + 이랑)",
+      "examples": [
+        {
+          "translation": "Tôi đã đi xem phim với bạn của mình. Phim thực sự rất hay."
+        },
+        {
+          "translation": "Tôi đã làm bài tập dài và khó cùng với bạn, nhờ thế mà tôi có thêm tinh thần chinh phục thử thách."
+        },
+        {
+          "translation": "Tôi đã có chuyến du lịch khó quên cùng gia đình. Thực sự rất vui vẻ."
+        },
+        {
+          "translation": "Mỗi sáng tôi đều tập thể dục và tắm rửa rồi mới đến trường."
+        }
+      ]
+    },
+    "ko_이렇게_102": {
+      "title": "이렇게 (Như thế này, dường này, đến mức này)",
+      "shortExplanation": "Phó từ chỉ định dùng để mô tả phương thức, trạng thái của hành động hoặc nhấn mạnh mức độ cao của tính chất ('như thế này', 'đến mức này').",
+      "longExplanation": "'이렇게' là phó từ chỉ thị xuất phát từ tính từ '이렇다' (thế này, như thế này) kết hợp với đuôi tạo phó từ '-게'. Nó được sử dụng theo hai hướng: một là bổ nghĩa cho động từ để chỉ cách thức hay phương pháp tiến hành hành động ('làm như thế này'); hai là đứng trước tính từ hoặc động từ để biểu thị mức độ cao bất thường kèm theo cảm xúc ngạc nhiên, thán phục hoặc không ngờ tới của người nói ('nóng đến thế này', 'lớn như thế này').",
+      "formation": "이렇게 + Động từ / Tính từ / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Vào một ngày nóng nực như thế này thì ăn kem là tuyệt nhất trần đời."
+        },
+        {
+          "translation": "Tôi không ngờ là mình lại đến muộn đến mức này."
+        },
+        {
+          "translation": "Tôi không nghĩ là mình có thể giải quyết được một vấn đề lớn đến thế này."
+        },
+        {
+          "translation": "Tôi không nhận ra là cơ thể mình đã to lớn ra đến mức này."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_에_88": {
+      "title": "~에 따르다 / ~에 따라(서)（根据、按照、取决于）",
+      "shortExplanation": "接在名词后，表示以某事物作为准则、标准、条件或原因，后项事物随之发生变化或被决定（“根据”、“按照”、“取决于”）。",
+      "longExplanation": "“~에 따르다”（在实际语言生活中多以活用形式“~에 따라”或“~에 따라서”出现）表示某种情况、结果或行为随着前面的标准、条件、规则或情况的变化而改变或决定，相当于汉语的“根据……”、“按照……”、“取决于……”或“随着……”。当与法律法规、政策方针、指示指令等词汇搭配时，还可表示“遵照”、“依照”。",
+      "formation": "名词 + 에 따르다 / 에 따라(서)",
+      "examples": [
+        {
+          "translation": "穿衣风格自然会随着天气的变化而改变，在非常寒冷的日子里，保暖自然比风度更重要。"
+        },
+        {
+          "translation": "菜肴的味道完全可以因食材的不同而迥异，使用新鲜的食材就能做出美味的料理。"
+        },
+        {
+          "translation": "到达时间可能会根据交通状况而有所不同，要是堵车的话可能就会迟到。"
+        },
+        {
+          "translation": "结果是取决于实力的，只要努力学习就能取得好成果。"
+        }
+      ]
+    },
+    "ko_에_89": {
+      "title": "~에 비해 / ~에 비해서（比起……、与……相比）",
+      "shortExplanation": "接在名词后，表示以该事物为基准进行比较或对照（“比起……”、“与……相比”）。",
+      "longExplanation": "“~에 비해”（亦常作“~에 비해서”）接在名词之后，用于在两者之间进行比较或对照。它将前接名词作为参照基准，以此凸显后项在性质、状态、数量或程度等方面的差异或特征。相当于汉语的“比起……”、“与……相比”、“相较于……”。",
+      "formation": "名词 + 에 비해(서)",
+      "examples": [
+        {
+          "translation": "比起首尔，釜山的天气更好，很适合夏天去旅游。"
+        },
+        {
+          "translation": "比起蔬菜我更常吃水果，水果更甜所以我很喜欢。"
+        },
+        {
+          "translation": "与上学期的成绩相比，这学期的成绩有了很大提高。"
+        },
+        {
+          "translation": "比起咖啡，茶里的咖啡因较少，所以晚上也可以喝。"
+        }
+      ]
+    },
+    "ko_에게_90": {
+      "title": "~에게（给……、对……、向……）",
+      "shortExplanation": "副词格助词，接在人或动物等有生命的名词后，表示动作涉及的对象或接受者（“给……”、“向……”、“对……”）。",
+      "longExplanation": "“~에게”是表示动作承受者或到达点的副词格助词，只接在人或动物等“有情名词”后。常与“주다（给）”、“보내다（寄/送）”、“전화하다（打电话）”、“말하다（说）”等具有传递性质的动词搭配使用。在日常口语中多使用更为口语化的“~한테”；而对比自己地位高、长辈等需要表示尊敬的对象时，则须使用敬称助词“~께”。",
+      "formation": "名词（人、动物） + 에게",
+      "examples": [
+        {
+          "translation": "我昨天给朋友发了这条信息，可是到现在还没有回复。"
+        },
+        {
+          "translation": "老师给学生们布置了很多作业，感觉要全部完成需要不少时间。"
+        },
+        {
+          "translation": "妈妈正在给婴儿讲故事。"
+        },
+        {
+          "translation": "我给弟弟送了礼物，他收到新书时看起来非常开心。"
+        }
+      ]
+    },
+    "ko_에서_91": {
+      "title": "~에서（在……、从……）",
+      "shortExplanation": "副词格助词，接在场所名词后，表示动作发生的具体地点（“在……”）或动作移动的出发点（“从……”）。",
+      "longExplanation": "“~에서”是表示场所或起点的副词格助词，具有两个主要功能：一是表示具体动作或事件发生的地点，相当于汉语的“在……”（区别于表示静态存在或到达目的地的“~에”）；二是表示动作或移动的出发点、来源或起点，相当于汉语的“从……”。在口语中，“~에서”有时可略为“~서”。",
+      "formation": "名词（场所） + 에서",
+      "examples": [
+        {
+          "translation": "我出生在首尔。首尔是我人生中第一次呼吸的地方。"
+        },
+        {
+          "translation": "在学校学习对我来说是最重要的。所以我一直属于比较努力的类型。"
+        },
+        {
+          "translation": "我从机场坐飞机去了东京。东京对我而言是个陌生的地方，但真的很有趣。"
+        },
+        {
+          "translation": "我在咖啡店一边听音乐一边学习。这样一来就能学得很开心。"
+        }
+      ]
+    },
+    "ko_에서부터_92": {
+      "title": "~에서부터 ~까지（从……到……、自……至……）",
+      "shortExplanation": "接在场所或时间名词后，表示空间或时间范围的起始点与终点（“从……到……”、“自……至……”）。",
+      "longExplanation": "“~에서부터”是由表示处所/起点的助词“에서”与表示起点的补助词“부터”组合而成的强调形式。常与表示终点的助词“~까지（到……为止）”呼应连用，构成“~에서부터 ~까지”的句型，用来明确标示时间或空间范围的起点与终点，比起单纯使用“에서”或“부터”，它更加突出了起始点的源头性与完整性。",
+      "formation": "名词（时间/场所） + 에서부터 + 名词（时间/场所） + 까지",
+      "examples": [
+        {
+          "translation": "我每天早晨从7点到8点做晨练，然后再去上学。"
+        },
+        {
+          "translation": "我们开车从首尔一路旅行到了釜山。"
+        },
+        {
+          "translation": "这个周末，我从周六傍晚5点一直休息到周日下午3点。"
+        },
+        {
+          "translation": "摄影展将从11月1日一直开展到11月30日。"
+        }
+      ]
+    },
+    "ko_와과_93": {
+      "title": "~와/과（和、跟、同、与）",
+      "shortExplanation": "连接两个或两个以上的名词，表示列举（“和”、“与”）或表示共同进行某动作的伙伴（“跟……一起”、“同”）。",
+      "longExplanation": "“~와/과”是韩语中非常常用的助词，兼具连接和副词格功能。作为连接助词时，用于并列连接两个或多个名词，意为“和”、“与”；作为副词格助词时，常与“함께”或“같이”连用，表示与某人共同进行某动作，意为“跟……一起”、“同……”。前面的名词若以元音（无收音）结尾接“와”，以辅音（有收音）结尾接“과”。与口语中的“~하고”或“~랑/이랑”相比，它更为书面、正式和标准。",
+      "formation": "名词（无收音：+ 와 / 有收音：+ 과）",
+      "examples": [
+        {
+          "translation": "今天早晨我吃了米饭、泡菜和排骨。"
+        },
+        {
+          "translation": "我和我的朋友一起去了电影院。"
+        },
+        {
+          "translation": "我想去买运动鞋、牛仔裤和T恤。"
+        },
+        {
+          "translation": "这个周末我和家人一起度过了幸福的时光。"
+        }
+      ]
+    },
+    "ko_와과_94": {
+      "title": "~와/과 같다（像……一样、同……相同）",
+      "shortExplanation": "接在名词后，表示与某事物相同（“和……一样”）或进行生动形象的借喻（“像……一样”）。",
+      "longExplanation": "“~와/과 같다”由比较助词“~와/과”与形容词“같다（一样、相同）”结合而成。主要有两种用法：一是形象的比喻，将某事物的状态或特征生动地比作另一事物，相当于“像……一样”、“宛如……”；二是表示客观上的完全相同或性质一致，相当于“与……一样”、“同……相同”。前面的名词无收音接“와 같다”，有收音接“과 같다”。",
+      "formation": "名词（无收音：+ 와 같다 / 有收音：+ 과 같다）",
+      "examples": [
+        {
+          "translation": "她的眼睛宛如星辰，闪烁而美丽。"
+        },
+        {
+          "translation": "在成长过程中，我的目标始终如北极星一般，时刻为我指引着方向。"
+        },
+        {
+          "translation": "我们学校的宿舍就像酒店一样，非常舒适，各项设施一应俱全。"
+        },
+        {
+          "translation": "这道题与之前那道题是一样的，有着相似的解题方法。"
+        }
+      ]
+    },
+    "ko_와과_95": {
+      "title": "~와/과 달리（与……不同、不同于……）",
+      "shortExplanation": "接在名词后，表示与前面的基准事物存在鲜明差异或对比（“与……不同”、“不同于……”）。",
+      "longExplanation": "“~와/과 달리”由比较助词“~와/과”与副词“달리（不同地，源自形容词다르다）”组合而成。用于将后项的事物、状态或行为与前项的基准进行对比，鲜明地凸显两者截然不同之处。相当于汉语的“与……不同”、“不同于……”、“与……相反”。若前面为动词短语时，常采用动词名词化形式“~는 것과 달리”。",
+      "formation": "名词（无收音：+ 와 달리 / 有收音：+ 과 달리） / 动词 + 는 것과 달리",
+      "examples": [
+        {
+          "translation": "不同于平时每天都要去公司上班，今天我在家工作了。"
+        },
+        {
+          "translation": "与夏天不同，冬天因为天气寒冷，所以必须穿很多衣服。"
+        },
+        {
+          "translation": "与哲宇不同，镇宇学习很好。"
+        },
+        {
+          "translation": "与首尔不同，釜山的冬天没那么寒冷。"
+        }
+      ]
+    },
+    "ko_을를_96": {
+      "title": "~을/를 통해 / ~을/를 통해서（通过、借由、凭借）",
+      "shortExplanation": "接在名词后，表示达成某种结果、获得经验或传递信息的途径、媒介或手段（“通过……”、“借由……”）。",
+      "longExplanation": "“~을/를 통해”（日常口语和写作中也极为常用其强调形式“~을/를 통해서”）接在名词后，表示以该事物作为中介、渠道、手段或契机，去实现目标、加深理解或获得某种经验。相当于汉语的“通过……”、“借由……”、“凭借……”。名词无收音接“를 통해”，有收音接“을 통해”。",
+      "formation": "名词（无收音：+ 를 통해(서) / 有收音：+ 을 통해(서)）",
+      "examples": [
+        {
+          "translation": "通过这本书，我得以更好地理解他的思想和哲学。"
+        },
+        {
+          "translation": "那位男子通过音乐表达了自己的情感。"
+        },
+        {
+          "translation": "通过文化交流，我们能够加强与其他国家的关系。"
+        },
+        {
+          "translation": "通过旅行，我体验了各种各样的文化与风景。"
+        }
+      ]
+    },
+    "ko_이가_97": {
+      "title": "~이/가 되다（成为、变成、当上）",
+      "shortExplanation": "接在名词补语后，与动词“되다”连用，表示事物或人转变成某种新的状态、身份或资格（“成为”、“变成”、“当上”）。",
+      "longExplanation": "“~이/가 되다”是韩语中表示变化的核心基本句型。“되다”为不及物动词，意为“变成、成为”；前面的名词在句中充当补语，搭配补格助词“이/가”。用于表示人或事物经过时间、努力或外部环境的作用，转变为某种新的职业、身份、年龄、状态或性质。名词末尾有收音时接“이 되다”，无收音时接“가 되다”。",
+      "formation": "名词（无收音：+ 가 되다 / 有收音：+ 이 되다）",
+      "examples": [
+        {
+          "translation": "小孩子们成长为大人需要很长的时间。"
+        },
+        {
+          "translation": "她成为了一名非常著名的歌手。"
+        },
+        {
+          "translation": "今天天气突然变冷，变得需要戴手套了。"
+        },
+        {
+          "translation": "我努力学习，最终当上了一名医生。"
+        }
+      ]
+    },
+    "ko_이가_98": {
+      "title": "~이/가 아니다（不是……）",
+      "shortExplanation": "接在名词补语后，用于否定该名词的身份、属性或事实（“不是……”）。",
+      "longExplanation": "“~이/가 아니다”是指示体词谓词“~이다（是）”的标准否定形式。“아니다”在韩语语法中属于形容词，意为“不是”，前面的名词在句中充当补语，与补格助词“이/가”搭配。用于明确否定前项名词的属性、资格、身份或事实，相当于汉语的“不是……”。前接名词有收音时接“이 아니다”，无收音时接“가 아니다”。",
+      "formation": "名词（无收音：+ 가 아니다 / 有收音：+ 이 아니다）",
+      "examples": [
+        {
+          "translation": "我不是学生，我是老师。"
+        },
+        {
+          "translation": "猫不是我们遗失的宠物，我们走失的是一只小狗。"
+        },
+        {
+          "translation": "擅长做饭的人不是我，我完全没有任何做饭的才能。"
+        },
+        {
+          "translation": "那个人不是我们学校的学生，他是别的学校的学生。"
+        }
+      ]
+    },
+    "ko_이라도_99": {
+      "title": "~(이)라도（哪怕是……、至少、好歹）",
+      "shortExplanation": "接在名词后，表示即便不是最满意的最佳选择，退而求其次也可以接受，相当于“哪怕是……”、“至少……”、“好歹……”。",
+      "longExplanation": "“~(이)라도”是表示让步或退求其次的补助词。它暗示说话人所提出的对象或许并非最理想、最中意的选择，但在缺乏更好条件的情况下，哪怕选这个也比完全没有强，带有一种妥协和退让的语气。相当于汉语的“哪怕是……”、“哪怕……也好”、“好歹……”。名词有收音时接“이라도”，无收音时接“라도”。",
+      "formation": "名词（无收音：+ 라도 / 有收音：+ 이라도）",
+      "examples": [
+        {
+          "translation": "即使那不是原本所期待的，也总比什么都没有强。"
+        },
+        {
+          "translation": "好歹把这张照片拍下来，以后也会成为美好的回忆。"
+        },
+        {
+          "translation": "就算唱得不好，在练歌房也至少唱一首试试看吧。"
+        },
+        {
+          "translation": "就算考试没拿到高分，只要把哪怕是不懂的部分弄明白了，也是很大的收获。"
+        }
+      ]
+    },
+    "ko_이래_100": {
+      "title": "~이래 / ~이래로（……以来、自……以来）",
+      "shortExplanation": "接在表示特定时间、事件的名词或过去时定语词尾后，表示从过去的某一时间点一直持续至今（“自……以来”、“……之后”）。",
+      "longExplanation": "“~이래”（源自汉字“以來”）表示从过去某个发生重大事件或转折的时间点开始，某种状态或情况一直持续到当前。常接在表示特定历史节点、事件的名词后（如“창립 이래/自创立以来”、“해방 이래/解放以来”），或与过去时定语词尾组合构成“-(으)ㄴ 이래”。为了进一步强调时间的延续，常加助词“로”写作“~이래로”。相当于汉语的“自……以来”、“……之后”。",
+      "formation": "名词 + 이래(로) / 动词词干 + -(으)ㄴ 이래(로)",
+      "examples": [
+        {
+          "translation": "自那起事件发生5年以来，我一次也没有去过那里。"
+        },
+        {
+          "translation": "这是百年来我们学校足球队首次夺得冠军。"
+        },
+        {
+          "translation": "据说已经很久没有遇到过这么有热情的求职者了。"
+        },
+        {
+          "translation": "自从在学校考了最高分的那天以来，父母一直以我为傲。"
+        }
+      ]
+    },
+    "ko_이랑_101": {
+      "title": "~(이)랑（和、跟、同）",
+      "shortExplanation": "口语中非常常用的助词，用于并列连接名词（“和”）或表示共同进行某动作的对象（“跟……一起”）。",
+      "longExplanation": "“~(이)랑”是日常口语中使用频率极高的连接助词和副词格助词。其语法功能与“~와/과”、“~하고”基本一致，但语感更加亲切、生活化和随和。它可以并列列举两件事物（表示“和”，如“运动和淋浴”），也可以与“같이”、“함께”等词呼应，表示与某人共同做某事（表示“跟……一起”，如“跟朋友一起”）。前面名词有收音时接“이랑”，无收音时接“랑”。",
+      "formation": "名词（无收音：+ 랑 / 有收音：+ 이랑）",
+      "examples": [
+        {
+          "translation": "我和朋友一起去看了电影。真的特别有意思。"
+        },
+        {
+          "translation": "我和朋友一起做又长又难的作业，激发了我的挑战精神。"
+        },
+        {
+          "translation": "我和家人一起去了一趟令人难忘的旅行。真的非常开心。"
+        },
+        {
+          "translation": "我每天早晨都会运动和洗澡，然后再去学校。"
+        }
+      ]
+    },
+    "ko_이렇게_102": {
+      "title": "이렇게（这样、如此、这么）",
+      "shortExplanation": "指示副词，用于修饰动词或形容词，表示动作的方式、状态或某种极高的程度（“这样”、“这么”、“如此”）。",
+      "longExplanation": "“这样（이렇게）”是由指示形容词“이렇다（这样、如此）”词干加上副词形词尾“-게”构成的指示副词。主要有两种核心用法：一是修饰动作，表示具体的操作方式、模样或方法（相当于“照这样”、“按这种方式”）；二是充当程度副词修饰形容词或谓语，强调某种程度之深、往往伴随说话人的感叹、惊讶或意想不到的情绪（相当于“这么……”、“如此……”、“居然这么……”）。",
+      "formation": "이렇게 + 动词 / 形容词 / 分句",
+      "examples": [
+        {
+          "translation": "在这么热的天气里，吃冰淇淋是再好不过了。"
+        },
+        {
+          "translation": "我没想到自己居然会到得这么晚。"
+        },
+        {
+          "translation": "我没想到自己竟然能解决这么大的难题。"
+        },
+        {
+          "translation": "我都未曾发觉自己的身体已经长得这么强壮了。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_에_88": {
+      "title": "~에 따르다 / ~에 따라(서)（〜に従って、〜に応じて、〜によって）",
+      "shortExplanation": "名詞に付き、ある基準・条件・規則・原因などに基づいて物事が決まったり変化することを表します（「〜に従って」「〜に応じて」「〜によって」）。",
+      "longExplanation": "「~에 따르다」（日常会話や文中では主に「-아/어(서)」と結合した「~에 따라」や「~에 따라서」の形で頻出）は、先行する名詞を基準・条件・規則・原因として、後続の事態がそれに左右されて変化したり決定されたりすることを表します。日本語の「〜に従って」「〜に応じて」「〜によって（異なる）」に相当します。規則や方針、指示などの名詞に付く場合は「〜に準じて」「〜に従って」という意味になります。",
+      "formation": "名詞 + 에 따르다 / 에 따라(서)",
+      "examples": [
+        {
+          "translation": "天気によって服の着こなしは変わるものです。とても寒い日にはおしゃれより暖かさが優先ですからね。"
+        },
+        {
+          "translation": "料理の味は材料によって全く異なることがあります。新鮮な材料を使えばおいしい料理を作ることができますよ。"
+        },
+        {
+          "translation": "交通状況に応じて到着時間が変わる場合があります。道が混雑すれば遅れて到着することになりますね。"
+        },
+        {
+          "translation": "実力によって結果が変わるものです。一生懸命勉強すれば良い結果を得ることができます。"
+        }
+      ]
+    },
+    "ko_에_89": {
+      "title": "~에 비해 / ~에 비해서（〜に比べて、〜と比較して）",
+      "shortExplanation": "名詞に付き、その名詞を基準として他の事物と比較・対照することを表します（「〜に比べて」「〜と比較して」）。",
+      "longExplanation": "「~에 비해」（または強調形の「~에 비해서」）は名詞の後に付き、2つの物事や対象を比較・対照する際に用いられる表現です。先行する名詞を比較の基準（物差し）として提示し、後続の対象が持つ性質や数量、程度などの違いを際立たせます。日本語の「〜に比べて」「〜と比較して」「〜の割に」に相当します。",
+      "formation": "名詞 + 에 비해(서)",
+      "examples": [
+        {
+          "translation": "ソウルに比べて釜山は天気が良いので、夏に行くのに適しています。"
+        },
+        {
+          "translation": "私は野菜に比べて果物をたくさん食べます。果物の方が甘くて好きだからです。"
+        },
+        {
+          "translation": "前学期の成績に比べて、今学期の成績ははるかに向上しました。"
+        },
+        {
+          "translation": "コーヒーに比べてお茶はカフェインが少ないので、夜に飲むことができます。"
+        }
+      ]
+    },
+    "ko_에게_90": {
+      "title": "~에게（〜に、〜へ）",
+      "shortExplanation": "人や動物などの有情名詞に付き、動作の及ぶ相手や受け手を示します（「〜に」「〜へ」）。",
+      "longExplanation": "「~에게」は、動作の直接の受け手や相手を表す副詞格助詞で、人や動物などの「有情名詞」にのみ付帯します。「주다（与える・あげる）」「보내다（送る）」「말하다（言う）」「가르치다（教える）」などの授受・伝達動詞と共に頻繁に用いられます。日常会話のくだけた表現では「~한테」がよく使われ、目上の人に対して敬意を表す場合は敬称助詞の「~께」を用います。",
+      "formation": "名詞（人・動物） + 에게",
+      "examples": [
+        {
+          "translation": "私は昨日友達にこのメッセージを送りましたが、まだ返事がありません。"
+        },
+        {
+          "translation": "先生は生徒たちに課題をたくさん出されました。すべて完了するには時間がかなり必要になりそうです。"
+        },
+        {
+          "translation": "お母さんは赤ちゃんにお話を聞かせていらっしゃいます。"
+        },
+        {
+          "translation": "私は弟（妹）にプレゼントをあげました。新しい本を受け取ってとても幸せそうに見えました。"
+        }
+      ]
+    },
+    "ko_에서_91": {
+      "title": "~에서（〜で、〜から）",
+      "shortExplanation": "場所の名詞に付き、動作が行われる場所（「〜で」）や、出発点・起点（「〜から」）を表します。",
+      "longExplanation": "「~에서」は、場所を表す名詞に付く副詞格助詞で、大きく分けて2つの用法があります。1つは動的な動作や行為が行われる場所を表す用法で、日本語の「〜で」に相当します（静的な存在や移動の目的地を表す「~에」とは区別されます）。もう1つは、移動や行為の出発点・起点・出所を表す用法で、日本語の「〜から」に相当します。口語では「~서」に縮約されることもあります。",
+      "formation": "名詞（場所） + 에서",
+      "examples": [
+        {
+          "translation": "私はソウルで生まれました。ソウルは私が生まれて初めて息をした場所です。"
+        },
+        {
+          "translation": "学校で勉強することが私にとって最も重要です。だからいつも一生懸命努力する方です。"
+        },
+        {
+          "translation": "空港から飛行機に乗って東京へ行きました。東京は私にとって不慣れな場所でしたが、とても楽しかったです。"
+        },
+        {
+          "translation": "カフェで音楽を聴きながら勉強をします。そうすると楽しく勉強できます。"
+        }
+      ]
+    },
+    "ko_에서부터_92": {
+      "title": "~에서부터 ~까지（〜から〜まで）",
+      "shortExplanation": "場所や時間の起点と終点を表し、範囲の始まりと終わりを強調して示します（「〜から〜まで」）。",
+      "longExplanation": "「~에서부터」は、場所や起点を表す「에서」に、始まりを表す補助詞「부터」が重なった強調表現です。終点を表す「~까지（〜まで）」と呼応して「~에서부터 ~까지」の形で用いられ、時間的または空間的な範囲の出発点から到着点・終了点までを明確に示します。単に「~에서」「~부터」を用いるよりも、起点がより強調されるニュアンスがあります。",
+      "formation": "名詞（時間・場所） + 에서부터 + 名詞（時間・場所） + 까지",
+      "examples": [
+        {
+          "translation": "毎朝7時から8時まで朝の運動をして学校に行きます。"
+        },
+        {
+          "translation": "私たちはソウルから釜山まで車で旅行をしました。"
+        },
+        {
+          "translation": "今週末は土曜日の夕方5時から日曜日の午後3時まで休息を取ります。"
+        },
+        {
+          "translation": "写真展は11月1日から11月30日まで開催される予定です。"
+        }
+      ]
+    },
+    "ko_와과_93": {
+      "title": "~와/과（〜と、〜とともに）",
+      "shortExplanation": "名詞と名詞を対等に並列して繋いだり（「〜と」）、動作を共にする相手を表します（「〜と」「〜と一緒に」）。",
+      "longExplanation": "「~와/과」は、名詞に付く接続助詞および副詞格助詞です。複数の名詞を対等に並列して繋ぐ「〜と」（並列）の役割と、「함께」や「같이」を伴って誰かと動作を共に行う相手を表す「〜と（一緒に）」（共同）の役割を持ちます。直前の名詞にパッチムがない（母音終わり）場合は「와」、パッチムがある（子音終わり）場合は「과」を用います。日常会話で多用される「~하고」や「~랑/이랑」に比べて、よりフォーマルで文章語的な響きを持ちます。",
+      "formation": "名詞（パッチムなし：+ 와 / パッチムあり：+ 과）",
+      "examples": [
+        {
+          "translation": "今日の朝はご飯とキムチとカルビを食べました。"
+        },
+        {
+          "translation": "私は友達と映画館に行きました。"
+        },
+        {
+          "translation": "スニーカーとジーンズとTシャツを買いに行きたいです。"
+        },
+        {
+          "translation": "今週末、私は家族と一緒に幸せな時間を過ごしました。"
+        }
+      ]
+    },
+    "ko_와과_94": {
+      "title": "~와/과 같다（〜のようだ、〜と同じだ）",
+      "shortExplanation": "名詞に付き、基準となる事物と同じであること（同一）や、〜に似ているという比喩を表します（「〜と同じだ」「〜のようだ」）。",
+      "longExplanation": "「~와/과 같다」は、比較・基準の助詞「~와/과」に形容詞「같다（同じだ）」が組み合わさった表現です。大きく分けて、対象の性質や状態を別のものに例える「比喩」（「まるで〜のようだ」）のニュアンスと、客観的に基準となるものと同一であることを示す「同一」（「〜と同じだ」）のニュアンスの2つを持ちます。先行する名詞にパッチムがない場合は「와 같다」、ある場合は「과 같다」を用います。",
+      "formation": "名詞（パッチムなし：+ 와 같다 / パッチムあり：+ 과 같다）",
+      "examples": [
+        {
+          "translation": "彼女の目は星のようです。輝いていて美しいです。"
+        },
+        {
+          "translation": "成長していく中で目標はいつも北極星のようでした。いつも進むべき方向を示してくれました。"
+        },
+        {
+          "translation": "うちの学校の寮はホテルのようです。とても快適で、すべての設備が整っています。"
+        },
+        {
+          "translation": "この問題は前の問題と同じです。類似した解法を持っています。"
+        }
+      ]
+    },
+    "ko_와과_95": {
+      "title": "~와/과 달리（〜と違って、〜とは異なり）",
+      "shortExplanation": "名詞に付き、基準となる事物とは異なっていることや、対照的な事実を表します（「〜と違って」「〜とは異なり」）。",
+      "longExplanation": "「~와/과 달리」は、助詞「~와/과」に形容詞「다르다（異なる）」の副詞形である「달리（異なって・違って）」が結合した構文です。先行する名詞を対照基準とし、後続の事態・性質・状況がそれとは明確に異なっていることを際立たせます。日本語の「〜と違って」「〜とは異なり」に相当します。動詞節が先行する場合は「~는 것과 달리」の形を用います。",
+      "formation": "名詞（パッチムなし：+ 와 달리 / パッチムあり：+ 과 달리） / 動詞 + 는 것과 달리",
+      "examples": [
+        {
+          "translation": "毎日出勤するのとは違って、今日は家で仕事をしました。"
+        },
+        {
+          "translation": "夏とは異なり、冬は天気が寒いため服をたくさん着なければなりません。"
+        },
+        {
+          "translation": "チョルウさんと違って、ジヌさんは勉強がよくできます。"
+        },
+        {
+          "translation": "ソウルと違って、釜山では冬の寒さがそれほど厳しくありません。"
+        }
+      ]
+    },
+    "ko_을를_96": {
+      "title": "~을/를 통해 / ~을/를 통해서（〜を通じて、〜を通して）",
+      "shortExplanation": "名詞に付き、ある結果を得たり行為を行ったりするための仲介・手段・媒介・経路などを表します（「〜を通じて」「〜を通して」）。",
+      "longExplanation": "「~을/를 통해」（強調形として「~을/를 통해서」も多用）は、名詞の後に付き、ある目的の達成、感情の表現、知識の習得などの手段・媒介・経路・契機を表す構文です。日本語の「〜を通じて」「〜を通して」「〜によって」に相当します。直前の名詞にパッチムがない場合は「를 통해」、ある場合は「을 통해」を用います。",
+      "formation": "名詞（パッチムなし：+ 를 통해(서) / パッチムあり：+ 을 통해(서)）",
+      "examples": [
+        {
+          "translation": "この本を通じて、彼の考えや哲学をより深く理解することができました。"
+        },
+        {
+          "translation": "その男性は音楽を通じて自分の感情を表現しました。"
+        },
+        {
+          "translation": "文化交流を通して、私たちは他国との関係を強化することができます。"
+        },
+        {
+          "translation": "旅行を通じて、私はさまざまな文化や景色を体験しました。"
+        }
+      ]
+    },
+    "ko_이가_97": {
+      "title": "~이/가 되다（〜になる）",
+      "shortExplanation": "補語となる名詞に付き、動詞「되다」と連動して、人や事物が新たな身分・状態・資格へと変化することを表します（「〜になる」）。",
+      "longExplanation": "「~이/가 되다」は、人や物事が時間の経過や努力、環境の変化によって新たな状態・身分・職業・段階などに移行することを表す最も基本的な構文です。「되다（〜になる）」の直前に来る名詞は補語であり、補格助詞「이/가」を伴います。直前の名詞にパッチムがある場合は「이 되다」、パッチムがない場合は「가 되다」となります。日本語の「〜になる」に相当します。",
+      "formation": "名詞（パッチムなし：+ 가 되다 / パッチムあり：+ 이 되다）",
+      "examples": [
+        {
+          "translation": "子供たちが大人になるにはたくさんの時間が必要です。"
+        },
+        {
+          "translation": "彼女はとても有名な歌手になりました。"
+        },
+        {
+          "translation": "今日は急に寒くなって手袋が必要になりました。"
+        },
+        {
+          "translation": "私は一生懸命勉強して医者になりました。"
+        }
+      ]
+    },
+    "ko_이가_98": {
+      "title": "~이/가 아니다（〜ではない、〜じゃありません）",
+      "shortExplanation": "名詞の後に付き、その事物や身分・属性を否定することを表します（「〜ではない」「〜じゃありません」）。",
+      "longExplanation": "「~이/가 아니다」は、指定詞（体言述語）「~이다（〜である・〜だ）」の直接的な否定形です。文法的に「아니다」は形容詞であり、直前の名詞は補格助詞「이/가」を伴う補語となります。ある対象の身分、属性、事実がその名詞に該当しないことを明確に否定します。パッチムがある名詞には「이 아니다」、パッチムがない名詞には「가 아니다」が接続します。日本語の「〜ではない」「〜ではありません」に相当します。",
+      "formation": "名詞（パッチムなし：+ 가 아니다 / パッチムあり：+ 이 아니다）",
+      "examples": [
+        {
+          "translation": "私は学生ではありません、先生です。"
+        },
+        {
+          "translation": "猫は私たちの落とし物（迷子）ではありません、私たちの迷子は子犬です。"
+        },
+        {
+          "translation": "料理が得意な人は私ではありません。私には料理の才能がまったくありません。"
+        },
+        {
+          "translation": "あの人はうちの学校の生徒ではありません。他の学校の生徒です。"
+        }
+      ]
+    },
+    "ko_이라도_99": {
+      "title": "~(이)라도（〜でも、せめて〜だけでも）",
+      "shortExplanation": "名詞に付き、最善の選択ではないとしても次善の策として選ぶ譲歩のニュアンスを表します（「〜でも」「せめて〜だけでも」）。",
+      "longExplanation": "「~(이)라도」は、話し手にとって必ずしも最高・最善の選択肢ではないものの、「何もないよりはましだ」「せめてこれだけでも」という妥協や次善の選択を表す補助詞です。日本語の「〜でも（構わない）」「せめて〜だけでも」に相当します。先行する名詞にパッチムがある場合は「이라도」、パッチムがない場合は「라도」を接続します。",
+      "formation": "名詞（パッチムなし：+ 라도 / パッチムあり：+ 이라도）",
+      "examples": [
+        {
+          "translation": "たとえそれが期待していたものではなくても、何もないよりはずっとましですね。"
+        },
+        {
+          "translation": "せめてこの写真だけでも撮っておけば、後で良い思い出になるはずです。"
+        },
+        {
+          "translation": "歌が上手でなくても、カラオケでせめて1曲だけでも歌ってみてください。"
+        },
+        {
+          "translation": "テストで高得点が取れなかったとしても、せめて理解できなかった部分だけでも勉強したのなら大きな収穫です。"
+        }
+      ]
+    },
+    "ko_이래_100": {
+      "title": "~이래 / ~이래로（〜以来、〜以降）",
+      "shortExplanation": "特定の時点や出来事を表す名詞や過去連体形の後に付き、過去のある時点から現在に至るまでの継続を表します（「〜以来」「〜このかた」）。",
+      "longExplanation": "「~이래（以来）」は、過去の特定の出来事や時点を起点とし、その時から現在に至るまで状態が続いていることを表します。歴史的な出来事や転換点を表す名詞の直後（例：「창립 이래／創立以来」「귀국 이래／帰国以来」）に付くか、動詞の過去連体形に後続して「-(으)ㄴ 이래」の形で用いられます。時間の継続を強調するために助詞「로」を伴った「~이래로」の形も非常によく使われます。日本語の「〜以来」「〜以降」に相当します。",
+      "formation": "名詞 + 이래(로) / 動詞語幹 + -(으)ㄴ 이래(로)",
+      "examples": [
+        {
+          "translation": "その事件が発生してからの5年間というもの、私はそこを一度も訪れたことがありません。"
+        },
+        {
+          "translation": "100年の中で初めて、うちの学校のサッカーチームが優勝を果たしました。"
+        },
+        {
+          "translation": "こんなに情熱的な求職者に出会ったのは本当に久しぶりだそうです。"
+        },
+        {
+          "translation": "学校で一番高い点数を取ったあの日以来、両親は私をとても誇りに思ってくれています。"
+        }
+      ]
+    },
+    "ko_이랑_101": {
+      "title": "~(이)랑（〜と、〜と一緒に）",
+      "shortExplanation": "日常会話で親しみを持って多用される助詞で、名詞の並列（「〜と」）や動作を共にする相手（「〜と」「〜と一緒に」）を表します。",
+      "longExplanation": "「~(이)랑」は、日常の会話で非常によく使われる親しみのある助詞です。機能的には「~와/과」や「~하고」と同じですが、よりくだけたカジュアルで親しいニュアンスを持ちます。名詞を並列して「〜と」と列挙する用法と、「같이」「함께」などと共に動作のパートナーを示して「〜と（一緒に）」を表す用法の両方で用いられます。先行する名詞にパッチムがある場合は「이랑」、パッチムがない場合は「랑」となります。",
+      "formation": "名詞（パッチムなし：+ 랑 / パッチムあり：+ 이랑）",
+      "examples": [
+        {
+          "translation": "私は友達と映画を見に行きました。本当に面白かったです。"
+        },
+        {
+          "translation": "長くて難しい宿題を友達と一緒にやったことで、チャレンジ精神が湧きました。"
+        },
+        {
+          "translation": "家族と一緒に忘れられない旅行に行ってきました。本当に楽しかったです。"
+        },
+        {
+          "translation": "私は毎朝、運動とシャワーをしてから学校に行きます。"
+        }
+      ]
+    },
+    "ko_이렇게_102": {
+      "title": "이렇게（このように、こんなに）",
+      "shortExplanation": "状態や動作の様態（「このように」）や、性質・程度の甚だしさ（「こんなに」）を表す指示副詞です。",
+      "longExplanation": "「이렇게」は、指示形容詞「이렇다（このようだ）」に副詞形語尾「-게」が付いた指示副詞です。大きく分けて2つの機能があります。1つは、動作や行為の方法・様態を表す用法（「このように」「こんなふうに」）です。もう1つは、形容詞や動詞を修飾して、話者の予想を超えた驚きや感情を込めて程度を強調する用法（「こんなに」「これほど」）です。",
+      "formation": "이렇게 + 動詞 / 形容詞 / 節",
+      "examples": [
+        {
+          "translation": "こんなに暑い日にはアイスクリームを食べるのが最高です。"
+        },
+        {
+          "translation": "自分がこんなに遅く到着するとは思いませんでした。"
+        },
+        {
+          "translation": "私はこれほど大きな問題を解決できるとは思いませんでした。"
+        },
+        {
+          "translation": "私は自分の体がこんなに大きくなっていたとは気づきませんでした。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_에_88": {
+      "title": "~에 따르다 (기준·원인·조건에 따른 변화)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 일의 기준이나 조건, 원인을 나타내어 그에 맞추어 행동하거나 상황이 달라짐을 나타냅니다 ('~에 따라(서)').",
+      "longExplanation": "'~에 따르다'는 명사 뒤에 결합하여 어떤 기준, 원칙, 조건, 상황에 바탕을 두고 다른 일이 일어나거나 변화함을 나타내는 표현입니다. 실생활에서는 주로 '-아/어(서)'가 결합된 형태인 '~에 따라' 또는 '~에 따라서'의 형태로 널리 쓰이며, 기준이 되는 대상에 의해 후행 절의 결과나 행동이 좌우됨을 나타냅니다. 규칙, 법률, 지시 등과 결합할 때는 '준수하다, 따르다'의 의미를 지닙니다.",
+      "formation": "명사 + 에 따르다 / 에 따라(서)",
+      "examples": [
+        {
+          "translation": "날씨에 따라서 옷을 입는 스타일이 바뀌기 마련이에요, 매우 추운 날에는 멋보다 따뜻함이 우선이죠."
+        },
+        {
+          "translation": "음식의 맛은 재료에 따라 전혀 다를 수 있어요, 신선한 재료를 사용하면 맛있는 음식을 만들 수 있지요."
+        },
+        {
+          "translation": "교통상황에 따라서 도착 시간이 달라질 수 있어요, 교통이 막히면 늦게 도착하게 될 수 있죠."
+        },
+        {
+          "translation": "실력에 따라 결과가 달라지는 거예요, 열심히 공부하면 좋은 결과를 얻을 수 있어요."
+        }
+      ]
+    },
+    "ko_에_89": {
+      "title": "~에 비해 / ~에 비해서 (비교의 기준)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 대상을 기준으로 삼아 비교하거나 대조할 때 쓰는 표현입니다 ('~에 비하여/비해서').",
+      "longExplanation": "'~에 비해(서)'는 명사 뒤에 붙어 어떤 대상을 비교의 기준으로 삼아 다른 대상과의 성질, 수량, 정도 등의 차이나 특성을 대조할 때 사용하는 표현입니다. 동사 '비하다(견주다)'에 연결어미 '-어(서)'가 결합된 형태로, 주로 두 가지 이상의 사물이나 상황을 맞비교할 때 쓰입니다.",
+      "formation": "명사 + 에 비해(서)",
+      "examples": [
+        {
+          "translation": "서울에 비해 부산은 날씨가 좋아서 여름에 가기 좋아요."
+        },
+        {
+          "translation": "저는 채소에 비해 과일을 더 많이 먹어요, 과일이 더 달아서 좋아요."
+        },
+        {
+          "translation": "지난 학기 성적에 비해 이번 학기 성적은 훨씬 향상되었어요."
+        },
+        {
+          "translation": "커피에 비해 차는 카페인이 덜하니 밤에 마실 수 있어요."
+        }
+      ]
+    },
+    "ko_에게_90": {
+      "title": "~에게 (행동이 미치는 유정 대상)",
+      "shortExplanation": "사람이나 동물 등 유정명사 뒤에 붙어 어떤 행동이 미치거나 전해지는 대상을 나타내는 부사격 조사입니다 ('~에게').",
+      "longExplanation": "'~에게'는 사람이나 동물처럼 감정을 가진 유정명사 뒤에 붙어, 어떤 동작이 도달하거나 작용하는 대상(처소나 낙착점)을 가리키는 부사격 조사입니다. 주로 '주다', '보내다', '말하다', '쓰다', '가르치다' 등의 수여·전달성 동사와 함께 쓰입니다. 구어체에서는 주로 '~한테'가 사용되며, 높여야 할 대상에게는 높임의 부사격 조사인 '~께'를 사용합니다.",
+      "formation": "유정명사(사람, 동물) + 에게",
+      "examples": [
+        {
+          "translation": "저는 어제 친구에게 이 메시지를 보냈어요, 그런데 아직 답장이 없어요."
+        },
+        {
+          "translation": "선생님은 학생들에게 과제를 많이 주셨어요, 다 완료하기 위해선 시간이 많이 필요할 것 같아요."
+        },
+        {
+          "translation": "어머니께서는 아기에게 이야기를 들려주고 계셔요."
+        },
+        {
+          "translation": "저는 동생에게 선물을 줬어요, 그는 새로운 책을 받으며 아주 행복해 보였어요."
+        }
+      ]
+    },
+    "ko_에서_91": {
+      "title": "~에서 (동작의 장소·출발점)",
+      "shortExplanation": "장소 명사 뒤에 붙어 어떤 동작이나 행위가 이루어지는 처소(장소)나 출발점을 나타내는 부사격 조사입니다 ('~에서').",
+      "longExplanation": "'~에서'는 장소를 나타내는 명사 뒤에 결합하여 두 가지 핵심적인 역할을 하는 부사격 조사입니다. 첫째는 어떤 동작이나 행위가 역동적으로 일어나는 구체적인 공간('~에서 하다')을 가리키며(정적인 존재나 목적지를 나타내는 '~에'와 구별됨), 둘째는 동작이나 이동이 시작되는 출발점이나 출처('~로부터')를 나타냅니다. 구어에서는 간혹 '서'로 줄여 쓰이기도 합니다.",
+      "formation": "장소 명사 + 에서",
+      "examples": [
+        {
+          "translation": "저는 서울에서 태어났어요. 서울은 제가 처음 숨을 쉬어 본 곳이에요."
+        },
+        {
+          "translation": "학교에서 공부하는 것이 저에게 가장 중요해요. 그래서 항상 열심히 하는 편이에요."
+        },
+        {
+          "translation": "공항에서 비행기를 타고 도쿄로 갔어요. 도쿄는 저에게는 생소한 곳이지만 참 재미있었어요."
+        },
+        {
+          "translation": "커피숍에서 음악을 들으며 공부를 해요. 그러면 즐겁게 공부할 수 있어요."
+        }
+      ]
+    },
+    "ko_에서부터_92": {
+      "title": "~에서부터 ~까지 (공간·시간적 기점과 종점)",
+      "shortExplanation": "장소나 시간의 시작점을 나타내는 '에서부터'와 마침점을 나타내는 '까지'가 어우러져 공간이나 시간의 범위를 강조하는 표현입니다.",
+      "longExplanation": "'~에서부터'는 부사격 조사 '에서'에 출발·시작을 뜻하는 보조사 '부터'가 결합한 형태로, 출발점을 한층 더 뚜렷하게 부각시키는 역할을 합니다. 종착점이나 마침점을 나타내는 조사 '~까지'와 짝을 이루어 공간적 이동의 경로, 시간적 지속 구간, 일의 전개 범위 등을 처음부터 끝까지 총체적으로 나타낼 때 사용됩니다.",
+      "formation": "명사(시간/장소) + 에서부터 + 명사(시간/장소) + 까지",
+      "examples": [
+        {
+          "translation": "매일 아침 7시에서부터 8시까지 아침 운동을 하고 학교에 가요."
+        },
+        {
+          "translation": "우리는 서울에서부터 부산까지 차로 여행을 했어요."
+        },
+        {
+          "translation": "이번 주말에는 토요일 저녁 5시에서부터 일요일 오후 3시까지 휴식을 취해요."
+        },
+        {
+          "translation": "사진 전시회는 11월 1일에서부터 11월 30일까지 열릴 거예요."
+        }
+      ]
+    },
+    "ko_와과_93": {
+      "title": "~와/과 (접속·공동격 조사)",
+      "shortExplanation": "두 개 이상의 명사를 대등하게 이어 주거나(접속조사), 어떤 행동을 함께하는 상대를 나타내는(공동격 부사격 조사) 조사입니다.",
+      "longExplanation": "'~와/과'는 명사 뒤에 붙는 조사로 크게 두 가지 기능을 담당합니다. 첫째는 두 개 이상의 사물이나 사람을 대등하게 묶어 나열하는 접속조사의 기능('밥과 반찬')이며, 둘째는 '함께', '같이' 등과 어울려 동작을 함께 수행하는 동반자나 상대방을 나타내는 공동격 부사격 조사의 기능('친구와 가다')입니다. 앞 명사 끝음절에 받침이 없으면 '와', 받침이 있으면 '과'를 선택합니다. 구어체의 '~하고'나 '~랑/이랑'에 비해 격식적이고 문어적인 성격을 띱니다.",
+      "formation": "명사(받침 없음: + 와 / 받침 있음: + 과)",
+      "examples": [
+        {
+          "translation": "오늘 아침에는 밥과 김치와 갈비를 먹었어요."
+        },
+        {
+          "translation": "나는 내 친구와 영화관에 갔어요."
+        },
+        {
+          "translation": "운동화와 청바지와 티셔츠를 사러 가고 싶어요."
+        },
+        {
+          "translation": "이번 주말에 나는 가족과 함께 행복한 시간을 보냈어요."
+        }
+      ]
+    },
+    "ko_와과_94": {
+      "title": "~와/과 같다 (비유·동일성)",
+      "shortExplanation": "명사 뒤에 붙어 기준이 되는 대상과 본질·형태가 똑같음을 나타내거나(동일), 다른 사물에 빗대어 표현할 때(비유) 쓰입니다.",
+      "longExplanation": "'~와/과 같다'는 부사격 조사 '~와/과'에 형용사 '같다'가 결합하여 만들어진 표현입니다. 대상의 모습이나 성질이 다른 어떤 사물과 매우 닮았음을 문학적·생생하게 빗대어 표현하는 비유적 용법('~인 것 같다')과, 두 사물의 성질·내용·수량이 서로 일치함을 나타내는 동일성 비교의 용법을 두루 나타냅니다. 앞 명사 받침 유무에 따라 '와 같다'(받침 없음)와 '과 같다'(받침 있음)로 나뉩니다.",
+      "formation": "명사(받침 없음: + 와 같다 / 받침 있음: + 과 같다)",
+      "examples": [
+        {
+          "translation": "그녀의 눈은 별과 같아요, 빛나고 아름다워요."
+        },
+        {
+          "translation": "성장하면서 목표는 항상 북극성과 같았어요, 언제나 방향을 제시해 줬죠."
+        },
+        {
+          "translation": "우리 학교의 기숙사는 호텔과 같아요, 매우 편안하고 모든 시설이 잘 갖춰져 있어요."
+        },
+        {
+          "translation": "이 문제는 그 전의 문제와 같아요, 유사한 해결 방법을 가지고 있어요."
+        }
+      ]
+    },
+    "ko_와과_95": {
+      "title": "~와/과 달리 (차이·대조)",
+      "shortExplanation": "명사 뒤에 붙어 기준이 되는 어떤 대상이나 상황과 서로 다름을 대조적으로 드러낼 때 씁니다 ('~와/과 다르게').",
+      "longExplanation": "'~와/과 달리'는 비교의 조사 '~와/과' 뒤에 형용사 '다르다'의 부사형인 '달리'가 결합한 표현으로, 어떤 기준이 되는 대상이나 통념, 이전 상태와 견주어 볼 때 서로 같지 않고 뚜렷한 차이가 있음을 대조하여 나타냅니다. 앞말이 절이나 동사구일 때는 '~는 것과 달리'의 형태로 주로 쓰입니다.",
+      "formation": "명사(받침 없음: + 와 달리 / 받침 있음: + 과 달리) / 동사 + 는 것과 달리",
+      "examples": [
+        {
+          "translation": "매일 출근하는 것과 달리, 오늘은 집에서 일했어요."
+        },
+        {
+          "translation": "여름과 달리 겨울에는 날씨가 춥기 때문에 많은 옷을 입어야 해요."
+        },
+        {
+          "translation": "철우씨와 달리, 진우씨는 공부를 잘해요."
+        },
+        {
+          "translation": "서울과 달리 부산에서는 겨울이 덜 춥습니다."
+        }
+      ]
+    },
+    "ko_을를_96": {
+      "title": "~을/를 통해 / ~을/를 통해서 (매개·수단·경로)",
+      "shortExplanation": "명사 뒤에 결합하여 어떤 행위나 결과를 이루어 내는 매개체, 수단, 경로, 계기를 나타냅니다 ('~을/를 통하여/통해서').",
+      "longExplanation": "'~을/를 통해(서)'는 목적격 조사 '~을/를'에 동사 '통하다'의 활용형이 결합한 관용구로, 어떤 일이나 결과에 이르게 하는 중개물, 방법, 수단, 경험, 통로를 가리킬 때 널리 쓰입니다. 어떤 매개체를 바탕으로 사실을 알게 되거나 감정을 표현하고 성과를 얻음을 자연스럽게 전달합니다. 앞 명사 받침 여부에 따라 '을 통해'(받침 있음)와 '를 통해'(받침 없음)로 나뉩니다.",
+      "formation": "명사(받침 없음: + 를 통해(서) / 받침 있음: + 을 통해(서))",
+      "examples": [
+        {
+          "translation": "이 책을 통해 그의 생각과 철학을 더 잘 이해할 수 있었다."
+        },
+        {
+          "translation": "남자는 음악을 통해 자신의 감정을 표현했다."
+        },
+        {
+          "translation": "문화교류를 통해 우리는 다른 국가들과의 관계를 강화할 수 있다."
+        },
+        {
+          "translation": "여행을 통해 나는 여러 가지 문화와 풍경을 경험했다."
+        }
+      ]
+    },
+    "ko_이가_97": {
+      "title": "~이/가 되다 (변화의 결과·보어)",
+      "shortExplanation": "명사(보어) 뒤에 보격 조사 '이/가'가 붙어 다른 상태, 신분, 자격 등으로 변하거나 바뀌는 결과를 나타냅니다 ('~이/가 되다').",
+      "longExplanation": "'~이/가 되다'는 사물이나 인물이 이전과 다른 새로운 상태, 신분, 자격, 단계로 바뀌어 도달함을 나타내는 문장의 기본 골격입니다. 동사 '되다' 앞의 명사는 문법적으로 보어 역할을 하며 보격 조사 '이/가'를 취합니다. 받침이 있는 명사 뒤에는 '이 되다', 받침이 없는 명사 뒤에는 '가 되다'가 결합합니다. 직업의 성취, 연령의 도달, 상태의 전환 등에 두루 쓰입니다.",
+      "formation": "명사(받침 없음: + 가 되다 / 받침 있음: + 이 되다)",
+      "examples": [
+        {
+          "translation": "아이들이 어른이 되는데는 시간이 많이 필요해요."
+        },
+        {
+          "translation": "그녀는 아주 유명한 가수가 되었어요."
+        },
+        {
+          "translation": "오늘은 갑자기 추워져서 장갑이 필요하게 되었어요."
+        },
+        {
+          "translation": "나는 공부를 열심히 해서 의사가 되었어요."
+        }
+      ]
+    },
+    "ko_이가_98": {
+      "title": "~이/가 아니다 (명사의 부정·보어)",
+      "shortExplanation": "명사(보어) 뒤에 보격 조사 '이/가'와 형용사 '아니다'가 결합하여 어떤 사실이나 신분, 대상을 단정적으로 부정하는 표현입니다 ('~이/가 아니다').",
+      "longExplanation": "'~이/가 아니다'는 지정사 '~이다'의 반대 개념으로, 어떤 대상의 자격, 속성, 정체성을 부정할 때 쓰이는 핵심 부정 구문입니다. 형용사 '아니다' 앞에 놓이는 명사는 보어 역할을 하며, 보격 조사 '이/가'를 취합니다. 앞 명사의 끝음절에 받침이 있으면 '이 아니다', 받침이 없으면 '가 아니다'로 활용합니다.",
+      "formation": "명사(받침 없음: + 가 아니다 / 받침 있음: + 이 아니다)",
+      "examples": [
+        {
+          "translation": "저는 학생이 아닙니다, 저는 선생님이에요."
+        },
+        {
+          "translation": "고양이가 우리 분실물이 아닙니다, 우리 분실물은 강아지예요."
+        },
+        {
+          "translation": "요리 잘하는 사람은 내가 아닙니다, 저는 요리하는 능력이 전혀 없어요."
+        },
+        {
+          "translation": "그 사람은 우리 학교 학생이 아닙니다, 그는 다른 학교의 학생이에요."
+        }
+      ]
+    },
+    "ko_이라도_99": {
+      "title": "~(이)라도 (차선의 선택·양보)",
+      "shortExplanation": "명사 뒤에 붙어 최선은 아니지만 차선책으로 그것이라도 선택하거나 양보함을 나타내는 보조사입니다 ('~(이)라도').",
+      "longExplanation": "'~(이)라도'는 명사 뒤에 결합하여 마음에 차는 가장 좋은 선택(최선)은 아닐지라도, 아무것도 없거나 하지 않는 것보다는 나으므로 차선책으로서 수용하거나 권유함을 나타내는 보조사입니다. '물이라도 마셔라', '차라도 한잔하자'와 같이 아쉬운 대로 양보하는 태도를 드러냅니다. 받침이 있는 체언 뒤에는 '이라도', 받침이 없는 체언 뒤에는 '라도'가 결합합니다.",
+      "formation": "체언(받침 없음: + 라도 / 받침 있음: + 이라도)",
+      "examples": [
+        {
+          "translation": "비록 그것이 기대했던 것이 아니라도, 아무것도 없는 것보다는 낫죠."
+        },
+        {
+          "translation": "이 사진이라도 찍어 두면 나중에 좋은 추억이 될 거예요."
+        },
+        {
+          "translation": "노래를 잘 못해도 노래방에서 한 곡이라도 불러 보세요."
+        },
+        {
+          "translation": "시험에서 높은 점수를 못 받았더라도, 이해 안 가는 부분이라도 공부했다면 큰 수확이에요."
+        }
+      ]
+    },
+    "ko_이래_100": {
+      "title": "~이래 / ~이래로 (과거 시점 이후의 지속·이래)",
+      "shortExplanation": "특정한 과거의 시점이나 사건을 나타내는 명사 또는 관형사형 어미 뒤에 붙어, 그 시점부터 지금까지 계속 이어짐을 나타내는 의존명사/접미사적 표현입니다 ('~이래(로)').",
+      "longExplanation": "'~이래(以來)'는 주로 명사나 과거 관형사형 '-(으)ㄴ' 뒤에 쓰여, 어떤 기준이 되는 과거의 사건이나 시점 이후부터 지금까지 계속해서 이어져 오는 동안을 가리킵니다. 역사적 계기나 특정 사건을 기점으로 삼을 때 자주 쓰이며, 조사 '로'가 덧붙은 '~이래로'의 형태로도 매우 흔히 사용됩니다.",
+      "formation": "명사 + 이래(로) / 동사 어간 + -(으)ㄴ 이래(로)",
+      "examples": [
+        {
+          "translation": "그 사건이 발생한 지 5년 이래로 나는 그곳을 한 번도 방문한 적이 없어요."
+        },
+        {
+          "translation": "백 년 이래 최초로 우리 학교 축구팀이 우승을 차지했어요."
+        },
+        {
+          "translation": "나는 이렇게 열정적인 구직자를 만난 게 정말 오랜만이래."
+        },
+        {
+          "translation": "학교에서 가장 높은 점수를 받았던 그날 이래로, 부모님이 나를 아주 자랑스러워하셨어요."
+        }
+      ]
+    },
+    "ko_이랑_101": {
+      "title": "~(이)랑 (구어체 접속·공동격 조사)",
+      "shortExplanation": "구어체에서 두 개 이상의 명사를 나열하거나(접속조사), 어떤 행동을 함께하는 상대를 친근하게 나타내는 조사입니다 ('~(이)랑').",
+      "longExplanation": "'~(이)랑'은 격식적인 '~와/과'나 표준 구어인 '~하고'에 비해 훨씬 친근하고 부드러운 느낌을 주는 일상 구어체 조사입니다. 둘 이상의 사물을 대등하게 나열하여 이어 주는 접속조사의 역할('사과랑 배')과, 어떤 행동을 함께 수행하는 동반자나 상대방을 가리키는 공동격 조사의 역할('친구랑 가다')을 모두 수행합니다. 앞 명사 끝음절에 받침이 있으면 '이랑', 받침이 없으면 '랑'을 씁니다.",
+      "formation": "명사(받침 없음: + 랑 / 받침 있음: + 이랑)",
+      "examples": [
+        {
+          "translation": "저는 친구랑 영화를 보러 갔어요. 정말 재미있었어요."
+        },
+        {
+          "translation": "길고 어려운 숙제를 친구랑 같이 해서 도전정신이 생겼어요."
+        },
+        {
+          "translation": "가족이랑 잊지 못할 여행을 다녀왔어요. 정말 즐거웠어요."
+        },
+        {
+          "translation": "저는 매일 아침에 운동이랑 샤워를 하고 학교에 가요."
+        }
+      ]
+    },
+    "ko_이렇게_102": {
+      "title": "이렇게 (지시 부사·상태나 정도의 강조)",
+      "shortExplanation": "말하는 이와 가까운 사물의 모양, 상태, 방식이나 현저한 정도를 가리키며 동사나 형용사를 꾸며 주는 지시 부사입니다 ('이렇게').",
+      "longExplanation": "'이렇게'는 지시 형용사 '이렇다'의 어간에 부사형 전성어미 '-게'가 결합하여 굳어진 지시 부사입니다. 말하는 사람에게 가까운 상태나 모양, 방식을 가리켜 '이러한 방식으로'의 뜻으로 동사를 꾸미거나, 형용사나 부사 앞에 놓여 말하는 사람의 예상이나 기준을 훌쩍 뛰어넘는 상태나 정도를 감탄·강조하여 나타냅니다 ('이렇게 덥다', '이렇게 늦다').",
+      "formation": "이렇게 + 동사 / 형용사 / 절",
+      "examples": [
+        {
+          "translation": "이렇게 더운 날에는 아이스크림을 먹는 것이 최고예요."
+        },
+        {
+          "translation": "제가 이렇게 늦게 도착할 줄 몰랐어요."
+        },
+        {
+          "translation": "나는 이렇게 큰 문제를 해결할 수 있을 줄 몰랐어요."
+        },
+        {
+          "translation": "저는 이렇게 몸이 커진 줄 몰랐어요."
+        }
+      ]
+    }
+  }
+}

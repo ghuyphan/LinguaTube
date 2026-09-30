@@ -66,7 +66,7 @@ function mergeAllChunks(learningLang = 'ja') {
 
   const targets = TARGET_LANGS[learningLang] || ['vi', 'zh', 'ko', 'ja'];
   for (const targetLang of targets) {
-    const existing = learningLang === 'ja' ? {} : loadExistingTranslations(learningLang, targetLang);
+    const existing = (learningLang === 'ja' || learningLang === 'zh') ? {} : loadExistingTranslations(learningLang, targetLang);
     const combined = { ...existing, ...merged[targetLang] };
     if (Object.keys(combined).length > 0) {
       saveTranslations(learningLang, targetLang, combined);

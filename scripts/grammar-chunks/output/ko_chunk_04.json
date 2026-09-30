@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_보다_45": {
+      "title": "보다 (Trợ từ so sánh: hơn, so với)",
+      "shortExplanation": "Trợ từ so sánh gắn sau danh từ làm chuẩn so sánh, mang nghĩa 'so với', 'hơn'.",
+      "longExplanation": "'보다' là trợ từ so sánh trong tiếng Hàn, được gắn trực tiếp vào sau danh từ đóng vai trò là mốc chuẩn so sánh. Danh từ đứng trước '보다' chính là đối tượng bị so sánh ('so với...'), còn đối tượng đứng ở vế khác trong câu là đối tượng có mức độ cao hơn (hoặc thấp hơn). Đi kèm phía sau thường có phó từ '더' (hơn) hoặc '덜' (kém hơn) để bổ nghĩa cho tính từ hoặc động từ.",
+      "formation": "Danh từ (tiêu chuẩn so sánh) + 보다 (더/덜) + Tính từ / Động từ",
+      "examples": [
+        {
+          "translation": "Tôi thích trà hơn cà phê. Trà hợp khẩu vị của tôi hơn."
+        },
+        {
+          "translation": "Nhà chúng tôi có nhiều sách hơn cả thư viện. Vì cả gia đình đều thích đọc sách nên mới như vậy đấy."
+        },
+        {
+          "translation": "Học tiếng Hàn dễ hơn học tiếng Trung. Bởi vì chữ viết và phát âm đơn giản hơn."
+        },
+        {
+          "translation": "Bây giờ là mùa hè nhưng thời tiết lại lạnh hơn mùa xuân. Có vẻ là do biến đổi khí hậu kỳ lạ."
+        }
+      ]
+    },
+    "ko_가장_46": {
+      "title": "가장 (Phó từ so sánh nhất: nhất)",
+      "shortExplanation": "Phó từ biểu thị mức độ cao nhất trong số nhiều đối tượng, tương đương với 'nhất'.",
+      "longExplanation": "'가장' là phó từ chỉ mức độ cao nhất (so sánh nhất) trong tiếng Hàn, tương đương với 'nhất' trong tiếng Việt. Nó đứng trước tính từ, phó từ hoặc động từ để nhấn mạnh rằng trạng thái, đặc điểm hoặc hành động đạt đến tột cùng, không có đối tượng nào khác vượt qua được. Từ đồng nghĩa thường gặp là '제일' (chữ Hán 'đệ nhất').",
+      "formation": "가장 + Tính từ / Phó từ / Động từ",
+      "examples": [
+        {
+          "translation": "Tôi muốn kết hôn với người mà tôi yêu thương nhất."
+        },
+        {
+          "translation": "Người đến nơi sớm nhất sẽ có thể nhận được phần thưởng."
+        },
+        {
+          "translation": "Anh ấy đã không từ bỏ ngay cả trong khoảng thời gian khó khăn nhất."
+        },
+        {
+          "translation": "Tôi muốn thực hiện được ước mơ lớn nhất của đời mình."
+        }
+      ]
+    },
+    "ko_도_47": {
+      "title": "도 (Trợ từ: cũng, cả, ngay cả)",
+      "shortExplanation": "Trợ từ bổ trợ gắn sau danh từ biểu thị sự bao hàm, tương đồng ('cũng') hoặc nhấn mạnh mức độ ('cả', 'ngay cả').",
+      "longExplanation": "'도' là trợ từ bổ trợ (phụ trợ từ) rất phổ biến trong tiếng Hàn. Khi gắn sau danh từ, đại từ hay trạng từ, nó mang ý nghĩa bổ sung thêm một đối tượng khác có cùng tính chất hoặc hành động ('cũng'). Ngoài ra, '도' còn dùng để nhấn mạnh mức độ tột cùng hoặc sự việc vượt ngoài mong đợi, tương đương với 'cả', 'đến cả', 'ngay cả' trong tiếng Việt. Khi kết hợp với danh từ làm chủ ngữ hoặc tân ngữ, '도' sẽ thay thế hoàn toàn cho '이/가' hoặc '을/를'.",
+      "formation": "Danh từ / Đại từ / Phó từ + 도",
+      "examples": [
+        {
+          "translation": "Tôi nói giỏi tiếng Hàn, và tiếng Nhật tôi cũng nói giỏi nữa."
+        },
+        {
+          "translation": "Anh ấy không những đẹp trai mà tính cách cũng rất tốt."
+        },
+        {
+          "translation": "Nhà hàng này đồ ăn cũng ngon mà không khí cũng rất tuyệt."
+        },
+        {
+          "translation": "Hôm qua khi tôi về đến nhà thì đã hơn cả 12 giờ đêm rồi."
+        }
+      ]
+    },
+    "ko_이그저_48": {
+      "title": "이/그/저 (Từ chỉ định: này / đó / kia)",
+      "shortExplanation": "Định từ chỉ định đặt trước danh từ để xác định vị trí không gian: 'này' (gần người nói), 'đó' (gần người nghe), 'kia' (xa cả hai).",
+      "longExplanation": "'이', '그', '저' là các định từ (chỉ thị từ) đứng trực tiếp trước danh từ để chỉ định đối tượng dựa trên cự ly không gian hoặc ngữ cảnh giao tiếp:\n- '이' (này): chỉ đối tượng ở cự ly gần người nói.\n- '그' (đó): chỉ đối tượng ở gần người nghe, hoặc đối tượng vừa được nhắc đến trong đoạn hội thoại.\n- '저' (kia): chỉ đối tượng ở khoảng cách xa cả người nói lẫn người nghe nhưng vẫn có thể quan sát thấy.\nKhi kết hợp với danh từ phụ thuộc '것' (cái/thứ), chúng biến thành các đại từ chỉ vật: '이것' (cái này), '그것' (cái đó), '저것' (cái kia).",
+      "formation": "이 / 그 / 저 + Danh từ",
+      "examples": [
+        {
+          "translation": "Cây bút này là của tôi. Cây bút đó là của bạn. Cây bút đằng kia thì tôi không biết là của ai."
+        },
+        {
+          "translation": "Chiếc điện thoại này có nhiều lỗi quá. Chiếc điện thoại đó hiệu năng tốt thật. Chiếc điện thoại đằng kia thì tôi không biết là dòng máy nào."
+        },
+        {
+          "translation": "Món ăn này không ngon. Món ăn đó thì cay. Món ăn đằng kia thì tôi không biết mùi vị thế nào."
+        },
+        {
+          "translation": "Cuốn sách này thú vị lắm. Cuốn sách đó thì quá khó hiểu. Cuốn sách đằng kia thì tôi không biết nội dung là gì."
+        }
+      ]
+    },
+    "ko_이나inaOr_49": {
+      "title": "(이)나 (Trợ từ lựa chọn: hoặc, hay là)",
+      "shortExplanation": "Trợ từ gắn sau danh từ biểu thị sự lựa chọn giữa hai hay nhiều đối tượng, tương đương với 'hoặc', 'hay là'.",
+      "longExplanation": "'(이)나' là trợ từ chỉ sự lựa chọn trong tiếng Hàn, được gắn vào sau danh từ để liệt kê các phương án thay thế, mang nghĩa 'hoặc', 'hay là'. Nếu danh từ có patchim ta dùng '이나', nếu không có patchim ta dùng '나'. Lưu ý: Khi liên kết hai động từ hoặc tính từ, ta dùng vĩ tố liên kết '-거나' thay vì '(이)나'. Ngoài nghĩa lựa chọn, '(이)나' còn có thể biểu thị sự bất ngờ trước số lượng lớn ('tận', 'đến tận') hoặc sự chọn lựa mang tính thỏa hiệp ('đành... vậy').",
+      "formation": "Danh từ có patchim + 이나 / Danh từ không có patchim + 나 (Với động từ dùng: Thân động từ + 거나)",
+      "examples": [
+        {
+          "translation": "Bạn muốn ăn gì trong số pizza hay hamburger?"
+        },
+        {
+          "translation": "Vào cuối tuần, tôi sẽ đi xem phim cùng bạn bè hoặc đi mua sắm."
+        },
+        {
+          "translation": "Tôi phải làm các công việc nhà như giặt giũ hoặc rửa bát đĩa."
+        },
+        {
+          "translation": "Tối nay tôi sẽ làm bài tập về nhà hoặc đọc sách."
+        }
+      ]
+    },
+    "ko_밖에_50": {
+      "title": "밖에 (Trợ từ giới hạn phủ định: chỉ, ngoài... ra thì không)",
+      "shortExplanation": "Trợ từ gắn sau danh từ, luôn đi kèm đuôi câu phủ định để biểu thị nghĩa 'chỉ', 'ngoài ra không còn lựa chọn nào khác'.",
+      "longExplanation": "'밖에' là trợ từ giới hạn trong tiếng Hàn, được gắn sau danh từ và BẮT BUỘC phải đi kèm với hình thức phủ định ở vế sau (như '안', '못', '없다', '모르다'). Cấu trúc này biểu thị nghĩa 'chỉ', 'ngoài đối tượng này ra thì không còn cái nào khác' hoặc 'không còn cách nào khác ngoài việc...'. Khi kết hợp với cấu trúc '(으)ㄹ 수밖에 없다', nó mang ý nghĩa tất yếu: 'chỉ còn cách là...', 'không thể không...'.",
+      "formation": "Danh từ + 밖에 + Động từ phủ định (안 / 못 / 없다 / 모르다)",
+      "examples": [
+        {
+          "translation": "Cuối tuần này tôi chỉ đành ở nhà thôi, bởi vì tất cả bạn bè đều bận cả rồi."
+        },
+        {
+          "translation": "Mẹ tôi chỉ biết nấu ăn trong bếp chứ không giỏi làm những việc khác."
+        },
+        {
+          "translation": "Tôi chỉ biết mỗi tiếng Hàn nên rất khó để trò chuyện bằng các ngôn ngữ khác."
+        },
+        {
+          "translation": "Cậu học sinh đó chỉ biết mỗi việc học nên không giỏi vui chơi hay làm những việc khác."
+        }
+      ]
+    },
+    "ko_뿐_51": {
+      "title": "뿐 (Trợ từ / Danh từ phụ thuộc: chỉ, duy nhất)",
+      "shortExplanation": "Dùng để biểu thị sự giới hạn duy nhất, mang nghĩa 'chỉ', 'chỉ duy nhất là'.",
+      "longExplanation": "'뿐' có thể hoạt động như một trợ từ (gắn sau danh từ) hoặc một danh từ phụ thuộc (đứng sau vĩ tố định ngữ '-(으)ㄹ'). Nó diễn tả ý nghĩa 'chỉ', 'chỉ duy nhất', xác nhận rằng không có thêm bất cứ thứ gì khác ngoài điều đã nêu. Khác với '밖에' (bắt buộc phải đi với phủ định), '뿐' có thể kết hợp với đuôi khẳng định như '이다' (ví dụ: '너뿐이다' - chỉ có em). Ngoài ra, cấu trúc '뿐만 아니라' mang ý nghĩa 'không những... mà còn'.",
+      "formation": "Danh từ + 뿐(이다) / Thân động từ/tính từ + -(으)ㄹ 뿐이다",
+      "examples": [
+        {
+          "translation": "Nhà chúng tôi chỉ có hai con mèo thôi. Không có con thú cưng nào khác cả."
+        },
+        {
+          "translation": "Vào cuối tuần tôi chỉ nghỉ ngơi ở nhà thôi, chứ không có lịch trình gì đặc biệt."
+        },
+        {
+          "translation": "Tôi không những thích cà phê mà còn thích cả trà nữa."
+        },
+        {
+          "translation": "Điều tôi có thể làm chỉ có chừng này thôi. Tôi đã cố gắng hết sức rồi."
+        }
+      ]
+    },
+    "ko_는은_52": {
+      "title": "-는/-(으)ㄴ 것 (Danh từ hóa động từ / tính từ)",
+      "shortExplanation": "Cấu trúc định ngữ kết hợp với danh từ phụ thuộc '것' để biến động từ hoặc tính từ thành cụm danh từ ('việc...', 'điều...').",
+      "longExplanation": "Cấu trúc '-는 것' (cho động từ ở thì hiện tại) hoặc '-(으)ㄴ 것' (cho tính từ hoặc động từ thì quá khứ) là phương thức danh từ hóa phổ biến nhất trong tiếng Hàn. Bằng cách gắn vĩ tố định ngữ vào thân động từ/tính từ rồi đi kèm với danh từ phụ thuộc '것' (cái, điều, việc), cả cụm mệnh đề sẽ trở thành một cụm danh từ hoàn chỉnh. Cụm danh từ này có thể làm chủ ngữ ('-는 것은/이'), tân ngữ ('-는 것을') hoặc vị ngữ ('-는 것이다/거예요') trong câu.",
+      "formation": "Thân động từ + 는 것 / Thân tính từ + -(으)ㄴ 것",
+      "examples": [
+        {
+          "translation": "Tôi không hiểu tại sao việc xem phim lại thú vị đến như thế."
+        },
+        {
+          "translation": "Việc sống ở đất nước chúng tôi thực sự rất thú vị."
+        },
+        {
+          "translation": "Điều quan trọng nhất chính là sự thành thật."
+        },
+        {
+          "translation": "Đối với tôi việc học tiếng Hàn rất khó khăn, nhưng tôi vẫn muốn tiếp tục luyện tập."
+        }
+      ]
+    },
+    "ko_으는것같다eunneungeotgatdaItseemslike_53": {
+      "title": "-(으)ㄴ/는 것 같다 (Dường như, có vẻ như, hình như)",
+      "shortExplanation": "Cấu trúc phỏng đoán hoặc bày tỏ nhận xét, ý kiến một cách tế nhị, gián tiếp ('có vẻ như', 'dường như').",
+      "longExplanation": "'-(으)ㄴ/는 것 같다' là cấu trúc biểu đạt sự phỏng đoán dựa trên cảm giác hoặc quan sát của người nói, tương đương với 'hình như', 'có vẻ như', 'dường như'. Ngoài ra, người Hàn Quốc còn rất thường xuyên sử dụng cấu trúc này để diễn đạt suy nghĩ, quan điểm của bản thân một cách khiêm tốn, nhẹ nhàng và tế nhị, tránh việc khẳng định quá dứt khoát. Cách kết hợp: Động từ thì hiện tại dùng '-는 것 같다'; Tính từ dùng '-(으)ㄴ 것 같다'; Động từ thì quá khứ dùng '-(으)ㄴ 것 같다'; Tương lai hoặc phỏng đoán tương lai dùng '-(으)ㄹ 것 같다'.",
+      "formation": "Động từ hiện tại + 는 것 같다 / Tính từ + -(으)ㄴ 것 같다 / Động từ quá khứ + -(으)ㄴ 것 같다 / Thì tương lai + -(으)ㄹ 것 같다",
+      "examples": [
+        {
+          "translation": "Tôi cứ ngỡ là trời lạnh, nhưng bên ngoài có vẻ ấm áp."
+        },
+        {
+          "translation": "Người phụ nữ đó dường như rất tử tế, vì cô ấy luôn đối đãi với mọi người xung quanh bằng gương mặt tươi cười."
+        },
+        {
+          "translation": "Tôi nghĩ nhân vật chính rốt cuộc sẽ thành công, bởi vì anh ấy nỗ lực hết mình để vượt qua mọi khó khăn."
+        },
+        {
+          "translation": "Kỳ thi lần này có vẻ sẽ khó đấy, bởi vì nội dung đã học rất phức tạp."
+        }
+      ]
+    },
+    "ko_으러가다오다eureogadaodaGocometodosomething_54": {
+      "title": "-(으)러 가다/오다 (Đi / đến để làm gì)",
+      "shortExplanation": "Vĩ tố liên kết chỉ mục đích của hành động di chuyển (đi hoặc đến để làm việc gì).",
+      "longExplanation": "'-(으)러 가다/오다' là cấu trúc biểu thị mục đích của việc di chuyển đến một địa điểm nào đó, tương đương với 'đi/đến để làm...'. Sau vĩ tố '-(으)러' bắt buộc phải là các động từ chuyển động như '가다' (đi), '오다' (đến), '다니다' (đi lại thường xuyên), hoặc các động từ phái sinh mang tính di chuyển. Thân động từ kết thúc bằng phụ âm (có patchim) kết hợp với '-으러'; thân động từ kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' kết hợp với '-러'.",
+      "formation": "Thân động từ có patchim + 으러 가다/오다 / Thân động từ không có patchim hoặc có patchim 'ㄹ' + 러 가다/오다",
+      "examples": [
+        {
+          "translation": "Tôi đã đến trường để gặp bạn."
+        },
+        {
+          "translation": "Ngày mai tôi dự định về quê để thăm bố mẹ."
+        },
+        {
+          "translation": "Cô ấy đã đến trung tâm thương mại để mua giày mới."
+        },
+        {
+          "translation": "Tôi đã đến thư viện để chuẩn bị cho bài phát biểu."
+        }
+      ]
+    },
+    "ko_아어여도_55": {
+      "title": "-아/어/여도 (Dù... cũng, cho dù... vẫn)",
+      "shortExplanation": "Vĩ tố liên kết nhượng bộ biểu thị rằng dù điều kiện ở vế trước có xảy ra thì kết quả ở vế sau vẫn diễn ra.",
+      "longExplanation": "'-아/어/여도' là vĩ tố liên kết chỉ sự nhượng bộ hoặc giả thiết nghịch cảnh trong tiếng Hàn, tương đương với 'dù... cũng', 'cho dù... vẫn' trong tiếng Việt. Nó diễn tả rằng cho dù hành động hay trạng thái ở mệnh đề trước có xảy ra đi chăng nữa, thì nó cũng không hề làm thay đổi, cản trở hay ảnh hưởng đến kết quả của hành động ở mệnh đề sau. Kết hợp theo quy tắc nguyên âm: Thân động từ/tính từ có nguyên âm 'ㅏ', 'ㅗ' gắn '-아도'; các nguyên âm còn lại gắn '-어도'; động từ kết thúc bằng '하다' chuyển thành '해도'.",
+      "formation": "Thân động/tính từ có nguyên âm 'ㅏ, ㅗ' + 아도 / Thân động/tính từ có nguyên âm khác + 어도 / Thân động/tính từ chứa '하다' -> 해도",
+      "examples": [
+        {
+          "translation": "Dù trời mưa tôi vẫn phải đến trường, bởi vì có bài thi mà."
+        },
+        {
+          "translation": "Cho dù bạn có đến muộn thì tôi vẫn sẽ đợi, vì chúng tôi là bạn thân lâu năm mà."
+        },
+        {
+          "translation": "Dù bị cảm nặng tôi vẫn phải đá bóng, bởi vì tôi không muốn làm các đồng đội phải thất vọng."
+        },
+        {
+          "translation": "Dù thời tiết có trở lạnh thì tôi vẫn sẽ tiếp tục đi dạo. Đó là cách giải tỏa căng thẳng tuyệt vời nhất."
+        }
+      ]
+    },
+    "ko_계속_56": {
+      "title": "계속 (Phó từ: tiếp tục, liên tục, cứ)",
+      "shortExplanation": "Phó từ biểu thị một hành động hoặc trạng thái diễn ra không ngừng nghỉ, kéo dài liên tục.",
+      "longExplanation": "'계속' là phó từ mang ý nghĩa 'liên tục', 'tiếp tục', 'cứ thế' trong tiếng Hàn. Nó đứng trước động từ hoặc tính từ để chỉ một hành động không hề gián đoạn, hoặc một trạng thái được duy trì liên tục qua thời gian. Ngoài ra, '계속' còn là một danh từ khi kết hợp với '하다' tạo thành động từ '계속하다' (tiếp tục làm gì) hoặc với '되다' tạo thành '계속되다' (được tiếp diễn).",
+      "formation": "계속 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Cậu ấy cứ học tập liên tục nên tôi nghĩ cậu ấy sẽ làm bài thi tốt thôi."
+        },
+        {
+          "translation": "Vì tâm trạng vui vẻ nên tôi cứ cười suốt."
+        },
+        {
+          "translation": "Trời vẫn cứ mưa liên tục nên có lẽ bạn nên mang theo ô."
+        },
+        {
+          "translation": "Cô ấy liên tục chăm sóc sức khỏe của mình, vì vậy xác suất bị ốm là rất thấp."
+        }
+      ]
+    },
+    "ko_항상_57": {
+      "title": "항상 (Phó từ tần suất: luôn luôn, lúc nào cũng)",
+      "shortExplanation": "Phó từ biểu thị sự việc xảy ra đều đặn ở mọi thời điểm, không có ngoại lệ, tương đương với 'luôn luôn'.",
+      "longExplanation": "'항상' (Hán-Hàn: 'Hằng thường') là phó từ chỉ tần suất tuyệt đối trong tiếng Hàn, tương đương với 'luôn luôn', 'lúc nào cũng' trong tiếng Việt. Nó chỉ thói quen, hành vi hoặc quy luật lặp đi lặp lại một cách ổn định, không thay đổi theo thời gian. Các từ đồng nghĩa thường gặp gồm có '늘', '언제나'.",
+      "formation": "항상 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Tôi luôn luôn thức dậy sớm vào buổi sáng rồi đến trường."
+        },
+        {
+          "translation": "Mẹ tôi lúc nào cũng nghe radio trong khi chuẩn bị bữa tối."
+        },
+        {
+          "translation": "Anh ấy luôn luôn lập kế hoạch học tập tỉ mỉ và tuân theo đúng như vậy."
+        },
+        {
+          "translation": "Ở công viên lúc nào cũng có những chú chim đang hót líu lo."
+        }
+      ]
+    },
+    "ko_으때eulttaeWhen_58": {
+      "title": "-(으)ㄹ 때 (Khi, vào lúc, trong lúc)",
+      "shortExplanation": "Cấu trúc định ngữ kết hợp danh từ phụ thuộc '때' để chỉ thời điểm diễn ra hành động hoặc trạng thái ('khi...').",
+      "longExplanation": "'-(으)ㄹ 때' là cấu trúc biểu thị thời điểm hoặc khoảng thời gian mà một hành động, trạng thái nào đó xảy ra, tương đương với 'khi', 'vào lúc', 'trong khi' trong tiếng Việt. Nó liên kết mệnh đề thời gian với mệnh đề chính. Cách kết hợp: Thân động từ hoặc tính từ kết thúc bằng phụ âm (có patchim) kết hợp với '-을 때'; kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' kết hợp với '-ㄹ 때'. Nếu danh từ chỉ thời gian thì dùng trực tiếp danh từ + '때' (ví dụ: '방학 때' - lúc nghỉ hè).",
+      "formation": "Thân động/tính từ có patchim + 을 때 / Thân động/tính từ không có patchim hoặc có patchim 'ㄹ' + ㄹ 때 (Với danh từ: Danh từ + 때)",
+      "examples": [
+        {
+          "translation": "Vào mùa hè, khi ngắm biển từ nhà chúng tôi mà mở cửa sổ ra thì gió biển mát rượi ùa vào."
+        },
+        {
+          "translation": "Khi đến trường, nếu đi xe buýt thì rất tiện lợi."
+        },
+        {
+          "translation": "Khi làm bài tập về nhà, nếu nghe nhạc thì tôi có thể tập trung hơn."
+        },
+        {
+          "translation": "Khi gặp gỡ bạn bè, nếu cùng nhau ăn uống thì sẽ vui hơn nhiều."
+        }
+      ]
+    },
+    "ko_아어여야_59": {
+      "title": "-아/어/여야 (하다/되다) (Phải... mới được, chỉ khi... mới...)",
+      "shortExplanation": "Vĩ tố biểu thị điều kiện bắt buộc hoặc nghĩa vụ tất yếu phải thực hiện ('phải', 'chỉ khi... mới...').",
+      "longExplanation": "'-아/어/여야' là vĩ tố liên kết biểu thị điều kiện tiên quyết bắt buộc phải đạt được để vế sau có thể xảy ra ('chỉ khi... mới...'). Khi kết hợp với trợ động từ '하다' hoặc '되다' tạo thành '-아/어/여야 하다/되다', nó trở thành cấu trúc quen thuộc biểu thị nghĩa vụ, bổn phận hoặc sự cần thiết tất yếu ('phải làm gì đó'). Quy tắc kết hợp: Thân động/tính từ có nguyên âm 'ㅏ, ㅗ' kết hợp với '-아야'; các nguyên âm khác kết hợp với '-어야'; động từ chứa '하다' chuyển thành '해야'.",
+      "formation": "Thân động/tính từ có nguyên âm 'ㅏ, ㅗ' + 아야 하다/되다 / Thân động/tính từ có nguyên âm khác + 어야 하다/되다 / Thân động/tính từ chứa '하다' -> 해야 하다/되다",
+      "examples": [
+        {
+          "translation": "Nếu muốn đi bệnh viện thì phải khám sức khỏe trước đã. Có như vậy mới yên tâm học tập được chứ."
+        },
+        {
+          "translation": "Muốn tăng doanh thu tháng này thì phải thu hút thêm nhiều khách hàng hơn nữa. Như thế thì lợi nhuận mới tăng lên."
+        },
+        {
+          "translation": "Trước khi đến trường nhất định phải ăn bữa sáng. Có như vậy mới duy trì được năng lượng suốt cả ngày."
+        },
+        {
+          "translation": "Vì ngày mai có bài thi nên tối nay tôi phải học bài. Nếu không thì điểm số sẽ kém mất."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_보다_45": {
+      "title": "보다（比較の助詞：〜より、〜に比べて）",
+      "shortExplanation": "比較の基準となる名詞の後に付き、「〜より」「〜に比べて」という意味を表す助詞です。",
+      "longExplanation": "「보다」は比較の基準を表す格助詞で、日本語の「〜より」に相当します。比較の基準となる名詞の直後に結合し、文中の別の対象がその基準よりも程度が上（または下）であることを示します。後ろにはしばしば「더（もっと）」や「덜（あまり〜ない、より少なく）」といった副詞を伴って、形容詞や動詞を修飾します。",
+      "formation": "名詞（比較基準） ＋ 보다 (더/덜) ＋ 形容詞／動詞",
+      "examples": [
+        {
+          "translation": "私はコーヒーよりお茶のほうが好きです。お茶のほうが私の口に合います。"
+        },
+        {
+          "translation": "我が家は図書館よりも本が多いです。家族全員が読書好きなのでそうなりました。"
+        },
+        {
+          "translation": "韓国語を学ぶことは中国語を学ぶことより簡単です。文字と発音がより単純だからです。"
+        },
+        {
+          "translation": "今は夏ですが、春より天気が寒いです。異常気象のせいだと思います。"
+        }
+      ]
+    },
+    "ko_가장_46": {
+      "title": "가장（最上級の副詞：最も、一番）",
+      "shortExplanation": "数ある中で程度が最も高いことを表す副詞で、日本語の「最も」「一番」に相当します。",
+      "longExplanation": "「가장」は最上級を表す固有語の副詞で、日本語の「最も」「一番」に相当します。形容詞、副詞、または動詞の前に置かれ、同類の対象の中でその性質や状態の度合いが最高であることを示します。漢字語の「제일（第一）」とほぼ同じ意味で用いられます。",
+      "formation": "가장 ＋ 形容詞／副詞／動詞",
+      "examples": [
+        {
+          "translation": "私は一番大好きな人と結婚したいです。"
+        },
+        {
+          "translation": "一番早く到着した人が賞品をもらえます。"
+        },
+        {
+          "translation": "彼は最も辛かった時期にも諦めませんでした。"
+        },
+        {
+          "translation": "私は一番大きな夢を叶えたいです。"
+        }
+      ]
+    },
+    "ko_도_47": {
+      "title": "도（並立・強調の助詞：〜も、〜さえ）",
+      "shortExplanation": "名詞などの後に付き、同類の事物や動作を追加する「〜も」や、極端な例を挙げる「〜さえ」を表す助詞です。",
+      "longExplanation": "「도」は、体言（名詞・代名詞）や副詞の直後に結合して、すでにある事柄に同じような事柄が加わることを表す補助詞です。日本語の「〜も」に直接対応します。また、意外な極端の事柄を提示して「〜さえ」「〜までも」という強調の意味を表すこともあります。主格助詞「이/가」や目的格助詞「을/를」と重なる場合は、それらの助詞に代わって「도」単独で用いられます。",
+      "formation": "名詞／代名詞／副詞 ＋ 도",
+      "examples": [
+        {
+          "translation": "私は韓国語も上手ですし、日本語も上手です。"
+        },
+        {
+          "translation": "彼はハンサムなだけでなく、性格も良いです。"
+        },
+        {
+          "translation": "この食堂は料理も美味しく、雰囲気も良いです。"
+        },
+        {
+          "translation": "私は昨日家に到着したとき、夜の12時も過ぎていました。"
+        }
+      ]
+    },
+    "ko_이그저_48": {
+      "title": "이/그/저（指示冠形詞：この・その・あの）",
+      "shortExplanation": "名詞の直前に置かれ、話し手と聞き手からの距離に応じて対象を指し示す冠形詞（「この・その・あの」に相当）です。",
+      "longExplanation": "「이」「그」「저」は、名詞の直前に置かれて空間的・心理的な位置関係を示す指示冠形詞（指示連体詞）です。日本語の「こそあど」体系の「この・その・あの」に正確に対応します。\n- 「이（この）」：話し手の近くにある対象を指します。\n- 「그（その）」：聞き手の近くにある対象、または会話で既出の話題を指します。\n- 「저（あの）」：話し手と聞き手の双方から離れた場所にある対象を指します。\n依存名詞「것（もの、こと）」と結合すると、「이것（これ）」「그것（それ）」「저것（あれ）」という代名詞になります。",
+      "formation": "이 / 그 / 저 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "このペンは私のペンです。そのペンはあなたのペンです。あのペンは誰のものか分かりません。"
+        },
+        {
+          "translation": "この携帯電話はバグが多いです。その携帯電話は性能が良いです。あの携帯電話は何の機種か分かりません。"
+        },
+        {
+          "translation": "この料理は美味しくないです。その料理は辛いです。あの料理はどんな味か分かりません。"
+        },
+        {
+          "translation": "この本は面白いです。その本は難しすぎます。あの本はどんな内容か分かりません。"
+        }
+      ]
+    },
+    "ko_이나inaOr_49": {
+      "title": "(이)나（選択の助詞：〜や、〜とか、〜でも）",
+      "shortExplanation": "名詞の後に付き、複数の事物の中からいずれかを選択することを表す助詞（「〜か」「〜や」「〜でも」）です。",
+      "longExplanation": "「(이)나」は、名詞の後に接続して複数の選択肢を提示する接続助詞です。日本語の「〜か」「〜や」「〜でも」に相当します。直前の名詞にパッチムがある場合は「이나」、パッチムがない場合は「나」を用います。なお、動詞や形容詞を選択肢としてつなぐ場合は「-거나」を用います。選択を表す働きのほかに、予想以上の多さを強調する「〜も（〜もの数）」や、次善の策として選ぶ「〜でも」の意味も持ちます。",
+      "formation": "パッチムあり名詞 ＋ 이나 / パッチムなし名詞 ＋ 나（用言の場合は：動詞語幹 ＋ 거나）",
+      "examples": [
+        {
+          "translation": "ピザかハンバーガーの中で何が食べたいですか？"
+        },
+        {
+          "translation": "私は週末に友達と映画を見に行くか、ショッピングに行くつもりです。"
+        },
+        {
+          "translation": "洗濯や皿洗いのような家事をしなければなりません。"
+        },
+        {
+          "translation": "今夜は宿題をするか、本を読むつもりです。"
+        }
+      ]
+    },
+    "ko_밖에_50": {
+      "title": "밖에（限定の助詞：〜しか・〜以外に）",
+      "shortExplanation": "名詞の後に付き、必ず後ろに否定表現を伴って「〜しか（〜ない）」という意味を表す助詞です。",
+      "longExplanation": "「밖에」は限定を表す助詞で、日本語の「〜しか（〜ない）」に直接対応します。名詞の直後に結合し、後続する述語には必ず否定語（「없다」「안」「못」「모르다」など）を伴わなければなりません。提示された対象以外には他に選択肢や余地がないことを強く強調します。「-(으)ㄹ 수밖에 없다」の形をとると、「〜するしかない」「〜せざるを得ない」という意味を表します。",
+      "formation": "名詞 ＋ 밖에 ＋ 否定表現（없다 / 안 / 못 / 모르다）",
+      "examples": [
+        {
+          "translation": "私は今週末、家にいるしかありませんでした。友達がみんな忙しかったからです。"
+        },
+        {
+          "translation": "母は台所で料理することしか知らなくて、他の仕事はあまり上手にできません。"
+        },
+        {
+          "translation": "私は韓国語しか知らないので、他の言語で話すのが難しいです。"
+        },
+        {
+          "translation": "その学生は勉強しか知らなくて、遊んだり他のことをしたりするのが苦手です。"
+        }
+      ]
+    },
+    "ko_뿐_51": {
+      "title": "뿐（限定の助詞・依存名詞：〜だけ、〜のみ）",
+      "shortExplanation": "体言や連体形の後に付き、それ以外にはないという唯一の限定（「〜だけ」「〜のみ」）を表します。",
+      "longExplanation": "「뿐」は助詞として名詞に直接付くか、依存名詞として用言の連体形（特に「-(으)ㄹ」）の後に接続して、「〜だけ」「〜のみ」という限定の意味を表します。「밖에」と異なり、肯定文の指定詞「이다」と結びついて「〜だけでなく（〜だけでなく）」「〜するだけだ」の形で広く使われます。また、「〜뿐만 아니라（〜だけでなく〜も）」の構文でも非常に多用されます。",
+      "formation": "名詞 ＋ 뿐(이다) / 用言語幹 ＋ -(으)ㄹ 뿐이다",
+      "examples": [
+        {
+          "translation": "我が家には猫が2匹いるだけです。他のペットはいません。"
+        },
+        {
+          "translation": "週末は家で休息をとるだけで、特別な予定はありません。"
+        },
+        {
+          "translation": "私はコーヒーだけでなくお茶も好きです。"
+        },
+        {
+          "translation": "私にできることはこれだけです。最善を尽くしました。"
+        }
+      ]
+    },
+    "ko_는은_52": {
+      "title": "-는/-(으)ㄴ 것（用言の名詞化：〜すること、〜するもの）",
+      "shortExplanation": "動詞や形容詞の連体形に依存名詞「것」を付け、節全体を名詞化する表現（「〜すること」「〜するもの」）です。",
+      "longExplanation": "動詞の現在連体形語尾「-는」や形容詞・過去連体形語尾「-(으)ㄴ」に依存名詞「것（こと、もの）」を結合させることで、動詞や形容詞が表す動作や状態を名詞句へと変換する名詞化構文です。日本語の「〜すること」「〜なこと」「〜するもの」に相当します。名詞化された句は文中で主語（-는 것은 / -는 것이）、目的語（-는 것을）、または補語・述語として機能します。日常会話では「것은 → 건」「것이 → 게」「것을 → 걸」と縮約されることがよくあります。",
+      "formation": "動詞語幹 ＋ 는 것 / 形容詞語幹 ＋ -(으)ㄴ 것",
+      "examples": [
+        {
+          "translation": "映画を見ることがなぜそんなに面白いのか理解できません。"
+        },
+        {
+          "translation": "私たちの国で暮らすことは本当に楽しいです。"
+        },
+        {
+          "translation": "一番重要なことは正直であることです。"
+        },
+        {
+          "translation": "私にとって韓国語を学ぶことは難しいですが、練習を続けたいです。"
+        }
+      ]
+    },
+    "ko_으는것같다eunneungeotgatdaItseemslike_53": {
+      "title": "-(으)ㄴ/는 것 같다（推量・婉曲表現：〜のようだ、〜そうだと思う）",
+      "shortExplanation": "話し手の推測や曖昧な判断を表したり、自分の意見を遠回しに柔らかく述べる表現（「〜のようだ」「〜みたいだ」）です。",
+      "longExplanation": "「-(으)ㄴ/는 것 같다」は、直感や観察に基づいた推量（「〜のようだ」「〜みたいだ」）を表す代表的な表現です。また、自らの意見や状況を断定的に言うのを避け、柔らかく婉曲に伝える際にも非常に頻繁に用いられます。動詞の現在形には「-는 것 같다」、形容詞および動詞の過去形には「-(으)ㄴ 것 같다」、未来の推量には「-(으)ㄹ 것 같다」を接続します。",
+      "formation": "動詞現在形 ＋ 는 것 같다 / 形容詞 ＋ -(으)ㄴ 것 같다 / 動詞過去形 ＋ -(으)ㄴ 것 같다 / 未来推量 ＋ -(으)ㄹ 것 같다",
+      "examples": [
+        {
+          "translation": "天気が寒いと思っていましたが、外は暖かいようです。"
+        },
+        {
+          "translation": "あの女性はとても親切な人のようです。周りの人々にいつも笑顔で接しているからです。"
+        },
+        {
+          "translation": "主人公は最後には成功すると思います。困難を克服しようと懸命に努力しているからです。"
+        },
+        {
+          "translation": "今回の試験は難しそうです。習った内容がかなり複雑だからです。"
+        }
+      ]
+    },
+    "ko_으러가다오다eureogadaodaGocometodosomething_54": {
+      "title": "-(으)러 가다/오다（移動の目的：〜しに行く／来る）",
+      "shortExplanation": "移動動詞（行く・来るなど）の前に付き、移動の目的（「〜しに行く」「〜しに来る」）を表す連結語尾です。",
+      "longExplanation": "「-(으)러 가다/오다」は、ある場所へ移動する目的を表す構文で、日本語の「〜しに行く／来る」に直接対応します。後続する述語には「가다（行く）」「오다（来る）」「다니다（通う）」などの移動動詞のみが用いられます。動詞語幹の末尾にパッチムがある場合は「-으러」、パッチムがない場合や「ㄹ」パッチムで終わる場合は「-러」を接続します。",
+      "formation": "パッチムあり動詞語幹 ＋ 으러 가다/오다 / パッチムなし・ㄹパッチム動詞語幹 ＋ 러 가다/오다",
+      "examples": [
+        {
+          "translation": "私は友達に会いに学校へ行きました。"
+        },
+        {
+          "translation": "明日、両親にお目にかかりに故郷へ行くつもりです。"
+        },
+        {
+          "translation": "彼女は新しい靴を買いにショッピングモールへ行きました。"
+        },
+        {
+          "translation": "私はスピーチの準備をしに図書館に来ました。"
+        }
+      ]
+    },
+    "ko_아어여도_55": {
+      "title": "-아/어/여도（譲歩の接続語尾：〜ても、〜であっても）",
+      "shortExplanation": "前節の条件が成立しても、後節の内容に影響を及ぼさないことを表す接続語尾（「〜ても」「〜でも」）です。",
+      "longExplanation": "「-아/어/여도」は、譲歩を表す代表的な接続語尾で、日本語の「〜ても」「〜でも」に相当します。前節の動作や状態が仮定または事実として成立したとしても、後節の動作や状況がそれに左右されることなく実行・維持されることを表します。語幹の陽母音（ㅏ, ㅗ）には「-아도」、陰母音には「-어도」、「하다」で終わる語には「-해도」を接続します。",
+      "formation": "陽母音語幹（ㅏ, ㅗ） ＋ 아도 / 陰母音語幹 ＋ 어도 / 하다動詞・形容詞 → 해도",
+      "examples": [
+        {
+          "translation": "雨が降っても学校に行かなければなりませんでした。試験があったからです。"
+        },
+        {
+          "translation": "友達が遅れても待ちます。私たちは長年の友人だからです。"
+        },
+        {
+          "translation": "風邪がひどくてもサッカーをしなければなりません。チームメイトを失望させたくないからです。"
+        },
+        {
+          "translation": "天気が寒くなっても散歩を続けるつもりです。それがストレス解消に一番です。"
+        }
+      ]
+    },
+    "ko_계속_56": {
+      "title": "계속（継続の副詞：ずっと、続けて、絶えず）",
+      "shortExplanation": "動作や状態が途切れることなく持続することを表す副詞（「ずっと」「続けて」）です。",
+      "longExplanation": "「계속」は動作や状態が途絶えることなく継続して行われることを示す副詞で、日本語の「ずっと」「続けて」「絶えず」に相当します。動詞や用言の前に置かれてその持続性を修飾します。また、「계속하다（続ける）」「계속되다（続く）」のように動詞として用いられることも多い語彙です。",
+      "formation": "계속 ＋ 動詞／形容詞",
+      "examples": [
+        {
+          "translation": "彼は勉強を続けているので、試験で良い点が取れると思います。"
+        },
+        {
+          "translation": "気分が良いので、私はずっと笑っています。"
+        },
+        {
+          "translation": "雨が降り続けているので、傘を持って行ったほうがいいと思います。"
+        },
+        {
+          "translation": "彼女はずっと健康に気を配っているので、病気になる確率が低いです。"
+        }
+      ]
+    },
+    "ko_항상_57": {
+      "title": "항상（頻度の副詞：いつも、常に）",
+      "shortExplanation": "時間や状況にかかわらず変わらない習慣や状態を表す副詞（「いつも」「常に」）です。",
+      "longExplanation": "「항상」は漢字語「恒常」に由来する副詞で、日本語の「いつも」「常に」に相当します。例外なくある動作や状態が保たれていることや、日常的な習慣を指します。固有語の「늘」や「언제나」とほぼ同義で互換性があります。",
+      "formation": "항상 ＋ 動詞／形容詞",
+      "examples": [
+        {
+          "translation": "私はいつも朝早く起きて学校に行きます。"
+        },
+        {
+          "translation": "私の母はいつも夕食の準備をしながらラジオを聴きます。"
+        },
+        {
+          "translation": "彼はいつも勉強計画を綿密に立ててその通りに従います。"
+        },
+        {
+          "translation": "公園ではいつも鳥たちがさえずっています。"
+        }
+      ]
+    },
+    "ko_으때eulttaeWhen_58": {
+      "title": "-(으)ㄹ 때（時を表す表現：〜のとき、〜する際）",
+      "shortExplanation": "用言の未来連体形に依存名詞「때」が付き、ある動作や状況が起こる時（「〜するとき」「〜のとき」）を表します。",
+      "longExplanation": "「-(으)ㄹ 때」は、動作や状態が起こる時間的タイミングを表す構文で、日本語の「〜するとき」「〜のとき」に直接対応します。用言語幹末尾にパッチムがある場合は「-을 때」、パッチムがない場合や「ㄹ」パッチムの場合は「-ㄹ 때」を接続します。名詞につく場合は直接「名詞 ＋ 때」（例：방학 때＝休みのとき）の形をとります。",
+      "formation": "パッチムあり用言語幹 ＋ 을 때 / パッチムなし・ㄹパッチム用言語幹 ＋ ㄹ 때（名詞の場合：名詞 ＋ 때）",
+      "examples": [
+        {
+          "translation": "夏には我が家から海を見るとき、窓を開けると涼しい潮風が入ってきます。"
+        },
+        {
+          "translation": "学校に行くとき、バスに乗ると便利です。"
+        },
+        {
+          "translation": "宿題をするとき、音楽を聴くとより集中できます。"
+        },
+        {
+          "translation": "友達に会うとき、一緒に食事をするとより楽しいです。"
+        }
+      ]
+    },
+    "ko_아어여야_59": {
+      "title": "-아/어/여야（하다/되다）（義務・必須条件：〜しなければならない、〜してこそ）",
+      "shortExplanation": "後節が成り立つための必須条件（「〜してこそ」）や、義務・必然性（「〜しなければならない」）を表す表現です。",
+      "longExplanation": "「-아/어/여야」は必須の前提条件を表す接続語尾で、「〜してこそ」「〜してはじめて」という意味を持ちます。後続に補助動詞「하다」「되다」を伴って「-아/어/여야 하다/되다」の形をとると、日本語の「〜しなければならない」「〜する必要がある」という強い義務や必然性を表す必須文型となります。陽母音（ㅏ, ㅗ）には「-아야」、陰母音には「-어야」、「하다」動詞には「-해야」を接続します。",
+      "formation": "陽母音語幹（ㅏ, ㅗ） ＋ 아야 하다/되だ / 陰母音語幹 ＋ 어야 하다/되다 / 하다動詞・形容詞 → 해야 하다/되다",
+      "examples": [
+        {
+          "translation": "病院に行くなら健康診断を受けなければなりません。そうしてこそ安心して勉強できますからね。"
+        },
+        {
+          "translation": "今月の売上を伸ばすためには、より多くの顧客を引き入れなければなりません。そうしてこそ収益が上がるはずです。"
+        },
+        {
+          "translation": "学校に行く前には必ず朝食を食べなければなりません。そうしてこそ一日中エネルギーを維持できるのです。"
+        },
+        {
+          "translation": "明日試験があるので今夜勉強しなければなりません。そうしないと点数が悪くなってしまいます。"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_보다_45": {
+      "title": "보다（比较助词：比、比起）",
+      "shortExplanation": "附在比较标准的名词之后，表示“比”、“比起”。",
+      "longExplanation": "“보다”是韩语中表示比较基准的格助词，相当于汉语的“比”、“比起”。它直接附着在作为比较基准的名词之后，表明句中另一主体在某种性质或状态上超过（或低于）该基准。后面经常配合副词“더”（更、更加）或“덜”（较少、更不）一起使用，以修饰形容词或动词。",
+      "formation": "名词（比较基准） + 보다 (더/덜) + 形容词 / 动词",
+      "examples": [
+        {
+          "translation": "比起咖啡，我更喜欢茶。茶更合我的口味。"
+        },
+        {
+          "translation": "我们家的书比图书馆还要多。因为全家人都热爱阅读，所以才变成这样的。"
+        },
+        {
+          "translation": "学韩语比学中文更容易。因为字形和发音更简单。"
+        },
+        {
+          "translation": "现在虽然是夏天，但天气比春天还要冷。好像是因为反常的气候变化。"
+        }
+      ]
+    },
+    "ko_가장_46": {
+      "title": "가장（最高级副词：最、第一）",
+      "shortExplanation": "用于形容词、动词或副词前，表示程度达到顶峰，相当于汉语的“最”。",
+      "longExplanation": "“가장”是表示最高级的韩语固有词副词，相当于汉语的“最”、“顶”。它置于形容词、副词或动词之前，表明在诸多比较对象中，某种属性、状态或动作达到了最高限度或首要位置。常与汉字词副词“제일”（第一、最）互换通用。",
+      "formation": "가장 + 形容词 / 副词 / 动词",
+      "examples": [
+        {
+          "translation": "我想和最喜欢的人结婚。"
+        },
+        {
+          "translation": "最先到达的人可以得到奖品。"
+        },
+        {
+          "translation": "他在最艰难的时期也没有放弃。"
+        },
+        {
+          "translation": "我想实现自己最大的梦想。"
+        }
+      ]
+    },
+    "ko_도_47": {
+      "title": "도（添意助词：也、连……都）",
+      "shortExplanation": "附在名词等词语之后，表示兼并同类情况（“也”）或强调某种极端程度（“连……也/都”）。",
+      "longExplanation": "“도”是韩语中极其常用的辅助助词，附在名词、代词或副词之后。其基本意义是“也”，表示在前述情况之外包含并列的同类事物。此外，它还可以用于引出极端或出人意料的事例，相当于汉语的“连……都/也”、“甚至”。当“도”用于主语或宾语位置时，会直接替代主格助词“이/가”或宾格助词“을/를”。",
+      "formation": "名词 / 代词 / 副词 + 도",
+      "examples": [
+        {
+          "translation": "我韩语说得好，日语也说得很好。"
+        },
+        {
+          "translation": "他不仅长得帅，而且性格也很好。"
+        },
+        {
+          "translation": "这家餐厅饭菜也好吃，气氛也很好。"
+        },
+        {
+          "translation": "我昨天到家的时候，都已经超过半夜12点了。"
+        }
+      ]
+    },
+    "ko_이그저_48": {
+      "title": "이/그/저（指示冠词：这、那、远处的那个）",
+      "shortExplanation": "位于名词前，根据说话人与听话人的空间距离指示具体对象，分别相当于“这”、“那”、“那边的”。",
+      "longExplanation": "“이”、“그”、“저”是韩语中的指示冠形词，直接置于名词之前，用来指示特定的事物、人物或场所：\n- “이”（这）：指离说话人较近的事物。\n- “그”（那）：指离听话人较近的事物，或指代前文已提及的话题、事物。\n- “저”（那/远处的那个）：指离说话人和听话人都较远、但视线可及的事物。\n与依存名词“것”（物/东西）结合时，可形成指示代词“이것”（这个）、“그것”（那个）、“저것”（那个/那边的那个）。",
+      "formation": "이 / 그 / 저 + 名词",
+      "examples": [
+        {
+          "translation": "这支笔是我的笔。那支笔是你的笔。那边那支笔我不知道是谁的。"
+        },
+        {
+          "translation": "这部手机有很多故障漏洞。那部手机性能很好。那边那部手机我不知道是什么型号。"
+        },
+        {
+          "translation": "这道菜不好吃。那道菜很辣。那边那道菜我不知道是什么味道。"
+        },
+        {
+          "translation": "这本书很有趣。那本书太难了。那边那本书我不知道是什么内容。"
+        }
+      ]
+    },
+    "ko_이나inaOr_49": {
+      "title": "(이)나（选择助词：或者、还是）",
+      "shortExplanation": "附在名词之后，表示从两者或多者中选择其一，相当于汉语的“或者”、“还是”。",
+      "longExplanation": "“(이)나”是附着在名词后面的选择助词，用于罗列可选对象，相当于汉语的“或者”、“还是”、“或是”。前面的名词有收音时用“이나”，无收音时用“나”。注意：如果是连接两个动词或形容词表示选择，则通常使用连接词尾“-거나”。此外，“(이)나”还可用在数量词后表示数量出乎意料之多（“多达……”、“整整……”），或用于表示无可奈何的姑且选择（“……也行”）。",
+      "formation": "闭音节名词（有收音） + 이나 / 开音节名词（无收音） + 나（谓词用：动词词干 + 거나）",
+      "examples": [
+        {
+          "translation": "在披萨和汉堡之间你想吃什么？"
+        },
+        {
+          "translation": "我周末打算和朋友们一起去看电影或者去逛街购物。"
+        },
+        {
+          "translation": "我得做像洗衣服或洗碗之类的家务活。"
+        },
+        {
+          "translation": "今天晚上我要么做作业，要么看书。"
+        }
+      ]
+    },
+    "ko_밖에_50": {
+      "title": "밖에（限制助词：只、除了……之外只/没）",
+      "shortExplanation": "附在名词之后，后句必须接否定形式，表示“只……”、“除了……别无他选”。",
+      "longExplanation": "“밖에”是韩语中表示限定的助词，附在名词之后，相当于汉语的“只”、“仅仅”、“除了……之外（没有/不）”。其最大语法特征是：后续谓语必须使用否定词（如“없다”、“안”、“못”、“모르다”等），强调除了当前提及的对象之外，别无其他可能。当用于“-(으)ㄹ 수밖에 없다”句型时，表示“只能……”、“不得不……”、“必然……”。",
+      "formation": "名词 + 밖에 + 否定谓语（없다 / 안 / 못 / 모르다）",
+      "examples": [
+        {
+          "translation": "这个周末我只能待在家里，因为朋友们都很忙。"
+        },
+        {
+          "translation": "妈妈除了在厨房做饭外什么都不会，做不好别的事情。"
+        },
+        {
+          "translation": "我只会韩语，所以很难用其他语言交流。"
+        },
+        {
+          "translation": "那个学生只知道学习，不太会玩耍或做别的事情。"
+        }
+      ]
+    },
+    "ko_뿐_51": {
+      "title": "뿐（限制助词/依存名词：只、仅仅、光是）",
+      "shortExplanation": "附在名词或定语词尾之后，表示唯一限定，相当于汉语的“只”、“仅仅”、“光是”。",
+      "longExplanation": "“뿐”既可作为辅助助词直接附在名词之后，也可作为依存名词置于定语词尾（如“-(으)ㄹ”）之后，表示某种事物或动作的单一界限，相当于汉语的“只”、“仅”、“光”。与必须接否定句的“밖에”不同，“뿐”可直接与肯定体叙述格助词“이다”连用（如“뿐이다”意为“只是……”、“唯有……”）。此外，句型“뿐만 아니라”还常用于表示递进关系（“不仅……而且……”）。",
+      "formation": "名词 + 뿐(이다) / 谓词词干 + -(으)ㄹ 뿐이다",
+      "examples": [
+        {
+          "translation": "我们家里只有两只猫。没有其他宠物了。"
+        },
+        {
+          "translation": "周末仅仅是在家休息而已，并没有特别的日程安排。"
+        },
+        {
+          "translation": "我不仅喜欢咖啡，也很喜欢茶。"
+        },
+        {
+          "translation": "我能做的只有这些了。我已经尽力了。"
+        }
+      ]
+    },
+    "ko_는은_52": {
+      "title": "-는/-(으)ㄴ 것（名词化句型：……的事、……的东西）",
+      "shortExplanation": "由定语词尾结合依存名词“것”，将动词或形容词转化为名词性短语（“……的事情”、“……的行为”）。",
+      "longExplanation": "该句型通过将动词现在时定语词尾“-는”或形容词/过去时定语词尾“-(으)ㄴ”附加于谓词词干后，再连接依存名词“것”（事、物），实现动词和形容词的名词化。相当于汉语的“……的事”、“……的东西”或“……的行为”。转化后的名词短语可以在句子中充当主语（-는 것은/이）、宾语（-는 것을）或表语谓语（-는 것이다）。在口语中，“것은”常缩略为“건”，“것이”常缩略为“게”，“것을”常缩略为“걸”。",
+      "formation": "动词词干 + 는 것 / 形容词词干 + -(으)ㄴ 것",
+      "examples": [
+        {
+          "translation": "我不理解看电影为什么会那么有趣。"
+        },
+        {
+          "translation": "生活在我们国家真的很开心有趣。"
+        },
+        {
+          "translation": "最重要的事情是保持坦诚。"
+        },
+        {
+          "translation": "虽然对我来说学韩语很难，但我还是想坚持练习。"
+        }
+      ]
+    },
+    "ko_으는것같다eunneungeotgatdaItseemslike_53": {
+      "title": "-(으)ㄴ/는 것 같다（推测与委婉表达：好像、似乎、觉得）",
+      "shortExplanation": "表示基于观察或感觉的推测，或委婉柔和地陈述自己的看法（“好像……”、“似乎……”）。",
+      "longExplanation": "“-(으)ㄴ/는 것 같다”是韩语中表达推测、揣摩的重要句型，相当于汉语的“好像……”、“似乎……”、“觉得……”。此外，在日常会话中，它还常被用来委婉地阐述自己的观点或事实，避免语气过于武断强硬。连接法为：动词现在时接“-는 것 같다”；形容词及动词过去时接“-(으)ㄴ 것 같다”；对于将来的推测则接“-(으)ㄹ 것 같다”。",
+      "formation": "动词现在时 + 는 것 같다 / 形容词 + -(으)ㄴ 것 같다 / 动词过去时 + -(으)ㄴ 것 같다 / 将来推测 + -(으)ㄹ 것 같다",
+      "examples": [
+        {
+          "translation": "本以为天气很冷，但外面似乎挺暖和的。"
+        },
+        {
+          "translation": "那位女士好像非常亲切，因为她总是面带微笑对待周围的人。"
+        },
+        {
+          "translation": "我觉得主人公最终会成功的，因为他为了克服困难做出了巨大的努力。"
+        },
+        {
+          "translation": "这次考试似乎会很难，因为学过的内容非常复杂。"
+        }
+      ]
+    },
+    "ko_으러가다오다eureogadaodaGocometodosomething_54": {
+      "title": "-(으)러 가다/오다（表示移动目的：去/来做某事）",
+      "shortExplanation": "连接在动词后，与移动动词连用，表示移动的目的，相当于汉语的“去/来做某事”。",
+      "longExplanation": "“-(으)러 가다/오다”是表示空间位移目的的连接词尾构式，相当于汉语的“去……做什么”、“来……做什么”。后续谓语必须是表示移动方位的动词，如“가다”（去）、“오다”（来）、“다니다”（往返奔走）等。连接规律为：动词词干末尾有收音（非ㄹ收音）时接“-으러”；无收音或以“ㄹ”收音结尾时接“-러”。",
+      "formation": "有收音动词词干 + 으러 가다/오다 / 无收音及ㄹ收音动词词干 + 러 가다/오다",
+      "examples": [
+        {
+          "translation": "我去学校见朋友了。"
+        },
+        {
+          "translation": "我打算明天回老家去看望父母。"
+        },
+        {
+          "translation": "她去购物中心买新鞋了。"
+        },
+        {
+          "translation": "我来图书馆准备演讲。"
+        }
+      ]
+    },
+    "ko_아어여도_55": {
+      "title": "-아/어/여도（让步连接词尾：即使……也、哪怕……也）",
+      "shortExplanation": "表示前句假设或已存在的条件并不妨碍后句的动作或状态，相当于“即使……也”、“就算……也”。",
+      "longExplanation": "“-아/어/여도”是韩语中表示让步关系的连接词尾，相当于汉语的“即使……也”、“就算……也”、“哪怕……依然”。它表明即使前述的某种极端情况或条件发生，后述的动作、决定或结果也不会受到动摇或阻碍。词干元音为“ㅏ, ㅗ”时接“-아도”；其他元音接“-어도”；以“하다”结尾的谓词变为“해도”。",
+      "formation": "阳性元音词干（ㅏ, ㅗ） + 아도 / 阴性元音词干 + 어도 / 하다谓词 -> 해도",
+      "examples": [
+        {
+          "translation": "就算下雨我也得去学校，因为有考试。"
+        },
+        {
+          "translation": "即使朋友迟到我也会等的，因为我们是相识多年的老友。"
+        },
+        {
+          "translation": "哪怕感冒很严重我也得踢足球，因为我不想让队友失望。"
+        },
+        {
+          "translation": "即便天气变冷，我也会继续散步。那是缓解压力的最好办法。"
+        }
+      ]
+    },
+    "ko_계속_56": {
+      "title": "계속（持续副词：一直、继续、不停地）",
+      "shortExplanation": "副词，表示某种动作或状态不间断地持续进行，相当于汉语的“一直”、“不断”。",
+      "longExplanation": "“계속”是表示持续状态的副词，置于动词或形容词之前，相当于汉语的“一直”、“继续”、“不断地”、“老是”。用以强调某种行为或现象在一段时间内未曾中断，保持进行。此外，它也可以结合“하다”或“되다”，构成动词“계속하다”（继续进行）和“계속되다”（持续延续）。",
+      "formation": "계속 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "他一直在用功学习，所以我觉得他考试能考得很好。"
+        },
+        {
+          "translation": "因为心情好，所以我一直在笑。"
+        },
+        {
+          "translation": "雨一直在下，带把伞应该会比较好。"
+        },
+        {
+          "translation": "她一直都很注意身体健康，所以生病的概率很小。"
+        }
+      ]
+    },
+    "ko_항상_57": {
+      "title": "항상（频度副词：经常、总是、一直）",
+      "shortExplanation": "表示任何时候都保持同等状态或习惯，相当于汉语的“总是”、“一直”、“常常”。",
+      "longExplanation": "“항상”源自汉字词“恒常”，是韩语中表示绝对频率的副词，相当于汉语的“总是”、“经常”、“随时”、“一贯”。它用于修饰动词或形容词，说明某种动作、习惯或客观状态在任何时间都恒定存在，没有例外。同义词有固有词副词“늘”和“언제나”。",
+      "formation": "항상 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "我早上总是起得很早去上学。"
+        },
+        {
+          "translation": "我妈妈总是一边准备晚餐一边听收音机广播。"
+        },
+        {
+          "translation": "他总是周密地制定学习计划并严格照着执行。"
+        },
+        {
+          "translation": "公园里总是有鸟儿在歌唱。"
+        }
+      ]
+    },
+    "ko_으때eulttaeWhen_58": {
+      "title": "-(으)ㄹ 때（时间状语：……的时候、……之际）",
+      "shortExplanation": "定语词尾连接依存名词“때”，表示动作或状态发生的时间节点，相当于“……的时候”。",
+      "longExplanation": "“-(으)ㄹ 때”是韩语中表示动作或状态发生的时间界限的常用句型，相当于汉语的“……的时候”、“当……时”。用以引出主句动作发生的时间背景。接续规则为：谓词词干有收音时接“-을 때”；无收音或以“ㄹ”结尾时接“-ㄹ 때”。若是直接与时间名词搭配，则直接接“名词 + 때”（如“방학 때”放假的时候）。",
+      "formation": "有收音谓词词干 + 을 때 / 无收音及ㄹ收音谓词词干 + ㄹ 때（名词接：名词 + 때）",
+      "examples": [
+        {
+          "translation": "夏天从我们家看海时，一打开窗户凉爽的海风就会吹进来。"
+        },
+        {
+          "translation": "去学校的时候，坐公交车很方便。"
+        },
+        {
+          "translation": "做作业的时候听音乐能够更加集中注意力。"
+        },
+        {
+          "translation": "见朋友的时候一起吃顿饭会更开心。"
+        }
+      ]
+    },
+    "ko_아어여야_59": {
+      "title": "-아/어/여야 (하다/되다)（必要条件与义务：必须、只有……才）",
+      "shortExplanation": "连接词尾，表示达成后句结果所必需的前提条件（“只有……才”），搭配하다/되다表示义务（“必须……”）。",
+      "longExplanation": "“-아/어/여야”是韩语中表示必要前提条件的连接词尾，相当于汉语的“只有……才”、“必须……才”。当它与辅助动词“하다”或“되다”连用构成“-아/어/여야 하다/되다”时，则构成表示义务、必要性或责任的核心句型，相当于汉语的“必须……”、“应该……”、“非……不可”。接续规则为：阳性元音（ㅏ, ㅗ）接“-아야”；阴性元音接“-어야”；“하다”谓词变为“해야”。",
+      "formation": "阳性元音词干（ㅏ, ㅗ） + 아야 하다/되다 / 阴性元音词干 + 어야 하다/되다 / 하다谓词 -> 해야 하다/되다",
+      "examples": [
+        {
+          "translation": "若要去医院就必须接受体检。只有那样才能安心学习。"
+        },
+        {
+          "translation": "要想增加这个月的销售额，就必须吸引更多的顾客。只有这样利润才会上升。"
+        },
+        {
+          "translation": "去学校之前一定要吃早餐。只有那样才能维持一整天的精力活力。"
+        },
+        {
+          "translation": "因为明天有考试，所以今晚必须学习。不然的话成绩会很差。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_보다_45": {
+      "title": "보다 (비교 격조사)",
+      "shortExplanation": "비교의 기준이 되는 체언 뒤에 붙어 '그것에 비하여'의 뜻을 나타내는 격조사입니다.",
+      "longExplanation": "'보다'는 비교의 기준이 되는 명사 뒤에 붙어, 다른 대상이 그 기준보다 더하거나 덜함을 나타내는 비교 격조사입니다. 보통 뒤에 '더'나 '덜'과 같은 부사와 함께 쓰여 서술어(형용사, 동사)를 수식하며, 두 대상을 견주어 우열이나 차이를 드러낼 때 기본적으로 사용됩니다.",
+      "formation": "명사(비교 기준) + 보다 (더/덜) + 형용사/동사",
+      "examples": [
+        {
+          "translation": "저는 커피보다 차를 더 좋아해요. 차가 제 입맛에 더 잘 맞아요."
+        },
+        {
+          "translation": "우리 집은 도서관보다 책이 더 많아요. 가족 모두가 독서를 사랑해서 그렇게 됐어요."
+        },
+        {
+          "translation": "한국어를 배우는 것은 중국어를 배우는 것보다 쉬워요. 필기와 발음이 더 단순하니까요."
+        },
+        {
+          "translation": "지금은 여름이지만, 봄보다 날씨가 더 추워요. 이상한 기후 변화 때문인 것 같아요."
+        }
+      ]
+    },
+    "ko_가장_46": {
+      "title": "가장 (최상급 부사)",
+      "shortExplanation": "여럿 가운데 어느 것보다 정도가 으뜸임을 나타내는 부사입니다.",
+      "longExplanation": "'가장'은 비교 대상이 되는 여럿 중에서 성질이나 상태, 동작의 정도가 가장 높거나 첫째임을 나타내는 최상급 부사입니다. 형용사나 부사, 관형사형 어미가 붙은 용언 앞에 놓여 수식하며, 한자어 부사 '제일(第一)'과 바꾸어 쓸 수 있습니다.",
+      "formation": "가장 + 형용사/부사/동사",
+      "examples": [
+        {
+          "translation": "저는 가장 좋아하는 사람과 결혼하고 싶어요."
+        },
+        {
+          "translation": "가장 먼저 도착한 사람이 상품을 받을 수 있어요."
+        },
+        {
+          "translation": "그는 가장 힘들었던 시절에도 포기하지 않았어요."
+        },
+        {
+          "translation": "저는 가장 큰 꿈을 이루고 싶어요."
+        }
+      ]
+    },
+    "ko_도_47": {
+      "title": "도 (보조사: 또한, 역시, 강조)",
+      "shortExplanation": "체언 뒤에 붙어 이미 어떤 것이 포함되고 그 위에 더함의 뜻을 나타내거나 강조를 나타내는 보조사입니다.",
+      "longExplanation": "'도'는 명사, 대명사, 수사 및 부사 뒤에 결합하는 보조사입니다. 이미 제시된 대상과 마찬가지로 포함됨을 나타내어 '역시', '또한'의 의미를 가지며, 예상 밖의 사실이나 극단적인 상황을 나타내어 '심지어', '조차'의 의미로 강조할 때도 쓰입니다. 주격 조사 '이/가'나 목적격 조사 '을/를'의 자리에 쓰일 때는 해당 격조사를 대신하여 단독으로 결합합니다.",
+      "formation": "명사/대명사/부사 + 도",
+      "examples": [
+        {
+          "translation": "나는 한국어도 잘하고, 일본어도 잘해요."
+        },
+        {
+          "translation": "그는 잘생겼을 뿐만 아니라 성격도 좋아요."
+        },
+        {
+          "translation": "이 식당은 음식도 맛있고, 분위기도 좋아요."
+        },
+        {
+          "translation": "나는 어제 집에 도착했을 때 밤 12시도 넘었어요."
+        }
+      ]
+    },
+    "ko_이그저_48": {
+      "title": "이/그/저 (지시 관형사)",
+      "shortExplanation": "명사 앞에 붙어 말하는 이와 듣는 이로부터의 거리나 대상을 가리키는 지시 관형사입니다.",
+      "longExplanation": "'이', '그', '저'는 체언(명사) 바로 앞에 놓여 어떤 대상을 지시하는 관형사입니다.\n- '이': 말하는 이에게 가까이 있는 대상을 가리킬 때 씁니다.\n- '그': 듣는 이에게 가까이 있거나, 앞에서 이미 언급된 대상을 가리킬 때 씁니다.\n- '저': 말하는 이와 듣는 이 둘 모두에게서 멀리 떨어져 있는 대상을 가리킬 때 씁니다.\n의존명사 '것'과 결합하여 '이것', '그것', '저것'과 같은 지시대명사를 형성하기도 합니다.",
+      "formation": "이 / 그 / 저 + 명사",
+      "examples": [
+        {
+          "translation": "이 펜은 제 펜입니다. 그 펜은 당신의 펜입니다. 저 펜은 누구 것인지 모르겠어요."
+        },
+        {
+          "translation": "이 핸드폰은 버그가 많아요. 그 핸드폰은 성능이 좋아요. 저 핸드폰은 무슨 모델인지 모르겠어요."
+        },
+        {
+          "translation": "이 음식은 맛이 없어요. 그 음식은 매워요. 저 음식은 어떤 맛인지 모르겠어요."
+        },
+        {
+          "translation": "이 책은 재미있어요. 그 책은 너무 어려워요. 저 책은 어떤 내용인지 모르겠어요."
+        }
+      ]
+    },
+    "ko_이나inaOr_49": {
+      "title": "(이)나 (선택의 보조사)",
+      "shortExplanation": "명사 뒤에 붙어 어느 것을 선택해도 상관없거나 둘 이상 가운데 하나를 고름을 나타내는 보조사입니다.",
+      "longExplanation": "'(이)나'는 체언(명사) 뒤에 결합하여 여러 대상 가운데 하나를 선택함을 나타내는 보조사입니다. 받침이 있는 명사 뒤에는 '이나'가 붙고, 받침이 없는 명사 뒤에는 '나'가 붙습니다. 동사나 형용사를 대등하게 연결하여 선택할 때는 연결어미 '-거나'를 사용하는 것이 원칙입니다. 그 밖에도 수량 뒤에 붙어 생각보다 많음을 나타내거나, 마음에 차지 않지만 차선책을 고를 때도 쓰입니다.",
+      "formation": "받침 있는 명사 + 이나 / 받침 없는 명사 + 나 (용언 연결 시: 동사 어간 + 거나)",
+      "examples": [
+        {
+          "translation": "피자나 햄버거 중에 뭐 먹고 싶어요?"
+        },
+        {
+          "translation": "저는 주말에 친구들이랑 영화 보러 가거나 쇼핑을 하러 갈 거예요."
+        },
+        {
+          "translation": "빨래나 설거지 같은 집안일을 해야 해요."
+        },
+        {
+          "translation": "오늘 밤에는 숙제를 하거나 책을 읽을 거예요."
+        }
+      ]
+    },
+    "ko_밖에_50": {
+      "title": "밖에 (한정의 보조사)",
+      "shortExplanation": "명사 뒤에 붙어 그것 이외에는 다른 것이 없음을 나타내며, 반드시 부정어와 함께 쓰이는 보조사입니다.",
+      "longExplanation": "'밖에'는 체언(명사) 뒤에 결합하여 그 대상 이외의 다른 가능성을 배제하고 그것 하나만으로 한정함을 나타내는 보조사입니다. 반드시 서술어 자리에 '없다', '안', '못', '모르다'와 같은 부정적인 표현이 호응하여 사용됩니다. '-(으)ㄹ 수밖에 없다'의 구성으로 쓰일 경우 '다른 방법이 없어 그렇게 할 수밖에 없음'을 나타냅니다.",
+      "formation": "명사 + 밖에 + 부정어(없다 / 안 / 못 / 모르다)",
+      "examples": [
+        {
+          "translation": "나는 이번 주말에 집에 있을 수밖에 없었어요, 모든 친구들이 바빴거든요."
+        },
+        {
+          "translation": "엄마는 부엌에서 요리하는 것밖에 몰라서 다른 일을 잘 못해요."
+        },
+        {
+          "translation": "나는 한국어밖에 몰라서 다른 언어로 이야기하기가 어려워요."
+        },
+        {
+          "translation": "그 학생은 공부밖에 몰라서 놀거나 다른 일을 잘 못해요."
+        }
+      ]
+    },
+    "ko_뿐_51": {
+      "title": "뿐 (보조사 및 의존명사: 오직 그것만)",
+      "shortExplanation": "체언 뒤에 붙거나 관형사형 어미 뒤에 쓰여 그것만으로 한정함을 나타내는 말입니다.",
+      "longExplanation": "'뿐'은 체언 뒤에 붙는 보조사로서 '오직 그것만'의 뜻을 나타내며, 관형사형 어미 '-(으)ㄹ' 뒤에서는 의존명사로 쓰여 다른 동작이나 상태 없이 오직 그러할 따름임을 나타냅니다. '밖에'와 달리 긍정형 서술격 조사 '이다'와 결합하여 '뿐이다' 형태로 자연스럽게 쓰일 수 있습니다. 또한 '뿐만 아니라'의 형태로 결합하여 앞선 사실에 다른 사실이 덧붙음을 나타내기도 합니다.",
+      "formation": "명사 + 뿐(이다) / 용언 어간 + -(으)ㄹ 뿐이다",
+      "examples": [
+        {
+          "translation": "우리 집에는 고양이 두 마리뿐이에요. 다른 애완동물은 없어요."
+        },
+        {
+          "translation": "주말에는 집에서 휴식하는 것뿐이지, 특별한 일정은 없어요."
+        },
+        {
+          "translation": "저는 커피뿐 아니라 차도 좋아해요."
+        },
+        {
+          "translation": "제가 할 수 있는 건 이것뿐입니다. 최선을 다했어요."
+        }
+      ]
+    },
+    "ko_는은_52": {
+      "title": "-는/-(으)ㄴ 것 (용언의 명사화)",
+      "shortExplanation": "용언의 관형사형 어미와 의존명사 '것'이 결합하여 절 전체를 명사구로 만들어 주는 표현입니다.",
+      "longExplanation": "동사 어간 뒤의 현재 관형사형 어미 '-는'이나 형용사/과거 관형사형 어미 '-(으)ㄴ' 뒤에 의존명사 '것'을 붙여 동사나 형용사를 문장 내에서 명사처럼 기능하게 만드는 명사화 구문입니다. 이렇게 만들어진 명사구는 문장 안에서 주어('-는 것은/이'), 목적어('-는 것을'), 서술어('-는 것이다') 등으로 자유롭게 쓰입니다. 구어에서는 '것은'이 '건'으로, '것이'가 '게'로, '것을'이 '걸'로 축약되어 자주 쓰입니다.",
+      "formation": "동사 어간 + 는 것 / 형용사 어간 + -(으)ㄴ 것",
+      "examples": [
+        {
+          "translation": "영화를 보는 것이 왜 그렇게 재미있는지 이해가 안 돼요."
+        },
+        {
+          "translation": "우리 나라에서 사는 것은 정말로 재미있습니다."
+        },
+        {
+          "translation": "가장 중요한 것은 솔직한 거예요."
+        },
+        {
+          "translation": "저는 한국어를 배우는 것이 어렵지만, 계속 연습하고 싶어요."
+        }
+      ]
+    },
+    "ko_으는것같다eunneungeotgatdaItseemslike_53": {
+      "title": "-(으)ㄴ/는 것 같다 (추측 및 완곡한 표현)",
+      "shortExplanation": "말하는 이의 짐작이나 추측을 나타내거나, 자신의 생각을 조심스럽고 부드럽게 표현할 때 쓰는 문형입니다.",
+      "longExplanation": "'-(으)ㄴ/는 것 같다'는 어떤 사실에 대한 관찰이나 느낌을 바탕으로 불확실한 판단이나 추측을 나타낼 때 쓰는 대표적인 표현입니다. 또한 단정적인 어투를 피하고 자신의 느낌이나 의견을 완곡하고 공손하게 말할 때도 한국어 화자들이 매우 자주 사용합니다. 동사의 현재 시제에는 '-는 것 같다', 형용사 및 동사의 과거 시제에는 '-(으)ㄴ 것 같다', 미래나 막연한 추측에는 '-(으)ㄹ 것 같다'가 결합합니다.",
+      "formation": "동사 현재형 + 는 것 같다 / 형용사 + -(으)ㄴ 것 같다 / 동사 과거형 + -(으)ㄴ 것 같다 / 미래 추측 + -(으)ㄹ 것 같다",
+      "examples": [
+        {
+          "translation": "날씨가 춥다고 생각했는데, 밖은 따뜻한 것 같아요."
+        },
+        {
+          "translation": "그 여자는 아주 친절한 것 같습니다. 주변 사람들에게 항상 웃는 얼굴로 대하니까요."
+        },
+        {
+          "translation": "주인공이 결국엔 성공할 것 같아요. 왜냐하면 어려움을 극복하려고 무척 노력하니까요."
+        },
+        {
+          "translation": "이번 시험은 어려울 것 같아요. 배운 내용이 많이 복잡하거든요."
+        }
+      ]
+    },
+    "ko_으러가다오다eureogadaodaGocometodosomething_54": {
+      "title": "-(으)러 가다/오다 (이동의 목적)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 동작을 하러 이동함을 나타내는 연결어미 표현입니다.",
+      "longExplanation": "'-(으)러 가다/오다'는 어떤 행위를 목적으로 삼아 장소를 이동함을 나타내는 문형입니다. 뒤따르는 용언으로는 반드시 '가다', '오다', '다니다'와 같은 이동 동사가 결합합니다. 동사 어간에 받침이 있으면 '-으러'가 결합하고, 받침이 없거나 'ㄹ' 받침으로 끝나는 어간 뒤에는 '-러'가 결합합니다.",
+      "formation": "받침 있는 동사 어간 + 으러 가다/오다 / 받침 없거나 'ㄹ' 받침 동사 어간 + 러 가다/오다",
+      "examples": [
+        {
+          "translation": "나는 친구를 만나러 학교에 갔어요."
+        },
+        {
+          "translation": "내일 부모님을 찾아뵈러 고향에 가려고 해요."
+        },
+        {
+          "translation": "그녀는 새 신발을 사러 쇼핑몰에 갔어요."
+        },
+        {
+          "translation": "저는 스피치를 준비하러 도서관에 왔습니다."
+        }
+      ]
+    },
+    "ko_아어여도_55": {
+      "title": "-아/어/여도 (양보의 연결어미)",
+      "shortExplanation": "앞 절의 조건이 뒤 절의 행동이나 상태에 영향을 주지 않음을 나타내는 양보의 연결어미입니다.",
+      "longExplanation": "'-아/어/여도'는 앞의 내용이나 상황을 인정하거나 가정하더라도 뒤의 내용에는 아무런 장애나 영향이 없음을 나타내는 연결어미입니다. 양성모음(ㅏ, ㅗ) 뒤에는 '-아도', 음성모음 뒤에는 '-어도', '하다'로 끝나는 용언 뒤에는 '해도'의 형태로 결합합니다.",
+      "formation": "양성모음 어간(ㅏ, ㅗ) + 아도 / 음성모음 어간 + 어도 / '하다' 용언 -> 해도",
+      "examples": [
+        {
+          "translation": "비가 와도 학교에 가야 했어요. 시험이 있었거든요."
+        },
+        {
+          "translation": "친구가 늦어도 기다릴 거예요. 우리는 오래된 친구니까요."
+        },
+        {
+          "translation": "감기가 심해도 축구를 해야 해요. 팀원을 실망시키고 싶지 않거든요."
+        },
+        {
+          "translation": "날씨가 추워져도 산책을 계속할 거예요. 그게 스트레스 해소에 최고예요."
+        }
+      ]
+    },
+    "ko_계속_56": {
+      "title": "계속 (지속을 나타내는 부사)",
+      "shortExplanation": "어떤 동작이나 상태가 끊이지 않고 잇따라 이어짐을 나타내는 부사입니다.",
+      "longExplanation": "'계속'은 동작이나 현상이 멈추지 않고 내리 이어지거나 같은 행위가 되풀이됨을 나타내는 부사입니다. 용언(동사, 형용사) 앞에 놓여 서술어를 수식하며, 명사로서 '계속하다', '계속되다'와 같은 동사 형태로도 활발하게 파생되어 사용됩니다.",
+      "formation": "계속 + 동사/형용사",
+      "examples": [
+        {
+          "translation": "그는 계속 공부하고 있어서 시험을 잘 볼 것 같아요."
+        },
+        {
+          "translation": "기분이 좋아서 저는 계속 웃고 있어요."
+        },
+        {
+          "translation": "비가 계속 오고 있어서 우산을 챙기는 게 좋을 것 같아요."
+        },
+        {
+          "translation": "그녀는 계속 건강에 신경 쓰고 있어요, 그래서 아플 확률이 적어요."
+        }
+      ]
+    },
+    "ko_항상_57": {
+      "title": "항상 (빈도의 부사: 언제나, 늘)",
+      "shortExplanation": "언제나 변함없이 변하지 않고 늘 그러함을 나타내는 빈도 부사입니다.",
+      "longExplanation": "'항상(恒常)'은 한자어 부사로서, 시간의 흐름에 상관없이 어떤 행동이나 상태가 언제나 변함없이 일정하게 유지됨을 나타냅니다. 동사나 형용사 앞에 놓여 습관적이거나 규칙적인 행위를 서술할 때 쓰이며, 고유어 부사인 '늘', '언제나'와 유사한 의미로 바꾸어 쓸 수 있습니다.",
+      "formation": "항상 + 동사/형용사",
+      "examples": [
+        {
+          "translation": "저는 항상 아침에 일찍 일어나서 학교에 가요."
+        },
+        {
+          "translation": "우리 엄마는 항상 저녁 식사를 준비하면서 라디오를 들어요."
+        },
+        {
+          "translation": "그는 항상 공부 계획을 철저하게 세우고 그대로 따라요."
+        },
+        {
+          "translation": "공원에서는 항상 새들이 노래를 부르고 있어요."
+        }
+      ]
+    },
+    "ko_으때eulttaeWhen_58": {
+      "title": "-(으)ㄹ 때 (시간의 배경을 나타내는 문형)",
+      "shortExplanation": "용언의 어간 뒤에 붙어 어떤 동작이나 상태가 일어나는 때나 시점을 나타내는 표현입니다.",
+      "longExplanation": "'-(으)ㄹ 때'는 어떤 행위나 현상이 발생하는 시간적 배경이나 시점을 나타내는 구문입니다. 용언 어간에 받침이 있으면 '-을 때'가 결합하고, 받침이 없거나 'ㄹ' 받침인 경우에는 '-ㄹ 때'가 결합합니다. 명사 뒤에는 직접 결합하여 '명사 + 때'(예: 방학 때, 점심 때)의 형태로 쓰입니다.",
+      "formation": "받침 있는 용언 어간 + 을 때 / 받침 없거나 'ㄹ' 받침 용언 어간 + ㄹ 때 (명사 결합 시: 명사 + 때)",
+      "examples": [
+        {
+          "translation": "여름에는 우리 집에서 바다를 볼 때 창문을 열면 시원한 바닷바람이 들어와요."
+        },
+        {
+          "translation": "학교에 갈 때 버스를 타면 편해요."
+        },
+        {
+          "translation": "숙제를 할 때 음악을 들으면 더 집중할 수 있어요."
+        },
+        {
+          "translation": "친구를 만날 때 함께 식사하면 더 즐거워요."
+        }
+      ]
+    },
+    "ko_아어여야_59": {
+      "title": "-아/어/여야 (하다/되다) (필수 조건 및 당위)",
+      "shortExplanation": "뒤의 일이 이루어지기 위한 필수 조건을 나타내거나, 마땅히 행해야 할 의무나 당위를 나타내는 문형입니다.",
+      "longExplanation": "'-아/어/여야'는 뒤 절의 사태가 성립하기 위한 절대적인 선행 조건임을 나타내는 연결어미입니다. 보조동사 '하다'나 '되다'와 결합하여 '-아/어/여야 하다/되다'의 구성을 이룰 때에는 어떤 일에 대한 의무, 필연성, 당위성을 나타내는 표현이 됩니다. 양성모음 어간에는 '-아야', 음성모음 어간에는 '-어야', '하다' 용언 어간 뒤에는 '해야'로 결합합니다.",
+      "formation": "양성모음 어간(ㅏ, ㅗ) + 아야 하다/되다 / 음성모음 어간 + 어야 하다/되다 / '하다' 용언 -> 해야 하다/되다",
+      "examples": [
+        {
+          "translation": "병원에 가려면 건강 검사를 받아야 돼요. 그래야 안심하고 공부할 수 있죠."
+        },
+        {
+          "translation": "이번 달 매출을 늘리려면 더 많은 고객을 끌어들여야 돼요. 그래야 수익이 오를 거예요."
+        },
+        {
+          "translation": "학교에 가기 전에는 아침 식사를 꼭 해야 돼요. 그래야 하루 종일 에너지를 유지하거든요."
+        },
+        {
+          "translation": "내일 시험이 있으니까 오늘 밤에 공부해야 돼요. 안 그러면 점수가 안 좋을 거예요."
+        }
+      ]
+    }
+  }
+}

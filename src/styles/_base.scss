@@ -7,6 +7,8 @@
 html {
     min-height: 100%;
     overscroll-behavior-y: contain; /* Pure CSS: prevents browser pull-to-refresh reload */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 * {

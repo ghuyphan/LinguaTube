@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_으면서eumyeonseoWhileand_60": {
+      "title": "(으)면서 (Vĩ tố liên kết: vừa... vừa..., trong khi)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị hai hành động hoặc trạng thái diễn ra đồng thời cùng một lúc ('vừa... vừa...').",
+      "longExplanation": "'(으)면서' là vĩ tố liên kết dùng để nối hai mệnh đề, biểu thị chủ ngữ thực hiện hai hành động cùng một lúc hoặc hai trạng thái cùng tồn tại đồng thời ('vừa... vừa...'). Khi thân động từ kết thúc bằng phụ âm (ngoại trừ 'ㄹ') thì kết hợp với '-으면서', khi kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ' thì kết hợp với '-면서'. Lưu ý chủ ngữ của cả hai vế trước và sau phải là cùng một đối tượng.",
+      "formation": "Thân động từ có phụ âm cuối + 으면서 / Thân động từ không có phụ âm cuối (hoặc phụ âm cuối ㄹ) + 면서",
+      "examples": [
+        {
+          "translation": "Tôi vừa xem ti vi vừa ăn cơm, vì thế đã không thể trò chuyện được."
+        },
+        {
+          "translation": "Cô ấy đang vừa nghe nhạc vừa đọc sách trên xe buýt."
+        },
+        {
+          "translation": "Dạo này em tôi vừa học ở trường vừa đi làm thêm nữa."
+        },
+        {
+          "translation": "Tôi vừa nghe podcast vừa ghi chép từ vựng mới để nâng cao kỹ năng nghe."
+        }
+      ]
+    },
+    "ko_다가_61": {
+      "title": "다가 (Vĩ tố liên kết: đang... thì, rồi lại)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị một hành động hoặc trạng thái đang diễn ra thì bị ngắt quãng và chuyển sang hành động hoặc trạng thái khác.",
+      "longExplanation": "'다가' là vĩ tố liên kết diễn tả hành động ở mệnh đề trước đang diễn ra thì bị gián đoạn và một hành động khác xen vào hoặc tiếp nối ngay sau đó ('đang làm... thì...'). Hai vế câu thông thường phải có cùng một chủ ngữ. Cấu trúc này cũng có thể dùng khi hai trạng thái hoặc hành động đối lập luân phiên diễn ra.",
+      "formation": "Thân động từ / Thân tính từ + 다가",
+      "examples": [
+        {
+          "translation": "Tôi đang đọc sách thì buồn ngủ nên đã ngủ thiếp đi."
+        },
+        {
+          "translation": "Tôi đến nhà hàng và đang ăn cơm thì gặp bạn."
+        },
+        {
+          "translation": "Tôi đang nghe nhạc thì bỗng nhiên có điện thoại gọi đến."
+        },
+        {
+          "translation": "Tôi đang học bài thì máy tính đột ngột tắt ngúm làm tôi giật cả mình."
+        }
+      ]
+    },
+    "ko_아어여_62": {
+      "title": "아/어/여 보이다 (Trông có vẻ, dường như)",
+      "shortExplanation": "Cấu trúc gắn sau tính từ biểu thị phỏng đoán hoặc nhận xét vẻ bề ngoài của đối tượng dựa trên quan sát ('trông có vẻ...').",
+      "longExplanation": "'아/어/여 보이다' được dùng khi người nói đưa ra nhận định hoặc phán đoán về tính chất, trạng thái, cảm xúc của ai đó hoặc sự vật nào đó dựa trên vẻ bề ngoài nhìn thấy được. Nếu nguyên âm cuối của thân tính từ là 'ㅏ' hoặc 'ㅗ', dùng '-아 보이다'; nếu là các nguyên âm khác, dùng '-어 보이다'; nếu là '하다', chuyển thành '-해 보이다'.",
+      "formation": "Thân tính từ + 아/어/여 보이다 (Nguyên âm ㅏ/ㅗ + 아 보이다, các nguyên âm khác + 어 보이다, 하다 → 해 보이다)",
+      "examples": [
+        {
+          "translation": "Mẹ trông có vẻ hạnh phúc, chắc là mẹ vừa nghe được tin vui gì đó rồi."
+        },
+        {
+          "translation": "Người đó luôn trông có vẻ tốt bụng nhưng thực tế thì không phải vậy."
+        },
+        {
+          "translation": "Căn phòng này trông có vẻ quá nhỏ, nhưng nếu bài trí nội thất khéo thì hoàn toàn dùng được tốt."
+        },
+        {
+          "translation": "Cậu trông lúc nào cũng có vẻ bận rộn, dạo này sống thế nào rồi?"
+        }
+      ]
+    },
+    "ko_아어여_63": {
+      "title": "아/어/여 버리다 (Động từ bổ trợ: ...mất rồi, xong xuôi hoàn toàn)",
+      "shortExplanation": "Động từ bổ trợ biểu thị một hành động đã hoàn tất triệt để, kèm theo cảm giác tiếc nuối, ân hận hoặc nhẹ nhõm, thanh thản.",
+      "longExplanation": "'아/어/여 버리다' kết hợp sau thân động từ để chỉ một hành động đã được thực hiện xong hoàn toàn. Cấu trúc này thường mang hai sắc thái tình cảm rõ rệt: hoặc là tiếc nuối, hối tiếc vì điều không mong muốn đã lỡ xảy ra ('lỡ... mất rồi'), hoặc là nhẹ nhõm, trút được gánh nặng sau khi hoàn thành xong một việc ('đã giải quyết xong xuôi').",
+      "formation": "Thân động từ + 아/어/여 버리다 (Nguyên âm ㅏ/ㅗ + 아 버리다, các nguyên âm khác + 어 버리다, 하다 → 해 버리다)",
+      "examples": [
+        {
+          "translation": "Tôi đợi mãi rồi mệt quá nên lỡ ngủ thiếp đi mất, thành ra không gặp được bạn đúng giờ hẹn."
+        },
+        {
+          "translation": "Anh ấy vì quá căng thẳng nên đã quên sạch mọi thứ, nhưng hóa ra đó lại là bước ngoặt bất ngờ."
+        },
+        {
+          "translation": "Chúng tôi đã cố gắng phân tích toàn bộ vấn đề, nhưng cuối cùng đành phải từ bỏ tất cả."
+        },
+        {
+          "translation": "Cuối tuần đã đến, nhưng tiếc thay tôi phải làm cho xong hết bài tập nên chẳng còn thời gian nghỉ ngơi."
+        }
+      ]
+    },
+    "ko_아어여_64": {
+      "title": "아/어/여 놓다 (Động từ bổ trợ: làm sẵn, làm xong để đó)",
+      "shortExplanation": "Động từ bổ trợ biểu thị việc thực hiện xong một hành động rồi duy trì hoặc giữ nguyên trạng thái kết quả đó cho tương lai.",
+      "longExplanation": "'아/어/여 놓다' là cấu trúc động từ bổ trợ diễn tả một hành động đã được hoàn tất trước nhằm mục đích chuẩn bị cho một việc khác, và kết quả của hành động đó vẫn được giữ nguyên trạng thái ở hiện tại ('làm sẵn', 'làm rồi để đó'). Tương đương với cấu trúc '-아/어 두다' trong tiếng Hàn.",
+      "formation": "Thân động từ hành động + 아/어/여 놓다 (Nguyên âm ㅏ/ㅗ + 아 놓다, các nguyên âm khác + 어 놓다, 하다 → 해 놓다)",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi về nhà sớm nên đã nấu sẵn bữa tối rồi, tối đến có thể thoải mái ăn."
+        },
+        {
+          "translation": "Chúng tôi đã đặt phòng khách sạn sẵn trước khi làm thủ tục nhận phòng, vì thế đã có thể vào phòng ngay lập tức."
+        },
+        {
+          "translation": "Anh ấy đã lên sẵn toàn bộ kế hoạch cho ngày hôm nay, rồi sau đó lại chẳng làm gì cả."
+        },
+        {
+          "translation": "Tôi đã học bài chuẩn bị sẵn sàng cho kỳ thi hết rồi, vậy mà kỳ thi lại bị hủy mất."
+        }
+      ]
+    },
+    "ko_아어여_65": {
+      "title": "아/어/여 지다 (Trở nên, trở thành: biến đổi trạng thái)",
+      "shortExplanation": "Cấu trúc gắn sau thân tính từ biểu thị sự biến đổi dần dần từ trạng thái này sang trạng thái khác ('trở nên...').",
+      "longExplanation": "'아/어/여 지다' kết hợp với thân tính từ để biến tính từ thành động từ chỉ sự thay đổi trạng thái, mang nghĩa 'trở nên...', 'hóa...'. Cấu trúc này diễn tả đối tượng dần dần chuyển biến theo một chiều hướng tính chất nào đó theo thời gian. Nếu thân tính từ có nguyên âm cuối là 'ㅏ' hoặc 'ㅗ', dùng '-아 지다'; các nguyên âm khác dùng '-어 지다'; với '하다', chuyển thành '-해 지다'.",
+      "formation": "Thân tính từ + 아/어/여 지다 (Nguyên âm ㅏ/ㅗ + 아 지다, các nguyên âm khác + 어 지다, 하다 → 해 지다)",
+      "examples": [
+        {
+          "translation": "Trời trở nên tối sầm lại nên khó nhìn rõ đường đi, chắc là khó mà đi tới cửa hàng được."
+        },
+        {
+          "translation": "Thời tiết trở nên lạnh hơn nên tôi đâm ra ngại ra ngoài, chỉ muốn ở lì trong nhà thôi."
+        },
+        {
+          "translation": "Hôm nay gặp chuyện vất vả nên tâm trạng chẳng khá lên được, hay là nghỉ ngơi một chút để đổi gió xem sao?"
+        },
+        {
+          "translation": "Nhờ có bạn bè mà tâm trạng tôi đã tốt lên hẳn, phải gặp nhau thường xuyên hơn mới được."
+        }
+      ]
+    },
+    "ko_아어여_66": {
+      "title": "아/어/여 가지다 / 가지고 있다 (Sở hữu, có được: phẩm chất, đặc điểm)",
+      "shortExplanation": "Biểu thị việc một người hay sự vật sở hữu, có được đặc điểm, phẩm chất hoặc năng lực nhất định ('sở hữu', 'có').",
+      "longExplanation": "'가지다' (thường dùng ở dạng '가지고 있다') là động từ mang ý nghĩa 'sở hữu', 'có được', dùng để miêu tả ai đó sở hữu phẩm chất ngoại hình, năng lực, tài năng hoặc mối quan hệ xã hội. Trong khẩu ngữ đời sống, vĩ tố liên kết '-아/어 가지고' còn được dùng phổ biến để liên kết hai vế câu diễn tả nguyên nhân, lý do hoặc kết quả của hành động trước ('làm... rồi thì...').",
+      "formation": "Danh từ + 을/를 + 가지다 / 가지고 있다 (hoặc Thân động từ / Thân tính từ + 아/어 가지고)",
+      "examples": [
+        {
+          "translation": "Cô ấy có một đôi mắt tuyệt đẹp, lấp lánh như những vì sao trên bầu trời đêm."
+        },
+        {
+          "translation": "Tôi có rất nhiều bạn tốt nên chẳng bao giờ thấy cô đơn."
+        },
+        {
+          "translation": "Công ty chúng ta cần phải sở hữu năng lực cạnh tranh mạnh mẽ, có như vậy thì mới có thể phát triển được."
+        },
+        {
+          "translation": "Anh ấy có năng lực vượt trội nên việc gì cũng có thể hoàn thành xuất sắc."
+        }
+      ]
+    },
+    "ko_으는편이다eunneunpyeonidaTendto_67": {
+      "title": "(으)ㄴ/는 편이다 (Thuộc diện, thuộc dạng, có xu hướng)",
+      "shortExplanation": "Cấu trúc biểu thị một đối tượng nghiêng về hoặc thuộc về một nhóm tính chất, thói quen hay xu hướng nào đó một cách tương đối ('thuộc diện...').",
+      "longExplanation": "'(으)ㄴ/는 편이다' dùng để diễn tả tính cách, thói quen hoặc tình trạng của đối tượng thuộc vào một loại/nhóm nhất định khi so sánh chung, giúp cách nói trở nên mềm mại và không khẳng định một cách tuyệt đối ('thuộc tuýp...', 'khá là...'). Với động từ thì kết hợp với '-는 편이다'; với tính từ có phụ âm cuối dùng '-은 편이다', không có phụ âm cuối dùng '-ㄴ 편이다'; với danh từ dùng '인 편이다'.",
+      "formation": "Thân động từ + 는 편이다 / Thân tính từ có phụ âm cuối + 은 편이다 / Thân tính từ không có phụ âm cuối + ㄴ 편이다 / Danh từ + 인 편이다",
+      "examples": [
+        {
+          "translation": "Anh ấy thuộc diện dậy sớm, ngay cả vào cuối tuần cũng luôn thức dậy từ sáng sớm."
+        },
+        {
+          "translation": "Tôi thuộc diện ăn cay giỏi, ngay cả những món rất cay tôi cũng thưởng thức được."
+        },
+        {
+          "translation": "Em tôi thuộc diện rất coi trọng sự an toàn, vì thế lúc nào cũng thắt dây an toàn."
+        },
+        {
+          "translation": "Tôi thuộc diện khá chăm đọc sách, đặc biệt là rất thích tiểu thuyết khoa học viễn tưởng."
+        }
+      ]
+    },
+    "ko_는은_68": {
+      "title": "-(으)ㄴ/는데 (Vĩ tố liên kết: bối cảnh, tương phản, giải thích)",
+      "shortExplanation": "Vĩ tố liên kết dùng để gợi mở bối cảnh hoặc tạo sự đối chiếu, tương phản trước khi đưa ra thông tin chính ở vế sau.",
+      "longExplanation": "'-(으)ㄴ/는데' là một trong những vĩ tố liên kết thông dụng nhất trong tiếng Hàn. Cấu trúc này dùng để cung cấp bối cảnh, tình huống nền tảng để giải thích, đưa ra gợi ý, yêu cầu hoặc diễn tả quan hệ đối lập tương phản giữa hai vế ('nhưng', 'thế nhưng'). Động từ hoặc thì quá khứ kết hợp với '-는데', tính từ có phụ âm cuối dùng '-은데', không có phụ âm cuối dùng '-ㄴ데', danh từ dùng '인데'.",
+      "formation": "Thân động từ / Thân thì quá khứ + 는데 / Thân tính từ có phụ âm cuối + 은데 / Thân tính từ không có phụ âm cuối + ㄴ데 / Danh từ + 인데",
+      "examples": [
+        {
+          "translation": "Tôi vẫn còn là học sinh nhưng đang làm thêm để kiếm tiền."
+        },
+        {
+          "translation": "Hôm qua tôi về đến nhà thì chẳng có ai ở nhà cả."
+        },
+        {
+          "translation": "Bây giờ trời đang mưa mà tôi lại không mang theo ô nên rắc rối to rồi."
+        },
+        {
+          "translation": "Tôi rất thích trò chuyện với mọi người, thế nhưng vì tính hay ngại ngùng nên thấy khó khăn lắm."
+        }
+      ]
+    },
+    "ko_아어여야겠다_69": {
+      "title": "아/어/여야겠다 (Phải... thôi: quyết tâm, sự cần thiết)",
+      "shortExplanation": "Biểu thị quyết tâm, ý chí hoặc phán đoán của người nói rằng bản thân nhất định phải làm một hành động nào đó ('chắc phải... thôi').",
+      "longExplanation": "'아/어/여야겠다' là sự kết hợp giữa '-아/어/여야 하다' (phải làm gì) và vĩ tố trước kết thúc chỉ ý chí, phán đoán '-겠-'. Cấu trúc này diễn tả việc người nói nhận thức được sự cần thiết cấp bách của một hành động và đưa ra quyết định hoặc quyết tâm thực hiện hành động đó ngay ('tôi phải... mới được', 'chắc tôi sẽ phải...').",
+      "formation": "Thân động từ / Thân tính từ + 아/어/여야겠다 (Nguyên âm kết thúc là ㅏ/ㅗ + 아야겠다, các nguyên âm khác + 어야겠다, 하다 → 해야겠다)",
+      "examples": [
+        {
+          "translation": "Tôi phải mau chóng hoàn thành bài báo cáo này thôi, bởi vì hạn nộp là ngày mai rồi."
+        },
+        {
+          "translation": "Chúng ta không có nhiều thời gian nên chắc phải đi taxi thôi."
+        },
+        {
+          "translation": "Món này trông ngon quá, tôi cũng phải ăn thử một lần xem sao mới được."
+        },
+        {
+          "translation": "Trời lạnh quá nên tôi chắc phải mặc quần áo ấm hơn thôi."
+        }
+      ]
+    },
+    "ko_아어여서는_70": {
+      "title": "아/어/여서는 안 되다 (Không được làm gì: cấm đoán)",
+      "shortExplanation": "Cấu trúc biểu thị sự ngăn cấm, không được phép thực hiện một hành vi nào đó theo luật lệ, đạo đức hoặc quy tắc xã hội ('không được...').",
+      "longExplanation": "'아/어/여서는 안 되다' dùng để diễn đạt sự cấm đoán một cách trang trọng và kiên quyết. Cấu trúc này nhấn mạnh rằng nếu thực hiện hành động ở vế trước thì sẽ dẫn tới hậu quả tiêu cực hoặc vi phạm nguyên tắc, chuẩn mực ('không được phép làm...'). Đi kèm với thân động từ, biến đổi đuôi nguyên âm theo quy tắc 아/어/여.",
+      "formation": "Thân động từ + 아/어/여서 + 는 안 되다",
+      "examples": [
+        {
+          "translation": "Ở bệnh viện này không được hút thuốc lá, điều đó rất có hại cho sức khỏe."
+        },
+        {
+          "translation": "Không được tiết lộ chuyện bí mật cho người khác biết, bạn có thể bị mất lòng tin đấy."
+        },
+        {
+          "translation": "Trong giờ thi không được nói chuyện với bạn, hành vi đó có thể bị coi là gian lận."
+        },
+        {
+          "translation": "Không nên làm bài tập qua loa cho thật nhanh, nếu chưa hiểu thì nhất định phải hỏi thầy cô."
+        }
+      ]
+    },
+    "ko_아어여_71": {
+      "title": "아/어/여 주세요 (Xin hãy làm giúp tôi: nhờ vả lịch sự)",
+      "shortExplanation": "Cấu trúc dùng để yêu cầu, nhờ vả đối phương thực hiện một hành động nào đó giúp cho mình một cách lịch sự, nhã nhặn ('xin hãy làm giúp tôi').",
+      "longExplanation": "'아/어/여 주세요' là dạng tôn kính kết hợp từ động từ bổ trợ '주다' (cho, làm giúp) và đuôi kết thúc câu lịch sự '-세요'. Cấu trúc này dùng khi người nói muốn người nghe làm một việc gì đó mang lại lợi ích cho bản thân người nói hoặc người khác một cách tế nhị, nhã nhặn ('xin hãy làm ơn...', 'vui lòng làm giúp...').",
+      "formation": "Thân động từ hành động + 아/어/여 + 주세요",
+      "examples": [
+        {
+          "translation": "Xin hãy tìm giúp tôi một nơi mà chúng tôi có thể ở cùng nhau, tôi muốn cùng bạn mình đi du lịch Hàn Quốc."
+        },
+        {
+          "translation": "Xin hãy tìm giúp tôi chỗ sai trong câu này, tôi không biết nên rất cần được giúp đỡ."
+        },
+        {
+          "translation": "Trên đường về nhà làm ơn mua giúp tôi ít sữa nhé, ở nhà đang hết sữa rồi."
+        },
+        {
+          "translation": "Xin vui lòng gửi thư trả lời lại email này, tôi cần có câu trả lời sớm."
+        }
+      ]
+    },
+    "ko_아어여_72": {
+      "title": "아/어/여 드리다 (Kính ngữ: làm giúp cho, dâng tặng hành động)",
+      "shortExplanation": "Dạng kính ngữ (khiêm nhường ngữ) của '아/어/여 주다', dùng khi người nói thực hiện một hành động nào đó giúp đỡ người bề trên hoặc khách hàng.",
+      "longExplanation": "'아/어/여 드리다' là dạng khiêm nhường tôn kính của cấu trúc '아/어/여 주다'. Khi hành động của người nói hướng tới người có địa vị cao hơn, người lớn tuổi hơn, hoặc khách hàng để thể hiện sự tôn trọng tối đa, ta thay động từ '주다' bằng '드리다'. Thường đi kèm với tiểu từ kính ngữ '께' sau người nhận hành động.",
+      "formation": "Thân động từ hành động + 아/어/여 드리다",
+      "examples": [
+        {
+          "translation": "Để tiện thông báo cho bạn, tôi xin được gửi lại số điện thoại của mình."
+        },
+        {
+          "translation": "Chúng tôi luôn nỗ lực hết mình để cung cấp dịch vụ tốt hơn nữa tới quý khách hàng."
+        },
+        {
+          "translation": "Tôi đã viết một bức thư gửi tặng mẹ."
+        },
+        {
+          "translation": "Tôi không thể không truyền dạy những tri thức quý báu cho các học sinh của mình."
+        }
+      ]
+    },
+    "ko_다니다_73": {
+      "title": "다니다 (Động từ: đi lại thường xuyên, đi học, đi làm)",
+      "shortExplanation": "Động từ biểu thị việc đi lại một nơi nào đó nhiều lần theo thói quen định kỳ, chẳng hạn như đi học hoặc đi làm.",
+      "longExplanation": "'다니다' là động từ trong tiếng Hàn chỉ hành động di chuyển qua lại nhiều lần một cách có quy luật giữa nơi xuất phát và điểm đến. Nó tương đương với 'đi học' ('학교에 다니다'), 'đi làm' ('회사에 다니다'), hoặc 'thường xuyên lui tới' một địa điểm nào đó ('체육관에 다니다'). Khác với '가다' (chỉ việc đi một lần về phía trước), '다니다' nhấn mạnh vào tính chu kỳ, thói quen lặp đi lặp lại.",
+      "formation": "Danh từ nơi chốn + 에 다니다 / Thân động từ + (으)러 다니다",
+      "examples": [
+        {
+          "translation": "Tôi thường đi đến phòng gym tập thể dục từ sáng sớm mỗi ngày nên đã thành thói quen, nhờ thế mà thể lực của tôi đã tốt lên nhiều."
+        },
+        {
+          "translation": "Để nghe giảng, học sinh phải đến trường đi học mỗi ngày, có như vậy thì mới có thể học tập đàng hoàng được."
+        },
+        {
+          "translation": "Cứ mỗi dịp cuối tuần tôi lại cùng bạn bè lui tới các quán cà phê và trải qua những giờ phút vui vẻ, vì thế nên tôi có rất nhiều kỷ niệm đẹp."
+        },
+        {
+          "translation": "Nếu muốn làm việc ở công ty này thì hàng ngày bạn phải đến văn phòng làm việc, có vậy thì mới xử lý công việc được chứ."
+        }
+      ]
+    },
+    "ko_아어여_74": {
+      "title": "아/어/여 가다 (Động từ bổ trợ: tiếp tục tiến hành, dần dần hướng về tương lai)",
+      "shortExplanation": "Động từ bổ trợ biểu thị một hành động hoặc trạng thái đang tiếp tục tiến triển dần dần từ hiện tại hướng về tương lai ('cứ tiếp tục...').",
+      "longExplanation": "'아/어/여 가다' là cấu trúc động từ bổ trợ diễn tả sự phát triển, duy trì của một hành động hoặc sự biến chuyển trạng thái từ mốc thời gian hiện tại tiếp diễn tới tương lai xa hơn ('tiếp tục làm...', 'ngày càng...'). Cấu trúc này đối lập với '아/어/여 오다' (vốn diễn tả quá trình kéo dài từ quá khứ cho tới hiện tại).",
+      "formation": "Thân động từ / Thân tính từ + 아/어/여 가다",
+      "examples": [
+        {
+          "translation": "Càng ngày thời tiết lại càng đang trở nên lạnh dần đi."
+        },
+        {
+          "translation": "Tôi thấy vui vì dường như thực lực của mình đang ngày càng tiến bộ lên."
+        },
+        {
+          "translation": "Nếu cứ tiếp tục kiên trì luyện tập thì một ngày nào đó bạn chắc chắn sẽ trở thành dân chuyên nghiệp thôi."
+        },
+        {
+          "translation": "Tôi vừa tiếp tục suy ngẫm sâu về vấn đề đó, vừa từng bước một tìm kiếm phương án giải quyết."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_으면서eumyeonseoWhileand_60": {
+      "title": "(으)면서（连接词尾：一边……一边……、同时）",
+      "shortExplanation": "连接词尾，用于表示两个动作或状态同时发生，相当于“一边……一边……”、“同时”。",
+      "longExplanation": "“-(으)면서”是表示同时进行或兼备两种状态的连接词尾，相当于汉语的“一边……一边……”、“同时……而且……”。当前后两个动作或状态同时发生，且主语必须一致时使用。词干末尾有收音（辅音）时接“-으면서”，无收音（元音）或收音为“ㄹ”时接“-면서”。",
+      "formation": "词干有收音的动词 + 으면서 / 词干无收音或收音为ㄹ的动词 + 면서",
+      "examples": [
+        {
+          "translation": "我一边看电视一边吃饭，所以没能聊天。"
+        },
+        {
+          "translation": "她正在公交车上一边听音乐一边看书。"
+        },
+        {
+          "translation": "最近我弟弟一边在学校学习，一边还在做兼职。"
+        },
+        {
+          "translation": "我一边听播客一边记录新单词，想要提高听力水平。"
+        }
+      ]
+    },
+    "ko_다가_61": {
+      "title": "다가（连接词尾：正做着……途中、正……突然）",
+      "shortExplanation": "连接词尾，表示某种动作或状态正在进行的中途突然中断，并转换到另一个动作或状态。",
+      "longExplanation": "“-다가”是表示动作中断或状态转换的连接词尾。表示前面的动作或状态还在进行中，突然中止并转入后面的动作或状态，相当于“正……的时候突然……”、“做着做着……”。通常前后分句的主语是一致的。也可用于两个动作或状态反复交替发生的情形。",
+      "formation": "动词词干 / 形容词词干 + 다가",
+      "examples": [
+        {
+          "translation": "我正读着书，感到困倦就睡着了。"
+        },
+        {
+          "translation": "我去餐馆正吃着饭，遇到了朋友。"
+        },
+        {
+          "translation": "我正在听音乐，突然来电话了。"
+        },
+        {
+          "translation": "我正在学习，电脑突然关机了，吓了我一跳。"
+        }
+      ]
+    },
+    "ko_아어여_62": {
+      "title": "아/어/여 보이다（看起来、显得）",
+      "shortExplanation": "附在形容词词干之后，表示通过外表观察而作出的推测或感觉，相当于“看起来……”、“显得……”。",
+      "longExplanation": "“-아/어/여 보이다”接在形容词词干后，用于表达说话人根据外部视力观察所获得的第一印象、感受或推测。相当于汉语的“看起来……”、“显得……”。如果词干末尾元音是“ㅏ”或“ㅗ”，使用“-아 보이다”；其余元音使用“-어 보이다”；以“하다”结尾的形容词则变为“-해 보이다”。",
+      "formation": "形容词词干 + 아/어/여 보이다（阳性元音ㅏ/ㅗ + 아 보이다，阴性元音 + 어 보이다，하다 → 해 보이다）",
+      "examples": [
+        {
+          "translation": "妈妈看起来很幸福，大概是听到了什么好消息吧。"
+        },
+        {
+          "translation": "那个人看起来总是很亲切，但实际上并不是那样。"
+        },
+        {
+          "translation": "这个房间看起来太小了，但如果装修布置得当，完全够用了。"
+        },
+        {
+          "translation": "你看起来总是一副很忙的样子，过得怎么样？"
+        }
+      ]
+    },
+    "ko_아어여_63": {
+      "title": "아/어/여 버리다（辅助动词：彻底……了、……掉了、遗憾）",
+      "shortExplanation": "辅助动词，表示某个动作彻底完成，通常带有遗憾、惋惜，或是轻松释怀的情感色彩。",
+      "longExplanation": "“-아/어/여 버리다”附在动词词干之后，表示动作已经彻底完成、毫无残留。依据具体语境，它既可以表达因未料到或不希望发生的结局而产生的惋惜、懊悔心理（相当于“……掉了”、“……了”），也可以表达终于解决掉某件事情后的轻松和释怀感。",
+      "formation": "动词词干 + 아/어/여 버리다（阳性元音ㅏ/ㅗ + 아 버리다，阴性元音 + 어 버리다，하다 → 해 버리다）",
+      "examples": [
+        {
+          "translation": "我等得筋疲力尽，结果不小心睡着了，没能在约定的时间见到朋友。"
+        },
+        {
+          "translation": "他因为压力太大把一切都忘得一干二净，但那反倒成了反转。"
+        },
+        {
+          "translation": "我们虽然对所有问题都进行了分析，但最终还是彻底放弃了一切。"
+        },
+        {
+          "translation": "周末虽然到了，但不巧的是我把所有作业都赶着做完了，根本没时间休息。"
+        }
+      ]
+    },
+    "ko_아어여_64": {
+      "title": "아/어/여 놓다（辅助动词：做好……放着、预先做好）",
+      "shortExplanation": "辅助动词，表示某个动作完成后，其所产生的结果状态一直保持下去（“预先做好……”、“做完放着”）。",
+      "longExplanation": "“-아/어/여 놓다”接在动作动词词干后，表示事先完成某项动作，并有意将其产生的结果状态维持下去，以备后续之需。相当于汉语的“……好放着”、“预先做好……”。与“-아/어 두다”意思基本相近。",
+      "formation": "动作动词词干 + 아/어/여 놓다（阳性元音ㅏ/ㅗ + 아 놓다，阴性元音 + 어 놓다，하다 → 해 놓다）",
+      "examples": [
+        {
+          "translation": "今天我早早回到了家，预先做好了晚餐，晚上就能舒舒服服地吃了。"
+        },
+        {
+          "translation": "我们在办理入住前就已经预订好了酒店房间，所以直接就能进去了。"
+        },
+        {
+          "translation": "他把今天的计划全都制定好了，结果却什么也没做。"
+        },
+        {
+          "translation": "我为了考试已经把所有内容都复习好了，但考试却被取消了。"
+        }
+      ]
+    },
+    "ko_아어여_65": {
+      "title": "아/어/여 지다（变得、逐渐……：状态变化）",
+      "shortExplanation": "附在形容词词干之后，表示随时间推移某种性质或状态发生变化，相当于“变……”、“变得……”。",
+      "longExplanation": "“-아/어/여 지다”与形容词词干结合，将原本静态的形容词转化为表示状态动态变化的动词，相当于汉语的“变得……”、“渐渐……”。表示事物随着过程发展产生了新的性质或状态。词干末尾元音为“ㅏ/ㅗ”时加“-아 지다”，其他元音加“-어 지다”，“하다”则变为“-해 지다”。",
+      "formation": "形容词词干 + 아/어/여 지다（阳性元音ㅏ/ㅗ + 아 지다，阴性元音 + 어 지다，하다 → 해 지다）",
+      "examples": [
+        {
+          "translation": "天空暗了下来，看不太清路，去商店恐怕会很困难。"
+        },
+        {
+          "translation": "天气变冷了，变得不想出门了，只想待在家里呢。"
+        },
+        {
+          "translation": "今天遇到了辛苦的事情，心情一直好不起来。稍微休息一下转换下心情怎么样？"
+        },
+        {
+          "translation": "多亏了朋友，心情一下子好多了，以后要常常见面才行。"
+        }
+      ]
+    },
+    "ko_아어여_66": {
+      "title": "아/어/여 가지다 / 가지고 있다（拥有、具备、持有）",
+      "shortExplanation": "表示某人或某物拥有某种特征、品质、能力或关系，相当于“拥有”、“具备”、“持有”。",
+      "longExplanation": "“가지다”（常以“-가지고 있다”的形式出现）表示人或事物具备、拥有某种外观特征、能力、素质或人际关系，相当于汉语的“拥有”、“具有”、“持有”。另外在日常口语中，“-아/어 가지고”也常用作连接词尾，表示动作的先后承接或前因后果（“做完……之后……”、“因为……所以……”）。",
+      "formation": "名词 + 을/를 + 가지다 / 가지고 있다（或 动词/形容词词干 + 아/어 가지고）",
+      "examples": [
+        {
+          "translation": "她拥有一双美丽的眼睛，就像夜空的繁星一样闪烁。"
+        },
+        {
+          "translation": "我有很多好朋友，所以一点也不觉得孤单。"
+        },
+        {
+          "translation": "我们公司必须具备强大的竞争力，只有这样才能够成长发展。"
+        },
+        {
+          "translation": "他具备出色的能力，无论什么事情都能出色地完成。"
+        }
+      ]
+    },
+    "ko_으는편이다eunneunpyeonidaTendto_67": {
+      "title": "(으)ㄴ/는 편이다（算是、偏向于、属于……一类）",
+      "shortExplanation": "用于表达某人或事物倾向于某种特征、习惯或状态，并不绝对断言，相当于“算是……”、“属于比较……的”。",
+      "longExplanation": "“-(으)ㄴ/는 편이다”由表示倾向的依存名词“편”（边、方）与判定词“이다”组成，用于婉转表达说话人认为某事物在性质、习惯或特征上比较偏向于某种情况，相当于汉语的“算是比较……”、“属于……的一类”。与动词结合时用“-는 편이다”，与形容词结合时有收音用“-은 편이다”、无收音用“-ㄴ 편이다”，与名词结合用“-인 편이다”。",
+      "formation": "动词词干 + 는 편이다 / 词干有收音的形容词 + 은 편이다 / 词干无收音的形容词 + ㄴ 편이다 / 名词 + 인 편이다",
+      "examples": [
+        {
+          "translation": "他属于起得比较早的人，即使是周末也总是大清早起床。"
+        },
+        {
+          "translation": "我算是挺能吃辣的，非常辣的食物我也很享受。"
+        },
+        {
+          "translation": "我家弟弟/妹妹属于非常看重安全的一类人，所以总是系好安全带。"
+        },
+        {
+          "translation": "我算是经常看书的一类，尤其喜欢科幻小说。"
+        }
+      ]
+    },
+    "ko_는은_68": {
+      "title": "-(으)ㄴ/는데（连接词尾：提示背景、转折、对比）",
+      "shortExplanation": "连接词尾，用于提示后半句的背景情况、因果前提，或引出转折对比。",
+      "longExplanation": "“-(으)ㄴ/는데”是韩语中使用频率极高的连接词尾。它的主要功能有两个：一是为后文的说明、提问、命令或劝诱提供前提背景和情境提示；二是表达前后两项事实的对照或转折（相当于“……但是……”、“……然而……”）。动词或过去时态后接“-는데”，形容词词干有收音接“-은데”、无收音接“-ㄴ데”，名词后接“인데”。",
+      "formation": "动词词干 / 过去时词干 + 는데 / 词干有收音的形容词 + 은데 / 词干无收音的形容词 + ㄴ데 / 名词 + 인데",
+      "examples": [
+        {
+          "translation": "我还是个学生，但为了赚钱正在打工。"
+        },
+        {
+          "translation": "昨天我回到家里，结果一个人也没有。"
+        },
+        {
+          "translation": "现在正下着雨，但我没带伞，真是糟透了。"
+        },
+        {
+          "translation": "我很喜欢和大家聊天，但是因为太害羞了，所以觉得很不容易。"
+        }
+      ]
+    },
+    "ko_아어여야겠다_69": {
+      "title": "아/어/여야겠다（应该……了、得……了：决心与必要性）",
+      "shortExplanation": "表示说话人认为某件事情非常有必要去做，并由此下定决心或做出决定（“该……了”、“必须得……了”）。",
+      "longExplanation": "“-아/어/여야겠다”是由表示必要性的“-아/어/여야 하다”与表示意图意志的“-겠-”结合而成的惯用表现。用于说话人根据当前情况判断出某种行动的必要性，并表达自己下定决心一定要去做的意愿，相当于汉语的“我得……了”、“看来我必须……了”。",
+      "formation": "动词词干 / 形容词词干 + 아/어/여야겠다（阳性元音ㅏ/ㅗ + 아야겠다，阴性元音 + 어야겠다，하다 → 해야겠다）",
+      "examples": [
+        {
+          "translation": "我得赶快写完这份报告了，因为截止日期就是明天。"
+        },
+        {
+          "translation": "我们时间不多了，得打出租车了。"
+        },
+        {
+          "translation": "这道菜看起来很好吃，我也得尝一次看看。"
+        },
+        {
+          "translation": "天气太冷了，我得穿更暖和的衣服了。"
+        }
+      ]
+    },
+    "ko_아어여서는_70": {
+      "title": "아/어/여서는 안 되다（不能、不准、不可以：禁止）",
+      "shortExplanation": "用于表示社会规范、法律规则或说话人立场上的禁止，相当于“不能……”、“不准……”、“不可……”。",
+      "longExplanation": "“-아/어/여서는 안 되다”是由表示条件的连接词尾“-아/어/여서”加上强调助词“-는”，后接否定词“-안 되다”（不行）构成。用于严肃、明确地表明不准许或禁止做某件事。如果不遵守，则会被视为违背社会公德、法规或契约。相当于汉语的“决不能……”、“不可……”。",
+      "formation": "动词词干 + 아/어/여서 + 는 안 되다",
+      "examples": [
+        {
+          "translation": "在这家医院里绝对不能吸烟，这对健康极其有害。"
+        },
+        {
+          "translation": "不能把秘密事实说给别人听，否则可能会失去信任。"
+        },
+        {
+          "translation": "考试期间不得与朋友交谈，这可能会被视为不公正的行为。"
+        },
+        {
+          "translation": "做作业不能一味图快，如果有不理解的地方，一定要向老师请教。"
+        }
+      ]
+    },
+    "ko_아어여_71": {
+      "title": "아/어/여 주세요（请帮我做……：礼貌请求）",
+      "shortExplanation": "用于礼貌地请求或拜托对方为自己完成某动作，相当于“请帮我……”。",
+      "longExplanation": "“-아/어/여 주세요”由表示“给予”的辅助动词“주다”与尊称句尾“-세요”组合而成。用于说话人委婉、礼貌地拜托听话人为自己做某事，相当于汉语中的“请为我做……”、“请帮我……”。",
+      "formation": "动作动词词干 + 아/어/여 + 주세요",
+      "examples": [
+        {
+          "translation": "请帮我找一个我们可以住在一起的地方，我想和朋友一起去韩国旅游。"
+        },
+        {
+          "translation": "请帮我找出这句话里错误的地方，我不太懂所以需要帮助。"
+        },
+        {
+          "translation": "回家的路上请帮我买点牛奶回来，家里的牛奶不够了。"
+        },
+        {
+          "translation": "请尽快回复这封邮件，我马上需要得到答复。"
+        }
+      ]
+    },
+    "ko_아어여_72": {
+      "title": "아/어/여 드리다（为您做……、敬奉：谦称与敬语）",
+      "shortExplanation": "“아/어/여 주다”的谦称（敬语）形式，表示自己为长辈、上级或值得尊敬的人提供帮助或服务（“为您做……”）。",
+      "longExplanation": "“-아/어/여 드리다”是辅助动词“-아/어/여 주다”的客气谦逊说法（谦让语）。当说话人为了长辈、上司、顾客或尊贵的对象做出某种善意行为时使用，旨在通过贬抑自身行为来抬高对方。接受该行为的对象后面通常搭配敬语助词“께”。",
+      "formation": "动作动词词干 + 아/어/여 드리다",
+      "examples": [
+        {
+          "translation": "为了方便告知您，我把我的电话号码留给您。"
+        },
+        {
+          "translation": "为了给尊贵的顾客提供更优质的服务，我们始终在不懈努力。"
+        },
+        {
+          "translation": "我给母亲写了一封信。"
+        },
+        {
+          "translation": "我怎能不把优质的知识传授给学生们呢。"
+        }
+      ]
+    },
+    "ko_다니다_73": {
+      "title": "다니다（动词：常去、上学、上班、往返）",
+      "shortExplanation": "表示有规律地、习惯性地经常往返于某一固定场所，如上学、上班、去健身房等。",
+      "longExplanation": "“다니다”是韩语中表示习惯性、周期性往返于某一地点的固有词动词。与单纯表示单次定向移动的“가다”（去）不同，“다니다”强调“常去”、“通学”、“通勤”的概念。常见用法如“학교에 다니다”（上学）、“회사에 다니다”（上班/在公司工作）以及“체육관에 다니다”（常去健身房锻炼）。",
+      "formation": "地点名词 + 에 다니다 / 动词词干 + (으)러 다니다",
+      "examples": [
+        {
+          "translation": "我每天早上一大早去健身房锻炼，久而久之养成了习惯，体能也变好了。"
+        },
+        {
+          "translation": "为了听课，学生们每天都必须去学校上学，只有这样才能好好学习。"
+        },
+        {
+          "translation": "我每个周末都和朋友们常去咖啡厅度过愉快的时光，所以留下了许多回忆。"
+        },
+        {
+          "translation": "要想在这家公司工作，就得每天去办公室上班，这样才能处理业务啊。"
+        }
+      ]
+    },
+    "ko_아어여_74": {
+      "title": "아/어/여 가다（辅助动词：逐渐……下去、继续进行）",
+      "shortExplanation": "辅助动词，表示某个动作或状态从现在开始持续进行并向未来延伸，相当于“……下去”、“逐渐……”。",
+      "longExplanation": "“-아/어/여 가다”是韩语中表示时间进程的辅助动词结构。它表示某种行为或变化从说话的当下时间点开始，不断向着未来持续延伸或深化，相当于汉语中的“……下去”、“渐渐……起来”。与之相对的是“-아/어/여 오다”，后者表示从过去一直持续进行到现在。",
+      "formation": "动词词干 / 形容词词干 + 아/어/여 가다",
+      "examples": [
+        {
+          "translation": "随着日子一天天过去，天气正变得越来越冷了。"
+        },
+        {
+          "translation": "感觉自己的实力正在逐渐提高，心里很高兴。"
+        },
+        {
+          "translation": "如果继续坚持练习下去，总有一天能成为职业选手的。"
+        },
+        {
+          "translation": "我一边深入思考那个问题，一边有条不紊地寻找着解决办法。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_으면서eumyeonseoWhileand_60": {
+      "title": "(으)면서（接続語尾：〜しながら、〜しつつ）",
+      "shortExplanation": "2つの動作や状態が同時に並行して行われることを表す接続語尾です（「〜しながら」）。",
+      "longExplanation": "「-(으)면서」は、同一の主語が2つ以上の動作を同時に行ったり、2つの状態が同時に存在したりすることを表す接続語尾です。日本語の「〜しながら」に相当します。動詞の語幹末尾にパッチムがある場合は「-으면서」、パッチムがない場合や「ㄹ」パッチムの場合は「-면서」を付けます。前後の節で主語が同一でなければなりません。",
+      "formation": "パッチムのある動詞の語幹 ＋ 으면서 ／ パッチムのない動詞の語幹（またはㄹパッチム） ＋ 면서",
+      "examples": [
+        {
+          "translation": "私はテレビを見ながら食事をしました。そのため会話はできませんでした。"
+        },
+        {
+          "translation": "彼女はバスで音楽を聴きながら本を読んでいます。"
+        },
+        {
+          "translation": "最近、私の弟（妹）は学校の勉強をしながらアルバイトもしています。"
+        },
+        {
+          "translation": "私はポッドキャストを聴きながら新しい単語を書き留めています。リスニングの実力を伸ばしたいからです。"
+        }
+      ]
+    },
+    "ko_다가_61": {
+      "title": "다가（接続語尾：〜している途中で、〜しかけて）",
+      "shortExplanation": "ある動作や状態が進行している途中で中断され、別の動作や事態に移ることを表す接続語尾です。",
+      "longExplanation": "「-다가」は、先行する動作や状態が続いている途中でそれが中断され、後続の新しい動作や予期せぬ状況に切り替わることを表す接続語尾です。日本語の「〜している途中で」「〜しかけて」に相当します。通常、前後節の主語は同一人物になります。また、相反する動作が交互に繰り返される場合にも用いられます。",
+      "formation": "動詞・形容詞の語幹 ＋ 다가",
+      "examples": [
+        {
+          "translation": "私は本を読んでいる途中で眠くなって寝てしまいました。"
+        },
+        {
+          "translation": "食堂に行ってご飯を食べている最中に友達に会いました。"
+        },
+        {
+          "translation": "音楽を聴いていたら突然電話がかかってきました。"
+        },
+        {
+          "translation": "私は勉強していたら急にパソコンの電源が切れて、とても驚きました。"
+        }
+      ]
+    },
+    "ko_아어여_62": {
+      "title": "아/어/여 보이다（〜に見える、〜そうだ）",
+      "shortExplanation": "形容詞の語幹に付き、話者が対象の外見や様子を見て感じた印象・推測を表します（「〜に見える」「〜そうに見える」）。",
+      "longExplanation": "「-아/어/여 보이다」は、対象の容姿や外見、表情などを見た話し手が、主観的な印象や直感的な判断を述べる際に用いる表現です。日本語の「〜に見える」「〜そうだ」に相当します。語幹の母音によって、陽母音（ㅏ, ㅗ）には「-아 보이다」、陰母音には「-어 보이다」、하다形容詞には「-해 보이다」を使い分けます。",
+      "formation": "形容詞の語幹 ＋ 아/어/여 보이다（陽母音ㅏ/ㅗ ＋ 아 보이다、陰母音 ＋ 어 보이다、하다 → 해 보이다）",
+      "examples": [
+        {
+          "translation": "お母さんは幸せそうに見えますが、たぶん良い知らせを聞いたみたいですね。"
+        },
+        {
+          "translation": "あの人はいつも親切そうに見えますが、実際はそうではありません。"
+        },
+        {
+          "translation": "この部屋はとても狭そうに見えますが、インテリアを工夫すれば十分に使う価値があります。"
+        },
+        {
+          "translation": "あなたはいつも忙しそうに見えるけれど、元気に過ごしている？"
+        }
+      ]
+    },
+    "ko_아어여_63": {
+      "title": "아/어/여 버리다（補助動詞：〜してしまう、すっかり〜する）",
+      "shortExplanation": "動作が完全に完了したことを表し、それに伴う「残念・後悔」や「すっきりした開放感」のニュアンスを含む補助動詞です。",
+      "longExplanation": "「-아/어/여 버리다」は動詞の語幹に付き、動作が完全に終わったことを強調する表現です。日本語の「〜してしまう」「〜してしまった」に相当します。望ましくない事態が起きてしまったことに対する「後悔・無念」を表す場合と、負担だった仕事などを終えて「せいせいした・すっきりした」という開放感を表す場合があります。",
+      "formation": "動詞の語幹 ＋ 아/어/여 버리다（陽母音ㅏ/ㅗ ＋ 아 버리다、陰母音 ＋ 어 버리다、하다 → 해 버리다）",
+      "examples": [
+        {
+          "translation": "私は待ちくたびれて寝てしまい、約束の時間に友達に会えませんでした。"
+        },
+        {
+          "translation": "彼はストレスのあまりすべてを忘れてしまいましたが、それが意外な展開となりました。"
+        },
+        {
+          "translation": "私たちは問題をすべて分析してみましたが、結局すべてを諦めてしまいました。"
+        },
+        {
+          "translation": "週末が来ましたが、あいにく私はすべての課題を片付けてしまって、休む時間がありません。"
+        }
+      ]
+    },
+    "ko_아어여_64": {
+      "title": "아/어/여 놓다（補助動詞：〜しておく、〜してある）",
+      "shortExplanation": "ある動作を行った後、その結果の状態をそのまま維持・持続させておくことを表す補助動詞です（「〜しておく」）。",
+      "longExplanation": "「-아/어/여 놓다」は、あらかじめ動作を完了させておき、その完了した結果の状態をそのまま放置・維持していることを表します。日本語の「〜しておく」「〜してある」に相当します。同様の補助動詞「-아/어 두다」とほぼ同義で用いられ、次の行動への準備や事後放置のニュアンスを持ちます。",
+      "formation": "動作動詞の語幹 ＋ 아/어/여 놓다（陽母音ㅏ/ㅗ ＋ 아 놓다、陰母音 ＋ 어 놓다、하다 → 해 놓다）",
+      "examples": [
+        {
+          "translation": "今日は家に早く帰ってきたので、夕飯を作っておきました。夜に気楽に食べられます。"
+        },
+        {
+          "translation": "私たちはチェックインする前にホテルの部屋を予約しておきました。そのためすぐに入ることができました。"
+        },
+        {
+          "translation": "彼は今日の予定をすべて立てておいたのに、何もしませんでした。"
+        },
+        {
+          "translation": "私は試験のためにすべての勉強を済ませておいたのですが、試験が中止になってしまいました。"
+        }
+      ]
+    },
+    "ko_아어여_65": {
+      "title": "아/어/여 지다（〜くなる、〜になる：状態の変化）",
+      "shortExplanation": "形容詞の語幹に付き、時間の経過に伴って状態や性質が変化することを表します（「〜くなる」「〜になる」）。",
+      "longExplanation": "「-아/어/여 지다」は形容詞の語幹に結合して、その性質や状態が時間の経過とともにその方向へと変化することを表す表現です。日本語の「（寒）くなる」「（きれい）になる」に相当します。陽母音語幹には「-아 지다」、陰母音語幹には「-어 지다」、하다動詞・形容詞には「-해 지다」を用います。",
+      "formation": "形容詞の語幹 ＋ 아/어/여 지다（陽母音ㅏ/ㅗ ＋ 아 지다、陰母音 ＋ 어 지다、하다 → 해 지다）",
+      "examples": [
+        {
+          "translation": "空が暗くなって道がよく見えません。お店まで行くのは大変そうです。"
+        },
+        {
+          "translation": "天気が寒くなって出かけるのが嫌になりました。家の中にばかりいたいです。"
+        },
+        {
+          "translation": "今日は大変なことがあって気分が良くなりませんでした。少し休んで気分転換してみてはどうですか？"
+        },
+        {
+          "translation": "友達のおかげで気分がずいぶん良くなりました。頻繁に会わないといけませんね。"
+        }
+      ]
+    },
+    "ko_아어여_66": {
+      "title": "아/어/여 가지다 / 가지고 있다（〜を持つ、所有・具備する）",
+      "shortExplanation": "人や物が特定の特質、能力、性質、人間関係などを「持っている」「備えている」ことを表す表現です。",
+      "longExplanation": "「가지다」（日常的には「-가지고 있다」の形で多用）は、人や対象が特定の外見的特徴、才能、能力、競争力などを「持っている」「備えている」ことを表します。また、口語表現における接続表現「-아/어 가지고」は、先行動作の結果や原因・理由を表す際にも極めて広く使われます。",
+      "formation": "名詞 ＋ 을/를 ＋ 가지다 / 가지고 있다（または 動詞・形容詞の語幹 ＋ 아/어 가지고）",
+      "examples": [
+        {
+          "translation": "彼女は夜空の星のようにきらめく美しい目を持っています。"
+        },
+        {
+          "translation": "私は良い友達がたくさんいるので寂しくありません。"
+        },
+        {
+          "translation": "我が社は強力な競争力を持たなければなりません。そうでなければ成長できないからです。"
+        },
+        {
+          "translation": "彼は優れた能力を持っているので、どんな仕事でもうまくやり遂げることができます。"
+        }
+      ]
+    },
+    "ko_으는편이다eunneunpyeonidaTendto_67": {
+      "title": "(으)ㄴ/는 편이다（〜の方だ、〜な傾向がある）",
+      "shortExplanation": "物事の性質や人の傾向・習慣が概ねどちらか一方に傾いていることを控えめに表します（「〜な方だ」）。",
+      "longExplanation": "「-(으)ㄴ/는 편이다」は、ある事実や傾向を断定的に言うのを避け、「どちらかといえば〜の部類に入る」「比較的〜な方だ」と遠回しに表現する文法です。動詞には「-는 편이다」、形容詞の語幹末にパッチムがあれば「-은 편이다」、なければ「-ㄴ 편이다」、名詞には「-인 편이다」を接続します。",
+      "formation": "動詞の語幹 ＋ 는 편이다 ／ パッチムのある形容詞の語幹 ＋ 은 편이다 ／ パッチムのない形容詞の語幹 ＋ ㄴ 편이다 ／ 名詞 ＋ 인 편이다",
+      "examples": [
+        {
+          "translation": "彼は早起きする方です。週末でもいつも朝早く起きます。"
+        },
+        {
+          "translation": "私は辛いものをよく食べる方です。とても辛い料理も楽しめます。"
+        },
+        {
+          "translation": "私の弟（妹）は安全を重視する方なので、いつもシートベルトを着用します。"
+        },
+        {
+          "translation": "私は本をよく読む方で、特にSF小説が好きです。"
+        }
+      ]
+    },
+    "ko_는은_68": {
+      "title": "-(으)ㄴ/는데（接続語尾：〜けれど、〜のに、前置き）",
+      "shortExplanation": "後続の文に対する前提や背景を提示したり、逆接・対比（「〜けれど」「〜のに」）を表す接続語尾です。",
+      "longExplanation": "「-(으)ㄴ/는데」は韓国語で最も頻繁に使われる接続語尾の一つです。後続の文で言いたいことの前提となる状況や背景をあらかじめ提示したり（「〜ですが」）、前後の内容が対照的・逆接的であることを表したりします（「〜けれど」「〜のに」）。動詞や過去形には「-는데」、形容詞には「-(으)ㄴ데」、名詞には「-인데」が接続します。",
+      "formation": "動詞の語幹・過去形 ＋ 는데 ／ パッチムのある形容詞の語幹 ＋ 은데 ／ パッチムのない形容詞の語幹 ＋ ㄴ데 ／ 名詞 ＋ 인데",
+      "examples": [
+        {
+          "translation": "まだ学生なのですが、お金を稼ぐためにアルバイトをしています。"
+        },
+        {
+          "translation": "昨日私が家に帰ってきたのですが、誰もいませんでした。"
+        },
+        {
+          "translation": "今雨が降っているのに傘を持ってこなかったので大変なことになりました。"
+        },
+        {
+          "translation": "私は人と話すのが好きなのですが、恥ずかしがり屋なので難しいです。"
+        }
+      ]
+    },
+    "ko_아어여야겠다_69": {
+      "title": "아/어/여야겠다（〜しなきゃ、〜しなければならない：意志・決意）",
+      "shortExplanation": "ある行動をする必要性や当為性を痛感し、そうしようという話し手の強い意志や決心を独り言のように表します（「〜しなきゃ」「〜しなければ」）。",
+      "longExplanation": "「-아/어/여야겠다」は、義務・必要性を表す「-아/어/여야 하다」に意志や推量を表す先語末語尾「-겠-」が結合した表現です。現状から判断して「これはもう〜しなければならない」「〜しよう」と自分の中で決意を固めるニュアンスを持ちます。日本語の「〜しなくちゃ」「〜することにしよう」に相当します。",
+      "formation": "動詞・形容詞の語幹 ＋ 아/어/여야겠다（陽母音ㅏ/ㅗ ＋ 아야겠다、陰母音 ＋ 어야겠다、하다 → 해야겠다）",
+      "examples": [
+        {
+          "translation": "このレポートを早く仕上げなければなりません。提出期限が明日ですから。"
+        },
+        {
+          "translation": "私たちは時間がありませんからタクシーに乗らなきゃいけませんね。"
+        },
+        {
+          "translation": "この料理は美味しそうに見えるので、私も一度食べてみなければなりませんね。"
+        },
+        {
+          "translation": "天気が寒いのでもっと暖かい服を着なきゃいけませんね。"
+        }
+      ]
+    },
+    "ko_아어여서는_70": {
+      "title": "아/어/여서는 안 되다（〜してはならない、〜してはいけない：禁止）",
+      "shortExplanation": "規則や社会道徳、常識に基づき、ある行為を行ってはならないという「禁止」を表す文法です（「〜してはならない」）。",
+      "longExplanation": "「-아/어/여서는 안 되다」は、条件を表す「-아/어/여서」に強調の助詞「-는」が付き、「안 되다（いけない、駄目だ）」が後続することで、強い禁止を表す表現です。日本語の「〜してはならない」「〜してはいけない」に相当します。公共のルールや法律、モラルに反する行為を戒める際に用いられます。",
+      "formation": "動詞の語幹 ＋ 아/어/여서 ＋ 는 안 되다",
+      "examples": [
+        {
+          "translation": "この病院ではタバコを吸ってはいけません。健康に非常に有害です。"
+        },
+        {
+          "translation": "秘密の事実を他人に話してはなりません。信頼を失う恐れがあります。"
+        },
+        {
+          "translation": "試験中に友達と話をしてはいけません。不正行為とみなされる可能性があります。"
+        },
+        {
+          "translation": "宿題をあまりに早く雑に終わらせてはいけません。理解できなければ必ず先生に質問しなければなりません。"
+        }
+      ]
+    },
+    "ko_아어여_71": {
+      "title": "아/어/여 주세요（〜してください：丁寧な依頼・頼み）",
+      "shortExplanation": "相手に対して自分のために何か行動をしてくれるよう、丁重に頼んだり依頼したりする表現です（「〜してください」）。",
+      "longExplanation": "「-아/어/여 주세요」は、補助動詞「주다（与える、〜してくれる）」に丁寧な命令・依頼の語尾「-세요」が結合した表現です。話し手のために何かを行ってくれるよう相手に丁重にお願いする際に用いられ、日本語の「〜してください」「〜してくださいませんか」に相当します。",
+      "formation": "動作動詞の語幹 ＋ 아/어/여 ＋ 주세요",
+      "examples": [
+        {
+          "translation": "一緒に泊まれる場所を探してください。友達と一緒に韓国を旅行したいです。"
+        },
+        {
+          "translation": "この文の間違っている部分を探してください。私がよく分からないので助けが必要です。"
+        },
+        {
+          "translation": "帰る途中で牛乳を買ってきてください。家に牛乳が足りません。"
+        },
+        {
+          "translation": "このメールに返信を送ってください。すぐに回答が必要です。"
+        }
+      ]
+    },
+    "ko_아어여_72": {
+      "title": "아/어/여 드리다（〜して差し上げる：謙譲表現）",
+      "shortExplanation": "「아/어/여 주다」の謙譲表現で、目上の人や敬意を払うべき相手のために何かをしてあげる際に用いる表現です（「〜して差し上げる」）。",
+      "longExplanation": "「-아/어/여 드리다」は「-아/어/여 주다（〜してあげる）」の謙譲表現です。話し手が目上の人や顧客など敬意を表すべき相手のために行動を起こす際に用いられ、日本語の「〜してお上げする」「〜して差し上げる」に相当します。動作の受け手には敬称の助詞「께（〜に・〜におかれましては）」を伴うのが一般的です。",
+      "formation": "動作動詞の語幹 ＋ 아/어/여 드리다",
+      "examples": [
+        {
+          "translation": "お知らせするために私の電話番号をあなたに差し上げます。"
+        },
+        {
+          "translation": "お客様により良いサービスをご提供できるよう、常に努力しております。"
+        },
+        {
+          "translation": "私は母に手紙を書いて差し上げました。"
+        },
+        {
+          "translation": "生徒たちに良い知識を教えて差し上げずにはいられません。"
+        }
+      ]
+    },
+    "ko_다니다_73": {
+      "title": "다니다（動詞：通う、行き来する、勤める）",
+      "shortExplanation": "学校や職場、習い事など、特定の場所に定期的・反復して行き来する「通う」ことを表す動詞です。",
+      "longExplanation": "「다니다」は、一度だけの移動を表す「가다（行く）」とは異なり、一定の目的を持って特定の場所に定期的・継続的に往復することを表す動詞です。日本語の「通う」「勤めている」「通学する」に相当します。よく使われる連語には「학교에 다니다（学校に通う）」「회사에 다니다（会社に勤める）」などがあります。",
+      "formation": "場所の名詞 ＋ 에 다니다 ／ 動詞の語幹 ＋ (으)러 다니다",
+      "examples": [
+        {
+          "translation": "私は毎朝早く運動しにジムに通っていたらすっかり習慣になり、体力が良くなりました。"
+        },
+        {
+          "translation": "授業を受けるために生徒たちは毎日学校に通わなければなりません。そうしてこそまともに勉強できます。"
+        },
+        {
+          "translation": "私は週末ごとに友達とカフェに通いながら楽しい時間を過ごしました。だから思い出がたくさんあります。"
+        },
+        {
+          "translation": "この会社で働くには毎日オフィスに通わなければなりません。そうしてこそ業務を処理できますからね。"
+        }
+      ]
+    },
+    "ko_아어여_74": {
+      "title": "아/어/여 가다（補助動詞：〜していく：動作の継続・進行）",
+      "shortExplanation": "ある動作や状態が現在から未来に向かって継続・進行していく過程を表す補助動詞です（「〜していく」）。",
+      "longExplanation": "「-아/어/여 가다」は、動作や状態の変化が基準時（主に現在）から未来に向かって絶え間なく続いていくことを表す補助動詞です。日本語の「〜していく」に相当します。過去から現在までの継続を表す「-아/어/여 오다（〜してくる）」と対をなす重要な文法表現です。",
+      "formation": "動詞・形容詞の語幹 ＋ 아/어/여 가다",
+      "examples": [
+        {
+          "translation": "日が経つにつれて天気がますます寒くなってきています。"
+        },
+        {
+          "translation": "だんだん実力が伸びていっているようで嬉しいです。"
+        },
+        {
+          "translation": "練習を続けていけば、いつかプロになれるはずです。"
+        },
+        {
+          "translation": "その問題についてじっくり考えを進めながら、着実に解決策を探しています。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_으면서eumyeonseoWhileand_60": {
+      "title": "(으)면서 (연결어미: 동시 동작, 동시 상태)",
+      "shortExplanation": "두 가지 이상의 동작이나 상태가 동시에 일어남을 나타내는 연결어미입니다.",
+      "longExplanation": "'-(으)면서'는 앞 절의 동작이나 상태가 뒤 절의 동작이나 상태와 동시에 일어남을 나타내는 연결어미입니다. 하나의 주어가 두 가지 행동을 동시에 수행할 때 주로 사용됩니다. 동사나 형용사의 어간 끝에 받침이 있으면 '-으면서'를 쓰고, 받침이 없거나 'ㄹ' 받침인 경우에는 '-면서'를 씁니다. 앞뒤 절의 주어는 반드시 일치해야 합니다.",
+      "formation": "받침 있는 동사 어간 + 으면서 / 받침 없는 동사 어간(또는 'ㄹ' 받침) + 면서",
+      "examples": [
+        {
+          "translation": "나는 텔레비전을 보면서 식사를 했어요. 그래서 대화는 못 했죠."
+        },
+        {
+          "translation": "그녀는 버스에서 음악을 들으면서 책을 읽고 있어요."
+        },
+        {
+          "translation": "요즘 내 동생은 학교 공부를 하면서 아르바이트도 하고 있어요."
+        },
+        {
+          "translation": "나는 팟캐스트를 들으면서 새 단어를 기록하고 있어요. 듣기 실력을 늘리려구요."
+        }
+      ]
+    },
+    "ko_다가_61": {
+      "title": "다가 (연결어미: 동작 중단 및 전환)",
+      "shortExplanation": "어떤 동작이나 상태가 진행되던 도중에 중단되고 다른 동작이나 상태로 전환됨을 나타내는 연결어미입니다.",
+      "longExplanation": "'-다가'는 앞 절의 행동이나 상태가 끝나지 않고 진행되는 도중에 다른 동작이나 상태로 바뀜을 나타내는 연결어미입니다. 주로 앞의 행위가 중단되고 새로운 사건이나 행동이 일어날 때 쓰이며, 앞뒤 절의 주어는 대개 일치합니다. 상반되는 두 동작이나 상태가 번갈아 나타날 때도 쓰입니다.",
+      "formation": "동사 어간 / 형용사 어간 + 다가",
+      "examples": [
+        {
+          "translation": "저는 책을 읽다가 잠이 와서 잠들었어요."
+        },
+        {
+          "translation": "식당에 가서 밥을 먹다가 친구를 만났어요."
+        },
+        {
+          "translation": "음악을 듣다가 갑자기 전화가 왔어요."
+        },
+        {
+          "translation": "저는 공부를 하다가 컴퓨터가 꺼져서 깜짝 놀랐어요."
+        }
+      ]
+    },
+    "ko_아어여_62": {
+      "title": "아/어/여 보이다 (추측 및 외양 표현)",
+      "shortExplanation": "형용사 어간 뒤에 붙어 대상을 눈으로 관찰하고 느끼는 외양이나 겉모습, 인상을 나타내는 표현입니다.",
+      "longExplanation": "'-아/어/여 보이다'는 형용사의 어간에 붙어, 화자가 사물이나 사람의 겉모습을 보고 추측하거나 그렇게 느껴지는 상태를 표현할 때 쓰입니다. 양성 모음(ㅏ, ㅗ) 뒤에는 '-아 보이다', 음성 모음 뒤에는 '-어 보이다', '하다'로 끝나는 형용사 뒤에는 '-해 보이다'를 결합합니다.",
+      "formation": "형용사 어간 + 아/어/여 보이다 (양성모음 ㅏ/ㅗ + 아 보이다, 음성모음 + 어 보이다, 하다 → 해 보이다)",
+      "examples": [
+        {
+          "translation": "엄마는 행복해 보이는데, 아마 좋은 소식을 들었나 봐요."
+        },
+        {
+          "translation": "그 사람은 늘 친절해 보이지만 실제로는 그렇지 않아요."
+        },
+        {
+          "translation": "이 방은 너무 작아 보이지만, 인테리어를 잘 하면 충분히 쓸 만해요."
+        },
+        {
+          "translation": "너는 항상 바쁜 것 같아 보이는데, 어떻게 지내?"
+        }
+      ]
+    },
+    "ko_아어여_63": {
+      "title": "아/어/여 버리다 (보조동사: 완료, 아쉬움 및 후련함)",
+      "shortExplanation": "동작이 완전히 끝났음을 나타내며, 그 결과에 대해 아쉬움이나 섭섭함 또는 후련함을 표현하는 보조용언입니다.",
+      "longExplanation": "'-아/어/여 버리다'는 동사 뒤에 붙어 어떤 동작이 완전히 마무리되었음을 나타내는 보조동사입니다. 상황에 따라 뜻하지 않게 일이 발생하여 생기는 아쉬움이나 섭섭한 감정을 나타내기도 하고, 부담스럽던 일을 끝내어 홀가분하고 시원한 마음을 드러내기도 합니다.",
+      "formation": "동사 어간 + 아/어/여 버리다 (양성모음 ㅏ/ㅗ + 아 버리다, 음성모음 + 어 버리다, 하다 → 해 버리다)",
+      "examples": [
+        {
+          "translation": "저는 기다리다가 지쳐서 잠들어 버렸어요, 약속 시간에 친구를 못 만났어요."
+        },
+        {
+          "translation": "그는 스트레스를 받아서 모든 것을 잊어버렸어요, 그런데 그게 반전이었어요."
+        },
+        {
+          "translation": "우리는 문제를 모두 분석해 봤지만, 결국 모든 것을 포기해 버렸어요."
+        },
+        {
+          "translation": "주말이 왔지만, 불행히도 저는 모든 과제를 끝내 버렸어요. 그래서 쉴 시간이 없어요."
+        }
+      ]
+    },
+    "ko_아어여_64": {
+      "title": "아/어/여 놓다 (보조동사: 동작 완료 후 상태 지속)",
+      "shortExplanation": "어떤 행동을 끝내고 그 결과를 그대로 유지하거나 다음 상황을 위해 미리 해 둠을 나타내는 보조동사입니다.",
+      "longExplanation": "'-아/어/여 놓다'는 동사 뒤에 결합하여, 어떤 동작을 완료한 뒤 그 행위로 인해 만들어진 결과나 상태를 그대로 지속시키거나 미리 준비해 둠을 나타냅니다. '-아/어 두다'와 뜻과 쓰임이 매우 유사합니다.",
+      "formation": "동사 어간 + 아/어/여 놓다 (양성모음 ㅏ/ㅗ + 아 놓다, 음성모음 + 어 놓다, 하다 → 해 놓다)",
+      "examples": [
+        {
+          "translation": "오늘은 집에 일찍 돌아와서 저녁 식사를 만들어 놓았어요. 저녁에 편하게 먹을 수 있어요."
+        },
+        {
+          "translation": "우리는 체크인하기 전에 호텔 방을 예약해 놓았어요. 그래서 바로 들어갈 수 있었어요."
+        },
+        {
+          "translation": "그는 오늘 계획을 다 짜 놓고는 아무것도 하지 않았어요."
+        },
+        {
+          "translation": "나는 시험을 위해 모든 공부를 해 놓았지만, 시험이 취소되었어요."
+        }
+      ]
+    },
+    "ko_아어여_65": {
+      "title": "아/어/여 지다 (상태의 변화 표현)",
+      "shortExplanation": "형용사 어간 뒤에 붙어 시간의 흐름에 따라 어떤 상태로 점차 변화해 감을 나타내는 문법입니다.",
+      "longExplanation": "'-아/어/여 지다'는 형용사의 어간에 결합하여 상태의 점진적인 변화를 나타내는 표현입니다. 정적인 성질이나 상태를 동적인 과정으로 바꾸어 '그렇게 되다'의 뜻을 갖게 됩니다. 양성 모음 뒤에는 '-아 지다', 음성 모음 뒤에는 '-어 지다', '하다' 형용사 뒤에는 '-해 지다'를 결합합니다.",
+      "formation": "형용사 어간 + 아/어/여 지다 (양성모음 ㅏ/ㅗ + 아 지다, 음성모음 + 어 지다, 하다 → 해 지다)",
+      "examples": [
+        {
+          "translation": "하늘이 어두워져서 길이 잘 안 보여요. 가게까지 가기 힘들겠어요."
+        },
+        {
+          "translation": "날씨가 추워져서 나가기가 싫어졌어요. 집에만 있고 싶네요."
+        },
+        {
+          "translation": "오늘은 힘든 일이 있어서 기분이 좋아지지 않았어요. 잠시 쉬면서 기분 전환하는 게 어떨까요?"
+        },
+        {
+          "translation": "친구 덕분에 기분이 한결 좋아졌어요. 자주 만나야겠어요."
+        }
+      ]
+    },
+    "ko_아어여_66": {
+      "title": "아/어/여 가지다 / 가지고 있다 (소유 및 특성 보유 표현)",
+      "shortExplanation": "사람이나 사물이 어떤 특성, 자질, 능력, 대상 등을 소유하거나 지니고 있음을 나타내는 표현입니다.",
+      "longExplanation": "'가지다'(주로 '가지고 있다'의 형태로 쓰임)는 사람이나 사물이 일정한 외모적 특징, 능력, 경쟁력, 성품 등을 지니고 있음을 나타내는 표현입니다. 한편 구어에서는 연결어미 '-아/어 가지고'의 형태로 쓰여 앞선 행동의 결과나 이유, 인과관계를 나타내는 용법으로도 자주 활용됩니다.",
+      "formation": "명사 + 을/를 + 가지다 / 가지고 있다 (또는 용언 어간 + 아/어 가지고)",
+      "examples": [
+        {
+          "translation": "그녀는 아름다운 눈을 가지고 있어요. 밤하늘 별처럼 반짝여요."
+        },
+        {
+          "translation": "저는 좋은 친구를 많이 가지고 있어서 외롭지 않아요."
+        },
+        {
+          "translation": "우리 회사는 강력한 경쟁력을 가져야 해요. 그래야 성장할 수 있거든요."
+        },
+        {
+          "translation": "그는 뛰어난 능력을 가지고 있어서 어떤 일이든 잘 해낼 수 있어요."
+        }
+      ]
+    },
+    "ko_으는편이다eunneunpyeonidaTendto_67": {
+      "title": "(으)ㄴ/는 편이다 (경향 및 성향 표현)",
+      "shortExplanation": "어떤 사실이나 성향이 어느 한쪽에 가깝거나 기울어져 있음을 완곡하게 나타내는 표현입니다.",
+      "longExplanation": "'-(으)ㄴ/는 편이다'는 의존명사 '편'을 사용하여 대상을 어떤 부류나 범주에 가깝다고 완곡하게 분류하여 표현할 때 씁니다. 단정적인 단언을 피하고 '대체로 그러한 경향이 있다'는 뉘앙스를 전달합니다. 동사 어간 뒤에는 '-는 편이다', 형용사 어간에 받침이 있으면 '-은 편이다', 없으면 '-ㄴ 편이다'를 결합합니다.",
+      "formation": "동사 어간 + 는 편이다 / 받침 있는 형용사 어간 + 은 편이다 / 받침 없는 형용사 어간 + ㄴ 편이다 / 명사 + 인 편이다",
+      "examples": [
+        {
+          "translation": "그는 일찍 일어나는 편이에요. 주말에도 항상 아침 일찍 일어나요."
+        },
+        {
+          "translation": "저는 매운 음식을 잘 먹는 편이에요. 아주 매운 음식도 즐겨요."
+        },
+        {
+          "translation": "우리 동생은 안전을 중시하는 편이에요, 그래서 항상 안전벨트를 착용해요."
+        },
+        {
+          "translation": "나는 책을 자주 읽는 편이에요, 특히 공상 과학 소설을 좋아해요."
+        }
+      ]
+    },
+    "ko_는은_68": {
+      "title": "-(으)ㄴ/는데 (연결어미: 배경 제시 및 대조)",
+      "shortExplanation": "뒤 절의 내용을 전개하기 위해 배경이나 상황을 미리 제시하거나, 대립되는 사실을 연결할 때 쓰는 연결어미입니다.",
+      "longExplanation": "'-(으)ㄴ/는데'는 뒤에 이어지는 진술, 질문, 요청, 권유 등을 위해 사전에 배경이나 상황을 설명해주거나, 서로 반대되거나 대조적인 사실을 이어줄 때 사용하는 다목적 연결어미입니다. 동사와 과거 시제 뒤에는 '-는데', 형용사 어간에 받침이 있으면 '-은데', 없으면 '-ㄴ데', 명사 뒤에는 '인데'를 결합합니다.",
+      "formation": "동사 어간 / 과거 시제 어간 + 는데 / 받침 있는 형용사 어간 + 은데 / 받침 없는 형용사 어간 + ㄴ데 / 명사 + 인데",
+      "examples": [
+        {
+          "translation": "아직 학생인데 돈을 벌려고 아르바이트를 하고 있어요."
+        },
+        {
+          "translation": "어제 내가 집에 왔는데 아무도 없었어요."
+        },
+        {
+          "translation": "지금 비가 오는데 우산을 안 가져와서 큰일이에요."
+        },
+        {
+          "translation": "저는 사람들과 얘기하는 것을 좋아하는데, 부끄러움이 많아서 어렵습니다."
+        }
+      ]
+    },
+    "ko_아어여야겠다_69": {
+      "title": "아/어/여야겠다 (의지 및 당위성 표현)",
+      "shortExplanation": "어떤 행동을 할 필요성이 있음을 깨닫고 그렇게 하겠다고 화자가 스스로 다짐하거나 의지를 나타내는 표현입니다.",
+      "longExplanation": "'-아/어/여야겠다'는 당위를 나타내는 '-아/어/여야 하다'와 의지를 나타내는 선어말어미 '-겠-'이 합쳐진 형태입니다. 화자가 직면한 상황을 고려하여 어떤 동작이나 행동이 꼭 필요하다고 판단하고, 그렇게 하겠다는 결심이나 의지를 드러낼 때 주로 쓰입니다.",
+      "formation": "동사 어간 / 형용사 어간 + 아/어/여야겠다 (양성모음 ㅏ/ㅗ + 아야겠다, 음성모음 + 어야겠다, 하다 → 해야겠다)",
+      "examples": [
+        {
+          "translation": "이 레포트를 빨리 완성해야겠어요. 제출 기한이 내일이거든요."
+        },
+        {
+          "translation": "우리는 시간이 없으니까 택시를 타야겠어요."
+        },
+        {
+          "translation": "이 음식이 맛있어 보이니까, 나도 한 번 먹어 봐야겠어요."
+        },
+        {
+          "translation": "날씨가 추워서 더 따뜻한 옷을 입어야겠어요."
+        }
+      ]
+    },
+    "ko_아어여서는_70": {
+      "title": "아/어/여서는 안 되다 (금지 및 규범 표현)",
+      "shortExplanation": "규칙, 법률, 도덕 규범 등에 비추어 볼 때 어떤 행위를 해서는 안 된다는 금지를 나타내는 표현입니다.",
+      "longExplanation": "'-아/어/여서는 안 되다'는 행위의 발생 조건을 나타내는 '-아/어/여서'에 보조사 '는'과 '안 되다'가 결합된 형태로, 어떤 행위를 실행하는 것이 법률이나 사회적 규범, 상식에 위배됨을 단호하게 금지할 때 사용합니다.",
+      "formation": "동사 어간 + 아/어/여서 + 는 안 되다",
+      "examples": [
+        {
+          "translation": "이 병원에서는 담배를 피워서는 안 됩니다. 건강에 매우 해롭습니다."
+        },
+        {
+          "translation": "비밀인 사실을 다른 사람에게 말해서는 안 됩니다. 신뢰를 잃을 수 있어요."
+        },
+        {
+          "translation": "시험 중에는 친구와 대화해서는 안 됩니다. 불공정한 행위로 간주될 수 있어요."
+        },
+        {
+          "translation": "숙제를 너무 빨리 해서는 안 돼요. 이해가 안 되면 꼭 선생님께 질문해야 해요."
+        }
+      ]
+    },
+    "ko_아어여_71": {
+      "title": "아/어/여 주세요 (정중한 부탁 및 요청)",
+      "shortExplanation": "상대방에게 자신을 위하여 어떤 행동을 해 줄 것을 공손하게 요청하거나 부탁할 때 쓰는 표현입니다.",
+      "longExplanation": "'-아/어/여 주세요'는 어떤 동작이 화자나 제3자에게 혜택을 주는 행위임을 나타내는 보조동사 '주다'에 공손한 명령 및 청유를 나타내는 어미 '-세요'가 결합된 표현입니다. 청자에게 정중하게 부탁하거나 호의를 바랄 때 가장 널리 쓰입니다.",
+      "formation": "동사 어간 + 아/어/여 + 주세요",
+      "examples": [
+        {
+          "translation": "같이 머물 수 있는 곳을 찾아 주세요. 제 친구와 함께 한국을 여행하고 싶어요."
+        },
+        {
+          "translation": "이 문장에서 틀린 부분을 찾아 주세요. 제가 몰라서 도움이 필요해요."
+        },
+        {
+          "translation": "집에 가는 길에 우유를 사 와 주세요. 집에 우유가 부족해요."
+        },
+        {
+          "translation": "이 메일에 답장을 보내 주세요. 곧 답변이 필요해요."
+        }
+      ]
+    },
+    "ko_아어여_72": {
+      "title": "아/어/여 드리다 (보조동사: 높임 및 겸양 표현)",
+      "shortExplanation": "'아/어/여 주다'의 겸양 및 높임 표현으로, 웃어른이나 존대의 대상에게 어떤 행동을 베풀어 줄 때 사용하는 보조동사입니다.",
+      "longExplanation": "'-아/어/여 드리다'는 '아/어/여 주다'의 상대방을 높이는 객체 높임(겸양) 표현입니다. 화자의 행위가 미치는 대상이 손윗사람이거나 고객 등 공경해야 할 사람일 때 사용하며, 이때 수혜자 명사 뒤에는 존칭 조사 '께'를 주로 동반합니다.",
+      "formation": "동사 어간 + 아/어/여 드리다",
+      "examples": [
+        {
+          "translation": "알려 드리기 위해 제 전화번호를 당신에게 드립니다."
+        },
+        {
+          "translation": "고객님께 더 좋은 서비스를 제공해 드리고자 항상 노력하고 있습니다."
+        },
+        {
+          "translation": "어머니께 편지를 써 드렸습니다."
+        },
+        {
+          "translation": "학생들에게 좋은 지식을 가르쳐 드리지 않을 수 없어요."
+        }
+      ]
+    },
+    "ko_다니다_73": {
+      "title": "다니다 (동사: 정기적 왕래 및 통학/출근)",
+      "shortExplanation": "학교, 직장, 특정 장소 등에 정기적이고 반복적으로 오고 감을 나타내는 동사입니다.",
+      "longExplanation": "'다니다'는 일회성의 이동을 나타내는 '가다'와 달리, 일정한 목적을 가지고 어떤 장소를 지속적이고 정기적으로 오가거나 왕래함을 뜻하는 동사입니다. '학교에 다니다(통학)', '회사에 다니다(출근/근무)', '체육관에 다니다'와 같이 일상적인 루틴이나 직업적 활동을 나타낼 때 핵심적으로 사용됩니다.",
+      "formation": "장소 명사 + 에 다니다 / 동사 어간 + (으)러 다니다",
+      "examples": [
+        {
+          "translation": "저는 매일 아침 일찍 운동하러 체육관에 다녔더니 습관이 되었어요. 그래서 체력이 좋아졌어요."
+        },
+        {
+          "translation": "수업을 듣기 위해 학생들은 매일 학교에 다녀야 합니다. 그래야 공부를 제대로 할 수 있어요."
+        },
+        {
+          "translation": "나는 친구들과 주말마다 카페에 다니면서 즐거운 시간을 보냈어요. 그래서 추억이 많아요."
+        },
+        {
+          "translation": "이 회사에서 일하려면 매일 사무실에 다녀야 해요. 그래야 업무를 처리할 수 있죠."
+        }
+      ]
+    },
+    "ko_아어여_74": {
+      "title": "아/어/여 가다 (보조동사: 지속 및 점진적 진행)",
+      "shortExplanation": "어떤 동작이나 상태가 현재의 시점에서부터 미래를 향해 계속 진행되거나 지속됨을 나타내는 보조동사입니다.",
+      "longExplanation": "'-아/어/여 가다'는 보조동사 '가다'를 사용하여, 어떤 행위나 상태의 변화가 현재의 기준 시점에서 출발하여 미래를 향해 계속 나아가거나 지속되는 과정을 나타냅니다. 과거에서 현재까지 이어져 온 지속을 나타내는 '-아/어/여 오다'와 대립되는 시간적 방향성을 지닙니다.",
+      "formation": "동사 어간 / 형용사 어간 + 아/어/여 가다",
+      "examples": [
+        {
+          "translation": "날이 갈수록 날씨가 더 추워져 가고 있어요."
+        },
+        {
+          "translation": "점점 실력이 늘어 가는 것 같아서 기뻐요."
+        },
+        {
+          "translation": "계속 연습해 가면 언젠가 프로가 될 수 있을 거예요."
+        },
+        {
+          "translation": "그 문제에 대해 생각해 가면서 차근차근 해결책을 찾고 있어요."
+        }
+      ]
+    }
+  }
+}

@@ -15,7 +15,7 @@ import { VocabularyService } from '../../vocabulary';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [CommonModule, BottomSheetComponent, IconComponent, EmptyStateComponent],
     templateUrl: './grammar-popup.component.html',
-    styleUrl: './grammar-popup.component.scss'
+    styleUrls: ['./grammar-popup.component.scss']
 })
 export class GrammarPopupComponent {
     private router = inject(Router);

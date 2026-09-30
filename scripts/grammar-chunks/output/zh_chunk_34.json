@@ -1,0 +1,622 @@
+{
+  "vi": {
+    "zh_name某某某_535": {
+      "title": "Họ + 某 / 某某 (Đại từ chỉ người: Ông/Bà X, mỗ, người mang họ...)",
+      "shortExplanation": "Đại từ đi liền sau họ của người để thay thế cho tên riêng cụ thể khi không tiện nói rõ hoặc không cần thiết chỉ đích danh; 'ông/bà X', 'mỗ'.",
+      "longExplanation": "'某' (mǒu) hoặc dạng điệp từ '某某' (mǒumǒu) khi đặt sau họ của một người (như '李某' - Lý mỗ, '张某某' - Trương mỗ mỗ) được dùng như một đại từ phiếm chỉ để thay thế cho tên gọi cụ thể. Thường xuất hiện trong văn bản báo chí, hồ sơ điều tra tư pháp, thông báo vụ án hoặc văn bản hành chính khi cần bảo vệ quyền riêng tư cá nhân, hoặc trong các ví dụ giả định khi không cần thiết phải xướng đích danh một người nào đó. Tương đương với 'ông Lý X', 'anh Lý nào đó', 'Lý mỗ' trong tiếng Việt.",
+      "formation": "Họ + 某 / 某某 (hoặc: Chức danh / Danh từ chỉ người + Họ + 某 / 某某)",
+      "examples": [
+        {
+          "translation": "Nhân viên kinh doanh của công ty là anh Lý X nghe được tin ấy thì mừng rỡ khôn xiết."
+        }
+      ]
+    },
+    "zh_幸亏_536": {
+      "title": "幸亏 (Phó từ / Liên từ: May mà, may thay, may nhờ có)",
+      "shortExplanation": "Biểu thị nhờ có một điều kiện thuận lợi hoặc hành động kịp thời mà tránh được nguy hiểm, tổn thất hay hậu quả xấu; 'may mà', 'may thay'.",
+      "longExplanation": "'幸亏' (xìngkuī) là phó từ hoặc liên từ dùng ở đầu câu hoặc trước vị ngữ, biểu thị nhờ có sự xuất hiện của một nhân tố may mắn, một hành vi kịp thời hoặc sự giúp đỡ đúng lúc mà đã may mắn tránh được một tổn thất to lớn hay hậu quả tai hại. Vế câu sau thường đi kèm với các từ liên kết như '才' (mới), '否则' (nếu không thì), '要不然' (bằng không), '不然' (nhược bằng không) để làm nổi bật kết quả tốt đẹp hoặc giả định hậu quả xấu nếu không có nhân tố đó. Tương đương với 'may mà', 'may thay', 'may nhờ' trong tiếng Việt.",
+      "formation": "幸亏 + Mệnh đề / Hành động ，(bằng không / nếu không thì / mới +) Mệnh đề kết quả",
+      "examples": []
+    },
+    "zh_行动_538": {
+      "title": "行动 (Danh từ: Hành động, hoạt động, chiến dịch, biện pháp thực tế)",
+      "shortExplanation": "Danh từ chỉ hành vi hoặc hoạt động thực tế có kế hoạch, mục đích cụ thể nhằm đạt được kết quả đề ra; 'hành động', 'biện pháp'.",
+      "longExplanation": "'行动' (xíngdòng) khi là danh từ dùng để chỉ các việc làm thực tế, hành vi cụ thể được tiến hành theo một kế hoạch hay chủ trương nhất định nhằm thực hiện mục tiêu đề ra (phân biệt với lời nói hay suy nghĩ suông). Thường kết hợp với các động từ và định ngữ như '采取行动' (áp dụng hành động), '付诸行动' (biến thành hành động thực tế), '实际行动' (hành động thiết thực), '行动计划' (kế hoạch hành động), '军事行动' (chiến dịch quân sự). Tương đương với 'hành động', 'hoạt động', 'chiến dịch' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (áp dụng / biến thành / thống nhất +) 行动 (hoặc: Định ngữ + 行动)",
+      "examples": []
+    },
+    "zh_行动_540": {
+      "title": "行动 (Động từ / Danh từ: Đi lại, cử động, hoạt động thân thể)",
+      "shortExplanation": "Chỉ sự đi lại, di chuyển, đứng ngồi hay cử động chân tay của thân thể con người; 'đi lại', 'cử động'.",
+      "longExplanation": "'行动' (xíngdòng) ở nét nghĩa này chỉ sự đi đứng, vận động thể chất, di chuyển cơ thể hoặc đi lại hàng ngày của con người. Thường dùng trong các ngữ cảnh miêu tả thể trạng, sức khỏe, bệnh tật hoặc tuổi tác khi năng lực vận động bị ảnh hưởng. Kết hợp rất phổ biến trong các cụm như '行动不便' (đi lại khó khăn, cử động bất tiện), '行动迟缓' (cử động chậm chạp lề mề), '行动敏捷' (thân thủ nhanh nhẹn hoạt bát), '自由行动' (tự do đi lại). Tương đương với 'đi lại', 'cử động', 'hoạt động thân thể' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 行动 + Bất tiện / Nhanh nhẹn / Chậm chạp (hoặc: 行动 + Động từ)",
+      "examples": [
+        {
+          "translation": "Anh ấy bị thương khi chơi thể thao, việc đi lại cử động rất bất tiện."
+        }
+      ]
+    },
+    "zh_行动_541": {
+      "title": "行动 (Động từ: Hành động, hoạt động, ra tay làm việc)",
+      "shortExplanation": "Nội động từ biểu thị bắt tay vào thực hiện hành vi, di chuyển hoặc triển khai phương án hoạt động; 'hành động'.",
+      "longExplanation": "'行动' (xíngdòng) là động từ nội động từ biểu thị việc chủ thể đích thân bắt tay vào hành động, triển khai các động thái cụ thể trong thực tế thay vì thụ động chờ đợi hay chỉ bàn suông. Thường đi kèm với các trạng ngữ chỉ phương thức, tính chất hoặc thời gian như '单独行动' (hành động một mình/đơn độc), '秘密行动' (hoạt động bí mật), '共同行动' (cùng nhau phối hợp hành động), '行动起来' (hành động ngay thôi). Tương đương với 'hành động', 'ra tay', 'tiến hành hoạt động' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Trạng ngữ: đơn độc / bí mật / cùng nhau +) 行动",
+      "examples": [
+        {
+          "translation": "Có một số loài chim thích hành động đơn độc."
+        }
+      ]
+    },
+    "zh_义务_542": {
+      "title": "义务 (Danh từ: Nghĩa vụ, bổn phận, trách nhiệm pháp lý hoặc đạo đức)",
+      "shortExplanation": "Danh từ chỉ trách nhiệm, bổn phận theo luật pháp hoặc đạo đức mà cá nhân phải gánh vác; 'nghĩa vụ', 'bổn phận'.",
+      "longExplanation": "'义务' (yìwù) là danh từ chỉ trách nhiệm, bổn phận mà công dân, tổ chức hay cá nhân có trách nhiệm phải thực hiện theo quy định của pháp luật hoặc theo quy phạm đạo đức xã hội (đối lập hoàn toàn với '权利' - quyền lợi). Thường làm tân ngữ cho các động từ như '承担义务' (gánh vác nghĩa vụ), '履行义务' (thực hiện nghĩa vụ), '尽义务' (làm tròn bổn phận/nghĩa vụ). Tương đương với 'nghĩa vụ', 'bổn phận', 'trách nhiệm bắt buộc' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (gánh vác / thực hiện / làm tròn +) 义务 (hoặc: 义务 + của ai)",
+      "examples": [
+        {
+          "translation": "Xây dựng quê hương, ai ai cũng có trách nhiệm, chúng ta cũng cần phải gánh vác nghĩa vụ này."
+        }
+      ]
+    },
+    "zh_义务_543": {
+      "title": "义务 + Danh từ (Định ngữ: Tự nguyện không nhận thù lao, công ích / mang tính nghĩa vụ)",
+      "shortExplanation": "Làm định ngữ trước danh từ chỉ hoạt động tự nguyện phục vụ cộng đồng không lấy thù lao; hoặc chế độ có tính nghĩa vụ bắt buộc; 'công ích', 'tình nguyện', 'nghĩa vụ'.",
+      "longExplanation": "'义务' (yìwù) khi làm định ngữ tu từ cho danh từ phía sau mang hai nét nghĩa ngữ dụng đặc trưng: Thứ nhất, biểu thị các hoạt động tình nguyện cống hiến vì lợi ích công cộng, hoàn toàn miễn phí và không nhận tiền công hay thù lao (như '义务劳动' - lao động công ích/tình nguyện, '义务献血' - hiến máu nhân đạo/tình nguyện, '义务诊疗' - khám chữa bệnh từ thiện). Thứ hai, biểu thị các chế độ hay chương trình mang tính phổ cập bắt buộc theo quy định của pháp luật nhà nước (như '义务教育' - giáo dục bắt buộc). Tương đương với 'công ích', 'tình nguyện', 'từ thiện' hoặc 'nghĩa vụ' trong tiếng Việt.",
+      "formation": "义务 + Danh từ (lao động / giáo dục / khám chữa bệnh / tư vấn / công tác...)",
+      "examples": [
+        {
+          "translation": "Mỗi học kỳ chúng tôi đều phải tham gia lao động công ích tình nguyện ít nhất ba lần."
+        }
+      ]
+    },
+    "zh_朝_544": {
+      "title": "朝 (Giới từ: Hướng về, về phía, đối với)",
+      "shortExplanation": "Giới từ dẫn xuất phương hướng di chuyển, vị trí mục tiêu hoặc đối tượng tiếp nhận hành động; 'hướng về', 'về phía'.",
+      "longExplanation": "'朝' (cháo) là giới từ dùng phổ biến trong khẩu ngữ và văn viết, đứng trước danh từ chỉ phương vị, nơi chốn hoặc đối tượng để tạo thành cụm giới từ làm trạng ngữ đứng trước động từ (công năng tương tự giới từ '向'). Biểu thị hướng di chuyển của hành động (như '朝南走' - đi về hướng nam), hướng nhìn hoặc cử chỉ (như '朝窗外看' - nhìn ra ngoài cửa sổ, '朝我摆手' - vẫy tay về phía tôi), hoặc đối tượng chịu tác động. Tương đương với 'hướng về', 'về phía', 'đối với' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 朝 + Phương hướng / Nơi chốn / Đối tượng + Động từ",
+      "examples": []
+    },
+    "zh_朝_546": {
+      "title": "朝 (Động từ: Quay mặt về, hướng về, trông ra [phương vị, kiến trúc])",
+      "shortExplanation": "Động từ biểu thị mặt trước của nhà cửa, công trình, cửa sổ hoặc người hướng về một phương vị nhất định; 'hướng về', 'quay mặt về'.",
+      "longExplanation": "'朝' (cháo) khi đóng vai trò là động từ cập vật mang nghĩa mặt tiền, chính diện của một công trình kiến trúc, phòng ốc, cửa ra vào, cửa sổ hoặc thân thể người đối diện, quay mặt thẳng về một phương vị nào đó. Thường dùng trong phong thủy kiến trúc, mô tả cấu trúc nhà đất (như '坐北朝南' - tọa bắc hướng nam, '坐西朝东' - tọa tây hướng đông, '窗户朝南' - cửa sổ hướng nam, '面朝大海' - mặt hướng ra biển lớn). Tương đương với 'hướng về', 'quay về', 'nhìn ra' trong tiếng Việt.",
+      "formation": "Danh từ (cửa / cửa sổ / nhà cửa...) + 朝 + Phương vị từ (đông / tây / nam / bắc...)",
+      "examples": [
+        {
+          "translation": "Cổng chính của trường chúng tôi tọa lạc ở phía tây, hướng mặt về phía đông."
+        }
+      ]
+    },
+    "zh_简直_547": {
+      "title": "简直 (Phó từ: Quả thực, quả là, tưởng chừng như, chẳng khác nào)",
+      "shortExplanation": "Phó từ biểu thị ngữ khí nhấn mạnh hoặc khoa trương tột độ, chỉ mức độ đã hoàn toàn giống như vậy; 'quả thực', 'chẳng khác nào'.",
+      "longExplanation": "'简直' (jiǎnzhí) là phó từ tu từ chỉ mức độ mang ngữ khí khoa trương, cảm thán hoặc khẳng định mạnh mẽ. Từ này đứng trước vị ngữ biểu thị sự việc, tính chất đã phát triển tới mức độ gần như tuyệt đối, hoàn toàn tương đương hoặc giống hệt như một tình huống không tưởng (như '简直是奇迹' - quả thực là kỳ tích, '简直不可思议' - quả là không thể tưởng tượng nổi). Rất thường đi liền với '是' (là), '像' (như), '太' (quá), '不能' (không thể). Tương đương với 'quả thực là', 'quả là', 'chẳng khác nào', 'tưởng như' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 简直 + (là / như / không thể +) Vị ngữ (Động từ / Tính từ)",
+      "examples": [
+        {
+          "translation": "Thuyền trưởng quả thực là điên rồi!"
+        }
+      ]
+    },
+    "zh_来_548": {
+      "title": "来 (Trợ từ chỉ số ước lượng: Khoảng, trạc, hơn, ngót, xấp xỉ)",
+      "shortExplanation": "Trợ từ đi sau số từ hoặc lượng từ để biểu thị con số ước lượng xấp xỉ; 'khoảng', 'ngót', 'hơn'.",
+      "longExplanation": "'来' (lái) là trợ từ chỉ số ước lượng, dùng để biểu thị số lượng xấp xỉ, loanh quanh con số được nhắc tới (tương tự như '左右' - khoảng chừng). Về vị trí ngữ pháp: (1) Nếu là số tròn chục trở lên (10, 20, 100...), '来' đứng liền sau số từ và đứng trước lượng từ (như '二十来个人' - khoảng chừng hai mươi người); (2) Nếu là số đơn dưới 10 đi kèm lượng từ hoặc đơn vị đo lường, '来' đứng sau lượng từ (như '五斤来重' - nặng ngót 5 cân, '三米来长' - dài chừng 3 mét). Tương đương với 'khoảng', 'ngót', 'hơn', 'chừng' trong tiếng Việt.",
+      "formation": "Số từ (10, 20, 100...) + 来 + Lượng từ + Danh từ (hoặc: Số từ [dưới 10] + Lượng từ + 来 + Danh từ / Tính từ)",
+      "examples": [
+        {
+          "translation": "Hầu như ngày nào anh ấy cũng có thể câu được con cá lớn nặng ngót nghét 5 cân."
+        }
+      ]
+    },
+    "zh_一来是二来是_549": {
+      "title": "一来(是)……二来(是)…… (Liên từ: Một là... hai là..., thứ nhất là... thứ hai là...)",
+      "shortExplanation": "Cặp liên từ dùng để liệt kê hai nguyên nhân, lý do hoặc mục đích song song dẫn đến hành động; 'một là... hai là...'.",
+      "longExplanation": "'一来(是)……二来(是)……' (yīlái (shì)... èrlái (shì)...) là cặp liên từ dùng để trình bày phân tích tuần tự hai nguyên nhân, lý do hoặc mục đích bình đẳng cấu thành nên một hành vi, kế hoạch hay quyết định (tương đương với '一则……二则……', '第一……第二……'). Trong khẩu ngữ thường ngày, chữ '是' hoặc chữ '来' có thể linh hoạt tỉnh lược thành '一是……二是……'. Giúp diễn đạt trở nên có trật tự, lớp lang và thuyết phục hơn. Tương đương với 'một là... hai là...', 'thứ nhất là... thứ hai là...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 一来(是) + Lý do / Mục đích 1 ，二来(是) + Lý do / Mục đích 2",
+      "examples": [
+        {
+          "translation": "Tôi đến đây thăm mọi người, một là để gửi tặng hoa quả cho mọi người, hai là xem mọi người đón tết đón lễ còn có khó khăn gì không."
+        }
+      ]
+    },
+    "zh_至于_550": {
+      "title": "至于 (Giới từ: Còn về, đến như, về phần [chuyển tiếp đề tài])",
+      "shortExplanation": "Giới từ đứng đầu vế câu để dẫn xuất một đề tài hoặc đối tượng bàn luận mới có liên quan; 'còn về', 'đến như'.",
+      "longExplanation": "'至于' (zhìyú) là giới từ dùng ở đầu vế câu thứ hai để chuyển dịch mạch diễn đạt sang một đề tài, khía cạnh hoặc đối tượng mới có liên quan đến nội dung vừa đề cập trước đó (tương đương với '关于' - về, '说到' - nói đến). Giúp phân tách rõ ràng các phương diện của sự việc, tránh nhầm lẫn và giúp câu văn mạch lạc, chặt chẽ. Tương đương với 'còn về', 'đến như', 'về phần', 'riêng đối với' trong tiếng Việt.",
+      "formation": "Mệnh đề 1 ，至于 + Danh từ / Mệnh đề đề tài mới ，Mệnh đề thuyết minh",
+      "examples": [
+        {
+          "translation": "Chúng tôi quyết định năm sau sẽ kết hôn, còn về thời gian cụ thể thì vẫn cần bàn bạc thêm."
+        }
+      ]
+    },
+    "zh_至于_551": {
+      "title": "至于 (Động từ: Đến mức, đến nỗi, đến độ [thường dùng trong câu phủ định '不至于'])",
+      "shortExplanation": "Động từ biểu thị sự việc đạt tới một mức độ hoặc kết cục nghiêm trọng; hầu như luôn đi kèm phủ định '不至于'; 'đến nỗi', 'đến mức'.",
+      "longExplanation": "'至于' (zhìyú) ở đây là động từ biểu thị sự việc phát triển tới một mức độ sâu sắc, cực đoan hoặc dẫn tới một kết cục xấu, nghiêm trọng. Trong đại đa số trường hợp của tiếng Hán hiện đại, từ này được dùng trong cấu trúc phủ định '不至于' (không đến mức, không đến nỗi, chưa đến nỗi) hoặc phản vấn '何至于' / '哪至于' (cớ sao đến mức) để bác bỏ khả năng xảy ra của một tình huống quá tệ hại, qua đó trấn an tinh thần hoặc giải tỏa sự lo lắng quá mức. Tương đương với 'đến mức', 'đến nỗi', 'không đến nỗi nào' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (不 / 何 / 哪 +) 至于 + Động từ / Mệnh đề",
+      "examples": [
+        {
+          "translation": "Anh ấy không đến nỗi nói dối đâu."
+        }
+      ]
+    },
+    "zh_总算_552": {
+      "title": "总算 (Phó từ: Rốt cuộc cũng, cuối cùng cũng, coi như là)",
+      "shortExplanation": "Phó từ biểu thị sau thời gian dài chờ đợi hoặc nỗ lực gian khổ thì điều mong ước cuối cùng cũng thành hiện thực; 'rốt cuộc cũng', 'cuối cùng cũng'.",
+      "longExplanation": "'总算' (zǒngsuàn) là phó từ làm trạng ngữ đứng trước vị ngữ, biểu thị sau khi trải qua một thời gian dài chờ đợi, thử thách hoặc trải qua biết bao trắc trở, gian nan vất vả, cuối cùng một kết quả hoặc nguyện vọng mong đợi từ lâu cũng được thực hiện (thường kèm theo cảm xúc nhẹ nhõm, thở phào an ủi; tương tự như '终于' - cuối cùng, '好不容易' - vất vả lắm mới). Ngoài ra, trong một số văn cảnh, từ này còn có nghĩa là nhìn chung, đại thể là tạm chấp nhận được. Tương đương với 'rốt cuộc cũng', 'cuối cùng cũng', 'mãi mới' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 总算 + Vị ngữ (Động từ / Tính từ) (+ 了)",
+      "examples": [
+        {
+          "translation": "Trải qua quá trình trao đổi, vị đại đạo diễn rốt cuộc cũng đã hiểu rõ rồi."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_name某某某_535": {
+      "title": "姓 ＋ 某 / 某某（代名詞：〜某・〜某氏・〜氏・だれそれ）",
+      "shortExplanation": "人名の姓の後に添えて、実名を公表することを伏せたり、特定する必要のない人物を匿名で表したりする代名詞用法です（「〜某」「〜氏」）。",
+      "longExplanation": "「某」（mǒu）またはその重ね言葉である「某某」（mǒumǒu）は、姓の直後に置かれることで（例：「李某」「张某某」）、具体的な実名・個人名を伏せて匿名化する代名詞として機能します。報道、警察・司法の事件報道、公的文書などで当事者のプライバシーを保護する際や、契約書・規約などの例文で架空の人物を代表させて示す場合に多用されます。日本語の「李某（り・ぼう）」「李某氏」「李某某」に相当します。",
+      "formation": "姓 ＋ 某 / 某某（または 身分・役職名詞 ＋ 姓 ＋ 某 / 某某）",
+      "examples": [
+        {
+          "translation": "同社の営業担当である李某（り・某氏）はこれを聞いて大いに喜んだ。"
+        }
+      ]
+    },
+    "zh_幸亏_536": {
+      "title": "幸亏（副詞・接続詞：幸いにも、運よく、おかげで〜せずに済んだ）",
+      "shortExplanation": "幸運な条件や適時な行動のおかげで、深刻な被害・損失や好ましくない事態を免れることができたことを表します（「幸いにも」「運よく」）。",
+      "longExplanation": "「幸亏」（xìngkuī）は副詞または接続詞として文頭または主語の後に置かれ、好都合な客観条件やタイミングの良い処置、他者からの援助があったおかげで、危うく発生しかけた重大な事故・損失・悪結果を回避できた幸運な状況を表します。後半の節では「才」（〜してようやく…）や、「否则」「要不然」「不然」（さもなければ、もしそうでなかったら）といった仮定接続詞・副詞と緊密に呼応して用いられます。日本語の「幸いにも」「運よく〜したおかげで」「〜のおかげで助かった」に相当します。",
+      "formation": "幸亏 ＋ 節・動詞句 ，（否则 / 要不然 / 才 ＋）結果節",
+      "examples": []
+    },
+    "zh_行动_538": {
+      "title": "行动（名詞：行動、活動、措置、作戦行動）",
+      "shortExplanation": "一定の目的を達成するために実行に移される具体的な振る舞い、活動、または作戦・措置を表します（「行動」「作戦」）。",
+      "longExplanation": "「行动」（xíngdòng）は名詞として、明確な方針や計画に基づいて行われる実践的な活動、具体的な振る舞い、あるいは軍事・治安上の作戦行動を指します。言葉や思索にとどまらず、実際の行動に移すニュアンスを持ちます。「采取行动」（行動を起こす・措置を講じる）、「付诸行动」（行動に移す）、「实际行动」（実際の行動）、「行动计划」（行動計画）、「军事行动」（軍事作戦）などの定型句で極めて頻繁に使われます。日本語の「行動」「活動」「作戦」「措置」に相当します。",
+      "formation": "主語 ＋（采取 / 付诸 ＋）行动（または 連体修飾語 ＋ 行动）",
+      "examples": []
+    },
+    "zh_行动_540": {
+      "title": "行动（動詞・名詞：身動きする、歩き回る、起居動作、身体の動き）",
+      "shortExplanation": "人の身体の歩行、立ち居振る舞い、手足の曲げ伸ばしなど身体運動を指します（「身動き」「歩行」「起居」）。",
+      "longExplanation": "「行动」（xíngdòng）は動詞または名詞として、歩行、起居、四肢の屈伸など、人体が自力で移動したり身動きしたりする身体動作そのものを表します。病気、怪我、高齢などによって運動能力が制約されたり、逆に敏捷であったりする肉体的状態を述べる場面で用いられます。とりわけ「行动不便」（身動きや歩行が不自由である）、「行动迟缓」（動作・足取りが鈍い）、「行动敏捷」（身のこなしが素早い）といった慣用表現が頻出します。日本語の「身動き」「立ち居振る舞い」「歩行」「起居動作」に相当します。",
+      "formation": "主語 ＋ 行动 ＋ 不便 / 敏捷 / 迟缓 / 自由",
+      "examples": [
+        {
+          "translation": "彼はスポーツの最中に怪我をしてしまい、身動きが不自由になった。"
+        }
+      ]
+    },
+    "zh_行动_541": {
+      "title": "行动（自動詞：行動する、動く、作戦行動をとる）",
+      "shortExplanation": "意図や目的に基づいて実際に活動する、具体的な動作・行動を起こすことを表します（「行動する」「動く」）。",
+      "longExplanation": "「行动」（xíngdòng）は自動詞として、人が言葉や思索にとどまらず、具体的に手足を動かして事を起こしたり、一定の様式に従って活動を展開したりすることを表します。様態や方式を表す状語（連用修飾語）を伴って用いられることが多く、「单独行动」（単独で行動する）、「秘密行动」（密かに行動する）、「统一行动」（足並みをそろえて行動する）、「行动起来」（行動を開始する・立ち上がる）などの形で広く使われます。日本語の「行動する」「動く」に相当します。",
+      "formation": "主語 ＋（状語：单独 / 秘密 / 共同 ＋）行动",
+      "examples": [
+        {
+          "translation": "単独で行動することを好む鳥類もいる。"
+        }
+      ]
+    },
+    "zh_义务_542": {
+      "title": "义务（名詞：義務、責務、果たすべき責任）",
+      "shortExplanation": "法律や社会規範・道徳上、人が果たすべき定められた責任や務めを表します（「義務」「責務」）。",
+      "longExplanation": "「义务」（yìwù）は名詞として、法律、社会道徳、または契約に基づいて必ず履行しなければならない公的・私的な責務を指します（「权利」（権利）と対をなす法曹・倫理概念）。動詞の「承担」（引き受ける）、「履行」（果たす・履行する）、「尽」（尽くす）などの目的語として用いられ、「履行公民义务」（公民の義務を履行する）、「尽到应尽的义务」（果たすべき義務を果たす）といった文脈で極めて高い頻度で使用されます。日本語の「義務」「責務」「本分」に相当します。",
+      "formation": "主語 ＋（履行 / 尽 / 承担 ＋）义务（または 名詞 ＋ 的 ＋ 义务）",
+      "examples": [
+        {
+          "translation": "故郷の建設は誰もが責任を負うべきことであり、私たちもこの義務を果たすべきである。"
+        }
+      ]
+    },
+    "zh_义务_543": {
+      "title": "义务 ＋ 名詞（連体修飾語：無償の、ボランティアの、奉仕の / 義務的な）",
+      "shortExplanation": "名詞を修飾して、報酬を受け取らない自発的な社会奉仕・ボランティア活動、または法的に義務付けられた制度を表します（「奉仕の」「無償の」）。",
+      "longExplanation": "「义务」（yìwù）は名詞を直接修飾する連体修飾語（区別詞・定語）として機能し、主に2つの重要な意味を持ちます。第一に、報酬や対価を受け取らず、自発的に公共や他者のために汗を流すボランティア・社会奉仕活動を表します（例：「义务劳动」ボランティア奉仕作業・クリーン活動、「义务献血」無償献血、「义务植树」緑化ボランティア植樹）。第二に、法律に基づき国民全員に課された制度を表します（例：「义务教育」義務教育）。日本語の「奉仕の」「無償の」「ボランティアの」「義務〜」に相当します。",
+      "formation": "义务 ＋ 名詞（劳动 / 教育 / 献血 / 诊疗 / 宣讲など）",
+      "examples": [
+        {
+          "translation": "私たちは毎学期、少なくとも3回はボランティア労働（奉仕作業）に参加しなければならない。"
+        }
+      ]
+    },
+    "zh_朝_544": {
+      "title": "朝（介詞：〜へ向かって、〜の方角へ、〜に対して）",
+      "shortExplanation": "動作の向かう方角、場所、または働きかけの対象を導く介詞です（「〜へ向かって」「〜の方へ」）。",
+      "longExplanation": "「朝」（cháo）は介詞（前置詞）として方位詞、場所名詞、または人称名詞の前に置かれ、動作が向けられる空間的な方向や働きかけの対象を導いて動詞句を修飾する連用修飾語（状語）を作ります（介詞「向」と機能が酷似しています）。身体の移動（例：「朝前走」前へ歩く）や視線・手振りの指向（例：「朝上看」上を見上げる、「朝我笑了笑」私に向かって微笑んだ）を生き生きと表します。日本語の「〜に向かって」「〜の方角へ」「〜に対して」に相当します。",
+      "formation": "主語 ＋ 朝 ＋ 方角・場所・対象 ＋ 動詞句",
+      "examples": []
+    },
+    "zh_朝_546": {
+      "title": "朝（動詞：〜を向いている、〜に面している【方位・向き】）",
+      "shortExplanation": "建物、門、窓などの正面がある方角・方位に向いていることを表す動詞です（「〜を向いている」「〜に面している」）。",
+      "longExplanation": "「朝」（cháo）は他動詞として、建物、門、窓、部屋、あるいは人の顔や身体の正面が、特定の空間的方向や方角を向いている、あるいはそれに面している状態を表します。特に建築構造や間取りの方位を説明する際に多用され、「坐北朝南」（北を背にして南を向いている）、「坐西朝东」（西に位置して東に面している）、「窗户朝南」（窓が南向きである）などの四字熟語や定型句で用いられます。日本語の「〜を向いている」「〜に面している」に相当します。",
+      "formation": "名詞（門 / 窓 / 部屋 / 建物など）＋ 朝 ＋ 方位名詞（东 / 南 / 西 / 北など）",
+      "examples": [
+        {
+          "translation": "我が校の正門は西を背にして東を向いている（西に位置し東に面している）。"
+        }
+      ]
+    },
+    "zh_简直_547": {
+      "title": "简直（副詞：まるで、それこそ、まったく、〜も同然だ）",
+      "shortExplanation": "誇張や強い強調の語気を含み、事態がある極端な境地に達していることや、ほぼそれに等しい状態であることを表します（「まるで」「それこそ」）。",
+      "longExplanation": "「简直」（jiǎnzhí）は副詞として述語（動詞・形容詞）の前に置かれ、話し手の強い驚き、呆れ、感嘆を伴う誇張的・強調的な語気を表します。事態がほぼ完全にその状態に達しており、「まるで〜そのものである」「〜と言っても過言ではない」と断定する際に用いられます。「是」「像」「太」「不敢」「不能」などと結びつくことが極めて多く、「简直是胡闹」（まったくふざけている）、「简直像真的一样」（まるで本物そっくりだ）のように表現します。日本語の「まるで」「それこそ」「まったく」「〜も同然だ」に相当します。",
+      "formation": "主語 ＋ 简直 ＋（是 / 像 / 不敢 ＋）述語（動詞句 / 形容詞句）",
+      "examples": [
+        {
+          "translation": "船長はそれこそ気が狂ったとしか思えない（まるで狂気の沙汰だ）！"
+        }
+      ]
+    },
+    "zh_来_548": {
+      "title": "来（助詞・概数詞：およそ、〜前後、〜足らず、〜あまり、〜ばかり）",
+      "shortExplanation": "数詞または量詞の直後に置かれ、数量がおおよそその数値に近い概数であることを表します（「〜前後」「およそ」「〜あまり」）。",
+      "longExplanation": "「来」（lái）は助詞として数詞または量詞の後に添えられ、確定しないおおよその数量（概数。「左右」「上下」に近い意味合い）を表します。語順の法則として：① 10、20、100などのキリの良い整数の場合は量詞の前に置き、「数詞 ＋ 来 ＋ 量詞」（例：「二十来岁」20歳前後、「五十来个人」およそ50人）；② 10未満の端数に度量衡や量詞が付く場合は量詞の後に置き、「数詞 ＋ 量詞 ＋ 来」（例：「五斤来重」5斤前後の重さ、「三米来高」3メートルあまりの高さ）となります。日本語の「およそ」「〜前後」「〜足らず」「〜あまり」に相当します。",
+      "formation": "数詞（10の倍数など）＋ 来 ＋ 量詞 ＋ 名詞（または 数詞 ＋ 量詞 ＋ 来 ＋ 名詞 / 形容詞）",
+      "examples": [
+        {
+          "translation": "彼はほぼ毎日、5斤（約2.5キロ）前後の重さの大魚を釣り上げることができる。"
+        }
+      ]
+    },
+    "zh_一来是二来是_549": {
+      "title": "一来（是）……二来（是）……（接続詞：一つには〜、もう一つには〜 / 第一に〜、第二に〜）",
+      "shortExplanation": "ある動作や決定に至った2つの対等な理由、原因、目的を並列して順序立てて列挙します（「一つには〜、もう一つには〜」）。",
+      "longExplanation": "「一来（是）……二来（是）……」（yīlái (shì)... èrlái (shì)...）は、ある行動や判断を生じさせた2つの主要な理由、原因、または意図・目的を並列して提示する並列接続詞です（「一则……二则……」や「第一是……第二是……」と同義）。各節の前に置かれて理由を整理し、論理的な説得力を高めます。日常会話では「是」や「来」が適宜省略され、「一是……二是……」などの形をとることも多々あります。日本語の「一つには〜、もう一つには〜」「第一に〜、第二に〜」に相当します。",
+      "formation": "主語 ＋ 一来（是）＋ 理由・目的1 ，二来（是）＋ 理由・目的2",
+      "examples": [
+        {
+          "translation": "私がここへ皆さんを見舞いに来たのは、一つには皆さんに果物を届けるためであり、もう一つには連休を過ごすにあたり何か困りごとがないか確認するためです。"
+        }
+      ]
+    },
+    "zh_至于_550": {
+      "title": "至于（介詞：〜に関しては、〜については、〜に至っては【話題の転換】）",
+      "shortExplanation": "文頭に置かれて、先行する文脈に関連する別の話題・対象へと話をスムーズに転換して導き入れます（「〜に関しては」「〜については」）。",
+      "longExplanation": "「至于」（zhìyú）は介詞として後続節の文頭に置かれ、直前に述べた事柄に関連しつつも別の観点、対象、または新たな議題を提示して話を転換する役割を果たします（「关于」「说到」に近い話題導入用法）。物事の異なる側面を整理して論理立てて説明する際に大変重宝されます。日本語の「〜に関しては」「〜については」「〜に至っては」「〜の件となると」に相当します。",
+      "formation": "節1 ，至于 ＋ 名詞 / 話題節 ，説明節",
+      "examples": [
+        {
+          "translation": "私たちは来年結婚することに決めたが、具体的な日時に関してはまだ相談する必要がある。"
+        }
+      ]
+    },
+    "zh_至于_551": {
+      "title": "至于（動詞：〜の極端な度合いに達する【否定形「不至于」で「〜するほどではない」】）",
+      "shortExplanation": "事態が深刻・極端な境地に達することを表す動詞で、ほとんど常に否定形「不至于」として「〜するほどではない」の意で用います。",
+      "longExplanation": "「至于」（zhìyú）は及物動詞として、事態や行為が極めて深刻、極端、または好ましくない重大な段階にまで発展することを表します。現代中国語の実際の運用においては、ほぼ専ら否定詞「不」を伴った「不至于」（〜するほどのことはない、〜までには至らない）の形で用いられ、相手の過度な心配をなだめたり、最悪の推測を打ち消したりします。反語の「何至于」（どうして〜するほどのことがあろうか）としても用いられます。日本語の「〜するほどではない」「〜するまでには至らない」に相当します。",
+      "formation": "主語 ＋（不 / 何 / 哪 ＋）至于 ＋ 動詞句 / 節",
+      "examples": [
+        {
+          "translation": "彼が嘘をつくほどまでには至らない（彼が嘘をつくはずがない）。"
+        }
+      ]
+    },
+    "zh_总算_552": {
+      "title": "总算（副詞：ようやく、やっと、何とか、どうにか）",
+      "shortExplanation": "長い時間待たされたり苦難・曲折を経たりした末に、待ち望んでいた結果がついに実現したことを表します（「ようやく」「やっと」）。",
+      "longExplanation": "「总算」（zǒngsuàn）は述語（動詞・形容詞）を修飾する副詞として、長期間の待機や多大な労苦、曲折を経た末に、願っていた望みや目的がついに叶ったことを表します（話し手の安堵感、ほっとした気持ち、喜びが込められており、「终于」「好不容易」に近いニュアンスを持ちます）。また別の文脈では、完全無欠ではないものの「全体として見ればまあ何とか及第点である」「どうにか形にはなった」という最低限の肯定を表すこともあります。日本語の「ようやく」「やっと」「何とか」「どうにか」に相当します。",
+      "formation": "主語 ＋ 总算 ＋ 述語（動詞句 / 形容詞句）（＋ 了）",
+      "examples": [
+        {
+          "translation": "意思疎通を重ねた末に、大物映画監督もようやく事態を把握できた。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_name某某某_535": {
+      "title": "성씨 + 某 / 某某 (대명사: ~ 모 씨, ~ 아무개, 모[某])",
+      "shortExplanation": "사람의 성씨 뒤에 붙어, 실명을 직접 밝히기 곤란하거나 굳이 밝힐 필요가 없는 인물을 익명으로 가리키는 대명사입니다('~ 모 씨', '~ 아무개').",
+      "longExplanation": "'某'(mǒu) 또는 첩어 형태인 '某某'(mǒumǒu)는 사람의 성씨 바로 뒤에 결합하여(예: '李某', '张某某') 구체적인 실명을 대신하여 익명으로 가리키는 대명사로 쓰입니다. 뉴스 보도, 사건·사고 기사, 사법 재판 기록, 공문서 등에서 개인의 프라이버시를 보호해야 하거나, 일반적인 예시문에서 굳이 특정인의 실명을 거론할 필요가 없을 때 널리 활용됩니다. 한국어의 '~ 모 씨', '~ 아무개'에 해당합니다.",
+      "formation": "성씨 + 某 / 某某 (또는 신분·직책 명사 + 성씨 + 某 / 某某)",
+      "examples": [
+        {
+          "translation": "회사 영업 사원 이 모 씨는 이 말을 듣고 몹시 기뻐했다."
+        }
+      ]
+    },
+    "zh_幸亏_536": {
+      "title": "幸亏 (부사·접속사: 다행히, 천만다행으로, 덕분에)",
+      "shortExplanation": "다행스러운 조건이나 적절한 대처 덕분에 위험이나 손실, 불리한 결과를 가까스로 모면했음을 나타냅니다('다행히', '천만다행으로').",
+      "longExplanation": "'幸亏'(xìngkuī)는 부사 또는 접속사로 문두나 주어 뒤에 쓰여, 뜻밖의 요행이나 시의적절한 조치, 주변의 도움 덕분에 심각한 피해나 불행한 결말을 모면할 수 있었음을 안도하며 나타냅니다. 후속 절에서는 긍정적 결과를 강조하는 '才'나, 그렇지 않았을 경우의 위험을 가정하는 '否则', '要不然', '不然'(그렇지 않았다면) 등과 긴밀하게 호응합니다. 한국어의 '다행히', '천만다행으로', '덕분에 ~을 모면했다'에 해당합니다.",
+      "formation": "幸亏 + 절 / 동사구 , (否则 / 要不然 / 才 +) 결과절",
+      "examples": []
+    },
+    "zh_行动_538": {
+      "title": "行动 (명사: 행동, 활동, 조치, 작전)",
+      "shortExplanation": "어떤 목적을 달성하기 위해 실제로 실천에 옮기는 구체적인 행위, 활동, 조치나 작전을 가리킵니다('행동', '활동', '조치').",
+      "longExplanation": "'行动'(xíngdòng)은 명사로서 일정한 방침이나 목표 아래 실제로 실행에 옮기는 구체적인 행위나 실천, 조직적인 활동, 혹은 군사·보안 작전을 가리킵니다. 말이나 생각에 머무르지 않고 현실에서 실행함을 뜻하며, '采取行动'(조치를 취하다/행동에 나서다), '付诸行动'(행동에 옮기다), '实际行动'(실제 행동), '行动计划'(행동 계획), '军事行动'(군사 작전) 등의 표현으로 널리 사용됩니다. 한국어의 '행동', '활동', '조치', '작전'에 해당합니다.",
+      "formation": "주어 + (采取 / 付诸 +) 行动 (또는 관형어 + 行动)",
+      "examples": []
+    },
+    "zh_行动_540": {
+      "title": "行动 (동사·명사: 거동하다, 몸을 움직이다, 거동, 신체 동작)",
+      "shortExplanation": "사람이 걷거나 서고 앉는 등 몸을 움직이는 신체적인 거동이나 보행을 나타냅니다('거동하다', '몸을 움직이다', '거동').",
+      "longExplanation": "'行动'(xíngdòng)은 동사 또는 명사로서 사람이 걷고 이동하거나 일상적으로 몸을 움직이는 신체적 거동이나 동작 자체를 가리킵니다. 주로 질병, 부상, 노환 등으로 인한 신체적 움직임의 상태를 서술할 때 쓰이며, '行动不便'(거동이 불편하다), '行动敏捷'(몸놀림이 민첩하다), '行动迟缓'(동작이 굼뜨다), '自由行动'(자유롭게 거동하다) 등의 술어 및 보어 결합으로 매우 자주 사용됩니다. 한국어의 '거동하다', '몸을 움직이다', '거동'에 해당합니다.",
+      "formation": "주어 + 行动 + 不便 / 敏捷 / 迟缓 (거동이 불편하다/민첩하다 등)",
+      "examples": [
+        {
+          "translation": "그는 운동하다가 부상을 입어서 거동이 불편하다."
+        }
+      ]
+    },
+    "zh_行动_541": {
+      "title": "行动 (자동사: 행동하다, 움직이다, 활동하다)",
+      "shortExplanation": "목적이나 계획을 가지고 실제로 몸소 행동을 개시하거나 활동함을 나타냅니다('행동하다', '움직이다').",
+      "longExplanation": "'行动'(xíngdòng)은 자동사로서 생각이나 말에 머물지 않고 실제로 발을 떼어 실천에 착수하거나, 일정한 방식에 따라 활동을 전개함을 뜻합니다. 행동의 방식이나 양태를 나타내는 부사어와 자주 어울리며, '单独行动'(단독으로 행동하다), '秘密行动'(비밀리에 움직이다), '共同行动'(공동으로 행동하다), '行动起来'(행동에 나서다) 등의 형태로 자주 쓰입니다. 한국어의 '행동하다', '움직이다', '활동하다'에 해당합니다.",
+      "formation": "주어 + (부사어: 单独 / 秘密 / 共同 +) 行动",
+      "examples": [
+        {
+          "translation": "어떤 조류는 단독으로 행동하는 것을 좋아한다."
+        }
+      ]
+    },
+    "zh_义务_542": {
+      "title": "义务 (명사: 의무, 책무, 마땅히 해야 할 책임)",
+      "shortExplanation": "법률이나 도덕상 마땅히 행해야 하는 책임이나 직분을 나타냅니다('의무', '책무').",
+      "longExplanation": "'义务'(yìwù)는 명사로서 법률의 규정이나 사회적 도덕 규범에 의해 개인이 마땅히 이행해야 할 책임이나 본분을 뜻합니다('权利'(권리)의 상대 개념). 주로 '承担义务'(의무를 짊어지다), '履行义务'(의무를 이행하다), '尽义务'(의무를 다하다)처럼 동사의 목적어로 쓰여 책임 완수를 나타냅니다. 한국어의 '의무', '책무', '도리'에 해당합니다.",
+      "formation": "주어 + (履行 / 尽 / 承担 +) 义务 (또는 명사 + 的 + 义务)",
+      "examples": [
+        {
+          "translation": "고향을 건설하는 일은 모두에게 책임이 있으니, 우리 또한 이 의무를 짊어져야 한다."
+        }
+      ]
+    },
+    "zh_义务_543": {
+      "title": "义务 + 명사 (관형어: 자원봉사의, 무보수의, 공익의 / 의무의)",
+      "shortExplanation": "명사 앞에서 관형어로 쓰여 대가를 받지 않고 공공을 위해 자발적으로 봉사하는 활동, 또는 법적 의무 제도를 나타냅니다('무보수의', '자원봉사의', '공익의').",
+      "longExplanation": "'义务'(yìwù)는 명사 앞에서 관형어 역할을 하여 크게 두 가지 의미 범주를 이룹니다. 첫째는 보수나 대가를 일절 바라지 않고 공익과 사회를 위해 자발적으로 헌신·봉사하는 성격을 나타냅니다(예: '义务劳动' 무보수 공익 근로/자원봉사 활동, '义务献血' 자발적 무보수 헌혈, '义务咨询' 무료 공익 상담). 둘째는 국가 법률에 따라 의무적으로 이행하도록 규정된 제도적 성격을 나타냅니다(예: '义务教育' 의무 교육). 한국어의 '무보수의', '자원봉사의', '공익의', '의무~'에 해당합니다.",
+      "formation": "义务 + 명사 (劳动 / 教育 / 献血 / 诊疗 등)",
+      "examples": [
+        {
+          "translation": "우리는 매 학기 적어도 세 번 이상 무보수 공익 노동(봉사 활동)에 참여해야 한다."
+        }
+      ]
+    },
+    "zh_朝_544": {
+      "title": "朝 (개사: ~을 향해, ~ 쪽으로, ~에게)",
+      "shortExplanation": "동작이 향하는 구체적인 방위, 장소나 대상을 이끄는 개사입니다('~을 향해', '~ 쪽으로').",
+      "longExplanation": "'朝'(cháo)는 개사(전치사)로서 방향, 처소, 또는 인칭 명사 앞에 놓여 동작이 지향하는 공간적 방위나 대상을 이끌어 동사를 수식하는 부사어 역할을 합니다(개사 '向'과 거의 동일한 쓰임). 신체의 이동(예: '朝前走' 앞으로 걷다), 시선이나 표정의 방향(예: '朝窗外看' 창밖을 내다보다, '朝他招手' 그를 향해 손을 흔들다)을 명확하게 한정합니다. 한국어의 '~을 향해', '~ 쪽으로', '~에게'에 해당합니다.",
+      "formation": "주어 + 朝 + 방향·장소·대상 + 동사구",
+      "examples": []
+    },
+    "zh_朝_546": {
+      "title": "朝 (동사: ~을 향하다, ~쪽으로 향해 있다, ~에 면하다)",
+      "shortExplanation": "건물, 문, 창문 등의 전면이 특정한 방위나 방향을 마주보고 있음을 나타내는 동사입니다('~을 향하다', '~에 면하다').",
+      "longExplanation": "'朝'(cháo)는 타동사로서 건축물, 대문, 창문, 방 또는 신체의 정면이 특정 방위나 방향을 정면으로 마주보고 있음을 나타냅니다. 특히 건물의 좌향이나 채광 방향을 서술할 때 빈번하게 쓰이며, '坐北朝南'(북을 등지고 남향으로 앉다), '坐西朝东'(서쪽에 앉아 동쪽을 향하다), '窗户朝南'(창문이 남향이다)처럼 방위사와 결합하여 고정된 배치를 표현합니다. 한국어의 '~을 향해 있다', '~에 면하다', '~향이다'에 해당합니다.",
+      "formation": "명사 (문 / 창문 / 방 / 건물 등) + 朝 + 방위명사 (东 / 南 / 西 / 北 등)",
+      "examples": [
+        {
+          "translation": "우리 학교의 정문은 서쪽에 위치하여 동쪽을 향하고 있다."
+        }
+      ]
+    },
+    "zh_简直_547": {
+      "title": "简直 (부사: 그야말로, 거의, 완전히, 꼭 ~나 다름없다)",
+      "shortExplanation": "강한 과장과 감탄의 어기를 띠며, 어떤 상태가 거의 그 지경에 이르렀거나 그와 진배없음을 나타냅니다('그야말로', '완전히').",
+      "longExplanation": "'简直'(jiǎnzhí)은 부사로서 서술어 앞에 놓여 강렬한 과장, 놀라움, 감탄을 담아 어떤 상황이나 성질이 극단적인 정도에 달하여 '그야말로 ~나 다름없다', '완전히 ~이다'라고 단정할 때 쓰입니다. '是'(이다), '像'(같다), '太'(너무), '不敢'(감히 ~하지 못하다) 등과 매우 긴밀하게 호응하며, '简直是奇迹'(그야말로 기적이다), '简直不可思议'(도저히 상상조차 할 수 없다) 등의 형태로 빈번하게 활용됩니다. 한국어의 '그야말로', '거의', '완전히', '꼭 ~나 진배없다'에 해당합니다.",
+      "formation": "주어 + 简直 + (是 / 像 / 不敢 +) 서술어 (동사구 / 형용사구)",
+      "examples": [
+        {
+          "translation": "선장은 그야말로 미쳐버린 것이나 다름없다!"
+        }
+      ]
+    },
+    "zh_来_548": {
+      "title": "来 (조사·개수사: 약, 대략, ~가량, ~남짓, ~안팎)",
+      "shortExplanation": "수사 또는 양사 뒤에 붙어 수량이 대략 그 수치 언저리임을 나타내는 개수 조사입니다('~가량', '~남짓', '~안팎').",
+      "longExplanation": "'来'(lái)는 수사나 양사 뒤에 쓰여 정확하지 않은 대략적인 수량(개수, '左右'와 유사)을 나타내는 조사입니다. 어순상의 규칙이 명확한데, ① 10, 20, 100 등 십 단위 이상의 정수 뒤에서는 양사 앞에 위치하여 '수사 + 来 + 양사 + 명사' 형태를 취하고(예: '二十来岁' 스무 살 안팎, '三十来个' 서른 개가량), ② 10 미만의 단수 뒤에 도량형이나 양사가 올 때는 양사 뒤에 위치하여 '수사 + 양사 + 来 + 명사/형용사' 형태를 취합니다(예: '五斤来重' 5근 남짓한 무게, '两米来长' 2미터가량의 길이). 한국어의 '약', '대략', '~가량', '~남짓', '~안팎'에 해당합니다.",
+      "formation": "수사 (10의 배수 등) + 来 + 양사 + 명사 (또는 수사 + 양사 + 来 + 명사 / 형용사)",
+      "examples": [
+        {
+          "translation": "그는 거의 매일 5근 남짓 나가는 큰 물고기를 낚을 수 있다."
+        }
+      ]
+    },
+    "zh_一来是二来是_549": {
+      "title": "一来(是)……二来(是)…… (접속사: 한편으로는 ~하고 다른 한편으로는 ~하다 / 첫째는 ~이고 둘째는 ~이다)",
+      "shortExplanation": "어떤 행위나 결정을 내리게 된 두 가지 대등한 원인, 이유, 목적을 차례대로 병렬 열거할 때 씁니다('첫째는 ~이고 둘째는 ~이다').",
+      "longExplanation": "'一来(是)……二来(是)……'(yīlái (shì)... èrlái (shì)...)는 어떤 행동이나 결정을 촉발한 두 가지 핵심적인 원인, 이유, 혹은 목적을 병렬적으로 나열하여 밝히는 접속사 표현입니다('一则……二则……'과 동일한 구조). 논리적 정연함을 부여하며, 일상 구어에서는 문맥에 따라 '是'나 '来'를 자유롭게 생략하여 '一是……二是……' 형태로도 널리 쓰입니다. 한국어의 '첫째는 ~ 때문이고 둘째는 ~ 때문이다', '한편으로는 ~하고 다른 한편으로는 ~하다'에 해당합니다.",
+      "formation": "주어 + 一来(是) + 이유·목적 1 , 二来(是) + 이유·목적 2",
+      "examples": [
+        {
+          "translation": "제가 이곳에 여러분을 뵈러 온 것은, 첫째로는 여러분께 과일을 전해 드리기 위함이고, 둘째로는 명절을 보내는 데 다른 어려움은 없으신지 살펴보기 위함입니다."
+        }
+      ]
+    },
+    "zh_至于_550": {
+      "title": "至于 (개사: ~에 관해서는, ~에 대해서는, ~에 이르러서는 [화제 전환])",
+      "shortExplanation": "뒷문장의 머리에 놓여, 앞서 말한 내용과 관련된 또 다른 대상이나 새로운 화제로 말을 자연스럽게 돌릴 때 씁니다('~에 관해서는', '~에 대해서는').",
+      "longExplanation": "'至于'(zhìyú)는 개사로서 후속 절의 첫머리에 놓여, 앞에서 이미 언급한 내용과 연관성을 지닌 또 다른 측면이나 새로운 화제로 초점을 이동시킬 때 사용됩니다('关于', '说到'와 상통). 사안의 여러 갈래를 항목별로 분리하여 명확하게 밝힐 때 유용하며, 한국어의 '~에 관해서는', '~에 대해서는', '~로 말하자면'에 해당합니다.",
+      "formation": "절 1 , 至于 + 명사 / 화제절 , 설명절",
+      "examples": [
+        {
+          "translation": "우리는 내년에 결혼하기로 결정했는데, 구체적인 날짜에 관해서는 더 상의해 보아야 한다."
+        }
+      ]
+    },
+    "zh_至于_551": {
+      "title": "至于 (동사: ~ 지경에 이르다, ~할 정도이다 [주로 부정문 '不至于'로 쓰여 '~할 정도는 아니다'])",
+      "shortExplanation": "사태가 심각하거나 극단적인 지경에 이름 나타내는 동사로, 대개 부정형 '不至于' 형태로 쓰여 '~할 정도는 아니다'를 나타냅니다.",
+      "longExplanation": "'至于'(zhìyú)는 타동사로서 사태나 행동이 특정한 심각한 경지나 부정적이고 극단적인 결말에까지 도달함을 나타냅니다. 현대 중국어 구어와 문어에서는 거의 대부분 부정사 '不'와 결합한 '不至于'(~할 정도는 아니다, ~하는 지경에까지는 이르지 않다)나 반어형인 '何至于'(어찌 ~할 지경에 이르겠는가)의 꼴로 쓰입니다. 상대방의 지나친 염려를 덜어주거나 사태가 최악으로 치닫지 않을 것임을 확언할 때 쓰입니다. 한국어의 '~할 지경은 아니다', '~할 정도는 아니다'에 해당합니다.",
+      "formation": "주어 + (不 / 何 / 哪 +) 至于 + 동사구 / 절",
+      "examples": [
+        {
+          "translation": "그가 거짓말까지 할 지경은 아니다(거짓말을 할 정도는 아니다)."
+        }
+      ]
+    },
+    "zh_总算_552": {
+      "title": "总算 (부사: 마침내, 드디어, 겨우, 가까스로)",
+      "shortExplanation": "오랜 시간 기다리거나 우여곡절과 고생 끝에, 바라던 결과가 마침내 실현되었음을 나타냅니다('마침내', '드디어', '겨우').",
+      "longExplanation": "'总算'(zǒngsuàn)은 서술어 앞에 놓이는 부사로서, 오랜 기다림이나 온갖 우여곡절, 노력 끝에 오랜 소원이나 목적하던 결과가 마침내 성취되었음을 나타냅니다(마음속의 짐을 덜어낸 듯한 안도감과 기쁨이 담겨 있으며, '终于', '好不容易'와 유사). 한편 다른 문맥에서는 완벽하지는 않으나 '대체로 그만하면 됐다', '그나마 다행이다'라는 소극적 긍정의 의미로 쓰이기도 합니다. 한국어의 '마침내', '드디어', '겨우', '가까스로'에 해당합니다.",
+      "formation": "주어 + 总算 + 서술어 (동사구 / 형용사구) (+ 了)",
+      "examples": [
+        {
+          "translation": "소통을 거치고 나서야 대감독도 마침내 제대로 이해하게 되었다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_name某某某_535": {
+      "title": "姓氏 + 某 / 某某（代词：代指不便或不必指明姓名的特定人，某人）",
+      "shortExplanation": "附在人名姓氏之后，用来代替不便或不必说出的具体姓名，起匿名指示作用；相当于“某人”、“某位”。",
+      "longExplanation": "“某”（mǒu）及其重叠形式“某某”（mǒumǒu）附在人名姓氏之后（如“李某”、“张某某”），用作不定指或隐去真实姓名的代词。常见于法治新闻报道、公文通报、案卷记录等庄重文体中，用于保护当事人隐私；也见于各类文书示例或日常生活叙事中，表示无需或不愿确指姓名的人。相当于汉语中的“姓李的那个人”或古汉语中的“李某人”。",
+      "formation": "姓氏 + 某 / 某某（或：职务/身份名词 + 姓氏 + 某 / 某某）",
+      "examples": [
+        {
+          "translation": "公司业务员李某/李某某闻之大喜。"
+        }
+      ]
+    },
+    "zh_幸亏_536": {
+      "title": "幸亏（副词 / 连词：幸好、多亏，表示幸免于难或免遭损失）",
+      "shortExplanation": "副词或连词，表示由于某种侥幸的有利条件或及时采取的行动，从而避免了不利的后果或危险；相当于“幸好”、“多亏”。",
+      "longExplanation": "“幸亏”（xìngkuī）可作副词或连词，置于句首或主语前后，用来指明某事件虽然存在发生严重恶果或重大损失的风险，但由于出现了意外的有利因素、及时的举措或他人的援手，因而侥幸避免了不良后果，含有庆幸的感情色彩。后一分句常与“才”（说明化险为夷）、“否则 / 不然 / 要不然”（反面假设不良后果）配合使用。相当于“幸好”、“多亏”。",
+      "formation": "幸亏 + 分句 / 动词短语 ，（否则 / 不然 / 要不然 / 才 +）分句",
+      "examples": []
+    },
+    "zh_行动_538": {
+      "title": "行动（名词：为实现某种意图或目的而进行的具体实际活动、举措）",
+      "shortExplanation": "名词，指为了达到某种意图或目标而实际开展的具体活动、举措或行动方案；相当于“行动”、“举措”。",
+      "longExplanation": "“行动”（xíngdòng）作名词时，指为了实现某一既定方针、目的而付诸实践的具体举措、实践活动或组织行动（与口头空谈、纯粹思想相对立）。常与及物动词搭配构成固定短语，如“采取行动”、“付诸行动”、“统一行动”，也常接受定语修饰构成“实际行动”、“行动方案”、“行动纲领”、“军事行动”等。",
+      "formation": "主语 +（采取 / 付诸 / 统一 +）行动（或：修饰语 + 行动）",
+      "examples": []
+    },
+    "zh_行动_540": {
+      "title": "行动（动词 / 名词：指人体的走动、肢体活动、举止起居）",
+      "shortExplanation": "指人体的步行走动、肢体活动或起居生活动作；常用于表达身体健康与运动能力。",
+      "longExplanation": "“行动”（xíngdòng）作动词或兼作名词，特指人身体各部位的协调活动、肢体走动或起居举止。多用于描述人体的健康生理状况或活动能力是否受限。最典型的常用结构是作谓语主干并后接形容词说明状态，如“行动不便”（身体受阻无法便利走动）、“行动敏捷”（动作迅捷灵活）、“行动迟缓”（动作慢腾腾）等。",
+      "formation": "主语 + 行动 + 不便 / 敏捷 / 迟缓 / 自由",
+      "examples": [
+        {
+          "translation": "他运动时受伤了，行动不便。"
+        }
+      ]
+    },
+    "zh_行动_541": {
+      "title": "行动（动词：实际实行某事，采取步骤开展活动）",
+      "shortExplanation": "不及物动词，表示具体开展活动，按某种意图或方式付诸实施；相当于“行动起来”、“开始动作”。",
+      "longExplanation": "“行动”（xíngdòng）作不及物谓语动词，表示主观能动地投入实践活动，不再停留于构想或语言阶段。常前接方式状语或情态状语来限定行动的方式，如“单独行动”、“秘密行动”、“协调行动”，或后接趋向补语“起来”构成号召性用语“行动起来”，表达立即着手去做的动态意义。",
+      "formation": "主语 +（状语：单独 / 秘密 / 一起 ＋）行动",
+      "examples": [
+        {
+          "translation": "有些鸟类喜欢单独行动。"
+        }
+      ]
+    },
+    "zh_义务_542": {
+      "title": "义务（名词：法律或道德上应尽的责任，与“权利”相对）",
+      "shortExplanation": "名词，指公民或集体在法律、道德上所应当承担的责任与职责；相当于“义务”、“职责”。",
+      "longExplanation": "“义务”（yìwù）作名词，指由法律法规明确规定或社会公德、伦理道德所要求个体必须履行的责任与担当，与“权利”构成法学及社会学上的对立对等范畴。常与动词搭配作宾语，如“尽义务”、“履行义务”、“承担义务”；亦可指某种具体的职责，如“保卫祖国是每个公民的神圣义务”。",
+      "formation": "主语 +（承担 / 尽 / 履行 +）义务（或：定语 + 义务）",
+      "examples": [
+        {
+          "translation": "建设家乡，人人有责，我们也要承担这个义务。"
+        }
+      ]
+    },
+    "zh_义务_543": {
+      "title": "义务 + 名词（区别词/修饰定语：指自愿无偿为公众服务；或指法定必须实行的）",
+      "shortExplanation": "作修饰性定语，指不计报酬、自觉为公共利益提供服务的公益活动；或指国家法定普及的制度；相当于“公益无偿的”、“法定的”。",
+      "longExplanation": "“义务”（yìwù）在此充当区别词定语，直接修饰后面的名词中心语。它主要涵盖两层含义：其一指不计任何物质报酬、自觉自愿为集体、社会或他人所做的工作或奉献（如“义务劳动”、“义务献血”、“义务导游”、“义务植树”）；其二指按照国家法律法规规定必须接受或执行的制度安排（如“义务教育”、“义务兵役”）。在词性上常固定为偏正名词词组。",
+      "formation": "义务 + 名词（劳动 / 教育 / 献血 / 诊疗 / 咨询等）",
+      "examples": [
+        {
+          "translation": "我们每个学期都要至少参加三次义务劳动。"
+        }
+      ]
+    },
+    "zh_朝_544": {
+      "title": "朝（介词：向着某个方向、处所或对象发出动作，相当于“向”）",
+      "shortExplanation": "介词，引进行为动作的方向、处所或动作承受的对象；常作状语，相当于“向”、“对着”。",
+      "longExplanation": "“朝”（cháo）作为空间介词，与后面的方位词、处所名词或代词组成介宾短语，在谓语动词前充当状语，指示动作发出的方向性或行为所指向的目标，用法与“向”基本相同。既可表示位移方向（如“朝东走”、“朝前跑”），也可表示视线、表情、手势动作的指向（如“朝窗外看”、“朝他笑了笑”、“朝空中开枪”）。",
+      "formation": "主语 + 朝 + 方向 / 处所 / 对象 + 动词短语",
+      "examples": []
+    },
+    "zh_朝_546": {
+      "title": "朝（动词：对着某个方向、向着，多指房屋门窗的朝向）",
+      "shortExplanation": "及物动词，表示人或房屋、建筑物、门窗的正面对着某一特定的方向；相当于“对着”、“面向”。",
+      "longExplanation": "“朝”（cháo）作谓语及物动词，后接表示东、南、西、北等方位的名词作宾语，表示主语的正面迎对、面向该方位。极常见于建筑学、房产租售及地理格局的描述中，例如“大门朝东”、“窗户朝南”、“坐北朝南”、“坐西朝东”、“面朝大海”。此时“朝”是句子核心的谓语动词，而非介词。",
+      "formation": "名词（门 / 窗户 / 建筑物 / 房间等）+ 朝 + 方位词（东 / 南 / 西 / 北等）",
+      "examples": [
+        {
+          "translation": "我们学校的正门坐西朝东。"
+        }
+      ]
+    },
+    "zh_简直_547": {
+      "title": "简直（副词：完全如此、差不多到这种地步，用于夸张或极力强调）",
+      "shortExplanation": "副词，带有极强的夸张或强调语气，表示情况几乎完全到了这种不可思议的地步；相当于“完全是”、“差不多等于”。",
+      "longExplanation": "“简直”（jiǎnzhí）在句中充当状语，修饰谓语动词或形容词。含有强烈的夸张、感慨或主观确信色彩，用以极力强调某种情况已经发展到某种极端的程度，在说话人看来“几乎就是如此”、“毫无二致”或“令人难以置信”。常与判断词“是”、比况词“像”或副词“太”、“不能”、“不敢”等搭配，如“简直是个奇迹”、“简直像做梦一样”、“简直不敢相信”。",
+      "formation": "主语 + 简直 +（是 / 像 / 太 / 不能 +）谓语（动词 / 形容词）",
+      "examples": [
+        {
+          "translation": "船长简直是疯了！"
+        }
+      ]
+    },
+    "zh_来_548": {
+      "title": "来（助词/概数词：用于数词或量词后表示概数，相当于“左右”、“上下”）",
+      "shortExplanation": "助词，附在数词或量词之后表示大致的概略数量；相当于“左右”、“上下”、“前后”。",
+      "longExplanation": "“来”（lái）在此用作表示概数的助词，说明某一数量接近但并非完全精确。其语序规则依据数词性质而定：用于“十、百、千”等能够以十递进的整数之后时，须位于量词之前，构成“数词 + 来 + 量词 + 名词”（如“二十来岁”、“三十来个”）；而用于小于十的数词且带有度量衡或一般量词时，须位于量词之后，构成“数词 + 量词 + 来 + 名词/形容词”（如“五斤来重”、“两丈来高”、“三米来长”）。",
+      "formation": "数词（十、百等整十数）+ 来 + 量词 + 名词（或：数词 + 量词 + 来 + 名词 / 形容词）",
+      "examples": [
+        {
+          "translation": "他几乎每天都能钓到5斤来重的大鱼。"
+        }
+      ]
+    },
+    "zh_一来是二来是_549": {
+      "title": "一来（是）……二来（是）……（连词：列举分述两种平列的原因或目的，相当于“一则……二则……”）",
+      "shortExplanation": "并列连词，用于按序分别陈述引出两个平列的原因、理由或目的；相当于“第一……第二……”。",
+      "longExplanation": "“一来（是）……二来（是）……”常成对出现于句中，用来条理分明地列举促成某种行为决策的两个平行原因、意图或目的。具有较强的口语与书面兼融性，作用与文言色彩稍浓的“一则……二则……”或更为正式的“第一是……第二是……”相当。在实际表达中，中间的系词“是”或“来”常常可以省略，简化为“一是为了……二是为了……”或“一是……二是……”。",
+      "formation": "主语 + 一来（是）+ 原因/目的分句1 ，二来（是）+ 原因/目的分句2",
+      "examples": [
+        {
+          "translation": "我到这里看看大家，一(来)是给大家送水果，二(来)是看看大家过节还有什么难处。"
+        }
+      ]
+    },
+    "zh_至于_550": {
+      "title": "至于（介词：用于转入另一相关话题，相当于“关于”、“说到”）",
+      "shortExplanation": "介词，置于后一分句句首，用以引进与上文相关的另一事宜或新的话题；相当于“说到”、“关于”。",
+      "longExplanation": "“至于”（zhìyú）作介词，常置于复句的后一分句之首，起到承接上文并转移谈话重心的过渡连接作用。它把话题从已经讨论清楚的一个方面，自然顺畅地引申转入到另一个与之关联却有所区分的新话题或新对象上（功能类似于“谈到”、“关于”）。常后接名词、代词或主谓短语作为新话题的标记。",
+      "formation": "分句1 ，至于 + 名词 / 新话题分句 ，说明分句",
+      "examples": [
+        {
+          "translation": "我们决定明年结婚，至于具体时间还要再商量。"
+        }
+      ]
+    },
+    "zh_至于_551": {
+      "title": "至于（动词：达到某种严重的程度或不良地步，多用于否定式“不至于”或反问句）",
+      "shortExplanation": "及物动词，表示事情发展达到某种严重的程度；绝大多数情况下用于否定式“不至于”或反问句中；相当于“到这种地步”。",
+      "longExplanation": "“至于”（zhìyú）作为及物谓语动词，表示事物的发展变化达到了某种极端、严重或不良的程度、界限。在现代汉语的实际表达中，它极少在肯定陈述句中单独作谓语，而绝大多数用于否定结构“不至于……”（表示达不到那种严重的程度，不至于如此糟糕），用来否定不良结果的可能性以宽慰他人；或用于反问句“何至于……”、“哪至于……”（表示何苦落到这般田地）。",
+      "formation": "主语 +（不 / 何 / 哪 +）至于 + 动词短语 / 分句",
+      "examples": [
+        {
+          "translation": "他不至于撒谎。"
+        }
+      ]
+    },
+    "zh_总算_552": {
+      "title": "总算（副词：表示经过较长等待或艰苦努力后终于实现了某种愿望；或大体上还过得去）",
+      "shortExplanation": "副词，表示经过漫长的等待、反复周折或努力，久盼的愿望最终得以实现；也表示大体上还令人满意；相当于“终于”、“好不容易”。",
+      "longExplanation": "“总算”（zǒngsuàn）在句中作状语修饰动词或形容词。主要表示经过较长时间的企盼、等待，或历经重重曲折、艰苦努力之后，所期待的结果终于实现，往往流露出说话人如释重负、欣慰与宽慰的情感（与“终于”、“好不容易”用法相通）。句末常伴有表变化的动态助词“了”。在另一种语境中，它还可表示虽然不算尽善尽美，但大体上、基本上还说得过去（如“这次考试他总算及格了”）。",
+      "formation": "主语 + 总算 + 谓语（动词 / 形容词）（+ 了）",
+      "examples": [
+        {
+          "translation": "经过沟通，大导演总算搞明白了。"
+        }
+      ]
+    }
+  }
+}

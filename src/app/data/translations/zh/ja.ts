@@ -2,4149 +2,7480 @@ import { GrammarTranslation } from '../../../models/grammar.model';
 
 export const GRAMMAR_ZH_JA: Record<string, GrammarTranslation> = {
   "zh_什么_1": {
-    "title": "什么 (what)",
-    "shortExplanation": "what",
-    "longExplanation": "what. Pinyin: shénme",
-    "formation": "shénme"
+    "title": "什么（何・なに）",
+    "shortExplanation": "物事や事柄を尋ねる疑問代名詞で、日本語の「何（なに・なん）」に相当します。",
+    "longExplanation": "「什么」（shénme）は中国語で最も基本的な疑問代名詞で、事物や内容を尋ねるときに用います。英語のように疑問詞を文頭に移動させる必要はなく、平叙文で尋ねたい要素（主語や目的語）がある位置にそのまま「什么」を置きます。",
+    "formation": "主語 ＋ 動詞 ＋ 什么？（または単独で代名詞として使用）",
+    "examples": [
+      {
+        "translation": "これは何ですか？"
+      }
+    ]
   },
   "zh_什么N_2": {
-    "title": "什么 N (what kind of N)",
-    "shortExplanation": "what kind of N",
-    "longExplanation": "what kind of N. Pinyin: shénme N",
-    "formation": "shénme N"
+    "title": "什么 ＋ 名詞（どんな〜・何の〜）",
+    "shortExplanation": "疑問代名詞「什么」を名詞の前に直接置き、種類や名前を尋ねる連体修飾用法で、「何の〜」「どんな〜」を表します。",
+    "longExplanation": "「什么」（shénme）が名詞の直前に置かれると、その名詞を修飾する定語（連体修飾語）となり、事物の種類や属性、名前などを尋ねる表現になります（例：什么书＝何の本、什么名字＝どんな名前）。通常、量詞を挟まずに名詞に直接接続します。",
+    "formation": "什么 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "あれは何の本ですか？"
+      }
+    ]
   },
   "zh_不是_3": {
-    "title": "不是 (not to be)",
-    "shortExplanation": "not to be",
-    "longExplanation": "not to be. Pinyin: bùshì",
-    "formation": "bùshì"
+    "title": "不是（〜ではない・〜ではありません）",
+    "shortExplanation": "判断詞「是」の否定形で、主語の身分・国籍・属性などを否定する「〜ではない」「〜ではありません」を表します。",
+    "longExplanation": "「不是」（bù shì）は、否定副詞「不」と判断詞「是」が結びついた形で、「主語 ＋ 不是 ＋ 名詞」の形で「主語は〜ではない」という否定判断を表します。身分、職業、国籍、事物の一致関係などを否定する際に用いられます。なお、第4声の「是」の前では変調により「不」は第2声（bú）として発音されます。",
+    "formation": "主語 ＋ 不是 ＋ 名詞 / 名詞句",
+    "examples": [
+      {
+        "translation": "私はアメリカ人ではありません。"
+      }
+    ]
   },
   "zh_是_4": {
-    "title": "是 (to be)",
-    "shortExplanation": "to be",
-    "longExplanation": "to be. Pinyin: shì",
-    "formation": "shì"
+    "title": "是（〜である・〜です）",
+    "shortExplanation": "主語と名詞を結び、身分・性質・等号関係を肯定する判断詞で、日本語の「〜です」「〜である」に相当します。",
+    "longExplanation": "「是」（shì）は中国語の判断詞（繋辞・コピュラ）であり、「A 是 B」（AはBである）の構文を作ります。主語の身分、職業、国籍、所属、同一関係などを表す際に不可欠です。なお、日本語の「〜です」と異なり、形容詞を述語にする場合には「是」を用いず、程度副詞（很 など）を用いて接続します。",
+    "formation": "主語 ＋ 是 ＋ 名詞 / 名詞句",
+    "examples": [
+      {
+        "translation": "彼女は先生です。"
+      }
+    ]
   },
   "zh_吗_5": {
-    "title": "吗? (right?)",
-    "shortExplanation": "right?",
-    "longExplanation": "right?. Pinyin: ma?",
-    "formation": "ma?"
+    "title": "〜吗？（疑問助詞：〜ですか）",
+    "shortExplanation": "平叙文の文末に置いてYes/No疑問文を作る語気助詞で、日本語の文末助詞「〜か」に相当します。",
+    "longExplanation": "「吗」（ma）は軽声で発音される疑問語気助詞です。通常の肯定文や否定文の末尾にそのまま付けるだけで、相手に「はい／いいえ」の返答を求める疑問文（是非疑問文）を作ることができます。文中の語順を変更する必要はありません。",
+    "formation": "平叙文 ＋ 吗？",
+    "examples": [
+      {
+        "translation": "あなたは先生ですか？"
+      }
+    ]
   },
   "zh_谁_6": {
-    "title": "谁 (who)",
-    "shortExplanation": "who",
-    "longExplanation": "who. Pinyin: shéi",
-    "formation": "shéi"
+    "title": "谁（誰・だれ）",
+    "shortExplanation": "人を尋ねる疑問代名詞で、日本語の「誰（だれ・どなた）」に相当します。",
+    "longExplanation": "「谁」（shéi、または shuí）は人物を尋ねる疑問代名詞です。主語、目的語、定語（修飾語）として自由に使われます。語順を変えることなく、尋ねたい人物の位置にそのまま置きます。定語として所属を尋ねる場合は「谁的〜」（誰の〜）という形でよく用いられます。",
+    "formation": "主語 ＋ 是 ＋ 谁？ または 谁 ＋ 述語？",
+    "examples": [
+      {
+        "translation": "彼女は誰ですか？"
+      }
+    ]
   },
   "zh_哪MN_7": {
-    "title": "哪 M N (which N)",
-    "shortExplanation": "which N",
-    "longExplanation": "which N. Pinyin: nǎ M N",
-    "formation": "nǎ M N"
+    "title": "哪 ＋ 量詞 ＋ 名詞（どの〜・どの人/物）",
+    "shortExplanation": "疑問代名詞「哪」に量詞と名詞を続け、特定のものや人を選択して尋ねる「どの〜」を表します。",
+    "longExplanation": "「哪」（nǎ）は複数の選択肢の中から特定の人や物を限定して尋ねる疑問詞です。中国語では名詞を修飾する際、間に適切な量詞を挟む規則があるため、「哪 ＋ 量詞 ＋ 名詞」という語順をとります（例：哪本书＝どの本、哪个人＝どの人）。",
+    "formation": "哪 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "どの人ですか？"
+      }
+    ]
   },
   "zh_的_8": {
-    "title": "(的) (’s)",
-    "shortExplanation": "’s",
-    "longExplanation": "’s. Pinyin: ( de)",
-    "formation": "( de)"
+    "title": "（的）（構造助詞：〜の［親族・親称における省略］）",
+    "shortExplanation": "所属や所有関係を表す構造助詞「的」で、親族や親しい関係・所属先を表す場合は省略されることがあります。",
+    "longExplanation": "「的」（de）は修飾語（定語）と被修飾語（名詞）を結びつけ、所有や所属関係を表す構造助詞で、日本語の「〜の」に相当します（例：我的书＝私の本）。ただし、家族、親しい知人、先生など親密な人間関係や所属組織を指す場合、日常会話では「的」を省略することが一般的です（例：我(的)老师、我(的)妈妈）。",
+    "formation": "修飾語（代名詞 / 名詞） ＋ (的) ＋ 名詞",
+    "examples": [
+      {
+        "translation": "彼女は私の先生です。"
+      }
+    ]
   },
   "zh_N呢_9": {
-    "title": "N 呢? (what about N?)",
-    "shortExplanation": "what about N?",
-    "longExplanation": "what about N?. Pinyin: N ne?",
-    "formation": "N ne?"
+    "title": "名詞 ＋ 呢？（〜は？・〜はどうですか）",
+    "shortExplanation": "名詞や代名詞の後に語気助詞「呢」を置き、文脈を受けて「〜は？」「〜はどうですか？」と反問・省略疑問を表します。",
+    "longExplanation": "「名詞 ＋ 呢？」（ne）は、直前の話題や文脈を踏まえて別の対象について同じ内容を尋ね返す省略疑問文（反問）を作ります。日本語の「〜は？」「〜はどうですか？」に相当し、述語を繰り返す手間を省いて自然な会話を成立させます（例：我是中国人，你呢？＝私は中国人です、あなたは？）。なお、先行文脈がない場合は「〜はどこ？」と所在を尋ねる意味になります。",
+    "formation": "名詞 / 代名詞 ＋ 呢？",
+    "examples": [
+      {
+        "translation": "私は中国人です。あなたはどうですか？"
+      }
+    ]
   },
   "zh_几MN_10": {
-    "title": "几 M N (how many N)",
-    "shortExplanation": "how many N",
-    "longExplanation": "how many N. Pinyin: jǐ M N",
-    "formation": "jǐ M N"
+    "title": "几 ＋ 量詞 ＋ 名詞（何個・何人の〜［10以下の数量］）",
+    "shortExplanation": "比較的少ない数量（主に10以下）を尋ねる疑問詞「几」に量詞と名詞を続け、「何〜」「いくつ」を表します。",
+    "longExplanation": "「几」（jǐ）は、答えとなる数量が10以下と予想される場合に用いられる疑問数詞で、日本語の「何人」「何冊」「何個」などに相当します（10を超える多数を尋ねる場合は「多少」を用います）。中国語の文法規則として、「几」と名詞の間には必ず対応する量詞を挟む必要があります（構造：几 ＋ 量詞 ＋ 名詞）。",
+    "formation": "几 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "あなたには中国語の先生が何人いますか？"
+      }
+    ]
   },
   "zh_一九十九_11": {
-    "title": "一～九十九 (1 ~ 99)",
-    "shortExplanation": "1 ~ 99",
-    "longExplanation": "1 ~ 99. Pinyin: yī～ jiǔ shíjiǔ",
-    "formation": "yī～ jiǔ shíjiǔ"
+    "title": "一～九十九（1から99までの数詞）",
+    "shortExplanation": "中国語における1から99までの基数詞の構成ルールです。",
+    "longExplanation": "中国語の1から99までの数字は、日本語とほぼ同様の規則的な十進法で構成されます：\n• 1〜10：一、二、三、四、五、六、七、八、九、十。\n• 11〜19：「十」の後ろに1の位の数字を接続（例：十一＝11、十五＝15）。\n• 20〜90の十の倍数：数字の後ろに「十」を接続（例：二十＝20、三十＝30、九十＝90）。\n• 21〜99：「十の位の数字 ＋ 十 ＋ 一の位の数字」（例：九十一＝91）。",
+    "formation": "十の位の数字（2〜9） ＋ 十 ＋ 一の位の数字（1〜9）",
+    "examples": [
+      {
+        "translation": "九十一（91）。"
+      }
+    ]
   },
   "zh_AGE了_12": {
-    "title": "AGE 了 (became AGE)",
-    "shortExplanation": "became AGE",
-    "longExplanation": "became AGE. Pinyin: AGE le",
-    "formation": "AGE le"
+    "title": "年齢 ＋ 了（〜歳になった［変化の了］）",
+    "shortExplanation": "年齢表現の文末に語気助詞「了」を添え、新たな年齢に達した事態の変化を表す「〜歳になった」です。",
+    "longExplanation": "年齢を述べる文の末尾に語気助詞「了」（le）を置くことで、時間が経過してその年齢に達したこと、あるいは新たな年齢の段階に入ったという「事態の変化（変化の了）」を表します。日本語の「〜歳になりました」「もう〜歳です」のニュアンスに対応します。",
+    "formation": "主語 ＋ 数詞 ＋ 岁 ＋ 了",
+    "examples": [
+      {
+        "translation": "私は40歳になりました。"
+      }
+    ]
   },
   "zh_多大_13": {
-    "title": "多大 (how old)",
-    "shortExplanation": "how old",
-    "longExplanation": "how old. Pinyin: duōdà",
-    "formation": "duōdà"
+    "title": "多大（何歳・いくつ）",
+    "shortExplanation": "年齢を尋ねる疑問表現で、主に同世代や年下の人物に対して「何歳ですか」「いくつですか」と質問する際に用います。",
+    "longExplanation": "「多大」（duō dà）は、程度を尋ねる副詞「多」と形容詞「大」が組み合わさった表現で、年齢を質問する際によく使われます。文末に「了」を伴って「……多大了？」という形で用いられることが一般的です（例：你女儿多大了？）。なお、10歳未満の幼児には「几岁」、目上の高齢者には敬意を込めて「多大年纪」や「多大岁数」を使うのが丁寧です。",
+    "formation": "主語 ＋ 多大 (了)？",
+    "examples": [
+      {
+        "translation": "娘さんは何歳になりましたか？"
+      }
+    ]
   },
   "zh_会V_14": {
-    "title": "会 V (know how to V)",
-    "shortExplanation": "know how to V",
-    "longExplanation": "know how to V. Pinyin: huì V",
-    "formation": "huì V"
+    "title": "会 ＋ 動詞（助動詞：〜できる・〜する技能がある［学習・習得］）",
+    "shortExplanation": "学習や訓練を通じて獲得した技能や能力を表す助動詞「会」で、「〜できる」「〜のやり方を知っている」を意味します。",
+    "longExplanation": "「会」（huì）は動詞の直前に置かれる助動詞（能願動詞）で、練習や学習を通して身につけた後天的な技能や能力を表します。日本語の「〜することができる」「〜する技術がある」に相当します（例：会开车＝車の運転ができる、会游泳＝泳げる）。否定形は「不会 ＋ 動詞」となります。",
+    "formation": "主語 ＋ 会 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "私は書くことができます（書き方を知っています）。"
+      }
+    ]
   },
   "zh_很_15": {
-    "title": "很 (very)",
-    "shortExplanation": "very",
-    "longExplanation": "very. Pinyin: hěn",
-    "formation": "hěn"
+    "title": "很 ＋ 形容詞（程度副詞：とても・大変［形容詞述語文の接続］）",
+    "shortExplanation": "形容詞の前に置かれ、程度が高いことを表す「とても」という意味や、形容詞述語文のバランスを保つ接続役を果たします。",
+    "longExplanation": "「很」（hěn）は中国語で最も多用される程度副詞で、形容詞の前に置かれます。本来は「とても」「大変」という高い程度を表しますが、中国語では形容詞が単独で述語になると対比のニュアンスが生じるため、通常の叙述文では語調を整えるクッション（標識）として「很」を添えるのが通例です（例：「我很好」は強い強調のない「私は元気です」の意味にもなります）。",
+    "formation": "主語 ＋ 很 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "私はとても元気です（元気です）。"
+      }
+    ]
   },
   "zh_怎么V_16": {
-    "title": "怎么 V (how to V)",
-    "shortExplanation": "how to V",
-    "longExplanation": "how to V. Pinyin: zěnme V",
-    "formation": "zěnme V"
+    "title": "怎么 + 動詞 (どうやって〜する / やり方・方法)",
+    "shortExplanation": "動作や行為のやり方・方法を尋ね、「どうやって〜するのか」「どのように〜するのか」という意味を表します。",
+    "longExplanation": "疑問代名詞「怎么 (zěnme)」を動詞の前に置くことで、ある行為をどのような方法や手段で行うかを尋ねる表現です。日本語の「どうやって〜しますか」「どのように〜しますか」に相当します。",
+    "formation": "怎么 + 動詞",
+    "examples": [
+      {
+        "translation": "これはどうやって読みますか？"
+      }
+    ]
   },
   "zh_月号日星期_17": {
-    "title": "月、号/日、星期 ((telling dates))",
-    "shortExplanation": "(telling dates)",
-    "longExplanation": "(telling dates). Pinyin: yuè、 hào/ rì、 xīngqī",
-    "formation": "yuè、 hào/ rì、 xīngqī"
+    "title": "...月...号/日 星期... (日付と曜日の表現)",
+    "shortExplanation": "中国語の日付表現：大きい単位から順に「月 → 日（号／日） → 曜日（星期）」と並べます。",
+    "longExplanation": "中国語では日付を表す際、大きな単位から小さな単位へと並べる規則があり、「年 → 月 → 日 → 曜日」の順序になります。日常会話の口語では日に「号 (hào)」が好んで使われ、公的な表記や改まった場面では「日 (rì)」が使われます。曜日は「星期 (xīngqī) + 数字」で表します。",
+    "formation": "［数字］月 + ［数字］号/日 + 星期［数字/天］",
+    "examples": [
+      {
+        "translation": "9月2日木曜日"
+      }
+    ]
   },
   "zh_去PLACEV_19": {
-    "title": "去 PLACE V (go to PLACE to do V)",
-    "shortExplanation": "go to PLACE to do V",
-    "longExplanation": "go to PLACE to do V. Pinyin: qù PLACE V",
-    "formation": "qù PLACE V"
+    "title": "去 + 場所 + 動詞 (〜へ…しに行く / 連動文)",
+    "shortExplanation": "連動文による目的の表現：「場所へ〜しに行く」という意味を表します。",
+    "longExplanation": "中国語の連動文（2つ以上の動詞が連続する文）の代表的な形で、ある場所に移動してその目的となる動作を行うことを表します。「去（行く）+ 場所」の後に目的となる動詞を続け、日本語の「〜へ…しに行く」に相当します。",
+    "formation": "主語 + 去 + 場所 + 動詞 (+ 目的語)",
+    "examples": [
+      {
+        "translation": "私は学校へ勉強しに行きます。"
+      }
+    ]
   },
   "zh_想_20": {
-    "title": "想 (to want)",
-    "shortExplanation": "to want",
-    "longExplanation": "to want. Pinyin: xiǎng",
-    "formation": "xiǎng"
+    "title": "想 + 動詞 (〜したい / 願望・意向)",
+    "shortExplanation": "助動詞（能願動詞）として希望や意向を表し、「〜したい」「〜しようと思う」という意味を表します。",
+    "longExplanation": "助動詞（能願動詞）の「想 (xiǎng)」は動詞の前に置かれ、話し手の主観的な願望や計画、意図を表します。日本語の「〜したい」「〜するつもりだ」に相当します。否定形は動詞の直前に「不想」を置きます。",
+    "formation": "主語 + 想 + 動詞 (+ 目的語)",
+    "examples": [
+      {
+        "translation": "私は本を読みたいです。"
+      }
+    ]
   },
   "zh_多少N_21": {
-    "title": "多少 N (how much N)",
-    "shortExplanation": "how much N",
-    "longExplanation": "how much N. Pinyin: duōshao N",
-    "formation": "duōshao N"
+    "title": "多少 (+ 量詞) + 名詞 (いくつの〜 / 数量を尋ねる)",
+    "shortExplanation": "数量を尋ねる疑問詞で、一般に10以上の数量や見当がつかない数を尋ねる際に用います（「どれくらい」「何人/何個」）。",
+    "longExplanation": "疑問代名詞「多少 (duōshao)」は数量を尋ねるときに使われます。「几」が通常10以下の少ない数量を尋ねて量詞を必要とするのに対し、「多少」は10を超えると思われる数や見当がつかない数量、値段を尋ねる際に用いられ、量詞を省略して名詞に直接接続することも可能です。",
+    "formation": "多少 (+ 量詞) + 名詞",
+    "examples": [
+      {
+        "translation": "あなたの中国語の先生は何人いますか？"
+      }
+    ]
   },
   "zh_个_22": {
-    "title": "个 ((measure word))",
-    "shortExplanation": "(measure word)",
-    "longExplanation": "(measure word). Pinyin: gè",
-    "formation": "gè"
+    "title": "个 (最も基本的な汎用量詞)",
+    "shortExplanation": "最も基本的で広く使われる万能量詞で、人や個別の量詞を持たない様々な事物を数える際に用います。",
+    "longExplanation": "量詞「个 (gè)」は、現代中国語において最も使用頻度が高い汎用量詞です。人（学生、友達など）を数えるほか、特定の専用量詞を持たない様々な具体物や抽象的な概念（問題、考えなど）を数える際に幅広く使われます。数詞や指示代名詞（这・那）と名詞の間に置かれます。",
+    "formation": "数詞 / 这 / 那 + 个 + 名詞",
+    "examples": [
+      {
+        "translation": "5人の学生"
+      }
+    ]
   },
   "zh_口_23": {
-    "title": "口 ((measure word))",
-    "shortExplanation": "(measure word)",
-    "longExplanation": "(measure word). Pinyin: kǒu",
-    "formation": "kǒu"
+    "title": "口 (家族の人数などを数える量詞)",
+    "shortExplanation": "主に家族の構成人数（口・人）を数える際に用いられる量詞です。",
+    "longExplanation": "量詞「口 (kǒu)」は、日常会話において主に家族の構成人数・人口を数える際に使われます（通常「人」を修飾して「几口人」「三口人」のように用います）。その他、井戸や大鍋など口のある物や、「一口食べる・飲む」のような動作の回数（一口）を数える際にも用いられます。",
+    "formation": "数詞 + 口 + 人 (または該当する名詞)",
+    "examples": [
+      {
+        "translation": "私の家は5人家族です。"
+      }
+    ]
   },
   "zh_元块_24": {
-    "title": "元／块 ((currency))",
-    "shortExplanation": "(currency)",
-    "longExplanation": "(currency). Pinyin: yuán／ kuài",
-    "formation": "yuán／ kuài"
+    "title": "元／块 (中国の通貨単位「元」)",
+    "shortExplanation": "中国の基本通貨単位を表します。「元」は書き言葉・公的な表現、「块」は日常会話の口語で広く用いられます。",
+    "longExplanation": "中国人民元の基本通貨単位です。「元 (yuán)」は公式な場や文書、価格表示などの書き言葉で用いられる正式名称です。一方、「块 (kuài)」は日常会話で最も頻繁に使われる親しみやすい口語表現です（日本語の「〜元」「〜塊」に相当）。",
+    "formation": "数詞 + 元 / 块",
+    "examples": [
+      {
+        "translation": "1元"
+      }
+    ]
   },
   "zh_在_25": {
-    "title": "在 (at)",
-    "shortExplanation": "at",
-    "longExplanation": "at. Pinyin: zài",
-    "formation": "zài"
+    "title": "在 (〜にいる、〜にある / 所在の表現)",
+    "shortExplanation": "人や事物の存在や所在を表し、「〜にいる」「〜にある」という意味を表す動詞です。",
+    "longExplanation": "動詞「在 (zài)」は、人や物が特定の場所や位置に存在していることを表します。日本語の「（場所）にいる」「（場所）にある」に相当します。否定形は「不在」となります。「主語 + 在 + 場所・方位詞」の語順で用います。",
+    "formation": "主語 + 在 + 場所 / 方位詞",
+    "examples": [
+      {
+        "translation": "彼は椅子の下にいます。"
+      }
+    ]
   },
   "zh_哪儿_26": {
-    "title": "哪儿？ (where)",
-    "shortExplanation": "where",
-    "longExplanation": "where. Pinyin: nǎr？",
-    "formation": "nǎr？"
+    "title": "哪儿？ (どこ？ / 場所を尋ねる疑問詞)",
+    "shortExplanation": "場所や位置を尋ねる疑問代名詞で、「どこ」「どちら」という意味を表します。",
+    "longExplanation": "疑問代名詞「哪儿 (nǎr)」は場所や所在を尋ねる際に用いられ、日本語の「どこ」「どちら」に相当します（北方方言で広く使われる児化表現で、南方では「哪里 (nǎlǐ)」が好まれます）。動詞「在」と組み合わせて「在 + 哪儿？（どこにありますか／いますか）」という形で頻繁に用いられます。",
+    "formation": "主語 + 在 + 哪儿？",
+    "examples": [
+      {
+        "translation": "私のコップはどこにありますか？"
+      }
+    ]
   },
   "zh_在PLACEV_27": {
-    "title": "在 PLACE V (V at PLACE)",
-    "shortExplanation": "V at PLACE",
-    "longExplanation": "V at PLACE. Pinyin: zài PLACE V",
-    "formation": "zài PLACE V"
+    "title": "在 + 場所 + 動詞 (〜で…する / 動作の場所)",
+    "shortExplanation": "介詞（前置詞）「在」を用いて動作が行われる場所を表し、「〜で…する」という意味を表します。",
+    "longExplanation": "介詞（前置詞）の「在 (zài)」は場所を表す名詞を伴って介詞句をつくり、動詞の前に置かれて連用修飾語（状語）として働きます。動作や行為が行われる場所を示し、日本語の「（場所）で〜する」に相当します。中国語では「場所」が動詞の「前」に来る語順が非常に重要です。",
+    "formation": "主語 + 在 + 場所 + 動詞 (+ 目的語)",
+    "examples": [
+      {
+        "translation": "私は友達の家でお茶を飲んでいます。"
+      }
+    ]
   },
   "zh_Q呢_28": {
-    "title": "Q 呢 (I wonder)",
-    "shortExplanation": "I wonder",
-    "longExplanation": "I wonder. Pinyin: Q ne",
-    "formation": "Q ne"
+    "title": "疑問文 + 呢 (疑問の語気助詞「〜かな」「〜だろう」)",
+    "shortExplanation": "疑問文の末尾に置いて語気を和らげ、親しみを持たせたり、疑問・思案のニュアンスを深めます。",
+    "longExplanation": "疑問詞（谁、什么、哪儿、怎么など）を含む疑問文や選択疑問文の文末に語気助詞「呢 (ne)」を添えることで、尋ねる口調を柔らかく穏やかにし、親しみやすさを与えます。また、話し手の「いったい〜だろうか」「〜かな」という思案や好奇の気持ちを表します。",
+    "formation": "疑問詞を含む文 + 呢？",
+    "examples": [
+      {
+        "translation": "彼はどこにいるのかな？"
+      }
+    ]
   },
   "zh_N呢_29": {
-    "title": "N 呢？ (where is N)",
-    "shortExplanation": "where is N",
-    "longExplanation": "where is N. Pinyin: N ne？",
-    "formation": "N ne？"
+    "title": "名詞 + 呢？ (〜はどこ？ / 所在を尋ねる省略疑問文)",
+    "shortExplanation": "単独で用いられ、人や物の所在・行方を尋ねて「〜はどこ？」「〜はどうしたの？」という意味を表します。",
+    "longExplanation": "先行する文脈がない状況で「名詞 + 呢？ (ne)」を用いると、その人や物がどこにあるのか、所在や行方を尋ねる省略疑問文になります。これは「［名詞］在哪儿？（〜はどこにありますか／いますか）」とほぼ同じ意味を表す非常に日常的な言い回しです。",
+    "formation": "名詞 / 代名詞 + 呢？",
+    "examples": [
+      {
+        "translation": "私のコップはどこ？"
+      }
+    ]
   },
   "zh_PLACE有N_30": {
-    "title": "PLACE 有 N (there is N at PLACE)",
-    "shortExplanation": "there is N at PLACE",
-    "longExplanation": "there is N at PLACE. Pinyin: PLACE yǒu N",
-    "formation": "PLACE yǒu N"
+    "title": "場所 + 有 + 名詞 (〜に…がある・いる / 存現文)",
+    "shortExplanation": "特定の場所に人や物が存在することを表す存現文で、「（場所）に〜がある／いる」という意味を表します。",
+    "longExplanation": "中国語の存現文（存在を表す文）の基本構文です。文頭に場所や位置を表す言葉（処所詞・方位詞）を置き、動詞「有 (yǒu)」の後ろに存在する人や物（通常は不特定の名詞句）を置きます。日本語の「〜に…がいる」「〜に…がある」に相当します。",
+    "formation": "場所 / 方位詞 + 有 + (数詞 + 量詞) + 名詞",
+    "examples": [
+      {
+        "translation": "椅子の下に子犬が1匹います。"
+      }
+    ]
   },
   "zh_PLACE没有N_31": {
-    "title": "PLACE 没有 N (there isn’t N at PLACE)",
-    "shortExplanation": "there isn’t N at PLACE",
-    "longExplanation": "there isn’t N at PLACE. Pinyin: PLACE méiyǒu N",
-    "formation": "PLACE méiyǒu N"
+    "title": "場所 + 没有 + 名詞 (〜に…がない・いない / 存在の否定)",
+    "shortExplanation": "存現文の否定形で、特定の場所に人や物が存在しないことを表し、「（場所）に〜がない／いない」という意味を表します。",
+    "longExplanation": "「場所 + 有 + 名詞」の否定形式です。「有」の直前に否定の「没」を補って「没有（または没）」とし、ある場所に人や物が一切存在しないことを表します。日本語の「〜に…はいない／ない」に相当します。否定文では通常、名詞の前の「数詞 + 量詞」は省略されます。",
+    "formation": "場所 / 方位詞 + 没有 + 名詞",
+    "examples": [
+      {
+        "translation": "ここには誰もいません。"
+      }
+    ]
   },
   "zh_和_32": {
-    "title": "和 (and)",
-    "shortExplanation": "and",
-    "longExplanation": "and. Pinyin: hé",
-    "formation": "hé"
+    "title": "和（接続詞：〜と）",
+    "shortExplanation": "名詞や代名詞、名詞句を並列に結ぶ接続詞で、日本語の「〜と」に相当します。",
+    "longExplanation": "「和」（hé）は中国語で最も一般的に用いられる並列接続詞です。名詞・代名詞・名詞句同士を結びつけて並列関係を表します。3つ以上の要素を並べる際は、日本語の読点に似た「顿号（、）」で区切り、最後の要素の前にのみ「和」を置くのが通例です（例：爸爸、妈妈和我）。なお、英語の「and」と異なり、独立した文や複文の節同士を結ぶことはできません。",
+    "formation": "名詞1／代名詞1 ＋ 和 ＋ 名詞2／代名詞2",
+    "examples": [
+      {
+        "translation": "父、母、そして私。"
+      }
+    ]
   },
   "zh_能_33": {
-    "title": "能 (can)",
-    "shortExplanation": "can",
-    "longExplanation": "can. Pinyin: néng",
-    "formation": "néng"
+    "title": "能（能願動詞：〜できる・〜してもよい［能力・条件・許可］）",
+    "shortExplanation": "客観的な条件が整っていること、本来の能力、または許可・依頼を表す能願動詞で、「〜できる」「〜してもよい」を意味します。",
+    "longExplanation": "「能」（néng）は動詞の前に置かれる助動詞（能願動詞）です。主な用法として、①状況や客観的な条件が許して「〜できる」、②身体的能力や素質が備わっていて「〜できる」、③疑問文で相手に許可を求めたり依頼したりする「〜してもよいですか」（我能……吗？）があります。否定形は「不能」（〜できない／〜してはならない）となります。",
+    "formation": "主語 ＋ 能 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "ここに座ってもよろしいですか？"
+      }
+    ]
   },
   "zh_请V_34": {
-    "title": "请 V (please V)",
-    "shortExplanation": "please V",
-    "longExplanation": "please V. Pinyin: qǐng V",
-    "formation": "qǐng V"
+    "title": "请 ＋ 動詞（どうぞ〜してください・〜してください［丁寧な依頼・勧誘］）",
+    "shortExplanation": "動詞の前に置いて、丁寧な依頼・勧誘・促しを表す敬語的表現で、「どうぞ〜してください」に相当します。",
+    "longExplanation": "「请」（qǐng）は動詞の直前に置かれ、相手に対して礼儀正しく指示や勧誘、お願いをする際に用います（例：请进＝どうぞお入りください、请坐＝どうぞお掛けください）。日常会話や接客など幅広い場面で使われ、表現を柔らかく丁寧にする効果があります。",
+    "formation": "（主語 ＋）请 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "どうぞお座りください。"
+      }
+    ]
   },
   "zh_点分_35": {
-    "title": "# 点 # 分 (# hour # minute)",
-    "shortExplanation": "# hour # minute",
-    "longExplanation": "# hour # minute. Pinyin: # diǎn # fēn",
-    "formation": "# diǎn # fēn"
+    "title": "数詞 ＋ 点 ＋（数詞 ＋ 分）（時刻の表し方：〜時〜分）",
+    "shortExplanation": "時刻を告げる表現で、「点」が「時」、「分」が「分」を表します。",
+    "longExplanation": "中国語で具体的な時刻を表す基本形式は「数詞 ＋ 点（diǎn：時） ＋ 数詞 ＋ 分（fēn：分）」です。分の数値が10以上の偶数桁の場合は、日常会話で末尾の「分」を省略することもあります（例：十一点十＝11時10分）。ただし、1分から9分までの端数は「零」を挟んで「八点零五分」（8時5分）のように言い、「分」は省略しません。なお、「2時」は「二点」ではなく「两点」と言います。",
+    "formation": "数詞 ＋ 点（＋ 数詞 ＋ 分）",
+    "examples": [
+      {
+        "translation": "11時10分。"
+      }
+    ]
   },
   "zh_上午下午_36": {
-    "title": "上午／下午 (AM/PM)",
-    "shortExplanation": "AM/PM",
-    "longExplanation": "AM/PM. Pinyin: shàngwǔ／ xiàwǔ",
-    "formation": "shàngwǔ／ xiàwǔ"
+    "title": "上午／下午（午前／午後［時刻の修飾語］）",
+    "shortExplanation": "具体的な時刻の前に置き、午前（上午）か午後（下午）かを明確にする時間詞です。",
+    "longExplanation": "中国語で一日の時間帯を区別する際、「上午」（shàngwǔ：午前／朝）や「下午」（xiàwǔ：午後／昼下がり）などの時間詞を具体的な時刻の前に置きます。中国語の表現順序は常に「大きい単位から小さい単位へ」進むため、「上午／下午 ＋ 時刻（〜点〜分）」という語順になります（例：下午三点十分＝午後3時10分）。",
+    "formation": "上午／下午 ＋ 数詞 ＋ 点（＋ 数詞 ＋ 分）",
+    "examples": [
+      {
+        "translation": "午後3時10分。"
+      }
+    ]
   },
   "zh_STIMEV_37": {
-    "title": "S TIME V ((time phrase))",
-    "shortExplanation": "(time phrase)",
-    "longExplanation": "(time phrase). Pinyin: S TIME V",
-    "formation": "S TIME V"
+    "title": "主語 ＋ 時間詞 ＋ 動詞（時間状語が主語の後に置かれる語順）",
+    "shortExplanation": "動作が行われる時点を表す時間詞を、主語の後・動詞の前に置いて時間状語（連用修飾語）とする基本文型です。",
+    "longExplanation": "中国語の文法における最重要ルールのひとつとして、「動作の行われる時間は必ず動詞の前に置く」という原則があります（文末に置くことはできません）。主語の直後に時間詞を配置する「主語 ＋ 時間詞 ＋ 動詞」の語順は最も基本的で自然な叙述順序であり、誰が・いつ・何をするかを明快に伝えます（例：妈妈六点做饭＝母は6時に料理を作ります）。",
+    "formation": "主語 ＋ 時間詞 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "母は6時にご飯を作ります。"
+      }
+    ]
   },
   "zh_TIMESV_38": {
-    "title": "TIME S V ((time phrase))",
-    "shortExplanation": "(time phrase)",
-    "longExplanation": "(time phrase). Pinyin: TIME S V",
-    "formation": "TIME S V"
+    "title": "時間詞 ＋ 主語 ＋ 動詞（時間状語が文頭に置かれる語順）",
+    "shortExplanation": "時間詞を文頭（主語の前）に置き、文全体の時間的背景を提示したり時刻を強調したりする文型です。",
+    "longExplanation": "中国語の時間状語は、主語の後ろだけでなく文の先頭（主語の前）に配置することもできます。この「時間詞 ＋ 主語 ＋ 動詞」という語順をとることで、発話全体の時間的枠組みを前もって提示したり、その時刻を際立たせたりするニュアンスが生まれます（例：七点我吃饭＝7時に私はご飯を食べます）。主語の前後どちらにあっても、動詞より前になければならない原則は共通です。",
+    "formation": "時間詞 ＋ 主語 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "7時に私はご飯を食べます。"
+      }
+    ]
   },
   "zh_TIME前_39": {
-    "title": "TIME 前 (before TIME)",
-    "shortExplanation": "before TIME",
-    "longExplanation": "before TIME. Pinyin: TIME qián",
-    "formation": "TIME qián"
+    "title": "時点 ＋ 前（〜より前に・〜までに［期限・時点］）",
+    "shortExplanation": "特定の時点を表す語の後ろに「前」を付け、その時点より前、またはその時点を期限とすることを表します。",
+    "longExplanation": "「前」（qián）は特定の日時や曜日、時刻など「具体的な時点」の直後に置かれることで、「その時点よりも前に」「その時点までに」という時間的範囲や締め切りを表します（例：星期五前＝金曜日までに／金曜日より前に、明天前＝明日までに）。文中では動詞の前に置かれて連用修飾語（時間状語）として機能します。",
+    "formation": "具体的な時点 ＋ 前",
+    "examples": [
+      {
+        "translation": "金曜日より前に（金曜日までに）。"
+      }
+    ]
   },
   "zh_DURATION前_40": {
-    "title": "DURATION 前 (DURATION ago)",
-    "shortExplanation": "DURATION ago",
-    "longExplanation": "DURATION ago. Pinyin: DURATION qián",
-    "formation": "DURATION qián"
+    "title": "期間 ＋ 前（〜前・〜前のこと［過去の経過時間］）",
+    "shortExplanation": "時間の長さを表す語（時量詞）の後ろに「前」を付け、現在から遡って「〜前に」過去の事柄が起きたことを表します。",
+    "longExplanation": "ピンポイントの時点ではなく、「3日間」「1週間」「2ヶ月」といった時間の長さ（時量詞・期間）に「前」（qián）を接続すると、現在を起点として過去に遡った経過時間を表します。日本語の「〜前（〜まえ）」に直結する用法です（例：一个星期前＝1週間前、三天前＝3日前）。",
+    "formation": "期間（数詞 ＋ 時間量詞） ＋ 前",
+    "examples": [
+      {
+        "translation": "1週間前（1週間前に）。"
+      }
+    ]
   },
   "zh_N怎么样_41": {
-    "title": "N 怎么样？ (how is N?)",
-    "shortExplanation": "how is N?",
-    "longExplanation": "how is N?. Pinyin: N zěnmeyàng？",
-    "formation": "N zěnmeyàng？"
+    "title": "名詞／主語 ＋ 怎么样？（〜はどうですか・どんな様子ですか［状態・性質の質問］）",
+    "shortExplanation": "疑問代名詞「怎么样」を主語の後に置き、人や事物の状態・性質・調子を尋ねる「〜はどうですか」を表します。",
+    "longExplanation": "「怎么样」（zěnmeyàng）は事物の状態や性質、状況を尋ねる代表的な疑問代名詞です。「主語 ＋ 怎么样？」の形で用いられ、相手の健康状態、学習や仕事の進み具合、天候などを「〜の調子はどうですか」「どんな様子ですか」と質問します。答える側は形容詞や程度副詞を用いて状況を説明します（例：你的汉语怎么样？＝あなたの中国語の腕前はどうですか）。",
+    "formation": "名詞／代名詞 ＋ 怎么样？",
+    "examples": [
+      {
+        "translation": "あなたの中国語の調子（腕前）はどうですか？"
+      }
+    ]
   },
   "zh_的_42": {
-    "title": "(的) ((omission of 的))",
-    "shortExplanation": "(omission of 的)",
-    "longExplanation": "(omission of 的). Pinyin: ( de)",
-    "formation": "( de)"
+    "title": "(的)（所属・所有を表す構造助詞「的」の省略）",
+    "shortExplanation": "親しい親族関係、身体部位、所属組織などを表す際、所有を示す構造助詞「的」が自然に省略される現象です。",
+    "longExplanation": "構造助詞「的」（de）は本来「私の本（我的书）」のように所属や所有関係を結ぶ語ですが、定語と名詞の関係が極めて密接な場合（親族、親しい知人、身体の部位、所属する学校や会社など）、日常会話では「的」が省略されるのが通例です（例：我身体不太好＝私の体調はあまりよくない、我妈妈＝私の母）。これにより表現がより親しみやすく自然になります。",
+    "formation": "人称代名詞／名詞 ＋ (的) ＋ 名詞（身体部位・親族・所属先）",
+    "examples": [
+      {
+        "translation": "私の体調はあまりよくありません。"
+      }
+    ]
   },
   "zh_太A了_43": {
-    "title": "太 A (了) (too A)",
-    "shortExplanation": "too A",
-    "longExplanation": "too A. Pinyin: tài A ( le)",
-    "formation": "tài A ( le)"
+    "title": "太 ＋ 形容詞 ＋ (了)（あまりに〜すぎる・とても〜だ［過度・感嘆］）",
+    "shortExplanation": "程度副詞「太」が形容詞を修飾し、文末の語気助詞「了」と呼応して、過度な状態への不満や強い感嘆を表します。",
+    "longExplanation": "「太 ＋ 形容詞 ＋ (了)」（tài... le）は中国語で程度が甚だしいことを表す基本構文です。主な意味合いとして、①基準や許容範囲を超えて不満や不都合を訴える「あまりに〜すぎる」（例：太贵了＝高すぎる、太冷了＝寒すぎる）、②強い喜びや賛嘆を表す「とても〜だ」「本当に〜だ！」（例：太好了＝本当によかった！）の2通りがあります。肯定文では語末に語気助詞「了」を伴うのが通例です。",
+    "formation": "主語 ＋ 太 ＋ 形容詞 ＋ (了)",
+    "examples": [
+      {
+        "translation": "天気が寒すぎます（とても寒いです）。"
+      }
+    ]
   },
   "zh_不太A_44": {
-    "title": "(不) 太 A (not too A)",
-    "shortExplanation": "not too A",
-    "longExplanation": "not too A. Pinyin: ( bù) tài A",
-    "formation": "( bù) tài A"
+    "title": "不太 ＋ 形容詞（あまり〜でない・さほど〜ではない［部分否定・婉曲表現］）",
+    "shortExplanation": "否定副詞「不」と「太」が形容詞の前に置かれ、程度を和らげて控えめに否定する「あまり〜ではない」を表します。",
+    "longExplanation": "「不太 ＋ 形容詞」（bù tài）は程度を部分的に否定する表現で、断定を避けて柔らかく伝える婉曲表現（クッション言葉）として非常に重要です。「不好」（よくない）と直接的に言う代わりに「不太好」（あまりよくない）と言うことで、角を立てずに控えめな不満や否定を伝えます。なお、肯定の「太〜了」と異なり、否定の「不太〜」の文末には「了」を付けない規則があります。",
+    "formation": "主語 ＋ 不太 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "私の体調はあまりよくありません。"
+      }
+    ]
   },
   "zh_会V_45": {
-    "title": "会 V (will V)",
-    "shortExplanation": "will V",
-    "longExplanation": "will V. Pinyin: huì V",
-    "formation": "huì V"
+    "title": "会 ＋ 動詞（〜するだろう・〜のはずだ［可能性・未来の予測］）",
+    "shortExplanation": "動詞の前に置いて、事態が実現する可能性や将来の予測を表す能願動詞で、「〜するだろう」「〜のはずだ」を意味します。",
+    "longExplanation": "能願動詞「会」（huì）は習得した能力を表す「〜できる」のほかに、将来における事態の実現可能性や主観的な予測を表す重要な用法を持っています。日本語の「〜するだろう」「〜のはずだ」「〜するつもりだ」に相当します（例：你会回家吗？＝あなたは帰宅しますか／帰ってきますか、明天会下雨＝明日は雨が降るだろう）。否定形は「不会」（〜しないだろう）となります。",
+    "formation": "主語 ＋ 会 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あなたは家に帰ってきますか？"
+      }
+    ]
   },
   "zh_喂_46": {
-    "title": "喂 (hello)",
-    "shortExplanation": "hello",
-    "longExplanation": "hello. Pinyin: wèi",
-    "formation": "wèi"
+    "title": "喂（感嘆詞：もしもし［電話の応答・呼びかけ］）",
+    "shortExplanation": "電話を受ける際やかけ始めに用いる代表的な挨拶の感嘆詞で、日本語の「もしもし」に相当します。",
+    "longExplanation": "「喂」は電話の応対や呼びかけに用いられる最も一般的な感嘆詞です。電話に出る時や相手を呼び出す際は通常第2声（wéi）または第4声（wèi）で発音され、日本語の「もしもし」と全く同じ役割を果たします（例：喂，李老师在家吗？＝もしもし、李先生はいらっしゃいますか？）。また、道などで人を呼び止めるときに「ねえ」「おい」という意味で発音されることもあります。",
+    "formation": "喂，＋ 挨拶文／質問文",
+    "examples": [
+      {
+        "translation": "もしもし、李先生はいらっしゃいますか？"
+      }
+    ]
   },
   "zh_在V呢_47": {
-    "title": "在 V (呢) (V-ing)",
-    "shortExplanation": "V-ing",
-    "longExplanation": "V-ing. Pinyin: zài V ( ne)",
-    "formation": "zài V ( ne)"
+    "title": "在 ＋ 動詞（＋ 呢）（〜しているところだ・動作の進行）",
+    "shortExplanation": "動詞の前に副詞「在」を置き（文末に語気助詞「呢」を伴うことも多い）、動作が現在進行中であることを表す「〜しているところだ」「〜している」の表現です。",
+    "longExplanation": "「在 ＋ 動詞（＋ 呢）」（zài... ne）は、動作や行為がまさに進行している最中であることを表す中国語の代表的なアスペクト（進行相）構文です。副詞「在」（または「正在」「正」）が動作の進行を示し、文末の語気助詞「呢」は進行の語気を強めたり確認したりする働きをします。「呢」は省略されることもあります。否定形は「没(有)在 ＋ 動詞」を用います。",
+    "formation": "主語 ＋ 在 ＋ 動詞（＋ 呢）",
+    "examples": [
+      {
+        "translation": "私は寝ているところです。"
+      }
+    ]
   },
   "zh_没在V呢_48": {
-    "title": "没 在 V (呢) (not V-ing)",
-    "shortExplanation": "not V-ing",
-    "longExplanation": "not V-ing. Pinyin: méi zài V ( ne)",
-    "formation": "méi zài V ( ne)"
+    "title": "没(有)在 ＋ 動詞（＋ 呢）（〜していない・動作進行の否定）",
+    "shortExplanation": "動作の進行を表す構文の否定形で、「在」の前に「没」または「没有」を置き、「〜しているところではない」「〜していない」を表します。",
+    "longExplanation": "「没(有)在 ＋ 動詞（＋ 呢）」（méi zài... ne）は、「在 ＋ 動詞」で表される進行態の否定形式です。進行中の動作を否定する場合は副詞「不」ではなく必ず「没（没有）」を用います（「不在＋動詞」とは言いません）。文末に「呢」を伴うことで、「〜しているわけではないよ」という確認や説明の語気が加わります。",
+    "formation": "主語 ＋ 没(有)在 ＋ 動詞（＋ 呢）",
+    "examples": [
+      {
+        "translation": "彼らはテレビを見ていません。"
+      }
+    ]
   },
   "zh_1yo_49": {
-    "title": "1 (yāo) ((1 in telephony))",
-    "shortExplanation": "(1 in telephony)",
-    "longExplanation": "(1 in telephony). Pinyin: 1 (yāo)",
-    "formation": "1 (yāo)"
+    "title": "1（yāo / 幺）（電話番号や部屋番号などでの数字「1」の読み方）",
+    "shortExplanation": "電話番号、部屋番号、便名などの連続した数字で、聞き間違いを防ぐために数字の「1」を「yī」ではなく「yāo」と読む慣習です。",
+    "longExplanation": "中国語では、電話番号、ホテルの部屋番号、ナンバープレート、航空便名などの数字を1桁ずつ読み上げる際、数字の「1」を「yī」ではなく「yāo」（漢字では「幺」と表記することもあります）と発音します。これは電話越しや騒音環境下で「1（yī）」と「7（qī）」が聞き間違えやすいため、誤認を防ぐ目的で定着した習慣です。",
+    "formation": "電話番号・部屋番号等の連続した数字「1」 →「yāo（幺）」と発音",
+    "examples": [
+      {
+        "translation": "138-0156-7749（数字の1は「yāo」と読みます）"
+      }
+    ]
   },
   "zh_V吧_50": {
-    "title": "V 吧。 (feel free to V)",
-    "shortExplanation": "feel free to V",
-    "longExplanation": "feel free to V. Pinyin: V ba。",
-    "formation": "V ba。"
+    "title": "動詞 ＋ 吧（提案・勧誘・促し・許可の語気助詞：〜しましょう・〜してください）",
+    "shortExplanation": "文末に語気助詞「吧」を置き、相手に対して提案、促し、勧誘、または遠慮なく〜してよいという許可・勧めを表します。",
+    "longExplanation": "語気助詞「吧」（ba）は文末に置かれ、提案、誘い、柔らかな命令・催促、あるいは相手への好意的な許可・勧めを表します（例：走吧＝行きましょう、坐吧＝どうぞ座ってください）。単なる命令形と異なり、語気を柔らかくして相手の意向を尊重する親しみやすいニュアンスを含みます。",
+    "formation": "動詞（＋ 目的語） ＋ 吧",
+    "examples": [
+      {
+        "translation": "ここには誰もいません、どうぞ座ってください。"
+      }
+    ]
   },
   "zh_VO了_51": {
-    "title": "V O 了 (have V’ed O)",
-    "shortExplanation": "have V’ed O",
-    "longExplanation": "have V’ed O. Pinyin: V O le",
-    "formation": "V O le"
+    "title": "動詞 ＋ 目的語 ＋ 了（文末語気助詞「了」：動作の実現・事態の完了や変化）",
+    "shortExplanation": "文末（目的語の後）に語気助詞「了」を置き、事態が発生・実現したこと、または新たな変化が生じたことを表します（「〜しました」「〜した」）。",
+    "longExplanation": "「動詞 ＋ 目的語 ＋ 了」（le）構文において、文末に置かれる「了」は語気助詞です。文全体の完了や事実の実現を報告・陳述する機能を持ち、動作が行われて完了したこと、あるいは新しい状況が生じたことを聞き手に伝えます（例：他去学校了＝彼は学校に行きました）。否定文では動詞の前に「没(有)」を置き、文末の「了」は取り除きます。",
+    "formation": "主語 ＋ 動詞 ＋ 目的語 ＋ 了",
+    "examples": [
+      {
+        "translation": "彼は学校に行きました。"
+      }
+    ]
   },
   "zh_V了O_52": {
-    "title": "V 了 O (have V’ed O)",
-    "shortExplanation": "have V’ed O",
-    "longExplanation": "have V’ed O. Pinyin: V le O",
-    "formation": "V le O"
+    "title": "動詞 ＋ 了 ＋ 目的語（動態助詞「了」：動作の完了・実現）",
+    "shortExplanation": "動詞の直後に動態助詞「了」を置き、動作そのものが完了・実現したことを表します。後ろの目的語には数量詞などの修飾語がつくのが一般的です。",
+    "longExplanation": "「動詞 ＋ 了 ＋ 目的語」（le）において、動詞の直後に置かれる「了」は動作の実現・完了を表す動態助詞（アスペクト助詞）です。この構文では、目的語の前に数量詞や限定修飾語（例：不少、一本、很多）を伴うことが多く、具体的な行為が完了したことを明確に示します（例：我买了不少衣服＝服をたくさん買いました）。",
+    "formation": "主語 ＋ 動詞 ＋ 了 ＋ 目的語（通常、数量詞・連体修飾語を伴う）",
+    "examples": [
+      {
+        "translation": "私は服をたくさん買いました。"
+      }
+    ]
   },
   "zh_没VO_53": {
-    "title": "没 V O (have not V’ed O)",
-    "shortExplanation": "have not V’ed O",
-    "longExplanation": "have not V’ed O. Pinyin: méi V O",
-    "formation": "méi V O"
+    "title": "没(有) ＋ 動詞 ＋ 目的語（過去・完了の否定：〜しなかった・まだ〜していない）",
+    "shortExplanation": "動詞の前に否定副詞「没」または「没有」を置き、過去の動作が起きなかったこと、または動作がまだ完了していないことを表します。",
+    "longExplanation": "「没(有) ＋ 動詞 ＋ 目的語」（méi...）は、過去における動作の非発生や、動作がまだ完了していないことを否定する構文です（日本語の「〜しなかった」「まだ〜していない」に相当）。重要な文法規則として、否定副詞「没（没有）」を用いる文では、動作の完了を表す助詞「了」を併用することはできません（「她没去商店了」とは言わず、「她没去商店」とします）。",
+    "formation": "主語 ＋ 没(有) ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼女は店に行きませんでした。"
+      }
+    ]
   },
   "zh_TIME后_54": {
-    "title": "TIME 后 (after TIME)",
-    "shortExplanation": "after TIME",
-    "longExplanation": "after TIME. Pinyin: TIME hòu",
-    "formation": "TIME hòu"
+    "title": "時点 ＋ 后（〜の後・〜以降）",
+    "shortExplanation": "具体的な時点の後に方位詞「后」（または「以后」）を置き、「〜の後」「〜以降」という時間を表します。",
+    "longExplanation": "特定の時刻・曜日・日付などの時点の後ろに「后」（hòu、または「以后」）を続けることで、その時点より後の時間を表す時間詞句を作ります（例：五点后＝5時の後・5時以降）。文頭または主語と動詞の間に置かれて時間状語（連用修飾語）として機能します。",
+    "formation": "時点（時刻・日付） ＋ 后 / 以后",
+    "examples": [
+      {
+        "translation": "5時以降（5時の後）"
+      }
+    ]
   },
   "zh_DURATION后_55": {
-    "title": "DURATION 后 (after DURATION)",
-    "shortExplanation": "after DURATION",
-    "longExplanation": "after DURATION. Pinyin: DURATION hòu",
-    "formation": "DURATION hòu"
+    "title": "期間 ＋ 后（〜後・〜が経過した後）",
+    "shortExplanation": "時間の長さ（時量表現）の後に「后」（または「以后」）を置き、その期間が経過した後の時点を表します（「〜後」）。",
+    "longExplanation": "具体的な時間・日数の長さ（時量表現）の後ろに「后」（hòu）または「以后」を接続することで、「〜の期間が経過した後」（例：四十分钟后＝40分後、三天后＝3日後）という意味を表します。ある基準時点からその期間が経過した後に動作が行われることを示す際に用いられます。",
+    "formation": "期間（時量詞） ＋ 后 / 以后",
+    "examples": [
+      {
+        "translation": "40分後"
+      }
+    ]
   },
   "zh_啊_56": {
-    "title": "……啊 ((exclamation))",
-    "shortExplanation": "(exclamation)",
-    "longExplanation": "(exclamation). Pinyin: …… ā",
-    "formation": "…… ā"
+    "title": "〜啊（語気助詞：感嘆・賛同・念押し・親しみ）",
+    "shortExplanation": "文末に置かれて感嘆、熱意のある賛同、親しみを込めた念押しなどの感情や語気を添える語気助詞です（「〜だよ」「〜ですね」）。",
+    "longExplanation": "「啊」（a）は日常会話で非常によく使われる語気助詞です。文末や呼びかけの後ろに添えることで、感情を豊かに表現したり、相手への親近感を示したり、熱心な同意を表したりします（例：好啊＝いいよ！、是啊＝そうなんだよ！）。直前の単語の母音や末尾の子音に応じて発音が滑らかに連音変化する特徴があります（ya、wa、naなど）。",
+    "formation": "文 / 単語 ＋ 啊",
+    "examples": [
+      {
+        "translation": "いいですよ！ そうですね！"
+      }
+    ]
   },
   "zh_都N_57": {
-    "title": "都 N (both Ns)",
-    "shortExplanation": "both Ns",
-    "longExplanation": "both Ns. Pinyin: dōu N",
-    "formation": "dōu N"
+    "title": "都 ＋ 述語 / 都 ＋ 是 ＋ 名詞（範囲副詞：みんな・すべて・どれも）",
+    "shortExplanation": "主語の前に挙げられた複数の事物や人物をすべて包括し、述語の前に置いて「みんな」「すべて」「いずれも」を表す範囲副詞です。",
+    "longExplanation": "「都」（dōu）は先行する複数要素（または全体を表す語）を総括する範囲副詞です。日本語の「すべて」「みんな」「どれも」に相当し、常に述語（動詞、形容詞、または「是 ＋ 名詞」など）の直前に置かれます（主語の前に置くことはできません）。例：我们都是中国人＝私たちはみな中国人です。",
+    "formation": "主語（複数） ＋ 都 ＋ 是 ＋ 名詞（または 都 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "私たちはみんな中国人です。"
+      }
+    ]
   },
   "zh_S是MANNERV的_58": {
-    "title": "S 是 MANNER V 的 (it is MANNER that S V)",
-    "shortExplanation": "it is MANNER that S V",
-    "longExplanation": "it is MANNER that S V. Pinyin: S shì MANNER V de",
-    "formation": "S shì MANNER V de"
+    "title": "主語 ＋ 是 ＋ 手段・様態 ＋ 動詞 ＋ 的（「是……的」強調構文：手段・方法の強調）",
+    "shortExplanation": "すでに発生・完了した過去の行為について、どのような手段・方法で行われたのかを焦点化して強調する「是……的」構文です。",
+    "longExplanation": "「是……的」（shì... de）構文は、すでに行われたことが自明である過去の動作について、その「手段・様態（どのように）」、「時間（いつ）」、「場所（どこで）」などを特に強調して伝える表現です。強調したい手段・様態の直前に「是」を置き、文末（または動詞句末）に「的」を配置します（例：我们是开车来的＝私たちは車を運転して来たのです）。肯定文では「是」を省略することもありますが、否定文では「不是……的」となり「是」の省略はできません。",
+    "formation": "主語 ＋ 是 ＋ 手段・様態 ＋ 動詞 ＋ 的",
+    "examples": [
+      {
+        "translation": "私たちは車を運転して来たのです。"
+      }
+    ]
   },
   "zh_年_59": {
-    "title": "年 (year)",
-    "shortExplanation": "year",
-    "longExplanation": "year. Pinyin: nián",
-    "formation": "nián"
+    "title": "数字 ＋ 年（年の言い方・読み方）",
+    "shortExplanation": "西暦などの年を表す際、各桁の数字を1つずつ順番に読み上げた後に「年」（nián）を付けます。",
+    "longExplanation": "中国語で年号・西暦年を表すときは、日本語のように「二千十七年」と位取りで読むのではなく、数字を1桁ずつ順に読み上げた後尾に「年」（nián）を添えます（例：2017年は「èr líng yī qī nián＝二零一七年」）。数字の「0」は「líng（零）」と読みます。年・月・日の順序においては最大の単位として常に先頭に配置されます。",
+    "formation": "数字（各桁を順に読む） ＋ 年",
+    "examples": [
+      {
+        "translation": "2017年"
+      }
+    ]
   },
   "zh_要_60": {
-    "title": "要 (want to, will)",
-    "shortExplanation": "want to, will",
-    "longExplanation": "want to, will. Pinyin: yào",
-    "formation": "yào"
+    "title": "要 ＋ 動詞（助動詞：〜したい・〜するつもりだ・〜する予定だ）",
+    "shortExplanation": "動詞の前に置かれ、主体の強い意志や願望（〜したい）、または将来の予定や計画（〜するつもりだ、〜する予定だ）を表す助動詞です。",
+    "longExplanation": "「要」（yào）は動詞の前に置かれる能願動詞（助動詞）で、主に2つの重要な用法を持ちます。1つは主語の明確で強い意志・願望を表す「〜したい」「〜するつもりだ」（「想」よりも実現への意志が強い）で、もう1つは近い将来に予定されている動作を表す「〜する予定である」「〜することになっている」です。願望の否定には通常「不想」を用い、「不要」は「〜してはいけない（禁止）」の意味になる点に注意が必要です。",
+    "formation": "主語 ＋ 要 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "王芳さんは英語を勉強するつもりです。"
+      }
+    ]
   },
   "zh_最_61": {
-    "title": "最 (the most)",
-    "shortExplanation": "the most",
-    "longExplanation": "the most. Pinyin: zuì",
-    "formation": "zuì"
+    "title": "最 ＋ 形容詞 / 心理動詞（程度副詞：もっとも・一番）",
+    "shortExplanation": "形容詞や心理活動を表す動詞の前に置き、比較の中で程度が最高位であることを表す最上級の副詞「最」（もっとも、一番）です。",
+    "longExplanation": "「最」（zuì）は比較の範囲内において程度が極限・最高位に達していることを表す最上級の程度副詞です。日本語の「もっとも」「一番」に相当し、形容詞（例：最好＝一番良い、最漂亮＝一番美しい）や心理動詞（例：最喜欢＝一番好きだ）の直前に置かれて修飾します。",
+    "formation": "主語 ＋ 最 ＋ 形容詞 / 心理動詞",
+    "examples": [
+      {
+        "translation": "その目は一番きれいです。"
+      }
+    ]
   },
   "zh_几_62": {
-    "title": "几 (several)",
-    "shortExplanation": "several",
-    "longExplanation": "several. Pinyin: jǐ",
-    "formation": "jǐ"
+    "title": "几 ＋ 量詞 ＋ 名詞（10未満の概数：いくつか、何〜、数〜）",
+    "shortExplanation": "「几」（jǐ）は10未満の不特定の数量（概数）を表し、量詞と名詞の前に置かれて「いくつか」「何〜」「数〜」という意味を表します。",
+    "longExplanation": "「几」（jǐ）は疑問代名詞として10未満の数を尋ねる（「何〜」「いくつ」）だけでなく、平叙文において10未満の不特定の数量（概数）を表す数詞としても用いられます（日本語の「何〜」「数〜」「いくつか」に相当）。基本形式は「几 ＋ 量詞 ＋ 名詞」で、具体的な数字を特定せずに少数のまとまりを表す際に便利です（例：几本书＝何冊かの本、几个人＝何人かの人、几天＝数日）。",
+    "formation": "几 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "何冊かの本。"
+      }
+    ]
   },
   "zh_十几_63": {
-    "title": "十几 ((any # from 11 to 19))",
-    "shortExplanation": "(any # from 11 to 19)",
-    "longExplanation": "(any # from 11 to 19). Pinyin: shíjǐ",
-    "formation": "shíjǐ"
+    "title": "十几 ＋ 量詞 ＋ 名詞（11〜19の概数：十数〜、十何〜）",
+    "shortExplanation": "「十几」（shíjǐ）は10より大きく20未満の概数（11〜19）を表し、「十数〜」「十何〜」という意味を表します。",
+    "longExplanation": "数字「十」の直後に「几」を置いた「十几」（shíjǐ）は、11から19までの不特定の数（概数）を表します（日本語の「十数〜」「十何〜」に相当）。名詞を修飾する際は「十几 ＋ 量詞 ＋ 名詞」の順になり、量詞は「十几」の後ろに置かれます（例：十几本书＝十数冊の本、十几个人＝十数人の人、十几天＝十数日、十几岁＝十代の年齢）。「几十」（何十〜）との語順の違いに注意が必要です。",
+    "formation": "十几 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "十数冊の本。"
+      }
+    ]
   },
   "zh_几十_64": {
-    "title": "几十 (tens of)",
-    "shortExplanation": "tens of",
-    "longExplanation": "tens of. Pinyin: jǐ shí",
-    "formation": "jǐ shí"
+    "title": "几十 ＋ 量詞 ＋ 名詞（20〜90の概数：何十〜、数十〜）",
+    "shortExplanation": "「几十」（jǐ shí）は20から90までの十の位の概数（「何十〜」「数十〜」）を表します。",
+    "longExplanation": "「十」の前に「几」を置いた「几十」（jǐ shí）は、20から90までの十の位の不特定の数（概数）を表します（日本語の「何十〜」「数十〜」に相当）。修飾語として用いる場合は「几十 ＋ 量詞 ＋ 名詞」の形をとります（例：几十本书＝何十冊もの本／数十冊の本、几十个人＝何十人もの人、几十块钱＝何十元）。語順が逆の「十几」（11〜19）と混同しないよう注意が必要です。",
+    "formation": "几十 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "何十冊もの本。"
+      }
+    ]
   },
   "zh_几多_65": {
-    "title": "# 几/多 (over #)",
-    "shortExplanation": "over #",
-    "longExplanation": "over #. Pinyin: # jǐ/ duō",
-    "formation": "# jǐ/ duō"
+    "title": "数詞 ＋ 几／多 ＋ 量詞 ＋ 名詞（十以上の整数の概数端数：〜数、〜あまり）",
+    "shortExplanation": "20、30など十以上のキリの良い整数の直後に「几」または「多」を置き、量詞の前に挟むことで、端数のある概数（「20数〜」「20あまりの〜」）を表します。",
+    "longExplanation": "20や30、100など十以上のキリの良い整数の後ろに「几」または「多」を置き、量詞の前に配置することで、その基数を超える端数を含んだ概数を表します。「二十几本书」は21〜29冊の範囲にある「20数冊の本（20何冊かの本）」を指し、「二十多本书」は20冊を上回る「20冊あまりの本（20冊以上）」を表します。基数が十の倍数である場合に量詞の前に置かれる点が文法的な特徴です。",
+    "formation": "数詞（十以上の整数の位） ＋ 几／多 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "20数冊の本／20冊あまりの本。"
+      }
+    ]
   },
   "zh_M多月星期_66": {
-    "title": "# M 多 月/星期 (over # of months/weeks)",
-    "shortExplanation": "over # of months/weeks",
-    "longExplanation": "over # of months/weeks. Pinyin: # M duō yuè/ xīngqī",
-    "formation": "# M duō yuè/ xīngqī"
+    "title": "数詞 ＋ 量詞 ＋ 多 ＋ 名詞（1単位未満の端数を表す概数：〜ヶ月余り、〜週間余り）",
+    "shortExplanation": "数詞が10未満の場合、「多」は量詞の後ろに置かれ、その量詞の1単位に満たない端数（「〜余り」「〜ちょっと」）を表します。",
+    "longExplanation": "中国語において概数を表す「多」（duō）の位置には厳密な文法規則があります。基底の数詞が10未満（1〜9）である場合、「多」は量詞の後ろ、名詞の前に置かれます（「数詞 ＋ 量詞 ＋ 多 ＋ 名詞」）。これは直前の量詞の1単位に満たない余剰の端数を表します。例えば「两个多月」は2ヶ月と何日か（3ヶ月未満の「2ヶ月余り／2ヶ月ちょっと」）を意味し、「三个多星期」は3週間と数日（4週間未満の「3週間余り／3週間ちょっと」）を意味します。",
+    "formation": "数詞（10未満） ＋ 量詞 ＋ 多 ＋ 名詞（時間）",
+    "examples": [
+      {
+        "translation": "2ヶ月余り、3週間余り。"
+      }
+    ]
   },
   "zh_V不VorA不A_67": {
-    "title": "V不V or A不A ((questions))",
-    "shortExplanation": "(questions)",
-    "longExplanation": "(questions). Pinyin: V bùV or A bùA",
-    "formation": "V bùV or A bùA"
+    "title": "動詞 ＋ 不 ＋ 動詞 ／ 形容詞 ＋ 不 ＋ 形容詞（反復疑問文：〜しますか、〜ですか）",
+    "shortExplanation": "動詞や形容詞の肯定形と否定形を並べて尋ねる反復疑問文です。文末に疑問助詞「吗」はつけません。",
+    "longExplanation": "「動詞 ＋ 不 ＋ 動詞」および「形容詞 ＋ 不 ＋ 形容詞」は、述語の肯定形と否定形を並列させて聞き手に二者択一で回答を求める「反復疑問文（正反疑問句）」です（日本語の「〜しますか・しませんか」「〜ですか」に相当）。例：去不去（行くか行かないか＝行きますか）、冷不冷（寒いか寒くないか＝寒いですか）。この構文自体が疑問を表すため、文末に疑問の語気助詞「吗」を併用することはできません（「你去不去吗？」は誤り）。",
+    "formation": "動詞 ＋ 不 ＋ 動詞（＋ 目的語）？／ 形容詞 ＋ 不 ＋ 形容詞？",
+    "examples": [
+      {
+        "translation": "私は店に行きますが、あなたは行きますか？"
+      }
+    ]
   },
   "zh_是不是_68": {
-    "title": "是不是……？ (Is it true that…?)",
-    "shortExplanation": "Is it true that…?",
-    "longExplanation": "Is it true that…?. Pinyin: shìbùshì……？",
-    "formation": "shìbùshì……？"
+    "title": "是不是……？（〜ではないですか、本当に〜ですか：推測・確認の疑問文）",
+    "shortExplanation": "「是不是」（shìbùshì）を述語の前や文頭に置き、話し手の推測や把握している事柄が正しいかどうかを相手に確認します。",
+    "longExplanation": "「是不是」（shìbùshì）は動詞「是」の反復疑問形式に由来し、話し手がある程度の予測や推測を持ちながら、「〜ではないですか」「本当に〜なのですか」と相手に事実の確認や念押しを求める際に用います。語順は柔軟で、主語と述語の間（你是不是喜欢运动？）、文頭（是不是你……？）、あるいは文末の付加疑問（……，是不是？）として配置されます。文末に疑問助詞「吗」は添えません。",
+    "formation": "主語 ＋ 是不是 ＋ 述語？／ 是不是 ＋ 主語 ＋ 述語？",
+    "examples": [
+      {
+        "translation": "あなたはスポーツが好きなんですか？（スポーツが好きなのではないですか？）"
+      }
+    ]
   },
   "zh_每MN都V_69": {
-    "title": "每 M N (都) V (every N V)",
-    "shortExplanation": "every N V",
-    "longExplanation": "every N V. Pinyin: měi M N ( dōu) V",
-    "formation": "měi M N ( dōu) V"
+    "title": "每 ＋ 量詞 ＋ 名詞 ＋（都）＋ 動詞（どの〜も皆、毎〜必ず：例外のない全体を表す）",
+    "shortExplanation": "「每」（毎〜、どの〜も）は量詞・名詞と結合し、後ろの副詞「都」（すべて）と呼応して例外のない全体を表します。",
+    "longExplanation": "「每 ＋ 量詞 ＋ 名詞 ＋（都）＋ 動詞」は、ある範囲の個々の対象をすべて取り上げ、「どれもみな〜する」「毎〜例外なく〜である」という全称的な事態を表す基本構文です。「每」によって個別に取り出された各要素を、後ろの副詞「都」（dōu）が総括して受けるのが中国語の自然な呼応パターンです（例：你每个星期六(都)工作吗？＝あなたは毎週土曜日（いつも）仕事をしていますか？、每个人都知道＝誰もが知っている）。",
+    "formation": "每 ＋ 量詞 ＋ 名詞（＋ 都） ＋ 動詞",
+    "examples": [
+      {
+        "translation": "あなたは毎週土曜日（いつも）仕事をしていますか？"
+      }
+    ]
   },
   "zh_多A_70": {
-    "title": "多 A (how A)",
-    "shortExplanation": "how A",
-    "longExplanation": "how A. Pinyin: duō A",
-    "formation": "duō A"
+    "title": "多 ＋ 形容詞（程度・数値を尋ねる：どれくらい〜ですか、どのくらい〜ですか）",
+    "shortExplanation": "副詞「多」（duō）を計測可能な形容詞（高、大、远など）の前に置き、具体的な程度や数値を尋ねます。",
+    "longExplanation": "尺度や計測を表す形容詞（高、大、远、重、长など）の直前に副詞「多」（duō）を置くことで、「どれくらい〜ですか」「どの程度〜ですか」と具体的な数値や程度を尋ねる疑問表現を作ります（英語の how tall, how old, how far に相当）。例：他多高？（彼の身長はどれくらいですか？）、你多大？（おいくつですか？）、学校离这里有多远？（学校はここからどれくらい遠いですか？）。回答には「一米八（1メートル80）」などの具体的な数量詞を用いて答えます。",
+    "formation": "主語 ＋ 多 ＋ 形容詞？",
+    "examples": [
+      {
+        "translation": "彼の背はどれくらい高いですか？（彼の身長はどれくらいですか？）"
+      }
+    ]
   },
   "zh_的N_71": {
-    "title": "的 (N) ((omitting nouns after 的))",
-    "shortExplanation": "(omitting nouns after 的)",
-    "longExplanation": "(omitting nouns after 的). Pinyin: de (N)",
-    "formation": "de (N)"
+    "title": "修飾語 ＋ 的（＋ 名詞の省略）（「的」のフレーズ：名詞の省略による名詞句化）",
+    "shortExplanation": "文脈から指示対象が明らかな場合、「的」の後ろの中心名詞を省略して「〜のもの」「〜の」という名詞句（「的」字構造）を作ります。",
+    "longExplanation": "中国語では、連体修飾語と中心名詞を結ぶ構造助詞「的」の後ろの名詞が、文脈や直前の発言からすでに自明である場合、語の重複を避けて簡潔に表現するために名詞を省略することができます。この「修飾語 ＋ 的」の形を「的字短語（的のフレーズ）」と呼び、独立した名詞句として機能します（日本語の「〜のもの」「〜のやつ」に相当）。例文の「这个杯子是昨天买的(杯子)」では、冒頭にすでに「杯子（コップ）」が出ているため、文末の「杯子」を省略して自然な表現にしています。",
+    "formation": "連体修飾語 ＋ 的（＋ 省略された名詞）",
+    "examples": [
+      {
+        "translation": "このコップは昨日買った（コップ）です。"
+      }
+    ]
   },
   "zh_一下_72": {
-    "title": "一下 (once (quickly/easily))",
-    "shortExplanation": "once (quickly/easily)",
-    "longExplanation": "once (quickly/easily). Pinyin: yīxià",
-    "formation": "yīxià"
+    "title": "動詞 ＋ 一下（動量詞：ちょっと〜する、一度〜してみる［語気を和らげる表現］）",
+    "shortExplanation": "動詞の直後に動量詞「一下」（yīxià）を置き、動作が短時間であること、試みにやってみること、または依頼の語気を柔らかくすることを表します。",
+    "longExplanation": "「動詞 ＋ 一下」（yīxià）は、中国語の日常会話で多用される表現です。主な文法機能は次の通りです。(1) 動作の継続時間が短いことや、動作が1回行われることを表す（例：等一下＝少々お待ちください、看一下＝ちょっと見る）。(2) 試しにその行為を行ってみる試行を表す（例：尝一下＝味見してみる）。(3) 相手に何かを頼む際、命令的な響きを抑えて語気を柔らかく親しみやすいものにする（例：你去给老师送一下报纸＝先生のところへ新聞をちょっと届けてきてください）。",
+    "formation": "動詞 ＋ 一下（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "先生のところへ新聞を届けてきてください（ちょっと新聞を届けてきて）。"
+      }
+    ]
   },
   "zh_真_73": {
-    "title": "真 (very, truly)",
-    "shortExplanation": "very, truly",
-    "longExplanation": "very, truly. Pinyin: zhēn",
-    "formation": "zhēn"
+    "title": "真 ＋ 形容詞／心理動詞（感嘆を表す程度副詞：本当に〜、実に〜）",
+    "shortExplanation": "副詞「真」（zhēn）は形容詞や心理動詞の前に置かれ、文末に感嘆助詞「啊」などを伴って「本当に〜だ」「実に〜だなあ」と心からの感情を表します。",
+    "longExplanation": "程度副詞「真」（zhēn）は主に感嘆文において用いられ、話し手の主観的な感動、感嘆、賛美の気持ちを生き生きと表します（日本語の「本当に〜だ」「実に〜だなあ」に相当）。形容詞や心理動詞（喜欢、爱、高兴など）の前に置かれ、文末には語気助詞「啊（ā）」や「呀（ya）」を伴うのが典型的です（例：牛奶真好喝啊！＝牛乳は本当においしいですね！、今天真冷啊！＝今日は本当に寒いなあ！）。単なる客観的な高程度を表す「很」に比べ、強い主観的詠嘆が含まれます。",
+    "formation": "主語 ＋ 真 ＋ 形容詞／心理動詞（＋ 啊／呀）！",
+    "examples": [
+      {
+        "translation": "牛乳は本当においしいですね！"
+      }
+    ]
   },
   "zh_O是SV的_74": {
-    "title": "O 是 S V 的 (it’s S who V’ed O)",
-    "shortExplanation": "it’s S who V’ed O",
-    "longExplanation": "it’s S who V’ed O. Pinyin: O shì S V de",
-    "formation": "O shì S V de"
+    "title": "目的語 ＋ 是 ＋ 主語 ＋ 動詞 ＋ 的（「是……的」構文：動作主・誰が行ったかを強調する）",
+    "shortExplanation": "目的語を文頭に出して話題とし、「是……的」構文を用いて「誰がその動作を行ったのか（動作主）」を際立たせて強調します。",
+    "longExplanation": "「是……的」（shì... de）構文は、すでに完了した確定済みの出来事を前提とし、その動作の「時・場所・方法」あるいは「誰がしたのか（動作の主体）」を際立たせるための構文です。目的語を文頭に置いて話題化し、「目的語 ＋ 是 ＋ 主語（動作主） ＋ 動詞 ＋ 的」の形にすることで、「この目的語を動詞したのはまさに主語である」と動作主を明確に強調します（例：这本书是我买的＝この本は私が買ったものです／この本を買ったのは私です）。否定文では「不是」を用います（这本书不是我买的）。",
+    "formation": "目的語 ＋ 是 ＋ 主語 ＋ 動詞 ＋ 的",
+    "examples": [
+      {
+        "translation": "この本は私が買ったものです。"
+      }
+    ]
   },
   "zh_的时候_75": {
-    "title": "……的时候 (the time when …)",
-    "shortExplanation": "the time when …",
-    "longExplanation": "the time when …. Pinyin: …… de shíhou",
-    "formation": "…… de shíhou"
+    "title": "……的时候（〜の時、〜のころ：動作や状況が生じる時点を表す）",
+    "shortExplanation": "年齢、時間詞、動詞句、節の後ろに「……的时候」（de shíhou）を置き、「〜の時」「〜のころ」と事態が発生した時点を表します。",
+    "longExplanation": "「……的时候」（de shíhou）は、ある動作、状態、または出来事が発生した具体的な時点や期間を表す最も代表的な時間表現構文です（日本語の「〜の時」「〜の頃」に相当）。年齢（18岁的时候＝18歳の時）、動詞句（吃饭的时候＝ご飯を食べている時）、あるいは主述の節（我来中国的时候＝私が中国に来た時）の後ろに自由に接続して時間状語を構成します。文頭または主語の直後に置かれます。",
+    "formation": "時間詞／動詞句／節 ＋ 的时候",
+    "examples": [
+      {
+        "translation": "私は18歳の時に北京に来たことがあります。"
+      }
+    ]
   },
   "zh_已经VA了_76": {
-    "title": "已经 V/A 了 (already V/A)",
-    "shortExplanation": "already V/A",
-    "longExplanation": "already V/A. Pinyin: yǐjīng V/A le",
-    "formation": "yǐjīng V/A le"
+    "title": "已经 ＋ 動詞／形容詞 ＋ 了（すでに〜した、もう〜になった：動作の完了・持続・変化の実現）",
+    "shortExplanation": "副詞「已经」（yǐjīng）と文末の助詞「了」（le）が呼応し、動作がすでに完了したことや事態がある段階に達したことを表します。",
+    "longExplanation": "「已经 ＋ 動詞／形容詞 ＋ 了」（yǐjīng... le）は、動作がすでに完了したこと、あるいは事態がすでに特定の段階に達したことを表す重要構文です（日本語の「すでに〜した」「もう〜になった」に相当）。副詞「已经」が動詞・形容詞の前に置かれ、文末の助詞「了」と呼応して完了や実現を明確に示します。「我已经工作两年多了」のように時量補語を伴う場合、過去に始まった動作が現在までその期間継続していることを表します。",
+    "formation": "主語 ＋ 已经 ＋ 動詞／形容詞（＋ 目的語／補語） ＋ 了",
+    "examples": [
+      {
+        "translation": "私はすでに2年余り働いています。"
+      }
+    ]
   },
   "zh_就_77": {
-    "title": "就 (just V then)",
-    "shortExplanation": "just V then",
-    "longExplanation": "just V then. Pinyin: jiù",
-    "formation": "jiù"
+    "title": "就（それなら〜・じゃあ〜［条件に基づく帰結・判断］）",
+    "shortExplanation": "前節の条件や状況を受けて、「それなら〜」「〜なら〜する」と結論・解決策・次の行動を述べる副詞表現です。",
+    "longExplanation": "「就」（jiù）は前節の前提や状況（「要是／如果〜」など）を受けて、後節の動詞の前に置かれ、「それなら〜する」「〜すればよい」と自然な成り行きや決定、提案を導く副詞です。文末の語気助詞「吧」と併用されることが多く、その場合は「それなら〜しよう／〜しなさい」と柔らかく提案・指示するニュアンスになります。",
+    "formation": "（条件・状況 ＋ ）就 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "行きたくないなら、家で休んでいなさい。"
+      }
+    ]
   },
   "zh_还A_78": {
-    "title": "还 A (somewhat A)",
-    "shortExplanation": "somewhat A",
-    "longExplanation": "somewhat A. Pinyin: hái A",
-    "formation": "hái A"
+    "title": "还 ＋ 形容詞（まあまあ〜・割と〜［許容範囲・一応満足］）",
+    "shortExplanation": "副詞「还」を肯定的な意味の形容詞の前に置き、「まあまあ〜」「割と〜」「一応〜」と、水準に達していて許容できる程度であることを表します。",
+    "longExplanation": "「还」（hái）は形容詞（主に「好」「行」「不错」など）の直前に置かれ、程度が最高とは言えないものの、一応合格点であることや、まあ許容できる範囲にあることを示します。過度の期待はしていないが「悪くはない」「まあまあだ」という控えめな満足感や評価を表す際に日常的によく使われます。",
+    "formation": "主語 ＋ 还 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "昨日のテストはまあまあ良かったです。"
+      }
+    ]
   },
   "zh_有点儿A_79": {
-    "title": "有点儿 A (a bit A)",
-    "shortExplanation": "a bit A",
-    "longExplanation": "a bit A. Pinyin: yǒudiǎnr A",
-    "formation": "yǒudiǎnr A"
+    "title": "有点儿 ＋ 形容詞（少し〜・ちょっと〜［好ましくないニュアンス］）",
+    "shortExplanation": "副詞句「有点儿」を形容詞の前に置き、「少し〜」「ちょっと〜」と好ましくない・不満な状態を表します。",
+    "longExplanation": "「有点儿」（yǒudiǎnr、南部方言では「有点」とも言う）は形容詞や心理動詞の直前に置かれ、好ましくない事態、不都合、不満、わずらわしさなどの消極的なニュアンスを含めて「少し〜だ」「ちょっと〜だ」と述べる表現です（例：有点儿累＝少し疲れた、有点儿贵＝ちょっと高い）。一方、単に客観的な差を表す「一点儿」は形容詞の後ろに置かれる（贵一点儿＝もう少し高い）ため、語順と意味の違いに注意が必要です。",
+    "formation": "主語 ＋ 有点儿 ＋ 形容詞 / 心理動詞",
+    "examples": [
+      {
+        "translation": "今日の天気は少し寒いです。"
+      }
+    ]
   },
   "zh_怎么_80": {
-    "title": "怎么 (how come)",
-    "shortExplanation": "how come",
-    "longExplanation": "how come. Pinyin: zěnme",
-    "formation": "zěnme"
+    "title": "怎么（どうして・なぜ［驚き・怪訝を表す疑問副詞］）",
+    "shortExplanation": "述語の前に置いて原因や理由を尋ねる疑問代名詞で、話し手の驚きやいぶかしさ、怪訝なニュアンスを含みます。",
+    "longExplanation": "「怎么」（zěnme）は述語（動詞や形容詞、否定表現など）の直前に置かれ、事態の原因や理由を尋ねる用法を持ちます。客観的に理由そのものを問う「为什么」と比べ、「どうして〜なのか」「なぜ〜なのか」と、予想外の事態や常識に反する状況に対する話し手の驚き・不審・当惑の気持ちが強く込められるのが特徴です。",
+    "formation": "主語 ＋ 怎么 ＋ 述語（動詞 / 形容詞 / 否定表現）？",
+    "examples": [
+      {
+        "translation": "どうして機嫌が悪いの？"
+      }
+    ]
   },
   "zh_NMM都_81": {
-    "title": "N M M 都 (every N)",
-    "shortExplanation": "every N",
-    "longExplanation": "every N. Pinyin: N M M dōu",
-    "formation": "N M M dōu"
+    "title": "名詞 ＋ 量詞重畳 ＋ 都（どれもみんな〜・誰も彼も〜［全称強調］）",
+    "shortExplanation": "量詞を重ね型（AA）にして「都」と呼応させ、「どの〜もみな」「一人ひとりみんな」と例外なくすべてそうであることを強調します。",
+    "longExplanation": "中国語の単音節量詞は重ね型（个个、张张、本本など）にすることで、「どの〜もすべて」「一人ひとり／一つひとつ残らず」という全称の意味を表すことができます。名詞の後ろに置かれて主語を強調する形をとり、全体に例外がないことを示すため、述語の前には必ず呼応の副詞「都」が伴います。",
+    "formation": "（名詞 ＋ ）量詞の重ね型 ＋ 都 ＋ 述語",
+    "examples": [
+      {
+        "translation": "クラスメイトは誰も彼もみんなとても嬉しそうです。"
+      }
+    ]
   },
   "zh_因为所以_82": {
-    "title": "因为……所以…… (because… so…)",
-    "shortExplanation": "because… so…",
-    "longExplanation": "because… so…. Pinyin: yīnwèi…… suǒyǐ……",
-    "formation": "yīnwèi…… suǒyǐ……"
+    "title": "因为……所以……（〜だから、それで〜［原因と結果の呼応構文］）",
+    "shortExplanation": "原因・理由を導く接続詞「因为」と、結果・結論を導く「所以」が呼応し、「〜だから〜なのだ」という因果関係を表します。",
+    "longExplanation": "「因为……所以……」（yīnwèi... suǒyǐ...）は中国語における最も代表的な因果関係を表す複文の呼応形式です。前節の「因为」に続けて理由や原因を述べ、後節の「所以」に続けてその結果や導かれる結論を提示します。日常会話では「因为」や「所以」のどちらか一方が省略されることもありますが、両者を揃えることで論理関係が明確に伝わります。",
+    "formation": "因为 ＋ 原因・理由，所以 ＋ 結果・結論",
+    "examples": [
+      {
+        "translation": "美味しくないので、私は食べません。"
+      }
+    ]
   },
   "zh_还V_83": {
-    "title": "还 V (still V-ing)",
-    "shortExplanation": "still V-ing",
-    "longExplanation": "still V-ing. Pinyin: hái V",
-    "formation": "hái V"
+    "title": "还 ＋ 動詞（まだ〜している・依然として〜している［動作・状態の継続］）",
+    "shortExplanation": "副詞「还」を動詞の前に置き、以前から続いている動作や状態が現在も依然として継続していることを表します。",
+    "longExplanation": "「还」（hái）は動詞の直前（進行を表す「在」などを伴うことが多い）に置かれ、すでに終わっているべき時間になっても動作や状態が依然として続いていることを表す副詞です。「まだ〜している」「依然として〜している」という意味になり、話し手の「もう〜してもよい時間なのに」という軽い意外性や不満の気持ちが含まれることもあります。",
+    "formation": "主語 ＋ 还（＋ 在） ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "もう8時なのに、彼はまだ寝ています。"
+      }
+    ]
   },
   "zh_还没V_84": {
-    "title": "还没 V (still haven’t V’ed)",
-    "shortExplanation": "still haven’t V’ed",
-    "longExplanation": "still haven’t V’ed. Pinyin: hái méi V",
-    "formation": "hái méi V"
+    "title": "还没 ＋ 動詞（まだ〜していない［未完了・未発生］）",
+    "shortExplanation": "副詞「还」と否定詞「没（有）」が連なり、現時点に至るまでその動作が行われていない・完了していないことを表します。",
+    "longExplanation": "「还没」（hái méi、または「还没有」hái méiyǒu）は動詞の前に置かれ、ある動作や事態が基準の時点（現在など）になっても「まだ行われていない」「まだ済んでいない」という未完了の状態を表します。当然終わっているはずのことや、近いうちに実現が期待される事柄に対して使われることが多く、「まだ〜していない」という意味になります。",
+    "formation": "主語 ＋ 还没（有） ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "どうしてまだご飯を食べていないのですか？"
+      }
+    ]
   },
   "zh_TIME就V_85": {
-    "title": "TIME 就 V (V as early as TIME)",
-    "shortExplanation": "V as early as TIME",
-    "longExplanation": "V as early as TIME. Pinyin: TIME jiù V",
-    "formation": "TIME jiù V"
+    "title": "時間詞 ＋ 就 ＋ 動詞（早くも〜にはもう〜した［発生の早さの強調］）",
+    "shortExplanation": "副詞「就」を時間詞の後ろに置き、動作や事態の発生が「早い」「迅速である」という話し手の主観的強調を表します。",
+    "longExplanation": "「就」（jiù）を時間を表す語句の後ろ、動詞の直前に置くことで、ある行為や出来事が通常の予想よりも「早く行われた」「あっという間に発生した」という主観的なニュアンスを表します（例：他五点就来了＝彼は5時にはもう来ていた）。過去の事態であれば文末に完了の「了」を伴うのが一般的です。これに対して「遅さ」を強調する場合は「才」を用います。",
+    "formation": "主語 ＋ 時間詞 ＋ 就 ＋ 動詞（＋ 目的語）（＋ 了）",
+    "examples": [
+      {
+        "translation": "生徒たちは7時半には早くも教室に来ていました。"
+      }
+    ]
   },
   "zh_N1离N2DISTANCE_86": {
-    "title": "N1 离 N2 DISTANCE (N1 is DISTANCE away from N2)",
-    "shortExplanation": "N1 is DISTANCE away from N2",
-    "longExplanation": "N1 is DISTANCE away from N2. Pinyin: N1 lí N2 DISTANCE",
-    "formation": "N1 lí N2 DISTANCE"
+    "title": "場所1 ＋ 离 ＋ 場所2 ＋ 距離（〜から…離れている［空間的な距離］）",
+    "shortExplanation": "介詞「离」を用いて2つの場所の間の隔たりを示し、「場所1は場所2から〜（の距離だけ）離れている」と距離を表します。",
+    "longExplanation": "「离」（lí）は二つの地点間の空間的な隔たり（または二つの時点の時間的隔たり）を表す前置詞（介詞）です。「場所1 ＋ 离 ＋ 場所2 ＋ 距離・形容詞」の構造をとり、基準点2からの隔たりを具体的に示します。距離部分には具体的な数値（〜公里、〜米など）のほか、「很远」（とても遠い）や「很近」（とても近い）といった形容詞もよく置かれます。",
+    "formation": "場所1 ＋ 离 ＋ 場所2 ＋ 距離（数量詞 / 远 / 近）",
+    "examples": [
+      {
+        "translation": "学校は空港から20キロ以上離れています。"
+      }
+    ]
   },
   "zh_呢_87": {
-    "title": "……呢! ((adding emphasis))",
-    "shortExplanation": "(adding emphasis)",
-    "longExplanation": "(adding emphasis). Pinyin: …… ne!",
-    "formation": "…… ne!"
+    "title": "……呢!（語気助詞：〜しているんだよ！・〜だよ！［事実の強調・注意喚起］）",
+    "shortExplanation": "平叙文や進行を表す文の末尾に置く語気助詞「呢」で、事態が現在進行中であることを力説し、聞き手に注意を促します。",
+    "longExplanation": "文末の語気助詞「呢」（ne）は、肯定文（特に「在」「正在」「还」を伴う動作の持続を表す文）の末尾に置かれ、事実が今まさにその状態にあることを強調して相手に知らせる役割を果たします。話し手が相手の注意を引きつけ、「ほら、まだ〜しているんだよ！」「〜なのだよ！」と確認・主張する感情が込められます。",
+    "formation": "平叙文（在 / 还在 を含む文） ＋ 呢！",
+    "examples": [
+      {
+        "translation": "彼はまだ勉強している最中なんですよ！"
+      }
+    ]
   },
   "zh_好吗_88": {
-    "title": "……好吗? (…okay?)",
-    "shortExplanation": "…okay?",
-    "longExplanation": "…okay?. Pinyin: …… hǎo ma?",
-    "formation": "…… hǎo ma?"
+    "title": "……好吗？（〜でいいですか？・〜してくれますか？［提案・依頼の同意伺い］）",
+    "shortExplanation": "文末に「好吗？」を付け、自分の提案やお願いに対して相手の意向や同意を優しく尋ねる表現です。",
+    "longExplanation": "「……好吗？」（hǎo ma?）は提案、勧誘、依頼を表す文の最後に付加される疑問形式です。話し手が自らの意向やお願い事を述べた上で、「これでよろしいですか？」「〜してくれますか？」と相手の意見や都合を伺う、とても柔らかく丁寧な語気を作ります（「好不好？」「行不行？」とほぼ同様の機能）。",
+    "formation": "提案・依頼・勧誘の文 ＋ 好吗？",
+    "examples": [
+      {
+        "translation": "明日の午後、私に電話をかけてもらえますか？"
+      }
+    ]
   },
   "zh_再V_89": {
-    "title": "再 V (again)",
-    "shortExplanation": "again",
-    "longExplanation": "again. Pinyin: zài V",
-    "formation": "zài V"
+    "title": "再 ＋ 動詞（もう一度〜する・また〜する［将来の反復・再度の実行］）",
+    "shortExplanation": "副詞「再」を動詞の前に置き、将来に向けた動作の繰り返しや再度の実行を表します（日本語の「もう一度〜する」「また〜する」に相当）。",
+    "longExplanation": "「再」（zài）は動詞の直前に置かれ、これから行われる動作や行為が再び繰り返されることを表す副詞です。中国語では「過去にすでに繰り返された」ことを表す「又」とは厳密に使い分けられ、「再」は「これからの未来においてもう一度行う」場合や、相手に再度の実行を促す依頼・勧誘の文脈で用いられます（例：再来一次＝もう一度やる）。",
+    "formation": "主語 ＋ 再 ＋ 動詞（＋ 目的語 / 補語）",
+    "examples": [
+      {
+        "translation": "この本をもう一度見てみてください。"
+      }
+    ]
   },
   "zh_再V_90": {
-    "title": "再 V (then)",
-    "shortExplanation": "then",
-    "longExplanation": "then. Pinyin: zài V",
-    "formation": "zài V"
+    "title": "動作1 ＋ 再 ＋ 動作2（〜してから〜する・そのあとで〜する［順序の接続］）",
+    "shortExplanation": "後続の動詞の前に副詞「再」を置き、先の動作が終わった後で初めて次の動作を行うという「順序」を表します。",
+    "longExplanation": "「再」（zài）は動作の反復だけでなく、複数の動作の前後順序を表す用法を持ちます。「動詞1 ＋ 再 ＋ 動詞2」という連結形式において、第1の動作や準備が完了したことを前提として、「そのあとで初めて第2の動作を実行する」という意味合いを表します（例：做完作业再看电视＝宿題を終えてからテレビを見る）。",
+    "formation": "動作1 ＋ 再 ＋ 動作2",
+    "examples": [
+      {
+        "translation": "少し考えさせてから、あなたに伝えます。"
+      }
+    ]
   },
   "zh_TIME再V_91": {
-    "title": "TIME 再 V (V only until TIME)",
-    "shortExplanation": "V only until TIME",
-    "longExplanation": "V only until TIME. Pinyin: TIME zài V",
-    "formation": "TIME zài V"
+    "title": "時間詞 ＋ 再 ＋ 動詞（〜になってから〜する・〜まで延期する［時期の先送り］）",
+    "shortExplanation": "時間詞の後に副詞「再」を置き、動作の実行を特定の日時に先送りにして「〜になってから〜する」ことを表します。",
+    "longExplanation": "「時間詞 ＋ 再 ＋ 動詞」の構文は、ある動作を今すぐ行わず、明記された時間まで延期し、その時になってから実行することを表します（例：我明天再去＝今は行かず、明日になってから行きます）。副詞「再」が持つ「その時が来てから着手する」という順序・留保のニュアンスが強調される表現です。",
+    "formation": "主語 ＋ 時間詞 ＋ 再 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "私は明日になってから行きます（明日行くことにします）。"
+      }
+    ]
   },
   "zh_请让叫OV_92": {
-    "title": "请/让/叫 O V (invite/let/ask O to V)",
-    "shortExplanation": "invite/let/ask O to V",
-    "longExplanation": "invite/let/ask O to V. Pinyin: qǐng/ ràng/ jiào O V",
-    "formation": "qǐng/ ràng/ jiào O V"
+    "title": "请 / 让 / 叫 ＋ 目的語 ＋ 動詞（兼語文：人に〜してもらう／〜させる／〜を誘う）",
+    "shortExplanation": "使役動詞「请」（招待する・お願いする）、「让」（〜させる・〜してもらう）、「叫」（〜言いつける・〜させる）を用いて、「人に〜させる」「人を誘って〜する」と表す兼語文の構文です。",
+    "longExplanation": "中国語の兼語文（兼语句）とは、第1動詞の目的語がそのまま第2動詞の意味上の主語（動作の実行者）となる文構造です。代表的な使役動詞には、丁寧にお願いや招待をする「请」（qǐng：ごちそうする、頼む）、許可や指示を表す「让」（ràng：〜させる、〜してもらう）、口語で人に指示・言いつけをする「叫」（jiào：〜に言いつける、〜させる）があります。",
+    "formation": "主語 ＋ 请 / 让 / 叫 ＋ 目的語（兼語） ＋ 動詞（＋ その他）",
+    "examples": [
+      {
+        "translation": "私からあなたにご飯をごちそうします。"
+      }
+    ]
   },
   "zh_VV_93": {
-    "title": "V V (V for a bit)",
-    "shortExplanation": "V for a bit",
-    "longExplanation": "V for a bit. Pinyin: V V",
-    "formation": "V V"
+    "title": "動詞の重ね型（動詞の重複：ちょっと〜してみる［動作の短時間・試行・語気の緩和］）",
+    "shortExplanation": "単音節動詞を重ねて用い、動作の継続時間が短いこと、試しにやってみること、または語気を和らげるニュアンスを表します。",
+    "longExplanation": "中国語の単音節動詞は重ね型（例：看看、听听、说说）にすることで、「ちょっと〜する」「試しに〜してみる」という動作の短時間・試行を表すことができます。重ねた2つ目の音節は通常、軽声で発音されます。命令や依頼の文で用いると、相手に対する圧迫感が減り、柔らかく親しみのあるニュアンスを添える効果があります。",
+    "formation": "主語 ＋ 動詞 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "この何着かの服をちょっと見てごらんなさい。"
+      }
+    ]
   },
   "zh_V一V_94": {
-    "title": "V一V (V for a bit)",
-    "shortExplanation": "V for a bit",
-    "longExplanation": "V for a bit. Pinyin: V yīV",
-    "formation": "V yīV"
+    "title": "動詞 ＋ 一 ＋ 動詞（動詞の間に「一」を挟む重ね型：ちょっと〜してみる）",
+    "shortExplanation": "単音節動詞の間に数詞「一」を挟んで、動作を「ちょっと〜してみる」「ひと通り〜してみる」という意味を表します。",
+    "longExplanation": "単音節動詞の重ね型において、動詞の間に「一」を挟んだ型（例：看一看、听一听、想一想）は、直接重ねる型とほぼ同義で用いられます。「ちょっと〜してみる」「一度〜してみる」という動作の短時間の試みや気軽な実行を表し、話し手の語気を柔らかくする働きがあります。文末や命令文に添えることで、親しみのある柔らかな表現になります。",
+    "formation": "主語 ＋ 動詞 ＋ 一 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "この何着かの服をちょっと見てみてください。"
+      }
+    ]
   },
   "zh_Vresult_95": {
-    "title": "V result ((result complements))",
-    "shortExplanation": "(result complements)",
-    "longExplanation": "(result complements). Pinyin: V result",
-    "formation": "V result"
+    "title": "動詞 ＋ 結果補語（動作の結果の発生・達成を表す）",
+    "shortExplanation": "動詞の直後に動詞や形容詞を結果補語として続け、動作によってどのような結果や状態が生じたか・達成されたかを表します。",
+    "longExplanation": "中国語の結果補語（结果补语）は、主動詞のすぐ後ろに密着して置かれ、動作を行った結果として何が起きたか、どのような状態に至ったかを表す重要な文法項目です。よく使われる結果補語には「到／见」（〜が見える／行き着く）、「完」（〜し終える）、「好」（きちんと仕上がる）、「懂」（理解する）、「对／错」（正しく〜する／間違える）などがあります。動作の結果が実現したことを示すため、文末や動詞句の後ろに「了」を伴うのが一般的です。",
+    "formation": "主語 ＋ 動詞 ＋ 結果補語（＋ 目的語）（＋ 了）",
+    "examples": [
+      {
+        "translation": "あなたの彼女の姿を見かけましたよ。"
+      }
+    ]
   },
   "zh_没Vresult_96": {
-    "title": "没 V result ((result complements))",
-    "shortExplanation": "(result complements)",
-    "longExplanation": "(result complements). Pinyin: méi V result",
-    "formation": "méi V result"
+    "title": "没（有） ＋ 動詞 ＋ 結果補語（結果補語の否定：〜しなかった・〜できなかった）",
+    "shortExplanation": "動詞の前に否定詞「没（有）」を置き、動作の結果が実現しなかったこと・達成されなかったことを表します。文末に「了」は使いません。",
+    "longExplanation": "結果補語を伴う動詞句を否定する場合、必ず「没」または「没有」を動詞の前に置きます（過去または既成の事実に対する結果の不成立を表すため、「不」は使えません）。また、完了や実現を表す助詞「了」は、「没（有）」による否定文では必ず脱落するという重要な文法規則があります（例：×没看到～了 → ○没看到～）。",
+    "formation": "主語 ＋ 没（有） ＋ 動詞 ＋ 結果補語（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あなたの彼女は見かけませんでした。"
+      }
+    ]
   },
   "zh_从N1到N2_97": {
-    "title": "从 N1 到 N2 (from N1 to N2)",
-    "shortExplanation": "from N1 to N2",
-    "longExplanation": "from N1 to N2. Pinyin: cóng N1 dào N2",
-    "formation": "cóng N1 dào N2"
+    "title": "从 ＋ 名詞1 ＋ 到 ＋ 名詞2（〜から〜まで［対象・空間・時間の範囲］）",
+    "shortExplanation": "前置詞「从」と「到」を組み合わせて、人や事物の対象、または時間や空間の始まりから終わりまでの包括的な範囲を表します。",
+    "longExplanation": "「从……到……」（cóng... dào...）は、ある起点から終点までの全範囲を包括して提示する前置詞構文です。場所や時間（朝から晩まで、北京から上海まで）だけでなく、例のように「老人から子どもまで」といった人物や事物のカテゴリー全体を網羅する際にも多用されます。範囲全体を指し示すため、後続の述語の前には副詞「都」（みな、すべて）が呼応して置かれるのが通例です。",
+    "formation": "从 ＋ 名詞1 ＋ 到 ＋ 名詞2（＋ 都） ＋ 述語",
+    "examples": [
+      {
+        "translation": "お年寄りから子どもまで、みんなリンゴを食べるのが好きです。"
+      }
+    ]
   },
   "zh_第MN_98": {
-    "title": "第 # M N (#-th N)",
-    "shortExplanation": "#-th N",
-    "longExplanation": "#-th N. Pinyin: dì # M N",
-    "formation": "dì # M N"
+    "title": "第 ＋ 数詞 ＋ 量詞 ＋ 名詞（第〜番目の…［順序・序数詞］）",
+    "shortExplanation": "数詞の前に接頭辞「第」を付け、さらに量詞を介して名詞を修飾し、「第〜番目の…」という順序を表します。",
+    "longExplanation": "中国語で基数（1、2、3…）を順序を表す序数（第1、第2、第3…）に変えるには、数詞の直前に接頭辞「第」（dì）を付けます。名詞を修飾する際には、数詞と名詞の間に必ずその名詞に対応する「量詞」を挟む必要があります（構造：第 ＋ 数詞 ＋ 量詞 ＋ 名詞、例：第四本书＝4冊目の本、第一个人＝最初の人）。",
+    "formation": "第 ＋ 数詞 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "4つ目の用事はまだ済んでいません。"
+      }
+    ]
   },
   "zh_不要别V_99": {
-    "title": "不要/别 V (don’t do V)",
-    "shortExplanation": "don’t do V",
-    "longExplanation": "don’t do V. Pinyin: bùyào/ bié V",
-    "formation": "bùyào/ bié V"
+    "title": "不要 / 别 ＋ 動詞（禁止・制止の表現：〜するな・〜しないで）",
+    "shortExplanation": "動詞の前に「不要」または「别」を置き、相手に動作を制止したり思いとどまらせたりする禁止・忠告を表します。",
+    "longExplanation": "「不要」（bùyào）と「别」（bié）は、相手にある行動をしないよう忠告、要請、または命令する禁止表現です。日常会話では簡潔な「别」が一層好んで用いられます。動詞句の直前に置くだけで「〜しないでください」「〜してはならない」という否定の命令・依頼文を作ることができます。親しい間柄での忠告から、強い制止・警告まで幅広く使われます。",
+    "formation": "（主語 ＋ ）不要 / 别 ＋ 動詞（＋ 目的語）！",
+    "examples": [
+      {
+        "translation": "スマホをいじるのはやめなさい（スマホで遊ばないで）！"
+      }
+    ]
   },
   "zh_不要别V了_100": {
-    "title": "不要/别 V 了 (stop doing V)",
-    "shortExplanation": "stop doing V",
-    "longExplanation": "stop doing V. Pinyin: bùyào/ bié V le",
-    "formation": "bùyào/ bié V le"
+    "title": "不要 / 别 ＋ 動詞 ＋ 了（もう〜するな・〜するのはやめなさい［動作の中止］）",
+    "shortExplanation": "文末に変化を表す語気助詞「了」を伴うことで、現に行われている動作を「もうやめなさい」「これ以上〜するな」と制止します。",
+    "longExplanation": "「不要／别……了」の構文は、文末の「了」が状態の変化を表す機能を持ちます。単なる一般的な禁止（〜するな）ではなく、「今行っているその行為を今すぐやめて、しない状態に切り替えなさい」と、現行の動作を中止させる強いニュアンスを持ちます。日本語の「もう〜するな」「〜するのはもうやめて」にぴったり合致する表現です。",
+    "formation": "（主語 ＋ ）不要 / 别 ＋ 動詞（＋ 目的語） ＋ 了！",
+    "examples": [
+      {
+        "translation": "もうスマホをいじるのはやめなさい！"
+      }
+    ]
   },
   "zh_对NA_101": {
-    "title": "对 N A (Is A for N)",
-    "shortExplanation": "Is A for N",
-    "longExplanation": "Is A for N. Pinyin: duì N A",
-    "formation": "duì N A"
+    "title": "对 ＋ 名詞 ＋ 形容詞（〜に対して〜だ・〜にとって〜だ［対象と評価］）",
+    "shortExplanation": "前置詞「对」で対象や相手を導き、後続の形容詞等と結びついて「〜にとって…だ」「〜に対して…だ」という評価や関係性を表します。",
+    "longExplanation": "前置詞「对」（duì）は、ある評価や影響、態度が向けられる対象や相手を提示する働きをします。「对 ＋ 名詞句 ＋ 形容詞句」のパターンでは、述語部分に「有帮助」（助けになる）、「有好处」（メリットがある）、「好」（良い）、「严格」（厳しい）などの評価・性状を表す語句が置かれ、「〜にとって有益だ」「〜に対して良い効果がある」という意味を表します。",
+    "formation": "（主語 ＋ ）对 ＋ 名詞 / 名詞句 ＋ 形容詞 / 評価述語",
+    "examples": [
+      {
+        "translation": "中国語を学ぶことは、中国で働くことにとって助けになります。"
+      }
+    ]
   },
   "zh_SV的N_102": {
-    "title": "S V 的 N (the N which S V’ed)",
-    "shortExplanation": "the N which S V’ed",
-    "longExplanation": "the N which S V’ed. Pinyin: S V de N",
-    "formation": "S V de N"
+    "title": "主語 ＋ 動詞 ＋ 的 ＋ 名詞（主述句による連体修飾節：〜が…した〜）",
+    "shortExplanation": "「主語 ＋ 動詞」という主述構造を構造助詞「的」で名詞に繋げ、「〜が作った…」「〜が読んだ…」のように名詞を修飾する構文です。",
+    "longExplanation": "中国語では修飾語（連体修飾語）は必ず被修飾名詞の「前」に置かれます。主述節（小主語＋動詞述語）が名詞を修飾して限定する場合、必ず構造助詞「的」（de）を介して結びつけます（英語の関係代名詞節、日本語の連体修飾節「〜が…した名詞」に相当します）。例の「我妈妈做的饭」は、「母が作ったご飯」という構造になります。",
+    "formation": "（小主語 ＋ 動詞） ＋ 的 ＋ 中心名詞",
+    "examples": [
+      {
+        "translation": "私の母が作ったご飯はとても美味しいです。"
+      }
+    ]
   },
   "zh_N1比N2A_103": {
-    "title": "N1 比 N2 A (N2 is more A than N1)",
-    "shortExplanation": "N2 is more A than N1",
-    "longExplanation": "N2 is more A than N1. Pinyin: N1 bǐ N2 A",
-    "formation": "N1 bǐ N2 A"
+    "title": "名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞（比構文：2つの対象の優劣比較）",
+    "shortExplanation": "前置詞「比」を用いて2つの対象を比較し、「名詞1は名詞2よりも〜だ」と程度が勝っていることを表します。",
+    "longExplanation": "「比」（bǐ）を用いた構文は、中国語における最も基本的な比較表現です。「名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞」の語順で、「名詞1は名詞2よりも〜である」という優劣比較を表します。極めて重要な注意点として、文末の形容詞の前には「很」「非常」「真」「太」などの絶対的な程度副詞を置くことができません（誤り例：×哥哥比姐姐很高 → 正しい文：○哥哥比姐姐高）。",
+    "formation": "名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "兄は姉よりも背が高いです。"
+      }
+    ]
   },
   "zh_N1没有N2A_104": {
-    "title": "N1 没有 N2 A (N2 is not as A than N1)",
-    "shortExplanation": "N2 is not as A than N1",
-    "longExplanation": "N2 is not as A than N1. Pinyin: N1 méiyǒu N2 A",
-    "formation": "N1 méiyǒu N2 A"
+    "title": "名詞1 ＋ 没有 ＋ 名詞2 ＋ 形容詞（没有比較文：〜ほど…ではない［劣等比較］）",
+    "shortExplanation": "「没有」を用いて比較を行い、「名詞1は名詞2ほど〜ではない」と、ある水準や程度に達していないことを表します。",
+    "longExplanation": "「没有」（méiyǒu）を用いた文は、比較における劣等比較（または「有」による同等比較の否定形式）を表します。語順は「名詞1 ＋ 没有 ＋ 名詞2 ＋ （那么／这么） ＋ 形容詞」で、「名詞1は名詞2ほど〜ではない」という意味になります。形容詞の前に指示代名詞の「那么」（あんなに）や「这么」（こんなに）を補って用いられることが多く、相手のレベルに及ばないことを強調します。",
+    "formation": "名詞1 ＋ 没有 ＋ 名詞2（＋ 这么 / 那么） ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "兄は姉ほど背が高くありません。"
+      }
+    ]
   },
   "zh_可能_105": {
-    "title": "可能 (probably)",
-    "shortExplanation": "probably",
-    "longExplanation": "probably. Pinyin: kěnéng",
-    "formation": "kěnéng"
+    "title": "可能（副詞・能願動詞：たぶん〜だろう・〜かもしれない［推量・可能性］）",
+    "shortExplanation": "主語の前または述語の前に置き、事態の発生や可能性について「たぶん〜だろう」「〜かもしれない」と推量・推測を表します。",
+    "longExplanation": "「可能」（kěnéng）は副詞または能願動詞（助動詞）として機能し、ある事態が起こる蓋然性や可能性について話し手が推量する際に用いられます。主語の前、あるいは主語と述語動詞の間に置かれ、「おそらく〜だろう」「〜の可能性がある」という意味を表します。否定表現と併用する場合は「可能不……」の語順で用いられることが多く、「おそらく〜しない／できないだろう」という意味になります。",
+    "formation": "主語 ＋ 可能 ＋ 述語（動詞 / 形容詞）（または：可能 ＋ 主語 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "彼女はおそらく歌が歌えないのでしょう。"
+      }
+    ]
   },
   "zh_V得A_106": {
-    "title": "V 得 A ((using adverbs))",
-    "shortExplanation": "(using adverbs)",
-    "longExplanation": "(using adverbs). Pinyin: V dé A",
-    "formation": "V dé A"
+    "title": "動詞 ＋ 得 ＋ 形容詞（様態補語：動作のありさま・到達度を評価する）",
+    "shortExplanation": "動詞の後に構造助詞「得」を置き、後続の形容詞等と結びつけて、動作がどのような状態・レベルで行われているかを評価・描写します。",
+    "longExplanation": "中国語の様態補語（情態補語／状態補語）は、「動詞 ＋ 得 ＋ 形容詞句」の形で構成され、行われた動作が「上手にできたか」「速いか」「美しいか」など、その達成度合いや様態を客観的に評価・描写する必須の構文です。形容詞の前には通常「很」「非常」などの程度副詞を伴うのが基本ルールです（例：跑得很快＝走るのがとても速い）。",
+    "formation": "主語 ＋ 動詞 ＋ 得 ＋ （程度副詞 ＋ ）形容詞",
+    "examples": [
+      {
+        "translation": "私は走るのがとても速いです。"
+      }
+    ]
   },
   "zh_VOV得A_107": {
-    "title": "V O V 得 A ((using adverbs))",
-    "shortExplanation": "(using adverbs)",
-    "longExplanation": "(using adverbs). Pinyin: V O V dé A",
-    "formation": "V O V dé A"
+    "title": "動詞 ＋ 目的語 ＋ 動詞 ＋ 得 ＋ 形容詞（目的語を伴う動詞の様態補語・動作の評価）",
+    "shortExplanation": "目的語を伴う動詞の動作が「どのように行われるか」という様態や評価・程度を表す際、動詞を繰り返して「得」と形容詞を続けます。",
+    "longExplanation": "中国語では、動詞が目的語を取り、さらに「得」を用いた様態補語（程度補語）で動作の出来栄えや様子を具体的に描写・評価する場合、動詞を「動詞 ＋ 目的語 ＋ 動詞 ＋ 得 ＋ 形容詞」の形で繰り返す必要があります（例：唱歌唱得很好＝歌を歌うのがとても上手だ）。なお、日常会話で目的語が文頭に置かれて話題化される場合などは、1つ目の動詞が省略されることもあります。",
+    "formation": "主語 ＋ 動詞 ＋ 目的語 ＋ 動詞 ＋ 得 ＋ （副詞 ＋ ）形容詞",
+    "examples": [
+      {
+        "translation": "姉は歌を歌うのがとても上手です。"
+      }
+    ]
   },
   "zh_VOV得比NA_108": {
-    "title": "V (O V) 得 比 N A (V (O) more A than N)",
-    "shortExplanation": "V (O) more A than N",
-    "longExplanation": "V (O) more A than N. Pinyin: V (O V) dé bǐ N A",
-    "formation": "V (O V) dé bǐ N A"
+    "title": "動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 比 ＋ 名詞 ＋ 形容詞（様態補語を伴う比較文［「得」の後に比較対象を置く］）",
+    "shortExplanation": "動作の様態や結果の程度を比較する表現で、「得」の直後に「比 ＋ 比較対象」を置き、「〜する程度が…より〜だ」という意味を表します。",
+    "longExplanation": "様態補語（程度補語）を伴う比較文の代表的な形式の一つです。この構文では比較の前置詞句「比 ＋ 名詞（比較対象）」が補語部分（「得」の後ろ）に置かれ、「主語 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 比 ＋ 比較対象 ＋ 形容詞」という語順をとります。動作の出来栄えやスピード・程度を相手と比較して優劣を表す際に用いられます。目的語を伴う場合は動詞を繰り返すか、1つ目の動詞を省くことができます。",
+    "formation": "主語 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 比 ＋ 名詞（比較対象）＋ 形容詞",
+    "examples": [
+      {
+        "translation": "彼は私よりも（中国語を）覚えるのが早いです。"
+      }
+    ]
   },
   "zh_比NVOV得A_109": {
-    "title": "比 N V (O V) 得 A (V (O) more A than N)",
-    "shortExplanation": "V (O) more A than N",
-    "longExplanation": "V (O) more A than N. Pinyin: bǐ N V (O V) dé A",
-    "formation": "bǐ N V (O V) dé A"
+    "title": "比 ＋ 名詞 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 形容詞（様態補語を伴う比較文［動詞の前に「比」を置く］）",
+    "shortExplanation": "動作の程度や結果を比較する表現で、比較の前置詞句「比 ＋ 名詞」を動詞の前に連用修飾語（状語）として置きます。",
+    "longExplanation": "様態補語（程度補語）を伴う比較文のもう一つの代表的な形式です。「主語 ＋ 比 ＋ 比較対象 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 形容詞」という語順になり、「比 ＋ 名詞」が動詞の前に置かれて動作全体を修飾します。「得」の後ろに「比」を置く構文と意味上の違いはほとんどなく、どちらも日常会話で自然に用いられます。",
+    "formation": "主語 ＋ 比 ＋ 名詞（比較対象）＋ 動詞（＋ 目的語 ＋ 動詞）＋ 得 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "彼は私よりも（中国語を）覚えるのが早いです。"
+      }
+    ]
   },
   "zh_V着O_110": {
-    "title": "V 着 O (V-ing O)",
-    "shortExplanation": "V-ing O",
-    "longExplanation": "V-ing O. Pinyin: V zhe O",
-    "formation": "V zhe O"
+    "title": "動詞 ＋ 着 ＋ 目的語（動作や状態の持続：〜している）",
+    "shortExplanation": "動詞の後ろにアスペクト助詞「着」を置き、動作や状態がそのまま持続・継続していることを表します。",
+    "longExplanation": "アスペクト助詞「着」（zhe）は動詞の直後に付き、その動作や動作に伴う結果の状態が保たれていること（持続態）を表します（例：穿着西服＝スーツを着ている、拿着铅笔＝鉛筆を持っている）。「在 / 正在」が動作の動的な進行そのものを表すのに対し、「着」は衣服の着用や姿勢、物の保持など、動作によって生じた静的な「状態の持続」を表す点に特徴があります。",
+    "formation": "主語 ＋ 動詞 ＋ 着 ＋ 目的語",
+    "examples": [
+      {
+        "translation": "彼らはスーツを着ています。"
+      }
+    ]
   },
   "zh_没V着O_111": {
-    "title": "没 V 着 O (not V-ing O)",
-    "shortExplanation": "not V-ing O",
-    "longExplanation": "not V-ing O. Pinyin: méi V zhe O",
-    "formation": "méi V zhe O"
+    "title": "没（有）＋ 動詞 ＋ 着 ＋ 目的語（状態持続の否定：〜していない）",
+    "shortExplanation": "状態の持続を表す「動詞 ＋ 着」の否定形で、動詞の前に「没」または「没有」を置き、「〜していない」という意味を表します。",
+    "longExplanation": "「動詞 ＋ 着」で表される状態の持続を否定する場合、動詞の直前に否定副詞「没」または「没有」を置きます（「不」は用いません）。「主語 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 目的語」の形で、身につけていない、手に持っていないなど、ある状態が現在持続していないことを表します（例：他没拿着铅笔＝彼は鉛筆を持っていません）。",
+    "formation": "主語 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 目的語",
+    "examples": [
+      {
+        "translation": "彼は鉛筆を持っていません。"
+      }
+    ]
   },
   "zh_N不是吗_112": {
-    "title": "N 不是……吗？ (is N not…)",
-    "shortExplanation": "is N not…",
-    "longExplanation": "is N not…. Pinyin: N bùshì…… ma？",
-    "formation": "N bùshì…… ma？"
+    "title": "名詞 / 代名詞 ＋ 不是……吗？（反語表現：〜ではないのですか？・〜じゃありませんでしたっけ？）",
+    "shortExplanation": "相手に確認したり、自明の事実を思い出させたりする反語構文で、「〜ではないのですか？」「〜じゃなかったっけ？」という意味を表します。",
+    "longExplanation": "「不是……吗？」（bùshì... ma?）は反語（修辞的疑問文）の代表的な表現です。話し手が当然そうであるはずだと信じている事実を相手に確認したり、相手がそれを忘れていたり矛盾した行動を取ったりしている際に思い出させ・念押しするために用います。形式上は否定疑問文ですが、強い肯定のニュアンスを含みます（例：你不是北京人吗？＝あなたは北京の人じゃありませんでしたっけ？）。",
+    "formation": "主語（名詞 / 代名詞）＋ 不是 ＋ 述語成分（名詞句 / 動詞句）＋ 吗？",
+    "examples": [
+      {
+        "translation": "あなたは北京の人ではありませんでしたっけ？"
+      }
+    ]
   },
   "zh_往DIRECTIONV_113": {
-    "title": "往 DIRECTION V (V toward DIRECTION)",
-    "shortExplanation": "V toward DIRECTION",
-    "longExplanation": "V toward DIRECTION. Pinyin: wǎng DIRECTION V",
-    "formation": "wǎng DIRECTION V"
+    "title": "往 ＋ 方向 ＋ 動詞（〜の方向へ・〜に向かって［動作の方向］）",
+    "shortExplanation": "前置詞「往」が方角や方向を表す語を伴って動詞の前に置かれ、動作が向かう方向を示します；「〜へ」「〜に向かって」。",
+    "longExplanation": "前置詞「往」（wǎng）は「〜へ」「〜に向かって」という意味を持ち、方位詞や方向を表す名詞（东、南、西、北、前、左、右など）を導いて連用修飾語（状語）となり、後続の移動動詞の方向を指定します。道を案内したり、人の視線や進行方向を指示したりする際によく使われます（例：往东走＝東へ進む、往前看＝前を見る）。",
+    "formation": "主語 ＋ 往 ＋ 方角・方向詞 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "ここからまっすぐ東へ進んでください。"
+      }
+    ]
   },
   "zh_V过_114": {
-    "title": "V 过 (V’ed before)",
-    "shortExplanation": "V’ed before",
-    "longExplanation": "V’ed before. Pinyin: V guò",
-    "formation": "V guò"
+    "title": "動詞 ＋ 过（経験アスペクト：〜したことがある）",
+    "shortExplanation": "動詞の後ろにアスペクト助詞「过」を置き、過去にその動作を行った経験があることを表します；「〜したことがある」。",
+    "longExplanation": "アスペクト助詞「过」（guo）は動詞の直後に置かれ、過去に少なくとも一度その動作を経験したことがあること（経験態）を表します（例：去过中国＝中国へ行ったことがある）。その動作は過去に完了し、現在ではすでに終わっているというニュアンスを含みます。動作の完了や変化を表す「了」とは異なり、「过」は個人の体験や経験に焦点を当てる点で日本語の「〜したことがある」に対応します。",
+    "formation": "主語 ＋ 動詞 ＋ 过（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "私は中国へ行ったことがあります。"
+      }
+    ]
   },
   "zh_没有V过_115": {
-    "title": "没有 V 过 (haven’t V’ed)",
-    "shortExplanation": "haven’t V’ed",
-    "longExplanation": "haven’t V’ed. Pinyin: méiyǒu V guò",
-    "formation": "méiyǒu V guò"
+    "title": "没（有）＋ 動詞 ＋ 过（経験の否定：〜したことがない・一度も〜したことがない）",
+    "shortExplanation": "経験を表す「動詞 ＋ 过」の否定形で、動詞の前に「没」または「没有」を置き、「〜したことがない」という意味を表します。",
+    "longExplanation": "過去の経験「動詞 ＋ 过」を否定する場合、動詞の直前に否定副詞「没」または「没有」を置き、「主語 ＋ 没（有）＋ 動詞 ＋ 过 ＋ 目的語」の形をとります（「不」は使用できません）。これまでに一度もその経験をしたことがないことを表し、「从来」（これまで一度も）と呼応して「从来没（有）〜过」として強調されることも多いです（例：他们没有来过我家＝彼らは私の家に来たことがありません）。",
+    "formation": "主語 ＋ 没（有）＋ 動詞 ＋ 过（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼らは私の家に来たことがありません。"
+      }
+    ]
   },
   "zh_虽然但是_116": {
-    "title": "虽然……但是 (although…)",
-    "shortExplanation": "although…",
-    "longExplanation": "although…. Pinyin: suīrán…… dànshì",
-    "formation": "suīrán…… dànshì"
+    "title": "虽然……但是……（逆接の接続詞：〜だけれども…・〜だがしかし…）",
+    "shortExplanation": "譲歩と逆接を表す代表的な相関接続詞で、「〜だけれども…」「〜であるが、しかし…」という意味を表します。",
+    "longExplanation": "「虽然……但是……」（suīrán... dànshì...）は、前後の節で逆接関係を構成する接続詞の呼応表現です。前節に「虽然」を用いて事実や譲歩の前提（〜であるけれど）を述べ、後節に「但是」（または「可是」「但」）を用いてそれと対立・矛盾する事実や意外な結果（しかし〜だ）を導きます。「虽然」は第1節の主語の前または後ろのどちらに置いても構いません。",
+    "formation": "虽然 ＋ 節1，但是 ＋ 節2",
+    "examples": [
+      {
+        "translation": "晴れてはいるけれど、やはりとても寒いです。"
+      }
+    ]
   },
   "zh_V过次O_117": {
-    "title": "V 过 # 次 O (V’ed O # times)",
-    "shortExplanation": "V’ed O # times",
-    "longExplanation": "V’ed O # times. Pinyin: V guò # cì O",
-    "formation": "V guò # cì O"
+    "title": "動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 目的語（動量補語：事物目的語の前に回数を置く）",
+    "shortExplanation": "事物を表す一般目的語を伴う場合、動作の回数を表す動量補語（数詞 ＋ 次）を動詞・「过」と目的語の間に挟んで「〜を…回したことがある」と表します。",
+    "longExplanation": "中国語で動作の行われた回数を表す成分を「動量補語」と呼びます。目的語が事物（一般名詞）の場合、回数を表す「数詞 ＋ 次（または遍・趟など）」は通常「过」の直後、すなわち目的語の前に置かれ、「主語 ＋ 動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 目的語」という語順になります（例：坐过三次飞机＝飛行機に3回乗ったことがある、看过两次电影＝映画を2回見たことがある）。",
+    "formation": "主語 ＋ 動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 目的語（事物名詞）",
+    "examples": [
+      {
+        "translation": "彼らは飛行機に3回乗ったことがあります。"
+      }
+    ]
   },
   "zh_V过PLACE次_118": {
-    "title": "V 过 PLACE # 次 (V’ed to PLACE # times)",
-    "shortExplanation": "V’ed to PLACE # times",
-    "longExplanation": "V’ed to PLACE # times. Pinyin: V guò PLACE # cì",
-    "formation": "V guò PLACE # cì"
+    "title": "動詞 ＋ 过 ＋ 場所 ＋ 数詞 ＋ 次（動量補語：場所目的語を伴う動作の回数表現）",
+    "shortExplanation": "目的語が場所名詞の場合、動作の回数を表す動量補語（数詞 ＋ 次）は場所の前にも後ろにも置くことができます；「〜へ…回行ったことがある」。",
+    "longExplanation": "中国語において、目的語が国や都市などの場所・処所を表す名詞（処所目的語）である場合、回数を表す動量補語（数詞 ＋ 次）の位置は柔軟です。「動詞 ＋ 过 ＋ 場所 ＋ 数詞 ＋ 次」（例：去过中国三次）のように場所を補語の前に置くことも、「動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 場所」（例：来过三次中国）のように補語の後に置くこともでき、どちらも文法的に正しく自然に使われます。",
+    "formation": "主語 ＋ 動詞 ＋ 过 ＋ 場所名詞 ＋ 数詞 ＋ 次（または：主語 ＋ 動詞 ＋ 过 ＋ 数詞 ＋ 次 ＋ 場所名詞）",
+    "examples": [
+      {
+        "translation": "私たちは中国へ3回行ったことがあります。"
+      }
+    ]
   },
   "zh_TIME就要V了_119": {
-    "title": "TIME (就) 要 V 了 (about to V in TIME)",
-    "shortExplanation": "about to V in TIME",
-    "longExplanation": "about to V in TIME. Pinyin: TIME ( jiù) yào V le",
-    "formation": "TIME ( jiù) yào V le"
+    "title": "時間 ＋（就）要 ＋ 動詞 ＋ 了（近未来の動作：［指定の時間に］もうすぐ〜する）",
+    "shortExplanation": "具体的な時間詞を伴って、近い将来に動作や事態が差し迫って発生することを表します；「〜にはもうすぐ…する」。",
+    "longExplanation": "「（時間 ＋ ）（就）要……了」は、近い未来に動作や出来事が発生することを表す構文です。非常に重要な文法規則として、文中に「下个星期（来週）」「明天（明日）」「八点（8時）」などの具体的な時間を示す語がある場合、「快要……了」は使えず、必ず「（就）要……了」を用いなければなりません。「就」を補うことで、「その時になればすぐに〜する」という時間的な早さや緊迫感を強調します。",
+    "formation": "（主語 ＋ ）時間詞（＋ 主語）＋（就）要 ＋ 動詞（＋ 目的語）＋ 了",
+    "examples": [
+      {
+        "translation": "来週、私たちはもうすぐ試験があります。"
+      }
+    ]
   },
   "zh_都TIMEAV了_120": {
-    "title": "都 TIME/A/V 了 (It’s already TIME, is already A, has already V’ed)",
-    "shortExplanation": "It’s already TIME, is already A, has already V’ed",
-    "longExplanation": "It’s already TIME, is already A, has already V’ed. Pinyin: dōu TIME/A/V le",
-    "formation": "dōu TIME/A/V le"
+    "title": "都 ＋ 時間 / 形容詞 / 動詞 ＋ 了（強調・不満・促し：もう〜だ・とうに〜している）",
+    "shortExplanation": "「すでに〜だ」という意味を表し、時間が遅いことや程度・数量の大きさを強調して、促しや不満・愚痴のニュアンスを込めます。",
+    "longExplanation": "「都……了」（dōu... le）は口語で非常によく使われる強調構文です。「已经……了」（すでに〜だ）とほぼ同義ですが、単なる事実の伝達にとどまらず、話し手の主観的な感情（「時間が遅い」「数量が多い」「程度が甚だしい」という不満、咎め、促しなど）が強く込められます。時間詞、形容詞、動詞などを挟んで用いられます（例：都8点了，快点儿起床吧＝もう8時だよ、早く起きなさい）。",
+    "formation": "主語 ＋ 都 ＋ 時間詞 / 形容詞 / 動詞句 ＋ 了",
+    "examples": [
+      {
+        "translation": "もう8時だよ、早く起きなさい。"
+      }
+    ]
   },
   "zh_V好_121": {
-    "title": "V 好 (done V-ing)",
-    "shortExplanation": "done V-ing",
-    "longExplanation": "done V-ing. Pinyin: V hǎo",
-    "formation": "V hǎo"
+    "title": "動詞 ＋ 好（結果補語：〜し終える・ちゃんと〜できる［準備完了・満足な結果］）",
+    "shortExplanation": "動詞の後ろに結果補語として「好」を置き、動作が完了しただけでなく、申し分なく満足のいく状態に仕上がったことや準備が整ったことを表します。",
+    "longExplanation": "中国語の結果補語「好」は動詞の直後に接続し、動作が完了したことに加え、それが「満足のいく状態になった」「準備が整った」という積極的なニュアンスを表します。単に動作が終わったことを表す「完」と異なり、「好」は仕上がりの良さや準備完了に焦点が当てられます（例：做好饭＝ご飯が出来上がる、准备好了＝準備がしっかり整った）。否定形は「没（有）＋ 動詞 ＋ 好」となります。",
+    "formation": "主語 ＋ 動詞 ＋ 好（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "ご飯がまだ出来上がっていませんので、少々お待ちください。"
+      }
+    ]
   },
   "zh_一MN也都不V_122": {
-    "title": "一 + M + N + 也／都 + 不 + V (not V even one N)",
-    "shortExplanation": "not V even one N",
-    "longExplanation": "not V even one N. Pinyin: yī + M + N + yě／ dōu + bù + V",
-    "formation": "yī + M + N + yě／ dōu + bù + V"
+    "title": "一 ＋ 量詞 ＋ 名詞 ＋ 也 / 都 ＋ 不 / 没 ＋ 動詞（完全否定：一つも〜ない・少しも〜ない）",
+    "shortExplanation": "最小単位の「一 ＋ 量詞」に「也 / 都」と否定語を続け、「一つも〜ない」「何一つ〜しない」という完全否定を表します。",
+    "longExplanation": "中国語において完全否定を強調する代表的な構文です。最小の数量単位である「一 ＋ 量詞 ＋ 名詞」を「也」または「都」の前に置き、後ろに否定副詞「不」（習慣・意志の否定）または「没」（過去・完了の否定）と動詞を続けることで、「たった一つでさえ〜ない」「まったく〜しない」という絶対的な否定のニュアンスを表します（例：我一个苹果也不吃＝私はリンゴを一つも食べません、他一个字也没写＝彼は一文字も書かなかった）。",
+    "formation": "主語 ＋ 一 ＋ 量詞 ＋ 名詞 ＋ 也 / 都 ＋ 不 / 没 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "私はリンゴを一つも食べません。"
+      }
+    ]
   },
   "zh_那_123": {
-    "title": "那 (so then)",
-    "shortExplanation": "so then",
-    "longExplanation": "so then. Pinyin: nà",
-    "formation": "nà"
+    "title": "那（接続詞：それなら・では・じゃあ［前述を受けて結論を導く］）",
+    "shortExplanation": "文頭や主語の前に置く接続詞「那」で、前述の状況や相手の発言を受けて「それなら」「では」と結論や判断を導きます。",
+    "longExplanation": "接続詞「那」（nà、話し言葉では「那么」とも言う）は、前の文で述べられた状況や相手の発言・提案を受けて、それを前提とした判断、結論、新たな行動の決定などを後続の文で導く際に用いられます。日本語の「それなら」「じゃあ」「では」に相当し、日常会話の受け答えで極めて頻繁に使われます（例：你不去，那我也不去了＝君が行かないなら、じゃあ私も行かない）。",
+    "formation": "節1，那 ＋ （主語 ＋ ）節2",
+    "examples": [
+      {
+        "translation": "君が行かないなら、じゃあ私も行かないよ。"
+      }
+    ]
   },
   "zh_那也_124": {
-    "title": "那也 (but still)",
-    "shortExplanation": "but still",
-    "longExplanation": "but still. Pinyin: nà yě",
-    "formation": "nà yě"
+    "title": "那也（それにしても・いくらそうだからといって〜［口語の譲歩・反論］）",
+    "shortExplanation": "相手の主張や事実を一応認めた上で、「いくらそうだからといって〜」「それにしても〜」と反論や釘を刺す口語表現です。",
+    "longExplanation": "口語表現「那也」（nà yě）は、相手が提示した言い訳、理由、既定の事実を承諾・譲歩しながらも、「だからといって〜してよい理由にはならない」「それにしてもやはり〜だ」と反駁したり、忠告・苦言を呈したりする際に用いられます（例：A: 我早就复习好了。B: 那也不能一直玩儿啊＝A: とっくに復習は済ませたよ。B: だからってずっと遊んでいていいわけじゃないでしょ）。",
+    "formation": "那也 ＋ 助動詞 / 副詞 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "A：とっくに復習は終わったよ。 B：だからってずっと遊んでいていいわけじゃないでしょ。"
+      }
+    ]
   },
   "zh_V1了就V2_126": {
-    "title": "V1了就 V2 (V2 as soon as V1)",
-    "shortExplanation": "V2 as soon as V1",
-    "longExplanation": "V2 as soon as V1. Pinyin: V1 le jiù V2",
-    "formation": "V1 le jiù V2"
+    "title": "動詞1 ＋ 了 ＋ 就 ＋ 動詞2（動作の継起：〜したらすぐに…する・〜したあと直ちに…する）",
+    "shortExplanation": "第1の動作が完了した直後に、間を置かず第2の動作が行われることを表す動作の緊密な継起構文です。",
+    "longExplanation": "「動詞1 ＋ 了 ＋ 就 ＋ 動詞2」は、前後の2つの動作が時間的に間を置かず連続して行われることを表す構文です。動詞1の後ろのアスペクト助詞「了」が第1動作の完了を示し、副詞「就」がそれに引き続いて直ちに第2動作が発生することを導きます。前後の主語は同一でも（例：我吃了饭就走＝ご飯を食べたらすぐ行きます）、異なっていても構いません（例：爸爸回来了我们就吃饭＝お父さんが帰ってきたらすぐに食事にしましょう）。",
+    "formation": "（主語1 ＋ ）動詞1 ＋ 了（＋ 目的語1），（主語2 ＋ ）就 ＋ 動詞2（＋ 目的語2）",
+    "examples": [
+      {
+        "translation": "お父さんが帰ってきたらすぐにご飯を食べましょう。"
+      }
+    ]
   },
   "zh_V来去_127": {
-    "title": "V 来／去 ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V lái／ qù",
-    "formation": "V lái／ qù"
+    "title": "動詞 ＋ 来 / 去（単純方向補語：〜して来る / 〜して行く）",
+    "shortExplanation": "動詞の直後に「来」または「去」を置き、動作が話し手（または視点）に近づくか（来）、遠ざかるか（去）という移動の方向を表します。",
+    "longExplanation": "「来」と「去」が移動動詞の直後に付くとき、単純方向補語となります。「来」は動作の移動方向が話し手（あるいは話題の視点が存在する場所）へ「近づく」ことを示し、「去」は話し手の場所から「離れて遠ざかる」ことを示します（例：上来＝話し手が上にいて［上がっておいで］、上去＝話し手が下にいて［上がって行きなさい］；进来＝入っておいで、进去＝入って行きなさい）。",
+    "formation": "主語 ＋ 動詞 ＋ 来 / 去",
+    "examples": [
+      {
+        "translation": "私たちは上の階であなたを待っています、上がって来てください。"
+      }
+    ]
   },
   "zh_Vsomewhere来去_128": {
-    "title": "V somewhere 来／去 ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V somewhere lái／ qù",
-    "formation": "V somewhere lái／ qù"
+    "title": "動詞 ＋ 場所 ＋ 来 / 去（処所目的語を伴う方向補語［場所は必ず「来 / 去」の前に置く］）",
+    "shortExplanation": "動詞の目的語が場所・処所を表す名詞の場合、目的語は必ず動詞と「来 / 去」の間に挟まなければなりません。",
+    "longExplanation": "中国語の方向補語における極めて重要な鉄則です。動作の目的語が場所や処所を表す名詞（家、学校、教室、北京など）である場合、その目的語は必ず動詞と方向補語「来 / 去」の間に置かなければならず、「動詞 ＋ 場所 ＋ 来 / 去」という語順をとります。場所目的語を「来 / 去」の後ろに置くことは文法上絶対にできません（正：朋友回家去了、誤：*朋友回去了家；正：回国去、誤：*回去国）。",
+    "formation": "主語 ＋ 動詞 ＋ 場所名詞 ＋ 来 / 去（＋ 了）",
+    "examples": [
+      {
+        "translation": "友達は家に帰って行きました。"
+      }
+    ]
   },
   "zh_VO来去_129": {
-    "title": "V O 来／去 ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V O lái／ qù",
-    "formation": "V O lái／ qù"
+    "title": "動詞 ＋ 目的語（事物）＋ 来 / 去（事物目的語を伴う方向補語［目的語を「来 / 去」の前に置く］）",
+    "shortExplanation": "目的語が一般の事物を表す名詞の場合、目的語を動詞と「来 / 去」の間に挟んで表すことができます；予定や指示によく用いられます。",
+    "longExplanation": "動詞に単純方向補語「来 / 去」が付き、目的語が事物（物・こと）を表す一般名詞である場合、目的語の語順には2通りの配置が可能です。その1つが目的語を「来 / 去」の前に置き、「動詞 ＋ 目的語 ＋ 来 / 去」とする語順です。この形は命令文、指示、依頼、あるいは未来の予定や意志を表す文で非常によく使われます（例：明天要带作业来＝明日宿題を持って来てください、买点儿水果来＝果物を買ってきて）。",
+    "formation": "主語 ＋ （助動詞 ＋ ）動詞 ＋ 目的語（事物名詞）＋ 来 / 去",
+    "examples": [
+      {
+        "translation": "明日は宿題を持って来なければなりません。"
+      }
+    ]
   },
   "zh_V来去O_130": {
-    "title": "V 来／去 O ((complements of direction))",
-    "shortExplanation": "(complements of direction)",
-    "longExplanation": "(complements of direction). Pinyin: V lái／ qù O",
-    "formation": "V lái／ qù O"
+    "title": "動詞 ＋ 来 / 去 ＋ 目的語（事物）（事物目的語を伴う方向補語［目的語を「来 / 去」の後ろに置く］）",
+    "shortExplanation": "目的語が一般の事物を表す名詞の場合、目的語を「来 / 去」の直後に置くこともでき、動詞と方向補語が一体となって強く結びつきます。",
+    "longExplanation": "事物目的語（一般名詞）を伴う単純方向補語のもう一つの語順です。この構文では目的語を「来 / 去」の直後に配置し、「動詞 ＋ 来 / 去 ＋ 目的語」の形をとります。動詞と「来 / 去」が直接連結して1つの複合的な動作単位（例：带来＝持って来る、买来＝買って来る、拿去＝持って行く）を形成し、動作の方向と対象を端的に表現します。動作が完了した文でも非常によく用いられます（例：带来了一本书）。",
+    "formation": "主語 ＋ （助動詞 ＋ ）動詞 ＋ 来 / 去 ＋ 目的語（事物名詞）",
+    "examples": [
+      {
+        "translation": "明日は宿題を持って来てください（持って来なければなりません）。"
+      }
+    ]
   },
   "zh_能吗_131": {
-    "title": "能……吗？ (how can you…?)",
-    "shortExplanation": "how can you…?",
-    "longExplanation": "how can you…?. Pinyin: néng…… ma？",
-    "formation": "néng…… ma？"
+    "title": "能……吗？（反語表現：どうして〜できようか・〜できるはずがない）",
+    "shortExplanation": "助動詞「能」を用いた反語構文で、肯定の疑問文の形で「到底〜できるわけがない」という強い否定を表します。",
+    "longExplanation": "「能……吗？」（néng... ma?）は反語（修辞的疑問文）の代表的な構文です。肯定の疑問形式をとりながら、言外に「そんなことができるはずがない」「不可能なのは当たり前だ」という強い否定の意味を含みます。相手の怠慢や無茶な要求、不合理な行動に対して叱責したり、反論・苦言を呈したりする場面で頻繁に使われます（例：你不做作业，也不练习，能学好汉语吗？＝宿題もしないし練習もしないで、どうして中国語が上達できようか［できるはずがない］）。",
+    "formation": "（主語 ＋ ）能 ＋ 動詞句 / 形容詞句 ＋ 吗？",
+    "examples": [
+      {
+        "translation": "宿題もしないし練習もしないで、どうして中国語が上達できるでしょうか（できるわけがありません）。"
+      }
+    ]
   },
   "zh_N1还是N2_132": {
-    "title": "N1 还是 N2 ? (N1 or N2 ?)",
-    "shortExplanation": "N1 or N2 ?",
-    "longExplanation": "N1 or N2 ?. Pinyin: N1 háishi N2 ?",
-    "formation": "N1 háishi N2 ?"
+    "title": "名詞1 / 句1 ＋ 还是 ＋ 名詞2 / 句2？（選択疑問文：〜ですか、それとも…ですか？）",
+    "shortExplanation": "疑問文の中で接続詞「还是」を用いて2つ以上の選択肢を並べ、相手にどちらかを選ばせる選択疑問文を作ります。",
+    "longExplanation": "「还是」（háishi）は疑問文において複数の選択肢を提示し、「Aですか、それともBですか？」と相手に選ばせる際に用いられる代表的な接続詞です。名詞だけでなく動詞句や小節同士を繋ぐこともできます。中国語学習において最も重要な識別ポイントの一つとして、直接的な選択疑問文では必ず「还是」を用い、「或者」を使うことはできません（例：你要喝咖啡还是喝茶？＝コーヒーにしますか、それともお茶にしますか？）。",
+    "formation": "（主語 ＋ ）選択肢1 ＋ 还是 ＋ 選択肢2？",
+    "examples": [
+      {
+        "translation": "コーヒーを飲みますか、それともお茶を飲みますか？"
+      }
+    ]
   },
   "zh_N1或者N2_133": {
-    "title": "N1 或者 N2 (either N1 or N21)",
-    "shortExplanation": "either N1 or N21",
-    "longExplanation": "either N1 or N21. Pinyin: N1 huòzhě N2",
-    "formation": "N1 huòzhě N2"
+    "title": "名詞1 / 句1 ＋ 或者 ＋ 名詞2 / 句2（平叙文の選択接続詞：〜あるいは…・〜または…）",
+    "shortExplanation": "平叙文において接続詞「或者」を用い、「〜あるいは…」「〜または…」と複数の選択肢や可能性を並べて述べます。",
+    "longExplanation": "「或者」（huòzhě）は、平叙文（疑問文ではない文）において複数の事物や事態の選択肢を並列に並べる際に用いられる接続詞です。「どちらか一方、あるいはそのいずれか」という可能性を提示します。「还是」がもっぱら相手に選択を求める疑問文で使われるのに対し、「或者」は状況の説明や陳述で用いられるという明確な使い分けがあります（例：天冷了或者工作累了的时候，喝杯热茶很舒服＝寒い時や仕事で疲れた時、温かいお茶を飲むととても心地よい）。",
+    "formation": "選択肢1 ＋ 或者 ＋ 選択肢2",
+    "examples": [
+      {
+        "translation": "寒い時や仕事で疲れた時、温かいお茶を一杯飲むととても心地よいです。"
+      }
+    ]
   },
   "zh_N1还是N2_134": {
-    "title": "N1 还是 N2 (N1 or N2 (in question-like clauses))",
-    "shortExplanation": "N1 or N2 (in question-like clauses)",
-    "longExplanation": "N1 or N2 (in question-like clauses). Pinyin: N1 háishi N2",
-    "formation": "N1 háishi N2"
+    "title": "節1 ＋ 还是 ＋ 節2（間接疑問小節内の「还是」：〜かそれとも…か［迷い・未決定の選択］）",
+    "shortExplanation": "文末は句点（。）で終わる平叙文であっても、「まだ決めていない」「わからない」等の動詞に続く疑問を含む小節内では「还是」を用います。",
+    "longExplanation": "文全体の形は平叙文（疑問符ではなく句点で終わる文）であっても、思考や判断を表す動詞（想、知道、决定、考虑など）の目的語小節内に迷いや疑問、未決定の選択肢が含まれている場合、「或者」ではなく必ず「还是」を用います。これは間接疑問節を導く用法で、「Aにするか、それともBにするか（わからない／決まっていない）」という内容を表します（例：我还没想好去爬山还是去看电影＝登山に行くか、それとも映画を見に行くか、まだ決めていません）。",
+    "formation": "主語 ＋ 思考・未決定を表す動詞句 ＋ 選択肢1 ＋ 还是 ＋ 選択肢2",
+    "examples": [
+      {
+        "translation": "登山に行くか、それとも映画を見に行くか、まだ決めかねています。"
+      }
+    ]
   },
   "zh_PLACEV着N_135": {
-    "title": "PLACE + V + 着 + N (There is N V’ed in PLACE.)",
-    "shortExplanation": "There is N V’ed in PLACE.",
-    "longExplanation": "There is N V’ed in PLACE.. Pinyin: PLACE + V + zhe + N",
-    "formation": "PLACE + V + zhe + N"
+    "title": "場所 ＋ 動詞 ＋ 着 ＋ 名詞（存現文：〜に…が〜してある・〜している［静態の存在］）",
+    "shortExplanation": "場所の語句を文頭に置き、「動詞 ＋ 着」を続けて、特定の場所に物や人がどのような状態で存在しているかを表します。",
+    "longExplanation": "中国語の存現文（存在を表す構文）の最も代表的な形式です。文頭に場所を表す名詞句を置き、述語動詞にアスペクト助詞「着」を付け、その後に存在の主体となる名詞を配置します（「場所 ＋ 動詞 ＋ 着 ＋ 名詞」）。ある場所に物や人が静止した状態で保たれている様子を客観的に描写する際に用いられます（例：放着＝置いてある、挂着＝掛けてある、坐着＝座っている、停着＝停めてある）。後続の名詞は通常「数詞 ＋ 量詞 ＋ 名詞」のような不特定の名詞となります（例：桌子上放着一杯咖啡＝テーブルの上にコーヒーが1杯置いてある）。",
+    "formation": "場所名詞 ＋ 動詞 ＋ 着 ＋ （数詞 ＋ 量詞 ＋ ）名詞",
+    "examples": [
+      {
+        "translation": "テーブルの上にコーヒーが1杯置いてあります。"
+      }
+    ]
   },
   "zh_PLACE没V着N_136": {
-    "title": "PLACE + 没 + V + 着 + N (There is not N V’ed in PLACE.)",
-    "shortExplanation": "There is not N V’ed in PLACE.",
-    "longExplanation": "There is not N V’ed in PLACE.. Pinyin: PLACE + méi + V + zhe + N",
-    "formation": "PLACE + méi + V + zhe + N"
+    "title": "場所 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 名詞（存現文の否定形：〜に…は〜して［置かれて］いない）",
+    "shortExplanation": "存現文の否定形式で、動詞の前に「没」または「没有」を置き、その場所に物がその状態を保って存在していないことを表します。",
+    "longExplanation": "「場所 ＋ 動詞 ＋ 着 ＋ 名詞」で表される存現文を否定する場合、動詞の直前に否定副詞「没」または「没有」を置きます（「不」は使えません）。「場所 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 名詞」の形となり、その場所に特定の物が置かれていない、掛けられていないといった状態の非存在を表します。文法上の重要ポイントとして、否定文では後ろの名詞の前にある「数詞 ＋ 量詞」（一杯など）は通常取り除かれ、名詞そのものが置かれます（例：桌子上没放着咖啡＝テーブルの上にコーヒーは置いてありません）。",
+    "formation": "場所名詞 ＋ 没（有）＋ 動詞 ＋ 着 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "テーブルの上にコーヒーは置いてありません。"
+      }
+    ]
   },
   "zh_会VA的_137": {
-    "title": "会 + V / A + (的） (will V, will be A)",
-    "shortExplanation": "will V, will be A",
-    "longExplanation": "will V, will be A. Pinyin: huì + V / A + ( de）",
-    "formation": "huì + V / A + ( de）"
+    "title": "会 ＋ 動詞 / 形容詞 ＋ （的）（可能性・推測：きっと〜になる・〜するはずだ・〜するよ）",
+    "shortExplanation": "助動詞「会」と文末の語気助詞「的」が呼応し、将来その事態が起こる可能性が非常に高いことや確信を表します；「〜するよ」「〜になるはずだ」。",
+    "longExplanation": "助動詞「会」（huì）は習得した能力を表すだけでなく、将来の事態に対する「推測・可能性（〜するだろう、〜はずだ）」を表す用法を持ちます。文末に語気助詞「的」を伴う「会……的」の形をとると、話し手の確信や念押し、注意喚起のニュアンスが一段と強まり、「必ずそうなる」「そうなるに決まっている」という強い語気になります（例：你穿得那么少，会感冒的＝そんなに薄着をしていると、風邪を引いちゃいますよ；放心吧，他会来的＝安心して、彼はきっと来るから）。",
+    "formation": "主語 ＋ 会 ＋ 動詞 / 形容詞（＋ 目的語）＋ （的）",
+    "examples": [
+      {
+        "translation": "そんなに薄着をしていると、風邪を引いてしまいますよ。"
+      }
+    ]
   },
   "zh_又又_138": {
-    "title": "又……又…… (not only… but also…)",
-    "shortExplanation": "not only… but also…",
-    "longExplanation": "not only… but also…. Pinyin: yòu…… yòu……",
-    "formation": "yòu…… yòu……"
+    "title": "又……又……（〜でもあり〜でもある・また〜でまた〜）",
+    "shortExplanation": "同じ性質や動作が同時に並存していることを表し、「〜でもあり〜でもある」「また〜でまた〜」という意味を表します。",
+    "longExplanation": "「又……又……」は、同一の主語が持つ2つの性質、状態、または動作が同時に存在することを表す並列の呼応表現です。「又」の後には通常、同じ品詞（形容詞または動詞）が続き、かつ評価やニュアンス（良い意味同士、あるいは悪い意味同士）が一致している必要があります（例：「又大又甜」＝大きくて甘い、「又累又渴」＝疲れていて喉も渇いた）。肯定的な特徴と否定的な特徴を混在させて使うことはできません。日本語の「〜でもあり〜でもある」「〜だし〜でもある」に相当します。",
+    "formation": "主語 ＋ 又 ＋ 形容詞1 / 動詞1 ＋ 又 ＋ 形容詞2 / 動詞2",
+    "examples": [
+      {
+        "translation": "このスイカは大きくて甘いです。"
+      }
+    ]
   },
   "zh_V1着V2_139": {
-    "title": "V1 + 着 + V2 (V1-ing while V2-ing)",
-    "shortExplanation": "V1-ing while V2-ing",
-    "longExplanation": "V1-ing while V2-ing. Pinyin: V1 + zhe + V2",
-    "formation": "V1 + zhe + V2"
+    "title": "動詞1 ＋ 着 ＋ （目的語1 ＋ ）動詞2（動作1を付帯状況・様態として動作2を行う：〜しながら〜する）",
+    "shortExplanation": "動詞1の後にアスペクト助詞「着」を置き、動作1の持続状態を付帯状況（姿勢・手段・背景）として主たる動作2を行うことを表します。",
+    "longExplanation": "「動詞1 ＋ 着 ＋ （目的語1 ＋ ）動詞2」は、2つの動詞が連続する連動文の一種です。動作1に「着」を付加してその動作・状態を持続させ、それが動作2（主要な動作）の付帯状況（どのような姿勢・手段・状態で行うか）を表す連用修飾語（様態副詞語）として機能します（例：「站着说」＝立ったまま話す、「听着音乐做作业」＝音楽を聴きながら宿題をする、「吃着苹果写作业」＝リンゴを食べながら宿題をする）。日本語の「〜しながら〜する」「〜した状態で〜する」に相当します。",
+    "formation": "主語 ＋ 動詞1 ＋ 着 ＋ （目的語1 ＋ ）動詞2 ＋ （目的語2）",
+    "examples": [
+      {
+        "translation": "弟はリンゴを食べながら宿題をしています。"
+      }
+    ]
   },
   "zh_A了_140": {
-    "title": "A 了 (become A)",
-    "shortExplanation": "become A",
-    "longExplanation": "become A. Pinyin: A le",
-    "formation": "A le"
+    "title": "形容詞 ＋ 了（事態の変化：〜になった・〜くなってきた）",
+    "shortExplanation": "形容詞の後に語気助詞「了」を置き、以前の状態から新たな状態へと変化したこと（事態の変化）を表します。",
+    "longExplanation": "形容詞の後に文末の語気助詞「了」を置くことで、「以前とは異なり、新たな状態が生じた」「〜になった」という状態の変化を表します（例：「天气冷了」＝天気が寒くなった、「身体好一些了」＝体調が少し良くなった）。ここでの「了」は完了を表すアスペクト助詞ではなく、状況や状態の推移・変化を表す語気助詞です。日本語の「〜になった」「〜くなってきた」に相当します。",
+    "formation": "主語 ＋ （程度副詞 ＋ ）形容詞 ＋ 了",
+    "examples": [
+      {
+        "translation": "昨日風邪薬を飲んだので、今は少し良くなりました。"
+      }
+    ]
   },
   "zh_V了_141": {
-    "title": "V 了 ((didn’t V but) now V)",
-    "shortExplanation": "(didn’t V but) now V",
-    "longExplanation": "(didn’t V but) now V. Pinyin: V le",
-    "formation": "V le"
+    "title": "動詞句 ＋ 了（事態の変化：以前は〜しなかったが今は〜するようになった）",
+    "shortExplanation": "文末の語気助詞「了」を用いて、以前とは状況が変わり、新たにその動作を行うようになった（または行えるようになった）という事態の変化を表します。",
+    "longExplanation": "動詞述語文の文末に置かれる語気助詞「了」は、「以前はその動作をしなかった（あるいはできなかった）が、状況が変わって現在はするようになった・できるようになった」という新事態の発生や変化を表します。特に「现在（いま）」や能願動詞（可以、能、会など）とともに用いられると、「今では〜できるようになった」「もう〜するようになった」という変化のニュアンスが強調されます（例：「我可以穿漂亮的裙子了」＝以前は着られなかったが、今は綺麗なスカートが着られるようになった）。動作の完了を表す助詞「了」と区別されます。",
+    "formation": "（時間 ＋ ）主語 ＋ （助動詞 ＋ ）動詞 ＋ （目的語 ＋ ）了",
+    "examples": [
+      {
+        "translation": "今では綺麗なスカートを着られるようになりました。"
+      }
+    ]
   },
   "zh_越来越A了_142": {
-    "title": "越来越 + A + (了) (more and more A)",
-    "shortExplanation": "more and more A",
-    "longExplanation": "more and more A. Pinyin: yuèláiyuè + A + ( le)",
-    "formation": "yuèláiyuè + A + ( le)"
+    "title": "越来越 ＋ 形容詞 ＋ （了）（ますます〜になる・だんだん〜になる）",
+    "shortExplanation": "副詞「越来越」を形容詞の前に置き（文末に「了」を伴うことが多い）、時間の経過とともにその性質や程度の度合いが増していくことを表します。",
+    "longExplanation": "「越来越 ＋ 形容詞 ＋ （了）」は、時間の経過に伴って状態や性質の程度が次第に深まり、高まっていく変化（逓増・累加）を表す表現です。文末の語気助詞「了」は事態の変化を強調します。注意点として、「越来越」自体が程度の高まりを表すため、「很」「非常」「太」などの程度副詞を重ねて用いることはできません（誤り例：*越来越很帅）。日本語の「ますます〜になる」「だんだん〜になる」に相当します。",
+    "formation": "主語 ＋ （時間 ＋ ）越来越 ＋ 形容詞 ＋ （了）",
+    "examples": [
+      {
+        "translation": "最近あなたはますますかっこよくなりましたね。"
+      }
+    ]
   },
   "zh_V得RESULT_143": {
-    "title": "V + 得 + RESULT (can V to RESULT)",
-    "shortExplanation": "can V to RESULT",
-    "longExplanation": "can V to RESULT. Pinyin: V + dé + RESULT",
-    "formation": "V + dé + RESULT"
+    "title": "動詞 ＋ 得 ＋ 結果補語（可能補語の肯定形：〜して…できる）",
+    "shortExplanation": "動詞と結果補語の間に構造助詞「得」を挟み、客観的または主観的な条件によってその結果を達成できることを表す可能補語の肯定形です。",
+    "longExplanation": "可能補語は、主観的または客観的な条件・能力により、動作がある結果に至ることができるかどうかを表す中国語独特の文法形式です。その肯定形は「動詞 ＋ 得 ＋ 結果補語」の形を取り、「〜して（結果に至ることが）できる」「〜しきれる」という意味を表します（例：「看得清楚」＝はっきり見える、「听得懂」＝聞いて理解できる、「做得到」＝やり遂げられる）。目的語を伴う場合は、補語の後ろに置くか、文頭に話題化して置きます。",
+    "formation": "主語 ＋ 動詞 ＋ 得 ＋ 結果補語 ＋ （目的語）",
+    "examples": [
+      {
+        "translation": "私はあの漢字がはっきりと見えます。"
+      }
+    ]
   },
   "zh_V得DIRECTION_144": {
-    "title": "V + 得 + DIRECTION (can V to DIRECTION)",
-    "shortExplanation": "can V to DIRECTION",
-    "longExplanation": "can V to DIRECTION. Pinyin: V + dé + DIRECTION",
-    "formation": "V + dé + DIRECTION"
+    "title": "動詞 ＋ 得 ＋ 方向補語（可能補語肯定形：〜して上がって来られる・入っていけるなど）",
+    "shortExplanation": "動詞と方向補語の間に助詞「得」を挟み、ある方向へ動作を行って移動できる能力や条件があることを表します。",
+    "longExplanation": "動詞と方向補語（「来」「去」などの単純方向補語、または「上来」「进去」などの複合方向補語）の間に「得」を挟むことで、「ある方向へ向かってその動作を行うことができる」という可能補語の肯定形式を構成します（例：「上得来」＝上がって来られる、「进得去」＝入っていける、「回得来」＝戻って来られる）。ビルが高くて登れるか尋ねる際や、ある空間に入り込めるかなどを述べる場面で多用されます。",
+    "formation": "主語 ＋ 動詞 ＋ 得 ＋ 方向補語 ＋ （目的語）",
+    "examples": [
+      {
+        "translation": "建物がこんなに高いですが、上がって来られますか？"
+      }
+    ]
   },
   "zh_V不result_145": {
-    "title": "V + 不 + result (cannot V to RESULT)",
-    "shortExplanation": "cannot V to RESULT",
-    "longExplanation": "cannot V to RESULT. Pinyin: V + bù + result",
-    "formation": "V + bù + result"
+    "title": "動詞 ＋ 不 ＋ 結果補語（可能補語の否定形：〜して…できない・〜しきれない）",
+    "shortExplanation": "動詞と結果補語の間に否定副詞「不」を挟み、能力や条件が伴わないためにその動作結果を達成できないことを表します。",
+    "longExplanation": "「動詞 ＋ 不 ＋ 結果補語」は可能補語の否定形式です。能力不足や客観的条件の制約により、「動作を行ってもその結果に至ることができない」「〜しきれない」という不可能の意を表します（例：「找不到」＝見つけられない、「听不懂」＝聞いて理解できない、「看不清」＝はっきり見えない、「做不完」＝やり切れない）。中国語の日常会話において、可能補語は肯定形よりもこの否定形の方がはるかに高い頻度で使用されます。",
+    "formation": "主語 ＋ 動詞 ＋ 不 ＋ 結果補語 ＋ （目的語）",
+    "examples": [
+      {
+        "translation": "私は良いレストランが見つけられません。"
+      }
+    ]
   },
   "zh_V不direction_146": {
-    "title": "V + 不 + direction (cannot V to DIRECTION)",
-    "shortExplanation": "cannot V to DIRECTION",
-    "longExplanation": "cannot V to DIRECTION. Pinyin: V + bù + direction",
-    "formation": "V + bù + direction"
+    "title": "動詞 ＋ 不 ＋ 方向補語（可能補語否定形：〜して上がっていけない・入っていけないなど）",
+    "shortExplanation": "動詞と方向補語の間に否定副詞「不」を挟み、障害や体力不足などの理由である方向へ移動・動作することができないことを表します。",
+    "longExplanation": "「動詞 ＋ 不 ＋ 方向補語」は、移動の方向を表す可能補語の否定形式です。客観的な障害（高すぎる、狭すぎる、閉まっているなど）や主観的な制限（疲労、体力不足、恐怖など）により、その方向へ向かう動作が遂行できないことを表します（例：「上不去」＝上がっていけない、「进不去」＝入っていけない、「过不去」＝渡っていけない、「回不来」＝帰って来られない）。日本語の「〜していけない」「〜して来られない」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 不 ＋ 方向補語 ＋ （目的語）",
+    "examples": [
+      {
+        "translation": "建物が高すぎて、私は上がっていけません。"
+      }
+    ]
   },
   "zh_N呢_147": {
-    "title": "N 呢? (where is N?)",
-    "shortExplanation": "where is N?",
-    "longExplanation": "where is N?. Pinyin: N ne?",
-    "formation": "N ne?"
+    "title": "名詞 ＋ 呢？（所在・所在地の問いかけ：〜はどこですか？・〜は？）",
+    "shortExplanation": "名詞や代名詞の直後に語気助詞「呢」を添えて述語を省略した疑問文を作り、人や物の所在（どこにあるか・どこにいるか）を尋ねます。",
+    "longExplanation": "名詞や代名詞の直後に語気助詞「呢」を付加する省略疑問文の形式で、人や物の行方・居場所を尋ねる用法です。「〜在哪儿？（〜はどこにありますか/いますか）」の簡潔な口語表現として非常に頻繁に使われます（例：「你的书呢？」＝あなたの本はどこ？、「小王呢？」＝王さんはどこ？）。日本語の「〜は？」「〜はどこですか？」に相当します。",
+    "formation": "名詞 / 代名詞 ＋ 呢？",
+    "examples": [
+      {
+        "translation": "あなたの本はどこですか？"
+      }
+    ]
   },
   "zh_刚V_148": {
-    "title": "刚 V (just V)",
-    "shortExplanation": "just V",
-    "longExplanation": "just V. Pinyin: gāng V",
-    "formation": "gāng V"
+    "title": "刚 ＋ 動詞（副詞：〜したばかり・たった今〜した）",
+    "shortExplanation": "副詞「刚」を動詞の前に置き、その動作や出来事が起きてから間もないこと（たった今〜した、〜したばかり）を表します。",
+    "longExplanation": "「刚」は動詞の直前に置かれる副詞で、動作や事態が起きてから時間があまり経過していないこと（話し手の主観として時間が短いと感じていること）を表します。副詞であるため、必ず主語の後ろ・動詞の直前に置かれ、文頭（主語の前）に置くことはできません（時間名詞「刚才」との文法上の大きな相違点）。動詞の後ろに「完」「好」「到」などの結果補語を伴って「〜し終わったばかりだ」と述べる形が典型例です（例：「刚做完」＝終えたばかり、「刚来」＝来たばかり）。日本語の「〜したばかり」「ちょうど〜したところ」に相当します。",
+    "formation": "主語 ＋ 刚 ＋ 動詞 ＋ （結果補語 ＋ 目的語）",
+    "examples": [
+      {
+        "translation": "息子は宿題を終えたばかりです。"
+      }
+    ]
   },
   "zh_刚才_149": {
-    "title": "刚才 (moments ago)",
-    "shortExplanation": "moments ago",
-    "longExplanation": "moments ago. Pinyin: gāngcái",
-    "formation": "gāngcái"
+    "title": "刚才（時間名詞：さっき・先ほど）",
+    "shortExplanation": "時間名詞「刚才」は発話時点の直前の客観的な時間（さっき、先ほど）を指し、主語の前にも後ろにも置くことができます。",
+    "longExplanation": "副詞の「刚」とは異なり、「刚才」は客観的な直前の時間を指す「時間名詞」です。話している時点からほんの少し前の過去（数分前から直前）を指し、日本語の「さっき」「先ほど」に相当します。時間名詞であるため文法的な位置の自由度が高く、主語の前（文頭）にも主語の後ろにも置くことができます（例：「刚才他在做作业」も「他刚才在做作业」も可）。また、「在＋動詞」と共起して「さっき〜していたところだった」と過去の進行状態を表すことも可能です。",
+    "formation": "刚才 ＋ 主語 ＋ 述語 / 主語 ＋ 刚才 ＋ 述語",
+    "examples": [
+      {
+        "translation": "さっき息子は宿題をしていました。"
+      }
+    ]
   },
   "zh_V了DURATIONO_150": {
-    "title": "V + 了 + DURATION + O (V’ed O for DURATION)",
-    "shortExplanation": "V’ed O for DURATION",
-    "longExplanation": "V’ed O for DURATION. Pinyin: V + le + DURATION + O",
-    "formation": "V + le + DURATION + O"
+    "title": "動詞 ＋ 了 ＋ 時量補語 ＋ 目的語（時量補語：〜の間…した・過去の動作の継続時間と終了）",
+    "shortExplanation": "動詞の直後にアスペクト助詞「了」と動作の継続時間（時量補語）を置き、動作が一定時間継続し、現在はすでに終了したことを表します。",
+    "longExplanation": "「動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語」は、ある動作がどのくらいの時間続いたか（動作の継続時間）を表す時量補語の基本構文です。非常に重要な文法ポイントとして、文末に2つ目の「了」がない場合、その動作は「過去にその時間行われ、現在はすでに終了している（今も続いているわけではない）」ことを明確に表します（例：「我们坐了一个小时公共汽车」＝私たちはバスに1時間乗った。現在はすでに降りている）。文末にも「了」を伴って「今もなお継続中である」ことを表す構文との区別に注意が必要です。",
+    "formation": "主語 ＋ 動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語",
+    "examples": [
+      {
+        "translation": "私たちはバスに1時間乗りました。"
+      }
+    ]
   },
   "zh_V了DURATIONO了_151": {
-    "title": "V + 了 + DURATION + O + 了 (have been V-ing O for DURATION)",
-    "shortExplanation": "have been V-ing O for DURATION",
-    "longExplanation": "have been V-ing O for DURATION. Pinyin: V + le + DURATION + O + le",
-    "formation": "V + le + DURATION + O + le"
+    "title": "動詞 ＋ 了 ＋ 時量補語 ＋ 目的語 ＋ 了（動作の継続：〜の間…していて今も継続中である）",
+    "shortExplanation": "動詞の後ろと文末の双方に「了」を置くことで、動作が過去からその期間継続しており、現在もなお進行・継続中であることを表します。",
+    "longExplanation": "「動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語 ＋ 了」は、動詞の直後のアスペクト助詞「了」と文末の語気助詞「了」が呼応する重要構文です。文末の「了」が存在することにより、「その動作が過去から始まり、その時間の間ずっと継続しており、話している現在もなお続いていて今後も継続する見込みである」ことを明確に表します（例：「我学习了一年汉语了」＝私は中国語を勉強して1年になり、今も勉強を続けている）。文末に「了」がない「すでに動作が終了した」構文との対比は、中国語検定やHSKでも最頻出の文法事項です。",
+    "formation": "主語 ＋ 動詞 ＋ 了 ＋ 時量補語 ＋ （的 ＋ ）目的語 ＋ 了",
+    "examples": [
+      {
+        "translation": "私は中国語を1年間勉強しており、（今も）勉強を続けています。"
+      }
+    ]
   },
   "zh_对N感兴趣有兴趣_152": {
-    "title": "对 N 感兴趣/有兴趣 (interested in N)",
-    "shortExplanation": "interested in N",
-    "longExplanation": "interested in N. Pinyin: duì N gǎnxìngqù/ yǒuxìngqù",
-    "formation": "duì N gǎnxìngqù/ yǒuxìngqù"
+    "title": "对 ＋ 名詞 ＋ 感兴趣 / 有兴趣（介詞構文：〜に興味がある・関心がある）",
+    "shortExplanation": "介詞（前置詞）「对」を用いて対象を導き、「〜に対して興味・関心を持っている」という意味を表します。",
+    "longExplanation": "「对 ＋ 名詞 ＋ 感兴趣 / 有兴趣」は、ある分野、事柄、活動に対して関心や愛好の気持ちを抱いていることを表す基本構文です。介詞「对」が興味の対象（名詞句）を導いて前置修飾語（状語）となり、「感兴趣（興味を感じる）」または「有兴趣（興味がある）」を修飾します。程度の高さを表す副詞（很、非常、特别など）は「对」の前ではなく、必ず「感兴趣 / 有兴趣」の直前に置かれます（例：「对中国电影很感兴趣」）。否定形は「对……不感兴趣」または「对……没有兴趣」となります。日本語の「〜に興味がある」「〜に関心がある」に相当します。",
+    "formation": "主語 ＋ 对 ＋ 名詞（対象） ＋ （程度副詞 ＋ ）感兴趣 / 有兴趣",
+    "examples": [
+      {
+        "translation": "彼らは中国映画に興味を持っています。"
+      }
+    ]
   },
   "zh_对N没兴趣_153": {
-    "title": "对 N 没兴趣 (not interested in N)",
-    "shortExplanation": "not interested in N",
-    "longExplanation": "not interested in N. Pinyin: duì N méi xìngqù",
-    "formation": "duì N méi xìngqù"
+    "title": "对 ＋ 名詞 ＋ 没兴趣（〜に興味がない・関心がない）",
+    "shortExplanation": "介詞「对」で対象を導き、「没兴趣」を後続させることで、その物事や分野に対して興味や関心がないことを表します。",
+    "longExplanation": "「对 ＋ 名詞 ＋ 没兴趣（または没有兴趣）」は、「对……有兴趣/感兴趣」の否定形式で、ある人・事物・活動・分野に対して関心や好奇心が持てないことを表す表現です。介詞「对」が導く名詞（関心の対象）は連用修飾語（状語）として述語「没兴趣」の前に置かれます。「一点儿也不感兴趣/没兴趣」（少しも興味がない）のように程度を強調することもできます。日本語の「〜に興味がない」「〜に関心がない」に相当します。",
+    "formation": "主語 ＋ 对 ＋ 名詞（対象） ＋ 没兴趣 / 没有兴趣",
+    "examples": [
+      {
+        "translation": "彼らは中国映画に興味がありません。"
+      }
+    ]
   },
   "zh_半_154": {
-    "title": "半 (half hour)",
-    "shortExplanation": "half hour",
-    "longExplanation": "half hour. Pinyin: bàn",
-    "formation": "bàn"
+    "title": "数詞 ＋ 点 ＋ 半（時刻表現：〜時半）",
+    "shortExplanation": "時刻を表す「点」の直後に「半」を置き、ちょうど30分（〜時半）であることを表します。",
+    "longExplanation": "中国語で時刻（時刻の点）を表す際、「半」は「30分（半）」を意味し、時間の単位である「点（時）」の後ろに直接添えて「数詞 ＋ 点 ＋ 半」の形で用います（例：「七点半」＝7時半、「十二点半」＝12時半）。所要時間・期間を表す「半个小时（30分間・半時間）」とは構文上区別されます。日本語の「〜時半」にそのまま対応します。",
+    "formation": "数詞 ＋ 点 ＋ 半",
+    "examples": [
+      {
+        "translation": "今は7時半です。"
+      }
+    ]
   },
   "zh_一刻_155": {
-    "title": "一刻 (quarter hour (when telling time))",
-    "shortExplanation": "quarter hour (when telling time)",
-    "longExplanation": "quarter hour (when telling time). Pinyin: yī kè",
-    "formation": "yī kè"
+    "title": "数詞 ＋ 点 ＋ 一刻（時刻表現：〜時15分）",
+    "shortExplanation": "時刻を表す「点」の後ろに「一刻」を置き、15分を指す時刻（〜時15分）を表します。",
+    "longExplanation": "中国語の時刻表現において、「刻」は15分を表す単位です。「一刻」は「15分」を意味し、「数詞 ＋ 点 ＋ 一刻」の形で「〜時15分」という特定の時刻を表します（例：「七点一刻」＝7時15分、「九点一刻」＝9時15分）。なお、30分を「*两刻」とは言わず「半」を用い、45分は現代標準中国語では「差一刻……」（〜時15分前）または「四十五分」と表現するのが普通です。",
+    "formation": "数詞 ＋ 点 ＋ 一刻",
+    "examples": [
+      {
+        "translation": "今7時15分です。"
+      }
+    ]
   },
   "zh_一刻钟_156": {
-    "title": "一刻钟 (quarter hour (duration))",
-    "shortExplanation": "quarter hour (duration)",
-    "longExplanation": "quarter hour (duration). Pinyin: yī kè zhōng",
-    "formation": "yī kè zhōng"
+    "title": "一刻钟（時量表現：15分間）",
+    "shortExplanation": "「一刻钟」は継続する時間の長さ（時量）を表し、「15分間」という意味の時量補語などとして用います。",
+    "longExplanation": "時刻の「〜時15分」を表す「一刻」とは異なり、「一刻钟」は「15分間」という時間の長さ（時量）を表す名詞です。文中では主に動詞（＋了）の後ろに置かれ、時量補語として動作や状態が15分間続いたことを表します（例：「迟到了一刻钟」＝15分遅刻した、「等了一刻钟」＝15分待った、「休息一刻钟」＝15分休憩する）。日本語の「15分間」に相当します。",
+    "formation": "動詞 ＋ （了 ＋ ）一刻钟",
+    "examples": [
+      {
+        "translation": "あなたは15分遅刻しました。"
+      }
+    ]
   },
   "zh_差ch_157": {
-    "title": "差 (chà) (to (when telling time))",
-    "shortExplanation": "to (when telling time)",
-    "longExplanation": "to (when telling time). Pinyin: chà (chà)",
-    "formation": "chà (chà)"
+    "title": "差 ＋ 分数 / 一刻 ＋ 数詞 ＋ 点（時刻表現：〜時…分前・〜時差）",
+    "shortExplanation": "動詞「差（不足している）」を用いて、次の正時まであと何分不足しているかを表す時刻表現（〜時…分前）です。",
+    "longExplanation": "中国語の時刻表現において、「差（chà）」は「足りない・不足している」という意味を持ち、「差 ＋ 分数（または一刻） ＋ 次の正時 ＋ 点」の語順で「〜時…分前」という時刻を表します（例：「差一刻八点」＝8時15分前・7時45分、「差五分十点」＝10時5分前・9時55分）。なお、「八点差一刻」のように正時を先に置く語順も可能です。文末に「了」を伴って「もう〜時何分前だ」と時間を急かす際などによく使われます。",
+    "formation": "（已经 ＋ ）差 ＋ 分数 / 一刻 ＋ 数詞 ＋ 点 ＋ （了）",
+    "examples": [
+      {
+        "translation": "もう8時15分前ですよ！"
+      }
+    ]
   },
   "zh_再V_158": {
-    "title": "再 V (again (later))",
-    "shortExplanation": "again (later)",
-    "longExplanation": "again (later). Pinyin: zài V",
-    "formation": "zài V"
+    "title": "再 ＋ 動詞（未実現の動作の再開・反復：また〜する・もう一度〜する）",
+    "shortExplanation": "副詞「再」を動詞の前に置き、動作が将来・未実現において再び繰り返されることや継続することを表します。",
+    "longExplanation": "副詞「再」は動詞の前に置かれ、ある動作や状態が将来（未実現の時点）において再び行われることや繰り返されることを表します（例：「明天再去」＝明日また行く、「请再说一次」＝もう一度言ってください）。中国語の重要文法項目である「再」と「又」の使い分けにおいて、「再」は未来・未発生の動作の反復を表すのに対し、「又」は過去・すでに実現した動作の反復を表すという明確な違いがあります。日本語の「また〜する」「もう一度〜する」に相当します。",
+    "formation": "主語 ＋ （時間 ＋ / 还 / 要 ＋ ）再 ＋ 動詞 ＋ （目的語）",
+    "examples": [
+      {
+        "translation": "私は明日また見に行こうと思います。"
+      }
+    ]
   },
   "zh_又V_159": {
-    "title": "又 V ((did) again)",
-    "shortExplanation": "(did) again",
-    "longExplanation": "(did) again. Pinyin: yòu V",
-    "formation": "yòu V"
+    "title": "又 ＋ 動詞（既実現の動作の反復：また〜した・またしても〜した）",
+    "shortExplanation": "副詞「又」を動詞の前に置き、ある動作や事態が過去に再び繰り返されたこと（既実現の反復）を表します。",
+    "longExplanation": "副詞「又」は動詞の前に置かれ、過去にすでに発生した動作や事態の再発・反復を表します。未来の反復を表す「再」とは対照的に、「又」はすでに起きてしまったことに対して使われます。また、「怎么又……了」（どうしてまた〜したのか）の形で疑問詞「怎么」などとともに用いられると、不満・呆れ・驚き・非難といった話者の感情的ニュアンスが強く表出されます（例：「你怎么又迟到了？」＝君はどうして今日もまた遅刻したのか？）。日本語の「また〜した」「またしても〜した」に相当します。",
+    "formation": "主語 ＋ （時間 ＋ ）（怎么 ＋ ）又 ＋ 動詞 ＋ （目的語 ＋ 了）",
+    "examples": [
+      {
+        "translation": "あなたはどうして今日もまた遅刻したのですか？"
+      }
+    ]
   },
   "zh_SQ1就Q2_160": {
-    "title": "S + Q1 + 就 + Q2 ((S acts in a way so that the answer to Q1 is the same as the answer to Q2.))",
-    "shortExplanation": "(S acts in a way so that the answer to Q1 is the same as the answer to Q2.)",
-    "longExplanation": "(S acts in a way so that the answer to Q1 is the same as the answer to Q2.). Pinyin: S + Q1 + jiù + Q2",
-    "formation": "S + Q1 + jiù + Q2"
+    "title": "主語 ＋ 疑問詞1 ＋ 就 ＋ 疑問詞2（任意表現：〜したいものを〜する・〜の通りに〜する）",
+    "shortExplanation": "副詞「就」の前後に同じ疑問詞を呼応させて用い、前節の条件や意志に応じて自由にその通りの動作を行うことを表します。",
+    "longExplanation": "「主語 ＋ 疑問詞 ＋ 就 ＋ 疑問詞」は、同一の疑問代名詞（什么、哪儿、谁、怎么など）を2回繰り返して「就」で結ぶ、疑問詞の柔軟用法（任指・呼応用法）です。前の疑問詞節が条件や希望を示し、後の疑問詞節がそれに合致した動作を行うことを示します（「前の答えがそのまま後ろの答えになる」という関係）。話者の自由な選択や任意の行動を表し、日本語の「〜したいものを何でも〜する」「〜したいように〜する」「〜な通りにする」に相当します（例：「想吃什么就吃什么」＝食べたいものを食べる、「想去哪儿就去哪儿」＝行きたい所へどこへでも行く）。",
+    "formation": "主語 ＋ （動詞1 ＋ ）疑問詞 ＋ 就 ＋ （動詞2 ＋ ）疑問詞",
+    "examples": [
+      {
+        "translation": "私は飲みたいものを何でも飲みます。"
+      }
+    ]
   },
   "zh_S1QS2就Q_161": {
-    "title": "S1 + Q + S2 + 就 + Q ((S2 acts in a way that the answer to Q is true for both S1 and S2.))",
-    "shortExplanation": "(S2 acts in a way that the answer to Q is true for both S1 and S2.)",
-    "longExplanation": "(S2 acts in a way that the answer to Q is true for both S1 and S2.). Pinyin: S1 + Q + S2 + jiù + Q",
-    "formation": "S1 + Q + S2 + jiù + Q"
+    "title": "主語1 ＋ 疑問詞 ＋ 主語2 ＋ 就 ＋ 疑問詞（呼応表現：主語1が〜するものと同じものを主語2も〜する）",
+    "shortExplanation": "2つの異なる主語を用い、「就」を挟んで同じ疑問詞を呼応させることで、主語2が主語1の選択や行動に完全に合わせることを表します。",
+    "longExplanation": "「主語1 ＋ 疑問詞 ＋ 主語2 ＋ 就 ＋ 疑問詞」は、2つの異なる主語が関わる疑問代名詞の任指・呼応表現です。前節で主語1が選択した内容（什么、哪儿、谁など）に対して、後節で主語2が「就」を介して全く同じ選択や行動をとる（主語1に同調・追従する）ことを表します（例：「你喝什么我就喝什么」＝君が飲むものを僕も飲むよ、「你去哪儿我就去哪儿」＝君が行く所ならどこへでも付いていく）。日本語の「あなたが〜するものと同じものを私も〜する」「あなたに合わせる」という協調・賛同のニュアンスを表します。",
+    "formation": "主語1 ＋ （動詞1 ＋ ）疑問詞 ＋ 主語2 ＋ 就 ＋ （動詞2 ＋ ）疑問詞",
+    "examples": [
+      {
+        "translation": "あなたが飲むものを私も飲みます。"
+      }
+    ]
   },
   "zh_越V1A1越V2A2_162": {
-    "title": "越 V1/A1 越 V2/A2 (the more V1/A1 the more V2/A2)",
-    "shortExplanation": "the more V1/A1 the more V2/A2",
-    "longExplanation": "the more V1/A1 the more V2/A2. Pinyin: yuè V1/A1 yuè V2/A2",
-    "formation": "yuè V1/A1 yuè V2/A2"
+    "title": "越 ＋ 動詞1 / 形容詞1 ＋ 越 ＋ 動詞2 / 形容詞2（比例累加表現：〜すればするほどますます〜）",
+    "shortExplanation": "副詞「越……越……」を用いて、前者の動作や状態の程度が進むにつれて、後者の程度も比例してますます高まることを表します。",
+    "longExplanation": "「越 ＋ 動詞1/形容詞1 ＋ 越 ＋ 動詞2/形容詞2」は、事態の比例的な変化や程度の段階的進展（累加関係）を表す連関構文です。「越」の後ろには動詞または形容詞が置かれ、「前者の度合いが高まれば高まるほど、それに伴って後者の度合いもますます深まる」という関係を表します（例：「越聊越开心」＝話せば話すほど楽しくなる、「雨越下越大」＝雨が降れば降るほど激しくなる、「越快越好」＝早ければ早いほど良い）。同一の主語でも異なる主語でも使用可能です。日本語の「〜すればするほどますます〜だ」に相当します。",
+    "formation": "（主語 ＋ ）越 ＋ 動詞1 / 形容詞1 ＋ 越 ＋ 動詞2 / 形容詞2",
+    "examples": [
+      {
+        "translation": "私たちは話せば話すほど楽しくなりました。"
+      }
+    ]
   },
   "zh_N1跟N2一样_163": {
-    "title": "N1 跟 N2 一样 (N1 is like N2)",
-    "shortExplanation": "N1 is like N2",
-    "longExplanation": "N1 is like N2. Pinyin: N1 gēn N2 yīyàng",
-    "formation": "N1 gēn N2 yīyàng"
+    "title": "名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样（同等比較：名詞1は名詞2と同じ・〜のようだ）",
+    "shortExplanation": "介詞「跟（または和）」と「一样」を組み合わせて、2つの事物の外見や性質が同一または非常に似ていることを表します。",
+    "longExplanation": "「名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样」は、事物や人物の同等・同一性を表す基本的な比較構文です。介詞「跟」（「和」や「同」に言い換え可能）で比較対象を導き、「一样」が述語となって「名詞1は名詞2と同じである」「〜のようだ」という意味を表します（例：「你的眼睛跟大熊猫一样」＝君の目はパンダそっくりだ、「这件衣服跟我的一样」＝この服は私のと同じだ）。否定する場合は「跟……不一样」（〜と異なる）となります。日本語の「〜と同じだ」「〜にそっくりだ」に相当します。",
+    "formation": "名詞1 ＋ 跟 / 和 ＋ 名詞2 ＋ 一样",
+    "examples": [
+      {
+        "translation": "あなたの目はパンダそっくりですね。"
+      }
+    ]
   },
   "zh_N1跟N2一样A_164": {
-    "title": "N1 跟 N2 一样 A (N1 is as A as N2)",
-    "shortExplanation": "N1 is as A as N2",
-    "longExplanation": "N1 is as A as N2. Pinyin: N1 gēn N2 yīyàng A",
-    "formation": "N1 gēn N2 yīyàng A"
+    "title": "名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样 ＋ 形容詞（同等比較：名詞1は名詞2と同じくらい〜だ）",
+    "shortExplanation": "「跟……一样」の後ろに形容詞を置き、特定の性質や状態について2つの事物が同等のレベルにあることを表します。",
+    "longExplanation": "「名詞1 ＋ 跟 ＋ 名詞2 ＋ 一样 ＋ 形容詞」は、特定の基準（高さ、大きさ、難しさなど）において、2つの対象の程度が等しいことを表す同等比較構文です。介詞「跟」（「和」も可）で比較基準となる名詞2を導き、「一样」が連用修飾語（状語）となって形容詞を修飾し、「名詞1は名詞2と同じくらい〜だ」という意味を表します（例：「儿子跟爸爸一样高」＝息子は父親と同じくらい背が高い、「这双鞋跟那双一样贵」＝この靴はあの靴と同じくらい高い）。否定の同等比較には通常「没有……那么＋形容詞」が好まれます。日本語の「〜と同じくらい…だ」に相当します。",
+    "formation": "名詞1 ＋ 跟 / 和 ＋ 名詞2 ＋ 一样 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "息子は父親と同じくらい背が高いです。"
+      }
+    ]
   },
   "zh_没有N这么那么A_165": {
-    "title": "没有 N (这么/那么) A (not as A as N)",
-    "shortExplanation": "not as A as N",
-    "longExplanation": "not as A as N. Pinyin: méiyǒu N ( zhème/ nàme) A",
-    "formation": "méiyǒu N ( zhème/ nàme) A"
+    "title": "名詞1 ＋ 没有 ＋ 名詞2 ＋ （这么 / 那么 ＋ ）形容詞（劣等比較：名詞1は名詞2ほど〜ではない）",
+    "shortExplanation": "「没有」を用いて比較基準の対象を導き、「名詞1は名詞2ほど〜ではない」という劣等比較を表します。",
+    "longExplanation": "「名詞1 ＋ 没有 ＋ 名詞2 ＋ （这么/那么 ＋ ）形容詞」は、中国語における最も代表的な劣等比較（否定の比較）構文です。主語（名詞1）が比較基準となる名詞2の持っている高いレベルや程度に達していないことを表します。形容詞の前には程度を指示する代名詞「那么」（あんなに・それほど）や「这么」（こんなに）が伴われることが多く、基準の程度の高さを強調します（例：「我的汉语没有他那么好」＝私の中国語は彼ほど上手ではない、「今天没有昨天那么冷」＝今日は昨日ほど寒くない）。「比」を用いた否定文（不比……）とはニュアンスが異なり、「没有」は単に「〜には及ばない」という差を客観的に述べます。日本語の「〜は〜ほど…ではない」に相当します。",
+    "formation": "名詞1 ＋ 没有 ＋ 名詞2 ＋ （这么 / 那么 ＋ ）形容詞",
+    "examples": [
+      {
+        "translation": "私の中国語は彼ほど上手ではありません。"
+      }
+    ]
   },
   "zh_A一点儿一些_166": {
-    "title": "A 一点儿/一些 (A little more A)",
-    "shortExplanation": "A little more A",
-    "longExplanation": "A little more A. Pinyin: A yīdiǎnr/ yīxiē",
-    "formation": "A yīdiǎnr/ yīxiē"
+    "title": "形容詞 ＋ 一点儿 / 一些（数量補語：少し〜・ほんの少し〜）",
+    "shortExplanation": "形容詞の直後に「一点儿」または「一些」を置き、差異の度合いがごくわずかであること（少し〜・ほんの少し〜）を表す数量補語です。",
+    "longExplanation": "「形容詞 ＋ 一点儿 / 一些」は、事物の性質や程度の差がわずかであることを表す表現です。形容詞の後ろに置かれる「一点儿/一些」は数量補語（差異補語）として機能します。「比」を用いた比較文の中で「名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞 ＋ 一点儿/一些」の形で用いられ、「名詞1は名詞2より少し…だ」というわずかな差を表します（例：「大山比大卫矮一点儿」＝大山はデイビッドより少し背が低い、「今天比昨天好一点儿」＝今日は昨日より少し調子が良い）。また、要望を表す際にも使われます（例：「便宜一点儿」＝もう少し安くして）。形容詞の前に置いて不満を表す「有一点儿 ＋ 形容詞」とは位置と意味が異なるため厳密に区別されます。日本語の「少し〜」「ちょっと〜」に相当します。",
+    "formation": "（名詞1 ＋ 比 ＋ 名詞2 ＋ ）形容詞 ＋ 一点儿 / 一些",
+    "examples": [
+      {
+        "translation": "大山はデイビッドより少し背が低いです。"
+      }
+    ]
   },
   "zh_A得多多了_167": {
-    "title": "A 得多/多了 (much more A)",
-    "shortExplanation": "much more A",
-    "longExplanation": "much more A. Pinyin: A dé duō/ duō le",
-    "formation": "A dé duō/ duō le"
+    "title": "形容詞 ＋ 得多 / 多了（程度補語・差異補語：ずっと〜だ・はるかに〜だ）",
+    "shortExplanation": "形容詞の直後に「得多」または「多了」を置き、2つの事物の間に非常に大きな程度の差があること（ずっと〜・はるかに〜）を表す補語です。",
+    "longExplanation": "「形容詞 ＋ 得多 / 多了」は、事物間の程度の開きが非常に大きいことを表す構文です。「得多」または「多了」は形容詞の後ろに置かれて程度補語（または差異補語）として機能します。特に「比」を用いた比較文「名詞1 ＋ 比 ＋ 名詞2 ＋ 形容詞 ＋ 得多/多了」において頻繁に用いられ、「名詞1は名詞2よりずっと…だ」という意味を表します（例：「今天的作业比昨天多得多」＝今日の宿題は昨日よりずっと多い、「他比我大得多」＝彼は私よりずっと年上だ、「身体好多了」＝体調はずっと良くなった）。中国語の比較文「比」では形容詞の前に「很」や「非常」を置くことができないため、差の大きさを表すには必ず補語として「得多/多了」を形容詞の後に置きます。日本語の「ずっと〜だ」「はるかに〜だ」に相当します。",
+    "formation": "（名詞1 ＋ 比 ＋ 名詞2 ＋ ）形容詞 ＋ 得多 / 多了",
+    "examples": [
+      {
+        "translation": "今日の宿題は昨日よりずっと多いです。"
+      }
+    ]
   },
   "zh_1_168": {
-    "title": "# #+1 (# or #+1)",
-    "shortExplanation": "# or #+1",
-    "longExplanation": "# or #+1. Pinyin: # #+1",
-    "formation": "# #+1"
+    "title": "数詞 ＋（数詞＋1）＋ 量詞 ＋ 名詞（隣り合う2つの数詞による概数表現：1、2個・3、4個など）",
+    "shortExplanation": "連続する2つの数詞を並べて量詞と名詞を後続させ、「1、2個」「3、4個」のように大体の数量（概数）を表します。",
+    "longExplanation": "中国語では、隣り合う2つの数詞を続けて並べることで、数量のおおよその目安（概数）を表すことができます（例：「一两」＝1、2、「两三」＝2、3、「三四」＝3、4、「七八」＝7、8など）。特に「1」と「2」が並ぶ場合、「2」には「二」ではなく「两」を用いて「一两」と言います（*一二とは言いません）。また十の位でも「二三十」「七八十」のように用いることができます。日本語の「1、2時間」「3、4人」「2、3個」といった表現に相当します。",
+    "formation": "数詞 ＋（数詞＋1）＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "私は毎日1、2時間中国語を勉強しています。"
+      }
+    ]
   },
   "zh_把了_169": {
-    "title": "把 + Ｏ + Ｖ + 了 (V’ed the O)",
-    "shortExplanation": "V’ed the O",
-    "longExplanation": "V’ed the O. Pinyin: bǎ + Ｏ + Ｖ + le",
-    "formation": "bǎ + Ｏ + Ｖ + le"
+    "title": "把 ＋ 目的語 ＋ 動詞 ＋ 了（「把」構文：目的語を〜した・〜してしまった）",
+    "shortExplanation": "介詞「把」を用いて目的語を動詞の前に引き出し、文末や動詞の後に「了」を伴って、その対象に対して処置を施し終えたこと（処置の完了や結果）を表します。",
+    "longExplanation": "「把」構文（処置文）は、介詞「把」によって動作の対象（特定された目的語）を動詞の前に導き、「その対象に対してどのような処置・働きかけを行い、どのような結果・変化が生じたか」を強調する中国語特有の文型です。「把」構文の動詞は単独では用いられず、必ず何らかの付加成分を必要とします。本構文では完了・変化を表す「了」を伴い、「〜を…した」「〜を…してしまった」という完了や予期せぬ結果を表します（例：「我把钱包忘了」＝財布を忘れてしまった）。",
+    "formation": "主語 ＋ 把 ＋ 目的語（特定のもの） ＋ 動詞 ＋ 了",
+    "examples": [
+      {
+        "translation": "私は財布を忘れてしまいました。"
+      }
+    ]
   },
   "zh_不要别没把了_170": {
-    "title": "不要/别/没把 + Ｏ + Ｖ + 了 (don’t/don’t/haven’t V’ed the O)",
-    "shortExplanation": "don’t/don’t/haven’t V’ed the O",
-    "longExplanation": "don’t/don’t/haven’t V’ed the O. Pinyin: bùyào/ bié/ méi bǎ + Ｏ + Ｖ + le",
-    "formation": "bùyào/ bié/ méi bǎ + Ｏ + Ｖ + le"
+    "title": "不要 / 别 / 没 ＋ 把 ＋ 目的語 ＋ 動詞 ＋（了）（「把」構文の否定形：〜を…するな・〜を…しなかった）",
+    "shortExplanation": "否定の副詞「别」「不要」（〜するな）や「没」（〜しなかった）を「把」の前に置き、「把」構文の動作を制止したり未完了であることを表します。",
+    "longExplanation": "「把」構文を否定する場合、否定詞（「别」「不要」「没/没有」など）は必ず介詞「把」の直前に置かなければならず、動詞の前に置いてはならないという厳格な規則があります。禁止や注意喚起を表す「别把……動詞＋了」「不要把……動詞＋了」の構文では、文末の「了」は好ましくない事態・結果の発生を警戒・喚起する語気助詞として機能します（例：「别把手机忘了」＝スマホを忘れないでね、「不要把衣服弄脏了」＝服を汚さないで）。一方、「没把……」は過去に処置を行わなかったことや所期の変化に至らなかったことを表します。",
+    "formation": "主語 ＋ 不要 / 别 / 没 ＋ 把 ＋ 目的語 ＋ 動詞 ＋（了 / 補語）",
+    "examples": [
+      {
+        "translation": "スマホを忘れないでね。"
+      }
+    ]
   },
   "zh_左右_171": {
-    "title": "# 左右 (approximately #)",
-    "shortExplanation": "approximately #",
-    "longExplanation": "approximately #. Pinyin: # zuǒyòu",
-    "formation": "# zuǒyòu"
+    "title": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右（概数表現：〜ごろ・〜前後・〜ぐらい）",
+    "shortExplanation": "数量詞や時刻・年齢などの後ろに「左右」を置き、「〜前後」「〜ぐらい」「〜ごろ」というおおよその数値や時点（概数）を表します。",
+    "longExplanation": "「左右（zuǒyòu）」は概数（おおよその数や時間）を表す後置修飾の語句で、数量詞、時間、年齢、金銭などの後ろに直接置かれます。基準となる数値の上下・前後にある程度幅があることを示します（例：「十点左右」＝10時ごろ、「三十岁左右」＝30歳前後・30歳くらい、「一百块左右」＝100元前後）。日本語の「〜ぐらい」「〜前後」「〜ごろ」に対応しますが、必ず数値の後ろに置かれる点に注意が必要です。",
+    "formation": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右",
+    "examples": [
+      {
+        "translation": "週末、私は普段10時ごろに起きます。"
+      }
+    ]
   },
   "zh_就VA_172": {
-    "title": "就 V/A (just (better than expected))",
-    "shortExplanation": "just (better than expected)",
-    "longExplanation": "just (better than expected). Pinyin: jiù V/A",
-    "formation": "jiù V/A"
+    "title": "就 ＋ 動詞 / 形容詞（副詞「就」：早く・あっさり実現することを表す：もう〜・〜すればすぐ〜）",
+    "shortExplanation": "副詞「就」を動詞や形容詞の前に置き、動作や事態が予想よりも早く、短時間で、容易に実現した（または実現する）ことを表します。",
+    "longExplanation": "副詞「就」は動詞述語の前に置かれ、ある動作や事態が「話者の予想よりも早い、所要時間が短い、あっさりと容易に進む」というニュアンスを表します。時間量や時点の後に置かれて「たった〜でもう着いた」「〜時には早くも〜した」と強調する際によく使われます（例：「坐飞机一个小时就到了」＝飛行機なら1時間で着いてしまう、「他八点就来了」＝彼は8時には早くもやって来た）。事態の実現が遅く困難であることを表す副詞「才」と明確に対比される重要文法です。",
+    "formation": "時間 / 条件 ＋ 就 ＋ 動詞 / 形容詞 ＋（目的語 / 了）",
+    "examples": [
+      {
+        "translation": "飛行機に乗ればたった1時間で着きます。"
+      }
+    ]
   },
   "zh_才VA_173": {
-    "title": "才 V/A (just (worse than expected))",
-    "shortExplanation": "just (worse than expected)",
-    "longExplanation": "just (worse than expected). Pinyin: cái V/A",
-    "formation": "cái V/A"
+    "title": "才 ＋ 動詞 / 形容詞（副詞「才」：遅く・困難の末に実現することを表す：やっと〜・今ごろになって〜）",
+    "shortExplanation": "副詞「才」を動詞や形容詞の前に置き、動作や事態の実現が話者の予想よりも遅く、時間がかかり、困難であったことを表します。",
+    "longExplanation": "副詞「才」は動詞述語の前に置かれ、動作や事態の発生が「予想よりも遅い、所要時間が長い、やっとのことで実現した」という話し手の主観的ニュアンス（不満・焦燥・安堵など）を表します（例：「你怎么才来？」＝どうして今ごろになってやっと来たの？、「我等了三个小时他才来」＝3時間待って彼がようやくやって来た）。注意すべき文法規則として、副詞「就」とは異なり、「才」を用いる文の動詞後には完了の「了」を伴わないのが普通です。日本語の「やっと〜した」「今ごろになってようやく〜した」に相当します。",
+    "formation": "主語 / 時間（遅い時点） ＋ 才 ＋ 動詞 / 形容詞 ＋（目的語）",
+    "examples": [
+      {
+        "translation": "どうして今ごろになってやっと来たの？（どうしてそんなに遅かったの？）"
+      }
+    ]
   },
   "zh_把OV在到PLACE_174": {
-    "title": "把 + O + V + 在/到 +  PLACE (V’d the O to PLACE)",
-    "shortExplanation": "V’d the O to PLACE",
-    "longExplanation": "V’d the O to PLACE. Pinyin: bǎ + O + V + zài/ dào + PLACE",
-    "formation": "bǎ + O + V + zài/ dào + PLACE"
+    "title": "把 ＋ 目的語 ＋ 動詞 ＋ 在 / 到 ＋ 場所（「把」構文＋場所補語：目的語を場所へ〜する・〜に置く）",
+    "shortExplanation": "「把」構文に「在/到 ＋ 場所」という場所補語を組み合わせ、動作によって目的語の所在を移動させたり定着させたりした結果を表します。",
+    "longExplanation": "「把 ＋ 目的語 ＋ 動詞 ＋ 在/到 ＋ 場所」は、「把」構文（処置文）の極めて代表的な構文形式の一つです。動作が目的語に及んだ結果、その対象がどこに移動・静止したかという「結果の所在場所」を「在/到 ＋ 場所」によって明示します。「在 ＋ 場所」は対象がその場所に定着・残存することを強調し（例：「把照片放在包里」＝写真をバッグの中に入れる）、「到 ＋ 場所」は対象がその場所へと到達・移動したことを強調します（例：「把车开到门口」＝車を入り口まで運転していく）。文末に「了」を伴って完了を表すのが一般的です。",
+    "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 在 / 到 ＋ 場所 ＋（了）",
+    "examples": [
+      {
+        "translation": "私は写真をあなたのバッグの中に入れました。"
+      }
+    ]
   },
   "zh_VmotionV来去_175": {
-    "title": "V + motion V + 来/去 ((compound complements of direction))",
-    "shortExplanation": "(compound complements of direction)",
-    "longExplanation": "(compound complements of direction). Pinyin: V + motion V + lái/ qù",
-    "formation": "V + motion V + lái/ qù"
+    "title": "動詞 ＋ 移動動詞 ＋ 来 / 去（複合方向補語：〜して上がって/下りて/入って/出て/戻って/渡ってくる/行く）",
+    "shortExplanation": "本動詞の直後に方向を表す動詞（上、下、进、出、回、过、起）と「来/去」を組み合わせた複合方向補語を置き、動作の移動する具体的方向（話し手に近づくか遠ざかるか）を表します。",
+    "longExplanation": "複合方向補語は、単純方向動詞（上、下、进、出、回、过、起）に「来」（話し手に向かって近づく）または「去」（話し手から離れて遠ざかる）が結合した形（上来/上去、下来/下去、进来/进去、出来/出去、回来/回去、过来/过去、起来）を指します。本動詞の後ろに置かれ、動作に伴う物や人の移動の物理的方向性を精密に描写します（例：「送过去」＝届けていく・向こうへ送る、「跑过来」＝走ってこちらへ来る、「拿出来」＝取り出してこちらへ持ってくる）。日本語の「〜してくる」「〜していく」の複合的な方向表現に相当します。",
+    "formation": "主語 ＋ 動詞 ＋（上 / 下 / 进 / 出 / 回 / 过 / 起）＋ 来 / 去 ＋（目的語）",
+    "examples": [
+      {
+        "translation": "明日、私たちが一緒にプレゼントを届けていきましょう。"
+      }
+    ]
   },
   "zh_一边V1一边V2_176": {
-    "title": "一边 + V1 + 一边 + V2 (V1 while V2)",
-    "shortExplanation": "V1 while V2",
-    "longExplanation": "V1 while V2. Pinyin: yībiān + V1 + yībiān + V2",
-    "formation": "yībiān + V1 + yībiān + V2"
+    "title": "一边 ＋ 動詞1 ＋ 一边 ＋ 動詞2（並行動作：〜しながら〜する）",
+    "shortExplanation": "「一边……一边……」を用いて2つの動詞を結び、同一の主語が2つの動作を同時に並行して行うこと（〜しながら〜する）を表します。",
+    "longExplanation": "「一边 ＋ 動詞1 ＋ 一边 ＋ 動詞2」は、同一の動作主が2つの行為を同時に進行させていることを表す代表的な接続表現です。日常会話では「一」を省略して「边……边……」と言うこともよくあります（例：「他一边唱歌一边跳舞」＝彼は歌いながら踊っている、「一边听音乐一边做作业」＝音楽を聴きながら宿題をする）。日本語の動詞連用形＋「〜ながら〜する」に直結する重要文法です。",
+    "formation": "主語 ＋ 一边 ＋ 動詞1 ＋ 一边 ＋ 動詞2",
+    "examples": [
+      {
+        "translation": "彼は歌いながら踊っています。"
+      }
+    ]
   },
   "zh_把OVresult_177": {
-    "title": "把 + O + V + result (V the O until RESULT)",
-    "shortExplanation": "V the O until RESULT",
-    "longExplanation": "V the O until RESULT. Pinyin: bǎ + O + V + result",
-    "formation": "bǎ + O + V + result"
+    "title": "把 ＋ 目的語 ＋ 動詞 ＋ 結果補語（「把」構文＋結果補語：目的語を〜して…の状態にする）",
+    "shortExplanation": "「把」構文の動詞の直後に結果補語（干净、完、好、破、坏など）を置き、動作を施した結果として目的語がどのような状態になったかを表します。",
+    "longExplanation": "「把」構文（処置文）において、動詞の後ろに結果補語を接続する形式は最も基本的かつ多用されるパターンです。「把」構文の動詞は単独では成り立たず、処置の結果を明示する必要があるため、形容詞や動詞からなる結果補語（干净＝きれいに、完＝すっかり終える、好＝きちんと仕上げる、错＝間違える、坏＝壊すなど）が直結します（例：「我把衣服洗干净了」＝服をきれいに洗い上げた、「他把杯子打破了」＝彼はコップを割ってしまった）。日本語の「〜を…の状態にする/してしまう」に相当します。",
+    "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 結果補語（形容詞 / 動詞）＋（了）",
+    "examples": [
+      {
+        "translation": "私は服をきれいに洗いました。"
+      }
+    ]
   },
   "zh_把OVdirection_178": {
-    "title": "把 + O + V + direction (V the O to DIRECTION)",
-    "shortExplanation": "V the O to DIRECTION",
-    "longExplanation": "V the O to DIRECTION. Pinyin: bǎ + O + V + direction",
-    "formation": "bǎ + O + V + direction"
+    "title": "把 ＋ 目的語 ＋ 動詞 ＋ 方向補語（「把」構文＋方向補語：目的語を〜の方向へ移動させる）",
+    "shortExplanation": "「把」構文の動詞の直後に方向補語（过来、过去、进来、出去、拿来など）を置き、動作を通じて目的語がどの方向へ空間的に移動したかを表します。",
+    "longExplanation": "「把 ＋ 目的語 ＋ 動詞 ＋ 方向補語」は、「把」構文（処置文）の極めて重要なバリエーションです。動詞の後ろに方向補語（単純方向補語または複合方向補語）を置くことで、処置動作の結果として目的語（物や人）が空間的にどの方向へ移動したかを明示します。例えば「把水果拿过来了」（果物を持ってこちらに来た）、「把垃圾拿出去」（ゴミを外へ持っていく）のように、対象の空間的移動の方向性が生き生きと描写されます。",
+    "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 方向補語（単一 / 複合）＋（了）",
+    "examples": [
+      {
+        "translation": "彼は果物を持ってこちらに来ました。"
+      }
+    ]
   },
   "zh_先再又然后_179": {
-    "title": "先……再/又……然后…… (First, then, then, …)",
-    "shortExplanation": "First, then, then, …",
-    "longExplanation": "First, then, then, …. Pinyin: xiān…… zài/ yòu…… ránhòu……",
-    "formation": "xiān…… zài/ yòu…… ránhòu……"
+    "title": "先……再 / 又……然后……（動作の順序表現：まず〜し、それから〜し、そのあと〜する）",
+    "shortExplanation": "「先……再/又……然后……」を用いて複数の動作を時間的な順序に従って順番に並べ、「まず〜して、次に〜して、その後に〜する」という時間的順序を表します。",
+    "longExplanation": "この構文は、一連の動作や出来事が時間の経過に沿ってどのように進んだか（または進むか）を順を追って述べる複文構造です。「先」は最初の動作（まず〜）を示し、「再」または「又」はそれに続く次の動作を示します（未実現・将来の手順には「再」、過去に実際に起きた連続動作には「又」が選ばれます）。そして「然后」は最終的な段階や後続の事態（そのあと〜、そうして〜）を導きます。最後の節に「才」が添えられると、「そのあとようやく〜できた」という達成のニュアンスが加わります。",
+    "formation": "主語 ＋ 先 ＋ 動詞1 / 節1 ＋ 再 / 又 ＋ 動詞2 / 節2 ＋ 然后 ＋（才 ＋ ）動詞3 / 節3",
+    "examples": [
+      {
+        "translation": "私はまずバスに乗り、それから地下鉄に乗り、そうしてやっと小剛の家に着きました。"
+      }
+    ]
   },
   "zh_除了N以外_180": {
-    "title": "除了 N 以外 (except N)",
-    "shortExplanation": "except N",
-    "longExplanation": "except N. Pinyin: chúle N yǐwài",
-    "formation": "chúle N yǐwài"
+    "title": "除了 ＋ 名詞 ＋ 以外（除外表現：〜を除いて・〜のほかに）",
+    "shortExplanation": "「除了……以外」を用いて特定の事物を除外し、「その名詞を除いては、ほかのものは皆〜である」という除外の意を表します。",
+    "longExplanation": "「除了 ＋ 名詞 ＋ 以外」（「以外」は省略されることもあります）は、ある人や事物を対象全体の中から取り除く「除外」を表す代表的な介詞構造です。後続の文節には通常「都（皆）」「全（すべて）」「别的（ほかの）」といった語句が呼応し、除外されたもの以外のすべてについて同じ状況や性質が成り立つことを述べます（例：「除了这个汉字以外，别的我都认识」＝この漢字を除いて、他のものは皆読めます、「除了他以外，大家都在」＝彼を除いて、みんな揃っている）。日本語の「〜を除いて」「〜のほかは」に相当します。",
+    "formation": "除了 ＋ 名詞 ＋ 以外、（主語 ＋ ）都 / 全 / 别的……",
+    "examples": [
+      {
+        "translation": "この漢字を除いて、他のものは全部知っています。"
+      }
+    ]
   },
   "zh_除了以外还_181": {
-    "title": "除了……(以外)，还…… (not only…, but also…)",
-    "shortExplanation": "not only…, but also…",
-    "longExplanation": "not only…, but also…. Pinyin: chúle……( yǐwài)， hái……",
-    "formation": "chúle……( yǐwài)， hái……"
+    "title": "除了……（以外），还 / 也……（付加・累加表現：〜のほかに、さらに〜も）",
+    "shortExplanation": "「除了……（以外）」に副詞「还」や「也」を呼応させ、「〜のほかに（も）、さらに…もある/する」という付加・累加の意を表します。",
+    "longExplanation": "「除了……（以外），还/也……」は、排除・除外を表す「除了……都」とは異なり、「ある事柄に加えて、別の事柄も追加して含まれる」という累加・追加を表す構文です。前節で挙げた基本事項に加えて、後節で「还（さらに、まだ）」や「也（〜も）」を用いて別の事項を付け足します（例：「上网除了看新闻以外，还可以听音乐」＝ネットはニュースを見るだけでなく音楽を聴くこともできる、「除了英语以外，他还会说法语」＝英語のほかにフランス語も話せる）。日本語の「〜のほかに…も」「〜だけでなく…も」に相当します。",
+    "formation": "除了 ＋ 名詞 / 動詞 / 節 ＋（以外）、（主語 ＋ ）还 / 也 ＋ 動詞 / 述語",
+    "examples": [
+      {
+        "translation": "インターネットはニュースを見る以外に、音楽を聴くこともできます。"
+      }
+    ]
   },
   "zh_什么_182": {
-    "title": "什么 (any)",
-    "shortExplanation": "any",
-    "longExplanation": "any. Pinyin: shénme",
-    "formation": "shénme"
+    "title": "什么（疑問代名詞の虚指・不定用法：何か・これといった〜）",
+    "shortExplanation": "疑問代名詞「什么」を具体的な質問ではなく「何か」「これといった〜」という不特定の事物（虚指）を表すために用います。",
+    "longExplanation": "「什么」は通常「何」と事物を尋ねる疑問詞ですが、疑問文や平叙文において具体的な特定を避けて「何か」「これといって〜」という漠然とした不特定のもの（虚指用法）を表すことができます。例えば「周末你有什么打算吗？」（週末、何か予定はありますか？）では、具体的な答えを厳密に問うのではなく「何かしらの計画があるか」を柔らかく尋ねています（ほかにも「我想吃点儿什么」＝何か食べたい、「他好像在找什么」＝彼は何かを探しているようだ、など）。日本語の「何か」「どんな〜でも」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋（点儿 ＋ ）什么 ＋（名詞）＋（吗 / 呢）",
+    "examples": [
+      {
+        "translation": "週末、何か予定はありますか？"
+      }
+    ]
   },
   "zh_A极了_183": {
-    "title": "A 极了 (extremely A)",
-    "shortExplanation": "extremely A",
-    "longExplanation": "extremely A. Pinyin: A jíle",
-    "formation": "A jíle"
+    "title": "形容詞 ＋ 极了（程度補語：極めて〜・非常に〜・〜でたまらない）",
+    "shortExplanation": "形容詞（または一部の心理動詞）の後ろに「极了」を置き、その性質や状態、感情の度合いが極めて高いこと（「非常に〜」「〜でたまらない」）を表す程度補語です。",
+    "longExplanation": "「形容詞 ＋ 极了」（jíle）は口語で非常によく用いられる程度補語の一種です。「极」は「極致・極み」を意味し、形容詞や一部の心理動詞（喜欢、高兴、满意など）の直後に置くことで、「この上なく〜だ」「極めて〜である」という最高度のニュアンスを表します。この構文を用いる場合、述語の前に「很」や「非常」などの程度副詞を重ねて置くことはできません。文末の「了」は変化や事態の確定を表す語気助詞です。",
+    "formation": "主語 ＋ 形容詞 / 心理動詞 ＋ 极了",
+    "examples": [
+      {
+        "translation": "今日の天気はものすごく寒いです。"
+      }
+    ]
   },
   "zh_如果的话就_184": {
-    "title": "如果……(的话), 就…… (if …, then…)",
-    "shortExplanation": "if …, then…",
-    "longExplanation": "if …, then…. Pinyin: rúguǒ……( dehuà), jiù……",
-    "formation": "rúguǒ……( dehuà), jiù……"
+    "title": "如果……(的话)，就……（仮定条件の複文：もし〜なら、〜）",
+    "shortExplanation": "前節で仮定の条件（もし〜なら）を提示し、後節でその結果や結論（それなら〜）を導く仮定条件の複文構文です。",
+    "longExplanation": "「如果……(的话)，就……」（rúguǒ…… dehuà, jiù……）は仮定と結果を表す中国語の代表的な接続表現です。前節の文頭または主語の後ろに接続詞「如果」（もし〜ならば）を置き、節末に「的话」（〜なら）を添えることで仮定の語気を強めます（「的话」は省略可能）。後節では副詞「就」（それなら、〜する）を述語の前に置き、その条件に基づく行動、結果、提案を導きます。日本語の「もし〜なら、（その時は）〜」に相当します。",
+    "formation": "如果 ＋ 仮定節 ＋ (的话)，(主語 ＋ ) 就 ＋ 結果節",
+    "examples": [
+      {
+        "translation": "もし疲れすぎているなら、少し休んでください。"
+      }
+    ]
   },
   "zh_A得CLAUSE_185": {
-    "title": "A + 得 + CLAUSE (so A that + CLAUSE)",
-    "shortExplanation": "so A that + CLAUSE",
-    "longExplanation": "so A that + CLAUSE. Pinyin: A + dé + CLAUSE",
-    "formation": "A + dé + CLAUSE"
+    "title": "形容詞 ＋ 得 ＋ 節（様態・程度補語：…するほど〜だ・〜すぎて…する）",
+    "shortExplanation": "形容詞の後ろに構造助詞「得」を置き、後続の節によってその状態や性質が達した程度・結果を具体的に説明する様態補語・程度補語の構文です。",
+    "longExplanation": "「形容詞 ＋ 得 ＋ 節」は、先行する形容詞が表す性質や状態の度合いが極めて甚だしく、その結果として後ろの節に述べるような事態・行動が生じたことを表す表現です。構造助詞「得」（de）は述語と補語を繋ぐ役割を果たし、後ろの節全体が補語（様態補語または程度補語）として働きます。日本語の「…なほど〜だ」「〜すぎて…してしまった」に相当します。",
+    "formation": "主語 ＋ 形容詞 ＋ 得 ＋ 補語節（結果・程度）",
+    "examples": [
+      {
+        "translation": "息子は仕事から帰るとすぐに寝てしまうほど疲れていました。"
+      }
+    ]
   },
   "zh_AA的_186": {
-    "title": "A + A + 的 (A (with characteristics))",
-    "shortExplanation": "A (with characteristics)",
-    "longExplanation": "A (with characteristics). Pinyin: A + A + de",
-    "formation": "A + A + de"
+    "title": "単音節形容詞の重ね型 ＋ 的（AA的：描写的な状態表現）",
+    "shortExplanation": "1音節の形容詞を重ねて「AA的」とすることで、事物や人物の特徴を生き生きと描写し、親しみや愛らしさ、生き生きとした語気を添えます。",
+    "longExplanation": "単音節形容詞の重ね型「AA ＋ 的」（xiǎoxiǎo de、hēihēi deなど）は、状態や外見、色合いなどを生き生きと描写する表現です。単に客観的な状態を述べるだけでなく、話者の親愛の情や、ふっくらとした・かわいらしいといった主観的なニュアンスが加わります。状態描写そのものに強い感情が込められているため、前に「很」や「非常」などの程度副詞を置くことはできません。日本語の「小さくてかわいらしい」「つやつやと黒い」のようなニュアンスに相当します。",
+    "formation": "名詞 ＋ 単音節形容詞の重ね型（AA型） ＋ 的",
+    "examples": [
+      {
+        "translation": "彼女の鼻は小さくて愛らしく、髪はつやつやと黒いです。"
+      }
+    ]
   },
   "zh_VV_187": {
-    "title": "V + V (V for a bit)",
-    "shortExplanation": "V for a bit",
-    "longExplanation": "V for a bit. Pinyin: V + V",
-    "formation": "V + V"
+    "title": "動詞の重ね型（動詞 ＋ 動詞：ちょっと〜してみる・語気を和らげる）",
+    "shortExplanation": "動詞を重ねることで、動作の時間が短いこと、試しにやって行われること（試行）、または語気を和らげることを表します。",
+    "longExplanation": "動詞の重ね型「動詞 ＋ 動詞」（単音節ならAA型：看看、听听、2音節ならABAB型：检查检查、学习学习など）は、中国語で極めて頻繁に用いられる表現です。(1) 動作の継続時間が短いこと、(2)「ちょっと試してみる」という試行のニュアンス、(3) 依頼や提案をするときに語気を柔らかく親しみやすくする効果を持ちます。重ねた後ろの動詞は軽声（軽く短く発音）になることが多いです。日本語の「ちょっと〜してみる」「少し〜する」に相当します。",
+    "formation": "単音節動詞の重ね型（AA型） または 2音節動詞の重ね型（ABAB型）",
+    "examples": [
+      {
+        "translation": "病院に連れて行ってちょっと検査してもらいましょう。"
+      }
+    ]
   },
   "zh_Q都_188": {
-    "title": "Q + 都 (Q-ever)",
-    "shortExplanation": "Q-ever",
-    "longExplanation": "Q-ever. Pinyin: Q + dōu",
-    "formation": "Q + dōu"
+    "title": "疑問詞 ＋ 都（任指表現：誰でも・何でも・いかなる〜も）",
+    "shortExplanation": "疑問代名詞（什么、谁、哪儿など）の後に副詞「都」（または「也」）を伴い、例外なく全体を包括する「任意の指称（任指）」を表します（「何でも」「誰もが」）。",
+    "longExplanation": "中国語の疑問詞（什么、谁、哪儿、什么时候など）は、疑問を表すだけでなく、副詞「都」または「也」と呼応させることで「〜でも皆」「いかなる〜も」という全面的な包括・任指を表すことができます。肯定文では主に「都」を用い（例：什么都好＝何でもよい）、否定文では「都」または「也」を用いて全面否定（例：哪儿都不想去＝どこにも行きたくない）を表します。日本語の「誰でも」「何でも」「どこでも」に相当します。",
+    "formation": "主語 ＋ 疑問詞 ＋ (名詞) ＋ 都 / 也 ＋ 述語（動詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "小剛は何でも食べるのが好きです。"
+      }
+    ]
   },
   "zh_只要就_189": {
-    "title": "只要……就…… (as long as)",
-    "shortExplanation": "as long as",
-    "longExplanation": "as long as. Pinyin: zhǐyào…… jiù……",
-    "formation": "zhǐyào…… jiù……"
+    "title": "只要……，就……（十分条件の複文：〜さえすれば…だ）",
+    "shortExplanation": "前節で十分な条件（〜さえすれば）を提示し、後節でその条件が満たされれば必ずその結果になる（必ず…だ）ことを表す十分条件の接続構文です。",
+    "longExplanation": "「只要……，就……」（zhǐyào……, jiù……）は十分条件を表す複文の代表的な呼応形式です。「只要」は前節の文頭または主語の後に置き、「その条件さえ満たされれば（他の条件は問わず）」という前提を提示します。後節では副詞「就」を用いて「必ずそうなる、即座に〜する」という確実な結果や結論を導きます。「只有……才……」（〜してこそ初めて…できる＝必要条件）とは区別されます。日本語の「〜さえすれば、…だ」に相当します。",
+    "formation": "只要 ＋ 条件節，(主語 ＋ ) 就 ＋ 結果節",
+    "examples": [
+      {
+        "translation": "時間さえあれば、必ずあなたと一緒に旅行に行きます。"
+      }
+    ]
   },
   "zh_关于_190": {
-    "title": "关于 (about)",
-    "shortExplanation": "about",
-    "longExplanation": "about. Pinyin: guānyú",
-    "formation": "guānyú"
+    "title": "关于 ＋ 名詞（介詞：〜について・〜に関して）",
+    "shortExplanation": "介詞「关于」（guānyú）を名詞の前に置き、話題の主題や関連する物事・範囲を提示します（「〜について」「〜に関して」）。",
+    "longExplanation": "介詞「关于」は、文全体の主題や関わりのある対象・範囲を導き出すために用いられます。「关于 ＋ 名詞（または名詞句）」は、(1) 文頭に置かれて文全体の話題を提示する連用修飾語（状語）として働く（通例読点を伴う）、(2) 「关于 ＋ 名詞 ＋ 的 ＋ 中心名詞」の形で連体修飾語（定語）となる（例：关于这个问题的文件＝この問題に関する文書）、(3) 論文や記事の表題として用いられる、といった特徴があります。動作が直接向けられる対象を示す「对于」とは用法上の違いがあります。日本語の「〜について」「〜に関して」に相当します。",
+    "formation": "关于 ＋ 名詞 / 名詞句，主語 ＋ 述語（または：关于 ＋ 名詞 ＋ 的 ＋ 中心名詞）",
+    "examples": [
+      {
+        "translation": "この件に関しては、私たちはまだ決めていません。"
+      }
+    ]
   },
   "zh_V出来_191": {
-    "title": "V + 出来 (V and produce an outcome)",
-    "shortExplanation": "V and produce an outcome",
-    "longExplanation": "V and produce an outcome. Pinyin: V + chūlái",
-    "formation": "V + chūlái"
+    "title": "動詞 ＋ 出来（複合方向補語の派生義：〜し出す・無から有を生み出す）",
+    "shortExplanation": "動詞の後ろに複合方向補語「出来」を置き、動作を通じて新たなものを生み出すこと、無から有へと具体化することを表します。",
+    "longExplanation": "方向補語「出来」（chūlái）の派生義（引申用法）の一つで、動作を通じて何かが新たに生み出されること、未完成から完成に至ること、あるいは「無から有へ」と具現化することを表します。例えば「写出来」（書き出す・書いて形にする）、「想出来」（アイデアを思いつく・考え出す）、「做出来」（作り上げる）のように、具体的な成果物や結果が現れる文脈で多用されます。可能補語として「写得出来」「写不出来」の形でもよく用いられます。日本語の「〜し出す」「〜を作り出す」「〜し上げる」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 出来 (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "この漢字を書いて出すことができますか？"
+      }
+    ]
   },
   "zh_V出来_192": {
-    "title": "V + 出来 (V and recognize)",
-    "shortExplanation": "V and recognize",
-    "longExplanation": "V and recognize. Pinyin: V + chūlái",
-    "formation": "V + chūlái"
+    "title": "動詞 ＋ 出来（複合方向補語の派生義：〜して見分ける・聞き分ける・気づく）",
+    "shortExplanation": "知覚動詞（看、听、闻、尝など）の後ろに「出来」を置き、五感や知覚を通じて正体を識別したり、見分けたり聞き分けたりできることを表します。",
+    "longExplanation": "方向補語「出来」のもう一つの代表的な派生義で、見る・聞く・嗅ぐ・味わう・推測するなどの感覚・知覚の動作によって、対象の正体、真偽、違いを識別・認識・見分けることを表します。例えば「看出来」（見てわかる、見抜く）、「听出来」（聞き分ける、聞いてわかる）、「认出来」（見分けがつく、見知る）などがあります。疑問文や可能補語「听得出来/听不出来」としても頻出します。日本語の「〜してわかる」「聞き分ける」「見抜く」に相当します。",
+    "formation": "主語 ＋ 知覚動詞 ＋ 出来 ＋ (了) (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "聞いてわかりましたか？これは誰の声ですか？"
+      }
+    ]
   },
   "zh_V下来_193": {
-    "title": "V + 下来 (V down)",
-    "shortExplanation": "V down",
-    "longExplanation": "V down. Pinyin: V + xiàlai",
-    "formation": "V + xiàlai"
+    "title": "動詞 / 形容詞 ＋ 下来（複合方向補語の派生義：〜して静まる・遅くなる・定着する）",
+    "shortExplanation": "動詞や形容詞の後ろに「下来」を置き、動作や状態が「動から静へ」「速いものから遅いものへ」と移行・沈静化すること、または固定化することを表します。",
+    "longExplanation": "複合方向補語「下来」（xiàlai）の引申用法で、激しい状態や活動的な状態が次第に落ち着き、静寂や低速へと推移していくプロセスを表します。例えば「慢下来」（だんだん遅くなる・落ち着く）、「停下来」（立ち止まる）、「安静下来」（静まる）、「冷静下来」（冷静になる）などが該当します。また、情報や映像を記録・保存してその場に留める「记下来」（書き留める）、「拍下来」（写真に収める）などの意味合いも持ちます。日本語の「〜して落ち着く」「〜となっていく」「〜して留まる」に相当します。",
+    "formation": "主語 ＋ 動詞 / 形容詞 ＋ 下来",
+    "examples": [
+      {
+        "translation": "時間がゆっくりと流れてくれたらと心から願っています。"
+      }
+    ]
   },
   "zh_想起来_194": {
-    "title": "想起来 (to recall)",
-    "shortExplanation": "to recall",
-    "longExplanation": "to recall. Pinyin: xiǎngqilai",
-    "formation": "xiǎngqilai"
+    "title": "想起来（動補連語：思い出す・記憶がよみがえる）",
+    "shortExplanation": "過去の記憶や忘れかけていた情報が頭の中によみがえること（思い出す）を表し、可能補語の否定形「想不起来」（思い出せない）としても頻出します。",
+    "longExplanation": "「想起来」（xiǎngqilai）は動詞「想」に方向補語「起来」が結びついた慣用表現で、過去の記憶や事実が心の中にふと思い出されること、記憶が蘇ることを表します。実際の会話では可能補語形式が非常に多く用いられ、「想得起来」（思い出せる）や「想不起来」（どうしても思い出せない）として使われます。なお、新しいアイデアや解決策を考案する「想出来」とは明確に区別されます（「想起来」は既知の記憶の再生、「想出来」は未知の創出）。日本語の「思い出す」「思い出せない」に相当します。",
+    "formation": "主語 ＋ 想起来 (＋ 目的語) / 主語 ＋ 想得起来 / 想不起来 (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "彼の名前がどうしても思い出せなくなりました。"
+      }
+    ]
   },
   "zh_看起来看上去_195": {
-    "title": "看起来/看上去 (to seem)",
-    "shortExplanation": "to seem",
-    "longExplanation": "to seem. Pinyin: kànqǐlái/ kànshangqu",
-    "formation": "kànqǐlái/ kànshangqu"
+    "title": "看起来 / 看上去（連用修飾語：見たところ〜のようだ・〜に見える）",
+    "shortExplanation": "文頭または述語の前に置き、外見や表面的な様子から観察・判断・推測した印象（「〜のように見える」「見たところ〜だ」）を表します。",
+    "longExplanation": "「看起来」（kànqǐlái）および「看上去」（kànshangqu）は、目に見える外観や様子に基づいて主観的な推測や評価を述べる慣用表現です。文頭に置いて文全体の状況を判断する連用修飾語（状語）として用いることも、主語の後ろ・述語の前に置いてその対象の印象を述べることもできます。両者は多くの場合互換可能ですが、「看上去」は純粋に視覚的な外見（顔色、年齢、服装など）に重きが置かれるのに対し、「看起来」は視覚だけでなく状況全体から導かれる総合的な判断や推論にも広く用いられます。日本語の「〜に見える」「見たところ〜のようだ」に相当します。",
+    "formation": "(主語 ＋ ) 看起来 / 看上去 ＋ 形容詞 / 動詞句 / 節",
+    "examples": [
+      {
+        "translation": "彼は見たところ40歳過ぎのように見えます。"
+      }
+    ]
   },
   "zh_使叫让OAV_196": {
-    "title": "使/叫/让 + O + A/V (make O A/V)",
-    "shortExplanation": "make O A/V",
-    "longExplanation": "make O A/V. Pinyin: shǐ/ jiào/ ràng + O + A/V",
-    "formation": "shǐ/ jiào/ ràng + O + A/V"
+    "title": "使 / 叫 / 让 ＋ 目的語 ＋ 形容詞 / 動詞（使役兼語文：〜に…させる・〜を…にする）",
+    "shortExplanation": "使役動詞「使」「叫」「让」を用いて、ある原因や事柄が対象（目的語兼主語）に感情や状態の変化を引き起こさせたり、動作を行わせたりすることを表す兼語文です。",
+    "longExplanation": "「使/叫/让 ＋ 目的語 ＋ 形容詞/動詞」は、中国語の代表的な使役を表す兼語文の構文です。使役動詞「使」「叫」「让」の目的語が、後続する形容詞や動詞の意味上の主語（兼語）として機能します。ニュアンスと語相の違いとして、(1)「使」（shǐ）は書面語的で改まった語気となり、無生物や抽象的な事柄が主語となって心理的変化や結果をもたらす場合によく用いられます。(2)「让」（ràng）や「叫」（jiào）は口語で多用され、「〜させる」「〜してもらう」という日常的な使役や容認を表します。日本語の「〜を…にする」「〜に…させる」に相当します。",
+    "formation": "主語（原因・主体） ＋ 使 / 叫 / 让 ＋ 目的語（兼語） ＋ 形容詞 / 動詞",
+    "examples": [
+      {
+        "translation": "読書は私を幸せな気持ちにしてくれます。"
+      }
+    ]
   },
   "zh_O被叫让SV_197": {
-    "title": "O + 被/叫/让 + S + V (O is V’ed by S)",
-    "shortExplanation": "O is V’ed by S",
-    "longExplanation": "O is V’ed by S. Pinyin: O + bèi/ jiào/ ràng + S + V",
-    "formation": "O + bèi/ jiào/ ràng + S + V"
+    "title": "目的語（受け手） ＋ 被 / 叫 / 让 ＋ 動作主 ＋ 動詞（被動句：〜に…される）",
+    "shortExplanation": "介詞「被」「叫」「让」を用いて動作主を導き、文頭の主語（受け手）が他者からある行為や影響を受けたことを表す受身文（パッシブ構文）です。",
+    "longExplanation": "「受け手 ＋ 被/叫/让 ＋ 動作主 ＋ 動詞」は中国語の代表的な受動態（被動句）の構文です。本来動作の対象（受事・目的語）となる事物や人物が主語の位置に立ちます。介詞の使い分けとして、(1)「被」（bèi）は書面語・口語の双方で広く使われ、動作主を省略することも可能です（例：相机被拿走了）。(2) 一方「叫」（jiào）と「让」（ràng）は口語表現であり、後ろに動作主を必ず明示しなければなりません（動作主が不特定の場合は「让/叫人拿走了」のように「人」を補う）。また受動文の動詞の後ろには通例「了」や結果補語、方向補語などの付加成分が必要です。日本語の「〜に…される」に相当します。",
+    "formation": "目的語（動作の受け手） ＋ 被 / 叫 / 让 ＋ 動作主 ＋ 動詞 ＋ 付加成分",
+    "examples": [
+      {
+        "translation": "私のカメラは誰に持っていかれてしまったのですか？"
+      }
+    ]
   },
   "zh_O不没被叫让SV_198": {
-    "title": "O + 不/没 + 被/叫/让 + S + V (O is not V’ed by S)",
-    "shortExplanation": "O is not V’ed by S",
-    "longExplanation": "O is not V’ed by S. Pinyin: O + bù/ méi + bèi/ jiào/ ràng + S + V",
-    "formation": "O + bù/ méi + bèi/ jiào/ ràng + S + V"
+    "title": "目的語 ＋ 不 / 没 ＋ 被 / 叫 / 让 ＋ 動作主 ＋ 動詞（受け身文の否定形）",
+    "shortExplanation": "中国語の受身文（被字句など）における否定形式です。否定副詞「不」または「没(有)」は必ず受身介詞「被 / 叫 / 让」の直前に置き、「〜によって…されていない / …されない」という意味を表します。",
+    "longExplanation": "中国語の受身文（「被」「叫」「让」を用いた文）を否定文にする際、否定副詞の「不」（習慣・意図・将来の否定）や「没(有)」（過去の事実・現在の完了の否定）は、必ず介詞「被/叫/让」の『前』に置かなければならないという厳格な規則があります。介詞の後ろや動詞の直前に否定詞を置くことは文法的に誤りです（❌ 问题被没解决 ではなく ✔️ 问题没被解决）。能願動詞（助動詞）や時間副詞（已经、还など）も同様に「被」の前に置かれます。日本語の「〜に…されていない」「まだ〜によって…されていない」に相当します。",
+    "formation": "目的語（受け手） ＋ 不 / 没(有) ＋ 被 / 叫 / 让 ＋ (動作主) ＋ 動詞 ＋ 他の成分",
+    "examples": [
+      {
+        "translation": "問題はまだ解決されていませんよ。"
+      }
+    ]
   },
   "zh_只有才_199": {
-    "title": "只有……才…… (only if)",
-    "shortExplanation": "only if",
-    "longExplanation": "only if. Pinyin: zhǐyǒu…… cái……",
-    "formation": "zhǐyǒu…… cái……"
+    "title": "只有……，才……（必要条件の複文：〜してこそ初めて…・〜でなければ…ない）",
+    "shortExplanation": "前節で唯一不可欠な必要条件（〜してこそ、〜のみが）を提示し、後節でその条件が満たされて初めて結果が得られること（初めて…できる）を表す必要条件の接続表現です。",
+    "longExplanation": "「只有……，才……」（zhǐyǒu…… cái……）は、必要条件（唯一の条件）を表す中国語の代表的な呼応構文です。「只有」は前節に置かれ、「その条件だけが唯一の前提であり、他にはない」という必要条件を限定的に提示します。後節では副詞「才」（初めて〜できる）を述語の前に置き、その条件を満たして初めて結果・行動が実現することを導きます。「只要……就……」（十分条件：〜しさえすれば…だ）とは明確に区別され、「只有」の条件が満たされなければ後節の事態は決して成立しません。日本語の「〜してこそ初めて…できる」「〜でなければ…できない」に相当します。",
+    "formation": "只有 ＋ 必要条件節，(主語 ＋ ) 才 ＋ 結果節",
+    "examples": [
+      {
+        "translation": "宿題をやり終えて初めて、テレビを見ることができます。"
+      }
+    ]
   },
   "zh_不仅也还而且_200": {
-    "title": "不仅……也/还/而且…… (Not only… but also…)",
-    "shortExplanation": "Not only… but also…",
-    "longExplanation": "Not only… but also…. Pinyin: bùjǐn…… yě/ hái/ érqiě……",
-    "formation": "bùjǐn…… yě/ hái/ érqiě……"
+    "title": "主語 ＋ 不仅……，也 / 还 / 而且……（同一主語の累加・漸進複文：〜だけでなく…も）",
+    "shortExplanation": "2つの節が同一の主語を持つ漸進（累加）の複文表現です。主語を「不仅」の前に置き、「〜だけでなく、さらに…も」と事態や性質を重ねて述べます。",
+    "longExplanation": "「不仅……，也/还/而且……」（bùjǐn…… yě/ hái/ érqiě……）は、前節で述べた事柄にとどまらず、後節でさらに範囲や程度を広げる漸進複文（累加表現）の基本構文です。前後2つの節が『同じ主語』を共有する場合、主語は必ず接続詞「不仅」の『前』に置かれます（主語 ＋ 不仅……）。後節では副詞の「也」（〜も）、「还」（さらに、また）や接続詞「而且」（その上、しかも）と呼応させて累加のニュアンスを表します。日本語の「〜は…だけでなく、〜もまた…だ」に相当します。",
+    "formation": "主語 ＋ 不仅 ＋ 節1，也 / 还 / 而且 ＋ 節2",
+    "examples": [
+      {
+        "translation": "私は『タイタニック』を見たことがあるだけでなく、『ノッティングヒルの恋人』も見たことがあります。"
+      }
+    ]
   },
   "zh_不仅S1S2也_201": {
-    "title": "不仅 S1……，S2 也…… (Not only S1…, S2 also…)",
-    "shortExplanation": "Not only S1…, S2 also…",
-    "longExplanation": "Not only S1…, S2 also…. Pinyin: bùjǐn S1……，S2 yě……",
-    "formation": "bùjǐn S1……，S2 yě……"
+    "title": "不仅 ＋ 主語1……，主語2 ＋ 也 / 还……（異主語の累加・漸進複文：〜だけでなく…もまた〜）",
+    "shortExplanation": "2つの節が異なる主語を持つ漸進（累加）の複文表現です。接続詞「不仅」は必ず主語1の『前（文頭）』に置き、主語2の後に「也」や「还」を伴います。",
+    "longExplanation": "「不仅 ＋ 主語1……，主語2 ＋ 也……」は、前後の節で主語が異なる場合に用いられる漸進複文の重要構文です。中国語の厳格な文法規則として、前後の節で主語が異なる場合、接続詞「不仅」（または「不但」）は必ず文頭、すなわち主語1の直前に置かなければなりません（❌ 主語1 ＋ 不仅…… ではなく ✔️ 不仅 ＋ 主語1……）。後節では主語2の直後に副詞「也」（〜もまた）や「还」を置いて呼応させます。日本語の「〜だけでなく、…もまた〜だ」に相当します。",
+    "formation": "不仅 ＋ 主語1 ＋ 述語1，主語2 ＋ 也 / 还 ＋ 述語2",
+    "examples": [
+      {
+        "translation": "マークが『ノッティングヒルの恋人』を見たことがあるだけでなく、私も『ノッティングヒルの恋人』を見たことがあります。"
+      }
+    ]
   },
   "zh_从来不V_202": {
-    "title": "从来不 V (never V)",
-    "shortExplanation": "never V",
-    "longExplanation": "never V. Pinyin: cóngláibù V",
-    "formation": "cóngláibù V"
+    "title": "从来不 ＋ 動詞（副詞：これまで一度も〜しない・決して〜しない・習慣の否定）",
+    "shortExplanation": "副詞「从来不」（cónglái bù）を動詞の前に置き、過去から現在に至るまでの一貫した習慣・信条・規則として「決して〜しない」「いつも〜しない」ことを表します。",
+    "longExplanation": "「从来不 ＋ 動詞」は、「これまでずっと〜しない」「決して〜しない」という話者の確固たる習慣、生活習慣、信条、または不変の規律を否定する表現です。「从来」（従来・これまで）と現在・未来・恒常的な事態を否定する「不」が結びつき、過去から現在に至るまで一貫してその動作を行わないことを表します。過去の経験の有無を否定する「从来没……过」（一度も〜したことがない）とは異なり、「从来不」は日頃の習慣や本人の意志・ポリシーとしての「不実行」を強調します。日本語の「いつも〜しない」「これまで決して〜しないことにしている」に相当します。",
+    "formation": "主語 ＋ (時間) ＋ 从来不 ＋ 動詞 (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "私は昼には決して昼寝をしません。"
+      }
+    ]
   },
   "zh_从来没VA过_203": {
-    "title": "从来没 V/A 过 (never have V’ed, never have been A)",
-    "shortExplanation": "never have V’ed, never have been A",
-    "longExplanation": "never have V’ed, never have been A. Pinyin: cóngláiméi V/A guò",
-    "formation": "cóngláiméi V/A guò"
+    "title": "从来没(有) ＋ 動詞 / 形容詞 ＋ 过（副詞：これまで一度も〜したことがない・かつてこれほど〜だったことはない）",
+    "shortExplanation": "「从来没(有)」と動態助詞「过」を呼応させ、過去から現在に至るまでの過去の経験を全否定したり、ある状態に達したことがかつて一度もないことを表します。",
+    "longExplanation": "「从来没(有) ＋ 動詞/形容詞 ＋ 过」（cóngláiméi…… guò）は、過去の経験の全盤否定を表す代表的な構文です。動詞と結びつく場合、過去から現在に至るまでその動作・体験が一度も生じたことがないこと（「一度も〜したことがない」）を表します。また、形容詞（多くは「这么」「那么」などの程度表現を伴う）と結びつく場合、これまでの生涯や歴史の中でこれほどの状態・感情に達したことがかつてないこと（「かつてこれほど〜だったことはない」）を強調します。習慣の否定を表す「从来不」と対比されます。日本語の「これまで一度も〜したことがない」「かつてこれほど〜したことはない」に相当します。",
+    "formation": "主語 ＋ 从来没(有) ＋ 動詞 / 形容詞 ＋ 过 (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "彼のご両親は、これまでこれほど喜んだことは一度もありませんでした。"
+      }
+    ]
   },
   "zh_刚刚刚V_204": {
-    "title": "刚/刚刚 V (just V’ed)",
-    "shortExplanation": "just V’ed",
-    "longExplanation": "just V’ed. Pinyin: gāng/ gānggang V",
-    "formation": "gāng/ gānggang V"
+    "title": "刚 / 刚刚 ＋ 動詞（時間副詞：〜したばかり・たった今〜した）",
+    "shortExplanation": "時間副詞「刚」または「刚刚」を動詞の前に置き、動作や変化が起きてから時間があまり経っていないこと（話者の主観的判断を含む）を表します（「〜したばかりだ」）。",
+    "longExplanation": "「刚 / 刚刚 ＋ 動詞」（gāng / gānggang）は、動作が完了または発生してから間もないことを表す時間副詞です。「刚」の大きな特徴は、話者の主観的な時間感覚に基づく点にあります。客観的な時間の長短に関わらず、話者が「最近のことだ」「つい先日のことだ」と感じていれば、数分前だけでなく先月や昨年起きた事柄に対しても用いることができます（例：我上个月刚结婚＝先月結婚したばかりだ）。文法上の位置として副詞であるため、必ず主語の後ろ・動詞の前に置かれ、文頭に置くことはできません（時間名詞の「刚才」との相違点）。日本語の「〜したばかり」「たった今〜した」に相当します。",
+    "formation": "主語 ＋ (時間) ＋ 刚 / 刚刚 ＋ 動詞 (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "私は先月結婚したばかりです。"
+      }
+    ]
   },
   "zh_刚VDURATION_205": {
-    "title": "刚 + V + DURATION (have V’ed for just DURATION)",
-    "shortExplanation": "have V’ed for just DURATION",
-    "longExplanation": "have V’ed for just DURATION. Pinyin: gāng + V + DURATION",
-    "formation": "gāng + V + DURATION"
+    "title": "刚 ＋ 動詞 ＋ 時量表現（動作・状態の継続期間が短いことの強調：〜してまだ…にしかならない）",
+    "shortExplanation": "副詞「刚」を動詞の前に置き、後ろに時量補語（期間を表す表現）を伴うことで、ある事態が生じてから現在までの期間が「まだ〜にしかならない（短い）」ことを強調します。",
+    "longExplanation": "「刚 ＋ 動詞 ＋ 時量表現」は、ある動作や状態が始まってから経過した期間が、話者の主観において非常に短いことを表す構文です。動詞の後ろに「一个月」「三天」「半年」などの時量詞（継続時間）を置き、述語の前の副詞「刚」と呼応させることで、「まだたったの〜しか経っていない」「〜し始めてまだほんの…だ」というわずかな時間を強調します。例文「他刚来一个月」では、彼が来てからまだ1か月しか経っておらず、日が浅いことが示されています。日本語の「〜してまだ…にしかならない」「〜してほんの…だ」に相当します。",
+    "formation": "主語 ＋ 刚 ＋ 動詞 ＋ (目的語) ＋ 時量詞 / 時間量表現",
+    "examples": [
+      {
+        "translation": "彼は来てからまだ1か月しかなりません。"
+      }
+    ]
   },
   "zh_刚才_206": {
-    "title": "刚才 (moments ago)",
-    "shortExplanation": "moments ago",
-    "longExplanation": "moments ago. Pinyin: gāngcái",
-    "formation": "gāngcái"
+    "title": "刚才（時間名詞：さっき・たった今・先ほど）",
+    "shortExplanation": "発話時からごくわずか前の時点（数分〜十数分前の物理的な過去）を指す時間名詞です。「さっき」「先ほど」という意味で、文頭にも主語の後ろにも置くことができます。",
+    "longExplanation": "「刚才」（gāngcái）は、発話の時点からほんの少し前の時間（通例数分から十数分前の客観的な過去）を指す『時間名詞』です。副詞の「刚」と異なり名詞であるため、(1) 文頭（主語の前）にも主語の後ろにも自由に置くことができる（「刚才我……」も「我刚才……」も可能）、(2) 「比刚才好多了」のように介詞の目的語になれる、(3) 「刚才的事」のように「的」を伴って名詞を修飾できる、という際立った特徴があります。また、「刚」が話者の主観的な近さ（数ヶ月前でも可）を表すのに対し、「刚才」は物理的に直前の現実的な短時間のみを指します。日本語の「さっき」「先ほど」「たった今」に相当します。",
+    "formation": "(主語 ＋ ) 刚才 (＋ 主語) ＋ 述語（動詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "さっき私はメールを1通受け取りました。"
+      }
+    ]
   },
   "zh_即使也_207": {
-    "title": "即使……也…… (even if…, still…)",
-    "shortExplanation": "even if…, still…",
-    "longExplanation": "even if…, still…. Pinyin: jíshǐ…… yě……",
-    "formation": "jíshǐ…… yě……"
+    "title": "即使……，也……（仮定譲歩の複文：たとえ〜であっても、やはり…だ）",
+    "shortExplanation": "前節で「たとえ〜としても」と極端な状況や不利な条件を一歩譲って仮定し、後節で副詞「也」を用いて「それでもやはりその結果や行動は変わらない」と主張する仮定譲歩の接続表現です。",
+    "longExplanation": "「即使……，也……」（jíshǐ…… yě……）は、仮定譲歩を表す中国語の代表的な複文構文です。「即使」（たとえ〜だとしても）は前節の文頭または主語の後に置かれ、不利な条件や極端な仮定を一歩譲歩して提示します。後節では副詞「也」（それでも、やはり）を述語の前に置き、そのような極端な条件下であっても主節の行動、事実、意志が全く影響を受けずにそのまま維持されることを強調します。未発生の仮定状況だけでなく、既成の事実を譲歩的に提示する場合にも広く用いられます。日本語の「たとえ〜であっても、（やはり）…だ」に相当します。",
+    "formation": "即使 ＋ 譲歩仮定節，(主語 ＋ ) 也 ＋ 主節",
+    "examples": [
+      {
+        "translation": "たとえ冬がとても寒くても、彼は毎日グラウンドへ走りに行きます。"
+      }
+    ]
   },
   "zh_在N上_208": {
-    "title": "(在) N 上 (with regard to N)",
-    "shortExplanation": "with regard to N",
-    "longExplanation": "with regard to N. Pinyin: ( zài) N shàng",
-    "formation": "( zài) N shàng"
+    "title": "(在) ＋ 名詞 ＋ 上（介詞句：〜の面で・〜に関して・〜において）",
+    "shortExplanation": "抽象名詞の前後に「(在)……上」を添えて介詞句を形成し、話題の範囲や視点、領域を限定して提示します（「〜の面で」「〜においては」）。",
+    "longExplanation": "「(在) ＋ 名詞 ＋ 上」（zài…… shàng）は、文で論じる対象の分野、観点、または範囲を限定する抽象的な空間・領域表現です。「爱好」（趣味）、「工作」（仕事）、「学习」（学習）、「生活」（生活）、「性格」（性格）などの抽象名詞と結びつき、「〜の面において」「〜の観点から言えば」という意味を表します。口語では前置詞の「在」が省略されて「名詞 ＋ 上」の形（例：工作上、生活上）になることも頻繁にあります。多くの場合、文頭に置かれて文全体の話題を提示する連用修飾語（状語）として機能し、読点（コンマ）を伴います。日本語の「〜の面で」「〜においては」「〜の点では」に相当します。",
+    "formation": "(在 ＋ ) 抽象名詞 ＋ 上，主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "趣味の面では、私は母により似ています。"
+      }
+    ]
   },
   "zh_正好_209": {
-    "title": "正好 (just right)",
-    "shortExplanation": "just right",
-    "longExplanation": "just right. Pinyin: zhènghǎo",
-    "formation": "zhènghǎo"
+    "title": "正好（形容詞・副詞：ちょうどよい・ぴったりだ・都合よく）",
+    "shortExplanation": "サイズ・数量・度合いが「過不足なくぴったり合っている（ちょうどいい）」ことを表す形容詞、またはタイミングが「折よく・ちょうど都合よく」であることを表す副詞です。",
+    "longExplanation": "「正好」（zhènghǎo）は、中国語で極めて多用される語で、形容詞と副詞の両方の用法を持ちます。(1) 形容詞としての用法：大きさ、数量、時間、温度、味付けなどの度合いが過不足なく完全に適合していること（「ぴったりだ」「ちょうどよい」）を表し、述語として用いられます（例文：衣服大小正好＝服のサイズがぴったりだ；肉熟得正好＝肉の焼き加減がちょうどいい）。(2) 副詞としての用法：動作や機会が絶妙なタイミングで生じること（「ちょうど都合よく〜する」「折よく」）を表し、動詞の前に置かれます（例：我正好也要去＝私も折よく行くところだった）。日本語の「ちょうどいい」「ぴったりだ」に相当します。",
+    "formation": "主語 ＋ (サイズ / 数量 / タイミング...) ＋ 正好",
+    "examples": [
+      {
+        "translation": "服のサイズはちょうどいいです。"
+      }
+    ]
   },
   "zh_V得正好_210": {
-    "title": "V 得正好 (V’ed at just the right time)",
-    "shortExplanation": "V’ed at just the right time",
-    "longExplanation": "V’ed at just the right time. Pinyin: V dé zhènghǎo",
-    "formation": "V dé zhènghǎo"
+    "title": "動詞 ＋ 得正好（様態補語：ちょうどいいタイミングで〜する・折よく〜した）",
+    "shortExplanation": "動詞の後ろに構造助詞「得」を介して様態補語「正好」を続け、その動作が行われたタイミングが極めて適切で都合が良いこと（「ちょうどいいところへ〜した」）を表します。",
+    "longExplanation": "「動詞 ＋ 得正好」（V dé zhènghǎo）は、動詞と様態補語「正好」が結びついた口語表現です。構造助詞「得」によって動作とその評価を結び、その動作の行われたタイミングが絶妙で、話者にとって願ってもない好都合な時機であったことを称賛・歓迎するニュアンスを込めて評価します。最も典型的に使われるのが「来」（例文：你来得正好＝いいところへ来たね、ちょうどいいタイミングで来てくれた）や「赶」（赶得正好＝ちょうど都合よく居合わせた）などです。話者の歓迎や問題解決への安堵感が込められます。日本語の「ちょうどいいタイミングで〜した」「折よく〜した」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 得正好",
+    "examples": [
+      {
+        "translation": "あなたはちょうどいいタイミングで来ましたね。"
+      }
+    ]
   },
   "zh_NN差不多_211": {
-    "title": "N & N 差不多 (N & N are about the same)",
-    "shortExplanation": "N & N are about the same",
-    "longExplanation": "N & N are about the same. Pinyin: N & N chàbuduō",
-    "formation": "N & N chàbuduō"
+    "title": "名詞1 ＋ 和 / 跟 ＋ 名詞2 ＋ 差不多（比較表現：〜と…はほとんど同じだ・大差ない）",
+    "shortExplanation": "介詞「和」や「跟」で2つの事物・属性を結び、述語に形容詞「差不多」を置いて「両者は大体同じである」「ほとんど大差ない」ことを表します。",
+    "longExplanation": "「名詞1 ＋ 和 / 跟 ＋ 名詞2 ＋ 差不多」（N & N chàbuduō）は、2つの対象やその属性を比較して、両者の差異が極めてわずかであり、大差がないことを表す述語構文です。「差不多」は形容詞として文末の述語となり、「差がほとんどない」「だいたい同じである」という意味を持ちます。主語として2つの名詞をそのまま並べる場合（例：他们俩差不多＝彼ら二人はほとんど同じだ）と、例文のように特定の属性を比較する場合（这辆车的颜色和那辆车的颜色差不多＝この車の色とあの車の色はほとんど同じだ）の両方で頻繁に使われます。日本語の「〜と…はほとんど同じだ」「大体似通っている」に相当します。",
+    "formation": "名詞1 ＋ 和 / 跟 ＋ 名詞2 ＋ 差不多（または：名詞1 ＋ 和 ＋ 名詞2 ＋ 的 ＋ 特徴 ＋ 差不多）",
+    "examples": [
+      {
+        "translation": "この車の色とあの車の色はほとんど同じです。"
+      }
+    ]
   },
   "zh_差不多_212": {
-    "title": "差不多 # (about #)",
-    "shortExplanation": "about #",
-    "longExplanation": "about #. Pinyin: chàbuduō #",
-    "formation": "chàbuduō #"
+    "title": "差不多 ＋ 数詞 ＋ 量詞（概数副詞：およそ〜・約〜・ほぼ〜）",
+    "shortExplanation": "副詞「差不多」を数詞＋量詞（数量表現）の前に置き、数量・金額・時間・年齢などがその数値に極めて近いこと（「およそ」「約」）を表す概数表現です。",
+    "longExplanation": "数量表現（数詞 ＋ 量詞）の前に置かれる「差不多」は、数量の概数を表す副詞として機能します。実際の数値がその提示された数値とほぼ同等であるか、あるいはわずかに達しない程度の近似値であることを表し、日本語の「およそ」「約」「だいたい〜」に相当します。例文の「这台电脑差不多5000块」（このパソコンは約5000元です）のように、価格、人数、年齢、距離、時間などの具体的な数値を大まかに見積もる際に日常会話からビジネスまで幅広く用いられます。「大概」や「左右」と並ぶ代表的な概数表現の一つです。",
+    "formation": "主語 ＋ (述語 ＋ ) 差不多 ＋ 数詞 ＋ 量詞 (＋ 名詞)",
+    "examples": [
+      {
+        "translation": "このパソコンはおよそ5,000元です。"
+      }
+    ]
   },
   "zh_差不多A_213": {
-    "title": "差不多 A (about A)",
-    "shortExplanation": "about A",
-    "longExplanation": "about A. Pinyin: chàbuduō A",
-    "formation": "chàbuduō A"
+    "title": "差不多 ＋ 形容詞（副詞：ほぼ〜・だいたい〜）",
+    "shortExplanation": "副詞「差不多」を形容詞（または「一样高」などの形容詞句）の前に置き、性質や状態の度合いにほとんど差がなく、ほぼ同等であることを表します（「ほぼ〜」「だいたい〜」）。",
+    "longExplanation": "「差不多」（chàbuduō）が副詞として形容詞の前に置かれると、その程度や状態の隔たりが極めて小さく、「ほとんど同等である」「ほぼ〜に近い」という意味を表します。「跟……差不多一样高」（〜と背の高さがほぼ同じ）のように、比較対象を導く構文で頻繁に用いられます。日本語の「ほぼ〜」「だいたい同じくらい〜」に相当します。",
+    "formation": "主語 ＋ (跟 ＋ 比較対象 ＋ ) 差不多 ＋ (一样 ＋ ) 形容詞",
+    "examples": [
+      {
+        "translation": "娘の身長は私とほぼ同じ高さです。"
+      }
+    ]
   },
   "zh_差不多V_214": {
-    "title": "差不多 V (about V’ed)",
-    "shortExplanation": "about V’ed",
-    "longExplanation": "about V’ed. Pinyin: chàbuduō V",
-    "formation": "chàbuduō V"
+    "title": "差不多 ＋ 動詞（副詞：ほぼ〜した・だいたい〜し終えた）",
+    "shortExplanation": "副詞「差不多」を動詞の前に置き、動作や作業がほぼ完了した段階にあること（「ほぼ〜し終えた」「だいたい〜した」）を表します。",
+    "longExplanation": "「差不多」（chàbuduō）が動詞の前に置かれると、その動作や事態が完結する寸前にあること、あるいはほぼすべて終えている状態を表します。後ろには「干完」「做好」のように結果補語を伴う動詞や、完了の語気助詞「了」が置かれることが極めて一般的です。日本語の「ほぼ〜した」「だいたい〜し終わった」に相当します。",
+    "formation": "主語 ＋ 差不多 ＋ 動詞 (＋ 結果補語 ＋ 了)",
+    "examples": [
+      {
+        "translation": "仕事はほぼやり終えました。"
+      }
+    ]
   },
   "zh_几乎_215": {
-    "title": "几乎 # (almost #)",
-    "shortExplanation": "almost #",
-    "longExplanation": "almost #. Pinyin: jīhū #",
-    "formation": "jīhū #"
+    "title": "几乎 ＋ 数量詞（副詞：ほぼ〜・およそ〜近く）",
+    "shortExplanation": "副詞「几乎」を数量詞の前に置き、実際の数量や金額がその数値に極めて近づいていること（「ほぼ〜」「〜近く」）を表します。",
+    "longExplanation": "副詞「几乎」（jīhū）は数量表現（数詞＋量詞）の前に置かれると、実際の数値がその基準値にほぼ到達している、あるいはわずかに達していない程度まで肉薄していることを表します。数量の多さや金額の高さなどを強調するニュアンスを含みます。日本語の「ほぼ〜」「〜近く」「およそ〜」に相当します。",
+    "formation": "主語 ＋ 几乎 ＋ 数詞 ＋ 量詞 (＋ 名詞)",
+    "examples": [
+      {
+        "translation": "このパソコンは5000元近くします。"
+      }
+    ]
   },
   "zh_几乎A_216": {
-    "title": "几乎 A (almost)",
-    "shortExplanation": "almost",
-    "longExplanation": "almost. Pinyin: jīhū A",
-    "formation": "jīhū A"
+    "title": "几乎 ＋ 形容詞（副詞：ほとんど〜・ほぼ〜）",
+    "shortExplanation": "副詞「几乎」を形容詞の前に置き、その状態や性質が完全にその域に達しているに近いこと（「ほとんど〜」「ほぼ〜」）を表します。",
+    "longExplanation": "「几乎」（jīhū）が形容詞を修飾する場合、その性質や状態の度合いが極限や基準値に極めて近づいており、差がほとんどないことを表します（例：相当、一样、绝望など）。口語的な「差不多」に比べ、やや書き言葉的で改まったニュアンスを持ちます。日本語の「ほとんど〜」「ほぼ〜である」に相当します。",
+    "formation": "主語 ＋ 几乎 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "得失はほぼ同等です。"
+      }
+    ]
   },
   "zh_几乎V_217": {
-    "title": "几乎 V (almost)",
-    "shortExplanation": "almost",
-    "longExplanation": "almost. Pinyin: jīhū V",
-    "formation": "jīhū V"
+    "title": "几乎 ＋ 動詞（副詞：あやうく〜しそうになる・ほとんど〜する）",
+    "shortExplanation": "副詞「几乎」を動詞の前に置き、もう少しでその動作や事態が発生しそうになったこと（「あやうく〜しそうになった」）、または動作がほぼ全体に及んでいることを表します。",
+    "longExplanation": "「几乎」（jīhū）が動詞を修飾する場合、(1) もう少しである好ましくない事態が起こりそうだったが、実際には起きずに済んだこと（「差点儿」と同様のニュアンス、例：几乎忘了＝あやうく忘れそうになった）、(2) 動作や影響がほぼ完全に及んでいることを表します。日本語の「あやうく〜するところだった」「ほとんど〜した」に相当します。",
+    "formation": "主語 ＋ 几乎 ＋ 動詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "この件について、もう少しであなたに伝えるのを忘れそうになるところでした。"
+      }
+    ]
   },
   "zh_尽管_218": {
-    "title": "尽管 (although)",
-    "shortExplanation": "although",
-    "longExplanation": "although. Pinyin: jǐnguǎn",
-    "formation": "jǐnguǎn"
+    "title": "尽管……，可是 / 但是……（譲歩接続詞：〜にもかかわらず・たとえ〜であっても）",
+    "shortExplanation": "接続詞「尽管」を前節に置いて確定した事実を認め（〜にもかかわらず）、後節で「可是」「但是」「却」などを伴って予想に反する逆接の結果を導きます。",
+    "longExplanation": "「尽管」（jǐnguǎn）は譲歩を表す接続詞で、前節で既存の事実や客観的状況をそのまま受け入れつつ、後節で「可是」「但是」「却」などと呼応して、通常の予想とは食い違う結果・状態を導きます。未発生の仮定を述べる「即使」とは異なり、「尽管」はすでに確定した事実に用いられるのが原則です。日本語の「〜であるにもかかわらず」「いくら〜でも、しかし…」に相当します。",
+    "formation": "尽管 ＋ 事実・譲歩節，可是 / 但是 ＋ 逆接節",
+    "examples": [
+      {
+        "translation": "今日はとても寒いにもかかわらず、彼はとても薄着をしています。"
+      }
+    ]
   },
   "zh_虽然尽管却_219": {
-    "title": "(虽然/尽管) …… 却 ((although)… but)",
-    "shortExplanation": "(although)… but",
-    "longExplanation": "(although)… but. Pinyin: ( suīrán/ jǐnguǎn) …… què",
-    "formation": "( suīrán/ jǐnguǎn) …… què"
+    "title": "(虽然 / 尽管) …… 却……（逆接の呼応：〜であるのに、かえって・しかし〜）",
+    "shortExplanation": "前節に「虽然」や「尽管」（省略可能）を置き、後節の主語の後ろに逆接の副詞「却」を置いて、予想に反する意外な事態や対照的な行動を表します。",
+    "longExplanation": "「(虽然/尽管) …… 却……」は、強い対比や意外性を伴う逆接を表す構文です。前節の接続詞「虽然 / 尽管」は省略されることもあります。後節の「却」（què）は接続詞ではなく副詞であるため、必ず後節の主語の後ろに置かれます（主語 ＋ 却 ＋ 述語）。「但是」が文頭に置けるのに対し、「却」は主語の前に置くことはできません。日本語の「〜であるのに、しかし（かえって）〜する」「〜だが、それでも…」に相当します。",
+    "formation": "(虽然 / 尽管 ＋ ) 節1，主語 ＋ 却 ＋ 述語",
+    "examples": [
+      {
+        "translation": "（たとえ）仕事が非常に忙しくても、彼女たちは毎日欠かさず鍛錬を続けています。"
+      }
+    ]
   },
   "zh_而_220": {
-    "title": "而 (and/but)",
-    "shortExplanation": "and/but",
-    "longExplanation": "and/but. Pinyin: ér",
-    "formation": "ér"
+    "title": "而（接続詞：そして・また・一方で〜）",
+    "shortExplanation": "接続詞「而」（ér）は2つの節や語句を結び、並列・添加（「そして」「また」）や対比・逆接（「しかし」「一方で」）を表す格調高い接続表現です。",
+    "longExplanation": "「而」は書き言葉や改まった会話で広く用いられる接続詞です。主な用法として、(1) 並列・累加：前後の事柄を「そして」「また」「〜であり、かつ…」と並列的・相加的につなぐ、(2) 逆接・対比：「しかし」「それに対して〜」と前後の対照的な側面を際立たせる、(3) 因果関係をつなぐ、などがあります。文脈に応じて順接にも逆接にも働く柔軟な表現です。日本語の「そして」「また」「その一方で」に相当します。",
+    "formation": "節1 / 語句1 ＋ ，＋ 而 ＋ 節2 / 語句2",
+    "examples": [
+      {
+        "translation": "聞く能力や話す能力は非常に重要ですが、一方で漢字を書く能力もまた重要です。"
+      }
+    ]
   },
   "zh_挺A的_221": {
-    "title": "挺 A 的 (quite A)",
-    "shortExplanation": "quite A",
-    "longExplanation": "quite A. Pinyin: tǐng A de",
-    "formation": "tǐng A de"
+    "title": "挺 ＋ 形容詞 / 心理動詞 ＋ 的（口語：かなり〜・結構〜だ）",
+    "shortExplanation": "口語表現「挺……的」（tǐng... de）は形容詞や心理動詞を挟み、度合いがかなり高いこと（「結構〜だ」「かなり〜だ」）を親しみやすく表します。",
+    "longExplanation": "「挺……的」は日常会話で頻出する程度の表現です。副詞「挺」は「かなり、ずいぶん」を意味し、文末の「的」が語気を整えて親しみや主観的な実感を添えます（「的」は省略されることもあります）。形容詞だけでなく、「喜欢」「想」などの心理動詞ともよく結びつきます。「比较」（比較的）よりも程度が高く、口語特有の自然な響きを持ちます。日本語の「結構〜だ」「かなり〜である」に相当します。",
+    "formation": "主語 ＋ 挺 ＋ 形容詞 / 心理動詞 (＋ 目的語) ＋ 的",
+    "examples": [
+      {
+        "translation": "私はここがかなり気に入っています。"
+      }
+    ]
   },
   "zh_本来VA_222": {
-    "title": "本来 V/A (originally V/A)",
-    "shortExplanation": "originally V/A",
-    "longExplanation": "originally V/A. Pinyin: běnlái V/A",
-    "formation": "běnlái V/A"
+    "title": "本来 ＋ 動詞 / 形容詞（副詞：元々は〜・当初は〜）",
+    "shortExplanation": "副詞「本来」（běnlái）を動詞や形容詞の前に置き、当初の計画や本来の状態を表します。後ろに「但是」「后来」などが続き、状況の変化を表すのが一般的です。",
+    "longExplanation": "「本来」は副詞として用いられ、「もともと」「当初は」「元来」という意味を表します。過去の当初の意図、予定、あるいは事物の原型を指し示し、後続の文で「但是」（しかし）、「后来」（その後）、「现在」（今は）などを用いて、当初の目論見や状態が現在とは変化したことを対比する文脈で頻繁に使われます。日本語の「元々は〜だったが」「当初は〜するつもりだったが」に相当します。",
+    "formation": "主語 ＋ 本来 ＋ 動詞 / 形容詞，但是 / 可是 ＋ 変化・現在の状況",
+    "examples": [
+      {
+        "translation": "彼女は元々はジャーナリズムを学びたかったのですが、現在は法律を学んでいます。"
+      }
+    ]
   },
   "zh_本来就VA_223": {
-    "title": "本来就 V/A (V/A in the first place)",
-    "shortExplanation": "V/A in the first place",
-    "longExplanation": "V/A in the first place. Pinyin: běnlái jiù V/A",
-    "formation": "běnlái jiù V/A"
+    "title": "本来就 ＋ 動詞 / 形容詞（当然の強調：もともと〜なのだ・当たり前だ）",
+    "shortExplanation": "「本来就」（běnlái jiù）は動詞や形容詞の前に置かれ、道理や道理上の当然性、最初からそうであるべき自明の理（「もともと〜なのだ」）を強く強調します。",
+    "longExplanation": "「本来」の後に強調の副詞「就」を伴った「本来就」は、ある事柄が「最初から当然そうであるべきだ」「論を俟たない自明の真理だ」という話し手の強い主張や確信を表します。規則、義務、常識などを述べる文脈で「应该」「不应该」などと頻繁に共起します。日本語の「そもそも〜なのだ」「もともと〜であるべきだ（当たり前だ）」に相当します。",
+    "formation": "主語 ＋ 本来就 ＋ 動詞（应该 / 不应该 など） / 形容詞",
+    "examples": [
+      {
+        "translation": "学生はそもそも授業に遅刻すべきではありません。"
+      }
+    ]
   },
   "zh_另另外另外的N_224": {
-    "title": "另/另外/另外的 + # + N (another # N)",
-    "shortExplanation": "another # N",
-    "longExplanation": "another # N. Pinyin: lìng/ lìngwài/ lìngwài de + # + N",
-    "formation": "lìng/ lìngwài/ lìngwài de + # + N"
+    "title": "另 / 另外 / 另外的 ＋ 数詞 ＋ 量詞 ＋ 名詞（連体修飾：もう一つの〜・別の〜）",
+    "shortExplanation": "「另」「另外」「另外的」を数量詞（数詞＋量詞）と名詞の前に置き、すでに言及した対象とは別の新たな対象（「もう一つの〜」「別の〜」）を指し示します。",
+    "longExplanation": "「另」（lìng）および「另外」（lìngwài）は、既に話題に上がっている範囲以外の別の事物や人物を特定する指示代名詞・修飾表現です。「另」は直接「一＋量詞」などの数量詞に接続し（「的」は挟まない）、「另外」は「另外 ＋ 数量詞」または助詞「的」を挟んだ「另外的 ＋ 数量詞 ＋ 名詞」の形をとることができます。日本語の「もう一つの〜」「別の〜」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 另 / 另外 / 另外的 ＋ 数詞 ＋ 量詞 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "彼はもう1冊の別の本を取り出しました。"
+      }
+    ]
   },
   "zh_另外的其他的别的N_225": {
-    "title": "另外的/其他的/别的 N (other N)",
-    "shortExplanation": "other N",
-    "longExplanation": "other N. Pinyin: lìngwài de/ qítā de/ biéde N",
-    "formation": "lìngwài de/ qítā de/ biéde N"
+    "title": "另外的 / 其他的 / 别的 ＋ 名詞（連体修飾：ほかの〜・別の〜）",
+    "shortExplanation": "代名詞「另外的」「其他的」「别的」を名詞の前に置き、現在取り上げている対象以外の事物や人々（「ほかの〜」「別の〜」）を指します。",
+    "longExplanation": "「另外的」「其他的」「别的」はいずれも名詞の前に置かれて連体修飾語（定語）となり、言及されているものとは異なる「別の〜」「他の〜」を指し示します。「别的」は最も口語的で日常会話で多用され、「其他的」はやや改まった語感を持ち特定範囲の残りを指す傾向があり、「另外的」は別途存在する別個の対象を強調します。日本語の「ほかの〜」「別の〜」に相当します。",
+    "formation": "另外的 / 其他的 / 别的 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "この本は読まないで、ほかの本を読んでください。"
+      }
+    ]
   },
   "zh_另另外V_226": {
-    "title": "另/另外 V (V another)",
-    "shortExplanation": "V another",
-    "longExplanation": "V another. Pinyin: lìng/ lìngwài V",
-    "formation": "lìng/ lìngwài V"
+    "title": "另 / 另外 ＋ 動詞（副詞：別に〜する・さらに追加して〜する）",
+    "shortExplanation": "副詞「另」や「另外」を動詞の前に置き、それまでの動作に加えて別途行うこと（「別に〜する」「さらに追加で〜する」）を表します。",
+    "longExplanation": "「另」（lìng）と「另外」（lìngwài）は副詞として動詞の前に置かれ、(1) すでに完了・合意した事柄に付け加えて、別途さらに動作を行うこと（例：另外给我三十元＝さらに別に30元くれる）、(2) 方法や場所、対象を改めて別のやり方で動作を行うこと（例：另想办法＝別の方法を考える）を表します。「另」は単音節動詞と結びつきやすく、「另外」はより幅広く使われます。日本語の「別に〜する」「さらに〜する」に相当します。",
+    "formation": "主語 ＋ 另 / 另外 ＋ 動詞 (＋ 目的語)",
+    "examples": [
+      {
+        "translation": "彼は私にさらに別で30元くれました。"
+      }
+    ]
   },
   "zh_另外_227": {
-    "title": "另外，…… (In addition, …)",
-    "shortExplanation": "In addition, …",
-    "longExplanation": "In addition, …. Pinyin: lìngwài，……",
-    "formation": "lìngwài，……"
+    "title": "另外，……（接続詞：そのほか・それに・また）",
+    "shortExplanation": "接続詞「另外」を文頭や後節の冒頭に置き（通例読点を伴う）、前述の話題に加えて別の新たな事柄や補足事項を付け加えます（「そのほか」「それに」）。",
+    "longExplanation": "「另外」（lìngwài）が文頭や節の冒頭に独立して置かれる場合、文と文をつなぐ接続詞として機能します。前に述べた内容の外側に、新たな情報、アドバイス、追加の要件などを補足・添加する役割を果たします。直後に読点（，）を打つのが一般的です。日本語の「そのほかに」「それに」「また、〜」に相当します。",
+    "formation": "節1。另外，(主語 ＋ ) 補足節",
+    "examples": [
+      {
+        "translation": "果物をたくさん食べてください。そのほか、水分をたくさん摂ることも覚えておいてください。"
+      }
+    ]
   },
   "zh_首先其次_228": {
-    "title": "首先……其次…… (First… second…)",
-    "shortExplanation": "First… second…",
-    "longExplanation": "First… second…. Pinyin: shǒuxiān…… qícì……",
-    "formation": "shǒuxiān…… qícì……"
+    "title": "首先……，其次……（接続詞の呼応：まず〜、次に〜・第一に〜、第二に〜）",
+    "shortExplanation": "接続表現「首先……，其次……」を用いて、手順の前後関係や論点の優先順位を順序立てて列挙します（「まず〜、次に〜」「第一に〜、第二に〜」）。",
+    "longExplanation": "「首先……，其次……」（shǒuxiān... qícì...）は、順序や優先度に従って複数の事柄・意見・手順を整理して述べる呼応表現です。「首先」で最も重要あるいは最初に取り組むべき事柄を提示し、「其次」でそれに次ぐ段階・観点を導きます。書き言葉や改まった会話で論理的に説明する際によく使われます。日本語の「まず〜、次に…」「第一に〜、第二に…」に相当します。",
+    "formation": "(主語 ＋ ) 首先 ＋ 節1，其次 ＋ 節2",
+    "examples": [
+      {
+        "translation": "面接を受けるときは、まずフォーマルな服を着ること、次に緊張しないことが大切です。"
+      }
+    ]
   },
   "zh_不管_229": {
-    "title": "不管 (no matter)",
-    "shortExplanation": "no matter",
-    "longExplanation": "no matter. Pinyin: bùguǎn",
-    "formation": "bùguǎn"
+    "title": "不管……，都 / 也……（接続詞：〜にかかわらず・どんな〜でも）",
+    "shortExplanation": "接続詞「不管」を前節に置き、どのような条件や状況であっても後節の結果が変わらないこと（無条件）を表します（「〜にかかわらず」「どんな〜でも…」）。",
+    "longExplanation": "「不管」（bùguǎn）は無条件を表す接続詞で、どのような事情・条件のもとでも後節の結果や結論が変わらないことを示します。「不管」の後ろには疑問詞（什么、谁、怎么など）、選択疑問（A还是B）、反復疑問（去不去など）を伴い、あらゆる可能性を網羅します。後節では必ず「都」または「也」と呼応します。同様の意味の「无论」に比べて口語的な響きを持ちます。日本語の「たとえ〜であろうと」「〜にかかわらず、すべて…」に相当します。",
+    "formation": "不管 ＋ 疑問詞 / 選択疑問句 / 反復形式 (＋ 名詞) ，主語 ＋ 都 / 也 ＋ 述語",
+    "examples": [
+      {
+        "translation": "どんな映画であっても、私はどれも見るのが好きです。"
+      }
+    ]
   },
   "zh_以为_230": {
-    "title": "以为 (to believe falsely)",
-    "shortExplanation": "to believe falsely",
-    "longExplanation": "to believe falsely. Pinyin: yǐwéi",
-    "formation": "yǐwéi"
+    "title": "以为（動詞：〜だと思い込んでいた・〜だと思っていたが実際は違った）",
+    "shortExplanation": "動詞「以为」は、話し手が主観的にそう思っていたものの、実際には事実と異なっていたこと（思い違い・勘違い）を表します（「〜だと思い込んでいた」）。",
+    "longExplanation": "「以为」（yǐwéi）は話者の主観的な判断・推測を表す認識動詞ですが、実際にはその判断が誤りであったり、事実と食い違っていたりする文脈で用いられます。後節に「其实」（実は）や「原来」（なんと・実は）などを伴って真相を対比的に述べることが非常に多いです。単に客観的な見解・意見を述べる「认为」とは明確に区別されます。日本語の「〜だと思い込んでいた」「〜と思っていた（が実は違った）」に相当します。",
+    "formation": "主語 ＋ 以为 ＋ 誤認節 (，其实 / 原来 ＋ 事実節)",
+    "examples": [
+      {
+        "translation": "その物は自分にくれたものだと思い込んでいましたが、実は父へのものでした。"
+      }
+    ]
   },
   "zh_原来本来_231": {
-    "title": "原来/本来 (originally)",
-    "shortExplanation": "originally",
-    "longExplanation": "originally. Pinyin: yuánlái/ běnlái",
-    "formation": "yuánlái/ běnlái"
+    "title": "原来 / 本来（副詞：元々・当初は・もともと）",
+    "shortExplanation": "「原来」と「本来」はともに、変化が生じる前の最初の状態や当初の計画・状況（「元々は」「当初は」）を表します。",
+    "longExplanation": "「原来」（yuánlái）と「本来」（běnlái）は、いずれも時間的・事態的な起点である「もともとの状況」「当初の予定」を指す副詞として述語の前に置かれます。その後に状況の変化や計画の変更が起きたことを暗示または対比することが多いです。（※「原来」には「なんと〜だったのか」という新事実の発見の意味があり、「本来」には「当然〜であるべきだ」という理の当然の意味がある点で使い分けもありますが、ここでは共通する「当初・元々」の用法です）。日本語の「元々〜だった」「当初は〜を必要としていた」に相当します。",
+    "formation": "(主語 ＋ ) 原来 / 本来 ＋ 動詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "当初は12時間かかるはずでした（元々は12時間必要でした）。"
+      }
+    ]
   },
   "zh_原来clause_232": {
-    "title": "原来 clause (it turns out)",
-    "shortExplanation": "it turns out",
-    "longExplanation": "it turns out. Pinyin: yuánlái clause",
-    "formation": "yuánlái clause"
+    "title": "原来 ＋ 節（副詞：なんと〜だったのか・実は〜だった・〜と判明した）",
+    "shortExplanation": "副詞「原来」を節の前に置き、以前は知らなかった真相や原因に気づき、合点がいったこと（「なんと〜だったのか」「実は〜だった」）を表します。",
+    "longExplanation": "「原来」（yuánlái）を文頭または述語の前に置くことで、それまで知らなかった事実・真相・原因を新たに発見し、「そうだったのか！」と納得・驚嘆するニュアンスを表します。前節で「我以为……」（〜だと思い込んでいた）と勘違いを述べ、後節で「原来……啊！」と真相を発見して対比させる形が典型パターンです。※この「真相の発覚」を表す用法では「本来」に置き換えることはできません。日本語の「なんと〜だったのか」「実は〜だった」「〜と判明した」に相当します。",
+    "formation": "(推測節 / 誤認節 ，) (主語 ＋ ) 原来 ＋ 事実節 (＋ 語気助詞 啊 / 呢)",
+    "examples": [
+      {
+        "translation": "誰が部屋を掃除してくれたのかと思っていたら、なんとあなただったのですね！"
+      }
+    ]
   },
   "zh_本来就VA_233": {
-    "title": "本来就 V/A ((see 4.03.2))",
-    "shortExplanation": "(see 4.03.2)",
-    "longExplanation": "(see 4.03.2). Pinyin: běnlái jiù V/A",
-    "formation": "běnlái jiù V/A"
+    "title": "本来就 ＋ 動詞 / 形容詞（副詞：元々〜なのだ・当たり前に〜だ）",
+    "shortExplanation": "「本来就」を動詞や形容詞の前に置き、その性質や事態が元からそうであったこと、あるいは道理として当然そうあるべきであることを強調します（「元々〜なのだ」「当然〜だ」）。",
+    "longExplanation": "「本来就」（běnlái jiù）は動詞や形容詞の前に置かれ、事態が初めからそのようであったこと、あるいは客観的な道理・常識から考えて「当然そうであるべきだ」「最初からそう決まっている」という確信を強調する表現です。言い訳や説明、あるいは当たり前のこととして反論する際によく用いられます（例：天气本来就冷＝天気は元々寒いのだ、这件事本来就该你负责＝この件は元々あなたが責任を持つべきだ）。日本語の「元々〜なのだ」「最初から〜である」「当然〜だ」に相当します。",
+    "formation": "主語 ＋ 本来就 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "-"
+      }
+    ]
   },
   "zh_并不并没VA_234": {
-    "title": "并不/并没 V/A ((emphasize the negative))",
-    "shortExplanation": "(emphasize the negative)",
-    "longExplanation": "(emphasize the negative). Pinyin: bìngbù/ bìng méi V/A",
-    "formation": "bìngbù/ bìng méi V/A"
+    "title": "并不 / 并没 ＋ 動詞 / 形容詞（否定の強調：決して〜ない・少しも〜ない）",
+    "shortExplanation": "副詞「并」を否定詞「不」や「没」の前に置き、相手の思い込みや一般通念を否定・反論して否定の語気を強調します（「決して〜ない」「少しも〜ない」）。",
+    "longExplanation": "「并不 / 并没」（bìng bù / bìng méi）は、強い否定の語気を表す呼応表現です。「并」は否定詞の前に置かれ、聞き手の先入観や世間一般の予想・誤認を強く否定し、「実際にはそうではない」と事実を正すニュアンスを持ちます。「并不」は状態・性質・恒常的な習慣・意志の否定に、「并没」は過去の動作や変化の未発生を否定する際に用いられます。「但是」「其实」などの転換表現とともに対比的に使われることが多いです。日本語の「決して〜ではない」「別に〜というわけではない」「ちっとも〜ない」に相当します。",
+    "formation": "主語 ＋ (但是 / 其实 ＋ ) 并不 / 并没 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "みんな外はとても寒いと言っていますが、私は少しも寒いとは感じていません。"
+      }
+    ]
   },
   "zh_按照N_235": {
-    "title": "按照 N (according to N)",
-    "shortExplanation": "according to N",
-    "longExplanation": "according to N. Pinyin: ànzhào N",
-    "formation": "ànzhào N"
+    "title": "按照 ＋ 名詞（介詞：〜に従って・〜に基づいて・〜通りに）",
+    "shortExplanation": "介詞（前置詞）「按照」を名詞の前に置き、行動の基準・規則・計画・方針を提示します（「〜に従って」「〜通りに」）。",
+    "longExplanation": "「按照」（ànzhào）は動作や行動の根拠・基準・枠組みを導く介詞です。後ろには計画、規則、要求、習慣などを表す名詞（例：计划、规定、标准など）が続き、「その基準や手順から逸脱せず忠実に従う」というニュアンスを持ちます。「根据」（客観的な事実や証拠から推論・判断を下す際に多用）と比べ、「按照」は既定のルールやマニュアル通りに行動・実行することを強く表します。日本語の「〜に従って」「〜通りに」「〜に基づいて」に相当します。",
+    "formation": "主語 ＋ 按照 ＋ 名詞 / 名詞句 ＋ 動詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "私たちはやはり当初の計画通りに進めます。"
+      }
+    ]
   },
   "zh_甚至VA_236": {
-    "title": "甚至 V/A (even V/A)",
-    "shortExplanation": "even V/A",
-    "longExplanation": "even V/A. Pinyin: shènzhì V/A",
-    "formation": "shènzhì V/A"
+    "title": "甚至 ＋ 動詞 / 形容詞（副詞・接続詞：〜さえも・〜はおろか・甚だしきは）",
+    "shortExplanation": "「甚至」を動詞や形容詞の前に置き、予想を超える極端な事例を挙げて程度の甚だしさを強調します（「〜さえも」「甚だしきは〜する」）。",
+    "longExplanation": "「甚至」（shènzhì）は、累加（漸進）関係を表す接続詞・副詞です。前節で述べた内容を踏まえ、さらに一歩進んだ極端な例や意外な事態を提示することで、その程度の深さや尋常でなさを際立たせます。極端な状況を表す「连……也/都」と組み合わされることもあります。日本語の「〜さえも」「〜するほどだ」「ひいては〜までした」に相当します。",
+    "formation": "節1 ，(主語 ＋ ) 甚至 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "彼はとても熱心に仕事をし、ご飯を食べるのさえ忘れてしまうほどでした。"
+      }
+    ]
   },
   "zh_肯定VA_237": {
-    "title": "肯定 V/A (certainly V/A)",
-    "shortExplanation": "certainly V/A",
-    "longExplanation": "certainly V/A. Pinyin: kěndìng V/A",
-    "formation": "kěndìng V/A"
+    "title": "肯定 ＋ 動詞 / 形容詞（副詞：きっと〜だ・間違いなく〜である）",
+    "shortExplanation": "副詞「肯定」を動詞や形容詞の前に置き、話し手の確信に満ちた判断を表します（「きっと〜だ」「間違いなく〜である」）。",
+    "longExplanation": "「肯定」（kěndìng）が副詞として述語（動詞または形容詞）の前に置かれると、その事態の発生や性質の存在に対して全く疑いの余地がないという強い確信・判断を表します。「一定」とほぼ同じように使われますが、「肯定」は話し手の判断・推測における絶対的な自信がより強調されます。日本語の「間違いなく〜だ」「きっと〜に違いない」「確実に〜である」に相当します。",
+    "formation": "主語 ＋ 肯定 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+    "examples": [
+      {
+        "translation": "運動が身体の健康にとって確実に良い影響があることは間違いありません。"
+      }
+    ]
   },
   "zh_肯定_238": {
-    "title": "肯定 (certain)",
-    "shortExplanation": "certain",
-    "longExplanation": "certain. Pinyin: kěndìng",
-    "formation": "kěndìng"
+    "title": "肯定（動詞：確信する・断言する・請け合う）",
+    "shortExplanation": "動詞「肯定」は、ある事柄に対して強い確信を持ち、疑いなく断言することを表します（「確信している」「断言できる」）。",
+    "longExplanation": "「肯定」（kěndìng）は動詞として用いられ、話し手がある事態や推測に対して確固たる確信を抱いて「請け合う」「断言する」という認識行為を表します。多くの場合、「能肯定」「可以肯定」（確実に言える／断言できる）のように助動詞を伴い、後ろに節（目的語）をとって確信の内容を述べます。日本語の「確信する」「断言する」「間違いないと確信している」に相当します。",
+    "formation": "主語 ＋ (能 / 可以 ＋ ) 肯定 ＋ ，＋ 確信内容の節",
+    "examples": [
+      {
+        "translation": "張遠が必ず来ると、私は確信を持って断言できます。"
+      }
+    ]
   },
   "zh_肯定的_239": {
-    "title": "肯定的 (affirmative, positive)",
-    "shortExplanation": "affirmative, positive",
-    "longExplanation": "affirmative, positive. Pinyin: kěndìng de",
-    "formation": "kěndìng de"
+    "title": "肯定的（形容詞：肯定的である・前向きな・「はい」という回答）",
+    "shortExplanation": "「肯定的」は形容詞（または的構造）として、賛同・承諾・肯定の意味合いを持つこと（「肯定的である」「イエスである」）を表します。",
+    "longExplanation": "「肯定的」（kěndìng de）は形容詞的用法で、返答や態度が賛成・是認・承諾（肯定）であることを表します（「否定的」の対義語）。「回答是肯定的」（回答は肯定的である＝イエスと答えた）のように「是……的」の述語形式で頻繁に用いられます。日本語の「肯定的である」「イエス（賛成）である」「前向きである」に相当します。",
+    "formation": "主語 (回答 / 態度など) ＋ 是肯定的",
+    "examples": [
+      {
+        "translation": "彼の返答は肯定的でした（＝承諾・賛成でした）。"
+      }
+    ]
   },
   "zh_再说_240": {
-    "title": "再说 (talk about it / deal with it until a later time)",
-    "shortExplanation": "talk about it / deal with it until a later time",
-    "longExplanation": "talk about it / deal with it until a later time. Pinyin: zàishuō",
-    "formation": "zàishuō"
+    "title": "……再说（動詞句：後で考えよう・〜してから決めよう・後回しにする）",
+    "shortExplanation": "「再说」を文末や条件句の後に置き、決定や議論をひとまず保留にして、指定の時期が来てから改めて対処すること（「後で話そう」「〜してから考えよう」）を表します。",
+    "longExplanation": "「再说」（zàishuō）は口語で極めて頻繁に用いられる表現で、目前の決定や行動を一時保留し、将来の特定の時機や条件が満たされた段階で改めて検討・実行しようと持ちかける際に用いられます。文末には語気助詞「吧」を伴うことが一般的です（例：明天再说吧＝また明日にしよう、考完再说＝試験が終わってから決めよう）。日本語の「後で考えよう」「〜が終わってからにしよう」「その時にまた話そう」に相当します。",
+    "formation": "(理由節 ，) 時間・完了条件 ＋ 再说 (＋ 吧)",
+    "examples": [
+      {
+        "translation": "今は勉強が忙しいので、試験が終わってから改めて話しましょう。"
+      }
+    ]
   },
   "zh_再说_241": {
-    "title": "再说 (besides)",
-    "shortExplanation": "besides",
-    "longExplanation": "besides. Pinyin: zàishuō",
-    "formation": "zàishuō"
+    "title": "再说（接続詞：それに・その上・おまけに・さらに）",
+    "shortExplanation": "接続詞「再说」を後節の冒頭に置き、前節の理由や状況に加えて、さらに別の理由や状況を補足添加します（「それに」「その上」）。",
+    "longExplanation": "「再说」（zàishuō）は累加・添加を表す接続詞として用いられ、後節の文頭に置かれて前の陳述を補強する追加の理由・事情を提示します。同様の意味の「况且」「而且」に比べて親しみやすい口語表現で、日常会話で言い訳や補足説明をする際に非常によく使われます。日本語の「それに」「その上」「おまけに」「それに加えて」に相当します。",
+    "formation": "節1 ，再说 ＋ ，＋ 追加理由の節",
+    "examples": [
+      {
+        "translation": "卒業後はみんな忙しいですし、それに、多くの同級生が同じ都市にはいません。"
+      }
+    ]
   },
   "zh_实际的_242": {
-    "title": "实际的 (real)",
-    "shortExplanation": "real",
-    "longExplanation": "real. Pinyin: shíjì de",
-    "formation": "shíjì de"
+    "title": "实际的 ＋ 名詞（連体修飾語：実際の〜・現実の〜）",
+    "shortExplanation": "「实际的」を名詞の前に連体修飾語として置き、空想・広告・理論ではなく現実の世界に実在すること（「実際の〜」「現実の〜」）を表します。",
+    "longExplanation": "「实际」（shíjì）は客観的な現実に即していること、具体的に実在することを表す形容詞です。構造助詞「的」を伴って連体修飾語（实际的＋名詞）となり、後ろに名詞（东西、情况、问题など）を修飾して「架空・宣伝・理論上のものとは異なる、現実に存在する実態」であることを強調します。宣伝や予想と現実とのギャップを述べる文脈でよく対比されます。日本語の「実際の〜」「現実の〜」「実物の〜」に相当します。",
+    "formation": "实际的 ＋ 名詞 (＋ 述語)",
+    "examples": [
+      {
+        "translation": "実際の品物は広告に載っているものとは違っています。"
+      }
+    ]
   },
   "zh_实际_243": {
-    "title": "实际 (reality)",
-    "shortExplanation": "reality",
-    "longExplanation": "reality. Pinyin: shíjì",
-    "formation": "shíjì"
+    "title": "实际（名詞・形容詞：実際・現実・実質的）",
+    "shortExplanation": "名詞として客観的な事実や現実を指し、形容詞として具体的・実用的であることを表します（「実際」「現実」「実質的」）。",
+    "longExplanation": "「实际」（shíjì）は名詞および形容詞として幅広く用いられます。(1)名詞としては、理論や空想に対する客観的な現実・実情を指します（例：「脱离实际」＝現実から遊離する、「跟实际不一样」＝実際と異なる）。(2)形容詞としては、実用的・具体的で現実に即していることを表します（例：「实际行动」＝実際の行動、「实际问题」＝現実的な問題）。日本語の「実際」「現実」「実質的」に相当します。",
+    "formation": "主語 ＋ 跟 / 与 ＋ 实际 ＋ 不一样 / 符合",
+    "examples": [
+      {
+        "translation": "広告は実際とは異なります。"
+      }
+    ]
   },
   "zh_实际上_244": {
-    "title": "实际上 (in reality)",
-    "shortExplanation": "in reality",
-    "longExplanation": "in reality. Pinyin: shíjìshàng",
-    "formation": "shíjìshàng"
+    "title": "实际上（接続副詞：実際には・実のところ）",
+    "shortExplanation": "文頭または主語の直後に置き、表面的な見かけや事前の予想に反して、真実はどうであるかを述べる際に用います（「実際には」「実のところ」）。",
+    "longExplanation": "「实际上」（shíjìshang）は、文頭や主語の直後に置かれる接続副詞として機能します。表面的な様子や事前の見通し、人々の評判などと異なり、客観的な事実や本質がどうであるかを明確に説明・訂正する際に使われます。「其实」（実は）とほぼ同義ですが、「实际上」の方がより客観的で改まったニュアンスを持ちます。日本語の「実際には」「実のところ」「事実は」に相当します。",
+    "formation": "節1，实际上 ＋ 節2（または：主語 ＋ 实际上 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "広告では耳障りの良いことが言われていますが、実際には必ずしも良いとは限りません。"
+      }
+    ]
   },
   "zh_对来说_245": {
-    "title": "对……来说 (for, as for)",
-    "shortExplanation": "for, as for",
-    "longExplanation": "for, as for. Pinyin: duì…… láishuō",
-    "formation": "duì…… láishuō"
+    "title": "对……来说（前置詞構文：〜にとって・〜の見地から言えば）",
+    "shortExplanation": "文頭または主語の前に置き、ある人物の立場や視点から見てどうであるかを提示します（「〜にとって」「〜から言えば」）。",
+    "longExplanation": "「对 + 対象 + 来说」（duì... láishuō）は、特定の人物や組織、事物などの立場・視点を提示し、その対象から見て事態がどのような意味や価値、難易度を持つかを述べる構文です。文頭に置かれて文全体の前提となることが多く、書き言葉では「对……而言」に言い換えることもできます。日本語の「〜にとって」「〜の立場からすると」に相当します。",
+    "formation": "对 ＋ 名詞 / 代名詞 ＋ 来说，主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "私にとって、学ぶ機会の方がより大切です。"
+      }
+    ]
   },
   "zh_特别_246": {
-    "title": "特别 (very much, extremely)",
-    "shortExplanation": "very much, extremely",
-    "longExplanation": "very much, extremely. Pinyin: tèbié",
-    "formation": "tèbié"
+    "title": "特别 ＋ 形容詞 / 心理動詞（程度副詞：特に・非常に・格別に）",
+    "shortExplanation": "形容詞や心理動詞の前に置き、その程度が並外れて高く特別であることを強調します（「特に〜」「非常に〜」）。",
+    "longExplanation": "「特别」（tèbié）が程度副詞として機能する場合、形容詞（好、漂亮、像など）や心理動詞（喜欢、想念、关心など）の直前に置かれます。状態や程度が普通と著しく異なり際立っていること、並外れていることを強調します。「非常」や「格外」とほぼ同様に用いられます。日本語の「特に〜」「とても〜」「格別に〜」に相当します。",
+    "formation": "主語 ＋ 特别 ＋ 形容詞 / 心理動詞",
+    "examples": [
+      {
+        "translation": "娘さんはお母様（お父様）に特によく似ていらっしゃいますね。"
+      }
+    ]
   },
   "zh_特别尤其_247": {
-    "title": "特别/尤其 (especially, particularly)",
-    "shortExplanation": "especially, particularly",
-    "longExplanation": "especially, particularly. Pinyin: tèbié/ yóuqí",
-    "formation": "tèbié/ yóuqí"
+    "title": "特别 / 尤其（接続副詞：特に・取り分け・なかでも）",
+    "shortExplanation": "全体の中で特定の項目や典型的な例を際立たせて引き合いに出す際に、「特别（是）」や「尤其（是）」を用います（「特に〜」「とりわけ〜」「なかでも〜」）。",
+    "longExplanation": "「特别」と「尤其」は、文の後半（読点の後）に置かれ、しばしば「特别是」「尤其是」の形で用いられます。前の節で全体的な状況やグループ全般について言及した後、その中から最も際立った具体例や部分を強調・抽出して提示する役割を持ちます。「尤其」の方が「特别」に比べてより書き言葉的で改まった響きを帯びます。日本語の「特に〜」「とりわけ〜」「なかでも〜」に相当します。",
+    "formation": "総括節，特别是 / 尤其是 ＋ 名詞 / 強調部分",
+    "examples": [
+      {
+        "translation": "娘さんは本当にお母様（お父様）にそっくりですね、特に目が似ています。"
+      }
+    ]
   },
   "zh_特别的_248": {
-    "title": "特别的 (special)",
-    "shortExplanation": "special",
-    "longExplanation": "special. Pinyin: tèbié de",
-    "formation": "tèbié de"
+    "title": "特别的 ＋ 名詞（形容詞限定用法：特別な〜・特殊な〜）",
+    "shortExplanation": "形容詞「特别」に構造助詞「的」を付け、名詞を修飾して並外れて異なっていることや特殊・専用であることを表します（「特別な〜」「特殊な〜」）。",
+    "longExplanation": "「特别」（tèbié）は形容詞として「普通とは違う」「独特である」「特殊である」という意味を持ちます。構造助詞「的」を伴って「特别的 ＋ 名詞」の形をとると、連体修飾語（定語）として機能し、その事物が一般的・通常のものとは異なり、独自の特徴や重要性を持っていることを示します（例：「特别的要求」＝特別な要求、「特别的日子」＝特別な記念日、「特别的礼物」＝特別なプレゼント）。日本語の「特別な〜」「格別の〜」に相当します。",
+    "formation": "特别的 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "私には一つ特別な要望があります。"
+      }
+    ]
   },
   "zh_竟然VA_249": {
-    "title": "竟然 V/A ((expressing surprise))",
-    "shortExplanation": "(expressing surprise)",
-    "longExplanation": "(expressing surprise). Pinyin: jìngrán V/A",
-    "formation": "jìngrán V/A"
+    "title": "竟然 ＋ 動詞 / 形容詞（語気副詞：なんと〜・まさか〜・思いがけず）",
+    "shortExplanation": "動詞や形容詞の前に置き、事態が話者の予想や常識を大きく超えていて、「なんと〜」「まさか〜」と驚きや意外さを表します。",
+    "longExplanation": "「竟然」（jìngrán）は、強い意外性や驚愕を表す語気副詞です。述語（動詞または形容詞）の直前に置かれ、事態が話者の常識や予期と正反対の結果になったこと、あるいは起こりそうもないことが実際に起きてしまったことを際立たせます（例：「竟然不知道」＝なんと知らないとは、「竟然考了第一名」＝まさか1位を取るなんて）。「居然」とほぼ同じ意味で用いられます。日本語の「なんと〜」「まさか〜」「思いがけず〜」に相当します。",
+    "formation": "主語 ＋ 竟然 ＋ 動詞 / 形容詞（＋ 目的語 / 補語）",
+    "examples": [
+      {
+        "translation": "この曲はとても良くて最近すごく流行っているのに、まさか聴いたことがないの？"
+      }
+    ]
   },
   "zh_倍_250": {
-    "title": "# 倍 (# times)",
-    "shortExplanation": "# times",
-    "longExplanation": "# times. Pinyin: # bèi",
-    "formation": "# bèi"
+    "title": "数詞 ＋ 倍（量詞：〜倍）",
+    "shortExplanation": "数詞の後に量詞「倍」を置き、ある数量が基準の何倍にあたるかという倍数を表します（「〜倍」）。",
+    "longExplanation": "「倍」（bèi）は倍数を表す専門の量詞です。(1)基準との比較関係を示す場合：「A 是 B 的 X 倍」（AはBのX倍である）。(2)数値の増加を表す場合：「增加了一倍」（1倍増えた＝2倍になった）。なお、中国語の「倍」は増加や掛け算にのみ用いられ、減少・削減には使えません（減少には分数やパーセンテージを用います）。日本語の「〜倍」に相当します。",
+    "formation": "数詞 ＋ 倍（例：対象1 ＋ 是 ＋ 対象2 ＋ 的 ＋ 数詞 ＋ 倍）",
+    "examples": [
+      {
+        "translation": "2の5倍は10です。"
+      }
+    ]
   },
   "zh_值得V_251": {
-    "title": "值得 V (is worth)",
-    "shortExplanation": "is worth",
-    "longExplanation": "is worth. Pinyin: zhíde V",
-    "formation": "zhíde V"
+    "title": "值得 ＋ 動詞（助動詞的動詞：〜する価値がある・〜するに値する）",
+    "shortExplanation": "動詞（主に2音節動詞）の前に置き、その行動を行うに十分な価値や意義があることを表します（「〜する価値がある」「〜するに値する」）。",
+    "longExplanation": "「值得」（zhíde）は、物事の価値を肯定的に評価する動詞です。後ろに動詞（主に「考虑」「学习」「去」「买」などの行為）を伴い、時間・金銭・労力を投じるだけの十分な見返りや意味があることを表します。否定形は「不值得」（〜する価値がない）となります。日本語の「〜する価値がある」「〜してみる価値がある」「〜するに値する」に相当します。",
+    "formation": "主語 ＋ (很 / 都) 值得 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "こちらをご覧になってみてください。価格の面から見ても品質から見ても、十分に検討する価値がありますよ。"
+      }
+    ]
   },
   "zh_值值得_252": {
-    "title": "值/值得 (is worth it)",
-    "shortExplanation": "is worth it",
-    "longExplanation": "is worth it. Pinyin: zhí/ zhíde",
-    "formation": "zhí/ zhíde"
+    "title": "值 / 值得（述語用法：割に合う・価値がある）",
+    "shortExplanation": "単独で文末の述語として用い、労力や犠牲に見合うだけの価値・収支が釣り合っているかを判定します（否定形「不值 / 不值得」＝「割に合わない」「馬鹿らしい」）。",
+    "longExplanation": "「值」（zhí）と「值得」（zhíde）は、後ろに動詞を従えずに単独で述語になることができます。この用法では、費やしたエネルギー・時間・感情が結果や対象と釣り合っているかどうか（引き合うか・割に合うか）を主観的にジャッジします。特に口語では否定の「不值」「不值得」が多用され、「損である」「馬鹿馬鹿しい」「腹を立てるだけ損だ」というニュアンスを表します。日本語の「割に合う」「価値がある」「（否定で）割に合わない、損だ」に相当します。",
+    "formation": "主語 ＋ (很) 值 / 值得（または：主語 ＋ 不值 / 不值得）",
+    "examples": [
+      {
+        "translation": "ちょっとした些細なことでいちいち腹を立てないでください、損ですよ（割に合いません）。"
+      }
+    ]
   },
   "zh_值_253": {
-    "title": "值 $ (is worth $)",
-    "shortExplanation": "is worth $",
-    "longExplanation": "is worth $. Pinyin: zhí $",
-    "formation": "zhí $"
+    "title": "值 ＋ 金額（動詞：〜の値段がする・〜の値打ちがある）",
+    "shortExplanation": "及物動詞「值」の直後に具体的な金額を置き、その物品がいくらの金銭的価値・価格に相当するかを表します（「〜の値段がする」「〜相当の価値がある」）。",
+    "longExplanation": "「值」（zhí）は金銭的価値を表す他動詞として用いられます。直後に金額を表す数量表現（五十块、一万円など）を伴い、その品物の正当な市場価値や評価額がいくらであるかを示します。「卖」（〜の価格で売る）と異なり、「その物自体にそれだけの価値が備わっている」という価値そのものに焦点を当てます。日本語の「〜の値段がする」「〜の値打ちがある」に相当します。",
+    "formation": "名詞（物品） ＋ 值 ＋ 金額（数詞 ＋ 通貨量詞）",
+    "examples": [
+      {
+        "translation": "この腕時計は50元の値打ちがあります。"
+      }
+    ]
   },
   "zh_其中_254": {
-    "title": "其中 (among them)",
-    "shortExplanation": "among them",
-    "longExplanation": "among them. Pinyin: qízhōng",
-    "formation": "qízhōng"
+    "title": "其中（方位名詞・代名詞：その中・そのうち）",
+    "shortExplanation": "前文ですでに提示された全体的な範囲や集合の内部を指し示します（「その中」「そのうち」）。",
+    "longExplanation": "「其中」（qízhōng）は代名詞的な機能を持つ方位名詞です。前の文やすぐ前の節で挙げられた人や物、出来事といった全体（集合）を指し、「その中」「その範囲内」という意味を表します。文頭に置いて「そのうち、〜」と後続の節を導いたり、「其中的 ＋ 名詞」（その中の〜）の形で連体修飾語として使われたりします。日本語の「その中」「そのうち」に相当します。",
+    "formation": "全体範囲，(主語 ＋ ) 其中 (＋ 的 ＋ 名詞) ＋ 述語",
+    "examples": [
+      {
+        "translation": "私たちはただ本を読むだけでなく、その中から良書を選び取って読む術も身につけなければなりません。"
+      }
+    ]
   },
   "zh_在SITUATION下_255": {
-    "title": "(在) SITUATION 下 (under SITUATION)",
-    "shortExplanation": "under SITUATION",
-    "longExplanation": "under SITUATION. Pinyin: ( zài) SITUATION xià",
-    "formation": "( zài) SITUATION xià"
+    "title": "(在)……下（前置詞構文：〜の状況下で・〜のもとで）",
+    "shortExplanation": "ある動作や事態が生じる条件・状況・背景（あるいは指導や助け）を提示します（「〜の状況下で」「〜のもとで」）。",
+    "longExplanation": "「(在)……下」（(zài)... xià）は、動作や変化が生じる前提条件や環境を示す前置詞・方位詞の呼応構文です。(1)客観的な状況・環境を表す場合：「情况」「条件」「环境」などの名詞が入り、「在一般情况下」（一般的な状況下では）、「在这样的条件下」（このような条件のもとでは）のように用いられます。(2)人の指導や支援、影響下を表す場合：「在老师的帮助下」（先生の指導・援助のもとで）、「在大家的努力下」（皆の努力のもとで）となります。前置詞「在」はしばしば省略されます。日本語の「〜の状況下で」「〜のもとで」に相当します。",
+    "formation": "(在 ＋ ) 状況 / 条件を表す名詞 ＋ 下，主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "一般的な状況下では、お金を多くかければかけるほど、買う品物も良くなります。"
+      }
+    ]
   },
   "zh_估计可能CLAUSE_256": {
-    "title": "估计/可能 CLAUSE (perhaps CLAUSE)",
-    "shortExplanation": "perhaps CLAUSE",
-    "longExplanation": "perhaps CLAUSE. Pinyin: gūjì/ kěnéng CLAUSE",
-    "formation": "gūjì/ kěnéng CLAUSE"
+    "title": "估计 / 可能 ＋ 節（動詞・副詞：おそらく〜・推測するに〜）",
+    "shortExplanation": "節の先頭に置き、話者の推測や見立てを提示します（「おそらく〜だろう」「推測するに〜」）。",
+    "longExplanation": "「估计」（gūjì）と「可能」（kěnéng）を節全体の前に置く構文です。(1)「估计」はもともと「見積もる・推測する」という動詞で、現状の根拠に基づいて「私の見立てでは〜だろう」と見込みを述べる働きをします。(2)「可能」は「可能性としてあり得る・おそらく」という意味の副詞／能願動詞で、推測を表します。節の冒頭にこれらを置くことで、断定を避けて柔らかく推測を伝えることができます。日本語の「おそらく〜だろう」「推測するに〜」に相当します。",
+    "formation": "節1，估计 / 可能 ＋ 節2（推測節）",
+    "examples": [
+      {
+        "translation": "王さんに尋ねてみましたか？おそらく彼なら何か良い方法があるはずです。"
+      }
+    ]
   },
   "zh_估计可能V_257": {
-    "title": "估计/可能 V (perhaps V)",
-    "shortExplanation": "perhaps V",
-    "longExplanation": "perhaps V. Pinyin: gūjì/ kěnéng V",
-    "formation": "gūjì/ kěnéng V"
+    "title": "估计 / 可能 ＋ 動詞（状語：たぶん〜する・おそらく〜である）",
+    "shortExplanation": "動詞述語の直前に状語（連用修飾語）として置き、その動作や状態、あるいは原因を推測します（「たぶん〜である」「おそらく〜する」）。",
+    "longExplanation": "「估计」（gūjì）および「可能」（kěnéng）が動詞（特に繋辞動詞「是」など）の直前に置かれて状語（副詞句）として機能する用法です。動作の生起や事態の原因、理由について、断定を避けて「たぶん〜だろう」「おそらく〜のせいだろう」と推し量るニュアンスを添えます（例：「估计是天气太干」＝たぶん天気が乾燥しすぎているのだろう）。日本語の「たぶん〜だろう」「おそらく〜だと思われる」に相当します。",
+    "formation": "主語 ＋ 估计 / 可能 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "私はまだ北方の気候に慣れていません、たぶん天気が乾燥しすぎているからだと思います。"
+      }
+    ]
   },
   "zh_可能的N_258": {
-    "title": "可能的 N (probable)",
-    "shortExplanation": "probable",
-    "longExplanation": "probable. Pinyin: kěnéng de N",
-    "formation": "kěnéng de N"
+    "title": "可能的 ＋ 名詞（形容詞限定用法：あり得る〜・可能性のある〜）",
+    "shortExplanation": "形容詞「可能」に構造助詞「的」を付け、名詞を修飾して事態の実現性や確率が高いことを表します（「あり得る〜」「可能性の高い〜」）。",
+    "longExplanation": "「可能」（kěnéng）は名詞や助動詞・副詞としての働きのほかに、形容詞として名詞を修飾する連体修飾語（定語）を作る用法があります。「可能的 ＋ 名詞」の形で、実現する確率があることや、推測される有力な要因・結果であることを示します。特に「最可能的」（最も可能性の高い〜）などの形で頻繁に用いられます。日本語の「あり得る〜」「可能性のある〜」「考えられる〜」に相当します。",
+    "formation": "（最 / 极 ＋ ）可能的 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "彼がこんなに何日も授業に来ないのは、最も考えられる原因としては国へ帰ったということだ。"
+      }
+    ]
   },
   "zh_来不及_259": {
-    "title": "来不及 (be too late)",
-    "shortExplanation": "be too late",
-    "longExplanation": "be too late. Pinyin: láibují",
-    "formation": "láibují"
+    "title": "来不及（可能補語否定形：間に合わない・手遅れである）",
+    "shortExplanation": "時間が差し迫っているか、すでに手遅れで何かを行う余裕がないことを表します（「間に合わない」「手遅れだ」）。",
+    "longExplanation": "「来不及」（láibují）は可能補語の否定固定形式で、「来得及」（間に合う）の対義語です。残り時間が足りないことや、事態が進行してしまってもはや取り返しがつかない・手遅れであることを表します。単独で述語になる（文末に「了」を伴うことが多い）ほか、動詞の直前に置いて「〜するのに間に合わない」（例：「来不及说」＝言う暇もない、「来不及赶火车」＝列車に間に合わない）という意味を表します。日本語の「間に合わない」「もう遅い」「手遅れになる」に相当します。",
+    "formation": "（主語 ＋ ）来不及（＋ 動詞 / 目的語）（＋ 了）",
+    "examples": [
+      {
+        "translation": "体に問題が生じてからでは、後悔しても手遅れになってしまいます。"
+      }
+    ]
   },
   "zh_VVO_260": {
-    "title": "V + V + O (VO for a bit (reduplication))",
-    "shortExplanation": "VO for a bit (reduplication)",
-    "longExplanation": "VO for a bit (reduplication). Pinyin: V + V + O",
-    "formation": "V + V + O"
+    "title": "動詞 ＋ 動詞 ＋ 目的語（離合詞の重畳形式 AAB：ちょっと〜する）",
+    "shortExplanation": "動詞＋目的語の構造を持つ「離合詞」の動詞部分のみを重ねるAAB形式で、動作の時間が短いことや気楽さ、試行を表します（「ちょっと〜する」「〜してみる」）。",
+    "longExplanation": "中国語において「動詞＋目的語」の構造を持つ離合詞（散步、游泳、睡觉、跳舞、聊天など）を重畳する場合、動詞成分のみを重ねて「AAB式」（動詞＋動詞＋目的語）の形をとります（例：「散步」→「散散步」、「游泳」→「游游泳」、「睡觉」→「睡睡觉」、「见面」→「见见面」）。動作を短時間だけ気楽に行うニュアンスや、提案・試行を柔らかく伝える語気（口調の緩和）を表します。日本語の「ちょっと〜する」「少し〜してみる」に相当します。",
+    "formation": "動詞 ＋ 動詞 ＋ 目的語（離合詞の AAB 重畳形式）",
+    "examples": [
+      {
+        "translation": "お昼ご飯を食べたら、近くの公園へ少し散歩に行きましょう。"
+      }
+    ]
   },
   "zh_V了VO_261": {
-    "title": "V + 了 + V + O (V’ed O for a bit (reduplication))",
-    "shortExplanation": "V’ed O for a bit (reduplication)",
-    "longExplanation": "V’ed O for a bit (reduplication). Pinyin: V + le + V + O",
-    "formation": "V + le + V + O"
+    "title": "動詞 ＋ 了 ＋ 動詞 ＋ 目的語（完了した動作の重畳形式：少し〜した）",
+    "shortExplanation": "重ねる動詞の間にアスペクト助詞「了」を挟み、過去に短時間行われた動作や気楽に行われた完了動作を表します（「少し〜した」「ちょっと〜してみた」）。",
+    "longExplanation": "過去に行われた動作や、すでに完了した一連の行為について、「少しだけした」「気楽に短時間行った」というニュアンスを込めて述べる際、動詞と動詞の間に完了を表すアスペクト助詞「了」を挟んで「動詞 ＋ 了 ＋ 動詞 ＋ 目的語」の形をとります（例：「睡了睡觉」＝少し寝た、「游了游泳」＝ひと泳ぎした、「做了做作业」＝宿題を少しやった）。休日の過ごし方や気軽な活動を並列して描写する際によく使われます。日本語の「ちょっと〜した」「少し〜してみた」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 了 ＋ 動詞 ＋ 目的語",
+    "examples": [
+      {
+        "translation": "日曜日に私は少し寝て、ひと泳ぎして、宿題を少しやりました。"
+      }
+    ]
   },
   "zh_要是_262": {
-    "title": "要是 (if)",
-    "shortExplanation": "if",
-    "longExplanation": "if. Pinyin: yàoshi",
-    "formation": "yàoshi"
+    "title": "要是（仮定接続詞：もし〜なら・仮に〜とすれば）",
+    "shortExplanation": "口語において仮定条件を提示する接続詞で、しばしば文末の「的话」や後文の「就 / 那么」と呼応します（「もし〜なら」「〜ならば」）。",
+    "longExplanation": "「要是」（yàoshi）は、仮定の条件を導く接続詞で、特に口語表現において非常に頻繁に使われます。「如果」や「假如」に比べて親しみやすい日常会話の響きを持ちます。前節の文頭に置かれ、しばしば節末に「的话」を伴って「要是……的话」の呼応を作り、後節では「就」や「那么」を用いてその条件に応じた結果や判断を述べます。日本語の「もし〜なら」「〜であれば」に相当します。",
+    "formation": "要是 ＋ 条件節（＋ 的话），（那么 / 就）＋ 帰結節",
+    "examples": [
+      {
+        "translation": "もし品質が良いのであれば、値段が少し高いくらい何でもありません。"
+      }
+    ]
   },
   "zh_既又也还_263": {
-    "title": "既..... 又/也/还…… (not only… but also…)",
-    "shortExplanation": "not only… but also…",
-    "longExplanation": "not only… but also…. Pinyin: jì..... yòu/ yě/ hái……",
-    "formation": "jì..... yòu/ yě/ hái……"
+    "title": "既…… 又 / 也 / 还……（並列接続構文：〜でもあり、また〜でもある・〜だけでなく〜も）",
+    "shortExplanation": "同一の対象について、二つの性質や動作・状態が並存していることを表します（「〜でもあり、また〜でもある」「〜だし、その上〜だ」）。",
+    "longExplanation": "「既……又 / 也 / 还……」（jì... yòu / yě / hái...）は、対等の文法要素（形容詞、動詞句、あるいは短い節）を結びつけ、二つの性質・状態・効能が同一の主体に同時に存在することを表す並列の相関構文です。二つの事柄は通常、同じ方向性（両方とも肯定的な利点、または両方とも否定的な欠点）を持ちます。「既……又……」が最も一般的で、「也」「还」を用いると「その上〜も」という補足・累加のニュアンスが加わります。日本語の「〜でもあり、また〜でもある」「〜だし、〜でもある」に相当します。",
+    "formation": "主語 ＋ 既 ＋ 述語1，又 / 也 / 还 ＋ 述語2",
+    "examples": [
+      {
+        "translation": "散歩は体を動かすこともできるし、ダイエットにもなります。"
+      }
+    ]
   },
   "zh_使OAV_264": {
-    "title": "使 O A/V (make O A/V)",
-    "shortExplanation": "make O A/V",
-    "longExplanation": "make O A/V. Pinyin: shǐ O A/V",
-    "formation": "shǐ O A/V"
+    "title": "使 ＋ 目的語 ＋ 形容詞 / 動詞（兼語文・使役構文：〜に…させる・〜を…にする）",
+    "shortExplanation": "使役動詞「使」を用いて兼語文を作り、ある要因や手段が対象に影響を及ぼし、特定の動作を行わせたり状態を変化させたりすることを表します（「〜に…させる」「〜を…にする」）。",
+    "longExplanation": "「使」（shǐ）は書き言葉的で改まった使役動詞であり、兼語文（「使」の目的語が後続する動詞・形容詞の意味上の主語となる文）を形成します。「使 ＋ 目的語 ＋ 動詞 / 形容詞」の構造をとり、ある事象や働きかけが結果的・論理的に対象に作用して、その感情、認識、行動、状態を変化させることを表します。「让」や「叫」が日常口語の使役で多用されるのに対し、「使」は客観的・論理的・説明的な文脈で好まれます。日本語の「〜に…させる」「〜を…の状態にする」に相当します。",
+    "formation": "原因 / 手段 ＋ 使 ＋ 目的語 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "どうすれば彼女に私のことを好きになってもらえるだろうか。"
+      }
+    ]
   },
   "zh_只要就_265": {
-    "title": "只要……(就)…… (as long as… (then)…)",
-    "shortExplanation": "as long as… (then)…",
-    "longExplanation": "as long as… (then)…. Pinyin: zhǐyào……( jiù)……",
-    "formation": "zhǐyào……( jiù)……"
+    "title": "只要……（就）……（十分条件接続構文：〜しさえすれば…・〜でありさえすれば…）",
+    "shortExplanation": "十分条件を提示する構文で、その条件を満たしさえすれば必然的に望ましい結果や事態が得られることを表します（「〜しさえすれば…」）。",
+    "longExplanation": "「只要……(就)……」（zhǐyào... jiù...）は、十分条件を表す代表的な相関接続詞構文です。前節で「只要」を用いて一つの条件を提示し、その条件が満たされさえすれば、後節に導かれる結果（副詞「就」と呼応）が確実に成立することを示します。「只有……才……」（〜してこそ初めて…という必要条件）とは異なり、「これさえあれば十分だ」という充足条件を強調します。日本語の「〜しさえすれば（…だ）」「〜でさえあれば…」に相当します。",
+    "formation": "只要 ＋ 十分条件節，（就）＋ 帰結節",
+    "examples": [
+      {
+        "translation": "今回あなたがしっかり準備しさえすれば、きっと良い試合ができるはずです。"
+      }
+    ]
   },
   "zh_可不是_266": {
-    "title": "可不是！ (No kidding!)",
-    "shortExplanation": "No kidding!",
-    "longExplanation": "No kidding!. Pinyin: kěbushì！",
-    "formation": "kěbushì！"
+    "title": "可不是！（感嘆詞・口語応答：まさにその通り！・全くだよ！）",
+    "shortExplanation": "会話の相づちとして独立して用いられ、相手の意見や感想に対して強い同意や共感を示します（「まさにその通り！」「全くそうだね！」）。",
+    "longExplanation": "「可不是！」（kěbushì!）または「可不是吗！」は、日常会話で多用される生き生きとした口語の慣用表現です。対話において相手が口にした発言や感想、事実の指摘に対して「本当にその通りだ」「全く同感だ」と強く同意・相づちを打つ際に文頭で使われます。驚きや懐かしさ、感慨深さを共有する場面で非常によく合致します。日本語の「まったくその通り！」「全くだよ！」「本当それ！」に相当します。",
+    "formation": "話者Aの発言。話者B：可不是！＋ 同意の補足",
+    "examples": [
+      {
+        "translation": "A：私たちが卒業してもう10年も経つなんて思いもしなかったよ。B：まったくその通りだね！ 時間が経つのは本当に早くて、みんなにすごく会いたいよ。"
+      }
+    ]
   },
   "zh_因此_268": {
-    "title": "因此 (therefore)",
-    "shortExplanation": "therefore",
-    "longExplanation": "therefore. Pinyin: yīncǐ",
-    "formation": "yīncǐ"
+    "title": "因此（因果接続詞：それゆえに・したがって・だからこそ）",
+    "shortExplanation": "後節の冒頭に置き、前節で述べた事柄や原因を根拠として、そこから導かれる当然の結果や結論を提示します（「それゆえに」「したがって」）。",
+    "longExplanation": "「因此」（yīncǐ）は、原因と結果（因果関係）を結ぶ接続詞であり、書き言葉やフォーマルな会話で好まれます。「因」（〜により）＋「此」（これ）という語源の通り、「このことによって」「その結果として」という意味を持ちます。前節で背景や原因を提示し、後節の文頭（読点の後）に「因此」を置いて、自然に導かれる結果や論理的結論を述べます。前節に「因为」がなくても単独で用いられます。日本語の「それゆえに」「したがって」「それだから」に相当します。",
+    "formation": "原因節，因此 ＋ 結果節",
+    "examples": [
+      {
+        "translation": "私は彼と知り合って長年になるので、それゆえに彼の性格をよく理解しています。"
+      }
+    ]
   },
   "zh_往往_269": {
-    "title": "往往 (usually, often)",
-    "shortExplanation": "usually, often",
-    "longExplanation": "usually, often. Pinyin: wǎngwǎng",
-    "formation": "wǎngwǎng"
+    "title": "往往（頻度・傾向副詞：往々にして〜である・よく〜しがちである）",
+    "shortExplanation": "一定の条件や規則的なパターンに基づき、ある事態や現象が生じやすい傾向にあることを表します（「往々にして〜である」「よく〜する」）。",
+    "longExplanation": "「往往」（wǎngwǎng）は、過去の経験や一定の客観的条件のもとで、ある状況や現象が規則的・反復的に現れやすいという「傾向や法則性」を表す副詞です。「常常」（単に頻度が高いことを表し未来や主観的意志にも使える）と異なり、「往往」は特定の前提条件や背景が存在することが多く、未来の予定や個人の主観的希望には用いられません。日本語の「往々にして〜である」「〜することが多い」「〜しがちである」に相当します。",
+    "formation": "主語 ＋（条件 / 状況 ＋）往往 ＋ 述語",
+    "examples": [
+      {
+        "translation": "女の子の服の色の選び方は、往々にして彼女たちの性格と関係があるものです。"
+      }
+    ]
   },
   "zh_经常常_270": {
-    "title": "经常/常 (often)",
-    "shortExplanation": "often",
-    "longExplanation": "often. Pinyin: jīngcháng/ cháng",
-    "formation": "jīngcháng/ cháng"
+    "title": "经常 / 常（頻度副詞：よく・いつも・しょっちゅう）",
+    "shortExplanation": "動詞の前に置き、動作や行為が頻繁に繰り返して行われることを表します（「よく〜する」「いつも〜する」）。",
+    "longExplanation": "「经常」（jīngcháng）およびその短縮形「常」（cháng）は、動作や事態の発生頻度が高いことを表す最も基本的な頻度副詞です。過去の習慣、現在の日常的行為、あるいは未来の予定に至るまで幅広く用いられます。「往往」のように一定の客観的法則や前提条件を必要とせず、話者の主観的な意志や単なる習慣・好みを表すのにも適しています。否定形は「不经常」「不常」（あまり〜しない）です。日本語の「よく〜する」「頻繁に〜する」「いつも〜する」に相当します。",
+    "formation": "主語 ＋ 经常 / 常 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "大学時代、私はスポーツが大好きで、よくバスケットボールやサッカーをしていました。"
+      }
+    ]
   },
   "zh_难道_271": {
-    "title": "难道 (could it be that)",
-    "shortExplanation": "could it be that",
-    "longExplanation": "could it be that. Pinyin: nándào",
-    "formation": "nándào"
+    "title": "难道（語気副詞：まさか〜ではあるまいか・一体〜というのか）",
+    "shortExplanation": "反語疑問文の文頭または主語の前に置き、驚き、疑念、あるいは詰問の語気を強めます（「まさか〜なのか」「よもや〜ではあるまいな」）。",
+    "longExplanation": "「难道」（nándào）は、反語文（修辞疑問文）で強い語気を添える専門の語気副詞です。文頭または主語の直後に置かれ、文末にはよく「吗」や「了」が呼応します。「难道 ＋ 肯定形」は強い否定の意図を表し、「难道 ＋ 否定形」は強い肯定の事実を暗に示します。話者が目の前の事態に驚いたり、常識に反する行動に呆れて反問・詰問したりする際に用いられます。日本語の「まさか〜ではあるまいな」「まさか〜なのか」「一体〜というのか」に相当します。",
+    "formation": "难道 ＋（主語 ＋）述語（＋ 吗 / 了）？",
+    "examples": [
+      {
+        "translation": "どうしてまたこんなにクッキーやチョコレートを買ったの？ まさかもうダイエットはやめちゃったの？"
+      }
+    ]
   },
   "zh_通过_272": {
-    "title": "通过 (through)",
-    "shortExplanation": "through",
-    "longExplanation": "through. Pinyin: tōngguò",
-    "formation": "tōngguò"
+    "title": "通过（介詞：〜を通じて・〜によって・〜を経て）",
+    "shortExplanation": "手段、媒介、あるいは方法を導き、目的を達成するための道筋や手段を表します（「〜を通じて」「〜によって」）。",
+    "longExplanation": "「通过」（tōngguò）は介詞（前置詞）として用いられる際、ある目的を達成するための手段、媒介、仲介者、あるいは方法を提示します。「通过」の後には仲介となる人物・機関や、具体的手段となる行為が続きます（例：「通过朋友介绍」＝友人の紹介を通じて、「通过努力」＝努力によって、「通过学习」＝学習を通して）。「经过」（経験する過程や時間の経過に力点がある）と比べ、「通过」は「目的達成のための手段・ルート」に焦点を当てる点が特徴です。日本語の「〜を通じて」「〜によって」「〜を経て」に相当します。",
+    "formation": "通过 ＋ 手段 / 媒介 / 方法，（主語 ＋）帰結節（または：主語 ＋ 通过 ＋ 手段 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "いかなる成功も、努力を通じてのみ手に入れることができるのです。"
+      }
+    ]
   },
   "zh_经过_273": {
-    "title": "经过 (after having gone through)",
-    "shortExplanation": "after having gone through",
-    "longExplanation": "after having gone through. Pinyin: jīngguò",
-    "formation": "jīngguò"
+    "title": "经过（介詞：〜を経て・〜を経験した後に）",
+    "shortExplanation": "時間的な経過や事態の発展プロセス、あるいは一連の体験を経たことを提示します（「〜を経て」「〜を経験した末に」）。",
+    "longExplanation": "「经过」（jīngguò）が介詞（前置詞）として用いられる場合、ある結果に至るまでに辿った「プロセスの経過」「時間的経緯」「試練や体験」を導入します。しばしば後ろに「之后」「以后」を伴って「经过……之后（以后）」の枠組みを形成します。手段や媒介を強調する「通过」と異なり、「经过」は動作や事態が発展・推移していくプロセスそのものや、時間の推移に力点が置かれます。日本語の「〜を経て」「〜を経験したのちに」「〜の末に」に相当します。",
+    "formation": "经过 ＋ プロセス / 体験 / 時間経過（＋ 之后 / 以后），主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "度重なる失敗を経験した末に、彼はついに成功を収めました。"
+      }
+    ]
   },
   "zh_通过_274": {
-    "title": "通过 (pass through)",
-    "shortExplanation": "pass through",
-    "longExplanation": "pass through. Pinyin: tōngguò",
-    "formation": "tōngguò"
+    "title": "通过（動詞：通り抜ける・通行する）",
+    "shortExplanation": "動詞として、道や空間の一端から他端へと通り抜けること、通行することを表します（「通り抜ける」「通過する」「通行する」）。",
+    "longExplanation": "「通过」（tōngguò）は移動を表す動詞として用いられる場合、道や特定の空間、関所、橋などを一方から他方へと通過・横断することを意味します（例：「通过大桥」＝大橋を渡る、「通过海关」＝税関を通過する、「步行通过」＝徒歩で通り抜ける）。日本語の「通り抜ける」「通過する」「通行する」に相当します。",
+    "formation": "移動方法（步行 / 开车…） ＋ 通过（＋ 場所）",
+    "examples": [
+      {
+        "translation": "この通りは徒歩でのみ通行できます。"
+      }
+    ]
   },
   "zh_经过_275": {
-    "title": "经过 (pass by)",
-    "shortExplanation": "pass by",
-    "longExplanation": "pass by. Pinyin: jīngguò",
-    "formation": "jīngguò"
+    "title": "经过（動詞：通りかかる・通り過ぎる）",
+    "shortExplanation": "動詞として、目的地へ向かう途中で特定の場所を通ること、通りかかることを表します（「通りかかる」「通り過ぎる」「通過する」）。",
+    "longExplanation": "「经过」（jīngguò）が移動を表す動詞として用いられる場合、ある場所へ向かう途中で、特定の地点や場所を通過すること、通りかかることを指します（例：「经过北京」＝北京を経由する、「经过超市」＝スーパーの前を通り過ぎる、「正好经过」＝ちょうど通りかかる）。空間を突き抜けるニュアンスの「通过」と異なり、道中での通過地点を指す点に特徴があります。日本語の「通りかかる」「通り過ぎる」「経由する」に相当します。",
+    "formation": "主語 ＋ 经过 ＋ 場所 / 地点",
+    "examples": [
+      {
+        "translation": "ちょうどここを通りかかったので、ついでに様子を見に来ました。"
+      }
+    ]
   },
   "zh_通过_276": {
-    "title": "通过 (to pass (an exam, interview or resolution))",
-    "shortExplanation": "to pass (an exam, interview or resolution)",
-    "longExplanation": "to pass (an exam, interview or resolution). Pinyin: tōngguò",
-    "formation": "tōngguò"
+    "title": "通过（動詞：合格する・通過する・可決される）",
+    "shortExplanation": "動詞として、試験や面接に合格すること、あるいは法案や議案が承認・可決されることを表します（「合格する」「通過する」「可決される」）。",
+    "longExplanation": "「通过」（tōngguò）は抽象的な基準や審査を満たすことを表す動詞として用いられます。(1)試験、面接、検査などに合格・パスすること（例：「通过考试」＝試験に合格する、「通过面试」＝面接を通過する、「通过体检」＝健康診断をパスする）；(2)法案、決議、提案などが正式に承認・可決されること（例：「通过决议」＝決議を採択・可決する）。日本語の「合格する」「通過する」「パスする」「可決される」に相当します。",
+    "formation": "主語 ＋ 通过 ＋ 試験 / 面接 / 基準 / 議案",
+    "examples": [
+      {
+        "translation": "私はその会社の面接に合格しました。"
+      }
+    ]
   },
   "zh_经过_277": {
-    "title": "经过 (the whole story)",
-    "shortExplanation": "the whole story",
-    "longExplanation": "the whole story. Pinyin: jīngguò",
-    "formation": "jīngguò"
+    "title": "经过（名詞：経緯・一部始終・経過）",
+    "shortExplanation": "名詞として、事柄の始まりから終わりまでの過程や成り行きを表します（「経緯」「一部始終」「経過」）。",
+    "longExplanation": "「经过」（jīngguò）は名詞として用いられる場合、事件や出来事がどのように発生し、進展し、結末に至ったかという一連のプロセスや成り行きを指します（例：「事情的经过」＝事の経緯・一部始終、「事故经过」＝事故の経過）。文中では目的語や定語として多用されます。日本語の「経緯」「一部始終」「経過」「成り行き」に相当します。",
+    "formation": "事柄 / 名詞 ＋ 的 ＋ 经过",
+    "examples": [
+      {
+        "translation": "王さんは事の経緯を私に話してくれました。"
+      }
+    ]
   },
   "zh_可是_278": {
-    "title": "可是 (but)",
-    "shortExplanation": "but",
-    "longExplanation": "but. Pinyin: kěshì",
-    "formation": "kěshì"
+    "title": "可是（接続詞：しかし・だが・けれども）",
+    "shortExplanation": "逆接を表す接続詞で、後節の冒頭に置き、前節の内容と相反する事実や対比を示します（「しかし」「だが」「けれども」）。",
+    "longExplanation": "「可是」（kěshì）は逆接の接続詞として広く用いられます。前の節で述べた事柄に対して、予想外の事実や対立する状況を後節で提示する際に使われます。「但是」とほぼ同義ですが、「可是」の方が口語的な柔らかい響きを持つ傾向があります。前節に「虽然」（〜だけれども）を伴って「虽然……，可是……」の呼応関係を作ることもよくあります。日本語の「しかし」「だが」「けれども」「ところが」に相当します。",
+    "formation": "節1，可是 ＋ 節2（または：虽然 ＋ 節1，可是 ＋ 節2）",
+    "examples": [
+      {
+        "translation": "当時、彼女の両親や親戚は誰も支持しませんでしたが、彼女は自分の選択を貫きました。"
+      }
+    ]
   },
   "zh_结果_279": {
-    "title": "结果 (result)",
-    "shortExplanation": "result",
-    "longExplanation": "result. Pinyin: jiéguǒ",
-    "formation": "jiéguǒ"
+    "title": "结果（名詞：結果・成果）",
+    "shortExplanation": "名詞として、ある行動や出来事、調査などの最終的な結末や状態を表します（「結果」「成果」）。",
+    "longExplanation": "「结果」（jiéguǒ）は名詞として用いられる場合、一連の行動、努力、調査、試合などがもたらした最終的な状態やデータを指します（例：「调查结果」＝調査結果、「考试结果」＝試験結果、「比赛结果」＝試合結果、「满意的结果」＝満足のいく結果）。文中で主語、目的語、定語として広く機能します。日本語の「結果」「成果」に相当します。",
+    "formation": "名詞 / 動詞 ＋ 结果（例：调查 / 比赛 / 考试 / 实验 ＋ 结果）",
+    "examples": [
+      {
+        "translation": "調査結果を提出してください。"
+      }
+    ]
   },
   "zh_结果_280": {
-    "title": "结果…… (As a result, …)",
-    "shortExplanation": "As a result, …",
-    "longExplanation": "As a result, …. Pinyin: jiéguǒ……",
-    "formation": "jiéguǒ……"
+    "title": "结果……（接続詞：その結果・結局）",
+    "shortExplanation": "接続詞として後節の冒頭に置き、前節の行動や状況から生じた結末や結果を導きます（「その結果」「結局」「結果として」）。",
+    "longExplanation": "「结果」（jiéguǒ）は文と文をつなぐ接続詞としても多用されます。前節で述べられた原因や一連の出来事・行動を受けて、その末に生じた最終的な帰結や状況を後節の文頭で示します。結果は肯定的なものでも否定的なものでも使えます。前節に「因为」などを伴わず、単独で因果の結末を示すことができます。日本語の「その結果」「結局」「結果として」に相当します。",
+    "formation": "原因・行動を表す節，结果 ＋ 結果を表す節",
+    "examples": [
+      {
+        "translation": "先学期、彼はとても熱心に勉強し、その結果テストに合格しました。"
+      }
+    ]
   },
   "zh_上_281": {
-    "title": "上 # (over #)",
-    "shortExplanation": "over #",
-    "longExplanation": "over #. Pinyin: shàng #",
-    "formation": "shàng #"
+    "title": "上 ＋ 大きな数詞（動詞・副詞：～に達する・～を超える・数百／数千もの）",
+    "shortExplanation": "「百」「千」「万」などの大きな数量単位の前に置き、数量がその水準に達することや超えることを強調します（「～に達する」「～を超える」「数百/数千もの」）。",
+    "longExplanation": "「上」（shàng）は、百、千、万、億などの比較的大きな数量単位の直前に置かれることで、「その大きな数量に達する」「～を超える」という意味を表します（例：「上百人」＝数百人もの人、「上千件」＝数千件に達する、「上百年」＝百年余り／百年に達する）。数量が非常に多いこと、規模が大きいこと、または年月の長さなどを誇張・強調する語感を伴います。日本語の「～に達する」「～を超える」「数百／数千もの」に相当します。",
+    "formation": "上 ＋ 大きな数量単位（百 / 千 / 万 / 亿） ＋ 量詞 / 名詞",
+    "examples": [
+      {
+        "translation": "この都市の地下鉄にはすでに百年以上もの歴史があります。"
+      }
+    ]
   },
   "zh_不过_282": {
-    "title": "不过 (nevertheless)",
-    "shortExplanation": "nevertheless",
-    "longExplanation": "nevertheless. Pinyin: bùguò",
-    "formation": "bùguò"
+    "title": "不过（接続詞：ただし・もっとも・ただ・しかし）",
+    "shortExplanation": "軽い逆接や補足を導く接続詞で、後節の文頭に置き、前節の内容に対する限定や例外を示します（「ただし」「もっとも」「ただ」「しかし」）。",
+    "longExplanation": "「不过」（bùguò）は接続詞として用いられる場合、「但是」や「可是」に比べて逆接の語感がやや穏やかで、前節の内容を全面的に覆すのではなく、補足説明や例外、留保事項を付け加えるニュアンスを持ちます。口語・文章語の双方で自然に使われます。日本語の「ただし」「もっとも」「ただ」「しかしながら」に相当します。",
+    "formation": "節1，不过 ＋ 節2",
+    "examples": [
+      {
+        "translation": "私はもともと弁護士になりたかったのですが、後になって報道やニュースの方により興味があることに気づきました。"
+      }
+    ]
   },
   "zh_不过V_283": {
-    "title": "不过 V (only V)",
-    "shortExplanation": "only V",
-    "longExplanation": "only V. Pinyin: bùguò V",
-    "formation": "bùguò V"
+    "title": "不过 ＋ 動詞（副詞：単に～にすぎない・たかだか～だけだ）",
+    "shortExplanation": "動詞の前に置く副詞で、その動作や状態がごく限られた範囲にとどまること、大したことではないことを表します（「単に～にすぎない」「たかだか～だけだ」）。",
+    "longExplanation": "「不过」（bùguò）は動詞述語の直前に置かれる副詞として、「只」や「只不过」と同様に「単に〜するだけだ」という範囲の限定と軽視のニュアンスを表します。事態が大した深刻さや重要性を持たず、わずかな行為にとどまることを示します。文末に「罢了」や「而已」を呼応させることも多く見られます。日本語の「単に〜にすぎない」「たかだか〜しただけだ」「〜したまでだ」に相当します。",
+    "formation": "主語 ＋ 不过 ＋ 動詞（＋ 目的語）（＋ 罢了 / 而已）",
+    "examples": [
+      {
+        "translation": "私たちは単に仕事の話題について少し話しただけで、それ以外のことは何も話していません。"
+      }
+    ]
   },
   "zh_确实_284": {
-    "title": "确实 (indeed)",
-    "shortExplanation": "indeed",
-    "longExplanation": "indeed. Pinyin: quèshí",
-    "formation": "quèshí"
+    "title": "确实（副詞：確かに・本当に・事実として）",
+    "shortExplanation": "述語の前に置く副詞で、事柄が疑いようのない事実であることや、本物であることを強く肯定します（「確かに」「本当に」「間違いなく」）。",
+    "longExplanation": "「确实」（quèshí）は確信や客観的な真実性を表す副詞です。動詞、形容詞、または「是…」の前に置かれ、ある状況や判断が事実に合致しており紛れもないことを強調します。しばしば前節で「确实」を用いて事実を認めた上で、後節で「但是」「但」を用いて逆接・補足につなげる構文でも用いられます。日本語の「確かに」「本当に」「間違いなく」に相当します。",
+    "formation": "主語 ＋ 确实 ＋ 述語（動詞 / 形容詞 / 是…）",
+    "examples": [
+      {
+        "translation": "愛情が結婚の重要な理由であることは確かですが、愛情だけでは不十分です。"
+      }
+    ]
   },
   "zh_在S看来_285": {
-    "title": "在 S 看来 (the way S see it)",
-    "shortExplanation": "the way S see it",
-    "longExplanation": "the way S see it. Pinyin: zài S kànlai",
-    "formation": "zài S kànlai"
+    "title": "在……看来（前置詞句：～から見れば・～の考えでは）",
+    "shortExplanation": "文頭または主語の前に置き、ある特定の主体や人物の立場・視点から見た判断を導きます（「～から見れば」「～の考えでは」「～にしてみれば」）。",
+    "longExplanation": "「在 ＋ 主体（名詞 / 代名詞） ＋ 看来」（zài... kànlai）は、誰の立場や視点からの意見・見解であるかを明示する前置詞構文です。カンマを挟んだ後続の節で、その主体による主観的な判断、感想、評価が述べられます（例：「在我看来」＝私の考えでは、「在大家看来」＝みんなの目から見れば）。日本語の「～から見れば」「～の視点では」「～に言わせれば」に相当します。",
+    "formation": "在 ＋ 名詞 / 代名詞（主体） ＋ 看来，判断を表す節",
+    "examples": [
+      {
+        "translation": "多くの人から見れば、ポップスを聴くことは単に若者の趣味にすぎません。"
+      }
+    ]
   },
   "zh_由于_286": {
-    "title": "由于…… (because …)",
-    "shortExplanation": "because …",
-    "longExplanation": "because …. Pinyin: yóuyú……",
-    "formation": "yóuyú……"
+    "title": "由于……（接続詞：～のために・～によって・～のおかげで）",
+    "shortExplanation": "原因や理由を導く接続詞で、前節の文頭に置き、客観的な原因を示して後節の結果へつなぎます（「～のために」「～によって」「～のおかげで」）。",
+    "longExplanation": "「由于」（yóuyú）は原因・理由を導く接続詞で、「因为」よりも客観的で改まった書面語の響きを持ちます。前節の冒頭に置いて事象の原因・根拠を提示し、後節でその結果を述べます。後節には「所以」「因此」「因而」などの接続表現が呼応することがよくあります。日本語の「～のために」「～によって」「～ゆえに」「～のおかげで」に相当します。",
+    "formation": "由于 ＋ 原因を表す節・句，（因此 / 所以 ＋）結果を表す節",
+    "examples": [
+      {
+        "translation": "私たちの共同の努力によって、任務は予定より早く達成されました。"
+      }
+    ]
   },
   "zh_由于N_287": {
-    "title": "由于 N (due to N)",
-    "shortExplanation": "due to N",
-    "longExplanation": "due to N. Pinyin: yóuyú N",
-    "formation": "yóuyú N"
+    "title": "由于 ＋ 名詞（前置詞：～により・～の理由で・～のため）",
+    "shortExplanation": "名詞や名詞句の直前に置く前置詞で、後続する事態の原因や理由を端的に示します（「～により」「～の理由で」「～のため」）。",
+    "longExplanation": "「由于」（yóuyú）は前置詞として、名詞または名詞句を直接従えて原因を表す前置詞句を構成します（例：「由于天气原因」＝天候上の理由により、「由于种种原因」＝さまざまな事情により、「由于身体原因」＝健康上の理由で）。文頭または主語の直後に置かれ、文全体の状語（副詞句）として機能します。日本語の「～により」「～の理由で」「～のために」に相当します。",
+    "formation": "由于 ＋ 名詞 / 名詞句，主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "さまざまな理由により、私たちは当初の計画を変更せざるを得ませんでした。"
+      }
+    ]
   },
   "zh_比如_288": {
-    "title": "比如…… (for example, ……)",
-    "shortExplanation": "for example, ……",
-    "longExplanation": "for example, ……. Pinyin: bǐrú……",
-    "formation": "bǐrú……"
+    "title": "比如……（動詞・接続詞：例えば・例を挙げると）",
+    "shortExplanation": "前述の一般的な説明や総論に対して、具体的な実例を挙げて説明を具体化します（「例えば」「例を挙げると」「～のような」）。",
+    "longExplanation": "「比如」（bǐrú）は動詞または接続語として、前に述べた抽象的な概念や総括的な事柄に対して、具体的な例証を導くために用いられます。後続には名詞、語句、あるいは完全な複文を置くことができます。列挙の末尾に「等等」や「等」（～など）を伴うことが非常に一般的です。日本語の「例えば」「例を挙げると」「～などといった」に相当します。",
+    "formation": "総括的な説明，比如 ＋ 具体例1，具体例2（＋ 等 / 等等）",
+    "examples": [
+      {
+        "translation": "旅行の前には計画を立てるのが賢明です。例えばいくつの場所を訪れるか、どのように乗り物に乗るかなどです。"
+      }
+    ]
   },
   "zh_连O也都V_289": {
-    "title": "连 O 也/都 V (even V O)",
-    "shortExplanation": "even V O",
-    "longExplanation": "even V O. Pinyin: lián O yě/ dōu V",
-    "formation": "lián O yě/ dōu V"
+    "title": "连 ＋ 目的語 ＋ 也/都 ＋ 動詞（～でさえも…する）",
+    "shortExplanation": "目的語を「连」の直後に前置し、「连……也/都……」の構文で極端な事例を挙げて強調します（「～でさえも…」「～までも…」）。",
+    "longExplanation": "「连……也/都……」（lián... yě/ dōu...）は極端な事例を挙げて事態を強調する代表的な構文です。目的語を「连」の後ろ（文頭または主語の直後）に配置することで、「その極端な対象でさえも動作の対象になる（あるいは達成できる／できない）」という意外性や高度な程度を際立たせます。日本語の「～でさえも…」「～までも…できる／できない」に相当します。",
+    "formation": "（主語 ＋）连 ＋ 目的語 ＋ 也 / 都 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "あなたはずごいですね、中国語の新聞でさえ読んで理解できるなんて。"
+      }
+    ]
   },
   "zh_连S也都V_290": {
-    "title": "连 S 也/都 V (even S V)",
-    "shortExplanation": "even S V",
-    "longExplanation": "even S V. Pinyin: lián S yě/ dōu V",
-    "formation": "lián S yě/ dōu V"
+    "title": "连 ＋ 主語 ＋ 也/都 ＋ 動詞（～でさえも…）",
+    "shortExplanation": "主語の前に「连」を置き、最も代表的または極端な主体を提示して後続の事態を強調します（「～でさえも…」「～自身も…」）。",
+    "longExplanation": "「连……也/都……」構文において、主語の直前に「连」を配置する用法です。最も身近な存在や当然できるはずの主体を極端な例として挙げることで、「この主体でさえもそうであるならば、他の人はなおさらだ」というニュアンスを際立たせます。反語表現や仮定条件節で頻繁に使用されます。日本語の「～でさえも…」「～自身も…」に相当します。",
+    "formation": "连 ＋ 主語 ＋ 也 / 都 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "もしあなた自身でさえ自分を好きになれないのなら、どうして他人に好きになってもらえるでしょうか。"
+      }
+    ]
   },
   "zh_否则_291": {
-    "title": "否则 (if not, otherwise)",
-    "shortExplanation": "if not, otherwise",
-    "longExplanation": "if not, otherwise. Pinyin: fǒuzé",
-    "formation": "fǒuzé"
+    "title": "否则（接続詞：そうでなければ・さもなければ）",
+    "shortExplanation": "反対の仮定を表す接続詞で、後節の冒頭に置き「もしそうでなければ…」という帰結や推測を導きます（「そうでなければ」「さもなければ」）。",
+    "longExplanation": "「否则」（fǒuzé）は「如果不是这样」（もしそうでなければ）の縮約から生まれた接続詞で、書面語や改まった口語でよく用いられます。前節で述べた状況や要求が満たされない場合に起こりうる結果や、逆の前提に立った推論を後節の冒頭で導きます。日本語の「そうでなければ」「さもなければ」に相当します。",
+    "formation": "節1，否则 ＋ 節2（結果・推測）",
+    "examples": [
+      {
+        "translation": "彼はきっと重要な用事があってあなたを探しているはずです。そうでなければこんなに何度も電話をかけてくることはありません。"
+      }
+    ]
   },
   "zh_无论不管Q都_292": {
-    "title": "无论/不管 Q 都 (regardless of Q)",
-    "shortExplanation": "regardless of Q",
-    "longExplanation": "regardless of Q. Pinyin: wúlùn/ bùguǎn Q dōu",
-    "formation": "wúlùn/ bùguǎn Q dōu"
+    "title": "无论/不管 ＋ 疑問詞 ＋ 都（～であってもすべて…）",
+    "shortExplanation": "前節で「无论/不管」に疑問詞や選択形式を伴い、後節で「都」と呼応して、いかなる条件下でも結果が変わらない無条件の事態を表します（「いかに～であってもみな…」「～にかかわらずすべて…」）。",
+    "longExplanation": "「无论」（wúlùn、改まった表現）および「不管」（bùguǎn、口語的表現）は、無条件の譲歩関係を導く接続詞です。前節には疑問詞（什么、怎么、谁、哪儿など）や反復・選択形式（A还是B、肯定・否定の重複形式など）を置き、後節で副詞の「都」（または「也」）と呼応させることで、「どのような事情や条件があろうとも、結果は一律で変わらない」ことを示します。日本語の「いかに～であってもみな…」「～にかかわらずすべて…」に相当します。",
+    "formation": "无论 / 不管 ＋ 疑問詞 / 選択形式 ＋ 都 ＋ 動詞 / 形容詞",
+    "examples": []
   },
   "zh_然而_294": {
-    "title": "然而 (but)",
-    "shortExplanation": "but",
-    "longExplanation": "but. Pinyin: rán'ér",
-    "formation": "rán'ér"
+    "title": "然而（接続詞：しかしながら・けれども・だが）",
+    "shortExplanation": "書面語で用いられる逆接の接続詞で、後節の冒頭に置いて前節と対立する事態を提示します（「しかしながら」「けれども」「だが」）。",
+    "longExplanation": "「然而」（rán'ér）は書面語的な色合いが強い逆接の接続詞です。文頭または後節の冒頭に置かれ、前節で述べられた事実や前提とは相反する展開、意外な結果、あるいは異なる見解を導きます。「但是」や「可是」よりも文語的で改まった文章や論説文などで多用されます。日本語の「しかしながら」「だが」「けれども」に相当します。",
+    "formation": "節1，然而 ＋ 節2",
+    "examples": []
   },
   "zh_同时_298": {
-    "title": "同时…… (at the same time, …)",
-    "shortExplanation": "at the same time, …",
-    "longExplanation": "at the same time, …. Pinyin: tóngshí……",
-    "formation": "tóngshí……"
+    "title": "同时……（接続詞・副詞：同時に…・それと同時に…）",
+    "shortExplanation": "後節の冒頭に置き、二つの動作や状態が並行して存在すること、または事柄がさらに付加されることを表します（「同時に…」「それと同時に…」）。",
+    "longExplanation": "「同时」（tóngshí）は後節の文頭で接続詞または接続副詞として機能し、前節の事柄と同一の時間軸で別の動作や状態が同時並行して生じること、あるいは並列・累加（～であると同時に、さらに…でもある）の関係を示します。後節ではしばしば「也」や「还」と連動して使われます。日本語の「同時に…」「それと同時に…」「あわせて…」に相当します。",
+    "formation": "節1，同时（也 / 还） ＋ 節2",
+    "examples": [
+      {
+        "translation": "読書は知識を豊かにしてくれますし、同時に感情も豊かにしてくれます。"
+      }
+    ]
   },
   "zh_的同时_299": {
-    "title": "……的同时 (at the same time when…)",
-    "shortExplanation": "at the same time when…",
-    "longExplanation": "at the same time when…. Pinyin: …… de tóngshí",
-    "formation": "…… de tóngshí"
+    "title": "……的同时（連体修飾句：～すると同時に・～する一方で）",
+    "shortExplanation": "動詞句や節の末尾に付き、ある動作や状況が進行しているのと同時に別の事柄が行われることを表します（「～すると同時に」「～である一方で」）。",
+    "longExplanation": "「……的同时」（…… de tóngshí）は、動詞句や前節の末尾に接続し（前頭に「在」を伴うことも多い）、その動作や状態が展開しているまさにそのタイミングで、別の行動や状態が並行して成立していることを表します。時間的な同時性のみならず、「一方では～をしつつ、他方では…もする」という兼務・兼行のニュアンスを表す際にも重宝されます。日本語の「～すると同時に」「～する一方で」に相当します。",
+    "formation": "（在 ＋）動詞 / 節 ＋ 的同时，主語 ＋ 也 / 还…",
+    "examples": [
+      {
+        "translation": "中国語を学ぶと同時に、私は中国の文化についても理解を深めました。"
+      }
+    ]
   },
   "zh_并并且V_300": {
-    "title": "并/并且 V (and V)",
-    "shortExplanation": "and V",
-    "longExplanation": "and V. Pinyin: bìng/ bìngqiě V",
-    "formation": "bìng/ bìngqiě V"
+    "title": "并/并且 ＋ 動詞（接続詞：そして・さらに・かつ）",
+    "shortExplanation": "同一の主語を持つ動詞句同士を結び、動作の並列、連続、あるいは累加・深化を表します（「そして」「さらに」「かつ」）。",
+    "longExplanation": "「并」（bìng）および「并且」（bìngqiě）は、共通の主語を持つ二つの動詞や動詞句、述語同士をつなぐ接続詞です。二つの行為が並行して行われること、論理的な順序で連続して実行されること、または後続の動作が前節の内容をさらに発展・具体化させる累加の関係を表します。「并」は二音節動詞同士などを緊密に結ぶことが多く、「并且」は文や長めの節を連結する際にも幅広く使われます。日本語の「そして」「かつ」「さらに」「そのうえ」に相当します。",
+    "formation": "動詞1 / 節1，并 / 并且 ＋ 動詞2",
+    "examples": []
   },
   "zh_再也_303": {
-    "title": "再……也...... (no matter how… still…)",
-    "shortExplanation": "no matter how… still…",
-    "longExplanation": "no matter how… still…. Pinyin: zài…… yě......",
-    "formation": "zài…… yě......"
+    "title": "再……也……（どんなに～しても…・いくら～であっても…）",
+    "shortExplanation": "譲歩の仮定を表す構文で、どんなに極限まで行為を重ねたり程度が高くなったりしても結果は変わらないことを示します（「どんなに～しても…」「いくら～であっても…」）。",
+    "longExplanation": "「再……也……」（zài... yě...）は、極限的な譲歩の仮定を表す慣用構文です。「再」の後に動詞や形容詞を置き、「たとえこれ以上動作を繰り返しても」「どんなに程度が極まっても」という極限条件を提示し、後節で「也」に否定形などを伴って「それでも結果は変えられない、同じことだ」と結びます。日本語の「どんなに～しても…」「いくら～であっても…」に相当します。",
+    "formation": "再 ＋ 動詞 / 形容詞 ＋ 也 ＋ 否定 / 動詞",
+    "examples": [
+      {
+        "translation": "起きてしまったことは、あなたがどんなに後悔しても変えられません。もう悲しまないでください。"
+      }
+    ]
   },
   "zh_对于N_304": {
-    "title": "对于 N (regarding N)",
-    "shortExplanation": "regarding N",
-    "longExplanation": "regarding N. Pinyin: duìyú N",
-    "formation": "duìyú N"
+    "title": "对于 ＋ 名詞（介詞：～に関して・～に対して・～にとって）",
+    "shortExplanation": "対象や論点を提示する前置詞（介詞）で、文頭または主語の後に置き、その事柄に対する態度や評価を導きます（「～に関して」「～に対して」「～にとって」）。",
+    "longExplanation": "「对于」（duìyú）は、ある事柄、現象、問題、または人を取り上げて、それに対する見解、態度、処置などを述べる際に用いられる介詞（前置詞）です。「对于 ＋ 名詞」の形で文頭に置いて全体の話題を提示するか、主語と述語の間に挟んで状況語として機能します。「对」と比べて書面語的で、行為を向ける具体的な対象というよりは「考察・評価の対象となる事柄」を客観的に提示するニュアンスが強くなります。日本語の「～に関して」「～に対して」「～について言えば」に相当します。",
+    "formation": "对于 ＋ 名詞 / 名詞句，主語…（または：主語 ＋ 对于 ＋ 名詞…）",
+    "examples": []
   },
   "zh_关于N_307": {
-    "title": "关于 N (about N)",
-    "shortExplanation": "about N",
-    "longExplanation": "about N. Pinyin: guānyú N",
-    "formation": "guānyú N"
+    "title": "关于 ＋ 名詞（介詞：～について・～に関する）",
+    "shortExplanation": "事柄の範囲や話題・テーマを提示する前置詞（介詞）です（「～について」「～に関して」「～に関する」）。",
+    "longExplanation": "「关于」（guānyú）は、話題の論点や関連する事柄の範囲を提示する介詞（前置詞）です。(1)「关于 ＋ 名詞」を文頭に置いて全体のテーマを示す状況語として機能する場合（例：「关于这个问题……」＝この問題について…）；(2)「关于 ＋ 名詞 ＋ 的 ＋ 中心名詞」の形で後続の名詞を修飾する定語となる場合（例：「关于中国历史的书」＝中国の歴史に関する本）があります。対象への働きかけを表す「对于」と異なり、「关于」は話題やテーマの範囲そのものを提示する点に特徴があります。日本語の「～について」「～に関する」に相当します。",
+    "formation": "关于 ＋ 名詞 / 事柄，主語…（または：关于 ＋ 名詞 ＋ 的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "今回の調査計画について、マネージャーは不明瞭な点がたくさんあると言いました。"
+      }
+    ]
   },
   "zh_MMN都_308": {
-    "title": "M + M + (N) + 都 (every N)",
-    "shortExplanation": "every N",
-    "longExplanation": "every N. Pinyin: M + M + (N) + dōu",
-    "formation": "M + M + (N) + dōu"
+    "title": "量詞の重ね形 ＋（名詞）＋ 都（どの～もみな…・一つ一つの～がすべて…）",
+    "shortExplanation": "単音節量詞を重ねて（AA型）「都」と呼応させ、例外のない網羅的な全体を表します（「どの～もみな…」「一つ一つの～がすべて…」）。",
+    "longExplanation": "中国語の単音節量詞を「AA」の形に重ねる（例：个个、件件、条条、本本、天天、人人など）ことで、「どの～も」「すべての～」という全体的・網羅的な意味を表します。文頭や主語の位置に置かれ、述語の前で副詞の「都」と呼応して、「例外なく一つ一つの構成員すべてが～である」という強い網羅性を際立たせます。日本語の「どの～もみな」「一つ一つの～がすべて」に相当します。",
+    "formation": "量詞 ＋ 量詞（＋ 名詞） ＋ 都 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "一つ一つの些細な事柄もすべて、一度の学びの機会として見なされるべきです。"
+      }
+    ]
   },
   "zh_相反_309": {
-    "title": "相反，…… (on the other hand, …)",
-    "shortExplanation": "on the other hand, …",
-    "longExplanation": "on the other hand, …. Pinyin: xiāngfǎn，……",
-    "formation": "xiāngfǎn，……"
+    "title": "相反，……（接続詞・副詞：それとは反対に…・逆に…）",
+    "shortExplanation": "後節の文頭に置き、前節で述べられた内容と正反対の事態や結果を提示します（「それとは反対に…」「逆に…」）。",
+    "longExplanation": "「相反」（xiāngfǎn）は後節の文頭（しばしば読点「，」を伴う）に置かれ、前節の内容と鋭く対比される全く逆の状況や予想外の事実を導く接続詞・副詞として機能します。前節で否定的な記述や誤った予想が示された後、「そうではなく、むしろ反対に…」と対立する実態を浮き彫りにする際によく使われます。日本語の「それとは反対に…」「逆に…」「それどころか…」に相当します。",
+    "formation": "節1。相反，＋ 節2（または：節1，相反 ＋ 節2）",
+    "examples": []
   },
   "zh_和跟N相反_314": {
-    "title": "和/跟 N 相反 (to be the opposite of N)",
-    "shortExplanation": "to be the opposite of N",
-    "longExplanation": "to be the opposite of N. Pinyin: hé/ gēn N xiāngfǎn",
-    "formation": "hé/ gēn N xiāngfǎn"
+    "title": "和/跟 ＋ 名詞 ＋ 相反（～と正反対である・～とは逆である）",
+    "shortExplanation": "主語がある対象や予想などと正反対であることを示す比較・対照の表現です（「～と正反対である」「～とは逆である」）。",
+    "longExplanation": "「和/跟 ＋ 名詞 ＋ 相反」（hé/ gēn... xiāngfǎn）は、主語の性質、状態、結果などが、比較対象となる事柄と完全に逆転していることを表す構文です。名詞の位置には通常の名詞だけでなく、「想的」（思っていたこと）や「预期的」（予想していたこと）のような名詞化された句も頻出します。「相反」の前にはしばしば「完全」「正好」「几乎」などの副詞を伴って「ほぼ完全に正反対である」といった強めの語気を作ります。日本語の「～と正反対である」「～とは正逆である」に相当します。",
+    "formation": "主語 ＋ 和 / 跟 ＋ 名詞 / 考え・予想 ＋ 相反",
+    "examples": [
+      {
+        "translation": "調査結果は彼らが予想していたこととほぼ完全に正反対でした。"
+      }
+    ]
   },
   "zh_大概也许VA_315": {
-    "title": "大概/也许 V/A (probably/perhaps V/A)",
-    "shortExplanation": "probably/perhaps V/A",
-    "longExplanation": "probably/perhaps V/A. Pinyin: dàgài/ yěxǔ V/A",
-    "formation": "dàgài/ yěxǔ V/A"
+    "title": "大概/也许 ＋ 動詞/形容詞（副詞：たぶん・おそらく・もしかすると）",
+    "shortExplanation": "動詞や形容詞の前に置いて、推測や可能性を表す副詞です（「たぶん」「おそらく」「もしかすると」）。",
+    "longExplanation": "「大概」（dàgài）と「也许」（yěxǔ）は、推測や推量を表す副詞で、述語となる動詞や形容詞の直前に置かれて状況語となります。「大概」はある程度の根拠や客観的傾向に基づいた確度の高めな推測を表し、「十中八九」「おそらく」「たぶん」に相当します（数量の前では「およそ、約」の意味にもなります）。一方、「也许」は「もしかすると」「ひょっとしたら」という不確実な可能性を提示するニュアンスを持ちます。日本語の「たぶん」「おそらく」「もしかすると～かもしれない」に相当します。",
+    "formation": "主語 ＋ 大概 / 也许 ＋ 動詞 / 形容詞",
+    "examples": []
   },
   "zh_大概的N_317": {
-    "title": "大概的 N (approximate N)",
-    "shortExplanation": "approximate N",
-    "longExplanation": "approximate N. Pinyin: dàgài de N",
-    "formation": "dàgài de N"
+    "title": "大概的 ＋ 名詞（連体修飾語：大体の・おおよその）",
+    "shortExplanation": "名詞の前に「的」を伴って置き、厳密ではない「大体の」「おおよその」数量や状況を表します（「おおよその」「大体の」「概略の」）。",
+    "longExplanation": "「大概」（dàgài）に構造助詞「的」を付け、名詞を修飾する定語（連体修飾語）として用いると、厳密・正確ではない「おおよその」「大体の」状態や数値・概要を表します（例：「大概的数字」＝大体の数字・概数、「大概的情况」＝おおよその状況、「大概的想法」＝大まかな考え）。日本語の「おおよその」「大体の」「大まかな」「概略の」に相当します。",
+    "formation": "大概的 ＋ 名詞（数字 / 范围 / 想法 / 情况など）",
+    "examples": [
+      {
+        "translation": "大体の数字（おおよその数値）を教えてください。"
+      }
+    ]
   },
   "zh_大概_318": {
-    "title": "大概 # (about #)",
-    "shortExplanation": "about #",
-    "longExplanation": "about #. Pinyin: dàgài #",
-    "formation": "dàgài #"
+    "title": "大概 ＋ 数詞（副詞：およそ・約・だいたい）",
+    "shortExplanation": "数詞や数量フレーズの直前に置き、数量や時間が概数であることを表します（「およそ」「約」「大体」）。",
+    "longExplanation": "「大概」（dàgài）は推測や概算を表す副詞として、数詞、量詞、時間などの数量表現の直前に置かれ、正確な数値ではなく「およそ」「約」「大体」であることを示します（例：「大概五个人」＝およそ5人、「大概三点」＝だいたい3時、「大概两个星期」＝約2週間）。日本語の「およそ」「約」「大体」「ほぼ」に相当します。",
+    "formation": "大概 ＋ 数詞（＋ 量詞 ＋ 名詞）",
+    "examples": []
   },
   "zh_偶尔_320": {
-    "title": "偶尔 (occasionally)",
-    "shortExplanation": "occasionally",
-    "longExplanation": "occasionally. Pinyin: ǒu'ěr",
-    "formation": "ǒu'ěr"
+    "title": "偶尔（頻度副詞：たまに・時折・時々）",
+    "shortExplanation": "頻度が極めて低いことを表す副詞で、動作や事態がまれにしか起こらないことを示します（「たまに」「時折」「ごくまれに」）。",
+    "longExplanation": "「偶尔」（ǒu'ěr）は頻度の低さを表す副詞で、「常常」（よく）の対義語であり、「有时候」（時々）よりもさらに発生頻度が低いニュアンスを持ちます。ある動作や出来事が日常的ではなく、たまに思い出したように行われることを表します（例：「偶尔去一次」＝たまに1回行く、「偶尔打网球」＝時折テニスをする）。文頭または主語の直後に置かれます。日本語の「たまに」「時折」「ごくまれに」に相当します。",
+    "formation": "主語 ＋ 偶尔 ＋ 動詞 / 述語（または：偶尔 ＋ 主語 ＋ 動詞）",
+    "examples": []
   },
   "zh_由SV_322": {
-    "title": "由 S V (V’ed by S)",
-    "shortExplanation": "V’ed by S",
-    "longExplanation": "V’ed by S. Pinyin: yóu S V",
-    "formation": "yóu S V"
+    "title": "由 ＋ 行為者 ＋ 動詞（介詞：〜によって行われる・〜が担当する）",
+    "shortExplanation": "介詞「由」を用いて行為の担当者や責任者を導き、誰がその行動を受け持つかを明確にします（「〜によって行われる」「〜が担当する」）。",
+    "longExplanation": "介詞「由」（yóu）は動作の主体・担当者・責任者を導く働きをします。ある任務、決定、開催、負担などが「誰によって引き受けられるか」「誰が責任を持って遂行するか」を明示します（例：「由他负责」＝彼が責任を持って担当する、「由校长主持」＝校長が司会を務める、「费用由我出」＝費用は私が出す）。日本語の「〜が担当する」「〜によって（行われる・決められる）」に相当します。",
+    "formation": "（事柄 ＋）由 ＋ 行為者 / 担当者 ＋ 動詞（＋ 目的語）",
+    "examples": []
   },
   "zh_进行_324": {
-    "title": "进行 (to proceed)",
-    "shortExplanation": "to proceed",
-    "longExplanation": "to proceed. Pinyin: jìnxíng",
-    "formation": "jìnxíng"
+    "title": "进行（自動詞：進行する・行われる・進む）",
+    "shortExplanation": "自動詞として、会議や試合、活動などが現在進行していることや継続して行われることを表します（「進行する」「行われる」「進む」）。",
+    "longExplanation": "「进行」（jìnxíng）が自動詞（目的語を取らない動詞）として用いられる場合、会議、試合、儀式、工事などの計画された活動が実際に推し進められ、現在進行している状態にあることを表します（例：「会议正在进行」＝会議は進行中である、「比赛顺利进行」＝試合は順調に行われている）。「正在」「继续」「顺利」などの副詞を伴うことがよくあります。日本語の「進行する」「行われる」「進む」に相当します。",
+    "formation": "事柄 / 活動（会议 / 比赛 / 仪式など）（＋ 正在 / 继续 / 顺利など） ＋ 进行",
+    "examples": [
+      {
+        "translation": "10時30分に会議は引き続き行われます（再開されます）。"
+      }
+    ]
   },
   "zh_进行O_325": {
-    "title": "进行 O (to carry out O)",
-    "shortExplanation": "to carry out O",
-    "longExplanation": "to carry out O. Pinyin: jìnxíng O",
-    "formation": "jìnxíng O"
+    "title": "进行 ＋ 目的語（形式動詞：〜を行う・〜を実施する）",
+    "shortExplanation": "形式動詞として動作性の二音節動詞を目的語に取り、改まった文体で活動や調査・研究などを「行う」「実施する」ことを表します（「〜を行う」「〜を実施する」）。",
+    "longExplanation": "「进行」（jìnxíng）は形式動詞（準動詞）として、後ろに動作性・継続性のある二音節の動詞（名詞化されたもの）を目的語に従えます。改まった公の場や書面語で、調査、討議、観察、研究などの活動を本格的に「行う」「実施する」際に用いられます（例：「进行观察」＝観察を行う、「进行调查」＝調査を実施する、「进行讨论」＝議論を行う、「进行研究」＝研究を進める）。単音節動詞や具体的な事物名詞（「苹果」「衣服」など）を目的語にすることはできません。日本語の「〜を行う」「〜を実施する」「〜を進める」に相当します。",
+    "formation": "主語 ＋ 进行 ＋ 目的語（動作性のある二音節動詞：观察 / 调查 / 讨论 / 研究など）",
+    "examples": [
+      {
+        "translation": "観察を行う（観察を実施する）"
+      }
+    ]
   },
   "zh_随着N_326": {
-    "title": "随着 N (with N (as N happens))",
-    "shortExplanation": "with N (as N happens)",
-    "longExplanation": "with N (as N happens). Pinyin: suízhe N",
-    "formation": "suízhe N"
+    "title": "随着 ＋ 名詞（介詞：〜に伴って・〜につれて・〜とともに）",
+    "shortExplanation": "介詞として文頭に置き、ある事態の変化や発展に伴って、別の状況も連動して変化していくことを表します（「〜に伴って」「〜につれて」「〜とともに」）。",
+    "longExplanation": "介詞「随着」（suízhe）は文頭に置かれ、時間・社会・技術などの推移や発展を表す名詞句を導きます。その変化を前提条件として、後節で述べられる事態が並行して変化・進展していくことを表します（例：「随着经济的发展」＝経済の発展に伴って、「随着科技的进步」＝科学技術の進歩につれて、「随着时间的推移」＝時間の経過とともに、「随着年龄的增长」＝年齢を重ねるにつれて）。日本語の「〜に伴って」「〜につれて」「〜とともに」に相当します。",
+    "formation": "随着 ＋ 変化や発展を表す名詞句（经济的发展 / 科技的进步 / 时间的推移など），主語 ＋ 述語",
+    "examples": []
   },
   "zh_够_328": {
-    "title": "够 (sufficient)",
-    "shortExplanation": "sufficient",
-    "longExplanation": "sufficient. Pinyin: gòu",
-    "formation": "gòu"
+    "title": "够（形容詞・述語：足りる・十分である）",
+    "shortExplanation": "形容詞または述語として、数量や条件が必要な基準を満たしていることを表します（「足りる」「十分である」、否定は「不够」で「足りない」）。",
+    "longExplanation": "「够」（gòu）は述語や形容詞として単独で用いられ、お金、時間、人員、条件などが要求や必要を満たしていることを示します（例：「时间够」＝時間は足りる、「人手够」＝人手は十分だ、「地方够大」＝場所は十分広い）。否定形は「不够」（足りない、不十分だ）となり、極めて高い頻度で用いられます。日本語の「足りる」「十分である」「間に合う」に相当します。",
+    "formation": "名詞（お金 / 時間 / 人手など）（＋ 副詞） ＋ 够 / 不够",
+    "examples": [
+      {
+        "translation": "お金が足りません。"
+      }
+    ]
   },
   "zh_V够_329": {
-    "title": "V 够 (#) (V (and fulfill) #)",
-    "shortExplanation": "V (and fulfill) #",
-    "longExplanation": "V (and fulfill) #. Pinyin: V gòu (#)",
-    "formation": "V gòu (#)"
+    "title": "動詞 ＋ 够（＋ 数量）（結果補語：規定の数量を満たす・心ゆくまで〜する）",
+    "shortExplanation": "「够」が結果補語となり、動作が所定の時間や数量の基準をきっちり満たすこと、または十分にやりきることを表します（「〜を十分にこなす」「満たす」）。",
+    "longExplanation": "動詞の後ろに置かれる「够」（gòu）は結果補語として機能し、その動作が所定の数量、時間、ノルマを完全に充足したことを表します（例：「睡够八小时」＝8時間きっちり眠る、「赚够了钱」＝十分なお金を稼いだ、「学够学分」＝規定の単位を取り終える）。また、数量を伴わずに「玩够了」「吃够了」のように心ゆくまで楽しんで満足した、あるいは飽き飽きした状態を表すこともあります。日本語の「〜を十分に（規定の分量だけ）こなす」「心ゆくまで〜する」に相当します。",
+    "formation": "動詞 ＋ 够（＋ 数詞 ＋ 量詞 / 名詞）",
+    "examples": [
+      {
+        "translation": "睡眠時間が長すぎるのもよくありません。普通はきっちり8時間眠れば十分です。"
+      }
+    ]
   },
   "zh_够A_330": {
-    "title": "够 A ((good) enough)",
-    "shortExplanation": "(good) enough",
-    "longExplanation": "(good) enough. Pinyin: gòu A",
-    "formation": "gòu A"
+    "title": "够 ＋ 形容詞（＋ 的了）（程度副詞：十分に〜だ・かなり〜だ・相当〜だ）",
+    "shortExplanation": "程度副詞として形容詞の前に置き、ある程度に十分に達していることや、度を越えていることを表します（「十分に〜だ」「かなり〜だ」）。",
+    "longExplanation": "「够」（gòu）は程度副詞として形容詞の直前に置かれ、その性質や状態の度合いが非常に高いこと、あるいは限界に達していることを強調します。「挺」や「相当」に近い意味を持ちますが、口語では語末に構造助詞「的」や「的了」を伴って、感嘆、不満、呆れなどの感情を込めて使われることが多々あります（例：「已经够重了」＝すでに十分重い、「够累的」＝かなり疲れる、「够朋友」＝義理堅い）。日本語の「十分に〜だ」「かなり〜だ」「相当〜だ」に相当します。",
+    "formation": "（主語 ＋）（已经 ＋）够 ＋ 形容詞（＋ 的 / 的了）",
+    "examples": [
+      {
+        "translation": "これらを詰め込む必要はありません、スーツケースはもう十分に重いですから！"
+      }
+    ]
   },
   "zh_以N_331": {
-    "title": "以 N (with N (speed, standard))",
-    "shortExplanation": "with N (speed, standard)",
-    "longExplanation": "with N (speed, standard). Pinyin: yǐ N",
-    "formation": "yǐ N"
+    "title": "以 ＋ 名詞（介詞：〜をもって・〜の態度／速度で）",
+    "shortExplanation": "介詞として速度、基準、態度、手段などを表す名詞を導き、どのようなやり方や態度で行動するかを表します（「〜をもって」「〜の（速度・態度）で」）。",
+    "longExplanation": "介詞「以」（yǐ）は書面語や改まった改まった表現で多用され、速度、態度、基準、方式などを表す名詞句を伴って動作の手段・態度・よりどころを示します（例：「以最快的速度」＝最速のスピードで、「以严谨的态度」＝厳格な態度をもって、「以事实为准绳」＝事実をよりどころとして）。日本語の「〜をもって」「〜の態度で」「〜の速度で」「〜に基づいて」に相当します。",
+    "formation": "主語 ＋ 以 ＋ 名詞（速度 / 基準 / 態度 / 方式など） ＋ 動詞",
+    "examples": [
+      {
+        "translation": "支配人（マネージャー）、ご安心ください。必ず最速のスピードで終わらせます。"
+      }
+    ]
   },
   "zh_以N1为N2_332": {
-    "title": "以 N1 为 N2 (consider N1 as N2)",
-    "shortExplanation": "consider N1 as N2",
-    "longExplanation": "consider N1 as N2. Pinyin: yǐ N1 wéi N2",
-    "formation": "yǐ N1 wéi N2"
+    "title": "以 ＋ 名詞1 ＋ 为 ＋ 名詞2（固定構文：名詞1を名詞2とする・名詞1を名詞2と見なす）",
+    "shortExplanation": "固定構文で、名詞1を名詞2として位置づけることや、名詞1を基準・手本・中心とすることを表します（「〜を…とする」「〜を…と見なす」）。",
+    "longExplanation": "「以……为……」（yǐ... wéi...）は古代漢語に由来する格調の高い固定構文で、名詞1を名詞2として扱う、または名詞1を基準・手本・基礎とすることを表します（例：「以历史为镜子」＝歴史を鑑（鏡）とする、「以人为本」＝人間を中心（本）とする、「以此为基础」＝これを基礎とする、「以他为榜样」＝彼を手本とする）。書面語や公式な理念、成語・格言などで極めて頻出します。日本語の「〜を…とする」「〜を…と見なす」「〜を…の手本とする」に相当します。",
+    "formation": "主語 ＋ 以 ＋ 名詞1 ＋ 为 ＋ 名詞2",
+    "examples": [
+      {
+        "translation": "私たちは歴史を鑑（鏡）とすべきです。"
+      }
+    ]
   },
   "zh_以_333": {
-    "title": "以 (in order to)",
-    "shortExplanation": "in order to",
-    "longExplanation": "in order to. Pinyin: yǐ",
-    "formation": "yǐ"
+    "title": "以（接続詞：〜するために・〜をもって…とする）",
+    "shortExplanation": "接続詞として2つの動詞句や節をつなぎ、前述の行動をとる目的を導きます（「〜するために」「〜をもって…とする」）。",
+    "longExplanation": "「以」（yǐ）は目的を表す接続詞として用いられ、前の節（行われた動作）と後ろの節（その目的）を連結します。「〜するために」「〜によって…する」という意味を表し、口語の「来」や「为了」よりも格調の高い書面語のニュアンスを持ちます（例：「送礼物以表示感谢」＝感謝の意を表すために贈り物を送る、「制定规则以保证安全」＝安全を確保するために規則を制定する）。日本語の「〜するために」「〜をもって…とする」「〜すべく」に相当します。",
+    "formation": "行動を表す節 / 動詞句 ＋ 以 ＋ 目的を表す節 / 動詞句",
+    "examples": [
+      {
+        "translation": "彼女は感謝の意を表すために贈り物を届けてくれました。"
+      }
+    ]
   },
   "zh_既然_334": {
-    "title": "既然 (now that)",
-    "shortExplanation": "now that",
-    "longExplanation": "now that. Pinyin: jìrán",
-    "formation": "jìrán"
+    "title": "既然……（接続詞：〜である以上は・〜したからには）",
+    "shortExplanation": "前節の冒頭に置いて確定した前提事実を提示し、後節で「就」「那」などと呼応して結論や提案を導きます（「〜である以上は」「〜したからには」）。",
+    "longExplanation": "「既然」（jìrán）は推論的因果関係を表す接続詞で、第1節の冒頭に置かれます。話し手と聞き手の双方が認識している既成事実や前提をまず提示し、後節では「就」「那」「也」などと呼応して、その前提から自然に導き出される結論、当然の行動、提案、催促を導きます（例：「既然来了，就多住几天吧」＝せっかく来た以上は、もう少し泊まっていきなさい、「既然决定了，就坚持下去」＝決めたからには、最後までやり抜きなさい）。日本語の「〜である以上は」「〜したからには」「どうせ〜なら」に相当します。",
+    "formation": "既然 ＋ 既成事実・前提，（主語 ＋）就 / 那 ＋ 結論・提案を表す節",
+    "examples": []
   },
   "zh_于是_336": {
-    "title": "于是…… (consequently…)",
-    "shortExplanation": "consequently…",
-    "longExplanation": "consequently…. Pinyin: yúshì……",
-    "formation": "yúshì……"
+    "title": "于是……（接続詞：そこで・そうして・その結果）",
+    "shortExplanation": "後節の冒頭に置き、前節の事態を受けて直後に次の事態が自然な成り行きとして生じることを表します（「そこで」「そうして」「その結果」）。",
+    "longExplanation": "「于是」（yúshì）は順接の継起・因果関係を表す接続詞で、後節の文頭（読点の後）に置かれます。前節で起きた出来事や状況を受けて、その直後に次の行動や出来事が自然な成り行きとして続いて発生したことを物語る際に多用されます（例：「听了他的话，于是我也动了心」＝彼の話を聞いて、そこで私も心が動いた、「大家都很赞同，于是立刻行动起来」＝皆が賛同し、そうして直ちに行動を起こした）。純粋な論理的因果関係を強調する「所以」に比べ、「于是」は物語の時系列的な展開や自然な継起に重きを置きます。日本語の「そこで」「そうして」「その結果」「それゆえに」に相当します。",
+    "formation": "節1，于是 ＋ 節2",
+    "examples": []
   },
   "zh_因此_338": {
-    "title": "因此…… (therefore…)",
-    "shortExplanation": "therefore…",
-    "longExplanation": "therefore…. Pinyin: yīncǐ……",
-    "formation": "yīncǐ……"
+    "title": "因此……（因果接続詞：それゆえに・したがって・だからこそ……）",
+    "shortExplanation": "後節の文頭に置き、前節で述べた原因や事情から直接導き出される結果や結論を表します（「それゆえに」「したがって」「そのため」）。",
+    "longExplanation": "「因此」（yīncǐ）は書き言葉や改まった会話で多用される因果関係の接続詞です。「因」（〜により）と「此」（これ・この事情）から成り、「このことによって」「その結果として」という意味合いを持ちます。前節で原因・前提を提示した上で、後節の冒頭に「因此」を置き、導き出される論理的帰結や客観的結果を述べます。前節に「因为」がなくても単独で用いることができます。日本語の「それゆえに」「したがって」「その結果」「だからこそ」に相当します。",
+    "formation": "原因節，因此 ＋ 結果節",
+    "examples": [
+      {
+        "translation": "子供の頃、彼は病気がちだったので、それゆえに毎日ランニングをして体を鍛えていました。"
+      }
+    ]
   },
   "zh_什么的_339": {
-    "title": "什么的 (and stuff like that)",
-    "shortExplanation": "and stuff like that",
-    "longExplanation": "and stuff like that. Pinyin: shénmede",
-    "formation": "shénmede"
+    "title": "什么的（助詞：〜とか〜など・〜なんか）",
+    "shortExplanation": "名詞や動詞句などを列挙した末尾に置き、同類の事物や動作がまだ他にもあることを口語的に表します（「〜とか」「〜など」「〜なんか」）。",
+    "longExplanation": "「什么的」（shénmede）は日常会話（口語）で非常によく用いられる助詞で、2つ以上の名詞や動詞フレーズを並べた最後に置かれます。「等等」（〜など）と同様に不完全な列挙を表しますが、よりくだけた親しみのある響きを持ち、「〜とか〜など」「〜や〜なんか」「〜といった類のもの」というニュアンスを添えます（例：「买点儿苹果、香蕉什么的」＝リンゴやバナナとかを買う、「打球、游个泳什么的」＝球技をしたり水泳をしたりなど）。日本語の「〜とか〜など」「〜なんか」「〜といったもの」に相当します。",
+    "formation": "名詞1 / 動詞句1、名詞2 / 動詞句2 ＋ 什么的",
+    "examples": [
+      {
+        "translation": "明日遊びに出かけるから、ビスケットやパンとか（そういったもの）を少し買っておかないといけないね。"
+      }
+    ]
   },
   "zh_V起来_340": {
-    "title": "V 起来 (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "動詞 ＋ 起来（複合方向補語：上方への動作・〜し始める・〜してみると）",
+    "shortExplanation": "動詞の後ろに置き、①上方への移動、②動作・状態の開始と持続（〜し始める）、③ある観点からの評価（〜してみると）を表します。",
+    "longExplanation": "「起来」（qǐlai）は動詞の後ろに接続する複合方向補語で、主に次の3つの用法を持ちます：①物理的に下から上へ向かう動作（例：「站起来」＝立ち上がる、「拿起来」＝手に取る・持ち上げる）；②動作や状態が新たに始まり、そのまま勢いよく継続すること（例：「笑起来」＝笑い出す、「天气热起来了」＝天気が暑くなってきた）；目的語を伴う場合は「動詞 ＋ 起 ＋ 目的語 ＋ 来」の語順になります（例：「唱起歌来」＝歌を歌い始める、「下起雨来」＝雨が降り出す）；③感覚や行為を通じて評価・判断を下すこと（例：「看起来」＝見たところ・〜そうに見える、「听起来」＝聞いた感じでは、「这道菜做起来很容易」＝この料理は作ってみると簡単だ）。日本語の「〜し始める」「〜してみると」「立ち上がる」などに相当します。",
+    "formation": "動詞 ＋ 起来（目的語がある場合：動詞 ＋ 起 ＋ 目的語 ＋ 来）",
+    "examples": []
   },
   "zh_想起来_342": {
-    "title": "想起来 (remember, call to mind)",
-    "shortExplanation": "remember, call to mind",
-    "longExplanation": "remember, call to mind. Pinyin: xiǎngqilai",
-    "formation": "xiǎngqilai"
+    "title": "想起来（動補連語：思い出す・記憶がよみがえる）",
+    "shortExplanation": "過去の記憶や忘れかけていた情報が頭の中によみがえること（思い出す）を表し、可能補語の否定形「想不起来」（思い出せない）としても頻出します。",
+    "longExplanation": "「想起来」（xiǎngqilai）は動詞「想」に方向補語「起来」が結びついた表現で、過去の記憶や経験、名前などの情報が心の中にふと思い出されること（記憶の想起）を表します。実際の会話では可能補語形式が非常に多く用いられ、「想得起来」（思い出せる）や「想不起来」（どうしても思い出せない）として使われます。なお、新しいアイデアや方法を頭の中でひらめく・考案する「想出来」とは明確に区別されます（「想起来」は既知の記憶の再生、「想出来」は未知の創出）。日本語の「思い出す」「思い出せる／思い出せない」に相当します。",
+    "formation": "主語 ＋ 想起来（＋ 目的語） / 主語 ＋ 想得起来 / 想不起来（＋ 目的語）",
+    "examples": []
   },
   "zh_弄AO_344": {
-    "title": "弄 A O (cause O to be A)",
-    "shortExplanation": "cause O to be A",
-    "longExplanation": "cause O to be A. Pinyin: nòng A O",
-    "formation": "nòng A O"
+    "title": "弄 ＋ 形容詞 ＋ 目的語（結果補語：〜を…な状態にしてしまう・壊す・汚すなど）",
+    "shortExplanation": "汎用動詞「弄」に形容詞（結果補語）と目的語を続け、意図せず目的語を好ましくない状態にしてしまうことを表します（「〜を壊す」「〜を汚す」）。",
+    "longExplanation": "「弄」（nòng）は手を使って何らかの動作を行う汎用的な口語動詞です。後ろに結果補語となる形容詞（「坏」壊れる、「脏」汚れる、「破」破れる、「丢」紛失する、「乱」散らかるなど）と目的語を直接従えることで、手荒に扱ったり不注意であったりした結果、目的語を望ましくない状態に変化させてしまうことを表します（例：「弄坏沙发」＝ソファを壊してしまう、「弄脏衣服」＝服を汚す、「弄丢钥匙」＝鍵を失くす、「弄破纸」＝紙を破く）。多くの場合、マイナスの結果や過失・失敗に対して用いられます。日本語の「〜を（誤って）壊す」「〜を汚してしまう」「〜を散らかす」に相当します。",
+    "formation": "主語 ＋（别 / 不要 ＋）弄 ＋ 形容詞（坏 / 脏 / 破 / 丢 / 乱など）＋ 目的語（＋ 了）",
+    "examples": [
+      {
+        "translation": "運ぶときは少し気をつけて、ソファを壊さないようにしてくださいね。"
+      }
+    ]
   },
   "zh_弄得OCLAUSE_345": {
-    "title": "弄得 O CLAUSE (make O CLAUSE)",
-    "shortExplanation": "make O CLAUSE",
-    "longExplanation": "make O CLAUSE. Pinyin: nòng dé O CLAUSE",
-    "formation": "nòng dé O CLAUSE"
+    "title": "弄得 ＋ 目的語 ＋ 節 / 述語（様態補語：〜を…な状態にさせてしまう・〜のせいで…になる）",
+    "shortExplanation": "「弄得」の後に目的語と説明節を続け、前節の行動や事態が原因で誰かを気まずい・不快な状況に追い込んでしまうことを表します（「〜のせいで…になる」「〜を…な状態にさせる」）。",
+    "longExplanation": "「弄得」（nòng de）は様態補語を導く動補構造で、前の節で述べられた行為や出来事を受けて、「その結果、目的語（人や周囲）をどのような困った状態・不快な局面に陥らせたか」を後ろの節や述語で詳細に描写します（例：「弄得大家都很尴尬」＝みんなをひどく気まずい思いにさせる、「弄得满地都是水」＝床一面を水浸しにしてしまう、「弄得我一夜没睡好」＝私のせいで一晩中よく眠れなくさせる）。通常、不満、やりきれなさ、当惑などの感情を伴い、好ましくない結果や混乱した事態に対して使われます。日本語の「〜のせいで（人）を…な気分にさせる」「（結果として）〜を…な状態に追い込む」に相当します。",
+    "formation": "原因となる行為 / 事態，弄得 ＋ 目的語 ＋ 節 / 述語",
+    "examples": [
+      {
+        "translation": "毎日こんな些細なことで彼女を叱ってばかりいるので、私たちの二人とも気分が悪くなってしまいます。"
+      }
+    ]
   },
   "zh_千万不能不要别V_346": {
-    "title": "千万不能/不要/别 V (make sure not to V)",
-    "shortExplanation": "make sure not to V",
-    "longExplanation": "make sure not to V. Pinyin: qiānwàn bùnéng/ bùyào/ bié V",
-    "formation": "qiānwàn bùnéng/ bùyào/ bié V"
+    "title": "千万 ＋ 不能 / 不要 / 别 ＋ 動詞（副詞連用：くれぐれも〜してはいけない・絶対に〜しないで）",
+    "shortExplanation": "副詞「千万」を否定詞「不能 / 不要 / 别」と組み合わせて動詞の前に置き、強い念押しや戒めを表します（「絶対に〜しないで」「くれぐれも〜してはいけない」）。",
+    "longExplanation": "副詞「千万」（qiānwàn）は切実な懇願や強い念押しを表し、「千万 ＋ 否定（不能 / 不要 / 别）＋ 動詞」の形で用いると、相手に対して「何があっても決して〜してはならない」「くれぐれも〜するな」と強く警告・忠告・懇願する表現になります（例：「千万别忘了」＝絶対に忘れないで、「千万不能告诉他」＝彼には絶対に言ってはならない、「千万不要着急」＝決して焦らないで）。口語でも書面でも重大な注意事項を伝える際によく使われます。日本語の「くれぐれも〜しないでください」「決して〜してはならない」「絶対に〜するな」に相当します。",
+    "formation": "主語 ＋ 千万 ＋ 不能 / 不要 / 别 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼女の誕生日のその日にこのプレゼントを渡したいので、今は絶対に彼女に言わないでね。"
+      }
+    ]
   },
   "zh_一定要得VA_347": {
-    "title": "一定要/得 V/A (must V, must be A)",
-    "shortExplanation": "must V, must be A",
-    "longExplanation": "must V, must be A. Pinyin: yīdìngyào/ dé V/A",
-    "formation": "yīdìngyào/ dé V/A"
+    "title": "一定要 / 得 ＋ 動詞 / 形容詞（連用表現：必ず〜しなければならない・どうしても〜する必要がある）",
+    "shortExplanation": "副詞「一定」と助動詞「要 / 得」を組み合わせ、強い決意、義務、あるいは不可欠な条件を強調します（「必ず〜しなければならない」「どうしても〜であるべきだ」）。",
+    "longExplanation": "確実性を表す副詞「一定」（yīdìng）に、必要性・義務を表す助動詞「要」（yào）または「得」（děi）が結びついた表現です。単に「要」や「得」を用いるよりも格段に口調が強まり、主語の固い決意、客観的な強い義務、あるいは何としても満たさなければならない必要条件・基準を強調します（例：「你一定要来」＝あなたは必ず来てください、「一定要注意安全」＝必ず安全に注意しなければならない、「明天一定得早起」＝明日は絶対に早起きしなければならない、「一定要快」＝絶対に迅速でなければならない）。日本語の「必ず〜しなければならない」「どうしても〜する必要がある」「絶対に〜するべきだ」に相当します。",
+    "formation": "主語 ＋ 一定要 / 一定得 ＋ 動詞 / 形容詞（＋ 目的語）",
+    "examples": []
   },
   "zh_一定会VA_350": {
-    "title": "一定(会) V/A (definitely V/A)",
-    "shortExplanation": "definitely V/A",
-    "longExplanation": "definitely V/A. Pinyin: yīdìng( huì) V/A",
-    "formation": "yīdìng( huì) V/A"
+    "title": "一定(会) ＋ 動詞 / 形容詞（副詞・助動詞連用：必ず〜する・きっと〜になるだろう）",
+    "shortExplanation": "副詞「一定」と助動詞「会」を組み合わせ、確信に満ちた将来の予測や強い約束・誓いを表します（「必ず〜する」「きっと〜になるだろう」）。",
+    "longExplanation": "「一定」（yīdìng）と未来の可能性や習得を表す助動詞「会」（huì）が連用され、動詞や形容詞の前に置かれます。「必ず〜するだろう」「絶対に〜になるはずだ」という話者の極めて高い確信、未来への見通し、あるいは誠心誠意の誓約・約束を表明します（例：「我一定会努力」＝必ず努力します、「你一定会成功的」＝あなたはきっと成功するでしょう、「明天一定会放晴」＝明日は絶対に晴れるはずだ）。義務を表す「一定要」とは異なり、「一定会」は未来に事態が確実に実現することを強調します。日本語の「必ず〜する」「きっと〜になる」「絶対に〜してみせる」に相当します。",
+    "formation": "主語 ＋ 一定(会) ＋ 動詞 / 形容詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "ご支持と激励をいただき心より感謝申し上げます。私は必ず引き続き努力してまいります。"
+      }
+    ]
   },
   "zh_不一定_351": {
-    "title": "不一定 (not necessarily)",
-    "shortExplanation": "not necessarily",
-    "longExplanation": "not necessarily. Pinyin: bùyīdìng",
-    "formation": "bùyīdìng"
+    "title": "不一定（部分否定副詞：〜とは限らない・必ずしも〜ではない）",
+    "shortExplanation": "事態の絶対性や必然性を部分的に否定し、例外があることや不確実であることを表します（「〜とは限らない」「必ずしも〜ではない」）。",
+    "longExplanation": "「不一定」（bùyīdìng）は絶対性・確実性を否定する部分否定の副詞的表現です。一般的な通念や相手の断定に対し、「必ずしもそうとは言い切れない」「例外も十分にあり得る」という含みを持たせて述べます（例：「贵的不一定好」＝高いものが必ずしも良いとは限らない、「个子高不一定力气大」＝背が高いからといって力が強いとは限らない、「明天我不一定去」＝明日は行くかどうかわからない）。また、会話で「他会同意吗？（彼は賛成するかな？）」に対して「不一定（さあ、どうだろう／そうとは限らないよ）」のように独立した返答としても頻繁に使われます。日本語の「〜とは限らない」「必ずしも〜ではない」に相当します。",
+    "formation": "主語 ＋ 不一定 ＋ 述語（動詞 / 形容詞 / 主述述語）/ 単独使用：不一定",
+    "examples": [
+      {
+        "translation": "背が高いからといって、必ずしも力が強いとは限りません。"
+      }
+    ]
   },
   "zh_一定的_352": {
-    "title": "一定的 (some, a certain)",
-    "shortExplanation": "some, a certain",
-    "longExplanation": "some, a certain. Pinyin: yīdìng de",
-    "formation": "yīdìng de"
+    "title": "一定的 ＋ 名詞（連体修飾語：一定の・ある程度の・相応の）",
+    "shortExplanation": "名詞の前に「的」を伴って置き、ある水準や数量、度合いに達していることを表します（「一定の」「ある程度の」「相応の」）。",
+    "longExplanation": "「一定」（yīdìng）が形容詞として構造助詞「的」を伴い、名詞を修飾する定語（連体修飾語）となる場合、「必ず」という副詞の意味ではなく、「ある基準や水準を満たしている」「相応の分量や度合いがある」という意味を表します（例：「有一定的基础」＝一定の基礎がある、「需要一定的时间」＝ある程度の時間を要する、「产生一定的影响」＝相応の影響を及ぼす、「保持一定的距离」＝一定の距離を保つ）。抽象名詞を伴うことが多く、無視できない相当のレベルにあることを客観的に示します。日本語の「一定の」「ある程度の」「相応の」に相当します。",
+    "formation": "（動詞：有 / 达到 / 产生など ＋）一定的 ＋ 名詞（基础 / 影响 / 水平 / 距离 / 时间など）",
+    "examples": [
+      {
+        "translation": "もし一定の語学の基礎があるのなら、海外に出て外国語を学ぶのが最も良い選択肢です。"
+      }
+    ]
   },
   "zh_来V_353": {
-    "title": "来 V ((verb prefix, indicating the verb hasn’t happened))",
-    "shortExplanation": "(verb prefix, indicating the verb hasn’t happened)",
-    "longExplanation": "(verb prefix, indicating the verb hasn’t happened). Pinyin: lái V",
-    "formation": "lái V"
+    "title": "来 ＋ 動詞（主動表現：〜をこちらで引き受ける・進んで〜する・〜してみる）",
+    "shortExplanation": "動詞の前に「来」を置き、自分が進んでその行動を引き受けることや、自発的に取り組む意志を表します（「私が〜します」「〜を引き受ける」）。",
+    "longExplanation": "「来」（lái）が動詞の直前に置かれる場合、空間的な移動（来る）ではなく、話者が自発的・積極的にその行動を自ら名乗り出て引き受ける姿勢や、意気込みを表します（例：「我来做」＝私がやりましょう、「我来帮你」＝私がお手伝いします、「你来试试」＝君がやってみてごらん、「今天我来请客」＝今日のおごりは私に任せて）。相手への申し出を非常に親切かつ積極的なトーンで伝える口語特有の表現です。日本語の「（私に）〜させて」「進んで〜する」「〜を引き受ける」に相当します。",
+    "formation": "主語 ＋ 来 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "このソファはこんなに大きいですから、私が手伝って皆さんと一緒に持ち上げましょう。"
+      }
+    ]
   },
   "zh_通过用N来V_354": {
-    "title": "通过/用 N 来 V (V through N)",
-    "shortExplanation": "V through N",
-    "longExplanation": "V through N. Pinyin: tōngguò/ yòng N lái V",
-    "formation": "tōngguò/ yòng N lái V"
+    "title": "通过 / 用 ＋ 名詞 ＋ 来 ＋ 動詞（手段・目的構文：〜を通して／〜を用いて…する）",
+    "shortExplanation": "介詞「通过」（〜を通して）や「用」（〜を用いて）で手段や媒体を導き、「来」を挟んで後続の動詞（目的や達成目標）へとつなげます（「〜を通して…する」「〜を用いて…を図る」）。",
+    "longExplanation": "介詞「通过」（〜を通じて・媒介として）または「用」（〜を使って・手段として）に手段・媒体を表す名詞を続け、接続詞的な「来」（それによって〜する）を介して目的の動作を結びつける構文です。ある目標や成果を達成するために「何を手がかり・道具・経路とするか」を論理的かつ明確に示します（例：「通过阅读来提高中文水平」＝読書を通して中国語力を高める、「用事实来证明自己的清白」＝事実をもって自身の潔白を証明する、「通过合作来实现共赢」＝協力関係を通じて相互利益を図る）。書き言葉でもフォーマルな会話でも非常に頻出する重要構文です。日本語の「〜を通して…する」「〜を用いて…を行う」に相当します。",
+    "formation": "主語 ＋ 通过 / 用 ＋ 名詞（手段 / 道具 / 経路）＋ 来 ＋ 動詞（＋ 目的語）",
+    "examples": []
   },
   "zh_左右_356": {
-    "title": "# 左右 (around #)",
-    "shortExplanation": "around #",
-    "longExplanation": "around #. Pinyin: # zuǒyòu",
-    "formation": "# zuǒyòu"
+    "title": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右（概数表現：〜前後・〜ぐらい・〜ごろ）",
+    "shortExplanation": "数量詞や時刻・年齢などの直後に「左右」を置き、「〜前後」「〜ぐらい」「〜ごろ」というおおよその数値や時点を表します。",
+    "longExplanation": "「左右」（zuǒyòu）は数量や時間のおおよその範囲（概数）を表す後置の修飾語です。具体的な数詞、量詞、時間、年齢、金額などの直後に置かれ、その基準となる数値の前後に多少の幅があることを示します（例：「十点左右」＝10時ごろ、「三十岁左右」＝30歳前後・30歳くらい、「一百块左右」＝100元前後、「五个人左右」＝5人前後）。日本語の「〜前後」「〜ぐらい」「〜ごろ」に対応しますが、中国語では必ず数値の後ろに置かれる点に注意が必要です。",
+    "formation": "数詞（＋ 量詞 ＋ 名詞）/ 時点 ＋ 左右",
+    "examples": []
   },
   "zh_可VA了_359": {
-    "title": "可 V/A 了 (really A/V)",
-    "shortExplanation": "really A/V",
-    "longExplanation": "really A/V. Pinyin: kě V/A le",
-    "formation": "kě V/A le"
+    "title": "可 ＋ 形容詞 / 動詞 ＋ 了（感嘆副詞構文：本当に〜だ・実に〜だ・とても〜だ）",
+    "shortExplanation": "副詞「可」を形容詞や心理動詞の前に置き、文末に語気助詞「了」を伴って、度合いの甚だしさを感情豊かに強調します（「本当に〜だ」「実に〜だ」）。",
+    "longExplanation": "「可」（kě）は生き生きとした日常会話で程度を強く強調する副詞です。文末の語気助詞「了」と呼応して「可 ＋ 形容詞 / 心理動詞 ＋ 了」の枠組みを形成し、「本当に〜だ」「ものすごく〜だ」「実に〜だ」という話者の強い感嘆、驚き、あるいは実感のこもった語気を表します（例：「今天天气可热了」＝今日は本当に暑いですね、「这里的风景可美了」＝ここの景色は実に美しい、「大家可高兴了」＝みんな大喜びだった）。「很」や「非常」に比べて感情の起伏が豊かで、主観的な強調のニュアンスが色濃く出ます。日本語の「本当に〜だ」「実に〜だ」「すごく〜だ」に相当します。",
+    "formation": "主語 ＋ 可 ＋ 形容詞 / 心理動詞 ＋ 了",
+    "examples": [
+      {
+        "translation": "今日の天気は本当に（とても）暑いです。"
+      }
+    ]
   },
   "zh_可Q_360": {
-    "title": "可 Q (Q on earth?)",
-    "shortExplanation": "Q on earth?",
-    "longExplanation": "Q on earth?. Pinyin: kě Q",
-    "formation": "kě Q"
+    "title": "可 ＋ 疑問詞（語気副詞：いったい〜だろうか・どうすれば〜）",
+    "shortExplanation": "疑問代名詞の前に置き、焦り、困惑、不安、心配などの強い気持ちを強調します（「いったい〜」「どう〜すればよいのか」）。",
+    "longExplanation": "「可」（kě）は語気副詞として疑問代名詞（「怎么」「怎么办」「谁」「哪儿」など）の直前に置かれ、疑問文や反語文の語気を強めます。事態が切迫している時や途方に暮れている時に、「一体全体どうしたらいいのか」「どこへ行ってしまったのか」という焦燥感、困惑、心配、懸念の念を強調して表します（例：「这可怎么办？」＝これはいったいどうすればいいのか？、「你可叫我怎么说呢？」＝私にいったいどう言えというのですか？）。日本語の「いったい〜」「どう〜というのか」「〜たらよいのか」に相当します。",
+    "formation": "主語 ＋ 可 ＋ 疑問詞（怎么 / 怎么办 / 谁 / 哪儿など）（＋ 語気助詞）",
+    "examples": [
+      {
+        "translation": "来週にはもう大使館へビザを取りに行かなければならないのに、これはいったいどうすればいいのだろうか。"
+      }
+    ]
   },
   "zh_可V_361": {
-    "title": "可 V (indeed)",
-    "shortExplanation": "indeed",
-    "longExplanation": "indeed. Pinyin: kě V",
-    "formation": "kě V"
+    "title": "可 ＋ 動詞 / 形容詞（語気副詞：実に・本当に・まさに・確かに）",
+    "shortExplanation": "動詞（特に「是」）や形容詞の前に置き、事実や判断を強く肯定・強調します（「まさに」「実に」「本当に」）。",
+    "longExplanation": "「可」（kě）は語気副詞として動詞（特に「是」と組み合わさった「可是」）や形容詞の前に置かれ、肯定の語気を強める役割を果たします。「确实」「实在」「真是」に相当し、話者の強い確信や評価、感情を込めて「まさに〜だ」「実に〜である」と主張します（例：「这可不是小事」＝これは決して小さな事ではない、「今天可太热了」＝今日は実に暑い、「这可是个大问题」＝これはまさに大問題だ）。日本語の「実に」「本当に」「まさに」「確かに」に相当します。",
+    "formation": "主語 ＋ 可 ＋ 是 / 動詞 / 形容詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "これはまさに大問題ですね、私もあまりよく分かりません。"
+      }
+    ]
   },
   "zh_怕害怕_362": {
-    "title": "怕/害怕 (to be afraid)",
-    "shortExplanation": "to be afraid",
-    "longExplanation": "to be afraid. Pinyin: pà/ hàipà",
-    "formation": "pà/ hàipà"
+    "title": "怕 / 害怕（心理動詞：恐れる・怖がる・心配する）",
+    "shortExplanation": "心理動詞として、危険や困難、悪い結果に対して恐れや不安、心配を抱くことを表します（「恐れる」「怖がる」「心配する」）。",
+    "longExplanation": "「怕」（pà）と「害怕」（hàipà）はともに心理的恐怖や不安・懸念を表す動詞です。「害怕」は具体的な対象（犬、暗闇、お化けなど）や危険に対する恐怖心そのものを表すことが多く、「怕」は恐怖だけでなく「〜になるのを心配する・懸念する」という広範な不安（例：「怕迟到」＝遅刻を心配する）にも広く用いられます。後ろに名詞、動詞、または小節を従えて、好ましくない事態が起こることを心配・危惧する文脈で使われます。日本語の「怖がる」「恐れる」「心配する」「〜ではないかと案じる」に相当します。",
+    "formation": "主語 ＋ 怕 / 害怕（＋ 名詞 / 動詞 / 節）",
+    "examples": [
+      {
+        "translation": "私の仕事の経験はまだ比較的浅いので、その仕事はやり遂げられないのではないかと心配です。"
+      }
+    ]
   },
   "zh_恐怕_363": {
-    "title": "恐怕…… (I guess I’m afraid…)",
-    "shortExplanation": "I guess I’m afraid…",
-    "longExplanation": "I guess I’m afraid…. Pinyin: kǒngpà……",
-    "formation": "kǒngpà……"
+    "title": "恐怕……（語気副詞：恐らく〜だろう・あいにく〜と思われる）",
+    "shortExplanation": "副詞として文頭や述語の前に置き、好ましくない事態に対する推測や、言いにくい判断を婉曲に伝えます（「恐らく〜だろう」「あいにく〜と思われる」）。",
+    "longExplanation": "「恐怕」（kǒngpà）は語気副詞で、文頭または述語の前に置かれます。話し手が状況を推し量り、相手の意に沿わない結果や好ましくない事態が起こる可能性が高いと判断した際に、語気を和らげて丁寧に伝えるために用いられます（例：「恐怕来不及了」＝恐らく間に合わないだろう、「恐怕不行」＝あいにくダメかもしれない）。日本語の「恐らく〜だろう」「〜ではないかと思われる」「あいにく〜そうだ」に相当します。",
+    "formation": "（主語 ＋）恐怕 ＋ 節 / 述語",
+    "examples": [
+      {
+        "translation": "私の返答を聞いた後では、恐らくあなたにはもう私の答えが分かってしまっているでしょうね。"
+      }
+    ]
   },
   "zh_怕恐怕V_364": {
-    "title": "怕/恐怕 V (probably I’m afraid)",
-    "shortExplanation": "probably I’m afraid",
-    "longExplanation": "probably I’m afraid. Pinyin: pà/ kǒngpà V",
-    "formation": "pà/ kǒngpà V"
+    "title": "怕 / 恐怕 ＋ 動詞（概数副詞：恐らく〜はある・見積もると〜になる）",
+    "shortExplanation": "数量や時間を導く動詞（「有」「超过」など）の前に置き、数量や期間をおおよそ推し量ることを表します（「恐らく〜はある」「およそ〜になる」）。",
+    "longExplanation": "「怕」（pà）または「恐怕」（kǒngpà）が「有」「超过」「要」などの動詞＋数量・時間表現の前に置かれると、数量、時間、程度に対する話者の推測・見積もりを表します。正確な統計を取ったわけではないものの、「おそらく〜はあるだろう」「見積もっても〜にはなるだろう」というニュアンスを含みます（例：「离开怕有二十天了」＝去ってから恐らく20日にはなるだろう、「恐怕要花很多钱」＝恐らくたくさんのお金がかかるだろう）。日本語の「恐らく〜はある」「見積もって〜になる」「およそ〜を下らない」に相当します。",
+    "formation": "主語 ＋ 怕 / 恐怕 ＋ 動詞（有 / 超过 / 要など） ＋ 数量詞 / 時間表現",
+    "examples": [
+      {
+        "translation": "彼がここを離れてから、恐らくもう20日にはなるでしょう。"
+      }
+    ]
   },
   "zh_到底_365": {
-    "title": "到底 (to the end)",
-    "shortExplanation": "to the end",
-    "longExplanation": "to the end. Pinyin: dàodǐ",
-    "formation": "dàodǐ"
+    "title": "動詞 ＋ 到底（補語：最後まで・とことん・やり抜く）",
+    "shortExplanation": "動詞の後ろに置き、動作や行為を途中で諦めず、徹底的に「最後まで」やり抜くことを表します（「最後まで」「とことん」）。",
+    "longExplanation": "「到底」（dàodǐ）が動詞の後ろに置かれて補語のように機能する場合、「底に至るまで」、すなわち物事の結末や最終地点に至るまで行動を推し進めることを意味します。「動詞 ＋ 到底」の形で、中途半端に投げ出さず、強い意志や粘り強さを持って徹底的に最後までやり通す態度を表します（例：「坚持到底」＝最後までやり抜く、「调查到底」＝とことん調査する、「抗争到底」＝徹底抗戦する、「逛到底」＝最後まで付き合って買い回りをする）。日本語の「最後まで」「とことん」「徹底的に〜し抜く」に相当します。",
+    "formation": "主語 ＋ 動詞（＋ 目的語 ＋ 動詞）＋ 到底（または：動詞 ＋ 到底）",
+    "examples": [
+      {
+        "translation": "今日は絶対に最後まで付き合ってショッピングするよ。似合う服が必ず買えるよう保証するから。"
+      }
+    ]
   },
   "zh_到底Q_366": {
-    "title": "到底 Q (in the world)",
-    "shortExplanation": "in the world",
-    "longExplanation": "in the world. Pinyin: dàodǐ Q",
-    "formation": "dàodǐ Q"
+    "title": "到底 ＋ 疑問詞（副詞：いったい・結局のところ）",
+    "shortExplanation": "疑問代名詞や反復疑問文と呼応して用いられ、真相をとことん追及・問い詰める語気を強めます（「いったい」「結局のところ」）。",
+    "longExplanation": "「到底」（dàodǐ）は副詞として疑問文（疑問詞疑問文や反復疑問文「去不去」など）で用いられます。事の真相をとことん究明したい、相手のはっきりした本音や決断を聞き出したいという強い気持ちを表し、「いったい全体どうなのか」「結局のところ何なのか」と問い詰める語気を表します（例：「你到底去不去？」＝君はいったい行くのか行かないのか？、「到底怎么回事？」＝いったいどういうことなのか？、「到底是谁？」＝いったい誰なんだ？）。日本語の「いったい」「結局のところ」「一体全体」に相当します。",
+    "formation": "（主語 ＋）到底（＋ 主語 ＋）疑問詞 / 疑問節（＋ 語気助詞）",
+    "examples": [
+      {
+        "translation": "あなたはいったいどうするつもりなのですか。"
+      }
+    ]
   },
   "zh_拿来说_367": {
-    "title": "拿……来说 (take… for example)",
-    "shortExplanation": "take… for example",
-    "longExplanation": "take… for example. Pinyin: ná…… láishuō",
-    "formation": "ná…… láishuō"
+    "title": "拿……来说（介詞句：〜を例にとると・〜について言えば）",
+    "shortExplanation": "典型的な人や事物を提示して具体例とし、状況や見解を説明・証明します（「〜を例に取れば」「〜について言えば」）。",
+    "longExplanation": "「拿……来说」（ná ... láishuō）は介詞「拿」を用いた固定フレーズで、文頭に置かれて具体例を導きます。「拿」の後ろに人、物、組織などの名詞を挟み、「〜を具体例として取り上げて言うならば」という前置きを作り、後ろの文でその事例に即した事実や説明を展開します（例：「拿他来说」＝彼を例にとると、「拿这几年来说」＝ここ数年のことで言えば、「拿北京来说」＝北京を例に挙げれば）。日本語の「〜を例にとれば」「〜に関して言えば」「〜について言えば」に相当します。",
+    "formation": "拿 ＋ 名詞 / 代名詞 ＋ 来说，説明の節",
+    "examples": [
+      {
+        "translation": "私を例にとれば、私はすでに10年も中国語を勉強しています。"
+      }
+    ]
   },
   "zh_敢V_368": {
-    "title": "敢 V (to dare to V)",
-    "shortExplanation": "to dare to V",
-    "longExplanation": "to dare to V. Pinyin: gǎn V",
-    "formation": "gǎn V"
+    "title": "敢 ＋ 動詞（能願動詞：あえて〜する・〜する勇気がある）",
+    "shortExplanation": "能願動詞（助動詞）として動詞の前に置き、勇気や自信を持ってその動作を行うことを表します（「〜する勇気がある」「あえて〜する」）。",
+    "longExplanation": "「敢」（gǎn）は能願動詞として動詞の前に置かれ、リスクや困難を恐れず、勇気や確信を持って行動を起こすことを表します（例：「敢说实话」＝思い切って本音を言う、「你敢去吗？」＝君は行く勇気があるか？）。また否定形の「不敢」（〜する勇気がない、恐れ多くて〜できない）も頻繁に使われ、恐れや遠慮、または謙遜を表します（例：「不敢当」＝恐縮です・滅相もない、「不敢说坏话」＝悪口を言う勇気がない）。日本語の「〜する勇気がある」「思い切って〜する」「（否定で）とても〜できない」に相当します。",
+    "formation": "主語 ＋（不 / 也）＋ 敢 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "誰も彼の悪口を言う勇気はありません（誰も彼の悪口など言えません）。"
+      }
+    ]
   },
   "zh_倒_369": {
-    "title": "倒 (to pour)",
-    "shortExplanation": "to pour",
-    "longExplanation": "to pour. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒（動詞［第4声 dào］：注ぐ・つぐ・捨てる・あける）",
+    "shortExplanation": "動詞（第4声 dào）として、容器を傾けて液体を注ぎ入れたり、中の物を外へ出したりすることを表します（「注ぐ」「つぐ」「捨てる」）。",
+    "longExplanation": "「倒」は第4声（dào）で発音される際、器を傾けて水やお茶、お酒などの液体を注ぎ入れたり、ゴミなどを容器から外へあけて捨てる動作を表す動詞になります（例：「倒水」＝水を注ぐ・つぐ、「倒茶」＝お茶を淹れて注ぐ、「倒垃圾」＝ゴミを捨てる・ゴミ出しをする）。なお、第3声（dǎo）で発音すると「倒れる、転ぶ、倒産する」の意味になるため発音の区別が重要です。日本語の「注ぐ」「つぐ」「（ゴミを）あける・捨てる」に相当します。",
+    "formation": "主語 ＋ 倒（＋ 人 / 数量詞）＋ 液体・ゴミなどの名詞（水 / 茶 / 垃圾など）",
+    "examples": [
+      {
+        "translation": "お水を1杯注いでお出ししましょう（お水を注いであげますね）。"
+      }
+    ]
   },
   "zh_倒_370": {
-    "title": "倒 (to reverse)",
-    "shortExplanation": "to reverse",
-    "longExplanation": "to reverse. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒（動詞 / 副詞［第4声 dào］：逆にする・ひっくり返す・後退する）",
+    "shortExplanation": "動詞または副詞（第4声 dào）として、上下・前後の向きや順序を反対にすること、または逆走・後退することを表します（「逆にする」「ひっくり返す」「バックする」）。",
+    "longExplanation": "「倒」は第4声（dào）で発音され、位置、順序、方向が本来とは反対・逆さまになることや、車などを後退（バック）させる動作を表します（例：「倒车」＝車をバックさせる、「倒退」＝後退する、「倒过来」＝逆さにする・逆順にする、「倒着背」＝後ろから逆に暗記する）。方向補語（「过来」「过去」など）と組み合わさることが多く、言葉の順序や紙の裏表・上下をひっくり返す動作を表現します。日本語の「逆にする」「ひっくり返す」「逆さまにする」「バックする」に相当します。",
+    "formation": "倒 ＋ 方向補語（过来 / 过去など）（または：倒着 ＋ 動詞）",
+    "examples": [
+      {
+        "translation": "「私はあなたを愛している」は、逆にすれば（反対に読むと）「あなたは私を愛している」になります。"
+      }
+    ]
   },
   "zh_S倒V_371": {
-    "title": "S 倒 V (although S V)",
-    "shortExplanation": "although S V",
-    "longExplanation": "although S V. Pinyin: S dǎo V",
-    "formation": "S dǎo V"
+    "title": "主語 ＋ 倒 / 倒是 ＋ 述語（譲歩副詞：〜は〜だが・〜であることは確かだが）",
+    "shortExplanation": "副詞として述語の前に置き、前項の事実をいったん認めて譲歩した上で、後項で対照的な困難や問題点を指摘します（「〜は〜だが」「確かに〜だが」）。",
+    "longExplanation": "「倒」（dào）は語気副詞として（しばしば「倒是」の形で）述語の直前に置かれ、譲歩と転折を表します。まず前項の言い分や長所をいったん肯定・承認（譲歩）しておきながら、後項（「可是」「但是」「可」などを伴う）で逆接に転じ、別の問題点や相反する困難を対比的に強調します（例：「去倒是可以，就是太远」＝行くのはいいのだが、ただ遠すぎる、「便宜倒是便宜，但质量不行」＝安いのは安いが、品質がダメだ、「说得倒是容易」＝言うのは確かに簡単だが）。日本語の「〜は〜だが」「確かに〜ではあるが（現実は〜だ）」に相当します。",
+    "formation": "主語 ＋ 倒 / 倒是 ＋ 述語1，（可是 / 但是 / 可 ＋）述語2",
+    "examples": [
+      {
+        "translation": "あなたが言うのは確かに簡単ですが、実際にやるとなると難しいですよ！"
+      }
+    ]
   },
   "zh_干gn_372": {
-    "title": "干 (gān) (dry)",
-    "shortExplanation": "dry",
-    "longExplanation": "dry. Pinyin: gàn (gān)",
-    "formation": "gàn (gān)"
+    "title": "干（gān）（形容詞 / 結果補語：乾いている・乾かす・水分がない）",
+    "shortExplanation": "形容詞または結果補語（第1声 gān）として、水分がなく乾いている状態や、水分を取り去ることを表します（「乾いている」「乾かす」）。",
+    "longExplanation": "「干」は第1声（gān）で発音されると形容詞となり、水分や湿気がなくからりと乾いている状態を表します（例：「衣服干了」＝服が乾いた、「干毛巾」＝乾いたタオル、「天气很干」＝空気がとても乾燥している）。また、「擦」（拭く）、「晒」（干す）、「吹」（ドライヤーなどで乾かす）などの動詞の直後に置かれ、水分をすっかり無くして乾いた状態に到達させる結果補語として極めて多用されます（例：「擦干」＝拭いて乾かす、「吹干」＝ブローして乾かす、「晒干」＝天日干しして乾かす）。第4声（gàn：仕事をする）との発音の違いに留意が必要です。日本語の「乾いている」「乾く」「乾かす」に相当します。",
+    "formation": "動詞 ＋ 干（結果補語）（または：名詞 ＋ 很 / 已经 ＋ 干）",
+    "examples": [
+      {
+        "translation": "髪を拭いて乾かしなさい。"
+      }
+    ]
   },
   "zh_干gn_373": {
-    "title": "干 (gàn) (to do)",
-    "shortExplanation": "to do",
-    "longExplanation": "to do. Pinyin: gàn (gàn)",
-    "formation": "gàn (gàn)"
+    "title": "干（gàn）（動詞［口語］：する・やる・働く・従事する）",
+    "shortExplanation": "動詞（第4声 gàn）として口語で広く使われ、仕事や行動を「する」「やる」ことを表します（「する」「やる」「働く」）。",
+    "longExplanation": "「干」は第4声（gàn）で発音されると動詞となり、口語において「做」（する、やる）と同じ意味で幅広く使用されます。ある活動や行動に従事すること、労働や仕事をこなすことを生き生きと表現します（例：「干什么」＝何をしているのか、「干活儿」＝肉体労働や作業をする、「好好干」＝しっかりやりなさい・精を出して働きなさい、「干事业」＝事業に励む）。第1声（gān：乾く）との発音の違いに注意が必要です。日本語の「する」「やる」「働く」「精を出す」に相当します。",
+    "formation": "主語 ＋ 干 ＋ 目的語（什么 / 活儿 / 工作など）",
+    "examples": [
+      {
+        "translation": "あなたは何をしているのですか。"
+      }
+    ]
   },
   "zh_趟_374": {
-    "title": "# 趟 (# times (of trips))",
-    "shortExplanation": "# times (of trips)",
-    "longExplanation": "# times (of trips). Pinyin: # tàng",
-    "formation": "# tàng"
+    "title": "数詞 ＋ 趟（動量詞：〜往復・〜回・〜足労）",
+    "shortExplanation": "動量詞（第4声 tàng）として、人や乗り物が往復・移動する回数や行程を数えます（「〜回」「〜往復」「〜度」）。",
+    "longExplanation": "「趟」（tàng）は移動や往復の回数を数える動量詞です。「去」「来」「跑」「走」などの移動を表す動詞の後ろに置かれ、ある目的地へ行って戻ってくる一連の行程・足労の回数を表します（例：「去了一趟中国」＝中国へひとっ飛び行ってきた、「跑了两趟」＝2往復した・2回足を運んだ、「白跑一趟」＝無駄足を踏んだ、「走一趟」＝ひと足運ぶ）。日本語の「〜回（往復する）」「〜度（行く）」「〜足労」に相当します。",
+    "formation": "動詞（去 / 来 / 走 / 跑など）＋ 数詞 ＋ 趟（＋ 場所の名詞）",
+    "examples": []
   },
   "zh_次_377": {
-    "title": "# 次 (No. # (bus/train route))",
-    "shortExplanation": "No. # (bus/train route)",
-    "longExplanation": "No. # (bus/train route). Pinyin: # cì",
-    "formation": "# cì"
+    "title": "数詞 / 番号 ＋ 次（量詞・名詞：〜便・〜号・〜系統）",
+    "shortExplanation": "列車やバスなどの便名・運行番号の後ろに付き、特定の運行系統や列車番号を表します（「〜号」「〜便」「〜系統」）。",
+    "longExplanation": "「次」（cì）は数字やアルファベットからなる運行番号の後ろに付き、列車や長距離バス、路線バスなどの便名・運行番号（中国語の「车次」）を表す接尾辞・量詞として機能します（例：「502次公交车」＝502系統の路線バス、「G1次高速列车」＝高速鉄道G1号便、「K123次列车」＝快速列車K123便）。日本語の列車・便・路線の「〜号」「〜便」「〜系統」に相当します。",
+    "formation": "数詞 / 運行番号 ＋ 次（＋ 乗り物の名詞：公交车 / 列车 / 火车など）",
+    "examples": [
+      {
+        "translation": "502番のバスがもうすぐ到着します。"
+      }
+    ]
   },
   "zh_为了V1而V2_378": {
-    "title": "为了 V1 而 V2 (V2 in order to V1)",
-    "shortExplanation": "V2 in order to V1",
-    "longExplanation": "V2 in order to V1. Pinyin: wèile V1 ér V2",
-    "formation": "wèile V1 ér V2"
+    "title": "为了 ＋ 動詞1 ＋ 而 ＋ 動詞2（接続詞・前置詞：動詞1のために動詞2をする）",
+    "shortExplanation": "目的を表す介詞「为了」と接続詞「而」が呼応し、動詞1という目的を達成するために動詞2という行動をとることを表します（「動詞1のために動詞2する」）。",
+    "longExplanation": "「为了 ＋ 動詞1 ＋ 而 ＋ 動詞2」は、目的とそのための行動を明確に結びつける複文パターンです。介詞「为了」（wèile）が達成すべき目標や目的（動詞1）を導き、接続詞「而」（ér）がそれを受けて行われる具体的な行為や努力（動詞2）を導きます。文章語や改まった場面で好んで使われ、強い目的意識や行動の動機を際立たせます（例：「为了实现理想而努力奋斗」＝理想を実現するために奮闘努力する、「为了生存而工作」＝生きるために働く）。日本語の「〜するために〜する」「〜のために〜を行う」に相当します。",
+    "formation": "（主語 ＋）为了 ＋ 動詞1（＋ 目的語）＋（主語 ＋）而 ＋ 動詞2（＋ 目的語）",
+    "examples": []
   },
   "zh_为了N而V_381": {
-    "title": "为了 N 而 V (V for N)",
-    "shortExplanation": "V for N",
-    "longExplanation": "V for N. Pinyin: wèile N ér V",
-    "formation": "wèile N ér V"
+    "title": "为了 ＋ 名詞 ＋ 而 ＋ 動詞（介詞句・接続詞：名詞のために動詞をする）",
+    "shortExplanation": "介詞「为了」が目的や対象となる名詞を導き、接続詞「而」を介してそのために行う動作を表します（「名詞のために動詞する」）。",
+    "longExplanation": "「为了 ＋ 名詞 ＋ 而 ＋ 動詞」は、介詞「为了」（wèile）の後ろに目的・追求対象となる名詞（利益、理想、平和、生存に必要な資源など）を置き、接続詞「而」（ér）を挟んでその目的のために行われる動詞を続ける構文です（例：「为了荣誉而战」＝名誉のために戦う、「为了利益而合作」＝利益のために協力する、「为了健康而跑步」＝健康のために走る）。書面語の語感を帯び、明確な動機や大義名分を伴う行動を表します。日本語の「〜のために〜する」「〜を求めて〜を行う」に相当します。",
+    "formation": "主語 ＋ 为了 ＋ 名詞 ＋ 而 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "植物は日光や空気、水のために競争します。"
+      }
+    ]
   },
   "zh_仍然VA_382": {
-    "title": "仍然 V/A (still V/A)",
-    "shortExplanation": "still V/A",
-    "longExplanation": "still V/A. Pinyin: réngrán V/A",
-    "formation": "réngrán V/A"
+    "title": "仍然 ＋ 動詞 / 形容詞（時間副詞：依然として・相変わらず・やはり）",
+    "shortExplanation": "副詞として動詞や形容詞の前に置き、状況や動作が変化せず従前どおり継続していることを表します（「依然として」「相変わらず」「今なお」）。",
+    "longExplanation": "「仍然」（réngrán）は状態の継続を表す副詞で、「依然」「还是」に近く、やや改まった響きを持ちます。時間や環境が変化したり障害があったりしても、事物の性質や動作・状態が以前のままで変わっていないことを表します（例：「仍然坚持」＝依然として固執・堅持している、「仍然很冷」＝依然としてとても寒い、「仍然有效」＝今なお有効である）。「即使 / 就算……也……」（たとえ〜であっても）や「虽然……但是……」（〜だがしかし）といった譲歩の構文とも非常によく呼応します。日本語の「依然として」「相変わらず」「今なお」「やはり」に相当します。",
+    "formation": "主語（＋ 即使 / 虽然〜）＋ 仍然 ＋ 動詞 / 形容詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "数キロメートルの深い海底であっても、依然として物を見ることができます。"
+      }
+    ]
   },
   "zh_是否_383": {
-    "title": "是否 (if, whether)",
-    "shortExplanation": "if, whether",
-    "longExplanation": "if, whether. Pinyin: shìfǒu",
-    "formation": "shìfǒu"
+    "title": "是否……（副詞・接続詞：〜かどうか・果たして〜か否か）",
+    "shortExplanation": "口語の「是不是」に相当する書面語で、動詞・形容詞の前に置き、事態が成立するかどうかを問うたり疑ったりします（「〜かどうか」「〜であるか否か」）。",
+    "longExplanation": "「是否」（shìfǒu）は書面語的な色彩を持つ語で、古代中国語の「是」（肯定）と「否」（否定）が合わさったものであり、現代口語の正反疑問表現「是不是」に相当します。述語（動詞や形容詞）の前に置かれ、あるいは「知道」「清楚」「确定」「考虑」などの認識動詞の目的語節の中で用いられて、「〜かどうか」「〜であるか否か」という不確実な事態の真偽を表します（例：「是否同意」＝同意するかどうか、「是否成真」＝現実になるか否か、「是否可行」＝実行可能かどうか）。日本語の「〜かどうか」「〜か否か」「果たして〜だろうか」に相当します。",
+    "formation": "主語 ＋（不知道 / 不确定 ＋）是否 ＋ 述語（動詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "ですが彼女はまだこんなに幼いので、この本を彼女が読んで理解できるかどうか、私には分かりません。"
+      }
+    ]
   },
   "zh_受不了_384": {
-    "title": "受不了 (tolerate)",
-    "shortExplanation": "tolerate",
-    "longExplanation": "tolerate. Pinyin: shòubùliǎo",
-    "formation": "shòubùliǎo"
+    "title": "受不了（可能補語：耐えられない・我慢できない・たまらない）",
+    "shortExplanation": "可能補語の否定形として、肉体的苦痛や精神的ストレス、相手の言動に我慢できず耐え切れないことを表します（「耐えられない」「我慢ならない」）。",
+    "longExplanation": "「受不了」（shòubùliǎo）は「受ける・耐える」を意味する「受」に可能補語の否定形「不了」が付いたもので、「受得了」（耐えられる）の対義語です。激しい暑さ・寒さ・痛みなどの肉体的負荷、過酷な労働環境、または他人の不快な態度やわがままに対して、忍耐の限界を超えて「もうこれ以上は耐えられない」「辛抱できない」と不満や悲鳴をあげる際に使います（例：「热得受不了」＝暑くてたまらない、「受不了这个味道」＝この臭いには我慢できない、「真受不了他」＝彼には本当に愛想が尽きる・耐えられない）。日本語の「耐えられない」「我慢できない」「たまらない」に相当します。",
+    "formation": "主語 ＋（真 / 实在 ＋）受不了（＋ 目的語：人 / 事物 / 状況）",
+    "examples": [
+      {
+        "translation": "私は本当にあなたには我慢できません。いったいいつまで見て回るつもりなんですか。"
+      }
+    ]
   },
   "zh_接着V_385": {
-    "title": "接着 V (continue to V)",
-    "shortExplanation": "continue to V",
-    "longExplanation": "continue to V. Pinyin: jiēzhe V",
-    "formation": "jiēzhe V"
+    "title": "接着 ＋ 動詞（副詞：引き続いて動詞する・続けて〜する）",
+    "shortExplanation": "副詞として動詞の前に置き、先行する動作を受けてそのまま引き続いて動作を行うことを表します（「続けて〜する」「引き続いて〜する」）。",
+    "longExplanation": "「接着」（jiēzhe）は副詞として動詞の前に置かれ、直前の動作や状態から途切れずにそのまま継続して次の動作に移ること、あるいは前任者・先行者の後を引き継いで同じ動作を続けることを表します（例：「接着说」＝話を続ける・続けて話す、「接着干」＝作業を続ける、「接着看」＝続けて読む・見る、「接着做下一个项目」＝引き続き次のプロジェクトに着手する）。日本語の「引き続いて〜する」「続けて〜する」「引き継いで〜する」に相当します。",
+    "formation": "主語 ＋ 接着 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あなたはこの本を読み終わった後、まだ返さないでください。私が続けて読みますから。"
+      }
+    ]
   },
   "zh_接着_386": {
-    "title": "接着 (then)",
-    "shortExplanation": "then",
-    "longExplanation": "then. Pinyin: jiēzhe",
-    "formation": "jiēzhe"
+    "title": "接着……（接続詞：続いて・その次に・それから）",
+    "shortExplanation": "接続詞として後続の文頭に置き、前の事態に引き続いて次の事態が時間順に起こることを表します（「続いて」「それから」「その後すぐに」）。",
+    "longExplanation": "「接着」（jiēzhe）は接続詞として前後の節を連結し、「然后」（そのあと）や「紧接着」と同様に、前の事象に引き続いて次の事象が速やかに発生する時間的順序を表します（例：「大家鼓掌，接着主持人走上舞台」＝全員が拍手し、続いて司会者が舞台に上がった、「听完报告，接着大家进行了讨论」＝報告を聞き、続いて皆で討議を行った）。後続節で副詞の「又」「就」などと呼応することが多く、物事の展開のテンポの良さや自然な連鎖を表します。日本語の「続いて」「その次に」「それからすぐに」に相当します。",
+    "formation": "節1，接着（＋ 主語）（＋ 又 / 就）＋ 節2",
+    "examples": [
+      {
+        "translation": "彼は卒業後に実家で1年間働き、続いてまた北京大学の大学院に合格して進学しました。"
+      }
+    ]
   },
   "zh_除此以外_387": {
-    "title": "除此以外 (other than that)",
-    "shortExplanation": "other than that",
-    "longExplanation": "other than that. Pinyin: chú cǐ yǐwài",
-    "formation": "chú cǐ yǐwài"
+    "title": "除此以外……（接続表現：これ以外に・このほかには・それ以外は）",
+    "shortExplanation": "固定フレーズとして後続節の冒頭に置き、前述の事柄を除外したり、別の情報を補足したりします（「これ以外に」「このほかには」）。",
+    "longExplanation": "「除此以外」（chú cǐ yǐwài）は「除此之外」と同義の接続表現で、文頭または接続詞の直後に置かれます。「此」は直前に述べた事柄や状況を指します。主な用法として、①「除外」（前述の内容以外には他に見当たらない・存在しないことを表し、「几乎不/没……」「再找不到……」などと呼応する）、②「付加・追加」（前述の事柄のほかに、さらに別の要素が加わることを表し、「还/也……」と呼応する）の2通りがあります。日本語の「これ以外には」「このほかには」「それ以外は」に相当します。",
+    "formation": "文1，（但 / 而且 ＋）除此以外（＋ 主語）＋ 節",
+    "examples": [
+      {
+        "translation": "彼と弟は同じ日に生まれ、兄弟二人はとてもよく似ていますが、それ以外には共通点がほとんど見当たりません。"
+      }
+    ]
   },
   "zh_把N1叫作N2_388": {
-    "title": "把 N1 叫作 N2 (call N1 N2)",
-    "shortExplanation": "call N1 N2",
-    "longExplanation": "call N1 N2. Pinyin: bǎ N1 jiàozuò N2",
-    "formation": "bǎ N1 jiàozuò N2"
+    "title": "把 ＋ 名詞1 ＋ 叫作 ＋ 名詞2（把構文：名詞1を名詞2と呼ぶ・名付ける）",
+    "shortExplanation": "「把」構文を用いて対象（名詞1）を提示し、それを名詞2と呼称・定義することを表します（「名詞1を名詞2と呼ぶ」）。",
+    "longExplanation": "「把 ＋ 名詞1 ＋ 叫作 ＋ 名詞2」は、「把」構文に動詞「叫作」（〜と呼ぶ、〜と称する）が組み合わさった表現です。処置の対象となる事物や概念（名詞1）を「把」で前に引き出し、その呼称、あだ名、比喩的名称、あるいは学術的定義（名詞2）を「叫作」の後ろに配置します（例：「把这种现象叫作……」＝この現象を〜と呼ぶ、「把黄河叫作母亲河」＝黄河を母なる河と呼ぶ）。人々の慣習的な呼び方や命名を説明する際によく使われます。日本語の「〜を〜と呼ぶ」「〜を〜と称する」に相当します。",
+    "formation": "主語 ＋ 把 ＋ 名詞1 ＋ 叫作 ＋ 名詞2（名称 / 呼称 / 別名）",
+    "examples": [
+      {
+        "translation": "中国人は黄河のことを「母なる河」と呼びます。"
+      }
+    ]
   },
   "zh_无论不管Q都_389": {
-    "title": "(无论/不管) Q 都 (no matter Q)",
-    "shortExplanation": "no matter Q",
-    "longExplanation": "no matter Q. Pinyin: ( wúlùn/ bùguǎn) Q dōu",
-    "formation": "( wúlùn/ bùguǎn) Q dōu"
+    "title": "（无论 / 不管）＋ 疑問詞 ＋ 都……（無条件接続詞：たとえ誰 / 何であっても皆〜だ）",
+    "shortExplanation": "無条件を表す接続詞「无论 / 不管」が疑問代名詞（谁・什么・哪儿など）および「都」と呼応し、どんな状況・対象であっても例外なく成立することを表します（「たとえ〜であってもすべて〜」）。",
+    "longExplanation": "「（无论/不管）＋ 疑問詞 ＋ 都……」は無条件複文の代表的なパターンです。「不管」は口語的、「无论」はより改まった書面語的ニュアンスを持ちます。後ろに疑問代名詞（「谁」だれ、「什么」なに、「哪儿」どこ、「怎么」どう、「什么时候」いつなど）を伴い、後続の主節で副詞の「都」（または「也」）と呼応して、「いかなる条件や人物であっても例外は一切認められず、結果はすべて一律である」ことを強調します（例：「无论谁都……」＝誰であってもみな……、「不管什么时候都……」＝いつでも例外なく……）。日本語の「どんな〜であってもみな……」「たとえ誰 / 何であれすべて〜」に相当します。",
+    "formation": "（无论 / 不管）＋ 疑問詞（谁 / 什么 / 哪儿 / 怎么など）＋（主語 ＋）都 / 也 ＋ 述語",
+    "examples": [
+      {
+        "translation": "大丈夫ですよ、謝る必要はありません。誰であってもうっかり書き間違えてしまう時はあるものです。"
+      }
+    ]
   },
   "zh_V上_390": {
-    "title": "V 上 (get to V)",
-    "shortExplanation": "get to V",
-    "longExplanation": "get to V. Pinyin: V shàng",
-    "formation": "V shàng"
+    "title": "動詞 ＋ 上（結果補語 / 可能補語：〜にありつける・目標を達成する・〜できる）",
+    "shortExplanation": "動詞の後ろに付き、目標の達成や機会の獲得、恵まれた状態の享受を表します（可能補語「動詞 ＋ 得上 / 不上」の形で「〜にありつける / ありつけない」）。",
+    "longExplanation": "「上」（shàng）が動詞の後ろに置かれて結果補語または可能補語として機能する場合、目的の達成や望ましい機会・恩恵の獲得を表します（例：「考上大学」＝大学に合格する、「过上好日子」＝良い暮らしができるようになる、「穿上新衣服」＝新しい服を着る）。特に可能補語の形「動詞 ＋ 得上 / 不上」で非常によく用いられ、幸運にもその機会にありつけるか、あるいは事情があってありつけない・間に合わない・利用できないかを表します（例：「吃得上 / 吃不上」＝食べられる・ありつける／ありつけない、「赶得上 / 赶不上」＝間に合う／間に合わない）。日本語の「〜にありつける」「〜を達成する」「首尾よく〜できる」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋（得 / 不）＋ 上（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "どうやら今日は羊肉の水餃子にはありつけそうにありません。"
+      }
+    ]
   },
   "zh_V出来_391": {
-    "title": "V 出来 (V out (an outcome is produced))",
-    "shortExplanation": "V out (an outcome is produced)",
-    "longExplanation": "V out (an outcome is produced). Pinyin: V chūlái",
-    "formation": "V chūlái"
+    "title": "動詞 ＋ 出来（方向補語の派生用法：成果を生み出す・作り出す・見分ける）",
+    "shortExplanation": "方向補語の派生義として、動作を通じて新しい成果やアイディア、作品などを「作り出す・生み出す」、または識別することを表します（「〜し出す」「〜して作り上げる」）。",
+    "longExplanation": "「出来」（chūlái）は方向補語「出＋来」が動詞の後ろに付いて抽象的な派生義を表す用法です。最も典型的な用法は、動作や思考、研究などの努力を通じて、それまで無かった成果物やアイディア、解決策などを世に「生み出す・作り出す・完成させる」ことを表します（例：「想出来好办法」＝良いアイディアを思いつく、「写出来一本书」＝一冊の本を書き上げる、「做出来新样品」＝新サンプルを作り上げる、「研究出来新药」＝新薬を開発・研究し出す）。また、視覚や聴覚を通じて隠れた真相や違いを「見抜く・識別する」（「看出来」「听出来」）際にも用いられます。日本語の「〜を作り出す」「〜し出す」「〜を完成させる」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋（得 / 不）＋ 出来（＋ 目的語：成果 / 作品 / アイディア）",
+    "examples": []
   },
   "zh_总的来说_393": {
-    "title": "总的来说 (overall)",
-    "shortExplanation": "overall",
-    "longExplanation": "overall. Pinyin: zǒngdeláishuō",
-    "formation": "zǒngdeláishuō"
+    "title": "总的来说……（挿入句・接続表現：総じて言えば・概して・全般的に見て）",
+    "shortExplanation": "文頭や主語の直後に置き、全体を総括した概括的な評価や判断を下す際に用います（「総じて言えば」「概して言えば」「全体的に見て」）。",
+    "longExplanation": "「总的来说」（zǒng de lái shuō）は談話標識（挿入語句）として機能し、文頭または主語の後ろに置かれます。細部や個別の問題点を一旦脇に置き、物事の全体像を俯瞰した上で総合的な結論や評価を述べる際に使われます（例：「总的来说，进展还算顺利」＝全体として見れば進捗は順調と言える、「总的来说，这部电影很精彩」＝総じて言えばこの映画は非常に素晴らしい）。日本語の「総じて言えば」「全体的に見て」「概して言えば」「総合的には」に相当します。",
+    "formation": "（主語 ＋）总的来说，（＋ 主語 ＋）全体の評価・見解",
+    "examples": [
+      {
+        "translation": "この会社は全体的に見てなかなか良いです。"
+      }
+    ]
   },
   "zh_在于_394": {
-    "title": "在于 (is all about)",
-    "shortExplanation": "is all about",
-    "longExplanation": "is all about. Pinyin: zàiyú",
-    "formation": "zàiyú"
+    "title": "在于……（動詞：〜にある・〜にかかっている・肝心な点は〜だ）",
+    "shortExplanation": "書面語の動詞として、物事の本質や核心、成功の鍵、原因などがどこに存するかを示します（「〜にある」「〜にかかっている」）。",
+    "longExplanation": "「在于」（zàiyú）は書面語的な色彩の強い動詞で、「在」（存在する）と介詞「于」（〜に）が融合した語です。ある物事の核心的本質、根本的な原因、あるいは勝敗や成功を決定づける要衝がどこにあるかを指し示します（例：「成功的秘诀在于勤奋」＝成功の秘訣は勤勉にある、「生命在于运动」＝生命の意義は運動（体を動かすこと）にある、「问题的关键在于……」＝問題の鍵は〜にある）。日本語の「〜にある」「〜にかかっている」「要は〜である」に相当します。",
+    "formation": "主語（事物 / 現象 / 核心）＋ 在于 ＋ 目的語（本質 / 鍵 / 原因など）",
+    "examples": [
+      {
+        "translation": "「生命は運動（体を動かすこと）にあり」と人々はよく言います。"
+      }
+    ]
   },
   "zh_V1着V1着V2了_395": {
-    "title": "V1 着 V1 着 V2了 (V2’ed while V1-ing)",
-    "shortExplanation": "V2’ed while V1-ing",
-    "longExplanation": "V2’ed while V1-ing. Pinyin: V1 zhe V1 zhe V2 le",
-    "formation": "V1 zhe V1 zhe V2 le"
+    "title": "動詞1 ＋ 着 ＋ 動詞1 ＋ 着 ＋（就）＋ 動詞2 ＋ 了（〜しているうちに・〜している最中に突然…した）",
+    "shortExplanation": "動作1が継続・反復して行われている最中に、予期せず動作2が発生したり新たな事態に変化したりすることを表します（「〜しているうちに…になった」「〜している最中にふと…した」）。",
+    "longExplanation": "「動詞1 ＋ 着 ＋ 動詞1 ＋ 着 ＋ 動詞2 ＋ 了」は、同一の動詞を重ねてアスペクト助詞「着」を伴うことで、ある動作が継続して行われている状態を描写します。そしてその動作が続いている過程の中で、思いがけず別の動作や状態変化（動詞2）が生じたことを表します。動詞2の前には副詞「就」が呼応して用いられることがよくあります（例：「走着走着就迷路了」＝歩いているうちに道に迷ってしまった、「听着听着就睡着了」＝聴いているうちに眠ってしまった）。日本語の「〜しているうちに（突然）…した」「〜している最中にふと…になった」に相当します。",
+    "formation": "主語 ＋ 動詞1 ＋ 着 ＋ 動詞1 ＋ 着 ＋（就）＋ 動詞2 ＋ 了",
+    "examples": [
+      {
+        "translation": "彼女は話しているうちに、思わず笑い出してしまった。"
+      }
+    ]
   },
   "zh_一就_396": {
-    "title": "一……就…… (as soon as … then …)",
-    "shortExplanation": "as soon as … then …",
-    "longExplanation": "as soon as … then …. Pinyin: yī…… jiù……",
-    "formation": "yī…… jiù……"
+    "title": "一……就……（接続詞：〜するとすぐ…・〜したらすぐ…）",
+    "shortExplanation": "前後の二つの動作や出来事が時間的に間髪を容れず連続して行われることを表します（「〜するとすぐ…」「〜したとたんに…」）。",
+    "longExplanation": "「一……就……」（yī ... jiù ...）は、動作や事態の迅速な連続発生を表す代表的な接続表現です。前半の動作が完了または発生すると同時に、あるいはその直後に後半の動作が直ちに行われることを示します。前後の主語が同一の場合は「主語 ＋ 一……就……」、主語が異なる場合は「主語1 ＋ 一……，主語2 ＋ 就……」という語順をとります（例：「他一下课就回宿舍了」＝彼は授業が終わるとすぐに寮へ帰った）。日本語の「〜するとすぐ…」「〜したらたちまち…」「〜するやいなや…」に相当します。",
+    "formation": "主語 ＋ 一 ＋ 動詞1 / 節1 ＋ 就 ＋ 動詞2 / 節2（主語が異なる場合：主語1 ＋ 一 ＋ 動詞1，主語2 ＋ 就 ＋ 動詞2）",
+    "examples": [
+      {
+        "translation": "彼女は家に帰るとすぐにテレビを見る。"
+      }
+    ]
   },
   "zh_一就_397": {
-    "title": "一……就…… (每次只要)",
-    "shortExplanation": "每次只要",
-    "longExplanation": "每次只要. Pinyin: yī…… jiù……",
-    "formation": "yī…… jiù……"
+    "title": "一……就……（規則的条件：〜するといつも…・〜するたびに決まって…）",
+    "shortExplanation": "「毎回〜するたびに決まって…になる」という習慣、規則性、必然的な結果を表します（「〜すると必ず…」「〜するたびに…」）。",
+    "longExplanation": "「一……就……」（yī ... jiù ...）は時間の連続性だけでなく、規則的な条件関係（「每次只要……就……」）を表す用法を持ちます。ある条件が満たされると、決まって毎回同じ結果や反応が引き起こされるという習慣や生理的反応、規則的な因果関係を表します（例：「我一喝咖啡就失眠」＝私はコーヒーを飲むと決まって眠れなくなる、「他一紧张就出汗」＝彼は緊張するといつも汗をかく）。日本語の「〜すると必ず…」「〜するたびに決まって…」「〜しさえすればいつも…」に相当します。",
+    "formation": "主語 ＋ 一 ＋ 動詞1 / 条件節 ＋ 就 ＋ 動詞2 / 結果節",
+    "examples": [
+      {
+        "translation": "息子は幼いころ、口を開いて話すたびに決まって顔を赤らめていた。"
+      }
+    ]
   },
   "zh_究竟Q_398": {
-    "title": "究竟 Q (Q exactly)",
-    "shortExplanation": "Q exactly",
-    "longExplanation": "Q exactly. Pinyin: jiūjìng Q",
-    "formation": "jiūjìng Q"
+    "title": "究竟 ＋ 疑問詞（副詞：いったい・果たして・結局のところ）",
+    "shortExplanation": "疑問代名詞や選択疑問文と組み合わされ、真相を追及・追究する語気を強めます（「いったい」「果たして」）。",
+    "longExplanation": "「究竟」（jiūjìng）は副詞として疑問文（疑問詞を含む疑問文や選択疑問文など）で用いられます。事態の真相や確実な答えをとことん突き止めたいという気持ちを表し、「いったい全体〜なのか」「果たして〜なのか」と問い詰める語気を強めます。「到底」とほぼ同義ですが、「究竟」はやや改まった書き言葉や落ち着いた追究の語気でもよく用いられます（例：「究竟谁是对的？」＝果たしてどちらが正しいのか？、「你究竟是什么意思？」＝あなたはいったいどういう意図なのですか？）。日本語の「いったい」「果たして」「結局のところ」に相当します。",
+    "formation": "（主語 ＋）究竟（＋ 主語 ＋）疑問詞（谁 / 什么 / 哪 / 怎么など）＋ 述語（＋ 語気助詞）",
+    "examples": [
+      {
+        "translation": "旅行に行くには、いったいどの季節が比較的良いのだろうか。"
+      }
+    ]
   },
   "zh_V起来_399": {
-    "title": "V 起(来) (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qǐ( lái)",
-    "formation": "V qǐ( lái)"
+    "title": "動詞 ＋ 起(来)（方向補語：下から上へ〜する・〜し上げる・持ち上げる）",
+    "shortExplanation": "方向補語として、動作が下から上に向かって移動・上昇することを表します（「持ち上げる」「立ち上がる」「引き上げる」）。",
+    "longExplanation": "「起」または「起来」（qǐ / qǐlái）は動詞の後ろに置かれて方向補語として機能し、人や事物が下方から上方へと空間的に移動する動作を表します（反対の動作は「下来」）。「拿」（手に取る・持つ）、「抬」（担ぐ・持ち上げる）、「站」（立つ）、「举」（挙げる）などの動作動詞と組み合わされます。目的語がある場合は「把」構文を用いるか、「動詞 ＋ 起 ＋ 目的語 ＋ 来」の語順をとることができます（例：「拿起书来」＝本を持ち上げる、「站起来」＝立ち上がる、「抬起头」＝顔を上げる）。日本語の「〜を持ち上げる」「〜し上げる」「立ち上がる」に相当します。",
+    "formation": "主語 ＋（把 ＋ 目的語 ＋）動詞 ＋ 起(来)（または：動詞 ＋ 起 ＋ 目的語 ＋ 来）",
+    "examples": [
+      {
+        "translation": "先に机の上の物を持ち上げておいてください。私が拭き終わってからまた下に置いてください。"
+      }
+    ]
   },
   "zh_V起来_400": {
-    "title": "V 起来 (to start to V)",
-    "shortExplanation": "to start to V",
-    "longExplanation": "to start to V. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "動詞 / 形容詞 ＋ 起来（派生方向補語：〜し始める・〜し出す）",
+    "shortExplanation": "動作や状態が新たに始まり、それがそのまま継続・発展していくことを表します（「〜し始める」「〜し出す」「〜になってくる」）。",
+    "longExplanation": "「起来」（qǐlai）が動詞や形容詞の後ろに置かれて派生的な方向補語として機能する場合、動作や状態の開始と継続を表します。それまで静止していたり別の状態にあったものが、ある時点から急に動き始め、そのまま続いていく様子を描写します（例：「唱起来」＝歌い始める、「哭起来」＝泣き出す、「笑起来」＝笑い出す、「热起来」＝暑くなってくる）。目的語を伴う場合は「動詞 ＋ 起 ＋ 目的語 ＋ 来」のように目的語を間に挟みます（例：「下起雨来」＝雨が降り出す、「聊起天来」＝おしゃべりをし始める）。日本語の「〜し始める」「〜し出す」「〜になってくる」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 起来 ＋ 了（目的語を伴う場合：動詞 ＋ 起 ＋ 目的語 ＋ 来）",
+    "examples": [
+      {
+        "translation": "王さんはまた歌い始めました。"
+      }
+    ]
   },
   "zh_V起来_401": {
-    "title": "V 起来 (seems like, sounds like)",
-    "shortExplanation": "seems like, sounds like",
-    "longExplanation": "seems like, sounds like. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "知覚動詞 ＋ 起来（評価・印象：〜してみると…・〜した感じでは…）",
+    "shortExplanation": "知覚動詞（看、听、尝、闻、摸など）の後ろに置き、「〜してみると…だ」「〜した印象では…だ」という観点や評価を表します（「聞いてみると」「見たところ」）。",
+    "longExplanation": "「起来」（qǐlai）は知覚や認識を表す動詞（「看」＝見る、「听」＝聞く、「尝」＝味わう、「闻」＝嗅ぐ、「摸」＝触る、「想」＝考える、「做」＝行うなど）の後ろに置かれ、その動作を通して得られた印象、感覚、主観的な評価・判断を述べる際に用いられます（例：「看起来很漂亮」＝見たところとても綺麗だ、「吃起来很香」＝食べてみると香ばしい、「做起来不容易」＝やってみると簡単ではない）。日本語の「〜してみると」「聞いてみると〜のようだ」「見たところ〜に見える」に相当します。",
+    "formation": "主語 ＋ 動詞（看 / 听 / 尝 / 闻 / 想など）＋ 起来 ＋ 形容詞 / 評価の表現（像……一样など）",
+    "examples": [
+      {
+        "translation": "上海語は聞いてみると、まるで外国語のようだ。"
+      }
+    ]
   },
   "zh_说起O_402": {
-    "title": "说起 O (speaking of O)",
-    "shortExplanation": "speaking of O",
-    "longExplanation": "speaking of O. Pinyin: shuōqǐ O",
-    "formation": "shuōqǐ O"
+    "title": "说起 ＋ 目的語（話題導入：〜と言えば・〜の話になると・〜について言えば）",
+    "shortExplanation": "文頭に置いて特定の話題や人、物を引き出し、それに関する感想や見解を述べます（「〜と言えば」「〜の話になると」）。",
+    "longExplanation": "「说起」（shuōqǐ）は文頭や節の冒頭に置かれ、話題を提起したり話の糸口を開いたりする際に用いられる表現です。「说起」の後ろに話題となる名詞や目的語を従え、「〜のことについて話題を振るならば」「〜の話となると」という前置きを作った上で、後続の文でそのテーマに対する自身の体験、思い出、意見などを展開します（例：「说起那次旅行」＝あの時の旅行の話になると、「说起京剧」＝京劇と言えば）。日本語の「〜と言えば」「〜について言えば」「〜の話になると」に相当します。",
+    "formation": "说起 ＋ 目的語 / 話題の名詞，後続の解説・意見の節",
+    "examples": [
+      {
+        "translation": "食べ物の話と言えば、私に最も深い印象を残したのは湖南料理です。"
+      }
+    ]
   },
   "zh_如何_403": {
-    "title": "如何 (how)",
-    "shortExplanation": "how",
-    "longExplanation": "how. Pinyin: rúhé",
-    "formation": "rúhé"
+    "title": "如何（疑問代名詞：どのように・いかに・どうやって）",
+    "shortExplanation": "動詞の前に置き、動作のやり方や方法、様態を改まった語気で尋ねたり表したりします（「どのように」「いかに」）。",
+    "longExplanation": "「如何」（rúhé）は書き言葉や改まった会話で多用される疑問代名詞で、口語の「怎么」や「怎样」に相当します。動詞の前に置かれ、動作の方法、手段、様態を問うたり、間接疑問節の中で「いかに〜か」「どのように〜したか」と説明したりする際に用いられます（例：「如何提高成绩」＝どのように成績を上げるか、「如何处理这个问题」＝この問題をいかに処理するか、「如何生活」＝いかに暮らすか）。日本語の「どのように」「いかに」「どうやって」に相当します。",
+    "formation": "主語 ＋（是 ＋）如何 ＋ 動詞（＋ 目的語）（＋ 的）",
+    "examples": [
+      {
+        "translation": "審査員は最初の夫婦に、2人がいかに仲睦まじく愛し合っているかを話すよう促した。"
+      }
+    ]
   },
   "zh_如何_404": {
-    "title": "如何 (how is)",
-    "shortExplanation": "how is",
-    "longExplanation": "how is. Pinyin: rúhé",
-    "formation": "rúhé"
+    "title": "名詞 / 節 ＋ 如何？（述語：いかがですか・どうですか・どんな様子ですか）",
+    "shortExplanation": "文末や述語の位置に置き、事態の状況、結果、様子、意見などを改まった語気で尋ねます（「いかがですか」「どうですか」）。",
+    "longExplanation": "「如何」（rúhé）が文末や述語として単独で用いられる場合、口語の「怎么样」に相当し、物事の状況、進捗、結果、あるいは相手の意向を改まって尋ねる表現になります（例：「近况如何？」＝近況はいかがですか？、「效果如何？」＝効果はどうですか？、「你看如何？」＝あなたから見ていかがですか？）。アンケート調査、ビジネスの報告、フォーマルな対話などで多用されます。日本語の「いかがですか」「どうですか」「どのような状況ですか」に相当します。",
+    "formation": "主語（状況 / 結果 / 意見などを表す名詞）＋ 如何？",
+    "examples": [
+      {
+        "translation": "「80年代生まれ」の人々の月収の状況はいかがなものでしょうか。"
+      }
+    ]
   },
   "zh_怎么_405": {
-    "title": "怎么，…… ((expression of surprise))",
-    "shortExplanation": "(expression of surprise)",
-    "longExplanation": "(expression of surprise). Pinyin: zěnme，……",
-    "formation": "zěnme，……"
+    "title": "怎么，……（感嘆・驚きの語気：えっ・まさか・どうして…）",
+    "shortExplanation": "文頭に独立して置き、思いがけない事態に対する強い驚き、意外感、信じられない気持ちを表します（「えっ」「まさか」「どうして」）。",
+    "longExplanation": "「怎么」（zěnme）が文頭に単独で置かれ、直後に読点（コンマ）を伴う場合、感嘆詞のように機能して話者の強い驚きや意外性、不可解な心情を表します。自分の予想や常識とは異なる出来事に直面した際、「えっ、まさか」「一体どうしたというんだ」と呆気にとられたり不審に思ったりする語気を表します（例：「怎么，你不知道这件事？」＝えっ、君はこの事を知らないの？！、「怎么，你生病了？」＝あれ、病気になったの？！）。日本語の「えっ」「まさか」「あれっ」「どうしたの」に相当します。",
+    "formation": "怎么，驚きや疑問を表す節（？！）",
+    "examples": [
+      {
+        "translation": "えっ、私のことが分からなくなっちゃったの？！"
+      }
+    ]
   },
   "zh_靠_406": {
-    "title": "靠 (to lean)",
-    "shortExplanation": "to lean",
-    "longExplanation": "to lean. Pinyin: kào",
-    "formation": "kào"
+    "title": "靠（動作動詞：もたれる・寄りかかる・背をあてる）",
+    "shortExplanation": "身体や物が壁、机、椅子などの支えに体重を預けて寄りかかる姿勢・動作を表します（「もたれる」「寄りかかる」）。",
+    "longExplanation": "「靠」（kào）は身体や物体を他の支え（壁、机、背もたれなど）に寄りかからせたり、背をもたれかけさせたりする動作・姿勢を表す動詞です。持続を表すアスペクト助詞「着」や結果補語・介詞「在」を伴って「靠着……」「靠在……上」という形でよく使われます（例：「靠在沙发上休息」＝ソファにもたれて休む、「靠着墙站着」＝壁に寄りかかって立っている）。日本語の「もたれる」「寄りかかる」「背をあてる」に相当します。",
+    "formation": "主語 ＋ 靠着 / 靠在 ＋ 支えとなる名詞（桌子 / 墙 / 椅子など）（＋ 動作動詞）",
+    "examples": [
+      {
+        "translation": "王先生は机にもたれかかって授業をするのが好きだ。"
+      }
+    ]
   },
   "zh_靠_407": {
-    "title": "靠 (beside)",
-    "shortExplanation": "beside",
-    "longExplanation": "beside. Pinyin: kào",
-    "formation": "kào"
+    "title": "靠 ＋ 場所・方向（空間動詞：〜寄り・〜側・〜の近く・〜に面した）",
+    "shortExplanation": "特定の場所や境界、方向のすぐそばに接近・隣接している位置関係を表します（「〜寄り」「〜側」「〜の近く」）。",
+    "longExplanation": "「靠」（kào）は空間的な位置関係を表し、ある場所、方角、物体に物理的に接近していること、またはそれに寄り添って位置していることを表します。名詞と結びついて連体修飾語（名詞を修飾）や状語（連用修飾）として頻繁に使われます（例：「靠窗的座位」＝窓側の席、「靠门」＝ドア寄り、「靠海的城市」＝海に近い街・沿岸都市、「靠右行驶」＝右側を通行する）。日本語の「〜側」「〜寄り」「〜沿い」「〜に近い」に相当します。",
+    "formation": "靠 ＋ 場所 / 方角の名詞（窗 / 门 / 海 / 右など）（＋ 的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "私の座席は17番で、窓側の席です。"
+      }
+    ]
   },
   "zh_靠_408": {
-    "title": "靠 (to depend)",
-    "shortExplanation": "to depend",
-    "longExplanation": "to depend. Pinyin: kào",
-    "formation": "kào"
+    "title": "靠（抽象動詞：頼る・依存する・〜のおかげで生きる）",
+    "shortExplanation": "人や力、技術などに依存し、頼りにして生活したり目標を成し遂げたりすることを表します（「頼る」「依存する」「〜のおかげである」）。",
+    "longExplanation": "「靠」（kào）は抽象的な意味として、人や手段、能力を頼みの綱とし、支援や助力に依拠して生活を成り立たせたり物事を進めたりすることを表します（例：「靠自己」＝自力に頼る、「靠勤奋取得成功」＝勤勉さによって成功を収める、「全靠你了」＝すべて君頼みだ）。有名なことわざ「在家靠父母，出门靠朋友」（家にいれば親を頼り、外に出れば友人を頼る）のように、人生観や生活手段を語る際によく用いられます。日本語の「頼る」「頼みにする」「〜に依存する」「〜のおかげでやっていく」に相当します。",
+    "formation": "主語 ＋ 靠 ＋ 名詞 / 代名詞（頼る対象・手段・能力）（＋ 動詞）",
+    "examples": [
+      {
+        "translation": "家にいる時は両親に頼り、外に出た時は友人を頼るものだ。"
+      }
+    ]
   },
   "zh_居然_409": {
-    "title": "居然 ((See 竟然))",
-    "shortExplanation": "(See 竟然)",
-    "longExplanation": "(See 竟然). Pinyin: jūrán",
-    "formation": "jūrán"
+    "title": "居然（語気副詞：なんと・思いがけず・あろうことか・〜とは）",
+    "shortExplanation": "述語の前に置き、事態が常識や予想に反して意外な結果になったことに対する強い驚きを表します（「なんと」「思いがけず」「〜とは」）。",
+    "longExplanation": "「居然」（jūrán）は語気副詞で、主語の後ろ・述語の前に置かれます。ある事柄の発生や結果が話し手の予想、常識、または事前の見通しと全く正反対であり、「まさか」「思いがけず」という強い驚きや意外感を表します。文脈により、感嘆・称賛の気持ちを表す場合もあれば、呆れ・不満・非難の念を込める場合もあります（例：「他居然考了一百分」＝なんと彼は100点を取った、「他居然敢撒谎」＝あろうことか彼は嘘をついた）。「竟然」とほぼ同義です。日本語の「なんと〜とは」「思いがけず」「あろうことか」「まさか〜とは」に相当します。",
+    "formation": "主語 ＋ 居然 ＋（也 / 都）＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "こんなに簡単な問題なのに、君がまさか解けないなんてことがあるの？"
+      }
+    ]
   },
   "zh_以来_410": {
-    "title": "以来 (since)",
-    "shortExplanation": "since",
-    "longExplanation": "since. Pinyin: yǐlái",
-    "formation": "yǐlái"
+    "title": "……以来（名詞・節 ＋ 以来：〜以来・〜からこのかた・〜以降）",
+    "shortExplanation": "過去の特定の時点、出来事、または節の後ろに置き、その時点から現在（または基準時）に至るまでの全期間を表します（「〜以来」「〜以降」「〜からこのかた」）。",
+    "longExplanation": "「以来」（yǐlái）は時間の起点の後ろに置かれる時間表現です。過去の特定の時期、歴史的な出来事、あるいは動作や出来事を表す動詞句・節の後ろに接続し、その起点から現在に至るまでの継続的な期間を表します。文中では主に状語（連用修飾語）として用いられ、その期間中に生じた大きな変化や継続している状態を後続の節で述べます（例：「长期以来」＝長年以来、「自古以来」＝古来より、「参加工作以来」＝就職して以来）。日本語の「〜以来」「〜からこのかた」「〜以降」に相当します。",
+    "formation": "時間の起点（名詞 / 歴史的出来事 / 動詞句 / 節）＋ 以来，主文（結果や変化を表す節）",
+    "examples": [
+      {
+        "translation": "改革開放以来、中国には巨大な変化が生じた。"
+      }
+    ]
   },
   "zh_临_411": {
-    "title": "临 (adjacent to)",
-    "shortExplanation": "adjacent to",
-    "longExplanation": "adjacent to. Pinyin: lín",
-    "formation": "lín"
+    "title": "临 ＋ 場所名詞（空間動詞：〜に面している・〜に臨む・〜沿いの）",
+    "shortExplanation": "場所や通りのすぐそばに隣接していること、またはそれに向かって面している空間的な位置関係を表します（「〜に面した」「〜沿いの」）。",
+    "longExplanation": "「临」（lín）が空間的な動詞として機能する場合、建物や部屋などが通り、川、海などの空間に近接していること、またはそれらに真正面から向かい合っている（臨んでいる）状態を表します。「临街」（通りに面している）、「临水」（水辺に臨んでいる）、「临海」（海に面している）、「临窗」（窓際である）のように、場所を表す名詞と直接結びついて連体修飾語（名詞を修飾）や述語として頻繁に用いられます。日本語の「〜に面している」「〜沿いの」「〜に臨む」に相当します。",
+    "formation": "临 ＋ 場所 / 空間名詞（街 / 水 / 海 / 河など）（＋ 的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "通りに面していない家を一軒買いたいです。そうすればあまりうるさくないでしょう。"
+      }
+    ]
   },
   "zh_临_412": {
-    "title": "临 (just before)",
-    "shortExplanation": "just before",
-    "longExplanation": "just before. Pinyin: lín",
-    "formation": "lín"
+    "title": "临 ＋ 動詞（時間介詞：〜の間際に・〜の直前に・まさに〜しようとするとき）",
+    "shortExplanation": "動作が行われようとする直前のタイミングを表し、「まさに〜する間際に」「〜しようとするときに」という意味を表します。",
+    "longExplanation": "「临」（lín）は時間の直前性を表す介詞（または時間動詞）として機能し、「快要」（間もなく）や「到……的时候」（〜の時になって）に相当します。ある動作や出来事が発生する直前のギリギリの時点を表し、「走」（出発する）、「睡」（眠る）、「考」（試験を受ける）、「别」（別れる）などの動詞と直接結びついて「临走」（出発の間際に）、「临睡前」（寝る直前に）、「临考」（試験の直前に）のように状語（連用修飾語）を作ります。日本語の「〜の直前に」「〜の間際に」「まさに〜しようとするとき」に相当します。",
+    "formation": "临 ＋ 動詞（走 / 睡 / 考 / 出发など）（＋ 時間名詞 / 时 / 的时候），主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "出発する当日の間際に、父が実家から駆けつけて私たちを見送ってくれた。"
+      }
+    ]
   },
   "zh_立刻_413": {
-    "title": "立刻 (immediately)",
-    "shortExplanation": "immediately",
-    "longExplanation": "immediately. Pinyin: lìkè",
-    "formation": "lìkè"
+    "title": "立刻（時間副詞：すぐに・直ちに・即座に・たちまち）",
+    "shortExplanation": "動詞や形容詞の前に置き、事態が少しの時間も遅れることなく直ちに発生することを表します（「すぐに」「直ちに」「即座に」）。",
+    "longExplanation": "「立刻」（lìkè）は時間の即時性を表す副詞で、主語の後ろ・述語（動詞や形容詞）の前に置かれます。ある出来事や先行条件に続いて、時間的な間隔を全く置かずに直ちに後続の動作や状態変化が生じることを表します。「马上」と意味が近いですが、「立刻」はより時間的なタイムラグのなさを厳格に強調し、書き言葉や公の場でも好んで用いられます（例：「立刻出发」＝直ちに出発する、「立刻执行」＝即座に実行する、「立刻停下来」＝直ちに停止する）。日本語の「すぐに」「直ちに」「即座に」「たちまち」に相当します。",
+    "formation": "主語 ＋（時間節 ＋）立刻 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "私たちが帰ってきた時、すぐに家庭の温もりを感じた。"
+      }
+    ]
   },
   "zh_包括_414": {
-    "title": "包括 (to include)",
-    "shortExplanation": "to include",
-    "longExplanation": "to include. Pinyin: bāokuò",
-    "formation": "bāokuò"
+    "title": "包括（動詞：〜を含む・〜が入っている・〜から成る）",
+    "shortExplanation": "全体や一定の範囲の中に、特定の構成要素や下位項目が含まれていることを表します（「〜を含む」「〜が入っている」）。",
+    "longExplanation": "「包括」（bāokuò）は他動詞として機能し、ある全体、総数、または一定の範囲が、その内部に具体的な構成要素、下位項目、あるいは関係者を含み入れていることを示します。後ろに列挙された要素や名詞を目的語として従えます（例：「学费包括教材费」＝学費には教材費が含まれている、「包括所有会员」＝すべての会員を含む、「包括他在内共有五人」＝彼を含めて計5人）。抽象的な意味合いを深く包み込む「包含」と異なり、「包括」は具体的・客観的な要素の包含・内包を表します。日本語の「〜を含む」「〜が（その中に）入っている」「〜から構成される」に相当します。",
+    "formation": "主語（全体 / 範囲）＋ 包括 ＋ 目的語（含まれる構成要素・列挙項目）",
+    "examples": [
+      {
+        "translation": "中国語の技能教育には、リスニング・スピーキング・リーディング・ライティングの4つの側面が含まれている。"
+      }
+    ]
   },
   "zh_各自_415": {
-    "title": "各自 (each by themselves)",
-    "shortExplanation": "each by themselves",
-    "longExplanation": "each by themselves. Pinyin: gèzì",
-    "formation": "gèzì"
+    "title": "各自（代名詞：各自・それぞれ・めいめい・各自の）",
+    "shortExplanation": "集団の中の各人、あるいは双方の各方面が、それぞれ個別に自身の行動を取ることを表します（「各自」「それぞれ」「めいめい」）。",
+    "longExplanation": "「各自」（gèzì）は代名詞として用いられ、複数の構成員や双方の当事者について「めいめい自分自身」「それぞれ各方面」を指し示します。文中では動詞の前に置いて状語（連用修飾語）として「各自が個別に〜する」という意味を表すか、名詞の前に置いて「各自的……」（各自の〜）という連体修飾語を作ります（例：「各自回家」＝各自家に帰る、「各自表达观点」＝それぞれ意見を述べる、「发挥各自的特长」＝それぞれの長所を発揮する）。全体の各要素が独立して別々に行動することを強調します。日本語の「各自」「それぞれ」「めいめい」「銘々」に相当します。",
+    "formation": "主語（複数 / 双方）＋ 各自 ＋ 動詞（＋ 目的語）/（＋ 的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "ハーフタイムの時間になり、試合の両チームの選手たちはそれぞれコートの外に戻って休憩した。"
+      }
+    ]
   },
   "zh_勿_416": {
-    "title": "勿 (do not)",
-    "shortExplanation": "do not",
-    "longExplanation": "do not. Pinyin: wù",
-    "formation": "wù"
+    "title": "（请）勿 ＋ 動詞（否定副詞：〜なかれ・〜しないでください・〜べからず）",
+    "shortExplanation": "書き言葉の否定副詞で、禁止・制止・警告を表し、特定の行為を行わないよう求めます（「〜しないでください」「〜べからず」）。",
+    "longExplanation": "「勿」（wù）は改まった書き言葉（文言調）の否定副詞で、口語の「不要」や「别」に相当します。動詞の前に置かれ、特定の動作を行わないように忠告、制止、あるいは厳格に禁止する意味を表します。公共の標識、注意書き、規則、スローガンなどで極めて多用され、丁寧な要請を表す「请」を伴って「请勿……」（〜なさらないでください）の形で使われることが非常に多いです（例：「请勿拍照」＝撮影はご遠慮ください、「请勿喧哗」＝お静かに願います、「切勿粗心」＝決して油断するなかれ）。日本語の「〜するなかれ」「〜しないでください」「〜べからず」に相当します。",
+    "formation": "（请 ＋）勿 ＋ 動詞（＋ 目的語 / 補語）",
+    "examples": [
+      {
+        "translation": "関係者以外、立ち入りをご遠慮ください（関係者以外立ち入り禁止）。"
+      }
+    ]
   },
   "zh_时刻_417": {
-    "title": "时刻 (moment)",
-    "shortExplanation": "moment",
-    "longExplanation": "moment. Pinyin: shíkè",
-    "formation": "shíkè"
+    "title": "时刻（名詞：瞬間・重大な局面・正念場・時・時節）",
+    "shortExplanation": "特定の時点、または事態の展開において重大な意味を持つ決定的な局面や瞬間を表します（「瞬間」「正念場」「時」「重大な時」）。",
+    "longExplanation": "「时刻」（shíkè）が名詞として機能する場合、特定の瞬間や時期、とりわけ物事の勝敗・成否・運命を分けるような極めて重要な局面や節目の時間を指します。「最后」（最後の）、「关键」（決定的な・肝心な）、「历史」（歴史的な）、「紧要」（緊要な）、「幸福」（幸福な）といった修飾語を伴って使われることが非常に多いです（例：「关键时刻」＝決定的な局面・正念場、「历史时刻」＝歴史的瞬間、「危急时刻」＝危急の時）。日本語の「決定的な瞬間」「正念場」「時」「節目」に相当します。",
+    "formation": "（在 ＋）修飾語（最后 / 关键 / 历史 / 紧要など）＋ 时刻",
+    "examples": [
+      {
+        "translation": "最後の瞬間に、彼はチームのために決定的なゴールを決めた。"
+      }
+    ]
   },
   "zh_时刻时时刻刻_418": {
-    "title": "时刻，时时刻刻 (at all times)",
-    "shortExplanation": "at all times",
-    "longExplanation": "at all times. Pinyin: shíkè， shíshíkèkè",
-    "formation": "shíkè， shíshíkèkè"
+    "title": "时刻 / 时时刻刻（副詞：常に・いつも・片時も絶えず・いついかなる時も）",
+    "shortExplanation": "述語の前に置き、動作や意識が途切れることなく常に維持されていることを表します（「常に」「いつも」「片時も絶えず」）。",
+    "longExplanation": "「时刻」（shíkè）が副詞として用いられる場合、あるいはAABB型に重ねて「时时刻刻」（shíshíkèkè）の形で用いられる場合、「常に」「毎時毎刻」「いつでも」という意味を表します。述語動詞の前に置かれ、意識、警戒心、準備、配慮などが一瞬たりとも緩むことなく持続している様子を強調します。「提醒」（注意を促す）、「记住」（覚えている）、「准备」（備える）、「警惕」（警戒する）などの動詞と相性が非常に良いです（例：「时刻准备着」＝常に準備万端整えている、「时时刻刻想着群众」＝片時も絶えず大衆のことを考えている）。日本語の「常に」「いつも」「片時も絶えず」「四六時中」に相当します。",
+    "formation": "主語 ＋ 时刻 / 时时刻刻 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "仕事中、彼は常日頃から自分自身に言い聞かせている。「乗客の安全が最も大切だ」と。"
+      }
+    ]
   },
   "zh_至今_419": {
-    "title": "至今 (to this day)",
-    "shortExplanation": "to this day",
-    "longExplanation": "to this day. Pinyin: zhìjīn",
-    "formation": "zhìjīn"
+    "title": "至今（時間副詞：今日に至るまで・今まで・今なお・今に至っても）",
+    "shortExplanation": "過去のある時点から現在に至るまで、その状態や事実がずっと続いていることを表します（「今日に至るまで」「今まで」「今なお」）。",
+    "longExplanation": "「至今」（zhìjīn）は介詞「至」（至る）と時間詞「今」（現在）が融合した表現で、「現在に至るまで」「今日まで」を意味します。文頭に置くか主語の後ろ・述語の前に置いて状語（連用修飾語）として機能します。「还」「仍」「已经」「未」「没」などの副詞と呼応して用いられることが多く、過去から長い時間が経過した現在に至るまで、ある状況が依然として変化していないことや、依然としてそのままであることを強調します（例：「至今未解决」＝今に至るまで未解決である、「至今仍记忆犹新」＝今なお記憶に新しい、「至今没有下落」＝今に至るまで行方知れずである）。日本語の「今日に至るまで」「今まで」「今なお」「未だに」に相当します。",
+    "formation": "（主語 ＋）至今（＋ 主語 ＋）（还 / 仍 / 已经 / 未 / 没）＋ 動詞",
+    "examples": [
+      {
+        "translation": "私は北京で生まれ育ち、今日に至るまでまだ一度も離れたことがありません。"
+      }
+    ]
   },
   "zh_顶_420": {
-    "title": "顶 ((measure word for hats))",
-    "shortExplanation": "(measure word for hats)",
-    "longExplanation": "(measure word for hats). Pinyin: dǐng",
-    "formation": "dǐng"
+    "title": "顶（量詞：〜個・〜つ・〜張：帽子・テント・蚊帳などを数える量詞）",
+    "shortExplanation": "帽子やテント、蚊帳など、頭にかぶせる物や頭上を覆う形状の物を数える量詞です（「〜個」「〜張り」）。",
+    "longExplanation": "「顶」（dǐng）が量詞として機能する場合、帽子をはじめ、頭上にかぶせるものや上部に屋根・天頂部がある構造の物品を数える際に用いられます。「帽子」をはじめ、「帐篷」（テント）、「蚊帐」（蚊帳）、「轿子」（かご）などに適用されます。数詞や指示代名詞（「这」「那」）と結びついて名詞を修飾します（例：「一顶帽子」＝1つの帽子、「这顶帽子」＝この帽子、「搭了一顶帐篷」＝テントをひと張り張った）。日本語の「〜個」「〜つ」「〜張（テント・蚊帳）」に相当します。",
+    "formation": "数詞 / 指示代名詞（这 / 那）＋ 顶 ＋ 名詞（帽子 / 帐篷 / 蚊帐 / 轿子など）",
+    "examples": [
+      {
+        "translation": "私のこの新しい帽子、どうですか？"
+      }
+    ]
   },
   "zh_顶_421": {
-    "title": "顶 (the top of)",
-    "shortExplanation": "the top of",
-    "longExplanation": "the top of. Pinyin: dǐng",
-    "formation": "dǐng"
+    "title": "顶（場所名詞：頂点・てっぺん・山頂・頭頂・屋上）",
+    "shortExplanation": "人体や物体の最も高い位置、てっぺん、頂上部分を表します（「てっぺん」「頂上」「頭上」「いただき」）。",
+    "longExplanation": "「顶」（dǐng）が名詞として機能する場合、人体や物体などの最も高い天頂部分、てっぺんを指します。身体部位や建築物・地形を表す名詞の後ろに直接結びついて複合名詞を作り、「头顶」（頭頂・頭のてっぺん）、「山顶」（山頂）、「屋顶」（屋根・屋上）、「塔顶」（塔の頂）などのように用いられます。日本語の「てっぺん」「頂上」「頭頂」「いただき」に相当します。",
+    "formation": "名詞（头 / 山 / 屋 / 塔など）＋ 顶",
+    "examples": [
+      {
+        "translation": "手を頭の上（頭頂部）より高く挙げてください。"
+      }
+    ]
   },
   "zh_顶_422": {
-    "title": "顶 (to lift)",
-    "shortExplanation": "to lift",
-    "longExplanation": "to lift. Pinyin: dǐng",
-    "formation": "dǐng"
+    "title": "顶（動作動詞：頭や角で持ち上げる・突き上げる・頭上に載せる）",
+    "shortExplanation": "頭、角、体の一部を使って重い物を下から上へと持ち上げたり、頭上に載せて支えたりすることを表します（「持ち上げる」「突き上げる」「頭に載せる」）。",
+    "longExplanation": "「顶」（dǐng）は動作動詞として機能し、頭部や動物の角、あるいは肩や道具などを用いて、下から上に向かって重い物を支え上げたり押し上げたりする動作を表します。方向補語「起」を伴って「顶起」（持ち上げる・押し上げる）や、結果補語「住」を伴って「顶住」（支え止める）などの複合動詞をよく形成します（例：「用头顶球」＝ヘディングする、「头顶着水罐」＝頭の上に水瓶を載せている、「用木棍顶住门」＝棒で突っ張り棒をしてドアを押さえる）。日本語の「（頭などで）持ち上げる」「突き上げる」「頭上に載せる」「突っ張る」に相当します。",
+    "formation": "主語 ＋（用 ＋ 身体部位 ＋）顶(起) ＋ 目的語（重量物）",
+    "examples": [
+      {
+        "translation": "彼は頭を使って20斤（約10kg）の重さの物を持ち上げることができる。"
+      }
+    ]
   },
   "zh_顶着_423": {
-    "title": "顶着 (against)",
-    "shortExplanation": "against",
-    "longExplanation": "against. Pinyin: dǐng zhe",
-    "formation": "dǐng zhe"
+    "title": "顶着（連用句：〜を冒して・〜を突いて・〜に立ち向かって・〜をものともせず）",
+    "shortExplanation": "悪天候（吹雪、暴風、炎天下）や過酷なプレッシャー・逆境に正面から立ち向かい、それを押し切って行動することを表します（「〜を冒して」「〜を突いて」「〜に抗して」）。",
+    "longExplanation": "「顶着」（dǐng zhe）は動詞「顶」に持続のアスペクト助詞「着」が付いた形で、過酷な自然現象（「大雪」＝大雪、「狂风」＝暴風、「烈日」＝炎天下など）や、心理的・社会的な重圧（「巨大压力」＝大きな重圧、「批评」＝批判など）に身をさらしながら、それに逆らって前進・奮闘する様子を描写します。文中では後続の動作に対する連用修飾語（状語）として用いられます（例：「顶着烈日工作」＝炎天下を冒して作業する、「顶着狂风前进」＝暴風を突いて前進する、「顶着压力做出决定」＝プレッシャーに抗して決断を下す）。日本語の「〜を冒して」「〜を突いて」「〜をものともせず」「〜に立ち向かって」に相当します。",
+    "formation": "主語 ＋ 顶着 ＋ 過酷な環境 / プレッシャー（大雪 / 狂风 / 烈日 / 压力など）＋ 動詞",
+    "examples": [
+      {
+        "translation": "天気は非常に寒く、子路は大雪を突いて前へと歩みを進めた。"
+      }
+    ]
   },
   "zh_得很得不行得不得了_424": {
-    "title": "……得很/得不行/得不得了 (very/so/extremely)",
-    "shortExplanation": "very/so/extremely",
-    "longExplanation": "very/so/extremely. Pinyin: …… dehěn/ dé bùxíng/ dé bùdéliǎo",
-    "formation": "…… dehěn/ dé bùxíng/ dé bùdéliǎo"
+    "title": "形容詞 / 心理動詞 ＋ 得很 / 得不行 / 得不得了（程度補語：非常に〜だ・〜てたまらない・とてつもなく〜だ）",
+    "shortExplanation": "形容詞や心理動詞の後ろに置き、程度が極めて高いことや我慢できないほど極限に達していることを表します（「非常に〜だ」「〜でたまらない」「とてつもなく〜だ」）。",
+    "longExplanation": "「得很」（dehěn）、「得不行」（de bùxíng）、「得不得了」（de bùdéliǎo）は、形容詞や心理状態を表す動詞の後ろに置かれて極めて高い程度を表す程度補語です。「非常」「十分」「极了」に相当しますが、口語的で生き生きとした感情の昂りを表現できます。\n1.「〜得很」：程度が非常に高いことを強調します（例：「好得很」＝非常に良い、「累得很」＝とても疲れている）。\n2.「〜得不行」：我慢できないほど、やりきれないほど極端な程度に達していることを表します（例：「困得不行」＝眠くてたまらない、「热得不行」＝暑くてやりきれない）。\n3.「〜得不得了」：並大抵ではないほど甚だしい極限状態を表します（例：「高兴得不得了」＝嬉しくてたまらない・飛び上がるほど嬉しい、「疼得不得了」＝痛くてたまらない）。\n日本語の「非常に〜だ」「〜てたまらない」「死ぬほど〜だ」「この上なく〜だ」に相当します。",
+    "formation": "主語 ＋ 形容詞 / 心理動詞 ＋ 得很 / 得不行 / 得不得了",
+    "examples": [
+      {
+        "translation": "ここはこんなに賑やかで、子どもたちは非常に喜んでいる／嬉しくてたまらない／とてつもなく喜んでいる。"
+      }
+    ]
   },
   "zh_反而_425": {
-    "title": "反而 (actually (opposite to what one expects))",
-    "shortExplanation": "actually (opposite to what one expects)",
-    "longExplanation": "actually (opposite to what one expects). Pinyin: fǎn'ér",
-    "formation": "fǎn'ér"
+    "title": "反而（副詞：かえって・逆に・反対に）",
+    "shortExplanation": "常識的な予想や期待、本来の意図とは逆転した結果になることを表します（「かえって」「逆に」「反対に」）。",
+    "longExplanation": "「反而」（fǎn'ér）は副詞として後続の節で用いられ、事態の推移や結果が一般的な常識、当初の予想、あるいは目的とは正反対の方向に発展したことを示します。前節で述べた事柄や前提に対して「普通ならこうなるはずなのに、それとは裏腹に…」「かえって／逆に…」という逆転のニュアンスを強く表します。「不但不……，反而……」（〜しないどころか、かえって…）や「虽然……，但……反而……」（〜であるのに、かえって…）のような複文の呼応形式で頻繁に用いられます。日本語の「かえって」「逆に」「反対に」に相当します。",
+    "formation": "節1（前提・前置き），（主語 ＋）反而 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "大都会の生活はとても刺激的で素晴らしいものですが、田舎で生涯を過ごしてきた両親にとっては、かえって馴染めないかもしれません。"
+      }
+    ]
   },
   "zh_从而_426": {
-    "title": "从而 (consequently)",
-    "shortExplanation": "consequently",
-    "longExplanation": "consequently. Pinyin: cóng'ér",
-    "formation": "cóng'ér"
+    "title": "从而（接続詞：それによって・その結果・ひいては）",
+    "shortExplanation": "前節で述べた方法や行動、原因を受けて、後節でその結果やさらに進んだ目的が達成されることを表す書き言葉の接続詞です（「それによって」「その結果」）。",
+    "longExplanation": "「从而」（cóng'ér）は書き言葉で用いられる接続詞で、二つの節を接続します。前半の節が前提となる方法・手段・原因・行動を提示し、後半の節がそれに基づいて自然に導き出される直接的な結果や、達成される更なる目的・効果を表します（「从……而……」に由来）。因果関係と目的・発展の関係を併せ持つ表現です（例：「提高产品质量，从而增强市场竞争力」＝製品の品質を向上させ、それによって市場競争力を強化する）。日本語の「それによって」「その結果」「〜し、それゆえに」に相当します。",
+    "formation": "節1（方法・原因・行動），从而 ＋ 節2（結果・目的）",
+    "examples": [
+      {
+        "translation": "試合前にメンタル面の準備をしっかりと整えることで選手のプレッシャーを軽減でき、その結果として試合の勝利を収めることができる。"
+      }
+    ]
   },
   "zh_V于N_427": {
-    "title": "V 于 N (V in N)",
-    "shortExplanation": "V in N",
-    "longExplanation": "V in N. Pinyin: V yú N",
-    "formation": "V yú N"
+    "title": "動詞 ＋ 于 ＋ 名詞（介詞：〜に・〜において・〜で【時・場所】）",
+    "shortExplanation": "書き言葉の介詞「于」が動詞の後ろで補語となり、動作や出来事が発生した時間や場所を導きます（現代中国語の「在」に相当）。",
+    "longExplanation": "「于」（yú）は古文（文言文）に由来する格調高い介詞（前置詞）で、動詞の後ろに置かれて場所や時間を導く補語を形成します。現代中国語の口語における「在」に相当し、「成立（設立される）」、「出生（生まれる）」、「发生（発生する）」、「位于（位置する）」、「毕业（卒業する）」などの動詞と緊密に結合して慣用句的に用いられます（例：「鲁迅出生于绍兴」＝魯迅は紹興に生まれた、「事故发生于深夜」＝事故は深夜に発生した）。日本語の「〜に（設立される）」「〜において（発生する）」に相当します。",
+    "formation": "主語 ＋ 動詞（成立 / 出生 / 发生 / 位于など）＋ 于 ＋ 名詞（時間 / 場所）",
+    "examples": [
+      {
+        "translation": "この会社は1997年に設立されました。"
+      }
+    ]
   },
   "zh_V于N_428": {
-    "title": "V 于 N (V to N)",
-    "shortExplanation": "V to N",
-    "longExplanation": "V to N. Pinyin: V yú N",
-    "formation": "V yú N"
+    "title": "動詞 ＋ 于 ＋ 名詞（介詞：〜に・〜に対して・〜に向かって【対象・相手】）",
+    "shortExplanation": "書き言葉の介詞「于」が動詞の後ろで対象・相手を導きます（現代中国語の「向」「对」「给」に相当）。",
+    "longExplanation": "「于」（yú）は動詞の後ろに置かれて補語となり、動作が向けられる相手、対象、または目標を導きます。口語の「向」（〜に向かって）、「对」（〜に対して）、「给」（〜に）に相当します。格調高い書き言葉表現として定着しており、「求助于」（〜に助けを求める）、「致力于」（〜に力を注ぐ・尽力する）、「取决于」（〜によって決まる・〜次第である）、「献身于」（〜に身を捧げる）などの形で慣用的に広く用いられます。日本語の「〜に（助けを求める）」「〜に対して」「〜に向かって」に相当します。",
+    "formation": "主語 ＋ 動詞（求助 / 致力 / 归功 / 忠など）＋ 于 ＋ 名詞（対象・相手）",
+    "examples": [
+      {
+        "translation": "李明はどうしようもなく、支配人を務めている同級生の王峰に助けを求めるしかなかった。"
+      }
+    ]
   },
   "zh_V于N_429": {
-    "title": "V 于 N (V from N)",
-    "shortExplanation": "V from N",
-    "longExplanation": "V from N. Pinyin: V yú N",
-    "formation": "V yú N"
+    "title": "動詞 ＋ 于 ＋ 名詞（介詞：〜から・〜の出身である【出所・起源】）",
+    "shortExplanation": "書き言葉の介詞「于」が動詞の後ろで出所、起源、由来、出身などを導きます（現代中国語の「从」「自」に相当）。",
+    "longExplanation": "「于」（yú）は動詞の後ろに置かれて補語となり、事物の起源、出所、由来、または人の出自や出身を導きます。口語の「从」や「自」（〜から）に相当します。「出身于」（〜の出身である）、「来源于 / 源于」（〜に由来する・源を発する）、「取材于」（〜に題材を取る）、「产生于」（〜から生じる）などの動詞と結びついて固定的な文語表現を形成します。日本語の「〜から（生じる）」「〜の出身である」「〜に由来する」に相当します。",
+    "formation": "主語 ＋ 動詞（出身 / 来源 / 取材 / 诞生など）＋ 于 ＋ 名詞（出所・起源・出自）",
+    "examples": [
+      {
+        "translation": "彼は知識人（インテリ）家庭の出身です。"
+      }
+    ]
   },
   "zh_A于N_430": {
-    "title": "A 于 N (A to N)",
-    "shortExplanation": "A to N",
-    "longExplanation": "A to N. Pinyin: A yú N",
-    "formation": "A yú N"
+    "title": "形容詞 ＋ 于 ＋ 名詞（介詞：〜にとって・〜に対して・〜に【対象・影響】）",
+    "shortExplanation": "書き言葉の介詞「于」が形容詞の後ろに置かれ、その性質が及ぶ対象や影響を受ける領域を導きます（「〜にとって」「〜に対して」）。",
+    "longExplanation": "「于」（yú）は形容詞や形容詞的表現の後ろに置かれて補語となり、その性質・状態が向けられる対象や、影響を及ぼす相手・領域を導きます。口語の「对……有……」（〜にとって…がある）に相当します。「有助于」（〜の助けとなる・役立つ）、「有益于」（〜にとって有益である）、「有害于」（〜にとって有害である）、「不利于」（〜に不利である）、「善于」（〜に長けている・得意である）、「便于」（〜に便利である）などの固定的な慣用表現として多用されます。日本語の「〜にとって（有益である）」「〜に対して」「〜に（役立つ）」に相当します。",
+    "formation": "主語 ＋ 形容詞（有助于 / 有益 / 有害 / 不利 / 善 / 便など）＋ 于 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "運動は健康に役立ちます（健康にとって有益です）。"
+      }
+    ]
   },
   "zh_A于N_431": {
-    "title": "A 于 N (A from/than N)",
-    "shortExplanation": "A from/than N",
-    "longExplanation": "A from/than N. Pinyin: A yú N",
-    "formation": "A yú N"
+    "title": "形容詞 ＋ 于 ＋ 名詞（比較の介詞：〜と（異なる）・〜より（…である））",
+    "shortExplanation": "書き言葉の介詞「于」が形容詞の後ろに置かれ、比較や差異の対象を表します（口語の「跟……不同」や「比」に相当）。",
+    "longExplanation": "「于」（yú）は形容詞の後ろに置かれて補語となり、比較の基準や相違の対象を導きます。「不同」（異なる）と結びつく場合は「跟 / 与……不同」（〜と異なる）を意味し、程度や数量を表す形容詞（「高」「低」「多」「少」「大」「小」「优」など）と結びつく場合は比較の「比」（〜より…である）を意味します（例：「高于平均水平」＝平均水準を上回る、「优于过去」＝過去より優れている）。学術論文や報道、公的文書などで好まれる格調高い表現です。日本語の「〜と（異なる）」「〜より（高い・多い・優れる）」に相当します。",
+    "formation": "主語 ＋ 形容詞（不同 / 高 / 低 / 大 / 优など）＋ 于 ＋ 名詞（比較対象）",
+    "examples": [
+      {
+        "translation": "水生動物は陸生動物とは異なります。"
+      }
+    ]
   },
   "zh_V为wiN_432": {
-    "title": "V 为 (wéi) N (V into N)",
-    "shortExplanation": "V into N",
-    "longExplanation": "V into N. Pinyin: V wéi (wéi) N",
-    "formation": "V wéi (wéi) N"
+    "title": "動詞 ＋ 为 (wéi) ＋ 名詞（変化補語：〜に変わる・〜になる・〜へと変化する）",
+    "shortExplanation": "「为」（第2声：wéi）が動詞の後ろで結果補語となり、事物がある状態や性質から別のものへと変化・転換することを表します（「〜に変わる」「〜になる」）。",
+    "longExplanation": "ここでの「为」は第2声「wéi」と発音され、「成（〜になる）」や「变成（〜に変わる）」に相当します。変化や推移を表す動詞（「变」＝変わる、「化」＝化す、「转」＝転じる、「改」＝改める、「降」＝下がるなど）の後ろに置かれて結果補語として機能し、事物や事態が別の新しい形態、性質、役割へと移り変わったことを示します（例：「化为乌有」＝水泡に帰す・灰燼に帰す、「转为晴天」＝晴れへと変わる、「降为副职」＝副職に降格される）。日本語の「〜に変わる」「〜になる」「〜へと転じる」に相当します。",
+    "formation": "主語 ＋ 動詞（变 / 化 / 转 / 改など）＋ 为 ＋ 名詞（変化後の状態・事物）",
+    "examples": [
+      {
+        "translation": "プレッシャーもまた原動力へと変えることができます。"
+      }
+    ]
   },
   "zh_V为wiN_433": {
-    "title": "V 为 (wéi) N (V as N)",
-    "shortExplanation": "V as N",
-    "longExplanation": "V as N. Pinyin: V wéi (wéi) N",
-    "formation": "V wéi (wéi) N"
+    "title": "動詞 ＋ 为 (wéi) ＋ 名詞（判断・呼称補語：〜と呼ぶ・〜と見なす・〜とする）",
+    "shortExplanation": "「为」（第2声：wéi）が動詞の後ろで呼称や判断、位置づけを導きます（「〜と呼ぶ」「〜と見なす」「〜とする」）。",
+    "longExplanation": "ここでの「为」は第2声「wéi」と発音され、意味は「作（〜とする）」や「当作（〜と見なす）」に相当します。認識・判断・評価・呼称・選出を表す動詞（「称」＝称する・呼ぶ、「视」＝見なす、「认」＝認める、「选」＝選ぶ、「奉」＝奉じるなど）の後ろに置かれ、その対象をどのように位置づけ、何と呼ぶかという結果や規定を表します。よく「称（其）为……」（それを〜と呼ぶ）や「视……为……」（〜を…と見なす）の形で文語的・論理的に用いられます。日本語の「〜と呼ぶ」「〜と見なす」「〜と位置づける」に相当します。",
+    "formation": "主語 ＋ 動詞（称 / 视 / 认 / 选など）＋（代名詞 / 名詞 ＋）为 ＋ 名詞（呼称・位置づけ）",
+    "examples": [
+      {
+        "translation": "彼の考えでは、仕事のない生活はとても「生活」と呼ぶことはできない。"
+      }
+    ]
   },
   "zh_V起来_434": {
-    "title": "V 起来 (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qilai",
-    "formation": "V qilai"
+    "title": "動詞 ＋ 起来（集中の派生方向補語：〜して集める・〜してまとめる・蓄える）",
+    "shortExplanation": "派生方向補語「起来」が、分散していた事物や人、力を一箇所に集約・蓄積・結束させることを表します（「集める」「まとめる」「蓄える」）。",
+    "longExplanation": "「起来」（qǐlai）が動詞の後ろに置かれて派生方向補語となる場合、「集中・集約・蓄積」のニュアンスを表す用法があります。散らばっていた事物、人員、財貨、情報などが、動作を通じて一箇所に寄り集まり、一つにまとまったり蓄えられたりする状態を描写します（例：「积蓄起来」＝蓄える・蓄積する、「集中起来」＝集中させる・集約する、「团结起来」＝結束する、「组织起来」＝組織する）。日本語の「〜して集める」「〜してまとめる」「〜して蓄える」に相当します。",
+    "formation": "主語 ＋ 動詞（积蓄 / 集中 / 组织 / 团结 / 存など）＋ 起来",
+    "examples": [
+      {
+        "translation": "地下水が蓄えられ、蓄積されるにつれてますます量が増えていきます。"
+      }
+    ]
   },
   "zh_藏起来躲起来_435": {
-    "title": "藏起来/躲起来 (V away)",
-    "shortExplanation": "V away",
-    "longExplanation": "V away. Pinyin: cáng qilai/ duǒ qilai",
-    "formation": "cáng qilai/ duǒ qilai"
+    "title": "藏起来 / 躲起来（隠蔽・収蔵の派生方向補語：隠れる・隠す・しまい込む）",
+    "shortExplanation": "派生方向補語「起来」が「藏」（隠す）や「躲」（隠れる）と結びつき、人や物を人目に触れない安全な場所へ隠したり身を潜めたりすることを表します（「隠れる」「隠す」）。",
+    "longExplanation": "「起来」（qǐlai）は「隠蔽」や「収蔵」のニュアンスを持つ派生方向補語としても機能します。「藏」（隠す・仕舞う）や「躲」（身を隠す・避ける）などの動詞と結びつくことで、人や物が人目につかない場所、外部から遮断された空間へと移動し、見つからないように隠れたり保管されたりする動作の結果を表します（例：「躲起来」＝隠れる・身を隠す、「藏起来」＝隠す・隠しておく、「收起来」＝片付けて仕舞い込む）。日本語の「隠れる」「隠しておく」「身を隠す」に相当します。",
+    "formation": "主語 ＋（把 ＋ 目的語 ＋）藏 / 躲 / 收 ＋ 起来",
+    "examples": [
+      {
+        "translation": "劉麗は自分が悪いことをしたと自覚しているので、隠れて私に会おうとしません。"
+      }
+    ]
   },
   "zh_替_436": {
-    "title": "替 (to replace)",
-    "shortExplanation": "to replace",
-    "longExplanation": "to replace. Pinyin: tì",
-    "formation": "tì"
+    "title": "替 ＋ 名詞 / 代名詞 ＋ 動詞（介詞：〜の代わりに・〜に代わって・〜の代理で）",
+    "shortExplanation": "介詞「替」が人の名詞や代名詞の前に置かれ、その人に代わって動作を行うことを表します（「〜の代わりに」「〜に代わって」）。",
+    "longExplanation": "「替」（tì）は介詞（前置詞）として人名や代名詞の前に置かれ、介詞句を形成して連用修飾語（状語）として機能します。何らかの事情で本人が直接できない動作を「その人に代わって」「〜の代理で」、あるいは「〜の代わりに」行うことを示します（例：「替我保密」＝私の代わりに秘密にしておいて、「替他值班」＝彼の代わりに当直をする）。口語・書面語を問わず極めて高頻度で用いられます。日本語の「〜の代わりに」「〜に代わって」「〜に成り代わって」に相当します。",
+    "formation": "主語 ＋ 替 ＋ 名詞 / 代名詞（代行の対象）＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "おじいさんに会ったら、私の代わりによろしくお伝えください。"
+      }
+    ]
   },
   "zh_替_437": {
-    "title": "替 (on behalf of)",
-    "shortExplanation": "on behalf of",
-    "longExplanation": "on behalf of. Pinyin: tì",
-    "formation": "tì"
+    "title": "替 ＋ 名詞 / 代名詞 ＋ 心理形容詞・動詞（介詞：〜のことを思って・〜の身になって【共感】）",
+    "shortExplanation": "介詞「替」が心理を表す形容詞や動詞の前に置かれ、相手の立場に身を置いて共感・同情・心配・祝福することを表します（「〜のことを（喜ぶ）」「〜の身になって」）。",
+    "longExplanation": "「替」（tì）が心理状態や感情を表す形容詞・動詞（「高兴」＝喜ぶ・嬉しい、「担心」＝心配する、「着急」＝焦る・気をもむ、「难过」＝辛く思うなど）の前に置かれる場合、相手の立場や境遇に我が身を重ねて共感するニュアンスを表します。単なる行為の代行ではなく、「相手の身になって自分のことのように喜ぶ」「相手のことを思ってハラハラ・心配する」という温かい情愛や関心を伝えます（例：「替你捏一把汗」＝君の代わりに冷や汗をかく・ハラハラする、「大家都在替你担心」＝みんなが君のことを心配している）。日本語の「〜のことを（喜ぶ・心配する）」「〜の身になって」に相当します。",
+    "formation": "主語 ＋ 替 ＋ 名詞 / 代名詞（共感の対象）＋ 心理形容詞 / 動詞（高兴 / 担心 / 着急など）",
+    "examples": [
+      {
+        "translation": "李陽が留学することになり、私たちはみんな彼のことを心から喜んでいます。"
+      }
+    ]
   },
   "zh_说不定_438": {
-    "title": "说不定 (uncertain)",
-    "shortExplanation": "uncertain",
-    "longExplanation": "uncertain. Pinyin: shuōbudìng",
-    "formation": "shuōbudìng"
+    "title": "说不定（述語：定かではない・まだ決まっていない・確実ではない）",
+    "shortExplanation": "述語として用いられ、日時や状況、結果などがまだ確定しておらず、はっきりとは言えない状態を表します（「定かではない」「まだ決まっていない」）。",
+    "longExplanation": "「说不定」（shuōbudìng）は文の述語として機能することがあり、特によく副詞「还」を伴って「还说不定」の形で用いられます。事態や計画、出発日時、成否などが現時点で未確定であり、確実に予測したり断定したりすることができない状態（「まだ何とも言えない」「はっきり決まっていない」「未定である」）を客観的に述べます（例：「成不成还说不定」＝うまくいくかどうかはまだ定かではない）。日本語の「定かではない」「まだ決まっていない」「断言できない」に相当します。",
+    "formation": "主語（時間・計画・状況）＋（还 ＋）说不定",
+    "examples": [
+      {
+        "translation": "この件はマネージャーがすでに同意してくれましたが、出発の時間だけはまだ定かではありません。"
+      }
+    ]
   },
   "zh_说不定_439": {
-    "title": "说不定 (maybe)",
-    "shortExplanation": "maybe",
-    "longExplanation": "maybe. Pinyin: shuōbudìng",
-    "formation": "shuōbudìng"
+    "title": "说不定（副詞：もしかすると・ひょっとしたら・〜かもしれない）",
+    "shortExplanation": "副詞として主語の前または述語の前に置かれ、ある事態が生じる可能性を推測・推量します（「もしかすると」「ひょっとしたら」）。",
+    "longExplanation": "「说不定」（shuōbudìng）は副詞として用いられ、文頭（主語の前）または主語の後ろ・述語の前に置かれます。ある事柄が発生する可能性を推測・推量する語気を表し、「也许」（もしかしたら）や「可能」（恐らく）とほぼ同義です。確証はないものの、十分に起こり得る事態や予想を控えめに、あるいは可能性として提示する際に使われます（例：「说不定他已经到了」＝もしかすると彼はもう到着しているかもしれない、「明天说不定会下雪」＝明日はひょっとしたら雪が降るかもしれない）。日本語の「もしかすると」「ひょっとしたら」「〜かもしれない」に相当します。",
+    "formation": "（主語 ＋）说不定（＋ 主語 ＋）述語 / 節",
+    "examples": []
   },
   "zh_N似的_441": {
-    "title": "N 似的 (like N)",
-    "shortExplanation": "like N",
-    "longExplanation": "like N. Pinyin: N shìde",
-    "formation": "N shìde"
+    "title": "名詞 ＋ 似的（助詞：〜のようだ・まるで〜みたいだ）",
+    "shortExplanation": "名詞や語句の後に付き、ある事物や状態に類似していることを表す比況助詞です（「〜のようだ」「〜みたいだ」）。",
+    "longExplanation": "「似的」（shìde）は比況助詞として名詞、代名詞、あるいはフレーズの直後に置かれ、「〜のようだ」「〜そっくりだ」という意味を表します。文頭や述語部分に「像」「好像」「仿佛」などの語を伴い、「像……似的」や「好像……似的」（まるで〜のようだ）という呼応形式で用いられることが非常に一般的です。比喩表現として外見、様子、心理状態などを生き生きと描写する際に活躍します。日本語の「（まるで）〜のようだ」「〜みたいだ」に相当します。",
+    "formation": "（像 / 好像 / 仿佛 ＋）名詞 / フレーズ ＋ 似的",
+    "examples": [
+      {
+        "translation": "これが真実だとは信じられず、まるで夢を見ているかのようでした。"
+      }
+    ]
   },
   "zh_A得什么似的_442": {
-    "title": "A 得什么似的 (so A (to an extreme))",
-    "shortExplanation": "so A (to an extreme)",
-    "longExplanation": "so A (to an extreme). Pinyin: A dé shénme shìde",
-    "formation": "A dé shénme shìde"
+    "title": "形容詞 ＋ 得什么似的（程度補語：この上なく〜だ・〜でたまらない・ものすごく〜だ）",
+    "shortExplanation": "形容詞の後に付き、その程度が言葉では言い表せないほど極めて高いことを誇張して表す口語の程度補語です（「ものすごく〜だ」「〜でたまらない」）。",
+    "longExplanation": "「得什么似的」（dé shénme shìde）は口語で多用される誇張的な程度補語表現です。状態を表す形容詞や感情を表す心理動詞（「累」「忙」「高兴」「急」など）の後ろに置かれ、その状態や感情が「何か例えようもないほど凄まじい」「この上なく極限に達している」ことを生き生きと表現します。「累得什么似的」（疲れ果てて死にそうだ）、「高兴得什么似的」（嬉しくて飛び上がりそうだ）のように使われます。日本語の「ものすごく〜だ」「この上なく〜だ」「〜でたまらない」に相当します。",
+    "formation": "形容詞 / 心理動詞 ＋ 得什么似的",
+    "examples": [
+      {
+        "translation": "彼は重いパソコンバッグを背負って満員地下鉄に揺られ、仕事が終わって帰宅すると、この上なく疲れ果てていました。"
+      }
+    ]
   },
   "zh_纷纷V_443": {
-    "title": "纷纷 V (V in quick succession)",
-    "shortExplanation": "V in quick succession",
-    "longExplanation": "V in quick succession. Pinyin: fēnfēn V",
-    "formation": "fēnfēn V"
+    "title": "纷纷 ＋ 動詞（副詞：次々と・続々と・こぞって）",
+    "shortExplanation": "多くの人や物が次から次へと引き続いて同じ動作を行うことを表す副詞です（「次々と」「続々と」「こぞって」）。",
+    "longExplanation": "「纷纷」（fēnfēn）は副詞として動詞の前に置かれ、主語となる多くの人々や事物（主語は必ず複数または集団を表す名詞）が、途切れることなく次々と引き続いて動作を行う様子を表します。「人々が相次いで〜する」「競うようにして〜する」という情景を生き生きと叙述します。日本語の「次から次へと」「続々と」「相次いで」「こぞって」に相当します。",
+    "formation": "主語（複数・集団） ＋ 纷纷 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "雨が降りそうになり、道行く人々は次々と競うように家へ走って帰りました。"
+      }
+    ]
   },
   "zh_瞎_444": {
-    "title": "瞎 (blind)",
-    "shortExplanation": "blind",
-    "longExplanation": "blind. Pinyin: xiā",
-    "formation": "xiā"
+    "title": "瞎（形容詞 / 動詞：目が見えない・盲目である・失明する）",
+    "shortExplanation": "視力を失って物が見えない状態、あるいは失明することを表します（「目が見えない」「盲目である」）。",
+    "longExplanation": "「瞎」（xiā）の本義は、目が見えないこと、視力を失っていること、あるいは失明することを表す形容詞または動詞です。述語として「眼睛瞎了」（目が潰れた、失明した）のように用いられたり、名詞の前に付いて連体修飾語（「瞎子」目の見えない人、盲人など）となったりします。日本語の「目が見えない」「盲目である」「失明する」に相当します。",
+    "formation": "（眼睛 ＋）瞎（＋ 了）/ 瞎 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "ある日、王は兵士たちに命じて、一頭の象と生まれつき目の見えない人たちを何人か連れて来させました。"
+      }
+    ]
   },
   "zh_瞎_445": {
-    "title": "瞎 (thoughtlessly)",
-    "shortExplanation": "thoughtlessly",
-    "longExplanation": "thoughtlessly. Pinyin: xiā",
-    "formation": "xiā"
+    "title": "瞎 ＋ 動詞（副詞：やたらと・みだりに・無駄に・わけもなく）",
+    "shortExplanation": "動詞の前に付き、根拠や目的もなく、無闇に、あるいは無駄に行動することを表す副詞です（「やたらと」「みだりに」「わけもなく」）。",
+    "longExplanation": "「瞎」（xiā）は派生義として動詞の前で副詞として用いられます。明確な根拠や目的を持たず、無分別に、あるいは無駄に行動することを示します。「瞎说」（出任せを言う）、「瞎想」（余計な邪推をする、あれこれ思い悩む）、「瞎担心 / 瞎操心」（取り越し苦労をする）、「瞎忙」（空回りして無駄に忙しい）などの形で頻繁に用いられます。日本語の「やたらと」「見境なく」「みだりに」「無駄に」「わけもなく」に相当します。",
+    "formation": "（别 / 不用 ＋）瞎 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "彼は自分でなんとか方法を考えるでしょうから、あなたが代わりに無駄な心配（取り越し苦労）をする必要はありません。"
+      }
+    ]
   },
   "zh_分别_446": {
-    "title": "分别 (to separate)",
-    "shortExplanation": "to separate",
-    "longExplanation": "to separate. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别（動詞 / 名詞：別れる・別離・離別する）",
+    "shortExplanation": "互いに離れて別れ別れになること、あるいは別離そのものを表します（「別れる」「離別する」）。",
+    "longExplanation": "「分别」（fēnbié）は動詞として、同じ場所にいた人同士が互いに離れて別れること、別離することを意味します（「离别」や「分开」に相当）。また名詞として「別れ」「離別」そのものを指すこともできます。友人や家族との旅立ちや惜別の場面でよく用いられます。日本語の「別れる」「離れる」「別離（する）」に相当します。",
+    "formation": "主語 ＋ 分别 / 分别 ＋ 是…",
+    "examples": [
+      {
+        "translation": "別れは一時的なものです。私たちは将来きっとまた再会できます。"
+      }
+    ]
   },
   "zh_分别_447": {
-    "title": "分别 (difference)",
-    "shortExplanation": "difference",
-    "longExplanation": "difference. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别（名詞：違い・相違点・区別）",
+    "shortExplanation": "事物間の相違点や違い、区別を表す名詞です（「違い」「相違点」「区別」）。",
+    "longExplanation": "「分别」（fēnbié）は名詞として用いられ、二つ以上の事物の間にある違い、差異、あるいは区別を表します。「区别」や「不同之处」とほぼ同義です。「有什么分别」（どのような違いがあるのか）や「没有分别」（違いがない）などのパターンでよく使われます。日本語の「違い」「差異」「区別」に相当します。",
+    "formation": "（……和……）有 / 没有 ＋ 分别 / 有什么分别",
+    "examples": [
+      {
+        "translation": "私にはこれら二つのやり方にどのような違いがあるのか分かりません。"
+      }
+    ]
   },
   "zh_分别_448": {
-    "title": "分别 (separately)",
-    "shortExplanation": "separately",
-    "longExplanation": "separately. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别 ＋ 動詞（副詞：別々に・個別に・それぞれ単独で）",
+    "shortExplanation": "動作を一括してではなく、それぞれ別個に、単独で行うことを表す副詞です（「別々に」「個別に」）。",
+    "longExplanation": "「分别」（fēnbié）は動詞を修飾する副詞として、複数の対象に対して動作を一括して行うのではなく、一つ一つ別々に、個別に切り離して行うことを表します。「各自」「単独で」「個別に」というニュアンスを含みます。日本語の「別々に」「個別に」「それぞれ単独で」に相当します。",
+    "formation": "主語 ＋ 分别 ＋ 動詞 ＋ 目的語",
+    "examples": [
+      {
+        "translation": "私はその件について二人の人に別々に尋ねてみましたが、彼らの話はどちらも全く同じでした。"
+      }
+    ]
   },
   "zh_分别_449": {
-    "title": "分别 (respectively)",
-    "shortExplanation": "respectively",
-    "longExplanation": "respectively. Pinyin: fēnbié",
-    "formation": "fēnbié"
+    "title": "分别（副詞：それぞれ順に・それぞれ対応して・めいめい）",
+    "shortExplanation": "前後の二つの項目群が、順序に従って一対一に対応していることを表す副詞です（「それぞれ順に」「それぞれ〜である」）。",
+    "longExplanation": "「分别」（fēnbié）は副詞として、列挙された二組の事柄が一対一で順序通りに対応している関係を示します（英語の「respectively」に相当）。「項目Aと項目Bは、それぞれ順に〜と〜である」というように、前後の要素を正しく対応させて説明する学術的文章や説明文で非常に多く用いられます。日本語の「それぞれ順に」「それぞれ対応して」「各々」に相当します。",
+    "formation": "名詞1 和 名詞2 ＋ 分别 ＋ 是 / 動詞 ＋ 内容1 和 内容2",
+    "examples": [
+      {
+        "translation": "砂岩と礫岩は、それぞれ順に砂と小石が固結してできた産物です。"
+      }
+    ]
   },
   "zh_根_450": {
-    "title": "根 ((measure word))",
-    "shortExplanation": "(measure word)",
-    "longExplanation": "(measure word). Pinyin: gēn",
-    "formation": "gēn"
+    "title": "数詞 ＋ 根 ＋ 名詞（量詞：〜本・〜筋・〜本【細長い物】）",
+    "shortExplanation": "ひも状や棒状など、細くて長い形状の事物を数える量詞です（「〜本」「〜筋」）。",
+    "longExplanation": "「根」（gēn）は細長い棒状、円筒状、またはひも状・繊維状の物体を数えるための量詞です。よく用いられる組み合わせには、「绳子」（ロープ、縄）、「头发」（髪の毛）、「针」（針）、「木棍」（木の棒）、「香蕉」（バナナ）、「骨头」（骨）、「手指」（指）、「烟」（タバコ）などがあります。日本語の「〜本」「〜筋」に相当します。",
+    "formation": "数詞 ＋ 根 ＋ 名詞（細長い棒状・ひも状のもの）",
+    "examples": [
+      {
+        "translation": "尻尾を触った盲人は、象は一本の縄のようだと言いました。"
+      }
+    ]
   },
   "zh_根_451": {
-    "title": "根 (root)",
-    "shortExplanation": "root",
-    "longExplanation": "root. Pinyin: gēn",
-    "formation": "gēn"
+    "title": "根（名詞：根・植物の根・物事の根本・根源）",
+    "shortExplanation": "植物の根、または物事の根本や起源・出所を表す名詞です（「根」「根本」）。",
+    "longExplanation": "「根」（gēn）は名詞として、植物が土壌中に伸ばして水分や栄養分を吸収する「根」を指します。また比喩的・抽象的な用法として、物事の根元、根幹、根源、根本的な拠り所を指すこともできます（「根本」「根源」「寻根」など）。日本語の「根」「根本」「ルーツ」に相当します。",
+    "formation": "名詞（植物・事物） ＋ 的 ＋ 根",
+    "examples": [
+      {
+        "translation": "この木の根は太くて長いです。"
+      }
+    ]
   },
   "zh_便_452": {
-    "title": "便 (then)",
-    "shortExplanation": "then",
-    "longExplanation": "then. Pinyin: biàn",
-    "formation": "biàn"
+    "title": "便 ＋ 動詞 / 形容詞（書き言葉の副詞：すぐに・たちまち・〜となる・〜すれば…だ）",
+    "shortExplanation": "口語の「就」に相当する書き言葉の副詞で、前の事態を受けてすぐに次の事態が生じることや、当然の結果を表します（「すぐに」「たちまち」「〜となる」）。",
+    "longExplanation": "「便」（biàn）は書面語で多用される副詞で、口語の「就」に相当します。後続の節の動詞や形容詞の前に置かれ、(1) 前節の事態に引き続いてすぐに動作や状況が生じること、(2) 前節の条件や原因から当然の結果として導かれることを表します。文章に簡潔で引き締まった格調高い響きを与えます。日本語の「すぐに」「たちまち」「即座に」「〜となる」「〜すれば…だ」に相当します。",
+    "formation": "節1（前提・原因），（主語 ＋）便 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "上の階に新しいピアノが置かれたことで、我が家にはたちまち騒がしさが増してしまいました。"
+      }
+    ]
   },
   "zh_倒反倒_453": {
-    "title": "倒/反倒 (contrary to logic)",
-    "shortExplanation": "contrary to logic",
-    "longExplanation": "contrary to logic. Pinyin: dǎo/ fǎndào",
-    "formation": "dǎo/ fǎndào"
+    "title": "倒 / 反倒（副詞：かえって・逆に・反対に）",
+    "shortExplanation": "通常の常識、道理、事前の予想や意図とは正反対の結果になることを表す副詞です（「かえって」「逆に」）。",
+    "longExplanation": "「倒」（dào）および「反倒」（fǎndào）は後続の節で述語の前に置かれる副詞で、物事の成り行きや結果が通常の常識、筋道、事前の予測、あるいは期待とは真逆に展開したことを示します。「反而」とほぼ同義であり、「反倒」の方がやや語気が強く対比が鮮明になります。「良かれと思ってやったのに、かえって事態が悪化した」といった逆転の文脈で多用されます。日本語の「かえって」「逆に」「反対に」に相当します。",
+    "formation": "節1（前提・前置き），（主語 ＋）倒 / 反倒 ＋ 動詞 / 形容詞",
+    "examples": []
   },
   "zh_倒_455": {
-    "title": "倒 (despite all)",
-    "shortExplanation": "despite all",
-    "longExplanation": "despite all. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒 / 倒是（副詞：〜は〜だが・確かに〜ではあるが【譲歩】）",
+    "shortExplanation": "譲歩を表す副詞で、まずある事実や長所を一応肯定した上で、後節で逆接の語を用いて欠点や不足点を述べます（「〜は〜だが」「確かに〜ではある」）。",
+    "longExplanation": "「倒」（dào）または「倒是」（dàoshi）は譲歩のニュアンスを表す副詞です。前節でまず相手の意見やある事実、物事の一面（長所や肯定的な面）を「確かに〜ではある」「〜なのは事実だが」と素直に認めた上で、後節に「就是」「只是」「但是」などの逆接の接続詞を伴い、問題点、不満、あるいは欠点を提示します。会話を和らげつつ控えめに不満や対比を述べる効果があります。日本語の「〜は確かに〜だが」「〜ではあるものの」に相当します。",
+    "formation": "（主語 ＋）倒 / 倒是 ＋ 動詞 / 形容詞，（就是 / 只是 / 但是 ＋）節2",
+    "examples": [
+      {
+        "translation": "品質は確かにとても良いのですが、ただ値段が高すぎます。"
+      }
+    ]
   },
   "zh_倒_456": {
-    "title": "倒 (for crying out loud)",
-    "shortExplanation": "for crying out loud",
-    "longExplanation": "for crying out loud. Pinyin: dǎo",
-    "formation": "dǎo"
+    "title": "倒 / 倒是（副詞：さっさと・一体・早く〜してみなさい【催促・詰問】）",
+    "shortExplanation": "命令文、疑問文、反語文で用いられ、相手に行動や返答を急かしたり、焦りや詰問の語気を強めたりする副詞です（「さっさと〜しろ」「一体〜なのか」）。",
+    "longExplanation": "「倒」（dào）または「倒是」（dàoshi）は話し手の焦燥感、不満、あるいは強い催促・詰問の語気を表す副詞です。相手がぐずぐずして口を開かなかったり態度を明らかにしないときに、「さっさと話せ」「早くやってみろ」と行動を急かしたり、反語文や疑問文で「なら一体誰がやるというのか」と相手を問い詰めたりする場面で用いられます。日本語の「さっさと〜してみろ」「早く〜しなさい」「一体〜だというのか」に相当します。",
+    "formation": "主語 ＋ 倒 / 倒是 ＋ 動詞（＋ 目的語 / てみる）",
+    "examples": [
+      {
+        "translation": "さあ言ってみなさいよ、この件であなたが責任を取らないなら、一体誰が取るというのですか？"
+      }
+    ]
   },
   "zh_V来V去_457": {
-    "title": "V 来 V 去 (V around)",
-    "shortExplanation": "V around",
-    "longExplanation": "V around. Pinyin: V lái V qù",
-    "formation": "V lái V qù"
+    "title": "動詞 ＋ 来 ＋ 動詞 ＋ 去（動作の反復・往復：行ったり来たりする・あちこち〜する・あれこれ〜する）",
+    "shortExplanation": "同一の単音節動詞を「来」と「去」で挟み、同一の動作を何度も繰り返したり、あちこちを行き来したり、あれこれ考え巡らせたりすることを表します（「行ったり来たり」「あれこれ〜する」）。",
+    "longExplanation": "「V 来 V 去」（V lái V qù）は、同じ単音節動詞を「来」と「去」の間に繰り返して用いる口語表現です。主に2つの用法があります。1つは空間的な往復・移動を表す動詞（走、跑、飛、游など）を用いて「あちこち行き来する」「行ったり来たり走り回る」様子を表す用法（例：「走来走去」歩き回る、「跑来跑去」走り回る）。もう1つは思考や判断を表す動詞（想、看、挑、商量など）を用いて「何度も繰り返し行う」「あれこれ考えあぐねる」様子を表す用法です（例：「想来想去」あれこれ考え巡らせる、「挑来挑去」あれこれ選び迷う）。日本語の「あちこち〜し回る」「行ったり来たり〜する」「あれこれ〜する」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 来 ＋ 動詞 ＋ 去",
+    "examples": [
+      {
+        "translation": "子犬は自分のしっぽを追いかけて、芝生の上をあちこち走り回っている。"
+      }
+    ]
   },
   "zh_要不不然要不然_458": {
-    "title": "要不/不然/要不然 (otherwise)",
-    "shortExplanation": "otherwise",
-    "longExplanation": "otherwise. Pinyin: yàobù/ bùrán/ yàobùrán",
-    "formation": "yàobù/ bùrán/ yàobùrán"
+    "title": "要不 / 不然 / 要不然（接続詞：そうでなければ・さもないと・でないと【反面仮定】）",
+    "shortExplanation": "後節の冒頭に用いられ、前節と反対の状況を仮定して、好ましくない結果や事態を導きます（「そうでなければ」「さもないと」）。",
+    "longExplanation": "「要不」（yàobù）、「不然」（bùrán）、「要不然」（yàobùrán）は、事実に反する仮定を表す接続詞で、複文の後節の先頭に置かれます。前節で現実の状況や満たすべき条件を述べ、後節で「もしそうでなければ」「さもなければ」と反対の仮定を立てて、その結果生じるであろう好ましくない事態・損害・失敗を提示します。「不然」はやや書き言葉の響きを持ち、「要不」「要不然」は口語で非常によく使われます（例：「快走吧，要不然就赶不上车了」早く行こう、さもないと電車に間に合わなくなる）。日本語の「そうでなければ」「さもないと」「でないと」に相当します。",
+    "formation": "節1（事実・必要条件），要不 / 不然 / 要不然 ＋ 節2（好ましくない結果）",
+    "examples": [
+      {
+        "translation": "あなたに会えて本当によかった、そうでなければ今日は絶対に遅刻していたところだ。"
+      }
+    ]
   },
   "zh_要不不然要不然_459": {
-    "title": "要不/不然/要不然 (why not try)",
-    "shortExplanation": "why not try",
-    "longExplanation": "why not try. Pinyin: yàobù/ bùrán/ yàobùrán",
-    "formation": "yàobù/ bùrán/ yàobùrán"
+    "title": "要不 / 不然 / 要不然（提案・助言：いっそのこと〜してはどうか・それとも・いっそ）",
+    "shortExplanation": "後節の先頭で用いられ、相談や提案の柔らかな口調で、別の解決策や代替案を提示します（「いっそのこと〜してはどうか」「それなら」）。",
+    "longExplanation": "「要不」（yàobù）、「不然」（bùrán）、「要不然」（yàobùrán）は、相手に対して控えめに提案やアドバイスを行ったり、新たな代替案を示したりする際にも用いられます。現状の都合や問題点を述べた後、「それならいっそ…してはどうだろう」「あるいは…にしようか」と相談のニュアンスを込めて切り出す表現です。文末に語気助詞の「吧」を伴うことが多く、口調を和らげる効果があります。口語では「要不」や「要不然」が特に頻繁に使われます。日本語の「いっそのこと〜したらどうですか」「それなら〜しては」「あるいは」に相当します。",
+    "formation": "節1（現状・理由），要不 / 不然 / 要不然 ＋ 提案（〜吧）",
+    "examples": [
+      {
+        "translation": "今日はもう遅すぎるから、いっそのこと明日出発したらどうですか。"
+      }
+    ]
   },
   "zh_彼此V_460": {
-    "title": "彼此 V (each other)",
-    "shortExplanation": "each other",
-    "longExplanation": "each other. Pinyin: bǐcǐ V",
-    "formation": "bǐcǐ V"
+    "title": "彼此 ＋ 動詞（連用修飾語：互いに〜する・お互いに〜し合う）",
+    "shortExplanation": "代名詞「彼此」が連用修飾語（状語）として動詞の前に置かれ、双方が相手に対して相互に動作を行うことを表します（「お互いに〜する」「互いに〜し合う」）。",
+    "longExplanation": "「彼此」（bǐcǐ）は双方（こちらとあちら、お互い）を指す代名詞です。動詞の直前に置かれて状語（連用修飾語）として機能し、関係する二者（または双方）が互いに相手に対して同じ行為や働きかけを行うことを表します。後続する動詞は通常、人間関係における相互作用を表す2音節動詞（帮助、信任、了解、尊重、支持、关怀など）が用いられます。現代中国語の「互相」とほぼ同義ですが、「彼此」は「両者・双方」という対比的な意識がより明確に含まれます。日本語の「互いに〜する」「お互いに〜し合う」に相当します。",
+    "formation": "主語（複数・双方）＋ 彼此 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "親友同士は互いに助け合うべきです。"
+      }
+    ]
   },
   "zh_彼此_461": {
-    "title": "彼此 ((pronoun for 2 people))",
-    "shortExplanation": "(pronoun for 2 people)",
-    "longExplanation": "(pronoun for 2 people). Pinyin: bǐcǐ",
-    "formation": "bǐcǐ"
+    "title": "彼此（代名詞：お互い・双方・両者・二人の間）",
+    "shortExplanation": "二者（こちらとあちら）の双方を指す代名詞で、主に連体修飾語（定語：彼此的）や目的語、主語として用いられます（「お互いの」「双方の」）。",
+    "longExplanation": "「彼此」（bǐcǐ）は「彼（あちら）」と「此（こちら）」からなる人称代名詞で、当事者である2人（または2つの側）の双方を指します。状語として動詞を修飾するだけでなく、実体的な代名詞として主語、目的語、あるいは連体修飾語（定語）として機能します。特に「彼此的 ＋ 名詞」（例：「彼此的爱好」お互いの趣味、「彼此的距离」双方の距離、「彼此的关系」二人の関係）の形で頻繁に用いられます。また成語「不分彼此」（水臭い仲ではない、お互い様である）のように目的語としても使われます。日本語の「お互い」「双方」「お互いの〜」に相当します。",
+    "formation": "彼此 ＋（的 ＋）名詞（または主語・目的語）",
+    "examples": [
+      {
+        "translation": "私たちお互いの趣味は同じです。"
+      }
+    ]
   },
   "zh_彼此彼此_462": {
-    "title": "彼此彼此 (about the same)",
-    "shortExplanation": "about the same",
-    "longExplanation": "about the same. Pinyin: bǐcǐbǐcǐ",
-    "formation": "bǐcǐbǐcǐ"
+    "title": "彼此彼此（慣用表現：お互い様だ・五十歩百歩だ・どっちもどっちだ）",
+    "shortExplanation": "代名詞「彼此」を重ねた口語の慣用句で、双方の実力、状況、条件などが大差なく同等であることを表します（「お互い様」「どっちもどっち」）。",
+    "longExplanation": "「彼此彼此」（bǐcǐbǐcǐ）は口語で非常によく使われる慣用表現です。二者の置かれた状況、技術のレベル、待遇、欠点などが「双方とも似たようなものであり、たいして差がない」ことを示します。主に2つの文脈で使われます。1つは相手から褒められたり感謝されたりした際に謙遜して「いえいえ、お互い様ですよ（あなたも同じくらい素晴らしいですよ）」と返す場面。もう1つは親しい間柄で相手のからかいや指摘に対して「お前だって同じだろう（どっちもどっちだ、五十歩百歩だ）」と応じる場面です。日本語の「お互い様だ」「五十歩百歩だ」「どっちもどっちだ」に相当します。",
+    "formation": "主語（二人・双方）＋ 彼此彼此（または単独で応答句として使用）",
+    "examples": [
+      {
+        "translation": "私たちは二人ともお互い様ですよ、私の絵もあなたより大して上手なわけではありません。"
+      }
+    ]
   },
   "zh_算_463": {
-    "title": "算 (counts as)",
-    "shortExplanation": "counts as",
-    "longExplanation": "counts as. Pinyin: suàn",
-    "formation": "suàn"
+    "title": "算（動詞：〜と見なす・〜ということにしておく・〜に相当する）",
+    "shortExplanation": "人や事物を特定の資格・基準・状態に達していると認めるか、あるいは仮にそのように取り扱うことを表します（「〜と見なす」「〜ということにする」）。",
+    "longExplanation": "動詞「算」（suàn）は本来の「計算する」という意味から派生し、「〜と見なす」「〜に数えられる」「〜という扱いにする」という判断・認可・仮定の意を表します。主に2通りの文脈で使われます。1つは客観的な基準に照らして「〜と言ってよい」「〜の部類に入る」と評価する場合（例：「他算得上是一位好老师」彼は良い先生と言える）。もう1つは例文のように「仮に〜という扱いにしておく」「〜ということにして取り決める」という取り決めを表す場合です（「就算……」の形で使われることも多い）。日本語の「〜と見なす」「〜ということにしておく」「〜と数える」に相当します。",
+    "formation": "主語 ＋（就 ＋）算 ＋（目的語・節）",
+    "examples": [
+      {
+        "translation": "このお金は私があなたに貸したものということにしておきますから、将来お金ができたら返してください。"
+      }
+    ]
   },
   "zh_V了掉算了_464": {
-    "title": "V 了/掉 算了 (might as well V)",
-    "shortExplanation": "might as well V",
-    "longExplanation": "might as well V. Pinyin: V le/ diào suànle",
-    "formation": "V le/ diào suànle"
+    "title": "動詞 ＋ 了 / 掉 ＋ 算了（思い切り・諦めの決定：〜してしまえばいい・いっそ〜して済ませてしまおう）",
+    "shortExplanation": "動詞に結果補語「了」「掉」を伴い、末尾に「算了」を置くことで、あれこれ悩まずにいっそのこと片付けてしまおうという割り切った気持ちを表します（「〜してしまえ」「〜して済ませよう」）。",
+    "longExplanation": "「算了」（suànle）は本来「もういい、おしまいにする、諦める」という意味を表します。「動詞 ＋ 了/掉 ＋ 算了」の形で用いられると、これ以上迷ったり執着したりするのをやめ、いっそのことその動作を行って問題を清算・解決してしまおうという割り切った態度、あるいは半ば諦めの決断を表します。特に物を手放す、処分する、妥協する場面で多用されます（例：「卖掉算了」いっそ売ってしまおう、「扔掉算了」捨ててしまえばいい、「分了算了」別れてしまおう）。日本語の「いっそ〜してしまえ」「〜して済ませてしまおう」に相当します。",
+    "formation": "主語 ＋（把 ＋ 目的語 ＋）動詞 ＋ 了 / 掉 ＋ 算了",
+    "examples": [
+      {
+        "translation": "たかが空き瓶じゃないか。捨ててしまえばいいんだ（捨ててしまえ）。"
+      }
+    ]
   },
   "zh_作为N_465": {
-    "title": "作为 N (as N)",
-    "shortExplanation": "as N",
-    "longExplanation": "as N. Pinyin: zuòwéi N",
-    "formation": "zuòwéi N"
+    "title": "作为 ＋ 名詞（介詞：〜として・〜の立場で・〜たるもの）",
+    "shortExplanation": "名詞の前に置かれ、身分、資格、立場、または事物の本質を提示し、それに応じた性質や言動を導きます（「〜として」「〜の立場から」）。",
+    "longExplanation": "「作为」（zuòwéi）は介詞（前置詞）として用いられ、後ろに身分・立場・資格・肩書きを表す名詞（または名詞句）を伴って連用修飾語（状語）を形成します。文頭に置かれることが多く、「ある身分や立場にある者として」「〜という役割から見て」という前提条件・視点を提示します。後続の主文では、その身分にふさわしい行動、責任、あるいは顕著な特徴・態度が述べられます（例：「作为一名教师」一人の教師として、「作为父母」親たるもの）。日本語の「〜として」「〜の立場で」「〜たるもの」に相当します。",
+    "formation": "作为 ＋ 名詞（身分・資格・立場），主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "偉大な作家であり碩学である魯迅は、食に対して非常にこだわりを持っていた。"
+      }
+    ]
   },
   "zh_曾经_466": {
-    "title": "曾经 (once)",
-    "shortExplanation": "once",
-    "longExplanation": "once. Pinyin: céngjīng",
-    "formation": "céngjīng"
+    "title": "曾经（時間副詞：かつて・以前・昔〜したことがある）",
+    "shortExplanation": "動詞の前に置かれ、ある動作や状態が過去において発生・存在したことがあり、現在はすでに終了していることを表します（「かつて」「以前」）。",
+    "longExplanation": "「曾经」（céngjīng）は過去の経験や事実を表す時間副詞です。動詞の前に置かれ、しばしば動態助詞の「过」や「了」と呼応します。過去のある時期にその行為や状態が確かに存在したが、現在はすでに完了して継続していないことを明確に示します。「从前」や「过去」などの時間名詞と異なり、純粋な修飾副詞として動詞を修飾します。書き言葉やスピーチで非常によく用いられ、格調高い響きを持ちます。日本語の「かつて」「以前〜したことがある」「昔」に相当します。",
+    "formation": "主語 ＋ 曾经 ＋ 動詞（＋ 过 / 了）",
+    "examples": [
+      {
+        "translation": "孔子はかつて弟子たちを連れて14年間諸国を巡り歩き、自らの思想を広めました。"
+      }
+    ]
   },
   "zh_毕竟_467": {
-    "title": "毕竟 (after all)",
-    "shortExplanation": "after all",
-    "longExplanation": "after all. Pinyin: bìjìng",
-    "formation": "bìjìng"
+    "title": "毕竟（副詞：何といっても・やはり・所詮・結局のところ）",
+    "shortExplanation": "紆余曲折を経た最終的な結論や、否定できない根本的な原因・事実を強調します（「何といっても」「結局のところ」「やはり」）。",
+    "longExplanation": "「毕竟」（bìjìng）は、様々な事情や曲折を考慮した上で、最終的な帰結や最も本質的で動かしがたい事実を提示・強調する副詞です。主に2つの用法があります。1つは例文のように「多くの障害や紆余曲折があったものの、最終的には成し遂げた」という結果を強調する用法。もう1つは「彼は何といってもまだ子どもだから（大目に見るべきだ）」のように、事態を判断・理解する上での根本的な理由や拠って立つ事実を提示する用法です。日本語の「何といっても」「やはり」「結局のところ」に相当します。",
+    "formation": "（しかし ＋）主語 ＋ 毕竟 ＋ 述語（または文頭で：毕竟 ＋ 文）",
+    "examples": [
+      {
+        "translation": "私たちは多くの困難に直面しましたが、何といっても（やはり）任務をやり遂げました。"
+      }
+    ]
   },
   "zh_逐渐_468": {
-    "title": "逐渐 (gradually)",
-    "shortExplanation": "gradually",
-    "longExplanation": "gradually. Pinyin: zhújiàn",
-    "formation": "zhújiàn"
+    "title": "逐渐（副詞：次第に・徐々に・だんだんと）",
+    "shortExplanation": "動作、性質、状態が時間の経過とともに段階を追って少しずつ変化していく様子を表す副詞です（「次第に」「だんだん」「徐々に」）。",
+    "longExplanation": "「逐渐」（zhújiàn）は、程度や数量、状態の変化が時間の推移に伴って一段階ずつ緩やかに進行することを表す副詞です。書き言葉寄りの表現で、急激な変化ではなく、順序を追って自然に変化が深まっていくプロセスを叙述します。変化を表す動詞（恢复、适应、减少、扩大など）や形容詞の前に置かれて連用修飾語（状語）となります。口語の「渐渐」や「慢慢」に比べて格式が高く、説明文や論説文、報道などで多用されます。日本語の「次第に」「徐々に」「だんだんと」に相当します。",
+    "formation": "主語 ＋ 逐渐 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "食べ物がますます少なくなり、老人はサルの食べる量を次第に制限せざるを得なくなった。"
+      }
+    ]
   },
   "zh_或许_469": {
-    "title": "或许 (maybe)",
-    "shortExplanation": "maybe",
-    "longExplanation": "maybe. Pinyin: huòxǔ",
-    "formation": "huòxǔ"
+    "title": "或许（副詞：ひょっとすると・あるいは・もしかしたら）",
+    "shortExplanation": "事態の可能性について推測を表す副詞で、断定を避けつつある可能性を示唆します（「ひょっとすると」「もしかしたら」）。",
+    "longExplanation": "「或许」（huòxǔ）は推測や不確実な判断を表す副詞です。主語の前または動詞（述語）の前に置かれ、「断定はできないが、そのような可能性も十分にあり得る」という控えめな推定を表します。口語表現の「也许」や「可能」と意味上ほぼ同等ですが、「或许」はやや書き言葉の落ち着いたトーンを帯びており、文学作品や論説、丁寧な会話で好まれます。文末に「也说不定」や「（……的）可能」と呼応することもあります。日本語の「ひょっとすると」「もしかしたら」「あるいは」に相当します。",
+    "formation": "（主語 ＋）或许（＋ 主語 ＋）述語",
+    "examples": [
+      {
+        "translation": "以前は彼女はあなたを支持しませんでしたが、ひょっとすると今回は状況が変わるかもしれません。"
+      }
+    ]
   },
   "zh_V过来_470": {
-    "title": "V 过来 (V and recover)",
-    "shortExplanation": "V and recover",
-    "longExplanation": "V and recover. Pinyin: V guòlái",
-    "formation": "V guòlái"
+    "title": "動詞 / 形容詞 ＋ 过来（派生方向補語：正気に戻る・回復する・正常な状態に戻る）",
+    "shortExplanation": "派生方向補語「过来」が動詞や形容詞の後ろに置かれ、異常・不調・昏睡・誤った状態から正常・健康・覚醒した状態へと回復することを表します（「〜に戻る」「正気を取り戻す」）。",
+    "longExplanation": "「过来」（guòlai）は派生方向補語として用いられる際、「好ましくない状態（気絶、混乱、病気、過ちなど）から、好ましい正常な状態（覚醒、回復、健康、正しい認識など）へと戻る」という回復・好転のプロセスを表します。「醒」（目が覚める）、「清醒」（意識がはっきりする）、「救」（救命する）、「缓」（息を吹き返す）、「改」（改心する）などの動詞・形容詞と結びついて固定的な表現を作ります（例：「抢救过来了」救命に成功して一息ついた、「改过来了」誤りを正した）。日本語の「〜に戻る」「正気を取り戻す」「回復する」に相当します。",
+    "formation": "主語 ＋ 動詞 / 形容詞（醒 / 清醒 / 缓 / 救 / 改など）＋ 过来",
+    "examples": [
+      {
+        "translation": "しばらく経ってから、頭がようやくはっきりと冴えてきた。"
+      }
+    ]
   },
   "zh_V得过来V不过来_471": {
-    "title": "V 得过来 / V 不过来 (can finish V / cannot finish V)",
-    "shortExplanation": "can finish V / cannot finish V",
-    "longExplanation": "can finish V / cannot finish V. Pinyin: V dé guòlái / V bùguò lái",
-    "formation": "V dé guòlái / V bùguò lái"
+    "title": "動詞 ＋ 得过来 / 不过来（可能補語：〜しきれる / 〜しきれない・対応しきれない）",
+    "shortExplanation": "数量が多すぎたり仕事量が膨大だったりして、時間や能力の面で最後まで処理・対応しきれるかどうかを表す可能補語です（「〜しきれる」「〜しきれない」）。",
+    "longExplanation": "「V得过来」およびその否定形「V不过来」は、時間や体力、人手の限界に対して、対象となる事物や業務の量が非常に多い状況で用いられる可能補語です。肯定形「V得过来」は「十分に対応しきれる、すべてこなせる」ことを意味し、否定形「V不过来」は「量が多すぎて手が回らない、すべて処理しきれない、対応しきれない」ことを表します。特に否定形「V不过来」や反語文で頻繁に用いられます（例：「忙不过来」忙しくて手が回らない、「看不过来」見きれないほど多い、「照顾不过来」世話が行き届かない、「数不过来」数え切れない）。日本語の「〜しきれる」「〜しきれない」「手が回らない」に相当します。",
+    "formation": "主語 ＋（多量な対象 ＋）動詞 ＋ 得过来 / 不过来",
+    "examples": [
+      {
+        "translation": "空の星があんなにたくさんあるのに、誰が数え切れるというのでしょうか。"
+      }
+    ]
   },
   "zh_所_472": {
-    "title": "所 ((measure word for institutions))",
-    "shortExplanation": "(measure word for institutions)",
-    "longExplanation": "(measure word for institutions). Pinyin: suǒ",
-    "formation": "suǒ"
+    "title": "所（量詞：学校・病院・機関・住宅などを数える単位）",
+    "shortExplanation": "学校、病院、研究機関などの公共機関や施設、住宅などを数える際に用いる量詞です（「〜校」「〜棟」「〜軒」）。",
+    "longExplanation": "「所」（suǒ）は、教育機関、医療機関、公的機関、あるいは独立した建物・住居などを数える専用の量詞です（例：「一所大学」1つの大学、「一所医院」1軒の病院、「一所小学」1つの小学校、「一所房子」1軒の家）。一般的な量詞「个」よりもフォーマルで規範的な表現として用いられます。日本語の「校」「軒」「棟」「施設」などに相当します。",
+    "formation": "数詞 ＋ 所 ＋ 名詞（学校・病院・機関・建物など）",
+    "examples": [
+      {
+        "translation": "彼は北京のある大学の出身です。"
+      }
+    ]
   },
   "zh_S所V的_473": {
-    "title": "S + (所) + V + 的 (what S V)",
-    "shortExplanation": "what S V",
-    "longExplanation": "what S V. Pinyin: S + ( suǒ) + V + de",
-    "formation": "S + ( suǒ) + V + de"
+    "title": "主語 ＋（所）＋ 動詞 ＋ 的（主語が動詞するところのもの・主語が〜するもの・こと）",
+    "shortExplanation": "助詞「所」を動詞の前に置き、末尾の「的」と呼応させて「主語が〜するところの（もの・こと）」という名詞節を作る書き言葉の改まった構文です。",
+    "longExplanation": "「主語 ＋（所）＋ 動詞 ＋ 的」（主語 ＋ suǒ ＋ 動詞 ＋ de）は、書き言葉やフォーマルなスピーチで頻繁に用いられる格調高い構文です。「所」は主語と他動詞（多くは2音節動詞）の間に置かれ、動作の対象となる事柄を名詞化します。この句全体が主語や目的語となり、「主語が〜するところのもの（内容・事物・結果）」という意味を表します。日常会話では「所」を省いて単に「主語 ＋ 動詞 ＋ 的」と言うことが多いですが、「所」を加えることで論理的で品格のある文体になります。日本語の「〜の（〜した）ところの…」「〜が〜するもの・こと」に相当します。",
+    "formation": "主語 ＋（所 ＋）動詞 ＋ 的（＋ 名詞）",
+    "examples": [
+      {
+        "translation": "山水画が表現しているのは、人と自然の関係です。"
+      }
+    ]
   },
   "zh_有所V_474": {
-    "title": "有所 V (has/have V’ed)",
-    "shortExplanation": "has/have V’ed",
-    "longExplanation": "has/have V’ed. Pinyin: yǒusuǒ V",
-    "formation": "yǒusuǒ V"
+    "title": "有所 ＋ 動詞（いくらか〜する・ある程度〜がある・〜が見られる）",
+    "shortExplanation": "2音節動詞の前に置かれ、ある程度の変化や進展、働きかけが生じていることを表す書き言葉の表現です（「いくらか〜がある」「ある程度〜する」）。",
+    "longExplanation": "「有所 ＋ 動詞」（yǒusuǒ ＋ 動詞）は、ニュース報道、報告書、学術論文などで頻出する格調高い書面語の連用修飾表現です。変化や動作を表す2音節動詞（提高 向上する、改善 改善する、增加 増加する、改变 変わる、有所準備 準備がある など）の直前に置かれます。程度が極端に高いわけではないものの、「確かにその方向での変化や進展が一定程度認められる」ことを客観的・控えめに述べる際に好まれます。日本語の「いくらか〜が見られる」「ある程度〜する」「幾分〜がある」に相当します。",
+    "formation": "主語 ＋ 有所 ＋ 動詞（2音節の変化・発展動詞）",
+    "examples": [
+      {
+        "translation": "年齢が上がるにつれて、女性の職場における幸福感はある程度向上しています。"
+      }
+    ]
   },
   "zh_无所V_475": {
-    "title": "无所 V (have nothing to V)",
-    "shortExplanation": "have nothing to V",
-    "longExplanation": "have nothing to V. Pinyin: wú suǒ V",
-    "formation": "wú suǒ V"
+    "title": "无所 ＋ 動詞（何一つ〜するものがない・少しも〜しない・全く〜を恐れない）",
+    "shortExplanation": "2音節動詞の前に置かれ、「〜すべき対象が何もない」「全く〜しない」という絶対的な否定を表す書き言葉・成語表現です。",
+    "longExplanation": "「无所 ＋ 動詞」（wú suǒ ＋ 動詞）は文言文（漢文）に由来する格式の高い書面語表現で、成語や固定フレーズとしても多用されます。2音節動詞の前に置かれ、「その動作が及ぶ対象や理由が全く存在しない」ことを表します。例えば「无所畏惧」（何ものも恐れない）、「无所不知」（知らぬことは何一つない）、「无所事事」（何一つすることなくぶらぶら過ごす）、「无所作为」（何の成果もあげられない）などがあります。完全な否定や徹底した状態を強調する際に用いられます。日本語の「何一つ〜するものがない」「全く〜しない」「少しも〜を恐れない」に相当します。",
+    "formation": "主語 ＋ 无所 ＋ 動詞（2音節動詞）",
+    "examples": [
+      {
+        "translation": "真理を堅持するのであれば、何ものをも恐れることはありません。"
+      }
+    ]
   },
   "zh_与N相当_476": {
-    "title": "与 N 相当 (equivalent to N)",
-    "shortExplanation": "equivalent to N",
-    "longExplanation": "equivalent to N. Pinyin: yǔ N xiāngdāng",
-    "formation": "yǔ N xiāngdāng"
+    "title": "与 ＋ 名詞 ＋ 相当（形容詞述語：〜と同等である・〜に匹敵する・〜と互角である）",
+    "shortExplanation": "「相当」が形容詞述語となり、介詞「与」（または「跟」「和」）と呼応して、双方の数量・レベル・条件などが同等であることを表します。",
+    "longExplanation": "「与 ＋ 名詞 ＋ 相当」（yǔ 名詞 xiāngdāng）において、「相当」は「匹敵している、同等である」を意味する形容詞述語として機能します。「与」（あるいは口語の「跟」「和」）を用いて比較対象を導き、主語と対象が数量、規模、水準、能力などの面で互角・同格であることを示します。学術論文や調査報告書、ニュースなどで客観的なデータや状態を比較する際によく用いられます。日本語の「〜と同等である」「〜に匹敵する」「〜とほぼ等しい」に相当します。",
+    "formation": "主語 ＋ 与 / 跟 / 和 ＋ 名詞 ＋ 相当",
+    "examples": [
+      {
+        "translation": "運転中に通話している人の反応速度は、飲酒運転者と同等です。"
+      }
+    ]
   },
   "zh_相当于N_477": {
-    "title": "相当于 N (equivalent to N)",
-    "shortExplanation": "equivalent to N",
-    "longExplanation": "equivalent to N. Pinyin: xiāngdāngyú N",
-    "formation": "xiāngdāngyú N"
+    "title": "相当于 ＋ 名詞（動詞句：〜に相当する・〜に匹敵する・〜に値する）",
+    "shortExplanation": "動詞「相当」に介詞「于」が結合した形で、数量、価値、役割などが目的語の名詞と同等であることを表します（「〜に相当する」）。",
+    "longExplanation": "「相当于 ＋ 名詞」（xiāngdāngyú 名詞）は、動詞「相当」と前置詞「于」が一体化した動詞句パターンです。後ろに直接目的語（名詞・数量句など）を取り、「主語の数値・価値・役割・地位が〜と同等である、〜に換算できる」という意味を表します。通貨の換算、数量の比較、比喩的な例え、機能の対比などで非常によく用いられます。日本語の「〜に相当する」「〜に匹敵する」「〜と同じくらいである」に相当します。",
+    "formation": "主語 ＋ 相当于 ＋ 名詞 / 数量句",
+    "examples": [
+      {
+        "translation": "この鳥が1日に食べる害虫の量は、自らの体重に匹敵します。"
+      }
+    ]
   },
   "zh_相当_478": {
-    "title": "相当 (quite)",
-    "shortExplanation": "quite",
-    "longExplanation": "quite. Pinyin: xiāngdāng",
-    "formation": "xiāngdāng"
+    "title": "相当 ＋ 形容詞 / 心理動詞（程度副詞：かなり・相当に・ずいぶん）",
+    "shortExplanation": "程度副詞として形容詞や心理動詞の前に置かれ、度合いが著しく高いことを表します（「かなり」「相当に」「ずいぶん」）。",
+    "longExplanation": "「相当」（xiāngdāng）は、度合いの高さを表す程度副詞です。形容詞や心理動詞（满意、喜欢、严重、复杂、精彩、困难など）の直前に置かれ、その状態や感情の度合いが通常を大きく上回っていることを示します。「比较」（わりと）よりも程度が高く、「很」や「十分」に近い強さですが、客観的で知的な響きを持ちます。日本語の「かなり」「相当に」「ずいぶん」「非常に」に相当します。",
+    "formation": "主語 ＋ 相当 ＋ 形容詞 / 心理動詞",
+    "examples": [
+      {
+        "translation": "料理の味は最高で、接客も行き届いており、私はかなり満足しています。"
+      }
+    ]
   },
   "zh_相当_479": {
-    "title": "相当 (considerable)",
-    "shortExplanation": "considerable",
-    "longExplanation": "considerable. Pinyin: xiāngdāng",
-    "formation": "xiāngdāng"
+    "title": "相当 ＋ 数量・数量表現（連体修飾語：かなりの・相当な数の・少なからぬ）",
+    "shortExplanation": "数量表現や範囲を表す語の前に置かれて連体修飾語（定語）となり、数量や規模が決して少なくなく、無視できない程度に達していることを表します（「かなりの」「相当な」）。",
+    "longExplanation": "「相当」（xiāngdāng）は数量句や名詞を修飾する定語（連体修飾語）としても頻繁に用いられます。典型的な組み合わせとして「相当一部分」（かなりの部分、少なからぬ人々）、「相当数量」（相当な数量）、「相当规模」（かなりの規模）、「相当长的时间」（かなりの長期間）などがあります。数量や比率が大きく、重視すべき水準に達していることを客観的に述べます。日本語の「かなりの」「相当な数の」「少なからぬ」に相当します。",
+    "formation": "相当 ＋ 一部分 / 数量詞句 / 名詞（＋ 的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "かなりの数の人々が、収入の多寡を幸福の基準としています。"
+      }
+    ]
   },
   "zh_数sh_480": {
-    "title": "数 (shǔ) (to count)",
-    "shortExplanation": "to count",
-    "longExplanation": "to count. Pinyin: shǔ (shǔ)",
-    "formation": "shǔ (shǔ)"
+    "title": "数（shǔ）（動詞：数える・計算する）",
+    "shortExplanation": "第3声（shǔ）で発音される動詞で、人や物の数を1つずつ数える動作を表します（「数える」）。",
+    "longExplanation": "「数」が第3声「shǔ」で読まれる場合、数・数量を1つずつ順番に数え上げる動作を表す動詞になります（例：「数数」数を数える、「数钱」お金を数える、「数了一下」ちょっと数えてみた）。第4声で読まれる「shù」（名詞の「数・数字」、数詞の「数〜」）とは品詞および声調が明確に区別されます。日本語の「数える」「計算する」に相当します。",
+    "formation": "主語 ＋ 数（＋ 了 / 一下）＋ 目的語",
+    "examples": [
+      {
+        "translation": "大体数えてみましたが、車内には32人の学生がいます。"
+      }
+    ]
   },
   "zh_数sh_481": {
-    "title": "数 (shǔ) (to be reckoned as)",
-    "shortExplanation": "to be reckoned as",
-    "longExplanation": "to be reckoned as. Pinyin: shǔ (shǔ)",
-    "formation": "shǔ (shǔ)"
+    "title": "数（shǔ）（動詞：筆頭に挙げられる・一番である・屈指である）",
+    "shortExplanation": "比較や列挙の中で用いられ、ある範囲内で最も際立っている人や物事を筆頭として挙げることを表します（「〜が一番だ」「筆頭に数えられる」）。",
+    "longExplanation": "「数」（shǔ）が第3声で読まれる際、「比較検討した結果、最も傑出しているものとして真っ先に挙げる」という意味の動詞としても用いられます。特によく使われる構文パターンとして「（要说……）就数……」（…といえば何といっても〜が筆頭だ）や「要数……最……」（〜が最も…だ）、「数得着 / 数不上」（屈指の存在である／数えるほどではない）などがあります。日本語の「〜が一番だ」「〜が筆頭に挙げられる」「〜を一番に数える」に相当します。",
+    "formation": "（条件・比較節，）那 / 就 / 要 ＋ 数 ＋ 名詞（最も優れた対象）",
+    "examples": [
+      {
+        "translation": "うちのクラスで足が一番速い人といえば、何といっても李陽です。"
+      }
+    ]
   },
   "zh_数sh_482": {
-    "title": "数 (shù) (several)",
-    "shortExplanation": "several",
-    "longExplanation": "several. Pinyin: shǔ (shù)",
-    "formation": "shǔ (shù)"
+    "title": "数（shù）＋ 量詞（数詞：数〜・いくつかの・数個の）",
+    "shortExplanation": "第4声（shù）で発音される数詞で、書き言葉において量詞や時間の単位の前に置かれ、不特定の少数（いくつか）を表します（「数〜」）。",
+    "longExplanation": "「数」が第4声「shù」で読まれる場合、口語の「几」に相当する書き言葉の不特定数詞として機能します。量詞や時間・空間の単位名詞の直前に置かれ、「数日、数ヶ月、数年、数回、数千、数万」のように「いくつかの、数〜」という意味を表します（例：「数小时」数時間、「数千人」数千人）。フォーマルな報告、公的文書、学術的叙述において非常に好んで用いられます。日本語の接頭辞「数〜」（数時間、数日間、数回）に相当します。",
+    "formation": "数 ＋ 量詞 / 単位名詞（時間・数量など）",
+    "examples": [
+      {
+        "translation": "この地域の夏の夕立は、通常数時間またはそれ以上の時間にわたって続くことがあります。"
+      }
+    ]
   },
   "zh_以及_483": {
-    "title": "以及 (and)",
-    "shortExplanation": "and",
-    "longExplanation": "and. Pinyin: yǐjí",
-    "formation": "yǐjí"
+    "title": "以及（接続詞：および・ならびに・そして・〜並びに）",
+    "shortExplanation": "並列の語や句を繋ぐ格調高い書き言葉の接続詞で、列挙の最後の項目や、補足的・二次的な項目を導く際に用いられます（「および」「ならびに」）。",
+    "longExplanation": "「以及」（yǐjí）は、名詞や名詞句の並列関係を表すフォーマルな書き言葉の接続詞です。複数の要素を列挙する際、読点（、）で並べられた最後の項目の直前に置かれます。「和」よりも公式で改まった響きを持ちます。また語用論的特徴として、「以及」の前に主要な事物（重点）が置かれ、「以及」の後に付随的・従属的な項目、あるいは範囲の異なる補足項目が置かれる傾向があります。公文書、報道、学術論文などで多用されます。日本語の「および」「ならびに」「〜ならびに…」に相当します。",
+    "formation": "名詞1、名詞2 ＋ 以及 ＋ 名詞3（最後の項目・付随的項目）",
+    "examples": [
+      {
+        "translation": "学校の指導部、教員、および一部の学生代表が公演を鑑賞しました。"
+      }
+    ]
   },
   "zh_程度_484": {
-    "title": "程度 (degree)",
-    "shortExplanation": "degree",
-    "longExplanation": "degree. Pinyin: chéngdù",
-    "formation": "chéngdù"
+    "title": "程度（名詞：程度・度合い・レベル・段階）",
+    "shortExplanation": "物事の発達段階や状態の度合い、水準を表す名詞で、「〜の程度に達する／至る」などの形でよく用いられます（「程度」「度合い」）。",
+    "longExplanation": "「程度」（chéngdù）は、事物や現象の進行状況、状態の深刻さ、水準の高さなどを表す名詞です。「发展到 / 达到 ＋（形容詞 ＋ 的）程度」（〜の程度にまで発展する／達する）や「在某种程度上」（ある程度において）などのコロケーションで多用されます。事態がどの段階や深刻度にあるのかを客観的に示す際に用いられます。日本語の「程度」「度合い」「レベル」に相当します。",
+    "formation": "主語 ＋ 发展到 / 达到 ＋（形容詞 ＋ 的）程度",
+    "examples": [
+      {
+        "translation": "問題はすでに極めて深刻な程度にまで発展してしまっています。"
+      }
+    ]
   },
   "zh_更何况_485": {
-    "title": "(更)何况 (let alone)",
-    "shortExplanation": "let alone",
-    "longExplanation": "let alone. Pinyin: ( gèng) hékuàng",
-    "formation": "( gèng) hékuàng"
+    "title": "(更)何况（接続詞：まして・なおさら〜だ・いわんや〜をや）",
+    "shortExplanation": "後節の冒頭に置かれ、前節よりも一層条件や理由が顕著であることを示し、当然の帰結を導く累加・漸進の接続詞です（「まして」「なおさら」）。",
+    "longExplanation": "「(更)何况」（(gèng) hékuàng）は、強い漸進・累加関係を表す接続詞です。典型的な構文として「连……都 / 也……，(更)何况……呢？」（…でさえ〜なのだから、まして…はなおさらだ／いわんや…をや）という反語的な呼応関係を形成します。前節で極端な事例を挙げて「それですらこうなのだから」と述べ、後節でより明白な理由や対象を提示して結論の自明性を強調します。文末には反語を強める語気助詞「呢」を伴うのが一般的です。日本語の「まして」「なおさら〜だ」「いわんや〜をや」に相当します。",
+    "formation": "连 ＋ 名詞1 ＋ 都 / 也 ＋ 述語，(更)何况 ＋ 名詞2（＋ 呢）？",
+    "examples": [
+      {
+        "translation": "選手たちでさえ不満を抱いているのに、まして試合を見ているファンならなおさらではないでしょうか。"
+      }
+    ]
   },
   "zh_何必_486": {
-    "title": "何必 (What for? Why do you have to…?)",
-    "shortExplanation": "What for? Why do you have to…?",
-    "longExplanation": "What for? Why do you have to…?. Pinyin: hébì",
-    "formation": "hébì"
+    "title": "何必（反語副詞：どうして〜する必要があろうか・何も〜しなくてもいいではないか）",
+    "shortExplanation": "動詞の前に置かれ、反語の口調で「そのようにする必要はまったくない」「無駄なことだ」と相手をたしなめたり助言したりします（「何も〜しなくてもいい」「どうして〜する必要があるのか」）。",
+    "longExplanation": "「何必」（hébì）は、反語の強い語気を持つ副詞です。動詞述語の直前に置かれ、「なぜわざわざそんなことをする必要があるのか（そんなことをする必要は全くない）」という反語的な意味を表します。話し手が相手の無駄な苦労、過度な心配、過剰な行動を思いとどまらせたり、もっと手軽な代替案を促したりする際によく用いられます。文末には反語の語気助詞「呢」を伴うのが一般的です。日本語の「どうして〜する必要があろうか」「何もわざわざ〜しなくてもいいではないか」に相当します。",
+    "formation": "主語 ＋ 何必 ＋ 動詞述語（＋ 呢）？",
+    "examples": [
+      {
+        "translation": "何もわざわざ自分で届けに行く必要はないでしょう。宅配便を頼めばそれで済むではありませんか。"
+      }
+    ]
   },
   "zh_多亏_487": {
-    "title": "多亏 (thanks to)",
-    "shortExplanation": "thanks to",
-    "longExplanation": "thanks to. Pinyin: duōkuī",
-    "formation": "duōkuī"
+    "title": "多亏（副詞・動詞：〜のおかげで・幸いにも〜のおかげで）",
+    "shortExplanation": "援助や好都合な要因のおかげで、災難や損失を免れたり良好な結果が得られたりしたことへの感謝・安堵を表します（「〜のおかげで」「幸いにも〜」）。",
+    "longExplanation": "「多亏」（duōkuī）は副詞または動詞として機能し、他者からの助け、幸運な出来事、好ましい条件などを導いて、「〜のおかげで」「幸いにも〜のおかげで助かった」という安堵や感謝の気持ちを表します。好ましくない事態を回避できた際によく用いられ、後節で「才……」（〜できてやっと…）、「不然 / 要不然 / 否则……」（さもないと…）などの語句と呼応することが多いです（例：「多亏你提醒，要不然我就忘了」君が思い出させてくれたおかげだ、そうでなければ忘れるところだった）。日本語の「〜のおかげで」「幸いにも〜のおかげで」に相当します。",
+    "formation": "多亏 ＋ 名詞 / 節（，主語 ＋ 才 / 否则 / 要不然……）",
+    "examples": [
+      {
+        "translation": "彼のこの一言のおかげで、人々は夢から覚めたように我に返った。"
+      }
+    ]
   },
   "zh_所谓_488": {
-    "title": "所谓 (so-called)",
-    "shortExplanation": "so-called",
-    "longExplanation": "so-called. Pinyin: suǒwèi",
-    "formation": "suǒwèi"
+    "title": "所谓（連体詞・形容詞：いわゆる〜・世間で言うところの〜）",
+    "shortExplanation": "名詞の前に置かれ、「いわゆる〜」「世間で言う〜」という意味を表します。用語の解説に用いるほか、皮肉や懐疑のニュアンスを込めて使うことも多いです。",
+    "longExplanation": "「所谓」（suǒwèi）は名詞の前に置かれて連体修飾語（定語）として機能し、「いわゆる」「世間で言うところの」という意味を表します。用法は大きく2つあります。1つは客観的な定義や概念の説明として「人々が〜と呼んでいるもの」を提示する用法（例：「所谓幸福，就是……」いわゆる幸福とは…）。もう1つは皮肉・懐疑・批判を込め、「名ばかりの」「自称〜にすぎない」と本当の価値や信憑性を疑う用法です。この場合、名詞に引用符「“”」が付けられることが多くあります。日本語の「いわゆる」「世に言う」に相当します。",
+    "formation": "（主語 ＋）所谓（＋ 的）＋ 名詞（または 所谓 ＋ 名詞 ＋，就是……）",
+    "examples": [
+      {
+        "translation": "彼が言ういわゆる「ニュース」など、実のところ私たちはとっくに知っていた！"
+      }
+    ]
   },
   "zh_N则VA_489": {
-    "title": "N 则 V/A (whereas N V)",
-    "shortExplanation": "whereas N V",
-    "longExplanation": "whereas N V. Pinyin: N zé V/A",
-    "formation": "N zé V/A"
+    "title": "名詞 ＋ 则 ＋ 動詞 / 形容詞（対比の副詞：〜の方は…である・〜はというと・一方〜は）",
+    "shortExplanation": "後節の主語の直後に副詞「则」を置き、前節の事柄と明確に対比させて「〜の方は…だ」「一方〜は…だ」と述べます（書き言葉）。",
+    "longExplanation": "「则」（zé）は硬い書き言葉で頻繁に用いられる接続的な副詞です。複文の後節において主語（名詞や代名詞）の直後に置かれ、前節で述べられた人物・事物・行動と明確に対比させる役割を果たします。前節と後節で対照的な2つの主語が並び、後節の頭に接続詞「而」を伴って「……，而 [名詞] 则……」の形で使われることが非常に多いです。口語の「而我呢、他却……」に比べ、文章語としての引き締まった端正な対比表現となります。日本語の「〜の方は…である」「一方〜は…」「これに対して〜は…」に相当します。",
+    "formation": "節1，（而 ＋）名詞 / 代名詞 ＋ 则 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "彼は高校を卒業した後に海外留学したが、一方で私はずっと国内に残っていた。"
+      }
+    ]
   },
   "zh_则_490": {
-    "title": "……则…… (if… then…)",
-    "shortExplanation": "if… then…",
-    "longExplanation": "if… then…. Pinyin: …… zé……",
-    "formation": "…… zé……"
+    "title": "…… 则 ……（接続詞：〜すればすなわち…・〜なら…・〜のときは…【条件接続】）",
+    "shortExplanation": "条件と結果を結ぶ書き言葉の接続詞で、「〜すればすなわち…となる」「〜のときは…である」という論理的・自然な帰結を表します。",
+    "longExplanation": "「则」（zé）は漢文由来の接続詞で、仮定・条件の節と帰結の節を結び付けます。前節で特定の条件を提示し、後節でその条件が満たされた場合に必然的に生じる結果を導きます。現代文では特に成語、ことわざ、および対句表現（例：「物极则反」物極まれば反す、「有则改之，无则加勉」過ちがあれば改め、なければさらに励む）において多用されます。簡潔で引き締まった論理的なリズムを生み出します。日本語の「〜すればすなわち…」「〜のときは…である」「〜ならば…」に相当します。",
+    "formation": "条件1 ＋ 则 ＋ 結果1，条件2 ＋ 则 ＋ 結果2（または 条件 ＋ 则 ＋ 結果）",
+    "examples": [
+      {
+        "translation": "北京の冬は、風が吹けば寒く、風がなければ暖かい。"
+      }
+    ]
   },
   "zh_则_491": {
-    "title": "# 则 ((measure word for stories))",
-    "shortExplanation": "(measure word for stories)",
-    "longExplanation": "(measure word for stories). Pinyin: # zé",
-    "formation": "# zé"
+    "title": "数詞 ＋ 则（量詞：〜件・〜編・〜条【ニュース・広告・寓話などを数える】）",
+    "shortExplanation": "ニュース記事、広告、通知、寓話、小話などの独立した短い文章・記事を数える量詞です（「〜件」「〜編」）。",
+    "longExplanation": "「则」（zé）は書き言葉で用いられる専用の量詞（助数詞）です。まとまった内容を持つ独立した短い文章や公的・商業的な配信記事などを数える際に使われます。代表的な結合名詞として、「新闻」（ニュース）、「消息」（知らせ）、「广告」（広告）、「通告 / 通知」（お知らせ）、「寓言」（寓話）、「笑话」（小話）などがあります。日本語のニュースや広告を数える「1件」「1通」「1編」「1本」などに相当します。",
+    "formation": "数詞 ＋ 则 ＋ 名詞（新闻 / 广告 / 通知 / 寓言 / 故事など）",
+    "examples": [
+      {
+        "translation": "今日の新聞には、非常に重要なニュースが1件掲載されている。"
+      }
+    ]
   },
   "zh_为S所V_492": {
-    "title": "为 S 所 V (is V’ed by S)",
-    "shortExplanation": "is V’ed by S",
-    "longExplanation": "is V’ed by S. Pinyin: wéi S suǒ V",
-    "formation": "wéi S suǒ V"
+    "title": "为 ＋ 動作主 ＋ 所 ＋ 動詞（文言受身表現：〜によって…される・〜の…するところとなる）",
+    "shortExplanation": "漢文由来の厳粛な受身表現で、「为」が動作主を導き、「所」が動詞の直前に置かれて受身の意味を強調します（「〜によって…される」）。",
+    "longExplanation": "「为……所……」（wéi ... suǒ ...）は古代中国語の受身構文が現代の書き言葉（ニュース・学術論文・公式演説など）に残った格調高い表現です。文頭に受動者（被害・対象）が主語として立ち、「为」が動作の主体（原因・行為者）を導きます。助詞「所」は動詞の直前に置かれ、動詞にかかる受身の結合関係を緊密にします（例：「为大家所熟知」みんなによく知られている、「为客观规律所决定」客観的法則によって決定される）。口語の「被……」に比べて非常に客観的かつ厳粛な響きを持ちます。日本語の「〜によって…される」「〜の…するところとなる」に相当します。",
+    "formation": "主語（被行為者）＋ 为 ＋ 動作主 ＋ 所 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "科学の力があってこそ、大自然は人類によってより良く利用されることができる。"
+      }
+    ]
   },
   "zh_V起_493": {
-    "title": "V 起 (V up)",
-    "shortExplanation": "V up",
-    "longExplanation": "V up. Pinyin: V qǐ",
-    "formation": "V qǐ"
+    "title": "動詞 ＋ 起（方向補語・結果補語：持ち上げる・話題に取り上げる・思い出す）",
+    "shortExplanation": "動作が下方から上方へ向かうこと、または発言・思考動詞に後続して特定の話題を取り上げ始めることを表します（「〜し始める」「〜を取り上げる」）。",
+    "longExplanation": "「動詞 ＋ 起」（qǐ）は、方向補語あるいは結果補語「起来」が短縮された形です。主に2つの文法機能を持っています。1つは空間的な上方への移動を表す用法で、物体を下から上へ持ち上げたり立ち上げたりする動作を示します（例：「抬起」持ち上げる、「举起」掲げる、「升起」昇る）。もう1つは認識・思考・発言を表す動詞（谈、说、提、想など）に付き、特定の話題や記憶を取り上げたり語り始めたりすることを表す用法です（例：「谈起这段往事」この過去の出来事を語り始める、「提起他的名字」彼の名前を口にする）。日本語の「持ち上げる」「〜を取り上げる」「〜について話し始める」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 起（＋ 目的語）",
+    "examples": []
   },
   "zh_V得过_495": {
-    "title": "V 得过 (can V and overcome)",
-    "shortExplanation": "can V and overcome",
-    "longExplanation": "can V and overcome. Pinyin: V dé guò",
-    "formation": "V dé guò"
+    "title": "動詞 ＋ 得过（可能補語：〜して勝てる・〜して相手を負かすことができる・太刀打ちできる）",
+    "shortExplanation": "能力や実力で相手に勝ち越せること、競争相手を打ち負かして凌駕できることを表します（「〜して勝てる」「太刀打ちできる」）。",
+    "longExplanation": "「動詞 ＋ 得过」（dé guò）は可能補語の肯定形式です。「过」が「超過する・凌駕する」という意味を担い、競争・対戦・比較の文脈において、主語が相手の実力を上回り、打ち負かす能力を備えていることを表します。よく用いられる組み合わせには、「说得过」（言い負かすことができる）、「打得过」（殴り合いや戦いで勝てる）、「比得过」（比べて勝る）、「跑得过」（より速く走れる）などがあります。否定形は「動詞 ＋ 不过」（太刀打ちできない、勝てない）です。日本語の「〜して勝てる」「打ち負かすことができる」「太刀打ちできる」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 得过 ＋ 目的語（競争相手）",
+    "examples": [
+      {
+        "translation": "軍事のことについて誰かと議論を始めると、彼を言い負かせる人は誰もいない。"
+      }
+    ]
   },
   "zh_迟早_496": {
-    "title": "迟早 (sooner or later)",
-    "shortExplanation": "sooner or later",
-    "longExplanation": "sooner or later. Pinyin: chízǎo",
-    "formation": "chízǎo"
+    "title": "迟早（時間副詞：遅かれ早かれ・いずれ・早晩）",
+    "shortExplanation": "将来のある時点で、ある事態が必ず発生または実現することを確信を持って述べます（「遅かれ早かれ」「いずれは」）。",
+    "longExplanation": "「迟早」（chízǎo）は時間の早遅に関わらず「いずれ確実にその時が来る」という客観的な必然性や話者の強い確信を表す時間副詞です。「迟」（遅い）と「早」（早い）の反義語の組み合わせから成り、時期の早い遅いの差はあっても最終的な結果は変わらないことを示します。述語動詞の前に連用修飾語（状語）として置かれ、通常「会」「都」「要」などの助動詞や副詞と呼応します（例：「真相迟早会大白的」真相はいずれ必ず明らかになる）。類義語に「早晚」があります。日本語の「遅かれ早かれ」「いずれ」「早晩」に相当します。",
+    "formation": "主語 ＋ 迟早 ＋（都 ＋）会 / 要 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "インターネット技術の発展に伴い、これらの問題は遅かれ早かれ解決されるだろう。"
+      }
+    ]
   },
   "zh_再三_497": {
-    "title": "再三 (repeatedly)",
-    "shortExplanation": "repeatedly",
-    "longExplanation": "repeatedly. Pinyin: zàisān",
-    "formation": "zàisān"
+    "title": "再三（頻度副詞：再三にわたって・何度も・幾度となく・重ねて）",
+    "shortExplanation": "同一の行為を慎重に、あるいは強い意志を持って何度も繰り返すことを表します（「再三」「幾度となく」）。",
+    "longExplanation": "「再三」（zàisān）は「二度も三度も、幾重にも」という意味を表す頻度副詞です。単に客観的な回数が多いことを表す「屡次」や「常常」とは異なり、話者や主語が強い意志・慎重さ・熱意を持って同じ行為を何度も繰り返す場面で用いられます。特に思考、勧告、懇願、注意喚起などを表す動詞（考虑、叮嘱、强调、挽留、道歉、劝阻など）を直接修飾します（例：「再三强调」繰り返し強調する、「再三考虑」熟考に熟考を重ねる、「再三嘱咐」重ねて言い含める）。日本語の「再三」「幾度となく」「重ね重ね」「何度も繰り返し」に相当します。",
+    "formation": "主語 ＋ 再三 ＋ 動詞（思考・勧告・要請・強調など）",
+    "examples": [
+      {
+        "translation": "趙括の母は、趙王が自分の息子を大将軍に任命するのを幾度となく必死に諫止した。"
+      }
+    ]
   },
   "zh_即_498": {
-    "title": "即 (that is)",
-    "shortExplanation": "that is",
-    "longExplanation": "that is. Pinyin: jí",
-    "formation": "jí"
+    "title": "即（判断動詞：すなわち〜である・〜に他ならない・つまり）",
+    "shortExplanation": "書き言葉で語句の定義や概念の説明を行う判断動詞で、「すなわち〜である」「つまり」を表します（「就是」に相当）。",
+    "longExplanation": "「即」（jí）は文言（漢文）に由来する格調の高い判断動詞で、現代の学術論文、辞書の説明文、公的文書などで頻繁に使用されます。口語の「就是」に相当し、前置された単語・概念・記号に対して、その具体的な意味・本質・内実を直接言い換えたり定義したりする役割を担います。語調を極めて簡潔かつ厳密にする効果があります（例：「知识即力量」知識はすなわち力である、「所谓自律，即克制自己」いわゆる自律とは、すなわち自己を律することである）。日本語の「すなわち〜である」「つまり〜を意味する」に相当します。",
+    "formation": "語句 / 概念 ＋，即 ＋ 説明語句 / 節",
+    "examples": [
+      {
+        "translation": "「旦」は象形文字であり、すなわち太陽が地平線から昇ることを意味している。"
+      }
+    ]
   },
   "zh_即_499": {
-    "title": "……即…… (if… then…)",
-    "shortExplanation": "if… then…",
-    "longExplanation": "if… then…. Pinyin: …… jí……",
-    "formation": "…… jí……"
+    "title": "…… 即 ……（連用副詞：〜すれば直ちに…・〜するとすぐ…・〜したら即座に…）",
+    "shortExplanation": "書き言葉で前後の動作や条件の即時的な推移を表し、「〜すると直ちに…する」「〜なら即座に…」を表します（「就」に相当）。",
+    "longExplanation": "「即」（jí）は時間的・論理的な密接な連続性を表す副詞で、口語の「就」に相当します。2つの動作や状況の間に置かれ、前の事態が生じると間髪を入れずに直ちに次の動作・反応が引き起こされることを示します。四字熟語や対句的な表現に極めてよく組み込まれます（例：「召之即来」呼べば直ちに来る、「稍纵即逝」少し油断するとたちまち消え去る、「不懂即问」分からなければ即座に尋ねる）。文意を極めてテンポよく敏捷に表現する効果があります。日本語の「〜すれば直ちに…」「〜したら即座に…」に相当します。",
+    "formation": "動作1 / 条件 ＋ 即 ＋ 動作2 / 反応",
+    "examples": [
+      {
+        "translation": "分からないことがあればすぐに尋ねるのが彼の最大の長所であり、彼が成功した主因でもある。"
+      }
+    ]
   },
   "zh_个别V_500": {
-    "title": "个别 V (individually V, separately V)",
-    "shortExplanation": "individually V, separately V",
-    "longExplanation": "individually V, separately V. Pinyin: gèbié V",
-    "formation": "gèbié V"
+    "title": "个别 ＋ 動詞（連用修飾語：個別に〜する・一人一人〜する・別々に〜する）",
+    "shortExplanation": "「个别」が動詞の直前に置かれて状語（連用修飾語）となり、全体に対してではなく個人や個別案件に対して個別に動作を行うことを表します（「個別に〜する」）。",
+    "longExplanation": "「个别」（gèbié）が動詞の前に置かれて連用修飾語（状語）として機能する場合、集団を一括して扱うのではなく、一人ひとりの個人や個別のケースに対してそれぞれ別々に動作や対応を行うことを表します。主に面談、指導、連絡、交渉などの行為を表す動詞（谈话、交流、辅导、通知、解决、处理など）を修飾します。しばしば「采取个别……的方式」（個別〜の方式をとる）という形で用いられます。日本語の「個別に〜する」「一人ひとりと〜する」「個別に指導・面談する」に相当します。",
+    "formation": "主語 ＋（采取 ＋）个别 ＋ 動詞（＋ 的方式 / 形式）",
+    "examples": [
+      {
+        "translation": "彼は個別に面談を行う方式をよく採り、状況を把握して問題を解決している。"
+      }
+    ]
   },
   "zh_个别N_501": {
-    "title": "个别 N (only a few N (as an exception))",
-    "shortExplanation": "only a few N (as an exception)",
-    "longExplanation": "only a few N (as an exception). Pinyin: gèbié N",
-    "formation": "gèbié N"
+    "title": "个别 ＋ 名詞（連体修飾語：ごく少数の〜・例外的な〜・ごく一部の〜）",
+    "shortExplanation": "名詞の前で定語（連体修飾語）となり、全体の中で極めて少数であることや、例外的な少数の対象を指します（「ごく少数の」「ごく一部の」）。",
+    "longExplanation": "「个别」（gèbié）が名詞を修飾する定語として用いられる場合、「全体の中のほんの少数」「ごくわずかな例外」を意味します。全体的な傾向や「多数」「普遍」と対比される文脈でよく現れます。修飾される名詞には「人」（人）、「情况」（状況・ケース）、「现象」（現象）、「地方」（場所）、「学生」（生徒）などがあります。特に「除了个别……以外」（ごく少数の〜を除いて）という除外の構文で頻繁に用いられます。日本語の「ごく一部の」「ごく少数の」「例外的な」に相当します。",
+    "formation": "个别 ＋ 名詞（人 / 現象 / 状況 / 場所など）",
+    "examples": [
+      {
+        "translation": "ごく一部の例外的な人を除き、多くの人の体重増加は土曜日から始まる。"
+      }
+    ]
   },
   "zh_非_502": {
-    "title": "非 (to insist on)",
-    "shortExplanation": "to insist on",
-    "longExplanation": "to insist on. Pinyin: fēi",
-    "formation": "fēi"
+    "title": "非（語気副詞：どうしても〜と言い張る・頑なに〜しようとする・意地でも〜する）",
+    "shortExplanation": "他人の制止や忠告を聞き入れず、強い意志や固執を持って「どうしても〜する」「頑なに〜と言い張る」様子を表します。",
+    "longExplanation": "「非」（fēi）は語気副詞として述語の前に置かれ、主語が周囲の反対や制止を押し切って、自分の意志や欲求を頑固に押し通そうとするニュアンスを表します。口語では通常、助動詞「要」や「得」を伴って「非要……」「非得……」の形で用いられます。後節にはしばしば「谁也劝不住」（誰も説得できない）、「谁也拦不住」（誰も止められない）といった表現が続き、その強情さや執着の強さが強調されます。日本語の「どうしても〜と言い張る」「頑として〜しようとする」「何としても〜する」に相当します。",
+    "formation": "主語 ＋ 非（要 / 得）＋ 動詞 / 節",
+    "examples": [
+      {
+        "translation": "彼がどうしても離婚すると言い張るので、私たちは誰も引き止めることができなかった。"
+      }
+    ]
   },
   "zh_非_503": {
-    "title": "非 (not, un-)",
-    "shortExplanation": "not, un-",
-    "longExplanation": "not, un-. Pinyin: fēi",
-    "formation": "fēi"
+    "title": "非（接頭辞・否定副詞：非〜・不〜・〜ではない）",
+    "shortExplanation": "名詞や形容詞の前に付く接頭辞として「〜ではない」「非〜」という否定・除外の語を構成し、書き言葉では「不是（〜ではない）」の意の否定詞としても用いられます。",
+    "longExplanation": "「非」（fēi）は古代中国語に由来する否定語で、現代中国語では主に接頭辞（語前要素）として機能します。名詞や形容詞の前に付き、「その性質や範疇に当てはまらない」「正規・合法ではない」という意味の二音節・多音節語を派生させます（例：「非正常」＝異常な・非正常な、「非法」＝違法な、「非正式」＝非公式な、「非金属」＝非金属、「非卖品」＝非売品）。また、格式ばった書き言葉や論説文では単独で「不是（〜ではない）」の意味を表す述語・否定副詞としても用いられます。日本語の接頭語「非〜」「不〜」や「〜ではない」に相当します。",
+    "formation": "非 ＋ 名詞 / 形容詞（複合語を形成：非正常 / 非法 / 非正式など）または 主語 ＋ 非 ＋ 名詞 / 動詞",
+    "examples": [
+      {
+        "translation": "異常な状況（非正常な事態）が発生した際は、慌てないでください。"
+      }
+    ]
   },
   "zh_并非_504": {
-    "title": "并非 (not)",
-    "shortExplanation": "not",
-    "longExplanation": "not. Pinyin: bìngfēi",
-    "formation": "bìngfēi"
+    "title": "并非（副詞：決して〜ではない・実は〜というわけではない【否定の強調】）",
+    "shortExplanation": "口語の「并不是」に相当する書き言葉の副詞で、相手の誤解や先入観を強く否定・反論し、「決して〜というわけではない」と事実を正します。",
+    "longExplanation": "「并非」（bìngfēi）は、否定を強める副詞「并」と「不是」に相当する「非」が合わさった書き言葉の表現です。世間一般の先入観、過度な懸念、相手の誤った推測などを真っ向から打ち消し、「実際のところは決してそうではない」と真実を説明する際に用いられます。「但是」「其实」「然而」などの逆接・転換の表現と組み合わされることが多く、論理的で品格のある響きを持ちます。日本語の「決して〜ではない」「実は〜というわけではない」「必ずしも〜ではない」に相当します。",
+    "formation": "主語 ＋ 并非 ＋ 名詞 / 動詞 / 形容詞（＋ のように……）",
+    "examples": [
+      {
+        "translation": "成功とは、時に想像するほど難しいものでは決してない。"
+      }
+    ]
   },
   "zh_以_505": {
-    "title": "以 ((see 4.14.2 “以”))",
-    "shortExplanation": "(see 4.14.2 “以”)",
-    "longExplanation": "(see 4.14.2 “以”). Pinyin: yǐ",
-    "formation": "yǐ"
+    "title": "以（前置詞・接続詞：〜を用いて・〜に基づいて・〜するために）",
+    "shortExplanation": "漢文由来の多義的な介詞（前置詞）・接続詞です。手段・基準・身分（「〜をもって」「〜に基づいて」）や目的（「〜するために」「〜以便」）を表します。",
+    "longExplanation": "「以」（yǐ）は古代中国語から現代の書き言葉・公文書・公式スピーチに広く受け継がれている重要語です。主に2つの文法機能を持ちます。(1) 前置詞（介詞）用法：「用」「拿」「凭」「按照」に相当し、手段・道具・根拠・資格などを導きます（例：「以理服人」道理をもって人を服従させる、「以事实为依据」事実を根拠とする、「以身作则」自ら模範を示す、「以……的名义」〜の名義で）。(2) 接続詞用法：前節の行動を受けて後節の目的を導き、「〜以便（〜できるように）」「〜来（〜するために）」に相当します（例：「深入调查，以查明真相」真相を究明するために綿密な調査を行う）。日本語の「〜をもって」「〜によって」「〜に基づいて」「〜するために」に相当します。",
+    "formation": "主語 ＋ 以 ＋ 名詞（手段・根拠・資格）＋ 動詞 または 行動を表す節 ＋ 以 ＋ 目的を表す節",
+    "examples": [
+      {
+        "translation": "-"
+      }
+    ]
   },
   "zh_平常_506": {
-    "title": "平常 (ordinary)",
-    "shortExplanation": "ordinary",
-    "longExplanation": "ordinary. Pinyin: píngcháng",
-    "formation": "píngcháng"
+    "title": "平常（形容詞：平凡な・普通の・ありふれた）",
+    "shortExplanation": "人や事物の性質がごく普通で、格別な特徴や目立った点がないことを表す形容詞です。否定形「不平常」で「尋常ではない、特別な」という意味でもよく使われます。",
+    "longExplanation": "「平常」（píngcháng）は形容詞として、事物の様子や人の資質がありふれており、特別目新しいところや際立った特徴がない「平凡だ」「普通だ」という意味を表します。名詞を修飾して連体修飾語（定語）となるほか（例：「平常人」普通の人、「平常话」ありふれた言葉）、「相貌平常（容姿が人並みである）」のように述語としても用いられます。また、否定詞「不」を伴った「不平常」の形は、「並外れた」「普通ではない」「歴史的に特別な」という強い称賛や特別感を込めた表現として極めて頻繁に用いられます。日本語の「平凡な」「普通の」「ありふれた」に相当します。",
+    "formation": "（主語 ＋）（很 / 不 ＋）平常（＋ 的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "王さんにとって、今日は普通ではない（特別な）一日である。"
+      }
+    ]
   },
   "zh_平常_507": {
-    "title": "平常 (usually)",
-    "shortExplanation": "usually",
-    "longExplanation": "usually. Pinyin: píngcháng",
-    "formation": "píngcháng"
+    "title": "平常（時間名詞・副詞：普段・いつもは・平素）",
+    "shortExplanation": "特別な事態がない日常的な時間・時期を表し、文頭や動詞の前に置いて「普段は」「いつもは」という習慣や常態を表します。",
+    "longExplanation": "「平常」（píngcháng）は時間名詞あるいは時間副詞として機能し、「平时（普段・平生）」とほぼ同義で用いられます。特別な行事や突発的な出来事がない「常日頃」「普段」を指し、長年の習慣やいつもの状態を提示します。文頭または主語の直後に置いて状語（連用修飾語）として働き、今日や今回のような「例外的・特殊な状況」と対比させる文脈（例：「平常总是……，今天却……」普段はいつも…なのに、今日は…）で非常によく使われます。日本語の「普段は」「いつもは」「平素」に相当します。",
+    "formation": "（主語 ＋）平常 ＋（总是 / 经常 ＋）動詞 / 形容詞（または 平常，主語 ＋……）",
+    "examples": [
+      {
+        "translation": "彼は普段はいつも早く来るのに、今日は遅刻してしまった。"
+      }
+    ]
   },
   "zh_宁可_508": {
-    "title": "宁可 (would rather)",
-    "shortExplanation": "would rather",
-    "longExplanation": "would rather. Pinyin: nìngkě",
-    "formation": "nìngkě"
+    "title": "宁可……也……（接続詞：いっそ〜してでも…・むしろ〜を選ぶ）",
+    "shortExplanation": "好ましくない2つの選択肢を比較衡量し、より重大な損失を避けるために進んで一方の不利益を受け入れる決意を表します（「いっそ〜してでも…」「むしろ〜」）。",
+    "longExplanation": "「宁可」（nìngkě）は選択関係を表す接続詞です。どちらを選んでも何らかの負担や苦痛が伴う2つの事態を天秤にかけ、より望ましくない・受け入れがたい最悪の結果を回避するために、あえて自ら一方の困難や犠牲を進んで引き受けるという強い主観的決意を表します。後節では「也不……」「决不……」と呼応して「宁可……，也不……」（〜するくらいなら、いっそ進んで…する）の形で極めて多く用いられます。同義語に「宁愿」「宁肯」があります。日本語の「いっそ〜してでも…」「むしろ〜を選ぶ」「たとえ〜するとしても…」に相当します。",
+    "formation": "主語 ＋ 宁可 ＋ 不利益な選択肢，也 ＋（不 / 决不 ＋）拒絶する選択肢",
+    "examples": [
+      {
+        "translation": "母親として、彼女は自分自身が少々疲れても、子どもに不憫な思いをさせることだけはしたくない。"
+      }
+    ]
   },
   "zh_极其_509": {
-    "title": "极其 (extremely)",
-    "shortExplanation": "extremely",
-    "longExplanation": "extremely. Pinyin: jíqí",
-    "formation": "jíqí"
+    "title": "极其（程度副詞：極めて・極度に・非常に）",
+    "shortExplanation": "程度が極限に達していることを表す格式の高い程度副詞で、主に二音節形容詞や心理動詞を修飾します（「極めて」「この上なく」）。",
+    "longExplanation": "「极其」（jíqí）は、客観的・公式な論述やニュース報道で多用される硬い書き言葉の程度副詞です。「很」や「非常」よりも程度が一段と高く、「極限・最高度に達している」ことを表します。主に二音節の形容詞（例：「极其重要」極めて重要である、「极其复杂」極めて複雑である、「极其危险」極めて危険である）や感情・心理動詞（例：「极其希望」切望する、「极其反感」極度に反感を抱く）を修飾します。日本語の「極めて」「極度に」「この上なく」に相当します。",
+    "formation": "极其 ＋ 二音節形容詞 / 心理動詞",
+    "examples": []
   },
   "zh_其余_511": {
-    "title": "其余 (the rest)",
-    "shortExplanation": "the rest",
-    "longExplanation": "the rest. Pinyin: qíyú",
-    "formation": "qíyú"
+    "title": "其余（代名詞：その他の・残りの・ほか）",
+    "shortExplanation": "全体の中から特定の一部分を除いた「残りの人や物」を指す代名詞です（「その他の」「残りの」）。",
+    "longExplanation": "「其余」（qíyú）は全体から言及済みの特定部分を除外した、残りの部分や人員を総称する代名詞です。文脈上、すでに一部の対象（例：「你们两个人」君たち二人）が提示されていることを前提とし、それに該当しない残余の対象を指します。名詞の前に置かれて連体修飾語（定語）となる形（例：「其余的学生」残りの生徒たち、「其余的资金」残りの資金）のほか、単独で主語や目的語として用いられることもあります。書き言葉・話し言葉の双方で広く使われます。日本語の「残りの」「その他の」「ほかの」に相当します。",
+    "formation": "其余（＋ 的）＋ 名詞（または 其余 ＋ 動詞 / 述語）",
+    "examples": [
+      {
+        "translation": "どうして君たち二人だけしかいないの？残りのクラスメイトたちはどこ？"
+      }
+    ]
   },
   "zh_由此可见_512": {
-    "title": "(由此) 可见 (This shows that)",
-    "shortExplanation": "This shows that",
-    "longExplanation": "This shows that. Pinyin: ( yóucǐ) kějiàn",
-    "formation": "( yóucǐ) kějiàn"
+    "title": "(由此) 可见（接続表現：このことから〜ということがわかる・〜と推知できる）",
+    "shortExplanation": "前述の事実や根拠を受けて後節の冒頭に置き、「このことから分かるように」「これによって〜と見て取れる」と論理的な結論を導きます。",
+    "longExplanation": "「(由此) 可见」（(yóucǐ) kějiàn）は、論理的推論や論文・解説文で多用される接続詞的な慣用句です。「由此（これによって、ここから）」と「可见（〜ということが見て取れる、推知できる）」が組み合わさっており、前節で挙げた具体的な事例、客観的なデータ、あるいは観察された現象を根拠として、そこから導き出される明白な結論や教訓を後節で提示します。文頭に単独で置かれて読点（，）を打つことが一般的です。日本語の「このことから分かるように」「これによって〜と見て取れる」「ここから推して知るべし」に相当します。",
+    "formation": "根拠・事実を表す節，（由此）可见 ＋ 結論を表す節",
+    "examples": [
+      {
+        "translation": "このことから見て取れるように、成功には努力が必要なのだ。"
+      }
+    ]
   },
   "zh_N般_513": {
-    "title": "N 般 (like N)",
-    "shortExplanation": "like N",
-    "longExplanation": "like N. Pinyin: N bān",
-    "formation": "N bān"
+    "title": "名詞 ＋ 般（比況助詞：〜のような・〜のように）",
+    "shortExplanation": "名詞の直後に付いて「〜のような」「まるで〜のように」という比喩・比況を表す格調高い文語表現です。",
+    "longExplanation": "「般」（bān）は名詞の直後に接続して比況句を構成する助詞（比況助詞）で、口語の「像……一样」に相当する文学的・詩的な表現です。名詞が持つ特徴・性質・美しさに例えて比喩的に描写する際に用いられます。主に助詞「的」を伴って名詞を修飾する連体修飾語（例：「阳光般的温暖」太陽の光のような温もり、「雨后春笋般地出现」雨後の筍のように出現する）や、助詞「地」を伴って動詞を修飾する連用修飾語として使われます。日本語の「〜のような」「〜のごとき」「〜のように」に相当します。",
+    "formation": "名詞 ＋ 般（＋ 的 ＋ 名詞）または 名詞 ＋ 般 ＋ 地 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "彼女の顔には、太陽の光のような明るい笑顔が浮かんだ。"
+      }
+    ]
   },
   "zh_闻_514": {
-    "title": "闻 (to smell)",
-    "shortExplanation": "to smell",
-    "longExplanation": "to smell. Pinyin: wén",
-    "formation": "wén"
+    "title": "闻（動詞：においをかぐ・かぐ）",
+    "shortExplanation": "現代中国語の日常口語において、鼻を使ってにおいをかぐ（嗅覚を働かせる）動作を表す動詞です（「かぐ」「においをかぐ」）。",
+    "longExplanation": "「闻」（wén）は現代中国語において、鼻でにおいを感知する「かぐ」という意味の一般的な動詞として日常会話から文章語まで幅広く使われます。単独で目的語を取る（例：「闻花香」花の香りをかぐ、「闻味道」においをかぐ）ほか、動作の試みを表す動詞の重ね型「闻一闻」「闻了闻」（ちょっとかいでみる）、また嗅覚による知覚の成立を表す結果補語を伴う「闻到」「闻见」（においがする、においを感知する）の形で極めてよく用いられます。日本語の「（においを）かぐ」に相当します。",
+    "formation": "主語 ＋ 闻（＋ 一闻 / 了闻）（＋ 目的語 / 結果補語：到 / 见）",
+    "examples": [
+      {
+        "translation": "彼は急須（つぼ）のフタを開けてクンクンとかいでみたが、なんと酒だった。"
+      }
+    ]
   },
   "zh_闻_515": {
-    "title": "闻 (to hear)",
-    "shortExplanation": "to hear",
-    "longExplanation": "to hear. Pinyin: wén",
-    "formation": "wén"
+    "title": "闻（文言動詞：聞く・耳にする・伝え聞く）",
+    "shortExplanation": "古代中国語の本来の語義で「耳で聞く」「伝え聞く」を表し、現代では主に成語や慣用句、書き言葉の中で用いられます（「聞く」「耳にする」）。",
+    "longExplanation": "「闻」（wén）の本来の古義は、聴覚で音や声をとらえる「耳で聞く」「伝え聞く（口語の「听」「听说」に相当）」です。現代中国語ではこの語義は単独の動詞としては成語、ことわざ、熟語、あるいは極めて格式の高い文語表現に化石化して受け継がれています（例：「百闻不如一见」百聞は一見に如かず、「闻名中外」国内外に名を聞こえさせる、「充耳不闻」耳に入っても聞こえないふりをする、「闻所未闻」今までに聞いたこともない）。日本語の「聞く」「伝え聞く」「耳にする」に相当します。",
+    "formation": "闻 ＋ 名詞（成語や固定詞・文語表現：百闻不如一见 / 闻名 / 闻所未闻など）",
+    "examples": [
+      {
+        "translation": "百聞は一見に如かず（百回聞くより一回見る方が確実だ）。"
+      }
+    ]
   },
   "zh_趁_516": {
-    "title": "趁 (while (an opportunity exists))",
-    "shortExplanation": "while (an opportunity exists)",
-    "longExplanation": "while (an opportunity exists). Pinyin: chèn",
-    "formation": "chèn"
+    "title": "趁（前置詞：〜の機に乗じて・〜のうちに・〜を利用して）",
+    "shortExplanation": "好機や条件、時間的余裕を捉え、状況が変化してしまう前に進んで行動を起こすことを表す介詞（前置詞）です（「〜のうちに」「〜に乗じて」）。",
+    "longExplanation": "「趁」（chèn）は、都合の良い好機、一時的な時間、あるいは客観的条件を積極的に利用して目的の行動を行うことを導く前置詞（介詞）です。後続する事態が変わってしまう前（例：「趁热」温かいうちに、「趁早」早いうちに、「趁年轻」若いうちに）に、素早く行動を起こすニュアンスを持ちます。「趁 ＋ 好機・条件，主語 ＋ 行動」の形で文頭または主語の直前に置かれ、口語から文章語まで極めて頻繁に使われます。日本語の「〜のうちに」「〜に乗じて」「〜の機会を利用して」に相当します。",
+    "formation": "趁 ＋ 時間 / 好機 / 条件（，主語 ＋）動詞",
+    "examples": [
+      {
+        "translation": "映画がまだ始まらないうちに、ミネラルウォーターを2本買いに行ってきます。"
+      }
+    ]
   },
   "zh_V不起_517": {
-    "title": "V 不起 (cannot)",
-    "shortExplanation": "cannot",
-    "longExplanation": "cannot. Pinyin: V bù qǐ",
-    "formation": "V bù qǐ"
+    "title": "動詞 ＋ 不起（可能補語否定形：〜する余裕がない・〜しきれない・〜に耐えられない）",
+    "shortExplanation": "可能補語の否定形式で、経済的財力・心理的耐性・社会的資格が不足しており、動作を負担・維持できないことを表します（「〜する余裕がない」「〜しきれない」）。",
+    "longExplanation": "「動詞 ＋ 不起」（bù qǐ）は可能補語の代表的な否定表現で、肯定形は「動詞 ＋ 得起」です。主に以下の3つの意味分野で用いられます。(1) 経済的な支払い能力が足りず、出費を負担できない場合（例：「买不起」買う金銭的余裕がない、「住不起」高くて泊まれない / 住めない、「看不起病」診察代が高くて受診できない）；(2) 精神的・肉体的な負担やプレッシャー、試練に耐えきれない場合（例：「经不起考验」試練に耐えられない、「对不起」合わせる顔がない・申し訳ない）；(3) 心理的に見下す慣用句（例：「看不起」見下す・軽蔑する）。日本語の「〜する余裕がない」「〜を買う金がない」「〜に耐えられない」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 不起（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼の家はとても貧しく明かり（ランプ）を買う余裕がなかったため、夜になると読書ができなかった。"
+      }
+    ]
   },
   "zh_V得起_518": {
-    "title": "V 得起 (can stand/tolerate)",
-    "shortExplanation": "can stand/tolerate",
-    "longExplanation": "can stand/tolerate. Pinyin: V dé qǐ",
-    "formation": "V dé qǐ"
+    "title": "動詞 ＋ 得起（可能補語肯定形：〜する余裕がある・〜に耐えられる・立ち向かえる）",
+    "shortExplanation": "可能補語の肯定形式で、経済的余裕があること、あるいは試練・重責・批判に耐え抜く強靭な耐性・資格を備えていることを表します（「〜に耐えられる」「〜する余裕がある」）。",
+    "longExplanation": "「動詞 ＋ 得起」（dé qǐ）は可能補語の肯定形式で、否定形「動詞 ＋ 不起」と対をなします。主に以下の文脈で用いられます。(1) 財力・金銭的余裕があり、高価な商品やサービスを購入・負担できる場合（例：「买得起」買う余裕がある、「住得起五星级酒店」5つ星ホテルに泊まる金がある）；(2) 困難、長期的な試練、プレッシャー、厳しい批判などに耐え抜く実力や品格を備えている場合（例：「经得起考验」試練に耐え抜くことができる、「经得起推敲」厳密な吟味に耐えうる、「担得起重任」大任を背負い切れる）；(3) 相手の恩義や期待に報い、顔向けができる場合（例：「对得起父母」両親に申し訳が立つ・恩に報いる）。日本語の「〜に耐えうる」「〜に耐えられる」「〜する余裕がある」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 得起（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "時間の試練に耐え抜くことができる友人こそが、真の友人と言える。"
+      }
+    ]
   },
   "zh_支_519": {
-    "title": "支 (to prop up, to support)",
-    "shortExplanation": "to prop up, to support",
-    "longExplanation": "to prop up, to support. Pinyin: zhī",
-    "formation": "zhī"
+    "title": "支（動詞：支える・つっかえ棒をする・立てる・突く）",
+    "shortExplanation": "手や突っ張り棒などで下から支えて倒れないように保つこと、または骨組みを張って立てることを表します（「支える」「突く」「張る」）。",
+    "longExplanation": "「支」（zhī）は動詞として、手や棒・器具などを下にあてがい、重みを受けて倒れたり崩れたりしないよう下から支える動作を表します。体の一部を支える身体動作（例：「支着脑袋」手で頭を支える、「支着下巴」頬杖をつく、「支着拐杖」杖をつく）や、骨組みを張って道具を組み立てる動作（例：「支帐篷」テントを張る）によく用いられます。動作の持続を表すアスペクト助詞「着」や方向補語「起 / 起来」と結びつくことが多いです。日本語の「支える」「頬杖をつく」「杖を突く」「（テントなどを）張る」に相当します。",
+    "formation": "主語 ＋ 支 ＋（着 / 起 / 起来 ＋）目的語（頭 / 顎 / 杖 / テントなど）",
+    "examples": [
+      {
+        "translation": "彼は両手を机の上に置き、頭を支えながら物思いにふけっていた。"
+      }
+    ]
   },
   "zh_支_520": {
-    "title": "支 ((measure word for guns, songs, or armies))",
-    "shortExplanation": "(measure word for guns, songs, or armies)",
-    "longExplanation": "(measure word for guns, songs, or armies). Pinyin: zhī",
-    "formation": "zhī"
+    "title": "数詞 ＋ 支（量詞：〜丁・〜本・〜曲・〜隊【銃・筆・歌・部隊などを数える】）",
+    "shortExplanation": "銃やペンなどの細長い物、歌曲・楽曲、または軍隊・チームなどの集団を数える量詞です（「〜丁」「〜本」「〜曲」「〜隊」）。",
+    "longExplanation": "「支」（zhī）は多面的な用法を持つ量詞（助数詞）です。主に以下の3つの対象を数える際に用いられます。第一に、銃器や筆記用具、ろうそくなどの細長い固形物（例：「一支枪」銃1丁、「一支笔」ペン1本、「一支蜡烛」ろうそく1本）。第二に、歌や楽曲（例：「一支歌」歌1曲、「一支乐曲」1曲の音楽）。第三に、軍隊や規律正しく編成された隊列・チーム（例：「一支军队」軍隊1隊、「一支队伍」部隊1隊 / 隊列1組、「一支足球队」サッカーチーム1組）。対象に応じて適切な数え言葉に対応します。日本語の「丁」「本」「曲」「隊」などに相当します。",
+    "formation": "数詞 ＋ 支 ＋ 名詞（枪 / 笔 / 歌 / 队伍 / 军队など）",
+    "examples": [
+      {
+        "translation": "彼に銃を10丁与えれば、彼は一つの軍隊を立ち上げることができる。"
+      }
+    ]
   },
   "zh_凭_521": {
-    "title": "凭 (to reply on)",
-    "shortExplanation": "to reply on",
-    "longExplanation": "to reply on. Pinyin: píng",
-    "formation": "píng"
+    "title": "凭（介詞・動詞：〜を頼りに・〜に基づいて・〜に頼る・〜の力で）",
+    "shortExplanation": "経験、根拠、資格、実力などを拠り所や根拠として動作を行うことを表します（「〜に基づいて」「〜を頼りに」「〜に頼る」）。",
+    "longExplanation": "「凭」（píng）は介詞（前置詞）または動詞として用いられ、ある条件、証拠、経験、実力、資格などを拠り所（基盤・前提）として行動を起こすことを表します。よく使われる組み合わせとして、「凭经验」（経験に頼る）、「凭本事」（自らの実力で）、「凭票入场」（チケット持参で入場する）などがあります。「光凭……」（単に〜だけに頼って…）、「单凭……」（ただ〜だけで…）、「就凭……」（〜だけを根拠に…）のように限定の副詞と結びついて強調される構文も非常に多く見られます。日本語の「〜に頼る」「〜に基づいて」「〜を頼りに」「〜の力で」に相当します。",
+    "formation": "主語 ＋（光 / 单 / 就 ＋）凭 ＋ 名詞（経験 / 実力 / チケット / 根拠など）＋ 動詞句",
+    "examples": [
+      {
+        "translation": "仕事をするには経験だけに頼るわけにはいかず、技術革新や創意工夫も必要である。"
+      }
+    ]
   },
   "zh_硬V_522": {
-    "title": "硬 V (by brute force)",
-    "shortExplanation": "by brute force",
-    "longExplanation": "by brute force. Pinyin: yìng V",
-    "formation": "yìng V"
+    "title": "硬 ＋ 動詞（副詞：無理して〜する・我慢して〜する・こらえて〜する）",
+    "shortExplanation": "困難や苦痛、気の進まない状況を堪え忍び、意志の力や力づくで無理にその動作を実行することを表します（「無理して〜する」「我慢して〜する」）。",
+    "longExplanation": "「硬」（yìng）は動詞の前に置かれて副詞として機能し、肉体的・精神的な苦痛、難しさ、気の進まなさがあるにもかかわらず、歯を食いしばって我慢したり無理に力を振り絞ったりして動作をやり遂げることを表します。飲食や身体の我慢、強引な行動を表す動詞とよく結びつきます（例：「硬喝」無理に飲み干す、「硬撑」無理をして持ちこたえる、「硬咽下去」無理に飲み込む、「硬挤进去」強引に割り込む）。日本語の「無理して〜する」「我慢して〜する」「歯を食いしばって〜する」「力づくで〜する」に相当します。",
+    "formation": "主語 ＋ 硬 ＋ 動詞（＋ 補語 / 目的語）",
+    "examples": [
+      {
+        "translation": "漢方薬は少し苦かったが、彼はそれでも我慢して無理に飲み干した。"
+      }
+    ]
   },
   "zh_硬V_523": {
-    "title": "硬 V (to insist on V-ing)",
-    "shortExplanation": "to insist on V-ing",
-    "longExplanation": "to insist on V-ing. Pinyin: yìng V",
-    "formation": "yìng V"
+    "title": "硬（要）＋ 動詞（副詞：あくまでも〜しようとする・意地でも〜する・頑なに〜する）",
+    "shortExplanation": "周囲の反対や制止を聞き入れず、自分の意思を曲げずに頑固に強行することを表します（「あくまでも〜しようとする」「どうしても〜と言い張る」）。",
+    "longExplanation": "「硬」（yìng）は副詞として、周囲の忠告、制止、あるいは客観的な不都合を意に介さず、頑なに自分の主張や意図を貫き通そうとする主観的・強情な態度を表します。助動詞「要」を伴って「硬要 ＋ 動詞」の形で用いられることが非常に多く、また「硬说」（どうしても〜と言い張る）のように主張を曲げない動詞とも結びつきます。聞き手の反対を押し切るニュアンスを含みます。日本語の「あくまでも〜しようとする」「頑なに〜する」「意地でも〜する」「〜と言って聞かない」に相当します。",
+    "formation": "主語 ＋ 硬（要）＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "私は彼に行かせないようにしたのに、彼はあくまでも行こうと言って聞かなかった。"
+      }
+    ]
   },
   "zh_偶然的_524": {
-    "title": "偶然的 (accidental (opportunity))",
-    "shortExplanation": "accidental (opportunity)",
-    "longExplanation": "accidental (opportunity). Pinyin: ǒurán de",
-    "formation": "ǒurán de"
+    "title": "偶然的 ＋ 名詞（形容詞定語：偶然の〜・予期せぬ〜・思いがけない〜）",
+    "shortExplanation": "名詞を修飾する連体修飾語（定語）として機能し、事前の計画や必然的な法則によらず、思いがけず生じた出来事を表します（「偶然の」「思いがけない」）。",
+    "longExplanation": "「偶然」（ǒurán）は「必然」（bìrán）の対義語であり、事前の予測や計画、必然的な法則に基づかず、偶発的に発生する性質を表す形容詞です。構造助詞「的」を伴って「偶然的 ＋ 名詞」の形で連体修飾語（定語）として機能し、事象、機会、発見、出会いなどを修飾します（例：「偶然的相遇」偶然の出会い、「偶然的机会」思いがけない好機、「偶然的发现」偶然の発見）。日本語の「偶然の〜」「思いがけない〜」「ふとした〜」に相当します。",
+    "formation": "偶然的 ＋ 名詞（相遇 / 机会 / 发现 / 事故など）",
+    "examples": [
+      {
+        "translation": "それはある偶然の出会いだった。"
+      }
+    ]
   },
   "zh_偶然V_525": {
-    "title": "偶然 V (occasionally)",
-    "shortExplanation": "occasionally",
-    "longExplanation": "occasionally. Pinyin: ǒurán V",
-    "formation": "ǒurán V"
+    "title": "偶然 ＋ 動詞（副詞：たまに〜する・時折〜する・ふと〜する）",
+    "shortExplanation": "動詞の前に置かれて連用修飾語（状語）として機能し、動作が時折、たまに発生することを表します（「たまに」「時折」「ふと」）。",
+    "longExplanation": "「偶然」（ǒurán）は副詞として動詞の前に立ち、動作が頻繁ではなく、たまに・時折生じることを表します（「偶尔」に近い頻度用法）。また、予期せずふとした拍子に行動が起こるニュアンスも含みます。文中では「也」や「会」と呼応して「偶然也会……」（たまには〜することもある）という形で用いられることが非常に多く、継続的な主たる動作の合間に挟まれる偶発的・断続的な動作を生き生きと描写します。日本語の「たまに〜する」「時折〜する」「ふと〜する」に相当します。",
+    "formation": "主語 ＋ 偶然 ＋（也 / 会 ＋）動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼女は一心不乱にセーターを編んでいたが、時折目を上げて壁の掛け時計を見ることもあった。"
+      }
+    ]
   },
   "zh_尽快V_526": {
-    "title": "尽快 V (as soon as possible)",
-    "shortExplanation": "as soon as possible",
-    "longExplanation": "as soon as possible. Pinyin: jǐnkuài V",
-    "formation": "jǐnkuài V"
+    "title": "尽快 ＋ 動詞（副詞：できるだけ早く〜する・早急に〜する・速やかに〜する）",
+    "shortExplanation": "時間をかけず、可能な限り最も早いスピードで動作を実行することを表します（「できるだけ早く」「早急に」「速やかに」）。",
+    "longExplanation": "「尽快」（jǐnkuài：『尽』は本来第3声）は副詞として動詞の前に置かれ、可能な限り時間を繰り上げ、最速のペースで物事を処理・完遂することを促す表現です。業務連絡、ビジネスメール、指示、急ぎの要請などで極めて高い頻度で使用されます（例：「尽快回复」できるだけ早く返信する、「尽快解决」速やかに解決する、「尽快办理」早急に手続きする）。後回しにせず直ちに行動を起こす機動性を表します。日本語の「できるだけ早く〜する」「早急に〜する」「速やかに〜する」に相当します。",
+    "formation": "主語 ＋ 尽快 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "新製品に少し問題が生じましたので、あなたと厳（ヤン）部長でできるだけ早くこの件を相談してください。"
+      }
+    ]
   },
   "zh_一旦V_527": {
-    "title": "一旦 V (once (something happens))",
-    "shortExplanation": "once (something happens)",
-    "longExplanation": "once (something happens). Pinyin: yīdàn V",
-    "formation": "yīdàn V"
+    "title": "一旦 ＋ 動詞（接続詞：ひとたび〜したら・万一〜の場合は・いったん〜すれば）",
+    "shortExplanation": "仮定・条件を表す書き言葉の接続詞で、もしある事態が発生した場合、取り返しのつかない重大な結果や必然的な結末が生じることを表します（「ひとたび〜すれば」「万一〜なら」）。",
+    "longExplanation": "「一旦」（yīdàn）は仮定・条件節を導く接続詞で、不確定な未来の事態を想定し、「ひとたび〜が生じたら」「万一〜となったら」という意味を表します。多くの場合、突然の重大な変化や、ひとたび発生すると後戻りできない（不可逆的な）事態に対して用いられます。後節では「就」「便」「会」などの語句と呼応して、必然的・決定的な結果を導きます（例：「一旦发生火灾，后果不堪设想」ひとたび火災が発生すれば、結果は想像に堪えない）。日本語の「ひとたび〜したら」「いったん〜すれば」「万一〜の場合は」に相当します。",
+    "formation": "（主語 ＋）一旦 ＋ 動詞 / 節，（主語 ＋）就 / 便 / 会……",
+    "examples": []
   },
   "zh_难免_529": {
-    "title": "难免 (inevitable)",
-    "shortExplanation": "inevitable",
-    "longExplanation": "inevitable. Pinyin: nánmiǎn",
-    "formation": "nánmiǎn"
+    "title": "难免（形容詞・副詞：免れがたい・避けられない・どうしても〜しがちである）",
+    "shortExplanation": "状況や条件から判断して、不都合な事態や欠陥の発生を避けることが極めて困難であることを表します（「避けられない」「免れがたい」）。",
+    "longExplanation": "「难免」（nánmiǎn）は「免れることが難しい」という意味を持つ形容詞・副詞です。ある客観的条件や状況下では、不都合な事態、ミス、感情の揺れなどが生じるのは自然の成り行きであり、完全に避けることは不可能に近いという判断を表します。述語として「是难免的」（避けられないことだ）の形で文末に置かれるほか、副詞として動詞の前に立ち「难免会……」（どうしても〜になりがちだ、〜を免れない）の形で多用されます。日本語の「避けられない」「免れがたい」「どうしても〜してしまう」に相当します。",
+    "formation": "主語 ＋ 是难免的（または 主語 ＋ 难免 ＋［会 ＋］動詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "仕事を始めたばかりのころは、このようなミスは避けられないものだ。"
+      }
+    ]
   },
   "zh_自从TIME_530": {
-    "title": "自从 TIME (since TIME)",
-    "shortExplanation": "since TIME",
-    "longExplanation": "since TIME. Pinyin: zìcóng TIME",
-    "formation": "zìcóng TIME"
+    "title": "自从 ＋ 時点 / 節（介詞：〜して以来・〜の時から・〜して以降【起点の明示】）",
+    "shortExplanation": "過去の特定の時点や出来事を動作・状態変化の起点として導きます（「〜して以来」「〜の時から」）。",
+    "longExplanation": "「自从」（zìcóng）は過去の時点を導く前置詞（介詞）です。過去に生じた特定の出来事や時点を起点とし、そこから現在に至るまで継続している状況や変化を述べる際に用いられます。後ろに時相詞を伴って「自从……以后」（〜して以来 / 〜したあと）、「自从……以来」（〜以来）、「自从……起」（〜から）という呼応構文（枠構造）を形成することが非常に多いです。後節ではその起点以降に生じた持続的な変化や発展が述べられます。日本語の「〜して以来」「〜の時から」「〜してからというもの」に相当します。",
+    "formation": "自从 ＋ 時点 / 過去の節（＋ 以后 / 以来 / 起），主語 ＋ 述語",
+    "examples": [
+      {
+        "translation": "北京に来て以来、私の体調はますます良くなってきた。"
+      }
+    ]
   },
   "zh_一致_531": {
-    "title": "一致 (in agreement)",
-    "shortExplanation": "in agreement",
-    "longExplanation": "in agreement. Pinyin: yīzhì",
-    "formation": "yīzhì"
+    "title": "一致（形容詞：一致している・同じである・合致している）",
+    "shortExplanation": "意見、見解、歩調、利害などが食い違わず、ぴったり同じであることを述語として表します（「一致している」「同じである」）。",
+    "longExplanation": "「一致」（yīzhì）は形容詞として主に述語の位置に立ち、複数の主体における意見、態度、見解、歩調、目標などが対立・矛盾せず、完全に合致している状態を表します。主語には「意见」（意見）、「看法」（見方）、「行动」（行動）、「步调」（歩調）などの抽象名詞が置かれることが多く、否定形「不一致」（一致していない、食い違っている）も頻繁に使われます。日本語の「一致している」「合致している」「足並みがそろっている」に相当します。",
+    "formation": "主語（意見 / 見解 / 歩調など）＋（不 ＋）一致",
+    "examples": [
+      {
+        "translation": "彼らの意見は一致していない。"
+      }
+    ]
   },
   "zh_一致V_532": {
-    "title": "一致 V (unanimously)",
-    "shortExplanation": "unanimously",
-    "longExplanation": "unanimously. Pinyin: yīzhì V",
-    "formation": "yīzhì V"
+    "title": "一致 ＋ 動詞（副詞：満場一致で〜する・一堂に〜と考える・そろって〜する）",
+    "shortExplanation": "集団の成員全員が同じ態度・行動をとること、または全員の合意のもとで決定を下すことを表します（「満場一致で」「そろって」）。",
+    "longExplanation": "「一致」（yīzhì）は副詞として動詞の直前に置かれ、複数の人間や集団の全体が、異議なく足並みをそろえて同一の判断、決議、行動を行うことを表します。主に思考、認知的評価、議決を表す動詞と強固に共起します（例：「一致认为」満場一致で〜とみなす、「一致通过」満場一致で可決する、「一致同意」全員一致で同意する、「一致表示」そろって表明する）。公的な会議、学術的合意、報道発表などで頻出する表現です。日本語の「満場一致で〜する」「一致して〜する」「そろって〜する」に相当します。",
+    "formation": "主語（複数 / 集団）＋ 一致 ＋ 動詞（认为 / 通过 / 同意 / 表示など）",
+    "examples": [
+      {
+        "translation": "専門家たちは満場一致で、これは成功した製品であると見なしている。"
+      }
+    ]
   },
   "zh_某MN_533": {
-    "title": "某 (M) N (certain)",
-    "shortExplanation": "certain",
-    "longExplanation": "certain. Pinyin: mǒu (M) N",
-    "formation": "mǒu (M) N"
+    "title": "某（＋ 量詞）＋ 名詞（指示代名詞：ある〜・某〜・特定の〜【不特定または伏字】）",
+    "shortExplanation": "人、事物、場所、時期などを具体的に特定して言及しない場合、または公表を控える場合に用いる指示代名詞です（「ある〜」「某〜」）。",
+    "longExplanation": "「某」（mǒu）は指示代名詞（不定代名詞）で、名詞（または量詞 ＋ 名詞）の前に置かれます。話し手が特定の人物、事物、場所、時間、領域などを指し示しつつも、名前を明かす必要がない場合や、プライバシー保護などの理由で意図的に伏せる際に用いられます。直接名詞に付く場合（例：「某人」某氏 / ある人、「某地」ある場所、「某年某月」何年何月）と、量詞を挟む場合（例：「某个方面」ある特定の方面、「某一所学校」とある学校）があります。日本語の「ある〜」「とある〜」「某〜」に相当します。",
+    "formation": "某（＋ 量詞）＋ 名詞（人 / 場所 / 方面 / 事物など）",
+    "examples": [
+      {
+        "translation": "ある分野の訓練を行えば、その分野における能力を高めることができる。"
+      }
+    ]
   },
   "zh_某某_534": {
-    "title": "某某 (so-and-so)",
-    "shortExplanation": "so-and-so",
-    "longExplanation": "so-and-so. Pinyin: mǒumǒu",
-    "formation": "mǒumǒu"
+    "title": "某某（代名詞：だれそれ・何某・某氏・某某【仮名や伏字】）",
+    "shortExplanation": "人の氏名や団体名などを明記せず、仮の名や伏字として置き換える代名詞です（「だれそれ」「何某」「某氏」）。",
+    "longExplanation": "「某某」（mǒumǒu）は「某」を重ねた代名詞で、特定の人物の氏名、団体名、組織名などを具体的に挙げないときに、伏字や代位語として用いられます。プライバシーの保護、例示としての一般化、あるいは名指しを避ける文脈で頻繁に使われます。姓の後ろに付けて「李某某」（李某氏）のように表記したり、単独で「某某到此一游」（だれそれここに遊ぶ）のように落書きや引用の典型例として用いられたりします。日本語の「だれそれ」「何某（なにがし）」「某氏」「○○（マルマル）」に相当します。",
+    "formation": "某某（または 姓 ＋ 某某 / 某某 ＋ 組織・名詞）",
+    "examples": [
+      {
+        "translation": "壁に「だれそれここに遊ぶ（誰某がここを訪れた）」と落書きする行為は、マナーに反する非文明的なことだ。"
+      }
+    ]
   },
   "zh_name某某某_535": {
-    "title": "name 某/某某 (placeholder for a name)",
-    "shortExplanation": "placeholder for a name",
-    "longExplanation": "placeholder for a name. Pinyin: name mǒu/ mǒumǒu",
-    "formation": "name mǒu/ mǒumǒu"
+    "title": "姓 ＋ 某 / 某某（代名詞：〜某・〜某氏・〜氏・だれそれ）",
+    "shortExplanation": "人名の姓の後に添えて、実名を公表することを伏せたり、特定する必要のない人物を匿名で表したりする代名詞用法です（「〜某」「〜氏」）。",
+    "longExplanation": "「某」（mǒu）またはその重ね言葉である「某某」（mǒumǒu）は、姓の直後に置かれることで（例：「李某」「张某某」）、具体的な実名・個人名を伏せて匿名化する代名詞として機能します。報道、警察・司法の事件報道、公的文書などで当事者のプライバシーを保護する際や、契約書・規約などの例文で架空の人物を代表させて示す場合に多用されます。日本語の「李某（り・ぼう）」「李某氏」「李某某」に相当します。",
+    "formation": "姓 ＋ 某 / 某某（または 身分・役職名詞 ＋ 姓 ＋ 某 / 某某）",
+    "examples": [
+      {
+        "translation": "同社の営業担当である李某（り・某氏）はこれを聞いて大いに喜んだ。"
+      }
+    ]
   },
   "zh_幸亏_536": {
-    "title": "幸亏…… (thankfully…)",
-    "shortExplanation": "thankfully…",
-    "longExplanation": "thankfully…. Pinyin: xìngkuī……",
-    "formation": "xìngkuī……"
+    "title": "幸亏（副詞・接続詞：幸いにも、運よく、おかげで〜せずに済んだ）",
+    "shortExplanation": "幸運な条件や適時な行動のおかげで、深刻な被害・損失や好ましくない事態を免れることができたことを表します（「幸いにも」「運よく」）。",
+    "longExplanation": "「幸亏」（xìngkuī）は副詞または接続詞として文頭または主語の後に置かれ、好都合な客観条件やタイミングの良い処置、他者からの援助があったおかげで、危うく発生しかけた重大な事故・損失・悪結果を回避できた幸運な状況を表します。後半の節では「才」（〜してようやく…）や、「否则」「要不然」「不然」（さもなければ、もしそうでなかったら）といった仮定接続詞・副詞と緊密に呼応して用いられます。日本語の「幸いにも」「運よく〜したおかげで」「〜のおかげで助かった」に相当します。",
+    "formation": "幸亏 ＋ 節・動詞句 ，（否则 / 要不然 / 才 ＋）結果節",
+    "examples": []
   },
   "zh_行动_538": {
-    "title": "行动 (activity, action)",
-    "shortExplanation": "activity, action",
-    "longExplanation": "activity, action. Pinyin: xíngdòng",
-    "formation": "xíngdòng"
+    "title": "行动（名詞：行動、活動、措置、作戦行動）",
+    "shortExplanation": "一定の目的を達成するために実行に移される具体的な振る舞い、活動、または作戦・措置を表します（「行動」「作戦」）。",
+    "longExplanation": "「行动」（xíngdòng）は名詞として、明確な方針や計画に基づいて行われる実践的な活動、具体的な振る舞い、あるいは軍事・治安上の作戦行動を指します。言葉や思索にとどまらず、実際の行動に移すニュアンスを持ちます。「采取行动」（行動を起こす・措置を講じる）、「付诸行动」（行動に移す）、「实际行动」（実際の行動）、「行动计划」（行動計画）、「军事行动」（軍事作戦）などの定型句で極めて頻繁に使われます。日本語の「行動」「活動」「作戦」「措置」に相当します。",
+    "formation": "主語 ＋（采取 / 付诸 ＋）行动（または 連体修飾語 ＋ 行动）",
+    "examples": []
   },
   "zh_行动_540": {
-    "title": "行动 (move around)",
-    "shortExplanation": "move around",
-    "longExplanation": "move around. Pinyin: xíngdòng",
-    "formation": "xíngdòng"
+    "title": "行动（動詞・名詞：身動きする、歩き回る、起居動作、身体の動き）",
+    "shortExplanation": "人の身体の歩行、立ち居振る舞い、手足の曲げ伸ばしなど身体運動を指します（「身動き」「歩行」「起居」）。",
+    "longExplanation": "「行动」（xíngdòng）は動詞または名詞として、歩行、起居、四肢の屈伸など、人体が自力で移動したり身動きしたりする身体動作そのものを表します。病気、怪我、高齢などによって運動能力が制約されたり、逆に敏捷であったりする肉体的状態を述べる場面で用いられます。とりわけ「行动不便」（身動きや歩行が不自由である）、「行动迟缓」（動作・足取りが鈍い）、「行动敏捷」（身のこなしが素早い）といった慣用表現が頻出します。日本語の「身動き」「立ち居振る舞い」「歩行」「起居動作」に相当します。",
+    "formation": "主語 ＋ 行动 ＋ 不便 / 敏捷 / 迟缓 / 自由",
+    "examples": [
+      {
+        "translation": "彼はスポーツの最中に怪我をしてしまい、身動きが不自由になった。"
+      }
+    ]
   },
   "zh_行动_541": {
-    "title": "行动 (act)",
-    "shortExplanation": "act",
-    "longExplanation": "act. Pinyin: xíngdòng",
-    "formation": "xíngdòng"
+    "title": "行动（自動詞：行動する、動く、作戦行動をとる）",
+    "shortExplanation": "意図や目的に基づいて実際に活動する、具体的な動作・行動を起こすことを表します（「行動する」「動く」）。",
+    "longExplanation": "「行动」（xíngdòng）は自動詞として、人が言葉や思索にとどまらず、具体的に手足を動かして事を起こしたり、一定の様式に従って活動を展開したりすることを表します。様態や方式を表す状語（連用修飾語）を伴って用いられることが多く、「单独行动」（単独で行動する）、「秘密行动」（密かに行動する）、「统一行动」（足並みをそろえて行動する）、「行动起来」（行動を開始する・立ち上がる）などの形で広く使われます。日本語の「行動する」「動く」に相当します。",
+    "formation": "主語 ＋（状語：单独 / 秘密 / 共同 ＋）行动",
+    "examples": [
+      {
+        "translation": "単独で行動することを好む鳥類もいる。"
+      }
+    ]
   },
   "zh_义务_542": {
-    "title": "义务 (obligation)",
-    "shortExplanation": "obligation",
-    "longExplanation": "obligation. Pinyin: yìwù",
-    "formation": "yìwù"
+    "title": "义务（名詞：義務、責務、果たすべき責任）",
+    "shortExplanation": "法律や社会規範・道徳上、人が果たすべき定められた責任や務めを表します（「義務」「責務」）。",
+    "longExplanation": "「义务」（yìwù）は名詞として、法律、社会道徳、または契約に基づいて必ず履行しなければならない公的・私的な責務を指します（「权利」（権利）と対をなす法曹・倫理概念）。動詞の「承担」（引き受ける）、「履行」（果たす・履行する）、「尽」（尽くす）などの目的語として用いられ、「履行公民义务」（公民の義務を履行する）、「尽到应尽的义务」（果たすべき義務を果たす）といった文脈で極めて高い頻度で使用されます。日本語の「義務」「責務」「本分」に相当します。",
+    "formation": "主語 ＋（履行 / 尽 / 承担 ＋）义务（または 名詞 ＋ 的 ＋ 义务）",
+    "examples": [
+      {
+        "translation": "故郷の建設は誰もが責任を負うべきことであり、私たちもこの義務を果たすべきである。"
+      }
+    ]
   },
   "zh_义务_543": {
-    "title": "义务 (compulsory)",
-    "shortExplanation": "compulsory",
-    "longExplanation": "compulsory. Pinyin: yìwù",
-    "formation": "yìwù"
+    "title": "义务 ＋ 名詞（連体修飾語：無償の、ボランティアの、奉仕の / 義務的な）",
+    "shortExplanation": "名詞を修飾して、報酬を受け取らない自発的な社会奉仕・ボランティア活動、または法的に義務付けられた制度を表します（「奉仕の」「無償の」）。",
+    "longExplanation": "「义务」（yìwù）は名詞を直接修飾する連体修飾語（区別詞・定語）として機能し、主に2つの重要な意味を持ちます。第一に、報酬や対価を受け取らず、自発的に公共や他者のために汗を流すボランティア・社会奉仕活動を表します（例：「义务劳动」ボランティア奉仕作業・クリーン活動、「义务献血」無償献血、「义务植树」緑化ボランティア植樹）。第二に、法律に基づき国民全員に課された制度を表します（例：「义务教育」義務教育）。日本語の「奉仕の」「無償の」「ボランティアの」「義務〜」に相当します。",
+    "formation": "义务 ＋ 名詞（劳动 / 教育 / 献血 / 诊疗 / 宣讲など）",
+    "examples": [
+      {
+        "translation": "私たちは毎学期、少なくとも3回はボランティア労働（奉仕作業）に参加しなければならない。"
+      }
+    ]
   },
   "zh_朝_544": {
-    "title": "朝 (toward)",
-    "shortExplanation": "toward",
-    "longExplanation": "toward. Pinyin: cháo",
-    "formation": "cháo"
+    "title": "朝（介詞：〜へ向かって、〜の方角へ、〜に対して）",
+    "shortExplanation": "動作の向かう方角、場所、または働きかけの対象を導く介詞です（「〜へ向かって」「〜の方へ」）。",
+    "longExplanation": "「朝」（cháo）は介詞（前置詞）として方位詞、場所名詞、または人称名詞の前に置かれ、動作が向けられる空間的な方向や働きかけの対象を導いて動詞句を修飾する連用修飾語（状語）を作ります（介詞「向」と機能が酷似しています）。身体の移動（例：「朝前走」前へ歩く）や視線・手振りの指向（例：「朝上看」上を見上げる、「朝我笑了笑」私に向かって微笑んだ）を生き生きと表します。日本語の「〜に向かって」「〜の方角へ」「〜に対して」に相当します。",
+    "formation": "主語 ＋ 朝 ＋ 方角・場所・対象 ＋ 動詞句",
+    "examples": []
   },
   "zh_朝_546": {
-    "title": "朝 (to face toward)",
-    "shortExplanation": "to face toward",
-    "longExplanation": "to face toward. Pinyin: cháo",
-    "formation": "cháo"
+    "title": "朝（動詞：〜を向いている、〜に面している【方位・向き】）",
+    "shortExplanation": "建物、門、窓などの正面がある方角・方位に向いていることを表す動詞です（「〜を向いている」「〜に面している」）。",
+    "longExplanation": "「朝」（cháo）は他動詞として、建物、門、窓、部屋、あるいは人の顔や身体の正面が、特定の空間的方向や方角を向いている、あるいはそれに面している状態を表します。特に建築構造や間取りの方位を説明する際に多用され、「坐北朝南」（北を背にして南を向いている）、「坐西朝东」（西に位置して東に面している）、「窗户朝南」（窓が南向きである）などの四字熟語や定型句で用いられます。日本語の「〜を向いている」「〜に面している」に相当します。",
+    "formation": "名詞（門 / 窓 / 部屋 / 建物など）＋ 朝 ＋ 方位名詞（东 / 南 / 西 / 北など）",
+    "examples": [
+      {
+        "translation": "我が校の正門は西を背にして東を向いている（西に位置し東に面している）。"
+      }
+    ]
   },
   "zh_简直_547": {
-    "title": "简直 (practically, in essence)",
-    "shortExplanation": "practically, in essence",
-    "longExplanation": "practically, in essence. Pinyin: jiǎnzhí",
-    "formation": "jiǎnzhí"
+    "title": "简直（副詞：まるで、それこそ、まったく、〜も同然だ）",
+    "shortExplanation": "誇張や強い強調の語気を含み、事態がある極端な境地に達していることや、ほぼそれに等しい状態であることを表します（「まるで」「それこそ」）。",
+    "longExplanation": "「简直」（jiǎnzhí）は副詞として述語（動詞・形容詞）の前に置かれ、話し手の強い驚き、呆れ、感嘆を伴う誇張的・強調的な語気を表します。事態がほぼ完全にその状態に達しており、「まるで〜そのものである」「〜と言っても過言ではない」と断定する際に用いられます。「是」「像」「太」「不敢」「不能」などと結びつくことが極めて多く、「简直是胡闹」（まったくふざけている）、「简直像真的一样」（まるで本物そっくりだ）のように表現します。日本語の「まるで」「それこそ」「まったく」「〜も同然だ」に相当します。",
+    "formation": "主語 ＋ 简直 ＋（是 / 像 / 不敢 ＋）述語（動詞句 / 形容詞句）",
+    "examples": [
+      {
+        "translation": "船長はそれこそ気が狂ったとしか思えない（まるで狂気の沙汰だ）！"
+      }
+    ]
   },
   "zh_来_548": {
-    "title": "来 (over)",
-    "shortExplanation": "over",
-    "longExplanation": "over. Pinyin: lái",
-    "formation": "lái"
+    "title": "来（助詞・概数詞：およそ、〜前後、〜足らず、〜あまり、〜ばかり）",
+    "shortExplanation": "数詞または量詞の直後に置かれ、数量がおおよそその数値に近い概数であることを表します（「〜前後」「およそ」「〜あまり」）。",
+    "longExplanation": "「来」（lái）は助詞として数詞または量詞の後に添えられ、確定しないおおよその数量（概数。「左右」「上下」に近い意味合い）を表します。語順の法則として：① 10、20、100などのキリの良い整数の場合は量詞の前に置き、「数詞 ＋ 来 ＋ 量詞」（例：「二十来岁」20歳前後、「五十来个人」およそ50人）；② 10未満の端数に度量衡や量詞が付く場合は量詞の後に置き、「数詞 ＋ 量詞 ＋ 来」（例：「五斤来重」5斤前後の重さ、「三米来高」3メートルあまりの高さ）となります。日本語の「およそ」「〜前後」「〜足らず」「〜あまり」に相当します。",
+    "formation": "数詞（10の倍数など）＋ 来 ＋ 量詞 ＋ 名詞（または 数詞 ＋ 量詞 ＋ 来 ＋ 名詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "彼はほぼ毎日、5斤（約2.5キロ）前後の重さの大魚を釣り上げることができる。"
+      }
+    ]
   },
   "zh_一来是二来是_549": {
-    "title": "一来(是)……二来(是)…… (First… secondly…)",
-    "shortExplanation": "First… secondly…",
-    "longExplanation": "First… secondly…. Pinyin: yīlái( shì)…… èrlái( shì)……",
-    "formation": "yīlái( shì)…… èrlái( shì)……"
+    "title": "一来（是）……二来（是）……（接続詞：一つには〜、もう一つには〜 / 第一に〜、第二に〜）",
+    "shortExplanation": "ある動作や決定に至った2つの対等な理由、原因、目的を並列して順序立てて列挙します（「一つには〜、もう一つには〜」）。",
+    "longExplanation": "「一来（是）……二来（是）……」（yīlái (shì)... èrlái (shì)...）は、ある行動や判断を生じさせた2つの主要な理由、原因、または意図・目的を並列して提示する並列接続詞です（「一则……二则……」や「第一是……第二是……」と同義）。各節の前に置かれて理由を整理し、論理的な説得力を高めます。日常会話では「是」や「来」が適宜省略され、「一是……二是……」などの形をとることも多々あります。日本語の「一つには〜、もう一つには〜」「第一に〜、第二に〜」に相当します。",
+    "formation": "主語 ＋ 一来（是）＋ 理由・目的1 ，二来（是）＋ 理由・目的2",
+    "examples": [
+      {
+        "translation": "私がここへ皆さんを見舞いに来たのは、一つには皆さんに果物を届けるためであり、もう一つには連休を過ごすにあたり何か困りごとがないか確認するためです。"
+      }
+    ]
   },
   "zh_至于_550": {
-    "title": "至于 (as for)",
-    "shortExplanation": "as for",
-    "longExplanation": "as for. Pinyin: zhìyú",
-    "formation": "zhìyú"
+    "title": "至于（介詞：〜に関しては、〜については、〜に至っては【話題の転換】）",
+    "shortExplanation": "文頭に置かれて、先行する文脈に関連する別の話題・対象へと話をスムーズに転換して導き入れます（「〜に関しては」「〜については」）。",
+    "longExplanation": "「至于」（zhìyú）は介詞として後続節の文頭に置かれ、直前に述べた事柄に関連しつつも別の観点、対象、または新たな議題を提示して話を転換する役割を果たします（「关于」「说到」に近い話題導入用法）。物事の異なる側面を整理して論理立てて説明する際に大変重宝されます。日本語の「〜に関しては」「〜については」「〜に至っては」「〜の件となると」に相当します。",
+    "formation": "節1 ，至于 ＋ 名詞 / 話題節 ，説明節",
+    "examples": [
+      {
+        "translation": "私たちは来年結婚することに決めたが、具体的な日時に関してはまだ相談する必要がある。"
+      }
+    ]
   },
   "zh_至于_551": {
-    "title": "至于 (go so far as)",
-    "shortExplanation": "go so far as",
-    "longExplanation": "go so far as. Pinyin: zhìyú",
-    "formation": "zhìyú"
+    "title": "至于（動詞：〜の極端な度合いに達する【否定形「不至于」で「〜するほどではない」】）",
+    "shortExplanation": "事態が深刻・極端な境地に達することを表す動詞で、ほとんど常に否定形「不至于」として「〜するほどではない」の意で用います。",
+    "longExplanation": "「至于」（zhìyú）は及物動詞として、事態や行為が極めて深刻、極端、または好ましくない重大な段階にまで発展することを表します。現代中国語の実際の運用においては、ほぼ専ら否定詞「不」を伴った「不至于」（〜するほどのことはない、〜までには至らない）の形で用いられ、相手の過度な心配をなだめたり、最悪の推測を打ち消したりします。反語の「何至于」（どうして〜するほどのことがあろうか）としても用いられます。日本語の「〜するほどではない」「〜するまでには至らない」に相当します。",
+    "formation": "主語 ＋（不 / 何 / 哪 ＋）至于 ＋ 動詞句 / 節",
+    "examples": [
+      {
+        "translation": "彼が嘘をつくほどまでには至らない（彼が嘘をつくはずがない）。"
+      }
+    ]
   },
   "zh_总算_552": {
-    "title": "总算 (finally)",
-    "shortExplanation": "finally",
-    "longExplanation": "finally. Pinyin: zǒngsuàn",
-    "formation": "zǒngsuàn"
+    "title": "总算（副詞：ようやく、やっと、何とか、どうにか）",
+    "shortExplanation": "長い時間待たされたり苦難・曲折を経たりした末に、待ち望んでいた結果がついに実現したことを表します（「ようやく」「やっと」）。",
+    "longExplanation": "「总算」（zǒngsuàn）は述語（動詞・形容詞）を修飾する副詞として、長期間の待機や多大な労苦、曲折を経た末に、願っていた望みや目的がついに叶ったことを表します（話し手の安堵感、ほっとした気持ち、喜びが込められており、「终于」「好不容易」に近いニュアンスを持ちます）。また別の文脈では、完全無欠ではないものの「全体として見ればまあ何とか及第点である」「どうにか形にはなった」という最低限の肯定を表すこともあります。日本語の「ようやく」「やっと」「何とか」「どうにか」に相当します。",
+    "formation": "主語 ＋ 总算 ＋ 述語（動詞句 / 形容詞句）（＋ 了）",
+    "examples": [
+      {
+        "translation": "意思疎通を重ねた末に、大物映画監督もようやく事態を把握できた。"
+      }
+    ]
   },
   "zh_总算_553": {
-    "title": "总算 (finally)",
-    "shortExplanation": "finally",
-    "longExplanation": "finally. Pinyin: zǒngsuàn",
-    "formation": "zǒngsuàn"
+    "title": "总算（副詞：やっとのことで・どうにかこうにか・何とか・ようやく）",
+    "shortExplanation": "長い時間や多くの困難・紆余曲折を経て、最終的に願望が達成されたこと、または不十分ながらも安堵できる結果に達したことを表します（「やっと」「どうにか」「何とか」）。",
+    "longExplanation": "「总算」（zǒngsuàn）は述語の動詞や形容詞の前に置かれる副詞です。長い時間や紆余曲折、多大な努力の末に願望や結果がようやく実現したことを表します。また、全体としては不満や不便が残る状況にあっても、最低限のラインはクリアできたことに対する安堵感や幸運に思う気持ち（「何とか〜できた」というニュアンス）を込めて使われることが非常に多いです。類義語の「终于」が客観的な成り行きや努力の末の結末に重きを置くのに対し、「总算」は話者のホッとした主観的な気持ちや安堵感が色濃く反映されます。日本語の「やっと」「ようやく」「どうにかこうにか」「何とか」に相当します。",
+    "formation": "主語 ＋（但 / 可是 ＋）总算 ＋ 動詞句 / 節",
+    "examples": [
+      {
+        "translation": "このホテルはあまり良くないけれど、どうにかこうにか寝る場所は確保できた。"
+      }
+    ]
   },
   "zh_V下来_554": {
-    "title": "V 下来 (V down)",
-    "shortExplanation": "V down",
-    "longExplanation": "V down. Pinyin: V xiàlai",
-    "formation": "V xiàlai"
+    "title": "動詞 ＋ 下来（方向補語の派生用法：定まる・固定する・落ち着く・記録にとどめる）",
+    "shortExplanation": "動作によって状態が動き・変化から固定・静止へと安定すること、または決着・記録されることを表す方向補語の引伸用法です（「〜して決まる」「〜しておく」「〜して落ち着く」）。",
+    "longExplanation": "「下来」（xiàlai）は本来の空間的な移動（高い所から話し手に向かって下りてくる）から派生し、様々な抽象的意味を表す方向補語として用いられます。主に以下のような意味を表します：① 動的な状態や不確定な状況から、静止・固定・安定した状態へと移行すること（例：「定下来」決まる・確定する、「静下来」落ち着く、「停下来」立ち止まる・止まる）。② 動作を通じて情報や事実を固定して保存・記録すること（例：「记下来」書き留める、「拍下来」写真に収める）。例文の「定下来」は日程や方針が確定・決定したことを示します。日本語の「〜して定まる」「〜して落ち着く」「〜して確定する」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 下来（＋ 了 / 吗）",
+    "examples": [
+      {
+        "translation": "あなたの論文は大体いつ頃発表されますか？もう決まりましたか？"
+      }
+    ]
   },
   "zh_舍得_555": {
-    "title": "舍得 (willing (to to let go))",
-    "shortExplanation": "willing (to to let go)",
-    "longExplanation": "willing (to to let go). Pinyin: shěde",
-    "formation": "shěde"
+    "title": "舍得（動詞：惜しまない・手放すのを惜しまない・思い切って出す）",
+    "shortExplanation": "お金、時間、愛着のある物などを手放したり使ったりすることを惜しまず、進んで差し出す・決断することを表します（「惜しまない」「思い切って〜する」）。",
+    "longExplanation": "「舍得」（shěde）は、「捨てる・手放す」を意味する「舍」に可能補語の要素が結びついた心理動詞です。お金、労力、時間、あるいは愛着のある大切な物について、惜しい・もったいない・未練があると感じることなく、思い切って手放したり使ったりすることに対して前向き・容認できる態度を表します（対義語は「舍不得」）。「舍得花钱」（お金を惜しみなく使う）、「舍得下功夫」（労を惜しまず工夫を凝らす）などの形で動詞句を伴うことも多いです。疑問文「你舍得吗？」では「思い切って手放せる？ / 惜しくないの？」と問いかけるニュアンスになります。日本語の「惜しまない」「思い切って手放す」「気前よく出す」に相当します。",
+    "formation": "主語 ＋ 舍得（＋ 目的語 / 動詞句）",
+    "examples": [
+      {
+        "translation": "一番気に入っているおもちゃをよその子にあげるなんて、あなた惜しくないの？"
+      }
+    ]
   },
   "zh_舍不得_556": {
-    "title": "舍不得 (unwilling (to to let go))",
-    "shortExplanation": "unwilling (to to let go)",
-    "longExplanation": "unwilling (to to let go). Pinyin: shěbude",
-    "formation": "shěbude"
+    "title": "舍不得（動詞：手放すのが惜しい・名残惜しい・もったいなくて〜できない・心残りである）",
+    "shortExplanation": "愛着や未練があるため、別れを惜しんだり、お金や物を費やすのがもったいなくて思い切れない気持ちを表します（「名残惜しい」「惜しくて〜できない」）。",
+    "longExplanation": "「舍不得」（shěbude）は「舍得」の否定形にあたる心理動詞で、日常会話で極めて高い頻度で使われます。対象に対する強い愛着、慈しみ、あるいは物惜しみの気持ちから、人や場所と別れるのを名残惜しく思ったり（例：「舍不得离开」名残惜しくて離れられない）、金銭や貴重な物を消費することに強い抵抗・もったいなさを感じたりする（例：「舍不得吃」もったいなくて食べられない、「舍不得花钱」お金を惜しんで使えない）心情を表します。日本語の「名残惜しい」「もったいなくて〜できない」「手放すのが惜しい」「思い切れない」に相当します。",
+    "formation": "主語 ＋ 舍不得（＋ 目的語 / 動詞句）",
+    "examples": [
+      {
+        "translation": "お金をもったいながって、面白いことや有意義なことにお金を使えない人もいる。"
+      }
+    ]
   },
   "zh_从此_557": {
-    "title": "从此 (since then)",
-    "shortExplanation": "since then",
-    "longExplanation": "since then. Pinyin: cóngcǐ",
-    "formation": "cóngcǐ"
+    "title": "从此（副詞：それ以来・これ以後・それからというもの）",
+    "shortExplanation": "ある時点や出来事を契機・出発点として、それ以降新たな状況が始まったり継続したりすることを表します（「それ以来」「それからというもの」）。",
+    "longExplanation": "「从此」（cóngcǐ）は介詞「从」（〜から）と指示代名詞「此」（これ、その時）が融合した副詞（連語）で、文頭や主語の前後に置かれます。ある特定の出来事、転機、または体験を出発点として設定し、「その時以来」「それ以降」ずっとある行動が継続したり、人生の局面が大きく変わったりしたことを叙述します。物語や伝記、回想録などで人生の重要な転換点を描写する際に非常によく使われます（例：「从此开始新生活」それ以来新しい生活が始まった）。日本語の「それ以来」「それからというもの」「これ以後」に相当します。",
+    "formation": "（出来事 / 契機 ，）从此 ＋ 主語 ＋ 述語（または 主語 ＋ 从此 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "それ以来、李白は熱心に勉学に励み、最後には偉大な詩人となった。"
+      }
+    ]
   },
   "zh_假设_558": {
-    "title": "假设…… (suppose …)",
-    "shortExplanation": "suppose …",
-    "longExplanation": "suppose …. Pinyin: jiǎshè……",
-    "formation": "jiǎshè……"
+    "title": "假设……（接続詞：仮に〜としたら・もし〜ならば・仮定すると）",
+    "shortExplanation": "仮定の状況を提示する接続詞で、実際には起こっていない事態や反事実を想定してその対策や結果を問いかける際に用います（「仮に〜としたら」「もし〜なら」）。",
+    "longExplanation": "「假设」（jiǎshè）は接続詞として節の先頭に置かれ、まだ現実には生じていない事態や可能性の低い事象を思考上の前提として設定します（「假如」「如果」「假使」と同義）。聞き手に対して想定外の事態への心構えや対応策を問いかけたり、論理的な思考実験を行ったりする文脈で頻繁に使われます。節末に語気助詞「的话」や「呢」を伴うことが多く、後続節では「该怎么办」「会怎样」のように結果や対策が論じられます。日本語の「仮に〜としたら」「もし〜ならば」「〜だと仮定して」に相当します。",
+    "formation": "假设 ＋ 仮定節（＋ 的话 / 呢），（主語 ＋）結果節 / 疑問文",
+    "examples": [
+      {
+        "translation": "仮にお金を使い果たしてしまったとしたらどうする？どうすべきだと思う？"
+      }
+    ]
   },
   "zh_假设_559": {
-    "title": "假设 (supposition)",
-    "shortExplanation": "supposition",
-    "longExplanation": "supposition. Pinyin: jiǎshè",
-    "formation": "jiǎshè"
+    "title": "假设（名詞：仮説・想定・前提）",
+    "shortExplanation": "事実や理論に基づいて立てられた、まだ完全には実証されていない学術的推測や前提条件を表す名詞です（「仮説」「想定」）。",
+    "longExplanation": "「假设」（jiǎshè）は名詞として用いられる場合、自然科学、社会科学、あるいは論理的思考において、ある現象を説明するために便宜的に立てられた検証待ちの命題や推測（「仮説」）を指します。よく用いられるコロケーションには「提出假设」（仮説を立てる / 提起する）、「证实假设」（仮説を実証する）、「推翻假设」（仮説を覆す）などがあります。文中では主語や目的語として機能します。日本語の「仮説」「想定」「仮定」に相当します。",
+    "formation": "主語 / 連体修飾語 ＋ 假设（または 提出 / 证明 / 验证 ＋ 假设）",
+    "examples": [
+      {
+        "translation": "あなたが当時立てられた仮説は、すでに正しいことが証明されました。"
+      }
+    ]
   },
   "zh_堆_560": {
-    "title": "堆 (a pile, a heap)",
-    "shortExplanation": "a pile, a heap",
-    "longExplanation": "a pile, a heap. Pinyin: duī",
-    "formation": "duī"
+    "title": "堆（名詞：山・積み重ね・堆積物）",
+    "shortExplanation": "土砂や材料などが積み上げられて盛り上がった「山」「堆積した塊」を表す名詞です（「〜の山」「堆積」）。",
+    "longExplanation": "「堆」（duī）は名詞として用いられる場合、物や土砂などが一か所に集積されてできた盛り上がりや山を指します。名詞の語尾に直接結合して複合名詞を形成することが多く、「土堆」（土の山 / 塚）、「草堆」（干し草の山）、「垃圾堆」（ゴミの山 / ゴミ捨て場）、「材料堆」（資材置き場 / 資材の山）のように用いられます（なお、「一堆东西」のように量詞としても多用されます）。例文の「建筑材料堆」は、建設資材がうず高く積まれた場所・山そのものを表す名詞用法です。日本語の「〜の山」「塚」「堆積」に相当します。",
+    "formation": "名詞（土 / 草 / ごみ / 資材など）＋ 堆（または 数詞 ＋ 堆 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "工場の隣に建設資材の山が一つある。"
+      }
+    ]
   },
   "zh_堆_561": {
-    "title": "堆 (to pile, to heap)",
-    "shortExplanation": "to pile, to heap",
-    "longExplanation": "to pile, to heap. Pinyin: duī",
-    "formation": "duī"
+    "title": "堆（動詞：積み上げる・山積みにする・積み重なる・放り出しておく）",
+    "shortExplanation": "物資や品物を一か所に重ねて置く、または雑然と積み重なっている動作・状態を表す動詞です（「積み上げる」「山積みにする」）。",
+    "longExplanation": "「堆」（duī）は動詞として用いられ、物品や道具などを一か所に積み重ねたり、集めて山盛りに置いたりする行為を表します。介詞「在」と結びついて「堆在 ＋ 場所」（〜に山積みになっている / 乱雑に積まれている）という存現構文・処置構文を形成することが非常に多いです（例：「零件堆在车间里」部品が作業場に積んである、「堆雪人」雪だるまを作る / 積み上げる）。しばしば整理されておらず邪魔になっているという不満や疑問のニュアンスを伴います。日本語の「積み上げる」「山積みにする」「積み重なる」に相当します。",
+    "formation": "主語 ＋ 堆 ＋ 在 / 满 ＋ 場所（または 堆 ＋ 目的語）",
+    "examples": [
+      {
+        "translation": "これらの部品はどうして全部ここに山積みになっているの？"
+      }
+    ]
   },
   "zh_不如NA_562": {
-    "title": "不如 N A (not as A as N)",
-    "shortExplanation": "not as A as N",
-    "longExplanation": "not as A as N. Pinyin: bùrú N A",
-    "formation": "bùrú N A"
+    "title": "不如 ＋ 名詞 ＋ 形容詞（比較構文：〜ほど…ではない・〜には及ばない）",
+    "shortExplanation": "ある性質やレベルの面で、主語が比較対象の基準に及ばない・劣っていることを表す比較構文です（「〜ほど…ではない」「〜に及ばない」）。",
+    "longExplanation": "「不如」（bùrú）を用いた代表的な比較構文で、「主語 ＋ 不如 ＋ 比較対象（名詞）＋ 形容詞」の形で用いられます。「不如」の直後に置かれる名詞を比較の基準とし、末尾の形容詞（「高」「大」「快」など）が表す度合いや水準において、主語がその対象に達しないこと（劣っていること）を表します。「主語はその対象ほど〜ではない」を意味します。「还」（〜でさえ、むしろ）などの副詞と呼応して「还不如……高」となる場合、意外性や落差の激しさを際立たせる語気（「3社合わせてもなお1社に及ばない」）が強調されます。日本語の「〜ほど…ではない」「〜には及ばない」に相当します。",
+    "formation": "主語 ＋（还 ＋）不如 ＋ 比較対象（名詞）＋ 形容詞",
+    "examples": [
+      {
+        "translation": "3社の売上高を全部合わせても、彼の店1社ほど高くはない（及ばない）。"
+      }
+    ]
   },
   "zh_与其不如_563": {
-    "title": "(与其)……不如…… (rather than… it’s better to)",
-    "shortExplanation": "rather than… it’s better to",
-    "longExplanation": "rather than… it’s better to. Pinyin: ( yǔqí)…… bùrú……",
-    "formation": "( yǔqí)…… bùrú……"
+    "title": "（与其）……不如……（選択複文接続詞：〜するくらいなら、むしろ…するほうがましだ）",
+    "shortExplanation": "2つの選択肢を比較衡量し、前者を退けて後者のほうがより良い・賢明であると判断して選ぶことを表す複文の相関表現です（「〜するよりはむしろ…のほうがよい」）。",
+    "longExplanation": "「与其……不如……」（yǔqí... bùrú...）は選択を表す複文の典型的な呼応接続表現です。話者が2つの行動や方針を比較検討した結果、前節の事柄を取りやめ・否定し、後節の事柄のほうが価値が高く、適切で有意義であると判断してそちらを選択する意図を表します。「与其」は口語において省略されることもあります。日本語の「〜するくらいなら、むしろ…するほうがよい」「〜するよりは…のほうがましだ」に相当します。",
+    "formation": "（与其 ＋）選択肢（前項） ，不如 ＋ 選択肢（後項）",
+    "examples": [
+      {
+        "translation": "家にじっとしているくらいなら、むしろ外へ散歩に出かけるほうがましだ。"
+      }
+    ]
   },
   "zh_干脆V_564": {
-    "title": "干脆 V (simply, quick and dirty)",
-    "shortExplanation": "simply, quick and dirty",
-    "longExplanation": "simply, quick and dirty. Pinyin: gāncuì V",
-    "formation": "gāncuì V"
+    "title": "干脆 ＋ 動詞（副詞：いっそのこと・思い切って・きっぱりと）",
+    "shortExplanation": "あれこれ迷ったり手加減したりせず、思い切って直接的・根本的な行動に出ることを表す副詞です（「いっそのこと」「思い切って」）。",
+    "longExplanation": "「干脆」（gāncuì）は動詞の前に置かれて副詞として働き、「索性」（いっそのこと）と同義で用いられます。中途半端な妥協や躊躇、曖昧さを断ち切り、思い切って根本的・直接的な手段に打って出る態度を表します。提案や助言、あるいは重大な腹括りの場面で頻繁に使われます（例：「干脆辞职」いっそのこと会社を辞める、「干脆说明白」きっぱりと白黒つける）。日本語の「いっそのこと」「思い切って」「きっぱりと〜する」に相当します。",
+    "formation": "主語 ＋（建议 / 不如 ＋）干脆 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "多くの親戚や友人は、彼にいっそのこと他の3軒の書店を潰してしまえと提案した。"
+      }
+    ]
   },
   "zh_干脆_565": {
-    "title": "干脆 (decisive)",
-    "shortExplanation": "decisive",
-    "longExplanation": "decisive. Pinyin: gāncuì",
-    "formation": "gāncuì"
+    "title": "干脆（形容詞：あっさりした・歯切れのよい・さっぱりとした・明快な）",
+    "shortExplanation": "言動や態度が明快で歯切れがよく、ぐずぐずためらったり未練を残したりしない性質を表す形容詞です（「あっさりした」「さっぱりした」「明快な」）。",
+    "longExplanation": "「干脆」（gāncuì）は形容詞として、人の性格、話し方、行動のスタイルが率直で明快、かつ歯切れがよいさまを表します。遠回しな言い方をせず、未練や躊躇がなく、即座に白黒をつける態度を形容します（対義語は「拖泥带水」ぐずぐずしている、「犹豫」躊躇する）。様態補語「得」を伴って「答应得很干脆」（快く即答する、あっさりと引き受ける）や、定語として「干脆的性格」（さっぱりした性格）のように多用されます。日本語の「あっさりした」「歯切れのよい」「さっぱりとした」「即座の」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 得 ＋（很 / 非常 ＋）干脆（または 干脆的 ＋ 名詞）",
+    "examples": [
+      {
+        "translation": "私が彼に手助けを頼むと、彼はとてもあっさりと快く引き受けてくれた。"
+      }
+    ]
   },
   "zh_万一_566": {
-    "title": "万一 (in the unlikely case where)",
-    "shortExplanation": "in the unlikely case where",
-    "longExplanation": "in the unlikely case where. Pinyin: wànyī",
-    "formation": "wànyī"
+    "title": "万一（接続詞・副詞：万が一・もし万一・万が一にも）",
+    "shortExplanation": "発生する確率は極めて低いものの、万が一現実に起きてしまったら重大な危険や不都合を招く事態を想定する表現です（「万が一」「もし万が一」）。",
+    "longExplanation": "「万一」（wànyī）は接続詞または副詞として機能し、文字通り「一万分の一」という極めて低い確率の事態を想定する際に用いられます。特に、望ましくない事故、危険、失敗など、悪い結果をもたらす突発的なアクシデントを仮定する場合に専ら用いられます。節頭または述語動詞の直前に置かれ、後続の文で「就」（〜になってしまう）、「有可能」（可能性がある）などの結果予測を導きます。日本語の「万が一」「もし万が一」「万一にも」に相当します。",
+    "formation": "（如果 ＋）万一 ＋ 動詞節 ，（主語 ＋）就 / 有可能 ＋ 結果",
+    "examples": [
+      {
+        "translation": "卵を全部一つのカゴに入れておくと、万が一不注意があった場合に全部割れてしまう可能性がある。"
+      }
+    ]
   },
   "zh_万一_567": {
-    "title": "万一 (unlikely case, mishap)",
-    "shortExplanation": "unlikely case, mishap",
-    "longExplanation": "unlikely case, mishap. Pinyin: wànyī",
-    "formation": "wànyī"
+    "title": "万一（名詞：万一の事態・不測の事故・不慮の出来事）",
+    "shortExplanation": "めったに起こらないが重大な損害をもたらす可能性のある不測の事態や災難そのものを指す名詞です（「万一の事態」「不慮の事故」）。",
+    "longExplanation": "「万一」（wànyī）は名詞として用いられる場合、極めて稀ではあるものの、万が一発生したときに致命的な損害をもたらす事故、災難、緊急事態そのものを指します。慣用句や成句表現として固定化して使われることが非常に多く、代表例として「以防万一」（万一に備える）や諺の「不怕一万，就怕万一」（一万回の日常は恐れずとも、たった一度の万一の不測の事態こそ恐れるべきだ＝備えあれば憂いなし）が挙げられます。文中では「防」（防ぐ）や「怕」（恐れる）の目的語として機能します。日本語の「万一の事態」「不測の事態」「万一の事故」に相当します。",
+    "formation": "以防 / 就怕 ＋ 万一（または 万一 ＋ の発生）",
+    "examples": [
+      {
+        "translation": "普段のありふれたことは恐くないが、ただ一度の万一の事態（不測の事故）こそが恐ろしい。"
+      }
+    ]
   },
   "zh_无意中无意地_568": {
-    "title": "无意中/无意地 (accidentally)",
-    "shortExplanation": "accidentally",
-    "longExplanation": "accidentally. Pinyin: wúyìzhōng/ wúyì dì",
-    "formation": "wúyìzhōng/ wúyì dì"
+    "title": "无意中 / 无意地（副詞句・状語：何気なく・偶然に・思いがけず・ふとしたはずみで）",
+    "shortExplanation": "事前の意図や計画がなく、偶然や予期せぬ成り行きで動作が行われたり結果が生じたりしたことを表します（「偶然に」「何気なく」「思いがけず」）。",
+    "longExplanation": "「无意中」（wúyìzhōng）と「无意地」（wúyì dì）は、いずれも動詞の前に置かれて連用修飾語（状語）として機能します。動作を行う人に特定の意図・企み・計画が全くなく、偶然の巡り合わせや無意識のうちにある事態が発生したことを表します。「无意中」は出来事が偶然起きた状況・環境に力点が置かれ、「无意地」は意図を持たない行為の様態に力点が置かれます。偶然何かを発見したり、ふと言葉をもらしたりする文脈で多用されます。日本語の「偶然に」「何気なく」「思いがけず」「ふとしたはずみで」に相当します。",
+    "formation": "主語 ＋（在 ＋ 動作 / 状況 ＋ 时，）无意中 / 无意地 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "彼女は庭の手入れをしている時に、思いがけず／偶然このイヤリングを見つけた。"
+      }
+    ]
   },
   "zh_无意_569": {
-    "title": "无意 (no intention to)",
-    "shortExplanation": "no intention to",
-    "longExplanation": "no intention to. Pinyin: wúyì",
-    "formation": "wúyì"
+    "title": "无意（助動詞的用法・副詞：〜する気はない・意図はない・つもりはない）",
+    "shortExplanation": "心の中に特定の動作を行う意図や下心が全くないこと、または〜するつもりがないことを表します（「〜する気はない」「意図はない」）。",
+    "longExplanation": "「无意」（wúyì）は「意（意図・意向）が無い」という意味から成り、動詞句の前に置かれて能願動詞（助動詞）的、あるいは副詞的に機能します。主語となる人物が、ある行為を遂行する主観的な動機や意図、悪意などを一切抱いていないことを明言する際に用いられます（例：「无意伤害」傷つける意図はない、「无意冒犯」悪気はない・失礼を働くつもりはない、「无意争辩」議論する気はない）。「无意中」（偶然に〜してしまった）が動作の偶発的発生を述べるのに対し、「无意」は行為者の主観的意図の不在を強く表明します。日本語の「〜するつもりはない」「〜する気はない」「〜する意図はない」に相当します。",
+    "formation": "主語 ＋ 无意 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "彼は誰かを傷つけるつもりなど毛頭ない。"
+      }
+    ]
   },
   "zh_有利_570": {
-    "title": "有利 (to be beneficial)",
-    "shortExplanation": "to be beneficial",
-    "longExplanation": "to be beneficial. Pinyin: yǒulì",
-    "formation": "yǒulì"
+    "title": "有利（形容詞・動詞：有利である・プラスになる・役立つ・〜にとって好都合である）",
+    "shortExplanation": "ある条件や事柄が好都合であり、利益や望ましい効果をもたらすことを表します（「有利である」「プラスになる」「役立つ」）。",
+    "longExplanation": "「有利」（yǒulì）は、物事の発展や成果に対して都合の良い条件・要因が存在することを表す形容詞（または動詞的連語）です（対義語は「不利」）。現代中国語では、介詞「于」と結びついた固定構造「有利于 ＋ 目的語 / 動作」（〜にとって有利である、〜するのに役立つ）、あるいは「对……有利」（〜にとって有利だ）という構文で極めて高い頻度で用いられます。また、「有利条件」（有利な条件）、「有利地位」（有利な立場）のように名詞を修飾する連体修飾語（定語）としても多用されます。日本語の「有利である」「プラスに働く」「役立つ」「〜にとって好都合である」に相当します。",
+    "formation": "主語 / 事象 ＋ 有利于 ＋ 動詞句 / 名詞（または 对 ＋ 対象 ＋ 有利）",
+    "examples": [
+      {
+        "translation": "適度なプレッシャーは、私たちが良好な状態を維持するのに役立つ。"
+      }
+    ]
   },
   "zh_的确_571": {
-    "title": "的确 (indeed)",
-    "shortExplanation": "indeed",
-    "longExplanation": "indeed. Pinyin: díquè",
-    "formation": "díquè"
+    "title": "的确（副詞：確かに・本当に・まさしく・実に）",
+    "shortExplanation": "事態や判断が客観的に紛れもない事実であることを強く肯定・確認する副詞です（「確かに」「本当に」「実に」）。",
+    "longExplanation": "「的确」（díquè）は述語（動詞、形容詞、または判断を示す句）の前に置かれる副詞で、連用修飾語（状語）として機能します。提示された状況や他者の意見が客観的事実と完全に合致しており、疑う余地がないことを強く肯定・認める際に用いられます。自らの体験や観察を通じて「噂通りまさしくその通りだ」「確かに言われた通りだ」と納得・同調する文脈で頻繁に使われます（例：「的确如此」確かにその通りだ、「的确不错」実に悪くない・確かに素晴らしい）。日本語の「確かに」「本当に」「実に」「まさしく」に相当します。",
+    "formation": "主語 ＋ 的确 ＋ 述語（動詞 / 形容詞 / 是……）",
+    "examples": []
   },
   "zh_嗯_573": {
-    "title": "嗯 (Yep)",
-    "shortExplanation": "Yep",
-    "longExplanation": "Yep. Pinyin: èn",
-    "formation": "èn"
+    "title": "嗯（第4声・軽声の間投詞：うん・ええ・はい・了解）",
+    "shortExplanation": "第4声（または軽声）で発音される間投詞で、呼びかけに応答したり、相手の質問に肯定・承諾の返事をしたりする際に用います（「うん」「ええ」「はい」）。",
+    "longExplanation": "「嗯」が第4声（èn）または軽声で発音される場合、日常会話で最も頻繁に用いられる応答の間投詞（感嘆詞）です。文頭に単独で置かれ、誰かからの呼びかけに応じたり、質問に対して「その通りだ」「同意する」「了解した」と肯定的に返事をしたりする際に使われます（例：「嗯，好的」うん、わかった、「嗯，我知道了」ええ、知っているよ、「嗯，吃了」うん、食べたよ）。声調は低く短く落ち着いたトーンになります。日本語の「うん」「ええ」「はい」に相当します。",
+    "formation": "（呼びかけ / 質問 ，）嗯 ，＋ 応答句 / 肯定文",
+    "examples": [
+      {
+        "translation": "A：ご飯食べた？ B：うん、食べたよ。"
+      }
+    ]
   },
   "zh_嗯_574": {
-    "title": "嗯？ (Huh?)",
-    "shortExplanation": "Huh?",
-    "longExplanation": "Huh?. Pinyin: èn？",
-    "formation": "èn？"
+    "title": "嗯？（第2声の間投詞：えっ？・ん？・あれっ？・何だって？）",
+    "shortExplanation": "第2声で語尾を上げて発音される間投詞で、意外なことに対する疑念、驚き、不可解さを表します（「ん？」「えっ？」「あれ？」）。",
+    "longExplanation": "「嗯」に疑問符が付き、第2声（én）のイントネーションで語尾を上げて発音される場合、話し手が不意に何らかの異常、予期せぬ食い違い、または疑問点に気づいた時の心理的反応を表す間投詞となります。「えっ？」「あれっ？」「何だって？」といったニュアンスで、直後に自問自答の疑問文や相手への詰問が続くのが一般的です（例：「嗯？这是怎么回事？」ん？これはどういうことだ？、「嗯？难道是我记错了？」あれっ？もしかして私が覚え違いしていたのかな？）。日本語の「ん？」「えっ？」「あれっ？」に相当します。",
+    "formation": "嗯？ ＋ 疑問文 / 推量文",
+    "examples": [
+      {
+        "translation": "ん？もしかして私が覚え違いをしていたのかな？"
+      }
+    ]
   },
   "zh_嗯_575": {
-    "title": "嗯！ (Man…!)",
-    "shortExplanation": "Man…!",
-    "longExplanation": "Man…!. Pinyin: èn！",
-    "formation": "èn！"
+    "title": "嗯！（強調・詠嘆の間投詞：おい！・あれまあ！・ちょっと！・おいおい！）",
+    "shortExplanation": "語気を強めて感嘆符を伴う間投詞で、相手の意外な振る舞いや状況に対する驚き、不満、たしなめ、促しなどを表します（「おい！」「ちょっと！」「おいおい！」）。",
+    "longExplanation": "「嗯！」に感嘆符が付く場合、語気を強めた感嘆詞として機能し、話者の強い感情（意外感、とまどい、咎め、催促など）を直接的に表します。相手が当然しているはずの行動をとっていなかったり、想定外の事態を目撃したりした際に、「おいおい、一体どうしたんだ？」「ちょっと、まだ〜してないの？」と驚きと軽い非難を込めて声をかける文脈で用いられます（例：「嗯！你怎么还没走啊？」おいおい！君はどうしてまだ出発していないんだい？）。日本語の「おい！」「ちょっと！」「おいおい！」「あれまあ！」に相当します。",
+    "formation": "嗯！ ＋ 反語 / 驚きの疑問文 / 咎めの文",
+    "examples": [
+      {
+        "translation": "おいおい！君はどうしてまだ行ってないんだい？"
+      }
+    ]
   },
   "zh_轻易地V_576": {
-    "title": "轻易地 V (easily)",
-    "shortExplanation": "easily",
-    "longExplanation": "easily. Pinyin: qīngyì dì V",
-    "formation": "qīngyì dì V"
+    "title": "轻易地 ＋ 動詞（連用修飾語：いとも簡単に・たやすく・難なく・造作もなく）",
+    "shortExplanation": "動作や目標が何の苦労や障害もなく、極めてスムーズかつ容易に達成される様子を表します（「いとも簡単に」「たやすく」「難なく」）。",
+    "longExplanation": "「轻易地」（qīngyì dì）は、形容詞「轻易」（たやすい・簡単である）に構造助詞「地」が付いた連用修飾語（状語）の形式で、後続の動詞句を修飾します。主に肯定文において、卓越した能力や有利な条件に恵まれ、骨を折ったり苦労したりすることなく極めて円滑・迅速に目的の動作を成し遂げられる様子を描写します（例：「轻易地记住」難なく覚える、「轻易地战胜对手」敵をたやすく打ち負かす）。「很轻易地」のように程度副詞「很」を伴うことも多いです。日本語の「いとも簡単に」「たやすく」「難なく」「造作もなく」に相当します。",
+    "formation": "主語 ＋（できる / すべて ＋）轻易地 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "彼は何を勉強しても、とても簡単に覚えることができる。"
+      }
+    ]
   },
   "zh_轻易V_577": {
-    "title": "轻易 V (frivolously)",
-    "shortExplanation": "frivolously",
-    "longExplanation": "frivolously. Pinyin: qīngyì V",
-    "formation": "qīngyì V"
+    "title": "轻易 ＋ 動詞（副詞：軽々しく・安易に・めったなことで〜ない【否定文で多用】）",
+    "shortExplanation": "態度が軽はずみで思慮が浅いこと、または否定文（「不轻易……」）において「めったなことでは〜しない」「軽々しく〜しない」という慎重さを表します（「軽々しく」「安易に」）。",
+    "longExplanation": "「轻易」（qīngyì）が直接動詞の前に置かれて副詞として機能する場合、「軽はずみである・慎重さを欠く」というニュアンスを帯びます。特に「不轻易」「从不轻易」といった否定形式で用いられることが極めて多く、「軽々しく〜しない」「めったなことで〜しない」「安易に〜しない」という意味で、慎重で分別のある態度や強固な意志を表します（例：「不轻易许诺」軽々しく約束しない、「不轻易放弃」めったなことで諦めない、「决不轻易改变」決して安易に変えない）。日本語の「軽々しく」「安易に」「めったなことでは〜しない」に相当します。",
+    "formation": "主語 ＋（从不 / 不 ＋）轻易 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "彼は決して軽々しく決断しないが、ひとたび決めたらめったなことでは変えない。"
+      }
+    ]
   },
   "zh_密切_578": {
-    "title": "密切 (closely)",
-    "shortExplanation": "closely",
-    "longExplanation": "closely. Pinyin: mìqiè",
-    "formation": "mìqiè"
+    "title": "密切（副詞的用法・状語：密接に・緊密に・深く・綿密に）",
+    "shortExplanation": "動詞の前に置かれ、両者の結びつき、関連性、協力関係が極めて緊密で深いことを表します（「密接に」「緊密に」）。",
+    "longExplanation": "「密切」（mìqiè）は動詞の前に連用修飾語（状語）として置かれ、人や事物の相互関係、結びつき、協力度合いが非常に深く途切れがない様子を表します。特によく用いられる定番の組み合わせには、「与……密切相关」（〜と密接に関連している）、「密切配合」（緊密に連携・協力する）、「密切联系群众」（大衆と緊密に結びつく）、「密切关注」（固唾をのんで注視する・綿密に見守る）などがあります。論説文や公の報道、学術的分析において頻出します。日本語の「密接に」「緊密に」「深く」に相当します。",
+    "formation": "主語 ＋ 与 / 和 ＋ 対象 ＋ 密切 ＋ 動詞句（相关 / 配合 / 关注 など）",
+    "examples": [
+      {
+        "translation": "環境汚染は私たちの日常生活と密接に関連している。"
+      }
+    ]
   },
   "zh_密切_579": {
-    "title": "密切 (close (in relationship))",
-    "shortExplanation": "close (in relationship)",
-    "longExplanation": "close (in relationship). Pinyin: mìqiè",
-    "formation": "mìqiè"
+    "title": "密切（形容詞：親密な・緊密な・親しい・結びつきが強い）",
+    "shortExplanation": "人間同士や国家・組織間の人間関係・往来が非常に親密で、結びつきが深いことを表す形容詞です（「親密である」「緊密である」）。",
+    "longExplanation": "「密切」（mìqiè）は形容詞として用いられる場合、人や集団の間の交際、付き合い、あるいは関係性が非常に親しく深い状態にあることを表します。文中では主に述語として機能し、「关系密切」（関係が親密である）、「来往密切」（往来・付き合いが頻繁で親密である）のように用いられます。また比較文や変化を表す文で「比先前密切了」（以前よりも親しくなった）、「日益密切」（日増しに緊密になっている）のように関係の発展・深化を叙述します。日本語の「親密である」「緊密である」「親しい」「結びつきが強い」に相当します。",
+    "formation": "主語（関係 / 往来）＋（比…… ＋）密切（＋ 了）",
+    "examples": [
+      {
+        "translation": "それ以来、二人の往来は以前よりも親密になった。"
+      }
+    ]
   },
   "zh_密切_580": {
-    "title": "密切 (to strengthen)",
-    "shortExplanation": "to strengthen",
-    "longExplanation": "to strengthen. Pinyin: mìqiè",
-    "formation": "mìqiè"
+    "title": "密切（他動詞的用法：緊密にする・結びつきを強める・密接にする）",
+    "shortExplanation": "事業や政策などが、両者の間の連携やつながりを一段と強化し、親密なものにすることを表す使動的動詞です（「緊密にする」「結びつきを強める」）。",
+    "longExplanation": "「密切」（mìqiè）は他動詞（使動動詞）としても機能し、「〜を親密・緊密なものにする」「結びつきを一層強める」という意味を表します。インフラの整備、交通網の開通、文化交流などの施策が主語となり、地域間や人々の間の交流や関係（「联系」「关系」）を目的語として導きます（例：「密切了联系」結びつきを強めた、「密切了党群关系」党と民衆の関係を緊密にした）。文末や動詞の直後にアスペクト助詞「了」を伴うことが多いです。日本語の「緊密にする」「密接にする」「結びつきを一段と深める」に相当します。",
+    "formation": "主語 ＋（大大 ＋）密切 ＋ 了 ＋ 連体修飾語 ＋ 的联系 / 关系",
+    "examples": [
+      {
+        "translation": "この鉄道は西南地区と首都との結びつきを大いに強めた。"
+      }
+    ]
   },
   "zh_尽量jnling_581": {
-    "title": "尽量 (jǐnliàng) (as … as possible)",
-    "shortExplanation": "as … as possible",
-    "longExplanation": "as … as possible. Pinyin: jǐnliàng (jǐnliàng)",
-    "formation": "jǐnliàng (jǐnliàng)"
+    "title": "尽量（jǐnliàng）（副詞：できる限り・なるべく・できるだけ・極力）",
+    "shortExplanation": "第3声（jǐn）で発音される副詞で、条件や能力が許す限度・範囲内で最大限に努めることを表します（「できるだけ」「なるべく」「できる限り」）。",
+    "longExplanation": "「尽量」は第3声（jǐnliàng）で発音される場合、動詞句の前に置かれて連用修飾語（状語）として機能する副詞です。客観的な条件や自分自身の能力が許す最大限の範囲で努力・配慮し、ある水準や数量を極力高めたり（あるいは抑えたり）することを表します。「尽量多……」（できるだけ多く〜する）、「尽量少……」（なるべく少なく抑える）、「尽量不要……」（極力〜しないようにする）などのパターンで日常的・公的文脈を問わず頻用されます。なお第4声（jìnliàng）の動詞用法（限界まで出し切る、酒を限界まで飲む）とは明確に区別されます。日本語の「できる限り」「なるべく」「できるだけ」「極力」に相当します。",
+    "formation": "（主語 ＋）尽量（＋ 多 / 少 / 别 ＋）動詞句",
+    "examples": [
+      {
+        "translation": "できるだけ自転車を多く利用し、公共交通機関をより多く選ぶようにしよう。"
+      }
+    ]
   },
   "zh_逐步_582": {
-    "title": "逐步 (step by step)",
-    "shortExplanation": "step by step",
-    "longExplanation": "step by step. Pinyin: zhúbù",
-    "formation": "zhúbù"
+    "title": "逐步（副詞：一歩一歩・段階的に・順を追って・徐々に）",
+    "shortExplanation": "動作や事態の変化が計画や順序に従って、一歩一歩段階的に進展していく様子を表します（「段階的に」「一歩一歩」「順を追って」）。",
+    "longExplanation": "「逐步」（zhúbù）は述語の動詞句の前に置かれる副詞で、物事の進行や改革・変化が、あらかじめ立てられた計画や手順に沿って着実に一歩ずつ推進されることを表します。「逐渐」が時の経過に伴う自然な漸変（徐々に変化する）を客観的に述べるのに対し、「逐步」は人為的な目標や計画性に基づき、順を追って段階的に実施・解決していく文脈で好まれます（例：「逐步提高」段階的に引き上げる、「逐步解决」一歩一歩解決する、「逐步推广」段階的に普及させる）。社会政策、経済改革、業務プロセスの叙述で頻出します。日本語の「段階的に」「一歩一歩」「順を追って」「着実に」に相当します。",
+    "formation": "（主語 ＋）逐步 ＋ 動詞句 / 変化の述語",
+    "examples": [
+      {
+        "translation": "エネルギー消費構造を調整し、再生可能エネルギーへと段階的に移行する。"
+      }
+    ]
   },
   "zh_照常_583": {
-    "title": "照常 (as usual)",
-    "shortExplanation": "as usual",
-    "longExplanation": "as usual. Pinyin: zhàocháng",
-    "formation": "zhàocháng"
+    "title": "照常（副詞・形容詞・述語：いつも通り・通常通り・相変わらず・普段通りに）",
+    "shortExplanation": "特別な事情や異変が生じても、事態や活動が普段の規則・習慣通りに何ら変わりなく行われることを表します（「通常通り」「いつも通り」）。",
+    "longExplanation": "「照常」（zhàocháng）は「通常の規則・習慣に従う」という意味から成り、動詞の前に連用修飾語（状語）として置かれるか、文末で述語として用いられます（例：「照常营业」通常通り営業する、「照常上课」平常通り授業を行う、「一切照常」すべていつも通りである）。周囲で突発的な事件や異変、悪天候、危機などが起きていても、人々の生活や業務運営がそれに動じることなく、普段と寸分たがわぬ状態で維持されている状況を描写する際に多用されます。日本語の「いつも通り」「通常通り」「相変わらず」「普段通りに」に相当します。",
+    "formation": "（〜であるものの、）主語 ＋（一切 ＋）照常（または 照常 ＋ 動詞句）",
+    "examples": [
+      {
+        "translation": "戦争が迫っているものの、ここの日常生活はすべていつも通りである。"
+      }
+    ]
   },
   "zh_难怪怪不得_584": {
-    "title": "难怪/怪不得 (no wonder)",
-    "shortExplanation": "no wonder",
-    "longExplanation": "no wonder. Pinyin: nánguài/ guàibude",
-    "formation": "nánguài/ guàibude"
+    "title": "难怪 / 怪不得（副詞：どうりで〜なわけだ・なるほど道理で・無理もない）",
+    "shortExplanation": "事態の原因や事情を知って納得し、これまでの疑問が氷解して不思議ではないと感じることを表します（「どうりで〜なわけだ」「なるほどそれでか」）。",
+    "longExplanation": "「难怪」（nánguài）と「怪不得」（guàibude）は、原因や背景となる事情を理解したことによって、それまで抱いていた疑問や不審が解消し、「なるほど、だからそうだったのか」「不思議ではない」と納得する気持ちを表す副詞です。通常、複文の後続節の冒頭に置かれ、先行節で述べられた原因を受けて「どうりで〜なわけだ」と結論づけます。両者は口語・書面語を問わず互いに言い換えることができます。日本語の「どうりで〜なわけだ」「なるほど道理で」「道理で〜はずだ」に相当します。",
+    "formation": "原因・事情 ，难怪 / 怪不得 ＋ 結果・事態",
+    "examples": [
+      {
+        "translation": "引き出しが本当に散らかっているね、どうりでいつも物が見つからないわけだ。"
+      }
+    ]
   },
   "zh_难怪怪不得_585": {
-    "title": "难怪/怪不得 (understandable)",
-    "shortExplanation": "understandable",
-    "longExplanation": "understandable. Pinyin: nánguài/ guàibude",
-    "formation": "nánguài/ guàibude"
+    "title": "这也难怪 / 怪不得（述語表現：それも無理はない・責められない・もっともだ）",
+    "shortExplanation": "状況や理由を考慮すれば相手の行動や結果に十分納得でき、責めることはできない・もっともだと理解を示す用法です（「それも無理はない」「責められない」）。",
+    "longExplanation": "ここでの「难怪」と「怪不得」は副詞ではなく述語的に独立して使われ、しばしば「这也难怪」「这也怪不得」（それも無理はない、責めるわけにはいかない）の形で用いられます。語源的には「怪」（責める、とがめる）に「难 / 不得」（〜しにくい / 〜できない）が付いたもので、「非難できない、とがめ立てする筋合いではない」という意味から派生しました。相手の事情や多忙さ、厳しい環境などを理解した上で、「その状況ならそうなるのも当然だ」「責めるのは酷だ」と大らかな同情や理解を示す際に使われます。日本語の「それも無理はない」「責められない」「仕方がないことだ」に相当します。",
+    "formation": "事態・行動 ，（这也 ＋）难怪 / 怪不得 ，理由・事情",
+    "examples": [
+      {
+        "translation": "彼はこれまで子どものことにはまるで気配りをしてこなかった。それも無理はない、あんなに忙しいのだから、時間があるはずがない。"
+      }
+    ]
   },
   "zh_与其倒不如_586": {
-    "title": "与其……(倒)不如…… (Instead of… it’s better to…)",
-    "shortExplanation": "Instead of… it’s better to…",
-    "longExplanation": "Instead of… it’s better to…. Pinyin: yǔqí……( dǎo) bùrú……",
-    "formation": "yǔqí……( dǎo) bùrú……"
+    "title": "与其……(倒)不如……（接続詞句：〜するよりはむしろ〜したほうがよい・〜するくらいならいっそ〜のほうがましだ）",
+    "shortExplanation": "2つの選択肢を比較衡量した結果、前者を退けて後者を選び取る意志を表す接続詞構文です（「〜するよりはむしろ〜したほうがましだ」「〜するくらいならいっそ〜だ」）。",
+    "longExplanation": "「与其……(倒)不如……」（yǔqí……(dǎo) bùrú……）は、二者択一の場面で比較衡量を行い、一方を退けて他方を選択する選択複文の代表的な呼応表現です。「与其」が導く前節には、話し手が「得策ではない」「無駄が多い」「不本意である」と判断した選択肢が置かれ、「不如」または「倒不如」（副詞「倒」が添えられると『かえってそのほうが』という語感が強まります）が導く後節には、より適切で有益だと考える選択肢が提示されます。日本語の「〜するよりはむしろ〜したほうがよい」「〜するくらいならいっそ〜したほうがましだ」に相当します。",
+    "formation": "与其 ＋ 放棄する選択肢 ，(倒)不如 ＋ 採用する選択肢",
+    "examples": []
   },
   "zh_总之_588": {
-    "title": "总之 (In short)",
-    "shortExplanation": "In short",
-    "longExplanation": "In short. Pinyin: zǒngzhī",
-    "formation": "zǒngzhī"
+    "title": "总之（接続詞：要するに・とにかく・詰まるところ・総じて言えば）",
+    "shortExplanation": "前文で並べ立てた複数の項目や詳細な説明を総括し、一言でまとめたり最終的な要点を提示したりする接続詞です（「要するに」「とにかく」「総じて」）。",
+    "longExplanation": "「总之」（zǒngzhī）は、複数の例示、細かな状況説明、あるいは長々と述べた理由を受けて、話の要点を手短に総括するために用いられる接続詞です。文頭または主語の前に置かれ、細部にとらわれずに全体としての結論や話し手の一貫した意志・希望を強調する働きをします（例：上海、南京、杭州など複数の行き先を挙げた後、「总之」で『要するに南へ行きたい』と意図を要約する）。日本語の「要するに」「とにかく」「詰まるところ」「手短に言えば」に相当します。",
+    "formation": "具体例の列挙 / 事情の説明 …… 总之 ＋ 要約節 / 結論",
+    "examples": [
+      {
+        "translation": "上海、南京、杭州に行きたい……要するに南方のほうへぶらりと出かけたいんだ。"
+      }
+    ]
   },
   "zh_V过_589": {
-    "title": "V 过 (V away)",
-    "shortExplanation": "V away",
-    "longExplanation": "V away. Pinyin: V guò",
-    "formation": "V guò"
+    "title": "動詞 ＋ 过（方向補語の派生用法：向きを変える・背ける・振り向く）",
+    "shortExplanation": "動作によって体や身体の部位、あるいは物体が向きを変えたり、反対側を向いたりすることを表す方向補語の用法です（「〜して向きを変える」「背ける」）。",
+    "longExplanation": "「过」（guò）は本来の「通り過ぎる」という意味から発展し、身体や視線の方向を大きく変える動作を表す方向補語（または派生用法）として用いられます。「转」（回す・向き直る）、「扭」（ひねる・ねじる）、「翻」（ひっくり返す）などの動詞と結びつき、「转过身」（背を向ける / 振り向く）、「扭过头」（プイと横を向く / 顔を背ける）のように使われます。身体の一部を表す目的語（身、頭、顔など）は補語の後ろまたは間に置かれます。日本語の「（体を）反転させる」「背ける」「振り向く」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 过 ＋ 身体部位の目的語（身 / 头 / 脸）",
+    "examples": [
+      {
+        "translation": "彼はくるりと背を向け、一言も言葉を発しなかった。"
+      }
+    ]
   },
   "zh_V过_590": {
-    "title": "V 过 (V over, V by)",
-    "shortExplanation": "V over, V by",
-    "longExplanation": "V over, V by. Pinyin: V guò",
-    "formation": "V guò"
+    "title": "動詞 ＋ 过（方向補語の派生用法：一瞬よぎる・かすめる・ひらめく・通り過ぎる）",
+    "shortExplanation": "光や影、思いつきや感情などが、目の前や頭の中を一瞬のうちにすっと通り過ぎる・かすめていくさまを表します（「よぎる」「ひらめく」「かすめる」）。",
+    "longExplanation": "「过」（guò）は動作が素早く空間や意識の表面を通り抜けていくさまを表す方向補語としても機能します。特に「闪」（ひらめく・ピカッと光る）、「掠」（かすめる）、「划」（筋を引いて走る）などの動詞と結合し、「脑海里闪过……」（頭の中に〜がひらめいた / よぎった）、「眼前掠过……」（目の前を〜がかすめた）のように、念頭や視界を一瞬にして通り過ぎる思考・光影・表情などを描写する文学的・感覚的な表現に多用されます。日本語の「（脳裏を）かすめる」「よぎる」「ひらめく」に相当します。",
+    "formation": "場所（頭の中 / 目の前） ＋ 動詞 ＋ 过（＋ 了） ＋ 目的語（考え / 光影 / 感情）",
+    "examples": [
+      {
+        "translation": "わずか数分の間に、私の頭の中にはたくさんの考えがひらめいた。"
+      }
+    ]
   },
   "zh_V开_591": {
-    "title": "V 开 (V open)",
-    "shortExplanation": "V open",
-    "longExplanation": "V open. Pinyin: V kāi",
-    "formation": "V kāi"
+    "title": "動詞 ＋ 开（結果補語・方向補語：広げる・開く・離す・解く）",
+    "shortExplanation": "動作によって物体や身体が閉じた状態から大きく開いたり、広がったり、離れたりすることを表す補語です（「広げる」「開く」「離す」）。",
+    "longExplanation": "「开」（kāi）は補語として用いられる際、閉じていたものが大きく開くことや、固まっていたものが離れて広がる状態を表します。「张」（張る・広げる）、「打」（開ける）、「拉」（引く）、「睁」（目を見開く）などの動詞の後ろに付き、「张开手臂」（腕を大きく広げる）、「睁开眼睛」（パッと目を開ける）、「拉开窗帘」（カーテンを開け放つ）のように、身体の一部や対象物を閉じた状態から広々とした開放状態へ移行させる動作を生き生きと描き出します。日本語の「（腕を）広げる」「（目を）開く」「（間隔を）離す」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 开（＋ 目的語 / 身体部位）",
+    "examples": [
+      {
+        "translation": "サルは突然立ち上がると、両腕を大きく広げて飼育員を抱きしめた。"
+      }
+    ]
   },
   "zh_赶快_592": {
-    "title": "赶快 (quickly, urgently)",
-    "shortExplanation": "quickly, urgently",
-    "longExplanation": "quickly, urgently. Pinyin: gǎnkuài",
-    "formation": "gǎnkuài"
+    "title": "赶快（副詞：急いで・大急ぎで・早速・すばやく・一刻も早く）",
+    "shortExplanation": "時間を無駄にせず、一刻を争って大急ぎで行動を起こすことを表す副詞です（「急いで」「早速」「大急ぎで」）。",
+    "longExplanation": "「赶快」（gǎnkuài）は「時間を急ぐ、間に合わせる」という意味の「赶」と「速い」の「快」が組み合わさった副詞で、述語動詞の前に置かれます。期限が迫っている、急を要する事態が生じたなどの理由から、遅れをとらないように時間を惜しんで「一刻も早く」「大急ぎで」行動に移すことを促したり表明したりします。日常会話でも「赶快走吧」（早く行こう）、「得赶快……」（急いで〜しなければならない）のように非常によく使われます。日本語の「急いで」「大急ぎで」「一刻も早く」「早速」に相当します。",
+    "formation": "主語 ＋（得 / 要 ＋）赶快 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "来月引っ越さなければならないので、急いで部屋を探さなければならない。"
+      }
+    ]
   },
   "zh_片_593": {
-    "title": "片 (a piece of)",
-    "shortExplanation": "a piece of",
-    "longExplanation": "a piece of. Pinyin: piàn",
-    "formation": "piàn"
+    "title": "片（量詞：一片・ひとかたまり・（雲や葉の）ひとかけら・一面）",
+    "shortExplanation": "薄く平たい形状の物や、空に浮かぶひとかたまりの自然景観（雲など）を数える量詞です（「一片」「ひとかたまり」「〜枚」）。",
+    "longExplanation": "「片」（piàn）は物の形状や状態に着目した代表的な量詞です。薄くて平らな小片（例：「一片树叶」一枚の木の葉、「一片面包」スライス1枚のパン、「一片药」錠剤1錠）を数えるほか、空間にひとかたまりとなって漂う自然物（例：「一片云」ひとひらの雲 / ぽっかり浮かぶ雲）を指すのにも用いられます。しばしば「一片」の形で使われ、日本語の「ひとひら」「一片」「ひとかたまり」「一枚」に相当します。",
+    "formation": "数詞（一） ＋ 片 ＋ 名詞（雲 / 葉 / パン / 錠剤など）",
+    "examples": [
+      {
+        "translation": "空に一片の雲がぽっかりと浮かんでいる。"
+      }
+    ]
   },
   "zh_片_594": {
-    "title": "片 (a wave of)",
-    "shortExplanation": "a wave of",
-    "longExplanation": "a wave of. Pinyin: piàn",
-    "formation": "piàn"
+    "title": "片（量詞：一面の・ひとしきりの・わき起こる・一斉に響き渡る〜）",
+    "shortExplanation": "歓声や拍手が一斉に空間全体に響き渡るさま、または広範囲に広がる景色や立ち込める雰囲気を表す量詞です（「ひとしきりの」「一面の」）。",
+    "longExplanation": "「片」（piàn）は抽象化・空間的拡張を遂げた用法として、特定の空間に満ち渡る音響響鳴、広大に広がる情景、あるいは濃厚な感情・雰囲気を表す量詞として極めて豊かに機能します。特に「一片欢呼声」（わき起こる大歓声）、「一片掌声」（鳴り止まぬ満場の拍手）のように、多くの人々から一斉に湧き上がって空間を支配する音声を修飾するのに多用されます。また「一片汪洋」（見渡す限りの大海原）や「一片真心」（純真な真心）のように景色や心情にも使われます。日本語の「ひとしきりの」「満場の」「一面の」に相当します。",
+    "formation": "動詞 ＋ 一片 ＋ 名詞（歓声 / 拍手 / 景色 / 真心など）",
+    "examples": [
+      {
+        "translation": "クラスメートたちはそれを聞いて、ひとしきり熱狂的な歓声をあげた。"
+      }
+    ]
   },
   "zh_根本negative_595": {
-    "title": "根本 + negative (at all)",
-    "shortExplanation": "at all",
-    "longExplanation": "at all. Pinyin: gēnběn + negative",
-    "formation": "gēnběn + negative"
+    "title": "根本 ＋ 否定（副詞：まったく〜ない・全然〜ない・そもそも〜ない）",
+    "shortExplanation": "否定詞（不、没など）の前に置いて否定の語気を極限まで強め、「根底から・端から全く〜ない」と全否定することを表します（「全然〜ない」「そもそも〜ない」）。",
+    "longExplanation": "「根本」（gēnběn）が否定詞（不、没など）の直前に置かれると、否定の度合いを徹底的に高める強調副詞となります。「根本不……」「根本没……」「根本看不懂」などの形で用いられ、物事の根底や最初からそのような事実・能力がまったく存在しないことをきっぱりと断言します。強い不満、困惑、あるいは揺るぎない事実の表明など、感情が込められる文脈で非常によく登場します。日本語の「まったく〜ない」「全然〜ない」「そもそも〜ない」「端から〜しない」に相当します。",
+    "formation": "主語 ＋ 根本 ＋（就 ＋）否定詞（不 / 没 / 読めないなど） ＋ 述語",
+    "examples": [
+      {
+        "translation": "私は自分が試験問題をまるっきり読み解けないことに気がついた。"
+      }
+    ]
   },
   "zh_根本_596": {
-    "title": "根本 (root cause, fundamental)",
-    "shortExplanation": "root cause, fundamental",
-    "longExplanation": "root cause, fundamental. Pinyin: gēnběn",
-    "formation": "gēnběn"
+    "title": "根本（名詞：根底・根本・基礎・土台・本質）",
+    "shortExplanation": "事物の成り立ちや発展を根底で支える最も主要な根源・基礎・本質を表す名詞です（「根本」「土台」「根底」）。",
+    "longExplanation": "名詞としての「根本」（gēnběn）は、植物の「根」と「幹の根元（本）」に由来し、事物の存在や成り立ちを根本で支える最も不可欠で重要な礎・大黒柱・本質を指します。国家、社会、道徳、学術などの根幹を論じる文脈でよく用いられ、「教育是国家的根本」（教育は国家の根本である）のように「是」の目的語（述語名詞）として機能したり、「忘掉根本」（根本を忘れる）、「抓住根本」（本質・根本をつかむ）のように動詞の目的語になったりします。日本語の「根本」「根底」「土台」「礎（いしずえ）」に相当します。",
+    "formation": "主語 ＋ 是 ＋（連体修飾語 ＋）根本（または 動詞 ＋ 根本）",
+    "examples": [
+      {
+        "translation": "教育は国家の根本（礎）である。"
+      }
+    ]
   },
   "zh_根本肯定_597": {
-    "title": "根本 肯定 (completely)",
-    "shortExplanation": "completely",
-    "longExplanation": "completely. Pinyin: gēnběn kěndìng",
-    "formation": "gēnběn kěndìng"
+    "title": "根本（副詞の肯定用法：根本的に・抜本的に・徹底的に・根底から）",
+    "shortExplanation": "肯定文の動詞の前に置いて、小手先の対応ではなく問題の根底・根源から抜本的かつ徹底的に解決・変革することを表します（「根本的に」「徹底して」）。",
+    "longExplanation": "副詞「根本」（gēnběn）が肯定文において用いられる場合、「根本解决」（根本的に解決する）、「根本改变」（抜本的に変わる）、「根本好转」（根底から好転する）のように、事態の好転や解決を表す動詞を修飾します。単なる一時しのぎや表面的な手直しではなく、問題の真の原因や根源そのものにメスを入れ、徹底的・永続的に決着がついたこと、あるいは本質的な変革が達成されたことを力強く言い表します。日本語の「根本的に」「抜本的に」「徹底して」「根底から」に相当します。",
+    "formation": "主語 ＋（已经 ＋）根本 ＋ 動詞（解决 / 改变 / 消除など） ＋ 了",
+    "examples": [
+      {
+        "translation": "事態はすでに根本から抜本的に解決された。"
+      }
+    ]
   },
   "zh_根本就是_598": {
-    "title": "根本(就)是 (simply)",
-    "shortExplanation": "simply",
-    "longExplanation": "simply. Pinyin: gēnběn( jiù) shì",
-    "formation": "gēnběn( jiù) shì"
+    "title": "根本(就)是（強調連語：そもそも〜だ・まったくもって〜だ・初めから〜そのものだ）",
+    "shortExplanation": "事態や相手の言動の本質・真意をきっぱりと見抜き、「最初からまったく〜そのものだ」「紛れもなく〜だ」と断定する強調表現です（「そもそも〜だ」「まったく〜だ」）。",
+    "longExplanation": "「根本(就)是」（gēnběn (jiù) shì）は、副詞「根本」、語気を強める「就」、判断動詞「是」が一体となった強調表現です。相手の表面的な言い訳や偽りを排し、その底にある真の動機や事態の赤裸々な本質を指し示して、「要するに最初から〜なのだ」「まったくもって〜にほかならない」と強く決めつける際に用いられます。話し手の怒り、あきれ、あるいは鋭い洞察が込められることが多く、対人関係の摩擦や議論の場で頻繁に現れます。日本語の「そもそも〜なのだ」「端から〜にすぎない」「まったくもって〜そのものだ」に相当します。",
+    "formation": "主語 ＋ 根本(就)是 ＋（在 ＋）述語 / 動詞句 / 名詞句",
+    "examples": [
+      {
+        "translation": "あいつは最初から意図的に私たちに言いがかりをつけて困らせているにすぎない。"
+      }
+    ]
   },
   "zh_除非否则_599": {
-    "title": "除非……否则…… (unless)",
-    "shortExplanation": "unless",
-    "longExplanation": "unless. Pinyin: chúfēi…… fǒuzé……",
-    "formation": "chúfēi…… fǒuzé……"
+    "title": "除非……否则……（呼応接続詞：〜でない限り……さもなければ〜だ・〜する場合を除いては……そうでなければ〜だ）",
+    "shortExplanation": "前節で唯一の必要不可欠な前提条件を提示し、それが満たされない場合は後節の望ましくない結果・事態に至ることを表す構文です（「〜でない限り、さもなければ〜だ」）。",
+    "longExplanation": "「除非……否则……」（chúfēi…… fǒuzé……）は、必要条件を表す緊密な呼応構文です。「除非」が導く前節では「この条件を満たす以外に道はない」という唯一絶対の前提条件や打開策が示され、「否则」（さもなければ、そうでなければ）が導く後節では、その前提が満たされなかった場合に必然的に生じる不都合・失敗・不可能といったマイナスの結果が提示されます。交渉、締め切りの通告、契約条件など、明確な境界線を引いて警告・確認する場面で極めて有効に機能します。日本語の「〜でない限り、さもなければ……」「〜する場合を除いては、そうでなければ……」に相当します。",
+    "formation": "除非 ＋ 唯一の必須条件 ，否则 ＋ 回避できないマイナス結果",
+    "examples": [
+      {
+        "translation": "もう1週間猶予をくれない限り、私たちは任務を完遂することができません。"
+      }
+    ]
   },
   "zh_除非才_600": {
-    "title": "(除非)……才…… (unless)",
-    "shortExplanation": "unless",
-    "longExplanation": "unless. Pinyin: ( chúfēi)…… cái……",
-    "formation": "( chúfēi)…… cái……"
+    "title": "(除非)……才……（条件接続表現：〜してこそ初めて〜する・〜してやっと〜できる）",
+    "shortExplanation": "唯一無二の必須条件を提示し、その条件を満たしてこそ初めて結果の事態が実現することを表します（「〜してこそ初めて」「〜してやっと」）。",
+    "longExplanation": "「(除非)……才……」（(chúfēi)…… cái……）は、「只有……才……」と同様に、ある事態が成立するための唯一の前提条件を導く条件複文の構文です。前節の「除非」は省かれることもありますが、後節の副詞「才」は必須であり、「その条件が揃って初めて／やっと〜できる」という強い限定のニュアンスを表します。日本語の「〜してこそ初めて〜する」「〜してやっと〜できる」「〜でなければ〜しない」に相当します。",
+    "formation": "(除非 ＋) 唯一の条件 ，主語 ＋ 才 ＋ 動詞句 / 結果",
+    "examples": [
+      {
+        "translation": "（君が）私の条件をのんでくれてこそ初めて、君に教えてあげよう。"
+      }
+    ]
   },
   "zh_除非_601": {
-    "title": "除非 (except)",
-    "shortExplanation": "except",
-    "longExplanation": "except. Pinyin: chúfēi",
-    "formation": "chúfēi"
+    "title": "除非（前置詞的用法：〜を除いては・〜以外には）",
+    "shortExplanation": "唯一の例外となる人や事物を提示し、「その人／事物を除いては（誰も〜できない・どれも〜ではない）」という全面否定と呼応します（「〜を除いては」「〜以外には」）。",
+    "longExplanation": "「除非」（chúfēi）は「除了……以外」と同様に、名詞や人名などの前に置かれて唯一の例外を抜き出す働きをします。後続の文には「没人」（誰も〜ない）、「都不」（どれも〜ない）といった全面否定の表現が呼応し、「その例外となる対象を除いては、ほかに誰も〜できる者はいない」と強く主張する文脈で用いられます。日本語の「〜を除いては」「〜以外には（誰も〜ない）」に相当します。",
+    "formation": "話題 / 主語 ，除非 ＋ 例外となる対象 ，否定表現（没人 / 都不） ＋ 述語",
+    "examples": [
+      {
+        "translation": "この手の機械は、李陽を除いては誰もきちんと修理できない。"
+      }
+    ]
   },
   "zh_V1得O直V2_602": {
-    "title": "V1 得 (O) 直 V2 (V1 O so much that O V2)",
-    "shortExplanation": "V1 O so much that O V2",
-    "longExplanation": "V1 O so much that O V2. Pinyin: V1 dé (O) zhí V2",
-    "formation": "V1 dé (O) zhí V2"
+    "title": "動詞1 ＋ 得（＋ 目的語 ＋）直 ＋ 動詞2（様態・程度補語：あまりに〜してしきりに〜する・〜のあまりずっと〜している）",
+    "shortExplanation": "動作1や感情の度合いが極限に達した結果、その反動として動作2をしきりに・絶え間なく行い続けるさまを表します（「あまりに〜してしきりに〜する」）。",
+    "longExplanation": "「動詞1 ＋ 得（＋ 目的語 ＋）直 ＋ 動詞2」は、感情や生理的感覚の高まりを表す程度補語の慣用表現です。動詞1（「气」「乐」「急」「疼」「累」など心理や感覚を表す動詞・形容詞）が著しい高まりに達し、副詞「直」（絶え間なく、ずっと、しきりに）に修飾された動詞2（「发抖」震える、「流汗」汗を流す、「喘气」あえぐなど抑えられない身体的反応）を連続して引き起こす様子を生き生きと活写します。目的語として人称代名詞などを挟むこともあります。日本語の「あまりに〜でしきりに〜する」「〜のあまりひっきりなしに〜している」に相当します。",
+    "formation": "主語 ＋ 動詞 / 形容詞1 ＋ 得（＋ 目的語 ＋）直 ＋ 動詞2",
+    "examples": [
+      {
+        "translation": "父親は息子が家を売ったと聞いて、あまりの怒りに（体が）ガタガタと震え続けた。"
+      }
+    ]
   },
   "zh_直到_603": {
-    "title": "直到 (untill)",
-    "shortExplanation": "untill",
-    "longExplanation": "untill. Pinyin: zhídào",
-    "formation": "zhídào"
+    "title": "直到（介詞：〜に至るまで・〜になってやっと・〜までずっと）",
+    "shortExplanation": "時間や空間の限度を表し、ある事態や心理状態がその時点までずっと継続していること、またはその時点になってようやく判明したことを表します（「〜に至るまで」「〜になってようやく」）。",
+    "longExplanation": "「直到」（zhídào）は、「直」（まっすぐ、途切れず）と「到」（至る）からなる介詞（前置詞）で、時間詞や出来事を表す節の前に置かれて時間の到達点や継続の限界を示します。文頭に置かれて「〜に至るまでずっと……である」と状態の持続を強調したり、後続節の「才」と呼応して「〜になって初めて……した」と事態の遅延・遅い実現を表したりします。日本語の「〜に至るまで（ずっと）」「〜になってやっと」「〜の時まで」に相当します。",
+    "formation": "直到 ＋ 時間 / 限界時点 ，主語 ＋（也 / 还 / 才 ＋）述語",
+    "examples": [
+      {
+        "translation": "今日に至るまで、私は彼があの時なぜあんなに激怒したのか理解できない。"
+      }
+    ]
   },
   "zh_反正_604": {
-    "title": "反正 (anyway)",
-    "shortExplanation": "anyway",
-    "longExplanation": "anyway. Pinyin: fǎnzhèng",
-    "formation": "fǎnzhèng"
+    "title": "反正（副詞：いずれにせよ・どうせ・どっちみち・どう転んでも）",
+    "shortExplanation": "前提や条件、他人の意向がどうであろうと、結果や自分の意志・客観的事実には微塵も変わりがないことを強調する副詞です（「いずれにせよ」「どうせ」「どっちみち」）。",
+    "longExplanation": "「反正」（fǎnzhèng）は表（正）と裏（反）の双方を含意し、「どちらに転んでも結局は同じだ」という強い確信や決意を表明する副詞です。「不管……」「无论……」（〜であろうと）などの無条件複文の後続節で多用され、外的な状況や他人の選択がどうであれ、自分の態度や既定の事実はいささかも揺るがないことを主張します。日本語の「いずれにせよ」「どうせ」「どっちみち」「どう転んでも」に相当します。",
+    "formation": "（不管 / 无论 ＋ 状況・条件 …… ，）反正 ＋ 確固たる意志 / 揺るぎない結論",
+    "examples": [
+      {
+        "translation": "あなたがたの誰が行こうとも、どっちみち私は行きません。"
+      }
+    ]
   },
   "zh_点_605": {
-    "title": "# 点 ## (# point ##)",
-    "shortExplanation": "# point ##",
-    "longExplanation": "# point ##. Pinyin: # diǎn ##",
-    "formation": "# diǎn ##"
+    "title": "数詞 ＋ 点 ＋ 数詞（小数の読み方：〜点〜）",
+    "shortExplanation": "中国語における小数の読み方です。「点」（diǎn）が小数点（ポイント）に相当し、小数点以下は数字を1桁ずつ読み上げます（「〜点〜」）。",
+    "longExplanation": "中国語で小数を表す際は、「整数部分の数詞 ＋ 点（diǎn） ＋ 小数点以下の数字」の語順で表記・発音します。「点」は小数点（ポイント）を表します。読み方の規則として、小数点の前の整数部分は通常の整数の数え方（三、二十五など）で読み、小数点の後の数字は桁（十、百など）をつけずに1桁ずつ数字そのものの音（yī, èr, sān...）で順に読み上げます（例：「三点一四」sān diǎn yī sì ＝ 3.14、「零点五」líng diǎn wǔ ＝ 0.5）。日本語の「〜点〜（さん・てん・いち・よん）」に相当します。",
+    "formation": "整数部の数詞 ＋ 点 ＋ 小数部の一桁ごとの数字",
+    "examples": [
+      {
+        "translation": "3.14（さん・てん・いち・よん）。"
+      }
+    ]
   },
   "zh_1分之2_606": {
-    "title": "#1 分之 #2 (#2 #1-th (fraction))",
-    "shortExplanation": "#2 #1-th (fraction)",
-    "longExplanation": "#2 #1-th (fraction). Pinyin: #1 fēnzhī #2",
-    "formation": "#1 fēnzhī #2"
+    "title": "分母 ＋ 分之 ＋ 分子（分数の表現法：〜分の〜）",
+    "shortExplanation": "中国語における分数の読み方です。「分母 ＋ 分之 ＋ 分子」の語順で表し、日本語の「〜分の〜」と語順が完全に一致します。",
+    "longExplanation": "中国語で分数を表す際は、「分母の数詞 ＋ 分之（fēnzhī） ＋ 分子の数詞」という語順をとります。語源的には古典中国語の「〜（分母）に分かつことの〜（分子）」に由来し、全体をいくつに等分したうちのいくつに当たるかを示します。日本語の「5分の1（5ぶんの1）」と全く同じ語順（分母が先、分子が後）になるため、直感的に理解しやすい表現です（例：「五分之一」wǔ fēn zhī yī ＝ 5分の1、「三分之二」sān fēn zhī èr ＝ 3分の2）。",
+    "formation": "分母の数詞 ＋ 分之 ＋ 分子の数詞",
+    "examples": [
+      {
+        "translation": "5分の1（1/5）。"
+      }
+    ]
   },
   "zh_百分之_607": {
-    "title": "百分之 # (# percent)",
-    "shortExplanation": "# percent",
-    "longExplanation": "# percent. Pinyin: bǎifēnzhī #",
-    "formation": "bǎifēnzhī #"
+    "title": "百分之 ＋ 数詞（パーセント・百分率の表現法：〜パーセント）",
+    "shortExplanation": "中国語におけるパーセント（％・百分率）の表し方です。「百分之 ＋ 数字」の語順で表現します（「〜パーセント」）。",
+    "longExplanation": "「百分之 ＋ 数詞」（bǎifēnzhī #）は、パーセント（百分率、％）を表す中国語の定型表現です。分数の基本構文「分母 ＋ 分之 ＋ 分子」において分母を「百」に固定した形であり、「100分の〜」という意味を表します。日本語では「9パーセント」「50パーセント」のように数字を先に言いますが、中国語では必ず「百分之」を先に発音し、その後に具体的な数値を続けます（例：「百分之九」bǎi fēn zhī jiǔ ＝ 9％、「百分之五十」 ＝ 50％、「百分之百」 ＝ 100％）。日本語の「〜パーセント（％）」に相当します。",
+    "formation": "百分之 ＋ 数値の数詞",
+    "examples": [
+      {
+        "translation": "9パーセント（9%）。"
+      }
+    ]
   },
   "zh_甲乙丙丁_608": {
-    "title": "甲乙丙丁 (A, B, C, D (series))",
-    "shortExplanation": "A, B, C, D (series)",
-    "longExplanation": "A, B, C, D (series). Pinyin: jiǎyǐ bǐng dīng",
-    "formation": "jiǎyǐ bǐng dīng"
+    "title": "甲・乙・丙・丁（順序・代名記号：甲・乙・丙・丁・当事者A・B・第1・第2）",
+    "shortExplanation": "十干の最初の4文字を用いて、順序、等級、または契約書における当事者（甲・乙・丙・丁、A・B・C・D）を表す表現です。",
+    "longExplanation": "「甲、乙、丙、丁」（jiǎ, yǐ, bǐng, dīng）は、古代の十干（天干）の最初の4つに由来し、現代中国語でもアルファベットのA、B、C、Dと同様に、順序、等級、あるいは契約当事者の仮称として広く用いられます。最も代表的なのがビジネス契約書や法的文書における呼称で、「甲方」（jiǎfāng ＝ 甲・発注者側・第1当事者）、「乙方」（yǐfāng ＝ 乙・受注者側・第2当事者）のように使われます。また、等級（甲等、乙等）や選択肢の記号、例文中の不特定の人物A、Bを表す際にも用いられます。日本語の「甲・乙・丙・丁」「A社・B社」「第1・第2」に相当します。",
+    "formation": "甲 / 乙 / 丙 / 丁（＋ 方 / 等 / 类）",
+    "examples": [
+      {
+        "translation": "乙（B側）が同意すれば、甲（A側）は前倒しで製品を乙に引き渡すことができる。"
+      }
+    ]
   },
   "zh_顺着_609": {
-    "title": "顺(着) (along)",
-    "shortExplanation": "along",
-    "longExplanation": "along. Pinyin: shùn( zhe)",
-    "formation": "shùn( zhe)"
+    "title": "顺(着)（介詞：〜に沿って・〜づたいに・〜に従って）",
+    "shortExplanation": "道、川、表面、方向などを表す名詞を導き、動作や流動がその軌道に沿って進むさまを表します（「〜に沿って」「〜づたいに」）。",
+    "longExplanation": "「顺(着)」（shùn(zhe))は、進路・経路や追従する方向を示す介詞（前置詞）です。道や川、壁、身体の表面（頬、腕など）を表す名詞を伴い、「〜に沿って」「〜づたいに」「〜の通りに」動作が移動することを表します（例：「顺着这条街」この通りに沿って、「汗水顺着脸往下流」汗が頬を伝って流れ落ちる）。また、具象的な空間のみならず、「顺着他的话」彼の話の成り行きに従って、「顺着思路」思考の流れに沿って、のように抽象的な文脈でも用いられます。日本語の「〜に沿って」「〜づたいに」「〜を伝って」に相当します。",
+    "formation": "主語 ＋ 顺(着) ＋ 経路 / 表面 / 方向 ＋ 移動動詞",
+    "examples": [
+      {
+        "translation": "汗が彼の頬を伝って下へと流れ落ちた。"
+      }
+    ]
   },
   "zh_自_610": {
-    "title": "自 (from)",
-    "shortExplanation": "from",
-    "longExplanation": "from. Pinyin: zì",
-    "formation": "zì"
+    "title": "自（書面語介詞：〜より・〜から）",
+    "shortExplanation": "起点（空間・時間・範囲）を表す格式高い書面語の介詞で、口語の「从」に相当します（「〜より」「〜から」）。",
+    "longExplanation": "「自」（zì）は、時間・空間・範囲の出発点や拠って立つ起点を導く書面語介詞（前置詞）です。現代中国語の日常会話で使われる「从」（cóng）の文語表現に当たり、科学論文、ニュース報道、公文書などで好んで用いられます。空間表現では「自……向……」（〜より〜へ向けて）、「自……至……」（〜より〜に至るまで）のように目的地点を示す語と美しく対句をなすことが多く、時間表現では「自古以来」（古より）、「自……起」（〜より）のように始点を示します。日本語の「〜より」「〜から」に相当します。",
+    "formation": "自 ＋ 起点（場所 / 時間） （＋ 向 / 至 ＋ 到達点） ＋ 述語",
+    "examples": [
+      {
+        "translation": "鳥類は、地球の北から南へと向かう磁極の磁力線を感知することができる。"
+      }
+    ]
   },
   "zh_把V着_611": {
-    "title": "把……V 着 ((imperative))",
-    "shortExplanation": "(imperative)",
-    "longExplanation": "(imperative). Pinyin: bǎ……V zhe",
-    "formation": "bǎ……V zhe"
+    "title": "把 ＋ 目的語 ＋ 動詞 ＋ 着（把構文の命令・指示表現：〜を〜しておきなさい・〜を持って行きなさい）",
+    "shortExplanation": "処置文（把構文）に持続の助詞「着」が結びつき、相手に物を持参させたり、ある状態を維持させたりする指示・助言を表します（「〜を持っていなさい」「〜しておきなさい」）。",
+    "longExplanation": "「把 ＋ 目的語 ＋ 動詞 ＋ 着」（bǎ……V zhe）は、対象をどう扱うかを表す把構文に、動作・状態の持続を表すアスペクト助詞「着」を付加した構文です。日常会話の命令文やアドバイスで非常によく用いられ、話し手が聞き手に対して「物を持参した状態を保つ」「物を手に取っておく」といった状態の維持を指示・催促します（例：「你把书带着」本を持って行きなさい、「把雨伞拿着」傘を持っていなさい、「把门开着」ドアを開けたままにしておきなさい）。日本語の「〜を持って行きなさい」「〜を〜しておきなさい」に相当します。",
+    "formation": "主語 ＋ 把 ＋ 目的語 ＋ 動詞 ＋ 着",
+    "examples": [
+      {
+        "translation": "本を持って行きなさい（本を携帯しておきなさい）。"
+      }
+    ]
   },
   "zh_把O给V了_612": {
-    "title": "把 O (给) V 了 (have V’ed the O)",
-    "shortExplanation": "have V’ed the O",
-    "longExplanation": "have V’ed the O. Pinyin: bǎ O ( gěi) V le",
-    "formation": "bǎ O ( gěi) V le"
+    "title": "把 ＋ 目的語 ＋（给 ＋）動詞 ＋ 了（把構文の強調用法：〜をすっかり〜してしまった・うっかり〜した）",
+    "shortExplanation": "把構文の動詞の前に助詞「给」を挿入し、処置の語気を強めて「完全に〜してしまった」「うっかり〜してしまった」という完了や不本意なニュアンスを表します（「すっかり〜した」「うっかり〜してしまった」）。",
+    "longExplanation": "「把 ＋ 目的語 ＋（给 ＋）動詞 ＋ 了」は、口語の把構文（処置文）において動詞の直前に「给」を挟み込むことで処置の語気を強化する構文です。ここでの「给」は「与える」という意味ではなく、動作が徹底的になされたこと、あるいはうっかり不本意な結果（過失や忘却など）を引き起こしてしまったことを強調する強意助詞として機能します（例：「把这事给忘了」そのことをすっかり忘れてしまった、「把钥匙给丢了」鍵をなくしてしまった）。「给」を添えることで話し手の悔恨、驚き、あるいはスッキリやり遂げたという感情が鮮明に伝わります。日本語の「すっかり〜してしまった」「うっかり〜してしまった」に相当します。",
+    "formation": "主語 ＋ 把 ＋ 目的語 ＋（给 ＋）動詞 ＋ 了",
+    "examples": [
+      {
+        "translation": "私はこのことを（すっかり）忘れてしまっていました。"
+      }
+    ]
   },
   "zh_给_613": {
-    "title": "给 ((See 被))",
-    "shortExplanation": "(See 被)",
-    "longExplanation": "(See 被). Pinyin: gěi",
-    "formation": "gěi"
+    "title": "给（受身の介詞：〜に〜される・〜に〜をやられる・被に相当）",
+    "shortExplanation": "口語において受動文（受け身構文）を導く介詞として用いられ、「被」「让」「叫」と同様に動作の行為者（被害の原因）を導きます（「〜に〜される」）。",
+    "longExplanation": "「给」（gěi）は現代中国語の日常口語において、「被」（bèi）、「让」（ràng）、「叫」（jiào）と並ぶ受動の介詞（前置詞）として非常に広く用いられます。主語には動作の受け手（被害者や被影響物）が立ち、「给 ＋ 動作の主体（加害者・原因） ＋ 動詞 ＋ その他（補語や「了」）」の語順をとります。多くの場合、盗難、損害、故障など話し手にとって不快・不利益・不本意な事態に見舞われた際に用いられ、被害感情を生々しく訴えかけます（例：「手机给小偷偷走了」携帯を泥棒に盗まれた）。日本語の「〜に〜される」「〜に〜をやられる」に相当します。",
+    "formation": "主語（被害対象） ＋ 给 ＋ 行為者 ＋ 動詞 ＋ 補語 / 了",
+    "examples": [
+      {
+        "translation": "私の携帯電話は泥棒に盗まれてしまった。"
+      }
+    ]
   },
   "zh_何不_614": {
-    "title": "何不 (why not)",
-    "shortExplanation": "why not",
-    "longExplanation": "why not. Pinyin: hébù",
-    "formation": "hébù"
+    "title": "何不（反語的副詞句：〜したらどうか・どうして〜しないのか・〜するに越したことはない）",
+    "shortExplanation": "反語の形式を用いて前向きな提案や勧誘、アドバイスを行う表現です（「〜したらどうか」「どうして〜しないのか」）。",
+    "longExplanation": "「何不」（hébù）は古代漢語に由来する表現で、「何」（どうして・なぜ）と否定詞「不」（〜しない）が合わさった反語的副詞句です。述語動詞の前に置かれ、文末には語気助詞「呢」を伴うことがよくあります。形式上は「なぜ〜しないのか」という反語疑問文の形をとりますが、実質的には「ぜひ〜してみてはどうか」「〜するのが最善の策だ」という積極的な提案、助言、勧誘のニュアンスを表します。口語でも少し改まった響きや知的・洗練されたニュアンスを添えることができます。日本語の「〜したらどうですか」「どうして〜しないのですか」「〜してみてはいかがですか」に相当します。",
+    "formation": "状況・理由 ，（主語 ＋）何不 ＋ 提案する動詞句（＋ 呢）？",
+    "examples": [
+      {
+        "translation": "こんなに天気がいいのだから、外へ遊びに出かけたらどうですか。"
+      }
+    ]
   },
   "zh_何尝_615": {
-    "title": "何尝 (why wouldn’t)",
-    "shortExplanation": "why wouldn’t",
-    "longExplanation": "why wouldn’t. Pinyin: hécháng",
-    "formation": "hécháng"
+    "title": "何尝（反語副詞：どうして〜だろうか・〜しないわけではない・かつて〜したことがあろうか）",
+    "shortExplanation": "反語文において強い否定や肯定（「何尝不 / 没」の二重否定）を表し、事実は外見や想像とは正反対であることを強調する副詞です（「どうして〜だろうか」「決して〜ないわけではない」）。",
+    "longExplanation": "「何尝」（hécháng）は、反語の語気を通じて事実を力強く反駁・主張する副詞です。文末の語気助詞「呢」としばしば呼応します。用法には大きく分けて2通りあります。① 否定形を伴う「何尝不 / 何尝没」の形では、二重否定によって強い肯定の意を表します（例：「我何尝不想……」＝『私が買いたくないわけがあるだろうか、いや本当はずっと買いたいのだ』と、願望を抱きつつも境遇ゆえに叶わない悔しさをにじませる）；② 肯定形を受ける場合は、「誰がそんなことを言ったというのか（決して言っていない）」のように全否定の反語となります。日本語の「どうして〜だろうか（いや〜ではない）」「決して〜しないわけではない」に相当します。",
+    "formation": "主語 ＋ 何尝 ＋ 不 / 没 ＋ 動詞 / 形容詞 ＋ 目的語 ＋（呢）？ ｜ 主語 ＋ 何尝 ＋ 動詞 ＋（呢）？",
+    "examples": [
+      {
+        "translation": "私だって大きな家を買いたくないわけがありません（本当はずっと買いたいのです）。"
+      }
+    ]
   },
   "zh_何至于_616": {
-    "title": "何至于 (why must)",
-    "shortExplanation": "why must",
-    "longExplanation": "why must. Pinyin: hé zhìyú",
-    "formation": "hé zhìyú"
+    "title": "何至于（反語副詞：どうしてそこまで〜する必要があろうか・何もそこまで〜しなくても）",
+    "shortExplanation": "反語の語気を用いて、事態がそれほど深刻・極端な段階に立ち至るはずがないこと、またはそこまで過剰に反応する必要がないことを表します（「何もそこまで〜しなくても」「どうしてそこまで〜になるのか」）。",
+    "longExplanation": "「何至于」（hé zhìyú）は、疑問詞「何」と動詞「至于」（〜に立ち至る、〜の段階に及ぶ）が組み合わさった反語表現です。述語の前、または後続節の文頭に置かれ、事態の深刻さや感情の振れ幅が常軌を逸していることに対して、「客観的にはそこまでの事態ではないはずだ」「なぜそこまで極端な態度をとるのか」と反問します。相手の激しい怒り、過度の悲観、過敏な反応をなだめたり制止したりする口語・書面語で多用されます。文末にはよく「呢」を伴います。日本語の「何もそこまで〜しなくても」「どうしてそこまで〜する必要があろうか」に相当します。",
+    "formation": "主語 ＋ 何至于 ＋ 動詞句 / 節 ＋（呢）？",
+    "examples": [
+      {
+        "translation": "あなたも何もそこまでひどく腹を立てる必要はないでしょう。"
+      }
+    ]
   },
   "zh_V了个RESULT_617": {
-    "title": "V 了个 RESULT (V to RESULT)",
-    "shortExplanation": "V to RESULT",
-    "longExplanation": "V to RESULT. Pinyin: V le gè RESULT",
-    "formation": "V le gè RESULT"
+    "title": "動詞 ＋ 了个 ＋ 結果補語（口語構文：すっかり〜した・思いきり〜し尽くした・〜という結果に終わった）",
+    "shortExplanation": "動作がとことん徹底的に行われて心ゆくまで満足したこと、あるいはある極端な結果や結末に至ったさまを生き生きと誇張して描写する口語表現です（「心ゆくまで〜した」「すっかり〜してしまった」）。",
+    "longExplanation": "「動詞 ＋ 了个 ＋ 形容詞 / 結果補語」は、中国語の日常会話で多用される極めて表現力豊かな慣用構文です。ここでの「个」は本来の個数を数える量詞としての意味を完全に失って虚化しており、語調を整え、直後の補語を際立たせて強い感情を込める働きを担っています。主として2つのニュアンスで使われます：① 心ゆくまで徹底的に動作を行って爽快感を味わう場合（例：「喝了个痛快」＝心ゆくまで浴びるほど飲んだ、「玩了个尽兴」＝とことん遊び尽くした）；② 予想外の極端な結末や事態に至る場合（例：「吃了个精光」＝すっかり平らげた、「碰了个钉子」＝手酷く断られた）。日本語の「思いきり〜した」「すっかり〜し尽くした」に相当します。",
+    "formation": "主語 ＋ 動詞 ＋ 了个 ＋ 形容詞 / 結果補語（痛快 / 精光 / 饱 など）",
+    "examples": [
+      {
+        "translation": "私たちは心ゆくまで浴びるほど痛快に飲んだ。"
+      }
+    ]
   },
   "zh_据说_618": {
-    "title": "据说…… (It is said that…)",
-    "shortExplanation": "It is said that…",
-    "longExplanation": "It is said that…. Pinyin: jùshuō……",
-    "formation": "jùshuō……"
+    "title": "据说……（挿入語：〜だそうだ・伝えられるところによれば・噂によると）",
+    "shortExplanation": "文頭や主語の前に置かれ、後続の内容が他者からの伝聞や噂、間接的な情報に基づくものであることを示す挿入表現です（「〜だそうだ」「伝えられるところによると」）。",
+    "longExplanation": "「据说」（jùshuō）は「〜によると」を意味する「据」と「話す」の「说」からなる表現で、他者からの伝聞や世間の噂を話題として導入する際の前置き（挿入語）として広く用いられます。文頭または主語の直前に置かれ、話し手自身がその事態を直接見聞き・体験したわけではなく、第三者や報道からの情報として耳にした内容であることを明示します。そのため、話の内容に対する自らの責任をある程度留保するニュアンスも持ちます。日本語の「伝えられるところによれば〜だそうだ」「噂によると」「話に聞くところでは」に相当します。",
+    "formation": "据说 ，＋ 節・文",
+    "examples": [
+      {
+        "translation": "伝えられるところによれば、彼は若い頃、たった一人でアフリカの大森林に行ったことがあるそうだ。"
+      }
+    ]
   },
   "zh_因而_619": {
-    "title": "因而 (therefore)",
-    "shortExplanation": "therefore",
-    "longExplanation": "therefore. Pinyin: yīn'ér",
-    "formation": "yīn'ér"
+    "title": "因而（接続詞：それゆえに・したがって・その結果・〜のために）",
+    "shortExplanation": "前文で述べられた原因や前提を受けて、後文でその直接の帰結・結果を導き出す書面語接続詞です（「それゆえに」「したがって」「その結果」）。",
+    "longExplanation": "「因而」（yīn'ér）は、「因」（〜に起因して）と「而」（そして、それによって）から成る因果関係を表す接続詞で、主として改まった書面語や論説文、報道文で用いられます。複文の後続節の冒頭に置かれ、先行節に示された事情や客観的条件が直接の原因となって後続の結果が生じたことを論理的に繋ぎます。「所以」と似ていますが、「因而」は前文と後文の因果的継起（前進発展）の筋道をより引き締まった文体で示す特徴があり、通常は「因为」と重ねて使わずに単独で用いられます。日本語の「それゆえに」「したがって」「そのため」に相当します。",
+    "formation": "原因・前提の節 ，因而 ＋ 結果・事態の節",
+    "examples": [
+      {
+        "translation": "この川は川幅が非常に狭く、それゆえに水害が発生しやすい。"
+      }
+    ]
   },
   "zh_也_620": {
-    "title": "也 (still)",
-    "shortExplanation": "still",
-    "longExplanation": "still. Pinyin: yě",
-    "formation": "yě"
+    "title": "也（譲歩副詞：〜だとしてもやはり・〜でも〜せざるを得ない・それでもなお）",
+    "shortExplanation": "仮定・譲歩の複文の後続節で用いられ、前文で提示された不利な条件や意志に反する事態があっても、後文の事態や決定が揺るぎなく貫かれることを示します（「〜でも〜しなければならない」「やはり〜だ」）。",
+    "longExplanation": "ここでの「也」（yě）は単なる並列の「〜も」ではなく、仮定譲歩文の後件において事態の不変性や義務の強制を強調する副詞です。先行節には「即使」「哪怕」「就算」（たとえ〜だとしても）が置かれるか、あるいは無標識で反対の意志や悪条件が提示されます。そして後件で「也」を用いて、「仮に前件のような不本意な状況があろうとも、後件の結果や要求は免れることができない、やはり遂行されねばならない」という強い確定的な語気を含意します。日本語の「〜であっても（やはり）〜しなければならない」「〜でも〜せざるを得ない」に相当します。",
+    "formation": "（仮定・譲歩節） ，主語 ＋ 也 ＋ 述語（得 / 要 / 会 など）",
+    "examples": [
+      {
+        "translation": "やりたくなくても、やはりやらなければならない。"
+      }
+    ]
   },
   "zh_再也_621": {
-    "title": "再……也…… (no matter how)",
-    "shortExplanation": "no matter how",
-    "longExplanation": "no matter how. Pinyin: zài…… yě……",
-    "formation": "zài…… yě……"
+    "title": "再……也……（譲歩構文：どんなに〜でも〜・いくら〜しようとも〜）",
+    "shortExplanation": "極限の程度を仮定する譲歩構文で、度合いがどれほど極限に達しようとも、後件の決意・事実・結論が一切揺るがないことを強調します（「どんなに〜でも〜だ」「いくら〜しても〜」）。",
+    "longExplanation": "「再……也……」（zài…… yě……）は、極めて高い程度を仮定して後件の必然性を際立たせる代表的な譲歩構文です。「再」の直後には形容詞または動詞が置かれ、「これ以上ないほど〜であっても」「いくら〜の度合いを極めようとも」という極限の条件を提示します。後節の「也」はそれを受けて、「いかなる極限状態にあろうとも、達成すべき目標や決定事項は微動だにしない」という固い意志や揺るぎない結論を導き出します。困難をものともせず前進する意志の表明や、不変の法則を断言する際に頻用されます。日本語の「どんなに〜でも〜」「いくら〜しようとも〜」に相当します。",
+    "formation": "主語 ＋ 再 ＋ 形容詞 / 動詞 ＋ 也 ＋ 述語 / 結論",
+    "examples": [
+      {
+        "translation": "どんなに疲れていても、宿題を最後までやり終えなければならない。"
+      }
+    ]
   },
   "zh_巴不得_622": {
-    "title": "巴不得 (be only too eager to)",
-    "shortExplanation": "be only too eager to",
-    "longExplanation": "be only too eager to. Pinyin: bābude",
-    "formation": "bābude"
+    "title": "巴不得（心理動詞：〜したくてたまらない・〜することを切望する・〜であればと願ってやまない）",
+    "shortExplanation": "望ましい良い結果や事態の好転が実現することを、心から強く熱望し待ち望む気持ちを表す口語動詞です（「〜したくてたまらない」「〜することを切に願う」）。",
+    "longExplanation": "「巴不得」（bābude）は、心から待ち望むことを意味する動詞「巴」に由来する心理動詞で、日常会話で極めて高い頻度で用いられます。通常、後ろに文や動詞句を目的語として従え、「好ましい事態が一刻も早く現実になってほしい」「そうであればどんなに嬉しいことか」という強い切望や待ち焦がれる心情を描写します。「恨不得」（現実離れした切羽詰まった願望）と比べると、「巴不得」は現実的に十分に実現可能な前向きで明るい願いに対して使われる傾向があります。日本語の「〜することを切に願っている」「〜してほしくてたまらない」「〜であればと願ってやまない」に相当します。",
+    "formation": "主語 ＋ 巴不得 ＋ 動詞句 / 目的語節",
+    "examples": [
+      {
+        "translation": "彼らが本当に仲直りして、これからは仲睦まじく暮らしていってくれることを、私は切に願っています。"
+      }
+    ]
   },
   "zh_别提多了_623": {
-    "title": "别提多……了 (indescribably)",
-    "shortExplanation": "indescribably",
-    "longExplanation": "indescribably. Pinyin: bié tíduō…… le",
-    "formation": "bié tíduō…… le"
+    "title": "别提多……了（口語固定構文：言うまでもなく極めて〜だ・言葉にできないほど〜だ）",
+    "shortExplanation": "程度が極点に達していて言葉では言い尽くせないさまを誇張・感嘆して表す口語の慣用表現です（「言うまでもなく極めて〜だ」「言葉にできないほど〜だ」）。",
+    "longExplanation": "「别提多……了」（bié tíduō…… le）は、「口に出して言うまでもない、語る必要もない」を意味する「别提」と、高い程度を表す「多……了」が合体した口語の強調・感嘆構文です。真ん中には形容詞や心理動詞が挟まれ、「その素晴らしさや度合いの甚だしさは、言葉で説明し尽くせないほど極限に達している」という強い感嘆と賞賛の語気を表します。とりわけ相手の働きぶり、美しい光景、嬉しい気分などを生き生きと褒め称えたり誇張したりする際に使われます。日本語の「言うまでもなく非常に〜だ」「言葉に尽くせないほど〜だ」「この上なく〜だ」に相当します。",
+    "formation": "主語 / 事柄 ，别提多 ＋ 形容詞 / 心理動詞 ＋ 了",
+    "examples": [
+      {
+        "translation": "この人の仕事ぶりといったら、言うまでもなく本当に責任感があります。"
+      }
+    ]
   },
   "zh_具有语体差别的同义词_624": {
-    "title": "具有语体差别的同义词 (synonyms that differ by style)",
-    "shortExplanation": "synonyms that differ by style",
-    "longExplanation": "synonyms that differ by style. Pinyin: jùyǒu yǔ tǐ chà biéde tóngyìcí",
-    "formation": "jùyǒu yǔ tǐ chà biéde tóngyìcí"
+    "title": "具有语体差别的同义词（文体論的類義語：口語体と書面語体・雅語の語体差をもつ同義語対）",
+    "shortExplanation": "語彙的・文法的な基本意味はほぼ同じでありながら、日常会話（口語体）で使われる語と、改まった文章や文学作品（書面語体・文語）で使われる語とに明瞭に分かれる同義語現象です。",
+    "longExplanation": "高級中国語における「具有语体差别的同义词」（文体差を持つ類義語・同義語）とは、意味機能は共通しているものの、使用される文体スタイル（語体色彩）が明確に区別される単語の対比現象を指します。日常のくだけた会話で用いられる「口語体（口语体）」の語彙に対し、論文・公文書・格調高い文学表現で好まれる「書面語体（书面语体）」や文言（古文）由来の語彙が対応しています。代表例として、副詞の「就」（口語）と「便」（書面語）、発話動詞の「说」（口語）と「道」（書面・文芸）、処置介詞の「把」（口語）と「将」（書面語）などが挙げられます。場面や文章の格調に応じてこれらを正しく使い分けることが求められます。",
+    "formation": "口語体の語（就 / 说 / 把 / 爸爸 / 商量 など）↔ 書面語体の語（便 / 道 / 将 / 父亲 / 磋商 など）",
+    "examples": [
+      {
+        "translation": "彼はすぐに答えて言った、『この指輪を持っていきなさい』と。（『便 / 道 / 将』は格調高い書面語体、『就 / 说 / 把』は身近な口語体）。"
+      }
+    ]
   },
   "zh_恨不得_625": {
-    "title": "恨不得 (to wish (badly))",
-    "shortExplanation": "to wish (badly)",
-    "longExplanation": "to wish (badly). Pinyin: hènbude",
-    "formation": "hènbude"
+    "title": "恨不得（心理動詞：今すぐ〜したい思いでいっぱいだ・〜できればよいのにと焦る・〜したくてたまらない）",
+    "shortExplanation": "現実には困難・不可能なことでも、焦燥感に駆られて「今すぐそうしたい、そうできればどんなによいか」と極度に切望する心理を表す誇張的動詞です（「〜したくてたまらない」「〜できればよいのに」）。",
+    "longExplanation": "「恨不得」（hènbude）の「恨」は怨恨の意味ではなく、「〜できないのがもどかしくてたまらない、歯がゆい」という残念・悔恨の情を表します。したがって全体で、「身体的・物理的な制約を飛び越えて、今すぐ不可能を可能にしたい」と激しい焦燥感に駆られる極限の心理状態を描写します。後ろには動詞句や小文を従え、現実離れした誇張的な願望（例：「翼を生やして飛んでいきたい」「一口で丸呑みしたい」）や、一人で何人分もの仕事をこなしたいという切迫した心理を生き生きと表現します。日本語の「今すぐ〜したくてたまらない」「〜できればよいのにと歯がゆく思う」「〜したくて気が狂いそうだ」に相当します。",
+    "formation": "主語 ＋ 恨不得 ＋ 動詞句 / 目的語節（実現困難・誇張的な願望）",
+    "examples": [
+      {
+        "translation": "仕事が忙しいとき、彼女は一人で二人分の仕事をこなしたい思いでいっぱいだった。"
+      }
+    ]
   },
   "zh_顿时_626": {
-    "title": "顿时 (suddenly)",
-    "shortExplanation": "suddenly",
-    "longExplanation": "suddenly. Pinyin: dùnshí",
-    "formation": "dùnshí"
+    "title": "顿时（時間副詞：たちまち・とたんに・瞬く間に・直ちに）",
+    "shortExplanation": "あるきっかけや刺激に促されて、状況や感情が一瞬にしてガラリと一変したことを表す書面語副詞です。過去の事態の叙述にのみ用いられます（「たちまち」「とたんに」）。",
+    "longExplanation": "「顿时」（dùnshí）は、直前の条件や出来事の刺激を受けて、新たな事態・感情・光景が瞬く間に発生・転換したことを叙述する時間副詞です。文学作品や物語の語り口で頻用されます。極めて重要な文法規則として、「顿时」は過去にすでに起こった客観的な事態の描写に限定して用いられ、未来の予定や命令文・依頼文（その場合は「马上」や「立刻」を使用）には決して使えません。日本語の「たちまち」「とたんに」「瞬く間に」「忽ちのうちに」に相当します。",
+    "formation": "きっかけ・直前の事態 ，顿时 ＋ 主語 ＋ 述語（または：主語 ＋ 顿时 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "医師の言葉を聞いて、瞬く間に彼の胸の中に再び希望の火が燃え上がった。"
+      }
+    ]
   },
   "zh_不由得_627": {
-    "title": "不由得 (can’t help but to)",
-    "shortExplanation": "can’t help but to",
-    "longExplanation": "can’t help but to. Pinyin: bùyóude",
-    "formation": "bùyóude"
+    "title": "不由得（副詞：思わず〜してしまう・知らず知らずのうちに〜になる・〜せずにはいられない）",
+    "shortExplanation": "自身の理性や意志ではコントロールできず、感情や生理的反応が無意識のうちに自然と湧き上がってしまうさまを表す副詞です（「思わず〜してしまう」「知らず知らずのうちに」）。",
+    "longExplanation": "「不由得」（bùyóude）は、「自分自身ではどうにも抑えられない」という意味の副詞で、「不由自主」「禁不住」とほぼ同義です。後ろには感情、心理活動、あるいは不随意な身体的反応を表す動詞（心配する、笑い出す、涙を流す、感嘆するなど）が続き、ある客観的事態を目の当たりにした際に、自らの理性を超えて無意識に感情がこみ上げてきてしまう状態をリアルに描写します。日本語の「思わず〜してしまう」「自ずと〜になる」「〜せずにはいられない」に相当します。",
+    "formation": "主語 ＋ 不由得 ＋ 心理動詞句 / 感情表現",
+    "examples": [
+      {
+        "translation": "李朋は病気をおして試合に出場したので、私は思わず心配になってしまった。"
+      }
+    ]
   },
   "zh_V番_628": {
-    "title": "V # 番 (V’ed # times over)",
-    "shortExplanation": "V’ed # times over",
-    "longExplanation": "V’ed # times over. Pinyin: V # fān",
-    "formation": "V # fān"
+    "title": "動詞 ＋（数詞 ＋）番（動量詞：ひとしきり〜する・一通りじっくり〜する・〜の手間をかける）",
+    "shortExplanation": "動量詞として動詞の後ろに置かれ、動作が一定の手間や時間をかけて一通り念入りに行われること、またはひとしきり展開されることを表します（「ひとしきり〜する」「一通り〜する」）。",
+    "longExplanation": "「番」（fān）が動量詞として機能する場合、通常は数詞「一」（まれに「几」）を伴って「動詞 ＋ 一番」の形で述語動詞の動量補語となります。単に回数を数える「次」や、初めから終わりまでの通読・反復を示す「遍」とは明確に異なり、「番」は動作のプロセスに相当の時間や思考、念入りな工夫や苦労が伴っているニュアンスを色濃く含みます（例：「打量一番」＝上から下までじっくり品定めする、「商量一番」＝膝を突き合わせてひとしきり相談する）。日本語の「ひとしきり〜する」「一通りじっくり〜する」「ひとしきり〜を費やす」に相当します。",
+    "formation": "主語 ＋ 動詞（＋ 目的語）＋ 数詞（一 / 几）＋ 番",
+    "examples": [
+      {
+        "translation": "彼は私を上から下までひとしきり品定めするように眺め、喉元まで出かかった言葉をまた飲み込んだ。"
+      }
+    ]
   },
   "zh_番_629": {
-    "title": "番 ((measure word for tumultuous events))",
-    "shortExplanation": "(measure word for tumultuous events)",
-    "longExplanation": "(measure word for tumultuous events). Pinyin: fān",
-    "formation": "fān"
+    "title": "番（名量詞：幾重もの・一通りの〜・波乱に満ちた経験や情意を数える）",
+    "shortExplanation": "名量詞として抽象名詞の前に置かれ、紆余曲折に満ちた試練や経験、または丹精込めた努力や真心のまとまりを数えるのに用いられます（「幾重もの〜」「ひとかたならぬ〜」）。",
+    "longExplanation": "「番」（fān）が名量詞として使われる場合、数詞の「一」や「几」と結びつき（「一番」「几番」）、名詞の前に置かれてその事物のまとまりを修飾します。具体的な物質ではなく、主として以下の2種類の抽象名詞に対して用いられます：① 幾重にも重なる試練、波乱万丈の経験、苦難の道のり（例：「几番风雨」＝幾度もの風雨・試練、「几番折磨」＝幾重もの苦難）；② 丹精込めて注がれた心血、真摯な善意、大いなる志（例：「一番好意」＝ひとかたならぬ好意、「一番苦心」＝並々ならぬ苦心、「一番事业」＝ひとつの大事業）。非常に格調高く文芸的な響きを帯びた表現です。日本語の「幾度もの〜」「ひとかたならぬ〜」「一通りの〜」に相当します。",
+    "formation": "数詞（一 / 几）＋ 番 ＋ 抽象名詞（风雨 / 波折 / 苦心 / 好意 / 事业 など）",
+    "examples": [
+      {
+        "translation": "幾度もの試練と風雨を乗り越えて、彼は初めて人生の真の価値を理解した。"
+      }
+    ]
   },
   "zh_翻番_630": {
-    "title": "翻 (#) 番 (multiply # times)",
-    "shortExplanation": "multiply # times",
-    "longExplanation": "multiply # times. Pinyin: fān (#) fān",
-    "formation": "fān (#) fān"
+    "title": "翻 (#) 番（動詞：倍増する・2のn乗倍に増える・跳ね上がる）",
+    "shortExplanation": "数量が元の数値の倍（2倍）になること、あるいは中間に数詞を挟んで2の累乗倍（2のn乗倍）に急増することを表す動詞表現です（「倍増する」「何倍にも跳ね上がる」）。",
+    "longExplanation": "「翻番」（fānfān）は、経済ニュースや統計、社会情勢の話題で極めて頻繁に使われる数量動詞です。単独で「翻番」あるいは「翻了一番」と言う場合、基準となる数量から1回倍加すること、すなわち「2倍になる（倍増する）」ことを意味します。中間に数詞を挟む場合（翻 n 番）は「2のn乗倍」を表し、例えば「翻两番」は2の2乗で「4倍になる」、「翻三番」は2の3乗で「8倍になる」という数学的計算に基づきます。急速な経済成長や所得・生産量の飛躍的向上を叙述する際によく用いられます。日本語の「倍増する」「2倍になる」「何倍にも増える」に相当します。",
+    "formation": "主語 ＋（已经 / 将）＋ 翻番 ＋（了） ｜ 主語 ＋ 翻了 ＋ 数詞 ＋ 番",
+    "examples": [
+      {
+        "translation": "5年前と比べて、大多数の人の給料はすでに倍増しました。"
+      }
+    ]
   },
   "zh_过于_631": {
-    "title": "过于 (too)",
-    "shortExplanation": "too",
-    "longExplanation": "too. Pinyin: guòyú",
-    "formation": "guòyú"
+    "title": "过于（副詞：〜に過ぎる・あまりに〜すぎる・過度に）",
+    "shortExplanation": "程度が適正な限界や限度を超えていることを表す程度副詞です。「太」よりも引き締まった文体で、形容詞や心理動詞を修飾します（「あまりに〜すぎる」「過度に〜だ」）。",
+    "longExplanation": "「过于」（guòyú）は、事物の性質や動作の状態が妥当な基準や限度を超過していることを表す副詞で、書面語や改まった口語で好まれます。「太」と似ていますが、「过于」の後ろには二音節の形容詞（例：匆忙、紧张、严格、敏感）や心理動詞が続くことが多く、その過剰さが好ましくない結果や弊害を招いているというニュアンスを含みます。客観的な分析、反省、相手への忠告などの文脈で多用されます。日本語の「あまりに〜すぎる」「過度に〜である」「〜に過ぎる」に相当します。",
+    "formation": "主語 ＋ 过于 ＋ 形容詞 / 心理動詞 ｜ 動詞 ＋ 得 ＋ 过于 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "彼はあまりに慌ただしく出てきたため、なんと携帯電話を持ってくるのを忘れてしまった。"
+      }
+    ]
   },
   "zh_着呢_632": {
-    "title": "着呢 (state + emphasis)",
-    "shortExplanation": "state + emphasis",
-    "longExplanation": "state + emphasis. Pinyin: zhene",
-    "formation": "zhene"
+    "title": "着呢（語気助詞：〜ているんだよ・とても〜だよ・〜だよったら）",
+    "shortExplanation": "形容詞や動詞の末尾に付く生き生きとした口語助詞です。① 程度が極めて高いことの強調（「とても〜だよ」）；② ある状態が今まさに継続中であることを念押し・提示する働きを持ちます（「〜しているんだよ」）。",
+    "longExplanation": "「着呢」（zhene）は、日常会話で極めて高い頻度で用いられる親しみのある口語表現です。主に2つの用法があります：① 形容詞や心理動詞の後に接続し、「很」や「极了」に匹敵する非常に高い程度を表します。単に程度を述べるだけでなく、「相手が思っている以上に〜なのだ」と誇らしげに主張したり、安心させたりする語気を含みます（例：「好着呢」＝すごく元気だよ・順調だよ、「忙着呢」＝大忙しなんだ）；② 動作の持続を表すアスペクト助詞「着」と語気助詞「呢」が一体となり、客観的な状態が今もそのまま続いていることを相手に気づかせる・念押しする用法です（例：「空着呢」＝席が空いているよ、「开着呢」＝開いているよ）。日本語の「とても〜だよ」「〜しているところだよ」「〜しているんだよ」に相当します。",
+    "formation": "主語 ＋ 形容詞 / 動詞 ＋ 着呢 ｜ 主語 ＋ 動詞 ＋ 着 ＋（目的語）＋ 呢",
+    "examples": [
+      {
+        "translation": "ここに座りなよ、この席は空いているんだから。"
+      }
+    ]
   },
   "zh_乘机_633": {
-    "title": "乘机 (take this opportunity and)",
-    "shortExplanation": "take this opportunity and",
-    "longExplanation": "take this opportunity and. Pinyin: chéngjī",
-    "formation": "chéngjī"
+    "title": "乘机（副詞：この機に乗じて・機会を利用して・ついでに・隙を見て）",
+    "shortExplanation": "都合の良い機会や情勢の隙を捉えて、ある行動を行うことを表す状語（副詞的成分）です（「この機会に乗じて」「ついでに」「機をとらえて」）。",
+    "longExplanation": "「乘机」（chéngjī）は、「乗」（乗じる、利用する）と「机」（機会、好機）から構成される語で、述語動詞の直前に置かれて状語として働きます。眼前に生じた有利な条件、出張などの機会、あるいは相手の油断や混乱といった隙を捉えて、目的とする動作をすかさず実行に移すことを表します。公私のついでに観光や用事を済ませるという前向き・中立的な文脈（例：出張のついでに名所を巡る）にも使えますし、悪漢が機に乗じて利益を貪る・逃走するという否定的な文脈（例：混乱に乗じて悪事を働く）にも広く適用されます。日本語の「機会をとらえて」「この機に乗じて」「ついでに」に相当します。",
+    "formation": "主語 ＋（可以 / 会 / 想）＋ 乘机 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "今回の北京出張では、私たちはこの機に乗じて万里の長城を少し観光することができます。"
+      }
+    ]
   },
   "zh_不料_634": {
-    "title": "不料 (who would have thought)",
-    "shortExplanation": "who would have thought",
-    "longExplanation": "who would have thought. Pinyin: bùliào",
-    "formation": "bùliào"
+    "title": "不料（接続詞：思いがけず・案に相違して・予想外にも・思いのほか）",
+    "shortExplanation": "予想や事前の見通しと全く正反対の事態が突発したことを表す転折接続詞です。後続節の冒頭に置かれ、「思いがけず」「思いのほか」の意を表します。",
+    "longExplanation": "「不料」（bùliào）は、否定詞「不」と「予測する、見通す」を意味する動詞「料」が一体となった接続詞です。複文の後続節の先頭に置かれ（しばしば後ろに「却」や「倒」を伴って対比を強調します）、先行節で意図していた事柄や一般的な予想・前提が、突如として裏切られて予期せぬ結果に終わったことを示します。予期せぬトラブル、相手の意外な反応、自然現象の急変などに対して驚きや当惑、悔しさを込めて語る際に用いられます。日本語の「思いがけず」「案に相違して」「予想外にも」「あに図らんや」に相当します。",
+    "formation": "先行節（意図や前提） ，不料 ＋（主語 ＋）（却 / 倒 ＋）予想外の事態の節",
+    "examples": [
+      {
+        "translation": "私は彼女と少し冗談を言いたかっただけなのだが、思いがけず彼女は怒ってしまった。"
+      }
+    ]
   },
   "zh_未免太A了_635": {
-    "title": "未免+太+A+了 (can’t say it’s not too A)",
-    "shortExplanation": "can’t say it’s not too A",
-    "longExplanation": "can’t say it’s not too A. Pinyin: wèimiǎn+ tài+A+ le",
-    "formation": "wèimiǎn+ tài+A+ le"
+    "title": "未免 ＋ 太 ＋ 形容詞 ＋ 了（副詞構文：いくらなんでも〜すぎる・あまりにも〜と言わざるを得ない）",
+    "shortExplanation": "程度や状況が度を越しており、弁解の余地なく過剰であると判断する評価構文です。控えめな表現を装いつつ、強い不満や批判の語気を含みます（「いくらなんでも〜すぎる」）。",
+    "longExplanation": "「未免＋太＋形容詞＋了」（wèimiǎn tài ... le）は、批判や不満の念を婉曲かつ確実に表明するための極めて重要な構文です。「未免」（〜と言わざるを得ない、免れない）は本来、断定を和らげる語気副詞ですが、極端な程度を表す「太……了」と結びつくことで、「客観的にどう見ても度が過ぎており、かばいようがない」「いくらなんでも限度を超えている」という明瞭な非難や嘆きの意を表します。相手の過剰な要求、無責任な遅延、不当な厳しさなどに対して使われます。日本語の「いくらなんでも〜すぎる」「あまりにも〜と言わざるを得ない」に相当します。",
+    "formation": "主語 / 行為 ＋ 未免 ＋ 太 ＋ 形容詞 ＋ 了",
+    "examples": [
+      {
+        "translation": "警察が駆けつけた時には、いくらなんでも遅すぎたと言わざるを得ない。"
+      }
+    ]
   },
   "zh_未免有些有点A_636": {
-    "title": "未免+有些/有点+A (can’t say it’s not a bit A)",
-    "shortExplanation": "can’t say it’s not a bit A",
-    "longExplanation": "can’t say it’s not a bit A. Pinyin: wèimiǎn+ yǒuxiē/ yǒudiǎn+A",
-    "formation": "wèimiǎn+ yǒuxiē/ yǒudiǎn+A"
+    "title": "未免 ＋ 有些/有点 ＋ 形容詞（副詞構文：いささか〜の感がある・少々〜と言わざるを得ない）",
+    "shortExplanation": "否定的な評価や批判を非常に柔らかく、控えめで角の立たない婉曲な表現で述べる副詞構文です（「いささか〜の感がある」「少々〜と言わざるを得ない」）。",
+    "longExplanation": "「未免＋有些/有点＋形容詞」（wèimiǎn yǒuxiē/yǒudiǎn ...）は、批判的な意見を最大限に礼儀正しく、配慮を込めて伝えるための社交的・知的な構文です。「太……了」を用いる場合に比べて批判の度合いがぐっと抑えられ、「いささか〜という気がする」「少々〜と言っては語弊があるかもしれないが、免れない」というニュアンスになります。失礼（失礼だ）、草率（軽率だ）、过分（やりすぎだ）、勉强（無理がある）などの形容詞と結びつき、相手の体面を保ちながらも、その行為の不適切さを穏やかに諭す場面で重宝されます。日本語の「いささか〜の感がある」「少々〜と言わざるを得ない」に相当します。",
+    "formation": "主語 / 行為 ＋ 未免 ＋ 有些 / 有点 ＋ 形容詞",
+    "examples": [
+      {
+        "translation": "彼の提案を拒絶するのは、いささか失礼の感があると言わざるを得ない。"
+      }
+    ]
   },
   "zh_仅仅只不过而已_637": {
-    "title": "仅仅/只不过……而已 (only)",
-    "shortExplanation": "only",
-    "longExplanation": "only. Pinyin: jǐnjǐn/ zhǐbuguò…… éryǐ",
-    "formation": "jǐnjǐn/ zhǐbuguò…… éryǐ"
+    "title": "仅仅 / 只不过……而已（呼応構文：単に〜にすぎない・たかだか〜にすぎない・ただ〜だけだ）",
+    "shortExplanation": "範囲や程度が極めて小さく限定されており、大した重要性を持たないことを強調する呼応構文です（「単に〜にすぎない」「ただ〜であるだけだ」）。",
+    "longExplanation": "「仅仅 / 只不过……而已」（jǐnjǐn / zhǐbuguò ... éryǐ）は、前後の語句が緊密に呼応して限定の意を強調する代表的構文です。文中で「仅仅」（単に〜だけ）または「只不过」（〜にすぎない）が範囲を狭め、文末の「而已」（〜のみ、〜だけだ）がそれを受けて「それ以上の何物でもない」「大げさに捉える必要はない」と締めくくります。他人の過大評価や誤解を解いたり、自身の業績を謙遜したり、物事の影響力を小さく見積もる文脈で好んで用いられます。日本語の「単に〜にすぎない」「ただ〜であるだけだ」「たかだか〜にすぎない」に相当します。",
+    "formation": "主語 ＋ 仅仅 / 只不过 ＋（是）＋ 名詞句 / 動詞句 ＋ 而已",
+    "examples": [
+      {
+        "translation": "彼の本職は警察官であり、小説の執筆は単に彼の余暇の趣味にすぎない。"
+      }
+    ]
   },
   "zh_固然_638": {
-    "title": "固然 (granted)",
-    "shortExplanation": "granted",
-    "longExplanation": "granted. Pinyin: gùrán",
-    "formation": "gùrán"
+    "title": "固然（譲歩接続詞：〜は確かに〜だが・もちろん〜ではあるが・言うまでもなく）",
+    "shortExplanation": "前文で一つの事実や利点を認めて譲歩の前提とし、後文で「但是」「也」「却」などを用いて本論となる逆接・補足の主張を展開する接続詞です（「〜はもちろん〜だが」「確かに〜ではあるが」）。",
+    "longExplanation": "「固然」（gùrán）は、論理的な文章や改まったスピーチで極めて重視される譲歩接続詞です。「固」（もとより、固より）と「然」（しかり）から成り、「それは言うまでもなくその通りである」とまず一方の長所や客観的事実を全面的に肯定します。しかし、話し手の真の論点はそこに留まらず、後続節において「但是」「可是」「也」「却」などと呼応させ、別の見過ごせない重要な側面や反論、新たな活路を提示します。これによって議論に客観性と深みを与え、説得力を高める修辞的効果を持ちます。日本語の「〜は確かに〜だが（しかし）」「もちろん〜ではあるが」に相当します。",
+    "formation": "前提の肯定節（＋ 固然 ＋ 述語） ，但是 / 也 / 却 ＋ 転折・補足節",
+    "examples": [
+      {
+        "translation": "大学に合格するのは確かに良いことには違いないが、合格しなかったからといって活路が全くないわけでもない。"
+      }
+    ]
   },
   "zh_无非_639": {
-    "title": "无非 (simply)",
-    "shortExplanation": "simply",
-    "longExplanation": "simply. Pinyin: wúfēi",
-    "formation": "wúfēi"
+    "title": "无非（副詞：〜にほかならない・単に〜にすぎない・せいぜい〜だけだ）",
+    "shortExplanation": "事柄の動機や真相が一定の範囲を出ないことを指摘し、本質を端的に見抜いて断定する副詞です（「〜にほかならない」「せいぜい〜にすぎない」）。",
+    "longExplanation": "「无非」（wúfēi）は、否定を表す「无」と「非」が重なり、「〜以外ではない」という強い肯定（限定）を表す書面語副詞です。しばしば「无非是」「无非想」「无非为了」の形で用いられます。一見複雑あるいは大げさに見える事態の真相を冷静に分析し、「突き詰めて言えば、その動機や実態はごくありふれた単純な事柄にすぎない」と本質を簡潔に要約・看破する働きをします。過度な美化や神秘化を排し、身も蓋もない現実的な核心を突く際に用いられます。日本語の「〜にほかならない」「単に〜にすぎない」「つまるところ〜にすぎない」に相当します。",
+    "formation": "主語 ＋ 无非 ＋（是）＋（想 / 为了 / 動詞句 / 名詞句）",
+    "examples": [
+      {
+        "translation": "彼がこれほど身を粉にして働くのも、つまるところもっと金を稼いで妻子をより快適に暮らさせたいからにほかならない。"
+      }
+    ]
   },
   "zh_唯独_640": {
-    "title": "唯独 (only)",
-    "shortExplanation": "only",
-    "longExplanation": "only. Pinyin: wéidú",
-    "formation": "wéidú"
+    "title": "唯独（副詞：唯一〜だけ・ただ一人〜だけ・ことさら〜だけ）",
+    "shortExplanation": "全体の中から特定の対象ただ一つ・一人だけを例外として際立たせ、他と対比させる副詞です（「唯一〜だけ」「ただ一人〜だけ」）。",
+    "longExplanation": "「唯独」（wéidú）は、「唯」（ただ〜のみ）と「独」（ひとり、単独）が合わさった副詞で、全体の中で特定の対象だけが唯一の例外として取り残されたり、特別扱いされたりする状況を描写します。文脈上、「大家」「全都」「所有人」といった全体を表す表現と鮮やかなコントラストを成して用いられることが極めて多いのが特徴です。その対象だけが参加できなかった無念さ、あるいはその対象だけが特別に好まれる・嫌われるといった偏りや不公平感を浮き彫りにする際にも効果的に用いられます。日本語の「ただ〜だけ」「唯一〜だけ」「〜に限って」に相当します。",
+    "formation": "全体 / 誰もが ＋ 都… ，唯独 ＋ 特定の対象 ＋（述語） ｜ 唯独 ＋ 特定の対象 ＋ 述語",
+    "examples": [
+      {
+        "translation": "あの旅行にはみんなが行ったのに、ただあなた一人だけが行けなかった。"
+      }
+    ]
   },
   "zh_明明_641": {
-    "title": "明明 (obviously)",
-    "shortExplanation": "obviously",
-    "longExplanation": "obviously. Pinyin: míngmíng",
-    "formation": "míngmíng"
+    "title": "明明（語気副詞：紛れもなく・明らかに・目に見えて・誰が見ても）",
+    "shortExplanation": "事実が明白で隠しようがないことを強調する副詞です。反論や詰問、あるいは相手の虚偽や理不尽な言い逃れを追及する文脈で頻繁に使われます（「明らかに〜なのに」「紛れもなく〜だ」）。",
+    "longExplanation": "「明明」（míngmíng）は、事実の真偽が白日の下にさらされており、誰の目にも疑いようがないことを強調する語気副詞です。「明」（明らかである）を重ねた語で、述語の前に置かれます。話し手が「現実は誰が見ても紛れもなくこうである」と確信しているにもかかわらず、相手がそれを否定しようとしたり、正反対の嘘をついたり、事実に反するおかしな主張をしていることに対して、強い反発、驚き、詰問の感情を込めて異議を唱える場面で真価を発揮します。反語文や「どうして〜なのか」という疑問文と非常によく呼応します。日本語の「明らかに〜なのに」「紛れもなく〜だ」「誰が見ても〜である」に相当します。",
+    "formation": "主語 ＋ 明明 ＋ 是 / 動詞 / 形容詞 ，＋ 反語・反駁節",
+    "examples": [
+      {
+        "translation": "あなたが歌っているのは明らかに流行歌なのに、どこが京劇なんですか。"
+      }
+    ]
   },
   "zh_大不了_642": {
-    "title": "大不了…… (If the worst came to the worst, …)",
-    "shortExplanation": "If the worst came to the worst, …",
-    "longExplanation": "If the worst came to the worst, …. Pinyin: dàbùliǎo……",
-    "formation": "dàbùliǎo……"
+    "title": "大不了……（口語副詞：せいぜい〜するだけだ・最悪でも〜すればいい・たいしたことはない）",
+    "shortExplanation": "最悪の事態や限界を想定し、「どんなに悪い結果になろうと、せいぜいこれくらいのことだ」と腹をくくって開き直る口語副詞です（「最悪でも〜すればいい」「せいぜい〜するまでだ」）。",
+    "longExplanation": "「大不了……」（dàbùliǎo）は、日常会話で困難や失敗の危機に直面した際に、覚悟を決めたり相手を元気づけたりするために頻用される副詞です。複文の後続節の冒頭に置かれ、「最悪のシナリオを想定しても、たかだかその程度の結末にすぎず、恐れるに足らない」という豪胆で前向きな開き直りの気持ちを表します。先行節で「失敗しても構わない」「文句を言われたって平気だ」といった最悪の前提を受け止め、後続節で「せいぜい最初からやり直すだけだ」「仕事を辞めるまでのことだ」と究極の対処策を提示します。日本語の「最悪でも〜すればいい」「せいぜい〜するだけのことだ」に相当します。",
+    "formation": "最悪の前提・危機の節 ，大不了 ＋（主語 ＋）最悪の場合の対処行動",
+    "examples": [
+      {
+        "translation": "失敗したってたいしたことはない、最悪でも最初からやり直せばいいだけだ。"
+      }
+    ]
   },
   "zh_大不了的_643": {
-    "title": "大不了的 (big deal)",
-    "shortExplanation": "big deal",
-    "longExplanation": "big deal. Pinyin: dàbùliǎo de",
-    "formation": "dàbùliǎo de"
+    "title": "大不了的（慣用表現：大したこと・重大なこと・深刻なこと）",
+    "shortExplanation": "否定文（「没什么大不了的」）や反語文（「有什么大不了的」）で用いられ、物事が取るに足らない些細なことにすぎず、深刻に受け止める必要がないことを表す口語慣用表現です（「たいしたこと」「重大なこと」）。",
+    "longExplanation": "「大不了的」（dàbùliǎo de）は、口語で事態の深刻さを否定・相対化する際に極めて頻出する慣用表現です。形容詞「大不了」に構造助詞「的」が結びつき、名詞的あるいは形容詞的成分として機能します。ほぼ常に否定形式「没什么 / 没有什么大不了的」（たいしたことではない、大した問題ではない）や、反語形式「有什么大不了的？」（何が大したことあるのか、何でもないじゃないか）の形で使われます。問題やトラブルを大げさに騒ぎ立てる人をなだめたり、不安を取り除いたり、あるいは自身が不満や困難を軽やかに受け流す際に用いられます。日本語の「大したこと」「重大な問題」に相当します。",
+    "formation": "（主語 ＋）没什么 / 没有什么 ＋ 大不了的 ｜ 有什么 ＋ 大不了的 ＋（呢 / 啊）？",
+    "examples": [
+      {
+        "translation": "キスをするくらいのことに、何のたいしたことがあるというのか。"
+      }
+    ]
   },
   "zh_V于PLACE_644": {
-    "title": "V 于 PLACE (V in PLACE)",
-    "shortExplanation": "V in PLACE",
-    "longExplanation": "V in PLACE. Pinyin: V yú PLACE",
-    "formation": "V yú PLACE"
+    "title": "動詞 ＋ 于 ＋ 場所（介詞補語構文：［場所］において・〜で［動詞］する・［場所］に生じる）",
+    "shortExplanation": "動詞の後に介詞「于」と場所名詞を従える格調高い書面語構文です。動作や事態が生じる場所・発生地を導き出します（「［場所］において〜する」「〜で産出する」）。",
+    "longExplanation": "「動詞 ＋ 于 ＋ 場所」は、文言（古典中国語）の文法構造を受け継いだ格式の高い書面語表現です。現代中国語の日常口語における「在 ＋ 場所 ＋ 動詞」という語順とは異なり、動詞の後ろに介詞句「于＋場所」が補語として配置されます。「于」は口語の「在」（〜で、〜において）に相当し、動作が行われる地点、事物の原産地、誕生地、あるいは事態の発生場所を端的に示します。「产于」（〜で産出する）、「生于」（〜で生まれる）、「位于」（〜に位置する）、「见于」（〜に見られる）など、単音節の起源・所在・結果を表す動詞と極めて緊密に結合します。日本語の「［場所］において〜する」「〜に位置する」「〜で産出される」に相当します。",
+    "formation": "主語 ＋ 動詞（产 / 生 / 止 など）＋ 于 ＋ 場所名詞 / 地域名詞",
+    "examples": [
+      {
+        "translation": "有名な西湖龍井茶は、浙江省の西湖一帯で産出されます。"
+      }
+    ]
   },
   "zh_A于V_645": {
-    "title": "A 于 V (A to V)",
-    "shortExplanation": "A to V",
-    "longExplanation": "A to V. Pinyin: A yú V",
-    "formation": "A yú V"
+    "title": "形容詞 ＋ 于 ＋ 動詞（慣用書面語構文：勇気をもって〜する・〜することに長けている・進んで〜する）",
+    "shortExplanation": "格式高い書面語において、特定の形容詞に接尾辞・介詞「于」が結びつき、後続の動詞句を導いて「〜することに対してどのような態度・傾向を持つか」を表す慣用構文です（「勇気をもって〜する」「〜することに秀でている」）。",
+    "longExplanation": "「形容詞 ＋ 于 ＋ 動詞」は、現代中国語の論説文や公用文などで多用される典雅で引き締まった書面語表現です。介詞または語尾としての働きを持つ「于」が特定の形容詞の後ろにつき、後続の動詞や動詞句を目的語として導き入れます。この形式を取る形容詞は語彙化されており、代表的なものとして「勇于」（勇気をもって〜する、果敢に〜する）、「敢于」（恐れずに〜する）、「善于」（〜するのが得意である、長けている）、「乐于」（進んで〜する、〜することを喜ぶ）、「易于」（〜しやすい）、「难于」（〜しがたい）、「便于」（〜するのに便利である）、「急于」（焦って〜しようとする）などが挙げられます。日本語の「勇気をもって〜する」「〜するのをいとわない」「〜することに巧みである」に相当します。",
+    "formation": "主語 ＋ 形容詞（勇 / 善 / 乐 / 敢 / 易 / 难 / 便 / 急 など） ＋ 于 ＋ 動詞 ＋ 目的語",
+    "examples": [
+      {
+        "translation": "決断を下すには、勇気をもって責任を引き受けることが必要だ。"
+      }
+    ]
   },
   "zh_致使_646": {
-    "title": "致使 (to cause)",
-    "shortExplanation": "to cause",
-    "longExplanation": "to cause. Pinyin: zhìshǐ",
-    "formation": "zhìshǐ"
+    "title": "致使（兼語動詞・接続詞：〜をもたらす・〜を引き起こす・その結果〜となる・〜という結果を招く）",
+    "shortExplanation": "書面語において原因と結果を結びつけ、先行する事情が原因となって後続の好ましくない事態、失敗、損失などを引き起こしたことを表します（「〜をもたらす」「〜という結果を招く」）。",
+    "longExplanation": "「致使」（zhìshǐ）は、「致」（至らせる、招く）と「使」（〜させる）が合わさった格式高い使役動詞・接続詞です。文法的には兼語文の使役述語（後ろに兼語名詞と後続動詞を従える）または因果複文の後件を導く接続詞として機能します。語義・語用論上の顕著な特徴として、後続節で導かれる結果は、先行する過失や不慮の事故、悪条件によってもたらされた「失敗」「損害」「厄介な事態」など、望ましくない消極的な結果であることが大半を占めます（好ましい結果には「使」や「促使」などを用います）。日本語の「〜を引き起こす」「〜という結果をもたらす」「〜のせいで〜という事態を招く」に相当します。",
+    "formation": "原因・事象 ＋ 致使 ＋ 対象（名詞） ＋ 好ましくない結果（動詞句 / 節）",
+    "examples": [
+      {
+        "translation": "彼の不注意が、実験の失敗を引き起こした。"
+      }
+    ]
   },
   "zh_并非_647": {
-    "title": "并非 (not (with emphasis, see “并”4.04.3))",
-    "shortExplanation": "not (with emphasis, see “并”4.04.3)",
-    "longExplanation": "not (with emphasis, see “并”4.04.3). Pinyin: bìngfēi",
-    "formation": "bìngfēi"
+    "title": "并非（強調否定副詞：決して〜ではない・〜というわけでは決してない・あながち〜ではない）",
+    "shortExplanation": "改まった書面語において、語気を強める副詞「并」と否定詞「非（不是）」が合わさり、世間の誤解や通念を強く否定・反論する際に用いられます（「決して〜ではない」「決して〜というわけではない」）。",
+    "longExplanation": "「并非」（bìngfēi）は、語気を強める副詞「并」と、判断の否定詞「非」（〜ではない）が融合した書面語の代表的な強調否定表現です。名詞句、形容詞句、動詞句、あるいは節の前に置かれ、世間一般の推測、固定観念、あるいは相手が抱いている誤った認識に対して、「事実は決してそうではない」「見かけとは裏腹に〜ではない」と明確かつ理知的に訂正・反論する機能を果たします。単なる否定の「不是」に比べて格調が高く、客観的な事実をもって論駁する強い語気を帯びます。日本語の「決して〜ではない」「〜というわけでは断じてない」に相当します。",
+    "formation": "主語 ＋ 并非 ＋ 名詞 / 形容詞 / 動詞句 / 節",
+    "examples": [
+      {
+        "translation": "小王のような若者は決して少数ではない。"
+      }
+    ]
   },
   "zh_对N而言_648": {
-    "title": "对 N 而言 (for N (see 4.05.4 “对……来说”))",
-    "shortExplanation": "for N (see 4.05.4 “对……来说”)",
-    "longExplanation": "for N (see 4.05.4 “对……来说”). Pinyin: duì N éryán",
-    "formation": "duì N éryán"
+    "title": "对 ＋ 名詞 ＋ 而言（介詞フレーム構文：〜にとっては・〜の立場から言えば・〜に関して言えば）",
+    "shortExplanation": "論説文や改まった文体において、判断や評価の基準となる対象・立場を提示する介詞構文です。口語の「对……来说」に相当し、引き締まった語調を持ちます（「〜にとっては」「〜から見れば」）。",
+    "longExplanation": "「对……而言」（duì... éryán）は、古典漢語の語気を受け継ぐ典雅な介詞フレーム構造です。「对」が評価・判断の対象を導き、「而言」（〜について言えば）が文節を締めくくります。通例、文頭に置かれて読点（カンマ）で区切られるか、主語の直後に挿入され、「当該の主体の置かれた環境や立場から観察・考察した場合にのみ、後続の命題や要求が成り立つ」という視座・前提を明示します。日常会話で用いられる「对……来说」と意味は同じですが、公的なスピーチ、報道、論文などにふさわしい格調高い語感を付与します。日本語の「〜にとっては」「〜の観点から言えば」「〜の立場から見れば」に相当します。",
+    "formation": "对 ＋ 名詞 / 名詞句 ＋ 而言 ，＋ 後続節（判断・命題・見解）",
+    "examples": [
+      {
+        "translation": "今日の中国にとって、経済発展は持続可能な発展の道を歩み続けなければならない。"
+      }
+    ]
   },
   "zh_有关N_649": {
-    "title": "有关 N (about N)",
-    "shortExplanation": "about N",
-    "longExplanation": "about N. Pinyin: yǒuguān N",
-    "formation": "yǒuguān N"
+    "title": "有关 ＋ 名詞（連体修飾介詞句：〜に関する・〜に関わる・〜についての）",
+    "shortExplanation": "名詞の前について後続の中心名詞を修飾し、テーマ、範囲、対象がその事項に関わっていることを表す書面語表現です（「〜に関する」「〜についての」）。",
+    "longExplanation": "「有关」（yǒuguān）は、「有」（持つ）と「关」（関わり）から成る関係表示語で、介詞的または動詞連体修飾語として広く用いられます。最も典型的な用法は「有关 ＋ 名詞（＋ 的） ＋ 中心名詞」の形式で名詞を直接修飾する連体修飾語（定語）となる用法です（例：「有关服饰问题的资料」＝服飾問題に関する資料、「有关部门」＝関係部署）。また、文頭に置かれて話題や範囲を提示する前置きの介詞句としても用いられます。日本語の「〜に関する」「〜に関わる」「〜についての」に相当します。",
+    "formation": "有关 ＋ 名詞（＋ 的） ＋ 中心名詞 ｜ 有关 ＋ 名詞 ，＋ 節",
+    "examples": [
+      {
+        "translation": "彼は服飾問題に関する大量の資料を調べた。"
+      }
+    ]
   },
   "zh_和N有关_650": {
-    "title": "和 N 有关 (related to N)",
-    "shortExplanation": "related to N",
-    "longExplanation": "related to N. Pinyin: hé N yǒuguān",
-    "formation": "hé N yǒuguān"
+    "title": "和 / 与 ＋ 名詞 ＋ 有关（述語構文：〜と関係がある・〜に関連している・〜と結びついている）",
+    "shortExplanation": "介詞「和」「与」「跟」を用いて基準となる事物を導き、主語がその事柄と相互の因果関係や内在的な関わりを有していることを述べる基本述語構文です（「〜と関係がある」）。",
+    "longExplanation": "「和 / 与 / 跟 ＋ 名詞 ＋ 有关」は、2つの事象の間における相関性、因果関係、または影響関係を断定・叙述する代表的な述語パターンです。口語では「和」や「跟」が多く使われ、格調高い論説文や公文書では「与」が好まれます。文の主要述語として「これには〜が関係している」「〜の特性に起因する」という論理的な裏付けを提示する役割を果たします。間には副詞が挿入されることも多く、「有很大关系 / 大有关系」（大いに関係がある）、「直接有关」（直接関係している）、「毫无关系」（何ら関係がない）といったバリエーションを持ちます。日本語の「〜と関係がある」「〜に関連している」「〜に起因する」に相当します。",
+    "formation": "主語 ＋ 和 / 与 / 跟 ＋ 名詞 ＋ 有关",
+    "examples": [
+      {
+        "translation": "中国の国語教育は古くから識字を重視してきたが、これはむろん漢字の特徴と関係がある。"
+      }
+    ]
   },
   "zh_不瞒你说_651": {
-    "title": "不瞒你说 (actually)",
-    "shortExplanation": "actually",
-    "longExplanation": "actually. Pinyin: bù mán nǐ shuō",
-    "formation": "bù mán nǐ shuō"
+    "title": "不瞒你说（口語挿入語：実を言うと・包み隠さず言えば・打ち明けて言いますと）",
+    "shortExplanation": "会話において、相手に心を開いて本音、内情、あるいは他言しにくい事実を率直に明かす際に前置きとして用いる慣用表現です（「実を言うと」「包み隠さず言えば」）。",
+    "longExplanation": "「不瞒你说」（bù mán nǐ shuō）は、「瞞」（隠す、だます）を否定した「あなたに隠し立てせずに言えば」という字義通りの意味を持つ、日常会話で多用される親しみやすい前置き（挿入語）です。文頭に読点を伴って置かれ、これまで胸の内に留めていた個人的な本音、正直な感想、あるいは一見言いにくい真実を相手に打ち明ける際の導入句として機能します。話し手が聞き手に対して深い信頼を寄せ、腹を割って話しているという親密な心理的距離感を醸し出します。日本語の「実を言うと」「ここだけの話ですが」「包み隠さず打ち明けますと」に相当します。",
+    "formation": "不瞒你说 ，＋ 節・文（本音・内情の吐露）",
+    "examples": [
+      {
+        "translation": "包み隠さず言いますと、この問題について私はこのように考えています。"
+      }
+    ]
   },
   "zh_说真的说实在的_652": {
-    "title": "说真的/说实在的 (indeed, truthfully)",
-    "shortExplanation": "indeed, truthfully",
-    "longExplanation": "indeed, truthfully. Pinyin: shuō zhēn de/ shuō shízài de",
-    "formation": "shuō zhēn de/ shuō shízài de"
+    "title": "说真的 / 说实在的（口語挿入語：本当のことを言うと・実を言うと・本音を言えば）",
+    "shortExplanation": "冗談やお世辞ではなく、心からの本音、飾らない真実、あるいは真面目な感想要約を述べる際に文頭に置く前置き表現です（「本当のことを言うと」「実を言うと」）。",
+    "longExplanation": "「说真的」（shuō zhēn de）および「说实在的」（shuō shízài de）は、日常会話で極めて頻繁に耳にする本音開示の挿入語です。文頭にカンマを添えて配置され、「ここからの話は決して冗談や建前ではなく、心の底からの実感・真実である」という真剣な態度を相手に伝えます。相手を褒め称える場面、深刻な反省を口にする場面、あるいは思いがけない教訓を得て感銘を受けた場面などで広く用いられます。「说实在的」のほうがやや素朴で実直なニュアンスを帯びます。日本語の「本当のことを言うと」「実を言うと」「本音を言えば」「真面目な話」に相当します。",
+    "formation": "说真的 / 说实在的 ，＋ 節・文（率直な感想・真剣な発言）",
+    "examples": [
+      {
+        "translation": "本当のことを言うと、今回は本当に子供が私に身をもって教えてくれた（教訓を与えてくれた）。"
+      }
+    ]
   },
   "zh_通红雪白_653": {
-    "title": "通红、雪白 (very red, very white)",
-    "shortExplanation": "very red, very white",
-    "longExplanation": "very red, very white. Pinyin: tōnghóng、 xuěbái",
-    "formation": "tōnghóng、 xuěbái"
+    "title": "状態形容詞（通红・雪白・漆黑など：真っ赤・真っ白・漆黒・極限の色彩と性状）",
+    "shortExplanation": "名詞的・副詞的な修飾語素が冠されて極限の度合いや純粋な色彩を生き生きと描き出す状態形容詞です。語義自体に絶対的な高程度が含まれているため、「很」などの程度副詞で修飾することはできません（「真っ赤」「真っ白」）。",
+    "longExplanation": "「通红」（真っ赤）、「雪白」（真っ白・雪白）、「漆黑」（漆黒・真っ暗）、「冰凉」（氷のように冷たい）、「笔直」（まっすぐ）などは、中国語文法において「状態形容詞」（生動形容詞）に分類される特殊かつ豊かな表現形式です。前の形態素が後続の色彩や性状の「度合いの極致」や「比喩的状態」（雪のように、漆のように、全体に通じるほど）を限定・強調します。文法上の最重要規則として、これらの語は語彙そのものに極めて高い程度が内包されているため、「很」「非常」「太」などの程度副詞を前につけることは文法違反となります。結果補語（「脸憋得通红」のように「得」を伴う）、名詞を修飾する連体修飾語（「雪白的衬衫」）、述語として頻用されます。日本語の「真っ赤」「真っ白」「真っ黒」などの接頭語を伴う強調表現に相当します。",
+    "formation": "主語 ＋（動詞 ＋ 得 ＋）通红 / 雪白 / 漆黑 / 笔直 ｜ 通红 / 雪白 ＋ 的 ＋ 名詞",
+    "examples": [
+      {
+        "translation": "息を止めていたので、私の顔は真っ赤になった。"
+      }
+    ]
   },
   "zh_说VA就VA_654": {
-    "title": "说 V/A 就 V/A (V without thinking, be A without thinking)",
-    "shortExplanation": "V without thinking, be A without thinking",
-    "longExplanation": "V without thinking, be A without thinking. Pinyin: shuō V/A jiù V/A",
-    "formation": "shuō V/A jiù V/A"
+    "title": "说 ＋ 動詞/形容詞 ＋ 就 ＋ 動詞/形容詞（口語構文：〜と言ったらすぐ〜する・あっさりと〜してしまう・忽ち〜になる）",
+    "shortExplanation": "動作の実行が即座で迷いがないこと、あるいは事態や天候の変化が極めて唐突・気まぐれに生じるさまを生き生きと描写する口語表現です（「〜と言ったらすぐ〜する」「あっさりと〜してしまう」）。",
+    "longExplanation": "「说 V/A 就 V/A」は、中国語の日常会話で多用される極めて表現力の高い反復構文です。同じ動詞または形容詞を繰り返し、「就」で繋ぐことにより、言葉に出すや否や間髪を入れずに動作が実行されるスピード感、または予告なしにコロコロと事態が急変する唐突さを強調します。大きく2つのニュアンスがあります：① 思い立ったら即行動に移す果断さ（例：「说走就走」＝思い立ったらすぐ旅立つ、「说干就干」＝やると言ったらすぐ実行する）；② 身勝手・気まぐれな急変や唐突な放棄に対する驚きや不満（例：「天气说变就变」＝天気が忽ち急変する、「说不干就不干了」＝あっさりと放り出してしまう）。日本語の「〜と言ったら即〜する」「あっさりと〜してしまう」「〜かと思えば忽ち〜になる」に相当します。",
+    "formation": "主語 ＋ 说 ＋ 動詞 / 形容詞 ＋ 就 ＋ 動詞 / 形容詞（＋ 了）",
+    "examples": [
+      {
+        "translation": "あんなに良い仕事なのに、どうしてあっさり辞めてしまったのですか？"
+      }
+    ]
   },
   "zh_VA得要命_655": {
-    "title": "V/A 得要命 (V so much one could die, so A one could die)",
-    "shortExplanation": "V so much one could die, so A one could die",
-    "longExplanation": "V so much one could die, so A one could die. Pinyin: V/A dé yàomìng",
-    "formation": "V/A dé yàomìng"
+    "title": "動詞 / 形容詞 ＋ 得要命（程度補語：死ぬほど〜だ・〜てたまらない・ひどく〜だ）",
+    "shortExplanation": "感情、感覚、あるいは状態の度合いが極限に達し、耐え難いほど強烈であることを誇張して生き生きと描写する口語の程度補語構文です（「死ぬほど〜だ」「〜でたまらない」）。",
+    "longExplanation": "「動詞 / 形容詞 ＋ 得要命」は、日常会話で感情や身体感覚の激しさを誇張して表す代表的な程度補語構文です。「要命」（命を奪う、ひどい目に遭わせる）という語が補語として接続することにより、「命を落としかねないほどその度合いが凄まじい」「耐え切れないほど限界である」という強烈なニュアンスを付与します。痛覚・疲労・空腹・退屈などの不快な肉体的・精神的状態を表す形容詞や心理動詞と結合することが多く（例：「疼得要命」＝痛くて死にそう、「累得要命」＝死ぬほど疲れた、「空虚得要命」＝虚しくてたまらない）、時に「喜欢得要命」（好きで好きでたまらない）のように肯定的な熱中にも転用されます。日本語の「死ぬほど〜だ」「〜てたまらない」「〜てしょうがない」に相当します。",
+    "formation": "主語 ＋ 形容詞 / 心理動詞 ＋ 得要命",
+    "examples": [
+      {
+        "translation": "5時間もスマホを触らなかったら、退屈と虚しさで死にそうだった。"
+      }
+    ]
   },
   "zh_以至于_656": {
-    "title": "以至 (于) (as a result)",
-    "shortExplanation": "as a result",
-    "longExplanation": "as a result. Pinyin: yǐzhì ( yú)",
-    "formation": "yǐzhì ( yú)"
+    "title": "以至 (于)（接続詞：〜にまで至る・その結果〜となる・〜のあまり〜・〜に及ぶ）",
+    "shortExplanation": "時間・数量・範囲の極限への発展延長を表すか、あるいは前文の事情や蓄積を受けてその直接の帰結・到達段階を導き出す書面語接続詞です（「〜にまで至る」「その結果〜となる」）。",
+    "longExplanation": "「以至（于）」（yǐzhì / yǐzhìyú）は、古典期より用いられてきた端正な論理接続詞です。主な機能は2つあります：① 時間の推移、数量、空間的範囲、あるいは程度の漸進的な拡大・延長を示し、「〜の極限にまで達する」ことを表す（例：「从古至今，以至于未来」）；② 複文の後続節冒頭に置かれ、先行節で述べられた条件、長期にわたる努力や事象の積み重ねから必然的に生み出された結果や到達境地を導く（好結果・中立的事態に広く用いられる）。なお、悪い結果・損失のみに特化して用いられる「以致」と異なり、「以至（于）」は肯定的な繁栄や輝かしい成果の継起にも好んで用いられます。日本語の「〜にまで至る」「その結果〜となる」「〜のあまり〜となる」に相当します。",
+    "formation": "原因・前提の節 ，以至(于) ＋ 結果・極限状態の節",
+    "examples": [
+      {
+        "translation": "中国の食文化は様々な国の優れた点を取り入れ、その結果今日に至るまで輝かしい発展を続けている。"
+      }
+    ]
   },
   "zh_即便_657": {
-    "title": "即便 (even if)",
-    "shortExplanation": "even if",
-    "longExplanation": "even if. Pinyin: jíbiàn",
-    "formation": "jíbiàn"
+    "title": "即便（譲歩接続詞：たとえ〜だとしても・仮に〜であっても・よしんば〜でも）",
+    "shortExplanation": "格調高い書面語の仮定譲歩接続詞で、前文で極端な仮定や不都合な条件を提示しつつ、後文の「也」と呼応して結論やとるべき態度が揺るがないことを表します（「たとえ〜だとしても」）。",
+    "longExplanation": "「即便」（jíbiàn）は、「即」（すなわち、たとえ）と「便」（〜であれば）から成る、文章語・論説文で多用される仮定譲歩の接続詞です。「即使」「哪怕」「就算」と同義ですが、より文語的で引き締まった格調を持ちます。前節の冒頭または主語の直後に置かれ、「仮に極端な逆境や相手の理不尽な態度といった不利な条件が存在するとしても」と一旦譲歩して受け入れます。そして後節の副詞「也」としっかりと呼応し、「それによって本質的な義務、寛容の心、下すべき判断が損なわれることはない」という確固たる結論を導きます。日本語の「たとえ〜だとしても」「仮に〜であっても」に相当します。",
+    "formation": "（主語 ＋）即便 ＋ 仮定譲歩節 ，（主語 ＋）也 ＋ 述語 / 結論節",
+    "examples": [
+      {
+        "translation": "彼女は最近気分が優れないのだから、たとえ少し理不尽なところがあっても、許してあげるべきだ。"
+      }
+    ]
   },
   "zh_所在_658": {
-    "title": "所在 (where … lies)",
-    "shortExplanation": "where … lies",
-    "longExplanation": "where … lies. Pinyin: suǒzài",
-    "formation": "suǒzài"
+    "title": "……所在（抽象名詞：〜の在りか・〜の存するところ・〜の本質・核心）",
+    "shortExplanation": "格調高い論説文において、「根本」「关键」「魅力」「价值」などの抽象名詞・形容詞の直後に置かれ、事物・価値・原因の本質が存する根源や核心を指し示します（「〜の在りか」「〜の存するところ」）。",
+    "longExplanation": "「所在」（suǒzài）の抽象用法は、古典漢語の「所 ＋ 動詞」の語法を受け継いだ重厚な名詞的表現です。地理的な物理空間を指すのではなく、事物の価値、力量、矛盾、あるいは問題の核心が「どこに宿り、どこに帰着しているか」という本質的な帰結点を表します。最も代表的な慣用表現として「根本所在」（根本の在りか）、「关键所在」（問題の核心・要諦）、「价值所在」（価値の存するところ）、「魅力所在」（魅力の源泉）などがあります。「是……的根本所在」の形で判断述語となることが多く、哲学的な論述や理念の定義付けにおいて極めて重要な役割を果たします。日本語の「〜の在りか」「〜の存するところ」「〜の根源・核心」に相当します。",
+    "formation": "主語 ＋ 是 ＋ 属性・修飾語（根本 / 关键 / 价值 / 意义 など） ＋ 所在",
+    "examples": [
+      {
+        "translation": "人材の育成こそが教育の立脚点であり、教育的価値の根本の在りかであり、教育の本質的機能である。"
+      }
+    ]
   },
   "zh_所在_659": {
-    "title": "所在 (place)",
-    "shortExplanation": "place",
-    "longExplanation": "place. Pinyin: suǒzài",
-    "formation": "suǒzài"
+    "title": "所在（具体名詞：場所・ありか・居所・天地・雅やかな地）",
+    "shortExplanation": "優雅で文学的な書面語名詞として、具体的な場所、居所、美しい景勝地などを指します。一般的な「地方」に比べて詩的で格式高いニュアンスを持ちます（「場所」「天地」「地」）。",
+    "longExplanation": "「所在」（suǒzài）の具象名詞としての用法は、人や事物が位置する具体的な「場所」「居所」「地」を指す古典的な文語表現です。日常会話の平易な「地方」とは異なり、小説、紀行文、詩文などで風景や風情を格調高く描き出す際に好んで用いられます。多くの場合、「風景秀美、気候宜人的所在」（風光明媚で気候の穏やかな場所）のように、風光明媚な自然環境や清らかな住環境を描写する修飾語（定語）を伴って文末や目的語の位置に据えられます。また公文書では「所在地」（所在する場所）といった複合語としても定着しています。日本語の「場所」「ありか」「天地」「地」に相当します。",
+    "formation": "風景・環境を描写する連体修飾句 ＋ 的 ＋ 所在",
+    "examples": [
+      {
+        "translation": "彼は景色が美しく気候も穏やかな場所を選んだ。"
+      }
+    ]
   },
   "zh_统统_660": {
-    "title": "统统 (all)",
-    "shortExplanation": "all",
-    "longExplanation": "all. Pinyin: tǒngtǒng",
-    "formation": "tǒngtǒng"
+    "title": "统统（範囲副詞：残らず・すべて・ことごとく・何から何まで）",
+    "shortExplanation": "言及された事物の全体をもれなく統括し、例外なく「ことごとく」「すべて」そうであることを強調する副詞です。口語・書面語の双方で広く使われます。",
+    "longExplanation": "「统统」（tǒngtǒng）は、先行する名詞句や列挙された複数の対象を残らず包括し、述語の表す動作や状態がその全てに例外なく及んでいることを際立たせる範囲副詞です。「全部」や「都」と意味は共通していますが、「统统」は「何一つ除外しない」「端から端まですべて一括して」という強い語気と徹底性を帯びます。文法的には主語や前置された目的語の直後、動詞や形容詞の前に置かれて連用修飾語（状語）として機能します。口語では語末を巻き舌にして「统统儿」と言うこともあります。日本語の「すべて」「ことごとく」「残らず」「何から何まで」に相当します。",
+    "formation": "名詞（主語 / 前置された目的語） ＋ 统统 ＋ 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "映画館もバーも、彼にはことごとく縁がなかった。"
+      }
+    ]
   },
   "zh_以A为B_661": {
-    "title": "以 A 为 B (regard A as B)",
-    "shortExplanation": "regard A as B",
-    "longExplanation": "regard A as B. Pinyin: yǐ A wéi B",
-    "formation": "yǐ A wéi B"
+    "title": "以……为……（書面語フレーム構文：前者を後者とする・前者を後者の基礎と位置づける）",
+    "shortExplanation": "漢文の伝統を受け継ぐ格式高い書面語構文で、「前者を後者とする」「前者を基礎として後者を位置づける」という基本方針や位置づけを表します。論説文や公文書で極めて頻繁に用いられます。",
+    "longExplanation": "「以……为……」（yǐ... wéi...）は、古典漢語の介詞「以」（〜をもって）と動詞「为」（〜となす）が呼応した格調高いフレーム構造です。前項に対象、根拠、手段、要素などを置き、後項にその役割、地位、基準、属性などを置くことで、「前者を後者の基盤とする」「前者を後者と見なす」という論理的関係を簡潔明瞭に叙述します。現代中国語でも固定的な熟語・定型表現として多用され、代表例として「以人为本」（人間本位を旨とする）、「以……为主」（〜を中心・主力とする）、「以……为辅」（〜を補助とする）、「以身作则」（自ら率先垂範する）などが挙げられます。日本語の「〜を…とする」「〜を…と見なす」「〜を以て…となす」に相当します。",
+    "formation": "主語 ＋ 以 ＋ 名詞 / 動詞句（前項） ＋ 为 ＋ 名詞 / 形容詞（後項）",
+    "examples": [
+      {
+        "translation": "上級段階の中国語学習は、読解によるインプットを中心とし、文法学習を補助的なものと位置づけるべきである。"
+      }
+    ]
   },
   "zh_该V就得V_662": {
-    "title": "该 V (就)(得) V (if one should V then one must V)",
-    "shortExplanation": "if one should V then one must V",
-    "longExplanation": "if one should V then one must V. Pinyin: gāi V ( jiù)( dé) V",
-    "formation": "gāi V ( jiù)( dé) V"
+    "title": "该……就得……（口語反復構文：〜すべきときはやはり〜しなければならない・〜するときは〜するものだ）",
+    "shortExplanation": "同一の動詞を反復し、状況や規則からしてそうすべきである以上、割り切って不可避的にその動作を実行しなければならないという当然性・必然性を表す口語構文です。",
+    "longExplanation": "「该 ＋ 動詞 ＋ （就） ＋ （得） ＋ 動詞」（gāi... jiù děi...）は、日常会話で極めて生き生きと用いられる論理的かつプラグマティックな表現形式です。1つ目の「该」は「〜すべき順番である」「〜するのが筋である」という道理・客観的必要性を示し、「得」（děi）は「どうしても〜しなければならない」という義務・不可避性を表します。同じ動詞を前後で重ねることにより、「その場に応じた適切な行為である以上、躊躇したりサボったりせず、やるべき時にはきっちりやるのが当たり前だ」という現実的受容やプロ意識・割り切りのニュアンスを力強く伝えます。「该吃就吃」（食べるべきときは食べる）、「该花就得花」（使うべきお金は使うべきだ）などの形で頻出します。日本語の「〜すべき時はどうしても〜せざるを得ない」「〜するときはきちんと〜するものだ」に相当します。",
+    "formation": "（主語 ＋） 该 ＋ 動詞 ＋ （就） ＋ （得 / 要） ＋ 動詞",
+    "examples": [
+      {
+        "translation": "中国の年末年始や祝日は店が一番の稼ぎ時で、休みなど全くなく、店を開けるべき時にはどうしても開けなければならない。"
+      }
+    ]
   },
   "zh_不妨V_663": {
-    "title": "不妨 V (it won’t hurt to V)",
-    "shortExplanation": "it won’t hurt to V",
-    "longExplanation": "it won’t hurt to V. Pinyin: bùfáng V",
-    "formation": "bùfáng V"
+    "title": "不妨 ＋ 動詞（語気副詞：〜してみてもよい・〜するのも悪くない・差し支えない）",
+    "shortExplanation": "相手に対して提案や助言を控えめに行う際に用い、「〜しても何ら差し支えない」「〜してみても損はない」と相手の行動を促す穏やかな表現です。",
+    "longExplanation": "「不妨」（bùfáng）は、「不」（否定）と「妨」（差し障り・妨げ）から構成された、上品で控えめな提案を表す副詞です。動詞や動詞句の前に置かれて「そうすることに何ら不都合や支障はなく、むしろ試してみる価値が十分にある」という積極的・建設的なニュアンスを含んだ勧めを表現します。命令や押し付けの響きを一切排除し、相手の判断を尊重しながら優しく背中を押すため、日常の助言から公的なビジネスシーン、文章表現まで幅広く重宝されます。日本語の「〜してみてはいかがですか」「〜しても差し支えありません」「〜してみるのも一案です」に相当します。",
+    "formation": "（主語 ＋） 不妨 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "何か意見があるなら、率直に話してみても構いませんよ（遠慮なくおっしゃってください）。"
+      }
+    ]
   },
   "zh_务必_664": {
-    "title": "务必 (must)",
-    "shortExplanation": "must",
-    "longExplanation": "must. Pinyin: wùbì",
-    "formation": "wùbì"
+    "title": "务必（指示副詞：必ず・何としても・是非とも・くれぐれも〜してください）",
+    "shortExplanation": "通知、規則、公式な指示などにおいて、特定の行為を例外なく確実に実行するよう強く求める指示副詞です（「必ず〜すること」「くれぐれも〜してください」）。",
+    "longExplanation": "「务必」（wùbì）は、「务」（力を尽くす）と「必」（必ず）が結合した、格式高く厳正な語気を持つ指示副詞です。動詞や動詞句の前に置かれて、その行為を抜かりなく実行することが必須条件・義務であることを強く命じ、あるいは念押しします。公文書、社内通達、安全に関する注意事項、緊急の要請などの改まった場面で多用されます。「一定要」が主観的な強い意気込みや個人の願望にも用いられるのに対し、「务必」は相手に対する客観的・公式な命令・要求・念押しの文脈に特化しており、厳粛な語感を伴います。日本語の「必ず〜してください」「何としても〜すること」「くれぐれも〜されたい」に相当します。",
+    "formation": "（主語 ＋） 务必 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "飛行機の離陸前には、必ずシートベルトをお締めください。"
+      }
+    ]
   },
   "zh_鉴于_665": {
-    "title": "鉴于 (in view of)",
-    "shortExplanation": "in view of",
-    "longExplanation": "in view of. Pinyin: jiànyú",
-    "formation": "jiànyú"
+    "title": "鉴于（接続詞・介詞：〜に鑑み・〜を考慮して・〜という事情を踏まえて）",
+    "shortExplanation": "客観的な現状、課題、あるいは過去の教訓を前提条件として提示し、それを踏まえた上で決定や対策を講じることを表す格式高い書面語表現です（「〜に鑑み」「〜という点に鑑みて」）。",
+    "longExplanation": "「鉴于」（jiànyú）は、古来の「鑑みる（照らし合わせて反省・考察する）」という意味を持つ「鉴」と介詞「于」から成り、論説文、報道、公文書などで中核となる接続的介詞です。文頭に置かれて読点で区切られることが多く、直後に名詞句や節を従えて「現在直面している深刻な問題」「考慮すべき重要な客観的事実」「留意すべき過去の経緯」を提示します。そして後続の主節において、その前提や背景に照らした合理的な判断、決断、方針転換、政策決定などを導き出します。日本語の「〜に鑑み」「〜という実情を考慮して」「〜の観点から」に相当します。",
+    "formation": "鉴于 ＋ 名詞 / 節（客観的事実・背景事情） ，＋ 主節（決定・対策・判断）",
+    "examples": [
+      {
+        "translation": "農村部の教員が深刻に不足している実情に鑑み、彼は大学卒業後、農村へ赴いて教鞭を執ることを決断した。"
+      }
+    ]
   },
   "zh_便于_666": {
-    "title": "便于 (easy to)",
-    "shortExplanation": "easy to",
-    "longExplanation": "easy to. Pinyin: biànyú",
-    "formation": "biànyú"
+    "title": "便于 ＋ 動詞（書面語連語：〜するのに便利である・〜しやすいように・〜を容易にするため）",
+    "shortExplanation": "前節で述べた方法、形式、配置などの工夫が、後続の行為をスムーズに行う上で都合が良いこと、またはその便宜を図る目的であることを表します（「〜するのに都合がよい」「〜しやすいように」）。",
+    "longExplanation": "「便于」（biànyú）は、「便」（都合が良い・便利である）に介詞「于」が付着して語彙化した格式高い表現です。通常、複文の後件の冒頭に配置され、後ろに動詞または動詞句を従えます。前件で講じられた措置、設計、説明方法、ルール作りなどが、「〜という動作を容易ならしめ、障害をなくしてスムーズに進めるための便宜をもたらす」という目的・効用を示します。実用文、取扱説明書、論文の構成案、公的ガイドラインなどで極めて高い頻度で使用されます。日本語の「〜するのに便利である」「〜しやすいように」「〜の円滑な実施を図るため」に相当します。",
+    "formation": "先行節（設計・措置・表現形式） ＋ ，＋ 便于 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "科学解説の文章は、理解しやすいように簡潔かつ平易に書かれるべきである。"
+      }
+    ]
   },
   "zh_犹如N一般般A_667": {
-    "title": "犹如 N (一般/般) A (as A as N (metaphorically))",
-    "shortExplanation": "as A as N (metaphorically)",
-    "longExplanation": "as A as N (metaphorically). Pinyin: yóurú N ( yībān/ bān) A",
-    "formation": "yóurú N ( yībān/ bān) A"
+    "title": "犹如 ＋ 名詞 ＋ （一般 / 般） ＋ 形容詞（比喩構文：あたかも〜のように…である・さながら〜のごとく…だ）",
+    "shortExplanation": "文学的な香りの高い比喩表現で、「犹如」で鮮烈な比喩の対象（事象・名詞）を導き、「一般 / 般」（〜のごとく）を伴って後続の形容詞や状態を鮮やかに描写します。",
+    "longExplanation": "「犹如 ＋ 名詞 ＋ （一般 / 般） ＋ 形容詞 / 動詞句」（yóurú... yībān / bān...）は、文章語や文学作品で感情の激しさや光景の有様をドラマチックに描き出す修辞的構文です。比況を表す書面語「犹如」（あたかも〜のようだ）が比喩の乗り手となる自然現象や事物（名詞）を提示し、後置される「一般」または「般」（〜のように、〜のごとく）と呼応します。このまとまり全体が後続の形容詞や述語を修飾し、感情の噴出、勢いの激しさ、あるいは美しさの極致を視覚的・直感的に読み手に伝えます。日本語の「あたかも〜のごとく…である」「さながら〜のように…だ」に相当します。",
+    "formation": "主語 ＋ 犹如 ＋ 名詞 / 比喩事象 ＋ （一般 / 般） ＋ 形容詞 / 動詞句",
+    "examples": [
+      {
+        "translation": "会社の粗悪品は消費者を激怒させ、顧客たちの怒りの感情はあたかも火山の噴火のごとく抑えがたいものであった。"
+      }
+    ]
   },
   "zh_和相比_668": {
-    "title": "和……相比 (compared to…)",
-    "shortExplanation": "compared to…",
-    "longExplanation": "compared to…. Pinyin: hé…… xiāngbǐ",
-    "formation": "hé…… xiāngbǐ"
+    "title": "和……相比（比較介詞構文：〜と比べると・〜と比較して・〜に比べ）",
+    "shortExplanation": "対比・比較の基準となる事物や時点を提示し、後続節でその差異、変化、あるいは優劣の判断を述べる基本構文です（「〜と比べると」「〜と比較して」）。",
+    "longExplanation": "「和……相比」（hé... xiāngbǐ）は、2つの事物、状況、あるいは過去と現在の変化を客観的に比較・対照する際に最も幅広く用いられる構文です。介詞「和」（改まった文章では「与」や「同」、日常会話では「跟」も使用）が比較の基準となる対象や過去の時点を導き、「相比」（比較し合う）で締めくくります。通例、文頭に置かれて読点（カンマ）で区切られ、後続の主節で「より〜である」「大きな変化が見られる」といった比較結果や統計的傾向が叙述されます。論説文、客観的なニュース報道、日常の状況報告まであらゆる場面で中核となる表現です。日本語の「〜と比べると」「〜と比較して」「〜に比べ」に相当します。",
+    "formation": "和 / 与 / 跟 / 同 ＋ 名詞 / 節（比較基準） ＋ 相比 ，＋ 主節（比較・対比の結果）",
+    "examples": [
+      {
+        "translation": "10年前と比べると、人々はより多くの転職や職業選択を経験するようになっている。"
+      }
+    ]
   },
   "zh_一MM_669": {
-    "title": "一 + M + M (one batch after another)",
-    "shortExplanation": "one batch after another",
-    "longExplanation": "one batch after another. Pinyin: yī + M + M",
-    "formation": "yī + M + M"
+    "title": "一 ＋ 量詞 ＋ 量詞（量詞重畳構文：次から次へと〜が・何〜もの・群れをなして）",
+    "shortExplanation": "数詞「一」に同一の量詞を重ねて用い、人や物が途切れることなく次々と現れ、極めて多数にのぼる様子を生き生きと描き出します（「何陣もの」「次から次へと」）。",
+    "longExplanation": "「一 ＋ 量詞 ＋ 量詞」（yī + 量詞 + 量詞）は、量詞をリズミカルに重ね合わせることで豊かな情景描写を可能にする中国語特有の表現です。「一」という単一の数詞を用いながら、意味上は「1つ」ではなく「次から次へと無数に」「幾重にも折り重なって」という膨大な数量と時間的・空間的な連続性を表します。代表的な例として「一拨拨」（次から次へと訪れるグループ）、「一批批」（何陣もの・続々と届くロット）、「一群群」（何群れもの・大勢の集団）、「一阵阵」（押し寄せる波や風）などが挙げられます。名詞を直接修飾する連体修飾語（定語）や連用修飾語（状語）として用いられ、視覚的な臨場感を与えます。日本語の「次から次へと何〜も」「何陣もの〜が」「幾重もの」に相当します。",
+    "formation": "数詞（一） ＋ 量詞 ＋ 量詞（＋ 的） ＋ 名詞（あるいは連用修飾語）",
+    "examples": [
+      {
+        "translation": "毎日、同業他社の人々が何グループも次から次へと視察や交流にやって来る。"
+      }
+    ]
   },
   "zh_难以V_670": {
-    "title": "难以 V (hard to)",
-    "shortExplanation": "hard to",
-    "longExplanation": "hard to. Pinyin: nányǐ V",
-    "formation": "nányǐ V"
+    "title": "难以 ＋ 動詞（書面語連語：〜しがたい・〜するのは困難である・極めて〜しにくい）",
+    "shortExplanation": "格式高い書面語において、認知、予測、感情、受容などを表す2音節動詞の前に置かれ、その行為を行うことが極めて困難であること、あるいは不可能に近いことを表します。",
+    "longExplanation": "「难以」（nányǐ）は、「难」（難しい）と介詞「以」が結びついた、格調高い書面語連語です。口語の「很难」に比べて硬質で引き締まった語感を持ちます。文法上の特徴として、後続する動詞は通例、認知・判断・感情・言語表現を表す2音節動詞に強く限定されます。代表的なコロケーションには、「难以想象」（想像しがたい）、「难以置信」（信じがたい）、「难以预料」（予測しがたい）、「难以接受」（受け入れがたい）、「难以忘怀」（忘れがたい）などがあります。主観的な能力不足というよりは、事態の複雑さや極端さゆえにその動作が成立しがたいという客観的・論理的困難さを格調高く言い表します。日本語の「〜しがたい」「〜することは極めて困難である」に相当します。",
+    "formation": "（主語 ＋） 难以 ＋ 2音節動詞（認識・判断・感情・予測）",
+    "examples": [
+      {
+        "translation": "彼が成功を収められるかどうかは、現時点ではまだ予測しがたい。"
+      }
+    ]
   },
   "zh_免得_671": {
-    "title": "免得 (lest)",
-    "shortExplanation": "lest",
-    "longExplanation": "lest. Pinyin: miǎnde",
-    "formation": "miǎnde"
+    "title": "免得（接続詞：〜しなくて済むように・〜という事態を避けるために・〜を免れるよう）",
+    "shortExplanation": "後節の冒頭に置かれ、前節で行った予防措置や行動によって、好ましくない結果や余計な二度手間が生じるのを防ぐことを表します（「〜しなくて済むように」「〜を避けるため」）。",
+    "longExplanation": "「免得」（miǎnde）は、先行する節で積極的な対応や事前の処置を講じる動機として、「その結果として生じうる不都合、トラブル、無駄足、余計な負担を未然に回避する」という目的関係を提示する接続詞です。複文の後件の先頭に置かれ、後続節には「本来起こってほしくないマイナスの事態」が来ます。口語では「省得」（〜の手間が省けるように）、より改まった書面語では「以免」とほぼ同義であり、日常会話から実用文まで幅広く自然に用いられます。日本語の「〜しなくて済むように」「〜という事態を避けるために」「〜にならないよう」に相当します。",
+    "formation": "先行節（事前の予防策・対応） ＋ ，＋ 免得 ＋ 後続節（回避したい二度手間・不都合）",
+    "examples": [
+      {
+        "translation": "明日また出直して来なくて済むように、今日はみんな少し残業して仕事を全部片付けてしまおう。"
+      }
+    ]
   },
   "zh_时而时而_672": {
-    "title": "时而……时而…… (sometimes… sometimes…)",
-    "shortExplanation": "sometimes… sometimes…",
-    "longExplanation": "sometimes… sometimes…. Pinyin: shí'ér…… shí'ér……",
-    "formation": "shí'ér…… shí'ér……"
+    "title": "时而……时而……（並列呼応構文：ある時は〜ある時は〜・〜かと思えば〜・めまぐるしく移り変わる）",
+    "shortExplanation": "文学的で絵画的な描写に富む呼応構文で、状態、色彩、動作などが交互に現れ、めまぐるしく推移・交替する様子を表します（「ある時は〜ある時は〜」「〜たり〜たり」）。",
+    "longExplanation": "「时而……时而……」（shí'ér... shí'ér...）は、古典漢語の典雅な趣を宿した反復並列構文です。「时而」（時には・折に触れて）を2回以上重ねることで、主語の示す対象が一定の固定した状態にとどまらず、短時間の間に異なる状態、色彩、感情、あるいは動作の間を素早く行き来し、交替・変転する動的な有様を鮮やかに描き出します。後ろには対照的あるいは変化に富む形容詞や動詞句が呼応します。美文、風景描写、人物の複雑な内面描写などで際立った修辞効果を発揮します。日本語の「ある時は〜、またある時は〜」「〜かと思えば、また〜である」に相当します。",
+    "formation": "主語 ＋ 时而 ＋ 形容詞 / 動詞 1 ，＋ 时而 ＋ 形容詞 / 動詞 2 （＋ 时而 ＋ 形容詞 / 動詞 3）",
+    "examples": [
+      {
+        "translation": "陽光の下で蝶の色彩は極めて鮮やかで、ある時は黄金色に、またある時は深緑色に、時には紫色から青色へとめまぐるしく変化した。"
+      }
+    ]
   },
   "zh_时而_673": {
-    "title": "时而 (from time to time)",
-    "shortExplanation": "from time to time",
-    "longExplanation": "from time to time. Pinyin: shí'ér",
-    "formation": "shí'ér"
+    "title": "时而（時間副詞：時に・折に触れて・時折・ふと〜することがある）",
+    "shortExplanation": "単独で動詞の前に置かれ、ある動作や現象が継続的ではないものの、時折ふと生じる様子を落ち着いた格調高い筆致で叙述する時間副詞です（「時に」「時折」）。",
+    "longExplanation": "「时而」（shí'ér）は、「时而……时而……」のように対句で重ねず単独で用いる場合、格調高い書面語の時間副詞として機能します。述語動詞の直前に配置され、ある動作、物音、あるいは兆候がずっと続いているわけではないものの、「折に触れてはふと発生する」「時折思い出したかのように繰り返される」という断続的な生起を表します。口語の「有时」や「偶尔」と基本義は一致しますが、「时而」は文章に深い余情、哀愁、あるいは静けさを添える文学的な響きを備えています。日本語の「時に」「時折」「折節に」に相当します。",
+    "formation": "主語 ＋ 时而 ＋ 動詞句",
+    "examples": [
+      {
+        "translation": "飼い主が亡くなってからというもの、その犬はかつての元気をすっかり失い、時折悲しげな鳴き声を上げていた。"
+      }
+    ]
   },
   "zh_不禁V_674": {
-    "title": "不禁 V (can’t help but to V)",
-    "shortExplanation": "can’t help but to V",
-    "longExplanation": "can’t help but to V. Pinyin: bùjīn V",
-    "formation": "bùjīn V"
+    "title": "不禁 ＋ 動詞（情態副詞：思わず〜してしまう・〜を禁じ得ない・思わず胸が〜となる）",
+    "shortExplanation": "外部からの強い刺激や知らせを受け、湧き上がる感情や自然な身体反応を自らコントロールできず、「思わず〜してしまう」様子を表します。",
+    "longExplanation": "「不禁」（bùjīn）は、「禁」（耐える・こらえる。第1声 jīn）を否定した副詞で、「自らの意志では感情や衝動を抑止しきれない」という語源的意味を持ちます。主語と述語動詞の間に置かれ、後続の動詞には感情の昂ぶり、心理的動揺、あるいは生理的な無意識の反応を表す語句（例：「落泪」涙をこぼす、「失笑」吹き出す、「打寒战」身震いする、「兴奋」興奮するなど）が連なります。ある予期せぬ知らせや光景に直面した際、内面から自然と込み上げる生々しい情動を臨場感たっぷりに描写する際に欠かせない表現です。日本語の「思わず〜してしまう」「〜を禁じ得ない」「我知らず〜する」に相当します。",
+    "formation": "（主語 ＋） 不禁 ＋ 動詞（感情・心理反応・無意識の動作）",
+    "examples": [
+      {
+        "translation": "この知らせを耳にして、誰もが思わず興奮を抑えきれなくなった。"
+      }
+    ]
   },
   "zh_无不V_675": {
-    "title": "无不 V (there is nothing that doesn’t V)",
-    "shortExplanation": "there is nothing that doesn’t V",
-    "longExplanation": "there is nothing that doesn’t V. Pinyin: wúbù V",
-    "formation": "wúbù V"
+    "title": "无不 ＋ 動詞（書面語二重否定副詞：〜しないものはない・すべて〜する・ことごとく〜である）",
+    "shortExplanation": "格調高い書面語において、「无（無）」と「不」の二重否定によって強い肯定を表し、例外なくすべての対象がその行為や状態に当てはまることを強調します（「〜しないものはない」「ことごとく〜する」）。",
+    "longExplanation": "「无不」（wúbù）は、文言文（古典漢語）の語気を受け継ぐ格調高い書面語の二重否定副詞句です。「无（〜がない）」と「不（〜しない）」という2つの否定語が重なることで、反語的・強調的な全面肯定（すべて例外なく〜である）を表します。述語動詞、動詞句、あるいは感情や評価を表す形容詞の前に置かれ、提示された範囲内の事物や人々が、ことごとくその影響を受けたり、その状態に陥ったりしていることを力強く叙述します。口語の「都」や「全都」に比べて文末に重厚感と深い感嘆のニュアンスをもたらし、論説文、報道、格調高い随筆などで好んで用いられます。",
+    "formation": "主語 ＋ 无不 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あなたの一言一行、一挙手一投足は、ことごとく周囲の人々に影響を与えている。"
+      }
+    ]
   },
   "zh_换句话说也就是说_676": {
-    "title": "换句话说/(也)就是说 (in other words)",
-    "shortExplanation": "in other words",
-    "longExplanation": "in other words. Pinyin: huànjùhuàshuō/( yě) jiùshìshuō",
-    "formation": "huànjùhuàshuō/( yě) jiùshìshuō"
+    "title": "换句话说 / (也)就是说（接続表現・挿入語：言い換えれば・換言すれば・つまり・すなわち）",
+    "shortExplanation": "前述の内容を別の言葉で分かりやすく言い換えたり、要約して本質を突いた結論を導いたりする際に用いる代表的な接続表現です（「言い換えれば」「つまり」「すなわち」）。",
+    "longExplanation": "「换句话说」（huànjùhuàshuō）および「(也)就是说」（(yě)jiùshìshuō）は、談話や文章において前件の内容を別の視点や表現で説明し直すための重要な連結標識です。先行文に抽象的な理論、比喩的な描写、あるいは複雑な事情が述べられた後、読者や聞き手により直感的・明瞭に理解させるため、あるいは論理的な帰結を一言で要約するために後件の冒頭（読点や句点を伴う）に置かれます。「换句话说」は表現の言い換え（換言）に焦点があり、「也就是说」は論理的な意味の同等性や帰結の導出（「〜ということを意味する」）に焦点があります。日常会話から学術論文、公的演説まで幅広く用いられます。",
+    "formation": "節1 。/ ， 换句话说 / (也)就是说 ，＋ 節2（言い換え・要約）",
+    "examples": [
+      {
+        "translation": "どの国も他国と睦まじく共存すべきである。言い換えれば（つまり）、国家が好き勝手に振る舞うことは許されない。"
+      }
+    ]
   },
   "zh_为S所V_677": {
-    "title": "为 S 所 V (V’ed by S)",
-    "shortExplanation": "V’ed by S",
-    "longExplanation": "V’ed by S. Pinyin: wéi S suǒ V",
-    "formation": "wéi S suǒ V"
+    "title": "为 ＋ 動作主 ＋ 所 ＋ 動詞（書面語受動構文：〜によって…される・〜に…される）",
+    "shortExplanation": "古典漢語（文言文）に由来する格調高い書面語の受動構文です。介詞「为」が動作主を導き、助詞「所」が動詞の直前に置かれて受動関係を明示します（「〜によって…される」）。",
+    "longExplanation": "「为……所……」（wéi... suǒ...）は、古典漢語の文法形式を現代語に純粋に継承した代表的な書面語受動表現です。介詞「为」が受動文における動作主（行為の主体）を導き入れ、助詞「所」が他動詞の直前に置かれて目的語が主語の位置に移っていること（受動化）を文法的に明示します。現代中国語の日常会話で用いられる「被」の受動文が往々にして不利益や望ましくない事態に偏りがちであるのに対し、「为……所……」は極めて客観的かつ典雅であり、感動、賞賛、注目などのポジティブ・中立的な文脈でも極めて自然に用いられます（例：「为……所感动」＝〜に感動させられる、「为……所吸引」＝〜に引きつけられる、「为……所重视」＝〜から重視される）。",
+    "formation": "主語（受事） ＋ 为 ＋ 動作主（施事） ＋ 所 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "この映画の登場人物たちに心を動かされなかった人は一人もいない。"
+      }
+    ]
   },
   "zh_足以_678": {
-    "title": "足以 (is enough to)",
-    "shortExplanation": "is enough to",
-    "longExplanation": "is enough to. Pinyin: zúyǐ",
-    "formation": "zúyǐ"
+    "title": "足以（書面語助動詞・副詞：十分に〜できる・〜するに足る・〜するのに十分である）",
+    "shortExplanation": "十分な条件、根拠、力量、または数量が備わっており、「十分に〜できる」「〜するに足る」ことを表す改まった書面語表現です。否定形は「不足以（〜するに足りない）」となります。",
+    "longExplanation": "「足以」（zúyǐ）は、「足」（足りる、十分である）と「以」（〜を以て、〜によって）から構成される格式高い書面語の助動詞的表現です。動詞や動詞句の前に置かれ、主語が提示する数量、力量、証拠、理由などが、後続の事態を引き起こしたり目的を達成したりするのに「完全に満ち足りている」ことを表します。論理的な論証、学術論文、報道などで多用されます。また、否定形の「不足以 ＋ 動詞」（〜するのに十分でない、到底〜できない、〜するに足りない）も極めて頻繁に用いられ、条件や根拠の不備を指摘する際の定型句となっています（例：「不足以平民愤」＝民衆の怒りを鎮めるには足りない、「证据不足以证明」＝証拠は証明に足るものではない）。",
+    "formation": "主語（条件・根拠・力量） ＋ （不）足以 ＋ 動詞 ＋ 目的語",
+    "examples": [
+      {
+        "translation": "このような悪人を厳罰に処さなければ、民衆の怒りを鎮めることは到底できない。"
+      }
+    ]
   },
   "zh_东M西M_679": {
-    "title": "东 # M 西 # M (one here and one there, willy nilly)",
-    "shortExplanation": "one here and one there, willy nilly",
-    "longExplanation": "one here and one there, willy nilly. Pinyin: dōng # M xī # M",
-    "formation": "dōng # M xī # M"
+    "title": "东 ＋ 数詞 ＋ 量詞 ＋ 西 ＋ 数詞 ＋ 量詞（口語四字構文：あちこち少しずつ〜する・脈絡なくあれこれ〜する・散漫に〜する）",
+    "shortExplanation": "方位を表す「东」「西」に数量詞（主に「一 ＋ 量詞」）を組み合わせ、動作や事物が一貫性を欠き、あちこちに散らばって脈絡がない様子を表す生き生きとした口語表現です（「あちこち少しずつ」「あれこれとりとめもなく」）。",
+    "longExplanation": "「东 ＋ 数詞 ＋ 量詞 ＋ 西 ＋ 数詞 ＋ 量詞」は、日常会話で事物の散漫さや無秩序さを生き生きと描写する対称的な四字口語パターンです。「东」と「西」は実際の方位を指すのではなく、「あちこち」「ばらばらの方向」という比喩的な拡散を表し、数詞にはほぼ例外なく「一」が充てられます。多くの場合は様態を表す連用修飾語（助詞「地」を伴う）として後続の動詞を修飾します。代表的な慣用表現として、「东一句西一句」（脈絡なくあれこれ話す、とりとめもなくポツリポツリと言う）、「东看一眼西看一眼」（あちこちキョロキョロ見る）、「东凑一点西凑一点」（あちこちから少しずつかき集める）などが挙げられます。話に一貫性がない様子や、場当たり的な態度を軽妙に描写するニュアンスを持ちます。",
+    "formation": "主語 ＋ 东 ＋ 一 ＋ 量詞 ＋ 西 ＋ 一 ＋ 量詞（＋ 地） ＋ 動詞",
+    "examples": [
+      {
+        "translation": "客がまだ帰らないので、私は仕方なく彼ととりとめもなくあれこれ言葉を交わし、間を持たせるために無理やり話題を探した。"
+      }
+    ]
   },
   "zh_V中zhng_680": {
-    "title": "V 中 (zhòng) (V on the mark)",
-    "shortExplanation": "V on the mark",
-    "longExplanation": "V on the mark. Pinyin: V zhōng (zhòng)",
-    "formation": "V zhōng (zhòng)"
+    "title": "動詞 ＋ 中（zhòng）（結果補語：命中する・当たる・的中する・言い当てる）",
+    "shortExplanation": "動詞の直後に「中」（第4声：zhòng）を結果補語として添え、その動作（射る、打つ、当てる、推測するなど）が狙い通り正確に目標・的を射止めたことを表します（「当たる」「命中する」）。可能補語の形は「動詞 ＋ 得中 / 動詞 ＋ 不中」となります。",
+    "longExplanation": "「動詞 ＋ 中（zhòng）」において、「中」は必ず第4声（去声）で発音され、「的中する、狙い通り当たる」という意味を表す極めて重要な結果補語として機能します。方向性や標的を意識した動詞（射る、撃つ、叩く、推し量るなど）と緊密に結びつき、「射中」（射止める）、「击中」（命中させる、急所を突く）、「打中」（殴り当てる、撃ち当てる）、「猜中」（言い当てる、推測が的中する）といった複合動詞を作ります。また、「得」や「不」を間に挟むことで可能補語の体系へと拡張され、「打得中」（命中させることができる）、「打不中」（どうやっても当たらない、空振りに終わる）という表現になります。第1声の「中（zhōng：〜の途中、真ん中）」との発音・語義の厳密な区別が求められます。",
+    "formation": "主語 ＋ 動詞 ＋ （得 / 不） ＋ 中（zhòng）（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "ハエが一匹飛んできて、人は手を出して叩こうとするのだが、どうしても当たらない。"
+      }
+    ]
   },
   "zh_中zhngN_681": {
-    "title": "中 (zhòng) N (hit by N)",
-    "shortExplanation": "hit by N",
-    "longExplanation": "hit by N. Pinyin: zhōng (zhòng) N",
-    "formation": "zhōng (zhòng) N"
+    "title": "中（zhòng） ＋ 名詞（及物動詞構文：〜に当たる・〜に冒される・〜にかかる・的中する）",
+    "shortExplanation": "動詞「中」（第4声：zhòng）が直接名詞を目的語に取り、毒や病気、凶弾などの害毒に冒されること（「中毒」「中暑」など）、またはくじや選抜に当選すること（「中奖」「中标」など）を表します（「〜に当たる」「〜にかかる」）。",
+    "longExplanation": "「中 ＋ 名詞」の組み合わせにおいて、「中」は動詞として第4声（zhòng）で読まれ、名詞目的語と緊密に結合して語彙化（合成語化）することが極めて多い文法パターンです。主な用法は2つに大別されます。第1に、「有害な物質や急激な病変、罠などに冒される・命中される」受害の用法で、「中毒」（毒気に中る、中毒する）、「中暑」（熱中症にかかる、日射病になる）、「中风」（脳卒中で倒れる、風にあたる）、「中弹」（被弾する）、「中计」（計略にかかる）などが該当します。第2に、「選抜やくじ引きで当たること」を表し、「中奖」（賞品・宝くじが当たる）、「中标」（落札する）などがあります。中国語の語彙力と正確な声調の発音力を試す典型的な構文です。",
+    "formation": "主語 ＋ 中（zhòng） ＋ 名詞（毒 / 暑 / 风 / 弹 / 计 / 奖 / 标 など）",
+    "examples": [
+      {
+        "translation": "このキノコは食べてはならない、食べたら中毒を起こす。"
+      }
+    ]
   },
   "zh_姑且_682": {
-    "title": "姑且 (for now)",
-    "shortExplanation": "for now",
-    "longExplanation": "for now. Pinyin: gūqiě",
-    "formation": "gūqiě"
+    "title": "姑且（譲歩副詞：ひとまず・さしあたり・仮に〜としておく・当面の間）",
+    "shortExplanation": "現状において十分な解決策がないため、「ひとまず現状を受け入れる」「当面の間仮にそうしておく」という一時的な妥協や譲歩を表す副詞です（「ひとまず」「さしあたり」）。",
+    "longExplanation": "「姑且」（gūqiě）は、問題の抜本的な解決には至らないものの、現下の状況下で一歩譲って柔軟に暫定的な対応を取ることを表す譲歩副詞です。「姑」には「ひとまず許容する、大目に見る」という意味があり、「且」は「暫定的に、さしあたり」という意味を持ちます。述語動詞の前に置かれ、「完全な納得や最善策が得られているわけではないが、まずは仮の処置としてそのようにしておく」という妥協のニュアンスを含みます。後続節では「然后再……（そのうえで後から〜する）」のように本格的な対応策を模索する文脈が続くことが非常に多いです。よく使われる連語に「姑且先……」（ひとまず先に〜する）、「姑且不论 / 姑且不说」（ひとまず論外としておく）などがあります。",
+    "formation": "主語 ＋ 姑且（＋ 先） ＋ 動詞（＋ 目的語） ，＋ 然后 / 以后 ＋ 節",
+    "examples": [
+      {
+        "translation": "この件は、ひとまず先に引き受けておいて、そのあとでじっくり対策を考えればよい。"
+      }
+    ]
   },
   "zh_随即_683": {
-    "title": "随即 (as soon as)",
-    "shortExplanation": "as soon as",
-    "longExplanation": "as soon as. Pinyin: suíjí",
-    "formation": "suíjí"
+    "title": "随即（時間副詞・接続詞：すぐに・ただちに・引き続いて・間もなく）",
+    "shortExplanation": "先行する動作や事象が終わった直後に、間を置かず後続の事態が引き続いて生起することを表す格調高い時間副詞です（「すぐに」「引き続いて」「ただちに」）。",
+    "longExplanation": "「随即」（suíjí）は、新聞記事、公的報告、歴史物語などの叙述文節で極めて高い頻度で使用される書面語の時間副詞です。「随」（〜に従って、引き続いて）と「即」（ただちに、すぐに）が結合し、前事の完了と後事の発生との間に時間的な間隙がほとんど存在しない「極めて緊密な継起関係」を客観的に記録・報告します。口語表現の「马上」や「立刻」が話し手の主観的な緊急性や決意を伴うことが多いのに対し、「随即」は物語の展開や事実の推移を冷静・格調高く記述するトーンを持ちます。日本語の「引き続いて」「直ちに」「間もなく」「すかさず」に相当します。",
+    "formation": "事象1 ，（主語 ＋） 随即 ＋ 事象2（動詞 ＋ 目的語）",
+    "examples": [
+      {
+        "translation": "イエスは洗礼を受けると、すぐに水の中から上がられた。"
+      }
+    ]
   },
   "zh_宁愿_684": {
-    "title": "宁愿 (would rather)",
-    "shortExplanation": "would rather",
-    "longExplanation": "would rather. Pinyin: nìngyuàn",
-    "formation": "nìngyuàn"
+    "title": "宁愿（選択副詞・接続詞：いっそ〜するほうがよい・〜してでも・むしろ〜を選ぶ）",
+    "shortExplanation": "2つの事態を比較衡量した結果、たとえ代償や苦痛を伴う選択肢であっても、より重要な価値や目標を守るために「いっそそちらを選ぶ」という強い決意を表します（「〜してでも」「むしろ〜する」）。",
+    "longExplanation": "「宁愿」（nìngyuàn）は、「宁可」と並び称される選択複文の代表的な連語・副詞です。「宁」（むしろ、いっそ）と「愿」（望む、進んで〜する）から成り、「宁可」に比べて話し手の主観的な心情や主体的な願いのニュアンスがより色濃く反映されます。2つの選択肢を慎重に比較検討したうえで、「たとえ金銭的・肉体的な負担や苦難を引き受けることになろうとも、粗悪品を掴まされたり尊厳を失ったりするよりはずっとましである」という覚悟を持って一方を選択します。最も頻繁に用いられる呼応関係は、「宁愿……，也要……」（たとえ〜してでも、絶対に…したい）および「宁愿……，也不……」（いっそ〜するくらいなら、絶対に…はしない）の2パターンです。",
+    "formation": "主語 ＋ 宁愿 ＋ 節・行為（代償） ，＋ 也要 / 也不 ＋ 節・行為（目的・拒絶）",
+    "examples": [
+      {
+        "translation": "私たちは少々余分にお金を払ってでも、品質の良いものを買うべきだ。"
+      }
+    ]
   },
   "zh_N归N_685": {
-    "title": "N 归 N (although N is N)",
-    "shortExplanation": "although N is N",
-    "longExplanation": "although N is N. Pinyin: N guī N",
-    "formation": "N guī N"
+    "title": "名詞 ＋ 归 ＋ 名詞（譲歩境界画定構文：〜は〜として・〜はそれとして・〜は別問題として）",
+    "shortExplanation": "同一の名詞を「归」で挟んで反復し、「先行する事柄それ自体は認めるが、それと後続の事項とは明確に一線を画すべきである」という境界・限度を明確に示す譲歩表現です（「〜は〜として」「〜は別として」）。",
+    "longExplanation": "「名詞 ＋ 归 ＋ 名詞」は、中国語における同語反復型の代表的な譲歩構文です（「動詞 ＋ 归 ＋ 動詞」のパターンも存在します）。動詞「归」（帰する、〜の範疇に属する）を挟んで同一の名詞（多くは「开玩笑」「工作」「交情」「生意」などの行動・人間関係に関わる名詞）を2回重ねます。構文全体の論理機能として、まず前件で「その事柄が存在すること自体は当然のこととして認める・許容する」という譲歩を行い、直後の後件（「但」「但是」「千万别」などの逆接や禁止詞を伴う）において「しかし、それには自ずと限度があり、本末転倒になってはならない」「公私の混同は許されない」と毅然とした一線を引きます。日本語の「冗談は冗談として」「仕事は仕事、プライベートは別」といった境界画定の語感に完全に一致します。",
+    "formation": "名詞 ＋ 归 ＋ 名詞 ，但 / 但是 ＋ 境界・注意喚起節",
+    "examples": [
+      {
+        "translation": "友達同士、冗談は冗談としてよいが、決して度を越してはならない。"
+      }
+    ]
   },
   "zh_进而_686": {
-    "title": "进而 (and then)",
-    "shortExplanation": "and then",
-    "longExplanation": "and then. Pinyin: jìn'ér",
-    "formation": "jìn'ér"
+    "title": "进而（書面語累加・前進接続詞：進んで〜する・さらに進んで・ひいては・その結果さらに）",
+    "shortExplanation": "格式高い論説文において、前件で達成された成果や生じた事態を基盤として、さらに一段階上のレベルへと事態を推し進めたり深化させたりすることを表す累加・前進の接続詞です（「さらに進んで」「ひいては」）。",
+    "longExplanation": "「进而」（jìn'ér）は、現代中国語の論説文、政策文書、学術論文などで中核的な役割を果たす累加・前進接続詞です。「进」（進む、深まる）と「而」（接続助詞）から成ります。時間的な順序の前後関係のみを客観的に述べる「然后」や「接着」とは決定的に異なり、「进而」は常に「前段階の到達点や経験を土台として、より高度で、より深遠で、より本質的な次なる段階へと質的に飛躍・前進すること」を論理的に示します。認識の深化、技術の革新、社会の変革、自己改造などのプロセスを叙述する文脈で極めて高い頻度で使用されます。日本語の「さらに進んで」「進んで〜へと向かう」「ひいては〜する」に相当します。",
+    "formation": "節1（基礎・前段階） ，进而 ＋ 節2（深化・発展段階）",
+    "examples": [
+      {
+        "translation": "人間は実践の中で環境の影響を受け、さらに進んで自分自身をつくり変えていくのである。"
+      }
+    ]
   },
   "zh_得以V_687": {
-    "title": "得以 V (be enabled to V)",
-    "shortExplanation": "be enabled to V",
-    "longExplanation": "be enabled to V. Pinyin: déyǐ V",
-    "formation": "déyǐ V"
+    "title": "得以 ＋ 動詞（書面語助動詞句：〜することができる・それによって〜が可能となる・〜を得る）",
+    "shortExplanation": "先行する好条件、配慮、または特定の事由に支えられて、「そのおかげで〜することができる」「〜することが可能となる」という事態の好転や実現を表す格式高い書面語表現です（「〜することができる」「〜を得る」）。",
+    "longExplanation": "「得以」（déyǐ）は、「得」（〜を得る、〜できる）と「以」（〜によって、以て）が一体化した、現代語の論説や公的記述に頻出する格調高い助動詞的フレーズです。直後に動詞（主に二音節の動詞）を従え、「前述の特別な計らい、恩恵、努力、あるいは客観的な好条件に恵まれた結果として、通常であれば難しかったはずの望ましい事態が実現した（あるいは災厄を免れることができた）」という因果の成就を明快に表現します。「得以解决」（解決を見ることができた）、「得以生还」（生還を果たすことができた）、「得以免除」（免除されるに至った）のように、ポジティブまたは安堵をもたらす文脈で専用されます。日本語の「〜することができる」「〜する運びとなる」「それによって〜が可能となる」に相当します。",
+    "formation": "条件・原因 ，（主語 ＋） 得以 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼はまだ若かったため、罰を免れることができた。"
+      }
+    ]
   },
   "zh_偏偏V_689": {
-    "title": "偏偏 V (just V, to insist on V)",
-    "shortExplanation": "just V, to insist on V",
-    "longExplanation": "just V, to insist on V. Pinyin: piānpiān V",
-    "formation": "piānpiān V"
+    "title": "偏偏 ＋ 動詞（語気副詞：意地でも〜する・あえて〜しようとする・頑なに〜する）",
+    "shortExplanation": "他人の忠告、制止、あるいは常識的な規範に真っ向から反抗し、意地を張って「どうしても〜する」「頑なに〜しようとする」という強い逆らいの意志を表す語気副詞です（「あえて〜する」「頑なに〜しようとする」）。",
+    "longExplanation": "「偏偏」（piānpiān）は、漢字「偏」（偏る、筋道を外れる）を重ねることで語気を強めた極めて表情豊かな語気副詞です。動詞や助動詞（特に「要」「想」「不」など）の直前に置かれ、周囲の人々の親切な制止、忠告、あるいは客観的な危険や常識に真っ向から逆らって、「意固地に自分の我を通そうとする態度」を描写します。前件で「周囲の人間がこぞって忠告した・引き留めた」という背景が提示され、後件で「それにもかかわらず頑なに強行した」というコントラストが鮮やかに浮き彫りにされます。話し手の困惑、批判、呆れ、あるいはもどかしい感情が強く込められます。日本語の「あえて〜しようとする」「頑固に〜と言い張る」「意地でも〜する」に相当します。",
+    "formation": "主語 ＋ 偏偏（＋ 要 / 想 / 不） ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あそこはあまりに危険だからと誰もが彼に行くのを思いとどまるよう説得したのに、彼は意地でも行こうとした。"
+      }
+    ]
   },
   "zh_偏偏CLAUSE_690": {
-    "title": "偏偏 CLAUSE ((CLAUSE is an undesirable occurence by chance))",
-    "shortExplanation": "(CLAUSE is an undesirable occurence by chance)",
-    "longExplanation": "(CLAUSE is an undesirable occurence by chance). Pinyin: piānpiān CLAUSE",
-    "formation": "piānpiān CLAUSE"
+    "title": "偏偏 ＋ 節（語気副詞：あいにく・運悪く・折も折・よりによって）",
+    "shortExplanation": "本人の期待や都合に反して、よりによって最も不都合で最悪のタイミングで不都合な出来事が突発したことに対する、失望ややるせなさを表す語気副詞です（「あいにく」「よりによって」「折も折」）。",
+    "longExplanation": "「偏偏 ＋ 節」は、個人の主観的な頑固さを表す用法とは異なり、「客観的な巡り合わせの悪さ、運命の皮肉」を嘆く語気副詞用法です。多くの場合、「正当……时」（ちょうど〜していたまさにその時）などの時間節と呼応し、全節の述語部分を修飾します。当事者が平穏を求めていたり、あるいは集中して何かを行おうとしていたりする最悪のタイミングを見計らったかのように、迷惑で厄介な事態が突如として舞い込んできたやるせなさを浮き彫りにします。日本語の「あいにく〜」「よりによってその時に〜」「折も折〜」のニュアンスに完璧に合致します。",
+    "formation": "正当 / 正在 ＋ 事象1 ＋ 的时候 / 时 ，偏偏 ＋ 不都合な出来事節",
+    "examples": [
+      {
+        "translation": "私がちょうど腰を下ろして夕飯を食べようとしたまさにその時、あいにく電話が鳴り響いた。"
+      }
+    ]
   },
   "zh_况且_691": {
-    "title": "况且 (besides)",
-    "shortExplanation": "besides",
-    "longExplanation": "besides. Pinyin: kuàngqiě",
-    "formation": "kuàngqiě"
+    "title": "况且（累加・漸進接続詞：その上・おまけに・まして・なおさら）",
+    "shortExplanation": "後続節の冒頭に用いられ、前件で述べた事実に加えてさらに決定的な理由や根拠を補足し、結論や判断を一層力強く裏付ける接続詞です（「その上」「おまけに」「まして」）。",
+    "longExplanation": "「况且」（kuàngqiě）は、複文において更なる根拠を付け加える累加・漸進（ていしん）の接続詞です。主に後件の文頭に置かれ、先行節で既に提示された事実や状況に加えて、もう一つの有力な理由や条件を補足することにより、話者の下した判断、結論、あるいは主張の正当性を一段と強固にします。後続節の中ではしばしば副詞の「又」「也」「还」と呼応し、「况且……又/也……」の形で用いられます。単に事実を並列・追加する「而且」と異なり、「况且」は常に「理由・根拠の追加による説得力の向上」に主眼が置かれる点に語用論的な特徴があります。日常の丁寧な会話から論説文まで幅広く用いられます。",
+    "formation": "節1 ，况且（＋ 主語） ＋ 又 / 也 / 还 ＋ 述語（動詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "この部屋は交通の便がよく、近くに本屋もあり、その上家賃も高くないので、まさにこれ以上ないほどぴったりだ。"
+      }
+    ]
   },
   "zh_大TIME_692": {
-    "title": "大 TIME ((emphasize on TIME))",
-    "shortExplanation": "(emphasize on TIME)",
-    "longExplanation": "(emphasize on TIME). Pinyin: dà TIME",
-    "formation": "dà TIME"
+    "title": "大 ＋ 時間名詞（口語強調構文：白昼堂々・真夜中に・早朝から・真冬に等、時間の極端さ・場違いさの強調）",
+    "shortExplanation": "接頭辞的に「大」を特定の時間名詞（白天、半夜、清早、冬天、过年など）の前に冠し、その時間が際立っていることや、その時間帯に行うにはあまりに不適切・唐突・大胆であることを強調する口語表現です（「白昼堂々」「真夜中」「真冬に」）。",
+    "longExplanation": "「大 ＋ 時間名詞」は、中国語口語において感情を込めて状況を際立たせる特徴的な修飾形式です。「大」は物理的な大きさではなく、時間帯の頂点・極端さ、あるいはその時間帯の性格が最も顕著に現れている状態を表します。主に「白天」（昼間）、「半夜」（夜中）、「清早」（早朝）、「冬天」（冬）、「热天」（猛暑の日）、「过年」（年越し・正月）などの名詞と結びつきます。多くの場合、「その時間帯にそのようなことが起きる／そのような行動を取るのは、あまりに唐突、非常識、あるいは不相応である」という驚き、不満、非難、感嘆のニュアンスを含みます。例えば「大白天」は人目が多い真昼間であるにもかかわらず悪事などが行われる「白昼堂々」を表し、「大半夜」は静まり返るべき「真夜中・夜更け」を表します。",
+    "formation": "（主語 ＋） 大 ＋ 時間名詞（白天 / 半夜 / 清早 / 冬天 / 过年 など） ＋ 述語（動詞 / 形容詞）",
+    "examples": [
+      {
+        "translation": "あの車は白昼堂々、人に盗まれてしまった。"
+      }
+    ]
   },
   "zh_与其V倒不如V_693": {
-    "title": "(与其) V 倒不如 V (rather than V, it’s better to V)",
-    "shortExplanation": "rather than V, it’s better to V",
-    "longExplanation": "rather than V, it’s better to V. Pinyin: ( yǔqí) V dǎo bùrú V",
-    "formation": "( yǔqí) V dǎo bùrú V"
+    "title": "(与其) ＋ 動詞1 / 節1 ＋ 倒不如 ＋ 動詞2 / 節2（選択取捨構文：〜するくらいなら、むしろ〜するほうがましだ・〜するよりはいっそ〜したほうがよい）",
+    "shortExplanation": "2つの選択肢を比較衡量した上で、前者の行動を退け、後者の行動をより適切・賢明な策として積極的に選択することを表す比較取捨の構文です。副詞「倒」が逆転の語気を強め、「むしろ〜のほうがよほどよい」というニュアンスを際立たせます。",
+    "longExplanation": "「(与其)……倒不如……」は、二者択一の比較衡量において「一方を捨てて他方を採る（捨此取彼）」ことを表す典型的な取捨複文の強調形です。前半の「与其」節（口語では省略されることもある）で放棄すべき非現実的・無駄な選択肢を提示し、後半の「倒不如」節でより現実的・有益な対案を導き出します。ここで用いられている副詞「倒」は、一般的な予想や妥協案に対する「逆転・対比」の語気を帯びており、「あれこれ無駄に苦慮するくらいなら、発想を逆転させて後者を選んだほうがはるかにましだ」という話者の主体的な割り切りと断定的な評価を鮮やかに描き出します。「〜するくらいなら、むしろ〜したほうがましだ」「いっそ〜したほうがよい」という日本語の表現に相当します。",
+    "formation": "（与其 ＋） 動詞1 / 節1 ，倒不如（＋ 主語） ＋ 動詞2 / 節2",
+    "examples": []
   },
   "zh_以免_695": {
-    "title": "以免 (为了避免)",
-    "shortExplanation": "为了避免",
-    "longExplanation": "为了避免. Pinyin: yǐmiǎn",
-    "formation": "yǐmiǎn"
+    "title": "以免（目的接続詞：〜しないように・〜を避けるために・〜の恐れがないように）",
+    "shortExplanation": "後続節の文頭に置かれ、前件の行動を取ることによって望ましくない事態や悪影響の発生を未然に防止することを表す目的接続詞です（「〜しないように」「〜を避けるために」）。",
+    "longExplanation": "「以免」（yǐmiǎn）は、「以」（〜によって、〜のために）と「免」（免れる、避ける）が合わさった格調高い目的接続詞です。文法的には、前件で述べる予防措置や配慮が「いかなる望ましくない結果を回避するためのものであるか」を後続節で明確に示す役割を果たします。口語で親しまれている「免得」や「省得」に比べて文面が引き締まり、客観的かつ規範的な語感を伴うため、公的な注意喚起、医療衛生の指導、規則条文、論説文などで頻繁に使用されます。「後々のトラブルや感染、損害などの不利益を防ぐために、あらかじめ前件の行動をしておく」という因果的・予防的な論理構造を明示します。",
+    "formation": "行動節1 ，以免 ＋ 回避すべき事態節2",
+    "examples": [
+      {
+        "translation": "風邪をひいた時は、他人にうつさないように、極力公共の場に行くのを控えるべきである。"
+      }
+    ]
   },
   "zh_嫌_696": {
-    "title": "嫌 (dislike, have a strong negative opinion about)",
-    "shortExplanation": "dislike, have a strong negative opinion about",
-    "longExplanation": "dislike, have a strong negative opinion about. Pinyin: xián",
-    "formation": "xián"
+    "title": "嫌（心理動詞：〜を嫌がる・〜だと不満に思う・〜を敬遠する・〜と文句を言う）",
+    "shortExplanation": "対象のある側面に対して不満を抱き、「〜を不満に思う」「〜だと嫌がる」「〜を理由に敬遠する」という主観的な不満や難癖のニュアンスを表す及物動詞です。",
+    "longExplanation": "「嫌」（xián）は、ある事物の欠点や気に入らない点に対して抱く主観的な不満や不快感を直接表す心理動詞です。後ろに形容詞、動詞句、あるいは小節（主述述語）を目的語として直接取ることができます。典型的な構文パターンとして以下があります：①「嫌 ＋ 形容詞」（〜すぎると嫌がる・文句を言う、例：「嫌贵」＝高すぎると嫌がる、「嫌麻烦」＝面倒くさがる、「嫌远」＝遠いと敬遠する）；②「嫌 ＋ 目的語 ＋ 述語」（目的語が〜だと不満に思う、例：「嫌菜淡」＝料理の味が薄いと不満を言う、「嫌他太啰嗦」＝彼がくどすぎると嫌がる）。客観的な描写というよりも、話者や主語のわがままや辛口な評価、不満の所在をはっきりと示す表現です。",
+    "formation": "主語 ＋ 嫌（＋ 対象） ＋ 形容詞 / 欠点を表す節",
+    "examples": [
+      {
+        "translation": "みんなはこの旅行計画があまり合理的でないと不満に思っている（難色を示している）。"
+      }
+    ]
   },
   "zh_动不动就V_697": {
-    "title": "动不动就 V (on a whim)",
-    "shortExplanation": "on a whim",
-    "longExplanation": "on a whim. Pinyin: dòngbudòng jiù V",
-    "formation": "dòngbudòng jiù V"
+    "title": "动不动就 ＋ 動詞（慣用副詞表現：事あるごとにすぐ〜する・とかく〜しがちである・ちょっとしたことですぐ〜する）",
+    "shortExplanation": "わずかなきっかけや些細な理由で、望ましくない動作や感情反応（怒る、泣く、病気になるなど）が極めて安易かつ頻繁に引き起こされることを表す口語の慣用表現です（「事あるごとにすぐ〜する」「ちょっとしたことですぐ〜する」）。",
+    "longExplanation": "「动不动就 ＋ 動詞」は、特定の行為や事態がいとも簡単に、かつ頻繁に発生する様子を表す日常会話の定番フレーズです。「动不动」は直訳すると「動くとも動かないとも言えないうちに（少しの動きも経ないうちに）」という意味で、極めて些細な刺激や理由で事態が生じることを指します。副詞の「就」とセットで連用修飾語（状語）として動詞の前に置かれます。この構文の後ろに来る動詞は、大半が感情的な爆発（発怒する、焦る、泣くなど）、病気、あるいは無責任な行動（仕事を辞める、投げ出すなど）といった好ましくない事態であり、話者の不満、困惑、あるいは呆れ果てた批判のニュアンスが色濃く漂います。",
+    "formation": "主語 ＋ 动不动就 ＋ 動詞（好ましくない動作・心理反応）",
+    "examples": [
+      {
+        "translation": "彼は最近仕事が忙しくストレスが大きいため、事あるごとにすぐ焦ったり怒り出したりする。"
+      }
+    ]
   },
   "zh_甲乙丙丁_698": {
-    "title": "甲乙丙丁 (A, B, C, D (series))",
-    "shortExplanation": "A, B, C, D (series)",
-    "longExplanation": "A, B, C, D (series). Pinyin: jiǎyǐ bǐng dīng",
-    "formation": "jiǎyǐ bǐng dīng"
+    "title": "甲乙丙丁（順序標識・代名表現：甲・乙・丙・丁、A・B・C・Dに相当する等級・順序・仮名表記）",
+    "shortExplanation": "十干の冒頭4文字に由来し、文書や契約書、試験などで順序・等級（A、B、C、Dに相当）を列挙する際、あるいは契約の当事者（甲・乙）、無作為の一般人を仮名（かめい）として指す際に用いる伝統的かつ標準的な記号表現です。",
+    "longExplanation": "「甲、乙、丙、丁」（jiǎ, yǐ, bǐng, dīng）は、古代中国の「十天干」の最初の4つの文字であり、現代中国語においても極めて広範囲に機能している序列・代称システムです。主に3つの領域で活躍します：① 等級・順序のナンバリング：英語のA、B、C、Dに正確に対応し、選択肢、等級判定（甲等、乙等など）、箇条書きの分類項目として用いられます；② 契約書や公的文書における当事者の代称：「甲方（甲）」、「乙方（乙）」のように、契約の主体を客観的・中立的に指し示します；③ 一般不特定の人物を指す慣用句：「甲乙丙丁」は「張三李四（ちょうさんりし）」と同様に、「名もなき通行人」「誰かれ問わず不特定多数の人々」「道行く通行人A」という比喩的な口語表現としても用いられます。",
+    "formation": "名詞（項目 / 等級 / 当事者） ： 甲 / 乙 / 丙 / 丁",
+    "examples": [
+      {
+        "translation": "甲・乙・丙・丁は一連の順序であり、英語のA、B、C、Dに相当する。"
+      }
+    ]
   },
   "zh_加以V_699": {
-    "title": "加以 V (proceed with V)",
-    "shortExplanation": "proceed with V",
-    "longExplanation": "proceed with V. Pinyin: jiāyǐ V",
-    "formation": "jiāyǐ V"
+    "title": "加以 ＋ 動詞（書面語形式動詞構文：〜を加える・〜を行う・〜を施す）",
+    "shortExplanation": "格調高い書面語において、2音節の動作性動詞の前に添えられ、前述の対象に対してその処理や行為を施すことを表す形式動詞です（「〜を加える」「〜を施す」「〜を行う」）。",
+    "longExplanation": "「加以」（jiāyǐ）は、現代中国語の論説文、報道、公文書などで多用される代表的な形式動詞（実質的な意味が希薄化し、文法的な枠組みを提供する動詞）です。後ろには必ず2音節の他動詞的動作動詞（研究、解决、分析、限制、改造、批评、保护など）を従えます。統語構造上、その動作の対象（客体）はあらかじめ先行文の主語として提示されているか、あるいは前置詞「对」「对于」によって文頭に引き出されていることが一般的です。「加以」を挿入することで、文全体のリズムが整い、単に「研究你提的意见」と言うよりも格調高く客観的な語気を帯びます。「〜に対して検討・処理を加える」「〜について分析を行う」という日本語の公的表現に極めて自然に対応します。",
+    "formation": "（对 / 对于 ＋ 対象 ，） 主語 ＋ （认真 / 进一步 ＋） 加以 ＋ 2音節動詞",
+    "examples": [
+      {
+        "translation": "あなたのご意見とご提案につきましては、私たちは真摯に検討・研究を加える所存です。"
+      }
+    ]
   },
   "zh_大大远远V_700": {
-    "title": "大大/远远 V (V by far)",
-    "shortExplanation": "V by far",
-    "longExplanation": "V by far. Pinyin: dàdà/ yuǎnyuǎn V",
-    "formation": "dàdà/ yuǎnyuǎn V"
+    "title": "大大 / 远远 ＋ 動詞（程度副詞重畳構文：はるかに〜を超える・大いに〜する・著しく〜を上回る）",
+    "shortExplanation": "形容詞「大」「远」の重畳副詞が、変化・比較・超越を表す動詞（超出、超过、提高など）を修飾し、程度が極めて著しいことや格差・隔たりが非常に大きいことを強調します（「はるかに」「大いに」「著しく」）。",
+    "longExplanation": "「大大」（dàdà）および「远远」（yuǎnyuǎn）は、形容詞が重畳して強い程度修飾機能を担う連用修飾語（副詞的状語）です。主に比較、変化、凌駕を意味する動詞句（「超出」＝〜を超える、「超过」＝〜を上回る、「提高」＝高める、「落后」＝遅れをとるなど）の前に置かれます。「大大」は変化の振れ幅や規模の莫大さ（「大いに」「大幅に」「著しく」）を強調し、「远远」は基準や予想との間にある距離・格差が圧倒的であること（「はるかに」「桁違いに」）を際立たせます。客観的な数値の比較から主観的な評価・賞賛に至るまで、差の開きが歴然としていることを生き生きと力強く叙述する際に必須の表現です。",
+    "formation": "主語 ＋ 大大 / 远远 ＋ 動詞（超出 / 超过 / 提高 / 改善 など）（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あなたの能力は、私たちの想像をはるかに（大きく）超えていました。"
+      }
+    ]
   },
   "zh_远远不没VA_701": {
-    "title": "远远 + 不/没 + V/A (far from V-ing, far from A)",
-    "shortExplanation": "far from V-ing, far from A",
-    "longExplanation": "far from V-ing, far from A. Pinyin: yuǎnyuǎn + bù/ méi + V/A",
-    "formation": "yuǎnyuǎn + bù/ méi + V/A"
+    "title": "远远 ＋ 不 / 没 ＋ 動詞 / 形容詞（強調否定構文：到底〜には及ばない・はるかに〜に達していない・到底〜できない）",
+    "shortExplanation": "重畳副詞「远远」が否定詞「不」「没」と結びつき、現在の状態や能力が目標・基準・要求から「はるかにかけ離れている」「到底足元にも及ばない」ことを厳格に指摘する表現です（「到底〜ない」「はるかに〜に及ばない」）。",
+    "longExplanation": "「远远 ＋ 不 / 没 ＋ 動詞 / 形容詞」は、否定の度合いと基準との圧倒的な隔たりを際立たせる強調否定構文です。「远远」が空間的な長大さから転じて「甚だしい格差」を表し、それに続く「不」（不能、不如、不够など）や「没」（没有达到など）を力強く修飾します。これにより、「単に否定する」にとどまらず、「理想の基準や要求値に対して、現実は到底及びもつかないほど遠く及ばない」という深刻な懸隔を浮き彫りにします。典型的なフレーズとして「远远不够」（到底足りない）、「远远不能」（とても〜できる状態ではない）、「远远没有达到」（遥かに達していない）などがあります。自己の未熟さを戒める場面や、厳しい能力評価を行う場面などで頻出します。",
+    "formation": "主語 ＋ 远远 ＋ 不 / 没（有） ＋ 助動詞 / 動詞 / 形容詞",
+    "examples": [
+      {
+        "translation": "あなたの現在の知識と能力は、理想の仕事を担うには到底（はるかに）及ばない。"
+      }
+    ]
   },
   "zh_紧缩句_702": {
-    "title": "紧缩句 ((omitting “if” words))",
-    "shortExplanation": "(omitting “if” words)",
-    "longExplanation": "(omitting “if” words). Pinyin: jǐnsuō jù",
-    "formation": "jǐnsuō jù"
+    "title": "紧縮句（緊縮文：仮定接続詞・読点の省略による緊迫・即応構文）",
+    "shortExplanation": "複文において仮定接続詞（要是、如果など）や節の間の読点を省き、副詞「就」などで前後を直結させることで、迅速・緊迫した論理展開や断固たる命令・警告を表す統語形式です（「緊縮文」）。",
+    "longExplanation": "「紧缩句」（緊縮文、きんしゅくぶん）とは、中国語文法における特殊な文形式の一つで、本来複文（2つの独立した節）である論理関係（仮定・条件と結果）を、接続詞（「要是」「如果」など）を省き、ポーズ（読点）を置かずに副詞（「就」「才」「也」など）を用いて1つの単文のように緊密に凝縮した構文です。例文「站住！不站住，我就开枪了」に見られるように、前件の仮定標識「要是」が省略されることで、話者の発話速度が極度に速まり、危機感、断固たる警告、あるいは緊急の威嚇のニュアンスが劇的に高まります。「〜しなければ即座に…するぞ」という瞬発的・直截的な語感を醸し出す口語特有の表現技法です。",
+    "formation": "（要是 / 如果 ＋） 述語1 ，（主語2 ＋） 就 ＋ 述語2",
+    "examples": [
+      {
+        "translation": "止まれ！（もし）止まらないなら、撃つぞ！"
+      }
+    ]
   },
   "zh_特意_703": {
-    "title": "特意 (on purpose)",
-    "shortExplanation": "on purpose",
-    "longExplanation": "on purpose. Pinyin: tèyì",
-    "formation": "tèyì"
+    "title": "特意（目的副詞：わざわざ・特別に・格別の配慮で・ことさらに）",
+    "shortExplanation": "ある特別な目的のために、手間や労力を惜しまず配慮して行動を起こすことを表す好意的な副詞です（「わざわざ」「特別に」）。悪意を持つ「故意（わざと）」とは明確に区別されます。",
+    "longExplanation": "「特意」（tèyì）は、動詞述語の前に置かれ、その行為がついでや偶発的なものではなく、「特別にその目的や相手のために心を配り、意図して行ったものである」ことを表す連用副詞です。「特」は特別、「意」は心意・意図を表します。この言葉の重要な語用論的特徴は、その行為の動機が極めて誠実・好意的・肯定的である点にあります。悪意や作為をもって不都合なことを引き起こす「故意（わざと）」とは厳格に使い分けられます。「特意」は、相手へのもてなし（わざわざ買いに行く、遠回りして会いに来るなど）、あるいは自発的な熱意による格別な行動を描写する際に最適であり、日本語の「わざわざ」「格別の計らいで」「特別に」のニュアンスに合致します。",
+    "formation": "主語 ＋ 特意 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "あの年、私は天津へ出張した折、わざわざ遠回りして北京へ立ち寄り、円明園を訪れた。"
+      }
+    ]
   },
   "zh_即将_704": {
-    "title": "即将 (about)",
-    "shortExplanation": "about",
-    "longExplanation": "about. Pinyin: jíjiāng",
-    "formation": "jíjiāng"
+    "title": "即将（書面語時間副詞：まもなく〜する・今まさに〜しようとしている・間近に迫っている）",
+    "shortExplanation": "格調高い書面語において、ある重要な事態や行動が極めて近い将来に実現しようとしていることを表す時間副詞です（「まもなく」「今まさに〜しようとしている」）。",
+    "longExplanation": "「即将」（jíjiāng）は、「即」（直ちに）と「将」（まさに〜せんとす）から成る、極めて典雅な書面語の時間副詞です。述語動詞の直前に置かれ、提示された動作や重大な局面が、ごく短い時間ののちに現実のものとなる（切迫した未来である）ことを厳粛に予告します。口語表現の「马上」「快要」「就要」と比べて、文章語としての引き締まった格調と重厚感を持ち、ニュース報道、公的演説、文学作品の結びなどで愛用されます。「即将到来」（まもなく到来する）、「即将开幕」（間もなく開幕する）、「即将踏上征程」（今まさに旅立とうとしている）などの慣用連語があり、人生の節目や歴史的イベントの幕開けを描写するのに格好の構文です。",
+    "formation": "主語 ＋ 即将 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "私たちは学業を修め、まもなく持ち場（職場）に就き、人生の新たな一頁を開こうとしている。"
+      }
+    ]
   },
   "zh_能V就V_705": {
-    "title": "能 + V + 就 + V (V if possible)",
-    "shortExplanation": "V if possible",
-    "longExplanation": "V if possible. Pinyin: néng + V + jiù + V",
-    "formation": "néng + V + jiù + V"
+    "title": "能 ＋ 動詞 ＋ 就 ＋ 動詞（口語反復構文：できるなら〜する・可能であれば極力〜しておく・〜できる限り〜する）",
+    "shortExplanation": "動詞を反復し、「客観的な条件が許すのであれば、極力その行動を取るべきだ」という無駄を省く現実的・柔軟な態度を表す口語の定型パターンです（「できるなら〜する」「可能なら極力〜しておく」）。",
+    "longExplanation": "「能 ＋ 動詞 ＋ 就 ＋ 動詞」は、日常会話で極めて高い頻度で用いられる反復型の慣用構文です。同一の動詞が助動詞「能（〜できる）」の後と副詞「就（〜する）」の後にそれぞれ置かれ、「条件さえ許せば、その処置を最大限優先して行う」という実利的な判断やアドバイスを表します。余計な浪費、労力、トラブルを避けるために「まだ使えるなら使う」「節約できるなら節約する」といった融通の利く生活の知恵を述べる際によく使われます。代表例として、「能省就省」（節約できるところは極力節約する）、「能修就修」（直せるものなら直して使う）、「能帮就帮」（手助けできるなら力になる）などがあります。",
+    "formation": "主語 ＋ 能 ＋ 動詞 ＋ 就 ＋ 動詞",
+    "examples": [
+      {
+        "translation": "この携帯電話はまだ使って日が浅いのだから、修理できるなら修理して、極力新しいものに買い替えないようにしなさい。"
+      }
+    ]
   },
   "zh_别说_706": {
-    "title": "别说 (let alone)",
-    "shortExplanation": "let alone",
-    "longExplanation": "let alone. Pinyin: bié shuō",
-    "formation": "bié shuō"
+    "title": "别说……，就是 / 连……也……（譲歩累加構文：〜はおろか・〜どころか、〜ですら・〜でさえも）",
+    "shortExplanation": "前件でより水準の高い事物を「言うまでもなく論外である」として除外し、後件で「ましてやより基本的なもの・些細なものですら〜である」と極端な事例を挙げて強調する譲歩累加の構文です（「〜はおろか…でさえ」「〜どころか…すら」）。",
+    "longExplanation": "「别说……，就是 / 连……也 / 都……」は、日常会話から文学作品まで幅広く用いられる極めて表現力の高い譲歩・累加（漸進）構文です。「别说」（言うまでもなく、〜どころではない）は口語の「甭说」「不要说」と同義であり、前節でまず高度な基準や贅沢な選択肢を退けます。そして後節で接続詞「就是（たとえ〜であっても）」や前置詞「连（〜ですら）」、副詞「也」「都」を用いて、より低水準・最低限の事物を引き合いに出し、事態の過酷さ、困窮ぶり、あるいは徹底ぶりを強烈に印象づけます。「ろうそくはおろか、ランプの油でさえも節約しなければならなかった」のように、明暗の対比を通じて事態の深刻さや真剣さを読者・聞き手に訴えかけます。",
+    "formation": "别说 ＋ 事物A（高水準・贅沢品）（了） ，就是 / 连 ＋ 事物B（最低限の事物） ＋ 也 / 都 ＋ 述語",
+    "examples": [
+      {
+        "translation": "夜間に読書をする際、ろうそくはおろか、ランプの油でさえも節約しながら使わなければならなかった。"
+      }
+    ]
   },
   "zh_V1V1V2V2_707": {
-    "title": "V1V1V2V2 ((repeated action))",
-    "shortExplanation": "(repeated action)",
-    "longExplanation": "(repeated action). Pinyin: V1V1V2V2",
-    "formation": "V1V1V2V2"
+    "title": "動詞1動詞1動詞2動詞2（動詞のAABB型重畳：〜したり…したりする、繰り返される動作や様態の生き生きとした描写）",
+    "shortExplanation": "2つの単音節動詞をAABBの形式で重ね合わせ、動作が連続的・反復的に行われる様子や、気楽で生き生きとした様態を表します（「じゃれ合ったり騒いだり」「ぶつかったり転んだり」）。",
+    "longExplanation": "「動詞1動詞1動詞2動詞2」は、中国語の日常口語において動作の反復や状態の展開を極めて写実的かつ軽妙に描写するAABB型の動詞重畳構文です。多くは並列関係にある2つの動詞素（あるいは「打闹」「磕碰」「吵闹」「摇晃」などの並列複合動詞）がそれぞれ個別に重ね合わされて構成されます。文法上は述語、主語、連用修飾語、連体修飾語として柔軟に機能します。この形式を用いることで、単なる動作の発生にとどまらず、「楽しげにじゃれ合っている」「細かな衝突や擦り傷を日常茶飯事として繰り返している」といった動作の継続性や、事態を深刻に捉えずおおらかに見守る話し手の感情・語気が生き生きと表現されます。",
+    "formation": "動詞1動詞1動詞2動詞2（例：打打闹闹、磕磕碰碰、吵吵闹闹）",
+    "examples": [
+      {
+        "translation": "子供たちはじゃれ合って大騒ぎするのが大好きなのだから、ぶつかったり転んだりするのは避けられないよ。数日もすれば良くなるから、心配しないで。"
+      }
+    ]
   },
   "zh_左MN右MN_708": {
-    "title": "左 # M N 右 # M N (one N after another)",
-    "shortExplanation": "one N after another",
-    "longExplanation": "one N after another. Pinyin: zuǒ # M N yòu # M N",
-    "formation": "zuǒ # M N yòu # M N"
+    "title": "左 ＋ 数詞 ＋ 量詞 ＋ 名詞 ＋ 右 ＋ 数詞 ＋ 量詞 ＋ 名詞（口語反復強調表現：次から次へと〜、立て続けに〜を連発して）",
+    "shortExplanation": "方位を表す「左」「右」と数量詞（主に「一 ＋ 量詞」）を組み合わせ、事象や行為が立て続けに、次から次へとひっきりなしに押し寄せる様子を表す口語構文です（「次から次へと」「あれこれ立て続けに」）。",
+    "longExplanation": "「左 ＋ 数詞 ＋ 量詞 ＋ 名詞 ＋ 右 ＋ 数詞 ＋ 量詞 ＋ 名詞」（日常会話では「左一个……右一个……」の形で多用）は、出来事や行為の頻度の高さや執拗さを生き生きと誇張する対句的口語構文です。ここでの「左」「右」は実際の左右の方向ではなく、左右あらゆる方面から絶え間なく押し寄せる様態の比喩であり、数詞には通例「一」が用いられます。多くは助詞「地」を伴って連用修飾語（様態状語）となり、後続の動詞を修飾します（例：「左一个电话右一个电话地催」＝立て続けに電話をかけて催促する、「左一声对不起右一声抱歉」＝何度も何度も謝り倒す）。相手の執拗な働きかけや事態の目まぐるしさを強調し、時に話し手の辟易したニュアンスや圧倒された感情を反映します。",
+    "formation": "（主語 ＋）左 ＋（数詞 ＋）量詞 ＋ 名詞 ＋ 右 ＋（数詞 ＋）量詞 ＋ 名詞（＋ 地 ＋ 動詞）",
+    "examples": [
+      {
+        "translation": "お母さんは次から次へと立て続けに電話をかけてきて、彼に早く帰るよう催促した。"
+      }
+    ]
   },
   "zh_莫非难道不成_709": {
-    "title": "莫非/难道 …… 不成 (could it be that)",
-    "shortExplanation": "could it be that",
-    "longExplanation": "could it be that. Pinyin: mòfēi/ nándào …… bùchéng",
-    "formation": "mòfēi/ nándào …… bùchéng"
+    "title": "莫非 / 难道 …… 不成（反語・推量疑問構文：まさか〜というわけではあるまい／まさか〜とでもいうのか）",
+    "shortExplanation": "文頭の推量・反語副詞「莫非」または「难道」と文末の語気助詞「不成」が呼応し、信じがたい事態に対する強い疑念、驚き、あるいは反語的な詰問を表します（「まさか〜ではあるまいな」「一体〜とでもいうのか」）。",
+    "longExplanation": "「莫非……不成」および「难道……不成」は、話し手の強い疑惑、驚愕、または不合理に対する反発を際立たせる呼応式の疑問・反語フレームです。「莫非」は予期せぬ不都合な事態に対する慎重な推量を導き、「难道」は強い反駁や詰問の語気を導きます。そして文末に置かれる「不成」（語源的には「〜では成り立たない／〜というわけにはいかない」）が文全体の語気を決定づけ、「もしそれが事実だとすれば到底納得できない」という感情を極限まで高めます。自己の衝撃的な気づき（独話）として使われることもあれば、相手の理不尽な態度を追及する鋭い反語として用いられることもあります。",
+    "formation": "莫非 / 难道 ＋ 節 / 述語 ＋ 不成 ？",
+    "examples": [
+      {
+        "translation": "彼は仰天し、頭の中が真っ白になった――まさか騙されたとでもいうのだろうか。"
+      }
+    ]
   },
   "zh_一个N_710": {
-    "title": "一个 N (with a…)",
-    "shortExplanation": "with a…",
-    "longExplanation": "with a…. Pinyin: yī gè N",
-    "formation": "yī gè N"
+    "title": "一个 ＋ 名詞（様態修飾・身体動作描写構文：くるりと・ぐらりと・思わず身を〜して、突発的・一挙動の動作を表す）",
+    "shortExplanation": "「一个」に身体動作や反射的反応を表す名詞（「跟头」「激灵」「转身」「踉跄」など）を続け、動作が一瞬のうちに、突発的かつ完結して行われる様子を生き生きと描写します（「くるりと身を〜」「ぐらりと〜」）。",
+    "longExplanation": "「一个 ＋ 名詞」は、中国語において一瞬の身体的動作、反射的な身のこなし、あるいは突発的な姿勢の変化を極めて動的に描写する連用修飾構文（様態状語）です。ここで組み合わされる名詞は純粋な事物を指すものではなく、「跟头（宙返り・つまずき）」「激灵（身震い・悪寒）」「转身（身を翻すこと）」「趔趄（よろめき）」のように動詞性を帯びた一連の身振りを指します。数量の「ひとつ」を表すにとどまらず、動作が急激かつ切れ味よく、一気に行われたという「一回性」と「緊迫感」を鮮明に浮き彫りにします（例：「一个激灵坐了起来」＝ハッと身震いして跳ね起きた）。",
+    "formation": "主語 ＋ 一个 ＋ 名詞（身体動作名詞：跟头、激灵、转身、踉跄 など） ＋ 動詞（＋ 補語）",
+    "examples": [
+      {
+        "translation": "彼は手で手すりを掴みそこね、一回転して真っ逆さまに転落した。"
+      }
+    ]
   },
   "zh_了个A_711": {
-    "title": "(了) 个 A (to the extent that it became A)",
-    "shortExplanation": "to the extent that it became A",
-    "longExplanation": "to the extent that it became A. Pinyin: ( le) gè A",
-    "formation": "( le) gè A"
+    "title": "（了） 个 ＋ 形容詞（口語結果・程度強調表現：すっかり…になる・徹底的に…してしまう・〜して散々な…になる）",
+    "shortExplanation": "動詞と形容詞（または四字熟語）の間に助詞「（了）个」を挟み、動作がもたらした結果や状態が極めて徹底的・完全・または深刻な極限に達したことを生き生きと強調します（「〜して粉々になる」「すっかり…してしまう」）。",
+    "longExplanation": "「動詞 ＋（了）个 ＋ 形容詞 / 四字成語」は、日常の話し言葉で動作の帰結を誇張的かつ劇的に描写する結果・程度補語構文です。ここでの「了」は動作の完了を示し、「个」は本来の量詞としての実質的な意味を失い、軽声で添えられる特殊な語気・構造助詞として機能しています。後続する形容詞や成語は、事態が最終的・徹底的な極限状態に達したことを示し、「摔了个粉碎」（粉々に粉砕してしまう）、「输了个精光」（一文無しにすっかり負けてしまう）、「闹了个大红脸」（真っ赤になって赤恥をかく）、「喝了个酩酊大醉」（泥酔するまで痛飲する）のように用いられます。事態の劇的な結末に対する話し手の驚きや強調の感情が強く込められます。",
+    "formation": "動詞 ＋ （了） 个 ＋ 形容詞 / 四字熟語（例：粉碎、精光、大红脸、酩酊大醉）",
+    "examples": [
+      {
+        "translation": "彼は大切にしていたバイオリンを地面に叩きつけ、粉々に砕いてしまった。"
+      }
+    ]
   },
   "zh_向来VA_712": {
-    "title": "向来 V/A (always have (been) V/A)",
-    "shortExplanation": "always have (been) V/A",
-    "longExplanation": "always have (been) V/A. Pinyin: xiànglái V/A",
-    "formation": "xiànglái V/A"
+    "title": "向来 ＋ 動詞 / 形容詞（時間副詞：従来・昔から・これまでずっと〜である・生来）",
+    "shortExplanation": "過去から現在に至るまで、特定の性質、習慣、方針、または状態が一貫して変わらず維持されていることを表す時間副詞です（「昔からずっと」「従来」「これまで一貫して」）。",
+    "longExplanation": "「向来」（xiànglái）は、過去から現在に至るまでの長い時間的スパンにおいて、ある事柄や性格、態度が一貫して変わることなく保たれていることを表す代表的な時間副詞です。動詞や形容詞の直前に置かれて連用修飾語（状語）として機能します。「向」には「従来、古くから」という意味があり、「来」は「現在に至るまで」を表します。人の人柄や信条を述べる文脈で「向来忠厚（昔から実直である）」「向来严谨（従来から綿密である）」のように用いられたり、方針・習慣に関して「向来如此（これまでずっとこうである）」「向来不主张……（従来から一貫して〜を支持しない）」のように使われます。口語・書面語を問わず自然に用いられ、事態の恒常性と確実性を力強く言明します。",
+    "formation": "主語 ＋ 向来 ＋ 動詞 / 形容詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼らは昔からずっと実直で誠実であり、人柄も温厚である。"
+      }
+    ]
   },
   "zh_预先_713": {
-    "title": "预先 (ahead of time)",
-    "shortExplanation": "ahead of time",
-    "longExplanation": "ahead of time. Pinyin: yùxiān",
-    "formation": "yùxiān"
+    "title": "预先（時間副詞：あらかじめ・前もって・事前に・前々から）",
+    "shortExplanation": "事態の発生や本番を迎える前に、あらかじめ準備、通知、計画、あるいは想定を行っておくことを表す時間副詞です（「あらかじめ」「事前に」「前もって」）。",
+    "longExplanation": "「预先」（yùxiān）は、「预（あらかじめ）」と「先（先に）」から構成される標準的な時間副詞です。動詞や動詞句の前に置かれて連用修飾語（状語）として機能し、行動、対策、段取り、あるいは心理的な予測が、当該の事態が実際に生起するよりも前段階で行われることを表します。公的な通知や準備作業に関して「预先通知（事前通知する）」「预先安排（あらかじめ手配する）」「预先防范（前もって予防する）」のように広く用いられます。また、例文のように「预先没有想到（事前に誰一人予想していなかった）」という否定形で用いられると、結果の意外性や予想を遥かに超えた反響に対する驚きが鮮やかに浮き彫りにされます。",
+    "formation": "（主語 ＋）预先 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "事前には誰一人として予想していなかったが、今回の絵画展がまさかこれほど大盛況になるとは思わなかった。"
+      }
+    ]
   },
   "zh_CLAUSE1也好CLAUSE2也罢_714": {
-    "title": "CLAUSE1 也好 CLAUSE2 也罢 (it doesn’t matter whether CLAUSE1 or CLAUSE2)",
-    "shortExplanation": "it doesn’t matter whether CLAUSE1 or CLAUSE2",
-    "longExplanation": "it doesn’t matter whether CLAUSE1 or CLAUSE2. Pinyin: CLAUSE1 yě hǎo CLAUSE2 yěbà",
-    "formation": "CLAUSE1 yě hǎo CLAUSE2 yěbà"
+    "title": "節1 也好 節2 也罢（並列譲歩接続表現：〜であろうと…であろうと・〜にせよ…にせよ・〜でも…でも）",
+    "shortExplanation": "2つ以上の並列あるいは対照的な条件・事態を提示し、いずれの状況であっても後続の節で述べられる結論や影響には何ら変わりがないことを表します（「〜であれ…であれ」「〜にせよ…にせよ」）。",
+    "longExplanation": "「節1 也好 節2 也罢」（バリエーションとして「〜也好〜也好」「〜也罢〜也罢」も同等）は、複数の選択肢や対立する前提条件を並列に提示しながら、それらを等しく譲歩の対象として括り込む複文接続表現です。文節や名詞句の末尾に「也好」「也罢」を添えることで、「そのどちらであっても差し支えない／どちらの条件を代入しても結果は同じである」という論理関係を構築します。後続の主節には「都……（いずれも〜だ）」「全……」などの包括的な副詞を伴うことが多く、前提の相違に左右されない普遍的な規則、不可避の結末、または固い決意を明確に提示する際に用いられます。",
+    "formation": "節1 也好 ， 節2 也罢 ，＋ 主節（不変の帰結・規則）",
+    "examples": [
+      {
+        "translation": "自動車を運転していようと、自転車に乗っていようと、走行中の通話は注意力と反射神経を鈍らせる。"
+      }
+    ]
   },
   "zh_不时_715": {
-    "title": "不时 (from time to time)",
-    "shortExplanation": "from time to time",
-    "longExplanation": "from time to time. Pinyin: bùshí",
-    "formation": "bùshí"
+    "title": "不时（時間・頻度副詞：時折・折に触れて・時々・合間合間に・しきりに）",
+    "shortExplanation": "一定の短い時間間隔を置いて、ある動作、音、現象などが繰り返し断続的に生じる様子を表す時間・頻度副詞です（「時折」「合間合間に」「ふと」「しきりに」）。",
+    "longExplanation": "「不时」（bùshí）は、情景描写や叙述において極めて豊かな表現力を持つ時間・頻度の副詞です。「不（決まっていない）」と「时（定時）」からなり、「決まった時刻を定めず、折に触れて何度も生じる」という原義を持ちます。動詞述語の直前に置かれて連用修飾語（状語）として機能します。特に風景の描写、鳥の鳴き声や物音、あるいは人の無意識な仕草について、「不时传来……（合間合間に〜が伝わってくる）」「不时回头（しきりに振り返る）」のように用いられます。「偶尔（たまに）」が単に発生頻度の低さ（希薄さ）を示すのに対し、「不时」は事象が現在の時間軸の合間合間にテンポよく割り込んでくる継続的・断続的な反復のニュアンスを含みます。",
+    "formation": "（主語 ＋）不时（＋ 地） ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "折に触れて聞こえてくる鳥のさえずりが、新しい一日がまた始まったことを私たちに教えてくれる。"
+      }
+    ]
   },
   "zh_多多少少_716": {
-    "title": "多多少少 (more or less)",
-    "shortExplanation": "more or less",
-    "longExplanation": "more or less. Pinyin: duōduōshǎoshǎo",
-    "formation": "duōduōshǎoshǎo"
+    "title": "多多少少（程度副詞・重畳語：多かれ少なかれ・いくらか・多少なりとも・ある程度は）",
+    "shortExplanation": "形容詞「多少」のAABB重畳形式で、程度や数量がある水準で確実に存在することを表し、断定を和らげて控えめに言明する際に用いる程度副詞表現です（「多かれ少なかれ」「いくらか」）。",
+    "longExplanation": "「多多少少」（duōduōshǎoshǎo）は、「多少（多少、いくらか）」がAABB形式に重ね合わされた生き生きとした連用修飾語（状語）です。動詞や形容詞の前に置かれ、数量や程度において「決してゼロではなく、多かれ少なかれ一定の分量や影響が備わっている」ことを表します。重畳されることでリズムが整い、話し手の主観的判断を過度に断定的にせず、客観的かつ柔軟に伝えるクッション言葉としての役割を果たします。「多多少少有一点……（いくらか〜がある）」「多多少少会受到影响（多かれ少なかれ影響を受ける）」のように使われ、日常の評価や感想を自然に表現できます。",
+    "formation": "主語 ＋ 多多少少 ＋ 動詞 / 形容詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "彼の言った言葉には、多かれ少なかれ真実が含まれている。"
+      }
+    ]
   },
   "zh_逐M_717": {
-    "title": "逐 M (one by one)",
-    "shortExplanation": "one by one",
-    "longExplanation": "one by one. Pinyin: zhú M",
-    "formation": "zhú M"
+    "title": "逐 ＋ 量詞（書面語連用修飾表現：一つずつ・一項目ずつ・順を追って〜ごとに・個別に）",
+    "shortExplanation": "格調高い書面語において「逐（順を追って、一つずつ）」に量詞を組み合わせ、動作や点検が漏れなく順番に、単位ごとに徹底して行われることを表す表現です（「一つずつ」「順次」「項目ごとに」）。",
+    "longExplanation": "「逐 ＋ 量詞」（zhú ＋ 量詞）は、公文書、学術報告、報道記事などで極めて頻繁に用いられる書面語特有の連用修飾構文（状語）です。「逐」は古典漢語に由来し、「順を追って次々と、一つ一つ漏れなく」という意味を表します。後続の量詞と密接に結びつき、動作がその単位ごとに綿密・厳格に遂行される様子を示します。代表的な連語として、「逐个 / 逐一（一つずつ、一人ずつ）」「逐条（条項ごとに一つ一つ）」「逐项（一項目ずつ）」「逐年（年を追うごとに、年々）」「逐字逐句（一字一句漏らさず）」などが挙げられます。口語の「一个一个地」に比べて極めて簡潔・典雅であり、公的で厳格なニュアンスを付与します。",
+    "formation": "主語 ＋ 逐 ＋ 量詞 ＋ 動詞（＋ 目的語）",
+    "examples": [
+      {
+        "translation": "雨季が近づいているため、安全上のリスクを排除すべく、貯水池を一つずつ点検しなければならない。"
+      }
+    ]
   },
   "zh_归根到底_718": {
-    "title": "归根到底 (after all)",
-    "shortExplanation": "after all",
-    "longExplanation": "after all. Pinyin: guīgēndàodǐ",
-    "formation": "guīgēndàodǐ"
+    "title": "归根到底（挿入成語・接続副詞：結局のところ・突き詰めれば・根本的には・帰する所）",
+    "shortExplanation": "表面的な現象や枝葉末節を削ぎ落とし、問題の本質、最終的な原因、または根本的な帰着点を端的に指し示す際に用いる成語表現です（「突き詰めれば」「結局のところ」「根本的には」）。",
+    "longExplanation": "「归根到底」（guīgēndàodǐ、類義成語として「归根结底」も同等）は、事象の究極的な本質や核心的要因を一言で総括する挿入語・接続副詞成語です。字義通り「根源に立ち帰り、底の底まで突き詰める」ことを意味します。文章や対話において、様々な表層的議論や付随的要素を一括して総括し、「最も重要かつ決定的な真実はここにある」と結論づける際に強力な説得力を発揮します。文頭に単独で置かれて読点を伴うこともあれば、主語と述語の間に挟まれて連用修飾語として機能することもあります。学術論文、時事論評から日常の人生論まで幅広く使われます。",
+    "formation": "（主語 ＋）归根到底 ＋ 述語 / 归根到底 ， 節（本質的結論）",
+    "examples": [
+      {
+        "translation": "運動やフィットネスは突き詰めれば自分自身の問題であり、いい加減にごまかすのは実のところ自分を騙しているにすぎない。"
+      }
+    ]
   },
   "zh_哪怕_719": {
-    "title": "哪怕 (even if)",
-    "shortExplanation": "even if",
-    "longExplanation": "even if. Pinyin: nǎpà",
-    "formation": "nǎpà"
+    "title": "哪怕（譲歩仮定接続詞：たとえ〜であっても・仮に〜だとしても・たとえわずか〜でも）",
+    "shortExplanation": "極限の仮定条件や最低限度の前提を提示し、たとえそのような過酷・微小な状況であっても、主節の決意、帰結、あるいは義務が変わらないことを強調する譲歩接続詞です（「たとえ〜でも」「仮に〜としても」）。",
+    "longExplanation": "「哪怕」（nǎpà）は、極端な仮定や最悪の事態、あるいは極小の可能性を前提として導き入れる代表的な譲歩仮定の接続詞です。「哪（いかなる）」と「怕（恐れる）」から成り、「たとえ何を恐れることがあろうとも／たとえどんな事態に直面しようとも」という強いニュアンスを持ちます。後続の節では通例「也」「都」「还」などの副詞と呼応し、「いかに厳しい条件であろうとも、断固として成し遂げる」という不屈の意志や、動かしがたい客観的帰結を示します。また、例文のように文末に倒置的・補足的に置かれて「〜哪怕……（たとえ〜であっても）」と強い念押しを行う用法も極めて頻繁に見られます。",
+    "formation": "哪怕 ＋ 極限の仮定条件 ，（主語 ＋）也 / 都 ＋ 帰結節 / 主節 ， 哪怕 ＋ 条件節",
+    "examples": [
+      {
+        "translation": "ご安心ください。私たちはたとえ一筋の希望しか残されていなくとも、全力で患者の救命にあたります。"
+      }
+    ]
   },
   "zh_反之_720": {
-    "title": "反之 (on the contrary)",
-    "shortExplanation": "on the contrary",
-    "longExplanation": "on the contrary. Pinyin: fǎnzhī",
-    "formation": "fǎnzhī"
+    "title": "反之（対照接続詞：これに反して・逆に・反対に・その逆であれば）",
+    "shortExplanation": "簡潔で格調高い書面語の接続詞で、「これと反対に」「もし逆の状況であれば」という意味で、前件と正反対の条件・推論を対称的に導く際に用います（「逆に」「これに反して」）。",
+    "longExplanation": "「反之」（fǎnzhī）は、文言文（古典漢語）の代名詞構造を色濃く残した格式高い対照接続詞です。「反（逆である、反対である）」と代名詞「之（これ、前述の事態）」が結合したもので、「これと正反対の状況が生じたならば」という対照的仮定を端的に表します。複文において、先行する文で肯定的な条件と結果を述べた後、「反之」を挟んで後続文で「もし条件が逆であれば正反対の結果となる」という対称的・論理的な対比構文を構築します。経済学、社会学の学術論文、時事社説、法律文書などで、物事の両面を論理整然と対比・論証する際に好んで用いられます。",
+    "formation": "節1 。/ ， 反之 ，＋ 節2（対照的な帰結）",
+    "examples": [
+      {
+        "translation": "経済が発展して庶民の収入が増加すれば消費力は強まり、逆にそうでなければ、庶民の消費力は落ち込む。"
+      }
+    ]
   },
   "zh_VA1的VA1VA2的VA2_721": {
-    "title": "V/A1 的 V/A1，V/A2 的 V/A2 (some V/A1, some V/A2)",
-    "shortExplanation": "some V/A1, some V/A2",
-    "longExplanation": "some V/A1, some V/A2. Pinyin: V/A1 de V/A1，V/A2 de V/A2",
-    "formation": "V/A1 de V/A1，V/A2 de V/A2"
+    "title": "動詞 / 形容詞1 的 動詞 / 形容詞1 ， 動詞 / 形容詞2 的 動詞 / 形容詞2（対照列挙描写構文：〜なものは〜し、…なものは…する／〜のもあれば…のもある）",
+    "shortExplanation": "動詞や形容詞に構造助詞「的」を添えて名詞化し、それを述語として重ねるリズム形式を2組対照的に並べることで、様々な事物がそれぞれの様態を生き生きと競い合っている情景を描写します（「〜なものは〜し、…なものは…する」「〜のもあれば…のもある」）。",
+    "longExplanation": "「動詞 / 形容詞1 的 動詞 / 形容詞1 ， 動詞 / 形容詞2 的 動詞 / 形容詞2」は、対象の多様性、群像劇の賑やかさ、あるいは事態の錯綜した様態を極めてリズミカルに描き出す対句的描写構文です。前半の「動詞/形容詞 ＋ 的」がその属性や動作を持つ部分集合（「〜なもの／〜する人々」）を指し示し、直後に同一の語を反復することで「それぞれの状態を十全に現出させている」ことを強調します。色彩の対比（例：「红的红，绿的绿」＝赤みのあるものは赤く、青いものは青い）、人間の動態の対比（例：「走的走，留的留」＝去る者は去り残る者は残る、「哭的哭，笑的笑」＝泣く者もあれば笑う者もある）などに広く用いられ、一様ではない豊かな情景を読者の眼前に鮮烈に浮き彫りにします。",
+    "formation": "主語（全体） ＋ ， 動詞 / 形容詞1 的 動詞 / 形容詞1 ， 動詞 / 形容詞2 的 動詞 / 形容詞2",
+    "examples": [
+      {
+        "translation": "果樹園に入ると、木一面に実った桃が目に入り、赤いものは赤く、青いものは青く、実に美しかった。"
+      }
+    ]
   },
   "zh_一时_722": {
-    "title": "一时 (momentarily)",
-    "shortExplanation": "momentarily",
-    "longExplanation": "momentarily. Pinyin: yīshí",
-    "formation": "yīshí"
+    "title": "一时（副詞／時間名詞：一時の、とっさに、その場の勢いで、一時的に）",
+    "shortExplanation": "極めて短い時間やその場の特定の瞬間を表し、突発的な感情・衝動による行動や、一時的ですぐには解決・想起できない状態を表します（「とっさに」「一時の」「一時的に」）。",
+    "longExplanation": "「一时」（yīshí）は、時間名詞としても副詞としても機能する表現です。主な用法として、第一にその場の急な心理状態や感情の昂ぶりを表す用法があり、「一时冲动」（一時の気の迷い・衝動）、「一时糊涂」（とっさの判断の誤り）、「一时心急」（とっさの焦り）のように、特定の瞬間に引き起こされた言動を修飾します。第二に「当面の間・一時的」という意味を表し、「一时想不起来」（とっさに思い出せない・すぐには思い出せない）、「一时无法解决」（当面は解決できない）のように、現状では即座に対処や確定が難しい状態を表します。文法的には述語動詞や形容詞の前に置かれ、連用修飾語として機能します。",
+    "formation": "（主語＋）一时 ＋ 動詞／形容詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "彼女はとっさに気が焦って、ドアの鍵さえ掛けずに家を飛び出していった。"
+      }
+    ]
   },
   "zh_CLAUSES尚且V_723": {
-    "title": "(CLAUSE) S 尚且 V (even (CLAUSE) S V)",
-    "shortExplanation": "even (CLAUSE) S V",
-    "longExplanation": "even (CLAUSE) S V. Pinyin: (CLAUSE) S shàngqiě V",
-    "formation": "(CLAUSE) S shàngqiě V"
+    "title": "（節＋）主語 ＋ 尚且 ＋ 動詞（漸進的譲歩構文：〜でさえなお…である、〜ですらそうなのに況や…をや）",
+    "shortExplanation": "書面語で用いられる譲歩副詞「尚且」を用い、より条件の良い状況や極端な例を一歩譲って提示することで、逆の困難な状況や次の事態においてはなおさらであると論理的に強調します（「〜でさえなお…である」）。",
+    "longExplanation": "「尚且」（shàngqiě）は、漢文訓読の「尚お且つ」に由来する格調高い書面語の副詞・接続詞です。「（節＋）主語 ＋ 尚且 ＋ 動詞」の構文では、まず条件の恵まれた状況や一般的な基準となる事例を一歩譲歩して挙げ、「その状況でさえなおこうである」と提示します。そして後続の節（「何况」「更不用说」など、あるいは対比される状況）と照らし合わせることで、「ましてや過酷な状況や別の対象においては言うまでもない」という結論を論理的・必然的に導き出します。論説文や時事評論などで強い説得力を持たせる際によく用いられます。",
+    "formation": "（節＋）主語 ＋ 尚且 ＋ 動詞／述語 ，（対比節／何况 ＋ 主語 ＋ 述語）",
+    "examples": [
+      {
+        "translation": "景気が拡大している時でさえこの企業はこうなのだから、景気後退期になれば、企業には間違いなく存続の危機が生じるだろう。"
+      }
+    ]
   },
   "zh_当年当时当代_724": {
-    "title": "当年、当时、当代 (at that time)",
-    "shortExplanation": "at that time",
-    "longExplanation": "at that time. Pinyin: dāngnián、 dāngshí、 dāngdài",
-    "formation": "dāngnián、 dāngshí、 dāngdài"
+    "title": "当年、当时、当代（時間名詞の識別：あの頃／当時／現代）",
+    "shortExplanation": "形態素「当」を含む3つの時間名詞の使い分け。「当年」は過去のあの頃・昔の全盛期、「当时」はその出来事が起きたまさにその時・当時、「当代」は現今の時代・現代を指します。",
+    "longExplanation": "「当年」「当时」「当代」はいずれも「当」を含む重要な時間名詞ですが、指し示す時間軸やニュアンスが明確に分かれています。\n1.「当年」（dāngnián）：遠く過ぎ去った過去の歳月、若かりし頃、あるいは全盛期を回顧する際に用いられます（例：「想当年」＝あの頃を思い出せば、「当年の彼ではない」＝昔の面影はない）。\n2.「当时」（dāngshí）：話題になっている特定の出来事が起きた「その時・その瞬間」の時点を客観的に指します（例：「当時の状況」＝当时的情况、「その時私は知らなかった」＝当时我并不知道）。\n3.「当代」（dāngdài）：現在私たちが生きている同時代、現代の時代区分を指し、歴史・文化・文学などの文脈で多用されます（例：「当代社会」＝現代社会、「当代文学」＝現代文学）。",
+    "formation": "当年 ／ 当时 ／ 当代（＋ 的）＋ 名詞 ；（主語＋）当时 ／ 当年 ＋ 述語",
+    "examples": [
+      {
+        "translation": "彼はもう、あの若かりし頃の彼ではない。"
+      }
+    ]
   },
   "zh_终究_725": {
-    "title": "终究 (after all)",
-    "shortExplanation": "after all",
-    "longExplanation": "after all. Pinyin: zhōngjiū",
-    "formation": "zhōngjiū"
+    "title": "终究（副詞：結局のところ、やはり、所詮、どうしても）",
+    "shortExplanation": "物事の推移や紆余曲折を経た後、最終的に行き着く客観的本質や不可避な結末を断定的に提示します（「結局のところ」「やはり」「所詮は」）。",
+    "longExplanation": "「终究」（zhōngjiū）は、「終わりまで究める」という漢字の成り立ちの通り、様々な変化や議論を経ても最終的な本質や結果は覆らないことを表す副詞です。文法的には述語（動詞、形容詞、あるいは判断詞「是」）の直前に置かれて連用修飾語になります。いかに取り繕ったり一時的に変化したりしようとも、根底にある本来の性質や客観的な法則に帰着せざるを得ないという強い結論付けの語気を帯びます。「毕竟」「终归」と類似していますが、「终究」は結末や本質への最終的な帰結という客観的必然性が際立ちます。",
+    "formation": "（主語＋）终究 ＋ 是／動詞／形容詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "猫は所詮のところ動物なのだから、動物が追い詰められて人に噛み付くのも無理はないことだ。"
+      }
+    ]
   },
   "zh_愈愈_726": {
-    "title": "愈……愈…… (the more… the more…)",
-    "shortExplanation": "the more… the more…",
-    "longExplanation": "the more… the more…. Pinyin: yù…… yù……",
-    "formation": "yù…… yù……"
+    "title": "愈……愈……（漸進呼応構文：〜すればするほど、いよいよ／ますます…である）",
+    "shortExplanation": "書面語で用いられる漸進の呼応構文。前節の条件や度合いが進めば進むほど、それに伴って後節の程度もいっそう深まることを格調高く表します（「越……越……」の書面語形）。",
+    "longExplanation": "「愈……愈……」（yù... yù...）は、日常会話で頻用される「越……越……」に対応する、格調高く雅やかな書面語の漸進構文です。「愈」は「ますます、いよいよ」を意味し、前後の節で呼応させることで、先行する動作・時間の経過・条件の進展に比例して、後続の状態・感情・結果の程度が一段と高まる論理関係を示します。文学作品、論説文、格言的な表現において好まれ、「愈是……就愈是……」（〜であればあるほど、いっそう…である）の形で主格や判断を強調することも多々あります。",
+    "formation": "（主語＋）愈（＋ 是）＋ 述語1 ，（主語＋）（就）愈（＋ 是）＋ 述語2",
+    "examples": [
+      {
+        "translation": "年画の商売を長く続ければ続けるほど、彼の年画に対する情熱はますます深まっていった。"
+      }
+    ]
   },
   "zh_一经_727": {
-    "title": "一经 (once)",
-    "shortExplanation": "once",
-    "longExplanation": "once. Pinyin: yī jīng",
-    "formation": "yī jīng"
+    "title": "一经（接続副詞：ひとたび〜するや、一度〜を経た以上は、〜されると直ちに）",
+    "shortExplanation": "公的文書や法令・規約などで多用される格調高い書面語で、特定の行為や手続きを一度経るや否や、直ちに対応する結果が生じたり義務が発生したりすることを表します（「ひとたび〜するや」「いったん〜されると直ちに」）。",
+    "longExplanation": "「一经」（yī jīng）は、公用文、規約、契約書、論説文などで頻繁に使用される極めて厳正な書面語表現です。「一」（いったん、〜するや）と「经」（経る、経由する）から成り、主に二音節動詞（例：决定、核实、发现、批准、发表など）と結びついて「一经＋動詞」の形で用いられます。ある特定の審査、決定、発見などの段階を一度通過したならば、後続する措置、効力、あるいは厳格なルールが直ちに適用され、後戻りできないことを明示します。",
+    "formation": "一经 ＋ 二音節動詞 ，（主語＋）就／必须 ＋ 述語",
+    "examples": [
+      {
+        "translation": "指導部グループは重大な問題について決定を下す。ひとたび決定された以上は、グループの全メンバーが共にこれを遵守しなければならない。"
+      }
+    ]
   },
   "zh_本着N_728": {
-    "title": "本着 N (based on)",
-    "shortExplanation": "based on",
-    "longExplanation": "based on. Pinyin: běnzhe N",
-    "formation": "běnzhe N"
+    "title": "本着 ＋ 名詞（介詞／前置詞句：〜の精神・原則に基づいて、〜に則って、〜の理念を出発点として）",
+    "shortExplanation": "行動の指針や根本基準を導く格調高い介詞（前置詞）。「精神」「原則」「趣旨」「態度」などの抽象名詞を目的語にとり、その方針に則って行動することを表します（「〜の精神に基づいて」）。",
+    "longExplanation": "「本着」（běnzhe）は、外交文書、公的スピーチ、報道などで非常に重用される介詞（前置詞）です。「本」は根本・よりどころを意味し、「本着＋名詞」の形で動作の指導理念や行動規範となる基本方針を提示します。後続する名詞（目的語）には、「精神」「原则」「宗旨」「态度」といった抽象的な理念を表す語句が置かれるのが極めて定型的です（例：「本着实事求是的态度」＝事実に基づいて真実を求める態度に則り、「本着友好合作的原则」＝友好協力の原則に基づき）。文中では主動詞の前に置かれ、連用修飾語（状語）として機能します。",
+    "formation": "（主語＋）本着 ＋ 名詞（精神・原則・趣旨・態度）＋ 動詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "両国の交渉代表は互いに理解し譲り合う精神に基づいて、長年先送りにされてきた問題を解決した。"
+      }
+    ]
   },
   "zh_为起见_729": {
-    "title": "为……起见 (for the sake of)",
-    "shortExplanation": "for the sake of",
-    "longExplanation": "for the sake of. Pinyin: wéi…… qǐjiàn",
-    "formation": "wéi…… qǐjiàn"
+    "title": "为……起见（枠組介詞構文：〜を考慮して、〜の観点から、大事をとって〜のために）",
+    "shortExplanation": "目的や配慮の根拠を提示する枠組み構文。「安全」「慎重」「便宜」などの語を挟み、安全確保や万全を期すための措置であることを格式高く表します（「〜を期して」「〜の観点から」）。",
+    "longExplanation": "「为……起见」（wèi... qǐjiàn）は、ある行動や判断を下す動機・目的を丁寧かつ論理的に説明する定型的な枠組み介詞（前置詞）構文です。「为」は目的を表し、「起见」は「〜の見地・配慮から出発する」という意味を担います。間に挟まれる成分は、主に安全性、公平性、利便性、慎重さなどを表す名詞や形容詞であり、代表的な慣用表現として「为安全起见」（大事をとって安全のために）、「为慎重起见」（念のため慎重を期して）、「为方便起见」（便宜上・都合上）、「为公平起见」（公平を期して）などが挙げられます。文頭または主語の後に置かれ、後続の措置に対する合理的な理由付けを行います。",
+    "formation": "为 ＋ 名詞／形容詞／動詞句 ＋ 起见 ，（主語＋）述語",
+    "examples": [
+      {
+        "translation": "食器を購入した後は、安全を考慮して、まず食器の消毒処理を行うとよい。"
+      }
+    ]
   },
   "zh_暂且_730": {
-    "title": "暂且 (for now)",
-    "shortExplanation": "for now",
-    "longExplanation": "for now. Pinyin: zànqiě",
-    "formation": "zànqiě"
+    "title": "暂且（時間副詞：ひとまず、さしあたり、当面は、とりあえず）",
+    "shortExplanation": "現状の制約や止むを得ない事情のもとで、本格的な解決は後日に譲り、当面の間一時的な措置をとることを表します（「ひとまず」「さしあたり」）。",
+    "longExplanation": "「暂且」（zànqiě）は、「暂」（一時的）と「且」（まあ〜しておく）が合わさった時間副詞です。文法上は動詞の直前に置かれて連用修飾語（状語）になります。現段階では諸条件が整っていなかったり、手の施しようがなかったりするため、問題をひとまず保留にしたり、現状の成り行きに任せたり、暫定的な対応でその場を凌ぐといったニュアンスを持ちます。「姑且」（かりに・まあひとまず）や「暂时」（一時的に）と類似していますが、「暂且」は「ひとまず今はそうしておくが、本筋の議論や抜本的な対処は後で行う」という時間的猶予の含みが際立ちます。",
+    "formation": "（主語＋）暂且 ＋ 動詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "数日働いただけで、王君はもう辞めたがった。皆はどうすることもできず、ひとまず彼の気の向くままにさせておくしかなかった。"
+      }
+    ]
   },
   "zh_屡次_731": {
-    "title": "屡次 (repeatedly)",
-    "shortExplanation": "repeatedly",
-    "longExplanation": "repeatedly. Pinyin: lǚcì",
-    "formation": "lǚcì"
+    "title": "屡次（頻度副詞：たびたび、何度も、再三にわたって、幾度となく）",
+    "shortExplanation": "書面語で用いられる頻度副詞で、動作や事態が何度も繰り返し発生することを強調します。特に過ち、試み、失敗などが重なる文脈で多用されます（「幾度となく」「再三にわたり」）。",
+    "longExplanation": "「屡次」（lǚcì）は、改まった文体や書面語で頻繁に使われる頻度副詞です。「屡」（しばしば・重なる）と「次」（回数）が合体した語で、文法上は動詞の前に置かれて連用修飾語になります。単に回数が多いことを客観的に表す「多次」に比べ、「屡次」は「何度も繰り返しているにもかかわらず…」「幾度となく同じ事態に見舞われる」といった、反復の執拗さや結果の意外性・深刻さを際立たせる語気を帯びます。「屡次犯错」（再三過ちを犯す）、「屡次失败」（幾度も惨敗を喫する）、「屡次推脱」（何度も言い逃れをする）のように、苦難や努力、戒告などの反復描写に威力を発揮します。",
+    "formation": "（主語＋）屡次 ＋ 動詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "何度も起業しては、そのたびに手ひどい失敗を繰り返してきた人々は、決まって「起業に秘訣はあるのだろうか」と知りたがるものだ。"
+      }
+    ]
   },
   "zh_依据_732": {
-    "title": "依据 (basis)",
-    "shortExplanation": "basis",
-    "longExplanation": "basis. Pinyin: yījù",
-    "formation": "yījù"
+    "title": "依据（名詞：根拠、よりどころ、基準、法的根拠）",
+    "shortExplanation": "判断や意思決定、行動を正当化するための確かな基準・事実・法的根拠を表す名詞です（「根拠」「よりどころ」）。",
+    "longExplanation": "「依据」（yījù）が名詞として用いられる場合、物事の判断や行動の妥当性を支える客観的な「根拠」「基準」「よりどころ」を意味します。文法的には、「有」（ある）、「缺乏」（欠いている）、「作为」（〜とする）、「寻找」（探す）などの動詞の目的語になることが非常に多く、また「法律依据」（法的根拠）、「事实依据」（事実の根拠）、「理论依据」（理論的根拠）、「科学依据」（科学的根拠）のように、連体修飾語（定語）を伴って専門的・法的な判断基準を明確にする構文で頻出します。",
+    "formation": "（主語＋ 有／无／缺乏 ＋）（連体修飾語＋）依据",
+    "examples": [
+      {
+        "translation": "あなた方のそのやり方には、法的な根拠があるのですか。"
+      }
+    ]
   },
   "zh_依据_733": {
-    "title": "依据 (based on)",
-    "shortExplanation": "based on",
-    "longExplanation": "based on. Pinyin: yījù",
-    "formation": "yījù"
+    "title": "依据 ＋ 名詞（介詞／前置詞句：〜に基づいて、〜に依拠して、〜を基準として）",
+    "shortExplanation": "客観的な事実、規則、需要などを拠り所として行動や判断を行うことを表す格調高い介詞（前置詞）です（「〜に基づいて」「〜に準拠して」）。",
+    "longExplanation": "「依据」（yījù）が介詞（前置詞）として機能する場合、「根据」や「按照」に相当し、より厳密で論理的な書面語の語気を帯びます。「依据 ＋ 名詞／名詞句」の形で介詞句（前置詞句）を形成し、動作や判断の客観的な基準・方針・根拠を提示します。後ろには「市场需求」（市場の需要）、「法律法规」（法律規則）、「事实情况」（事実関係）などの客観的対象が続き、主動詞の前の連用修飾語（状語）として配されます。主観的な思い込みを排し、確固たる基準に従って事を行う必然性を明確にします。",
+    "formation": "（主語＋）依据 ＋ 名詞／名詞句 ＋ 動詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "起業は市場の需要に基づいて行われなければならない、これは永遠の真理である。"
+      }
+    ]
   },
   "zh_任意_734": {
-    "title": "任意 (arbitrary)",
-    "shortExplanation": "arbitrary",
-    "longExplanation": "arbitrary. Pinyin: rènyì",
-    "formation": "rènyì"
+    "title": "任意（副詞／形容動詞：勝手に、勝手気ままに、任意に、独断で）",
+    "shortExplanation": "何の制約も受けず自分の意のままに行動することを表します。副詞として動詞の前に置かれる場合、ルールや契約を無視して「勝手に」「独断で」行うという否定的な文脈で頻出します（「勝手に〜する」）。",
+    "longExplanation": "「任意」（rènyì）は、「任」（思いのままにする）と「意」（意図・意向）から成る表現です。文法上、副詞として動詞を修飾する場合、客観的な規則、約束、法的な拘束を顧みず、もっぱら自らの主観的な都合や気まぐれに従って行動することを表します。そのため、「不能任意……」（勝手に〜してはならない）、「不得任意……」（独断で〜することは許されない）のように、禁止や制約を課す文脈において極めてよく用いられます（例：「任意反悔」＝勝手に約束を反故にする、「任意改动」＝勝手に改変する）。なお、科学や数学の文脈では「任意の・任意の2点」のように中立的な定語としても用いられます。",
+    "formation": "（主語＋）（不能／不得／严禁 ＋）任意 ＋ 動詞（＋目的語）",
+    "examples": [
+      {
+        "translation": "契約がひとたび発効した以上は、いかなる当事者も勝手に後から反故にすることはできない。"
+      }
+    ]
   },
   "zh_尚未_735": {
-    "title": "尚未 (not yet)",
-    "shortExplanation": "not yet",
-    "longExplanation": "not yet. Pinyin: shàngwèi",
-    "formation": "shàngwèi"
+    "title": "尚未（否定副詞：未だに〜していない、いまだ〜ない、まだ〜されていない）",
+    "shortExplanation": "格調高い書面語の否定副詞で、現時点あるいは基準となる時点に至るまで、特定の行為や事態がまだ完了・実現していないことを表します（「いまだ〜ない」）。",
+    "longExplanation": "「尚未」（shàngwèi）は、漢文訓読の「いまだ〜ず」に直結する格調高く公的な書面語の否定副詞です。「尚」（なお、まだ）と「未」（いまだ〜ず、まだ…ない）が組み合わさった語で、口語の「还没有」に対応します。文法的には動詞や動詞句の直前に置かれて連用修飾語（状語）となり、対象となる動作、認識、成果などが現段階において未達成・未実現であることを客観的・公式に叙述します。「尚未完成」（未だ完了していない）、「尚未公布」（未だ公表されていない）、「尚未被认识」（未だ認識されていない）のように、学術論文、報道、公用文において多用されます。",
+    "formation": "（主語＋）尚未 ＋ 動詞／動詞句（＋目的語）",
+    "examples": [
+      {
+        "translation": "いわゆる潜在市場とは、人々にまだ認識されていない市場のことである。"
+      }
+    ]
   },
   "zh_把放在眼里_736": {
-    "title": "(把)……放在眼里 (take … seriously)",
-    "shortExplanation": "take … seriously",
-    "longExplanation": "take … seriously. Pinyin: ( bǎ)…… fàngzàiyǎnlǐ",
-    "formation": "( bǎ)…… fàngzàiyǎnlǐ"
+    "title": "（把）……放在眼里（慣用表現：眼中に置く、重要視する、相手にする——ほぼ否定形で「眼中にない、見くびる、見下す」）",
+    "shortExplanation": "文字通りには「眼中に置く・重要視する」を意味しますが、実際の運用ではほぼ全例が否定形（不放在眼里、没把〜放在眼里）で用いられ、相手や困難を完全に見くびる・見下す・全く歯牙にもかけない態度を表します（「眼中に置かない」「端から相手にしない」）。",
+    "longExplanation": "「（把）……放在眼里」は、極めて表現力に富んだ口語の慣用句です。字義通りには「〜を眼中に置く（重要視・尊重する）」という意味ですが、言語事実として9割以上が「不把……放在眼里」「没把……放在眼里」、あるいは目的語を主題化して「……根本不放在眼里」という強い否定形式で用いられます。ライバルや困難、規則などを「取るに足らないもの」として徹底的に軽視・見下したり、傲慢に振る舞ったりする心理態度を生々しく描き出します（例：「不把对手放在眼里」＝相手を全く眼中に置かない、「这点小伤他根本不放在眼里」＝この程度の軽傷など彼は全く気に留めない）。",
+    "formation": "（主語＋）（不／没）把 ＋ 名詞 ＋ 放在眼里 ／（名詞＋）主語 ＋（根本／毫不）不放在眼里",
+    "examples": [
+      {
+        "translation": "これっぽっちの困難など、彼女は端から全く眼中に置いていなかった。"
+      }
+    ]
   },
   "zh_不无_737": {
-    "title": "不无 (not without)",
-    "shortExplanation": "not without",
-    "longExplanation": "not without. Pinyin: bùwú",
-    "formation": "bùwú"
+    "title": "不无（〜がないわけではない・あながち〜とも言えない・少なからず〜がある）",
+    "shortExplanation": "二重否定によって遠回しな肯定を表す書き言葉の表現で、ある程度・少なからず存在することを控えめに肯定する「〜がないわけではない」「少なからず〜がある」「〜とも言えなくはない」を表します。",
+    "longExplanation": "「不无」（bùwú）は、否定を表す「不」と存在否定の「无」（没有に相当）が組み合わさった二重否定の書面語表現です。二重否定によって肯定（「少なからずある」「ある程度存在する」）の意味を表しますが、単に「有」と直接肯定するのに比べて、語気を和らげ、控えめで含みを持たせた婉曲的な肯定のニュアンスを持ちます。通常、抽象名詞（道理、関係、影響、裨益など）や心理・感情を表す語句（遗憾、得意、担心など）と共起し、「不无道理」（あながち理由がないわけではない・一理ある）、「不无遗憾」（遺憾の念を禁じ得ない・いささか心残りである）、「不无裨益」（少なからず有益である）などの慣用表現として多用されます。文中では述語や状語（連用修飾語）として機能します。",
+    "formation": "主語 ＋ 不无 ＋ 抽象名詞 / 名詞句（または 心理・感情を表す語句：道理, 遗憾, 关系, 裨益, 担心, 得意 など）",
+    "examples": [
+      {
+        "translation": "彼女は給料が安いと言っているが、それもあながち理由がないわけではない（一理ある）。"
+      }
+    ]
   }
 };

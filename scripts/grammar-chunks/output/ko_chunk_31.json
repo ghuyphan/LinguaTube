@@ -1,0 +1,1198 @@
+{
+  "vi": {
+    "ko_을_82": {
+      "title": "~(으)ㄹ 만하다 (Đáng, bõ công, có giá trị để làm)",
+      "shortExplanation": "Diễn tả một hành động hoặc trải nghiệm đáng giá, bõ công hoặc xứng đáng để thực hiện ('đáng làm', 'bõ công làm').",
+      "longExplanation": "'~(으)ㄹ 만하다' là cấu trúc bổ trợ kết hợp với thân động từ, dùng để biểu thị rằng một hành động, sự việc có đủ giá trị, tư cách hoặc lý do chính đáng để làm hay trải nghiệm ('đáng để...', 'bõ công...'). Cấu trúc này thể hiện sự đánh giá, phán đoán của người nói rằng thời gian, tiền bạc hoặc công sức bỏ ra là hoàn toàn xứng đáng. Ngoài ra, trong một số ngữ cảnh, nó cũng có thể diễn đạt khả năng làm được việc gì đó ở mức chấp nhận được.",
+      "formation": "Thân động từ + -(으)ㄹ 만하다",
+      "examples": [
+        {
+          "translation": "Chiếc bánh kem này tuy đắt nhưng rất ngon nên rất đáng mua ăn thử."
+        },
+        {
+          "translation": "Bộ phim này thời lượng chiếu tuy dài nhưng thực sự rất hay nên rất bõ công xem."
+        },
+        {
+          "translation": "Vé xem biểu diễn của ban nhạc đó tuy đắt nhưng âm nhạc của họ chắc chắn rất đáng để nghe thử."
+        },
+        {
+          "translation": "Trò chơi này dù mất nhiều thời gian cài đặt nhưng cũng rất đáng chơi thử."
+        }
+      ]
+    },
+    "ko_을_83": {
+      "title": "~(으)ㄹ수록 (Càng... thì càng...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị mức độ ở vế sau thay đổi tỷ lệ thuận khi hành động hoặc trạng thái ở vế trước tăng lên ('càng... thì càng...').",
+      "longExplanation": "'~(으)ㄹ수록' là vĩ tố liên kết gắn vào thân động từ hoặc tính từ, dùng để biểu thị mối quan hệ tỉ lệ thuận: khi hành động hoặc trạng thái ở mệnh đề trước càng tăng tiến hay kéo dài thì kết quả, trạng thái ở mệnh đề sau cũng thay đổi tương ứng theo mức độ đó, tương đương với 'càng... càng...' trong tiếng Việt. Nếu thân từ kết thúc bằng nguyên âm hoặc phụ âm ㄹ thì kết hợp với '-ㄹ수록', nếu kết thúc bằng phụ âm khác thì kết hợp với '-을수록'.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "Càng học tiếng Hàn nhiều thì càng hiểu văn hóa Hàn Quốc tốt hơn."
+        },
+        {
+          "translation": "Càng ở đây lâu tôi lại càng thấy thích thành phố này hơn."
+        },
+        {
+          "translation": "Càng đi bộ mỗi ngày thì sức khỏe càng trở nên tốt hơn."
+        },
+        {
+          "translation": "Càng uống nhiều cà phê tôi dường như lại càng thấy ít buồn ngủ hơn."
+        }
+      ]
+    },
+    "ko_을_84": {
+      "title": "~(으)ㄹ 줄 알다 (Biết cách làm, tưởng là, nghĩ rằng)",
+      "shortExplanation": "Biểu thị việc biết cách hoặc có năng lực thực hiện một hành động nào đó ('biết cách...'), hoặc biểu thị suy nghĩ, phán đoán về một sự thật hay tình huống ('ngỡ là...', 'nghĩ là...').",
+      "longExplanation": "'~(으)ㄹ 줄 알다' được dùng với hai nghĩa chính: thứ nhất, diễn tả người nói hoặc chủ ngữ có năng lực, kỹ năng hay biết cách thực hiện một hành động cụ thể nào đó ('biết làm gì'). Thứ hai, khi dùng để suy đoán hoặc phán đoán (thường dùng ở dạng quá khứ '~줄 알았다' hoặc kết hợp định ngữ), nó diễn tả việc từng nghĩ hay dự đoán về một tình huống hoặc sự thật nào đó (đôi khi thực tế lại trái ngược với điều đã nghĩ, mang nghĩa 'cứ ngỡ là...'). Dạng phủ định về mặt năng lực là '-(으)ㄹ 줄 모르다' (không biết làm).",
+      "formation": "Thân động từ + -(으)ㄹ 줄 알다 | Định ngữ + 줄 알다",
+      "examples": [
+        {
+          "translation": "Tôi biết đọc chữ Hangeul nên có thể xem phim truyền hình Hàn Quốc mà không cần phụ đề."
+        },
+        {
+          "translation": "Tôi cứ tưởng bố nấu ăn rất giỏi, nhưng tối qua khi bố chuẩn bị bữa tối thì đã xảy ra bao nhiêu là rắc rối."
+        },
+        {
+          "translation": "Tôi tưởng cô ấy là người Hàn Quốc nên đã nói chuyện bằng tiếng Hàn."
+        },
+        {
+          "translation": "Chú cún của chúng tôi biết tuân theo mệnh lệnh nên được huấn luyện rất tốt."
+        }
+      ]
+    },
+    "ko_을지_85": {
+      "title": "~(으)ㄹ지 (Liệu rằng... hay không, có... chăng)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn đạt sự nghi vấn, hoài nghi hoặc không chắc chắn về một sự việc trong câu gián tiếp ('liệu có... hay không').",
+      "longExplanation": "'~(으)ㄹ지' là vĩ tố liên kết biểu thị sự phỏng đoán kèm theo nghi vấn hoặc sự không chắc chắn về một sự việc, hành động chưa diễn ra hoặc chưa rõ ràng. Thường xuất hiện trong các mệnh đề nghi vấn gián tiếp đi kèm với các vị từ biểu thị sự thắc mắc, không biết, phân vân như 모르다 (không biết), 궁금하다 (tò mò), 생각하다 (suy nghĩ), 확신이 없다 (không chắc chắn) ('liệu... có... hay không'). Cấu trúc này cũng thường được lặp lại ở dạng '-(으)ㄹ지 안 -(으)ㄹ지' hoặc '-(으)ㄹ지 말지' để nêu ra hai khả năng đối lập.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ지",
+      "examples": [
+        {
+          "translation": "Tôi không biết liệu tối nay bố có về nhà hay không."
+        },
+        {
+          "translation": "Tôi tò mò không biết liệu ngày mai cô ấy có đến bữa tiệc hay không."
+        },
+        {
+          "translation": "Tôi vẫn chưa chắc chắn liệu thời tiết có ấm lên hay không."
+        },
+        {
+          "translation": "Không thể biết được liệu bạn có chấp nhận lời đề nghị hay không."
+        }
+      ]
+    },
+    "ko_을지도_86": {
+      "title": "~(으)ㄹ지도 모르다 (Có lẽ, có thể sẽ, biết đâu chừng)",
+      "shortExplanation": "Diễn tả sự phỏng đoán dè dặt, không chắc chắn về một khả năng có thể xảy ra trong hiện tại hoặc tương lai ('có thể...', 'biết đâu chừng...').",
+      "longExplanation": "'~(으)ㄹ지도 모르다' là cấu trúc biểu thị sự suy đoán dè dặt, không chắc chắn của người nói về một khả năng hay sự việc, tương đương với 'có lẽ', 'có thể sẽ', 'biết đâu chừng' trong tiếng Việt. Cấu trúc nhấn mạnh rằng người nói không khẳng định chắc chắn 100%, nhưng khả năng sự việc đó xảy ra là hoàn toàn có thể. Thường đi kèm với phó từ như 혹시 (ngộ nhỡ), 아마 (có lẽ).",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ지도 모르다",
+      "examples": [
+        {
+          "translation": "Ngày mai có thể trời sẽ mưa nên hãy mang theo ô nhé."
+        },
+        {
+          "translation": "Anh ấy có thể sẽ tham dự cuộc họp tiếp theo."
+        },
+        {
+          "translation": "Có lẽ sang năm tôi sẽ chuyển đến Hàn Quốc sống."
+        },
+        {
+          "translation": "Biết đâu chừng cô ấy đã biết tin tức đó rồi."
+        }
+      ]
+    },
+    "ko_을지라도_87": {
+      "title": "~(으)ㄹ지라도 (Cho dù... đi chăng nữa, dẫu cho...)",
+      "shortExplanation": "Vĩ tố liên kết nhượng bộ mang tính giả định mạnh mẽ, biểu thị 'cho dù... đi chăng nữa thì kết quả ở vế sau vẫn không đổi'.",
+      "longExplanation": "'~(으)ㄹ지라도' là vĩ tố liên kết nhượng bộ trang trọng, gắn vào thân động từ hoặc tính từ. Nó dùng để đặt ra một giả định cực đoan hoặc một điều kiện dù có xảy ra đi nữa thì quyết tâm, hành động hoặc kết quả ở mệnh đề sau vẫn giữ nguyên không hề bị lay chuyển hay ảnh hưởng, tương đương với 'cho dù... đi chăng nữa', 'dẫu có... thì cũng...' trong tiếng Việt. Thường dùng trong văn viết hoặc phát biểu trang trọng mang tính khẳng định ý chí.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ지라도",
+      "examples": [
+        {
+          "translation": "Dù bài toán có khó đi chăng nữa tôi cũng sẽ không bỏ cuộc mà tiếp tục cố gắng giải."
+        },
+        {
+          "translation": "Dù trời có mưa đi chăng nữa tôi vẫn định đi, bởi vì tôi có một cuộc họp quan trọng."
+        },
+        {
+          "translation": "Dù xe buýt có đến nhanh đi chăng nữa, tôi cũng sẽ không chạy quá sức đâu."
+        },
+        {
+          "translation": "Dù tốn nhiều chi phí đi chăng nữa tôi vẫn muốn làm ra sản phẩm có chất lượng tốt."
+        }
+      ]
+    },
+    "ko_을지_88": {
+      "title": "~(으)ㄹ지 모르다 / ~(으)ㄹ지 몰라 (Không biết chừng, có lẽ, không biết là...)",
+      "shortExplanation": "Diễn tả sự không chắc chắn, phân vân hoặc phỏng đoán dè dặt về một khả năng có thể xảy ra ('không biết chừng...', 'có lẽ...', 'không biết là...').",
+      "longExplanation": "'~(으)ㄹ지 모르다' (dạng thân mật nói ngắn là '-(으)ㄹ지 몰라') kết hợp vĩ tố nghi vấn '-(으)ㄹ지' với động từ '모르다' (không biết). Cấu trúc này dùng khi người nói không dám chắc về một điều gì đó hoặc nêu ra một khả năng dè dặt ('không biết chừng là...', 'chẳng biết có... hay không'). Nó cũng thường dùng ở dạng '-(으)ㄹ지 몰라서' (vì không biết liệu... nên đã làm gì để phòng hờ).",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ지 모르다 (몰라/몰라요)",
+      "examples": [
+        {
+          "translation": "Không biết chừng mai cô ấy sẽ đến trường đấy, nghe bảo dạo này đang ốm mà."
+        },
+        {
+          "translation": "Tôi định mua món đồ này, nhưng không biết liệu tiền có đủ hay không nữa."
+        },
+        {
+          "translation": "Vì không biết ngày mai có mưa hay không nên tôi phải chuẩn bị sẵn một chiếc ô."
+        },
+        {
+          "translation": "Vì không biết nên mặc bộ quần áo nào nên tôi đã chuẩn bị sẵn ba bộ."
+        }
+      ]
+    },
+    "ko_을래요_89": {
+      "title": "~(으)ㄹ래요 (Tôi muốn..., bạn có muốn... không?, định làm...)",
+      "shortExplanation": "Vĩ tố kết thúc câu dùng trong văn nói để biểu thị ý định, mong muốn của bản thân ('tôi muốn...') hoặc rủ rê, hỏi ý kiến đối phương một cách thân mật ('bạn có muốn...?').",
+      "longExplanation": "'~(으)ㄹ래요' là vĩ tố kết thúc câu thân mật lịch sự, gắn vào thân động từ. Khi dùng trong câu trần thuật với chủ ngữ ngôi thứ nhất, nó biểu thị ý muốn, sự lựa chọn hoặc ý định của người nói ('tôi muốn...', 'tôi sẽ...'). Khi dùng trong câu nghi vấn với ngôi thứ hai, nó dùng để nhẹ nhàng hỏi ý muốn hoặc đưa ra lời rủ rê, đề nghị đối phương ('bạn có muốn... không?'). Nếu thân từ có phụ âm cuối (trừ ㄹ) dùng '-을래요', không có phụ âm cuối hoặc kết thúc bằng ㄹ dùng '-ㄹ래요'.",
+      "formation": "Thân động từ + -(으)ㄹ래요",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi muốn ở nhà xem phim hơn, ra ngoài trời lạnh quá."
+        },
+        {
+          "translation": "Cuối tuần này chúng mình đến khu cắm trại dựng lều nhé, bạn nghĩ sao?"
+        },
+        {
+          "translation": "Bữa tối tôi chỉ ăn một bữa đơn giản thôi, tôi đã no rồi nên không muốn ăn thêm nữa."
+        },
+        {
+          "translation": "Cuối tuần này tôi muốn đi xem kịch, vì thích văn hóa Hàn Quốc nên tôi đã quyết định rồi."
+        }
+      ]
+    },
+    "ko_을_90": {
+      "title": "~(으)ㄹ 리가 없다 (Không có lý nào lại..., chẳng thể nào...)",
+      "shortExplanation": "Diễn tả sự phủ định mạnh mẽ, phán đoán rằng một sự việc tuyệt đối không có khả năng hay lý do gì để xảy ra ('không có lý nào...', 'lẽ nào lại...').",
+      "longExplanation": "'~(으)ㄹ 리가 없다' là cấu trúc kết hợp danh từ phụ thuộc '리' (lý lẽ, nguyên cớ, khả năng) với từ phủ định '없다'. Cấu trúc này dùng để biểu thị sự nghi ngờ sâu sắc hoặc phủ định dứt khoát của người nói đối với một việc hay hiện tượng, cho rằng không có bất cứ lý do hay căn cứ hợp lý nào để việc đó xảy ra, tương đương với 'không có lý nào lại...', 'làm sao có chuyện...', 'không đời nào...' trong tiếng Việt. Thường dùng khi sự việc trái ngược hoàn toàn với logic hoặc thực tế thông thường.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ 리가 없다 | Danh từ + 일 리가 없다",
+      "examples": [
+        {
+          "translation": "Chuyện này không đời nào là sự thật được, anh ấy không phải kiểu người làm ra chuyện như vậy đâu."
+        },
+        {
+          "translation": "Cô ấy không thể nào quên tôi được, chúng tôi đã ở bên nhau lâu như thế cơ mà."
+        },
+        {
+          "translation": "Tôi chẳng có lý nào lại ký vào bản hợp đồng này, tôi vẫn chưa hiểu hết các điều khoản mà."
+        },
+        {
+          "translation": "Hôm nay anh ấy không có lý nào lại đến được, tôi biết rõ mà, anh ấy đang bị ốm."
+        }
+      ]
+    },
+    "ko_을수록_91": {
+      "title": "~(으)ㄹ수록 (Càng... càng..., càng ngày càng...)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị sự tăng tiến tương hỗ: một điều kiện càng phát triển thì một điều kiện khác cũng gia tăng tỷ lệ thuận theo đó ('càng... thì càng...').",
+      "longExplanation": "'~(으)ㄹ수록' là vĩ tố liên kết diễn tả mức độ tăng tiến theo tỷ lệ thuận. Khi hành động hoặc trạng thái ở vế đầu ngày càng tăng lên, thì mức độ hay phạm vi ở vế sau cũng tiến triển tương ứng, tương đương với 'càng... càng...' trong tiếng Việt. Cấu trúc này thường đi kèm với phó từ '더' (hơn), hoặc cấu trúc lặp '-으면 -(으)ㄹ수록' (nếu càng... thì càng...) để nhấn mạnh mức độ.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "Càng học tiếng Hàn, tôi càng có thể hiểu nhiều hơn về văn hóa Hàn Quốc."
+        },
+        {
+          "translation": "Càng nghe bài hát này nhiều, dường như tôi lại càng thấy thích hơn."
+        },
+        {
+          "translation": "Thời tiết càng ngày càng nóng lên thì kem lại càng bán được nhiều hơn."
+        },
+        {
+          "translation": "Mọi người càng sử dụng nhiều sản phẩm thân thiện với môi trường thì càng đóng góp được nhiều cho việc bảo vệ môi trường."
+        }
+      ]
+    },
+    "ko_을지언정_92": {
+      "title": "~(으)ㄹ지언정 (Dẫu rằng, cho dù là... nhưng, thà rằng...)",
+      "shortExplanation": "Vĩ tố liên kết nhượng bộ trang trọng, thừa nhận sự thật ở vế trước nhưng vế sau vẫn có sự đối lập hoặc quyết tâm không đổi ('dẫu rằng... nhưng...', 'thà... chứ không...').",
+      "longExplanation": "'~(으)ㄹ지언정' là vĩ tố liên kết biểu thị sự nhượng bộ mạnh mẽ trong văn viết hoặc văn phong trang trọng. Nó thừa nhận sự thật hoặc khả năng ở mệnh đề trước ('dẫu rằng điều đó là có thật...'), nhưng ngay lập tức đưa ra một sự thật tương phản hoặc một hành động kiên quyết ở mệnh đề sau. Cấu trúc này cũng thường được dùng để biểu thị sự lựa chọn kiên quyết: 'thà chấp nhận điều bất lợi ở vế trước chứ quyết không làm điều tồi tệ ở vế sau'. Kết hợp với thân động từ, tính từ hoặc danh từ + 일지언정.",
+      "formation": "Thân động từ / Thân tính từ + -(으)ㄹ지언정 | Danh từ + 일지언정",
+      "examples": [
+        {
+          "translation": "Dẫu rằng việc đó cực kỳ quan trọng đối với anh ấy, nhưng anh ấy quyết không hề đụng tay vào."
+        },
+        {
+          "translation": "Dẫu rằng anh ấy giàu có, nhưng thường ngày anh ấy lại có thói quen rất tiết kiệm."
+        },
+        {
+          "translation": "Dẫu rằng bài thi có khó, nhưng các học sinh vẫn đã học tập vô cùng chăm chỉ."
+        },
+        {
+          "translation": "Dẫu rằng công viên đó rất đẹp, nhưng buổi tối lại tiềm ẩn nhiều nguy hiểm nên hãy cẩn thận nhé."
+        }
+      ]
+    },
+    "ko_이나_93": {
+      "title": "~(이)나 (Hoặc, hay là)",
+      "shortExplanation": "Trợ từ gắn sau danh từ biểu thị sự lựa chọn giữa hai hoặc nhiều đối tượng ('hoặc...', 'hay là...').",
+      "longExplanation": "'~(이)나' là trợ từ được gắn sau danh từ để biểu thị sự lựa chọn giữa hai hay nhiều sự vật, sự việc, tương đương với 'hoặc', 'hay là' trong tiếng Việt. Khi danh từ kết thúc bằng phụ âm (có 받침) thì dùng '-이나', khi kết thúc bằng nguyên âm (không có 받침) thì dùng '-나'. Ngoài ý nghĩa lựa chọn, trợ từ này còn có thể dùng để chỉ sự lựa chọn tạm thời chấp nhận được khi không có phương án tối ưu, hoặc nhấn mạnh số lượng nhiều hơn kỳ vọng.",
+      "formation": "Danh từ + (이)나",
+      "examples": [
+        {
+          "translation": "Táo hoặc cam, xin hãy chỉ chọn một trong hai thứ đó thôi nhé."
+        },
+        {
+          "translation": "Chúng mình xem phim điện ảnh hay là phim truyền hình nhé?"
+        },
+        {
+          "translation": "Hãy đi xe buýt hoặc taxi đi."
+        }
+      ]
+    },
+    "ko_이든_94": {
+      "title": "~(이)든 (Dù là... hay là..., bất kể là...)",
+      "shortExplanation": "Vĩ tố liên kết hoặc trợ từ biểu thị sự bất kể, không phân biệt lựa chọn: dù là phương án nào thì kết quả cũng như nhau ('dù là... hay là...').",
+      "longExplanation": "'~(이)든' (dạng rút gọn của '-(이)든지') gắn sau danh từ hoặc thân động từ/tính từ, dùng để liệt kê nhiều sự lựa chọn nhằm biểu thị rằng dù có chọn phương án nào thì sự việc hay phán đoán ở vế sau vẫn như nhau và không bị ảnh hưởng, tương đương với 'dù là... hay là...', 'bất kể là...'. Khi gắn vào danh từ có phụ âm cuối dùng '-이든', không có phụ âm cuối dùng '-든'. Thường lặp lại ở dạng 'A든 B든'.",
+      "formation": "Danh từ + (이)든 | Thân động từ / Thân tính từ + -든",
+      "examples": [
+        {
+          "translation": "Dù là pizza hay mì pasta thì ăn món gì cũng được, vì cả hai món đều ngon mà."
+        },
+        {
+          "translation": "Dù là tập thể thao hay tập yoga thì mọi hoạt động đều tốt cho sức khỏe."
+        },
+        {
+          "translation": "Dù là xem phim với bạn bè hay là đọc sách thì tôi đều cảm thấy hạnh phúc."
+        },
+        {
+          "translation": "Dù là bánh gạo cay tteokbokki hay lẩu budaejjigae thì tôi đều thích cả hai món ăn đó."
+        }
+      ]
+    },
+    "ko_이라도_95": {
+      "title": "~(이)라도 (Dù là..., ít nhất thì cũng..., dẫu chỉ là...)",
+      "shortExplanation": "Trợ từ biểu thị việc chấp nhận một phương án thứ yếu hoặc mức tối thiểu khi không có lựa chọn tối ưu ('dù chỉ là...', 'ít nhất thì cũng...').",
+      "longExplanation": "'~(이)라도' là trợ từ gắn sau danh từ, biểu thị sự nhượng bộ để chấp nhận một phương án không phải là lý tưởng nhất nhưng tạm thời chấp nhận được vì không còn lựa chọn nào tốt hơn, hoặc biểu thị một kỳ vọng ở mức tối thiểu ('dù là... thì cũng...', 'ít nhất thì...'). Danh từ có phụ âm cuối kết hợp với '-이라도', không có phụ âm cuối kết hợp với '-라도'.",
+      "formation": "Danh từ + (이)라도",
+      "examples": [
+        {
+          "translation": "Dù chỉ là món quà nhỏ này xin bạn hãy nhận cho. Tôi không thể tặng bạn món quà tốt hơn được."
+        },
+        {
+          "translation": "Tôi ước gì ít nhất anh ấy cũng nói một lời xin lỗi."
+        },
+        {
+          "translation": "Dẫu cho cô ấy có ghét tôi đi nữa, dẫu chỉ là bạn bè tôi vẫn muốn tiếp tục gặp gỡ."
+        },
+        {
+          "translation": "Vì đôi giày không có màu tôi mong muốn, nên dù là màu trắng tôi cũng sẽ mua vậy."
+        }
+      ]
+    },
+    "ko_이라는_96": {
+      "title": "~(이)라는 것 (Cái gọi là..., điều gọi là...)",
+      "shortExplanation": "Cấu trúc định ngữ gián tiếp kết hợp với danh từ phụ thuộc '것', dùng để định nghĩa, nêu bật hoặc giải thích về một khái niệm ('cái gọi là...').",
+      "longExplanation": "'~(이)라는 것' là cấu trúc kết hợp giữa vĩ tố định ngữ trích dẫn gián tiếp '-(이)라는' (rút gọn từ '-(이)라고 하는') với danh từ phụ thuộc '것' (cái, điều). Cấu trúc này dùng để đưa một danh từ trừu tượng hoặc khái niệm ra làm chủ đề đàm thoại để định nghĩa, giải thích bản chất hoặc bàn luận sâu sắc về khái niệm đó, tương đương với 'cái gọi là...', 'điều gọi là...' trong tiếng Việt. Khi danh từ có phụ âm cuối dùng '-이라는 것', không có phụ âm cuối dùng '-라는 것'.",
+      "formation": "Danh từ + (이)라는 것",
+      "examples": [
+        {
+          "translation": "Dường như rất nhiều người thực sự muốn biết cái gọi là tình yêu rốt cuộc là thứ như thế nào."
+        },
+        {
+          "translation": "Cái gọi là thành công là thứ không thể đạt được nếu thiếu đi rất nhiều nỗ lực và sự cống hiến."
+        },
+        {
+          "translation": "Cái gọi là hạnh phúc rất khó để định nghĩa vì nó mang ý nghĩa khác nhau đối với từng cá nhân."
+        },
+        {
+          "translation": "Cái gọi là sự quan tâm chu đáo chính là việc cân nhắc xem hành động của bản thân sẽ gây ảnh hưởng như thế nào đến người khác."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_을_82": {
+      "title": "~(으)ㄹ 만하다（值得、配得上、值得一试）",
+      "shortExplanation": "表示某事或某动作具有充分的价值或理由，值得去做或体验（“值得……”、“值得一……”）。",
+      "longExplanation": "“~(으)ㄹ 만하다”是接在动词词干后面的辅助形容词结构，用于表达某种行为或经历具有足够的价值、意义或资格，值得付出精力、金钱或时间去尝试，相当于汉语的“值得……”、“值得一试”。带有说话人主观上的肯定评价与认可。在特定语境下，也可以表示虽然不是最优秀，但勉强过得去、还可以承受。",
+      "formation": "动词词干 + -(으)ㄹ 만하다",
+      "examples": [
+        {
+          "translation": "这个蛋糕虽然很贵，但因为很好吃，所以非常值得买来吃。"
+        },
+        {
+          "translation": "这部电影的放映时间虽然很长，但因为非常有趣，所以很值得一看。"
+        },
+        {
+          "translation": "那支乐队的演出门票虽然昂贵，但他们的音乐绝对值得一听。"
+        },
+        {
+          "translation": "这款游戏安装起来虽然耗时很久，但也值得玩一玩。"
+        }
+      ]
+    },
+    "ko_을_83": {
+      "title": "~(으)ㄹ수록（越……越……）",
+      "shortExplanation": "用于表示后项的情况随着前项动作或状态程度的加深而呈比例变化（“越……越……”）。",
+      "longExplanation": "“~(으)ㄹ수록”是接在动词或形容词词干后面的连接词尾，用于表示前面的条件或状态越深入、越持续，后面的结果或状态也随之按比例增强，相当于汉语的“越……越……”。词干以元音或辅音ㄹ结尾时接“-ㄹ수록”，以除ㄹ以外的辅音结尾时接“-을수록”。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "韩语学得越多，就越能更好地理解韩国文化。"
+        },
+        {
+          "translation": "在这里呆得越久，就越来越喜欢这座城市。"
+        },
+        {
+          "translation": "每天走得越多，身体就变得越健康。"
+        },
+        {
+          "translation": "咖啡喝得越多，好像就越不觉得犯困。"
+        }
+      ]
+    },
+    "ko_을_84": {
+      "title": "~(으)ㄹ 줄 알다（会做、懂得、以为、以为……会……）",
+      "shortExplanation": "表示掌握某种做事的技能或方法（“会做……”），或者表示主观上的推测、了解与事实认定（“以为……”、“知道……”）。",
+      "longExplanation": "“~(으)ㄹ 줄 알다”主要有两种用法：第一种表示具备从事某项动作的能力、技能或方法，相当于汉语的“会做……”、“懂得怎么做……”（否定形式为 -(으)ㄹ 줄 모르다）；第二种表示推测或对事实的认定，常用于过去时“~줄 알았다”，表示“以为……”、“本以为……”，指原先以为情况是那样，但实际可能并非如此。",
+      "formation": "动词词干 + -(으)ㄹ 줄 알다 | 冠形词形 + 줄 알다",
+      "examples": [
+        {
+          "translation": "我会读韩文，所以可以不看字幕看韩剧。"
+        },
+        {
+          "translation": "我本以为爸爸很会做饭，但昨晚准备晚饭时却出了很多问题。"
+        },
+        {
+          "translation": "我以为她是韩国人，所以用韩语跟她交谈了。"
+        },
+        {
+          "translation": "我们的小狗懂得听从命令，所以训练得非常好。"
+        }
+      ]
+    },
+    "ko_을지_85": {
+      "title": "~(으)ㄹ지（是否、会不会、不知是否）",
+      "shortExplanation": "用于表示对某动作或状态的不确定、疑惑或间接疑问（“是否”、“会不会”）。",
+      "longExplanation": "“~(으)ㄹ지”是接在动词或形容词词干后面的连接词尾，常用于间接疑问句中，表示对某种情况、可能性或未来的发展存在疑惑、不确定或推测。常与모르다（不知道）、궁금하다（好奇）、알 수 없다（无法得知）、확신이 없다（不能确信）等谓语搭配使用，相当于汉语的“是否……”、“会不会……”、“不知……”。常以“-(으)ㄹ지 안 -(으)ㄹ지”或“-(으)ㄹ지 말지”的形式列举对立可能。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ지",
+      "examples": [
+        {
+          "translation": "我不知道爸爸今晚是否会回家。"
+        },
+        {
+          "translation": "我很好奇她明天会不会来参加聚会。"
+        },
+        {
+          "translation": "我还不能确定天气是否会变暖和。"
+        },
+        {
+          "translation": "不知道你是否会接受这个提议。"
+        }
+      ]
+    },
+    "ko_을지도_86": {
+      "title": "~(으)ㄹ지도 모르다（也许会、说不定、可能会）",
+      "shortExplanation": "用于表示说话人对未来或未定事实的不确定推测（“也许会……”、“说不定……”）。",
+      "longExplanation": "“~(으)ㄹ지도 모르다”是接在动词或形容词词干后面的句型，用于表达说话人对某种可能性持谨慎、保留的态度，表示某事虽然无法确定，但确实有可能发生，相当于汉语的“也许会……”、“说不定……”、“可能会……”。常与副词혹시（万一）、아마（大概）搭配使用。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ지도 모르다",
+      "examples": [
+        {
+          "translation": "明天也许会下雨，所以请带上雨伞吧。"
+        },
+        {
+          "translation": "他可能会参加下一次会议。"
+        },
+        {
+          "translation": "我明年说不定会搬到韩国去。"
+        },
+        {
+          "translation": "说不定她已经知道那个消息了。"
+        }
+      ]
+    },
+    "ko_을지라도_87": {
+      "title": "~(으)ㄹ지라도（即使……也……、哪怕……也……）",
+      "shortExplanation": "用于表示强烈的假设性让步，即使前项的极端情况成立，后项的结果或意志也不会改变（“即使……也……”、“哪怕……也……”）。",
+      "longExplanation": "“~(으)ㄹ지라도”是接在动词或形容词词干后面的让步连接词尾，多用于书面语或较为庄重的场合。它假定某种极端或不利的条件，强调无论前项的情况如何，后项的事实、决心或结果都丝毫不会受到动摇或改变，相当于汉语的“即使……也……”、“哪怕……也……”、“即便……”。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ지라도",
+      "examples": [
+        {
+          "translation": "哪怕问题再难，我也不会放弃，会继续试着解出来。"
+        },
+        {
+          "translation": "即使下雨我也打算去，因为我有重要的会议。"
+        },
+        {
+          "translation": "即便公交车来得再快，我也不会硬拼命去跑。"
+        },
+        {
+          "translation": "哪怕花费很多费用，我也想做出高品质的产品。"
+        }
+      ]
+    },
+    "ko_을지_88": {
+      "title": "~(으)ㄹ지 모르다 / ~(으)ㄹ지 몰라（不知道是否、说不定、也许）",
+      "shortExplanation": "表示对某种情况的不确定、揣测或疑惑（“不知道会不会……”、“说不定……”、“也许……”）。",
+      "longExplanation": "“~(으)ㄹ지 모르다”（非敬语常缩略为“-(으)ㄹ지 몰라”）由间接疑问词尾“-(으)ㄹ지”与动词“모르다”（不知道）组合而成。用于表示说话人对未来的事情或某种事实没有把握、无法确信，或者提出某种可能的情况（“不知道是否会……”、“说不定会……”）。在日常生活中常以“-(으)ㄹ지 몰라서”的形式表示“因为不知道会不会……所以预先做了某准备”。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ지 모르다 (몰라/몰라요)",
+      "examples": [
+        {
+          "translation": "她明天说不定会来学校，听说她最近身体不舒服呢。"
+        },
+        {
+          "translation": "本来打算买这个东西，但还不知道钱够不够。"
+        },
+        {
+          "translation": "不知道明天会不会下雨，所以得准备一把雨伞。"
+        },
+        {
+          "translation": "不知道该穿哪件衣服，所以准备了三套。"
+        }
+      ]
+    },
+    "ko_을래요_89": {
+      "title": "~(으)ㄹ래요（想……、要……、愿意……吗？）",
+      "shortExplanation": "用于口语中表达说话人自身的意向或意愿（“我想……”、“我要……”），或者用于疑问句征求对方的意见或提出邀约（“你要不要……？”）。",
+      "longExplanation": "“~(으)ㄹ래요”是接在动词词干后面的口语终结词尾。在陈述句中以第一人称为主语时，表示说话人的主观意愿、选择或打算，相当于汉语的“我想……”、“我要……”；在疑问句中以第二人称为主语时，用于客气、温和地征询对方的想法，或向对方提出建议、邀请，相当于“你要不要……？”、“我们……好吗？”。词干以元音或ㄹ结尾时用“-ㄹ래요”，以其他辅音结尾时用“-을래요”。",
+      "formation": "动词词干 + -(으)ㄹ래요",
+      "examples": [
+        {
+          "translation": "我今天想在家里看电影，外面太冷了不想出去。"
+        },
+        {
+          "translation": "我们这个周末去露营地搭帐篷好吗，你觉得怎么样？"
+        },
+        {
+          "translation": "我晚饭只想吃一顿简单的，已经饱了不想再吃了。"
+        },
+        {
+          "translation": "我这个周末打算去看话剧，因为喜欢韩国文化所以下定了决心。"
+        }
+      ]
+    },
+    "ko_을_90": {
+      "title": "~(으)ㄹ 리가 없다（绝不可能、毫无道理、不可能……）",
+      "shortExplanation": "用于表示强烈的质疑与否定，认为根据常理某事绝不可能发生（“绝不可能……”、“毫无道理”）。",
+      "longExplanation": "“~(으)ㄹ 리가 없다”由冠形词形词尾“-(으)ㄹ”、表示道理或理由的不完全名词“리”以及否定词“없다”组合而成。用于表达说话人根据情理、常识或事实进行断定，坚信某种事情绝无可能发生，相当于汉语的“绝不可能……”、“哪有这种道理”、“绝不会……”。名词后接“일 리가 없다”。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ 리가 없다 | 名词 + 일 리가 없다",
+      "examples": [
+        {
+          "translation": "这绝不可能是真的，他不是那种会做出这种事的人。"
+        },
+        {
+          "translation": "她绝不可能把我忘掉，我们在一起相处了那么长时间。"
+        },
+        {
+          "translation": "我绝不可能签这份合同，因为我还完全没有理解这些条款。"
+        },
+        {
+          "translation": "他今天不可能来，我知道的，他生病了。"
+        }
+      ]
+    },
+    "ko_을수록_91": {
+      "title": "~(으)ㄹ수록（越……越……、愈……愈……）",
+      "shortExplanation": "表示某种程度或状态随着前项条件的加剧而成正比例增长（“越……越……”）。",
+      "longExplanation": "“~(으)ㄹ수록”是表示正比递进关系的连接词尾。说明前面的动作或状态越加剧、越深入，后面的事实或状态就相应地越发显著，相当于汉语的“越……越……”、“愈发……”。后半句常搭配副词“더”（更加），或者以“-(으)면 -(으)ㄹ수록”的形式出现以强化递进的语气。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "越学习韩语，就越能够深入地理解韩国文化。"
+        },
+        {
+          "translation": "这首歌听得越多，好像就越喜欢。"
+        },
+        {
+          "translation": "天气越是逐渐变热，冰淇淋就卖得越多。"
+        },
+        {
+          "translation": "人们使用环保产品越多，就越能为环境保护做出更大的贡献。"
+        }
+      ]
+    },
+    "ko_을지언정_92": {
+      "title": "~(으)ㄹ지언정（虽说……但是、即使……也、宁可……绝不）",
+      "shortExplanation": "用于表示强烈的书面让步，承认前项事实的同时在后项提出相反事实或坚定立场（“虽说……但是”、“哪怕……也……”）。",
+      "longExplanation": "“~(으)ㄹ지언정”是接在动词、形容词词干或体词谓词形（名词+일지언정）后面的连接词尾，多见于书面语或正式语境。它包含两种常见用法：一是强烈的让步对立，承认前项的事实或条件，但在后项引出截然相反的状态或做法（“虽然……但是……”）；二是表示宁死不屈或坚定的决断态度，相当于“宁可……也绝不……”。",
+      "formation": "动词 / 形容词词干 + -(으)ㄹ지언정 | 名词 + 일지언정",
+      "examples": [
+        {
+          "translation": "虽说那件事对他极为重要，但他却绝没有插手。"
+        },
+        {
+          "translation": "虽说他很富有，但平时却有着非常节俭的习惯。"
+        },
+        {
+          "translation": "虽说考试很难，学生们依然非常用功地学习了。"
+        },
+        {
+          "translation": "虽说那个公园很漂亮，但晚上危险很多，请多加小心。"
+        }
+      ]
+    },
+    "ko_이나_93": {
+      "title": "~(이)나（或者、还是）",
+      "shortExplanation": "接在名词后面的助词，用于表示在两个或多个对象中进行选择（“或者”、“还是”）。",
+      "longExplanation": "“~(이)나”是附加在名词后面的助词，主要用于罗列两个或两个以上的事物，表示二者择一的选择关系，相当于汉语的“或者……”、“还是……”。前面名词有收音时接“-이나”，无收音时接“-나”。此外，在其他语境下也可用于表示退而求其次的选择（“将就……”）或表示数量之多超出预期（“竟达……”）。",
+      "formation": "名词 + (이)나",
+      "examples": [
+        {
+          "translation": "苹果或者橙子，请只选其中一个吧。"
+        },
+        {
+          "translation": "我们要看电影还是电视剧呢？"
+        },
+        {
+          "translation": "请坐公交车或者出租车吧。"
+        }
+      ]
+    },
+    "ko_이든_94": {
+      "title": "~(이)든（不管是……还是……、无论……）",
+      "shortExplanation": "用于列举两个或多个选项，表示无论选择哪一个都不受影响、毫无分别（“无论是……还是……”、“不管是……”）。",
+      "longExplanation": "“~(이)든”（“-(이)든지”的缩略形）可以接在名词或动词、形容词词干后面，用于列举多个可能的选项，表示说话人认为任何一种选项都可以接受，或者无论哪种情况发生，后项的结果或态度都完全相同，相当于汉语的“不管是……还是……”、“无论……”。名词有收音时接“-이든”，无收音时接“-든”，常以“A든 B든”的对举形式出现。",
+      "formation": "名词 + (이)든 | 动词 / 形容词词干 + -든",
+      "examples": [
+        {
+          "translation": "不管是披萨还是意面，吃什么都行，因为两者都很美味。"
+        },
+        {
+          "translation": "无论是运动还是瑜伽，所有的活动都对健康有益。"
+        },
+        {
+          "translation": "不管是跟朋友一起看电影，还是看书，我都觉得很幸福。"
+        },
+        {
+          "translation": "无论是辣炒年糕还是部队火锅，这两样都是我喜欢的食物。"
+        }
+      ]
+    },
+    "ko_이라도_95": {
+      "title": "~(이)라도（哪怕是……也、哪怕、至少……）",
+      "shortExplanation": "接在名词后面的助词，表示在没有最理想选择时退而求其次，接受次选或最低限度的条件（“哪怕是……也”、“哪怕……”、“至少……”）。",
+      "longExplanation": "“~(이)라도”是附加在名词后面的助词，表示虽然并非最满意、最理想的选项，但退而求其次予以接受，或者表示说话人期望的最低限度要求，相当于汉语的“哪怕是……也……”、“即便……也……”、“至少……”。前面名词有收音时接“-이라도”，无收音时接“-라도”。",
+      "formation": "名词 + (이)라도",
+      "examples": [
+        {
+          "translation": "哪怕是这份微薄的小礼物也请收下吧，我没能送你更好的礼物。"
+        },
+        {
+          "translation": "哪怕只是说一声对不起我也满足了。"
+        },
+        {
+          "translation": "即使她讨厌我，哪怕只是作为朋友，我也想继续和她见面。"
+        },
+        {
+          "translation": "既然鞋子没有我想要的颜色，哪怕是白色的我也买下来吧。"
+        }
+      ]
+    },
+    "ko_이라는_96": {
+      "title": "~(이)라는 것（所谓……、所谓的……）",
+      "shortExplanation": "接在名词后面，用于将某个概念或事物作为讨论的主题引出，并对其加以定义或说明（“所谓……”、“叫作……的事物”）。",
+      "longExplanation": "“~(이)라는 것”是由间接引述的冠形词形式“-(이)라는”（“-(이)라고 하는”的缩写）与不完全名词“것”（事物、东西）组合而成的结构。常用于对抽象概念、特定主题进行界定、说明或发表哲理性见解，相当于汉语的“所谓……”、“所谓的……”、“被称为……的东西”。前面名词有收音时接“-이라는 것”，无收音时接“-라는 것”。",
+      "formation": "名词 + (이)라는 것",
+      "examples": [
+        {
+          "translation": "很多人似乎都极想知道所谓的爱情究竟是怎样的一种东西。"
+        },
+        {
+          "translation": "所谓的成功，是如果没有巨大的努力与奉献就无法实现的。"
+        },
+        {
+          "translation": "所谓的幸福很难去定义，因为对每个人来说都具有不同的意义。"
+        },
+        {
+          "translation": "所谓的体谅关怀，就是去顾及自己的言行会给他人带来怎样的影响。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_을_82": {
+      "title": "~(으)ㄹ 만하다（〜する価値がある、〜に値する、〜するに値する）",
+      "shortExplanation": "ある行動や経験に十分な価値があり、やってみる価値や理由があることを表します（「〜する価値がある」「〜に値する」）。",
+      "longExplanation": "「~(으)ㄹ 만하다」は動詞の語幹に付き、ある行為をするだけの価値や理由が十分にあること、あるいはその価値に見合うだけの手間や費用をかけるに値することを表す表現です。日本語の「〜する価値がある」「〜してみる価値がある」に相当します。話し手が「やって損はない」「おすすめできる」と判断したニュアンスを含みます。また文脈によっては「まあまあ可能である」「何とか我慢できる」という意味も表します。",
+      "formation": "動詞語幹 + -(으)ㄹ 만하다",
+      "examples": [
+        {
+          "translation": "このケーキは高いですが、美味しくて買って食べる価値があります。"
+        },
+        {
+          "translation": "この映画は上映時間が長いですが、本当に面白いので見る価値があります。"
+        },
+        {
+          "translation": "そのバンドの公演チケットは高いですが、彼らの音楽はぜひ聴いてみる価値があります。"
+        },
+        {
+          "translation": "このゲームはインストールに長い時間がかかりますが、やってみる価値はあります。"
+        }
+      ]
+    },
+    "ko_을_83": {
+      "title": "~(으)ㄹ수록（〜すればするほど、〜であるほど）",
+      "shortExplanation": "前項の程度や状態が進むにつれて、それに比例して後項の程度も変化することを表します（「〜するほど」「〜すればするほど」）。",
+      "longExplanation": "「~(으)ㄹ수록」は動詞や形容詞の語幹に付く接続語尾で、前の動作や状態の度合いが深まるのに比例して、後の事態の度合いも増していくことを表します。日本語の「〜すればするほど」「〜であればあるほど」に相当します。母音やㄹパッチムで終わる語幹には「-ㄹ수록」、それ以外のパッチムで終わる語幹には「-을수록」が付きます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "韓国語を多く勉強するほど、韓国の文化をより深く理解できるようになります。"
+        },
+        {
+          "translation": "ここに長くいるほど、この街がますます好きになります。"
+        },
+        {
+          "translation": "毎日歩くほど健康が良くなります。"
+        },
+        {
+          "translation": "コーヒーを多く飲むほど、眠気が来にくくなる気がします。"
+        }
+      ]
+    },
+    "ko_을_84": {
+      "title": "~(으)ㄹ 줄 알다（〜できる、〜する仕方を知っている、〜だと思う・思っていた）",
+      "shortExplanation": "ある動作を行う能力や方法を知っていること（「〜できる」「〜の仕方を知っている」）、またはある事実や状況について予想・推測・思い込みを持っていること（「〜だと思う」「〜だと思っていた」）を表します。",
+      "longExplanation": "「~(으)ㄹ 줄 알다」には大きく分けて2つの用法があります。1つ目は、ある動作を行う方法や能力を備えていることを表し、日本語の「〜できる」「〜の仕方を知っている」に相当します（反対語は -(으)ㄹ 줄 모르다）。2つ目は、ある状況や事実について推測や思い込みを表し、特に過去形「~줄 알았다」の形で「〜だと思っていた」「〜だとばかり思っていた」という予想と異なる展開を表すときによく使われます。",
+      "formation": "動詞語幹 + -(으)ㄹ 줄 알다 | 連体形 + 줄 알다",
+      "examples": [
+        {
+          "translation": "私はハングルが読めるので、韓国ドラマを字幕なしで見ることができます。"
+        },
+        {
+          "translation": "お父さんは料理が上手だと思っていたのですが、昨夜夕食を準備する際にたくさんのトラブルが生じました。"
+        },
+        {
+          "translation": "私は彼女が韓国人だと思って韓国語で話しかけました。"
+        },
+        {
+          "translation": "うちの子犬は命令に従うことができるので、とてもよくしつけられています。"
+        }
+      ]
+    },
+    "ko_을지_85": {
+      "title": "~(으)ㄹ지（〜かどうか、〜だろうか）",
+      "shortExplanation": "ある事柄に対する不確実さや疑念、間接的な疑問を表します（「〜かどうか」「〜だろうか」）。",
+      "longExplanation": "「~(으)ㄹ지」は動詞や形容詞の語幹に付く接続語尾で、不確かな事態や推測を伴う疑問を表し、主に間接疑問節を導きます。日本語の「〜かどうか」「〜だろうか」に相当します。後ろに「모르다（分からない）」「궁금하다（気になる）」「확신이 없다（確信が持てない）」などの述語が続くことが多く、選択や対比を表す「-(으)ㄹ지 안 -(으)ㄹ지」「-(으)ㄹ지 말지」の形でもよく用いられます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지",
+      "examples": [
+        {
+          "translation": "お父さんが今晩家に帰ってくるかどうか分かりません。"
+        },
+        {
+          "translation": "彼女が明日パーティーに来るかどうか気になります。"
+        },
+        {
+          "translation": "日が暖かくなるかどうか、まだ確信が持てません。"
+        },
+        {
+          "translation": "あなたが提案を受け入れるかどうかは分かりません。"
+        }
+      ]
+    },
+    "ko_을지도_86": {
+      "title": "~(으)ㄹ지도 모르다（〜かもしれない、〜かもわからない）",
+      "shortExplanation": "ある事態が起こるかもしれないという、不確かな推測や可能性を表します（「〜かもしれない」）。",
+      "longExplanation": "「~(으)ㄹ지도 모르다」は動詞や形容詞の語幹に付き、話し手がある事柄について確信は持てないものの、そうなる可能性も否定できないと控えめに推測する表現です。日本語の「〜かもしれない」「〜かも知れない」に相当します。副詞「혹시（もしや）」「아마（たぶん）」などと一緒に用いられることが多くあります。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지도 모르다",
+      "examples": [
+        {
+          "translation": "明日雨が降るかもしれないので、傘を持って行ってください。"
+        },
+        {
+          "translation": "彼は次の会議に出席するかもしれません。"
+        },
+        {
+          "translation": "私はもしかしたら来年韓国に引っ越すかもしれません。"
+        },
+        {
+          "translation": "彼女はその知らせを知っているかもしれませんね。"
+        }
+      ]
+    },
+    "ko_을지라도_87": {
+      "title": "~(으)ㄹ지라도（たとえ〜であっても、〜としても）",
+      "shortExplanation": "強い仮定の譲歩を表し、前項の状況がどうであれ、後項の意志や結果が変わらないことを表します（「たとえ〜であっても」「〜としても」）。",
+      "longExplanation": "「~(으)ㄹ지라도」は動詞や形容詞の語幹に付く接続語尾で、仮定的な譲歩を表す格調の高い表現です。前項で極端な条件や不利な事態を仮定しても、後項で示される話し手の決意や状況が何ら影響を受けず維持されることを表し、日本語の「たとえ〜であっても」「〜だとしても」に相当します。改まった文脈や書き言葉で多く用いられます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지라도",
+      "examples": [
+        {
+          "translation": "問題が難しくても諦めずに解き続けてみます。"
+        },
+        {
+          "translation": "たとえ雨が降ろうとも行くつもりです。大事なミーティングがあるのです。"
+        },
+        {
+          "translation": "バスが早く来たとしても、無理して走ったりはしません。"
+        },
+        {
+          "translation": "たとえ費用が多くかかっても、品質の良い製品を作りたいです。"
+        }
+      ]
+    },
+    "ko_을지_88": {
+      "title": "~(으)ㄹ지 모르다 / ~(으)ㄹ지 몰라（〜かわからない、〜かもしれない）",
+      "shortExplanation": "ある状況に対して確信が持てないことや、「〜かもしれない」という不確かな推測を表します（「〜かわからない」「〜かもしれない」）。",
+      "longExplanation": "「~(으)ㄹ지 모르다」（くだけた口語形は「-(으)ㄹ지 몰ら」）は、疑問を表す接続語尾「-(으)ㄹ지」に「모르다（分からない）」が結びついた表現です。ある事柄について確信が持てず疑問に思っていることや、可能性を控えめに推測して「〜かもしれない」と述べる際に用いられます。また、「-(으)ㄹ지 몰라서（〜かどうかわからないので、〜かもしれないので）」の形で、不測の事態に備えた理由を述べる際にも頻繁に使われます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지 모르다 (몰라/몰라요)",
+      "examples": [
+        {
+          "translation": "彼女は明日学校に来るかもしれないよ、最近体調が悪いって言ってたから。"
+        },
+        {
+          "translation": "この商品を買おうと思ったのですが、まだお金が足りるか分かりません。"
+        },
+        {
+          "translation": "明日雨が降るか分からないので、傘を用意しておかなければなりません。"
+        },
+        {
+          "translation": "どんな服を着ればいいか分からなくて、3種類用意しました。"
+        }
+      ]
+    },
+    "ko_을래요_89": {
+      "title": "~(으)ㄹ래요（〜します、〜したいです、〜しませんか）",
+      "shortExplanation": "話し手の意図や意思を表したり（「〜します」「〜したいです」）、相手の意向を尋ねて誘ったり（「〜しませんか」）する親しみのある終結語尾です。",
+      "longExplanation": "「~(으)ㄹ래요」は動詞の語幹に付く口語の終結語尾です。平叙文（1人称主語）では、話し手の個人的な意思、希望、選択を表し、「〜します」「〜したいです」に相当します。疑問文（2人称主語）では、相手の意向を柔らかく尋ねたり、親しい間柄で提案・勧誘したりする際に使われ、「〜しませんか」「〜しますか」という意味になります。語幹末尾が母音またはㄹパッチムの場合は「-ㄹ래요」、それ以外のパッチムの場合は「-을래요」を用います。",
+      "formation": "動詞語幹 + -(으)ㄹ래요",
+      "examples": [
+        {
+          "translation": "私は今日家で映画を見ます。外に出るには寒すぎます。"
+        },
+        {
+          "translation": "私たち今週末キャンプ場に行ってテントを張りませんか、どう思いますか？"
+        },
+        {
+          "translation": "私は夕食を一食だけ軽く食べます。もうお腹がいっぱいなのでこれ以上は食べたくないです。"
+        },
+        {
+          "translation": "私は今週末に演劇を見に行きたいです。韓国文化が好きなのでそう決めました。"
+        }
+      ]
+    },
+    "ko_을_90": {
+      "title": "~(으)ㄹ 리가 없다（〜はずがない、〜わけがない）",
+      "shortExplanation": "道理や常識、状況から考えて、そのようなことが起こる可能性が全くないことを強く主張する表現です（「〜はずがない」「〜わけがない」）。",
+      "longExplanation": "「~(으)ㄹ 리가 없다」は動詞や形容詞の語幹、または名詞（일 리가 없다）に付き、話し手の判断や常識から照らし合わせて「そのような理由や可能性は絶対にあり得ない」と強く否定する表現です。日本語の「〜はずがない」「〜わけがない」に相当します。事実に対する強い疑念や反論、驚きを表す際によく使われます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ 리가 없다 | 名詞 + 일 리가 없다",
+      "examples": [
+        {
+          "translation": "これが事実であるはずがありません。彼がそのようなことをしでかす人ではありません。"
+        },
+        {
+          "translation": "彼女が私を忘れてしまうはずがありません。私たちはとても長く一緒に過ごしたのですから。"
+        },
+        {
+          "translation": "私がこの契約書にサインするはずがありません。私はまだ条件をすべて理解できていません。"
+        },
+        {
+          "translation": "彼が今日来るはずがありません。彼が病気なのは分かっていますから。"
+        }
+      ]
+    },
+    "ko_을수록_91": {
+      "title": "~(으)ㄹ수록（〜するほど、〜であればあるほど）",
+      "shortExplanation": "前項の動作や状態が進むほど、それに比例して後項の度合いも強まることを表します（「〜するほど」「〜すればするほど」）。",
+      "longExplanation": "「~(으)ㄹ수록」は動詞や形容詞の語幹に付き、先行する事態の進行や程度の上昇に比例して、後続する事態の度合いも増大していく関係を表す接続語尾です。日本語の「〜するほど」「〜であればあるほど」に相当します。後続節には「더（もっと）」などの副詞がよく使われ、「-(으)면 -(으)ㄹ수록（〜すればするほど）」という強調構文としても頻出します。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "韓国語を勉強するほど、韓国文化についてより深く理解できるようになります。"
+        },
+        {
+          "translation": "この歌はたくさん聴くほど、ますます好きになっていく気がします。"
+        },
+        {
+          "translation": "日がだんだん暑くなるほど、アイスクリームがより多く売れます。"
+        },
+        {
+          "translation": "人々が環境に優しい製品を使うほど、環境保護により多くの貢献ができます。"
+        }
+      ]
+    },
+    "ko_을지언정_92": {
+      "title": "~(으)ㄹ지언정（〜であれ、〜としても、〜であっても）",
+      "shortExplanation": "前項の事実を譲歩して認めつつも、後項でそれと対比される事実や強固な意志を提示します（「〜であっても」「〜としても」）。",
+      "longExplanation": "「~(으)ㄹ지언정」は動詞・形容詞の語幹、または名詞（일지언정）に付く書き言葉寄りの格調高い接続語尾です。前項の状況や事実を一応認める譲歩の姿勢を取りながらも、後項ではそれに反する意外な事実や、妥協しない強い意志を対比させて述べます。日本語の「〜であっても」「〜としても」「たとえ〜であれ」に相当し、「むしろ〜することはあっても〜だけはしない」という決意を表す文脈でもよく使われます。",
+      "formation": "動詞・形容詞語幹 + -(으)ㄹ지언정 | 名詞 + 일지언정",
+      "examples": [
+        {
+          "translation": "それが彼にとって極めて重要な事柄であったとしても、彼は決してそれに手を触れなかった。"
+        },
+        {
+          "translation": "彼はお金持ちであるとしても、普段はとても倹約する習慣がある。"
+        },
+        {
+          "translation": "試験が難しいとしても、生徒たちは一生懸命勉強しました。"
+        },
+        {
+          "translation": "その公園が美しいとしても、夜は危険が多いので気をつけてください。"
+        }
+      ]
+    },
+    "ko_이나_93": {
+      "title": "~(이)나（〜か、〜または、〜でも）",
+      "shortExplanation": "名詞の後ろに付き、2つ以上の対象の中からどれかを選択することを表します（「〜か」「〜または」）。",
+      "longExplanation": "「~(이)나」は名詞の後ろに付く助詞で、提示された複数の選択肢の中からいずれか1つを選ぶことを表し、日本語の「〜か」「〜または」に相当します。パッチムのある名詞には「-이나」、パッチムのない名詞には「-나」が付きます。選択肢の提示のほかにも、最善ではない次善の策として選ぶ「〜でも」や、数量の多さに驚く「〜も」の意味でも幅広く使われます。",
+      "formation": "名詞 + (이)나",
+      "examples": [
+        {
+          "translation": "リンゴかオレンジ、そのうち1つだけを選んでください。"
+        },
+        {
+          "translation": "映画かドラマを見ましょうか？"
+        },
+        {
+          "translation": "バスかタクシーに乗ってください。"
+        }
+      ]
+    },
+    "ko_이든_94": {
+      "title": "~(이)든（〜であれ〜であれ、〜だろうと〜だろうと）",
+      "shortExplanation": "複数の事物を並列し、どちらを選んでも関係がない、またはどれであっても構わないことを表します（「〜であれ〜であれ」「〜だろうと〜だろうと」）。",
+      "longExplanation": "「~(이)든」（「-(이)든지」の縮約形）は、名詞や用言の語幹に付き、複数の選択肢を挙げて「どちらを選択しようと結果に変わりはない」「いずれであっても構わない」という無条件・無差別の態度を表す表現です。日本語の「〜であれ〜であれ」「〜だろうと〜だろうと」「〜でも〜でも」に相当します。名詞にパッチムがある場合は「-이든」、ない場合は「-든」を用い、「A든 B든」の形でよく用いられます。",
+      "formation": "名詞 + (이)든 | 動詞・形容詞語幹 + -든",
+      "examples": [
+        {
+          "translation": "ピザであれパスタであれ何を食べてもいいです。どちらも美味しいですから。"
+        },
+        {
+          "translation": "運動であれヨガであれ、すべての活動は健康に良いです。"
+        },
+        {
+          "translation": "友達と映画を見ることであれ本を読むことであれ、私は幸せです。"
+        },
+        {
+          "translation": "トッポッキであれプデチゲであれ、私は両方とも好きな食べ物です。"
+        }
+      ]
+    },
+    "ko_이라도_95": {
+      "title": "~(이)라도（〜でも、せめて〜だけでも）",
+      "shortExplanation": "最善の選択肢がない場合に、次善の策として甘受したり、最低限の要求を表したりします（「〜でも」「せめて〜だけでも」）。",
+      "longExplanation": "「~(이)라도」は名詞の後ろに付く助詞で、最も望ましい選択肢が得られない場合に「妥協してこれだけでも受け入れる」という次善の選択を表したり、最低限の期待・条件を表したりする表現です。日本語の「〜でも」「せめて〜だけでも」に相当します。パッチムのある名詞には「-이라도」、パッチムのない名詞には「-라도」が付きます。",
+      "formation": "名詞 + (이)라도",
+      "examples": [
+        {
+          "translation": "せめてこの小さなプレゼントだけでも受け取ってください。これ以上の良い贈り物は差し上げられません。"
+        },
+        {
+          "translation": "せめてごめんねと一言だけでも言ってくれたら嬉しいです。"
+        },
+        {
+          "translation": "たとえ彼女が私を嫌っているとしても、せめて友達としてだけでも会い続けたいです。"
+        },
+        {
+          "translation": "靴は希望の色がないので、白でも買おうと思います。"
+        }
+      ]
+    },
+    "ko_이라는_96": {
+      "title": "~(이)라는 것（〜というもの、いわゆる〜とは）",
+      "shortExplanation": "名詞の後ろに付き、ある概念や対象を話題として提示し、その本質を定義・説明します（「〜というもの」「〜とは」）。",
+      "longExplanation": "「~(이)라는 것」は間接引用の連体形「-(이)라는」（-(이)라고 하는 の縮約形）と依存名詞「것（もの・こと）」が結合した表現です。抽象的な概念や特定の事物を主題として取り上げ、その本質を定義したり深く論評したりする際に用いられます。日本語の「〜というもの」「いわゆる〜とは」に相当します。パッチムのある名詞には「-이라는 것」、ない名詞には「-라는 것」が付きます。",
+      "formation": "名詞 + (이)라는 것",
+      "examples": [
+        {
+          "translation": "愛というものがどのようなものなのか、多くの人がぜひ知りたいと思っているようです。"
+        },
+        {
+          "translation": "成功というものは、多大な努力と献身なしには成し遂げられないものです。"
+        },
+        {
+          "translation": "幸福というものは、個人によって異なる意味を持っているため、定義することが困難です。"
+        },
+        {
+          "translation": "思いやりというものは、自分の行動が他人にどのような影響を及ぼすかを考慮することです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_을_82": {
+      "title": "~(으)ㄹ 만하다 (가치·타당성 있음)",
+      "shortExplanation": "어떤 행동이나 경험을 할 만한 충분한 가치나 이유가 있음을 나타내는 보조형용사 표현입니다 ('~(으)ㄹ 만하다').",
+      "longExplanation": "'~(으)ㄹ 만하다'는 동사 어간 뒤에 붙어, 어떤 행위를 하기에 충분한 가치나 타당성이 있음을 나타냅니다. 화자가 시간, 비용, 노력 따위를 들여서 그 일을 할 만한 가치가 충분하다고 평가하거나 추천할 때 널리 쓰입니다. 또한 맥락에 따라 '어느 정도 감당할 수 있거나 괜찮다'는 가능성이나 수용의 뜻을 나타내기도 합니다.",
+      "formation": "동사 어간 + -(으)ㄹ 만하다",
+      "examples": [
+        {
+          "translation": "이 케이크는 비싸지만 맛있어서 사 먹을 만해요."
+        },
+        {
+          "translation": "이 영화는 상영 시간이 길지만 정말 재미있어서 볼 만해요."
+        },
+        {
+          "translation": "그 밴드 공연 티켓은 비싸지만 그들의 음악은 꼭 들어볼 만해요."
+        },
+        {
+          "translation": "이 게임은 설치하는 데 오래 걸려도 해볼 만해요."
+        }
+      ]
+    },
+    "ko_을_83": {
+      "title": "~(으)ㄹ수록 (정도의 비례적 심화)",
+      "shortExplanation": "앞의 상태나 동작이 심해지거나 더해감에 따라 뒤의 사실도 비례하여 변함을 나타내는 연결어미입니다 ('~(으)ㄹ수록').",
+      "longExplanation": "'~(으)ㄹ수록'은 동사나 형용사 어간 뒤에 붙어, 앞 절의 내용이나 정도가 더해짐에 따라 뒤 절의 상황 또한 비례적으로 커지거나 변화함을 나타내는 연결어미입니다. 모음이나 ㄹ 받침 뒤에는 '-ㄹ수록', ㄹ을 제외한 자음 받침 뒤에는 '-을수록'이 연결됩니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "한국어를 많이 공부할수록 한국 문화를 더 잘 이해하게 돼요."
+        },
+        {
+          "translation": "여기에 오래 있을수록 이 도시가 점점 더 좋아져요."
+        },
+        {
+          "translation": "매일 걸을수록 건강이 좋아져요."
+        },
+        {
+          "translation": "커피를 많이 마실수록 잠이 덜 오는 것 같아요."
+        }
+      ]
+    },
+    "ko_을_84": {
+      "title": "~(으)ㄹ 줄 알다 (방법·능력의 인지 및 추측·생각)",
+      "shortExplanation": "어떤 일을 하는 방법이나 능력을 알고 있음을 나타내거나, 어떤 사실에 대한 짐작이나 생각('~줄 알았다')을 나타내는 표현입니다.",
+      "longExplanation": "'~(으)ㄹ 줄 알다'는 크게 두 가지 의미로 쓰입니다. 첫째는 어떤 동작을 할 수 있는 기술, 능력, 방법을 알고 있음을 나타내어 '할 수 있다'는 뜻을 가집니다 (반대말은 '-(으)ㄹ 줄 모르다'). 둘째는 어떤 상황이나 사실에 대해 그렇게 짐작하거나 지레짐작했음을 나타내며, 과거형인 '-줄 알았다'로 쓰여 실제 사실과 다르거나 예상을 나타낼 때 자주 사용됩니다.",
+      "formation": "동사 어간 + -(으)ㄹ 줄 알다 | 관형사형 + 줄 알다",
+      "examples": [
+        {
+          "translation": "저는 한글을 읽을 줄 알아서 한국 드라마를 자막 없이 볼 수 있어요."
+        },
+        {
+          "translation": "아빠가 요리를 잘할 줄 알았는데 어제 저녁 준비할 때 많은 문제가 생겼어요."
+        },
+        {
+          "translation": "저는 그녀가 한국인인 줄 알고 한국어로 말했어요."
+        },
+        {
+          "translation": "우리 강아지는 명령을 따를 줄 알아서 아주 잘 훈련되어 있어요."
+        }
+      ]
+    },
+    "ko_을지_85": {
+      "title": "~(으)ㄹ지 (의문·불확실의 연결어미)",
+      "shortExplanation": "어떤 일에 대한 막연한 의문, 추측, 또는 확실하지 않은 상황을 나타내는 연결어미입니다 ('~(으)ㄹ지').",
+      "longExplanation": "'~(으)ㄹ지'는 동사나 형용사 어간 뒤에 붙어, 화자가 어떤 사실이나 미래의 일에 대해 확신하지 못하고 불확실하게 여기거나 의문을 품고 있음을 나타내는 연결어미입니다. 주로 뒤에 '모르다', '궁금하다', '알 수 없다', '확신하다' 따위의 서술어가 오며, 간접화법이나 의문절을 이끌 때 쓰입니다. 종종 '-(으)ㄹ지 안 -(으)ㄹ지'처럼 상반되는 상황을 나열하기도 합니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지",
+      "examples": [
+        {
+          "translation": "아빠가 오늘 저녁에 집에 올지 모르겠어요."
+        },
+        {
+          "translation": "그녀가 내일 파티에 올지 안 올지 궁금해요."
+        },
+        {
+          "translation": "날이 따뜻해질지 아직 확신이 없어요."
+        },
+        {
+          "translation": "당신이 제안을 받아들일지 안 받아들일지 알 수 없어요."
+        }
+      ]
+    },
+    "ko_을지도_86": {
+      "title": "~(으)ㄹ지도 모르다 (불확실한 추측·가능성)",
+      "shortExplanation": "어떤 일이 일어날 가능성이 있음을 조심스럽게 짐작하거나 불확실하게 추측할 때 쓰는 표현입니다 ('~(으)ㄹ지도 모르다').",
+      "longExplanation": "'~(으)ㄹ지도 모르다'는 동사나 형용사 어간 뒤에 붙어, 화자가 어떤 일이나 상태의 가능성에 대해 확신하지 못하면서도 '그럴 가능성이 전혀 없지는 않다'고 조심스럽게 추측할 때 쓰입니다. 주로 미래의 일이나 아직 확인되지 않은 사실에 대해 막연한 개연성을 나타내며, 흔히 '아마', '혹시' 등의 부사와 함께 자주 어울립니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지도 모르다",
+      "examples": [
+        {
+          "translation": "내일 비가 올지도 모르니까 우산을 가져가세요."
+        },
+        {
+          "translation": "그는 다음 회의에 참석할지도 모릅니다."
+        },
+        {
+          "translation": "저는 아마 내년에 한국으로 이사할지도 몰라요."
+        },
+        {
+          "translation": "그녀가 그 소식을 알고 있을지도 모르죠."
+        }
+      ]
+    },
+    "ko_을지라도_87": {
+      "title": "~(으)ㄹ지라도 (강한 양보·가정의 연결어미)",
+      "shortExplanation": "앞 절의 사실이나 조건을 강력하게 양보하여 인정하면서도 뒤 절의 내용이나 의지가 변함없음을 나타내는 연결어미입니다 ('~(으)ㄹ지라도').",
+      "longExplanation": "'~(으)ㄹ지라도'는 동사나 형용사 어간 뒤에 붙어, 가령 앞 절과 같은 극단적이거나 불리한 상황이 발생한다고 가정하더라도 뒤 절의 판단, 결심, 사실에는 아무런 영향을 미치지 않음을 나타내는 양보의 연결어미입니다. '비록 ~하더라도'의 뜻을 지니며, 격식적이거나 문어적인 표현에서 강한 의지를 전달할 때 자주 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지라도",
+      "examples": [
+        {
+          "translation": "문제가 어렵지라도 포기하지 않고 계속 풀어볼게요."
+        },
+        {
+          "translation": "비가 오지라도 갈 생각이에요, 제가 중요한 미팅이 있어요."
+        },
+        {
+          "translation": "버스가 빨리 오지라도, 무리해서 뛰지 않을 거예요."
+        },
+        {
+          "translation": "비용이 많이 들지라도 좋은 품질의 제품을 만들고 싶어요."
+        }
+      ]
+    },
+    "ko_을지_88": {
+      "title": "~(으)ㄹ지 모르다 / ~(으)ㄹ지 몰라 (불확실한 추측·의문의 표현)",
+      "shortExplanation": "어떤 일이 일어날지 확신하지 못하거나 그럴 가능성을 염두에 둘 때 쓰는 표현입니다 ('~(으)ㄹ지 모르다').",
+      "longExplanation": "'~(으)ㄹ지 모르다'(비격식 구어체에서는 '-ㄹ지 몰라')는 의문이나 막연함을 나타내는 연결어미 '-(으)ㄹ지'와 '모르다'가 결합한 형태입니다. 화자가 어떤 사실에 대해 확신하지 못하여 잘 모름을 나타내거나, '혹시 그럴 수도 있다'는 조심스러운 추측을 표현할 때 사용됩니다. 이유를 나타내는 '-(으)ㄹ지 몰라서'의 형태로 어떤 상황에 미리 대비하는 맥락에서도 자주 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지 모르다 (몰라/몰라요)",
+      "examples": [
+        {
+          "translation": "그녀가 내일 학교에 올지 몰라, 요즘 아프다니까."
+        },
+        {
+          "translation": "이 물건을 사려고 했는데, 아직 돈이 충분할지 몰라요."
+        },
+        {
+          "translation": "내일 비가 올지 몰라서 우산을 준비해야겠어요."
+        },
+        {
+          "translation": "어떤 옷을 입을지 몰라서 세 가지를 준비했어요."
+        }
+      ]
+    },
+    "ko_을래요_89": {
+      "title": "~(으)ㄹ래요 (의사 표현·권유 및 제안의 종결어미)",
+      "shortExplanation": "자신의 의도나 생각을 표현하거나('~할래요'), 상대방의 의사를 부드럽게 묻고 권유할 때('~할래요?') 쓰는 구어 종결어미입니다.",
+      "longExplanation": "'~(으)ㄹ래요'는 동사 어간 뒤에 붙어 주어의 주관적인 의사나 선택을 나타내는 해요체 종결어미입니다. 평서문에서는 화자 자신의 행동 의지나 선호를 나타내고, 의문문에서는 상대방의 의사를 물어보거나 다정하게 제안 및 권유할 때 사용됩니다. 받침 없는 동사나 ㄹ 받침 뒤에는 '-ㄹ래요', 그 외의 자음 받침 뒤에는 '-을래요'가 연결됩니다.",
+      "formation": "동사 어간 + -(으)ㄹ래요",
+      "examples": [
+        {
+          "translation": "저는 오늘 집에서 영화를 볼래요, 밖으로 나가기는 너무 추워요."
+        },
+        {
+          "translation": "우리 이번 주말에 캠핑장에 가서 텐트를 칠래요, 어떻게 생각해요?"
+        },
+        {
+          "translation": "나는 저녁으로 한 끼만 먹을래요, 이미 배가 불러서 더 먹지 않을래요."
+        },
+        {
+          "translation": "나는 이번 주말에 연극 보러 갈래요, 한국 문화를 좋아해서 결심했어요."
+        }
+      ]
+    },
+    "ko_을_90": {
+      "title": "~(으)ㄹ 리가 없다 (강한 부정·불가능의 판단)",
+      "shortExplanation": "이치나 상식으로 볼 때 어떤 일이 일어날 가능성이나 까닭이 전혀 없다고 단정하여 말할 때 쓰는 표현입니다 ('~(으)ㄹ 리가 없다').",
+      "longExplanation": "'~(으)ㄹ 리가 없다'는 동사나 형용사 어간 또는 서술격 조사 뒤에 붙어, 화자가 상식이나 정황에 근거하여 어떤 일이나 상태가 성립할 까닭이나 이치가 전혀 없다고 강하게 부정할 때 사용됩니다. '리'는 '이치'나 '까닭'을 뜻하는 의존명사이며, '절대로 그럴 수 없다'는 강한 확신과 반박의 뉘앙스를 담고 있습니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ 리가 없다 | 명사 + 일 리가 없다",
+      "examples": [
+        {
+          "translation": "이것이 사실일 리가 없어요, 그가 그런 일을 저지를 사람이 아니에요."
+        },
+        {
+          "translation": "그녀가 날 잊어버릴 리가 없어요, 우리 너무 오래 같이 지냈거든요."
+        },
+        {
+          "translation": "저는 이 계약서를 사인할 리가 없어요, 제가 아직 조건들을 모두 이해하지 못했어요."
+        },
+        {
+          "translation": "그가 오늘 올 리가 없어요, 그거 알고 있어요, 그가 아픈 걸."
+        }
+      ]
+    },
+    "ko_을수록_91": {
+      "title": "~(으)ㄹ수록 (비례적 증가·정도의 점진적 심화)",
+      "shortExplanation": "앞 절의 조건이나 정도가 커짐에 따라 뒤 절의 상황도 비례적으로 더해감을 나타내는 연결어미입니다 ('~(으)ㄹ수록').",
+      "longExplanation": "'~(으)ㄹ수록'은 동사나 형용사 어간 뒤에 붙어, 앞선 사실의 분량이나 상태가 계속해서 더해지고 진행될 때 뒤따르는 현상 역시 그에 비례하여 강해지거나 변화함을 나타내는 연결어미입니다. 뒤 절에 부사 '더'가 자주 호응하며, 조건을 강조하는 '-(으)면 -(으)ㄹ수록'의 형태로도 매우 널리 사용됩니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ수록",
+      "examples": [
+        {
+          "translation": "한국어를 공부할수록, 한국 문화에 대해 더 많이 이해할 수 있어요."
+        },
+        {
+          "translation": "이 노래를 많이 들을수록, 더 좋아지는 것 같아요."
+        },
+        {
+          "translation": "날이 점점 더워질수록, 아이스크림이 더 많이 팔려요."
+        },
+        {
+          "translation": "사람들이 친환경 제품을 사용할수록, 환경보호에 더 많은 기여를 할 수 있습니다."
+        }
+      ]
+    },
+    "ko_을지언정_92": {
+      "title": "~(으)ㄹ지언정 (강한 대조적 양보의 연결어미)",
+      "shortExplanation": "앞 절의 사실을 인정하면서도 뒤 절에서 그에 맞서는 사실이나 확고한 결단을 나타내는 문어체 연결어미입니다 ('~(으)ㄹ지언정').",
+      "longExplanation": "'~(으)ㄹ지언정'은 동사나 형용사 어간 또는 서술격 조사 뒤에 붙어, 비록 앞 절의 사실이나 상태를 인정한다 할지라도 뒤 절의 대조적인 사실이나 결심은 변함이 없음을 나타내는 양보의 연결어미입니다. 주로 글이나 격식적인 담화에서 쓰이며, '비록 ~일망정'과 통하며 '차라리 ~할지언정 ~하지 않겠다'처럼 결연한 의지를 나타낼 때도 자주 사용됩니다.",
+      "formation": "동사/형용사 어간 + -(으)ㄹ지언정 | 명사 + 일지언정",
+      "examples": [
+        {
+          "translation": "그것이 그에게 굉장히 중요한 일일지언정, 그는 결코 그것에 손을 대지 않았다."
+        },
+        {
+          "translation": "그가 부자일지언정, 평소에 아주 절약하는 습관이 있다."
+        },
+        {
+          "translation": "시험이 어려울지언정, 학생들은 열심히 공부했어요."
+        },
+        {
+          "translation": "그 공원이 아름다울지언정, 저녁에는 위험이 많으니 조심하세요."
+        }
+      ]
+    },
+    "ko_이나_93": {
+      "title": "~(이)나 (선택을 나타내는 보조사)",
+      "shortExplanation": "체언 뒤에 붙어 둘 이상의 사물이나 대상 가운데 하나를 고르는 선택의 뜻을 나타내는 보조사입니다 ('~(이)나').",
+      "longExplanation": "'~(이)나'는 명사 뒤에 붙어 나열된 여러 대상 가운데 어느 하나를 선택함을 나타내는 보조사입니다. 받침이 있는 명사 뒤에는 '-이나', 받침이 없는 명사 뒤에는 '-나'가 결합합니다. 선택의 의미 외에도, 마땅한 것이 없어 차선책을 고름을 나타내거나('밥이나 먹자'), 수량이 예상보다 많음에 놀람을 나타낼 때도('열 개나') 널리 쓰입니다.",
+      "formation": "명사 + (이)나",
+      "examples": [
+        {
+          "translation": "사과나 오렌지, 그 중 하나만 골라주세요."
+        },
+        {
+          "translation": "영화나 드라마를 볼까요?"
+        },
+        {
+          "translation": "버스나 택시를 타세요."
+        }
+      ]
+    },
+    "ko_이든_94": {
+      "title": "~(이)든 (무차별·선택의 연결어미 및 보조사)",
+      "shortExplanation": "나열된 여러 항목 가운데 어느 것을 선택해도 상관없거나 마찬가지임을 나타내는 표현입니다 ('~(이)든').",
+      "longExplanation": "'~(이)든'은 '-(이)든지'의 줄임말로, 명사나 용언 어간 뒤에 붙어 나열된 여러 대상이나 동작 가운데 어느 쪽을 가리지 않고 자유롭게 선택해도 뒤 절의 상황에 변함이 없음을 나타냅니다. 받침 있는 명사 뒤에는 '-이든', 받침 없는 명사 뒤에는 '-든'이 연결되며, 주로 'A든 B든'과 같이 대등한 항목을 거듭 나열하는 형식으로 자주 쓰입니다.",
+      "formation": "명사 + (이)든 | 동사/형용사 어간 + -든",
+      "examples": [
+        {
+          "translation": "피자든 파스타든 무엇을 먹어도 좋아요, 둘 다 맛있으니까요."
+        },
+        {
+          "translation": "운동이든 요가든 모든 활동이 건강에 좋아요."
+        },
+        {
+          "translation": "친구들하고 영화보기이든, 책을 읽는 것이든 저는 행복해요."
+        },
+        {
+          "translation": "떡볶이이든, 부대찌개든 저는 둘 다 좋아하는 음식입니다."
+        }
+      ]
+    },
+    "ko_이라도_95": {
+      "title": "~(이)라도 (차선책의 수용·최소한의 한도)",
+      "shortExplanation": "가장 마음에 드는 것이 없을 때 차선책으로 만족하거나 최소한의 것을 양보하여 받아들임을 나타내는 보조사입니다 ('~(이)라도').",
+      "longExplanation": "'~(이)라도'는 명사 뒤에 붙어, 최선의 대안이 없을 때 그보다 덜 만족스럽지만 차선책으로 받아들임을 나타내거나, 적어도 최소한의 요구 조건을 나타내는 보조사입니다. 받침 있는 명사 뒤에는 '-이라도', 받침 없는 명사 뒤에는 '-라도'가 결합합니다.",
+      "formation": "명사 + (이)라도",
+      "examples": [
+        {
+          "translation": "이 작은 선물이라도 받아주세요. 저는 더 좋은 선물을 줄 수 없어요."
+        },
+        {
+          "translation": "미안하다고 말이라도 해 줬으면 좋겠어요."
+        },
+        {
+          "translation": "비록 그녀가 나를 싫어한다고 해도, 친구로서라도 계속 만나고 싶어요."
+        },
+        {
+          "translation": "신발은 원하는 색깔이 없으니까, 흰색이라도 사겠어요."
+        }
+      ]
+    },
+    "ko_이라는_96": {
+      "title": "~(이)라는 것 (개념 정의·본질 설명의 표현)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 대상이나 추상적 개념을 화제로 삼아 그 본질을 규정하거나 설명할 때 쓰는 표현입니다 ('~(이)라는 것').",
+      "longExplanation": "'~(이)라는 것'은 간접인용 서술격 조사의 관형사형 '-(이)라는'('-(이)라고 하는'의 준말)에 의존명사 '것'이 결합한 표현입니다. 주로 사랑, 행복, 성공 등과 같은 추상적 관념이나 특정 명사를 문장의 화제로 끌어내어 그것의 정의, 성격, 본질을 규명하거나 설명할 때 널리 쓰입니다. 받침 있는 명사 뒤에는 '-이라는 것', 받침 없는 명사 뒤에는 '-라는 것'이 연결됩니다.",
+      "formation": "명사 + (이)라는 것",
+      "examples": [
+        {
+          "translation": "사랑이라는 것이 어떤 것인지, 많은 사람들이 꼭 알고 싶어 하는 것 같아요."
+        },
+        {
+          "translation": "성공이라는 것은 많은 노력과 헌신 없이는 이루어질 수 없는 것입니다."
+        },
+        {
+          "translation": "행복이라는 것은 개인마다 다른 의미를 갖고 있기 때문에 정의하기가 어렵습니다."
+        },
+        {
+          "translation": "배려라는 것은 자신의 행동이 다른 사람에게 어떤 영향을 미치는지 고려하는 것입니다."
+        }
+      ]
+    }
+  }
+}

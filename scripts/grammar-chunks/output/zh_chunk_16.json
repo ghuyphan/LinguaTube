@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_首先其次_228": {
+      "title": "首先……，其次…… (Liên từ: Trước tiên... tiếp theo / Thứ nhất... thứ hai...)",
+      "shortExplanation": "Cặp liên từ '首先……，其次……' dùng để liệt kê các sự việc, thứ tự ưu tiên hoặc các luận điểm theo trình tự; 'trước tiên... tiếp theo...', 'thứ nhất là... thứ hai là...'.",
+      "longExplanation": "'首先……，其次……' (shǒuxiān... qícì...) là cặp liên từ liên kết các vế câu dùng trong văn viết và khẩu ngữ trang trọng, biểu thị trình tự sắp xếp các bước thực hiện hoặc tầm quan trọng của các luận điểm. '首先' nêu ra điểm cốt lõi, việc cần làm trước hết; '其次' nối tiếp đưa ra việc hoặc ý tiếp theo sau đó. Tương đương với 'trước tiên... tiếp theo là...', 'thứ nhất... thứ hai...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 首先 + Mệnh đề 1，其次 + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Khi đi phỏng vấn xin việc, trước tiên phải mặc quần áo trang trọng, tiếp theo là đừng căng thẳng."
+        }
+      ]
+    },
+    "zh_不管_229": {
+      "title": "不管……，都 / 也…… (Liên từ: Bất kể... / Cho dù... đều...)",
+      "shortExplanation": "Liên từ '不管' biểu thị điều kiện vô điều kiện; dù trong bất kỳ tình huống, hoàn cảnh nào thì kết quả vẫn không thay đổi; 'cho dù...', 'bất kể... đều...'.",
+      "longExplanation": "'不管' (bùguǎn) là liên từ biểu thị điều kiện bài trừ (vô điều kiện). Vế câu chứa '不管' thường đi cùng từ để hỏi (như 什么, 谁, 哪儿, 怎么), hình thức lựa chọn (……还是……), hoặc thể khẳng định - phủ định liền nhau (去不去, 好不好), biểu thị bao hàm toàn bộ mọi khả năng; vế sau bắt buộc dùng phó từ '都' hoặc '也' để chỉ kết luận không thay đổi. '不管' mang khẩu ngữ tự nhiên hơn '无论'. Tương đương với 'cho dù...', 'bất kể... đều...' trong tiếng Việt.",
+      "formation": "不管 + Từ để hỏi / ……还是…… / Khẳng định-Phủ định (+ Danh từ) ，Chủ ngữ + 都 / 也 + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Bất kể là phim gì, tôi đều thích xem cả."
+        }
+      ]
+    },
+    "zh_以为_230": {
+      "title": "以为 (Động từ: Tưởng rằng... / Cứ ngỡ là... - Nhận định sai thực tế)",
+      "shortExplanation": "Động từ '以为' dùng khi người nói cho rằng một điều gì đó là đúng, nhưng thực tế sự thật lại hoàn toàn trái ngược; 'tưởng rằng...', 'cứ ngỡ là...'.",
+      "longExplanation": "'以为' (yǐwéi) là động từ nhận thức, biểu thị phán đoán hoặc nhận định chủ quan của người nói trong quá khứ mà sau đó đã được chứng minh là sai lầm hoặc không phù hợp với thực tế khách quan. Câu thường đi kèm với '其实' (thực ra), '原来' (hóa ra) hoặc '没想到' (không ngờ) ở vế sau để đính chính sự thật. Cần phân biệt với '认为' (cho rằng - nhận định nghiêm túc, có căn cứ). Tương đương với 'tưởng rằng...', 'cứ ngỡ là...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 以为 + Mệnh đề phán đoán sai (，其实 / 原来 + Sự thật)",
+      "examples": [
+        {
+          "translation": "Tôi cứ tưởng món đồ đó là cho tôi, thực ra là cho bố."
+        }
+      ]
+    },
+    "zh_原来本来_231": {
+      "title": "原来 / 本来 (Phó từ: Ban đầu / Vốn dĩ / Trước kia)",
+      "shortExplanation": "'原来' và '本来' đều có thể biểu thị tình trạng, kế hoạch hoặc thời gian vốn có lúc ban đầu trước khi có sự thay đổi; 'ban đầu...', 'vốn dĩ...'.",
+      "longExplanation": "'原来' (yuánlái) và '本来' (běnlái) trong nét nghĩa chỉ thời gian đều có thể làm phó từ hoặc trạng ngữ đứng trước động từ/vị ngữ, biểu thị sự việc, tính chất hoặc kế hoạch ở vào trạng thái ban đầu, trước khi phát sinh biến đổi hay sự điều chỉnh nào đó. Cả hai đều có thể diễn đạt ý 'ban đầu / trước đây / vốn dĩ'. (Lưu ý: '原来' còn có nét nghĩa 'hóa ra là' mà '本来' không có; '本来' có nét nghĩa 'lẽ ra, đáng lý' mà '原来' không có). Tương đương với 'ban đầu...', 'vốn dĩ...', 'trước kia...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 原来 / 本来 + Động từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Ban đầu vốn dĩ cần đến 12 tiếng đồng hồ."
+        }
+      ]
+    },
+    "zh_原来clause_232": {
+      "title": "原来 + Mệnh đề (Phó từ: Hóa ra là... / Thì ra là... - Nhận ra sự thật)",
+      "shortExplanation": "Phó từ '原来' đứng trước một mệnh đề để biểu thị người nói vừa mới phát hiện hoặc vỡ lẽ ra sự thật vốn có từ trước; 'hóa ra là...', 'thì ra là...'.",
+      "longExplanation": "'原来' (yuánlái) khi đứng ở đầu mệnh đề hoặc trước vị ngữ có thể biểu thị sự đốn ngộ, vỡ lẽ sau khi phát hiện ra một sự thật hay nguyên nhân mà trước đó bản thân chưa từng biết đến. Cấu trúc thường kết hợp ở vế trước với '我以为……' (tôi cứ tưởng là...) hoặc câu hỏi thắc mắc, vế sau dùng '原来……' kèm trợ từ cảm thán '啊', '呀' ở cuối câu để bộc lộ sự ngạc nhiên, bất ngờ. (Lưu ý: nét nghĩa này chỉ dùng '原来', tuyệt đối không được thay bằng '本来'). Tương đương với 'hóa ra là...', 'thì ra là...' trong tiếng Việt.",
+      "formation": "(Mệnh đề hoài nghi / suy đoán ，) (Chủ ngữ + ) 原来 + Mệnh đề sự thật (+ Trợ từ ngữ khí 啊 / 呢)",
+      "examples": [
+        {
+          "translation": "Tôi cứ tưởng là ai giúp tôi dọn dẹp phòng chứ, hóa ra là bạn à!"
+        }
+      ]
+    },
+    "zh_本来就VA_233": {
+      "title": "本来就 + Động từ / Tính từ (Phó từ: Vốn dĩ đã... / Lẽ dĩ nhiên là...)",
+      "shortExplanation": "Cấu trúc '本来就' đứng trước động từ hoặc tính từ nhằm nhấn mạnh tính chất, sự thật vốn có từ đầu hoặc lẽ đương nhiên phải như vậy; 'vốn dĩ đã...'.",
+      "longExplanation": "'本来就' (běnlái jiù) kết hợp với động từ hoặc tính từ để nhấn mạnh một sự thật, tính chất vốn dĩ đã tồn tại từ trước đó hoặc là điều hiển nhiên theo lẽ thường, không cần bàn cãi hay ngạc nhiên. Cấu trúc thường dùng để giải thích lý do, khẳng định sự việc không có gì bất ngờ, hoặc phê phán việc làm thừa thãi (ví dụ: '天气本来就冷' - thời tiết vốn đã lạnh rồi; '这件事本来就应该他做' - việc này vốn dĩ là trách nhiệm của anh ấy). Tương đương với 'vốn dĩ đã...', 'vốn đã...', 'lẽ ra đương nhiên là...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 本来就 + Động từ / Tính từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_并不并没VA_234": {
+      "title": "并不 / 并没 + Động từ / Tính từ (Phó từ: Không hề... / Hoàn toàn không... - Nhấn mạnh phủ định)",
+      "shortExplanation": "Phó từ '并' đứng trước '不' hoặc '没' để nhấn mạnh ngữ khí phủ định, thường dùng để bác bỏ một nhận định sai lầm hoặc làm rõ sự thật; 'không hề...', 'hoàn toàn không...'.",
+      "longExplanation": "'并不 / 并没' (bìng bù / bìng méi) là cấu trúc nhấn mạnh sự phủ định trong tiếng Trung. Trong đó, phó từ '并' bổ nghĩa cho từ phủ định '不' (phủ định tính chất, thói quen, nhận thức hiện tại/tương lai) hoặc '没' (phủ định hành động chưa xảy ra hoặc đã hoàn thành), nhằm bác bỏ giả định, suy đoán hay định kiến của đối phương hoặc người khác. Cấu trúc thường đi sau các liên từ chuyển ngoặt như '但是', '可是', '其实'. Tương đương với 'không hề...', 'hoàn toàn không...', 'thực ra chẳng...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (但是 / 其实 + ) 并不 / 并没 + Động từ / Tính từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Mọi người đều nói bên ngoài rất lạnh, nhưng tôi lại không hề thấy lạnh chút nào."
+        }
+      ]
+    },
+    "zh_按照N_235": {
+      "title": "按照 + Danh từ (Giới từ: Căn cứ vào... / Theo như... - Dựa theo tiêu chuẩn)",
+      "shortExplanation": "Giới từ '按照' đặt trước danh từ để nêu ra căn cứ, tiêu chuẩn, kế hoạch hoặc quy định làm kim chỉ nam cho hành động; 'căn cứ vào...', 'theo...'.",
+      "longExplanation": "'按照' (ànzhào) là giới từ dùng để dẫn xuất căn cứ, phương châm, kế hoạch, luật lệ hoặc tiêu chuẩn mà hành động cần tuân thủ theo. Đi sau '按照' thường là các danh từ chỉ kế hoạch, quy định, yêu cầu, phong tục tập quán (như 计划, 规定, 要求, 习惯). Khác với '根据' (thiên về căn cứ đưa ra kết luận logic), '按照' nhấn mạnh vào việc làm theo, thực hiện rập khuôn theo một khuôn mẫu hay chỉ dẫn có sẵn. Tương đương với 'theo như...', 'căn cứ vào...', 'chiếu theo...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 按照 + Danh từ / Cụm danh từ + Động từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Chúng tôi vẫn tiến hành theo đúng như kế hoạch ban đầu."
+        }
+      ]
+    },
+    "zh_甚至VA_236": {
+      "title": "甚至 + Động từ / Tính từ (Liên từ / Phó từ: Thậm chí... / Ngay cả... - Tăng tiến cực đoan)",
+      "shortExplanation": "'甚至' đứng trước động từ hoặc tính từ để nêu ra một ví dụ nổi bật, vượt quá mức thông thường nhằm biểu thị quan hệ tăng tiến cực đoan; 'thậm chí...', 'ngay cả...'.",
+      "longExplanation": "'甚至' (shènzhì) vừa là liên từ vừa là phó từ mang ý nghĩa tăng tiến vượt bậc. Khi đứng trước động từ hoặc tính từ, nó dẫn ra một tình huống hoặc hành vi mang tính cực đoan, bất ngờ hoặc vượt ngoài lẽ thường tình để làm nổi bật mức độ sâu sắc của sự việc được đề cập ở vế trước. Thường dùng trong cấu trúc '……，甚至 (连) …… 都 / 也……'. Tương đương với 'thậm chí...', 'ngay cả...', 'thậm chí đến mức...' trong tiếng Việt.",
+      "formation": "Mệnh đề 1 ，(Chủ ngữ + ) 甚至 + Động từ / Tính từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Anh ấy làm việc rất chăm chỉ, thậm chí còn quên cả ăn cơm."
+        }
+      ]
+    },
+    "zh_肯定VA_237": {
+      "title": "肯定 + Động từ / Tính từ (Phó từ: Nhất định... / Chắc chắn... - Khẳng định dứt khoát)",
+      "shortExplanation": "Phó từ '肯定' đứng trước động từ hoặc tính từ biểu thị sự phán đoán chắc chắn, không còn chút nghi ngờ nào; 'chắc chắn...', 'nhất định...'.",
+      "longExplanation": "'肯定' (kěndìng) khi dùng làm phó từ đứng trước vị ngữ (động từ hoặc tính từ) có tác dụng khẳng định phán đoán một cách chắc chắn tuyệt đối. Người nói có niềm tin vững chắc vào việc sự việc sẽ diễn ra hoặc tính chất đó là đúng sự thật, không hề do dự hay hoài nghi. Sắc thái khẳng định của '肯定' tương tự như '一定', nhưng mang màu sắc phán đoán nhận thức chủ quan rõ rệt hơn. Tương đương với 'chắc chắn...', 'nhất định sẽ...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 肯定 + Động từ / Tính từ (+ Tân ngữ / Bổ ngữ)",
+      "examples": [
+        {
+          "translation": "Vận động chắc chắn có lợi cho sức khỏe thể chất."
+        }
+      ]
+    },
+    "zh_肯定_238": {
+      "title": "肯定 (Động từ: Dám chắc / Khẳng định - Xác nhận với niềm tin tuyệt đối)",
+      "shortExplanation": "Động từ '肯定' biểu thị hành động xác nhận, tin tưởng chắc chắn vào một sự việc mà không hề hoài nghi; 'dám chắc...', 'khẳng định...'.",
+      "longExplanation": "'肯定' (kěndìng) ở đây đóng vai trò là một ngoại động từ nhận thức, biểu thị hành vi thừa nhận hoặc xác quyết một sự thật với niềm tin tuyệt đối. Thường kết hợp với các động từ năng nguyện như '能', '可以' tạo thành cụm '能肯定', '可以肯定' (có thể dám chắc rằng), theo sau là một mệnh đề tân ngữ trần thuật sự việc. Khác với phó từ '肯定' (bổ nghĩa cho động từ khác), động từ '肯定' trực tiếp đứng làm vị ngữ mang mệnh đề. Tương đương với 'dám chắc', 'khẳng định rằng' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (能 / 可以 + ) 肯定 + ，+ Mệnh đề được xác quyết",
+      "examples": [
+        {
+          "translation": "Tôi có thể dám chắc rằng Trương Viễn nhất định sẽ đến."
+        }
+      ]
+    },
+    "zh_肯定的_239": {
+      "title": "肯定的 (Tính từ: Mang tính khẳng định / Đồng ý - Câu trả lời tích cực)",
+      "shortExplanation": "Hình thức '肯定的' dùng làm định ngữ hoặc vị ngữ để chỉ tính chất khẳng định, đồng ý hoặc tán thành; 'mang tính khẳng định', 'đồng ý'.",
+      "longExplanation": "'肯定的' (kěndìng de) đóng vai trò là tính từ (hoặc kết cấu chữ 的), mang ý nghĩa tán thành, thừa nhận hoặc trả lời 'có/đúng' (trái nghĩa với 'phủ định' - 否定的). Thường xuất hiện trong cấu trúc vị ngữ '是肯定的' để mô tả câu trả lời, thái độ hoặc kết quả là mang tính tán thành, đồng thuận hoặc chắc chắn. Tương đương với 'mang tính khẳng định', 'là đồng ý', 'tán thành' trong tiếng Việt.",
+      "formation": "Chủ ngữ (Câu trả lời / Thái độ / Kết quả) + 是肯定的",
+      "examples": [
+        {
+          "translation": "Câu trả lời của anh ấy mang tính khẳng định (tức là đồng ý)."
+        }
+      ]
+    },
+    "zh_再说_240": {
+      "title": "……再说 (Động từ / Cụm khẩu ngữ: Để sau rồi tính / Hãy hay / Bàn sau)",
+      "shortExplanation": "Cụm '再说' đặt ở cuối câu hoặc sau một điều kiện thời gian để chỉ việc tạm gác sự việc lại, đợi đến thời điểm thích hợp sau này mới tính tiếp; 'để sau rồi tính', 'hãy hay'.",
+      "longExplanation": "'再说' (zàishuō) khi đặt ở cuối câu (thường đi với trợ từ ngữ khí '吧') đóng vai trò là một động từ ngữ mang nghĩa hoãn lại một việc nào đó. Cấu trúc thường có vế đầu nêu ra một điều kiện thời gian, mốc hoàn thành (như 考完 - thi xong, 回去 - về nhà, 明天 - ngày mai), vế sau dùng '再说' để ngụ ý rằng hiện tại chưa cần đưa ra quyết định hay vội vàng hành động, cứ chờ làm xong việc trước mắt rồi hẵng bàn tiếp. Tương đương với 'để sau rồi tính', 'bàn sau', 'rồi hẵng hay' trong tiếng Việt.",
+      "formation": "(Mệnh đề lý do ，) Điều kiện thời gian / Hành động hoàn thành + 再说 (+ 吧)",
+      "examples": [
+        {
+          "translation": "Bây giờ bận học quá, đợi thi xong rồi hẵng tính sau nhé."
+        }
+      ]
+    },
+    "zh_再说_241": {
+      "title": "再说 (Liên từ: Hơn nữa / Vả lại / Với lại - Bổ sung thêm lý do)",
+      "shortExplanation": "Liên từ '再说' đứng ở đầu vế câu sau để bổ sung thêm một lý do, nguyên nhân hoặc tình huống quan trọng khác; 'hơn nữa...', 'vả lại...'.",
+      "longExplanation": "'再说' (zàishuō) khi dùng làm liên từ có tác dụng liên kết các mệnh đề, thường đứng ở đầu vế câu thứ hai để đưa ra thêm một lý do hoặc hoàn cảnh bổ sung củng cố cho kết luận hoặc trạng thái ở vế trước. Thường đi sau dấu phẩy và mang khẩu ngữ tự nhiên, gần gũi hơn so với '况且' hay '而且'. Tương đương với 'hơn nữa...', 'vả lại...', 'với lại...' trong tiếng Việt.",
+      "formation": "Mệnh đề 1 ，再说 + ，+ Mệnh đề lý do bổ sung",
+      "examples": [
+        {
+          "translation": "Sau khi tốt nghiệp mọi người đều rất bận rộn, vả lại, rất nhiều bạn học không ở cùng một thành phố."
+        }
+      ]
+    },
+    "zh_实际的_242": {
+      "title": "实际的 + Danh từ (Tính từ làm định ngữ: Thực tế / Trên thực tế - Đối lập với quảng cáo, lý thuyết)",
+      "shortExplanation": "Cụm '实际的' dùng làm định ngữ đứng trước danh từ để chỉ tính chất thực tế, có thật trong đời sống (đối lập với tưởng tượng, quảng cáo, lý thuyết); 'thực tế', 'thực sự'.",
+      "longExplanation": "'实际' (shíjì) là tính từ chỉ những gì tồn tại trong hiện thực khách quan, có thật, cụ thể chứ không phải là giả định, quảng cáo hay lý thuyết suông. Khi kết hợp với trợ từ kết cấu '的' tạo thành cụm định ngữ '实际的', nó bổ nghĩa cho danh từ đứng sau (như 实际的东西 - đồ vật thực tế, 实际的情况 - tình hình thực tế, 实际的困难 - khó khăn thực tế). Cấu trúc thường dùng để đối chiếu giữa hiện thực cụ thể với những lời quảng cáo, suy nghĩ hay kế hoạch trên giấy tờ. Tương đương với 'thực tế', 'trên thực tế', 'có thật' trong tiếng Việt.",
+      "formation": "实际的 + Danh từ (+ Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Món đồ thực tế không giống với những gì trên quảng cáo."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_首先其次_228": {
+      "title": "首先……，其次……（接続詞の呼応：まず〜、次に〜・第一に〜、第二に〜）",
+      "shortExplanation": "接続表現「首先……，其次……」を用いて、手順の前後関係や論点の優先順位を順序立てて列挙します（「まず〜、次に〜」「第一に〜、第二に〜」）。",
+      "longExplanation": "「首先……，其次……」（shǒuxiān... qícì...）は、順序や優先度に従って複数の事柄・意見・手順を整理して述べる呼応表現です。「首先」で最も重要あるいは最初に取り組むべき事柄を提示し、「其次」でそれに次ぐ段階・観点を導きます。書き言葉や改まった会話で論理的に説明する際によく使われます。日本語の「まず〜、次に…」「第一に〜、第二に…」に相当します。",
+      "formation": "(主語 ＋ ) 首先 ＋ 節1，其次 ＋ 節2",
+      "examples": [
+        {
+          "translation": "面接を受けるときは、まずフォーマルな服を着ること、次に緊張しないことが大切です。"
+        }
+      ]
+    },
+    "zh_不管_229": {
+      "title": "不管……，都 / 也……（接続詞：〜にかかわらず・どんな〜でも）",
+      "shortExplanation": "接続詞「不管」を前節に置き、どのような条件や状況であっても後節の結果が変わらないこと（無条件）を表します（「〜にかかわらず」「どんな〜でも…」）。",
+      "longExplanation": "「不管」（bùguǎn）は無条件を表す接続詞で、どのような事情・条件のもとでも後節の結果や結論が変わらないことを示します。「不管」の後ろには疑問詞（什么、谁、怎么など）、選択疑問（A还是B）、反復疑問（去不去など）を伴い、あらゆる可能性を網羅します。後節では必ず「都」または「也」と呼応します。同様の意味の「无论」に比べて口語的な響きを持ちます。日本語の「たとえ〜であろうと」「〜にかかわらず、すべて…」に相当します。",
+      "formation": "不管 ＋ 疑問詞 / 選択疑問句 / 反復形式 (＋ 名詞) ，主語 ＋ 都 / 也 ＋ 述語",
+      "examples": [
+        {
+          "translation": "どんな映画であっても、私はどれも見るのが好きです。"
+        }
+      ]
+    },
+    "zh_以为_230": {
+      "title": "以为（動詞：〜だと思い込んでいた・〜だと思っていたが実際は違った）",
+      "shortExplanation": "動詞「以为」は、話し手が主観的にそう思っていたものの、実際には事実と異なっていたこと（思い違い・勘違い）を表します（「〜だと思い込んでいた」）。",
+      "longExplanation": "「以为」（yǐwéi）は話者の主観的な判断・推測を表す認識動詞ですが、実際にはその判断が誤りであったり、事実と食い違っていたりする文脈で用いられます。後節に「其实」（実は）や「原来」（なんと・実は）などを伴って真相を対比的に述べることが非常に多いです。単に客観的な見解・意見を述べる「认为」とは明確に区別されます。日本語の「〜だと思い込んでいた」「〜と思っていた（が実は違った）」に相当します。",
+      "formation": "主語 ＋ 以为 ＋ 誤認節 (，其实 / 原来 ＋ 事実節)",
+      "examples": [
+        {
+          "translation": "その物は自分にくれたものだと思い込んでいましたが、実は父へのものでした。"
+        }
+      ]
+    },
+    "zh_原来本来_231": {
+      "title": "原来 / 本来（副詞：元々・当初は・もともと）",
+      "shortExplanation": "「原来」と「本来」はともに、変化が生じる前の最初の状態や当初の計画・状況（「元々は」「当初は」）を表します。",
+      "longExplanation": "「原来」（yuánlái）と「本来」（běnlái）は、いずれも時間的・事態的な起点である「もともとの状況」「当初の予定」を指す副詞として述語の前に置かれます。その後に状況の変化や計画の変更が起きたことを暗示または対比することが多いです。（※「原来」には「なんと〜だったのか」という新事実の発見の意味があり、「本来」には「当然〜であるべきだ」という理の当然の意味がある点で使い分けもありますが、ここでは共通する「当初・元々」の用法です）。日本語の「元々〜だった」「当初は〜を必要としていた」に相当します。",
+      "formation": "(主語 ＋ ) 原来 / 本来 ＋ 動詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "当初は12時間かかるはずでした（元々は12時間必要でした）。"
+        }
+      ]
+    },
+    "zh_原来clause_232": {
+      "title": "原来 ＋ 節（副詞：なんと〜だったのか・実は〜だった・〜と判明した）",
+      "shortExplanation": "副詞「原来」を節の前に置き、以前は知らなかった真相や原因に気づき、合点がいったこと（「なんと〜だったのか」「実は〜だった」）を表します。",
+      "longExplanation": "「原来」（yuánlái）を文頭または述語の前に置くことで、それまで知らなかった事実・真相・原因を新たに発見し、「そうだったのか！」と納得・驚嘆するニュアンスを表します。前節で「我以为……」（〜だと思い込んでいた）と勘違いを述べ、後節で「原来……啊！」と真相を発見して対比させる形が典型パターンです。※この「真相の発覚」を表す用法では「本来」に置き換えることはできません。日本語の「なんと〜だったのか」「実は〜だった」「〜と判明した」に相当します。",
+      "formation": "(推測節 / 誤認節 ，) (主語 ＋ ) 原来 ＋ 事実節 (＋ 語気助詞 啊 / 呢)",
+      "examples": [
+        {
+          "translation": "誰が部屋を掃除してくれたのかと思っていたら、なんとあなただったのですね！"
+        }
+      ]
+    },
+    "zh_本来就VA_233": {
+      "title": "本来就 ＋ 動詞 / 形容詞（副詞：元々〜なのだ・当たり前に〜だ）",
+      "shortExplanation": "「本来就」を動詞や形容詞の前に置き、その性質や事態が元からそうであったこと、あるいは道理として当然そうあるべきであることを強調します（「元々〜なのだ」「当然〜だ」）。",
+      "longExplanation": "「本来就」（běnlái jiù）は動詞や形容詞の前に置かれ、事態が初めからそのようであったこと、あるいは客観的な道理・常識から考えて「当然そうであるべきだ」「最初からそう決まっている」という確信を強調する表現です。言い訳や説明、あるいは当たり前のこととして反論する際によく用いられます（例：天气本来就冷＝天気は元々寒いのだ、这件事本来就该你负责＝この件は元々あなたが責任を持つべきだ）。日本語の「元々〜なのだ」「最初から〜である」「当然〜だ」に相当します。",
+      "formation": "主語 ＋ 本来就 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_并不并没VA_234": {
+      "title": "并不 / 并没 ＋ 動詞 / 形容詞（否定の強調：決して〜ない・少しも〜ない）",
+      "shortExplanation": "副詞「并」を否定詞「不」や「没」の前に置き、相手の思い込みや一般通念を否定・反論して否定の語気を強調します（「決して〜ない」「少しも〜ない」）。",
+      "longExplanation": "「并不 / 并没」（bìng bù / bìng méi）は、強い否定の語気を表す呼応表現です。「并」は否定詞の前に置かれ、聞き手の先入観や世間一般の予想・誤認を強く否定し、「実際にはそうではない」と事実を正すニュアンスを持ちます。「并不」は状態・性質・恒常的な習慣・意志の否定に、「并没」は過去の動作や変化の未発生を否定する際に用いられます。「但是」「其实」などの転換表現とともに対比的に使われることが多いです。日本語の「決して〜ではない」「別に〜というわけではない」「ちっとも〜ない」に相当します。",
+      "formation": "主語 ＋ (但是 / 其实 ＋ ) 并不 / 并没 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "みんな外はとても寒いと言っていますが、私は少しも寒いとは感じていません。"
+        }
+      ]
+    },
+    "zh_按照N_235": {
+      "title": "按照 ＋ 名詞（介詞：〜に従って・〜に基づいて・〜通りに）",
+      "shortExplanation": "介詞（前置詞）「按照」を名詞の前に置き、行動の基準・規則・計画・方針を提示します（「〜に従って」「〜通りに」）。",
+      "longExplanation": "「按照」（ànzhào）は動作や行動の根拠・基準・枠組みを導く介詞です。後ろには計画、規則、要求、習慣などを表す名詞（例：计划、规定、标准など）が続き、「その基準や手順から逸脱せず忠実に従う」というニュアンスを持ちます。「根据」（客観的な事実や証拠から推論・判断を下す際に多用）と比べ、「按照」は既定のルールやマニュアル通りに行動・実行することを強く表します。日本語の「〜に従って」「〜通りに」「〜に基づいて」に相当します。",
+      "formation": "主語 ＋ 按照 ＋ 名詞 / 名詞句 ＋ 動詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "私たちはやはり当初の計画通りに進めます。"
+        }
+      ]
+    },
+    "zh_甚至VA_236": {
+      "title": "甚至 ＋ 動詞 / 形容詞（副詞・接続詞：〜さえも・〜はおろか・甚だしきは）",
+      "shortExplanation": "「甚至」を動詞や形容詞の前に置き、予想を超える極端な事例を挙げて程度の甚だしさを強調します（「〜さえも」「甚だしきは〜する」）。",
+      "longExplanation": "「甚至」（shènzhì）は、累加（漸進）関係を表す接続詞・副詞です。前節で述べた内容を踏まえ、さらに一歩進んだ極端な例や意外な事態を提示することで、その程度の深さや尋常でなさを際立たせます。極端な状況を表す「连……也/都」と組み合わされることもあります。日本語の「〜さえも」「〜するほどだ」「ひいては〜までした」に相当します。",
+      "formation": "節1 ，(主語 ＋ ) 甚至 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "彼はとても熱心に仕事をし、ご飯を食べるのさえ忘れてしまうほどでした。"
+        }
+      ]
+    },
+    "zh_肯定VA_237": {
+      "title": "肯定 ＋ 動詞 / 形容詞（副詞：きっと〜だ・間違いなく〜である）",
+      "shortExplanation": "副詞「肯定」を動詞や形容詞の前に置き、話し手の確信に満ちた判断を表します（「きっと〜だ」「間違いなく〜である」）。",
+      "longExplanation": "「肯定」（kěndìng）が副詞として述語（動詞または形容詞）の前に置かれると、その事態の発生や性質の存在に対して全く疑いの余地がないという強い確信・判断を表します。「一定」とほぼ同じように使われますが、「肯定」は話し手の判断・推測における絶対的な自信がより強調されます。日本語の「間違いなく〜だ」「きっと〜に違いない」「確実に〜である」に相当します。",
+      "formation": "主語 ＋ 肯定 ＋ 動詞 / 形容詞 (＋ 目的語 / 補語)",
+      "examples": [
+        {
+          "translation": "運動が身体の健康にとって確実に良い影響があることは間違いありません。"
+        }
+      ]
+    },
+    "zh_肯定_238": {
+      "title": "肯定（動詞：確信する・断言する・請け合う）",
+      "shortExplanation": "動詞「肯定」は、ある事柄に対して強い確信を持ち、疑いなく断言することを表します（「確信している」「断言できる」）。",
+      "longExplanation": "「肯定」（kěndìng）は動詞として用いられ、話し手がある事態や推測に対して確固たる確信を抱いて「請け合う」「断言する」という認識行為を表します。多くの場合、「能肯定」「可以肯定」（確実に言える／断言できる）のように助動詞を伴い、後ろに節（目的語）をとって確信の内容を述べます。日本語の「確信する」「断言する」「間違いないと確信している」に相当します。",
+      "formation": "主語 ＋ (能 / 可以 ＋ ) 肯定 ＋ ，＋ 確信内容の節",
+      "examples": [
+        {
+          "translation": "張遠が必ず来ると、私は確信を持って断言できます。"
+        }
+      ]
+    },
+    "zh_肯定的_239": {
+      "title": "肯定的（形容詞：肯定的である・前向きな・「はい」という回答）",
+      "shortExplanation": "「肯定的」は形容詞（または的構造）として、賛同・承諾・肯定の意味合いを持つこと（「肯定的である」「イエスである」）を表します。",
+      "longExplanation": "「肯定的」（kěndìng de）は形容詞的用法で、返答や態度が賛成・是認・承諾（肯定）であることを表します（「否定的」の対義語）。「回答是肯定的」（回答は肯定的である＝イエスと答えた）のように「是……的」の述語形式で頻繁に用いられます。日本語の「肯定的である」「イエス（賛成）である」「前向きである」に相当します。",
+      "formation": "主語 (回答 / 態度など) ＋ 是肯定的",
+      "examples": [
+        {
+          "translation": "彼の返答は肯定的でした（＝承諾・賛成でした）。"
+        }
+      ]
+    },
+    "zh_再说_240": {
+      "title": "……再说（動詞句：後で考えよう・〜してから決めよう・後回しにする）",
+      "shortExplanation": "「再说」を文末や条件句の後に置き、決定や議論をひとまず保留にして、指定の時期が来てから改めて対処すること（「後で話そう」「〜してから考えよう」）を表します。",
+      "longExplanation": "「再说」（zàishuō）は口語で極めて頻繁に用いられる表現で、目前の決定や行動を一時保留し、将来の特定の時機や条件が満たされた段階で改めて検討・実行しようと持ちかける際に用いられます。文末には語気助詞「吧」を伴うことが一般的です（例：明天再说吧＝また明日にしよう、考完再说＝試験が終わってから決めよう）。日本語の「後で考えよう」「〜が終わってからにしよう」「その時にまた話そう」に相当します。",
+      "formation": "(理由節 ，) 時間・完了条件 ＋ 再说 (＋ 吧)",
+      "examples": [
+        {
+          "translation": "今は勉強が忙しいので、試験が終わってから改めて話しましょう。"
+        }
+      ]
+    },
+    "zh_再说_241": {
+      "title": "再说（接続詞：それに・その上・おまけに・さらに）",
+      "shortExplanation": "接続詞「再说」を後節の冒頭に置き、前節の理由や状況に加えて、さらに別の理由や状況を補足添加します（「それに」「その上」）。",
+      "longExplanation": "「再说」（zàishuō）は累加・添加を表す接続詞として用いられ、後節の文頭に置かれて前の陳述を補強する追加の理由・事情を提示します。同様の意味の「况且」「而且」に比べて親しみやすい口語表現で、日常会話で言い訳や補足説明をする際に非常によく使われます。日本語の「それに」「その上」「おまけに」「それに加えて」に相当します。",
+      "formation": "節1 ，再说 ＋ ，＋ 追加理由の節",
+      "examples": [
+        {
+          "translation": "卒業後はみんな忙しいですし、それに、多くの同級生が同じ都市にはいません。"
+        }
+      ]
+    },
+    "zh_实际的_242": {
+      "title": "实际的 ＋ 名詞（連体修飾語：実際の〜・現実の〜）",
+      "shortExplanation": "「实际的」を名詞の前に連体修飾語として置き、空想・広告・理論ではなく現実の世界に実在すること（「実際の〜」「現実の〜」）を表します。",
+      "longExplanation": "「实际」（shíjì）は客観的な現実に即していること、具体的に実在することを表す形容詞です。構造助詞「的」を伴って連体修飾語（实际的＋名詞）となり、後ろに名詞（东西、情况、问题など）を修飾して「架空・宣伝・理論上のものとは異なる、現実に存在する実態」であることを強調します。宣伝や予想と現実とのギャップを述べる文脈でよく対比されます。日本語の「実際の〜」「現実の〜」「実物の〜」に相当します。",
+      "formation": "实际的 ＋ 名詞 (＋ 述語)",
+      "examples": [
+        {
+          "translation": "実際の品物は広告に載っているものとは違っています。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_首先其次_228": {
+      "title": "首先……，其次…… (접속사 호응: 먼저 ~하고 다음으로 ~하다 / 첫째로 ~, 둘째로 ~)",
+      "shortExplanation": "접속 표현 '首先……，其次……'를 사용하여 일의 순서나 논점의 우선순위를 차례대로 나열합니다('우선 ~하고 다음으로 ~하다', '첫째로 ~, 둘째로 ~').",
+      "longExplanation": "'首先……，其次……'(shǒuxiān... qícì...)는 사물의 순서, 진행 절차, 논증의 우선순위를 논리적으로 진술할 때 쓰이는 접속사 호응 구문입니다. '首先'으로 가장 먼저 행해야 할 사항이나 가장 핵심적인 논점을 제시하고, '其次'로 그 다음 순위의 항목이나 대안을 이어서 제시합니다. 서면어나 격식 있는 대화에서 자주 쓰입니다. 한국어의 '우선 ~하고 다음으로 ~하다', '첫째로 ~, 둘째로 ~'에 해당합니다.",
+      "formation": "(주어 + ) 首先 + 절1，其次 + 절2",
+      "examples": [
+        {
+          "translation": "면접을 볼 때는 우선 단정한 옷을 입어야 하고, 다음으로 긴장하지 말아야 합니다."
+        }
+      ]
+    },
+    "zh_不管_229": {
+      "title": "不管……，都 / 也…… (접속사: ~에 관계없이, 어떤 ~라도 다)",
+      "shortExplanation": "접속사 '不管'을 앞 절에 두어 어떤 조건이나 상황에서도 뒤 절의 결과가 변함없음(무조건)을 나타냅니다('~에 관계없이', '~이든 아니든 모두').",
+      "longExplanation": "'不管'(bùguǎn)은 무조건적인 조건을 나타내는 접속사입니다. 앞 절에 의문사(什么, 谁, 怎么 등), 선택 표현(……还是……), 정반 형식(去不去, 好不好 등)을 수반하여 모든 가능성을 포괄하고, 뒤 절에서는 부사 '都'나 '也'와 결합하여 어떤 상황에서도 결론이 바뀌지 않음을 선언합니다. 비슷한 뜻의 '无论'보다 구어적인 느낌이 강합니다. 한국어의 '~에 상관없이', '어떤 ~이든 간에 모두'에 해당합니다.",
+      "formation": "不管 + 의문사 / 선택의문 / 정반형식 (+ 명사) ，주어 + 都 / 也 + 서술어",
+      "examples": [
+        {
+          "translation": "어떤 영화이든 관계없이, 저는 다 보는 것을 좋아합니다."
+        }
+      ]
+    },
+    "zh_以为_230": {
+      "title": "以为 (동사: ~인 줄 알았다, 착각하여 ~라고 생각하다)",
+      "shortExplanation": "동사 '以为'는 화자가 주관적으로 그렇게 생각했으나, 실제로는 사실과 다르거나 착각이었음('~인 줄 알았다')을 나타냅니다.",
+      "longExplanation": "'以为'(yǐwéi)는 주관적인 지레짐작이나 착각을 나타내는 동사입니다. 말하는 사람이 과거에 어떠한 사실이나 상황을 사실이라고 믿었으나, 나중에 그것이 틀렸거나 오해였음이 밝혀진 상황에서 사용합니다. 뒤 절에 '其实'(사실은)이나 '原来'(알고 보니) 등이 이어져 진실을 바로잡는 경우가 흔합니다. 객관적인 견해나 의견을 제시하는 '认为'와 구별해야 합니다. 한국어의 '~인 줄로만 알았다', '~라고 생각했는데 (실은 아니었다)'에 해당합니다.",
+      "formation": "주어 + 以为 + 오인한 내용의 절 (，其实 / 原来 + 사실의 절)",
+      "examples": [
+        {
+          "translation": "그 물건이 나에게 주는 것인 줄 알았는데, 사실은 아빠에게 드리는 것이었습니다."
+        }
+      ]
+    },
+    "zh_原来本来_231": {
+      "title": "原来 / 本来 (부사: 원래, 애초에, 당초에는)",
+      "shortExplanation": "'原来'와 '本来'는 모두 어떤 변화가 일어나기 전의 최초 상태나 당초의 계획·수량('원래는', '애초에')을 나타냅니다.",
+      "longExplanation": "'原来'(yuánlái)와 '本来'(běnlái)는 어떤 사태나 상황이 바뀌기 전의 초기 상태, 당초의 예정이나 규격을 나타낼 때 부사로서 술어 앞에 쓰입니다. 그 후 상황의 변화나 계획의 수정이 뒤따랐음을 나타낼 때 흔히 쓰입니다. (참고로 '原来'는 '알고 보니'라는 깨달음의 뜻이 있고, '本来'는 '당연히 ~해야 한다'는 당위의 뜻이 별도로 존재하지만, 시간적인 '원래/애초'의 의미는 서로 통용됩니다). 한국어의 '원래는', '당초에는', '애초에'에 해당합니다.",
+      "formation": "(주어 + ) 原来 / 本来 + 동사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "원래는 12시간이 걸리는 일이었습니다."
+        }
+      ]
+    },
+    "zh_原来clause_232": {
+      "title": "原来 + 절 (부사: 알고 보니 ~였구나, 하마터면 몰랐는데 실은 ~이다)",
+      "shortExplanation": "부사 '原来'를 절 앞에 두어 이전에는 알지 못했던 사실이나 원인을 새롭게 깨닫고 이해했음('알고 보니 ~였구나', '알고 보니까')을 나타냅니다.",
+      "longExplanation": "'原来'(yuánlái)는 이전에는 몰랐던 사실, 내막, 원인을 비로소 발견하거나 깨달았을 때 쓰여 감탄이나 납득의 뉘앙스를 드러냅니다. 앞 절에서 '我以为……'(~인 줄 알았다) 등으로 착각이나 의문을 제시하고, 뒤 절에서 '原来……啊!'(알고 보니 ~였구나!)로 진상을 밝히는 구문이 매우 대표적입니다. ※이 '진상 규명/깨달음'의 의미로는 '本来'로 대체할 수 없습니다. 한국어의 '알고 보니 ~였구나', '알고 보니까 ~이다'에 해당합니다.",
+      "formation": "(오인·추측절 ，) (주어 + ) 原来 + 진실의 절 (+ 어기조사 啊 / 呢)",
+      "examples": [
+        {
+          "translation": "누가 방을 청소해 주었나 했더니, 알고 보니 너였구나!"
+        }
+      ]
+    },
+    "zh_本来就VA_233": {
+      "title": "本来就 + 동사 / 형용사 (부사: 원래부터 ~하다, 마땅히 ~하다)",
+      "shortExplanation": "'本来就'가 동사나 형용사 앞에 쓰여 본래부터 상태나 성질이 그러했거나, 마땅히 그래야 하는 일임을 강조합니다('원래부터 ~하다', '당연히 ~하다').",
+      "longExplanation": "'本来就'(běnlái jiù)는 동사나 형용사 앞에 결합하여 어떤 사실이나 상황이 애초부터 그러했거나, 상식이나 도리상 너무나도 당연한 일임을 강조하는 구문입니다. 일의 원인을 설명하거나 상대방의 불평에 대해 '원래 그런 것이다'라고 반박할 때 자주 사용됩니다(예: 这道题本来就不难 - 이 문제는 원래 어렵지 않다; 他本来就该去 - 그는 원래 당연히 가야 한다). 한국어의 '원래부터 ~하다', '애당초 ~하다', '마땅히 ~해야 한다'에 해당합니다.",
+      "formation": "주어 + 本来就 + 동사 / 형용사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_并不并没VA_234": {
+      "title": "并不 / 并没 + 동사 / 형용사 (부정 강조: 결코 ~하지 않다, 전혀 ~하지 않다)",
+      "shortExplanation": "부사 '并'을 부정사 '不'나 '没' 앞에 두어 상대방의 선입견이나 잘못된 예상을 반박하며 부정의 어기를 강하게 나타냅니다('결코 ~하지 않다', '전혀 ~가 아니다').",
+      "longExplanation": "'并不 / 并没'(bìng bù / bìng méi)은 부정의 어기를 강하게 두드러지게 하는 표현입니다. 다른 사람의 오해, 추측, 혹은 일반적인 통념과는 달리 '사실은 전혀 그렇지 않다'는 뉘앙스를 담아 반박할 때 쓰입니다. '并不'는 성질, 상태, 심리 동사, 현재나 미래의 의지를 부정할 때 쓰이고, '并没'는 과거 동작의 미발생이나 사실 유무를 부정할 때 쓰입니다. 문맥상 '但是'(그러나)나 '其实'(사실은)과 자주 호응합니다. 한국어의 '결코 ~하지 않다', '전혀 ~가 아니다', '별로 ~하지 않다'에 해당합니다.",
+      "formation": "주어 + (但是 / 其实 + ) 并不 / 并没 + 동사 / 형용사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "모두들 밖이 춥다고 하지만, 저는 전혀 춥다고 느끼지 않습니다."
+        }
+      ]
+    },
+    "zh_按照N_235": {
+      "title": "按照 + 명사 (개사: ~에 따라, ~대로, ~에 의거하여)",
+      "shortExplanation": "개사(전치사) '按照'가 명사 앞에 놓여 행동이나 업무의 준거가 되는 기준, 계획, 규칙('~에 따라', '~대로')을 제시합니다.",
+      "longExplanation": "'按照'(ànzhào)는 행동을 취하거나 일을 진행할 때 따라야 할 방침, 표준, 계획, 규칙 등을 이끄는 개사입니다. 뒤에는 计划(계획), 规定(규정), 要求(요구), 习惯(습관) 등의 명사가 오며, 이미 정해진 지침이나 양식에서 벗어나지 않고 충실히 실행함을 뜻합니다. 논리적 추론이나 판단의 근거를 주로 나타내는 '根据'에 비해, '按照'는 정해진 규격대로 '이행함'을 강조합니다. 한국어의 '~에 따라', '~대로', '~에 의거하여'에 해당합니다.",
+      "formation": "주어 + 按照 + 명사 / 명사구 + 동사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "우리는 여전히 원래의 계획대로 진행합니다."
+        }
+      ]
+    },
+    "zh_甚至VA_236": {
+      "title": "甚至 + 동사 / 형용사 (부사·접속사: 심지어 ~하기까지 하다, ~조차 하다)",
+      "shortExplanation": "'甚至'가 동사나 형용사 앞에 쓰여 상식이나 예상을 뛰어넘는 극단적인 사례를 제시함으로써 상황의 심각성이나 열의를 강조합니다('심지어 ~하기까지 하다').",
+      "longExplanation": "'甚至'(shènzhì)는 점층(점진) 관계를 나타내는 접속사이자 부사입니다. 앞선 진술보다 한 걸음 더 나아간 의외의 사실이나 극단적인 예시를 들어, 정도가 극에 달했음을 나타냅니다. 극단적 사태를 강조하는 '连……都/也' 구문과 함께 쓰이기도 합니다. 한국어의 '심지어 ~하기까지 하다', '~조차 하다', '심한 경우에는 ~하다'에 해당합니다.",
+      "formation": "절1 ，(주어 + ) 甚至 + 동사 / 형용사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "그는 일을 매우 열심히 해서, 심지어 밥 먹는 것조차 잊어버렸습니다."
+        }
+      ]
+    },
+    "zh_肯定VA_237": {
+      "title": "肯定 + 동사 / 형용사 (부사: 틀림없이 ~하다, 분명히 ~하다)",
+      "shortExplanation": "부사 '肯定'이 동사나 형용사 앞에 놓여 말하는 사람의 확신에 찬 판단을 나타냅니다('틀림없이 ~하다', '분명히 ~하다').",
+      "longExplanation": "'肯定'(kěndìng)이 부사로 술어(동사나 형용사) 앞에 쓰이면 어떠한 상황이나 결과에 대해 한 치의 의심도 없이 확신하고 있음을 나타냅니다. '一定'과 유사하지만 주관적인 확신과 단정의 어감이 한층 두드러집니다. 한국어의 '틀림없이 ~하다', '분명히 ~하다', '확실히 ~이다'에 해당합니다.",
+      "formation": "주어 + 肯定 + 동사 / 형용사 (+ 목적어 / 보어)",
+      "examples": [
+        {
+          "translation": "운동은 신체 건강에 분명히 도움이 됩니다."
+        }
+      ]
+    },
+    "zh_肯定_238": {
+      "title": "肯定 (동사: 확신하다, 단언하다)",
+      "shortExplanation": "동사 '肯定'은 어떠한 사실이나 결과에 대해 조금의 의심도 없이 굳게 믿고 단언함을 나타냅니다('확신하다', '단언하다').",
+      "longExplanation": "'肯定'(kěndìng)이 동사로 쓰이면 특정 상황에 대해 절대적인 확신을 가지고 인정하거나 단정 짓는 심리 작용을 가리킵니다. 흔히 조동사 '能'이나 '可以'와 결합하여 '能肯定'(확신할 수 있다)의 형태로 쓰이며, 뒤에 확신의 대상이 되는 절을 목적어로 취합니다. 부사 용법과 달리 동사 술어로서 역할을 합니다. 한국어의 '확신하다', '단언하다', '장담하다'에 해당합니다.",
+      "formation": "주어 + (能 / 可以 + ) 肯定 + ，+ 확신하는 내용의 절",
+      "examples": [
+        {
+          "translation": "장위안이 반드시 올 것이라고 저는 확신할 수 있습니다."
+        }
+      ]
+    },
+    "zh_肯定的_239": {
+      "title": "肯定的 (형용사: 긍정적이다, 승낙하다)",
+      "shortExplanation": "'肯定的'은 형용사(또는 的 구조)로서 대답이나 태도가 찬성, 승낙, 긍정의 성격을 띠고 있음('긍정적이다', '동의하다')을 나타냅니다.",
+      "longExplanation": "'肯定的'(kěndìng de)은 찬성하거나 수긍하는 성질을 나타내는 형용사적 용법입니다('否定的'의 반대). 흔히 '是肯定的'의 형태로 쓰여 답변, 태도, 결정 등이 '예'라는 승낙을 의미하거나 동의하는 방향임을 나타냅니다. 한국어의 '긍정적이다', '찬성하는 쪽이다', '수락하다'에 해당합니다.",
+      "formation": "주어 (대답 / 태도 / 결과) + 是肯定的",
+      "examples": [
+        {
+          "translation": "그의 대답은 긍정적이었습니다(즉, 찬성 또는 승낙이었습니다)."
+        }
+      ]
+    },
+    "zh_再说_240": {
+      "title": "……再说 (동사구: 나중에 생각하자, ~하고 나서 다시 얘기하자)",
+      "shortExplanation": "'再说'를 문장 끝이나 특정 시점 조건 뒤에 두어 즉각적인 결정이나 논의를 미루고 나중에 처리하자고 할 때 씁니다('나중에 다시 얘기하자', '그때 가서 보자').",
+      "longExplanation": "'再说'(zàishuō)는 구어에서 당면한 사안에 대한 결정이나 실행을 일단 뒤로 보류할 때 쓰이는 표현입니다. 흔히 앞서 특정한 시기나 조건(예: 考完 - 시험이 끝난 뒤, 明天 - 내일)을 제시하고, 어기조사 '吧'와 결합하여 '그 일이 끝나고 난 뒤에 다시 의논하자'는 뜻을 전합니다. 한국어의 '~하고 나서 나중에 생각하자', '그때 가서 다시 얘기하자', '일단 미루어 두자'에 해당합니다.",
+      "formation": "(이유절 ，) 시간 조건 / 완료 행동 + 再说 (+ 吧)",
+      "examples": [
+        {
+          "translation": "지금은 공부하느라 바쁘니, 시험 끝나고 나서 다시 이야기하자."
+        }
+      ]
+    },
+    "zh_再说_241": {
+      "title": "再说 (접속사: 게다가, 더군다나, 게다가 또)",
+      "shortExplanation": "접속사 '再说'이 뒤 절의 처음에 놓여 앞선 내용에 더해 또 다른 이유나 상황을 덧붙여 설명할 때 씁니다('게다가', '더군다나', '거기다가').",
+      "longExplanation": "'再说'(zàishuō)은 뒤 절의 앞에 쓰여 이미 제시된 이유나 사실에 보충하여 또 다른 유력한 근거나 배경을 덧붙이는 접속사입니다. 비슷한 뜻을 가진 '况且'나 '而且'에 비해 일상 구어에서 매우 친근하게 애용됩니다. 한국어의 '게다가', '더군다나', '거기다가'에 해당합니다.",
+      "formation": "절1 ，再说 + ，+ 보충 이유의 절",
+      "examples": [
+        {
+          "translation": "졸업 후에 다들 너무 바쁘고, 게다가 많은 학우들이 같은 도시에 살지 않습니다."
+        }
+      ]
+    },
+    "zh_实际的_242": {
+      "title": "实际的 + 명사 (관형어: 실제의 ~, 현실의 ~)",
+      "shortExplanation": "'实际的'가 명사 앞에 관형어로 쓰여 상상, 이론, 광고와 대조되는 현실에 존재하는 객관적 실체('실제의 ~', '현실의 ~')를 나타냅니다.",
+      "longExplanation": "'实际'(shíjì)는 객관적인 현실에 부합하거나 실재함을 뜻하는 형용사입니다. 구조조사 '的'와 결합하여 '实际的'(관형어) 형태로 명사(东西, 情况, 问题 등) 앞에 놓여, 광고나 생각 속의 이미지와 대비되는 '실제적인 것'임을 부각합니다. 한국어의 '실제의 ~', '실물인 ~', '현실의 ~'에 해당합니다.",
+      "formation": "实际的 + 명사 (+ 서술어)",
+      "examples": [
+        {
+          "translation": "실제 물건은 광고에 나온 것과 다릅니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_首先其次_228": {
+      "title": "首先……，其次……（关联词：表示按顺序排列先后或主次）",
+      "shortExplanation": "关联词“首先……，其次……”用于有条理地陈述事情的先后顺序或论点的主次层次，“首先……，其次 / 接着……”。",
+      "longExplanation": "“首先……，其次……”（shǒuxiān... qícì...）是表示顺承或层次排列的关联词组，常用于论述文、说明文及正式口语中。“首先”引出最先进行的事情或最首要的核心论点；“其次”引出次一级的要点或随后的步骤。结构清晰，逻辑严密，常用于条理分明地列举事项。",
+      "formation": "(主语 + ) 首先 + 分句1，其次 + 分句2",
+      "examples": [
+        {
+          "translation": "应聘面试时，首先要穿着正式的服装，其次不要紧张。"
+        }
+      ]
+    },
+    "zh_不管_229": {
+      "title": "不管……，都 / 也……（连词：表示在任何条件下结果都不变）",
+      "shortExplanation": "连词“不管”用于无条件复句，表示在任何假设或客观条件下结果都不会改变，后常与“都”或“也”呼应，“不论 / 无论……都……”。",
+      "longExplanation": "“不管”（bùguǎn）是表示无条件关系的连词，口语色彩浓厚（书面语多用“无论”）。“不管”后面的分句必须包含表示疑问或任指的成分，通常为：疑问代词（如“什么”、“怎么”、“谁”）、选择疑问短语（“A还是B”）或正反重叠形式（“去不去”、“好不好”）；后一分句必须搭配副词“都”或“也”来引出统一不变的结论。",
+      "formation": "不管 + 疑问词 / 选择疑问短语 / 正反形式 (+ 名词) ，主语 + 都 / 也 + 谓语",
+      "examples": [
+        {
+          "translation": "不管是什么电影，我都非常喜欢看。"
+        }
+      ]
+    },
+    "zh_以为_230": {
+      "title": "以为（动词：表示主观判断与实际事实不符，意为“误以为”）",
+      "shortExplanation": "动词“以为”表示说话人主观上做出某种推测或判断，但事实证明这一想法并不符合客观真实，“以为 / 误以为”。",
+      "longExplanation": "“以为”（yǐwéi）是表示主观认知的动词，侧重指过去的某种看法、猜想是错误的，事实与说话人的预想相反。常与后文的“其实”、“原来”或“没想到”搭配，引出真实的情况以构成鲜明对照。需注意与表示客观、成熟看法的“认为”相区分（“认为”不含猜想错误的含义）。",
+      "formation": "主语 + 以为 + 误判分句 (，其实 / 原来 + 真实情况分句)",
+      "examples": [
+        {
+          "translation": "我以为那件东西是给我的，其实是给爸爸的。"
+        }
+      ]
+    },
+    "zh_原来本来_231": {
+      "title": "原来 / 本来（副词：表示起初、最初的情况或计划）",
+      "shortExplanation": "“原来”和“本来”作副词时均可表示事物在发生变化之前的最初状态或原有计划，“起初 / 原本”。",
+      "longExplanation": "“原来”（yuánlái）与“本来”（běnlái）在表示时间的最初状态时意义相通，用在动词或谓语之前，说明某种情况、计划或数量是起初固有的，暗示后来发生变更或与现在的情况有所不同。二者的区别在于：“原来”侧重与现在的对比，还可表示发现了过去不知道的新情况（“原来是你”）；而“本来”侧重于原本的规律或理应如此的道义（“本来就应该”）。本条目指二者共有的“起初、原先”之意。",
+      "formation": "(主语 + ) 原来 / 本来 + 动词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "原本需要12个小时。"
+        }
+      ]
+    },
+    "zh_原来clause_232": {
+      "title": "原来 + 分句（副词：表示发现了过去不知道的真实情况）",
+      "shortExplanation": "副词“原来”置于分句前，表示经过了解或突然领悟，发现了过去所不了解的真相或隐情，“原来是…… / 原来如此”。",
+      "longExplanation": "“原来”（yuánlái）用在分句之首或主语后，表示恍然大悟，发现了之前不知道的事实或原因。句中常带有醒悟、惊喜或恍然大悟的语气，末尾常搭配语气助词“啊”、“呢”等；前文常与“我还以为……”、“不知道……”搭配构成前后对照。注意：此种表示“发现真相”的用法绝对不能替换为“本来”。",
+      "formation": "(误判 / 疑惑分句 ，) (主语 + ) 原来 + 真相分句 (+ 语气助词 啊 / 呢)",
+      "examples": [
+        {
+          "translation": "我还以为是谁在帮我打扫房间呢，原来是你啊！"
+        }
+      ]
+    },
+    "zh_本来就VA_233": {
+      "title": "本来就 + 动词 / 形容词（副词：强调事物固有的性质或理应如此）",
+      "shortExplanation": "“本来就”用于动词或形容词前，强调某种情况原本就是这样，或者按照常理理应如此，“原本就 / 本身就”。",
+      "longExplanation": "“本来就”（běnlái jiù）置于动词或形容词前，用来加强肯定语气。主要表示两种语用功能：(1) 强调事物原本就具备某种特征或状态，自始至终如此，无需大惊小怪（如“天气本来就冷”、“他本来就很聪明”）；(2) 强调按照道理或规矩本来就应当如此（如“这事本来就该由他负责”）。常用于解释理由、反驳对方或说明理所当然的情况。",
+      "formation": "主语 + 本来就 + 动词 / 形容词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "-"
+        }
+      ]
+    },
+    "zh_并不并没VA_234": {
+      "title": "并不 / 并没 + 动词 / 形容词（副词：加强否定语气，用于反驳或澄清）",
+      "shortExplanation": "副词“并”置于否定副词“不”或“没”前，用来加强否定语气，多用于针对他人的看法或推测进行反驳与澄清，“并不 / 并没有”。",
+      "longExplanation": "“并不 / 并没”（bìng bù / bìng méi）是用于强化否定语气的固定格式。副词“并”通常用于承接转折（常与“但是”、“其实”搭配），反驳某种既有的看法、先入之见或一般人的预想，指出实际情况绝非如此。“并不”多用于否定性质、形容词、心理动词及习惯性动作；“并没”多用于否定动作的发生或完成。语调坚定有力。",
+      "formation": "主语 + (但是 / 其实 + ) 并不 / 并没 + 动词 / 形容词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "大家都说外面非常冷，但我其实并不觉得冷。"
+        }
+      ]
+    },
+    "zh_按照N_235": {
+      "title": "按照 + 名词（介词：引出行事的标准、计划或依据）",
+      "shortExplanation": "介词“按照”置于名词或名词短语前，引出行动所依据的准则、规章、要求或计划，“照着 / 依照……”。",
+      "longExplanation": "“按照”（ànzhào）是表示依据的介词，常引出作为行动指南的标准、方针、计划、规章制度等名词性成分（如“计划”、“规定”、“要求”、“标准”）。它强调以某事物为样板或法则，严格照着去执行、去做。与“根据”（偏重于做出某种判断、结论的客观根据）相比，“按照”更侧重于照章办事、按步执行。",
+      "formation": "主语 + 按照 + 名词 / 名词短语 + 动词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "我们依然按照原先的计划进行。"
+        }
+      ]
+    },
+    "zh_甚至VA_236": {
+      "title": "甚至 + 动词 / 形容词（连词 / 副词：引出更进一层的极端情况）",
+      "shortExplanation": "“甚至”置于动词或形容词前，引出更突出、更超出常情或常理的极端事例，以突出程度之深，“甚至于 / 连……都……”。",
+      "longExplanation": "“甚至”（shènzhì）是表示递进关系的连词或副词。用于在前文陈述的基础上，进一步引出更进一层的极端情况或出人意料的事例，用以强调前文所描述程度的深刻与突出。后半句有时可与“连……都/也”配合使用。在叙事和议论中极具表现力。",
+      "formation": "分句1 ，(主语 + ) 甚至 + 动词 / 形容词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "他工作非常努力，甚至到了废寝忘食、忘了吃饭的地步。"
+        }
+      ]
+    },
+    "zh_肯定VA_237": {
+      "title": "肯定 + 动词 / 形容词（副词：表示确信无疑、必定如此）",
+      "shortExplanation": "副词“肯定”置于动词或形容词前，表示说话人对事情的判断极为坚定、确信无疑，“一定 / 必定”。",
+      "longExplanation": "“肯定”（kěndìng）用作副词修饰动词或形容词时，表示对情况的判断毫不动摇，坚信其必然如此或属实，带有强烈的主观断定语气。与“一定”在表达确信意义时基本相同，但在表达对客观规律或必然结果的推断时尤为自然。",
+      "formation": "主语 + 肯定 + 动词 / 形容词 (+ 宾语 / 补语)",
+      "examples": [
+        {
+          "translation": "运动对身体健康肯定是大有益处的。"
+        }
+      ]
+    },
+    "zh_肯定_238": {
+      "title": "肯定（动词：表示确信、断定或毫无疑问地确认）",
+      "shortExplanation": "动词“肯定”表示对某种情况坚信不疑，做出明确的断定，“确信 / 敢肯定”。",
+      "longExplanation": "“肯定”（kěndìng）作动词使用时，表示说话人经过观察或判断，对某种事实的存在与否产生极强的把握，并予以明确断定。常与能愿动词“能”、“可以”连用，构成“能肯定”、“可以肯定”，后接一完整分句作宾语，引出所确信的内容。",
+      "formation": "主语 + (能 / 可以 + ) 肯定 + ，+ 所确信的分句",
+      "examples": [
+        {
+          "translation": "我完全可以肯定，张远是一定会过来的。"
+        }
+      ]
+    },
+    "zh_肯定的_239": {
+      "title": "肯定的（形容词：表示承认、赞成、认可，即“是”或同意）",
+      "shortExplanation": "“肯定的”作形容词或“的”字结构，表示回答、态度或结论持赞成、认可或承认的方向，“肯定的 / 赞同的”。",
+      "longExplanation": "“肯定的”（kěndìng de）用于指态度、回答或判断是正面的、赞同的（与“否定的”相对）。常充当谓语（用于“是肯定的”句式中）或定语，用来修饰“回答”、“答复”、“结论”等词语，表示给出了正面的、表示“同意 / 是”的反馈。",
+      "formation": "主语 (回答 / 态度 / 结论) + 是肯定的",
+      "examples": [
+        {
+          "translation": "他的答复是肯定的（即表示同意或认可）。"
+        }
+      ]
+    },
+    "zh_再说_240": {
+      "title": "……再说（动词短语：表示搁置争议或推迟行动，以后再作决定）",
+      "shortExplanation": "动词短语“再说”用于分句末尾或时间条件之后，表示将某事暂时搁置、推迟，等待以后或事情完成后再行商量、处理，“以后再说 / 先放一放”。",
+      "longExplanation": "“再说”（zàishuō）作动词性短语置于句末（常加语气助词“吧”），口语色彩鲜明。表示不急于在眼下做出决定或采取行动，而是先把当下的事情做完，将讨论、考虑或处理推迟到某个时间节点之后。常前接表示动作完成或时间条件的词语（如“考完”、“吃完饭”、“明天”）。",
+      "formation": "(原因分句 ，) 时间条件 / 先行行为 + 再说 (+ 吧)",
+      "examples": [
+        {
+          "translation": "现在学习太忙了，等考完试以后再说吧。"
+        }
+      ]
+    },
+    "zh_再说_241": {
+      "title": "再说（连词：表示补充追加理由或情况）",
+      "shortExplanation": "连词“再说”置于后一分句前，在已有的原因之外再补充列举另一层理由或情况，“而且 / 况且”。",
+      "longExplanation": "“再说”（zàishuō）作为表示递进添加的连词，常位于后一分句的开头，用来在已经提出的理由、情况之上，再追加一个辅助的理由或有利条件，以进一步支持前文的结论或决定。相较于书面语色彩更浓的“况且”，它更具口语色彩，语气自然随和。",
+      "formation": "分句1 ，再说 + ，+ 补充理由分句",
+      "examples": [
+        {
+          "translation": "毕业后大家工作都非常忙碌，再说，很多同学也不在同一个城市生活。"
+        }
+      ]
+    },
+    "zh_实际的_242": {
+      "title": "实际的 + 名词（形容词作定语：表示客观存在的、实际发生的）",
+      "shortExplanation": "“实际的”作定语修饰名词，表示符合客观现实、真实存在而非虚构、宣传或理论上的事物，“现实中的 / 实际的”。",
+      "longExplanation": "“实际”（shíjì）是形容词，指客观存在的事物或实情（与“理论”、“假想”、“广告宣传”相对）。带结构助词“的”充当定语，修饰后面的具体名词或抽象名词（如“实际的东西”、“实际情况”、“实际问题”），用来强调该事物是现实生活中切切实实存在的真实状况。常用于指出现实与宣传、预期之间的反差。",
+      "formation": "实际的 + 名词 (+ 谓语)",
+      "examples": [
+        {
+          "translation": "实际买到的东西和广告宣传里的并不一样。"
+        }
+      ]
+    }
+  }
+}

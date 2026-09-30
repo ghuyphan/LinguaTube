@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_어아_29": {
+      "title": "~어/아 달라다 (Nhờ/yêu cầu làm cho... - Lời nhờ vả gián tiếp)",
+      "shortExplanation": "Dùng trong câu tường thuật hoặc câu trích dẫn gián tiếp để diễn đạt việc yêu cầu, nhờ vả người khác làm giúp một hành động nào đó cho bản thân ('nhờ/yêu cầu... làm cho mình').",
+      "longExplanation": "'~어/아 달라다' là dạng thức đặc biệt của động từ '주다' (cho, làm cho) được sử dụng khi truyền đạt lại một lời yêu cầu, nhờ vả mà hành động đó trực tiếp mang lại lợi ích cho người nói (hoặc chủ ngữ của hành động nhờ). Thông thường, cấu trúc này kết hợp với vĩ tố trích dẫn gián tiếp thành '~어/아 달라고 하다/부탁하다/요청하다' ('nhờ/bảo ai đó làm gì cho mình'). Trong trường hợp hành động nhờ vả làm cho người thứ ba thì phải dùng '~어/아 주라고 하다'.",
+      "formation": "Thân động từ + -어/아 달라다 (trong câu gián tiếp thường dùng dạng: Thân động từ + -어/아 달라고 하다/부탁하다/요청하다)",
+      "examples": [
+        {
+          "translation": "Thưa thầy, em xin nhờ thầy giải thích lại bằng lời này thêm một lần nữa ạ."
+        },
+        {
+          "translation": "Vì tôi chưa hiểu nên tôi đã yêu cầu giải thích lại thêm một lần nữa."
+        },
+        {
+          "translation": "Tôi đã nhờ bạn dạy cho mình cách vẽ."
+        },
+        {
+          "translation": "Tôi đã nhờ bác sĩ giải thích chi tiết về các triệu chứng."
+        }
+      ]
+    },
+    "ko_어아_30": {
+      "title": "~어/아 다니다 / ~에 다니다 (Thường xuyên lui tới, đi học/đi làm, đi đi lại lại)",
+      "shortExplanation": "Biểu thị việc thường xuyên lui tới, đi đi về về ở một địa điểm nào đó theo thói quen định kỳ (như trường học, cơ quan, thư viện) hoặc làm một hành động trong quá trình đi lại ('đi học/đi làm', 'thường xuyên tới').",
+      "longExplanation": "'다니다' là động từ chỉ sự di chuyển lặp đi lặp lại mang tính thói quen hoặc định kỳ giữa các địa điểm. Khi kết hợp với trợ từ chỉ nơi chốn trong cấu trúc 'Danh từ (địa điểm) + 에 다니다', nó biểu thị việc ai đó thường xuyên lui tới một địa điểm với mục đích cụ thể (như đi học '학교에 다니다', đi làm '회사에 다니다', đi chợ '시장에 다니다'). Ngoài ra, khi kết hợp với thân động từ theo dạng '-어/아 다니다' (như 걸어 다니다, 찾아다니다), cấu trúc diễn tả hành động được thực hiện trong quá trình đi lại liên tục.",
+      "formation": "Danh từ chỉ địa điểm + 에 다니다 (hoặc Thân động từ + -어/아 다니다)",
+      "examples": [
+        {
+          "translation": "Tôi đi học mỗi ngày."
+        },
+        {
+          "translation": "Cô ấy thường xuyên đến thư viện."
+        },
+        {
+          "translation": "Chúng tôi đi chợ vào mỗi cuối tuần."
+        },
+        {
+          "translation": "Em tôi đi học ở trung tâm luyện thi sau giờ học ở trường."
+        }
+      ]
+    },
+    "ko_어아_31": {
+      "title": "~어/아 두다 (Làm sẵn, để sẵn, giữ nguyên trạng thái)",
+      "shortExplanation": "Diễn tả việc thực hiện một hành động nào đó rồi duy trì, bảo lưu kết quả của hành động đó nhằm chuẩn bị cho tương lai hoặc để mặc nguyên như vậy ('làm sẵn', 'để sẵn').",
+      "longExplanation": "'~어/아 두다' là cấu trúc bổ trợ kết hợp giữa thân động từ với động từ phụ trợ '두다' (đặt, để, giữ), biểu thị một hành vi được hoàn thành và trạng thái sau khi hành động đó diễn ra vẫn được duy trì liên tục nhằm phục vụ cho mục đích hoặc việc sử dụng trong tương lai. Tương đương với 'làm sẵn...', 'để nguyên...' trong tiếng Việt. Cấu trúc này có nét nghĩa tương tự '~어/아 놓다', nhưng '~어/아 두다' nhấn mạnh nhiều hơn vào việc lưu giữ lâu dài hoặc cất giữ dự phòng cho tương lai.",
+      "formation": "Thân động từ + -어/아 두다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아 두다; các nguyên âm khác dùng -어 두다; 하다 biến thành 해 두다)",
+      "examples": [
+        {
+          "translation": "Tôi đã để cửa mở sẵn."
+        },
+        {
+          "translation": "Tôi đã chuẩn bị sẵn đồ ăn dùng cho ngày mai."
+        },
+        {
+          "translation": "Anh ấy đã làm xong hết bài tập về nhà rồi để đó."
+        },
+        {
+          "translation": "Tôi đã đóng cửa tiệm lại sẵn rồi."
+        }
+      ]
+    },
+    "ko_어아_32": {
+      "title": "~어/아 들다 (Bất chợt bắt đầu, bỗng nhiên rộ lên)",
+      "shortExplanation": "Dùng chủ yếu trong văn phong kể chuyện hoặc miêu tả để chỉ một hành động hoặc trạng thái bắt đầu diễn ra một cách bất ngờ, đột ngột ('bỗng nhiên bắt đầu', 'bất chợt rộ lên').",
+      "longExplanation": "'~어/아 들다' là một kết cấu bổ ngữ mang tính văn phong tự sự trong tiếng Hàn, dùng để miêu tả một hành động, âm thanh hay biến đổi cảm xúc, thời tiết đột ngột phát tác hoặc thình lình bắt đầu. Thường xuất hiện trong cấu trúc liên kết '-어/아 들더니' để tạo sự đối lập hoặc chuyển biến nhanh chóng giữa các tình huống. Trong khẩu ngữ hiện đại thông thường, cấu trúc này ít gặp và người ta thường dùng '~기 시작하다' hoặc '갑자기 ~하다' thay thế.",
+      "formation": "Thân động từ / Thân tính từ + -어/아 들다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아 들다; các nguyên âm khác dùng -어 들다)",
+      "examples": [
+        {
+          "translation": "Vừa nghe thấy lời đó, đứa em tôi bỗng bật cười khúc khích rồi ngay lập tức trở nên nghiêm túc."
+        },
+        {
+          "translation": "Đứa bé bỗng oà khóc nức nở rồi ngay sau đó lại bật cười toe toét."
+        },
+        {
+          "translation": "Gió bỗng thổi ùa vào dữ dội làm cánh cửa sổ đóng sầm một tiếng."
+        },
+        {
+          "translation": "Mặt trời vừa lặn, bầu trời bỗng tối sầm lại rồi những vì sao bắt đầu xuất hiện."
+        }
+      ]
+    },
+    "ko_어아_33": {
+      "title": "~어/아 버리다 (Làm mất rồi, lỡ... mất, xong xuôi - Tiếc nuối hoặc nhẹ nhõm)",
+      "shortExplanation": "Diễn tả một hành động đã được hoàn tất một cách trọn vẹn, triệt để; thường mang sắc thái tiếc nuối, hối hận hoặc ngược lại là cảm giác trút bỏ, nhẹ nhõm ('lỡ... mất', 'xong béng').",
+      "longExplanation": "'~어/아 버리다' là cấu trúc trợ động từ được cấu tạo từ thân động từ kết hợp với '버리다' (vứt bỏ). Cấu trúc này nhấn mạnh tính dứt điểm, triệt để của hành động (hành động đã xảy ra hoàn toàn và không thể cứu vãn được nữa). Tuỳ vào ngữ cảnh mà cấu trúc mang hai sắc thái tâm lý chính: (1) tiếc nuối, buồn bã hoặc bất đắc dĩ khi sự việc không mong muốn xảy ra ('lỡ... mất rồi'); (2) cảm giác nhẹ nhõm, thanh thản khi đã giải quyết xong một gánh nặng ('xong xuôi rồi').",
+      "formation": "Thân động từ + -어/아 버리다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아 버리다; các nguyên âm khác dùng -어 버리다; 하다 biến thành 해 버리다)",
+      "examples": [
+        {
+          "translation": "Tôi đã uống hết sạch cà phê mất rồi, vì vậy bây giờ không còn cà phê để uống nữa."
+        },
+        {
+          "translation": "Con mèo đã cắn rách đôi giày của tôi mất rồi, nên giờ tôi phải mua một đôi giày mới."
+        },
+        {
+          "translation": "Tôi đã định ăn kiêng, thế nhưng lại lỡ ăn sạch cả chiếc bánh kem mất rồi."
+        },
+        {
+          "translation": "Rốt cuộc, tôi đã không học bài mà lại đọc xong béng toàn bộ cuốn sách giáo khoa suốt đêm trước ngày thi."
+        }
+      ]
+    },
+    "ko_어아_34": {
+      "title": "~어/아 보다 (Thử làm..., từng làm... - Trải nghiệm và thử nghiệm)",
+      "shortExplanation": "Gắn sau thân động từ để diễn tả việc thử làm một hành động nào đó để xem kết quả ra sao hoặc biểu thị kinh nghiệm đã từng trải qua ('thử làm', 'từng làm').",
+      "longExplanation": "'~어/아 보다' là cấu trúc trợ động từ phổ biến kết hợp từ thân động từ với '보다' (nhìn, thấy, thử). Cấu trúc mang hai nét nghĩa chính: (1) thử nghiệm thực hiện một hành vi mới mẻ nào đó để kiểm chứng xem sao ('thử làm...'); (2) khi dùng ở thì quá khứ ('-어/아 봤다'), cấu trúc diễn tả trải nghiệm hoặc kinh nghiệm trong quá khứ ('đã từng làm...'). Ở thể hiện tại hoặc tương lai, nó thể hiện ý định hoặc lời rủ rê làm thử.",
+      "formation": "Thân động từ + -어/아 보다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아 보다; các nguyên âm khác dùng -어 보다; 하다 biến thành 해 보다)",
+      "examples": [
+        {
+          "translation": "Hôm nay tôi đang suy nghĩ xem có nên thử dạy tiếng Hàn lần đầu tiên hay không."
+        },
+        {
+          "translation": "Cuối tuần này tôi dự định sẽ uống thử cà phê ở quán cà phê mà bạn đã giới thiệu."
+        },
+        {
+          "translation": "Cô ấy tìm kiếm công thức nấu ăn mới và định sẽ thử nấu nướng xem sao."
+        },
+        {
+          "translation": "Ngày mai tôi sẽ lần đầu tiên ghé thăm thành phố đó và dự định sẽ dạo quanh ngắm nhìn xung quanh."
+        }
+      ]
+    },
+    "ko_고_35": {
+      "title": "~고 나서 (Sau khi làm... xong thì... - Trật tự hành động)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả trình tự thời gian rõ ràng: sau khi một hành động phía trước hoàn thành dứt điểm thì hành động phía sau mới diễn ra ('sau khi... xong thì').",
+      "longExplanation": "'~고 나서' được kết hợp từ vĩ tố liên kết '-고' với động từ '나다' (xong, xuất hiện) chia ở dạng '-아서'. Cấu trúc này nhấn mạnh rằng hành động ở mệnh đề trước phải được kết thúc trọn vẹn thì hành động ở mệnh đề sau mới được tiến hành tiếp nối theo trình tự thời gian. Tương đương với 'sau khi làm xong... thì...' trong tiếng Việt. Cấu trúc này nhấn mạnh tính hoàn thành của hành động trước rõ rệt hơn so với chỉ dùng đơn thuần '-고'.",
+      "formation": "Thân động từ + 고 나서",
+      "examples": [
+        {
+          "translation": "Về nhà ăn cơm xong xuôi rồi tôi mới phải học bài."
+        },
+        {
+          "translation": "Sau khi tham gia lớp học yoga xong, cơ thể tôi sẽ trở nên dẻo dai hơn."
+        },
+        {
+          "translation": "Sau khi thi xong xuôi, tôi dự định sẽ nghỉ ngơi thư giãn."
+        },
+        {
+          "translation": "Sau khi tập thể dục xong, cần phải tăng cường hấp thụ protein."
+        }
+      ]
+    },
+    "ko_어아_36": {
+      "title": "~어/아 오다 (Đã và đang làm... từ trước tới nay, dần dần...)",
+      "shortExplanation": "Biểu thị một hành động hoặc trạng thái bắt đầu từ quá khứ và liên tục tích lũy, tiến triển kéo dài cho đến tận thời điểm hiện tại ('đã và đang...', 'dần dần...').",
+      "longExplanation": "'~어/아 오다' là kết cấu trợ động từ gắn sau thân động từ, dùng để diễn tả một hành động, quá trình biến đổi hay trạng thái được bắt đầu từ một thời điểm trong quá khứ và liên tục duy trì, tích lũy dần theo dòng thời gian cho đến tận hiện tại (hoặc mốc thời gian đang được nói tới). Thường đi kèm với các phó từ chỉ sự tiến triển dần dần như '점점' (ngày càng, dần dần), '계속' (liên tục).",
+      "formation": "Thân động từ + -어/아 오다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아 오다; các nguyên âm khác dùng -어 오다; 하다 biến thành 해 오다)",
+      "examples": [
+        {
+          "translation": "Càng theo dõi bộ phim thì tôi lại càng dần cảm thấy hứng thú với cốt truyện."
+        },
+        {
+          "translation": "Nhờ việc luyện tập lặp đi lặp lại, tôi đã dần dần nói tiếng Hàn tốt hơn trước."
+        },
+        {
+          "translation": "Thời gian trôi qua, cô ấy đã ngày càng hiểu tôi nhiều hơn."
+        },
+        {
+          "translation": "Càng tìm hiểu nhau thì mối quan hệ giữa chúng tôi lại càng trở nên gần gũi, khăng khít hơn."
+        }
+      ]
+    },
+    "ko_어아지다_37": {
+      "title": "~어/아지다 (Trở nên..., dần trở thành... - Biến đổi trạng thái)",
+      "shortExplanation": "Gắn sau thân tính từ để biểu thị sự biến đổi, chuyển biến dần dần sang một trạng thái tính chất mới ('trở nên...', 'trở thành...').",
+      "longExplanation": "'~어/아지다' là cấu trúc biến đổi trạng thái cơ bản trong tiếng Hàn, được kết hợp bằng cách gắn vĩ tố '-어/아' cùng trợ động từ '지다' vào sau thân tính từ. Cấu trúc diễn tả một người, sự vật hoặc môi trường biến đổi từ trạng thái ban đầu sang một trạng thái tính chất mới theo thời gian, tương đương với 'trở nên...', 'hóa ra...', 'càng ngày càng...' trong tiếng Việt. Khi kết hợp: thân tính từ kết thúc bằng nguyên âm dương (ㅏ, ㅗ) dùng '-아지다', các nguyên âm khác dùng '-어지다', tính từ đuôi '하다' biến thành '해지다'.",
+      "formation": "Thân tính từ + -어/아지다 (nguyên âm 끝 là ㅏ, ㅗ dùng -아지다; các nguyên âm khác dùng -어지다; 하다 biến thành 해지다)",
+      "examples": [
+        {
+          "translation": "Thời tiết ngày càng trở nên nóng bức nên tôi quyết định chỉ ở nhà nghỉ ngơi."
+        },
+        {
+          "translation": "Bạn tôi trở nên quá bận rộn nên chúng tôi không thể thường xuyên gặp nhau được nữa."
+        },
+        {
+          "translation": "Công viên này mỗi khi chuyển mùa lại trở nên đẹp đẽ hơn nên có rất nhiều người tìm đến."
+        },
+        {
+          "translation": "Căn phòng đã trở nên ấm áp nhờ bật lò sưởi."
+        }
+      ]
+    },
+    "ko_었으면_38": {
+      "title": "~었으면 좋겠다 (Ước gì..., giá mà... - Thể hiện ước muốn, mong mỏi)",
+      "shortExplanation": "Dùng để bộc lộ niềm mong ước, ước vọng tha thiết về một sự việc chưa xảy ra hoặc tiếc nuối về một tình huống trái ngược với thực tế ('ước gì...', 'giá mà...').",
+      "longExplanation": "'~었으면 좋겠다' kết hợp thì quá khứ '-았/었-' với vĩ tố giả định '-으면' và tính từ '좋겠다' (thì thật tốt biết mấy). Cấu trúc này dùng để diễn đạt nguyện vọng, mong ước chân thành của người nói về một điều gì đó sẽ diễn ra theo ý mình, hoặc bày tỏ sự nuối tiếc đối với một sự việc trong quá khứ/hiện tại không như mong đợi ('ước gì đã làm thế', 'giá mà... thì tốt biết bao'). Việc gắn đuôi quá khứ '-았/었-' tạo khoảng cách giả định, làm cho lời cầu mong trở nên tha thiết và giàu sắc thái cảm xúc hơn so với '-(으)면 좋겠다'.",
+      "formation": "Thân động từ / Thân tính từ + -았/었/였으면 좋겠다 (hoặc Danh từ + -이었/였으면 좋겠다)",
+      "examples": [
+        {
+          "translation": "Ước gì lúc đó tôi đã nói ra tấm chân tình của mình cho cô ấy biết."
+        },
+        {
+          "translation": "Giá mà tôi có thể về nhà sớm hơn thì tốt biết mấy."
+        },
+        {
+          "translation": "Tôi ước gì bạn thấu hiểu cho tôi nhiều hơn."
+        },
+        {
+          "translation": "Ước gì tôi đã biết được sự thật đó sớm hơn."
+        }
+      ]
+    },
+    "ko_에_39": {
+      "title": "~에 한하다 (Chỉ giới hạn ở..., chỉ áp dụng đối với...)",
+      "shortExplanation": "Gắn sau danh từ để biểu thị phạm vi áp dụng chỉ giới hạn duy nhất trong một đối tượng, điều kiện hoặc trường hợp cụ thể nào đó ('chỉ giới hạn ở', 'chỉ áp dụng với').",
+      "longExplanation": "'~에 한하다' là kết cấu gồm trợ từ chỉ đối tượng/phạm vi '-에' và động từ '한하다' (hạn chế, giới hạn). Cấu trúc này dùng trong văn phong trang trọng, thông báo chính thức hoặc văn bản quy định để chỉ định rõ rằng một quy tắc, chính sách giảm giá hay ưu đãi chỉ áp dụng duy nhất cho đối tượng hoặc điều kiện được nêu ra, hoàn toàn loại trừ các trường hợp khác. Khi làm phó từ bổ nghĩa cho vế sau, cấu trúc thường chia ở dạng '~에 한해' hoặc '~에 한하여'.",
+      "formation": "Danh từ + 에 한하다 (dạng bổ nghĩa thường dùng: Danh từ + 에 한해 / 에 한하여 / 에 한한)",
+      "examples": [
+        {
+          "translation": "Chương trình khuyến mãi giảm giá lần này chỉ áp dụng giới hạn trong ngày hôm nay. Không áp dụng vào các ngày khác."
+        },
+        {
+          "translation": "Tình yêu của tôi chỉ dành riêng duy nhất cho cô ấy, tôi hoàn toàn không hề có sự quan tâm đến ai khác."
+        },
+        {
+          "translation": "Dịch vụ bảo hành của sản phẩm này chỉ được cung cấp giới hạn cho người mua ban đầu."
+        },
+        {
+          "translation": "Sự kiện lần này chỉ giới hạn dành cho hội viên tham gia. Người không phải là hội viên sẽ không thể tham gia."
+        }
+      ]
+    },
+    "ko_에_40": {
+      "title": "~에 한해서 (Chỉ riêng đối với..., chỉ trong phạm vi...)",
+      "shortExplanation": "Dạng phó từ gắn sau danh từ để nhấn mạnh việc một điều kiện, quyền lợi hay quy định chỉ có hiệu lực đặc biệt riêng đối với đối tượng hoặc tình huống đó ('chỉ riêng với', 'chỉ hạn định ở').",
+      "longExplanation": "'~에 한해서' là hình thái trạng ngữ của động từ '한하다' kết hợp với trợ từ '-에' và vĩ tố liên kết '-어서'. Cấu trúc này dùng để nhấn mạnh tính chất ngoại lệ, biệt đãi hoặc giới hạn nghiêm ngặt: chỉ khi thỏa mãn đúng đối tượng hoặc hoàn cảnh cụ thể này thì điều được nêu ở vế sau mới có hiệu lực hoặc được cho phép thực hiện, không áp dụng ra ngoài phạm vi đó. Tương đương với 'chỉ riêng với...', 'chỉ giới hạn ở...' trong tiếng Việt.",
+      "formation": "Danh từ + 에 한해서 (hoặc Thân động từ / Thân tính từ + -기(에) 한해서)",
+      "examples": [
+        {
+          "translation": "Chỉ riêng vì ngày mai là ngày nghỉ nên đêm nay tôi mới có thể làm việc đến muộn thế này."
+        },
+        {
+          "translation": "Mức giảm giá đặc biệt này là dịch vụ chỉ được cung cấp riêng đối với các khách hàng VIP."
+        },
+        {
+          "translation": "Chúng tôi chỉ áp dụng phục vụ đồ uống không giới hạn duy nhất trong ngày hôm nay."
+        },
+        {
+          "translation": "Phiếu giảm giá trên điện thoại này chỉ có thể sử dụng riêng tại các cửa hàng Starbucks."
+        }
+      ]
+    },
+    "ko_에_41": {
+      "title": "~에 힘쓰다 (Dốc sức vào..., nỗ lực vì..., chú trọng...)",
+      "shortExplanation": "Gắn sau danh từ để biểu thị việc tập trung dồn toàn bộ sức lực, tâm huyết và sự cố gắng vào việc đạt được một mục tiêu nào đó ('dốc sức vào', 'nỗ lực vì').",
+      "longExplanation": "'~에 힘쓰다' kết hợp từ trợ từ chỉ phương hướng/mục tiêu '-에' với động từ '힘쓰다' (dốc sức, gắng sức). Cấu trúc biểu thị thái độ kiên trì, tận tâm cống hiến năng lượng và tinh thần để hoàn thành một công việc, rèn luyện kỹ năng hoặc duy trì trạng thái tốt đẹp nào đó. Tương đương với 'dốc lòng vì...', 'dồn sức cho...', 'nỗ lực vào...' trong tiếng Việt. Khi kết hợp với động từ, ta dùng dạng danh từ hóa '-(으)ㅁ에 힘쓰다' hoặc '-기(에) 힘쓰다'.",
+      "formation": "Danh từ + 에 힘쓰다 (hoặc Thân động từ + -기(에) 힘쓰다 / -(으)ㅁ에 힘쓰다)",
+      "examples": [
+        {
+          "translation": "Tôi đang dốc sức vào việc học tiếng Hàn, dù hiện tại vẫn còn nhiều thiếu sót nhưng chắc chắn sẽ tiến bộ hơn."
+        },
+        {
+          "translation": "Cô ấy bắt đầu nỗ lực dốc sức vào việc học tập, và kết quả đạt được luôn luôn rất tốt."
+        },
+        {
+          "translation": "Đội ngũ chúng tôi đang dốc toàn lực để nỗ lực hoàn thành dự án này một cách tốt nhất."
+        },
+        {
+          "translation": "Thấy bạn bè đang nỗ lực chăm lo cho sức khỏe của bản thân, tôi cảm thấy rất đỗi tự hào."
+        }
+      ]
+    },
+    "ko_으나마나_42": {
+      "title": "~으나마나 (Có làm cũng như không, dù làm cũng vô ích)",
+      "shortExplanation": "Vĩ tố liên kết dùng để diễn tả việc dù có thực hiện hành động đó hay không thì kết quả nhận lại vẫn chẳng có gì thay đổi hoặc đều vô ích, không mang lại hiệu quả ('có làm cũng như không', 'chẳng bõ công').",
+      "longExplanation": "'~으나마나' là vĩ tố liên kết kết hợp từ hai vế đối lập '-(으)나' (dù... nhưng) và '마나' (rút gọn từ '말이나' - dù không làm). Cấu trúc mang ý nghĩa 'dù có làm hay không làm thì kết quả cũng y như nhau', nhấn mạnh sự uổng công, vô ích của một nỗ lực hay hành vi. Mệnh đề sau luôn đi kèm với kết quả không thỏa đáng, tiêu cực hoặc một kết luận rõ ràng rằng việc đó là không cần thiết phải làm (như '보나 마나 뻔하다' - chưa nhìn cũng biết tỏng).",
+      "formation": "Thân động từ + -으나마나 (thân có phụ âm cuối dùng -으나마나, không có phụ âm cuối hoặc kết thúc bằng ㄹ dùng -나마나)",
+      "examples": [
+        {
+          "translation": "Dù tôi đã học tập rất chăm chỉ để thi cho tốt thì cũng như không, kết quả nhận lại lúc nào cũng chẳng hề thỏa đáng."
+        },
+        {
+          "translation": "Dù chúng tôi có bắt taxi để đến nơi thật nhanh thì cũng vô ích, rốt cuộc chúng tôi vẫn bị muộn giờ."
+        },
+        {
+          "translation": "Anh ấy có đi bệnh viện lấy thuốc về uống thì cũng chẳng ăn thua, các triệu chứng hoàn toàn không thuyên giảm chút nào."
+        },
+        {
+          "translation": "Dù tôi có xin lỗi cô ấy thì cũng hoài công, cô ấy đã chẳng hề tha thứ cho tôi."
+        }
+      ]
+    },
+    "ko_으니니까_43": {
+      "title": "~으니/니까 (Vì... nên..., do... nên... - Diễn tả lý do, nguyên nhân)",
+      "shortExplanation": "Vĩ tố liên kết dùng để nối hai mệnh đề, diễn tả mệnh đề trước là nguyên nhân, lý do hoặc căn cứ dẫn đến kết quả, phán đoán hay lời rủ rê ở mệnh đề sau ('vì... nên...', 'do...').",
+      "longExplanation": "'~으니/니까' (dạng rút gọn là '-(으)니' hoặc '-(으)니까') là vĩ tố liên kết chỉ nguyên nhân, căn cứ vô cùng thông dụng trong tiếng Hàn. Cấu trúc này thường nhấn mạnh vào nhận thức chủ quan của người nói, lời giải thích hay căn cứ để đưa ra phán đoán, mệnh lệnh, khuyên nhủ hoặc rủ rê ('vì thế này nên hãy/cùng làm thế kia'). Mệnh đề sau có thể thoải mái kết hợp với các đuôi câu mệnh lệnh ('-(으)세요'), thỉnh dụ ('-(으)ㅂ시다') mà không bị hạn chế như '-아/어서'. Ngoài ra, cấu trúc còn dùng khi nhận ra một sự thật mới sau khi thực hiện hành động ở vế trước ('làm việc gì thì thấy...').",
+      "formation": "Thân động từ / Thân tính từ + -(으)니까 / -(으)니 (có phụ âm cuối dùng -으니까 / -으니, không có phụ âm cuối dùng -니까 / -니) | Danh từ + -(이)니까 / -(이)니",
+      "examples": [
+        {
+          "translation": "Hôm nay là thứ Bảy nên tôi không đến trường, vào cuối tuần trường học được nghỉ."
+        },
+        {
+          "translation": "Vì không có ai giúp đỡ nên tôi đã phải tự mình giải quyết."
+        },
+        {
+          "translation": "Nhờ dùng máy dịch nên tôi có thể hiểu tiếng Hàn một cách dễ dàng hơn."
+        },
+        {
+          "translation": "Vì trời đang mưa nên bạn hãy mang theo ô khi ra ngoài nhé, nếu bị dính mưa bạn có thể bị cảm lạnh đấy."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_어아_29": {
+      "title": "~어/아 달라다（请别人为自己做……，间接引语转述请求）",
+      "shortExplanation": "用于间接引语中，转述说话人请求他人为自己（或转述主体）执行某项动作（“请/拜托……为自己做……”）。",
+      "longExplanation": "“~어/아 달라다”是动词“주다”（给、为……做）在间接引语中的特殊替换形式。当说话人要求或拜托对方做某事，且该动作的受益者是说话人自己（或发出请求的主体）时，在间接引语中需将“~어/아 주다”换成“~어/아 달라다”，通常以“~어/아 달라고 하다/부탁하다/요청하다”的形式出现。若动作的受益者是第三者，则应使用“~어/아 주라고 하다”。",
+      "formation": "动词词干 + -어/아 달라다（通常搭配间接引语词尾构成：动词词干 + -어/아 달라고 하다/부탁하다/요청하다）",
+      "examples": [
+        {
+          "translation": "老师，拜托您用这种话再为我解释一遍。"
+        },
+        {
+          "translation": "因为我没有听懂，所以请求对方再为我详细说明一次。"
+        },
+        {
+          "translation": "我拜托朋友教我画画的方法。"
+        },
+        {
+          "translation": "我拜托医生就具体的症状为我做进一步的详细解释。"
+        }
+      ]
+    },
+    "ko_어아_30": {
+      "title": "~어/아 다니다 / ~에 다니다（上学、上班、常去、往返于）",
+      "shortExplanation": "表示有规律、习惯性地频繁往返或前往某特定场所（如学校、公司、图书馆等），相当于汉语的“去/常去……、上学/上班”。",
+      "longExplanation": "“다니다”是韩语中表示习惯性、定期在两个地点之间往返穿梭的动词。当与场所助词结合为“名词（场所） + 에 다니다”时，表示定期或经常前往某处进行某种固定活动（例如“학교에 다니다 上学”、“회사에 다니다 上班”）。此外，与动词词干结合构成“-어/아 다니다”（如“걸어 다니다 步行走动”、“찾아다니다 到处寻找”）时，则表示一边走动一边进行某种伴随动作。",
+      "formation": "场所名词 + 에 다니다（或 动词词干 + -어/아 다니다）",
+      "examples": [
+        {
+          "translation": "我每天都去学校上学。"
+        },
+        {
+          "translation": "她经常去图书馆。"
+        },
+        {
+          "translation": "我们每个周末都去市场。"
+        },
+        {
+          "translation": "弟弟放学后会去补习班上课。"
+        }
+      ]
+    },
+    "ko_어아_31": {
+      "title": "~어/아 두다（事先做好、放着、保持某种状态）",
+      "shortExplanation": "表示完成某项动作并将该动作产生的结果或状态保持下去，以备将来之用（“做好并放着”、“预先做好”）。",
+      "longExplanation": "“~어/아 두다”是由动词与辅助动词“두다”（放置、保存）构成的语法结构。用于说明完成了某一动作后，该动作的结果状态被长久地保留或维持着，通常含有为了以后的需要而“事先预备好”、“留作备用”或“任其保持现状”的语气。它与“~어/아 놓다”意义相近，但“~어/아 두다”更侧重于较长时间的妥善保存或放置。",
+      "formation": "动词词干 + -어/아 두다（词干末尾元音为ㅏ、ㅗ时接 -아 두다，其余元音接 -어 두다，하다变为 해 두다）",
+      "examples": [
+        {
+          "translation": "我把门敞开着了。"
+        },
+        {
+          "translation": "我已经提前把明天要用的食物准备好了。"
+        },
+        {
+          "translation": "他把作业全都做完放着了。"
+        },
+        {
+          "translation": "我把店铺的门关好放着了。"
+        }
+      ]
+    },
+    "ko_어아_32": {
+      "title": "~어/아 들다（突然开始、蓦地……起来）",
+      "shortExplanation": "主要用于文学叙述或描写语境，表示某种动作、声音或状态骤然发作、突然开始（“蓦地……起来”、“突然开始”）。",
+      "longExplanation": "“~어/아 들다”是韩语中常用于故事讲述或书面描写的辅助词形态，用来表达某种行为、感情或自然现象突如其来地爆发或开始。常以“-어/아 들더니”的接续形式出现，用以引出后项急剧反转或紧接着发生的情节。在现代日常口语交际中，这一用法较为少见，通常会被“~기 시작하다”或“갑자기 ~하다”所取代。",
+      "formation": "动词/形容词词干 + -어/아 들다（阳性元音ㅏ、ㅗ接 -아 들다，阴性元音接 -어 들다）",
+      "examples": [
+        {
+          "translation": "一听到那句话，弟弟突然扑哧笑了起来，但随即又变得严肃起来。"
+        },
+        {
+          "translation": "孩子突然哇哇大哭起来，但紧接着又破涕为笑。"
+        },
+        {
+          "translation": "狂风突然猛烈地刮了进来，窗户哐当一声关上了。"
+        },
+        {
+          "translation": "太阳一落山，天空蓦地暗了下来，繁星随即显现。"
+        }
+      ]
+    },
+    "ko_어아_33": {
+      "title": "~어/아 버리다（……掉了、光了、了却 - 遗憾或轻松）",
+      "shortExplanation": "表示动作彻底完成，强调事态无可挽回的结果；常伴有遗憾、惋惜、后悔，或事情彻底了结后的轻松与解脱感（“……光了”、“……掉了”）。",
+      "longExplanation": "“~어/아 버리다”是由动词词干接辅助动词“버리다”（扔掉）构成的常用语法。它强调某一动作或事件已经彻底终结、无可挽回。根据语境不同，主要体现两种情感色彩：一是表示对意料之外或不尽人意的结果感到遗憾、惋惜、自责（相当于“……掉了”、“哎呀……了”）；二是表示彻底摆脱沉重负担、了却心事后的轻松与畅快（相当于“总算……完了”）。",
+      "formation": "动词词干 + -어/아 버리다（阳性元音接 -아 버리다，阴性元音接 -어 버리다，하다变为 해 버리다）",
+      "examples": [
+        {
+          "translation": "我把咖啡全喝光了，所以现在再也没得喝了。"
+        },
+        {
+          "translation": "猫咪把我的鞋子给咬坏咬烂了，所以我现在得买一双新鞋了。"
+        },
+        {
+          "translation": "本来打算节食减肥的，结果却把一整块蛋糕全都吃光了。"
+        },
+        {
+          "translation": "最终，我平时没怎么复习，结果在考试前一天通宵把整本教科书一口气全看完了。"
+        }
+      ]
+    },
+    "ko_어아_34": {
+      "title": "~어/아 보다（尝试做……、试着做……）",
+      "shortExplanation": "接在动词词干后，表示试着做某事以探求结果，或在过去时态中表示曾经做过的亲身经历（“尝试做……”、“试着……”）。",
+      "longExplanation": "“~어/아 보다”是由动词词干接辅助动词“보다”（看、尝试）构成的基本句型。主要用于表达两种含义：一是“尝试”，即试着进行某项动作以观察其效果或情况（“试着做做看”）；二是当使用过去时态“-어/아 봤다”时，表示过去拥有的亲身体验或人生阅历（“曾经做过……”）。",
+      "formation": "动词词干 + -어/아 보다（阳性元音接 -아 보다，阴性元音接 -어 보다，하다变为 해 보다）",
+      "examples": [
+        {
+          "translation": "我正在考虑今天是不是要第一次尝试教一教韩语。"
+        },
+        {
+          "translation": "这个周末我打算去你推荐的那家咖啡厅品尝一下那里的咖啡。"
+        },
+        {
+          "translation": "她找到了新的烹饪食谱，打算亲自试着做一下料理。"
+        },
+        {
+          "translation": "明天是我第一次去那座城市，我打算在周边好好逛一圈看看。"
+        }
+      ]
+    },
+    "ko_고_35": {
+      "title": "~고 나서（在做完……之后、……之后才……）",
+      "shortExplanation": "连接词尾，强调前项动作完全结束之后，紧接着进行后项动作（“在做完……之后才……”）。",
+      "longExplanation": "“~고 나서”是由连接词尾“-고”与辅助动词“나다”（终了、完结）的连接形“-아서”组合而成的时序语法。它强烈强调前后两项动作在时间序列上的先后衔接，即必须在前项动作彻底完结的前提下，后项动作才得以发生或进行。相比单纯使用“-고”，它对前项动作“完成的终结性”体现得更为鲜明。",
+      "formation": "动词词干 + 고 나서",
+      "examples": [
+        {
+          "translation": "回家吃完饭之后我才得去学习。"
+        },
+        {
+          "translation": "参加完瑜伽课之后，身体一定会变得更加柔软。"
+        },
+        {
+          "translation": "考完试之后，我打算好好休息放松一下。"
+        },
+        {
+          "translation": "运动完之后，有必要增加蛋白质的摄入。"
+        }
+      ]
+    },
+    "ko_어아_36": {
+      "title": "~어/아 오다（一直……过来、逐渐……）",
+      "shortExplanation": "表示动作或状态从过去的某一时刻开始，沿着时间轴持续累积、渐进发展直至现在（“一直……过来”、“逐渐……”）。",
+      "longExplanation": "“~어/아 오다”是由动词词干接辅助动词“오다”（来）构成的语法结构。用于描述某种动作行为、心理感受或客观状态的变化，从过去的起点开始一直持续进行、逐步推进，并延展至现在的这一过程。常与“점점”（渐渐、越来越）、“계속”（一直）等副词连用，生动刻画变化积累的历史纵深感。",
+      "formation": "动词词干 + -어/아 오다（阳性元音接 -아 오다，阴性元音接 -어 오다，하다变为 해 오다）",
+      "examples": [
+        {
+          "translation": "随着电影一直看下去，我逐渐对剧情产生了浓厚的兴趣。"
+        },
+        {
+          "translation": "通过反复不断地练习，我的韩语水平一直在逐步提高。"
+        },
+        {
+          "translation": "随着时间的推移，她逐渐变得越来越理解我了。"
+        },
+        {
+          "translation": "随着互相了解的加深，我们彼此之间的关系正变得越来越亲近。"
+        }
+      ]
+    },
+    "ko_어아지다_37": {
+      "title": "~어/아지다（变得……、……起来 - 状态变化）",
+      "shortExplanation": "接在形容词词干后，表示随着时间的推移，事物的性质或状态发生改变，逐渐呈现出某种新的状态（“变得……”、“……起来”）。",
+      "longExplanation": "“~어/아지다”是韩语中表示状态转化的代表性句型，由形容词词干与表示变化的辅助词“지다”组合而成。用于说明某种人、事、物或自然环境摆脱了先前的状态，逐渐转变为一种新的属性或样貌，相当于汉语的“变得……”、“……了起来”。接续法则遵循阴阳元音和谐律：词干末音节为ㅏ、ㅗ时接“-아지다”，其余元音接“-어지다”，“하다”形容词转化为“해지다”。",
+      "formation": "形容词词干 + -어/아지다（阳性元音ㅏ、ㅗ接 -아지다，其余元音接 -어지다，하다变为 해지다）",
+      "examples": [
+        {
+          "translation": "天气渐渐变得炎热起来，所以我决定就待在家里好好休息。"
+        },
+        {
+          "translation": "我的朋友变得实在太忙碌了，以至于我们无法经常见面。"
+        },
+        {
+          "translation": "每当季节更迭的时候，这座公园都会变得格外美丽，因此吸引了许多人前来游玩。"
+        },
+        {
+          "translation": "开了暖炉之后，房间里变得温暖舒适起来了。"
+        }
+      ]
+    },
+    "ko_었으면_38": {
+      "title": "~었으면 좋겠다（要是……就好了、多希望能…… - 愿望与期盼）",
+      "shortExplanation": "用于表达说话人强烈的愿望或期盼，常用于假定某种尚未实现或与现实相反的理想情况（“要是……就好了”、“但愿……”）。",
+      "longExplanation": "“~었으면 좋겠다”是由表示过去时制的“-았/었/였-”结合假定条件连接词尾“-으면”及形容词“좋겠다”（要是那样就好了）构成的语法结构。用于表达说话人由衷的心愿、期盼，或者对过去未能实现的遗憾之事寄予虚拟假定（“要是当初……就好了”）。相比于原型的“-(으)면 좋겠다”，加入过去时制词尾“-았/었-”使得虚拟假设与现实之间的反差更为鲜明，渴望的情感色彩也更加浓厚而真挚。",
+      "formation": "动词/形容词词干 + -았/었/였으면 좋겠다（名词 + -이었/였으면 좋겠다）",
+      "examples": [
+        {
+          "translation": "要是那时候我向她袒露了自己的真心该有多好啊。"
+        },
+        {
+          "translation": "真希望我能早点回家去。"
+        },
+        {
+          "translation": "要是你能多理解理解我该有多好。"
+        },
+        {
+          "translation": "要是我当初知道那个事实就好了。"
+        }
+      ]
+    },
+    "ko_에_39": {
+      "title": "~에 한하다（仅限于……、只限于……）",
+      "shortExplanation": "接在名词后，表示某种规定、优惠或资格仅严格限制在特定的对象、条件或时间范围内（“仅限于……”、“只限于……”）。",
+      "longExplanation": "“~에 한하다”由助词“-에”与汉字词动词“한하다（限）”构成，多见于书面语、公告条例文书或正式场合。用于明确声明某项政策、打折活动、服务保障或权利仅单独适用于所提及的特定群体、时期或范畴，其他一切情况均不包含在内。在句中充当状语连接后句时，通常使用“-에 한해”或“-에 한하여”的形式。",
+      "formation": "名词 + 에 한하다（修饰后项时常作：名词 + 에 한해 / 에 한하여 / 에 한한）",
+      "examples": [
+        {
+          "translation": "本次打折促销活动仅限于今天适用。其他日期概不适用。"
+        },
+        {
+          "translation": "我的爱仅专属于她一人，对其他人我完全没有任何兴趣。"
+        },
+        {
+          "translation": "该产品的保修卡售后服务仅向原购买者提供。"
+        },
+        {
+          "translation": "本次活动仅限会员方可参与。非会员无法参加。"
+        }
+      ]
+    },
+    "ko_에_40": {
+      "title": "~에 한해서（仅限……、唯独在……的情况下）",
+      "shortExplanation": "副词性接续形态，接在名词后，强调某种特别政策、权限或做法唯独在该特定条件或对象范围内有效（“仅限于……”、“只针对……”）。",
+      "longExplanation": "“~에 한해서”是“~에 한하다”加上接续词尾“-어서”形成的状语表现。它比普通的陈述更为强调“特例性”与“排他性”，突出某一规则、优待待遇、特殊许可仅专属于所指明的情况或特定对象，完全排除其他常规情形。相当于汉语的“仅限于……”、“唯独针对……”、“只限于在……前提下”。",
+      "formation": "名词 + 에 한해서（或 动词/形容词词干 + -기(에) 한해서）",
+      "examples": [
+        {
+          "translation": "仅限明天是节假日的前提下，我今天夜里才能加班工作到这么晚。"
+        },
+        {
+          "translation": "这项特别折扣是仅针对VIP客户提供的专享服务。"
+        },
+        {
+          "translation": "我们仅限今天一天向顾客提供无限量畅饮。"
+        },
+        {
+          "translation": "这张手机优惠券仅限在星巴克门店才可使用。"
+        }
+      ]
+    },
+    "ko_에_41": {
+      "title": "~에 힘쓰다（致力于……、努力倾注于……）",
+      "shortExplanation": "接在名词后，表示为了达成某一目标或维持良好状态而倾注大量的精力与心血（“致力于……”、“努力于……”）。",
+      "longExplanation": "“~에 힘쓰다”由助词“-에”与动词“힘쓰다”（用力、竭力）组合而成。用来表达某人为了实现某个明确目标、改善某种技能或完成一项重大事业，而全力以赴地投入自身的时间、精力和心血。相当于汉语的“致力于……”、“竭力于……”、“在……上下功夫”。与动词结合时，常采取动名词化形式“~기에 힘쓰다”或“~(으)ㅁ에 힘쓰다”。",
+      "formation": "名词 + 에 힘쓰다（动词结合时作：动词词干 + -기(에) 힘쓰다 / -(으)ㅁ에 힘쓰다）",
+      "examples": [
+        {
+          "translation": "我正在致力于韩语学习，虽然目前尚有不足，但一定会越来越好。"
+        },
+        {
+          "translation": "她开始努力下功夫学习，而且成绩一直都十分优异。"
+        },
+        {
+          "translation": "我们团队正在竭尽全力，力求把这个项目做到最好。"
+        },
+        {
+          "translation": "看到朋友们都在努力注重照顾好自己的身体健康，我感到非常自豪。"
+        }
+      ]
+    },
+    "ko_으나마나_42": {
+      "title": "~으나마나（做不做都一样、白费力气、毫无用处）",
+      "shortExplanation": "连接词尾，表示无论做不做前项动作，结果都毫无二致，暗示该行动劳而无功、徒劳无益（“做不做都一样”、“等于白做”）。",
+      "longExplanation": "“~으나마나”是由表示让步对立的词尾“-(으)나”（做……）与否定形式“마나”（不做……）复合而成的连接词尾。其字面含义为“做也罢，不做也罢，结果都没什么两样”，强调某种尝试或努力付诸东流，根本无法改变既定结局。因此，后半句必然伴随消极、不如人意的结果，或者引出“早已显而易见、无需多此一举”的论断（如“보나 마나 不看也知道”）。",
+      "formation": "动词词干 + -으나마나（有收音接 -으나마나，无收音或收音为ㄹ接 -나마나）",
+      "examples": [
+        {
+          "translation": "我为了考好试拼命刻苦学习也等于白费劲，结果总是令人不满意。"
+        },
+        {
+          "translation": "我们就算为了早点赶到而坐了出租车也是徒劳，结果最终还是迟到了。"
+        },
+        {
+          "translation": "他就算去医院开了药回来吃也无济于事，症状完全没有任何好转。"
+        },
+        {
+          "translation": "我就算向她道了歉也是白搭，她根本就没有原谅我。"
+        }
+      ]
+    },
+    "ko_으니니까_43": {
+      "title": "~으니/니까（因为……所以……、既然……）",
+      "shortExplanation": "连接词尾，表示前项是后项的理由、原因、根据或发现的前提（“因为……所以……”、“既然……”）。",
+      "longExplanation": "“~으니/니까”（包括其简化形式“-(으)니”与“-(으)니까”）是韩语中极为核心的原因接续词尾。它主要用于陈述说话人主观认定的理由、事实根据或行动前提。与表示客观因果的“-아/어서”相比，“-(으)니까”的最大特点在于后项可以自然地搭配命令句（“-(으)세요”）、共动句（“-(으)ㅂ시다”）等句式。此外，它还常用于表示“做了前项动作之后，随之发现了后项的新事实”（“一做……才发现……”）。",
+      "formation": "动词/形容词词干 + -(으)니까 / -(으)니（有收音接 -으니까/-으니，无收音接 -니까/-니）| 名词 + -(이)니까 / -(이)니",
+      "examples": [
+        {
+          "translation": "今天是星期六，所以不用去学校，周末学校放假。"
+        },
+        {
+          "translation": "因为没有任何人伸出援手，所以我只能全靠自己来解决。"
+        },
+        {
+          "translation": "因为使用了翻译器，所以能够更加轻松地理解韩语了。"
+        },
+        {
+          "translation": "外面下着雨，请带上雨伞出门吧，要是淋了雨可是会感冒的。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_어아_29": {
+      "title": "~어/아 달라다（〜してくれるよう頼む、間接話法での依頼）",
+      "shortExplanation": "間接話法において、話し手（または依頼主）自身のために何かをしてくれるよう他者に頼んだり要求したりしたことを伝える表現です（「〜してくれと頼む」）。",
+      "longExplanation": "「~어/아 달라다」は、動詞「주다（あげる・くれる）」が間接話法で用いられる際の特殊な形態です。話し手自身（あるいは依頼を行った主体）のために何か行動をしてくれるよう依頼した内容を引用・転述する際に用いられ、主に「~어/아 달라고 하다/부탁하다/요청하다（〜してくれと言う・頼む・要求する）」の形で使われます。なお、行為の恩恵が第三者に向けられる場合は「~어/아 주라고 하다」を用います。",
+      "formation": "動詞語幹 + -어/아 달라다（主に間接引用表現として：動詞語幹 + -어/아 달라고 하다/부탁하다/요청하다）",
+      "examples": [
+        {
+          "translation": "先生、この言葉でもう一度説明してくださるようお願いいたします。"
+        },
+        {
+          "translation": "私が理解できなかったため、もう一度説明してくれるよう要請しました。"
+        },
+        {
+          "translation": "友達に描き方を教えてほしいとお願いしました。"
+        },
+        {
+          "translation": "医師に症状について詳しく説明してくれるようお願いしました。"
+        }
+      ]
+    },
+    "ko_어아_30": {
+      "title": "~어/아 다니다 / ~에 다니다（〜に通う、頻繁に行き来する）",
+      "shortExplanation": "特定の場所（学校、会社、図書館など）に習慣的・定期的に通ったり、頻繁に行き来したりすることを表します（「〜に通う」「〜へ行く」）。",
+      "longExplanation": "「다니다」はある場所へ規則的・反復的に行き来することを表す動詞です。「場所名詞 + 에 다니다」の形で、特定の目的を持って特定の場所へ定期的に通うこと（学校に通う「학교에 다니다」、会社に勤める「회사에 다니다」など）を表します。また、動詞語幹と結合した「-어/아 다니다」（「걸어 다니다 歩き回る」「찾아다니다 探し回る」など）の形では、移動しながら反復して動作を行う複合的な表現となります。",
+      "formation": "場所名詞 + 에 다니다（または 動詞語幹 + -어/아 다니다）",
+      "examples": [
+        {
+          "translation": "私は毎日学校に通っています。"
+        },
+        {
+          "translation": "彼女はよく図書館に通っています。"
+        },
+        {
+          "translation": "私たちは週末ごとに市場へ出かけます。"
+        },
+        {
+          "translation": "弟（妹）は放課後に塾へ通っています。"
+        }
+      ]
+    },
+    "ko_어아_31": {
+      "title": "~어/아 두다（〜しておく、〜したままにしておく）",
+      "shortExplanation": "動作を完了させ、その結果生じた状態を将来のためにそのまま維持・保管しておくことを表します（「〜しておく」「〜したままにしておく」）。",
+      "longExplanation": "「~어/아 두다」は動詞語幹に補助動詞「두다（置く、保つ）」が結合した構文です。ある行為を行い、その結果の状態を後々の使用や都合のためにそのまま保っておく（「あらかじめ準備しておく」「そのままの状態にしておく」）ことを表します。類似表現の「~어/아 놓다」と比べて、「~어/아 두다」はより長期的な保管や将来への備えというニュアンスが強く含まれます。",
+      "formation": "動詞語幹 + -어/아 두다（陽母音語幹には -아 두다、陰母音語幹には -어 두다、하다動詞は 해 두다 となる）",
+      "examples": [
+        {
+          "translation": "ドアを開けたままにしておきました。"
+        },
+        {
+          "translation": "明日使う食べ物をあらかじめ準備しておきました。"
+        },
+        {
+          "translation": "彼は宿題を全部済ませておきました。"
+        },
+        {
+          "translation": "店のドアを閉めたままにしておきました。"
+        }
+      ]
+    },
+    "ko_어아_32": {
+      "title": "~어/아 들다（急に〜し始める、にわかに〜しだす）",
+      "shortExplanation": "主に物語や描写的な文脈で用いられ、ある動作や感情、現象が唐突に、予期せず始まりだすことを表します（「急に〜しだす」「にわかに〜し始める」）。",
+      "longExplanation": "「~어/아 들だ」は、韓国語の物語文や文学的叙述において、感情の高まりや自然現象、動作が突然わき起こったり急激に始まったりする様子を描写する構文です。多くの場合、「~어/아 들더니」の形で後続節と結びつき、急な変化や対比的な展開を導きます。現代の日常会話ではあまり使われず、一般的には「~기 시작하다」や「갑자기 ~하다」が使われます。",
+      "formation": "動詞・形容詞語幹 + -어/아 들다（語幹末尾が陽母音なら -아 들다、陰母音なら -어 들다）",
+      "examples": [
+        {
+          "translation": "その言葉を聞くやいなや、弟（妹）は急に笑い出したが、すぐに真顔になりました。"
+        },
+        {
+          "translation": "子供が急に泣き出したかと思うと、すぐに笑い声を上げました。"
+        },
+        {
+          "translation": "風がにわかに激しく吹き込んできて、窓がバタンと閉まりました。"
+        },
+        {
+          "translation": "日が沈むと、空が急に暗くなりだし、星たちが姿を現しました。"
+        }
+      ]
+    },
+    "ko_어아_33": {
+      "title": "~어/아 버리다（〜してしまう、〜し終わる - 遺憾やすっきり感）",
+      "shortExplanation": "動作が完全に完了したことを表し、それに伴う「残念・後悔・遺憾」の念や、重荷から解放された「すっきり感」を表します（「〜してしまう」「すっかり〜する」）。",
+      "longExplanation": "「~어/아 버리다」は動詞語幹に補助動詞「버리다（捨てる）」が結合した文型です。動作が完全に終わり、もはや取り返しがつかない状態になったことを表します。文脈に応じて大きく2つのニュアンスを持ちます。(1) 望ましくない事態が起きてしまい「後悔する・残念に思う」（「〜してしまった」）；(2) 負担だった課題や懸案事項をすっかり片付けて「気が楽になる・すっきりする」（「すっかり〜し終える」）。",
+      "formation": "動詞語幹 + -어/아 버리다（陽母音には -아 버리다、陰母音には -어 버리다、하다動詞は 해 버리다 となる）",
+      "examples": [
+        {
+          "translation": "コーヒーを全部飲んでしまいました。だからもうこれ以上飲むものがありません。"
+        },
+        {
+          "translation": "猫が私の靴を噛みちぎってしまったので、新しい靴を買わなければなりません。"
+        },
+        {
+          "translation": "ダイエットをしようと思っていたのに、ケーキを丸ごと全部食べてしまいました。"
+        },
+        {
+          "translation": "結局、普段勉強せずに、試験前日の夜に教科書を一冊丸ごと読み通してしまいました。"
+        }
+      ]
+    },
+    "ko_어아_34": {
+      "title": "~어/아 보다（〜してみる、〜したことがある）",
+      "shortExplanation": "動詞の語幹に付き、ある動作を試みにやってみる「試み」や、過去形において「経験」を表します（「〜してみる」「〜したことがある」）。",
+      "longExplanation": "「~어/아 보다」は用言の語幹に補助動詞「보다（見る・試す）」が結合した頻出文型です。主に2つの意味用法があります。(1) 「試行・試み」：どのような結果になるか試しに行為を行ってみること（「〜してみる」）；(2) 「経験」：過去形「-어/아 봤다」の形で用いられ、過去にその動作を行った経験があること（「〜したことがある」）を表します。",
+      "formation": "動詞語幹 + -어/아 보다（陽母音には -아 보다、陰母音には -어 보다、하다動詞は 해 보다 となる）",
+      "examples": [
+        {
+          "translation": "今日は初めて韓国語を教えてみようかと考えているところです。"
+        },
+        {
+          "translation": "私は今週末、あなたが推薦してくれたカフェでコーヒーを飲んでみる予定です。"
+        },
+        {
+          "translation": "彼女は新しいレシピを見つけて料理を作ってみようとしています。"
+        },
+        {
+          "translation": "明日はその街を初めて訪れて、周りを見回してみるつもりです。"
+        }
+      ]
+    },
+    "ko_고_35": {
+      "title": "~고 나서（〜してから、〜し終えた後で）",
+      "shortExplanation": "前項の動作が完全に完了した後に、引き続いて後項の動作を行うという時間的な順序を強調して表します（「〜した後に」「〜し終えてから」）。",
+      "longExplanation": "「~고 나서」は接続語尾「-고」に動作の完了を表す補助動詞「나다」の「-아서」形が合わさった表現です。前項の動作が完全に終わり、その区切りがついた段階で次の動作へと移行する時間的推移を明瞭に際立たせます。単なる動作の並列やつながりを表す「-고」に比べて、前項の動作が「完了したこと」をより強く意識させる響きを持ちます。",
+      "formation": "動詞語幹 + 고 나서",
+      "examples": [
+        {
+          "translation": "家に帰ってご飯を食べ終えてから勉強しなければなりません。"
+        },
+        {
+          "translation": "ヨガの授業に参加した後は、体がより柔軟になるでしょう。"
+        },
+        {
+          "translation": "試験を終えてから休息を取るつもりです。"
+        },
+        {
+          "translation": "運動した後はタンパク質の摂取を増やす必要があります。"
+        }
+      ]
+    },
+    "ko_어아_36": {
+      "title": "~어/아 오다（〜してきた、次第に〜してくる）",
+      "shortExplanation": "過去のある時点から現在に至るまで、動作や状態の変化が継続・累積して進行してきたことを表します（「ずっと〜してきた」「だんだん〜になってきた」）。",
+      "longExplanation": "「~어/아 오다」は動詞語幹に補助動詞「오다（来る）」が結合した文型です。ある行為や状態の変化が過去からスタートし、時間の経過とともに徐々に進展・蓄積しながら現在の時点まで及んできたことを表します。日本語の「〜してきた」「だんだん〜になってきた」に相当し、「점점（だんだん）」「계속（ずっと）」などの副詞と共起して変化のプロセスを強調します。",
+      "formation": "動詞語幹 + -어/아 오다（陽母音には -아 오다、陰母音には -어 오다、하다動詞は 해 오다 となる）",
+      "examples": [
+        {
+          "translation": "映画を見続けるうちに、次第にストーリーに興味を抱くようになってきました。"
+        },
+        {
+          "translation": "練習を繰り返すうちに、私はだんだんと韓国語が上達してきました。"
+        },
+        {
+          "translation": "時間が経つにつれて、彼女はだんだん私のことをより理解してくれるようになってきました。"
+        },
+        {
+          "translation": "お互いを知るようになるにつれて、私たちの仲はますます近づいてきています。"
+        }
+      ]
+    },
+    "ko_어아지다_37": {
+      "title": "~어/아지다（〜くなる、〜になる - 状態の変化）",
+      "shortExplanation": "形容詞の語幹に付き、時間の経過に伴って性質や状態が変化し、新たな状態になることを表します（「〜くなる」「〜になる」）。",
+      "longExplanation": "「~어/아지다」は形容詞語幹に補助用言「지다」が接続した、状態変化を表す代表的な文法です。人や物、環境が従前の状態から新たな性質や状況へと推移することを表し、日本語の「〜くなる」「〜になる」に相当します。語幹末尾の母音によって形態が変わり、陽母音（ㅏ, ㅗ）には「-아지다」、陰母音には「-어지다」、하다形容詞は「해지다」となります。",
+      "formation": "形容詞語幹 + -어/아지다（陽母音には -아지다、陰母音には -어지다、하다は 해지다 となる）",
+      "examples": [
+        {
+          "translation": "日増しに暑くなってきたので、家でゆっくり休むことにしました。"
+        },
+        {
+          "translation": "友達があまりにも忙しくなってしまったため、私たちは頻繁に会えなくなりました。"
+        },
+        {
+          "translation": "この公園は季節が変わるたびに美しくなるので、多くの人々が訪れます。"
+        },
+        {
+          "translation": "ストーブをつけたので、部屋が暖かくなりました。"
+        }
+      ]
+    },
+    "ko_었으면_38": {
+      "title": "~었으면 좋겠다（〜ならいいのに、〜だったらよかったのに - 願い・願望）",
+      "shortExplanation": "話し手の強い願望や期待を表し、実現していない事柄や現実とは異なる状況に対する希望・未練を表します（「〜ならいいのに」「〜であればよかったのに」）。",
+      "longExplanation": "「~었으면 좋겠다」は過去時制語尾「-았/었-」に仮定の接続語尾「-으면」と形容詞「좋겠다（良いだろうに）」が結びついた構文です。話し手の心からの望みや理想的な状況への憧れを表すとともに、過去に思い通りにいかなかったことへの後悔や未練（反実仮想）を込めて表現する際にも多用されます。基本形の「-(으)면 좋겠다」に比べて過去形を含むことで、切実な思いや仮定性がより色濃く表れます。",
+      "formation": "動詞・形容詞語幹 + -았/었/였으면 좋겠다（名詞 + -이었/였으면 좋겠다）",
+      "examples": [
+        {
+          "translation": "あの時、彼女に自分の本心を伝えていればよかったのに。"
+        },
+        {
+          "translation": "もっと早く家に帰れたらいいのに。"
+        },
+        {
+          "translation": "あなたが私のことをもっと理解してくれたらいいのに。"
+        },
+        {
+          "translation": "私がその事実を知っていればよかったのに。"
+        }
+      ]
+    },
+    "ko_에_39": {
+      "title": "~에 한하다（〜に限る、〜に限定される）",
+      "shortExplanation": "名詞の後に付き、特定の条件、対象、期間だけに限定して規則や特典が適用されることを表します（「〜に限る」「〜に限定する」）。",
+      "longExplanation": "「~에 한하다」は助詞「-에」に漢字語動詞「한하다（限る）」が結合した格式ばった文法表現です。公式な告知、契約書、利用規約などで頻繁に用いられ、ある方針や特典、サービスの適用範囲が特定の対象者や条件だけに排他的に制限されていることを明示します。文中で副詞的に後続節を修飾する際には、「~에 한해」や「~에 한하여（〜に限って）」の形が多用されます。",
+      "formation": "名詞 + 에 한하다（副詞的用法では主に：名詞 + 에 한해 / 에 한하여 / 에 한한）",
+      "examples": [
+        {
+          "translation": "今回の割引イベントは本日に限り適用されます。他の日には適用されません。"
+        },
+        {
+          "translation": "私の愛は彼女だけに限定されており、他の人には全く関心がありません。"
+        },
+        {
+          "translation": "本製品の保証書サービスは初回購入者に限って提供されます。"
+        },
+        {
+          "translation": "今回のイベントは会員に限り参加可能です。非会員は参加できません。"
+        }
+      ]
+    },
+    "ko_에_40": {
+      "title": "~에 한해서（〜に限って、〜のみに限定して）",
+      "shortExplanation": "名詞の後に付き、ある特別な措置や条件、サービスが特定の対象や状況においてのみ有効であることを強調します（「〜に限って」「〜のみに」）。",
+      "longExplanation": "「~에 한해서」は「~에 한하다」に理由・接続の語尾「-어서」が合わさった副詞的表現です。特定の例外的な条件や限定された対象だけをクローズアップし、その枠組みの範囲内においてのみ後続の事態が許可されたり提供されたりすることを強調します。日本語の「〜に限って」「〜だけに限定して」に相当し、ビジネスや公式通知などで限定条件を提示する際によく用いられます。",
+      "formation": "名詞 + 에 한해서（または 動詞・形容詞語幹 + -기(에) 한해서）",
+      "examples": [
+        {
+          "translation": "明日が休日に限って、今夜遅くまで仕事をすることができます。"
+        },
+        {
+          "translation": "この特別割引はVIPのお客様に限って提供されるサービスです。"
+        },
+        {
+          "translation": "私たちは本日に限って無制限ドリンクを提供いたします。"
+        },
+        {
+          "translation": "このモバイルクーポンはスターバックス店舗に限って使用可能です。"
+        }
+      ]
+    },
+    "ko_에_41": {
+      "title": "~에 힘쓰다（〜に力を注ぐ、〜に励む、〜に尽力する）",
+      "shortExplanation": "名詞の後に付き、ある目標の達成や向上のために多くの力や情熱を注ぎ込み、全力を尽くすことを表します（「〜に力を注ぐ」「〜に励む」）。",
+      "longExplanation": "「~에 힘쓰다」は助詞「-에」に動詞「힘쓰다（力を尽くす・努める）」が結合した文型です。特定の目標達成や自己研鑽、健康維持などのために、精力や熱意を集中的に注ぎ込んで誠心誠意努力する様子を表します。日本語の「〜に力を入れる」「〜に励む」「〜に尽力する」に相当します。動詞と結びつく場合は名詞化語尾を介して「-기(에) 힘쓰다」の形を取ります。",
+      "formation": "名詞 + 에 힘쓰다（動詞と結びつく場合：動詞語幹 + -기(에) 힘쓰다 / -(으)ㅁ에 힘쓰다）",
+      "examples": [
+        {
+          "translation": "私は韓国語の学習に力を注いでいます。まだ不十分ですが、きっと良くなっていくでしょう。"
+        },
+        {
+          "translation": "彼女は勉強に励み始め、その結果は常に良好でした。"
+        },
+        {
+          "translation": "私たちのチームはこのプロジェクトで最善を尽くそうと努力しています。"
+        },
+        {
+          "translation": "友人たちが健康管理に励んでいる姿を見て、とても誇らしく思います。"
+        }
+      ]
+    },
+    "ko_으나마나_42": {
+      "title": "~으나마나（〜してもしなくても同じ、〜しても無駄）",
+      "shortExplanation": "前項の動作を行っても行わなくても結果は同じであり、努力や行動が無駄に終わることを表す接続語尾です（「〜してもしなくても同じだ」「〜するだけ無駄だ」）。",
+      "longExplanation": "「~으나마나」は「-(으)나（〜するが）」と「마나（〜しないが）」が合わさった接続語尾です。「〜しても、しなくても結果に変わりはない」という意味を表し、行動や努力が徒労に帰したこと、あるいは結果が火を見るより明らかであることを示します。そのため、後続節には期待外れの結果や否定的な事態が続くのが通例です（「보나 마나 見るまでもない」などの慣用表現としても頻用されます）。",
+      "formation": "動詞語幹 + -으나마나（パッチムがある場合は -으나마나、パッチムがない場合やㄹパッチムの場合は -나마나）",
+      "examples": [
+        {
+          "translation": "試験で良い点を取ろうと一生懸命勉強したものの無駄で、結果はいつも満足のいくものではありませんでした。"
+        },
+        {
+          "translation": "早く到着しようとタクシーに乗ったところで甲斐もなく、結局遅刻してしまいました。"
+        },
+        {
+          "translation": "彼は病院に行って薬をもらってきたものの無駄で、症状は全く良くなりませんでした。"
+        },
+        {
+          "translation": "私が彼女に謝ったところで無駄で、彼女は私を許してくれませんでした。"
+        }
+      ]
+    },
+    "ko_으니니까_43": {
+      "title": "~으니/니까（〜だから、〜ので、〜すると - 原因・理由・契機）",
+      "shortExplanation": "前項が後項の理由、原因、判断の根拠、または新たな事実を発見する契機であることを表す代表的な接続語尾です（「〜だから」「〜ので」）。",
+      "longExplanation": "「~으니/니까」（およびその短縮形「-(으)니」「-(으)니까」）は理由や原因を表す極めて重要な接続語尾です。客観的な因果関係を表す「-아/어서」とは異なり、話し手の主観的な理由づけや働きかけの根拠を表すため、後続節に命令形（「-(으)세요」）や勧誘形（「-(으)ㅂ시다」）を自由に伴うことができます。また、前項の動作を行った結果、後項の新たな状況に気づいたという「契機・発見」の用法も持ち合わせています。",
+      "formation": "動詞・形容詞語幹 + -(으)니까 / -(으)니（パッチムがある場合は -으니까/-으니、ない場合は -니까/-니）| 名詞 + -(이)니까 / -(이)니",
+      "examples": [
+        {
+          "translation": "今日は土曜日なので学校へは行きません。週末は学校が休みです。"
+        },
+        {
+          "translation": "誰も助けてくれないので、自分で解決しなければなりませんでした。"
+        },
+        {
+          "translation": "翻訳機を使うと、韓国語をより簡単に理解することができます。"
+        },
+        {
+          "translation": "雨が降っているから傘を持って出かけてください。雨に濡れると風邪をひいてしまうかもしれません。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_어아_29": {
+      "title": "~어/아 달라다 (간접화법에서의 부탁·요구)",
+      "shortExplanation": "말하는 사람 자신(또는 부탁의 주체)을 위하여 어떤 행동을 해 줄 것을 다른 사람에게 부탁하거나 요구했음을 전달할 때 쓰는 간접인용 표현입니다.",
+      "longExplanation": "'~어/아 달라다'는 도움을 주는 행위의 혜택이 말하는 이 자신(또는 요구 주체)에게 돌아올 때, '주다' 대신 쓰는 특수 보조용언입니다. 주로 간접인용 조사 '-고'와 결합하여 '~어/아 달라고 하다/부탁하다/요청하다'의 형태로 쓰이며, 상대방에게 자기를 위해 어떤 행동을 해 주기를 정중하게 청하거나 요구한 사실을 전달합니다. (반면 제3자를 위해 해 줄 것을 요구할 때는 '~어/아 주라고 하다'를 씁니다.)",
+      "formation": "동사 어간 + -어/아 달라다 (주로 간접인용 결합: 동사 어간 + -어/아 달라고 하다/부탁하다/요청하다)",
+      "examples": [
+        {
+          "translation": "선생님, 이 말로 다시 한 번 설명해 달라고 부탁드립니다."
+        },
+        {
+          "translation": "제가 이해하지 못했기 때문에, 다시 한 번 설명해 달라고 요청했습니다."
+        },
+        {
+          "translation": "친구에게 그리는 방법을 가르쳐 달라고 부탁했습니다."
+        },
+        {
+          "translation": "의사에게 증상에 대해 자세히 설명해 달라고 부탁했습니다."
+        }
+      ]
+    },
+    "ko_어아_30": {
+      "title": "~어/아 다니다 / ~에 다니다 (정기적인 왕래·다님)",
+      "shortExplanation": "특정한 장소(학교, 회사, 학원 등)에 일정한 목적을 가지고 정기적·습관적으로 오가거나 통학·출근함을 나타냅니다.",
+      "longExplanation": "'다니다'는 일정한 곳을 정기적이거나 습관적으로 계속해서 오가는 행위를 뜻합니다. 주로 '장소 명사 + 에 다니다' 형태로 쓰여 학교에 통학하거나 회사에 출근하는 등의 일상적인 왕래를 나타내며, 동사 어간 뒤에 '-어/아 다니다'(예: '걸어 다니다', '찾아다니다') 형태로 결합하여 이리저리 이동하며 행동을 지속함을 나타내기도 합니다.",
+      "formation": "장소 명사 + 에 다니다 (또는 동사 어간 + -어/아 다니다)",
+      "examples": [
+        {
+          "translation": "저는 매일 학교에 다녀요."
+        },
+        {
+          "translation": "그녀는 자주 도서관에 다녀요."
+        },
+        {
+          "translation": "우리는 주말마다 시장에 다녀요."
+        },
+        {
+          "translation": "동생은 방과 후에 학원에 다녀요."
+        }
+      ]
+    },
+    "ko_어아_31": {
+      "title": "~어/아 두다 (행동의 완료 및 상태의 보존·지속)",
+      "shortExplanation": "어떤 행동을 완료한 뒤 그 결과를 나중을 위해 그대로 유지하거나 보존해 둠을 나타내는 보조용언 표현입니다 ('~해 두다').",
+      "longExplanation": "'~어/아 두다'는 동사 뒤에 결합하여 어떤 동작이 끝난 뒤 그로 인해 형성된 상태를 미래의 쓰임이나 목적을 위해 지속적으로 유지하거나 간직해 둠을 나타냅니다. 흔히 어떤 일을 '미리 준비해 놓다'라거나 '그 상태 그대로 내버려 두다'라는 의미로 널리 쓰입니다. 유사한 표현인 '~어/아 놓다'에 비해 상태를 오랫동안 보존하거나 대비한다는 뉘앙스가 한층 강합니다.",
+      "formation": "동사 어간 + -어/아 두다 (어간 끝 음절 모음이 'ㅏ, ㅗ'이면 -아 두다, 그 외 모음이면 -어 두다, '하다'는 해 두다)",
+      "examples": [
+        {
+          "translation": "문을 열어 두었어요."
+        },
+        {
+          "translation": "내일 쓸 음식을 미리 준비해 두었어요."
+        },
+        {
+          "translation": "그는 숙제를 다 해 두었어요."
+        },
+        {
+          "translation": "가게 문을 닫아 두었어요."
+        }
+      ]
+    },
+    "ko_어아_32": {
+      "title": "~어/아 들다 (갑작스러운 동작·상태의 시작)",
+      "shortExplanation": "주로 이야기 글이나 서사적 맥락에서 어떤 행동이나 감정, 기상 상태가 갑자기 혹은 뜻밖에 시작됨을 나타내는 보조용언 표현입니다.",
+      "longExplanation": "'~어/아 들다'는 문학적 묘사나 이야기체 서술에서 웃음, 울음, 바람 등의 현상이 불시에 세차게 일어나거나 갑작스럽게 시작되는 양상을 나타낼 때 쓰입니다. 대개 연결어미와 결합한 '-어/아 들더니' 형태로 자주 나타나 뒤따르는 급격한 변화나 반전 상황을 극적으로 드러냅니다. 일상 구어에서는 거의 쓰이지 않으며 '갑자기 ~하기 시작하다'로 바꾸어 쓸 수 있습니다.",
+      "formation": "동사/형용사 어간 + -어/아 들다 (어간 모음이 'ㅏ, ㅗ'이면 -아 들다, 그 외 모음이면 -어 들다)",
+      "examples": [
+        {
+          "translation": "그 말을 듣자, 동생이 웃어 들더니 이내 진지해졌어요."
+        },
+        {
+          "translation": "아이가 울어 들더니 곧 웃음을 터뜨렸어요."
+        },
+        {
+          "translation": "바람이 세차게 불어 들더니 창문이 쾅 닫혔어요."
+        },
+        {
+          "translation": "해가 지자, 하늘이 어둡어 들더니 별들이 나타났어요."
+        }
+      ]
+    },
+    "ko_어아_33": {
+      "title": "~어/아 버리다 (동작의 완료와 아쉬움·후련함)",
+      "shortExplanation": "어떤 동작이 완전히 끝나서 돌이킬 수 없게 되었음을 나타내며, 아쉬움·서운함이나 반대로 후련함의 감정을 드러냅니다 ('~해 버리다').",
+      "longExplanation": "'~어/아 버리다'는 동사 뒤에 보조용언 '버리다'가 결합하여 동작이 완전히 이루어져 그 결과가 온전히 끝났음을 나타냅니다. 화자의 심리적 태도에 따라 두 가지 뉘앙스로 나뉩니다. 첫째는 원치 않는 결과가 발생하여 생기는 아쉬움, 안타까움, 후회 등의 부정적 감정을 나타내고('다 먹어 버렸다'), 둘째는 부담스러웠던 짐이나 일거리를 완전히 털어내어 홀가분하고 시원한 감정을 나타냅니다('다 끝내 버렸다').",
+      "formation": "동사 어간 + -어/아 버리다 (어간 모음이 'ㅏ, ㅗ'이면 -아 버리다, 그 외 모음이면 -어 버리다, '하다'는 해 버리다)",
+      "examples": [
+        {
+          "translation": "커피를 다 마셔버렸어요, 그래서 이제 더 이상 마실 수가 없어요."
+        },
+        {
+          "translation": "고양이가 내 신발을 뜯어버렸어, 그래서 이제 새로운 신발을 사야 해."
+        },
+        {
+          "translation": "다이어트를 하려고 했는데, 케이크를 다 먹어버렸어요."
+        },
+        {
+          "translation": "결국, 공부하지 않고 시험 전날 밤동안 교과서를 다 읽어버렸어요."
+        }
+      ]
+    },
+    "ko_어아_34": {
+      "title": "~어/아 보다 (시도와 경험)",
+      "shortExplanation": "동사 어간 뒤에 붙어 어떤 행동을 시험 삼아 해 보거나, 과거에 해 본 적이 있는 경험을 나타냅니다 ('~해 보다').",
+      "longExplanation": "'~어/아 보다'는 동사 뒤에 보조용언 '보다'가 결합하여 어떤 일을 시험 삼아 시도함을 나타내는 대표적인 문법 표현입니다. 현재형이나 미래 계획에서는 '어떤 행동을 해 봄으로써 결과를 확인하려는 시도'를 뜻하며, 과거형인 '-어/아 봤다' 형태로 쓰일 때는 화자가 과거에 겪은 '경험'의 유무를 나타냅니다.",
+      "formation": "동사 어간 + -어/아 보다 (어간 모음이 'ㅏ, ㅗ'이면 -아 보다, 그 외 모음이면 -어 보다, '하다'는 해 보다)",
+      "examples": [
+        {
+          "translation": "오늘은 처음으로 한국어를 가르쳐 볼까 생각하고 있어요."
+        },
+        {
+          "translation": "저는 이번 주말에 당신이 추천한 카페에서 커피를 마셔 볼 예정입니다."
+        },
+        {
+          "translation": "그녀는 새로운 요리법을 찾아서 요리를 해 보려고 합니다."
+        },
+        {
+          "translation": "내일은 그 도시를 처음 방문해서 주변을 둘러 보려고 합니다."
+        }
+      ]
+    },
+    "ko_고_35": {
+      "title": "~고 나서 (행동 완료 후의 순차적 연결)",
+      "shortExplanation": "앞 절의 동작이 완전히 끝난 뒤에 비로소 다음 동작이 이어짐을 시간적 순서에 따라 분명히 나타내는 연결 표현입니다 ('~한 후에').",
+      "longExplanation": "'~고 나서'는 연결어미 '-고'에 동작의 종료를 나타내는 보조동사 '나다'가 결합된 형태입니다. 앞선 행위가 완전히 종결되었음을 강조하며, 그 완료된 바탕 위에서 뒤의 행동이 순차적으로 이루어짐을 명확히 밝힙니다. 단순히 두 동작을 이어주는 '-고'에 비해 앞 행위의 '완료성'을 한층 더 부각하는 특성이 있습니다.",
+      "formation": "동사 어간 + 고 나서",
+      "examples": [
+        {
+          "translation": "집에 가서 밥을 먹고 나서 공부해야 해요."
+        },
+        {
+          "translation": "요가 수업에 참석하고 나서 몸이 더 유연해질 것이에요."
+        },
+        {
+          "translation": "시험을 마치고 나서 휴식을 취하려고 합니다."
+        },
+        {
+          "translation": "운동하고 나서 단백질 섭취를 늘릴 필요가 있어요."
+        }
+      ]
+    },
+    "ko_어아_36": {
+      "title": "~어/아 오다 (과거부터 현재까지의 지속·축적)",
+      "shortExplanation": "과거의 어느 시점부터 시작된 동작이나 상태의 변화가 시간의 흐름을 따라 현재까지 지속되거나 점진적으로 누적되어 왔음을 나타냅니다 ('~해 오다').",
+      "longExplanation": "'~어/아 오다'는 동사 뒤에 보조용언 '오다'가 결합하여 어떤 행위나 심리적 변화, 상태의 진전이 과거에서 시작되어 지금까지 쭉 이어져 왔음을 나타내는 표현입니다. 시간적 연속성과 과정의 축적을 드러내며, 흔히 '점점', '계속', '줄곧'과 같은 부사와 함께 쓰여 점진적인 발전을 생생하게 전달합니다.",
+      "formation": "동사 어간 + -어/아 오다 (어간 모음이 'ㅏ, ㅗ'이면 -아 오다, 그 외 모음이면 -어 오다, '하다'는 해 오다)",
+      "examples": [
+        {
+          "translation": "영화를 계속 보면서 점점 스토리에 흥미를 느껴 오게 되었어요."
+        },
+        {
+          "translation": "연습을 반복하면서 저는 점점 한국어를 더 잘하게 되어 왔어요."
+        },
+        {
+          "translation": "시간이 지나면서 그녀는 점점 나를 더 이해하게 되어 왔어요."
+        },
+        {
+          "translation": "알게 되면서 점점 우리 사이가 더 가까워져 오고 있어요."
+        }
+      ]
+    },
+    "ko_어아지다_37": {
+      "title": "~어/아지다 (형용사의 상태 변화)",
+      "shortExplanation": "형용사 어간 뒤에 붙어 시간의 경과나 외부 작용에 의해 사물의 성질이나 상태가 새롭게 변화함을 나타냅니다 ('~해지다').",
+      "longExplanation": "'~어/아지다'는 형용사 어간에 보조동사 '지다'가 결합하여 어떤 상태로 바뀌거나 변화가 점진적으로 일어남을 나타내는 대표적인 상태 변화 표현입니다. 대상의 본래 상태가 이전과 다른 새로운 상태로 이전됨을 나타내며, 어간 끝 음절 모음이 'ㅏ, ㅗ'이면 '-아지다', 그 밖의 모음이면 '-어지다', '하다'가 붙는 형용사는 '해지다'로 활용합니다.",
+      "formation": "형용사 어간 + -어/아지다 (어간 모음이 'ㅏ, ㅗ'이면 -아지다, 그 외 모음이면 -어지다, '하다'는 해지다)",
+      "examples": [
+        {
+          "translation": "날이 점점 더워져서 집에서만 쉬기로 했어요."
+        },
+        {
+          "translation": "제 친구가 너무 바빠져서 우리는 자주 만나지 못하게 되었어요."
+        },
+        {
+          "translation": "이 공원은 계절이 바뀔 때마다 아름다워져서 많은 사람들이 찾아와요."
+        },
+        {
+          "translation": "방이 난로를 틀어서 따뜻해졌어요."
+        }
+      ]
+    },
+    "ko_었으면_38": {
+      "title": "~었으면 좋겠다 (간절한 바람·희망)",
+      "shortExplanation": "과거시제 선어말어미와 가정보조 연결어미를 결합하여 실현되지 않은 일에 대한 아쉬움이나 간절한 소망을 나타냅니다 ('~했으면 좋겠다').",
+      "longExplanation": "'~었으면 좋겠다'는 선어말어미 '-았/었-'에 조건·가정을 뜻하는 연결어미 '-(으)면'과 '좋겠다'가 합쳐진 문법 형태입니다. 화자가 현실과 다르거나 아직 실현되지 않은 이상적인 상태를 마음속으로 간절히 바라거나, 과거에 그러지 못했던 상황에 대한 아쉬움과 회한을 완곡하게 토로할 때 즐겨 쓰입니다. 단순 가정인 '-(으)면 좋겠다'에 비해 화자의 주관적 소망과 반사실적 가정이 훨씬 더 절절하게 묻어납니다.",
+      "formation": "동사/형용사 어간 + -았/었/였으면 좋겠다 (명사 + -이었/였으면 좋겠다)",
+      "examples": [
+        {
+          "translation": "그때 그녀에게 내 진심을 말했으면 좋겠다."
+        },
+        {
+          "translation": "집에 더 일찍 돌아갔으면 좋겠다."
+        },
+        {
+          "translation": "당신이 저를 더 이해했으면 좋겠다."
+        },
+        {
+          "translation": "내가 그 사실을 알았으면 좋겠다."
+        }
+      ]
+    },
+    "ko_에_39": {
+      "title": "~에 한하다 (범위와 대상의 한정)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 규칙, 혜택, 조건 등의 적용 범위가 특정 대상이나 경우에만 국한됨을 나타내는 격식적 표현입니다 ('~에 한하다').",
+      "longExplanation": "'~에 한하다'는 조사 '-에'와 한자어 동사 '한(限)하다'가 어우러진 표현으로, 공지문이나 규정, 법률, 안내문 등 정중하고 격식 있는 문맥에서 주로 쓰입니다. 특정한 혜택이나 자격, 규정이 오직 언급된 조건이나 대상에만 배타적으로 적용되고 그 밖의 대상은 제외됨을 분명히 선을 그어 밝힙니다. 부사어로 이어질 때는 대개 '~에 한해' 또는 '~에 한하여' 꼴로 쓰입니다.",
+      "formation": "명사 + 에 한하다 (부사형 연결: 명사 + 에 한해 / 에 한하여 / 에 한한)",
+      "examples": [
+        {
+          "translation": "이번 할인행사는 오늘에 한해 적용됩니다. 다른 날에는 적용되지 않습니다."
+        },
+        {
+          "translation": "저의 사랑은 그녀에 한하며, 다른 사람에게는 전혀 관심이 없습니다."
+        },
+        {
+          "translation": "이 제품의 보증서 서비스는 원래 구매자에 한해 제공됩니다."
+        },
+        {
+          "translation": "이번 행사는 회원에 한해 참여 가능합니다. 비회원은 참여할 수 없습니다."
+        }
+      ]
+    },
+    "ko_에_40": {
+      "title": "~에 한해서 (예외적 조건·대상의 한정)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 특별한 혜택이나 조치, 자격이 오직 그 특정 조건이나 대상에만 예외적으로 국한됨을 강조하는 부사적 표현입니다 ('~에 한해서').",
+      "longExplanation": "'~에 한해서'는 '한하다'에 연결어미 '-어서'가 결합된 형태입니다. 특정 대상이나 조건만을 엄격하게 한정 지어, 그 범주 안에서만 뒤 절의 내용이 허용되거나 유효함을 두드러지게 나타냅니다. 일반적인 원칙과 구별되는 특별 우대 조치나 엄격한 제한 규정을 공표할 때 빈번히 활용됩니다.",
+      "formation": "명사 + 에 한해서 (또는 동사/형용사 어간 + -기(에) 한해서)",
+      "examples": [
+        {
+          "translation": "내일 휴일이기에 한해서 오늘 밤 늦게까지 일할 수 있어요."
+        },
+        {
+          "translation": "이 특별 할인은 VIP 고객에 한해서 제공되는 서비스입니다."
+        },
+        {
+          "translation": "우리는 오늘에 한해서 무제한 음료를 제공합니다."
+        },
+        {
+          "translation": "이 모바일 쿠폰은 스타벅스 매장에 한해서 사용 가능합니다."
+        }
+      ]
+    },
+    "ko_에_41": {
+      "title": "~에 힘쓰다 (노력과 정성의 집중)",
+      "shortExplanation": "명사 뒤에 붙어 어떤 목표를 이루거나 상태를 개선하기 위해 온 정성과 노력을 기울임을 나타냅니다 ('~에 힘쓰다').",
+      "longExplanation": "'~에 힘쓰다'는 조사 '-에'와 '힘쓰다'가 결합하여 어떤 대상이나 과업, 학습 등에 온 힘과 마음을 쏟아붓는 행위를 나타냅니다. 장기적인 목표를 향해 부단히 애쓰거나 성실하게 정성을 다할 때 주로 쓰이며, 동사와 함께 쓸 때는 명사형 어미를 활용하여 '-기에 힘쓰다' 형태로 자주 쓰입니다.",
+      "formation": "명사 + 에 힘쓰다 (동사 결합 시: 동사 어간 + -기(에) 힘쓰다 / -(으)ㅁ에 힘쓰다)",
+      "examples": [
+        {
+          "translation": "나는 한국어 학습에 힘쓰고 있어요, 아직 부족하지만 나아질 것이에요."
+        },
+        {
+          "translation": "그녀는 공부에 힘쓰기 시작했고, 결과는 항상 좋았어요."
+        },
+        {
+          "translation": "우리 팀은 이 프로젝트에 최선을 다하려고 힘쓰고 있어요."
+        },
+        {
+          "translation": "친구들이 몸건강 챙기기에 힘쓰는 것을 보니 매우 자랑스러워요."
+        }
+      ]
+    },
+    "ko_으나마나_42": {
+      "title": "~으나마나 (행동의 무용함과 헛수고)",
+      "shortExplanation": "앞 절의 행동을 하나 하지 않으나 결과가 매한가지여서, 그 행동이나 노력이 아무런 소용이나 보람이 없음을 나타내는 연결어미입니다 ('~하나 마나').",
+      "longExplanation": "'~으나마나'는 '-(으)나'와 '말이나'가 결합된 연결어미로, '그 행동을 하든 안 하든 결과는 똑같다'라는 뜻을 나타냅니다. 어떤 일을 애써 시도했음에도 불구하고 무의미한 헛수고로 돌아갔거나 기대했던 성과를 거두지 못했을 때 쓰이며, 뒤 절에는 대개 실망스럽고 부정적인 결과가 뒤따릅니다. (예: '보나 마나 뻔하다')",
+      "formation": "동사 어간 + -으나마나 (받침이 있으면 -으나마나, 받침이 없거나 'ㄹ' 받침이면 -나마나)",
+      "examples": [
+        {
+          "translation": "나는 시험을 잘 볼려고 열심히 공부했으나마나, 결과는 항상 만족스럽지 않았어요."
+        },
+        {
+          "translation": "우리는 빨리 도착하기 위해 택시를 탔으나마나, 결국 지각했어요."
+        },
+        {
+          "translation": "그는 병원에 가서 약을 가져왔으나마나, 증상이 전혀 나아지지 않았어요."
+        },
+        {
+          "translation": "난 그녀에게 사과했으나마나, 그녀는 나를 용서하지 않았어요."
+        }
+      ]
+    },
+    "ko_으니니까_43": {
+      "title": "~으니/니까 (이유·원인 및 발견의 연결어미)",
+      "shortExplanation": "앞 절이 뒤 절의 이유나 원인, 판단의 근거를 나타내거나 어떤 행동을 한 뒤 새로운 사실을 인식하게 됨을 나타내는 연결어미입니다 ('~으니까').",
+      "longExplanation": "'~으니/니까'(줄여서 '-(으)니', '-(으)니까')는 이유나 근거를 밝히는 대표적인 연결어미입니다. 객관적 인과관계를 기술하는 '-아/어서'와 달리 화자의 주관적 판단이나 권유, 주장의 근거를 나타내는 성격이 강하여, 뒤 절에 명령문('-(으)십시오', '-(으)세요')이나 청유문('-(으)ㅂ시다')이 자연스럽게 결합할 수 있습니다. 또한 어떤 행동을 먼저 행한 뒤 그 결과 새로운 사실을 깨닫게 되는 '발견'의 계기를 드러낼 때도 즐겨 쓰입니다.",
+      "formation": "동사/형용사 어간 + -(으)니까 / -(으)니 (받침이 있으면 -으니까/-으니, 없으면 -니까/-니) | 명사 + -(이)니까 / -(이)니",
+      "examples": [
+        {
+          "translation": "오늘은 토요일이니까 학교에 가지 않아요, 주말에는 학교를 쉬어요."
+        },
+        {
+          "translation": "아무도 도와주지 않으니, 스스로 해결해야 했어요."
+        },
+        {
+          "translation": "번역기를 쓰니까, 한국어를 더 쉽게 이해할 수 있어요."
+        },
+        {
+          "translation": "비가 오니까 우산을 가지고 나가세요, 비를 맞으면 감기에 걸릴 수도 있어요."
+        }
+      ]
+    }
+  }
+}

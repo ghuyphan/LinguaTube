@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_通过_274": {
+      "title": "通过 (Động từ: Đi qua / Vượt qua không gian cụ thể)",
+      "shortExplanation": "Động từ biểu thị sự di chuyển xuyên qua hoặc đi qua từ đầu này sang đầu kia của một không gian, con đường; 'đi qua', 'vượt qua', 'xuyên qua'.",
+      "longExplanation": "'通过' (tōngguò) khi đóng vai trò làm động từ chỉ phương hướng và hành động di chuyển, có nghĩa là đi xuyên qua một vị trí, không gian hẹp, cây cầu hoặc con đường cụ thể từ bên này sang bên kia (ví dụ: '通过大桥' - đi qua cầu lớn, '通过海关' - qua cửa khẩu/hải quan, '步行通过' - đi bộ qua). Tương đương với 'đi qua', 'băng qua', 'xuyên qua' trong tiếng Việt.",
+      "formation": "Cách thức di chuyển (步行 / 开车...) + 通过 (+ Nơi chốn)",
+      "examples": [
+        {
+          "translation": "Con phố này chỉ có thể đi bộ qua."
+        }
+      ]
+    },
+    "zh_经过_275": {
+      "title": "经过 (Động từ: Đi ngang qua / Tiện đường qua)",
+      "shortExplanation": "Động từ biểu thị việc đi qua hoặc đi ngang qua một địa điểm nào đó trên lộ trình di chuyển; 'đi qua', 'đi ngang qua'.",
+      "longExplanation": "'经过' (jīngguò) khi làm động từ chỉ hành động di chuyển có nghĩa là trên hành trình đi tới một đích đến nào đó, người hoặc phương tiện đi ngang qua một địa điểm trung gian (ví dụ: '经过北京' - đi qua Bắc Kinh, '经过超市' - đi ngang qua siêu thị, '正好经过' - vừa khéo đi ngang qua). Khác với '通过' (nhấn mạnh vào việc xuyên suốt từ đầu này sang đầu kia), '经过' nhấn mạnh vị trí dọc đường đi. Tương đương với 'đi ngang qua', 'ghé qua' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 经过 + Nơi chốn / Địa điểm",
+      "examples": [
+        {
+          "translation": "Tôi vừa khéo đi ngang qua đây, tiện đường ghé vào thăm bạn một chút."
+        }
+      ]
+    },
+    "zh_通过_276": {
+      "title": "通过 (Động từ: Vượt qua / Đỗ / Được phê duyệt)",
+      "shortExplanation": "Động từ biểu thị việc đạt tiêu chuẩn, vượt qua một kỳ thi, phỏng vấn, kiểm tra hoặc một đề án được thông qua; 'vượt qua', 'đỗ', 'thông qua'.",
+      "longExplanation": "'通过' (tōngguò) ở nghĩa trừu tượng làm động từ chỉ việc đáp ứng đầy đủ yêu cầu hoặc tiêu chuẩn đặt ra, từ đó vượt qua thử thách hay kỳ sát hạch (như '通过考试' - đỗ kỳ thi, '通过面试' - qua vòng phỏng vấn, '通过检查' - qua cửa kiểm tra), hoặc một dự luật, quyết định được cơ quan có thẩm quyền chấp thuận, phê chuẩn ('通过决议' - thông qua nghị quyết). Tương đương với 'vượt qua', 'đỗ', 'trúng tuyển', 'thông qua' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 通过 + Kỳ thi / Phỏng vấn / Tiêu chuẩn / Đề án",
+      "examples": [
+        {
+          "translation": "Tôi đã vượt qua buổi phỏng vấn của công ty đó rồi."
+        }
+      ]
+    },
+    "zh_经过_277": {
+      "title": "经过 (Danh từ: Quá trình / Diễn biến / Đầu đuôi sự việc)",
+      "shortExplanation": "Danh từ chỉ toàn bộ quá trình phát triển, đầu đuôi diễn biến của một sự việc từ khi bắt đầu đến khi kết thúc; 'quá trình', 'diễn biến', 'đầu đuôi câu chuyện'.",
+      "longExplanation": "'经过' (jīngguò) khi đóng vai trò danh từ mang ý nghĩa là trình tự diễn ra, các tình tiết cụ thể từ đầu đến cuối của một sự kiện, câu chuyện (ví dụ: '事情的经过' - đầu đuôi sự việc, '案件经过' - diễn biến vụ án, '了解经过' - hiểu rõ ngọn ngành câu chuyện). Thường làm tân ngữ hoặc định ngữ trong câu. Tương đương với 'quá trình', 'diễn biến', 'ngọn ngành', 'đầu đuôi sự việc' trong tiếng Việt.",
+      "formation": "Sự việc / Danh từ + 的 + 经过",
+      "examples": [
+        {
+          "translation": "Tiểu Vương đã kể cho tôi toàn bộ đầu đuôi diễn biến của sự việc."
+        }
+      ]
+    },
+    "zh_可是_278": {
+      "title": "可是 (Liên từ biểu thị chuyển ý: Nhưng / Nhưng mà)",
+      "shortExplanation": "Liên từ biểu thị quan hệ chuyển tiếp đối lập, đứng ở đầu phân câu sau để thể hiện sự tương phản rõ rệt với phân câu trước; 'nhưng', 'nhưng mà'.",
+      "longExplanation": "'可是' (kěshì) là liên từ biểu thị quan hệ chuyển ý (nghịch tiếp) rất phổ biến trong cả văn nói lẫn văn viết. Nó đứng ở đầu vế câu thứ hai để đưa ra một kết quả, thực tế hoặc thái độ trái ngược với những gì được nói ở vế câu trước. Sắc thái chuyển ý của '可是' mạnh tương đương '但是', nhưng thường mang ngữ khí mềm mại, khẩu ngữ hơn một chút. Có thể kết hợp với '虽然' ở vế trước thành cặp '虽然……，可是……'. Tương đương với 'nhưng', 'thế nhưng', 'nhưng mà' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，可是 + Mệnh đề 2 (hoặc: 虽然 + Mệnh đề 1，可是 + Mệnh đề 2)",
+      "examples": [
+        {
+          "translation": "Lúc đó bố mẹ và người thân đều không ủng hộ cô ấy, nhưng cô ấy vẫn kiên trì với lựa chọn của mình."
+        }
+      ]
+    },
+    "zh_结果_279": {
+      "title": "结果 (Danh từ: Kết quả / Thành quả)",
+      "shortExplanation": "Danh từ chỉ kết quả, trạng thái cuối cùng đạt được sau một quá trình hành động, nghiên cứu hay thi đấu; 'kết quả', 'thành quả'.",
+      "longExplanation": "'结果' (jiéguǒ) khi làm danh từ biểu thị tình trạng, số liệu hoặc sự thật sau cùng nảy sinh từ một sự việc, hành động hay cuộc khảo sát (ví dụ: '调查结果' - kết quả điều tra, '考试结果' - kết quả thi, '比赛结果' - kết quả trận đấu, '没有结果' - không có kết quả). Thường làm chủ ngữ, tân ngữ hoặc định ngữ. Tương đương với 'kết quả' trong tiếng Việt.",
+      "formation": "Danh từ / Động từ + 结果 (ví dụ: 调查 / 比赛 / 考试 / 实验 + 结果)",
+      "examples": [
+        {
+          "translation": "Xin hãy nộp kết quả điều tra lên."
+        }
+      ]
+    },
+    "zh_结果_280": {
+      "title": "结果…… (Liên từ kết quả: Kết quả là... / Rốt cuộc...)",
+      "shortExplanation": "Liên từ đứng đầu phân câu sau để biểu thị kết cục, hậu quả hoặc kết quả phát sinh từ hành động ở phân câu trước; 'kết quả là...', 'rốt cuộc là...'.",
+      "longExplanation": "'结果' (jiéguǒ) khi dùng làm liên từ liên kết câu sẽ đứng ở đầu vế câu sau (thường sau dấu phẩy), dùng để dẫn ra kết quả sau cùng của sự việc hay hành động được miêu tả ở vế câu trước. Kết quả này có thể là tích cực, tiêu cực hoặc mang tính chất khách quan. Thường không cần đi kèm các từ nối chỉ nguyên nhân như '因为' ở vế trước. Tương đương với 'kết quả là', 'rốt cuộc', 'cuối cùng thì' trong tiếng Việt.",
+      "formation": "Mệnh đề nguyên nhân / hành động，结果 + Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Kỳ học trước anh ấy học tập rất chăm chỉ, kết quả là thi đã đỗ."
+        }
+      ]
+    },
+    "zh_上_281": {
+      "title": "上 + Số từ quy mô lớn (Động từ / Phó từ: Lên đến / Hơn...)",
+      "shortExplanation": "Đứng trước các số từ biểu thị số lượng lớn (như 百, 千, 万) để nhấn mạnh số lượng đạt đến mức độ rất cao hoặc vượt qua con số đó; 'lên đến', 'hàng (trăm/nghìn)', 'hơn...'.",
+      "longExplanation": "'上' (shàng) trong cấu trúc này đóng vai trò như một động từ mang nghĩa đạt đến, hoặc một phó từ chỉ mức độ trước các đơn vị số lượng tương đối lớn như '百' (trăm), '千' (nghìn), '万' (vạn, mười nghìn), '亿' (trăm triệu) (ví dụ: '上百' - hàng trăm/lên đến trăm, '上千人' - hàng nghìn người, '上万元' - hàng vạn tệ, '上百年' - hàng trăm năm). Cấu trúc này dùng để nhấn mạnh số lượng vô cùng phong phú, thời gian kéo dài hoặc quy mô to lớn. Tương đương với 'lên đến...', 'hàng (trăm/nghìn)...', 'hơn cả...' trong tiếng Việt.",
+      "formation": "(Có / Đạt) + 上 + Số từ chỉ đơn vị lớn (百 / 千 / 万 / 亿) + Lượng từ / Danh từ",
+      "examples": [
+        {
+          "translation": "Hệ thống tàu điện ngầm của thành phố này đã có lịch sử lên đến cả trăm năm."
+        }
+      ]
+    },
+    "zh_不过_282": {
+      "title": "不过 (Liên từ chuyển ý nhẹ: Tuy nhiên / Nhưng mà / Có điều)",
+      "shortExplanation": "Liên từ biểu thị quan hệ chuyển ý nhẹ nhàng, dùng ở đầu phân câu sau để bổ sung, điều chỉnh hoặc đối chiếu với phân câu trước; 'tuy nhiên', 'nhưng mà', 'có điều'.",
+      "longExplanation": "'不过' (bùguò) là liên từ biểu thị sự chuyển ý với sắc thái nhẹ nhàng và ôn hòa hơn so với '但是' hay '可是'. Nó thường đứng ở đầu vế câu thứ hai để bổ sung một tình huống mới, đưa ra một ngoại lệ hoặc giới hạn cho nhận định ở vế câu trước mà không hoàn toàn phủ định vế trước. Thường dùng linh hoạt trong cả văn nói lẫn văn viết. Tương đương với 'tuy nhiên', 'có điều', 'nhưng mà', 'chỉ là' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，不过 + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Ban đầu tôi muốn làm luật sư, tuy nhiên sau đó tôi nhận ra mình có hứng thú với ngành báo chí hơn."
+        }
+      ]
+    },
+    "zh_不过V_283": {
+      "title": "不过 + Động từ (Phó từ phạm vi: Chẳng qua chỉ... / Chỉ là...)",
+      "shortExplanation": "Phó từ đứng trước động từ để biểu thị giới hạn phạm vi nhỏ bé, giản đơn của hành động, mang sắc thái xem nhẹ; 'chẳng qua chỉ...', 'chỉ là... mà thôi'.",
+      "longExplanation": "'不过' (bùguò) khi làm phó từ sẽ đứng trước vị ngữ động từ, mang ý nghĩa tương tự như '只' (chỉ) hoặc '只不过' (chẳng qua chỉ). Cấu trúc này dùng để biểu thị hành động diễn ra chỉ dừng lại ở một mức độ rất nhỏ, bình thường, không có gì to tát hay đáng ngạc nhiên. Cuối câu thường có thể kết hợp với các trợ từ ngữ khí như '罢了' hay '而已' để củng cố ngữ khí. Tương đương với 'chẳng qua chỉ...', 'chỉ là... thôi' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 不过 + Động từ (+ Tân ngữ) (+ 罢了 / 而已)",
+      "examples": [
+        {
+          "translation": "Chúng tôi chẳng qua chỉ trao đổi một chút về vấn đề công việc, ngoài ra không nói chuyện gì khác."
+        }
+      ]
+    },
+    "zh_确实_284": {
+      "title": "确实 (Phó từ khẳng định: Quả thực / Thực sự / Đúng là)",
+      "shortExplanation": "Phó từ đứng trước vị ngữ để khẳng định tính chân thực, đúng đắn không thể nghi ngờ của một sự việc hoặc nhận định; 'quả thực', 'thực sự', 'đúng là'.",
+      "longExplanation": "'确实' (quèshí) là phó từ dùng để khẳng định mạnh mẽ rằng một sự tình, tính chất hay quan điểm là hoàn toàn có thật, khách quan và đáng tin cậy. Khi đứng trước động từ, tính từ hoặc cụm '是...', nó biểu thị sự đồng tình sâu sắc hoặc nhấn mạnh một chân lý rõ ràng trước khi chuyển ý bằng '但是 / 但' (ví dụ: '确实很漂亮' - thực sự rất đẹp, '确实如此' - quả thực là như vậy). Tương đương với 'quả thực', 'thực sự', 'đúng là' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 确实 + Vị ngữ (Động từ / Tính từ / 是...)",
+      "examples": [
+        {
+          "translation": "Tình yêu quả thực là nguyên nhân quan trọng để kết hôn, nhưng chỉ có tình yêu thôi thì chưa đủ."
+        }
+      ]
+    },
+    "zh_在S看来_285": {
+      "title": "在……看来 (Ngữ giới từ: Theo cách nhìn của... / Đối với... mà nói)",
+      "shortExplanation": "Cụm giới từ đặt ở đầu câu hoặc trước chủ ngữ, dùng để nêu ra chủ thể nhận định hay góc nhìn chủ quan; 'theo cách nhìn của...', 'đối với... mà nói'.",
+      "longExplanation": "Cấu trúc '在 + Chủ thể (Danh từ / Đại từ) + 看来' (zài... kànlai) dùng để định vị điểm xuất phát của quan điểm, nhận định hoặc cảm nhận cá nhân. Phía sau cụm từ này là mệnh đề trình bày phán đoán, quan điểm riêng biệt của chủ thể đó đối với sự vật, hiện tượng (ví dụ: '在我看来' - theo tôi thấy, '在老师看来' - theo góc nhìn của thầy cô). Tương đương với 'theo... thấy', 'trong mắt của...', 'đối với... mà nói' trong tiếng Việt.",
+      "formation": "在 + Danh từ / Đại từ (Chủ thể) + 看来，Mệnh đề nhận định",
+      "examples": [
+        {
+          "translation": "Theo cách nhìn của nhiều người, nghe nhạc pop chỉ là sở thích của giới trẻ."
+        }
+      ]
+    },
+    "zh_由于_286": {
+      "title": "由于…… (Liên từ chỉ nguyên nhân: Do... / Bởi vì...)",
+      "shortExplanation": "Liên từ biểu thị nguyên nhân khách quan, đứng ở đầu phân câu trước để dẫn ra lý do dẫn đến kết quả ở phân câu sau; 'do...', 'bởi vì...', 'nhờ có...'.",
+      "longExplanation": "'由于' (yóuyú) là liên từ biểu thị quan hệ nhân quả trang trọng, mang phong cách văn viết rõ nét hơn '因为'. Nó đứng ở đầu vế câu nguyên nhân để nêu ra lý do, tiền đề dẫn đến kết quả hay sự biến chuyển ở vế câu tiếp theo. Vế sau có thể kết hợp với các từ nối kết quả như '所以', '因此', '因而'. Tương đương với 'do...', 'bởi vì...', 'nhờ vào...' trong tiếng Việt.",
+      "formation": "由于 + Mệnh đề nguyên nhân / Cụm từ，(因此 / 所以 +) Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Nhờ có sự nỗ lực chung của chúng ta, nhiệm vụ đã được hoàn thành trước thời hạn."
+        }
+      ]
+    },
+    "zh_由于N_287": {
+      "title": "由于 + Danh từ (Giới từ chỉ nguyên nhân: Do... / Vì...)",
+      "shortExplanation": "Giới từ kết hợp trực tiếp với danh từ hoặc ngữ danh từ ở phía sau để chỉ rõ lý do, nguyên nhân của sự việc; 'do...', 'vì... [danh từ]'.",
+      "longExplanation": "'由于' (yóuyú) khi đóng vai trò giới từ sẽ kết hợp trực tiếp với một danh từ hoặc cụm danh từ phía sau (như '由于天气原因' - do lý do thời tiết, '由于种种原因' - do nhiều nguyên nhân, '由于工作关系' - do quan hệ công việc) để tạo thành ngữ giới từ chỉ nguyên nhân. Cụm này thường đứng trước chủ ngữ hoặc sau chủ ngữ làm trạng ngữ cho cả câu. Tương đương với 'do...', 'vì...' trong tiếng Việt.",
+      "formation": "由于 + Danh từ / Cụm danh từ，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Do nhiều nguyên nhân khác nhau, chúng tôi buộc phải thay đổi kế hoạch ban đầu."
+        }
+      ]
+    },
+    "zh_比如_288": {
+      "title": "比如…… (Động từ / Liên từ nêu ví dụ: Ví dụ như... / Chẳng hạn như...)",
+      "shortExplanation": "Dùng để dẫn ra một hoặc nhiều ví dụ cụ thể nhằm giải thích, làm sáng tỏ cho khái niệm hoặc nhận định khái quát phía trước; 'ví dụ như...', 'chẳng hạn như...'.",
+      "longExplanation": "'比如' (bǐrú) đóng vai trò như một động từ hoặc liên từ chuyên dùng để đưa ra dẫn chứng, ví dụ minh họa cụ thể cho một nhận định khái quát vừa được nêu ở vế trước. Theo sau '比如' có thể là các từ ngữ, cụm từ hoặc cả phân câu hoàn chỉnh. Ở cuối phần liệt kê thường kết hợp với '等等' hoặc '等' để biểu thị vân vân. Tương đương với 'ví dụ như...', 'chẳng hạn như...', 'thí dụ...' trong tiếng Việt.",
+      "formation": "Khái quát / Nhận định，比如 + Ví dụ 1，Ví dụ 2 (+ 等 / 等等)",
+      "examples": [
+        {
+          "translation": "Trước khi đi du lịch tốt nhất nên lập kế hoạch, chẳng hạn như muốn đi những đâu, đi xe thế nào, v.v."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_通过_274": {
+      "title": "通过（動詞：通り抜ける・通行する）",
+      "shortExplanation": "動詞として、道や空間の一端から他端へと通り抜けること、通行することを表します（「通り抜ける」「通過する」「通行する」）。",
+      "longExplanation": "「通过」（tōngguò）は移動を表す動詞として用いられる場合、道や特定の空間、関所、橋などを一方から他方へと通過・横断することを意味します（例：「通过大桥」＝大橋を渡る、「通过海关」＝税関を通過する、「步行通过」＝徒歩で通り抜ける）。日本語の「通り抜ける」「通過する」「通行する」に相当します。",
+      "formation": "移動方法（步行 / 开车…） ＋ 通过（＋ 場所）",
+      "examples": [
+        {
+          "translation": "この通りは徒歩でのみ通行できます。"
+        }
+      ]
+    },
+    "zh_经过_275": {
+      "title": "经过（動詞：通りかかる・通り過ぎる）",
+      "shortExplanation": "動詞として、目的地へ向かう途中で特定の場所を通ること、通りかかることを表します（「通りかかる」「通り過ぎる」「通過する」）。",
+      "longExplanation": "「经过」（jīngguò）が移動を表す動詞として用いられる場合、ある場所へ向かう途中で、特定の地点や場所を通過すること、通りかかることを指します（例：「经过北京」＝北京を経由する、「经过超市」＝スーパーの前を通り過ぎる、「正好经过」＝ちょうど通りかかる）。空間を突き抜けるニュアンスの「通过」と異なり、道中での通過地点を指す点に特徴があります。日本語の「通りかかる」「通り過ぎる」「経由する」に相当します。",
+      "formation": "主語 ＋ 经过 ＋ 場所 / 地点",
+      "examples": [
+        {
+          "translation": "ちょうどここを通りかかったので、ついでに様子を見に来ました。"
+        }
+      ]
+    },
+    "zh_通过_276": {
+      "title": "通过（動詞：合格する・通過する・可決される）",
+      "shortExplanation": "動詞として、試験や面接に合格すること、あるいは法案や議案が承認・可決されることを表します（「合格する」「通過する」「可決される」）。",
+      "longExplanation": "「通过」（tōngguò）は抽象的な基準や審査を満たすことを表す動詞として用いられます。(1)試験、面接、検査などに合格・パスすること（例：「通过考试」＝試験に合格する、「通过面试」＝面接を通過する、「通过体检」＝健康診断をパスする）；(2)法案、決議、提案などが正式に承認・可決されること（例：「通过决议」＝決議を採択・可決する）。日本語の「合格する」「通過する」「パスする」「可決される」に相当します。",
+      "formation": "主語 ＋ 通过 ＋ 試験 / 面接 / 基準 / 議案",
+      "examples": [
+        {
+          "translation": "私はその会社の面接に合格しました。"
+        }
+      ]
+    },
+    "zh_经过_277": {
+      "title": "经过（名詞：経緯・一部始終・経過）",
+      "shortExplanation": "名詞として、事柄の始まりから終わりまでの過程や成り行きを表します（「経緯」「一部始終」「経過」）。",
+      "longExplanation": "「经过」（jīngguò）は名詞として用いられる場合、事件や出来事がどのように発生し、進展し、結末に至ったかという一連のプロセスや成り行きを指します（例：「事情的经过」＝事の経緯・一部始終、「事故经过」＝事故の経過）。文中では目的語や定語として多用されます。日本語の「経緯」「一部始終」「経過」「成り行き」に相当します。",
+      "formation": "事柄 / 名詞 ＋ 的 ＋ 经过",
+      "examples": [
+        {
+          "translation": "王さんは事の経緯を私に話してくれました。"
+        }
+      ]
+    },
+    "zh_可是_278": {
+      "title": "可是（接続詞：しかし・だが・けれども）",
+      "shortExplanation": "逆接を表す接続詞で、後節の冒頭に置き、前節の内容と相反する事実や対比を示します（「しかし」「だが」「けれども」）。",
+      "longExplanation": "「可是」（kěshì）は逆接の接続詞として広く用いられます。前の節で述べた事柄に対して、予想外の事実や対立する状況を後節で提示する際に使われます。「但是」とほぼ同義ですが、「可是」の方が口語的な柔らかい響きを持つ傾向があります。前節に「虽然」（〜だけれども）を伴って「虽然……，可是……」の呼応関係を作ることもよくあります。日本語の「しかし」「だが」「けれども」「ところが」に相当します。",
+      "formation": "節1，可是 ＋ 節2（または：虽然 ＋ 節1，可是 ＋ 節2）",
+      "examples": [
+        {
+          "translation": "当時、彼女の両親や親戚は誰も支持しませんでしたが、彼女は自分の選択を貫きました。"
+        }
+      ]
+    },
+    "zh_结果_279": {
+      "title": "结果（名詞：結果・成果）",
+      "shortExplanation": "名詞として、ある行動や出来事、調査などの最終的な結末や状態を表します（「結果」「成果」）。",
+      "longExplanation": "「结果」（jiéguǒ）は名詞として用いられる場合、一連の行動、努力、調査、試合などがもたらした最終的な状態やデータを指します（例：「调查结果」＝調査結果、「考试结果」＝試験結果、「比赛结果」＝試合結果、「满意的结果」＝満足のいく結果）。文中で主語、目的語、定語として広く機能します。日本語の「結果」「成果」に相当します。",
+      "formation": "名詞 / 動詞 ＋ 结果（例：调查 / 比赛 / 考试 / 实验 ＋ 结果）",
+      "examples": [
+        {
+          "translation": "調査結果を提出してください。"
+        }
+      ]
+    },
+    "zh_结果_280": {
+      "title": "结果……（接続詞：その結果・結局）",
+      "shortExplanation": "接続詞として後節の冒頭に置き、前節の行動や状況から生じた結末や結果を導きます（「その結果」「結局」「結果として」）。",
+      "longExplanation": "「结果」（jiéguǒ）は文と文をつなぐ接続詞としても多用されます。前節で述べられた原因や一連の出来事・行動を受けて、その末に生じた最終的な帰結や状況を後節の文頭で示します。結果は肯定的なものでも否定的なものでも使えます。前節に「因为」などを伴わず、単独で因果の結末を示すことができます。日本語の「その結果」「結局」「結果として」に相当します。",
+      "formation": "原因・行動を表す節，结果 ＋ 結果を表す節",
+      "examples": [
+        {
+          "translation": "先学期、彼はとても熱心に勉強し、その結果テストに合格しました。"
+        }
+      ]
+    },
+    "zh_上_281": {
+      "title": "上 ＋ 大きな数詞（動詞・副詞：～に達する・～を超える・数百／数千もの）",
+      "shortExplanation": "「百」「千」「万」などの大きな数量単位の前に置き、数量がその水準に達することや超えることを強調します（「～に達する」「～を超える」「数百/数千もの」）。",
+      "longExplanation": "「上」（shàng）は、百、千、万、億などの比較的大きな数量単位の直前に置かれることで、「その大きな数量に達する」「～を超える」という意味を表します（例：「上百人」＝数百人もの人、「上千件」＝数千件に達する、「上百年」＝百年余り／百年に達する）。数量が非常に多いこと、規模が大きいこと、または年月の長さなどを誇張・強調する語感を伴います。日本語の「～に達する」「～を超える」「数百／数千もの」に相当します。",
+      "formation": "上 ＋ 大きな数量単位（百 / 千 / 万 / 亿） ＋ 量詞 / 名詞",
+      "examples": [
+        {
+          "translation": "この都市の地下鉄にはすでに百年以上もの歴史があります。"
+        }
+      ]
+    },
+    "zh_不过_282": {
+      "title": "不过（接続詞：ただし・もっとも・ただ・しかし）",
+      "shortExplanation": "軽い逆接や補足を導く接続詞で、後節の文頭に置き、前節の内容に対する限定や例外を示します（「ただし」「もっとも」「ただ」「しかし」）。",
+      "longExplanation": "「不过」（bùguò）は接続詞として用いられる場合、「但是」や「可是」に比べて逆接の語感がやや穏やかで、前節の内容を全面的に覆すのではなく、補足説明や例外、留保事項を付け加えるニュアンスを持ちます。口語・文章語の双方で自然に使われます。日本語の「ただし」「もっとも」「ただ」「しかしながら」に相当します。",
+      "formation": "節1，不过 ＋ 節2",
+      "examples": [
+        {
+          "translation": "私はもともと弁護士になりたかったのですが、後になって報道やニュースの方により興味があることに気づきました。"
+        }
+      ]
+    },
+    "zh_不过V_283": {
+      "title": "不过 ＋ 動詞（副詞：単に～にすぎない・たかだか～だけだ）",
+      "shortExplanation": "動詞の前に置く副詞で、その動作や状態がごく限られた範囲にとどまること、大したことではないことを表します（「単に～にすぎない」「たかだか～だけだ」）。",
+      "longExplanation": "「不过」（bùguò）は動詞述語の直前に置かれる副詞として、「只」や「只不过」と同様に「単に〜するだけだ」という範囲の限定と軽視のニュアンスを表します。事態が大した深刻さや重要性を持たず、わずかな行為にとどまることを示します。文末に「罢了」や「而已」を呼応させることも多く見られます。日本語の「単に〜にすぎない」「たかだか〜しただけだ」「〜したまでだ」に相当します。",
+      "formation": "主語 ＋ 不过 ＋ 動詞（＋ 目的語）（＋ 罢了 / 而已）",
+      "examples": [
+        {
+          "translation": "私たちは単に仕事の話題について少し話しただけで、それ以外のことは何も話していません。"
+        }
+      ]
+    },
+    "zh_确实_284": {
+      "title": "确实（副詞：確かに・本当に・事実として）",
+      "shortExplanation": "述語の前に置く副詞で、事柄が疑いようのない事実であることや、本物であることを強く肯定します（「確かに」「本当に」「間違いなく」）。",
+      "longExplanation": "「确实」（quèshí）は確信や客観的な真実性を表す副詞です。動詞、形容詞、または「是…」の前に置かれ、ある状況や判断が事実に合致しており紛れもないことを強調します。しばしば前節で「确实」を用いて事実を認めた上で、後節で「但是」「但」を用いて逆接・補足につなげる構文でも用いられます。日本語の「確かに」「本当に」「間違いなく」に相当します。",
+      "formation": "主語 ＋ 确实 ＋ 述語（動詞 / 形容詞 / 是…）",
+      "examples": [
+        {
+          "translation": "愛情が結婚の重要な理由であることは確かですが、愛情だけでは不十分です。"
+        }
+      ]
+    },
+    "zh_在S看来_285": {
+      "title": "在……看来（前置詞句：～から見れば・～の考えでは）",
+      "shortExplanation": "文頭または主語の前に置き、ある特定の主体や人物の立場・視点から見た判断を導きます（「～から見れば」「～の考えでは」「～にしてみれば」）。",
+      "longExplanation": "「在 ＋ 主体（名詞 / 代名詞） ＋ 看来」（zài... kànlai）は、誰の立場や視点からの意見・見解であるかを明示する前置詞構文です。カンマを挟んだ後続の節で、その主体による主観的な判断、感想、評価が述べられます（例：「在我看来」＝私の考えでは、「在大家看来」＝みんなの目から見れば）。日本語の「～から見れば」「～の視点では」「～に言わせれば」に相当します。",
+      "formation": "在 ＋ 名詞 / 代名詞（主体） ＋ 看来，判断を表す節",
+      "examples": [
+        {
+          "translation": "多くの人から見れば、ポップスを聴くことは単に若者の趣味にすぎません。"
+        }
+      ]
+    },
+    "zh_由于_286": {
+      "title": "由于……（接続詞：～のために・～によって・～のおかげで）",
+      "shortExplanation": "原因や理由を導く接続詞で、前節の文頭に置き、客観的な原因を示して後節の結果へつなぎます（「～のために」「～によって」「～のおかげで」）。",
+      "longExplanation": "「由于」（yóuyú）は原因・理由を導く接続詞で、「因为」よりも客観的で改まった書面語の響きを持ちます。前節の冒頭に置いて事象の原因・根拠を提示し、後節でその結果を述べます。後節には「所以」「因此」「因而」などの接続表現が呼応することがよくあります。日本語の「～のために」「～によって」「～ゆえに」「～のおかげで」に相当します。",
+      "formation": "由于 ＋ 原因を表す節・句，（因此 / 所以 ＋）結果を表す節",
+      "examples": [
+        {
+          "translation": "私たちの共同の努力によって、任務は予定より早く達成されました。"
+        }
+      ]
+    },
+    "zh_由于N_287": {
+      "title": "由于 ＋ 名詞（前置詞：～により・～の理由で・～のため）",
+      "shortExplanation": "名詞や名詞句の直前に置く前置詞で、後続する事態の原因や理由を端的に示します（「～により」「～の理由で」「～のため」）。",
+      "longExplanation": "「由于」（yóuyú）は前置詞として、名詞または名詞句を直接従えて原因を表す前置詞句を構成します（例：「由于天气原因」＝天候上の理由により、「由于种种原因」＝さまざまな事情により、「由于身体原因」＝健康上の理由で）。文頭または主語の直後に置かれ、文全体の状語（副詞句）として機能します。日本語の「～により」「～の理由で」「～のために」に相当します。",
+      "formation": "由于 ＋ 名詞 / 名詞句，主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "さまざまな理由により、私たちは当初の計画を変更せざるを得ませんでした。"
+        }
+      ]
+    },
+    "zh_比如_288": {
+      "title": "比如……（動詞・接続詞：例えば・例を挙げると）",
+      "shortExplanation": "前述の一般的な説明や総論に対して、具体的な実例を挙げて説明を具体化します（「例えば」「例を挙げると」「～のような」）。",
+      "longExplanation": "「比如」（bǐrú）は動詞または接続語として、前に述べた抽象的な概念や総括的な事柄に対して、具体的な例証を導くために用いられます。後続には名詞、語句、あるいは完全な複文を置くことができます。列挙の末尾に「等等」や「等」（～など）を伴うことが非常に一般的です。日本語の「例えば」「例を挙げると」「～などといった」に相当します。",
+      "formation": "総括的な説明，比如 ＋ 具体例1，具体例2（＋ 等 / 等等）",
+      "examples": [
+        {
+          "translation": "旅行の前には計画を立てるのが賢明です。例えばいくつの場所を訪れるか、どのように乗り物に乗るかなどです。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_通过_274": {
+      "title": "通过 (동사: 통과하다, 지나가다)",
+      "shortExplanation": "동사로서 길이나 특정 공간을 한쪽 끝에서 다른 쪽 끝으로 가로질러 지나가거나 통행함을 나타냅니다('통과하다', '지나가다').",
+      "longExplanation": "'通过'(tōngguò)가 이동을 나타내는 동사로 쓰일 때는 길, 다리, 좁은 통로, 검문소 등의 물리적 공간을 뚫고 지나가거나 건너가는 행위를 뜻합니다(예: '通过大桥' 큰 다리를 건너다, '通过海关' 세관을 통과하다, '步行通过' 걸어서 지나가다). 한국어의 '통과하다', '지나가다', '가로지르다'에 해당합니다.",
+      "formation": "이동 방식(步行 / 开车…) + 通过 (+ 장소)",
+      "examples": [
+        {
+          "translation": "이 거리는 걸어서만 지나갈 수 있습니다."
+        }
+      ]
+    },
+    "zh_经过_275": {
+      "title": "经过 (동사: 지나가다, 거쳐 가다)",
+      "shortExplanation": "동사로서 목적지로 향하는 도중에 특정 장소를 지나치거나 거쳐 감을 나타냅니다('지나가다', '거치다', '들르다').",
+      "longExplanation": "'经过'(jīngguò)가 이동 동사로 쓰일 때는 목적지로 가는 길에 특정 장소나 위치를 통과하거나 지나침을 의미합니다(예: '经过北京' 베이징을 거쳐 가다, '经过超市' 마트를 지나가다, '正好经过' 마침 지나가다). 공간을 뚫고 통과하는 뉘앙스의 '通过'와 달리, 이동 경로상에 있는 경유지를 강조합니다. 한국어의 '지나가다', '지나치다', '거쳐 가다'에 해당합니다.",
+      "formation": "주어 + 经过 + 장소 / 지점",
+      "examples": [
+        {
+          "translation": "마침 여기를 지나가던 길이라, 들러서 안부 좀 전하려고 왔어요."
+        }
+      ]
+    },
+    "zh_通过_276": {
+      "title": "通过 (동사: 합격하다, 통과하다, 가결되다)",
+      "shortExplanation": "동사로서 일정한 기준이나 심사를 통과하여 시험/면접에 합격하거나, 안건/법안이 승인·가결됨을 나타냅니다('합격하다', '통과하다', '가결되다').",
+      "longExplanation": "'通过'(tōngguò)는 추상적인 기준이나 심사를 만족시키는 행위를 나타내는 동사입니다. (1) 시험, 면접, 검사 등을 거쳐 기준을 통과하거나 합격함을 뜻합니다(예: '通过考试' 시험에 합격하다, '通过面试' 면접을 통과하다, '通过体检' 신체검사를 통과하다). (2) 법안, 결의안, 제안 등이 공식적으로 채택되거나 가결됨을 뜻합니다(예: '通过方案' 방안을 통과시키다, '通过决议' 결의안이 가결되다). 한국어의 '합격하다', '통과하다', '패스하다', '가결되다'에 해당합니다.",
+      "formation": "주어 + 通过 + 시험 / 면접 / 기준 / 안건",
+      "examples": [
+        {
+          "translation": "저는 그 회사의 면접에 합격했습니다."
+        }
+      ]
+    },
+    "zh_经过_277": {
+      "title": "经过 (명사: 전말, 경위, 과정)",
+      "shortExplanation": "명사로서 어떤 일의 시작부터 끝까지의 진행 과정이나 내막을 가리킵니다('전말', '경위', '과정').",
+      "longExplanation": "'经过'(jīngguò)가 명사로 쓰일 때는 사건이나 일이 발생하여 전개되고 마무리되기까지의 전체적인 과정과 구체적인 줄거리를 뜻합니다(예: '事情的经过' 일의 전말/경위, '事故经过' 사고 경위, '了解经过' 경위를 파악하다). 문장에서 주로 목적어나 관형어로 사용됩니다. 한국어의 '전말', '경위', '자초지종', '과정'에 해당합니다.",
+      "formation": "사건 / 명사 + 的 + 经过",
+      "examples": [
+        {
+          "translation": "샤오왕이 저에게 사건의 전말(경위)을 말해 주었습니다."
+        }
+      ]
+    },
+    "zh_可是_278": {
+      "title": "可是 (접속사: 하지만, 그러나, 그렇지만)",
+      "shortExplanation": "역접 관계를 나타내는 접속사로, 뒷절의 처음에 놓여 앞절의 내용과 상반되거나 대조되는 사실을 이끕니다('하지만', '그러나', '그렇지만').",
+      "longExplanation": "'可是'(kěshì)는 대조나 역접의 의미를 나타내는 대표적인 접속사입니다. 앞 절에서 언급한 내용과 상반되는 사실, 결과, 또는 의외의 상황을 뒷절에서 전개할 때 사용합니다. '但是'와 의미가 거의 같지만, '可是'가 구어체에서 더 친근하고 부드러운 어감을 띠는 경우가 많습니다. 앞 절의 '虽然'(비록 ~이지만)과 호응하여 '虽然……，可是……' 형태로도 자주 쓰입니다. 한국어의 '하지만', '그러나', '그렇지만', '그런데'에 해당합니다.",
+      "formation": "절 1，可是 + 절 2 (또는: 虽然 + 절 1，可是 + 절 2)",
+      "examples": [
+        {
+          "translation": "당시 그녀의 부모님과 친척들은 모두 지지하지 않았지만, 그녀는 자신의 선택을 고수했습니다."
+        }
+      ]
+    },
+    "zh_结果_279": {
+      "title": "结果 (명사: 결과, 성과)",
+      "shortExplanation": "명사로서 어떠한 행동, 조사, 경기 등의 최종적인 결말이나 상태를 나타냅니다('결과', '성과').",
+      "longExplanation": "'结果'(jiéguǒ)가 명사로 쓰일 때는 어떤 일이나 행동, 실험, 조사 등이 진행된 뒤 최종적으로 나타난 상태나 수치, 성과를 가리킵니다(예: '调查结果' 조사 결과, '考试结果' 시험 결과, '比赛结果' 경기 결과, '最终结果' 최종 결과). 문장에서 주어, 목적어, 관형어로 폭넓게 사용됩니다. 한국어의 '결과', '성과'에 해당합니다.",
+      "formation": "명사 / 동사 + 结果 (예: 调查 / 比赛 / 考试 / 实验 + 结果)",
+      "examples": [
+        {
+          "translation": "조사 결과를 제출해 주십시오."
+        }
+      ]
+    },
+    "zh_结果_280": {
+      "title": "结果…… (접속사: 그 결과, 결국)",
+      "shortExplanation": "접속사로서 뒷절의 처음에 놓여 앞절의 행동이나 상황으로 인해 초래된 최종적인 결말을 이끕니다('그 결과', '결국').",
+      "longExplanation": "'结果'(jiéguǒ)는 문장을 연결하는 접속사로도 자주 쓰입니다. 앞 절에서 기술된 원인이나 행동의 추이에 따라 발생한 최종적인 귀결이나 결말을 뒷절 서두에서 제시합니다. 긍정적인 성과뿐만 아니라 부정적이거나 예상 밖의 결과에도 자연스럽게 사용할 수 있습니다. 한국어의 '그 결과', '결국', '결과적으로'에 해당합니다.",
+      "formation": "원인·행동을 나타내는 절，结果 + 결과를 나타내는 절",
+      "examples": [
+        {
+          "translation": "지난 학기에 그는 매우 열심히 공부했고, 그 결과 시험에 합격했습니다."
+        }
+      ]
+    },
+    "zh_上_281": {
+      "title": "上 + 큰 수사 (동사/부사: ~에 달하다, ~을 넘다, 수백/수천의)",
+      "shortExplanation": "'百', '千', '万' 등 큰 수량 단위 앞에 쓰여 수량이 그 수준에 도달하거나 초과함을 강조합니다('~에 달하다', '~을 넘다', '수백/수천의').",
+      "longExplanation": "'上'(shàng)이 큰 수량 단위(百 백, 千 천, 万 만, 亿 억 등) 앞에 놓이면, 그 수치에 이르거나 넘어서는 막대한 수량을 강조하는 역할을 합니다(예: '上百人' 수백 명에 달하는 사람, '上千斤' 수천 근에 달하다, '上百年' 수백 년에 이르는). 수량이 대단히 많거나 규모가 큼, 혹은 기간이 유구함을 나타낼 때 애용됩니다. 한국어의 '~에 달하다', '~에 이르다', '~을 넘어서다', '수(백/천/만)의'에 해당합니다.",
+      "formation": "上 + 큰 수량 단위(百 / 千 / 万 / 亿) + 양사 / 명사",
+      "examples": [
+        {
+          "translation": "이 도시의 지하철은 이미 백 년이 넘는 역사를 지니고 있습니다."
+        }
+      ]
+    },
+    "zh_不过_282": {
+      "title": "不过 (접속사: 다만, 그러나, 그렇지만, 단지)",
+      "shortExplanation": "가벼운 역접이나 보충 설명을 이끄는 접속사로, 뒷절 서두에 놓여 앞절에 대한 완곡한 대조나 제한을 나타냅니다('다만', '그러나', '그렇지만').",
+      "longExplanation": "'不过'(bùguò)가 접속사로 쓰일 때는 '但是'나 '可是'보다 전환의 어조가 다소 부드럽고 완곡합니다. 앞 절의 내용을 전면 부인하기보다는, 부분적인 수정이나 보충 설명, 예외적인 상황을 뒷절에서 덧붙일 때 애용됩니다. 문어와 구어에서 두루 사용됩니다. 한국어의 '다만', '그러나', '그렇지만', '단지 ~할 따름이다'에 해당합니다.",
+      "formation": "절 1，不过 + 절 2",
+      "examples": [
+        {
+          "translation": "원래는 변호사가 되고 싶었지만, 나중에 자신이 뉴스(언론)에 더 관심이 있다는 것을 알게 되었습니다."
+        }
+      ]
+    },
+    "zh_不过V_283": {
+      "title": "不过 + 동사 (부사: 그저 ~에 불과하다, 단지 ~할 뿐이다)",
+      "shortExplanation": "동사 앞에 쓰이는 부사로, 어떤 동작이나 상태가 극히 일부분에 머물며 대단치 않음을 나타냅니다('그저 ~에 불과하다', '단지 ~했을 뿐이다').",
+      "longExplanation": "'不过'(bùguò)가 동사 술어 앞에 부사로 쓰일 때는 '只'(오직)나 '只不过'(단지 ~에 지나지 않다)와 마찬가지로 동작의 범위가 매우 한정적이며 별다른 중요성을 갖지 않음을 완곡히 표현합니다. 문말에 '罢了'나 '而已'(~에 불과하다)와 함께 호응하여 어감을 한층 강조하기도 합니다. 한국어의 '그저 ~에 불과하다', '단지 ~했을 뿐이다'에 해당합니다.",
+      "formation": "주어 + 不过 + 동사 (+ 목적어) (+ 罢了 / 而已)",
+      "examples": [
+        {
+          "translation": "우리는 그저 업무적인 문제에 대해 약간 이야기했을 뿐이고, 다른 것은 전혀 이야기하지 않았습니다."
+        }
+      ]
+    },
+    "zh_确实_284": {
+      "title": "确实 (부사: 확실히, 정말로, 과연)",
+      "shortExplanation": "서술어 앞에 놓이는 부사로, 어떤 사실이나 상황이 틀림없이 객관적 진실임을 긍정하며 강조합니다('확실히', '정말로', '과연').",
+      "longExplanation": "'确实'(quèshí)는 어떤 사실, 판단, 성질이 객관적 진실에 부합하여 의심의 여지가 없음을 나타내는 부사입니다. 동사, 형용사 또는 '是...' 구문 앞에 위치하여 단언하거나 수긍하는 어감을 전달합니다. 앞 절에서 '确实'로 사실을 인정한 후 뒷절에서 '但是/但'으로 조건을 다는 문맥에서도 흔히 활용됩니다. 한국어의 '확실히', '정말로', '과연', '틀림없이'에 해당합니다.",
+      "formation": "주어 + 确实 + 서술어 (동사 / 형용사 / 是…)",
+      "examples": [
+        {
+          "translation": "사랑이 결혼의 중요한 이유인 것은 확실하지만, 사랑만으로는 충분하지 않습니다."
+        }
+      ]
+    },
+    "zh_在S看来_285": {
+      "title": "在……看来 (개사구: ~가 보기에, ~의 생각으로는)",
+      "shortExplanation": "문두 또는 주어 앞에 위치하여 특정 주체의 입장이나 관점에서 바라본 견해를 나타냅니다('~가 보기에', '~의 생각으로는', '~의 입장에서는').",
+      "longExplanation": "'在 + 주체(명사 / 대명사) + 看来'(zài... kànlai)는 특정한 사람이나 집단의 시각, 입장, 관점을 제시하는 전치사(개사) 표현입니다. 이 구문 뒤에 이어지는 절에서는 해당 주체의 주관적인 판단, 의견, 평가가 서술됩니다(예: '在我看来' 내가 보기에, '在专家看来' 전문가의 관점에서는). 한국어의 '~가 보기에', '~의 관점에서는', '~의 생각으로는'에 해당합니다.",
+      "formation": "在 + 명사 / 대명사 (주체) + 看来，판단 절",
+      "examples": [
+        {
+          "translation": "많은 사람들이 보기에, 대중음악을 듣는 것은 그저 젊은이들의 취미일 뿐입니다."
+        }
+      ]
+    },
+    "zh_由于_286": {
+      "title": "由于…… (접속사: ~로 인하여, ~ 때문에, ~ 덕분에)",
+      "shortExplanation": "원인이나 이유를 이끄는 접속사로, 앞절 서두에 놓여 객관적인 원인을 밝히고 뒷절의 결과로 연결합니다('~로 인하여', '~ 때문에', '~ 덕분에').",
+      "longExplanation": "'由于'(yóuyú)는 인과관계의 원인을 나타내는 대표적인 접속사로, '因为'에 비해 격식 있고 객관적인 문어체적 성격이 강합니다. 문장의 앞부분에 위치하여 어떤 상황이나 사건이 발생하게 된 객관적인 배경과 사유를 이끌며, 뒷절에서 '因此', '所以', '因而' 등과 자연스럽게 호응합니다. 한국어의 '~로 인하여', '~ 때문에', '~의 덕분으로'에 해당합니다.",
+      "formation": "由于 + 원인 절 / 어구，(因此 / 所以 +) 결과 절",
+      "examples": [
+        {
+          "translation": "우리의 공동 노력 덕분에, 임무가 예정보다 일찍 완수되었습니다."
+        }
+      ]
+    },
+    "zh_由于N_287": {
+      "title": "由于 + 명사 (개사: ~의 사유로, ~로 인해, ~ 때문에)",
+      "shortExplanation": "명사나 명사구 바로 앞에 쓰이는 전치사(개사)로, 뒤따르는 결과의 직접적인 원인이나 사유를 제시합니다('~의 사유로', '~로 인해', '~ 때문에').",
+      "longExplanation": "'由于'(yóuyú)가 전치사(개사)로 쓰일 때는 명사나 명사구를 바로 뒤에 취하여 원인을 나타내는 전치사구를 이룹니다(예: '由于天气原因' 날씨 사유로 인하여, '由于种种原因' 여러 가지 이유로, '由于工作需要' 업무상의 필요로 인해). 문장의 맨 앞이나 주어 뒤에 놓여 문장 전체를 수식하는 부사어 역할을 담당합니다. 한국어의 '~의 사유로', '~로 인해', '~ 때문에'에 해당합니다.",
+      "formation": "由于 + 명사 / 명사구，주어 + 서술어",
+      "examples": [
+        {
+          "translation": "여러 가지 원인으로 인해, 우리는 기존 계획을 부득이하게 변경해야 했습니다."
+        }
+      ]
+    },
+    "zh_比如_288": {
+      "title": "比如…… (동사/접속사: 예를 들면, 예컨대)",
+      "shortExplanation": "앞서 언급한 포괄적인 설명이나 주장에 대해 구체적인 실례를 들어 설명할 때 쓰입니다('예를 들면', '예컨대').",
+      "longExplanation": "'比如'(bǐrú)는 동사 또는 접속어로서, 앞 절에서 언급한 총괄적 내용이나 일반적 명제에 대해 이해를 돕기 위한 구체적인 예시를 제시할 때 사용합니다. '比如' 뒤에는 단어, 구, 혹은 완전한 문장이 올 수 있으며, 나열의 끝에 '等'이나 '等等'(~ 등)을 덧붙여 마무리하는 경우가 많습니다. 한국어의 '예를 들면', '예컨대', '가령'에 해당합니다.",
+      "formation": "총괄적인 설명，比如 + 구체적인 예시 1, 예시 2 (+ 等 / 等等)",
+      "examples": [
+        {
+          "translation": "여행을 떠나기 전에 몇 군데를 갈지, 차편은 어떻게 이용할지 등과 같은 계획을 미리 세우는 것이 가장 좋습니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_通过_274": {
+      "title": "通过（动词：穿过特定空间或路段）",
+      "shortExplanation": "作动词表示从人、物或空间的这一端穿行到另一端；表示“走过、穿过、通行”。",
+      "longExplanation": "“通过”（tōngguò）作为移动动词使用时，强调从特定的空间、通道、街道、桥梁或关卡从一端走到另一端（如“通过大桥”、“通过海关”、“步行通过”）。在句中可单独作谓语，也常与出行方式动词连用。",
+      "formation": "出行方式（步行 / 开车等） + 通过（+ 处所）",
+      "examples": [
+        {
+          "translation": "这条街道只能步行通行。"
+        }
+      ]
+    },
+    "zh_经过_275": {
+      "title": "经过（动词：从某地通过或路过）",
+      "shortExplanation": "作动词表示在去往某处的途中穿过或路过某个地点；表示“经过、路过”。",
+      "longExplanation": "“经过”（jīngguò）作动作动词时，指在行进过程中经过某处（如“经过北京”、“经过超市”、“正好经过这儿”）。与强调“从内部一端穿到另一端”的“通过”不同，“经过”侧重于行进路线上包含或掠过某个地点。",
+      "formation": "主语 + 经过 + 处所 / 地点",
+      "examples": [
+        {
+          "translation": "我刚好路过这里，顺便过来看看你。"
+        }
+      ]
+    },
+    "zh_通过_276": {
+      "title": "通过（动词：达到标准、及格、议案获准）",
+      "shortExplanation": "作动词表示达到既定的标准或要求，如考试及格、面试合格，或议案方案获得正式赞同批准；表示“通过、及格、获批”。",
+      "longExplanation": "“通过”（tōngguò）作抽象动词时，主要有两种常见用法：(1) 表示达到某种标准或考核要求，如通过考试、通过面试、通过检验等；(2) 表示议案、方案、决议等获得有关部门或会议的正式批准或认可（如“方案获得一致通过”）。",
+      "formation": "主语 + 通过 + 考试 / 面试 / 检验 / 方案",
+      "examples": [
+        {
+          "translation": "我已经通过了那家公司的面试。"
+        }
+      ]
+    },
+    "zh_经过_277": {
+      "title": "经过（名词：事情发展的全过程、始末）",
+      "shortExplanation": "作名词指事物发展变化的完整过程、来龙去脉或经历的情节；表示“过程、经过、始末”。",
+      "longExplanation": "“经过”（jīngguò）作名词时，指某一事件从发生、发展到结局的具体过程与情节始末（如“事情的经过”、“事故经过”、“了解全过程的经过”）。在句中常作动词的宾语，或由“的”连接修饰名词。",
+      "formation": "事物 / 事件 + 的 + 经过",
+      "examples": [
+        {
+          "translation": "小王把事情的整个经过都告诉我了。"
+        }
+      ]
+    },
+    "zh_可是_278": {
+      "title": "可是（连词：表转折，表示但是、然而）",
+      "shortExplanation": "转折连词，用于后一分句句首，表示意思的转折与对比；表示“可是、但是、然而”。",
+      "longExplanation": "“可是”（kěshì）是常用的转折连词，放在后一分句的开头，表示后半句的内容与前半句所陈述的事实、预期产生相反或出乎意料的对照。“可是”与“但是”意义基本相同，但“可是”在口语色彩上更为自然柔和。前面也常与“虽然”搭配使用，构成“虽然……，可是……”句式。",
+      "formation": "分句1，可是 + 分句2（或：虽然 + 分句1，可是 + 分句2）",
+      "examples": [
+        {
+          "translation": "当时她的父母和亲戚都不支持她，可是她依然坚持了自己的选择。"
+        }
+      ]
+    },
+    "zh_结果_279": {
+      "title": "结果（名词：事物的结局、成果）",
+      "shortExplanation": "作名词指在一定阶段或事情发展之后最后呈现出来的状况、成效或结论；表示“结果、成果”。",
+      "longExplanation": "“结果”（jiéguǒ）作名词时，指由某种原因、行动、调查或比赛最终引发并呈现出来的局面、事实或成绩（如“调查结果”、“考试结果”、“比赛结果”、“良好的结果”）。在句中常充当主语、宾语或定语。",
+      "formation": "名词 / 动词 + 结果（如：调查 / 比赛 / 考试 / 实验 + 结果）",
+      "examples": [
+        {
+          "translation": "请把调查得出的结果交上来。"
+        }
+      ]
+    },
+    "zh_结果_280": {
+      "title": "结果……（连词：连接分句表示导致的结果）",
+      "shortExplanation": "连词，用于后一分句开头，引出前面原因或行动所导致的最终结果；表示“结果、结局是”。",
+      "longExplanation": "“结果”（jiéguǒ）作连词使用时，置于后一分句的句首（通常在逗号之后），用来交代前半句所陈述的事实、行动最终产生的结局。所引出的结果既可以是积极的，也可以是消极或出乎意料的，常独立引出结果，前半句不必非带“因为”。",
+      "formation": "原因 / 行为分句，结果 + 结果分句",
+      "examples": [
+        {
+          "translation": "上学期他学习非常用功，结果考试顺利及格了。"
+        }
+      ]
+    },
+    "zh_上_281": {
+      "title": "上 + 较大数量词（动词/副词：表示达到某一较大数量）",
+      "shortExplanation": "放在“百、千、万、亿”等较大数量词前，表示数量达到或超过该数目，带有夸张或强调数量多的语气；表示“达到、长达、多达”。",
+      "longExplanation": "“上”（shàng）置于较大数词（如百、千、万、亿等）之前，起动词或程度副词的作用，强调数量之多、规模之大或时间之久（如“上百人”、“上千元”、“上万册”、“上百年”）。通常用来突显所指事物规模非同寻常。",
+      "formation": "上 + 较大数量单位（百 / 千 / 万 / 亿） + 量词 / 名词",
+      "examples": [
+        {
+          "translation": "这座城市的地铁已经有长达上百年的历史了。"
+        }
+      ]
+    },
+    "zh_不过_282": {
+      "title": "不过（连词：轻度转折，表示只是、可是）",
+      "shortExplanation": "表示轻微转折的连词，用于后一分句句首，在前半句语义的基础上进行补充、修正或限定；表示“不过、只是、可是”。",
+      "longExplanation": "“不过”（bùguò）作连词时，语气比“但是”和“可是”要更加轻柔委婉。它并不是要完全否定前半句的内容，而是对前半句的说法进行补充说明、限制修正或提出另外一面（如“东西挺好，不过价格有点贵”）。口语和书面语中均非常多见。",
+      "formation": "分句1，不过 + 分句2",
+      "examples": [
+        {
+          "translation": "我原本想成为一名律师，不过后来发现自己对新闻更感兴趣。"
+        }
+      ]
+    },
+    "zh_不过V_283": {
+      "title": "不过 + 动词（副词：表示仅仅、只不过）",
+      "shortExplanation": "置于动词前的副词，表示范围受限，程度轻微，含有“仅仅、只不过”的意思；表示“仅仅、只是”。",
+      "longExplanation": "“不过”（bùguò）作副词修饰动词谓语时，相当于“只”或“只不过”。用来指某种行为或情况极其有限、微不足道，并无夸大或特殊之处。句尾常伴有语气助词“罢了”或“而已”以加强语调。",
+      "formation": "主语 + 不过 + 动词（+ 宾语）（+ 罢了 / 而已）",
+      "examples": [
+        {
+          "translation": "我们只是谈了谈工作方面的问题而已，别的什么都没谈。"
+        }
+      ]
+    },
+    "zh_确实_284": {
+      "title": "确实（副词：表示情况属实、的确）",
+      "shortExplanation": "副词，用于谓语前面，表示情况完全符合事实，具有明确的肯定和确认语气；表示“确实、的确”。",
+      "longExplanation": "“确实”（quèshí）作副词使用时，置于动词、形容词或“是……”等谓语结构前，表示所述事情完全真实客观、不容置疑。常见于先用“确实”承认前半句的事实或观点，随后在后半句用“但是/但”进行转折或补充说理的句型中。",
+      "formation": "主语 + 确实 + 谓语（动词 / 形容词 / 是…）",
+      "examples": [
+        {
+          "translation": "爱情确实是步入婚姻的重要原因，但仅仅拥有爱情是不够的。"
+        }
+      ]
+    },
+    "zh_在S看来_285": {
+      "title": "在……看来（介词短语：表示从某人的角度或立场来看）",
+      "shortExplanation": "介词短语，置于句首或主语前，引出观察、思考的主体与立场；表示“在……看来、依……之见”。",
+      "longExplanation": "“在 + 主体（名词/代词） + 看来”（zài... kànlai）用于明确表示下文的见解、评价或判断是从哪一个特定主体的角度出发的。通常用逗号隔开，后接该主体的观点分句（如“在我看来”、“在老师看来”、“在很多人看来”）。书面与口语均极常用。",
+      "formation": "在 + 名词 / 代词（主体） + 看来，观点分句",
+      "examples": [
+        {
+          "translation": "在许多人看来，听流行音乐仅仅是年轻人的个人爱好。"
+        }
+      ]
+    },
+    "zh_由于_286": {
+      "title": "由于……（连词：表示原因或因果关系）",
+      "shortExplanation": "连词，置于前一分句句首，引出导致后文结果的客观原因或理由；表示“由于、因为”。",
+      "longExplanation": "“由于”（yóuyú）作连词使用，书面语色彩较“因为”更加浓厚。常用于句子开头交代客观事实、背景原因，后一分句常与“因此”、“所以”、“因而”等连词呼应，引出最终造成的结果。",
+      "formation": "由于 + 原因分句 / 短语，（因此 / 所以 +）结果分句",
+      "examples": [
+        {
+          "translation": "由于大家的共同努力，这项任务得以提前完成。"
+        }
+      ]
+    },
+    "zh_由于N_287": {
+      "title": "由于 + 名词（介词：表示由某种客观原因所致）",
+      "shortExplanation": "介词，直接与名词或名词性短语组合，构成表示原因的状语；表示“由于、因”。",
+      "longExplanation": "“由于”（yóuyú）作介词使用时，后接名词或名词短语（如“由于天气原因”、“由于种种原因”、“由于身体状况”），构成介词短语充当句子状语。多置于主语之前或之后，说明事情发生的具体起因或根据，语气正式严谨。",
+      "formation": "由于 + 名词 / 名词短语，主语 + 谓语",
+      "examples": [
+        {
+          "translation": "由于各种各样的原因，我们不得不改变原先的计划。"
+        }
+      ]
+    },
+    "zh_比如_288": {
+      "title": "比如……（动词/连词：用来举例说明）",
+      "shortExplanation": "动词或连词，用于总述之后引出具体实例，使说明更加清晰形象；表示“比如、例如、譬如”。",
+      "longExplanation": "“比如”（bǐrú）用于在前面提出的一般性观点、总体概括或分类之后，引出一个或若干个具体生动的例子来进行阐释证明。后面既可以接词语、短语，也可以接完整分句。在列举项的末尾常加“等”或“等等”收尾。",
+      "formation": "总述 / 观点，比如 + 具体事例1，具体事例2（+ 等 / 等等）",
+      "examples": [
+        {
+          "translation": "旅行之前最好先做个计划，比如打算去哪几个地方、怎样乘车出行等等。"
+        }
+      ]
+    }
+  }
+}

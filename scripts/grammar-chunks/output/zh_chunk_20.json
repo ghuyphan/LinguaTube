@@ -1,0 +1,574 @@
+{
+  "vi": {
+    "zh_连O也都V_289": {
+      "title": "连 + Tân ngữ + 也/都 + Động từ (Ngay cả... cũng...)",
+      "shortExplanation": "Đưa tân ngữ lên sau '连' trong cấu trúc '连……也/都……' để nhấn mạnh trường hợp cực đoan đối với đối tượng của hành động; 'ngay cả... cũng...'.",
+      "longExplanation": "'连……也/都……' (lián... yě/ dōu...) là cấu trúc dùng để nhấn mạnh trường hợp cực đoan hoặc bất ngờ nhằm làm nổi bật sự việc. Khi tân ngữ được đưa lên đứng sau '连' (thường nằm sau chủ ngữ hoặc ở đầu câu), câu nhấn mạnh rằng ngay cả đối tượng khó khăn, bất ngờ hay tiêu biểu nhất đó mà chủ thể cũng thực hiện được (hoặc không thể thực hiện được). Tương đương với 'ngay cả... cũng...', 'đến cả... cũng...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 连 + Tân ngữ + 也 / 都 + Động từ",
+      "examples": [
+        {
+          "translation": "Bạn giỏi quá, ngay cả báo tiếng Trung cũng đọc hiểu được."
+        }
+      ]
+    },
+    "zh_连S也都V_290": {
+      "title": "连 + Chủ ngữ + 也/都 + Động từ (Ngay cả... cũng...)",
+      "shortExplanation": "Đặt '连' trước chủ ngữ trong cấu trúc '连……也/都……' để nhấn mạnh chủ thể mang tính tiêu biểu hoặc cực đoan nhất; 'ngay cả... cũng...'.",
+      "longExplanation": "Trong cấu trúc '连……也/都……', khi '连' đứng trước chủ ngữ, nó dùng để nêu ra một chủ thể cực đoan nhất nhằm ngụ ý: nếu đến ngay cả chủ thể này mà còn như vậy thì những đối tượng khác hiển nhiên cũng thế (hoặc không thể làm được). Cấu trúc này thường xuất hiện trong câu hỏi tu từ hoặc câu điều kiện giả thiết để tăng cường sức thuyết phục. Tương đương với 'ngay cả... cũng...', 'đến cả... cũng...' trong tiếng Việt.",
+      "formation": "连 + Chủ ngữ + 也 / 都 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Nếu ngay cả bản thân bạn còn không thích chính mình, thì làm sao có thể khiến người khác thích bạn được chứ?"
+        }
+      ]
+    },
+    "zh_否则_291": {
+      "title": "否则 (Liên từ: Nếu không thì / Bằng không thì)",
+      "shortExplanation": "Liên từ biểu thị điều kiện giả thiết ngược lại, đứng ở đầu phân câu sau để chỉ ra kết quả hoặc suy đoán nếu vế trước không thành; 'nếu không thì', 'bằng không'.",
+      "longExplanation": "'否则' (fǒuzé) là liên từ biểu thị quan hệ điều kiện ngược trong văn viết và khẩu ngữ trang trọng, mang nghĩa tương đương với 'nếu không như vậy thì...'. Nó đứng ở đầu vế câu sau để nêu ra hậu quả bất lợi, hành động đối lập hoặc suy đoán logic dựa trên việc tình huống ở vế trước không được đáp ứng. Tương đương với 'nếu không thì', 'bằng không' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，否则 + Mệnh đề 2 (kết quả / suy đoán ngược)",
+      "examples": [
+        {
+          "translation": "Anh ấy nhất định có chuyện quan trọng cần tìm bạn, nếu không thì đã chẳng gọi nhiều cuộc điện thoại đến thế."
+        }
+      ]
+    },
+    "zh_无论不管Q都_292": {
+      "title": "无论/不管 + Từ để hỏi + 都 (Bất kể... đều...)",
+      "shortExplanation": "Kết hợp '无论/不管' với từ để hỏi hoặc hình thức lựa chọn ở phân câu trước, phân câu sau dùng '都' để biểu thị trong mọi điều kiện thì kết quả đều không đổi; 'bất kể... đều...'.",
+      "longExplanation": "'无论' (wúlùn - trang trọng hơn) và '不管' (bùguǎn - khẩu ngữ hơn) là các liên từ biểu thị điều kiện vô điều kiện. Phân câu trước chứa từ để hỏi (như 什么, 怎么, 谁, 哪儿) hoặc hình thức chính phản / lựa chọn (như 是……还是……, dạng lặp lại khẳng định phủ định), phân câu sau bắt buộc đi kèm phó từ '都' (hoặc '也') để nhấn mạnh rằng dù ở bất kỳ hoàn cảnh hay điều kiện nào thì kết quả hay hành động vẫn giữ nguyên không đổi. Tương đương với 'bất kể / dù cho [ai/gì/đâu]... đều...' trong tiếng Việt.",
+      "formation": "无论 / 不管 + Từ để hỏi / Mệnh đề lựa chọn + 都 + Động từ / Tính từ",
+      "examples": []
+    },
+    "zh_然而_294": {
+      "title": "然而 (Liên từ: Thế nhưng / Tuy nhiên / Nhưng mà)",
+      "shortExplanation": "Liên từ biểu thị quan hệ chuyển tiếp mang sắc thái trang trọng, thường dùng trong văn viết; 'thế nhưng', 'tuy nhiên'.",
+      "longExplanation": "'然而' (rán'ér) là liên từ biểu thị quan hệ chuyển ý (nghịch tiếp) mang đậm màu sắc văn viết. Nó đứng ở đầu phân câu sau để biểu thị kết quả, tình hình thực tế đối lập hoặc khác biệt so với sự việc được nêu ra ở phân câu trước. Ngữ khí trang trọng hơn '但是' hay '可是'. Tương đương với 'thế nhưng', 'tuy nhiên', 'nhưng mà' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，然而 + Mệnh đề 2",
+      "examples": []
+    },
+    "zh_同时_298": {
+      "title": "同时…… (Liên từ / Phó từ: Đồng thời... / Cùng lúc đó...)",
+      "shortExplanation": "Đứng ở đầu phân câu sau để biểu thị hai hành động, trạng thái cùng diễn ra song song hoặc bổ sung ý nghĩa tăng tiến; 'đồng thời...', 'cùng lúc đó...'.",
+      "longExplanation": "'同时' (tóngshí) khi đứng ở đầu phân câu thứ hai đóng vai trò liên từ hoặc phó từ liên kết, biểu thị hai sự việc, hành động cùng song song tồn tại trong cùng một thời điểm, hoặc bổ sung thêm một khía cạnh tích cực, song hành khác ('không những... mà đồng thời còn...'). Phía sau thường kết hợp với '也' hoặc '还'. Tương đương với 'đồng thời', 'cùng lúc đó' trong tiếng Việt.",
+      "formation": "Mệnh đề 1，同时（也 / 还） + Mệnh đề 2",
+      "examples": [
+        {
+          "translation": "Đọc sách có thể làm phong phú tri thức của bạn, đồng thời còn bồi đắp thêm thế giới tình cảm của bạn."
+        }
+      ]
+    },
+    "zh_的同时_299": {
+      "title": "……的同时 (Cấu trúc chỉ thời gian / liên kết: Trong khi... / Đồng thời với việc...)",
+      "shortExplanation": "Đứng sau động từ hoặc mệnh đề biểu thị một hành động khác diễn ra đồng thời với hành động đó; 'trong khi...', 'đồng thời với việc...'.",
+      "longExplanation": "'……的同时' (…… de tóngshí) là kết cấu định ngữ kết hợp với danh từ thời gian '同时', thường đứng sau cụm động từ hoặc mệnh đề (phía trước có thể có '在'). Cấu trúc này dùng để diễn đạt ý: trong quá trình đang thực hiện một hành động hoặc ở vào một trạng thái nào đó, thì một hành động hay sự việc khác cũng song song diễn ra. Tương đương với 'trong lúc...', 'trong khi...', 'đồng thời với việc...' trong tiếng Việt.",
+      "formation": "(在 +) Động từ / Mệnh đề + 的同时，Chủ ngữ + cũng / còn...",
+      "examples": [
+        {
+          "translation": "Trong lúc học tiếng Trung, tôi đồng thời còn tìm hiểu thêm về văn hóa Trung Quốc."
+        }
+      ]
+    },
+    "zh_并并且V_300": {
+      "title": "并/并且 + Động từ (Liên từ: Đồng thời / Và / Hơn nữa)",
+      "shortExplanation": "Liên từ dùng để nối hai động từ hoặc đoản ngữ động từ, biểu thị quan hệ song hành, tiếp nối hoặc tăng tiến; 'đồng thời', 'và', 'hơn nữa'.",
+      "longExplanation": "'并' (bìng) và '并且' (bìngqiě) là các liên từ thường dùng để nối tiếp các động từ, tính từ hoặc cụm vị ngữ có cùng một chủ ngữ. Chúng biểu thị rằng hai hành động diễn ra song song ('vừa... vừa...'), tuần tự tiếp nối theo trình tự logic, hoặc hành động phía sau là một bước tiến sâu sắc hơn, cụ thể hơn so với hành động phía trước. '并' thường nối các động từ ngắn gọn trong văn viết, còn '并且' có thể nối các phân câu hoàn chỉnh. Tương đương với 'và', 'đồng thời', 'hơn nữa' trong tiếng Việt.",
+      "formation": "Động từ 1 / Mệnh đề 1，并 / 并且 + Động từ 2",
+      "examples": []
+    },
+    "zh_再也_303": {
+      "title": "再……也…… (Dù có... đi chăng nữa thì cũng...)",
+      "shortExplanation": "Cấu trúc biểu thị sự nhượng bộ giả thiết: cho dù đạt đến mức độ cực hạn thì kết quả vẫn không thể thay đổi; 'dù có... đến mấy cũng...'.",
+      "longExplanation": "'再……也……' (zài... yě...) là cấu trúc biểu thị ý nhượng bộ giả thiết. Trong đó '再' đi kèm với động từ hoặc tính từ, biểu thị mức độ cực cao hoặc hành động lặp đi lặp lại đến cực hạn ('cho dù có làm... nhiều hơn nữa'); vế sau dùng '也' kết hợp với hình thức phủ định hoặc kết quả bất biến nhằm khẳng định kết cục vẫn không đổi. Tương đương với 'dù có... đến mấy cũng...', 'dù thế nào cũng vẫn...' trong tiếng Việt.",
+      "formation": "再 + Động từ / Tính từ + 也 + Phủ định / Động từ",
+      "examples": [
+        {
+          "translation": "Chuyện cũng đã xảy ra rồi, bạn có hối hận đến mấy cũng không thể thay đổi được gì, đừng đau lòng nữa."
+        }
+      ]
+    },
+    "zh_对于N_304": {
+      "title": "对于 + Danh từ (Giới từ: Đối với Danh từ)",
+      "shortExplanation": "Giới từ dùng để giới thiệu đối tượng, vấn đề hoặc phạm vi mà thái độ, quan điểm, hành động hướng tới; 'đối với...', 'về mặt...'.",
+      "longExplanation": "'对于' (duìyú) là giới từ dùng để nêu ra sự vật, hiện tượng hoặc con người được xét đến, từ đó bày tỏ nhận xét, thái độ hay áp dụng biện pháp. Ngữ đoạn giới từ '对于 + Danh từ' có thể đứng ở đầu câu làm trạng ngữ (ngăn cách bằng dấu phẩy) hoặc đứng giữa chủ ngữ và vị ngữ. Khác với '对' (có thể dùng trong cả văn nói và kết hợp với động từ chỉ phương hướng hành vi), '对于' thiên về văn viết và nhấn mạnh vào việc đưa ra đối tượng được bàn luận. Tương đương với 'đối với', 'về phần' trong tiếng Việt.",
+      "formation": "对于 + Danh từ / Đoản ngữ danh từ，Chủ ngữ... (hoặc: Chủ ngữ + 对于 + Danh từ...)",
+      "examples": []
+    },
+    "zh_关于N_307": {
+      "title": "关于 + Danh từ (Giới từ: Về... / Liên quan đến...)",
+      "shortExplanation": "Giới từ dùng để dẫn ra phạm vi, chủ đề hoặc đối tượng được đề cập; 'về...', 'liên quan đến...'.",
+      "longExplanation": "'关于' (guānyú) là giới từ dùng để chỉ rõ phạm vi vấn đề, đề tài hoặc chủ đề của câu chuyện, báo cáo, nghiên cứu. Cụm '关于 + Danh từ' thường đứng ở đầu câu (trước chủ ngữ) làm trạng ngữ biểu thị chủ đề thảo luận, hoặc kết hợp với '的' đứng trước danh từ trung tâm để tạo thành cụm định ngữ (ví dụ: '关于……的书' - sách về đề tài...). Khác với '对于' (chú trọng vào đối tượng chịu sự tác động hay thái độ), '关于' chú trọng vào việc giới thiệu phạm vi đề tài. Tương đương với 'về', 'liên quan đến' trong tiếng Việt.",
+      "formation": "关于 + Danh từ / Sự việc，Chủ ngữ... (hoặc: 关于 + Danh từ + 的 + Danh từ)",
+      "examples": [
+        {
+          "translation": "Về kế hoạch khảo sát lần này, giám đốc nói có rất nhiều điểm chưa rõ ràng."
+        }
+      ]
+    },
+    "zh_MMN都_308": {
+      "title": "Lượng từ lặp lại + (Danh từ) + 都 (Từng... đều... / Mỗi một... đều...)",
+      "shortExplanation": "Hình thức lặp lại của lượng từ kết hợp với '都' nhằm biểu thị tính toàn thể không có ngoại lệ; 'mỗi một... đều...', 'từng... một đều...'.",
+      "longExplanation": "Trong tiếng Hán, việc lặp lại lượng từ đơn âm tiết theo dạng 'AA' (như 个个, 件件, 张张, 条条, 本本, 天天, 人人) mang ý nghĩa là 'mỗi một', 'tất cả từng cá thể'. Khi đứng trước danh từ (hoặc độc lập làm chủ ngữ), nó thường bắt buộc kết hợp với phó từ '都' ở phía sau để nhấn mạnh tính chất toàn thể, bao quát trọn vẹn và không có bất kỳ ngoại lệ nào. Tương đương với 'mỗi một [danh từ] đều...', 'từng [danh từ] một đều...' trong tiếng Việt.",
+      "formation": "Lượng từ + Lượng từ (+ Danh từ) + 都 + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Từng việc nhỏ một đều nên được xem như là một cơ hội để học hỏi."
+        }
+      ]
+    },
+    "zh_相反_309": {
+      "title": "相反，…… (Liên từ / Phó từ: Trái lại... / Ngược lại...)",
+      "shortExplanation": "Đứng ở đầu phân câu sau để biểu thị quan hệ chuyển ý đối lập rõ rệt với điều đã nói ở phân câu trước; 'trái lại...', 'ngược lại...'.",
+      "longExplanation": "'相反' (xiāngfǎn) khi đứng ở đầu phân câu thứ hai (thường có dấu phẩy đi kèm) có vai trò như một liên từ chuyển ý, dùng để đối chiếu hai tình huống hoàn toàn trái ngược nhau. Nó biểu thị rằng thực tế, hành động hay kết quả không những không giống với những gì đã nêu ở vế trước (thường là vế trước mang tính phủ định hoặc nêu kỳ vọng sai), mà trái lại hoàn toàn ngược chiều. Tương đương với 'trái lại', 'ngược lại' trong tiếng Việt.",
+      "formation": "Mệnh đề 1。相反，+ Mệnh đề 2 (hoặc: Mệnh đề 1，相反 + Mệnh đề 2)",
+      "examples": []
+    },
+    "zh_和跟N相反_314": {
+      "title": "和/跟 + Danh từ + 相反 (Trái ngược với Danh từ)",
+      "shortExplanation": "Cấu trúc biểu thị một sự vật, kết quả hoặc hiện tượng đối lập hoàn toàn so với đối tượng được so sánh; 'trái ngược với...', 'ngược với...'.",
+      "longExplanation": "Cấu trúc '和/跟 + Danh từ + 相反' (hé/ gēn... xiāngfǎn) dùng để so sánh hai sự vật, tình huống hoặc quan điểm, chỉ ra rằng chủ thể có tính chất hoặc phương hướng hoàn toàn đối lập với đối tượng sau '和/跟'. Trong đó thành phần danh từ có thể là danh từ cụ thể, danh từ trừu tượng hoặc một mệnh đề danh hóa (như '想的' - điều đã nghĩ, '说的' - điều đã nói, '预期的' - điều đã kỳ vọng). Phía trước '相反' thường có các phó từ chỉ mức độ như '正好', '完全', '几乎' để gia tăng ngữ khí. Tương đương với 'trái ngược với...', 'ngược hẳn với...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 和 / 跟 + Danh từ / Đoản ngữ danh từ + 相反",
+      "examples": [
+        {
+          "translation": "Kết quả điều tra gần như hoàn toàn trái ngược với những gì họ nghĩ."
+        }
+      ]
+    },
+    "zh_大概也许VA_315": {
+      "title": "大概/也许 + Động từ/Tính từ (Phó từ phỏng đoán: Có lẽ / Chắc là)",
+      "shortExplanation": "Phó từ biểu thị sự suy đoán, ước lượng không hoàn toàn chắc chắn về hành động hoặc trạng thái; 'có lẽ', 'chắc là'.",
+      "longExplanation": "'大概' (dàgài) và '也许' (yěxǔ) là các phó từ chỉ ngữ khí suy đoán, ước chừng, thường đứng trước động từ hoặc tính từ làm trạng ngữ. '大概' biểu thị sự phán đoán có cơ sở khá chắc chắn dựa trên tình hình thực tế (độ tin cậy tương đối cao, thường dịch là 'chắc là', 'có lẽ', hoặc ước lượng số lượng 'khoảng chừng'). Còn '也许' biểu thị một khả năng có thể xảy ra nhưng người nói không dám khẳng định chắc chắn (dịch là 'có lẽ', 'họa chăng'). Tương đương với 'có lẽ', 'chắc là' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 大概 / 也许 + Động từ / Tính từ",
+      "examples": []
+    }
+  },
+  "ja": {
+    "zh_连O也都V_289": {
+      "title": "连 ＋ 目的語 ＋ 也/都 ＋ 動詞（～でさえも…する）",
+      "shortExplanation": "目的語を「连」の直後に前置し、「连……也/都……」の構文で極端な事例を挙げて強調します（「～でさえも…」「～までも…」）。",
+      "longExplanation": "「连……也/都……」（lián... yě/ dōu...）は極端な事例を挙げて事態を強調する代表的な構文です。目的語を「连」の後ろ（文頭または主語の直後）に配置することで、「その極端な対象でさえも動作の対象になる（あるいは達成できる／できない）」という意外性や高度な程度を際立たせます。日本語の「～でさえも…」「～までも…できる／できない」に相当します。",
+      "formation": "（主語 ＋）连 ＋ 目的語 ＋ 也 / 都 ＋ 動詞",
+      "examples": [
+        {
+          "translation": "あなたはずごいですね、中国語の新聞でさえ読んで理解できるなんて。"
+        }
+      ]
+    },
+    "zh_连S也都V_290": {
+      "title": "连 ＋ 主語 ＋ 也/都 ＋ 動詞（～でさえも…）",
+      "shortExplanation": "主語の前に「连」を置き、最も代表的または極端な主体を提示して後続の事態を強調します（「～でさえも…」「～自身も…」）。",
+      "longExplanation": "「连……也/都……」構文において、主語の直前に「连」を配置する用法です。最も身近な存在や当然できるはずの主体を極端な例として挙げることで、「この主体でさえもそうであるならば、他の人はなおさらだ」というニュアンスを際立たせます。反語表現や仮定条件節で頻繁に使用されます。日本語の「～でさえも…」「～自身も…」に相当します。",
+      "formation": "连 ＋ 主語 ＋ 也 / 都 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "もしあなた自身でさえ自分を好きになれないのなら、どうして他人に好きになってもらえるでしょうか。"
+        }
+      ]
+    },
+    "zh_否则_291": {
+      "title": "否则（接続詞：そうでなければ・さもなければ）",
+      "shortExplanation": "反対の仮定を表す接続詞で、後節の冒頭に置き「もしそうでなければ…」という帰結や推測を導きます（「そうでなければ」「さもなければ」）。",
+      "longExplanation": "「否则」（fǒuzé）は「如果不是这样」（もしそうでなければ）の縮約から生まれた接続詞で、書面語や改まった口語でよく用いられます。前節で述べた状況や要求が満たされない場合に起こりうる結果や、逆の前提に立った推論を後節の冒頭で導きます。日本語の「そうでなければ」「さもなければ」に相当します。",
+      "formation": "節1，否则 ＋ 節2（結果・推測）",
+      "examples": [
+        {
+          "translation": "彼はきっと重要な用事があってあなたを探しているはずです。そうでなければこんなに何度も電話をかけてくることはありません。"
+        }
+      ]
+    },
+    "zh_无论不管Q都_292": {
+      "title": "无论/不管 ＋ 疑問詞 ＋ 都（～であってもすべて…）",
+      "shortExplanation": "前節で「无论/不管」に疑問詞や選択形式を伴い、後節で「都」と呼応して、いかなる条件下でも結果が変わらない無条件の事態を表します（「いかに～であってもみな…」「～にかかわらずすべて…」）。",
+      "longExplanation": "「无论」（wúlùn、改まった表現）および「不管」（bùguǎn、口語的表現）は、無条件の譲歩関係を導く接続詞です。前節には疑問詞（什么、怎么、谁、哪儿など）や反復・選択形式（A还是B、肯定・否定の重複形式など）を置き、後節で副詞の「都」（または「也」）と呼応させることで、「どのような事情や条件があろうとも、結果は一律で変わらない」ことを示します。日本語の「いかに～であってもみな…」「～にかかわらずすべて…」に相当します。",
+      "formation": "无论 / 不管 ＋ 疑問詞 / 選択形式 ＋ 都 ＋ 動詞 / 形容詞",
+      "examples": []
+    },
+    "zh_然而_294": {
+      "title": "然而（接続詞：しかしながら・けれども・だが）",
+      "shortExplanation": "書面語で用いられる逆接の接続詞で、後節の冒頭に置いて前節と対立する事態を提示します（「しかしながら」「けれども」「だが」）。",
+      "longExplanation": "「然而」（rán'ér）は書面語的な色合いが強い逆接の接続詞です。文頭または後節の冒頭に置かれ、前節で述べられた事実や前提とは相反する展開、意外な結果、あるいは異なる見解を導きます。「但是」や「可是」よりも文語的で改まった文章や論説文などで多用されます。日本語の「しかしながら」「だが」「けれども」に相当します。",
+      "formation": "節1，然而 ＋ 節2",
+      "examples": []
+    },
+    "zh_同时_298": {
+      "title": "同时……（接続詞・副詞：同時に…・それと同時に…）",
+      "shortExplanation": "後節の冒頭に置き、二つの動作や状態が並行して存在すること、または事柄がさらに付加されることを表します（「同時に…」「それと同時に…」）。",
+      "longExplanation": "「同时」（tóngshí）は後節の文頭で接続詞または接続副詞として機能し、前節の事柄と同一の時間軸で別の動作や状態が同時並行して生じること、あるいは並列・累加（～であると同時に、さらに…でもある）の関係を示します。後節ではしばしば「也」や「还」と連動して使われます。日本語の「同時に…」「それと同時に…」「あわせて…」に相当します。",
+      "formation": "節1，同时（也 / 还） ＋ 節2",
+      "examples": [
+        {
+          "translation": "読書は知識を豊かにしてくれますし、同時に感情も豊かにしてくれます。"
+        }
+      ]
+    },
+    "zh_的同时_299": {
+      "title": "……的同时（連体修飾句：～すると同時に・～する一方で）",
+      "shortExplanation": "動詞句や節の末尾に付き、ある動作や状況が進行しているのと同時に別の事柄が行われることを表します（「～すると同時に」「～である一方で」）。",
+      "longExplanation": "「……的同时」（…… de tóngshí）は、動詞句や前節の末尾に接続し（前頭に「在」を伴うことも多い）、その動作や状態が展開しているまさにそのタイミングで、別の行動や状態が並行して成立していることを表します。時間的な同時性のみならず、「一方では～をしつつ、他方では…もする」という兼務・兼行のニュアンスを表す際にも重宝されます。日本語の「～すると同時に」「～する一方で」に相当します。",
+      "formation": "（在 ＋）動詞 / 節 ＋ 的同时，主語 ＋ 也 / 还…",
+      "examples": [
+        {
+          "translation": "中国語を学ぶと同時に、私は中国の文化についても理解を深めました。"
+        }
+      ]
+    },
+    "zh_并并且V_300": {
+      "title": "并/并且 ＋ 動詞（接続詞：そして・さらに・かつ）",
+      "shortExplanation": "同一の主語を持つ動詞句同士を結び、動作の並列、連続、あるいは累加・深化を表します（「そして」「さらに」「かつ」）。",
+      "longExplanation": "「并」（bìng）および「并且」（bìngqiě）は、共通の主語を持つ二つの動詞や動詞句、述語同士をつなぐ接続詞です。二つの行為が並行して行われること、論理的な順序で連続して実行されること、または後続の動作が前節の内容をさらに発展・具体化させる累加の関係を表します。「并」は二音節動詞同士などを緊密に結ぶことが多く、「并且」は文や長めの節を連結する際にも幅広く使われます。日本語の「そして」「かつ」「さらに」「そのうえ」に相当します。",
+      "formation": "動詞1 / 節1，并 / 并且 ＋ 動詞2",
+      "examples": []
+    },
+    "zh_再也_303": {
+      "title": "再……也……（どんなに～しても…・いくら～であっても…）",
+      "shortExplanation": "譲歩の仮定を表す構文で、どんなに極限まで行為を重ねたり程度が高くなったりしても結果は変わらないことを示します（「どんなに～しても…」「いくら～であっても…」）。",
+      "longExplanation": "「再……也……」（zài... yě...）は、極限的な譲歩の仮定を表す慣用構文です。「再」の後に動詞や形容詞を置き、「たとえこれ以上動作を繰り返しても」「どんなに程度が極まっても」という極限条件を提示し、後節で「也」に否定形などを伴って「それでも結果は変えられない、同じことだ」と結びます。日本語の「どんなに～しても…」「いくら～であっても…」に相当します。",
+      "formation": "再 ＋ 動詞 / 形容詞 ＋ 也 ＋ 否定 / 動詞",
+      "examples": [
+        {
+          "translation": "起きてしまったことは、あなたがどんなに後悔しても変えられません。もう悲しまないでください。"
+        }
+      ]
+    },
+    "zh_对于N_304": {
+      "title": "对于 ＋ 名詞（介詞：～に関して・～に対して・～にとって）",
+      "shortExplanation": "対象や論点を提示する前置詞（介詞）で、文頭または主語の後に置き、その事柄に対する態度や評価を導きます（「～に関して」「～に対して」「～にとって」）。",
+      "longExplanation": "「对于」（duìyú）は、ある事柄、現象、問題、または人を取り上げて、それに対する見解、態度、処置などを述べる際に用いられる介詞（前置詞）です。「对于 ＋ 名詞」の形で文頭に置いて全体の話題を提示するか、主語と述語の間に挟んで状況語として機能します。「对」と比べて書面語的で、行為を向ける具体的な対象というよりは「考察・評価の対象となる事柄」を客観的に提示するニュアンスが強くなります。日本語の「～に関して」「～に対して」「～について言えば」に相当します。",
+      "formation": "对于 ＋ 名詞 / 名詞句，主語…（または：主語 ＋ 对于 ＋ 名詞…）",
+      "examples": []
+    },
+    "zh_关于N_307": {
+      "title": "关于 ＋ 名詞（介詞：～について・～に関する）",
+      "shortExplanation": "事柄の範囲や話題・テーマを提示する前置詞（介詞）です（「～について」「～に関して」「～に関する」）。",
+      "longExplanation": "「关于」（guānyú）は、話題の論点や関連する事柄の範囲を提示する介詞（前置詞）です。(1)「关于 ＋ 名詞」を文頭に置いて全体のテーマを示す状況語として機能する場合（例：「关于这个问题……」＝この問題について…）；(2)「关于 ＋ 名詞 ＋ 的 ＋ 中心名詞」の形で後続の名詞を修飾する定語となる場合（例：「关于中国历史的书」＝中国の歴史に関する本）があります。対象への働きかけを表す「对于」と異なり、「关于」は話題やテーマの範囲そのものを提示する点に特徴があります。日本語の「～について」「～に関する」に相当します。",
+      "formation": "关于 ＋ 名詞 / 事柄，主語…（または：关于 ＋ 名詞 ＋ 的 ＋ 名詞）",
+      "examples": [
+        {
+          "translation": "今回の調査計画について、マネージャーは不明瞭な点がたくさんあると言いました。"
+        }
+      ]
+    },
+    "zh_MMN都_308": {
+      "title": "量詞の重ね形 ＋（名詞）＋ 都（どの～もみな…・一つ一つの～がすべて…）",
+      "shortExplanation": "単音節量詞を重ねて（AA型）「都」と呼応させ、例外のない網羅的な全体を表します（「どの～もみな…」「一つ一つの～がすべて…」）。",
+      "longExplanation": "中国語の単音節量詞を「AA」の形に重ねる（例：个个、件件、条条、本本、天天、人人など）ことで、「どの～も」「すべての～」という全体的・網羅的な意味を表します。文頭や主語の位置に置かれ、述語の前で副詞の「都」と呼応して、「例外なく一つ一つの構成員すべてが～である」という強い網羅性を際立たせます。日本語の「どの～もみな」「一つ一つの～がすべて」に相当します。",
+      "formation": "量詞 ＋ 量詞（＋ 名詞） ＋ 都 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "一つ一つの些細な事柄もすべて、一度の学びの機会として見なされるべきです。"
+        }
+      ]
+    },
+    "zh_相反_309": {
+      "title": "相反，……（接続詞・副詞：それとは反対に…・逆に…）",
+      "shortExplanation": "後節の文頭に置き、前節で述べられた内容と正反対の事態や結果を提示します（「それとは反対に…」「逆に…」）。",
+      "longExplanation": "「相反」（xiāngfǎn）は後節の文頭（しばしば読点「，」を伴う）に置かれ、前節の内容と鋭く対比される全く逆の状況や予想外の事実を導く接続詞・副詞として機能します。前節で否定的な記述や誤った予想が示された後、「そうではなく、むしろ反対に…」と対立する実態を浮き彫りにする際によく使われます。日本語の「それとは反対に…」「逆に…」「それどころか…」に相当します。",
+      "formation": "節1。相反，＋ 節2（または：節1，相反 ＋ 節2）",
+      "examples": []
+    },
+    "zh_和跟N相反_314": {
+      "title": "和/跟 ＋ 名詞 ＋ 相反（～と正反対である・～とは逆である）",
+      "shortExplanation": "主語がある対象や予想などと正反対であることを示す比較・対照の表現です（「～と正反対である」「～とは逆である」）。",
+      "longExplanation": "「和/跟 ＋ 名詞 ＋ 相反」（hé/ gēn... xiāngfǎn）は、主語の性質、状態、結果などが、比較対象となる事柄と完全に逆転していることを表す構文です。名詞の位置には通常の名詞だけでなく、「想的」（思っていたこと）や「预期的」（予想していたこと）のような名詞化された句も頻出します。「相反」の前にはしばしば「完全」「正好」「几乎」などの副詞を伴って「ほぼ完全に正反対である」といった強めの語気を作ります。日本語の「～と正反対である」「～とは正逆である」に相当します。",
+      "formation": "主語 ＋ 和 / 跟 ＋ 名詞 / 考え・予想 ＋ 相反",
+      "examples": [
+        {
+          "translation": "調査結果は彼らが予想していたこととほぼ完全に正反対でした。"
+        }
+      ]
+    },
+    "zh_大概也许VA_315": {
+      "title": "大概/也许 ＋ 動詞/形容詞（副詞：たぶん・おそらく・もしかすると）",
+      "shortExplanation": "動詞や形容詞の前に置いて、推測や可能性を表す副詞です（「たぶん」「おそらく」「もしかすると」）。",
+      "longExplanation": "「大概」（dàgài）と「也许」（yěxǔ）は、推測や推量を表す副詞で、述語となる動詞や形容詞の直前に置かれて状況語となります。「大概」はある程度の根拠や客観的傾向に基づいた確度の高めな推測を表し、「十中八九」「おそらく」「たぶん」に相当します（数量の前では「およそ、約」の意味にもなります）。一方、「也许」は「もしかすると」「ひょっとしたら」という不確実な可能性を提示するニュアンスを持ちます。日本語の「たぶん」「おそらく」「もしかすると～かもしれない」に相当します。",
+      "formation": "主語 ＋ 大概 / 也许 ＋ 動詞 / 形容詞",
+      "examples": []
+    }
+  },
+  "ko": {
+    "zh_连O也都V_289": {
+      "title": "连 + 목적어 + 也/都 + 동사 (~조차도/까지도 …하다)",
+      "shortExplanation": "목적어를 '连' 뒤로 도치시켜 '连……也/都……' 구문을 통해 극단적인 대상을 강조합니다('~조차도/까지도 …하다').",
+      "longExplanation": "'连……也/都……'(lián... yě/ dōu...)는 극단적이거나 의외의 사례를 들어 어떤 사실을 두드러지게 강조하는 대표적인 강조 구문입니다. 목적어가 '连'의 뒤(문장 맨 앞 또는 주어 뒤)로 나와 위치할 때, '그 정도로 어려운/극단적인 대상까지도 능히 해내다(또는 하지 못하다)'라는 의미를 전달합니다. 한국어의 '~조차도 …하다', '~까지도 다 …하다'에 해당합니다.",
+      "formation": "(주어 +) 连 + 목적어 + 也 / 都 + 동사",
+      "examples": [
+        {
+          "translation": "당신 정말 대단하네요, 중국어 신문까지 다 읽고 이해할 수 있다니요."
+        }
+      ]
+    },
+    "zh_连S也都V_290": {
+      "title": "连 + 주어 + 也/都 + 동사 (~조차도/마저도 …하다)",
+      "shortExplanation": "주어 앞에 '连'을 두어 가장 대표적이거나 극단적인 주체를 내세워 상황을 강조합니다('~조차도/마저도 …하다').",
+      "longExplanation": "'连……也/都……' 구문에서 '连'이 주어 바로 앞에 놓이는 형태로, 가장 기본적이거나 당연해야 할 주체를 극단적인 예로 들어 '이 주체조차 이러할진대 다른 대상은 말할 것도 없다'는 뉘앙스를 나타냅니다. 주로 가정문이나 반어문에서 강력한 설득력을 발휘합니다. 한국어의 '~조차도 …하다', '~마저도 …하다'에 해당합니다.",
+      "formation": "连 + 주어 + 也 / 都 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "만약 너 자신조차도 스스로를 좋아하지 않는다면, 어떻게 다른 사람이 너를 좋아하게 만들 수 있겠니?"
+        }
+      ]
+    },
+    "zh_否则_291": {
+      "title": "否则 (접속사: 그렇지 않으면, 안 그러면)",
+      "shortExplanation": "반대의 가정을 나타내는 접속사로, 뒷절 처음에 놓여 '만약 그렇지 않다면'이라는 결과나 추론을 이끕니다('그렇지 않으면', '안 그러면').",
+      "longExplanation": "'否则'(fǒuzé)는 '如果不是这样'(만약 그렇지 않다면)의 의미를 지닌 접속사로, 서면어 및 정중한 구어에서 널리 쓰입니다. 앞 절의 내용이나 조건이 성립하지 않을 경우 발생할 부정적인 결과, 또는 앞선 사실을 뒷받침하는 반대 상황의 추론을 뒷절에서 전개합니다. 한국어의 '그렇지 않으면', '그렇지 않다면', '아니라면'에 해당합니다.",
+      "formation": "절 1，否则 + 절 2 (반대 가정에 따른 결과 / 추론)",
+      "examples": [
+        {
+          "translation": "그는 분명 중요한 용건이 있어서 당신을 찾는 걸 거예요. 그렇지 않다면 이렇게 여러 번 전화를 걸어오지 않았을 테니까요."
+        }
+      ]
+    },
+    "zh_无论不管Q都_292": {
+      "title": "无论/不管 + 의문사 + 都 (무엇이든/어디든 간에 모두…)",
+      "shortExplanation": "앞절에서 '无论/不管'에 의문사나 선택 형식을 이끌고, 뒷절에서 '都'와 호응하여 어떤 조건에서도 결과가 변함없음을 나타냅니다('어떠하든 간에 모두…', '~에 상관없이 다…').",
+      "longExplanation": "'无论'(wúlùn, 서면어적)과 '不管'(bùguǎn, 구어적)은 무조건의 양보 관계를 나타내는 대표적인 접속사입니다. 앞 절에 의문대명사(什么, 谁, 哪儿, 怎么 등)나 정반/선택 형식(A还是B, 긍정 부정 중복 형식 등)을 포함하여 전제 조건을 열어두고, 뒷절에서 부사 '都'(또는 '也')와 어우러져 '어떠한 상황이나 조건이든 예외 없이 결과는 동일하다'는 뜻을 강조합니다. 한국어의 '어떻게/무엇을/누가 ~하든 간에 다…', '~에 관계없이 모두…'에 해당합니다.",
+      "formation": "无论 / 不管 + 의문사 / 선택 형식 + 都 + 동사 / 형용사",
+      "examples": []
+    },
+    "zh_然而_294": {
+      "title": "然而 (접속사: 그러나, 하지만, 그렇지만)",
+      "shortExplanation": "서면어에서 주로 쓰이는 역접 접속사로, 뒷절의 처음에 놓여 앞선 내용과 상반되는 사실이나 결과를 나타냅니다('그러나', '하지만', '그렇지만').",
+      "longExplanation": "'然而'(rán'ér)은 문어체(서면어)적인 색채가 강한 역접 접속사입니다. 문장의 앞부분이나 뒷절의 서두에 위치하여, 앞 절에서 진술한 내용이나 기대와는 상반되는 사실, 뜻밖의 반전, 또는 상반된 견해를 제시할 때 사용합니다. '但是'나 '可是'에 비해 격식 있고 문어적인 뉘앙스를 풍깁니다. 한국어의 '그러나', '하지만', '그렇지만'에 해당합니다.",
+      "formation": "절 1，然而 + 절 2",
+      "examples": []
+    },
+    "zh_同时_298": {
+      "title": "同时…… (접속사/부사: 동시에…, 그와 동시에…)",
+      "shortExplanation": "뒷절 처음에 놓여 두 가지 동작이나 상태가 병행되거나 또 다른 측면이 덧붙여짐을 나타냅니다('동시에…', '그와 동시에…').",
+      "longExplanation": "'同时'(tóngshí)가 뒷절의 문두에 쓰일 때는 접속사 또는 접속 부사로서의 역할을 하여, 앞 절의 일과 같은 시간대에 또 다른 상황이 함께 발생함을 나타내거나, 한 걸음 더 나아가 대등하게 부가되는 내용을 이어줍니다(앞 절의 내용뿐 아니라 '동시에 또한 …하다'). 뒷절에서 대개 '也'나 '还'와 호응합니다. 한국어의 '동시에…', '그와 동시에…', '아울러…'에 해당합니다.",
+      "formation": "절 1，同时（也 / 还） + 절 2",
+      "examples": [
+        {
+          "translation": "독서는 지식을 풍부하게 해 주며, 동시에 당신의 감정 또한 풍부하게 만들어 줍니다."
+        }
+      ]
+    },
+    "zh_的同时_299": {
+      "title": "……的同时 (~하는 동시에, ~함과 동시에)",
+      "shortExplanation": "동사구나 절 뒤에 붙어 어떤 동작이나 상태가 진행되는 것과 동시에 다른 일이 함께 이루어짐을 나타냅니다('~하는 동시에', '~함과 아울러').",
+      "longExplanation": "'……的同时'(…… de tóngshí)는 동사구 또는 절의 뒤에 결합하여(앞에 '在'가 함께 쓰이기도 함), 특정 행위나 상태가 펼쳐지는 동일한 시점에 또 다른 행동이나 사건이 병행되고 있음을 나타내는 구문입니다. 단순히 물리적인 시간의 일치뿐 아니라, '어떤 일을 진행하는 한편으로 다른 일도 해내다'라는 병행 및 상호 연계의 뉘앙스를 전달합니다. 한국어의 '~하는 동시에', '~함과 동시에', '~하는 한편'에 해당합니다.",
+      "formation": "(在 +) 동사 / 절 + 的同时，주어 + 也 / 还…",
+      "examples": [
+        {
+          "translation": "중국어를 배우는 동시에, 저는 중국의 문화에 대해서도 이해하게 되었습니다."
+        }
+      ]
+    },
+    "zh_并并且V_300": {
+      "title": "并/并且 + 동사 (접속사: 그리고, 아울러, 게다가)",
+      "shortExplanation": "동일한 주어를 가진 동사구나 술어를 연결하여, 동작의 병렬, 연속, 또는 더 깊은 진전을 나타냅니다('그리고', '아울러', '게다가').",
+      "longExplanation": "'并'(bìng)과 '并且'(bìngqiě)는 동일 주어에 속하는 둘 이상의 동사구 및 서술어를 결합하는 접속사입니다. 두 행위가 나란히 병행되거나 순차적으로 이어짐을 나타낼 뿐만 아니라, 뒤따르는 동작이 앞선 동작보다 한층 더 발전되거나 보완되는 심화·점층 관계를 이끌어 냅니다. 단음절인 '并'은 주로 서면어에서 동사구를 긴밀히 결합할 때 쓰이며, '并且'는 긴 절이나 문장 연결에도 두루 사용됩니다. 한국어의 '그리고', '동시에', '아울러', '게다가'에 해당합니다.",
+      "formation": "동사 1 / 절 1，并 / 并且 + 동사 2",
+      "examples": []
+    },
+    "zh_再也_303": {
+      "title": "再……也…… (아무리 ~해도 역시/더는 …할 수 없다)",
+      "shortExplanation": "양보 가정을 나타내는 구문으로, 아무리 행동을 거듭하거나 정도가 극에 달해도 결과는 바꿀 수 없음을 나타냅니다('아무리 ~해도 …하다').",
+      "longExplanation": "'再……也……'(zài... yě...)는 극단적인 양보 조건을 설정하는 표현입니다. '再' 뒤에 동사나 형용사가 이어져 '행위를 아무리 더 반복하더라도' 혹은 '상태의 정도가 아무리 극치에 이를지라도'라는 한계 상황을 상정한 뒤, 뒷절에서 '也'와 부정형(无法, 不能, 不会 등)을 결합하여 '그럼에도 불구하고 결과는 달라지지 않는다'는 단정적 결론을 내립니다. 한국어의 '아무리 ~해도 (역시) …할 수 없다', '설령 ~할지라도 …하다'에 해당합니다.",
+      "formation": "再 + 동사 / 형용사 + 也 + 부정 / 동사",
+      "examples": [
+        {
+          "translation": "일은 이미 일어났으니, 네가 아무리 후회해도 되돌릴 수 없어. 그만 속상해해."
+        }
+      ]
+    },
+    "zh_对于N_304": {
+      "title": "对于 + 명사 (개사: ~에 대하여, ~에 관해서는)",
+      "shortExplanation": "태도나 평가, 조치의 대상이 되는 사물이나 논점을 이끄는 전치사(개사)입니다('~에 대하여', '~에 관해서는', '~에 대해 말하자면').",
+      "longExplanation": "'对于'(duìyú)는 어떤 대상이나 사안, 현상을 제기하여 그에 대한 태도나 견해, 조치 등을 진술할 때 쓰이는 개사(전치사)입니다. '对于 + 명사' 어구가 문장 맨 앞에 놓여 전체 문장의 화제를 제시하거나, 주어와 서술어 사이에 놓여 상황어로 쓰입니다. '对'에 비해 서면어적 성격이 짙으며, 단순한 동작의 방향성보다는 '사안이나 연구 대상에 대한 평가·처치'를 객관적으로 다룰 때 적합합니다. 한국어의 '~에 대하여', '~에 관해서는', '~의 입장에서 보면'에 해당합니다.",
+      "formation": "对于 + 명사 / 명사구，주어… (또는: 주어 + 对于 + 명사…)",
+      "examples": []
+    },
+    "zh_关于N_307": {
+      "title": "关于 + 명사 (개사: ~에 관하여, ~에 대한)",
+      "shortExplanation": "어떤 사안의 범위나 주제, 화제를 제기하는 전치사(개사)입니다('~에 관하여', '~에 대해', '~에 관한').",
+      "longExplanation": "'关于'(guānyú)는 논의의 주제나 언급 대상의 범위를 명시하는 개사(전치사)입니다. (1) '关于 + 명사' 형태로 문장의 맨 처음에 놓여 전체 담화의 화제를 제시하는 상황어로 쓰이거나, (2) '关于 + 명사 + 的 + 중심명사' 형태로 명사를 꾸미는 관형어로 자주 쓰입니다(예: '关于环境保护的会议' 환경 보호에 관한 회의). 대상에 대한 조치나 태도를 나타내는 '对于'와 달리, '关于'는 주제나 사안의 범위 자체를 제시하는 데 중점이 있습니다. 한국어의 '~에 관하여', '~에 대해', '~에 관한'에 해당합니다.",
+      "formation": "关于 + 명사 / 사건，주어… (또는: 关于 + 명사 + 的 + 명사)",
+      "examples": [
+        {
+          "translation": "이번 조사 계획에 관해서, 매니저는 불명확한 점이 매우 많다고 말했습니다."
+        }
+      ]
+    },
+    "zh_MMN都_308": {
+      "title": "양사 첩어 + (명사) + 都 (하나하나의 ~마다 모두… / 어느 ~나 다…)",
+      "shortExplanation": "단음절 양사를 겹쳐 쓰고(AA형) '都'와 호응하여, 예외 없이 모든 개별 구성원을 포괄함을 나타냅니다('어느 ~나 모두 다…', '하나하나의 ~마다 전부…').",
+      "longExplanation": "중국어의 단음절 양사를 'AA' 형태로 중첩하면(예: 件件, 个个, 本本, 张张, 人人, 天天 등) '모든', '하나하나의 낱낱'이라는 전면적인 총괄의 의미를 지니게 됩니다. 주어 자리에서 명사를 동반하거나 단독으로 쓰이며, 서술어 앞에서 부사 '都'와 반드시 호응하여 '어떠한 예외도 없이 각각의 대상 모두가 그러하다'는 점을 강하게 부각합니다. 한국어의 '하나하나의 ~마다 모두 다…', '어느 ~나 전부…'에 해당합니다.",
+      "formation": "양사 + 양사 (+ 명사) + 都 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "하나하나의 작은 일도 모두 한 번의 배움의 기회로 여겨져야 합니다."
+        }
+      ]
+    },
+    "zh_相反_309": {
+      "title": "相反，…… (접속사/부사: 반대로…, 그와 반대로…)",
+      "shortExplanation": "뒷절 문두에 쓰여 앞 절의 내용과 정반대되는 상황이나 결과를 선명하게 대조합니다('반대로…', '그와 반대로…', '오히려…').",
+      "longExplanation": "'相反'(xiāngfǎn)이 뒷절의 첫머리에 놓일 때(대개 뒤에 쉼표가 붙음)는 접속 부사로서의 역할을 하여, 앞선 내용과 전적으로 반대되는 국면이나 사실을 제시합니다. 앞 절에서 어떤 통념, 부정적인 상황, 혹은 빗나간 예상을 기술한 후, '그렇지 않고 오히려 반대로 이러하다'라는 극명한 대조를 나타낼 때 효과적으로 쓰입니다. 한국어의 '반대로…', '그와 반대로…', '오히려…'에 해당합니다.",
+      "formation": "절 1。相反，+ 절 2 (또는: 절 1，相反 + 절 2)",
+      "examples": []
+    },
+    "zh_和跟N相反_314": {
+      "title": "和/跟 + 명사 + 相反 (~와 정반대이다, ~와 반대이다)",
+      "shortExplanation": "주어가 비교 대상이 되는 사물, 생각, 결과 등과 정반대의 양상을 띰을 나타내는 표현입니다('~와 정반대이다', '~와 반대이다').",
+      "longExplanation": "'和/跟 + 명사 + 相反'(hé/ gēn... xiāngfǎn)은 어떤 주어의 성질, 사태, 결과가 비교 대상과 완전히 상반됨을 명시하는 구문입니다. '和/跟' 뒤에는 일반 명사뿐 아니라 '想的'(생각했던 것), '预想的'(예상했던 것)과 같은 명사화 어구가 자주 쓰입니다. '相反' 앞에 '完全'(완전히), '正好'(딱/마침), '几乎'(거의)와 같은 부사를 덧붙여 상반되는 정도를 강조합니다. 한국어의 '~와 정반대이다', '~와 반대이다'에 해당합니다.",
+      "formation": "주어 + 和 / 跟 + 명사 / 생각·예상 + 相反",
+      "examples": [
+        {
+          "translation": "조사 결과는 그들이 생각했던 것과 거의 완전히 정반대였습니다."
+        }
+      ]
+    },
+    "zh_大概也许VA_315": {
+      "title": "大概/也许 + 동사/형용사 (부사: 아마도, 어쩌면 ~일 것이다)",
+      "shortExplanation": "동사나 형용사 앞에 놓여 추측이나 가능성을 나타내는 부사입니다('아마도', '어쩌면', '대략').",
+      "longExplanation": "'大概'(dàgài)와 '也许'(yěxǔ)는 동작이나 상태의 발생 가능성에 대한 추측 및 짐작을 나타내는 부사로, 술어인 동사나 형용사 앞에 놓여 상황어로 쓰입니다. '大概'는 객관적인 정황에 바탕을 둔 비교적 신빙성 높은 추측을 나타내어 '아마', '십중팔구'의 뜻을 지니며, 수량 앞에서 '대략'이라는 어림수를 나타내기도 합니다. 반면 '也许'는 확신하지 못하는 막연한 가능성을 열어두어 '어쩌면 ~일지도 모른다'는 뉘앙스를 풍깁니다. 한국어의 '아마도', '어쩌면', '대략'에 해당합니다.",
+      "formation": "주어 + 大概 / 也许 + 동사 / 형용사",
+      "examples": []
+    }
+  },
+  "zh": {
+    "zh_连O也都V_289": {
+      "title": "连 + 宾语 + 也/都 + 动词（强调极端对象：连……也/都……）",
+      "shortExplanation": "将宾语提前至“连”字后，构成“连……也/都……”句式，用来强调极端或出乎意料的事物对象。",
+      "longExplanation": "“连……也/都……”（lián... yě/ dōu...）是表示强调的典型格式，通过提出一个极端的、突出的例子来衬托一般情况。当宾语受强调时，宾语会移到“连”的后面（通常位于主语后或句首），用来突出甚至连该项最具难度、最罕见的对象都能做到（或无法做到），具有强烈的对比和夸张语气。",
+      "formation": "（主语 +）连 + 宾语 + 也 / 都 + 动词",
+      "examples": [
+        {
+          "translation": "你太厉害了，连中文报纸都看得懂。"
+        }
+      ]
+    },
+    "zh_连S也都V_290": {
+      "title": "连 + 主语 + 也/都 + 动词（强调极端主体：连……也/都……）",
+      "shortExplanation": "将“连”置于主语前，引出最具代表性或极端的行为主体加以强调；表示“甚至连……也/都……”。",
+      "longExplanation": "“连……也/都……”格式中，“连”置于主语前面，用来引出一个极端的主体，起到以点带面、突出强烈的语气作用。常常暗示连该主体都不例外，其他事物便更不用说了。在假设句、反问句中非常多见，起到强化说服力的修辞效果。",
+      "formation": "连 + 主语 + 也 / 都 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "如果连你自己都不喜欢自己，又怎么能让别人喜欢你呢？"
+        }
+      ]
+    },
+    "zh_否则_291": {
+      "title": "否则（连词：表反面假设，如果不是这样则）",
+      "shortExplanation": "连词，用于后一分句句首，相当于“如果不这样”、“要不然”；表示“否则、要不”。",
+      "longExplanation": "“否则”（fǒuzé）是典雅的假设连词，常用于书面语和较正式的口语中。置于后一分句的开头，引出在前半句假设不成立、未实现的情况下所产生的结果、推测或相反的事实。通常前一分句交代某种要求、判断或事实，后一分句用“否则”交代推演后果。",
+      "formation": "分句1，否则 + 分句2（反面推论 / 结果）",
+      "examples": [
+        {
+          "translation": "他一定有重要的事找你，否则不会打这么多次电话来。"
+        }
+      ]
+    },
+    "zh_无论不管Q都_292": {
+      "title": "无论/不管 + 疑问词 + 都（无条件连词句式：无论……都……）",
+      "shortExplanation": "前一分句由“无论/不管”引出疑问代词或选择形式，后一分句用“都”呼应，表示在任何条件或情况下结论都相同。",
+      "longExplanation": "“无论”（偏书面语）和“不管”（偏口语）是表示无条件让步关系的连词。前一分句必须包含表示疑问的代词（如“什么”、“谁”、“怎么”、“哪儿”等）或正反、选择格式（如正反重叠、选择分句），后一分句由副词“都”（或“也”）相呼应，强调排除了所有可能的例外情况，结果或态度恒常不变。",
+      "formation": "无论 / 不管 + 疑问词 / 正反选择形式 + 都 + 动词 / 形容词",
+      "examples": []
+    },
+    "zh_然而_294": {
+      "title": "然而（连词：表转折，书面语常用）",
+      "shortExplanation": "书面语转折连词，用于后一分句句首，连接意思相对或相反的分句；表示“然而、但是”。",
+      "longExplanation": "“然而”（rán'ér）是典型的书面语转折连词，通常置于后一分句的开头，表示后句所述的内容与前句发生转折，引出不同于前文预期或事实的另一面情况。语体色彩典雅庄重，常用于议论文、新闻报道或正式文本中。",
+      "formation": "分句1，然而 + 分句2",
+      "examples": []
+    },
+    "zh_同时_298": {
+      "title": "同时……（连词/副词：连接分句，表示同时或兼有）",
+      "shortExplanation": "置于后一分句句首，连接并列或递进的两种情况；表示“同时、并且、与此同时”。",
+      "longExplanation": "“同时”（tóngshí）用于后一分句的开头，起连词或副词的作用。它不仅可以表示两个动作或状态在同一时间里共同进行，还可以表示并列的两种属性、作用或结果兼而有之，起到承上启下的递进补充作用。后一分句常与“也”、“还”配合使用。",
+      "formation": "分句1，同时（也 / 还） + 分句2",
+      "examples": [
+        {
+          "translation": "阅读能丰富你的知识，同时还会丰富你的情感。"
+        }
+      ]
+    },
+    "zh_的同时_299": {
+      "title": "……的同时（时间短语：表示在……期间兼做另一事）",
+      "shortExplanation": "附在动词短语或分句后，常与“在”连用，表示在进行某一动作、处于某种状态的同时进行另一件事。",
+      "longExplanation": "“……的同时”（…… de tóngshí）常构成“在……的同时”结构，置于分句末尾作时间状语。它表示主语在开展前一项活动或处于前一状态的进程中，同步兼顾或收获了后一分句所指称的行动与成果。强调两件事情并行不悖、相辅相成。",
+      "formation": "（在 +）动词 / 分句 + 的同时，主语 + 也 / 还…",
+      "examples": [
+        {
+          "translation": "在学习汉语的同时，我还了解了中国的文化。"
+        }
+      ]
+    },
+    "zh_并并且V_300": {
+      "title": "并/并且 + 动词（连词：连接动词性成分，表并列或递进）",
+      "shortExplanation": "连词，连接同一主语下的两个动词或动词性短语，表示动作的并列、相继发生或进一步发展；表示“并且、而且”。",
+      "longExplanation": "“并”（bìng）与“并且”（bìngqiě）是连接谓词性词语的常用连词。通常连接共享同一主语的两个动词短语，表示两项动作并列进行、按逻辑顺序相继完成，或者后一个动作在前一个动作的基础上更进一步，具有递进深化色彩。“并”多用于连接双音节动词短语，语体偏书面；“并且”既可连动词，也可连接分句。",
+      "formation": "动词1 / 分句1，并 / 并且 + 动词2",
+      "examples": []
+    },
+    "zh_再也_303": {
+      "title": "再……也……（表让步假设：无论程度多深结果都一样）",
+      "shortExplanation": "表示让步假设的常用格式，说明无论动作怎样重复或程度达到多高，结果依然无法改变；表示“即使再……也……”。",
+      "longExplanation": "“再……也……”（zài... yě...）表示极端的让步假设。前半部分用“再”加动词或形容词，提出一种假设达到的极限程度或反复进行的行动；后半部分用“也”呼应，往往后接否定词（如“无法”、“不能”、“没用”），以断定在此种极限情况下事实仍旧不会改变。",
+      "formation": "再 + 动词 / 形容词 + 也 + 否定 / 动词",
+      "examples": [
+        {
+          "translation": "事情已经发生了，你再后悔也无法改变，别伤心了。"
+        }
+      ]
+    },
+    "zh_对于N_304": {
+      "title": "对于 + 名词（介词：引出关涉的对象或论及的事物）",
+      "shortExplanation": "介词，用来引出态度、评价、动作所针对的对象或事情；表示“对于、就……而言”。",
+      "longExplanation": "“对于”（duìyú）是书面语常用的介词，主要用于指出某一事实、现象、问题或对象，以便对它做出评价、表达态度或采取相应措施。“对于”短语在句中通常作状语，可以放在主语之前（通常用逗号隔开），也可以放在主语与谓语之间。与“对”相比，“对于”更偏重于引进被对待、考察的事物或事理。",
+      "formation": "对于 + 名词 / 名词短语，主语…（或：主语 + 对于 + 名词…）",
+      "examples": []
+    },
+    "zh_关于N_307": {
+      "title": "关于 + 名词（介词：引出关涉的范围或论述的议题）",
+      "shortExplanation": "介词，用来引出谈论、研究的范围或主题；表示“关于、涉及”。",
+      "longExplanation": "“关于”（guānyú）是引进涉及范围或议题的介词。主要用法有两种：(1) 作状语，只能放在主语之前，引出全句谈论的中心话题；(2) 构成“关于……的”格式作定语，修饰后面的中心名词（如“关于这件事情的报道”）。“关于”着重指出关涉的范围与论题，而“对于”则侧重指出施加动作或态度的对象。",
+      "formation": "关于 + 名词 / 事物，主语…（或：关于 + 名词 + 的 + 中心名词）",
+      "examples": [
+        {
+          "translation": "关于这次调查计划，经理说有很多不清楚的地方。"
+        }
+      ]
+    },
+    "zh_MMN都_308": {
+      "title": "量词重叠 +（名词）+ 都（表示“每一”，强调全无例外）",
+      "shortExplanation": "单音节量词重叠（AA式）后接“都”，表示每一个、所有的意思，强调全员具备某种属性而无一例外。",
+      "longExplanation": "单音节量词重叠成“AA”式（如“件件”、“个个”、“张张”、“条条”、“本本”、“天天”等），具有“每一”、“各个”的周遍性语法意义。作主语或修饰主语时，谓语动词或形容词前一般要用副词“都”呼应，以此强调在涵盖范围内毫无遗漏，逐一都具有某种共同特征。",
+      "formation": "量词 + 量词（+ 名词） + 都 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "件件小事都应该被看成是一次学习的机会。"
+        }
+      ]
+    },
+    "zh_相反_309": {
+      "title": "相反，……（连词/副词：置于句首引出相反的情况）",
+      "shortExplanation": "用于后一分句的句首，引出与前文截然相反的情况或事实；表示“相反、恰恰相反”。",
+      "longExplanation": "“相反”（xiāngfǎn）置于后一分句的开头（通常后接逗号），起到连词或副词的衔接作用。它用来紧接前文所陈述的某种预设、一般常理或否定事实，引出与之完全不同、甚至朝反方向发展的真实状况，形成鲜明的对照。",
+      "formation": "分句1。相反，+ 分句2（或：分句1，相反 + 分句2）",
+      "examples": []
+    },
+    "zh_和跟N相反_314": {
+      "title": "和/跟 + 名词 + 相反（表示与某事物、看法或预期完全相反）",
+      "shortExplanation": "表示主语在性质、方向或结果上与所对照的事物完全对立；表示“与……相反”。",
+      "longExplanation": "“和/跟 + 名词 + 相反”（hé/ gēn... xiāngfǎn）是表示对比的固定结构，用来指明某事物的实际情况与另一事物、既定设想、期望或说法截然对立。“和/跟”后既可接具体事物名词，也可接“想的”、“说的”等“的”字短语。“相反”前常常搭配“正好”、“完全”、“几乎”等副词来强化程度。",
+      "formation": "主语 + 和 / 跟 + 名词 / 设想 + 相反",
+      "examples": [
+        {
+          "translation": "调查结果和他们想的几乎完全相反。"
+        }
+      ]
+    },
+    "zh_大概也许VA_315": {
+      "title": "大概/也许 + 动词/形容词（副词：表示推测与估计，也许、大概）",
+      "shortExplanation": "副词，置于动词或形容词前作状语，表示对情况的推断、估计或不确定的可能性；表示“大概、也许、可能”。",
+      "longExplanation": "“大概”（dàgài）与“也许”（yěxǔ）是表示推测语气的常用副词，通常置于谓语动词或形容词的前面作状语。“大概”表示依据现有事实或经验做出的推断，把握性相对较大，相当于“十有八九”、“可能”，有时也可用于数量的约数估计；“也许”则侧重于不肯定、存疑的猜测，相当于“或许”、“说不定”，肯定程度比“大概”略低。",
+      "formation": "主语 + 大概 / 也许 + 动词 / 形容词",
+      "examples": []
+    }
+  }
+}

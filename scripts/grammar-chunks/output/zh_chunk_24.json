@@ -1,0 +1,638 @@
+{
+  "vi": {
+    "zh_次_377": {
+      "title": "Số thứ tự / Số hiệu + 次 (Lượng từ / Danh từ: Chuyến xe số... / Tuyến xe số...)",
+      "shortExplanation": "Đứng sau số hiệu phương tiện giao thông (tàu hỏa, xe buýt...) để chỉ chuyến xe, tuyến xe mang số hiệu đó; 'số...', 'tuyến...'.",
+      "longExplanation": "'次' (cì) khi đi liền sau con số hoặc số hiệu của phương tiện giao thông công cộng (như tàu hỏa '列车', xe buýt '公交车') được dùng như một danh từ/lượng từ chỉ số hiệu hành trình, chuyến xe hoặc tuyến đường chạy cố định (chính là '车次' - số hiệu chuyến tàu/xe). Ví dụ: '502次公交车' (xe buýt số 502), 'G1次高铁' (tàu cao tốc số G1), 'K123次列车' (tàu hỏa tốc hành số K123). Tương đương với 'số...', 'chuyến xe số...', 'tuyến số...' trong tiếng Việt.",
+      "formation": "Số từ / Số hiệu + 次 (+ Danh từ phương tiện: 公交车 / 列车 / 火车...)",
+      "examples": [
+        {
+          "translation": "Xe buýt số 502 sắp đến nơi rồi."
+        }
+      ]
+    },
+    "zh_为了V1而V2_378": {
+      "title": "为了 + Động từ 1 + 而 + Động từ 2 (Liên từ mục đích: Vì... mà làm gì / Nhằm để... nên...)",
+      "shortExplanation": "Biểu thị mục đích và hành động: '为了' đưa ra mục đích hành động (Động từ 1), '而' kết nối với hành động được thực hiện (Động từ 2); 'để...', 'vì... mà...'.",
+      "longExplanation": "Cấu trúc '为了 + Động từ 1 + 而 + Động từ 2' kết hợp giới từ chỉ mục đích '为了' (wèile) và liên từ nối tiếp '而' (ér). Trong đó, 'Động từ 1' biểu thị mục đích, lý tưởng hoặc kết quả mà chủ thể hướng tới; 'Động từ 2' biểu thị hành động, nỗ lực hoặc biện pháp cụ thể được tiến hành nhằm đạt được mục đích đó (ví dụ: '为了生活而奔波' - bôn ba vì cuộc sống, '为了实现梦想而努力奋斗' - nỗ lực phấn đấu để thực hiện ước mơ, '为了保护环境而减少使用塑料' - giảm dùng đồ nhựa để bảo vệ môi trường). Tương đương với 'để / nhằm để... mà...', 'vì... nên thực hiện...' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 为了 + Động từ 1 (+ Tân ngữ) + (Chủ ngữ +) 而 + Động từ 2 (+ Tân ngữ)",
+      "examples": []
+    },
+    "zh_为了N而V_381": {
+      "title": "为了 + Danh từ + 而 + Động từ (Cụm giới từ mục đích: Vì... mà làm gì / Hành động vì...)",
+      "shortExplanation": "Giới từ '为了' đưa ra danh từ chỉ đối tượng, mục đích hoặc lợi ích, '而' liên kết với hành động được thực hiện; 'vì... mà...', 'để có được... mà...'.",
+      "longExplanation": "Cấu trúc '为了 + Danh từ + 而 + Động từ' dùng giới từ '为了' (wèile) dẫn ra đối tượng danh từ biểu thị mục đích, lợi ích, lý tưởng hoặc nhu cầu cốt lõi (như tiền bạc, tình yêu, hòa bình, tài nguyên sinh tồn...), và dùng liên từ '而' (ér) để kết nối với động từ biểu thị hành động nỗ lực hoặc cạnh tranh để giành lấy điều đó (ví dụ: '为了生存而战' - chiến đấu vì sự sinh tồn, '为了金钱而工作' - làm việc vì tiền bạc, '为了荣誉而拼搏' - dốc sức phấn đấu vì danh dự). Tương đương với 'vì... mà...', 'để giành lấy... mà thực hiện...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 为了 + Danh từ (+ Danh từ...) + 而 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Thực vật sẽ cạnh tranh lẫn nhau vì ánh nắng, không khí và nước."
+        }
+      ]
+    },
+    "zh_仍然VA_382": {
+      "title": "仍然 + Động từ / Tính từ (Phó từ: Vẫn / Vẫn cứ / Vẫn như cũ)",
+      "shortExplanation": "Phó từ biểu thị hành động, trạng thái hoặc tính chất tiếp tục duy trì không thay đổi bất chấp thời gian hoặc hoàn cảnh thay đổi; 'vẫn', 'vẫn cứ'.",
+      "longExplanation": "'仍然' (réngrán) là phó từ chỉ sự tiếp diễn của trạng thái hoặc hành vi, có nghĩa là 'vẫn như trước', 'vẫn vậy' (đồng nghĩa với '依然', '还是'). Nó thường đứng trước động từ hoặc tính từ, dùng để chỉ một trạng thái, tình huống hoặc tính chất nào đó vẫn tiếp tục duy trì nguyên vẹn như cũ, không hề biến chuyển dù thời gian đã trôi qua hoặc hoàn cảnh xung quanh có đổi khác (ví dụ: '仍然坚持' - vẫn tiếp tục kiên trì, '仍然很年轻' - trông vẫn rất trẻ, '仍然没有消息' - vẫn chưa có tin tức gì). Thường kết hợp với '虽然……但是……' hoặc '即使/就算……也……'. Tương đương với 'vẫn', 'vẫn cứ', 'vẫn như cũ' trong tiếng Việt.",
+      "formation": "Chủ ngữ (+ 即使 / 虽然...) + 仍然 + Động từ / Tính từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cho dù ở đáy biển sâu vài kilomet thì vẫn có thể nhìn thấy đồ vật."
+        }
+      ]
+    },
+    "zh_是否_383": {
+      "title": "是否…… (Phó từ liên kết: Liệu có... hay không / Có... không)",
+      "shortExplanation": "Dạng văn viết trang trọng tương đương với '是不是', dùng trong câu hỏi hoặc phân câu làm tân ngữ để diễn đạt sự nghi vấn, không chắc chắn; 'liệu có... hay không'.",
+      "longExplanation": "'是否' (shìfǒu) là từ mang sắc thái trang trọng, văn viết, kết hợp từ chữ Hán cổ '是' (phải, đúng) và '否' (không, chẳng), hoàn toàn tương đương với dạng câu hỏi chính phản khẩu ngữ '是不是' (phải chăng, có phải hay không). '是否' thường đứng trước vị ngữ trong câu trần thuật hoặc phân câu làm tân ngữ cho các động từ tri nhận (như 知道, 了解, 确定, 怀疑, 考虑...) để biểu thị tính hai mặt chưa xác định của sự việc (ví dụ: '是否同意' - liệu có đồng ý hay không, '是否可行' - có khả thi hay không, '是否参加' - liệu có tham gia hay không). Tương đương với 'liệu có... hay không', 'có... hay không' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (不确定 / 不知道 +) 是否 + Vị ngữ (Động từ / Tính từ / Cụm động từ)",
+      "examples": [
+        {
+          "translation": "Nhưng con bé còn nhỏ thế này, cuốn sách này tôi không biết liệu nó có đọc hiểu được hay không."
+        }
+      ]
+    },
+    "zh_受不了_384": {
+      "title": "受不了 (Cụm bổ ngữ khả năng: Chịu không nổi / Không thể chịu đựng được)",
+      "shortExplanation": "Bổ ngữ khả năng biểu thị sự quá tải về thể chất hoặc tâm lý, không thể tiếp tục nhẫn nhịn hay chịu đựng được nữa; 'chịu không nổi', 'không chịu xiết'.",
+      "longExplanation": "'受不了' (shòubùliǎo) là hình thức phủ định của bổ ngữ khả năng '受得了' (chịu đựng được), trong đó '受' là chịu đựng, tiếp nhận. Cụm từ này dùng để biểu thị một người không thể nào chịu đựng, kham nổi hoặc nhẫn nhịn thêm được nữa trước sự đau đớn, mệt mỏi về thể xác, áp lực tâm lý hoặc trước thái độ, hành vi quá quắt, khó chịu của người khác (ví dụ: '受不了这天气' - chịu không nổi thời tiết này, '受不了他的脾气' - không chịu nổi tính khí của anh ta, '热得受不了' - nóng chịu không thấu). Thường đi trực tiếp với tân ngữ danh từ/đại từ hoặc đứng sau '得' làm bổ ngữ trạng thái. Tương đương với 'chịu không nổi', 'không thể chịu đựng được', 'chịu hết xiết' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (真 / 实在) + 受不了 (+ Tân ngữ: Người / Sự việc / Hoàn cảnh)",
+      "examples": [
+        {
+          "translation": "Tôi thật sự chịu không nổi cậu nữa rồi, rốt cuộc cậu còn muốn đi dạo bao lâu nữa hả?"
+        }
+      ]
+    },
+    "zh_接着V_385": {
+      "title": "接着 + Động từ (Phó từ: Tiếp tục làm gì / Kế tiếp / Làm tiếp)",
+      "shortExplanation": "Phó từ đứng trước động từ để biểu thị hành động tiếp diễn nối tiếp theo sau một hành động khác hoặc tiếp tục phần việc chưa hoàn tất; 'tiếp tục', 'làm tiếp'.",
+      "longExplanation": "'接着' (jiēzhe) đóng vai trò là phó từ đứng trước động từ, biểu thị sự tiếp nối hành động. Cấu trúc này dùng để diễn đạt việc một chủ thể tiếp tục làm nốt phần việc dở dang, hoặc một hành động mới được triển khai nối tiếp ngay sau khi hành động trước vừa kết thúc (ví dụ: '接着说' - nói tiếp, '接着干' - làm tiếp, '你先吃，我接着写' - bạn ăn trước đi, tôi viết tiếp đã, '接着看' - xem tiếp/đọc tiếp). Nó nhấn mạnh tính liên tục, không đứt đoạn của dòng sự việc. Tương đương với 'tiếp tục...', 'làm tiếp', 'kế tiếp' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 接着 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cậu đọc xong cuốn sách này thì trước tiên đừng vội trả nhé, tôi sẽ đọc tiếp."
+        }
+      ]
+    },
+    "zh_接着_386": {
+      "title": "接着…… (Liên từ nối: Tiếp đó / Sau đó / Liền sau đó)",
+      "shortExplanation": "Liên từ dùng ở đầu phân câu sau để nối tiếp dòng thời gian hoặc thứ tự diễn biến của sự việc; 'tiếp đó', 'sau đó', 'ngay sau đó'.",
+      "longExplanation": "'接着' (jiēzhe) đóng vai trò là liên từ nối giữa hai phân câu, tương đương với '然后' (sau đó) hoặc '紧接着' (ngay tiếp đó). Từ này dùng để chỉ một sự việc, hành động mới phát sinh hoặc diễn ra nối tiếp ngay sau khi sự việc ở phân câu trước đã xảy ra theo đúng trình tự thời gian (ví dụ: '吃了晚饭，接着去散步' - ăn tối xong, tiếp đó đi dạo; '会议开完了，接着安排考察' - cuộc họp kết thúc, sau đó liền sắp xếp đi khảo sát). Thường phối hợp với phó từ '又', '就' ở phân câu sau để nhấn mạnh tính nhịp nhàng, liền mạch. Tương đương với 'tiếp đó', 'sau đó', 'kế tiếp' trong tiếng Việt.",
+      "formation": "Phân câu 1，接着 (+ Chủ ngữ) (+ 又 / 就) + Phân câu 2",
+      "examples": [
+        {
+          "translation": "Sau khi tốt nghiệp anh ấy làm việc ở quê một năm, tiếp đó lại thi đỗ vào Đại học Bắc Kinh để học thạc sĩ."
+        }
+      ]
+    },
+    "zh_除此以外_387": {
+      "title": "除此以外 (Cụm liên từ: Ngoài điều này ra / Trừ cái đó ra / Bên cạnh đó)",
+      "shortExplanation": "Cụm từ cố định đứng ở đầu phân câu để loại trừ sự việc vừa nêu hoặc bổ sung thêm thông tin khác; 'ngoài điều này ra', 'trừ cái đó ra'.",
+      "longExplanation": "'除此以外' (chú cǐ yǐwài) (đồng nghĩa với '除此之外') là cụm liên từ/giới từ cố định thường đứng ở đầu phân câu thứ hai. '此' (cǐ) đại diện cho tình huống, sự việc hoặc đặc điểm vừa được đề cập ở câu trước. Cụm từ này có hai hướng sử dụng: một là loại trừ (loại bỏ điểm vừa nêu ra, ngoài nó ra thì không còn gì khác, thường kết hợp với '再也/几乎没...'); hai là bổ sung (bên cạnh điều này thì còn có thêm các yếu tố khác, thường đi với '还/也...'). Tương đương với 'ngoài điều này ra', 'trừ việc đó ra', 'bên cạnh đó' trong tiếng Việt.",
+      "formation": "Tiền đề / Câu 1，(但 / 而且 +) 除此以外 (+ Chủ ngữ) + Phân câu loại trừ hoặc bổ sung",
+      "examples": [
+        {
+          "translation": "Anh ấy và em trai sinh cùng ngày, hai anh em trông rất giống nhau, nhưng ngoài điều đó ra thì hầu như chẳng tìm thấy điểm chung nào khác nữa."
+        }
+      ]
+    },
+    "zh_把N1叫作N2_388": {
+      "title": "把 + Danh từ 1 + 叫作 + Danh từ 2 (Câu chữ 把: Gọi danh từ 1 là danh từ 2 / Đặt tên là)",
+      "shortExplanation": "Cấu trúc câu chữ 把 biểu thị việc xưng hô, gọi tên hoặc định danh cho một sự vật, đối tượng; 'gọi... là...'.",
+      "longExplanation": "Cấu trúc '把 + Danh từ 1 + 叫作 + Danh từ 2' là một biến thể phổ biến của câu chữ '把' (bǎ) kết hợp với động từ kép '叫作' (gọi là, xem như là). Trong đó, 'Danh từ 1' là đối tượng được đề cập, còn 'Danh từ 2' là tên gọi, danh xưng, biệt hiệu hoặc ẩn dụ được gán cho đối tượng đó (ví dụ: '把这种现象叫作内卷' - gọi hiện tượng này là nội quyển, '把黄河叫作母亲河' - gọi sông Hoàng Hà là sông mẹ). Cấu trúc này dùng để diễn đạt việc quy ước tên gọi, cách gọi thân mật hoặc định nghĩa mang tính văn hóa/khoa học. Tương đương với 'gọi... là...', 'coi... như là...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 把 + Danh từ 1 + 叫作 + Danh từ 2 (Tên gọi / Danh hiệu / Biệt danh)",
+      "examples": [
+        {
+          "translation": "Người Trung Quốc gọi sông Hoàng Hà là \"Dòng sông Mẹ\"."
+        }
+      ]
+    },
+    "zh_无论不管Q都_389": {
+      "title": "(无论 / 不管) + Từ để hỏi + 都…… (Liên từ vô điều kiện: Cho dù... đều / Bất kể... cũng)",
+      "shortExplanation": "Liên từ vô điều kiện kết hợp với đại từ nghi vấn (ai, cái gì, ở đâu...) và phó từ '都' để biểu thị trong bất kỳ tình huống nào kết quả vẫn không thay đổi; 'cho dù... đều...'.",
+      "longExplanation": "Cấu trúc '(无论/不管) + Từ để hỏi + 都' là mẫu câu biểu thị điều kiện vô điều kiện rất phổ biến. Trong đó, '不管' mang khẩu ngữ gần gũi, còn '无论' mang sắc thái trang trọng, văn viết hơn. Sau '无论/不管' bắt buộc phải là một đại từ nghi vấn (như 谁 - ai, 什么 - cái gì, 怎么 - thế nào, 哪儿 - đâu, 什么时候 - khi nào...) hoặc hình thức lựa chọn. Phân câu chính dùng phó từ '都' (hoặc '也') để khẳng định rằng dù điều kiện giả định có biến đổi thế nào thì kết quả, quy luật hoặc thái độ vẫn hoàn toàn như nhau, không có ngoại lệ (ví dụ: '无论谁都……' - bất kể là ai cũng..., '不管去哪儿我都陪你' - dù đi đâu tôi cũng đi cùng cậu). Tương đương với 'cho dù... đều...', 'bất kể... cũng...' trong tiếng Việt.",
+      "formation": "(无论 / 不管) + Từ để hỏi (谁 / 什么 / 哪儿 / 怎么...) + (Chủ ngữ +) 都 / 也 + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Không sao đâu, không cần phải xin lỗi, cho dù là ai thì cũng đều có lúc sơ suất điền sai mà."
+        }
+      ]
+    },
+    "zh_V上_390": {
+      "title": "Động từ + 上 (Bổ ngữ kết quả / Bổ ngữ khả năng: Được làm gì / Kịp... / Đạt được)",
+      "shortExplanation": "Đứng sau động từ để biểu đạt việc đạt được mục đích, nắm bắt được cơ hội hoặc được hưởng thụ một thành quả (thường gặp dạng khả năng 'Động từ + 得上 / 不上'); 'được...', 'kịp...'.",
+      "longExplanation": "'上' (shàng) khi làm bổ ngữ kết quả hoặc bổ ngữ khả năng sau động từ mang ý nghĩa đạt được mục tiêu, thỏa mãn nguyện vọng hoặc có cơ hội thụ hưởng một điều kiện tốt (ví dụ: '吃上肉' - được ăn thịt, '考上大学' - thi đỗ đại học, '过上好日子' - có được cuộc sống ấm no). Cực kỳ phổ biến trong kết cấu bổ ngữ khả năng: 'Động từ + 得上' (có cơ hội/kịp để làm gì) và 'Động từ + 不上' (không có cơ hội/không được/không kịp làm gì, như '吃不上' - không được ăn, '赶不上' - không kịp xe, '用不上' - không dùng tới). Tương đương với 'được (hưởng/làm)', 'kịp...', 'đạt được' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + (得 / 不) + 上 (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Xem ra hôm nay không được ăn sủi cảo thịt cừu rồi."
+        }
+      ]
+    },
+    "zh_V出来_391": {
+      "title": "Động từ + 出来 (Bổ ngữ xu hướng: Làm ra / Tạo ra / Nhận ra kết quả)",
+      "shortExplanation": "Bổ ngữ xu hướng mở rộng biểu thị thông qua động tác mà tạo ra một kết quả, thành phẩm mới hoặc nhận diện, phát hiện ra sự vật; 'ra', 'tạo ra', 'làm ra'.",
+      "longExplanation": "'出来' (chūlái) khi làm bổ ngữ xu hướng sau động từ không chỉ mang nghĩa di chuyển từ trong ra ngoài, mà thường được dùng với nghĩa phái sinh trừu tượng. Ý nghĩa nổi bật nhất là biểu thị thông qua hành động, nỗ lực mà sáng tạo ra, sản xuất ra hoặc hoàn thành một thành quả, sự vật mới từ chỗ chưa có đến chỗ có (ví dụ: '做出来' - làm ra, '写出来' - viết ra, '想出来' - nghĩ ra, '研究出来' - nghiên cứu chế tạo ra). Ngoài ra, nó cũng dùng để chỉ việc nhận biết, phát hiện hoặc làm lộ rõ thông tin ẩn giấu (ví dụ: '看出来' - nhìn ra, '听出来' - nghe nhận ra). Tương đương với '... ra', 'tạo ra...', 'làm ra...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + (得 / 不) + 出来 (+ Tân ngữ: Thành phẩm / Kết quả / Ý tưởng)",
+      "examples": []
+    },
+    "zh_总的来说_393": {
+      "title": "总的来说 (Cụm từ liên kết / Khẩu ngữ dẫn nhập: Nhìn chung mà nói / Nói tóm lại / Tổng quan mà nói)",
+      "shortExplanation": "Cụm từ dùng ở đầu câu hoặc trước vị ngữ để tóm tắt, khái quát đánh giá toàn diện về sự vật, sự việc; 'nhìn chung mà nói', 'nói chung'.",
+      "longExplanation": "'总的来说' (zǒng de lái shuō) là cụm từ chêm xen (quán ngữ) đóng vai trò trạng ngữ, thường đứng ở đầu câu hoặc giữa chủ ngữ và vị ngữ. Cụm từ này dùng để đưa ra lời kết luận, đánh giá hoặc tóm lược có tính chất bao quát toàn cục về một đối tượng, sự việc hay tình hình nào đó sau khi đã cân nhắc các mặt tốt xấu (ví dụ: '总的来说，这是一次成功的会议' - nhìn chung mà nói, đây là một cuộc họp thành công; '总的来说还算满意' - nói chung vẫn coi là hài lòng). Tương đương với 'nhìn chung mà nói', 'nói tóm lại', 'tổng thể mà xét' trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 总的来说，(+ Chủ ngữ +) Nhận định / Đánh giá tổng quát",
+      "examples": [
+        {
+          "translation": "Công ty này nhìn chung mà nói thì vẫn khá tốt."
+        }
+      ]
+    },
+    "zh_在于_394": {
+      "title": "在于 (Động từ: Cốt ở / Nằm ở / Quyết định bởi / Chính là ở chỗ)",
+      "shortExplanation": "Động từ mang sắc thái văn viết chỉ ra nguyên nhân cốt lõi, bản chất của vấn đề hoặc yếu tố quyết định; 'nằm ở', 'cốt ở chỗ'.",
+      "longExplanation": "'在于' (zàiyú) là động từ mang sắc thái trang trọng, văn viết, trong đó '在' mang nghĩa tồn tại và '于' là giới từ biểu thị phương hướng, vị trí hoặc lĩnh vực. Cấu trúc này dùng để chỉ ra mấu chốt, bản chất trọng tâm hoặc điều kiện tiên quyết của một sự việc, quy luật hay triết lý (ví dụ: '生命在于运动' - sự sống cốt ở vận động, '成功的关键在于坚持' - chìa khóa của thành công nằm ở sự kiên trì, '问题的实质在于缺少沟通' - thực chất của vấn đề nằm ở chỗ thiếu sự giao tiếp). Tương đương với 'nằm ở', 'cốt ở', 'chính là ở chỗ', 'tùy thuộc vào' trong tiếng Việt.",
+      "formation": "Chủ ngữ (Hiện tượng / Vấn đề / Sự vật) + 在于 + Tân ngữ (Bản chất / Nguyên nhân mấu chốt / Hành động)",
+      "examples": [
+        {
+          "translation": "Người ta thường nói rằng: \"Sự sống cốt ở vận động\"."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_次_377": {
+      "title": "数詞 / 番号 ＋ 次（量詞・名詞：〜便・〜号・〜系統）",
+      "shortExplanation": "列車やバスなどの便名・運行番号の後ろに付き、特定の運行系統や列車番号を表します（「〜号」「〜便」「〜系統」）。",
+      "longExplanation": "「次」（cì）は数字やアルファベットからなる運行番号の後ろに付き、列車や長距離バス、路線バスなどの便名・運行番号（中国語の「车次」）を表す接尾辞・量詞として機能します（例：「502次公交车」＝502系統の路線バス、「G1次高速列车」＝高速鉄道G1号便、「K123次列车」＝快速列車K123便）。日本語の列車・便・路線の「〜号」「〜便」「〜系統」に相当します。",
+      "formation": "数詞 / 運行番号 ＋ 次（＋ 乗り物の名詞：公交车 / 列车 / 火车など）",
+      "examples": [
+        {
+          "translation": "502番のバスがもうすぐ到着します。"
+        }
+      ]
+    },
+    "zh_为了V1而V2_378": {
+      "title": "为了 ＋ 動詞1 ＋ 而 ＋ 動詞2（接続詞・前置詞：動詞1のために動詞2をする）",
+      "shortExplanation": "目的を表す介詞「为了」と接続詞「而」が呼応し、動詞1という目的を達成するために動詞2という行動をとることを表します（「動詞1のために動詞2する」）。",
+      "longExplanation": "「为了 ＋ 動詞1 ＋ 而 ＋ 動詞2」は、目的とそのための行動を明確に結びつける複文パターンです。介詞「为了」（wèile）が達成すべき目標や目的（動詞1）を導き、接続詞「而」（ér）がそれを受けて行われる具体的な行為や努力（動詞2）を導きます。文章語や改まった場面で好んで使われ、強い目的意識や行動の動機を際立たせます（例：「为了实现理想而努力奋斗」＝理想を実現するために奮闘努力する、「为了生存而工作」＝生きるために働く）。日本語の「〜するために〜する」「〜のために〜を行う」に相当します。",
+      "formation": "（主語 ＋）为了 ＋ 動詞1（＋ 目的語）＋（主語 ＋）而 ＋ 動詞2（＋ 目的語）",
+      "examples": []
+    },
+    "zh_为了N而V_381": {
+      "title": "为了 ＋ 名詞 ＋ 而 ＋ 動詞（介詞句・接続詞：名詞のために動詞をする）",
+      "shortExplanation": "介詞「为了」が目的や対象となる名詞を導き、接続詞「而」を介してそのために行う動作を表します（「名詞のために動詞する」）。",
+      "longExplanation": "「为了 ＋ 名詞 ＋ 而 ＋ 動詞」は、介詞「为了」（wèile）の後ろに目的・追求対象となる名詞（利益、理想、平和、生存に必要な資源など）を置き、接続詞「而」（ér）を挟んでその目的のために行われる動詞を続ける構文です（例：「为了荣誉而战」＝名誉のために戦う、「为了利益而合作」＝利益のために協力する、「为了健康而跑步」＝健康のために走る）。書面語の語感を帯び、明確な動機や大義名分を伴う行動を表します。日本語の「〜のために〜する」「〜を求めて〜を行う」に相当します。",
+      "formation": "主語 ＋ 为了 ＋ 名詞 ＋ 而 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "植物は日光や空気、水のために競争します。"
+        }
+      ]
+    },
+    "zh_仍然VA_382": {
+      "title": "仍然 ＋ 動詞 / 形容詞（時間副詞：依然として・相変わらず・やはり）",
+      "shortExplanation": "副詞として動詞や形容詞の前に置き、状況や動作が変化せず従前どおり継続していることを表します（「依然として」「相変わらず」「今なお」）。",
+      "longExplanation": "「仍然」（réngrán）は状態の継続を表す副詞で、「依然」「还是」に近く、やや改まった響きを持ちます。時間や環境が変化したり障害があったりしても、事物の性質や動作・状態が以前のままで変わっていないことを表します（例：「仍然坚持」＝依然として固執・堅持している、「仍然很冷」＝依然としてとても寒い、「仍然有效」＝今なお有効である）。「即使 / 就算……也……」（たとえ〜であっても）や「虽然……但是……」（〜だがしかし）といった譲歩の構文とも非常によく呼応します。日本語の「依然として」「相変わらず」「今なお」「やはり」に相当します。",
+      "formation": "主語（＋ 即使 / 虽然〜）＋ 仍然 ＋ 動詞 / 形容詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "数キロメートルの深い海底であっても、依然として物を見ることができます。"
+        }
+      ]
+    },
+    "zh_是否_383": {
+      "title": "是否……（副詞・接続詞：〜かどうか・果たして〜か否か）",
+      "shortExplanation": "口語の「是不是」に相当する書面語で、動詞・形容詞の前に置き、事態が成立するかどうかを問うたり疑ったりします（「〜かどうか」「〜であるか否か」）。",
+      "longExplanation": "「是否」（shìfǒu）は書面語的な色彩を持つ語で、古代中国語の「是」（肯定）と「否」（否定）が合わさったものであり、現代口語の正反疑問表現「是不是」に相当します。述語（動詞や形容詞）の前に置かれ、あるいは「知道」「清楚」「确定」「考虑」などの認識動詞の目的語節の中で用いられて、「〜かどうか」「〜であるか否か」という不確実な事態の真偽を表します（例：「是否同意」＝同意するかどうか、「是否成真」＝現実になるか否か、「是否可行」＝実行可能かどうか）。日本語の「〜かどうか」「〜か否か」「果たして〜だろうか」に相当します。",
+      "formation": "主語 ＋（不知道 / 不确定 ＋）是否 ＋ 述語（動詞 / 形容詞）",
+      "examples": [
+        {
+          "translation": "ですが彼女はまだこんなに幼いので、この本を彼女が読んで理解できるかどうか、私には分かりません。"
+        }
+      ]
+    },
+    "zh_受不了_384": {
+      "title": "受不了（可能補語：耐えられない・我慢できない・たまらない）",
+      "shortExplanation": "可能補語の否定形として、肉体的苦痛や精神的ストレス、相手の言動に我慢できず耐え切れないことを表します（「耐えられない」「我慢ならない」）。",
+      "longExplanation": "「受不了」（shòubùliǎo）は「受ける・耐える」を意味する「受」に可能補語の否定形「不了」が付いたもので、「受得了」（耐えられる）の対義語です。激しい暑さ・寒さ・痛みなどの肉体的負荷、過酷な労働環境、または他人の不快な態度やわがままに対して、忍耐の限界を超えて「もうこれ以上は耐えられない」「辛抱できない」と不満や悲鳴をあげる際に使います（例：「热得受不了」＝暑くてたまらない、「受不了这个味道」＝この臭いには我慢できない、「真受不了他」＝彼には本当に愛想が尽きる・耐えられない）。日本語の「耐えられない」「我慢できない」「たまらない」に相当します。",
+      "formation": "主語 ＋（真 / 实在 ＋）受不了（＋ 目的語：人 / 事物 / 状況）",
+      "examples": [
+        {
+          "translation": "私は本当にあなたには我慢できません。いったいいつまで見て回るつもりなんですか。"
+        }
+      ]
+    },
+    "zh_接着V_385": {
+      "title": "接着 ＋ 動詞（副詞：引き続いて動詞する・続けて〜する）",
+      "shortExplanation": "副詞として動詞の前に置き、先行する動作を受けてそのまま引き続いて動作を行うことを表します（「続けて〜する」「引き続いて〜する」）。",
+      "longExplanation": "「接着」（jiēzhe）は副詞として動詞の前に置かれ、直前の動作や状態から途切れずにそのまま継続して次の動作に移ること、あるいは前任者・先行者の後を引き継いで同じ動作を続けることを表します（例：「接着说」＝話を続ける・続けて話す、「接着干」＝作業を続ける、「接着看」＝続けて読む・見る、「接着做下一个项目」＝引き続き次のプロジェクトに着手する）。日本語の「引き続いて〜する」「続けて〜する」「引き継いで〜する」に相当します。",
+      "formation": "主語 ＋ 接着 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "あなたはこの本を読み終わった後、まだ返さないでください。私が続けて読みますから。"
+        }
+      ]
+    },
+    "zh_接着_386": {
+      "title": "接着……（接続詞：続いて・その次に・それから）",
+      "shortExplanation": "接続詞として後続の文頭に置き、前の事態に引き続いて次の事態が時間順に起こることを表します（「続いて」「それから」「その後すぐに」）。",
+      "longExplanation": "「接着」（jiēzhe）は接続詞として前後の節を連結し、「然后」（そのあと）や「紧接着」と同様に、前の事象に引き続いて次の事象が速やかに発生する時間的順序を表します（例：「大家鼓掌，接着主持人走上舞台」＝全員が拍手し、続いて司会者が舞台に上がった、「听完报告，接着大家进行了讨论」＝報告を聞き、続いて皆で討議を行った）。後続節で副詞の「又」「就」などと呼応することが多く、物事の展開のテンポの良さや自然な連鎖を表します。日本語の「続いて」「その次に」「それからすぐに」に相当します。",
+      "formation": "節1，接着（＋ 主語）（＋ 又 / 就）＋ 節2",
+      "examples": [
+        {
+          "translation": "彼は卒業後に実家で1年間働き、続いてまた北京大学の大学院に合格して進学しました。"
+        }
+      ]
+    },
+    "zh_除此以外_387": {
+      "title": "除此以外……（接続表現：これ以外に・このほかには・それ以外は）",
+      "shortExplanation": "固定フレーズとして後続節の冒頭に置き、前述の事柄を除外したり、別の情報を補足したりします（「これ以外に」「このほかには」）。",
+      "longExplanation": "「除此以外」（chú cǐ yǐwài）は「除此之外」と同義の接続表現で、文頭または接続詞の直後に置かれます。「此」は直前に述べた事柄や状況を指します。主な用法として、①「除外」（前述の内容以外には他に見当たらない・存在しないことを表し、「几乎不/没……」「再找不到……」などと呼応する）、②「付加・追加」（前述の事柄のほかに、さらに別の要素が加わることを表し、「还/也……」と呼応する）の2通りがあります。日本語の「これ以外には」「このほかには」「それ以外は」に相当します。",
+      "formation": "文1，（但 / 而且 ＋）除此以外（＋ 主語）＋ 節",
+      "examples": [
+        {
+          "translation": "彼と弟は同じ日に生まれ、兄弟二人はとてもよく似ていますが、それ以外には共通点がほとんど見当たりません。"
+        }
+      ]
+    },
+    "zh_把N1叫作N2_388": {
+      "title": "把 ＋ 名詞1 ＋ 叫作 ＋ 名詞2（把構文：名詞1を名詞2と呼ぶ・名付ける）",
+      "shortExplanation": "「把」構文を用いて対象（名詞1）を提示し、それを名詞2と呼称・定義することを表します（「名詞1を名詞2と呼ぶ」）。",
+      "longExplanation": "「把 ＋ 名詞1 ＋ 叫作 ＋ 名詞2」は、「把」構文に動詞「叫作」（〜と呼ぶ、〜と称する）が組み合わさった表現です。処置の対象となる事物や概念（名詞1）を「把」で前に引き出し、その呼称、あだ名、比喩的名称、あるいは学術的定義（名詞2）を「叫作」の後ろに配置します（例：「把这种现象叫作……」＝この現象を〜と呼ぶ、「把黄河叫作母亲河」＝黄河を母なる河と呼ぶ）。人々の慣習的な呼び方や命名を説明する際によく使われます。日本語の「〜を〜と呼ぶ」「〜を〜と称する」に相当します。",
+      "formation": "主語 ＋ 把 ＋ 名詞1 ＋ 叫作 ＋ 名詞2（名称 / 呼称 / 別名）",
+      "examples": [
+        {
+          "translation": "中国人は黄河のことを「母なる河」と呼びます。"
+        }
+      ]
+    },
+    "zh_无论不管Q都_389": {
+      "title": "（无论 / 不管）＋ 疑問詞 ＋ 都……（無条件接続詞：たとえ誰 / 何であっても皆〜だ）",
+      "shortExplanation": "無条件を表す接続詞「无论 / 不管」が疑問代名詞（谁・什么・哪儿など）および「都」と呼応し、どんな状況・対象であっても例外なく成立することを表します（「たとえ〜であってもすべて〜」）。",
+      "longExplanation": "「（无论/不管）＋ 疑問詞 ＋ 都……」は無条件複文の代表的なパターンです。「不管」は口語的、「无论」はより改まった書面語的ニュアンスを持ちます。後ろに疑問代名詞（「谁」だれ、「什么」なに、「哪儿」どこ、「怎么」どう、「什么时候」いつなど）を伴い、後続の主節で副詞の「都」（または「也」）と呼応して、「いかなる条件や人物であっても例外は一切認められず、結果はすべて一律である」ことを強調します（例：「无论谁都……」＝誰であってもみな……、「不管什么时候都……」＝いつでも例外なく……）。日本語の「どんな〜であってもみな……」「たとえ誰 / 何であれすべて〜」に相当します。",
+      "formation": "（无论 / 不管）＋ 疑問詞（谁 / 什么 / 哪儿 / 怎么など）＋（主語 ＋）都 / 也 ＋ 述語",
+      "examples": [
+        {
+          "translation": "大丈夫ですよ、謝る必要はありません。誰であってもうっかり書き間違えてしまう時はあるものです。"
+        }
+      ]
+    },
+    "zh_V上_390": {
+      "title": "動詞 ＋ 上（結果補語 / 可能補語：〜にありつける・目標を達成する・〜できる）",
+      "shortExplanation": "動詞の後ろに付き、目標の達成や機会の獲得、恵まれた状態の享受を表します（可能補語「動詞 ＋ 得上 / 不上」の形で「〜にありつける / ありつけない」）。",
+      "longExplanation": "「上」（shàng）が動詞の後ろに置かれて結果補語または可能補語として機能する場合、目的の達成や望ましい機会・恩恵の獲得を表します（例：「考上大学」＝大学に合格する、「过上好日子」＝良い暮らしができるようになる、「穿上新衣服」＝新しい服を着る）。特に可能補語の形「動詞 ＋ 得上 / 不上」で非常によく用いられ、幸運にもその機会にありつけるか、あるいは事情があってありつけない・間に合わない・利用できないかを表します（例：「吃得上 / 吃不上」＝食べられる・ありつける／ありつけない、「赶得上 / 赶不上」＝間に合う／間に合わない）。日本語の「〜にありつける」「〜を達成する」「首尾よく〜できる」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋（得 / 不）＋ 上（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "どうやら今日は羊肉の水餃子にはありつけそうにありません。"
+        }
+      ]
+    },
+    "zh_V出来_391": {
+      "title": "動詞 ＋ 出来（方向補語の派生用法：成果を生み出す・作り出す・見分ける）",
+      "shortExplanation": "方向補語の派生義として、動作を通じて新しい成果やアイディア、作品などを「作り出す・生み出す」、または識別することを表します（「〜し出す」「〜して作り上げる」）。",
+      "longExplanation": "「出来」（chūlái）は方向補語「出＋来」が動詞の後ろに付いて抽象的な派生義を表す用法です。最も典型的な用法は、動作や思考、研究などの努力を通じて、それまで無かった成果物やアイディア、解決策などを世に「生み出す・作り出す・完成させる」ことを表します（例：「想出来好办法」＝良いアイディアを思いつく、「写出来一本书」＝一冊の本を書き上げる、「做出来新样品」＝新サンプルを作り上げる、「研究出来新药」＝新薬を開発・研究し出す）。また、視覚や聴覚を通じて隠れた真相や違いを「見抜く・識別する」（「看出来」「听出来」）際にも用いられます。日本語の「〜を作り出す」「〜し出す」「〜を完成させる」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋（得 / 不）＋ 出来（＋ 目的語：成果 / 作品 / アイディア）",
+      "examples": []
+    },
+    "zh_总的来说_393": {
+      "title": "总的来说……（挿入句・接続表現：総じて言えば・概して・全般的に見て）",
+      "shortExplanation": "文頭や主語の直後に置き、全体を総括した概括的な評価や判断を下す際に用います（「総じて言えば」「概して言えば」「全体的に見て」）。",
+      "longExplanation": "「总的来说」（zǒng de lái shuō）は談話標識（挿入語句）として機能し、文頭または主語の後ろに置かれます。細部や個別の問題点を一旦脇に置き、物事の全体像を俯瞰した上で総合的な結論や評価を述べる際に使われます（例：「总的来说，进展还算顺利」＝全体として見れば進捗は順調と言える、「总的来说，这部电影很精彩」＝総じて言えばこの映画は非常に素晴らしい）。日本語の「総じて言えば」「全体的に見て」「概して言えば」「総合的には」に相当します。",
+      "formation": "（主語 ＋）总的来说，（＋ 主語 ＋）全体の評価・見解",
+      "examples": [
+        {
+          "translation": "この会社は全体的に見てなかなか良いです。"
+        }
+      ]
+    },
+    "zh_在于_394": {
+      "title": "在于……（動詞：〜にある・〜にかかっている・肝心な点は〜だ）",
+      "shortExplanation": "書面語の動詞として、物事の本質や核心、成功の鍵、原因などがどこに存するかを示します（「〜にある」「〜にかかっている」）。",
+      "longExplanation": "「在于」（zàiyú）は書面語的な色彩の強い動詞で、「在」（存在する）と介詞「于」（〜に）が融合した語です。ある物事の核心的本質、根本的な原因、あるいは勝敗や成功を決定づける要衝がどこにあるかを指し示します（例：「成功的秘诀在于勤奋」＝成功の秘訣は勤勉にある、「生命在于运动」＝生命の意義は運動（体を動かすこと）にある、「问题的关键在于……」＝問題の鍵は〜にある）。日本語の「〜にある」「〜にかかっている」「要は〜である」に相当します。",
+      "formation": "主語（事物 / 現象 / 核心）＋ 在于 ＋ 目的語（本質 / 鍵 / 原因など）",
+      "examples": [
+        {
+          "translation": "「生命は運動（体を動かすこと）にあり」と人々はよく言います。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_次_377": {
+      "title": "수사 / 노선번호 + 次 (양사 / 접미사: ~호, ~번, ~차 편)",
+      "shortExplanation": "기차나 버스 등의 운행 번호(차편 번호) 뒤에 쓰여 특정 노선이나 운행 편수를 가리킵니다('~호', '~번 버스/열차').",
+      "longExplanation": "'次'(cì)는 기차('列车'), 고속철('高铁'), 시내버스('公交车') 등의 운행 번호(중국어의 '车次') 뒤에 결합하여 해당 운행 편수나 노선 번호를 나타내는 접미사 겸 양사로 쓰입니다(예: '502次公交车' 502번 버스, 'G1次列车' G1호 고속열차, 'T109次特快' T109편 특급열차). 한국어의 열차나 버스의 '~호 (열차)', '~번 (버스)', '~회차'에 해당합니다.",
+      "formation": "수사 / 운행 번호 + 次 (+ 교통수단 명사: 公交车 / 列车 / 火车 등)",
+      "examples": [
+        {
+          "translation": "502번 버스가 곧 도착합니다."
+        }
+      ]
+    },
+    "zh_为了V1而V2_378": {
+      "title": "为了 + 동사1 + 而 + 동사2 (접속 표현: 동사1하기 위해 동사2하다)",
+      "shortExplanation": "목적을 나타내는 개사 '为了'와 접속사 '而'가 호응하여, 동사1이라는 목적을 달성하고자 동사2라는 행동을 취함을 나타냅니다('~하기 위해 ~하다').",
+      "longExplanation": "'为了 + 동사1 + 而 + 동사2'는 목적과 행위를 긴밀하게 연결하는 문형입니다. 개사 '为了'(wèile)가 달성하고자 하는 목표나 취지(동사1)를 이끌고, 접속사 '而'(ér)가 그 목적을 위해 기울이는 구체적인 행위나 노력(동사2)을 이어 줍니다. 서면어나 격식 있는 표현에서 자주 쓰이며 강한 목적의식을 드러냅니다(예: '为了实现梦想而努力奋斗' 꿈을 실현하기 위해 노력 분투하다, '为了生存而奔波' 생존을 위해 분주히 뛰어다니다). 한국어의 '~하기 위해 ~하다', '~하고자 ~을(를) 행하다'에 해당합니다.",
+      "formation": "(주어 +) 为了 + 동사1 (+ 목적어) + (주어 +) 而 + 동사2 (+ 목적어)",
+      "examples": []
+    },
+    "zh_为了N而V_381": {
+      "title": "为了 + 명사 + 而 + 동사 (개사구/접속 표현: 명사를 위해 동사하다)",
+      "shortExplanation": "개사 '为了' 뒤에 목표나 추구 대상이 되는 명사가 오고, 접속사 '而'를 통해 그를 위해 행하는 동작을 연결합니다('~을 위해 ~하다').",
+      "longExplanation": "'为了 + 명사 + 而 + 동사'는 개사 '为了'(wèile)가 추구하는 대상이나 이익, 가치(명사)를 제시하고, 접속사 '而'(ér)가 그 대상을 얻거나 지키기 위해 수행하는 행위(동사)를 연결하는 구조입니다(예: '为了和平而努力' 평화를 위해 노력하다, '为了生存而竞争' 생존을 위해 경쟁하다, '为了胜利而拼搏' 승리를 위해 분투하다). 문어체적인 격식을 갖춘 표현입니다. 한국어의 '~을(를) 위해 ~하다', '~을(를) 목적으로 ~을 행하다'에 해당합니다.",
+      "formation": "주어 + 为了 + 명사 + 而 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "식물은 햇빛, 공기, 물을 위해 서로 경쟁합니다."
+        }
+      ]
+    },
+    "zh_仍然VA_382": {
+      "title": "仍然 + 동사 / 형용사 (부사: 여전히, 아직도, 변함없이)",
+      "shortExplanation": "부사로서 동사나 형용사 앞에 쓰여 상황이나 동작이 변함없이 종전대로 지속되고 있음을 나타냅니다('여전히', '아직도', '변함없이').",
+      "longExplanation": "'仍然'(réngrán)은 상태나 동작의 변함없는 지속을 나타내는 부사로, '依然'(여전히), '还是'(여전히/그래도)와 의미가 통하며 비교적 격식 있는 어감을 띱니다. 시간의 흐름이나 주변 환경의 변화, 혹은 어떤 악조건에도 불구하고 이전의 상황·성질·행동이 그대로 유지됨을 나타냅니다(예: '仍然坚持' 여전히 견지하다, '仍然有效' 아직도 유효하다, '仍然很漂亮' 여전히 아름답다). '即使/就算……也……'(비록 ~할지라도)와 같은 양보 구문과 자주 호응합니다. 한국어의 '여전히', '아직도', '변함없이'에 해당합니다.",
+      "formation": "주어 (+ 即使 / 虽然 등) + 仍然 + 동사 / 형용사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "수 킬로미터 깊이의 해저라 할지라도 여전히 물체를 볼 수 있습니다."
+        }
+      ]
+    },
+    "zh_是否_383": {
+      "title": "是否…… (부사/접속사: ~인지 아닌지, ~여부, 과연 ~인가)",
+      "shortExplanation": "구어의 '是不是'에 해당하는 서면어로, 술어 앞에 쓰여 긍정과 부정의 양측 가능성을 제시합니다('~인지 아닌지', '~여부').",
+      "longExplanation": "'是否'(shìfǒu)는 한문 투의 긍정('是')과 부정('否')이 결합된 표현으로, 구어의 정반의문사 '是不是'(~인가 아닌가)에 해당하는 격식 있는 서면어입니다. 술어(동사나 형용사) 앞에 위치하거나 '知道'(알다), '确定'(확정하다), '考虑'(고려하다), '怀疑'(의심하다) 등의 인지 동사가 이끄는 목적어 절 안에서 쓰여, 사실의 진위나 성립 여부를 나타냅니다(예: '是否同意' 동의하는지 여부, '是否合格' 합격 여부/합격인지 아닌지, '是否属实' 사실인지 아닌지). 한국어의 '~인지 아닌지', '~여부', '~하는지의 여부'에 해당합니다.",
+      "formation": "주어 + (不知道 / 不确定 등 +) 是否 + 술어 (동사 / 형용사)",
+      "examples": [
+        {
+          "translation": "하지만 그 아이가 이렇게 어린데, 이 책을 과연 읽고 이해할 수 있을지 저는 잘 모르겠습니다."
+        }
+      ]
+    },
+    "zh_受不了_384": {
+      "title": "受不了 (가능보어: 견딜 수 없다, 참을 수 없다, 못 참겠다)",
+      "shortExplanation": "가능보어 부정형으로서 육체적 고통, 열악한 환경, 혹은 타인의 무리한 언행 등을 더 이상 인내하거나 견뎌내지 못함을 나타냅니다('견딜 수 없다', '못 참겠다').",
+      "longExplanation": "'受不了'(shòubùliǎo)는 견디다·받아들이다를 뜻하는 '受' 뒤에 가능보어 부정형 '不了'가 결합된 관용구로, '受得了'(견딜 수 있다)의 반대말입니다. 무더위·추위·통증과 같은 신체적 고통이나 과도한 피로, 또는 상대방의 무례하고 짜증스러운 언행이나 상황을 더 이상 인내심을 갖고 감당해 내지 못할 때 씁니다(예: '受不了这种热天' 이런 더운 날씨는 못 참겠다, '受不了他的脾气' 그의 성미는 견딜 수가 없다, '累得受不了' 지쳐서 죽을 지경이다). 한국어의 '견딜 수 없다', '참을 수 없다', '~못 견디겠다'에 해당합니다.",
+      "formation": "주어 + (真 / 实在 등 +) 受不了 (+ 목적어: 사람 / 사물 / 상황)",
+      "examples": [
+        {
+          "translation": "나 정말 너한테 두 손 두 발 다 들었어(더는 못 참겠어), 도대체 쇼핑을 얼마나 더 할 셈이니?"
+        }
+      ]
+    },
+    "zh_接着V_385": {
+      "title": "接着 + 동사 (부사: 이어서 ~하다, 계속해서 ~하다)",
+      "shortExplanation": "부사로서 동사 앞에 쓰여 이전 동작에 뒤이어 곧바로 행동을 계속하거나, 앞선 행위를 이어받아 실행함을 나타냅니다('이어서 ~하다', '계속해서 ~하다').",
+      "longExplanation": "'接着'(jiēzhe)는 동사 앞에 놓이는 부사로, 어떤 동작이 중단되지 않고 그대로 이어지거나, 앞선 동작이 끝난 직후 곧바로 다음 동작으로 넘어감을 나타냅니다. 또한 다른 사람의 행동을 바통 터치하듯 이어받아 계속 진행할 때도 쓰입니다(예: '接着说' 계속해서 말하다, '接着干' 계속해서 일하다, '接着看' 이어서 보다/읽다, '你休息一下，我接着做' 넌 좀 쉬어, 내가 이어서 할게). 한국어의 '이어서 ~하다', '계속해서 ~하다', '뒤이어 ~하다'에 해당합니다.",
+      "formation": "주어 + 接着 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "너 이 책 다 읽고 나서 일단 돌려주지(반납하지) 마, 내가 이어서 읽을게."
+        }
+      ]
+    },
+    "zh_接着_386": {
+      "title": "接着…… (접속사: 뒤이어, 이어서, 그 다음에 곧바로)",
+      "shortExplanation": "접속사로서 뒷절의 앞머리에 쓰여, 앞선 사건에 뒤이어 다음 사건이 시간 순서대로 일어남을 나타냅니다('뒤이어', '이어서', '그 다음에').",
+      "longExplanation": "'接着'(jiēzhe)는 두 절을 잇는 접속사로, '然后'(그리고 나서)나 '紧接着'(곧이어)과 유사하게 선행 사건이 발생한 직후 다음 사건이 시간적 순서에 따라 잇달아 전개됨을 나타냅니다(예: '大家鼓完掌，接着主持人走上台' 모두 박수를 쳤고, 이어서 사회자가 무대로 올라왔다). 뒷절에서 부사 '又'(또)나 '就'(곧)와 자주 호응하여 사건 전개의 신속함과 매끄러운 연속성을 강조합니다. 한국어의 '뒤이어', '이어서', '그 다음에 곧바로'에 해당합니다.",
+      "formation": "절1, 接着 (+ 주어) (+ 又 / 就) + 절2",
+      "examples": [
+        {
+          "translation": "그는 졸업 후 고향에서 1년간 일했고, 뒤이어 또 베이징대학교 대학원에 합격하여 석사 과정을 밟았습니다."
+        }
+      ]
+    },
+    "zh_除此以外_387": {
+      "title": "除此以外…… (접속 표현: 이 외에, 이 밖에는, 이것을 제외하고는)",
+      "shortExplanation": "고정 접속 표현으로 문두에 쓰여, 앞서 언급한 내용을 제외하거나 그 외의 다른 사항을 덧붙입니다('이 외에', '이 밖에는').",
+      "longExplanation": "'除此以外'(chú cǐ yǐwài)는 '除此之外'와 같은 뜻의 접속 어구로, 문장의 맨 앞이나 접속사 뒤에 놓입니다. 여기서 '此'(이것)는 앞 문장에서 서술된 사실이나 조건을 가리킵니다. 크게 두 가지 맥락으로 쓰이는데, 첫째는 제외의 의미로 앞서 말한 점을 빼고 나면 다른 것은 거의 없음을 나타내고(예: '除此以外再找不到……'), 둘째는 부가의 의미로 앞선 내용 외에 다른 것이 더 있음을 나타냅니다(예: '除此以外还有……'). 한국어의 '이 외에는', '이 밖에는', '이것 말고는'에 해당합니다.",
+      "formation": "선행문, (但 / 而且 등 +) 除此以外 (+ 주어) + 후행절",
+      "examples": [
+        {
+          "translation": "그와 남동생은 같은 날에 태어나서 형제 둘이 생김새가 매우 닮았지만, 그것 이외에는 다른 공통점을 거의 찾아볼 수 없습니다."
+        }
+      ]
+    },
+    "zh_把N1叫作N2_388": {
+      "title": "把 + 명사1 + 叫作 + 명사2 (把자문: 명사1을 명사2라고 부르다/칭하다)",
+      "shortExplanation": "'把'자문을 사용하여 대상(명사1)을 앞으로 이끌어내고, 그에 대한 호칭이나 명칭(명사2)을 부여함을 나타냅니다('명사1을 명사2라고 부르다').",
+      "longExplanation": "'把 + 명사1 + 叫作 + 명사2'는 처치문인 '把'자문에 '叫作'(~라고 부르다/~로 칭하다)이 결합된 형태입니다. 특정 대상(명사1)을 '把' 뒤에 배치하고, 그 대상에 붙여진 별칭, 관습적 호칭, 비유적 명칭 또는 개념적 정의(명사2)를 '叫作' 뒤에 위치시킵니다(예: '把这种现象叫作……' 이런 현상을 ~라고 부르다, '把黄河叫作母亲河' 황허를 어머니의 강이라 부르다). 사회적 약속이나 관습적인 명명 방식을 기술할 때 널리 쓰입니다. 한국어의 '~을(를) ~라고 부르다', '~을(를) ~라고 칭하다'에 해당합니다.",
+      "formation": "주어 + 把 + 명사1 + 叫作 + 명사2 (호칭 / 명칭 / 별명)",
+      "examples": [
+        {
+          "translation": "중국인들은 황허(황하)를 \"어머니의 강\"이라고 부릅니다."
+        }
+      ]
+    },
+    "zh_无论不管Q都_389": {
+      "title": "(无论 / 不管) + 의문사 + 都…… (무조건 접속사: 누구/무엇이든 간에 다 ~하다)",
+      "shortExplanation": "무조건을 나타내는 접속사 '无论/不管'이 의문대명사 및 부사 '都'와 호응하여, 어떤 경우에도 예외 없이 성립함을 나타냅니다('어떤 ~라도 모두').",
+      "longExplanation": "'(无论/不管) + 의문사 + 都……'는 어떤 전제나 조건 하에서도 결론이 흔들리지 않음을 나타내는 무조건 복문 구조입니다. '不管'은 일상 구어에서 애용되고, '无论'은 격식 있는 서면어에 어울립니다. 뒤에 의문대명사('谁' 누구, '什么' 무엇, '哪儿' 어디, '怎么' 어떻게, '什么时候' 언제 등)를 수반하고 뒷절에서 부사 '都'(모두) 또는 '也'(도)와 호응하여, \"어떤 대상이나 상황이든 불문하고 예외 없이 동일하다\"는 사실이나 규율을 천명합니다(예: '无论谁都……' 그 누구라 할지라도 다……, '不管发生什么都……' 무슨 일이 일어나든 다……). 한국어의 '누구/무엇이든 간에 모두 ~하다', '어떠한 ~라도 다 ~하다'에 해당합니다.",
+      "formation": "(无论 / 不管) + 의문사 (谁 / 什么 / 哪儿 / 怎么 등) + (주어 +) 都 / 也 + 술어",
+      "examples": [
+        {
+          "translation": "괜찮아요, 사과하실 필요 없어요. 누구라도 부주의해서 잘못 기재할 때가 있는 법이니까요."
+        }
+      ]
+    },
+    "zh_V上_390": {
+      "title": "동사 + 上 (결과보어 / 가능보어: 기회를 얻어 ~하다, ~에 도달하다, ~을 누리다)",
+      "shortExplanation": "동사 뒤에 붙어 목적 달성, 기회의 획득 또는 혜택의 향유를 나타냅니다(가능보어 형태 '동사 + 得上 / 不上'로 쓰여 '~을 누리다/맛보다' 또는 '~하지 못하다').",
+      "longExplanation": "'上'(shàng)이 동사 뒤에 결합하여 결과보어 또는 가능보어로 쓰일 때, 어떤 목적이나 이상에 도달하거나, 바람직한 기회나 혜택을 얻어 누림을 나타냅니다(예: '考上大学' 대학에 합격하다, '过上好日子' 좋은 생활을 누리게 되다, '住上新房' 새집에 살게 되다). 특히 가능보어 형식인 '동사 + 得上' (~할 기회를 얻다/누릴 수 있다) 및 '동사 + 不上' (~할 기회를 얻지 못하다/~을 못 누리다/놓치다) 구조로 일상 구어에서 매우 자주 쓰입니다(예: '吃不上' 얻어먹지 못하다, '赶不上' 제때 타지 못하다, '用不上' 쓰지 못하다). 한국어의 '~에 합격하다', '기회를 얻어 ~하다', '(가능보어) ~을 맛보다/누리다/놓치다'에 해당합니다.",
+      "formation": "주어 + 동사 + (得 / 不) + 上 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "보아하니 오늘은 양고기 만두를 못 얻어먹게 생겼네요(먹기 글렀네요)."
+        }
+      ]
+    },
+    "zh_V出来_391": {
+      "title": "동사 + 出来 (방향보어의 파생용법: 성과를 내다, 만들어 내다, 알아채다)",
+      "shortExplanation": "방향보어의 추상적 파생용법으로, 동작이나 노력을 통해 새로운 성과물, 아이디어 등을 완성하여 세상에 '만들어 내거나' 식별해 냄을 나타냅니다('~해 내다', '~을 만들어 내다').",
+      "longExplanation": "'出来'(chūlái)가 동사 뒤에 결합하여 방향보어의 파생적 의미로 쓰일 때, 단순한 공간적 이동을 넘어 동작과 노력을 거쳐 새로운 결과물이나 작품, 해결책, 생각 등을 '무에서 유로' 창조하여 밖으로 끄집어내거나 완성함을 나타냅니다(예: '做出来' 만들어 내다, '想出来' 생각해 내다, '写出来' 써내다, '研究出来' 연구 개발해 내다). 아울러 오감을 통해 감추어진 진상이나 차이를 식별·분별해 냄('看出来' 알아채다/알아보다, '听出来' 듣고 알아차리다)을 나타내기도 합니다. 한국어의 '~해 내다', '~을 만들어 내다', '~을 생각해 내다'에 해당합니다.",
+      "formation": "주어 + 동사 + (得 / 不) + 出来 (+ 목적어: 성과물 / 결과 / 아이디어)",
+      "examples": []
+    },
+    "zh_总的来说_393": {
+      "title": "总的来说…… (삽입어/담화 표지: 전반적으로 말해서, 대체로, 총체적으로 보면)",
+      "shortExplanation": "문두나 주어 뒤에 쓰여 세부 사항을 총괄하여 전반적인 평가나 결론을 요약·제시합니다('전반적으로 말해서', '대체로 보아').",
+      "longExplanation": "'总的来说'(zǒng de lái shuō)은 담화 표지이자 삽입구로서, 문장의 맨 앞이나 주어 뒤에 위치하여 전반적인 상황을 아우르는 총평을 이끕니다. 지엽적인 단점이나 개별적인 변수를 종합적으로 감안하여 \"크게 보았을 때\", \"대체로 말해서\"라는 뉘앙스로 결론이나 평가를 내릴 때 사용합니다(예: '总的来说，这次活动办得很成功' 종합적으로 볼 때 이번 행사는 매우 성공적이었다, '总的来说，利大于弊' 전반적으로 득이 실보다 크다). 한국어의 '전반적으로 말해서', '총체적으로 보아', '대체로', '종합해 보면'에 해당합니다.",
+      "formation": "(주어 +) 总的来说, (+ 주어 +) 종합적인 평가나 서술",
+      "examples": [
+        {
+          "translation": "이 회사는 전반적으로 말해서 꽤 괜찮은 편입니다."
+        }
+      ]
+    },
+    "zh_在于_394": {
+      "title": "在于…… (동사: ~에 있다, ~에 달려 있다, 본질은 ~이다)",
+      "shortExplanation": "서면어 동사로서 사물의 핵심 본질, 성공의 열쇠, 또는 근본적인 원인이 어디에 있는지를 명시합니다('~에 있다', '~에 달려 있다').",
+      "longExplanation": "'在于'(zàiyú)는 서면어 성격이 강한 동사로, 존재를 뜻하는 '在'와 전치사 '于'(~에)가 융합된 표현입니다. 어떤 현상의 본질, 규율의 원리, 성공의 관건, 또는 문제의 근본 원인이 어디에 소재하는지를 밝힐 때 쓰입니다(예: '生命在于运动' 생명은 운동에 있다/생명의 본질은 움직임에 있다, '成功的关键在于坚持' 성공의 관건은 꾸준함에 있다, '原因在于缺少经验' 원인은 경험 부족에 있다). 한국어의 '~에 있다', '~에 달려 있다', '~에 기인하다'에 해당합니다.",
+      "formation": "주어 (사물 / 현상 / 핵심) + 在于 + 목적어 (본질 / 관건 / 원인 등)",
+      "examples": [
+        {
+          "translation": "사람들은 흔히 \"생명은 운동(움직임)에 있다\"라고 말합니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_次_377": {
+      "title": "数词 / 编号 + 次（量词 / 名词后缀：表示车次、班次编号）",
+      "shortExplanation": "附加于列车、公交车等交通工具的编号之后，表示具体的列车或班车车次；相当于“……号班车/列车”。",
+      "longExplanation": "“次”（cì）附加在数字或字母编号之后，用于表示公共交通工具（主要是火车、高铁、长途客车、公交车等）的固定运行班次编号（即“车次”）。在交通系统中起标识特定车次的作用（如“502次公交车”、“G1次高铁”、“K109次普快列车”）。相当于“……号车”、“……次列车”。",
+      "formation": "数词 / 运行编号 + 次（+ 交通工具名词：公交车 / 列车 / 火车等）",
+      "examples": [
+        {
+          "translation": "502次公交车很快就要到了。"
+        }
+      ]
+    },
+    "zh_为了V1而V2_378": {
+      "title": "为了 + 动词1 + 而 + 动词2（关联句式：表示为达到目的动词1而采取行动动词2）",
+      "shortExplanation": "由介词“为了”引出行为目的（动词1），后接连词“而”引出具体的行动（动词2）；表示“为了达到……目的而进行……”。",
+      "longExplanation": "“为了 + 动词1 + 而 + 动词2”是书面语中十分常用的表目的因果的紧缩复句结构。介词“为了”（wèile）引出所追求的目标、宗旨或理想（动词1），连词“而”（ér）起到承上启下的连接作用，引出为达成该目的所付诸的实际努力、行动或手段（动词2）（如“为了实现中华民族伟大复兴而奋斗”、“为了生活而奔波”、“为了保护生态环境而采取措施”）。结构严谨，语意庄重。",
+      "formation": "（主语 +）为了 + 动词1（+ 宾语）+（主语 +）而 + 动词2（+ 宾语）",
+      "examples": []
+    },
+    "zh_为了N而V_381": {
+      "title": "为了 + 名词 + 而 + 动词（介词短语 / 关联结构：为特定的对象或利益而采取行动）",
+      "shortExplanation": "由介词“为了”引出作为目的或追求对象的名词，后用连词“而”引出相应的行动动词；表示“为了某事/物而进行某行动”。",
+      "longExplanation": "“为了 + 名词 + 而 + 动词”是由表目的的介词“为了”（wèile）后接名词性成分（通常指代利益、目标、理想、生存资源等），再借助连词“而”（ér）引申出为获得或捍卫该事物所开展的动作（动词）（如“为了荣誉而战”、“为了利益而合作”、“为了生存而竞争”）。此句型多用于书面语或阐述客观规律、理性分析的语境中，突出行动的针对性与动因。",
+      "formation": "主语 + 为了 + 名词 + 而 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "植物会为了阳光、空气和水而竞争。"
+        }
+      ]
+    },
+    "zh_仍然VA_382": {
+      "title": "仍然 + 动词 / 形容词（副词：表示情况或状态持续不变、依旧如此）",
+      "shortExplanation": "副词，用于动词或形容词前，表示动作、状态或性质不因时间流逝或外界条件变化而改变；相当于“依然、还是”。",
+      "longExplanation": "“仍然”（réngrán）是表示行为或状态持续未改的副词，书面语与口语中均普遍使用，语义相当于“依然”、“还是”。常置于动词或形容词之前，着重强调某种情况、态度或属性尽管经历了时间推移、外界干扰或逆境考验，却依旧保持原有态势，未发生逆转或更迭（如“仍然有效”、“仍然坚持训练”、“情况仍然严峻”）。常与表让步假设的连词“虽然”、“即使”、“就算……也……”搭配使用。",
+      "formation": "主语（+ 即使 / 虽然……）+ 仍然 + 动词 / 形容词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "就算在几公里深的海底也仍然能看到东西。"
+        }
+      ]
+    },
+    "zh_是否_383": {
+      "title": "是否……（副词 / 连词：书面语表示“是不是、能否”）",
+      "shortExplanation": "相当于口语中的“是不是”，常置于动词或形容词前，用于询问或引出未确定的情况；表示“是不是、是否属实”。",
+      "longExplanation": "“是否”（shìfǒu）属于带有书面语色彩的反贴连用词，由文言文中的肯定词“是”（对、正确）与否定词“否”（不、不是）结合而成，在现代汉语中等同于口语里的“是不是”。常置于动词、形容词或谓语短语前，尤其多用于“知道”、“确定”、“调查”、“考虑”、“怀疑”等动词充当宾语的小句中，表达对某种情况的真伪、取舍或可行性的不确定性（如“是否同意”、“是否属实”、“能否实现”、“是否存在问题”）。",
+      "formation": "主语 +（不知道 / 不确定 +）是否 + 谓语（动词 / 形容词 / 动词短语）",
+      "examples": [
+        {
+          "translation": "不过她这么小，这本书我不知道她是否能读懂。"
+        }
+      ]
+    },
+    "zh_受不了_384": {
+      "title": "受不了（可能补语否定式：忍受不住、难以承受）",
+      "shortExplanation": "动词“受”加可能补语否定式“不了”，表示身体、心理或情绪上无法承受痛苦、压力或某种恶劣状况；相当于“无法容忍、受不住”。",
+      "longExplanation": "“受不了”（shòubùliǎo）是现代汉语中极常用的可能补语否定式结构，反义词为“受得了”。“受”指承受、忍受。“受不了”表示客观外界的刺激、痛苦、困难、恶劣环境，或者他人的言行举止已经超越了当事人身体或心理所能容纳的极限，到了无法再坚持、忍耐或克制的地步（如“受不了严寒”、“受不了这个噪音”、“热得受不了”、“真受不了你这脾气”）。多带有强烈的抱怨、抗议或无可奈何的情绪色彩。",
+      "formation": "主语 +（真 / 实在 +）受不了（+ 宾语：人 / 事物 / 环境）",
+      "examples": [
+        {
+          "translation": "我真的受不了你了，你到底还要逛多久？"
+        }
+      ]
+    },
+    "zh_接着V_385": {
+      "title": "接着 + 动词（副词：紧接着进行、继续做某事）",
+      "shortExplanation": "副词，置于动词前，表示承接上文的动作，不间断地继续进行某行为；相当于“继续、紧接着”。",
+      "longExplanation": "“接着”（jiēzhe）作副词修饰动词时，表示紧承前一动作或前人的行为，毫不间断地继续进行下去。既可以指同一个人在暂停或完成前一步骤后继续做某事（如“喝口水接着讲”、“接着往下看”），也可以指后一个人接替前一个人未完成的工作或活动（如“你看完了我接着看”、“他累了，你接着干”）。突出动作在时间与流程上的连贯性与承接性。",
+      "formation": "主语 + 接着 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "你看完这本书以后先不要还，我接着看。"
+        }
+      ]
+    },
+    "zh_接着_386": {
+      "title": "接着……（连词：表示承接上一事件，接着发生下一事件）",
+      "shortExplanation": "连词，置于后一分句的开头，表示上一件事情发生后，紧接着发生另一件事；相当于“随后、紧接着、然后”。",
+      "longExplanation": "“接着”（jiēzhe）作为承接连词，常连接两个具有先后时间顺序的分句，作用等同于“然后”、“随后”或“紧接着”。它指明前一个动作或事件刚刚完结，后一个事件便紧随其后顺理成章地发生，前后衔接非常紧凑（如“大家讨论完了，接着投票表决”、“先去北京，接着去上海”）。在后一分句中常常与副词“又”、“就”等呼应配合使用。",
+      "formation": "分句1，接着（+ 主语）（+ 又 / 就）+ 分句2",
+      "examples": [
+        {
+          "translation": "他毕业后在老家工作了一年，接着又考上了北京大学，读研究生。"
+        }
+      ]
+    },
+    "zh_除此以外_387": {
+      "title": "除此以外……（固定短语 / 连词：表示除上述情况之外，排除或另有补充）",
+      "shortExplanation": "固定短语，常置于后一分句句首，用于指代并排除前文所述的情况，或在此基础上进行内容补充；相当于“除此之外”。",
+      "longExplanation": "“除此以外”（chú cǐ yǐwài）与“除此之外”含义相同，是由介词“除”与指示代词“此”（指代前文提到的事情、特点或情况）组成的固定短语，常用作句际或分句间的连接成分。用法主要有二：一是表示“排除”，强调除了前文提及的这一点之外，再无其他同类情况，常与“几乎没有/找不到”、“再也……”等否定或限止词呼应；二是表示“递进或补充”，说明除了前述内容外，还另有补充事项（常与“还”、“也”搭配）。",
+      "formation": "前文说明，（但 / 而且 +）除此以外（+ 主语）+ 分句",
+      "examples": [
+        {
+          "translation": "他和弟弟同一天出生，兄弟俩长得很像，但除此以外几乎再找不到其他共同点。"
+        }
+      ]
+    },
+    "zh_把N1叫作N2_388": {
+      "title": "把 + 名词1 + 叫作 + 名词2（把字句：称呼某事物为特定名称）",
+      "shortExplanation": "用“把”引出对象（名词1），后用动词“叫作”引出其特定的名称、称谓或称号（名词2）；表示“称呼……为……”。",
+      "longExplanation": "“把 + 名词1 + 叫作 + 名词2”是“把”字处置句中极为典型的一种表示命名与指称的句式。介词“把”将谈论的对象或客观事物（名词1）提前，谓语动词“叫作”（亦可作“叫做”）后接该事物约定俗成的称谓、尊号、绰号、比喻性叫法或学术定名（名词2）（如“把黄河叫作母亲河”、“把这种行为叫作奉献”、“古人把月亮叫作玉盘”）。常用于介绍文化常识、事物称呼或下了定义。",
+      "formation": "主语 + 把 + 名词1 + 叫作 + 名词2（名称 / 称呼 / 雅号）",
+      "examples": [
+        {
+          "translation": "中国人把黄河叫作“母亲河” 。"
+        }
+      ]
+    },
+    "zh_无论不管Q都_389": {
+      "title": "（无论 / 不管）+ 疑问词 + 都……（无条件复句关联词：表示在任何条件下结果都一样）",
+      "shortExplanation": "无条件连词“无论/不管”与疑问代词及副词“都”搭配，表示在任何情况下结果或结论都毫无例外；相当于“不论什么/谁都……”。",
+      "longExplanation": "“（无论/不管）+ 疑问词 + 都……”是表示无条件假设的经典复句句式。“不管”多用于口语，“无论”多见于书面语。句中包含疑问代词（如“谁”、“什么”、“哪儿”、“怎么”、“多大”等），表示在所指代的任一可能范围内均无所限制；后一分句用副词“都”（有时用“也”）呼应，表明在上述任何条件下，结论、态度或结果都完全一致、绝无例外（如“无论谁都有犯错的时候”、“不管遇到什么困难都不能放弃”）。",
+      "formation": "（无论 / 不管）+ 疑问词（谁 / 什么 / 哪儿 / 怎么等）+（主语 +）都 / 也 + 谓语",
+      "examples": [
+        {
+          "translation": "没关系，不用道歉，(无论/不管) 谁都有粗心填错的时候。"
+        }
+      ]
+    },
+    "zh_V上_390": {
+      "title": "动词 + 上（结果补语 / 可能补语：表示达到目的、获得机会或享受某种待遇）",
+      "shortExplanation": "置于动词后充当结果补语或可能补语，表示动作达到预定目的、抓住时机或享受到某种利益与条件；常见于“动词 + 得上 / 不上”。",
+      "longExplanation": "“上”（shàng）充当动词的结果补语或可能补语时，除了表示附着、闭合或上升外，还广泛用于表示动作达到了期望的目标、获得了难得的机会或享受到了优越的物质待遇（如“考上大学”、“过上幸福生活”、“住上大房子”）。特别是在可能补语结构“动词 + 得上 / 不上”中，表示主客观条件是否允许获得某种享受或赶上某种机会（如“吃不上饭”、“赶不上火车”、“用不上”）。例句中的“吃不上”即表示未能如愿享用到。",
+      "formation": "主语 + 动词 +（得 / 不）+ 上（+ 宾语）",
+      "examples": [
+        {
+          "translation": "看来今天吃不上羊肉饺子了。"
+        }
+      ]
+    },
+    "zh_V出来_391": {
+      "title": "动词 + 出来（复合趋向补语引申用法：产生新成果、实现产出或识别分辨）",
+      "shortExplanation": "复合趋向补语“出来”的引申用法，表示通过动作使新的事物、成果、作品或方案产生出来，或表示识别与辨认；相当于“产生、创作出”。",
+      "longExplanation": "“出来”（chūlái）充当动词的复合趋向补语时，除表示由内向外的空间位移外，常引申出丰富的抽象表意功能。核心用法是表示通过施事者的脑力思考、体力劳动或科学研究，使原本不存在的成果、思想、成品或解决方案从无到有地孕育并呈现出来（如“想出来一个好办法”、“写出来一篇优秀论文”、“研究出来新产品”、“做出来一桌好菜”）。此外，也可用于感知动词后表示识别与分辨（如“看出来”、“听出来”、“辨别出来”）。在可能补语中常以“做得出来 / 做不出来”形式出现。",
+      "formation": "主语 + 动词 +（得 / 不）+ 出来（+ 宾语：成果 / 作品 / 构想）",
+      "examples": []
+    },
+    "zh_总的来说_393": {
+      "title": "总的来说……（插入语 / 篇章连接成分：概括全局、做综合性评价）",
+      "shortExplanation": "常用插入语，置于句首或主语后，用于抛开枝节，对整体情况作出宏观概括或综合评价；相当于“总体而言、概括起来说”。",
+      "longExplanation": "“总的来说”（zǒng de lái shuō）是由形容词“总的”（全局性的、总体的）与述补结构“来说”结合而成的常用插入语，在篇章中起概括全貌、收拢话题的作用。说话人在对人、事、物进行多角度分析或列举了细节之后，使用“总的来说”对大局做出总结性的客观定性与综合评价（如“总的来说，这次试验是成功的”、“总的来说，瑕不掩瑜”）。口语与书面语中均极常用。",
+      "formation": "（主语 +）总的来说，（+ 主语 +）综合性评价与结论",
+      "examples": [
+        {
+          "translation": "这个公司总的来说还不错。"
+        }
+      ]
+    },
+    "zh_在于_394": {
+      "title": "在于……（动词：指明事物的本质、关键或决定因素）",
+      "shortExplanation": "书面语动词，后接名词、动词短语或小句，用于指出事物的本质属性、核心关键或决定性原因；相当于“决定于、取决于、核心是”。",
+      "longExplanation": "“在于”（zàiyú）是书面色彩浓厚的谓语动词，由动词“在”与介词“于”（引出对象或处所）融合而成。其核心功能是揭示某一客观规律、哲学道理、成败关键或深层原因的核心所在，即指出事物的决定因素或本质属性到底归结为何处（如“生命在于运动”、“成功的关键在于坚持不懈”、“问题的根源在于制度不健全”）。",
+      "formation": "主语（事物 / 现象 / 关键）+ 在于 + 宾语（本质 / 关键 / 原因短语）",
+      "examples": [
+        {
+          "translation": "人们常说“生命在于运动”。"
+        }
+      ]
+    }
+  }
+}

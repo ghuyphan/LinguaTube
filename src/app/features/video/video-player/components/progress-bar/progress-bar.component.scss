@@ -10,6 +10,7 @@ $z-seek-tooltip: 30;
 :host {
     display: block;
     width: 100%;
+    --handle-size: #{$progress-handle-size};
 }
 
 .progress-container {
@@ -88,10 +89,11 @@ $z-seek-tooltip: 30;
 .progress-handle {
     position: absolute;
     top: 50%;
-    left: calc(var(--progress) * 1%);
+    // Clamp handle inside track boundaries so the outer edge never spills off-screen at 0% or 100%
+    left: calc((var(--handle-size) / 2) + (100% - var(--handle-size)) * (var(--progress) / 100));
     transform: translate(-50%, -50%) scale(0);
-    width: 14px;
-    height: 14px;
+    width: var(--handle-size);
+    height: var(--handle-size);
     background: var(--accent-primary);
     border: 2px solid #ffffff;
     border-radius: 50%;
@@ -131,12 +133,16 @@ $z-seek-tooltip: 30;
 }
 
 @media (max-width: 640px) {
+    :host {
+        --handle-size: #{$progress-handle-size-mobile};
+    }
+
     .progress-container {
         height: $progress-height-mobile;
     }
 
     .progress-handle {
-        width: $progress-handle-size-mobile;
-        height: $progress-handle-size-mobile;
+        width: var(--handle-size);
+        height: var(--handle-size);
     }
 }

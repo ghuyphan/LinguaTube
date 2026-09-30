@@ -1,0 +1,670 @@
+{
+  "vi": {
+    "zh_可能的N_258": {
+      "title": "可能的 + Danh từ (Tính từ làm định ngữ: Có thể... / Có khả năng...)",
+      "shortExplanation": "'可能' làm tính từ kết hợp với trợ từ kết cấu '的' đứng trước danh từ để bổ nghĩa, biểu thị khả năng hoặc xác suất có thể xảy ra của sự vật; 'có thể...', 'có khả năng...'.",
+      "longExplanation": "'可能' (kěnéng) ngoài vai trò là phó từ hoặc danh từ, còn có thể dùng như một tính từ. Khi kết hợp với '的' đứng trước danh từ ('可能的 + Danh từ'), nó đảm nhận vai trò định ngữ trong câu, chỉ rõ một khả năng, xác suất hoặc dự đoán có căn cứ về một tình huống, nguyên nhân hay kết quả nào đó (ví dụ: '最可能的原因' - nguyên nhân có khả năng xảy ra nhất, '可能的结果' - kết quả có thể có). Tương đương với 'có khả năng...', 'có thể...' trong tiếng Việt.",
+      "formation": "(最 / 极 + ) 可能的 + Danh từ",
+      "examples": [
+        {
+          "translation": "Nhiều ngày như vậy cậu ấy không đến lớp, nguyên nhân có khả năng nhất chính là cậu ấy đã về nước rồi."
+        }
+      ]
+    },
+    "zh_来不及_259": {
+      "title": "来不及 (Cụm bổ ngữ khả năng: Không kịp / Không kịp nữa rồi)",
+      "shortExplanation": "Biểu thị thời gian quá gấp rút hoặc sự việc đã rồi, không còn đủ thời gian để thực hiện hành động nào đó; 'không kịp', 'không kịp nữa rồi'.",
+      "longExplanation": "'来不及' (láibují) là một bổ ngữ khả năng cố định (hình thức phủ định của '来得及'). Nó biểu thị do thời gian quá gấp hoặc tình thế đã phát triển đến một giai đoạn nhất định nên không thể kịp làm một việc gì đó nữa. Có thể đứng độc lập làm vị ngữ (thường đi với trợ từ '了') hoặc đứng trước một động từ khác biểu thị không kịp làm hành động đó (ví dụ: '来不及说' - không kịp nói, '来不及赶火车' - không kịp bắt tàu). Tương đương với 'không kịp', 'chẳng kịp nữa rồi' trong tiếng Việt.",
+      "formation": "(Chủ ngữ + ) 来不及 (+ Động từ / Tân ngữ) (+ 了)",
+      "examples": [
+        {
+          "translation": "Đợi đến khi sức khỏe của bạn có vấn đề rồi thì hối hận cũng không kịp nữa đâu."
+        }
+      ]
+    },
+    "zh_VVO_260": {
+      "title": "Động từ + Động từ + Tân ngữ (Trùng điệp động từ ly hợp AAB: Làm gì đó một chút)",
+      "shortExplanation": "Hình thức lặp lại động từ của động từ ly hợp theo dạng AAB (chỉ lặp lại phần động từ), biểu thị động tác diễn ra trong thời gian ngắn, thử làm hoặc mang sắc thái nhẹ nhàng, thư giãn; '...một chút', 'thử...'.",
+      "longExplanation": "Trong tiếng Trung, động từ ly hợp (động từ mang kết cấu Động từ + Tân ngữ như 散步, 游泳, 睡觉, 跳舞, 聊天) khi lặp lại để biểu thị động tác diễn ra trong thời gian ngắn, mang tính giải trí, thư thái hoặc thử nghiệm sẽ tuân theo quy tắc lặp lại AAB: lặp lại phần tố động từ phía trước còn giữ nguyên tân ngữ (ví dụ: '散步' -> '散散步', '游泳' -> '游游泳', '睡觉' -> '睡睡觉', '见面' -> '见见面'). Hình thức này làm giảm nhẹ ngữ khí, tạo cảm giác nhẹ nhàng, tự nhiên trong khẩu ngữ. Tương đương với '...một chút', '...chút xíu', 'đi dạo một lát' trong tiếng Việt.",
+      "formation": "Động từ + Động từ + Tân ngữ (Động từ ly hợp dạng AAB)",
+      "examples": [
+        {
+          "translation": "Chúng ta sau bữa trưa hãy đến công viên gần đây đi dạo một chút nhé."
+        }
+      ]
+    },
+    "zh_V了VO_261": {
+      "title": "Động từ + 了 + Động từ + Tân ngữ (Trùng điệp động tác đã hoàn thành: Đã làm gì đó một chút)",
+      "shortExplanation": "Chèn trợ từ động thái '了' vào giữa hai động từ trùng điệp có tân ngữ, biểu thị hành động ngắn, nhẹ nhàng đã xảy ra và kết thúc trong quá khứ; 'đã... một chút', 'đã... qua'.",
+      "longExplanation": "Khi muốn diễn tả một hành động mang tính chất ngắn ngủi, thư thái, nhẹ nhàng hoặc làm cho qua chuyện đã xảy ra trong quá khứ đối với động từ mang tân ngữ (đặc biệt là động từ ly hợp hoặc cụm động tân), tiếng Trung chèn trợ từ động thái '了' vào giữa hai động từ lặp lại: 'Động từ + 了 + Động từ + Tân ngữ' (ví dụ: '睡了睡觉' - đã ngủ một chút, '游了游泳' - đã bơi một lát, '做了做作业' - đã làm bài tập một lúc). Cấu trúc này thường dùng trong các câu liệt kê những việc thong thả, thường nhật đã làm. Tương đương với 'đã... một chút', 'đã... một lát' trong tiếng Việt.",
+      "formation": "Chủ ngữ + Động từ + 了 + Động từ + Tân ngữ",
+      "examples": [
+        {
+          "translation": "Chủ nhật tôi đã ngủ một lát, đi bơi một chút, rồi làm bài tập một lúc."
+        }
+      ]
+    },
+    "zh_要是_262": {
+      "title": "要是 (Liên từ giả thiết: Nếu / Giả sử / Nếu như)",
+      "shortExplanation": "Đặt ở đầu mệnh đề giả thiết để nêu ra một điều kiện giả định trong khẩu ngữ, thường kết hợp với '的话' ở cuối vế và '就 / 那么' ở vế sau; 'nếu', 'nếu như'.",
+      "longExplanation": "'要是' (yàoshi) là liên từ biểu thị điều kiện giả thiết rất phổ biến trong văn nói, mang sắc thái thân mật, tự nhiên hơn so với '如果' hay '假如'. Nó thường đứng ở đầu phân câu thứ nhất, có thể đi kèm với '的话' ở cuối phân câu điều kiện đó ('要是……的话'), và phân câu sau thường kết hợp với các phó từ liên kết như '就' (thì) hoặc '那么' (vậy thì) để dẫn ra kết quả hoặc hành động tương ứng. Tương đương với 'nếu', 'nếu như', 'giả dụ' trong tiếng Việt.",
+      "formation": "要是 + Mệnh đề điều kiện (+ 的话)，(那么 / 就) + Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Nếu chất lượng tốt thì giá đắt hơn một chút cũng không sao."
+        }
+      ]
+    },
+    "zh_既又也还_263": {
+      "title": "既…… 又 / 也 / 还…… (Liên từ sóng đôi: Vừa... lại vừa... / Đã... lại còn...)",
+      "shortExplanation": "Liên kết hai tính chất, đặc điểm hoặc hành động song song cùng tồn tại; 'vừa... lại vừa...', 'không những... mà còn...'.",
+      "longExplanation": "Cấu trúc liên từ kết hợp sóng đôi '既……又 / 也 / 还……' (jì... yòu / yě / hái...) dùng để nối hai thành phần ngữ pháp ngang hàng (tính từ, cụm động từ hoặc phân câu ngắn). Nó diễn tả hai phương diện tính chất, tác dụng hoặc trạng thái cùng tồn tại đồng thời trên một chủ thể. Hai vế này thường có tính chất hài hòa đồng nhất (cùng mang ý tích cực hoặc cùng mang ý tiêu cực). Trong đó '既……又……' là phổ biến nhất; '既……也……' và '既……还……' mang sắc thái bổ sung, tăng tiến nhẹ. Tương đương với 'vừa... vừa...', 'đã... lại còn...' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 既 + Vị ngữ 1，又 / 也 / 还 + Vị ngữ 2",
+      "examples": [
+        {
+          "translation": "Đi dạo vừa có thể vận động cơ thể, lại vừa có thể giảm cân."
+        }
+      ]
+    },
+    "zh_使OAV_264": {
+      "title": "使 + Tân ngữ + Tính từ / Động từ (Câu kiêm ngữ sai khiến: Khiến cho / Làm cho...)",
+      "shortExplanation": "Động từ sai khiến '使' biểu thị việc dẫn đến hoặc tạo ra một kết quả, khiến người khác hoặc sự vật phát sinh hành động, thay đổi trạng thái; 'làm cho', 'khiến cho'.",
+      "longExplanation": "'使' (shǐ) là động từ gây khiến (sai khiến) điển hình tạo thành câu kiêm ngữ: 'Chủ ngữ / Tác nhân + 使 + Tân ngữ kiêm Chủ ngữ vế sau + Động từ / Tính từ'. Tân ngữ của '使' đồng thời đóng vai trò chủ ngữ cho hành động hoặc trạng thái ở phía sau. So với '让' (nhượng) hay '叫' (khiếu), '使' mang phong thái trang trọng, văn viết và khách quan hơn, thường dùng để chỉ nguyên nhân, biện pháp dẫn đến một kết quả hoặc sự biến chuyển tâm lý, nhận thức, hành vi. Tương đương với 'làm cho', 'khiến cho' trong tiếng Việt.",
+      "formation": "Tác nhân / Phương thức + 使 + Tân ngữ + Động từ / Tính từ",
+      "examples": [
+        {
+          "translation": "Làm thế nào mới có thể khiến cô ấy thích tôi được nhỉ?"
+        }
+      ]
+    },
+    "zh_只要就_265": {
+      "title": "只要…… (就)…… (Liên từ điều kiện đủ: Chỉ cần... là (sẽ)...)",
+      "shortExplanation": "Nêu ra một điều kiện duy nhất hoặc đầy đủ, miễn là đáp ứng điều kiện đó thì kết quả tất yếu sẽ xảy ra; 'chỉ cần... là... / thì...'.",
+      "longExplanation": "'只要……(就)……' (zhǐyào... jiù...) là cặp liên từ biểu thị quan hệ điều kiện đủ (thường gặp trong ngữ pháp tiếng Trung). '只要' đứng ở đầu phân câu điều kiện, nêu ra một điều kiện tiên quyết cần thiết; phân câu kết quả đi kèm phó từ '就' (có khi có thể lược bỏ trong khẩu ngữ nhưng thường giữ lại) để khẳng định một khi điều kiện được đáp ứng thì kết quả phía sau chắc chắn sẽ thành hiện thực. Khác với '只有……才……' (chỉ có... mới... - điều kiện cần duy nhất), '只要' chỉ nhấn mạnh tính đầy đủ của điều kiện. Tương đương với 'chỉ cần... là...', 'miễn là... thì...' trong tiếng Việt.",
+      "formation": "只要 + Mệnh đề điều kiện đủ，(就) + Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Chỉ cần lần này bạn chuẩn bị thật tốt thì nhất định có thể đá tốt trận đấu."
+        }
+      ]
+    },
+    "zh_可不是_266": {
+      "title": "可不是！ (Thán từ / Khẩu ngữ biểu thị tán thành: Đúng thế còn gì nữa! / Chứ còn gì nữa!)",
+      "shortExplanation": "Dùng độc lập trong giao tiếp đối thoại để bày tỏ sự đồng tình mạnh mẽ và hưởng ứng nhiệt tình với ý kiến của đối phương; 'đúng thế còn gì nữa!', 'chứ sao nữa!'.",
+      "longExplanation": "'可不是！' (kěbushì! / kěbùshì!) hay '可不是吗！' là quán dụng ngữ khẩu ngữ cực kỳ sống động trong tiếng Trung, thường đứng ở đầu câu hồi đáp. Nó dùng để phụ họa, bày tỏ sự đồng tình sâu sắc và hoàn toàn nhất trí với nhận xét hay cảm thán mà đối phương vừa nêu ra. Mang sắc thái cảm thán, hào hứng hoặc cùng chung nỗi niềm tâm sự. Tương đương với 'đúng thế còn gì nữa!', 'chứ còn gì nữa!', 'chính là vậy đấy!' trong tiếng Việt.",
+      "formation": "Người nói A: Lời phát biểu / Cảm thán。Người nói B: 可不是！+ Lời phụ họa",
+      "examples": [
+        {
+          "translation": "A: Thật chẳng ngờ chúng mình đã tốt nghiệp được mười năm rồi đấy. B: Đúng thế còn gì nữa! Thời gian trôi nhanh quá, thực sự rất nhớ mọi người."
+        }
+      ]
+    },
+    "zh_因此_268": {
+      "title": "因此 (Liên từ nhân quả: Do đó / Vì vậy / Cho nên)",
+      "shortExplanation": "Đứng ở đầu mệnh đề sau để chỉ kết quả hoặc kết luận được rút ra từ nguyên nhân đã nêu ở mệnh đề trước; 'do đó', 'vì vậy'.",
+      "longExplanation": "'因此' (yīncǐ) là liên từ biểu thị quan hệ nhân quả mang tính văn viết và trang trọng ('因' nghĩa là bởi vì, '此' là điều này/sự việc này). Nó thường đứng ở đầu phân câu phía sau, biểu thị kết quả tất yếu, phán đoán hoặc kết luận hợp lý bắt nguồn trực tiếp từ tiền đề, tình huống đã được trình bày ở phân câu trước. Nó có thể dùng độc lập ở đầu vế thứ hai (sau dấu phẩy) mà không nhất thiết phải có '因为' ở vế thứ nhất. Tương đương với 'do đó', 'vì vậy', 'cho nên' trong tiếng Việt.",
+      "formation": "Mệnh đề nguyên nhân，因此 + Mệnh đề kết quả",
+      "examples": [
+        {
+          "translation": "Tôi quen biết anh ấy rất nhiều năm rồi, vì vậy rất hiểu tính cách của anh ấy."
+        }
+      ]
+    },
+    "zh_往往_269": {
+      "title": "往往 (Phó từ chỉ tần suất quy luật: Thường / Thường hay)",
+      "shortExplanation": "Đứng trước vị ngữ để biểu thị một hiện tượng, hành động thường hay xảy ra theo một quy luật hoặc trong những điều kiện nhất định; 'thường', 'thường hay'.",
+      "longExplanation": "'往往' (wǎngwǎng) là phó từ tần suất diễn tả một tình huống, hiện tượng hay hành động thường có xu hướng xảy ra theo quy luật hoặc kinh nghiệm tích lũy trong quá khứ dưới những điều kiện nhất định. Phân biệt với '常常' (thường): '往往' chỉ dùng cho những việc đã lặp lại có tính quy luật trong quá khứ hoặc chân lý chung, đòi hỏi ngữ cảnh có điều kiện hoặc hoàn cảnh cụ thể; không dùng cho kế hoạch tương lai hay ý chí chủ quan. Tương đương với 'thường', 'thường hay', 'hay' trong tiếng Việt.",
+      "formation": "Chủ ngữ + (Điều kiện / Hoàn cảnh + ) 往往 + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Sự lựa chọn màu sắc trang phục của con gái thường hay có liên quan đến tính cách của họ."
+        }
+      ]
+    },
+    "zh_经常常_270": {
+      "title": "经常 / 常 (Phó từ chỉ tần suất: Thường xuyên / Thường / Hay)",
+      "shortExplanation": "Đứng trước động từ biểu thị một hành động hoặc trạng thái diễn ra nhiều lần với tần suất cao trong quá khứ, hiện tại hoặc tương lai; 'thường xuyên', 'thường', 'hay'.",
+      "longExplanation": "'经常' (jīngcháng) và dạng rút gọn '常' (cháng) là các phó từ chỉ tần suất thông dụng nhất trong tiếng Trung. Chúng đứng trước động từ để nói về việc một hành động được thực hiện lặp đi lặp lại nhiều lần. Khác với '往往' (vốn phụ thuộc vào quy luật hoặc điều kiện nhất định), '经常 / 常' có thể dùng tự do cho cả quá khứ, thói quen hiện tại lẫn dự định tương lai, cũng như phản ánh ý chí chủ quan của con người. Hình thức phủ định là '不经常' hoặc '不常' (không thường xuyên). Tương đương với 'thường xuyên', 'thường', 'hay' trong tiếng Việt.",
+      "formation": "Chủ ngữ + 经常 / 常 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Hồi học đại học tôi rất thích thể thao, thường xuyên / thường chơi bóng rổ và đá bóng."
+        }
+      ]
+    },
+    "zh_难道_271": {
+      "title": "难道 (Phó từ ngữ khí câu phản vấn: Chẳng lẽ... / Lẽ nào...)",
+      "shortExplanation": "Đứng ở đầu câu hoặc trước vị ngữ trong câu hỏi tu từ để tăng cường ngữ khí phản vấn, thể hiện sự nghi ngờ, ngạc nhiên hoặc trách móc; 'chẳng lẽ...', 'lẽ nào...'.",
+      "longExplanation": "'难道' (nándào) là phó từ ngữ khí chuyên dùng trong câu phản vấn (câu hỏi tu từ). Nó có thể đặt ở đầu câu hoặc sau chủ ngữ, cuối câu thường kết hợp với trợ từ ngữ khí '吗' hoặc '了'. Khi dùng hình thức khẳng định '难道……' thì ngụ ý phủ định, còn khi dùng dạng phủ định '难道不……' thì lại ngụ ý khẳng định chắc chắn. Cấu trúc này dùng để nhấn mạnh một sự thật hiển nhiên, chất vấn hoặc bày tỏ sự kinh ngạc, không thể tin nổi trước một hành vi trái ngược với lẽ thường. Tương đương với 'chẳng lẽ...', 'lẽ nào...' trong tiếng Việt.",
+      "formation": "难道 + (Chủ ngữ + ) Vị ngữ + (吗 / 了)？",
+      "examples": [
+        {
+          "translation": "Sao lại mua nhiều bánh quy và sô-cô-la thế này nữa rồi? Chẳng lẽ cậu không giảm cân nữa à?"
+        }
+      ]
+    },
+    "zh_通过_272": {
+      "title": "通过 (Giới từ phương thức: Thông qua / Bằng cách / Nhờ vào)",
+      "shortExplanation": "Đứng trước danh từ hoặc cụm động từ chỉ phương thức, phương tiện hoặc con đường để đạt được mục đích; 'thông qua', 'nhờ vào'.",
+      "longExplanation": "'通过' (tōngguò) khi làm giới từ dùng để dẫn ra phương thức, cách thức, trung gian hoặc con đường cần thiết nhằm đạt được một kết quả, mục đích cụ thể. Theo sau '通过' là đối tượng trung gian (con người, tổ chức) hoặc hành động, nỗ lực làm cầu nối (ví dụ: '通过努力' - nhờ vào nỗ lực, '通过朋友介绍' - thông qua bạn bè giới thiệu, '通过考试' - thông qua kỳ thi). Phân biệt với '经过': '通过' nhấn mạnh vào phương thức, thủ đoạn hoặc trung gian làm phương tiện, trong khi '经过' nhấn mạnh vào quá trình và thời gian trải nghiệm. Tương đương với 'thông qua', 'bằng cách', 'nhờ vào' trong tiếng Việt.",
+      "formation": "通过 + Phương thức / Trung gian / Nỗ lực，(Chủ ngữ + ) Mệnh đề kết quả (hoặc: Chủ ngữ + 通过 + Phương thức + Vị ngữ)",
+      "examples": [
+        {
+          "translation": "Bất kỳ thành công nào cũng đều phải thông qua nỗ lực mới có thể đạt được."
+        }
+      ]
+    },
+    "zh_经过_273": {
+      "title": "经过 (Giới từ quá trình: Trải qua / Sau khi trải qua...)",
+      "shortExplanation": "Dẫn ra một quá trình, thời gian hoặc chuỗi trải nghiệm đã diễn ra để dẫn đến kết quả sau đó; thường đi cùng với '之后 / 以后'; 'trải qua...', 'sau khi qua...'.",
+      "longExplanation": "'经过' (jīngguò) khi làm giới từ được dùng để nêu bật một quá trình phát triển, sự diễn tiến của thời gian hoặc một chuỗi sự kiện, thử thách mà chủ thể đã trực tiếp trải qua trước khi đạt được kết quả ở vế sau. Thường tạo thành kết cấu khung '经过……之后 / 以后' (sau khi trải qua...). Khác với '通过' (thiên về thủ đoạn, phương tiện trung gian để đạt mục đích), '经过' nhấn mạnh quá trình gian nan, thời gian thử thách hoặc giai đoạn diễn biến khách quan. Tương đương với 'trải qua...', 'qua... mà...' trong tiếng Việt.",
+      "formation": "经过 + Quá trình / Trải nghiệm / Thời gian (+ 之 / 以后)，Chủ ngữ + Vị ngữ",
+      "examples": [
+        {
+          "translation": "Sau khi trải qua hết lần thất bại này đến lần thất bại khác, cuối cùng anh ấy cũng đã thành công."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_可能的N_258": {
+      "title": "可能的 ＋ 名詞（形容詞限定用法：あり得る〜・可能性のある〜）",
+      "shortExplanation": "形容詞「可能」に構造助詞「的」を付け、名詞を修飾して事態の実現性や確率が高いことを表します（「あり得る〜」「可能性の高い〜」）。",
+      "longExplanation": "「可能」（kěnéng）は名詞や助動詞・副詞としての働きのほかに、形容詞として名詞を修飾する連体修飾語（定語）を作る用法があります。「可能的 ＋ 名詞」の形で、実現する確率があることや、推測される有力な要因・結果であることを示します。特に「最可能的」（最も可能性の高い〜）などの形で頻繁に用いられます。日本語の「あり得る〜」「可能性のある〜」「考えられる〜」に相当します。",
+      "formation": "（最 / 极 ＋ ）可能的 ＋ 名詞",
+      "examples": [
+        {
+          "translation": "彼がこんなに何日も授業に来ないのは、最も考えられる原因としては国へ帰ったということだ。"
+        }
+      ]
+    },
+    "zh_来不及_259": {
+      "title": "来不及（可能補語否定形：間に合わない・手遅れである）",
+      "shortExplanation": "時間が差し迫っているか、すでに手遅れで何かを行う余裕がないことを表します（「間に合わない」「手遅れだ」）。",
+      "longExplanation": "「来不及」（láibují）は可能補語の否定固定形式で、「来得及」（間に合う）の対義語です。残り時間が足りないことや、事態が進行してしまってもはや取り返しがつかない・手遅れであることを表します。単独で述語になる（文末に「了」を伴うことが多い）ほか、動詞の直前に置いて「〜するのに間に合わない」（例：「来不及说」＝言う暇もない、「来不及赶火车」＝列車に間に合わない）という意味を表します。日本語の「間に合わない」「もう遅い」「手遅れになる」に相当します。",
+      "formation": "（主語 ＋ ）来不及（＋ 動詞 / 目的語）（＋ 了）",
+      "examples": [
+        {
+          "translation": "体に問題が生じてからでは、後悔しても手遅れになってしまいます。"
+        }
+      ]
+    },
+    "zh_VVO_260": {
+      "title": "動詞 ＋ 動詞 ＋ 目的語（離合詞の重畳形式 AAB：ちょっと〜する）",
+      "shortExplanation": "動詞＋目的語の構造を持つ「離合詞」の動詞部分のみを重ねるAAB形式で、動作の時間が短いことや気楽さ、試行を表します（「ちょっと〜する」「〜してみる」）。",
+      "longExplanation": "中国語において「動詞＋目的語」の構造を持つ離合詞（散步、游泳、睡觉、跳舞、聊天など）を重畳する場合、動詞成分のみを重ねて「AAB式」（動詞＋動詞＋目的語）の形をとります（例：「散步」→「散散步」、「游泳」→「游游泳」、「睡觉」→「睡睡觉」、「见面」→「见见面」）。動作を短時間だけ気楽に行うニュアンスや、提案・試行を柔らかく伝える語気（口調の緩和）を表します。日本語の「ちょっと〜する」「少し〜してみる」に相当します。",
+      "formation": "動詞 ＋ 動詞 ＋ 目的語（離合詞の AAB 重畳形式）",
+      "examples": [
+        {
+          "translation": "お昼ご飯を食べたら、近くの公園へ少し散歩に行きましょう。"
+        }
+      ]
+    },
+    "zh_V了VO_261": {
+      "title": "動詞 ＋ 了 ＋ 動詞 ＋ 目的語（完了した動作の重畳形式：少し〜した）",
+      "shortExplanation": "重ねる動詞の間にアスペクト助詞「了」を挟み、過去に短時間行われた動作や気楽に行われた完了動作を表します（「少し〜した」「ちょっと〜してみた」）。",
+      "longExplanation": "過去に行われた動作や、すでに完了した一連の行為について、「少しだけした」「気楽に短時間行った」というニュアンスを込めて述べる際、動詞と動詞の間に完了を表すアスペクト助詞「了」を挟んで「動詞 ＋ 了 ＋ 動詞 ＋ 目的語」の形をとります（例：「睡了睡觉」＝少し寝た、「游了游泳」＝ひと泳ぎした、「做了做作业」＝宿題を少しやった）。休日の過ごし方や気軽な活動を並列して描写する際によく使われます。日本語の「ちょっと〜した」「少し〜してみた」に相当します。",
+      "formation": "主語 ＋ 動詞 ＋ 了 ＋ 動詞 ＋ 目的語",
+      "examples": [
+        {
+          "translation": "日曜日に私は少し寝て、ひと泳ぎして、宿題を少しやりました。"
+        }
+      ]
+    },
+    "zh_要是_262": {
+      "title": "要是（仮定接続詞：もし〜なら・仮に〜とすれば）",
+      "shortExplanation": "口語において仮定条件を提示する接続詞で、しばしば文末の「的话」や後文の「就 / 那么」と呼応します（「もし〜なら」「〜ならば」）。",
+      "longExplanation": "「要是」（yàoshi）は、仮定の条件を導く接続詞で、特に口語表現において非常に頻繁に使われます。「如果」や「假如」に比べて親しみやすい日常会話の響きを持ちます。前節の文頭に置かれ、しばしば節末に「的话」を伴って「要是……的话」の呼応を作り、後節では「就」や「那么」を用いてその条件に応じた結果や判断を述べます。日本語の「もし〜なら」「〜であれば」に相当します。",
+      "formation": "要是 ＋ 条件節（＋ 的话），（那么 / 就）＋ 帰結節",
+      "examples": [
+        {
+          "translation": "もし品質が良いのであれば、値段が少し高いくらい何でもありません。"
+        }
+      ]
+    },
+    "zh_既又也还_263": {
+      "title": "既…… 又 / 也 / 还……（並列接続構文：〜でもあり、また〜でもある・〜だけでなく〜も）",
+      "shortExplanation": "同一の対象について、二つの性質や動作・状態が並存していることを表します（「〜でもあり、また〜でもある」「〜だし、その上〜だ」）。",
+      "longExplanation": "「既……又 / 也 / 还……」（jì... yòu / yě / hái...）は、対等の文法要素（形容詞、動詞句、あるいは短い節）を結びつけ、二つの性質・状態・効能が同一の主体に同時に存在することを表す並列の相関構文です。二つの事柄は通常、同じ方向性（両方とも肯定的な利点、または両方とも否定的な欠点）を持ちます。「既……又……」が最も一般的で、「也」「还」を用いると「その上〜も」という補足・累加のニュアンスが加わります。日本語の「〜でもあり、また〜でもある」「〜だし、〜でもある」に相当します。",
+      "formation": "主語 ＋ 既 ＋ 述語1，又 / 也 / 还 ＋ 述語2",
+      "examples": [
+        {
+          "translation": "散歩は体を動かすこともできるし、ダイエットにもなります。"
+        }
+      ]
+    },
+    "zh_使OAV_264": {
+      "title": "使 ＋ 目的語 ＋ 形容詞 / 動詞（兼語文・使役構文：〜に…させる・〜を…にする）",
+      "shortExplanation": "使役動詞「使」を用いて兼語文を作り、ある要因や手段が対象に影響を及ぼし、特定の動作を行わせたり状態を変化させたりすることを表します（「〜に…させる」「〜を…にする」）。",
+      "longExplanation": "「使」（shǐ）は書き言葉的で改まった使役動詞であり、兼語文（「使」の目的語が後続する動詞・形容詞の意味上の主語となる文）を形成します。「使 ＋ 目的語 ＋ 動詞 / 形容詞」の構造をとり、ある事象や働きかけが結果的・論理的に対象に作用して、その感情、認識、行動、状態を変化させることを表します。「让」や「叫」が日常口語の使役で多用されるのに対し、「使」は客観的・論理的・説明的な文脈で好まれます。日本語の「〜に…させる」「〜を…の状態にする」に相当します。",
+      "formation": "原因 / 手段 ＋ 使 ＋ 目的語 ＋ 動詞 / 形容詞",
+      "examples": [
+        {
+          "translation": "どうすれば彼女に私のことを好きになってもらえるだろうか。"
+        }
+      ]
+    },
+    "zh_只要就_265": {
+      "title": "只要……（就）……（十分条件接続構文：〜しさえすれば…・〜でありさえすれば…）",
+      "shortExplanation": "十分条件を提示する構文で、その条件を満たしさえすれば必然的に望ましい結果や事態が得られることを表します（「〜しさえすれば…」）。",
+      "longExplanation": "「只要……(就)……」（zhǐyào... jiù...）は、十分条件を表す代表的な相関接続詞構文です。前節で「只要」を用いて一つの条件を提示し、その条件が満たされさえすれば、後節に導かれる結果（副詞「就」と呼応）が確実に成立することを示します。「只有……才……」（〜してこそ初めて…という必要条件）とは異なり、「これさえあれば十分だ」という充足条件を強調します。日本語の「〜しさえすれば（…だ）」「〜でさえあれば…」に相当します。",
+      "formation": "只要 ＋ 十分条件節，（就）＋ 帰結節",
+      "examples": [
+        {
+          "translation": "今回あなたがしっかり準備しさえすれば、きっと良い試合ができるはずです。"
+        }
+      ]
+    },
+    "zh_可不是_266": {
+      "title": "可不是！（感嘆詞・口語応答：まさにその通り！・全くだよ！）",
+      "shortExplanation": "会話の相づちとして独立して用いられ、相手の意見や感想に対して強い同意や共感を示します（「まさにその通り！」「全くそうだね！」）。",
+      "longExplanation": "「可不是！」（kěbushì!）または「可不是吗！」は、日常会話で多用される生き生きとした口語の慣用表現です。対話において相手が口にした発言や感想、事実の指摘に対して「本当にその通りだ」「全く同感だ」と強く同意・相づちを打つ際に文頭で使われます。驚きや懐かしさ、感慨深さを共有する場面で非常によく合致します。日本語の「まったくその通り！」「全くだよ！」「本当それ！」に相当します。",
+      "formation": "話者Aの発言。話者B：可不是！＋ 同意の補足",
+      "examples": [
+        {
+          "translation": "A：私たちが卒業してもう10年も経つなんて思いもしなかったよ。B：まったくその通りだね！ 時間が経つのは本当に早くて、みんなにすごく会いたいよ。"
+        }
+      ]
+    },
+    "zh_因此_268": {
+      "title": "因此（因果接続詞：それゆえに・したがって・だからこそ）",
+      "shortExplanation": "後節の冒頭に置き、前節で述べた事柄や原因を根拠として、そこから導かれる当然の結果や結論を提示します（「それゆえに」「したがって」）。",
+      "longExplanation": "「因此」（yīncǐ）は、原因と結果（因果関係）を結ぶ接続詞であり、書き言葉やフォーマルな会話で好まれます。「因」（〜により）＋「此」（これ）という語源の通り、「このことによって」「その結果として」という意味を持ちます。前節で背景や原因を提示し、後節の文頭（読点の後）に「因此」を置いて、自然に導かれる結果や論理的結論を述べます。前節に「因为」がなくても単独で用いられます。日本語の「それゆえに」「したがって」「それだから」に相当します。",
+      "formation": "原因節，因此 ＋ 結果節",
+      "examples": [
+        {
+          "translation": "私は彼と知り合って長年になるので、それゆえに彼の性格をよく理解しています。"
+        }
+      ]
+    },
+    "zh_往往_269": {
+      "title": "往往（頻度・傾向副詞：往々にして〜である・よく〜しがちである）",
+      "shortExplanation": "一定の条件や規則的なパターンに基づき、ある事態や現象が生じやすい傾向にあることを表します（「往々にして〜である」「よく〜する」）。",
+      "longExplanation": "「往往」（wǎngwǎng）は、過去の経験や一定の客観的条件のもとで、ある状況や現象が規則的・反復的に現れやすいという「傾向や法則性」を表す副詞です。「常常」（単に頻度が高いことを表し未来や主観的意志にも使える）と異なり、「往往」は特定の前提条件や背景が存在することが多く、未来の予定や個人の主観的希望には用いられません。日本語の「往々にして〜である」「〜することが多い」「〜しがちである」に相当します。",
+      "formation": "主語 ＋（条件 / 状況 ＋）往往 ＋ 述語",
+      "examples": [
+        {
+          "translation": "女の子の服の色の選び方は、往々にして彼女たちの性格と関係があるものです。"
+        }
+      ]
+    },
+    "zh_经常常_270": {
+      "title": "经常 / 常（頻度副詞：よく・いつも・しょっちゅう）",
+      "shortExplanation": "動詞の前に置き、動作や行為が頻繁に繰り返して行われることを表します（「よく〜する」「いつも〜する」）。",
+      "longExplanation": "「经常」（jīngcháng）およびその短縮形「常」（cháng）は、動作や事態の発生頻度が高いことを表す最も基本的な頻度副詞です。過去の習慣、現在の日常的行為、あるいは未来の予定に至るまで幅広く用いられます。「往往」のように一定の客観的法則や前提条件を必要とせず、話者の主観的な意志や単なる習慣・好みを表すのにも適しています。否定形は「不经常」「不常」（あまり〜しない）です。日本語の「よく〜する」「頻繁に〜する」「いつも〜する」に相当します。",
+      "formation": "主語 ＋ 经常 / 常 ＋ 動詞（＋ 目的語）",
+      "examples": [
+        {
+          "translation": "大学時代、私はスポーツが大好きで、よくバスケットボールやサッカーをしていました。"
+        }
+      ]
+    },
+    "zh_难道_271": {
+      "title": "难道（語気副詞：まさか〜ではあるまいか・一体〜というのか）",
+      "shortExplanation": "反語疑問文の文頭または主語の前に置き、驚き、疑念、あるいは詰問の語気を強めます（「まさか〜なのか」「よもや〜ではあるまいな」）。",
+      "longExplanation": "「难道」（nándào）は、反語文（修辞疑問文）で強い語気を添える専門の語気副詞です。文頭または主語の直後に置かれ、文末にはよく「吗」や「了」が呼応します。「难道 ＋ 肯定形」は強い否定の意図を表し、「难道 ＋ 否定形」は強い肯定の事実を暗に示します。話者が目の前の事態に驚いたり、常識に反する行動に呆れて反問・詰問したりする際に用いられます。日本語の「まさか〜ではあるまいな」「まさか〜なのか」「一体〜というのか」に相当します。",
+      "formation": "难道 ＋（主語 ＋）述語（＋ 吗 / 了）？",
+      "examples": [
+        {
+          "translation": "どうしてまたこんなにクッキーやチョコレートを買ったの？ まさかもうダイエットはやめちゃったの？"
+        }
+      ]
+    },
+    "zh_通过_272": {
+      "title": "通过（介詞：〜を通じて・〜によって・〜を経て）",
+      "shortExplanation": "手段、媒介、あるいは方法を導き、目的を達成するための道筋や手段を表します（「〜を通じて」「〜によって」）。",
+      "longExplanation": "「通过」（tōngguò）は介詞（前置詞）として用いられる際、ある目的を達成するための手段、媒介、仲介者、あるいは方法を提示します。「通过」の後には仲介となる人物・機関や、具体的手段となる行為が続きます（例：「通过朋友介绍」＝友人の紹介を通じて、「通过努力」＝努力によって、「通过学习」＝学習を通して）。「经过」（経験する過程や時間の経過に力点がある）と比べ、「通过」は「目的達成のための手段・ルート」に焦点を当てる点が特徴です。日本語の「〜を通じて」「〜によって」「〜を経て」に相当します。",
+      "formation": "通过 ＋ 手段 / 媒介 / 方法，（主語 ＋）帰結節（または：主語 ＋ 通过 ＋ 手段 ＋ 述語）",
+      "examples": [
+        {
+          "translation": "いかなる成功も、努力を通じてのみ手に入れることができるのです。"
+        }
+      ]
+    },
+    "zh_经过_273": {
+      "title": "经过（介詞：〜を経て・〜を経験した後に）",
+      "shortExplanation": "時間的な経過や事態の発展プロセス、あるいは一連の体験を経たことを提示します（「〜を経て」「〜を経験した末に」）。",
+      "longExplanation": "「经过」（jīngguò）が介詞（前置詞）として用いられる場合、ある結果に至るまでに辿った「プロセスの経過」「時間的経緯」「試練や体験」を導入します。しばしば後ろに「之后」「以后」を伴って「经过……之后（以后）」の枠組みを形成します。手段や媒介を強調する「通过」と異なり、「经过」は動作や事態が発展・推移していくプロセスそのものや、時間の推移に力点が置かれます。日本語の「〜を経て」「〜を経験したのちに」「〜の末に」に相当します。",
+      "formation": "经过 ＋ プロセス / 体験 / 時間経過（＋ 之后 / 以后），主語 ＋ 述語",
+      "examples": [
+        {
+          "translation": "度重なる失敗を経験した末に、彼はついに成功を収めました。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_可能的N_258": {
+      "title": "可能的 + 명사 (형용사 관형어: 가능한 ~, 가능성 있는 ~)",
+      "shortExplanation": "형용사 '可能' 뒤에 구조조사 '的'가 붙어 명사를 수식하며, 실현될 가능성이나 개연성이 있음을 나타냅니다('가능한 ~', '있을 법한 ~').",
+      "longExplanation": "'可能'(kěnéng)은 부사나 조동사, 명사뿐만 아니라 형용사로도 쓰입니다. 구조조사 '的'와 결합하여 '可能的 + 명사'의 관형어 형태를 취하면, 어떤 상황이나 원인, 결과 등이 일어날 확률이나 개연성이 존재함을 수식합니다. 특히 '最可能的原因'(가장 유력한 원인), '可能的结果'(가능한 결과)처럼 '最'(가장)나 '极'(지극히) 등의 부사와 함께 자주 쓰입니다. 한국어의 '가능한 ~', '있음 직한 ~', '유력한 ~'에 해당합니다.",
+      "formation": "(最 / 极 + ) 可能的 + 명사",
+      "examples": [
+        {
+          "translation": "그가 이렇게 며칠 동안 수업에 오지 않은 가장 유력한 원인은 바로 귀국했기 때문이다."
+        }
+      ]
+    },
+    "zh_来不及_259": {
+      "title": "来不及 (가능보어 부정형: 시간이 맞지 않다, 늦다, 손쓸 틈이 없다)",
+      "shortExplanation": "시간이 촉박하거나 이미 때를 놓쳐서 어떤 동작을 할 여유가 없음을 나타냅니다('시간이 안 맞다', '늦다', '손쓸 수 없다').",
+      "longExplanation": "'来不及'(láibují)는 '来得及'(시간이 넉넉하여 댈 수 있다)의 부정 형태인 관용적 가능보어 구조입니다. 남은 시간이 부족하거나 상황이 이미 지나가 버려 어떤 행동을 취하기에 너무 늦었음을 나타냅니다. 단독으로 술어가 되어 '来不及了'(이미 늦었다) 형태로 자주 쓰이며, 동사 앞에 놓여 '~할 틈이 없다', '~하기에 늦다'를 의미하기도 합니다(예: '来不及说' 말할 겨를이 없다, '来不及吃早饭' 아침밥을 먹을 시간이 없다). 한국어의 '시간이 늦다', '때를 놓치다', '손쓸 틈이 없다'에 해당합니다.",
+      "formation": "(주어 + ) 来不及 (+ 동사 / 목적어) (+ 了)",
+      "examples": [
+        {
+          "translation": "건강에 문제가 생기고 나면, 후회해도 이미 늦습니다."
+        }
+      ]
+    },
+    "zh_VVO_260": {
+      "title": "동사 + 동사 + 목적어 (이합사 중첩 AAB 형식: 가볍게 좀 ~하다)",
+      "shortExplanation": "동사-목적어 결합 구조인 '이합사'의 동사 부분만 중첩하는 AAB 형식으로, 동작의 지속 시간이 짧거나 가볍게 해 봄을 나타냅니다('좀 ~하다', '한번 ~해 보다').",
+      "longExplanation": "중국어에서 '동사 + 목적어' 구조로 이루어진 이합사(예: 散步, 游泳, 睡觉, 跳舞, 聊天)는 동작을 중첩할 때 동사 성분만 두 번 겹쳐 쓰는 'AAB 형식'(동사 + 동사 + 목적어)을 취합니다(예: '散步' → '散散步', '游泳' → '游游泳', '睡觉' → '睡睡觉', '聊天' → '聊聊天'). 이는 동작의 시간이 길지 않거나, 시험 삼아 해 보거나, 부담 없이 여유롭게 진행됨을 의미하며 어기를 부드럽게 완화시켜 줍니다. 한국어의 '좀 ~하다', '잠깐 ~해 보다', '가볍게 ~하다'에 해당합니다.",
+      "formation": "동사 + 동사 + 목적어 (이합사 AAB 중첩)",
+      "examples": [
+        {
+          "translation": "우리 점심 먹고 나서 근처 공원에 산책이나 좀 하러 가자."
+        }
+      ]
+    },
+    "zh_V了VO_261": {
+      "title": "동사 + 了 + 동사 + 목적어 (완료 동작의 중첩 형태: 조금 ~했다, 잠깐 ~해보았다)",
+      "shortExplanation": "중첩되는 동사 사이에 동태조사 '了'를 넣어, 과거에 짧은 시간 동안 가볍게 완료된 동작을 나타냅니다('좀 ~했다', '잠깐 ~을 해보았다').",
+      "longExplanation": "과거에 발생했거나 완료된 동작에 대해, 오랜 시간 각잡고 한 것이 아니라 '잠깐 동안 가볍게 해보았다'는 뉘앙스를 부여할 때 동사 사이에 완료의 동태조사 '了'를 결합하여 '동사 + 了 + 동사 + 목적어' 구조를 만듭니다(예: '睡了睡觉' 잠을 좀 잤다, '游了游泳' 수영을 좀 했다, '做了做作业' 숙제를 조금 했다). 주말에 보낸 일과나 일상적인 일들을 여유롭게 나열하여 설명할 때 자주 애용됩니다. 한국어의 '조금 ~했다', '잠깐 ~을 해보았다'에 해당합니다.",
+      "formation": "주어 + 동사 + 了 + 동사 + 목적어",
+      "examples": [
+        {
+          "translation": "일요일에 나는 낮잠도 좀 자고, 수영도 좀 하고, 숙제도 조금 했습니다."
+        }
+      ]
+    },
+    "zh_要是_262": {
+      "title": "要是 (가정 접속사: 만약 ~라면, 혹시 ~한다면)",
+      "shortExplanation": "구어에서 가정 조건을 제시할 때 쓰는 접속사로, 종종 절 끝의 '的话'나 뒷절의 '就 / 那么'와 호응합니다('만약 ~라면', '~한다면').",
+      "longExplanation": "'要是'(yàoshi)는 가정 조건을 이끄는 대표적인 구어체 접속사로, '如果'나 '假如'보다 한층 더 자연스럽고 친근한 일상 회화 어감을 지닙니다. 앞 절의 첫머리에 놓여 가상의 상황이나 전제를 이끌며, 조건절 끝에 '的话'를 덧붙여 '要是……的话' 틀을 자주 형성합니다. 뒷절에서는 '就'(그러면)나 '那么'(그렇다면) 등과 호응하여 그 조건에 따른 결과나 태도를 나타냅니다. 한국어의 '만약 ~라면', '~거든', '~한다면'에 해당합니다.",
+      "formation": "要是 + 조건절 (+ 的话), (那么 / 就) + 결과절",
+      "examples": [
+        {
+          "translation": "만약 품질이 좋다면, 가격이 조금 비싸도 상관없습니다."
+        }
+      ]
+    },
+    "zh_既又也还_263": {
+      "title": "既…… 又 / 也 / 还…… (병렬 상관접속문: ~하기도 하고 또 ~하기도 하다, ~할 뿐만 아니라 ~하다)",
+      "shortExplanation": "동일한 주체에 대해 두 가지 성질, 작용 또는 동작이 동시에 병존함을 나타냅니다('~하기도 하고 또 ~하기도 하다', '~인 데다 ~하기까지 하다').",
+      "longExplanation": "'既……又 / 也 / 还……'(jì... yòu / yě / hái...)는 대등한 문법 성분(형용사, 동사구 등)을 연결하여, 한 대상에 두 가지 장점이나 특징, 작용이 동시에 갖추어져 있음을 나타내는 상관 병렬 구문입니다. 연결되는 두 항목은 대체로 성격의 방향성이 일치해야 합니다(둘 다 긍정적이거나 둘 다 부정적). 가장 대표적인 조합은 '既……又……'이며, '也'나 '还'를 사용하면 뒷부분에 부가적이거나 점층적인 의미가 살짝 실립니다. 한국어의 '~하기도 하고 또 ~하기도 하다', '~한 데다 ~하기까지 하다'에 해당합니다.",
+      "formation": "주어 + 既 + 술어 1, 又 / 也 / 还 + 술어 2",
+      "examples": [
+        {
+          "translation": "산책은 몸을 움직일 수도 있고, 또 다이어트도 할 수 있습니다."
+        }
+      ]
+    },
+    "zh_使OAV_264": {
+      "title": "使 + 목적어 + 형용사/동사 (겸어문·사동 구문: ~로 하여금 …하게 만들다)",
+      "shortExplanation": "사동사 '使'를 사용하여 원인이나 수단이 대상에 영향을 주어 특정 행동을 하게 하거나 상태를 변화시킴을 나타냅니다('~로 하여금 …하게 만들다', '~하게 하다').",
+      "longExplanation": "'使'(shǐ)는 대표적인 사동동사로서 겸어문을 형성합니다('使'의 목적어가 뒤에 오는 술어의 주어 역할을 겸함). '원인/수단 + 使 + 목적어 + 동사/형용사' 구조로 쓰여, 어떤 사물이나 조치가 특정 대상에게 작용하여 마음이나 상태, 행동의 변화를 초래함을 객관적으로 서술합니다. 구어에서 흔히 쓰는 '让'이나 '叫'에 비해 한층 더 논리적이고 격식 있는 서면어적 색채를 띱니다. 한국어의 '~로 하여금 …하게 하다', '…하게 만들다'에 해당합니다.",
+      "formation": "원인 / 수단 + 使 + 목적어 + 동사 / 형용사",
+      "examples": [
+        {
+          "translation": "어떻게 해야 그녀가 나를 좋아하게 만들 수 있을까요?"
+        }
+      ]
+    },
+    "zh_只要就_265": {
+      "title": "只要……(就)…… (충분조건 상관접속문: ~하기만 하면 (곧) …하다)",
+      "shortExplanation": "충분조건을 제시하는 틀 구문으로, 그 조건만 충족되면 필연적으로 뒤의 결과가 실현됨을 나타냅니다('~하기만 하면 …하다', '~만 하면 곧 …하다').",
+      "longExplanation": "'只要……(就)……'(zhǐyào... jiù...)는 충분조건 관계를 나타내는 대표적인 복문 상관 구문입니다. 앞 절에서 '只要'를 통해 충족해야 할 조건을 제시하고, 뒷 절에서는 부사 '就'와 호응하여 해당 조건만 갖추어지면 뒤따르는 결과나 목적이 무조건 실현될 수 있음을 강조합니다. 유일한 필요조건을 뜻하는 '只有……才……'(오직 ~해야만 비로소 …하다)와 달리, '이 조건만으로도 충분하다'는 점을 부각합니다. 한국어의 '~하기만 하면 (곧) …하다', '~기만 하면 언제든 …하다'에 해당합니다.",
+      "formation": "只要 + 충분조건절, (就) + 결과절",
+      "examples": [
+        {
+          "translation": "이번에 네가 준비만 잘하면, 분명 멋진 경기를 펼칠 수 있을 거야."
+        }
+      ]
+    },
+    "zh_可不是_266": {
+      "title": "可不是！ (감탄사·구어 맞장구: 그렇고말고! / 내 말이 그 말이야!)",
+      "shortExplanation": "대화 중 독립적으로 쓰여 상대방의 의견이나 감상에 대해 깊은 공감과 적극적인 동의를 나타냅니다('그렇고말고!', '내 말이 바로 그 말이야!').",
+      "longExplanation": "'可不是！'(kěbushì!) 또는 '可不是吗！'는 일상 회화에서 매우 빈번하게 쓰이는 감탄형 관용 응답 어구입니다. 상대방이 건넨 말이나 감탄, 의견에 대해 '전적으로 동의한다', '어쩜 그렇게 맞는 말을 하느냐'라며 적극적으로 맞장구를 칠 때 활용합니다. 시간의 무상함이나 어떤 사실에 대한 공통된 감회를 나눌 때 주로 문두에 단독으로 사용됩니다. 한국어의 '그렇고말고!', '내 말이 그 말이야!', '정말이지 그래!'에 해당합니다.",
+      "formation": "화자 A의 발언. 화자 B: 可不是！ + 공감 내용",
+      "examples": [
+        {
+          "translation": "A: 우리가 졸업한 지 벌써 10년이나 되었다니 생각도 못 했네. B: 그렇고말고! 시간이 너무 빨리 흘렀어, 다들 정말 보고 싶다."
+        }
+      ]
+    },
+    "zh_因此_268": {
+      "title": "因此 (인과 접속사: 따라서, 그러므로, 그렇기 때문에)",
+      "shortExplanation": "뒷절의 첫머리에 쓰여, 앞 절에서 언급한 원인이나 사실에 바탕을 둔 필연적인 결과나 결론을 이끕니다('따라서', '그러므로', '이 때문에').",
+      "longExplanation": "'因此'(yīncǐ)는 원인과 결과를 이어주는 대표적인 서면어 접속사입니다. 한자의 구성상 '因'(~로 인하여)과 '此'(이것)가 결합한 것으로, '이 일로 말미암아', '그렇기 때문에'라는 뜻을 나타냅니다. 앞 절에서 어떤 사유나 배경을 설명한 뒤, 뒷절 맨 앞에 '因此'를 두어 그로부터 자연스럽게 도출되는 결과나 판단을 서술합니다. 앞 절에 '因为'가 쓰이지 않아도 단독으로 인과관계를 완성할 수 있습니다. 한국어의 '따라서', '그러므로', '이로 인해'에 해당합니다.",
+      "formation": "원인절, 因此 + 결과절",
+      "examples": [
+        {
+          "translation": "나는 그와 알고 지낸 지 오랜 세월이 흘렀고, 따라서 그의 성격을 매우 잘 이해하고 있습니다."
+        }
+      ]
+    },
+    "zh_往往_269": {
+      "title": "往往 (빈도·경향 부사: 으레 ~하기 마련이다, 왕왕 ~하다, 대체로)",
+      "shortExplanation": "일정한 조건이나 규칙적인 상황 속에서 어떤 현상이나 행동이 발생하기 쉬운 경향이나 법칙성을 나타냅니다('으레 ~하다', '왕왕 ~하다').",
+      "longExplanation": "'往往'(wǎngwǎng)은 과거의 경험이나 일정한 환경적 조건 아래에서, 어떤 사안이나 동작이 규칙적으로 자주 일어나는 경향성을 띨 때 쓰는 부사입니다. 단순 횟수의 잦음만을 가리키는 '常常'(늘, 자주)과 달리, '往往'은 특정한 전제 조건이나 배경 맥락을 동반하는 경우가 많으며, 미래의 계획이나 주관적인 희망에는 쓸 수 없습니다. 한국어의 '으레 ~하곤 하다', '왕왕 ~하다', '대개 ~하기 마련이다'에 해당합니다.",
+      "formation": "주어 + (조건 / 배경 + ) 往往 + 술어",
+      "examples": [
+        {
+          "translation": "여성들이 옷 색상을 선택하는 것은 으레 그들의 성격과 관련이 있기 마련입니다."
+        }
+      ]
+    },
+    "zh_经常常_270": {
+      "title": "经常 / 常 (빈도부사: 자주, 늘, 흔히)",
+      "shortExplanation": "동사 앞에 놓여 어떤 동작이나 상태가 반복적으로 자주 일어남을 나타냅니다('자주', '늘', '흔히').",
+      "longExplanation": "'经常'(jīngcháng)과 그 단음절 형태인 '常'(cháng)은 동작이나 현상의 발생 빈도가 높음을 나타내는 가장 대표적인 빈도부사입니다. 과거의 습관, 현재의 반복적 일상, 미래의 계획 등에 두루 쓰일 수 있습니다. 특정 조건이나 규칙성을 요하는 '往往'과 달리, 개인의 취향이나 주관적 의지에 의한 빈번한 행동에도 자연스럽게 쓰입니다. 부정형은 '不经常' 또는 '不常'(자주 ~하지 않는다)입니다. 한국어의 '자주 ~하다', '늘 ~하다', '흔히 ~하다'에 해당합니다.",
+      "formation": "주어 + 经常 / 常 + 동사 (+ 목적어)",
+      "examples": [
+        {
+          "translation": "대학교에 다닐 때 저는 운동을 무척 좋아해서, 자주 농구나 축구를 하곤 했습니다."
+        }
+      ]
+    },
+    "zh_难道_271": {
+      "title": "难道 (어기부사: 설마 ~라는 말인가, 대체 ~란 말인가)",
+      "shortExplanation": "반어의문문에서 문두나 주어 앞에 쓰여, 놀람, 의구심, 또는 힐난의 반어적 어기를 대폭 강화합니다('설마 ~라는 말인가', '대체 ~란 말인가').",
+      "longExplanation": "'难道'(nándào)는 반어문(수사의문문)에 쓰여 반문의 어기를 한층 더 강조하는 대표적인 어기부사입니다. 문장 맨 앞이나 주어 뒤에 위치하며, 문말에 어기조사 '吗'나 '了'와 자주 호응합니다. 긍정형 '难道……'은 강한 부정을 내포하고, 부정형 '难道不……'은 '어찌 그렇지 않겠는가'라는 강력한 긍정을 나타냅니다. 상식에 어긋나는 상황에 대해 의아해하거나 상대를 힐책하고 따져 물을 때 주로 쓰입니다. 한국어의 '설마 ~라는 말인가?', '대체 ~란 말인가?'에 해당합니다.",
+      "formation": "难道 + (주어 + ) 술어 (+ 吗 / 了)?",
+      "examples": [
+        {
+          "translation": "어째서 또 이렇게 비스킷이랑 초콜릿을 많이 샀어? 설마 다이어트 안 하기로 한 거야?"
+        }
+      ]
+    },
+    "zh_通过_272": {
+      "title": "通过 (개사: ~을 통해, ~에 의하여, ~를 거쳐)",
+      "shortExplanation": "목적을 달성하기 위한 수단, 매개체, 방법 등을 이끌어 결과를 얻는 경로를 나타냅니다('~을 통해', '~에 의해').",
+      "longExplanation": "'通过'(tōngguò)가 개사(전치사)로 쓰일 때는 특정한 목적이나 결과를 이루기 위한 수단, 방법, 또는 매개 인물·기관을 이끕니다(예: '通过朋友介绍' 친구의 소개를 통해, '通过努力' 노력을 통해, '通过考试' 시험을 거쳐). 사건이 겪어낸 시간이나 과정 자체에 초점을 맞추는 '经过'와 달리, '通过'는 어떤 목적을 이루기 위한 '수단성'이나 '도구적 경로'를 부각한다는 점에 차이가 있습니다. 한국어의 '~을 통해', '~에 의해', '~를 거쳐서'에 해당합니다.",
+      "formation": "通过 + 수단 / 매개 / 방법, (주어 + ) 결과절 (또는: 주어 + 通过 + 수단 + 술어)",
+      "examples": [
+        {
+          "translation": "어떠한 성공이든 모두 노력을 통해서만 얻어낼 수 있습니다."
+        }
+      ]
+    },
+    "zh_经过_273": {
+      "title": "经过 (개사: ~을 거쳐, ~을 겪은 뒤에, ~의 과정을 지나)",
+      "shortExplanation": "시간의 경과나 사태의 발전 과정, 혹은 겪어낸 일련의 경험을 제시하여 그에 따른 결과를 이끕니다('~을 거쳐', '~을 겪은 끝에').",
+      "longExplanation": "'经过'(jīngguò)가 개사(전치사)로 쓰일 때는 어떤 결과나 현재 상태에 이르기까지 겪어낸 '시간의 흐름', '체험의 축적', 또는 '상황의 전개 과정'을 이끕니다. 뒤에 '之后'나 '以后'를 동반하여 '经过……之后(以后)'(…을 거친 뒤에) 형태로 자주 활용됩니다. 수단이나 매개 방식을 나타내는 '通过'와 구별되며, '经过'는 험난한 시험이나 일정한 발전 과정 그 자체를 통과해 왔음을 부각합니다. 한국어의 '~을 거쳐', '~을 겪은 끝에', '~의 과정을 지나'에 해당합니다.",
+      "formation": "经过 + 과정 / 체험 / 시간 경과 (+ 之后 / 以后), 주어 + 술어",
+      "examples": [
+        {
+          "translation": "수차례의 실패를 겪은 끝에, 그는 마침내 성공을 거두었습니다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_可能的N_258": {
+      "title": "可能的 + 名词（形容词作定语：表示概率或潜在的可能性）",
+      "shortExplanation": "形容词“可能”后接结构助词“的”修饰名词，作定语表示某种具有发生概率、潜在可能的推测情况，“可能的 / 或有的”。",
+      "longExplanation": "“可能”（kěnéng）除用作助动词、副词和名词外，亦可充当形容词。当与结构助词“的”组合构成“可能的 + 名词”结构时，在句中充当定语，修饰中心语，用来限定事物的潜在发生概率、合理推断或预期结果（如“可能的原因”、“可能的结果”、“可能的情况”）。常与“最”、“极”等程度副词连用（如“最可能的原因”）。",
+      "formation": "（最 / 极 + ）可能的 + 名词",
+      "examples": [
+        {
+          "translation": "他这么多天没有来上课，最有可能的原因就是他回国了。"
+        }
+      ]
+    },
+    "zh_来不及_259": {
+      "title": "来不及（可能补语否定式：因时间仓促或已成定局而无法做某事）",
+      "shortExplanation": "表示由于时间紧迫、动作太迟或既成事实，无法赶上或没有时间去做某事，“赶不上 / 太迟了”。",
+      "longExplanation": "“来不及”（láibují）是动补型可能补语的固定否定格式，反义词为“来得及”。用于指剩余时间不足以完成某项动作，或由于事态发展已至不可挽回的地步而为时已晚。句法上既可以单独作谓语（句尾常带语气词“了”），也可以置于其他动词前作状语，表示“没时间去做某事”（如“来不及解释”、“来不及吃早饭”）。",
+      "formation": "（主语 + ）来不及（+ 动词 / 宾语）（+ 了）",
+      "examples": [
+        {
+          "translation": "等你的身体已经亮起红灯了，再去后悔可就太迟了。"
+        }
+      ]
+    },
+    "zh_VVO_260": {
+      "title": "动词 + 动词 + 宾语（动宾离合词重叠 AAB 式：表示轻松或时间短暂）",
+      "shortExplanation": "动宾结构的离合词重叠时只重叠前面的动词语素，构成 AAB 式，表示动作持续时间短、尝试或轻松随意的语气，“稍微……一下”。",
+      "longExplanation": "在现代汉语中，属于动宾结构的离合词（如“散步”、“游泳”、“睡觉”、“跳舞”、“聊天”）在进行动词重叠时，遵循 AAB 式规则，即仅重叠前部的动词性成分，而保留后面的名词性宾语（例如：“散步”变为“散散步”，“游泳”变为“游游泳”，“跳舞”变为“跳跳舞”）。这种重叠形式表示动作经历的时间短暂、随意消遣或带有尝试意味，能起到显著舒缓语气、增添口语亲和力的修辞效果。",
+      "formation": "动词 + 动词 + 宾语（离合词 AAB 式重叠）",
+      "examples": [
+        {
+          "translation": "咱们吃过午饭之后就去附近的公园散散步吧。"
+        }
+      ]
+    },
+    "zh_V了VO_261": {
+      "title": "动词 + 了 + 动词 + 宾语（过去完成动作的重叠形式：表示稍微进行过某动作）",
+      "shortExplanation": "在重叠的动词之间插入动态助词“了”，表示过去已经完成的、持续时间短暂且轻松随意的动作，“稍微做了做某事”。",
+      "longExplanation": "当需要叙述过去发生并已经结束的动作，且说话人意在强调该动作耗时短、动作幅度小、态度悠闲或随意消遣时，常在重叠的动词成分之间加入动态助词“了”，构成“动词 + 了 + 动词 + 宾语”的格式（如“睡了睡觉”、“游了游泳”、“做了做作业”）。这种句式极富生活气息，多用于罗列和回忆日常生活琐事或假日里轻松度过的片段。",
+      "formation": "主语 + 动词 + 了 + 动词 + 宾语",
+      "examples": [
+        {
+          "translation": "周日那天我稍微补了补觉，游了一会儿泳，又写了写作业。"
+        }
+      ]
+    },
+    "zh_要是_262": {
+      "title": "要是（假设连词：如果、假使）",
+      "shortExplanation": "常用于口语中提出假设条件，常与分句末尾的“的话”及后一分句的“就 / 那么”相呼应，“要是 / 如果”。",
+      "longExplanation": "“要是”（yàoshi）是表示假设关系的连词，多用于口头语体，口语色彩比“如果”、“假如”更为浓厚。常置于前一分句句首引出假设的前提条件，句末往往带有助词“的话”构成“要是……的话”框架；后一分句则常用副词“就”或连词“那么”来引申推论、结果或对策。表示只要前提条件成立，便会出现相应的情况。",
+      "formation": "要是 + 假设分句（+ 的话），（那么 / 就）+ 结果分句",
+      "examples": [
+        {
+          "translation": "要是商品质量过硬的话，那么即便价格稍贵一些也是完全能够接受的。"
+        }
+      ]
+    },
+    "zh_既又也还_263": {
+      "title": "既……又 / 也 / 还……（并列关联框架：表示两者兼而有之）",
+      "shortExplanation": "连接两个并列的谓词性成分，表示同一事物同时具备两方面的性质、特点或作用，“既……又……”。",
+      "longExplanation": "“既……又 / 也 / 还……”是现代汉语中典型的并列关联词语框架。用于连接两个并列的形容词、动词或短语，说明主语同时兼具两方面的属性、功效或行为。前后两项在意义倾向上通常是协调一致的（同为褒义或同为贬义）。其中“既……又……”最为常见，“也”和“还”则略带补充说明与递进的意味。表示不可偏废、相辅相成。",
+      "formation": "主语 + 既 + 谓语1，又 / 也 / 还 + 谓语2",
+      "examples": [
+        {
+          "translation": "散步这项运动既能够活动筋骨舒展身体，又能够起到减肥瘦身的作用。"
+        }
+      ]
+    },
+    "zh_使OAV_264": {
+      "title": "使 + 宾语 + 形容词 / 动词（兼语式使役句：致使、令）",
+      "shortExplanation": "使用致使动词“使”构成兼语结构，表示因某种原因、手段而导致某人或某物产生某种行动或状态变化，“使 / 令 / 使得”。",
+      "longExplanation": "“使”（shǐ）是现代汉语中具有较强书面语色彩的使役动词，用于构成典型的兼语格式：“原因/施事 + 使 + 兼语（宾语兼后一谓语的主语） + 动词/形容词”。常用于客观说明某种外在力量、客观因素或具体方法推动人或事物发生心理、认识、状态或行为上的相应改变。相较于口语中高频的“让”和“叫”，“使”更显正式、严谨和逻辑化。",
+      "formation": "原因 / 施事 + 使 + 宾语 + 动词 / 形容词",
+      "examples": [
+        {
+          "translation": "究竟怎样做才能够让她对我产生好感并喜欢上我呢？"
+        }
+      ]
+    },
+    "zh_只要就_265": {
+      "title": "只要……（就）……（充分条件关联框架：只要满足条件便能产生结果）",
+      "shortExplanation": "表示充分条件关系的关联词框架，强调只要具备了前文的条件，就必然会产生后文的相应结果，“只要……就……”。",
+      "longExplanation": "“只要……（就）……”是现代汉语中表达充分条件句的最典型关联词框架。前一分句用“只要”提出一个充分的、足以促成结果的前提条件；后一分句用副词“就”与之相照应，说明在上述条件得到满足的前提下，预期的推论或结果便能顺利达成。它与强调唯一必要条件的“只有……才……”形成鲜明对照，“只要”强调的是条件的充足性与保证性。",
+      "formation": "只要 + 充分条件分句，（就）+ 结果分句",
+      "examples": [
+        {
+          "translation": "只要这次你能做好充分的准备，就一定能够在赛场上把球踢好。"
+        }
+      ]
+    },
+    "zh_可不是_266": {
+      "title": "可不是！（感叹词/口语应答语：表示极其赞同对方的看法）",
+      "shortExplanation": "用于口语交际中的应答，对对方所说的话表示强烈的附和、完全赞同或引起深切共鸣，“可不是嘛 / 正是这样”。",
+      "longExplanation": "“可不是！”（kěbushì!）亦常作“可不是嘛！”，是现代汉语口语中表现力极强的感叹应答语。用于对话场合中接对方的话茬，表示自己与对方持有完全相同的心情、看法或深有同感，带有强烈的赞同、附和与共情色彩，往往在后面紧跟着补充表达自己同感的感慨或理由。相当于“说得太对了”、“谁说不是呢”。",
+      "formation": "说话人甲：话语陈述。说话人乙：可不是！+ 附和感想",
+      "examples": [
+        {
+          "translation": "A：真没想到咱们不知不觉都已经毕业十年了。B：可不是嘛！日子过得实在太快了，心里真挺想念大家的。"
+        }
+      ]
+    },
+    "zh_因此_268": {
+      "title": "因此（因果连词：因为这个、所以）",
+      "shortExplanation": "置于后一分句的句首，承接上文所说的原因或事实，引出推导出的结果或结论，“因为如此 / 所以”。",
+      "longExplanation": "“因此”（yīncǐ）是表示因果关系的连词，具有较强的书面语及正式交际色彩。“因”即因为，“此”代指上文所提到的情况或原因，合起来表示“因为上述情况，所以……”。通常紧接在上文交代的原因之后，直接位于后一分句句首引申出必然的结果、评判或决定。前一分句无需出现“因为”，也可单独使用“因此”来连接前后因果。",
+      "formation": "原因分句，因此 + 结果分句",
+      "examples": [
+        {
+          "translation": "我和他结识已经很多年了，因此对他的为人性格十分了解。"
+        }
+      ]
+    },
+    "zh_往往_269": {
+      "title": "往往（频率/规律副词：常在某种条件下呈现出某种规律性）",
+      "shortExplanation": "置于谓语动词或形容词前，表示在一定规律、特定条件或既往经验下，某类现象多半容易发生，“往往 / 通常”。",
+      "longExplanation": "“往往”（wǎngwǎng）是表达特定频率和倾向性的副词，强调在某种特定前提、外部环境或规律性经验的作用下，某种情况或行为经常性、习惯性地出现。与纯粹表示动作频次高的“常常”不同，“往往”多带有规律总结色彩，句中常有特定情境条件相伴，且不能用于主观愿望的号召或尚未发生的未来计划。",
+      "formation": "主语 +（特定条件 / 环境 +）往往 + 谓语",
+      "examples": [
+        {
+          "translation": "女孩子们在挑选衣服颜色时，多半往往会与她们各自的内在性格紧密相关。"
+        }
+      ]
+    },
+    "zh_经常常_270": {
+      "title": "经常 / 常（频度副词：表示动作或事件反复多次发生）",
+      "shortExplanation": "置于动词谓语前，表示某一行为动作发生的次数多、时间间隔短，“常常 / 经常”。",
+      "longExplanation": "“经常”（jīngcháng）及其单音节形式“常”（cháng）是现代汉语中最基础的高频时间副词。表示某一动作、行为或状态在一定时期内频繁、反复地发生。它不受客观规律或触发条件的限制，可用于陈述个人的生活习惯、过去的回忆或未来的展望，也可用于祈使句提出要求。否定形式为“不常”或“不经常”。",
+      "formation": "主语 + 经常 / 常 + 动词（+ 宾语）",
+      "examples": [
+        {
+          "translation": "读大学那会儿我特别热爱体育运动，经常打打篮球、踢踢足球。"
+        }
+      ]
+    },
+    "zh_难道_271": {
+      "title": "难道（语气副词：加强反问语气，表示怀疑、质问或惊讶）",
+      "shortExplanation": "常置于句首或主语后，用于反问句中以加强反诘、责备或难以置信的语气，“难道 / 莫非”。",
+      "longExplanation": "“难道”（nándào）是专门用于反问句的语气副词，用以极大增强反问与质问的力量。置于句首或主语前后，句末常与疑问语气助词“吗”或“了”搭配使用。肯定形式的反问（如“难道你不知道吗？”）实质上表达强烈的否定判断（你不可能不知道）；而否定形式的反问（如“难道你不减肥了？”）则强调事实的不合常理或促使对方反思。带有鲜明的惊讶、困惑或嗔怪色彩。",
+      "formation": "难道 +（主语 +）谓语（+ 吗 / 了）？",
+      "examples": [
+        {
+          "translation": "怎么又买回这么多饼干和巧克力呀？难道你真的不打算减肥了吗？"
+        }
+      ]
+    },
+    "zh_通过_272": {
+      "title": "通过（介词：以某种方式、手段或媒介达到目的）",
+      "shortExplanation": "引出达到某种目的所借助的途径、手段、中介或具体行动，“通过 / 凭借”。",
+      "longExplanation": "“通过”（tōngguò）充当介词时，用来引出实现某种目的、取得某项成效所依赖的途径、方式、工具、中介或手段。介词后可接名词、代词或动词性短语（如“通过努力”、“通过朋友的推荐”、“通过这次实践”）。它与侧重于强调“经历一段客观过程或时间跨度”的“经过”不同，“通过”的侧重点在于把某事物作为桥梁与方法手段来看待。",
+      "formation": "通过 + 方式 / 手段 / 媒介，（主语 +）结果分句（或：主语 + 通过 + 方式 + 谓语）",
+      "examples": [
+        {
+          "translation": "任何一项成功都必须通过坚持不懈的努力才能够换取。"
+        }
+      ]
+    },
+    "zh_经过_273": {
+      "title": "经过（介词：经历某种过程、时间或历练）",
+      "shortExplanation": "引出事物发展所经历的客观过程、时间跨度或实践历练，强调“历经……之后”，“经过 / 历经”。",
+      "longExplanation": "“经过”（jīngguò）作介词时，主要用于引出事物发生、演变所经历的发展过程、时间演进或主观经历的曲折历程。后接的名词或短语多表示过程、事件或阶段，常与方位词“之后”、“以后”配合构成“经过……之后/以后”的介词框架。与侧重充当方式手段的“通过”不同，“经过”侧重于时间的推移、历程的完整性和事态由起因演进至结果的全过程。",
+      "formation": "经过 + 过程 / 经历 / 时间跨度（+ 之后 / 以后），主语 + 谓语",
+      "examples": [
+        {
+          "translation": "在经历了接连不断的失败与挫折之后，他终于迎来了成功。"
+        }
+      ]
+    }
+  }
+}

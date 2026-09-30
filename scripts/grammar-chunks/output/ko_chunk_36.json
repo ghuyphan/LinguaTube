@@ -1,0 +1,1210 @@
+{
+  "vi": {
+    "ko_라든지_14": {
+      "title": "~(이)라든지 ~(이)라든지 (Hoặc là... hoặc là..., ...hay là...)",
+      "shortExplanation": "Trợ từ liệt kê dùng để đưa ra hai hay nhiều đối tượng hoặc hành động có thể lựa chọn, ngụ ý rằng chọn cái nào trong số đó cũng đều được ('hoặc là... hoặc là...', 'như là... hay là...').",
+      "longExplanation": "'~(이)라든지 ~(이)라든지' là trợ từ liên kết được gắn sau danh từ (hoặc đuôi liên kết sau động từ) dùng để liệt kê các ví dụ, phương án hoặc khả năng lựa chọn khác nhau mà người nói không định trước một mục cụ thể nào, ngụ ý rằng chọn bất kỳ cái nào được nhắc tới cũng đều phù hợp hoặc chấp nhận được. Tương đương với 'hoặc là... hoặc là...', 'hay là...', 'như là... hay là...' trong tiếng Việt.",
+      "formation": "Danh từ + (이)라든지 (hoặc Thân động từ / Thân tính từ + -ㄴ/는다든지)",
+      "examples": [
+        {
+          "translation": "Tối nay tôi sẽ đặt món gì đó để ăn—chẳng hạn như pizza hay gà rán, món nào cũng được."
+        },
+        {
+          "translation": "Bất kể thứ bạn cần là gì, dù là máy vi tính hay là sách vở, tôi đều có thể chuẩn bị được."
+        },
+        {
+          "translation": "Tôi đang tính đi tập thể dục, chạy bộ hay là bơi lội, môn nào cũng đều tốt cả."
+        },
+        {
+          "translation": "Người có thể giành vị trí quán quân sẽ là bạn hoặc là một ai đó khác."
+        }
+      ]
+    },
+    "ko_려고_15": {
+      "title": "~(으)려고 하다 (Định, toan, có ý định làm gì)",
+      "shortExplanation": "Cấu trúc biểu thị ý định, kế hoạch hoặc dự định thực hiện một hành động nào đó của chủ ngữ trong tương lai ('định...', 'toan...').",
+      "longExplanation": "'-(으)려고 하다' là cấu trúc ngữ pháp thông dụng kết hợp với thân động từ để diễn tả ý chí, dự định hoặc mục đích thực hiện một hành động cụ thể nào đó của người nói hoặc chủ ngữ, tương đương với 'định', 'dự định', 'toan làm...' trong tiếng Việt. Khi gắn với vĩ tố liên kết (như '-(으)려고'), nó đóng vai trò nêu mục đích của hành động theo sau.",
+      "formation": "Thân động từ kết thúc bằng nguyên âm hoặc phụ âm ㄹ + -려고 하다 | Thân động từ kết thúc bằng phụ âm (ngoài ㄹ) + -으려고 하다",
+      "examples": [
+        {
+          "translation": "Dạo này vì đang tập trung học tiếng Hàn nên tôi thậm chí chẳng nhận ra một ngày trôi qua nhanh như thế nào."
+        },
+        {
+          "translation": "Vì ngày mai định gặp bạn nên bây giờ tôi đang cố gắng đi ngủ thật sớm."
+        },
+        {
+          "translation": "Anh ấy định chơi đàn ghi-ta nên từ hôm qua đã luyện tập chăm chỉ mỗi ngày."
+        },
+        {
+          "translation": "Con trai tôi vì định thi lên đại học nên đang dồn hết tâm trí vào việc học tập."
+        }
+      ]
+    },
+    "ko_만이_16": {
+      "title": "~만이 아니다 (Không chỉ, không riêng gì...)",
+      "shortExplanation": "Cấu trúc biểu thị sự việc không chỉ dừng lại ở đối tượng hay lý do được nhắc tới mà còn bao hàm cả những yếu tố khác nữa ('không chỉ là...', 'không riêng gì...').",
+      "longExplanation": "'~만이 아니다' (thường kết hợp với danh từ, hoặc ở dạng '-는 것만이 아니다') được dùng để khẳng định rằng một sự vật, hiện tượng hoặc nguyên nhân nào đó không phải là duy nhất, mà còn có thêm các khía cạnh hoặc đối tượng quan trọng khác cùng tham gia vào. Tương đương với cấu trúc 'không chỉ là...', 'không riêng gì...' trong tiếng Việt.",
+      "formation": "Danh từ + 만이 아니다 | Thân động từ / Thân tính từ + -는/-(으)ㄴ 것만이 아니다",
+      "examples": [
+        {
+          "translation": "Tôi không chỉ học tiếng Hàn, mà còn đang học cả tiếng Nhật và tiếng Trung nữa."
+        },
+        {
+          "translation": "Anh ấy không chỉ là một diễn viên mà còn là một nhà biên kịch."
+        },
+        {
+          "translation": "Kết quả tốt đẹp này không chỉ nhờ vào sự nỗ lực gian khổ, mà còn là sự kết tinh của kinh nghiệm bền bỉ."
+        },
+        {
+          "translation": "Chúng tôi quan tâm đến kiến trúc không chỉ vì khía cạnh thẩm mỹ, mà còn do tính năng thực tiễn của nó."
+        }
+      ]
+    },
+    "ko_마련이다_17": {
+      "title": "~기 마련이다 (Ắt hẳn là, tất nhiên là, là lẽ tự nhiên)",
+      "shortExplanation": "Diễn tả một quy luật tất yếu của tự nhiên, cuộc sống hoặc tâm lý con người; việc gì đó tất yếu xảy ra là lẽ đương nhiên ('ắt hẳn là...', 'tất yếu sẽ...').",
+      "longExplanation": "'-기 마련이다' (hoặc dạng quen thuộc '-(으)ㄴ/는 법이다/마련이다') kết hợp sau thân động từ hoặc tính từ, dùng để chỉ một chân lý hiển nhiên, một quy luật khách quan của cuộc sống hay lẽ thường tình mà sự vật, hiện tượng ắt sẽ diễn ra như thế, tương đương với 'ắt là...', 'đương nhiên là...', 'lẽ tất nhiên là thế' trong tiếng Việt.",
+      "formation": "Thân động từ / Thân tính từ + -기 마련이다 (hoặc -(으)ㄴ/는 것이 마련이다)",
+      "examples": [
+        {
+          "translation": "Dù cố gắng không bận tâm đến ánh mắt của người khác thì việc không thể làm được điều đó cũng là lẽ tự nhiên."
+        },
+        {
+          "translation": "Việc trẻ nhỏ nô đùa nhiều là chuyện hoàn toàn đương nhiên do đặc điểm của lứa tuổi ấy."
+        },
+        {
+          "translation": "Chỉ vì lần này thất bại thì cũng không thể chắc chắn rằng lần sau cũng sẽ thất bại, đó là lẽ thường tình."
+        },
+        {
+          "translation": "Khi gặp chuyện khó khăn thì tâm trạng chùng xuống, buồn phiền là chuyện tất yếu."
+        }
+      ]
+    },
+    "ko_면서_18": {
+      "title": "~(으)면서 (Vừa... vừa... - Hai hành động đồng thời)",
+      "shortExplanation": "Vĩ tố liên kết biểu thị hai hành động hoặc trạng thái diễn ra đồng thời do cùng một chủ ngữ thực hiện ('vừa... vừa...').",
+      "longExplanation": "'-(으)면서' là vĩ tố liên kết gắn sau thân động từ hoặc tính từ, dùng để nối hai mệnh đề diễn tả hai hành động hoặc trạng thái xảy ra song song, đồng thời trong cùng một khoảng thời gian. Hai mệnh đề trước và sau bắt buộc phải có cùng một chủ ngữ, tương đương với 'vừa... vừa...' trong tiếng Việt.",
+      "formation": "Thân động từ kết thúc bằng nguyên âm hoặc phụ âm ㄹ + -면서 | Thân động từ kết thúc bằng phụ âm (ngoài ㄹ) + -으면서",
+      "examples": [
+        {
+          "translation": "Tôi thích vừa nghe nhạc vừa học bài, làm như thế tôi có thể tập trung hơn."
+        },
+        {
+          "translation": "Anh ấy vừa ăn cơm vừa xem ti vi, đó là thói quen của anh ấy."
+        },
+        {
+          "translation": "Tôi vừa xem phim vừa ăn bữa trưa, như vậy có thể tiết kiệm được thời gian."
+        },
+        {
+          "translation": "Tôi vừa tập thể dục vừa nghe podcast, điều đó rất có ích cho tôi."
+        }
+      ]
+    },
+    "ko_동안_19": {
+      "title": "~동안 / -는 동안 (Trong khi, trong suốt khoảng thời gian)",
+      "shortExplanation": "Gắn sau danh từ chỉ thời gian hoặc mệnh đề định ngữ để biểu thị khoảng thời gian mà một hành động hoặc trạng thái diễn ra ('trong khi...', 'trong suốt...').",
+      "longExplanation": "'~동안' là danh từ phụ thuộc chỉ khoảng thời gian, có thể kết hợp trực tiếp sau danh từ chỉ thời gian (như 방학 동안, 3일 동안) hoặc đi kèm với thân động từ ở dạng '-는 동안' để diễn tả khoảng thời gian một hành động hoặc sự việc nào đó kéo dài hay diễn ra, tương đương với 'trong khi...', 'trong suốt thời gian...' trong tiếng Việt. Khác với '-(으)면서', hai vế của '-는 동안' có thể có hai chủ ngữ khác nhau.",
+      "formation": "Danh từ chỉ thời gian + 동안 | Thân động từ + -는 동안",
+      "examples": [
+        {
+          "translation": "Trong suốt kỳ nghỉ đông tôi đã vẽ rất nhiều tranh, bởi vì đó là sở thích của tôi."
+        },
+        {
+          "translation": "Trong lúc tôi nấu ăn thì điện thoại cứ reo liên hồi khiến tôi không thể tập trung nấu nướng được."
+        },
+        {
+          "translation": "Trong lúc tôi hát ở phòng karaoke thì bạn bè đều nhảy múa theo nên rất vui."
+        },
+        {
+          "translation": "Trong khoảng thời gian cô ấy vắng nhà, trộm đã lẻn vào và lấy đi tất cả những đồ có giá trị của cô ấy."
+        }
+      ]
+    },
+    "ko_부터는_20": {
+      "title": "~부터는 (Kể từ... thì, từ... trở đi thì)",
+      "shortExplanation": "Kết hợp giữa trợ từ xuất phát điểm '부터' và trợ từ đối chiếu '는' để nhấn mạnh sự thay đổi, chuyển biến bắt đầu từ một mốc thời gian hoặc sự kiện ('kể từ... thì...').",
+      "longExplanation": "'~부터는' là sự kết hợp giữa trợ từ '부터' (từ, bắt đầu từ) và trợ từ bổ trợ '는' (nhấn mạnh, đối chiếu). Cấu trúc này dùng để xác định một thời điểm hoặc một biến cố làm mốc khởi đầu cho một sự biến đổi, quyết tâm mới hoặc một trạng thái mới khác biệt so với trước đó, tương đương với 'kể từ... thì...', 'từ... trở đi thì...' trong tiếng Việt.",
+      "formation": "Danh từ (thời gian / sự kiện) + 부터는 | Thân động từ + -(으)ㄴ 후부터는",
+      "examples": [
+        {
+          "translation": "Kể từ hôm nay tôi đã quyết định chú ý đến sức khỏe hơn một chút. Vì vậy, mỗi sáng tôi đều định sẽ chạy bộ."
+        },
+        {
+          "translation": "Kể từ sau khi vụ việc này xảy ra, mọi thứ đã hoàn toàn thay đổi. Mọi người sau khi biết sự thật này đã trở nên cẩn trọng hơn một chút."
+        },
+        {
+          "translation": "Kể từ năm ngoái chúng tôi đã quyết định tiết kiệm hơn số tiền mình kiếm được. Do đó, chúng tôi đang hết sức nỗ lực để cắt giảm những chi phí không cần thiết."
+        },
+        {
+          "translation": "Kể từ sau khi đọc bản báo cáo này, tôi đã có thể hiểu rõ hơn về tình hình. Thật kỳ lạ là những phần trước đây tôi không thể hiểu nổi thì nay bỗng nhiên lại trở nên rất hợp lý."
+        }
+      ]
+    },
+    "ko_서야_21": {
+      "title": "~아/어서야 (Mãi cho đến khi... mới..., chỉ sau khi... mới...)",
+      "shortExplanation": "Vĩ tố liên kết nhấn mạnh rằng phải hoàn thành điều kiện hay hành động ở vế trước thì kết quả hay hành động ở vế sau mới có thể xảy ra ('chỉ sau khi... mới...', 'mãi tới khi... mới...').",
+      "longExplanation": "'-아/어서야' là vĩ tố liên kết kết hợp giữa '-아/어서' và trợ từ nhấn mạnh '야'. Nó nhấn mạnh tính tiên quyết hoặc trình tự thời gian kéo dài của hành động trước: chỉ sau khi đã trải qua hoặc đáp ứng được điều kiện khắt khe ở vế trước thì mới có thể đạt được kết quả hoặc nhận ra điều gì ở vế sau, tương đương với 'mãi sau khi... mới...', 'chỉ khi... mới có thể...' trong tiếng Việt.",
+      "formation": "Thân động từ kết thúc bằng nguyên âm ㅏ, ㅗ + -아서야 | Thân động từ kết thúc bằng các nguyên âm khác + -어서야 | Động từ 하다 chuyển thành 해서야",
+      "examples": [
+        {
+          "translation": "Phải đọc hết toàn bộ cuốn sách của tôi thì bạn mới có thể hiểu được; không phải đọc lướt qua mà phải xem xét tỉ mỉ từng câu, từng chữ một."
+        },
+        {
+          "translation": "Chỉ khi đã rơi vào lưới tình thì người ta mới nhìn thấy rõ những ưu khuyết điểm của đối phương. Đôi khi sự mù quáng trong tình yêu có thể khiến bạn bỏ qua những khuyết điểm của họ."
+        },
+        {
+          "translation": "Để công việc kinh doanh này thành công, bạn phải lập kế hoạch thật chu toàn thì mới làm được. Tôi nghĩ kỳ vọng thành công mà không có kế hoạch là điều vô cùng thiếu thực tế."
+        },
+        {
+          "translation": "Vì đây là tình huống chưa từng có ai trải qua nên quả là nan giải, nhưng chỉ khi đích thân trải nghiệm tình huống đó thì ta mới biết được cách ứng phó chính xác."
+        }
+      ]
+    },
+    "ko_소문에는_22": {
+      "title": "~소문에는 (Theo lời đồn thì, nghe đồn rằng...)",
+      "shortExplanation": "Cụm danh từ dùng để truyền đạt lại tin đồn hoặc thông tin nghe ngóng từ người khác mà chưa được kiểm chứng xác thực ('theo lời đồn thì...', 'nghe đồn là...').",
+      "longExplanation": "'~소문에는' (thường đi với 'danh từ + 에 대한 소문에는' hoặc đứng đầu câu '소문에는') bao gồm danh từ '소문' (lời đồn) kết hợp với trợ từ vị trí '에' và trợ từ bổ trợ '는'. Cấu trúc này dùng để mở đầu khi dẫn lại tin đồn, chuyện bàn tán trong dư luận mà người nói nghe được từ bên ngoài chứ không phải phát ngôn xuất phát từ quan điểm cá nhân, thường đi kèm với đuôi gián tiếp như '-ㄴ/는다고 하다' hoặc '들었다'.",
+      "formation": "Danh từ + (에 대한) 소문에는 | 소문에는 + Mệnh đề gián tiếp (-ㄴ/는다고 하다 / 들었다)",
+      "examples": [
+        {
+          "translation": "Theo lời đồn thì tôi nghe nói công ty đó sắp sửa bị phá sản."
+        },
+        {
+          "translation": "Theo những lời đồn thổi về thành công của anh ấy thì nghe đâu anh ấy làm việc tới 18 tiếng mỗi ngày."
+        },
+        {
+          "translation": "Theo lời đồn về việc cô ấy trở nên nổi tiếng thì nghe nói năm sau cô ấy sẽ tham gia một bộ phim Hollywood."
+        },
+        {
+          "translation": "Theo những tin đồn xung quanh độ nổi tiếng của ca sĩ Im Jae-beom dạo này thì có tin anh ấy dự định sẽ phát hành album mới sớm hơn."
+        }
+      ]
+    },
+    "ko_아어_23": {
+      "title": "~아/어 보이다 (Trông có vẻ, nhìn dường như)",
+      "shortExplanation": "Cấu trúc gắn sau thân tính từ biểu thị sự phán đoán hoặc cảm nhận bằng thị giác của người nói về bề ngoài của một đối tượng ('trông có vẻ...', 'nhìn...').",
+      "longExplanation": "'-아/어 보이다' là cấu trúc bổ trợ kết hợp với thân tính từ, dùng để diễn tả nhận định, đánh giá mang tính trực quan của người nói dựa trên vẻ ngoài hoặc biểu hiện bên ngoài của đối tượng được quan sát. Tương đương với 'trông có vẻ...', 'nhìn có vẻ...' trong tiếng Việt.",
+      "formation": "Thân tính từ kết thúc bằng nguyên âm ㅏ, ㅗ + -아 보이다 | Thân tính từ kết thúc bằng các nguyên âm khác + -어 보이다 | Tính từ đuôi 하다 chuyển thành 해 보이다",
+      "examples": [
+        {
+          "translation": "Người đàn ông đó trông thật đáng thương, có lẽ anh ấy đang phải trải qua một giai đoạn khó khăn."
+        },
+        {
+          "translation": "Hôm nay trông bạn có vẻ mệt mỏi đấy, hay là bạn nghỉ ngơi sớm một chút đi?"
+        },
+        {
+          "translation": "Trông cô ấy có vẻ rất hạnh phúc, chắc là vừa có chuyện gì tốt lành xảy ra với cô ấy rồi."
+        },
+        {
+          "translation": "Món ăn này trông ngon mắt quá, ngày mai tôi sẽ rủ bạn bè cùng đến ăn thử xem sao."
+        }
+      ]
+    },
+    "ko_아어야지_24": {
+      "title": "~아/어야지 (Phải... thôi, định bụng sẽ... - Tự nhủ và quyết tâm)",
+      "shortExplanation": "Vĩ tố kết thúc câu thân mật dùng để thể hiện quyết tâm, ý chí hoặc lời tự nhủ của người nói rằng mình nên hoặc phải làm việc gì ('phải... thôi', 'định bụng sẽ...').",
+      "longExplanation": "'-아/어야지' là vĩ tố kết thúc câu (ở thể thân mật hoặc độc thoại) gắn sau thân động từ, dùng khi người nói tự nhắc nhở bản thân, biểu thị quyết tâm hay ý chí mạnh mẽ thực hiện một việc gì đó mà mình cảm thấy cần phải làm. Ngoài ra, trong ngữ cảnh đối thoại nó cũng có thể dùng để khuyên nhủ hoặc giục giã đối phương một cách nhẹ nhàng.",
+      "formation": "Thân động từ kết thúc bằng nguyên âm ㅏ, ㅗ + -아야지 | Thân động từ kết thúc bằng các nguyên âm khác + -어야지 | Động từ 하다 chuyển thành 해야지",
+      "examples": [
+        {
+          "translation": "Muộn quá rồi, giờ tôi phải về nhà thôi."
+        },
+        {
+          "translation": "Lần này tôi nhất định phải giảm cân thật nghiêm túc thôi."
+        },
+        {
+          "translation": "Ngày mai tôi phải dậy sớm để tập thể dục thôi."
+        },
+        {
+          "translation": "Bài tập chất đống rồi, từ bây giờ tôi phải học hành thật chăm chỉ thôi."
+        }
+      ]
+    },
+    "ko_았었다_25": {
+      "title": "~았/었다 치다 (Coi như là, giả sử là đã...)",
+      "shortExplanation": "Cấu trúc dùng để đưa ra một tình huống giả định hoặc coi như một sự việc trong quá khứ hoặc hiện tại đã xảy ra nhằm thảo luận về kết quả ('giả sử là...', 'coi như là...').",
+      "longExplanation": "'~았/었다 치다' (thường gặp ở dạng liên kết như '-았/었다 치면', '-았/었다 치고') kết hợp sau thân động từ hoặc tính từ, dùng để đặt ra một giả định coi như sự việc, hành động hay trạng thái nào đó đã hoàn thành hoặc có thật, từ đó suy đoán hoặc xem xét diễn biến tiếp theo. Tương đương với 'cho là...', 'giả sử là đã...', 'coi như là...' trong tiếng Việt.",
+      "formation": "Thân động từ / Thân tính từ + -았/었다 치다 (hoặc -았/었다 치면, -았/었다 치고)",
+      "examples": [
+        {
+          "translation": "Giả sử lúc đó chúng ta có nhiều tiền đi, liệu ta có thể đi du lịch châu Âu được không?"
+        },
+        {
+          "translation": "Cứ cho là anh ấy đã ở trong đội của chúng ta đi, bạn có nghĩ rằng chúng ta đã có thể chiến thắng không?"
+        },
+        {
+          "translation": "Giả sử như lúc đó không có cô ấy ở đó, thì chúng ta đã xử lý công việc ấy thế nào đây?"
+        },
+        {
+          "translation": "Cứ cho là dạo này trời mưa nhiều đi, thì các hoạt động ngoài trời sẽ bị ảnh hưởng ra sao?"
+        }
+      ]
+    },
+    "ko_았었던_26": {
+      "title": "~았/었던 것 같다 (Hình như đã, dường như hồi đó đã...)",
+      "shortExplanation": "Biểu thị sự phỏng đoán hoặc hồi tưởng lại một trạng thái, sự việc đã từng xảy ra trong quá khứ một cách mơ hồ, không hoàn toàn chắc chắn ('hình như đã...', 'dường như từng...').",
+      "longExplanation": "'-았/었던 것 같다' kết hợp giữa hình thức hồi tưởng quá khứ gián đoạn '-았/었던' và cấu trúc suy đoán '- 것 같다'. Dùng khi người nói hồi tưởng về một sự việc, cảm xúc hoặc trạng thái trong quá khứ mà trí nhớ không còn tuyệt đối rõ ràng hoặc muốn diễn đạt phán đoán quá khứ một cách khiêm tốn, dè dặt, tương đương với 'hình như ngày trước đã...', 'dường như từng...' trong tiếng Việt.",
+      "formation": "Thân động từ / Thân tính từ + -았/었던 것 같다",
+      "examples": [
+        {
+          "translation": "Hồi đó cô ấy dường như đã rất hạnh phúc, lúc nào cô ấy cũng nở nụ cười."
+        },
+        {
+          "translation": "Ngày hôm đó hình như tôi đã nghe một bài hát mà mình chưa từng nghe bao giờ, giai điệu ấy đến giờ vẫn còn vang vọng trong đầu tôi."
+        },
+        {
+          "translation": "Tôi dường như đã từng ghé thăm nơi này từ rất lâu về trước rồi thì phải, những tòa nhà trông quen thuộc quá."
+        },
+        {
+          "translation": "Hình như tôi đã cứ ngỡ hôm nay là Chủ nhật, nhưng thực ra lại là thứ Bảy."
+        }
+      ]
+    },
+    "ko_았었어야_27": {
+      "title": "~았/었어야 했다 (Đáng lẽ phải... - Hối tiếc về quá khứ)",
+      "shortExplanation": "Cấu trúc biểu thị sự hối tiếc, ân hận hoặc trách móc về một việc đáng lẽ ra nên làm trong quá khứ nhưng thực tế đã không làm ('đáng lẽ phải...', 'lẽ ra nên...').",
+      "longExplanation": "'-았/었어야 했다' gắn sau thân động từ, dùng để biểu đạt sự nuối tiếc muộn màng, cảm giác ân hận của người nói hoặc sự trách móc đối phương vì đã không thực hiện một nghĩa vụ, hành động đúng đắn nào đó trong quá khứ. Ngược lại, dạng phủ định '-지 말았어야 했다' mang nghĩa 'đáng lẽ không nên làm...'. Tương đương với 'đáng lẽ phải...', 'lẽ ra nên...' trong tiếng Việt.",
+      "formation": "Thân động từ kết thúc bằng nguyên âm ㅏ, ㅗ + -았어야 했다 | Thân động từ kết thúc bằng các nguyên âm khác + -었어야 했다 | Động từ 하다 chuyển thành 했어야 했다 (Dạng phủ định: Thân động từ + -지 말았어야 했다)",
+      "examples": [
+        {
+          "translation": "Bây giờ mới nói xin lỗi thì đã muộn rồi, đáng lẽ ngay từ đầu bạn phải thừa nhận lỗi lầm của mình."
+        },
+        {
+          "translation": "Trước khi nghe câu chuyện đó, đáng lẽ bạn nên tin tưởng tôi."
+        },
+        {
+          "translation": "Đáng lẽ tôi không nên nộp đơn vào công ty đó, những trải nghiệm ở đó chẳng tốt lành gì cho tôi cả."
+        },
+        {
+          "translation": "Đáng lẽ chúng ta phải xuất phát sớm hơn, như thế thì có thể tham quan được nhiều điểm du lịch hơn bây giờ rồi."
+        }
+      ]
+    },
+    "ko_어아_28": {
+      "title": "~아/어 가다 (Dần dần tiến tới, tiếp diễn hướng về tương lai)",
+      "shortExplanation": "Trợ động từ gắn sau thân động từ biểu thị một hành động hoặc trạng thái đang dần dần tiếp diễn và phát triển từ hiện tại hướng về tương lai ('dần dần...', 'ngày càng...').",
+      "longExplanation": "'-아/어 가다' là cấu trúc kết hợp giữa thân động từ và trợ động từ '가다' (đi). Nó dùng để diễn tả một hành động hay sự biến đổi của trạng thái đang liên tục tiến triển từ quá khứ hoặc hiện tại hướng dần đến tương lai, mang sắc thái 'dần dần hoàn tất', 'ngày một trở nên...' trong tiếng Việt (như 배워가다 - học hỏi dần dần, 나아져가다 - ngày càng tiến bộ hơn). Khi kết hợp với động từ chuyển động (như 걸어가다), nó mang nghĩa đen là vừa thực hiện hành động vừa di chuyển đi.",
+      "formation": "Thân động từ kết thúc bằng nguyên âm ㅏ, ㅗ + -아 가다 | Thân động từ kết thúc bằng các nguyên âm khác + -어 가다 | Động từ 하다 chuyển thành 해 가다",
+      "examples": [
+        {
+          "translation": "Tôi sẽ vừa nghe nhạc vừa đi bộ tới đó, làm như thế có thể giảm bớt căng thẳng."
+        },
+        {
+          "translation": "Mẹ tôi thường đến công viên mà mẹ vẫn vừa tập thể dục vừa ghé qua mỗi buổi sáng."
+        },
+        {
+          "translation": "Khi lớn lên, em bé đang dần dần học hỏi được ngày càng nhiều điều."
+        },
+        {
+          "translation": "Trong quá trình học tiếng Hàn, tôi đang dần dần tiến bộ hơn theo thời gian."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "ko_라든지_14": {
+      "title": "~(이)라든지 ~(이)라든지（或者……或者……、……也好……也好）",
+      "shortExplanation": "列举助词，用于列举两个或两个以上的备选项或事例，表示选择其中任何一个都可以（“或者……或者……”、“无论……还是……”）。",
+      "longExplanation": "“~(이)라든지 ~(이)라든지”是接在名词后的列举助词（动词后亦可用 -ㄴ/는다든지）。说话人通过列举几个具有代表性的选择项，暗示无论选择其中哪一项或无论情况是哪一种都无妨、都可以接受，相当于汉语的“或者……或者……”、“……也好……也好”、“无论是……还是……”。",
+      "formation": "名词 + (이)라든지 | 动词/形容词词干 + -ㄴ/는다든지",
+      "examples": [
+        {
+          "translation": "今天晚饭不管是什么我都会点来吃——披萨也好炸鸡也好，什么都行。"
+        },
+        {
+          "translation": "无论你需要什么东西，无论是电脑还是书籍，我都可以准备好。"
+        },
+        {
+          "translation": "我正在考虑去运动，跑步也好游泳也罢，无论什么运动都很好。"
+        },
+        {
+          "translation": "能够夺得第一名的人，不是你就是其他人了。"
+        }
+      ]
+    },
+    "ko_려고_15": {
+      "title": "~(으)려고 하다（打算、想要、试图做……）",
+      "shortExplanation": "表示主语打算、计划或意图进行某项动作（“打算做……”、“想要……”）。",
+      "longExplanation": "“-(으)려고 하다”是接在动词词干后的惯用型，用于表达说话人或主语做某事的意图、计划或主观意志，相当于汉语的“打算……”、“想要……”、“正准备……”。在句中亦常作连接词尾“-(으)려고”使用，表示为了达成某种目的而采取后项动作。",
+      "formation": "以元音或收音ㄹ结尾的动词词干 + -려고 하다 | 以辅音（ㄹ除外）结尾的动词词干 + -으려고 하다",
+      "examples": [
+        {
+          "translation": "最近因为打算把韩语学好，不知不觉一天就这么过去了。"
+        },
+        {
+          "translation": "因为明天打算去见朋友，所以现在正准备早早入睡。"
+        },
+        {
+          "translation": "他打算弹好吉他，所以从昨天起每天都在刻苦练习。"
+        },
+        {
+          "translation": "儿子打算升学上大学，所以正全身心地投入到学习中。"
+        }
+      ]
+    },
+    "ko_만이_16": {
+      "title": "~만이 아니다（不仅是……、不单单是……）",
+      "shortExplanation": "表示前项所提及的内容并非唯一的事实、理由或要素，还包含其他方面（“不仅是……”、“不单是……”）。",
+      "longExplanation": "“~만이 아니다”是由表示限制的补助词“만”（只）、主格助词“이”与否定形容词“아니다”（不是）组合而成的句型。用于说明某件事物绝不仅限于眼前所提的那一点，还有其他不可忽视的方面共同起作用，相当于汉语的“不仅是……”、“不单单是……”。",
+      "formation": "名词 + 만이 아니다 | 动词/形容词 + -는/-(으)ㄴ 것만이 아니다",
+      "examples": [
+        {
+          "translation": "我不仅在学习韩语，而且还在学习日语和中文。"
+        },
+        {
+          "translation": "他不仅是一名演员，同时也是一位编剧。"
+        },
+        {
+          "translation": "这个优异的成果不仅得益于艰苦的努力，更是长期积累的经验相结合的结晶。"
+        },
+        {
+          "translation": "我们对建筑感兴趣，不仅是因为其美学价值，更是由于它的实用功能。"
+        }
+      ]
+    },
+    "ko_마련이다_17": {
+      "title": "~기 마련이다（理所当然、免不了、必然会……）",
+      "shortExplanation": "表示依据自然规律、人情常理，某种情况的发生是理所当然、势所必然的（“理所当然……”、“免不了……”）。",
+      "longExplanation": "“-기 마련이다”（或口语中亦见“-(으)ㄴ/는 것이 마련이다”）接在动词或形容词词干后，用于阐述世间万物的客观规律、人性的常态或不可逆转的必然规律，强调某种事情的发生是顺理成章、不可避免的，相当于汉语的“理所当然……”、“免不了会……”、“必然如此”。",
+      "formation": "动词/形容词词干 + -기 마련이다（或 -(으)ㄴ/는 것이 마련이다）",
+      "examples": [
+        {
+          "translation": "即使想不去在意别人的眼光，但做不到这一点也是人之常情。"
+        },
+        {
+          "translation": "年幼的孩子们贪玩，考虑到那个年龄段的特点，本就是理所当然的事情。"
+        },
+        {
+          "translation": "不能因为这次失败了，就断定下次也一定会失败，这也是显而易见的常理。"
+        },
+        {
+          "translation": "遇到艰难困苦的事情，心情难免会变得消沉沮丧。"
+        }
+      ]
+    },
+    "ko_면서_18": {
+      "title": "~(으)면서（一边……一边……、同时）",
+      "shortExplanation": "连接词尾，表示同一主语在同一时间段内同时进行两项动作或处于两种状态（“一边……一边……”）。",
+      "longExplanation": "“-(으)면서”是接在动词或形容词词干后的连接词尾，用于表示前后两个分句的动作或状态同时发生、并行不悖。使用时前后分句的主语必须是同一个，相当于汉语的“一边……一边……”、“既……又……”。",
+      "formation": "以元音或收音ㄹ结尾的动词词干 + -면서 | 以辅音（ㄹ除外）结尾的动词词干 + -으면서",
+      "examples": [
+        {
+          "translation": "我喜欢一边听音乐一边学习，那样做的话能让我更加专注。"
+        },
+        {
+          "translation": "他总是边吃饭边看电视，那是他多年的习惯。"
+        },
+        {
+          "translation": "我一边看电影一边吃午餐，这样就能节省时间了。"
+        },
+        {
+          "translation": "我一边健身一边听播客，这对我非常有益。"
+        }
+      ]
+    },
+    "ko_동안_19": {
+      "title": "~동안 / -는 동안（在……期间、在……的时候）",
+      "shortExplanation": "接在时间名词或动词定语形后，表示某一动作、状态所持续的整个时间段（“在……期间”、“在……的时候”）。",
+      "longExplanation": "“~동안”是表示时间段的依存名词，既可直接接在时间名词后（如 방학 동안），也可接在动词词干后构成“-는 동안”。表示在前项动作或状态持续的时间跨度之内，发生了后项的事情。与“-(으)면서”不同，“-는 동안”的前后分句主语可以不一致。",
+      "formation": "时间名词 + 동안 | 动词词干 + -는 동안",
+      "examples": [
+        {
+          "translation": "在整个寒假期间我画了许多画，因为那是我的业余爱好。"
+        },
+        {
+          "translation": "在我做饭的时候电话一直响个不停，搞得我完全无法集中精力做菜。"
+        },
+        {
+          "translation": "我在练歌房唱歌的时候，朋友们都在尽情跳舞，真是太有趣了。"
+        },
+        {
+          "translation": "在她不在家期间，小偷潜入并偷走了她所有的贵重物品。"
+        }
+      ]
+    },
+    "ko_부터는_20": {
+      "title": "~부터는（从……起就……、从……开始则……）",
+      "shortExplanation": "助词结合型，由起点助词“부터”与强调对比助词“는”结合而成，强调从某一特定时间点或事件起发生了新的转变（“从……起则……”）。",
+      "longExplanation": "“~부터는”结合了表示起始点的助词“부터”（从……起）和具有对比、强调作用的补助词“는”。用于明确划定一个时间界限或转折事件，突出强调以此为转折点，某种新的状态、行为准则或决心开始确立，且与以往的情况形成对比，相当于汉语的“从……开始就……”、“自……以后则……”。",
+      "formation": "时间/事件名词 + 부터는 | 动词词干 + -(으)ㄴ 후부터는",
+      "examples": [
+        {
+          "translation": "从今天开始我决定更加注重身体健康。所以，我打算每天早晨去慢跑。"
+        },
+        {
+          "translation": "自该事件发生之后，一切都改变了。人们得知这一真相后变得更加谨小慎微了。"
+        },
+        {
+          "translation": "从去年起我们决定更加节省赚来的钱。因此，为了缩减不必要的开支正在竭尽全力。"
+        },
+        {
+          "translation": "自从阅读了这份报告之后，我才得以更好地理解目前的状况。奇怪的是，以前完全想不通的地方忽然间都变得合情合理了。"
+        }
+      ]
+    },
+    "ko_서야_21": {
+      "title": "~아/어서야（只有……才……、到了……才……）",
+      "shortExplanation": "连接词尾，强调前项是后项必不可少的前提条件，或者经过漫长时间或周折之后才实现后项（“只有……才……”、“到了……才……”）。",
+      "longExplanation": "“-아/어서야”是由连接词尾“-아/어서”与强调助词“야”（才）结合而成的句型。用于突出前项动作或条件的绝对必要性，强调必须完全履行或经历过前项之后，后项的结果才得以发生或被领悟，相当于汉语的“只有……才……”、“直到……才……”。",
+      "formation": "阳性元音（ㅏ, ㅗ）动词词干 + -아서야 | 阴性元音动词词干 + -어서야 | 하다动词 + -해서야",
+      "examples": [
+        {
+          "translation": "只有把我的书从头到尾读完，你才可能真正理解；绝不能草草翻过，而必须细致推敲每一个句子、每一个词语。"
+        },
+        {
+          "translation": "只有深陷爱河之后，才能看清那个人的优缺点。有时，爱情的盲目甚至会让你忽略掉他们的缺点。"
+        },
+        {
+          "translation": "要使这项事业取得成功，只有把计划制定得非常周密才行。我认为不作规划就妄想成功是极其不现实的。"
+        },
+        {
+          "translation": "因为这是谁也没有经历过的局面所以令人苦恼，但只有亲自去体会这一境遇，才能知道准确的应对策略。"
+        }
+      ]
+    },
+    "ko_소문에는_22": {
+      "title": "~소문에는（据传闻、传闻中说……）",
+      "shortExplanation": "用于转述说话人从外界听来的传闻、传言或流言，表明信息非个人断定而是道听途说（“据传闻……”、“传言说……”）。",
+      "longExplanation": "“~소문에는”（常以“名词 + 에 대한 소문에는”或句首“소문에는”的形式出现）由名词“소문”（传闻、风闻）加上处所格助词“에”与对比助词“는”构成。常与后文的间接引语词尾（如“-ㄴ/는다고 하다”、“들었다”）呼应，用于委婉传达社会上或他人之间流传的风声、流言，而不对信息的真实性负责。",
+      "formation": "名词 + (에 대한) 소문에는 | 소문에는 + 间接引语分句（-ㄴ/는다고 하다 / 들었다）",
+      "examples": [
+        {
+          "translation": "据传言说，我听说那家公司很快就要面临破产了。"
+        },
+        {
+          "translation": "关于他成功的传闻中，据说他每天要高强度工作18个小时。"
+        },
+        {
+          "translation": "关于她一举成名的传闻中，说她明年将会出演一部好莱坞电影。"
+        },
+        {
+          "translation": "针对最近任宰范人气高涨的传闻，据说他计划比原定日程更早推出新专辑。"
+        }
+      ]
+    },
+    "ko_아어_23": {
+      "title": "~아/어 보이다（看起来……、显得……）",
+      "shortExplanation": "接在形容词词干后，表示说话人根据外表视觉观察所做出的直观判断或推测（“看起来……”、“显得……”）。",
+      "longExplanation": "“-아/어 보이다”是接在形容词词干后的辅助谓词表达。用于表达说话人根据外部显露的面貌、神态或特征所做出的直观判断与感受，相当于汉语的“看起来……”、“显得……”。",
+      "formation": "阳性元音（ㅏ, ㅗ）形容词词干 + -아 보이다 | 阴性元音形容词词干 + -어 보이다 | 하다形容词 + -해 보이다",
+      "examples": [
+        {
+          "translation": "那个男人看起来真可怜，大概正在经历一段艰难的时光吧。"
+        },
+        {
+          "translation": "今天你看起来很疲惫，早点休息怎么样？"
+        },
+        {
+          "translation": "她看起来十分幸福，大概是遇到了什么开心的喜事吧。"
+        },
+        {
+          "translation": "这道菜看起来非常好吃，明天我一定要带朋友们一起来尝尝。"
+        }
+      ]
+    },
+    "ko_아어야지_24": {
+      "title": "~아/어야지（该……了、得……才行 - 下定决心与自省）",
+      "shortExplanation": "非正式终结词尾，常用于独白或自言自语，表示说话人下定决心或对自己提出要求（“该……了”、“得……才行”）。",
+      "longExplanation": "“-아/어야지”是接在动词词干后的终结词尾，主要用于非敬语或独白口吻中。表示说话人感到某种行为必须执行，从而在心中暗下决心、自我督促或做出积极的规划，相当于汉语的“得……了”、“该……了”、“一定要……才行”。",
+      "formation": "阳性元音（ㅏ, ㅗ）动词词干 + -아야지 | 阴性元音动词词干 + -어야지 | 하다动词 + -해야지",
+      "examples": [
+        {
+          "translation": "时间太晚了，我现在该回家了。"
+        },
+        {
+          "translation": "这一次我一定要认认真真减肥才行。"
+        },
+        {
+          "translation": "明天我得早早起床去锻炼身体。"
+        },
+        {
+          "translation": "作业堆积如山了，从现在起我必须好好用功努力了。"
+        }
+      ]
+    },
+    "ko_았었다_25": {
+      "title": "~았/었다 치다（就算已经……、假定已经……）",
+      "shortExplanation": "表示设定一个假设性的前提，假定某件事已经发生或某种状态已经具备（“就算已经……”、“假定……”）。",
+      "longExplanation": "“~았/었다 치다”（常以“-았/었다 치면”（就算……的话）、“-았/었다 치고”（就算作……）的形式使用）接在动词或形容词过去时词干后。用于提出一个假想的既成事实或极端假定，以此为前提来推导、探讨随后的可能性或后果，相当于汉语的“就算……了”、“假定……的话”。",
+      "formation": "动词/形容词词干 + -았/었다 치다（或 -았/었다 치면, -았/었다 치고）",
+      "examples": [
+        {
+          "translation": "假定我们当时很有钱，我们就能去欧洲旅行了吗？"
+        },
+        {
+          "translation": "就算当时他在我们队里，你觉得我们真的就能赢吗？"
+        },
+        {
+          "translation": "要是当时没有她在场的话，大家该怎么应对那件事呢？"
+        },
+        {
+          "translation": "假定最近雨水下了很多，那么户外活动又会受到怎样的影响呢？"
+        }
+      ]
+    },
+    "ko_았었던_26": {
+      "title": "~았/었던 것 같다（好像曾经……、感觉那时……）",
+      "shortExplanation": "用于对过去曾发生过的事情或状态进行模糊的回忆与委婉推测（“好像曾经……”、“那时似乎……”）。",
+      "longExplanation": "“-았/었던 것 같다”是由表示过去回想的定语词尾“-았/었던”与推测表达“- 것 같다”（好像）组合而成的句型。用于说话人凭借模糊的记忆追溯往事，或者出于礼貌而对过去的事实表达不完全断定的推测语气，相当于汉语的“好像曾经……了”、“隐约记得那时……”。",
+      "formation": "动词/形容词词干 + -았/었던 것 같다",
+      "examples": [
+        {
+          "translation": "她那时看起来好像十分幸福，脸上总是挂着微笑。"
+        },
+        {
+          "translation": "那天我好像听了一首以前从没听过的歌曲，那首歌至今还萦绕在我的脑海中。"
+        },
+        {
+          "translation": "我好像在很久以前就来过这里了，周围的建筑显得很眼熟。"
+        },
+        {
+          "translation": "我好像一度错以为今天是星期天呢，但实际上才周六。"
+        }
+      ]
+    },
+    "ko_았었어야_27": {
+      "title": "~았/었어야 했다（本应该……的、早该……了 - 过去遗憾与责备）",
+      "shortExplanation": "表示对过去本该做而未做的事情感到后悔、遗憾，或对他人未能履行义务予以责备（“本应该……”、“本该……”）。",
+      "longExplanation": "“-았/었어야 했다”接在动词词干后。用于表达对过去未曾付诸实践的合理行动的事后遗憾、懊悔，或指出对方在过去应尽而未尽的责任，相当于汉语的“本应该……的”、“早该……”。其否定形式为“-지 말았어야 했다”（本不该……）。",
+      "formation": "阳性元音（ㅏ, ㅗ）动词词干 + -았어야 했다 | 阴性元音动词词干 + -었어야 했다 | 하다动词 + -했어야 했다（否定形式：动词词干 + -지 말았어야 했다）",
+      "examples": [
+        {
+          "translation": "事到如今才道歉已经太晚了，当初无论如何你也本应该主动承认错误的。"
+        },
+        {
+          "translation": "在听信那些流言之前，你本应该先相信我的。"
+        },
+        {
+          "translation": "我本不该向那家公司递交应聘申请的，在那里经历的一切对我没有任何益处。"
+        },
+        {
+          "translation": "我们原本应该更早一些出发的，那样的话现在就能游览更多的观光胜地了。"
+        }
+      ]
+    },
+    "ko_어아_28": {
+      "title": "~아/어 가다（逐步……下去、渐渐地……）",
+      "shortExplanation": "接在动词词干后，表示动作或状态从现在向未来持续进行、推进或逐步显现深化（“一步步……下去”、“渐渐……”）。",
+      "longExplanation": "“-아/어 가다”由动词词干后接辅助动词“가다”（去）构成。主要用于表示某种动作、变化或状态由现在向着未来的方向持续深入推进，展现出“一步步向前延续”、“日趋……”、“渐进式成熟”的动态过程（如 배워가다 逐步学得、나아져가다 日益好转）。与移动动词结合时（如 걸어가다），则表示一边做某动作一边行进而去的字面空间位移。",
+      "formation": "阳性元音（ㅏ, ㅗ）动词词干 + -아 가다 | 阴性元音动词词干 + -어 가다 | 하다动词 + -해 가다",
+      "examples": [
+        {
+          "translation": "我打算一边听着音乐一边步行走过去，那样能够缓解压力。"
+        },
+        {
+          "translation": "我们妈妈每天早晨都常常去她晨练时路过的那座公园。"
+        },
+        {
+          "translation": "随着宝宝渐渐长大，正在一步一步学会越来越多的知识与本领。"
+        },
+        {
+          "translation": "我在学习韩语的过程中，水平也在日益精进、逐步好转。"
+        }
+      ]
+    }
+  },
+  "ja": {
+    "ko_라든지_14": {
+      "title": "~(이)라든지 ~(이)라든지（〜とか〜とか、〜であれ〜であれ）",
+      "shortExplanation": "複数の選択肢や例を並列して挙げ、そのうちのどれを選んでも構わないことを表す助詞です（「〜とか〜とか」「〜であれ〜であれ」）。",
+      "longExplanation": "「~(이)라든지 ~(이)라든지」は主に名詞の後に付き、複数の選択肢や例示を並べ立てて、挙げられたもののうちどれを選択しても差し支えないというニュアンスを表す並立助詞です。特定の対象に限定せず「〜とか〜とか」「〜であれ〜であれ」と幅広く例を挙げる際に用いられます。",
+      "formation": "名詞 + (이)라든지 | 動詞・形容詞語幹 + -ㄴ/는다든지",
+      "examples": [
+        {
+          "translation": "今夜の夕食はピザとかチキンとか、何でも注文して食べるつもりです。"
+        },
+        {
+          "translation": "あなたが必要としているものが何であれ、パソコンであれ本であれ、私は準備できます。"
+        },
+        {
+          "translation": "運動をしに行こうか考えているところですが、ランニングとか水泳とか何でもいいです。"
+        },
+        {
+          "translation": "1位を勝ち取れる人は、あなたか、あるいは他の誰かになるでしょう。"
+        }
+      ]
+    },
+    "ko_려고_15": {
+      "title": "~(으)려고 하다（〜しようとする、〜するつもりだ）",
+      "shortExplanation": "主語がある動作をしようとする意図や計画、試みを表します（「〜しようとする」「〜するつもりだ」）。",
+      "longExplanation": "「-(으)려고 하다」は動詞の語幹に付き、話し手または主語が何らかの行動を行おうとする意志や計画、試みを表す表現です。日本語の「〜しようとする」「〜するつもりだ」に相当します。接続語尾「-(으)려고」の形で後続節とつながる場合は、「〜しようとして / 〜するために」という目的を表します。",
+      "formation": "母音またはパッチムㄹで終わる動詞語幹 + -려고 하다 | ㄹ以外のパッチムで終わる動詞語幹 + -으려고 하다",
+      "examples": [
+        {
+          "translation": "最近韓国語を学ぼうと取り組んでいるうちに、一日がどのように過ぎていくのかも分からないほどです。"
+        },
+        {
+          "translation": "明日友達に会う予定なので、今はとても早めに寝ようとしています。"
+        },
+        {
+          "translation": "彼はギターを弾こうと決めて、昨日から毎日練習しています。"
+        },
+        {
+          "translation": "息子は大学に進学するつもりなので、勉強に集中しようと努めています。"
+        }
+      ]
+    },
+    "ko_만이_16": {
+      "title": "~만이 아니다（〜だけではない、〜にとどまらない）",
+      "shortExplanation": "前述の内容が唯一の理由や要素ではなく、他にも重要な要素が含まれていることを表します（「〜だけではない」）。",
+      "longExplanation": "「~만이 아니다」は限定の補助詞「만」（〜だけ）に助詞「이」と否定詞「아니다」が結合した文型です。ある事態の理由や対象が一つだけに限定されず、他にも複数の要因や側面が存在することを強調する際に用いられ、日本語の「〜だけではない」「〜にとどまらない」に相当します。",
+      "formation": "名詞 + 만이 아니다 | 動詞・形容詞 + -는/-(으)ㄴ 것만이 아니다",
+      "examples": [
+        {
+          "translation": "私は韓国語を勉強しているだけでなく、日本語と中国語も勉強しています。"
+        },
+        {
+          "translation": "彼は俳優であるだけでなく、脚本家でもあります。"
+        },
+        {
+          "translation": "この素晴らしい結果は、血のにじむ努力だけでなく、継続的な経験が結びついた結果です。"
+        },
+        {
+          "translation": "私たちが建築に関心を持っているのは、審美的な側面だけでなく、その機能的な側面のためでもあります。"
+        }
+      ]
+    },
+    "ko_마련이다_17": {
+      "title": "~기 마련이다（〜するものだ、〜するのが当たり前だ）",
+      "shortExplanation": "世の道理や自然の法則からして、ある事態が起こるのが当然であり必然であることを表します（「〜するものだ」「〜するのが当たり前だ」）。",
+      "longExplanation": "「-기 마련이다」（または「-(으)ㄴ/는 것이 마련이다」の形）は用言の語幹に付き、自然の理や人間の心理、世間の常識に照らし合わせて「そうなるのが当たり前だ」「どうしてもそうなるものだ」という必然的な道理を述べる表現です。日本語の「〜するものだ」「〜するのが自然だ」に相当します。",
+      "formation": "動詞・形容詞語幹 + -기 마련이다（または -(으)ㄴ/는 것이 마련이다）",
+      "examples": [
+        {
+          "translation": "他人の目を気にしないようにしようとしても、どうしても気になってしまうのは仕方のないことです。"
+        },
+        {
+          "translation": "幼い子どもたちがたくさん遊ぶのは、その年齢の特性上ごく当たり前のことです。"
+        },
+        {
+          "translation": "今回失敗したからといって次回も必ず失敗するとは限らないのも、当然の道理です。"
+        },
+        {
+          "translation": "辛いことが起これば、誰しも落ち込んでしまうものです。"
+        }
+      ]
+    },
+    "ko_면서_18": {
+      "title": "~(으)면서（〜しながら、〜しつつ）",
+      "shortExplanation": "同一の主語が二つの動作や状態を同時に並行して行うことを表す接続語尾です（「〜しながら」）。",
+      "longExplanation": "「-(으)면서」は用言の語幹に付く接続語尾で、同一の主語が二つの行動を同時に並行して行っていることを表します。日本語の「〜しながら」に相当し、前節と後節の主語は同一でなければなりません。",
+      "formation": "母音またはパッチムㄹで終わる動詞語幹 + -면서 | ㄹ以外のパッチムで終わる動詞語幹 + -으면서",
+      "examples": [
+        {
+          "translation": "私は音楽を聴きながら勉強するのが好きです。そうするともっと集中できます。"
+        },
+        {
+          "translation": "彼はご飯を食べながらテレビを見ます。それが彼の習慣です。"
+        },
+        {
+          "translation": "映画を見ながら昼食を食べました。そうすれば時間を節約できます。"
+        },
+        {
+          "translation": "私は運動しながらポッドキャストを聴いています。それは私にとってとても有益です。"
+        }
+      ]
+    },
+    "ko_동안_19": {
+      "title": "~동안 / -는 동안（〜の間、〜している間）",
+      "shortExplanation": "時間名詞または動詞の後ろに付き、ある動作や状態が継続している時間の幅を表します（「〜の間」「〜している間」）。",
+      "longExplanation": "「~동안」は期間を表す名詞（または依存名詞）で、時間名詞に直接接続するか、動詞の連体形「-는」を伴って「-는 동안」の形で用いられます。ある事態が続いている時間的スパンを表し、日本語の「〜の間」「〜している間」に相当します。「-(으)면서」と異なり、前節と後節の主語が異なっていても構いません。",
+      "formation": "時間名詞 + 동안 | 動詞語幹 + -는 동안",
+      "examples": [
+        {
+          "translation": "冬休みの間、私はたくさん絵を描きました。それが私の趣味だからです。"
+        },
+        {
+          "translation": "料理をしている間、電話が鳴り止まなかったので料理に集中できませんでした。"
+        },
+        {
+          "translation": "私がカラオケで歌を歌っている間、友達はみんな踊っていて本当に楽しかったです。"
+        },
+        {
+          "translation": "彼女が家にいない間に泥棒が入り、彼女の貴重品をすべて盗んでいきました。"
+        }
+      ]
+    },
+    "ko_부터는_20": {
+      "title": "~부터는（〜からは、〜以降は）",
+      "shortExplanation": "起点を示す助詞「부터」と対照の補助詞「는」が合わさり、特定の時点や出来事を境に状況が変わることを強調します（「〜からは」「〜以降は」）。",
+      "longExplanation": "「~부터는」は、開始の時点を表す助詞「부터」（〜から）に対照・強調の補助詞「는」（〜は）が結合した表現です。ある時点や契機を明確な境界線として設定し、その時点を境に以前とは異なる新しい習慣、決心、または変化が生じることを際立たせる際に用いられ、日本語の「〜からは」「〜以降は」に相当します。",
+      "formation": "名詞（時間・出来事） + 부터는 | 動詞語幹 + -(으)ㄴ 후부터는",
+      "examples": [
+        {
+          "translation": "今日からは健康にもう少し気を配ることにしました。そのため、毎朝ジョギングをするつもりです。"
+        },
+        {
+          "translation": "この事件が発生して以降は、すべてのことが変わりました。人々はこの事実を知ってから、少し慎重になりました。"
+        },
+        {
+          "translation": "去年からは稼いだお金をもっと節約して使うことに決めました。無駄な出費を減らすため最大限努力しています。"
+        },
+        {
+          "translation": "この報告書を読んだ後からは、この状況についてより深く理解できるようになりました。不思議なことに、以前は理解できなかった部分が急に腑に落ちました。"
+        }
+      ]
+    },
+    "ko_서야_21": {
+      "title": "~아/어서야（〜してはじめて、〜してようやく）",
+      "shortExplanation": "前項の動作や条件をクリアしてはじめて後項の事態が実現することを強調する接続表現です（「〜してはじめて」「〜してようやく」）。",
+      "longExplanation": "「-아/어서야」は接続語尾「-아/어서」に強調の助詞「야」が結合した表現です。前項の動作や条件が後項の不可欠な前提であることを強調し、「前項のことをやり遂げてようやく後項が可能になる」「その段階に至ってはじめて悟る」という意味を表します。日本語の「〜してはじめて」「〜してようやく」に相当します。",
+      "formation": "陽性母音語幹（ㅏ, ㅗ） + -아서야 | 陰性母音語幹 + -어서야 | 하다動詞 + -해서야",
+      "examples": [
+        {
+          "translation": "私の本を最後まで全部読んでこそ、ようやく理解できるはずです。軽く流し読みするのではなく、一文一文、一言一言を丁寧に精読しなければなりません。"
+        },
+        {
+          "translation": "恋に落ちてはじめて、その人の長所や短所が見えてくるものです。時には恋の盲目さゆえに、相手の欠点を無視してしまうこともあります。"
+        },
+        {
+          "translation": "このビジネスを成功させるには、計画を綿密に立ててはじめて可能になります。計画なしに成功を期待するのは無理があると私は思います。"
+        },
+        {
+          "translation": "誰も経験したことのない状況なので悩みどころですが、その状況を自ら直接体験してはじめて、的確な対処法が分かるはずです。"
+        }
+      ]
+    },
+    "ko_소문에는_22": {
+      "title": "~소문에는（噂では、風の噂によると）",
+      "shortExplanation": "世間や人伝てに聞いた噂話を引用・伝達する表現です（「噂では」「風の噂によると」）。",
+      "longExplanation": "「~소문에는」（「名詞 + 에 대한 소문에는」や文頭の「소문에는」）は名詞「소문」（噂）に助詞「에」と「는」が結合した表現です。話し手自身の確信や公式発表ではなく、周囲でささやかれている風聞や噂の内容を紹介する際に用いられ、文末には「-ㄴ/는다고 하다」（〜だそうだ）や「들었다」（〜と聞いた）などの間接話法が呼応します。",
+      "formation": "名詞 + (에 대한) 소문에는 | 소문에는 + 間接話法節（-ㄴ/는다고 하다 / 들었다）",
+      "examples": [
+        {
+          "translation": "噂では、その会社が間もなく倒産することになると耳にしました。"
+        },
+        {
+          "translation": "彼の成功に関する噂では、彼が1日に18時間も働いているとのことです。"
+        },
+        {
+          "translation": "彼女が一躍有名になった噂では、彼女が来年ハリウッド映画に出演する予定だそうです。"
+        },
+        {
+          "translation": "最近のイム・ジェボムの人気に関する噂によると、彼が新しいアルバムをより早くリリースする予定だとのことです。"
+        }
+      ]
+    },
+    "ko_아어_23": {
+      "title": "~아/어 보이다（〜に見える、〜そうに見える）",
+      "shortExplanation": "形容詞の語幹に付き、外見や様子から判断した視覚的な印象や推測を表します（「〜に見える」「〜そうに見える」）。",
+      "longExplanation": "「-아/어 보이다」は形容詞の語幹に接続する補助用言表現です。話し手が観察対象の外見、表情、様子などを目で直接見て感じ取った直感的な判断や印象を述べる際に用いられ、日本語の「〜に見える」「〜そうに見える」に相当します。",
+      "formation": "陽性母音語幹（ㅏ, ㅗ） + -아 보이다 | 陰性母音語幹 + -어 보이다 | 하다形容詞 + -해 보이다",
+      "examples": [
+        {
+          "translation": "あの男性は本当に気の毒そうに見えます。おそらく辛い時期を過ごしているようですね。"
+        },
+        {
+          "translation": "今日は疲れているように見えますから、早く休んではいかがですか。"
+        },
+        {
+          "translation": "彼女はとても幸せそうに見えますが、何か良いことがあったのでしょう。"
+        },
+        {
+          "translation": "この料理はとても美味しそうに見えるので、明日友達と一緒に来て食べてみます。"
+        }
+      ]
+    },
+    "ko_아어야지_24": {
+      "title": "~아/어야지（〜しなくちゃ、〜しなきゃ - 自戒と決意）",
+      "shortExplanation": "独り言や親しい間柄で、自分がすべき行動に対して強い決意や自戒を込めて述べる終結語尾です（「〜しなくちゃ」「〜しなきゃ」）。",
+      "longExplanation": "「-아/어야지」は動詞の語幹に付く終結語尾です。主に独り言や親しい間柄で用いられ、「もうこれ以上先延ばしにせず、これをしなければならない」と自らに言い聞かせたり、心の中で固い決意を固めたりする際に使われます。日本語の「〜しなくちゃ」「〜しなきゃ」「〜するぞ」に相当します。",
+      "formation": "陽性母音語幹（ㅏ, ㅗ） + -아야지 | 陰性母音語幹 + -어야지 | 하다動詞 + -해야지",
+      "examples": [
+        {
+          "translation": "もうこんなに遅くなった、もう家に帰らなきゃ。"
+        },
+        {
+          "translation": "今度こそ本当に本気でダイエットをしなくちゃ。"
+        },
+        {
+          "translation": "明日は早起きして運動しなくちゃ。"
+        },
+        {
+          "translation": "課題がたくさんたまっている、今からでも一生懸命頑張らなきゃ。"
+        }
+      ]
+    },
+    "ko_았었다_25": {
+      "title": "~았/었다 치다（〜したと仮定する、〜だったとしよう）",
+      "shortExplanation": "ある事態がすでに起きたものと仮定・譲歩して、その場合の帰結や対策を論じる表現です（「〜したと仮定する」「〜だったとしよう」）。",
+      "longExplanation": "「~았/었다 치다」（主に「-았/었다 치면」（〜だったとしたら）や「-았/었다 치고」（〜だったことにして）の形で用いられます）は、用言の過去形に接続し、ある仮定の状況を事実として仮置きし、それを前提にして議論を進めたり可能性を検討したりする表現です。日本語の「〜したと仮定する」「〜だったとしよう」に相当します。",
+      "formation": "動詞・形容詞語幹 + -았/었다 치다（または -았/었다 치면, -았/었다 치고）",
+      "examples": [
+        {
+          "translation": "私たちにお金がたくさんあったと仮定したら、ヨーロッパ旅行に行けたでしょうか。"
+        },
+        {
+          "translation": "彼が私たちのチームにいたと仮定して、勝てたと思いますか。"
+        },
+        {
+          "translation": "もし彼女がいなかったとしたら、その仕事にどのように対処したでしょうか。"
+        },
+        {
+          "translation": "最近雨がたくさん降ったと仮定して、野外活動はどうなるでしょうか。"
+        }
+      ]
+    },
+    "ko_았었던_26": {
+      "title": "~았/었던 것 같다（〜だったようだ、〜したようだった）",
+      "shortExplanation": "過去の出来事や状態について、おぼろげな記憶や控えめな推測を述べる表現です（「〜だったようだ」「〜したようだった」）。",
+      "longExplanation": "「-았/었던 것 같다」は過去回想の連体形「-았/었던」に推量表現「- 것 같다」（〜のようだ）が結合した文型です。過去の出来事、感覚、記憶を思い起こしながら、断定を避けて控えめに推測したり、あやふやな記憶を回顧したりする際に用いられます。日本語の「〜だったようだ」「〜したように思う」に相当します。",
+      "formation": "動詞・形容詞語幹 + -았/었던 것 같다",
+      "examples": [
+        {
+          "translation": "彼女はとても幸せだったようです。いつも笑みを浮かべていました。"
+        },
+        {
+          "translation": "あの日は聴いたことのなかった曲を聴いたように思います。その曲は今でも頭の中に残っています。"
+        },
+        {
+          "translation": "私は大昔にここを訪れたことがあるようです。建物に見覚えがあります。"
+        },
+        {
+          "translation": "今日が日曜日だと勘違いしていたようでした。でも実際には土曜日でした。"
+        }
+      ]
+    },
+    "ko_았었어야_27": {
+      "title": "~았/었어야 했다（〜すべきだった、〜しておけばよかった）",
+      "shortExplanation": "過去に当然すべきだったのに行わなかった行為について、後悔、遺憾、あるいは非難を表します（「〜すべきだった」）。",
+      "longExplanation": "「-았/었어야 했다」は動詞の語幹に付き、過去のある時点において当然行うべきであった行為を果たさなかったことに対する強い後悔や、相手への反省・非難を表明する文型です。日本語の「〜すべきだった」「〜しておけばよかった」に相当します。否定形は「-지 말았어야 했다」（〜すべきではなかった）となります。",
+      "formation": "陽性母音語幹（ㅏ, ㅗ） + -았어야 했다 | 陰性母音語幹 + -었어야 했다 | 하다動詞 + -했어야 했다（否定形：動詞語幹 + -지 말았어야 했다）",
+      "examples": [
+        {
+          "translation": "今さら謝ってももう遅い、最初から素直に過ちを認めるべきだったんだ。"
+        },
+        {
+          "translation": "その話を聞く前に、私を信じるべきだった。"
+        },
+        {
+          "translation": "私はあの会社に応募すべきではなかった。そこでの経験は私にとって決して良くなかった。"
+        },
+        {
+          "translation": "私たちはもっと早く出発すべきだった。そうしていれば今よりもっと多くの観光地を見られたはずなのに。"
+        }
+      ]
+    },
+    "ko_어아_28": {
+      "title": "~아/어 가다（〜していく、だんだん〜していく）",
+      "shortExplanation": "動詞の語幹に付き、動作や状態が現在から未来に向かって次第に進行・変化していくことを表します（「〜していく」「だんだん〜していく」）。",
+      "longExplanation": "「-아/어 가다」は動詞の語幹に補助動詞「가다」（行く）が結合した表現です。ある動作や変化が過去や現在から出発し、未来に向かって時間とともに継続・深化していくプロセスを表します（배워가다「学んでいく」、나아져가다「良くなっていく」など）。なお、空間移動の動詞と合わさる場合（걸어가다など）は、「〜しながら進んでいく」という具体的な空間移動を表します。",
+      "formation": "陽性母音語幹（ㅏ, ㅗ） + -아 가다 | 陰性母音語幹 + -어 가다 | 하다動詞 + -해 가다",
+      "examples": [
+        {
+          "translation": "私は音楽を聴きながら歩いて行くつもりです。そうすればストレスを軽減できます。"
+        },
+        {
+          "translation": "母は毎朝運動しながら通っていた公園によく行きます。"
+        },
+        {
+          "translation": "赤ちゃんは成長するにつれて、ますます多くのことを学んでいっています。"
+        },
+        {
+          "translation": "私は韓国語を勉強しながら、次第に上達していっています。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "ko_라든지_14": {
+      "title": "~(이)라든지 ~(이)라든지 (나열 및 대안의 선택)",
+      "shortExplanation": "둘 이상의 대상을 예로 들어 나열하면서 어느 것을 선택해도 상관없음을 나타내는 보조사입니다 ('~(이)라든지 ~(이)라든지').",
+      "longExplanation": "'~(이)라든지 ~(이)라든지'는 명사 뒤에 붙어(동사나 형용사 뒤에서는 '-ㄴ/는다든지' 형태로 쓰임), 여러 가지 가능한 대안이나 사물을 예시로 나열할 때 사용되는 조사입니다. 화자가 특정한 하나만을 고집하지 않고 언급된 것 중 어느 것을 택해도 무방하거나 포괄적인 상황임을 나타냅니다.",
+      "formation": "명사 + (이)라든지 | 동사/형용사 어간 + -ㄴ/는다든지",
+      "examples": [
+        {
+          "translation": "오늘 저녁에는 피자라든지 치킨이라든지 뭐든지 배달시켜 먹을 거예요."
+        },
+        {
+          "translation": "당신이 필요로 하는 것이 무엇이든, 컴퓨터라든지 책이라든지 저는 다 준비할 수 있어요."
+        },
+        {
+          "translation": "운동하러 갈까 생각 중인데, 달리기라든지 수영이라든지 어떤 것이라도 좋아요."
+        },
+        {
+          "translation": "1위를 차지할 수 있는 사람은 당신이라든지 아니면 다른 누군가가 될 거예요."
+        }
+      ]
+    },
+    "ko_려고_15": {
+      "title": "~(으)려고 하다 (의도와 계획)",
+      "shortExplanation": "어떤 행동을 할 의도나 목적, 계획이 있음을 나타내는 표현입니다 ('-(으)려고 하다').",
+      "longExplanation": "'-(으)려고 하다'는 동사 어간 뒤에 결합하여 주어가 어떤 행동을 할 의지나 계획, 목적을 품고 있음을 나타내는 문형입니다. '~하려는 마음을 먹다', '~하기로 계획하다'의 의미를 지니며, 구어와 문어 모두에서 널리 사용됩니다.",
+      "formation": "모음이나 'ㄹ' 받침으로 끝나는 동사 어간 + -려고 하다 | 'ㄹ'을 제외한 받침 있는 동사 어간 + -으려고 하다",
+      "examples": [
+        {
+          "translation": "요즘 한국어를 배우려고 하다 보니까 하루가 어떻게 지나가는지도 모르겠어요."
+        },
+        {
+          "translation": "내일 친구를 만나려고 해서 지금은 일찍 자려고 누워 있어요."
+        },
+        {
+          "translation": "그는 기타를 잘 치려고 어제부터 매일 연습하고 있어요."
+        },
+        {
+          "translation": "아들은 상급 학교에 진학하려고 하니까 공부에 더욱 집중하려고 하고 있어요."
+        }
+      ]
+    },
+    "ko_만이_16": {
+      "title": "~만이 아니다 (유일성 부정 및 추가 대상 제시)",
+      "shortExplanation": "어떤 사실이나 대상이 그것 하나에만 국한되지 않고 다른 요소도 함께 포함되어 있음을 나타내는 표현입니다 ('~만이 아니다').",
+      "longExplanation": "'~만이 아니다'는 한정의 보조사 '만'에 주격 조사 '이'와 형용사 '아니다'가 결합된 표현입니다. 언급된 조건이나 대상이 유일한 것이 아니며 다른 요인이나 대상 또한 존재함을 강조할 때 씁니다. 명사 뒤에 바로 붙거나 '-는 것만이 아니다'의 형태로 쓰여 '뿐만이 아니다'와 유사한 의미를 나타냅니다.",
+      "formation": "명사 + 만이 아니다 | 동사/형용사 + -는/-(으)ㄴ 것만이 아니다",
+      "examples": [
+        {
+          "translation": "저는 한국어를 공부하는 것만이 아니라, 일본어와 중국어도 함께 공부하고 있어요."
+        },
+        {
+          "translation": "그는 뛰어난 배우만이 아니라 유능한 각본가이기도 해요."
+        },
+        {
+          "translation": "이 좋은 결과는 힘든 노력만이 아니라 지속적인 경험이 결합되어 나타난 결실입니다."
+        },
+        {
+          "translation": "우리가 건축에 관심이 있는 것은 미적인 측면만이 아니라 그 실용적인 기능 때문입니다."
+        }
+      ]
+    },
+    "ko_마련이다_17": {
+      "title": "~기 마련이다 (필연적 이치와 당연함)",
+      "shortExplanation": "자연의 법칙이나 사물의 본성상 어떤 일이 일어나는 것이 당연함을 나타내는 표현입니다 ('-기 마련이다').",
+      "longExplanation": "'-기 마련이다'(또는 문맥에 따라 '-(으)ㄴ/는 것이 마련이다' 형태로도 쓰임)는 동사나 형용사 어간 뒤에 붙어, 세상의 이치나 인간의 본성, 상황의 특성으로 보아 어떤 결과나 상태에 이르는 것이 필연적이고 당연함을 나타내는 표현입니다. '-(으)ㄴ/는 법이다'와 뜻이 통하며 보편적인 사실을 차분하게 진술할 때 쓰입니다.",
+      "formation": "동사/형용사 어간 + -기 마련이다 (또는 -(으)ㄴ/는 것이 마련이다)",
+      "examples": [
+        {
+          "translation": "남들의 시선을 신경 쓰지 않으려 애써도 신경이 쓰이는 것은 당연한 일이기 마련이다."
+        },
+        {
+          "translation": "어린아이들이 활발하게 뛰어노는 것은 그 나이의 특성상 지극히 당연한 일이기 마련이다."
+        },
+        {
+          "translation": "이번에 실패했다고 해서 다음번에도 반드시 실패할 거라고 단정할 수 없는 법이다."
+        },
+        {
+          "translation": "힘들고 괴로운 일이 닥치면 마음이 우울해지는 것은 사람으로서 당연한 일이기 마련이다."
+        }
+      ]
+    },
+    "ko_면서_18": {
+      "title": "~(으)면서 (두 동작의 동시 진행)",
+      "shortExplanation": "동일한 주어가 두 가지 이상의 동작이나 상태를 동시에 행함을 나타내는 연결어미입니다 ('-(으)면서').",
+      "longExplanation": "'-(으)면서'는 동사나 형용사 어간 뒤에 붙어, 앞 절의 동작이나 상태가 뒤 절의 동작이나 상태와 같은 시간에 동시에 함께 진행됨을 나타내는 연결어미입니다. 앞뒤 절의 주어는 반드시 동일인이어야 합니다.",
+      "formation": "모음이나 'ㄹ' 받침으로 끝나는 동사 어간 + -면서 | 'ㄹ'을 제외한 받침 있는 동사 어간 + -으면서",
+      "examples": [
+        {
+          "translation": "저는 음악을 들으면서 공부하는 것을 좋아해요, 그렇게 하면 더 집중할 수 있어요."
+        },
+        {
+          "translation": "그는 밥을 먹으면서 텔레비전을 봐요, 그것은 오래된 그의 습관이에요."
+        },
+        {
+          "translation": "영화를 보면서 점심을 먹었어요, 그렇게 시간을 절약할 수 있었어요."
+        },
+        {
+          "translation": "나는 가볍게 운동하면서 팟캐스트를 들어요, 그건 나에게 매우 유익해요."
+        }
+      ]
+    },
+    "ko_동안_19": {
+      "title": "~동안 / -는 동안 (시간적 지속 구간)",
+      "shortExplanation": "시간을 나타내는 명사나 동사 뒤에 결합하여 어떤 동작이나 상태가 지속되는 시간적 범위를 나타냅니다 ('~동안 / -는 동안').",
+      "longExplanation": "'~동안'은 시간의 길이나 길이를 나타내는 명사 뒤에 직접 붙거나, 동사 어간 뒤에서 관형사형 어미와 어우러진 '-는 동안'의 형태로 쓰여 어떤 일이나 상태가 이어지는 시간적 구간을 나타냅니다. '-(으)면서'와 달리 앞뒤 절의 주어가 서로 달라도 자연스럽게 연결될 수 있습니다.",
+      "formation": "시간 명사 + 동안 | 동사 어간 + -는 동안",
+      "examples": [
+        {
+          "translation": "저는 겨울 방학 동안 그림을 많이 그렸어요, 왜냐하면 그것이 제 취미이기 때문이죠."
+        },
+        {
+          "translation": "요리하는 동안 전화벨이 계속 울려서 음식 만들기에 집중할 수가 없었어요."
+        },
+        {
+          "translation": "제가 노래방에서 신나게 노래를 부르는 동안 친구들은 모두 춤을 춰서 정말 즐거웠어요."
+        },
+        {
+          "translation": "그녀가 집을 비우고 없는 동안 도둑이 들어와 값나가는 귀중품을 모두 훔쳐 달아났어요."
+        }
+      ]
+    },
+    "ko_부터는_20": {
+      "title": "~부터는 (시작점 강조 및 상황 전환)",
+      "shortExplanation": "시작을 나타내는 조사 '부터'와 대조의 보조사 '는'이 결합하여, 특정 시점이나 계기 이후로 상태나 결심이 달라짐을 강조합니다 ('~부터는').",
+      "longExplanation": "'~부터는'은 출발점이나 시작을 나타내는 조사 '부터'에 화제 및 대조를 나타내는 보조사 '는'이 결합된 표현입니다. 특정한 시점이나 계기를 명확한 분기점으로 삼아, 그 이전과는 확연히 다른 새로운 변화가 시작되거나 새로운 결심을 실천에 옮김을 두드러지게 나타낼 때 사용됩니다.",
+      "formation": "명사(시간·사건) + 부터는 | 동사 어간 + -(으)ㄴ 후부터는",
+      "examples": [
+        {
+          "translation": "오늘부터는 건강에 좀 더 각별히 신경 쓰기로 했어요. 그래서 매일 아침 조깅을 하려고 해요."
+        },
+        {
+          "translation": "이 사건이 일어난 후부터는 모든 환경이 변했습니다. 사람들은 이 진실을 알게 된 뒤 한결 더 조심스러워졌어요."
+        },
+        {
+          "translation": "작년부터는 우리가 힘들여 번 돈을 좀 더 아껴 쓰기로 했어요. 그래서 불필요한 지출을 줄이고자 최선을 다하고 있어요."
+        },
+        {
+          "translation": "이 보고서를 꼼꼼히 읽은 후부터는 이 복잡한 상황을 훨씬 잘 이해할 수 있었어요. 신기하게도 전에는 이해하기 어려웠던 대목들이 납득이 가더군요."
+        }
+      ]
+    },
+    "ko_서야_21": {
+      "title": "~아/어서야 (필수 선행 조건 및 늦은 실현)",
+      "shortExplanation": "앞 절의 동작이나 조건이 완전히 충족된 뒤에야 비로소 뒤 절의 행동이나 결과가 일어남을 강조하는 연결어미입니다 ('-아/어서야').",
+      "longExplanation": "'-아/어서야'는 선행 사건을 나타내는 '-아/어서'에 한정과 강조를 뜻하는 특수조사 '야'가 결합된 형태입니다. 앞 절의 행동이나 사건이 뒤 절의 결과를 이루기 위한 필수불가결한 전제조건임을 부각하거나, 상당한 시간과 노력을 들인 끝에 뒤늦게 어떤 사실을 깨닫거나 행할 수 있게 됨을 나타낼 때 사용됩니다.",
+      "formation": "양성모음(ㅏ, ㅗ) 어간 + -아서야 | 음성모음 어간 + -어서야 | '하다' 동사 + -해서야",
+      "examples": [
+        {
+          "translation": "제 책을 끝까지 다 읽어서야 온전히 이해할 수 있을 것입니다. 가볍게 넘겨볼 것이 아니라 매 문장과 단어를 꼼꼼히 음미해야 합니다."
+        },
+        {
+          "translation": "깊은 사랑에 빠져서야 비로소 그 사람의 진정한 장단점을 객관적으로 보게 되는 법입니다. 때로는 사랑의 맹목성 때문에 단점을 간과할 수도 있지요."
+        },
+        {
+          "translation": "이 비즈니스를 성공으로 이끌려면 계획을 치밀하게 세워서야 가능합니다. 구체적 계획 없이 성공을 기대하는 것은 무리입니다."
+        },
+        {
+          "translation": "누구도 겪어보지 않은 미증유의 상황이라 고민스럽지만, 그 상황을 몸소 부딪쳐 겪어서야 정확한 해법을 찾을 수 있을 것입니다."
+        }
+      ]
+    },
+    "ko_소문에는_22": {
+      "title": "~소문에는 (전문 및 풍문 전달)",
+      "shortExplanation": "세간에 떠도는 소문이나 다른 사람에게서 전해 들은 풍문을 인용하여 전할 때 쓰는 표현입니다 ('~소문에는').",
+      "longExplanation": "'~소문에는'은 명사 '소문'에 처소격 조사 '에'와 보조사 '는'이 결합된 표현으로, 단독으로 문두에 쓰이거나 '명사 + 에 대한 소문에는'의 형태로 사용됩니다. 화자 본인이 직접 확인한 사실이나 주관적 주장이 아니라, 세간의 입방아에 오르내리는 소문이나 풍문의 내용을 간접화법('-ㄴ/는다고 하다', '들었다')과 결합하여 전할 때 유용하게 쓰입니다.",
+      "formation": "명사 + (에 대한) 소문에는 | 소문에는 + 간접화법 절(-ㄴ/는다고 하다 / 들었다)",
+      "examples": [
+        {
+          "translation": "세간의 소문에는 그 건실하던 회사가 곧 부도로 파산하게 될 것이라고 들었어요."
+        },
+        {
+          "translation": "그의 눈부신 성공에 대한 소문에는 그가 하루에 무려 18시간씩 일에 매달린다고 해요."
+        },
+        {
+          "translation": "그녀가 일약 스타덤에 오른 소문에는 그녀가 내년에 할리우드 영화에 전격 출연할 예정이라고 하더군요."
+        },
+        {
+          "translation": "요즘 임재범 씨의 엄청난 인기에 대한 소문에는 그가 팬들을 위해 새 앨범을 한층 앞당겨 발표할 계획이라고 해요."
+        }
+      ]
+    },
+    "ko_아어_23": {
+      "title": "~아/어 보이다 (시각적 외양에 대한 판단)",
+      "shortExplanation": "형용사 어간 뒤에 붙어, 대상의 겉모습이나 상태를 보고 느끼는 화자의 직관적 인상이나 판단을 나타냅니다 ('-아/어 보이다').",
+      "longExplanation": "'-아/어 보이다'는 형용사의 어간에 보조동사 '보이다'가 결합하여 이루어진 표현입니다. 화자가 대상의 외모, 표정, 차림새 등을 시각적으로 관찰하고 그로부터 얻은 직관적인 느낌이나 추측을 완곡하게 서술할 때 사용됩니다.",
+      "formation": "양성모음(ㅏ, ㅗ) 형용사 어간 + -아 보이다 | 음성모음 형용사 어간 + -어 보이다 | '하다' 형용사 + -해 보이다",
+      "examples": [
+        {
+          "translation": "그 남자가 정말 가련하고 불쌍해 보여요, 아마 무척 어려운 시기를 겪고 있는 것 같네요."
+        },
+        {
+          "translation": "오늘 많이 피곤해 보이니까 일찍 들어가서 쉬는 게 어때요?"
+        },
+        {
+          "translation": "그녀가 매우 행복해 보이는데, 아마 좋은 경사가 있었나 봐요."
+        },
+        {
+          "translation": "이 요리가 참 정갈하고 맛있어 보이니까 내일 친구들과 함께 와서 먹어 볼게요."
+        }
+      ]
+    },
+    "ko_아어야지_24": {
+      "title": "~아/어야지 (스스로에 대한 다짐과 결심)",
+      "shortExplanation": "화자가 마땅히 해야 할 일에 대해 스스로 다짐하거나 의지를 다질 때 쓰는 종결어미입니다 ('-아/어야지').",
+      "longExplanation": "'-아/어야지'는 동사 어간 뒤에 붙어 독백이나 친근한 반말 상황에서 사용되는 종결어미입니다. 화자가 자신이 처한 상황을 인식하고 더 이상 미루지 않고 어떤 행동을 마땅히 행해야겠다고 스스로에게 굳은 다짐을 하거나 결의를 다질 때 사용됩니다. 청자에게 부드러운 권유나 채근을 나타낼 때 쓰이기도 합니다.",
+      "formation": "양성모음(ㅏ, ㅗ) 동사 어간 + -아야지 | 음성모음 동사 어간 + -어야지 | '하다' 동사 + -해야지",
+      "examples": [
+        {
+          "translation": "너무 늦었어, 이제 미적거리지 말고 집에 가야지."
+        },
+        {
+          "translation": "이번에는 핑계 대지 말고 정말로 다이어트를 해야지."
+        },
+        {
+          "translation": "내일은 부지런히 일찍 일어나서 운동해야지."
+        },
+        {
+          "translation": "과제가 산더미처럼 많이 쌓였어, 이제부터 정신 차리고 열심히 해야지."
+        }
+      ]
+    },
+    "ko_았었다_25": {
+      "title": "~았/었다 치다 (가정적 상황의 설정)",
+      "shortExplanation": "어떤 사실이 이미 일어났거나 성립되었다고 가정한 뒤, 그에 따른 결과를 논의할 때 쓰는 표현입니다 ('~았/었다 치다').",
+      "longExplanation": "'~았/었다 치다'는 주로 '-았/었다 치면'(가정)이나 '-았/었다 치고'(양보)의 형태로 널리 쓰이며, 과거형 어미 뒤에 '치다'(간주하다, 인정하다)가 결합된 형태입니다. 실제로 일어나지 않았거나 불확실한 상황을 잠정적으로 사실이라 가정한 뒤, 그 조건하에서 벌어질 수 있는 가능성이나 대책을 따져볼 때 사용됩니다.",
+      "formation": "동사/형용사 어간 + -았/었다 치다 (또는 -았/었다 치면, -았/었다 치고)",
+      "examples": [
+        {
+          "translation": "우리가 돈이 풍족하게 많았다 치면, 과연 유럽 여행을 떠날 수 있었을까요?"
+        },
+        {
+          "translation": "그 사람이 우리 팀에 소속되어 있었다 치면, 우리가 너끈히 이길 수 있었다고 생각해요?"
+        },
+        {
+          "translation": "그 자리에 그녀가 없었다 치면, 그 급박한 일을 대체 어떻게 대처했을까요?"
+        },
+        {
+          "translation": "요즘 비가 유난히 많이 왔다 치면, 예정된 야외 활동은 과연 어떻게 진행될까요?"
+        }
+      ]
+    },
+    "ko_았었던_26": {
+      "title": "~았/었던 것 같다 (과거 일에 대한 막연한 회상과 추측)",
+      "shortExplanation": "과거에 있었던 사실이나 상태를 희미하게 회상하거나 완곡하게 짐작하여 말할 때 쓰는 표현입니다 ('-았/었던 것 같다').",
+      "longExplanation": "'~았/었던 것 같다'는 과거의 완료 및 회상을 나타내는 관형사형 어미 '-았/었던'에 완곡한 추측을 나타내는 의존명사 구문 '것 같다'가 결합된 형태입니다. 화자가 과거의 경험이나 상황을 기억해 내면서 기억이 다소 불분명하거나 단정적으로 말하는 것을 피하고 조심스럽게 추측하여 진술할 때 씁니다.",
+      "formation": "동사/형용사 어간 + -았/었던 것 같다",
+      "examples": [
+        {
+          "translation": "그 시절 그녀는 무척 행복했던 것 같아요, 항상 밝은 미소를 짓고 있었거든요."
+        },
+        {
+          "translation": "그날은 이전에 한 번도 들어보지 못했던 새로운 노래를 들었던 것 같아요, 그 멜로디가 아직도 머릿속에 맴도네요."
+        },
+        {
+          "translation": "저는 아주 오랜 옛날에 이곳을 방문했던 것 같아요, 건물들의 풍경이 낯익어 보여요."
+        },
+        {
+          "translation": "제가 오늘이 일요일인 줄로 깜빡 착각했던 것 같아요, 하지만 알고 보니 토요일이었어요."
+        }
+      ]
+    },
+    "ko_았었어야_27": {
+      "title": "~았/었어야 했다 (과거 행위에 대한 후회와 아쉬움)",
+      "shortExplanation": "과거에 마땅히 행했어야 함에도 불구하고 그렇게 하지 못한 일에 대해 후회나 자책, 유감을 나타내는 표현입니다 ('-았/었어야 했다').",
+      "longExplanation": "'-았/었어야 했다'는 과거 시제 어미에 당위성을 나타내는 '-어야 하다'가 결합된 형태입니다. 과거의 특정 시점에 마땅히 이루어졌어야 할 행동이 실행되지 않은 것에 대해 깊은 아쉬움이나 후회를 표현하거나, 상대방의 잘못된 처신을 비판하고 책망할 때 사용됩니다. 부정형은 '-지 말았어야 했다'입니다.",
+      "formation": "양성모음(ㅏ, ㅗ) 동사 어간 + -았어야 했다 | 음성모음 동사 어간 + -었어야 했다 | '하다' 동사 + -했어야 했다 (부정형: 동사 어간 + -지 말았어야 했다)",
+      "examples": [
+        {
+          "translation": "이제 와서 뒤늦게 미안하다고 하는 건 늦었어, 처음에 어떻게든 잘못을 인정했어야 했어."
+        },
+        {
+          "translation": "그 왜곡된 이야기를 귀담아듣기 전에 먼저 날 굳게 믿었어야 했어."
+        },
+        {
+          "translation": "나는 그 회사에 입사 지원을 하지 말았어야 했어, 거기서 겪은 경험은 나에게 큰 상처였어."
+        },
+        {
+          "translation": "우리는 아침 일찍 더 서둘러 출발했어야 했어, 그랬다면 지금보다 훨씬 더 많은 관광 명소를 둘러볼 수 있었을 텐데."
+        }
+      ]
+    },
+    "ko_어아_28": {
+      "title": "~아/어 가다 (점진적 진행 및 지속)",
+      "shortExplanation": "동사 어간 뒤에 붙어, 어떤 동작이나 상태의 변화가 현재에서 미래를 향해 점차 지속적으로 진행되어 감을 나타냅니다 ('-아/어 가다').",
+      "longExplanation": "'-아/어 가다'는 본용언 뒤에 보조동사 '가다'가 결합하여 어떤 상태나 행위가 시간의 흐름에 따라 미래 방향으로 점차 나아가거나 깊어짐을 나타내는 시상 보조용언 구성입니다(예: 배워 가다, 익혀 가다, 나아져 가다). 한편, 이동성 본동사와 결합할 때(예: 걸어가다)는 어떤 구체적 동작을 유지하며 공간적으로 멀어져 감을 나타내기도 합니다.",
+      "formation": "양성모음(ㅏ, ㅗ) 동사 어간 + -아 가다 | 음성모음 동사 어간 + -어 가다 | '하다' 동사 + -해 가다",
+      "examples": [
+        {
+          "translation": "저는 좋아하는 음악을 들으면서 걸어갈 거예요, 그렇게 하면 스트레스를 풀 수 있어요."
+        },
+        {
+          "translation": "우리 엄마는 매일 아침 운동하면서 자주 들르던 공원에 가곤 하세요."
+        },
+        {
+          "translation": "아기가 무럭무럭 성장하면서 점차 더 많은 지식과 말귀를 배워가고 있어요."
+        },
+        {
+          "translation": "나는 한국어를 꾸준히 공부하면서 실력이 날로 나아져가고 있어요."
+        }
+      ]
+    }
+  }
+}

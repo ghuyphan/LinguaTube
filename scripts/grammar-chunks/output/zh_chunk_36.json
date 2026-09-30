@@ -1,0 +1,654 @@
+{
+  "vi": {
+    "zh_无意中无意地_568": {
+      "title": "无意中 / 无意地 (Trạng ngữ / Phó từ: Tình cờ / Vô tình / Ngẫu nhiên / Không cố ý)",
+      "shortExplanation": "Trạng ngữ biểu thị hành động diễn ra một cách ngẫu nhiên, ngoài dự tính, không hề có chủ ý hay toan tính từ trước; \"vô tình\", \"tình cờ\", \"ngẫu nhiên\".",
+      "longExplanation": "“无意中” (wúyìzhōng) và “无意地” (wúyì dì) đều đóng vai trò làm trạng ngữ đứng trước động từ trong câu, biểu thị một hành động được thực hiện hoặc một kết quả xuất hiện một cách tình cờ, ngẫu nhiên, hoàn toàn không xuất phát từ chủ ý, kế hoạch hay ý đồ có sẵn của người thực hiện. Trong đó, “无意中” nhấn mạnh vào bối cảnh/khoảnh khắc ngẫu nhiên phát sinh sự việc; còn “无意地” nhấn mạnh vào trạng thái hành vi không có toan tính. Thường dùng trong các trường hợp tình cờ tìm thấy đồ vật, buột miệng nói ra điều gì hoặc vô tình chứng kiến sự việc. Tương đương với \"vô tình\", \"tình cờ\", \"ngẫu nhiên\", \"không cố ý\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (在 + Thời điểm / Hành động + 时 ，) 无意中 / 无意地 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Lúc dọn dẹp vườn hoa, cô ấy đã vô tình / tình cờ tìm thấy chiếc bông tai này."
+        }
+      ]
+    },
+    "zh_无意_569": {
+      "title": "无意 (Động từ năng nguyện / Phó từ: Không có ý định / Không có ý / Không muốn)",
+      "shortExplanation": "Biểu thị trong lòng hoàn toàn không có ý định, chủ đích hoặc không muốn thực hiện hành vi nào đó; \"không có ý định\", \"không muốn\", \"vô ý\".",
+      "longExplanation": "“无意” (wúyì) cấu tạo từ chữ “无” (không có) và “意” (ý định, tâm ý). Khi đứng trước một động từ hoặc mệnh đề khác, “无意” thường đóng vai trò như một động từ vị ngữ mang tính năng nguyện hoặc một phó từ hạn định, biểu thị chủ ngữ hoàn toàn không có mong muốn, không có toan tính hoặc không cố tình thực hiện một hành vi nào đó (như “无意伤害” - không có ý làm tổn thương, “无意隐瞒” - không có ý giấu giếm, “无意参与” - không muốn tham gia). Khác với “无意中” (chỉ tính ngẫu nhiên của sự việc đã xảy ra), “无意” nhấn mạnh vào thái độ và tâm ý chủ quan rằng bản thân không có mục đích làm việc đó. Tương đương với \"không có ý\", \"không có ý định\", \"không muốn\", \"vô ý\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 无意 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Anh ấy không hề có ý định làm tổn thương bất kỳ ai."
+        }
+      ]
+    },
+    "zh_有利_570": {
+      "title": "有利 (Tính từ / Động từ: Có lợi / Có ích / Thuận lợi / Tốt cho)",
+      "shortExplanation": "Biểu thị điều kiện, yếu tố hay sự vật nào đó đem lại lợi ích, sự trợ giúp hoặc tác động tích cực đối với một sự việc; \"có lợi\", \"có ích\".",
+      "longExplanation": "“有利” (yǒulì) là tính từ hoặc động từ có tính chất biểu thị quan hệ tích cực (trái nghĩa với “不利”). Từ này chỉ sự tồn tại của những nhân tố, điều kiện thuận lợi có tác dụng thúc đẩy, giúp ích hoặc bảo đảm cho một sự phát triển tốt đẹp. Trong ngữ pháp tiếng Hán hiện đại, “有利” rất thường đi kèm với giới từ “于” tạo thành kết cấu cố định “有利于 + Đối tượng / Hành vi” (có lợi cho..., có ích cho...), hoặc dùng trong cấu trúc “对……有利” (có lợi đối với...). Ngoài ra, nó cũng có thể làm định ngữ như “有利条件” (điều kiện có lợi), “有利地位” (vị thế có lợi). Tương đương với \"có lợi\", \"có ích\", \"tốt cho\", \"thuận lợi cho\" trong tiếng Việt.",
+      "formation": "Chủ ngữ / Sự vật + 有利于 + Động từ / Danh từ (hoặc: 对 + Đối tượng + 有利)",
+      "examples": [
+        {
+          "translation": "Áp lực vừa phải có lợi cho việc chúng ta duy trì trạng thái tốt."
+        }
+      ]
+    },
+    "zh_的确_571": {
+      "title": "的确 (Phó từ: Quả thật / Quả đúng là / Thật sự)",
+      "shortExplanation": "Phó từ biểu thị sự khẳng định chắc chắn về tính xác thực khách quan của một sự thật hoặc nhận định; \"quả thật\", \"quả đúng là\", \"thật sự\".",
+      "longExplanation": "“的确” (díquè) là phó từ thường đứng trước vị ngữ (động từ, tính từ hoặc cụm từ biểu thị nhận định) trong câu, đóng vai trò làm trạng ngữ. Từ này dùng để khẳng định mạnh mẽ tính chân thực, khách quan và hoàn toàn đáng tin cậy của sự tình, thường dùng khi đồng tình với nhận định của người khác hoặc khi bản thân quan sát, trải nghiệm và thấy sự thật đúng hệt như lời đồn hay dự đoán ban đầu (như “的确如此” - quả thật như vậy, “的确很好” - quả thật rất tốt). Khác với “确实” (có thể làm tính từ như “确实的证据”), “的确” chỉ dùng làm phó từ. Tương đương với \"quả thật\", \"quả đúng là\", \"thật sự\", \"chính xác là\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 的确 + Vị ngữ (Động từ / Tính từ / 是……)",
+      "examples": []
+    },
+    "zh_嗯_573": {
+      "title": "嗯 (Thán từ thanh 4 / thanh nhẹ: Ừ / Vâng / Dạ / Ừm)",
+      "shortExplanation": "Thán từ phát âm thanh 4 hoặc thanh nhẹ, dùng trong khẩu ngữ để đáp lại lời gọi, biểu thị đồng ý, chấp thuận hoặc xác nhận câu hỏi; \"ừ\", \"vâng\", \"dạ\".",
+      "longExplanation": "“嗯” khi phát âm ở thanh thứ tư (èn) hoặc thanh nhẹ là thán từ thường gặp bậc nhất trong khẩu ngữ tiếng Hán thường nhật. Từ này thường đứng độc lập ở đầu câu nói, dùng để đáp lại tiếng gọi của người khác, hoặc biểu thị thái độ đồng tình, tán thành, ghi nhận hay trả lời khẳng định cho một câu hỏi nghi vấn (như “嗯，好” - ừ, được; “嗯，知道了” - ừ, biết rồi; “嗯，吃了” - ừ, ăn rồi). Ngữ điệu trầm, dứt khoát và mang tính xác nhận. Tương đương với \"ừ\", \"vâng\", \"dạ\", \"ừm\" trong tiếng Việt.",
+      "formation": "(Lời gọi / Câu hỏi ，) 嗯 ，+ Câu trả lời / Khẳng định",
+      "examples": [
+        {
+          "translation": "A: Ăn cơm chưa? B: Ừ/Dạ, ăn rồi."
+        }
+      ]
+    },
+    "zh_嗯_574": {
+      "title": "嗯？ (Thán từ thanh 2 / ngữ điệu hỏi: Hả? / Ủa? / Ơ? / Sao cơ?)",
+      "shortExplanation": "Thán từ phát âm thanh 2 hoặc lên giọng hỏi, dùng khi cảm thấy bất ngờ, khó hiểu, hoài nghi hoặc phát hiện điều bất thường; \"hả?\", \"ủa?\", \"ơ?\".",
+      "longExplanation": "“嗯” khi mang dấu hỏi và phát âm ở thanh thứ hai (én) với ngữ điệu vút lên là thán từ biểu thị tâm trạng ngạc nhiên, hoài nghi hoặc khó hiểu. Nó thường đứng ở đầu câu, xuất hiện khi người nói bất chợt phát hiện ra một điều gì đó khác thường, mâu thuẫn với nhận thức hay trí nhớ thông thường của mình, từ đó dẫn tới một câu hỏi tự vấn hoặc tra hỏi đối phương (như “嗯？难道是我记错了？” - ủa? chẳng lẽ là mình nhớ nhầm?; “嗯？你怎么在这里？” - ủa? sao cậu lại ở đây?). Tương đương với \"hả?\", \"ủa?\", \"ơ?\", \"sao cơ?\" trong tiếng Việt.",
+      "formation": "嗯？ + Câu hỏi nghi vấn / Phỏng đoán",
+      "examples": [
+        {
+          "translation": "Ủa? Chẳng lẽ là mình nhớ nhầm rồi sao?"
+        }
+      ]
+    },
+    "zh_嗯_575": {
+      "title": "嗯！ (Thán từ nhấn mạnh / cảm thán: Ơ này! / Kìa! / Trời ạ! / Sao thế!)",
+      "shortExplanation": "Thán từ mang ngữ điệu cảm thán hoặc ngữ khí nhấn mạnh, biểu thị sự ngạc nhiên, trách móc, không hài lòng hoặc thúc giục; \"ơ này!\", \"kìa!\".",
+      "longExplanation": "“嗯！” khi đi với dấu chấm than và phát âm ngắn, dứt khoát hoặc hơi kéo dài với ngữ khí nhấn mạnh là thán từ bộc lộ cảm xúc tương đối mạnh mẽ trong khẩu ngữ. Nó thường dùng khi người nói phát hiện ra một điều trái với lẽ thường hoặc trái với kỳ vọng, qua đó bày tỏ sự kinh ngạc, trách nhẹ, thúc giục hoặc phàn nàn đối với đối phương (như “嗯！你怎么还没走啊？” - ơ này! sao cậu vẫn chưa đi thế?; “嗯！这可不行！” - này! thế này sao được!). Tương đương với \"ơ này!\", \"kìa!\", \"trời ạ!\", \"sao thế!\" trong tiếng Việt.",
+      "formation": "嗯！ + Câu hỏi phản vấn / Ngạc nhiên / Trách móc",
+      "examples": [
+        {
+          "translation": "Ơ này! Sao cậu vẫn còn chưa đi vậy?"
+        }
+      ]
+    },
+    "zh_轻易地V_576": {
+      "title": "轻易地 + Động từ (Cụm trạng ngữ: Một cách dễ dàng / Dễ như trở bàn tay / Không tốn sức)",
+      "shortExplanation": "Cụm trạng ngữ biểu thị một hành động được hoàn thành một cách vô cùng dễ dàng, thuận lợi, không tốn nhiều công sức hay gặp phải trở ngại nào; \"một cách dễ dàng\".",
+      "longExplanation": "“轻易地” (qīngyì dì) do hình dung từ “轻易” (dễ dàng) kết hợp với trợ từ kết cấu “地” tạo thành một ngữ trạng từ bổ nghĩa cho động từ theo sau. Cấu trúc này thường dùng trong các câu khẳng định chỉ năng lực xuất sắc hoặc điều kiện thuận lợi, biểu thị một hành vi hoặc mục tiêu được thực hiện trơn tru, mau chóng, tốn rất ít sức lực và không gặp bất kỳ khó khăn đáng kể nào (như “轻易地记住” - ghi nhớ một cách dễ dàng, “轻易地获胜” - chiến thắng một cách dễ dàng, “轻易地解决问题” - giải quyết vấn đề dễ như trở bàn tay). Thường kết hợp với các phó từ mức độ như “很” (rất), “这么” (như vậy). Tương đương với \"một cách dễ dàng\", \"dễ như trở bàn tay\", \"không tốn chút công sức nào\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (có thể / đều +) 轻易地 + Động từ (+ Bổ ngữ / Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cậu ấy học cái gì cũng đều có thể nhớ kỹ một cách rất dễ dàng."
+        }
+      ]
+    },
+    "zh_轻易V_577": {
+      "title": "轻易 + Động từ (Phó từ: Tùy tiện / Khinh suất / Dễ dãi / Dễ dàng; thường dùng trong câu phủ định)",
+      "shortExplanation": "Phó từ biểu thị thái độ tùy tiện, khinh suất, thiếu suy xét cẩn trọng; đặc biệt phổ biến trong câu phủ định \"不轻易……\" biểu thị không tùy tiện, không dễ dàng làm gì; \"tùy tiện\", \"khinh suất\".",
+      "longExplanation": "“轻易” (qīngyì) khi đóng vai trò là phó từ đứng trực tiếp trước động từ (không cần trợ từ “地”) thường mang sắc thái chỉ thái độ làm việc tùy tiện, vội vã, thiếu chín chắn hoặc coi nhẹ sự việc. Đặc biệt, nó cực kỳ phổ biến trong các cấu trúc phủ định như “不轻易 + Động từ” hoặc “从不轻易 + Động từ” để biểu thị sự thận trọng, kiên định, không dễ dãi hay tùy tiện hành động, thay đổi quyết định (như “不轻易放弃” - không dễ dàng từ bỏ, “不轻易许诺” - không tùy tiện hứa hẹn, “从不轻易决定” - không bao giờ tùy tiện quyết định). Khi dùng trong câu khẳng định, nó thường mang hàm ý chê trách thái độ khinh suất. Tương đương với \"tùy tiện\", \"khinh suất\", \"dễ dàng (thay đổi/hứa hẹn)\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + (从不 / 不 +) 轻易 + Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Anh ấy trước giờ không tùy tiện quyết định, nhưng một khi đã quyết định thì không dễ dàng thay đổi."
+        }
+      ]
+    },
+    "zh_密切_578": {
+      "title": "密切 (Phó từ / Trạng ngữ: Mật thiết / Chặt chẽ / Khăng khít / Sâu sát)",
+      "shortExplanation": "Phó từ làm trạng ngữ bổ nghĩa cho động từ, biểu thị mức độ liên hệ, gắn kết hoặc phối hợp qua lại vô cùng khăng khít, sâu sắc; \"mật thiết\", \"chặt chẽ\".",
+      "longExplanation": "“密切” (mìqiè) khi làm trạng ngữ đứng trước các động từ như “相关” (liên quan), “联系” (liên hệ), “配合” (phối hợp), “关注” (quan tâm theo dõi), biểu thị tính chất gắn bó keo sơn, liên quan sâu sắc hoặc sự hợp tác, theo dõi vô cùng sít sao giữa hai bên. Cấu trúc thường gặp nhất là “与 / 和……密切相关” (liên quan mật thiết với...) hoặc “密切关注” (theo dõi sát sao). Từ này thường xuất hiện trong văn phong nghị luận, thời sự, khoa học và các bài phát biểu trang trọng. Tương đương với \"mật thiết\", \"chặt chẽ\", \"sát sao\", \"khăng khít\" trong tiếng Việt.",
+      "formation": "Chủ ngữ + 与 / 和 + Đối tượng + 密切 + Động từ (như 相关 / 联系 / 配合)",
+      "examples": [
+        {
+          "translation": "Ô nhiễm có liên quan mật thiết đến đời sống hằng ngày của chúng ta."
+        }
+      ]
+    },
+    "zh_密切_579": {
+      "title": "密切 (Tính từ: Thân thiết / Thân mật / Gần gũi / Khăng khít)",
+      "shortExplanation": "Tính từ biểu thị mối quan hệ giữa người với người hoặc giữa các bên ngày càng gần gũi, gắn bó thân thiết; \"thân thiết\", \"khăng khít\", \"gần gũi\".",
+      "longExplanation": "“密切” (mìqiè) khi dùng làm tính từ chỉ mức độ thân tình, khăng khít và gần gũi trong mối quan hệ hoặc sự vãng lai giữa người với người, giữa các tổ chức hoặc giữa các quốc gia (như “关系密切” - quan hệ thân mật, “来往密切” - qua lại thân thiết). Trong câu, từ này thường đảm nhiệm chức năng vị ngữ (thường đi kèm phó từ so sánh hoặc biến đổi như “比先前密切了” - thân thiết hơn trước, “变得更加密切” - trở nên thân thiết hơn), hoặc làm bổ ngữ hay định ngữ. Tương đương với \"thân thiết\", \"thân mật\", \"gần gũi\", \"khăng khít\" trong tiếng Việt.",
+      "formation": "Chủ ngữ (Mối quan hệ / Sự qua lại) + (比…… +) 密切 (+ 了)",
+      "examples": [
+        {
+          "translation": "Kể từ đó, sự qua lại giữa hai người trở nên thân thiết gắn bó hơn trước."
+        }
+      ]
+    },
+    "zh_密切_580": {
+      "title": "密切 (Động từ: Thắt chặt / Tăng cường / Làm cho gắn bó / Làm khăng khít thêm)",
+      "shortExplanation": "Động từ biểu thị hành động hoặc yếu tố làm cho mối quan hệ, sự liên hệ giữa các bên thêm bền chặt, sâu sắc và gắn bó; \"thắt chặt\", \"tăng cường\".",
+      "longExplanation": "“密切” (mìqiè) ở đây được sử dụng với tư cách là một ngoại động từ (mang ý nghĩa sử động: làm cho trở nên mật thiết). Từ này biểu thị một công trình, chính sách, hoạt động giao lưu hoặc biện pháp nào đó đã phát huy tác dụng to lớn, giúp gắn kết, thắt chặt và tăng cường mối liên hệ qua lại giữa các khu vực, các cộng đồng hoặc các tầng lớp nhân dân (như “密切联系” - thắt chặt mối liên hệ, “密切关系” - thắt chặt quan hệ). Thường đi với phó từ “大大” (rất lớn, hết sức) và trợ từ động thái “了”. Tương đương với \"thắt chặt\", \"tăng cường\", \"làm khăng khít thêm\", \"gắn kết thêm\" trong tiếng Việt.",
+      "formation": "Chủ ngữ (Sự vật / Hành động) + (大大 +) 密切 + 了 + Đối tượng + 的联系 / 关系",
+      "examples": [
+        {
+          "translation": "Tuyến đường sắt này đã thắt chặt đáng kể mối liên hệ giữa khu vực Tây Nam với thủ đô."
+        }
+      ]
+    },
+    "zh_尽量jnling_581": {
+      "title": "尽量 (jǐnliàng) (Phó từ: Cố gắng hết sức / Cố hết mức / Trong khả năng tối đa)",
+      "shortExplanation": "Phó từ phát âm thanh 3 (jǐn), biểu thị nỗ lực đạt đến giới hạn cao nhất trong phạm vi điều kiện khách quan cho phép; \"cố gắng hết sức\", \"cố hết mức\".",
+      "longExplanation": "“尽量” khi đọc ở thanh thứ ba (jǐnliàng) là một phó từ làm trạng ngữ đứng trước động từ trong câu. Từ này biểu thị người nói hoặc chủ thể hành động ra sức phát huy khả năng, cố gắng đạt đến mức độ cao nhất hoặc số lượng nhiều nhất (hoặc ít nhất) trong phạm vi hoàn cảnh cho phép. Rất thường kết hợp với các từ chỉ mức độ hoặc phủ định như “尽量多……” (cố gắng nhiều hơn...), “尽量少……” (cố gắng hạn chế tối đa...), “尽量不要 / 别……” (cố gắng không nên...). Cần phân biệt với “尽 (jìn) 量” thanh 4 (mang nghĩa dốc hết dung lượng, tửu lượng). Tương đương với \"cố gắng hết sức\", \"hết mức có thể\", \"trong khả năng tối đa\" trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 尽量 (+ 多 / 少 / 别 +) Động từ (+ Tân ngữ)",
+      "examples": [
+        {
+          "translation": "Cố gắng hết sức đi xe đạp nhiều hơn, lựa chọn phương tiện giao thông công cộng nhiều hơn."
+        }
+      ]
+    },
+    "zh_逐步_582": {
+      "title": "逐步 (Phó từ: Từng bước / Dần dần theo giai đoạn / Từng bước một)",
+      "shortExplanation": "Phó từ biểu thị hành động hoặc quá trình phát triển diễn ra từng bước một, có kế hoạch, có trật tự và giai đoạn rõ ràng; \"từng bước\", \"dần dần\".",
+      "longExplanation": "“逐步” (zhúbù) là phó từ thường đứng trước vị ngữ động từ, biểu thị một hành động hoặc quá trình biến đổi tiến triển theo từng bước, có phương hướng, lộ trình và kế hoạch bài bản được định sẵn (như “逐步解决” - từng bước giải quyết, “逐步推广” - từng bước nhân rộng, “逐步向……转变” - từng bước chuyển biến sang...). Khác với “逐渐” (nhấn mạnh sự biến đổi tự nhiên dần dần theo thời gian mà không nhất thiết theo từng bước định sẵn), “逐步” thường gắn liền với sự nỗ lực có ý thức, quy hoạch chiến lược hoặc các chính sách cải cách của con người. Tương đương với \"từng bước\", \"dần dần theo lộ trình\", \"từng bước một\" trong tiếng Việt.",
+      "formation": "(Chủ ngữ +) 逐步 + Động từ / Mệnh đề biến đổi",
+      "examples": [
+        {
+          "translation": "Điều chỉnh cơ cấu tiêu thụ năng lượng, từng bước chuyển đổi sang năng lượng tái tạo."
+        }
+      ]
+    },
+    "zh_照常_583": {
+      "title": "照常 (Phó từ / Tính từ / Vị ngữ: Như thường lệ / Vẫn như cũ / Không có gì thay đổi)",
+      "shortExplanation": "Biểu thị sự việc, hoạt động vẫn diễn ra bình thường theo thông lệ cũ, không hề bị gián đoạn hay biến động dù hoàn cảnh có thay đổi; \"như thường lệ\", \"vẫn như cũ\".",
+      "longExplanation": "“照常” (zhàocháng) cấu tạo từ “照” (chiếu theo) và “常” (thường lệ, lệ cũ). Từ này có thể làm trạng ngữ đứng trước động từ (như “照常营业” - kinh doanh bình thường, “照常上课” - đi học bình thường) hoặc làm vị ngữ đứng sau chủ ngữ (như “一切照常” - mọi thứ vẫn như thường). Nó biểu thị rằng dù điều kiện xung quanh có xảy ra biến cố, trắc trở hoặc hoàn cảnh có khác thường, thì công việc, nếp sinh hoạt hay tình hình chung vẫn giữ nguyên trạng thái ổn định, diễn ra y như ngày thường không hề lay chuyển. Tương đương với \"như thường lệ\", \"vẫn như thường\", \"vẫn như cũ\", \"bình thường như mọi khi\" trong tiếng Việt.",
+      "formation": "(Tuy…… ，nhưng) Chủ ngữ + (一切 +) 照常 (hoặc: 照常 + Động từ)",
+      "examples": [
+        {
+          "translation": "Tuy chiến tranh đang đến gần, nhưng cuộc sống thường nhật ở nơi này mọi thứ vẫn diễn ra như thường lệ."
+        }
+      ]
+    }
+  },
+  "ja": {
+    "zh_无意中无意地_568": {
+      "title": "无意中 / 无意地（副詞句・状語：何気なく・偶然に・思いがけず・ふとしたはずみで）",
+      "shortExplanation": "事前の意図や計画がなく、偶然や予期せぬ成り行きで動作が行われたり結果が生じたりしたことを表します（「偶然に」「何気なく」「思いがけず」）。",
+      "longExplanation": "「无意中」（wúyìzhōng）と「无意地」（wúyì dì）は、いずれも動詞の前に置かれて連用修飾語（状語）として機能します。動作を行う人に特定の意図・企み・計画が全くなく、偶然の巡り合わせや無意識のうちにある事態が発生したことを表します。「无意中」は出来事が偶然起きた状況・環境に力点が置かれ、「无意地」は意図を持たない行為の様態に力点が置かれます。偶然何かを発見したり、ふと言葉をもらしたりする文脈で多用されます。日本語の「偶然に」「何気なく」「思いがけず」「ふとしたはずみで」に相当します。",
+      "formation": "主語 ＋（在 ＋ 動作 / 状況 ＋ 时，）无意中 / 无意地 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "彼女は庭の手入れをしている時に、思いがけず／偶然このイヤリングを見つけた。"
+        }
+      ]
+    },
+    "zh_无意_569": {
+      "title": "无意（助動詞的用法・副詞：〜する気はない・意図はない・つもりはない）",
+      "shortExplanation": "心の中に特定の動作を行う意図や下心が全くないこと、または〜するつもりがないことを表します（「〜する気はない」「意図はない」）。",
+      "longExplanation": "「无意」（wúyì）は「意（意図・意向）が無い」という意味から成り、動詞句の前に置かれて能願動詞（助動詞）的、あるいは副詞的に機能します。主語となる人物が、ある行為を遂行する主観的な動機や意図、悪意などを一切抱いていないことを明言する際に用いられます（例：「无意伤害」傷つける意図はない、「无意冒犯」悪気はない・失礼を働くつもりはない、「无意争辩」議論する気はない）。「无意中」（偶然に〜してしまった）が動作の偶発的発生を述べるのに対し、「无意」は行為者の主観的意図の不在を強く表明します。日本語の「〜するつもりはない」「〜する気はない」「〜する意図はない」に相当します。",
+      "formation": "主語 ＋ 无意 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "彼は誰かを傷つけるつもりなど毛頭ない。"
+        }
+      ]
+    },
+    "zh_有利_570": {
+      "title": "有利（形容詞・動詞：有利である・プラスになる・役立つ・〜にとって好都合である）",
+      "shortExplanation": "ある条件や事柄が好都合であり、利益や望ましい効果をもたらすことを表します（「有利である」「プラスになる」「役立つ」）。",
+      "longExplanation": "「有利」（yǒulì）は、物事の発展や成果に対して都合の良い条件・要因が存在することを表す形容詞（または動詞的連語）です（対義語は「不利」）。現代中国語では、介詞「于」と結びついた固定構造「有利于 ＋ 目的語 / 動作」（〜にとって有利である、〜するのに役立つ）、あるいは「对……有利」（〜にとって有利だ）という構文で極めて高い頻度で用いられます。また、「有利条件」（有利な条件）、「有利地位」（有利な立場）のように名詞を修飾する連体修飾語（定語）としても多用されます。日本語の「有利である」「プラスに働く」「役立つ」「〜にとって好都合である」に相当します。",
+      "formation": "主語 / 事象 ＋ 有利于 ＋ 動詞句 / 名詞（または 对 ＋ 対象 ＋ 有利）",
+      "examples": [
+        {
+          "translation": "適度なプレッシャーは、私たちが良好な状態を維持するのに役立つ。"
+        }
+      ]
+    },
+    "zh_的确_571": {
+      "title": "的确（副詞：確かに・本当に・まさしく・実に）",
+      "shortExplanation": "事態や判断が客観的に紛れもない事実であることを強く肯定・確認する副詞です（「確かに」「本当に」「実に」）。",
+      "longExplanation": "「的确」（díquè）は述語（動詞、形容詞、または判断を示す句）の前に置かれる副詞で、連用修飾語（状語）として機能します。提示された状況や他者の意見が客観的事実と完全に合致しており、疑う余地がないことを強く肯定・認める際に用いられます。自らの体験や観察を通じて「噂通りまさしくその通りだ」「確かに言われた通りだ」と納得・同調する文脈で頻繁に使われます（例：「的确如此」確かにその通りだ、「的确不错」実に悪くない・確かに素晴らしい）。日本語の「確かに」「本当に」「実に」「まさしく」に相当します。",
+      "formation": "主語 ＋ 的确 ＋ 述語（動詞 / 形容詞 / 是……）",
+      "examples": []
+    },
+    "zh_嗯_573": {
+      "title": "嗯（第4声・軽声の間投詞：うん・ええ・はい・了解）",
+      "shortExplanation": "第4声（または軽声）で発音される間投詞で、呼びかけに応答したり、相手の質問に肯定・承諾の返事をしたりする際に用います（「うん」「ええ」「はい」）。",
+      "longExplanation": "「嗯」が第4声（èn）または軽声で発音される場合、日常会話で最も頻繁に用いられる応答の間投詞（感嘆詞）です。文頭に単独で置かれ、誰かからの呼びかけに応じたり、質問に対して「その通りだ」「同意する」「了解した」と肯定的に返事をしたりする際に使われます（例：「嗯，好的」うん、わかった、「嗯，我知道了」ええ、知っているよ、「嗯，吃了」うん、食べたよ）。声調は低く短く落ち着いたトーンになります。日本語の「うん」「ええ」「はい」に相当します。",
+      "formation": "（呼びかけ / 質問 ，）嗯 ，＋ 応答句 / 肯定文",
+      "examples": [
+        {
+          "translation": "A：ご飯食べた？ B：うん、食べたよ。"
+        }
+      ]
+    },
+    "zh_嗯_574": {
+      "title": "嗯？（第2声の間投詞：えっ？・ん？・あれっ？・何だって？）",
+      "shortExplanation": "第2声で語尾を上げて発音される間投詞で、意外なことに対する疑念、驚き、不可解さを表します（「ん？」「えっ？」「あれ？」）。",
+      "longExplanation": "「嗯」に疑問符が付き、第2声（én）のイントネーションで語尾を上げて発音される場合、話し手が不意に何らかの異常、予期せぬ食い違い、または疑問点に気づいた時の心理的反応を表す間投詞となります。「えっ？」「あれっ？」「何だって？」といったニュアンスで、直後に自問自答の疑問文や相手への詰問が続くのが一般的です（例：「嗯？这是怎么回事？」ん？これはどういうことだ？、「嗯？难道是我记错了？」あれっ？もしかして私が覚え違いしていたのかな？）。日本語の「ん？」「えっ？」「あれっ？」に相当します。",
+      "formation": "嗯？ ＋ 疑問文 / 推量文",
+      "examples": [
+        {
+          "translation": "ん？もしかして私が覚え違いをしていたのかな？"
+        }
+      ]
+    },
+    "zh_嗯_575": {
+      "title": "嗯！（強調・詠嘆の間投詞：おい！・あれまあ！・ちょっと！・おいおい！）",
+      "shortExplanation": "語気を強めて感嘆符を伴う間投詞で、相手の意外な振る舞いや状況に対する驚き、不満、たしなめ、促しなどを表します（「おい！」「ちょっと！」「おいおい！」）。",
+      "longExplanation": "「嗯！」に感嘆符が付く場合、語気を強めた感嘆詞として機能し、話者の強い感情（意外感、とまどい、咎め、催促など）を直接的に表します。相手が当然しているはずの行動をとっていなかったり、想定外の事態を目撃したりした際に、「おいおい、一体どうしたんだ？」「ちょっと、まだ〜してないの？」と驚きと軽い非難を込めて声をかける文脈で用いられます（例：「嗯！你怎么还没走啊？」おいおい！君はどうしてまだ出発していないんだい？）。日本語の「おい！」「ちょっと！」「おいおい！」「あれまあ！」に相当します。",
+      "formation": "嗯！ ＋ 反語 / 驚きの疑問文 / 咎めの文",
+      "examples": [
+        {
+          "translation": "おいおい！君はどうしてまだ行ってないんだい？"
+        }
+      ]
+    },
+    "zh_轻易地V_576": {
+      "title": "轻易地 ＋ 動詞（連用修飾語：いとも簡単に・たやすく・難なく・造作もなく）",
+      "shortExplanation": "動作や目標が何の苦労や障害もなく、極めてスムーズかつ容易に達成される様子を表します（「いとも簡単に」「たやすく」「難なく」）。",
+      "longExplanation": "「轻易地」（qīngyì dì）は、形容詞「轻易」（たやすい・簡単である）に構造助詞「地」が付いた連用修飾語（状語）の形式で、後続の動詞句を修飾します。主に肯定文において、卓越した能力や有利な条件に恵まれ、骨を折ったり苦労したりすることなく極めて円滑・迅速に目的の動作を成し遂げられる様子を描写します（例：「轻易地记住」難なく覚える、「轻易地战胜对手」敵をたやすく打ち負かす）。「很轻易地」のように程度副詞「很」を伴うことも多いです。日本語の「いとも簡単に」「たやすく」「難なく」「造作もなく」に相当します。",
+      "formation": "主語 ＋（できる / すべて ＋）轻易地 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "彼は何を勉強しても、とても簡単に覚えることができる。"
+        }
+      ]
+    },
+    "zh_轻易V_577": {
+      "title": "轻易 ＋ 動詞（副詞：軽々しく・安易に・めったなことで〜ない【否定文で多用】）",
+      "shortExplanation": "態度が軽はずみで思慮が浅いこと、または否定文（「不轻易……」）において「めったなことでは〜しない」「軽々しく〜しない」という慎重さを表します（「軽々しく」「安易に」）。",
+      "longExplanation": "「轻易」（qīngyì）が直接動詞の前に置かれて副詞として機能する場合、「軽はずみである・慎重さを欠く」というニュアンスを帯びます。特に「不轻易」「从不轻易」といった否定形式で用いられることが極めて多く、「軽々しく〜しない」「めったなことで〜しない」「安易に〜しない」という意味で、慎重で分別のある態度や強固な意志を表します（例：「不轻易许诺」軽々しく約束しない、「不轻易放弃」めったなことで諦めない、「决不轻易改变」決して安易に変えない）。日本語の「軽々しく」「安易に」「めったなことでは〜しない」に相当します。",
+      "formation": "主語 ＋（从不 / 不 ＋）轻易 ＋ 動詞句",
+      "examples": [
+        {
+          "translation": "彼は決して軽々しく決断しないが、ひとたび決めたらめったなことでは変えない。"
+        }
+      ]
+    },
+    "zh_密切_578": {
+      "title": "密切（副詞的用法・状語：密接に・緊密に・深く・綿密に）",
+      "shortExplanation": "動詞の前に置かれ、両者の結びつき、関連性、協力関係が極めて緊密で深いことを表します（「密接に」「緊密に」）。",
+      "longExplanation": "「密切」（mìqiè）は動詞の前に連用修飾語（状語）として置かれ、人や事物の相互関係、結びつき、協力度合いが非常に深く途切れがない様子を表します。特によく用いられる定番の組み合わせには、「与……密切相关」（〜と密接に関連している）、「密切配合」（緊密に連携・協力する）、「密切联系群众」（大衆と緊密に結びつく）、「密切关注」（固唾をのんで注視する・綿密に見守る）などがあります。論説文や公の報道、学術的分析において頻出します。日本語の「密接に」「緊密に」「深く」に相当します。",
+      "formation": "主語 ＋ 与 / 和 ＋ 対象 ＋ 密切 ＋ 動詞句（相关 / 配合 / 关注 など）",
+      "examples": [
+        {
+          "translation": "環境汚染は私たちの日常生活と密接に関連している。"
+        }
+      ]
+    },
+    "zh_密切_579": {
+      "title": "密切（形容詞：親密な・緊密な・親しい・結びつきが強い）",
+      "shortExplanation": "人間同士や国家・組織間の人間関係・往来が非常に親密で、結びつきが深いことを表す形容詞です（「親密である」「緊密である」）。",
+      "longExplanation": "「密切」（mìqiè）は形容詞として用いられる場合、人や集団の間の交際、付き合い、あるいは関係性が非常に親しく深い状態にあることを表します。文中では主に述語として機能し、「关系密切」（関係が親密である）、「来往密切」（往来・付き合いが頻繁で親密である）のように用いられます。また比較文や変化を表す文で「比先前密切了」（以前よりも親しくなった）、「日益密切」（日増しに緊密になっている）のように関係の発展・深化を叙述します。日本語の「親密である」「緊密である」「親しい」「結びつきが強い」に相当します。",
+      "formation": "主語（関係 / 往来）＋（比…… ＋）密切（＋ 了）",
+      "examples": [
+        {
+          "translation": "それ以来、二人の往来は以前よりも親密になった。"
+        }
+      ]
+    },
+    "zh_密切_580": {
+      "title": "密切（他動詞的用法：緊密にする・結びつきを強める・密接にする）",
+      "shortExplanation": "事業や政策などが、両者の間の連携やつながりを一段と強化し、親密なものにすることを表す使動的動詞です（「緊密にする」「結びつきを強める」）。",
+      "longExplanation": "「密切」（mìqiè）は他動詞（使動動詞）としても機能し、「〜を親密・緊密なものにする」「結びつきを一層強める」という意味を表します。インフラの整備、交通網の開通、文化交流などの施策が主語となり、地域間や人々の間の交流や関係（「联系」「关系」）を目的語として導きます（例：「密切了联系」結びつきを強めた、「密切了党群关系」党と民衆の関係を緊密にした）。文末や動詞の直後にアスペクト助詞「了」を伴うことが多いです。日本語の「緊密にする」「密接にする」「結びつきを一段と深める」に相当します。",
+      "formation": "主語 ＋（大大 ＋）密切 ＋ 了 ＋ 連体修飾語 ＋ 的联系 / 关系",
+      "examples": [
+        {
+          "translation": "この鉄道は西南地区と首都との結びつきを大いに強めた。"
+        }
+      ]
+    },
+    "zh_尽量jnling_581": {
+      "title": "尽量（jǐnliàng）（副詞：できる限り・なるべく・できるだけ・極力）",
+      "shortExplanation": "第3声（jǐn）で発音される副詞で、条件や能力が許す限度・範囲内で最大限に努めることを表します（「できるだけ」「なるべく」「できる限り」）。",
+      "longExplanation": "「尽量」は第3声（jǐnliàng）で発音される場合、動詞句の前に置かれて連用修飾語（状語）として機能する副詞です。客観的な条件や自分自身の能力が許す最大限の範囲で努力・配慮し、ある水準や数量を極力高めたり（あるいは抑えたり）することを表します。「尽量多……」（できるだけ多く〜する）、「尽量少……」（なるべく少なく抑える）、「尽量不要……」（極力〜しないようにする）などのパターンで日常的・公的文脈を問わず頻用されます。なお第4声（jìnliàng）の動詞用法（限界まで出し切る、酒を限界まで飲む）とは明確に区別されます。日本語の「できる限り」「なるべく」「できるだけ」「極力」に相当します。",
+      "formation": "（主語 ＋）尽量（＋ 多 / 少 / 别 ＋）動詞句",
+      "examples": [
+        {
+          "translation": "できるだけ自転車を多く利用し、公共交通機関をより多く選ぶようにしよう。"
+        }
+      ]
+    },
+    "zh_逐步_582": {
+      "title": "逐步（副詞：一歩一歩・段階的に・順を追って・徐々に）",
+      "shortExplanation": "動作や事態の変化が計画や順序に従って、一歩一歩段階的に進展していく様子を表します（「段階的に」「一歩一歩」「順を追って」）。",
+      "longExplanation": "「逐步」（zhúbù）は述語の動詞句の前に置かれる副詞で、物事の進行や改革・変化が、あらかじめ立てられた計画や手順に沿って着実に一歩ずつ推進されることを表します。「逐渐」が時の経過に伴う自然な漸変（徐々に変化する）を客観的に述べるのに対し、「逐步」は人為的な目標や計画性に基づき、順を追って段階的に実施・解決していく文脈で好まれます（例：「逐步提高」段階的に引き上げる、「逐步解决」一歩一歩解決する、「逐步推广」段階的に普及させる）。社会政策、経済改革、業務プロセスの叙述で頻出します。日本語の「段階的に」「一歩一歩」「順を追って」「着実に」に相当します。",
+      "formation": "（主語 ＋）逐步 ＋ 動詞句 / 変化の述語",
+      "examples": [
+        {
+          "translation": "エネルギー消費構造を調整し、再生可能エネルギーへと段階的に移行する。"
+        }
+      ]
+    },
+    "zh_照常_583": {
+      "title": "照常（副詞・形容詞・述語：いつも通り・通常通り・相変わらず・普段通りに）",
+      "shortExplanation": "特別な事情や異変が生じても、事態や活動が普段の規則・習慣通りに何ら変わりなく行われることを表します（「通常通り」「いつも通り」）。",
+      "longExplanation": "「照常」（zhàocháng）は「通常の規則・習慣に従う」という意味から成り、動詞の前に連用修飾語（状語）として置かれるか、文末で述語として用いられます（例：「照常营业」通常通り営業する、「照常上课」平常通り授業を行う、「一切照常」すべていつも通りである）。周囲で突発的な事件や異変、悪天候、危機などが起きていても、人々の生活や業務運営がそれに動じることなく、普段と寸分たがわぬ状態で維持されている状況を描写する際に多用されます。日本語の「いつも通り」「通常通り」「相変わらず」「普段通りに」に相当します。",
+      "formation": "（〜であるものの、）主語 ＋（一切 ＋）照常（または 照常 ＋ 動詞句）",
+      "examples": [
+        {
+          "translation": "戦争が迫っているものの、ここの日常生活はすべていつも通りである。"
+        }
+      ]
+    }
+  },
+  "ko": {
+    "zh_无意中无意地_568": {
+      "title": "无意中 / 无意地 (부사어: 무심코, 우연히, 뜻하지 않게, 부지불식간에)",
+      "shortExplanation": "사전에 계획하거나 의도하지 않은 상태에서 우연히 또는 무의식중에 행동이 행해지거나 결과가 발생했음을 나타냅니다('무심코', '우연히', '뜻밖에').",
+      "longExplanation": "“无意中”(wúyìzhōng)과 “无意地”(wúyì dì)는 모두 문장에서 동사 앞에 놓여 부사어(상어)로 쓰입니다. 동작을 행하는 주체에게 사전에 품은 의도나 목적의식이 전혀 없었으며, 단지 우연한 기회나 무심결에 행동이 이루어지고 어떤 결과가 초래되었음을 나타냅니다. “无意中”은 우연히 일어난 상황적 배경에 무게중심이 있고, “无意地”는 의도 없이 행해진 동작의 양태에 초점이 있습니다. 무심코 물건을 발견하거나 우연히 어떤 사실을 알게 되었을 때 자주 사용됩니다. 한국어의 '무심코', '우연히', '뜻하지 않게', '부지불식간에'에 해당합니다.",
+      "formation": "주어 + (在 + 동작 / 상황 + 时，) 无意中 / 无意地 + 동사구",
+      "examples": [
+        {
+          "translation": "그녀는 화단을 정리하던 중, 무심코/우연히 이 귀걸이를 발견했다."
+        }
+      ]
+    },
+    "zh_无意_569": {
+      "title": "无意 (조동사적 용법 / 부사: ~할 의도가 없다, ~할 생각이 없다, ~할 뜻이 없다)",
+      "shortExplanation": "마음속에 어떤 행동을 하려는 의도나 목적의식이 전혀 없음을 나타냅니다('~할 생각이 없다', '~할 의도가 없다').",
+      "longExplanation": "“无意”(wúyì)는 '없을 무(无)'와 '뜻 의(意)'가 결합한 표현으로, 동사구 앞에 놓여 조동사적 또는 부사적으로 쓰입니다. 주어가 어떤 행위를 하려는 주관적인 의도나 악의, 욕심을 전혀 지니고 있지 않음을 명확히 밝힐 때 사용됩니다(예: “无意伤害” 상처 줄 의도가 없다, “无意冒犯” 무례를 범할 생각이 없다, “无意隐瞒” 숨길 의도가 없다). “无意中”이 사건의 우연한 발생을 나타내는 반면, “无意”는 행위자의 내면적 동기나 의사의 부재를 분명하게 선언하는 데 초점이 있습니다. 한국어의 '~할 의도가 없다', '~할 생각이 없다', '~할 뜻이 없다'에 해당합니다.",
+      "formation": "주어 + 无意 + 동사구",
+      "examples": [
+        {
+          "translation": "그는 그 누구도 상처 입힐 의도가 전혀 없다."
+        }
+      ]
+    },
+    "zh_有利_570": {
+      "title": "有利 (형용사 / 동사: 유리하다, 도움이 되다, 유익하다, 이롭다)",
+      "shortExplanation": "어떤 조건이나 사물이 이익이나 긍정적인 효과를 가져다주어 발전에 도움이 됨을 나타냅니다('유리하다', '이롭다', '도움이 되다').",
+      "longExplanation": "“有利”(yǒulì)는 이익이나 긍정적 결과를 낳는 데 보탬이 되는 우호적 조건을 갖추고 있음을 나타내는 형용사(또는 술어적 결합)입니다(반의어는 “不利”). 현대 한어에서는 개사 “于”와 결합한 고정 구조 “有利于 + 대상 / 동작구”(‘~에 유리하다’, ‘~하는 데 도움이 되다’)나, “对……有利”(‘~에 유리하다’)의 형태로 매우 자주 쓰입니다. 또한 “有利条件”(유리한 조건), “有利地位”(유리한 위치)처럼 명사를 수식하는 관형어로도 널리 활용됩니다. 학술, 정책, 건강, 비즈니스 등 다양한 분야에서 긍정적 기여도를 논할 때 필수적인 표현입니다. 한국어의 '유리하다', '이롭다', '도움이 되다', '~에 유익하다'에 해당합니다.",
+      "formation": "주어 / 사물 + 有利于 + 동사구 / 명사 (또는 对 + 대상 + 有利)",
+      "examples": [
+        {
+          "translation": "적당한 스트레스는 우리가 양호한 컨디션을 유지하는 데 이롭다."
+        }
+      ]
+    },
+    "zh_的确_571": {
+      "title": "的确 (부사: 확실히, 정말로, 과연, 틀림없이)",
+      "shortExplanation": "어떤 사실이나 판단이 객관적으로 명백하고 조금도 틀림없음을 강하게 긍정하고 확인하는 부사입니다('확실히', '정말로', '과연').",
+      "longExplanation": "“的确”(díquè)는 문장에서 술어(동사, 형용사 또는 판단 표현) 앞에 위치하는 부사로, 부사어(상어) 역할을 합니다. 객관적인 사안이나 다른 사람의 견해가 사실과 완전히 부합하여 조금의 의심도 없음을 확고하게 긍정할 때 사용됩니다. 자신의 직접적인 견문이나 체험을 통해 '소문대로 과연 그렇다', '정말로 듣던 대로다'라며 맞장구를 치거나 수긍하는 맥락에서 매우 빈번하게 활용됩니다(예: “的确如此” 확실히 그러하다, “的确很棒” 정말로 훌륭하다). 한국어의 '확실히', '정말로', '과연', '틀림없이'에 해당합니다.",
+      "formation": "주어 + 的确 + 술어 (동사 / 형용사 / 是……)",
+      "examples": []
+    },
+    "zh_嗯_573": {
+      "title": "嗯 (제4성 / 경성의 감탄사: 응, 그래, 네, 어)",
+      "shortExplanation": "제4성(또는 경성)으로 발음되는 감탄사로, 부름에 대답하거나 상대방의 질문에 긍정·승낙의 대답을 할 때 씁니다('응', '그래', '네').",
+      "longExplanation": "“嗯”이 제4성(èn) 혹은 경성으로 발음될 때는 일상 구어에서 가장 흔하게 쓰이는 응답의 감탄사입니다. 단독으로 문두에 놓여 다른 사람의 부름에 화답하거나, 상대방의 질문에 대해 사실임을 확인해 주고 긍정·동의·수락의 뜻을 표할 때 사용됩니다(예: “嗯，好的” 응, 좋아; “嗯，知道了” 응, 알겠어; “嗯，吃了” 응, 먹었어). 음조가 짧고 낮게 가라앉는 안정적인 어조를 띱니다. 한국어의 '응', '그래', '어', '네'에 해당합니다.",
+      "formation": "(부름 / 질문 ，) 嗯 ，+ 응답구 / 긍정문",
+      "examples": [
+        {
+          "translation": "A: 밥 먹었어? B: 응, 먹었어."
+        }
+      ]
+    },
+    "zh_嗯_574": {
+      "title": "嗯？ (제2성의 감탄사: 어? 잉? 응? 어라? 뭐라고?)",
+      "shortExplanation": "제2성으로 말끝을 올려 발음하는 감탄사로, 뜻밖의 상황에 대한 의아함, 의문, 놀라움을 나타냅니다('어?', '응?', '어라?').",
+      "longExplanation": "“嗯” 뒤에 물음표가 붙어 제2성(én)으로 음을 올려 발음될 때는, 화자가 뜻밖의 이상한 점을 감지했거나 예상과 다른 상황을 마주하여 의혹과 놀라움을 느낄 때 터져 나오는 감탄사입니다. 자기도 모르게 고개를 갸우뚱하며 의아해하는 심리를 생생하게 드러내며, 보통 뒤이어 의심을 품은 의문문이나 자문자답이 이어집니다(예: “嗯？难道是我记错了?” 어? 설마 내가 잘못 기억한 건가?, “嗯？他人呢?” 잉? 그 사람 어디 갔지?). 한국어의 '어?', '응?', '어라?', '잉?'에 해당합니다.",
+      "formation": "嗯？ + 의문문 / 추측문",
+      "examples": [
+        {
+          "translation": "어? 설마 내가 잘못 기억하고 있는 건가?"
+        }
+      ]
+    },
+    "zh_嗯_575": {
+      "title": "嗯！ (강조·영탄의 감탄사: 어라! 야! 저런! 아니!)",
+      "shortExplanation": "어조를 강하게 실어 느낌표를 동반하는 감탄사로, 상대방의 의외의 행동이나 상황에 대한 놀라움, 가벼운 타박, 재촉 등을 나타냅니다('어라!', '아니!', '야!').",
+      "longExplanation": "“嗯!” 뒤에 느낌표가 붙을 때는 강한 어기와 감정을 실어 내뱉는 감탄사로 쓰입니다. 마땅히 그러해야 할 상식이나 기대에 어긋나는 상황을 목격했을 때 화자가 느끼는 당혹감, 놀라움, 혹은 상대방에 대한 가벼운 핀잔이나 재촉의 뉘앙스를 담아냅니다(예: “嗯！你怎么还没走啊？” 어라! 너 왜 아직도 안 가고 있는 거야?). 주의를 환기하면서도 어처구니없어하는 어조를 생생하게 표현합니다. 한국어의 '어라!', '아니!', '야!', '저런!'에 해당합니다.",
+      "formation": "嗯！ + 반문 / 놀람의 의문문 / 핀잔의 문장",
+      "examples": [
+        {
+          "translation": "어라! 너 왜 아직도 안 가고 있는 거야?"
+        }
+      ]
+    },
+    "zh_轻易地V_576": {
+      "title": "轻易地 + 동사 (부사어: 손쉽게, 수월하게, 아주 쉽게, 수포로)",
+      "shortExplanation": "어떤 동작이나 과제가 아무런 어려움이나 힘들이지 않고 매우 원활하고 쉽게 달성됨을 나타냅니다('손쉽게', '수월하게', '아주 쉽게').",
+      "longExplanation": "“轻易地”(qīngyì dì)는 형용사 “轻易”(쉽다, 수월하다) 뒤에 구조조사 “地”가 결합하여 동사를 수식하는 전형적인 부사어 구조입니다. 주로 긍정문에서 뛰어난 능력이나 유리한 조건 덕분에 많은 노력이나 정력을 들이지 않고도 목적하는 행동을 매우 원활하고 신속하게 해냄을 묘사합니다(예: “轻易地记住” 수월하게 외우다, “轻易地打败对手” 상대를 손쉽게 꺾다). 흔히 정도부사 “很”(매우)과 어우러져 “很轻易地……” 형태로 자주 쓰입니다. 한국어의 '손쉽게', '수월하게', '아주 쉽게', '어렵지 않게'에 해당합니다.",
+      "formation": "주어 + (수월하게 / 다 +) 轻易地 + 동사구",
+      "examples": [
+        {
+          "translation": "그는 무엇을 배우든 아주 손쉽게 기억할 수 있다."
+        }
+      ]
+    },
+    "zh_轻易V_577": {
+      "title": "轻易 + 동사 (부사: 경솔하게, 함부로, 선뜻, 쉽사리【주로 부정문에서 사용】)",
+      "shortExplanation": "태도가 경솔하고 신중하지 못함을 나타내거나, 부정 형태('不轻易……')로 쓰여 '함부로 ~하지 않다', '쉽사리 ~하지 않다'라는 신중함과 굳은 의지를 나타냅니다('경솔하게', '쉽사리').",
+      "longExplanation": "“轻易”(qīngyì)가 조사 없이 동사 앞에 직접 놓여 부사로 쓰일 때는 매사에 깊이 생각하지 않고 경솔하거나 대수롭지 않게 여기는 태도를 나타냅니다. 특히 “不轻易 + 동사”나 “从不轻易 + 동사”처럼 부정 부사와 결합한 형태로 대단히 많이 쓰이는데, 이때는 '함부로 ~하지 않다', '경솔하게 ~하지 않다', '쉽사리 ~하지 않다'라는 뜻으로 주어의 매우 신중하고 책임감 있는 태도나 흔들리지 않는 굳은 의지를 표현합니다(예: “不轻易放弃” 쉽사리 포기하지 않다, “不轻易表态” 함부로 입장을 밝히지 않다). 한국어의 '경솔하게', '함부로', '선뜻', '쉽사리(~하지 않다)'에 해당합니다.",
+      "formation": "주어 + (从不 / 不 +) 轻易 + 동사구",
+      "examples": [
+        {
+          "translation": "그는 결코 쉽게 결정 내리지 않으며, 일단 결정하면 경솔하게 바꾸지 않는다."
+        }
+      ]
+    },
+    "zh_密切_578": {
+      "title": "密切 (부사적 용법: 밀접하게, 긴밀히, 긴밀하게)",
+      "shortExplanation": "동사 앞에 놓여 양자 간의 연계, 상호 관계, 협력이 매우 깊고 빈틈없이 밀착되어 있음을 나타냅니다('밀접하게', '긴밀히').",
+      "longExplanation": "“密切”(mìqiè)는 동사 앞에서 부사어(상어)로 쓰여, 사물 간의 상관관계나 사람들 사이의 유대 및 협력이 대단히 끈끈하고 깊숙함을 나타냅니다. 가장 대표적이고 빈번한 연어 표현으로는 “与 / 和……密切相关”(‘~와 밀접하게 관련되다’), “密切配合”(‘긴밀히 협조하다’), “密切关注”(‘예의주시하다, 긴밀히 지켜보다’) 등이 있습니다. 신문 기사, 학술 논문, 공적 담화 등에서 두 영역이나 요소 간의 필연적이고 강력한 상관관계를 밝힐 때 핵심적으로 구사됩니다. 한국어의 '밀접하게', '긴밀히', '깊이'에 해당합니다.",
+      "formation": "주어 + 与 / 和 + 대상 + 密切 + 동사구 (相关 / 配合 / 关注 등)",
+      "examples": [
+        {
+          "translation": "오염은 우리의 일상생활과 밀접하게 관련되어 있다."
+        }
+      ]
+    },
+    "zh_密切_579": {
+      "title": "密切 (형용사: 친밀하다, 긴밀하다, 가깝다, 막역하다)",
+      "shortExplanation": "사람 사이의 교제나 조직 간의 관계가 매우 친밀하고 두터우며 가까움을 나타내는 형용사입니다('친밀하다', '긴밀하다').",
+      "longExplanation": "“密切”(mìqiè)는 형용사로 쓰여 인간관계, 교류, 또는 왕래가 매우 가깝고 돈독한 상태를 묘사합니다. 문장 안에서는 주로 술어로 기능하여 “关系密切”(관계가 친밀하다), “来往密切”(왕래가 잦고 친밀하다) 형태로 쓰이며, 비교문이나 변화문에서 “比先前密切了”(‘이전보다 더 친밀해졌다’), “日益密切”(‘날로 긴밀해지다’)처럼 유대의 심화를 서술합니다. 사적인 우정부터 국가 간의 외교적 친선 관계에 이르기까지 폭넓게 활용됩니다. 한국어의 '친밀하다', '긴밀하다', '가깝다', '돈독하다'에 해당합니다.",
+      "formation": "주어(관계 / 왕래) + (比…… +) 密切 (+ 了)",
+      "examples": [
+        {
+          "translation": "그 후로 두 사람의 왕래는 이전보다 더욱 긴밀해졌다."
+        }
+      ]
+    },
+    "zh_密切_580": {
+      "title": "密切 (타동사적 용법: 긴밀하게 하다, 굳게 묶다, 결속을 다지다, 긴밀히 하다)",
+      "shortExplanation": "어떤 사업이나 정책 등이 양자 사이의 연계나 관계를 한층 더 돈독하고 긴밀하게 만들어 줌을 나타내는 사동적 동사입니다('긴밀하게 하다', '결속을 강화하다').",
+      "longExplanation": "“密切”(mìqiè)는 타동사로 기능하여 '관계를 더욱 긴밀하게 만들다', '유대를 강화하다'라는 사동(使動)의 의미를 나타낼 수 있습니다. 교통수단의 개통, 교역 활성화, 문화 교류 정책 등이 주어로 오며, 그 결과로 뒤에 “联系”(연계)나 “关系”(관계) 등을 목적어로 취합니다(예: “密切了联系” 연계를 긴밀하게 하였다, “密切了往来” 왕래를 더욱 활성화하였다). 흔히 정도부사 “大大”(크게, 대폭) 및 동태조사 “了”와 호응하여 극적인 유대 강화 효과를 강조합니다. 한국어의 '긴밀하게 하다', '결속을 다지다', '유대를 강화하다'에 해당합니다.",
+      "formation": "주어 + (大大 +) 密切 + 了 + 수식어 + 的联系 / 关系",
+      "examples": [
+        {
+          "translation": "이 철도는 서남 지역과 수도 간의 연계를 크게 긴밀하게 만들었다."
+        }
+      ]
+    },
+    "zh_尽量jnling_581": {
+      "title": "尽量 (jǐnliàng) (부사: 될 수 있는 대로, 가능한 한, 최대한, 극력)",
+      "shortExplanation": "제3성(jǐn)으로 발음되는 부사로, 주어진 객관적 조건이나 능력의 한도 내에서 최선을 다해 힘씀을 나타냅니다('가능한 한', '최대한', '될 수 있는 대로').",
+      "longExplanation": "“尽量”이 제3성(jǐnliàng)으로 발음될 때는 문장에서 동사구를 수식하는 부사로 쓰입니다. 자신이 처한 조건이나 역량이 허용하는 한도 안에서 최대치에 도달하도록 온 힘을 기울임을 나타냅니다. 흔히 “尽量多……”(‘최대한 많이 ~하다’), “尽量少……”(‘가급적 적게 ~하다’), “尽量不要……”(‘되도록 ~하지 않다’) 등의 구조로 결합하여 바람직한 행동을 권장하거나 자제를 당부할 때 자주 활용됩니다. 한편 제4성인 “尽量”(jìnliàng)은 '한도에 도달하다, 양껏 마시다'를 뜻하는 동사적 용법이므로 성조와 품사 구분에 주의해야 합니다. 한국어의 '될 수 있는 대로', '가능한 한', '최대한', '가급적'에 해당합니다.",
+      "formation": "(주어 +) 尽量 (+ 多 / 少 / 别 +) 동사구",
+      "examples": [
+        {
+          "translation": "최대한 자전거를 많이 타고 대중교통을 많이 이용하도록 하라."
+        }
+      ]
+    },
+    "zh_逐步_582": {
+      "title": "逐步 (부사: 점차, 단계적으로, 차츰차츰, 한 걸음 한 걸음)",
+      "shortExplanation": "동작이나 사물의 변화가 일정한 계획과 순서에 따라 차근차근 단계적으로 진전됨을 나타냅니다('단계적으로', '차츰차츰', '한 걸음씩').",
+      "longExplanation": "“逐步”(zhúbù)는 문장에서 술어 동사 앞에 놓이는 부사로, 일이나 사태의 진전이 명확한 순서와 단계를 밟아가며 한 걸음씩 착실하게 진행됨을 나타냅니다. 시간의 흐름에 따라 자연스럽게 번져가는 변화를 묘사하는 “逐渐”(점점, 차차)과 달리, “逐步”는 인위적인 계획성, 로드맵, 정책적 의도에 기반하여 단계를 나누어 차근차근 실행에 옮기는 맥락에서 주로 쓰입니다(예: “逐步解决” 단계적으로 해결하다, “逐步实现” 점차 실현해 나가다, “逐步推广” 점진적으로 보급하다). 사회 개혁, 국가 정책, 프로젝트 추진 과정 등을 서술할 때 매우 필수적인 표현입니다. 한국어의 '단계적으로', '점차', '차근차근', '차츰차츰'에 해당합니다.",
+      "formation": "(주어 +) 逐步 + 동사구 / 변화의 술어",
+      "examples": [
+        {
+          "translation": "에너지 소비 구조를 조정하여 점차 재생에너지로 전환해 나간다."
+        }
+      ]
+    },
+    "zh_照常_583": {
+      "title": "照常 (부사 / 형용사 / 술어: 평소대로, 평상시처럼, 여느 때와 다름없이, 정상대로)",
+      "shortExplanation": "주변 환경이나 특별한 사정에 굴하지 않고, 일이나 활동이 평소의 규칙과 습관대로 변함없이 진행됨을 나타냅니다('평소대로', '정상대로', '여느 때처럼').",
+      "longExplanation": "“照常”(zhàocháng)은 '통상적인 관례를 따르다'라는 의미를 지닌 단어로, 동사 앞에서 부사어(상어)로 쓰이거나(“照常营业” 정상 영업하다, “照常上班” 평소대로 출근하다), 주어 뒤에서 서술어로 쓰입니다(“一切照常” 모든 것이 여느 때와 다름없다). 주변에 전쟁, 악천후, 위기 등 심상치 않은 이변이 발생했음에도 불구하고 일상생활이나 업무 체계가 조금도 흔들리지 않고 평소의 상태를 굳건히 유지하고 있음을 부각할 때 매우 효과적으로 사용됩니다. 한국어의 '평소대로', '평상시처럼', '여느 때와 다름없이', '정상대로'에 해당합니다.",
+      "formation": "(~임에도 불구하고,) 주어 + (一切 +) 照常 (또는 照常 + 동사구)",
+      "examples": [
+        {
+          "translation": "비록 전쟁이 임박해 있지만, 이곳의 일상생활은 모든 것이 평소와 다름없다."
+        }
+      ]
+    }
+  },
+  "zh": {
+    "zh_无意中无意地_568": {
+      "title": "无意中 / 无意地（状语：不自觉地、偶然、没想到，表示事先没有意图或目的）",
+      "shortExplanation": "用作状语，表示动作的发生完全出于偶然、无心或不经意之间，事先并没有任何企图、计划或主观愿望；相当于“偶然间”、“漫不经心地”。",
+      "longExplanation": "“无意中”（wúyìzhōng）和“无意地”（wúyì dì）都可以在句中作状语修饰谓语动词，表示主观上并无动机、意愿或事先规划，事物的结果纯粹在偶然的机缘、无意之间出现。“无意中”偏重于表示事情发生的客观机缘或时间情境（常与“在……时”、“在……过程中”配合使用）；“无意地”则偏重于表示行为动作本身的非故意状态。多用于偶然发现遗失物品、无心中触动秘密、随口吐露真相等语境。",
+      "formation": "主语 +（在……时，）无意中 / 无意地 + 动词短语",
+      "examples": [
+        {
+          "translation": "她在收拾花园时，无意中/无意地找到了这只耳环。"
+        }
+      ]
+    },
+    "zh_无意_569": {
+      "title": "无意（动词 / 副词：没有意向、不想、并非存心，表示主观上没有做某事的意图）",
+      "shortExplanation": "用在动词前，表示主观上没有做某事的愿望、意图、目的或打算；相当于“不想”、“没有意图”、“不是存心”。",
+      "longExplanation": "“无意”（wúyì）由“无”（没有）和“意”（意愿、心意、企图）组合而成，通常置于动词短语之前，充当状语或类似能愿动词的谓语成分。它明确表明行为主体在心理上完全没有某种打算，并非出于故意或恶意，亦无意去追求某种结果。常见搭配有“无意伤害”（并非存心伤害）、“无意冒犯”（并非有意得罪）、“无意参与”（不想卷入其中）等。与侧重客观偶发情状的“无意中”不同，“无意”着重澄清主观意图上的清白与无念。",
+      "formation": "主语 + 无意 + 动词短语 / 宾语",
+      "examples": [
+        {
+          "translation": "他无意伤害任何人。"
+        }
+      ]
+    },
+    "zh_有利_570": {
+      "title": "有利（形容词 / 谓词：有好处、有帮助、处于优势，常用于“有利于……”）",
+      "shortExplanation": "表示存在对事情发展有帮助、有好处的积极因素或条件；常与“于”或“对”配合，相当于“有益”、“有帮助”。",
+      "longExplanation": "“有利”（yǒulì）指具备带来益处、产生良好作用或处于竞争优势的客观条件（反义词为“不利”）。在现代汉语中，最常见的句式是后接介词“于”构成动宾式框架“有利于 + 宾语 / 动词短语”，表示对某种情况、目标或主体能产生促进作用（如“有利于身心健康”、“有利于经济增长”）；也可用于“对……有利”结构。此外，“有利”还常作定语修饰名词，如“有利因素”、“有利时机”、“有利地位”。",
+      "formation": "主语 / 事物 + 有利于 + 动词短语 / 名词（或：对……有利）",
+      "examples": [
+        {
+          "translation": "适度的压力有利于我们保持良好的状态。"
+        }
+      ]
+    },
+    "zh_的确_571": {
+      "title": "的确（副词：确实、毫无疑问，表示完全肯定情况的真实性）",
+      "shortExplanation": "副词作状语，用于完全肯定事实、情况或某种判断的客观真实性，毫无疑义；相当于“确实”、“果然”、“真是”。",
+      "longExplanation": "“的确”（díquè）在句中充当状语，修饰谓语动词、形容词或判断句。它表达说话人对客观事实、情境或他人看法的极力肯定与认同，强调事情完全属实，毫无虚假或夸张成分。常用于亲身感受或验证后的赞同、附和语境中，如“的确如此”（确实这样）、“的确很冷”（确实非常寒冷）、“他的确不知道”（他真的一无所知）。与兼具形容词用法的“确实”相比，“的确”只作副词使用。",
+      "formation": "主语 + 的确 + 谓语（动词 / 形容词 / 是……）",
+      "examples": []
+    },
+    "zh_嗯_573": {
+      "title": "嗯（叹词去声/轻声：表示答应、同意、应诺或肯定的应答）",
+      "shortExplanation": "读去声（èn）或轻声的叹词，用于口语中对别人的呼唤作出应答，或对别人的询问表示肯定、同意与认可；相当于“好的”、“对”、“知道了”。",
+      "longExplanation": "“嗯”在读去声（èn）或轻声时，是现代汉语口语中使用极广的应答叹词。它通常单独成句或置于答话之首，主要表达两类交际功能：一是回应他人的呼唤（如听到叫自己的名字时答一声“嗯”）；二是对他人的问话、建议或提议给予确认、赞许或首肯（如“嗯，好主意”、“嗯，吃了”、“嗯，明天见”）。语调短促肯定，体现出自然亲切的口头互动交流。",
+      "formation": "（呼唤 / 问话 ，）嗯 ，+ 答语 / 肯定句",
+      "examples": [
+        {
+          "translation": "A：吃了吗？B：嗯，吃了。"
+        }
+      ]
+    },
+    "zh_嗯_574": {
+      "title": "嗯？（叹词阳平：表示疑问、困惑、意外或惊异）",
+      "shortExplanation": "读阳平（én，声调上扬）的叹词，用于口语中表达疑问、困惑或出乎意料的惊奇反应；相当于“咦？”、“怎么回事？”。",
+      "longExplanation": "“嗯？”通常读作第二声（én），句末带有问号且语调明显上扬。它是说话人在察觉到现实情境与自身认知、记忆出现反差，或遇到出乎预料、难以理解的事情时自然发出的感叹。这一叹词充当句首发语词，后文往往紧跟着表达怀疑、推测、反思或追问的疑问句式（如“嗯？难道是我看错了？”、“嗯？你怎么会在这儿？”）。它生动地传达出一种瞬间的警觉与不解。",
+      "formation": "嗯？ + 疑问句 / 猜测句",
+      "examples": [
+        {
+          "translation": "嗯？难道是我记错了？"
+        }
+      ]
+    },
+    "zh_嗯_575": {
+      "title": "嗯！（叹词感叹调：表示意外、责怪、催促或提醒的强烈感叹）",
+      "shortExplanation": "带有叹号的感叹语气，用于口语中表达强烈的意外、不满、提醒、催促或略带责备的情绪；相当于“嘿！”、“哎呀！”。",
+      "longExplanation": "“嗯！”在句首带感叹号时，充当强烈表态的感叹词。它通常在说话人看到对方的行为违背了常规预期、拖延拖沓或出乎意料时使用，借以引起对方警觉，语气中往往伴随着惊讶、不解以及轻微的嗔怪或督促。后文常接反问句、质问句或责怪句，生动传神地勾勒出口语交流中的生动神态。",
+      "formation": "嗯！ + 反问句 / 责怪句 / 惊讶句",
+      "examples": [
+        {
+          "translation": "嗯！你怎么还没走啊？"
+        }
+      ]
+    },
+    "zh_轻易地V_576": {
+      "title": "轻易地 + 动词（状语结构：容易地、毫不费力地，强调动作顺利完成）",
+      "shortExplanation": "形容词加“地”充当状语，表示动作的进行极为顺当、轻而易举，不需要花费很大的力气或克服艰难险阻；相当于“轻而易举地”、“随随便便就”。",
+      "longExplanation": "“轻易地”（qīngyì dì）在句中作动词的修饰语（状语），多用于肯定句中，侧重表现主体在能力出众、条件优越的前提下，能够不费吹灰之力、顺畅无阻地完成某项具有一定难度的动作或任务（如“轻易地记住”、“轻易地赢得了比赛”、“轻易地化解了危机”）。句中常前加程度副词“很”、“极”，构成“很轻易地 + 动词”，突显完成动作时的从容与举重若轻。",
+      "formation": "主语 +（可以 / 都 +）轻易地 + 动词短语",
+      "examples": [
+        {
+          "translation": "他学什么都可以很轻易地记住。"
+        }
+      ]
+    },
+    "zh_轻易V_577": {
+      "title": "轻易 + 动词（副词：随随便便、轻率，常用于否定句表示慎重）",
+      "shortExplanation": "副词作状语，表示草率、随随便便；极常用于否定句“不轻易……”、“从不轻易……”，表示行事沉稳、谨慎、不肯草率决断或改变。",
+      "longExplanation": "“轻易”（qīngyì）直接修饰动词作状语时，常含有对态度轻率、草率、不负责任的审慎关照。在现代汉语中，它最为经典和高频的用法是置于否定词“不”、“从不”、“绝不”之后，构成“不轻易 + 动词”的格式。此时，它表达一种高度慎重、严谨持重、原则性强或意志坚定的处事风格（如“不轻易许诺”表示不随便承诺、“不轻易认输”表示决不服输、“不轻易动怒”表示情绪克制）。",
+      "formation": "主语 +（从不 / 不 +）轻易 + 动词短语",
+      "examples": [
+        {
+          "translation": "他从不轻易决定，决定了就不轻易转变。"
+        }
+      ]
+    },
+    "zh_密切_578": {
+      "title": "密切（状语：紧密地、息息相关地，修饰“相关”、“配合”等动词）",
+      "shortExplanation": "副词性用法作状语，表示两事物之间的关系、联系或协作极为紧密、深厚、不可分割；相当于“紧密地”、“深入地”。",
+      "longExplanation": "“密切”（mìqiè）充当动词的修饰语（状语）时，着重说明事物间相互依存、互为因果或紧扣无间的关联程度。最经典的固定搭配是与介词短语结合的“与/和……密切相关”，强调彼此息息相关、休戚与共。此外，也频繁用于“密切配合”（协调一致地协作）、“密切关注”（时刻高度留意追踪）、“密切联系群众”（同群众打成一片）等庄重正式的语体中。",
+      "formation": "主语 + 与 / 和 + 宾语 + 密切 + 动词（相关 / 配合 / 联系 / 关注）",
+      "examples": [
+        {
+          "translation": "污染和我们的日常生活密切相关。"
+        }
+      ]
+    },
+    "zh_密切_579": {
+      "title": "密切（形容词：亲密、近便、关系深厚，常作谓语或定语）",
+      "shortExplanation": "形容词，指彼此之间的交往、关系非常深厚、亲近，没有任何隔阂；相当于“亲近”、“紧密”。",
+      "longExplanation": "“密切”（mìqiè）作形容词时，主要用来描写人际交往、群体合作或国际关系的高度亲融状态。常充当谓语（如“两人来往密切”、“关系日益密切”）、定语（如“密切的合作伙伴关系”）或补语。在句中常与比较句式结合，表示随着事件的发展或交流的增多，彼此的关系比以前更加融洽、亲近、坚实。",
+      "formation": "主语（关系 / 来往）+（比…… +）密切（+ 了）",
+      "examples": [
+        {
+          "translation": "从此，两人来往比先前密切了。"
+        }
+      ]
+    },
+    "zh_密切_580": {
+      "title": "密切（动词使动用法：使……关系紧密、增进、拉近，带宾语“联系/关系”）",
+      "shortExplanation": "动词（使动用法），表示通过某种举措或事物，使双方之间的联系、交往往来变得更加紧密；相当于“增进”、“加强”。",
+      "longExplanation": "“密切”（mìqiè）可活用为及物动词（使动词），意为“使……变得密切”。在这一用法中，主语多为工程建设、政策举措、文化交流或交通纽带等客观推动力，宾语常是名词性成分“联系”或“关系”（最常见的经典句型为“密切了……的联系/关系”）。常常受副词“大大”、“进一步”等修饰，并带动态助词“了”，生动强调这一举措在促进区域协调、情感拉近上的积极现实成效。",
+      "formation": "主语 +（大大 +）密切 + 了 + 宾语（……的联系 / 关系）",
+      "examples": [
+        {
+          "translation": "这条铁路大大密切了西南地区与首都的联系。"
+        }
+      ]
+    },
+    "zh_尽量jnling_581": {
+      "title": "尽量（jǐnliàng）（副词：力求在一定范围内达到最大程度，读上声）",
+      "shortExplanation": "副词作状语，读上声（jǐn），表示力求在客观条件或能力允许的最大限度内去做；相当于“尽可能”、“力求”。",
+      "longExplanation": "“尽量”在读第三声（jǐnliàng）时作副词，修饰谓语动词，表达行为主体在客观情境或个人限度之内尽最大努力以争取达到最佳效果。最常见的句式搭配是后接带有数量倾向或否定约束的词语，如“尽量多……”（尽可能多地做）、“尽量少……”（尽可能压缩减省）、“尽量别/不要……”（尽量避免）。注意：必须与读第四声（jìnliàng）、意为“达到最大限度/喝足吃饱”的动词词义严加区别。",
+      "formation": "（主语 +）尽量（+ 多 / 少 / 别 +）动词短语",
+      "examples": [
+        {
+          "translation": "尽量多骑自行车，多选择公共交通。"
+        }
+      ]
+    },
+    "zh_逐步_582": {
+      "title": "逐步（副词：一步一步地、按步骤、阶段性地，强调有计划的递进）",
+      "shortExplanation": "副词作状语，表示动作行为或客观事态按照一定的步骤、次序或规划，一步一步、分阶段地向前推进；相当于“一步步”、“分阶段地”。",
+      "longExplanation": "“逐步”（zhúbù）在句中充当状语，修饰动词短语。它着重表现事物的发展不是一蹴而就的，而是具备清晰的规划、科学的步骤和明显的阶段性，伴随着人为的努力与调控不断递进（如“逐步推进改革”、“逐步改善民生”、“逐步向可再生能源转变”）。与偏重时间自然流逝、强调无形渐变的“逐渐”相比，“逐步”往往强调按计划行事的人为主观性与阶段性步调。",
+      "formation": "（主语 +）逐步 + 动词短语 / 变化阶段",
+      "examples": [
+        {
+          "translation": "调整能源消费结构，逐步向可再生能源转变。"
+        }
+      ]
+    },
+    "zh_照常_583": {
+      "title": "照常（副词 / 谓语：跟平常一样、依循常态，强调不受特殊情况干扰）",
+      "shortExplanation": "作状语或谓语，表示情况不受外界变故、困难或异常事件的干扰，依然按照平时的惯例、规矩照样进行；相当于“如常”、“依旧”。",
+      "longExplanation": "“照常”（zhàocháng）由“照”（照样、依循）与“常”（平常、常态）组合而成。既可在动词前作状语（如“照常上班”、“照常营业”、“照常发车”），也可充当句子谓语（最著名的表达为“一切照常”）。它的语用色彩十分突出，往往出现在转折复句中，前半句交代突发变故、危险逼近或严峻考验（如战争、暴雪、突发事件），后半句用“照常”强调社会运转、日常生活或工作秩序的泰然自若与波澜不惊。",
+      "formation": "（虽然……，但）主语 +（一切 +）照常（或：照常 + 动词短语）",
+      "examples": [
+        {
+          "translation": "虽然战争临近，但这里的日常生活，一切照常。"
+        }
+      ]
+    }
+  }
+}
