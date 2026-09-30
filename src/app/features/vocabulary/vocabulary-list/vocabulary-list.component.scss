@@ -168,7 +168,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-sm);
+    gap: 8px;
     padding: 7px 10px;
     border-radius: var(--border-radius-md);
     background: transparent;
@@ -198,7 +198,7 @@
             border-color: var(--border-color);
 
             .delete-btn {
-                opacity: 1;
+                opacity: 0.9;
             }
         }
     }
@@ -274,16 +274,17 @@
     &__actions {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: 3px;
         flex-shrink: 0;
     }
 }
 
-// Stable, fixed-width level badge button (prevents layout shift on status change)
+// Stable, compact level badge button (uniform 24px height with action buttons)
 .level-badge-btn {
-    min-width: 72px;
-    height: 26px;
-    padding: 2px 8px;
+    min-width: 52px;
+    height: 24px;
+    box-sizing: border-box;
+    padding: 0 6px;
     font-size: 0.6875rem;
     font-weight: 600;
     border-radius: var(--border-radius-pill);
@@ -292,7 +293,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 3px;
     white-space: nowrap;
     text-transform: capitalize;
     letter-spacing: 0.01em;
@@ -323,15 +324,15 @@
     }
 }
 
-// Unified action buttons: Audio & Delete
+// Unified action buttons: Audio & Delete (Strictly uniform 24px height/width, always visible)
 .audio-btn--sm,
 .delete-btn {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
     border-radius: var(--border-radius-round);
     background: var(--bg-surface);
-    color: var(--text-secondary);
+    color: var(--text-muted);
     border: none;
     cursor: pointer;
     display: inline-flex;
@@ -339,14 +340,14 @@
     justify-content: center;
     padding: 0;
     flex-shrink: 0;
-    opacity: 1;
+    opacity: 0.75;
     position: relative;
     transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
 
     &::after {
         content: '';
         position: absolute;
-        inset: -8px; /* Expands 28px to 44px minimum touch target */
+        inset: -6px; /* Expands to touch target */
     }
 
     &:active {
@@ -357,12 +358,14 @@
 .audio-btn--sm {
     @media (hover: hover) {
         &:hover:not(.playing) {
+            opacity: 1;
             background: var(--accent-primary-soft);
             color: var(--accent-primary);
         }
     }
 
     &.playing {
+        opacity: 1;
         background: var(--accent-primary) !important;
         color: #ffffff !important;
 
@@ -375,17 +378,10 @@
 
 .delete-btn {
     color: var(--text-muted);
+    opacity: 0.7;
+    pointer-events: auto;
 
     @media (hover: hover) {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
-
-        .vocab-item:hover & {
-            opacity: 0.7;
-            pointer-events: auto;
-        }
-
         &:hover {
             opacity: 1 !important;
             color: var(--error);
@@ -473,7 +469,7 @@
 
             &__actions {
                 padding-top: 2px;
-                gap: 5px;
+                gap: 3px;
             }
         }
     }
@@ -482,15 +478,15 @@
 @media (max-width: 480px) {
     :host(:not(.sidebar-pane)) .vocab-item {
         gap: var(--space-xs);
-        padding: 10px 10px;
+        padding: 8px 10px;
 
         &__actions {
-            gap: 4px;
+            gap: 3px;
         }
 
         .level-badge-btn {
-            min-width: 64px;
-            padding: 2px 6px;
+            min-width: 48px;
+            padding: 0 5px;
         }
     }
 }

@@ -204,7 +204,7 @@
                             (click)="openLevelPicker(item, $event)"
                             [title]="(i18n.t('vocab.' + item.level) || item.level) + ' • ' + (i18n.t('vocab.changeLevel') || 'Change level')">
                         <span class="level-badge-btn__text">{{ i18n.t('vocab.' + item.level) }}</span>
-                        <app-icon name="chevron-down" [size]="10" class="level-badge-chevron" />
+                        <app-icon name="chevron-down" [size]="9" class="level-badge-chevron" />
                     </button>
 
                     <!-- Authentic Audio Pronunciation Button -->
@@ -213,16 +213,16 @@
                             [class.playing]="audio.currentPlayingWord() === item.word"
                             (click)="playAudio(item, $event)" 
                             [title]="i18n.t('study.listen') || 'Listen'">
-                        <app-icon [name]="audio.currentPlayingWord() === item.word ? 'volume-2' : 'volume-1'" [size]="14" />
+                        <app-icon [name]="audio.currentPlayingWord() === item.word ? 'volume-2' : 'volume-1'" [size]="12" />
                     </button>
 
-                    <!-- Direct Delete Button with smooth exit transition -->
+                    <!-- Direct Delete Button with smooth exit transition (always visible) -->
                     <button type="button" 
                             class="action-btn action-btn--surface action-btn--delete delete-btn" 
                             (click)="deleteWordDirect(item, $event)" 
                             [attr.aria-label]="i18n.t('vocab.deleteWord') || 'Delete word'" 
                             [title]="i18n.t('vocab.deleteWord') || 'Delete word'">
-                        <app-icon name="trash-2" [size]="14" />
+                        <app-icon name="trash-2" [size]="12" />
                     </button>
                 </div>
             </div>
