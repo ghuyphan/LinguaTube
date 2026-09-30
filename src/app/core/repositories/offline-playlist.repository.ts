@@ -22,6 +22,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     readonly playlists = signal<Playlist[]>([]);
     readonly isLoading = signal(false);
     private isSyncing = false;
+    private syncPending = false;
 
     constructor() {
         this.loadFromStorage();
@@ -215,7 +216,11 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     }
 
     private async syncWithRemote(): Promise<void> {
-        if (!this.auth.isLoggedIn() || this.isSyncing) return;
+        if (!this.auth.isLoggedIn()) return;
+        if (this.isSyncing) {
+            this.syncPending = true;
+            return;
+        }
 
         this.isSyncing = true;
         this.isLoading.set(true);
@@ -301,6 +306,10 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         } finally {
             this.isSyncing = false;
             this.isLoading.set(false);
+            if (this.syncPending) {
+                this.syncPending = false;
+                void this.syncWithRemote();
+            }
         }
     }
 

@@ -13,8 +13,8 @@ import {
 import { CommonModule } from '@angular/common';
 import { YoutubeService } from '../../../youtube.service';
 import { BUFFERED_TRACKING_INTERVAL } from '../../video-player.constants';
-import { formatTime } from '../../../../../core/utils';
 import { I18nService } from '../../../../../core/services';
+import { FormatTimePipe } from '../../../../../shared/pipes';
 
 /**
  * Seek preview state for the tooltip
@@ -37,7 +37,7 @@ export interface SeekPreview {
 @Component({
     selector: 'app-progress-bar',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, FormatTimePipe],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
     <div class="progress-container" 
@@ -45,7 +45,7 @@ export interface SeekPreview {
          [attr.aria-valuenow]="displayTime()"
          [attr.aria-valuemin]="0"
          [attr.aria-valuemax]="youtube.duration()"
-         [attr.aria-valuetext]="formatTime(displayTime()) + ' of ' + formatTime(youtube.duration())"
+         [attr.aria-valuetext]="(displayTime() | formatTime) + ' of ' + (youtube.duration() | formatTime)"
          [attr.aria-label]="i18n.t('player.progress') || 'Video progress'"
          tabindex="0"
          (keydown)="onKeyDown($event)"
@@ -73,7 +73,7 @@ export interface SeekPreview {
       <!-- Seek preview tooltip -->
       @if (seekPreview().visible) {
         <div class="seek-tooltip" aria-hidden="true">
-          {{ formatTime(seekPreview().time) }}
+          {{ seekPreview().time | formatTime }}
         </div>
       }
     </div>
@@ -268,13 +268,6 @@ export class ProgressBarComponent implements OnDestroy {
             clearInterval(this.bufferedInterval);
             this.bufferedInterval = null;
         }
-    }
-
-    /**
-     * Format time in M:SS or H:MM:SS
-     */
-    formatTime(seconds: number): string {
-        return formatTime(seconds);
     }
 
     // ========================================

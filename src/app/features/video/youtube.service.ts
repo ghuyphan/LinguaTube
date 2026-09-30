@@ -208,6 +208,8 @@ export class YoutubeService {
     }
   }
 
+  private apiCheckInterval: ReturnType<typeof setInterval> | null = null;
+
   private loadYouTubeAPI(): void {
     if (window.YT && window.YT.Player) {
       this.apiReady.set(true);
@@ -218,14 +220,21 @@ export class YoutubeService {
     if (document.querySelector('script[src*="youtube.com/iframe_api"]')) {
       let attempts = 0;
       const maxAttempts = 100;
-      const checkReady = setInterval(() => {
+      if (this.apiCheckInterval) clearInterval(this.apiCheckInterval);
+      this.apiCheckInterval = setInterval(() => {
         attempts++;
         if (window.YT && window.YT.Player) {
-          clearInterval(checkReady);
+          if (this.apiCheckInterval) {
+            clearInterval(this.apiCheckInterval);
+            this.apiCheckInterval = null;
+          }
           this.apiReady.set(true);
           this.resolveApiReady();
         } else if (attempts >= maxAttempts) {
-          clearInterval(checkReady);
+          if (this.apiCheckInterval) {
+            clearInterval(this.apiCheckInterval);
+            this.apiCheckInterval = null;
+          }
           console.warn('YouTube API failed to load after', maxAttempts * 100, 'ms');
         }
       }, 100);
@@ -754,6 +763,10 @@ export class YoutubeService {
     if (this.bgTimer) {
       clearTimeout(this.bgTimer);
       this.bgTimer = null;
+    }
+    if (this.apiCheckInterval) {
+      clearInterval(this.apiCheckInterval);
+      this.apiCheckInterval = null;
     }
 
     const playerToDestroy = this.player;

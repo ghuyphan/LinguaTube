@@ -21,7 +21,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { GrammarPopupComponent } from '../../dictionary/grammar-popup/grammar-popup.component';
 import { WordPopupComponent } from '../../dictionary/word-popup/word-popup.component';
-import { formatTime, getVolumeIcon } from '../../../core/utils';
+import { formatTime } from '../../../core/utils';
 
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
@@ -1045,10 +1045,6 @@ export class VideoPlayerComponent implements OnDestroy {
     this.showVolumeFeedback({ isMuted: !wasMuted });
   }
 
-  getVolumeIcon(): 'volume-2' | 'volume-1' | 'volume-x' {
-    return getVolumeIcon(this.volume(), this.youtube.isMuted());
-  }
-
   showVolumeSlider() {
     if (this.volumeSliderTimeout) clearTimeout(this.volumeSliderTimeout);
     this.isVolumeSliderVisible.set(true);
@@ -1440,17 +1436,6 @@ export class VideoPlayerComponent implements OnDestroy {
     const currentIndex = this.fontSizes.indexOf(current);
     const nextIndex = (currentIndex + 1) % this.fontSizes.length;
     this.settings.setFontSize(this.fontSizes[nextIndex]);
-  }
-
-  getFontSizeLabel(): string {
-    const size = this.settings.settings().fontSize;
-    switch (size) {
-      case 'small': return 'S';
-      case 'medium': return 'M';
-      case 'large': return 'L';
-      case 'xlarge': return 'XL';
-      default: return 'M';
-    }
   }
 
   onSubtitlePositionCommitted(percent: number): void {

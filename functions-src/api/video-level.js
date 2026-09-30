@@ -9,6 +9,7 @@
 import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage, errorResponse } from '../utils/utils.js';
 import { saveVideoLevel } from '../data/video-info-db.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
+import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_level' };
 const VALID_LEVEL_REGEX = /^(JLPT\s*N[1-5]|HSK\s*[1-6]|TOPIK\s*([1-6]|I{1,2})|CEFR\s*[A-C][1-2]|Beginner|Elementary|Intermediate|Upper[\s_-]?Intermediate|Advanced)$/i;
@@ -25,6 +26,12 @@ export async function onRequestPost(context) {
     const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
     if (!rateLimit.allowed) {
         return rateLimitResponse(rateLimit.resetAt);
+    }
+
+    // Require authentication to submit video levels to prevent community catalog pollution
+    const authResult = await validateAuthToken(request, env);
+    if (!authResult.valid) {
+        return unauthorizedResponse(authResult.error || 'Authentication required to submit video level');
     }
 
     try {

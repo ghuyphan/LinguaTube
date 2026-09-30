@@ -224,7 +224,7 @@
             </span>
             <span class="session-timer">
                 <app-icon name="clock" [size]="14" />
-                {{ formatTime(elapsedSeconds()) }}
+                {{ elapsedSeconds() | formatTime }}
             </span>
             <button class="btn btn-ghost btn-sm session-exit-btn card-action-interactive" (click)="endSession()" [title]="i18n.t('study.end')">
                 <app-icon name="x" [size]="16" />
@@ -471,7 +471,7 @@
 
         <div class="session-time">
             <app-icon name="clock" [size]="16" />
-            <span>{{ i18n.t('study.sessionTime') }}: {{ formatTime(elapsedSeconds()) }}</span>
+            <span>{{ i18n.t('study.sessionTime') }}: {{ elapsedSeconds() | formatTime }}</span>
         </div>
 
         @if (cardsCompletedToday() >= dailyGoal()) {

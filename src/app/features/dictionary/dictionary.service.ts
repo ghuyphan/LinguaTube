@@ -5,6 +5,7 @@ import { Observable, of, catchError, map, throwError } from 'rxjs';
 import { I18nService, SettingsService, UILanguage, GamificationService } from '../../core/services';
 import { environment } from '../../../environments/environment';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
+import { detectLanguage } from '../../shared/utils/language.utils';
 
 interface UnifiedDictEntry {
   word?: string;
@@ -15,6 +16,7 @@ interface UnifiedDictEntry {
   meanings?: DictionaryMeaning[];
   partOfSpeech?: string;
   level?: number;
+  examples?: string[];
 }
 
 interface UnifiedDictResponse {
@@ -121,9 +123,7 @@ export class DictionaryService {
     const meanings: DictionaryMeaning[] = [];
 
     // Deduplicate top-level examples if provided
-    const topLevelExamples = Array.isArray((entry as unknown as { examples?: string[] }).examples)
-      ? (entry as unknown as { examples?: string[] }).examples!
-      : [];
+    const topLevelExamples = Array.isArray(entry.examples) ? entry.examples : [];
 
     const seenTopExamples = new Set<string>();
     const cleanedTopExamples = topLevelExamples
@@ -236,7 +236,7 @@ export class DictionaryService {
    * Pure query: DOES NOT mutate global screen state!
    */
   lookup(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry | null> {
-    const fromLang = language || this.detectLanguage(word);
+    const fromLang = language || detectLanguage(word, this.settings.settings().language);
     const toLang = this.i18n.currentLanguage();
 
     return this.lookupUnified(word, fromLang, toLang);
@@ -248,7 +248,7 @@ export class DictionaryService {
    * Pure query: DOES NOT mutate global screen state!
    */
   lookupEntries(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry[]> {
-    const fromLang = language || this.detectLanguage(word);
+    const fromLang = language || detectLanguage(word, this.settings.settings().language);
     const toLang = this.i18n.currentLanguage();
 
     if (word && word.trim().length > 0) {
@@ -339,29 +339,6 @@ export class DictionaryService {
 
 
 
-  /**
-   * Simple language detection based on character types
-   */
-  private detectLanguage(text: string): 'ja' | 'zh' | 'ko' | 'en' {
-    // Check for Korean (Hangul)
-    if (/[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/.test(text)) {
-      return 'ko';
-    }
-    // Check for Japanese-specific characters (Hiragana/Katakana)
-    if (/[\u3040-\u309F\u30A0-\u30FF]/.test(text)) {
-      return 'ja';
-    }
-    // Check for CJK ideographs (Chinese / Japanese Kanji)
-    if (/[\u4E00-\u9FFF]/.test(text)) {
-      const activeLang = this.settings.settings().language;
-      if (activeLang === 'ja' || activeLang === 'zh') {
-        return activeLang;
-      }
-      return 'zh';
-    }
-    // Default to English for Latin characters
-    return 'en';
-  }
 
   /**
    * Local Japanese dictionary fallback

@@ -267,7 +267,7 @@ import { GamificationService } from '../../../core/services/gamification.service
       gap: 3px;
       font-size: 0.6875rem;
       font-weight: 600;
-      color: var(--color-success, #10b981);
+      color: var(--success, #10b981);
     }
 
     .mission-reward-label {

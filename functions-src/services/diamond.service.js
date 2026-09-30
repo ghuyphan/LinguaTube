@@ -301,8 +301,7 @@ export class DiamondService {
             const rpcResult = await this._consumeUserDiamondsRpc(
                 env,
                 user.id,
-                numericCost,
-                new Date(lastRegenTime).toISOString()
+                numericCost
             );
 
             if (rpcResult) {
@@ -389,8 +388,7 @@ export class DiamondService {
                 const rpcResult = await this._refundUserDiamondsRpc(
                     env,
                     user.id,
-                    amount,
-                    currentData.maxDiamonds
+                    amount
                 );
 
                 if (rpcResult && rpcResult.success) {
@@ -437,7 +435,7 @@ export class DiamondService {
         }
     }
 
-    async _consumeUserDiamondsRpc(env, userId, cost, lastRegenIsoString) {
+    async _consumeUserDiamondsRpc(env, userId, cost) {
         const supabaseUrl = env?.SUPABASE_URL || DEFAULT_SUPABASE_URL;
         const serviceRoleKey = env?.SUPABASE_SERVICE_ROLE_KEY;
         if (!serviceRoleKey) return null;
@@ -451,9 +449,8 @@ export class DiamondService {
                     'Authorization': `Bearer ${serviceRoleKey}`
                 },
                 body: JSON.stringify({
-                    p_user_id: userId,
-                    p_cost: cost,
-                    p_last_regen: lastRegenIsoString
+                    target_user_id: userId,
+                    diamond_count: cost
                 }),
                 signal: AbortSignal.timeout(4000)
             });
@@ -466,7 +463,7 @@ export class DiamondService {
         return null;
     }
 
-    async _refundUserDiamondsRpc(env, userId, amount, maxDiamonds) {
+    async _refundUserDiamondsRpc(env, userId, amount) {
         const supabaseUrl = env?.SUPABASE_URL || DEFAULT_SUPABASE_URL;
         const serviceRoleKey = env?.SUPABASE_SERVICE_ROLE_KEY;
         if (!serviceRoleKey) return null;
@@ -480,9 +477,8 @@ export class DiamondService {
                     'Authorization': `Bearer ${serviceRoleKey}`
                 },
                 body: JSON.stringify({
-                    p_user_id: userId,
-                    p_amount: amount,
-                    p_max_diamonds: maxDiamonds
+                    target_user_id: userId,
+                    diamond_count: amount
                 }),
                 signal: AbortSignal.timeout(4000)
             });

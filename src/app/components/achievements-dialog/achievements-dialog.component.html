@@ -386,7 +386,7 @@
 
                         <div class="podium-hero-info">
                             <div class="podium-name-row">
-                                @if (getCountryFlag(silver.country); as flagUrl) {
+                                @if (silver.country | countryFlag; as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
                                 <span
@@ -460,7 +460,7 @@
 
                         <div class="podium-hero-info">
                             <div class="podium-name-row">
-                                @if (getCountryFlag(gold.country); as flagUrl) {
+                                @if (gold.country | countryFlag; as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
                                 <span
@@ -534,7 +534,7 @@
 
                         <div class="podium-hero-info">
                             <div class="podium-name-row">
-                                @if (getCountryFlag(bronze.country); as flagUrl) {
+                                @if (bronze.country | countryFlag; as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
                                 <span
@@ -622,7 +622,7 @@
 
                         <div class="champion-info">
                             <div class="champion-name-row">
-                                @if (getCountryFlag(me.learner.country); as flagUrl) {
+                                @if (me.learner.country | countryFlag; as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
                                 <span class="champion-name champion-name--you">{{ i18n.t('leaderboard.you') || 'You' }}</span>
@@ -668,7 +668,7 @@
                         </div>
                         <div class="learner-info">
                             <div class="learner-name-line">
-                                @if (getCountryFlag(learner.country); as flagUrl) {
+                                @if (learner.country | countryFlag; as flagUrl) {
                                     <img [src]="flagUrl" class="circle-flag circle-flag--xs" alt="" />
                                 }
                                 <span class="learner-name" [class.learner-name--you]="learner.userId === leaderboard.getCurrentUserId()">

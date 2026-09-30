@@ -239,15 +239,17 @@ export class TranscriptService {
             throw new Error(`VIDEO_TOO_LONG: Video (${Math.round(duration / 60)} min) exceeds the ${Math.round(maxDurationSec / 60)} minute limit for ${tier.toUpperCase()} tier.`);
         }
 
+        const normalizedLang = normalizeLanguageCode(lang);
+
         // 2. Check if an AI transcript already exists in R2 for this language (avoid duplicate diamond charges)
-        const existingR2 = await getTranscriptFromR2(r2, videoId, lang);
+        const existingR2 = await getTranscriptFromR2(r2, videoId, normalizedLang);
         if (existingR2?.segments?.length > 0 && existingR2.source === 'ai') {
             return {
                 status: 'done',
                 videoInfo: {
                     videoId,
-                    language: lang,
-                    requestedLanguage: lang,
+                    language: normalizedLang,
+                    requestedLanguage: normalizedLang,
                     segments: existingR2.segments,
                     source: 'ai',
                     sourceDetail: existingR2.source,
@@ -271,13 +273,13 @@ export class TranscriptService {
         // 4. Check for active job in D1 (unless forceRefresh is explicitly requested)
         if (params.forceRefresh) {
             // User requested a fresh generation/retry: clear any stale/zombie active job from D1
-            const existing = await getActiveAiJob(db, videoId, lang);
+            const existing = await getActiveAiJob(db, videoId, normalizedLang);
             if (existing) {
-                console.warn(`[startAIJob] forceRefresh requested for ${videoId}:${lang}. Superseding existing active job ${existing.id}`);
+                console.warn(`[startAIJob] forceRefresh requested for ${videoId}:${normalizedLang}. Superseding existing active job ${existing.id}`);
                 await deleteAiJob(db, existing.id);
             }
         } else {
-            const activeJob = await getActiveAiJob(db, videoId, lang, this.diamondService, env, context);
+            const activeJob = await getActiveAiJob(db, videoId, normalizedLang, this.diamondService, env, context);
             if (activeJob) {
                 return {
                     status: 'processing',
@@ -293,7 +295,7 @@ export class TranscriptService {
         // Reserve job slot in D1. If another request just reserved it, isNew will be false.
         const reservation = await reserveAiJob(db, {
             videoId,
-            language: lang,
+            language: normalizedLang,
             userId: user?.id || null,
             clientId,
             userTier: tier,
@@ -316,8 +318,8 @@ export class TranscriptService {
         // 6. Consume diamond(s) with correct parameter order: (clientId, cost, user, env, context)
         const consumeResult = await this.diamondService.consumeDiamond(clientId, requiredDiamonds, user, env, context);
         if (!consumeResult.success) {
-            // Cancel the reservation row so user can retry later
-            await deleteAiJob(db, jobId);
+            // Mark the reservation row as failed so concurrent waiters are notified cleanly
+            await atomicFailAndRefundAiJob(db, jobId, null, consumeResult.reason || 'insufficient_diamonds');
             if (consumeResult.reason === 'insufficient_diamonds') {
                 throw new Error(`INSUFFICIENT_DIAMONDS: Requires ${consumeResult.requiredDiamonds} AI diamonds (you have ${consumeResult.diamonds}).`);
             }
@@ -341,8 +343,8 @@ export class TranscriptService {
         try {
             gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl);
         } catch (gladiaError) {
-            // Delete reservation row and refund consumed diamond on submission failure
-            await deleteAiJob(db, jobId);
+            // Mark job failed and refund consumed diamond on submission failure
+            await atomicFailAndRefundAiJob(db, jobId, null, gladiaError.message || 'gladia_submission_failed');
             await this.diamondService.refundDiamond(clientId, context, env, user, requiredDiamonds);
             throw gladiaError;
         }

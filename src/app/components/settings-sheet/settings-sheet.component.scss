@@ -290,7 +290,7 @@
 
     @media (hover: hover) {
         &:hover:not(:disabled) {
-            background: var(--bg-surface-hover, rgba(255, 255, 255, 0.08));
+            background: var(--bg-hover);
             color: var(--text-primary);
             border-color: var(--text-muted);
         }
@@ -574,7 +574,7 @@ div.settings-item-row {
 .settings-update-btn {
     padding: 0.35rem 0.75rem;
     background: var(--accent-primary);
-    color: var(--text-on-accent, #fff);
+    color: var(--text-inverse, #fff);
     border: none;
     border-radius: var(--border-radius-sm);
     font-size: 0.8125rem;
@@ -923,7 +923,7 @@ div.settings-item-row {
     @media (hover: hover) {
         &:hover {
             border-color: var(--accent-primary);
-            background: var(--bg-surface-hover, rgba(255, 255, 255, 0.05));
+            background: var(--bg-hover);
         }
     }
 }

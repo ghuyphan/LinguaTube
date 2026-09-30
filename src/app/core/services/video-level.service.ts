@@ -745,12 +745,12 @@ export class VideoLevelService {
                     method,
                     user_id: user.id
                 });
+
+                // Sync to edge endpoint (Cloudflare D1 / local dev server) when authenticated
+                void this.http.post('/api/video-level', payload)
+                    .toPromise()
+                    .catch(() => {});
             }
         } catch { }
-
-        // Always sync to edge endpoint (Cloudflare D1 / local dev server)
-        void this.http.post('/api/video-level', payload)
-            .toPromise()
-            .catch(() => {});
     }
 }

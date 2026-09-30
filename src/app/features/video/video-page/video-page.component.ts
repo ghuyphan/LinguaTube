@@ -23,11 +23,11 @@ import { InfiniteScrollDirective } from '../../../shared/directives';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo, getLanguageFlagUrl } from '../../../models';
+import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
 import { LearningLanguageService } from '../../../services/learning-language.service';
-import { formatTime } from '../../../core/utils';
 import { normalizeLanguageCode } from '../../../shared/utils/language.utils';
+import { FormatTimePipe, LanguageFlagPipe } from '../../../shared/pipes';
 
 export type FeedItem =
   | { kind: 'video'; video: RecommendedVideo }
@@ -51,7 +51,9 @@ export type FeedItem =
     IconComponent,
     AddToPlaylistDialogComponent,
     EmptyStateComponent,
-    InfiniteScrollDirective
+    InfiniteScrollDirective,
+    FormatTimePipe,
+    LanguageFlagPipe
   ],
   templateUrl: './video-page.component.html',
   styleUrls: ['./video-page.component.scss']
@@ -96,7 +98,6 @@ export class VideoPageComponent implements OnInit {
   readonly isVideosError = this.videoRecommendation.hasError;
   readonly isLoadingMore = this.videoRecommendation.isLoadingMore;
   readonly hasMoreVideos = this.videoRecommendation.hasMore;
-  formatVideoTime = formatTime;
 
   // Feed refresh state
   readonly isRefreshing = signal<boolean>(false);
@@ -332,8 +333,6 @@ export class VideoPageComponent implements OnInit {
     // Videos tab: show skeleton whenever fetching videos from server or switching uncached levels
     return this.isVideosLoading() || this.isLevelSwitching();
   });
-
-  readonly getFlagUrl = getLanguageFlagUrl;
 
   aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
   isVideoTooLongForAI = computed(() => this.youtube.duration() > 20 * 60);

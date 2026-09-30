@@ -1072,7 +1072,7 @@
                 }
 
                 &.popover-footer-action--danger:hover {
-                    color: var(--color-danger, #ef4444);
+                    color: var(--error, #ef4444);
                     background: rgba(239, 68, 68, 0.1);
                 }
             }

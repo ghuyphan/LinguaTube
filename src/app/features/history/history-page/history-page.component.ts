@@ -10,8 +10,9 @@ import { SearchInputComponent } from '../../../shared/components/search-input/se
 import { HistoryListComponent } from '../history-list/history-list.component';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, ToastService, VideoLevelService } from '../../../core/services';
-import { HistoryItem, SUPPORTED_LANGUAGES, getLanguageFlagUrl } from '../../../models';
+import { HistoryItem, SUPPORTED_LANGUAGES } from '../../../models';
 import { getYouTubeThumbnail } from '../../../core/utils';
+import { LanguageFlagPipe } from '../../../shared/pipes';
 
 type FilterType = 'all' | 'favorites';
 
@@ -28,6 +29,7 @@ type FilterType = 'all' | 'favorites';
     HistoryListComponent,
     EmptyStateComponent,
     SearchInputComponent,
+    LanguageFlagPipe,
   ],
   templateUrl: './history-page.component.html',
   styleUrls: ['./history-page.component.scss'],
@@ -44,7 +46,6 @@ export class HistoryPageComponent implements OnInit {
   filter = signal<FilterType>('all');
   selectedLanguage = signal<string>('all');
   selectedLevel = signal<string>('all');
-  readonly getFlagUrl = getLanguageFlagUrl;
   searchQuery = signal<string>('');
   showLanguageFilter = signal(false);
   showLevelFilter = signal(false);

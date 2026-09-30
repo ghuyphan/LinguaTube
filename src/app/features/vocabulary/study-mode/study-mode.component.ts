@@ -10,8 +10,9 @@ import { VocabularyService } from '../vocabulary.service';
 import { SettingsService, I18nService, AudioService, ToastService, KeyboardShortcutService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
-import { calculateSRSPreview, formatTime, SRSIntervalPreview } from '../../../core/utils';
+import { calculateSRSPreview, SRSIntervalPreview } from '../../../core/utils';
 import { getReadingDisplayLabel } from '../../../shared/utils/language.utils';
+import { FormatTimePipe } from '../../../shared/pipes';
 
 const STUDY_AUTOPLAY_KEY = 'linguatube_study_autoplay';
 const STUDY_CLOZE_KEY = 'linguatube_study_cloze';
@@ -24,7 +25,7 @@ function escapeRegex(str: string): string {
     selector: 'app-study-mode',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, FormsModule, RouterLink, IconComponent, SwitchComponent, EmptyStateComponent],
+    imports: [CommonModule, FormsModule, RouterLink, IconComponent, SwitchComponent, EmptyStateComponent, FormatTimePipe],
     templateUrl: './study-mode.component.html',
     styleUrls: ['./study-mode.component.scss']
 })
@@ -523,8 +524,6 @@ export class StudyModeComponent implements OnDestroy {
             this.timerInterval = null;
         }
     }
-
-    readonly formatTime = formatTime;
 
     private triggerConfetti(): void {
         this.showConfetti.set(true);

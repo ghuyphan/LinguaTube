@@ -254,7 +254,7 @@ lingua-tube/
 │   │   ├── interceptors/      # HTTP auth, caching & timeout interceptors
 │   │   ├── models/            # TypeScript interfaces & domain types
 │   │   ├── services/          # Cross-cutting services (grammar, translation, streak, etc.)
-│   │   └── shared/            # Shared components (bottom-sheet, icon, command-palette, turnstile)
+│   │   └── shared/            # Shared components (bottom-sheet, icon, etc.), directives & pure pipes (format-time, flags)
 │   └── public/                # Static assets, icons, manifest.webmanifest
 │
 └── tests/                     # Automated test suites

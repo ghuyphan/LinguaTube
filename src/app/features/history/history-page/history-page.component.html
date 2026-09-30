@@ -92,7 +92,7 @@
                 [attr.aria-label]="getLanguageLabel()"
                 [title]="getLanguageLabel()">
                 @if (selectedLanguage() !== 'all') {
-                  <img [src]="getFlagUrl(selectedLanguage())" class="circle-flag circle-flag--sm" alt="" />
+                  <img [src]="selectedLanguage() | langFlag" class="circle-flag circle-flag--sm" alt="" />
                 } @else {
                   <app-icon name="languages" [size]="14" />
                 }

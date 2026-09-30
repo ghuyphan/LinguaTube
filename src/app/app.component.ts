@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, signal, effect, inject, PLATFORM_ID, computed, Injector, OnDestroy, NgZone, untracked } from '@angular/core';
 import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, startWith, Subject, takeUntil } from 'rxjs';
+import { toSignal, takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { filter, map, startWith } from 'rxjs';
 import { IconComponent } from './shared/components/icon/icon.component';
 import { SettingsSheetComponent } from './components/settings-sheet/settings-sheet.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -1199,7 +1199,6 @@ export class AppComponent implements OnDestroy {
     });
   }
 
-  private destroy$ = new Subject<void>();
   private cleanupFns: Array<() => void> = [];
 
   constructor() {
@@ -1228,7 +1227,7 @@ export class AppComponent implements OnDestroy {
     this.router.events
       .pipe(
         filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-        takeUntil(this.destroy$)
+        takeUntilDestroyed()
       )
       .subscribe(e => {
         const newPath = e.urlAfterRedirects.split('?')[0].split('#')[0];
@@ -1241,8 +1240,6 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.cleanupFns.forEach(cleanup => cleanup());
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
 
@@ -1306,7 +1303,7 @@ export class AppComponent implements OnDestroy {
     if (!isPlatformBrowser(this.platformId)) return;
 
     this.keyboardShortcuts.events$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed())
       .subscribe(event => {
         if (event.type === 'open-command-palette') {
           this.showCommandPalette.set(true);

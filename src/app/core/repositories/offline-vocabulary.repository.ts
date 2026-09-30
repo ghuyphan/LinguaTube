@@ -333,10 +333,16 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
         return JSON.stringify(this.vocabulary(), null, 2);
     }
 
+    private syncPending = false;
+
     // ==================== Synchronization Logic ====================
 
     async syncWithRemote(): Promise<void> {
-        if (!this.auth.isLoggedIn() || this.isSyncing()) return;
+        if (!this.auth.isLoggedIn()) return;
+        if (this.isSyncing()) {
+            this.syncPending = true;
+            return;
+        }
 
         this.isSyncing.set(true);
         console.log('[VocabRepo] Starting sync...');
@@ -371,7 +377,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 for (const t of tombstones) {
                     const remote = remoteItems.find(r => r.id === t.id);
                     const remoteTime = remote?.updated ? new Date(remote.updated).getTime() : 0;
-                    if (remote && remoteTime > t.deletedAt) {
+                    if (remote && remoteTime > (t.deletedAt + 60_000)) {
                         // Word was re-added or updated on remote after deletion; tombstone is obsolete
                         continue;
                     }
@@ -452,6 +458,10 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             console.error('[VocabRepo] Sync failed:', error);
         } finally {
             this.isSyncing.set(false);
+            if (this.syncPending) {
+                this.syncPending = false;
+                void this.syncWithRemote();
+            }
         }
     }
 

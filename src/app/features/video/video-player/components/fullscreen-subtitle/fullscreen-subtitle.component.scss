@@ -33,14 +33,14 @@ $transition-fast: 0.15s ease;
     // Controls clearance cushion: desktop standard 6.5rem, compact 5.25rem
     --controls-clearance: calc(6.5rem + max(0.75rem, env(safe-area-inset-bottom, 0px)));
 
-    @media (max-width: 640px), (max-height: 580px) {
-        --controls-clearance: calc(5.25rem + max(0.5rem, env(safe-area-inset-bottom, 0px)));
-    }
-
     // Default: Anchored at bottom edge via translateY(calc(-100% + var(--drag-y, 0px)))
     // When controls hide: rests at var(--sub-y, 96)%, guaranteed >= 1rem from screen bottom
     top: min(calc(var(--sub-y, 96) * 1%), calc(100% - var(--min-bottom-margin)));
     transform: translateY(calc(-100% + var(--drag-y, 0px)));
+
+    @media (max-width: 640px), (max-height: 580px) {
+        --controls-clearance: calc(5.25rem + max(0.5rem, env(safe-area-inset-bottom, 0px)));
+    }
 
     &.controls-visible:not(.is-top) {
         top: min(calc(var(--sub-y, 96) * 1%), calc(100% - var(--controls-clearance)));

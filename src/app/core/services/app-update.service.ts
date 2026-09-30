@@ -1,8 +1,9 @@
-import { Injectable, signal, computed, inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
-import { Subject, fromEvent, interval } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
+import { fromEvent, interval } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ToastService } from './toast.service';
 import { I18nService } from './i18n.service';
 import {
@@ -20,13 +21,13 @@ export interface CheckUpdateOptions {
 @Injectable({
   providedIn: 'root'
 })
-export class AppUpdateService implements OnDestroy {
+export class AppUpdateService {
   private swUpdate = inject(SwUpdate);
   private platformId = inject(PLATFORM_ID);
+  private destroyRef = inject(DestroyRef);
   private toast = inject(ToastService);
   private i18n = inject(I18nService);
   private isBrowser = isPlatformBrowser(this.platformId);
-  private destroy$ = new Subject<void>();
 
   // Current client release metadata
   readonly currentVersion = signal<string>(CURRENT_RELEASE_INFO.version);
@@ -91,11 +92,6 @@ export class AppUpdateService implements OnDestroy {
     this.checkPostUpdateCelebration();
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
   /**
    * Fetch current server version metadata, changelog, and breaking migration flags.
    */
@@ -148,7 +144,7 @@ export class AppUpdateService implements OnDestroy {
     this.swUpdate.versionUpdates
       .pipe(
         filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
-        takeUntil(this.destroy$)
+        takeUntilDestroyed(this.destroyRef)
       )
       .subscribe(async () => {
         console.log('[AppUpdate] New version ready for activation');
@@ -162,7 +158,7 @@ export class AppUpdateService implements OnDestroy {
     this.swUpdate.versionUpdates
       .pipe(
         filter(evt => evt.type === 'VERSION_INSTALLATION_FAILED'),
-        takeUntil(this.destroy$)
+        takeUntilDestroyed(this.destroyRef)
       )
       .subscribe(evt => {
         console.warn('[AppUpdate] Version installation failed:', evt);
@@ -171,7 +167,7 @@ export class AppUpdateService implements OnDestroy {
 
     // 3. Unrecoverable state handler (cache corruption / broken hashes)
     this.swUpdate.unrecoverable
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(evt => {
         console.error('[AppUpdate] Unrecoverable state detected:', evt.reason);
         this.handleUnrecoverableState();
@@ -193,7 +189,7 @@ export class AppUpdateService implements OnDestroy {
     // 2. Visibility change check (user resumes tab after switching away)
     if (typeof document !== 'undefined') {
       fromEvent(document, 'visibilitychange')
-        .pipe(takeUntil(this.destroy$))
+        .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe(() => {
           if (document.visibilityState === 'visible') {
             void this.checkForUpdate({ isManual: false, trigger: 'visibility' });
@@ -203,7 +199,7 @@ export class AppUpdateService implements OnDestroy {
 
     // 3. Periodic hourly check
     interval(this.PERIODIC_CHECK_INTERVAL)
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         void this.checkForUpdate({ isManual: false, trigger: 'interval' });
       });

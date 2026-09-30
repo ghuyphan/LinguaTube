@@ -532,6 +532,18 @@ export class TranscriptService {
   ): Observable<SubtitleCue[]> {
     log('API Response:', response);
 
+    // Guard against out-of-order responses from rapid video switches
+    if (this.currentVideoId && this.currentVideoId !== videoId) {
+      log('Discarding state update for inactive video:', { responseVideoId: videoId, activeVideoId: this.currentVideoId });
+      if (response.success && response.segments && response.segments.length > 0) {
+        const cues = this.convertToSubtitleCues(response.segments);
+        this.transcriptCache.set(`${videoId}:${lang}`, cues);
+        void this.cacheTranscriptCues(videoId, lang, cues);
+        return of(cues);
+      }
+      return of([]);
+    }
+
     // Update available languages
     if (response.availableLanguages) {
       this.availableLanguages.set(response.availableLanguages);

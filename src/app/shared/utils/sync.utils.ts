@@ -76,66 +76,6 @@ export async function processBatch<T, R>(
     return results;
 }
 
-/**
- * Retry with exponential backoff
- */
-export async function withRetry<T>(
-    operation: () => Promise<T>,
-    options: {
-        maxRetries?: number;
-        baseDelayMs?: number;
-        shouldRetry?: (error: unknown) => boolean;
-    } = {}
-): Promise<T> {
-    const {
-        maxRetries = 3,
-        baseDelayMs = 1000,
-        shouldRetry = isNetworkError
-    } = options;
-
-    let lastError: unknown;
-
-    for (let attempt = 0; attempt < maxRetries; attempt++) {
-        try {
-            return await operation();
-        } catch (error) {
-            lastError = error;
-
-            const isLast = attempt === maxRetries - 1;
-            if (isLast || !shouldRetry(error)) {
-                throw error;
-            }
-
-            // Exponential backoff: 1s, 2s, 4s
-            const delay = Math.pow(2, attempt) * baseDelayMs;
-            await sleep(delay);
-        }
-    }
-
-    throw lastError;
-}
-
-/**
- * Check if error is a network error (retryable)
- */
-function isNetworkError(error: unknown): boolean {
-    if (error instanceof Error) {
-        return error.message.includes('fetch') ||
-            error.message.includes('network') ||
-            error.message.includes('Failed to fetch');
-    }
-    if (typeof error === 'object' && error !== null && 'status' in error) {
-        return (error as { status: number }).status === 0;
-    }
-    return false;
-}
-
-/**
- * Sleep utility
- */
-function sleep(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 /**
  * Sanitize values for PocketBase filter strings to prevent injection

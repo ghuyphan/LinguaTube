@@ -73,10 +73,10 @@ export async function activateAiJob(db, jobId, gladiaJobId) {
     try {
         await db.prepare(`
             UPDATE ai_transcription_jobs
-            SET status = 'processing',
-                gladia_job_id = ?,
+            SET status = CASE WHEN status = 'queued' THEN 'processing' ELSE status END,
+                gladia_job_id = COALESCE(gladia_job_id, ?),
                 updated_at = strftime('%s', 'now')
-            WHERE id = ?
+            WHERE id = ? AND status NOT IN ('completed', 'failed')
         `).bind(gladiaJobId, jobId).run();
     } catch (err) {
         console.error('[D1] activateAiJob error:', err.message);

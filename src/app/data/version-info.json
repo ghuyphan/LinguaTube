@@ -1,35 +1,35 @@
 {
-  "version": "1.2.3",
+  "version": "1.2.4",
   "minSupportedVersion": "1.0.0",
-  "buildDate": "2026-09-19",
+  "buildDate": "2026-09-30",
   "forceUpdate": false,
   "maintenance": false,
   "maintenanceMessage": "",
   "highlights": {
     "en": [
-      "Restored Desktop Miniplayer: Enjoy seamless picture-in-picture playback with clean titles, instant expand on click, and easy hover controls.",
-      "Refreshed Visual Design: A cleaner, more comfortable reading experience across Light and Dark themes with crisp contrast and polished porcelain tones.",
-      "Streamlined Mobile Experience: Cleaner video playback with quick playlist controls tucked into the drawer sheet and smooth micro-animations."
+      "Buttery-Smooth Playback: Video controls and transcript scrolling are now noticeably faster, lighter on your device battery, and stay at a steady 60 frames per second.",
+      "Rock-Solid Cloud Sync: Study anywhere with complete peace of mind. Your saved vocabulary, flashcard progress, and watch history now synchronize flawlessly when switching between offline and online.",
+      "Rock-Steady Screens: Opening settings, level dialogs, or achievement sheets is now completely seamless without any page jumping or layout flickering."
     ],
     "vi": [
-      "Hoàn Thiện Trình Thu Nhỏ Desktop: Trải nghiệm xem video dạng cửa sổ nổi mượt mà, hiển thị tiêu đề gọn gàng cùng các nút điều khiển tiện lợi khi rê chuột.",
-      "Giao Diện Mới Tinh Tế: Trải nghiệm học tập dễ chịu hơn ở cả chế độ Sáng và Tối với độ tương phản sắc nét, màu sắc trang nhã và dễ đọc phụ đề.",
-      "Tối Ưu Thao Tác Di Động: Màn hình xem video gọn gàng hơn, các nút danh sách phát được gom gọn gàng vào ngăn kéo cùng hiệu ứng chuyển động mượt mà."
+      "Phát Video Cực Kỳ Mượt Mà: Trình điều khiển video và thanh cuộn phụ đề giờ đây mượt mà hơn hẳn, tiết kiệm pin cho thiết bị và luôn giữ tốc độ ổn định.",
+      "Đồng Bộ Đám Mây Đáng Tin Cậy: Học mọi lúc mọi nơi mà không lo mất bài học. Từ vựng đã lưu, tiến độ thẻ ghi nhớ và lịch sử xem giờ đây đồng bộ hoàn hảo giữa trạng thái ngoại tuyến và trực tuyến.",
+      "Giao Diện Ổn Định Tuyệt Đối: Việc mở cài đặt, thông tin cấp độ hay bảng thành tích giờ đây diễn ra êm ái, hoàn toàn không còn hiện tượng giật cục hay xê dịch màn hình."
     ],
     "ja": [
-      "デスクトップ版ミニプレーヤーの刷新: タイトルがすっきり収まり、ホバー操作やクリックでの全画面復帰がスムーズなピクチャー・イン・ピクチャーを実現。",
-      "洗練されたデザインと配色: ライト・ダーク両モードのコントラストを最適化し、長時間の動画学習でも目が疲れにくい落ち着いた配色に。",
-      "モバイル操作性の向上: 再生画面をより見やすく整理し、プレイリスト操作をドロワーに集約して滑らかなアニメーションを追加。"
+      "驚くほど滑らかな動画再生: コントロール操作や字幕スクロールのレスポンスがさらに軽快になり、端末のバッテリー消費を抑えながら快適に学習できます。",
+      "安心のクラウド同期: 保存した単語帳やフラッシュカードの学習進捗、視聴履歴がオフライン時でも確実に保存され、オンライン復帰時に完璧に同期されます。",
+      "画面のブレを解消: 設定やレベル詳細、実績ダイアログを開く際の一瞬のがたつきを解消し、より自然で落ち着いた操作感に整えました。"
     ],
     "ko": [
-      "데스크톱 미니플레이어 개선: 깔끔한 제목 표시와 호버 컨트롤, 클릭 한 번으로 간편하게 복원되는 쾌적한 PIP 모드를 제공합니다.",
-      "깔끔하고 세련된 테마 디자인: 라이트 및 다크 모드의 대비를 정밀하게 다듬어 자막 가독성을 높이고 눈의 피로를 덜어줍니다.",
-      "모바일 플레이어 편의성 향상: 영상 화면을 한층 여유롭게 정리하고, 플레이리스트 조작을 서랍 메뉴로 모아 부드러운 애니메이션을 적용했습니다."
+      "한층 더 부드러워진 재생 환경: 동영상 컨트롤과 자막 스크롤이 훨씬 빠르고 가벼워져, 배터리 부담 없이 안정적이고 쾌적하게 학습할 수 있습니다.",
+      "안정적인 클라우드 동기화: 저장한 단어장, 플래시카드 복습 기록, 시청 기록이 오프라인 상태에서도 완벽하게 보존되어 언제 어디서든 끊김 없이 학습할 수 있습니다.",
+      "화면 떨림 없는 깔끔한 팝업: 설정이나 난이도 정보, 업적 창을 열 때 발생하던 화면 흔들림을 개선하여 훨씬 편안하고 안정적인 사용감을 선사합니다."
     ],
     "zh": [
-      "桌面画中画迷你播放器优化: 标题显示整洁美观，支持悬停便捷控制与点击快速返回，画中画体验更加流畅自然。",
-      "全新精炼视觉配色: 优化明暗双色模式下的对比度与背景质感，让字幕阅读更清晰舒适、不易疲劳。",
-      "移动端播放体验精简: 精简视频界面布局，将播放列表快捷功能整合至底部抽屉中，并加入细腻顺畅的动效交互。"
+      "丝滑流畅的视频播放: 优化了播放控制与字幕滚动的响应速度，大幅降低设备功耗，带来更加轻快流畅的学习体验。",
+      "可靠稳定的云端同步: 无论离线还是在线都能安心学习，生词本、卡片复习进度与播放历史在网络恢复后均能准确无误地同步。",
+      "更加沉稳的弹窗体验: 打开设置、难度详情或成就面板时不再产生页面晃动与闪烁，整体交互更加沉稳自然。"
     ]
   }
 }

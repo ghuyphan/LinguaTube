@@ -15,8 +15,8 @@ import { QuizService } from '../quiz.service';
 import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
-import { formatTime } from '../../../core/utils';
 import { normalizeLanguageCode, getReadingDisplayLabel } from '../../../shared/utils/language.utils';
+import { FormatTimePipe } from '../../../shared/pipes';
 
 @Component({
   selector: 'app-subtitle-display',
@@ -29,7 +29,8 @@ import { normalizeLanguageCode, getReadingDisplayLabel } from '../../../shared/u
     GrammarPopupComponent,
     QuizInputComponent,
     BottomSheetComponent,
-    SwitchComponent
+    SwitchComponent,
+    FormatTimePipe
   ],
   templateUrl: './subtitle-display.component.html',
   styleUrl: './subtitle-display.component.scss'
@@ -586,10 +587,6 @@ export class SubtitleDisplayComponent implements OnDestroy {
     }
   }
 
-  formatTime(seconds: number): string {
-    return formatTime(seconds);
-  }
-
   toggleAddedSheet(): void {
     this.showAddedSheet.update(v => !v);
   }
@@ -659,6 +656,10 @@ export class SubtitleDisplayComponent implements OnDestroy {
     if (this.programmaticScrollTimer) {
       clearTimeout(this.programmaticScrollTimer);
       this.programmaticScrollTimer = null;
+    }
+    if (this.toastTimeout) {
+      clearTimeout(this.toastTimeout);
+      this.toastTimeout = null;
     }
   }
 }

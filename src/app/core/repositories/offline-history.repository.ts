@@ -80,6 +80,8 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     // Source of truth signal
     private history = signal<HistoryItem[]>([]);
     readonly isLoading = signal(false);
+    private isSyncing = false;
+    private syncPending = false;
 
     constructor() {
         this.loadFromStorage();
@@ -317,7 +319,12 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
     private async syncWithRemote(): Promise<void> {
         if (!this.auth.isLoggedIn()) return;
+        if (this.isSyncing) {
+            this.syncPending = true;
+            return;
+        }
 
+        this.isSyncing = true;
         this.isLoading.set(true);
         try {
             const userId = this.auth.getUserId();
@@ -387,7 +394,12 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         } catch (error) {
             console.error('[HistoryRepo] Remote sync failed:', error);
         } finally {
+            this.isSyncing = false;
             this.isLoading.set(false);
+            if (this.syncPending) {
+                this.syncPending = false;
+                void this.syncWithRemote();
+            }
         }
     }
 

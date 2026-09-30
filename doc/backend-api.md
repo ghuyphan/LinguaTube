@@ -319,6 +319,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   2. Cloudflare D1 query (`video_languages` table) $\rightarrow$ persistent SQLite at the edge (100,000 writes/day, 5,000,000 reads/day free tier). Exposes verified server transcript languages via `subLanguages: string[]`.
   3. YouTube oEmbed fallback $\rightarrow$ saves metadata and channel avatar (`fetchChannelAvatar`) to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
   4. **Zero KV Writes**: Completely avoids writing to Cloudflare KV, saving $\sim 100\text{--}150$ daily KV writes.
+  5. **Distributed Rate Limiting**: Max 120 requests/minute per IP with in-memory sliding window and Cloudflare KV fallback to prevent scraper flooding and DoS attacks.
 
 ---
 
@@ -447,6 +448,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - `GET /api/video-info`: Includes canonical `levels: Record<string, VideoLevelInfo>` map with fast-path metadata regex detection, edge-evaluated transcript difficulty, and cached linguistic diagnostic details.
 - **Source**: `functions-src/api/video-level.js`, `functions-src/data/video-info-db.js`, `functions-src/utils/level-estimator.js`, `server/server.js` (dev synced)
 - **Security & Integrity Protection**:
+  - Authentication: Requires valid Supabase JWT Bearer token verified via `validateAuthToken(request, env)`. Unauthenticated requests return HTTP 401 to prevent catalogue poisoning by anonymous actors.
   - Rate limiting: Max 60 requests/hour per IP, strict input sanitization (`VALID_LEVEL_REGEX` supporting JLPT N1-N5, HSK 1-6, TOPIK 1-6 / I-II, CEFR A1-C2, and direct tier names).
   - Confidence threshold & capping: Client submissions must have `confidence >= 0.65` and are capped at `0.85` max to prevent permanent poisoning by untrusted clients.
   - Non-destructive updates & EMA Blending: Verified high-confidence metadata (`>= 0.95`) cannot be overwritten by lower-confidence client payloads. If an existing record has a valid score, incoming reports are blended via Exponential Moving Average (EMA: $0.60 \times \text{existing} + 0.40 \times \text{new}$).

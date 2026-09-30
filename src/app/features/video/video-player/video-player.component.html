@@ -565,7 +565,6 @@
         [showDualSubtitles]="settings.settings().showDualSubtitles" 
         [isCJKLanguage]="isCJKLanguage()"
         [isAISubtitle]="transcript.isAIGenerated()"
-        [t]="i18n.t.bind(i18n)"
         (playPauseClicked)="onPlayPauseButtonClick($event)"
         (toggleMute)="toggleMute()" (volumeChange)="onVolumeChange($event)"
         (showVolumeSlider)="showVolumeSlider()" (hideVolumeSlider)="hideVolumeSlider()"

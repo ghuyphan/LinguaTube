@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS public.playlists (
   legacy_user_id TEXT,
   title TEXT NOT NULL,
   description TEXT DEFAULT '',
-  visibility TEXT NOT NULL DEFAULT 'private' CHECK (visibility IN ('public', 'unlisted', 'private')),
+  visibility TEXT NOT NULL DEFAULT 'private' CHECK (visibility IN ('published', 'public', 'unlisted', 'private')),
   language TEXT NOT NULL DEFAULT 'ja',
   tags JSONB DEFAULT '[]'::jsonb,
   video_ids JSONB DEFAULT '[]'::jsonb,
@@ -153,6 +153,7 @@ ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.legacy_pb_users ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON TABLE public.legacy_pb_users FROM anon, authenticated, PUBLIC;
 GRANT ALL ON TABLE public.legacy_pb_users TO service_role, postgres;
+CREATE POLICY "Deny all public access to legacy pb users" ON public.legacy_pb_users FOR ALL TO public USING (false);
 ALTER TABLE public.vocabulary ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.streaks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.history ENABLE ROW LEVEL SECURITY;

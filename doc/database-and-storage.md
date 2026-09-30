@@ -566,10 +566,12 @@ Atomic, thread-safe daily streak evaluator called via Supabase RPC (`supabase.rp
 - Returns the updated `current_streak`, `longest_streak`, `freezes_remaining`, and `awarded_freeze`.
 
 #### Stored Procedures: `consume_user_diamonds` & `refund_user_diamonds`
-Atomic credit deduction and refund procedures called by Cloudflare Pages Functions (`diamond.service.js`):
-- Executes `SELECT diamonds FROM public.profiles WHERE id = target_user_id FOR UPDATE` to serialize concurrent requests and eliminate race conditions or double-spending.
+Atomic credit deduction and refund procedures called strictly by Cloudflare Pages Functions (`diamond.service.js` via `SUPABASE_SERVICE_ROLE_KEY`):
+- Strict Privileges: Configured as `SECURITY DEFINER` with `REVOKE ALL ON FUNCTION ... FROM PUBLIC, anon, authenticated;` and `GRANT EXECUTE ... TO service_role, postgres;`. Anonymous or client JWT tokens cannot invoke diamond deduction or refunds.
+- Idempotency & Locking: Executes `SELECT diamonds FROM public.profiles WHERE id = target_user_id FOR UPDATE` to serialize concurrent requests and eliminate race conditions or double-spending.
 - `consume_user_diamonds(target_user_id, diamond_count)`: Verifies `current_diamonds >= diamond_count`. If sufficient, decrements `diamonds`, records `diamonds_updated_at = NOW()`, and returns `{ success: true, remaining: ... }`. If insufficient, returns `{ success: false, remaining: ... }` fail-closed.
 - `refund_user_diamonds(target_user_id, diamond_count)`: Increments `diamonds`, records `diamonds_updated_at = NOW()`, and returns `{ success: true, remaining: ... }`.
+- Overload Sanitization: Obsolete 3-argument overloads have been permanently dropped from PostgreSQL to eliminate privilege leakage.
 
 #### Stored Procedure: `get_leaderboard(p_lang, p_period, p_limit)` (`db/migrations/20260918_leaderboard_video_levels_orders.sql`)
 High-performance dynamic leaderboard query executing directly inside Supabase PostgreSQL:

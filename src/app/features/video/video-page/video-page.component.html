@@ -147,7 +147,7 @@
                         <div class="yt-video-card__thumbnail">
                             <img [src]="item.video.thumbnail" [alt]="item.video.title || item.video.channel || 'Video'" loading="lazy" (error)="onThumbnailError($event, item.video.videoId)" />
                             @if (item.video.duration) {
-                            <span class="yt-duration-badge">{{ formatVideoTime(item.video.duration) }}</span>
+                            <span class="yt-duration-badge">{{ item.video.duration | formatTime }}</span>
                             }
                             @if (item.video.resumeProgress && item.video.resumeProgress > 0) {
                             <div class="yt-progress-bar-container" [title]="i18n.t('playlist.resumeWatching') + ' (' + item.video.resumeProgress + '%)'">
@@ -223,7 +223,7 @@
                         <div class="yt-video-card__details">
                             <div class="yt-video-card__avatar">
                                 @if (item.playlist.language) {
-                                <img [src]="getFlagUrl(item.playlist.language)" class="circle-flag" [alt]="item.playlist.language" [title]="item.playlist.language.toUpperCase()" loading="lazy" />
+                                <img [src]="item.playlist.language | langFlag" class="circle-flag" [alt]="item.playlist.language" [title]="item.playlist.language.toUpperCase()" loading="lazy" />
                                 } @else {
                                 <div class="avatar-placeholder">
                                     <app-icon name="user" [size]="16" />

@@ -71,8 +71,8 @@
                 </div>
 
                 <!-- Duration Badge -->
-                @if (formatDuration(item.duration); as dur) {
-                <span class="yt-duration-badge">{{ dur }}</span>
+                @if (item.duration && item.duration > 0) {
+                <span class="yt-duration-badge">{{ item.duration | formatTime }}</span>
                 }
 
                 <!-- Progress Bar -->

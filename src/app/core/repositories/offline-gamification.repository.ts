@@ -303,9 +303,9 @@ export class OfflineGamificationRepository implements IGamificationRepository {
                     } else if (data.status === 'success') {
                         this._state.update(prev => ({
                             ...prev,
-                            xp: data.xp,
-                            weeklyXp: data.weekly_xp,
-                            level: data.level,
+                            xp: Math.max(prev.xp, data.xp),
+                            weeklyXp: Math.max(prev.weeklyXp, data.weekly_xp),
+                            level: Math.max(prev.level, data.level),
                             totalVideosWatched: data.total_videos_watched ?? prev.totalVideosWatched,
                             totalQuizzesCompleted: data.total_quizzes_completed ?? prev.totalQuizzesCompleted,
                             updatedAt: new Date().toISOString()
@@ -762,10 +762,10 @@ export class OfflineGamificationRepository implements IGamificationRepository {
 
                 const mergedState: UserGamificationState = {
                     ...local,
-                    xp: remoteXP,
-                    weeklyXp: remoteWeeklyXp,
+                    xp: Math.max(local.xp, remoteXP),
+                    weeklyXp: Math.max(local.weeklyXp, remoteWeeklyXp),
                     currentWeekKey: currentWeek,
-                    level: remoteLevel,
+                    level: Math.max(local.level, remoteLevel),
                     totalVideosWatched: Math.max(local.totalVideosWatched, remoteRecord.total_videos_watched || 0),
                     totalQuizzesCompleted: Math.max(local.totalQuizzesCompleted, remoteRecord.total_quizzes_completed || 0),
                     unlockedAchievements: mergedUnlocked,

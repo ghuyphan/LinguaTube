@@ -27,27 +27,10 @@ export class BodyScrollService {
     private isInsideScrollableModal(target: EventTarget | null): boolean {
         if (!(target instanceof HTMLElement)) return false;
 
-        // 1. Direct class & attribute matches
-        if (target.closest(
-            '.sheet-content, .spotlight-results, .spotlight-results__list, .command-palette__results, [role="dialog"] .overflow-y-auto, [data-modal-scrollable="true"], .modal-scroll-area, .dialog-body, .achievements-dialog, .streak-dialog, .ai-credits-dialog'
-        )) {
-            return true;
-        }
-
-        // 2. Generic check: inside a modal/dialog overlay with an actively scrollable container
-        const modalContainer = target.closest('[role="dialog"], .spotlight-overlay, .sheet-overlay, dialog');
-        if (modalContainer && typeof window !== 'undefined') {
-            let el: HTMLElement | null = target;
-            while (el && el !== modalContainer) {
-                const style = window.getComputedStyle(el);
-                if (['auto', 'scroll'].includes(style.overflowY) && el.scrollHeight > el.clientHeight) {
-                    return true;
-                }
-                el = el.parentElement;
-            }
-        }
-
-        return false;
+        // O(1) selector match for modal containers with overscroll containment, zero forced reflows
+        return !!target.closest(
+            '.sheet-content, .bottom-sheet, .spotlight-results, .spotlight-results__list, .command-palette__results, [role="dialog"], dialog, .overflow-y-auto, [data-modal-scrollable="true"], .modal-scroll-area, .dialog-body, .achievements-dialog, .streak-dialog, .ai-credits-dialog, .settings-sheet, .playlist-sheet, .vocabulary-sheet'
+        );
     }
 
     /**

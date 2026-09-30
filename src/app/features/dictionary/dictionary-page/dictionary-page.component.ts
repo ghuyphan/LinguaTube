@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, inject, computed, signal, OnInit, OnDestroy, viewChild, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, signal, viewChild, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DictionaryPanelComponent } from '../dictionary-panel/dictionary-panel.component';
 import { VocabularyListComponent } from '../../vocabulary/vocabulary-list/vocabulary-list.component';
 import { DictionaryService } from '../dictionary.service';
@@ -481,7 +481,7 @@ import { WordLevel } from '../../../models';
     }
   `]
 })
-export class DictionaryPageComponent implements OnInit, OnDestroy {
+export class DictionaryPageComponent {
   readonly panel = viewChild(DictionaryPanelComponent);
   readonly vocabList = viewChild(VocabularyListComponent);
 
@@ -493,7 +493,6 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   auth = inject(AuthService);
 
   activeTab = signal<'dictionary' | 'vocab'>('dictionary');
-  private routeSub?: Subscription;
 
   dictSearchQuery = '';
 
@@ -516,11 +515,33 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
     };
   });
 
+  stats = computed(() => {
+    return this.vocab.getStatsByLanguage(this.settings.language());
+  });
+
+  // Use shared service state for recent searches (sliced to 6 for sidebar display)
+  recentSearches = computed(() => this.dictionary.recentSearches().slice(0, 6));
+
   constructor() {
     effect(() => {
       const q = this.dictionary.screenQuery();
       this.dictSearchQuery = q || '';
     });
+
+    this.route.queryParamMap
+      .pipe(takeUntilDestroyed())
+      .subscribe(params => {
+        const tab = params.get('tab');
+        if (tab === 'vocab' || tab === 'vocabulary') {
+          this.activeTab.set('vocab');
+        }
+
+        const q = params.get('q');
+        if (q) {
+          this.activeTab.set('dictionary');
+          this.searchTerm(q);
+        }
+      });
   }
 
   triggerDictSearch(): void {
@@ -532,32 +553,6 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   clearDictSearch(): void {
     this.dictSearchQuery = '';
     this.panel()?.clearSearch();
-  }
-
-  stats = computed(() => {
-    return this.vocab.getStatsByLanguage(this.settings.language());
-  });
-
-  // Use shared service state for recent searches (sliced to 6 for sidebar display)
-  recentSearches = computed(() => this.dictionary.recentSearches().slice(0, 6));
-
-  ngOnInit(): void {
-    this.routeSub = this.route.queryParamMap.subscribe(params => {
-      const tab = params.get('tab');
-      if (tab === 'vocab' || tab === 'vocabulary') {
-        this.activeTab.set('vocab');
-      }
-
-      const q = params.get('q');
-      if (q) {
-        this.activeTab.set('dictionary');
-        this.searchTerm(q);
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.routeSub?.unsubscribe();
   }
 
   onVocabWordSelect(word: string): void {

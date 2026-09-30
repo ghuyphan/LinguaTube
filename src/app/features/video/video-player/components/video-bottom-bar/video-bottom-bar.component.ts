@@ -1,7 +1,9 @@
-import { Component, ChangeDetectionStrategy, input, output, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent, IconName } from '../../../../../shared/components/icon/icon.component';
 import { getVolumeIcon } from '../../../../../core/utils';
+
+import { I18nService } from '../../../../../core/services';
 
 @Component({
   selector: 'app-video-bottom-bar',
@@ -12,6 +14,8 @@ import { getVolumeIcon } from '../../../../../core/utils';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoBottomBarComponent {
+  readonly i18n = inject(I18nService);
+
   // Playback state
   isPlaying = input<boolean>(false);
   currentTime = input<string>('0:00');
@@ -33,8 +37,8 @@ export class VideoBottomBarComponent {
   isCJKLanguage = input<boolean>(false);
   isAISubtitle = input<boolean>(false);
 
-  // Translation function
-  t = input<(key: string) => string>((k) => k);
+  // Translation function (defaults to injected I18nService)
+  t = input<(key: string) => string>((k: string) => this.i18n.t(k));
 
   // Outputs for Left Controls
   playPauseClicked = output<MouseEvent>();

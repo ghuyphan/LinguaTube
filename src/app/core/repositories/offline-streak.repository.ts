@@ -119,21 +119,23 @@ export class OfflineStreakRepository implements IStreakRepository {
 
             const pendingDates = this.storage.get<string[]>('voca_pending_streak_dates') || [];
             const hasPendingSync = pendingDates.length > 0;
+            const currentLocal = this.streakData();
+            const shouldKeepLocalPracticedToday = currentLocal.practicedToday && !serverPracticedToday;
 
-            if (localTime > serverTime || hasPendingSync) {
+            if (localTime > serverTime || hasPendingSync || shouldKeepLocalPracticedToday) {
                 // Local is ahead or has pending offline practice dates, push to server
-                if ((localData.practicedToday && !serverPracticedToday) || hasPendingSync) {
+                if ((currentLocal.practicedToday && !serverPracticedToday) || hasPendingSync) {
                     await this.recordActivityOnServer();
                     this.storage.remove('voca_pending_streak_dates');
                 }
             } else {
                 // Server is ahead or equal
                 this.updateLocal({
-                    currentStreak: serverData.current_streak || 0,
-                    longestStreak: serverData.longest_streak || 0,
-                    freezesRemaining: serverData.freezes_remaining ?? 2,
-                    lastActivity: serverData.last_activity,
-                    practicedToday: serverPracticedToday
+                    currentStreak: Math.max(serverData.current_streak || 0, currentLocal.currentStreak),
+                    longestStreak: Math.max(serverData.longest_streak || 0, currentLocal.longestStreak),
+                    freezesRemaining: serverData.freezes_remaining ?? currentLocal.freezesRemaining ?? 2,
+                    lastActivity: serverData.last_activity || currentLocal.lastActivity,
+                    practicedToday: currentLocal.practicedToday || serverPracticedToday
                 });
             }
 

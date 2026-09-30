@@ -1801,9 +1801,13 @@ async function fetchVideoMetaLocal(videoId) {
         if (oembedRes.ok) {
             const data = await oembedRes.json();
             let channelAvatar = null;
-            if (data.author_url) {
-                try {
-                    const pageRes = await fetch(data.author_url, {
+            if (data.author_url && typeof data.author_url === 'string') {
+                const cleanAuthorUrl = data.author_url.trim();
+                const isSafeYoutubeUrl = (cleanAuthorUrl.startsWith('https://www.youtube.com/') || cleanAuthorUrl.startsWith('https://youtube.com/'))
+                    && !cleanAuthorUrl.includes('/redirect');
+                if (isSafeYoutubeUrl) {
+                    try {
+                        const pageRes = await fetch(cleanAuthorUrl, {
                         headers: {
                             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                             'Accept': 'text/html'

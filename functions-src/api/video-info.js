@@ -20,6 +20,9 @@ import {
     labelToTier
 } from '../data/video-info-db.js';
 import { getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
+import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
+
+const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 60, keyPrefix: 'video_info' };
 
 // In-memory cache across warm Worker isolate requests (Rule 2: In-Memory First)
 const memVideoInfoCache = new Map();
@@ -33,6 +36,14 @@ export async function onRequestOptions() {
 
 export async function onRequestGet(context) {
     const { request, env } = context;
+
+    // Rate limiting to protect from outbound request flooding
+    const clientId = getClientIdentifier(request);
+    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    if (!rateLimit.allowed) {
+        return rateLimitResponse(rateLimit.resetAt);
+    }
+
     const url = new URL(request.url);
     const videoId = sanitizeVideoId(url.searchParams.get('videoId'));
 

@@ -164,10 +164,10 @@
                     <!-- Authentic Audio Pronunciation Button -->
                     <button type="button" 
                             class="action-btn action-btn--surface action-btn--audio audio-btn--sm" 
-                            [class.playing]="audio.isPlaying(item.word)"
+                            [class.playing]="audio.currentPlayingWord() === item.word"
                             (click)="playAudio(item, $event)" 
                             [title]="i18n.t('study.listen') || 'Listen'">
-                        <app-icon [name]="audio.isPlaying(item.word) ? 'volume-2' : 'volume-1'" [size]="14" />
+                        <app-icon [name]="audio.currentPlayingWord() === item.word ? 'volume-2' : 'volume-1'" [size]="14" />
                     </button>
 
                     <!-- Direct Delete Button with smooth exit transition -->

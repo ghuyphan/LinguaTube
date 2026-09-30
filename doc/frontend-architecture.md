@@ -497,6 +497,12 @@ Configured in `src/main.ts` via `provideHttpClient(withInterceptors([...]))`:
 - **`timeoutInterceptor`**: Guards against hung connections with a 30s default timeout (and 120s extended timeout for heavy AI transcription tasks like `/api/transcript` and `/api/dual-subtitles`).
 - **`cacheInterceptor`**: Caches dictionary lookups (5-minute TTL) and deduplicates concurrent in-flight HTTP requests.
 
+### 4.8. Standalone Pure Pipes (`src/app/shared/pipes/`)
+To eliminate method evaluation overhead in Angular templates and ensure change detection remains 60fps even during rapid subtitle playback, common presentation formatters are packaged as standalone, pure Angular pipes:
+- **`FormatTimePipe` (`formatTime`)**: Transforms duration in seconds (`number`) into formatted time strings `M:SS` or `H:MM:SS`. Used across `SubtitleDisplayComponent`, `ProgressBarComponent`, `HistoryListComponent`, `VideoPageComponent`, and `StudyModeComponent`.
+- **`LanguageFlagPipe` (`langFlag`)**: Transforms ISO 2-letter language codes (`'ja'`, `'ko'`, `'zh'`, `'en'`, `'vi'`) into SVG flag asset paths (`'/flags/jp.svg'`).
+- **`CountryFlagPipe` (`countryFlag`)**: Transforms ISO country codes or country emojis (`'JP'`, `'KR'`, `'VN'`, `'🇯🇵'`) into standardized country flag asset paths. Used across `AchievementsDialogComponent` for podiums and rankings.
+
 ---
 
 ## 5. Internationalization System (`I18nService`)
@@ -521,7 +527,8 @@ The application styling is organized using modular SCSS located in `src/styles/`
 
 - **`_variables.scss`**: Design tokens, font stacks (system, Noto Sans JP/KR/SC), color palette, spacing, z-index layers. Standardizes `--success` to `#22c55e` across light/dark themes, provides gamification RGB tokens (`--color-fire-rgb`, `--color-diamond-rgb`), tier gradients (`--gradient-pro`, `--gradient-premium`), and radius tokens (`--border-radius-xs: 8px`, `--sidebar-width: 15.75rem`).
 - **`_mixins.scss`**: Standardized responsive media queries (`@mixin respond-to($bp)` supporting `mobile-sm`, `mobile`, `tablet`, `desktop`, `desktop-lg`), reusable backdrop glassmorphism (`@mixin glass`), and scrollbar concealment (`@mixin hide-scrollbar`).
-- **`_base.scss` & `_utilities.scss`**: CSS reset, root typography, `@mixin no-scrollbar` / `.no-scrollbar` utility, mobile tap-highlight resets.
+- **`_base.scss` & `_utilities.scss`**: CSS reset, root typography, `@mixin no-scrollbar` / `.no-scrollbar` utility, mobile tap-highlight resets, and `scrollbar-gutter: stable` on root `html` to eliminate Cumulative Layout Shift (CLS) when modal backdrops open.
+- **Scroll & Reflow Optimization (`BodyScrollService`)**: Replaced forced DOM reflow queries (`window.getComputedStyle`) in wheel/touch event loops with high-performance class matches (`.is-scrollable-container`, `.bottom-sheet-content`), keeping scroll interaction at 60fps.
 - **`_layout.scss`**: Main grid, sidebar layouts, topbar header, safe area padding (`--bottom-nav-safe-area`, `env(safe-area-inset-bottom)`).
 - **`_components.scss`**: Badges, modals, dialog backdrops, pill tags, buttons.
 - **`_buttons.scss` & `_forms.scss`**: Standardized button variants (primary, secondary, danger, ghost) and input fields.

@@ -6,13 +6,13 @@ import { GamificationService } from '../../core/services/gamification.service';
 import { LeaderboardService } from '../../core/services/leaderboard.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { AchievementCategory, Mission, LevelTier, LeaderboardEntry } from '../../models/gamification.model';
-import { getCountryFlagUrl } from '../../models';
+import { CountryFlagPipe } from '../../shared/pipes';
 
 @Component({
     selector: 'app-achievements-dialog',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, EmptyStateComponent],
+    imports: [CommonModule, IconComponent, EmptyStateComponent, CountryFlagPipe],
     templateUrl: './achievements-dialog.component.html',
     styleUrls: ['./achievements-dialog.component.scss']
 })
@@ -270,10 +270,6 @@ export class AchievementsDialogComponent implements OnInit, OnDestroy {
         { code: 'zh', label: 'ZH', flagUrl: '/flags/cn.svg' },
         { code: 'en', label: 'EN', flagUrl: '/flags/gb.svg' }
     ];
-
-    getCountryFlag(country?: string): string {
-        return getCountryFlagUrl(country);
-    }
 
     setTab(tab: 'missions' | 'achievements' | 'leaderboard'): void {
         this.currentTab.set(tab);

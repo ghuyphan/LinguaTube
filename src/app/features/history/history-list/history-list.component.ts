@@ -13,14 +13,15 @@ import { EmptyStateComponent } from '../../../shared/components/empty-state/empt
 import { InfiniteScrollDirective } from '../../../shared/directives';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, VideoLevelService } from '../../../core/services';
-import { HistoryItem, ProficiencyLevelTier, getLanguageFlagUrl } from '../../../models';
-import { formatTime, getYouTubeThumbnail } from '../../../core/utils';
+import { HistoryItem, ProficiencyLevelTier } from '../../../models';
+import { getYouTubeThumbnail } from '../../../core/utils';
+import { FormatTimePipe } from '../../../shared/pipes';
 
 @Component({
     selector: 'app-history-list',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, EmptyStateComponent, InfiniteScrollDirective],
+    imports: [CommonModule, IconComponent, EmptyStateComponent, InfiniteScrollDirective, FormatTimePipe],
     templateUrl: './history-list.component.html',
     styleUrls: ['./history-list.component.scss'],
 })
@@ -30,7 +31,6 @@ export class HistoryListComponent {
     private router = inject(Router);
     readonly auth = inject(AuthService);
     readonly i18n = inject(I18nService);
-    readonly getFlagUrl = getLanguageFlagUrl;
 
     // Inputs
     items = input.required<HistoryItem[]>();
@@ -124,11 +124,6 @@ export class HistoryListComponent {
 
     getThumbnail(videoId: string): string {
         return getYouTubeThumbnail(videoId);
-    }
-
-    formatDuration(seconds?: number): string {
-        if (!seconds || seconds <= 0) return '';
-        return formatTime(seconds);
     }
 
     getRelativeTime(date: Date): string {

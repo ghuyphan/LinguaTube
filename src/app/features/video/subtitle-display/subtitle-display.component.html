@@ -274,7 +274,7 @@
                 [class.cue-item--past]="i < subtitles.currentCueIndex()" [attr.data-cue-id]="cue.id"
                 [attr.aria-current]="cue.id === activeCueId() ? 'true' : null"
                 (click)="seekToCue(cue)">
-                <span class="cue-time">{{ formatTime(cue.startTime) }}</span>
+                <span class="cue-time">{{ cue.startTime | formatTime }}</span>
                 <div class="cue-body">
                     <span class="cue-text" [attr.title]="cue.text">{{ cue.text }}</span>
                     @if (showDualSubs()) {
@@ -295,7 +295,7 @@
         <div class="sync-current-container">
             <button type="button" class="sync-current-btn sync-current-btn--fade-in" (click)="resumeTranscriptSync()">
                 <app-icon name="clock" [size]="13" />
-                <span>{{ i18n.t('subtitle.jumpToCurrent') || 'Jump to current' }} ({{ formatTime(activeCue.startTime) }})</span>
+                <span>{{ i18n.t('subtitle.jumpToCurrent') || 'Jump to current' }} ({{ activeCue.startTime | formatTime }})</span>
             </button>
         </div>
         }
