@@ -777,8 +777,8 @@
                 border-color: var(--accent-primary);
                 transform: translateY(-1px);
 
-                .streak-flame-box {
-                    transform: scale(1.05);
+                .popover-shield-wrap {
+                    transform: scale(1.06);
                 }
 
                 .popover-arrow {
@@ -788,49 +788,99 @@
             }
         }
 
-        .streak-flame-box {
+        .popover-shield-wrap {
             width: 36px;
-            height: 36px;
-            border-radius: var(--border-radius-sm);
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            transition: all var(--transition-fast);
-            position: relative;
-            overflow: hidden;
+            transition: transform var(--transition-fast), filter var(--transition-fast);
 
-            // Inactive streak state (high contrast warm peach tile)
-            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
-            border: 1.5px solid #fdba74;
-            color: #ea580c;
-            box-shadow: 0 1px 3px rgba(234, 88, 12, 0.1);
+            &--streak {
+                filter: drop-shadow(0 2px 5px rgba(100, 116, 139, 0.25));
 
-            &.active {
-                background: linear-gradient(135deg, #ff7a00 0%, #ea580c 50%, #c2410c 100%);
-                border: 1px solid rgba(255, 255, 255, 0.35);
-                color: #ffffff;
-                box-shadow: 0 3px 10px rgba(234, 88, 12, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.45);
-
-                app-icon {
-                    filter: drop-shadow(0 1px 2px rgba(154, 52, 18, 0.45));
+                &.active {
+                    filter: drop-shadow(0 3px 8px rgba(249, 115, 22, 0.5));
                 }
             }
 
-            :host-context([data-theme="dark"]) & {
-                background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(154, 52, 18, 0.22) 100%);
-                border: 1.5px solid rgba(249, 115, 22, 0.4);
-                color: #fb923c;
-                box-shadow: none;
+            &--diamond {
+                filter: drop-shadow(0 3px 8px rgba(56, 189, 248, 0.45));
+            }
 
-                &.active {
-                    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #9a3412 100%);
-                    border-color: rgba(255, 255, 255, 0.25);
-                    color: #ffffff;
-                    box-shadow: 0 0 16px rgba(249, 115, 22, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            @each $tier, $map in $tier-colors {
+                &[data-tier="#{$tier}"] {
+                    filter: drop-shadow(0 3px 8px map.get($map, 'crest-glow'));
+                }
+            }
 
-                    app-icon {
-                        filter: drop-shadow(0 0 4px rgba(254, 215, 170, 0.5));
+            .rpg-shield-crest {
+                @include rpg-shield-base(32px, 37px, 1.5px, 44%);
+
+                .shield-crest-icon {
+                    position: relative;
+                    z-index: 2;
+                    transition: transform var(--transition-fast);
+                }
+
+                &--streak {
+                    background: linear-gradient(145deg, #cbd5e1 0%, #94a3b8 40%, #475569 100%);
+
+                    &::before {
+                        background: radial-gradient(circle at 50% 25%, #475569 0%, #1e293b 100%);
+                        border: 1px solid rgba(203, 213, 225, 0.5);
+                    }
+
+                    .shield-crest-icon {
+                        color: #fb923c;
+                        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+                    }
+
+                    &.active {
+                        background: linear-gradient(145deg, #f97316 0%, #ea580c 40%, #7c2d12 100%);
+
+                        &::before {
+                            background: radial-gradient(circle at 50% 25%, #9a3412 0%, #431407 100%);
+                            border: 1px solid rgba(251, 146, 60, 0.8);
+                        }
+
+                        .shield-crest-icon {
+                            color: #ffedd5;
+                            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+                        }
+                    }
+                }
+
+                &--diamond {
+                    background: linear-gradient(145deg, #bae6fd 0%, #38bdf8 30%, #818cf8 70%, #c084fc 100%);
+
+                    &::before {
+                        background: radial-gradient(circle at 50% 25%, #0369a1 0%, #1e1b4b 100%);
+                        border: 1px solid rgba(224, 242, 254, 0.85);
+                    }
+
+                    .shield-crest-icon {
+                        color: #f0fdf4;
+                        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+                    }
+                }
+
+                &--level {
+                    @each $tier, $map in $tier-colors {
+                        &[data-tier="#{$tier}"] {
+                            background: map.get($map, 'crest-bg');
+
+                            &::before {
+                                background: map.get($map, 'crest-inner-bg');
+                                border: 1px solid map.get($map, 'crest-inner-border');
+                            }
+
+                            .shield-crest-icon {
+                                color: map.get($map, 'crest-icon-color');
+                                filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+                            }
+                        }
                     }
                 }
             }
@@ -896,8 +946,8 @@
                     border-color: var(--accent-primary);
                     transform: translateY(-1px);
 
-                    .metric-icon-box {
-                        transform: scale(1.05);
+                    .popover-shield-wrap {
+                        transform: scale(1.06);
                     }
                 }
             }
@@ -912,67 +962,6 @@
                 background: var(--accent-primary, #f45b74);
                 box-shadow: 0 0 0 2px var(--bg-primary);
                 pointer-events: none;
-            }
-
-            .metric-icon-box {
-                width: 36px;
-                height: 36px;
-                border-radius: var(--border-radius-sm);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                transition: all var(--transition-fast);
-                position: relative;
-                overflow: hidden;
-
-                &--diamond {
-                    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #0369a1 100%);
-                    border: 1px solid rgba(255, 255, 255, 0.35);
-                    color: #ffffff;
-                    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.45);
-
-                    app-icon {
-                        filter: drop-shadow(0 1px 2px rgba(3, 105, 161, 0.45));
-                    }
-
-                    :host-context([data-theme="dark"]) & {
-                        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #1e3a8a 100%);
-                        border-color: rgba(255, 255, 255, 0.25);
-                        color: #ffffff;
-                        box-shadow: 0 0 16px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-
-                        app-icon {
-                            filter: drop-shadow(0 0 4px rgba(186, 230, 253, 0.5));
-                        }
-                    }
-                }
-
-                &--level {
-                    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
-
-                    app-icon {
-                        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
-                    }
-
-                    @each $tier, $map in $tier-colors {
-                        &[data-tier="#{$tier}"] {
-                            background: map.get($map, 'bg');
-                            border: 1px solid rgba(255, 255, 255, 0.35);
-                            color: #ffffff;
-                            box-shadow: 0 3px 10px map.get($map, 'glow'), inset 0 1px 0 rgba(255, 255, 255, 0.45);
-
-                            :host-context([data-theme="dark"]) & {
-                                border-color: rgba(255, 255, 255, 0.25);
-                                box-shadow: 0 0 16px map.get($map, 'crest-glow'), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-
-                                app-icon {
-                                    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
-                                }
-                            }
-                        }
-                    }
-                }
             }
 
             .metric-info {
