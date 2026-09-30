@@ -182,9 +182,6 @@
                         <span class="vocab-item__word" [class]="'text-' + item.language">
                             {{ item.word }}
                         </span>
-                        @if (isGrammarItem(item)) {
-                        <span class="badge badge--grammar">{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
-                        }
                         @if (getItemReading(item); as reading) {
                             @if (reading !== item.word) {
                             <span class="vocab-item__reading" [title]="reading">{{ reading }}</span>
