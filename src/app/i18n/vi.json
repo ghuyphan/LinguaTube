@@ -546,10 +546,17 @@
     "filterWords": "Từ vựng",
     "filterGrammar": "Ngữ pháp",
     "inspectRule": "Xem chi tiết ngữ pháp",
+    "deckAll": "Tất cả",
     "deckWords": "Từ vựng",
     "deckGrammar": "Ngữ pháp",
+    "noItems": "Chưa có thẻ nào để ôn tập",
+    "noItemsHint": "Hãy lưu từ vựng hoặc cấu trúc ngữ pháp khi xem video để bắt đầu ôn tập nhé!",
     "noGrammar": "Chưa có ngữ pháp để ôn tập",
-    "noGrammarHint": "Lưu ngữ pháp khi xem video để tạo bộ thẻ ôn tập."
+    "noGrammarHint": "Lưu ngữ pháp khi xem video để tạo bộ thẻ ôn tập.",
+    "combo": "Combo",
+    "comboStreak": "{{count}} câu liên tiếp!",
+    "highestCombo": "Chuỗi cao nhất",
+    "xpEarned": "XP nhận được"
   },
   "streak": {
     "dayStreak": "Chuỗi ngày học",

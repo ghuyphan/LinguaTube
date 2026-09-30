@@ -546,10 +546,17 @@
     "filterWords": "単語",
     "filterGrammar": "文法",
     "inspectRule": "文法の詳細を見る",
+    "deckAll": "すべて",
     "deckWords": "単語",
     "deckGrammar": "文法",
+    "noItems": "復習するアイテムがありません",
+    "noItemsHint": "動画を見ながら単語や文法を保存して復習デッキを作成しましょう。",
     "noGrammar": "復習する文法がありません",
-    "noGrammarHint": "動画を見ながら文法を保存して復習デッキを作成しましょう。"
+    "noGrammarHint": "動画を見ながら文法を保存して復習デッキを作成しましょう。",
+    "combo": "コンボ",
+    "comboStreak": "{{count}}問連続正解！",
+    "highestCombo": "最大コンボ",
+    "xpEarned": "獲得XP"
   },
   "streak": {
     "dayStreak": "連続記録",

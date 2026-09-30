@@ -1096,10 +1096,11 @@ To maintain world-class performance, low memory footprint, and maintainability, 
   - Configurable `rootMargin` (default `400px 0px`), `threshold` (default `0.05`), `disabled` signal input, and automatic internal throttler (`throttleMs: 120ms`) preventing double-dispatch on rapid scrolls.
   - Eliminated over 120 lines of repetitive `viewChild('scrollSentinel')`, `PLATFORM_ID`, and observer teardown boilerplate across components.
 
-### 11.10. Separated Study Mode Deck Architecture
-- `StudyModeComponent`: Implements dual review decks (`words` vs `grammar`) with a dedicated switcher `.study-deck-switcher`.
-- Filters flashcard sessions, 3-deck counters (`New`, `Learning`, `Known`), due today alerts, and session queues based on `studyDeck()`.
-- Flashcard front and back dynamically render `.badge--grammar` and level indicators, while the back reveals `.card-formation-box` and an interactive `.card-grammar-inspect-btn` that triggers the global `GrammarPopupComponent` bottom sheet directly from active study sessions.
+### 11.10. Unified Tri-Deck Practice Mode & Flashcard Architecture
+- `StudyModeComponent`: Implements unified tri-deck practice mode (`all` vs `words` vs `grammar`) via the standard `.panel-toolbar` and `.segmented-control` (matching History, Playlist, and Dictionary) paired with an outside dynamic `.deck-count-badge`.
+- Filters flashcard sessions, 3-deck counters (`New`, `Learning`, `Known`), due today alerts, and session queues based on `studyDeck()`, defaulting to **All** (Both Words & Grammar) to prevent artificial dead ends.
+- Features a unified flashcard architecture with identical geometry and layout across Vocabulary and Grammar items: neutral interactive `.card-grammar-chip` rule inspector, punchy primary meanings with subtle explanatory hints (`parseCardMeaning`), combined formation and context quotes in a single bottom surface (`.card-context-quote`), and arcade game feel (combo streaks, floating XP bubbles, tactile spring physics without audio).
+- Replaces ad-hoc empty alert boxes with standard `<app-empty-state>` for both sub-deck filtering and queue completion states.
 
 
 

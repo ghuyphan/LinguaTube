@@ -13,36 +13,74 @@
                 <div class="panel-badges">
                     <!-- Streak Badge -->
                     @if (streak.currentStreak() > 0) {
-                    <span class="badge badge--warning">
-                        <app-icon name="fire" [size]="12" />
-                        <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
+                    <span class="streak-badge" [title]="streak.currentStreak() + ' ' + (i18n.t('streak.dayStreak') || 'day streak')">
+                        <app-icon name="fire" [size]="13" />
+                        <span>{{ streak.currentStreak() }}</span>
                     </span>
                     }
                 </div>
             </div>
         </div>
 
-        @if (deckStats().total === 0) {
-        <!-- Empty State when user has 0 items in selected deck -->
+        @if (deckCounts().all > 0) {
+        <!-- Segmented Deck Toolbar (Unified card toolbar matching history, playlist, & dictionary, without search bar) -->
+        <div class="panel-toolbar">
+            <div class="panel-toolbar__top">
+                <div class="segmented-control" style="--tab-count: 3;" [style.--active-index]="studyDeck() === 'all' ? 0 : (studyDeck() === 'words' ? 1 : 2)" role="tablist">
+                    <button type="button" 
+                            class="segmented-control__item" 
+                            [class.active]="studyDeck() === 'all'"
+                            (click)="studyDeck.set('all')"
+                            role="tab"
+                            [attr.aria-selected]="studyDeck() === 'all'"
+                            [attr.aria-label]="i18n.t('study.deckAll') || 'All'"
+                            [title]="i18n.t('study.deckAll') || 'All'">
+                        <app-icon name="layers" [size]="14" />
+                        <span>{{ i18n.t('study.deckAll') || 'All' }}</span>
+                    </button>
+                    <button type="button" 
+                            class="segmented-control__item" 
+                            [class.active]="studyDeck() === 'words'"
+                            (click)="studyDeck.set('words')"
+                            role="tab"
+                            [attr.aria-selected]="studyDeck() === 'words'"
+                            [attr.aria-label]="i18n.t('study.deckWords') || 'Words'"
+                            [title]="i18n.t('study.deckWords') || 'Words'">
+                        <app-icon name="type" [size]="14" />
+                        <span>{{ i18n.t('study.deckWords') || 'Words' }}</span>
+                    </button>
+                    <button type="button" 
+                            class="segmented-control__item" 
+                            [class.active]="studyDeck() === 'grammar'"
+                            (click)="studyDeck.set('grammar')"
+                            role="tab"
+                            [attr.aria-selected]="studyDeck() === 'grammar'"
+                            [attr.aria-label]="i18n.t('study.deckGrammar') || 'Grammar'"
+                            [title]="i18n.t('study.deckGrammar') || 'Grammar'">
+                        <app-icon name="sparkle-text" [size]="14" />
+                        <span>{{ i18n.t('study.deckGrammar') || 'Grammar' }}</span>
+                    </button>
+                </div>
+
+                <div class="panel-toolbar__actions">
+                    <span class="deck-count-badge" [attr.aria-label]="deckStats().total + ' ' + (i18n.t('study.cards') || 'cards')">
+                        <span class="deck-count-num">{{ deckStats().total }}</span>
+                        <span class="deck-count-unit">{{ i18n.t('study.cards') || 'cards' }}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        }
+
+        @if (deckCounts().all === 0) {
+        <!-- Global Empty State when user has literally 0 items in this language -->
         <app-empty-state
-            [icon]="studyDeck() === 'grammar' ? 'sparkle-text' : 'cards'"
+            icon="cards"
             [iconSize]="32"
-            [title]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammar') || 'No grammar patterns to study') : i18n.t('study.noWords')"
-            [description]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammarHint') || 'Save grammar patterns while watching videos to build your review deck.') : i18n.t('study.noWordsHint')">
+            [title]="i18n.t('study.noItems') || i18n.t('study.noWords') || 'No items to study yet'"
+            [description]="i18n.t('study.noItemsHint') || i18n.t('study.noWordsHint') || 'Save vocabulary words or grammar patterns while watching videos to build your review deck.'">
             <div class="empty-state__actions">
-                @if (studyDeck() === 'grammar' && deckCounts().words > 0) {
-                <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('words')">
-                    <app-icon name="type" [size]="16" />
-                    <span>{{ i18n.t('study.deckWords') }} ({{ deckCounts().words }})</span>
-                </button>
-                }
-                @if (studyDeck() === 'words' && deckCounts().grammar > 0) {
-                <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('grammar')">
-                    <app-icon name="sparkle-text" [size]="16" />
-                    <span>{{ i18n.t('study.deckGrammar') }} ({{ deckCounts().grammar }})</span>
-                </button>
-                }
-                <a routerLink="/video" class="btn btn-secondary empty-state__action">
+                <a routerLink="/video" class="btn btn-primary empty-state__action">
                     <app-icon name="play" [size]="16" />
                     <span>{{ i18n.t('history.exploreVideos') }}</span>
                 </a>
@@ -55,25 +93,32 @@
         } @else {
         <!-- STUDY PRACTICE DASHBOARD -->
         <div class="study-dashboard">
-            <!-- Deck Switcher: Words Deck vs Grammar Deck -->
-            <div class="study-deck-switcher" role="tablist">
-                <button type="button" 
-                        class="study-deck-btn" 
-                        [class.active]="studyDeck() === 'words'"
-                        (click)="studyDeck.set('words')">
-                    <app-icon name="type" [size]="16" />
-                    <span>{{ i18n.t('study.deckWords') || 'Words' }}</span>
-                    <span class="deck-count-pill">{{ deckCounts().words }}</span>
-                </button>
-                <button type="button" 
-                        class="study-deck-btn" 
-                        [class.active]="studyDeck() === 'grammar'"
-                        (click)="studyDeck.set('grammar')">
-                    <app-icon name="sparkle-text" [size]="16" />
-                    <span>{{ i18n.t('study.deckGrammar') || 'Grammar' }}</span>
-                    <span class="deck-count-pill">{{ deckCounts().grammar }}</span>
-                </button>
-            </div>
+
+            @if (deckStats().total === 0) {
+            <!-- Sub-deck Empty State when user selects an empty sub-category -->
+            <app-empty-state
+                [icon]="studyDeck() === 'grammar' ? 'sparkle-text' : 'type'"
+                [title]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammar') || 'No grammar patterns to study') : (i18n.t('study.noWords') || 'No words to study')"
+                [description]="studyDeck() === 'grammar' ? (i18n.t('study.noGrammarHint') || 'Save grammar patterns while watching videos to build your review deck.') : (i18n.t('study.noWordsHint') || 'Save words while watching videos to build your review deck.')">
+                <div class="empty-state__actions">
+                    <button type="button" class="btn btn-primary empty-state__action" (click)="studyDeck.set('all')">
+                        <app-icon name="layers" [size]="14" />
+                        <span>{{ i18n.t('study.deckAll') || 'Show All' }} ({{ deckCounts().all }})</span>
+                    </button>
+                    @if (studyDeck() === 'grammar') {
+                    <a routerLink="/dictionary" [queryParams]="{ tab: 'grammar' }" class="btn btn-secondary empty-state__action">
+                        <app-icon name="book-open" [size]="14" />
+                        <span>{{ i18n.t('grammar.grammar') || 'Grammar' }}</span>
+                    </a>
+                    } @else {
+                    <a routerLink="/video" class="btn btn-secondary empty-state__action">
+                        <app-icon name="play" [size]="14" />
+                        <span>{{ i18n.t('history.exploreVideos') }}</span>
+                    </a>
+                    }
+                </div>
+            </app-empty-state>
+            } @else {
 
             <!-- Compact Due Alert Banner (Only shown when cards are due) -->
             @if (dueToday() > 0) {
@@ -224,15 +269,19 @@
                         <span>{{ i18n.t('study.start') }} ({{ sessionCardCount() }} {{ i18n.t('study.cards') }} · {{ i18n.t('study.estimatedMinutes', { minutes: estimatedMinutes() }) }})</span>
                     </button>
                 } @else {
-                    <div class="study-filter-empty">
-                        <app-icon name="info" [size]="16" class="icon--info" />
-                        <span>{{ i18n.t('study.allCaughtUp') }}</span>
-                        <button type="button" class="btn btn-secondary btn-sm" (click)="dueOnly.set(false); includeKnown.set(true)">
-                            {{ i18n.t('study.reviewKnown') }}
-                        </button>
-                    </div>
+                    <app-empty-state
+                        icon="check-circle"
+                        [compact]="true"
+                        [title]="i18n.t('study.allCaughtUp')">
+                        <div class="empty-state__actions">
+                            <button type="button" class="btn btn-secondary btn-sm empty-state__action" (click)="dueOnly.set(false); includeKnown.set(true)">
+                                {{ i18n.t('study.reviewKnown') }}
+                            </button>
+                        </div>
+                    </app-empty-state>
                 }
             </div>
+            }
         </div>
         }
     } @else if (isStudying()) {
@@ -251,6 +300,12 @@
                     </span>
                 }
             </span>
+            @if (currentCombo() >= 2) {
+            <span class="study-combo-badge" [attr.data-combo-tier]="comboTier()" [title]="i18n.t('study.comboStreak', { count: currentCombo() })">
+                <app-icon [name]="comboTier() === 'fire' ? 'fire' : (comboTier() === 'electric' ? 'zap' : 'sparkle-text')" [size]="12" />
+                <span>{{ currentCombo() }} {{ i18n.t('study.combo') }}</span>
+            </span>
+            }
             <span class="session-accuracy-badge" [title]="i18n.t('study.liveAccuracy')">
                 {{ sessionAccuracy() }}%
             </span>
@@ -266,9 +321,26 @@
 
         <!-- Flashcard with swipe support -->
         @if (cardViewModel(); as vm) {
-        <div class="flashcard" [class.flipped]="vm.showAnswer" [class.swiping]="isSwiping()"
-            [style.--swipe-offset.px]="swipeOffset()" (click)="onCardClick($event)" (touchstart)="onTouchStart($event)"
-            (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)" (touchcancel)="onTouchCancel()">
+        <div class="flashcard" 
+            [class.flipped]="vm.showAnswer" 
+            [class.swiping]="isSwiping()"
+            [class.card-feedback--success]="cardFeedback() === 'success'"
+            [class.card-feedback--wrong]="cardFeedback() === 'wrong'"
+            [class.flashcard--combo-active]="currentCombo() >= 5"
+            [class.flashcard--super-combo]="currentCombo() >= 10"
+            [style.--swipe-offset.px]="swipeOffset()" 
+            (click)="onCardClick($event)" 
+            (touchstart)="onTouchStart($event)"
+            (touchmove)="onTouchMove($event)" 
+            (touchend)="onTouchEnd($event)" 
+            (touchcancel)="onTouchCancel()">
+
+            @if (floatingXp(); as fxp) {
+            <div class="floating-xp-bubble" [class.floating-xp-bubble--bonus]="fxp.bonus" [attr.data-tier]="comboTier()">
+                <app-icon [name]="fxp.bonus ? 'sparkle-text' : 'zap'" [size]="13" />
+                <span>{{ fxp.text }}</span>
+            </div>
+            }
 
             <!-- Swipe indicators -->
             <div class="swipe-indicator swipe-indicator--left" [class.active]="swipeOffset() < -35">
@@ -285,13 +357,20 @@
                 <div class="flashcard__front">
                     <div class="flashcard-top-bar">
                         <div class="flashcard-top-badges">
-                            <span class="badge badge--{{ vm.item.level }}">
-                                {{ vm.item.level }}
-                            </span>
                             @if (vm.isGrammar) {
-                            <span class="badge badge--grammar">
-                                <app-icon name="sparkle-text" [size]="10" />
+                            <button type="button"
+                                    class="card-grammar-chip card-action-interactive"
+                                    (click)="openGrammarPattern($event)"
+                                    [title]="(i18n.t('vocab.' + vm.item.level) || vm.item.level) + ' • ' + (i18n.t('study.inspectRule') || 'View Rule Details')"
+                                    [attr.aria-label]="i18n.t('study.inspectRule') || 'View Rule Details'">
+                                <span class="status-dot status-dot--{{ vm.item.level }}"></span>
+                                <app-icon name="book-open" [size]="11" />
                                 <span>{{ vm.grammarLevel || (i18n.t('grammar.grammar') || 'Grammar') }}</span>
+                            </button>
+                            } @else {
+                            <span class="badge badge--{{ vm.item.level }}">
+                                <span class="status-dot status-dot--{{ vm.item.level }}"></span>
+                                <span>{{ i18n.t('vocab.' + vm.item.level) || vm.item.level }}</span>
                             </span>
                             }
                         </div>
@@ -322,14 +401,15 @@
                     <div class="flashcard-body">
                         <div class="card-word-cluster">
                             @if (!reverseMode()) {
-                                <span class="card-word" [class]="'text-' + vm.item.language">
+                                <span class="card-word" [class.card-word--grammar]="vm.isGrammar" [class]="'text-' + vm.item.language">
                                     {{ vm.primaryText }}
                                 </span>
                                 
+                                @if (vm.hasReading) {
                                 <div class="card-reading-slot">
                                     @if (vm.showReadingFront) {
                                     <span class="card-reading">{{ vm.reading }}</span>
-                                    } @else if (vm.hasReading) {
+                                    } @else {
                                     <button type="button" 
                                             class="btn-peek-reading card-action-interactive" 
                                             (click)="togglePeekReading($event)"
@@ -339,10 +419,14 @@
                                     </button>
                                     }
                                 </div>
+                                }
                             } @else {
-                                <span class="card-prompt-meaning">
-                                    {{ vm.item.meaning || i18n.t('vocab.noDefinition') }}
-                                </span>
+                                <div class="card-meaning-revealed" [class.card-meaning-revealed--grammar]="vm.isGrammar">
+                                    <span class="card-prompt-meaning">{{ vm.meaningPrimary }}</span>
+                                    @if (vm.meaningHint) {
+                                    <span class="meaning-hint">{{ vm.meaningHint }}</span>
+                                    }
+                                </div>
                             }
                         </div>
 
@@ -365,13 +449,20 @@
                 <div class="flashcard__back">
                     <div class="flashcard-top-bar">
                         <div class="flashcard-top-badges">
-                            <span class="badge badge--{{ vm.item.level }}">
-                                {{ vm.item.level }}
-                            </span>
                             @if (vm.isGrammar) {
-                            <span class="badge badge--grammar">
-                                <app-icon name="sparkle-text" [size]="10" />
+                            <button type="button"
+                                    class="card-grammar-chip card-action-interactive"
+                                    (click)="openGrammarPattern($event)"
+                                    [title]="(i18n.t('vocab.' + vm.item.level) || vm.item.level) + ' • ' + (i18n.t('study.inspectRule') || 'View Rule Details')"
+                                    [attr.aria-label]="i18n.t('study.inspectRule') || 'View Rule Details'">
+                                <span class="status-dot status-dot--{{ vm.item.level }}"></span>
+                                <app-icon name="book-open" [size]="11" />
                                 <span>{{ vm.grammarLevel || (i18n.t('grammar.grammar') || 'Grammar') }}</span>
+                            </button>
+                            } @else {
+                            <span class="badge badge--{{ vm.item.level }}">
+                                <span class="status-dot status-dot--{{ vm.item.level }}"></span>
+                                <span>{{ i18n.t('vocab.' + vm.item.level) || vm.item.level }}</span>
                             </span>
                             }
                         </div>
@@ -401,43 +492,37 @@
                     <!-- Card Body: Exact same geometry as Front -->
                     <div class="flashcard-body">
                         <div class="card-word-cluster">
-                            <span class="card-word" [class]="'text-' + vm.item.language">
+                            <span class="card-word" [class.card-word--grammar]="vm.isGrammar" [class]="'text-' + vm.item.language">
                                 {{ vm.primaryText }}
                             </span>
+                            @if (vm.hasReading && vm.showReadingBack) {
                             <div class="card-reading-slot">
-                                @if (vm.showReadingBack) {
                                 <span class="card-reading">{{ vm.reading }}</span>
-                                }
                             </div>
-                            <!-- Revealed Meaning -->
-                            <div class="card-meaning-revealed">
-                                <span class="meaning-text">{{ vm.item.meaning || i18n.t('vocab.noDefinition') }}</span>
-                            </div>
-
-                            @if (vm.isGrammar) {
-                                @if (vm.formation) {
-                                <div class="card-formation-box">
-                                    <span class="card-formation-label">{{ i18n.t('grammar.formation') || 'Formation' }}:</span>
-                                    <code class="card-formation-code">{{ vm.formation }}</code>
-                                </div>
-                                }
-                                @if (vm.pattern) {
-                                <button type="button"
-                                        class="btn btn-secondary btn-sm card-grammar-inspect-btn card-action-interactive"
-                                        (click)="openGrammarPattern($event)">
-                                    <app-icon name="book-open" [size]="13" />
-                                    <span>{{ i18n.t('study.inspectRule') || 'View Rule Details' }}</span>
-                                </button>
-                                }
                             }
+                            <!-- Revealed Meaning -->
+                            <div class="card-meaning-revealed" [class.card-meaning-revealed--grammar]="vm.isGrammar">
+                                <span class="meaning-text">{{ vm.meaningPrimary }}</span>
+                                @if (vm.meaningHint) {
+                                <span class="meaning-hint">{{ vm.meaningHint }}</span>
+                                }
+                            </div>
                         </div>
 
-                        <!-- Context Sentence Quote (Exact same position as Front) -->
-                        @if (vm.hasContext) {
+                        <!-- Context Sentence Quote & Formation (Single unified bottom card) -->
+                        @if (vm.hasContext || (vm.isGrammar && vm.formation)) {
                         <div class="card-context-quote">
+                            @if (vm.isGrammar && vm.formation) {
+                            <div class="card-formation-row">
+                                <span class="formation-label">{{ i18n.t('grammar.formation') || 'Formation' }}:</span>
+                                <span class="formation-text">{{ vm.formation }}</span>
+                            </div>
+                            }
+                            @if (vm.hasContext) {
                             <p class="context-sentence-text" [class]="'text-' + vm.item.language">
                                 {{ vm.item.sourceSentence }}
                             </p>
+                            }
                         </div>
                         }
                     </div>
@@ -532,6 +617,16 @@
                 <span class="stat-value">{{ sessionStats().incorrect }}</span>
                 <span class="stat-label">{{ i18n.t('study.toReview') }}</span>
             </div>
+            <div class="stat-badge stat-badge--xp">
+                <span class="stat-value">+{{ sessionEarnedXp() }}</span>
+                <span class="stat-label">{{ i18n.t('study.xpEarned') }}</span>
+            </div>
+            @if (maxCombo() >= 2) {
+            <div class="stat-badge stat-badge--combo">
+                <span class="stat-value">🔥 {{ maxCombo() }}</span>
+                <span class="stat-label">{{ i18n.t('study.highestCombo') }}</span>
+            </div>
+            }
         </div>
 
         <div class="session-time">
@@ -571,9 +666,9 @@
                     <app-icon name="play" [size]="14" />
                     <span>{{ i18n.t('nav.watch') }}</span>
                 </a>
-                <a routerLink="/dictionary" [queryParams]="{ tab: 'vocab' }" class="btn btn-ghost btn-sm complete-nav-link">
-                    <app-icon name="type" [size]="14" />
-                    <span>{{ i18n.t('nav.vocab') }}</span>
+                <a routerLink="/dictionary" [queryParams]="{ tab: studyDeck() === 'grammar' ? 'grammar' : 'vocab' }" class="btn btn-ghost btn-sm complete-nav-link">
+                    <app-icon [name]="studyDeck() === 'grammar' ? 'sparkle-text' : 'type'" [size]="14" />
+                    <span>{{ studyDeck() === 'grammar' ? (i18n.t('grammar.grammar') || 'Grammar') : i18n.t('nav.vocab') }}</span>
                 </a>
             </div>
         </div>

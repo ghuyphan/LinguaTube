@@ -546,10 +546,17 @@
     "filterWords": "단어",
     "filterGrammar": "문법",
     "inspectRule": "문법 규칙 보기",
+    "deckAll": "전체",
     "deckWords": "단어",
     "deckGrammar": "문법",
+    "noItems": "복습할 카드가 없어요",
+    "noItemsHint": "동영상을 보며 단어나 문법을 저장하여 복습 덱을 만들어 보세요.",
     "noGrammar": "복습할 문법이 없어요",
-    "noGrammarHint": "동영상을 보며 문법을 저장하여 복습 덱을 만들어 보세요."
+    "noGrammarHint": "동영상을 보며 문법을 저장하여 복습 덱을 만들어 보세요.",
+    "combo": "콤보",
+    "comboStreak": "{{count}}연속 정답!",
+    "highestCombo": "최고 콤보",
+    "xpEarned": "획득 XP"
   },
   "streak": {
     "dayStreak": "일 연속 학습",

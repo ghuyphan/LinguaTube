@@ -477,15 +477,26 @@ To ensure language learners can re-learn and systematically reinforce both vocab
 - **Dedicated Notebook Tabs**:
   - In `/dictionary`: 3-tab segmented control `[ Dictionary | Words | Grammar ]`, giving users a dedicated view of their saved grammar rules, complete with JLPT/HSK/CEFR level filter chips, grammar count badges, and contextual empty states.
   - In `/video` sidebar: Context-sensitive segmented tabs `[ Playlist | Words | Grammar ]` (or `[ Words | Grammar ]` when no playlist is active), allowing learners to review and manage words and grammar rules separately per video.
-- **Dual Study Decks in Practice Mode (`/study`)**:
-  - Segmented deck switcher `[ Words Deck (count) | Grammar Deck (count) ]` with independent 3-deck counters (`New`, `Learning`, `Known`), due today counts, and contextual empty states.
-  - Selecting the Grammar deck filters flashcard sessions strictly to saved grammar patterns.
-- **Rich Grammar Flashcard Face & Rule Inspection**:
-  - Front and back card top bars render dedicated `.badge--grammar` tags alongside the grammar level (e.g., `N3`, `HSK 4`).
-  - Flashcard back reveals the syntax formation rule box (`.card-formation-box`) and an interactive **`[ View Rule Details ]`** button (`.card-grammar-inspect-btn`) which opens the full `GrammarPopupComponent` bottom sheet directly from the card.
+- **Unified Tri-Deck Practice Mode (`/study`)**:
+  - Segmented deck switcher toolbar (`.panel-toolbar` with `.segmented-control` `[ All | Words | Grammar ]` on the left and dynamic `.deck-count-badge` on the right) with independent 3-deck counters (`New`, `Learning`, `Known`), due today counts, and contextual empty states.
+  - Defaults to **All** (Both Words & Grammar together), ensuring learners can review all their cards in one seamless session without encountering artificial empty states when they have only grammar cards or only words.
+  - Selecting Words or Grammar filters the session strictly to that category, with persistent deck switchers and inline empty notifications rather than dead-end screens.
+- **Unified Flashcard Architecture & Harmonious Design System**:
+  - **Identical Layout & Geometry**: Both Vocabulary and Grammar flashcards share an identical single-card architecture with zero box-in-box nesting or layout shifts between faces.
+  - **Interactive Grammar Chip**: Instead of competing saturated purple badges and orphan action buttons, the grammar level tag (`.card-grammar-chip`) acts as an interactive, neutral surface pill with a `book-open` icon. Clicking it directly opens the rule details modal (`GrammarPopupComponent`), while keeping the top-right actions strictly dedicated to Audio (`[ 🔊 R ]`) and Video Scene (`[ ▶ Watch Scene ]`).
+  - **Punchy Meaning with Subtle Hint**: Definition parsers intelligently extract the core gloss (e.g. `'the most' / 'the best'` or `'vì... nên...'`) into high-contrast primary text (`meaningPrimary`), placing descriptive linguistic explanations underneath as subtle hints (`meaningHint`), preventing text bloat on both regular words and grammar rules.
+  - **Single Bottom Surface**: Syntax formation rules and context quotes are merged seamlessly into one unified bottom surface (`.card-context-quote`), with reading slots cleanly collapsed when absent.
+  - **Calmed Rating Controls**: SRS rating buttons feature clean, uniform resting borders (`var(--border-color)`) and surface backgrounds, eliminating color clashes while preserving tactile semantic illumination on hover.
+  - Suppresses background keyboard shortcuts (Space, 1–4, R) while inspecting rule details to prevent unintentional grading.
 - **Zero Schema Migrations (Deterministic Pattern Matching)**:
   - Leverages `VocabularyItem`'s existing structure (`item.word` stores the pattern string, `item.sourceSentence` stores context).
   - `GrammarService.findPattern()` normalizes and matches saved items against built-in catalogs (`GRAMMAR_JA`, `GRAMMAR_ZH`, `GRAMMAR_KO`, `GRAMMAR_EN`), automatically recognizing saved grammar rules retroactively across both client storage and Supabase cloud sync without requiring database schema changes.
+- **Game Feel & Tactile Micro-Rewards (No Sound Effects)**:
+  - **Dynamic Combo Streaks**: Tracks consecutive correct reviews in real-time with tiered combo badges in the progress header (`🔥 2–4 Combo`, `⚡ 5–9 Electric Combo`, `🌟 10+ Super Combo`), giving high-scoring cards an energized subtle edge glow.
+  - **Floating XP Bubbles**: Every correct answer triggers a rewarding floating XP pill (`+10 XP`, `+15 XP Combo!`) that rises and pops over the card face before vanishing, integrating directly with `GamificationService` levels and daily mission tracking.
+  - **Tactile Card Impact Physics**: Cards respond with snappy visual feedback (a subtle 3-cycle horizontal shake for missed cards and an upward spring bounce with success glow for correct answers) buffered by a 220ms micro-delay before smoothly advancing.
+  - **Arcade Victory Screen**: Summary dashboard showcases total XP earned (`+55 XP`) and the user's best combo streak alongside the RPG completion crest.
+  - **Strictly Visual & Silent**: Delivers pure arcade game-feel and tactile responsiveness without intrusive audio or sound effects.
 
 ---
 

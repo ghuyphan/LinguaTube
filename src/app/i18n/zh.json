@@ -546,10 +546,17 @@
     "filterWords": "单词",
     "filterGrammar": "语法",
     "inspectRule": "查看语法详情",
+    "deckAll": "全部",
     "deckWords": "单词",
     "deckGrammar": "语法",
+    "noItems": "暂无可复习的内容",
+    "noItemsHint": "在观看视频时保存生词或语法以建立复习卡组。",
     "noGrammar": "暂无待复习的语法",
-    "noGrammarHint": "在观看视频时保存语法以建立复习卡组。"
+    "noGrammarHint": "在观看视频时保存语法以建立复习卡组。",
+    "combo": "连击",
+    "comboStreak": "连续答对 {{count}} 题！",
+    "highestCombo": "最高连击",
+    "xpEarned": "获得经验值"
   },
   "streak": {
     "dayStreak": "连续打卡",

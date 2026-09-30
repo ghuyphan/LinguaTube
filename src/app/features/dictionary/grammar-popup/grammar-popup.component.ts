@@ -1,4 +1,4 @@
-import { Component, inject, input, output, computed, effect, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, input, output, computed, effect, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
@@ -62,7 +62,16 @@ export class GrammarPopupComponent {
         this.router.navigate(['/dictionary'], { queryParams: { q: p.pattern } });
     }
 
+    readonly isDetailsOpen = signal(false);
+
     constructor() {
+        // Reset details toggle when pattern or popup state changes
+        effect(() => {
+            this.pattern();
+            this.isOpen();
+            this.isDetailsOpen.set(false);
+        });
+
         // Trigger translation lazy loading when popup is open for a non-English UI language
         effect(() => {
             const p = this.pattern();

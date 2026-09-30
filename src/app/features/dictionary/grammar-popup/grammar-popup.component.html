@@ -22,9 +22,14 @@
                 <div class="section-label">{{ i18n.t('grammar.explanation') }}</div>
                 <p class="explanation-text">{{ p.shortExplanation || p.longExplanation }}</p>
                 @if (p.longExplanation && p.longExplanation !== p.shortExplanation && p.longExplanation.length > (p.shortExplanation.length || 0) + 30) {
-                <details class="grammar-details-toggle">
-                    <summary class="details-summary">{{ i18n.t('grammar.moreDetails') || 'More details' }}</summary>
-                    <p class="explanation-long">{{ p.longExplanation }}</p>
+                <details class="grammar-details-toggle" [open]="isDetailsOpen()" (toggle)="isDetailsOpen.set($any($event.target).open)">
+                    <summary class="details-summary">
+                        <span>{{ i18n.t('grammar.moreDetails') || 'More details' }}</span>
+                        <app-icon name="chevron-down" [size]="14" class="toggle-icon" />
+                    </summary>
+                    <div class="explanation-long-box">
+                        <p class="explanation-long">{{ p.longExplanation }}</p>
+                    </div>
                 </details>
                 }
             </div>

@@ -80,9 +80,9 @@ import { GamificationService } from '../../../core/services/gamification.service
                   <h3 class="panel-header__title">{{ i18n.t('study.dailyGoal') }}</h3>
                 </div>
                 @if (streak.currentStreak() > 0) {
-                  <span class="badge badge--warning">
-                    <app-icon name="fire" [size]="12" />
-                    <span>{{ streak.currentStreak() }} {{ i18n.t('streak.dayStreak') }}</span>
+                  <span class="streak-badge" [title]="streak.currentStreak() + ' ' + (i18n.t('streak.dayStreak') || 'day streak')">
+                    <app-icon name="fire" [size]="14" />
+                    <span>{{ streak.currentStreak() }}</span>
                   </span>
                 }
               </div>

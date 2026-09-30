@@ -7,10 +7,10 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { SwitchComponent } from '../../../shared/components/switch/switch.component';
 import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { VocabularyService } from '../vocabulary.service';
-import { SettingsService, I18nService, AudioService, ToastService, KeyboardShortcutService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService, ToastService, KeyboardShortcutService, GamificationService } from '../../../core/services';
 import { StreakService } from '../../../services/streak.service';
 import { GrammarService } from '../../../services/grammar.service';
-import { SupportedLearningLanguage, VocabularyItem, getLanguageFlagUrl } from '../../../models';
+import { SupportedLearningLanguage, SupportedGrammarLang, VocabularyItem, getLanguageFlagUrl } from '../../../models';
 import { calculateSRSPreview, SRSIntervalPreview } from '../../../core/utils';
 import { getReadingDisplayLabel } from '../../../shared/utils/language.utils';
 import { FormatTimePipe } from '../../../shared/pipes';
@@ -20,6 +20,69 @@ const STUDY_CLOZE_KEY = 'linguatube_study_cloze';
 
 function escapeRegex(str: string): string {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function parseCardMeaning(rawMeaning: string | undefined | null, isGrammar: boolean): { meaningPrimary: string; meaningHint: string | null } {
+    if (!rawMeaning) return { meaningPrimary: '', meaningHint: null };
+
+    if (isGrammar) {
+        const semiIdx = rawMeaning.indexOf(';');
+        const colonIdx = rawMeaning.indexOf(':');
+        const splitIdx = semiIdx !== -1 ? semiIdx : (colonIdx !== -1 && colonIdx < 60 ? colonIdx : -1);
+
+        if (splitIdx !== -1) {
+            const desc = rawMeaning.substring(0, splitIdx).trim();
+            let gloss = rawMeaning.substring(splitIdx + 1).trim();
+            if (gloss.endsWith('.')) gloss = gloss.slice(0, -1).trim();
+
+            if (gloss.includes("'") || gloss.includes('"') || gloss.includes('‘') || gloss.includes('“')) {
+                const cleanGloss = gloss
+                    .replace(/^['"‘“]|['"’”]$/g, '')
+                    .replace(/['"’”]\s*,\s*['"‘“]/g, ' / ')
+                    .replace(/['"‘“’”]/g, '')
+                    .trim();
+                return { meaningPrimary: cleanGloss || gloss, meaningHint: desc };
+            }
+            return { meaningPrimary: gloss, meaningHint: desc };
+        }
+
+        const quoteMatches = rawMeaning.match(/['"‘“]([^'"‘“”]+)['"’”]/g);
+        if (quoteMatches && quoteMatches.length > 0) {
+            const cleanGloss = quoteMatches
+                .map(m => m.replace(/['"‘“”]/g, '').trim())
+                .filter(Boolean)
+                .join(' / ');
+            if (cleanGloss) {
+                const desc = rawMeaning.replace(/It can be translated as\s*['"‘“].*$/i, '').trim();
+                const hint = desc && desc !== cleanGloss ? (desc.endsWith('.') ? desc.slice(0, -1) : desc) : null;
+                return { meaningPrimary: cleanGloss, meaningHint: hint };
+            }
+        }
+        return { meaningPrimary: rawMeaning, meaningHint: null };
+    }
+
+    if (rawMeaning.includes(';')) {
+        const parts = rawMeaning.split(';').map(p => p.trim()).filter(Boolean);
+        if (parts.length > 1) {
+            return { meaningPrimary: parts.slice(0, 3).join(' • '), meaningHint: null };
+        }
+    }
+
+    return { meaningPrimary: rawMeaning, meaningHint: null };
+}
+
+function maskClozeSentence(sentence: string, word: string): string {
+    if (!sentence || !word) return sentence || '';
+    try {
+        let cleanWord = word.replace(/^[~～〜]/, '').replace(/[~～〜]$/, '').trim();
+        if ((cleanWord.startsWith('(') && cleanWord.endsWith(')')) || (cleanWord.startsWith('（') && cleanWord.endsWith('）'))) {
+            cleanWord = cleanWord.slice(1, -1).trim();
+        }
+        const wordToMatch = cleanWord || word;
+        return sentence.replace(new RegExp(escapeRegex(wordToMatch), 'gi'), '【 ... 】');
+    } catch {
+        return sentence;
+    }
 }
 
 @Component({
@@ -39,12 +102,31 @@ export class StudyModeComponent implements OnDestroy {
     i18n = inject(I18nService);
     streak = inject(StreakService);
     grammar = inject(GrammarService);
+    gamification = inject(GamificationService);
     audioService = inject(AudioService);
     toast = inject(ToastService);
     keyboardService = inject(KeyboardShortcutService);
 
-    // Study Deck Selection: words vs grammar
-    studyDeck = signal<'words' | 'grammar'>('words');
+    // Gamification & Game Feel Signals
+    sessionEarnedXp = signal(0);
+    currentCombo = signal(0);
+    maxCombo = signal(0);
+    floatingXp = signal<{ id: number; text: string; bonus: boolean } | null>(null);
+    cardFeedback = signal<'success' | 'wrong' | null>(null);
+    isGradingCard = signal(false);
+    private floatingXpCounter = 0;
+    private floatingXpTimer: ReturnType<typeof setTimeout> | null = null;
+    private gradeDelayTimer: ReturnType<typeof setTimeout> | null = null;
+
+    readonly comboTier = computed<'fire' | 'electric' | 'super'>(() => {
+        const combo = this.currentCombo();
+        if (combo >= 10) return 'super';
+        if (combo >= 5) return 'electric';
+        return 'fire';
+    });
+
+    // Study Deck Selection: all (both) vs words vs grammar
+    studyDeck = signal<'all' | 'words' | 'grammar'>('all');
 
     // Options (reactive signals)
     includeNew = signal(true);
@@ -96,39 +178,42 @@ export class StudyModeComponent implements OnDestroy {
     deckCounts = computed(() => {
         const currentLang = this.currentLanguage();
         this.grammar.loadedLanguages();
-        const items = this.vocab.vocabulary().filter(item => item.language === currentLang);
-        let wordsCount = 0;
-        let grammarCount = 0;
-        for (const item of items) {
+        let words = 0;
+        let grammar = 0;
+
+        for (const item of this.vocab.vocabulary()) {
+            if (item.language !== currentLang || item.level === 'ignored') continue;
             if (this.grammar.isGrammar(item.word, item.language)) {
-                grammarCount++;
+                grammar++;
             } else {
-                wordsCount++;
+                words++;
             }
         }
-        return {
-            words: wordsCount,
-            grammar: grammarCount
-        };
+        return { all: words + grammar, words, grammar };
     });
 
     deckStats = computed(() => {
         const currentLang = this.currentLanguage();
         this.grammar.loadedLanguages();
         const deck = this.studyDeck();
-        let items = this.vocab.vocabulary().filter(item => item.language === currentLang);
-        if (deck === 'words') {
-            items = items.filter(item => !this.grammar.isGrammar(item.word, item.language));
-        } else {
-            items = items.filter(item => this.grammar.isGrammar(item.word, item.language));
+        let total = 0;
+        let newCount = 0;
+        let learningCount = 0;
+        let knownCount = 0;
+
+        for (const item of this.vocab.vocabulary()) {
+            if (item.language !== currentLang || item.level === 'ignored') continue;
+            const isGrammar = this.grammar.isGrammar(item.word, item.language);
+            if (deck === 'words' && isGrammar) continue;
+            if (deck === 'grammar' && !isGrammar) continue;
+
+            total++;
+            if (item.level === 'new') newCount++;
+            else if (item.level === 'learning') learningCount++;
+            else if (item.level === 'known') knownCount++;
         }
-        return {
-            total: items.length,
-            new: items.filter(item => item.level === 'new').length,
-            learning: items.filter(item => item.level === 'learning').length,
-            known: items.filter(item => item.level === 'known').length,
-            ignored: items.filter(item => item.level === 'ignored').length,
-        };
+
+        return { total, new: newCount, learning: learningCount, known: knownCount };
     });
 
     // Due today count
@@ -138,12 +223,19 @@ export class StudyModeComponent implements OnDestroy {
         const deck = this.studyDeck();
         const today = new Date();
         today.setHours(23, 59, 59, 999);
-        return this.vocab.vocabulary().filter(item => {
-            if (item.language !== currentLang || item.level === 'ignored') return false;
-            if (deck === 'words' && this.grammar.isGrammar(item.word, item.language)) return false;
-            if (deck === 'grammar' && !this.grammar.isGrammar(item.word, item.language)) return false;
-            return !item.nextReviewDate || new Date(item.nextReviewDate) <= today;
-        }).length;
+        let count = 0;
+
+        for (const item of this.vocab.vocabulary()) {
+            if (item.language !== currentLang || item.level === 'ignored') continue;
+            const isGrammar = this.grammar.isGrammar(item.word, item.language);
+            if (deck === 'words' && isGrammar) continue;
+            if (deck === 'grammar' && !isGrammar) continue;
+            if (!item.nextReviewDate || new Date(item.nextReviewDate) <= today) {
+                count++;
+            }
+        }
+
+        return count;
     });
 
     // Filtered available cards based on study preferences
@@ -194,9 +286,20 @@ export class StudyModeComponent implements OnDestroy {
         const item = this.currentCard();
         if (!item) return null;
         this.grammar.loadedLanguages();
+        this.grammar.loadedTranslations();
         const pattern = this.grammar.findPattern(item.word, item.language);
-        const isGrammar = !!pattern || this.studyDeck() === 'grammar';
-        const formation = pattern?.formation || null;
+        const isGrammar = !!pattern || this.grammar.isGrammar(item.word, item.language);
+        const uiLang = this.i18n.currentLanguage();
+        const trans = (isGrammar && pattern && uiLang !== 'en')
+            ? this.grammar.getLoadedTranslation(item.language as SupportedGrammarLang, uiLang)?.[pattern.id]
+            : null;
+        const formation = trans?.formation || pattern?.formation || null;
+        const rawMeaning = (isGrammar && trans)
+            ? (trans.shortExplanation || trans.title || item.meaning)
+            : item.meaning;
+
+        const { meaningPrimary, meaningHint } = parseCardMeaning(rawMeaning, isGrammar);
+
         const grammarLevel = pattern?.level || null;
         const reading = this.settings.getReadingText(item.language, item);
         const primaryText = this.settings.useReadingOnly(item.language) && reading ? reading : item.word;
@@ -206,15 +309,9 @@ export class StudyModeComponent implements OnDestroy {
         const hasContext = !!item.sourceSentence?.trim();
         const isFlipped = this.isAnswerRevealed();
 
-        let maskedSentence = item.sourceSentence || '';
-        if (this.clozeMode() && hasContext && item.word) {
-            try {
-                const regex = new RegExp(escapeRegex(item.word), 'gi');
-                maskedSentence = maskedSentence.replace(regex, '【 ... 】');
-            } catch {
-                maskedSentence = item.sourceSentence || '';
-            }
-        }
+        const maskedSentence = (this.clozeMode() && hasContext && item.word)
+            ? maskClozeSentence(item.sourceSentence!, item.word)
+            : (item.sourceSentence || '');
 
         return {
             item,
@@ -231,7 +328,10 @@ export class StudyModeComponent implements OnDestroy {
             isGrammar,
             pattern,
             formation,
-            grammarLevel
+            grammarLevel,
+            localizedMeaning: rawMeaning,
+            meaningPrimary,
+            meaningHint
         };
     });
 
@@ -293,6 +393,15 @@ export class StudyModeComponent implements OnDestroy {
             }
         });
 
+        // Preload grammar translations when learning language or UI language changes
+        effect(() => {
+            const lang = this.currentLanguage() as SupportedGrammarLang;
+            const uiLang = this.i18n.currentLanguage();
+            if (lang && uiLang && uiLang !== 'en') {
+                void this.grammar.loadTranslation(lang, uiLang);
+            }
+        });
+
         // Preload active and upcoming card audio for 0ms instant playback
         effect(() => {
             const card = this.currentCard();
@@ -316,8 +425,8 @@ export class StudyModeComponent implements OnDestroy {
                 this.clozeMode.set(storedCloze === 'true');
             }
 
-            // Register study mode active check with centralized KeyboardShortcutService
-            this.keyboardService.setStudyActiveCallback(() => this.isStudying() && !this.isComplete());
+            // Register study mode active check with centralized KeyboardShortcutService (suppressed when inspect modal is open)
+            this.keyboardService.setStudyActiveCallback(() => this.isStudying() && !this.isComplete() && !this.grammar.isPopupVisible());
 
             // Handle study keyboard shortcuts (Space, 1-4, R)
             this.keyboardService.events$
@@ -349,6 +458,14 @@ export class StudyModeComponent implements OnDestroy {
         if (this.confettiTimeout) {
             clearTimeout(this.confettiTimeout);
             this.confettiTimeout = null;
+        }
+        if (this.floatingXpTimer) {
+            clearTimeout(this.floatingXpTimer);
+            this.floatingXpTimer = null;
+        }
+        if (this.gradeDelayTimer) {
+            clearTimeout(this.gradeDelayTimer);
+            this.gradeDelayTimer = null;
         }
     }
 
@@ -384,7 +501,8 @@ export class StudyModeComponent implements OnDestroy {
     playAudio(text: string, lang?: string, event?: Event, audioUrl?: string): void {
         if (event) event.stopPropagation();
         const targetLang = (lang || this.currentLanguage()) as SupportedLearningLanguage;
-        void this.audioService.playWord(text, targetLang, audioUrl);
+        const cleanText = text.replace(/^[~～〜]/, '').replace(/[~～〜]$/, '').trim();
+        void this.audioService.playWord(cleanText || text, targetLang, audioUrl);
     }
 
     openVideoScene(videoId: string, timestamp?: number, event?: Event): void {
@@ -431,6 +549,12 @@ export class StudyModeComponent implements OnDestroy {
         this.isStudying.set(true);
         this.isComplete.set(false);
         this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
+        this.sessionEarnedXp.set(0);
+        this.currentCombo.set(0);
+        this.maxCombo.set(0);
+        this.floatingXp.set(null);
+        this.cardFeedback.set(null);
+        this.isGradingCard.set(false);
         this.swipeOffset.set(0);
 
         this.sessionStartTime.set(new Date());
@@ -461,32 +585,79 @@ export class StudyModeComponent implements OnDestroy {
     }
 
     markAnswer(answer: 'wrong' | 'hard' | 'good' | 'easy'): void {
+        if (this.isGradingCard()) return;
         const card = this.currentCard();
         if (!card) return;
 
         let quality: number;
         let isCorrect = false;
+        let baseXp = 0;
+
         if (answer === 'wrong') {
             quality = 1;
+            baseXp = 0;
         } else if (answer === 'hard') {
             quality = 3;
             isCorrect = true;
+            baseXp = 5;
         } else if (answer === 'good') {
             quality = 4;
             isCorrect = true;
+            baseXp = 10;
         } else {
             quality = 5;
             isCorrect = true;
+            baseXp = 15;
         }
 
-        // Track missed cards for review missed action
+        // Track missed cards for review missed action & handle combo streaks
         if (!isCorrect) {
             this.missedCardIds.update(set => {
                 const next = new Set(set);
                 next.add(card.id);
                 return next;
             });
+            this.currentCombo.set(0);
+            this.cardFeedback.set('wrong');
+        } else {
+            const newCombo = this.currentCombo() + 1;
+            this.currentCombo.set(newCombo);
+            if (newCombo > this.maxCombo()) {
+                this.maxCombo.set(newCombo);
+            }
+
+            // Streak combo bonus calculation
+            let comboBonus = 0;
+            if (newCombo >= 10) {
+                comboBonus = 10;
+            } else if (newCombo >= 5) {
+                comboBonus = 5;
+            } else if (newCombo >= 3) {
+                comboBonus = 2;
+            }
+
+            const totalXp = baseXp + comboBonus;
+            this.gamification.addXP(totalXp);
+            this.sessionEarnedXp.update(prev => prev + totalXp);
+
+            // Trigger floating XP pop-up
+            if (this.floatingXpTimer) {
+                clearTimeout(this.floatingXpTimer);
+            }
+            this.floatingXp.set({
+                id: ++this.floatingXpCounter,
+                text: `+${totalXp} XP`,
+                bonus: comboBonus > 0
+            });
+            this.floatingXpTimer = setTimeout(() => {
+                this.floatingXp.set(null);
+            }, 950);
+
+            this.cardFeedback.set('success');
         }
+
+        // Record SRS review for daily missions & stats
+        this.gamification.recordSRSReview();
 
         this.sessionStats.update(prev => ({
             total: prev.total + 1,
@@ -511,20 +682,31 @@ export class StudyModeComponent implements OnDestroy {
         this.swipeOffset.set(0);
         this.audioService.stopAudio();
 
-        // Next card or complete
-        if (this.currentIndex() < this.studyCards().length - 1) {
-            this.currentIndex.update(i => i + 1);
-            this.isAnswerRevealed.set(false);
-            this.peekReading.set(false);
-        } else {
-            this.stopTimer();
-            this.isStudying.set(false);
-            this.isComplete.set(true);
-            this.streak.recordActivity().then(() => {
-                this.showStreakToast();
-            });
-            this.triggerConfetti();
+        this.isGradingCard.set(true);
+
+        // Tactile micro-delay (220ms) for snappy visual feedback before advancing card
+        if (this.gradeDelayTimer) {
+            clearTimeout(this.gradeDelayTimer);
         }
+        this.gradeDelayTimer = setTimeout(() => {
+            this.cardFeedback.set(null);
+
+            // Next card or complete
+            if (this.currentIndex() < this.studyCards().length - 1) {
+                this.currentIndex.update(i => i + 1);
+                this.isAnswerRevealed.set(false);
+                this.peekReading.set(false);
+            } else {
+                this.stopTimer();
+                this.isStudying.set(false);
+                this.isComplete.set(true);
+                this.streak.recordActivity().then(() => {
+                    this.showStreakToast();
+                });
+                this.triggerConfetti();
+            }
+            this.isGradingCard.set(false);
+        }, 220);
     }
 
     private showStreakToast(): void {
@@ -564,6 +746,10 @@ export class StudyModeComponent implements OnDestroy {
         this.isStudying.set(true);
         this.isComplete.set(false);
         this.sessionStats.set({ total: 0, correct: 0, incorrect: 0 });
+        this.currentCombo.set(0);
+        this.floatingXp.set(null);
+        this.cardFeedback.set(null);
+        this.isGradingCard.set(false);
         this.swipeOffset.set(0);
 
         this.sessionStartTime.set(new Date());

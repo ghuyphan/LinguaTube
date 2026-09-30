@@ -546,10 +546,17 @@
     "filterWords": "Words",
     "filterGrammar": "Grammar",
     "inspectRule": "View Rule Details",
+    "deckAll": "All",
     "deckWords": "Words",
     "deckGrammar": "Grammar",
+    "noItems": "No items to study yet",
+    "noItemsHint": "Save vocabulary words or grammar patterns while watching videos to build your review deck.",
     "noGrammar": "No grammar patterns to study",
-    "noGrammarHint": "Save grammar patterns while watching videos to build your review deck."
+    "noGrammarHint": "Save grammar patterns while watching videos to build your review deck.",
+    "combo": "Combo",
+    "comboStreak": "{{count}} in a row!",
+    "highestCombo": "Best Combo",
+    "xpEarned": "XP Earned"
   },
   "streak": {
     "dayStreak": "Streak",
