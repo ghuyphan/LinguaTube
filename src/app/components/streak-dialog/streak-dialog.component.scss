@@ -78,6 +78,12 @@
                 opacity: 0.85;
             }
         }
+
+        @media (hover: hover) {
+            &:hover {
+                filter: drop-shadow(0 10px 24px rgba(148, 163, 184, 0.55));
+            }
+        }
     }
 
     // Stage II: Blazing Campfire (Days 7–29)
@@ -97,6 +103,12 @@
                 filter: drop-shadow(0 2px 8px rgba(249, 115, 22, 0.8));
             }
         }
+
+        @media (hover: hover) {
+            &:hover {
+                filter: drop-shadow(0 14px 32px rgba(249, 115, 22, 0.8));
+            }
+        }
     }
 
     // Stage III: Eternal Beacon (Days 30+)
@@ -114,6 +126,12 @@
             .hero-campfire {
                 color: #f0fdf4;
                 filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.85));
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                filter: drop-shadow(0 14px 34px rgba(56, 189, 248, 0.85));
             }
         }
     }

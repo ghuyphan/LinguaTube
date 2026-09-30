@@ -38,13 +38,12 @@
 
 .achievements-hero-icon {
     width: 68px;
-    height: 68px;
-    border-radius: 18px 18px 24px 24px;
+    height: 76px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(245, 158, 11, 0.12);
-    border: 1.5px solid rgba(245, 158, 11, 0.25);
+    background: transparent;
+    border: none;
     transition: all var(--transition-normal);
 }
 
@@ -60,21 +59,21 @@
     position: relative;
     animation: crestFloat 3.2s ease-in-out infinite alternate;
     will-change: transform;
-    transition: transform var(--transition-bounce), filter var(--transition-fast);
+    transition: all var(--transition-normal);
 
     @media (prefers-reduced-motion: reduce) {
         animation: none !important;
     }
 
-    @media (hover: hover) {
-        &:hover {
-            filter: brightness(1.08) drop-shadow(0 12px 26px rgba(255, 255, 255, 0.35));
-        }
-    }
-
     @each $tier, $map in $tier-colors {
         &[data-tier="#{$tier}"] {
-            filter: drop-shadow(0 8px 18px map.get($map, 'crest-glow'));
+            filter: drop-shadow(0 8px 20px map.get($map, 'crest-glow'));
+
+            @media (hover: hover) {
+                &:hover {
+                    filter: drop-shadow(0 12px 28px map.get($map, 'crest-glow')) drop-shadow(0 4px 12px map.get($map, 'accent'));
+                }
+            }
 
             .rpg-rank-crest {
                 background: map.get($map, 'crest-bg');
@@ -93,42 +92,13 @@
 }
 
 .rpg-rank-crest {
-    position: relative;
-    width: 60px;
-    height: 68px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // Classic RPG Heater Shield silhouette (identical to achievement cards)
-    clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
+    @include rpg-shield-base(60px, 68px, 2.5px, 46%);
     transition: transform var(--transition-fast);
-
-    // Metallic inner shield rim & bevel
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 2.5px;
-        clip-path: polygon(50% 100%, 0 78%, 0 8%, 15% 0, 85% 0, 100% 8%, 100% 78%);
-        pointer-events: none;
-    }
-
-    // Specular light glint / metallic sheen across upper shield
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 46%;
-        clip-path: inherit;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.02) 100%);
-        pointer-events: none;
-    }
 
     .hero-crest-icon {
         position: relative;
         z-index: 2;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.65));
         transition: transform var(--transition-bounce);
     }
 }
@@ -639,12 +609,7 @@
 
         @media (hover: hover) {
             &:hover .rpg-shield-crest {
-                transform: translateY(-2px) scale(1.05);
-                box-shadow: 0 6px 20px var(--crest-glow);
-
-                .crest-icon {
-                    transform: scale(1.08);
-                }
+                filter: drop-shadow(0 6px 16px var(--crest-glow));
             }
         }
 
@@ -1823,27 +1788,40 @@
 // ------------------------------------
 .missions-hero-icon {
     width: 68px;
-    height: 68px;
-    border-radius: 50%;
+    height: 76px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.1) 100%);
-    border: 2px solid rgba(52, 211, 153, 0.6);
-    box-shadow: 0 0 24px rgba(16, 185, 129, 0.25), inset 0 1.5px 1px rgba(255, 255, 255, 0.4), inset 0 -2px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background: transparent;
+    border: none;
+    box-shadow: none;
     animation: crestFloat 3.2s ease-in-out infinite alternate;
     transition: all var(--transition-normal);
+    filter: drop-shadow(0 8px 20px rgba(16, 185, 129, 0.45));
 
-    .hero-scroll,
-    .hero-target {
-        color: #10b981;
-        filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.5));
-        transition: transform var(--transition-bounce);
+    .rpg-quest-crest {
+        @include rpg-shield-base(60px, 68px, 2.5px, 46%);
+        background: linear-gradient(145deg, #6ee7b7 0%, #10b981 40%, #047857 100%);
+        transition: transform var(--transition-fast);
+
+        &::before {
+            background: radial-gradient(circle at 50% 25%, #065f46 0%, #022c22 100%);
+            border: 1.5px solid rgba(167, 243, 208, 0.75);
+        }
+
+        .hero-scroll {
+            position: relative;
+            z-index: 2;
+            color: #ecfdf5;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.65));
+            transition: transform var(--transition-bounce);
+        }
     }
 
     @media (hover: hover) {
         &:hover {
-            filter: drop-shadow(0 10px 28px rgba(16, 185, 129, 0.6));
+            filter: drop-shadow(0 12px 28px rgba(16, 185, 129, 0.7));
         }
     }
 }

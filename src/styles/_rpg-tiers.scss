@@ -222,6 +222,14 @@ $diamond-crest: (
     'crest-icon-color': #f0fdf4
 );
 
+$quest-crest: (
+    'crest-bg': linear-gradient(145deg, #6ee7b7 0%, #10b981 40%, #047857 100%),
+    'crest-inner-bg': radial-gradient(circle at 50% 25%, #065f46 0%, #022c22 100%),
+    'crest-inner-border': rgba(167, 243, 208, 0.75),
+    'crest-glow': rgba(16, 185, 129, 0.5),
+    'crest-icon-color': #ecfdf5
+);
+
 // Mixin for standard RPG Heater Shield silhouette
 @mixin rpg-shield-base($width, $height, $inner-inset: 2px, $specular-height: 46%) {
     position: relative;
