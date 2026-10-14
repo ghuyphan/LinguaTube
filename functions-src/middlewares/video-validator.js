@@ -29,16 +29,31 @@ export async function fetchYouTubeVideoDetails(videoId) {
         });
         if (!res.ok) return { duration: null, isLive: false };
         const html = await res.text();
-        const isLive = /"isLive(?:Broadcast|Content)?":\s*true|"liveBroadcastDetails"/i.test(html);
+        const isLive = /"isLive(?:Broadcast|Content|Now)?":\s*true|"status"\s*:\s*"LIVE"/i.test(html);
         const match = html.match(/"approxDurationMs":"(\d+)"/);
         let duration = null;
         if (match && match[1]) {
             const seconds = Math.round(parseInt(match[1], 10) / 1000);
             if (!isNaN(seconds) && seconds > 0) duration = seconds;
         }
-        return { duration, isLive };
+
+        let genre = null;
+        const genreMatch = html.match(/itemprop="genre"\s+content="([^"]+)"/i) || html.match(/"category":"([^"]+)"/i);
+        if (genreMatch && genreMatch[1]) {
+            genre = genreMatch[1].replace(/&amp;/g, '&').trim();
+        }
+
+        const tags = [];
+        const tagMatches = html.matchAll(/<meta\s+property="og:video:tag"\s+content="([^"]+)"/gi);
+        for (const tm of tagMatches) {
+            if (tm[1] && !tags.includes(tm[1].trim())) {
+                tags.push(tm[1].trim());
+            }
+        }
+
+        return { duration, isLive, genre, tags };
     } catch {
-        return { duration: null, isLive: false };
+        return { duration: null, isLive: false, genre: null, tags: [] };
     }
 }
 

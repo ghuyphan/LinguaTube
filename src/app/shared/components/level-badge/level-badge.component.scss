@@ -1,0 +1,128 @@
+:host {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-pill, 9999px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  white-space: nowrap;
+  user-select: none;
+  box-sizing: border-box;
+  transition: all var(--transition-fast, 0.15s ease);
+
+  /* --- Size Variants --- */
+  &--xs {
+    font-size: 0.625rem;
+    padding: 1px 6px;
+    height: 18px;
+  }
+
+  &--sm {
+    font-size: 0.6875rem;
+    padding: 2px 8px;
+    height: 20px;
+  }
+
+  &--md {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    height: 24px;
+    font-weight: 700;
+  }
+
+  &--lg {
+    font-size: 1.125rem;
+    padding: 6px 16px;
+    height: 38px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  /* --- Chill Pastel Level Color Theming --- */
+  &[data-tier="beginner"] {
+    background: var(--level-beginner);
+    color: var(--level-beginner-text);
+    border: 1px solid var(--level-beginner-border);
+  }
+
+  &[data-tier="elementary"] {
+    background: var(--level-elementary);
+    color: var(--level-elementary-text);
+    border: 1px solid var(--level-elementary-border);
+  }
+
+  &[data-tier="intermediate"] {
+    background: var(--level-intermediate);
+    color: var(--level-intermediate-text);
+    border: 1px solid var(--level-intermediate-border);
+  }
+
+  &[data-tier="upper_intermediate"] {
+    background: var(--level-upper);
+    color: var(--level-upper-text);
+    border: 1px solid var(--level-upper-border);
+  }
+
+  &[data-tier="advanced"] {
+    background: var(--level-advanced);
+    color: var(--level-advanced-text);
+    border: 1px solid var(--level-advanced-border);
+  }
+
+  /* --- Clickable Variant --- */
+  &--clickable {
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      filter: brightness(1.04);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(--accent-primary);
+    }
+  }
+
+  /* --- Skeleton Loading State --- */
+  &--loading {
+    width: 48px;
+    cursor: default;
+    background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+
+    .skeleton-shimmer {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 100%
+      );
+      animation: badgeShimmer 1.5s infinite;
+    }
+  }
+}
+
+@keyframes badgeShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

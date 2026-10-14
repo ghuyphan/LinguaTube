@@ -352,7 +352,8 @@ CREATE TABLE public.history (
   is_favorite BOOLEAN DEFAULT FALSE,
   watched_at TIMESTAMPTZ DEFAULT NOW(),
   created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id, video_id)
 );
 ```
 
@@ -366,6 +367,7 @@ CREATE TABLE public.playlists (
   description TEXT,
   visibility TEXT DEFAULT 'private' CHECK (visibility IN ('public', 'unlisted', 'private')),
   language TEXT DEFAULT 'all',
+  level TEXT, -- Proficiency level (e.g. 'JLPT N4', 'Beginner')
   tags JSONB DEFAULT '[]'::jsonb,
   video_ids JSONB DEFAULT '[]'::jsonb,
   video_count INTEGER DEFAULT 0,
@@ -513,6 +515,8 @@ All public tables enforce strict RLS:
 
 #### RPC: `sync_daily_missions(p_missions JSONB)`
 - **Cross-Device Persistence**: Stores daily mission completion states and claim progress for seamless continuity across mobile and desktop.
+
+#### Trigger Function: `handle_new_user()`
 Automatically provisions a `profiles` record when a user registers via Google OAuth or Email. To strictly prevent pre-authentication account takeover of legacy records:
 - Only links and restores legacy PB data (tier, diamonds) if the email is confirmed (`NEW.email_confirmed_at IS NOT NULL`) or authenticated via a verified OAuth provider (`google`, `apple`, `github`).
 - Unconfirmed signups receive default free accounts with 10 diamonds. Once email confirmation occurs, `on_auth_user_email_confirmed` updates the profile and links the legacy account.
@@ -605,7 +609,7 @@ Server-authoritative guard on `public.gamification`:
 - `protect_playlist_fields()` prevents authenticated users from toggling administrative flags (`is_featured`) or forging `save_count`.
 - `sync_playlist_save_count()` automatically increments/decrements `playlists.save_count` when users bookmark or unbookmark playlists via `playlist_saves`.
 
-### 5.10. PostgreSQL Scheduled Repeat Jobs (`pg_cron`)
+### 5.13. PostgreSQL Scheduled Repeat Jobs (`pg_cron`)
 The Supabase instance utilizes the `pg_cron` extension to manage automated server-side background tasks without requiring 24/7 external polling workers:
 
 | Job Name | Schedule | Purpose | Command |

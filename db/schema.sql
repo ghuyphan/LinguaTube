@@ -108,12 +108,16 @@ CREATE TABLE IF NOT EXISTS video_languages (
   channel TEXT,
   channel_avatar TEXT,
   levels TEXT DEFAULT '{}',
+  category TEXT DEFAULT 'general',
+  tags TEXT DEFAULT '[]',
   created_at INTEGER DEFAULT (strftime('%s', 'now')),
   updated_at INTEGER DEFAULT (strftime('%s', 'now'))
 );
 
 CREATE INDEX IF NOT EXISTS idx_video_languages_updated ON video_languages(updated_at);
 CREATE INDEX IF NOT EXISTS idx_video_languages_sub ON video_languages(sub_languages);
+CREATE INDEX IF NOT EXISTS idx_video_languages_category ON video_languages(category);
+CREATE INDEX IF NOT EXISTS idx_video_languages_cat_updated ON video_languages(category, updated_at DESC);
 
 
 -- no_transcript_cache table for negative caching

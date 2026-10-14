@@ -36,33 +36,39 @@
   letter-spacing: 0.02em;
   transition: all var(--transition-normal, 0.2s ease);
 
-  &[data-tier="beginner"],
+  &[data-tier="beginner"] {
+    background: var(--level-beginner);
+    border: 1.5px solid var(--level-beginner-border);
+    color: var(--level-beginner-text);
+    box-shadow: 0 0 16px var(--level-beginner);
+  }
+
   &[data-tier="elementary"] {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.05) 100%);
-    border: 1.5px solid rgba(16, 185, 129, 0.4);
-    color: #10b981;
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.18);
+    background: var(--level-elementary);
+    border: 1.5px solid var(--level-elementary-border);
+    color: var(--level-elementary-text);
+    box-shadow: 0 0 16px var(--level-elementary);
   }
 
   &[data-tier="intermediate"] {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%);
-    border: 1.5px solid rgba(59, 130, 246, 0.4);
-    color: #3b82f6;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.18);
+    background: var(--level-intermediate);
+    border: 1.5px solid var(--level-intermediate-border);
+    color: var(--level-intermediate-text);
+    box-shadow: 0 0 16px var(--level-intermediate);
   }
 
   &[data-tier="upper_intermediate"] {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.05) 100%);
-    border: 1.5px solid rgba(245, 158, 11, 0.4);
-    color: #f59e0b;
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.18);
+    background: var(--level-upper);
+    border: 1.5px solid var(--level-upper-border);
+    color: var(--level-upper-text);
+    box-shadow: 0 0 16px var(--level-upper);
   }
 
   &[data-tier="advanced"] {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(168, 85, 247, 0.05) 100%);
-    border: 1.5px solid rgba(168, 85, 247, 0.4);
-    color: #a855f7;
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.18);
+    background: var(--level-advanced);
+    border: 1.5px solid var(--level-advanced-border);
+    color: var(--level-advanced-text);
+    box-shadow: 0 0 16px var(--level-advanced);
   }
 }
 

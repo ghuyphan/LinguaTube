@@ -1783,6 +1783,35 @@ test('Recommendation Engine: rankVideos applies multi-factor learner signals acc
   assert.equal(declustered[1].channel, 'Channel Y', 'Adjacent same-channel candidate must be separated');
 });
 
+test('Recommendation Engine: session seed rotation produces different ranking while preserving deterministic pagination', async () => {
+  const { rankVideos } = await import('../functions-src/services/recommendation.service.js');
+
+  const pool = Array.from({ length: 20 }, (_, i) => ({
+    videoId: `vid_${i}`,
+    title: `Video Title ${i}`,
+    channel: `Channel ${i % 5}`,
+    duration: 300 + (i * 20),
+    tier: 'intermediate',
+    updatedAt: 1000 + i
+  }));
+
+  // Session A
+  const sessionA_page1 = rankVideos(pool, { language: 'ja', sessionSeed: 1111 }).slice(0, 5);
+  const sessionA_page2 = rankVideos(pool, { language: 'ja', sessionSeed: 1111 }).slice(5, 10);
+  const sessionA_full = rankVideos(pool, { language: 'ja', sessionSeed: 1111 }).slice(0, 10);
+
+  // Pagination consistency: page1 + page2 must match full first 10 items
+  assert.deepEqual([...sessionA_page1, ...sessionA_page2], sessionA_full);
+
+  // Session B (refresh with new seed)
+  const sessionB_page1 = rankVideos(pool, { language: 'ja', sessionSeed: 9999 }).slice(0, 5);
+
+  // Rotated ranking on refresh: ordering should differ between seeds
+  const idsA = sessionA_page1.map(v => v.videoId);
+  const idsB = sessionB_page1.map(v => v.videoId);
+  assert.notDeepEqual(idsA, idsB, 'Different session seed must yield different candidate ranking on refresh');
+});
+
 test('labelToTier: accurately maps levels and frameworks to standardized tiers', async () => {
   const { labelToTier } = await import('../functions-src/data/video-info-db.js');
 
@@ -1911,6 +1940,41 @@ test('saveVideoLevel: caps client confidence and applies EMA blending', async ()
   // Blended score: 0.60 * 2.0 + 0.40 * 3.0 = 1.2 + 1.2 = 2.4
   assert.equal(second.ja.score, 2.4);
   assert.ok(second.ja.confidence <= 0.85, 'Client confidence must be capped at 0.85');
+});
+
+test('Kanji API: GET /api/kanji validates input and handles cache', async () => {
+  const { onRequest } = await import('../functions-src/api/kanji.js');
+
+  // 1. Missing query returns 400
+  const badReq = new Request('https://voca.study/api/kanji', { method: 'GET' });
+  const badRes = await onRequest({ request: badReq, env: {} });
+  assert.equal(badRes.status, 400);
+
+  // 2. Options returns CORS 200
+  const optReq = new Request('https://voca.study/api/kanji?query=食', { method: 'OPTIONS' });
+  const optRes = await onRequest({ request: optReq, env: {} });
+  assert.equal(optRes.status, 200);
+
+  // 3. Valid GET request formats payload with SVG URLs
+  const goodReq = new Request('https://voca.study/api/kanji?query=食', { method: 'GET' });
+  const goodRes = await onRequest({ request: goodReq, env: {} });
+  assert.equal(goodRes.status, 200);
+  const json = await goodRes.json();
+  assert.equal(json.query, '食');
+  assert.ok(Array.isArray(json.kanji));
+  if (json.kanji.length > 0) {
+    const k = json.kanji[0];
+    assert.equal(k.literal, '食');
+    assert.equal(k.stroke_order_svg, 'https://jotoba.de/resource/kanji/animation/%E9%A3%9F');
+    assert.equal(k.stroke_frames_svg, 'https://jotoba.de/resource/kanji/frames/%E9%A3%9F');
+    assert.equal(k.stroke_count, 9);
+  }
+
+  // 4. Memory cache hit
+  const cacheReq = new Request('https://voca.study/api/kanji?query=食', { method: 'GET' });
+  const cacheRes = await onRequest({ request: cacheReq, env: {} });
+  assert.equal(cacheRes.status, 200);
+  assert.equal(cacheRes.headers.get('x-cache'), 'HIT-MEMORY');
 });
 
 

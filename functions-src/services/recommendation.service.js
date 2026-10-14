@@ -18,13 +18,16 @@ function hashString(str) {
 }
 
 /**
- * Deterministic pseudo-random serendipity jitter between -4.0 and +4.0
+ * Deterministic pseudo-random serendipity jitter.
+ * Defaults to [-4.0, +4.0], configurable via amplitude parameter.
  * Consistent across pagination offsets for the same session seed and video ID.
  */
-export function getDeterministicJitter(videoId, seed = 12345) {
+export function getDeterministicJitter(videoId, seed = 12345, amplitude = 4) {
     const cleanSeed = typeof seed === 'number' ? seed : 12345;
+    const cleanAmp = (typeof amplitude === 'number' && amplitude > 0) ? amplitude : 4;
     const h = Math.abs(hashString(String(videoId || '')) ^ cleanSeed);
-    return ((h % 8000) / 1000) - 4;
+    const mod = Math.round(cleanAmp * 2000);
+    return ((h % mod) / 1000) - cleanAmp;
 }
 
 /**
@@ -192,9 +195,11 @@ export function rankVideos(videos, options = {}) {
             }
         }
 
-        // Factor F: Deterministic Serendipity Jitter (+/- 4 pts) when sessionSeed is provided
+        // Factor F: Deterministic Serendipity Jitter when sessionSeed is provided
+        // Calibrated to +/- 12 pts so refresh seed rotations naturally swap video order across duration tiers
+        // while strictly preserving learner completion demotion (-70 pts) and vocab notebook boosts (+25-45 pts).
         if (sessionSeed !== null && sessionSeed !== undefined) {
-            score += getDeterministicJitter(vid || '', sessionSeed);
+            score += getDeterministicJitter(vid || '', sessionSeed, 12);
         }
 
         return { video: v, score };

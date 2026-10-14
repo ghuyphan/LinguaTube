@@ -255,6 +255,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
             (openAchievements)="openAchievementsFromSettings()"
             (openAiCredits)="openAiCreditsFromSettings()"
             (openProUpgrade)="showProUpgradeSheet.set(true)"
+            (openOnboarding)="openOnboardingFromSettings()"
           />
         }
 
@@ -1218,6 +1219,7 @@ export class AppComponent implements OnDestroy {
 
   constructor() {
     this.initKeyboardShortcuts();
+    this.initPointerBlur();
 
     // Ensure all app-level dialogs/sheets are dismissed if learning language changes
     let prevLang = '';
@@ -1311,6 +1313,11 @@ export class AppComponent implements OnDestroy {
     }
   }
 
+  openOnboardingFromSettings(): void {
+    this.showSettingsSheet.set(false);
+    this.showOnboardingSheet.set(true);
+  }
+
   /**
    * Initialize keyboard shortcuts (Cmd/Ctrl + K for command palette via centralized service)
    */
@@ -1324,6 +1331,35 @@ export class AppComponent implements OnDestroy {
           this.showCommandPalette.set(true);
         }
       });
+  }
+
+  /**
+   * Automatically blurs buttons and clickable selectors when activated by mouse/touch.
+   * This prevents clicked buttons from remaining active elements in the DOM, which causes
+   * subsequent Space bar presses to highlight and re-trigger them instead of performing
+   * global shortcuts (e.g. video play/pause or flashcard flip). Keyboard navigation via
+   * Tab/Enter remains untouched and fully accessible.
+   */
+  private initPointerBlur(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.ngZone.runOutsideAngular(() => {
+      const onGlobalClick = (e: MouseEvent) => {
+        // e.detail > 0 signifies a pointer (mouse/touch/pen) click, while keyboard Enter/Space is 0
+        if (e.detail > 0) {
+          const target = e.target as HTMLElement | null;
+          if (target && !target.closest('input, textarea, select, [contenteditable="true"]')) {
+            const interactive = target.closest('button, a, [role="button"], [tabindex="0"]');
+            if (interactive instanceof HTMLElement) {
+              interactive.blur();
+            }
+          }
+        }
+      };
+
+      this.document.addEventListener('click', onGlobalClick, { capture: true, passive: true });
+      this.cleanupFns.push(() => this.document.removeEventListener('click', onGlobalClick, { capture: true }));
+    });
   }
 
   onLearnNavClick(event: MouseEvent): void {

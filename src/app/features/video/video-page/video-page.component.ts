@@ -11,6 +11,7 @@ import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bo
 import { TurnstileComponent } from '../../../shared/components/turnstile/turnstile.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
 import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
+import { LevelBadgeComponent } from '../../../shared/components/level-badge/level-badge.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
@@ -52,6 +53,7 @@ export type FeedItem =
     IconComponent,
     AddToPlaylistDialogComponent,
     EmptyStateComponent,
+    LevelBadgeComponent,
     InfiniteScrollDirective,
     FormatTimePipe,
     LanguageFlagPipe
@@ -596,22 +598,28 @@ export class VideoPageComponent implements OnInit {
     // Automatically fetch server-side recommended playlists and videos when active language or difficulty tier changes
     let previousRecommendLang = '';
     let previousRecommendTier = '';
+    let previousPrefLevel = '';
     effect(() => {
       const currentLang = this.settings.language();
       const currentTier = this.videoLevelFilter();
+      const currentPref = this.settings.preferredLevel() || 'all';
       const tierParam = currentTier === 'all' ? undefined : currentTier;
 
       const langChanged = previousRecommendLang !== '' && previousRecommendLang !== currentLang;
       const tierChanged = previousRecommendTier !== '' && previousRecommendTier !== currentTier;
+      const prefChanged = previousPrefLevel !== '' && previousPrefLevel !== currentPref;
       const isInitial = previousRecommendLang === '';
 
       previousRecommendLang = currentLang;
       previousRecommendTier = currentTier;
+      previousPrefLevel = currentPref;
 
-      if (langChanged) {
+      if (langChanged || prefChanged) {
         untracked(() => {
-          const prefLevel = this.settings.preferredLevel();
-          this.videoLevelFilter.set(prefLevel && prefLevel !== 'all' ? prefLevel : 'all');
+          const targetTier = currentPref !== 'all' ? currentPref : 'all';
+          if (this.videoLevelFilter() !== targetTier) {
+            this.videoLevelFilter.set(targetTier);
+          }
           this.savedFeedScrollY = 0;
         });
       }
@@ -622,7 +630,7 @@ export class VideoPageComponent implements OnInit {
       const hasVideos = untracked(() => this.videoRecommendation.recommendedVideos().length > 0);
       const isHome = untracked(() => this.showLearnHome());
 
-      if (isInitial || langChanged || tierChanged || (isHome && !hasVideos)) {
+      if (isInitial || langChanged || tierChanged || prefChanged || (isHome && !hasVideos)) {
         void Promise.all([
           this.playlistService.loadRecommendedPlaylists(currentLang, tierParam),
           this.videoRecommendation.loadRecommendedVideos(currentLang, tierParam)

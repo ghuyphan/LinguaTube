@@ -73,7 +73,7 @@ export class OfflineStreakRepository implements IStreakRepository {
         return week;
     }
 
-    async replenishFreeze(newCount: number): Promise<void> {
+    async replenishFreeze(newCount: number, options?: { spendXP?: boolean }): Promise<void> {
         const clampedCount = Math.min(2, Math.max(0, newCount));
         this.updateLocal({
             ...this.streakData(),
@@ -81,15 +81,25 @@ export class OfflineStreakRepository implements IStreakRepository {
         });
         if (this.auth.isLoggedIn()) {
             try {
-                const { error: rpcErr } = await this.supabase.client.rpc('spend_xp', {
-                    p_cost: 150,
-                    p_purpose: 'freeze_replenish'
-                });
-                if (rpcErr) {
-                    console.warn('[StreakRepo] spend_xp error:', rpcErr);
+                if (options?.spendXP ?? true) {
+                    const { error: rpcErr } = await this.supabase.client.rpc('spend_xp', {
+                        p_cost: 150,
+                        p_purpose: 'freeze_replenish'
+                    });
+                    if (rpcErr) {
+                        console.warn('[StreakRepo] spend_xp error:', rpcErr);
+                    }
+                } else {
+                    const userId = this.auth.getUserId();
+                    if (userId) {
+                        await this.supabase.client
+                            .from('streaks')
+                            .update({ freezes_remaining: clampedCount })
+                            .eq('user_id', userId);
+                    }
                 }
             } catch (err) {
-                console.warn('[StreakRepo] Failed spend_xp on server:', err);
+                console.warn('[StreakRepo] Failed freeze update on server:', err);
             }
         }
     }

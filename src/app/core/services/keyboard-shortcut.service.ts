@@ -120,8 +120,9 @@ export class KeyboardShortcutService implements OnDestroy {
             return false;
         }
 
-        // Allow native Space/Enter activation on buttons without triggering video play/pause
-        if (target?.closest('button, [role="button"]') && (event.code === 'Space' || event.code === 'Enter')) {
+        // Allow native Enter activation on buttons without triggering video play/pause
+        // Space continues to global handlers (video play/pause & flashcard flip)
+        if (target?.closest('button, [role="button"]') && event.code === 'Enter') {
             return false;
         }
 

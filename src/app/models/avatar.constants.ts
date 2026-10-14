@@ -5,12 +5,12 @@ export interface AvatarPreset {
 }
 
 export const PRESET_AVATARS: readonly AvatarPreset[] = [
-    { id: 'cat', name: 'Cat', url: '/avatars/cat.svg' },
-    { id: 'dog', name: 'Dog', url: '/avatars/dog.svg' },
-    { id: 'fox', name: 'Fox', url: '/avatars/fox.svg' },
-    { id: 'panda', name: 'Panda', url: '/avatars/panda.svg' },
-    { id: 'owl', name: 'Owl', url: '/avatars/owl.svg' },
-    { id: 'rabbit', name: 'Rabbit', url: '/avatars/rabbit.svg' },
-    { id: 'ninja', name: 'Ninja', url: '/avatars/ninja.svg' },
-    { id: 'robot', name: 'Robot', url: '/avatars/robot.svg' }
+    { id: 'wizard', name: 'Scholar Mage', url: '/avatars/wizard.svg' },
+    { id: 'knight', name: 'Guardian Knight', url: '/avatars/knight.svg' },
+    { id: 'ranger', name: 'Immersion Ranger', url: '/avatars/ranger.svg' },
+    { id: 'miner', name: 'Sentence Miner', url: '/avatars/miner.svg' },
+    { id: 'shinobi', name: 'Shadow Shinobi', url: '/avatars/shinobi.svg' },
+    { id: 'bard', name: 'Minstrel Bard', url: '/avatars/bard.svg' },
+    { id: 'alchemist', name: 'Vocab Alchemist', url: '/avatars/alchemist.svg' },
+    { id: 'sovereign', name: 'Mythic Sovereign', url: '/avatars/sovereign.svg' }
 ] as const;

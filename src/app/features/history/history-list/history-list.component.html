@@ -102,7 +102,7 @@
                         <span class="video-lang-chip">{{ langs[0].toUpperCase() }}</span>
                         }
                         @if (getItemLevel(item); as lvl) {
-                        <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                        <app-level-badge [level]="lvl.level" [tier]="lvl.tier" />
                         }
 
                         <div class="yt-card-actions">

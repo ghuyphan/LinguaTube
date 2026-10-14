@@ -20,6 +20,9 @@ const DEFAULT_SETTINGS: UserSettings = {
   dualSubtitleTargetLang: 'en',
   hasCompletedOnboarding: false,
   preferredLevel: 'all',
+  dailyGoalMinutes: 10,
+  companionClass: 'wizard',
+  onboardingRewardClaimed: false,
   hasSeenSubtitleCoachmark: false,
   fullscreenSubtitleYPercent: 96
 };
@@ -38,6 +41,9 @@ export class SettingsService implements OnDestroy {
   readonly language = computed(() => this.settings().language);
   readonly theme = computed(() => this.settings().theme);
   readonly preferredLevel = computed(() => this.settings().preferredLevel);
+  readonly dailyGoalMinutes = computed(() => this.settings().dailyGoalMinutes ?? 10);
+  readonly companionClass = computed(() => this.settings().companionClass ?? 'wizard');
+  readonly onboardingRewardClaimed = computed(() => this.settings().onboardingRewardClaimed ?? false);
   readonly showFurigana = computed(() => this.settings().showFurigana);
   readonly showPinyin = computed(() => this.settings().showPinyin);
   readonly readingDisplayMode = computed(() => this.settings().readingDisplayMode);
@@ -246,13 +252,33 @@ export class SettingsService implements OnDestroy {
   completeOnboarding(params?: {
     language?: SupportedLearningLanguage;
     dualSubtitleTargetLang?: string;
+    showDualSubtitles?: boolean;
     preferredLevel?: string;
+    dailyGoalMinutes?: number;
+    companionClass?: string;
+    onboardingRewardClaimed?: boolean;
   }): void {
     const updates: Partial<UserSettings> = { hasCompletedOnboarding: true };
     if (params?.language) updates.language = params.language;
     if (params?.dualSubtitleTargetLang) updates.dualSubtitleTargetLang = params.dualSubtitleTargetLang;
+    if (params?.showDualSubtitles !== undefined) updates.showDualSubtitles = params.showDualSubtitles;
     if (params?.preferredLevel) updates.preferredLevel = params.preferredLevel;
+    if (params?.dailyGoalMinutes) updates.dailyGoalMinutes = params.dailyGoalMinutes;
+    if (params?.companionClass) updates.companionClass = params.companionClass;
+    if (params?.onboardingRewardClaimed !== undefined) updates.onboardingRewardClaimed = params.onboardingRewardClaimed;
     this.updateSettings(updates);
+  }
+
+  setDailyGoal(minutes: number): void {
+    this.updateSettings({ dailyGoalMinutes: minutes });
+  }
+
+  setCompanionClass(companion: string): void {
+    this.updateSettings({ companionClass: companion });
+  }
+
+  resetOnboarding(): void {
+    this.updateSettings({ hasCompletedOnboarding: false });
   }
 
   markSubtitleCoachmarkSeen(): void {

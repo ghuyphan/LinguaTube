@@ -24,6 +24,8 @@ graph TB
         API_GladiaWebhook["/api/gladia-webhook"]
         API_Dict["/api/dict"]
         API_TTS["/api/tts (Edge Neural)"]
+        API_Geo["/api/geo (Geo-IP)"]
+        API_Version["/api/version"]
         API_Tokens["/api/tokenize/:lang"]
         API_TokensBatch["/api/tokenize-batch/:lang"]
         API_Dual["/api/dual-subtitles"]
@@ -490,7 +492,7 @@ sequenceDiagram
 | Directory / File | Layer | Primary Responsibility |
 | :--- | :--- | :--- |
 | `src/app/core/services` | Core / Shared | Auth (`Supabase GoTrue`), Storage, I18n translations, Settings, Toast notifications (`ToastService`), SEO (`SeoService`), Payment (`PaymentService`), Gamification (`GamificationService`), Video Level (`VideoLevelService`), Video Recommendation (`VideoRecommendationService`), Global Leaderboard (`LeaderboardService`), Keyboard shortcuts (`KeyboardShortcutService`), PWA updates (`AppUpdateService`), PWA installation (`PwaService`), Error handler |
-| `src/app/shared/components` | UI Primitives | Standalone reusable components: `<app-empty-state>`, `<app-search-input>`, `<app-bottom-sheet>`, `<app-icon>`, `<app-option-picker>`, `<app-switch>`, `<app-confirm-dialog>`, `<app-command-palette>`, `<app-turnstile>` |
+| `src/app/shared/components` | UI Primitives | Standalone reusable components: `<app-level-badge>`, `<app-empty-state>`, `<app-search-input>`, `<app-bottom-sheet>`, `<app-icon>`, `<app-option-picker>`, `<app-switch>`, `<app-confirm-dialog>`, `<app-command-palette>`, `<app-turnstile>` |
 | `src/app/shared/directives` | UI Directives | Standalone reusable directives: `InfiniteScrollDirective` (`[appInfiniteScroll]` declarative IntersectionObserver infinite scroll) |
 | `src/app/shared/pipes` | Pure Pipes | Standalone presentation pipes: `FormatTimePipe` (`formatTime`), `LanguageFlagPipe` (`langFlag`), `CountryFlagPipe` (`countryFlag`) |
 | `src/app/shared/utils` | Shared Utilities | Cross-cutting helpers: `date.utils.ts` (local/UTC date & week keys), `teleport.utils.ts` (`DomTeleporter`), `language.utils.ts` (language detection & reading label keys), `sync.utils.ts` (timestamp merge & `TombstoneStore`), `japanese-romaji.ts` (canonical Romaji transliteration) |
@@ -501,12 +503,12 @@ sequenceDiagram
 | `src/app/features/vocabulary` | Study / Retention | Vocabulary notebook table, quick view panel, SM-2 flashcard study page |
 | `src/app/features/playlist` | Organization | Custom user playlists, curated community language learning channels, difficulty level badges & filters |
 | `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs, difficulty level badges & filters |
-| `src/app/features/quiz` | Assessment | Fill-in-the-blank and interactive vocabulary testing inputs |
-| `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying RPG rank crests, 10-tier level progression, daily missions, 19 achievement badges, and Global Leaderboard podium & rankings |
+| `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying RPG rank crests, 10-tier level progression, daily missions, 41 achievement badges, and Global Leaderboard podium & rankings |
+| `src/app/components/onboarding` | UI Shell | Mobile-native 4-stage game-style FTUE onboarding (Realm & Subtitle Cipher, Companion Spirit Summoning, 5-Tier Rank Ladder, Holographic Adventurer License & Starter Loot Cache with zero background scroll bleed) |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | Large CJK grammar rules, single-source version & release metadata (`version-info.json`, `changelog.data.ts`) |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, geo, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, Supabase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |

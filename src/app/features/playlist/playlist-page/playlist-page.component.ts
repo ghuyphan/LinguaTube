@@ -9,6 +9,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 import { OptionPickerComponent } from '../../../shared/components/option-picker/option-picker.component';
 import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
 import { SearchInputComponent } from '../../../shared/components/search-input/search-input.component';
+import { LevelBadgeComponent } from '../../../shared/components/level-badge/level-badge.component';
 import { InfiniteScrollDirective } from '../../../shared/directives';
 import { I18nService, ToastService, VideoLevelService } from '../../../core/services';
 import { getYouTubeThumbnail } from '../../../core/utils';
@@ -18,7 +19,7 @@ import { Playlist, PlaylistLanguage, PlaylistVideo, PlaylistWithVideos, Proficie
 @Component({
     selector: 'app-playlist-page',
     standalone: true,
-    imports: [CommonModule, FormsModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent, EmptyStateComponent, SearchInputComponent, InfiniteScrollDirective],
+    imports: [CommonModule, FormsModule, IconComponent, CreatePlaylistDialogComponent, ConfirmDialogComponent, OptionPickerComponent, EmptyStateComponent, SearchInputComponent, LevelBadgeComponent, InfiniteScrollDirective],
     templateUrl: './playlist-page.component.html',
     styleUrls: ['./playlist-page.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

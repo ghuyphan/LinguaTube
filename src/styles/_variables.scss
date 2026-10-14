@@ -83,14 +83,19 @@
     /* Chill Pastel Grammar Levels (Light Mode - WCAG 2.2 AA >= 4.5:1 compliant) */
     --level-beginner: #E6F2FF;
     --level-beginner-text: #0E60B8;
+    --level-beginner-border: rgba(14, 96, 184, 0.20);
     --level-elementary: #E2F6F9;
     --level-elementary-text: #087382;
+    --level-elementary-border: rgba(8, 115, 130, 0.20);
     --level-intermediate: #FEF3D6;
     --level-intermediate-text: #8B5700;
+    --level-intermediate-border: rgba(139, 87, 0, 0.20);
     --level-upper: #FFF0E5;
     --level-upper-text: #A74A00;
+    --level-upper-border: rgba(167, 74, 0, 0.20);
     --level-advanced: #FFEBF0;
     --level-advanced-text: #C42B47;
+    --level-advanced-border: rgba(196, 43, 71, 0.20);
 
     /* Grammar highlight color (crisp mint / emerald green) */
     --color-grammar: #10b981;
@@ -304,14 +309,19 @@
     /* Chill Pastel Grammar Levels (Dark Mode) */
     --level-beginner: rgba(88, 175, 255, 0.14);
     --level-beginner-text: #9BCEFF;
+    --level-beginner-border: rgba(88, 175, 255, 0.25);
     --level-elementary: rgba(56, 217, 238, 0.14);
     --level-elementary-text: #67E8F9;
+    --level-elementary-border: rgba(56, 217, 238, 0.25);
     --level-intermediate: rgba(251, 197, 61, 0.14);
     --level-intermediate-text: #FDE068;
+    --level-intermediate-border: rgba(251, 197, 61, 0.25);
     --level-upper: rgba(251, 146, 60, 0.14);
     --level-upper-text: #FDBA74;
+    --level-upper-border: rgba(251, 146, 60, 0.25);
     --level-advanced: rgba(255, 120, 145, 0.14);
     --level-advanced-text: #FFA4B5;
+    --level-advanced-border: rgba(255, 120, 145, 0.25);
 
     --color-grammar: #2dd4bf;
     --color-grammar-rgb: 45, 212, 191;

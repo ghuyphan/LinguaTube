@@ -782,15 +782,113 @@
     "learningLanguageSubtitle": "学びたい言語を選択してください",
     "translateSubtitlesTo": "字幕の翻訳言語",
     "translateSubtitlesSubtitle": "動画に対訳字幕（二言語字幕）を表示します",
+    "myLanguage": "使用言語",
+    "myLanguageHint": "UIと字幕",
+    "dualSubtitlesToggle": "字幕を翻訳する",
+    "dualSubtitlesHint": "字幕の下に翻訳を表示",
+    "guildCharter": "Voca ギルド憲章",
+    "realmVibes": {
+      "ja": "アニメ・日常会話",
+      "ko": "K-Drama・流行語",
+      "zh": "漢字・ポッドキャスト",
+      "en": "映画・日常表現"
+    },
     "chooseLevel": "現在のレベルを選択",
     "levelSubtitle": "おすすめ動画をあなたのレベルに合わせて調整します",
     "startLearning": "学習を開始",
+    "startAdventure": "冒険を始める",
+    "stageExpedition": "旅立ちの準備",
+    "stageBattle": "バトル難易度",
+    "stageRecruit": "仲間を迎える",
     "langFeatures": {
       "ja": "ふりがな・アニメ・日常会話",
       "zh": "ピンイン・ポッドキャスト・HSK対策",
       "ko": "K-POP・ドラマ・TOPIK対策",
       "en": "CEFR基準・ポッドキャスト・自然な会話"
     },
+    "prologueBadge": "覚醒",
+    "realmTitle": "冒険する言語の領域を選択",
+    "realmSubtitle": "ネイティブ動画の巻物があなたの解読を待っています",
+    "pactTitle": "ハンターの誓約",
+    "pactSubtitle": "日々の習慣が伝説を創る。毎日の目標とランクを調整しましょう",
+    "dailyGoalLabel": "日課の誓約",
+    "goals": {
+      "casual": "気ままな斥候",
+      "casualDesc": "1日5分 • 短編クリップ1本",
+      "regular": "没入の狩人",
+      "regularDesc": "1日10分 • 本格動画1〜2本",
+      "serious": "迷宮の探求者",
+      "seriousDesc": "1日15分 • 単語マイニング",
+      "intense": "神話の達人",
+      "intenseDesc": "1日25分以上 • 深層リスニングと復習"
+    },
+    "proficiencyLabel": "難易度キャリブレーション",
+    "ranks": {
+      "novice": "見習い",
+      "apprentice": "修練者",
+      "adept": "熟練狩人",
+      "veteran": "歴戦騎士",
+      "master": "先導師範"
+    },
+    "companionTitle": "相棒となる守護霊を選択",
+    "companionSubtitle": "旅路を共にする相棒ガイドを選択",
+    "companions": {
+      "wizard": "賢者魔導士",
+      "wizardTrait": "文法・構文解析",
+      "wizardQuote": "複雑な文法や構文も、私と一緒に解き明かしましょう！",
+      "alchemist": "語彙錬金術師",
+      "alchemistTrait": "漢字・語根錬成",
+      "alchemistQuote": "出会ったすべての単語を、一生忘れない黄金の知識へと錬成します！",
+      "bard": "吟遊詩人",
+      "bardTrait": "発音・アクセント",
+      "bardQuote": "声の抑揚と美しいピッチアクセント、私の歌に乗せて耳に刻みましょう！",
+      "ranger": "探求レンジャー",
+      "rangerTrait": "会話・スラング",
+      "rangerQuote": "教科書には載っていないスラングやリアルな会話はお任せを！",
+      "miner": "単語採掘師",
+      "minerTrait": "単語マイニング",
+      "minerQuote": "どんな文章にも金の原石が眠っています。すべての言葉を掘り起こしましょう！",
+      "shinobi": "影の忍",
+      "shinobiTrait": "超速リスニング",
+      "shinobiQuote": "ネイティブの早口な会話も、瞬時に聞き取ってみせましょう！",
+      "knight": "守護騎士",
+      "knightTrait": "連続学習ガード",
+      "knightQuote": "我が盾にかけて、日々のストリークを決して途絶えさせません！",
+      "sovereign": "言語覇王",
+      "sovereignTrait": "マルチリンガルの達人",
+      "sovereignQuote": "真の覇者は恐れることなく万語を統べます。世界はあなたのものです！"
+    },
+    "trialTitle": "最初の採掘試練（15秒）",
+    "trialSubtitle": "ネイティブ音声を解読：輝くルーンをタップして辞書を開きましょう",
+    "trialTapHint": "下の光る単語をタップ",
+    "trialMineBtn": "単語帳に採掘する (+15 XP)",
+    "trialMinedSuccess": "採掘完了！ +15 XP 獲得",
+    "starterTitle": "冒険者ライセンス承認！",
+    "starterSubtitle": "ギルドから最初の冒険者補給品が授与されました",
+    "starterLoot": {
+      "diamonds": "AIクレジット満タン (💎)",
+      "diamondsDesc": "AI音声同期の利用枠がスタンバイ",
+      "xp": "+50 初期XP",
+      "xpDesc": "レベル1から66%前進",
+      "hearth": "初日の篝火点火",
+      "hearthDesc": "デイリーストリーク開始",
+      "freeze": "氷結の盾 2個",
+      "freezeDesc": "連続学習ストリークの保護ストック"
+    },
+    "enterRealm": "言語の領域へ踏み出す",
+    "claimStarterPack": "補給品を受け取る (+50 XP)",
+    "starterPackClaimed": "スターターパックを受け取りました！+50 XP＆Day 1ストリーク点火！",
+    "perkKnight": "守護騎士：連続学習ストリークの氷結の盾をスタンバイ！",
+    "perkWizard": "賢者魔導士：文法・構文の解析モードを有効化しました！",
+    "perkAlchemist": "語彙錬金術師：初期ボーナス +25 XP を錬成獲得！",
+    "perkRanger": "探求レンジャー：日常会話向けの二言語字幕を有効化！",
+    "perkBard": "吟遊詩人：発音・ふりがな/ピンイン表示を有効化！",
+    "perkShinobi": "影の忍：ネイティブの超速リスニング設定を完了！",
+    "perkMiner": "単語採掘師: 単語レーダー起動！ボーナス +35 XP 獲得！",
+    "perkSovereign": "言語覇王: 覇王の加護発動！二重字幕と文法解析が同時に有効化！",
+    "saveCalibration": "設定を保存",
+    "replayTour": "冒険のプロローグを再生",
+    "replayTourDesc": "学習言語、レベル、相棒ガイドを再設定",
     "tapToTry": "単語をタップしてみよう！",
     "skip": "スキップ",
     "continue": "次へ",
@@ -801,8 +899,10 @@
     "demoSaved": "単語帳に保存しました！",
     "levels": {
       "beginnerDesc": "基礎フレーズと聴き取りやすい発音",
-      "intermediateDesc": "自然な日常会話やVlog",
-      "advancedDesc": "ニュース、ポッドキャスト、解説動画"
+      "elementaryDesc": "日常会話と基本単語",
+      "intermediateDesc": "自然な対話と生活Vlog",
+      "upperIntermediateDesc": "ニュースと深いトピック",
+      "advancedDesc": "ドキュメンタリーと専門講義"
     },
     "changeUiLang": "表示言語",
     "features": {
@@ -812,26 +912,20 @@
     },
     "demo": {
       "ja": {
-        "japanese": "日本語",
-        "particle": "(助詞)",
-        "study": "勉強する",
-        "letsDo": "しましょう"
+        "text": "日本語を勉強しましょう",
+        "translation": "一緒に日本語を勉強しましょう！"
       },
       "zh": {
-        "together": "一緒に",
-        "learn": "学ぶ",
-        "chinese": "中国語",
-        "suggestion": "(提案)"
+        "text": "一起学习中文吧",
+        "translation": "一緒に中国語を学びましょう！"
       },
       "ko": {
-        "korean": "韓国語",
-        "particle": "(助詞)",
-        "letsLearn": "学びましょう"
+        "text": "함께 한국어를 배워요",
+        "translation": "一緒に韓国語を学びましょう！"
       },
       "en": {
-        "lets": "〜しましょう",
-        "learn": "学ぶ",
-        "together": "一緒に"
+        "text": "Let's master languages together",
+        "translation": "一緒に言語を極めましょう！"
       }
     }
   },

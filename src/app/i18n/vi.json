@@ -782,15 +782,113 @@
     "learningLanguageSubtitle": "Chọn ngôn ngữ bạn muốn học",
     "translateSubtitlesTo": "Dịch phụ đề sang",
     "translateSubtitlesSubtitle": "Bản dịch sẽ hiển thị ngay bên dưới phụ đề gốc",
+    "myLanguage": "Ngôn ngữ của tôi",
+    "myLanguageHint": "Giao diện & phụ đề",
+    "dualSubtitlesToggle": "Dịch phụ đề",
+    "dualSubtitlesHint": "Hiện bản dịch dưới phụ đề gốc",
+    "guildCharter": "Hiệp Ước Bang Hội Voca",
+    "realmVibes": {
+      "ja": "Anime & Đời sống",
+      "ko": "K-Drama & Giao tiếp",
+      "zh": "Hán tự & Podcast",
+      "en": "Điện ảnh & Giao tiếp"
+    },
     "chooseLevel": "Chọn trình độ của bạn",
     "levelSubtitle": "Gợi ý video phù hợp với trình độ của bạn",
     "startLearning": "Bắt đầu học",
+    "startAdventure": "Bắt đầu hành trình",
+    "stageExpedition": "Chuẩn bị hành trình",
+    "stageBattle": "Cấp độ chiến đấu",
+    "stageRecruit": "Chiêu mộ đồng hành",
     "langFeatures": {
       "ja": "Furigana, anime & hội thoại hàng ngày",
       "zh": "Pinyin, podcast & luyện thi HSK",
       "ko": "K-drama, vlogs & luyện thi TOPIK",
       "en": "Chuẩn CEFR, podcast & phát âm tự nhiên"
     },
+    "prologueBadge": "Thức Tỉnh",
+    "realmTitle": "Chọn Cõi Ngôn Ngữ Khám Phá",
+    "realmSubtitle": "Các cuộn bí kíp video bản xứ chân thực đang chờ bạn giải mã",
+    "pactTitle": "Lập Khế Ước Thợ Săn",
+    "pactSubtitle": "Thói quen tạo nên huyền thoại. Hãy chọn nhịp độ hàng ngày & định cấp bậc",
+    "dailyGoalLabel": "Khế Ước Luyện Tập Mỗi Ngày",
+    "goals": {
+      "casual": "Trinh Sát Thong Thả",
+      "casualDesc": "5 phút/ngày • 1 video ngắn",
+      "regular": "Thợ Săn Đắm Chìm",
+      "regularDesc": "10 phút/ngày • 1-2 video thực tế",
+      "serious": "Đột Kích Hầm Ngục",
+      "seriousDesc": "15 phút/ngày • Khai thác từ vựng",
+      "intense": "Bậc Thầy Huyền Thoại",
+      "intenseDesc": "25+ phút/ngày • Luyện nghe & flashcard sâu"
+    },
+    "proficiencyLabel": "Định Cấp Độ",
+    "ranks": {
+      "novice": "Tập Sự",
+      "apprentice": "Môn Sinh",
+      "adept": "Thợ Săn",
+      "veteran": "Chiến Binh",
+      "master": "Đại Sư"
+    },
+    "companionTitle": "Chọn Linh Hồn Đồng Hành",
+    "companionSubtitle": "Chọn một linh hồn đồng hành cùng bạn suốt hành trình",
+    "companions": {
+      "wizard": "Học Giả Pháp Sư",
+      "wizardTrait": "Ngữ pháp & cú pháp",
+      "wizardQuote": "Tôi sẽ giải mã mọi cấu trúc ngữ pháp và câu cú phức tạp cho bạn!",
+      "alchemist": "Giả Kim Thuật Sư",
+      "alchemistTrait": "Hán tự & gốc từ",
+      "alchemistQuote": "Mỗi từ vựng bạn gặp sẽ được chuyển hóa thành kiến thức vàng bền vững!",
+      "bard": "Thi Sĩ Du Ca",
+      "bardTrait": "Ngữ điệu & phát âm",
+      "bardQuote": "Hãy cùng hòa nhịp đôi tai bạn vào cao độ ngữ điệu chuẩn xác của người bản ngữ!",
+      "ranger": "Cung Thủ Thực Địa",
+      "rangerTrait": "Khẩu ngữ & tiếng lóng",
+      "rangerQuote": "Tiếng lóng đời thường và khẩu ngữ tự nhiên chính là thế mạnh của tôi!",
+      "miner": "Thợ Đào Từ Vựng",
+      "minerTrait": "Sưu tập thẻ từ",
+      "minerQuote": "Mỗi câu nói đều ẩn chứa vàng ròng—hãy khai thác từng từ vựng!",
+      "shinobi": "Nhẫn Giả Bóng Đêm",
+      "shinobiTrait": "Luyện nghe siêu tốc",
+      "shinobiQuote": "Chúng ta sẽ làm chủ tốc độ đàm thoại siêu nhanh của người bản xứ!",
+      "knight": "Hiệp Sĩ Hộ Vệ",
+      "knightTrait": "Bảo vệ chuỗi ngày",
+      "knightQuote": "Chuỗi học tập mỗi ngày của bạn sẽ không bao giờ gãy dưới khiên chắn của tôi!",
+      "sovereign": "Chí Tôn Đa Ngữ",
+      "sovereignTrait": "Đại sư tinh thông ngôn ngữ",
+      "sovereignQuote": "Bậc chí tôn làm chủ mọi ngôn ngữ không chút sợ hãi. Vùng đất này là của bạn!"
+    },
+    "trialTitle": "Khóa Thử Thách Khai Mỏ (15 Giây)",
+    "trialSubtitle": "Giải mã tiếng bản xứ: chạm vào cổ ngữ phát sáng để tra nghĩa",
+    "trialTapHint": "Chạm vào từ phát sáng bên dưới",
+    "trialMineBtn": "Đào Từ Vào Thẻ Ghi Nhớ (+15 XP)",
+    "trialMinedSuccess": "Đã Khai Thác Từ! Nhận +15 XP",
+    "starterTitle": "Kích Hoạt Chứng Nhận Nhà Mạo Hiểm!",
+    "starterSubtitle": "Hiệp Hội Thợ Săn trao tặng bạn rương tiếp tế khởi đầu",
+    "starterLoot": {
+      "diamonds": "Đầy Bình Năng Lượng (💎)",
+      "diamondsDesc": "Sẵn sàng đồng bộ phụ đề bằng AI",
+      "xp": "+50 XP Khởi Điểm",
+      "xpDesc": "Đẩy Cấp 1 lên 66%",
+      "hearth": "Thắp Lửa Trại Ngày 1",
+      "hearthDesc": "Ngọn lửa chuỗi ngày bắt đầu bùng cháy",
+      "freeze": "2 Khiên Băng Hộ Vệ",
+      "freezeDesc": "Tự động bảo vệ chuỗi học tập (Streak Freeze)"
+    },
+    "enterRealm": "Tiến Vào Cõi Ngôn Ngữ",
+    "claimStarterPack": "Nhận Rương Khởi Đầu (+50 XP)",
+    "starterPackClaimed": "Đã kích hoạt Gói Khởi Đầu! +50 XP & thắp sáng chuỗi streak Ngày 1.",
+    "perkKnight": "Hiệp Sĩ Hộ Vệ: Đã chuẩn bị sẵn Khiên Chắn bảo vệ chuỗi ngày!",
+    "perkWizard": "Học Giả Pháp Sư: Đã bật tính năng Phân Tích Cú Pháp & Ngữ Pháp!",
+    "perkAlchemist": "Giả Kim Thuật Sư: Đã luyện kim tặng thêm +25 XP Khởi Đầu!",
+    "perkRanger": "Cung Thủ Thực Địa: Đã bật Phụ Đề Song Ngữ đối chiếu khẩu ngữ!",
+    "perkBard": "Thi Sĩ Du Ca: Đã bật Ký Âm Ngữ Điệu & Phát Âm Furigana/Pinyin!",
+    "perkShinobi": "Nhẫn Giả Bóng Đêm: Đã hiệu chỉnh Tốc Độ Đắm Chìm bản xứ!",
+    "perkMiner": "Thợ Đào Từ Vựng: Kích hoạt radar khai thác! +35 XP Từ Vựng!",
+    "perkSovereign": "Chí Tôn Đa Ngữ: Kích hoạt áo choàng đa ngữ! Bật Phụ Đề Song Ngữ & Phân Tích Ngữ Pháp!",
+    "saveCalibration": "Lưu Cài Đặt",
+    "replayTour": "Xem Lại Khởi Đầu Thợ Săn",
+    "replayTourDesc": "Cân chỉnh lại ngôn ngữ, cấp độ và người đồng hành",
     "tapToTry": "Chạm vào từ bất kỳ để thử!",
     "skip": "Bỏ qua",
     "continue": "Tiếp tục",
@@ -800,9 +898,11 @@
     "demoSave": "+ Lưu từ",
     "demoSaved": "Đã lưu vào thẻ nhớ!",
     "levels": {
-      "beginnerDesc": "Cụm từ đơn giản & phát âm rõ ràng",
-      "intermediateDesc": "Hội thoại đời thường & vlog",
-      "advancedDesc": "Tin tức, podcast & phỏng vấn bản xứ"
+      "beginnerDesc": "Cụm từ đơn giản & nói chậm",
+      "elementaryDesc": "Từ vựng quen thuộc đời thường",
+      "intermediateDesc": "Hội thoại tự nhiên & vlog đời sống",
+      "upperIntermediateDesc": "Tin tức & chủ đề thảo luận",
+      "advancedDesc": "Phim tài liệu & bài giảng bản xứ"
     },
     "changeUiLang": "Giao diện",
     "features": {
@@ -812,26 +912,20 @@
     },
     "demo": {
       "ja": {
-        "japanese": "Tiếng Nhật",
-        "particle": "(trợ từ)",
-        "study": "học",
-        "letsDo": "hãy cùng làm"
+        "text": "日本語を勉強しましょう",
+        "translation": "Cùng nhau học tiếng Nhật nhé!"
       },
       "zh": {
-        "together": "cùng nhau",
-        "learn": "học",
-        "chinese": "Tiếng Trung",
-        "suggestion": "(gợi ý)"
+        "text": "一起学习中文吧",
+        "translation": "Cùng nhau học tiếng Trung nào!"
       },
       "ko": {
-        "korean": "Tiếng Hàn",
-        "particle": "(trợ từ)",
-        "letsLearn": "hãy cùng học"
+        "text": "함께 한국어를 배워요",
+        "translation": "Cùng nhau học tiếng Hàn nào!"
       },
       "en": {
-        "lets": "Hãy",
-        "learn": "học",
-        "together": "cùng nhau"
+        "text": "Let's master languages together",
+        "translation": "Cùng nhau chinh phục ngôn ngữ nào!"
       }
     }
   },

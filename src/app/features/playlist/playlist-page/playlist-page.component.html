@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="yt-video-card__sub-row">
                                     @if (getPlaylistLevel(playlist); as lvl) {
-                                    <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                                    <app-level-badge [level]="lvl.level" [tier]="lvl.tier" />
                                     }
                                     @if (playlist.isFeatured) {
                                     <span class="meta-featured"><app-icon name="star" [size]="11" /> {{ i18n.t('playlist.featured') }}</span>
@@ -335,7 +335,7 @@
                             <h4 class="track-title" [title]="video.title">{{ video.title }}</h4>
                             <div class="track-meta-row">
                                 @if (getVideoLevel(video, playlist.language); as lvl) {
-                                    <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                                    <app-level-badge [level]="lvl.level" [tier]="lvl.tier" />
                                 }
                                 @if (isWatched(video.videoId)) {
                                     <span class="watched-badge">{{ i18n.t('history.watchedAgo') || 'Watched' }}</span>

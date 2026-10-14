@@ -4,6 +4,7 @@ import { IconComponent } from '../../../../../shared/components/icon/icon.compon
 import { BottomSheetComponent } from '../../../../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../../../../shared/components/option-picker/option-picker.component';
 import { VideoLevelDialogComponent } from '../../../../../components/video-level-dialog/video-level-dialog.component';
+import { LevelBadgeComponent } from '../../../../../shared/components/level-badge/level-badge.component';
 import { I18nService } from '../../../../../core/services/i18n.service';
 import { VideoLevelService } from '../../../../../core/services/video-level.service';
 import { TranscriptService } from '../../../transcript.service';
@@ -18,7 +19,7 @@ const SUPPORTED_LANGUAGES = ['ja', 'zh', 'ko', 'en'];
   selector: 'app-video-header',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, IconComponent, BottomSheetComponent, VideoLevelDialogComponent, OptionPickerComponent],
+  imports: [CommonModule, IconComponent, BottomSheetComponent, VideoLevelDialogComponent, OptionPickerComponent, LevelBadgeComponent],
   templateUrl: './video-header.component.html',
   styleUrl: './video-header.component.scss'
 })

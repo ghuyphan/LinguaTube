@@ -1,4 +1,4 @@
-<div class="onboarding-overlay" (click)="skip()" role="dialog" aria-modal="true" [attr.aria-label]="i18n.t('onboarding.welcomeTitle') || 'Welcome to Voca'">
+<div class="onboarding-overlay" [class.is-closing]="isClosing()" (click)="skip()" role="dialog" aria-modal="true" [attr.aria-label]="i18n.t('onboarding.welcomeTitle') || 'Welcome to Voca'">
     <div class="onboarding-container" (click)="$event.stopPropagation()">
 
         <!-- Top Navigation Header -->
@@ -9,7 +9,7 @@
                     type="button"
                     class="nav-icon-btn"
                     (click)="prevStep()"
-                    [attr.aria-label]="i18n.t('onboarding.back')"
+                    [attr.aria-label]="i18n.t('onboarding.back') || 'Back'"
                 >
                     <app-icon name="arrow-left" [size]="20" />
                 </button>
@@ -19,12 +19,20 @@
             </div>
 
             <div class="header-center">
-                <div class="step-segments" role="progressbar" [attr.aria-valuenow]="currentStep()" aria-valuemin="1" aria-valuemax="3" [attr.aria-label]="getStepProgressText()">
+                <div
+                    class="step-segments"
+                    role="progressbar"
+                    [attr.aria-valuenow]="currentStep()"
+                    aria-valuemin="1"
+                    aria-valuemax="4"
+                    [attr.aria-valuetext]="i18n.t('onboarding.stepProgress', { current: currentStep(), total: totalSteps })"
+                >
                     @for (step of steps; track step) {
                     <div class="step-segment">
                         <div
                             class="step-segment-fill"
                             [class.filled]="currentStep() >= step"
+                            [class.active]="currentStep() === step"
                         ></div>
                     </div>
                     }
@@ -37,147 +45,304 @@
                     class="skip-btn"
                     (click)="skip()"
                 >
-                    {{ i18n.t('onboarding.skip') }}
+                    {{ i18n.t('onboarding.skip') || 'Skip' }}
                 </button>
             </div>
         </header>
 
-        <!-- Scrollable Step Body -->
-        <main class="onboarding-body">
+        <!-- Main Body Content -->
+        <main #bodyContainer class="onboarding-body" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
 
-            <!-- STEP 1: Target Language -->
+            <!-- ============================================
+                 STEP 1: EXPEDITION REALM & USER LANGUAGE
+                 ============================================ -->
             @if (currentStep() === 1) {
-            <div class="step-view step-enter">
-                <div class="step-title-group">
-                    <h1 class="step-title">{{ i18n.t('onboarding.learningLanguageTitle') }}</h1>
-                    <p class="step-subtitle">{{ i18n.t('onboarding.learningLanguageSubtitle') }}</p>
+            <div class="step-view" [class.step-slide-left]="slideDirection() === 'left'" [class.step-slide-right]="slideDirection() === 'right'">
+                
+                <div class="step-header">
+                    <h1 class="step-title">{{ i18n.t('onboarding.realmTitle') || 'Choose Your Language Realm' }}</h1>
+                    <p class="step-subtitle">{{ i18n.t('onboarding.learningLanguageSubtitle') || 'Pick the language you want to study' }}</p>
                 </div>
 
-                <div class="options-list">
+                <!-- 4 Full-Width Learning Language Rows -->
+                <div class="options-list" role="radiogroup" [attr.aria-label]="i18n.t('onboarding.realmTitle') || 'Choose Your Language Realm'">
                     @for (lang of learningLanguages; track lang.code) {
                     <button
                         type="button"
-                        class="option-card"
-                        [class.selected]="selectedLang() === lang.code"
+                        class="option-row"
+                        [class.is-selected]="selectedLang() === lang.code"
                         (click)="selectLanguage(lang.code)"
+                        role="radio"
+                        [attr.aria-checked]="selectedLang() === lang.code"
                     >
-                        <div class="card-avatar">
-                            <img [src]="lang.flag" [alt]="lang.name" class="flag-img" />
+                        <div class="option-leading-icon">
+                            <img [src]="lang.flag" [alt]="getLanguageName(lang.code) + ' flag'" class="option-flag-img" />
                         </div>
-                        <div class="card-info">
-                            <div class="card-headline">
-                                <span class="card-title">{{ getLanguageName(lang.code) }}</span>
-                                <span class="card-native">{{ lang.name }}</span>
+
+                        <div class="option-text-stack">
+                            <div class="option-title-row">
+                                <span class="option-title">{{ getLanguageName(lang.code) }}</span>
+                                <span class="option-native-chip">{{ lang.nativeName }}</span>
                             </div>
-                            <span class="card-desc">{{ getLanguageFeature(lang.code) }}</span>
+                            <span class="option-desc">{{ getRealmVibe(lang.code) }}</span>
                         </div>
-                        <div class="card-indicator">
-                            <div class="radio-ring" [class.checked]="selectedLang() === lang.code">
-                                @if (selectedLang() === lang.code) {
-                                <app-icon name="check" [size]="12" class="check-icon" />
-                                }
-                            </div>
+
+                        <div class="option-radio-ring" [class.checked]="selectedLang() === lang.code">
+                            @if (selectedLang() === lang.code) {
+                            <app-icon name="check" [size]="12" class="check-icon" />
+                            }
                         </div>
                     </button>
                     }
                 </div>
+
+                <!-- Native App Settings Card: UI Language & Subtitle Translation -->
+                <div class="settings-card-group">
+                    <div class="settings-group-header">
+                        <span class="settings-group-title">{{ i18n.t('onboarding.myLanguage') || 'My Language' }}</span>
+                        <span class="settings-group-hint">{{ i18n.t('onboarding.myLanguageHint') || 'Interface & subtitles' }}</span>
+                    </div>
+
+                    <div class="ui-lang-selector-row" role="radiogroup" [attr.aria-label]="i18n.t('onboarding.myLanguage') || 'My Language'">
+                        @for (tLang of translationLanguages; track tLang.code) {
+                        <button
+                            type="button"
+                            class="ui-lang-chip"
+                            [class.is-active]="selectedTargetLang() === tLang.code"
+                            (click)="selectTargetLang(tLang.code)"
+                            role="radio"
+                            [attr.aria-checked]="selectedTargetLang() === tLang.code"
+                        >
+                            <img [src]="tLang.flag" [alt]="tLang.name" class="ui-lang-flag" />
+                            <span class="ui-lang-name">{{ tLang.nativeName }}</span>
+                        </button>
+                        }
+                    </div>
+
+                    <div class="settings-toggle-row">
+                        <div class="settings-toggle-label-stack">
+                            <span class="settings-toggle-label">{{ i18n.t('onboarding.dualSubtitlesToggle') || 'Translate subtitles' }}</span>
+                            <span class="settings-toggle-sub">{{ i18n.t('onboarding.dualSubtitlesHint') || 'Show translations below video captions' }}</span>
+                        </div>
+                        <app-switch
+                            [checked]="showDualSubtitles()"
+                            (checkedChange)="showDualSubtitles.set($event)"
+                            [label]="i18n.t('onboarding.dualSubtitlesToggle') || 'Translate subtitles'"
+                        />
+                    </div>
+                </div>
+
             </div>
             }
 
-            <!-- STEP 2: Current Level -->
+            <!-- ============================================
+                 STEP 2: SUMMON COMPANION SPIRIT
+                 ============================================ -->
             @if (currentStep() === 2) {
-            <div class="step-view step-enter">
-                <div class="step-title-group">
-                    <h1 class="step-title">{{ i18n.t('onboarding.chooseLevel') }}</h1>
-                    <p class="step-subtitle">{{ i18n.t('onboarding.levelSubtitle') }}</p>
+            <div class="step-view" [class.step-slide-left]="slideDirection() === 'left'" [class.step-slide-right]="slideDirection() === 'right'">
+                
+                <div class="step-header">
+                    <h1 class="step-title">{{ i18n.t('onboarding.companionTitle') || 'Choose Your Companion Spirit' }}</h1>
+                    <p class="step-subtitle">{{ i18n.t('onboarding.companionSubtitle') || 'Pick a companion guide for your journey' }}</p>
                 </div>
 
-                <div class="options-list">
-                    @for (tier of levelTiers; track tier.id) {
+                <!-- Compact 3x2 Grid (6 Companions, Zero Text Clutter) -->
+                <div class="companion-grid" role="radiogroup" [attr.aria-label]="i18n.t('onboarding.companionTitle') || 'Choose Your Companion Spirit'">
+                    @for (comp of companionRoster; track comp.id) {
                     <button
                         type="button"
-                        class="option-card level-card"
-                        [class.selected]="selectedLevel() === tier.id"
-                        (click)="selectLevel(tier.id)"
+                        class="companion-card"
+                        [class.is-selected]="selectedCompanion() === comp.id"
+                        (click)="selectCompanion(comp)"
+                        role="radio"
+                        [attr.aria-checked]="selectedCompanion() === comp.id"
                     >
-                        <div class="card-icon-badge" [attr.data-tier]="tier.tier">
-                            <app-icon [name]="tier.icon" [size]="20" />
+                        <div class="companion-card-pip" [class.checked]="selectedCompanion() === comp.id">
+                            @if (selectedCompanion() === comp.id) {
+                            <app-icon name="check" [size]="10" class="check-icon" />
+                            }
                         </div>
-                        <div class="card-info">
-                            <div class="card-headline">
-                                <span class="card-title">{{ i18n.t('level.' + tier.id) }}</span>
-                                <span class="exam-pill" [attr.data-tier]="tier.tier">{{ getLevelBadge(tier.id) }}</span>
-                            </div>
-                            <span class="card-desc">{{ getLevelDesc(tier.id) }}</span>
+
+                        <div class="companion-avatar-col">
+                            <img [src]="comp.url" [alt]="comp.name" class="companion-avatar-img" />
+                            <span class="companion-lv-tag">Lv.1</span>
                         </div>
-                        <div class="card-indicator">
-                            <div class="radio-ring" [class.checked]="selectedLevel() === tier.id">
-                                @if (selectedLevel() === tier.id) {
-                                <app-icon name="check" [size]="12" class="check-icon" />
-                                }
-                            </div>
+
+                        <div class="companion-card-info">
+                            <span class="companion-name">{{ getCompanionName(comp.id) }}</span>
+                            <span class="companion-trait-chip">{{ getCompanionTrait(comp.id) }}</span>
                         </div>
                     </button>
                     }
                 </div>
+
+                <!-- Single Active Companion Speech Bubble -->
+                <div class="companion-speech-bubble" aria-live="polite">
+                    <app-icon name="sparkles" [size]="13" class="speech-sparkle-icon" />
+                    <span class="speech-quote">“{{ getCompanionQuote(selectedCompanion()) }}”</span>
+                </div>
+
             </div>
             }
 
-            <!-- STEP 3: Subtitle Translation (Native Language) -->
+            <!-- ============================================
+                 STEP 3: DIFFICULTY CALIBRATION (5-TIER LADDER)
+                 ============================================ -->
             @if (currentStep() === 3) {
-            <div class="step-view step-enter">
-                <div class="step-title-group">
-                    <h1 class="step-title">{{ i18n.t('onboarding.translateSubtitlesTo') }}</h1>
-                    <p class="step-subtitle">{{ i18n.t('onboarding.translateSubtitlesSubtitle') }}</p>
+            <div class="step-view" [class.step-slide-left]="slideDirection() === 'left'" [class.step-slide-right]="slideDirection() === 'right'">
+                
+                <div class="step-header">
+                    <h1 class="step-title">{{ i18n.t('onboarding.chooseLevel') || 'Calibrate Your Rank' }}</h1>
+                    <p class="step-subtitle">{{ i18n.t('onboarding.levelSubtitle') || 'We’ll suggest videos suited to your pace' }}</p>
                 </div>
 
-                <div class="options-list">
-                    @for (tLang of translationLanguages; track tLang.code) {
+                <!-- 5 Full-Width Compact Rank Rungs -->
+                <div class="options-list compact-list" role="radiogroup" [attr.aria-label]="i18n.t('onboarding.chooseLevel') || 'Calibrate Your Rank'">
+                    @for (lvl of levelOptions; track lvl.id) {
                     <button
                         type="button"
-                        class="option-card"
-                        [class.selected]="selectedTargetLang() === tLang.code"
-                        (click)="selectTargetLang(tLang.code)"
+                        class="option-row rank-row"
+                        [class.is-selected]="selectedLevel() === lvl.id"
+                        (click)="selectLevel(lvl.id)"
+                        role="radio"
+                        [attr.aria-checked]="selectedLevel() === lvl.id"
                     >
-                        <div class="card-avatar">
-                            <img [src]="tLang.flag" [alt]="tLang.name" class="flag-img" />
+                        <div class="rung-emblem-badge" [attr.data-tier]="lvl.tierClass">
+                            <app-icon [name]="lvl.icon" [size]="16" />
                         </div>
-                        <div class="card-info">
-                            <div class="card-headline">
-                                <span class="card-title">{{ tLang.nativeName }}</span>
-                                <span class="card-native">{{ tLang.name }}</span>
+
+                        <div class="option-text-stack">
+                            <div class="option-title-row">
+                                <span class="option-title">{{ getRankName(lvl.rankKey) }}</span>
+                                <span class="rung-exam-tag">{{ getLevelExamBadge(lvl.id) }}</span>
+                                <span class="rung-level-label">{{ getLevelTitle(lvl.titleKey) }}</span>
                             </div>
+                            <span class="option-desc">{{ getLevelDesc(lvl.id) }}</span>
                         </div>
-                        <div class="card-indicator">
-                            <div class="radio-ring" [class.checked]="selectedTargetLang() === tLang.code">
-                                @if (selectedTargetLang() === tLang.code) {
-                                <app-icon name="check" [size]="12" class="check-icon" />
-                                }
-                            </div>
+
+                        <div class="option-radio-ring" [class.checked]="selectedLevel() === lvl.id">
+                            @if (selectedLevel() === lvl.id) {
+                            <app-icon name="check" [size]="12" class="check-icon" />
+                            }
                         </div>
                     </button>
                     }
                 </div>
+
+            </div>
+            }
+
+            <!-- ============================================
+                 STEP 4: ADVENTURER LICENSE & STARTER LOOT
+                 ============================================ -->
+            @if (currentStep() === 4) {
+            <div class="step-view" [class.step-slide-left]="slideDirection() === 'left'" [class.step-slide-right]="slideDirection() === 'right'">
+                
+                <div class="step-header">
+                    <h1 class="step-title">{{ i18n.t('onboarding.starterTitle') || 'Adventurer License Activated!' }}</h1>
+                    <p class="step-subtitle">{{ i18n.t('onboarding.starterSubtitle') || 'The Guild welcomes you with your initial supply cache' }}</p>
+                </div>
+
+                <!-- Holographic Guild Adventurer Pass -->
+                <div class="adventurer-license-card">
+                    <div class="license-shimmer-sweep"></div>
+                    <div class="license-inner">
+                        <div class="license-avatar-col">
+                            <div class="license-avatar-ring">
+                                <img [src]="activeCompanion().url" [alt]="activeCompanion().name" class="license-avatar-img" />
+                            </div>
+                            <span class="license-lv-pill">Lv.1</span>
+                        </div>
+
+                        <div class="license-info-col">
+                            <div class="license-header-tag">
+                                <app-icon name="templar-shield" [size]="11" class="license-crest-tag-icon" />
+                                <span>{{ i18n.t('onboarding.guildCharter') || 'Voca Guild Charter' }}</span>
+                            </div>
+                            <span class="license-hunter-name">{{ getRankName(activeLevel().rankKey) }} • {{ getCompanionName(activeCompanion().id) }}</span>
+                            <div class="license-badges-row">
+                                <span class="license-realm-chip">
+                                    <img [src]="activeRealm().flag" [alt]="getLanguageName(activeRealm().code)" class="license-flag-micro" />
+                                    <span>{{ getLanguageName(activeRealm().code) }}</span>
+                                </span>
+                                <span class="license-exam-chip">{{ getLevelExamBadge(selectedLevel()) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Starter Loot Cache Grid -->
+                <div class="loot-stack-group">
+                    <span class="loot-group-header">{{ i18n.t('onboarding.starterSubtitle') || 'Initial Supply Cache' }}</span>
+                    <div class="loot-grid">
+                        <!-- Reward 1: Mana Diamonds -->
+                        <div class="loot-card">
+                            <div class="loot-icon-wrap loot-icon-wrap--diamond">
+                                <app-icon name="diamond" [size]="18" />
+                            </div>
+                            <div class="loot-desc-col">
+                                <span class="loot-amount">{{ i18n.t('onboarding.starterLoot.diamonds') || 'Full AI Quota (💎)' }}</span>
+                                <span class="loot-sub">{{ i18n.t('onboarding.starterLoot.diamondsDesc') || 'Instant AI audio sync quota' }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Reward 2: Starter XP -->
+                        <div class="loot-card">
+                            <div class="loot-icon-wrap loot-icon-wrap--xp">
+                                <app-icon name="sparkles" [size]="18" />
+                            </div>
+                            <div class="loot-desc-col">
+                                <span class="loot-amount">{{ i18n.t('onboarding.starterLoot.xp') || '+50 Starter XP' }}</span>
+                                <span class="loot-sub">{{ i18n.t('onboarding.starterLoot.xpDesc') || 'Push Level 1 to 66%' }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Reward 3: Campfire Streak -->
+                        <div class="loot-card">
+                            <div class="loot-icon-wrap loot-icon-wrap--streak">
+                                <app-icon name="fire" [size]="18" />
+                            </div>
+                            <div class="loot-desc-col">
+                                <span class="loot-amount">{{ i18n.t('onboarding.starterLoot.hearth') || 'Campfire Hearth' }}</span>
+                                <span class="loot-sub">{{ i18n.t('onboarding.starterLoot.hearthDesc') || 'Day 1 streak flame active' }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Reward 4: Frost Ward Shield -->
+                        <div class="loot-card">
+                            <div class="loot-icon-wrap loot-icon-wrap--freeze">
+                                <app-icon name="snowflake" [size]="18" />
+                            </div>
+                            <div class="loot-desc-col">
+                                <span class="loot-amount">{{ i18n.t('onboarding.starterLoot.freeze') || '1 Frost Ward' }}</span>
+                                <span class="loot-sub">{{ i18n.t('onboarding.starterLoot.freezeDesc') || 'Streak freeze protection' }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             }
 
         </main>
 
-        <!-- Sticky Bottom Thumb-Zone Action Bar -->
+        <!-- Sticky Bottom Action Footer -->
         <footer class="onboarding-footer">
             <button
                 type="button"
-                class="primary-action-btn"
+                class="cta-primary-btn"
                 (click)="nextStep()"
             >
                 <span>
-                    @if (currentStep() < 3) {
-                    {{ i18n.t('onboarding.continue') }}
+                    @if (currentStep() < totalSteps) {
+                        {{ i18n.t('onboarding.continue') || 'Continue' }}
+                    } @else if (isReplay()) {
+                        {{ i18n.t('onboarding.saveCalibration') || 'Save Preferences' }}
                     } @else {
-                    {{ i18n.t('onboarding.startLearning') }}
+                        {{ i18n.t('onboarding.claimStarterPack') || 'Claim Starter Pack' }}
                     }
                 </span>
-                <app-icon [name]="currentStep() < 3 ? 'arrow-right' : 'check'" [size]="18" />
+                <app-icon [name]="currentStep() < totalSteps ? 'arrow-right' : 'sparkles'" [size]="18" />
             </button>
         </footer>
 

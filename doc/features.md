@@ -906,26 +906,50 @@ To maintain strong daily retention and solve the "lifetime grind" barrier, Voca 
 
 ---
 
-## 14. Modern Language Learning App Onboarding & First-Run Experience
+### 14. Mobile-Native RPG Onboarding Experience
 
-To ensure an inviting, frictionless introduction matching top modern language learning apps (Duolingo, Busuu, Babbel), Voca provides an immersive 3-step onboarding flow designed specifically for mobile and desktop.
+To eliminate generic setup fatigue and immerse language learners directly into Voca's language journey without cognitive overload or text walls, Voca features a clean, playful **4-Stage Mobile-Native Onboarding Flow** combining full-width touch rows, tactile haptics, companion archetypes, and instant gamification rewards:
 
-### 14.1. Core Principles & Flow
-- **Responsive Immersive Presentation**:
-  - **Mobile (`≤ 768px`)**: Renders as an edge-to-edge, native **fullscreen** experience (`100dvh`) with native top and bottom safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), eliminating bottom-sheet clipping and drawer handles.
-  - **Desktop (`> 768px`)**: Renders as an elegant centered modal card (`max-width: 520px`, `height: 640px`) with smooth backdrop blur (`backdrop-filter: blur(8px)`).
-- **Step 1: Target Learning Language**:
-  - Four spacious language cards (Japanese 🇯🇵, Chinese 🇨🇳, Korean 🇰🇷, English 🇬🇧) featuring circular flags, native script, localized feature taglines (e.g. furigana, pinyin, K-drama dialogues), and animated checkmark radios.
-- **Step 2: Starting Level Calibration**:
-  - Three calibrated proficiency tiers (Beginner 🌱, Intermediate 🌿, Advanced 🌳) displaying real official exam badges (JLPT `N5-N4`–`N1`, HSK `1-2`–`6`, TOPIK `1`–`6`, CEFR `A1-A2`–`C2`) and clear audience descriptions.
-  - Persists directly into `settings.preferredLevel` and immediately filters video recommendations (`videoLevelFilter`).
-- **Step 3: Subtitle Translation (Native Language)**:
-  - Five clean cards for configuring dual subtitles into the learner's native tongue (English, Tiếng Việt, 日本語, 한국어, 中文), auto-detected from browser UI locale.
-- **Navigation & Sticky Action Bar**:
-  - **Top Bar**: Back button (when step > 1), animated progress bar (33% → 66% → 100%), and unobtrusive "Skip / Explore First" button.
-  - **Sticky Bottom Action Bar**: Big full-width 52px button ("Continue →" on steps 1–2, "Start Learning ✨" on step 3) anchored in the thumb zone with safe-area padding.
-- **Progressive In-Player Coachmark**:
-  - Floating pill above subtitle line on first video playback (*"💡 Tap any word to translate & save"*), with responsive sizing and dynamic container headroom (`.has-coachmark`) to prevent token clipping. Permanently dismissed upon word or grammar interaction, or manual close.
+### 14.1. Core Principles & 4-Stage Flow
+- **Responsive & Space-Efficient Presentation**:
+  - **Mobile (`≤ 768px`)**: Renders as an edge-to-edge native **fullscreen** experience (`100dvh`) with natural top-down scrolling directly beneath the header (zero artificial vertical centering `margin: auto 0` or floating crests), native top and bottom safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), thumb-friendly 52px primary action button with tactile press compression (`transform: scale(0.985)`), and dividerless header/footer borders for a seamless container feel.
+  - **Desktop (`> 768px`)**: Renders as an ultra-clean centered floating card (`max-width: 480px`, `max-height: min(94vh, 760px)`) with smooth backdrop blur (`backdrop-filter: blur(14px)`) and entrance animations (`modalPop`).
+- **Tactile Mobile Feedback**:
+  - Silent, battery-efficient haptic vibration pulses (`navigator.vibrate`) on touch devices for card selections, swipe gestures, and completion, without intrusive audio chimes.
+- **The 4-Stage Progression**:
+  1. **Stage 1: Expedition Realm & User Language Preferences**: 4 full-width learning language option rows (`🇯🇵 Japanese`, `🇰🇷 Korean`, `🇨🇳 Chinese`, `🇬🇧 English`) with circular flag badges, native script tags (`日本語`, `한국어`, `中文`), and localized micro-vibe tags (`realmVibes`). Paired with a native settings card featuring a 5-language segmented UI selector (`🇻🇳 Tiếng Việt`, `🇬🇧 English`, `🇯🇵 日本語`, `🇰🇷 한국어`, `🇨🇳 中文`) and a dedicated `<app-switch>` subtitle translation toggle.
+  2. **Stage 2: Companion Spirit Summoning**:
+     - Complete roster of **8 companion archetypes** aligned with `PRESET_AVATARS` (*Scholar Mage*, *Guardian Knight*, *Shadow Shinobi*, *Immersion Ranger*, *Sentence Miner*, *Vocab Alchemist*, *Minstrel Bard*, *Mythic Sovereign*) laid out in a balanced 4x2 grid on desktop/tablets and 2x4 on mobile, featuring 40px circular avatars, Lv.1 badge, compact 2-word specialty tags, and top-right checkmark pip (zero card text clutter).
+     - Features a single active companion speech bubble below the grid with fixed height (`min-height: 52px;`) and two-line clamping (`-webkit-line-clamp: 2;`), completely eradicating layout shift (CLS) between 1-line and 2-line quotes.
+     - **Genuine Archetype Starter Perks (Real In-Game Functionality)**:
+       - **Guardian Knight**: Grants a bonus Frost Ward streak freeze shield via `StreakService.grantBonusFreeze(1)`, updating remote inventory without spending XP.
+       - **Scholar Mage**: Activates in-depth grammar pattern recognition via `GrammarService.grammarModeEnabled.set(true)`.
+       - **Sentence Miner**: Calibrates word-mining radar and transmutes +35 Miner XP via `GamificationService.addXP(35, 'miner_word_mining_bonus')`.
+       - **Vocab Alchemist**: Transmutes +25 Extra Bonus XP via `GamificationService.addXP(25, 'alchemist_word_mining_bonus')` (awarding a total of +75 Starter XP!).
+       - **Immersion Ranger**: Enables dual subtitles comparison mode (`showDualSubtitles.set(true)`).
+       - **Minstrel Bard**: Turns on phonetic pronunciation ruby annotations via `SettingsService.setReadingDisplayMode('annotated')`.
+       - **Shadow Shinobi**: Calibrates rapid native immersion playback speed (`playbackSpeed: 1.0`).
+       - **Mythic Sovereign**: Bestows the Polyglot Mantle, activating Dual Subtitles and deep Grammar Insights simultaneously.
+     - **Preserves User Avatar**: Onboarding stores the selected `companionClass` without modifying the user's personal profile picture (`auth.user.picture`), allowing users to freely customize their profile avatar in Edit Profile whenever they wish.
+  3. **Stage 3: Difficulty Calibration**: 5 compact full-width rank cards (Novice, Apprentice, Adept, Veteran, Master) with tier-colored emblems (Stone, Bronze, Silver, Gold, Platinum), official exam badges (`JLPT N5-N1`, `HSK 1-6`, `TOPIK 1-6`, `CEFR A1-C2`), and punchy 1-line pace descriptions.
+  4. **Stage 4: Adventurer License & Authentic Starter Loot Cache**:
+     - Holographic golden Adventurer License card with shimmering light sweep, companion avatar, rank title, and Guild charter seal.
+     - 2x2 Starter Loot Cache unboxing grid with wrapped text and zero truncation: Full AI Mana Diamond Quota (💎), real +50 Starter XP, Campfire Streak flame ignition, and 1 Frost Ward streak freeze shield.
+     - Dynamic CTA: `Claim Starter Pack` for first-time adventurers with sparkles icon, or `Save Preferences` when replaying the prologue.
+- **Gamification, Mobile-Native Feel & Persistence Integration**:
+  - Automatically locks background scroll (`document.body` and `html` frozen) and isolates touch/wheel events to prevent background rubber-banding or scroll leakage.
+  - Automatically awards +50 XP via `GamificationService.addXP(50, 'onboarding_starter_pack')`, ignites streak via `StreakService.recordActivity()`, activates genuine archetype perks, and displays a celebratory toast via `ToastService` upon completion.
+  - **Server-Side Synchronization & Offline Reconciliation**:
+    - `profiles.target_lang` is immediately synced to Supabase PostgreSQL on the server when authenticated.
+    - XP rewards invoke Supabase `award_study_xp` RPC, creating verified audit records in `xp_transactions`. For offline/guest users, XP is queued in `voca_pending_xp` and reconciled automatically on login or reconnection.
+    - Streak ignition calls Supabase `record_streak_activity` RPC atomically.
+    - Bonus streak freeze grants safely sync `freezes_remaining: 2` to Supabase `streaks` without mistakenly deducting 150 XP.
+  - Stores `companionClass`, `preferredLevel`, `showDualSubtitles`, and `onboardingRewardClaimed` in `UserSettings` (`localStorage`).
+  - Video feed recommendations immediately calibrate to the selected proficiency level upon entering the app.
+  - Users can revisit and recalibrate anytime via the **"Replay Hunter Prologue"** action in `SettingsSheetComponent`.
+
+
+
 
 
 

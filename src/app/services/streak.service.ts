@@ -88,4 +88,13 @@ export class StreakService {
         }
         return { success: false, reason: 'insufficient_xp' };
     }
+
+    /**
+     * Grant a bonus streak freeze (e.g. Guardian Knight starter perk)
+     */
+    grantBonusFreeze(count: number = 1): void {
+        const current = this.freezesRemaining();
+        const next = Math.min(2, current + count);
+        void this.repo.replenishFreeze(next, { spendXP: false });
+    }
 }

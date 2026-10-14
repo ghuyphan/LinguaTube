@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { EmptyStateComponent } from '../../../shared/components/empty-state/empty-state.component';
+import { LevelBadgeComponent } from '../../../shared/components/level-badge/level-badge.component';
 import { InfiniteScrollDirective } from '../../../shared/directives';
 import { HistoryService } from '../history.service';
 import { I18nService, AuthService, VideoLevelService } from '../../../core/services';
@@ -21,7 +22,7 @@ import { FormatTimePipe } from '../../../shared/pipes';
     selector: 'app-history-list',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, IconComponent, EmptyStateComponent, InfiniteScrollDirective, FormatTimePipe],
+    imports: [CommonModule, IconComponent, EmptyStateComponent, LevelBadgeComponent, InfiniteScrollDirective, FormatTimePipe],
     templateUrl: './history-list.component.html',
     styleUrls: ['./history-list.component.scss'],
 })

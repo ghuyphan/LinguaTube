@@ -782,15 +782,113 @@
     "learningLanguageSubtitle": "학습할 언어를 선택하세요",
     "translateSubtitlesTo": "자막 번역 언어",
     "translateSubtitlesSubtitle": "동영상에 이 언어로 번역된 이중 자막이 함께 표시돼요",
+    "myLanguage": "내 언어",
+    "myLanguageHint": "UI 및 자막",
+    "dualSubtitlesToggle": "자막 번역하기",
+    "dualSubtitlesHint": "자막 아래 번역 표시",
+    "guildCharter": "Voca 길드 헌장",
+    "realmVibes": {
+      "ja": "애니 & 일상 회화",
+      "ko": "K-Drama & 유행어",
+      "zh": "한자 & 팟캐스트",
+      "en": "영화 & 일상 표현"
+    },
     "chooseLevel": "현재 레벨을 선택하세요",
     "levelSubtitle": "수준에 딱 맞는 추천 영상을 골라드려요",
     "startLearning": "학습 시작하기",
+    "startAdventure": "모험 시작",
+    "stageExpedition": "여정 준비",
+    "stageBattle": "전투 난이도",
+    "stageRecruit": "동료 영입",
     "langFeatures": {
       "ja": "후리가나・애니・일상 회화",
       "zh": "병음・팟캐스트・HSK 대비",
       "ko": "K-드라마・브이로그・TOPIK 대비",
       "en": "CEFR 레벨・팟캐스트・자연스러운 대화"
     },
+    "prologueBadge": "각성의 순간",
+    "realmTitle": "탐험할 언어의 대륙을 선택하세요",
+    "realmSubtitle": "현지 원어 영상 두루마리가 당신의 해독을 기다립니다",
+    "pactTitle": "헌터의 서약",
+    "pactSubtitle": "매일의 습관이 전설을 만듭니다. 학습 속도와 난이도를 맞춰보세요",
+    "dailyGoalLabel": "일일 학습 서약",
+    "goals": {
+      "casual": "자유로운 정찰병",
+      "casualDesc": "하루 5분 • 짧은 영상 1편",
+      "regular": "몰입 헌터",
+      "regularDesc": "하루 10분 • 실전 영상 1-2편",
+      "serious": "던전 레이더",
+      "seriousDesc": "하루 15분 • 문장 마이닝",
+      "intense": "신화의 마스터",
+      "intenseDesc": "하루 25분 이상 • 집중 청취 및 복습"
+    },
+    "proficiencyLabel": "난이도 측정",
+    "ranks": {
+      "novice": "견습",
+      "apprentice": "수련생",
+      "adept": "숙련 헌터",
+      "veteran": "베테랑 전사",
+      "master": "마스터 선구자"
+    },
+    "companionTitle": "동행할 수호 정령을 선택하세요",
+    "companionSubtitle": "여정을 함께할 클래스 가이드를 선택하세요",
+    "companions": {
+      "wizard": "학자 마법사",
+      "wizardTrait": "문법 & 구문 분석",
+      "wizardQuote": "어려운 문법과 문장 구조도 저와 함께 완벽히 풀어봐요!",
+      "alchemist": "어휘 연금술사",
+      "alchemistTrait": "한자 & 어원 탐구",
+      "alchemistQuote": "만나는 모든 단어를 영구히 기억되는 황금 지식으로 연성합니다!",
+      "bard": "음유시인",
+      "bardTrait": "억양 & 발음 교정",
+      "bardQuote": "음조와 억양, 자연스러운 리듬을 노래하듯 귀에 새겨드릴게요!",
+      "ranger": "몰입 레인저",
+      "rangerTrait": "일상 회화 & 슬랭",
+      "rangerQuote": "교과서 밖 일상 슬랭과 생생한 대화는 저에게 맡겨주세요!",
+      "miner": "문장 광부",
+      "minerTrait": "단어 마이닝",
+      "minerQuote": "모든 문장에는 황금이 숨어 있습니다. 어휘를 남김없이 채굴해 볼까요!",
+      "shinobi": "그림자 시노비",
+      "shinobiTrait": "고속 몰입 듣기",
+      "shinobiQuote": "원어민의 빠른 대화도 눈 깜짝할 사이에 정복해보죠!",
+      "knight": "수호 기사",
+      "knightTrait": "연속 학습 보호",
+      "knightQuote": "제 방패로 당신의 일일 스트릭을 결코 끊기지 않게 지키겠습니다!",
+      "sovereign": "다언어 지존",
+      "sovereignTrait": "언어 마스터의 품격",
+      "sovereignQuote": "진정한 지존은 두려움 없이 만국어를 정복합니다. 세상은 당신의 것입니다!"
+    },
+    "trialTitle": "첫 번째 채굴 시련 (15초)",
+    "trialSubtitle": "원어 해독 실전: 빛나는 룬 문자를 탭하여 사전을 열어보세요",
+    "trialTapHint": "아래 빛나는 단어를 탭하세요",
+    "trialMineBtn": "단어장에 채굴하기 (+15 XP)",
+    "trialMinedSuccess": "채굴 성공! +15 XP 획득",
+    "starterTitle": "모험가 면허 활성화 완료!",
+    "starterSubtitle": "헌터 길드에서 당신을 위한 초기 보급함을 지급합니다",
+    "starterLoot": {
+      "diamonds": "AI 마나 다이아 완충 (💎)",
+      "diamondsDesc": "AI 자막 음성 동기화 한도 완충",
+      "xp": "+50 스타터 XP",
+      "xpDesc": "레벨 1 진행도 66% 즉시 달성",
+      "hearth": "첫날 모닥불 점화",
+      "hearthDesc": "일일 스트릭 불꽃 시작",
+      "freeze": "서리 방패 2개",
+      "freezeDesc": "연속 학습 스트릭 보호권 기본 탑재"
+    },
+    "enterRealm": "언어의 대륙으로 입장",
+    "claimStarterPack": "보급품 수령 (+50 XP)",
+    "starterPackClaimed": "스타터 팩이 활성화되었습니다! +50 XP 획득 및 1일차 스트릭 점화.",
+    "perkKnight": "수호 기사: 연속 학습 스트릭 서리 방패 준비 완료!",
+    "perkWizard": "학자 마법사: 문법 및 구문 심층 분석 모드 활성화!",
+    "perkAlchemist": "어휘 연금술사: 초기 보너스 +25 XP 연성 획득!",
+    "perkRanger": "몰입 레인저: 일상 회화용 이중 자막 번역 활성화!",
+    "perkBard": "음유시인: 발음 및 후리가나/병음 표기 활성화!",
+    "perkShinobi": "그림자 시노비: 원어민 고속 청취 설정 완료!",
+    "perkMiner": "문장 광부: 단어 채굴 레이더 가동! 보너스 +35 XP 획득!",
+    "perkSovereign": "다언어 지존: 지존의 가호 발동! 이중 자막과 문법 분석이 동시 활성화!",
+    "saveCalibration": "설정 저장",
+    "replayTour": "헌터 프롤로그 다시 보기",
+    "replayTourDesc": "언어, 난이도 및 수호 정령 가이드를 다시 설정합니다",
     "tapToTry": "단어를 탭해 보세요!",
     "skip": "건너뛰기",
     "continue": "다음",
@@ -801,8 +899,10 @@
     "demoSaved": "단어장에 저장되었습니다!",
     "levels": {
       "beginnerDesc": "기초 회화와 또렷한 발음",
+      "elementaryDesc": "친숙한 일상 어휘",
       "intermediateDesc": "자연스러운 일상 대화 및 브이로그",
-      "advancedDesc": "현지 뉴스, 팟캐스트 및 인터뷰"
+      "upperIntermediateDesc": "뉴스 및 심화 토론",
+      "advancedDesc": "다큐멘터리 및 원어 강의"
     },
     "changeUiLang": "표시 언어",
     "features": {
@@ -812,26 +912,20 @@
     },
     "demo": {
       "ja": {
-        "japanese": "일본어",
-        "particle": "(조사)",
-        "study": "공부하다",
-        "letsDo": "합시다"
+        "text": "日本語を勉強しましょう",
+        "translation": "함께 일본어를 공부합시다!"
       },
       "zh": {
-        "together": "함께",
-        "learn": "배우다",
-        "chinese": "중국어",
-        "suggestion": "(제안)"
+        "text": "一起学习中文吧",
+        "translation": "함께 중국어를 배워요!"
       },
       "ko": {
-        "korean": "한국어",
-        "particle": "(조사)",
-        "letsLearn": "배우자"
+        "text": "함께 한국어를 배워요",
+        "translation": "함께 한국어를 배워요!"
       },
       "en": {
-        "lets": "합시다",
-        "learn": "배우다",
-        "together": "함께"
+        "text": "Let's master languages together",
+        "translation": "함께 언어를 마스터해요!"
       }
     }
   },

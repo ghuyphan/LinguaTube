@@ -19,7 +19,9 @@ import {
     detectLevelFromMetadata,
     labelToTier
 } from '../data/video-info-db.js';
-import { getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
+import { detectVideoCategory } from '../services/category.service.js';
+import { getVideoMetadata, fetchChannelAvatar, fetchYouTubeDuration, fetchYouTubeVideoDetails } from '../middlewares/video-validator.js';
+import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
 const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 60, keyPrefix: 'video_info' };
@@ -31,7 +33,7 @@ const MEM_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour warm memory cache
 
 // Handle preflight requests
 export async function onRequestOptions() {
-    return handleOptions(['GET', 'OPTIONS']);
+    return handleOptions(['GET', 'POST', 'OPTIONS']);
 }
 
 export async function onRequestGet(context) {
@@ -70,6 +72,27 @@ export async function onRequestGet(context) {
         // Only return if we have valid metadata (title). 
         // If innertube.js created the row first, title might be NULL.
         if (d1Result && d1Result.title) {
+            // Auto-heal missing duration server-side
+            if (!d1Result.durationSeconds || d1Result.durationSeconds <= 0) {
+                let resolvedDuration = await fetchYouTubeDuration(videoId).catch(() => null);
+                if (!resolvedDuration && env.TRANSCRIPT_STORAGE && d1Result.availableLanguages?.length > 0) {
+                    const r2Obj = await getTranscriptFromR2(env.TRANSCRIPT_STORAGE, videoId, d1Result.availableLanguages[0]).catch(() => null);
+                    if (r2Obj?.segments?.length > 0) {
+                        const last = r2Obj.segments[r2Obj.segments.length - 1];
+                        const inferred = Math.round((last.start || 0) + (last.duration || 0));
+                        if (inferred > 0) resolvedDuration = inferred;
+                    }
+                }
+                if (resolvedDuration && resolvedDuration > 0) {
+                    d1Result.durationSeconds = resolvedDuration;
+                    context.waitUntil?.(
+                        db.prepare(
+                            `UPDATE video_languages SET duration_seconds = ?, updated_at = strftime('%s', 'now') WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds <= 0)`
+                        ).bind(resolvedDuration, videoId).run().catch(err => console.error('[VideoInfo] Auto-heal error:', err))
+                    );
+                }
+            }
+
             let levels = d1Result.levels || {};
             if (Object.keys(levels).length === 0) {
                 const detected = detectLevelFromMetadata(d1Result.title, d1Result.channel);
@@ -90,6 +113,10 @@ export async function onRequestGet(context) {
                 }
             }
 
+            const category = d1Result.category && d1Result.category !== 'general'
+                ? d1Result.category
+                : detectVideoCategory({ title: d1Result.title, channel: d1Result.channel, tags: d1Result.tags || [] });
+
             const result = {
                 videoId,
                 title: d1Result.title,
@@ -99,7 +126,9 @@ export async function onRequestGet(context) {
                 hasAutoCaptions: d1Result.hasAutoCaptions,
                 channel: d1Result.channel,
                 channelAvatar: d1Result.channelAvatar || null,
-                levels
+                levels,
+                category,
+                tags: d1Result.tags || []
             };
 
             // Save to warm memory cache
@@ -115,8 +144,12 @@ export async function onRequestGet(context) {
             });
         }
 
-        // Step 3: Fetch from YouTube oEmbed
-        const metadata = await getVideoMetadata(videoId);
+        // Step 3: Fetch from YouTube oEmbed & scrape duration + genre/tags concurrently server-side
+        const [metadata, ytDetails] = await Promise.all([
+            getVideoMetadata(videoId),
+            fetchYouTubeVideoDetails(videoId).catch(() => ({ duration: null, isLive: false, genre: null, tags: [] }))
+        ]);
+
         if (!metadata) {
             return jsonResponse({
                 videoId,
@@ -125,6 +158,16 @@ export async function onRequestGet(context) {
                 levels: {}
             }, 404);
         }
+
+        const serverDuration = ytDetails?.duration || null;
+        const genre = ytDetails?.genre || null;
+        const tags = ytDetails?.tags || [];
+        const category = detectVideoCategory({
+            title: metadata.title,
+            channel: metadata.author_name,
+            genre,
+            tags
+        });
 
         // Check for level in title/author
         const levels = {};
@@ -147,25 +190,25 @@ export async function onRequestGet(context) {
             channelAvatar = await fetchChannelAvatar(metadata.author_url);
         }
 
-        // YouTube oEmbed doesn't provide language info or duration
-        // We'll get these when actually fetching transcripts
         const result = {
             videoId,
             title: metadata.title,
-            duration: null, // oEmbed doesn't provide duration
+            duration: serverDuration,
             availableLanguages: [], // Will be populated when transcripts are fetched
             subLanguages: d1Result?.subLanguages || [],
             hasAutoCaptions: false,
             channel: metadata.author_name,
             channelAvatar,
-            levels
+            levels,
+            category,
+            tags
         };
 
         // Save to D1 (D1 has 100,000 writes/day vs KV's 1,000 writes/day)
         // PRESERVE existing languages if the row already exists (but had missing metadata)
         const existingLangs = d1Result?.availableLanguages || [];
 
-        await saveVideoLanguages(db, videoId, existingLangs, null, metadata.title, metadata.author_name, false, levels, channelAvatar);
+        await saveVideoLanguages(db, videoId, existingLangs, serverDuration, metadata.title, metadata.author_name, false, levels, channelAvatar, null, category, tags);
 
         // Cache in memory for warm isolate reuse
         if (memVideoInfoCache.size > MAX_MEM_CACHE) {
@@ -182,5 +225,42 @@ export async function onRequestGet(context) {
     } catch (error) {
         console.error('[VideoInfo] Error:', error.message);
         return errorResponse('Failed to fetch video info', 500);
+    }
+}
+
+/**
+ * Client Duration & Metadata Backfill
+ * Allows web or mobile players to report accurate duration once YouTube player metadata loads.
+ */
+export async function onRequestPost(context) {
+    const { request, env } = context;
+    const clientId = getClientIdentifier(request);
+    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    if (!rateLimit.allowed) {
+        return rateLimitResponse(rateLimit.resetAt);
+    }
+
+    try {
+        const body = await request.json();
+        const videoId = sanitizeVideoId(body.videoId);
+        const duration = typeof body.duration === 'number' ? Math.round(body.duration) : null;
+        if (!videoId || !duration || duration <= 0 || duration > 14400) {
+            return jsonResponse({ error: 'Invalid videoId or duration' }, 400);
+        }
+
+        const db = env?.VOCAB_DB;
+        if (db) {
+            await db.prepare(`
+                UPDATE video_languages
+                SET duration_seconds = ?, updated_at = strftime('%s', 'now')
+                WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds = 0)
+            `).bind(duration, videoId).run();
+
+            memVideoInfoCache.delete(videoId);
+        }
+
+        return jsonResponse({ success: true, videoId, duration }, 200);
+    } catch {
+        return errorResponse('Failed to update video info', 500);
     }
 }

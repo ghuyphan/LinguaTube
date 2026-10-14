@@ -9,8 +9,9 @@
  */
 
 import { jsonResponse, handleOptions } from '../utils/utils.js';
-import { isLanguageSupported, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
+import { isLanguageSupported, resolveVideoChannelAvatar, getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
+import { VALID_CATEGORIES } from '../services/category.service.js';
 
 // In-memory cache across warm Worker isolate requests for unpersonalized requests (30s TTL)
 const memCache = new Map();
@@ -51,6 +52,9 @@ async function handleRecommendedVideos(context, method) {
     const rawTier = (body.tier || url.searchParams.get('tier') || '').toLowerCase().trim();
     const tier = VALID_TIERS.has(rawTier) ? rawTier : null;
 
+    const rawCategory = (body.category || url.searchParams.get('category') || '').toLowerCase().trim();
+    const category = VALID_CATEGORIES.has(rawCategory) ? rawCategory : null;
+
     const limitParam = parseInt(body.limit ?? url.searchParams.get('limit'), 10);
     const limit = Math.min(Math.max(isNaN(limitParam) ? 12 : limitParam, 1), 50);
 
@@ -60,12 +64,14 @@ async function handleRecommendedVideos(context, method) {
     const rawQuery = (body.q || body.query || url.searchParams.get('q') || url.searchParams.get('query') || '').trim();
     const query = rawQuery.length > 0 ? rawQuery.slice(0, 100) : null;
 
-    const sessionSeedParam = parseInt(body.sessionSeed ?? url.searchParams.get('seed'), 10);
-    const sessionSeed = isNaN(sessionSeedParam) ? 12345 : sessionSeedParam;
-
-    const userContext = (body.context && typeof body.context === 'object') ? body.context : null;
     const isRefresh = body.refresh === true || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
 
+    const sessionSeedParam = parseInt(body.sessionSeed ?? url.searchParams.get('seed'), 10);
+    const sessionSeed = !isNaN(sessionSeedParam)
+        ? sessionSeedParam
+        : (isRefresh ? Math.floor(Math.random() * 1000000) : 12345);
+
+    const userContext = (body.context && typeof body.context === 'object') ? body.context : null;
     const isPersonalized = Boolean(userContext && (
         (Array.isArray(userContext.watched) && userContext.watched.length > 0) ||
         (userContext.inProgress && Object.keys(userContext.inProgress).length > 0) ||
@@ -73,7 +79,7 @@ async function handleRecommendedVideos(context, method) {
         (Array.isArray(userContext.topChannels) && userContext.topChannels.length > 0)
     ));
 
-    const cacheKey = `${lang}_${tier || 'all'}_${limit}_${offset}_${query || ''}_${sessionSeed}`;
+    const cacheKey = `${lang}_${tier || 'all'}_${category || 'all'}_${limit}_${offset}_${query || ''}_${sessionSeed}`;
 
     // 1. Fast in-memory cache check (warm isolate) for generic unpersonalized requests
     if (!isRefresh && !isPersonalized) {
@@ -83,6 +89,7 @@ async function handleRecommendedVideos(context, method) {
                 success: true,
                 language: lang,
                 tier: tier || undefined,
+                category: category || undefined,
                 query: query || undefined,
                 count: cached.videos.length,
                 offset,
@@ -112,25 +119,43 @@ async function handleRecommendedVideos(context, method) {
         shouldShuffle,
         offset,
         query,
-        { context: userContext, sessionSeed }
+        { context: userContext, sessionSeed, category, isRefresh }
     );
     const hasMore = videos.length >= limit;
 
-    // 3. Self-healing: if any returned videos lack channelAvatar, resolve and update D1 in background
+    // 3. Self-healing: if any returned videos lack channelAvatar, title, or channel, resolve and update D1 in background
     if (db && typeof context?.waitUntil === 'function') {
-        const missingAvatars = videos.filter(v => !v.channelAvatar && v.videoId);
-        if (missingAvatars.length > 0) {
+        const needsHealing = videos.filter(v => v.videoId && (!v.channelAvatar || !v.title || !v.channel));
+        if (needsHealing.length > 0) {
             context.waitUntil((async () => {
-                for (const v of missingAvatars.slice(0, 5)) {
+                for (const v of needsHealing.slice(0, 5)) {
                     try {
-                        const avatar = await resolveVideoChannelAvatar(v.videoId);
-                        if (avatar) {
-                            await db.prepare(`
-                                UPDATE video_languages 
-                                SET channel_avatar = ?, updated_at = strftime('%s', 'now') 
-                                WHERE video_id = ?
-                            `).bind(avatar, v.videoId).run();
-                            v.channelAvatar = avatar;
+                        if (!v.channelAvatar) {
+                            const avatar = await resolveVideoChannelAvatar(v.videoId);
+                            if (avatar) {
+                                await db.prepare(`
+                                    UPDATE video_languages 
+                                    SET channel_avatar = ?, updated_at = strftime('%s', 'now') 
+                                    WHERE video_id = ?
+                                `).bind(avatar, v.videoId).run();
+                                v.channelAvatar = avatar;
+                            }
+                        }
+                        if (!v.title || !v.channel) {
+                            const meta = await getVideoMetadata(v.videoId);
+                            if (meta) {
+                                const newTitle = v.title || meta.title || null;
+                                const newChannel = v.channel || meta.author_name || null;
+                                if (newTitle || newChannel) {
+                                    await db.prepare(`
+                                        UPDATE video_languages
+                                        SET title = COALESCE(?, title), channel = COALESCE(?, channel), updated_at = strftime('%s', 'now')
+                                        WHERE video_id = ?
+                                    `).bind(newTitle, newChannel, v.videoId).run();
+                                    if (newTitle) v.title = newTitle;
+                                    if (newChannel) v.channel = newChannel;
+                                }
+                            }
                         }
                     } catch { }
                 }
@@ -139,7 +164,7 @@ async function handleRecommendedVideos(context, method) {
     }
 
     // Save unpersonalized results to isolate memory cache
-    if (!isPersonalized && videos.length > 0) {
+    if (!isPersonalized && videos.length > 0 && !isRefresh) {
         if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
             const oldestKey = memCache.keys().next().value;
             if (oldestKey) memCache.delete(oldestKey);
@@ -155,6 +180,9 @@ async function handleRecommendedVideos(context, method) {
         success: true,
         language: lang,
         tier: tier || undefined,
+        category: category || undefined,
+        query: query || undefined,
+        sessionSeed,
         count: videos.length,
         offset,
         hasMore,
@@ -164,6 +192,6 @@ async function handleRecommendedVideos(context, method) {
             : (isRefresh ? 'cloudflare:refresh' : 'cloudflare')
     }, 200, {
         'X-Cache': isPersonalized ? 'BYPASS-PERSONALIZED' : (isRefresh ? 'BYPASS' : 'MISS'),
-        'Cache-Control': CACHE_CONTROL_HEADER
+        'Cache-Control': isRefresh ? 'no-cache, no-store, must-revalidate' : CACHE_CONTROL_HEADER
     });
 }

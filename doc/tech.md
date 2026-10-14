@@ -117,8 +117,10 @@ Correct segmentation and pronunciation generation are central to Voca:
 ### 4.2. Cloudflare D1 (Edge SQLite)
 - Fast SQL database executed at edge locations near the client.
 - Tables:
+  - `ai_transcription_jobs`: Durable state machine table for Gladia AI transcription jobs with partial unique index.
   - `video_languages`: Video duration, title, channel, and discovered caption languages.
   - `no_transcript_cache`: Negative cache preventing repeated failed subtitle fetches.
+  - `leaderboard`: Edge-cached gamification XP leaderboard for high-traffic public views.
   - `video_meta`: Fast index of existing transcripts.
   - `transcripts`: Permanent metadata and pending job status.
 - Generous free tier: **100,000 writes/day** and **5,000,000 reads/day**.

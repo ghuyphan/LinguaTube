@@ -5,17 +5,15 @@
       <stop offset="50%" stop-color="#F45B74"/>
       <stop offset="100%" stop-color="#DF4360"/>
     </linearGradient>
-    <path id="kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
+    <path id="kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 0,0 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
   </defs>
   <rect width="512" height="512" rx="118" fill="url(#voca-grad)"/>
-  <rect x="2" y="2" width="508" height="508" rx="116" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="4"/>
   <g transform="translate(256, 256) scale(0.66)">
     <use href="#kikyou-petal" transform="rotate(0)"/>
     <use href="#kikyou-petal" transform="rotate(72)"/>
     <use href="#kikyou-petal" transform="rotate(144)"/>
     <use href="#kikyou-petal" transform="rotate(216)"/>
     <use href="#kikyou-petal" transform="rotate(288)"/>
-    <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
-    <circle cx="0" cy="0" r="21" fill="#F45B74"/>
+    <circle cx="0" cy="0" r="38" fill="#F45B74"/>
   </g>
 </svg>

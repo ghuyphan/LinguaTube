@@ -130,7 +130,9 @@ You are pair programming on the Voca Flutter Mobile App. Follow these non-negoti
 | 14 | `POST` | `https://voca.study/api/leaderboard` | Opt | 30/hr | Synchronize user XP, streak, and badges |
 | 15 | `POST` | `https://voca.study/api/payment/create-order` | **Req** | 10/10m | Generate VietQR payOS open banking checkout info |
 | 16 | `GET` | `https://voca.study/api/payment/check-status` | No | 60/min | Poll payment confirmation status (`?orderCode=`) |
-| 17 | `GET` | `https://voca.study/api/version` | No | None | App version (1.1.35), forceUpdate, maintenance & notes |
+| 17 | `GET` | `https://voca.study/api/tts` | No | 120/hr | Edge Neural Text-to-Speech audio stream (`?text=&lang=`) |
+| 18 | `GET` | `https://voca.study/api/geo` | No | None | Client Geo-IP country & region detection |
+| 19 | `GET` | `https://voca.study/api/version` | No | None | App version (1.2.4), forceUpdate, maintenance & notes |
 
 ---
 

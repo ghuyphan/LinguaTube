@@ -66,6 +66,9 @@ export class VideoRecommendationService {
     /** Active catalog search query (empty string when viewing default recommendations) */
     readonly activeSearchQuery = signal<string>('');
 
+    /** Active catalog category filter (null when viewing all) */
+    readonly activeCategory = signal<string | null>(null);
+
     /** Initial Loading state */
     readonly isLoading = signal<boolean>(false);
 
@@ -103,8 +106,9 @@ export class VideoRecommendationService {
      * @param limit Number of videos to fetch (default 16 for rich responsive grid)
      * @param forceRefresh Force fresh reload from backend, bypassing and evicting in-memory cache
      * @param query Optional search term across titles and channels
+     * @param category Optional server category filter
      */
-    async loadRecommendedVideos(language: string, tier?: string, limit = 16, forceRefresh = false, query?: string): Promise<RecommendedVideo[]> {
+    async loadRecommendedVideos(language: string, tier?: string, limit = 16, forceRefresh = false, query?: string, category?: string): Promise<RecommendedVideo[]> {
         if (!language) return [];
 
         const requestId = ++this.activeRequestId;
@@ -112,7 +116,10 @@ export class VideoRecommendationService {
         const cleanQuery = typeof query === 'string' ? query.trim() : this.activeSearchQuery();
         this.activeSearchQuery.set(cleanQuery);
 
-        const cacheKey = `${language}_${activeTier || 'all'}_${limit}_${cleanQuery}`;
+        const currentCat = category !== undefined ? (category && category !== 'all' ? category : null) : this.activeCategory();
+        this.activeCategory.set(currentCat);
+
+        const cacheKey = `${language}_${activeTier || 'all'}_${currentCat || 'all'}_${limit}_${cleanQuery}`;
 
         if (forceRefresh) {
             this.sessionSeed.set(Math.floor(Math.random() * 1000000));
@@ -146,6 +153,7 @@ export class VideoRecommendationService {
                 limit,
                 offset: 0,
                 tier: activeTier,
+                category: currentCat || undefined,
                 q: cleanQuery || undefined,
                 sessionSeed: seed,
                 refresh: forceRefresh,
@@ -162,6 +170,7 @@ export class VideoRecommendationService {
                 // Fallback to GET for offline/legacy servers
                 let fallbackUrl = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=0&seed=${seed}`;
                 if (activeTier) fallbackUrl += `&tier=${encodeURIComponent(activeTier)}`;
+                if (currentCat) fallbackUrl += `&category=${encodeURIComponent(currentCat)}`;
                 if (cleanQuery) fallbackUrl += `&q=${encodeURIComponent(cleanQuery)}`;
                 if (forceRefresh) fallbackUrl += `&refresh=true&_t=${Date.now()}`;
                 response = await firstValueFrom(
@@ -222,6 +231,7 @@ export class VideoRecommendationService {
         const offset = currentList.length;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
         const cleanQuery = this.activeSearchQuery();
+        const currentCat = this.activeCategory();
 
         this.isLoadingMore.set(true);
 
@@ -235,6 +245,7 @@ export class VideoRecommendationService {
                 limit,
                 offset,
                 tier: activeTier,
+                category: currentCat || undefined,
                 q: cleanQuery || undefined,
                 sessionSeed: seed,
                 context
@@ -249,6 +260,7 @@ export class VideoRecommendationService {
             } catch {
                 let fallbackUrl = `${endpoint}?lang=${encodeURIComponent(language)}&limit=${limit}&offset=${offset}&seed=${seed}`;
                 if (activeTier) fallbackUrl += `&tier=${encodeURIComponent(activeTier)}`;
+                if (currentCat) fallbackUrl += `&category=${encodeURIComponent(currentCat)}`;
                 if (cleanQuery) fallbackUrl += `&q=${encodeURIComponent(cleanQuery)}`;
                 response = await firstValueFrom(
                     this.http.get<RecommendedVideosResponse>(fallbackUrl)

@@ -185,7 +185,7 @@
                                 </div>
                                 <div class="yt-video-card__sub-row">
                                     @if (item.video.level) {
-                                    <span class="level-badge--pill" [attr.data-tier]="item.video.tier">{{ item.video.level }}</span>
+                                    <app-level-badge [level]="item.video.level" [tier]="item.video.tier" />
                                     }
                                     @if (item.video.matchedWords && item.video.matchedWords.length > 0) {
                                     <span class="yt-vocab-match-text" [title]="item.video.matchedWords.join(', ')">
@@ -237,7 +237,7 @@
                                 </div>
                                 <div class="yt-video-card__sub-row">
                                     @if (getPlaylistLevel(item.playlist); as lvl) {
-                                    <span class="level-badge--pill" [attr.data-tier]="lvl.tier">{{ lvl.level }}</span>
+                                    <app-level-badge [level]="lvl.level" [tier]="lvl.tier" />
                                     }
                                     <span class="yt-playlist-tag">
                                         <app-icon name="list-video" [size]="11" />

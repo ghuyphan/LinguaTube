@@ -33,10 +33,15 @@ button::-moz-focus-inner,
     padding: 0;
 }
 
-/* Accessible focus ring for keyboard navigation */
-:focus-visible {
+/* Accessible focus ring for keyboard navigation (W3C standard) */
+:focus-visible:not(select):not(input):not(textarea) {
     outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
+}
+
+/* Suppress outline on mouse/touch interaction across all elements */
+:focus:not(:focus-visible) {
+    outline: none !important;
 }
 
 :root {

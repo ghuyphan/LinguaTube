@@ -782,15 +782,113 @@
     "learningLanguageSubtitle": "选择您的目标语言以开始",
     "translateSubtitlesTo": "字幕翻译为",
     "translateSubtitlesSubtitle": "视频将同步展示该语言的双语字幕",
+    "myLanguage": "我的语言",
+    "myLanguageHint": "界面与双语字幕",
+    "dualSubtitlesToggle": "翻译双语字幕",
+    "dualSubtitlesHint": "原文字幕下方显示翻译",
+    "guildCharter": "Voca 公会宪章",
+    "realmVibes": {
+      "ja": "动漫与日常会话",
+      "ko": "韩剧与流行俚语",
+      "zh": "汉字与精选播客",
+      "en": "影视与地道俚语"
+    },
     "chooseLevel": "选择您的水平",
     "levelSubtitle": "我们将根据您的水平推荐适合的视频",
     "startLearning": "开始学习",
+    "startAdventure": "开始冒险",
+    "stageExpedition": "启程准备",
+    "stageBattle": "战斗难度",
+    "stageRecruit": "招募伙伴",
     "langFeatures": {
       "ja": "假名注音・动漫・日常对话",
       "zh": "拼音・播客・HSK备考",
       "ko": "韩剧・Vlog・TOPIK备考",
       "en": "CEFR等级・播客・地道口语"
     },
+    "prologueBadge": "觉醒时刻",
+    "realmTitle": "选择你的语言探索领域",
+    "realmSubtitle": "真实母语视听卷轴正等待你的破译",
+    "pactTitle": "立下猎人誓约",
+    "pactSubtitle": "每日习惯铸就传奇。选择你的每日节奏并校准等级",
+    "dailyGoalLabel": "每日习惯誓约",
+    "goals": {
+      "casual": "随性斥候",
+      "casualDesc": "每天5分钟 • 1条短片",
+      "regular": "沉浸猎人",
+      "regularDesc": "每天10分钟 • 1-2个原声视频",
+      "serious": "秘境探险家",
+      "seriousDesc": "每天15分钟 • 句子采矿",
+      "intense": "神话大师",
+      "intenseDesc": "每天25+分钟 • 深度复习与听力"
+    },
+    "proficiencyLabel": "难度校准",
+    "ranks": {
+      "novice": "见习猎人",
+      "apprentice": "学徒猎人",
+      "adept": "熟练猎人",
+      "veteran": "老练先锋",
+      "master": "宗师先驱"
+    },
+    "companionTitle": "选择你的守护灵伙伴",
+    "companionSubtitle": "选择你的学习同行导师",
+    "companions": {
+      "wizard": "博学法师",
+      "wizardTrait": "语法与句法剖析",
+      "wizardQuote": "我会为你解开每一个复杂的语法结构与句型！",
+      "alchemist": "词汇炼金术士",
+      "alchemistTrait": "汉字与词根提炼",
+      "alchemistQuote": "你遇到的每一个生词，都将被提炼为牢不可破的黄金记忆！",
+      "bard": "吟游诗人",
+      "bardTrait": "声调与韵律发音",
+      "bardQuote": "伴随韵律与声调，让你的双耳敏锐捕捉母语者的音调起伏！",
+      "ranger": "沉浸游侠",
+      "rangerTrait": "地道口语与俚语",
+      "rangerQuote": "日常生活俚语与地道地气表达，就是我们的专属领地！",
+      "miner": "句子采矿工",
+      "minerTrait": "词汇采矿",
+      "minerQuote": "每个句子都蕴藏黄金——让我们采掘每一个词汇宝藏！",
+      "shinobi": "暗影忍者",
+      "shinobiTrait": "极速沉浸听力",
+      "shinobiQuote": "在他们察觉之前，我们就能掌握原汁原味的高速母语对话！",
+      "knight": "守护骑士",
+      "knightTrait": "连续学习守护",
+      "knightQuote": "在我的坚盾守护下，你的每日连胜绝不会中断！",
+      "sovereign": "万语至尊",
+      "sovereignTrait": "多语言贯通大师",
+      "sovereignQuote": "真正的至尊无所畏惧，通晓万语。整个国度皆属于你！"
+    },
+    "trialTitle": "首次采矿试炼（15秒）",
+    "trialSubtitle": "破译真实原声：轻按发光的符文即可唤起词典",
+    "trialTapHint": "点击下方发光的词语",
+    "trialMineBtn": "采矿存入生词本 (+15 XP)",
+    "trialMinedSuccess": "采矿成功！获得 +15 XP",
+    "starterTitle": "冒险者执照已激活！",
+    "starterSubtitle": "猎人公会为你授予初始补给宝匣",
+    "starterLoot": {
+      "diamonds": "满额 AI 能量储备 (💎)",
+      "diamondsDesc": "已备齐即时 AI 语音同步额度",
+      "xp": "+50 初始XP",
+      "xpDesc": "1级进度推进至66%",
+      "hearth": "点燃首日篝火",
+      "hearthDesc": "每日连胜火焰已燃起",
+      "freeze": "2枚 冰霜护盾",
+      "freezeDesc": "已备好连续打卡保护机制 (Streak Freeze)"
+    },
+    "enterRealm": "步入语言领域",
+    "claimStarterPack": "领取新手大礼包 (+50 XP)",
+    "starterPackClaimed": "新手礼包激活成功！已获得 +50 XP 并点亮第 1 天连续打卡！",
+    "perkKnight": "守护骑士：已备好连续打卡冰霜护盾！",
+    "perkWizard": "博学法师：已开启语法与句法深度解析！",
+    "perkAlchemist": "词汇炼金术士：提炼额外获得 +25 初始XP！",
+    "perkRanger": "沉浸游侠：已开启地道口语双语字幕！",
+    "perkBard": "吟游诗人：已开启发音与假名/拼音注音！",
+    "perkShinobi": "暗影忍者：母语极速听力模式已校准！",
+    "perkMiner": "句子采矿工: 词汇雷达启动！获得额外 +35 XP！",
+    "perkSovereign": "万语至尊: 至尊圣袍加身！双语字幕与语法解析同时激活！",
+    "saveCalibration": "保存偏好设置",
+    "replayTour": "重温猎人序章",
+    "replayTourDesc": "重新校准语言、难度与伙伴导师",
     "tapToTry": "点击任意词语试试！",
     "skip": "跳过",
     "continue": "继续",
@@ -801,8 +899,10 @@
     "demoSaved": "已添加至生词本！",
     "levels": {
       "beginnerDesc": "基础短语与清晰发音",
-      "intermediateDesc": "自然日常对话与Vlog",
-      "advancedDesc": "原汁原味新闻、播客与深度访谈"
+      "elementaryDesc": "日常熟悉词汇",
+      "intermediateDesc": "自然对话与生活Vlog",
+      "upperIntermediateDesc": "新闻短片与深度探讨",
+      "advancedDesc": "纪录片与专业讲座"
     },
     "changeUiLang": "界面语言",
     "features": {
@@ -812,26 +912,20 @@
     },
     "demo": {
       "ja": {
-        "japanese": "日语",
-        "particle": "(助词)",
-        "study": "学习",
-        "letsDo": "一起做"
+        "text": "日本語を勉強しましょう",
+        "translation": "让我们一起学习日语吧！"
       },
       "zh": {
-        "together": "一起",
-        "learn": "学习",
-        "chinese": "中文",
-        "suggestion": "(建议)"
+        "text": "一起学习中文吧",
+        "translation": "让我们一起学习中文吧！"
       },
       "ko": {
-        "korean": "韩语",
-        "particle": "(助词)",
-        "letsLearn": "一起学"
+        "text": "함께 한국어를 배워요",
+        "translation": "让我们一起学习韩语吧！"
       },
       "en": {
-        "lets": "让我们",
-        "learn": "学习",
-        "together": "一起"
+        "text": "Let's master languages together",
+        "translation": "让我们一起精通多门语言！"
       }
     }
   },

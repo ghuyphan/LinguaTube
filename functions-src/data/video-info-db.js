@@ -8,6 +8,8 @@
  */
 
 import { rankVideos } from '../services/recommendation.service.js';
+import { detectVideoCategory } from '../services/category.service.js';
+import { getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -27,7 +29,7 @@ export async function getVideoLanguages(db, videoId) {
 
     try {
         const row = await db.prepare(`
-            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels
+            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, category, tags
             FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
@@ -59,6 +61,12 @@ export async function getVideoLanguages(db, videoId) {
             }
         } catch { }
 
+        let parsedTags = [];
+        try {
+            if (row.tags) parsedTags = JSON.parse(row.tags);
+        } catch { }
+        if (!Array.isArray(parsedTags)) parsedTags = [];
+
         return {
             availableLanguages: JSON.parse(row.available_languages || '[]'),
             subLanguages: JSON.parse(row.sub_languages || '[]'),
@@ -67,7 +75,9 @@ export async function getVideoLanguages(db, videoId) {
             title: row.title,
             channel: row.channel,
             channelAvatar: row.channel_avatar || null,
-            levels
+            levels,
+            category: row.category || 'general',
+            tags: parsedTags
         };
     } catch (err) {
         console.error('[VideoInfoDB] getVideoLanguages error:', err.message);
@@ -87,18 +97,39 @@ export async function getVideoLanguages(db, videoId) {
  * @param {Record<string, string>} [levels] - Difficulty levels by language
  * @param {string} [channelAvatar] - Channel avatar URL
  * @param {string[]} [subLanguages] - Verified subtitle languages actually saved on our server
+ * @param {string} [category] - Video category (anime_drama, music, news, conversation, vlog, education, general)
+ * @param {string[]} [tags] - Extracted creator tags
  */
-export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null, subLanguages = null) {
+export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null, subLanguages = null, category = null, tags = null) {
     if (!db || !videoId) return;
 
     try {
         let existingLevels = {};
         let existingSubLangs = [];
+        let existingCategory = null;
+        let existingTags = [];
         const existing = await getVideoLanguages(db, videoId);
+        let resolvedTitle = (title && typeof title === 'string' && title.trim()) ? title.trim() : (existing?.title || null);
+        let resolvedChannel = (channel && typeof channel === 'string' && channel.trim()) ? channel.trim() : (existing?.channel || null);
+        let resolvedAvatar = channelAvatar || existing?.channelAvatar || null;
+
+        if (!resolvedTitle || !resolvedChannel) {
+            try {
+                const meta = await getVideoMetadata(videoId);
+                if (meta) {
+                    resolvedTitle = resolvedTitle || meta.title || null;
+                    resolvedChannel = resolvedChannel || meta.author_name || null;
+                    if (!resolvedAvatar && meta.author_url) {
+                        resolvedAvatar = await fetchChannelAvatar(meta.author_url);
+                    }
+                }
+            } catch { }
+        }
+
         if (levels === null) {
             existingLevels = existing?.levels || {};
             if (Object.keys(existingLevels).length === 0) {
-                const autoDetected = detectLevelFromMetadata(title || existing?.title || '', channel || existing?.channel || '');
+                const autoDetected = detectLevelFromMetadata(resolvedTitle || '', resolvedChannel || '');
                 if (autoDetected) {
                     const tier = labelToTier(autoDetected.level) || 'intermediate';
                     existingLevels = {
@@ -120,14 +151,34 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
             existingSubLangs = existing.subLanguages;
         }
 
+        existingCategory = existing?.category;
+        existingTags = existing?.tags || [];
+
         const mergedSubs = subLanguages !== null 
             ? Array.from(new Set([...existingSubLangs, ...subLanguages]))
             : existingSubLangs;
 
+        const mergedTags = tags !== null
+            ? Array.from(new Set([...existingTags, ...tags]))
+            : existingTags;
+
+        let resolvedCategory = category;
+        if (!resolvedCategory || resolvedCategory === 'general') {
+            if (existingCategory && existingCategory !== 'general') {
+                resolvedCategory = existingCategory;
+            } else {
+                resolvedCategory = detectVideoCategory({
+                    title: resolvedTitle || '',
+                    channel: resolvedChannel || '',
+                    tags: mergedTags
+                });
+            }
+        }
+
         await db.prepare(`
             INSERT INTO video_languages 
-            (video_id, available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
+            (video_id, available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, category, tags, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
             ON CONFLICT(video_id) DO UPDATE SET
               available_languages = excluded.available_languages,
               sub_languages = CASE WHEN excluded.sub_languages IS NOT NULL AND excluded.sub_languages != '[]' THEN excluded.sub_languages ELSE video_languages.sub_languages END,
@@ -137,6 +188,8 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
               channel = COALESCE(excluded.channel, video_languages.channel),
               channel_avatar = COALESCE(excluded.channel_avatar, video_languages.channel_avatar),
               levels = excluded.levels,
+              category = CASE WHEN excluded.category IS NOT NULL AND excluded.category != 'general' THEN excluded.category ELSE COALESCE(video_languages.category, excluded.category, 'general') END,
+              tags = CASE WHEN excluded.tags IS NOT NULL AND excluded.tags != '[]' THEN excluded.tags ELSE COALESCE(video_languages.tags, excluded.tags, '[]') END,
               updated_at = strftime('%s', 'now')
         `).bind(
             videoId,
@@ -144,13 +197,36 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
             JSON.stringify(mergedSubs),
             hasAutoCaptions ? 1 : 0,
             duration,
-            title,
-            channel,
-            channelAvatar,
-            JSON.stringify(existingLevels)
+            resolvedTitle,
+            resolvedChannel,
+            resolvedAvatar,
+            JSON.stringify(existingLevels),
+            resolvedCategory || 'general',
+            JSON.stringify(mergedTags)
         ).run();
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoLanguages error:', err.message);
+    }
+}
+
+/**
+ * Update video category explicitly in D1
+ * @param {D1Database} db
+ * @param {string} videoId
+ * @param {string} category
+ */
+export async function saveVideoCategory(db, videoId, category) {
+    if (!db || !videoId || !category) return false;
+    try {
+        await db.prepare(`
+            UPDATE video_languages
+            SET category = ?, updated_at = strftime('%s', 'now')
+            WHERE video_id = ?
+        `).bind(category, videoId).run();
+        return true;
+    } catch (err) {
+        console.error('[VideoInfoDB] saveVideoCategory error:', err.message);
+        return false;
     }
 }
 
@@ -610,12 +686,27 @@ export async function cleanupOldNoTranscriptEntries(db) {
  * @returns {Promise<Array>}
  */
 /**
- * Fisher-Yates array shuffle for uniform candidate randomization
+ * Seeded Mulberry32 pseudo-random number generator
+ * Produces uniform numbers in [0, 1) deterministically from seed.
  */
-function shuffleArray(arr) {
+function createSeededRandom(seed = 12345) {
+    let s = (Math.abs(seed) | 0) || 12345;
+    return function() {
+        s = (s + 0x6D2B79F5) | 0;
+        let t = Math.imul(s ^ (s >>> 15), 1 | s);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t >>> 0) / 4294967296);
+    };
+}
+
+/**
+ * Fisher-Yates array shuffle with optional deterministic PRNG seed
+ */
+function shuffleArray(arr, seed = null) {
     const copy = [...arr];
+    const rand = (typeof seed === 'number') ? createSeededRandom(seed) : Math.random;
     for (let i = copy.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(rand() * (i + 1));
         [copy[i], copy[j]] = [copy[j], copy[i]];
     }
     return copy;
@@ -629,13 +720,13 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
     const cleanQuery = typeof query === 'string' && query.trim() ? query.trim().slice(0, 100) : null;
     const shouldShuffle = cleanQuery ? false : shuffle;
-    const { context = null, sessionSeed = null } = (typeof options === 'object' && options !== null) ? options : {};
+    const { context = null, sessionSeed = null, isRefresh = false } = (typeof options === 'object' && options !== null) ? options : {};
 
-    // For server-side ranking, retrieve an expanded candidate pool (80–120 candidates)
+    // For server-side ranking, retrieve an expanded candidate pool (up to 200 candidates)
     // so we evaluate candidates across the catalog rather than just safeOffset + safeLimit
     const candidateLimit = cleanQuery
         ? Math.max(safeOffset + safeLimit + 20, 50)
-        : Math.max(safeOffset + safeLimit + 80, 100);
+        : Math.max(safeOffset + safeLimit + 120, 200);
     const videoMap = new Map();
 
     // 1. Query D1 video_languages table (primary metadata index)
@@ -644,7 +735,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             const searchPattern1 = `%"${lang}"%`;
             const searchPattern2 = `%${lang}%`;
             let sql = `
-                SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, updated_at
+                SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, tags, updated_at
                 FROM video_languages
                 WHERE (
                     (sub_languages IS NOT NULL AND sub_languages != '[]' AND (sub_languages LIKE ? OR sub_languages LIKE ?))
@@ -654,8 +745,19 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     )
                 )
                   AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
+                  AND (title IS NOT NULL AND TRIM(title) != '')
+                  AND (channel IS NOT NULL AND TRIM(channel) != '')
             `;
             const bindings = [searchPattern1, searchPattern2, searchPattern1, searchPattern2];
+
+            const targetCategory = options.category && typeof options.category === 'string' && options.category.toLowerCase().trim() !== 'all'
+                ? options.category.toLowerCase().trim()
+                : null;
+
+            if (targetCategory) {
+                sql += ` AND category = ? `;
+                bindings.push(targetCategory);
+            }
 
             if (cleanQuery) {
                 sql += ` AND (title LIKE ? OR channel LIKE ?) `;
@@ -669,14 +771,14 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
             const { results } = await db.prepare(sql).bind(...bindings).all();
 
             if (results && Array.isArray(results)) {
-                // When refresh is requested and no deterministic seed is active, randomize catalog candidates
-                // BUT pin the top 2 newest/recently updated additions at the front so newly transcribed videos are never buried
+                // When exploring feed (cleanQuery is null), apply deterministic seed-based candidate shuffle
+                // BUT pin the top 3 newest/recently updated additions at the front so newly transcribed videos are never buried
                 let rows = results;
-                if (shouldShuffle && results.length > 2 && sessionSeed === null) {
-                    const pinnedCount = Math.min(2, results.length);
+                if (!cleanQuery && (shouldShuffle || isRefresh || sessionSeed !== null) && results.length > 2) {
+                    const pinnedCount = Math.min(3, results.length);
                     const pinned = results.slice(0, pinnedCount);
                     const shufflable = results.slice(pinnedCount);
-                    rows = [...pinned, ...shuffleArray(shufflable)];
+                    rows = [...pinned, ...shuffleArray(shufflable, sessionSeed)];
                 }
 
                 // Channel variety guard: limit consecutive/dominant creators in primary pass (lifted for search)
@@ -688,6 +790,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
 
                 const processRow = async (row) => {
                     if (videoMap.has(row.video_id)) return;
+                    if (!row.title || !row.title.trim() || !row.channel || !row.channel.trim()) return;
 
                     let subLangs = [];
                     try {
@@ -753,6 +856,13 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                     }
 
                     const cleanLevelStr = (level && typeof level === 'object' && level.level) ? level.level : (typeof level === 'string' ? level : undefined);
+                    const resolvedRowCategory = row.category && row.category !== 'general'
+                        ? row.category
+                        : detectVideoCategory({
+                            title: row.title || '',
+                            channel: row.channel || ''
+                        });
+
                     videoMap.set(row.video_id, {
                         videoId: row.video_id,
                         title: row.title || null,
@@ -763,6 +873,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                         languages: verifiedLangs.length > 0 ? verifiedLangs : [lang],
                         level: cleanLevelStr,
                         tier: videoTier || undefined,
+                        category: resolvedRowCategory,
                         updatedAt: row.updated_at
                     });
 
@@ -787,7 +898,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
                 // Target candidate collection count
                 const targetCandidateCount = cleanQuery
                     ? (safeOffset + safeLimit)
-                    : Math.max(safeOffset + safeLimit + 40, 80);
+                    : Math.max(safeOffset + safeLimit + 80, 150);
 
                 // Process candidates concurrently in small pools (8 at a time) to avoid sequential R2 HEAD latency
                 const POOL_SIZE = 8;

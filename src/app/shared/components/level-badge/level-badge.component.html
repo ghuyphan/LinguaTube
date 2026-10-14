@@ -1,0 +1,22 @@
+<span
+  class="level-badge"
+  [class.level-badge--loading]="loading()"
+  [class.level-badge--clickable]="clickable()"
+  [class.level-badge--xs]="size() === 'xs'"
+  [class.level-badge--sm]="size() === 'sm'"
+  [class.level-badge--md]="size() === 'md'"
+  [class.level-badge--lg]="size() === 'lg'"
+  [attr.data-tier]="effectiveTier()"
+  [attr.title]="badgeTitle()"
+  [attr.aria-label]="badgeTitle()"
+  [attr.role]="clickable() ? 'button' : null"
+  [attr.tabindex]="clickable() ? 0 : null"
+  (click)="onClick($event)"
+  (keydown)="onKeyDown($event)"
+>
+  @if (loading()) {
+    <span class="skeleton-shimmer" aria-hidden="true"></span>
+  } @else {
+    <ng-content>{{ level() }}</ng-content>
+  }
+</span>

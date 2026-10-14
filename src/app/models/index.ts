@@ -127,7 +127,11 @@ export interface UserSettings {
   dualSubtitleTargetLang: string;
   hasCompletedOnboarding: boolean;
   preferredLevel?: string;
+  dailyGoalMinutes?: number;
+  companionClass?: string;
+  onboardingRewardClaimed?: boolean;
   hasSeenSubtitleCoachmark?: boolean;
   fullscreenSubtitleYPercent?: number;
   country?: string;
 }
+

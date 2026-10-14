@@ -210,7 +210,7 @@ export class TranscriptCacheService {
                 request.onsuccess = () => {
                     const cursor = request.result;
                     if (cursor) {
-                        if (cursor.key.toString().startsWith(videoId)) {
+                        if (cursor.key.toString().startsWith(`${videoId}:`)) {
                             cursor.delete();
                         }
                         cursor.continue();

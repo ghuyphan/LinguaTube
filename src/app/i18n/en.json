@@ -782,15 +782,113 @@
     "learningLanguageSubtitle": "Pick the language you want to study",
     "translateSubtitlesTo": "Translate subtitles to",
     "translateSubtitlesSubtitle": "Translations appear directly below the original subtitles",
+    "myLanguage": "My Language",
+    "myLanguageHint": "Interface & subtitles",
+    "dualSubtitlesToggle": "Translate subtitles",
+    "dualSubtitlesHint": "Show translations below captions",
+    "guildCharter": "Voca Guild Charter",
+    "realmVibes": {
+      "ja": "Anime & Daily Life",
+      "ko": "K-Drama & Slang",
+      "zh": "Hanzi & Podcasts",
+      "en": "Cinema & Idioms"
+    },
     "chooseLevel": "Choose your level",
     "levelSubtitle": "We'll suggest videos suited to your level",
     "startLearning": "Start Learning",
+    "startAdventure": "Start Adventure",
+    "stageExpedition": "Journey Preparation",
+    "stageBattle": "Battle Difficulty",
+    "stageRecruit": "Recruit Companion",
     "langFeatures": {
       "ja": "Furigana, anime & daily conversation",
       "zh": "Pinyin, podcasts & HSK preparation",
       "ko": "K-drama, vlogs & TOPIK preparation",
       "en": "CEFR levels, podcasts & native speech"
     },
+    "prologueBadge": "The Awakening",
+    "realmTitle": "Choose Your Language Realm",
+    "realmSubtitle": "Ancient scrolls of authentic native media await your cipher",
+    "pactTitle": "Swear Your Hunter's Pact",
+    "pactSubtitle": "Habits build legends. Select your daily pace & calibrate your rank",
+    "dailyGoalLabel": "Daily Habit Pact",
+    "goals": {
+      "casual": "Casual Scout",
+      "casualDesc": "5 min/day • 1 short clip",
+      "regular": "Immersion Hunter",
+      "regularDesc": "10 min/day • 1-2 authentic videos",
+      "serious": "Dungeon Raider",
+      "seriousDesc": "15 min/day • Sentence mining",
+      "intense": "Mythic Master",
+      "intenseDesc": "25+ min/day • Deep immersion & SRS"
+    },
+    "proficiencyLabel": "Difficulty Calibration",
+    "ranks": {
+      "novice": "Novice",
+      "apprentice": "Apprentice",
+      "adept": "Adept",
+      "veteran": "Veteran",
+      "master": "Master"
+    },
+    "companionTitle": "Choose Your Companion Spirit",
+    "companionSubtitle": "Pick a companion guide for your journey",
+    "companions": {
+      "wizard": "Scholar Mage",
+      "wizardTrait": "Grammar & Syntax",
+      "wizardQuote": "I'll decode every complex sentence and grammar puzzle for you!",
+      "alchemist": "Vocab Alchemist",
+      "alchemistTrait": "Kanji & Word Roots",
+      "alchemistQuote": "Every word you encounter will be transmuted into golden knowledge!",
+      "bard": "Minstrel Bard",
+      "bardTrait": "Pitch & Pronunciation",
+      "bardQuote": "Let's tune your ears to the natural pitch accent and rhythm of native speech!",
+      "ranger": "Immersion Ranger",
+      "rangerTrait": "Slang & Real Talk",
+      "rangerQuote": "Everyday slang, idioms, and natural street talk are our domain!",
+      "miner": "Sentence Miner",
+      "minerTrait": "Word Mining",
+      "minerQuote": "Every sentence hides hidden gold—let's mine every nugget of vocabulary!",
+      "shinobi": "Shadow Shinobi",
+      "shinobiTrait": "Speed Immersion",
+      "shinobiQuote": "We'll master rapid native speech before they even realize it!",
+      "knight": "Guardian Knight",
+      "knightTrait": "Streak Protection",
+      "knightQuote": "Your daily streak will never falter under my unbreakable shield!",
+      "sovereign": "Mythic Sovereign",
+      "sovereignTrait": "Polyglot Grandmaster",
+      "sovereignQuote": "A true sovereign conquers all tongues without fear. The realm is yours!"
+    },
+    "trialTitle": "The First Mine (15s Trial)",
+    "trialSubtitle": "Decode authentic speech: tap the glowing rune to reveal meaning",
+    "trialTapHint": "Tap the glowing word below",
+    "trialMineBtn": "Mine to Flashcards (+15 XP)",
+    "trialMinedSuccess": "Word Mined! +15 XP Gained",
+    "starterTitle": "Adventurer License Activated!",
+    "starterSubtitle": "The Guild welcomes you with your initial supply cache",
+    "starterLoot": {
+      "diamonds": "Full AI Quota (💎)",
+      "diamondsDesc": "Instant AI speech sync ready",
+      "xp": "+50 Starter XP",
+      "xpDesc": "Push Level 1 to 66%",
+      "hearth": "Campfire Hearth Ignited",
+      "hearthDesc": "Day 1 streak flame active",
+      "freeze": "2 Frost Wards",
+      "freezeDesc": "Streak freeze protection pre-loaded"
+    },
+    "enterRealm": "Enter the Language Realm",
+    "claimStarterPack": "Claim Starter Pack (+50 XP)",
+    "starterPackClaimed": "Starter Pack Activated! +50 XP & Day 1 Streak ignited.",
+    "perkKnight": "Guardian Knight: Frost Ward Streak Shield activated!",
+    "perkWizard": "Scholar Mage: Grammar & Syntax Insights turned ON!",
+    "perkAlchemist": "Vocab Alchemist: +25 Extra Bonus XP transmuted!",
+    "perkRanger": "Immersion Ranger: Dual Subtitles enabled for real talk!",
+    "perkBard": "Minstrel Bard: Phonetic Pronunciation guides enabled!",
+    "perkShinobi": "Shadow Shinobi: Rapid native immersion calibrated!",
+    "perkMiner": "Sentence Miner: Word-mining radar calibrated! +35 Miner XP discovered!",
+    "perkSovereign": "Mythic Sovereign: Polyglot Mantle bestowed! Dual Subtitles & Grammar Insights active!",
+    "saveCalibration": "Save Preferences",
+    "replayTour": "Replay Hunter Prologue",
+    "replayTourDesc": "Calibrate your language, level, and companion guide",
     "tapToTry": "Tap any word to try it out!",
     "skip": "Skip",
     "continue": "Continue",
@@ -801,8 +899,10 @@
     "demoSaved": "Saved to Flashcards!",
     "levels": {
       "beginnerDesc": "Simple phrases & clear speech",
+      "elementaryDesc": "Routine everyday vocabulary",
       "intermediateDesc": "Natural conversations & vlogs",
-      "advancedDesc": "Native news, podcasts & interviews"
+      "upperIntermediateDesc": "News clips & deep topics",
+      "advancedDesc": "Documentaries & native lectures"
     },
     "changeUiLang": "Interface",
     "features": {
@@ -812,26 +912,20 @@
     },
     "demo": {
       "ja": {
-        "japanese": "Japanese",
-        "particle": "(object marker)",
-        "study": "study",
-        "letsDo": "let's do"
+        "text": "日本語を勉強しましょう",
+        "translation": "Let's study Japanese together!"
       },
       "zh": {
-        "together": "together",
-        "learn": "learn",
-        "chinese": "Chinese",
-        "suggestion": "(suggestion)"
+        "text": "一起学习中文吧",
+        "translation": "Let's learn Chinese together!"
       },
       "ko": {
-        "korean": "Korean",
-        "particle": "(object marker)",
-        "letsLearn": "let's learn"
+        "text": "함께 한국어를 배워요",
+        "translation": "Let's learn Korean together!"
       },
       "en": {
-        "lets": "Let's",
-        "learn": "learn",
-        "together": "together"
+        "text": "Let's master languages together",
+        "translation": "Let's master languages together!"
       }
     }
   },

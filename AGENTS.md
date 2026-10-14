@@ -160,12 +160,15 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │     GET  /api/recommended-videos  -> Video Recommendations by Target Language
     │     GET  /api/leaderboard         -> Gamification XP Leaderboard
     │     GET  /api/diamonds            -> Diamond Token Quota & Regen Status
+    │     GET  /api/geo                 -> Geo-IP country & region detection
+    │     GET  /api/tts                 -> Edge Neural Text-to-Speech proxy
+    │     GET  /api/version             -> App version & client compatibility check
     │     POST /api/payment/create-order-> PayOS Checkout Link Generator
     │     POST /api/payment/webhook     -> PayOS Payment Confirmation & Diamond Grant
     │     GET  /api/payment/check-status-> Polling Order Payment Status
     │
     └── Cloud Infrastructure:
-          ├── Cloudflare D1             -> SQLite Tables: ai_transcription_jobs, transcripts, video_meta, video_languages, no_transcript_cache
+          ├── Cloudflare D1             -> SQLite Tables: ai_transcription_jobs, transcripts, video_meta, video_languages, no_transcript_cache, leaderboard
           ├── Cloudflare R2             -> transcripts/{videoId}/{lang}.json & translations/{videoId}/{source}_{target}.json
           ├── Cloudflare KV             -> Rate limits, short-lived tokens, video-info, batch translation cache
           ├── Supabase (PostgreSQL)     -> Cloud user records (profiles), vocabulary, streaks, history, playlists, gamification
@@ -219,6 +222,7 @@ lingua-tube/
 │   │   ├── diamonds.js        # Diamond credits check & regen
 │   │   ├── dict.js            # Unified dictionary lookup
 │   │   ├── dual-subtitles.js  # Dual-language subtitle generator
+│   │   ├── geo.js             # Geo-IP country & region detection
 │   │   ├── gladia-webhook.js  # Dual-auth webhook receiver with sub-40ms ack & waitUntil
 │   │   ├── leaderboard.js     # Gamification XP leaderboard
 │   │   ├── payment/           # Payment processing (create-order, webhook, check-status)
@@ -227,6 +231,8 @@ lingua-tube/
 │   │   ├── tokenize-batch/    # Batch tokenization ([lang].js)
 │   │   ├── transcript.js      # Unified transcript fetching & AI generation
 │   │   ├── translate/         # Translation endpoints ([[path]].js, batch.js)
+│   │   ├── tts.js             # Edge Neural Text-to-Speech proxy
+│   │   ├── version.js         # App version & client compatibility check
 │   │   ├── video-info.js      # Video metadata & language discovery
 │   │   └── video-level.js     # CEFR/JLPT/HSK/TOPIK level detection
 │   ├── middlewares/           # auth.js, bot-defense.js, rate-limiter.js, video-validator.js

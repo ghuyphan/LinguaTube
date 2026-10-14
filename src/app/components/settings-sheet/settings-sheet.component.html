@@ -6,7 +6,7 @@
                 @if (auth.isLoggedIn()) {
                 <div class="account-user-row">
                     <div class="account-avatar-wrapper" (click)="openEditProfile()" role="button" tabindex="0" (keydown.enter)="openEditProfile()" [attr.aria-label]="i18n.t('settings.editProfile') || 'Edit Profile'" [attr.title]="i18n.t('settings.editProfile') || 'Edit Profile'">
-                        <img [src]="auth.user()?.picture || '/avatars/cat.svg'" [alt]="auth.user()?.name || 'User'" class="account-avatar" />
+                        <img [src]="auth.user()?.picture || '/avatars/wizard.svg'" [alt]="auth.user()?.name || 'User'" class="account-avatar" />
                         <div class="account-avatar-edit-badge">
                             <app-icon name="pencil" [size]="10" />
                         </div>
@@ -119,6 +119,24 @@
                         </div>
                         <div class="settings-item-right">
                             <span class="settings-item-value" [attr.title]="currentUILang().nativeName">{{ currentUILang().nativeName }}</span>
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- Replay Hunter Prologue / Onboarding -->
+                    <button class="settings-item-row" (click)="replayOnboarding()">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon name="sparkles" [size]="16" />
+                            </div>
+                            <div class="settings-item-text-stack">
+                                <span class="settings-item-title">{{ i18n.t('onboarding.replayTour') || 'Replay Hunter Prologue' }}</span>
+                                <span class="settings-item-hint">{{ i18n.t('onboarding.replayTourDesc') || 'Calibrate your language, level, and companion guide' }}</span>
+                            </div>
+                        </div>
+                        <div class="settings-item-right">
                             <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
                         </div>
                     </button>
@@ -245,7 +263,7 @@
             <!-- 1. Avatar Section -->
             <div class="edit-profile-avatar-section">
                 <div class="edit-profile-avatar-wrapper" (click)="avatarFileInput.click()" role="button" tabindex="0" (keydown.enter)="avatarFileInput.click()" [attr.aria-label]="i18n.t('settings.uploadPhoto') || 'Upload photo'" [attr.title]="i18n.t('settings.uploadPhoto') || 'Upload photo'">
-                    <img [src]="editAvatar() || '/avatars/cat.svg'" alt="Avatar Preview" class="edit-profile-avatar-img" />
+                    <img [src]="editAvatar() || '/avatars/wizard.svg'" alt="Avatar Preview" class="edit-profile-avatar-img" />
                     <div class="edit-profile-camera-badge">
                         <app-icon name="camera" [size]="14" />
                     </div>

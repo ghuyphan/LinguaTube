@@ -5,13 +5,19 @@
         <div class="video-meta-row">
             <span class="video-channel" [attr.title]="channel()">{{ channel() }}</span>
             @if (levelInfo(); as lvl) {
-            <span class="level-badge" [attr.data-tier]="lvl.tier" (click)="openLevelSheet($event)" role="button" tabindex="0" [attr.title]="lvl.level">
-                {{ lvl.level }}
-            </span>
+            <app-level-badge
+                [level]="lvl.level"
+                [tier]="lvl.tier"
+                size="sm"
+                [clickable]="true"
+                (clicked)="openLevelSheet($event)"
+            />
             } @else if (isLevelLoading()) {
-            <span class="level-badge level-badge--skeleton" [attr.title]="i18n.t('level.evaluating') || 'Evaluating level...'" [attr.aria-label]="i18n.t('level.evaluating') || 'Evaluating level...'">
-                <span class="level-skeleton-shimmer"></span>
-            </span>
+            <app-level-badge
+                [loading]="true"
+                size="sm"
+                [customTitle]="i18n.t('level.evaluating') || 'Evaluating level...'"
+            />
             }
         </div>
     </div>

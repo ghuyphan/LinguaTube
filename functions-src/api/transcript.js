@@ -242,6 +242,20 @@ export async function onRequestPost(context) {
                         }
                     }
 
+                    // Self-healing: if video_languages in D1 lacks duration, backfill it from cached segments
+                    if ((!knownInfo?.durationSeconds || knownInfo.durationSeconds === 0) && cached.segments?.length > 0 && waitUntil && db) {
+                        const lastCue = cached.segments[cached.segments.length - 1];
+                        const inferredSec = Math.round((lastCue.start || 0) + (lastCue.duration || 0));
+                        if (inferredSec > 0) {
+                            waitUntil(
+                                db.prepare('UPDATE video_languages SET duration_seconds = ?, updated_at = strftime("%s", "now") WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds = 0)')
+                                    .bind(inferredSec, cleanVideoId)
+                                    .run()
+                                    .catch(() => {})
+                            );
+                        }
+                    }
+
                     return jsonResponse({
                         success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
                         source: 'ai', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [lang], whisperAvailable: diamondInfo.diamonds > 0,
@@ -292,6 +306,20 @@ export async function onRequestPost(context) {
                             if (waitUntil && db) {
                                 waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, estimated).catch(() => {}));
                             }
+                        }
+                    }
+
+                    // Self-healing: if video_languages in D1 lacks duration, backfill it from cached segments
+                    if ((!knownInfo?.durationSeconds || knownInfo.durationSeconds === 0) && cached.segments?.length > 0 && waitUntil && db) {
+                        const lastCue = cached.segments[cached.segments.length - 1];
+                        const inferredSec = Math.round((lastCue.start || 0) + (lastCue.duration || 0));
+                        if (inferredSec > 0) {
+                            waitUntil(
+                                db.prepare('UPDATE video_languages SET duration_seconds = ?, updated_at = strftime("%s", "now") WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds = 0)')
+                                    .bind(inferredSec, cleanVideoId)
+                                    .run()
+                                    .catch(() => {})
+                            );
                         }
                     }
 

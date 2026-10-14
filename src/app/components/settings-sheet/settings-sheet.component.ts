@@ -44,6 +44,12 @@ export class SettingsSheetComponent {
   openAchievements = output<void>();
   openAiCredits = output<void>();
   openProUpgrade = output<void>();
+  openOnboarding = output<void>();
+
+  replayOnboarding(): void {
+    this.closed.emit();
+    this.openOnboarding.emit();
+  }
 
   showSignOutConfirm = signal(false);
   showLearningLangPicker = signal(false);

@@ -530,7 +530,7 @@ To eliminate method evaluation overhead in Angular templates and ensure change d
 
 The application styling is organized using modular SCSS located in `src/styles/`:
 
-- **`_variables.scss`**: Design tokens, font stacks (system, Noto Sans JP/KR/SC), color palette, spacing, z-index layers. Standardizes `--success` to `#22c55e` across light/dark themes, provides gamification RGB tokens (`--color-fire-rgb`, `--color-diamond-rgb`), tier gradients (`--gradient-pro`, `--gradient-premium`), and radius tokens (`--border-radius-xs: 8px`, `--sidebar-width: 15.75rem`).
+- **`_variables.scss`**: Design tokens, font stacks (system, Noto Sans JP/KR/SC), color palette, spacing, z-index layers. Standardizes `--success` to `#22c55e` across light/dark themes, provides gamification RGB tokens (`--color-fire-rgb`, `--color-diamond-rgb`), tier gradients (`--gradient-pro`, `--gradient-premium`), radius tokens (`--border-radius-xs: 8px`, `--sidebar-width: 15.75rem`), and the unified **Chill Pastel** grammar and proficiency level tokens (`--level-beginner`, `--level-intermediate`, `--level-advanced` with matching `--level-*-text` and `--level-*-border` for WCAG AA compliance across light and dark modes).
 - **`_mixins.scss`**: Standardized responsive media queries (`@mixin respond-to($bp)` supporting `mobile-sm`, `mobile`, `tablet`, `desktop`, `desktop-lg`), reusable backdrop glassmorphism (`@mixin glass`), and scrollbar concealment (`@mixin hide-scrollbar`).
 - **`_base.scss` & `_utilities.scss`**: CSS reset, root typography, `@mixin no-scrollbar` / `.no-scrollbar` utility, mobile tap-highlight resets, and `scrollbar-gutter: stable` on root `html` to eliminate Cumulative Layout Shift (CLS) when modal backdrops open.
 - **Scroll & Reflow Optimization (`BodyScrollService`)**: Replaced forced DOM reflow queries (`window.getComputedStyle`) in wheel/touch event loops with high-performance class matches (`.is-scrollable-container`, `.bottom-sheet-content`), keeping scroll interaction at 60fps.
@@ -783,6 +783,19 @@ To maintain complete visual, structural, and functional harmony across all prima
     - **Typography & Semantic Palette**: Numbers use `.stat-value` (`1.125rem`, `font-weight: 800`), colored using semantic tokens: `.stat-new` / `.stat-favorite` (coral), `.stat-learning` (amber), `.stat-known` / `.stat-community` (blue), `.stat-completed` (emerald). Labels use `.stat-label` (`0.625rem`, `font-weight: 700`, `text-transform: uppercase`, `letter-spacing: 0.5px`, `color: var(--text-muted)`).
     - **Full-Width Pill Action Button (`.sidebar-action-btn`)**: Consistent full-width primary CTA or secondary exploration button with centered icon and label.
     - **Contextual Learning Guide (`.sidebar-guide-box`)**: In `/dictionary`, when 0 cards exist, instead of rendering a redundant second `.empty-state` circle right beside the search empty state, the sidebar renders a soft onboarding guide (`.sidebar-guide-box`) with a subtle lightbulb icon, localized learning tip (`dictionary.studyTip`), and a secondary link to browse videos.
+- **Unified Standalone Level Badge Component (`<app-level-badge>`)**:
+  - Located in `src/app/shared/components/level-badge/`.
+  - Replaces hand-crafted, copy-pasted level pill and badge markup across the application (`video-page`, `playlist-page`, `history-list`, `video-header`, `onboarding`).
+  - Supports inputs: `level` (e.g. `'JLPT N4'`, `'CEFR B1'`), `tier` (optional; auto-derived from `level` via `deriveLevelTier`), `size` (`'xs' | 'sm' | 'md' | 'lg'`), `loading` (with built-in shimmering skeleton placeholder), `clickable`, and `customTitle`.
+  - Seamlessly applies the unified **Chill Pastel** theming tokens (`--level-beginner`, `--level-intermediate`, `--level-advanced` with matching `--level-*-text` and `--level-*-border`) across Light and Dark themes.
+- **RPG Mobile-Native Onboarding Component (`<app-onboarding>`)**:
+  - Located in `src/app/components/onboarding/`.
+  - Implements a responsive 4-stage mobile-native game onboarding flow:
+    1. *Expedition Realm & Subtitle Cipher*: 2x2 tactile realm grid (JA, KO, ZH, EN) with punchy vibe tags and inline subtitle guide chips.
+    2. *Summon Companion Spirit*: Active character selection stage with 72px animated avatar, dialogue speech bubble with translated voice lines, and 3x2 archetype deck (Mage, Knight, Shinobi, Ranger, Alchemist, Bard).
+    3. *Rank Calibration*: 5-rung stepped ladder with tier-colored emblems (Stone to Platinum), official exam badges (`JLPT N5-N1`, `HSK 1-6`, `TOPIK 1-6`, `CEFR A1-C2`), and tempo indicators.
+    4. *Adventurer License & Starter Loot Cache*: Holographic guild license card and 2x2 loot unboxing (50 Mana Diamonds, +50 XP, Campfire flame, Frost Ward).
+  - Tightly coupled with `GamificationService` and `StreakService`, featuring complete background scroll freeze (`document.body` lock) and Web Audio API synthesizer chords. Replayable anytime via `SettingsSheetComponent`.
 - **Unified Standalone Empty State Component (`<app-empty-state>`)**:
   - Located in `src/app/shared/components/empty-state/`.
   - Replaces hand-crafted, copy-pasted `.empty-state` markup blocks across the application (`video-page`, `dictionary-panel`, `vocabulary-list`, `vocabulary-quick-view`, `history-list`, `history-page`, `playlist-panel`, `add-to-playlist-dialog`, `study-mode`, `video-player`, `achievements-dialog`, `command-palette`, `option-picker`, `grammar-popup`, `word-popup`).
@@ -885,7 +898,7 @@ To maintain complete visual, structural, and functional harmony across all prima
   - `readonly levelTitle = computed(...)`: Rank title (Novice $\rightarrow$ Grandmaster).
   - `readonly nextLevelXp = computed(...)`: XP needed for next milestone.
   - `readonly progressPercent = computed(...)`: Linear $0$–$100\%$ progress towards next level.
-  - `readonly achievements = computed(...)`: Full portfolio of 19 achievement records with live unlocked states.
+  - `readonly achievements = computed(...)`: Full portfolio of 41 achievement records with live unlocked states across 6 categories.
   - `readonly unlockedCount = computed(...)`: Number of completed milestones.
   - `readonly hasClaimableRewards = computed(...)`: Boolean signal indicating whether any completed daily missions or the completion chest are ready to claim.
   - `readonly claimableCount = computed(...)`: Exact count of unclaimed completed missions + chest.
@@ -965,21 +978,29 @@ To maintain complete visual, structural, and functional harmony across all prima
 - **Study Mode Quest Card (`StudyPageComponent`)**:
   - Direct sidebar integration of daily SRS quest progress (`.sidebar-mission-card`) with an inline claim button for immediate completion feedback.
 
-### 8.5. Modern Fullscreen Onboarding Flow (`OnboardingComponent`)
-- **Fullscreen Mobile & Floating Desktop Architecture**:
-  - **Mobile (`≤ 768px`)**: Uncoupled from `BottomSheetComponent` to render as a dedicated edge-to-edge native fullscreen view (`100dvh`) with native top and bottom safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), eliminating sheet clipping and drawer handles.
-  - **Desktop (`> 768px`)**: Centered floating modal (`max-width: 520px`, `height: 640px`) with smooth backdrop blur (`backdrop-filter: blur(8px)`) and entrance animations (`modalPop`).
-- **Three-Step Flow (One Question per Screen)**:
-  - **Step 1 (Target Language)**: 4 spacious option cards with circular flags, native titles, localized taglines, and animated checkmark radio rings.
-  - **Step 2 (Proficiency Level)**: 3 difficulty cards (Beginner 🌱, Intermediate 🌿, Advanced 🌳) with official exam badges (JLPT, HSK, TOPIK, CEFR) and descriptions, persisting directly into `settings.preferredLevel` and `videoLevelFilter`.
-  - **Step 3 (Dual Subtitle Translation)**: 5 native language cards (English, Tiếng Việt, 日本語, 한국어, 中文) synchronizing `dualSubtitleTargetLang`.
-- **Progressive In-Player Coachmark**:
-  - A 1-time floating tooltip over the player's subtitle area guiding first-time viewers: *"💡 Tap any word to translate & save"*, with dynamic headroom padding (`.has-coachmark`) on `.current-subtitle` to prevent token/furigana collision, permanently dismissed on first word or grammar interaction.
-- **Top Bar & Thumb-Zone Action Button**:
-  - Top navigation bar featuring an animated progress bar (33% → 66% → 100%), Back button (on steps 2 & 3), and "Explore First" skip button.
-  - Sticky bottom action bar with a 52px primary action button ("Continue →" for steps 1–2, "Start Learning ✨" for step 3).
-
----
+#### 8.5. Award-Winning Minimalist Onboarding Flow (`OnboardingComponent`)
+- **Responsive Architecture (Edge-to-Edge Mobile & Floating Desktop Card)**:
+  - **Mobile (`≤ 768px`)**: Uncoupled from `BottomSheetComponent` to render as a dedicated edge-to-edge native fullscreen view (`100dvh`) with native top and bottom safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), eliminating sheet clipping and modal handle clutter.
+  - **Desktop (`> 768px`)**: Centered floating modal (`max-width: 480px`, `max-height: min(92vh, 740px)`) with smooth backdrop blur (`backdrop-filter: blur(12px)`) and entrance animations (`modalPop`).
+- **Segmented Header & Navigation**:
+  - Clean top bar with back navigation button (active when `currentStep > 1`), 3-segment progress capsules with animated fill transitions, and "Skip" button.
+- **Mobbin Mascot & Conversational Speech Bubble Row**:
+  - Signature mobile language learning UX benchmark (referencing Duolingo / LingoDeer on Mobbin):
+  - **Left**: Circular companion avatar (`50px`, `border-radius: 50%`, `var(--accent-primary)` border halo) featuring Voca's vector companion avatar (`wizard.svg`, `alchemist.svg`, `bard.svg`, `ranger.svg`) with an official `Lv.1` badge.
+  - **Right**: Sleek conversational speech bubble (`.mascot-speech-bubble`, `var(--bg-surface)`, `1.5px solid var(--border-color)`, `border-radius: 20px`) with an arrow (`.speech-arrow`) pointing directly to the companion mascot. Contains sparkles meta-badge, question title, and contextual subtitle.
+- **Refined Selection Cards with Circular Flags**:
+  - High-affordance cards styled with native Voca tokens (`var(--bg-surface)`, `1px solid var(--border-color)`), subtle hover elevations, and clean active border glows (`var(--accent-primary)`).
+  - **Circular Flags (`.circle-flag-img`)**: 38px circular flags (`border-radius: 50%`, `1.5px solid var(--border-color)`, `object-fit: cover`) for language options and subtitle targets.
+  - **Step 1 (Target Language)**: Circular flag, language name, native script tag (`日本語`, `中文`, `한국어`), RPG class badge (`Scholar Mage`, `Vocab Alchemist`, etc.), and feature description.
+  - **Step 2 (Proficiency Level)**: Circular level icon seals (`border-radius: 50%`) with semantic coloring (Emerald leaf for beginner, Ocean blue book for intermediate, Amber zap for advanced), RPG combat rank badge (`Novice Rank`, `Adept Rank`, `Master Rank`), and official exam pills (JLPT `N5–N4`/`N3`/`N2–N1`, HSK, TOPIK, CEFR).
+  - **Step 3 (Subtitle Translation)**: Circular flag badges (`border-radius: 50%`), language name, native script tag, and active subtitle badge.
+  - Custom circular radio checkmark ring with animated checkmark on active selection.
+- **Tactile Motion Physics & Sticky Action Button**:
+  - Directional slide transitions (`.step-slide-left` / `.step-slide-right`).
+  - Mobile touch swipe navigation ($> 45\text{px}$).
+  - Keyboard arrow key navigation (`←`, `→`, `Enter`, `Escape`).
+  - Safe micro-haptic feedback.
+  - Sticky bottom primary action button (`.cta-primary-btn`) transitioning from *"Continue"* to *"Start Learning"*.
 
 ## 9. Unified Toolbar, Search Box & Action Button Specifications
 
@@ -1101,6 +1122,31 @@ To maintain world-class performance, low memory footprint, and maintainability, 
 - Filters flashcard sessions, 3-deck counters (`New`, `Learning`, `Known`), due today alerts, and session queues based on `studyDeck()`, defaulting to **All** (Both Words & Grammar) to prevent artificial dead ends.
 - Features a unified flashcard architecture with identical geometry and layout across Vocabulary and Grammar items: neutral interactive `.card-grammar-chip` rule inspector, punchy primary meanings with subtle explanatory hints (`parseCardMeaning`), combined formation and context quotes in a single bottom surface (`.card-context-quote`), and arcade game feel (combo streaks, floating XP bubbles, tactile spring physics without audio).
 - Replaces ad-hoc empty alert boxes with standard `<app-empty-state>` for both sub-deck filtering and queue completion states.
+
+### 11.11. Mobile-Native 4-Stage RPG Onboarding Flow (`OnboardingComponent`)
+Located at `src/app/components/onboarding/`:
+- **Native Mobile App Architecture & Top-Down Ergonomics**:
+  - **Mobile (`<= 768px`)**: Edge-to-edge native fullscreen view (`100dvh`, `100vw`) with top-down scrolling flow directly beneath the header (zero artificial vertical centering `margin: auto 0` or floating crests). Complies strictly with safe-area insets (`env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`), dividerless header/footer borders, and full-width touch cards (`min-height: 64px–72px`).
+  - **Desktop (`> 768px`)**: Centered floating card modal (`max-width: 480px`, `max-height: min(94vh, 760px)`) with backdrop blur (`14px`), subtle border tokens, and spring entrance animation (`modalPop`).
+  - **Silent Tactile Interaction**: Silent, battery-efficient mobile haptics (`triggerHaptic`) on selections, swipes, and completions without intrusive synthesized audio.
+  - **Bulletproof Scroll Lock & Window Isolation**: Rigorously freezes `document.body` and `document.documentElement` (`overflow: hidden`, `touch-action: none`) during modal lifecycle, with `overscroll-behavior: contain` on internal containers to eliminate background page scrolling, wheel bubbling, or mobile rubber-banding.
+- **4-Stage Streamlined Progression (Zero Wall of Text & Zero Truncation)**:
+  - **Stage 1 (Expedition Realm & User Language Preferences)**: 4 full-width learning language option rows (Japanese 🇯🇵, Korean 🇰🇷, Chinese 🇨🇳, English 🇬🇧) displaying circular flags, native titles, and concise realm vibe subtitles. Includes a native settings card with a 5-language segmented UI language selector (`Tiếng Việt`, `English`, `日本語`, `한국어`, `中文`) and an `<app-switch>` subtitle translation toggle.
+  - **Stage 2 (Companion Spirit Summoning)**: Complete roster of 8 companion archetype cards (*Scholar Mage*, *Guardian Knight*, *Shadow Shinobi*, *Immersion Ranger*, *Sentence Miner*, *Vocab Alchemist*, *Minstrel Bard*, *Mythic Sovereign*) laid out in a balanced 4x2 grid on desktop/tablets (`@media (min-width: 440px): repeat(4, 1fr)`) and 2x4 on mobile, featuring 40px circular avatars, Lv.1 badge, compact 2-word specialty chips, and top-right checkmark pip (zero card text clutter). Accompanied by a single active companion voice quote bubble beneath the grid with fixed height (`min-height: 52px;`) and two-line clamping (`-webkit-line-clamp: 2;`), eliminating CLS layout shift between 1-line and 2-line quotes.
+    - **Genuine Archetype Starter Perks**: Activates functional starter capabilities upon completion (Guardian Knight: +1 Frost Ward streak freeze shield; Scholar Mage: in-depth grammar pattern recognition; Sentence Miner: +35 Miner XP; Vocab Alchemist: +25 bonus starter XP; Immersion Ranger: dual subtitles enabled; Minstrel Bard: phonetic pronunciation ruby annotations enabled; Shadow Shinobi: rapid native playback calibration; Mythic Sovereign: dual subtitles + grammar insights polyglot mantle).
+    - **Avatar Preservation**: Saves the chosen `companionClass` without modifying personal user profile pictures (`auth.user.picture`).
+  - **Stage 3 (Difficulty Calibration)**: 5 compact full-width rank cards (Novice, Apprentice, Adept, Veteran, Master) with tier-colored emblem badges (Stone, Bronze, Silver, Gold, Platinum), official localized exam tags (`JLPT N5–N1`, `HSK 1–6`, `TOPIK 1–6`, `A1–C2`), and punchy 1-line pace descriptions.
+  - **Stage 4 (Adventurer License & Authentic Starter Loot Cache)**: Golden holographic guild license pass with animated shimmer sweep, companion portrait, rank title, and Guild charter seal. Paired with a 2x2 starter loot cache unboxing grid with wrapped text for Full AI Quota (💎), real +50 Starter XP, Campfire Streak ignition, and Frost Ward protection shields.
+- **Zero-Stale Level Filter & Server Settings Sync**:
+  - Directly sets `preferredLevel`, `companionClass`, `showDualSubtitles`, and `onboardingRewardClaimed` in `UserSettings` (`localStorage`), with an immediate reactive effect in `VideoPageComponent` ensuring the feed refreshes instantaneously.
+  - First-time completion awards real +50 XP, activates genuine archetype starter perks, and ignites day 1 streak with a celebratory toast (`ToastService`), while replay mode smoothly saves preferences via `isReplay` without redundant reward prompts.
+  - **Server-Side Integration**:
+    - Automatically syncs `target_lang` to Supabase `profiles` table when authenticated.
+    - Syncs starter XP via `award_study_xp` RPC to Supabase, logging audit transactions in `xp_transactions`.
+    - Daily streak ignition persists to Supabase via `record_streak_activity` RPC.
+    - Streak freeze shield grant updates `streaks.freezes_remaining: 2` on Supabase without spending XP.
+  - Accessible anytime via "Replay Hunter Prologue" in `SettingsSheetComponent`.
+
 
 
 

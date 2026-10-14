@@ -224,7 +224,13 @@ async function processGladiaWebhook(context, { rawBody, jobId, videoId, lang }) 
             const saveLangs = Array.from(new Set([detectedLang, lang].filter(Boolean)));
             const estimatedLevel = estimateTranscriptLevel(finalSegments, detectedLang);
             const levelsObj = estimatedLevel ? { [detectedLang]: estimatedLevel } : null;
-            await saveVideoLanguages(db, videoId, saveLangs, null, null, null, false, levelsObj, null, [detectedLang]);
+            let webhookDur = null;
+            if (finalSegments.length > 0) {
+                const last = finalSegments[finalSegments.length - 1];
+                const inferred = Math.round((last.start || 0) + (last.duration || 0));
+                if (inferred > 0) webhookDur = inferred;
+            }
+            await saveVideoLanguages(db, videoId, saveLangs, webhookDur, null, null, false, levelsObj, null, [detectedLang]);
         } catch (metaErr) {
             console.error('[Gladia Webhook] Metadata save error:', metaErr.message);
         }
