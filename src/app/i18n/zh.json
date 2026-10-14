@@ -460,7 +460,9 @@
     "profileUpdated": "个人资料更新成功！",
     "profileUpdateFailed": "更新个人资料失败，请重试。",
     "countryHint": "将在全球排行榜的昵称旁显示",
-    "language": "语言"
+    "language": "语言",
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策"
   },
   "study": {
     "title": "复习",
@@ -1343,5 +1345,18 @@
       "title": "测验霸主",
       "desc": "正确回答100次字幕测验"
     }
+  },
+  "legal": {
+    "termsTitle": "服务条款",
+    "privacyTitle": "隐私政策",
+    "termsSubtitle": "关于 Voca 运行机制、YouTube 视频播放和账户权益的明确条款。",
+    "privacySubtitle": "关于您的学习数据、身份验证和离线存储的处理说明。",
+    "lastUpdated": "最后更新：2026年10月",
+    "backToApp": "返回应用",
+    "tabTerms": "服务条款",
+    "tabPrivacy": "隐私政策",
+    "contactUs": "联系我们",
+    "contactDesc": "如果对条款或个人数据有任何疑问，请随时联系我们：",
+    "effectiveDate": "生效日期：2026年10月"
   }
 }

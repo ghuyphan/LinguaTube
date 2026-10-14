@@ -222,6 +222,36 @@
                             </div>
                         </button>
                     }
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- Terms of Service -->
+                    <button class="settings-item-row" (click)="openPage('/terms')">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon name="file-text" [size]="16" />
+                            </div>
+                            <span class="settings-item-title">{{ i18n.t('settings.termsOfService') || 'Terms of Service' }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
+
+                    <div class="settings-item-divider"></div>
+
+                    <!-- Privacy Policy -->
+                    <button class="settings-item-row" (click)="openPage('/privacy')">
+                        <div class="settings-item-left">
+                            <div class="settings-item-icon-box">
+                                <app-icon name="lock" [size]="16" />
+                            </div>
+                            <span class="settings-item-title">{{ i18n.t('settings.privacyPolicy') || 'Privacy Policy' }}</span>
+                        </div>
+                        <div class="settings-item-right">
+                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>

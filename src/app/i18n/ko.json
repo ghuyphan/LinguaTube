@@ -460,7 +460,9 @@
     "profileUpdated": "프로필이 성공적으로 업데이트되었습니다!",
     "profileUpdateFailed": "프로필 업데이트에 실패했습니다. 다시 시도해 주세요.",
     "countryHint": "글로벌 랭킹에서 이름 옆에 표시됩니다",
-    "language": "언어"
+    "language": "언어",
+    "termsOfService": "이용약관",
+    "privacyPolicy": "개인정보 처리방침"
   },
   "study": {
     "title": "단어 복습",
@@ -1343,5 +1345,18 @@
       "title": "퀴즈 챔피언",
       "desc": "자막 퀴즈 100회 정답 맞추기"
     }
+  },
+  "legal": {
+    "termsTitle": "이용약관",
+    "privacyTitle": "개인정보 처리방침",
+    "termsSubtitle": "Voca 이용, YouTube 동영상 재생 및 계정 권한에 대한 명확한 약관입니다.",
+    "privacySubtitle": "학습 데이터, 인증 및 오프라인 저장소 처리 방식에 대해 안내합니다.",
+    "lastUpdated": "최종 업데이트: 2026년 10월",
+    "backToApp": "앱으로 돌아가기",
+    "tabTerms": "이용약관",
+    "tabPrivacy": "개인정보 처리방침",
+    "contactUs": "문의하기",
+    "contactDesc": "약관이나 개인정보 처리에 대해 궁금한 점이 있으시면 다음으로 문의해 주세요:",
+    "effectiveDate": "시행일: 2026년 10월"
   }
 }

@@ -460,7 +460,9 @@
     "profileUpdated": "Profile updated successfully!",
     "profileUpdateFailed": "Failed to update profile. Please try again.",
     "countryHint": "Appears next to your name on the global leaderboard",
-    "language": "Language"
+    "language": "Language",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
   },
   "study": {
     "title": "Study",
@@ -1343,5 +1345,18 @@
       "title": "Quiz Champion",
       "desc": "Answer 100 subtitle quizzes correctly"
     }
+  },
+  "legal": {
+    "termsTitle": "Terms of Service",
+    "privacyTitle": "Privacy Policy",
+    "termsSubtitle": "Clear terms on how Voca works, YouTube video playback, and your account rights.",
+    "privacySubtitle": "How we handle your learning data, authentication, and offline storage.",
+    "lastUpdated": "Last updated: October 2026",
+    "backToApp": "Back to App",
+    "tabTerms": "Terms of Service",
+    "tabPrivacy": "Privacy Policy",
+    "contactUs": "Contact",
+    "contactDesc": "Have questions about these terms or your personal data? Reach us at",
+    "effectiveDate": "Effective October 2026"
   }
 }

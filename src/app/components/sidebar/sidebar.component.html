@@ -274,6 +274,14 @@
                     </button>
                 }
                 }
+
+                @if (!isCollapsed()) {
+                <div class="sidebar__legal">
+                    <a routerLink="/terms" class="sidebar__legal-link">{{ i18n.t('settings.termsOfService') || 'Terms' }}</a>
+                    <span class="sidebar__legal-dot">•</span>
+                    <a routerLink="/privacy" class="sidebar__legal-link">{{ i18n.t('settings.privacyPolicy') || 'Privacy' }}</a>
+                </div>
+                }
             </div>
         </div>
     </div>

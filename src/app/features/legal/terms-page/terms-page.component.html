@@ -1,0 +1,239 @@
+<div class="legal-page">
+    <!-- Header Navigation -->
+    <div class="legal-header-nav">
+        <a routerLink="/video" class="back-btn" [attr.aria-label]="i18n.t('legal.backToApp') || 'Back to App'">
+            <app-icon name="arrow-left" [size]="16" />
+            <span>{{ i18n.t('legal.backToApp') || 'Back to App' }}</span>
+        </a>
+
+        <!-- Document Switcher -->
+        <div class="segmented-control legal-tabs" style="--tab-count: 2;" [style.--active-index]="0" role="tablist">
+            <a routerLink="/terms" class="segmented-control__item active" role="tab" aria-selected="true">
+                <app-icon name="file-text" [size]="14" />
+                <span>{{ i18n.t('legal.tabTerms') || 'Terms of Service' }}</span>
+            </a>
+            <a routerLink="/privacy" class="segmented-control__item" role="tab" aria-selected="false">
+                <app-icon name="lock" [size]="14" />
+                <span>{{ i18n.t('legal.tabPrivacy') || 'Privacy Policy' }}</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="legal-hero">
+        <div class="legal-badge-row">
+            <span class="legal-tag">
+                <app-icon name="file-text" [size]="12" />
+                Legal
+            </span>
+            <span class="legal-date">{{ i18n.t('legal.lastUpdated') || 'Last updated: October 2026' }}</span>
+        </div>
+        <h1 class="legal-title">{{ i18n.t('legal.termsTitle') || 'Terms of Service' }}</h1>
+        <p class="legal-subtitle">{{ i18n.t('legal.termsSubtitle') || 'Clear terms on how Voca works, YouTube video playback, and your account rights.' }}</p>
+    </header>
+
+    <!-- Key Takeaways Card -->
+    <div class="legal-summary-card">
+        <h2 class="summary-title">
+            <app-icon name="clipboard-check" [size]="16" />
+            Terms Summary
+        </h2>
+        <ul class="summary-list">
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Video Playback:</strong> Videos play via YouTube's official player and remain subject to YouTube's Terms of Service. Voca does not store or distribute video files.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Your Study Data:</strong> You own your saved vocabulary lists, custom definitions, and study decks. We only store them to sync across your devices.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>No Ad Trackers:</strong> We do not sell your personal data or run third-party advertising tracking scripts.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Guest or Synced:</strong> Study completely offline as a guest without creating an account, or sign in with Google to sync across devices.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content Sections -->
+    <main class="legal-content">
+        <!-- 1. Acceptance of Terms -->
+        <section class="legal-section">
+            <h2 class="section-title">1. Agreement to Terms</h2>
+            <div class="section-body">
+                <p>
+                    By accessing or using Voca (available at <strong>voca.study</strong> and corresponding client applications), you agree to these Terms of Service. If you do not agree to these terms, you should not access or use the application.
+                </p>
+                <p>
+                    These terms apply to all visitors, registered users, and subscribers who access Voca.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. The Service -->
+        <section class="legal-section">
+            <h2 class="section-title">2. What Voca Provides</h2>
+            <div class="section-body">
+                <p>
+                    Voca is an immersion language study workspace designed for learners of Japanese, Chinese, Korean, and English. The platform provides:
+                </p>
+                <ul>
+                    <li>Interactive dual subtitles with pronunciation guides (furigana, pinyin, and romanization).</li>
+                    <li>Morphological tokenization and instant dictionary definitions from open community lexicons.</li>
+                    <li>Spaced repetition system (SM-2 SRS) flashcards for vocabulary memorization.</li>
+                    <li>Automated speech-to-text audio transcription for videos lacking human subtitles.</li>
+                    <li>Offline-first local storage and optional cloud synchronization via Supabase.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. YouTube Integration & Video Rights -->
+        <section class="legal-section">
+            <h2 class="section-title">3. YouTube Content & Embedded Playback</h2>
+            <div class="section-body">
+                <p>
+                    Voca uses YouTube's official embedded player and YouTube API Services to stream video and audio directly from YouTube servers.
+                </p>
+                <div class="legal-callout">
+                    <p>
+                        By using Voca to watch YouTube content, you also agree to be bound by the
+                        <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a>
+                        and acknowledge the
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
+                    </p>
+                </div>
+                <p>
+                    <strong>No hosting of video media:</strong> Voca does not download, store, host, convert, or distribute copyrighted video or audio streams. All video rights and royalties remain with the respective YouTube creators and copyright holders.
+                </p>
+                <p>
+                    <strong>Availability:</strong> Video playback depends on creator settings and YouTube availability. If a video is deleted, marked private, geo-blocked, or restricted by its owner on YouTube, it will immediately become unavailable on Voca.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. User Accounts -->
+        <section class="legal-section">
+            <h2 class="section-title">4. Accounts & Authentication</h2>
+            <div class="section-body">
+                <p>
+                    You can use Voca as a guest without creating an account. In guest mode, your saved words, history, and study progress are stored solely in your local browser storage.
+                </p>
+                <p>
+                    If you choose to sign in with Google, authentication is handled through Supabase Auth. We receive your basic profile (Google user ID, display name, email, and avatar) to sync your vocabulary, study streak, and playlists across your devices.
+                </p>
+                <p>
+                    You are responsible for safeguarding your account credentials. You must be at least 13 years old (or the legal age of digital consent in your jurisdiction) to register an account.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. User Content & Ownership -->
+        <section class="legal-section">
+            <h2 class="section-title">5. Your Data & Ownership</h2>
+            <div class="section-body">
+                <p>
+                    You retain full ownership of the personal study content you create, including saved words, custom definitions, study tags, notes, and playlists.
+                </p>
+                <p>
+                    You grant Voca only the technical permissions necessary to store, back up, and synchronize this data back to your authorized sessions. You can export your vocabulary or delete your stored records at any time.
+                </p>
+            </div>
+        </section>
+
+        <!-- 6. AI Transcription & Diamond Credits -->
+        <section class="legal-section">
+            <h2 class="section-title">6. AI Audio Transcription & Credits</h2>
+            <div class="section-body">
+                <p>
+                    When authentic human captions are unavailable for a video, Voca offers automated speech-to-text audio transcription powered by Gladia.
+                </p>
+                <p>
+                    Transcription consumes digital Diamond credits based on video length. Free accounts receive a monthly allotment. Extended allowances and support for longer videos are included with Supporter and Founder memberships.
+                </p>
+                <p>
+                    Diamond credits are consumable utility tokens used exclusively to fund edge transcription processing. Credits have no cash value, cannot be redeemed for legal currency, and cannot be transferred between accounts.
+                </p>
+            </div>
+        </section>
+
+        <!-- 7. Memberships & Billing -->
+        <section class="legal-section">
+            <h2 class="section-title">7. Paid Memberships & Billing</h2>
+            <div class="section-body">
+                <p>
+                    Optional paid tiers (Supporter and Founder) provide additional Diamond credits and higher transcription caps.
+                </p>
+                <p>
+                    Payments are handled through verified payment gateways (such as PayOS). Voca does not store or process your credit card numbers or banking passwords.
+                </p>
+                <p>
+                    Subscriptions or one-time supporter packages are billed as displayed at the time of purchase. If you experience payment discrepancies or need refund assistance, contact support.
+                </p>
+            </div>
+        </section>
+
+        <!-- 8. Acceptable Use -->
+        <section class="legal-section">
+            <h2 class="section-title">8. Acceptable Use Rules</h2>
+            <div class="section-body">
+                <p>When using Voca, you agree not to:</p>
+                <ul>
+                    <li>Scrape, crawl, or harvest transcripts, dictionary lexicons, or user lists using automated tools without prior written permission.</li>
+                    <li>Bypass or tamper with Cloudflare Turnstile bot challenges, rate limiters, or server authentication.</li>
+                    <li>Abuse upstream dictionary or transcription APIs with high-concurrency requests designed to cause denial of service.</li>
+                    <li>Reverse engineer, decompile, or attempt to extract source algorithms from the backend infrastructure.</li>
+                    <li>Use the platform for any illegal purpose or in violation of local and international laws.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 9. Termination -->
+        <section class="legal-section">
+            <h2 class="section-title">9. Account Suspension & Termination</h2>
+            <div class="section-body">
+                <p>
+                    We reserve the right to suspend or terminate access for accounts that violate these terms, engage in malicious scraping, or disrupt service for other users.
+                </p>
+                <p>
+                    You can stop using Voca at any time. You can also delete your cloud account and associated study data through settings or by contacting our team.
+                </p>
+            </div>
+        </section>
+
+        <!-- 10. Disclaimer & Liability -->
+        <section class="legal-section">
+            <h2 class="section-title">10. Disclaimer of Warranties & Limitation of Liability</h2>
+            <div class="section-body">
+                <p>
+                    Voca is provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. While we strive for accuracy, we do not warrant that dictionary definitions, morphological segmentations, or machine-generated translations will be error-free.
+                </p>
+                <p>
+                    To the maximum extent permitted by applicable law, Voca, its creators, and contributors will not be liable for any indirect, incidental, special, or consequential damages resulting from your use of the platform.
+                </p>
+            </div>
+        </section>
+
+        <!-- 11. Contact -->
+        <section class="legal-section">
+            <h2 class="section-title">11. Inquiries & Contact</h2>
+            <div class="section-body">
+                <p>
+                    {{ i18n.t('legal.contactDesc') || 'Have questions about these terms or your personal data? Reach us at' }}
+                    <a href="mailto:support@voca.study" class="contact-email">support&#64;voca.study</a>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="legal-footer">
+        <span>© 2026 Voca. {{ i18n.t('legal.effectiveDate') || 'Effective October 2026' }}.</span>
+        <span>
+            Looking for data handling practices? Read our
+            <a routerLink="/privacy">{{ i18n.t('legal.tabPrivacy') || 'Privacy Policy' }}</a>.
+        </span>
+    </footer>
+</div>

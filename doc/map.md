@@ -136,6 +136,8 @@ graph TD
     RouterOutlet -->|/study| StudyPage[StudyPageComponent]
     RouterOutlet -->|/explore| PlaylistPage[PlaylistPageComponent]
     RouterOutlet -->|/history| HistoryPage[HistoryPageComponent]
+    RouterOutlet -->|/terms| TermsPage[TermsPageComponent]
+    RouterOutlet -->|/privacy| PrivacyPage[PrivacyPageComponent]
 
     subgraph VideoPageChildren["Video Page Domain"]
         VideoPage --> VideoPlayer[VideoPlayerComponent]
@@ -503,6 +505,7 @@ sequenceDiagram
 | `src/app/features/vocabulary` | Study / Retention | Vocabulary notebook table, quick view panel, SM-2 flashcard study page |
 | `src/app/features/playlist` | Organization | Custom user playlists, curated community language learning channels, difficulty level badges & filters |
 | `src/app/features/history` | Analytics | Watch history, resume points, completed learning logs, difficulty level badges & filters |
+| `src/app/features/legal` | Compliance & Trust | Plain-English Terms of Service and Privacy Policy screens with YouTube API compliance, data rights, and anti-AI-slop copy |
 | `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying RPG rank crests, 10-tier level progression, daily missions, 41 achievement badges, and Global Leaderboard podium & rankings |
 | `src/app/components/onboarding` | UI Shell | Mobile-native 4-stage game-style FTUE onboarding (Realm & Subtitle Cipher, Companion Spirit Summoning, 5-Tier Rank Ladder, Holographic Adventurer License & Starter Loot Cache with zero background scroll bleed) |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |

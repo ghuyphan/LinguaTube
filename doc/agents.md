@@ -259,7 +259,7 @@ lingua-tube/
 │   │   ├── components/        # Shell components (sidebar, settings-sheet, streak-dialog, etc.)
 │   │   ├── core/              # Foundational services, repositories & utilities
 │   │   ├── data/              # Grammar databases (JA, KO, ZH, EN) & translations (ja, ko, vi, zh)
-│   │   ├── features/          # Feature domains (video, dictionary, vocabulary, playlist, history, quiz)
+│   │   ├── features/          # Feature domains (video, dictionary, vocabulary, playlist, history, quiz, legal)
 │   │   ├── i18n/              # UI translation dictionaries (en, vi, ja, ko, zh.json)
 │   │   ├── interceptors/      # HTTP auth, caching & timeout interceptors
 │   │   ├── models/            # TypeScript interfaces & domain types

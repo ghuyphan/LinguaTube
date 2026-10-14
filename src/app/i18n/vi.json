@@ -460,7 +460,9 @@
     "profileUpdated": "Đã cập nhật hồ sơ thành công!",
     "profileUpdateFailed": "Không thể cập nhật hồ sơ. Vui lòng thử lại.",
     "countryHint": "Hiển thị bên cạnh tên bạn trên bảng xếp hạng toàn cầu",
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "termsOfService": "Điều khoản dịch vụ",
+    "privacyPolicy": "Chính sách bảo mật"
   },
   "study": {
     "title": "Ôn tập",
@@ -1343,5 +1345,18 @@
       "title": "Quán quân câu đố",
       "desc": "Trả lời đúng 100 câu đố phụ đề"
     }
+  },
+  "legal": {
+    "termsTitle": "Điều khoản dịch vụ",
+    "privacyTitle": "Chính sách bảo mật",
+    "termsSubtitle": "Quy định rõ ràng về cách hoạt động của Voca, phát video YouTube và quyền lợi tài khoản của bạn.",
+    "privacySubtitle": "Cách chúng tôi xử lý dữ liệu học tập, xác thực và lưu trữ ngoại tuyến của bạn.",
+    "lastUpdated": "Cập nhật lần cuối: Tháng 10, 2026",
+    "backToApp": "Quay lại ứng dụng",
+    "tabTerms": "Điều khoản dịch vụ",
+    "tabPrivacy": "Chính sách bảo mật",
+    "contactUs": "Liên hệ",
+    "contactDesc": "Bạn có thắc mắc về điều khoản hoặc dữ liệu cá nhân? Hãy liên hệ với chúng tôi tại",
+    "effectiveDate": "Hiệu lực từ tháng 10 năm 2026"
   }
 }

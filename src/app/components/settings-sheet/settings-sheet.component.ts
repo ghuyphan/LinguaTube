@@ -1,5 +1,6 @@
 import { Component, inject, input, output, signal, computed, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { BottomSheetComponent } from '../../shared/components/bottom-sheet/bottom-sheet.component';
 import { OptionPickerComponent, OptionItem } from '../../shared/components/option-picker/option-picker.component';
@@ -22,6 +23,7 @@ import { LearningLanguageService } from '../../services/learning-language.servic
   styleUrl: './settings-sheet.component.scss'
 })
 export class SettingsSheetComponent {
+  private router = inject(Router);
   settings = inject(SettingsService);
   auth = inject(AuthService);
   toast = inject(ToastService);
@@ -49,6 +51,11 @@ export class SettingsSheetComponent {
   replayOnboarding(): void {
     this.closed.emit();
     this.openOnboarding.emit();
+  }
+
+  openPage(path: string): void {
+    this.closed.emit();
+    this.router.navigate([path]);
   }
 
   showSignOutConfirm = signal(false);

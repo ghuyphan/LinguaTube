@@ -460,7 +460,9 @@
     "profileUpdated": "プロフィールを更新しました！",
     "profileUpdateFailed": "プロフィールの更新に失敗しました。もう一度お試しください。",
     "countryHint": "グローバルランキングの名前の横に表示されます",
-    "language": "言語"
+    "language": "言語",
+    "termsOfService": "利用規約",
+    "privacyPolicy": "プライバシーポリシー"
   },
   "study": {
     "title": "復習",
@@ -1343,5 +1345,18 @@
       "title": "クイズの覇者",
       "desc": "字幕クイズに100回正解する"
     }
+  },
+  "legal": {
+    "termsTitle": "利用規約",
+    "privacyTitle": "プライバシーポリシー",
+    "termsSubtitle": "Vocaの利用、YouTube動画の再生、およびアカウントの権利に関する明確な規約です。",
+    "privacySubtitle": "学習データ、認証、およびオフラインストレージの取り扱いについて説明します。",
+    "lastUpdated": "最終更新日: 2026年10月",
+    "backToApp": "アプリに戻る",
+    "tabTerms": "利用規約",
+    "tabPrivacy": "プライバシーポリシー",
+    "contactUs": "お問い合わせ",
+    "contactDesc": "利用規約や個人データについてご不明な点がございましたら、こちらまでお問い合わせください:",
+    "effectiveDate": "効力発生日: 2026年10月"
   }
 }

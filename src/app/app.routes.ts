@@ -53,6 +53,41 @@ export const routes: Routes = [
             .then(m => m.HistoryPageComponent)
     },
     {
+        path: 'terms',
+        title: 'Terms of Service | Voca',
+        data: {
+            description: 'Terms of Service and user agreement for the Voca language immersion platform.',
+            keywords: 'terms of service, user agreement, youtube terms, voca terms'
+        },
+        loadComponent: () => import('./features/legal/terms-page/terms-page.component')
+            .then(m => m.TermsPageComponent)
+    },
+    {
+        path: 'privacy',
+        title: 'Privacy Policy | Voca',
+        data: {
+            description: 'Privacy Policy and data practices for the Voca language immersion platform.',
+            keywords: 'privacy policy, data protection, offline storage, supabase, voca privacy'
+        },
+        loadComponent: () => import('./features/legal/privacy-page/privacy-page.component')
+            .then(m => m.PrivacyPageComponent)
+    },
+    {
+        path: 'tos',
+        redirectTo: 'terms',
+        pathMatch: 'full'
+    },
+    {
+        path: 'terms-of-service',
+        redirectTo: 'terms',
+        pathMatch: 'full'
+    },
+    {
+        path: 'privacy-policy',
+        redirectTo: 'privacy',
+        pathMatch: 'full'
+    },
+    {
         path: 'playlists',
         redirectTo: 'explore',
         pathMatch: 'full'
