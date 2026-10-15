@@ -1027,6 +1027,9 @@
     "immersionTipFast": "빠른 원어민 속도입니다. 재생 속도를 0.75배로 낮추거나 자동 일시정지(P)를 켜서 한 문장씩 소화해 보세요.",
     "immersionTipAdvanced": "심화 문법과 다채로운 어휘가 포함되어 있습니다. 모르는 단어를 탭해 사전을 확인하거나 이중 자막(D)을 활용해 보세요.",
     "immersionTipBeginner": "명확하고 듣기 편한 난이도입니다! 이중 자막을 끄고 순수 듣기에 도전해 보거나, 모르는 단어를 탭해 단어장에 저장해 보세요.",
+    "immersionTipIntermediate": "자연스럽고 균형 잡힌 대화입니다. 자막 없이 먼저 들어보며 듣기 실력을 점검해 보세요.",
+    "immersionTipGrammarRich": "다양한 핵심 문법이 풍부합니다. 강조된 문장을 탭하여 주요 문법 구조를 복습해 보세요.",
+    "immersionTipSlow": "차분하고 안정적인 속도입니다. 섀도잉과 자연스러운 발음 연습에 최적입니다.",
     "evaluationSummaryLinguistic": "자막의 문법 패턴, 어휘 난이도 및 말하기 속도를 바탕으로 측정한 레벨입니다.",
     "evaluationSummaryMetadata": "동영상 제목, 채널 또는 교육과정 정보를 바탕으로 일치시킨 레벨입니다.",
     "confidenceScore": "신뢰도"

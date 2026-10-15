@@ -1027,6 +1027,9 @@
     "immersionTipFast": "检测到母语者较快语速。可将倍速调为 0.75x，或开启自动暂停（P）逐句消化吸收。",
     "immersionTipAdvanced": "包含较多进阶语法与丰富词汇。点击生词即可快速查词或存入词卡库，亦可开启双语字幕（D）对照。",
     "immersionTipBeginner": "语速清晰易懂！建议尝试关闭双语字幕挑战纯听力，遇到生词轻触即可保存到词卡库。",
+    "immersionTipIntermediate": "语速与难度均衡的自然对话。建议先尝试关闭字幕，挑战纯听力理解。",
+    "immersionTipGrammarRich": "包含丰富的语法句型。点击高亮句子即可深入复习核心结构。",
+    "immersionTipSlow": "节奏稳健清晰，是跟读模仿（Shadowing）与练习自然发音的绝佳素材。",
     "evaluationSummaryLinguistic": "根据字幕语法句型、词汇难度以及语速综合评估得出该难度级别。",
     "evaluationSummaryMetadata": "根据视频标题、频道或课程大纲信息匹配得出该难度级别。",
     "confidenceScore": "评估可信度"

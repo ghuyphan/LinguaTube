@@ -1027,6 +1027,9 @@
     "immersionTipFast": "Fast speech. Try 0.75x speed or looping tricky lines.",
     "immersionTipAdvanced": "Advanced content. Tap any word to look up its meaning.",
     "immersionTipBeginner": "Clear speech. Great for listening and shadowing practice.",
+    "immersionTipIntermediate": "Balanced natural dialogue. Try listening without subtitles first to challenge your comprehension.",
+    "immersionTipGrammarRich": "Rich in grammar patterns. Tap highlighted sentences to review key structures.",
+    "immersionTipSlow": "Gentle, steady tempo. Perfect for shadowing and practicing natural pronunciation.",
     "evaluationSummaryLinguistic": "Level estimated from subtitle grammar patterns, vocabulary difficulty, and speech rate.",
     "evaluationSummaryMetadata": "Level matched from video title, channel, or curriculum information.",
     "confidenceScore": "Confidence"

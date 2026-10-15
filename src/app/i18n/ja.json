@@ -1027,6 +1027,9 @@
     "immersionTipFast": "速いネイティブ速度です。再生速度を0.75倍にするか、自動一時停止（P）を活用して1文ずつ確認しましょう。",
     "immersionTipAdvanced": "高度な文法と豊富な語彙が含まれています。気になる単語をタップして辞書で確認したり、対訳字幕（D）を活用しましょう。",
     "immersionTipBeginner": "聞き取りやすく学習に最適です！対訳字幕をオフにしてリスニングに挑戦し、新しい単語をタップして単語帳に保存してみましょう。",
+    "immersionTipIntermediate": "バランスの取れた自然な会話です。まずは字幕なしで聞いてリスニング力を試してみましょう。",
+    "immersionTipGrammarRich": "重要文法が豊富に含まれています。ハイライトされた文をタップして要点を確認しましょう。",
+    "immersionTipSlow": "落ち着いた発話ペースです。シャドーイングや自然な発音練習に最適です。",
     "evaluationSummaryLinguistic": "字幕の文法パターン、語彙の難易度、発話スピードから推定されたレベルです。",
     "evaluationSummaryMetadata": "動画のタイトル、チャンネル、カリキュラム情報から判定されたレベルです。",
     "confidenceScore": "信頼度"

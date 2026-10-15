@@ -384,27 +384,28 @@ export function detectLevelFromMetadata(title = '', channel = '') {
         const num = jlptMatch[1].replace('Ｎ', 'N').replace(/[１-５]/, m => String.fromCharCode(m.charCodeAt(0) - 0xFEE0)).replace('N', '');
         return { lang: 'ja', level: `JLPT N${num}` };
     }
-    if (/中上級/.test(text)) return { lang: 'ja', level: 'JLPT N2' };
-    if (/上級/.test(text)) return { lang: 'ja', level: 'JLPT N1' };
-    if (/中級/.test(text)) return { lang: 'ja', level: 'JLPT N3' };
-    if (/初級|入門/.test(text)) return { lang: 'ja', level: 'JLPT N5' };
+    if (/中上級|trung cao cấp/i.test(text)) return { lang: 'ja', level: 'JLPT N2' };
+    if (/上級|cao cấp/i.test(text)) return { lang: 'ja', level: 'JLPT N1' };
+    if (/中級|trung cấp/i.test(text)) return { lang: 'ja', level: 'JLPT N3' };
+    if (/初級|入門|sơ cấp|nhập môn/i.test(text)) return { lang: 'ja', level: 'JLPT N5' };
 
     // 2. Chinese (HSK & Chinese learning keywords)
     const hskMatch = text.match(/\bHSK\s*([1-6])\b/i);
     if (hskMatch) return { lang: 'zh', level: `HSK ${hskMatch[1]}` };
-    if (/中高级|中高級/.test(text)) return { lang: 'zh', level: 'HSK 4' };
-    if (/高级|高級/.test(text)) return { lang: 'zh', level: 'HSK 5' };
-    if (/中级|中級/.test(text)) return { lang: 'zh', level: 'HSK 3' };
-    if (/初级|初級/.test(text)) return { lang: 'zh', level: 'HSK 2' };
-    if (/入门|入門/.test(text)) return { lang: 'zh', level: 'HSK 1' };
+    if (/中高级|中高級/i.test(text)) return { lang: 'zh', level: 'HSK 4' };
+    if (/高级|高級/i.test(text)) return { lang: 'zh', level: 'HSK 5' };
+    if (/中级|中級/i.test(text)) return { lang: 'zh', level: 'HSK 3' };
+    if (/初级|初級/i.test(text)) return { lang: 'zh', level: 'HSK 2' };
+    if (/入门|入門/i.test(text)) return { lang: 'zh', level: 'HSK 1' };
 
     // 3. Korean (TOPIK & Korean learning keywords)
     const topikMatch = text.match(/\bTOPIK\s*([1-6]|I{1,2})\b/i);
     if (topikMatch) return { lang: 'ko', level: `TOPIK ${topikMatch[1]}` };
-    if (/고급/.test(text)) return { lang: 'ko', level: 'TOPIK 5' };
-    if (/중급/.test(text)) return { lang: 'ko', level: 'TOPIK 3' };
-    if (/초급/.test(text)) return { lang: 'ko', level: 'TOPIK 2' };
-    if (/입문/.test(text)) return { lang: 'ko', level: 'TOPIK 1' };
+    if (/고급/i.test(text)) return { lang: 'ko', level: 'TOPIK 5' };
+    if (/중고급/i.test(text)) return { lang: 'ko', level: 'TOPIK 4' };
+    if (/중급/i.test(text)) return { lang: 'ko', level: 'TOPIK 3' };
+    if (/초급/i.test(text)) return { lang: 'ko', level: 'TOPIK 2' };
+    if (/입문/i.test(text)) return { lang: 'ko', level: 'TOPIK 1' };
 
     // 4. English / European (CEFR & English keywords)
     const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i);
@@ -433,9 +434,11 @@ export function labelToTier(label = '') {
     const clean = label.trim();
     const upper = clean.toUpperCase();
 
-    // Direct tier names
-    if (upper === 'BEGINNER' || upper === 'ELEMENTARY' || upper === 'INTERMEDIATE' || upper === 'UPPER_INTERMEDIATE' || upper === 'ADVANCED') {
-        return upper.toLowerCase();
+    // Direct tier names (including snake_case and camelCase)
+    const normalizedTier = upper.replace(/[-_\s]/g, '');
+    if (normalizedTier === 'UPPERINTERMEDIATE') return 'upper_intermediate';
+    if (['BEGINNER', 'ELEMENTARY', 'INTERMEDIATE', 'ADVANCED'].includes(normalizedTier)) {
+        return normalizedTier.toLowerCase();
     }
 
     // 1. Beginner

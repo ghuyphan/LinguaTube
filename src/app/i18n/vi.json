@@ -1027,6 +1027,9 @@
     "immersionTipFast": "Tốc độ nói nhanh. Hãy thử giảm còn 0.75x hoặc lặp lại câu khó.",
     "immersionTipAdvanced": "Nội dung nâng cao. Chạm vào từ để xem nghĩa hoặc lưu từ mới.",
     "immersionTipBeginner": "Lời thoại rõ ràng, rất thích hợp để luyện nghe và nhại theo (shadowing).",
+    "immersionTipIntermediate": "Hội thoại tự nhiên cân bằng. Hãy thử nghe trước khi nhìn phụ đề để thử thách khả năng nghe hiểu.",
+    "immersionTipGrammarRich": "Nhiều mẫu ngữ pháp phong phú. Chạm vào câu có đánh dấu để ôn lại các cấu trúc trọng tâm.",
+    "immersionTipSlow": "Tiết tấu chậm rãi, rõ ràng. Hoàn hảo để luyện shadowing và phát âm tự nhiên.",
     "evaluationSummaryLinguistic": "Cấp độ được ước tính từ mẫu ngữ pháp trong phụ đề, độ khó từ vựng và tốc độ nói.",
     "evaluationSummaryMetadata": "Cấp độ được đối chiếu từ tiêu đề video, kênh hoặc thông tin giáo trình.",
     "confidenceScore": "Độ tin cậy"

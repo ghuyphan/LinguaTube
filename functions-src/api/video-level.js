@@ -12,7 +12,35 @@ import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../mid
 import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_level' };
-const VALID_LEVEL_REGEX = /^(JLPT\s*N[1-5]|HSK\s*[1-6]|TOPIK\s*([1-6]|I{1,2})|CEFR\s*[A-C][1-2]|Beginner|Elementary|Intermediate|Upper[\s_-]?Intermediate|Advanced)$/i;
+const VALID_LEVEL_REGEX = /^(JLPT\s*N[1-5]|HSK\s*(?:[1-6]|[1-6]\s*[-–—]\s*[1-6])|TOPIK\s*(?:[1-6]|I{1,2}|[1-6]\s*[-–—]\s*[1-6])|CEFR\s*(?:[A-C][1-2]|C1\s*[-–—]\s*C2)|Beginner|Elementary|Intermediate|Upper[\s_-]?Intermediate|Advanced)$/i;
+
+/**
+ * Normalizes incoming level representations (e.g. range strings) to canonical standard levels
+ * @param {string} raw
+ * @returns {string}
+ */
+export function normalizeIncomingLevel(raw) {
+    if (typeof raw !== 'string') return '';
+    let clean = raw.trim();
+    // Normalize range representations e.g. "HSK 3-4" -> "HSK 3", "TOPIK 3-4" -> "TOPIK 3", "CEFR C1-C2" -> "CEFR C1"
+    clean = clean.replace(/\bHSK\s*([1-6])\s*[-–—]\s*[1-6]\b/i, 'HSK $1');
+    clean = clean.replace(/\bTOPIK\s*([1-6])\s*[-–—]\s*[1-6]\b/i, 'TOPIK $1');
+    clean = clean.replace(/\bCEFR\s*([A-C][1-2])\s*[-–—]\s*[A-C][1-2]\b/i, 'CEFR $1');
+    return clean;
+}
+
+/**
+ * Normalizes tier names (supporting camelCase, snake_case, and spaced variations)
+ * @param {string} raw
+ * @returns {string|null}
+ */
+export function normalizeIncomingTier(raw) {
+    if (typeof raw !== 'string') return null;
+    const clean = raw.trim().toLowerCase().replace(/[-_\s]/g, '');
+    if (clean === 'upperintermediate') return 'upper_intermediate';
+    if (['beginner', 'elementary', 'intermediate', 'advanced'].includes(clean)) return clean;
+    return null;
+}
 
 export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
@@ -39,6 +67,7 @@ export async function onRequestPost(context) {
         const videoId = sanitizeVideoId(body?.videoId);
         const language = sanitizeLanguage(body?.language, ['ja', 'zh', 'ko', 'en']);
         const rawLevel = typeof body?.level === 'string' ? body.level.trim() : '';
+        const level = normalizeIncomingLevel(rawLevel);
 
         if (!videoId) {
             return jsonResponse({ error: 'Missing or invalid videoId' }, 400);
@@ -46,7 +75,7 @@ export async function onRequestPost(context) {
         if (!language) {
             return jsonResponse({ error: 'Invalid language. Must be ja, zh, ko, or en' }, 400);
         }
-        if (!rawLevel || rawLevel.length > 30 || !VALID_LEVEL_REGEX.test(rawLevel)) {
+        if (!level || level.length > 30 || !VALID_LEVEL_REGEX.test(level)) {
             return jsonResponse({ error: 'Invalid level format. Must match standard proficiency levels (e.g. JLPT N4, HSK 2, CEFR B1)' }, 400);
         }
 
@@ -75,8 +104,9 @@ export async function onRequestPost(context) {
         if (typeof body?.speechRateCpm === 'number' && Number.isFinite(body.speechRateCpm)) {
             details.speechRateCpm = Math.max(0, Math.min(2000, Math.round(body.speechRateCpm)));
         }
-        if (typeof body?.tier === 'string' && ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'].includes(body.tier)) {
-            details.tier = body.tier;
+        const normalizedTier = normalizeIncomingTier(body?.tier);
+        if (normalizedTier) {
+            details.tier = normalizedTier;
         }
         if (body?.breakdown && typeof body.breakdown === 'object' && !Array.isArray(body.breakdown)) {
             const cleanBreakdown = {};
@@ -92,17 +122,17 @@ export async function onRequestPost(context) {
 
         const db = env.VOCAB_DB;
         // Strict adherence to Rule 2: kv is passed as null to guarantee ZERO KV writes
-        const updatedLevels = await saveVideoLevel(db, null, videoId, language, rawLevel, confidence, method, details);
+        const updatedLevels = await saveVideoLevel(db, null, videoId, language, level, confidence, method, details);
 
         return jsonResponse({
             success: true,
             videoId,
             language,
-            level: rawLevel,
+            level: level,
             confidence,
             method,
             details: Object.keys(details).length > 0 ? details : undefined,
-            levels: updatedLevels || { [language]: rawLevel }
+            levels: updatedLevels || { [language]: level }
         }, 200);
 
     } catch (err) {

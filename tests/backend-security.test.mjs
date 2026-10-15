@@ -2026,10 +2026,20 @@ test('Kanji API: GET /api/kanji validates input and handles cache', async () => 
   assert.equal(cacheRes.headers.get('x-cache'), 'HIT-MEMORY');
 });
 
+test('video-level normalizer: auto-normalizes range strings and camelCase tier', async () => {
+  const { normalizeIncomingLevel, normalizeIncomingTier } = await import('../functions-src/api/video-level.js');
 
+  assert.equal(normalizeIncomingLevel('HSK 3-4'), 'HSK 3');
+  assert.equal(normalizeIncomingLevel('HSK 3 - 4'), 'HSK 3');
+  assert.equal(normalizeIncomingLevel('TOPIK 3-4'), 'TOPIK 3');
+  assert.equal(normalizeIncomingLevel('CEFR C1-C2'), 'CEFR C1');
+  assert.equal(normalizeIncomingLevel('JLPT N3'), 'JLPT N3');
+  assert.equal(normalizeIncomingLevel('HSK 4'), 'HSK 4');
 
-
-
-
-
+  assert.equal(normalizeIncomingTier('upperIntermediate'), 'upper_intermediate');
+  assert.equal(normalizeIncomingTier('upper_intermediate'), 'upper_intermediate');
+  assert.equal(normalizeIncomingTier('Upper-Intermediate'), 'upper_intermediate');
+  assert.equal(normalizeIncomingTier('beginner'), 'beginner');
+  assert.equal(normalizeIncomingTier('invalid_tier'), null);
+});
 
