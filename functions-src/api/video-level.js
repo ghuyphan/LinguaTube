@@ -50,9 +50,12 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid level format. Must match standard proficiency levels (e.g. JLPT N4, HSK 2, CEFR B1)' }, 400);
         }
 
-        // Cap client submissions to max 0.85 to protect server database integrity
+        // Cap client submissions to max 0.85 (or 0.90 for verified submissions with grammar breakdown)
+        const hasGrammarEvidence = (typeof body?.grammarCount === 'number' && body.grammarCount >= 3) ||
+            (body?.breakdown && typeof body.breakdown === 'object' && Object.keys(body.breakdown).length > 0);
+        const maxConfidence = hasGrammarEvidence ? 0.90 : 0.85;
         const confidence = typeof body?.confidence === 'number'
-            ? Math.min(0.85, Math.max(0.0, body.confidence))
+            ? Math.min(maxConfidence, Math.max(0.0, body.confidence))
             : 0.8;
         const method = typeof body?.method === 'string' && body.method.length <= 20 ? body.method : 'linguistics';
 

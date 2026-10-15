@@ -62,14 +62,6 @@ export class TranscriptService {
         if (nativeResult?.segments?.length > 0) {
             const actualLang = normalizeLanguageCode(nativeResult.detectedLang) || normalizeLanguageCode(lang) || lang;
             const cleanedSegments = cleanTranscriptSegments(nativeResult.segments);
-            const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, actualLang);
-            nativeResult.segments = enrichedSegments;
-            // Found native captions -> Save to R2 & DB under actualLang and clear any stale negative cache
-            const savePromises = [
-                saveTranscriptToR2(r2, videoId, actualLang, enrichedSegments, nativeResult.source || 'supadata'),
-                addSubLanguage(db, videoId, actualLang),
-                deleteNoTranscript(db, videoId, actualLang, 'native')
-            ];
 
             const rawAvailable = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [actualLang];
             const availableLangs = Array.from(new Set(rawAvailable.map(l => normalizeLanguageCode(l) || l)));
@@ -77,60 +69,57 @@ export class TranscriptService {
                 availableLangs.unshift(actualLang);
             }
 
-            // Self-heal: Derive duration from enrichedSegments if options.duration is missing
+            // Self-heal: Derive duration from cleanedSegments if options.duration is missing
             let effectiveDuration = options.duration || null;
-            if (!effectiveDuration && enrichedSegments.length > 0) {
-                const last = enrichedSegments[enrichedSegments.length - 1];
+            if (!effectiveDuration && cleanedSegments.length > 0) {
+                const last = cleanedSegments[cleanedSegments.length - 1];
                 const inferred = Math.round((last.start || 0) + (last.duration || 0));
                 if (inferred > 0) effectiveDuration = inferred;
             }
 
-            if (options.title || options.channel || effectiveDuration) {
-                const saveLanguages = async () => {
-                    let avatar = options.channelAvatar || null;
-                    if (!avatar && db) {
-                        try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
-                    }
-                    const estimatedLevel = estimateTranscriptLevel(enrichedSegments, actualLang, { title: options.title, channel: options.channel });
-                    const levelsObj = estimatedLevel ? { [actualLang]: estimatedLevel } : null;
-                    await saveVideoLanguages(
-                        db,
-                        videoId,
-                        availableLangs,
-                        effectiveDuration,
-                        options.title || null,
-                        options.channel || null,
-                        false,
-                        levelsObj,
-                        avatar,
-                        [actualLang]
-                    );
-                };
-                savePromises.push(saveLanguages());
-            } else {
-                const saveBasic = async () => {
-                    const estimatedLevel = estimateTranscriptLevel(enrichedSegments, actualLang);
-                    const levelsObj = estimatedLevel ? { [actualLang]: estimatedLevel } : null;
-                    await saveVideoLanguages(
-                        db,
-                        videoId,
-                        availableLangs.length > 0 ? availableLangs : [actualLang],
-                        effectiveDuration,
-                        null,
-                        null,
-                        false,
-                        levelsObj,
-                        null,
-                        [actualLang]
-                    );
-                };
-                savePromises.push(saveBasic());
-            }
+            // Background async persistence and morphological enrichment
+            // Delivers native captions in < 200ms without blocking on Kuromoji CPU time
+            const backgroundSaveTask = async () => {
+                let enrichedSegments = cleanedSegments;
+                try {
+                    enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, actualLang);
+                } catch (e) {
+                    console.warn('[TranscriptService] Token enrichment error in background:', e?.message || e);
+                }
+
+                const savePromises = [
+                    saveTranscriptToR2(r2, videoId, actualLang, enrichedSegments, nativeResult.source || 'supadata'),
+                    addSubLanguage(db, videoId, actualLang),
+                    deleteNoTranscript(db, videoId, actualLang, 'native')
+                ];
+
+                let avatar = options.channelAvatar || null;
+                if (!avatar && db && (options.title || options.channel || effectiveDuration)) {
+                    try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
+                }
+                const estimatedLevel = estimateTranscriptLevel(enrichedSegments, actualLang, { title: options.title, channel: options.channel });
+                const levelsObj = estimatedLevel ? { [actualLang]: estimatedLevel } : null;
+
+                savePromises.push(saveVideoLanguages(
+                    db,
+                    videoId,
+                    availableLangs,
+                    effectiveDuration,
+                    options.title || null,
+                    options.channel || null,
+                    false,
+                    levelsObj,
+                    avatar,
+                    [actualLang]
+                ));
+
+                await Promise.allSettled(savePromises);
+            };
 
             if (waitUntil) {
-                waitUntil(Promise.allSettled(savePromises));
+                waitUntil(backgroundSaveTask());
             } else {
-                await Promise.allSettled(savePromises);
+                await backgroundSaveTask();
             }
 
             return {

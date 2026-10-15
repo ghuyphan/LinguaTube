@@ -15,7 +15,46 @@ import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js'
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_category' };
 
 export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
+    return handleOptions(['GET', 'POST', 'OPTIONS']);
+}
+
+export async function onRequestGet(context) {
+    const { request, env } = context;
+    const url = new URL(request.url);
+    const videoId = sanitizeVideoId(url.searchParams.get('videoId'));
+
+    if (!videoId) {
+        return jsonResponse({
+            success: true,
+            categories: Array.from(VALID_CATEGORIES)
+        }, 200, {
+            'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800'
+        });
+    }
+
+    const db = env?.VOCAB_DB;
+    if (db) {
+        try {
+            const row = await db.prepare('SELECT category FROM video_languages WHERE video_id = ?').bind(videoId).first();
+            return jsonResponse({
+                success: true,
+                videoId,
+                category: row?.category || 'general',
+                categories: Array.from(VALID_CATEGORIES)
+            }, 200, {
+                'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400'
+            });
+        } catch (e) {
+            console.error('[VideoCategory] GET error:', e.message);
+        }
+    }
+
+    return jsonResponse({
+        success: true,
+        videoId,
+        category: 'general',
+        categories: Array.from(VALID_CATEGORIES)
+    }, 200);
 }
 
 export async function onRequestPost(context) {

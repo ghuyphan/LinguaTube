@@ -49,11 +49,12 @@ export async function onRequestOptions() {
     return handleOptions(['POST', 'OPTIONS']);
 }
 
-function isValidRedirectUrl(urlStr) {
+export function isValidRedirectUrl(urlStr) {
     if (!urlStr || typeof urlStr !== 'string') return false;
     try {
         const u = new URL(urlStr);
         return (
+            u.protocol === 'voca:' ||
             (u.protocol === 'https:' && (u.hostname === 'voca.study' || u.hostname.endsWith('.voca.study'))) ||
             (u.hostname === 'localhost' || u.hostname === '127.0.0.1')
         );

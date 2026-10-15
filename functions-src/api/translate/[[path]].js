@@ -45,9 +45,15 @@ export async function onRequestGet(context) {
 
     const source = sanitizeLanguage(pathSegments[0], ['ja', 'zh', 'ko', 'en', 'vi', 'auto']);
     const target = sanitizeLanguage(pathSegments[1], ['ja', 'zh', 'ko', 'en', 'vi']);
-    const text = pathSegments.slice(2).join('/'); // Rejoin text that might contain slashes
+    let text = pathSegments.slice(2).join('/'); // Rejoin text that might contain slashes
+    try {
+        text = decodeURIComponent(text);
+    } catch {
+        // Fall back to raw text if malformed URI sequence
+    }
+    text = text.trim();
 
-    if (!source || !target || !text.trim()) {
+    if (!source || !target || !text) {
         return jsonResponse({ error: 'Invalid or missing source, target, or text' }, 400);
     }
 

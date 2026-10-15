@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { encodeTaggedTexts, decodeTaggedTranslations, translateBatch } from '../functions-src/providers/lingva.js';
-import { validateBody } from '../functions-src/utils/utils.js';
+import { validateBody, sanitizeLanguage } from '../functions-src/utils/utils.js';
+import { tokenizeJapaneseFast } from '../functions-src/utils/tokenizer.js';
 import { detectSubtitleLanguage } from '../src/app/shared/utils/language.utils.ts';
 
 test('encodeTaggedTexts: properly encodes array of strings with XML index tags and escapes entities', () => {
@@ -221,4 +222,25 @@ test('dual subtitle resolution: records valid & identical cues while preventing 
     assert.equal(shouldRenderC2, false, 'Identical translation should not be rendered in UI');
     assert.equal(shouldRenderC3, false, 'Unmapped translation should not be rendered in UI');
 });
+
+test('sanitizeLanguage: normalizes BCP-47 locale subtags', () => {
+    assert.equal(sanitizeLanguage('ja-JP'), 'ja');
+    assert.equal(sanitizeLanguage('ja_JP'), 'ja');
+    assert.equal(sanitizeLanguage('zh-CN'), 'zh');
+    assert.equal(sanitizeLanguage('en-US'), 'en');
+    assert.equal(sanitizeLanguage('ko-KR'), 'ko');
+    assert.equal(sanitizeLanguage('vi-VN', ['ja', 'zh', 'ko', 'en', 'vi']), 'vi');
+    assert.equal(sanitizeLanguage('invalid', ['ja', 'zh', 'ko', 'en']), null);
+});
+
+test('tokenizeJapaneseFast: segments Japanese text using Intl.Segmenter with romaji fallback', () => {
+    const tokens = tokenizeJapaneseFast('こんにちは世界！');
+    assert.equal(Array.isArray(tokens), true);
+    assert.equal(tokens.length >= 2, true);
+    assert.equal(tokens[0].surface, 'こんにちは');
+    assert.equal(tokens[0].romanization, 'konnichiha');
+    const punc = tokens.find(t => t.surface === '！');
+    assert.equal(punc?.isPunctuation, true);
+});
+
 

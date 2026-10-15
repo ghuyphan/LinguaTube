@@ -95,22 +95,8 @@ export async function onRequestPost(context) {
             }
         }
 
-        // Extract unique non-empty texts to translate (deduplication)
-        const uniqueTexts = Array.from(new Set(texts.map(t => t.trim()).filter(Boolean)));
-        const consumeAmount = Math.max(1, uniqueTexts.length || 1);
-
-        // Rate limit by number of unique texts
-        const authResult = await validateAuthToken(request, env);
-        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
-        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
-        const clientId = getClientIdentifier(request, authResult);
-
-        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, consumeAmount);
-        if (!rateCheck.allowed) {
-            return rateLimitResponse(rateCheck.resetAt);
-        }
-
         // 1. Check Batch-Level Cache (In-Memory first, then KV read fallback)
+        // Cache hits incur ZERO rate limit quota deduction!
         let translations = new Array(texts.length).fill(null);
         let batchKey = null;
 
@@ -124,8 +110,7 @@ export async function onRequestPost(context) {
                 const memHit = memBatchCache.get(batchKey);
                 if (memHit && Array.isArray(memHit) && memHit.length === texts.length) {
                     return jsonResponse({ translations: memHit }, 200, {
-                        'X-Cache': 'HIT-MEM',
-                        ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+                        'X-Cache': 'HIT-MEM'
                     });
                 }
 
@@ -135,14 +120,29 @@ export async function onRequestPost(context) {
                     if (cachedBatch && Array.isArray(cachedBatch.translations) && cachedBatch.translations.length === texts.length) {
                         memBatchCache.set(batchKey, cachedBatch.translations);
                         return jsonResponse({ translations: cachedBatch.translations }, 200, {
-                            'X-Cache': 'HIT',
-                            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+                            'X-Cache': 'HIT'
                         });
                     }
                 }
             } catch (err) {
                 console.warn('[Translate Batch] Batch cache read failed:', err?.message || err);
             }
+        }
+
+        // Cache MISS: Now check and consume rate limit quota (Atomic)
+        // Extract unique non-empty texts to translate (deduplication)
+        const uniqueTexts = Array.from(new Set(texts.map(t => t.trim()).filter(Boolean)));
+        const consumeAmount = Math.max(1, uniqueTexts.length || 1);
+
+        // Rate limit by number of unique texts
+        const authResult = await validateAuthToken(request, env);
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+        const clientId = getClientIdentifier(request, authResult);
+
+        const rateCheck = await consumeRateLimitUnits(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, consumeAmount, context);
+        if (!rateCheck.allowed) {
+            return rateLimitResponse(rateCheck.resetAt);
         }
 
         // 2. Resolve phrases from in-memory cache first

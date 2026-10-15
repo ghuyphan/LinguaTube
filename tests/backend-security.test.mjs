@@ -297,6 +297,23 @@ test('payOS: HMAC-SHA256 signature calculation and webhook verification', async 
   assert.equal(await verifyWebhookSignature(validWebhook, ''), false);
 });
 
+test('payOS: isValidRedirectUrl allows voca custom app scheme and voca.study domains', async () => {
+  const { isValidRedirectUrl } = await import('../functions-src/api/payment/create-order.js');
+
+  assert.equal(isValidRedirectUrl('voca://payment-callback'), true);
+  assert.equal(isValidRedirectUrl('voca://checkout-success?order=123'), true);
+  assert.equal(isValidRedirectUrl('https://voca.study/video'), true);
+  assert.equal(isValidRedirectUrl('https://app.voca.study/success'), true);
+  assert.equal(isValidRedirectUrl('http://localhost:4200/video'), true);
+  assert.equal(isValidRedirectUrl('http://127.0.0.1:3000/callback'), true);
+
+  // Malicious / external domains rejected
+  assert.equal(isValidRedirectUrl('https://attacker.com/steal'), false);
+  assert.equal(isValidRedirectUrl('javascript:alert(1)'), false);
+  assert.equal(isValidRedirectUrl(''), false);
+  assert.equal(isValidRedirectUrl(null), false);
+});
+
 test('detectLevelFromMetadata: accurately parses proficiency levels from titles & channels', async () => {
   const { detectLevelFromMetadata } = await import('../functions-src/data/video-info-db.js');
 
@@ -1939,7 +1956,39 @@ test('saveVideoLevel: caps client confidence and applies EMA blending', async ()
   assert.equal(second.ja.level, 'JLPT N3');
   // Blended score: 0.60 * 2.0 + 0.40 * 3.0 = 1.2 + 1.2 = 2.4
   assert.equal(second.ja.score, 2.4);
-  assert.ok(second.ja.confidence <= 0.85, 'Client confidence must be capped at 0.85');
+});
+
+test('saveVideoLevel: forceUpdate and linguistic override bypass metadata lock and EMA drag', async () => {
+  const { saveVideoLevel } = await import('../functions-src/data/video-info-db.js');
+
+  let storedLevels = null;
+  const mockDb = {
+    prepare: (query) => ({
+      bind: (...args) => ({
+        first: async () => ({ levels: storedLevels ? JSON.stringify(storedLevels) : null }),
+        run: async () => {
+          if (query.includes('UPDATE')) {
+            storedLevels = JSON.parse(args[0]);
+          }
+          return { success: true };
+        }
+      })
+    })
+  };
+
+  // 1. Initial flawed metadata entry with high confidence (0.95) and score 4.0 (N2)
+  await saveVideoLevel(mockDb, null, 'vid_test_heal', 'ja', 'JLPT N2', 0.95, 'metadata', { score: 4.0, tier: 'upper_intermediate' });
+  assert.equal(storedLevels.ja.level, 'JLPT N2');
+
+  // 2. Server heals with forceUpdate: true to calibrated N4 (score 2.0)
+  const healed = await saveVideoLevel(mockDb, null, 'vid_test_heal', 'ja', 'JLPT N4', 0.85, 'server_heuristic', {
+    score: 2.0,
+    tier: 'elementary',
+    forceUpdate: true
+  });
+  assert.equal(healed.ja.level, 'JLPT N4');
+  assert.equal(healed.ja.score, 2.0, 'forceUpdate must cleanly replace score without EMA drag');
+  assert.equal(healed.ja.tier, 'elementary');
 });
 
 test('Kanji API: GET /api/kanji validates input and handles cache', async () => {

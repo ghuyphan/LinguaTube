@@ -156,8 +156,11 @@ export function sanitizeVideoId(id) {
  */
 export function sanitizeLanguage(lang, allowed = ['ja', 'zh', 'ko', 'en']) {
     if (!lang || typeof lang !== 'string') return null;
-    const cleaned = lang.toLowerCase().trim().slice(0, 5);
-    return allowed.includes(cleaned) ? cleaned : null;
+    const cleaned = lang.toLowerCase().trim().slice(0, 10);
+    const base = cleaned.split(/[-_]/)[0];
+    if (allowed.includes(base)) return base;
+    if (allowed.includes(cleaned)) return cleaned;
+    return null;
 }
 
 

@@ -309,23 +309,31 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
         const existingVal = currentLevels[language];
         let existingConf = 0.0;
         let existingScore = null;
+        let existingMethod = null;
         if (existingVal) {
             if (typeof existingVal === 'object' && existingVal !== null) {
                 existingConf = typeof existingVal.confidence === 'number' ? existingVal.confidence : 0.8;
                 existingScore = typeof existingVal.score === 'number' ? existingVal.score : null;
+                existingMethod = existingVal.method || null;
             } else if (typeof existingVal === 'string') {
                 existingConf = 0.8;
             }
         }
 
-        // Do not downgrade verified high-confidence metadata (>= 0.95) unless incoming is also >= 0.95
-        if (existingConf >= 0.95 && safeConfidence < 0.95) {
+        // Subtitle linguistic analysis represents ground truth from authentic spoken dialogue.
+        // It must supersede metadata guesses (which are just title regex keywords).
+        const isLinguisticOverridingMetadata = method === 'linguistics' && existingMethod === 'metadata';
+        const isHeuristicOverridingMetadata = method === 'server_heuristic' && existingMethod === 'metadata';
+        const canOverride = Boolean(details?.forceUpdate) || isLinguisticOverridingMetadata || isHeuristicOverridingMetadata;
+
+        // Do not downgrade verified high-confidence metadata (>= 0.95) unless override is allowed or incoming is also >= 0.95
+        if (!canOverride && existingConf >= 0.95 && safeConfidence < 0.95) {
             return currentLevels;
         }
 
         // If existing record has valid score and confidence, blend using EMA (60% existing + 40% new)
         let finalScore = score;
-        if (existingScore !== null && Number.isFinite(existingScore) && existingConf >= 0.75) {
+        if (!canOverride && existingScore !== null && Number.isFinite(existingScore) && existingConf >= 0.75) {
             finalScore = Math.round(((0.60 * existingScore) + (0.40 * score)) * 10) / 10;
         }
 
@@ -333,7 +341,7 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
             level,
             tier,
             score: finalScore,
-            confidence: Math.max(safeConfidence, existingConf > 0.8 ? existingConf : safeConfidence),
+            confidence: canOverride ? safeConfidence : Math.max(safeConfidence, existingConf > 0.8 ? existingConf : safeConfidence),
             method,
             updatedAt: Math.floor(Date.now() / 1000)
         };

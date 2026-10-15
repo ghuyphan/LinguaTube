@@ -169,63 +169,100 @@ export function segmentJapaneseRuby(surface, reading) {
 }
 
 /**
+ * Fast-path Japanese tokenization using native V8 Intl.Segmenter (< 0.2ms CPU)
+ * Zero dictionary downloads; protects against Worker CPU 1102 limits on cold starts.
+ */
+export function tokenizeJapaneseFast(text) {
+    if (!text || typeof text !== 'string') return [];
+    const segmenter = new Intl.Segmenter('ja', { granularity: 'word' });
+    const segments = [...segmenter.segment(text)];
+
+    return segments
+        .filter(seg => seg.isWordLike || seg.segment.trim())
+        .map(seg => {
+            const surface = seg.segment;
+            const isPunc = isPunctuation(surface);
+            const token = { surface };
+            if (isPunc) {
+                token.isPunctuation = true;
+                return token;
+            }
+
+            const kanaReading = isJapaneseKanaText(surface) ? katakanaToHiragana(surface) : undefined;
+            if (kanaReading) {
+                token.romanization = getJapaneseRomaji(kanaReading, surface);
+            }
+            return token;
+        });
+}
+
+/**
  * Tokenize Japanese text with kuromoji
  * Only adds reading (furigana) for tokens containing kanji
+ * Automatically falls back to fast Intl.Segmenter if Kuromoji initialization times out (>2000ms)
  */
 export async function tokenizeJapanese(text) {
-    const tokenizer = await getKuromojiTokenizer();
-    const kuromojiTokens = tokenizer.tokenize(text);
+    try {
+        const tokenizer = await Promise.race([
+            getKuromojiTokenizer(),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Kuromoji init timeout')), 2000))
+        ]);
+        const kuromojiTokens = tokenizer.tokenize(text);
 
-    return kuromojiTokens.map(t => {
-        const token = { surface: t.surface_form };
+        return kuromojiTokens.map(t => {
+            const token = { surface: t.surface_form };
 
-        // Check for punctuation using kuromoji POS or regex
-        // Kuromoji marks punctuation as 記号 (symbol) or with pos_detail_1 containing punctuation types
-        const isPunc = t.pos === '記号' || t.pos === '空白' || isPunctuation(t.surface_form);
-        if (isPunc) {
-            token.isPunctuation = true;
-        }
-
-        let kanaReading = !isPunc && t.reading
-            ? katakanaToHiragana(t.reading)
-            : !isPunc && isJapaneseKanaText(t.surface_form)
-                ? katakanaToHiragana(t.surface_form)
-                : undefined;
-
-        // Correct spoken particle pronunciation for は (wa) and へ (e)
-        if (t.pos === '助詞' || t.pos_detail_1?.includes('助詞')) {
-            if (t.surface_form === 'は') {
-                kanaReading = 'わ';
-            } else if (t.surface_form === 'へ') {
-                kanaReading = 'え';
+            // Check for punctuation using kuromoji POS or regex
+            // Kuromoji marks punctuation as 記号 (symbol) or with pos_detail_1 containing punctuation types
+            const isPunc = t.pos === '記号' || t.pos === '空白' || isPunctuation(t.surface_form);
+            if (isPunc) {
+                token.isPunctuation = true;
             }
-        }
 
-        // Only add reading for tokens containing kanji (skip punctuation)
-        if (kanaReading && hasKanji(t.surface_form)) {
-            token.reading = kanaReading;
-            const parts = segmentJapaneseRuby(t.surface_form, kanaReading);
-            if (parts && parts.length > 0) {
-                token.rubyParts = parts;
+            let kanaReading = !isPunc && t.reading
+                ? katakanaToHiragana(t.reading)
+                : !isPunc && isJapaneseKanaText(t.surface_form)
+                    ? katakanaToHiragana(t.surface_form)
+                    : undefined;
+
+            // Correct spoken particle pronunciation for は (wa) and へ (e)
+            if (t.pos === '助詞' || t.pos_detail_1?.includes('助詞')) {
+                if (t.surface_form === 'は') {
+                    kanaReading = 'わ';
+                } else if (t.surface_form === 'へ') {
+                    kanaReading = 'え';
+                }
             }
-        }
 
-        if (kanaReading) {
-            token.romanization = getJapaneseRomaji(kanaReading, t.surface_form);
-        }
+            // Only add reading for tokens containing kanji (skip punctuation)
+            if (kanaReading && hasKanji(t.surface_form)) {
+                token.reading = kanaReading;
+                const parts = segmentJapaneseRuby(t.surface_form, kanaReading);
+                if (parts && parts.length > 0) {
+                    token.rubyParts = parts;
+                }
+            }
 
-        // Add base form if different from surface
-        if (t.basic_form && t.basic_form !== t.surface_form && t.basic_form !== '*') {
-            token.baseForm = t.basic_form;
-        }
+            if (kanaReading) {
+                token.romanization = getJapaneseRomaji(kanaReading, t.surface_form);
+            }
 
-        // Add part of speech
-        if (t.pos && t.pos !== '*') {
-            token.partOfSpeech = t.pos;
-        }
+            // Add base form if different from surface
+            if (t.basic_form && t.basic_form !== t.surface_form && t.basic_form !== '*') {
+                token.baseForm = t.basic_form;
+            }
 
-        return token;
-    });
+            // Add part of speech
+            if (t.pos && t.pos !== '*') {
+                token.partOfSpeech = t.pos;
+            }
+
+            return token;
+        });
+    } catch (err) {
+        console.warn('[Tokenizer] Kuromoji unavailable or timed out, falling back to Intl.Segmenter:', err?.message || err);
+        return tokenizeJapaneseFast(text);
+    }
 }
 
 // Hangul batchim (final consonant) detection: (code - 0xAC00) % 28

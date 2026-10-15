@@ -232,12 +232,14 @@ export async function onRequestPost(context) {
                     }
 
                     const responseLevels = { ...(knownInfo?.levels || {}) };
-                    if (!responseLevels[targetNormLang] && cached.segments?.length > 0) {
+                    const existingLvl = responseLevels[targetNormLang];
+                    const needsLvlRecalc = !existingLvl || existingLvl.method === 'server_heuristic' || existingLvl.method === 'metadata';
+                    if (needsLvlRecalc && cached.segments?.length > 0) {
                         const estimated = estimateTranscriptLevel(cached.segments, targetNormLang, { title: body.title, channel: body.channel });
                         if (estimated) {
                             responseLevels[targetNormLang] = estimated;
                             if (waitUntil && db) {
-                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, estimated).catch(() => {}));
+                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, { ...estimated, forceUpdate: true }).catch(() => {}));
                             }
                         }
                     }
@@ -299,12 +301,14 @@ export async function onRequestPost(context) {
                     }
 
                     const responseLevels = { ...(knownInfo?.levels || {}) };
-                    if (!responseLevels[targetNormLang] && cached.segments?.length > 0) {
+                    const existingLvl = responseLevels[targetNormLang];
+                    const needsLvlRecalc = !existingLvl || existingLvl.method === 'server_heuristic' || existingLvl.method === 'metadata';
+                    if (needsLvlRecalc && cached.segments?.length > 0) {
                         const estimated = estimateTranscriptLevel(cached.segments, targetNormLang, { title: body.title, channel: body.channel });
                         if (estimated) {
                             responseLevels[targetNormLang] = estimated;
                             if (waitUntil && db) {
-                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, estimated).catch(() => {}));
+                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, { ...estimated, forceUpdate: true }).catch(() => {}));
                             }
                         }
                     }

@@ -23,6 +23,7 @@ const RATE_LIMIT_COOLDOWN = 60 * 1000;       // 60s cooldown after a 429
 
 /**
  * Fast direct Google Translate GTX translator (~100-250ms)
+ * Uses lightweight Mozilla/5.0 header (avoids bot fingerprinting) and handles 414 fallback
  */
 async function translateWithGtx(text, source, target) {
     if (!text?.trim()) return '';
@@ -31,23 +32,80 @@ async function translateWithGtx(text, source, target) {
     const clients = ['gtx', 'dict-chrome-ex'];
     for (const client of clients) {
         try {
+            // Primary: GET is standard for Google GTX
             const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=${client}&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
             const gtxRes = await fetch(gtxUrl, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0'
+                    'User-Agent': 'Mozilla/5.0',
+                    'Accept': '*/*'
                 },
                 signal: AbortSignal.timeout(3500)
             });
+
             if (gtxRes.ok) {
                 const data = await gtxRes.json();
                 if (Array.isArray(data?.[0])) {
                     const translated = data[0].map(item => item?.[0] || '').join('');
                     if (translated) return translated;
                 }
+            } else if (gtxRes.status === 414) {
+                // URI too long for GET: fall back to POST
+                const body = new URLSearchParams({ client, sl: source, tl: target, dt: 't', q: text });
+                const postRes = await fetch('https://translate.googleapis.com/translate_a/single', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'User-Agent': 'Mozilla/5.0'
+                    },
+                    body: body.toString(),
+                    signal: AbortSignal.timeout(3500)
+                });
+                if (postRes.ok) {
+                    const data = await postRes.json();
+                    if (Array.isArray(data?.[0])) {
+                        const translated = data[0].map(item => item?.[0] || '').join('');
+                        if (translated) return translated;
+                    }
+                }
+            } else {
+                console.warn(`[Translate] Google ${client} returned HTTP ${gtxRes.status}`);
             }
         } catch (e) {
             console.warn(`[Translate] Google ${client} primary failed:`, e?.message || e);
         }
+    }
+    return null;
+}
+
+/**
+ * Free secondary fallback via MyMemory API (~200-400ms)
+ * With authenticated developer email (de=) to unlock 10,000 words/day without datacenter IP blocks
+ */
+async function translateWithMyMemory(text, source, target) {
+    if (!text?.trim()) return '';
+    if (source === target) return text;
+    try {
+        const src = source === 'auto' ? '' : source;
+        const pair = src ? `${src}|${target}` : target;
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${encodeURIComponent(pair)}&de=admin@voca.study`;
+        const res = await fetch(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0',
+                'Accept': 'application/json'
+            },
+            signal: AbortSignal.timeout(3500)
+        });
+        if (res.ok) {
+            const data = await res.json();
+            const translated = data?.responseData?.translatedText;
+            if (translated && typeof translated === 'string' && !translated.startsWith('MYMEMORY WARNING:')) {
+                return translated;
+            }
+        } else {
+            console.warn(`[Translate] MyMemory returned HTTP ${res.status}`);
+        }
+    } catch (e) {
+        console.warn('[Translate] MyMemory fallback failed:', e?.message || e);
     }
     return null;
 }
@@ -116,7 +174,11 @@ export async function translateText(text, source, target) {
     const gtxResult = await translateWithGtx(text, source, target);
     if (gtxResult) return gtxResult;
 
-    // 2. Secondary fallback: Available Lingva instances
+    // 2. Secondary fallback: High-availability MyMemory API (~200-400ms)
+    const myMemoryResult = await translateWithMyMemory(text, source, target);
+    if (myMemoryResult) return myMemoryResult;
+
+    // 3. Tertiary fallback: Available Lingva instances
     const availableInstances = getSortedInstances();
 
     for (const instance of availableInstances) {
@@ -223,8 +285,8 @@ export async function translateBatch(texts, source, target) {
         chunksData.push({ texts: currTexts, indices: currIndices });
     }
 
-    const CONCURRENCY_LIMIT = 3;
-    const STAGGER_DELAY_MS = 150;
+    const CONCURRENCY_LIMIT = 2;
+    const STAGGER_DELAY_MS = 200;
     const results = new Array(texts.length).fill(null);
 
     // Pre-fill empty slots with original text
@@ -290,6 +352,21 @@ export async function translateBatch(texts, source, target) {
                                 }));
                             }
                         }
+                    }
+                } else {
+                    // Tagged request returned null: recover chunk items individually
+                    const FALLBACK_BATCH = 5;
+                    for (let j = 0; j < chunk.texts.length; j += FALLBACK_BATCH) {
+                        const slice = chunk.texts.slice(j, j + FALLBACK_BATCH);
+                        await Promise.all(slice.map(async (text, offset) => {
+                            const idx = j + offset;
+                            try {
+                                const singleRes = await translateText(text, source, target);
+                                results[chunk.indices[idx]] = singleRes || (source === target ? text : null);
+                            } catch {
+                                results[chunk.indices[idx]] = source === target ? text : null;
+                            }
+                        }));
                     }
                 }
             } catch (error) {
