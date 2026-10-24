@@ -161,95 +161,36 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
         const now = Date.now();
 
         try {
-            let finalSegments = segments;
-
-        // Merge incoming translations with existing cached segments if present
-        try {
-            const existingObject = await bucket.get(key);
-            if (existingObject) {
-                const existingData = await existingObject.json();
-                if (Array.isArray(existingData?.segments) && existingData.segments.length > 0) {
-                    const existingMap = new Map();
-                    const existingByText = new Map();
-                    existingData.segments.forEach((seg, idx) => {
-                        const tr = seg?.translation && typeof seg.translation === 'string' ? seg.translation.trim() : '';
-                        if (tr) {
-                            const timeKey = typeof seg.start === 'number' ? seg.start.toFixed(1) : `idx:${idx}`;
-                            existingMap.set(timeKey, tr);
-                            if (seg?.text && typeof seg.text === 'string') {
-                                existingByText.set(seg.text.trim(), tr);
-                            }
-                        }
-                    });
-
-                    finalSegments = segments.map((seg, idx) => {
-                        const incomingTr = seg?.translation && typeof seg.translation === 'string' ? seg.translation.trim() : '';
-                        if (incomingTr) {
-                            return { ...seg, translation: incomingTr };
-                        }
-                        const timeKey = typeof seg?.start === 'number' ? seg.start.toFixed(1) : `idx:${idx}`;
-                        let existingTr = existingMap.get(timeKey);
-                        if (!existingTr && seg?.text && typeof seg.text === 'string') {
-                            existingTr = existingByText.get(seg.text.trim());
-                        }
-                        if (!existingTr && typeof seg?.start === 'number') {
-                            const closeSeg = existingData.segments.find(es => 
-                                es?.translation && typeof es.start === 'number' && Math.abs(es.start - seg.start) < 0.8
-                            );
-                            if (closeSeg?.translation) {
-                                existingTr = typeof closeSeg.translation === 'string' ? closeSeg.translation.trim() : closeSeg.translation;
-                            }
-                        }
-                        if (!existingTr && existingData.segments[idx]?.translation) {
-                            existingTr = typeof existingData.segments[idx].translation === 'string' ? existingData.segments[idx].translation.trim() : existingData.segments[idx].translation;
-                        }
-                        return {
-                            ...seg,
-                            translation: existingTr || null
-                        };
-                    });
+            for (let attempt = 0; attempt < 5; attempt++) {
+                // R2 preconditions protect across isolates; the mutex only reduces local contention.
+                const existingObject = await bucket.get(key);
+                const existingData = existingObject ? await existingObject.json() : null;
+                const existingByCue = new Map();
+                for (const [idx, seg] of (existingData?.segments || []).entries()) {
+                    if (typeof seg?.translation === 'string' && seg.translation.trim()) {
+                        existingByCue.set(`${seg.start ?? `idx:${idx}`}:${seg.text || ''}`, seg.translation.trim());
+                    }
                 }
+                const finalSegments = segments.map((seg, idx) => {
+                    const incoming = typeof seg?.translation === 'string' ? seg.translation.trim() : '';
+                    return { ...seg, translation: incoming || existingByCue.get(`${seg.start ?? `idx:${idx}`}:${seg.text || ''}`) || null };
+                });
+                const validCount = finalSegments.filter(s => typeof s.translation === 'string' && s.translation.trim() &&
+                    (srcLang === tgtLang || s.translation.trim() !== (s.text || '').trim())).length;
+                const computedQuality = finalSegments.length ? Math.round(validCount / finalSegments.length * 100) : quality;
+                const data = { videoId, sourceLang: srcLang, targetLang: tgtLang, segments: finalSegments,
+                    source, quality: computedQuality, timestamp: now };
+                const saved = await bucket.put(key, JSON.stringify(data), {
+                    onlyIf: existingObject ? { etagMatches: existingObject.etag } : new Headers({ 'If-None-Match': '*' }),
+                    httpMetadata: { contentType: 'application/json' },
+                    customMetadata: { source, segmentCount: String(finalSegments.length), translatedCount: String(validCount),
+                        timestamp: String(now), expiresAt: String(now + CACHE_MAX_AGE_MS), version: CACHE_VERSION }
+                });
+                if (saved === null) continue;
+                return { segments: finalSegments, quality: computedQuality, validCount, totalCount: finalSegments.length };
             }
-        } catch (mergeErr) {
-            log('Merge error (using incoming segments):', mergeErr?.message);
-        }
-
-        const validCount = finalSegments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (srcLang === tgtLang || s.translation.trim() !== (s.text || '').trim())).length;
-        const computedQuality = finalSegments.length > 0 ? Math.round((validCount / finalSegments.length) * 100) : quality;
-
-        const data = {
-            videoId,
-            sourceLang: srcLang,
-            targetLang: tgtLang,
-            segments: finalSegments,
-            source,
-            quality: computedQuality,
-            timestamp: now
-        };
-
-        await bucket.put(key, JSON.stringify(data), {
-            httpMetadata: {
-                contentType: 'application/json'
-            },
-            customMetadata: {
-                source,
-                segmentCount: String(finalSegments.length),
-                translatedCount: String(validCount),
-                timestamp: String(now),
-                expiresAt: String(now + CACHE_MAX_AGE_MS),
-                version: CACHE_VERSION
-            }
-        });
-
-        log('Cache save success:', key, `(${finalSegments.length} segments, ${computedQuality}% quality, ${validCount} translated)`);
-
-            return {
-                segments: finalSegments,
-                quality: computedQuality,
-                validCount,
-                totalCount: finalSegments.length
-            };
-
+            console.warn('[R2 Translations] Conditional save contention exhausted');
+            return null;
         } catch (err) {
             console.error('[R2 Translations] Write error:', err.message);
             return null;

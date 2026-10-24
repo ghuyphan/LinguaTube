@@ -92,7 +92,8 @@ export async function onRequestGet(context) {
 }
 
 export async function onRequestPost(context) {
-    const { request, env, waitUntil } = context;
+    const { request, env } = context;
+    const waitUntil = context.waitUntil?.bind(context);
     let cleanVideoId = null;
     let sourceLang = null;
     let targetLang = null;
@@ -179,7 +180,7 @@ export async function onRequestPost(context) {
         const rateLimitConfig = getTieredConfig(baseConfig, tier);
 
         const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, waitUntil);
+        const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, context);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }
@@ -196,7 +197,8 @@ export async function onRequestPost(context) {
             // Allow incremental crowd-merge if at least 10 cues are translated OR coverage >= 20%
             if (successCount >= 10 || successRate >= 0.2) {
                 const saveResult = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality);
-                const finalQuality = saveResult?.quality ?? quality;
+                if (!saveResult) return jsonResponse({ success: false, error: 'Subtitle cache save failed' }, 503);
+                const finalQuality = saveResult.quality;
                 const isFullyCached = (finalQuality >= Math.round(QUALITY_THRESHOLD * 100));
 
                 if (db && saveResult?.validCount) {

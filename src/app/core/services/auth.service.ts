@@ -23,6 +23,11 @@ const PROFILE_CACHE_KEY = 'voca_user_profile';
  * Auth Service
  * Handles authentication via Supabase Auth with Google OAuth
  */
+export interface SessionSnapshot {
+    readonly userId: string | null;
+    readonly generation: number;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -58,7 +63,18 @@ export class AuthService {
     /** Emits when user logs out to trigger session cleanup */
     readonly logoutEvent = new Subject<void>();
 
+    private sessionGeneration = 0;
+
+    captureSession(): SessionSnapshot {
+        return { userId: this.getUserId(), generation: this.sessionGeneration };
+    }
+
+    isCurrentSession(snapshot: SessionSnapshot): boolean {
+        return snapshot.generation === this.sessionGeneration && snapshot.userId === this.getUserId();
+    }
+
     constructor() {
+        this.logoutEvent.subscribe(() => { this.sessionGeneration++; });
         this.initializeAuth();
 
         // Reactively sync user when Supabase session changes

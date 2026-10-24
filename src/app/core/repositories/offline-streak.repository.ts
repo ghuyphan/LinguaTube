@@ -73,35 +73,14 @@ export class OfflineStreakRepository implements IStreakRepository {
         return week;
     }
 
-    async replenishFreeze(newCount: number, options?: { spendXP?: boolean }): Promise<void> {
-        const clampedCount = Math.min(2, Math.max(0, newCount));
-        this.updateLocal({
-            ...this.streakData(),
-            freezesRemaining: clampedCount
-        });
-        if (this.auth.isLoggedIn()) {
-            try {
-                if (options?.spendXP ?? true) {
-                    const { error: rpcErr } = await this.supabase.client.rpc('spend_xp', {
-                        p_cost: 150,
-                        p_purpose: 'freeze_replenish'
-                    });
-                    if (rpcErr) {
-                        console.warn('[StreakRepo] spend_xp error:', rpcErr);
-                    }
-                } else {
-                    const userId = this.auth.getUserId();
-                    if (userId) {
-                        await this.supabase.client
-                            .from('streaks')
-                            .update({ freezes_remaining: clampedCount })
-                            .eq('user_id', userId);
-                    }
-                }
-            } catch (err) {
-                console.warn('[StreakRepo] Failed freeze update on server:', err);
-            }
-        }
+    applyPurchasedFreeze(count?: number): void {
+        if (this.auth.isLoggedIn() && typeof count !== 'number') return;
+        this.updateLocal({ ...this.streakData(), freezesRemaining: count ?? Math.min(2, this.streakData().freezesRemaining + 1) });
+    }
+
+    async replenishFreeze(newCount: number): Promise<void> {
+        // Guest bonus behavior only. Signed-in freezes require authoritative fulfillment.
+        if (!this.auth.isLoggedIn()) this.updateLocal({ ...this.streakData(), freezesRemaining: Math.min(2, Math.max(0, newCount)) });
     }
 
     async syncWithRemote(): Promise<void> {

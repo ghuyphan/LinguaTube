@@ -390,7 +390,9 @@
     "translating": "Đang dịch...",
     "emptyNotebookHint": "Lưu từ vựng khi xem video hoặc tra từ để ôn tập với flashcard lặp lại ngắt quãng (SRS).",
     "exploreVideos": "Xem video để thu thập từ",
-    "studyTip": "Mẹo học tập"
+    "studyTip": "Mẹo học tập",
+    "translatedDefinitions": "Định nghĩa được dịch",
+    "fallbackDefinitions": "Định nghĩa bằng ngôn ngữ khác"
   },
   "settings": {
     "title": "Cài đặt",

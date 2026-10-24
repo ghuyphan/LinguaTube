@@ -201,3 +201,11 @@ Under **Settings $\rightarrow$ Environment Variables**:
 ### Q: Japanese Furigana shows no readings for Kanji tokens.
 **Cause**: The Kuromoji IPAdic dictionary failed to load from CDN.  
 **Fix**: Ensure you have an active internet connection so `cdnLoader` can fetch `@patdx/kuromoji` buffers from `cdn.jsdelivr.net`.
+
+## Backend reliability update (2026-10-24)
+
+Use supported Node 22 for backend fixtures and the built-in SQLite D1 adapter. Run `SKIP_LIVE_E2E=1 npm run test:backend`, then `node --test tests/d1-recovery.integration.mjs tests/gladia-recovery.integration.mjs`. Embedded PostgreSQL tests require `VOCA_PGLITE_MODULE` pointing to an external PGlite installation; include the sibling Flutter `supabase/tests/*.mjs` suites.
+
+Run web lint, TypeScript checking and headless Angular tests. Rebuild `functions/` from source only after editing `functions-src/`. Test live provider output content separately from HTTP status; local Node Japanese tokenization may use Intl fallback when the packaged Kuromoji dictionary is unavailable.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).

@@ -1,3 +1,4 @@
+import { serviceRoleRequest } from '../services/supabase-rest.js';
 /**
  * Supabase JWT Authentication Module for Cloudflare Functions
  * Validates Supabase auth tokens for API authorization
@@ -44,59 +45,42 @@ async function verifySupabaseToken(token, env) {
         return { valid: false, error: 'Missing token' };
     }
 
-    const cached = memTokenCache.get(token);
-    if (cached && now < cached.expiresAt) {
-        return cached.result;
-    }
-
     const payload = decodeJwtPayload(token);
     if (!payload || !payload.sub) {
         return { valid: false, error: 'Invalid token payload' };
     }
 
     // Expiration check (exp is in seconds)
-    if (payload.exp && payload.exp < Math.floor(now / 1000)) {
+    if (!Number.isFinite(payload.exp) || payload.exp <= Math.floor(now / 1000)) {
         return { valid: false, error: 'Token expired' };
     }
 
     try {
-        // 1. Cryptographically verify token signature via Supabase Auth API (/auth/v1/user)
-        const userRes = await fetch(`${supabaseUrl}/auth/v1/user`, {
-            method: 'GET',
-            headers: {
-                'apikey': supabaseKey,
-                'Authorization': `Bearer ${token}`
-            },
-            signal: AbortSignal.timeout(4000)
-        });
-
-        if (!userRes.ok) {
-            return { valid: false, error: 'Invalid or forged authentication token' };
+        const cacheKey = `${supabaseUrl}:${token}`;
+        let authUser = memTokenCache.get(cacheKey)?.authUser;
+        const cached = memTokenCache.get(cacheKey);
+        if (!cached || cached.expiresAt <= now) {
+            const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
+                headers: { apikey: supabaseKey, Authorization: `Bearer ${token}` },
+                signal: AbortSignal.timeout(4000), redirect: 'error'
+            });
+            if (!response.ok) return { valid: false, error: 'Invalid or forged authentication token' };
+            authUser = await response.json();
+            if (!authUser || authUser.id !== payload.sub) return { valid: false, error: 'Token user identity mismatch' };
+            if (memTokenCache.size >= 200) memTokenCache.delete(memTokenCache.keys().next().value);
+            memTokenCache.set(cacheKey, { authUser, expiresAt: Math.min(now + TOKEN_CACHE_TTL_MS, (payload.exp || 0) * 1000) });
         }
-
-        const authUser = await userRes.json().catch(() => null);
-        if (!authUser || authUser.id !== payload.sub) {
-            return { valid: false, error: 'Token user identity mismatch' };
-        }
-
-        // 2. Query user profile directly from Supabase REST API
-        const profileKey = env.SUPABASE_SERVICE_ROLE_KEY || supabaseKey;
-        const profileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${authUser.id}&select=*`, {
-            method: 'GET',
-            headers: {
-                'apikey': profileKey,
-                'Authorization': `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY || token}`,
-                'Accept': 'application/json'
-            },
-            signal: AbortSignal.timeout(4000)
-        });
-
-        let profile = null;
-        if (profileRes.ok) {
-            const profiles = await profileRes.json();
-            if (Array.isArray(profiles) && profiles.length > 0) {
-                profile = profiles[0];
-            }
+        let profile;
+        if (env.SUPABASE_SERVICE_ROLE_KEY) {
+            profile = await serviceRoleRequest(env, 'rpc/get_user_access_state', { method: 'POST',
+                body: { p_user_id: authUser.id }, timeoutMs: 4000 });
+            if (!profile || profile.id !== authUser.id) throw new Error('Invalid access state');
+        } else {
+            const response = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${authUser.id}&select=name,email,subscription_tier,subscription_expires,diamonds,diamonds_updated_at`, {
+                headers: { apikey: supabaseKey, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(4000), redirect: 'error'
+            });
+            if (!response.ok) throw new Error('Profile unavailable');
+            profile = (await response.json())?.[0];
         }
 
         const result = {
@@ -115,15 +99,6 @@ async function verifySupabaseToken(token, env) {
             }
         };
 
-        // Cache in memory (cap at 200 items to bound isolate memory)
-        if (memTokenCache.size > 200) {
-            const oldestKey = memTokenCache.keys().next().value;
-            memTokenCache.delete(oldestKey);
-        }
-        const expMs = payload.exp ? payload.exp * 1000 : now + TOKEN_CACHE_TTL_MS;
-        const cacheExpiresAt = Math.min(now + TOKEN_CACHE_TTL_MS, expMs);
-        memTokenCache.set(token, { result, expiresAt: cacheExpiresAt });
-
         return result;
     } catch (error) {
         console.error('[Auth] Supabase verification error:', error.message);
@@ -132,12 +107,12 @@ async function verifySupabaseToken(token, env) {
 }
 
 /**
- * Invalidate cached token entry for a user when mutable state (e.g. diamonds) changes
+ * Invalidate verified identity for a user; mutable access state is never cached
  */
 export function invalidateUserTokenCache(userId) {
     if (!userId) return;
     for (const [token, entry] of memTokenCache.entries()) {
-        if (entry.result?.userId === userId) {
+        if (entry.authUser?.id === userId) {
             memTokenCache.delete(token);
         }
     }

@@ -91,8 +91,8 @@ export class StreakDialogComponent {
     readonly hasFrostWard = computed(() => this.streak.freezesRemaining() > 0);
     readonly freezeAbsorbed = computed(() => !!this.streak.lastActivityResult()?.freezeUsed);
 
-    replenishFreeze(): void {
-        const res = this.streak.replenishFreeze();
+    async replenishFreeze(): Promise<void> {
+        const res = await this.streak.replenishFreeze();
         if (res.success) {
             const msg = `❄️ ${this.i18n.t('streak.freezeRestored') || 'Streak Freeze restored!'}`;
             this.toast.show(msg, { type: 'success', icon: 'ice-shield', duration: 3500 });

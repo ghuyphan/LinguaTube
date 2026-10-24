@@ -57,12 +57,14 @@ export async function getTranscriptFromR2(bucket, videoId, lang) {
  * @param {Array} segments - Transcript segments
  * @param {string} source - Source of transcript (youtube, supadata, ai, etc.)
  */
-export async function saveTranscriptToR2(bucket, videoId, lang, segments, source) {
+export async function saveTranscriptToR2(bucket, videoId, lang, segments, source, guard = null) {
     if (!bucket || !videoId || !segments?.length) return false;
 
     const key = `transcripts/${videoId}/${lang}.json`;
 
     try {
+        const current = guard ? await bucket.head(key) : null;
+        if (guard && Number(current?.customMetadata?.jobCreatedAt || 0) > guard.createdAt) throw new Error('Newer transcript exists');
         const data = {
             videoId,
             language: lang,
@@ -71,17 +73,20 @@ export async function saveTranscriptToR2(bucket, videoId, lang, segments, source
             timestamp: Date.now()
         };
 
-        await bucket.put(key, JSON.stringify(data), {
+        const written = await bucket.put(key, JSON.stringify(data), {
+            ...(guard ? { onlyIf: current ? { etagMatches: current.etag } : { etagDoesNotMatch: '*' } } : {}),
             httpMetadata: {
                 contentType: 'application/json'
             },
             customMetadata: {
                 source,
+                ...(guard ? { jobId: guard.jobId, jobCreatedAt: String(guard.createdAt) } : {}),
                 segmentCount: String(segments.length),
                 timestamp: String(Date.now())
             }
         });
 
+        if (guard && written === null) throw new Error('Transcript changed during ingestion');
         log('R2 save success:', key, `(${segments.length} segments)`);
         return true;
     } catch (err) {

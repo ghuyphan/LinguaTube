@@ -1,3 +1,4 @@
+import { serviceRoleRequest } from '../../services/supabase-rest.js';
 /**
  * Create Payment Order Endpoint
  * POST /api/payment/create-order
@@ -73,20 +74,27 @@ export async function onRequestPost(context) {
         }
 
         const clientId = getClientIdentifier(request, authResult);
-        const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+        const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
         if (!rateLimit.allowed) {
             return rateLimitResponse(rateLimit.resetAt);
         }
 
         const body = await request.json().catch(() => ({}));
         const planId = body.planId || 'pro_1m';
-        const plan = PLANS[planId] || PLANS.pro_1m;
+        const plan = Object.hasOwn(PLANS, planId) ? PLANS[planId] : null;
+        if (!plan) return jsonResponse({ error: 'Unknown plan' }, 400);
 
         // Generate an 8-digit cryptographically random unique numeric order code (payOS requires integer)
         const randBuffer = new Uint32Array(1);
         crypto.getRandomValues(randBuffer);
         const orderCode = 10000000 + (randBuffer[0] % 90000000);
         const description = `VOCA${orderCode}`.slice(0, 25);
+
+        // Reserve the unique order in PostgreSQL before creating the provider link.
+        await serviceRoleRequest(env, 'orders', { method: 'POST', prefer: 'return=minimal', body: {
+            order_code: orderCode, user_id: authResult.user.id, plan_id: plan.id,
+            tier: plan.tier, amount: plan.amount, status: 'PENDING'
+        } });
 
         // Store pending order in KV with 7 days expiration (accommodates delayed bank transfers)
         if (env.TRANSCRIPT_CACHE) {

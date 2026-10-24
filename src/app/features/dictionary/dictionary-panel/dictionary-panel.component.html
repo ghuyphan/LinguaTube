@@ -122,6 +122,8 @@
             </div>
 
             <!-- Definitions List -->
+            @if (entry.definitionKind === 'fallback') { <p>{{ i18n.t('dictionary.fallbackDefinitions') }} ({{ entry.definitionLanguage }})</p> }
+            @if (entry.definitionKind === 'translated') { <p>{{ i18n.t('dictionary.translatedDefinitions') }}</p> }
             <div class="result-meanings">
                 @for (meaning of entry.meanings; track $index) {
                 <div class="meaning-item">

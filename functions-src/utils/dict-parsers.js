@@ -23,8 +23,15 @@ import { getJapaneseRomaji } from './japanese-romaji.js';
  * @param {Object} data - Raw API response
  * @returns {DictEntry[]}
  */
-export function parseNaver(data) {
-    const wordResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
+function rawNaver(data, query = '') {
+    const rawResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
+    const headword = item => normalizeDictionaryText((item.handleEntry || item.expEntry || '').replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, ''));
+    const wordResults = query ? [...rawResults].sort((a, b) => {
+        const aExact = headword(a).toLowerCase() === query.toLowerCase();
+        const bExact = headword(b).toLowerCase() === query.toLowerCase();
+        if (aExact !== bExact) return Number(bExact) - Number(aExact);
+        return aExact ? (Number(a.expEntrySuperscript) || 0) - (Number(b.expEntrySuperscript) || 0) : 0;
+    }) : rawResults;
 
     return wordResults.slice(0, 5).map(item => {
         // 1. Extract word (strip <sup> tags first to remove homonym numbers like 사랑1)
@@ -64,16 +71,13 @@ export function parseNaver(data) {
                 }
                 if (collector.means) {
                     collector.means.forEach(mean => {
-                        const def = (mean.value || '')
-                            .replace(/<[^>]+>/g, '')
-                            .replace(/\s+/g, ' ')
-                            .trim();
+                        const def = normalizeDictionaryText(mean.value);
                         if (def && !definitions.some(d => d.toLowerCase() === def.toLowerCase())) {
                             definitions.push(def);
                         }
 
-                        const exOri = (mean.exampleOri || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-                        const exTrans = (mean.exampleTrans || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                        const exOri = normalizeDictionaryText(mean.exampleOri);
+                        const exTrans = normalizeDictionaryText(mean.exampleTrans);
                         if (exOri) {
                             const formatted = exTrans ? `${exOri} (${exTrans})` : exOri;
                             if (!examples.some(e => e.toLowerCase() === formatted.toLowerCase())) {
@@ -184,7 +188,7 @@ function scoreMaziiMatch(entry, query) {
  * @param {string} [queryWord] - Original search term for ranking relevance
  * @returns {DictEntry[]}
  */
-export function parseJotoba(data, queryWord = '') {
+function rawJotoba(data, queryWord = '') {
     if (!data.words || data.words.length === 0) {
         return [];
     }
@@ -196,7 +200,6 @@ export function parseJotoba(data, queryWord = '') {
     }
 
     // Extract kanji JLPT level if available in the response
-    const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
 
     return words.slice(0, 5).map(entry => {
         const word = entry.reading?.kanji || entry.reading?.kana || '';
@@ -224,7 +227,7 @@ export function parseJotoba(data, queryWord = '') {
 
         const level = entry.jlpt
             ? parseInt(String(entry.jlpt).replace(/\D/g, ''))
-            : (kanjiJlpt ? parseInt(String(kanjiJlpt).replace(/\D/g, '')) : null);
+            : null;
 
         let audio = entry.audio?.url || (typeof entry.audio === 'string' ? entry.audio : '') || entry.pitch?.audio || '';
         if (audio && audio.startsWith('/')) {
@@ -245,7 +248,7 @@ export function parseJotoba(data, queryWord = '') {
  * @param {string} [queryWord] - Original search term for ranking relevance
  * @returns {DictEntry[]}
  */
-export function parseMazii(response, queryWord = '') {
+function rawMazii(response, queryWord = '') {
     let results = response.data || response.results || [];
     if (!results || results.length === 0) {
         return [];
@@ -275,7 +278,7 @@ export function parseMazii(response, queryWord = '') {
         if (entry.means && Array.isArray(entry.means)) {
             entry.means.forEach(m => {
                 if (m.mean) {
-                    const cleanMean = m.mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                    const cleanMean = normalizeDictionaryText(m.mean);
                     const key = cleanMean.toLowerCase();
                     if (cleanMean && !seenDefs.has(key)) {
                         seenDefs.add(key);
@@ -284,8 +287,8 @@ export function parseMazii(response, queryWord = '') {
                 }
                 if (m.examples && Array.isArray(m.examples)) {
                     m.examples.forEach(ex => {
-                        const content = (ex.content || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-                        const mean = (ex.mean || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+                        const content = normalizeDictionaryText(ex.content);
+                        const mean = normalizeDictionaryText(ex.mean);
                         if (content) {
                             const formatted = mean ? `${content} (${mean})` : content;
                             const exKey = formatted.toLowerCase();
@@ -339,7 +342,7 @@ export function parseMazii(response, queryWord = '') {
  * @param {Array} data - Raw API response array
  * @returns {DictEntry[]}
  */
-export function parseFreeDictionary(data) {
+function rawFreeDictionary(data) {
     if (!Array.isArray(data) || data.length === 0) {
         return [];
     }
@@ -380,7 +383,7 @@ export function parseFreeDictionary(data) {
  * @param {Array} data - Raw Datamuse JSON response
  * @returns {DictEntry[]}
  */
-export function parseDatamuse(data) {
+function rawDatamuse(data) {
     if (!Array.isArray(data) || data.length === 0) {
         return [];
     }
@@ -408,7 +411,7 @@ export function parseDatamuse(data) {
  * @param {Response} response - Fetch response from MDBG
  * @returns {Promise<DictEntry[]>}
  */
-export async function parseMdbg(response) {
+async function rawMdbg(response) {
     try {
         const html = await response.text();
         const entries = [];
@@ -479,7 +482,7 @@ export async function parseMdbg(response) {
  * @param {string} [from=''] - Source language
  * @returns {Promise<DictEntry[]>}
  */
-function decodeHtmlEntities(str) {
+export function decodeHtmlEntities(str) {
     if (!str || typeof str !== 'string') return '';
     const namedEntities = {
         '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&apos;': "'",
@@ -506,12 +509,12 @@ function decodeHtmlEntities(str) {
     };
 
     return str
-        .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
-        .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+        .replace(/&#(\d+);/g, (_, code) => safeCodePoint(parseInt(code, 10)))
+        .replace(/&#x([0-9a-f]+);/gi, (_, hex) => safeCodePoint(parseInt(hex, 16)))
         .replace(/&[a-z0-9]+;/gi, match => namedEntities[match] || match);
 }
 
-export async function parseGlosbe(response, targetWord = '', from = '') {
+async function rawGlosbe(response, targetWord = '', from = '') {
     try {
         const html = await response.text();
         const entries = [];
@@ -575,7 +578,7 @@ export async function parseGlosbe(response, targetWord = '', from = '') {
  * @param {Object} data - Raw API response from Jisho
  * @returns {DictEntry[]}
  */
-export function parseJisho(data) {
+function rawJisho(data) {
     if (!data?.data || data.data.length === 0) {
         return [];
     }
@@ -618,7 +621,7 @@ export function parseJisho(data) {
  * @param {Response} response - Fetch response from KRDICT
  * @returns {Promise<DictEntry[]>}
  */
-export async function parseKrdict(response) {
+async function rawKrdict(response) {
     try {
         const html = await response.text();
         const entries = [];
@@ -689,3 +692,45 @@ export async function parseKrdict(response) {
         return [];
     }
 }
+
+function safeCodePoint(value) {
+    return value >= 0 && value <= 0x10ffff ? String.fromCodePoint(value) : '\uFFFD';
+}
+
+export function normalizeDictionaryText(value) {
+    if (typeof value !== 'string') return '';
+    let text = value;
+    for (let i = 0; i < 3; i++) {
+        const decoded = decodeHtmlEntities(text);
+        if (decoded === text) break;
+        text = decoded;
+    }
+    return text.replace(/<(rt|rp)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
+        .replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+const POS_CODES = Object.assign(Object.create(null), { noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', interjection: 'int', pronoun: 'pn',
+    preposition: 'prep', article: 'art', conjunction: 'conj',
+    '名词': 'n', '名詞': 'n', '动词': 'v', '動詞': 'v', '感叹词': 'int', '感嘆詞': 'int', '下一段他動詞': 'v1, vt',
+    '명사': 'n', '감탄사': 'int', '동사': 'v', '형용사': 'adj', '부사': 'adv',
+    '대명사': 'pn', '전치사': 'prep', '접속사': 'conj', '관사': 'art', 'Danh từ': 'n',
+    'Nội Động Từ': 'vi', 'Ngoại Động Từ': 'vt', 'Tính từ': 'adj', 'Trạng từ': 'adv' });
+function normalizeEntries(entries) {
+    return entries.map(entry => ({ ...entry,
+        word: normalizeDictionaryText(entry.word), reading: normalizeDictionaryText(entry.reading),
+        definitions: [...new Set(entry.definitions.map(normalizeDictionaryText).filter(Boolean))],
+        partOfSpeech: (entry.partOfSpeech || '').split(/[,;/]+/).map(value => {
+            const clean = normalizeDictionaryText(value); return POS_CODES[clean] || POS_CODES[clean.toLowerCase()] || clean;
+        }).join(', '),
+        ...(entry.examples ? { examples: entry.examples.map(example => typeof example === 'string' ? normalizeDictionaryText(example) :
+            Object.fromEntries(Object.entries(example).map(([key, value]) => [key, typeof value === 'string' ? normalizeDictionaryText(value) : value]))) } : {})
+    })).filter(entry => entry.word && entry.definitions.length);
+}
+export function parseNaver(...args) { return normalizeEntries(rawNaver(...args)); }
+export function parseJotoba(...args) { return normalizeEntries(rawJotoba(...args)); }
+export function parseMazii(...args) { return normalizeEntries(rawMazii(...args)); }
+export function parseFreeDictionary(...args) { return normalizeEntries(rawFreeDictionary(...args)); }
+export function parseDatamuse(...args) { return normalizeEntries(rawDatamuse(...args)); }
+export async function parseMdbg(...args) { return normalizeEntries(await rawMdbg(...args)); }
+export async function parseGlosbe(...args) { return normalizeEntries(await rawGlosbe(...args)); }
+export function parseJisho(...args) { return normalizeEntries(rawJisho(...args)); }
+export async function parseKrdict(...args) { return normalizeEntries(await rawKrdict(...args)); }

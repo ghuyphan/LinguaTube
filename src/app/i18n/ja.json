@@ -390,7 +390,9 @@
     "translating": "翻訳中...",
     "emptyNotebookHint": "動画の視聴や辞書検索中に単語を保存すると、間隔反復（SRS）フラッシュカードで復習できます。",
     "exploreVideos": "動画を見て単語を集める",
-    "studyTip": "学習のヒント"
+    "studyTip": "学習のヒント",
+    "translatedDefinitions": "翻訳された定義",
+    "fallbackDefinitions": "別の言語の定義"
   },
   "settings": {
     "title": "設定",

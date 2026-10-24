@@ -521,3 +521,19 @@ sequenceDiagram
 | `scripts/release.js` | Release Pipeline | Controlled semver version bumper and metadata synchronizer |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |
 | `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, Supabase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |
+
+## Backend audit additions (2026-10-23)
+
+`functions-src/services/payment-db.js` centralizes bounded service-role REST calls. The 20261023 web migrations own payment events, subscription grants, and atomic diamond regeneration. Backend regressions live in `tests/production-hardening.test.mjs`; embedded PostgreSQL validation lives in `tests/database-security.integration.mjs`. Web repository specs cover offline/session safety. See [review report](../../voca_flutter/doc/backend-service-review-2026-10-23.md).
+
+Security follow-up (2026-10-23): anonymous-credit amounts are validated before mutation; refund recovery checks the persisted charge owner, amount and terminal state before confirmation. Shared Supabase XP-spending hardening is prepared at `../voca_flutter/supabase/migrations/20261023170000_secure_xp_spending.sql`; apply once to the shared project. See `../voca_flutter/doc/security-follow-up-2026-10-23.md` for tests and limits. Cloudflare functions were bundled locally; deployment remains with Gemini and the earlier private release snapshot is stale.
+
+## Backend reliability update (2026-10-24)
+
+- `functions-src/services/gladia-recovery.js`: one authoritative ingestion path shared by tracked polling and callback recovery.
+- `functions-src/middlewares/rate-limiter.js`: approximate counter lifecycle and shared translation quota policy.
+- `functions-src/providers/lingva.js`: provider order, time budgets, chunking and bounded per-item recovery.
+- `functions-src/utils/dict-parsers.js`: provider text/POS normalization and source-supported vocabulary metadata.
+- `src/app/core/repositories/offline-gamification.repository.ts`: one durable freeze purchase operation; streak presentation applies its returned count.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).

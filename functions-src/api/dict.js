@@ -7,7 +7,6 @@ import { validateAuthToken } from '../middlewares/auth.js';
 import {
     jsonResponse,
     handleOptions,
-    errorResponse,
     sanitizeWord,
     sanitizeLanguage,
     logError
@@ -19,22 +18,18 @@ import {
     getRateLimitHeaders
 } from '../middlewares/rate-limiter.js';
 
-import { CacheManager } from '../utils/cache-manager.js';
+import { CacheManager, SimpleLRUCache } from '../utils/cache-manager.js';
 import { DictionaryProvider } from '../providers/dictionary-apis.js';
 import { TranslationProvider } from '../providers/lingva.js';
 import { DictionaryService } from '../services/dict.service.js';
 
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
-const memNegDictCache = new Set();
-
-// In-memory positive dictionary LRU cache across warm Worker isolates (Rule 2: In-Memory First)
-const memPosDictCache = new Map();
-const MAX_MEM_POS_DICT = 1000;
-const MEM_POS_DICT_TTL_MS = 60 * 60 * 1000; // 1 hour warm memory cache
+const memNegDictCache = new SimpleLRUCache(1000, 60000);
 
 export async function onRequest(context) {
     const { request, env } = context;
+    const deadline = Date.now() + 12000;
 
     if (request.method === 'OPTIONS') {
         return handleOptions(['GET', 'OPTIONS']);
@@ -50,29 +45,19 @@ export async function onRequest(context) {
     if (!from) return jsonResponse({ error: 'Invalid or missing "from" parameter.' }, 400);
     if (!to) return jsonResponse({ error: 'Invalid or missing "to" parameter.' }, 400);
 
-    // Fast-path 1: in-memory positive cache check (0 KV ops, 0 API calls, < 0.1ms)
-    const posKey = `${from}:${to}:${word}`;
-    const memPosHit = memPosDictCache.get(posKey);
-    if (memPosHit && (Date.now() - memPosHit.timestamp < MEM_POS_DICT_TTL_MS)) {
-        return jsonResponse(memPosHit.data, 200, {
-            'X-Cache': 'HIT-MEMORY',
-            'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400'
-        });
-    }
-
     // Fast-path 2: in-memory negative cache check (0 KV ops, 0 API calls)
     const negKey = `dict:neg:${from}:${to}:${word}`;
-    if (memNegDictCache.has(negKey)) {
+    if (memNegDictCache.get(negKey)) {
         return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
             'X-Cache': 'NEG',
-            'Cache-Control': 'public, max-age=3600, s-maxage=86400'
+            'Cache-Control': 'public, max-age=60, s-maxage=60'
         });
     }
 
     // Rate limiting
     const authResult = await validateAuthToken(request, env);
     const clientId = getClientIdentifier(request, authResult);
-    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
@@ -89,25 +74,18 @@ export async function onRequest(context) {
     try {
         // Automatically handle STALE/HIT/MISS via getOrFetch
         const { data: result, cached, stale } = await cacheManager.getOrFetch(context, cacheKey, async () => {
-            const raw = await dictService.fetchWithFallback(word, from, to);
-            if (!raw || !raw.entries || raw.entries.length === 0) {
-                // Return empty but do NOT cache it under normal positive TTL
-                // Throwing an error prevents caching but we just want to negative cache
-                // For simplicity, we define a short TTL inside getOrFetch options or handle negative cache manually
-                return null;
-            }
+            const raw = await dictService.fetchWithFallback(word, from, to, { signal: request.signal, deadline });
+            if (raw.outcome === 'unavailable') throw new Error('Dictionary providers unavailable');
+            if (!raw.entries.length) return null;
             return raw;
-        }, { forceRefresh: false, ttl: 7 * 24 * 60 * 60 }); // 7 days TTL
+        }, { forceRefresh: false, staleTtl: 0, ttl: 7 * 24 * 60 * 60, ttlForData: value => value.entries.some(entry => entry.definitionKind === 'fallback') ? 60 : 7 * 24 * 60 * 60 }); // 7 days TTL
 
         if (!result) {
             // Negative caching in-memory (avoids wasting KV write quota on misses)
-            if (memNegDictCache.size >= 1000) {
-                memNegDictCache.clear();
-            }
-            memNegDictCache.add(negKey);
+            memNegDictCache.set(negKey, true);
             return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
                 'X-Cache': 'MISS',
-                'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+                'Cache-Control': 'public, max-age=60, s-maxage=60',
                 ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
             });
         }
@@ -121,21 +99,14 @@ export async function onRequest(context) {
 
         const cacheHeader = cached ? (stale ? 'STALE' : 'HIT') : 'MISS';
 
-        // Save to warm in-memory positive cache (0 KV ops on subsequent lookups)
-        if (memPosDictCache.size >= MAX_MEM_POS_DICT) {
-            const oldest = memPosDictCache.keys().next().value;
-            if (oldest) memPosDictCache.delete(oldest);
-        }
-        memPosDictCache.set(posKey, { data: responseData, timestamp: Date.now() });
-
         return jsonResponse(responseData, 200, {
             'X-Cache': cacheHeader,
-            'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
+            'Cache-Control': result.entries.some(entry => entry.definitionKind === 'fallback') ? 'public, max-age=60, s-maxage=60' : 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
     } catch (error) {
-        logError('Dict', error, { word, from, to });
-        return errorResponse(error.message);
+        logError('Dict', error, { from, to });
+        return jsonResponse({ error: 'Dictionary providers unavailable' }, 503, { 'Cache-Control': 'no-store' });
     }
 }

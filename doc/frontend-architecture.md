@@ -1150,3 +1150,11 @@ Located at `src/app/components/onboarding/`:
 
 
 
+
+## Backend reliability update (2026-10-24)
+
+Dictionary models retain actual definition language and provenance. Manual translation uses that language, and asynchronous lookup/translation publication checks request, target, entry and account session. Existing local English fallback is explicitly labeled. Dictionary cache version v5 isolates corrected content.
+
+Authenticated freeze actions await one repository purchase instead of separate deduction/replenishment requests. Persisted operation IDs survive ambiguous replies and session changes; replays refresh current authoritative state. Guest spending remains local.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).

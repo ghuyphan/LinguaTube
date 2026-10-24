@@ -1,3 +1,4 @@
+import { AuthService } from '../../../core/services/auth.service';
 import { Component, inject, signal, computed, ChangeDetectionStrategy, OnDestroy, effect, input, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +23,7 @@ import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
   styleUrl: './dictionary-panel.component.scss'
 })
 export class DictionaryPanelComponent implements OnDestroy {
+  private auth = inject(AuthService);
   private platformId = inject(PLATFORM_ID);
 
   dictionary = inject(DictionaryService);
@@ -148,6 +150,8 @@ export class DictionaryPanelComponent implements OnDestroy {
     // Cancel any previous in-flight lookup to prevent race conditions
     this.lookupSubscription?.unsubscribe();
     const searchId = ++this.currentSearchId;
+    const session = this.auth.captureSession();
+    const isCurrent = () => searchId === this.currentSearchId && this.auth.isCurrentSession(session);
 
     // Update isolated screen query
     this.dictionary.screenQuery.set(query);
@@ -158,12 +162,14 @@ export class DictionaryPanelComponent implements OnDestroy {
     // 1. Search Dictionary Entries
     this.lookupSubscription = this.dictionary.lookupEntries(query, lang).subscribe({
       next: (entries) => {
+        if (!isCurrent()) return;
         this.entries.set(entries);
         this.dictionary.screenEntries.set(entries);
         this.activeEntryIndex.set(0);
         this.isLoading.set(false);
       },
       error: (err) => {
+        if (!isCurrent()) return;
         this.entries.set([]);
         this.dictionary.screenEntries.set([]);
         this.isLoading.set(false);
@@ -174,12 +180,12 @@ export class DictionaryPanelComponent implements OnDestroy {
     // 2. Search Grammar Patterns in parallel
     this.grammar.searchPatterns(query, lang as SupportedGrammarLang)
       .then(matches => {
-        if (this.currentSearchId === searchId) {
+        if (isCurrent()) {
           this.grammarMatches.set(matches);
         }
       })
       .catch(() => {
-        if (this.currentSearchId === searchId) {
+        if (isCurrent()) {
           this.grammarMatches.set([]);
         }
       });

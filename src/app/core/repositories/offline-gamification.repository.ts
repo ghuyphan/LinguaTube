@@ -325,50 +325,54 @@ export class OfflineGamificationRepository implements IGamificationRepository {
         }
     }
 
-    deductXP(amount: number, purpose = 'freeze_replenish', itemId?: string): boolean {
-        if (amount <= 0) return false;
-        this.ensureFreshPeriod();
-        const current = this.state();
-        if (current.xp < amount) return false;
-
-        this._state.update(prev => {
-            const newXP = Math.max(0, prev.xp - amount);
-            const newWeeklyXp = Math.max(0, (prev.weeklyXp || 0) - amount);
-            const newLevel = calculateLevelFromXp(newXP);
-            const updated: UserGamificationState = {
-                ...prev,
-                xp: newXP,
-                weeklyXp: newWeeklyXp,
-                level: newLevel,
-                updatedAt: new Date().toISOString()
-            };
-            this.saveToStorage(updated);
-            return updated;
-        });
-
-        if (this.auth.isLoggedIn()) {
-            void (async () => {
-                try {
-                    const { data } = await this.supabase.client.rpc('spend_xp', {
-                        p_cost: amount,
-                        p_purpose: purpose,
-                        p_item_id: itemId || null
-                    });
-                    if (data?.success && typeof data.new_xp === 'number') {
-                        this._state.update(prev => ({
-                            ...prev,
-                            xp: data.new_xp,
-                            level: calculateLevelFromXp(data.new_xp),
-                            updatedAt: new Date().toISOString()
-                        }));
-                        this.saveToStorage(this._state());
-                    }
-                } catch (err: unknown) {
-                    console.warn('[GamificationRepo] spend_xp error:', err);
-                }
-            })();
-        }
+    /** Local guest behavior only; authenticated fulfillment belongs to purchaseFreeze. */
+    deductXP(amount: number, _purpose = 'freeze_replenish', _itemId?: string): boolean {
+        if (this.auth.isLoggedIn() || amount <= 0 || this.state().xp < amount) return false;
+        this._state.update(prev => ({ ...prev, xp: prev.xp - amount, level: calculateLevelFromXp(prev.xp - amount), updatedAt: new Date().toISOString() }));
+        this.saveToStorage(this.state());
         return true;
+    }
+
+    private freezePurchase: { owner: string; generation: number; promise: Promise<{ success: boolean; reason?: string; freezes_remaining?: number }> } | null = null;
+
+    purchaseFreeze(): Promise<{ success: boolean; reason?: string; freezes_remaining?: number }> {
+        const session = this.auth.captureSession();
+        if (!session.userId) return Promise.resolve(this.deductXP(150) ? { success: true } : { success: false, reason: 'insufficient_xp' });
+        if (this.freezePurchase?.owner === session.userId && this.freezePurchase.generation === session.generation) return this.freezePurchase.promise;
+        const run = async () => {
+            const key = `voca_xp_purchase:${session.userId}`;
+            let operation = this.storage.get<{ id: string; cost: number; purpose: string }>(key);
+            if (!operation) {
+                operation = { id: crypto.randomUUID(), cost: 150, purpose: 'freeze_replenish' };
+                if (!this.storage.set(key, operation)) return { success: false, reason: 'unavailable' };
+            }
+            if (operation.cost !== 150 || operation.purpose !== 'freeze_replenish' || !this.auth.isCurrentSession(session)) return { success: false, reason: 'unavailable' };
+            try {
+                const { data, error } = await this.supabase.client.rpc('spend_xp_once', {
+                    p_operation_id: operation.id, p_cost: 150, p_purpose: 'freeze_replenish', p_item_id: null
+                });
+                if (error || !data || typeof data.success !== 'boolean' || !this.auth.isCurrentSession(session)) return { success: false, reason: 'unavailable' };
+                if (data.success && data.replayed) {
+                    const [game, streak] = await Promise.all([
+                        this.supabase.client.from('gamification').select('xp').eq('user_id', session.userId).single(),
+                        this.supabase.client.from('streaks').select('freezes_remaining').eq('user_id', session.userId).single()
+                    ]);
+                    if (game.error || streak.error || !this.auth.isCurrentSession(session)) return { success: false, reason: 'unavailable' };
+                    data.new_xp = game.data.xp; data.freezes_remaining = streak.data.freezes_remaining;
+                }
+                if (!this.auth.isCurrentSession(session)) return { success: false, reason: 'unavailable' };
+                if (data.success) {
+                    if (typeof data.new_xp !== 'number' || typeof data.freezes_remaining !== 'number') return { success: false, reason: 'unavailable' };
+                    this._state.update(prev => ({ ...prev, xp: data.new_xp, level: calculateLevelFromXp(data.new_xp), updatedAt: new Date().toISOString() }));
+                    this.saveToStorage(this.state());
+                }
+                if (this.storage.get<{id:string}>(key)?.id === operation.id) this.storage.remove(key);
+                return data as { success: boolean; reason?: string; freezes_remaining?: number };
+            } catch { return { success: false, reason: 'unavailable' }; }
+        };
+        const promise = run().finally(() => { if (this.freezePurchase?.promise === promise) this.freezePurchase = null; });
+        this.freezePurchase = { owner: session.userId, generation: session.generation, promise };
+        return promise;
     }
 
     recordVideoCompleted(videoId?: string): Mission[] {

@@ -390,7 +390,9 @@
     "translating": "Translating...",
     "emptyNotebookHint": "Save words while watching videos or looking up definitions to practice with flashcards.",
     "exploreVideos": "Browse Videos",
-    "studyTip": "Learning Tip"
+    "studyTip": "Learning Tip",
+    "translatedDefinitions": "Translated definitions",
+    "fallbackDefinitions": "Definitions available in another language"
   },
   "settings": {
     "title": "Settings",

@@ -1,3 +1,4 @@
+import { matchesSecret } from '../utils/secret-auth.js';
 /**
  * Heal Video Levels API (Cloudflare Function)
  * Maintenance endpoint to audit and re-grade cached videos using the calibrated 4-language level estimator.
@@ -7,14 +8,12 @@
  * Body/Query: { videoId?: string, limit?: number, offset?: number, forceAll?: boolean }
  */
 
-import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
+import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
 import { saveVideoLevel } from '../data/video-info-db.js';
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { validateAuthToken } from '../middlewares/auth.js';
 
-const ADMIN_EMAIL = 'giahuyphan0110@gmail.com';
-const HEAL_SECRET = 'voca_heal_2026';
 
 export async function onRequestOptions() {
     return handleOptions(['GET', 'POST', 'OPTIONS']);
@@ -29,11 +28,13 @@ export async function onRequest(context) {
     // 1. Authorize admin
     const authHeader = request.headers.get('Authorization') || '';
     const adminSecret = request.headers.get('x-admin-secret') || '';
-    let isAuthorized = adminSecret === HEAL_SECRET || (env?.TURNSTILE_SECRET_KEY && adminSecret === env.TURNSTILE_SECRET_KEY);
+    let isAuthorized = false;
+    if (env.HEAL_ADMIN_SECRET && adminSecret) isAuthorized = await matchesSecret(adminSecret, env.HEAL_ADMIN_SECRET);
 
     if (!isAuthorized && authHeader) {
         const authResult = await validateAuthToken(request, env);
-        if (authResult.valid && (authResult.user?.email === ADMIN_EMAIL || authResult.user?.subscriptionTier === 'premium')) {
+        const adminIds = (env.ADMIN_USER_IDS || '').split(',').map(id => id.trim()).filter(Boolean);
+        if (authResult.valid && adminIds.includes(authResult.user?.id)) {
             isAuthorized = true;
         }
     }

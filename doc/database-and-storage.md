@@ -670,3 +670,21 @@ When client-side `localStorage` approaches browser quota thresholds and throws a
   3. `lingvatranslate_cache` / `linguatube_translations` (cached UI and batch translations)
   4. Scoped search histories (`linguatube_recent_searches_*`)
 - **Write Retry**: Following non-critical cache purging, the original write operation is retried seamlessly without throwing unhandled exceptions to the UI layer. Essential user entities (`vocabulary`, `playlists`, `history`, `streaks`, `settings`) are never purged.
+
+## Transactional payment and diamond state (2026-10-23)
+
+New private `payment_events` and `subscription_grants` tables support replay-safe payments and separate tier expiration. Apply payment-event migration before atomic diamond regeneration; regeneration/consume/refund are service-only row-locked RPCs. Existing paid profiles seed legacy grants; future manual grants must use the grant model. VocaPass registration/resolution use authenticated bounded RPCs; reminder-target lookup is service-only. See [deployment details](../../voca_flutter/doc/backend-service-review-2026-10-23.md).
+
+## Recovery migrations and scheduling
+
+D1 anonymous credits replace KV balance authority, importing legacy values once and using job-keyed charge/refund records. PostgreSQL transcription credits record balance changes and operation state atomically. The private RevenueCat inbox, snapshot ordering and credited-period ledger protect transfer/replay recovery. Daily reminder claims use expiring leases. Apply the forward migrations before callers; the [review report](../../voca_flutter/doc/backend-service-review-2026-10-23.md#deployment-order-and-configuration--prepared-only) lists exact order, historical provenance audits, Vault names and manual scheduler SQL. No remote configuration has been applied.
+
+Security follow-up (2026-10-23): anonymous-credit amounts are validated before mutation; refund recovery checks the persisted charge owner, amount and terminal state before confirmation. Shared Supabase XP-spending hardening is prepared at `../voca_flutter/supabase/migrations/20261023170000_secure_xp_spending.sql`; apply once to the shared project. See `../voca_flutter/doc/security-follow-up-2026-10-23.md` for tests and limits. Cloudflare functions were bundled locally; deployment remains with Gemini and the earlier private release snapshot is stale.
+
+## Backend reliability update (2026-10-24)
+
+D1 adds `gladia_callback_inbox` and per-job ingestion lease columns in `db/migrations/d1/20261024_gladia_inbox.sql`. Financial and callback records survive retries and rollout rollback. R2 publication uses ETag preconditions and job creation metadata.
+
+The shared PostgreSQL migration lives once in `../voca_flutter/supabase/migrations/20261024090000_idempotent_xp_purchases.sql`. Its private account/operation ledger commits XP debit and freeze fulfillment together; `spend_xp_once` replays a recorded result, while legacy `spend_xp` delegates with a fresh ID.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).

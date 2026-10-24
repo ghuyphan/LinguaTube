@@ -373,3 +373,27 @@ Before declaring any task complete, verify:
 | `npm run lint` | Runs ESLint across `src/**/*.{ts,html}` |
 | `npm run lint:fix` | Automatically fixes autofixable ESLint issues |
 | `npx wrangler pages dev` | Runs Cloudflare Pages local preview against D1/KV bindings |
+
+## Backend authority additions (2026-10-23)
+
+- Payment idempotency and balances require transactional PostgreSQL RPCs; never use KV locks or read/PATCH fallbacks as financial authority.
+- Keep subscription grants separate by provider/tier and reconcile effective access. Mobile purchase/restore code must not directly grant database subscriptions or diamonds.
+- Reminder targets are service-only. VocaPass token registration/resolution require bounded authenticated RPCs.
+- Guard asynchronous cache publication by account/session; retain failed offline mutations for recovery.
+
+## Durable service recovery rules (2026-10-23)
+
+- Keep `SupabaseService` public callers compatible; its three internal Dart modules own vocabulary, library and sync-queue state. Scope shared futures to the account/session and check ownership before publication.
+- Transcription refund confirmation follows an idempotent committed credit; never infer success from a D1 flag. Preserve legacy ambiguity and job/financial ledgers.
+- Persist authenticated RevenueCat callbacks before acknowledgement and reconcile canonical subscriber grants; update only RevenueCat grants and preserve web grants.
+- Reminder claims are private account/device/UTC-day rows with leases; keep batches at most 50 and concurrency at most five. Scheduler credentials belong in Vault/server secrets.
+
+Security follow-up (2026-10-23): anonymous-credit amounts are validated before mutation; refund recovery checks the persisted charge owner, amount and terminal state before confirmation. Shared Supabase XP-spending hardening is prepared at `../voca_flutter/supabase/migrations/20261023170000_secure_xp_spending.sql`; apply once to the shared project. See `../voca_flutter/doc/security-follow-up-2026-10-23.md` for tests and limits. Cloudflare functions were bundled locally; deployment remains with Gemini and the earlier private release snapshot is stale.
+
+## Backend reliability invariants (2026-10-24)
+
+- Authenticate and persist Gladia notifications before acknowledgement. Callback recovery and tracked polling share one per-job lease and authoritative ingestion path; keep pending work before expiring jobs.
+- General rate limits remain approximate; all rate-limit helpers receive the real context, and KV writes are awaited or registered. Financial authority stays transactional.
+- Serialize exact inputs before hashing token/translation cache keys. Keep translation provider order, concurrency, deadlines and quotas in their existing shared owners.
+- Dictionary provider failures are not empty success. Preserve actual definition language/provenance, short fallback/negative TTLs, normalized text/POS, and absent word levels.
+- Authenticated freezes use one persisted operation ID and `spend_xp_once`; do not restore independent deduction and replenishment requests. The shared PostgreSQL migration lives in `../voca_flutter/supabase/migrations/20261024090000_idempotent_xp_purchases.sql`.

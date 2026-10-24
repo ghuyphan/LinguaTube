@@ -9,7 +9,7 @@
  */
 
 import { jsonResponse, handleOptions } from '../utils/utils.js';
-import { isLanguageSupported, resolveVideoChannelAvatar, getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
+import { isLanguageSupported, resolveVideoChannelAvatar, getVideoMetadata } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
 

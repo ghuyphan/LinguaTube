@@ -28,7 +28,7 @@ export async function onRequestGet(context) {
         const user = authResult.valid ? authResult.user : null;
 
         const cache = env.TRANSCRIPT_CACHE;
-        const rateCheck = await consumeRateLimit(cache, clientId, RATE_LIMIT_CONFIG);
+        const rateCheck = await consumeRateLimit(cache, clientId, RATE_LIMIT_CONFIG, context);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

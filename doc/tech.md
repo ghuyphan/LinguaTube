@@ -196,3 +196,11 @@ graph LR
   - No empty or corrupt translation values.
   - Statically scans all `.html` and `.ts` files to ensure all referenced `t(...)` keys exist.
   - Verifies interpolation placeholder tokens (`{{count}}`, etc.) across translations.
+
+## Backend reliability update (2026-10-24)
+
+Tokenization keys use SHA-256 over serialized exact input under `tokens:v6`; translation batches use `trbatch:v2`. Dictionary result keys and web persistence use v5. Existing bounded caches are reused rather than introducing another cache framework.
+
+Dictionary positive results retain their normal TTL; fallback/negative results are bounded to 60 seconds and provider errors are not cached as missing words. A shared bounded-body reader handles cancellation and upstream byte limits. Translation recovery uses two chunk workers and five shared individual recovery slots.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).

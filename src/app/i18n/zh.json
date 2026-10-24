@@ -390,7 +390,9 @@
     "translating": "翻译中...",
     "emptyNotebookHint": "在观看视频或查词时保存生词，即可通过间隔重复（SRS）记忆卡片进行复习。",
     "exploreVideos": "观看视频积累词汇",
-    "studyTip": "学习小贴士"
+    "studyTip": "学习小贴士",
+    "translatedDefinitions": "已翻译的释义",
+    "fallbackDefinitions": "提供其他语言释义"
   },
   "settings": {
     "title": "设置",

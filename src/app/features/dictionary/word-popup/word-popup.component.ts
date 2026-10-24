@@ -9,7 +9,7 @@ import { EmptyStateComponent } from '../../../shared/components/empty-state/empt
 import { DictionaryService } from '../dictionary.service';
 import { VocabularyService } from '../../vocabulary';
 import { SubtitleService, YoutubeService } from '../../video';
-import { SettingsService, I18nService, AudioService, ToastService } from '../../../core/services';
+import { SettingsService, I18nService, AudioService, ToastService, AuthService } from '../../../core/services';
 import { TranslationService } from '../../../services';
 import { Token, DictionaryEntry, SupportedLearningLanguage, WordLevel } from '../../../models';
 import { formatPartOfSpeech } from '../../../shared/utils/pos.utils';
@@ -26,6 +26,7 @@ export class WordPopupComponent implements OnDestroy {
   private platformId = inject(PLATFORM_ID);
 
   dictionary = inject(DictionaryService);
+  private auth = inject(AuthService);
   vocab = inject(VocabularyService);
   settings = inject(SettingsService);
   toast = inject(ToastService);
@@ -189,7 +190,13 @@ export class WordPopupComponent implements OnDestroy {
     this.translationSubscriptions.clear();
   }
 
+  private lookupGeneration = 0;
+
   lookupWord(word: string, fallbackWord?: string): void {
+    const generation = ++this.lookupGeneration;
+    const session = this.auth.captureSession();
+    const target = this.i18n.currentLanguage();
+    const isCurrent = () => generation === this.lookupGeneration && this.auth.isCurrentSession(session) && target === this.i18n.currentLanguage();
     // Cancel any in-flight lookup
     this.lookupSubscription?.unsubscribe();
     this.lookupError.set(null);
@@ -197,6 +204,7 @@ export class WordPopupComponent implements OnDestroy {
     const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
     this.lookupSubscription = this.dictionary.lookupEntries(word, lang).subscribe({
       next: results => {
+        if (!isCurrent()) return;
         if ((!results || results.length === 0) && fallbackWord && fallbackWord !== word) {
           this.lookupWord(fallbackWord);
           return;
@@ -205,6 +213,7 @@ export class WordPopupComponent implements OnDestroy {
         this.activeEntryIndex.set(0);
       },
       error: () => {
+        if (!isCurrent()) return;
         if (fallbackWord && fallbackWord !== word) {
           this.lookupWord(fallbackWord);
           return;
@@ -296,8 +305,12 @@ export class WordPopupComponent implements OnDestroy {
     const targetLang = this.targetLang();
     this.translationSubscriptions.get(index)?.unsubscribe();
 
-    const sub = this.translation.translateBatch([text], 'en', targetLang).subscribe({
+    const entry = this.entry();
+    const session = this.auth.captureSession();
+    const isCurrent = () => this.entry() === entry && this.targetLang() === targetLang && this.auth.isCurrentSession(session);
+    const sub = this.translation.translateBatch([text], entry?.definitionLanguage || 'auto', targetLang).subscribe({
       next: results => {
+        if (!isCurrent()) return;
         this.translationSubscriptions.delete(index);
         const translatedText = results[0];
         if (translatedText) {
@@ -310,6 +323,7 @@ export class WordPopupComponent implements OnDestroy {
         this.toggleTranslating(index, false);
       },
       error: () => {
+        if (!isCurrent()) return;
         this.translationSubscriptions.delete(index);
         this.toggleTranslating(index, false);
         this.translationErrors.update(set => {

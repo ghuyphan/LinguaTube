@@ -1,5 +1,6 @@
 import { Injectable, inject, computed, signal } from '@angular/core';
 import { OfflineStreakRepository } from '../core/repositories';
+import { AuthService } from '../core/services/auth.service';
 import { GamificationService } from '../core/services/gamification.service';
 
 @Injectable({
@@ -8,6 +9,7 @@ import { GamificationService } from '../core/services/gamification.service';
 export class StreakService {
     private repo = inject(OfflineStreakRepository);
     private gamification = inject(GamificationService);
+    private auth = inject(AuthService);
 
     /** Current streak data */
     readonly streakData = this.repo.streakData;
@@ -71,22 +73,13 @@ export class StreakService {
     /**
      * Replenish one consumed streak freeze for 150 XP
      */
-    replenishFreeze(): { success: boolean; reason?: 'max_reached' | 'insufficient_xp' } {
-        const current = this.freezesRemaining();
-        if (current >= 2) {
-            return { success: false, reason: 'max_reached' };
-        }
-        const COST = 150;
-        if (this.gamification.totalXP() < COST) {
-            return { success: false, reason: 'insufficient_xp' };
-        }
-
-        const success = this.gamification.deductXP(COST);
-        if (success) {
-            void this.repo.replenishFreeze(current + 1);
-            return { success: true };
-        }
-        return { success: false, reason: 'insufficient_xp' };
+    async replenishFreeze(): Promise<{ success: boolean; reason?: string }> {
+        const session = this.auth.captureSession();
+        if (!session.userId && this.freezesRemaining() >= 2) return { success: false, reason: 'max_reached' };
+        const result = await this.gamification.purchaseFreeze();
+        if (!this.auth.isCurrentSession(session)) return { success: false, reason: 'unavailable' };
+        if (result.success) this.repo.applyPurchasedFreeze(result.freezes_remaining);
+        return result;
     }
 
     /**
@@ -95,6 +88,6 @@ export class StreakService {
     grantBonusFreeze(count: number = 1): void {
         const current = this.freezesRemaining();
         const next = Math.min(2, current + count);
-        void this.repo.replenishFreeze(next, { spendXP: false });
+        void this.repo.replenishFreeze(next);
     }
 }

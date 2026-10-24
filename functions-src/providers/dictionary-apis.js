@@ -1,3 +1,4 @@
+import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 /**
  * Provider for Dictionary APIs
  */
@@ -69,6 +70,9 @@ const DICT_SOURCES = {
         { url: 'https://glosbe.com/en/zh/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'en' }
     ]
 };
+for (const [pair, sources] of Object.entries(DICT_SOURCES)) {
+    for (const source of sources) source.definitionLanguage = ['jisho', 'mdbg', 'jotoba', 'freedict', 'datamuse'].includes(source.parser) ? 'en' : pair.split('-')[1];
+}
 
 export class DictionaryProvider {
     /**
@@ -98,82 +102,95 @@ export class DictionaryProvider {
     /**
      * Fetch from a specific source configuration
      */
-    async fetchFromSource(source, word, timeout) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), timeout);
+    async fetchFromSource(source, word, timeout, parentSignal) {
+        const signal = requestSignal(Date.now() + timeout, timeout, parentSignal);
 
-        try {
-            let url = source.url;
-            let body = null;
+        let url = source.url;
+        let body = null;
 
-            const headers = {
-                ...BROWSER_HEADERS,
-                'Referer': source.referer || ''
-            };
+        const headers = {
+            ...BROWSER_HEADERS,
+            'Referer': source.referer || ''
+        };
 
-            if (source.contentType) {
-                headers['Content-Type'] = source.contentType;
-            }
-
-            // Build request based on source config
-            switch (source.parser) {
-                case 'naver':
-                    url = `${source.url}?query=${encodeURIComponent(word)}&m=pc&range=all`;
-                    break;
-                case 'jotoba':
-                    body = JSON.stringify({ query: word, language: 'English', no_english: false });
-                    break;
-                case 'mazii':
-                    body = JSON.stringify({ dict: source.dictCode || 'javi', type: 'word', query: word, page: 1 });
-                    break;
-                case 'mdbg':
-                    url = `${source.url}?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0`;
-                    break;
-                case 'glosbe':
-                    url = `${source.url}${encodeURIComponent(word)}`;
-                    break;
-                case 'freedict':
-                    url = `${source.url}${encodeURIComponent(word)}`;
-                    break;
-                case 'datamuse':
-                    url = `${source.url}?sp=${encodeURIComponent(word)}&md=dp&max=3`;
-                    break;
-                case 'jisho':
-                    url = `${source.url}?keyword=${encodeURIComponent(word)}`;
-                    break;
-                case 'krdict':
-                    url = `${source.url}?nation=vie&nationCode=10&mainSearchWord=${encodeURIComponent(word)}`;
-                    break;
-            }
-
-            const response = await fetch(url, {
-                method: source.method,
-                headers,
-                body,
-                signal: controller.signal
-            });
-
-            if (!response.ok) {
-                if (response.status === 404) return [];
-                throw new Error(`HTTP ${response.status}`);
-            }
-
-            // Parse response
-            switch (source.parser) {
-                case 'naver': return parseNaver(await response.json());
-                case 'jotoba': return parseJotoba(await response.json(), word);
-                case 'mazii': return parseMazii(await response.json(), word);
-                case 'freedict': return parseFreeDictionary(await response.json());
-                case 'datamuse': return parseDatamuse(await response.json());
-                case 'mdbg': return await parseMdbg(response);
-                case 'glosbe': return await parseGlosbe(response, word, source.from || '');
-                case 'jisho': return parseJisho(await response.json());
-                case 'krdict': return await parseKrdict(response);
-                default: return [];
-            }
-
-        } finally {
-            clearTimeout(timeoutId);
+        if (source.contentType) {
+            headers['Content-Type'] = source.contentType;
         }
+
+        // Build request based on source config
+        switch (source.parser) {
+            case 'naver':
+                url = `${source.url}?query=${encodeURIComponent(word)}&m=pc&range=all`;
+                break;
+            case 'jotoba':
+                body = JSON.stringify({ query: word, language: 'English', no_english: false });
+                break;
+            case 'mazii':
+                body = JSON.stringify({ dict: source.dictCode || 'javi', type: 'word', query: word, page: 1 });
+                break;
+            case 'mdbg':
+                url = `${source.url}?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0`;
+                break;
+            case 'glosbe':
+                url = `${source.url}${encodeURIComponent(word)}`;
+                break;
+            case 'freedict':
+                url = `${source.url}${encodeURIComponent(word)}`;
+                break;
+            case 'datamuse':
+                url = `${source.url}?sp=${encodeURIComponent(word)}&md=dp&max=3`;
+                break;
+            case 'jisho':
+                url = `${source.url}?keyword=${encodeURIComponent(word)}`;
+                break;
+            case 'krdict':
+                url = `${source.url}?nation=vie&nationCode=10&mainSearchWord=${encodeURIComponent(word)}`;
+                break;
+        }
+
+        const response = await fetch(url, {
+            method: source.method,
+            headers,
+            body,
+            signal
+        });
+
+        if (!response.ok) {
+            if (response.status === 404 && ['freedict', 'glosbe'].includes(source.parser)) return [];
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const bytes = await readBoundedBody(response, signal, 2 * 1024 * 1024);
+        const text = new TextDecoder().decode(bytes);
+        const parsedResponse = new Response(text, { headers: response.headers });
+        let data;
+        if (['naver','jotoba','mazii','freedict','datamuse','jisho'].includes(source.parser)) {
+            data = JSON.parse(text);
+            const valid = source.parser === 'naver' ? (typeof data?.searchResultMap?.searchResultListMap === 'object' && data.searchResultMap.searchResultListMap !== null) : source.parser === 'jotoba' ? Array.isArray(data?.words) :
+                source.parser === 'mazii' ? (Array.isArray(data?.data || data?.results) || data?.found === 0) : source.parser === 'jisho' ? Array.isArray(data?.data) : Array.isArray(data);
+            if (!valid) throw new Error('Malformed dictionary response');
+        } else if (!/<html|<!doctype/i.test(text)) throw new Error('Malformed dictionary document');
+        // Parse response
+        switch (source.parser) {
+            case 'naver': return parseNaver(data, word);
+            case 'jotoba': return parseJotoba(data, word);
+            case 'mazii': return parseMazii(data, word);
+            case 'freedict': return parseFreeDictionary(data);
+            case 'datamuse': return parseDatamuse(data);
+            case 'mdbg': return checkedHtmlEntries(await parseMdbg(parsedResponse), text);
+            case 'glosbe': return checkedHtmlEntries(await parseGlosbe(parsedResponse, word, source.from || ''), text);
+            case 'jisho': return parseJisho(data);
+            case 'krdict': return checkedHtmlEntries(await parseKrdict(parsedResponse), text);
+            default: return [];
+        }
+
     }
+}
+
+/** A changed HTML layout or challenge page is not proof that a word is absent. */
+function checkedHtmlEntries(entries, text) {
+    if (!entries.length && !/no (?:results?|translations?|matches)(?: (?:were )?found)?|not found|没有找到|未找到|검색 결과가 없습니다|검색된 결과가 없습니다|không tìm thấy/iu.test(text)) {
+        throw new Error('Unrecognized dictionary document');
+    }
+    return entries;
 }

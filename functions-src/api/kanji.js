@@ -1,3 +1,4 @@
+import { readBoundedBody } from '../utils/response-body.js';
 /**
  * Optimized Kanji Breakdown & Stroke Order API (Cloudflare Function)
  * Endpoint: GET /api/kanji?query={query}&lang={optionalLanguage}
@@ -14,8 +15,7 @@ import { validateAuthToken } from '../middlewares/auth.js';
 import {
     jsonResponse,
     handleOptions,
-    sanitizeWord,
-    logError
+    sanitizeWord
 } from '../utils/utils.js';
 import {
     consumeRateLimit,
@@ -61,14 +61,15 @@ export async function onRequest(context) {
     // Rate limiting
     const authResult = await validateAuthToken(request, env);
     const clientId = getClientIdentifier(request, authResult);
-    const rateCheck = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    const rateCheck = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
 
     try {
+        const signal = AbortSignal.timeout(5000);
         const jotobaRes = await fetch('https://jotoba.de/api/search/kanji', {
-            method: 'POST',
+            method: 'POST', signal,
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -81,15 +82,9 @@ export async function onRequest(context) {
             })
         });
 
-        if (!jotobaRes.ok) {
-            return jsonResponse({ query, kanji: [], count: 0 }, 200, {
-                'X-Cache': 'MISS',
-                'Cache-Control': 'public, max-age=3600, s-maxage=86400',
-                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
-            }, request);
-        }
-
-        const data = await jotobaRes.json();
+        if (!jotobaRes.ok) return jsonResponse({ error: 'Kanji provider unavailable' }, 502, { 'Cache-Control': 'no-store' }, request);
+        const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(jotobaRes, signal, 2 * 1024 * 1024)));
+        if (!Array.isArray(data?.kanji)) throw new Error('Malformed kanji response');
         const rawList = Array.isArray(data?.kanji) ? data.kanji : [];
 
         const formattedList = rawList.map(item => {
@@ -134,7 +129,7 @@ export async function onRequest(context) {
         }, request);
 
     } catch (err) {
-        logError('kanji', err, { query });
-        return jsonResponse({ error: 'Internal server error while searching kanji' }, 500, {}, request);
+        console.warn('[Kanji] Provider unavailable', { name: err.name });
+        return jsonResponse({ error: 'Kanji provider unavailable' }, ['TimeoutError','AbortError'].includes(err.name) ? 504 : 502, { 'Cache-Control': 'no-store' }, request);
     }
 }

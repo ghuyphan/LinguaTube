@@ -1,92 +1,47 @@
-/**
- * Service for handling Dictionary lookups and translation fallbacks
- */
-
+/** Concrete source orchestration: provider failure is not a dictionary miss. */
 export class DictionaryService {
-    /**
-     * @param {Object} dictionaryProvider 
-     * @param {Object} translationProvider 
-     */
     constructor(dictionaryProvider, translationProvider) {
         this.dictProvider = dictionaryProvider;
         this.transProvider = translationProvider;
     }
 
-    /**
-     * Fetches dictionary entries with intelligent fallback strategy:
-     * 1. Start primary source(s) immediately
-     * 2. For non-English targets, also start English lookup in parallel
-     * 3. Use first successful result, translate English if needed
-     * 
-     * @param {string} word 
-     * @param {string} from 
-     * @param {string} to 
-     * @returns {Promise<{entries: any[], source: string}>}
-     */
-    async fetchWithFallback(word, from, to) {
-        const directSources = this.dictProvider.getSources(from, to);
-        const englishSources = to !== 'en' ? this.dictProvider.getSources(from, 'en') : [];
-
-        if (directSources.length === 0 && englishSources.length === 0) {
-            return { entries: [], source: 'none' };
-        }
-
-        // Start both fetches in parallel
-        const directPromise = directSources.length > 0
-            ? this._fetchFromSources(directSources, word, this.dictProvider.primaryTimeout)
-            : Promise.resolve(null);
-
-        const englishPromise = englishSources.length > 0
-            ? this._fetchFromSources(englishSources, word, this.dictProvider.fallbackTimeout)
-            : Promise.resolve(null);
-
-        // 1. Wait for direct sources first
+    async fetchWithFallback(word, from, to, { deadline = Date.now() + 12000, signal } = {}) {
+        const controller = new AbortController();
+        const combined = signal ? AbortSignal.any([signal, controller.signal]) : controller.signal;
+        const options = { deadline, signal: combined };
         try {
-            const direct = await directPromise;
-            if (direct?.entries?.length > 0) {
-                return { entries: direct.entries, source: direct.source };
-            }
-        } catch {
-            // Direct failed, silently fall through to English fallback
-        }
-
-        // 2. Fallback: Wait for English sources (already running in parallel)
-        try {
-            const english = await englishPromise;
-            if (english?.entries?.length > 0) {
-                const translated = await this.transProvider.translateEntries(english.entries, to);
-                if (translated?.length > 0) {
-                    return { entries: translated, source: `${english.source}+lingva` };
-                }
-                // Return English entries with [EN] prefix if translation fails
-                const fallbackEntries = english.entries.map(e => ({
-                    ...e,
-                    definitions: e.definitions.map(d => `[EN] ${d}`)
-                }));
-                return { entries: fallbackEntries, source: `${english.source}+raw` };
-            }
-        } catch {
-            // English failed
-        }
-
-        return { entries: [], source: 'none' };
+            // Don't make the exact same English lookup twice.
+            const directSources = this.dictProvider.getSources(from, to);
+            const direct = this._fetchFromSources(directSources, word, options);
+            const englishSources = this.dictProvider.getSources(from, 'en').filter(source => !directSources.some(direct => direct.url === source.url));
+            const english = to === 'en' ? null : this._fetchFromSources(englishSources, word, options);
+            const first = await direct;
+            const fallback = first.entries.length ? null : await english;
+            const found = first.entries.length ? first : fallback;
+            if (!found?.entries.length) return { entries: [], source: 'none', outcome: first.outcome === 'unavailable' || fallback?.outcome === 'unavailable' ? 'unavailable' : 'empty' };
+            const actualLanguage = found.language;
+            if (actualLanguage === to) return { entries: found.entries.map(entry => ({ ...entry, definitionLanguage: to, definitionKind: 'native' })), source: found.source, outcome: 'found' };
+            const translated = await this.transProvider.translateEntries(found.entries, to, {
+                sourceLang: actualLanguage, deadline: Math.min(deadline, Date.now() + 4000), signal: combined
+            });
+            if (translated.length) return { entries: translated.map(entry => ({ ...entry, definitionLanguage: to, definitionKind: 'translated' })), source: `${found.source}+translated`, outcome: 'found' };
+            return { entries: found.entries.map(entry => ({ ...entry,
+                definitions: entry.definitions.map(value => actualLanguage === 'en' ? `[EN] ${value}` : value),
+                definitionLanguage: actualLanguage, definitionKind: 'fallback'
+            })), source: `${found.source}+raw`, outcome: 'found' };
+        } finally { controller.abort(); }
     }
 
-    /**
-     * Try multiple sources in order, return first successful result
-     */
-    async _fetchFromSources(sources, word, timeout) {
+    async _fetchFromSources(sources, word, options) {
+        let unavailable = false;
         for (const source of sources) {
+            if (Date.now() >= options.deadline || options.signal.aborted) { unavailable = true; break; }
             try {
-                const entries = await this.dictProvider.fetchFromSource(source, word, timeout);
-                if (entries?.length > 0) {
-                    return { entries, source: source.parser };
-                }
-            } catch (e) {
-                console.log(`[DictService] ${source.parser} failed:`, e.message);
-                // Try next source
-            }
+                const entries = await this.dictProvider.fetchFromSource(source, word,
+                    Math.min(this.dictProvider.primaryTimeout, options.deadline - Date.now()), options.signal);
+                if (entries.length) return { entries, source: source.parser, language: source.definitionLanguage, outcome: 'found' };
+            } catch { unavailable = true; }
         }
-        return null;
+        return { entries: [], outcome: unavailable ? 'unavailable' : 'empty' };
     }
 }

@@ -1,3 +1,5 @@
+import { SimpleLRUCache } from '../../utils/cache-manager.js';
+import { TRANSLATION_RATE_LIMIT } from '../../middlewares/rate-limiter.js';
 /**
  * Translation Proxy API (Cloudflare Function)
  * Proxies requests to Lingva Translate with fallback instances
@@ -18,15 +20,10 @@ import { translateText } from '../../providers/lingva.js';
 // Rate limit by texts translated, not requests
 // Single endpoint counts as 1 text, batch counts as texts.length
 // Shared key: 'translate-texts' so single and batch share the same quota
-const RATE_LIMIT_CONFIG = {
-    max: { anonymous: 2000, free: 5000, pro: 25000, premium: 100000 },
-    windowSeconds: 3600,
-    keyPrefix: 'translate-texts'
-};
+
 
 // In-memory LRU cache across warm Worker isolates (Rule 2: In-Memory First)
-const memSingleTranslateCache = new Map();
-const MAX_MEM_TRANSLATE_CACHE = 1000;
+const memSingleTranslateCache = new SimpleLRUCache(1000);
 const CDN_CACHE_HEADER = 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400';
 
 // Handle preflight requests
@@ -36,6 +33,7 @@ export async function onRequestOptions() {
 
 export async function onRequestGet(context) {
     const { request, env, params } = context;
+    const deadline = Date.now() + 20000;
 
     const pathSegments = params.path; // e.g., ['en', 'vi', 'hello']
 
@@ -57,6 +55,8 @@ export async function onRequestGet(context) {
         return jsonResponse({ error: 'Invalid or missing source, target, or text' }, 400);
     }
 
+    if (source === target) return jsonResponse({ translation: text });
+
     // Fast-path: Check warm in-memory cache (0 KV, 0 API calls, < 0.1ms)
     const cacheKey = `${source}:${target}:${text}`;
     const memHit = memSingleTranslateCache.get(cacheKey);
@@ -71,22 +71,18 @@ export async function onRequestGet(context) {
     const authResult = await validateAuthToken(request, env);
     const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 
-    const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+    const rateLimitConfig = getTieredConfig(TRANSLATION_RATE_LIMIT, tier);
     const clientId = getClientIdentifier(request, authResult);
-    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig);
+    const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, context);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
     }
 
     try {
-        const translation = await translateText(text, source, target);
+        const translation = await translateText(text, source, target, { signal: request.signal, deadline });
 
         if (translation !== null) {
             // Save to warm in-memory cache
-            if (memSingleTranslateCache.size >= MAX_MEM_TRANSLATE_CACHE) {
-                const oldest = memSingleTranslateCache.keys().next().value;
-                if (oldest) memSingleTranslateCache.delete(oldest);
-            }
             memSingleTranslateCache.set(cacheKey, translation);
 
             return jsonResponse({ translation }, 200, {

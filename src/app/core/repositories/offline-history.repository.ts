@@ -105,6 +105,8 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
         // Clear history and storage when user logs out
         this.auth.logoutEvent.subscribe(() => {
+            if (this.saveDebounceTimer) clearTimeout(this.saveDebounceTimer);
+            this.saveDebounceTimer = null;
             this.history.set([]);
             this.storage.remove(STORAGE_KEY);
             this.tombstoneStore.clearAll();
@@ -171,7 +173,10 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             clearTimeout(existingTimer);
         }
 
+        const ownerId = this.auth.getUserId();
+        const session = this.auth.captureSession();
         const timer = setTimeout(async () => {
+            if (!ownerId || !this.auth.isCurrentSession(session)) return;
             this.remoteSyncTimers.delete(item.video_id);
             await this.pushItemToRemote(item);
         }, 1500);
@@ -182,13 +187,18 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     private async pushItemToRemote(item: HistoryItem): Promise<void> {
         if (!this.auth.isLoggedIn()) return;
 
+        const userId = this.auth.getUserId();
+        const session = this.auth.captureSession();
+        if (!userId) return;
         try {
-            await this.upsertItemRemote(item);
+            await this.upsertItemRemote(item, userId);
+            if (!this.auth.isCurrentSession(session)) return;
 
             // Mark as synced
             const updatedCurrent = this.history();
             const updatedIndex = updatedCurrent.findIndex(i => i.video_id === item.video_id);
-            if (updatedIndex !== -1) {
+            if (updatedIndex !== -1 && updatedCurrent[updatedIndex].progress === item.progress &&
+                sanitizeWatchedAt(updatedCurrent[updatedIndex].watched_at) === sanitizeWatchedAt(item.watched_at)) {
                 const updatedHistory = [...updatedCurrent];
                 updatedHistory[updatedIndex] = { ...updatedHistory[updatedIndex], synced: true };
                 this.history.set(updatedHistory);
@@ -200,8 +210,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         }
     }
 
-    private async upsertItemRemote(item: HistoryItem): Promise<void> {
-        const userId = this.auth.getUserId();
+    private async upsertItemRemote(item: HistoryItem, userId = this.auth.getUserId()): Promise<void> {
         if (!userId) {
             console.warn('[HistoryRepo] Cannot push history item without authenticated user ID');
             return;
@@ -244,6 +253,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     }
 
     async removeFromHistory(id: string): Promise<void> {
+        const session = this.auth.captureSession();
         // 1. Optimistic Update
         const current = this.history();
         const itemToRemove = current.find(i => i.id === id);
@@ -251,6 +261,9 @@ export class OfflineHistoryRepository implements IHistoryRepository {
 
         // Record deletion tombstone to prevent zombie resurrection on sync
         this.addDeletionTombstone(itemToRemove.video_id);
+        const pendingPush = this.remoteSyncTimers.get(itemToRemove.video_id);
+        if (pendingPush) clearTimeout(pendingPush);
+        this.remoteSyncTimers.delete(itemToRemove.video_id);
 
         const newHistory = current.filter(i => i.id !== id);
         this.history.set(newHistory);
@@ -261,11 +274,13 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             try {
                 const userId = this.auth.getUserId();
                 if (userId) {
-                    await this.supabase.client
+                    const { error } = await this.supabase.client
                         .from('history')
                         .delete()
                         .eq('user_id', userId)
                         .eq('video_id', itemToRemove.video_id);
+                    if (error) throw error;
+                    if (!this.auth.isCurrentSession(session)) return;
                     this.removeDeletionTombstone(itemToRemove.video_id);
                 }
             } catch (error) {
@@ -275,7 +290,10 @@ export class OfflineHistoryRepository implements IHistoryRepository {
     }
 
     async clearHistory(): Promise<void> {
+        const session = this.auth.captureSession();
         // 1. Clear local
+        this.remoteSyncTimers.forEach(timer => clearTimeout(timer));
+        this.remoteSyncTimers.clear();
         const current = this.history();
         for (const item of current) {
             this.addDeletionTombstone(item.video_id);
@@ -287,11 +305,13 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             try {
                 const userId = this.auth.getUserId();
                 if (userId) {
-                    await this.supabase.client
+                    const { error } = await this.supabase.client
                         .from('history')
                         .delete()
                         .eq('user_id', userId);
-                    this.storage.remove('linguatube_deleted_history_video_ids');
+                    if (error) throw error;
+                    if (!this.auth.isCurrentSession(session)) return;
+                    this.tombstoneStore.clearAll();
                 }
             } catch (error) {
                 console.warn('[HistoryRepo] Clear history on server failed:', error);
@@ -325,6 +345,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
         }
 
         this.isSyncing = true;
+        const session = this.auth.captureSession();
         this.isLoading.set(true);
         try {
             const userId = this.auth.getUserId();
@@ -336,12 +357,15 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             // 0. Process pending deletion tombstones
             const tombstones = this.getDeletionTombstones();
             for (const videoId of tombstones) {
+                if (!this.auth.isCurrentSession(session)) return;
                 try {
-                    await this.supabase.client
+                    const { error } = await this.supabase.client
                         .from('history')
                         .delete()
                         .eq('user_id', userId)
                         .eq('video_id', videoId);
+                    if (error) throw error;
+                    if (!this.auth.isCurrentSession(session)) return;
                     this.removeDeletionTombstone(videoId);
                 } catch {
                     // Retry next sync
@@ -351,8 +375,10 @@ export class OfflineHistoryRepository implements IHistoryRepository {
             // 1. Push unsynced local items
             const unsynced = this.history().filter(h => !h.synced);
             for (const item of unsynced) {
+                if (!this.auth.isCurrentSession(session)) return;
                 try {
-                    await this.upsertItemRemote(item);
+                    await this.upsertItemRemote(item, userId);
+                    if (!this.auth.isCurrentSession(session)) return;
                     item.synced = true;
                     console.debug('[HistoryRepo] Pushed unsynced item:', item.video_id);
                 } catch (err: unknown) {
@@ -373,6 +399,7 @@ export class OfflineHistoryRepository implements IHistoryRepository {
                 return;
             }
 
+            if (!this.auth.isCurrentSession(session)) return;
             const activeTombstones = new Set(this.getDeletionTombstones());
             const remoteItems = (records || [])
                 .map(r => this.recordToHistoryItem(r as unknown as HistoryRecord))

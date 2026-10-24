@@ -67,11 +67,7 @@ test('GladiaProvider: checkJobStatus uses edge-compatible redirect mode and reje
     let capturedOptions = null;
     globalThis.fetch = async (url, options) => {
       capturedOptions = options;
-      return {
-        ok: true,
-        status: 200,
-        json: async () => ({ status: 'done', result: { sentences: [] } })
-      };
+      return Response.json({ status: 'done', result: { sentences: [] } });
     };
 
     const res = await provider.checkJobStatus('https://api.gladia.io/v2/pre-recorded/result/123');
@@ -1064,18 +1060,18 @@ test('D1 AI Transcription Jobs State Machine: atomic refund guard is strictly id
                 const [id, video_id, language, user_id, client_id, user_tier, diamonds_charged] = args;
                 table.push({
                   id, video_id, language, user_id, client_id, user_tier,
-                  diamonds_charged, diamonds_refunded: 0, status: 'queued'
+                  diamonds_charged, diamonds_refunded: 0, refund_status: 'none', status: 'queued'
                 });
                 return { meta: { changes: 1 } };
               }
-              if (sql.includes('diamonds_refunded = 1')) {
+              if (sql.includes('refund_status = CASE')) {
                 const [errCode, errMsg, jobId] = args;
-                const row = table.find(r => r.id === jobId && r.diamonds_refunded === 0);
+                const row = table.find(r => r.id === jobId && r.refund_status === 'none');
                 if (row) {
                   row.status = 'failed';
                   row.error_code = errCode;
                   row.error_message = errMsg;
-                  row.diamonds_refunded = 1;
+                  row.refund_status = 'pending';
                   return { meta: { changes: 1 }, changes: 1 };
                 }
                 return { meta: { changes: 0 }, changes: 0 };
@@ -1108,7 +1104,8 @@ test('D1 AI Transcription Jobs State Machine: atomic refund guard is strictly id
   const refund1 = await atomicFailAndRefundAiJob(mockDb, jobId, 'GLADIA_ERROR', 'Remote error');
   assert.equal(refund1.shouldRefund, true);
   assert.equal(refund1.job.status, 'failed');
-  assert.equal(refund1.job.diamonds_refunded, 1);
+  assert.equal(refund1.job.diamonds_refunded, 0);
+  assert.equal(refund1.job.refund_status, 'pending');
 
   // 3. Second concurrent failure trigger (e.g. timeout + webhook collision): shouldRefund === false!
   const refund2 = await atomicFailAndRefundAiJob(mockDb, jobId, 'TIMEOUT_EXPIRED', 'Timeout');
@@ -1326,10 +1323,11 @@ test('pollAiJobStatus: self-heals by querying R2 if jobId is missing/expired in 
   assert.equal(res.videoInfo.segments[0].text, 'こんにちは');
 });
 
-test('startAIJob: forceRefresh supersedes existing active job and deletes it instead of reusing', async () => {
+test('startAIJob: forceRefresh preserves the superseded job and its refund history', async () => {
   const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
 
   let deletedJobId = null;
+  let failedJobId = null;
   let insertedJobId = null;
 
   const mockDb = {
@@ -1362,6 +1360,7 @@ test('startAIJob: forceRefresh supersedes existing active job and deletes it ins
               return null;
             },
             async run() {
+              if (sql.includes('UPDATE ai_transcription_jobs') && sql.includes('refund_status')) failedJobId = args[2];
               if (sql.includes('DELETE FROM ai_transcription_jobs')) {
                 deletedJobId = args[0];
               }
@@ -1413,7 +1412,7 @@ test('startAIJob: forceRefresh supersedes existing active job and deletes it ins
   assert.equal(resWithoutForce.jobId, 'old_stale_job_123');
   assert.equal(deletedJobId, null);
 
-  // Case 2: With forceRefresh -> deletes old job and starts fresh session
+  // Case 2: With forceRefresh -> retains recovery history and starts a new job
   const resWithForce = await service.startAIJob(context, {
     videoId: 'vid_regen',
     lang: 'ja',
@@ -1423,7 +1422,9 @@ test('startAIJob: forceRefresh supersedes existing active job and deletes it ins
     diamondInfo: { diamonds: 3 }
   });
   assert.equal(resWithForce.status, 'processing');
-  assert.equal(deletedJobId, 'old_stale_job_123'); // Old stale job was deleted!
+  assert.equal(deletedJobId, null);
+  assert.ok(failedJobId);
+  assert.equal(insertedJobId, resWithForce.jobId);
   assert.notEqual(resWithForce.jobId, 'old_stale_job_123'); // A brand new jobId was generated!
 });
 
@@ -1607,14 +1608,14 @@ test('Dictionary Parsers: parseNaver correctly extracts reading, audio, pos, and
   // 사랑 - word cleaned, no homonym 1 in reading, audio extracted
   assert.equal(results[0].word, '사랑');
   assert.equal(results[0].reading, ''); // identical to word, not redundant
-  assert.equal(results[0].partOfSpeech, 'Danh từ');
+  assert.equal(results[0].partOfSpeech, 'n');
   assert.equal(results[0].audio, 'https://example.com/female.mp3');
   assert.deepEqual(results[0].definitions, ['tình yêu']);
 
   // 학교 - phonetic pronunciation extracted
   assert.equal(results[1].word, '학교');
   assert.equal(results[1].reading, '[학꾜]');
-  assert.equal(results[1].partOfSpeech, 'Danh từ');
+  assert.equal(results[1].partOfSpeech, 'n');
   assert.deepEqual(results[1].definitions, ['trường học']);
 });
 
@@ -1642,7 +1643,7 @@ test('Dictionary Parsers: parseJotoba correctly formats object POS, kanji JLPT, 
   assert.equal(results[0].word, '食べる');
   assert.equal(results[0].reading, 'たべる');
   assert.equal(results[0].partOfSpeech, 'Verb (Ichidan), Verb (Transitive)');
-  assert.equal(results[0].level, 5);
+  assert.equal(results[0].level, null);
   assert.equal(results[0].audio, 'https://jotoba.de/resource/audio/123.mp3');
   assert.deepEqual(results[0].definitions, ['to eat']);
 });

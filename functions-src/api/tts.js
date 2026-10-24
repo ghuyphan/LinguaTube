@@ -1,3 +1,4 @@
+import { readBoundedBody } from '../utils/response-body.js';
 /**
  * Edge Neural Text-to-Speech API (Cloudflare Pages Function)
  * Endpoint: GET /api/tts?text={text}&lang={ja|zh|ko|en}&voice={optionalVoice}
@@ -49,7 +50,9 @@ async function fetchGoogleTts(text, lang) {
   const tlMap = { ja: 'ja', zh: 'zh-CN', ko: 'ko', en: 'en' };
   const targetLang = tlMap[lang] || lang;
   const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${encodeURIComponent(targetLang)}&client=tw-ob`;
+  const signal = AbortSignal.timeout(5000);
   const res = await fetch(url, {
+    signal,
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
       'Referer': 'https://translate.google.com/',
@@ -58,7 +61,8 @@ async function fetchGoogleTts(text, lang) {
   if (!res.ok) {
     throw new Error(`Google TTS HTTP ${res.status}`);
   }
-  const buffer = await res.arrayBuffer();
+  const bytes = await readBoundedBody(res, signal, 1024 * 1024);
+  const buffer = bytes.buffer;
   if (!buffer || buffer.byteLength < 100) {
     throw new Error('Google TTS returned empty audio');
   }
@@ -92,7 +96,8 @@ export async function onRequest(context) {
     voice = url.searchParams.get('voice') || undefined;
   }
 
-  const cleanText = (text || '').trim();
+  if (typeof text !== 'string' || typeof lang !== 'string' || (voice != null && typeof voice !== 'string')) return jsonResponse({ error: 'Invalid TTS parameter types' }, 400);
+  const cleanText = text.trim();
   if (!cleanText) {
     return jsonResponse({ error: 'Missing required parameter: text' }, 400);
   }
@@ -139,9 +144,9 @@ export async function onRequest(context) {
       },
     });
   } catch (edgeErr) {
-    console.warn(`[EdgeTTS] Edge synthesis failed for "${cleanText.slice(0, 30)}", falling back to Google TTS:`, edgeErr.message || edgeErr);
+    console.warn('[EdgeTTS] Synthesis failed; trying fallback');
 
-    // 2. Server-side Failover: Google Translate TTS stream (ensures >99.5% reliability with zero client CORS issues)
+    // 2. Server-side fallback with a bounded audio read
     try {
       const googleBuffer = await fetchGoogleTts(cleanText, cleanLang);
       return new Response(googleBuffer, {
@@ -157,12 +162,12 @@ export async function onRequest(context) {
           'X-Cache': 'MISS',
         },
       });
-    } catch (googleErr) {
-      console.error(`[TTS] Both Edge & Google TTS failed for "${cleanText.slice(0, 30)}":`, googleErr.message || googleErr);
+    } catch {
+      console.error('[TTS] Both providers unavailable');
       return jsonResponse({
         error: 'TTS synthesis failed',
         message: edgeErr.message || 'Internal error',
-      }, 502);
+      }, 502, { 'Cache-Control': 'no-store' });
     }
   }
 }

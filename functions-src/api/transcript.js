@@ -54,7 +54,8 @@ const CACHE_CONTROL = {
 
 export function onRequestOptions() { return handleOptions(['GET', 'POST', 'OPTIONS']); }
 
-export async function onRequestGet({ env }) {
+export async function onRequestGet(context) {
+    const { env } = context;
     return jsonResponse({
         status: 'ok',
         version: 'v4',
@@ -67,7 +68,8 @@ export async function onRequestGet({ env }) {
 }
 
 export async function onRequestPost(context) {
-    const { request, env, waitUntil } = context;
+    const { request, env } = context;
+    const waitUntil = context.waitUntil?.bind(context);
     const elapsed = timer();
 
     try {
@@ -152,7 +154,7 @@ export async function onRequestPost(context) {
 
         // Rate Limiting (enforced on ALL operations including AI polling and creation)
         const rateLimitConfig = getTieredConfig(isPolling ? POLL_RATE_LIMIT : TRANSCRIPT_RATE_LIMIT, tier);
-        const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig);
+        const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig, context);
         if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
 
         // Providers

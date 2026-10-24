@@ -1,3 +1,4 @@
+import { readBoundedBody } from '../utils/response-body.js';
 /**
  * Provider for Gladia AI Transcription API
  */
@@ -102,11 +103,11 @@ export class GladiaProvider {
      * @param {string} gladiaId 
      * @returns {Promise<{status: 'processing' | 'done' | 'error', result?: any, error_message?: string}>}
      */
-    async checkJobStatusById(gladiaId) {
+    async checkJobStatusById(gladiaId, options = {}) {
         if (!gladiaId || typeof gladiaId !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(gladiaId)) {
             throw new Error('Invalid gladiaId format');
         }
-        return await this.checkJobStatus(`${GLADIA_API_URL}/${gladiaId}`);
+        return await this.checkJobStatus(`${GLADIA_API_URL}/${gladiaId}`, options);
     }
 
     /**
@@ -114,7 +115,7 @@ export class GladiaProvider {
      * @param {string} resultUrl 
      * @returns {Promise<{status: 'processing' | 'done' | 'error', result?: any, error_message?: string}>}
      */
-    async checkJobStatus(resultUrl) {
+    async checkJobStatus(resultUrl, { deadline = Date.now() + POLL_TIMEOUT_MS } = {}) {
         // Security: Validate URL to prevent SSRF and API key leakage
         if (!resultUrl || typeof resultUrl !== 'string') {
             throw new Error('Invalid resultUrl: must be a non-empty string');
@@ -131,10 +132,11 @@ export class GladiaProvider {
             throw new Error(`Invalid resultUrl: ${e.message}`);
         }
 
+        const signal = AbortSignal.timeout(Math.max(1, Math.min(POLL_TIMEOUT_MS, deadline - Date.now())));
         const resultResponse = await fetch(resultUrl, {
             headers: { 'x-gladia-key': this.apiKey },
             redirect: 'manual',
-            signal: AbortSignal.timeout(POLL_TIMEOUT_MS)
+            signal
         });
 
         if (resultResponse.status >= 300 && resultResponse.status < 400) {
@@ -147,6 +149,6 @@ export class GladiaProvider {
             throw err;
         }
 
-        return await resultResponse.json();
+        return JSON.parse(new TextDecoder().decode(await readBoundedBody(resultResponse, signal, 8 * 1024 * 1024)));
     }
 }

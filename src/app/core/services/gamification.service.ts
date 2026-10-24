@@ -324,6 +324,10 @@ export class GamificationService {
     /**
      * Deduct XP from the user (e.g. for restoring a streak freeze)
      */
+    purchaseFreeze() {
+        return this.repo.purchaseFreeze();
+    }
+
     deductXP(amount: number): boolean {
         return this.repo.deductXP(amount);
     }

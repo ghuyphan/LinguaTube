@@ -8,6 +8,8 @@ import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
 import { detectLanguage } from '../../shared/utils/language.utils';
 
 interface UnifiedDictEntry {
+  definitionLanguage?: string;
+  definitionKind?: 'native' | 'translated' | 'fallback';
   word?: string;
   reading?: string;
   romanization?: string;
@@ -54,7 +56,7 @@ export class DictionaryService {
   private readonly gamification = inject(GamificationService);
 
   // Cache settings
-  private readonly CACHE_KEY = 'linguatube_dict_cache';
+  private readonly CACHE_KEY = 'linguatube_dict_cache_v5';
   private readonly RECENT_KEY = 'linguatube-recent-searches';
   private readonly MAX_CACHE_SIZE = 500;
 
@@ -163,7 +165,7 @@ export class DictionaryService {
       }
     } else if (Array.isArray(entry.definitions)) {
       for (let i = 0; i < entry.definitions.length; i++) {
-        const trimmed = (entry.definitions[i] || '').trim();
+        const trimmed = (entry.definitions[i] || '').replace(/^\[EN\]\s*/, '').trim();
         const key = trimmed.toLowerCase();
         if (trimmed && !seenMeanings.has(key)) {
           seenMeanings.add(key);
@@ -187,6 +189,8 @@ export class DictionaryService {
         : undefined;
 
     return {
+      definitionLanguage: entry.definitionLanguage,
+      definitionKind: entry.definitionKind,
       word: entry.word || word,
       reading: from === 'ja' || from === 'en' || from === 'ko' ? (formattedReading || undefined) : undefined,
       pinyin: from === 'zh' ? (entry.reading || '') : undefined,
@@ -326,13 +330,16 @@ export class DictionaryService {
    * Get local fallback based on source language
    */
   private getLocalFallback(word: string, lang: string): DictionaryEntry | null {
+    let entry: DictionaryEntry | null;
     switch (lang) {
-      case 'ja': return this.localJapaneseLookup(word);
-      case 'zh': return this.localChineseLookup(word);
-      case 'ko': return this.localKoreanLookup(word);
-      case 'en': return this.localEnglishLookup(word);
+      case 'ja': entry = this.localJapaneseLookup(word); break;
+      case 'zh': entry = this.localChineseLookup(word); break;
+      case 'ko': entry = this.localKoreanLookup(word); break;
+      case 'en': entry = this.localEnglishLookup(word); break;
       default: return null;
     }
+    return entry ? { ...entry, definitionLanguage: 'en', definitionKind: this.i18n.currentLanguage() === 'en' ? 'native' : 'fallback' } : null;
+
   }
 
 
@@ -614,7 +621,8 @@ export class DictionaryService {
       const cache = this.getCache();
       const entry = cache.get(key);
       if (entry) {
-        entry.accessTime = Date.now();
+        if (entry.data.some(item => item.definitionKind === 'fallback') && Date.now() - entry.accessTime > 60000) { cache.delete(key); return null; }
+        if (!entry.data.some(item => item.definitionKind === 'fallback')) entry.accessTime = Date.now();
         // Re-insert to maintain LRU access order
         cache.delete(key);
         cache.set(key, entry);

@@ -278,24 +278,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #FF7E93 0%, #F45B74 50%, #DF4360 100%);
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #BAE6FD 100%);
     border-radius: var(--border-radius-sm, 12px);
-    border: 1px solid rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     flex-shrink: 0;
-    box-shadow: 0 4px 14px rgba(232, 69, 98, 0.28), 0 1px 3px rgba(74, 30, 43, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2), 0 1px 3px rgba(15, 23, 42, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 
     @media (hover: hover) {
         &:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 18px rgba(232, 69, 98, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.55);
+            box-shadow: 0 6px 18px rgba(2, 132, 199, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.9);
         }
     }
 }
 
+.logo-fox,
 .logo-kikyou {
-    width: 1.625rem;
-    height: 1.625rem;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 

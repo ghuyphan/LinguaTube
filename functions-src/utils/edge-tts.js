@@ -113,7 +113,7 @@ export function makeConnectionId() {
 /**
  * Creates a WebSocket connection compatible with both Cloudflare Worker and Node.js
  */
-async function openWebSocket(url, headers) {
+async function openWebSocket(url, headers, signal) {
   const g = globalThis;
 
   // 1. Node.js environment with global WebSocket
@@ -125,6 +125,7 @@ async function openWebSocket(url, headers) {
   try {
     const httpUrl = url.replace(/^wss:/i, 'https:');
     const resp = await fetch(httpUrl, {
+      signal,
       headers: {
         ...headers,
         Upgrade: 'websocket',
@@ -137,6 +138,7 @@ async function openWebSocket(url, headers) {
       return resp.webSocket;
     }
   } catch {
+    if (signal.aborted) throw signal.reason;
     // If Worker fetch failed, try direct WebSocket constructor fallback
   }
 
@@ -194,6 +196,8 @@ export async function synthesizeEdgeTts(text, options = {}) {
     return hit;
   }
 
+  const deadline = Date.now() + timeoutMs;
+  const signal = AbortSignal.timeout(timeoutMs);
   const connectionId = makeConnectionId();
   const secMsGec = await makeSecMsGec();
 
@@ -206,7 +210,7 @@ export async function synthesizeEdgeTts(text, options = {}) {
     'Cache-Control': 'no-cache',
   };
 
-  const ws = await openWebSocket(url, headers);
+  const ws = await openWebSocket(url, headers, signal);
 
   return new Promise((resolve, reject) => {
     const audioChunks = [];
@@ -215,7 +219,7 @@ export async function synthesizeEdgeTts(text, options = {}) {
     const timer = setTimeout(() => {
       cleanup();
       reject(new Error(`Edge TTS timed out after ${timeoutMs}ms`));
-    }, timeoutMs);
+    }, Math.max(1, deadline - Date.now()));
 
     function cleanup() {
       if (isSettled) return;

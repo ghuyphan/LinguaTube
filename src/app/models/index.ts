@@ -81,6 +81,8 @@ export type WordLevel = 'new' | 'learning' | 'known' | 'ignored';
 
 // Dictionary models
 export interface DictionaryEntry {
+  definitionLanguage?: string;
+  definitionKind?: 'native' | 'translated' | 'fallback';
   word: string;
   reading?: string;
   pinyin?: string;

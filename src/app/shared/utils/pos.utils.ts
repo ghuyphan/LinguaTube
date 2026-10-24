@@ -54,6 +54,9 @@ const POS_MAP: Record<string, PosTranslation> = {
   'adj-f': { en: 'Pre-noun verbal/noun', vi: 'Từ bổ nghĩa trước danh từ', ja: '連体詞的', ko: '명사 수식', zh: '定语' },
   'adj': { en: 'Adjective', vi: 'Tính từ', ja: '形容詞', ko: '형용사', zh: '形容词' },
 
+  'prep': { en: 'Preposition', vi: 'Giới từ', ja: '前置詞', ko: '전치사', zh: '介词' },
+  'art': { en: 'Article', vi: 'Mạo từ', ja: '冠詞', ko: '관사', zh: '冠词' },
+
   // Adverbs, Particles, Conjunctions
   'adv': { en: 'Adverb', vi: 'Phó từ', ja: '副詞', ko: '부사', zh: '副词' },
   'adv-to': { en: 'Adverb (-to)', vi: 'Phó từ (-to)', ja: '副詞 (と)', ko: '부사 (to)', zh: '副词 (to)' },

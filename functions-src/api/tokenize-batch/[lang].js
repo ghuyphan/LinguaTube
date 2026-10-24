@@ -1,3 +1,4 @@
+import { sha256 } from '../../utils/utils.js';
 /**
  * Batch Tokenization API (Cloudflare Function)
  * Tokenizes multiple texts at once and caches as single entry per video
@@ -39,17 +40,6 @@ const MAX_MEM_BATCH_VIDEOS = 100;
  * Simple hash function for cache key differentiation
  * Creates a short hash from the concatenation of all texts
  */
-function hashTexts(texts) {
-    const str = texts.join('||');
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash; // Convert to 32bit integer
-    }
-    // Convert to positive hex string (shorter than base10)
-    return (hash >>> 0).toString(16);
-}
 
 export async function onRequest(context) {
     const { request, params, env } = context;
@@ -109,8 +99,8 @@ export async function onRequest(context) {
 
         // Check cache first - include hash of texts to differentiate subtitle versions
         // Cache hits do not consume rate limit quota, protecting both user limit and KV writes
-        const textsHash = hashTexts(texts);
-        const cacheKey = `tokens:v5:${lang}:${videoId}:${textsHash}`;
+        const textsHash = await sha256(JSON.stringify(texts));
+        const cacheKey = `tokens:v6:${lang}:${videoId}:${textsHash}`;
 
         // 1. Check warm in-memory cache (0 KV ops, < 0.1ms)
         const memHit = memTokenBatchCache.get(cacheKey);
@@ -152,7 +142,7 @@ export async function onRequest(context) {
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
 
         const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig);
+        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig, context);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

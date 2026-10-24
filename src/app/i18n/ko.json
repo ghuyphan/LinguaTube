@@ -390,7 +390,9 @@
     "translating": "번역 중...",
     "emptyNotebookHint": "동영상을 시청하거나 사전을 검색할 때 단어를 저장하면 간격 반복(SRS) 플래시카드로 복습할 수 있습니다.",
     "exploreVideos": "동영상 보고 단어 모으기",
-    "studyTip": "학습 팁"
+    "studyTip": "학습 팁",
+    "translatedDefinitions": "번역된 뜻",
+    "fallbackDefinitions": "다른 언어로 제공되는 뜻"
   },
   "settings": {
     "title": "설정",

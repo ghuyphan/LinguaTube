@@ -1,3 +1,4 @@
+import { serviceRoleRequest } from '../services/supabase-rest.js';
 /**
  * Global Leaderboard API (Cloudflare Function)
  * Provides global learner rankings and XP synchronization.
@@ -366,7 +367,7 @@ export async function onRequestPost(context) {
             max: 15,
             windowSeconds: 600,
             keyPrefix: 'rate_leaderboard'
-        });
+        }, context);
 
         if (!rateCheck.allowed) {
             return jsonResponse({
@@ -390,31 +391,21 @@ export async function onRequestPost(context) {
         const rawName = (authResult.user?.name || authResult.user?.username) || body.name || 'Learner';
         const name = String(rawName).replace(/[<>]/g, '').trim().slice(0, 30) || 'Learner';
 
-        const xp = Math.max(0, Math.min(1000000, parseInt(body.xp, 10) || 0));
-        const weeklyXp = Math.max(0, Math.min(100000, parseInt(body.weekly_xp, 10) || 0));
-        // Canonical level derived from XP: level = floor(sqrt(xp / 100)) + 1
-        const level = Math.max(1, Math.min(100, Math.floor(Math.sqrt(xp / 100)) + 1));
-        // Validate streak against server-authoritative Supabase streaks table
-        let streak = Math.max(0, Math.min(100, parseInt(body.streak, 10) || 0));
+        // Client scores are hints only. Competitive data comes from server-controlled tables.
+        let gamification, streakRows;
         try {
-            const supabaseUrl = env.SUPABASE_URL || 'https://edbkvzviqeulwzcnrrlb.supabase.co';
-            const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY;
-            if (supabaseKey) {
-                const supaStreakRes = await fetch(`${supabaseUrl}/rest/v1/streaks?user_id=eq.${userId}&select=current_streak`, {
-                    headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` },
-                    signal: AbortSignal.timeout(2000)
-                });
-                if (supaStreakRes.ok) {
-                    const streakRows = await supaStreakRes.json();
-                    if (streakRows?.length > 0 && typeof streakRows[0].current_streak === 'number') {
-                        streak = streakRows[0].current_streak;
-                    }
-                }
-            }
-        } catch {
-            // Keep bounded fallback
-        }
-        const badgesCount = Math.max(0, Math.min(100, parseInt(body.badges_count, 10) || 0));
+            [gamification, streakRows] = await Promise.all([
+                serviceRoleRequest(env, `gamification?user_id=eq.${userId}&select=xp,weekly_xp,unlocked_achievements`),
+                serviceRoleRequest(env, `streaks?user_id=eq.${userId}&select=current_streak`)
+            ]);
+        } catch { return jsonResponse({ success: false, error: 'Score verification unavailable' }, 503); }
+        const verified = gamification?.[0];
+        const xp = Math.max(0, Number(verified?.xp) || 0);
+        const weeklyXp = Math.max(0, Number(verified?.weekly_xp) || 0);
+        const level = Math.max(1, Math.floor(Math.sqrt(xp / 100)) + 1);
+        const streak = Math.max(0, Number(streakRows?.[0]?.current_streak) || 0);
+        const unlocked = verified?.unlocked_achievements;
+        const badgesCount = unlocked && typeof unlocked === 'object' ? Object.keys(unlocked).length : 0;
         const targetLang = ['ja', 'ko', 'zh', 'en'].includes(body.target_lang) ? body.target_lang : 'ja';
         const country = typeof body.country === 'string' ? body.country.slice(0, 8) : '';
         const avatar = typeof body.avatar === 'string' && body.avatar.startsWith('http') ? body.avatar.slice(0, 250) : '';
@@ -422,17 +413,6 @@ export async function onRequestPost(context) {
         const db = env.VOCAB_DB || env.DB;
         if (db) {
             try {
-                // Guard against massive unverified XP jumps in a single call
-                const existing = await db.prepare('SELECT xp FROM leaderboard WHERE user_id = ?').bind(userId).first();
-                const baselineXp = existing ? existing.xp : 0;
-                const maxAllowedIncrement = existing ? 10000 : 25000;
-                if (xp > baselineXp + maxAllowedIncrement) {
-                    return jsonResponse({
-                        success: false,
-                        error: 'XP increment exceeds single update threshold'
-                    }, 400);
-                }
-
                 try {
                     await db.prepare(`
                         INSERT INTO leaderboard (user_id, name, avatar, xp, weekly_xp, level, streak, badges_count, target_lang, country, updated_at)
@@ -440,8 +420,8 @@ export async function onRequestPost(context) {
                         ON CONFLICT(user_id) DO UPDATE SET
                           name = excluded.name,
                           avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
-                          xp = MAX(leaderboard.xp, excluded.xp),
-                          weekly_xp = MAX(leaderboard.weekly_xp, excluded.weekly_xp),
+                          xp = excluded.xp,
+                          weekly_xp = excluded.weekly_xp,
                           level = MAX(leaderboard.level, excluded.level),
                           streak = MAX(leaderboard.streak, excluded.streak),
                           badges_count = MAX(leaderboard.badges_count, excluded.badges_count),
@@ -457,7 +437,7 @@ export async function onRequestPost(context) {
                         ON CONFLICT(user_id) DO UPDATE SET
                           name = excluded.name,
                           avatar = COALESCE(NULLIF(excluded.avatar, ''), leaderboard.avatar),
-                          xp = MAX(leaderboard.xp, excluded.xp),
+                          xp = excluded.xp,
                           level = MAX(leaderboard.level, excluded.level),
                           streak = MAX(leaderboard.streak, excluded.streak),
                           badges_count = MAX(leaderboard.badges_count, excluded.badges_count),

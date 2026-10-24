@@ -135,3 +135,15 @@ For complete architectural guides, database schemas, and developer manuals, see 
 - Inspired by [Language Reactor](https://www.languagereactor.com/) and [LinguaCafe](https://github.com/simjanos-dev/LinguaCafe).
 - Dictionary data provided by [Jotoba](https://jotoba.de/), [Jisho.org](https://jisho.org/), [Mazii](https://mazii.net/), [Naver](https://dict.naver.com/), and [MDBG](https://www.mdbg.net/).
 - Speech AI powered by [Gladia](https://gladia.io/).
+
+Backend/service review and migration prerequisites: [2026-10-23 report](../voca_flutter/doc/backend-service-review-2026-10-23.md).
+
+The report now includes concrete service modules, durable refund/subscription/reminder recovery, migration order, prepared Vault/Cron configuration, and [controlled performance measurements](../voca_flutter/doc/backend-service-metrics-2026-10-23.json).
+
+Security follow-up (2026-10-23): anonymous-credit amounts are validated before mutation; refund recovery checks the persisted charge owner, amount and terminal state before confirmation. Shared Supabase XP-spending hardening is prepared at `../voca_flutter/supabase/migrations/20261023170000_secure_xp_spending.sql`; apply once to the shared project. See `../voca_flutter/doc/security-follow-up-2026-10-23.md` for tests and limits. Cloudflare functions were bundled locally; deployment remains with Gemini and the earlier private release snapshot is stale.
+
+## Backend reliability update (2026-10-24)
+
+The backend now persists Gladia callbacks before acknowledgement, identifies dictionary definition languages, and uses idempotent XP purchase operations. Schema migrations must precede the coordinated release.
+
+See [validation and migration handoff](../voca_flutter/doc/backend-implementation-2026-10-24.md).

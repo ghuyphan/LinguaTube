@@ -13,7 +13,7 @@ export function generateJobId() {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
         return 'job_' + crypto.randomUUID().replace(/-/g, '').slice(0, 16);
     }
-    return 'job_' + Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
+    throw new Error('Secure job ID generation unavailable');
 }
 
 // ============================================================================
@@ -44,8 +44,8 @@ export async function reserveAiJob(db, { videoId, language, userId = null, clien
         await db.prepare(`
             INSERT INTO ai_transcription_jobs (
                 id, video_id, language, user_id, client_id, user_tier,
-                diamonds_charged, status, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
+                diamonds_charged, charge_status, refund_status, status, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
         `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged).run();
 
         const newJob = await getAiJobById(db, id);
@@ -94,14 +94,9 @@ export async function activateAiJob(db, jobId, gladiaJobId) {
  */
 export async function getAiJobById(db, jobId) {
     if (!db || !jobId) return null;
-    try {
-        return await db.prepare(`
-            SELECT * FROM ai_transcription_jobs WHERE id = ?
-        `).bind(jobId).first();
-    } catch (err) {
-        console.error('[D1] getAiJobById error:', err.message);
-        return null;
-    }
+    return await db.prepare(`
+        SELECT * FROM ai_transcription_jobs WHERE id = ?
+    `).bind(jobId).first();
 }
 
 /**
@@ -112,7 +107,7 @@ export async function getAiJobById(db, jobId) {
  * @param {string} language
  * @returns {Promise<object | null>}
  */
-export async function getActiveAiJob(db, videoId, language, diamondService = null, env = null, context = null) {
+export async function getActiveAiJob(db, videoId, language, _diamondService = null, _env = null, _context = null) {
     if (!db || !videoId || !language) return null;
     const normLang = normalizeLanguageCode(language) || language;
     try {
@@ -126,15 +121,9 @@ export async function getActiveAiJob(db, videoId, language, diamondService = nul
 
         // Auto-expire zombie jobs older than 15 minutes (900 seconds)
         const nowSec = Math.floor(Date.now() / 1000);
-        if (job.created_at && (nowSec - job.created_at) > 900) {
+        if (job.created_at && (nowSec - job.created_at) > 900 && !(await db.prepare("SELECT id FROM gladia_callback_inbox WHERE job_id=? AND status='pending' LIMIT 1").bind(job.id).first()) && !(job.ingestion_lease_until > nowSec)) {
             console.warn(`[D1] Auto-expiring zombie job ${job.id} for video ${videoId} (age: ${nowSec - job.created_at}s)`);
-            const refundInfo = await atomicFailAndRefundAiJob(db, job.id, 'TIMEOUT_EXPIRED', 'Transcription job timed out after 15 minutes');
-            if (refundInfo?.shouldRefund && diamondService && env) {
-                const userObj = job.user_id ? { id: job.user_id } : null;
-                const charged = job.diamonds_charged || 1;
-                diamondService.refundDiamond(job.client_id, context, env, userObj, charged)
-                    .catch(e => console.error(`[D1] Failed to refund diamonds on zombie job ${job.id}:`, e.message));
-            }
+            await atomicFailAndRefundAiJob(db, job.id, 'TIMEOUT_EXPIRED', 'Transcription job timed out after 15 minutes');
             return null;
         }
 
@@ -151,31 +140,29 @@ export async function getActiveAiJob(db, videoId, language, diamondService = nul
  * @param {string} jobId
  * @param {string} [detectedLang]
  */
-export async function completeAiJob(db, jobId, detectedLang = null) {
+export async function completeAiJob(db, jobId, detectedLang = null, lease = null) {
     if (!db || !jobId) return;
-    try {
-        await db.prepare(`
-            UPDATE ai_transcription_jobs
-            SET status = 'completed',
-                detected_language = COALESCE(?, detected_language),
-                updated_at = strftime('%s', 'now'),
-                completed_at = strftime('%s', 'now')
-            WHERE id = ?
-        `).bind(detectedLang, jobId).run();
-    } catch (err) {
-        console.error('[D1] completeAiJob error:', err.message);
-    }
+    const result = await db.prepare(`
+        UPDATE ai_transcription_jobs
+        SET status = 'completed',
+            detected_language = COALESCE(?, detected_language),
+            updated_at = strftime('%s', 'now'),
+            completed_at = strftime('%s', 'now')
+        WHERE id = ? AND status IN ('queued','processing')
+          AND ((ingestion_lease IS NULL AND ? IS NULL) OR (ingestion_lease=? AND ingestion_lease_until>strftime('%s','now')))
+    `).bind(detectedLang, jobId, lease, lease).run();
+    return (result.meta?.changes ?? 0) > 0;
 }
 
 /**
- * Atomically mark job as failed and flag refund if not already refunded
+ * Atomically fail the job and persist refund intent; confirmation happens after the credit commits
  * @param {D1Database} db
  * @param {string} jobId
  * @param {string} errorCode
  * @param {string} errorMessage
  * @returns {Promise<{ shouldRefund: boolean, job: object | null }>}
  */
-export async function atomicFailAndRefundAiJob(db, jobId, errorCode = 'AI_FAILED', errorMessage = 'Transcription failed') {
+export async function atomicFailAndRefundAiJob(db, jobId, errorCode = 'AI_FAILED', errorMessage = 'Transcription failed', ingestionLease = null) {
     if (!db || !jobId) return { shouldRefund: false, job: null };
     try {
         const res = await db.prepare(`
@@ -185,34 +172,19 @@ export async function atomicFailAndRefundAiJob(db, jobId, errorCode = 'AI_FAILED
                 error_message = ?,
                 updated_at = strftime('%s', 'now'),
                 completed_at = strftime('%s', 'now'),
-                diamonds_refunded = 1
-            WHERE id = ? AND diamonds_refunded = 0
-        `).bind(errorCode, errorMessage, jobId).run();
+                refund_status = CASE WHEN refund_status = 'legacy' THEN 'legacy' ELSE 'pending' END
+            WHERE id = ? AND (diamonds_refunded = 0 OR refund_status = 'legacy') AND refund_status IN ('none','legacy') AND status <> 'completed'
+              AND (ingestion_lease_until IS NULL OR ingestion_lease_until<strftime('%s','now') OR ingestion_lease=?)
+        `).bind(errorCode, errorMessage, jobId, ingestionLease).run();
 
         const changes = res?.meta?.changes ?? (res?.changes || 0);
         const job = await getAiJobById(db, jobId);
         return {
-            shouldRefund: changes > 0,
+            shouldRefund: changes > 0 && job?.refund_status !== 'legacy',
             job
         };
     } catch (err) {
         console.error('[D1] atomicFailAndRefundAiJob error:', err.message);
-        return { shouldRefund: false, job: null };
-    }
-}
-
-/**
- * Delete job reservation (e.g. if Turnstile or payment validation aborts immediately)
- * @param {D1Database} db
- * @param {string} jobId
- */
-export async function deleteAiJob(db, jobId) {
-    if (!db || !jobId) return;
-    try {
-        await db.prepare(`
-            DELETE FROM ai_transcription_jobs WHERE id = ?
-        `).bind(jobId).run();
-    } catch (err) {
-        console.error('[D1] deleteAiJob error:', err.message);
+        throw err;
     }
 }

@@ -80,23 +80,8 @@ export async function createPayOsPaymentLink(env, params) {
     const apiKey = env.PAYOS_API_KEY;
     const checksumKey = env.PAYOS_CHECKSUM_KEY;
 
-    // If payOS credentials are not yet configured in environment, provide local mock for development
     if (!clientId || !apiKey || !checksumKey) {
-        console.warn('[payOS] Credentials not configured in env, using sandbox/mock payment link');
-        const mockQr = `https://img.vietqr.io/image/970422-0345678901-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(description)}&accountName=VOCA%20APP`;
-        return {
-            orderCode,
-            amount,
-            description,
-            accountNumber: '0345678901',
-            accountName: 'VOCA APP',
-            bin: '970422',
-            bankName: 'MBBank',
-            checkoutUrl: mockQr,
-            qrCode: mockQr,
-            status: 'PENDING',
-            isMock: true
-        };
+        throw new Error('payOS credentials are not configured');
     }
 
     // Build data for payOS signature
@@ -123,12 +108,13 @@ export async function createPayOsPaymentLink(env, params) {
             'x-client-id': clientId,
             'x-api-key': apiKey
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(10000),
+        redirect: 'error'
     });
 
     if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`payOS API error ${response.status}: ${errorText}`);
+        throw new Error(`payOS API error ${response.status}`);
     }
 
     const resData = await response.json();

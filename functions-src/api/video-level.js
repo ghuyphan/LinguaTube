@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
 
     // Rate limiting to prevent spamming
     const clientId = getClientIdentifier(request);
-    const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    const rateLimit = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateLimit.allowed) {
         return rateLimitResponse(rateLimit.resetAt);
     }

@@ -12,18 +12,43 @@
         <!-- Logo / Brand -->
         <div class="sidebar__brand" (click)="onLearnClick($event)" (keydown.enter)="onLearnClick($event)" (keydown.space)="onLearnClick($event)" role="button" tabindex="0" [attr.title]="brandTitle()" [attr.aria-label]="brandTitle()" style="cursor: pointer;">
             <div class="sidebar__logo" aria-hidden="true">
-                <svg class="logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo-fox" viewBox="127 127 770 770" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <path id="sidebar-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
+                        <clipPath id="sb-head-clip">
+                            <path d="M 292 222 A 219.5 158 0 0 1 731 222 A 219.5 204 0 0 1 292 222 Z" />
+                        </clipPath>
+                        <clipPath id="sb-left-ear-clip">
+                            <path d="M 328 336 C 319 375, 320 435, 333 484 C 337 496, 351 497, 362 488 C 392 467, 422 442, 446 415 L 430 336 Z" />
+                        </clipPath>
+                        <clipPath id="sb-right-ear-clip">
+                            <path d="M 695 336 C 704 375, 703 435, 690 484 C 686 496, 672 497, 661 488 C 631 467, 601 442, 577 415 L 593 336 Z" />
+                        </clipPath>
                     </defs>
-                    <g transform="translate(256, 256) scale(0.66)">
-                        <use href="#sidebar-kikyou-petal" transform="rotate(0)"/>
-                        <use href="#sidebar-kikyou-petal" transform="rotate(72)"/>
-                        <use href="#sidebar-kikyou-petal" transform="rotate(144)"/>
-                        <use href="#sidebar-kikyou-petal" transform="rotate(216)"/>
-                        <use href="#sidebar-kikyou-petal" transform="rotate(288)"/>
-                        <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
-                        <circle cx="0" cy="0" r="21" fill="#F45B74"/>
+                    <g transform="translate(512, 127) rotate(8 512 127) scale(1.35) translate(-512, -127)">
+                        <g clip-path="url(#sb-left-ear-clip)">
+                            <rect x="315" y="330" width="140" height="175" fill="#E76136" />
+                            <path d="M 315 392 L 352 421 L 390 439 L 425 447 L 425 500 L 315 500 Z" fill="#491A23" />
+                            <path d="M 354 363 C 345 395, 345 430, 352 457 C 353 462, 358 463, 363 459 C 382 444, 400 424, 416 405 C 396 391, 375 377, 354 363 Z" fill="#F7EFDA" />
+                        </g>
+                        <g clip-path="url(#sb-right-ear-clip)">
+                            <rect x="570" y="330" width="140" height="175" fill="#E76136" />
+                            <path d="M 708 392 L 671 421 L 633 439 L 598 447 L 598 500 L 708 500 Z" fill="#491A23" />
+                            <path d="M 669 363 C 678 395, 678 430, 671 457 C 670 462, 665 463, 660 459 C 641 444, 623 424, 607 405 C 627 391, 648 377, 669 363 Z" fill="#F7EFDA" />
+                        </g>
+                        <g clip-path="url(#sb-head-clip)">
+                            <rect x="285" y="120" width="455" height="315" fill="#E76136" />
+                            <path d="M 290 120 L 733 120 L 733 190 C 705 212, 668 223, 633 223 C 602 223, 578 209, 558 209 C 542 209, 528 218, 511.5 219 C 495 218, 481 209, 465 209 C 445 209, 421 223, 390 223 C 355 223, 318 212, 290 190 Z" fill="#F7EFDA" />
+                        </g>
+                        <ellipse cx="405" cy="190.5" rx="27" ry="18" fill="#F49C98" />
+                        <ellipse cx="618" cy="190.5" rx="27" ry="18" fill="#F49C98" />
+                        <circle cx="441" cy="242" r="14.5" fill="#4A1922" />
+                        <circle cx="582" cy="242" r="14.5" fill="#4A1922" />
+                        <circle cx="438" cy="245" r="4.5" fill="#FFFFFF" />
+                        <circle cx="579" cy="245" r="4.5" fill="#FFFFFF" />
+                        <g fill="#491A23">
+                            <rect x="508.5" y="179" width="6" height="22" rx="3" />
+                            <path d="M 511.5 195 C 516 195, 529 204, 529.5 212 C 530 217.5, 522 219.5, 511.5 219.5 C 501 219.5, 493 217.5, 493.5 212 C 494 204, 507 195, 511.5 195 Z" />
+                        </g>
                     </g>
                 </svg>
             </div>

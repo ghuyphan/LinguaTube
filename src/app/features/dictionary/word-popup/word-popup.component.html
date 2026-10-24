@@ -115,6 +115,8 @@
                 }
             </div>
 
+            @if (entry()?.definitionKind === 'fallback') { <p>{{ i18n.t('dictionary.fallbackDefinitions') }} ({{ entry()?.definitionLanguage }})</p> }
+            @if (entry()?.definitionKind === 'translated') { <p>{{ i18n.t('dictionary.translatedDefinitions') }}</p> }
             <div class="popup-meanings">
                 @for (meaning of entry()?.meanings; track $index) {
                 <div class="meaning-item" [style.animation-delay]="($index * 50) + 'ms'">

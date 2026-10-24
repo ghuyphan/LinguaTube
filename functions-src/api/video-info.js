@@ -41,7 +41,7 @@ export async function onRequestGet(context) {
 
     // Rate limiting to protect from outbound request flooding
     const clientId = getClientIdentifier(request);
-    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateLimit.allowed) {
         return rateLimitResponse(rateLimit.resetAt);
     }
@@ -235,7 +235,7 @@ export async function onRequestGet(context) {
 export async function onRequestPost(context) {
     const { request, env } = context;
     const clientId = getClientIdentifier(request);
-    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG);
+    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateLimit.allowed) {
         return rateLimitResponse(rateLimit.resetAt);
     }

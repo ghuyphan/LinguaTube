@@ -77,6 +77,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     }
 
     async createPlaylist(playlist: Playlist): Promise<void> {
+        const session = this.auth.captureSession();
         // 1. Optimistic Update (Local)
         const current = this.playlists();
         this.playlists.set([{ ...playlist, synced: false }, ...current]);
@@ -109,6 +110,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                     .from('playlists')
                     .upsert(payload, { onConflict: 'id' });
 
+                if (!this.auth.isCurrentSession(session)) return;
                 if (!error) {
                     // Mark as synced on success
                     const latest = this.playlists();
@@ -127,6 +129,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     }
 
     async updatePlaylist(id: string, changes: Partial<Playlist>): Promise<void> {
+        const session = this.auth.captureSession();
         // 1. Optimistic Update
         const current = this.playlists();
         const index = current.findIndex(p => p.id === id);
@@ -160,6 +163,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                     .update(payload)
                     .eq('id', id);
 
+                if (!this.auth.isCurrentSession(session)) return;
                 if (!error) {
                     const latest = this.playlists();
                     const latestIdx = latest.findIndex(p => p.id === id);
@@ -177,6 +181,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
     }
 
     async deletePlaylist(id: string): Promise<void> {
+        const session = this.auth.captureSession();
         // Record deletion tombstone to prevent zombie resurrection on sync
         this.addDeletionTombstone(id);
 
@@ -189,7 +194,9 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
         // 2. Remote Sync
         if (this.auth.isLoggedIn()) {
             try {
-                await this.supabase.client.from('playlists').delete().eq('id', id);
+                const { error } = await this.supabase.client.from('playlists').delete().eq('id', id);
+                if (error) throw error;
+                if (!this.auth.isCurrentSession(session)) return;
                 this.removeDeletionTombstone(id);
             } catch (error) {
                 console.warn('[PlaylistRepo] Failed to delete on server (offline):', error);
@@ -222,6 +229,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             return;
         }
 
+        const session = this.auth.captureSession();
         this.isSyncing = true;
         this.isLoading.set(true);
 
@@ -231,12 +239,15 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                 return;
             }
 
+            const isCurrent = () => this.auth.isCurrentSession(session);
             // 0. Process pending deletion tombstones
             const tombstones = this.getDeletionTombstones();
             if (tombstones.length > 0) {
                 for (const tId of tombstones) {
+                    if (!isCurrent()) return;
                     try {
                         const { error } = await this.supabase.client.from('playlists').delete().eq('id', tId);
+                        if (!isCurrent()) return;
                         if (!error) {
                             this.removeDeletionTombstone(tId);
                         } else {
@@ -251,6 +262,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
             // 1. Push unsynced local playlists
             const unsynced = this.playlists().filter(p => !p.synced);
             for (const p of unsynced) {
+                if (!isCurrent()) return;
                 try {
                     await this.supabase.client.from('playlists').upsert({
                         id: p.id,
@@ -285,6 +297,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                 return;
             }
 
+            if (!isCurrent()) return;
             const activeTombstones = new Set(this.getDeletionTombstones());
             const remotePlaylists = (owned || [])
                 .map(r => mapRecordToPlaylist(r as unknown as Record<string, unknown>))

@@ -403,20 +403,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         <div class="ios-install-sheet">
           <div class="ios-install-sheet__header">
             <div class="ios-install-sheet__icon">
-              <svg class="ios-install-logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <path id="ios-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
-                </defs>
-                <g transform="translate(256, 256) scale(0.66)">
-                  <use href="#ios-kikyou-petal" transform="rotate(0)"/>
-                  <use href="#ios-kikyou-petal" transform="rotate(72)"/>
-                  <use href="#ios-kikyou-petal" transform="rotate(144)"/>
-                  <use href="#ios-kikyou-petal" transform="rotate(216)"/>
-                  <use href="#ios-kikyou-petal" transform="rotate(288)"/>
-                  <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
-                  <circle cx="0" cy="0" r="21" fill="#F45B74"/>
-                </g>
-              </svg>
+              <img src="favicon.svg" alt="Voca" class="ios-install-logo-kikyou" />
             </div>
             <h3 class="ios-install-sheet__title">{{ i18n.t('pwa.iosGuideTitle') }}</h3>
             <p class="ios-install-sheet__desc">{{ i18n.t('pwa.installDesc') }}</p>
@@ -470,20 +457,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         <div class="update-sheet update-sheet--updating">
           <div class="update-sheet__logo-wrap">
             <div class="update-sheet__logo-box">
-              <svg class="update-sheet__logo-kikyou" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <path id="updating-kikyou-petal" d="M 0,-300 C 5.0,-295.1 18.55,-287.5 34.34,-280.8 C 69.0,-266.3 117.0,-227.9 108.65,-173.7 C 106.5,-166.2 105.2,-161.9 101.75,-155.7 L 23.37,-40.74 L 0,-25 L -23.37,-40.74 L -101.75,-155.7 C -105.2,-161.9 -106.5,-166.2 -108.65,-173.7 C -117.0,-227.9 -69.0,-266.3 -34.34,-280.8 C -18.55,-287.5 -5.0,-295.1 0,-300 Z" fill="#FFFDFB"/>
-                </defs>
-                <g transform="translate(256, 256) scale(0.66)">
-                  <use href="#updating-kikyou-petal" transform="rotate(0)"/>
-                  <use href="#updating-kikyou-petal" transform="rotate(72)"/>
-                  <use href="#updating-kikyou-petal" transform="rotate(144)"/>
-                  <use href="#updating-kikyou-petal" transform="rotate(216)"/>
-                  <use href="#updating-kikyou-petal" transform="rotate(288)"/>
-                  <circle cx="0" cy="0" r="50" fill="#FFFDFB" stroke="#F45B74" stroke-width="7"/>
-                  <circle cx="0" cy="0" r="21" fill="#F45B74"/>
-                </g>
-              </svg>
+              <img src="favicon.svg" alt="Voca" class="update-sheet__logo-kikyou" />
             </div>
             <div class="update-sheet__pulse-ring"></div>
           </div>
@@ -771,18 +745,19 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #FF7E93 0%, #F45B74 50%, #DF4360 100%);
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #BAE6FD 100%);
       border-radius: var(--border-radius-lg, 16px);
-      border: 1px solid rgba(255, 255, 255, 0.38);
-      box-shadow: 0 6px 20px rgba(232, 69, 98, 0.32), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.8);
       animation: crestFloat 3.2s ease-in-out infinite alternate;
       position: relative;
       z-index: 2;
+      overflow: hidden;
     }
 
     .update-sheet__logo-kikyou {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 100%;
+      height: 100%;
       display: block;
     }
 
@@ -1079,18 +1054,19 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       width: 3.5rem;
       height: 3.5rem;
       border-radius: var(--border-radius-md);
-      background: linear-gradient(135deg, #FF7E93 0%, #F45B74 50%, #DF4360 100%);
-      border: 1px solid rgba(255, 255, 255, 0.38);
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #BAE6FD 100%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto var(--space-sm);
-      box-shadow: 0 6px 18px rgba(232, 69, 98, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     }
 
     .ios-install-logo-kikyou {
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 100%;
+      height: 100%;
       display: block;
     }
 

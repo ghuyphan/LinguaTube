@@ -1,3 +1,4 @@
+import { sha256 } from '../../utils/utils.js';
 /**
  * Tokenization API (Cloudflare Function)
  * Single-text tokenization endpoint with optional caching
@@ -25,14 +26,6 @@ const MAX_MEM_TOKEN_CACHE = 500;
 /**
  * Simple hash function for cache keys (djb2 algorithm)
  */
-function hashText(text) {
-    let hash = 5381;
-    for (let i = 0; i < text.length; i++) {
-        hash = ((hash << 5) + hash) + text.charCodeAt(i);
-        hash = hash >>> 0;
-    }
-    return hash.toString(36);
-}
 
 export async function onRequest(context) {
     const { request, params, env } = context;
@@ -66,7 +59,7 @@ export async function onRequest(context) {
         }
 
         // 1. Check in-memory cache (0 KV ops, < 0.1ms)
-        const cacheKey = `tokens:${lang}:${hashText(text)}`;
+        const cacheKey = `tokens:v6:${lang}:${await sha256(JSON.stringify(text))}`;
         const memHit = memTokenSingleCache.get(cacheKey);
         if (memHit) {
             return jsonResponse(memHit, 200, {
@@ -98,7 +91,7 @@ export async function onRequest(context) {
         // Cache MISS: Rate limiting (Atomic)
         const authResult = await validateAuthToken(request, env);
         const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, RATE_LIMIT_CONFIG);
+        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, RATE_LIMIT_CONFIG, context);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }

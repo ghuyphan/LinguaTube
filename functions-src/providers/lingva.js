@@ -1,216 +1,56 @@
-/**
- * Shared Lingva Translate Utilities
- * Manages Lingva instances and provides translation functions
- * 
- * Improvements over original:
- * - Exponential backoff on 429 responses
- * - Per-instance cooldown tracking (avoids hammering rate-limited instances)
- * - Staggered delays between requests to reduce burst pressure
- */
+import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 
-const LINGVA_INSTANCES = [
-    'https://lingva.ml',
-    'https://lingva.lunar.icu',
-    'https://translate.plausibility.cloud'
-];
-
-const INSTANCE_TIMEOUT_MS = 2000;
-
-// In-memory health tracking for instances (per worker instance)
+const LINGVA_INSTANCES = ['https://lingva.ml', 'https://lingva.lunar.icu', 'https://translate.plausibility.cloud'];
 const instanceHealth = new Map();
-const HEALTH_RESET_TIME = 5 * 60 * 1000;    // Reset health after 5 minutes
-const RATE_LIMIT_COOLDOWN = 60 * 1000;       // 60s cooldown after a 429
 
-/**
- * Fast direct Google Translate GTX translator (~100-250ms)
- * Uses lightweight Mozilla/5.0 header (avoids bot fingerprinting) and handles 414 fallback
- */
-async function translateWithGtx(text, source, target) {
-    if (!text?.trim()) return '';
-    if (source === target) return text;
-
-    const clients = ['gtx', 'dict-chrome-ex'];
-    for (const client of clients) {
-        try {
-            // Primary: GET is standard for Google GTX
-            const gtxUrl = `https://translate.googleapis.com/translate_a/single?client=${client}&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(text)}`;
-            const gtxRes = await fetch(gtxUrl, {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0',
-                    'Accept': '*/*'
-                },
-                signal: AbortSignal.timeout(3500)
-            });
-
-            if (gtxRes.ok) {
-                const data = await gtxRes.json();
-                if (Array.isArray(data?.[0])) {
-                    const translated = data[0].map(item => item?.[0] || '').join('');
-                    if (translated) return translated;
-                }
-            } else if (gtxRes.status === 414) {
-                // URI too long for GET: fall back to POST
-                const body = new URLSearchParams({ client, sl: source, tl: target, dt: 't', q: text });
-                const postRes = await fetch('https://translate.googleapis.com/translate_a/single', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'User-Agent': 'Mozilla/5.0'
-                    },
-                    body: body.toString(),
-                    signal: AbortSignal.timeout(3500)
-                });
-                if (postRes.ok) {
-                    const data = await postRes.json();
-                    if (Array.isArray(data?.[0])) {
-                        const translated = data[0].map(item => item?.[0] || '').join('');
-                        if (translated) return translated;
-                    }
-                }
-            } else {
-                console.warn(`[Translate] Google ${client} returned HTTP ${gtxRes.status}`);
-            }
-        } catch (e) {
-            console.warn(`[Translate] Google ${client} primary failed:`, e?.message || e);
-        }
+async function fetchTranslationJson(url, init, options, timeout = 3500) {
+    if (Date.now() >= options.deadline || options.signal?.aborted) throw new Error('Translation budget exhausted');
+    const signal = requestSignal(options.deadline, timeout, options.signal);
+    const response = await fetch(url, { ...init, signal, redirect: 'error' });
+    if (!response.ok) {
+        void response.body?.cancel().catch(() => {});
+        const error = new Error(`Translation HTTP ${response.status}`); error.status = response.status; throw error;
     }
-    return null;
+    return JSON.parse(new TextDecoder().decode(await readBoundedBody(response, signal, 1024 * 1024)));
 }
 
-/**
- * Free secondary fallback via MyMemory API (~200-400ms)
- * With authenticated developer email (de=) to unlock 10,000 words/day without datacenter IP blocks
- */
-async function translateWithMyMemory(text, source, target) {
+/** One provider order and time budget for dictionary and subtitle callers. */
+export async function translateText(text, source, target, { deadline = Date.now() + 20000, signal } = {}) {
     if (!text?.trim()) return '';
     if (source === target) return text;
+    const options = { deadline, signal };
+    const headers = { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' };
+    for (const client of ['gtx', 'dict-chrome-ex']) {
+        try {
+            const query = new URLSearchParams({ client, sl: source, tl: target, dt: 't', q: text });
+            const url = 'https://translate.googleapis.com/translate_a/single';
+            let data;
+            const post = () => fetchTranslationJson(url, { method: 'POST', headers, body: query }, options);
+            if (query.toString().length > 6000) data = await post();
+            else {
+                try { data = await fetchTranslationJson(`${url}?${query}`, { headers }, options); }
+                catch (error) { if (error.status !== 414) throw error; data = await post(); }
+            }
+            const value = Array.isArray(data?.[0]) ? data[0].map(item => item?.[0] || '').join('') : '';
+            if (value) return value;
+        } catch { /* Try the next provider within the same budget. */ }
+    }
     try {
-        const src = source === 'auto' ? '' : source;
-        const pair = src ? `${src}|${target}` : target;
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${encodeURIComponent(pair)}&de=admin@voca.study`;
-        const res = await fetch(url, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0',
-                'Accept': 'application/json'
-            },
-            signal: AbortSignal.timeout(3500)
-        });
-        if (res.ok) {
-            const data = await res.json();
-            const translated = data?.responseData?.translatedText;
-            if (translated && typeof translated === 'string' && !translated.startsWith('MYMEMORY WARNING:')) {
-                return translated;
-            }
-        } else {
-            console.warn(`[Translate] MyMemory returned HTTP ${res.status}`);
-        }
-    } catch (e) {
-        console.warn('[Translate] MyMemory fallback failed:', e?.message || e);
-    }
-    return null;
-}
-
-/**
- * Get instances sorted by health (healthy first), excluding rate-limited ones
- */
-function getSortedInstances() {
-    const now = Date.now();
-
-    return [...LINGVA_INSTANCES]
-        .filter(instance => {
-            const health = instanceHealth.get(instance);
-            // Skip instances in rate-limit cooldown
-            if (health?.rateLimitedUntil && now < health.rateLimitedUntil) {
-                return false;
-            }
-            return true;
-        })
-        .sort((a, b) => {
-            const healthA = instanceHealth.get(a) || { failures: 0, lastFailure: 0 };
-            const healthB = instanceHealth.get(b) || { failures: 0, lastFailure: 0 };
-
-            const failuresA = (now - healthA.lastFailure > HEALTH_RESET_TIME) ? 0 : healthA.failures;
-            const failuresB = (now - healthB.lastFailure > HEALTH_RESET_TIME) ? 0 : healthB.failures;
-
-            return failuresA - failuresB;
-        });
-}
-
-/**
- * Record instance failure
- */
-function recordFailure(instance, statusCode) {
-    const current = instanceHealth.get(instance) || { failures: 0, lastFailure: 0 };
-    const update = {
-        failures: current.failures + 1,
-        lastFailure: Date.now()
-    };
-
-    // If 429, apply a cooldown so we stop hitting this instance for a while
-    if (statusCode === 429) {
-        // Exponential cooldown: 60s, 120s, 240s... capped at 5 min
-        const backoffMultiplier = Math.min(Math.pow(2, current.failures), 5);
-        update.rateLimitedUntil = Date.now() + (RATE_LIMIT_COOLDOWN * backoffMultiplier);
-    }
-
-    instanceHealth.set(instance, update);
-}
-
-/**
- * Record instance success (reset health)
- */
-function recordSuccess(instance) {
-    instanceHealth.delete(instance);
-}
-
-/**
- * Translate a single text using Google GTX with Lingva fallback
- */
-export async function translateText(text, source, target) {
-    if (!text?.trim()) return '';
-    if (source === target) return text;
-
-    // 1. Primary: Ultra-fast Google Translate GTX (~100-250ms)
-    const gtxResult = await translateWithGtx(text, source, target);
-    if (gtxResult) return gtxResult;
-
-    // 2. Secondary fallback: High-availability MyMemory API (~200-400ms)
-    const myMemoryResult = await translateWithMyMemory(text, source, target);
-    if (myMemoryResult) return myMemoryResult;
-
-    // 3. Tertiary fallback: Available Lingva instances
-    const availableInstances = getSortedInstances();
-
-    for (const instance of availableInstances) {
-        const url = `${instance}/api/v1/${source}/${target}/${encodeURIComponent(text)}`;
+        const pair = source === 'auto' ? target : `${source}|${target}`;
+        const data = await fetchTranslationJson(`https://api.mymemory.translated.net/get?${new URLSearchParams({ q: text, langpair: pair, de: 'admin@voca.study' })}`, { headers }, options);
+        const value = data?.responseData?.translatedText;
+        if (data?.responseStatus === 200 && typeof value === 'string' && value && !value.startsWith('MYMEMORY WARNING:')) return value;
+    } catch { /* Continue with healthy Lingva instances. */ }
+    for (const instance of LINGVA_INSTANCES) {
+        if ((instanceHealth.get(instance) || 0) > Date.now()) continue;
         try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-                },
-                signal: AbortSignal.timeout(INSTANCE_TIMEOUT_MS)
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                recordSuccess(instance);
-                return data.translation || '';
-            } else {
-                try { await response.text(); } catch { }
-                recordFailure(instance, response.status);
-            }
-        } catch {
-            recordFailure(instance, 0);
-        }
+            const data = await fetchTranslationJson(`${instance}/api/v1/${source}/${target}/${encodeURIComponent(text)}`, { headers }, options, 2000);
+            if (typeof data.translation === 'string' && data.translation) { instanceHealth.delete(instance); return data.translation; }
+        } catch { instanceHealth.set(instance, Date.now() + 60000); }
     }
-
     return null;
 }
 
-/**
- * Encode an array of texts with XML index tags to preserve segment boundaries
- */
 export function encodeTaggedTexts(texts) {
     return texts.map((text, idx) => {
         const clean = (text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -243,212 +83,59 @@ export function decodeTaggedTranslations(translatedText, expectedCount) {
     return map;
 }
 
-/**
- * Translate multiple texts in parallel with concurrency limiting,
- * tagged XML boundary protection, and targeted recovery.
- * 
- * @param {string[]} texts
- * @param {string} source
- * @param {string} target
- * @returns {Promise<string[]>}
- */
-export async function translateBatch(texts, source, target) {
-    if (!texts || texts.length === 0) return [];
-
-    const MAX_CHUNK_LENGTH = 1500;
-
-    // 1. Group texts into length-safe chunks to drastically minimize API calls
-    const chunksData = [];
-    let currTexts = [];
-    let currIndices = [];
-    let currLen = 0;
-
-    for (let i = 0; i < texts.length; i++) {
-        const text = texts[i];
-        if (!text || !text.trim()) continue;
-
-        const trimmedText = text.trim();
-        const tagOverhead = 20; // approximate <t id="NN">...</t>\n
-        if (currLen + trimmedText.length + tagOverhead > MAX_CHUNK_LENGTH && currTexts.length > 0) {
-            chunksData.push({ texts: currTexts, indices: currIndices });
-            currTexts = [];
-            currIndices = [];
-            currLen = 0;
-        }
-
-        currTexts.push(trimmedText);
-        currIndices.push(i);
-        currLen += trimmedText.length + tagOverhead;
-    }
-
-    if (currTexts.length > 0) {
-        chunksData.push({ texts: currTexts, indices: currIndices });
-    }
-
-    const CONCURRENCY_LIMIT = 2;
-    const STAGGER_DELAY_MS = 200;
-    const results = new Array(texts.length).fill(null);
-
-    // Pre-fill empty slots with original text
-    texts.forEach((text, i) => {
-        if (!text || !text.trim()) {
-            results[i] = text;
-        }
+/** Preserve positional results, with two chunk workers and five shared recovery slots. */
+export async function translateBatch(texts, source, target, { deadline = Date.now() + 20000, signal } = {}) {
+    if (!texts?.length) return [];
+    if (source === target) return [...texts];
+    const options = { deadline, signal };
+    const results = texts.map(text => text?.trim() ? null : text);
+    const chunks = [];
+    let chunk = [], size = 0;
+    texts.forEach((text, index) => {
+        if (!text?.trim()) return;
+        const length = text.trim().length + 20;
+        if (size + length > 1500 && chunk.length) { chunks.push(chunk); chunk = []; size = 0; }
+        chunk.push({ text: text.trim(), index }); size += length;
     });
-
-    const worker = async () => {
-        while (chunksData.length > 0) {
-            const chunk = chunksData.shift();
-            if (!chunk) break;
-
+    if (chunk.length) chunks.push(chunk);
+    let active = 0;
+    const waiting = [];
+    const recover = async indices => {
+        await Promise.all(indices.map(async item => {
+            if (active >= 5) await new Promise(resolve => waiting.push(resolve));
+            else active++;
             try {
-                // Encode chunk with tags
-                const taggedInput = encodeTaggedTexts(chunk.texts);
-                const translated = await translateText(taggedInput, source, target);
-
-                if (translated) {
-                    const tagMap = decodeTaggedTranslations(translated, chunk.texts.length);
-
-                    // Check if all items in the chunk were successfully extracted
-                    for (let j = 0; j < chunk.texts.length; j++) {
-                        if (tagMap.has(j)) {
-                            results[chunk.indices[j]] = tagMap.get(j);
-                        }
-                    }
-
-                    // For any missing items (rare tag corruption), only recover the missing ones
-                    const missingIndices = [];
-                    for (let j = 0; j < chunk.texts.length; j++) {
-                        if (!tagMap.has(j)) {
-                            missingIndices.push(j);
-                        }
-                    }
-
-                    if (missingIndices.length > 0) {
-                        // Attempt fallback split by newlines if all tags were stripped
-                        const lines = translated.split(/\n+/).map(l => l.trim()).filter(Boolean);
-                        if (lines.length === chunk.texts.length) {
-                            for (let j = 0; j < chunk.texts.length; j++) {
-                                if (!results[chunk.indices[j]]) {
-                                    results[chunk.indices[j]] = lines[j];
-                                }
-                            }
-                        } else {
-                            // Targeted fallback: request missing items in bounded batches of 5 to prevent timeouts
-                            const FALLBACK_BATCH = 5;
-                            for (let m = 0; m < missingIndices.length; m += FALLBACK_BATCH) {
-                                const slice = missingIndices.slice(m, m + FALLBACK_BATCH);
-                                await Promise.all(slice.map(async (missingIdx) => {
-                                    try {
-                                        const singleRes = await translateText(
-                                            chunk.texts[missingIdx],
-                                            source,
-                                            target
-                                        );
-                                        results[chunk.indices[missingIdx]] = singleRes || (source === target ? chunk.texts[missingIdx] : null);
-                                    } catch {
-                                        results[chunk.indices[missingIdx]] = source === target ? chunk.texts[missingIdx] : null;
-                                    }
-                                }));
-                            }
-                        }
-                    }
-                } else {
-                    // Tagged request returned null: recover chunk items individually
-                    const FALLBACK_BATCH = 5;
-                    for (let j = 0; j < chunk.texts.length; j += FALLBACK_BATCH) {
-                        const slice = chunk.texts.slice(j, j + FALLBACK_BATCH);
-                        await Promise.all(slice.map(async (text, offset) => {
-                            const idx = j + offset;
-                            try {
-                                const singleRes = await translateText(text, source, target);
-                                results[chunk.indices[idx]] = singleRes || (source === target ? text : null);
-                            } catch {
-                                results[chunk.indices[idx]] = source === target ? text : null;
-                            }
-                        }));
-                    }
-                }
-            } catch (error) {
-                console.warn(`[Lingva] Tagged batch chunk failed: ${error.message}`);
-                // Fallback: recover individual items for this failed chunk in bounded batches of 5
-                const FALLBACK_BATCH = 5;
-                for (let j = 0; j < chunk.texts.length; j += FALLBACK_BATCH) {
-                    const slice = chunk.texts.slice(j, j + FALLBACK_BATCH);
-                    await Promise.all(slice.map(async (text, offset) => {
-                        const idx = j + offset;
-                        try {
-                            const singleRes = await translateText(text, source, target);
-                            results[chunk.indices[idx]] = singleRes || (source === target ? text : null);
-                        } catch {
-                            results[chunk.indices[idx]] = source === target ? text : null;
-                        }
-                    }));
-                }
+                if (Date.now() < deadline && !signal?.aborted) results[item.index] = await translateText(item.text, source, target, options);
+            } finally {
+                const next = waiting.shift();
+                if (next) next(); else active--;
             }
-
-            if (chunksData.length > 0) {
-                await new Promise(r => setTimeout(r, STAGGER_DELAY_MS));
-            }
+        }));
+    };
+    const worker = async () => {
+        while (chunks.length && Date.now() < deadline && !signal?.aborted) {
+            const items = chunks.shift();
+            const translated = await translateText(encodeTaggedTexts(items.map(item => item.text)), source, target, options);
+            const decoded = decodeTaggedTranslations(translated, items.length);
+            const lines = translated?.split(/\n+/).map(line => line.trim()).filter(Boolean) || [];
+            items.forEach((item, index) => {
+                results[item.index] = decoded.get(index) || (decoded.size === 0 && lines.length === items.length ? lines[index] : null);
+            });
+            await recover(items.filter(item => !results[item.index]));
         }
     };
-
-    const activeWorkers = Array.from(
-        { length: Math.min(CONCURRENCY_LIMIT, chunksData.length) },
-        () => worker()
-    );
-
-    await Promise.all(activeWorkers);
+    await Promise.all(Array.from({ length: Math.min(2, chunks.length) }, worker));
     return results;
 }
 
-// ============================================================================
-// TranslationProvider Class (used by DictionaryService)
-// ============================================================================
-
-const TRANSLATION_TIMEOUT_MS = 4000;
-
 export class TranslationProvider {
-    /**
-     * Translate dictionary entries to target language
-     * Uses the shared translateText function with instance health tracking
-     */
-    async translateEntries(entries, targetLang) {
-        if (!entries?.length) return [];
-
-        const limitedEntries = entries.slice(0, 2);
-        const translationTasks = [];
-
-        limitedEntries.forEach((entry, entryIdx) => {
-            entry.definitions.slice(0, 2).forEach((def, defIdx) => {
-                translationTasks.push({ entryIdx, defIdx, text: def });
-            });
-        });
-
-        if (translationTasks.length === 0) return [];
-
-        // Use the shared translateText which has instance health tracking
-        const translationPromises = translationTasks.map(task =>
-            translateText(task.text, 'en', targetLang).catch(() => null)
-        );
-
-        const translations = await Promise.race([
-            Promise.all(translationPromises),
-            new Promise(resolve => setTimeout(() => resolve(translationTasks.map(() => null)), TRANSLATION_TIMEOUT_MS))
-        ]);
-
-        const result = limitedEntries.map(entry => ({
-            ...entry,
-            definitions: []
-        }));
-
-        translationTasks.forEach((task, i) => {
-            const translated = translations[i];
-            if (translated) {
-                result[task.entryIdx].definitions.push(translated);
-            }
-        });
-
-        return result.filter(e => e.definitions.length > 0);
+    async translateEntries(entries, targetLang, { deadline = Date.now() + 4000, signal, sourceLang = 'en' } = {}) {
+        const selected = entries;
+        const tasks = selected.flatMap((entry, entryIndex) => entry.definitions.map(text => ({ entryIndex, text })));
+        const translated = await translateBatch(tasks.map(task => task.text), sourceLang, targetLang, { deadline, signal });
+        const result = selected.map(entry => ({ ...entry, definitions: [] }));
+        tasks.forEach((task, index) => { if (translated[index]) result[task.entryIndex].definitions.push(translated[index]); });
+        // Never drop meanings or entries silently when a definition translation is partial.
+        return translated.every(value => typeof value === 'string' && value.trim()) ? result : [];
     }
 }

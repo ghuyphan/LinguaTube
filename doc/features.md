@@ -953,3 +953,11 @@ To eliminate generic setup fatigue and immerse language learners directly into V
 
 
 
+
+## Backend reliability update (2026-10-24)
+
+Dictionary definitions now distinguish translated and fallback content; Japanese examples retain base text without escaped ruby markup, and unavailable vocabulary difficulty stays absent. Primary exact Naver headwords precede secondary homonyms without dropping alternate senses.
+
+Authenticated freeze purchases reuse their operation identity after interruption, and success is shown after server confirmation. Signed-in bonus grants require server authority rather than direct streak writes.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).

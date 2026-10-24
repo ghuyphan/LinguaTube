@@ -1,3 +1,5 @@
+import { ingestGladiaJob } from './gladia-recovery.js';
+import { recoverJobRefund } from './refund-recovery.js';
 /**
  * Service for orchestrating Transcripts (AI & Native)
  */
@@ -16,9 +18,7 @@ import {
     activateAiJob,
     getAiJobById,
     getActiveAiJob,
-    completeAiJob,
-    atomicFailAndRefundAiJob,
-    deleteAiJob
+    atomicFailAndRefundAiJob
 } from '../data/transcript-db.js';
 
 import {
@@ -209,7 +209,7 @@ export class TranscriptService {
         const db = context.db || context.env?.VOCAB_DB;
         const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
         const env = context.env || {};
-        const { videoId, lang, body, clientId, user, diamondInfo, availableLanguages } = params;
+        const { videoId, lang, clientId, user, diamondInfo, availableLanguages } = params;
 
         // 1. Validate video length against user tier limit (server-authoritative: D1 first, then YouTube scraping)
         let duration = await getVideoDuration(db, videoId);
@@ -222,10 +222,6 @@ export class TranscriptService {
             if (duration && db && context.waitUntil) {
                 context.waitUntil(saveVideoLanguages(db, videoId, [], duration).catch(() => {}));
             }
-        }
-        if (body?.duration || params?.duration) {
-            const clientDuration = body?.duration || params?.duration;
-            duration = Math.max(duration || 0, clientDuration);
         }
 
         const tier = params.tier || this.diamondService.resolveTier(user);
@@ -255,6 +251,12 @@ export class TranscriptService {
             };
         }
 
+        // Provider spending must never be authorized using a caller-supplied duration.
+        if (!Number.isFinite(duration) || duration <= 0) {
+            throw new Error('VIDEO_DURATION_UNAVAILABLE: Unable to verify video length. Please retry.');
+        }
+
+
         // 3. Scaled diamond cost based on video length
         let requiredDiamonds = params.requiredDiamonds || 1;
         if (duration) {
@@ -269,11 +271,12 @@ export class TranscriptService {
 
         // 4. Check for active job in D1 (unless forceRefresh is explicitly requested)
         if (params.forceRefresh) {
-            // User requested a fresh generation/retry: clear any stale/zombie active job from D1
+            // Preserve the previous charge and refund history when starting a replacement.
             const existing = await getActiveAiJob(db, videoId, normalizedLang);
             if (existing) {
                 console.warn(`[startAIJob] forceRefresh requested for ${videoId}:${normalizedLang}. Superseding existing active job ${existing.id}`);
-                await deleteAiJob(db, existing.id);
+                await atomicFailAndRefundAiJob(db, existing.id, 'SUPERSEDED', 'Replaced by a fresh transcription request');
+                await recoverJobRefund(env, existing.id);
             }
         } else {
             const activeJob = await getActiveAiJob(db, videoId, normalizedLang, this.diamondService, env, context);
@@ -313,15 +316,18 @@ export class TranscriptService {
         const jobId = reservation.job.id;
 
         // 6. Consume diamond(s) with correct parameter order: (clientId, cost, user, env, context)
-        const consumeResult = await this.diamondService.consumeDiamond(clientId, requiredDiamonds, user, env, context);
+        const consumeResult = await this.diamondService.consumeDiamond(clientId, requiredDiamonds, user, env, context, jobId);
         if (!consumeResult.success) {
             // Mark the reservation row as failed so concurrent waiters are notified cleanly
             await atomicFailAndRefundAiJob(db, jobId, null, consumeResult.reason || 'insufficient_diamonds');
+            if (env.VOCAB_DB) await recoverJobRefund(env, jobId);
             if (consumeResult.reason === 'insufficient_diamonds') {
                 throw new Error(`INSUFFICIENT_DIAMONDS: Requires ${consumeResult.requiredDiamonds} AI diamonds (you have ${consumeResult.diamonds}).`);
             }
             throw new Error('NO_DIAMONDS: No diamonds remaining for AI transcription.');
         }
+
+        await db.prepare("UPDATE ai_transcription_jobs SET charge_status='confirmed' WHERE id=?").bind(jobId).run();
 
         const updatedDiamondInfo = {
             diamonds: consumeResult.diamonds,
@@ -342,7 +348,7 @@ export class TranscriptService {
         } catch (gladiaError) {
             // Mark job failed and refund consumed diamond on submission failure
             await atomicFailAndRefundAiJob(db, jobId, null, gladiaError.message || 'gladia_submission_failed');
-            await this.diamondService.refundDiamond(clientId, context, env, user, requiredDiamonds);
+            if (env.VOCAB_DB) await recoverJobRefund(env, jobId);
             throw gladiaError;
         }
 
@@ -368,9 +374,8 @@ export class TranscriptService {
     async pollAiJobStatus(context, params) {
         const db = context.db || context.env?.VOCAB_DB;
         const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
-        const waitUntil = context.waitUntil;
-        const env = context.env || {};
-        const { jobId, videoId, availableLanguages, diamondInfo, user, clientId } = params;
+        const env = { ...context.env, VOCAB_DB: db, TRANSCRIPT_STORAGE: r2 };
+        const { jobId, videoId, availableLanguages, diamondInfo } = params;
 
         if (!jobId) {
             return { status: 'error', error: 'Missing jobId for status check' };
@@ -446,88 +451,15 @@ export class TranscriptService {
 
         if (jobAge > 15 && job.gladia_job_id && env.GLADIA_API_KEY) {
             try {
-                const statusCheck = await this.gladiaProvider.checkJobStatusById(job.gladia_job_id);
-
-                if (statusCheck.status === 'done') {
-                    const rawSegments = extractGladiaSegments(statusCheck);
-                    const cleanedSegments = cleanTranscriptSegments(rawSegments);
-                    const detectedLang = extractGladiaDetectedLanguage(statusCheck, job.language);
-                    const selfHealMismatch = normalizeLanguageCode(detectedLang) !== normalizeLanguageCode(job.language);
-
-                    if (cleanedSegments.length > 0) {
-                        const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
-                        const saved = await saveTranscriptToR2(r2, targetVideoId, detectedLang, enrichedSegments, 'ai');
-                        if (!saved && r2) {
-                            console.error(`[TranscriptService] Failed to persist transcript to R2 for ${targetVideoId}`);
-                            return {
-                                status: 'processing',
-                                videoInfo: {
-                                    videoId: targetVideoId,
-                                    jobId,
-                                    message: 'Transcribed speech successfully, persisting to storage...'
-                                }
-                            };
-                        }
-                        await completeAiJob(db, jobId, detectedLang);
-                        if (db) {
-                            let aiDur = null;
-                            if (enrichedSegments.length > 0) {
-                                const last = enrichedSegments[enrichedSegments.length - 1];
-                                const inferred = Math.round((last.start || 0) + (last.duration || 0));
-                                if (inferred > 0) aiDur = inferred;
-                            }
-                            const estimatedLevel = estimateTranscriptLevel(enrichedSegments, detectedLang);
-                            const levelsObj = estimatedLevel ? { [detectedLang]: estimatedLevel } : null;
-                            const bgOps = [
-                                addSubLanguage(db, targetVideoId, detectedLang),
-                                saveVideoLanguages(db, targetVideoId, [detectedLang, job.language], aiDur, null, null, false, levelsObj, null, [detectedLang])
-                            ];
-                            if (waitUntil) waitUntil(Promise.allSettled(bgOps));
-                            else await Promise.allSettled(bgOps);
-                        }
-
-                        return {
-                            status: 'done',
-                            videoInfo: {
-                                videoId: targetVideoId,
-                                language: detectedLang,
-                                requestedLanguage: job.language,
-                                languageMismatch: selfHealMismatch,
-                                segments: enrichedSegments,
-                                source: 'ai',
-                                sourceDetail: 'gladia',
-                                availableLanguages,
-                                subLanguages: [detectedLang]
-                            }
-                        };
-                    } else {
-                        // Empty speech
-                        const refundResult = await atomicFailAndRefundAiJob(db, jobId, 'NO_SPEECH_DETECTED', 'Audio contains no detectable speech');
-                        if (refundResult.shouldRefund && this.diamondService) {
-                            const refundPromise = this.diamondService.refundDiamond(job.client_id || clientId, context, env, user, job.diamonds_charged);
-                            if (waitUntil) waitUntil(refundPromise.catch(() => {}));
-                            else await refundPromise.catch(() => {});
-                        }
-                        return {
-                            status: 'error',
-                            errorCode: 'NO_SPEECH_DETECTED',
-                            error: 'Audio contains no detectable speech'
-                        };
+                const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider);
+                if (outcome?.status === 'error') return outcome;
+                if (outcome?.status === 'done') return {
+                    status: 'done', videoInfo: {
+                        videoId: targetVideoId, language: outcome.language, requestedLanguage: job.language,
+                        languageMismatch: normalizeLanguageCode(outcome.language) !== normalizeLanguageCode(job.language),
+                        segments: outcome.segments, source: 'ai', sourceDetail: 'gladia', availableLanguages, subLanguages: [outcome.language]
                     }
-                } else if (statusCheck.status === 'error') {
-                    const errMsg = statusCheck.error_message || 'Gladia transcription failed';
-                    const refundResult = await atomicFailAndRefundAiJob(db, jobId, 'GLADIA_ERROR', errMsg);
-                    if (refundResult.shouldRefund && this.diamondService) {
-                        const refundPromise = this.diamondService.refundDiamond(job.client_id || clientId, context, env, user, job.diamonds_charged);
-                        if (waitUntil) waitUntil(refundPromise.catch(() => {}));
-                        else await refundPromise.catch(() => {});
-                    }
-                    return {
-                        status: 'error',
-                        errorCode: 'AI_JOB_FAILED',
-                        error: errMsg
-                    };
-                }
+                };
             } catch (healErr) {
                 console.warn('[TranscriptService] Self-healing poll check warning:', healErr.message);
             }
@@ -555,10 +487,15 @@ export class TranscriptService {
             return { status: 'error', error: 'Missing jobId or resultUrl' };
         }
 
-        const { db, r2, waitUntil } = context;
-        let { videoId, lang, availableLanguages, diamondInfo } = params;
+        const { db } = context;
+        const { videoId, lang, availableLanguages, diamondInfo } = params;
 
         try {
+            // Resolve legacy URLs to the durable job when possible. Unknown legacy
+            // results remain readable but cannot publish over a tracked transcript.
+            const providerId = new URL(resultUrl).pathname.split('/').pop();
+            const tracked = await db?.prepare('SELECT id FROM ai_transcription_jobs WHERE gladia_job_id=? LIMIT 1').bind(providerId).first();
+            if (tracked) return this.pollAiJobStatus(context, { ...params, jobId: tracked.id });
             const resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
             if (resultData.status === 'done') {
                 const rawSegments = extractGladiaSegments(resultData);
@@ -567,35 +504,6 @@ export class TranscriptService {
 
                 if (videoId && cleanedSegments.length > 0) {
                     const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
-                    const saved = await saveTranscriptToR2(r2, videoId, detectedLang, enrichedSegments, 'ai');
-                    if (!saved && r2) {
-                        console.error(`[TranscriptService] Failed to persist transcript to R2 for ${videoId}`);
-                        return {
-                            status: 'processing',
-                            videoInfo: {
-                                videoId,
-                                resultUrl,
-                                message: 'Transcribed speech successfully, persisting to storage...'
-                            }
-                        };
-                    }
-                    if (db) {
-                        let aiDur = null;
-                        if (enrichedSegments.length > 0) {
-                            const last = enrichedSegments[enrichedSegments.length - 1];
-                            const inferred = Math.round((last.start || 0) + (last.duration || 0));
-                            if (inferred > 0) aiDur = inferred;
-                        }
-                        const estimatedLevel = estimateTranscriptLevel(enrichedSegments, detectedLang);
-                        const levelsObj = estimatedLevel ? { [detectedLang]: estimatedLevel } : null;
-                        const bgOps = [
-                            addSubLanguage(db, videoId, detectedLang),
-                            saveVideoLanguages(db, videoId, [detectedLang, lang], aiDur, null, null, false, levelsObj, null, [detectedLang])
-                        ];
-                        if (waitUntil) waitUntil(Promise.allSettled(bgOps));
-                        else await Promise.allSettled(bgOps);
-                    }
-
                     return {
                         status: 'done',
                         videoInfo: {

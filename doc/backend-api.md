@@ -46,8 +46,8 @@ Every incoming request passes through a multi-tier defense and rate-limiting pip
 To protect against DDoS and API credit depletion while strictly preserving Cloudflare KV's **1,000 writes/day free limit**:
 - **In-Memory Fast Path**: Every warm Worker isolate maintains a local `memRateLimits` Map.
 - **Smart KV Sync**: To keep daily KV writes safely under quota while preventing abuse:
-  1. **Instant Global Block with Flood Throttling**: If rate limit is first breached (`!allowed`), it immediately writes to KV to enforce the block across global edge locations. Subsequent blocked requests within the window are throttled in memory (syncing to KV at most once every 60s per client), preventing high-frequency 429 floods from exhausting KV write quotas.
-  2. **Approaching Quota Protection**: When usage reaches $\ge 80\%$ of the allowed limit, it syncs to KV to tightly coordinate across edge isolates.
+  1. **Approximate Block Propagation with Flood Throttling**: If rate limit is first breached (`!allowed`), it immediately writes to KV to propagate an approximate block across edge locations. Subsequent blocked requests within the window are throttled in memory (syncing to KV at most once every 60s per client), preventing high-frequency 429 floods from exhausting KV write quotas.
+  2. **Approaching Quota Protection**: When usage reaches $\ge 80\%$ of the allowed limit, it syncs to KV as an approximate cross-isolate checkpoint.
   3. **Mid-Quota Sampling**: When usage is $\ge 50\%$ of quota and has incremented by $\ge 25$ units (`KV_SYNC_SAMPLE_RATE = 25`), it syncs once.
   4. **Normal Usage Isolation**: Normal users operating comfortably below $50\%$ quota generate **zero KV writes** for rate limiting.
 - **Tiered Quotas**:
@@ -130,7 +130,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
      - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` and a registered callback URL: `https://{host}/api/gladia-webhook?token={derivedToken}&jobId={jobId}&videoId={videoId}&lang={lang}`.
      - Once upstream Gladia acknowledges job creation, activates job in D1 (`activateAiJob`) with `gladia_id` and transitions status to `'processing'`.
      - Returns `{ status: 'processing', jobId }` immediately ($\sim 1.0\text{--}1.5$s response), entirely eliminating raw Gladia URLs (`resultUrl`) from the client and preventing edge connection timeouts (524).
-     - **Active AI Job Short-Circuit & Freshness Guard**: Checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI job is already processing, returns `{ status: 'processing', jobId }`. However, if `forceRefresh: true` is passed (e.g. user requested regeneration after a timeout or error), any existing queued/processing record is superseded and deleted (`deleteAiJob`), ensuring a completely fresh session and Gladia submission without reusing dead sessions.
+     - **Active AI Job Short-Circuit & Freshness Guard**: Checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI job is already processing, returns `{ status: 'processing', jobId }`. However, if `forceRefresh: true` is passed (e.g. user requested regeneration after a timeout or error), any existing queued/processing record is superseded through a durable failure/refund transition when not leased, with the original record retained, allowing a new reservation without erasing financial history.
   6. **Opaque Job Status Polling & Server-Side Self-Healing (`pollAiJobStatus`)**:
      - Client polls status using the opaque `jobId` every 4–8 seconds (managed by root `AiJobManagerService`).
      - **Edge D1 Read (< 15ms)**: Polling requests check D1 `ai_transcription_jobs` by `jobId`. If the job is `completed`, the server loads the segments directly from R2 and responds with HTTP 200 `{ success: true, segments, source: 'ai' }`.
@@ -620,3 +620,22 @@ To ensure anti-cheat integrity, protect public leaderboards, and prevent browser
   5. `public.sync_daily_missions(p_missions)`:
      - Persists client daily quest state (progress, claimed status, objective counts) to JSONB `daily_missions` column.
      - Returns: `{ success }`.
+
+## Production backend hardening (2026-10-23)
+
+Payment callbacks now require authentication and use transactional PostgreSQL event IDs; KV is a legacy lookup/cache only. Order status requires the authenticated owner. RevenueCat applies absolute expirations and isolated provider/tier grants. Leaderboard values and AI duration come from server data. API bodies are capped at 2 MiB, including chunked callbacks. Maintenance access requires configured administrator IDs or a dedicated secret. See [review, migration order, and validation](../../voca_flutter/doc/backend-service-review-2026-10-23.md).
+
+## Durable backend recovery
+
+`POST /api/internal/reconcile` is a dedicated-secret maintenance route, never a client API. It processes bounded pending refunds/subscriber recovery and expires abandoned nonlegacy transcription jobs. RevenueCat callbacks authenticate and persist a minimized inbox record before returning `queued`; background work and the five-minute scheduler reconcile canonical subscriber grants. Use `services/supabase-rest.js` for bounded service-role calls; user-token authentication remains separate. Public transcript/order response contracts are retained.
+
+Security follow-up (2026-10-23): anonymous-credit amounts are validated before mutation; refund recovery checks the persisted charge owner, amount and terminal state before confirmation. Shared Supabase XP-spending hardening is prepared at `../voca_flutter/supabase/migrations/20261023170000_secure_xp_spending.sql`; apply once to the shared project. See `../voca_flutter/doc/security-follow-up-2026-10-23.md` for tests and limits. Cloudflare functions were bundled locally; deployment remains with Gemini and the earlier private release snapshot is stale.
+
+## Backend reliability update (2026-10-24)
+
+- Dictionary entries add optional `definitionLanguage` and `definitionKind` (`native`, `translated`, `fallback`). “Native” means dictionary-supplied content in the declared definition language. Provider uncertainty returns noncacheable 503; confirmed empty results and English fallback expire within 60 seconds.
+- Gladia callbacks return success after durable D1 inbox persistence, then recover through the existing maintenance endpoint. A failed inbox write returns 503; polling and callback recovery share one ingestion lease.
+- Single/batch translations share approximate hourly quotas of 3,000/8,000/35,000/100,000 uncached texts for anonymous/free/pro/premium. Identity/empty/cached results consume no upstream units. Provider work stays within the remaining 20-second request budget.
+- TTS uses a five-second Edge attempt and five-second Google fallback with a 1 MiB audio cap. Kanji provider errors return noncacheable 502/504, not cacheable empty success.
+
+See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
