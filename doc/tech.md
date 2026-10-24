@@ -214,3 +214,8 @@ bounded, account-safe Supabase RPCs. Android association JSON is served from
 `public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
 Unknown routes render a not-found page. See the canonical [migration and activation
 handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).
+
+Account/public screen formatting uses native `Intl` through pure Angular pipes,
+without additional locale bundles or dependencies. Existing responsive panel and
+sidebar styles are reused. Route metadata also controls public-page prompt and
+idle-preload behavior; backend schemas and API contracts are unchanged.

@@ -1,3 +1,4 @@
+import { signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import {
     ActivatedRoute,
@@ -27,7 +28,7 @@ describe('Shared learner route', () => {
                 provideRouter([]),
                 { provide: ActivatedRoute, useValue: route },
                 { provide: SupabaseService, useValue: { client: { rpc } } },
-                { provide: I18nService, useValue: { t: (key: string) => key } },
+                { provide: I18nService, useValue: { t: (key: string) => key, currentLanguage: signal('en') } },
             ],
         });
     });
@@ -90,4 +91,24 @@ describe('Shared learner route', () => {
         ).not.toBeNull();
         fixture.destroy();
     });
+    it('updates public learner metadata with the UI locale and falls back after an avatar fails', async () => {
+        rpc.and.resolveTo({ data: {
+            user_id: id, is_public: true, name: 'Haruka', avatar_url: 'https://images.example/avatar.png',
+            country: 'JP', target_lang: 'ja', bio: '', level: 12, current_streak: 18,
+            total_videos_watched: 1234, pinned_stamps: [],
+        }, error: null });
+        const fixture = TestBed.createComponent(LearnerPageComponent);
+        await fixture.whenStable();
+        const page = fixture.componentInstance;
+        expect(page.learner()?.details).toBe('Japan · Japanese');
+        TestBed.inject(I18nService).currentLanguage.set('ja');
+        expect(page.learner()?.details).toBe('日本 · 日本語');
+        page.avatarImgFailed.set(true);
+        fixture.detectChanges();
+        expect(page.learner()?.avatar).toBeNull();
+        expect(fixture.nativeElement.querySelector('.profile-avatar--fallback')).not.toBeNull();
+        expect(page.appUrl()).toBe('voca://learner/' + id);
+        fixture.destroy();
+    });
+
 });

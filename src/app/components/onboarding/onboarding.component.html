@@ -336,7 +336,7 @@
                 <span>
                     @if (currentStep() < totalSteps) {
                         {{ i18n.t('onboarding.continue') || 'Continue' }}
-                    } @else if (isReplay()) {
+                    } @else if (starterPackClaimed()) {
                         {{ i18n.t('onboarding.saveCalibration') || 'Save Preferences' }}
                     } @else {
                         {{ i18n.t('onboarding.claimStarterPack') || 'Claim Starter Pack' }}

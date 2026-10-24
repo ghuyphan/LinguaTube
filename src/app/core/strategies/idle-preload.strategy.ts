@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { RouteExperienceService } from '../services/route-experience.service';
 import { PreloadingStrategy, Route } from '@angular/router';
 import { Observable, of, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -18,6 +19,7 @@ import { switchMap } from 'rxjs/operators';
  */
 @Injectable({ providedIn: 'root' })
 export class IdlePreloadStrategy implements PreloadingStrategy {
+  private readonly experience = inject(RouteExperienceService);
   private preloadFns = new Map<string, () => Observable<unknown>>();
   private loadedPaths = new Set<string>();
   private preloadIndex = 0;
@@ -35,7 +37,7 @@ export class IdlePreloadStrategy implements PreloadingStrategy {
 
     return timer(initialDelay).pipe(
       switchMap(() => {
-        if (this.loadedPaths.has(path)) {
+        if (this.experience.publicLayout() || this.loadedPaths.has(path)) {
           return of(null);
         }
 
@@ -56,7 +58,7 @@ export class IdlePreloadStrategy implements PreloadingStrategy {
             };
 
             const handle = idleWindow.requestIdleCallback(() => {
-              if (this.loadedPaths.has(path)) {
+              if (this.experience.publicLayout() || this.loadedPaths.has(path)) {
                 observer.next(null);
                 observer.complete();
                 return;
@@ -83,7 +85,7 @@ export class IdlePreloadStrategy implements PreloadingStrategy {
 
         // Fallback for browsers without requestIdleCallback
         return new Observable(observer => {
-          if (this.loadedPaths.has(path)) {
+          if (this.experience.publicLayout() || this.loadedPaths.has(path)) {
             observer.next(null);
             observer.complete();
             return;

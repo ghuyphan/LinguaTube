@@ -891,8 +891,6 @@
     "perkMiner": "句子采矿工: 词汇雷达启动！获得额外 +35 XP！",
     "perkSovereign": "万语至尊: 至尊圣袍加身！双语字幕与语法解析同时激活！",
     "saveCalibration": "保存偏好设置",
-    "replayTour": "重温猎人序章",
-    "replayTourDesc": "重新校准语言、难度与伙伴导师",
     "tapToTry": "点击任意词语试试！",
     "skip": "跳过",
     "continue": "继续",
@@ -1362,7 +1360,11 @@
     "tabPrivacy": "隐私政策",
     "contactUs": "联系我们",
     "contactDesc": "如果对条款或个人数据有任何疑问，请随时联系我们：",
-    "effectiveDate": "生效日期：2026年10月"
+    "effectiveDate": "生效日期：2026年10月",
+    "documents": "法律文件",
+    "englishDocument": "本文档以英文提供。",
+    "termsTabShort": "条款",
+    "privacyTabShort": "隐私"
   },
   "accountExperience": {
     "account": "账户",
@@ -1430,6 +1432,18 @@
     "sessions": "活跃会话",
     "currentSession": "当前会话",
     "session": "会话",
-    "pageNotFound": "找不到页面"
+    "pageNotFound": "找不到页面",
+    "recoveryHint": "打开邮件中的重置链接以设置新密码。你可以在下方申请新的链接。",
+    "noSessions": "暂无会话信息。",
+    "notFoundHint": "链接可能已过期，或页面已移至其他位置。",
+    "freePlan": "免费",
+    "unknownPlan": "暂无方案信息",
+    "unknownStatus": "暂无状态信息",
+    "paymentPending": "等待付款",
+    "paymentPaid": "已付款",
+    "paymentCancelled": "已取消",
+    "paymentProcessing": "处理中",
+    "paymentFailed": "付款失败",
+    "subscriptionTab": "订阅"
   }
 }

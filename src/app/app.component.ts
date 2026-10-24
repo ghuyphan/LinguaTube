@@ -23,6 +23,9 @@ import { BottomSheetService } from './services/bottom-sheet.service';
 import { PlaylistService } from './features/playlist/playlist.service';
 import { VocabularyService } from './features/vocabulary/vocabulary.service';
 import { VideoRecommendationService } from './core/services/video-recommendation.service';
+import { OptionPickerComponent } from './shared/components/option-picker/option-picker.component';
+import { RouteExperienceService } from './core/services/route-experience.service';
+import { UILanguage } from './core/services/i18n.service';
 import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
 
 @Component({
@@ -38,6 +41,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
     SidebarComponent,
     BottomSheetComponent,
     OnboardingComponent,
+    OptionPickerComponent,
     CommandPaletteComponent,
     StreakDialogComponent,
     AiCreditsDialogComponent,
@@ -47,9 +51,10 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
     ToastComponent
   ],
   template: `
-    <div class="app" [class.has-sidebar]="true" [class.sidebar-collapsed]="sidebarCollapsed()">
+    <div class="app" [class.has-sidebar]="!experience.publicLayout()" [class.public-layout]="experience.publicLayout()" [class.sidebar-collapsed]="sidebarCollapsed()">
       
       <!-- Desktop Sidebar -->
+      @if (!experience.publicLayout()) {
       <app-sidebar 
         class="desktop-sidebar"
         (openSettings)="showSettingsSheet.set(true)"
@@ -59,15 +64,54 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         (openAchievements)="showAchievementsSheet.set(true)"
         (openProUpgrade)="showProUpgradeSheet.set(true)"
       />
+      }
 
         <div class="app__content">
+          @if (experience.publicLayout()) {
+            <header class="public-header">
+              <a class="public-brand" routerLink="/video"><img src="/favicon.svg" alt="" width="32" height="32" />Voca</a>
+              <div class="public-header__actions">
+                <button type="button" class="btn btn-secondary public-language" (click)="showPublicLanguagePicker.set(true)"
+                  [attr.aria-label]="i18n.t('settings.interfaceLanguage') + ': ' + currentPublicLanguage().nativeName" aria-haspopup="dialog" [attr.aria-expanded]="showPublicLanguagePicker()">
+                  <img [src]="currentPublicLanguage().flag" width="20" height="15" alt="" />
+                  <span>{{ currentPublicLanguage().nativeName }}</span>
+                  <app-icon name="chevron-down" [size]="14" />
+                </button>
+                @defer (when showPublicLanguagePicker()) {
+                  @if (showPublicLanguagePicker()) {
+                    <app-option-picker [options]="i18n.languageOptions" [value]="i18n.currentLanguage()"
+                      [isOpen]="showPublicLanguagePicker()" [title]="i18n.t('settings.interfaceLanguage')"
+                      (selected)="setPublicLanguage($event)" (closed)="showPublicLanguagePicker.set(false)" />
+                  }
+                }
+                <a class="btn btn-secondary" routerLink="/account">{{ i18n.t('accountExperience.account') }}</a>
+              </div>
+            </header>
+            @if (appUpdate.forceUpdateRequired()) {
+              <aside class="public-update" role="status">
+                <span>{{ i18n.t('app.updateRequiredDesc') }}</span>
+                <button class="btn btn-primary" (click)="appUpdate.applyUpdate()" [disabled]="appUpdate.isApplyingUpdate()">{{ i18n.t('app.reloadNow') }}</button>
+              </aside>
+            }
+          }
           <main class="main" [class.video-active]="hasVideo()">
             <div class="container">
               <router-outlet />
             </div>
           </main>
+          @if (experience.publicLayout()) {
+            <footer class="public-footer">
+              <span>Voca</span>
+              <nav [attr.aria-label]="i18n.t('legal.documents')">
+                <a routerLink="/terms">{{ i18n.t('legal.tabTerms') }}</a>
+                <a routerLink="/privacy">{{ i18n.t('legal.tabPrivacy') }}</a>
+                <a routerLink="/video">{{ i18n.t('legal.backToApp') }}</a>
+              </nav>
+            </footer>
+          }
         </div>
 
+        @if (!experience.publicLayout()) {
         <!-- Mobile Bottom Navigation (Material 3) -->
         <nav class="bottom-nav">
           <div class="bottom-nav__items">
@@ -255,7 +299,6 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
             (openAchievements)="openAchievementsFromSettings()"
             (openAiCredits)="openAiCreditsFromSettings()"
             (openProUpgrade)="showProUpgradeSheet.set(true)"
-            (openOnboarding)="openOnboardingFromSettings()"
           />
         }
 
@@ -338,9 +381,11 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
           }
         }
 
-      <!-- Update Available Sheet (always available, even during onboarding) -->
+        }
+
+      <!-- Update prompts are deferred while reading public pages. -->
       <app-bottom-sheet
-        [isOpen]="appUpdate.showUpdateSheet()"
+        [isOpen]="!experience.publicLayout() && appUpdate.showUpdateSheet()"
         [title]="(appUpdate.forceUpdateRequired() ? i18n.t('app.updateRequired') : i18n.t('app.updateAvailable')) || 'Update Available'"
         [showCloseButton]="!appUpdate.forceUpdateRequired()"
         [maxHeight]="'85vh'"
@@ -394,7 +439,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
 
       <!-- iOS Install Guide Sheet -->
       <app-bottom-sheet
-        [isOpen]="pwa.showIosInstallGuide()"
+        [isOpen]="!experience.publicLayout() && pwa.showIosInstallGuide()"
         [title]="i18n.t('pwa.iosGuideTitle') || 'Install Voca'"
         [showCloseButton]="true"
         [maxHeight]="'auto'"
@@ -490,9 +535,10 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         </div>
       </app-bottom-sheet>
 
-      <app-toast />
+      @if (!experience.publicLayout()) { <app-toast /> }
     </div>
   `,
+  styleUrls: ['./public-layout.scss'],
   styles: [`
     .app {
       min-height: 100vh;
@@ -1223,6 +1269,7 @@ export class AppComponent implements OnDestroy {
         takeUntilDestroyed()
       )
       .subscribe(e => {
+        this.showPublicLanguagePicker.set(false);
         const newPath = e.urlAfterRedirects.split('?')[0].split('#')[0];
         if (lastPath && newPath !== lastPath && isPlatformBrowser(this.platformId)) {
           window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -1243,8 +1290,9 @@ export class AppComponent implements OnDestroy {
   showProUpgradeSheet = signal(false);
   showCommandPalette = signal(false);
   showMoreSheet = signal(false);
+  readonly showPublicLanguagePicker = signal(false);
+  readonly currentPublicLanguage = this.i18n.currentLanguageInfo;
   showOnboardingSheet = signal(!this.settings.settings().hasCompletedOnboarding);
-  private onboardingReplayRequested = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
 
@@ -1257,12 +1305,32 @@ export class AppComponent implements OnDestroy {
     )
   );
 
-  // Shared profiles, account recovery, and legal documents must remain readable
-  // on a first visit. The prologue can still be shown on learning routes.
-  readonly onboardingVisible = computed(() => {
-    const url = this.currentUrl() === '/' ? this.document.location?.pathname : this.currentUrl();
-    return this.showOnboardingSheet() && (this.onboardingReplayRequested() || /^\/(video|study|dictionary|explore|history)(\/|\?|$)/.test(url || ''));
+  readonly experience = inject(RouteExperienceService);
+  readonly onboardingVisible = computed(() =>
+    this.showOnboardingSheet() && this.experience.onboardingEligible()
+  );
+
+  private readonly publicLayoutEffect = effect(() => {
+    if (!this.experience.publicLayout()) return;
+    untracked(() => {
+      this.showSettingsSheet.set(false);
+      this.showMoreSheet.set(false);
+      this.showStreakSheet.set(false);
+      this.showAiCreditsSheet.set(false);
+      this.showAchievementsSheet.set(false);
+      this.showProUpgradeSheet.set(false);
+      this.showCommandPalette.set(false);
+      this.grammar.closePopup();
+      this.pwa.closeIosInstallGuide();
+    });
   });
+
+  setPublicLanguage(value: string): void {
+    this.showPublicLanguagePicker.set(false);
+    if (this.i18n.availableLanguages.some(language => language.code === value)) {
+      this.i18n.setLanguage(value as UILanguage);
+    }
+  }
 
   // Check if video is loaded AND we're on the video page
   hasVideo = computed(() => {
@@ -1292,16 +1360,9 @@ export class AppComponent implements OnDestroy {
 
   dismissOnboarding(): void {
     this.showOnboardingSheet.set(false);
-    this.onboardingReplayRequested.set(false);
     if (!this.settings.settings().hasCompletedOnboarding) {
       this.settings.completeOnboarding();
     }
-  }
-
-  openOnboardingFromSettings(): void {
-    this.showSettingsSheet.set(false);
-    this.onboardingReplayRequested.set(true);
-    this.showOnboardingSheet.set(true);
   }
 
   /**
@@ -1313,7 +1374,7 @@ export class AppComponent implements OnDestroy {
     this.keyboardShortcuts.events$
       .pipe(takeUntilDestroyed())
       .subscribe(event => {
-        if (event.type === 'open-command-palette') {
+        if (!this.experience.publicLayout() && event.type === 'open-command-palette') {
           this.showCommandPalette.set(true);
         }
       });

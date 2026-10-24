@@ -3,236 +3,38 @@ import {
     ChangeDetectionStrategy,
     inject,
     signal,
+    computed,
     effect,
     untracked,
     OnDestroy,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import { LocaleDatePipe } from '../../shared/pipes/locale-format.pipe';
+import { SwitchComponent } from '../../shared/components/switch/switch.component';
+import { PanelComponent } from '../../shared/components/panel/panel.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService, SupabaseService, I18nService } from '../../core/services';
 import type { UserIdentity } from '@supabase/supabase-js';
 @Component({
     selector: 'app-account-page',
     standalone: true,
-    imports: [FormsModule, RouterLink, DatePipe],
+    imports: [PanelComponent, SwitchComponent, FormsModule, RouterLink, LocaleDatePipe, IconComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./account-experience.scss'],
-    template: ` <main class="experience-page">
-        <nav class="experience-nav">
-            <a routerLink="/video">{{ label('back') }}</a
-            ><a routerLink="/account" class="active">{{ label('account') }}</a
-            ><a routerLink="/account/subscription">{{
-                label('subscription')
-            }}</a>
-        </nav>
-        <h1>{{ label('security') }}</h1>
-        @if (message()) {
-            <p class="notice" [class.error]="error()" role="status">
-                {{ message() }}
-            </p>
-        }
-        @if (!auth.isLoggedIn()) {
-            <section class="experience-card">
-                <button (click)="google()" [disabled]="busy()">
-                    {{ label('google') }}
-                </button>
-                <form class="experience-form" (ngSubmit)="login()">
-                    <label
-                        >{{ label('email')
-                        }}<input
-                            type="email"
-                            name="email"
-                            [(ngModel)]="email"
-                            required
-                            autocomplete="email"
-                    /></label>
-                    <label
-                        >{{ label('password')
-                        }}<input
-                            type="password"
-                            name="password"
-                            [(ngModel)]="password"
-                            required
-                            minlength="6"
-                            autocomplete="current-password"
-                    /></label>
-                    <button class="primary" type="submit" [disabled]="busy()">
-                        {{ label('signIn') }}
-                    </button>
-                </form>
-                <button (click)="reset()" [disabled]="busy() || !email">
-                    {{ label('reset') }}
-                </button>
-            </section>
-        } @else {
-            <section class="experience-card">
-                <h2>{{ auth.user()?.name }}</h2>
-                <p>{{ supabase.user()?.email }}</p>
-                <p>{{ label('linked') }}: {{ providers() }}</p>
-                <div class="actions">
-                    @if (!hasGoogle()) {
-                        <button (click)="connectGoogle()" [disabled]="busy()">
-                            {{ label('connect') }}
-                        </button>
-                    }
-                    @for (
-                        identity of supabase.user()?.identities || [];
-                        track identity.identity_id
-                    ) {
-                        @if (
-                            (supabase.user()?.identities?.length || 0) > 1 &&
-                            identity.provider !== 'email'
-                        ) {
-                            <button
-                                (click)="disconnect(identity)"
-                                [disabled]="busy()"
-                            >
-                                {{ label('disconnect') }}
-                                {{ identity.provider }}
-                            </button>
-                        }
-                    }
-                </div>
-                <form class="experience-form" (ngSubmit)="updateEmail()">
-                    <label
-                        >{{ label('changeEmail')
-                        }}<input
-                            type="email"
-                            name="newEmail"
-                            [(ngModel)]="email"
-                            required
-                            autocomplete="email"
-                    /></label>
-                    <button type="submit" [disabled]="busy()">
-                        {{ label('changeEmail') }}
-                    </button>
-                </form>
-                <form class="experience-form" (ngSubmit)="updatePassword()">
-                    <h2>
-                        {{
-                            recovery
-                                ? label('recovery')
-                                : label('changePassword')
-                        }}
-                    </h2>
-                    <label
-                        >{{ label('password')
-                        }}<input
-                            type="password"
-                            name="newPassword"
-                            [(ngModel)]="password"
-                            minlength="6"
-                            required
-                            autocomplete="new-password"
-                    /></label>
-                    <label
-                        >{{ label('confirmPassword')
-                        }}<input
-                            type="password"
-                            name="confirmPassword"
-                            [(ngModel)]="confirmation"
-                            minlength="6"
-                            required
-                            autocomplete="new-password"
-                    /></label>
-                    <button
-                        class="primary"
-                        type="submit"
-                        [disabled]="
-                            busy() ||
-                            password.length < 6 ||
-                            password !== confirmation
-                        "
-                    >
-                        {{ label('save') }}
-                    </button>
-                </form>
-                <button (click)="reset()" [disabled]="busy()">
-                    {{ label('reset') }}
-                </button>
-            </section>
-            @if (profileReady()) {
-                <section class="experience-card">
-                    <h2>{{ label('publicProfile') }}</h2>
-                    <label class="visibility-control"
-                        ><input
-                            type="checkbox"
-                            [ngModel]="isPublic()"
-                            (ngModelChange)="setVisibility($event)"
-                            [disabled]="busy()"
-                        />{{ label('visibility') }}</label
-                    >
-                    <p>
-                        {{ label(isPublic() ? 'publicHint' : 'privateHint') }}
-                    </p>
-                    <div class="actions">
-                        <a [routerLink]="['/learner', auth.getUserId()]">{{
-                            label('publicProfile')
-                        }}</a
-                        ><button
-                            (click)="share()"
-                            [disabled]="busy() || !isPublic()"
-                        >
-                            {{ label('share') }}
-                        </button>
-                    </div>
-                </section>
-            }
-            <section class="experience-card">
-                <h2>{{ label('sessions') }}</h2>
-                @for (session of sessions(); track session.id) {
-                    <div class="detail-row">
-                        <strong>{{
-                            label(
-                                session.is_current
-                                    ? 'currentSession'
-                                    : 'session'
-                            )
-                        }}</strong
-                        ><span>{{ session.created_at | date: 'medium' }}</span>
-                    </div>
-                }
-                <button (click)="signOutAll()" [disabled]="busy()">
-                    {{ label('signOutAll') }}
-                </button>
-                <p>{{ label('deleteBilling') }}</p>
-                <a routerLink="/account/subscription">{{
-                    label('subscription')
-                }}</a>
-                <form class="experience-form" (ngSubmit)="deleteAccount()">
-                    <label
-                        >{{ label('deleteConfirm')
-                        }}<input
-                            name="deleteConfirmation"
-                            [(ngModel)]="deleteConfirmation"
-                            autocomplete="off"
-                    /></label>
-                    <button
-                        type="submit"
-                        [disabled]="busy() || deleteConfirmation !== 'DELETE'"
-                    >
-                        {{ label('deleteAccount') }}
-                    </button>
-                </form>
-            </section>
-        }
-        <nav class="experience-nav">
-            <a routerLink="/terms">{{ label('terms') }}</a
-            ><a routerLink="/privacy">{{ label('privacy') }}</a>
-        </nav>
-    </main>`,
+    templateUrl: './account-page.component.html',
 })
 export class AccountPageComponent implements OnDestroy {
     readonly auth = inject(AuthService);
     readonly supabase = inject(SupabaseService);
-    private readonly i18n = inject(I18nService);
+    readonly i18n = inject(I18nService);
     private readonly router = inject(Router);
     private readonly route = inject(ActivatedRoute);
     readonly recovery = this.route.snapshot.data['recovery'] === true;
     readonly busy = signal(false);
     readonly message = signal('');
     readonly error = signal(false);
+    readonly sessionsLoading = signal(false);
     readonly sessions = signal<
         { id: string; created_at: string | null; is_current: boolean }[]
     >([]);
@@ -254,7 +56,8 @@ export class AccountPageComponent implements OnDestroy {
             this.profileReady.set(false);
             this.isPublic.set(false);
             this.sessions.set([]);
-            if (user) {
+            this.sessionsLoading.set(false);
+            if (user && !this.recovery) {
                 void this.loadVisibility(user.id).catch(() => {
                     if (
                         !this.disposed &&
@@ -271,15 +74,16 @@ export class AccountPageComponent implements OnDestroy {
     label(key: string): string {
         return this.i18n.t(`accountExperience.${key}`);
     }
-    providers(): string {
-        return [
-            ...new Set(
-                this.supabase.user()?.identities?.map((i) => i.provider) || [],
-            ),
-        ].join(', ');
-    }
+    readonly providers = computed(() => {
+        const names = new Set(this.supabase.user()?.identities?.map(identity =>
+            identity.provider === 'email' ? this.i18n.t('accountExperience.email') :
+            identity.provider === 'google' ? 'Google' : identity.provider,
+        ) || []);
+        return [...names].join(', ');
+    });
     private async loadSessions(): Promise<void> {
         const session = this.auth.captureSession();
+        this.sessionsLoading.set(true);
         try {
             const { data, error } = await this.supabase.client.rpc(
                 'get_account_sessions',
@@ -292,6 +96,8 @@ export class AccountPageComponent implements OnDestroy {
                 this.error.set(true);
                 this.message.set(this.label('failed'));
             }
+        } finally {
+            if (!this.disposed && this.auth.isCurrentSession(session)) this.sessionsLoading.set(false);
         }
     }
     private async loadVisibility(id: string): Promise<void> {
@@ -332,13 +138,7 @@ export class AccountPageComponent implements OnDestroy {
             if (!this.disposed) this.busy.set(false);
         }
     }
-    hasGoogle(): boolean {
-        return (
-            this.supabase
-                .user()
-                ?.identities?.some((i) => i.provider === 'google') === true
-        );
-    }
+    readonly hasGoogle = computed(() => this.supabase.user()?.identities?.some(identity => identity.provider === 'google') === true);
     async connectGoogle(): Promise<void> {
         await this.run(async () => {
             const { error } = await this.supabase.client.auth.linkIdentity({

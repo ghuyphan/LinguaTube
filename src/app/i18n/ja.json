@@ -891,8 +891,6 @@
     "perkMiner": "単語採掘師: 単語レーダー起動！ボーナス +35 XP 獲得！",
     "perkSovereign": "言語覇王: 覇王の加護発動！二重字幕と文法解析が同時に有効化！",
     "saveCalibration": "設定を保存",
-    "replayTour": "冒険のプロローグを再生",
-    "replayTourDesc": "学習言語、レベル、相棒ガイドを再設定",
     "tapToTry": "単語をタップしてみよう！",
     "skip": "スキップ",
     "continue": "次へ",
@@ -1362,7 +1360,11 @@
     "tabPrivacy": "プライバシーポリシー",
     "contactUs": "お問い合わせ",
     "contactDesc": "利用規約や個人データについてご不明な点がございましたら、こちらまでお問い合わせください:",
-    "effectiveDate": "効力発生日: 2026年10月"
+    "effectiveDate": "効力発生日: 2026年10月",
+    "documents": "法的文書",
+    "englishDocument": "この文書は英語で提供されています。",
+    "termsTabShort": "利用規約",
+    "privacyTabShort": "プライバシー"
   },
   "accountExperience": {
     "account": "アカウント",
@@ -1430,6 +1432,18 @@
     "sessions": "ログイン中のセッション",
     "currentSession": "現在のセッション",
     "session": "セッション",
-    "pageNotFound": "ページが見つかりません"
+    "pageNotFound": "ページが見つかりません",
+    "recoveryHint": "メールに届いた再設定リンクを開いて、新しいパスワードを設定してください。以下から新しいリンクをリクエストできます。",
+    "noSessions": "セッション情報はありません。",
+    "notFoundHint": "リンクが古いか、ページが移動した可能性があります。",
+    "freePlan": "無料",
+    "unknownPlan": "プラン情報なし",
+    "unknownStatus": "ステータス情報なし",
+    "paymentPending": "支払い待ち",
+    "paymentPaid": "支払い済み",
+    "paymentCancelled": "キャンセル済み",
+    "paymentProcessing": "処理中",
+    "paymentFailed": "支払い失敗",
+    "subscriptionTab": "プラン"
   }
 }

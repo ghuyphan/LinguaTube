@@ -891,8 +891,6 @@
     "perkMiner": "Thợ Đào Từ Vựng: Kích hoạt radar khai thác! +35 XP Từ Vựng!",
     "perkSovereign": "Chí Tôn Đa Ngữ: Kích hoạt áo choàng đa ngữ! Bật Phụ Đề Song Ngữ & Phân Tích Ngữ Pháp!",
     "saveCalibration": "Lưu Cài Đặt",
-    "replayTour": "Xem Lại Khởi Đầu Thợ Săn",
-    "replayTourDesc": "Cân chỉnh lại ngôn ngữ, cấp độ và người đồng hành",
     "tapToTry": "Chạm vào từ bất kỳ để thử!",
     "skip": "Bỏ qua",
     "continue": "Tiếp tục",
@@ -1362,7 +1360,11 @@
     "tabPrivacy": "Chính sách bảo mật",
     "contactUs": "Liên hệ",
     "contactDesc": "Bạn có thắc mắc về điều khoản hoặc dữ liệu cá nhân? Hãy liên hệ với chúng tôi tại",
-    "effectiveDate": "Hiệu lực từ tháng 10 năm 2026"
+    "effectiveDate": "Hiệu lực từ tháng 10 năm 2026",
+    "documents": "Tài liệu pháp lý",
+    "englishDocument": "Tài liệu này được cung cấp bằng tiếng Anh.",
+    "termsTabShort": "Điều khoản",
+    "privacyTabShort": "Bảo mật"
   },
   "accountExperience": {
     "account": "Tài khoản",
@@ -1430,6 +1432,18 @@
     "sessions": "Phiên đăng nhập",
     "currentSession": "Phiên hiện tại",
     "session": "Phiên đăng nhập",
-    "pageNotFound": "Không tìm thấy trang"
+    "pageNotFound": "Không tìm thấy trang",
+    "recoveryHint": "Mở liên kết đặt lại mật khẩu trong email để đặt mật khẩu mới. Bạn có thể yêu cầu liên kết mới bên dưới.",
+    "noSessions": "Không có thông tin phiên đăng nhập.",
+    "notFoundHint": "Liên kết có thể đã cũ hoặc trang đã được chuyển.",
+    "freePlan": "Miễn phí",
+    "unknownPlan": "Không có thông tin gói",
+    "unknownStatus": "Không có thông tin trạng thái",
+    "paymentPending": "Chờ thanh toán",
+    "paymentPaid": "Đã thanh toán",
+    "paymentCancelled": "Đã hủy",
+    "paymentProcessing": "Đang xử lý",
+    "paymentFailed": "Thanh toán thất bại",
+    "subscriptionTab": "Gói đăng ký"
   }
 }

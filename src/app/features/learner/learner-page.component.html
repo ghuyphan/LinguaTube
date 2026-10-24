@@ -1,0 +1,58 @@
+<div class="page-layout page-layout--focus experience-page">
+  <div class="page-layout__main">
+    <app-panel [panelTitle]="i18n.t('accountExperience.profileTitle')" panelIcon="user" [headingLevel]="1" class="experience-panel">
+  @if (loading()) {
+    <section class="experience-section experience-loading" role="status" aria-busy="true">
+      <span class="sr-only">{{ i18n.t('common.loading') }}</span>
+      <div class="skeleton-box profile-avatar" aria-hidden="true"></div>
+      <div class="skeleton-line skeleton-line--title" aria-hidden="true"></div>
+      <div class="skeleton-line" aria-hidden="true"></div>
+    </section>
+  } @else if (failed()) {
+    <section class="experience-section experience-state">
+      <app-empty-state icon="cloud" [description]="i18n.t('accountExperience.failed')">
+        <div class="actions"><button class="btn btn-secondary" (click)="load()">{{ i18n.t('accountExperience.retry') }}</button></div>
+      </app-empty-state>
+    </section>
+  } @else {
+    @if (learner(); as p) {
+    <article class="experience-section">
+      <header class="profile-heading">
+        @if (p.avatar) {
+          <img class="profile-avatar" [src]="p.avatar" (error)="avatarImgFailed.set(true)" alt="" width="56" height="56" referrerpolicy="no-referrer" />
+        } @else {
+          <div class="profile-avatar profile-avatar--fallback"><app-icon name="user" [size]="28" /></div>
+        }
+        <div><h2 class="profile-name">{{ p.name }}</h2>@if (p.details) { <p>{{ p.details }}</p> }</div>
+      </header>
+      @if (p.bio) { <p class="profile-bio">{{ p.bio }}</p> }
+      <div class="stats">
+        <div><strong>{{ p.level | localeNumber: i18n.currentLanguage() }}</strong><span>{{ i18n.t('accountExperience.level') }}</span></div>
+        <div><strong>{{ p.current_streak | localeNumber: i18n.currentLanguage() }}</strong><span>{{ i18n.t('accountExperience.streak') }}</span></div>
+        <div><strong>{{ p.total_videos_watched | localeNumber: i18n.currentLanguage() }}</strong><span>{{ i18n.t('accountExperience.videos') }}</span></div>
+      </div>
+      @if (p.stamps.length) {
+        <div class="stamps">
+          @for (stamp of p.stamps; track stamp.id) {
+            <img [src]="stamp.image" alt="" width="80" height="80" loading="lazy" referrerpolicy="no-referrer" />
+          }
+        </div>
+      }
+      <div class="actions">
+        <button class="btn btn-primary" (click)="share()"><app-icon name="share" [size]="16" />{{ i18n.t('accountExperience.share') }}</button>
+        <button class="btn btn-secondary" (click)="copy()"><app-icon name="copy" [size]="16" />{{ i18n.t('accountExperience.copy') }}</button>
+        @if (android) { <a class="btn btn-secondary" [href]="appUrl()">{{ i18n.t('accountExperience.openApp') }}</a> }
+      </div>
+      @if (message()) { <p class="notice" role="status">{{ message() }}</p> }
+    </article>
+  } @else {
+    <section class="experience-section experience-state">
+      <app-empty-state icon="lock" [description]="i18n.t('accountExperience.unavailable')">
+        <div class="actions"><a class="btn btn-secondary" routerLink="/video">{{ i18n.t('accountExperience.back') }}</a></div>
+      </app-empty-state>
+    </section>
+  }
+  }
+    </app-panel>
+  </div>
+</div>

@@ -1,27 +1,15 @@
 <div class="page-layout">
   <div class="page-layout__main">
     <!-- Main History Panel -->
-    <div class="card history-panel">
-      <!-- Panel Header -->
-      <div class="panel-header">
-        <div class="panel-header__row">
-          <div class="panel-header__left">
-            <app-icon name="history" [size]="20" class="panel-header__icon" />
-            <h2 class="panel-header__title">{{ i18n.t('history.title') }}</h2>
-          </div>
-          @if (historyItems().length > 0) {
-            <!-- Mobile-only: Clear history in header -->
-            <button
-              type="button"
-              class="action-icon-btn action-icon-btn--danger mobile-only"
-              (click)="confirmClear()"
-              [attr.aria-label]="i18n.t('history.clearAll')"
-              [title]="i18n.t('history.clearAll')">
-              <app-icon name="trash-2" [size]="15" />
-            </button>
-          }
-        </div>
-      </div>
+    <app-panel [panelTitle]="i18n.t('history.title')" panelIcon="history" class="history-panel">
+      <ng-container panelActions>
+        @if (historyItems().length > 0) {
+          <button type="button" class="action-icon-btn action-icon-btn--danger mobile-only"
+            (click)="confirmClear()" [attr.aria-label]="i18n.t('history.clearAll')" [title]="i18n.t('history.clearAll')">
+            <app-icon name="trash-2" [size]="15" />
+          </button>
+        }
+      </ng-container>
 
       <!-- Stable, Solid Filter Toolbar (Zero translucency, compact 2-row layout) -->
       <div class="panel-toolbar">
@@ -141,7 +129,7 @@
           (loadMore)="loadMore()"
           (itemRemoved)="onItemRemoved($event)" />
       </div>
-    </div>
+    </app-panel>
 
     <!-- Sync hint for guests on mobile -->
     @if (auth.isInitialized() && !auth.isLoggedIn()) {

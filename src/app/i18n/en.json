@@ -891,8 +891,6 @@
     "perkMiner": "Sentence Miner: Word-mining radar calibrated! +35 Miner XP discovered!",
     "perkSovereign": "Mythic Sovereign: Polyglot Mantle bestowed! Dual Subtitles & Grammar Insights active!",
     "saveCalibration": "Save Preferences",
-    "replayTour": "Replay Hunter Prologue",
-    "replayTourDesc": "Calibrate your language, level, and companion guide",
     "tapToTry": "Tap any word to try it out!",
     "skip": "Skip",
     "continue": "Continue",
@@ -1362,7 +1360,11 @@
     "tabPrivacy": "Privacy Policy",
     "contactUs": "Contact",
     "contactDesc": "Have questions about these terms or your personal data? Reach us at",
-    "effectiveDate": "Effective October 2026"
+    "effectiveDate": "Effective October 2026",
+    "documents": "Legal documents",
+    "englishDocument": "This document is provided in English.",
+    "termsTabShort": "Terms",
+    "privacyTabShort": "Privacy"
   },
   "accountExperience": {
     "account": "Account",
@@ -1430,6 +1432,18 @@
     "sessions": "Active sessions",
     "currentSession": "This session",
     "session": "Session",
-    "pageNotFound": "Page not found"
+    "pageNotFound": "Page not found",
+    "recoveryHint": "Open the password reset link from your email to set a new password. You can request a new link below.",
+    "noSessions": "No session details are available.",
+    "notFoundHint": "The link may be outdated or the page may have moved.",
+    "freePlan": "Free",
+    "unknownPlan": "Plan unavailable",
+    "unknownStatus": "Status unavailable",
+    "paymentPending": "Awaiting payment",
+    "paymentPaid": "Paid",
+    "paymentCancelled": "Cancelled",
+    "paymentProcessing": "Processing",
+    "paymentFailed": "Payment failed",
+    "subscriptionTab": "Plans"
   }
 }

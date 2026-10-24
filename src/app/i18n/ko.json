@@ -891,8 +891,6 @@
     "perkMiner": "문장 광부: 단어 채굴 레이더 가동! 보너스 +35 XP 획득!",
     "perkSovereign": "다언어 지존: 지존의 가호 발동! 이중 자막과 문법 분석이 동시 활성화!",
     "saveCalibration": "설정 저장",
-    "replayTour": "헌터 프롤로그 다시 보기",
-    "replayTourDesc": "언어, 난이도 및 수호 정령 가이드를 다시 설정합니다",
     "tapToTry": "단어를 탭해 보세요!",
     "skip": "건너뛰기",
     "continue": "다음",
@@ -1362,7 +1360,11 @@
     "tabPrivacy": "개인정보 처리방침",
     "contactUs": "문의하기",
     "contactDesc": "약관이나 개인정보 처리에 대해 궁금한 점이 있으시면 다음으로 문의해 주세요:",
-    "effectiveDate": "시행일: 2026년 10월"
+    "effectiveDate": "시행일: 2026년 10월",
+    "documents": "법적 문서",
+    "englishDocument": "이 문서는 영어로 제공됩니다.",
+    "termsTabShort": "이용약관",
+    "privacyTabShort": "개인정보"
   },
   "accountExperience": {
     "account": "계정",
@@ -1430,6 +1432,18 @@
     "sessions": "활성 세션",
     "currentSession": "현재 세션",
     "session": "세션",
-    "pageNotFound": "페이지를 찾을 수 없습니다"
+    "pageNotFound": "페이지를 찾을 수 없습니다",
+    "recoveryHint": "이메일의 재설정 링크를 열어 새 비밀번호를 설정하세요. 아래에서 새 링크를 요청할 수 있습니다.",
+    "noSessions": "세션 정보가 없습니다.",
+    "notFoundHint": "오래된 링크이거나 페이지가 이동했을 수 있습니다.",
+    "freePlan": "무료",
+    "unknownPlan": "요금제 정보 없음",
+    "unknownStatus": "상태 정보 없음",
+    "paymentPending": "결제 대기",
+    "paymentPaid": "결제 완료",
+    "paymentCancelled": "취소됨",
+    "paymentProcessing": "처리 중",
+    "paymentFailed": "결제 실패",
+    "subscriptionTab": "구독"
   }
 }

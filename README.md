@@ -150,3 +150,15 @@ See [validation and migration handoff](../voca_flutter/doc/backend-implementatio
 
 Account/security, public learner sharing, and web subscription management are
 implemented alongside Flutter. See the [activation handoff](../voca_flutter/doc/account-experience-implementation-2026-10-24.md) before deployment; new read RPCs and callback allowlists must be ready first.
+
+Public legal documents, learner profiles and password-recovery links open in a
+minimal layout without learning onboarding or automatic app prompts. Account and
+subscription screens follow the existing app panels and support all five UI
+locales; the legal document text remains English. First-time onboarding remains
+available on learning pages, with no replay action in Settings.
+
+These pages reuse the app's shared panels, Settings language picker, visibility
+switch and upgrade bottom sheet rather than separate lookalike controls.
+
+Buttons, form fields and sliding tabs inherit Voca's shared control styles directly;
+compact localized tab labels fit the existing mobile toolbar.

@@ -63,6 +63,13 @@ export class I18nService {
         { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '/flags/vn.svg' }
     ];
 
+    readonly currentLanguageInfo = computed(() =>
+        this.availableLanguages.find(language => language.code === this.currentLanguage()) || this.availableLanguages[0]
+    );
+    readonly languageOptions = this.availableLanguages.map(language => ({
+        value: language.code, label: language.nativeName, iconUrl: language.flag,
+    }));
+
     // Current translations
     private translations = computed(() => TRANSLATIONS[this.currentLanguage()] || TRANSLATIONS['en']);
 

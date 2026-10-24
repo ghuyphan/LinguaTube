@@ -1,67 +1,23 @@
-<div class="legal-page">
-    <!-- Header Navigation -->
-    <div class="legal-header-nav">
-        <a routerLink="/video" class="back-btn" [attr.aria-label]="i18n.t('legal.backToApp') || 'Back to App'">
-            <app-icon name="arrow-left" [size]="16" />
-            <span>{{ i18n.t('legal.backToApp') || 'Back to App' }}</span>
-        </a>
-
-        <!-- Document Switcher -->
-        <div class="segmented-control legal-tabs" style="--tab-count: 2;" [style.--active-index]="1" role="tablist">
-            <a routerLink="/terms" class="segmented-control__item" role="tab" aria-selected="false">
-                <app-icon name="file-text" [size]="14" />
-                <span>{{ i18n.t('legal.tabTerms') || 'Terms of Service' }}</span>
-            </a>
-            <a routerLink="/privacy" class="segmented-control__item active" role="tab" aria-selected="true">
-                <app-icon name="lock" [size]="14" />
-                <span>{{ i18n.t('legal.tabPrivacy') || 'Privacy Policy' }}</span>
-            </a>
+<div class="page-layout legal-page">
+  <div class="page-layout__main">
+    <app-panel [panelTitle]="i18n.t('legal.privacyTitle')" panelIcon="lock" [headingLevel]="1" class="legal-panel">
+      <a panelActions class="action-icon-btn mobile-only" routerLink="/video" [attr.aria-label]="i18n.t('legal.backToApp')" [title]="i18n.t('legal.backToApp')"><app-icon name="arrow-left" [size]="16" /></a>
+      <nav class="panel-toolbar" [attr.aria-label]="i18n.t('legal.documents')">
+        <div class="panel-toolbar__top">
+          <div class="segmented-control" [style.--active-index]="1">
+            <a routerLink="/terms" [attr.aria-label]="i18n.t('legal.tabTerms')" class="segmented-control__item"><app-icon name="file-text" [size]="14" />{{ i18n.t('legal.termsTabShort') }}</a>
+            <a routerLink="/privacy" [attr.aria-label]="i18n.t('legal.tabPrivacy')" class="segmented-control__item active" aria-current="page"><app-icon name="lock" [size]="14" />{{ i18n.t('legal.privacyTabShort') }}</a>
+          </div>
+          <a class="action-icon-btn desktop-only" routerLink="/video" [attr.aria-label]="i18n.t('legal.backToApp')" [title]="i18n.t('legal.backToApp')"><app-icon name="arrow-left" [size]="16" /></a>
         </div>
-    </div>
-
-    <!-- Hero Header -->
-    <header class="legal-hero">
-        <div class="legal-badge-row">
-            <span class="legal-tag">
-                <app-icon name="lock" [size]="12" />
-                Privacy
-            </span>
-            <span class="legal-date">{{ i18n.t('legal.lastUpdated') || 'Last updated: October 2026' }}</span>
-        </div>
-        <h1 class="legal-title">{{ i18n.t('legal.privacyTitle') || 'Privacy Policy' }}</h1>
-        <p class="legal-subtitle">{{ i18n.t('legal.privacySubtitle') || 'How we handle your learning data, authentication, and offline storage.' }}</p>
-    </header>
-
-    <!-- Key Takeaways Card -->
-    <div class="legal-summary-card">
-        <h2 class="summary-title">
-            <app-icon name="clipboard-check" [size]="16" />
-            Privacy at a Glance
-        </h2>
-        <ul class="summary-list">
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>No Ad Networks:</strong> We do not track you across the web, sell your personal data, or run third-party marketing pixels.</span>
-            </li>
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>Offline-First Guest Mode:</strong> If you use Voca without signing in, all your flashcards, history, and word lists stay solely in your own browser.</span>
-            </li>
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>Protected Cloud Sync:</strong> Signed-in accounts sync via Supabase PostgreSQL protected by Row Level Security (RLS) so only your account can access your data.</span>
-            </li>
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>Full Data Control:</strong> You can export your vocabulary lists or request complete deletion of your account and records at any time.</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Main Content Sections -->
-    <main class="legal-content">
+      </nav>
+      <div class="legal-intro">
+        <p>{{ i18n.t('legal.privacySubtitle') }}</p>
+        <div class="legal-meta"><span>{{ i18n.t('legal.lastUpdated') }}</span><span>{{ i18n.t('legal.englishDocument') }}</span></div>
+      </div>
+    <div class="legal-content" lang="en">
         <!-- 1. Principles -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-1">
             <h2 class="section-title">1. Privacy Principles</h2>
             <div class="section-body">
                 <p>
@@ -74,7 +30,7 @@
         </section>
 
         <!-- 2. What We Collect -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-2">
             <h2 class="section-title">2. Information We Collect</h2>
             <div class="section-body">
                 <p>Depending on how you use Voca, we process the following information:</p>
@@ -105,7 +61,7 @@
         </section>
 
         <!-- 3. How We Use Information -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-3">
             <h2 class="section-title">3. How We Use Your Information</h2>
             <div class="section-body">
                 <p>We use your information strictly to:</p>
@@ -125,7 +81,7 @@
         </section>
 
         <!-- 4. Storage & Security -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-4">
             <h2 class="section-title">4. How Data Is Stored & Protected</h2>
             <div class="section-body">
                 <p>
@@ -144,7 +100,7 @@
         </section>
 
         <!-- 5. Third-Party Integrations -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-5">
             <h2 class="section-title">5. Third-Party Service Providers</h2>
             <div class="section-body">
                 <p>Voca relies on the following third-party infrastructure services:</p>
@@ -170,7 +126,7 @@
         </section>
 
         <!-- 6. Cookies & Browser Storage -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-6">
             <h2 class="section-title">6. Cookies & Browser Storage</h2>
             <div class="section-body">
                 <p>
@@ -189,7 +145,7 @@
         </section>
 
         <!-- 7. Data Rights & Deletion -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-7">
             <h2 class="section-title">7. Your Rights & Data Control</h2>
             <div class="section-body">
                 <p>You have full ownership and control over your personal study data:</p>
@@ -202,7 +158,7 @@
         </section>
 
         <!-- 8. Children's Privacy -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-8">
             <h2 class="section-title">8. Children's Privacy</h2>
             <div class="section-body">
                 <p>
@@ -212,7 +168,7 @@
         </section>
 
         <!-- 9. Policy Updates -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-9">
             <h2 class="section-title">9. Changes to This Policy</h2>
             <div class="section-body">
                 <p>
@@ -222,7 +178,7 @@
         </section>
 
         <!-- 10. Contact -->
-        <section class="legal-section">
+        <section class="legal-section" id="privacy-section-10">
             <h2 class="section-title">10. Contact Us</h2>
             <div class="section-body">
                 <p>
@@ -231,15 +187,29 @@
                 </p>
             </div>
         </section>
-    </main>
-
-    <nav class="legal-header-nav"><a routerLink="/account" class="back-btn">{{ i18n.t('accountExperience.security') }}</a><a routerLink="/account/subscription" class="back-btn">{{ i18n.t('accountExperience.subscription') }}</a></nav>
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <span>© 2026 Voca. {{ i18n.t('legal.effectiveDate') || 'Effective October 2026' }}.</span>
-        <span>
-            Looking for service terms? Read our
-            <a routerLink="/terms">{{ i18n.t('legal.tabTerms') || 'Terms of Service' }}</a>.
-        </span>
-    </footer>
+    </div>
+    </app-panel>
+  </div>
+  <aside class="page-layout__sidebar">
+    <app-panel panelTitle="Privacy at a Glance" panelIcon="clipboard-check" [panelIconSize]="18" class="sidebar-card" lang="en">
+        <ul class="summary-list">
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>No Ad Networks:</strong> We do not track you across the web, sell your personal data, or run third-party marketing pixels.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Offline-First Guest Mode:</strong> If you use Voca without signing in, all your flashcards, history, and word lists stay solely in your own browser.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Protected Cloud Sync:</strong> Signed-in accounts sync via Supabase PostgreSQL protected by Row Level Security (RLS) so only your account can access your data.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Full Data Control:</strong> You can export your vocabulary lists or request complete deletion of your account and records at any time.</span>
+            </li>
+        </ul>
+    </app-panel>
+  </aside>
 </div>

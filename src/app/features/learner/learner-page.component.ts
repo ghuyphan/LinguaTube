@@ -3,10 +3,16 @@ import {
     ChangeDetectionStrategy,
     inject,
     signal,
+    computed,
+    effect,
     OnDestroy,
 } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SupabaseService, I18nService } from '../../core/services';
+import { PanelComponent } from '../../shared/components/panel/panel.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
+import { EmptyStateComponent } from '../../shared/components/empty-state/empty-state.component';
+import { LocaleNumberPipe } from '../../shared/pipes/locale-format.pipe';
 import { Title, Meta } from '@angular/platform-browser';
 
 interface Learner {
@@ -24,111 +30,53 @@ interface Learner {
 @Component({
     selector: 'app-learner-page',
     standalone: true,
-    imports: [RouterLink],
+    imports: [PanelComponent, RouterLink, IconComponent, EmptyStateComponent, LocaleNumberPipe],
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['../account/account-experience.scss'],
-    template: ` <main class="experience-page">
-        <nav class="experience-nav">
-            <a routerLink="/video">{{ label('back') }}</a
-            ><a routerLink="/account">{{ label('account') }}</a>
-        </nav>
-        @if (loading()) {
-            <div class="experience-card" aria-busy="true">
-                {{ label('profileTitle') }}…
-            </div>
-        } @else if (failed()) {
-            <section class="experience-card">
-                <h1>{{ label('failed') }}</h1>
-                <button (click)="load()">{{ label('retry') }}</button>
-            </section>
-        } @else {
-            @if (profile(); as p) {
-                <article class="experience-card">
-                    <header class="profile-heading">
-                        @if (safeImage(p.avatar_url); as image) {
-                            <img
-                                [src]="image"
-                                alt=""
-                                referrerpolicy="no-referrer"
-                            />
-                        }
-                        <div>
-                            <h1>{{ p.name }}</h1>
-                            <p>{{ p.country }} · {{ p.target_lang }}</p>
-                        </div>
-                    </header>
-                    <p>{{ p.bio }}</p>
-                    <div class="stats">
-                        <div>
-                            <strong>{{ p.level }}</strong
-                            ><span>{{ label('level') }}</span>
-                        </div>
-                        <div>
-                            <strong>{{ p.current_streak }}</strong
-                            ><span>{{ label('streak') }}</span>
-                        </div>
-                        <div>
-                            <strong>{{ p.total_videos_watched }}</strong
-                            ><span>{{ label('videos') }}</span>
-                        </div>
-                    </div>
-                    <div class="stamps">
-                        @for (stamp of p.pinned_stamps; track stamp.id) {
-                            @if (safeImage(stamp.imagePath); as image) {
-                                <img
-                                    [src]="image"
-                                    alt=""
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer"
-                                />
-                            }
-                        }
-                    </div>
-                    <div class="actions">
-                        <button class="primary" (click)="share()">
-                            {{ label('share') }}</button
-                        ><button (click)="copy()">{{ label('copy') }}</button>
-                        @if (android) {
-                            <a [href]="appUrl()">{{ label('openApp') }}</a>
-                        }
-                    </div>
-                    @if (message()) {
-                        <p role="status">{{ message() }}</p>
-                    }
-                </article>
-            } @else {
-                <section class="experience-card">
-                    <h1>{{ label('unavailable') }}</h1>
-                </section>
-            }
-        }
-    </main>`,
+    templateUrl: './learner-page.component.html',
 })
 export class LearnerPageComponent implements OnDestroy {
     private readonly route = inject(ActivatedRoute);
     private readonly supabase = inject(SupabaseService);
-    private readonly i18n = inject(I18nService);
+    readonly i18n = inject(I18nService);
     private readonly title = inject(Title);
     private readonly meta = inject(Meta);
     readonly profile = signal<Learner | null>(null);
     readonly loading = signal(true);
     readonly failed = signal(false);
     readonly message = signal('');
+    readonly avatarImgFailed = signal(false);
     readonly android =
         typeof navigator !== 'undefined' &&
         /Android/i.test(navigator.userAgent);
+    readonly appUrl = computed(() => {
+        const profile = this.profile();
+        return profile ? 'voca://learner/' + encodeURIComponent(profile.user_id) : '';
+    });
+    readonly learner = computed(() => {
+        const profile = this.profile();
+        if (!profile) return null;
+        const locale = this.i18n.currentLanguage();
+        const country = /^[a-z]{2}$/i.test(profile.country || '')
+            ? new Intl.DisplayNames([locale], { type: 'region' }).of(profile.country.toUpperCase()) : '';
+        const language = ['ja', 'zh', 'ko', 'en'].includes(profile.target_lang)
+            ? new Intl.DisplayNames([locale], { type: 'language' }).of(profile.target_lang) : '';
+        return {
+            ...profile,
+            avatar: this.avatarImgFailed() ? null : this.safeImage(profile.avatar_url),
+            details: [country, language].filter(Boolean).join(' · '),
+            stamps: profile.pinned_stamps.map(stamp => ({ ...stamp, image: this.safeImage(stamp.imagePath) })).filter(stamp => stamp.image),
+        };
+    });
+    private readonly titleEffect = effect(() => {
+        this.title.setTitle(this.i18n.t('accountExperience.profileTitle') + ' | Voca');
+    });
     private generation = 0;
     private readonly subscription = this.route.paramMap.subscribe(() => {
         void this.load();
     });
     label(key: string): string {
         return this.i18n.t(`accountExperience.${key}`);
-    }
-    appUrl(): string {
-        return (
-            'voca://learner/' +
-            encodeURIComponent(this.route.snapshot.paramMap.get('userId') || '')
-        );
     }
     safeImage(value: string): string | null {
         if (
@@ -149,7 +97,7 @@ export class LearnerPageComponent implements OnDestroy {
         this.loading.set(true);
         this.failed.set(false);
         this.message.set('');
-        this.title.setTitle(this.label('profileTitle') + ' | Voca');
+        this.avatarImgFailed.set(false);
         this.meta.updateTag({ name: 'robots', content: 'noindex' });
         const id = this.route.snapshot.paramMap.get('userId') || '';
         if (
@@ -181,27 +129,31 @@ export class LearnerPageComponent implements OnDestroy {
         }
     }
     async copy(): Promise<void> {
+        const profile = this.profile(), generation = this.generation;
+        if (!profile) return;
         try {
             await navigator.clipboard.writeText(
-                'https://voca.study/learner/' + this.profile()!.user_id,
+                'https://voca.study/learner/' + profile.user_id,
             );
-            this.message.set(this.label('copied'));
+            if (generation === this.generation) this.message.set(this.label('copied'));
         } catch {
-            this.message.set(this.label('failed'));
+            if (generation === this.generation) this.message.set(this.label('failed'));
         }
     }
     async share(): Promise<void> {
+        const profile = this.profile(), generation = this.generation;
+        if (!profile) return;
         if (!navigator.share) {
             await this.copy();
             return;
         }
         try {
             await navigator.share({
-                title: this.profile()!.name,
-                url: 'https://voca.study/learner/' + this.profile()!.user_id,
+                title: profile.name,
+                url: 'https://voca.study/learner/' + profile.user_id,
             });
         } catch (error) {
-            if (!(error instanceof DOMException && error.name === 'AbortError'))
+            if (generation === this.generation && !(error instanceof DOMException && error.name === 'AbortError'))
                 this.message.set(this.label('failed'));
         }
     }

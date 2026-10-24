@@ -1,67 +1,23 @@
-<div class="legal-page">
-    <!-- Header Navigation -->
-    <div class="legal-header-nav">
-        <a routerLink="/video" class="back-btn" [attr.aria-label]="i18n.t('legal.backToApp') || 'Back to App'">
-            <app-icon name="arrow-left" [size]="16" />
-            <span>{{ i18n.t('legal.backToApp') || 'Back to App' }}</span>
-        </a>
-
-        <!-- Document Switcher -->
-        <div class="segmented-control legal-tabs" style="--tab-count: 2;" [style.--active-index]="0" role="tablist">
-            <a routerLink="/terms" class="segmented-control__item active" role="tab" aria-selected="true">
-                <app-icon name="file-text" [size]="14" />
-                <span>{{ i18n.t('legal.tabTerms') || 'Terms of Service' }}</span>
-            </a>
-            <a routerLink="/privacy" class="segmented-control__item" role="tab" aria-selected="false">
-                <app-icon name="lock" [size]="14" />
-                <span>{{ i18n.t('legal.tabPrivacy') || 'Privacy Policy' }}</span>
-            </a>
+<div class="page-layout legal-page">
+  <div class="page-layout__main">
+    <app-panel [panelTitle]="i18n.t('legal.termsTitle')" panelIcon="file-text" [headingLevel]="1" class="legal-panel">
+      <a panelActions class="action-icon-btn mobile-only" routerLink="/video" [attr.aria-label]="i18n.t('legal.backToApp')" [title]="i18n.t('legal.backToApp')"><app-icon name="arrow-left" [size]="16" /></a>
+      <nav class="panel-toolbar" [attr.aria-label]="i18n.t('legal.documents')">
+        <div class="panel-toolbar__top">
+          <div class="segmented-control" [style.--active-index]="0">
+            <a routerLink="/terms" [attr.aria-label]="i18n.t('legal.tabTerms')" class="segmented-control__item active" aria-current="page"><app-icon name="file-text" [size]="14" />{{ i18n.t('legal.termsTabShort') }}</a>
+            <a routerLink="/privacy" [attr.aria-label]="i18n.t('legal.tabPrivacy')" class="segmented-control__item"><app-icon name="lock" [size]="14" />{{ i18n.t('legal.privacyTabShort') }}</a>
+          </div>
+          <a class="action-icon-btn desktop-only" routerLink="/video" [attr.aria-label]="i18n.t('legal.backToApp')" [title]="i18n.t('legal.backToApp')"><app-icon name="arrow-left" [size]="16" /></a>
         </div>
-    </div>
-
-    <!-- Hero Header -->
-    <header class="legal-hero">
-        <div class="legal-badge-row">
-            <span class="legal-tag">
-                <app-icon name="file-text" [size]="12" />
-                Legal
-            </span>
-            <span class="legal-date">{{ i18n.t('legal.lastUpdated') || 'Last updated: October 2026' }}</span>
-        </div>
-        <h1 class="legal-title">{{ i18n.t('legal.termsTitle') || 'Terms of Service' }}</h1>
-        <p class="legal-subtitle">{{ i18n.t('legal.termsSubtitle') || 'Clear terms on how Voca works, YouTube video playback, and your account rights.' }}</p>
-    </header>
-
-    <!-- Key Takeaways Card -->
-    <div class="legal-summary-card">
-        <h2 class="summary-title">
-            <app-icon name="clipboard-check" [size]="16" />
-            Terms Summary
-        </h2>
-        <ul class="summary-list">
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>Video Playback:</strong> Videos play via YouTube's official player and remain subject to YouTube's Terms of Service. Voca does not store or distribute video files.</span>
-            </li>
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>Your Study Data:</strong> You own your saved vocabulary lists, custom definitions, and study decks. We only store them to sync across your devices.</span>
-            </li>
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>No Ad Trackers:</strong> We do not sell your personal data or run third-party advertising tracking scripts.</span>
-            </li>
-            <li class="summary-item">
-                <app-icon name="check" [size]="16" class="summary-check" />
-                <span><strong>Guest or Synced:</strong> Study completely offline as a guest without creating an account, or sign in with Google to sync across devices.</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Main Content Sections -->
-    <main class="legal-content">
+      </nav>
+      <div class="legal-intro">
+        <p>{{ i18n.t('legal.termsSubtitle') }}</p>
+        <div class="legal-meta"><span>{{ i18n.t('legal.lastUpdated') }}</span><span>{{ i18n.t('legal.englishDocument') }}</span></div>
+      </div>
+    <div class="legal-content" lang="en">
         <!-- 1. Acceptance of Terms -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-1">
             <h2 class="section-title">1. Agreement to Terms</h2>
             <div class="section-body">
                 <p>
@@ -74,7 +30,7 @@
         </section>
 
         <!-- 2. The Service -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-2">
             <h2 class="section-title">2. What Voca Provides</h2>
             <div class="section-body">
                 <p>
@@ -91,7 +47,7 @@
         </section>
 
         <!-- 3. YouTube Integration & Video Rights -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-3">
             <h2 class="section-title">3. YouTube Content & Embedded Playback</h2>
             <div class="section-body">
                 <p>
@@ -115,7 +71,7 @@
         </section>
 
         <!-- 4. User Accounts -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-4">
             <h2 class="section-title">4. Accounts & Authentication</h2>
             <div class="section-body">
                 <p>
@@ -131,7 +87,7 @@
         </section>
 
         <!-- 5. User Content & Ownership -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-5">
             <h2 class="section-title">5. Your Data & Ownership</h2>
             <div class="section-body">
                 <p>
@@ -144,7 +100,7 @@
         </section>
 
         <!-- 6. AI Transcription & Diamond Credits -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-6">
             <h2 class="section-title">6. AI Audio Transcription & Credits</h2>
             <div class="section-body">
                 <p>
@@ -160,7 +116,7 @@
         </section>
 
         <!-- 7. Memberships & Billing -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-7">
             <h2 class="section-title">7. Paid Memberships & Billing</h2>
             <div class="section-body">
                 <p>
@@ -176,7 +132,7 @@
         </section>
 
         <!-- 8. Acceptable Use -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-8">
             <h2 class="section-title">8. Acceptable Use Rules</h2>
             <div class="section-body">
                 <p>When using Voca, you agree not to:</p>
@@ -191,7 +147,7 @@
         </section>
 
         <!-- 9. Termination -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-9">
             <h2 class="section-title">9. Account Suspension & Termination</h2>
             <div class="section-body">
                 <p>
@@ -204,7 +160,7 @@
         </section>
 
         <!-- 10. Disclaimer & Liability -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-10">
             <h2 class="section-title">10. Disclaimer of Warranties & Limitation of Liability</h2>
             <div class="section-body">
                 <p>
@@ -217,7 +173,7 @@
         </section>
 
         <!-- 11. Contact -->
-        <section class="legal-section">
+        <section class="legal-section" id="terms-section-11">
             <h2 class="section-title">11. Inquiries & Contact</h2>
             <div class="section-body">
                 <p>
@@ -226,15 +182,29 @@
                 </p>
             </div>
         </section>
-    </main>
-
-    <nav class="legal-header-nav"><a routerLink="/account" class="back-btn">{{ i18n.t('accountExperience.security') }}</a><a routerLink="/account/subscription" class="back-btn">{{ i18n.t('accountExperience.subscription') }}</a></nav>
-    <!-- Footer -->
-    <footer class="legal-footer">
-        <span>© 2026 Voca. {{ i18n.t('legal.effectiveDate') || 'Effective October 2026' }}.</span>
-        <span>
-            Looking for data handling practices? Read our
-            <a routerLink="/privacy">{{ i18n.t('legal.tabPrivacy') || 'Privacy Policy' }}</a>.
-        </span>
-    </footer>
+    </div>
+    </app-panel>
+  </div>
+  <aside class="page-layout__sidebar">
+    <app-panel panelTitle="Terms Summary" panelIcon="clipboard-check" [panelIconSize]="18" class="sidebar-card" lang="en">
+        <ul class="summary-list">
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Video Playback:</strong> Videos play via YouTube's official player and remain subject to YouTube's Terms of Service. Voca does not store or distribute video files.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Your Study Data:</strong> You own your saved vocabulary lists, custom definitions, and study decks. We only store them to sync across your devices.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>No Ad Trackers:</strong> We do not sell your personal data or run third-party advertising tracking scripts.</span>
+            </li>
+            <li class="summary-item">
+                <app-icon name="check" [size]="16" class="summary-check" />
+                <span><strong>Guest or Synced:</strong> Study completely offline as a guest without creating an account, or sign in with Google to sync across devices.</span>
+            </li>
+        </ul>
+    </app-panel>
+  </aside>
 </div>

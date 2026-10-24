@@ -46,13 +46,6 @@ export class SettingsSheetComponent {
   openAchievements = output<void>();
   openAiCredits = output<void>();
   openProUpgrade = output<void>();
-  openOnboarding = output<void>();
-
-  replayOnboarding(): void {
-    this.closed.emit();
-    this.openOnboarding.emit();
-  }
-
   openPage(path: string): void {
     this.closed.emit();
     this.router.navigate([path]);
@@ -120,10 +113,7 @@ export class SettingsSheetComponent {
   });
 
   // Computed for current UI language display
-  currentUILang = computed(() => {
-    const code = this.i18n.currentLanguage();
-    return this.i18n.availableLanguages.find(l => l.code === code) || this.i18n.availableLanguages[0];
-  });
+  readonly currentUILang = this.i18n.currentLanguageInfo;
 
   // Check if dark mode is active
   isDarkMode = computed(() => this.settings.getEffectiveTheme() === 'dark');
@@ -133,13 +123,7 @@ export class SettingsSheetComponent {
     return getReadingDisplayLabel(this.settings.getReadingDisplayMode(language), language, k => this.i18n.t(k));
   });
 
-  uiLangOptions = computed<OptionItem[]>(() =>
-    this.i18n.availableLanguages.map(l => ({
-      value: l.code,
-      label: l.nativeName,
-      iconUrl: l.flag
-    }))
-  );
+  readonly uiLangOptions = this.i18n.languageOptions;
 
   readingDisplayOptions = computed<OptionItem[]>(() => {
     const language = this.settings.settings().language;

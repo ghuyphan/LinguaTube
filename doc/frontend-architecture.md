@@ -1145,7 +1145,7 @@ Located at `src/app/components/onboarding/`:
     - Syncs starter XP via `award_study_xp` RPC to Supabase, logging audit transactions in `xp_transactions`.
     - Daily streak ignition persists to Supabase via `record_streak_activity` RPC.
     - Streak freeze shield grant updates `streaks.freezes_remaining: 2` on Supabase without spending XP.
-  - Accessible anytime via "Replay Hunter Prologue" in `SettingsSheetComponent`.
+  - First-time onboarding is eligible only on learning routes; Settings has no replay action. Public and account visits preserve completion and reward state.
 
 
 
@@ -1168,3 +1168,52 @@ bounded, account-safe Supabase RPCs. Android association JSON is served from
 `public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
 Unknown routes render a not-found page. See the canonical [migration and activation
 handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).
+
+### Shared screen design and route presentation
+
+Account, Subscription, Learner Profile, recovery, Not Found, Terms and Privacy reuse
+`page-layout`, `card`, `panel-header`, `panel-toolbar`, segmented controls, buttons,
+empty states and skeletons from Dictionary, Study, Playlists and History. Account
+forms use grouped sections rather than nested cards. Desktop contextual panels use
+the existing right-sidebar layout; required account actions remain stacked below
+the main panel on tablet/mobile. Legal summaries follow the existing contextual
+sidebar behavior. Recovery and short public states use `page-layout--focus`.
+
+`RouteExperienceService` derives layout and onboarding eligibility from the deepest
+resolved route's `data.layout` and `data.onboarding` after `NavigationEnd`.
+Unresolved routes default to public presentation. Legal documents and aliases,
+learner profiles, both recovery routes and Not Found use a minimal branded header,
+locale selector and legal footer; learning navigation/sheets and global toasts are
+not rendered there. Entering public routes clears open learning sheets without
+completing onboarding. Account and Subscription retain the app shell without FTUE.
+Only Video, Study, Dictionary, Explore and History permit first-time onboarding.
+
+Update checks continue in the background. Public routes defer update dialogs and
+post-update celebrations, and show required updates inline. Idle route preloading
+skips work while a public route is active, including at the idle callback boundary.
+The Settings replay action and its wiring/translations are removed; reward guards
+remain intact. Dates/numbers/currency use pure native-Intl pipes with explicit UI
+locale arguments. Provider/plan/status presentation and learner metadata are
+computed from signals. Legal wording remains English and is marked `lang="en"`,
+with a translated language notice and localized surrounding navigation.
+
+The repeated History panel/header is now `PanelComponent` (`app-panel`), consumed
+by History and the Account, Subscription, Learner, recovery, Not Found and legal
+screens. It owns one card host, heading semantics, icon and projected header
+actions; consumers retain their existing toolbars/content. Public interface-language
+selection uses the same `OptionPickerComponent` as Settings, with shared
+`I18nService.currentLanguageInfo` / `languageOptions` data. Profile visibility uses
+`SwitchComponent`; its checked input stays controlled by the owner, so rejected
+saves do not change confirmed visibility or emit another mutation. Existing
+Settings/Study/Subtitle handlers retain the same checked/checkedChange interface.
+Subscription checkout composes the existing `BottomSheetComponent` and
+`ProUpgradeDialogComponent`, matching the shell's upgrade flow.
+
+Control appearance comes directly from `styles/_buttons.scss`, `_forms.scss` and
+`_components.scss`. Account/public/legal styles must not redefine `.btn` height,
+padding, line height, focus treatment, or segmented-control/thumb dimensions.
+Mobile back actions project into `PanelComponent`'s header action slot, matching
+History; desktop actions stay in the toolbar. Compact localized tab labels retain
+full accessible names and keep the existing 38px sliding pill in all five locales.
+Validate rendered control styles against the shared definitions, including disabled
+buttons and the segmented control's `::before` thumb, at desktop/tablet/phone widths.

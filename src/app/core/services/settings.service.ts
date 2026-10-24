@@ -277,10 +277,6 @@ export class SettingsService implements OnDestroy {
     this.updateSettings({ companionClass: companion });
   }
 
-  resetOnboarding(): void {
-    this.updateSettings({ hasCompletedOnboarding: false });
-  }
-
   markSubtitleCoachmarkSeen(): void {
     this.updateSettings({ hasSeenSubtitleCoachmark: true });
   }

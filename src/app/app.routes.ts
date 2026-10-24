@@ -1,18 +1,23 @@
 import { inject } from '@angular/core';
 import { Routes, Router } from '@angular/router';
 
+const learningPage = { layout: 'app', onboarding: true } as const;
+const accountPage = { layout: 'app', onboarding: false } as const;
+const publicPage = { layout: 'public', onboarding: false } as const;
+
 export const routes: Routes = [
     { path: '', redirectTo: 'video', pathMatch: 'full' },
-    { path: 'learner/:userId', title: 'Learner Profile | Voca', loadComponent: () => import('./features/learner/learner-page.component').then(m => m.LearnerPageComponent) },
-    { path: 'account/subscription', title: 'Subscription | Voca', loadComponent: () => import('./features/account/subscription-page.component').then(m => m.SubscriptionPageComponent) },
-    { path: 'auth/mobile-recovery', title: 'Password Recovery | Voca', data: {recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
-    { path: 'account/recovery', title: 'Password Recovery | Voca', data: {recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
-    { path: 'account', title: 'Account | Voca', loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
+    { path: 'learner/:userId', data: publicPage, title: 'Learner Profile | Voca', loadComponent: () => import('./features/learner/learner-page.component').then(m => m.LearnerPageComponent) },
+    { path: 'account/subscription', data: accountPage, title: 'Subscription | Voca', loadComponent: () => import('./features/account/subscription-page.component').then(m => m.SubscriptionPageComponent) },
+    { path: 'auth/mobile-recovery', title: 'Password Recovery | Voca', data: {...publicPage, recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
+    { path: 'account/recovery', title: 'Password Recovery | Voca', data: {...publicPage, recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
+    { path: 'account', data: accountPage, title: 'Account | Voca', loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
     { path: 'video/:videoId', redirectTo: ({params, queryParams}) => inject(Router).createUrlTree(['/video'], {queryParams: {...queryParams, id: params['videoId']}}) },
     {
         path: 'video',
         title: 'Watch & Learn with Subtitles | Voca',
         data: {
+            ...learningPage,
             description: 'Watch YouTube videos with interactive dual subtitles, real-time furigana, pinyin, and instant dictionary lookups.',
             keywords: 'youtube language learning, dual subtitles, furigana, pinyin, shadow reading, learn japanese, learn chinese, learn korean'
         },
@@ -23,6 +28,7 @@ export const routes: Routes = [
         path: 'dictionary',
         title: 'Dictionary & Grammar Lookup | Voca',
         data: {
+            ...learningPage,
             description: 'Comprehensive multilingual dictionary and grammar pattern search for Japanese, Chinese, Korean, and English.',
             keywords: 'japanese dictionary, chinese dictionary, korean dictionary, grammar patterns, pitch accent, hanzi, kanji lookup'
         },
@@ -33,6 +39,7 @@ export const routes: Routes = [
         path: 'study',
         title: 'Flashcard Review | Voca',
         data: {
+            ...learningPage,
             description: 'Review saved vocabulary with smart flashcards, native audio pronunciations, and daily streak tracking.',
             keywords: 'vocabulary flashcards, language review, spaced repetition, vocabulary notebook, memorize words'
         },
@@ -43,6 +50,7 @@ export const routes: Routes = [
         path: 'explore',
         title: 'Explore Curated Playlists & Channels | Voca',
         data: {
+            ...learningPage,
             description: 'Discover authentic YouTube channels and curated playlists organized by language level and topic.',
             keywords: 'language learning playlists, japanese youtube channels, chinese youtube channels, korean youtube channels'
         },
@@ -53,6 +61,7 @@ export const routes: Routes = [
         path: 'history',
         title: 'Learning History & Watch Log | Voca',
         data: {
+            ...learningPage,
             description: 'Track your language learning journey, resume watched videos, and review saved study progress.',
             keywords: 'learning history, watch progress, resume video'
         },
@@ -63,6 +72,7 @@ export const routes: Routes = [
         path: 'terms',
         title: 'Terms of Service | Voca',
         data: {
+            ...publicPage,
             description: 'Terms of Service and user agreement for the Voca language immersion platform.',
             keywords: 'terms of service, user agreement, youtube terms, voca terms'
         },
@@ -73,6 +83,7 @@ export const routes: Routes = [
         path: 'privacy',
         title: 'Privacy Policy | Voca',
         data: {
+            ...publicPage,
             description: 'Privacy Policy and data practices for the Voca language immersion platform.',
             keywords: 'privacy policy, data protection, offline storage, supabase, voca privacy'
         },
@@ -109,5 +120,5 @@ export const routes: Routes = [
         redirectTo: 'dictionary',
         pathMatch: 'full'
     },
-    { path: '**', title: 'Page Not Found | Voca', loadComponent: () => import('./features/account/not-found-page.component').then(m => m.NotFoundPageComponent) }
+    { path: '**', data: publicPage, title: 'Page Not Found | Voca', loadComponent: () => import('./features/account/not-found-page.component').then(m => m.NotFoundPageComponent) }
 ];

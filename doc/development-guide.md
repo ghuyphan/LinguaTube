@@ -209,3 +209,18 @@ Use supported Node 22 for backend fixtures and the built-in SQLite D1 adapter. R
 Run web lint, TypeScript checking and headless Angular tests. Rebuild `functions/` from source only after editing `functions-src/`. Test live provider output content separately from HTTP status; local Node Japanese tokenization may use Intl fallback when the packaged Kuromoji dictionary is unavailable.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+For account/public presentation changes, check the existing Dictionary, Study,
+Playlists, History and Settings UI as the reference. Verify fresh legal aliases,
+public profiles, browser/Android recovery and unknown URLs before entering a
+learning page. Exercise both themes at desktop, tablet and phone widths and all
+five UI locales. Run `npm run lint`, `npm run test:backend` and
+`npx ng test lingua-tube --configuration=ci`; frontend-only work does not require
+production or functions builds. Route-policy, onboarding-transition, deferred
+update-feedback and native locale-formatting regressions have focused Angular tests.
+
+For control consistency, compare computed button styles (height, padding, radius,
+font, disabled filter, shadows and transitions) with an unscoped instance of the
+same shared variant. Compare segmented-control dimensions and its `::before`
+sliding thumb as well. Check compact tab text for clipping in all five locales;
+do not enlarge controls with page-specific overrides to accommodate long labels.

@@ -400,10 +400,38 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
 
 ## Shared account and content links (2026-10-24)
 
-Canonical learner/video/playlist URLs must match Flutter. Anonymous profile reads use
-the public-only whitelist RPC. Billing/session reads derive account ownership from
-`auth.uid()` and remain bounded; missing dates or effective tiers do not establish
-lifetime access or billing source. Keep browser/Android PKCE callbacks distinct,
-public/account/legal pages free from forced onboarding, and Android signing
-certificates verified. iOS linking is deferred. See
-`../../voca_flutter/doc/account-experience-implementation-2026-10-24.md`.
+- Keep canonical learner/video/playlist URLs aligned with `../voca_flutter` and preserve legacy video-link compatibility.
+- Public learner responses must use the whitelisted public-only RPC; never expose profiles table rows or private stamp metadata anonymously.
+- Account billing/session reads derive ownership from `auth.uid()` and remain bounded. Never infer a billing provider or lifetime access from an effective tier or missing date.
+- Browser and Android PKCE recovery use distinct callback paths. Preserve auth callback ownership and keep account/public/legal pages accessible without first-visit onboarding.
+- Android association certificates must come from verified signing artifacts or Play App Signing, never placeholders. iOS linking remains deferred.
+- Canonical migration and activation notes: `../voca_flutter/doc/account-experience-implementation-2026-10-24.md`.
+
+## Shared screen and public-route rules
+
+- New screens must reuse the existing `page-layout`, cards, panel headers/toolbars,
+  controls and contextual sidebar patterns. Compare rendered Dictionary, Study,
+  Playlists, History and Settings before introducing feature-specific layout CSS.
+- Set explicit `data.layout` (`app`/`public`) and `data.onboarding` metadata on
+  renderable routes. Resolve policy after redirects through `RouteExperienceService`;
+  unresolved destinations stay public. Only learning routes enable first-time FTUE.
+- Public/legal/learner/recovery/Not Found routes omit learning navigation, sheets,
+  global toast feedback and automatic update/install prompts. Required updates are
+  inline. Entering these routes must not complete onboarding or award starter XP.
+- Settings has no replay-onboarding action. Preserve completion and reward guards.
+- Format account dates, counts and payment amounts with the selected UI locale;
+  localize provider/plan/status presentation without changing billing authority.
+  Keep English legal wording marked with `lang="en"` and a localized language notice.
+
+- Reuse actual shared components before copying control markup: `PanelComponent`
+  (also used by History), `OptionPickerComponent`, `SwitchComponent`,
+  `BottomSheetComponent`, `EmptyStateComponent` and `ProUpgradeDialogComponent`.
+  Settings/public locale controls share `I18nService` option data. Shared switches keep
+  checked state controlled by their owner; emit user intent once and retain the
+  confirmed value after failed asynchronous persistence.
+
+- Keep shared control appearance in its existing owners (`src/styles/_buttons.scss`,
+  `_forms.scss`, `_components.scss`). Do not override button height/padding/line
+  height/focus rings or sliding-tab/thumb geometry in feature styles. Use the
+  existing variants, compact localized labels and mobile header-action slot.
+  Verify computed rendered styles against the shared controls, not only class names.

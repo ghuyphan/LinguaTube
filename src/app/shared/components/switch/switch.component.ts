@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, model } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -70,12 +70,15 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwitchComponent {
-  readonly checked = model<boolean>(false);
+  readonly checked = input<boolean>(false);
+  readonly checkedChange = output<boolean>();
   readonly disabled = input<boolean>(false);
   readonly label = input<string>('Toggle switch');
 
   onToggle(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
-    this.checked.set(inputElement.checked);
+    this.checkedChange.emit(inputElement.checked);
+    // Keep the native checkbox aligned until the owner confirms its new value.
+    inputElement.checked = this.checked();
   }
 }

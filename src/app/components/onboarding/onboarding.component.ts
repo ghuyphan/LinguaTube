@@ -66,8 +66,8 @@ export class OnboardingComponent implements OnInit, OnDestroy {
     /** Emitted when onboarding is finished or skipped */
     dismissed = output<void>();
 
-    /** Whether the user has already completed onboarding / claimed starter pack previously */
-    readonly isReplay = computed(() => this.settings.onboardingRewardClaimed());
+    /** Keep reward ownership distinct from the first-time completion flag */
+    readonly starterPackClaimed = computed(() => this.settings.onboardingRewardClaimed());
 
     /** Total 4-step streamlined game journey: Realm -> Companion -> Difficulty -> Adventurer License */
     readonly totalSteps = 4;

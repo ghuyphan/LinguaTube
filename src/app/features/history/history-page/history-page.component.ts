@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, inject, computed, signal, effect, O
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PanelComponent } from '../../../shared/components/panel/panel.component';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { OptionPickerComponent, OptionItem } from '../../../shared/components/option-picker/option-picker.component';
@@ -21,6 +22,7 @@ type FilterType = 'all' | 'favorites';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    PanelComponent,
     CommonModule,
     FormsModule,
     IconComponent,

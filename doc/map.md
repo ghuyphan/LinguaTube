@@ -547,3 +547,23 @@ bounded, account-safe Supabase RPCs. Android association JSON is served from
 `public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
 Unknown routes render a not-found page. See the canonical [migration and activation
 handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).
+
+### Screen presentation owners
+
+| Owner | Responsibility |
+|---|---|
+| `app.routes.ts` + `RouteExperienceService` | Resolved public/app layout and learning-only onboarding policy, including redirects |
+| `AppComponent` + `public-layout.scss` | Minimal public header/footer, locale selection, inline required updates and sheet suppression |
+| Account/Subscription/Learner/legal pages | Reuse established page layouts, panels, toolbars, forms and contextual sidebars |
+| `LocaleDatePipe` / `LocaleNumberPipe` | Explicit UI-locale formatting through native Intl, loaded with feature screens |
+| `AppUpdateService` / `IdlePreloadStrategy` | Defer automatic public-page feedback and skip unrelated idle preloading |
+
+Reusable presentation owners: `shared/components/panel` owns the common card/header
+used by History and the new screens; existing `OptionPickerComponent`,
+`SwitchComponent`, `BottomSheetComponent`, `EmptyStateComponent` and
+`ProUpgradeDialogComponent` own language selection, visibility, checkout and state
+presentation. Settings and the public header share locale option data in `I18nService`.
+
+The visual authority for buttons, form fields and sliding tab pills remains
+`src/styles/_buttons.scss`, `_forms.scss` and `_components.scss`; feature styles
+provide layout rather than replacement control geometry.

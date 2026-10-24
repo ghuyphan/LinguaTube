@@ -1,9 +1,16 @@
 <app-bottom-sheet #mainSheet [isOpen]="isOpen()" [title]="i18n.t('settings.title') || 'Settings'" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="settings-modal">
         <div class="settings-modal__body">
-            <div class="settings-card">
-                <button class="btn btn-secondary" (click)="openPage('/account')">{{ i18n.t('accountExperience.security') }}</button>
-                <button class="btn btn-secondary" (click)="openPage('/account/subscription')">{{ i18n.t('accountExperience.subscription') }}</button>
+            <div class="settings-card settings-card--group">
+                <button class="settings-item-row" (click)="openPage('/account')">
+                    <div class="settings-item-left"><div class="settings-item-icon-box"><app-icon name="lock" [size]="16" /></div><span class="settings-item-title">{{ i18n.t('accountExperience.security') }}</span></div>
+                    <div class="settings-item-right"><app-icon name="chevron-right" [size]="16" class="settings-item-chevron" /></div>
+                </button>
+                <div class="settings-item-divider"></div>
+                <button class="settings-item-row" (click)="openPage('/account/subscription')">
+                    <div class="settings-item-left"><div class="settings-item-icon-box"><app-icon name="diamond" [size]="16" /></div><span class="settings-item-title">{{ i18n.t('accountExperience.subscription') }}</span></div>
+                    <div class="settings-item-right"><app-icon name="chevron-right" [size]="16" class="settings-item-chevron" /></div>
+                </button>
             </div>
             <!-- 1. Account & Motivation Card -->
             <div class="settings-card settings-card--account">
@@ -127,23 +134,6 @@
                         </div>
                     </button>
 
-                    <div class="settings-item-divider"></div>
-
-                    <!-- Replay Hunter Prologue / Onboarding -->
-                    <button class="settings-item-row" (click)="replayOnboarding()">
-                        <div class="settings-item-left">
-                            <div class="settings-item-icon-box">
-                                <app-icon name="sparkles" [size]="16" />
-                            </div>
-                            <div class="settings-item-text-stack">
-                                <span class="settings-item-title">{{ i18n.t('onboarding.replayTour') || 'Replay Hunter Prologue' }}</span>
-                                <span class="settings-item-hint">{{ i18n.t('onboarding.replayTourDesc') || 'Calibrate your language, level, and companion guide' }}</span>
-                            </div>
-                        </div>
-                        <div class="settings-item-right">
-                            <app-icon name="chevron-right" [size]="16" class="settings-item-chevron" />
-                        </div>
-                    </button>
                 </div>
             </div>
 
@@ -271,7 +261,7 @@
 
 <!-- UI Language Picker -->
 @if (showUILangPicker()) {
-    <app-option-picker [options]="uiLangOptions()" [value]="i18n.currentLanguage()" [isOpen]="showUILangPicker()"
+    <app-option-picker [options]="uiLangOptions" [value]="i18n.currentLanguage()" [isOpen]="showUILangPicker()"
         [title]="i18n.t('settings.interfaceLanguage')" (selected)="onUILangSelected($event)"
         (closed)="showUILangPicker.set(false)" />
 }

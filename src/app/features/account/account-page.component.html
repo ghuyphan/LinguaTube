@@ -1,0 +1,132 @@
+<div class="page-layout experience-page" [class.page-layout--focus]="recovery">
+  <div class="page-layout__main">
+    <app-panel [panelTitle]="i18n.t(recovery ? 'accountExperience.recovery' : 'accountExperience.security')" [panelIcon]="recovery ? 'lock' : 'user'" [headingLevel]="1" class="experience-panel">
+      @if (!recovery) {
+      <a panelActions class="action-icon-btn mobile-only" routerLink="/video" [attr.aria-label]="i18n.t('accountExperience.back')" [title]="i18n.t('accountExperience.back')"><app-icon name="arrow-left" [size]="16" /></a>
+      }
+      @if (!recovery) {
+        <nav class="panel-toolbar" [attr.aria-label]="i18n.t('accountExperience.account')"><div class="panel-toolbar__top">
+          <div class="segmented-control">
+            <a class="segmented-control__item active" routerLink="/account" aria-current="page"><app-icon name="user" [size]="14" />{{ i18n.t('accountExperience.account') }}</a>
+            <a class="segmented-control__item" routerLink="/account/subscription" [attr.aria-label]="i18n.t('accountExperience.subscription')"><app-icon name="diamond" [size]="14" />{{ i18n.t('accountExperience.subscriptionTab') }}</a>
+          </div>
+          <a class="action-icon-btn desktop-only" routerLink="/video" [attr.aria-label]="i18n.t('accountExperience.back')" [title]="i18n.t('accountExperience.back')"><app-icon name="arrow-left" [size]="16" /></a>
+        </div></nav>
+      }
+  @if (message()) {
+    <p class="notice" [class.error]="error()" role="status">{{ message() }}</p>
+  }
+  @if (!auth.isLoggedIn()) {
+    <section class="experience-section">
+      @if (!recovery) {
+        <h2>{{ i18n.t('accountExperience.signIn') }}</h2>
+        <button class="btn btn-google" (click)="google()" [disabled]="busy()">
+          <app-icon name="google" [size]="18" />{{ i18n.t('accountExperience.google') }}
+        </button>
+        <form class="experience-form" (ngSubmit)="login()" #signInForm="ngForm">
+          <label>{{ i18n.t('accountExperience.email') }}<input type="email" name="email" [(ngModel)]="email" required email autocomplete="email" /></label>
+          <label>{{ i18n.t('accountExperience.password') }}<input type="password" name="password" [(ngModel)]="password" required minlength="6" autocomplete="current-password" /></label>
+          <button class="btn btn-primary" type="submit" [disabled]="busy() || signInForm.invalid">{{ i18n.t('accountExperience.signIn') }}</button>
+        </form>
+        <button class="btn btn-secondary" (click)="reset()" [disabled]="busy() || !email">{{ i18n.t('accountExperience.reset') }}</button>
+      } @else {
+        <p>{{ i18n.t('accountExperience.recoveryHint') }}</p>
+        <form class="experience-form" (ngSubmit)="reset()" #resetForm="ngForm">
+          <label>{{ i18n.t('accountExperience.email') }}<input type="email" name="email" [(ngModel)]="email" required email autocomplete="email" /></label>
+          <button class="btn btn-primary" type="submit" [disabled]="busy() || resetForm.invalid">{{ i18n.t('accountExperience.reset') }}</button>
+        </form>
+      }
+    </section>
+  } @else {
+    <div class="account-grid">
+    @if (!recovery) {
+      <section class="experience-section">
+        <h2><app-icon name="user" [size]="18" />{{ auth.user()?.name }}</h2>
+        <p>{{ supabase.user()?.email }}</p>
+        <p>{{ i18n.t('accountExperience.linked') }}: {{ providers() }}</p>
+        <div class="actions">
+          @if (!hasGoogle()) {
+            <button class="btn btn-secondary" (click)="connectGoogle()" [disabled]="busy()"><app-icon name="google" [size]="16" />{{ i18n.t('accountExperience.connect') }}</button>
+          }
+          @for (identity of supabase.user()?.identities || []; track identity.identity_id) {
+            @if ((supabase.user()?.identities?.length || 0) > 1 && identity.provider !== 'email') {
+              <button class="btn btn-secondary" (click)="disconnect(identity)" [disabled]="busy()">{{ i18n.t('accountExperience.disconnect') }} {{ identity.provider === 'google' ? 'Google' : identity.provider }}</button>
+            }
+          }
+        </div>
+        <form class="experience-form experience-form--divided" (ngSubmit)="updateEmail()" #emailForm="ngForm">
+          <label>{{ i18n.t('accountExperience.changeEmail') }}<input type="email" name="newEmail" [(ngModel)]="email" required email autocomplete="email" /></label>
+          <button class="btn btn-secondary" type="submit" [disabled]="busy() || emailForm.invalid">{{ i18n.t('accountExperience.changeEmail') }}</button>
+        </form>
+      </section>
+    }
+    <section class="experience-section">
+      @if (!recovery) { <h2><app-icon name="lock" [size]="18" />{{ i18n.t('accountExperience.changePassword') }}</h2> }
+      <form class="experience-form" (ngSubmit)="updatePassword()">
+        <label>{{ i18n.t('accountExperience.password') }}<input type="password" name="newPassword" [(ngModel)]="password" minlength="6" required autocomplete="new-password" /></label>
+        <label>{{ i18n.t('accountExperience.confirmPassword') }}<input type="password" name="confirmPassword" [(ngModel)]="confirmation" minlength="6" required autocomplete="new-password" /></label>
+        <button class="btn btn-primary" type="submit" [disabled]="busy() || password.length < 6 || password !== confirmation">{{ i18n.t('accountExperience.save') }}</button>
+      </form>
+      @if (!recovery) { <button class="btn btn-secondary" (click)="reset()" [disabled]="busy()">{{ i18n.t('accountExperience.reset') }}</button> }
+    </section>
+    @if (!recovery) {
+      <section class="experience-section experience-section--danger">
+        <h2><app-icon name="trash-2" [size]="18" />{{ i18n.t('accountExperience.deleteAccount') }}</h2>
+        <p>{{ i18n.t('accountExperience.deleteBilling') }} <a routerLink="/account/subscription">{{ i18n.t('accountExperience.subscription') }}</a></p>
+        <form class="experience-form" (ngSubmit)="deleteAccount()">
+          <label>{{ i18n.t('accountExperience.deleteConfirm') }}<input name="deleteConfirmation" [(ngModel)]="deleteConfirmation" autocomplete="off" spellcheck="false" /></label>
+          <button class="btn btn-danger" type="submit" [disabled]="busy() || deleteConfirmation !== 'DELETE'">{{ i18n.t('accountExperience.deleteAccount') }}</button>
+        </form>
+      </section>
+    }
+    </div>
+  }
+  @if (!recovery) {
+    <nav class="experience-footer" [attr.aria-label]="i18n.t('legal.documents')">
+      <a routerLink="/terms">{{ i18n.t('accountExperience.terms') }}</a>
+      <a routerLink="/privacy">{{ i18n.t('accountExperience.privacy') }}</a>
+    </nav>
+  }
+
+    </app-panel>
+  </div>
+  @if (!recovery) {
+    <aside class="page-layout__sidebar experience-sidebar">
+      @if (auth.isLoggedIn()) {
+      @if (profileReady()) {
+        <app-panel [panelTitle]="i18n.t('accountExperience.publicProfile')" panelIcon="user" [panelIconSize]="18" class="experience-section">
+          <div class="visibility-control">
+            <span>{{ i18n.t('accountExperience.visibility') }}</span>
+            <app-switch [checked]="isPublic()" (checkedChange)="setVisibility($event)" [disabled]="busy()" [label]="i18n.t('accountExperience.visibility')" />
+          </div>
+          <p>{{ i18n.t(isPublic() ? 'accountExperience.publicHint' : 'accountExperience.privateHint') }}</p>
+          <div class="actions">
+            <a class="btn btn-secondary" [routerLink]="['/learner', auth.getUserId() ]">{{ i18n.t('accountExperience.publicProfile') }}</a>
+            <button class="btn btn-secondary" (click)="share()" [disabled]="busy() || !isPublic()"><app-icon name="share" [size]="16" />{{ i18n.t('accountExperience.share') }}</button>
+          </div>
+        </app-panel>
+      }
+      <app-panel [panelTitle]="i18n.t('accountExperience.sessions')" panelIcon="clock" [panelIconSize]="18" class="experience-section">
+        @if (sessionsLoading()) {
+          <div class="experience-loading" role="status" aria-busy="true"><span class="sr-only">{{ i18n.t('common.loading') }}</span><div class="skeleton-line" aria-hidden="true"></div></div>
+        } @else {
+        @for (session of sessions(); track session.id) {
+          <div class="detail-row">
+            <strong>{{ i18n.t(session.is_current ? 'accountExperience.currentSession' : 'accountExperience.session') }}</strong>
+            <span>{{ (session.created_at | localeDate: i18n.currentLanguage(): true) || i18n.t('accountExperience.unknown') }}</span>
+          </div>
+        } @empty {
+          <p>{{ i18n.t('accountExperience.noSessions') }}</p>
+        }
+        }
+        <div class="actions"><button class="btn btn-secondary" (click)="signOutAll()" [disabled]="busy()"><app-icon name="log-out" [size]="16" />{{ i18n.t('accountExperience.signOutAll') }}</button></div>
+      </app-panel>
+
+      } @else {
+        <app-panel [panelTitle]="i18n.t('settings.syncVocab')" panelIcon="cloud" [panelIconSize]="18" class="sidebar-card">
+          <p>{{ i18n.t('settings.syncVocabHint') }}</p>
+        </app-panel>
+      }
+    </aside>
+  }
+</div>

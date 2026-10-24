@@ -1,0 +1,91 @@
+<div class="page-layout experience-page">
+  <div class="page-layout__main">
+    <app-panel [panelTitle]="i18n.t('accountExperience.subscription')" panelIcon="diamond" [headingLevel]="1" class="experience-panel">
+      <a panelActions class="action-icon-btn mobile-only" routerLink="/video" [attr.aria-label]="i18n.t('accountExperience.back')" [title]="i18n.t('accountExperience.back')"><app-icon name="arrow-left" [size]="16" /></a>
+      <nav class="panel-toolbar" [attr.aria-label]="i18n.t('accountExperience.account')"><div class="panel-toolbar__top">
+        <div class="segmented-control" [style.--active-index]="1">
+          <a class="segmented-control__item" routerLink="/account"><app-icon name="user" [size]="14" />{{ i18n.t('accountExperience.account') }}</a>
+          <a class="segmented-control__item active" routerLink="/account/subscription" [attr.aria-label]="i18n.t('accountExperience.subscription')" aria-current="page"><app-icon name="diamond" [size]="14" />{{ i18n.t('accountExperience.subscriptionTab') }}</a>
+        </div>
+        <a class="action-icon-btn desktop-only" routerLink="/video" [attr.aria-label]="i18n.t('accountExperience.back')" [title]="i18n.t('accountExperience.back')"><app-icon name="arrow-left" [size]="16" /></a>
+      </div></nav>
+  @if (!auth.isLoggedIn()) {
+    <section class="experience-section">
+      <app-empty-state icon="lock" [title]="i18n.t('accountExperience.signIn')" [description]="i18n.t('settings.syncVocabHint')" [compact]="true">
+        <a class="btn btn-primary" routerLink="/account" [queryParams]="{ returnTo: '/account/subscription' }">{{ i18n.t('accountExperience.signIn') }}</a>
+      </app-empty-state>
+    </section>
+  } @else {
+    <div class="subscription-grid">
+    <section class="experience-section subscription-summary">
+      <div class="plan-summary"><h2>{{ tierName() }}</h2></div>
+      <div class="actions">
+        <button class="btn btn-primary" (click)="toggleCheckout()">{{ i18n.t(checkout() ? 'accountExperience.cancel' : 'accountExperience.renew') }}</button>
+        <button class="btn btn-secondary" (click)="load()" [disabled]="loading()"><app-icon name="refresh-cw" [size]="16" />{{ i18n.t('accountExperience.refresh') }}</button>
+      </div>
+    </section>
+    @if (failed()) {
+      <div class="notice error" role="alert">
+        <p>{{ i18n.t('accountExperience.failed') }}</p>
+        <button class="btn btn-secondary" (click)="load()" [disabled]="loading()">{{ i18n.t('accountExperience.retry') }}</button>
+      </div>
+    }
+    @if (loading()) {
+      <div class="experience-section experience-loading" role="status" aria-busy="true">
+        <span class="sr-only">{{ i18n.t('common.loading') }}</span>
+        <div class="skeleton-line skeleton-line--title" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+      </div>
+    }
+    @for (grant of displayGrants(); track grant.provider + grant.tier) {
+      <section class="experience-section">
+        <h2>{{ grant.tierLabel }}</h2>
+        <div class="detail-row"><span>{{ i18n.t('accountExperience.provider') }}</span><strong>{{ grant.sourceLabel }}</strong></div>
+        <div class="detail-row"><span>{{ i18n.t('accountExperience.status') }}</span><strong>{{ i18n.t(grant.active ? 'accountExperience.active' : 'accountExperience.expired') }}</strong></div>
+        <div class="detail-row"><span>{{ i18n.t('accountExperience.expires') }}</span><strong>{{ (grant.expires_at | localeDate: i18n.currentLanguage()) || i18n.t('accountExperience.unknown') }}</strong></div>
+        @if (grant.provider === 'revenuecat') {
+          <div class="actions">
+            <a class="btn btn-secondary" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener noreferrer">App Store<app-icon name="external-link" [size]="14" /></a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener noreferrer">Google Play<app-icon name="external-link" [size]="14" /></a>
+          </div>
+        }
+      </section>
+    }
+    <section class="experience-section subscription-history">
+      <h2><app-icon name="history" [size]="18" />{{ i18n.t('accountExperience.history') }}</h2>
+      @if (!loading() && !failed() && orders().length === 0) {
+        <app-empty-state icon="history" [title]="i18n.t('accountExperience.noPurchases')" [compact]="true" />
+      }
+      @for (order of displayOrders(); track order.order_code) {
+        <div class="detail-row">
+          <div><strong>{{ i18n.t('accountExperience.order') }} {{ order.order_code }}</strong><p>{{ order.planLabel }} · {{ (order.created_at | localeDate: i18n.currentLanguage()) || i18n.t('accountExperience.unknown') }}</p><a [href]="order.supportUrl">{{ i18n.t('accountExperience.support') }}</a></div>
+          <div class="payment-detail"><strong>{{ order.amount | localeNumber: i18n.currentLanguage(): 'VND' }}</strong><p>{{ order.statusLabel }}</p>
+            @if (order.status === 'PENDING') {
+              <button class="btn btn-secondary" (click)="check(order)" [disabled]="loading()">{{ i18n.t('accountExperience.refresh') }}</button>
+            }
+          </div>
+        </div>
+      }
+    </section>
+    </div>
+  }
+
+    </app-panel>
+  </div>
+  <aside class="page-layout__sidebar experience-sidebar">
+    <app-panel [panelTitle]="i18n.t('accountExperience.webPurchase')" panelIcon="info" [panelIconSize]="18" class="sidebar-card">
+      <p>{{ i18n.t('accountExperience.prepaid') }}</p>
+      <div class="actions"><a class="btn btn-secondary" href="mailto:support@voca.study">{{ i18n.t('accountExperience.support') }}</a></div>
+    </app-panel>
+  </aside>
+</div>
+
+@defer (when checkout()) {
+  <app-bottom-sheet [isOpen]="checkout()" [title]="i18n.t('accountExperience.renew')"
+    [showCloseButton]="true" maxWidth="460px" (closed)="closeCheckout()">
+    @if (checkout()) {
+      <app-pro-upgrade-dialog [allowRenewal]="true" (dismissed)="closeCheckout(); load()" />
+    }
+  </app-bottom-sheet>
+}

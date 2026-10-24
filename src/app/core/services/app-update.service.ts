@@ -1,9 +1,10 @@
-import { Injectable, signal, computed, inject, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { Injectable, signal, computed, effect, inject, PLATFORM_ID, DestroyRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { fromEvent, interval } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { RouteExperienceService } from './route-experience.service';
 import { ToastService } from './toast.service';
 import { I18nService } from './i18n.service';
 import {
@@ -27,6 +28,7 @@ export class AppUpdateService {
   private destroyRef = inject(DestroyRef);
   private toast = inject(ToastService);
   private i18n = inject(I18nService);
+  private readonly experience = inject(RouteExperienceService);
   private isBrowser = isPlatformBrowser(this.platformId);
 
   // Current client release metadata
@@ -68,6 +70,7 @@ export class AppUpdateService {
   // Timing constants
   private readonly MIN_BACKGROUND_CHECK_INTERVAL = 5 * 60 * 1000; // 5 minutes
   private readonly PERIODIC_CHECK_INTERVAL = 60 * 60 * 1000; // 1 hour
+  private celebrationTimer: ReturnType<typeof setTimeout> | null = null;
   private lastCheckTimestamp = 0;
 
   constructor() {
@@ -89,7 +92,12 @@ export class AppUpdateService {
     void this.fetchServerVersion();
 
     // Greet user with celebratory toast if app was just updated
-    this.checkPostUpdateCelebration();
+    effect(onCleanup => {
+      if (!this.experience.publicLayout()) this.checkPostUpdateCelebration();
+      onCleanup(() => {
+        if (this.celebrationTimer !== null) clearTimeout(this.celebrationTimer);
+      });
+    });
   }
 
   /**
@@ -334,9 +342,10 @@ export class AppUpdateService {
     try {
       const updatedVersion = localStorage.getItem('voca_post_update_version');
       if (updatedVersion) {
-        localStorage.removeItem('voca_post_update_version');
         const msg = this.i18n.t('app.updateSuccess', { version: updatedVersion }) || `Updated to v${updatedVersion}!`;
-        setTimeout(() => {
+        this.celebrationTimer = setTimeout(() => {
+          if (this.experience.publicLayout()) return;
+          try { localStorage.removeItem('voca_post_update_version'); } catch { /* Storage may become unavailable after scheduling. */ }
           this.toast.show(msg, {
             type: 'success',
             icon: 'sparkles',

@@ -97,4 +97,48 @@ describe('Account mutations', () => {
         expect(page.busy()).toBeFalse();
         fixture.destroy();
     });
+    it('does not load profile visibility or account sessions while recovering a password', () => {
+        const rpc = jasmine.createSpy('rpc'), from = jasmine.createSpy('from');
+        TestBed.overrideProvider(ActivatedRoute, { useValue: {
+            snapshot: { data: { recovery: true }, queryParamMap: convertToParamMap({}) },
+        } });
+        TestBed.overrideProvider(SupabaseService, { useValue: {
+            user: signal({ id: 'account-a' }), client: { rpc, from },
+        } });
+        const fixture = TestBed.createComponent(AccountPageComponent);
+        fixture.detectChanges();
+        expect(rpc).not.toHaveBeenCalled();
+        expect(from).not.toHaveBeenCalled();
+        expect(fixture.componentInstance.sessionsLoading()).toBeFalse();
+        fixture.destroy();
+    });
+
+    it('restores the shared visibility switch when the server rejects a visibility change', async () => {
+        const single = jasmine.createSpy('single').and.resolveTo({ data: null, error: new Error('offline') });
+        TestBed.overrideProvider(SupabaseService, { useValue: {
+            user: signal(null),
+            client: { from: () => ({ update: () => ({ eq: () => ({ select: () => ({ single }) }) }) }) },
+        } });
+        TestBed.overrideProvider(AuthService, { useValue: {
+            user: signal({ name: 'Haruka' }), isLoggedIn: () => true,
+            getUserId: () => owner,
+            captureSession: () => ({ userId: owner, generation }),
+            isCurrentSession: (session: { userId: string; generation: number }) => session.userId === owner && session.generation === generation,
+        } });
+        const fixture = TestBed.createComponent(AccountPageComponent);
+        fixture.detectChanges();
+        fixture.componentInstance.profileReady.set(true);
+        fixture.detectChanges();
+        const input: HTMLInputElement = fixture.nativeElement.querySelector('app-switch input');
+        input.checked = true;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        await fixture.whenStable();
+        fixture.detectChanges();
+        expect(single).toHaveBeenCalledTimes(1);
+        expect(fixture.componentInstance.error()).toBeTrue();
+        expect(fixture.componentInstance.isPublic()).toBeFalse();
+        expect(input.checked).toBeFalse();
+        fixture.destroy();
+    });
+
 });

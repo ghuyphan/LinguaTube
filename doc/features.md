@@ -946,7 +946,7 @@ To eliminate generic setup fatigue and immerse language learners directly into V
     - Bonus streak freeze grants safely sync `freezes_remaining: 2` to Supabase `streaks` without mistakenly deducting 150 XP.
   - Stores `companionClass`, `preferredLevel`, `showDualSubtitles`, and `onboardingRewardClaimed` in `UserSettings` (`localStorage`).
   - Video feed recommendations immediately calibrate to the selected proficiency level upon entering the app.
-  - Users can revisit and recalibrate anytime via the **"Replay Hunter Prologue"** action in `SettingsSheetComponent`.
+  - First-time onboarding appears only on learning routes. Public/legal/account visits do not complete it or grant rewards; the Settings replay action has been removed.
 
 
 
@@ -971,3 +971,24 @@ bounded, account-safe Supabase RPCs. Android association JSON is served from
 `public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
 Unknown routes render a not-found page. See the canonical [migration and activation
 handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).
+
+### Public visits and consistent account screens
+
+Terms/Privacy, shared learner profiles, recovery and unknown links open without
+learning navigation, onboarding or automatic app prompts. Visitors can choose the
+interface language and return to the app. First-time onboarding is retained for
+learning pages only; reading a public page does not claim rewards or complete it.
+Settings no longer offers replay. Account and Subscription use the existing app
+panels and grouped controls, with localized purchase statuses, dates and amounts.
+Recovery focuses on password changes and skips unrelated profile/session reads.
+Legal wording is unchanged and explicitly identified as English.
+
+The public language picker is the same flag-based picker used in Settings. Profile
+visibility uses the shared switch, and subscription renewal opens the existing
+upgrade dialog inside the app's bottom sheet. Panels share the extracted History
+header component instead of repeating feature-specific header markup.
+
+Account/public/legal buttons and sliding tabs inherit Voca's shared control sizing
+and interaction styles. Compact translated tab labels fit the standard sliding
+control; full document/subscription names remain available in headings and accessible
+labels. Mobile back actions occupy the card header, leaving the tab row full width.
