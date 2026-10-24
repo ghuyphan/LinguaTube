@@ -1158,3 +1158,13 @@ Dictionary models retain actual definition language and provenance. Manual trans
 Authenticated freeze actions await one repository purchase instead of separate deduction/replenishment requests. Persisted operation IDs survive ambiguous replies and session changes; replays refresh current authoritative state. Guest spending remains local.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+## Shared account experience (2026-10-24)
+
+Routes now include `/learner/:userId`, `/account`, `/account/subscription`, browser
+recovery `/account/recovery`, and Android recovery `/auth/mobile-recovery`. Public
+profile reads, provider-specific subscription/order reads, and session lists use
+bounded, account-safe Supabase RPCs. Android association JSON is served from
+`public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
+Unknown routes render a not-found page. See the canonical [migration and activation
+handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).

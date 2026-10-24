@@ -267,3 +267,9 @@
         padding: var(--space-md);
     }
 }
+
+/* Account/legal navigation shares the web visual language and touch sizing. */
+.back-btn, .legal-tabs .segmented-control__item { min-height: 48px; box-sizing: border-box; }
+.back-btn:focus-visible, .section-body a:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 4px; }
+.section-body { overflow-wrap: anywhere; }
+.legal-tabs { flex-wrap: wrap; }

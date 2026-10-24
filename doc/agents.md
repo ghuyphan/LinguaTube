@@ -397,3 +397,13 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
 - Serialize exact inputs before hashing token/translation cache keys. Keep translation provider order, concurrency, deadlines and quotas in their existing shared owners.
 - Dictionary provider failures are not empty success. Preserve actual definition language/provenance, short fallback/negative TTLs, normalized text/POS, and absent word levels.
 - Authenticated freezes use one persisted operation ID and `spend_xp_once`; do not restore independent deduction and replenishment requests. The shared PostgreSQL migration lives in `../voca_flutter/supabase/migrations/20261024090000_idempotent_xp_purchases.sql`.
+
+## Shared account and content links (2026-10-24)
+
+Canonical learner/video/playlist URLs must match Flutter. Anonymous profile reads use
+the public-only whitelist RPC. Billing/session reads derive account ownership from
+`auth.uid()` and remain bounded; missing dates or effective tiers do not establish
+lifetime access or billing source. Keep browser/Android PKCE callbacks distinct,
+public/account/legal pages free from forced onboarding, and Android signing
+certificates verified. iOS linking is deferred. See
+`../../voca_flutter/doc/account-experience-implementation-2026-10-24.md`.

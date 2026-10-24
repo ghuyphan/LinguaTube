@@ -961,3 +961,13 @@ Dictionary definitions now distinguish translated and fallback content; Japanese
 Authenticated freeze purchases reuse their operation identity after interruption, and success is shown after server confirmation. Signed-in bonus grants require server authority rather than direct streak writes.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+## Shared account experience (2026-10-24)
+
+Routes now include `/learner/:userId`, `/account`, `/account/subscription`, browser
+recovery `/account/recovery`, and Android recovery `/auth/mobile-recovery`. Public
+profile reads, provider-specific subscription/order reads, and session lists use
+bounded, account-safe Supabase RPCs. Android association JSON is served from
+`public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
+Unknown routes render a not-found page. See the canonical [migration and activation
+handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).

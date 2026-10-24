@@ -37,10 +37,10 @@ export class AuthService {
     private initialProfile = this.getInitialProfile();
 
     readonly user = signal<UserProfile | null>(this.initialProfile);
-    readonly isLoggedIn = computed(() => this.user() !== null);
+    readonly isLoggedIn = computed(() => this.user() !== null && this.user()?.id === this.supabase.userId);
     readonly subscriptionTier = computed<'free' | 'pro' | 'premium'>(() => {
         const u = this.user();
-        if (!u) return 'free';
+        if (!u || u.id !== this.supabase.userId) return 'free';
         if (u.subscriptionExpires && new Date(u.subscriptionExpires).getTime() < Date.now()) {
             return 'free';
         }
@@ -184,7 +184,9 @@ export class AuthService {
      */
     private async syncProfileFromSession(session: Session, emitLoginEvent = false): Promise<UserProfile> {
         const user = session.user;
+        const generation = this.sessionGeneration;
         const profile = await this.fetchProfile(user);
+        if (generation !== this.sessionGeneration || this.supabase.userId !== user.id) return profile;
         this.user.set(profile);
         this.saveStoredProfile(profile);
 
@@ -529,7 +531,7 @@ export class AuthService {
      * Get user ID for API calls
      */
     getUserId(): string | null {
-        return this.user()?.id ?? this.supabase.userId;
+        return this.supabase.userId;
     }
 
     /**
@@ -567,8 +569,10 @@ export class AuthService {
         const user = this.supabase.user();
         if (!user) return;
 
+        const session = this.captureSession();
         try {
             const profile = await this.fetchProfile(user);
+            if (!this.isCurrentSession(session)) return;
             this.user.set(profile);
             this.saveStoredProfile(profile);
         } catch (e) {

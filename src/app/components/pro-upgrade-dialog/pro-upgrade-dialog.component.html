@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    @if (isPremium() && !payment.currentOrder()) {
+    @if (isPremium() && !payment.currentOrder() && !allowRenewal()) {
         <!-- Already Premium State -->
         <div class="already-pro-card already-premium">
             <div class="status-badge status-paid badge-premium-glow">
@@ -24,7 +24,7 @@
                 {{ i18n.t('common.close') || 'Done' }}
             </button>
         </div>
-    } @else if (isPro() && selectedTier() === 'pro' && !payment.currentOrder()) {
+    } @else if (isPro() && selectedTier() === 'pro' && !payment.currentOrder() && !allowRenewal()) {
         <!-- Already Pro State with Upgrade to Premium CTA -->
         <div class="already-pro-card">
             <div class="status-badge status-paid">

@@ -1,8 +1,9 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subscription, tap, catchError, of, interval, switchMap, takeWhile, takeUntil, timer } from 'rxjs';
+import { Observable, Subscription, map, tap, catchError, of, interval, switchMap, takeWhile, takeUntil, timer } from 'rxjs';
 import { ToastService } from './toast.service';
-import { AuthService } from './auth.service';
+import { AuthService, type SessionSnapshot } from './auth.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { I18nService } from './i18n.service';
 import { TranscriptService } from '../../features/video/transcript.service';
 
@@ -37,9 +38,12 @@ export class PaymentService {
   private i18n = inject(I18nService);
 
   private pollingSub: Subscription | null = null;
+  private generation = 0;
   readonly isCreating = signal(false);
   readonly currentOrder = signal<PaymentOrder | null>(null);
   readonly isPaid = signal(false);
+
+  constructor() { this.auth.logoutEvent.pipe(takeUntilDestroyed()).subscribe(() => this.clearOrder()); }
 
   createOrder(planId: string = 'pro_1m'): Observable<PaymentOrder | null> {
     const token = this.auth.getToken();
@@ -48,6 +52,10 @@ export class PaymentService {
       return of(null);
     }
 
+    const session = this.auth.captureSession();
+    const generation = ++this.generation;
+    const owns = () => generation === this.generation && this.auth.isCurrentSession(session);
+    this.stopPolling();
     this.isCreating.set(true);
     this.isPaid.set(false);
 
@@ -62,14 +70,17 @@ export class PaymentService {
       { planId, returnUrl, cancelUrl: returnUrl },
       { headers }
     ).pipe(
+      map(res => owns() ? res : null),
       tap(res => {
+        if (!owns()) return;
         this.isCreating.set(false);
         if (res && res.success) {
           this.currentOrder.set(res);
-          this.pollOrderStatus(res.orderCode);
+          this.pollOrderStatus(res.orderCode, session, generation);
         }
       }),
       catchError(err => {
+        if (!owns()) return of(null);
         this.isCreating.set(false);
         const errorMsg = err.error?.error || err.error?.message || this.i18n.t('pro.createOrderFailed');
         this.toast.error(errorMsg);
@@ -84,10 +95,11 @@ export class PaymentService {
 
 
 
-  private pollOrderStatus(orderCode: number): void {
+  private pollOrderStatus(orderCode: number, session: SessionSnapshot, generation: number): void {
+    const owns = () => generation === this.generation && this.auth.isCurrentSession(session);
     this.pollingSub?.unsubscribe();
     this.pollingSub = interval(3000).pipe(
-      takeWhile(() => !this.isPaid() && this.currentOrder()?.orderCode === orderCode),
+      takeWhile(() => owns() && !this.isPaid() && this.currentOrder()?.orderCode === orderCode),
       takeUntil(timer(10 * 60 * 1000)), // Max 10 minutes timeout to prevent zombie polling
       switchMap(() => this.checkStatus(orderCode).pipe(
         catchError(err => {
@@ -97,6 +109,7 @@ export class PaymentService {
       ))
     ).subscribe({
       next: res => {
+        if (!owns()) return;
         if (res.status === 'PAID') {
           this.isPaid.set(true);
           this.toast.success(this.i18n.t('pro.paymentSuccess'));
@@ -116,6 +129,8 @@ export class PaymentService {
   }
 
   clearOrder(): void {
+    this.generation++;
+    this.isCreating.set(false);
     this.stopPolling();
     this.currentOrder.set(null);
     this.isPaid.set(false);

@@ -1,6 +1,10 @@
 <app-bottom-sheet #mainSheet [isOpen]="isOpen()" [title]="i18n.t('settings.title') || 'Settings'" [showCloseButton]="true" (closed)="onSheetClosed()">
     <div class="settings-modal">
         <div class="settings-modal__body">
+            <div class="settings-card">
+                <button class="btn btn-secondary" (click)="openPage('/account')">{{ i18n.t('accountExperience.security') }}</button>
+                <button class="btn btn-secondary" (click)="openPage('/account/subscription')">{{ i18n.t('accountExperience.subscription') }}</button>
+            </div>
             <!-- 1. Account & Motivation Card -->
             <div class="settings-card settings-card--account">
                 @if (auth.isLoggedIn()) {

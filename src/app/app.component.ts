@@ -321,8 +321,8 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         }
 
         <!-- Onboarding Welcome Flow (lazy loaded when not completed) -->
-        @defer (when showOnboardingSheet(); prefetch on idle) {
-          @if (showOnboardingSheet()) {
+        @defer (when onboardingVisible(); prefetch on idle) {
+          @if (onboardingVisible()) {
             <app-onboarding (dismissed)="dismissOnboarding()" />
           }
         }
@@ -1244,6 +1244,7 @@ export class AppComponent implements OnDestroy {
   showCommandPalette = signal(false);
   showMoreSheet = signal(false);
   showOnboardingSheet = signal(!this.settings.settings().hasCompletedOnboarding);
+  private onboardingReplayRequested = signal(false);
   sidebarCollapsed = computed(() => this.settings.settings().sidebarCollapsed);
 
 
@@ -1256,6 +1257,13 @@ export class AppComponent implements OnDestroy {
     )
   );
 
+  // Shared profiles, account recovery, and legal documents must remain readable
+  // on a first visit. The prologue can still be shown on learning routes.
+  readonly onboardingVisible = computed(() => {
+    const url = this.currentUrl() === '/' ? this.document.location?.pathname : this.currentUrl();
+    return this.showOnboardingSheet() && (this.onboardingReplayRequested() || /^\/(video|study|dictionary|explore|history)(\/|\?|$)/.test(url || ''));
+  });
+
   // Check if video is loaded AND we're on the video page
   hasVideo = computed(() => {
     const isOnVideoPage = this.currentUrl()?.startsWith('/video') ?? false;
@@ -1265,7 +1273,7 @@ export class AppComponent implements OnDestroy {
 
   // Check if any sheet is open (for bottom nav active state)
   anySheetOpen = computed(() =>
-    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showProUpgradeSheet() || this.showMoreSheet() || this.showOnboardingSheet()
+    this.showSettingsSheet() || this.showStreakSheet() || this.showCommandPalette() || this.showAiCreditsSheet() || this.showAchievementsSheet() || this.showProUpgradeSheet() || this.showMoreSheet() || this.onboardingVisible()
   );
 
   // Check if current route matches
@@ -1284,6 +1292,7 @@ export class AppComponent implements OnDestroy {
 
   dismissOnboarding(): void {
     this.showOnboardingSheet.set(false);
+    this.onboardingReplayRequested.set(false);
     if (!this.settings.settings().hasCompletedOnboarding) {
       this.settings.completeOnboarding();
     }
@@ -1291,6 +1300,7 @@ export class AppComponent implements OnDestroy {
 
   openOnboardingFromSettings(): void {
     this.showSettingsSheet.set(false);
+    this.onboardingReplayRequested.set(true);
     this.showOnboardingSheet.set(true);
   }
 

@@ -147,3 +147,6 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
 The backend now persists Gladia callbacks before acknowledgement, identifies dictionary definition languages, and uses idempotent XP purchase operations. Schema migrations must precede the coordinated release.
 
 See [validation and migration handoff](../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+Account/security, public learner sharing, and web subscription management are
+implemented alongside Flutter. See the [activation handoff](../voca_flutter/doc/account-experience-implementation-2026-10-24.md) before deployment; new read RPCs and callback allowlists must be ready first.

@@ -1,7 +1,8 @@
 import { Component, ChangeDetectionStrategy, inject, signal, computed, effect, ElementRef, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { PlaylistService } from '../playlist.service';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CreatePlaylistDialogComponent } from '../../../shared/components/create-playlist-dialog/create-playlist-dialog.component';
@@ -31,6 +32,8 @@ export class PlaylistPageComponent {
     i18n = inject(I18nService);
     toast = inject(ToastService);
     private router = inject(Router);
+    private route = inject(ActivatedRoute);
+    sharedLinkError = signal(false);
 
     showCreateDialog = signal(false);
     editingPlaylist = signal<Playlist | null>(null);
@@ -252,6 +255,18 @@ export class PlaylistPageComponent {
     visibleCount = signal<number>(24);
 
     constructor() {
+        this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(params => {
+            const id = params.get('playlist');
+            this.sharedLinkError.set(false);
+            if (id && /^[a-zA-Z0-9_-]{1,150}$/.test(id)) {
+                void this.playlistService.fetchPublicPlaylist(id).then(playlist => {
+                    if (!playlist) throw new Error('Playlist unavailable');
+                    if (this.route.snapshot.queryParamMap.get('playlist') === id) void this.openPlaylistDetail(playlist);
+                }).catch(() => {
+                    if (this.route.snapshot.queryParamMap.get('playlist') === id) this.sharedLinkError.set(true);
+                });
+            }
+        });
         void this.playlistService.loadUserPlaylists();
         void this.playlistService.loadCommunityPlaylists();
 

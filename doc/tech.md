@@ -204,3 +204,13 @@ Tokenization keys use SHA-256 over serialized exact input under `tokens:v6`; tra
 Dictionary positive results retain their normal TTL; fallback/negative results are bounded to 60 seconds and provider errors are not cached as missing words. A shared bounded-body reader handles cancellation and upstream byte limits. Translation recovery uses two chunk workers and five shared individual recovery slots.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+## Shared account experience (2026-10-24)
+
+Routes now include `/learner/:userId`, `/account`, `/account/subscription`, browser
+recovery `/account/recovery`, and Android recovery `/auth/mobile-recovery`. Public
+profile reads, provider-specific subscription/order reads, and session lists use
+bounded, account-safe Supabase RPCs. Android association JSON is served from
+`public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
+Unknown routes render a not-found page. See the canonical [migration and activation
+handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).

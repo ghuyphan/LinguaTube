@@ -537,3 +537,13 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
 - `src/app/core/repositories/offline-gamification.repository.ts`: one durable freeze purchase operation; streak presentation applies its returned count.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+## Shared account experience (2026-10-24)
+
+Routes now include `/learner/:userId`, `/account`, `/account/subscription`, browser
+recovery `/account/recovery`, and Android recovery `/auth/mobile-recovery`. Public
+profile reads, provider-specific subscription/order reads, and session lists use
+bounded, account-safe Supabase RPCs. Android association JSON is served from
+`public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
+Unknown routes render a not-found page. See the canonical [migration and activation
+handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).

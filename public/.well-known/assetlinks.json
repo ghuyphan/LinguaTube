@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.voca.voca_flutter",
+      "sha256_cert_fingerprints": [
+        "89:C5:71:83:5D:19:17:EB:63:F5:B2:A9:DC:49:A1:19:5A:B2:4C:8F:54:6C:33:5A:28:6F:E1:08:EF:6F:B4:BB"
+      ]
+    }
+  }
+]

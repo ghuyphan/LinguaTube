@@ -1,7 +1,14 @@
-import { Routes } from '@angular/router';
+import { inject } from '@angular/core';
+import { Routes, Router } from '@angular/router';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'video', pathMatch: 'full' },
+    { path: 'learner/:userId', title: 'Learner Profile | Voca', loadComponent: () => import('./features/learner/learner-page.component').then(m => m.LearnerPageComponent) },
+    { path: 'account/subscription', title: 'Subscription | Voca', loadComponent: () => import('./features/account/subscription-page.component').then(m => m.SubscriptionPageComponent) },
+    { path: 'auth/mobile-recovery', title: 'Password Recovery | Voca', data: {recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
+    { path: 'account/recovery', title: 'Password Recovery | Voca', data: {recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
+    { path: 'account', title: 'Account | Voca', loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },
+    { path: 'video/:videoId', redirectTo: ({params, queryParams}) => inject(Router).createUrlTree(['/video'], {queryParams: {...queryParams, id: params['videoId']}}) },
     {
         path: 'video',
         title: 'Watch & Learn with Subtitles | Voca',
@@ -102,5 +109,5 @@ export const routes: Routes = [
         redirectTo: 'dictionary',
         pathMatch: 'full'
     },
-    { path: '**', redirectTo: 'video' }
+    { path: '**', title: 'Page Not Found | Voca', loadComponent: () => import('./features/account/not-found-page.component').then(m => m.NotFoundPageComponent) }
 ];

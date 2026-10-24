@@ -688,3 +688,13 @@ D1 adds `gladia_callback_inbox` and per-job ingestion lease columns in `db/migra
 The shared PostgreSQL migration lives once in `../voca_flutter/supabase/migrations/20261024090000_idempotent_xp_purchases.sql`. Its private account/operation ledger commits XP debit and freeze fulfillment together; `spend_xp_once` replays a recorded result, while legacy `spend_xp` delegates with a fresh ID.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+## Shared account experience (2026-10-24)
+
+Routes now include `/learner/:userId`, `/account`, `/account/subscription`, browser
+recovery `/account/recovery`, and Android recovery `/auth/mobile-recovery`. Public
+profile reads, provider-specific subscription/order reads, and session lists use
+bounded, account-safe Supabase RPCs. Android association JSON is served from
+`public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
+Unknown routes render a not-found page. See the canonical [migration and activation
+handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).

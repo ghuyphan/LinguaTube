@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, signal, computed, output, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, computed, output, input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { I18nService, AuthService, PaymentService, ToastService } from '../../core/services';
@@ -34,6 +34,7 @@ export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
     private toast = inject(ToastService);
 
     dismissed = output<void>();
+    readonly allowRenewal = input(false);
 
     readonly selectedTier = signal<PlanTier>('pro');
     readonly selectedPlan = signal<ProPlanType>('pro_1m');
@@ -91,6 +92,10 @@ export class ProUpgradeDialogComponent implements OnInit, OnDestroy {
     readonly isPremium = computed(() => this.userTier() === 'premium');
 
     ngOnInit(): void {
+        if (this.allowRenewal()) {
+            this.setTier(this.isPremium() ? 'premium' : 'pro');
+            return;
+        }
         // If user is already Pro, open directly on Premium tab for easy upgrade
         if (this.isPro()) {
             this.selectedTier.set('premium');
