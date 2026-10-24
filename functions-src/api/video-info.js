@@ -251,10 +251,13 @@ export async function onRequestPost(context) {
         const db = env?.VOCAB_DB;
         if (db) {
             await db.prepare(`
-                UPDATE video_languages
-                SET duration_seconds = ?, updated_at = strftime('%s', 'now')
-                WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds = 0)
-            `).bind(duration, videoId).run();
+                INSERT INTO video_languages 
+                (video_id, available_languages, sub_languages, duration_seconds, created_at, updated_at)
+                VALUES (?, '[]', '[]', ?, strftime('%s', 'now'), strftime('%s', 'now'))
+                ON CONFLICT(video_id) DO UPDATE SET
+                  duration_seconds = COALESCE(video_languages.duration_seconds, excluded.duration_seconds),
+                  updated_at = strftime('%s', 'now')
+            `).bind(videoId, duration).run();
 
             memVideoInfoCache.delete(videoId);
         }

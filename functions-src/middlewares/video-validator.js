@@ -25,7 +25,7 @@ export async function fetchYouTubeVideoDetails(videoId) {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept-Language': 'en-US,en;q=0.9'
             },
-            signal: AbortSignal.timeout(4000)
+            signal: AbortSignal.timeout(6000)
         });
         if (!res.ok) return { duration: null, isLive: false };
         const html = await res.text();
@@ -35,6 +35,23 @@ export async function fetchYouTubeVideoDetails(videoId) {
         if (match && match[1]) {
             const seconds = Math.round(parseInt(match[1], 10) / 1000);
             if (!isNaN(seconds) && seconds > 0) duration = seconds;
+        }
+        if (!duration) {
+            const matchLen = html.match(/"lengthSeconds":"(\d+)"/);
+            if (matchLen && matchLen[1]) {
+                const seconds = parseInt(matchLen[1], 10);
+                if (!isNaN(seconds) && seconds > 0) duration = seconds;
+            }
+        }
+        if (!duration) {
+            const matchIso = html.match(/itemprop="duration"\s+content="PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?"/i);
+            if (matchIso) {
+                const h = parseInt(matchIso[1] || '0', 10);
+                const m = parseInt(matchIso[2] || '0', 10);
+                const s = parseInt(matchIso[3] || '0', 10);
+                const total = h * 3600 + m * 60 + s;
+                if (total > 0) duration = total;
+            }
         }
 
         let genre = null;
