@@ -381,21 +381,23 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
     - `dominantTier`: Inferred proficiency tier from watch history.
     - `vocabWords`: Array of active SRS flashcard vocabulary words (for title matching and `✨ study words` tagging).
 - **Server-Side Edge Ranking Engine (`recommendation.service.js`)**:
-  - Candidate retrieval queries an expanded pool (80–120 candidates) from D1 `video_languages`.
-  - Applies 6-factor pedagogical scoring in V8 Worker memory ($<1.5\text{ms}$):
+  - Candidate retrieval fills a fixed window of up to 200 eligible videos from D1 `video_languages`, independent of offset, page size and seed. Metadata keyset scanning is bounded to 20 batches of 200; level and exact transcript-language eligibility precede insertion. A scan-budget breach is 503, not a false empty feed.
+  - Applies 6-factor heuristic scoring in Worker memory (production latency must be measured):
     1. **History & Completion**: Unwatched (+40 exploration bonus), In-progress (+35 resume boost), Completed ($\ge 85\%$, -70 demotion), Favorites (+20).
     2. **Creator Affinity**: Detects channels the user frequents, granting +10 to +30 points.
     3. **Active Vocabulary Overlap**: Matches video titles against user's active flashcards (+25 to +45 points), attaching `matchedWords` tags directly to the response.
     4. **Duration Sweet Spot**: Optimal 3–12 min study sessions (+20), 12–20 mins (+10), penalizing $<1.5$ min or $>40$ min.
-    5. **Krashen $i+1$ Level Alignment**: Rewards comfortable level (+20) or +1 stretch level (+12).
-    6. **Deterministic Serendipity Jitter**: Seeded pseudo-random $\pm 4$ pts variation ensuring variety without breaking pagination.
-  - **YouTube-Style Channel De-Clustering**: Greedy pass ensures no two adjacent recommendation cards share the same channel creator.
+    5. **Krashen $i+1$ Level Alignment**: Rewards comfortable level (+20) or +1 stretch level (+12); penalizes known videos at least two tiers above the learner (-20) when no explicit tier is requested.
+    6. **Deterministic Serendipity Jitter**: Seeded pseudo-random $\pm 12$ pts variation ensuring variety without breaking pagination.
+  - **YouTube-Style Channel De-Clustering**: Greedy pass chooses a different creator when available and retains within-creator relevance order.
   - Slices cleanly at `[offset, offset + limit]` with `hasMore: (offset + limit) < ranked.length`.
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for verified transcripts stored on our server (`sub_languages LIKE '%"lang"%'`), with fallback to `available_languages` only if `sub_languages` is unpopulated.
   - Multi-Language Support: Videos can store multiple verified transcript languages in `sub_languages` (e.g. `["ja", "en"]`), returned in `languages` for accurate multi-lingual badges (`JA / EN`).
   - Strict Server Verification: Verifies that transcript files (`transcripts/{videoId}/{lang}.json`) actually exist on our server (Cloudflare R2 storage / dev cache) before recommending, eliminating phantom recommendations and un-transcribed language badges.
   - Subrequest Quota Safety (`MAX_R2_HEAD_CHECKS = 10`): R2 object existence checks are strictly budgeted to a maximum of 10 HEAD requests per invocation.
+- **Reliability and privacy**: POST JSON is bounded to 64 KiB (400 for invalid JSON/types; 413 for oversized bodies). Context collections are bounded: 200 watched/progress/favorite entries, ten channels, 50 unique vocabulary words. Latin vocabulary matches word boundaries; CJK vocabulary matches phrases. Personalized requests, including favorites-only and tier-only context, bypass shared caches. D1/R2 outages return 503. Stable pagination assumes unchanged catalog/query/seed/context; exhausting the discovery window returns `hasMore: false`. No durable snapshot or schema migration is introduced.
+- **Validation**: `tests/recommendations.test.mjs` exercises real SQLite on Node 22.13+. `node tests/recommendation-benchmark.mjs` compares working source with Git HEAD using a fixed local catalog; it measures engineering fixtures, not engagement or production latency.
 - **Response**:
   ```json
   {

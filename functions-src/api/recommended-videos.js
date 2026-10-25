@@ -11,6 +11,7 @@
 import { jsonResponse, handleOptions } from '../utils/utils.js';
 import { isLanguageSupported, resolveVideoChannelAvatar, getVideoMetadata } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
+import { normalizeRecommendationContext } from '../services/recommendation.service.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
 
 // In-memory cache across warm Worker isolate requests for unpersonalized requests (30s TTL)
@@ -40,9 +41,32 @@ async function handleRecommendedVideos(context, method) {
     let body = {};
     if (method === 'POST') {
         try {
-            body = await request.json();
+            const reader = request.body?.getReader();
+            if (!reader) return jsonResponse({ success: false, error: 'JSON body required' }, 400);
+            const chunks = [];
+            let size = 0;
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                size += value.byteLength;
+                if (size > 65536) {
+                    await reader.cancel();
+                    return jsonResponse({ success: false, error: 'Recommendation context too large' }, 413);
+                }
+                chunks.push(value);
+            }
+            const bytes = new Uint8Array(size);
+            let position = 0;
+            for (const chunk of chunks) { bytes.set(chunk, position); position += chunk.byteLength; }
+            body = JSON.parse(new TextDecoder().decode(bytes));
+            if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('Invalid body');
         } catch {
-            body = {};
+            return jsonResponse({ success: false, error: 'Invalid JSON object' }, 400);
+        }
+    }
+    for (const key of ['lang', 'tier', 'category', 'q', 'query']) {
+        if (body[key] != null && typeof body[key] !== 'string') {
+            return jsonResponse({ success: false, error: `Invalid ${key}` }, 400);
         }
     }
 
@@ -71,13 +95,10 @@ async function handleRecommendedVideos(context, method) {
         ? sessionSeedParam
         : (isRefresh ? Math.floor(Math.random() * 1000000) : 12345);
 
-    const userContext = (body.context && typeof body.context === 'object') ? body.context : null;
-    const isPersonalized = Boolean(userContext && (
-        (Array.isArray(userContext.watched) && userContext.watched.length > 0) ||
-        (userContext.inProgress && Object.keys(userContext.inProgress).length > 0) ||
-        (Array.isArray(userContext.vocabWords) && userContext.vocabWords.length > 0) ||
-        (Array.isArray(userContext.topChannels) && userContext.topChannels.length > 0)
-    ));
+    const userContext = normalizeRecommendationContext(body.context);
+    const isPersonalized = Boolean(userContext.watched.length || Object.keys(userContext.inProgress).length
+        || userContext.vocabWords.length || userContext.topChannels.length
+        || userContext.favorites.length || userContext.dominantTier);
 
     const cacheKey = `${lang}_${tier || 'all'}_${category || 'all'}_${limit}_${offset}_${query || ''}_${sessionSeed}`;
 
@@ -110,18 +131,18 @@ async function handleRecommendedVideos(context, method) {
     const r2 = env?.TRANSCRIPT_STORAGE;
     const shouldShuffle = isRefresh || offset === 0;
 
-    const videos = await getRecommendedVideosFromCloudflare(
-        db,
-        r2,
-        lang,
-        limit,
-        tier,
-        shouldShuffle,
-        offset,
-        query,
-        { context: userContext, sessionSeed, category, isRefresh }
-    );
-    const hasMore = videos.length >= limit;
+    let videos;
+    let hasMore;
+    try {
+        ({ videos, hasMore } = await getRecommendedVideosFromCloudflare(
+            db, r2, lang, limit, tier, shouldShuffle, offset, query,
+            { context: userContext, sessionSeed, category, isRefresh, includePage: true }
+        ));
+    } catch (error) {
+        console.error('[Recommendations] Retrieval failed:', error.message);
+        return jsonResponse({ success: false, error: 'Recommendations temporarily unavailable' }, 503,
+            { 'Cache-Control': CACHE_CONTROL_HEADER, 'Retry-After': '5' });
+    }
 
     // 3. Self-healing: if any returned videos lack channelAvatar, title, or channel, resolve and update D1 in background
     if (db && typeof context?.waitUntil === 'function') {
@@ -135,7 +156,7 @@ async function handleRecommendedVideos(context, method) {
                             if (avatar) {
                                 await db.prepare(`
                                     UPDATE video_languages 
-                                    SET channel_avatar = ?, updated_at = strftime('%s', 'now') 
+                                    SET channel_avatar = ?
                                     WHERE video_id = ?
                                 `).bind(avatar, v.videoId).run();
                                 v.channelAvatar = avatar;
@@ -149,7 +170,7 @@ async function handleRecommendedVideos(context, method) {
                                 if (newTitle || newChannel) {
                                     await db.prepare(`
                                         UPDATE video_languages
-                                        SET title = COALESCE(?, title), channel = COALESCE(?, channel), updated_at = strftime('%s', 'now')
+                                        SET title = COALESCE(?, title), channel = COALESCE(?, channel)
                                         WHERE video_id = ?
                                     `).bind(newTitle, newChannel, v.videoId).run();
                                     if (newTitle) v.title = newTitle;

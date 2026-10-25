@@ -4,6 +4,10 @@
  * active vocabulary notebook overlap, creator affinity, and YouTube-style channel de-clustering.
  */
 
+const WEIGHTS = { completed: -70, resume: 35, started: 15, unseen: 40, favorite: 20,
+    channel: 30, vocabulary: 25, vocabularyWord: 5, vocabularyCap: 20,
+    shortLesson: 20, longLesson: 10, extremeDuration: -10, currentTier: 20, nextTier: 12, tooHard: -20, jitter: 12 };
+
 const TIERS_ORDER = ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'];
 
 /**
@@ -40,27 +44,40 @@ export function declusterChannels(videos) {
 
     const result = [];
     const pool = [...videos];
-
-    while (pool.length > 0) {
-        const current = pool.shift();
-        result.push(current);
-
-        if (pool.length === 0) break;
-
-        const prevChannel = current.channel?.toLowerCase().trim();
-        if (!prevChannel) continue;
-
-        // If the next video is from the same channel, find the next candidate from a different channel
-        if (pool[0].channel?.toLowerCase().trim() === prevChannel) {
-            const diffIdx = pool.findIndex(v => v.channel?.toLowerCase().trim() !== prevChannel);
-            if (diffIdx > 0) {
-                const [diffVideo] = pool.splice(diffIdx, 1);
-                result.push(diffVideo);
-            }
-        }
+    while (pool.length) {
+        const previous = result.at(-1)?.channel?.trim().toLowerCase();
+        const different = previous ? pool.findIndex(v => v.channel?.trim().toLowerCase() !== previous) : 0;
+        result.push(pool.splice(different < 0 ? 0 : different, 1)[0]);
     }
 
     return result;
+}
+
+/** Normalize only ranking signals, with bounded collections and no identity data. */
+export function normalizeRecommendationContext(value) {
+    const input = value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+    const strings = (items, max, length) => [...new Set((Array.isArray(items) ? items.slice(0, max) : [])
+        .filter(v => typeof v === 'string').map(v => v.normalize('NFKC').trim().slice(0, length)).filter(Boolean))];
+    const inProgress = {};
+    if (input.inProgress && typeof input.inProgress === 'object' && !Array.isArray(input.inProgress)) {
+        for (const id of Object.keys(input.inProgress).slice(0, 200)) {
+            const progress = input.inProgress[id];
+            if (id.length <= 100 && typeof progress === 'number' && Number.isFinite(progress) && progress > 0) {
+                Object.defineProperty(inProgress, id, { value: Math.min(progress, 100), enumerable: true });
+            }
+        }
+    }
+    const dominantTier = typeof input.dominantTier === 'string' && TIERS_ORDER.includes(input.dominantTier.trim().toLowerCase())
+        ? input.dominantTier.trim().toLowerCase() : null;
+    return { watched: strings(input.watched, 200, 100), inProgress,
+        favorites: strings(input.favorites, 200, 100), topChannels: strings(input.topChannels, 10, 200),
+        vocabWords: [...new Set(strings(input.vocabWords, 50, 100).map(w => w.toLowerCase()))], dominantTier };
+}
+
+function vocabularyPattern(word) {
+    if (/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(word)) return null;
+    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(?:^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, 'u');
 }
 
 /**
@@ -85,7 +102,7 @@ export function rankVideos(videos, options = {}) {
         sessionSeed = null
     } = options;
 
-    const safeContext = context && typeof context === 'object' ? context : {};
+    const safeContext = normalizeRecommendationContext(context);
 
     // 1. Unpack learner state
     const watchedSet = new Set(Array.isArray(safeContext.watched) ? safeContext.watched : []);
@@ -103,7 +120,7 @@ export function rankVideos(videos, options = {}) {
     if (Array.isArray(safeContext.topChannels)) {
         safeContext.topChannels.forEach((ch, idx) => {
             if (typeof ch === 'string' && ch.trim()) {
-                const weight = Math.max(30 - idx * 5, 10);
+                const weight = Math.max(WEIGHTS.channel - idx * 5, 10);
                 channelAffinityMap.set(ch.trim().toLowerCase(), weight);
             }
         });
@@ -112,8 +129,10 @@ export function rankVideos(videos, options = {}) {
     // Active SRS Flashcard Vocabulary Words
     const vocabWords = (Array.isArray(safeContext.vocabWords) ? safeContext.vocabWords : [])
         .map(w => (typeof w === 'string' ? w.trim().toLowerCase() : ''))
-        .filter(w => w.length >= 2)
+        .filter(w => w.length > 0)
         .slice(0, 50);
+
+    const vocabulary = new Map(vocabWords.map(word => [word, vocabularyPattern(word)]));
 
     const dominantTier = (safeContext.dominantTier && typeof safeContext.dominantTier === 'string')
         ? safeContext.dominantTier.toLowerCase().trim()
@@ -129,21 +148,21 @@ export function rankVideos(videos, options = {}) {
         if (inProgressMap.has(vid)) {
             const prog = inProgressMap.get(vid);
             if (prog >= 85) {
-                score -= 70; // Completed -> heavily demote
+                score += WEIGHTS.completed; // Completed -> heavily demote
             } else if (prog >= 10) {
-                score += 35; // Resume learning boost
+                score += WEIGHTS.resume; // Resume learning boost
                 v.resumeProgress = Math.round(prog);
             } else {
-                score += 15;
+                score += WEIGHTS.started;
             }
         } else if (watchedSet.has(vid)) {
-            score -= 70; // Watched to completion -> demote
+            score += WEIGHTS.completed; // Watched to completion -> demote
         } else {
-            score += 40; // Completely new / unwatched exploration bonus
+            score += WEIGHTS.unseen; // Completely new / unwatched exploration bonus
         }
 
         if (favoritesSet.has(vid)) {
-            score += 20;
+            score += WEIGHTS.favorite;
         }
 
         // Factor B: Creator / Channel Affinity
@@ -156,40 +175,42 @@ export function rankVideos(videos, options = {}) {
 
         // Factor C: Active Vocabulary Overlap
         if (vocabWords.length > 0 && v.title) {
-            const titleLower = v.title.toLowerCase();
+            const titleLower = v.title.normalize('NFKC').toLowerCase();
             const matched = [];
-            for (const word of vocabWords) {
-                if (titleLower.includes(word)) {
+            for (const [word, pattern] of vocabulary) {
+                if (pattern ? pattern.test(titleLower) : titleLower.includes(word)) {
                     matched.push(word);
                     if (matched.length >= 5) break;
                 }
             }
             if (matched.length > 0) {
                 v.matchedWords = matched;
-                score += 25 + Math.min(matched.length * 5, 20); // up to +45 pts
+                score += WEIGHTS.vocabulary + Math.min(matched.length * WEIGHTS.vocabularyWord, WEIGHTS.vocabularyCap); // up to +45 pts
             }
         }
 
         // Factor D: Pedagogical Duration Sweet Spot (3 to 12 minutes favored)
         const d = v.duration || 0;
         if (d >= 180 && d <= 720) {
-            score += 20; // 3 to 12 mins (optimal micro-learning retention)
+            score += WEIGHTS.shortLesson; // 3 to 12 mins (optimal micro-learning retention)
         } else if (d > 720 && d <= 1200) {
-            score += 10; // 12 to 20 mins
+            score += WEIGHTS.longLesson; // 12 to 20 mins
         } else if (d > 0 && (d < 90 || d > 2400)) {
-            score -= 10; // <1.5 min or >40 min
+            score += WEIGHTS.extremeDuration; // <1.5 min or >40 min
         }
 
         // Factor E: Krashen i+1 Level Balancing
         if (!requestedTier || requestedTier === 'all') {
             if (dominantTier && v.tier) {
                 if (v.tier === dominantTier) {
-                    score += 20; // comfort zone
+                    score += WEIGHTS.currentTier; // comfort zone
                 } else {
                     const domIdx = TIERS_ORDER.indexOf(dominantTier);
                     const vidIdx = TIERS_ORDER.indexOf(v.tier);
                     if (domIdx !== -1 && vidIdx === domIdx + 1) {
-                        score += 12; // stretch Krashen i+1 goal
+                        score += WEIGHTS.nextTier; // stretch Krashen i+1 goal
+                    } else if (domIdx !== -1 && vidIdx >= domIdx + 2) {
+                        score += WEIGHTS.tooHard;
                     }
                 }
             }
@@ -199,7 +220,7 @@ export function rankVideos(videos, options = {}) {
         // Calibrated to +/- 12 pts so refresh seed rotations naturally swap video order across duration tiers
         // while strictly preserving learner completion demotion (-70 pts) and vocab notebook boosts (+25-45 pts).
         if (sessionSeed !== null && sessionSeed !== undefined) {
-            score += getDeterministicJitter(vid || '', sessionSeed, 12);
+            score += getDeterministicJitter(vid || '', sessionSeed, WEIGHTS.jitter);
         }
 
         return { video: v, score };
@@ -207,10 +228,11 @@ export function rankVideos(videos, options = {}) {
 
     // 3. Sort primarily by score descending, breaking ties by updatedAt DESC
     scored.sort((a, b) => {
-        if (Math.abs(b.score - a.score) > 0.001) {
+        if (b.score !== a.score) {
             return b.score - a.score;
         }
-        return (b.video.updatedAt || 0) - (a.video.updatedAt || 0);
+        return (b.video.updatedAt || 0) - (a.video.updatedAt || 0)
+            || String(a.video.videoId).localeCompare(String(b.video.videoId));
     });
     const sortedVideos = scored.map(s => s.video);
 

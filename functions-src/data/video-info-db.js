@@ -427,8 +427,7 @@ export function detectLevelFromMetadata(title = '', channel = '') {
 export function labelToTier(label = '') {
     if (!label) return null;
     if (typeof label === 'object') {
-        if (label.tier) return label.tier;
-        label = label.level || '';
+        label = label.tier || label.level || '';
     }
     if (typeof label !== 'string' || !label) return null;
     const clean = label.trim();
@@ -697,261 +696,115 @@ export async function cleanupOldNoTranscriptEntries(db) {
  * @returns {Promise<Array>}
  */
 /**
- * Seeded Mulberry32 pseudo-random number generator
- * Produces uniform numbers in [0, 1) deterministically from seed.
+ * Collect a fixed discovery window before ranking. Offset, page size and seed
+ * never change candidate membership. Metadata scans and R2 probes are bounded.
  */
-function createSeededRandom(seed = 12345) {
-    let s = (Math.abs(seed) | 0) || 12345;
-    return function() {
-        s = (s + 0x6D2B79F5) | 0;
-        let t = Math.imul(s ^ (s >>> 15), 1 | s);
-        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-        return ((t >>> 0) / 4294967296);
-    };
-}
-
-/**
- * Fisher-Yates array shuffle with optional deterministic PRNG seed
- */
-function shuffleArray(arr, seed = null) {
-    const copy = [...arr];
-    const rand = (typeof seed === 'number') ? createSeededRandom(seed) : Math.random;
-    for (let i = copy.length - 1; i > 0; i--) {
-        const j = Math.floor(rand() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-}
-
-export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, shuffle = false, offset = 0, query = null, options = {}) {
-    if (!lang) return [];
-
+export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
     const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
-    const targetTier = tier && typeof tier === 'string' ? tier.toLowerCase().trim() : null;
-    const cleanQuery = typeof query === 'string' && query.trim() ? query.trim().slice(0, 100) : null;
-    const shouldShuffle = cleanQuery ? false : shuffle;
-    const { context = null, sessionSeed = null, isRefresh = false } = (typeof options === 'object' && options !== null) ? options : {};
+    const targetTier = tier ? labelToTier(tier) : null;
+    const cleanQuery = typeof query === 'string' ? query.trim().slice(0, 100) : '';
+    const { context = null, sessionSeed = null, category = null, includePage = false } = options || {};
+    if (!db || !lang) throw new Error('Recommendation database unavailable');
 
-    // For server-side ranking, retrieve an expanded candidate pool (up to 200 candidates)
-    // so we evaluate candidates across the catalog rather than just safeOffset + safeLimit
-    const candidateLimit = cleanQuery
-        ? Math.max(safeOffset + safeLimit + 20, 50)
-        : Math.max(safeOffset + safeLimit + 120, 200);
-    const videoMap = new Map();
+    const candidates = new Map();
+    const batchSize = 200;
+    const maxScans = 20;
+    let cursor = null;
+    let exhausted = false;
+    let probes = 0;
+    const parseArray = value => {
+        try { const parsed = JSON.parse(value || '[]'); return Array.isArray(parsed) ? parsed : []; }
+        catch { return []; }
+    };
 
-    // 1. Query D1 video_languages table (primary metadata index)
-    if (db) {
-        try {
-            const searchPattern1 = `%"${lang}"%`;
-            const searchPattern2 = `%${lang}%`;
-            let sql = `
-                SELECT video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, tags, updated_at
-                FROM video_languages
-                WHERE (
-                    (sub_languages IS NOT NULL AND sub_languages != '[]' AND (sub_languages LIKE ? OR sub_languages LIKE ?))
-                    OR (
-                        (sub_languages IS NULL OR sub_languages = '[]')
-                        AND (available_languages LIKE ? OR available_languages LIKE ?)
-                    )
-                )
-                  AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
-                  AND (title IS NOT NULL AND TRIM(title) != '')
-                  AND (channel IS NOT NULL AND TRIM(channel) != '')
-            `;
-            const bindings = [searchPattern1, searchPattern2, searchPattern1, searchPattern2];
-
-            const targetCategory = options.category && typeof options.category === 'string' && options.category.toLowerCase().trim() !== 'all'
-                ? options.category.toLowerCase().trim()
-                : null;
-
-            if (targetCategory) {
-                sql += ` AND category = ? `;
-                bindings.push(targetCategory);
-            }
-
-            if (cleanQuery) {
-                sql += ` AND (title LIKE ? OR channel LIKE ?) `;
-                const qPattern = `%${cleanQuery}%`;
-                bindings.push(qPattern, qPattern);
-            }
-
-            sql += ` ORDER BY updated_at DESC LIMIT ? `;
-            bindings.push(candidateLimit);
-
-            const { results } = await db.prepare(sql).bind(...bindings).all();
-
-            if (results && Array.isArray(results)) {
-                // When exploring feed (cleanQuery is null), apply deterministic seed-based candidate shuffle
-                // BUT pin the top 3 newest/recently updated additions at the front so newly transcribed videos are never buried
-                let rows = results;
-                if (!cleanQuery && (shouldShuffle || isRefresh || sessionSeed !== null) && results.length > 2) {
-                    const pinnedCount = Math.min(3, results.length);
-                    const pinned = results.slice(0, pinnedCount);
-                    const shufflable = results.slice(pinnedCount);
-                    rows = [...pinned, ...shuffleArray(shufflable, sessionSeed)];
-                }
-
-                // Channel variety guard: limit consecutive/dominant creators in primary pass (lifted for search)
-                const channelCounts = new Map();
-                const deferredRows = [];
-                const maxPerChannel = cleanQuery ? safeLimit : Math.max(2, Math.floor(safeLimit / 4));
-                let r2HeadChecks = 0;
-                const MAX_R2_HEAD_CHECKS = 10;
-
-                const processRow = async (row) => {
-                    if (videoMap.has(row.video_id)) return;
-                    if (!row.title || !row.title.trim() || !row.channel || !row.channel.trim()) return;
-
-                    let subLangs = [];
-                    try {
-                        if (row.sub_languages) {
-                            subLangs = JSON.parse(row.sub_languages);
-                        } else if (row.available_languages) {
-                            subLangs = JSON.parse(row.available_languages);
-                        }
-                    } catch { }
-                    if (!Array.isArray(subLangs)) subLangs = [];
-
-                    // Verification: If sub_languages doesn't explicitly have lang, verify against R2 (capped to preserve CF subrequests)
-                    if (!subLangs.includes(lang)) {
-                        if (r2 && r2HeadChecks < MAX_R2_HEAD_CHECKS) {
-                            r2HeadChecks++;
-                            try {
-                                const key = `transcripts/${row.video_id}/${lang}.json`;
-                                const head = await r2.head(key);
-                                if (!head) {
-                                    // Transcript file not on server for this language -> do not recommend
-                                    return;
-                                }
-                                // Found in R2! Self-heal: add to sub_languages in D1
-                                subLangs.push(lang);
-                                addSubLanguage(db, row.video_id, lang).catch(() => {});
-                            } catch {
-                                return;
-                            }
-                        } else {
-                            // Subrequest limit reached or r2 not available, skip unverified candidate
-                            return;
-                        }
-                    }
-
-                    let levels = {};
-                    try {
-                        if (row.levels) levels = JSON.parse(row.levels);
-                    } catch { }
-
-                    let level = levels[lang] || null;
-                    if (!level) {
-                        const detected = detectLevelFromMetadata(row.title || '', row.channel || '');
-                        if (detected && detected.lang === lang) {
-                            level = detected.level;
-                        }
-                    }
-
-                    const videoTier = level ? labelToTier(level) : null;
-                    if (targetTier && videoTier !== targetTier) {
-                        return;
-                    }
-
-                    // Clean and deduplicate verified server languages strictly to supported learning languages (ja, zh, ko, en)
-                    const target = (lang || '').toLowerCase().trim();
-                    const SUPPORTED_CODES = new Set(['ja', 'zh', 'ko', 'en']);
-                    const verifiedLangs = Array.from(new Set(
-                        subLangs
-                            .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
-                            .filter(l => SUPPORTED_CODES.has(l))
-                    ));
-                    if (target && verifiedLangs.length > 1) {
-                        verifiedLangs.sort((a, b) => (a === target ? -1 : (b === target ? 1 : 0)));
-                    }
-
-                    const cleanLevelStr = (level && typeof level === 'object' && level.level) ? level.level : (typeof level === 'string' ? level : undefined);
-                    const resolvedRowCategory = row.category && row.category !== 'general'
-                        ? row.category
-                        : detectVideoCategory({
-                            title: row.title || '',
-                            channel: row.channel || ''
-                        });
-
-                    videoMap.set(row.video_id, {
-                        videoId: row.video_id,
-                        title: row.title || null,
-                        channel: row.channel || '',
-                        channelAvatar: row.channel_avatar || null,
-                        duration: row.duration_seconds || 0,
-                        thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
-                        languages: verifiedLangs.length > 0 ? verifiedLangs : [lang],
-                        level: cleanLevelStr,
-                        tier: videoTier || undefined,
-                        category: resolvedRowCategory,
-                        updatedAt: row.updated_at
-                    });
-
-                    const chKey = (row.channel || '').trim().toLowerCase();
-                    if (chKey) {
-                        channelCounts.set(chKey, (channelCounts.get(chKey) || 0) + 1);
-                    }
-                };
-
-                // Pass 1: Separate candidates respecting creator variety cap
-                const candidateRows = [];
-                for (const row of rows) {
-                    if (videoMap.has(row.video_id)) continue;
-                    const chKey = (row.channel || '').trim().toLowerCase();
-                    if (chKey && (channelCounts.get(chKey) || 0) >= maxPerChannel) {
-                        deferredRows.push(row);
-                    } else {
-                        candidateRows.push(row);
-                    }
-                }
-
-                // Target candidate collection count
-                const targetCandidateCount = cleanQuery
-                    ? (safeOffset + safeLimit)
-                    : Math.max(safeOffset + safeLimit + 80, 150);
-
-                // Process candidates concurrently in small pools (8 at a time) to avoid sequential R2 HEAD latency
-                const POOL_SIZE = 8;
-                for (let i = 0; i < candidateRows.length; i += POOL_SIZE) {
-                    const pool = candidateRows.slice(i, i + POOL_SIZE);
-                    await Promise.all(pool.map(r => processRow(r)));
-                    if (videoMap.size >= targetCandidateCount) {
-                        break;
-                    }
-                }
-
-                // Pass 2: Fill remaining slots with deferred rows if needed
-                if (videoMap.size < targetCandidateCount && deferredRows.length > 0) {
-                    for (let i = 0; i < deferredRows.length; i += POOL_SIZE) {
-                        const pool = deferredRows.slice(i, i + POOL_SIZE);
-                        await Promise.all(pool.map(r => processRow(r)));
-                        if (videoMap.size >= targetCandidateCount) {
-                            break;
-                        }
-                    }
-                }
-            }
-        } catch (err) {
-            console.error('[VideoInfoDB] D1 video_languages query error:', err.message);
+    for (let scan = 0; scan < maxScans && candidates.size < 200; scan++) {
+        // LIKE is only a coarse index filter; exact language membership is checked below.
+        let sql = `SELECT video_id, title, channel, channel_avatar, duration_seconds,
+            levels, available_languages, sub_languages, category, updated_at
+            FROM video_languages
+            WHERE (sub_languages LIKE ? OR ((sub_languages IS NULL OR sub_languages = '[]') AND available_languages LIKE ?))
+            AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
+            AND title IS NOT NULL AND TRIM(title) != ''
+            AND channel IS NOT NULL AND TRIM(channel) != ''`;
+        const bindings = [`%${lang}%`, `%${lang}%`];
+        if (category && category !== 'all') { sql += ' AND category = ?'; bindings.push(category); }
+        if (cleanQuery) {
+            sql += " AND (title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')";
+            const pattern = `%${cleanQuery.replace(/[\\%_]/g, '\\$&')}%`;
+            bindings.push(pattern, pattern);
         }
+        if (cursor) {
+            sql += ' AND (COALESCE(updated_at, 0) < ? OR (COALESCE(updated_at, 0) = ? AND video_id > ?))';
+            bindings.push(cursor.time, cursor.time, cursor.id);
+        }
+        sql += ' ORDER BY COALESCE(updated_at, 0) DESC, video_id ASC LIMIT ?';
+        bindings.push(batchSize);
+        const result = await db.prepare(sql).bind(...bindings).all();
+        if (result.success === false || !Array.isArray(result.results)) throw new Error('Recommendation query failed');
+        const rows = result.results;
+        exhausted = rows.length < batchSize;
+        if (!rows.length) break;
+        const last = rows[rows.length - 1];
+        cursor = { time: last.updated_at || 0, id: last.video_id };
+
+        const eligible = [];
+        for (const row of rows) {
+            if (candidates.has(row.video_id)) continue;
+            let levels = {};
+            try { levels = JSON.parse(row.levels || '{}') || {}; } catch { /* Unknown level. */ }
+            let level = levels[lang] || null;
+            if (!level) {
+                const detected = detectLevelFromMetadata(row.title, row.channel);
+                if (detected?.lang === lang) level = detected.level;
+            }
+            const videoTier = level ? labelToTier(level) : null;
+            if (targetTier && videoTier !== targetTier) continue;
+            const languages = parseArray(row.sub_languages);
+            eligible.push({ row, level, videoTier, languages });
+        }
+
+        // Preserve metadata order after concurrent probes, independent of I/O completion order.
+        for (let i = 0; i < eligible.length && candidates.size < 200; i += 8) {
+            const verified = await Promise.all(eligible.slice(i, i + 8).map(async item => {
+                if (item.languages.includes(lang)) return item;
+                if (!r2 || probes >= 10) return null;
+                probes++;
+                try {
+                    if (!await r2.head(`transcripts/${item.row.video_id}/${lang}.json`)) return null;
+                    item.languages.push(lang);
+                    return item;
+                } catch { throw new Error('Recommendation transcript verification unavailable'); }
+            }));
+            for (const item of verified) {
+                if (!item || candidates.size >= 200) continue;
+                const { row, level, videoTier, languages } = item;
+                candidates.set(row.video_id, {
+                    videoId: row.video_id, title: row.title, channel: row.channel,
+                    channelAvatar: row.channel_avatar || null,
+                    duration: row.duration_seconds || 0,
+                    thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
+                    languages: [...new Set(languages.filter(l => ['ja', 'zh', 'ko', 'en'].includes(l)))],
+                    level: typeof level === 'string' ? level : level?.level,
+                    tier: videoTier || undefined,
+                    category: row.category && row.category !== 'general' ? row.category : detectVideoCategory(row),
+                    updatedAt: row.updated_at || 0
+                });
+            }
+        }
+        if (exhausted) break;
     }
-
-    const allMatched = Array.from(videoMap.values());
-    const ranked = rankVideos(allMatched, {
-        language: lang,
-        tier: targetTier,
-        context,
-        sessionSeed
-    });
-
-    return ranked.slice(safeOffset, safeOffset + safeLimit);
+    if (!exhausted && candidates.size < 200) throw new Error('Recommendation scan budget exceeded');
+    const ranked = rankVideos([...candidates.values()], { language: lang, tier: targetTier, context, sessionSeed });
+    const videos = ranked.slice(safeOffset, safeOffset + safeLimit);
+    return includePage ? { videos, hasMore: safeOffset + videos.length < ranked.length } : videos;
 }
 
 /**
  * Backward compatibility wrapper for getRecommendedVideosFromCloudflare
  */
 export async function getRecommendedVideosFromD1(db, lang, limit = 12, tier = null, offset = 0) {
+    if (!db || !lang) return []; // Preserve the legacy helper's empty-input contract.
     return getRecommendedVideosFromCloudflare(db, null, lang, limit, tier, false, offset);
 }
 

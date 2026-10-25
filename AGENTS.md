@@ -435,3 +435,7 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
   height/focus rings or sliding-tab/thumb geometry in feature styles. Use the
   existing variants, compact localized labels and mobile header-action slot.
   Verify computed rendered styles against the shared controls, not only class names.
+
+## Recommendation invariants (2026-10-25)
+
+Keep the 200 eligible-candidate window independent of offset/page size/seed. Apply difficulty before adding candidates; bound metadata scanning to 20 batches of 200 and R2 probes to ten. Incomplete discovery due to outage/budget breach is 503, not an empty catalog. Every ranking-affecting learner signal bypasses shared caches. Keep background metadata healing from changing discovery timestamps. No schema migration is required.

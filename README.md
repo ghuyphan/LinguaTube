@@ -162,3 +162,7 @@ switch and upgrade bottom sheet rather than separate lookalike controls.
 
 Buttons, form fields and sliding tabs inherit Voca's shared control styles directly;
 compact localized tab labels fit the existing mobile toolbar.
+
+## Recommendation reliability (2026-10-25)
+
+The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](doc/backend-api.md) section 3.10. No schema migration is needed; rebuild generated functions from `functions-src` before release.

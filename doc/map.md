@@ -567,3 +567,7 @@ presentation. Settings and the public header share locale option data in `I18nSe
 The visual authority for buttons, form fields and sliding tab pills remains
 `src/styles/_buttons.scss`, `_forms.scss` and `_components.scss`; feature styles
 provide layout rather than replacement control geometry.
+
+## Recommendation reliability (2026-10-25)
+
+The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](backend-api.md) section 3.10. No schema migration is needed; rebuild generated functions from `functions-src` before release.
