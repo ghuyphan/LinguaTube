@@ -44,8 +44,8 @@ export async function reserveAiJob(db, { videoId, language, userId = null, clien
         await db.prepare(`
             INSERT INTO ai_transcription_jobs (
                 id, video_id, language, user_id, client_id, user_tier,
-                diamonds_charged, charge_status, refund_status, status, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
+                diamonds_charged, charge_status, refund_status, submission_state, status, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
         `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged).run();
 
         const newJob = await getAiJobById(db, id);
@@ -78,9 +78,11 @@ export async function activateAiJob(db, jobId, gladiaJobId) {
             UPDATE ai_transcription_jobs
             SET status = CASE WHEN status = 'queued' THEN 'processing' ELSE status END,
                 gladia_job_id = COALESCE(gladia_job_id, ?),
+                submission_state = 'accepted',
+                next_provider_check_at = 0,
                 updated_at = strftime('%s', 'now')
-            WHERE id = ? AND status NOT IN ('completed', 'failed')
-        `).bind(gladiaJobId, jobId).run();
+            WHERE id = ? AND status NOT IN ('completed', 'failed') AND (gladia_job_id IS NULL OR gladia_job_id = ?)
+        `).bind(gladiaJobId, jobId, gladiaJobId).run();
     } catch (err) {
         console.error('[D1] activateAiJob error:', err.message);
     }
@@ -121,7 +123,7 @@ export async function getActiveAiJob(db, videoId, language, _diamondService = nu
 
         // Auto-expire zombie jobs older than 15 minutes (900 seconds)
         const nowSec = Math.floor(Date.now() / 1000);
-        if (job.created_at && (nowSec - job.created_at) > 900 && !(await db.prepare("SELECT id FROM gladia_callback_inbox WHERE job_id=? AND status='pending' LIMIT 1").bind(job.id).first()) && !(job.ingestion_lease_until > nowSec)) {
+        if (!['submitting', 'uncertain', 'accepted'].includes(job.submission_state) && job.created_at && (nowSec - job.created_at) > 900 && !(await db.prepare("SELECT id FROM gladia_callback_inbox WHERE job_id=? AND status='pending' LIMIT 1").bind(job.id).first()) && !(job.ingestion_lease_until > nowSec)) {
             console.warn(`[D1] Auto-expiring zombie job ${job.id} for video ${videoId} (age: ${nowSec - job.created_at}s)`);
             await atomicFailAndRefundAiJob(db, job.id, 'TIMEOUT_EXPIRED', 'Transcription job timed out after 15 minutes');
             return null;

@@ -16,86 +16,63 @@ export class GladiaProvider {
     }
 
     /**
-     * Submit a Youtube video URL to Gladia for transcription with retry budget
+     * Submit once; recover uncertain acceptance through callbacks or metadata lookup.
      * @param {string} youtubeUrl 
      * @param {string} [callbackUrl] Optional webhook callback URL
-     * @param {number} maxRetries 
+     * @param {{jobId?: string}} options Durable correlation metadata
      * @returns {Promise<{id: string, resultUrl: string}>} The job ID and result URL
      */
-    async submitTranscriptionJob(youtubeUrl, callbackUrl = null, maxRetries = 2) {
-        if (!this.apiKey) {
-            throw new Error('Gladia API key not configured');
+    async submitTranscriptionJob(youtubeUrl, callbackUrl = null, { jobId } = {}) {
+        if (!this.apiKey) throw new Error('Gladia API key not configured');
+        const payload = { audio_url: youtubeUrl, sentences: true, subtitles: false,
+            ...(jobId ? { custom_metadata: { voca_job_id: jobId } } : {}),
+            ...(callbackUrl ? { callback: true, callback_config: { url: callbackUrl, method: 'POST' } } : {}) };
+        const signal = AbortSignal.timeout(24000);
+        let response;
+        try {
+            response = await fetch(GLADIA_API_URL, { method: 'POST',
+                headers: { 'x-gladia-key': this.apiKey, 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload), signal, redirect: 'manual' });
+        } catch {
+            const error = new Error('Gladia submission outcome is uncertain');
+            error.ambiguous = true;
+            throw error;
         }
-
-        const TOTAL_BUDGET_MS = 26000;
-        const startTime = Date.now();
-        let lastError = null;
-
-        const bodyPayload = {
-            audio_url: youtubeUrl,
-            sentences: true,
-            subtitles: false
-        };
-        if (callbackUrl) {
-            bodyPayload.callback_url = callbackUrl;
+        if (!response.ok) {
+            void response.body?.cancel().catch(() => {});
+            const error = new Error(`Gladia submit failed (${response.status})`);
+            error.ambiguous = response.status >= 500 || response.status === 408;
+            error.status = response.status;
+            throw error;
         }
-
-        for (let attempt = 1; attempt <= maxRetries; attempt++) {
-            const timeRemaining = TOTAL_BUDGET_MS - (Date.now() - startTime);
-            if (timeRemaining < 3000) break;
-
-            const timeoutMs = Math.min(timeRemaining, 24000);
-
-            try {
-                const submitResponse = await fetch(GLADIA_API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'x-gladia-key': this.apiKey,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(bodyPayload),
-                    signal: AbortSignal.timeout(timeoutMs)
-                });
-
-                if (!submitResponse.ok) {
-                    const errBody = await submitResponse.text().catch(() => '');
-                    console.error(`[Gladia] Submit attempt ${attempt} failed (${submitResponse.status}):`, errBody);
-
-                    // Non-retryable client errors (400, 401, 403, 422 except 429)
-                    if (submitResponse.status >= 400 && submitResponse.status < 500 && submitResponse.status !== 429) {
-                        throw new Error(`Gladia submit failed (${submitResponse.status}): ${errBody.slice(0, 150)}`);
-                    }
-                    throw new Error(`Gladia submit error (${submitResponse.status}): ${errBody.slice(0, 150)}`);
-                }
-
-                const submitData = await submitResponse.json();
-
-                if (!submitData.result_url) {
-                    throw new Error('No result_url returned from Gladia');
-                }
-
-                const id = submitData.id || submitData.result_url.split('/').pop();
-                return {
-                    id,
-                    resultUrl: submitData.result_url,
-                    toString() { return submitData.result_url; }
-                };
-            } catch (err) {
-                lastError = err;
-                // Don't retry non-retryable 4xx client errors
-                if (err.message?.startsWith('Gladia submit failed (4')) {
-                    throw err;
-                }
-
-                console.warn(`[Gladia] Submit attempt ${attempt}/${maxRetries} error: ${err.message}`);
-                const remaining = TOTAL_BUDGET_MS - (Date.now() - startTime);
-                if (attempt < maxRetries && remaining > 4000) {
-                    await new Promise(r => setTimeout(r, 1000));
-                }
-            }
+        try {
+            const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(response, signal, 65536)));
+            const id = data.id || new URL(data.result_url).pathname.split('/').pop();
+            if (!/^[a-zA-Z0-9_-]{1,200}$/.test(id)) throw new Error('Invalid provider identity');
+            return { id, resultUrl: `${GLADIA_API_URL}/${id}` };
+        } catch {
+            const error = new Error('Gladia accepted submission but its response could not be verified');
+            error.ambiguous = true;
+            throw error;
         }
+    }
 
-        throw lastError || new Error('Gladia submission failed after retries');
+    /** Metadata is correlation only; the provider does not deduplicate POSTs. */
+    async findSubmission(jobId, { deadline = Date.now() + 5000 } = {}) {
+        if (!this.apiKey) throw new Error('Gladia API key not configured');
+        const url = new URL(GLADIA_API_URL);
+        url.searchParams.set('custom_metadata', JSON.stringify({ voca_job_id: jobId }));
+        url.searchParams.set('limit', '2');
+        const signal = AbortSignal.timeout(Math.max(1, Math.min(5000, deadline - Date.now())));
+        const response = await fetch(url, { headers: { 'x-gladia-key': this.apiKey }, signal, redirect: 'manual' });
+        if (!response.ok) throw new Error(`Gladia recovery HTTP ${response.status}`);
+        const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(response, signal, 1024 * 1024)));
+        if (!Array.isArray(data.items)) throw new Error('Malformed Gladia recovery response');
+        // Require exactly one correlated job; ambiguous multiplicity remains an audit case.
+        if (data.items.length !== 1) return null;
+        const item = data.items[0];
+        if (item.custom_metadata?.voca_job_id !== jobId || !/^[a-zA-Z0-9_-]{1,200}$/.test(item.id)) return null;
+        return { id: item.id };
     }
 
     /**
@@ -146,6 +123,9 @@ export class GladiaProvider {
         if (!resultResponse.ok) {
             const err = new Error(`Gladia poll failed: ${resultResponse.status}`);
             err.status = resultResponse.status;
+            const retry = resultResponse.headers.get('Retry-After');
+            const seconds = /^\d+$/.test(retry || '') ? Number(retry) : (Date.parse(retry || '') - Date.now()) / 1000;
+            if (Number.isFinite(seconds)) err.retryAfterSeconds = Math.max(0, Math.min(300, Math.ceil(seconds)));
             throw err;
         }
 

@@ -831,19 +831,23 @@ test('SupadataProvider: immediately returns notFound when captions are unavailab
   assert.deepEqual(attemptedKeysList, ['key_1']);
 });
 
-test('validateVideoRequest: fast path when duration is provided and handles title hint', async () => {
+test('validateVideoRequest: AI verifies upstream duration and handles title hint', async t => {
   const { validateVideoRequest } = await import('../functions-src/middlewares/video-validator.js');
+  let serverDuration = 384;
+  t.mock.method(globalThis, 'fetch', async () => new Response(`"lengthSeconds":"${serverDuration}"`));
 
   // 1. Duration provided within limit (whisper endpoint, max 600s)
   const validRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 384, 'whisper', 600, { title: '全新華為展翼三折疊' });
-  assert.equal(validRes, null, 'Should validate successfully without scraping YouTube');
+  assert.equal(validRes, null);
 
   // 2. Duration exceeds max allowed
-  const tooLongRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 720, 'whisper', 600);
+  serverDuration = 720;
+  const tooLongRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 30, 'whisper', 600);
   assert.equal(tooLongRes?.error, 'video_too_long');
   assert.equal(tooLongRes?.duration, 720);
 
   // 3. Title hint with unsupported script
+  serverDuration = 384;
   const unsupportedTitleRes = await validateVideoRequest('GpbF8bRJrCU', 'ja', 200, 'whisper', 600, {
     title: 'Русские новости дня без титров'
   });
@@ -1323,7 +1327,7 @@ test('pollAiJobStatus: self-heals by querying R2 if jobId is missing/expired in 
   assert.equal(res.videoInfo.segments[0].text, 'こんにちは');
 });
 
-test('startAIJob: forceRefresh preserves the superseded job and its refund history', async () => {
+test('startAIJob: forceRefresh joins active work without cancelling or charging it', async () => {
   const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
 
   let deletedJobId = null;
@@ -1412,7 +1416,7 @@ test('startAIJob: forceRefresh preserves the superseded job and its refund histo
   assert.equal(resWithoutForce.jobId, 'old_stale_job_123');
   assert.equal(deletedJobId, null);
 
-  // Case 2: With forceRefresh -> retains recovery history and starts a new job
+  // Case 2: Force refresh also joins the same job without replacing its owner.
   const resWithForce = await service.startAIJob(context, {
     videoId: 'vid_regen',
     lang: 'ja',
@@ -1423,9 +1427,9 @@ test('startAIJob: forceRefresh preserves the superseded job and its refund histo
   });
   assert.equal(resWithForce.status, 'processing');
   assert.equal(deletedJobId, null);
-  assert.ok(failedJobId);
-  assert.equal(insertedJobId, resWithForce.jobId);
-  assert.notEqual(resWithForce.jobId, 'old_stale_job_123'); // A brand new jobId was generated!
+  assert.equal(failedJobId, null);
+  assert.equal(insertedJobId, null);
+  assert.equal(resWithForce.jobId, 'old_stale_job_123');
 });
 
 test('api/_middleware: allows gladia-webhook and payOS webhook to bypass bot defense', async () => {

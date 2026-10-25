@@ -1,8 +1,8 @@
 import { GladiaProvider } from '../providers/gladia.js';
-import { atomicFailAndRefundAiJob, completeAiJob } from '../data/transcript-db.js';
+import { atomicFailAndRefundAiJob, completeAiJob, activateAiJob } from '../data/transcript-db.js';
 import { saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
-import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
+import { enrichPublishedTranscript } from './transcript-enrichment.js';
 import { addSubLanguage, saveVideoLanguages } from '../data/video-info-db.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { recoverJobRefund } from './refund-recovery.js';
@@ -22,17 +22,21 @@ export async function recordGladiaNotification(db, { jobId, providerId, outcome,
 }
 
 /** Polling and inbox recovery share this per-job lease and terminal transition. */
-export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(env.GLADIA_API_KEY), deadline = Date.now() + 20000) {
+export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(env.GLADIA_API_KEY), deadline = Date.now() + 20000, { force = false, waitUntil = null } = {}) {
     const db = env.VOCAB_DB;
     const lease = crypto.randomUUID();
     const job = await db.prepare(`UPDATE ai_transcription_jobs SET ingestion_lease=?,ingestion_lease_until=strftime('%s','now')+60
         WHERE id=? AND status IN ('queued','processing') AND gladia_job_id IS NOT NULL AND charge_status IN ('confirmed','legacy')
-        AND (ingestion_lease_until IS NULL OR ingestion_lease_until<strftime('%s','now')) RETURNING *`).bind(lease, jobId).first();
+        AND (ingestion_lease_until IS NULL OR ingestion_lease_until<strftime('%s','now'))
+        AND (? OR next_provider_check_at<=strftime('%s','now')) RETURNING *`).bind(lease, jobId, force ? 1 : 0).first();
     if (!job) return null;
     try {
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
         const result = await provider.checkJobStatusById(job.gladia_job_id, { deadline });
-        if (!['done', 'error'].includes(result.status)) return null;
+        if (!['done', 'error'].includes(result.status)) {
+            await db.prepare("UPDATE ai_transcription_jobs SET next_provider_check_at=strftime('%s','now')+10 WHERE id=? AND ingestion_lease=?").bind(job.id, lease).run();
+            return null;
+        }
         const segments = result.status === 'done' ? cleanTranscriptSegments(extractGladiaSegments(result)) : [];
         if (!segments.length) {
             await atomicFailAndRefundAiJob(db, job.id, result.status === 'error' ? 'GLADIA_ERROR' : 'NO_SPEECH_DETECTED',
@@ -41,7 +45,7 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
             return { status: 'error', errorCode: result.status === 'error' ? 'GLADIA_ERROR' : 'NO_SPEECH_DETECTED', error: 'No transcription available' };
         }
         const language = extractGladiaDetectedLanguage(result, job.language);
-        const enriched = await enrichSegmentsWithTokens(segments, language);
+        const enriched = segments;
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
         // Expiration/refund paths respect this lease. Recheck before publishing.
         const owns = await db.prepare(`SELECT id FROM ai_transcription_jobs WHERE id=? AND ingestion_lease=?
@@ -53,10 +57,15 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         const level = estimateTranscriptLevel(enriched, language);
         await Promise.allSettled([
             addSubLanguage(db, job.video_id, language),
-            saveVideoLanguages(db, job.video_id, [language], Math.round((last.start || 0) + (last.duration || 0)), null, null, false,
+            saveVideoLanguages(db, job.video_id, [], Math.round((last.start || 0) + (last.duration || 0)), null, null, false,
                 level ? { [language]: level } : null, null, [language])
         ]);
+        if (waitUntil) waitUntil(enrichPublishedTranscript(env.TRANSCRIPT_STORAGE, job.video_id, language));
         return { status: 'done', language, segments: enriched };
+    } catch (error) {
+        const delay = Math.min(300, Math.max(5, error.retryAfterSeconds || 15));
+        await db.prepare("UPDATE ai_transcription_jobs SET next_provider_check_at=strftime('%s','now')+? WHERE id=? AND ingestion_lease=?").bind(delay, job.id, lease).run();
+        throw error;
     } finally {
         await db.prepare('UPDATE ai_transcription_jobs SET ingestion_lease=NULL,ingestion_lease_until=NULL WHERE id=? AND ingestion_lease=?').bind(job.id, lease).run();
     }
@@ -73,9 +82,9 @@ export async function recoverGladiaBatch(env, limit = 25, deadline = Date.now() 
             const job = await db.prepare('SELECT * FROM ai_transcription_jobs WHERE id=?').bind(event.job_id).first();
             if (!job || (job.gladia_job_id && job.gladia_job_id !== event.provider_job_id)) throw new Error('Notification identity mismatch');
             if (!job.gladia_job_id && job.charge_status === 'confirmed') {
-                await db.prepare('UPDATE ai_transcription_jobs SET gladia_job_id=? WHERE id=? AND gladia_job_id IS NULL').bind(event.provider_job_id, job.id).run();
+                await db.prepare("UPDATE ai_transcription_jobs SET gladia_job_id=?,submission_state='accepted' WHERE id=? AND gladia_job_id IS NULL").bind(event.provider_job_id, job.id).run();
             }
-            if (!['completed', 'failed'].includes(job.status)) await ingestGladiaJob(env, job.id, undefined, deadline);
+            if (!['completed', 'failed'].includes(job.status)) await ingestGladiaJob(env, job.id, undefined, deadline, { force: true });
             const terminal = await db.prepare("SELECT id FROM ai_transcription_jobs WHERE id=? AND status IN ('completed','failed')").bind(job.id).first();
             if (!terminal) throw new Error('Provider processing or job leased');
             await db.prepare("UPDATE gladia_callback_inbox SET status='confirmed' WHERE id=?").bind(event.id).run();
@@ -86,4 +95,41 @@ export async function recoverGladiaBatch(env, limit = 25, deadline = Date.now() 
         }
     }
     return { selected: results?.length || 0, confirmed };
+}
+
+/** Resolve a lost creation response without ever issuing a replacement POST. */
+export async function recoverGladiaSubmission(env, jobId, deadline = Date.now() + 5000) {
+    const db = env.VOCAB_DB;
+    const lease = crypto.randomUUID();
+    const job = await db.prepare(`UPDATE ai_transcription_jobs SET ingestion_lease=?,ingestion_lease_until=strftime('%s','now')+60,
+        next_provider_check_at=strftime('%s','now')+60
+        WHERE id=? AND status IN ('queued','processing') AND gladia_job_id IS NULL AND charge_status='confirmed'
+        AND submission_state IN ('submitting','uncertain') AND submission_started_at<=strftime('%s','now')-30
+        AND next_provider_check_at<=strftime('%s','now')
+        AND (ingestion_lease_until IS NULL OR ingestion_lease_until<strftime('%s','now')) RETURNING *`).bind(lease, jobId).first();
+    if (!job) return false;
+    try {
+        const provider = new GladiaProvider(env.GLADIA_API_KEY);
+        const found = await provider.findSubmission(job.id, { deadline });
+        if (!found) return false; // Absence from a list is not proof that no charge occurred.
+        await activateAiJob(db, job.id, found.id);
+        const recorded = await db.prepare('SELECT gladia_job_id FROM ai_transcription_jobs WHERE id=?').bind(job.id).first();
+        return recorded?.gladia_job_id === found.id;
+    } finally {
+        await db.prepare('UPDATE ai_transcription_jobs SET ingestion_lease=NULL,ingestion_lease_until=NULL WHERE id=? AND ingestion_lease=?').bind(job.id, lease).run();
+    }
+}
+
+export async function recoverGladiaJobs(env, limit = 5, deadline = Date.now() + 5000) {
+    const { results } = await env.VOCAB_DB.prepare(`SELECT id,gladia_job_id FROM ai_transcription_jobs
+        WHERE status IN ('queued','processing') AND charge_status='confirmed' AND next_provider_check_at<=strftime('%s','now')
+        AND (gladia_job_id IS NOT NULL OR (submission_state IN ('submitting','uncertain') AND submission_started_at<=strftime('%s','now')-30))
+        ORDER BY next_provider_check_at,created_at LIMIT ?`).bind(Math.min(10, limit)).all();
+    for (const job of results || []) {
+        if (Date.now() >= deadline) break;
+        try {
+            if (job.gladia_job_id) await ingestGladiaJob(env, job.id, undefined, deadline);
+            else await recoverGladiaSubmission(env, job.id, deadline);
+        } catch { console.warn('[Gladia] Scheduled provider recovery deferred', { jobId: job.id }); }
+    }
 }

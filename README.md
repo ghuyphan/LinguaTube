@@ -166,3 +166,9 @@ compact localized tab labels fit the existing mobile toolbar.
 ## Recommendation reliability (2026-10-25)
 
 The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](doc/backend-api.md) section 3.10. No schema migration is needed; rebuild generated functions from `functions-src` before release.
+
+### Backend reliability update (25 October 2026)
+
+Transcript reads now return available cues before optional token enrichment, concurrent translation requests share work, and Gladia submissions recover uncertain outcomes without duplicate creation requests. **Apply the additive D1 submission-state migration before deploying this bundle.** Deployment order, validation and scope are documented in the [implementation record](doc/reviews/cloudflare-functions-implementation-2026-10-25.md).
+
+The [Cloudflare edge-case suite](doc/reviews/cloudflare-edge-cases-2026-10-25.md) covers every API route through local workerd, plus shared-helper boundaries. It also found and corrected native Workers fetch compatibility and malformed-body handling; production deployment remains separate.

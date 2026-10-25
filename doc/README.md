@@ -19,6 +19,9 @@ This documentation suite serves as the definitive technical reference for human 
 | **[6. Database & Storage Architecture](database-and-storage.md)** | D1 SQLite schemas, R2 bucket layout, KV keys, Supabase PostgreSQL tables & IndexedDB persistence | Database & Data Engineers |
 | **[7. Developer & Operations Guide](development-guide.md)** | Local environment setup, dev server, test runners, linting, deployment & troubleshooting | Contributors, Maintainers |
 | **[8. Mobile API Integration Guide](mobile-api-integration.md)** | Complete REST API reference, Supabase sync, Tokens, Multi-source Dict, Grammar Engine, and Flutter/Cursor AI playbooks | Mobile Engineers (Flutter/Dart, iOS, Android) & AI Agents |
+| **[Cloudflare Functions Review — 25 October 2026](reviews/cloudflare-functions-2026-10-25.md)** | Complete source coverage, nine open findings, verification results and mocked reproductions | Backend Engineers, Security & QA |
+| **[Cloudflare Functions Fix & Optimization Plan](reviews/cloudflare-functions-plan-2026-10-25.md)** | Recheck results, backend scope, tokenizer/Gladia optimizations and implementation gates | Backend Engineers, Product & QA |
+| **[Cloudflare Finding Runtime Validation](reviews/cloudflare-functions-validation-2026-10-25.md)** | Nine local workerd/D1/R2 reproductions, controls, supported Node results and source fingerprints | Backend Engineers, Security & QA |
 
 ---
 
@@ -71,3 +74,9 @@ npm run lint
 # Build production bundle
 npm run build
 ```
+
+- [Cloudflare optimization implementation and final validation](reviews/cloudflare-functions-implementation-2026-10-25.md) — backend changes, Gemini exclusions and migration prerequisite.
+
+- [All Cloudflare route edge cases](reviews/cloudflare-edge-cases-2026-10-25.md) — per-route matrix, real-fetch compatibility fixes, reproducible commands and limits.
+
+- [Production deployment preparation and exact-candidate validation](reviews/cloudflare-deployment-2026-10-25.md) — excludes concurrent Gemini edits and records the applied D1 prerequisite.

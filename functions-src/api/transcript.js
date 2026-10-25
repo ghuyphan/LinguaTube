@@ -1,3 +1,4 @@
+import { enrichPublishedTranscript } from '../services/transcript-enrichment.js';
 /**
  * Unified Transcript API (Cloudflare Function)
  * 
@@ -23,10 +24,9 @@ import {
     saveVideoLevel
 } from '../data/video-info-db.js';
 
-import { getTranscriptFromR2, saveTranscriptToR2 } from '../data/transcript-r2.js';
+import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { getActiveAiJob } from '../data/transcript-db.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
-import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 
 // Services
@@ -74,6 +74,11 @@ export async function onRequestPost(context) {
 
     try {
         const body = await request.json();
+        if (!body || typeof body !== 'object' || Array.isArray(body) ||
+            ['preferAI', 'forceRefresh'].some(key => body[key] != null && typeof body[key] !== 'boolean') ||
+            (body.jobId != null && (typeof body.jobId !== 'string' || !/^[a-zA-Z0-9_-]{1,200}$/.test(body.jobId)))) {
+            return jsonResponse({ success: false, errorCode: 'INVALID_REQUEST', error: 'Invalid transcript request' }, 400);
+        }
         const { videoId, lang, preferAI, forceRefresh, jobId, resultUrl, turnstileToken, duration } = body;
 
         const cleanVideoId = sanitizeVideoId(videoId);
@@ -89,24 +94,17 @@ export async function onRequestPost(context) {
             }, 400);
         }
 
-        // Auth & Tier Resolution
-        const authResult = await validateAuthToken(request, env);
-        const clientId = getClientIdentifier(request, authResult);
-        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
-        const maxAiDuration = tier === 'premium' ? 45 * 60 : (tier === 'pro' ? 20 * 60 : 10 * 60);
-
         const isPolling = Boolean(jobId || resultUrl);
 
-        // Validation (Tier duration limits: Free/Anonymous <= 10m, Pro <= 20m, Premium <= 45m)
-        // Skip heavy YouTube scraping on recurring poll requests
+        // Cheap input validation only. Fresh server duration is required at spending time.
         if (!isPolling) {
             const validationError = await validateVideoRequest(
                 cleanVideoId,
                 lang,
                 duration,
-                preferAI ? 'whisper' : 'innertube',
-                preferAI ? maxAiDuration : null,
-                { title: body.title, channel: body.channel }
+                'innertube',
+                null,
+                { title: body.title, channel: body.channel, skipMetadata: true }
             );
             if (validationError) {
                 return jsonResponse({
@@ -146,6 +144,10 @@ export async function onRequestPost(context) {
             }
         }
 
+        const authResult = await validateAuthToken(request, env);
+        const clientId = getClientIdentifier(request, authResult);
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+
         // Setup Services
         const db = env.VOCAB_DB;
         const r2 = env.TRANSCRIPT_STORAGE;
@@ -171,7 +173,7 @@ export async function onRequestPost(context) {
 
         // Diamond status immediately
         const user = authResult.valid ? authResult.user : null;
-        const diamondStatus = await diamondService.getDiamonds(clientId, user);
+        const diamondStatus = await diamondService.getDiamonds(clientId, user, env, context);
         log(`Request: ${cleanVideoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}, tier: ${tier}`);
 
         const knownInfo = await getVideoLanguages(db, cleanVideoId);
@@ -188,17 +190,7 @@ export async function onRequestPost(context) {
             regenIntervalMs: diamondStatus.regenIntervalMs
         };
 
-        let requiredDiamonds = 1;
-        const dur = duration || knownInfo?.durationSeconds || body?.duration || 0;
-        if (dur > 35 * 60) {
-            requiredDiamonds = 4;
-        } else if (dur > 20 * 60) {
-            requiredDiamonds = 3;
-        } else if (dur > 10 * 60) {
-            requiredDiamonds = 2;
-        }
-
-        const orchestratorParams = { videoId: cleanVideoId, lang, jobId, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, maxAiDuration, requiredDiamonds, forceRefresh: Boolean(forceRefresh) };
+        const orchestratorParams = { videoId: cleanVideoId, lang, jobId, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, forceRefresh: Boolean(forceRefresh) };
 
         // -------------------------------------------------------------
         // Polling existing AI (Opaque jobId or legacy resultUrl)
@@ -224,14 +216,8 @@ export async function onRequestPost(context) {
             // Never fall back to other languages in R2 or return native transcripts when preferAI is true!
             if (preferAI) {
                 if (cached?.segments?.length > 0 && cached.source === 'ai') {
-                    // Self-healing: if cached R2 transcript lacks pre-baked tokens, enrich it
                     const targetNormLang = (lang || '').split('-')[0].toLowerCase();
-                    if (['ja', 'zh', 'ko', 'en'].includes(targetNormLang) && (!cached.segments[0].tokens || cached.segments[0].tokens.length === 0)) {
-                        cached.segments = await enrichSegmentsWithTokens(cached.segments, targetNormLang);
-                        if (waitUntil && r2) {
-                            waitUntil(saveTranscriptToR2(r2, cleanVideoId, lang, cached.segments, 'ai').catch(() => {}));
-                        }
-                    }
+                    if (waitUntil && !cached.segments.every(s => s.tokens?.length)) waitUntil(enrichPublishedTranscript(r2, cleanVideoId, lang));
 
                     const responseLevels = { ...(knownInfo?.levels || {}) };
                     const existingLvl = responseLevels[targetNormLang];
@@ -293,14 +279,8 @@ export async function onRequestPost(context) {
                     const normRes = normalizeLanguageCode(responseLang);
                     const isMismatch = Boolean(normReq && normRes && normReq !== normRes);
 
-                    // Self-healing: if cached R2 transcript lacks pre-baked tokens, enrich it
                     const targetNormLang = (normRes || responseLang || '').split('-')[0].toLowerCase();
-                    if (['ja', 'zh', 'ko', 'en'].includes(targetNormLang) && (!cached.segments[0].tokens || cached.segments[0].tokens.length === 0)) {
-                        cached.segments = await enrichSegmentsWithTokens(cached.segments, targetNormLang);
-                        if (waitUntil && r2) {
-                            waitUntil(saveTranscriptToR2(r2, cleanVideoId, responseLang, cached.segments, cached.source || 'cache').catch(() => {}));
-                        }
-                    }
+                    if (waitUntil && !cached.segments.every(s => s.tokens?.length)) waitUntil(enrichPublishedTranscript(r2, cleanVideoId, responseLang));
 
                     const responseLevels = { ...(knownInfo?.levels || {}) };
                     const existingLvl = responseLevels[targetNormLang];
@@ -360,7 +340,7 @@ export async function onRequestPost(context) {
             }
 
             if (forceRefresh) {
-                deleteNoTranscript(db, cleanVideoId, lang, 'native').catch(() => {});
+                await deleteNoTranscript(db, cleanVideoId, lang, 'native');
             } else {
                 // 1. Negative cache hit (specific lang or global '*')
                 if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
@@ -369,15 +349,6 @@ export async function onRequestPost(context) {
                         errorCode: 'NO_NATIVE', error: 'No native captions.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
                         ...diamondInfo, timing: elapsed()
                     }, 200, { 'X-Cache': 'NEG' });
-                }
-
-                // 2. Video known to have 0 native languages globally in D1 (persisted from previous check)
-                if (knownInfo && Array.isArray(knownInfo.availableLanguages) && knownInfo.availableLanguages.length === 0 && (knownInfo.title || knownInfo.durationSeconds)) {
-                    return jsonResponse({
-                        success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                        errorCode: 'NO_NATIVE', error: 'No native captions found. AI available.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
-                        ...diamondInfo, timing: elapsed()
-                    }, 200, { 'X-Cache': 'KNOWN_NO_LANGS' });
                 }
 
                 // 3. Video known to have native captions, but requested language is not among them (e.g. video has en/ja, user asked for zh)
@@ -432,6 +403,9 @@ export async function onRequestPost(context) {
         // -------------------------------------------------------------
         // Step 3: AI
         // -------------------------------------------------------------
+        const sharedJob = await getActiveAiJob(db, cleanVideoId, lang);
+        if (sharedJob) return jsonResponse({ success: false, status: 'processing', jobId: sharedJob.id, videoId: cleanVideoId, availableLanguages, whisperAvailable: true, ...diamondInfo, timing: elapsed() }, 202);
+
         if (diamondStatus.diamonds <= 0) {
             return jsonResponse({ success: false, videoId: cleanVideoId, errorCode: 'NO_DIAMONDS', error: 'No diamonds left.', ...diamondInfo, timing: elapsed() }, 429);
         }
@@ -456,7 +430,7 @@ export async function onRequestPost(context) {
         try {
             const aiJobRes = await transcriptService.startAIJob(serviceContext, orchestratorParams);
 
-            if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiJobRes }, 202);
+            if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiJobRes, ...(aiJobRes.diamondInfo || {}) }, 202);
             return jsonResponse({ success: true, ...aiJobRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
 
         } catch (aiErr) {

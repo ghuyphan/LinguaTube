@@ -698,3 +698,11 @@ bounded, account-safe Supabase RPCs. Android association JSON is served from
 `public/.well-known/assetlinks.json`; legacy `/video/:videoId` links are normalized.
 Unknown routes render a not-found page. See the canonical [migration and activation
 handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md).
+
+## Durable Gladia submission state (25 October 2026)
+
+Apply `db/migrations/d1/20261025_gladia_submission_state.sql` before deploying the updated Functions. It adds `submission_state TEXT NOT NULL DEFAULT 'legacy'`, nullable `submission_started_at INTEGER`, and `next_provider_check_at INTEGER NOT NULL DEFAULT 0` to `ai_transcription_jobs`, plus an index on `(status,next_provider_check_at)`. Times are Unix seconds. Existing rows remain `legacy`; new reservations begin `not_started`, then become `submitting` before the provider POST, `uncertain` after ambiguous acceptance, `accepted` when a provider ID is durable, or `rejected` after definite rejection.
+
+The existing ingestion lease serializes callback, poll and metadata recovery. New submitting/uncertain/accepted jobs do not expire merely because fifteen minutes elapsed. Unresolved submissions keep their financial ledger and charge pending provider/operator evidence. Use `db/operations/gladia-submission-audit.sql` for a bounded read-only audit; a missing list entry must never trigger automatic refund or resubmission.
+
+No new KV namespace, key family, Supabase migration or R2 key layout is introduced. Optional transcript enrichment preserves JSON fields and R2 metadata and requires the original ETag. Translation merges require a canonical source on HTTP save paths and retain its entire cue list. Empty native-language updates preserve previously discovered native languages. Negative no-transcript records expire after seven days and explicit new observations refresh their timestamp.

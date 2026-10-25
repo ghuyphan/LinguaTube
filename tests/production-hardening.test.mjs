@@ -90,9 +90,10 @@ test('middleware bounds actual bytes and preserves signed payload bytes', async 
     await middleware({request:new Request(url,{method:'POST',body:raw}),next:async forwarded=>{assert.equal(await forwarded.text(),raw);return new Response();}});
 });
 
-test('AI generation ignores forged client duration when enforcing the server tier cap', async () => {
+test('AI generation ignores forged client duration when enforcing the server tier cap', async t => {
     const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
-    const db={prepare(){return {bind(){return this;},first:async()=>({duration_seconds:1800})};}};
+    t.mock.method(globalThis,'fetch',async()=>new Response('"lengthSeconds":"1800"'));
+    const db={prepare(sql){return {bind(){return this;},first:async()=>sql.includes('SELECT duration_seconds')?{duration_seconds:30}:null};}};
     const service=new TranscriptService(null,null,{resolveTier:()=> 'free'},null);
     await assert.rejects(service.startAIJob({db,env:{}},{videoId:'abcdefghijk',lang:'ja',body:{duration:'not-a-number'},user:{id:uid}}),/VIDEO_TOO_LONG/);
 });

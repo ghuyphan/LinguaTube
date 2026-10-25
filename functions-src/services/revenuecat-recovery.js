@@ -39,7 +39,7 @@ export async function recoverRevenueCatEvent(env, eventId = null, deadline = Dat
         for (const userId of job.user_ids.filter(id => !(job.completed_user_ids || []).includes(id))) {
             if (Date.now() >= deadline) throw new Error('Reconciliation budget exhausted');
             const response = await fetch(`https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(userId)}`, {
-                headers: { Authorization: `Bearer ${env.REVENUECAT_SECRET_API_KEY}` }, signal: AbortSignal.timeout(Math.max(1, Math.min(4000, deadline - Date.now()))), redirect: 'error'
+                headers: { Authorization: `Bearer ${env.REVENUECAT_SECRET_API_KEY}` }, signal: AbortSignal.timeout(Math.max(1, Math.min(4000, deadline - Date.now()))), redirect: 'manual'
             });
             if (!response.ok) {
                 const header = response.headers.get('Retry-After');

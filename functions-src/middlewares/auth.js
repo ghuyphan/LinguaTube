@@ -62,7 +62,7 @@ async function verifySupabaseToken(token, env) {
         if (!cached || cached.expiresAt <= now) {
             const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
                 headers: { apikey: supabaseKey, Authorization: `Bearer ${token}` },
-                signal: AbortSignal.timeout(4000), redirect: 'error'
+                signal: AbortSignal.timeout(4000), redirect: 'manual'
             });
             if (!response.ok) return { valid: false, error: 'Invalid or forged authentication token' };
             authUser = await response.json();
@@ -77,7 +77,7 @@ async function verifySupabaseToken(token, env) {
             if (!profile || profile.id !== authUser.id) throw new Error('Invalid access state');
         } else {
             const response = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${authUser.id}&select=name,email,subscription_tier,subscription_expires,diamonds,diamonds_updated_at`, {
-                headers: { apikey: supabaseKey, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(4000), redirect: 'error'
+                headers: { apikey: supabaseKey, Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(4000), redirect: 'manual'
             });
             if (!response.ok) throw new Error('Profile unavailable');
             profile = (await response.json())?.[0];

@@ -219,3 +219,13 @@ Account/public screen formatting uses native `Intl` through pure Angular pipes,
 without additional locale bundles or dependencies. Existing responsive panel and
 sidebar styles are reused. Route metadata also controls public-page prompt and
 idle-preload behavior; backend schemas and API contracts are unchanged.
+
+## Cloudflare optimization implementation (25 October 2026)
+
+`transcript-enrichment.js` isolates optional NLP work from transcript publication: three-second caller budget, up to thirty warm-isolate enrichment promises and conditional R2 writes. The timeout does not cancel underlying tokenizer initialization; tokenizer internals are unchanged by this optimization. Warm YouTube-detail deduplication applies only to overlapping verification requests (maximum one hundred pending keys). Live dual-subtitle deduplication also bounds its map to one hundred entries and hashes exact request inputs before async cache access.
+
+Gladia submits once and recovers by durable intent, authenticated callbacks and custom metadata lookup; persisted polling due times avoid repeated sequential upstream calls. Existing provider order, credit policies and translation concurrency remain owned by their existing modules. No dependency or version change is required. Performance evidence is controlled local call-count and fault testing, not a production latency benchmark. See the [implementation record](reviews/cloudflare-functions-implementation-2026-10-25.md).
+
+### Workers fetch and body contract verification
+
+The full route suite controls network responses through Miniflare `outboundService`, retaining workerd's own fetch and Request implementations. It detected unsupported `redirect: 'error'` options missed by the earlier fetch-mocked regression fixture. These options now use `manual` with existing non-2xx rejection, including auth, service-role REST, YouTube verification, Gladia, translation, payOS and RevenueCat recovery. This prevents following redirects with server credentials. Middleware performs bounded UTF-8 JSON-object validation without reserializing signed bodies. No runtime dependency or release version changed.

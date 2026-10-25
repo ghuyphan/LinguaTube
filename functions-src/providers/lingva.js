@@ -6,7 +6,7 @@ const instanceHealth = new Map();
 async function fetchTranslationJson(url, init, options, timeout = 3500) {
     if (Date.now() >= options.deadline || options.signal?.aborted) throw new Error('Translation budget exhausted');
     const signal = requestSignal(options.deadline, timeout, options.signal);
-    const response = await fetch(url, { ...init, signal, redirect: 'error' });
+    const response = await fetch(url, { ...init, signal, redirect: 'manual' });
     if (!response.ok) {
         void response.body?.cancel().catch(() => {});
         const error = new Error(`Translation HTTP ${response.status}`); error.status = response.status; throw error;

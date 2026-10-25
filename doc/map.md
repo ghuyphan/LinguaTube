@@ -571,3 +571,17 @@ provide layout rather than replacement control geometry.
 ## Recommendation reliability (2026-10-25)
 
 The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](backend-api.md) section 3.10. No schema migration is needed; rebuild generated functions from `functions-src` before release.
+
+## Backend optimization flow (25 October 2026)
+
+- New paid transcript: shared-job/cache lookup → fresh duration verification → atomic charge → durable submission intent → single Gladia POST. Uncertain intent → callback inbox or bounded metadata lookup → shared ingestion lease → clean R2 transcript → completed D1 job.
+- `services/transcript-enrichment.js` owns optional background token enrichment, warm promise deduplication and conditional R2 publication. It calls the existing tokenizer without changing its internals.
+- `services/gladia-recovery.js` owns callback recovery, provider-status backoff and uncertain-submission correlation. `api/internal/reconcile.js` runs these with existing refund and billing maintenance.
+- Dual-subtitle requests deduplicate before cache reads. `utils/translation-cache.js` uses canonical full cue lists, the existing mutex and R2 conditions to preserve concurrent and partial translations.
+- D1 migration: `db/migrations/d1/20261025_gladia_submission_state.sql`; read-only unresolved-intent report: `db/operations/gladia-submission-audit.sql`.
+
+See the [implementation record](reviews/cloudflare-functions-implementation-2026-10-25.md) for scope and deployment order.
+
+### API edge-case test map
+
+`tests/fixtures/cloudflare-edge-cases.mjs` inventories all 24 route modules; `tests/cloudflare-routes-edge-cases.integration.mjs` bundles them with the real middleware and runs local workerd with D1/R2/KV. An inventory assertion rejects future routes without a test entry. `tests/cloudflare-shared-edge-cases.test.mjs` adds deterministic shared-helper, body-boundary, cache and R2 publication checks to the default backend suite. The [coverage report](reviews/cloudflare-edge-cases-2026-10-25.md) distinguishes runtime contracts from existing financial/concurrency suites and remaining live-service limits.

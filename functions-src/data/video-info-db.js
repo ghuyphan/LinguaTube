@@ -180,7 +180,7 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
             (video_id, available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, category, tags, created_at, updated_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
             ON CONFLICT(video_id) DO UPDATE SET
-              available_languages = excluded.available_languages,
+              available_languages = CASE WHEN excluded.available_languages = '[]' THEN video_languages.available_languages ELSE excluded.available_languages END,
               sub_languages = CASE WHEN excluded.sub_languages IS NOT NULL AND excluded.sub_languages != '[]' THEN excluded.sub_languages ELSE video_languages.sub_languages END,
               has_auto_captions = excluded.has_auto_captions,
               duration_seconds = COALESCE(excluded.duration_seconds, video_languages.duration_seconds),
@@ -598,7 +598,8 @@ export async function isNoTranscript(db, kv, videoId, lang, source) {
         const row = await db.prepare(`
             SELECT 1 FROM no_transcript_cache
             WHERE video_id = ? AND (language = ? OR language = '*') AND source = ?
-        `).bind(videoId, lang, source).first();
+              AND created_at >= strftime('%s', 'now') - ?
+        `).bind(videoId, lang, source, NO_TRANSCRIPT_MAX_AGE_SECONDS).first();
 
         return Boolean(row);
     } catch {
@@ -620,8 +621,9 @@ export async function markNoTranscript(db, kv, videoId, lang, source) {
 
     try {
         await db.prepare(`
-            INSERT OR IGNORE INTO no_transcript_cache (video_id, language, source)
+            INSERT INTO no_transcript_cache (video_id, language, source)
             VALUES (?, ?, ?)
+            ON CONFLICT(video_id, language, source) DO UPDATE SET created_at = strftime('%s', 'now')
         `).bind(videoId, lang, source).run();
     } catch { }
 }
@@ -713,6 +715,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     let cursor = null;
     let exhausted = false;
     let probes = 0;
+    let verificationIncomplete = false;
     const parseArray = value => {
         try { const parsed = JSON.parse(value || '[]'); return Array.isArray(parsed) ? parsed : []; }
         catch { return []; }
@@ -765,10 +768,12 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         }
 
         // Preserve metadata order after concurrent probes, independent of I/O completion order.
-        for (let i = 0; i < eligible.length && candidates.size < 200; i += 8) {
-            const verified = await Promise.all(eligible.slice(i, i + 8).map(async item => {
+        for (let i = 0; i < eligible.length && candidates.size < 200;) {
+            const group = eligible.slice(i, i + Math.min(8, 200 - candidates.size));
+            i += group.length;
+            const verified = await Promise.all(group.map(async item => {
                 if (item.languages.includes(lang)) return item;
-                if (!r2 || probes >= 10) return null;
+                if (!r2 || probes >= 10) { verificationIncomplete = true; return null; }
                 probes++;
                 try {
                     if (!await r2.head(`transcripts/${item.row.video_id}/${lang}.json`)) return null;
@@ -794,6 +799,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         }
         if (exhausted) break;
     }
+    if (verificationIncomplete) throw new Error('Recommendation transcript verification budget exceeded');
     if (!exhausted && candidates.size < 200) throw new Error('Recommendation scan budget exceeded');
     const ranked = rankVideos([...candidates.values()], { language: lang, tier: targetTier, context, sessionSeed });
     const videos = ranked.slice(safeOffset, safeOffset + safeLimit);

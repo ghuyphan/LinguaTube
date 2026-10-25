@@ -1,0 +1,2961 @@
+{
+  "node": "v22.23.4",
+  "routeCount": 24,
+  "caseCount": 359,
+  "sources": [
+    {
+      "file": "functions-src/api/_middleware.js",
+      "sha256": "7e0da76b732ed2d6e0058abffa845f794bb1faba35c3fc9f8a3abe07f893d444"
+    },
+    {
+      "file": "functions-src/api/diamonds.js",
+      "sha256": "8faf3d217eb2ef76cc29c4b3429eae515d44d88064dde19d8994a2bd87e836f5"
+    },
+    {
+      "file": "functions-src/api/dict.js",
+      "sha256": "c7b2b7d95ea7c25cff295ac4de205424dfe468e0f3550bb5675a94a2ce2b2d08"
+    },
+    {
+      "file": "functions-src/api/dual-subtitles.js",
+      "sha256": "698ee68e3f88a15c63366a0eb3a8a3c0c1db5cc79d2c822eb555d58e68c875f5"
+    },
+    {
+      "file": "functions-src/api/geo.js",
+      "sha256": "4b5160b80c218a32e53ef7db43c4da1916f4c0ba9e3ebcd88f313e76e6b17582"
+    },
+    {
+      "file": "functions-src/api/gladia-webhook.js",
+      "sha256": "ab2d4c397b4327127972aae2b8639a2bd30a54407bf4b8d7e9e726af415bdf1a"
+    },
+    {
+      "file": "functions-src/api/heal-levels.js",
+      "sha256": "eb5a19fcfac83011fbbb23135ecac892bbfaf868caf6b6c06c0820eb225ebe68"
+    },
+    {
+      "file": "functions-src/api/internal/reconcile.js",
+      "sha256": "b99cbc38de60cb81e1cd936acd5656539104a37b4d40f28234270f40f95e5f8d"
+    },
+    {
+      "file": "functions-src/api/kanji.js",
+      "sha256": "ebfa806ed606402cb4fbe562dea160f8f0884ffd760acb5bd55dcba7f0afcd59"
+    },
+    {
+      "file": "functions-src/api/leaderboard.js",
+      "sha256": "ae0baa328773abcabee846e4b9e6c28d654999fdefa7e7a7b6f9631ed53715ae"
+    },
+    {
+      "file": "functions-src/api/payment/check-status.js",
+      "sha256": "92d0e66d075fed24f326ae0803f71a18a50e8aea74f6c2f1a257d5c17202ce7f"
+    },
+    {
+      "file": "functions-src/api/payment/create-order.js",
+      "sha256": "673f52475ee25261aa521d744d9e83d81f9ccac81bea9069e6bbe1739cde7c98"
+    },
+    {
+      "file": "functions-src/api/payment/revenuecat-webhook.js",
+      "sha256": "61d625546c6b4dd5ed25042a966ead8a01e4d26240dd6ddc51a4f3b767eb6497"
+    },
+    {
+      "file": "functions-src/api/payment/webhook.js",
+      "sha256": "ac33fa9a03b4b3ada1ba754abae642e8a5e441b93a5330496e3538d53a8d5e5d"
+    },
+    {
+      "file": "functions-src/api/recommended-videos.js",
+      "sha256": "d1c2f203a5480bf1f415876edc12632229451c7249da7b203faa2c6529abd233"
+    },
+    {
+      "file": "functions-src/api/tokenize-batch/[lang].js",
+      "sha256": "0d067e685719964d547a0fc21e236af860ce8a3b1a973a2ce71752eb0f37eb04"
+    },
+    {
+      "file": "functions-src/api/tokenize/[lang].js",
+      "sha256": "1c7a28af0bbff2a179076e3384c4253fdd35b9a0a8d7bb813bc72a6b3256321f"
+    },
+    {
+      "file": "functions-src/api/transcript.js",
+      "sha256": "bc467a176925336be1675f263fc2df726987a5fd11e8c34141b1f4d0c09a8002"
+    },
+    {
+      "file": "functions-src/api/translate/[[path]].js",
+      "sha256": "6309675ff08ae0820fcbe8f4340138788123eba37c5510ad78859da9901a5079"
+    },
+    {
+      "file": "functions-src/api/translate/batch.js",
+      "sha256": "7d14b927e127665ba2245a0f53c77aae168e7c5e2e52889566f9732556743894"
+    },
+    {
+      "file": "functions-src/api/tts.js",
+      "sha256": "e532e5303165d8791348cd039cfcda6fab02fbb8c261082615eec2c49888917b"
+    },
+    {
+      "file": "functions-src/api/version.js",
+      "sha256": "8aa0ba97247911602773775cc994aaf78758ca887cc411af8b29a2537ac64e17"
+    },
+    {
+      "file": "functions-src/api/video-category.js",
+      "sha256": "e0a00d5249fdef68941abbd2e8b97475f1b09a7a29f274bf666ff32044ada6bf"
+    },
+    {
+      "file": "functions-src/api/video-info.js",
+      "sha256": "f2552b2f03370706c9b6c89095247c7334a6b056ce823723c8487f8c6c3cb2bc"
+    },
+    {
+      "file": "functions-src/api/video-level.js",
+      "sha256": "3f96e5416cc75591295fbf65672b63ce0312d1a41571fa6c5df688555cbfe9aa"
+    },
+    {
+      "file": "functions-src/data/anonymous-credits.js",
+      "sha256": "431aaa6267a155d7d63a91d3376f7334c90a06fbc8949768ef817fdf093746f9"
+    },
+    {
+      "file": "functions-src/data/transcript-db.js",
+      "sha256": "6e93294d35d6693a03f11c13c185d69bbcd223dba5770fae6e80d55dcdd751b6"
+    },
+    {
+      "file": "functions-src/data/transcript-r2.js",
+      "sha256": "6f68c1c31900564e454c715e8ca83020d82c81a5cbc2fd9ae442c7e3dd932b78"
+    },
+    {
+      "file": "functions-src/data/video-info-db.js",
+      "sha256": "f6da82dd0e884a2e63802e1c2670e636f2fde4e316fcdb1a2332308da41d3209"
+    },
+    {
+      "file": "functions-src/middlewares/auth.js",
+      "sha256": "6d74a0d07b5ebb4cf8b9a7a65ef8460cd0cfa264e881ab164285df1d0bdb7969"
+    },
+    {
+      "file": "functions-src/middlewares/bot-defense.js",
+      "sha256": "7a606e5254a247103d828fe9efb54454e8ddbb997608e5c40c576e9ef6d79a09"
+    },
+    {
+      "file": "functions-src/middlewares/rate-limiter.js",
+      "sha256": "64ed49e09907389a34de83c9e816f5e751ff9ba27b7f70201b52f9c7ebe2536e"
+    },
+    {
+      "file": "functions-src/middlewares/video-validator.js",
+      "sha256": "d1b8df435a773b0e846ec801f2d10d4acecc9d123e6974e48eb0546596ce4b8d"
+    },
+    {
+      "file": "functions-src/providers/dictionary-apis.js",
+      "sha256": "d336a178267e374c6ee96f1ed3674412b56ec00a50ce1d8c3ce226f9ca7b45e5"
+    },
+    {
+      "file": "functions-src/providers/gladia.js",
+      "sha256": "d4dd089d58f350f4f041131218b5ea9b3722e4c31d20cb8badce0658ed21cd47"
+    },
+    {
+      "file": "functions-src/providers/lingva.js",
+      "sha256": "e448ad6614a9d5a8adb346813955e595820d249af4c1eb7cd3c648b6c2b58df9"
+    },
+    {
+      "file": "functions-src/providers/payos.js",
+      "sha256": "344ec3f11e8b626c7cc05398a8fcef514d4b8e611c9a6d62c3f083128337b43c"
+    },
+    {
+      "file": "functions-src/providers/supadata.js",
+      "sha256": "e6b7910fa056541e7f421c5bdc47d5e90fa72921aaa1cf6ff3dbd7c0ba39b3c2"
+    },
+    {
+      "file": "functions-src/services/category.service.js",
+      "sha256": "f04435d6c5af2af2bf99063a54dc7c867af4f18acf5d2b9777c5e34d415ee738"
+    },
+    {
+      "file": "functions-src/services/diamond.service.js",
+      "sha256": "b7f24d6e69963d7149d05a81d82c001056216e7051b560355074f67956fbb35c"
+    },
+    {
+      "file": "functions-src/services/dict.service.js",
+      "sha256": "0299a8fd0e3a5afd5f54138f5cf76b4b257328b37bdd901df4671bf22280eba7"
+    },
+    {
+      "file": "functions-src/services/gladia-recovery.js",
+      "sha256": "a455fbcb0e2d72d0f6db43c4f4b447913abcee49013f09e7974dc1039488e451"
+    },
+    {
+      "file": "functions-src/services/recommendation.service.js",
+      "sha256": "161f31cb8d8a8b5c1654813fe6467353c4b26988c794a8b24dfe545b0aea567d"
+    },
+    {
+      "file": "functions-src/services/refund-recovery.js",
+      "sha256": "77fb302e1a030bed76279a0f07cb14c4a40aabb845be0c7d1d64f0109984b553"
+    },
+    {
+      "file": "functions-src/services/revenuecat-recovery.js",
+      "sha256": "2dbb9832e1dbe01d22aef95cf680c5f4a24589445a3146c57ad46388a6f45883"
+    },
+    {
+      "file": "functions-src/services/supabase-rest.js",
+      "sha256": "267f383ad421323e97c821d8a588497b7f3a2920d8b31019737aae25a37a69f5"
+    },
+    {
+      "file": "functions-src/services/transcript-enrichment.js",
+      "sha256": "41915ba75b9c5d95e964455036ea6ca4a94d627ffc812295726a579c6bddd804"
+    },
+    {
+      "file": "functions-src/services/transcript.service.js",
+      "sha256": "90ba4b6dd0d73a14f04c434d403af77ca050cf9cead45a4fbf29522a210c8ba2"
+    },
+    {
+      "file": "functions-src/services/turnstile.service.js",
+      "sha256": "208dfb8135fb95a22fe63f373bda1c53c5ace2b4c22e8eef14103f9d0fb664cd"
+    },
+    {
+      "file": "functions-src/utils/api-key-rotator.js",
+      "sha256": "6a5964e318df77e2e67c4eaef07af20e9ae2604cdc7f6f346f94564aaf83394e"
+    },
+    {
+      "file": "functions-src/utils/cache-manager.js",
+      "sha256": "4c09b889e378c10f328543281424964bf66e75fdca74d9f6a51b75d6072d6450"
+    },
+    {
+      "file": "functions-src/utils/dict-parsers.js",
+      "sha256": "f2e051eb76502f5c5a9273d9d40910b3f7451ea965985412e75bb732ebb91027"
+    },
+    {
+      "file": "functions-src/utils/edge-tts.js",
+      "sha256": "e241af7b197bbc95bfa41f625d1a14075b46937b749fde9929f3d6a273b57783"
+    },
+    {
+      "file": "functions-src/utils/japanese-romaji.js",
+      "sha256": "591d1dfaa8d754b329b29f25026eb45037ad430263a3687071a4c054250b78b4"
+    },
+    {
+      "file": "functions-src/utils/level-estimator.js",
+      "sha256": "4764fba136bf6bb0c136a982b439f1eda9cc6a9ff0384a0a7cdb348c737302f8"
+    },
+    {
+      "file": "functions-src/utils/response-body.js",
+      "sha256": "436d19473dfd372c15153fc791765aaa792712b78f2d4a7942522a1d12760181"
+    },
+    {
+      "file": "functions-src/utils/secret-auth.js",
+      "sha256": "892c3efcd456c86736b18656f7ccaad7d7401cb8e1709c69ebbebcf847427829"
+    },
+    {
+      "file": "functions-src/utils/svix-verifier.js",
+      "sha256": "0dac28434ec9066ba298e0a3b93bbdbfb3f92775075e048d6e23239489bb7e75"
+    },
+    {
+      "file": "functions-src/utils/tokenizer.js",
+      "sha256": "1f24dba79cb8ee29466235b8dd11acc2465d3dfd065f8ad8283f60bb15cfe713"
+    },
+    {
+      "file": "functions-src/utils/transcript-utils.js",
+      "sha256": "21f343c79c43afda12df11f1446623fa430af9a0de42fa065bb1ac9c25881ffc"
+    },
+    {
+      "file": "functions-src/utils/translation-cache.js",
+      "sha256": "484675fb193b65e8280bb5fd820352a93f2c8ead401027846eade9b0268a4aac"
+    },
+    {
+      "file": "functions-src/utils/utils.js",
+      "sha256": "22b979bf2003340eaf1d2949a5d90a3d82c87de1da4ac3c110e8b280049f508a"
+    }
+  ],
+  "evidence": [
+    {
+      "route": "diamonds",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "geo",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "kanji",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "translate/[[path]]",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "version",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "preflight",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "diamonds",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "geo",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "invalid JSON object \"\"",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "invalid JSON object \"\"",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "kanji",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/[[path]]",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "version",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "bot rejected",
+      "status": 403,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "oversized streamed body rejected",
+      "status": 413,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"{\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"null\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"[]\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"\\\"text\\\"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"true\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"42\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "invalid JSON object \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "unauthenticated write missing",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "unauthenticated write Bearer bad",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "unauthenticated write Basic abc",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "unauthenticated write Bearer fixture.eyJzdWIiOiJ4IiwiZXhwIjoxfQ==.fixture",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "unauthenticated write missing",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "unauthenticated write Bearer bad",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "unauthenticated write Basic abc",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "unauthenticated write Bearer fixture.eyJzdWIiOiJ4IiwiZXhwIjoxfQ==.fixture",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "unauthenticated write missing",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "unauthenticated write Bearer bad",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "unauthenticated write Basic abc",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "unauthenticated write Bearer fixture.eyJzdWIiOiJ4IiwiZXhwIjoxfQ==.fixture",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "missing required query",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "kanji",
+      "name": "missing required query",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "missing required query",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "missing required query",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/[[path]]",
+      "name": "missing required query",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "empty sanitized word \"\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "empty sanitized word \" \"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "empty sanitized word \"\\u0000\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "empty sanitized word \"<>\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "unsupported dictionary source xx",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dict",
+      "name": "unsupported dictionary source ../../en",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "TTS length 0",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "TTS length 301",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "TTS invalid types {\"text\":1}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "TTS invalid types {\"text\":\"hello\",\"lang\":{}}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "TTS invalid types {\"text\":\"hello\",\"voice\":[]}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid video ID \"../secret\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid video ID \"short\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid video ID \"aaaaaaaaaaaa\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid video ID {}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid video ID null",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"duration\":\"60\"}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"duration\":-1}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"duration\":0}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"preferAI\":\"true\"}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"forceRefresh\":1}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"jobId\":{}}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "invalid transcript field {\"lang\":\"xx\"}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "unsafe polling URL http://api.gladia.io/v2/pre-recorded/a",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "unsafe polling URL https://api.gladia.io.evil.test/v2/pre-recorded/a",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "unsafe polling URL https://localhost/a",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "unsafe polling URL https://127.0.0.1/a",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "unsafe polling URL https://api.gladia.io/admin",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid metadata duration -1",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid metadata duration 0",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid metadata duration \"60\"",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid metadata duration 14401",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid metadata duration {}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-info",
+      "name": "invalid metadata duration null",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "unsupported tokenizer language",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "unsupported tokenizer method",
+      "status": 405,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "unsupported tokenizer language",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "unsupported tokenizer method",
+      "status": 405,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "single tokenizer input 0",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "single tokenizer input null",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "single tokenizer input 42",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "single tokenizer input {}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "single tokenizer input 10001",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid batch tokenize-batch/[lang] []",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid batch tokenize-batch/[lang] null",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid batch tokenize-batch/[lang] {}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid batch tokenize-batch/[lang] [null]",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid batch tokenize-batch/[lang] [\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "invalid batch tokenize-batch/[lang] [\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid batch translate/batch []",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid batch translate/batch null",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid batch translate/batch {}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid batch translate/batch [null]",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid batch translate/batch [\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "invalid batch translate/batch [\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",\"x\",",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid subtitle cues []",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid subtitle cues {}",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid subtitle cues [{\"start\":-1,\"duration\":1,\"text\":\"Hello\"}]",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid subtitle cues [{\"start\":0,\"duration\":\"1\",\"text\":\"Hello\"}]",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid subtitle cues [{\"start\":0,\"duration\":1,\"text\":\"xxxxxxxxxxxx",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "invalid subtitle cues [{\"start\":0,\"duration\":1,\"text\":\"Hello\"},{\"st",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "invalid order code ",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "invalid order code -1",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "invalid order code 12.5",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "invalid order code 1e3",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "invalid order code 9007199254740992",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "invalid order code 1&user_id=neq.x",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/check-status",
+      "name": "valid order needs identity",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "admin absent",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "maintenance absent",
+      "status": 503,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "maintenance incorrect secret",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "callback unsigned",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "payment unsigned",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "revenuecat unsigned",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "revenuecat configured secret absent",
+      "status": 503,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "revenuecat sandbox ignored",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "authenticated invalid input {\"videoId\":\"abcdefghijk\",\"category\":\"invented\"}",
+      "status": 400,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "video-level",
+      "name": "authenticated invalid input {\"videoId\":\"abcdefghijk\",\"language\":\"xx\",\"level\":\"CEFR B1\"}",
+      "status": 400,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "video-level",
+      "name": "authenticated invalid input {\"videoId\":\"abcdefghijk\",\"language\":\"en\",\"level\":\"HACK\"}",
+      "status": 400,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "video-level",
+      "name": "authenticated invalid input {\"videoId\":\"abcdefghijk\",\"language\":\"en\",\"level\":\"CEFR B1\",\"confidence\":0.64}",
+      "status": 400,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "payment/create-order",
+      "name": "authenticated invalid input {\"planId\":\"__proto__\"}",
+      "status": 400,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "payment/check-status",
+      "name": "payment status filters authenticated owner",
+      "status": 404,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/orders",
+          "query": "?order_code=eq.12345678&user_id=eq.11111111-1111-4111-8111-111111111111&select=status,paid_at",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "maintenance D1 unavailable",
+      "status": 503,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "admin D1 unavailable",
+      "status": 500,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "recommendation database missing",
+      "status": 503,
+      "outbound": []
+    },
+    {
+      "route": "kanji",
+      "name": "kanji provider unavailable",
+      "status": 502,
+      "outbound": [
+        {
+          "host": "jotoba.de",
+          "path": "/api/search/kanji",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "dict",
+      "name": "dictionary providers unavailable",
+      "status": 503,
+      "outbound": [
+        {
+          "host": "glosbe.com",
+          "path": "/en/vi/edgecasefixtureword",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "en.dict.naver.com",
+          "path": "/api3/enen/search",
+          "query": "?query=edgecasefixtureword&m=pc&range=all",
+          "method": "GET"
+        },
+        {
+          "host": "en.dict.naver.com",
+          "path": "/api3/envi/search",
+          "query": "?query=edgecasefixtureword&m=pc&range=all",
+          "method": "GET"
+        },
+        {
+          "host": "api.datamuse.com",
+          "path": "/words",
+          "query": "?sp=edgecasefixtureword&md=dp&max=3",
+          "method": "GET"
+        },
+        {
+          "host": "api.dictionaryapi.dev",
+          "path": "/api/v2/entries/en/edgecasefixtureword",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "video-info",
+      "name": "video metadata upstream outage",
+      "status": 404,
+      "outbound": [
+        {
+          "host": "www.youtube.com",
+          "path": "/oembed",
+          "query": "?format=json&url=https://www.youtube.com/watch?v=outageabcde",
+          "method": "GET"
+        },
+        {
+          "host": "www.youtube.com",
+          "path": "/watch",
+          "query": "?v=outageabcde",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "geo",
+      "name": "geo fallback undefined",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "geo",
+      "name": "geo fallback XX",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "geo",
+      "name": "geo fallback T1",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "geo",
+      "name": "geo fallback vn",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "diamonds",
+      "name": "anonymous credits status",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "category taxonomy",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "category missing video falls back",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "transcript health without secrets",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "empty recommendations",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "translate/[[path]]",
+      "name": "same-language translate bypass",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "same-language batch bypass",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "blank translation batch bypass",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "leaderboard",
+      "name": "empty leaderboard falls back to seeds",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/gamification",
+          "query": "?select=*,profiles:user_id(id,name,avatar_url)&order=weekly_xp.desc,xp.desc&limit=1",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "version",
+      "name": "version compiled fallback",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "video-category",
+      "name": "authentication fails closed auth-outage",
+      "status": 401,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "video-category",
+      "name": "authentication fails closed auth-redirect",
+      "status": 401,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "video-category",
+      "name": "authentication fails closed auth-identity-mismatch",
+      "status": 401,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "video-category",
+      "name": "authentication fails closed profile-outage",
+      "status": 401,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "video-level",
+      "name": "authenticated level rejects invalid video ID",
+      "status": 400,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "video-category",
+      "name": "authenticated category persistence",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "video-level",
+      "name": "authenticated level confidence clamps",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        },
+        {
+          "host": "www.youtube.com",
+          "path": "/oembed",
+          "query": "?format=json&url=https://www.youtube.com/watch?v=abcdefghijk",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "diamonds",
+      "name": "diamond rate limit exact boundary",
+      "status": 429,
+      "outbound": []
+    },
+    {
+      "route": "version",
+      "name": "version conditional ETag",
+      "status": 304,
+      "outbound": []
+    },
+    {
+      "route": "tts",
+      "name": "TTS both providers unavailable",
+      "status": 502,
+      "outbound": [
+        {
+          "host": "speech.platform.bing.com",
+          "path": "/consumer/speech/synthesize/readaloud/edge/v1",
+          "query": "?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=DAA40EE583889A28F43E4728A5363ADD80070BE09045BA89ECC5755830C65E3A&Sec-MS-GEC-Version=1-143.0.3650.75&ConnectionId=0e925a1c85f040118c138bb17e7122a6",
+          "method": "GET"
+        },
+        {
+          "host": "speech.platform.bing.com",
+          "path": "/consumer/speech/synthesize/readaloud/edge/v1",
+          "query": "?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=DAA40EE583889A28F43E4728A5363ADD80070BE09045BA89ECC5755830C65E3A&Sec-MS-GEC-Version=1-143.0.3650.75&ConnectionId=0e925a1c85f040118c138bb17e7122a6",
+          "method": "GET"
+        },
+        {
+          "host": "translate.google.com",
+          "path": "/translate_tts",
+          "query": "?ie=UTF-8&q=Fixture%20unavailable%20speech&tl=en&client=tw-ob",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "tts",
+      "name": "TTS fallback audio too short",
+      "status": 502,
+      "outbound": [
+        {
+          "host": "speech.platform.bing.com",
+          "path": "/consumer/speech/synthesize/readaloud/edge/v1",
+          "query": "?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=DAA40EE583889A28F43E4728A5363ADD80070BE09045BA89ECC5755830C65E3A&Sec-MS-GEC-Version=1-143.0.3650.75&ConnectionId=080ce02e8430429e90f252d2c0f9f7da",
+          "method": "GET"
+        },
+        {
+          "host": "speech.platform.bing.com",
+          "path": "/consumer/speech/synthesize/readaloud/edge/v1",
+          "query": "?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=DAA40EE583889A28F43E4728A5363ADD80070BE09045BA89ECC5755830C65E3A&Sec-MS-GEC-Version=1-143.0.3650.75&ConnectionId=080ce02e8430429e90f252d2c0f9f7da",
+          "method": "GET"
+        },
+        {
+          "host": "translate.google.com",
+          "path": "/translate_tts",
+          "query": "?ie=UTF-8&q=Fixture%20short%20speech&tl=en&client=tw-ob",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "tts",
+      "name": "TTS fallback valid audio",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "speech.platform.bing.com",
+          "path": "/consumer/speech/synthesize/readaloud/edge/v1",
+          "query": "?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=DAA40EE583889A28F43E4728A5363ADD80070BE09045BA89ECC5755830C65E3A&Sec-MS-GEC-Version=1-143.0.3650.75&ConnectionId=eaf5256665e7426a893ba06c33a16d80",
+          "method": "GET"
+        },
+        {
+          "host": "speech.platform.bing.com",
+          "path": "/consumer/speech/synthesize/readaloud/edge/v1",
+          "query": "?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=DAA40EE583889A28F43E4728A5363ADD80070BE09045BA89ECC5755830C65E3A&Sec-MS-GEC-Version=1-143.0.3650.75&ConnectionId=eaf5256665e7426a893ba06c33a16d80",
+          "method": "GET"
+        },
+        {
+          "host": "translate.google.com",
+          "path": "/translate_tts",
+          "query": "?ie=UTF-8&q=Fixture%20valid%20speech&tl=en&client=tw-ob",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "single tokenizer accepts exact length boundary",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "batch tokenizer accepts 800 items for authenticated quota",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/auth/v1/user",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/rpc/get_user_access_state",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "translate/batch",
+      "name": "translation accepts exact 80-item boundary without provider work",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "dual-subtitles",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "gladia-webhook",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "heal-levels",
+      "name": "absent body is handled explicitly",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "internal/reconcile",
+      "name": "absent body is handled explicitly",
+      "status": 401,
+      "outbound": []
+    },
+    {
+      "route": "payment/create-order",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/revenuecat-webhook",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "payment/webhook",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "recommended-videos",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize/[lang]",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "tokenize-batch/[lang]",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "transcript",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "translate/batch",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "video-level",
+      "name": "absent body is handled explicitly",
+      "status": 400,
+      "outbound": []
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-302",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-400",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-401",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-408",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-429",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-500",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit http-503",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit gladia-accepted",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit malformed",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit missing-id",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-submit-no-key unused",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-poll poll-processing",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded/fixture-provider",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-poll poll-done",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded/fixture-provider",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-poll poll-error",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded/fixture-provider",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-poll http-429",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded/fixture-provider",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-poll http-302",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded/fixture-provider",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-poll malformed",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded/fixture-provider",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-invalid-poll unused",
+      "status": 200,
+      "outbound": []
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-find metadata-empty",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "?custom_metadata=%7B%22voca_job_id%22%3A%22fixture-job%22%7D&limit=2",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-find metadata-multiple",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "?custom_metadata=%7B%22voca_job_id%22%3A%22fixture-job%22%7D&limit=2",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-find metadata-foreign",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "?custom_metadata=%7B%22voca_job_id%22%3A%22fixture-job%22%7D&limit=2",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "gladia-find metadata-single",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api.gladia.io",
+          "path": "/v2/pre-recorded",
+          "query": "?custom_metadata=%7B%22voca_job_id%22%3A%22fixture-job%22%7D&limit=2",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "supabase-read no-content",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/orders",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "supabase-read malformed",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/orders",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "supabase-read http-302",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "auth.fixture.test",
+          "path": "/rest/v1/orders",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "payos-create payos-success",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api-merchant.payos.vn",
+          "path": "/v2/payment-requests",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "payos-create http-302",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api-merchant.payos.vn",
+          "path": "/v2/payment-requests",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "payos-create http-503",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "api-merchant.payos.vn",
+          "path": "/v2/payment-requests",
+          "query": "",
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "translation translation-success",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "translate.googleapis.com",
+          "path": "/translate_a/single",
+          "query": "?client=gtx&sl=en&tl=vi&dt=t&q=Fixture+translation+translation-success",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "translation http-302",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "translate.googleapis.com",
+          "path": "/translate_a/single",
+          "query": "?client=gtx&sl=en&tl=vi&dt=t&q=Fixture+translation+http-302",
+          "method": "GET"
+        },
+        {
+          "host": "translate.googleapis.com",
+          "path": "/translate_a/single",
+          "query": "?client=dict-chrome-ex&sl=en&tl=vi&dt=t&q=Fixture+translation+http-302",
+          "method": "GET"
+        },
+        {
+          "host": "api.mymemory.translated.net",
+          "path": "/get",
+          "query": "?q=Fixture+translation+http-302&langpair=en%7Cvi&de=admin%40voca.study",
+          "method": "GET"
+        },
+        {
+          "host": "lingva.ml",
+          "path": "/api/v1/en/vi/Fixture%20translation%20http-302",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "lingva.lunar.icu",
+          "path": "/api/v1/en/vi/Fixture%20translation%20http-302",
+          "query": "",
+          "method": "GET"
+        },
+        {
+          "host": "translate.plausibility.cloud",
+          "path": "/api/v1/en/vi/Fixture%20translation%20http-302",
+          "query": "",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "translation malformed",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "translate.googleapis.com",
+          "path": "/translate_a/single",
+          "query": "?client=gtx&sl=en&tl=vi&dt=t&q=Fixture+translation+malformed",
+          "method": "GET"
+        },
+        {
+          "host": "translate.googleapis.com",
+          "path": "/translate_a/single",
+          "query": "?client=dict-chrome-ex&sl=en&tl=vi&dt=t&q=Fixture+translation+malformed",
+          "method": "GET"
+        },
+        {
+          "host": "api.mymemory.translated.net",
+          "path": "/get",
+          "query": "?q=Fixture+translation+malformed&langpair=en%7Cvi&de=admin%40voca.study",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "youtube-duration duration-success",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "www.youtube.com",
+          "path": "/watch",
+          "query": "?v=abcdefghijk",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "route": "__provider",
+      "name": "youtube-duration http-302",
+      "status": 200,
+      "outbound": [
+        {
+          "host": "www.youtube.com",
+          "path": "/watch",
+          "query": "?v=abcdefghijk",
+          "method": "GET"
+        }
+      ]
+    }
+  ]
+}

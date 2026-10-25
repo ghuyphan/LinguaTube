@@ -21,7 +21,14 @@ export async function onRequest(context) {
     // This also applies to callbacks, whose authentication is enforced by their handlers.
     const maxBytes = 2 * 1024 * 1024;
     if (Number(request.headers.get('Content-Length')) > maxBytes) return jsonResponse({ error: 'Request too large' }, 413);
-    if (!request.body) return next();
+    if (!request.body) {
+        // Maintenance endpoints intentionally accept authenticated no-body calls.
+        const optionalBody = ['/api/internal/reconcile', '/api/heal-levels'].includes(path);
+        if (['POST', 'PUT', 'PATCH'].includes(request.method) && !optionalBody) {
+            return jsonResponse({ error: 'JSON object body required' }, 400);
+        }
+        return next();
+    }
     const reader = request.body.getReader();
     const chunks = [];
     let size = 0;
@@ -40,5 +47,18 @@ export async function onRequest(context) {
     const body = new Uint8Array(size);
     let offset = 0;
     for (const chunk of chunks) { body.set(chunk, offset); offset += chunk.byteLength; }
+    // HTTP adapters can expose an absent POST body as a zero-byte stream.
+    const emptyMaintenance = size === 0 && ['/api/internal/reconcile', '/api/heal-levels'].includes(path);
+    // API body handlers consume JSON objects. Reject malformed/scalar payloads
+    // before they become 500s or accidentally select a default mutation.
+    // Forward the original bytes unchanged for webhook signature verification.
+    if (['POST', 'PUT', 'PATCH'].includes(request.method) && !emptyMaintenance) {
+        try {
+            const parsed = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(body));
+            if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('Object required');
+        } catch {
+            return jsonResponse({ error: 'Invalid JSON object' }, 400);
+        }
+    }
     return next(new Request(request, { body }));
 }

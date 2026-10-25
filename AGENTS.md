@@ -439,3 +439,18 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
 ## Recommendation invariants (2026-10-25)
 
 Keep the 200 eligible-candidate window independent of offset/page size/seed. Apply difficulty before adding candidates; bound metadata scanning to 20 batches of 200 and R2 probes to ten. Incomplete discovery due to outage/budget breach is 503, not an empty catalog. Every ranking-affecting learner signal bypasses shared caches. Keep background metadata healing from changing discovery timestamps. No schema migration is required.
+
+## Transcript optimization invariants (2026-10-25)
+
+- Apply `db/migrations/d1/20261025_gladia_submission_state.sql` before activating the updated Functions. Preserve submitting/uncertain/accepted jobs beyond ordinary age expiry; lack of provider-list evidence cannot authorize refunds or replacement POSTs.
+- New paid AI submissions use one fresh server duration for both tier validation and pricing. Cache reads and active-job joins avoid this lookup; force refresh joins active work before credit checks.
+- Gladia creation is a single POST with durable correlation metadata. Callback, poll and metadata recovery share the ingestion lease and persisted provider due times.
+- Publish clean transcripts and confirm completion before optional token enrichment. Enrichment has a bounded caller wait and ETag-conditional publication; underlying tokenizer cancellation remains its own concern.
+- HTTP translation saves require canonical source cues and preserve the complete cue list. Unknown native-language metadata must not suppress native discovery; incomplete recommendation verification remains retryable.
+
+## Workers edge-case testing invariants (2026-10-25)
+
+- Keep every API module in `tests/fixtures/cloudflare-edge-cases.mjs`; the inventory assertion must fail when a new route is missing. Run the optional all-route workerd suite after provider/auth or middleware changes.
+- Runtime fetch compatibility checks must use native workerd fetch with controlled outbound service responses. A mocked global fetch does not validate RequestInit compatibility.
+- Credential-bearing calls use `redirect: 'manual'` and reject non-2xx responses; never follow a redirect with provider or service-role credentials.
+- For body-bearing POST/PUT/PATCH requests, middleware accepts only bounded UTF-8 JSON objects and forwards original bytes for webhook signatures. Preserve no-body maintenance requests.

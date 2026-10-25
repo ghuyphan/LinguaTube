@@ -1,4 +1,5 @@
-import { ingestGladiaJob } from './gladia-recovery.js';
+import { enrichPublishedTranscript } from './transcript-enrichment.js';
+import { ingestGladiaJob, recoverGladiaSubmission } from './gladia-recovery.js';
 import { recoverJobRefund } from './refund-recovery.js';
 /**
  * Service for orchestrating Transcripts (AI & Native)
@@ -8,7 +9,6 @@ import {
     saveVideoLanguages,
     addVideoLanguages,
     addSubLanguage,
-    getVideoDuration,
     markNoTranscript,
     deleteNoTranscript
 } from '../data/video-info-db.js';
@@ -28,9 +28,8 @@ import {
 
 import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
 import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
-import { getTierDiamondConfig } from './diamond.service.js';
+import { getTierDiamondConfig, transcriptionDiamondCost } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
-import { enrichSegmentsWithTokens } from '../utils/tokenizer.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
@@ -78,18 +77,12 @@ export class TranscriptService {
             }
 
             // Background async persistence and morphological enrichment
-            // Delivers native captions in < 200ms without blocking on Kuromoji CPU time
+            // Persist useful captions before any optional enrichment work.
             const backgroundSaveTask = async () => {
-                let enrichedSegments = cleanedSegments;
-                try {
-                    enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, actualLang);
-                } catch (e) {
-                    console.warn('[TranscriptService] Token enrichment error in background:', e?.message || e);
-                }
-
+                const persisted = await saveTranscriptToR2(r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata');
+                const enrichedSegments = cleanedSegments;
                 const savePromises = [
-                    saveTranscriptToR2(r2, videoId, actualLang, enrichedSegments, nativeResult.source || 'supadata'),
-                    addSubLanguage(db, videoId, actualLang),
+                    ...(persisted ? [addSubLanguage(db, videoId, actualLang)] : []),
                     deleteNoTranscript(db, videoId, actualLang, 'native')
                 ];
 
@@ -110,10 +103,11 @@ export class TranscriptService {
                     false,
                     levelsObj,
                     avatar,
-                    [actualLang]
+                    persisted ? [actualLang] : null
                 ));
 
                 await Promise.allSettled(savePromises);
+                if (persisted) await enrichPublishedTranscript(r2, videoId, actualLang);
             };
 
             if (waitUntil) {
@@ -211,27 +205,6 @@ export class TranscriptService {
         const env = context.env || {};
         const { videoId, lang, clientId, user, diamondInfo, availableLanguages } = params;
 
-        // 1. Validate video length against user tier limit (server-authoritative: D1 first, then YouTube scraping)
-        let duration = await getVideoDuration(db, videoId);
-        if (!duration) {
-            const ytDetails = await fetchYouTubeVideoDetails(videoId);
-            if (ytDetails.isLive) {
-                throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
-            }
-            duration = ytDetails.duration;
-            if (duration && db && context.waitUntil) {
-                context.waitUntil(saveVideoLanguages(db, videoId, [], duration).catch(() => {}));
-            }
-        }
-
-        const tier = params.tier || this.diamondService.resolveTier(user);
-        const tierConfig = getTierDiamondConfig(tier);
-        const maxDurationSec = params.maxAiDuration || tierConfig.maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
-
-        if (duration && duration > maxDurationSec) {
-            throw new Error(`VIDEO_TOO_LONG: Video (${Math.round(duration / 60)} min) exceeds the ${Math.round(maxDurationSec / 60)} minute limit for ${tier.toUpperCase()} tier.`);
-        }
-
         const normalizedLang = normalizeLanguageCode(lang);
 
         // 2. Check if an AI transcript already exists in R2 for this language (avoid duplicate diamond charges)
@@ -251,45 +224,20 @@ export class TranscriptService {
             };
         }
 
-        // Provider spending must never be authorized using a caller-supplied duration.
-        if (!Number.isFinite(duration) || duration <= 0) {
-            throw new Error('VIDEO_DURATION_UNAVAILABLE: Unable to verify video length. Please retry.');
-        }
+        // Refresh joins existing work; it never cancels somebody else's charge.
+        const activeJob = await getActiveAiJob(db, videoId, normalizedLang);
+        if (activeJob) return { status: 'processing', jobId: activeJob.id, videoId, availableLanguages, diamondInfo };
 
-
-        // 3. Scaled diamond cost based on video length
-        let requiredDiamonds = params.requiredDiamonds || 1;
-        if (duration) {
-            if (duration > 35 * 60) {
-                requiredDiamonds = 4;
-            } else if (duration > 20 * 60) {
-                requiredDiamonds = 3;
-            } else if (duration > 10 * 60) {
-                requiredDiamonds = 2;
-            }
-        }
-
-        // 4. Check for active job in D1 (unless forceRefresh is explicitly requested)
-        if (params.forceRefresh) {
-            // Preserve the previous charge and refund history when starting a replacement.
-            const existing = await getActiveAiJob(db, videoId, normalizedLang);
-            if (existing) {
-                console.warn(`[startAIJob] forceRefresh requested for ${videoId}:${normalizedLang}. Superseding existing active job ${existing.id}`);
-                await atomicFailAndRefundAiJob(db, existing.id, 'SUPERSEDED', 'Replaced by a fresh transcription request');
-                await recoverJobRefund(env, existing.id);
-            }
-        } else {
-            const activeJob = await getActiveAiJob(db, videoId, normalizedLang, this.diamondService, env, context);
-            if (activeJob) {
-                return {
-                    status: 'processing',
-                    jobId: activeJob.id,
-                    videoId,
-                    availableLanguages,
-                    diamondInfo
-                };
-            }
-        }
+        // Existing D1 durations may originate from clients or incomplete captions.
+        // Verify once, only on the path that can create a new paid operation.
+        const details = await fetchYouTubeVideoDetails(videoId);
+        if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
+        const duration = details.duration;
+        const requiredDiamonds = transcriptionDiamondCost(duration);
+        const tier = params.tier || this.diamondService.resolveTier(user);
+        const tierConfig = getTierDiamondConfig(tier);
+        const maxDurationSec = tierConfig.maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
+        if (duration > maxDurationSec) throw new Error(`VIDEO_TOO_LONG: Video exceeds the ${Math.round(maxDurationSec / 60)} minute tier limit.`);
 
         // 5. Atomic Lock Reservation Pattern:
         // Reserve job slot in D1. If another request just reserved it, isNew will be false.
@@ -340,12 +288,20 @@ export class TranscriptService {
         const origin = env.PUBLIC_ORIGIN || env.APP_URL || 'https://voca.study';
         const callbackUrl = `${origin}/api/gladia-webhook?token=${derivedToken}&jobId=${jobId}&videoId=${videoId}&lang=${encodeURIComponent(lang)}`;
 
+        // Persist submission intent before the chargeable upstream request.
+        await db.prepare("UPDATE ai_transcription_jobs SET submission_state='submitting',submission_started_at=strftime('%s','now') WHERE id=? AND status='queued'").bind(jobId).run();
+
         // 8. Submit to Gladia
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
         let gladiaResponse;
         try {
-            gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl);
+            gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl, { jobId });
         } catch (gladiaError) {
+            if (gladiaError.ambiguous) {
+                await db.prepare("UPDATE ai_transcription_jobs SET submission_state='uncertain' WHERE id=? AND submission_state='submitting'").bind(jobId).run();
+                return { status: 'processing', jobId, videoId, availableLanguages, diamondInfo: updatedDiamondInfo };
+            }
+            await db.prepare("UPDATE ai_transcription_jobs SET submission_state='rejected' WHERE id=? AND submission_state='submitting'").bind(jobId).run();
             // Mark job failed and refund consumed diamond on submission failure
             await atomicFailAndRefundAiJob(db, jobId, null, gladiaError.message || 'gladia_submission_failed');
             if (env.VOCAB_DB) await recoverJobRefund(env, jobId);
@@ -449,9 +405,14 @@ export class TranscriptService {
         const nowSec = Math.floor(Date.now() / 1000);
         const jobAge = nowSec - (job.created_at || nowSec);
 
+        if (!job.gladia_job_id && ['submitting', 'uncertain'].includes(job.submission_state)) {
+            try { await recoverGladiaSubmission(env, jobId); }
+            catch { console.warn('[TranscriptService] Submission reconciliation deferred'); }
+        }
+
         if (jobAge > 15 && job.gladia_job_id && env.GLADIA_API_KEY) {
             try {
-                const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider);
+                const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 20000, { waitUntil: context.waitUntil });
                 if (outcome?.status === 'error') return outcome;
                 if (outcome?.status === 'done') return {
                     status: 'done', videoInfo: {
@@ -503,7 +464,7 @@ export class TranscriptService {
                 const detectedLang = extractGladiaDetectedLanguage(resultData, lang);
 
                 if (videoId && cleanedSegments.length > 0) {
-                    const enrichedSegments = await enrichSegmentsWithTokens(cleanedSegments, detectedLang);
+                    const enrichedSegments = cleanedSegments;
                     return {
                         status: 'done',
                         videoInfo: {

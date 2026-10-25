@@ -4,7 +4,7 @@
  * Route: POST /api/dual-subtitles
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage, sha256 } from '../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -92,15 +92,29 @@ export async function onRequestGet(context) {
 }
 
 export async function onRequestPost(context) {
+    let body;
+    try { body = await context.request.json(); }
+    catch { return jsonResponse({ error: 'Invalid JSON body' }, 400); }
+    if (!body || typeof body !== 'object' || Array.isArray(body)) return jsonResponse({ error: 'Invalid request' }, 400);
+    if (body.saveOnly || body.onlySave || body.onlyCache) return handlePost(context, body);
+    const key = await sha256(JSON.stringify([body.videoId, body.sourceLang, body.targetLang, body.segments, Boolean(body.forceRefresh)]));
+    const existing = inFlightTranslations.get(key);
+    if (existing) return (await existing).clone();
+    const pending = handlePost(context, body);
+    if (inFlightTranslations.size >= 100) return pending;
+    inFlightTranslations.set(key, pending);
+    try { return (await pending).clone(); }
+    finally { if (inFlightTranslations.get(key) === pending) inFlightTranslations.delete(key); }
+}
+
+async function handlePost(context, body) {
     const { request, env } = context;
     const waitUntil = context.waitUntil?.bind(context);
     let cleanVideoId = null;
     let sourceLang = null;
     let targetLang = null;
-    let rejectInFlight = null;
 
     try {
-        const body = await request.json();
 
         const isOnlyCache = Boolean(body?.onlyCache);
 
@@ -128,25 +142,19 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Invalid video ID or language format' }, 400);
         }
 
+        if (!onlyCache && segments.some(seg => !seg || typeof seg.text !== 'string' || seg.text.length > 1500 ||
+            typeof seg.start !== 'number' || !Number.isFinite(seg.start) || seg.start < 0 ||
+            typeof seg.duration !== 'number' || !Number.isFinite(seg.duration) || seg.duration < 0 ||
+            (seg.translation != null && (typeof seg.translation !== 'string' || seg.translation.length > 5000)))) {
+            return jsonResponse({ error: 'Invalid subtitle cue' }, 400);
+        }
+
         const r2 = env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
 
-        const stampedeKey = `${cleanVideoId}:${sourceLang}:${targetLang}`;
 
         // 1. Check Cache (skip if forceRefresh or saveOnly)
         if (!forceRefresh && !saveOnly && !onlySave) {
-            // Check in-flight translation stampede
-            if (inFlightTranslations.has(stampedeKey)) {
-                try {
-                    const inFlightResponse = await inFlightTranslations.get(stampedeKey);
-                    if (inFlightResponse) {
-                        return jsonResponse(inFlightResponse, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
-                    }
-                } catch {
-                    // If in-flight failed, continue to fresh attempt
-                }
-            }
-
             const cached = await getTranslation(r2, cleanVideoId, sourceLang, targetLang);
             if (cached) {
                 return jsonResponse({
@@ -196,7 +204,7 @@ export async function onRequestPost(context) {
 
             // Allow incremental crowd-merge if at least 10 cues are translated OR coverage >= 20%
             if (successCount >= 10 || successRate >= 0.2) {
-                const saveResult = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality);
+                const saveResult = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality, 'lingva', { requireCanonical: true });
                 if (!saveResult) return jsonResponse({ success: false, error: 'Subtitle cache save failed' }, 503);
                 const finalQuality = saveResult.quality;
                 const isFullyCached = (finalQuality >= Math.round(QUALITY_THRESHOLD * 100));
@@ -237,16 +245,6 @@ export async function onRequestPost(context) {
                 error: `Live translation in /api/dual-subtitles is capped at ${BATCH_SIZE} cues to avoid worker timeouts. Please stream upcoming cues via /api/translate/batch and save via saveOnly: true.`,
                 maxBatchSize: BATCH_SIZE
             }, 400);
-        }
-
-        // 3. Batch Translate with Stampede Protection
-        let resolveInFlight;
-        if (!forceRefresh && !isSave) {
-            const inFlightPromise = new Promise((resolve, reject) => {
-                resolveInFlight = resolve;
-                rejectInFlight = reject;
-            });
-            inFlightTranslations.set(stampedeKey, inFlightPromise);
         }
 
         const textChunks = [];
@@ -307,20 +305,12 @@ export async function onRequestPost(context) {
 
         // 6. Save to Cache (only if quality threshold met)
         if (shouldCache) {
-            const savePromises = [
-                saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality)
-            ];
-
-            // Record in D1 for fast lookups
-            if (db) {
-                savePromises.push(recordTranslation(db, cleanVideoId, sourceLang, targetLang, resultSegments.length));
-            }
-
-            if (waitUntil) {
-                waitUntil(Promise.allSettled(savePromises));
-            } else {
-                await Promise.allSettled(savePromises);
-            }
+            const persist = async () => {
+                const saved = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality, 'lingva', { requireCanonical: true });
+                if (saved?.validCount && db) await recordTranslation(db, cleanVideoId, sourceLang, targetLang, saved.validCount);
+            };
+            if (waitUntil) waitUntil(persist().catch(() => {}));
+            else await persist();
         }
 
         // 7. Build response with appropriate headers
@@ -341,22 +331,12 @@ export async function onRequestPost(context) {
             response.failedIndices = failedIndices;
         }
 
-        if (!isSave) {
-            inFlightTranslations.delete(stampedeKey);
-            resolveInFlight?.(response);
-        }
-
         return jsonResponse(response, 200, {
             'Cache-Control': cacheControl,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
     } catch (error) {
-        if (cleanVideoId && sourceLang && targetLang) {
-            const stampedeKey = `${cleanVideoId}:${sourceLang}:${targetLang}`;
-            inFlightTranslations.delete(stampedeKey);
-            rejectInFlight?.(error);
-        }
         logError('Dual Subtitles', error);
         return errorResponse(error.message);
     }

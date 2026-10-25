@@ -641,3 +641,21 @@ Security follow-up (2026-10-23): anonymous-credit amounts are validated before m
 - TTS uses a five-second Edge attempt and five-second Google fallback with a 1 MiB audio cap. Kanji provider errors return noncacheable 502/504, not cacheable empty success.
 
 See [validation and migration handoff](../../voca_flutter/doc/backend-implementation-2026-10-24.md).
+
+## Transcript and translation optimization (25 October 2026)
+
+New paid AI submissions fetch a fresh YouTube duration once, validate the tier cap and price from that same value, and reject unavailable verification. Client/D1 duration hints cannot authorize spending. Cache reads and joins of active jobs skip that lookup. Force refresh joins active work before checking credits; it cannot cancel another request's job. Empty native-language metadata is unknown, so native captions are still checked. Diamond status uses the bound environment and authoritative anonymous balance.
+
+Gladia creation sends exactly one POST with `custom_metadata.voca_job_id` and `callback_config`. Lost responses, HTTP 408/5xx and unverifiable success responses leave a durable uncertain submission; they never trigger an automatic replacement POST. Authenticated callbacks or a metadata GET recover the provider ID. An empty or ambiguous listing is not proof of failure and cannot authorize a refund. Tracked polling and maintenance share a lease and persisted due time: processing waits ten seconds; transient errors wait fifteen seconds by default, honoring bounded Retry-After up to 300 seconds. Submission lookup starts after thirty seconds with a sixty-second cooldown. The existing internal reconciliation route processes up to five due provider jobs per run.
+
+Clean transcript cues are persisted and the job completes before optional token enrichment. Cached responses return immediately; background enrichment has a three-second caller budget and conditional R2 publication. Routes and response fields remain compatible; existing clients can tokenize missing tokens. Tokenizer internals remain under separate development.
+
+Live dual-subtitle requests register an exact-input promise before asynchronous cache reads. Translation saves require the canonical source transcript, reject unknown cues, and merge against the complete canonical list; partial saves cannot truncate cached subtitles. Missing canonical content or persistence failure remains retryable. Recommendation discovery returns 503 when its ten-probe verification budget prevents a complete answer rather than claiming an empty catalog.
+
+Deployment prerequisite: apply `db/migrations/d1/20261025_gladia_submission_state.sql`. See the [implementation and validation record](reviews/cloudflare-functions-implementation-2026-10-25.md).
+
+### Edge-case validation follow-up
+
+API middleware now rejects malformed JSON, invalid UTF-8, null, arrays and scalar bodies with HTTP 400 for POST/PUT/PATCH requests that carry a body. Body-required write routes also reject a completely absent body; the two maintenance endpoints (`heal-levels` and `internal/reconcile`) retain authenticated no-body calls. The two MiB limit is checked on actual bytes as well as Content-Length, and accepted webhook bodies are forwarded byte-for-byte for authentication. This prevents parser exceptions becoming 500 responses and malformed input accidentally selecting default mutations.
+
+Credential-bearing provider calls use Workers-compatible `redirect: 'manual'` and reject non-success statuses. The previous `redirect: 'error'` option failed before dispatch in workerd. Runtime tests now preserve native fetch behavior and control only the outbound service response. See the [complete route edge-case matrix](reviews/cloudflare-edge-cases-2026-10-25.md).

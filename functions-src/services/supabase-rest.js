@@ -11,7 +11,7 @@ export async function serviceRoleRequest(env, path, { method = 'GET', body, pref
         },
         ...(body !== undefined ? { body: JSON.stringify(body) } : {}),
         signal: AbortSignal.timeout(timeoutMs),
-        redirect: 'error'
+        redirect: 'manual'
     });
     if (!response.ok) throw new Error(`Supabase service HTTP ${response.status}`);
     if (response.status === 204) return null;

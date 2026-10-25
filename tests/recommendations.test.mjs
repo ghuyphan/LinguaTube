@@ -66,7 +66,7 @@ test('older matching levels, string/object metadata, categories and escaped sear
 });
 
 test('bounded concurrent R2 verification preserves ordering and skips malformed metadata', options, async t => {
-    const rows = catalog(30);
+    const rows = catalog(10);
     rows.forEach(row => { row.sub_languages = '[]'; });
     rows[0].levels = '{broken';
     const db = database(t, rows);
@@ -78,6 +78,8 @@ test('bounded concurrent R2 verification preserves ordering and skips malformed 
     const second = await getRecommendedVideosFromCloudflare(db, r2, 'ja', 50, null, false, 0, null, { sessionSeed: 42 });
     assert.deepEqual(first, second);
     await assert.rejects(getRecommendedVideosFromCloudflare(db, { async head() { throw Error('outage'); } }, 'ja'), /verification unavailable/);
+    const incomplete = database(t, catalog(11).map(row => ({...row,sub_languages:'[]'})));
+    await assert.rejects(getRecommendedVideosFromCloudflare(incomplete,r2,'ja'), /verification budget exceeded/);
 });
 
 test('favorites-only and tier-only contexts bypass generic memory cache', options, async t => {

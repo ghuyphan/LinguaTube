@@ -14,7 +14,10 @@ test('D1 anonymous credits import KV once and enforce concurrent depletion',asyn
     assert.equal(results.filter(r=>r.success).length,3);
     // Racing first reads may consult KV, but only one INSERT initializes the authoritative balance.
     const before=reads;assert.equal((await anonymousBalance(db,kv,'client-a')).diamonds,0);assert.equal(reads,before);
-    assert.equal((await consumeAnonymousCredits(db,kv,'client-a',1,jobs[0].id)).success,true);
+    const winner = results.findIndex(result => result.success);
+    assert.equal((await consumeAnonymousCredits(db,kv,'client-a',1,jobs[winner].id)).success,true);
+    const rejected = results.findIndex(result => !result.success);
+    assert.equal((await consumeAnonymousCredits(db,kv,'client-a',1,jobs[rejected].id)).success,false);
     assert.equal((await anonymousBalance(db,kv,'client-a')).diamonds,0);
 });
 

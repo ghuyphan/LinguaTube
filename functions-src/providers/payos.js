@@ -110,7 +110,7 @@ export async function createPayOsPaymentLink(env, params) {
         },
         body: JSON.stringify(payload),
         signal: AbortSignal.timeout(10000),
-        redirect: 'error'
+        redirect: 'manual'
     });
 
     if (!response.ok) {

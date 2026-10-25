@@ -992,3 +992,9 @@ Account/public/legal buttons and sliding tabs inherit Voca's shared control sizi
 and interaction styles. Compact translated tab labels fit the standard sliding
 control; full document/subscription names remain available in headings and accessible
 labels. Mobile back actions occupy the card header, leaving the tab row full width.
+
+## Transcript responsiveness and cache safety (25 October 2026)
+
+Available subtitles return while optional word-token enrichment continues in the background. Transcription completion no longer waits for dictionary initialization; existing client tokenization handles cues without tokens. Refresh joins an already-running transcription and reuses its result. New AI requests verify the actual video length before charging, using the existing tier limits and diamond price bands.
+
+Concurrent identical subtitle translations share work, and partial translation saves preserve the complete transcript. Incomplete recommendation verification is retryable instead of appearing as an empty catalog. This update changes backend behavior; dictionary providers, tokenizer internals and their frontend presentation are being updated separately.

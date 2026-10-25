@@ -1,3 +1,7 @@
+import { readBoundedBody } from '../utils/response-body.js';
+
+const inFlightDetails = new Map();
+
 /**
  * Video Validation Utilities
  * Shared validation for language and duration before expensive API calls
@@ -18,17 +22,28 @@ export const MAX_DURATION = {
  * @returns {Promise<{duration: number | null, isLive: boolean}>} Duration in seconds and livestream flag
  */
 export async function fetchYouTubeVideoDetails(videoId) {
+    const existing = inFlightDetails.get(videoId);
+    if (existing) return existing;
+    const pending = loadYouTubeVideoDetails(videoId);
+    if (inFlightDetails.size >= 100) return pending;
+    inFlightDetails.set(videoId, pending);
+    try { return await pending; }
+    finally { if (inFlightDetails.get(videoId) === pending) inFlightDetails.delete(videoId); }
+}
+
+async function loadYouTubeVideoDetails(videoId) {
     if (!videoId) return { duration: null, isLive: false };
     try {
+        const signal = AbortSignal.timeout(6000);
         const res = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept-Language': 'en-US,en;q=0.9'
             },
-            signal: AbortSignal.timeout(6000)
+            signal, redirect: 'manual'
         });
         if (!res.ok) return { duration: null, isLive: false };
-        const html = await res.text();
+        const html = new TextDecoder().decode(await readBoundedBody(res, signal, 8 * 1024 * 1024));
         const isLive = /"isLive(?:Broadcast|Content|Now)?":\s*true|"status"\s*:\s*"LIVE"/i.test(html);
         const match = html.match(/"approxDurationMs":"(\d+)"/);
         let duration = null;
@@ -239,6 +254,9 @@ export function isLanguageSupported(lang) {
  * @returns {Promise<{error: string, [key: string]: any} | null>}
  */
 export async function validateVideoRequest(videoId, requestedLang, duration, endpoint = 'innertube', maxDurationOverride = null, options = {}) {
+    if (duration != null && (typeof duration !== 'number' || !Number.isFinite(duration) || duration <= 0)) {
+        return { error: 'invalid_duration' };
+    }
     // 0. Validate videoId format
     if (!videoId || !/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
         return {
@@ -269,9 +287,8 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
                 message: 'AI transcription is not supported for live streams'
             };
         }
-        if (ytDetails.duration) {
-            effectiveDuration = Math.max(effectiveDuration || 0, ytDetails.duration);
-        }
+        if (!Number.isFinite(ytDetails.duration) || ytDetails.duration <= 0) return { error: 'video_duration_unavailable' };
+        effectiveDuration = ytDetails.duration;
     }
 
     if (effectiveDuration && effectiveDuration > maxDuration) {
@@ -284,7 +301,7 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     }
 
     // 3. Optional: Check video title for language hint
-    const title = options.title || (await getVideoMetadata(videoId))?.title;
+    const title = options.title || (options.skipMetadata ? null : (await getVideoMetadata(videoId))?.title);
     if (title) {
         const detectedLang = detectTitleLanguage(title);
 

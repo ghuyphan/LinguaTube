@@ -224,3 +224,30 @@ font, disabled filter, shadows and transitions) with an unscoped instance of the
 same shared variant. Compare segmented-control dimensions and its `::before`
 sliding thumb as well. Check compact tab text for clipping in all five locales;
 do not enlarge controls with page-specific overrides to accommodate long labels.
+
+## Validating and deploying the transcript optimizations (25 October 2026)
+
+Before deploying the updated Functions, apply `db/migrations/d1/20261025_gladia_submission_state.sql` through the existing D1 migration workflow to the correct target database. Check the three new columns and index before activating the bundle; old code can run with these additive fields. Do not enable the new bundle against the old schema. This task prepared the migration locally; it did not apply it remotely or deploy. Keep uncertain provider jobs and their financial evidence intact during rollback or investigation; use the read-only `db/operations/gladia-submission-audit.sql` report.
+
+Use supported Node 22 for `npm run test:backend`, `npm run lint`, and `node --test tests/d1-recovery.integration.mjs tests/gladia-recovery.integration.mjs`. The integration suites use local SQLite. The optional Workers regression suite uses Miniflare installed outside the repository:
+
+```sh
+VOCA_MINIFLARE_MODULE=/absolute/path/to/miniflare/dist/src/index.js \
+VOCA_VALIDATION_OUTPUT=/absolute/path/to/result.json \
+node --test tests/cloudflare-review-validation.integration.mjs
+```
+
+It creates local D1/R2/KV bindings and blocks unrecognized external network calls. Run it after source changes; no production credentials are needed. Its default mode asserts corrected behavior. Historical defect replay requires an archived source root and `VOCA_EXPECT_DEFECTS=1`; the original `.repro.mjs` is historical evidence rather than a current regression suite. Run `npm run build:functions` only after editing `functions-src/`. Do not run a full frontend build for this backend task.
+
+### Running all-route edge cases
+
+The default backend suite now includes `tests/cloudflare-shared-edge-cases.test.mjs`. The all-route runtime suite requires a separate Miniflare installation and supported Node 22; do not add runtime test dependencies to the application just to run it:
+
+```sh
+npm install --prefix /tmp/voca-cf-test-runtime --no-save --no-package-lock miniflare@4.20260730.0
+VOCA_MINIFLARE_MODULE=/tmp/voca-cf-test-runtime/node_modules/miniflare/dist/src/index.js \
+VOCA_EDGE_OUTPUT=/tmp/voca-cloudflare-edge-results.json \
+node --test tests/cloudflare-routes-edge-cases.integration.mjs
+```
+
+Without `VOCA_MINIFLARE_MODULE`, this optional integration file reports a skip. The default suite still checks that every API route has an explicit inventory entry. All upstream responses are fixtures; local D1/R2/KV are ephemeral. The runtime report includes per-case statuses/outbound calls and SHA-256 source fingerprints, and rejects source changes during the run. See the [coverage and validation report](reviews/cloudflare-edge-cases-2026-10-25.md).

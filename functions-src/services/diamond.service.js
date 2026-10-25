@@ -38,6 +38,11 @@ export const TIER_CONFIGS = {
 
 export const DIAMOND_CONFIG = TIER_CONFIGS.anonymous;
 
+export function transcriptionDiamondCost(duration) {
+    if (!Number.isFinite(duration) || duration <= 0) throw new Error('VIDEO_DURATION_UNAVAILABLE: Unable to verify video length.');
+    return duration > 2100 ? 4 : duration > 1200 ? 3 : duration > 600 ? 2 : 1;
+}
+
 export function getTierDiamondConfig(tier = 'free') {
     return TIER_CONFIGS[tier] || TIER_CONFIGS.free;
 }

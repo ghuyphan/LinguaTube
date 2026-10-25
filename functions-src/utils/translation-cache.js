@@ -145,7 +145,7 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
 // Isolate-level write mutex to serialize concurrent Read-Modify-Write operations to R2
 const inFlightSaves = new Map();
 
-export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva') {
+export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva', { requireCanonical = false } = {}) {
     if (!bucket || !videoId || !segments?.length) return null;
 
     const lockKey = `${videoId}:${srcLang}:${tgtLang}`;
@@ -165,15 +165,29 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                 // R2 preconditions protect across isolates; the mutex only reduces local contention.
                 const existingObject = await bucket.get(key);
                 const existingData = existingObject ? await existingObject.json() : null;
+                const canonicalObject = await bucket.get(`transcripts/${videoId}/${srcLang}.json`);
+                const canonical = canonicalObject ? (await canonicalObject.json())?.segments : null;
+                if (requireCanonical && !canonical?.length) return null;
+                const cueKey = (seg, idx) => JSON.stringify([seg.start ?? `idx:${idx}`, seg.text || '']);
+                const incoming = new Map(segments.map((seg, idx) => [cueKey(seg, idx), seg]));
+                const base = canonical?.length ? canonical : existingData?.segments?.length ? existingData.segments : segments;
+                const known = new Set(base.map(cueKey));
+                if (canonical?.length && segments.some((seg, idx) => !known.has(cueKey(seg, idx)))) return null;
+                if (!canonical?.length && existingData?.segments?.length) {
+                    // Preserve a complete legacy object, refusing incompatible replacements.
+                    if (segments.some((seg, idx) => !known.has(cueKey(seg, idx)))) return null;
+                }
                 const existingByCue = new Map();
                 for (const [idx, seg] of (existingData?.segments || []).entries()) {
                     if (typeof seg?.translation === 'string' && seg.translation.trim()) {
-                        existingByCue.set(`${seg.start ?? `idx:${idx}`}:${seg.text || ''}`, seg.translation.trim());
+                        existingByCue.set(cueKey(seg, idx), seg.translation.trim());
                     }
                 }
-                const finalSegments = segments.map((seg, idx) => {
-                    const incoming = typeof seg?.translation === 'string' ? seg.translation.trim() : '';
-                    return { ...seg, translation: incoming || existingByCue.get(`${seg.start ?? `idx:${idx}`}:${seg.text || ''}`) || null };
+                const finalSegments = base.map((seg, idx) => {
+                    const next = incoming.get(cueKey(seg, idx));
+                    const value = typeof next?.translation === 'string' ? next.translation.trim() : '';
+                    const valid = value && (srcLang === tgtLang || value !== (seg.text || '').trim());
+                    return { ...seg, translation: (valid ? value : '') || existingByCue.get(cueKey(seg, idx)) || null };
                 });
                 const validCount = finalSegments.filter(s => typeof s.translation === 'string' && s.translation.trim() &&
                     (srcLang === tgtLang || s.translation.trim() !== (s.text || '').trim())).length;
