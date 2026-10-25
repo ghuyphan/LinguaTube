@@ -1650,6 +1650,48 @@ test('Dictionary Parsers: parseJotoba correctly formats object POS, kanji JLPT, 
   assert.equal(results[0].level, null);
   assert.equal(results[0].audio, 'https://jotoba.de/resource/audio/123.mp3');
   assert.deepEqual(results[0].definitions, ['to eat']);
+
+  const nestedPosResults = parseJotoba({
+    words: [
+      {
+        reading: { kanji: '行く', kana: 'いく' },
+        senses: [
+          {
+            glosses: ['to go'],
+            pos: [{ Verb: { Godan: 'IkuYuku' } }, { Verb: 'Intransitive' }]
+          }
+        ]
+      }
+    ]
+  });
+  assert.equal(nestedPosResults[0].partOfSpeech, 'Verb (Godan), Verb (Intransitive)');
+});
+
+test('Dictionary Parsers: parseMdbg preserves inline HTML links and ranks HSK entries ahead of surnames/variants', async () => {
+  const { parseMdbg } = await import('../functions-src/utils/dict-parsers.js');
+  const html = `
+    <table>
+      <tr class="row"><td class="otxtbot">和</td><td><div class="pinyin"><span>He</span></div><div class="defs">surname He <strong>/</strong> old variant of <a href="#">和</a></div></td></tr>
+      <tr class="row"><td class="otxtbot">和</td><td><div class="pinyin"><span>hé</span></div><div class="defs">and; together with (often used with <a href="#"><span>跟</span></a>) <strong>/</strong>CL:<a href="#">個</a>｜<a href="#">个</a></div><div>HSK 1</div></td></tr>
+    </table>
+  `;
+  const results = await parseMdbg(new Response(html), '和');
+  assert.equal(results[0].word, '和');
+  assert.equal(results[0].reading, 'hé');
+  assert.equal(results[0].level, 1);
+  assert.deepEqual(results[0].definitions, ['and; together with (often used with 跟)']);
+});
+
+test('Dictionary Parsers: parseGlosbe consolidates translations and rejects echoed untranslated banners', async () => {
+  const { parseGlosbe } = await import('../functions-src/utils/dict-parsers.js');
+  const noTransHtml = `<html><body><div>No translations for <strong>虽然</strong></div><p id="content-summary">No translations for <strong>虽然</strong> in dictionary.</p></body></html>`;
+  const emptyRes = await parseGlosbe(new Response(noTransHtml), '虽然', 'zh');
+  assert.equal(emptyRes.length, 0);
+
+  const validHtml = `<html><body><h3 class="translation__item__pharse">mới</h3><h3 class="translation__item__phrase">non</h3></body></html>`;
+  const validRes = await parseGlosbe(new Response(validHtml), 'new', 'en');
+  assert.equal(validRes.length, 1);
+  assert.deepEqual(validRes[0].definitions, ['mới', 'non']);
 });
 
 test('Dictionary Parsers: parseMazii handles array levels and cleans definitions', async () => {

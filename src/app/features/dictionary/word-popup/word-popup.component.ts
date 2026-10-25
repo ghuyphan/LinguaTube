@@ -113,6 +113,8 @@ export class WordPopupComponent implements OnDestroy {
   formattedReading = computed(() => {
     const e = this.entry();
     if (!e?.reading) return '';
+    const lang = this.subtitles.loadedLanguage() || this.settings.settings().language;
+    if (lang !== 'ja') return e.reading;
     const parts = e.reading.split(/[\s,、/]+/).filter(Boolean);
     return parts.length > 1 ? parts.join(' / ') : e.reading;
   });
@@ -207,6 +209,10 @@ export class WordPopupComponent implements OnDestroy {
         if (!isCurrent()) return;
         if ((!results || results.length === 0) && fallbackWord && fallbackWord !== word) {
           this.lookupWord(fallbackWord);
+          return;
+        }
+        if ((!results || results.length === 0) && lang === 'en' && word !== word.toLowerCase()) {
+          this.lookupWord(word.toLowerCase());
           return;
         }
         this.entries.set(results || []);

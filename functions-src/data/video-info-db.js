@@ -282,12 +282,29 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
 
     try {
         const row = await db.prepare(`
-            SELECT levels FROM video_languages WHERE video_id = ?
+            SELECT levels, sub_languages, available_languages FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
         let currentLevels = {};
         if (row?.levels) {
             try { currentLevels = JSON.parse(row.levels); } catch {}
+        }
+
+        // Prevent cross-language catalog level contamination:
+        // If the video already has known sub_languages and method is client linguistics,
+        // reject submissions for unrelated languages (e.g. English CEFR for a Japanese video)
+        if (method === 'linguistics') {
+            let subLangs = [];
+            if (row?.sub_languages) {
+                try { subLangs = JSON.parse(row.sub_languages); } catch {}
+            }
+            if (Array.isArray(subLangs) && subLangs.length > 0) {
+                const normSub = subLangs.map(l => (l || '').split('-')[0].toLowerCase());
+                const normIncoming = (language || '').split('-')[0].toLowerCase();
+                if (!normSub.includes(normIncoming)) {
+                    return currentLevels;
+                }
+            }
         }
 
         const tier = details?.tier || labelToTier(level) || 'intermediate';

@@ -56,8 +56,8 @@ const DICT_SOURCES = {
         { url: 'https://api.dictionaryapi.dev/api/v2/entries/en/', method: 'GET', parser: 'freedict' }
     ],
     'en-vi': [
-        { url: 'https://en.dict.naver.com/api3/envi/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
-        { url: 'https://glosbe.com/en/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'en' }
+        { url: 'https://glosbe.com/en/vi/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'en' },
+        { url: 'https://en.dict.naver.com/api3/envi/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' }
     ],
     'en-ja': [
         { url: 'https://en.dict.naver.com/api3/enja/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
@@ -177,7 +177,7 @@ export class DictionaryProvider {
             case 'mazii': return parseMazii(data, word);
             case 'freedict': return parseFreeDictionary(data);
             case 'datamuse': return parseDatamuse(data);
-            case 'mdbg': return checkedHtmlEntries(await parseMdbg(parsedResponse), text);
+            case 'mdbg': return checkedHtmlEntries(await parseMdbg(parsedResponse, word), text);
             case 'glosbe': return checkedHtmlEntries(await parseGlosbe(parsedResponse, word, source.from || ''), text);
             case 'jisho': return parseJisho(data);
             case 'krdict': return checkedHtmlEntries(await parseKrdict(parsedResponse), text);

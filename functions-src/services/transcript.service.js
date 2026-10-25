@@ -9,6 +9,7 @@ import {
     saveVideoLanguages,
     addVideoLanguages,
     addSubLanguage,
+    getVideoDuration,
     markNoTranscript,
     deleteNoTranscript
 } from '../data/video-info-db.js';
@@ -232,12 +233,27 @@ export class TranscriptService {
         // Verify once, only on the path that can create a new paid operation.
         const details = await fetchYouTubeVideoDetails(videoId);
         if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
-        const duration = details.duration;
-        const requiredDiamonds = transcriptionDiamondCost(duration);
+        let duration = details.duration;
+        if (!duration || duration <= 0) {
+            const dbDuration = await getVideoDuration(db, videoId);
+            if (dbDuration && dbDuration > 0) {
+                duration = dbDuration;
+            }
+        }
+        if (!duration || duration <= 0) {
+            const bodyDur = typeof params.body?.duration === 'number' && Number.isFinite(params.body.duration) && params.body.duration > 0
+                ? Math.round(params.body.duration)
+                : null;
+            if (bodyDur && bodyDur > 0) {
+                duration = bodyDur;
+            }
+        }
+        const effectiveDuration = duration || 300;
+        const requiredDiamonds = transcriptionDiamondCost(effectiveDuration);
         const tier = params.tier || this.diamondService.resolveTier(user);
         const tierConfig = getTierDiamondConfig(tier);
         const maxDurationSec = tierConfig.maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
-        if (duration > maxDurationSec) throw new Error(`VIDEO_TOO_LONG: Video exceeds the ${Math.round(maxDurationSec / 60)} minute tier limit.`);
+        if (effectiveDuration > maxDurationSec) throw new Error(`VIDEO_TOO_LONG: Video exceeds the ${Math.round(maxDurationSec / 60)} minute tier limit.`);
 
         // 5. Atomic Lock Reservation Pattern:
         // Reserve job slot in D1. If another request just reserved it, isNew will be false.

@@ -282,6 +282,17 @@ const PROTECTED_GA_NOUNS = new Set([
     '참가', '추가', '평가', '원가', '시가', '치가', '도가', '초가'
 ]);
 
+const PROTECTED_KOREAN_WORDS = new Set([
+    '같이', '많이', '없이', '굳이', '차라리', '미리', '멀리', '빨리', '달리', '특히', '히',
+    '동안', '만큼', '그만', '다만', '얼마나', '설마', '아마', '보통', '가장', '정말', '진짜',
+    '오늘', '내일', '매일', '모레', '어제', '언제', '이제', '아직', '벌써', '다시', '거의'
+]);
+
+const PROTECTED_EUN_ADJECTIVE_STEMS = new Set([
+    '같', '좋', '작', '많', '적', '높', '낮', '넓', '좁', '길', '짧', '깊', '얕',
+    '밝', '어둡', '젊', '늙', '굵', '가는', '괜찮', '싫', '옳', '곧'
+]);
+
 /**
  * Heuristic Korean postpositional particle (조사) detachment
  * Extracts canonical noun baseForm while preserving natural inflected surface
@@ -291,6 +302,13 @@ export function detachKoreanParticle(word) {
     for (let i = 0; i < word.length; i++) {
         const code = word.charCodeAt(i);
         if (code < 0xAC00 || code > 0xD7AF) return null;
+    }
+
+    if (PROTECTED_KOREAN_WORDS.has(word)) return null;
+
+    // Do not strip particles from conjugated verb/adjective endings (-지만, -하는/-되는/-있는/-없는, -아도/-어도/-해도)
+    if (/(?:지만|하는|되는|있는|없는|않는|시는|아도|어도|해도|워도|봐도)$/.test(word)) {
+        return null;
     }
 
     // 3-syllable compound particles
@@ -323,28 +341,32 @@ export function detachKoreanParticle(word) {
     const prev = word[word.length - 2];
     const prevBatchim = hasHangulBatchim(prev);
     const prevBatchimCode = getHangulBatchim(prev);
+    const stem1 = word.slice(0, -1);
 
-    if (last === '는' && !prevBatchim) return { stem: word.slice(0, -1), particle: '는' };
-    if (last === '은' && prevBatchim) return { stem: word.slice(0, -1), particle: '은' };
-    if (last === '를' && !prevBatchim) return { stem: word.slice(0, -1), particle: '를' };
-    if (last === '을' && prevBatchim) return { stem: word.slice(0, -1), particle: '을' };
+    if (last === '는' && !prevBatchim) return { stem: stem1, particle: '는' };
+    if (last === '은' && prevBatchim) {
+        if (PROTECTED_EUN_ADJECTIVE_STEMS.has(stem1)) return null;
+        return { stem: stem1, particle: '은' };
+    }
+    if (last === '를' && !prevBatchim) return { stem: stem1, particle: '를' };
+    if (last === '을' && prevBatchim) return { stem: stem1, particle: '을' };
     if (last === '가' && !prevBatchim) {
         if (word.length === 2 && PROTECTED_GA_NOUNS.has(word)) {
             return null;
         }
-        return { stem: word.slice(0, -1), particle: '가' };
+        return { stem: stem1, particle: '가' };
     }
-    if (last === '이' && prevBatchim) return { stem: word.slice(0, -1), particle: '이' };
-    if (last === '와' && !prevBatchim) return { stem: word.slice(0, -1), particle: '와' };
-    if (last === '과' && prevBatchim) return { stem: word.slice(0, -1), particle: '과' };
+    if (last === '이' && prevBatchim) return { stem: stem1, particle: '이' };
+    if (last === '와' && !prevBatchim) return { stem: stem1, particle: '와' };
+    if (last === '과' && prevBatchim) return { stem: stem1, particle: '과' };
     // 로: used when NO batchim OR with ㄹ batchim (batchim === 8)
     if (last === '로' && (!prevBatchim || prevBatchimCode === 8)) {
-        return { stem: word.slice(0, -1), particle: '로' };
+        return { stem: stem1, particle: '로' };
     }
 
     // Neutral 1-syllable particles (stem >= 2 characters to avoid over-stripping roots)
     if (word.length >= 3 && (last === '의' || last === '도' || last === '만' || last === '에')) {
-        return { stem: word.slice(0, -1), particle: last };
+        return { stem: stem1, particle: last };
     }
 
     return null;

@@ -25,13 +25,50 @@ import { getJapaneseRomaji } from './japanese-romaji.js';
  */
 function rawNaver(data, query = '') {
     const rawResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
+    const cleanQuery = normalizeDictionaryText(query).toLowerCase();
+    const isHangulQuery = /[\uAC00-\uD7AF]/.test(cleanQuery);
+    const isAsciiQuery = /^[a-z]+$/i.test(cleanQuery);
     const headword = item => normalizeDictionaryText((item.handleEntry || item.expEntry || '').replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, ''));
-    const wordResults = query ? [...rawResults].sort((a, b) => {
-        const aExact = headword(a).toLowerCase() === query.toLowerCase();
-        const bExact = headword(b).toLowerCase() === query.toLowerCase();
+    const isDirectMatch = item => {
+        const h = headword(item).toLowerCase();
+        if (h === cleanQuery) return true;
+        if (isAsciiQuery) return false;
+        return typeof item.matchType === 'string' && item.matchType.startsWith('exact:');
+    };
+
+    let filteredResults = rawResults.filter(item => {
+        const h = headword(item);
+        if (!h) return false;
+        if (isHangulQuery && /^[a-zA-Z\s-]+$/.test(h)) return false;
+        return true;
+    });
+
+    const hasMatchTypeMeta = filteredResults.some(item => typeof item.matchType === 'string' && item.matchType.length > 0);
+    if (cleanQuery && hasMatchTypeMeta) {
+        const directMatches = filteredResults.filter(isDirectMatch);
+        if (directMatches.length > 0) {
+            filteredResults = directMatches;
+        } else if (isAsciiQuery || filteredResults.every(item => String(item.matchType || '').startsWith('allterm:proximity'))) {
+            return [];
+        }
+    }
+
+    const wordResults = cleanQuery ? [...filteredResults].sort((a, b) => {
+        const aHead = headword(a);
+        const bHead = headword(b);
+        const aExact = aHead.toLowerCase() === cleanQuery;
+        const bExact = bHead.toLowerCase() === cleanQuery;
         if (aExact !== bExact) return Number(bExact) - Number(aExact);
+        if (aExact && isAsciiQuery) {
+            const aLower = aHead === cleanQuery;
+            const bLower = bHead === cleanQuery;
+            if (aLower !== bLower) return Number(bLower) - Number(aLower);
+        }
+        const aPri = Number(a.priority) || 0;
+        const bPri = Number(b.priority) || 0;
+        if (aPri !== bPri) return bPri - aPri;
         return aExact ? (Number(a.expEntrySuperscript) || 0) - (Number(b.expEntrySuperscript) || 0) : 0;
-    }) : rawResults;
+    }) : filteredResults;
 
     return wordResults.slice(0, 5).map(item => {
         // 1. Extract word (strip <sup> tags first to remove homonym numbers like 사랑1)
@@ -45,6 +82,8 @@ function rawNaver(data, query = '') {
             || item.searchPhoneticSymbolList?.[0];
         const rawPhonetic = (phoneticObj?.symbolValue || item.phoneticSigns?.[0]?.sign || '')
             .replace(/<[^>]+>/g, '')
+            .replace(/│/g, 'ˈ')
+            .split(/\s*(?:;|강형|약형|美|英)\s*/)[0]
             .trim();
 
         let reading = '';
@@ -61,18 +100,28 @@ function rawNaver(data, query = '') {
         // 3. Extract definitions and examples from meansCollector
         const definitions = [];
         const examples = [];
-        let primaryPos = '';
+        const posList = [];
+        let inferredPos = '';
         if (item.meansCollector) {
             item.meansCollector.forEach(collector => {
-                if (!primaryPos && (collector.partOfSpeech2 || collector.partOfSpeech)) {
-                    primaryPos = (collector.partOfSpeech2 || collector.partOfSpeech)
-                        .replace(/<[^>]+>/g, '')
-                        .trim();
+                const rawCollectorPos = (collector.partOfSpeech2 || collector.partOfSpeech || '')
+                    .replace(/<[^>]+>/g, '')
+                    .trim();
+                if (rawCollectorPos && !posList.includes(rawCollectorPos)) {
+                    posList.push(rawCollectorPos);
                 }
                 if (collector.means) {
                     collector.means.forEach(mean => {
                         const def = normalizeDictionaryText(mean.value);
-                        if (def && !definitions.some(d => d.toLowerCase() === def.toLowerCase())) {
+                        if (!inferredPos) {
+                            const posNote = def.match(/^(?:\(|\[)(명사|대명사|동사|형용사|부사|부사적|조사|감탄사|관형사|수사|접속사)(?:\)|\])/);
+                            if (posNote) inferredPos = posNote[1];
+                        }
+                        const withoutParens = def
+                            .replace(/\([^)]*\)|\[[^\]]*\]|（[^）]*）/g, '')
+                            .replace(/[.,;:\s]+/g, '')
+                            .trim();
+                        if (def && withoutParens && !definitions.some(d => d.toLowerCase() === def.toLowerCase())) {
                             definitions.push(def);
                         }
 
@@ -89,8 +138,10 @@ function rawNaver(data, query = '') {
             });
         }
 
-        // 4. Fallback part of speech
-        const partOfSpeech = primaryPos || (item.partsOfSpeech ? item.partsOfSpeech.join(', ') : '');
+        // 4. Fallback part of speech & proficiency level
+        const partOfSpeech = posList.join(', ') || (item.partsOfSpeech ? item.partsOfSpeech.join(', ') : '') || inferredPos;
+        const levelMatch = String(item.frequencyAdd || '').match(/(?:TOPIK|HSK|JLPT)\s*(\d+)/i);
+        const level = levelMatch ? parseInt(levelMatch[1], 10) : undefined;
 
         // 5. Extract authentic audio URL (symbolFile contains pipe-delimited female|male MP3s)
         const audioObj = item.searchPhoneticSymbolList?.find(s => s?.symbolFile?.startsWith('http'))
@@ -112,6 +163,7 @@ function rawNaver(data, query = '') {
             definitions,
             ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
             partOfSpeech,
+            ...(level ? { level } : {}),
             ...(audio ? { audio } : {})
         };
     }).filter(e => e.word && e.definitions.length > 0);
@@ -213,12 +265,20 @@ function rawJotoba(data, queryWord = '') {
             }
         });
 
-        // Parse POS from object structure [{ Verb: "Ichidan" }, ...] or string
+        // Parse POS from object structure [{ Verb: "Ichidan" }, { Verb: { Godan: "IkuYuku" } }] or string
         const partOfSpeech = entry.senses?.[0]?.pos
             ?.map(p => {
                 if (typeof p === 'string') return p;
                 if (p && typeof p === 'object') {
-                    return Object.entries(p).map(([cat, sub]) => (sub ? `${cat} (${sub})` : cat)).join(', ');
+                    return Object.entries(p).map(([cat, sub]) => {
+                        if (!sub) return cat;
+                        if (typeof sub === 'string') return `${cat} (${sub})`;
+                        if (typeof sub === 'object') {
+                            const subKeys = Object.keys(sub);
+                            return subKeys.length > 0 ? `${cat} (${subKeys[0]})` : cat;
+                        }
+                        return cat;
+                    }).join(', ');
                 }
                 return '';
             })
@@ -409,15 +469,17 @@ function rawDatamuse(data) {
  * Used for: zh-en
  * Extracts complete headword (all characters), space-separated pinyin, clean definitions, and HSK level
  * @param {Response} response - Fetch response from MDBG
+ * @param {string} [queryWord=''] - Original search term for ranking relevance
  * @returns {Promise<DictEntry[]>}
  */
-async function rawMdbg(response) {
+async function rawMdbg(response, queryWord = '') {
     try {
         const html = await response.text();
         const entries = [];
         const rowSplits = html.split('<tr class="row">');
+        const q = (queryWord || '').trim();
 
-        for (let i = 1; i < rowSplits.length && entries.length < 5; i++) {
+        for (let i = 1; i < rowSplits.length; i++) {
             const rowFragment = rowSplits[i].split('</tr>')[0];
 
             // 1. Extract headword: prefer otxtbot or concatenate all hanzi spans
@@ -441,15 +503,17 @@ async function rawMdbg(response) {
                     .join(' ')
                 : '';
 
-            // 3. Extract definitions
+            // 3. Extract definitions: MDBG separates definitions with <strong>/</strong>,
+            // while inline Chinese links inside definitions use <a ...>...</a> and <span>...</span>.
             const defsMatch = rowFragment.match(/<div class="defs">([\s\S]*?)<\/div>/);
             let definitions = [];
             if (defsMatch) {
-                definitions = defsMatch[1]
-                    .replace(/<[^>]+>/g, '/')
-                    .split('/')
-                    .map(d => d.trim())
+                const rawDefs = defsMatch[1]
+                    .split(/<strong>\s*\/\s*<\/strong>|\s+\/\s+/i)
+                    .map(d => decodeHtmlEntities(d.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim())
                     .filter(d => d && d !== '&nbsp;');
+                const nonClassifierDefs = rawDefs.filter(d => !/^(?:CL:|classifier:|also pr\.|also written\b)/i.test(d));
+                definitions = nonClassifierDefs.length > 0 ? nonClassifierDefs : rawDefs;
             }
 
             // 4. Extract HSK level
@@ -460,14 +524,36 @@ async function rawMdbg(response) {
                 entries.push({
                     word,
                     reading,
-                    definitions,
+                    definitions: definitions.slice(0, 6),
                     partOfSpeech: '',
                     level
                 });
             }
         }
 
-        return entries;
+        const scoreMdbgEntry = (e) => {
+            let score = 0;
+            if (q && e.word === q) score += 200;
+            else if (q && e.word.startsWith(q)) score += 60;
+            const firstDef = (e.definitions[0] || '').toLowerCase();
+            const allDefsJoined = e.definitions.join(' ; ').toLowerCase();
+            const isSurnameOnly = e.definitions.every(d => /^(?:surname\b|old variant of\b|variant of\b|archaic variant of\b|see\s)/i.test(d));
+            const startsWithVariantOrSurname = /^(?:surname\b|old variant of\b|variant of\b|archaic variant of\b)/i.test(firstDef);
+            if (!isSurnameOnly) score += 80;
+            if (!startsWithVariantOrSurname) score += 40;
+            // Prefer non-capitalized pinyin (common nouns/verbs vs proper nouns/surnames)
+            if (e.reading && e.reading[0] === e.reading[0].toLowerCase()) score += 25;
+            // Prefer entries with HSK levels (lower HSK number = more fundamental/common)
+            if (typeof e.level === 'number' && e.level >= 1 && e.level <= 9) {
+                score += 50 + (10 - e.level) * 5;
+            }
+            score += Math.min(e.definitions.length, 4) * 3;
+            if (!/^(?:see\s|abbr\.\s|used in\s)/i.test(allDefsJoined)) score += 10;
+            return score;
+        };
+
+        entries.sort((a, b) => scoreMdbgEntry(b) - scoreMdbgEntry(a));
+        return entries.slice(0, 5);
     } catch (err) {
         console.error('[parseMdbg] parsing error:', err.message);
         return [];
@@ -519,30 +605,45 @@ async function rawGlosbe(response, targetWord = '', from = '') {
         const html = await response.text();
         const entries = [];
         const seenDefs = new Set();
+        const normTarget = (targetWord || '').trim().toLowerCase();
 
         // 1. Get individual translations from h3 tags (class contains translation__item__pharse or phrase)
         const h3Matches = [...html.matchAll(/<h3[^>]*class="[^"]*translation__item__(?:pharse|phrase)[^"]*"[^>]*>([\s\S]*?)<\/h3>/g)];
+        const collectedDefs = [];
         for (const match of h3Matches) {
-            const rawDef = match[1].replace(/<[^>]+>/g, '').trim();
-            const def = decodeHtmlEntities(rawDef);
-            if (def && !seenDefs.has(def.toLowerCase())) {
-                seenDefs.add(def.toLowerCase());
-                entries.push({
-                    word: targetWord,
-                    reading: '',
-                    definitions: [def],
-                    partOfSpeech: ''
-                });
-                if (entries.length >= 5) break;
+            const rawDef = match[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            const def = decodeHtmlEntities(rawDef).trim();
+            if (!def) continue;
+            const lowerDef = def.toLowerCase();
+            // Reject echoed source query or overly long example sentences masquerading as headword glosses
+            if (normTarget && lowerDef === normTarget) continue;
+            if (def.length > 80) continue;
+            if (!seenDefs.has(lowerDef)) {
+                seenDefs.add(lowerDef);
+                collectedDefs.push(def);
+                if (collectedDefs.length >= 5) break;
             }
         }
 
-        // 2. Fallback: parse summary in #content-summary
+        if (collectedDefs.length > 0) {
+            entries.push({
+                word: targetWord,
+                reading: '',
+                definitions: collectedDefs,
+                partOfSpeech: ''
+            });
+        }
+
+        // 2. Fallback: parse summary strictly inside <p id="content-summary">...</p>
         if (entries.length === 0) {
-            const summaryMatch = html.match(/id="content-summary"[\s\S]*?<strong>([\s\S]*?)<\/strong>/);
-            if (summaryMatch) {
-                const decoded = decodeHtmlEntities(summaryMatch[1]);
-                const defs = decoded.split(',').map(d => d.replace(/<[^>]+>/g, '').trim()).filter(Boolean);
+            const summaryPara = html.match(/<p[^>]*id="content-summary"[^>]*>([\s\S]*?)<\/p>/i);
+            const summaryStrong = summaryPara?.[1]?.match(/<strong>([\s\S]*?)<\/strong>/i);
+            if (summaryStrong && !/no\s+translations?/i.test(summaryPara[1])) {
+                const decoded = decodeHtmlEntities(summaryStrong[1]);
+                const defs = decoded
+                    .split(',')
+                    .map(d => d.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
+                    .filter(d => d && d.toLowerCase() !== normTarget && d.length <= 80);
                 if (defs.length > 0) {
                     entries.push({
                         word: targetWord,
@@ -706,14 +807,32 @@ export function normalizeDictionaryText(value) {
         text = decoded;
     }
     return text.replace(/<(rt|rp)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
-        .replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+        .replace(/<[^>]*>/g, '')
+        .replace(/\{\{[^}|]*\|?\+?\s*/g, '')
+        .replace(/\}\}/g, '')
+        .replace(/^\(meaning=([^)]+)\)$/i, '$1')
+        .replace(/\s+/g, ' ').trim();
 }
-const POS_CODES = Object.assign(Object.create(null), { noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', interjection: 'int', pronoun: 'pn',
-    preposition: 'prep', article: 'art', conjunction: 'conj',
-    '名词': 'n', '名詞': 'n', '动词': 'v', '動詞': 'v', '感叹词': 'int', '感嘆詞': 'int', '下一段他動詞': 'v1, vt',
-    '명사': 'n', '감탄사': 'int', '동사': 'v', '형용사': 'adj', '부사': 'adv',
-    '대명사': 'pn', '전치사': 'prep', '접속사': 'conj', '관사': 'art', 'Danh từ': 'n',
-    'Nội Động Từ': 'vi', 'Ngoại Động Từ': 'vt', 'Tính từ': 'adj', 'Trạng từ': 'adv' });
+const POS_CODES = Object.assign(Object.create(null), {
+    noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', interjection: 'int', pronoun: 'pn',
+    preposition: 'prep', article: 'art', conjunction: 'conj', numeral: 'num', determiner: 'det',
+    'boundnoun': 'n', 'dependent noun': 'n', 'auxiliary verb': 'aux', 'auxiliary adjective': 'adj',
+    '名词': 'n', '名詞': 'n', '代词': 'pn', '代名詞': 'pn', '依存名詞': 'n',
+    '动词': 'v', '動詞': 'v', '及物动词': 'vt', '不及物动词': 'vi', '助动词': 'aux', '助動詞': 'aux',
+    '形容词': 'adj', '形容詞': 'adj', '副词': 'adv', '副詞': 'adv',
+    '连词': 'conj', '接続詞': 'conj', '介词': 'prep', '助词': 'prt', '助詞': 'prt',
+    '数词': 'num', '量词': 'cl', '感叹词': 'int', '感嘆詞': 'int', '感動詞': 'int',
+    '下一段他動詞': 'v1, vt', '下一段自動詞': 'v1, vi', '上一段他動詞': 'v1, vt', '上一段自動詞': 'v1, vi',
+    '五段活用自動詞': 'v5, vi', '五段活用他動詞': 'v5, vt',
+    '명사': 'n', '의존명사': 'n', '대명사': 'pn', '수사': 'num', '관형사': 'det',
+    '동사': 'v', '보조동사': 'aux', '형용사': 'adj', '보조형용사': 'adj',
+    '부사': 'adv', '의문부사': 'adv', '부사적': 'adv', '감탄사': 'int',
+    '전치사': 'prep', '접속사': 'conj', '관사': 'art', '조사': 'prt',
+    'Danh từ': 'n', 'Danh từ phụ thuộc': 'n', 'Đại từ': 'pn',
+    'Động từ': 'v', 'Trợ động từ': 'aux', 'Nội Động Từ': 'vi', 'Ngoại Động Từ': 'vt',
+    'Tính từ': 'adj', 'Trạng từ': 'adv', 'Phó từ': 'adv',
+    'Liên từ': 'conj', 'Giới từ': 'prep', 'Thán từ': 'int'
+});
 function normalizeEntries(entries) {
     return entries.map(entry => ({ ...entry,
         word: normalizeDictionaryText(entry.word), reading: normalizeDictionaryText(entry.reading),

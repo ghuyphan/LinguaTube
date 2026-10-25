@@ -178,8 +178,8 @@ export class DictionaryService {
     }
 
     const rawReading = (entry.reading || '').trim();
-    const readingParts = rawReading.split(/[\s,、/]+/).filter(Boolean);
-    const formattedReading = readingParts.length > 1 ? readingParts.join(' / ') : rawReading;
+    const readingParts = from === 'ja' ? rawReading.split(/[\s,、/]+/).filter(Boolean) : [];
+    const formattedReading = from === 'ja' && readingParts.length > 1 ? readingParts.join(' / ') : rawReading;
     const formattedRomaji = from === 'ja'
       ? (entry.romanization || (readingParts.length > 1
         ? readingParts.map(p => getJapaneseRomaji(p, entry.word || word)).filter(Boolean).join(' / ')

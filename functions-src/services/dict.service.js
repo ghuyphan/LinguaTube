@@ -19,6 +19,22 @@ export class DictionaryService {
             const fallback = first.entries.length ? null : await english;
             const found = first.entries.length ? first : fallback;
             if (!found?.entries.length) return { entries: [], source: 'none', outcome: first.outcome === 'unavailable' || fallback?.outcome === 'unavailable' ? 'unavailable' : 'empty' };
+            if (found === first && english && first.entries.some(e => !e.level || !e.reading || !e.partOfSpeech || !e.audio)) {
+                const engResult = await Promise.race([
+                    english.catch(() => null),
+                    new Promise(resolve => setTimeout(() => resolve(null), 400))
+                ]);
+                if (engResult?.entries?.length) {
+                    for (const entry of found.entries) {
+                        const match = engResult.entries.find(e => e.word.toLowerCase() === entry.word.toLowerCase()) || engResult.entries[0];
+                        if (! match) continue;
+                        if (!entry.level && match.level) entry.level = match.level;
+                        if (!entry.reading && match.reading) entry.reading = match.reading;
+                        if (!entry.partOfSpeech && match.partOfSpeech) entry.partOfSpeech = match.partOfSpeech;
+                        if (!entry.audio && match.audio) entry.audio = match.audio;
+                    }
+                }
+            }
             const actualLanguage = found.language;
             if (actualLanguage === to) return { entries: found.entries.map(entry => ({ ...entry, definitionLanguage: to, definitionKind: 'native' })), source: found.source, outcome: 'found' };
             const translated = await this.transProvider.translateEntries(found.entries, to, {

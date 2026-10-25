@@ -231,6 +231,10 @@ test('Tokenizer [KO]: Korean particle detachment attaches baseForm and particle'
     assert.deepEqual(detachKoreanParticle('집에서'), { stem: '집', particle: '에서' });
     assert.deepEqual(detachKoreanParticle('책을'), { stem: '책', particle: '을' });
     assert.equal(detachKoreanParticle('아이'), null); // Should not strip regular root
+    assert.equal(detachKoreanParticle('같이'), null); // Should not strip lexicalized adverb
+    assert.equal(detachKoreanParticle('공부하는'), null); // Should not strip adnominal verb ending
+    assert.equal(detachKoreanParticle('재미있지만'), null); // Should not strip connective ending
+    assert.equal(detachKoreanParticle('같은'), null); // Should not strip adjective modifier ending
 
     const text = '나는 한국어를 배웁니다.';
     const tokens = await tokenizeKoreanChinese(text, 'ko');

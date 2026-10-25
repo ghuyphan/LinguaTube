@@ -436,7 +436,7 @@ export async function onRequestPost(context) {
         } catch (aiErr) {
             let errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
             let status = 500;
-            if (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS') {
+            if (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS' || errorCode === 'VIDEO_DURATION_UNAVAILABLE' || errorCode === 'LIVESTREAM_NOT_SUPPORTED') {
                 status = 400;
             } else if (aiErr.message.includes('402') || aiErr.message.includes('quota')) {
                 errorCode = 'AI_QUOTA_EXCEEDED';
