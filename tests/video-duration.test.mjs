@@ -69,7 +69,7 @@ for (const body of ['{', 'x'.repeat(65537)]) {
 }
 test('expired quote evidence is refreshed, not reused for billing', async t => {
     const f=await fixture(t);const now=Math.floor(Date.now()/1000);
-    f.sqlite.prepare('INSERT INTO verified_video_metadata VALUES(?,?,?,?,?,?,?)').run(videoId,30,'none','youtube_data_api',now-400,now-100,Date.now()-400000);
+    f.sqlite.prepare('INSERT INTO verified_video_metadata(video_id,duration_seconds,broadcast_state,source,verified_at,refresh_after,observed_at) VALUES(?,?,?,?,?,?,?)').run(videoId,30,'none','youtube_data_api',now-400,now-100,Date.now()-400000);
     t.mock.method(globalThis,'fetch',async()=>Response.json({items:[item()]}));
     assert.equal((await resolveVerifiedVideoMetadata(context(f),videoId)).duration,601);
 });
@@ -85,7 +85,7 @@ test('daily quote budget reserves capacity for final paid verification', async t
 });
 test('client reports correct estimates without touching verified billing evidence', async t => {
     const f=await fixture(t);const now=Math.floor(Date.now()/1000);
-    f.sqlite.prepare('INSERT INTO verified_video_metadata VALUES(?,?,?,?,?,?,?)').run(videoId,1201,'none','youtube_data_api',now,now+300,Date.now());
+    f.sqlite.prepare('INSERT INTO verified_video_metadata(video_id,duration_seconds,broadcast_state,source,verified_at,refresh_after,observed_at) VALUES(?,?,?,?,?,?,?)').run(videoId,1201,'none','youtube_data_api',now,now+300,Date.now());
     for(const [duration,isEstimate,expected] of [[100,true,100],[900,false,900],[110,true,900],[950,false,950]]) {
         const response=await onRequestPost({request:new Request('https://voca.study/api/video-info',{method:'POST',headers:{'Content-Type':'application/json','CF-Connecting-IP':'192.0.2.77'},body:JSON.stringify({videoId,duration,isEstimate})}),env:{VOCAB_DB:f.db}});
         assert.equal(response.status,200);

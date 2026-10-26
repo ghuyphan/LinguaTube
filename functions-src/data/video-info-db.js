@@ -9,7 +9,6 @@
 
 import { rankVideos } from '../services/recommendation.service.js';
 import { detectVideoCategory } from '../services/category.service.js';
-import { getVideoMetadata, fetchChannelAvatar } from '../middlewares/video-validator.js';
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -29,7 +28,7 @@ export async function getVideoLanguages(db, videoId) {
 
     try {
         const row = await db.prepare(`
-            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, duration_source, title, channel, channel_avatar, levels, category, tags
+            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, duration_source, title, channel, channel_avatar, levels, category, category_source, metadata_source, tags
             FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
@@ -78,6 +77,8 @@ export async function getVideoLanguages(db, videoId) {
             channelAvatar: row.channel_avatar || null,
             levels,
             category: row.category || 'general',
+            categorySource: row.category_source || null,
+            metadataSource: row.metadata_source || null,
             tags: parsedTags
         };
     } catch (err) {
@@ -110,22 +111,12 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
         let existingCategory = null;
         let existingTags = [];
         const existing = await getVideoLanguages(db, videoId);
-        let resolvedTitle = (title && typeof title === 'string' && title.trim()) ? title.trim() : (existing?.title || null);
-        let resolvedChannel = (channel && typeof channel === 'string' && channel.trim()) ? channel.trim() : (existing?.channel || null);
-        let resolvedAvatar = channelAvatar || existing?.channelAvatar || null;
+        const resolvedTitle = (title && typeof title === 'string' && title.trim()) ? title.trim() : (existing?.title || null);
+        const resolvedChannel = (channel && typeof channel === 'string' && channel.trim()) ? channel.trim() : (existing?.channel || null);
+        const resolvedAvatar = channelAvatar || existing?.channelAvatar || null;
 
-        if (!resolvedTitle || !resolvedChannel) {
-            try {
-                const meta = await getVideoMetadata(videoId);
-                if (meta) {
-                    resolvedTitle = resolvedTitle || meta.title || null;
-                    resolvedChannel = resolvedChannel || meta.author_name || null;
-                    if (!resolvedAvatar && meta.author_url) {
-                        resolvedAvatar = await fetchChannelAvatar(meta.author_url);
-                    }
-                }
-            } catch { }
-        }
+        // Missing public details are hydrated through the official metadata endpoint;
+        // caption persistence must not trigger an unrelated oEmbed/scraping request.
 
         if (levels === null) {
             existingLevels = existing?.levels || {};
@@ -184,14 +175,14 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
               available_languages = CASE WHEN excluded.available_languages = '[]' THEN video_languages.available_languages ELSE excluded.available_languages END,
               sub_languages = CASE WHEN excluded.sub_languages IS NOT NULL AND excluded.sub_languages != '[]' THEN excluded.sub_languages ELSE video_languages.sub_languages END,
               has_auto_captions = excluded.has_auto_captions,
-              duration_seconds = CASE WHEN video_languages.duration_source='client_player' THEN video_languages.duration_seconds ELSE COALESCE(excluded.duration_seconds, video_languages.duration_seconds) END,
-              duration_source = CASE WHEN video_languages.duration_source='client_player' OR excluded.duration_seconds IS NULL THEN video_languages.duration_source ELSE 'unverified' END,
-              title = COALESCE(excluded.title, video_languages.title),
-              channel = COALESCE(excluded.channel, video_languages.channel),
+              duration_seconds = CASE WHEN video_languages.duration_source IN ('client_player','youtube_data_api') THEN video_languages.duration_seconds ELSE COALESCE(excluded.duration_seconds, video_languages.duration_seconds) END,
+              duration_source = CASE WHEN video_languages.duration_source IN ('client_player','youtube_data_api') OR excluded.duration_seconds IS NULL THEN video_languages.duration_source ELSE 'unverified' END,
+              title = CASE WHEN video_languages.metadata_source='youtube_data_api' THEN video_languages.title ELSE COALESCE(excluded.title, video_languages.title) END,
+              channel = CASE WHEN video_languages.metadata_source='youtube_data_api' THEN video_languages.channel ELSE COALESCE(excluded.channel, video_languages.channel) END,
               channel_avatar = COALESCE(excluded.channel_avatar, video_languages.channel_avatar),
               levels = excluded.levels,
-              category = CASE WHEN excluded.category IS NOT NULL AND excluded.category != 'general' THEN excluded.category ELSE COALESCE(video_languages.category, excluded.category, 'general') END,
-              tags = CASE WHEN excluded.tags IS NOT NULL AND excluded.tags != '[]' THEN excluded.tags ELSE COALESCE(video_languages.tags, excluded.tags, '[]') END,
+              category = CASE WHEN video_languages.category_source IN ('manual','legacy') OR video_languages.metadata_source='youtube_data_api' THEN video_languages.category WHEN excluded.category IS NOT NULL AND excluded.category != 'general' THEN excluded.category ELSE COALESCE(video_languages.category, excluded.category, 'general') END,
+              tags = CASE WHEN video_languages.metadata_source='youtube_data_api' THEN video_languages.tags WHEN excluded.tags IS NOT NULL AND excluded.tags != '[]' THEN excluded.tags ELSE COALESCE(video_languages.tags, excluded.tags, '[]') END,
               updated_at = strftime('%s', 'now')
         `).bind(
             videoId,
@@ -222,7 +213,7 @@ export async function saveVideoCategory(db, videoId, category) {
     try {
         await db.prepare(`
             UPDATE video_languages
-            SET category = ?, updated_at = strftime('%s', 'now')
+            SET category = ?, category_source='manual', updated_at = strftime('%s', 'now')
             WHERE video_id = ?
         `).bind(category, videoId).run();
         return true;

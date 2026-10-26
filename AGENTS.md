@@ -464,3 +464,7 @@ AI pricing follow-up: `/api/transcript` supports the `quoteOnly` preview mode an
 ## Verified AI video metadata (2026-10-26)
 
 Official YouTube Data API metadata is the sole new-job duration/live-state authority. Apply `20261026_verified_video_metadata.sql` and set the encrypted `YOUTUBE_DATA_API_KEY` before deploying callers. Quotes may use recent server-verified metadata; new paid jobs always freshly verify and record their billing evidence. Never authorize spending from scraped/client/D1 display/subtitle-estimated duration or absent live fields. Preserve confirmed-price, atomic spending and recovery guards. Scope mobile Authorization headers to the configured backend origin. See `doc/verified-video-metadata-2026-10-26.md`.
+
+## Official video details (2026-10-26)
+
+Apply `20261026_video_metadata_details.sql` after the verified-duration migration. Display names/channel/tags/category ID use the shared official resolver and D1 persistence. Preserve caption discovery, learning levels, discovery timestamps and manual/legacy category choices; never let generic hints overwrite official catalog fields. A provider outage is retryable, not a missing video. Keep raw YouTube category ID separate from Voca's mapped category.

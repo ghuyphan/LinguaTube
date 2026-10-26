@@ -1,3 +1,4 @@
+import { resolveVerifiedVideoMetadata } from '../services/video-metadata.service.js';
 import { readBoundedBody } from '../utils/response-body.js';
 
 const inFlightDetails = new Map();
@@ -100,17 +101,13 @@ export async function fetchYouTubeDuration(videoId) {
     return details.duration;
 }
 
-/**
- * Fetch video metadata from YouTube oEmbed (free, no API key required)
- * @param {string} videoId - YouTube video ID
- * @returns {Promise<{title: string, author_name: string} | null>}
- */
-export async function getVideoMetadata(videoId) {
+/** Public metadata compatibility shape backed by the official server resolver. */
+export async function getVideoMetadata(videoId, context = null) {
+    if (!context) return null;
     try {
-        const url = `https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=${videoId}`;
-        const res = await fetch(url, { signal: AbortSignal.timeout(3000) });
-        if (!res.ok) return null;
-        return await res.json();
+        const { snippet } = await resolveVerifiedVideoMetadata(context, videoId, { includeDisplay: true });
+        return { title: snippet.title, author_name: snippet.channel,
+            author_url: `https://www.youtube.com/channel/${snippet.channelId}`, thumbnail_url: snippet.thumbnail };
     } catch {
         return null;
     }
@@ -301,7 +298,7 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
     }
 
     // 3. Optional: Check video title for language hint
-    const title = options.title || (options.skipMetadata ? null : (await getVideoMetadata(videoId))?.title);
+    const title = options.title || (options.skipMetadata ? null : (await getVideoMetadata(videoId, options.context))?.title);
     if (title) {
         const detectedLang = detectTitleLanguage(title);
 

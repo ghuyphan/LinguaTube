@@ -34,7 +34,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
     await build({entryPoints:[entry],nodePaths:[new URL('../node_modules',import.meta.url).pathname],bundle:true,format:'esm',platform:'browser',target:'es2022',outfile:worker,
         conditions:['worker','browser','import','default'],mainFields:['browser','module','main'],logLevel:'silent'});
     assert.deepEqual(await fingerprint(join(sourceRoot,'functions-src')),sourcesBefore,'Source changed while compiling validation fixture');
-    const schemas=await Promise.all(['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql',...(!defects?['db/migrations/d1/20261025_gladia_submission_state.sql','db/migrations/d1/20261026_verified_video_metadata.sql']:[])].map(path=>readFile(join(sourceRoot,path),'utf8')));
+    const schemas=await Promise.all(['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql',...(!defects?['db/migrations/d1/20261025_gladia_submission_state.sql','db/migrations/d1/20261026_verified_video_metadata.sql','db/migrations/d1/20261026_video_metadata_details.sql']:[])].map(path=>readFile(join(sourceRoot,path),'utf8')));
     const evidence=[];
     for(const scenario of ['native','duration','refresh','balance','stampede','translation','recommendation','gladia','tokenizer']){
         await t.test(scenario,async()=>{
@@ -47,7 +47,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
                 // D1 exec is line-oriented. Keep each checked-in CREATE/ALTER
                 // statement intact, including the internal semicolons in triggers.
                 for(const schema of schemas){
-                    const statements=schema.replace(/--[^\n]*/g,'').split(/;\s*(?=(?:CREATE|ALTER)\b|$)/i).map(sql=>sql.trim()).filter(Boolean);
+                    const statements=schema.replace(/--[^\n]*/g,'').split(schema.includes('ADD COLUMN snippet_json') ? /;\s*(?=(?:CREATE|ALTER|UPDATE)\b|$)/i : /;\s*(?=(?:CREATE|ALTER)\b|$)/i).map(sql=>sql.trim()).filter(Boolean);
                     for(const statement of statements)await db.prepare(statement).run();
                 }
                 const hash=createHash('sha256').update('198.51.100.10').digest('hex');

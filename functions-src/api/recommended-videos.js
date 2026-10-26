@@ -163,7 +163,7 @@ async function handleRecommendedVideos(context, method) {
                             }
                         }
                         if (!v.title || !v.channel) {
-                            const meta = await getVideoMetadata(v.videoId);
+                            const meta = await getVideoMetadata(v.videoId, context);
                             if (meta) {
                                 const newTitle = v.title || meta.title || null;
                                 const newChannel = v.channel || meta.author_name || null;

@@ -71,3 +71,17 @@ Backend 56b13c5 deployed successfully to Production as 3cf5df37-b31c-42fd-bcfe-2
 The two active broadcasts were confirmed via their public channel live-page player timestamps before testing. Requests used quoteOnly=true, no CAPTCHA, no account credentials, and no paid transcription submission. The reported-video quote includes VIDEO_TOO_LONG for the anonymous test account's 600-second cap; authenticated tier eligibility remains server-owned. Sending duration=1 did not change the official duration or price. The first five quote requests consumed four official requests, confirming repeat-cache reuse. D1 readback confirms the verified source/normalized broadcast states. No authenticated purchase, CAPTCHA or provider transcription end-to-end test is claimed.
 
 Final local validation: 300 backend unit/integration checks and 371 workerd/D1/R2 checks passed with no skips. All 25 function bundles and backend ESLint passed. The full Flutter suite passed 933 tests, with zero analysis issues; later focused player/navigation/security checks passed 22 tests. Native changes are not included in the backend commits and require an app release.
+
+## Shared official display details
+
+Names, channel names/IDs, tags, thumbnails and raw YouTube category IDs now travel in the same official request as duration/broadcast state. `verified_video_metadata.snippet_json` stores the details; `/api/video-info` hydrates protected catalog fields in `video_languages`. Existing duration-only cache entries upgrade lazily. Raw category IDs and mapped Voca categories remain distinct. Existing explicit categories are marked manual; legacy non-general categories are preserved conservatively. New or unclassified entries use official category mapping and the existing keyword classifier. An official empty tags array clears obsolete tags. Repeated reads reuse the stored response without rewriting the catalog or changing discovery timestamps.
+
+Before deployment, apply once:
+
+```sh
+npx wrangler d1 execute linguatube-vocab --remote --file db/migrations/d1/20261026_video_metadata_details.sql
+```
+
+The main display endpoint no longer scrapes video pages or uses oEmbed for names/category. Recommendation name healing uses the same official compatibility helper; caption persistence leaves missing public details for official hydration instead of making hidden oEmbed calls. Channel-avatar scraping/enrichment is a separate preexisting path. Native callers of the legacy-named fetchYouTubeOembed method receive the same response shape from the Edge metadata endpoint; they require an app build to receive that native routing change. Existing released clients already using getVideoInfo benefit from the backend immediately.
+
+Display-details local verification: 310 backend checks and 371 workerd/D1/R2 checks pass with no skips; all 25 function bundles and backend lint pass. Native metadata/player/navigation tests pass (23 tests), and Flutter analysis reports no issues. The full shared Flutter working tree currently has two vocabulary UI assertion failures (vocabulary_screen_test.dart and study_and_vocabulary_test.dart, missing expected filter/list labels); both reproduce separately and are outside the metadata changes. Those concurrent UI edits were preserved. The new details migration was applied successfully before deployment. Live display details and database persistence are verified after the deployment completes.

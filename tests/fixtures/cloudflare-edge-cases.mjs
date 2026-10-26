@@ -63,7 +63,7 @@ add('admin D1 unavailable','heal-levels',{body:{},headers:{'x-admin-secret':'fix
 add('recommendation database missing','recommended-videos',{body:{lang:'en'},drop:'VOCAB_DB',status:503,noUpstream:true});
 add('kanji provider unavailable','kanji',{query:{query:'水'},status:502,providerOnly:true});
 add('dictionary providers unavailable','dict',{query:{word:'edgecasefixtureword',from:'en',to:'vi'},status:503,providerOnly:true});
-add('video metadata upstream outage','video-info',{query:{videoId:'outageabcde'},status:404,providerOnly:true});
+add('video metadata upstream outage','video-info',{query:{videoId:'outageabcde'},status:503,providerOnly:true});
 for(const country of [undefined,'XX','T1','vn']) add('geo fallback '+country,'geo',{headers:country?{'cf-ipcountry':country}:{},status:200,noUpstream:true,expect:{country:country==='vn'?'VN':null}});
 add('anonymous credits status','diamonds',{status:200,noUpstream:true,expect:{tier:'anonymous',diamonds:3}});
 add('category taxonomy','video-category',{status:200,noUpstream:true,expect:{success:true}});

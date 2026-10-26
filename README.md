@@ -180,3 +180,5 @@ Paid transcription pricing and duration limits use verified YouTube duration; un
 AI pricing follow-up: `/api/transcript` supports the `quoteOnly` preview mode and an optional confirmed `expectedDiamondCost` for new paid jobs. Never trust that field as a price override; reject a changed price before reservation/charge. Cached/active reuse quotes zero. Deploy backend support before mobile quote consumers; see the diamond enforcement handoff for the contract and tests.
 
 AI subtitle billing uses official YouTube metadata. Configure the encrypted `YOUTUBE_DATA_API_KEY` and apply the additive D1 migration before backend deployment; see [setup and validation](doc/verified-video-metadata-2026-10-26.md).
+
+Video names, channels, tags and category IDs also use the shared official metadata request. Apply `db/migrations/d1/20261026_video_metadata_details.sql` after the verified-duration migration before deploying this update. Both metadata records and catalog details are persisted in D1.

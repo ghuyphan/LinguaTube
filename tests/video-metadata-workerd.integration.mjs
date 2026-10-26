@@ -24,10 +24,12 @@ test('official metadata cache, quota and fresh verification execute in workerd/D
         }});
     t.after(()=>mf.dispose());
     const db=await mf.getD1Database('VOCAB_DB');
-    await db.prepare('CREATE TABLE video_languages(video_id TEXT PRIMARY KEY)').run();
+    await db.prepare('CREATE TABLE video_languages(video_id TEXT PRIMARY KEY,category TEXT)').run();
     await db.prepare('CREATE TABLE ai_transcription_jobs(id TEXT PRIMARY KEY)').run();
-    const schema=await readFile(join(root,'db/migrations/d1/20261026_verified_video_metadata.sql'),'utf8');
-    for(const sql of schema.replace(/--[^\n]*/g,'').split(/;\s*(?=(?:CREATE|ALTER)\b|$)/i).map(s=>s.trim()).filter(Boolean)) await db.prepare(sql).run();
+    for (const file of ['20261026_verified_video_metadata.sql','20261026_video_metadata_details.sql']) {
+        const schema=await readFile(join(root,'db/migrations/d1',file),'utf8');
+        for(const sql of schema.replace(/--[^\n]*/g,'').split(/;\s*(?=(?:CREATE|ALTER|UPDATE)\b|$)/i).map(s=>s.trim()).filter(Boolean)) await db.prepare(sql).run();
+    }
     for(const [path,expected] of [['/',601],['/',601],['/?fresh',1201]]) {
         const response=await mf.dispatchFetch('https://fixture.invalid'+path);
         assert.equal(response.status,200,await response.clone().text());assert.equal((await response.json()).duration,expected);

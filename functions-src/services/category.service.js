@@ -31,10 +31,12 @@ export const VALID_CATEGORIES = new Set([
  * @param {string[]} [params.tags] - Creator tags from og:video:tag or keywords
  * @returns {string} Canonical category ID
  */
-export function detectVideoCategory({ title = '', channel = '', genre = null, tags = [] } = {}) {
+export function detectVideoCategory({ title = '', channel = '', genre = null, tags = [], youtubeCategoryId = null } = {}) {
     const rawTitle = title || '';
     const rawChannel = channel || '';
-    const rawGenre = (genre || '').trim();
+    // Only map stable YouTube categories with a direct Voca equivalent.
+    const officialGenres = { '1': 'Film & Animation', '10': 'Music', '22': 'People & Blogs', '25': 'News & Politics', '27': 'Education' };
+    const rawGenre = (officialGenres[youtubeCategoryId] || genre || '').trim();
     const tagList = Array.isArray(tags) ? tags : [];
     const allText = `${rawTitle} ${rawChannel} ${tagList.join(' ')}`.toLowerCase();
 
