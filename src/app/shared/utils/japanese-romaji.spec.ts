@@ -9,10 +9,12 @@ describe('japanese-romaji', () => {
   it('converts katakana to romaji', () => {
     expect(toJapaneseRomaji('ゲーム')).toBe('geemu');
     expect(toJapaneseRomaji('カード')).toBe('kaado');
+    expect(toJapaneseRomaji('ｺﾝﾆﾁﾊ')).toBe('konnichiha');
   });
 
-  it('falls back to kana-only surface text', () => {
+  it('falls back to kana-only surface text including half-width katakana', () => {
     expect(getJapaneseRomaji(undefined, 'かな')).toBe('kana');
+    expect(getJapaneseRomaji(undefined, 'ｺﾝﾆﾁﾊ')).toBe('konnichiha');
     expect(getJapaneseRomaji(undefined, '日本')).toBeUndefined();
   });
 });

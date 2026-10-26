@@ -16,8 +16,8 @@ export const UNICODE_RANGES = {
     hangulJamo: /[\u1100-\u11FF\u3130-\u318F]/,
     korean: /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/,
 
-    // Chinese / Kanji (CJK Unified Ideographs)
-    hanzi: /[\u4E00-\u9FFF]/,
+    // Chinese / Kanji (CJK Unified Ideographs, Extensions A-I, Compatibility Ideographs)
+    hanzi: /\p{Script=Han}/u,
 
     // Basic Latin
     latin: /[a-zA-Z]/,

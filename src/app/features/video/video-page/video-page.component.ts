@@ -15,7 +15,7 @@ import { LevelBadgeComponent } from '../../../shared/components/level-badge/leve
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { YoutubeService } from '../youtube.service';
 import { SubtitleService } from '../subtitle.service';
-import { TranscriptService } from '../transcript.service';
+import { TranscriptService, TranscriptQuote } from '../transcript.service';
 import { PlayerViewService } from '../services/player-view.service';
 import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, SeoService, ToastService, VideoRecommendationService, AiJobManagerService } from '../../../core/services';
@@ -345,8 +345,18 @@ export class VideoPageComponent implements OnInit {
     return this.isVideosLoading() || this.isLevelSwitching();
   });
 
-  aiDiamondCost = computed(() => (this.youtube.duration() > 10 * 60 ? 2 : 1));
-  isVideoTooLongForAI = computed(() => this.youtube.duration() > 20 * 60);
+  aiQuote = signal<TranscriptQuote | null>(null);
+  isLoadingQuote = signal(false);
+  aiDiamondCost = computed(() => {
+    const q = this.aiQuote();
+    if (q && q.success && typeof q.cost === 'number') return q.cost;
+    return this.youtube.duration() > 10 * 60 ? 2 : 1;
+  });
+  isVideoTooLongForAI = computed(() => {
+    const q = this.aiQuote();
+    if (q && q.reason === 'VIDEO_TOO_LONG') return true;
+    return this.youtube.duration() > 20 * 60;
+  });
 
   selectedWord = signal<Token | null>(null);
   currentSentence = signal<string>('');
@@ -948,6 +958,37 @@ export class VideoPageComponent implements OnInit {
   }
 
   /**
+   * Fetch authoritative price quote for AI transcription
+   */
+  fetchAiQuote(): void {
+    const video = this.youtube.currentVideo();
+    const lang = this.selectedAiLanguage();
+    if (!video) return;
+
+    this.isLoadingQuote.set(true);
+    this.transcript.getQuote(video.id, lang)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (quote) => {
+          this.isLoadingQuote.set(false);
+          this.aiQuote.set(quote);
+          if (typeof quote.diamonds === 'number') {
+            this.transcript.diamonds.set(quote.diamonds);
+          }
+        },
+        error: () => {
+          this.isLoadingQuote.set(false);
+        }
+      });
+  }
+
+  onSelectAiLanguage(lang: SupportedLearningLanguage): void {
+    if (this.selectedAiLanguage() === lang) return;
+    this.selectedAiLanguage.set(lang);
+    this.fetchAiQuote();
+  }
+
+  /**
    * Manual AI generation trigger - opens human verification dialog
    */
   onManualAITrigger(lang?: string): void {
@@ -963,6 +1004,7 @@ export class VideoPageComponent implements OnInit {
     this.aiCaptchaToken.set(null);
     this.isSubmittingAi.set(false);
     this.showAiConfirmDialog.set(true);
+    this.fetchAiQuote();
   }
 
   onLanguageSwitchFromSubtitle(lang: string): void {
@@ -983,6 +1025,7 @@ export class VideoPageComponent implements OnInit {
     if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED' || currentError === 'AI_FAILED' || currentError === 'AI_QUOTA_EXCEEDED' || currentError === 'NO_SPEECH_DETECTED') {
       this.aiJobManager.cancelJob(currentVideo.id);
       this.showAiConfirmDialog.set(true);
+      this.fetchAiQuote();
       return;
     }
 
@@ -1026,8 +1069,9 @@ export class VideoPageComponent implements OnInit {
     this.aiJobManager.cancelJob(currentVideo.id);
 
     const duration = Math.round(this.youtube.duration()) || undefined;
+    const expectedCost = this.aiDiamondCost();
 
-    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration, currentVideo.title, currentVideo.channel, true)
+    this.transcript.generateWithAI(currentVideo.id, lang, undefined, token, duration, currentVideo.title, currentVideo.channel, true, expectedCost)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (cues) => {

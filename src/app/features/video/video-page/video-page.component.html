@@ -562,7 +562,7 @@
                     @for (item of supportedAiLanguages; track item.code) {
                     <button type="button" class="ai-lang-chip"
                         [class.active]="selectedAiLanguage() === item.code"
-                        (click)="selectedAiLanguage.set(item.code)">
+                        (click)="onSelectAiLanguage(item.code)">
                         <img [src]="item.flag" class="ai-lang-flag" alt="" />
                         <span>{{ item.name }}</span>
                     </button>
@@ -614,7 +614,7 @@
             <button type="button" class="btn btn-secondary dialog-btn" (click)="onCloseAiConfirmDialog()">
                 {{ i18n.t('vocab.cancel') || 'Cancel' }}
             </button>
-            <button type="button" class="btn btn-primary dialog-btn" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || transcript.diamonds() < aiDiamondCost()"
+            <button type="button" class="btn btn-primary dialog-btn" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || transcript.diamonds() < aiDiamondCost() || isLoadingQuote()"
                 (click)="confirmGenerateAI()">
                 @if (isSubmittingAi()) {
                 <app-icon name="loader" [size]="16" class="spin-icon" />

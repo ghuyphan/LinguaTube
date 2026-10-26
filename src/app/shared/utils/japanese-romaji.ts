@@ -154,7 +154,8 @@ const LONG_VOWEL_MARK = 'ー';
 const KANA_TEXT_REGEX = /^[\u3040-\u30FFー\s・。、？！「」『』（）〔〕［］｛｝〈〉《》【】…ー-]+$/u;
 
 export function katakanaToHiragana(text: string): string {
-  return text.replace(/[\u30A1-\u30F6]/g, match =>
+  const nfkc = text ? text.normalize('NFKC') : '';
+  return nfkc.replace(/[\u30A1-\u30F6]/g, match =>
     String.fromCharCode(match.charCodeAt(0) - 0x60)
   );
 }
@@ -194,7 +195,9 @@ function getLastVowel(text: string): string {
 }
 
 export function isJapaneseKanaText(text: string | undefined | null): boolean {
-  return !!text && KANA_TEXT_REGEX.test(text);
+  if (!text) return false;
+  const nfkc = text.normalize('NFKC');
+  return KANA_TEXT_REGEX.test(text) || KANA_TEXT_REGEX.test(nfkc);
 }
 
 export function toJapaneseRomaji(text: string | undefined | null): string {

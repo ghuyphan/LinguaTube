@@ -1079,6 +1079,11 @@ export class SubtitleService {
           signal
         });
 
+        // 499 indicates the server acknowledges the client aborted the connection
+        if (response.status === 499) {
+          throw new DOMException('Aborted', 'AbortError');
+        }
+
         // If rate limited, activate circuit breaker and fall back to local tokenization
         if (response.status === 429) {
           const retryAfterSec = parseInt(response.headers.get('Retry-After') || '60', 10);
@@ -1089,9 +1094,13 @@ export class SubtitleService {
 
         if (response.ok) {
           const data = await response.json();
-          if (data.tokens && Array.isArray(data.tokens)) {
-            return data.tokens;
+          if (data.tokens && Array.isArray(data.tokens) && data.tokens.length === texts.length) {
+            return data.tokens.map((line: unknown, idx: number) => {
+              if (Array.isArray(line)) return line;
+              return this.fallbackTokenize(texts[idx], lang as 'ja' | 'zh' | 'ko' | 'en' | null);
+            });
           }
+          console.warn(`[SubtitleService] Batch tokenize response shape mismatch: expected ${texts.length}, got ${data?.tokens?.length}`);
         } else {
           const errText = await response.text().catch(() => '');
           console.warn(`[SubtitleService] Batch tokenize returned HTTP ${response.status}: ${errText}`);

@@ -19,6 +19,19 @@ interface RateLimitErrorResponse {
   retryAfter?: number;
 }
 
+export interface TranscriptQuote {
+  success: boolean;
+  cost: number;
+  diamonds: number;
+  maxDiamonds: number;
+  canGenerate: boolean;
+  reason?: 'VIDEO_TOO_LONG' | 'INSUFFICIENT_DIAMONDS' | null;
+  durationSeconds?: number;
+  maxDurationSeconds?: number;
+  error?: string;
+  errorCode?: string;
+}
+
 const DEBUG = false;
 const log = (...args: unknown[]) => DEBUG && console.log('[TranscriptService]', ...args);
 const MIN_CUE_DURATION = 0.5;
@@ -257,6 +270,40 @@ export class TranscriptService {
     this.fetchDiamonds().subscribe();
   }
 
+  /**
+   * Get quote for AI transcription without initiating a job or charging diamonds
+   */
+  getQuote(videoId: string, lang: string): Observable<TranscriptQuote> {
+    return this.http.post<TranscriptQuote>(environment.api.transcript, {
+      videoId,
+      lang,
+      preferAI: true,
+      quoteOnly: true
+    }).pipe(
+      takeUntil(this.cancelTranscript$),
+      tap(res => {
+        if (res && typeof res.diamonds === 'number') {
+          this.diamonds.set(res.diamonds);
+        }
+        if (res && typeof res.maxDiamonds === 'number') {
+          this.maxDiamonds.set(res.maxDiamonds);
+        }
+      }),
+      catchError(err => {
+        const errorData = err?.error || {};
+        return of({
+          success: false,
+          cost: 1,
+          diamonds: this.diamonds(),
+          maxDiamonds: this.maxDiamonds(),
+          canGenerate: false,
+          errorCode: errorData.errorCode || 'QUOTE_FAILED',
+          error: errorData.error || err.message
+        });
+      })
+    );
+  }
+
   // ============================================================================
   // Public Methods
   // ============================================================================
@@ -367,7 +414,8 @@ export class TranscriptService {
     duration?: number,
     title?: string,
     channel?: string,
-    forceRefresh = false
+    forceRefresh = false,
+    expectedDiamondCost?: number
   ): Observable<SubtitleCue[]> {
     if (this.currentVideoId && this.currentVideoId !== videoId) {
       this.cancelTranscript$.next();
@@ -391,7 +439,7 @@ export class TranscriptService {
     });
     this.fallbackInfo.set(null);
 
-    return this.callTranscriptAPI(videoId, lang, true, jobId, resultUrl, turnstileToken, duration, title, channel, forceRefresh).pipe(
+    return this.callTranscriptAPI(videoId, lang, true, jobId, resultUrl, turnstileToken, duration, title, channel, forceRefresh, expectedDiamondCost).pipe(
       tap(cues => this.cacheTranscriptCues(videoId, lang, cues, 'ai')),
       catchError(err => this.handleHttpError(err, false, videoId))
     );
@@ -501,7 +549,8 @@ export class TranscriptService {
     duration?: number,
     title?: string,
     channel?: string,
-    forceRefresh?: boolean
+    forceRefresh?: boolean,
+    expectedDiamondCost?: number
   ): Observable<SubtitleCue[]> {
     const isPolling = Boolean(jobId || resultUrl);
     const requestKey = `${videoId}:${lang}:${preferAI}:${forceRefresh ? 'refresh' : 'normal'}`;
@@ -523,6 +572,9 @@ export class TranscriptService {
     if (jobId) payload['jobId'] = jobId;
     if (resultUrl) payload['resultUrl'] = resultUrl;
     if (turnstileToken) payload['turnstileToken'] = turnstileToken;
+    if (preferAI && !jobId && !resultUrl && expectedDiamondCost !== undefined) {
+      payload['expectedDiamondCost'] = expectedDiamondCost;
+    }
 
     const request$ = this.http.post<TranscriptResponse>(environment.api.transcript, payload).pipe(
       takeUntil(this.cancelTranscript$),
