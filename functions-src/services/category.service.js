@@ -35,7 +35,7 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     const rawTitle = title || '';
     const rawChannel = channel || '';
     // Only map stable YouTube categories with a direct Voca equivalent.
-    const officialGenres = { '1': 'Film & Animation', '10': 'Music', '22': 'People & Blogs', '25': 'News & Politics', '27': 'Education' };
+    const officialGenres = { '1': 'Film & Animation', '10': 'Music', '19': 'Travel & Events', '22': 'People & Blogs', '25': 'News & Politics', '27': 'Education' };
     const rawGenre = (officialGenres[youtubeCategoryId] || genre || '').trim();
     const tagList = Array.isArray(tags) ? tags : [];
     const allText = `${rawTitle} ${rawChannel} ${tagList.join(' ')}`.toLowerCase();
@@ -77,6 +77,7 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     // 5. Vlog & Daily Life
     if (
         /\bvlog\b|日常|ルームツアー|ルーティン|一人暮らし|旅|브이로그/i.test(allText) ||
+        rawGenre.toLowerCase() === 'travel & events' ||
         (rawGenre.toLowerCase() === 'people & blogs' && !/conversation|talk|podcast/i.test(allText))
     ) {
         return 'vlog';

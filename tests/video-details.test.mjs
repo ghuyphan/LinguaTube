@@ -78,7 +78,7 @@ test('missing or malformed snippet does not become a fabricated category',async 
     assert.equal(f.sqlite.prepare('SELECT count(*) n FROM video_languages').get().n,0);
 });
 test('official category IDs map only to supported Voca groups',()=>{
-    for(const [id,expected] of [['1','anime_drama'],['10','music'],['22','vlog'],['25','news'],['27','education'],['999','general']]) {
+    for(const [id,expected] of [['1','anime_drama'],['10','music'],['19','vlog'],['22','vlog'],['25','news'],['27','education'],['999','general']]) {
         assert.equal(detectVideoCategory({youtubeCategoryId:id}),expected);
     }
     assert.equal(detectVideoCategory({youtubeCategoryId:'24',title:'Interview podcast'}),'conversation');
@@ -90,4 +90,14 @@ test('historical non-general category is conservatively preserved with official 
     t.mock.method(globalThis,'fetch',async()=>Response.json({items:[video()]}));
     const body=await (await onRequestGet(context(f))).json();
     assert.equal(body.category,'education');assert.equal(body.categorySource,'legacy');assert.equal(body.youtubeCategoryId,'22');
+});
+
+test('a mapping upgrade persists even when the official metadata observation is unchanged',async t=>{
+    const f=await fixture(t);let calls=0;
+    t.mock.method(globalThis,'fetch',async()=>{calls++;return Response.json({items:[video({categoryId:'19'})]});});
+    await onRequestGet(context(f));
+    f.sqlite.prepare("UPDATE video_languages SET category='general' WHERE video_id=?").run(videoId);
+    const body=await (await onRequestGet(context(f))).json();
+    assert.equal(body.category,'vlog');assert.equal(calls,1);
+    assert.equal(f.sqlite.prepare('SELECT category FROM video_languages WHERE video_id=?').get(videoId).category,'vlog');
 });

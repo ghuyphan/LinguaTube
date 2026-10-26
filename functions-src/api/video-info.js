@@ -44,7 +44,9 @@ export async function onRequestGet(context) {
                 category=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category ELSE excluded.category END,
                 category_source=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category_source ELSE excluded.category_source END,
                 tags=excluded.tags,metadata_source=excluded.metadata_source,metadata_observed_at=excluded.metadata_observed_at
-            WHERE excluded.metadata_observed_at > COALESCE(video_languages.metadata_observed_at,0)`)
+            WHERE excluded.metadata_observed_at > COALESCE(video_languages.metadata_observed_at,0)
+                OR (excluded.metadata_observed_at = video_languages.metadata_observed_at
+                    AND video_languages.category_source='official_mapping' AND video_languages.category IS NOT excluded.category)`)
             .bind(videoId, official.duration, metadata.title, metadata.channel, JSON.stringify(levels), inferredCategory, JSON.stringify(metadata.tags), official.observedAt).run();
         const saved = await getVideoLanguages(db, videoId);
         return jsonResponse({ videoId, title: metadata.title, channel: metadata.channel,
