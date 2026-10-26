@@ -182,8 +182,13 @@ export class DiamondService {
             try { result = await consumeAnonymousCredits(env?.VOCAB_DB, this.cacheManager?.kv, clientId, cost, jobId); }
             catch { result = null; }
         }
-        if (!result) return { success: false, reason: 'database_update_failed', diamonds: current.diamonds };
-        if (result.success && user) user.diamonds = result.diamonds;
+        // Only a committed RPC/ledger acknowledgement can authorize paid work.
+        if (!result || typeof result.success !== 'boolean' ||
+            !Number.isSafeInteger(result.diamonds) || result.diamonds < 0 ||
+            (result.success && result.state !== undefined && result.state !== 'charged')) {
+            return { success: false, reason: 'database_update_failed', diamonds: current.diamonds };
+        }
+        if (result.success === true && user) user.diamonds = result.diamonds;
         return { ...current, ...result, reason: result.success ? undefined : (result.reason || 'insufficient_diamonds'), requiredDiamonds: cost };
     }
 
@@ -191,8 +196,9 @@ export class DiamondService {
         if (!Number.isSafeInteger(amount) || amount <= 0) return false;
         if (user?.id) {
             const result = await this._refundUserDiamondsRpc(env, user.id, amount);
-            if (result?.success) user.diamonds = result.diamonds;
-            return result?.success === true;
+            const confirmed = result?.success === true && Number.isSafeInteger(result.diamonds) && result.diamonds >= 0;
+            if (confirmed) user.diamonds = result.diamonds;
+            return confirmed;
         }
         // Non-job callers retain atomic balance adjustment; transcription recovery uses a job ledger.
         try {

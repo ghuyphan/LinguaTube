@@ -20,6 +20,15 @@ async function getPinyin() {
     if (!pinyinModule) {
         const mod = await import('pinyin-pro');
         pinyinModule = mod.pinyin || mod;
+        if (typeof mod.customPinyin === 'function') {
+            mod.customPinyin({
+                '行长': 'háng zhǎng',
+                '行長': 'háng zhǎng',
+                '银行行长': 'yín háng háng zhǎng',
+                '銀行行長': 'yín háng háng zhǎng',
+                '銀行': 'yín háng'
+            });
+        }
     }
     return pinyinModule;
 }
@@ -33,10 +42,11 @@ async function getRomanizeKorean() {
     return romanizeKoreanModule;
 }
 
-// Kanji detection (CJK Unified Ideographs)
-const KANJI_REGEX = /[\u4E00-\u9FFF]/;
+// Han ideograph detection (CJK Unified Ideographs, Extensions A-I, Compatibility Ideographs, etc.)
+const KANJI_REGEX = /\p{Script=Han}/u;
 
 export function hasKanji(text) {
+    if (!text || typeof text !== 'string') return false;
     return KANJI_REGEX.test(text);
 }
 
@@ -55,12 +65,17 @@ export function isPunctuation(text) {
 // ============================================================================
 
 let tokenizerPromise = null;
+let kuromojiReady = false;
+
+export function isKuromojiReady() {
+    return kuromojiReady;
+}
 
 const cdnLoader = {
     async loadArrayBuffer(url) {
         url = url.replace('.gz', '');
         const cdnUrl = 'https://cdn.jsdelivr.net/npm/@aiktb/kuromoji@1.0.2/dict/' + url;
-        const res = await fetch(cdnUrl);
+        const res = await fetch(cdnUrl, { signal: AbortSignal.timeout(15000) });
         if (!res.ok) {
             throw new Error(`Failed to fetch dictionary: ${cdnUrl}, status: ${res.status}`);
         }
@@ -80,9 +95,13 @@ export async function getKuromojiTokenizer() {
         console.log('[Tokenizer] Initializing kuromoji tokenizer...');
         tokenizerPromise = new kuromoji.TokenizerBuilder({
             loader: cdnLoader
-        }).build().catch(err => {
+        }).build().then(t => {
+            kuromojiReady = true;
+            return t;
+        }).catch(err => {
             console.error('[Tokenizer] Initialization failed:', err.message);
             tokenizerPromise = null; // Reset on failure to allow retry
+            kuromojiReady = false;
             throw err;
         });
     }
@@ -140,7 +159,7 @@ export function segmentJapaneseRuby(surface, reading) {
 
     // 3. If remaining surface has interior kana (e.g. 思い出 / おもいだ, 行き交 / いきか)
     if (hasKanji(surface)) {
-        const interiorKanaMatch = surface.match(/^([\u4E00-\u9FFF]+)([\u3040-\u309F\u30A0-\u30FFー]+)([\u4E00-\u9FFF]+)$/);
+        const interiorKanaMatch = surface.match(/^([\p{Script=Han}]+)([\u3040-\u309F\u30A0-\u30FFー]+)([\p{Script=Han}]+)$/u);
         if (interiorKanaMatch) {
             const [, kanji1, kanaMid, kanji2] = interiorKanaMatch;
             const midHiragana = katakanaToHiragana(kanaMid);
@@ -181,19 +200,99 @@ export function tokenizeJapaneseFast(text) {
         .filter(seg => seg.isWordLike || seg.segment.trim())
         .map(seg => {
             const surface = seg.segment;
-            const isPunc = isPunctuation(surface);
+            const isPunc = isPunctuation(surface) && !hasKanji(surface);
             const token = { surface };
             if (isPunc) {
                 token.isPunctuation = true;
                 return token;
             }
 
-            const kanaReading = isJapaneseKanaText(surface) ? katakanaToHiragana(surface) : undefined;
+            const nfkc = surface.normalize('NFKC');
+            const isKana = isJapaneseKanaText(surface) || isJapaneseKanaText(nfkc);
+            const kanaReading = isKana ? katakanaToHiragana(nfkc) : undefined;
             if (kanaReading) {
-                token.romanization = getJapaneseRomaji(kanaReading, surface);
+                token.romanization = getJapaneseRomaji(kanaReading, nfkc);
             }
             return token;
         });
+}
+
+const UNSAFE_KUROMOJI_PATTERN = /[^\u0000-\uFFFF]|[\u0300-\u036F\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F\u3099\u309A\u200B-\u200D\uFEFF\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/u;
+
+function partitionJapaneseText(text) {
+    const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
+    const spans = [];
+    let current = null;
+    for (const { segment } of segmenter.segment(text)) {
+        const isSafe = !UNSAFE_KUROMOJI_PATTERN.test(segment);
+        if (!current || current.isSafe !== isSafe) {
+            current = { isSafe, text: segment };
+            spans.push(current);
+        } else {
+            current.text += segment;
+        }
+    }
+    return spans;
+}
+
+function _tokenizeKuromojiSafeSpan(spanText, tokenizer) {
+    const kuromojiTokens = tokenizer.tokenize(spanText);
+    const compact = s => s.replace(/\s/gu, '');
+    const surfaceStr = kuromojiTokens.map(t => t.surface_form).join('');
+    if (compact(surfaceStr) !== compact(spanText)) {
+        // Fallback if Kuromoji dropped anything
+        return tokenizeJapaneseFast(spanText);
+    }
+
+    return kuromojiTokens.map(t => {
+        const token = { surface: t.surface_form };
+        const isPunc = (t.pos === '記号' || t.pos === '空白' || isPunctuation(t.surface_form)) && !hasKanji(t.surface_form);
+        if (isPunc) {
+            token.isPunctuation = true;
+        }
+
+        const nfkc = t.surface_form.normalize('NFKC');
+        const isKana = isJapaneseKanaText(t.surface_form) || isJapaneseKanaText(nfkc);
+        let kanaReading = !isPunc && t.reading
+            ? katakanaToHiragana(t.reading)
+            : !isPunc && isKana
+                ? katakanaToHiragana(nfkc)
+                : undefined;
+
+        // Correct spoken particle pronunciation for は (wa) and へ (e)
+        if (t.pos === '助詞' || t.pos_detail_1?.includes('助詞')) {
+            if (t.surface_form === 'は') {
+                kanaReading = 'わ';
+            } else if (t.surface_form === 'へ') {
+                kanaReading = 'え';
+            }
+        }
+
+        // Only add reading for tokens containing kanji (skip punctuation)
+        if (kanaReading && hasKanji(t.surface_form)) {
+            token.reading = kanaReading;
+            const parts = segmentJapaneseRuby(t.surface_form, kanaReading);
+            if (parts && parts.length > 0) {
+                token.rubyParts = parts;
+            }
+        }
+
+        if (kanaReading) {
+            token.romanization = getJapaneseRomaji(kanaReading, nfkc);
+        }
+
+        // Add base form if different from surface
+        if (t.basic_form && t.basic_form !== t.surface_form && t.basic_form !== '*') {
+            token.baseForm = t.basic_form;
+        }
+
+        // Add part of speech
+        if (t.pos && t.pos !== '*' && !isPunc) {
+            token.partOfSpeech = t.pos;
+        }
+
+        return token;
+    });
 }
 
 /**
@@ -202,63 +301,23 @@ export function tokenizeJapaneseFast(text) {
  * Automatically falls back to fast Intl.Segmenter if Kuromoji initialization times out (>2000ms)
  */
 export async function tokenizeJapanese(text) {
+    if (!text || typeof text !== 'string') return [];
     try {
         const tokenizer = await Promise.race([
             getKuromojiTokenizer(),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Kuromoji init timeout')), 2000))
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Kuromoji init timeout')), 10000))
         ]);
-        const kuromojiTokens = tokenizer.tokenize(text);
 
-        return kuromojiTokens.map(t => {
-            const token = { surface: t.surface_form };
-
-            // Check for punctuation using kuromoji POS or regex
-            // Kuromoji marks punctuation as 記号 (symbol) or with pos_detail_1 containing punctuation types
-            const isPunc = t.pos === '記号' || t.pos === '空白' || isPunctuation(t.surface_form);
-            if (isPunc) {
-                token.isPunctuation = true;
+        const spans = partitionJapaneseText(text);
+        const allTokens = [];
+        for (const span of spans) {
+            if (span.isSafe) {
+                allTokens.push(..._tokenizeKuromojiSafeSpan(span.text, tokenizer));
+            } else {
+                allTokens.push(...tokenizeJapaneseFast(span.text));
             }
-
-            let kanaReading = !isPunc && t.reading
-                ? katakanaToHiragana(t.reading)
-                : !isPunc && isJapaneseKanaText(t.surface_form)
-                    ? katakanaToHiragana(t.surface_form)
-                    : undefined;
-
-            // Correct spoken particle pronunciation for は (wa) and へ (e)
-            if (t.pos === '助詞' || t.pos_detail_1?.includes('助詞')) {
-                if (t.surface_form === 'は') {
-                    kanaReading = 'わ';
-                } else if (t.surface_form === 'へ') {
-                    kanaReading = 'え';
-                }
-            }
-
-            // Only add reading for tokens containing kanji (skip punctuation)
-            if (kanaReading && hasKanji(t.surface_form)) {
-                token.reading = kanaReading;
-                const parts = segmentJapaneseRuby(t.surface_form, kanaReading);
-                if (parts && parts.length > 0) {
-                    token.rubyParts = parts;
-                }
-            }
-
-            if (kanaReading) {
-                token.romanization = getJapaneseRomaji(kanaReading, t.surface_form);
-            }
-
-            // Add base form if different from surface
-            if (t.basic_form && t.basic_form !== t.surface_form && t.basic_form !== '*') {
-                token.baseForm = t.basic_form;
-            }
-
-            // Add part of speech
-            if (t.pos && t.pos !== '*') {
-                token.partOfSpeech = t.pos;
-            }
-
-            return token;
-        });
+        }
+        return allTokens;
     } catch (err) {
         console.warn('[Tokenizer] Kuromoji unavailable or timed out, falling back to Intl.Segmenter:', err?.message || err);
         return tokenizeJapaneseFast(text);
@@ -283,9 +342,11 @@ const PROTECTED_GA_NOUNS = new Set([
 ]);
 
 const PROTECTED_KOREAN_WORDS = new Set([
+    '서로', '도로', '놀이', '종이', '나이', '오이', '회의', '아이', '사이', '바위', '가위',
     '같이', '많이', '없이', '굳이', '차라리', '미리', '멀리', '빨리', '달리', '특히', '히',
     '동안', '만큼', '그만', '다만', '얼마나', '설마', '아마', '보통', '가장', '정말', '진짜',
-    '오늘', '내일', '매일', '모레', '어제', '언제', '이제', '아직', '벌써', '다시', '거의'
+    '오늘', '내일', '매일', '모레', '어제', '언제', '이제', '아직', '벌써', '다시', '거의',
+    '지도', '온도', '태도', '속도', '제도', '포도', '기도', '시도'
 ]);
 
 const PROTECTED_EUN_ADJECTIVE_STEMS = new Set([
@@ -364,8 +425,8 @@ export function detachKoreanParticle(word) {
         return { stem: stem1, particle: '로' };
     }
 
-    // Neutral 1-syllable particles (stem >= 2 characters to avoid over-stripping roots)
-    if (word.length >= 3 && (last === '의' || last === '도' || last === '만' || last === '에')) {
+    // Neutral 1-syllable particles (stem >= 1 character, e.g. 책도, 집에, 나만, 나의)
+    if (word.length >= 2 && (last === '의' || last === '도' || last === '만' || last === '에')) {
         return { stem: stem1, particle: last };
     }
 
@@ -488,71 +549,59 @@ export async function tokenizeEnglish(text) {
     const segments = [...segmenter.segment(text)];
     const nlp = await getNlp();
     const doc = nlp(text);
-    const json = doc.json({ terms: true });
-    const terms = json.flatMap(s => s.terms || []).filter(t => t.text);
+    const json = doc.json({ terms: true, offset: true });
+    const terms = json.flatMap(s => s.terms || []).filter(t => t.text && t.offset);
 
-    let termIndex = 0;
+    const filteredSegments = segments.filter(seg => seg.isWordLike || seg.segment.trim());
 
-    return segments
-        .filter(seg => seg.isWordLike || seg.segment.trim())
-        .map(seg => {
-            const token = { surface: seg.segment };
-            if (!seg.isWordLike || isPunctuation(seg.segment)) {
-                token.isPunctuation = true;
-                return token;
-            }
-
-            if (termIndex < terms.length) {
-                let term = terms[termIndex];
-                const cleanSeg = seg.segment.toLowerCase().replace(/[^a-z0-9]/gi, '');
-                let termClean = (term.text || '').toLowerCase().replace(/[^a-z0-9]/gi, '');
-
-                // Align termIndex forward if behind
-                while (termIndex < terms.length && termClean && !cleanSeg.startsWith(termClean) && !termClean.startsWith(cleanSeg)) {
-                    termIndex++;
-                    if (termIndex < terms.length) {
-                        term = terms[termIndex];
-                        termClean = (term.text || '').toLowerCase().replace(/[^a-z0-9]/gi, '');
-                    }
-                }
-
-                // Advance termIndex past all terms that belong to this segment (e.g. contractions like "don't" -> "do" + "not")
-                let combinedTermText = termClean;
-                let consumedTerms = 1;
-                while (
-                    cleanSeg.length > combinedTermText.length &&
-                    termIndex + consumedTerms < terms.length
-                ) {
-                    const nextTermText = (terms[termIndex + consumedTerms].text || '').toLowerCase().replace(/[^a-z0-9]/gi, '');
-                    if (cleanSeg.startsWith(combinedTermText + nextTermText) || (combinedTermText + nextTermText).startsWith(cleanSeg)) {
-                        combinedTermText += nextTermText;
-                        consumedTerms++;
-                    } else {
-                        break;
-                    }
-                }
-                termIndex += consumedTerms;
-
-                if (term.tags && term.tags.length > 0) {
-                    token.partOfSpeech = term.tags[0];
-                }
-
-                const normal = term.normal || term.text.toLowerCase();
-                let lemma = normal;
-                if (term.tags && term.tags.includes('Verb')) {
-                    lemma = doc.match(term.text).verbs().conjugate()[0]?.Infinitive || normal;
-                } else if (term.tags && term.tags.includes('Noun')) {
-                    lemma = doc.match(term.text).nouns().conjugate()[0]?.Singular || normal;
-                } else if (term.tags && (term.tags.includes('Adjective') || term.tags.includes('Comparative') || term.tags.includes('Superlative'))) {
-                    lemma = doc.match(term.text).adjectives().conjugate()[0]?.Adjective || normal;
-                }
-                if (lemma && lemma.toLowerCase() !== token.surface.toLowerCase()) {
-                    token.baseForm = lemma;
-                }
-            }
-
+    return filteredSegments.map(seg => {
+        const token = { surface: seg.segment };
+        if (!seg.isWordLike || isPunctuation(seg.segment)) {
+            token.isPunctuation = true;
             return token;
+        }
+
+        const segStart = seg.index;
+        const segEnd = seg.index + seg.segment.length;
+
+        // Find terms that overlap with this segment's exact span
+        const matchingTerms = terms.filter(t => {
+            const termStart = t.offset.start;
+            const termEnd = termStart + t.offset.length;
+            return (segStart <= termStart && segEnd >= termEnd) ||
+                   (termStart <= segStart && termEnd >= segEnd);
         });
+
+        if (matchingTerms.length === 0) {
+            return token;
+        }
+
+        const primaryTerm = matchingTerms[0];
+        const isEmailOrUrl = primaryTerm.tags?.some(tag => tag === 'Email' || tag === 'Url');
+        if (isEmailOrUrl && primaryTerm.text !== seg.segment) {
+            return token;
+        }
+
+        if (primaryTerm.tags && primaryTerm.tags.length > 0) {
+            token.partOfSpeech = primaryTerm.tags[0];
+        }
+
+        const normal = primaryTerm.normal || primaryTerm.text.toLowerCase();
+        let lemma = normal;
+        if (primaryTerm.tags && primaryTerm.tags.includes('Verb')) {
+            lemma = doc.match(primaryTerm.text).verbs().conjugate()[0]?.Infinitive || normal;
+        } else if (primaryTerm.tags && primaryTerm.tags.includes('Noun')) {
+            lemma = doc.match(primaryTerm.text).nouns().conjugate()[0]?.Singular || normal;
+        } else if (primaryTerm.tags && (primaryTerm.tags.includes('Adjective') || primaryTerm.tags.includes('Comparative') || primaryTerm.tags.includes('Superlative'))) {
+            lemma = doc.match(primaryTerm.text).adjectives().conjugate()[0]?.Adjective || normal;
+        }
+
+        if (lemma && lemma.toLowerCase() !== token.surface.toLowerCase()) {
+            token.baseForm = lemma;
+        }
+
+        return token;
+    });
 }
 
 /**
@@ -594,14 +643,26 @@ export async function enrichSegmentsWithTokens(segments, lang) {
         return segments;
     }
 
-    // Check if every segment already has valid tokens
-    const allHaveTokens = segments.every(s => s && Array.isArray(s.tokens) && s.tokens.length > 0);
-    if (allHaveTokens) {
+    // Check if every segment already has valid full tokens (not degraded fallback tokens)
+    const allHaveFullTokens = segments.every(s => {
+        if (!s || !Array.isArray(s.tokens) || s.tokens.length === 0) return false;
+        if (normLang === 'ja' && hasKanji(s.text)) {
+            return s.tokens.some(t => t.reading || t.rubyParts);
+        }
+        return true;
+    });
+    if (allHaveFullTokens) {
         return segments;
     }
 
-    // Pre-initialize tokenizer modules for performance before the map loop
-    if (normLang === 'ja') await getKuromojiTokenizer().catch(() => null);
+    // Pre-initialize tokenizer modules for performance before the map loop with a bounded timeout
+    let kuromojiAvailable = false;
+    if (normLang === 'ja') {
+        kuromojiAvailable = await Promise.race([
+            getKuromojiTokenizer().then(() => true),
+            new Promise(resolve => setTimeout(() => resolve(false), 1500))
+        ]).catch(() => false);
+    }
     if (normLang === 'zh') await getPinyin().catch(() => null);
     if (normLang === 'ko') await getRomanizeKorean().catch(() => null);
     if (normLang === 'en') await getNlp().catch(() => null);
@@ -609,7 +670,9 @@ export async function enrichSegmentsWithTokens(segments, lang) {
     const enriched = await Promise.all(
         segments.map(async (segment) => {
             if (!segment) return segment;
-            if (Array.isArray(segment.tokens) && segment.tokens.length > 0) {
+            const hasFullTokens = Array.isArray(segment.tokens) && segment.tokens.length > 0 &&
+                (normLang !== 'ja' || !hasKanji(segment.text) || segment.tokens.some(t => t.reading || t.rubyParts));
+            if (hasFullTokens) {
                 return segment;
             }
 
@@ -619,7 +682,9 @@ export async function enrichSegmentsWithTokens(segments, lang) {
             }
 
             try {
-                const tokens = await tokenize(text, normLang);
+                const tokens = (normLang === 'ja' && !kuromojiAvailable)
+                    ? tokenizeJapaneseFast(text)
+                    : await tokenize(text, normLang);
                 return {
                     ...segment,
                     tokens: Array.isArray(tokens) ? tokens : []

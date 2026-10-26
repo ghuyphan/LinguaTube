@@ -40,7 +40,7 @@ async function loadYouTubeVideoDetails(videoId) {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Accept-Language': 'en-US,en;q=0.9'
             },
-            signal, redirect: 'follow'
+            signal, redirect: 'manual'
         });
         if (!res.ok) return { duration: null, isLive: false };
         const html = new TextDecoder().decode(await readBoundedBody(res, signal, 8 * 1024 * 1024));

@@ -96,6 +96,24 @@ test('payment, diamond and proximity migrations execute with role isolation and 
         assert.equal((await db.query(`SELECT diamonds FROM profiles WHERE id='${uid}'`)).rows[0].diamonds,5);
         await db.query(`SELECT public.refund_transcription_credits('cancel-before-charge','${uid}',1)`);
         assert.equal((await db.query(`SELECT public.consume_transcription_credits('cancel-before-charge','${uid}',1) AS result`)).rows[0].result.success,false);
+        // Service-only ledgers reject invalid amounts and cross-account/job replays.
+        for (const amount of ['NULL', '0', '-1', '5']) {
+            await assert.rejects(db.query(`SELECT public.consume_transcription_credits('invalid','${uid}',${amount})`), /Invalid charge/);
+            await assert.rejects(db.query(`SELECT public.refund_transcription_credits('invalid','${uid}',${amount})`), /Invalid refund/);
+        }
+        for (const rpc of ['consume_transcription_credits', 'refund_transcription_credits']) {
+            await assert.rejects(db.query(`SELECT public.${rpc}('credit-job','22222222-2222-4222-8222-222222222222',1)`), /mismatch/);
+            await assert.rejects(db.query(`SELECT public.${rpc}('credit-job','${uid}',2)`), /mismatch/);
+        }
+        for (const role of ['anon', 'authenticated']) {
+            await db.exec(`SET ROLE ${role}`);
+            for (const sql of [charge, refund, `SELECT public.consume_user_diamonds('${uid}',1)`,
+                `SELECT public.refund_user_diamonds('${uid}',1)`, `SELECT public.regenerate_user_diamonds('${uid}')`,
+                'SELECT * FROM public.transcription_credit_operations', 'SELECT * FROM public.subscription_grants']) {
+                await assert.rejects(db.query(sql), /permission denied/);
+            }
+            await db.exec('RESET ROLE');
+        }
         // Regeneration/access reads do not write unchanged profile rows.
         await db.exec(`CREATE TABLE profile_write_count(n integer); INSERT INTO profile_write_count VALUES(0);
             CREATE FUNCTION count_profile_write() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN UPDATE public.profile_write_count SET n=n+1; RETURN NEW; END; $$;
@@ -163,5 +181,45 @@ test('payment, diamond and proximity migrations execute with role isolation and 
         await assert.rejects(db.query("SELECT public.claim_revenuecat_event('transfer')"),/permission denied/);
         await assert.rejects(db.query(refund),/permission denied/);
         await db.exec('RESET ROLE');
+        await db.exec(await readFile(new URL('../db/operations/diamond-authority-audit.sql', import.meta.url), 'utf8'));
+    } finally { await db.close(); }
+});
+
+
+test('checked-in profile trigger blocks direct balance/subscription writes while allowing ordinary profile edits', { skip: !modulePath }, async () => {
+    const { PGlite } = await import(modulePath);
+    const db = new PGlite();
+    const uid = '11111111-1111-4111-8111-111111111111';
+    try {
+        await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role;
+            CREATE SCHEMA auth;
+            CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql AS $$ SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
+            CREATE FUNCTION auth.role() RETURNS text LANGUAGE sql AS $$ SELECT current_setting('request.jwt.claim.role',true) $$;
+            CREATE TABLE profiles(id uuid PRIMARY KEY,email text,name text,legacy_pb_id text,
+                diamonds integer DEFAULT 5,diamonds_updated_at timestamptz DEFAULT now(),
+                subscription_tier text DEFAULT 'free',subscription_expires timestamptz,updated_at timestamptz DEFAULT now());
+            ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+            GRANT USAGE ON SCHEMA auth TO anon,authenticated,service_role;
+            GRANT ALL ON profiles TO anon,authenticated,service_role;
+            CREATE POLICY profiles_select_own ON profiles FOR SELECT TO authenticated USING(auth.uid()=id);
+            CREATE POLICY profiles_update_own ON profiles FOR UPDATE TO authenticated USING(auth.uid()=id) WITH CHECK(auth.uid()=id);
+            INSERT INTO profiles(id,name) VALUES('${uid}','Learner');`);
+        const schema = await readFile(new URL('../db/supabase-schema-and-triggers.sql', import.meta.url), 'utf8');
+        const start = schema.indexOf('CREATE OR REPLACE FUNCTION public.protect_profile_fields()');
+        const end = schema.indexOf('EXECUTE FUNCTION public.protect_profile_fields();', start) + 'EXECUTE FUNCTION public.protect_profile_fields();'.length;
+        assert.ok(start >= 0 && end > start);
+        await db.exec(schema.slice(start, end));
+        await db.exec(`SET request.jwt.claim.sub='${uid}'; SET request.jwt.claim.role='authenticated'; SET ROLE authenticated`);
+        await db.query(`UPDATE profiles SET name='Updated' WHERE id='${uid}'`);
+        assert.equal((await db.query('SELECT name FROM profiles')).rows[0].name, 'Updated');
+        for (const change of ["diamonds=999", "diamonds_updated_at=now()+interval '1 day'", "subscription_tier='premium'", "subscription_expires=now()+interval '10 years'"]) {
+            await assert.rejects(db.query(`UPDATE profiles SET ${change} WHERE id='${uid}'`), /Cannot modify/);
+        }
+        await assert.rejects(db.query("INSERT INTO profiles(id,diamonds,subscription_tier) VALUES('22222222-2222-4222-8222-222222222222',999,'premium')"), /row-level security/);
+        await db.exec('RESET ROLE; SET ROLE anon');
+        assert.equal((await db.query(`UPDATE profiles SET diamonds=999 WHERE id='${uid}' RETURNING id`)).rows.length, 0);
+        await db.exec('RESET ROLE');
+        assert.equal((await db.query('SELECT diamonds,subscription_tier FROM profiles')).rows[0].diamonds, 5);
+        assert.equal((await db.query('SELECT subscription_tier FROM profiles')).rows[0].subscription_tier, 'free');
     } finally { await db.close(); }
 });

@@ -1,6 +1,7 @@
 import { fixture } from './fixtures/transcription-db.mjs';
 // Run with Node 22+; uses the built-in SQLite engine, never a local server.
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { atomicFailAndRefundAiJob, completeAiJob } from '../functions-src/data/transcript-db.js';
 import { anonymousBalance, consumeAnonymousCredits } from '../functions-src/data/anonymous-credits.js';
@@ -83,4 +84,57 @@ test('anonymous consumption rejects invalid amounts before initializing balances
         await assert.rejects(consumeAnonymousCredits(db,null,'client-a',amount,null), /Invalid anonymous credit amount/);
     }
     assert.equal(sqlite.prepare('SELECT count(*) n FROM anonymous_credit_balances').get().n,0);
+});
+
+test('anonymous charge replay rejects another owner or amount without another debit', async t => {
+    const { db, reserve } = await fixture(t);
+    const job = await reserve('owner-replay');
+    await consumeAnonymousCredits(db, null, 'client-a', 1, job.id);
+    await assert.rejects(consumeAnonymousCredits(db, null, 'client-b', 1, job.id), /mismatch/);
+    await assert.rejects(consumeAnonymousCredits(db, null, 'client-a', 2, job.id), /mismatch/);
+    assert.equal((await anonymousBalance(db, null, 'client-a')).diamonds, 2);
+    assert.equal((await anonymousBalance(db, null, 'client-b')).diamonds, 3);
+});
+
+test('lost D1 refund acknowledgement replays the ledger without duplicate credit', async t => {
+    const { db, sqlite, reserve } = await fixture(t);
+    const job = await reserve('lost-refund');
+    await consumeAnonymousCredits(db, null, 'client-a', 1, job.id);
+    await atomicFailAndRefundAiJob(db, job.id);
+    const prepare = db.prepare.bind(db);
+    let lost = false;
+    db.prepare = sql => {
+        const statement = prepare(sql);
+        if (sql.includes("SET refund_status='confirmed'")) {
+            const first = statement.first.bind(statement);
+            statement.first = async () => {
+                const result = await first();
+                if (!lost) { lost = true; throw new Error('D1 acknowledgement lost after commit'); }
+                return result;
+            };
+        }
+        return statement;
+    };
+    assert.equal(await recoverJobRefund({ VOCAB_DB: db }, job.id), false);
+    assert.equal(sqlite.prepare('SELECT refund_status FROM ai_transcription_jobs').get().refund_status, 'confirmed');
+    assert.equal(await recoverJobRefund({ VOCAB_DB: db }, job.id), false);
+    assert.equal((await anonymousBalance(db, null, 'client-a')).diamonds, 3);
+});
+
+test('refund recovery does not report confirmation after its lease is replaced', async t => {
+    const { db, sqlite, reserve } = await fixture(t);
+    const job = await reserve('lease-replaced', '11111111-1111-4111-8111-111111111111');
+    await atomicFailAndRefundAiJob(db, job.id);
+    t.mock.method(globalThis, 'fetch', async () => {
+        sqlite.prepare("UPDATE ai_transcription_jobs SET refund_lease='another-worker' WHERE id=?").run(job.id);
+        return Response.json({ success: true, state: 'refunded' });
+    });
+    assert.equal(await recoverJobRefund({ VOCAB_DB: db, SUPABASE_SERVICE_ROLE_KEY: 'fixture' }, job.id), false);
+    assert.equal(sqlite.prepare('SELECT refund_status FROM ai_transcription_jobs').get().refund_status, 'pending');
+});
+
+
+test('read-only diamond recovery audit executes against the required D1 schema', async t => {
+    const { sqlite } = await fixture(t);
+    sqlite.exec(await readFile(new URL('../db/operations/diamond-recovery-audit.d1.sql', import.meta.url), 'utf8'));
 });

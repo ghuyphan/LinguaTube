@@ -17,10 +17,14 @@ export async function recoverJobRefund(env, jobId, deadline = Date.now() + 5000)
                 p_job_id: job.id, p_user_id: job.user_id, p_amount: job.diamonds_charged
             } })
             : { success: await refundAnonymousJob(db, env.TRANSCRIPT_CACHE, job) };
-        if (!result?.success) throw new Error('Refund unconfirmed');
-        await db.prepare(`UPDATE ai_transcription_jobs SET refund_status='confirmed',diamonds_refunded=1,
-            refund_lease=NULL,refund_lease_until=NULL WHERE id=? AND refund_lease=?`).bind(job.id, lease).run();
-        return true;
+        if (result?.success !== true || (job.user_id &&
+            !['refunded', 'cancelled', 'account_deleted'].includes(result.state))) {
+            throw new Error('Refund unconfirmed');
+        }
+        const confirmed = await db.prepare(`UPDATE ai_transcription_jobs SET refund_status='confirmed',diamonds_refunded=1,
+            refund_lease=NULL,refund_lease_until=NULL WHERE id=? AND refund_lease=? AND refund_status='pending'
+            RETURNING id`).bind(job.id, lease).first();
+        return confirmed?.id === job.id;
     } catch (error) {
         const delay = Math.min(3600, 30 * 2 ** Math.min(job.refund_attempts, 7));
         await db.prepare(`UPDATE ai_transcription_jobs SET refund_lease=NULL,refund_lease_until=NULL,

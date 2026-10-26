@@ -454,3 +454,9 @@ Keep the 200 eligible-candidate window independent of offset/page size/seed. App
 - Runtime fetch compatibility checks must use native workerd fetch with controlled outbound service responses. A mocked global fetch does not validate RequestInit compatibility.
 - Credential-bearing calls use `redirect: 'manual'` and reject non-2xx responses; never follow a redirect with provider or service-role credentials.
 - For body-bearing POST/PUT/PATCH requests, middleware accepts only bounded UTF-8 JSON objects and forwards original bytes for webhook signatures. Preserve no-body maintenance requests.
+
+## Diamond paid-job authority (2026-10-26)
+
+New paid transcription jobs require fresh, finite, positive YouTube duration before reservation or charge. Never use request duration, stored caption/metadata duration, or a default length for pricing or tier authorization. Cached AI transcripts and existing jobs remain reusable without a new charge. Only a strict committed charge acknowledgement authorizes submission; atomically claim a queued, confirmed, non-refunding job before the provider POST. Preserve job-keyed recovery on ambiguous responses. See [diamond enforcement handoff](doc/diamond-enforcement-2026-10-26.md).
+
+AI pricing follow-up: `/api/transcript` supports the `quoteOnly` preview mode and an optional confirmed `expectedDiamondCost` for new paid jobs. Never trust that field as a price override; reject a changed price before reservation/charge. Cached/active reuse quotes zero. Deploy backend support before mobile quote consumers; see the diamond enforcement handoff for the contract and tests.

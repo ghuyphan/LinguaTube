@@ -5,7 +5,7 @@ import { sha256 } from '../../utils/utils.js';
  */
 
 import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '../../utils/utils.js';
-import { tokenize } from '../../utils/tokenizer.js';
+import { tokenize, isKuromojiReady } from '../../utils/tokenizer.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -31,6 +31,13 @@ export async function onRequest(context) {
     const { request, params, env } = context;
     const lang = params.lang;
     const TOKEN_CACHE = env.TRANSCRIPT_CACHE;
+
+    if (request.signal?.aborted) {
+        return new Response(JSON.stringify({ error: 'Request aborted' }), {
+            status: 499,
+            headers: { 'Content-Type': 'application/json' }
+        });
+    }
 
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
@@ -58,30 +65,49 @@ export async function onRequest(context) {
             return jsonResponse({ error: textValidation.error }, 400);
         }
 
+        if (request.signal?.aborted) {
+            return new Response(JSON.stringify({ error: 'Request aborted' }), {
+                status: 499,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
         // 1. Check in-memory cache (0 KV ops, < 0.1ms)
         const cacheKey = `tokens:v6:${lang}:${await sha256(JSON.stringify(text))}`;
         const memHit = memTokenSingleCache.get(cacheKey);
         if (memHit) {
-            return jsonResponse(memHit, 200, {
-                'Cache-Control': 'public, max-age=604800',
-                'X-Cache': 'HIT-MEM'
-            });
+            const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
+            const shouldUpgradeFallback = memHit.isFallback && (lang !== 'ja' || isKuromojiReady());
+            if (isExpired || shouldUpgradeFallback) {
+                memTokenSingleCache.delete(cacheKey);
+            } else if (Array.isArray(memHit.tokens)) {
+                return jsonResponse(memHit, 200, {
+                    'Cache-Control': 'public, max-age=604800',
+                    'X-Cache': 'HIT-MEM'
+                });
+            } else {
+                memTokenSingleCache.delete(cacheKey);
+            }
         }
 
         // 2. Check KV cache
-        if (TOKEN_CACHE) {
+        if (TOKEN_CACHE && !request.signal?.aborted) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
-                if (cached) {
-                    if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
-                        const oldest = memTokenSingleCache.keys().next().value;
-                        if (oldest) memTokenSingleCache.delete(oldest);
+                if (cached && Array.isArray(cached.tokens)) {
+                    const isDegradedJa = lang === 'ja' && isKuromojiReady() && cached.isFallback;
+                    if (!isDegradedJa) {
+                        if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
+                            const oldest = memTokenSingleCache.keys().next().value;
+                            if (oldest) memTokenSingleCache.delete(oldest);
+                        }
+                        const entry = { ...cached, cachedAt: Date.now() };
+                        memTokenSingleCache.set(cacheKey, entry);
+                        return jsonResponse(entry, 200, {
+                            'Cache-Control': 'public, max-age=604800',
+                            'X-Cache': 'HIT'
+                        });
                     }
-                    memTokenSingleCache.set(cacheKey, cached);
-                    return jsonResponse(cached, 200, {
-                        'Cache-Control': 'public, max-age=604800',
-                        'X-Cache': 'HIT'
-                    });
                 }
             } catch {
                 // Cache read failed, continue
@@ -96,9 +122,17 @@ export async function onRequest(context) {
             return rateLimitResponse(rateCheck.resetAt);
         }
 
+        if (request.signal?.aborted) {
+            return new Response(JSON.stringify({ error: 'Request aborted' }), {
+                status: 499,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
         // Tokenize using shared module
+        const isFallback = lang === 'ja' && !isKuromojiReady();
         const tokens = await tokenize(text, lang);
-        const result = { tokens };
+        const result = { tokens, cachedAt: Date.now(), isFallback };
 
         // Save to warm in-memory cache (Rule 2: zero KV writes for micro tokenization)
         if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {

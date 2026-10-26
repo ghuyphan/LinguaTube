@@ -585,3 +585,9 @@ See the [implementation record](reviews/cloudflare-functions-implementation-2026
 ### API edge-case test map
 
 `tests/fixtures/cloudflare-edge-cases.mjs` inventories all 24 route modules; `tests/cloudflare-routes-edge-cases.integration.mjs` bundles them with the real middleware and runs local workerd with D1/R2/KV. An inventory assertion rejects future routes without a test entry. `tests/cloudflare-shared-edge-cases.test.mjs` adds deterministic shared-helper, body-boundary, cache and R2 publication checks to the default backend suite. The [coverage report](reviews/cloudflare-edge-cases-2026-10-25.md) distinguishes runtime contracts from existing financial/concurrency suites and remaining live-service limits.
+
+## Diamond authorization and recovery
+
+`services/transcript.service.js` verifies duration and atomically claims paid submission; `services/diamond.service.js` validates charge acknowledgements; `services/refund-recovery.js` requires committed terminal ledger evidence. The [diamond handoff](diamond-enforcement-2026-10-26.md) lists tests and read-only PostgreSQL/D1 checks. No frontend or mobile UI changes are required.
+
+AI pricing follow-up: `/api/transcript` supports the `quoteOnly` preview mode and an optional confirmed `expectedDiamondCost` for new paid jobs. Never trust that field as a price override; reject a changed price before reservation/charge. Cached/active reuse quotes zero. Deploy backend support before mobile quote consumers; see the diamond enforcement handoff for the contract and tests.

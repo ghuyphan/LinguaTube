@@ -9,7 +9,6 @@ import {
     saveVideoLanguages,
     addVideoLanguages,
     addSubLanguage,
-    getVideoDuration,
     markNoTranscript,
     deleteNoTranscript
 } from '../data/video-info-db.js';
@@ -197,6 +196,31 @@ export class TranscriptService {
         return nativeResult;
     }
 
+    async _verifiedAIPrice(videoId, user) {
+        const details = await fetchYouTubeVideoDetails(videoId);
+        if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
+        const cost = transcriptionDiamondCost(details.duration);
+        const tier = this.diamondService.resolveTier(user);
+        const maxDurationSeconds = getTierDiamondConfig(tier).maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
+        return { cost, tier, durationSeconds: details.duration, maxDurationSeconds };
+    }
+
+    // A quote never reserves a job, debits credits or submits provider work.
+    async quoteAIJob(context, { videoId, lang, user, diamondInfo }) {
+        const db = context.db || context.env?.VOCAB_DB;
+        const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
+        const normalizedLang = normalizeLanguageCode(lang);
+        const cached = await getTranscriptFromR2(r2, videoId, normalizedLang);
+        const reusable = (cached?.source === 'ai' && cached.segments?.length > 0) ||
+            Boolean(await getActiveAiJob(db, videoId, normalizedLang));
+        if (reusable) return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
+        const price = await this._verifiedAIPrice(videoId, user);
+        const reason = price.durationSeconds > price.maxDurationSeconds ? 'VIDEO_TOO_LONG' :
+            diamondInfo.diamonds < price.cost ? 'INSUFFICIENT_DIAMONDS' : null;
+        return { cost: price.cost, ...diamondInfo, durationSeconds: price.durationSeconds,
+            maxDurationSeconds: price.maxDurationSeconds, canGenerate: reason === null, reason };
+    }
+
     /**
      * Start an AI Transcription Job using Gladia
      */
@@ -231,29 +255,13 @@ export class TranscriptService {
 
         // Existing D1 durations may originate from clients or incomplete captions.
         // Verify once, only on the path that can create a new paid operation.
-        const details = await fetchYouTubeVideoDetails(videoId);
-        if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
-        let duration = details.duration;
-        if (!duration || duration <= 0) {
-            const dbDuration = await getVideoDuration(db, videoId);
-            if (dbDuration && dbDuration > 0) {
-                duration = dbDuration;
-            }
+        const price = await this._verifiedAIPrice(videoId, user);
+        const requiredDiamonds = price.cost;
+        const tier = price.tier;
+        if (price.durationSeconds > price.maxDurationSeconds) throw new Error(`VIDEO_TOO_LONG: Video exceeds the ${Math.round(price.maxDurationSeconds / 60)} minute tier limit.`);
+        if (params.body?.expectedDiamondCost != null && params.body.expectedDiamondCost !== requiredDiamonds) {
+            throw new Error('DIAMOND_PRICE_CHANGED: Confirm the updated diamond cost before generating.');
         }
-        if (!duration || duration <= 0) {
-            const bodyDur = typeof params.body?.duration === 'number' && Number.isFinite(params.body.duration) && params.body.duration > 0
-                ? Math.round(params.body.duration)
-                : null;
-            if (bodyDur && bodyDur > 0) {
-                duration = bodyDur;
-            }
-        }
-        const effectiveDuration = duration || 300;
-        const requiredDiamonds = transcriptionDiamondCost(effectiveDuration);
-        const tier = params.tier || this.diamondService.resolveTier(user);
-        const tierConfig = getTierDiamondConfig(tier);
-        const maxDurationSec = tierConfig.maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
-        if (effectiveDuration > maxDurationSec) throw new Error(`VIDEO_TOO_LONG: Video exceeds the ${Math.round(maxDurationSec / 60)} minute tier limit.`);
 
         // 5. Atomic Lock Reservation Pattern:
         // Reserve job slot in D1. If another request just reserved it, isNew will be false.
@@ -281,7 +289,7 @@ export class TranscriptService {
 
         // 6. Consume diamond(s) with correct parameter order: (clientId, cost, user, env, context)
         const consumeResult = await this.diamondService.consumeDiamond(clientId, requiredDiamonds, user, env, context, jobId);
-        if (!consumeResult.success) {
+        if (consumeResult.success !== true || !Number.isSafeInteger(consumeResult.diamonds) || consumeResult.diamonds < 0) {
             // Mark the reservation row as failed so concurrent waiters are notified cleanly
             await atomicFailAndRefundAiJob(db, jobId, null, consumeResult.reason || 'insufficient_diamonds');
             if (env.VOCAB_DB) await recoverJobRefund(env, jobId);
@@ -305,7 +313,12 @@ export class TranscriptService {
         const callbackUrl = `${origin}/api/gladia-webhook?token=${derivedToken}&jobId=${jobId}&videoId=${videoId}&lang=${encodeURIComponent(lang)}`;
 
         // Persist submission intent before the chargeable upstream request.
-        await db.prepare("UPDATE ai_transcription_jobs SET submission_state='submitting',submission_started_at=strftime('%s','now') WHERE id=? AND status='queued'").bind(jobId).run();
+        const submission = await db.prepare(`UPDATE ai_transcription_jobs
+            SET submission_state='submitting',submission_started_at=strftime('%s','now')
+            WHERE id=? AND status='queued' AND charge_status='confirmed'
+              AND refund_status='none' AND submission_state='not_started'
+            RETURNING id`).bind(jobId).first();
+        if (submission?.id !== jobId) throw new Error('AI_SERVICE_ERROR: Submission authorization unavailable.');
 
         // 8. Submit to Gladia
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;

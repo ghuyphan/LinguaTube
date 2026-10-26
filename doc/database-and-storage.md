@@ -706,3 +706,7 @@ Apply `db/migrations/d1/20261025_gladia_submission_state.sql` before deploying t
 The existing ingestion lease serializes callback, poll and metadata recovery. New submitting/uncertain/accepted jobs do not expire merely because fifteen minutes elapsed. Unresolved submissions keep their financial ledger and charge pending provider/operator evidence. Use `db/operations/gladia-submission-audit.sql` for a bounded read-only audit; a missing list entry must never trigger automatic refund or resubmission.
 
 No new KV namespace, key family, Supabase migration or R2 key layout is introduced. Optional transcript enrichment preserves JSON fields and R2 metadata and requires the original ETag. Translation merges require a canonical source on HTTP save paths and retain its entire cue list. Empty native-language updates preserve previously discovered native languages. Negative no-transcript records expire after seven days and explicit new observations refresh their timestamp.
+
+## Diamond authority verification
+
+Existing PostgreSQL service-only credit RPCs and private ledgers, the profile protection trigger/RLS, and atomic D1 credit triggers remain the authority. This hardening introduces no schema migration. Read-only audit SQL is in `db/operations/diamond-authority-audit.sql` and `db/operations/diamond-recovery-audit.d1.sql`; see [deployment prerequisites](diamond-enforcement-2026-10-26.md).

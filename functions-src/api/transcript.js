@@ -44,6 +44,7 @@ function timer() { const start = Date.now(); return () => Date.now() - start; }
 
 // Rate limiting for transcript requests and polling
 const TRANSCRIPT_RATE_LIMIT = { max: { anonymous: 20, free: 40, pro: 80, premium: 100 }, windowSeconds: 3600, keyPrefix: 'transcript' };
+const QUOTE_RATE_LIMIT = { max: { anonymous: 60, free: 120, pro: 180, premium: 240 }, windowSeconds: 3600, keyPrefix: 'transcript_quote' };
 const POLL_RATE_LIMIT = { max: { anonymous: 180, free: 240, pro: 360, premium: 480 }, windowSeconds: 3600, keyPrefix: 'transcript_poll' };
 const CACHE_CONTROL = {
     R2_HIT: 'public, max-age=86400, stale-while-revalidate=86400',
@@ -75,7 +76,9 @@ export async function onRequestPost(context) {
     try {
         const body = await request.json();
         if (!body || typeof body !== 'object' || Array.isArray(body) ||
-            ['preferAI', 'forceRefresh'].some(key => body[key] != null && typeof body[key] !== 'boolean') ||
+            ['preferAI', 'forceRefresh', 'quoteOnly'].some(key => body[key] != null && typeof body[key] !== 'boolean') ||
+            (body.expectedDiamondCost != null && (!Number.isInteger(body.expectedDiamondCost) || body.expectedDiamondCost < 0 || body.expectedDiamondCost > 4)) ||
+            (body.quoteOnly === true && (body.preferAI !== true || body.jobId != null || body.resultUrl != null)) ||
             (body.jobId != null && (typeof body.jobId !== 'string' || !/^[a-zA-Z0-9_-]{1,200}$/.test(body.jobId)))) {
             return jsonResponse({ success: false, errorCode: 'INVALID_REQUEST', error: 'Invalid transcript request' }, 400);
         }
@@ -155,7 +158,7 @@ export async function onRequestPost(context) {
         const _cacheManager = new CacheManager(cache);
 
         // Rate Limiting (enforced on ALL operations including AI polling and creation)
-        const rateLimitConfig = getTieredConfig(isPolling ? POLL_RATE_LIMIT : TRANSCRIPT_RATE_LIMIT, tier);
+        const rateLimitConfig = getTieredConfig(body.quoteOnly ? QUOTE_RATE_LIMIT : isPolling ? POLL_RATE_LIMIT : TRANSCRIPT_RATE_LIMIT, tier);
         const rateCheck = await consumeRateLimit(cache, clientId, rateLimitConfig, context);
         if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
 
@@ -191,6 +194,17 @@ export async function onRequestPost(context) {
         };
 
         const orchestratorParams = { videoId: cleanVideoId, lang, jobId, resultUrl, elapsed, availableLanguages, diamondInfo, body, clientId, user, tier, forceRefresh: Boolean(forceRefresh) };
+
+        if (body.quoteOnly === true) {
+            try {
+                const quote = await transcriptService.quoteAIJob(serviceContext, orchestratorParams);
+                return jsonResponse({ success: true, ...quote }, 200, { 'Cache-Control': 'no-store' });
+            } catch (error) {
+                const errorCode = error.message.split(':')[0];
+                if (!['VIDEO_DURATION_UNAVAILABLE', 'LIVESTREAM_NOT_SUPPORTED'].includes(errorCode)) throw error;
+                return jsonResponse({ success: false, errorCode, error: error.message }, 400, { 'Cache-Control': 'no-store' });
+            }
+        }
 
         // -------------------------------------------------------------
         // Polling existing AI (Opaque jobId or legacy resultUrl)
@@ -436,7 +450,9 @@ export async function onRequestPost(context) {
         } catch (aiErr) {
             let errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
             let status = 500;
-            if (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS' || errorCode === 'VIDEO_DURATION_UNAVAILABLE' || errorCode === 'LIVESTREAM_NOT_SUPPORTED') {
+            if (errorCode === 'DIAMOND_PRICE_CHANGED') {
+                status = 409;
+            } else if (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS' || errorCode === 'VIDEO_DURATION_UNAVAILABLE' || errorCode === 'LIVESTREAM_NOT_SUPPORTED') {
                 status = 400;
             } else if (aiErr.message.includes('402') || aiErr.message.includes('quota')) {
                 errorCode = 'AI_QUOTA_EXCEEDED';
