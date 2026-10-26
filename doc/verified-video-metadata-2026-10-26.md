@@ -52,6 +52,22 @@ Local results: 297 backend unit/integration checks passed with no skips; a dedic
 
 The additive D1 migration was applied and its tables/columns verified. Backend f8e24c0 was pushed to main, deployed to Production, and passed GitHub CI. Production quotes verified the exact reported video VW1ayoCUjy8: 1236 seconds, cost 3 diamonds; anonymous eligibility correctly reports VIDEO_TOO_LONG. A 19-second public video quotes 1 diamond; unavailable results return 404. Quotes did not submit paid transcription work.
 
-Live smoke testing exposed that snippet.liveBroadcastContent can be none for a stream with a very large elapsed duration. The verifier now also requests actualStartTime, actualEndTime and scheduledStartTime: a started broadcast without an end is live, a scheduled broadcast without start/end is upcoming, and empty/inconsistent broadcast evidence fails closed. These rules apply even if snippet state is none. Timestamp regression cases and the older workerd fixtures were updated. This follow-up must be deployed and rechecked against the live sample before claiming live rejection verified.
+The initial live-test candidate jfKfPfyJRdk was a historical broadcast that ended on 2026-05-20, as confirmed by its public player broadcast timestamps. Its none classification and large elapsed duration were correct; the failed live assertion used an outdated fixture and did not demonstrate a Google classification defect. The verifier was additionally hardened to request actualStartTime, actualEndTime and scheduledStartTime: a started broadcast without an end is live, a scheduled broadcast without start/end is upcoming, and empty/inconsistent broadcast evidence fails closed. Timestamp regression cases and older workerd fixtures were updated.
 
 Regression results after the timestamp change: 300 backend checks pass; the broader workerd/D1/R2 route and recovery suite is run separately. Mobile fixes remain uncommitted in the Flutter working tree and require an app build/release; a backend deployment does not distribute native code.
+
+## Final production verification
+
+Backend 56b13c5 deployed successfully to Production as 3cf5df37-b31c-42fd-bcfe-2ed984cc4a3b. GitHub lint/build/test checks and the Cloudflare Pages deployment check both succeeded. Public voca.study quote requests verified:
+
+| Case | Result |
+| --- | --- |
+| Reported video VW1ayoCUjy8 | HTTP 200; official duration 1236 seconds; cost 3; repeat returns the same metadata |
+| Short video jNQXAC9IVRw | HTTP 200; duration 19 seconds; cost 1; anonymous generation eligible |
+| Active Lofi broadcast 0sfDth4lMLc | HTTP 400 LIVESTREAM_NOT_SUPPORTED |
+| Active NASA broadcast ROboUHfPUrU | HTTP 400 LIVESTREAM_NOT_SUPPORTED |
+| Unavailable video zzzzzzzzzzz | HTTP 404 VIDEO_UNAVAILABLE |
+
+The two active broadcasts were confirmed via their public channel live-page player timestamps before testing. Requests used quoteOnly=true, no CAPTCHA, no account credentials, and no paid transcription submission. The reported-video quote includes VIDEO_TOO_LONG for the anonymous test account's 600-second cap; authenticated tier eligibility remains server-owned. Sending duration=1 did not change the official duration or price. The first five quote requests consumed four official requests, confirming repeat-cache reuse. D1 readback confirms the verified source/normalized broadcast states. No authenticated purchase, CAPTCHA or provider transcription end-to-end test is claimed.
+
+Final local validation: 300 backend unit/integration checks and 371 workerd/D1/R2 checks passed with no skips. All 25 function bundles and backend ESLint passed. The full Flutter suite passed 933 tests, with zero analysis issues; later focused player/navigation/security checks passed 22 tests. Native changes are not included in the backend commits and require an app release.
