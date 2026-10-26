@@ -93,3 +93,17 @@ test('client reports correct estimates without touching verified billing evidenc
         assert.equal(f.sqlite.prepare('SELECT duration_seconds FROM verified_video_metadata WHERE video_id=?').get(videoId).duration_seconds,1201);
     }
 });
+
+for (const [stream, expected] of [[{actualStartTime:'2026-10-26T00:00:00Z'},'live'],[{scheduledStartTime:'2026-10-27T00:00:00Z'},'upcoming']]) {
+    test(`broadcast timestamps detect ${expected} even when snippet state is none`, async t => {
+        const f=await fixture(t);
+        t.mock.method(globalThis,'fetch',async()=>Response.json({items:[{...item('PT30S'),liveStreamingDetails:stream}]}));
+        const result=await resolveVerifiedVideoMetadata(context(f),videoId);
+        assert.equal(result.isLive,true);assert.equal(result.broadcastState,expected);
+    });
+}
+test('empty broadcast details do not establish an eligible recording', async t => {
+    const f=await fixture(t);
+    t.mock.method(globalThis,'fetch',async()=>Response.json({items:[{...item('PT30S'),liveStreamingDetails:{}}]}));
+    await assert.rejects(resolveVerifiedVideoMetadata(context(f),videoId),/VIDEO_DURATION_UNAVAILABLE/);
+});

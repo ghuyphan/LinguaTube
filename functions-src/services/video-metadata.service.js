@@ -19,8 +19,17 @@ export function parseYouTubeDuration(value) {
 
 function validateMetadata(item, videoId) {
     if (item?.id !== videoId) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
-    const broadcastState = item.snippet?.liveBroadcastContent;
+    let broadcastState = item.snippet?.liveBroadcastContent;
     if (!['none', 'live', 'upcoming'].includes(broadcastState)) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
+    // Some ongoing broadcasts report snippet state none. Broadcast timestamps
+    // must also establish that the media is a completed recording.
+    const stream = item.liveStreamingDetails;
+    if (stream?.actualEndTime && (typeof stream.actualEndTime !== 'string' || !Number.isFinite(Date.parse(stream.actualEndTime)))) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
+    if (broadcastState === 'none' && stream && !stream.actualEndTime) {
+        if (stream.actualStartTime) broadcastState = 'live';
+        else if (stream.scheduledStartTime) broadcastState = 'upcoming';
+        else throw metadataError('VIDEO_DURATION_UNAVAILABLE');
+    }
     const duration = parseYouTubeDuration(item.contentDetails?.duration);
     if (broadcastState === 'none' && !duration) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
     return { duration, broadcastState, isLive: broadcastState !== 'none', source: SOURCE };
@@ -63,7 +72,7 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
         const url = new URL('https://www.googleapis.com/youtube/v3/videos');
         url.searchParams.set('id', videoId);
         url.searchParams.set('part', 'contentDetails,snippet,liveStreamingDetails');
-        url.searchParams.set('fields', 'items(id,contentDetails/duration,snippet/liveBroadcastContent,liveStreamingDetails/actualEndTime)');
+        url.searchParams.set('fields', 'items(id,contentDetails/duration,snippet/liveBroadcastContent,liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))');
         const signal = AbortSignal.timeout(4000);
         const response = await fetch(url, {
             headers: { 'X-Goog-Api-Key': env.YOUTUBE_DATA_API_KEY, Accept: 'application/json' },

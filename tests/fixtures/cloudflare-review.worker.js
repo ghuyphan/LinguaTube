@@ -19,6 +19,7 @@ let acceptedJobId;
 globalThis.fetch = async (input, init = {}) => {
     const url = new URL(typeof input === 'string' ? input : input.url || input.toString());
     calls.push({ host: url.hostname, path: url.pathname, method: init.method || 'GET' });
+    if (url.hostname === 'www.googleapis.com') return Response.json({items:[{id:videoId,contentDetails:{duration:scenario === 'duration' ? 'PT1800S' : 'PT120S'},snippet:{liveBroadcastContent:'none'}}]});
     if (url.hostname === 'www.youtube.com') return new Response(`"lengthSeconds":"${scenario === 'duration' ? 1800 : 120}"`);
     if (url.hostname === 'challenges.cloudflare.com') return Response.json({ success: true });
     if (url.hostname === 'api.supadata.ai') return Response.json({lang:'en',availableLangs:['en'],content:[{offset:0,duration:2000,text:'Hello world.'}]});

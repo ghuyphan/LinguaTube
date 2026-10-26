@@ -40,7 +40,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
         await t.test(scenario,async()=>{
             const mf=new Miniflare({rootPath:folder,modulesRoot:folder,scriptPath:worker,modules:true,compatibilityDate:'2024-12-20',compatibilityFlags:['nodejs_compat'],cf:false,
                 d1Databases:['VOCAB_DB'],r2Buckets:['TRANSCRIPT_STORAGE'],kvNamespaces:['TRANSCRIPT_CACHE'],
-                bindings:{SCENARIO:scenario,EXPECT_DEFECTS:defects,GLADIA_API_KEY:'fixture-only',SUPADATA_API_KEY:'fixture-only',TURNSTILE_SECRET_KEY:'fixture-only',SUPABASE_SERVICE_ROLE_KEY:'fixture-only'},
+                bindings:{YOUTUBE_DATA_API_KEY:'fixture-only',SCENARIO:scenario,EXPECT_DEFECTS:defects,GLADIA_API_KEY:'fixture-only',SUPADATA_API_KEY:'fixture-only',TURNSTILE_SECRET_KEY:'fixture-only',SUPABASE_SERVICE_ROLE_KEY:'fixture-only'},
                 outboundService:()=>new Response('Unexpected network disabled',{status:599}),log:new Log(LogLevel.ERROR)});
             try{
                 const db=await mf.getD1Database('VOCAB_DB'),r2=await mf.getR2Bucket('TRANSCRIPT_STORAGE');

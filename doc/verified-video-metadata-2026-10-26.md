@@ -47,3 +47,11 @@ After deployment:
 All changes remain uncommitted until explicitly requested. Record local and production verification separately.
 
 Local results: 297 backend unit/integration checks passed with no skips; a dedicated Miniflare 4/workerd/D1 test passed for the actual cache, quota and fresh-verification queries. Backend ESLint and all 25 function bundles passed. Flutter analysis reported no issues; the full Flutter suite passed 933 tests. Production secret-name inspection confirmed encrypted YOUTUBE_DATA_API_KEY is present on lingua-tube; its value was not read. Migration and deployment are still pending explicit release authorization. These tests do not establish live official API connectivity with the saved key.
+
+## Production rollout and broadcast timestamp follow-up
+
+The additive D1 migration was applied and its tables/columns verified. Backend f8e24c0 was pushed to main, deployed to Production, and passed GitHub CI. Production quotes verified the exact reported video VW1ayoCUjy8: 1236 seconds, cost 3 diamonds; anonymous eligibility correctly reports VIDEO_TOO_LONG. A 19-second public video quotes 1 diamond; unavailable results return 404. Quotes did not submit paid transcription work.
+
+Live smoke testing exposed that snippet.liveBroadcastContent can be none for a stream with a very large elapsed duration. The verifier now also requests actualStartTime, actualEndTime and scheduledStartTime: a started broadcast without an end is live, a scheduled broadcast without start/end is upcoming, and empty/inconsistent broadcast evidence fails closed. These rules apply even if snippet state is none. Timestamp regression cases and the older workerd fixtures were updated. This follow-up must be deployed and rechecked against the live sample before claiming live rejection verified.
+
+Regression results after the timestamp change: 300 backend checks pass; the broader workerd/D1/R2 route and recovery suite is run separately. Mobile fixes remain uncommitted in the Flutter working tree and require an app build/release; a backend deployment does not distribute native code.
