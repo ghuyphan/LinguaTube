@@ -35,7 +35,7 @@ export function generateJobId() {
  * @param {number} [params.diamondsCharged]
  * @returns {Promise<{ isNew: boolean, job: object }>}
  */
-export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1 }) {
+export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1, verifiedDurationSeconds = null, durationSource = null, durationVerifiedAt = null }) {
     if (!db || !videoId || !language) throw new Error('Missing required parameters for reserveAiJob');
     const normLang = normalizeLanguageCode(language) || language;
     const id = generateJobId();
@@ -44,9 +44,9 @@ export async function reserveAiJob(db, { videoId, language, userId = null, clien
         await db.prepare(`
             INSERT INTO ai_transcription_jobs (
                 id, video_id, language, user_id, client_id, user_tier,
-                diamonds_charged, charge_status, refund_status, submission_state, status, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
-        `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged).run();
+                diamonds_charged, verified_duration_seconds, duration_source, duration_verified_at, charge_status, refund_status, submission_state, status, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
+        `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged, verifiedDurationSeconds, durationSource, durationVerifiedAt).run();
 
         const newJob = await getAiJobById(db, id);
         return {

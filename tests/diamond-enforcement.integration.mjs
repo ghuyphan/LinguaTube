@@ -14,15 +14,17 @@ async function endpoint(t, { tier = 'anonymous', duration = 120, youtube = null,
     const calls = [], charges = [], refunds = [];
     const videoId = `diamond${String(++sequence).padStart(4, '0')}`;
     const token = `${btoa('{}')}.${btoa(JSON.stringify({ sub: uid, exp: Math.floor(Date.now() / 1000) + 3600 }))}.fixture`;
-    const env = { VOCAB_DB: state.db, GLADIA_API_KEY: 'fixture', TURNSTILE_SECRET_KEY: 'fixture', SUPABASE_SERVICE_ROLE_KEY: 'fixture',
+    const env = { VOCAB_DB: state.db, YOUTUBE_DATA_API_KEY: 'fixture-youtube', GLADIA_API_KEY: 'fixture', TURNSTILE_SECRET_KEY: 'fixture', SUPABASE_SERVICE_ROLE_KEY: 'fixture',
         TRANSCRIPT_STORAGE: { get: async () => cached ? { customMetadata: { source: 'ai' }, json: async () => ({ segments: [{ start: 0, duration: 1, text: 'Hello', tokens: [{ surface: 'Hello' }] }] }) } : null } };
     t.mock.method(globalThis, 'fetch', async (input, init = {}) => {
         const url = new URL(input); calls.push({ host: url.hostname, path: url.pathname, method: init.method || 'GET' });
-        if (url.hostname === 'www.youtube.com') {
+        if (url.hostname === 'www.googleapis.com') {
+            assert.equal(init.headers['X-Goog-Api-Key'], 'fixture-youtube');
+            assert.equal(url.searchParams.get('id'), videoId);
             if (youtube === 'outage') return new Response(null, { status: 503 });
             if (youtube === 'timeout') throw new DOMException('Timeout', 'TimeoutError');
-            if (youtube === 'missing') return new Response('{}');
-            return new Response(youtube === 'live' ? '"isLiveNow":true,"lengthSeconds":"120"' : `"lengthSeconds":"${duration}"`);
+            if (youtube === 'missing') return Response.json({});
+            return Response.json({ items: [{ id: videoId, contentDetails: { duration: `PT${duration}S` }, snippet: { liveBroadcastContent: youtube === 'live' ? 'live' : 'none' } }] });
         }
         if (url.hostname === 'challenges.cloudflare.com') return Response.json({ success: true });
         if (url.pathname === '/auth/v1/user') return Response.json({ id: uid });
@@ -55,7 +57,7 @@ for (const youtube of ['outage', 'timeout', 'missing']) {
             const f = await endpoint(t, { youtube });
             f.sqlite.prepare("INSERT INTO video_languages(video_id,duration_seconds,available_languages) VALUES(?,30,'[]')").run(f.videoId);
             const r = await f.invoke({ duration: clientDuration });
-            assert.equal(r.status, 400); assert.equal(r.body.errorCode, 'VIDEO_DURATION_UNAVAILABLE');
+            assert.equal(r.status, 503); assert.equal(r.body.errorCode, 'VIDEO_DURATION_UNAVAILABLE');
             assert.equal(f.sqlite.prepare('SELECT count(*) n FROM ai_transcription_jobs').get().n, 0);
             assert.equal(f.sqlite.prepare('SELECT count(*) n FROM anonymous_credit_charges').get().n, 0);
             assert.equal(f.providerPosts(), 0);
@@ -197,7 +199,7 @@ for (const [tier, duration, balance, reason] of [['free',601,5,'VIDEO_TOO_LONG']
 test('failed duration quote cannot return an estimated price', async t => {
     const f = await endpoint(t, { youtube: 'outage' });
     const r = await f.invoke({ quoteOnly: true, duration: 60 });
-    assert.equal(r.status, 400); assert.equal(r.body.errorCode, 'VIDEO_DURATION_UNAVAILABLE');
+    assert.equal(r.status, 503); assert.equal(r.body.errorCode, 'VIDEO_DURATION_UNAVAILABLE');
     assert.equal(r.body.cost, undefined); assert.equal(f.providerPosts(), 0);
 });
 
@@ -239,3 +241,26 @@ for (const invalid of ['1', -1, 5, 1.5, false]) {
         assert.equal(r.status, 400); assert.equal(f.calls.length, 0);
     });
 }
+
+test('warm quotes reuse verified metadata but a new paid submission freshly verifies and records evidence', async t => {
+    const f = await endpoint(t, { tier: 'premium', duration: 601 });
+    const first = await f.invoke({ quoteOnly: true });
+    const second = await f.invoke({ quoteOnly: true });
+    assert.equal(first.body.cost, 2); assert.equal(second.body.cost, 2);
+    assert.equal(f.calls.filter(c => c.host === 'www.googleapis.com').length, 1);
+    const paid = await f.invoke({ expectedDiamondCost: 2 });
+    assert.equal(paid.status, 202);
+    assert.equal(f.calls.filter(c => c.host === 'www.googleapis.com').length, 2);
+    const job = f.sqlite.prepare('SELECT * FROM ai_transcription_jobs').get();
+    assert.equal(job.verified_duration_seconds, 601);
+    assert.equal(job.duration_source, 'youtube_data_api');
+    assert.ok(job.duration_verified_at > 0);
+    assert.equal(f.charges[0].p_amount, 2);
+});
+test('missing official configuration fails without creating or charging a job', async t => {
+    const f = await endpoint(t, { tier: 'premium' });
+    delete f.env.YOUTUBE_DATA_API_KEY;
+    const r = await f.invoke();
+    assert.equal(r.status, 503); assert.equal(r.body.errorCode, 'VIDEO_METADATA_NOT_CONFIGURED');
+    assert.equal(f.charges.length, 0); assert.equal(f.providerPosts(), 0);
+});

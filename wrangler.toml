@@ -25,6 +25,6 @@ binding = "TRANSCRIPT_STORAGE"
 bucket_name = "linguatube-transcripts"
 
 [vars]
-# GLADIA_API_KEY, SUPADATA_API_KEY, PAYOS keys, and SUPABASE_SERVICE_ROLE_KEY should be set in Cloudflare Dashboard
+# YOUTUBE_DATA_API_KEY, GLADIA_API_KEY, SUPADATA_API_KEY, PAYOS keys, and SUPABASE_SERVICE_ROLE_KEY should be set in Cloudflare Dashboard
 SUPABASE_URL = "https://edbkvzviqeulwzcnrrlb.supabase.co"
 

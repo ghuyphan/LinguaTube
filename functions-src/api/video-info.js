@@ -243,7 +243,9 @@ export async function onRequestPost(context) {
     try {
         const body = await request.json();
         const videoId = sanitizeVideoId(body.videoId);
-        const duration = typeof body.duration === 'number' ? Math.round(body.duration) : null;
+        const duration = typeof body.duration === 'number' && Number.isFinite(body.duration) ? Math.round(body.duration) : null;
+        if (body.isEstimate != null && typeof body.isEstimate !== 'boolean') return jsonResponse({ error: 'Invalid estimate flag' }, 400);
+        const durationSource = body.isEstimate === true ? 'client_estimate' : 'client_player';
         if (!videoId || !duration || duration <= 0 || duration > 14400) {
             return jsonResponse({ error: 'Invalid videoId or duration' }, 400);
         }
@@ -252,12 +254,13 @@ export async function onRequestPost(context) {
         if (db) {
             await db.prepare(`
                 INSERT INTO video_languages 
-                (video_id, available_languages, sub_languages, duration_seconds, created_at, updated_at)
-                VALUES (?, '[]', '[]', ?, strftime('%s', 'now'), strftime('%s', 'now'))
+                (video_id, available_languages, sub_languages, duration_seconds, duration_source, created_at, updated_at)
+                VALUES (?, '[]', '[]', ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
                 ON CONFLICT(video_id) DO UPDATE SET
-                  duration_seconds = COALESCE(video_languages.duration_seconds, excluded.duration_seconds),
+                  duration_seconds = CASE WHEN excluded.duration_source='client_player' OR video_languages.duration_source IS NOT 'client_player' THEN excluded.duration_seconds ELSE video_languages.duration_seconds END,
+                  duration_source = CASE WHEN excluded.duration_source='client_player' OR video_languages.duration_source IS NOT 'client_player' THEN excluded.duration_source ELSE video_languages.duration_source END,
                   updated_at = strftime('%s', 'now')
-            `).bind(videoId, duration).run();
+            `).bind(videoId, duration, durationSource).run();
 
             memVideoInfoCache.delete(videoId);
         }

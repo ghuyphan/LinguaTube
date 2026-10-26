@@ -8,6 +8,7 @@ export async function fixture(t) {
     t.after(()=>sqlite.close());
     sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261024_gladia_inbox.sql',import.meta.url),'utf8'));
     sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261025_gladia_submission_state.sql',import.meta.url),'utf8'));
+    sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261026_verified_video_metadata.sql',import.meta.url),'utf8'));
     const db={prepare(sql){
         const statement=sqlite.prepare(sql);
         return {args:[],bind(...args){this.args=args;return this;},runSync(){const value=statement.run(...this.args);return {meta:{changes:Number(value.changes)}};},

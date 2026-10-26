@@ -63,6 +63,7 @@ export async function onRequestGet(context) {
         database: Boolean(env.VOCAB_DB),
         storage: Boolean(env.TRANSCRIPT_STORAGE),
         hasGladiaKey: Boolean(env.GLADIA_API_KEY),
+        hasYouTubeDataKey: Boolean(env.YOUTUBE_DATA_API_KEY),
         hasSupadataKey: Boolean(env.SUPADATA_API_KEY),
         hasTurnstileKey: Boolean(env.TURNSTILE_SECRET_KEY)
     });
@@ -201,8 +202,8 @@ export async function onRequestPost(context) {
                 return jsonResponse({ success: true, ...quote }, 200, { 'Cache-Control': 'no-store' });
             } catch (error) {
                 const errorCode = error.message.split(':')[0];
-                if (!['VIDEO_DURATION_UNAVAILABLE', 'LIVESTREAM_NOT_SUPPORTED'].includes(errorCode)) throw error;
-                return jsonResponse({ success: false, errorCode, error: error.message }, 400, { 'Cache-Control': 'no-store' });
+                if (!['VIDEO_DURATION_UNAVAILABLE', 'LIVESTREAM_NOT_SUPPORTED', 'VIDEO_UNAVAILABLE', 'VIDEO_METADATA_NOT_CONFIGURED', 'VIDEO_METADATA_STORAGE_UNAVAILABLE'].includes(errorCode)) throw error;
+                return jsonResponse({ success: false, errorCode, error: error.message }, error.status || 400, { 'Cache-Control': 'no-store', ...(error.retryAfterSeconds ? { 'Retry-After': String(error.retryAfterSeconds) } : {}) });
             }
         }
 
@@ -449,8 +450,10 @@ export async function onRequestPost(context) {
 
         } catch (aiErr) {
             let errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';
-            let status = 500;
-            if (errorCode === 'DIAMOND_PRICE_CHANGED') {
+            let status = aiErr.status || 500;
+            if (aiErr.status) {
+                // Structured metadata failures retain their status and retry timing.
+            } else if (errorCode === 'DIAMOND_PRICE_CHANGED') {
                 status = 409;
             } else if (errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS' || errorCode === 'VIDEO_DURATION_UNAVAILABLE' || errorCode === 'LIVESTREAM_NOT_SUPPORTED') {
                 status = 400;
@@ -470,7 +473,7 @@ export async function onRequestPost(context) {
             return jsonResponse({
                 success: false, videoId: cleanVideoId, requestedLanguage: lang, errorCode,
                 error: aiErr.message, availableLanguages, ...diamondInfo, timing: elapsed()
-            }, status);
+            }, status, { 'Cache-Control': 'no-store', ...(aiErr.retryAfterSeconds ? { 'Retry-After': String(aiErr.retryAfterSeconds) } : {}) });
         }
 
     } catch (error) {

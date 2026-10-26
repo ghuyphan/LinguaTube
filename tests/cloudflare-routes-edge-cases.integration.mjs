@@ -93,7 +93,7 @@ test('all Pages routes: input, authentication, resource limits and failure contr
   },log:new Log(LogLevel.ERROR)});
  t.after(()=>mf.dispose());
  const db=await mf.getD1Database('VOCAB_DB');
- for(const file of ['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql','db/migrations/d1/20261025_gladia_submission_state.sql']){
+ for(const file of ['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql','db/migrations/d1/20261025_gladia_submission_state.sql','db/migrations/d1/20261026_verified_video_metadata.sql']){
   const schema=await readFile(join(root,file),'utf8');
   for(const sql of schema.replace(/--[^\n]*/g,'').split(/;\s*(?=(?:CREATE|ALTER)\b|$)/i).map(s=>s.trim()).filter(Boolean))await db.prepare(sql).run();
  }

@@ -34,7 +34,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
     await build({entryPoints:[entry],nodePaths:[new URL('../node_modules',import.meta.url).pathname],bundle:true,format:'esm',platform:'browser',target:'es2022',outfile:worker,
         conditions:['worker','browser','import','default'],mainFields:['browser','module','main'],logLevel:'silent'});
     assert.deepEqual(await fingerprint(join(sourceRoot,'functions-src')),sourcesBefore,'Source changed while compiling validation fixture');
-    const schemas=await Promise.all(['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql',...(!defects?['db/migrations/d1/20261025_gladia_submission_state.sql']:[])].map(path=>readFile(join(sourceRoot,path),'utf8')));
+    const schemas=await Promise.all(['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql',...(!defects?['db/migrations/d1/20261025_gladia_submission_state.sql','db/migrations/d1/20261026_verified_video_metadata.sql']:[])].map(path=>readFile(join(sourceRoot,path),'utf8')));
     const evidence=[];
     for(const scenario of ['native','duration','refresh','balance','stampede','translation','recommendation','gladia','tokenizer']){
         await t.test(scenario,async()=>{

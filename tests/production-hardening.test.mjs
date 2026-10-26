@@ -1,3 +1,4 @@
+import { fixture } from './fixtures/transcription-db.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { onRequestPost as revenuecat } from '../functions-src/api/payment/revenuecat-webhook.js';
@@ -92,10 +93,10 @@ test('middleware bounds actual bytes and preserves signed payload bytes', async 
 
 test('AI generation ignores forged client duration when enforcing the server tier cap', async t => {
     const { TranscriptService } = await import('../functions-src/services/transcript.service.js');
-    t.mock.method(globalThis,'fetch',async()=>new Response('"lengthSeconds":"1800"'));
-    const db={prepare(sql){return {bind(){return this;},first:async()=>sql.includes('SELECT duration_seconds')?{duration_seconds:30}:null};}};
+    t.mock.method(globalThis,'fetch',async()=>Response.json({items:[{id:'abcdefghijk',contentDetails:{duration:'PT1800S'},snippet:{liveBroadcastContent:'none'}}]}));
+    const {db}=await fixture(t);
     const service=new TranscriptService(null,null,{resolveTier:()=> 'free'},null);
-    await assert.rejects(service.startAIJob({db,env:{}},{videoId:'abcdefghijk',lang:'ja',body:{duration:'not-a-number'},user:{id:uid}}),/VIDEO_TOO_LONG/);
+    await assert.rejects(service.startAIJob({db,env:{YOUTUBE_DATA_API_KEY:'fixture'}},{videoId:'abcdefghijk',lang:'ja',body:{duration:'not-a-number'},user:{id:uid}}),/VIDEO_TOO_LONG/);
 });
 
 test('leaderboard submissions persist server scores instead of client XP', async t => {

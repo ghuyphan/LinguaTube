@@ -44,15 +44,15 @@ async function loadYouTubeVideoDetails(videoId) {
         });
         if (!res.ok) return { duration: null, isLive: false };
         const html = new TextDecoder().decode(await readBoundedBody(res, signal, 8 * 1024 * 1024));
-        const isLive = /"isLive(?:Broadcast|Content|Now)?":\s*true|"status"\s*:\s*"LIVE"/i.test(html);
-        const match = html.match(/"approxDurationMs":"(\d+)"/);
+        const isLive = /"isLive(?:Broadcast|Content|Now)?"\s*:\s*true|"status"\s*:\s*"LIVE"/i.test(html);
+        const match = html.match(/"approxDurationMs"\s*:\s*"(\d+)"/);
         let duration = null;
         if (match && match[1]) {
-            const seconds = Math.round(parseInt(match[1], 10) / 1000);
+            const seconds = Math.ceil(parseInt(match[1], 10) / 1000);
             if (!isNaN(seconds) && seconds > 0) duration = seconds;
         }
         if (!duration) {
-            const matchLen = html.match(/"lengthSeconds":"(\d+)"/);
+            const matchLen = html.match(/"lengthSeconds"\s*:\s*"(\d+)"/);
             if (matchLen && matchLen[1]) {
                 const seconds = parseInt(matchLen[1], 10);
                 if (!isNaN(seconds) && seconds > 0) duration = seconds;

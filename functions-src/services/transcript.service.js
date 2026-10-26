@@ -1,3 +1,4 @@
+import { resolveVerifiedVideoMetadata } from './video-metadata.service.js';
 import { enrichPublishedTranscript } from './transcript-enrichment.js';
 import { ingestGladiaJob, recoverGladiaSubmission } from './gladia-recovery.js';
 import { recoverJobRefund } from './refund-recovery.js';
@@ -27,7 +28,7 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
-import { fetchYouTubeVideoDetails, resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
+import { resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig, transcriptionDiamondCost } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
@@ -196,13 +197,13 @@ export class TranscriptService {
         return nativeResult;
     }
 
-    async _verifiedAIPrice(videoId, user) {
-        const details = await fetchYouTubeVideoDetails(videoId);
+    async _verifiedAIPrice(context, videoId, user, fresh = false) {
+        const details = await resolveVerifiedVideoMetadata(context, videoId, { fresh });
         if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
         const cost = transcriptionDiamondCost(details.duration);
         const tier = this.diamondService.resolveTier(user);
         const maxDurationSeconds = getTierDiamondConfig(tier).maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
-        return { cost, tier, durationSeconds: details.duration, maxDurationSeconds };
+        return { cost, tier, durationSeconds: details.duration, maxDurationSeconds, source: details.source, verifiedAt: details.verifiedAt };
     }
 
     // A quote never reserves a job, debits credits or submits provider work.
@@ -214,7 +215,7 @@ export class TranscriptService {
         const reusable = (cached?.source === 'ai' && cached.segments?.length > 0) ||
             Boolean(await getActiveAiJob(db, videoId, normalizedLang));
         if (reusable) return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
-        const price = await this._verifiedAIPrice(videoId, user);
+        const price = await this._verifiedAIPrice(context, videoId, user);
         const reason = price.durationSeconds > price.maxDurationSeconds ? 'VIDEO_TOO_LONG' :
             diamondInfo.diamonds < price.cost ? 'INSUFFICIENT_DIAMONDS' : null;
         return { cost: price.cost, ...diamondInfo, durationSeconds: price.durationSeconds,
@@ -255,7 +256,7 @@ export class TranscriptService {
 
         // Existing D1 durations may originate from clients or incomplete captions.
         // Verify once, only on the path that can create a new paid operation.
-        const price = await this._verifiedAIPrice(videoId, user);
+        const price = await this._verifiedAIPrice(context, videoId, user, true);
         const requiredDiamonds = price.cost;
         const tier = price.tier;
         if (price.durationSeconds > price.maxDurationSeconds) throw new Error(`VIDEO_TOO_LONG: Video exceeds the ${Math.round(price.maxDurationSeconds / 60)} minute tier limit.`);
@@ -271,7 +272,8 @@ export class TranscriptService {
             userId: user?.id || null,
             clientId,
             userTier: tier,
-            diamondsCharged: requiredDiamonds
+            diamondsCharged: requiredDiamonds,
+            verifiedDurationSeconds: price.durationSeconds, durationSource: price.source, durationVerifiedAt: price.verifiedAt
         });
 
         if (!reservation.isNew) {

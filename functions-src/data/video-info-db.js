@@ -29,7 +29,7 @@ export async function getVideoLanguages(db, videoId) {
 
     try {
         const row = await db.prepare(`
-            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, category, tags
+            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, duration_source, title, channel, channel_avatar, levels, category, tags
             FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
@@ -72,6 +72,7 @@ export async function getVideoLanguages(db, videoId) {
             subLanguages: JSON.parse(row.sub_languages || '[]'),
             hasAutoCaptions: !!row.has_auto_captions,
             durationSeconds: row.duration_seconds,
+            durationSource: row.duration_source || 'unverified',
             title: row.title,
             channel: row.channel,
             channelAvatar: row.channel_avatar || null,
@@ -183,7 +184,8 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
               available_languages = CASE WHEN excluded.available_languages = '[]' THEN video_languages.available_languages ELSE excluded.available_languages END,
               sub_languages = CASE WHEN excluded.sub_languages IS NOT NULL AND excluded.sub_languages != '[]' THEN excluded.sub_languages ELSE video_languages.sub_languages END,
               has_auto_captions = excluded.has_auto_captions,
-              duration_seconds = COALESCE(excluded.duration_seconds, video_languages.duration_seconds),
+              duration_seconds = CASE WHEN video_languages.duration_source='client_player' THEN video_languages.duration_seconds ELSE COALESCE(excluded.duration_seconds, video_languages.duration_seconds) END,
+              duration_source = CASE WHEN video_languages.duration_source='client_player' OR excluded.duration_seconds IS NULL THEN video_languages.duration_source ELSE 'unverified' END,
               title = COALESCE(excluded.title, video_languages.title),
               channel = COALESCE(excluded.channel, video_languages.channel),
               channel_avatar = COALESCE(excluded.channel_avatar, video_languages.channel_avatar),
